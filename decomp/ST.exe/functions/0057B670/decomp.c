@@ -24,7 +24,7 @@ undefined4 __cdecl FUN_0057b670(int *param_1,uint param_2,uint param_3,int param
   undefined4 local_33;
   undefined2 local_2f;
   void *local_8;
-  
+
   this = param_1;
   uVar4 = 0;
   local_8 = (void *)0x0;
@@ -38,12 +38,14 @@ undefined4 __cdecl FUN_0057b670(int *param_1,uint param_2,uint param_3,int param
     thunk_FUN_0057b350(param_1,param_3,(int *)&local_8);
     goto LAB_0057b6ff;
   }
+  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   if (*(int *)((int)param_1 + 0x259) == 0x99) {
     iVar3 = 0x15e;
 LAB_0057b6da:
     param_1 = (int *)0x3fc00000;
   }
   else {
+    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     if (*(int *)((int)param_1 + 0x259) != 0xb7) {
       iVar3 = 400;
       goto LAB_0057b6da;

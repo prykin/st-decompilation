@@ -4,7 +4,7 @@ int __fastcall FUN_0058ff70(AnonShape_0058FF70_CCAF0F72 *param_1)
 {
   uint uVar1;
   int iVar2;
-  
+
   iVar2 = PTR_00802a38->field_00E4;
   switch(param_1->field_0257) {
   case 0:

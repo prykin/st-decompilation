@@ -2,7 +2,7 @@
 /* [STSwitchEnumApplier] Switch target param_2 uses
    /SubmarineTitans/Recovered/Enums/Global_sub_00580910_param_2Enum. Cases:
    CASE_DC=220;CASE_DD=221;CASE_DE=222;CASE_E0=224
-   
+
    [STPrototypeApplier] Propagated parameter 6.
    Evidence: 0044C130 -> 00580910 @ 0044C376 */
 
@@ -17,7 +17,7 @@ FUN_00580910(undefined4 param_1,Global_sub_00580910_param_2Enum param_2,int para
   uint uVar3;
   char *pcVar4;
   char *pcVar5;
-  
+
   *param_4 = 0;
   *param_5 = '\0';
   *param_6 = 0x1d;

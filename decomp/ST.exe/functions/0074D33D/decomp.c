@@ -4,7 +4,7 @@ undefined4 __thiscall FUN_0074d33d(void *this,undefined4 param_1)
 {
   LPCRITICAL_SECTION lpCriticalSection;
   undefined4 uVar1;
-  
+
   lpCriticalSection = (LPCRITICAL_SECTION)((int)this + 0x18);
   EnterCriticalSection(lpCriticalSection);
   if (*(int *)((int)this + 0x14) == 0) {

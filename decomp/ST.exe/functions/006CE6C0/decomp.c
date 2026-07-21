@@ -7,7 +7,7 @@ undefined4 * FUN_006ce6c0(ushort *param_1,uint param_2,ushort param_3)
 {
   uint uVar1;
   ushort *puVar2;
-  
+
   if (param_2 != 0) {
     puVar2 = param_1;
     for (uVar1 = param_2 >> 1; uVar1 != 0; uVar1 = uVar1 - 1) {

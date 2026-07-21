@@ -20,7 +20,7 @@ FUN_004b1fb0(Global_sub_004B1FB0_param_1Enum param_1,int *param_2,int *param_3,i
   short local_a;
   short local_8;
   short local_6;
-  
+
   local_1c = 0;
   local_14 = 0;
   local_10 = 0;

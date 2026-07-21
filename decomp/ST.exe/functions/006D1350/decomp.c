@@ -8,7 +8,7 @@ FUN_006d1350(undefined2 *param_1,int param_2,byte *param_3,int param_4,int param
   undefined4 uVar2;
   undefined2 *puVar3;
   int iVar4;
-  
+
   if (param_6 != 0) {
     iVar4 = param_6;
     do {

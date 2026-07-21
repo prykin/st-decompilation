@@ -14,7 +14,7 @@ int FUN_00412960(int param_1,int param_2,int param_3,int param_4,int param_5,int
   int iVar4;
   AnonShape_00412960_B35D15BC *pAVar5;
   int iVar6;
-  
+
   if ((((DAT_007f4d20 < 0xc9) && (-1 < param_1)) && (param_1 < DAT_007f4d2c)) &&
      (((-1 < param_2 && (param_2 < DAT_007f4d30)) && ((-1 < param_3 && (param_3 < DAT_007f4d34))))))
   {

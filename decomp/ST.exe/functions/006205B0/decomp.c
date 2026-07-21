@@ -11,7 +11,7 @@ undefined4 __thiscall FUN_006205b0(void *this,undefined4 *param_1,undefined4 *pa
   uint uVar7;
   uint uVar8;
   bool bVar9;
-  
+
   *param_1 = 0xffffffff;
   uVar3 = 0;
   uVar7 = 0;

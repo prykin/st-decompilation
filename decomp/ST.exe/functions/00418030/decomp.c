@@ -25,9 +25,7 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00417FF0::FUN_00418030
   short sVar12;
   uint uVar13;
   short sVar14;
-  undefined4 unaff_ESI;
   short *psVar15;
-  void *unaff_EDI;
   short *psVar16;
   int iVar17;
   InternalExceptionFrame local_9c;
@@ -52,7 +50,7 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00417FF0::FUN_00418030
   short *local_10;
   short *local_c;
   bool local_5;
-  
+
   local_58 = (STBoatC *)this;
   thunk_FUN_004167a0((AnonShape_004167A0_C6E28A87 *)this);
   if (((param_1 == *(short *)&this->field_0x47) && (param_2 == *(short *)&this->field_0x49)) &&
@@ -61,7 +59,7 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00417FF0::FUN_00418030
   }
   local_9c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_9c;
-  iVar4 = Library::MSVCRT::__setjmp3(local_9c.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar4 = Library::MSVCRT::__setjmp3(local_9c.jumpBuffer,0);
   this_00 = local_58;
   if (iVar4 != 0) {
     g_currentExceptionFrame = local_9c.previous;
@@ -155,6 +153,7 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00417FF0::FUN_00418030
           do {
             sVar12 = this_00->field_004B + (short)local_1c;
             sVar3 = this_00->field_0047 + (short)local_10;
+            /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
             local_50 = (short *)(CONCAT22((short)((uint)psVar15 >> 0x10),this_00->field_0049) +
                                 local_30);
             sVar14 = (short)local_50;
@@ -297,11 +296,14 @@ LAB_0041862b:
   }
   this_00->field_00E3 = 1;
   this_00->field_00D3 = 1;
+  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
   iVar4 = CONCAT22((short)((uint)psVar15 >> 0x10),pAVar7->field_0008 * 0xc9) + 100;
   sVar3 = (short)iVar4;
   uVar5 = (int)sVar3 - (int)this_00->field_0041;
+  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
   iVar17 = CONCAT22((short)((uint)psVar16 >> 0x10),pAVar7->field_000A * 0xc9) + 100;
   uVar13 = (int)uVar5 >> 0x1f;
+  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
   local_c = (short *)(CONCAT22((short)((uint)local_9c.previous >> 0x10),pAVar7->field_000C * 200) +
                      100);
   local_54 = (short *)((uVar5 ^ uVar13) - uVar13);
@@ -315,6 +317,7 @@ LAB_0041862b:
   uVar13 = (int)uVar5 >> 0x1f;
   local_10 = (short *)((uVar5 ^ uVar13) - uVar13);
   if (local_10 == (short *)0x0) {
+    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
     local_14 = (short *)CONCAT31(local_14._1_3_,this_00->field_0061);
   }
   else {
@@ -327,9 +330,11 @@ LAB_0041862b:
       bVar2 = false;
     }
     if ((local_54 == (short *)0x0 || bVar1) && (bVar2)) {
+      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
       local_14 = (short *)CONCAT31(local_14._1_3_,this_00->field_0062);
     }
     else {
+      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
       local_14 = (short *)CONCAT31(local_14._1_3_,this_00->field_0061);
     }
   }

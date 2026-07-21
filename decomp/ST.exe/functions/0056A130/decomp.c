@@ -4,25 +4,27 @@ void __thiscall FUN_0056a130(void *this,uint param_1,char param_2,int param_3,ui
 {
   int iVar1;
   uint uVar2;
-  InternalExceptionFrame *pIVar3;
-  int in_stack_ffffffb8;
-  
-  pIVar3 = g_currentExceptionFrame;
+  InternalExceptionFrame local_4c;
+  void *local_8;
+
   if (*(int *)((int)this + 0xf8b) == 0) {
     return;
   }
-  g_currentExceptionFrame = (InternalExceptionFrame *)&stack0xffffffb4;
-  iVar1 = Library::MSVCRT::__setjmp3((undefined4 *)&stack0xffffffb8,0,pIVar3,in_stack_ffffffb8);
+  local_4c.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &local_4c;
+  local_8 = this;
+  iVar1 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
   if (iVar1 == 0) {
     if (param_4 == (uint *)0x0) {
-      param_4 = (uint *)FUN_0071a990(*(AnonShape_0071A990_7656000F **)((int)this + 0xdf3),
+      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
+      param_4 = (uint *)FUN_0071a990(*(AnonShape_0071A990_7656000F **)((int)local_8 + 0xdf3),
                                      (param_1 ^ (int)param_1 >> 0x1f) - ((int)param_1 >> 0x1f),-1,
                                      (undefined1 *)0x0);
     }
     iVar1 = param_3;
     if (param_2 == '\x01') {
       if (param_4 == (uint *)0x0) {
-        g_currentExceptionFrame = pIVar3;
+        g_currentExceptionFrame = local_4c.previous;
         return;
       }
       if (param_3 < 0) {
@@ -33,7 +35,7 @@ void __thiscall FUN_0056a130(void *this,uint param_1,char param_2,int param_3,ui
     }
     else if (param_2 == '\x02') {
       if (param_4 == (uint *)0x0) {
-        g_currentExceptionFrame = pIVar3;
+        g_currentExceptionFrame = local_4c.previous;
         return;
       }
       if (param_3 < 0) {
@@ -47,7 +49,7 @@ void __thiscall FUN_0056a130(void *this,uint param_1,char param_2,int param_3,ui
     }
     else {
       if (param_4 == (uint *)0x0) {
-        g_currentExceptionFrame = pIVar3;
+        g_currentExceptionFrame = local_4c.previous;
         return;
       }
       if (param_3 < 0) {
@@ -60,10 +62,10 @@ void __thiscall FUN_0056a130(void *this,uint param_1,char param_2,int param_3,ui
       }
     }
     FUN_006c1390(param_4,0,uVar2,DAT_0080730e,0,param_3,iVar1);
-    g_currentExceptionFrame = pIVar3;
+    g_currentExceptionFrame = local_4c.previous;
     return;
   }
-  g_currentExceptionFrame = pIVar3;
+  g_currentExceptionFrame = local_4c.previous;
   return;
 }
 

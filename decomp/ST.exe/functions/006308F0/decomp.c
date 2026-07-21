@@ -18,7 +18,7 @@ FUN_006308f0(void *this,int param_1,int param_2,int param_3,int param_4,undefine
   undefined4 local_14;
   int local_c;
   int local_8;
-  
+
   uVar5 = 0xffffffff;
   iVar4 = (g_worldGrid.sizeX * param_3 + param_2) * (int)g_worldGrid.sizeY + param_1;
   local_8 = 0;
@@ -73,7 +73,7 @@ FUN_006308f0(void *this,int param_1,int param_2,int param_3,int param_4,undefine
         iVar4 = thunk_FUN_00631190(this,uVar5,(short)param_1,(short)param_2,(short)param_3,param_4,
                                    param_5,param_6);
         if (iVar4 == 0) {
-          FUN_006b0c70(*(AnonShape_006B0C70_7C4FE646 **)((int)this + 0x38),uVar5);
+          FUN_006b0c70(*(DArrayTy **)((int)this + 0x38),uVar5);
           uVar5 = 0xffffffff;
         }
       }

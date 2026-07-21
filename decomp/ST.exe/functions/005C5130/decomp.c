@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\sett_obj.cpp
@@ -15,20 +17,18 @@ int __thiscall SettMapTy::NoneSettMap(SettMapTy *this,int *param_1)
   DWORD DVar6;
   int iVar7;
   int iVar8;
-  undefined4 unaff_ESI;
-  void *unaff_EDI;
   uint *puVar9;
   InternalExceptionFrame local_50;
   SettMapTy *local_c;
   int local_8;
-  
+
   local_8 = 1;
   local_c = this;
   DVar6 = timeGetTime();
   this->field_0061 = DVar6;
   local_50.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_50;
-  iVar7 = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar7 = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0);
   this_00 = local_c;
   if (iVar7 != 0) {
     g_currentExceptionFrame = local_50.previous;
@@ -38,9 +38,7 @@ int __thiscall SettMapTy::NoneSettMap(SettMapTy *this,int *param_1)
       RaiseInternalException(iVar7,0,s_E____titans_Start_sett_obj_cpp_007cd0e8,0x243);
       return 0;
     }
-    pcVar5 = (code *)swi(3);
-    iVar7 = (*pcVar5)();
-    return iVar7;
+    STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   cVar1 = local_c->field_0065;
   if (cVar1 == '\x01') {
@@ -188,6 +186,7 @@ int __thiscall SettMapTy::NoneSettMap(SettMapTy *this,int *param_1)
         Library::DKW::DDX::FUN_006b3430(DAT_008075a8,PTR_0081176c->field_0554);
       }
       this_00->field_0065 = 1;
+      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
       (**(code **)&this_00->field_0000->field_0x18)(0);
       SVar2 = this_00->field_1E26;
       if (((SVar2 == 6) || (SVar2 == CASE_7)) || (SVar2 == 0xe)) {

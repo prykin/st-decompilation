@@ -9,7 +9,7 @@ int __fastcall DArrayGetElement(DArrayTy *array,uint index,void *outElement)
   uint uVar1;
   uint uVar2;
   undefined4 *puVar3;
-  
+
   if (array->count <= index) {
     return -4;
   }

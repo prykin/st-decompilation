@@ -10,7 +10,7 @@ FUN_006e9ef0(void *this,uint param_1,uint param_2,int param_3,int param_4,uint p
   undefined4 *puVar4;
   byte *pbVar5;
   int iVar6;
-  
+
   if (param_1 < *(uint *)((int)this + 0x310)) {
     puVar1 = (uint *)(*(int *)((int)this + 0x31c) + param_1 * 0x114);
     uVar3 = *(uint *)(*(int *)((int)this + 0x31c) + param_1 * 0x114);

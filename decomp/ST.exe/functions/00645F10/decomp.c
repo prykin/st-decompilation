@@ -25,7 +25,7 @@ FUN_00645f10(void *this,void *param_1,undefined2 param_2,undefined2 param_3,unde
   undefined1 local_c;
   undefined2 local_8;
   undefined2 local_6;
-  
+
   pvVar2 = param_1;
   if (param_1 != (void *)0x0) {
     puVar4 = local_60;
@@ -35,9 +35,11 @@ FUN_00645f10(void *this,void *param_1,undefined2 param_2,undefined2 param_3,unde
     }
     local_60[3] = 1;
     local_60[2] = 1;
+    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     local_60[1] = *(undefined4 *)((int)param_1 + 0x24);
     local_60[0] = 0x28;
     thunk_FUN_00416270(param_1,(undefined2 *)((int)&param_1 + 2),(int *)&local_6,(int *)&local_8);
+    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
     local_4c = param_1._2_2_;
     local_2f = *(undefined2 *)((int)pvVar2 + 0x32);
     local_46 = param_2;

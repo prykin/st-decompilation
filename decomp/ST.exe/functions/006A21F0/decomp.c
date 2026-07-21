@@ -6,7 +6,7 @@ FUN_006a21f0(int *param_1,uint param_2,int param_3,int param_4,ushort *param_5,u
 {
   int iVar1;
   int local_8;
-  
+
   local_8 = 0xff;
   if (((((-1 < (int)param_2) && ((int)param_2 < *param_1)) && (-1 < param_3)) &&
       ((param_3 < param_1[1] && (-1 < param_4)))) && (param_4 < 6)) {

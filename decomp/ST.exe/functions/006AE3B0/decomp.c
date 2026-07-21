@@ -25,7 +25,7 @@ int FUN_006ae3b0(int param_1,int param_2,int param_3,int param_4,int param_5,int
   ushort *local_18;
   int *local_14;
   int local_8;
-  
+
   iVar4 = param_2 * param_3;
   local_8 = param_12 + -1;
   local_2c = param_11 + local_8 * 2 + 1;

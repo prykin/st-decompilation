@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\ai\ai_boss.cpp
@@ -14,22 +16,20 @@ int __thiscall AiBossClassTy::GetMessage(AiBossClassTy *this,STMessage *message)
   int iVar4;
   uint uVar5;
   uint uVar6;
-  undefined4 unaff_ESI;
   char *pcVar7;
   undefined4 *puVar8;
   char cVar9;
-  void *unaff_EDI;
   undefined4 *puVar10;
   char *pcVar11;
   InternalExceptionFrame local_54;
   AiBossClassTy *local_10;
   byte *local_c;
   uint local_8;
-  
+
   local_54.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_54;
   local_10 = this;
-  iVar3 = Library::MSVCRT::__setjmp3(local_54.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar3 = Library::MSVCRT::__setjmp3(local_54.jumpBuffer,0);
   this_00 = local_10;
   if (iVar3 != 0) {
     g_currentExceptionFrame = local_54.previous;
@@ -40,9 +40,7 @@ int __thiscall AiBossClassTy::GetMessage(AiBossClassTy *this,STMessage *message)
       RaiseInternalException(iVar3,0,s_E____titans_ai_ai_boss_cpp_007d2750,0xdf);
       return 0xffff;
     }
-    pcVar2 = (code *)swi(3);
-    iVar3 = (*pcVar2)();
-    return iVar3;
+    STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   uVar5 = PTR_00802a38->field_00E4;
   local_10->field_0658 = uVar5;

@@ -6,16 +6,13 @@ undefined4 FUN_005da7a0(void)
   bool bVar2;
   int iVar3;
   int *piVar4;
-  char *extraout_EAX;
   char *pcVar5;
-  undefined4 unaff_ESI;
-  void *unaff_EDI;
   InternalExceptionFrame local_4c;
   StartSystemTy *local_8;
-  
+
   local_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_4c;
-  iVar3 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar3 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
   if (iVar3 == 0) {
     puVar1 = &local_8->field_068A;
     if (local_8->field_068A == 0) {
@@ -33,8 +30,8 @@ undefined4 FUN_005da7a0(void)
         }
       }
       if (bVar2) {
-        LoadResourceString(0x254b,HINSTANCE_00807618);
-        pcVar5 = FUN_006c8170(extraout_EAX);
+        pcVar5 = LoadResourceString(0x254b,HINSTANCE_00807618);
+        pcVar5 = FUN_006c8170(pcVar5);
         if (pcVar5 != (char *)0x0) {
           iVar3 = *puVar1;
           Library::MSVCRT::FUN_0072da70

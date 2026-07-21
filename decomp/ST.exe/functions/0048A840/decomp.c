@@ -5,7 +5,7 @@ void __fastcall FUN_0048a840(AnonShape_0048A840_34A87A21 *param_1)
   undefined4 uVar1;
   int iVar2;
   int iVar3;
-  
+
   iVar3 = param_1->field_06F7;
   param_1->field_079A = *(undefined4 *)(&DAT_007a8b18 + iVar3 * 4);
   uVar1 = *(undefined4 *)(&DAT_007a8bb8 + iVar3 * 4);

@@ -11,7 +11,7 @@ void __thiscall STJellyGunC::sub_00582530(STJellyGunC *this)
   undefined4 local_24 [4];
   undefined4 local_14;
   undefined4 local_10;
-  
+
   puVar2 = local_24;
   for (iVar1 = 8; iVar1 != 0; iVar1 = iVar1 + -1) {
     *puVar2 = 0;

@@ -8,7 +8,7 @@ undefined4 __thiscall FUN_0060ea30(void *this,AnonShape_0060EA30_DCEB68AD *param
   undefined4 *puVar4;
   undefined4 *puVar5;
   byte *local_8;
-  
+
   uVar1 = param_1->field_0010;
   local_8 = this;
   if (uVar1 < 4) {

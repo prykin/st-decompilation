@@ -1,8 +1,10 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\to_allpl.cpp
    STAllPlayersC::UnRegisterDeposit
-   
+
    [STPrototypeRepairApplier] Propagated parameter 2.
    Evidence: 00580D30 -> 0044A440 @ 00580D69 */
 
@@ -16,31 +18,24 @@ STAllPlayersC::UnRegisterDeposit(STAllPlayersC *this,uint param_1,STResourceC *p
   STResourceC *pSVar2;
   int iVar3;
   undefined4 uVar4;
-  undefined4 extraout_ECX;
-  undefined4 extraout_ECX_00;
-  undefined4 unaff_ESI;
-  void *unaff_EDI;
   InternalExceptionFrame local_50;
   STAllPlayersC *local_c;
   undefined4 local_8;
-  
+
   local_8 = 0;
   local_50.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_50;
   local_c = this;
-  errorCode = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  errorCode = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0);
   this_00 = local_c;
   if (errorCode == 0) {
-    pSVar2 = (STResourceC *)GetObjPtr(local_c,0xffffffff,param_1,CASE_4);
-    uVar4 = extraout_ECX;
+    pSVar2 = (STResourceC *)GetObjPtr(local_c,-1,param_1,CASE_4);
     if (pSVar2 != param_2) {
       RaiseInternalException
                 (-0x5001fff9,g_overwriteContext_007ED77C,s_E____titans_wlad_to_allpl_cpp_007a6004,
                  0x2f4e);
-      uVar4 = extraout_ECX_00;
     }
-    DelObjFromTmps(this_00,DAT_0080874d,*(int *)&param_2->field_0x20,
-                   CONCAT31((int3)((uint)uVar4 >> 8),param_2->field_0x24),param_1);
+    DelObjFromTmps(this_00,DAT_0080874d,*(int *)&param_2->field_0x20,param_2->field_0x24,param_1);
     DelObjFromSaveTmps(this_00,*(int *)&param_2->field_0x20,param_2->field_0x24,(short)param_1);
     Library::DKW::TBL::FUN_006ae140(&PTR_007fa15c->flags,param_1 & 0xffff,&local_8);
     g_currentExceptionFrame = local_50.previous;
@@ -51,9 +46,7 @@ STAllPlayersC::UnRegisterDeposit(STAllPlayersC *this,uint param_1,STResourceC *p
       iVar3 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0x2f57,0,errorCode,
                                  &DAT_007a4ccc,s_STAllPlayersC__UnRegisterDeposit_007a87c8);
       if (iVar3 != 0) {
-        pcVar1 = (code *)swi(3);
-        uVar4 = (*pcVar1)();
-        return uVar4;
+        STDebugBreak(); /* noreturn in standalone pseudocode */
       }
       RaiseInternalException(errorCode,0,s_E____titans_wlad_to_allpl_cpp_007a6004,0x2f58);
       return 0xffffffff;

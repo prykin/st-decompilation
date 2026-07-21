@@ -8,7 +8,7 @@ undefined4 __thiscall FUN_005f2110(void *this,undefined4 *param_1)
   undefined4 *puVar4;
   int *piVar5;
   undefined4 *puVar6;
-  
+
   puVar4 = param_1;
   puVar6 = (undefined4 *)((int)this + 0x20);
   for (iVar2 = 10; iVar2 != 0; iVar2 = iVar2 + -1) {

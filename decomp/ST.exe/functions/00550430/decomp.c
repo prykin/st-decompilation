@@ -5,7 +5,7 @@ void __thiscall FUN_00550430(void *this,int param_1,int param_2)
   uint uVar1;
   DWORD DVar2;
   undefined4 *puVar3;
-  
+
   uVar1 = 0;
   if (DAT_00808aaf != 0) {
     puVar3 = &DAT_00808ab0;

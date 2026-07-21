@@ -8,7 +8,7 @@ void FUN_004e6e10(int param_1,uint param_2,undefined4 *param_3,undefined4 *param
   int iVar4;
   int *piVar5;
   int iVar6;
-  
+
   *param_3 = 0;
   *param_4 = 0;
   iVar4 = 0;

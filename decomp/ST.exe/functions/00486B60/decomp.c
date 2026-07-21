@@ -11,9 +11,10 @@ void __thiscall FUN_00486b60(void *this,undefined1 *param_1)
   int *local_c;
   undefined2 local_8;
   undefined2 local_6;
-  
+
   puVar1 = param_1;
   *param_1 = 1;
+  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
   iVar3 = (**(code **)(*(int *)this + 8))();
   if (iVar3 == 1) {
     puVar1[1] = 1;
@@ -29,8 +30,10 @@ void __thiscall FUN_00486b60(void *this,undefined1 *param_1)
   else {
     puVar1[0x1d] = 0;
   }
+  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
   uVar2 = (**(code **)(*(int *)this + 0x7c))();
   puVar1[0x1b] = uVar2;
+  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
   uVar2 = (**(code **)(*(int *)this + 0xc4))();
   puVar1[0x1c] = uVar2;
   *(undefined4 *)(puVar1 + 3) = *(undefined4 *)((int)this + 0x6f7);
@@ -50,23 +53,28 @@ void __thiscall FUN_00486b60(void *this,undefined1 *param_1)
       local_c = (int *)0x0;
       FUN_006e62d0(PTR_00802a38,*(int *)((int)this + 0x7ca),(int *)&local_c);
       if (local_c != (int *)0x0) {
+        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
         uVar5 = (**(code **)(*local_c + 0x2c))();
         *(undefined4 *)(puVar1 + 0x1e) = uVar5;
         iVar3 = local_c[8];
         if (iVar3 == 0x14) {
           iVar3 = thunk_FUN_004e8030(*(int *)((int)this + 0x6f7));
           puVar1[0x22] = (char)iVar3;
+          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
           uVar2 = (**(code **)(*local_c + 0x7c))();
           puVar1[0x23] = uVar2;
         }
         else if ((iVar3 == 0x172) || (iVar3 == 0x1a4)) {
+          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
           uVar2 = (**(code **)(*local_c + 0xc))();
           puVar1[0x22] = uVar2;
+          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
           uVar2 = (**(code **)(*local_c + 0x7c))();
           puVar1[0x23] = uVar2;
         }
         else {
           puVar1[0x22] = 0;
+          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
           uVar2 = (**(code **)(*local_c + 0x7c))();
           puVar1[0x23] = uVar2;
         }
@@ -112,6 +120,7 @@ LAB_00486cfc:
   *(undefined4 *)(puVar1 + 0x2a) = 0;
   puVar1[0x2e] = 0;
   STFishC::sub_004162B0(this,&local_8,&local_6,(undefined2 *)((int)&param_1 + 2));
+  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
   puVar1[0x2e - param_1._2_2_] = 1;
   return;
 }

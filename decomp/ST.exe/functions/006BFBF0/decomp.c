@@ -22,7 +22,7 @@ void FUN_006bfbf0(AnonShape_006BFBF0_13F73F95 *param_1)
   undefined4 local_10;
   undefined4 local_c;
   undefined4 *local_8;
-  
+
   pAVar4 = param_1;
   puVar10 = local_34;
   for (iVar7 = 9; iVar7 != 0; iVar7 = iVar7 + -1) {
@@ -77,30 +77,37 @@ void FUN_006bfbf0(AnonShape_006BFBF0_13F73F95 *param_1)
     }
   }
   puVar1 = &param_1->field_0xc;
+  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
   iVar7 = (**(code **)(*DAT_008568b4 + 0xc))(DAT_008568b4,local_34,puVar1,0);
   if (-1 < iVar7) {
     if ((local_34[1] & 2) != 0) {
       *(uint *)&pAVar4->field_0x4 = *(uint *)&pAVar4->field_0x4 | 0x4000;
     }
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
     iVar7 = (**(code **)(**(int **)puVar1 + 0x2c))
                       (*(int **)puVar1,0,local_34[2],&local_8,&param_1,&local_10,&local_c,0);
     if (iVar7 == 0) {
-      FUN_006bfe70(local_8,(AnonShape_006BFE70_9EDC24A5 *)pAVar4,(uint *)param_1);
+      FUN_006bfe70(local_8,(AnonShape_006BFE70_9EDC24A5 *)pAVar4,param_1);
+      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
       iVar7 = (**(code **)(**(int **)puVar1 + 0x4c))
                         (*(int **)puVar1,local_8,param_1,local_10,local_c);
+      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
       if ((iVar7 == 0) &&
          (iVar7 = (**(code **)(**(int **)puVar1 + 0x3c))
                             (*(int **)puVar1,*(undefined4 *)&pAVar4->field_0x30), iVar7 == 0)) {
         piVar3 = *(int **)puVar1;
         if ((*(uint *)&pAVar4->field_0x4 & 0x1000) == 0) {
+          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
           iVar7 = (**(code **)(*piVar3 + 0x40))(piVar3,*(undefined4 *)&pAVar4->field_0x34);
         }
         else {
           puVar2 = &pAVar4->field_0x10;
+          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
           iVar7 = (**(code **)*piVar3)(piVar3,&DAT_0079eaa8,puVar2);
           if (iVar7 != 0) {
             return;
           }
+          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
           iVar7 = (**(code **)(**(int **)puVar2 + 0x4c))
                             (*(int **)puVar2,*(undefined4 *)&pAVar4->field_0x38,
                              *(undefined4 *)&pAVar4->field_0x3c,*(undefined4 *)&pAVar4->field_0x40,1
@@ -108,16 +115,19 @@ void FUN_006bfbf0(AnonShape_006BFBF0_13F73F95 *param_1)
           if (iVar7 != 0) {
             return;
           }
+          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
           iVar7 = (**(code **)(**(int **)puVar2 + 0x44))
                             (*(int **)puVar2,*(undefined4 *)&pAVar4->field_0x44,1);
           if (iVar7 != 0) {
             return;
           }
+          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
           iVar7 = (**(code **)(**(int **)puVar2 + 0x40))
                             (*(int **)puVar2,*(undefined4 *)&pAVar4->field_0x48,1);
           if (iVar7 != 0) {
             return;
           }
+          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
           iVar7 = (**(code **)(*DAT_008568bc + 0x44))(DAT_008568bc);
         }
         if (iVar7 == 0) {
@@ -127,6 +137,7 @@ void FUN_006bfbf0(AnonShape_006BFBF0_13F73F95 *param_1)
           if ((*(uint *)&pAVar4->field_0x4 & 1) != 0) {
             uVar5 = 1;
           }
+          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
           iVar7 = (**(code **)(**(int **)puVar1 + 0x30))(*(int **)puVar1,0,0,uVar5);
           if (iVar7 == 0) {
             *(uint *)pAVar4 = *(uint *)pAVar4 | 1;

@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* Recovered from embedded debug metadata:
@@ -17,8 +19,6 @@ STExplosionC::LoadImagSpr(STExplosionC *this,undefined4 param_1,undefined4 param
   AnonShape_004AB810_8E5693D5 *pAVar7;
   STT3DSprC *pSVar8;
   int iVar9;
-  undefined4 unaff_ESI;
-  void *unaff_EDI;
   bool bVar10;
   InternalExceptionFrame local_68;
   undefined4 local_24;
@@ -29,7 +29,7 @@ STExplosionC::LoadImagSpr(STExplosionC *this,undefined4 param_1,undefined4 param
   char *local_10;
   int local_c;
   char *local_8;
-  
+
   local_c = this->field_01E9;
   local_10 = (&PTR_s_expl_bm0_007ced98)[local_c];
   local_8 = (&PTR_s_expl_bt0_007ced70)[local_c];
@@ -37,7 +37,7 @@ STExplosionC::LoadImagSpr(STExplosionC *this,undefined4 param_1,undefined4 param
   local_68.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_68;
   local_18 = this;
-  iVar5 = Library::MSVCRT::__setjmp3(local_68.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar5 = Library::MSVCRT::__setjmp3(local_68.jumpBuffer,0);
   pSVar4 = local_18;
   if (iVar5 != 0) {
     g_currentExceptionFrame = local_68.previous;
@@ -47,9 +47,7 @@ STExplosionC::LoadImagSpr(STExplosionC *this,undefined4 param_1,undefined4 param
       RaiseInternalException(iVar5,0,s_E____titans_nick_to_Expl_cpp_007cf630,0x38e);
       return 0xffff;
     }
-    pcVar1 = (code *)swi(3);
-    uVar6 = (*pcVar1)();
-    return uVar6;
+    STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   if ((param_3 != '\0') && (local_18->field_02AF != (STT3DSprC *)0x0)) {
     local_8 = (&PTR_s_expl_bbt0_007cedc0)[local_c];

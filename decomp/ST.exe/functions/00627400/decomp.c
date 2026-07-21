@@ -7,7 +7,7 @@ undefined4 __thiscall FUN_00627400(void *this,undefined4 param_1)
   short sVar3;
   STFishC *this_00;
   int iVar4;
-  
+
   sVar1 = *(short *)((int)this + 0x47);
   sVar2 = *(short *)((int)this + 0x49);
   sVar3 = *(short *)((int)this + 0x4b);

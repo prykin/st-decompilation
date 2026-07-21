@@ -4,7 +4,7 @@ undefined4 __cdecl FUN_004e8230(int param_1,int param_2,int param_3)
 {
   int iVar1;
   int iVar2;
-  
+
   iVar1 = param_3 + param_2 * 2;
   if (*(int *)(&DAT_007e0224 + iVar1 * 4) == 0) {
     return *(undefined4 *)(&DAT_007dfd30 + iVar1 * 8);

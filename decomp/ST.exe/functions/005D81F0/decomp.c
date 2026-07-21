@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\sid_obj.cpp
@@ -11,20 +13,18 @@ void __thiscall SIDTy::NoneSID(SIDTy *this,void *param_1)
   DWORD DVar2;
   int iVar3;
   int iVar4;
-  undefined4 unaff_ESI;
-  void *unaff_EDI;
   int *piVar5;
   InternalExceptionFrame local_50;
   SIDTy *local_c;
   int local_8;
-  
+
   local_8 = 1;
   local_c = this;
   DVar2 = timeGetTime();
   this->field_0061 = DVar2;
   local_50.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_50;
-  iVar3 = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar3 = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0);
   this_00 = local_c;
   if (iVar3 != 0) {
     g_currentExceptionFrame = local_50.previous;
@@ -34,9 +34,7 @@ void __thiscall SIDTy::NoneSID(SIDTy *this,void *param_1)
       RaiseInternalException(iVar3,0,s_E____titans_Start_sid_obj_cpp_007cd5c4,0x98);
       return;
     }
-    pcVar1 = (code *)swi(3);
-    (*pcVar1)();
-    return;
+    STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   if (((local_c->field_0065 == '\x01') && (local_c->field_1CC4 != (HANDLE)0x0)) &&
      (DVar2 = WaitForSingleObject(local_c->field_1CC4,0), DVar2 == 0)) {

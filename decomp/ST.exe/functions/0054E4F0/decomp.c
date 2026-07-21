@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\tplaysys.cpp
@@ -13,15 +15,11 @@ undefined4 __thiscall STPlaySystemC::GetMessage(STPlaySystemC *this,int param_1)
   int *piVar4;
   int iVar5;
   undefined4 *puVar6;
-  char *text;
-  undefined4 extraout_EAX;
   DWORD DVar7;
   undefined4 uVar8;
   uint uVar9;
   uint uVar10;
   STPlaySystemC *pSVar11;
-  undefined4 unaff_ESI;
-  void *unaff_EDI;
   char *pcVar12;
   char *pcVar13;
   DWORD *pDVar14;
@@ -32,19 +30,20 @@ undefined4 __thiscall STPlaySystemC::GetMessage(STPlaySystemC *this,int param_1)
   undefined4 local_2c [8];
   STPlaySystemC *local_c;
   int local_8;
-  
+
   local_c = this;
   iVar5 = SystemClassTy::GetMessage((SystemClassTy *)this,param_1);
   if (iVar5 != 0xffff) {
     local_70.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_70;
-    iVar5 = Library::MSVCRT::__setjmp3(local_70.jumpBuffer,0,unaff_EDI,unaff_ESI);
+    iVar5 = Library::MSVCRT::__setjmp3(local_70.jumpBuffer,0);
     pSVar11 = local_c;
     if (iVar5 == 0) {
+      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
       if (*(int *)(param_1 + 0x10) == 8) {
         local_b4.previous = g_currentExceptionFrame;
         g_currentExceptionFrame = &local_b4;
-        iVar5 = Library::MSVCRT::__setjmp3(local_b4.jumpBuffer,0,unaff_EDI,unaff_ESI);
+        iVar5 = Library::MSVCRT::__setjmp3(local_b4.jumpBuffer,0);
         this_00 = g_cMf32_00806754;
         if (iVar5 == 0) {
           if (PTR_00802a58 != (cLoadingTy *)0x0) {
@@ -82,15 +81,15 @@ undefined4 __thiscall STPlaySystemC::GetMessage(STPlaySystemC *this,int param_1)
               iVar5 = local_8;
             }
             local_8 = iVar5;
-            LoadResourceString(19000,HINSTANCE_00807618);
-            cLoadingTy::SetProcess(PTR_00802a58,0,text,iVar5);
+            pcVar12 = LoadResourceString(19000,HINSTANCE_00807618);
+            cLoadingTy::SetProcess(PTR_00802a58,0,pcVar12,iVar5);
           }
           pSVar11 = local_c;
           DAT_00802a3c = 0;
           Library::Ourlib::MFAOBJ::mfAObjEnum
                     (g_cMf32_00806754,PTR_DAT_007c83b0,&LAB_00403535,local_c,0);
-          LoadResourceString(0x4a39,HINSTANCE_00807618);
-          wsprintfA((LPSTR)&DAT_0080f33a,s__d__s_007c2864,DAT_00802a3c,extraout_EAX);
+          pcVar12 = LoadResourceString(0x4a39,HINSTANCE_00807618);
+          wsprintfA((LPSTR)&DAT_0080f33a,s__d__s_007c2864,DAT_00802a3c,pcVar12);
           if (PTR_00802a58 != (cLoadingTy *)0x0) {
             cLoadingTy::SetState(PTR_00802a58,CASE_2,0,(char *)&DAT_0080f33a);
           }
@@ -134,6 +133,7 @@ undefined4 __thiscall STPlaySystemC::GetMessage(STPlaySystemC *this,int param_1)
         pSVar11->field_007F = DVar7;
         pSVar11->field_0083 = DVar7;
       }
+      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
       else if (*(int *)(param_1 + 0x10) == 0x44ff) {
         uVar10 = 0;
         DAT_00808788 = 0;
@@ -163,9 +163,7 @@ undefined4 __thiscall STPlaySystemC::GetMessage(STPlaySystemC *this,int param_1)
     iVar5 = ReportDebugMessage(s_E____titans_Andrey_tplaysys_cpp_007c8430,0x463,0,iVar5,
                                &DAT_007a4ccc,s_STPlaySystemC__GetMessage_error___007c8554);
     if (iVar5 != 0) {
-      pcVar3 = (code *)swi(3);
-      uVar8 = (*pcVar3)();
-      return uVar8;
+      STDebugBreak(); /* noreturn in standalone pseudocode */
     }
   }
   return 0xffff;

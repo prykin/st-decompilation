@@ -1,8 +1,11 @@
 
 /* [STPrototypeRepairApplier] Propagated parameter 0.
-   Evidence: 007535F0 -> 0072F110 @ 007536C3 | 007535F0 -> 0072F110 @ 00753784 */
+   Evidence: 007535F0 -> 0072F110 @ 007536C3 | 007535F0 -> 0072F110 @ 00753784
+   [STAbiConsistencyApplier] full_eax_return: return=/int Evidence: all observed callers consume
+   full EAX (1), none consume AL/AX, and every RET path defines full EAX; sites=00750940 @ 0075094E
+   -> NEG NEG EAX */
 
-bool FUN_007535f0(char *_Drive)
+int FUN_007535f0(char *_Drive)
 
 {
   char cVar1;
@@ -18,7 +21,7 @@ bool FUN_007535f0(char *_Drive)
   byte local_308 [256];
   byte local_208 [256];
   char local_108 [260];
-  
+
   pcVar7 = _Drive;
   Library::MSVCRT::FUN_0072e730((byte *)_Drive,(byte *)&_Drive,local_408,local_308,local_208);
   iVar2 = Library::MSVCRT::__strcmpi((char *)local_208,&DAT_007c7078);
@@ -87,7 +90,7 @@ bool FUN_007535f0(char *_Drive)
   }
   iVar2 = FUN_00754f40(local_108);
   if (iVar2 == 0) {
-    return false;
+    return 0;
   }
   iVar2 = Library::MSVCRT::__strcmpi((char *)local_208,&DAT_007c7078);
   if ((iVar2 == 0) ||
@@ -153,6 +156,6 @@ bool FUN_007535f0(char *_Drive)
     }
   }
   DVar3 = GetFileAttributesA(local_108);
-  return DVar3 != 0xffffffff;
+  return (uint)(DVar3 != 0xffffffff);
 }
 

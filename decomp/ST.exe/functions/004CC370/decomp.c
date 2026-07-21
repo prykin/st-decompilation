@@ -12,7 +12,7 @@ undefined4 __fastcall FUN_004cc370(AnonShape_004CC370_02CE3D17 *param_1)
   int iVar3;
   int iVar4;
   uint uVar5;
-  
+
   if ((*(int *)&param_1->field_0x444 == 0) || (*(int *)&param_1->field_0x448 == 0)) {
     return 0;
   }
@@ -29,6 +29,7 @@ undefined4 __fastcall FUN_004cc370(AnonShape_004CC370_02CE3D17 *param_1)
     }
     goto cf_common_exit_004CC6D2;
   }
+  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
   iVar2 = (**(code **)(*(int *)param_1 + 0x7c))();
   if ((3 < iVar2 / 0x14) && (*(int *)&param_1->field_0x43c == 1)) {
     thunk_FUN_004cc900((AnonShape_004CC900_31EE9CAA *)param_1);
@@ -100,6 +101,7 @@ cf_error_exit_004CC50A:
   STT3DSprC::StartShow((STT3DSprC *)param_1->field_0603,0xe,PTR_00802a38->field_00E4);
   thunk_FUN_004ad460((void *)param_1->field_0603,1);
   if ((*(int *)&param_1->field_0x43c == 3) || (*(int *)&param_1->field_0x43c == 4)) {
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
     (**(code **)(*(int *)param_1 + 0x90))(3,0x363);
   }
   if (*(int *)&param_1->field_0x43c == 2) {
@@ -107,6 +109,7 @@ cf_error_exit_004CC50A:
     if (*(int *)(&DAT_00795f18 + ((uVar1 & 0xff) + param_1->field_0235 * 3) * 4) != 0) {
       iVar2 = *(int *)param_1;
       uVar1 = GetPlayerRaceId(param_1->field_023D);
+      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
       (**(code **)(iVar2 + 0x90))
                 (3,*(undefined4 *)(&DAT_00795f18 + ((uVar1 & 0xff) + param_1->field_0235 * 3) * 4));
     }

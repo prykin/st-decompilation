@@ -8,7 +8,7 @@ void FUN_006b4030(AnonShape_006B4030_B7868C9A *param_1,uint param_2,int param_3)
   int local_10;
   int local_c;
   int local_8;
-  
+
   if (param_1->field_0220 != 0) {
     local_c = param_1->field_01EC;
     iVar2 = param_1->field_01E4;

@@ -9,11 +9,13 @@ undefined4 FUN_006c3720(WPARAM param_1)
   int iVar4;
   undefined1 local_c [4];
   LPARAM local_8;
-  
+
   WVar2 = param_1;
+  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   DVar3 = WaitForSingleObject(*(HANDLE *)(param_1 + 0x74),0xffffffff);
   while (DVar3 == 0) {
     EnterCriticalSection((LPCRITICAL_SECTION)(WVar2 + 0x508));
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
     iVar4 = (**(code **)(**(int **)(WVar2 + 0x58) + 0x20))
                       (*(int **)(WVar2 + 0x58),&param_1,&local_8,local_c,0);
     lParam = local_8;

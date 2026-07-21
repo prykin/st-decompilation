@@ -8,10 +8,11 @@ void FUN_006e4bb0(int *param_1)
   undefined1 local_24 [8];
   undefined4 local_1c;
   undefined4 local_14;
-  
+
   if (*param_1 == 1) {
     local_1c = 0xf;
     local_14 = 9;
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
     (**(code **)(*(int *)param_1[1] + 0x20))(local_24);
     SystemClassTy::GetToAllObjects((SystemClassTy *)param_1[1],local_24);
     *param_1 = 0;

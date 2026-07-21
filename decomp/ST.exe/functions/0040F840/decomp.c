@@ -18,7 +18,7 @@ int FUN_0040f840(byte *param_1,int param_2,int param_3,uint param_4)
   int local_10;
   int local_c;
   int local_8;
-  
+
   cVar10 = (char)param_2;
   if (param_4 == 0) {
     local_14 = 0;

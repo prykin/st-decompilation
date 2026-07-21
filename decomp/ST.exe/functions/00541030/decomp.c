@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* [STSourceProvenanceApplier begin]
    Recovered source file: E:\__titans\Andrey\support.cpp
@@ -10,14 +12,12 @@ void DelAllAccelerators(void)
   code *pcVar1;
   int iVar2;
   int iVar3;
-  undefined4 unaff_ESI;
-  void *unaff_EDI;
   undefined4 *puVar4;
   undefined4 **ppuVar5;
   undefined4 local_b4 [19];
   InternalExceptionFrame local_68;
   undefined4 *local_24 [8];
-  
+
   puVar4 = local_b4;
   for (iVar3 = 0x13; iVar3 != 0; iVar3 = iVar3 + -1) {
     *puVar4 = 0;
@@ -25,7 +25,7 @@ void DelAllAccelerators(void)
   }
   local_68.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_68;
-  iVar3 = Library::MSVCRT::__setjmp3(local_68.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar3 = Library::MSVCRT::__setjmp3(local_68.jumpBuffer,0);
   if (iVar3 == 0) {
     if (DAT_008026f0 != (DArrayTy *)0x0) {
       DAT_008026f0->iteratorIndex = 0;
@@ -53,9 +53,7 @@ void DelAllAccelerators(void)
   iVar2 = ReportDebugMessage(s_E____titans_Andrey_support_cpp_007c7b2c,0xfd,0,iVar3,&DAT_007a4ccc,
                              s_DelAllAccelerators_007c7bd0);
   if (iVar2 != 0) {
-    pcVar1 = (code *)swi(3);
-    (*pcVar1)();
-    return;
+    STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   RaiseInternalException(iVar3,0,s_E____titans_Andrey_support_cpp_007c7b2c,0xfd);
   return;

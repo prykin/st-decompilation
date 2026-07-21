@@ -3,13 +3,16 @@ undefined4 __fastcall FUN_004b9a40(int *param_1)
 
 {
   int iVar1;
+  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined4 extraout_ECX;
-  
+
   thunk_FUN_0041c5a0((AnonShape_0041C5A0_167218F4 *)param_1);
   iVar1 = param_1[0x16b];
   if ((((iVar1 != 0x4d) || (param_1[0x134] == 2)) && ((iVar1 != 0x4c || (param_1[0x134] == 2)))) &&
      ((iVar1 != 0x43 || (param_1[0x134] == 2)))) {
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
     iVar1 = (**(code **)(*param_1 + 0x2c))();
+    /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
     thunk_FUN_004b7710(CONCAT31((int3)((uint)extraout_ECX >> 8),(char)param_1[9]),iVar1);
   }
   iVar1 = param_1[0x16b];

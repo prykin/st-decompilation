@@ -20,9 +20,10 @@ void FUN_0075e980(int param_1,int param_2,int *param_3,int param_4,int param_5)
   int local_10;
   int local_c;
   int local_8;
-  
+
   piVar7 = param_3;
   iVar3 = param_1;
+  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   local_c = *(int *)(param_1 + 0x7c);
   local_20 = (int)param_3 * 2 + 0x1c >> 1;
   local_8 = 0x7fffffff;

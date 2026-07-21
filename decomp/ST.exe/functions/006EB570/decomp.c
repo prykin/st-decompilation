@@ -44,7 +44,7 @@ undefined4 FUN_006eb570(int *param_1,AnonShape_006EB570_80B255F3 *param_2)
   undefined1 *puStack_10;
   undefined *puStack_c;
   undefined4 local_8;
-  
+
   puStack_c = &DAT_0079e1d8;
   puStack_10 = &LAB_0072d964;
   local_14 = ExceptionList;
@@ -167,6 +167,7 @@ LAB_006eb87f:
           }
         }
         if (local_30 < local_6c) {
+          /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
           FUN_006cea60((undefined8 *)
                        (param_2->field_04EE * local_30 + param_2->field_04EA + local_34),
                        param_2->field_04EE,
@@ -176,6 +177,7 @@ LAB_006eb87f:
         }
         iVar1 = ((local_28 - local_64) - local_6c) + local_30;
         if (0 < iVar1) {
+          /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
           FUN_006cea60((undefined8 *)
                        ((local_64 + local_6c) * param_2->field_04EE + param_2->field_04EA + local_34
                        ),param_2->field_04EE,
@@ -184,6 +186,7 @@ LAB_006eb87f:
                        local_34),*(int *)(iVar8 + 0x478),local_2c,iVar1);
         }
         if (local_34 < local_70) {
+          /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
           FUN_006cea60((undefined8 *)
                        (param_2->field_04EE * local_6c + param_2->field_04EA + local_34),
                        param_2->field_04EE,
@@ -193,6 +196,7 @@ LAB_006eb87f:
         }
         uVar2 = ((local_2c - local_68) - local_70) + local_34;
         if (0 < (int)uVar2) {
+          /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
           FUN_006cea60((undefined8 *)
                        (param_2->field_04EE * local_6c + param_2->field_04EA + local_68 + local_70),
                        param_2->field_04EE,
@@ -214,6 +218,7 @@ LAB_006eb87f:
           while( true ) {
             puVar5 = (undefined8 *)(param_2->field_04EE * local_3c + param_2->field_04EA + local_24)
             ;
+            /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
             local_54 = (byte *)(*(int *)(iVar8 + 0x478) * local_3c + *(int *)(iVar8 + 0x474) +
                                local_24);
             local_8c = param_2->field_04E2 - local_50;

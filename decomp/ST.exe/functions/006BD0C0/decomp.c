@@ -12,7 +12,7 @@ undefined4 FUN_006bd0c0(int *param_1,int param_2,int param_3,int param_4,int par
   int iVar5;
   int iVar6;
   int iVar7;
-  
+
   iVar5 = param_2 - param_1[param_1[0x79] * 2 + 0x47];
   if (iVar5 < 0) {
     param_4 = param_4 + iVar5;

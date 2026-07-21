@@ -3,11 +3,16 @@
    Recovered source file: E:\__titans\ai\ai_script.cpp
    Diagnostic line evidence: 116 (metadata/report site, not the function definition)
    [STSourceProvenanceApplier end]
-   
-   [STPrototypeApplier] Propagated parameter 0.
-   Evidence: 006802A0 -> 006A5E40 @ 006802E7 | 006823E0 -> 006802A0 @ 006825E2 */
 
-void __cdecl FUN_006802a0(int exceptionCode,char *param_2)
+   [STPrototypeApplier] Propagated parameter 0.
+   Evidence: 006802A0 -> 006A5E40 @ 006802E7 | 006823E0 -> 006802A0 @ 006825E2
+
+   [STPrototypeApplier] Propagated parameter 1.
+   Evidence: 006826A0 -> 006802A0 @ 006826B9 | 006826A0 -> 006802A0 @ 006826D6 | 006826A0 ->
+   006802A0 @ 006826F4 | 00682720 -> 006802A0 @ 00682739 | 00682720 -> 006802A0 @ 00682756 |
+   00682720 -> 006802A0 @ 00682774 | 00683C70 -> 006802A0 @ 00684F1A */
+
+void __cdecl FUN_006802a0(int exceptionCode,char *resourceString)
 
 {
   char cVar1;
@@ -15,16 +20,16 @@ void __cdecl FUN_006802a0(int exceptionCode,char *param_2)
   uint uVar3;
   char *pcVar4;
   char *pcVar5;
-  
-  if (param_2 != (char *)0x0) {
+
+  if (resourceString != (char *)0x0) {
     uVar2 = 0xffffffff;
     do {
-      pcVar4 = param_2;
+      pcVar4 = resourceString;
       if (uVar2 == 0) break;
       uVar2 = uVar2 - 1;
-      pcVar4 = param_2 + 1;
-      cVar1 = *param_2;
-      param_2 = pcVar4;
+      pcVar4 = resourceString + 1;
+      cVar1 = *resourceString;
+      resourceString = pcVar4;
     } while (cVar1 != '\0');
     uVar2 = ~uVar2;
     pcVar4 = pcVar4 + -uVar2;

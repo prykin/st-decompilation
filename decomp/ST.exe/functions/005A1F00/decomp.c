@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\fsgs_obj.cpp
@@ -22,9 +24,7 @@ FSGSTy::AddMessage(FSGSTy *this,uint param_1,byte *param_2,char *param_3,uint pa
   uint uVar12;
   uint uVar13;
   byte *pbVar14;
-  undefined4 unaff_ESI;
   byte *pbVar15;
-  void *unaff_EDI;
   bool bVar16;
   InternalExceptionFrame local_5c;
   AnonShape_006B5570_4D68B99C *local_18;
@@ -32,7 +32,7 @@ FSGSTy::AddMessage(FSGSTy *this,uint param_1,byte *param_2,char *param_3,uint pa
   uint local_10;
   uint *local_c;
   char local_5;
-  
+
   local_c = (uint *)0x0;
   if ((param_3 == (char *)0x0) || (param_2 == (byte *)0x0)) {
     return;
@@ -40,7 +40,7 @@ FSGSTy::AddMessage(FSGSTy *this,uint param_1,byte *param_2,char *param_3,uint pa
   local_5c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_5c;
   local_14 = this;
-  iVar6 = Library::MSVCRT::__setjmp3(local_5c.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar6 = Library::MSVCRT::__setjmp3(local_5c.jumpBuffer,0);
   if (iVar6 != 0) {
     g_currentExceptionFrame = local_5c.previous;
     iVar11 = ReportDebugMessage(s_E____titans_Start_fsgs_obj_cpp_007cbf70,0x9ec,0,iVar6,
@@ -49,9 +49,7 @@ FSGSTy::AddMessage(FSGSTy *this,uint param_1,byte *param_2,char *param_3,uint pa
       RaiseInternalException(iVar6,0,s_E____titans_Start_fsgs_obj_cpp_007cbf70,0x9ec);
       return;
     }
-    pcVar4 = (code *)swi(3);
-    (*pcVar4)();
-    return;
+    STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   iVar6 = -1;
   pbVar14 = param_2;
@@ -146,6 +144,7 @@ LAB_005a1fc3:
         this_00->field_002D = 0x26;
         FUN_006e6080(this_00,2,this_00->field_1B14,(undefined4 *)&this_00->field_0x1d);
         local_10 = (uint)(ushort)this_00->field_0033;
+        /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
         if (*(int *)(this_00->field_1E9E + 8) + -0x19 <= (int)local_10) {
           local_5 = '\x01';
         }

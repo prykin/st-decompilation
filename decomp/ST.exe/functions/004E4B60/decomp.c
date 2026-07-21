@@ -5,7 +5,7 @@ undefined4 __fastcall FUN_004e4b60(AnonShape_004E4B60_EABE8E44 *param_1)
   uint uVar1;
   uint uVar2;
   int iVar3;
-  
+
   switch(param_1->field_0245) {
   case 0:
     if ((*(int *)&param_1[2].field_0x114 == 0x36) || (*(int *)&param_1[2].field_0x114 == 0x5d)) {

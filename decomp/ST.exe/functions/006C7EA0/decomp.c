@@ -6,7 +6,7 @@ void FUN_006c7ea0(undefined4 param_1,undefined4 param_2,undefined4 *param_3,uint
   undefined4 local_10;
   undefined4 local_c;
   uint local_8;
-  
+
   local_10 = param_1;
   local_8 = param_5 & 0xff;
   local_c = param_2;

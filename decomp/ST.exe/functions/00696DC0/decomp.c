@@ -10,7 +10,7 @@ void __thiscall FUN_00696dc0(void *this,int param_1,int param_2)
   AnonShape_00696D00_CB3CB395 *pAVar6;
   int iVar7;
   bool bVar8;
-  
+
   iVar3 = *(int *)((int)this + 0x5853);
   if (iVar3 == 0) {
     return;

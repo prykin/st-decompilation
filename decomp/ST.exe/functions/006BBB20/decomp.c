@@ -27,7 +27,7 @@ int FUN_006bbb20(AnonShape_006BBB20_56723FCF *param_1,int param_2)
   int local_10;
   int *local_c;
   int local_8;
-  
+
   local_8 = 0;
   local_10 = 0;
   local_14 = (int *)0x0;
@@ -37,10 +37,12 @@ int FUN_006bbb20(AnonShape_006BBB20_56723FCF *param_1,int param_2)
      (piVar1 = (int *)param_1->field_0040, piVar1 == (int *)0x0)) {
     return 0;
   }
+  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
   (**(code **)(*piVar1 + 0x38))(piVar1,local_28);
   piVar1 = (int *)param_1->field_0044;
   local_38[0] = 0;
   if (piVar1 != (int *)0x0) {
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
     (**(code **)(*piVar1 + 0x38))(piVar1,local_38);
   }
   if (param_2 == 0) {
@@ -70,35 +72,42 @@ LAB_006bbc85:
         local_68 = 0x60;
         local_60 = 8;
       }
+      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
       local_18 = (**(code **)(*param_1->field_0030 + 0x18))
                            (param_1->field_0030,local_b4,&local_14,0);
       if (local_18 != 0) goto LAB_006bbdfd;
+      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
       (**(code **)(*(int *)param_1->field_0040 + 0x38))((int *)param_1->field_0040,local_28);
     }
     if (local_10 != 0) {
       piVar1 = (int *)param_1->field_0044;
       if (piVar1 != (int *)0x0) {
+        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
         (**(code **)(*piVar1 + 8))(piVar1);
         param_1->field_0044 = 0;
       }
       param_1->field_0044 = local_c;
       if (param_1->field_0020 == 8) {
+        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
         (**(code **)(*local_c + 0x7c))(local_c,param_1->field_003C);
       }
     }
     if (local_8 != 0) {
       piVar1 = (int *)param_1->field_0040;
       if (piVar1 != (int *)0x0) {
+        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
         (**(code **)(*piVar1 + 8))(piVar1);
         param_1->field_0040 = 0;
       }
       param_1->field_0040 = local_14;
       if (param_1->field_0020 == 8) {
+        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
         (**(code **)(*local_14 + 0x7c))(local_14,param_1->field_003C);
       }
     }
     local_2ac = 0x17c;
     local_428[0] = 0x17c;
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
     (**(code **)(*param_1->field_0030 + 0x2c))(param_1->field_0030,&local_2ac,local_428);
     uVar2 = param_1->field_000C & 0xfffffffd;
     param_1->field_000C = uVar2;
@@ -139,17 +148,21 @@ LAB_006bbbce:
       local_e4 = 0x60;
       local_dc = 8;
     }
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
     local_18 = (**(code **)(*param_1->field_0030 + 0x18))(param_1->field_0030,local_130,&local_c,0);
     if (local_18 == 0) {
+      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
       (**(code **)(*(int *)param_1->field_0044 + 0x38))((int *)param_1->field_0044,local_38);
       goto LAB_006bbc85;
     }
 LAB_006bbdfd:
     if (local_c != (int *)0x0) {
+      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
       (**(code **)(*local_c + 8))(local_c);
       local_c = (int *)0x0;
     }
     if (local_14 != (int *)0x0) {
+      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
       (**(code **)(*local_14 + 8))(local_14);
     }
   }

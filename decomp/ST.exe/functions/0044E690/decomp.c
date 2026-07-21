@@ -3,7 +3,7 @@
    VTable: 007905A0 (store 0044E6B9)
    Evidence: final_vptr=007905A0; returns_this=true; calls_before=2; field_writes_after=40;
    table_confidence=high
-   
+
    [STPrototypeApplier] Propagated return.
    Evidence: 0044E690 returns STBoatC::STBoatC this @ 0044E8C3 */
 
@@ -13,7 +13,7 @@ STBoatC * __thiscall STBoatC::STBoatC(STBoatC *this)
   int iVar1;
   undefined4 *puVar2;
   STBoatC_field_06F3State *pSVar3;
-  
+
   STGameObjC::STGameObjC((STGameObjC *)this);
   thunk_FUN_004ab810((AnonShape_004AB810_8E5693D5 *)&this->field_01D5);
   this->field_01D5 = &VTable_00790700;

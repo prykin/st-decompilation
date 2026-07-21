@@ -9,7 +9,7 @@ void __fastcall FUN_005c5ca0(AnonShape_005C5CA0_A6776207 *param_1)
   bool bVar5;
   int iVar6;
   int *piVar7;
-  
+
   cVar2 = param_1->field_1E26;
   if ((((cVar2 == '\x02') || (cVar2 == '\x05')) || (cVar2 == '\x0f')) ||
      (((cVar2 == '\f' || (cVar2 == '\x10')) ||
@@ -29,6 +29,7 @@ void __fastcall FUN_005c5ca0(AnonShape_005C5CA0_A6776207 *param_1)
     if ((iVar3 != 0) && (DAT_0080877e != '\0')) {
       param_1->field_0031 = 1;
       param_1->field_0025 = iVar3;
+      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
       (**(code **)(**(int **)&param_1->field_0xc + 0x18))(&param_1->field_0x1d);
     }
     piVar7 = piVar7 + 1;
@@ -37,6 +38,7 @@ void __fastcall FUN_005c5ca0(AnonShape_005C5CA0_A6776207 *param_1)
   if ((param_1->field_215D != 0) && (DAT_0080877e != '\0')) {
     param_1->field_0031 = 1;
     param_1->field_0025 = param_1->field_215D;
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
     (**(code **)(**(int **)&param_1->field_0xc + 0x18))(&param_1->field_0x1d);
   }
   piVar7 = (int *)&param_1->field_0x2125;
@@ -46,6 +48,7 @@ void __fastcall FUN_005c5ca0(AnonShape_005C5CA0_A6776207 *param_1)
     if (((iVar3 != 0) && (DAT_0080877e != '\0')) && (!bVar5)) {
       param_1->field_0031 = 1;
       param_1->field_0025 = iVar3;
+      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
       (**(code **)(**(int **)&param_1->field_0xc + 0x18))(&param_1->field_0x1d);
     }
     piVar7 = piVar7 + 1;
@@ -55,12 +58,15 @@ void __fastcall FUN_005c5ca0(AnonShape_005C5CA0_A6776207 *param_1)
     param_1->field_0031 = 1;
     param_1->field_0025 = param_1->field_211D;
     puVar1 = &param_1->field_0x1d;
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
     (**(code **)(**(int **)&param_1->field_0xc + 0x18))(puVar1);
     param_1->field_002D = 0x22;
     *(undefined4 *)&param_1->field_0x1f88 = 0;
     param_1->field_0031 = 0;
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
     (**(code **)(**(int **)&param_1->field_0xc + 0x18))(puVar1);
     param_1->field_002D = 0x28;
+    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     uVar4 = *(uint *)(*(int *)&param_1->field_0x1f84 + 0xc);
     if (uVar4 < 0xb) {
       iVar6 = 1;
@@ -69,14 +75,17 @@ void __fastcall FUN_005c5ca0(AnonShape_005C5CA0_A6776207 *param_1)
       iVar6 = uVar4 - 9;
     }
     param_1->field_0031 = iVar6;
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
     (**(code **)(**(int **)&param_1->field_0xc + 0x18))(puVar1);
   }
   iVar6 = PTR_0081176c->field_0389;
   if (iVar6 != 0) {
     param_1->field_0031 = 1;
     param_1->field_0025 = iVar6;
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
     (**(code **)(**(int **)&param_1->field_0xc + 0x18))(&param_1->field_0x1d);
   }
+  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
   (**(code **)(*(int *)param_1 + 0x2c))();
   return;
 }

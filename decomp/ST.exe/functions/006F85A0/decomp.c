@@ -8,7 +8,7 @@ void FUN_006f85a0(undefined1 *param_1,int param_2,byte *param_3,int param_4,byte
   undefined1 *puVar3;
   uint uVar4;
   int iVar5;
-  
+
   if (-1 < param_7 + -1) {
     do {
       uVar2 = (uint)*param_5;

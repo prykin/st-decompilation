@@ -1,8 +1,10 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Artem\TLO_base.cpp
    TLOBaseTy::GetMessage
-   
+
    [STSwitchEnumApplier] Switch target field_05AC uses
    /SubmarineTitans/Recovered/Enums/TLOBaseTy_field_05ACState. Cases:
    CASE_32=50;CASE_33=51;CASE_34=52;CASE_36=54;CASE_37=55;CASE_38=56;CASE_39=57;CASE_3A=58;CASE_3B=59;CASE_3D=61;CASE_40=64;CASE_41=65;CASE_43=67;CASE_45=69;CASE_48=72;CASE_49=73;CASE_4C=76;CASE_4D=77;CASE_4E=78;CASE_4F=79;CASE_52=82;CASE_5B=91;CASE_5C=92;CASE_5D=93;CASE_5E=94;CASE_5F=95;CASE_60=96;CASE_61=97;CASE_63=99;CASE_64=100;CASE_68=104;CASE_69=105;CASE_6A=106;CASE_6C=108;CASE_6E=110;CASE_6F=111;CASE_70=112;CASE_72=114;CASE_73=115
@@ -40,15 +42,15 @@ int __thiscall TLOBaseTy::GetMessage(TLOBaseTy *this,AnonShape_004B9FA0_DF027633
   AnonShape_004B9FA0_0EE05DAC *pAVar26;
   STSprGameObjCVTable *pSVar27;
   int iVar28;
+  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined4 extraout_ECX;
   int *piVar29;
   uint uVar30;
+  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined2 extraout_var;
   STWorldObject *pSVar31;
-  undefined4 unaff_ESI;
   undefined4 *puVar32;
   byte *pbVar33;
-  void *unaff_EDI;
   undefined4 *puVar34;
   int *piVar35;
   byte *pbVar36;
@@ -102,20 +104,18 @@ int __thiscall TLOBaseTy::GetMessage(TLOBaseTy *this,AnonShape_004B9FA0_DF027633
   byte *local_10;
   AnonShape_004B9FA0_0EE05DAC *local_c;
   byte *local_8;
-  
+
   local_c4.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_c4;
   local_80 = (STSprGameObjC *)this;
-  iVar19 = Library::MSVCRT::__setjmp3(local_c4.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar19 = Library::MSVCRT::__setjmp3(local_c4.jumpBuffer,0);
   this_00 = local_80;
   if (iVar19 != 0) {
     g_currentExceptionFrame = local_c4.previous;
     iVar28 = ReportDebugMessage(s_E____titans_Artem_TLO_base_cpp_007ac820,0x6d9,0,iVar19,
                                 s_TLOBaseTy__GetMessage_error_mess_007ac848,param_1->field_0010);
     if (iVar28 != 0) {
-      pcVar12 = (code *)swi(3);
-      iVar19 = (*pcVar12)();
-      return iVar19;
+      STDebugBreak(); /* noreturn in standalone pseudocode */
     }
     RaiseInternalException(iVar19,0,s_E____titans_Artem_TLO_base_cpp_007ac820,0x6da);
     return iVar19;
@@ -174,6 +174,7 @@ int __thiscall TLOBaseTy::GetMessage(TLOBaseTy *this,AnonShape_004B9FA0_DF027633
         iVar19 = 0;
         do {
           piVar29 = (int *)(*(int *)&this_00->field_0x1f5 + iVar19);
+          /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
           auStack_588[iVar28] = *(undefined4 *)(*(int *)&this_00->field_0x1f5 + 0x1c + iVar19);
           aiStack_6dc[iVar28] = piVar29[8];
           if (*piVar29 != 0) {
@@ -515,6 +516,7 @@ int __thiscall TLOBaseTy::GetMessage(TLOBaseTy *this,AnonShape_004B9FA0_DF027633
               ((iVar19 != 0x4c || (*(int *)&this_00[1].field_0x1c1 == 2)))) &&
              ((iVar19 != 0x43 || (*(int *)&this_00[1].field_0x1c1 == 2)))) {
             iVar19 = (*this_00->vtable->vfunc_2C)();
+            /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
             thunk_FUN_004b76d0(CONCAT31((int3)((uint)iVar19 >> 8),this_00->field_0024),iVar19);
           }
           this_00->field_0259 = 0;
@@ -643,7 +645,9 @@ int __thiscall TLOBaseTy::GetMessage(TLOBaseTy *this,AnonShape_004B9FA0_DF027633
           }
           SetState((TLOBaseTy *)this_00,0,1);
           if (*(int *)&this_00->field_0x245 == 0) {
+            /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
             iVar19 = *(int *)(*(int *)&this_00->field_0x1f5 + 0x20c);
+            /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
             iVar28 = *(int *)(*(int *)&this_00->field_0x1f5 + 0x208);
             if (iVar28 < iVar19) {
               uVar20 = *(int *)&this_00->field_0x1c * 0x41c64e6d + 0x3039;
@@ -667,15 +671,18 @@ int __thiscall TLOBaseTy::GetMessage(TLOBaseTy *this,AnonShape_004B9FA0_DF027633
           if ((*(int *)&this_00->field_0x231 == 1) &&
              (local_14 = 0, DAT_008117bc != (undefined4 *)0x0)) {
             local_64 = *(undefined2 *)&this_00->field_0024;
+            /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
             local_68 = CONCAT22(*(undefined2 *)&this_00->field_0x32,local_64);
             local_6c = 0x5dd0;
             iVar19 = FUN_006e62d0(PTR_00802a38,*(int *)&this_00[1].field_0x2c4,&local_14);
             if ((iVar19 == 0) && (local_14 != 0)) {
+              /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
               local_62 = *(undefined2 *)(local_14 + 0x32);
             }
             else {
               local_62 = 0xffff;
             }
+            /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
             (**(code **)*DAT_008117bc)(local_7c);
           }
           uVar20 = GetPlayerRaceId(this_00->field_0x23d);
@@ -683,10 +690,12 @@ int __thiscall TLOBaseTy::GetMessage(TLOBaseTy *this,AnonShape_004B9FA0_DF027633
               *(int *)(&DAT_007e4178 + ((uVar20 & 0xff) + *(int *)&this_00->field_0x235 * 3) * 4)) {
             thunk_FUN_004cc840((int *)this_00);
           }
+          /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
           if (*(uint *)&this_00->field_0024 ==
               (uint)*(byte *)(*(int *)&this_00->field_0x10 + 0x112d)) {
             thunk_FUN_004d8b70((char)*(uint *)&this_00->field_0024);
           }
+          /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
           if (((*(int *)&this_00->field_0x231 == 1) &&
               (*(uint *)&this_00->field_0024 ==
                (uint)*(byte *)(*(int *)&this_00->field_0x10 + 0x112d))) &&
@@ -703,6 +712,7 @@ int __thiscall TLOBaseTy::GetMessage(TLOBaseTy *this,AnonShape_004B9FA0_DF027633
           if (((*(int *)&this_00->field_0x231 == 0) || (*(int *)&this_00->field_0x231 == 3)) &&
              (DAT_00811784 != (void *)0x0)) {
             uVar20 = GetPlayerRaceId(this_00->field_0024);
+            /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
             thunk_FUN_005f23d0(DAT_00811784,*(int *)&this_00[1].field_0x2a1,
                                *(int *)&this_00[1].field_0x2a5,*(int *)&this_00[1].field_0x2a9,
                                CONCAT31((int3)((uint)extraout_ECX >> 8),this_00->field_0x2c),
@@ -918,6 +928,7 @@ int __thiscall TLOBaseTy::GetMessage(TLOBaseTy *this,AnonShape_004B9FA0_DF027633
           STAllPlayersC::RestoreGObjData
                     ((STAllPlayersC *)this_00,
                      (undefined4 *)(&local_c->field_0x0 + local_c->field_03EA));
+          /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
           uVar24 = CONCAT22(extraout_var,*(undefined2 *)&this_00->field_0x32);
           thunk_FUN_00419cf0((int *)this_00,uVar24,uVar24);
           if (*(int *)&this_00->field_0x251 != 0) {
@@ -951,9 +962,7 @@ int __thiscall TLOBaseTy::GetMessage(TLOBaseTy *this,AnonShape_004B9FA0_DF027633
           iVar19 = ReportDebugMessage(s_E____titans_Artem_TLO_base_cpp_007ac820,0x3ac,0,0,
                                       &DAT_007a4ccc,s_I_don_t_now_what_I_suppose_to_do_007ac87c);
           if (iVar19 != 0) {
-            pcVar12 = (code *)swi(3);
-            iVar19 = (*pcVar12)();
-            return iVar19;
+            STDebugBreak(); /* noreturn in standalone pseudocode */
           }
         }
         thunk_FUN_0041f630((AnonShape_0041F630_B1BEE81C *)this_00);
@@ -979,6 +988,7 @@ int __thiscall TLOBaseTy::GetMessage(TLOBaseTy *this,AnonShape_004B9FA0_DF027633
         thunk_FUN_004cbf30((int)this_00);
       }
       thunk_FUN_004ad310((STT3DSprC *)&this_00->field_01D5);
+      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
       if (*(uint *)&this_00->field_0024 != (uint)*(byte *)(*(int *)&this_00->field_0x10 + 0x112d)) {
         g_currentExceptionFrame = local_c4.previous;
         return 0;
@@ -1296,10 +1306,12 @@ LAB_004bb5dd:
       return 0;
     }
     if ((DAT_008117bc != (undefined4 *)0x0) && (local_5c[0] != 0)) {
+      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
       local_68 = CONCAT22(*(undefined2 *)&this_00->field_0x32,*(undefined2 *)&this_00->field_0024);
       local_62 = local_50;
       local_6c = 0x5dd5;
       local_64 = (undefined2)local_54;
+      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
       (**(code **)*DAT_008117bc)(local_7c);
     }
     if (DAT_00811798 != (void *)0x0) {
@@ -1354,12 +1366,15 @@ LAB_004bb5dd:
           if ((local_54 != 0xfe) && (DAT_008117bc != (undefined4 *)0x0)) {
             local_62 = local_50;
             local_6c = 0x5dd1;
+            /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
             local_68 = CONCAT22(*(undefined2 *)&this_00->field_0x32,
                                 *(undefined2 *)&this_00->field_0024);
             local_64 = (short)local_54;
+            /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
             (**(code **)*DAT_008117bc)(local_7c);
           }
           local_68 = *(undefined4 *)&this_00->field_0x8;
+          /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
           local_74 = *(undefined4 *)(*(int *)&this_00->field_0xc + 0x14);
           local_70 = 0;
           local_6c = 10;
@@ -1368,10 +1383,12 @@ LAB_004bb5dd:
       }
       if (DAT_008117bc == (undefined4 *)0x0) {
         local_6c = 0x5dd5;
+        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
         local_68 = CONCAT22(*(undefined2 *)&this_00->field_0x32,*(undefined2 *)&this_00->field_0024)
         ;
         local_62 = 0xffff;
         local_64 = (short)local_54;
+        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
         (*(code *)*puRam00000000)(local_7c);
       }
       if (DAT_00811798 != (void *)0x0) {
@@ -1441,7 +1458,9 @@ LAB_004bb5dd:
         (7 < (byte)(&DAT_008087e9)[*(uint *)local_18 * 0x51])))) goto LAB_004bbcb2;
     bVar1 = *(byte *)local_18;
     bVar2 = this_00->field_0024;
+    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
     local_14 = CONCAT31(local_14._1_3_,bVar1);
+    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
     local_8 = (byte *)CONCAT31(local_8._1_3_,bVar2);
     if (DAT_00808a8f == '\0') {
       if (bVar1 == bVar2) {
@@ -1641,6 +1660,7 @@ LAB_004bc4c0:
           }
         }
       }
+      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
       if (*(uint *)&this_00->field_0024 == (uint)*(byte *)(*(int *)&this_00->field_0x10 + 0x112d)) {
         iVar19 = *(int *)&this_00[1].field_0x29d;
         if (iVar19 == 0x3e) {
@@ -1746,6 +1766,7 @@ LAB_004bc4c0:
           if (iVar19 != 0) {
             thunk_FUN_004e4e90(this_00,*(int *)(pcVar11 + 1),*(int *)(pcVar11 + 5));
           }
+          /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
           if (*(uint *)&this_00->field_0024 !=
               (uint)*(byte *)(*(int *)&this_00->field_0x10 + 0x112d)) {
             g_currentExceptionFrame = local_c4.previous;
@@ -1788,6 +1809,7 @@ LAB_004bc4c0:
             return 0;
           }
           thunk_FUN_004db0f0(*(int *)&this_00->field_0024);
+          /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
           if (*(uint *)&this_00->field_0024 !=
               (uint)*(byte *)(*(int *)&this_00->field_0x10 + 0x112d)) {
             g_currentExceptionFrame = local_c4.previous;
@@ -1797,6 +1819,7 @@ LAB_004bc4c0:
             g_currentExceptionFrame = local_c4.previous;
             return 0;
           }
+          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
           (**(code **)(*DAT_00801698 + 0x1c))(1);
           g_currentExceptionFrame = local_c4.previous;
           return 0;
@@ -1862,6 +1885,7 @@ LAB_004bc4c0:
           thunk_FUN_004dbe00(this_00,*(int **)(&this_00[1].field_0x1c1 +
                                               *(uint *)(pcVar11 + 0x1d) * 4));
         }
+        /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
         if (*(uint *)&this_00->field_0024 != (uint)*(byte *)(*(int *)&this_00->field_0x10 + 0x112d))
         {
           g_currentExceptionFrame = local_c4.previous;
@@ -1916,6 +1940,7 @@ LAB_004bc4c0:
       g_currentExceptionFrame = local_c4.previous;
       return 0;
     }
+    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     if ((*(uint *)&this_00->field_0024 == (uint)*(byte *)(*(int *)&this_00->field_0x10 + 0x112d)) &&
        ((iVar19 = *(int *)&this_00[1].field_0x29d, iVar19 == 0x35 ||
         ((0x53 < iVar19 && (iVar19 < 0x5b)))))) {
@@ -2039,6 +2064,7 @@ LAB_004bbfe9:
       iVar19 = *(int *)&this_00[1].field_0x2a9 + -2;
       if (-1 < iVar19) {
         sVar18 = *(short *)&this_00[1].field_0x2a1;
+        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
         local_14 = CONCAT22((short)(bVar1 - 8 >> 0x10),sVar18);
         sVar4 = *(short *)&this_00[1].field_0x2a5;
         do {

@@ -5,8 +5,6 @@ undefined4 __cdecl FUN_004b1690(int param_1,int param_2,int param_3,int param_4,
   bool bVar1;
   short sVar2;
   int iVar3;
-  undefined3 extraout_var;
-  undefined3 extraout_var_00;
   short sVar4;
   int iVar5;
   short sVar6;
@@ -15,7 +13,7 @@ undefined4 __cdecl FUN_004b1690(int param_1,int param_2,int param_3,int param_4,
   STFishC *local_10;
   int local_c;
   undefined4 local_8;
-  
+
   if ((((param_1 < 0) || ((int)g_worldGrid.sizeX < param_1 + 1)) || (param_2 < 0)) ||
      ((((int)g_worldGrid.sizeY < param_2 + 1 || (param_3 < 0)) ||
       ((int)g_worldGrid.sizeZ < param_3 + 1)))) {
@@ -79,6 +77,7 @@ cf_break_loop_004B1816:
         if (iVar5 < param_2 + 2) {
           param_4 = iVar5 * 0xc;
           do {
+            /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
             if (*(int *)(local_8 + param_4 + param_2 * -0xc + param_1 * -4 + iVar8 * 4 + 0x10) == 1)
             {
               sVar2 = sVar7 + -1;
@@ -115,10 +114,9 @@ LAB_004b199c:
         if (param_2 < param_2 + 3) {
           iVar5 = param_2;
           do {
-            bVar1 = thunk_FUN_004961b0((short)iVar8,(short)iVar5,sVar7 + 1);
-            if ((CONCAT31(extraout_var,bVar1) == 0) ||
-               (bVar1 = thunk_FUN_004961b0((short)iVar8,(short)iVar5,sVar7 + 2),
-               CONCAT31(extraout_var_00,bVar1) == 0)) {
+            iVar3 = thunk_FUN_004961b0((short)iVar8,(short)iVar5,sVar7 + 1);
+            if ((iVar3 == 0) ||
+               (iVar3 = thunk_FUN_004961b0((short)iVar8,(short)iVar5,sVar7 + 2), iVar3 == 0)) {
               local_c = 0;
               sVar2 = g_worldGrid.sizeX;
               goto LAB_004b1a39;
@@ -175,6 +173,7 @@ LAB_004b1a39:
           STFishC::sub_004162B0
                     (local_10,(undefined2 *)((int)&param_4 + 2),(undefined2 *)((int)&param_5 + 2),
                      (undefined2 *)((int)&local_8 + 2));
+          /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
           if (((param_4._2_2_ == param_1) && (param_5._2_2_ == param_2)) &&
              (local_8._2_2_ == param_3)) {
             bVar1 = false;

@@ -7,7 +7,7 @@ void FUN_006a0c90(uint param_1,int param_2,int param_3,uint param_4,int param_5,
   uint uVar2;
   ushort local_10 [4];
   int local_8;
-  
+
   if ((((-1 < param_3) && (param_3 < 6)) && (-1 < (int)param_4)) && ((int)param_4 < 5)) {
     local_10[0] = 0;
     local_10[1] = 0;

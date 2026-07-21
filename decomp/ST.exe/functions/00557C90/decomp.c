@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\grig\visible.cpp
@@ -17,10 +19,8 @@ void __thiscall VisibleClassTy::Init(VisibleClassTy *this)
   undefined1 *puVar8;
   DArrayTy *pDVar9;
   undefined4 *puVar10;
-  undefined4 unaff_ESI;
   int iVar11;
   uint uVar12;
-  void *unaff_EDI;
   bool bVar13;
   byte bVar14;
   byte bVar15;
@@ -29,13 +29,13 @@ void __thiscall VisibleClassTy::Init(VisibleClassTy *this)
   VisibleClassTy *local_10;
   int local_c;
   short *local_8;
-  
+
   iVar11 = 0;
   local_8 = (short *)0x0;
   local_54.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_54;
   local_10 = this;
-  iVar4 = Library::MSVCRT::__setjmp3(local_54.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar4 = Library::MSVCRT::__setjmp3(local_54.jumpBuffer,0);
   this_00 = local_10;
   if (iVar4 != 0) {
     g_currentExceptionFrame = local_54.previous;
@@ -46,9 +46,7 @@ void __thiscall VisibleClassTy::Init(VisibleClassTy *this)
       RaiseInternalException(iVar4,0,s_E____titans_grig_visible_cpp_007c92cc,0xac);
       return;
     }
-    pcVar2 = (code *)swi(3);
-    (*pcVar2)();
-    return;
+    STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   DAT_00802a50 = -(uint)(local_10->field_0114 != 0) & 0x403765;
   if (local_10->field_0114 != 0) {
@@ -61,6 +59,7 @@ void __thiscall VisibleClassTy::Init(VisibleClassTy *this)
       local_8 = Library::Ourlib::MFIMG::mfQmtLoad(PTR_00806770,pCVar5,bVar14,bVar15,psVar16);
       (&DAT_007c9290)[iVar11] = (int)*(short *)((int)local_8 + 9);
       puVar7 = puVar10 + -0x30;
+      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
       (&DAT_007c929c)[iVar11] = (int)*(short *)((int)local_8 + 0xb);
       puVar6 = (undefined4 *)((int)local_8 + 0x11);
       local_c = 0x10;
@@ -99,6 +98,7 @@ void __thiscall VisibleClassTy::Init(VisibleClassTy *this)
       bVar13 = pDVar9->count != 0;
       do {
         if (bVar13) {
+          /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(pDVar9, uVar12) (runtime stride) */
           puVar8 = (undefined1 *)(pDVar9->elementSize * uVar12 + (int)pDVar9->data);
         }
         else {

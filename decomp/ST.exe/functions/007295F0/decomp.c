@@ -20,7 +20,7 @@ int __fastcall FUN_007295f0(AnonShape_007295F0_722683CC *param_1)
   undefined1 *puStack_10;
   undefined *puStack_c;
   undefined4 local_8;
-  
+
   puStack_c = &DAT_0079e320;
   puStack_10 = &LAB_0072d964;
   local_14 = ExceptionList;
@@ -39,6 +39,7 @@ int __fastcall FUN_007295f0(AnonShape_007295F0_722683CC *param_1)
     if ((((*(uint *)(pbVar6 + 4) & 0x8000) != 0) && ((*pbVar6 & 2) != 0)) &&
        (puVar9 = (uint *)(*(int *)(pbVar6 + 0x60) * 0x10 + local_20[0x3c]), (*puVar9 & 2) == 0)) {
       if (local_2c == 0) {
+        /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
         iVar8 = FUN_006bbe40(*(int **)(param_1->field_0004 + 0x40),&local_2c,&local_24,0);
         local_28 = iVar8;
         if (iVar8 != 0) break;
@@ -76,7 +77,9 @@ int __fastcall FUN_007295f0(AnonShape_007295F0_722683CC *param_1)
   }
   local_8 = 0xffffffff;
   if (local_2c != 0) {
+    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     piVar4 = *(int **)(param_1->field_0004 + 0x40);
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
     (**(code **)(*piVar4 + 0x80))(piVar4,0);
   }
   ExceptionList = local_14;

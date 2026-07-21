@@ -6,7 +6,7 @@ undefined4 __thiscall FUN_0075019f(void *this,AnonShape_0075019F_4BD22E12 *param
   int *this_00;
   undefined4 local_c;
   int *local_8;
-  
+
   EnterCriticalSection((LPCRITICAL_SECTION)((int)this + 8));
   local_c = 0;
   this_00 = (int *)((int)this + 0x38);
@@ -23,6 +23,7 @@ undefined4 __thiscall FUN_0075019f(void *this,AnonShape_0075019F_4BD22E12 *param
   }
   else {
     FUN_0074df2b(this_00,local_8);
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
     (**(code **)(param_1->field_000C + 8))(&param_1->field_000C);
     FUN_00750287(this);
   }

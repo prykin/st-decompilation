@@ -6,7 +6,7 @@ undefined4 FUN_006b98c0(int *param_1,int *param_2)
   undefined4 uVar2;
   int *piVar3;
   int *piVar4;
-  
+
   uVar2 = 0;
   piVar4 = (int *)*param_1;
   if (piVar4 != (int *)0x0) {

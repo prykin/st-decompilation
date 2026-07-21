@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\cpanel.cpp
@@ -11,12 +13,10 @@ undefined4 __thiscall CPanelTy::ShiftControls(CPanelTy *this,int param_1)
   int iVar2;
   int iVar3;
   undefined4 uVar4;
-  undefined4 unaff_ESI;
-  void *unaff_EDI;
   int *piVar5;
   InternalExceptionFrame local_4c;
   CPanelTy *local_8;
-  
+
   if (param_1 == this->field_0130) {
     return 0;
   }
@@ -24,7 +24,7 @@ undefined4 __thiscall CPanelTy::ShiftControls(CPanelTy *this,int param_1)
   local_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_4c;
   local_8 = this;
-  iVar2 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar2 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
   this_00 = local_8;
   if (iVar2 == 0) {
     ShiftControls(local_8,1,param_1);
@@ -54,9 +54,7 @@ undefined4 __thiscall CPanelTy::ShiftControls(CPanelTy *this,int param_1)
   iVar3 = ReportDebugMessage(s_E____titans_Andrey_cpanel_cpp_007c1bd8,0x42b,0,iVar2,&DAT_007a4ccc,
                              s_CPanelTy__ShiftControls_007c22a0);
   if (iVar3 != 0) {
-    pcVar1 = (code *)swi(3);
-    uVar4 = (*pcVar1)();
-    return uVar4;
+    STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   RaiseInternalException(iVar2,0,s_E____titans_Andrey_cpanel_cpp_007c1bd8,0x42b);
   return 1;

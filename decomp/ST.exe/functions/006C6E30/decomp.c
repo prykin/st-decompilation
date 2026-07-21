@@ -11,9 +11,10 @@ int FUN_006c6e30(AnonShape_006C6E30_3C2F0429 *param_1)
   short local_c;
   short local_a;
   byte local_8;
-  
+
   value = &param_1->field_0x2a;
   FreeAndNull((void **)value);
+  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
   iVar2 = (*(code *)param_1->field_0042)(param_1,&local_10,9);
   if (iVar2 == 9) {
     param_1->field_001A = (int)local_10;
@@ -31,6 +32,7 @@ int FUN_006c6e30(AnonShape_006C6E30_3C2F0429 *param_1)
       if (iVar2 == 0) {
         return -2;
       }
+      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
       pAVar3 = (AnonShape_006C6E30_3C2F0429 *)(*(code *)param_1->field_0042)(param_1,iVar2,pAVar1);
       if (pAVar3 != pAVar1) {
         FreeAndNull((void **)value);

@@ -1,9 +1,11 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* [STSourceProvenanceApplier begin]
    Recovered source file: E:\__titans\Andrey\tplaysys.cpp
    Diagnostic line evidence: 296 | 297 (metadata/report site, not the function definition)
    [STSourceProvenanceApplier end]
-   
+
    [STPrototypeApplier] Propagated parameter 4.
    Evidence: 0054CA10 -> 0054CDD0 @ 0054CAB2 */
 
@@ -14,18 +16,16 @@ int FUN_0054cdd0(undefined4 *param_1,int param_2,undefined4 *param_3,int *param_
   code *pcVar1;
   int iVar2;
   int iVar3;
-  undefined4 unaff_ESI;
-  void *unaff_EDI;
   InternalExceptionFrame local_58;
   void *local_14;
   int local_10;
   int local_c;
   int local_8;
-  
+
   local_10 = -4;
   local_58.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_58;
-  iVar2 = Library::MSVCRT::__setjmp3(local_58.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar2 = Library::MSVCRT::__setjmp3(local_58.jumpBuffer,0);
   if (iVar2 == 0) {
     iVar2 = thunk_FUN_0054cbb0(param_2,&local_8);
     if (iVar2 == 0) {
@@ -49,8 +49,6 @@ int FUN_0054cdd0(undefined4 *param_1,int param_2,undefined4 *param_3,int *param_
     RaiseInternalException(iVar2,0,s_E____titans_Andrey_tplaysys_cpp_007c8430,0x129);
     return local_10;
   }
-  pcVar1 = (code *)swi(3);
-  iVar2 = (*pcVar1)();
-  return iVar2;
+  STDebugBreak(); /* noreturn in standalone pseudocode */
 }
 

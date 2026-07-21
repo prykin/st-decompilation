@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\To_boat.cpp
@@ -34,7 +36,7 @@ int __thiscall STBoatC::BackWaitLoad(STBoatC *this,int *param_1)
   int local_10;
   int local_c;
   undefined4 *local_8;
-  
+
   iVar4 = this->field_05C0;
   if (iVar4 == 0) {
 LAB_00475545:
@@ -68,7 +70,7 @@ LAB_00475545:
         local_8 = (undefined4 *)&this->field_0x2b3;
         do {
           puVar6 = (undefined4 *)
-                   thunk_FUN_0041dc40(local_2c,*local_8,*(undefined2 *)(local_8 + 1),
+                   thunk_FUN_0041dc40(local_2c,(short)*local_8,*(undefined2 *)(local_8 + 1),
                                       this->field_006C);
           uVar2 = *puVar6;
           bVar19 = 0;
@@ -93,13 +95,17 @@ LAB_00475545:
             bVar19 = 0;
             lVar10 = Library::MSVCRT::__ftol();
             iVar7 = (int)local_20 + this->field_0045 + local_c + (int)(short)lVar10;
+            /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
             iVar8 = (int)this->field_0043 - (int)local_24._2_2_;
             iVar9 = (int)(short)local_24 + iVar4 + this->field_0041;
           }
           else {
             iVar7 = (int)local_20 + local_c + this->field_0045;
+            /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
             local_24._2_2_ = (short)((uint)uVar2 >> 0x10);
+            /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
             iVar8 = (int)this->field_0043 - (int)local_24._2_2_;
+            /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
             local_24._0_2_ = (short)uVar2;
             iVar9 = (int)(short)local_24 + iVar4 + this->field_0041;
           }
@@ -114,9 +120,7 @@ LAB_00475545:
         iVar4 = ReportDebugMessage(s_E____titans_wlad_To_boat_cpp_007a9d3c,0x303e,0,0,&DAT_007a4ccc,
                                    s_STBoatC__BackWaitLoad_swli_regim_007ab030);
         if (iVar4 != 0) {
-          pcVar3 = (code *)swi(3);
-          iVar4 = (*pcVar3)();
-          return iVar4;
+          STDebugBreak(); /* noreturn in standalone pseudocode */
         }
         return -1;
       }
@@ -134,9 +138,7 @@ LAB_00475545:
   iVar4 = ReportDebugMessage(s_E____titans_wlad_To_boat_cpp_007a9d3c,0x3052,0,0,&DAT_007a4ccc,
                              s_STBoatC__BackWaitLoad_swli_regim_007aaff0);
   if (iVar4 != 0) {
-    pcVar3 = (code *)swi(3);
-    iVar4 = (*pcVar3)();
-    return iVar4;
+    STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   return -1;
 }

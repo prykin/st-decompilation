@@ -13,8 +13,9 @@ FUN_0069bc10(void *this,int param_1,int *param_2,int param_3,int param_4,int *pa
   int local_10;
   int local_c;
   int *local_8;
-  
+
   local_10 = 0;
+  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   iVar2 = *(int *)(param_3 * 0x40 + -0x14 + param_1);
   local_c = 0xffff;
   iVar3 = 0xffff;

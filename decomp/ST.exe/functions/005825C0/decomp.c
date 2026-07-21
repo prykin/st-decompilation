@@ -1,9 +1,11 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* Recovered from embedded debug metadata:
    E:\__titans\Igor\to_jelly.cpp
    STJellyGunC::LifeGun
-   
+
    [STSwitchEnumApplier] Switch target field_0235 uses
    /SubmarineTitans/Recovered/Enums/STJellyGunC_field_0235State. Cases:
    CASE_1=1;CASE_2=2;CASE_3=3;CASE_4=4 */
@@ -19,24 +21,28 @@ void __thiscall STJellyGunC::LifeGun(STJellyGunC *this,int *param_1)
   short sVar6;
   STWorldObject *pSVar7;
   code *pcVar8;
-  bool bVar9;
+  uint uVar9;
   int iVar10;
   uint uVar11;
-  undefined3 extraout_var;
   int iVar12;
-  undefined2 extraout_var_00;
+  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+  undefined2 extraout_var;
   STGameObjC *pSVar13;
   STJellyGunC_field_0235State SVar14;
-  uint uVar15;
-  undefined2 extraout_var_01;
+  int iVar15;
+  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+  undefined2 extraout_var_00;
+  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   int extraout_ECX;
-  undefined4 extraout_ECX_00;
+  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+  undefined2 extraout_var_01;
+  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined2 extraout_var_02;
+  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined2 extraout_var_03;
-  uint extraout_EDX;
-  undefined2 extraout_var_04;
   int *piVar16;
   AnonShape_0041AF40_F59F8577 *pAVar17;
+  bool bVar18;
   AnonShape_0041AF40_F59F8577 local_4c;
   int local_2c;
   int local_28;
@@ -48,15 +54,15 @@ void __thiscall STJellyGunC::LifeGun(STJellyGunC *this,int *param_1)
   undefined4 local_10;
   undefined4 local_c;
   char local_5;
-  
+
   iVar10 = thunk_FUN_0041c710((int)this);
   puVar1 = &this->field_01D5;
   if (iVar10 == 0) {
     iVar10 = 0;
     uVar11 = thunk_FUN_004ad650((int)puVar1);
     FUN_006eabf0((void *)this->field_0211,uVar11,iVar10);
-    bVar9 = thunk_FUN_0041caf0((AnonShape_0041CAF0_1630B9E0 *)this);
-    if (CONCAT31(extraout_var,bVar9) == 1) {
+    iVar10 = thunk_FUN_0041caf0((AnonShape_0041CAF0_1630B9E0 *)this);
+    if (iVar10 == 1) {
       iVar10 = 1;
     }
     else {
@@ -71,9 +77,12 @@ void __thiscall STJellyGunC::LifeGun(STJellyGunC *this,int *param_1)
   }
   iVar12 = thunk_FUN_004ad650((int)puVar1);
   FUN_006e6870((void *)this->field_0211,iVar12,iVar10);
-  local_14 = CONCAT22(extraout_var_00,this->field_0041);
-  local_10 = CONCAT22(extraout_var_01,this->field_0043);
-  local_c = CONCAT22(extraout_var_02,this->field_0045);
+  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+  local_14 = CONCAT22(extraout_var,this->field_0041);
+  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+  local_10 = CONCAT22(extraout_var_00,this->field_0043);
+  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+  local_c = CONCAT22(extraout_var_01,this->field_0045);
   switch(this->field_0235) {
   case CASE_1:
     local_1c = (uint)this->field_004B;
@@ -81,16 +90,17 @@ void __thiscall STJellyGunC::LifeGun(STJellyGunC *this,int *param_1)
     sVar4 = this->field_0047;
     local_2c = (*this->vtable->vfunc_24)();
     iVar10 = (int)this->field_0047;
+    /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
     if ((((((sVar4 == iVar10) && (local_28 == this->field_0049)) &&
-          (uVar11 = (uint)this->field_004B, local_1c == uVar11)) ||
-         (((uVar11 = (uint)this->field_0049, iVar10 < 0 || ((int)uVar11 < 0)) ||
-          ((iVar12 = (int)g_worldGrid.sizeX, iVar12 <= iVar10 ||
-           (((int)g_worldGrid.sizeY <= (int)uVar11 ||
-            (*(char *)(iVar12 * uVar11 + DAT_007fb26c + iVar10) == '\0')))))))) ||
+          (local_1c == (int)this->field_004B)) ||
+         (((iVar12 = (int)this->field_0049, iVar10 < 0 || (iVar12 < 0)) ||
+          ((iVar15 = (int)g_worldGrid.sizeX, iVar15 <= iVar10 ||
+           ((g_worldGrid.sizeY <= iVar12 ||
+            (*(char *)(iVar15 * iVar12 + DAT_007fb26c + iVar10) == '\0')))))))) ||
         (((&DAT_007fb24c)[*(int *)&this->field_0x24] != 0 &&
-         (*(char *)(iVar12 * uVar11 + (&DAT_007fb24c)[*(int *)&this->field_0x24] + iVar10) != '\0'))
-        )) || (uVar15 = thunk_FUN_00497030(iVar10,uVar11,*(int *)&this->field_0x24,1,DAT_007e6760),
-              iVar10 = extraout_ECX, uVar11 = extraout_EDX, (int)uVar15 < 0)) {
+         (*(char *)(iVar15 * iVar12 + (&DAT_007fb24c)[*(int *)&this->field_0x24] + iVar10) != '\0'))
+        )) || (uVar11 = thunk_FUN_00497030(iVar10,iVar12,*(int *)&this->field_0x24,1,DAT_007e6760),
+              iVar10 = extraout_ECX, (int)uVar11 < 0)) {
       if (local_2c == 0) {
 LAB_005829e6:
         if ((*(byte *)&PTR_00802a38->field_00E4 & 0x3f) == 0) goto LAB_005829f4;
@@ -103,16 +113,14 @@ LAB_005829e6:
             if (iVar10 == 0) {
               return;
             }
-            pcVar8 = (code *)swi(3);
-            (*pcVar8)();
-            return;
+            STDebugBreak(); /* noreturn in standalone pseudocode */
           }
           goto LAB_005829e6;
         }
+        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
         if ((this->field_023D != 0) &&
            ((pSVar13 = STAllPlayersC::GetObjPtr
-                                 (g_sTAllPlayers_007FA174,
-                                  CONCAT31((int3)(uVar11 >> 8),this->field_0x241),
+                                 (g_sTAllPlayers_007FA174,this->field_0x241,
                                   CONCAT22((short)((uint)iVar10 >> 0x10),this->field_0245),CASE_1),
             pSVar13 == (STGameObjC *)0x0 || (iVar10 = (*pSVar13->vtable[1].vfunc_24)(), iVar10 == 0)
             ))) {
@@ -140,7 +148,9 @@ LAB_005829f4:
         iVar10 = this->field_0010;
         bVar2 = *(byte *)&pSVar7[1].vtable;
         bVar3 = this->field_0x24;
+        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
         local_1c = CONCAT31(local_1c._1_3_,bVar2);
+        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
         local_28 = CONCAT31(local_28._1_3_,bVar3);
         if (*(char *)(iVar10 + 0x146f) == '\0') {
           if (bVar2 == bVar3) {
@@ -149,33 +159,34 @@ LAB_00582bb0:
           }
           else {
             uVar11 = (uint)bVar2;
-            uVar15 = (uint)bVar3;
-            local_5 = *(char *)(uVar15 + uVar11 * 8 + 0x142f + iVar10);
-            if ((local_5 == '\0') && (*(char *)(uVar11 + uVar15 * 8 + 0x142f + iVar10) == '\0')) {
+            uVar9 = (uint)bVar3;
+            local_5 = *(char *)(uVar9 + uVar11 * 8 + 0x142f + iVar10);
+            if ((local_5 == '\0') && (*(char *)(uVar11 + uVar9 * 8 + 0x142f + iVar10) == '\0')) {
               iVar10 = -2;
             }
             else if ((local_5 == '\x01') &&
-                    (*(char *)(uVar11 + uVar15 * 8 + 0x142f + iVar10) == '\0')) {
+                    (*(char *)(uVar11 + uVar9 * 8 + 0x142f + iVar10) == '\0')) {
               iVar10 = -1;
             }
             else if ((local_5 == '\0') &&
-                    (*(char *)(uVar11 + uVar15 * 8 + 0x142f + iVar10) == '\x01')) {
+                    (*(char *)(uVar11 + uVar9 * 8 + 0x142f + iVar10) == '\x01')) {
               iVar10 = 1;
             }
             else {
-              if ((local_5 != '\x01') ||
-                 (*(char *)(uVar11 + uVar15 * 8 + 0x142f + iVar10) != '\x01')) goto LAB_00582bb0;
+              if ((local_5 != '\x01') || (*(char *)(uVar11 + uVar9 * 8 + 0x142f + iVar10) != '\x01')
+                 ) goto LAB_00582bb0;
               iVar10 = 2;
             }
           }
-          bVar9 = iVar10 < 0;
+          bVar18 = iVar10 < 0;
         }
         else {
           local_2c = iVar10 + (uint)bVar3 * 0x48;
-          bVar9 = *(char *)((uint)bVar3 * 9 + 0x11ca + local_2c) !=
-                  *(char *)((uint)bVar2 * 0x51 + 0x11ca + iVar10);
+          /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
+          bVar18 = *(char *)((uint)bVar3 * 9 + 0x11ca + local_2c) !=
+                   *(char *)((uint)bVar2 * 0x51 + 0x11ca + iVar10);
         }
-        if ((bVar9) && (iVar10 = (*pSVar7->vtable[5].slots_00_28[2])(), iVar10 != 0)) {
+        if ((bVar18) && (iVar10 = (*pSVar7->vtable[5].slots_00_28[2])(), iVar10 != 0)) {
           iVar10 = (*pSVar7->vtable[4].slots_00_28[7])
                              (this->field_0041,this->field_0043,this->field_0045,local_14,local_10,
                               local_c);
@@ -223,8 +234,7 @@ LAB_00582958:
     local_1c = uVar11;
     if (((uVar11 == 1) && (*(int *)&this->field_0x241 != 0xff)) &&
        (pSVar13 = STAllPlayersC::GetObjPtr
-                            (g_sTAllPlayers_007FA174,
-                             CONCAT31((int3)((uint)extraout_ECX_00 >> 8),this->field_0x241),
+                            (g_sTAllPlayers_007FA174,this->field_0x241,
                              (uint)(ushort)this->field_0245,CASE_1), pSVar13 != (STGameObjC *)0x0))
     {
       piVar16 = &DAT_008116c8;
@@ -242,7 +252,9 @@ LAB_00582958:
         *(undefined4 *)pAVar17 = 0;
         pAVar17 = (AnonShape_0041AF40_F59F8577 *)&pAVar17->field_0x4;
       }
+      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
       local_4c._8_4_ = *(undefined4 *)&pSVar13->field_0x8;
+      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
       local_4c._12_4_ = 2;
       local_4c.field_0010 = 0x110;
       local_4c.field_0014 = &DAT_008116c8;
@@ -273,12 +285,12 @@ LAB_00582958:
     }
     iVar10 = thunk_FUN_004acd30(puVar1,'\b');
     if ((uVar11 != iVar10 - 1U) || (this->field_024F != '\0')) {
+      /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
       if (((int)uVar11 < 10) &&
          ((0 < (int)this->field_0252 &&
           (pSVar13 = STAllPlayersC::GetObjPtr
-                               (g_sTAllPlayers_007FA174,
-                                CONCAT31((int3)((uint)this->field_0252 >> 8),this->field_0x241),
-                                CONCAT22(extraout_var_04,this->field_0245),CASE_1),
+                               (g_sTAllPlayers_007FA174,this->field_0x241,
+                                CONCAT22(extraout_var_03,this->field_0245),CASE_1),
           pSVar13 != (STGameObjC *)0x0)))) {
         (*pSVar13->vtable[1].vfunc_0C)(this->field_0252,&local_14,&local_10,&local_c,&local_18);
         thunk_FUN_00416240(this,(short)local_14,(short)local_10,(short)local_c);
@@ -293,10 +305,11 @@ LAB_00582958:
     iVar10 = sub_00415ED0(this,&local_24,&local_20);
     if (iVar10 == -1) goto switchD_00582651_default;
     if ((-1 < iVar10) && (iVar10 < 2)) {
-      if ((*(uint *)&this->field_0x241 == 0xff) ||
+      /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+      if ((*(int *)&this->field_0x241 == 0xff) ||
          ((pSVar13 = STAllPlayersC::GetObjPtr
-                               (g_sTAllPlayers_007FA174,*(uint *)&this->field_0x241,
-                                CONCAT22(extraout_var_03,this->field_0245),CASE_1),
+                               (g_sTAllPlayers_007FA174,(char)*(int *)&this->field_0x241,
+                                CONCAT22(extraout_var_02,this->field_0245),CASE_1),
           pSVar13 == (STGameObjC *)0x0 || (iVar12 = (*pSVar13->vtable[1].vfunc_24)(), iVar12 == 0)))
          ) {
         this->field_023D = 0;

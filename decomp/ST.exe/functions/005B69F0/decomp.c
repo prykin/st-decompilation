@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\mmenuobj.cpp
@@ -13,16 +15,14 @@ ChatGlassTy::OutChGlProc
   undefined4 *puVar2;
   int iVar3;
   int iVar4;
-  undefined4 unaff_ESI;
-  void *unaff_EDI;
   InternalExceptionFrame local_4c;
   undefined4 *local_8;
-  
+
   if (param_8 != (undefined4 *)0x0) {
     local_8 = param_8;
     local_4c.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_4c;
-    iVar3 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
+    iVar3 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
     puVar2 = local_8;
     if (iVar3 == 0) {
       Library::DKW::DDX::FUN_006c68f0(param_1,param_4,param_5,param_6,param_7,(int)(local_8 + 1));
@@ -36,9 +36,7 @@ ChatGlassTy::OutChGlProc
     iVar4 = ReportDebugMessage(s_E____titans_Start_mmenuobj_cpp_007cca38,0x153,0,iVar3,&DAT_007a4ccc
                                ,s_ChatGlassTy__OutChGlProc_007ccb54);
     if (iVar4 != 0) {
-      pcVar1 = (code *)swi(3);
-      (*pcVar1)();
-      return;
+      STDebugBreak(); /* noreturn in standalone pseudocode */
     }
     RaiseInternalException(iVar3,0,s_E____titans_Start_mmenuobj_cpp_007cca38,0x153);
   }

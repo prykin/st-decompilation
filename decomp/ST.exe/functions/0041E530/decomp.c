@@ -1,8 +1,10 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\Tc_gobj.cpp
    STSprGameObjC::GetMessage
-   
+
    [STPrototypeApplier] Propagated parameter 1.
    Evidence: 0044EE30 -> 0041E530 @ 0044EE8A | 004B9FA0 -> 0041E530 @ 004B9FEA | 004D0B90 ->
    0041E530 @ 004D0BCF | 004D55B0 -> 0041E530 @ 004D55F2 | 00578630 -> 0041E530 @ 00578691 |
@@ -22,8 +24,8 @@ STSprGameObjC::GetMessage(STSprGameObjC *this,AnonShape_0041AF40_F59F8577 *messa
   int iVar4;
   undefined4 uVar5;
   uint uVar6;
-  undefined4 unaff_ESI;
   undefined1 *puVar7;
+  /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
   int *unaff_EDI;
   bool bVar8;
   InternalExceptionFrame local_54;
@@ -31,11 +33,11 @@ STSprGameObjC::GetMessage(STSprGameObjC *this,AnonShape_0041AF40_F59F8577 *messa
   byte local_c;
   undefined3 uStack_b;
   byte local_5;
-  
+
   local_54.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_54;
   local_10 = (STGameObjC *)this;
-  iVar3 = Library::MSVCRT::__setjmp3(local_54.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar3 = Library::MSVCRT::__setjmp3(local_54.jumpBuffer,0);
   this_00 = local_10;
   if (iVar3 != 0) {
     g_currentExceptionFrame = local_54.previous;
@@ -45,9 +47,7 @@ STSprGameObjC::GetMessage(STSprGameObjC *this,AnonShape_0041AF40_F59F8577 *messa
       RaiseInternalException(iVar3,0,s_E____titans_wlad_Tc_gobj_cpp_007a4e0c,0xa92);
       return 0xffff;
     }
-    pcVar2 = (code *)swi(3);
-    uVar5 = (*pcVar2)();
-    return uVar5;
+    STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   STGameObjC::GetMessage(local_10,message);
   uVar6 = message->field_0010;
@@ -125,6 +125,7 @@ STSprGameObjC::GetMessage(STSprGameObjC *this,AnonShape_0041AF40_F59F8577 *messa
       g_currentExceptionFrame = local_54.previous;
       return 0;
     }
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
     (*(code *)**(undefined4 **)&this_00[1].field_0x4)();
     g_currentExceptionFrame = local_54.previous;
     return 0;
@@ -153,8 +154,10 @@ STSprGameObjC::GetMessage(STSprGameObjC *this,AnonShape_0041AF40_F59F8577 *messa
   }
   if (uVar6 == 0x109) {
     if (*(int *)&this_00[1].field_0x4c == 1) {
+      /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
       LoadActFrame((STSprGameObjC *)this_00,unaff_EDI);
     }
+    /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
     LoadLifeFrame((STSprGameObjC *)this_00,unaff_EDI);
     g_currentExceptionFrame = local_54.previous;
     return 0;
@@ -399,6 +402,7 @@ LAB_0041ebc0:
     bVar8 = (&DAT_008087ea)[(uint)local_5 * 0x51] != (&DAT_008087ea)[(uint)DAT_0080874d * 0x51];
   }
   if (bVar8) goto LAB_0041eccc;
+  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
   _local_c = CONCAT31(uStack_b,local_5);
   if (DAT_00808a8f == '\0') {
     if (local_5 == DAT_0080874d) {
@@ -437,6 +441,7 @@ LAB_0041ec79:
     g_currentExceptionFrame = local_54.previous;
     return 0;
   }
+/* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
 LAB_0041eccc:
   _local_c = CONCAT31(uStack_b,local_5);
   if (*(int *)&this_00[1].field_0x5c == 0) {

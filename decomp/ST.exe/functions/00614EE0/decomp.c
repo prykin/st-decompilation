@@ -16,7 +16,7 @@ int __thiscall FUN_00614ee0(void *this,int param_1,int param_2,int param_3,int p
   short local_a;
   short local_8;
   short local_6;
-  
+
   local_10 = 0;
   sVar1 = *(short *)((int)this + 0x2c5);
   sVar2 = *(short *)((int)this + 0x2c9);
@@ -36,6 +36,7 @@ int __thiscall FUN_00614ee0(void *this,int param_1,int param_2,int param_3,int p
     return -1;
   }
   thunk_FUN_00416270(this_00,(undefined2 *)&local_10,&local_14,&local_18);
+  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   if ((((short)local_10 == *(short *)((int)this + 0x2cb)) &&
       ((short)local_14 == *(short *)((int)this + 0x2cd))) &&
      ((short)local_18 == *(short *)((int)this + 0x2cf))) {
@@ -49,6 +50,7 @@ int __thiscall FUN_00614ee0(void *this,int param_1,int param_2,int param_3,int p
   }
   else {
     STFishC::sub_004162B0(this_00,&local_a,&local_6,&local_8);
+    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     if (((local_a == *(short *)((int)this + 0x2c5)) && (local_6 == *(short *)((int)this + 0x2c7)))
        && (local_8 == *(short *)((int)this + 0x2c9))) {
       iVar4 = 1;
@@ -61,6 +63,7 @@ int __thiscall FUN_00614ee0(void *this,int param_1,int param_2,int param_3,int p
                + (local_a - param_2) * (local_a - param_2) <
               iVar6 * iVar6 + iVar5 * iVar5 + iVar4 * iVar4) + 1;
     }
+    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     if (((param_1 == *(int *)((int)this + 0x2d5) + -3) && (iVar4 == 2)) ||
        ((param_1 == *(int *)((int)this + 0x2d5) + -2 && (iVar4 != 0)))) {
       *(undefined2 *)((int)this + 0x2cb) = (undefined2)local_10;

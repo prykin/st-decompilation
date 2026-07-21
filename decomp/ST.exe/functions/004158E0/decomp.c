@@ -9,7 +9,7 @@ undefined4 * __thiscall STGameObjC::STGameObjC(STGameObjC *this)
 {
   int iVar1;
   undefined4 *puVar2;
-  
+
   STGroupBoatC::sub_006E60E0((STGroupBoatC *)this);
   this->vtable = &STGameObjCVTable;
   this->field_0020 = 0;

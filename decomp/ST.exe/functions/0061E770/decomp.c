@@ -5,7 +5,7 @@ void __fastcall FUN_0061e770(AnonShape_0061E770_099C0C21 *param_1)
   int iVar1;
   uint uVar2;
   bool bVar3;
-  
+
   iVar1 = param_1->field_00A3;
   if (iVar1 != 0) {
     uVar2 = 0;

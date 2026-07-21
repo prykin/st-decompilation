@@ -16,7 +16,7 @@ void __cdecl FUN_006ad2a0(byte *param_1)
   char local_108 [4];
   char local_104 [4];
   char local_100 [252];
-  
+
   DVar2 = GetModuleFileNameA((HMODULE)0x0,local_10c,0x104);
   if (DVar2 == 0) {
     local_10c[0] = s_Debug_Message_007ed7cc[0];

@@ -20,7 +20,7 @@ FUN_004b1040(int param_1,int param_2,undefined4 param_3,undefined4 param_4,undef
   char local_30 [19];
   undefined4 local_1d;
   undefined4 local_15;
-  
+
   puVar2 = &local_5c;
   for (iVar1 = 0x15; iVar1 != 0; iVar1 = iVar1 + -1) {
     *puVar2 = 0;

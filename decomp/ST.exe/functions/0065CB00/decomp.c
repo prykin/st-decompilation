@@ -14,17 +14,15 @@ undefined4 * __cdecl FUN_0065cb00(undefined4 *param_1)
   AnonShape_0065CB00_C527AFF0 *pAVar5;
   uint uVar6;
   uint uVar7;
-  undefined4 unaff_ESI;
-  void *unaff_EDI;
   undefined4 *puVar8;
   bool bVar9;
   InternalExceptionFrame local_4c;
   AnonShape_0065CB00_C527AFF0 *local_8;
-  
+
   local_8 = (AnonShape_0065CB00_C527AFF0 *)0x0;
   local_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_4c;
-  iVar1 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar1 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
   if (iVar1 == 0) {
     local_8 = (AnonShape_0065CB00_C527AFF0 *)Library::DKW::LIB::FUN_006aac10(0x49f);
     puVar2 = param_1;

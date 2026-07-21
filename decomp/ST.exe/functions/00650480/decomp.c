@@ -4,9 +4,10 @@ undefined4 __cdecl FUN_00650480(short *param_1)
 {
   short sVar1;
   int iVar2;
-  
+
   iVar2 = 0;
   do {
+    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     if (*(char *)((int)param_1 + iVar2 + 0xd0) != '\b') {
       return 0;
     }
@@ -24,6 +25,7 @@ undefined4 __cdecl FUN_00650480(short *param_1)
     param_1[10] = -1;
     param_1[0xb] = -1;
   }
+  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   else if (*(char *)((int)param_1 + 0xd3) != '\b') {
     return 0;
   }
@@ -38,6 +40,7 @@ undefined4 __cdecl FUN_00650480(short *param_1)
     param_1[0xe] = -1;
     param_1[0xf] = -1;
   }
+  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   else if (*(char *)((int)param_1 + 0xd5) != '\b') {
     return 0;
   }
@@ -52,6 +55,7 @@ undefined4 __cdecl FUN_00650480(short *param_1)
     param_1[0x12] = -1;
     param_1[0x13] = -1;
   }
+  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   else if (*(char *)((int)param_1 + 0xd7) != '\b') {
     return 0;
   }
@@ -66,6 +70,7 @@ undefined4 __cdecl FUN_00650480(short *param_1)
     param_1[0x16] = -1;
     param_1[0x17] = -1;
   }
+  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   else if (*(char *)((int)param_1 + 0xd9) != '\b') {
     return 0;
   }
@@ -77,6 +82,7 @@ undefined4 __cdecl FUN_00650480(short *param_1)
     return 0;
   }
   if (0xb < sVar1) {
+    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     if (*(char *)((int)param_1 + 0xdb) != '\b') {
       return 0;
     }

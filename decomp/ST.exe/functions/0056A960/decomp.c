@@ -4,8 +4,9 @@ void __thiscall FUN_0056a960(void *this,uint param_1,byte param_2)
 {
   char cVar1;
   undefined *puVar2;
-  
+
   puVar2 = (undefined *)(param_1 & 0xff);
+  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   cVar1 = '\x01' - *(char *)((int)this + (int)puVar2 * 8 + param_2 + 0x142f);
   *(char *)((int)this + (int)puVar2 * 8 + param_2 + 0x142f) = cVar1;
   if ((g_visibleClass_00802A88 != (VisibleClassTy *)0x0) &&

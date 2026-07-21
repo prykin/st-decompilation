@@ -1,6 +1,6 @@
 
 /* [STVTableApplier] Virtual slot 0079DCF8+0x1C
-   
+
    [STVTableApplier] Virtual slot 007A11A0+0x1C */
 
 undefined4 FUN_00749212(int param_1,int *param_2,undefined4 param_3,undefined4 param_4,byte param_5)
@@ -9,17 +9,20 @@ undefined4 FUN_00749212(int param_1,int *param_2,undefined4 param_3,undefined4 p
   int iVar1;
   undefined4 uVar2;
   LPCRITICAL_SECTION lpCriticalSection;
-  
+
   *param_2 = 0;
   lpCriticalSection = (LPCRITICAL_SECTION)(-(uint)(param_1 != 0xc) & param_1 + 4U);
   do {
     EnterCriticalSection(lpCriticalSection);
+    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     if (*(int *)(param_1 + 0x44) == 0) {
       LeaveCriticalSection(lpCriticalSection);
       return 0x80040211;
     }
+    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     iVar1 = *(int *)(param_1 + 0x1c);
     if (iVar1 == 0) {
+/* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
 LAB_0074924d:
       *(int *)(param_1 + 0x28) = *(int *)(param_1 + 0x28) + 1;
     }
@@ -38,6 +41,7 @@ LAB_0074924d:
     if ((param_5 & 4) != 0) {
       return 0x8004022e;
     }
+    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     WaitForSingleObject(*(HANDLE *)(param_1 + 0x24),0xffffffff);
   } while( true );
 }

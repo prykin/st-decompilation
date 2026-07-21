@@ -4,7 +4,7 @@ void __cdecl FUN_0055d6f0(int param_1,int param_2,int param_3)
 {
   int iVar1;
   int iVar2;
-  
+
   iVar1 = 0;
   if (0 < param_2) {
     do {

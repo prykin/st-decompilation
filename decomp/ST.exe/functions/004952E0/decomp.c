@@ -1,7 +1,7 @@
 
 /* [STPrototypeApplier] Propagated return.
    Evidence: 004952E0 returns return of FUN_004b7d50 @ 004953DE
-   
+
    [STMethodOwnerApplier] Structural method owner recovered as STBoatC.
    Evidence: this_call_owners=[STBoatC]; agreed_this_calls=1; incoming_this_accesses=6;
    incoming_edx_uses=0 */
@@ -16,7 +16,7 @@ bool __thiscall STBoatC::sub_004952E0(STBoatC *this)
   STWorldObject *pSVar5;
   bool bVar6;
   uint uVar7;
-  
+
   sVar1 = this->field_066F;
   sVar2 = this->field_0673;
   sVar3 = this->field_0671;

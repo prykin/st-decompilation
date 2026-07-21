@@ -21,7 +21,7 @@ undefined4 FUN_0075a860(AnonShape_0075A860_7232E9BC *param_1,int *param_2)
   int *local_18;
   int local_14;
   int local_10;
-  
+
   iVar1 = param_1->field_012E;
   iVar2 = param_1->field_019A;
   uVar9 = param_1->field_014A - 1;
@@ -31,6 +31,7 @@ undefined4 FUN_0075a860(AnonShape_0075A860_7232E9BC *param_1,int *param_2)
       for (uVar7 = *(uint *)(iVar2 + 0x14); uVar7 <= uVar9; uVar7 = uVar7 + 1) {
         FUN_00759f30(*(undefined4 **)(iVar2 + 0x20),
                      (AnonShape_0075FEE0_E0ABA202 *)(param_1->field_0152 << 8));
+        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
         iVar6 = (**(code **)(param_1->field_01AA + 4))(param_1,iVar2 + 0x20);
         if (iVar6 == 0) {
           *(int *)(iVar2 + 0x18) = iVar8;
@@ -99,6 +100,7 @@ undefined4 FUN_0075a860(AnonShape_0075A860_7232E9BC *param_1,int *param_2)
     FUN_0075a7a0((AnonShape_0075A7A0_BCCC082B *)param_1);
     return 3;
   }
+  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
   (**(code **)(param_1->field_01A2 + 0xc))(param_1);
   return 4;
 }

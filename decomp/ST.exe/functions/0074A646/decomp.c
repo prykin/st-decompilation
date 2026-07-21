@@ -13,7 +13,7 @@ undefined4 __fastcall FUN_0074a646(AnonShape_0074A646_320FC166 *param_1)
   undefined8 uVar9;
   AnonShape_0074A646_320FC166 *local_c;
   AnonShape_0074A646_320FC166 *local_8;
-  
+
   if (((param_1->field_0070 == 0) || (param_1->field_0074 != 0)) || (param_1->field_00C0 != 0)) {
 LAB_0074a6c4:
     uVar7 = 0;
@@ -28,6 +28,7 @@ LAB_0074a6c4:
       uVar4 = param_1->field_00B8;
       pAVar8 = (AnonShape_0074A646_320FC166 *)(uVar2 + param_1->field_00B8);
       iVar5 = param_1->field_00BC;
+      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
       (**(code **)(*piVar1 + 0xc))(piVar1,&local_c);
       uVar9 = Library::MSVCRT::__alldiv
                         ((int)pAVar8 - (int)local_c,

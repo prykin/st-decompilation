@@ -4,7 +4,7 @@ void __thiscall FUN_00724e20(void *this,int param_1,int param_2)
 {
   int iVar1;
   longlong lVar2;
-  
+
   iVar1 = *(int *)((int)this + 0x13c);
   if (*(int *)((int)this + 0x20) != 1) {
     if (param_1 <= iVar1 / 2) {

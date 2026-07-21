@@ -8,7 +8,8 @@ undefined4 FUN_0074748e(LPVOID *ppv)
   undefined4 *puVar1;
   HRESULT HVar2;
   undefined4 uVar3;
-  
+
+  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
   puVar1 = (undefined4 *)(**(code **)((int)ppv[-4] + 0x20))();
   if (puVar1 == (undefined4 *)0x0) {
     uVar3 = 1;
@@ -18,6 +19,7 @@ undefined4 FUN_0074748e(LPVOID *ppv)
     HVar2 = CoCreateInstance((IID *)&DAT_007a1b00,(LPUNKNOWN)0x0,1,(IID *)&DAT_007a1b10,&ppv);
     if (-1 < HVar2) {
       FUN_00749708(puVar1,(int *)ppv,1);
+      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
       (**(code **)((int)*ppv + 8))(ppv);
     }
     CoFreeUnusedLibraries();

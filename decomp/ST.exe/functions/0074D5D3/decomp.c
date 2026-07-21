@@ -4,7 +4,7 @@ int FUN_0074d5d3(ushort *param_1,ushort *param_2)
 {
   ushort uVar1;
   ushort uVar2;
-  
+
   uVar2 = *param_1;
   while( true ) {
     uVar1 = *param_2;

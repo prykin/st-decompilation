@@ -1,8 +1,10 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\to_allpl.cpp
    STAllPlayersC::ActivateTV
-   
+
    [STPrototypeApplier] Propagated parameter 3.
    Evidence: 004314E0 -> 0044B030 @ 00431689 | 004314E0 -> 0044B030 @ 004316C3 | 004314E0 ->
    0044B030 @ 0043175B | 004314E0 -> 0044B030 @ 00431812 | 004314E0 -> 0044B030 @ 0043189E |
@@ -61,7 +63,7 @@ void __thiscall STAllPlayersC::ActivateTV(STAllPlayersC *this,char param_1,int p
   uint uVar7;
   STPlayerTempSlot (*paSVar9) [5];
   STPlayerTempSlot (*paSVar8) [5];
-  
+
   if (param_2 == 0) {
     paSVar9 = g_playerRuntime[param_1].tempSlots;
   }
@@ -72,9 +74,7 @@ void __thiscall STAllPlayersC::ActivateTV(STAllPlayersC *this,char param_1,int p
       if (iVar5 == 0) {
         return;
       }
-      pcVar4 = (code *)swi(3);
-      (*pcVar4)();
-      return;
+      STDebugBreak(); /* noreturn in standalone pseudocode */
     }
     paSVar9 = g_playerRuntime[param_1].tempSlots + 1;
   }
@@ -108,7 +108,9 @@ void __thiscall STAllPlayersC::ActivateTV(STAllPlayersC *this,char param_1,int p
       paSVar8 = paSVar9;
     }
   }
+  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
   uVar7 = CONCAT22((short)((uint)paSVar8 >> 0x10),(*paSVar9)[0].objectId);
+  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
   SetActivityToObjs(this,CONCAT31((int3)(uVar7 >> 8),(char)(*paSVar9)[0].playerId),
                     (*paSVar9)[0].objectType,(*paSVar9)[0].objectIds,uVar7);
   SelfCheckObjControl(this);

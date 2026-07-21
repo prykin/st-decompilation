@@ -9,7 +9,7 @@ uint FUN_00757530(AnonShape_00757530_EEED7D69 *param_1,int param_2,undefined4 *p
   uint uVar5;
   AnonShape_00757530_EEED7D69 *pAVar6;
   AnonNested_00757530_000C_743CE253 **ppAVar7;
-  
+
   if (param_2 == 0) {
     ppAVar7 = (AnonNested_00757530_000C_743CE253 **)&param_1[1].field_0x8;
     pAVar6 = param_1 + 2;
@@ -20,6 +20,7 @@ uint FUN_00757530(AnonShape_00757530_EEED7D69 *param_1,int param_2,undefined4 *p
   }
   sVar2 = param_1->field_000C->field_0034;
   if (sVar2 == 0) {
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
     iVar3 = (*(code *)param_1->field_000C->field_0008)(param_3 + 2);
   }
   else {

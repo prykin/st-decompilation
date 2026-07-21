@@ -6,7 +6,7 @@ int FUN_004e8030(int param_1)
   undefined4 *puVar2;
   undefined *puVar3;
   int iVar4;
-  
+
   if ((param_1 < 1) || (0x28 < param_1)) {
     if ((param_1 < 0x32) || (0x73 < param_1)) {
       return 0;

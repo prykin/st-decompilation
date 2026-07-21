@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\To_boat.cpp
@@ -14,7 +16,7 @@ void __thiscall STBoatC::NotReadyForLoading(STBoatC *this,int param_1)
   short local_a;
   short local_8;
   short local_6;
-  
+
   if ((((this->field_045D != CASE_F) && (this->field_045D != CASE_E)) ||
       (this->field_058E != param_1)) || (this->field_0596 != 2)) {
     iVar2 = ReportDebugMessage(s_E____titans_wlad_To_boat_cpp_007a9d3c,0x50db,0,0,&DAT_007a4ccc,
@@ -22,12 +24,11 @@ void __thiscall STBoatC::NotReadyForLoading(STBoatC *this,int param_1)
     if (iVar2 == 0) {
       return;
     }
-    pcVar1 = (code *)swi(3);
-    (*pcVar1)();
-    return;
+    STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   iVar2 = FUN_006e62d0(PTR_00802a38,this->field_058E,(int *)&local_14);
   if (iVar2 != -4) {
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
     (**(code **)(*local_14 + 0xac))(this->field_0018);
     thunk_FUN_004162f0(local_14,(undefined2 *)&this->field_0x588,&this->field_058A,&this->field_058C
                       );
@@ -39,6 +40,7 @@ void __thiscall STBoatC::NotReadyForLoading(STBoatC *this,int param_1)
       this->field_0596 = 0;
       if (iVar2 != -1) {
         local_e = local_6;
+        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
         local_c = param_1._2_2_;
         local_a = local_8;
       }
@@ -57,8 +59,6 @@ void __thiscall STBoatC::NotReadyForLoading(STBoatC *this,int param_1)
     this->field_0592 = 0;
     return;
   }
-  pcVar1 = (code *)swi(3);
-  (*pcVar1)();
-  return;
+  STDebugBreak(); /* noreturn in standalone pseudocode */
 }
 

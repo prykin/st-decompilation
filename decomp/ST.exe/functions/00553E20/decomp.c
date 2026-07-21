@@ -20,7 +20,7 @@ void __cdecl FUN_00553e20(int param_1,undefined *param_2,byte param_3)
   undefined1 local_7d;
   char local_7c [32];
   byte local_5c [88];
-  
+
   puVar6 = local_98;
   for (iVar2 = 0xf; iVar2 != 0; iVar2 = iVar2 + -1) {
     *puVar6 = 0;

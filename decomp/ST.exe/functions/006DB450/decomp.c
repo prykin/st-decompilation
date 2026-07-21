@@ -15,7 +15,7 @@ void FUN_006db450(undefined4 *param_1,int param_2,undefined2 *param_3,int param_
   undefined4 *puVar10;
   undefined2 *puVar11;
   bool bVar12;
-  
+
   if (((uint)param_1 & 1) == 0) {
     do {
       iVar4 = param_5;
@@ -116,6 +116,7 @@ LAB_006db484:
         if (iVar5 != 0 && 1 < iVar4) {
           do {
             iVar4 = iVar5;
+            /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
             uVar3 = CONCAT31(CONCAT21(*param_3,*(undefined1 *)param_3),uVar7);
             uVar7 = *(undefined1 *)((int)param_3 + 1);
             param_3 = param_3 + 1;
@@ -154,6 +155,7 @@ LAB_006db4e1:
         if (iVar5 != 0 && 1 < iVar4) {
           do {
             iVar4 = iVar5;
+            /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
             uVar3 = CONCAT31(CONCAT21(*puVar8,*(undefined1 *)puVar8),uVar7);
             uVar7 = *(undefined1 *)((int)puVar8 + 1);
             puVar8 = puVar8 + 1;

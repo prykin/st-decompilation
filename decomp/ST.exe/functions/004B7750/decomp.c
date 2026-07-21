@@ -18,7 +18,7 @@ undefined4 FUN_004b7750(uint param_1)
   int local_14;
   uint local_10;
   int *local_c [2];
-  
+
   cVar6 = (char)param_1;
   iVar2 = (int)cVar6;
   if (*(int *)&g_playerRuntime[iVar2].field_0x992 != 0) {
@@ -31,14 +31,17 @@ undefined4 FUN_004b7750(uint param_1)
       if ((pDVar7 != (DArrayTy *)0x0) && (local_10 = 0, pDVar7->count != 0)) {
 LAB_004b77c4:
         DArrayGetElement(pDVar7,local_10,local_c);
+        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
         if ((local_c[0] != (int *)0x0) &&
            ((iVar4 = (**(code **)(*local_c[0] + 0x2c))(), iVar4 != 0x78 ||
             (iVar4 = thunk_FUN_004b7520(param_1,*(Global_sub_004B7520_param_2Enum *)
                                                  ((int)local_c[0] + 0x259)), iVar4 != 0)))) {
+          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
           iVar4 = (**(code **)(*local_c[0] + 0x2c))();
           local_14 = thunk_FUN_004b72e0(cVar6,iVar4);
           if (0 < local_14) {
             local_1c = local_c[0][6];
+            /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
             GVar5 = (**(code **)(*local_c[0] + 0x2c))();
             local_18 = thunk_FUN_004b7350(param_1,GVar5);
             pDVar7 = *(DArrayTy **)&g_playerRuntime[iVar2].field_0x992;
@@ -46,6 +49,7 @@ LAB_004b77c4:
             if (pDVar7->count != 0) {
               do {
                 DArrayGetElement(pDVar7,index,local_28);
+                /* ST_PSEUDO[flattened_global_record_array]: expected g_playerRuntime[player].field[index...] after base/stride proof */
                 if (*(int *)(iVar2 * 0xa62 + 0x7f579a + local_24 * 4) <
                     *(int *)(iVar2 * 0xa62 + 0x7f579a + local_18 * 4)) {
                   Library::DKW::TBL::FUN_006b11d0
@@ -75,9 +79,8 @@ LAB_004b77c4:
   while( true ) {
     DArrayGetElement(*(DArrayTy **)&g_playerRuntime[iVar2].field_0x992,dVar1 - 1,local_28);
     iVar3 = iVar3 - local_20;
-    FUN_006b0c70(*(AnonShape_006B0C70_7C4FE646 **)&g_playerRuntime[iVar2].field_0x992,
-                 (*(AnonShape_006B0C70_7C4FE646 **)&g_playerRuntime[iVar2].field_0x992)->field_000C
-                 - 1);
+    FUN_006b0c70(*(DArrayTy **)&g_playerRuntime[iVar2].field_0x992,
+                 (*(DArrayTy **)&g_playerRuntime[iVar2].field_0x992)->count - 1);
     iVar4 = thunk_FUN_004b71c0(cVar6);
     if (iVar3 <= iVar4) break;
 LAB_004b78f0:

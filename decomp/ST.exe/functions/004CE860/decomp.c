@@ -5,7 +5,7 @@ undefined4 __fastcall FUN_004ce860(AnonShape_004CE860_DECB0AA9 *param_1)
   DArrayTy *array;
   uint index;
   AnonShape_004CE860_DECB0AA9 *local_8;
-  
+
   array = g_playerRuntime[param_1->field_0024].field2168_0x9de;
   if ((array != (DArrayTy *)0x0) && (index = 0, local_8 = param_1, 0 < (int)array->count)) {
     while( true ) {

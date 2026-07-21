@@ -5,7 +5,7 @@ undefined4 __thiscall FUN_004ea460(void *this,int param_1,AnonShape_004EA460_7CF
   undefined4 uVar1;
   undefined4 uVar2;
   int iVar3;
-  
+
   if (((*(int *)((int)this + 0x245) == 4) && (*(int *)((int)this + 0x46c) == 0)) &&
      ((param_2 != (AnonShape_004EA460_7CF77153 *)0x0 ||
       (iVar3 = FUN_006e62d0(PTR_00802a38,param_1,(int *)&param_2), iVar3 == 0)))) {

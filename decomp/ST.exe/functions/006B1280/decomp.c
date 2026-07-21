@@ -4,7 +4,7 @@ int __cdecl FUN_006b1280(int param_1)
 {
   int iVar1;
   uint uVar2;
-  
+
   iVar1 = param_1 / (int)DAT_007eda8c;
   uVar2 = param_1 % (int)DAT_007eda8c;
   if ((int)uVar2 < 0) {

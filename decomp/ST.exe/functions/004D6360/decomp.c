@@ -13,11 +13,12 @@ int __thiscall FUN_004d6360(void *this,short param_1,short param_2,short param_3
   int iVar9;
   int local_18;
   int local_8;
-  
+
   iVar5 = *(int *)((int)this + 0x265);
   iVar4 = *(int *)((int)this + 0x261);
   iVar1 = *(int *)((int)this + 0x25d);
   iVar7 = 2 - (uint)(*(int *)((int)this + 0x2c) != 1);
+  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
   iVar3 = (**(code **)(*(int *)this + 0xf8))();
   if (iVar3 != 0) {
     iVar3 = iVar1 * 0xc9;

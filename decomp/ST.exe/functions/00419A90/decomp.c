@@ -8,7 +8,7 @@ undefined4 __fastcall FUN_00419a90(STFishC *param_1)
   short local_a;
   short local_8;
   short local_6;
-  
+
   if (*(int *)&param_1->field_0xe8 == 1) {
     *(undefined4 *)&param_1->field_0xe8 = 0;
     thunk_FUN_004167a0((AnonShape_004167A0_C6E28A87 *)param_1);

@@ -7,7 +7,7 @@ void __cdecl FUN_00691480(AnonShape_00691480_E757992C *param_1)
   uint uVar3;
   int *piVar4;
   bool bVar5;
-  
+
   pAVar1 = param_1;
   if (param_1->field_0018 != '\0') {
     if (param_1->field_0018 == '\x02') {

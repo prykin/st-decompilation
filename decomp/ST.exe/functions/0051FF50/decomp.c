@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\infocen.cpp
@@ -16,8 +18,6 @@ void __thiscall InfocPanelTy::InitInfocPanel(InfocPanelTy *this)
   ccFntTy *this_01;
   int *piVar7;
   int iVar8;
-  undefined4 unaff_ESI;
-  void *unaff_EDI;
   undefined4 uVar9;
   undefined4 uVar10;
   uint uVar11;
@@ -44,7 +44,7 @@ void __thiscall InfocPanelTy::InitInfocPanel(InfocPanelTy *this)
   InfocPanelTy *local_10;
   int local_c;
   int local_8;
-  
+
   puVar17 = local_6c;
   local_10 = this;
   for (iVar6 = 0x16; iVar6 != 0; iVar6 = iVar6 + -1) {
@@ -58,7 +58,7 @@ void __thiscall InfocPanelTy::InitInfocPanel(InfocPanelTy *this)
   }
   local_b0.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_b0;
-  iVar6 = Library::MSVCRT::__setjmp3(local_b0.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar6 = Library::MSVCRT::__setjmp3(local_b0.jumpBuffer,0);
   this_00 = local_10;
   if (iVar6 == 0) {
     uVar16 = 0x8b;
@@ -128,7 +128,8 @@ void __thiscall InfocPanelTy::InitInfocPanel(InfocPanelTy *this)
     local_1c = 1;
     local_18 = 1;
     local_3c = local_5c;
-    (**(code **)(*(int *)this_00->field_000C + 8))(5,&this_00->field_03D0,0,local_6c,0);
+    (*this_00->field_000C->vtable->CreateObject)
+              ((SystemClassTy *)this_00->field_000C,5,&this_00->field_03D0,(int *)0x0,local_6c,0);
     this_00->field_02D4 = 0x56;
     this_00->field_02D8 = 0x17;
     this_00->field_02DC = 0x31;
@@ -204,9 +205,7 @@ void __thiscall InfocPanelTy::InitInfocPanel(InfocPanelTy *this)
   iVar13 = ReportDebugMessage(s_E____titans_Andrey_infocen_cpp_007c3eb0,0x3e,0,iVar6,&DAT_007a4ccc,
                               s_InfocPanelTy__InitInfocPanel_007c3ed8);
   if (iVar13 != 0) {
-    pcVar1 = (code *)swi(3);
-    (*pcVar1)();
-    return;
+    STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   RaiseInternalException(iVar6,0,s_E____titans_Andrey_infocen_cpp_007c3eb0,0x3e);
   return;

@@ -12,7 +12,7 @@ undefined4 __thiscall FUN_00604fc0(void *this,AnonShape_00604A90_035626E6 *param
   undefined4 *puVar8;
   int *piVar9;
   int *piVar10;
-  
+
   pAVar5 = param_1;
   puVar6 = (undefined4 *)((int)this + 0x1d5);
   for (iVar3 = 0x10; iVar3 != 0; iVar3 = iVar3 + -1) {

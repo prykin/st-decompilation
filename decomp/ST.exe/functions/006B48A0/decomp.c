@@ -5,7 +5,7 @@ void FUN_006b48a0(int *param_1,int param_2,int param_3,BITMAPINFO *param_4,uint 
 {
   uint uVar1;
   uint uVar2;
-  
+
   uVar1 = (param_4->bmiHeader).biHeight;
   uVar2 = (int)uVar1 >> 0x1f;
   Library::DKW::DDX::FUN_006b4680

@@ -1,9 +1,11 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* Recovered from embedded debug metadata:
    E:\__titans\nick\to_BheShell.cpp
    STBHEShellC::GetMessage
-   
+
    [STSwitchEnumApplier] Switch target field_0104 uses
    /SubmarineTitans/Recovered/Enums/STBHEShellC_field_0104State. Cases:
    CASE_0=0;CASE_1=1;CASE_2=2;CASE_3=3;CASE_4=4;CASE_5=5 */
@@ -20,10 +22,8 @@ STBHEShellC::GetMessage(STBHEShellC *this,AnonShape_005F27C0_470044FE *param_1)
   int iVar5;
   undefined4 uVar6;
   uint uVar7;
-  undefined4 unaff_ESI;
   AnonNested_005F27C0_0014_1CFA0467 *pAVar8;
   uint uVar9;
-  void *unaff_EDI;
   undefined4 *puVar10;
   bool bVar11;
   undefined1 *puVar12;
@@ -37,20 +37,18 @@ STBHEShellC::GetMessage(STBHEShellC *this,AnonShape_005F27C0_470044FE *param_1)
   int local_10;
   int local_c;
   int local_8;
-  
+
   local_6c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_6c;
   local_14 = (AnonShape_005F4FA0_36330E3A *)this;
-  iVar4 = Library::MSVCRT::__setjmp3(local_6c.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar4 = Library::MSVCRT::__setjmp3(local_6c.jumpBuffer,0);
   this_00 = local_14;
   if (iVar4 != 0) {
     g_currentExceptionFrame = local_6c.previous;
     iVar5 = ReportDebugMessage(s_E____titans_nick_to_BheShell_cpp_007ce694,0x163,0,iVar4,
                                &DAT_007a4ccc,s_STBHEShellC__GetMessage_007ce6bc);
     if (iVar5 != 0) {
-      pcVar1 = (code *)swi(3);
-      uVar6 = (*pcVar1)();
-      return uVar6;
+      STDebugBreak(); /* noreturn in standalone pseudocode */
     }
     RaiseInternalException(iVar4,0,s_E____titans_nick_to_BheShell_cpp_007ce694,0x165);
     return 0xffff;

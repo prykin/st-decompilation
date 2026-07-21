@@ -42,7 +42,7 @@ undefined4 __thiscall FUN_0061ca90(void *this,int param_1,int param_2,int param_
   int local_10;
   int local_c;
   short local_6;
-  
+
   local_44 = this;
   local_38 = 0;
   if (param_4 == (int *)0x0) {
@@ -126,8 +126,11 @@ undefined4 __thiscall FUN_0061ca90(void *this,int param_1,int param_2,int param_
                    ((PTR_00802a38 == (STPlaySystemC *)0x0 ||
                     ((byte)(&DAT_008087e9)[(int)this_00[1].vtable * 0x51] < 8)))))))) {
                 bVar1 = *(byte *)&this_00[1].vtable;
+                /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
                 bVar2 = *(byte *)((int)local_44 + 0x51);
+                /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                 _local_30 = CONCAT31(uStack_2f,bVar1);
+                /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                 _local_40 = CONCAT31(uStack_3f,bVar2);
                 if (DAT_00808a8f == '\0') {
                   if (bVar1 == bVar2) {
@@ -180,11 +183,13 @@ LAB_0061cd61:
                   iVar12 = (int)local_22;
                   piVar17[2] = iVar16;
                   pSVar5 = this_00->vtable;
+                  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                   piVar17[3] = (int)param_3._2_2_;
                   piVar17[4] = iVar12;
                   iVar16 = (*pSVar5->GetObjectTypeId)(this_00);
                   iVar12 = (int)local_6;
                   piVar17[1] = iVar16;
+                  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                   uVar10 = FUN_006aced8(param_1,param_2,iVar12,(int)param_3._2_2_);
                   iVar16 = local_3c;
                   *(undefined4 *)((int)piVar17 + 0x1e) = uVar10;

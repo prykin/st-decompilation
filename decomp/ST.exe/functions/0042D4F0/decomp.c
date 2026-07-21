@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\to_allpl.cpp
@@ -13,8 +15,9 @@ STAllPlayersC::ResetActivityFromTmp
   int *piVar3;
   DArrayTy *pDVar4;
   uint uVar5;
-  
+
   if (param_2 == 0) {
+    /* ST_PSEUDO[flattened_global_record_array]: expected g_playerRuntime[player].field[index...] after base/stride proof */
     iVar2 = param_1 * 0xa62 + 0x7f4f83;
   }
   else {
@@ -24,10 +27,9 @@ STAllPlayersC::ResetActivityFromTmp
       if (iVar2 == 0) {
         return;
       }
-      pcVar1 = (code *)swi(3);
-      (*pcVar1)();
-      return;
+      STDebugBreak(); /* noreturn in standalone pseudocode */
     }
+    /* ST_PSEUDO[flattened_global_record_array]: expected g_playerRuntime[player].field[index...] after base/stride proof */
     iVar2 = param_1 * 0xa62 + 0x7f4fd3;
   }
   piVar3 = (int *)(param_3 * 0x10 + iVar2);
@@ -56,14 +58,14 @@ cf_common_exit_0042D5BC:
       if (iVar2 == 0) {
         return;
       }
-      pcVar1 = (code *)swi(3);
-      (*pcVar1)();
-      return;
+      STDebugBreak(); /* noreturn in standalone pseudocode */
     }
+/* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
 LAB_0042d5e8:
     uVar5 = CONCAT22((short)((uint)param_4 >> 0x10),(short)piVar3[2]);
     pDVar4 = (DArrayTy *)0x0;
   }
+  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
   ResetActivityFromObjs
             (this,CONCAT31((int3)((uint)iVar2 >> 8),(char)piVar3[1]),iVar2,pDVar4,uVar5,param_4);
 LAB_0042d5ff:

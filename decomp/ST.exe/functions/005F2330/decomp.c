@@ -5,13 +5,14 @@ void __fastcall FUN_005f2330(AnonShape_005F2330_0E1D2560 *param_1)
   int iVar1;
   int iVar2;
   uint uVar3;
-  
+
   uVar3 = 0;
   if ((DArrayTy *)param_1->field_0038 != (DArrayTy *)0x0) {
     DArrayDestroy((DArrayTy *)param_1->field_0038);
     param_1->field_0038 = 0;
   }
   if (param_1->field_003C != 0) {
+    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     iVar1 = *(int *)(param_1->field_003C + 0xc);
     if (0 < iVar1) {
       do {

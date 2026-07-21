@@ -5,7 +5,7 @@ uint FUN_006dba20(uint param_1,int param_2)
   int iVar1;
   int iVar2;
   uint uVar3;
-  
+
   if ((int)param_1 < 0) {
     param_1 = param_1 + ((0x167 - param_1) / 0x168) * 0x168;
   }

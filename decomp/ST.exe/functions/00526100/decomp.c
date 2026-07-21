@@ -4,7 +4,7 @@ char * __cdecl FUN_00526100(undefined1 *param_1,int param_2)
 {
   char cVar1;
   char *pcVar2;
-  
+
   pcVar2 = s_TV_NONE_007c4a98;
   if (param_1 == (undefined1 *)0x0) {
     return s_TV_ONOFF_007c4a8c;

@@ -6,8 +6,9 @@ uint FUN_006b2480(int *param_1,uint param_2,int param_3,uint param_4,uint param_
   uint uVar2;
   uint uVar3;
   int iVar4;
-  
+
   uVar3 = 0;
+  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   if (*(int *)(*param_1 + 0x20) != 0x10) {
     if (param_2 < (uint)param_1[0x68]) {
       puVar1 = *(uint **)(param_1[0x6c] + param_2 * 4);

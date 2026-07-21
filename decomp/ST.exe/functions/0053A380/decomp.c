@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\playpan.cpp
@@ -10,38 +12,45 @@ void __thiscall PlayPanelTy::DonePlayPanel(PlayPanelTy *this)
   PlayPanelTy *pPVar2;
   int iVar3;
   int iVar4;
+  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   ccFntTy *extraout_ECX;
+  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   ccFntTy *extraout_ECX_00;
+  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   ccFntTy *extraout_ECX_01;
+  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   ccFntTy *extraout_ECX_02;
+  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   ccFntTy *extraout_ECX_03;
   ccFntTy *this_00;
-  undefined4 unaff_ESI;
   uint *puVar5;
-  void *unaff_EDI;
   InternalExceptionFrame local_50;
   PlayPanelTy *local_c;
   int local_8;
-  
+
   local_50.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_50;
   local_c = this;
-  iVar3 = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar3 = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0);
   pPVar2 = local_c;
   if (iVar3 == 0) {
+    /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
     this_00 = extraout_ECX;
     if (local_c->field_017C != 0) {
       StartSystemTy::sub_006E56B0(local_c->field_000C,local_c->field_017C);
+      /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
       this_00 = extraout_ECX_00;
     }
     pPVar2->field_017C = 0;
     if (pPVar2->field_01C5 != 0) {
       StartSystemTy::sub_006E56B0(pPVar2->field_000C,pPVar2->field_01C5);
+      /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
       this_00 = extraout_ECX_01;
     }
     pPVar2->field_01C5 = 0;
     if (pPVar2->field_01C1 != 0) {
       StartSystemTy::sub_006E56B0(pPVar2->field_000C,pPVar2->field_01C1);
+      /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
       this_00 = extraout_ECX_02;
     }
     pPVar2->field_01C1 = 0;
@@ -53,6 +62,7 @@ void __thiscall PlayPanelTy::DonePlayPanel(PlayPanelTy *this)
         if (*puVar5 != 0) {
           StartSystemTy::sub_006E56B0(pPVar2->field_000C,*puVar5);
           *puVar5 = 0;
+          /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
           this_00 = extraout_ECX_03;
         }
         puVar5 = puVar5 + 1;
@@ -78,9 +88,7 @@ void __thiscall PlayPanelTy::DonePlayPanel(PlayPanelTy *this)
   iVar4 = ReportDebugMessage(s_E____titans_Andrey_playpan_cpp_007c7574,0x97,0,iVar3,&DAT_007a4ccc,
                              s_PlayPanelTy__DonePlayPanel_007c7608);
   if (iVar4 != 0) {
-    pcVar1 = (code *)swi(3);
-    (*pcVar1)();
-    return;
+    STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   RaiseInternalException(iVar3,0,s_E____titans_Andrey_playpan_cpp_007c7574,0x97);
   return;

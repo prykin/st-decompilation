@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\bldboat.cpp
@@ -13,9 +15,7 @@ BldBoatPanelTy::PaintBldBut(BldBoatPanelTy *this,AnonShape_004EF320_444F9AB1 *pa
   int iVar4;
   byte *pbVar5;
   int iVar6;
-  undefined4 unaff_ESI;
   AnonShape_GLOBAL_0081175C_57F682DD *pAVar7;
-  void *unaff_EDI;
   InternalExceptionFrame local_60;
   int local_1c;
   BldBoatPanelTy *local_18;
@@ -23,7 +23,7 @@ BldBoatPanelTy::PaintBldBut(BldBoatPanelTy *this,AnonShape_004EF320_444F9AB1 *pa
   ushort *local_10;
   uint local_c;
   Global_sub_00526BA0_param_1Enum *local_8;
-  
+
   local_14 = param_1->field_0018;
   local_1c = *local_14 - this->field_003C;
   if (this->field_005C == 0) {
@@ -57,7 +57,7 @@ BldBoatPanelTy::PaintBldBut(BldBoatPanelTy *this,AnonShape_004EF320_444F9AB1 *pa
   }
   local_60.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_60;
-  iVar4 = Library::MSVCRT::__setjmp3(local_60.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar4 = Library::MSVCRT::__setjmp3(local_60.jumpBuffer,0);
   uVar3 = local_c;
   pBVar2 = local_18;
   iVar6 = local_1c;
@@ -66,14 +66,12 @@ BldBoatPanelTy::PaintBldBut(BldBoatPanelTy *this,AnonShape_004EF320_444F9AB1 *pa
     iVar6 = ReportDebugMessage(s_E____titans_Andrey_bldboat_cpp_007c17b4,0x9e,0,iVar4,&DAT_007a4ccc,
                                s_BldBoatPanelTy__PaintBldBut_007c186c);
     if (iVar6 != 0) {
-      pcVar1 = (code *)swi(3);
-      (*pcVar1)();
-      return;
+      STDebugBreak(); /* noreturn in standalone pseudocode */
     }
     RaiseInternalException(iVar4,0,s_E____titans_Andrey_bldboat_cpp_007c17b4,0x9e);
     return;
   }
-  FUN_006b4170((AnonShape_006C7610_838EDECF *)local_18->field_0068,0,local_1c,local_c,local_14[2],
+  FUN_006b4170((AnonShape_006B5B10_E0D06CF1 *)local_18->field_0068,0,local_1c,local_c,local_14[2],
                local_14[3],0);
   DibPut((AnonShape_006B5B10_E0D06CF1 *)pBVar2->field_0068,iVar6 + 1,uVar3 + 1,'\x01',
          (byte *)local_10);

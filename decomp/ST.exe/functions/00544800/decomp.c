@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\to_cursor.cpp
@@ -10,9 +12,7 @@ void __thiscall CursorClassTy::DelOpticAcc(CursorClassTy *this)
   CursorClassTy *this_00;
   int iVar2;
   int iVar3;
-  undefined4 unaff_ESI;
   undefined4 *puVar4;
-  void *unaff_EDI;
   InternalExceptionFrame local_b8;
   undefined4 local_74 [5];
   undefined4 local_60;
@@ -22,11 +22,11 @@ void __thiscall CursorClassTy::DelOpticAcc(CursorClassTy *this)
   undefined4 local_18;
   undefined4 *local_14;
   CursorClassTy *local_8;
-  
+
   local_b8.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_b8;
   local_8 = this;
-  iVar2 = Library::MSVCRT::__setjmp3(local_b8.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar2 = Library::MSVCRT::__setjmp3(local_b8.jumpBuffer,0);
   if (iVar2 == 0) {
     puVar4 = local_28;
     for (iVar2 = 8; iVar2 != 0; iVar2 = iVar2 + -1) {
@@ -57,9 +57,7 @@ void __thiscall CursorClassTy::DelOpticAcc(CursorClassTy *this)
   iVar3 = ReportDebugMessage(s_E____titans_Andrey_to_cursor_cpp_007c7d60,399,0,iVar2,&DAT_007a4ccc,
                              s_CursorClassTy__DelOpticAcc_007c7eec);
   if (iVar3 != 0) {
-    pcVar1 = (code *)swi(3);
-    (*pcVar1)();
-    return;
+    STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   RaiseInternalException(iVar2,0,s_E____titans_Andrey_to_cursor_cpp_007c7d60,400);
   return;

@@ -8,7 +8,7 @@ int FUN_004dfb90(uint param_1,int param_2,int param_3)
   int iVar4;
   DArrayTy *array;
   int iVar5;
-  
+
   iVar3 = param_3;
   iVar5 = 0;
   pSVar2 = g_playerRuntime + param_1;
@@ -16,6 +16,7 @@ int FUN_004dfb90(uint param_1,int param_2,int param_3)
   if ((array != (DArrayTy *)0x0) && (param_1 = 0, 0 < (int)array->count)) {
     do {
       DArrayGetElement(array,param_1,&param_3);
+      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
       iVar1 = *(int *)(param_3 + 0x4d0);
       if (iVar1 != 0) {
         if ((param_2 - iVar5) * iVar3 <= iVar1) {

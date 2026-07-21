@@ -8,7 +8,7 @@ void __thiscall cLoadingTy::sub_00555570(cLoadingTy *this)
 {
   int iVar1;
   tagMSG local_20;
-  
+
   if (this->field_0048 != 0) {
     iVar1 = PeekMessageA(&local_20,g_hWnd_00806748,0,0,1);
     while (iVar1 != 0) {

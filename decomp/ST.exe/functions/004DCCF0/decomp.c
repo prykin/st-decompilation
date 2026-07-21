@@ -17,7 +17,7 @@ undefined4 __fastcall FUN_004dccf0(AnonShape_004DCCF0_FF75E3FE *param_1)
   undefined4 local_10;
   undefined2 local_c;
   int local_8;
-  
+
   puVar4 = local_48;
   for (iVar3 = 0xf; iVar3 != 0; iVar3 = iVar3 + -1) {
     *puVar4 = 0;
@@ -45,6 +45,7 @@ undefined4 __fastcall FUN_004dccf0(AnonShape_004DCCF0_FF75E3FE *param_1)
   local_c = uVar1;
   STPlaySystemC::CreateGameObject(PTR_00802a38,0x186,0,&local_8,local_48,0);
   if (local_8 != 0) {
+    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     param_1->field_04EC = *(undefined4 *)(local_8 + 0x18);
   }
   return 0;

@@ -6,7 +6,7 @@ void __thiscall FUN_0056a840(void *this,byte param_1)
   undefined1 *puVar2;
   undefined1 *puVar3;
   int local_8;
-  
+
   puVar1 = (undefined *)0x0;
   puVar2 = (undefined1 *)((int)this + (uint)param_1 * 8 + 0x142f);
   puVar3 = (undefined1 *)(param_1 + 0x142f + (int)this);

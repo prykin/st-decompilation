@@ -11,7 +11,7 @@ FUN_004c7260(void *this,Global_sub_004C7260_param_1Enum param_1,int param_2,unde
   int iVar1;
   uint uVar2;
   int iVar3;
-  
+
   uVar2 = GetPlayerRaceId(*(char *)((int)this + 0x23d));
   *param_6 = 0;
   *param_5 = 0;

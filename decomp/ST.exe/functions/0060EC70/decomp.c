@@ -4,7 +4,7 @@ undefined4 * __fastcall FUN_0060ec70(undefined4 *param_1)
 {
   int iVar1;
   undefined4 *puVar2;
-  
+
   STGameObjC::STGameObjC((STGameObjC *)param_1);
   *param_1 = &VTable_0079CD94;
   if (param_1 != (undefined4 *)0x0) {

@@ -9,7 +9,7 @@ void FUN_0067f2b0(LPCSTR lpFileName,int param_2)
   byte *pbVar2;
   char *pcVar3;
   uint *puVar4;
-  
+
   if (param_2 == 0) {
     if (0 < DAT_00848a24) {
       DAT_00848a24 = DAT_00848a24 + -1;

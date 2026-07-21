@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\helppan.cpp
@@ -16,17 +18,15 @@ void __thiscall HelpPanelTy::LinkAct(HelpPanelTy *this,int param_1,int param_2)
   int iVar8;
   uint uVar9;
   HelpPanelTy *pHVar10;
-  undefined4 unaff_ESI;
-  void *unaff_EDI;
   InternalExceptionFrame local_54;
   int *local_10;
   uint local_c;
   HelpPanelTy *local_8;
-  
+
   local_54.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_54;
   local_8 = this;
-  iVar5 = Library::MSVCRT::__setjmp3(local_54.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar5 = Library::MSVCRT::__setjmp3(local_54.jumpBuffer,0);
   if (iVar5 != 0) {
     g_currentExceptionFrame = local_54.previous;
     iVar8 = ReportDebugMessage(s_E____titans_Andrey_helppan_cpp_007c383c,0x350,0,iVar5,&DAT_007a4ccc
@@ -35,9 +35,7 @@ void __thiscall HelpPanelTy::LinkAct(HelpPanelTy *this,int param_1,int param_2)
       RaiseInternalException(iVar5,0,s_E____titans_Andrey_helppan_cpp_007c383c,0x350);
       return;
     }
-    pcVar3 = (code *)swi(3);
-    (*pcVar3)();
-    return;
+    STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   local_c = *(uint *)sizeHelp_exref;
   if (local_c != 0) {
@@ -49,6 +47,7 @@ void __thiscall HelpPanelTy::LinkAct(HelpPanelTy *this,int param_1,int param_2)
       cVar1 = *(char *)(pHVar10->field_01C7 + 8 + iVar8);
       iVar5 = pHVar10->field_01C7 + iVar8;
       switch(cVar1) {
+      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
       case '\x01':
       case '\x02':
       case '\x03':

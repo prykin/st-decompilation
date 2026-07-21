@@ -8,7 +8,7 @@ void __thiscall STBoatC::sub_00492420(STBoatC *this)
 {
   int iVar1;
   STBoatC *local_8;
-  
+
   if ((this->field_07C6 == 1) && (this->field_07CA == 0)) {
     this->field_07C6 = 0;
     local_8 = this;

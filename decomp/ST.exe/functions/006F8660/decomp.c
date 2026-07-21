@@ -14,7 +14,7 @@ void FUN_006f8660(undefined4 *param_1,int param_2,byte *param_3,int param_4,int 
   undefined4 *puVar9;
   uint local_c;
   uint local_8;
-  
+
   if (-1 < (int)(param_7 - 1)) {
     local_c = param_7;
     pbVar3 = param_3;

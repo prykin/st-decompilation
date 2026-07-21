@@ -1,5 +1,5 @@
 ST indirect-call prototypes
 
 Indirect call sites: 4221
-Proposals: 2656
+Proposals: 2621
 Automatic: 9

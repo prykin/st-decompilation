@@ -7,7 +7,7 @@ void __thiscall StartSystemTy::sub_005DAF20(StartSystemTy *this)
 
 {
   char cVar1;
-  
+
   if (g_int_00811764 == (int *)0x0) goto LAB_005dafab;
   FUN_006b6500(g_int_00811764,1);
   if (DAT_0080877e == '\0') {

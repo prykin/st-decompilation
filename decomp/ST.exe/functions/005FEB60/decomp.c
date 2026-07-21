@@ -34,7 +34,7 @@ int __thiscall FUN_005feb60(void *this,int param_1,int param_2,int param_3)
   undefined1 *puStack_10;
   undefined *puStack_c;
   undefined4 local_8;
-  
+
   puStack_c = &DAT_0079c9a0;
   puStack_10 = &LAB_0072d964;
   local_14 = ExceptionList;

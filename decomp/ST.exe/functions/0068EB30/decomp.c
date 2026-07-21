@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\ai\ai_tact.cpp
@@ -13,15 +15,13 @@ AiTactClassTy::PrepareToSave(AiTactClassTy *this,AnonShape_0068EB30_4F4B480A *pa
   int iVar4;
   uint uVar5;
   int iVar6;
-  undefined4 unaff_ESI;
-  void *unaff_EDI;
   InternalExceptionFrame local_4c;
   AiTactClassTy *local_8;
-  
+
   local_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_4c;
   local_8 = this;
-  iVar4 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar4 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
   pAVar3 = local_8;
   if (iVar4 == 0) {
     *(undefined4 *)&param_1->field_0x2c = 0;
@@ -45,9 +45,7 @@ AiTactClassTy::PrepareToSave(AiTactClassTy *this,AnonShape_0068EB30_4F4B480A *pa
   iVar6 = ReportDebugMessage(s_E____titans_ai_ai_tact_cpp_007d56e0,0x1a2,0,iVar4,&DAT_007a4ccc,
                              s_AiTactClassTy__PrepareToSave_007d5730);
   if (iVar6 != 0) {
-    pcVar2 = (code *)swi(3);
-    iVar4 = (*pcVar2)();
-    return iVar4;
+    STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   RaiseInternalException(iVar4,0,s_E____titans_ai_ai_tact_cpp_007d56e0,0x1a3);
   return iVar4;

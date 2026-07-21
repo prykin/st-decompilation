@@ -3,9 +3,7 @@ void __fastcall FUN_0058bb90(AnonShape_0058BB90_CF74AF20 *param_1)
 
 {
   undefined4 uVar1;
-  bool bVar2;
-  undefined3 extraout_var;
-  undefined3 extraout_var_00;
+  int iVar2;
   int iVar3;
   undefined4 *puVar4;
   undefined *puVar5;
@@ -22,7 +20,7 @@ void __fastcall FUN_0058bb90(AnonShape_0058BB90_CF74AF20 *param_1)
   undefined4 local_33;
   undefined2 local_2f;
   int local_8;
-  
+
   uVar1 = param_1->field_0279;
   puVar4 = local_60;
   for (iVar3 = 0x16; iVar3 != 0; iVar3 = iVar3 + -1) {
@@ -60,13 +58,13 @@ void __fastcall FUN_0058bb90(AnonShape_0058BB90_CF74AF20 *param_1)
   local_60[1] = uVar1;
   local_40 = local_46;
   local_3e = local_44;
-  bVar2 = thunk_FUN_004961b0((short)local_8,(short)iVar3,4);
-  if (CONCAT31(extraout_var,bVar2) != 0) {
+  iVar2 = thunk_FUN_004961b0((short)local_8,(short)iVar3,4);
+  if (iVar2 != 0) {
     do {
       if ((int)puVar5 < 1) break;
       puVar5 = puVar5 + -1;
-      bVar2 = thunk_FUN_004961b0((short)local_8,(short)iVar3,(short)puVar5);
-    } while (CONCAT31(extraout_var_00,bVar2) != 0);
+      iVar2 = thunk_FUN_004961b0((short)local_8,(short)iVar3,(short)puVar5);
+    } while (iVar2 != 0);
     if ((int)puVar5 < 0) {
       local_3c = (short)((int)puVar5 / 200) + -1;
       goto LAB_0058bcd7;

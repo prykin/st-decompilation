@@ -13,7 +13,7 @@ FUN_006253b0(undefined4 param_1,int param_2,int param_3,int param_4,int param_5,
   int local_20;
   int local_c;
   int local_8;
-  
+
   local_8 = 1;
   if (0 < param_8) {
     iVar2 = param_3;

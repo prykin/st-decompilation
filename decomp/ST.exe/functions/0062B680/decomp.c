@@ -15,7 +15,7 @@ FUN_0062b680(int param_1,int param_2,int param_3,uint param_4,uint param_5,uint 
   undefined4 local_18;
   undefined4 local_14;
   undefined4 local_10;
-  
+
   puVar2 = local_44;
   for (iVar1 = 0x10; iVar1 != 0; iVar1 = iVar1 + -1) {
     *puVar2 = 0;
@@ -25,7 +25,9 @@ FUN_0062b680(int param_1,int param_2,int param_3,uint param_4,uint param_5,uint 
   local_24 = param_2 << 0x10 | param_5 & 0xffff;
   local_20 = param_3 << 0x10 | param_6 & 0xffff;
   local_1c = param_7;
+  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   local_18 = *(undefined4 *)(param_8 + 0x18);
+  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   local_14 = *(undefined4 *)(param_8 + 0x24);
   local_44[0] = 0xd2;
   local_44[1] = 0xff;

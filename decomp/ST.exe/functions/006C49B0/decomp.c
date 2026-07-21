@@ -8,7 +8,7 @@ char * FUN_006c49b0(char *param_1)
   uint uVar4;
   char *pcVar5;
   char *pcVar6;
-  
+
   pcVar2 = (char *)0x0;
   if (param_1 != (char *)0x0) {
     uVar3 = 0xffffffff;

@@ -14,7 +14,7 @@ uint * FUN_006c8840(uint *param_1,uint *param_2,int *param_3)
   char *pcVar10;
   int local_c;
   char *local_8;
-  
+
   puVar3 = param_2;
   uVar6 = param_1[2];
   uVar4 = uVar6 + 7 >> 3;

@@ -7,7 +7,7 @@ FUN_004d76e0(char param_1,int param_2,int param_3,int param_4,int param_5,int pa
   int iVar2;
   int iVar3;
   int *piVar4;
-  
+
   iVar2 = (int)param_1;
   iVar3 = param_2 * 0x44;
   *(undefined4 *)(&g_playerRuntime[iVar2].field_0x7f2 + iVar3) = 0;

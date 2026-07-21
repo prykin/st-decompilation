@@ -8,7 +8,7 @@ void FUN_00746e65(int *param_1,char *param_2,undefined4 *param_3)
   char *pcVar4;
   char *pcVar5;
   bool bVar6;
-  
+
   iVar3 = 0x10;
   bVar6 = true;
   iVar2 = iVar3;

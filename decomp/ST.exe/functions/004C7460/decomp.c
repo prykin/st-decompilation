@@ -14,7 +14,7 @@ undefined4 __fastcall FUN_004c7460(AnonShape_004C7460_AC9F4C4C *param_1)
   int local_10;
   int local_c;
   int local_8;
-  
+
   iVar2 = param_1->field_0361;
   if ((iVar2 == 0) && (param_1->field_03D4 == 0)) {
     if (*(int *)(&DAT_00794d70 + param_1->field_0365 * 4) != -1) {

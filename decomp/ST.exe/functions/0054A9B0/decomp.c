@@ -18,8 +18,6 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0054A9B0::FUN_0054a9b0
   int iVar5;
   uint uVar6;
   SpriteClassTy *pSVar7;
-  undefined4 unaff_ESI;
-  void *unaff_EDI;
   int iVar8;
   longlong lVar9;
   InternalExceptionFrame local_58;
@@ -27,7 +25,7 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0054A9B0::FUN_0054a9b0
   int local_10;
   AnonShape_0054A9B0_643B0813 *local_c;
   uint local_8;
-  
+
   if ((PTR_00807598 == (AnonShape_GLOBAL_00807598_0C6808FB *)0x0) ||
      (g_visibleClass_00802A88 == (VisibleClassTy *)0x0)) {
     return;
@@ -35,7 +33,7 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0054A9B0::FUN_0054a9b0
   local_58.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_58;
   local_c = (AnonShape_0054A9B0_643B0813 *)this;
-  iVar5 = Library::MSVCRT::__setjmp3(local_58.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar5 = Library::MSVCRT::__setjmp3(local_58.jumpBuffer,0);
   if (iVar5 != 0) {
     g_currentExceptionFrame = local_58.previous;
     return;
@@ -136,6 +134,7 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0054A9B0::FUN_0054a9b0
       return;
     }
     SpriteClassTy::InitSprite(pSVar7,DAT_008075a8,1,'\a',(undefined4 *)0x0,0,0);
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
     (**(code **)(*(int *)pAVar4->field_04EB + 4))
               (DAT_00806784,7,0,s_CUR_CONFIRM2D_007c7fb4,0xffffffff);
     *(undefined4 *)(pAVar4->field_04EB + 0x40) = 0x19;
@@ -163,10 +162,12 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0054A9B0::FUN_0054a9b0
 cf_common_exit_0054ACFD:
   pAVar4 = local_c;
   local_8 = 0xffffffff;
+  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   uVar6 = *(uint *)(local_c->field_04E7 + 0xd);
   uVar1 = *(uint *)(local_c->field_04E7 + 9);
   FUN_006e8660(PTR_00807598,(int *)&local_8,1,0,uVar1,uVar6,(int)uVar1 / 2,(int)uVar6 / 2 - 0xe,0);
   if (-1 < (int)local_8) {
+    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     FUN_006e98e0(PTR_00807598,local_8,0,*(undefined4 *)pAVar4->field_04E7,
                  *(int *)((int)pAVar4->field_04E7 + 0x21),1);
     FUN_006eaaa0(PTR_00807598,local_8,0);

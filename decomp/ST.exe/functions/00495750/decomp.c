@@ -10,7 +10,7 @@ undefined4 __thiscall FUN_00495750(void *this,float param_1)
   longlong lVar6;
   CHAR local_6c [100];
   float local_8;
-  
+
   fVar2 = param_1;
   FUN_006e5fd0();
   uVar1 = *(uint *)((int)fVar2 + 0x10);

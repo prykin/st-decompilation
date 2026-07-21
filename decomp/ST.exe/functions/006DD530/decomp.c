@@ -5,7 +5,7 @@ void __thiscall FUN_006dd530(void *this,float *param_1,float *param_2,float *par
 
 {
   float fVar1;
-  
+
   *param_3 = (float)*(double *)((int)this + 0x80);
   fVar1 = (float)((float10)*(double *)((int)this + 0x80) * (float10)_DAT_0079df60);
   switch(*(uint *)((int)this + 0xa8) & 0xfffffff7) {

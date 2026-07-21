@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\cpanel1.cpp
@@ -16,8 +18,6 @@ void __thiscall CPanelTy::SetNewDeep(CPanelTy *this,byte param_1,undefined1 para
   int iVar8;
   uint uVar9;
   byte bVar10;
-  undefined4 unaff_ESI;
-  void *unaff_EDI;
   AnonShape_006B5B10_E0D06CF1 *pAVar11;
   InternalExceptionFrame local_58;
   byte local_14;
@@ -25,7 +25,7 @@ void __thiscall CPanelTy::SetNewDeep(CPanelTy *this,byte param_1,undefined1 para
   CPanelTy *local_10;
   AnonShape_006B5B10_E0D06CF1 *local_c;
   undefined1 local_5;
-  
+
   if (DAT_00808784 == 0) {
     if (((DAT_00808788 == 0) && (DAT_0080878c == 0)) && (DAT_00808790 == 0)) {
       bVar3 = false;
@@ -63,7 +63,7 @@ void __thiscall CPanelTy::SetNewDeep(CPanelTy *this,byte param_1,undefined1 para
       local_58.previous = g_currentExceptionFrame;
       g_currentExceptionFrame = &local_58;
       local_10 = this;
-      iVar5 = Library::MSVCRT::__setjmp3(local_58.jumpBuffer,0,unaff_EDI,unaff_ESI);
+      iVar5 = Library::MSVCRT::__setjmp3(local_58.jumpBuffer,0);
       pCVar4 = local_10;
       if (iVar5 == 0) {
         pAVar11 = (AnonShape_006B5B10_E0D06CF1 *)(uint)param_1;
@@ -98,6 +98,7 @@ void __thiscall CPanelTy::SetNewDeep(CPanelTy *this,byte param_1,undefined1 para
             }
             DibPut(pAVar11,iVar5,uVar9 * 0xb + 0xb,'\x06',pbVar6);
             bVar10 = (-(param_1 != 0) & 2U) + 3;
+            /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
             _local_14 = CONCAT31(uStack_13,bVar10);
             pAVar11 = local_c;
             if (bVar10 < 0xb) {
@@ -125,6 +126,7 @@ void __thiscall CPanelTy::SetNewDeep(CPanelTy *this,byte param_1,undefined1 para
                    (uint)*(byte *)((int)&pAVar11[0x2a].field_0008 + (int)pCVar4) * 0x1d + 6,'\x01',
                    pbVar6);
             bVar10 = (-(param_1 != 0) & 4U) + 2;
+            /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
             _local_14 = CONCAT31(uStack_13,bVar10);
             if (bVar10 < 0xb) {
               uVar7 = (uint)bVar10;
@@ -149,9 +151,7 @@ void __thiscall CPanelTy::SetNewDeep(CPanelTy *this,byte param_1,undefined1 para
       iVar8 = ReportDebugMessage(s_E____titans_Andrey_cpanel1_cpp_007c23cc,0x1fb,0,iVar5,
                                  &DAT_007a4ccc,s_CPanelTy__SetNewDeep_007c24ec);
       if (iVar8 != 0) {
-        pcVar2 = (code *)swi(3);
-        (*pcVar2)();
-        return;
+        STDebugBreak(); /* noreturn in standalone pseudocode */
       }
       RaiseInternalException(iVar5,0,s_E____titans_Andrey_cpanel1_cpp_007c23cc,0x1fb);
     }

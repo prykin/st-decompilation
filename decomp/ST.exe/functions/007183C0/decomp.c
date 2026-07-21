@@ -9,7 +9,7 @@ FUN_007183c0(undefined4 param_1,undefined4 param_2,float *param_3,undefined1 *pa
   float fVar2;
   longlong lVar3;
   ulonglong uVar4;
-  
+
   if ((float)_DAT_007901c0 <= param_3[1]) {
     fVar2 = (param_3[2] + param_3[1]) - param_3[2] * param_3[1];
   }
@@ -19,6 +19,7 @@ FUN_007183c0(undefined4 param_1,undefined4 param_2,float *param_3,undefined1 *pa
   fVar1 = (param_3[1] + param_3[1]) - fVar2;
   if (param_3[2] == _DAT_0079034c) {
     if (*param_3 != 999.0) {
+      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
       return CONCAT44(param_2,0xfffffffb);
     }
   }

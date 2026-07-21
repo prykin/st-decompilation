@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* [STSourceProvenanceApplier begin]
@@ -82,7 +84,7 @@ void AiCalcDispositionAreas
   undefined1 *puStack_10;
   undefined *puStack_c;
   int local_8;
-  
+
   local_8 = 0xffffffff;
   puStack_c = &DAT_0079afd0;
   puStack_10 = &LAB_0072d964;
@@ -523,7 +525,9 @@ LAB_0055fc71:
                     if (iVar15 <= (int)(&DAT_007c9614)[iVar14]) break;
                     iVar14 = iVar14 + 1;
                   } while (iVar14 < 9);
+                  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
                   iVar14 = *(int *)(local_3c * 8 + 0x7c9640);
+                  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
                   iVar16 = *(int *)(local_3c * 8 + 0x7c963c);
                 }
                 local_d0 = FUN_00561240(iVar14,iVar16,piVar10[5]);
@@ -970,9 +974,7 @@ LAB_0056016e:
       iVar15 = ReportDebugMessage(s_E____titans_scoreai_cpp_007c96b0,0x956,0,iVar14,&DAT_007a4ccc,
                                   s_AiCalcDispositionAreas_007c96cc);
       if (iVar15 != 0) {
-        pcVar3 = (code *)swi(3);
-        (*pcVar3)();
-        return;
+        STDebugBreak(); /* noreturn in standalone pseudocode */
       }
     }
     local_70 = iVar14;

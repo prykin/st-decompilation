@@ -10,7 +10,7 @@ uint __thiscall FUN_004c7730(void *this,Global_sub_004C7730_param_1Enum param_1,
   uint uVar2;
   uint *puVar3;
   uint uVar4;
-  
+
   uVar2 = *(uint *)(&DAT_00794d4c + param_1 * 4);
   switch(param_1) {
   case CASE_1:

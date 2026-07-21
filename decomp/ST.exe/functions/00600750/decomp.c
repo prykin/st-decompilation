@@ -24,7 +24,7 @@ undefined4 __fastcall FUN_00600750(AnonShape_00600750_A7773F7A *param_1)
   uint local_10;
   void *local_c;
   int local_8;
-  
+
   local_18 = 0;
   local_8 = 0;
   if (0 < param_1->field_0226) {
@@ -249,11 +249,13 @@ LAB_00600928:
                    ((int)pVVar2->field_0034 <= iVar3)))))))) ||
                ((pVVar2->field_004C == 0 ||
                 (*(char *)(iVar3 * pVVar2->field_0030 + pVVar2->field_004C + local_20) != '\0')))) {
+              /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
               if (*(char *)((int)local_c + 0x41 + param_1->field_0233) == '\0') {
                 thunk_FUN_004ad460(this,0);
                 *(undefined1 *)((int)local_c + 0x41 + param_1->field_0233) = 1;
               }
             }
+            /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
             else if (*(char *)((int)local_c + 0x41 + param_1->field_0233) != '\0') {
               thunk_FUN_004ad430((int)this);
               *(undefined1 *)((int)local_c + 0x41 + param_1->field_0233) = 0;

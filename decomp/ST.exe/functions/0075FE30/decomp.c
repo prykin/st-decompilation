@@ -15,9 +15,10 @@ void FUN_0075fe30(AnonShape_0075FE30_46CD87E7 *param_1,int param_2,int *param_3,
   int iVar11;
   int iVar12;
   char *pcVar13;
-  
+
   piVar10 = param_3;
   iVar2 = param_1->field_0068;
+  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   piVar3 = *(int **)(param_1->field_01BA + 0x18);
   iVar4 = *piVar3;
   iVar5 = piVar3[1];

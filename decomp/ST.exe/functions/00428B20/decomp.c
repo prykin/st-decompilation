@@ -14,7 +14,7 @@ int __cdecl FUN_00428b20(int *param_1,uint param_2,uint param_3,uint *param_4)
   uint local_10;
   int local_c;
   uint local_8;
-  
+
   local_8 = param_3;
   piVar6 = param_1;
   do {

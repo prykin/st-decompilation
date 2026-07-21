@@ -7,7 +7,7 @@ undefined4 FUN_006ad190(undefined4 param_1,char *text,int param_3)
 {
   int *piVar1;
   char *pcVar2;
-  
+
   if (DAT_00854a98 == 0) {
     Library::MSVCRT::FUN_0072ece0(0x6ad250);
     DAT_00854a98 = 1;

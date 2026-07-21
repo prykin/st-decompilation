@@ -7,7 +7,7 @@ undefined4 __thiscall FUN_004b7e30(void *this,int param_1,int param_2,int param_
   int iVar3;
   int iVar4;
   int iVar5;
-  
+
   iVar3 = 0;
   iVar1 = 0;
   iVar4 = 0;

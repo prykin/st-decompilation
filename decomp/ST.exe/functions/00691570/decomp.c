@@ -7,7 +7,7 @@ undefined4 * __fastcall FUN_00691570(undefined4 *param_1)
   undefined4 *puVar3;
   undefined4 *puVar4;
   int local_8;
-  
+
   puVar3 = param_1 + 0x654;
   puVar2 = param_1;
   for (iVar1 = 0x438; iVar1 != 0; iVar1 = iVar1 + -1) {

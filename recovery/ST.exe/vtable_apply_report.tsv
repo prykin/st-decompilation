@@ -1,21 +1,22 @@
 kind	address	status	name	detail
 table	007900A0	already_present	STGameObjCVTable	used existing manual type /SubmarineTitans/Recovered/VTables/STGameObjCVTable; 53 slots
 owner_vptr	STGameObjC+0x0	already_present	STGameObjC	owner already points to /SubmarineTitans/Recovered/VTables/STGameObjCVTable
-table	00790508	already_present	VTable_00790508	used unchanged generated type /SubmarineTitans/Recovered/VTables/VTable_00790508; 10 slots
+table	00790508	updated	STGroupCVTable	updated unchanged-since-apply generated type /SubmarineTitans/Recovered/VTables/STGroupCVTable; 10 slots
+owner_vptr	STGroupC+0x0	already_present	STGroupC	owner already points to /SubmarineTitans/Recovered/VTables/STGroupCVTable
 table	0079059C	already_present	STAllPlayersCVTable	used unchanged generated type /SubmarineTitans/Recovered/VTables/STAllPlayersCVTable; 1 slots
 owner_vptr	STAllPlayersC+0x0	already_present	STAllPlayersC	owner already points to /SubmarineTitans/Recovered/VTables/STAllPlayersCVTable
-table	007905A0	already_present	STBoatCVTable	used unchanged generated type /SubmarineTitans/Recovered/VTables/STBoatCVTable; 73 slots
+table	007905A0	updated	STBoatCVTable	updated unchanged-since-apply generated type /SubmarineTitans/Recovered/VTables/STBoatCVTable; 73 slots
 owner_vptr	STBoatC+0x0	already_present	STBoatC	owner already points to /SubmarineTitans/Recovered/VTables/STBoatCVTable
 table	00790700	already_present	VTable_00790700	used unchanged generated type /SubmarineTitans/Recovered/VTables/VTable_00790700; 1 slots
 table	00790708	already_present	VTable_00790708	used unchanged generated type /SubmarineTitans/Recovered/VTables/VTable_00790708; 1 slots
 table	00790710	already_present	DumpClassCVTable	used unchanged generated type /SubmarineTitans/Recovered/VTables/DumpClassCVTable; 1 slots
 owner_vptr	DumpClassC+0x0	already_present	DumpClassC	owner already points to /SubmarineTitans/Recovered/VTables/DumpClassCVTable
-table	00790728	already_present	STGroupBoatCVTable	used unchanged generated type /SubmarineTitans/Recovered/VTables/STGroupBoatCVTable; 10 slots
+table	00790728	updated	STGroupBoatCVTable	updated unchanged-since-apply generated type /SubmarineTitans/Recovered/VTables/STGroupBoatCVTable; 10 slots
 owner_vptr	STGroupBoatC+0x0	already_present	STGroupBoatC	owner already points to /SubmarineTitans/Recovered/VTables/STGroupBoatCVTable
 table	00790758	already_present	OpticClassCVTable	used unchanged generated type /SubmarineTitans/Recovered/VTables/OpticClassCVTable; 1 slots
 owner_vptr	OpticClassC+0x0	skipped	OpticClassC	vptr store lies outside the recovered owner layout
 table	00790790	already_present	VTable_00790790	used unchanged generated type /SubmarineTitans/Recovered/VTables/VTable_00790790; 1 slots
-table	00790AA0	already_present	TLOBaseTyVTable	used unchanged generated type /SubmarineTitans/Recovered/VTables/TLOBaseTyVTable; 73 slots
+table	00790AA0	updated	TLOBaseTyVTable	updated unchanged-since-apply generated type /SubmarineTitans/Recovered/VTables/TLOBaseTyVTable; 73 slots
 owner_vptr	TLOBaseTy+0x0	already_present	TLOBaseTy	owner already points to /SubmarineTitans/Recovered/VTables/TLOBaseTyVTable
 table	00790C00	already_present	VTable_00790C00	used unchanged generated type /SubmarineTitans/Recovered/VTables/VTable_00790C00; 1 slots
 table	00790C04	already_present	TLOBldMarkVTable	used unchanged generated type /SubmarineTitans/Recovered/VTables/TLOBldMarkVTable; 1 slots
@@ -30,7 +31,7 @@ table	0079ABA4	skipped	VTable_0079ABA4	apply=0; layout_apply=0
 table	0079ABCC	skipped	VTable_0079ABCC	apply=0; layout_apply=0
 table	0079ABF4	skipped	VTable_0079ABF4	apply=0; layout_apply=0
 table	0079AC18	already_present	VTable_0079AC18	used unchanged generated type /SubmarineTitans/Recovered/VTables/VTable_0079AC18; 10 slots
-table	0079AC48	applied	VTable_0079AC48	used unchanged generated type /SubmarineTitans/Recovered/VTables/VTable_0079AC48; 7 slots
+table	0079AC48	already_present	VTable_0079AC48	used unchanged generated type /SubmarineTitans/Recovered/VTables/VTable_0079AC48; 7 slots
 table	0079AC74	skipped	VTable_0079AC74	apply=0; layout_apply=0
 table	0079ACA0	skipped	VTable_0079ACA0	apply=0; layout_apply=0
 table	0079AD14	skipped	VTable_0079AD14	apply=0; layout_apply=0
@@ -49,7 +50,7 @@ table	0079AEC0	already_present	TraksClassTyVTable	used unchanged generated type 
 owner_vptr	TraksClassTy+0x0	already_present	TraksClassTy	owner already points to /SubmarineTitans/Recovered/VTables/TraksClassTyVTable
 table	0079AEEC	already_present	VisibleClassTyVTable	used unchanged generated type /SubmarineTitans/Recovered/VTables/VisibleClassTyVTable; 1 slots
 owner_vptr	VisibleClassTy+0x0	already_present	VisibleClassTy	owner already points to /SubmarineTitans/Recovered/VTables/VisibleClassTyVTable
-table	0079AEFC	already_present	CFsgsConnectionVTable	used unchanged generated type /SubmarineTitans/Recovered/VTables/CFsgsConnectionVTable; 23 slots
+table	0079AEFC	updated	CFsgsConnectionVTable	updated unchanged-since-apply generated type /SubmarineTitans/Recovered/VTables/CFsgsConnectionVTable; 23 slots
 owner_vptr	CFsgsConnection+0x0	skipped	CFsgsConnection	vptr store lies outside the recovered owner layout
 table	0079B0A8	already_present	STAppCVTable	used unchanged generated type /SubmarineTitans/Recovered/VTables/STAppCVTable; 7 slots
 owner_vptr	STAppC+0x0	already_present	STAppC	owner already points to /SubmarineTitans/Recovered/VTables/STAppCVTable
@@ -59,13 +60,13 @@ table	0079B1E0	already_present	GameSystemCVTable	used unchanged generated type /
 owner_vptr	GameSystemC+0x0	already_present	GameSystemC	owner already points to /SubmarineTitans/Recovered/VTables/GameSystemCVTable
 table	0079B20C	already_present	DebugSystemCVTable	used unchanged generated type /SubmarineTitans/Recovered/VTables/DebugSystemCVTable; 9 slots
 owner_vptr	DebugSystemC+0x0	already_present	DebugSystemC	owner already points to /SubmarineTitans/Recovered/VTables/DebugSystemCVTable
-table	0079B238	already_present	STCrabCVTable	used unchanged generated type /SubmarineTitans/Recovered/VTables/STCrabCVTable; 73 slots
+table	0079B238	updated	STCrabCVTable	updated unchanged-since-apply generated type /SubmarineTitans/Recovered/VTables/STCrabCVTable; 73 slots
 owner_vptr	STCrabC+0x0	already_present	STCrabC	owner already points to /SubmarineTitans/Recovered/VTables/STCrabCVTable
 table	0079B398	already_present	VTable_0079B398	used unchanged generated type /SubmarineTitans/Recovered/VTables/VTable_0079B398; 1 slots
-table	0079B3C4	already_present	STFishCVTable	used unchanged generated type /SubmarineTitans/Recovered/VTables/STFishCVTable; 73 slots
+table	0079B3C4	updated	STFishCVTable	updated unchanged-since-apply generated type /SubmarineTitans/Recovered/VTables/STFishCVTable; 73 slots
 owner_vptr	STFishC+0x0	already_present	STFishC	owner already points to /SubmarineTitans/Recovered/VTables/STFishCVTable
 table	0079B524	already_present	VTable_0079B524	used unchanged generated type /SubmarineTitans/Recovered/VTables/VTable_0079B524; 1 slots
-table	0079B528	already_present	STDcResourcCVTable	used unchanged generated type /SubmarineTitans/Recovered/VTables/STDcResourcCVTable; 73 slots
+table	0079B528	updated	STDcResourcCVTable	updated unchanged-since-apply generated type /SubmarineTitans/Recovered/VTables/STDcResourcCVTable; 73 slots
 owner_vptr	STDcResourcC+0x0	already_present	STDcResourcC	owner already points to /SubmarineTitans/Recovered/VTables/STDcResourcCVTable
 table	0079B688	already_present	VTable_0079B688	used unchanged generated type /SubmarineTitans/Recovered/VTables/VTable_0079B688; 1 slots
 table	0079B68C	already_present	STJellyManCVTable	used unchanged generated type /SubmarineTitans/Recovered/VTables/STJellyManCVTable; 53 slots
@@ -79,7 +80,7 @@ table	0079BA50	already_present	VTable_0079BA50	used unchanged generated type /Su
 table	0079BA54	already_present	STMBombCVTable	used unchanged generated type /SubmarineTitans/Recovered/VTables/STMBombCVTable; 73 slots
 owner_vptr	STMBombC+0x0	already_present	STMBombC	owner already points to /SubmarineTitans/Recovered/VTables/STMBombCVTable
 table	0079BBB4	already_present	VTable_0079BBB4	used unchanged generated type /SubmarineTitans/Recovered/VTables/VTable_0079BBB4; 1 slots
-table	0079BBB8	already_present	STOctopusCVTable	used unchanged generated type /SubmarineTitans/Recovered/VTables/STOctopusCVTable; 73 slots
+table	0079BBB8	updated	STOctopusCVTable	updated unchanged-since-apply generated type /SubmarineTitans/Recovered/VTables/STOctopusCVTable; 73 slots
 owner_vptr	STOctopusC+0x0	already_present	STOctopusC	owner already points to /SubmarineTitans/Recovered/VTables/STOctopusCVTable
 table	0079BD18	already_present	VTable_0079BD18	used unchanged generated type /SubmarineTitans/Recovered/VTables/VTable_0079BD18; 1 slots
 table	0079BD1C	already_present	STSatCVTable	used unchanged generated type /SubmarineTitans/Recovered/VTables/STSatCVTable; 73 slots
@@ -102,7 +103,7 @@ owner_vptr	StartSystemTy+0x0	already_present	StartSystemTy	owner already points 
 table	0079C24C	already_present	VTable_0079C24C	used unchanged generated type /SubmarineTitans/Recovered/VTables/VTable_0079C24C; 2 slots
 table	0079C264	skipped	VTable_0079C264	apply=0; layout_apply=0
 table	0079C2D8	skipped	VTable_0079C2D8	apply=0; layout_apply=0
-table	0079C3EC	already_present	STSprGameObjCVTable	used unchanged generated type /SubmarineTitans/Recovered/VTables/STSprGameObjCVTable; 82 slots
+table	0079C3EC	updated	STSprGameObjCVTable	updated unchanged-since-apply generated type /SubmarineTitans/Recovered/VTables/STSprGameObjCVTable; 82 slots
 owner_vptr	STSprGameObjC+0x0	already_present	STSprGameObjC	owner already points to /SubmarineTitans/Recovered/VTables/STSprGameObjCVTable
 table	0079C578	already_present	VTable_0079C578	used unchanged generated type /SubmarineTitans/Recovered/VTables/VTable_0079C578; 1 slots
 table	0079C580	already_present	STManBasisCVTable	used unchanged generated type /SubmarineTitans/Recovered/VTables/STManBasisCVTable; 1 slots
@@ -111,7 +112,7 @@ table	0079C584	already_present	STBHEShellCVTable	used unchanged generated type /
 owner_vptr	STBHEShellC+0x0	already_present	STBHEShellC	owner already points to /SubmarineTitans/Recovered/VTables/STBHEShellCVTable
 table	0079C5A8	already_present	STColl3CVTable_at_1D5	used unchanged generated type /SubmarineTitans/Recovered/VTables/STColl3CVTable_at_1D5; 1 slots
 owner_vptr	STColl3C+0x1D5	already_present	STColl3C	owner already points to /SubmarineTitans/Recovered/VTables/STColl3CVTable_at_1D5
-table	0079C5AC	already_present	STColl3CVTable	used unchanged generated type /SubmarineTitans/Recovered/VTables/STColl3CVTable; 73 slots
+table	0079C5AC	updated	STColl3CVTable	updated unchanged-since-apply generated type /SubmarineTitans/Recovered/VTables/STColl3CVTable; 73 slots
 owner_vptr	STColl3C+0x0	already_present	STColl3C	owner already points to /SubmarineTitans/Recovered/VTables/STColl3CVTable
 table	0079C718	skipped	VTable_0079C718	apply=0; layout_apply=0
 table	0079C78C	skipped	VTable_0079C78C	apply=0; layout_apply=0
@@ -129,7 +130,7 @@ table	0079CED0	already_present	STJumpMineCVTable	used unchanged generated type /
 owner_vptr	STJumpMineC+0x0	already_present	STJumpMineC	owner already points to /SubmarineTitans/Recovered/VTables/STJumpMineCVTable
 table	0079CED4	already_present	STLightCVTable	used unchanged generated type /SubmarineTitans/Recovered/VTables/STLightCVTable; 1 slots
 owner_vptr	STLightC+0x0	already_present	STLightC	owner already points to /SubmarineTitans/Recovered/VTables/STLightCVTable
-table	0079CEFC	already_present	STMineSetCVTable	used unchanged generated type /SubmarineTitans/Recovered/VTables/STMineSetCVTable; 73 slots
+table	0079CEFC	updated	STMineSetCVTable	updated unchanged-since-apply generated type /SubmarineTitans/Recovered/VTables/STMineSetCVTable; 73 slots
 owner_vptr	STMineSetC+0x0	already_present	STMineSetC	owner already points to /SubmarineTitans/Recovered/VTables/STMineSetCVTable
 table	0079D05C	already_present	VTable_0079D05C	used unchanged generated type /SubmarineTitans/Recovered/VTables/VTable_0079D05C; 1 slots
 table	0079D084	already_present	STManRub3CVTable	used unchanged generated type /SubmarineTitans/Recovered/VTables/STManRub3CVTable; 1 slots
@@ -146,15 +147,15 @@ table	0079D4B0	skipped	VTable_0079D4B0	apply=0; layout_apply=0
 table	0079D588	skipped	VTable_0079D588	apply=0; layout_apply=0
 table	0079D610	already_present	STVolcanoCVTable	used unchanged generated type /SubmarineTitans/Recovered/VTables/STVolcanoCVTable; 1 slots
 owner_vptr	STVolcanoC+0x0	already_present	STVolcanoC	owner already points to /SubmarineTitans/Recovered/VTables/STVolcanoCVTable
-table	0079D618	applied	AiBossClassTyVTable_at_1C	created generated type /SubmarineTitans/Recovered/VTables/AiBossClassTyVTable_at_1C; 13 slots
-owner_vptr	AiBossClassTy+0x1C	updated	AiBossClassTy	typed owner offset as /SubmarineTitans/Recovered/VTables/AiBossClassTyVTable_at_1C *
+table	0079D618	already_present	AiBossClassTyVTable_at_1C	used unchanged generated type /SubmarineTitans/Recovered/VTables/AiBossClassTyVTable_at_1C; 13 slots
+owner_vptr	AiBossClassTy+0x1C	already_present	AiBossClassTy	owner already points to /SubmarineTitans/Recovered/VTables/AiBossClassTyVTable_at_1C
 table	0079D658	already_present	AiBossClassTyVTable	used unchanged generated type /SubmarineTitans/Recovered/VTables/AiBossClassTyVTable; 1 slots
 owner_vptr	AiBossClassTy+0x0	already_present	AiBossClassTy	owner already points to /SubmarineTitans/Recovered/VTables/AiBossClassTyVTable
 table	0079D67C	already_present	VTable_0079D67C	used unchanged generated type /SubmarineTitans/Recovered/VTables/VTable_0079D67C; 13 slots
 table	0079D6BC	already_present	AiFltClassTyVTable	used unchanged generated type /SubmarineTitans/Recovered/VTables/AiFltClassTyVTable; 1 slots
 owner_vptr	AiFltClassTy+0x0	already_present	AiFltClassTy	owner already points to /SubmarineTitans/Recovered/VTables/AiFltClassTyVTable
-table	0079D6D4	applied	AiPlrClassTyVTable_at_1C	created generated type /SubmarineTitans/Recovered/VTables/AiPlrClassTyVTable_at_1C; 13 slots
-owner_vptr	AiPlrClassTy+0x1C	updated	AiPlrClassTy	typed owner offset as /SubmarineTitans/Recovered/VTables/AiPlrClassTyVTable_at_1C *
+table	0079D6D4	updated	AiPlrClassTyVTable_at_1C	updated unchanged-since-apply generated type /SubmarineTitans/Recovered/VTables/AiPlrClassTyVTable_at_1C; 13 slots
+owner_vptr	AiPlrClassTy+0x1C	already_present	AiPlrClassTy	owner already points to /SubmarineTitans/Recovered/VTables/AiPlrClassTyVTable_at_1C
 table	0079D714	already_present	AiPlrClassTyVTable	used unchanged generated type /SubmarineTitans/Recovered/VTables/AiPlrClassTyVTable; 1 slots
 owner_vptr	AiPlrClassTy+0x0	already_present	AiPlrClassTy	owner already points to /SubmarineTitans/Recovered/VTables/AiPlrClassTyVTable
 table	0079D76C	already_present	AiTactClassTyVTable	used unchanged generated type /SubmarineTitans/Recovered/VTables/AiTactClassTyVTable; 1 slots
@@ -163,7 +164,7 @@ table	0079DAF0	already_present	VTable_0079DAF0	used unchanged generated type /Su
 table	0079DB04	already_present	VTable_0079DB04	used unchanged generated type /SubmarineTitans/Recovered/VTables/VTable_0079DB04; 9 slots
 table	0079DB28	already_present	VTable_0079DB28	used unchanged generated type /SubmarineTitans/Recovered/VTables/VTable_0079DB28; 5 slots
 table	0079DB3C	already_present	VTable_0079DB3C	used unchanged generated type /SubmarineTitans/Recovered/VTables/VTable_0079DB3C; 15 slots
-table	0079DB78	already_present	VTable_0079DB78	used unchanged generated type /SubmarineTitans/Recovered/VTables/VTable_0079DB78; 49 slots
+table	0079DB78	updated	VTable_0079DB78	updated unchanged-since-apply generated type /SubmarineTitans/Recovered/VTables/VTable_0079DB78; 49 slots
 table	0079DC3C	already_present	VTable_0079DC3C	used unchanged generated type /SubmarineTitans/Recovered/VTables/VTable_0079DC3C; 9 slots
 table	0079DC60	already_present	VTable_0079DC60	used unchanged generated type /SubmarineTitans/Recovered/VTables/VTable_0079DC60; 5 slots
 table	0079DC74	already_present	VTable_0079DC74	used unchanged generated type /SubmarineTitans/Recovered/VTables/VTable_0079DC74; 18 slots
@@ -201,7 +202,7 @@ table	007A11A0	already_present	VTable_007A11A0	used unchanged generated type /Su
 table	007A11C8	already_present	VTable_007A11C8	used unchanged generated type /SubmarineTitans/Recovered/VTables/VTable_007A11C8; 6 slots
 table	007A1378	already_present	VTable_007A1378	used unchanged generated type /SubmarineTitans/Recovered/VTables/VTable_007A1378; 5 slots
 table	007A1390	already_present	VTable_007A1390	used unchanged generated type /SubmarineTitans/Recovered/VTables/VTable_007A1390; 15 slots
-table	007A13D0	already_present	VTable_007A13D0	used unchanged generated type /SubmarineTitans/Recovered/VTables/VTable_007A13D0; 45 slots
+table	007A13D0	updated	VTable_007A13D0	updated unchanged-since-apply generated type /SubmarineTitans/Recovered/VTables/VTable_007A13D0; 45 slots
 table	007A1488	already_present	VTable_007A1488	used unchanged generated type /SubmarineTitans/Recovered/VTables/VTable_007A1488; 9 slots
 table	007A14B0	already_present	VTable_007A14B0	used unchanged generated type /SubmarineTitans/Recovered/VTables/VTable_007A14B0; 5 slots
 table	007A14C8	already_present	VTable_007A14C8	used unchanged generated type /SubmarineTitans/Recovered/VTables/VTable_007A14C8; 18 slots
@@ -210,7 +211,7 @@ table	007A1550	already_present	VTable_007A1550	used unchanged generated type /Su
 table	007A1568	already_present	VTable_007A1568	used unchanged generated type /SubmarineTitans/Recovered/VTables/VTable_007A1568; 9 slots
 table	007A1590	already_present	VTable_007A1590	used unchanged generated type /SubmarineTitans/Recovered/VTables/VTable_007A1590; 5 slots
 table	007A15A8	already_present	VTable_007A15A8	used unchanged generated type /SubmarineTitans/Recovered/VTables/VTable_007A15A8; 15 slots
-table	007A15E8	already_present	VTable_007A15E8	used unchanged generated type /SubmarineTitans/Recovered/VTables/VTable_007A15E8; 49 slots
+table	007A15E8	updated	VTable_007A15E8	updated unchanged-since-apply generated type /SubmarineTitans/Recovered/VTables/VTable_007A15E8; 49 slots
 table	007A1740	already_present	VTable_007A1740	used unchanged generated type /SubmarineTitans/Recovered/VTables/VTable_007A1740; 9 slots
 table	007A1768	already_present	VTable_007A1768	used unchanged generated type /SubmarineTitans/Recovered/VTables/VTable_007A1768; 5 slots
 table	007A1780	already_present	VTable_007A1780	used unchanged generated type /SubmarineTitans/Recovered/VTables/VTable_007A1780; 18 slots

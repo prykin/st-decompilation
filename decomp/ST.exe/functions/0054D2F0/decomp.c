@@ -1,8 +1,10 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\tplaysys.cpp
    STPlaySystemC::Save
-   
+
    [STPrototypeApplier] Propagated parameter 1.
    Evidence: 0054D2F0 parameter used as this of cMf32::RecPut @ 0054D347 | 0054D2F0 parameter used
    as this of cMf32::RecPut @ 0054D363 */
@@ -14,8 +16,6 @@ int __thiscall STPlaySystemC::Save(STPlaySystemC *this,cMf32 *param_1)
   STPlaySystemC *pSVar2;
   int iVar3;
   int iVar4;
-  undefined4 unaff_ESI;
-  void *unaff_EDI;
   InternalExceptionFrame local_74;
   undefined1 local_30 [12];
   undefined4 local_24;
@@ -23,13 +23,13 @@ int __thiscall STPlaySystemC::Save(STPlaySystemC *this,cMf32 *param_1)
   STPlaySystemC *local_10;
   undefined4 local_c;
   undefined4 local_8;
-  
+
   local_c = this->field_00E4;
   local_8 = this->field_0020;
   local_74.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_74;
   local_10 = this;
-  iVar3 = Library::MSVCRT::__setjmp3(local_74.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar3 = Library::MSVCRT::__setjmp3(local_74.jumpBuffer,0);
   if (iVar3 == 0) {
     cMf32::RecPut(param_1,0xc,PTR_DAT_0079ae30,(byte *)&local_c,4,(undefined4 *)0x0,'\0',(uint *)0x0
                  );
@@ -48,9 +48,7 @@ int __thiscall STPlaySystemC::Save(STPlaySystemC *this,cMf32 *param_1)
   iVar4 = ReportDebugMessage(s_E____titans_Andrey_tplaysys_cpp_007c8430,0x1fb,0,iVar3,&DAT_007a4ccc,
                              s_STPlaySystemC__Save_007c84f8);
   if (iVar4 != 0) {
-    pcVar1 = (code *)swi(3);
-    iVar3 = (*pcVar1)();
-    return iVar3;
+    STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   RaiseInternalException(iVar3,0,s_E____titans_Andrey_tplaysys_cpp_007c8430,0x1fb);
   return iVar3;

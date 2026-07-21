@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\To_boat.cpp
@@ -10,13 +12,15 @@ undefined4 __thiscall STBoatC::StopMove(STBoatC *this,void *param_1)
   short sVar2;
   short sVar3;
   code *pcVar4;
+  /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
   undefined4 in_EAX;
   STGroupBoatC *this_00;
   int iVar5;
   undefined4 uVar6;
   STBoatC *pSVar7;
-  
-  this_00 = thunk_FUN_0042b760(CONCAT31((int3)((uint)this >> 8),this->field_0x24),
+
+  /* ST_PSEUDO[unresolved_register_input,packed_or_unaligned_piece]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention; expected named packed member, bit extract/compose, or unaligned load */
+  this_00 = thunk_FUN_0042b760(this->field_0x24,
                                CONCAT22((short)((uint)in_EAX >> 0x10),this->field_0030));
   if (this_00 == (STGroupBoatC *)0x0) {
     return 0xffffffff;
@@ -26,9 +30,7 @@ undefined4 __thiscall STBoatC::StopMove(STBoatC *this,void *param_1)
       iVar5 = ReportDebugMessage(s_E____titans_wlad_To_boat_cpp_007a9d3c,0x1498,0,0,&DAT_007a4ccc,
                                  s_STBoatC__StopMove___ZONE_B_007aa0d4);
       if (iVar5 != 0) {
-        pcVar4 = (code *)swi(3);
-        uVar6 = (*pcVar4)();
-        return uVar6;
+        STDebugBreak(); /* noreturn in standalone pseudocode */
       }
     }
     *(undefined4 *)&this->field_0xe8 = 0;

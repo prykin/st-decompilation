@@ -9,7 +9,7 @@ void __fastcall FUN_00619a20(STJumpMineC *param_1)
   uint uVar3;
   int local_c;
   int local_8;
-  
+
   if ((int)param_1->field_0097 < 0) {
     STJumpMineC::LoadImagJMine(param_1,*(int *)&param_1->field_0x8f);
   }

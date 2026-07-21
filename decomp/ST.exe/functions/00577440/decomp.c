@@ -11,11 +11,13 @@ void __fastcall FUN_00577440(int param_1)
   uint uVar7;
   uint *puVar8;
   uint local_8;
-  
+
   iVar2 = FUN_006e4d40(&DAT_00807620,param_1);
   if ((iVar2 == 1) && (DAT_00808784 == 0)) {
+    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     if (*(char *)(param_1 + 0x430) == '\x01') {
       puVar8 = (uint *)(param_1 + 0x20);
+      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
       DVar3 = FUN_006e51b0(*(int *)(param_1 + 0x18));
       iVar2 = Library::Ourlib::PALETTE::FUN_00718f40
                         (DAT_0080759c,(undefined4 *)(param_1 + 0x28),0,0x100,10,
@@ -25,8 +27,11 @@ void __fastcall FUN_00577440(int param_1)
         *(undefined1 *)(param_1 + 0x430) = 2;
       }
     }
+    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     else if ((*(char *)(param_1 + 0x430) == '\x02') && (*(int *)(param_1 + 0x431) != 0)) {
+      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
       DVar3 = FUN_006e51b0(*(int *)(param_1 + 0x18));
+      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
       piVar5 = *(int **)(param_1 + 0x431);
       bVar1 = false;
       uVar4 = 0xffffffff;

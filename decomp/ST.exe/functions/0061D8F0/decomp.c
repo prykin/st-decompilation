@@ -12,7 +12,7 @@ int __thiscall FUN_0061d8f0(void *this,undefined4 *param_1)
   int local_10;
   int local_c;
   int *local_8;
-  
+
   if (this == (void *)0x0) {
     puVar7 = (undefined4 *)0x0;
   }

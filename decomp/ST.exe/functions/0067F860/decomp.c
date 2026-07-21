@@ -9,7 +9,7 @@ int __cdecl FUN_0067f860(byte *param_1)
   byte *pbVar5;
   uint uVar6;
   bool bVar7;
-  
+
   iVar2 = PTR_00848a34->field_0008;
   uVar6 = 0;
   if (0 < iVar2) {

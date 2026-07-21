@@ -11,7 +11,7 @@ FUN_0072a8a0(undefined1 *param_1,int param_2,ushort *param_3,uint *param_4,int *
   uint uVar2;
   int iVar3;
   uint uVar4;
-  
+
   iVar3 = param_5[1];
   if (iVar3 < param_5[2]) {
     do {

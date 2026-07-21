@@ -9,7 +9,7 @@ void FUN_00753ce0(AnonShape_00753CE0_1943F9C2 *param_1,uint param_2)
   uint *puVar5;
   uint *puVar6;
   uint uVar7;
-  
+
   if ((param_2 != 0) && (param_2 < (uint)param_1->field_0018)) {
     iVar2 = param_1->field_0034;
     puVar6 = (uint *)(iVar2 + -4 + param_2);

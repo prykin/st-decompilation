@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\infocen.cpp
@@ -19,27 +21,23 @@ InfocPanelTy::GetMessage(InfocPanelTy *this,AnonShape_00521490_CB9EAEC2 *param_1
   int iVar9;
   undefined4 uVar10;
   uint uVar11;
-  undefined4 unaff_ESI;
-  void *unaff_EDI;
   InternalExceptionFrame local_58;
   uint local_14;
   SpecPanelTy *local_10;
   undefined4 local_c;
   uint local_8;
-  
+
   local_58.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_58;
   local_10 = (SpecPanelTy *)this;
-  iVar7 = Library::MSVCRT::__setjmp3(local_58.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar7 = Library::MSVCRT::__setjmp3(local_58.jumpBuffer,0);
   this_00 = local_10;
   if (iVar7 != 0) {
     g_currentExceptionFrame = local_58.previous;
     iVar9 = ReportDebugMessage(s_E____titans_Andrey_infocen_cpp_007c3eb0,0x11e,0,iVar7,&DAT_007a4ccc
                                ,s_InfocPanelTy__GetMessage_007c3ffc);
     if (iVar9 != 0) {
-      pcVar3 = (code *)swi(3);
-      uVar10 = (*pcVar3)();
-      return uVar10;
+      STDebugBreak(); /* noreturn in standalone pseudocode */
     }
     RaiseInternalException(iVar7,0,s_E____titans_Andrey_infocen_cpp_007c3eb0,0x11e);
     return 0xffff;
@@ -74,6 +72,7 @@ InfocPanelTy::GetMessage(InfocPanelTy *this,AnonShape_00521490_CB9EAEC2 *param_1
             break;
           }
           bVar6 = (char)local_8 + 1;
+          /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
           local_8 = CONCAT31(local_8._1_3_,bVar6);
         } while (bVar6 < 0xc);
       }
@@ -85,6 +84,7 @@ InfocPanelTy::GetMessage(InfocPanelTy *this,AnonShape_00521490_CB9EAEC2 *param_1
           this_00->field_002E = 2;
           *(int *)&this_00->field_0x30 = iVar9;
           if (PTR_00802a30 != (CursorClassTy *)0x0) {
+            /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
             (*(code *)**(undefined4 **)PTR_00802a30)(&this_00->field_0x18);
           }
         }
@@ -94,6 +94,7 @@ InfocPanelTy::GetMessage(InfocPanelTy *this,AnonShape_00521490_CB9EAEC2 *param_1
           *(undefined2 *)&this_00->field_0x2c = 0;
           this_00->field_002E = 2;
           *(int *)&this_00->field_0x30 = iVar7;
+          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
           (*(code *)**(undefined4 **)PTR_00802a30)(&this_00->field_0x18);
           g_currentExceptionFrame = local_58.previous;
           return 0;
@@ -123,6 +124,7 @@ InfocPanelTy::GetMessage(InfocPanelTy *this,AnonShape_00521490_CB9EAEC2 *param_1
     iVar9 = this_00->field_003C;
     bVar6 = (&this_00[1].field_0x1e)[*piVar1];
     uVar11 = (DAT_0080874e != '\x03') - 1 & 0x11;
+    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
     local_c = CONCAT31(local_c._1_3_,bVar6);
     iVar2 = piVar1[4];
     iVar5 = DAT_00806734;

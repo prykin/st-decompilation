@@ -13,7 +13,7 @@ void FUN_006d0150(int *param_1,uint param_2,char *source)
   uint *puVar6;
   char *pcVar7;
   size_t *psVar8;
-  
+
   if (param_2 < (uint)param_1[0x68]) {
     puVar2 = *(uint **)(param_1[0x6c] + param_2 * 4);
     if ((*puVar2 & 0xc000) == 0xc000) {

@@ -21,7 +21,8 @@ void __cdecl FUN_005745e0(AnonShape_005745E0_AF52CC75 *param_1,undefined4 *param
   int local_10;
   int local_c;
   int local_8;
-  
+
+  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   if (((*(short *)(param_2 + 2) != 0) &&
       (uVar2 = *(ushort *)((int)param_2 + 0x4e), (uVar2 & 0x4000) == 0)) &&
      (((uVar2 & 0x2000) == 0 || ((uVar2 & 0x1000) == 0)))) {

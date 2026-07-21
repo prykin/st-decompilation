@@ -1,9 +1,11 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* [STSourceProvenanceApplier begin]
    Recovered source file: E:\__titans\ai\ai_creat.cpp
    Diagnostic line evidence: 73 | 95 | 97 (metadata/report site, not the function definition)
    [STSourceProvenanceApplier end]
-   
+
    [STPrototypeApplier] Propagated parameter 0.
    Evidence: 00648FE0 -> 00648C10 @ 006492F0 */
 
@@ -14,17 +16,15 @@ void __cdecl StartStrateg(ushort *strategData,uint param_2)
   int errorCode;
   AiPlrClassTy *pAVar2;
   int iVar3;
-  undefined4 unaff_ESI;
-  void *unaff_EDI;
   InternalExceptionFrame local_50;
   int local_c;
   ushort *local_8;
-  
+
   local_8 = (ushort *)0x0;
   local_c = 0;
   local_50.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_50;
-  errorCode = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  errorCode = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0);
   if (errorCode == 0) {
     if ((((PTR_00802a38 == (STPlaySystemC *)0x0) || (strategData == (ushort *)0x0)) || (7 < param_2)
         ) || (7 < (byte)(&DAT_008087e9)[param_2 * 0x51])) {
@@ -53,9 +53,7 @@ void __cdecl StartStrateg(ushort *strategData,uint param_2)
   iVar3 = ReportDebugMessage(s_E____titans_ai_ai_creat_cpp_007d2880,0x5f,0,errorCode,&DAT_007a4ccc,
                              s_StartStrateg_007d28a4);
   if (iVar3 != 0) {
-    pcVar1 = (code *)swi(3);
-    (*pcVar1)();
-    return;
+    STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   if (local_c != 0) {
     thunk_FUN_0067d160((int *)&local_8);

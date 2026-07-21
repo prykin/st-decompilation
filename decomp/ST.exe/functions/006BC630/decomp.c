@@ -6,7 +6,7 @@ void FUN_006bc630(void)
 {
   uint uVar1;
   uint uVar2;
-  
+
   DAT_00854fc8 = 0;
   DAT_00854eec = 0;
   if (0 < DAT_00854fa0) {

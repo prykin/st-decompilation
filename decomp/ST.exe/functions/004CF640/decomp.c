@@ -29,7 +29,7 @@ void __thiscall FUN_004cf640(void *this,int *param_1)
   undefined *local_10;
   undefined *local_c;
   int local_8;
-  
+
   local_20 = 0;
   local_18 = 0;
   local_1c = 0;

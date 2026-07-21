@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\nick\to_mine_set.cpp
@@ -19,10 +21,8 @@ undefined4 __thiscall STMineSetC::GetMessage(STMineSetC *this,AnonShape_00621B50
   uint uVar10;
   Global_sub_00626B50_param_1Enum GVar11;
   int iVar12;
-  undefined4 unaff_ESI;
   undefined4 *puVar13;
   STWorldObject *pSVar14;
-  void *unaff_EDI;
   undefined4 *puVar15;
   InternalExceptionFrame local_60;
   int local_1c;
@@ -31,7 +31,7 @@ undefined4 __thiscall STMineSetC::GetMessage(STMineSetC *this,AnonShape_00621B50
   byte *local_10;
   AnonShape_0060EA30_DCEB68AD *local_c;
   STMineSetC *local_8;
-  
+
   local_8 = this;
   iVar7 = STSprGameObjC::GetMessage((STSprGameObjC *)this,(AnonShape_0041AF40_F59F8577 *)param_1);
   if (iVar7 == 0xffff) {
@@ -39,7 +39,7 @@ undefined4 __thiscall STMineSetC::GetMessage(STMineSetC *this,AnonShape_00621B50
   }
   local_60.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_60;
-  iVar7 = Library::MSVCRT::__setjmp3(local_60.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar7 = Library::MSVCRT::__setjmp3(local_60.jumpBuffer,0);
   this_00 = local_8;
   if (iVar7 != 0) {
     g_currentExceptionFrame = local_60.previous;
@@ -49,9 +49,7 @@ undefined4 __thiscall STMineSetC::GetMessage(STMineSetC *this,AnonShape_00621B50
       RaiseInternalException(iVar7,0,s_E____titans_nick_to_mine_set_cpp_007d06b0,0x176);
       return 0xffff;
     }
-    pcVar5 = (code *)swi(3);
-    uVar8 = (*pcVar5)();
-    return uVar8;
+    STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   uVar10 = param_1->field_0010;
   if (0x110 < uVar10) {
@@ -78,6 +76,7 @@ undefined4 __thiscall STMineSetC::GetMessage(STMineSetC *this,AnonShape_00621B50
         g_currentExceptionFrame = local_60.previous;
         return 0;
       }
+      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
       (**(code **)local_8->field_01D5)();
       g_currentExceptionFrame = local_60.previous;
       return 0;

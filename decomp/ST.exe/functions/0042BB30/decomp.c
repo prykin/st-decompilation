@@ -1,11 +1,16 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\to_allpl.cpp
-   STAllPlayersC::AddObjToTmp */
+   STAllPlayersC::AddObjToTmp
+   [STAbiConsistencyApplier] stack_parameter_width: parameter=/char Evidence: entry-use width=/char;
+   unmasked_dword_reads=0; evidence=0042BC1A MOVSX ECX,byte ptr [EBP + 0x14] | 0042BC42 MOVSX
+   EDX,byte ptr [EBP + 0x14] */
 
 undefined4 __thiscall
 STAllPlayersC::AddObjToTmp
-          (STAllPlayersC *this,char param_1,int param_2,int param_3,uint param_4,uint param_5)
+          (STAllPlayersC *this,char param_1,int param_2,int param_3,char param_4,uint param_5)
 
 {
   code *pcVar1;
@@ -15,9 +20,7 @@ STAllPlayersC::AddObjToTmp
   STGameObjC *pSVar4;
   undefined4 uVar5;
   int iVar6;
-  undefined4 unaff_ESI;
   STPlayerTempSlot *pSVar7;
-  void *unaff_EDI;
   Global_sub_0043FC50_param_1Enum GVar8;
   InternalExceptionFrame local_5c;
   undefined4 local_18;
@@ -25,12 +28,12 @@ STAllPlayersC::AddObjToTmp
   STPlayerTempSlot *local_10;
   STAllPlayersC *local_c;
   short local_6;
-  
+
   local_18 = 0;
   local_5c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_5c;
   local_c = this;
-  iVar2 = Library::MSVCRT::__setjmp3(local_5c.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar2 = Library::MSVCRT::__setjmp3(local_5c.jumpBuffer,0);
   if (iVar2 != 0) {
     g_currentExceptionFrame = local_5c.previous;
     if (iVar2 == -0x5001fff7) {
@@ -39,9 +42,7 @@ STAllPlayersC::AddObjToTmp
       if (iVar2 == 0) {
         return local_18;
       }
-      pcVar1 = (code *)swi(3);
-      uVar5 = (*pcVar1)();
-      return uVar5;
+      STDebugBreak(); /* noreturn in standalone pseudocode */
     }
     if (iVar2 == -0x5001ffff) {
       iVar2 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0x219,0,0,&DAT_007a4ccc,
@@ -49,9 +50,7 @@ STAllPlayersC::AddObjToTmp
       if (iVar2 == 0) {
         return 0xaffe0001;
       }
-      pcVar1 = (code *)swi(3);
-      uVar5 = (*pcVar1)();
-      return uVar5;
+      STDebugBreak(); /* noreturn in standalone pseudocode */
     }
     iVar6 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0x215,0,iVar2,&DAT_007a4ccc,
                                s_STAllPlayersC__AddObjToTmp_007a6164);
@@ -59,9 +58,7 @@ STAllPlayersC::AddObjToTmp
       RaiseInternalException(iVar2,0,s_E____titans_wlad_to_allpl_cpp_007a6004,0x216);
       return 0xffffffff;
     }
-    pcVar1 = (code *)swi(3);
-    uVar5 = (*pcVar1)();
-    return uVar5;
+    STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   if (param_2 == 0) {
     local_10 = g_playerRuntime[param_1].tempSlots[0];
@@ -88,7 +85,7 @@ LAB_0042bc00:
     pDVar3 = (DArrayTy *)Library::DKW::TBL::FUN_006ae290((uint *)0x0,0,2,1);
     pSVar7->objectIds = pDVar3;
     pSVar7->activityCount = 0;
-    pSVar7->playerId = (int)(char)param_4;
+    pSVar7->playerId = (int)param_4;
     if (param_2 == 0) {
       pSVar7->objectType = 0x3c;
     }
@@ -96,16 +93,14 @@ LAB_0042bc00:
       pSVar7->objectType = 0x19a;
     }
   }
-  if (pSVar7->playerId != (int)(char)param_4) {
+  if (pSVar7->playerId != (int)param_4) {
     iVar2 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0x210,0,0,&DAT_007a4ccc,
                                s_STAllPlayersC__AddObjToTmp_somet_007a6184);
     if (iVar2 == 0) {
       g_currentExceptionFrame = local_5c.previous;
       return local_18;
     }
-    pcVar1 = (code *)swi(3);
-    uVar5 = (*pcVar1)();
-    return uVar5;
+    STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   pDVar3 = pSVar7->objectIds;
   local_14 = pDVar3->count;

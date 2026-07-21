@@ -1,9 +1,11 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* WARNING: Type propagation algorithm not settling */
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\To_boat.cpp
    STBoatC::GetCellForLoading
-   
+
    [STSwitchEnumApplier] Switch target param_6 uses
    /SubmarineTitans/Recovered/Enums/STBoatC_GetCellForLoading_param_6Enum. Cases:
    CASE_0=0;CASE_1=1;CASE_2=2;CASE_3=3;CASE_4=4 */
@@ -37,7 +39,7 @@ STBoatC::GetCellForLoading
   int local_20 [5];
   STBoatC *local_c;
   int local_8;
-  
+
   local_68 = (int)param_4;
   iVar10 = (int)param_5;
   local_64[1] = local_68 + -1;
@@ -119,9 +121,7 @@ LAB_00491b42:
     if (iVar10 == 0) {
       return 0xfffffffe;
     }
-    pcVar2 = (code *)swi(3);
-    uVar5 = (*pcVar2)();
-    return uVar5;
+    STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   do {
     local_8 = *(int *)((int)local_20 + iVar9) * (int)g_pathingGrid.planeStride;
@@ -221,6 +221,7 @@ cf_continue_loop_00491C1C:
       _param_3 = 1000000000;
       _param_6 = 0;
       do {
+        /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
         iVar11 = *(int *)((int)local_48 + iVar9 + 0x14);
         if (iVar11 != -1) {
           if ((iVar10 == -1) || ((*(int *)((int)local_48 + iVar9) == 1 && (local_48[iVar10] == 0))))

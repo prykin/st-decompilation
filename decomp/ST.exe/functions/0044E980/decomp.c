@@ -1,12 +1,14 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\To_boat.cpp
    STBoatC::GetVisualInfo
-   
+
    [STSwitchEnumApplier] Switch target param_2 uses
    /SubmarineTitans/Recovered/Enums/STBoatC_GetVisualInfo_param_2Enum. Cases:
    CASE_1=1;CASE_2=2;CASE_3=3;CASE_4=4;CASE_5=5;CASE_6=6;CASE_7=7;CASE_8=8;CASE_9=9;CASE_A=10;CASE_B=11;CASE_C=12;CASE_D=13;CASE_E=14;CASE_F=15;CASE_10=16;CASE_11=17;CASE_12=18;CASE_13=19;CASE_14=20;CASE_15=21;CASE_16=22;CASE_17=23;CASE_18=24;CASE_19=25;CASE_1A=26;CASE_1B=27;CASE_1C=28;CASE_1D=29;CASE_1E=30;CASE_1F=31;CASE_20=32;CASE_21=33;CASE_22=34;CASE_23=35;CASE_24=36;CASE_25=37;CASE_26=38;CASE_27=39;CASE_28=40
-   
+
    [STPrototypeApplier] Propagated parameter 7.
    Evidence: 0044C130 -> 0044E980 @ 0044C194 | 0044C130 -> 0044E980 @ 0044C1F7 | 0044C130 ->
    0044E980 @ 0044C25A */
@@ -25,7 +27,7 @@ STBoatC::GetVisualInfo
   uint uVar5;
   char *pcVar6;
   char *pcVar7;
-  
+
   *param_4 = DAT_0080677c;
   *param_5 = '\0';
   *param_6 = 0x1d;
@@ -239,9 +241,7 @@ STBoatC::GetVisualInfo
     if (iVar3 == 0) {
       return;
     }
-    pcVar2 = (code *)swi(3);
-    (*pcVar2)();
-    return;
+    STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   uVar4 = 0xffffffff;
   do {

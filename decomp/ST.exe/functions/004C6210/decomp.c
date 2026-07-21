@@ -12,7 +12,7 @@ undefined4 __thiscall FUN_004c6210(void *this,undefined4 param_1,undefined4 para
   int iVar2;
   uint uVar3;
   DWORD DVar4;
-  
+
   *(undefined4 *)((int)this + 0x18) = 0;
   *(undefined4 *)((int)this + 0x1c) = param_1;
   *(undefined4 *)((int)this + 0x20) = param_2;

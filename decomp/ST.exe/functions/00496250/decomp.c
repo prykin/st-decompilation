@@ -16,7 +16,7 @@ uint FUN_00496250(int param_1,int param_2,int param_3)
   int iVar12;
   uint uVar13;
   int *piVar14;
-  
+
   if (param_3 < 10) {
 switchD_0049655f_caseD_0:
     return 0x7f;

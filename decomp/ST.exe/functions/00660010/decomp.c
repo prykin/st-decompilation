@@ -7,14 +7,14 @@ undefined4 __fastcall FUN_00660010(AiFltClassTy *param_1)
   undefined2 uVar3;
   int iVar4;
   DArrayTy *array;
+  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined2 extraout_var;
-  uint uVar5;
   STGroupBoatC *this;
   undefined4 local_14;
   DArrayTy *local_10;
   undefined2 local_c;
   undefined4 local_8;
-  
+
   local_8 = 0;
   sVar1 = param_1->field_0039;
   param_1->field_00A7 = 0;
@@ -37,13 +37,14 @@ LAB_00660050:
     return 0xfffffffe;
   }
   uVar3 = AiFltClassTy::sub_0065D9C0(param_1);
+  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   if (CONCAT22(extraout_var,uVar3) == 0) {
     DArrayDestroy(array);
     return 0xffffffff;
   }
-  uVar5 = CONCAT22(extraout_var,param_1->field_007D);
   if ((param_1->field_007D != -2) && (g_sTAllPlayers_007FA174 != (STAllPlayersC *)0x0)) {
-    this = thunk_FUN_0042b760(CONCAT31((int3)(uVar5 >> 8),param_1->field_0x24),uVar5);
+    /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+    this = thunk_FUN_0042b760(param_1->field_0x24,CONCAT22(extraout_var,param_1->field_007D));
     if (this != (STGroupBoatC *)0x0) {
       if (param_1->field_0039 == 3) {
         local_14 = 1;

@@ -10,7 +10,7 @@ void __cdecl FUN_0064a5b0(LPDWORD lpNumberOfBytesWritten)
   uint uVar3;
   LPDWORD pDVar4;
   char *pcVar5;
-  
+
   if ((HANDLE_008118f8 != (HANDLE)0x0) && (DAT_0080734a != '\0')) {
     uVar3 = 0xffffffff;
     pDVar4 = lpNumberOfBytesWritten;

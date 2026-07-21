@@ -8,7 +8,7 @@ void __cdecl FUN_00637c50(uint param_1,uint param_2,int param_3)
   uint uVar3;
   uint uVar4;
   uint uVar5;
-  
+
   uVar3 = param_2;
   if (param_2 == 0) {
     text = s_mstarB_007d1c50;

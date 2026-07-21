@@ -16,7 +16,7 @@ void FUN_006bcb30(int *param_1,int param_2,int param_3,int param_4,int param_5)
   int iVar9;
   int local_10;
   int local_8;
-  
+
   piVar2 = param_1;
   iVar8 = param_2 - param_1[param_1[0x79] * 2 + 0x47];
   if (iVar8 < 0) {

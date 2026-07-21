@@ -1,9 +1,13 @@
 
 /* [STMethodOwnerApplier] Structural method owner recovered as STSharkC.
    Evidence: this_call_owners=[STSharkC]; agreed_this_calls=1; incoming_this_accesses=11;
-   incoming_edx_uses=0 */
+   incoming_edx_uses=0
+   [STAbiConsistencyApplier] full_eax_return: return=/int Evidence: all observed callers consume
+   full EAX (2), none consume AL/AX, and every RET path defines full EAX; sites=0058E570 @ 0058E799
+   -> MOV MOV dword ptr [ESI + 0x257],EAX | 0058F680 @ 0058F68F -> MOV MOV dword ptr [EBP +
+   -0x18],EAX */
 
-bool __thiscall STSharkC::sub_0058F430(STSharkC *this)
+int __thiscall STSharkC::sub_0058F430(STSharkC *this)
 
 {
   STWorldObject *this_00;
@@ -18,7 +22,7 @@ bool __thiscall STSharkC::sub_0058F430(STSharkC *this)
   int iVar9;
   int local_14;
   int local_c;
-  
+
   local_14 = 0x7fff;
   this->field_023D = 0;
   *(undefined4 *)&this->field_0x249 = 0xff;
@@ -74,6 +78,6 @@ bool __thiscall STSharkC::sub_0058F430(STSharkC *this)
       iVar6 = iVar6 + 1;
     } while (iVar6 < this->field_0047 + 4);
   }
-  return this->field_023D != 0;
+  return (uint)(this->field_023D != 0);
 }
 

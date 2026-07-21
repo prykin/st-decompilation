@@ -27,7 +27,7 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_004DB160::FUN_004db160
   int local_60 [21];
   AnonReceiver_004DB160 *local_c;
   int local_8;
-  
+
   *param_6 = -1;
   sVar2 = (short)*param_3;
   local_c = this;

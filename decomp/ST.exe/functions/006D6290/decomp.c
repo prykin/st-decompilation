@@ -8,7 +8,7 @@ int FUN_006d6290(AnonShape_006D6290_6C97E0B2 *param_1,int *param_2)
   int local_10;
   AnonShape_006D6290_10462BC7 *local_c;
   int *local_8;
-  
+
   pAVar1 = param_1->field_0018;
   local_c = pAVar1->field_005C;
   iVar2 = local_c->field_0288;
@@ -22,7 +22,9 @@ int FUN_006d6290(AnonShape_006D6290_6C97E0B2 *param_1,int *param_2)
       EnterCriticalSection((LPCRITICAL_SECTION)(*(int *)(iVar2 + 0x28) + 0x4f0));
     }
     iVar3 = *(int *)(iVar2 + 0x28);
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
     if (*(code **)(iVar3 + 0x4e4) != (code *)0x0) {
+      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
       (**(code **)(iVar3 + 0x4e4))
                 (*(undefined4 *)(iVar3 + 0x4ec),*(int *)(iVar3 + 0x10) + *(int *)(iVar2 + 0x18),
                  *(int *)(iVar3 + 0x14) + *(int *)(iVar2 + 0x1c),*(undefined4 *)(iVar2 + 0x20),
@@ -49,6 +51,7 @@ LAB_006d6394:
       if (iVar3 == 0) goto LAB_006d6394;
       goto LAB_006d6363;
     }
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
     (**(code **)(*pAVar1->field_0064 + 0x6c))(pAVar1->field_0064);
     param_1 = (AnonShape_006D6290_6C97E0B2 *)&param_1->field_0x1;
     if (1 < (int)param_1) {

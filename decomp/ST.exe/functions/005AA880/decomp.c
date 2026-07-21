@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* Recovered from embedded debug metadata:
@@ -16,8 +18,6 @@ HoloTy::CalcHologram
   int iVar4;
   undefined4 *puVar5;
   uint uVar6;
-  undefined4 unaff_ESI;
-  void *unaff_EDI;
   uint uVar7;
   undefined4 *puVar8;
   uint uVar9;
@@ -35,10 +35,10 @@ HoloTy::CalcHologram
   int local_10;
   undefined4 *local_c;
   int local_8;
-  
+
   local_78.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_78;
-  iVar2 = Library::MSVCRT::__setjmp3(local_78.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar2 = Library::MSVCRT::__setjmp3(local_78.jumpBuffer,0);
   if (iVar2 != 0) {
     g_currentExceptionFrame = local_78.previous;
     iVar2 = ReportDebugMessage(s_E____titans_Start_hologram_cpp_007cc674,99,0,iVar2,&DAT_007a4ccc,
@@ -46,9 +46,7 @@ HoloTy::CalcHologram
     if (iVar2 == 0) {
       return (undefined4 *)0x0;
     }
-    pcVar1 = (code *)swi(3);
-    puVar5 = (undefined4 *)(*pcVar1)();
-    return puVar5;
+    STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   uVar3 = param_3 / param_4 + (uint)(param_3 % param_4 != 0);
   uVar7 = param_5 & 0xff;

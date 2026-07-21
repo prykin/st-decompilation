@@ -5,16 +5,18 @@ int __thiscall FUN_00747e65(void *this,int *param_1,char *param_2)
   int iVar1;
   int local_c;
   int *local_8;
-  
+
   local_8 = (int *)0x0;
   if ((param_2 != (char *)0x0) && (iVar1 = FUN_0074bb9a(param_2), iVar1 == 0)) {
     iVar1 = FUN_00747ce5(this,param_1);
     return iVar1;
   }
   local_c = -0x7ffbfdf9;
+  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
   iVar1 = (**(code **)(*param_1 + 0x30))(param_1,&local_8);
   if (-1 < iVar1) {
     iVar1 = FUN_00747d92(this,param_1,param_2,local_8);
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
     (**(code **)(*local_8 + 8))(local_8);
     if (-1 < iVar1) {
       return 0;
@@ -23,11 +25,13 @@ int __thiscall FUN_00747e65(void *this,int *param_1,char *param_2)
       local_c = iVar1;
     }
   }
+  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
   iVar1 = (**(code **)(*(int *)((int)this + 0xc) + 0x30))((int)this + 0xc,&local_8);
   if (iVar1 < 0) {
     return local_c;
   }
   iVar1 = FUN_00747d92(this,param_1,param_2,local_8);
+  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
   (**(code **)(*local_8 + 8))(local_8);
   if (-1 < iVar1) {
     return 0;

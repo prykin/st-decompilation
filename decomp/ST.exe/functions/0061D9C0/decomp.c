@@ -14,7 +14,7 @@ int __thiscall FUN_0061d9c0(void *this,ushort *param_1,int *param_2,int param_3)
   ushort *puVar7;
   int local_c;
   int local_8;
-  
+
   local_8 = 0;
   local_c = 0;
   if (param_3 == 0) {

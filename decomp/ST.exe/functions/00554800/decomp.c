@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\grig\loading.cpp
@@ -18,19 +20,17 @@ cLoadingTy::InitParam
   cLoadingTy *pcVar7;
   int iVar8;
   undefined4 *puVar9;
-  uint *extraout_EAX;
+  char *resourceString;
   int iVar10;
   uint uVar11;
   uint uVar12;
-  undefined4 unaff_ESI;
-  void *unaff_EDI;
   InternalExceptionFrame local_4c;
   cLoadingTy *local_8;
-  
+
   local_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_4c;
   local_8 = this;
-  iVar8 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar8 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
   pcVar7 = local_8;
   if (iVar8 == 0) {
     local_8->field_0014 = param_1;
@@ -76,8 +76,8 @@ cLoadingTy::InitParam
     pcVar7->field_002C = param_7;
     pcVar2->field_0058 = param_6;
     pcVar2->field_005C = param_7;
-    LoadResourceString(0x267a,HINSTANCE_00807618);
-    iVar8 = FUN_007111c0(pcVar7->field_0008,extraout_EAX);
+    resourceString = LoadResourceString(0x267a,HINSTANCE_00807618);
+    iVar8 = FUN_007111c0(pcVar7->field_0008,resourceString);
     iVar8 = pcVar7->field_002C + iVar8;
     iVar10 = (int)pcVar7->field_0020 / iVar8;
     pcVar7->field_0034 = iVar8;
@@ -98,9 +98,7 @@ cLoadingTy::InitParam
   iVar10 = ReportDebugMessage(s_E____titans_grig_loading_cpp_007c8f0c,0xac,0,iVar8,&DAT_007a4ccc,
                               s_cLoadingTy__InitParam_007c8f60);
   if (iVar10 != 0) {
-    pcVar6 = (code *)swi(3);
-    (*pcVar6)();
-    return;
+    STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   RaiseInternalException(iVar8,0,s_E____titans_grig_loading_cpp_007c8f0c,0xad);
   return;

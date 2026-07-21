@@ -7,7 +7,7 @@ void FUN_006e2d50(int *param_1,int *param_2,int param_3,int param_4,int param_5,
   int iVar3;
   int *piVar4;
   int *piVar5;
-  
+
   if (param_2 < param_1) {
     param_2 = (int *)((int)param_2 + param_4 * 2 + (param_5 + -1) * param_3 + -2);
     param_1 = (int *)((int)param_1 + param_4 * 2 + (param_5 + -1) * param_3 + -2);

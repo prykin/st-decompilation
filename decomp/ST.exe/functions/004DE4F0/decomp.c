@@ -24,12 +24,13 @@ int __thiscall FUN_004de4f0(void *this,int param_1)
   int local_10;
   int local_c;
   int *local_8;
-  
+
   iVar3 = param_1;
   local_20 = this;
   local_10 = 0;
   local_c = 0;
   local_18 = 0;
+  /* ST_PSEUDO[flattened_global_record_array]: expected g_playerRuntime[player].field[index...] after base/stride proof */
   local_14 = param_1 * 0xa62;
   pDVar4 = g_playerRuntime[param_1].objects;
   iVar2 = 0;
@@ -40,6 +41,7 @@ int __thiscall FUN_004de4f0(void *this,int param_1)
       piVar6 = piVar6 + 1;
     }
     uVar5 = 0;
+    /* ST_PSEUDO[flattened_global_record_array]: expected g_playerRuntime[player].field[index...] after base/stride proof */
     iVar2 = param_1 * 0xa62;
     if (pDVar4->count != 0) {
       do {
@@ -50,6 +52,7 @@ int __thiscall FUN_004de4f0(void *this,int param_1)
             puVar8 = &local_24;
             piVar6 = &local_c;
             piVar7 = &param_1;
+            /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
             SVar1 = (**(code **)(*local_8 + 0x2c))();
             uStackY_1ac = 0x4de587;
             iVar2 = STAllPlayersC::GetBoatWeaponInfo(SVar1,piVar7,piVar6,puVar8);
@@ -65,15 +68,20 @@ LAB_004de602:
             }
           }
           else if (local_8[8] == 1000) {
+            /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
             iVar2 = (**(code **)(*local_8 + 0x2c))();
             if (*(int *)(&DAT_007926b0 + iVar2 * 4) != 0) {
+              /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
               iVar2 = (**(code **)(*local_8 + 0x2c))();
               if (*(int *)(&DAT_00793c98 + iVar2 * 8) == 1) {
+                /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
                 iVar2 = (**(code **)(*local_8 + 0x2c))();
                 iVar9 = 0;
                 param_1 = (&DAT_00792ca0)[(iVar2 + -0x32) * 6];
+                /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
                 iVar2 = (**(code **)(*local_8 + 0x2c))();
                 local_c = thunk_FUN_004e8230(iVar3,iVar2 + -0x32,iVar9);
+                /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
                 iVar2 = (**(code **)(*local_8 + 0x2c))();
                 local_24 = *(undefined4 *)(&DAT_00793ea8 + iVar2 * 8);
               }

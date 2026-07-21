@@ -14,7 +14,7 @@ void FUN_0075fee0(AnonShape_0075FEE0_E0ABA202 *param_1,int param_2,undefined4 *p
   AnonShape_0075FEE0_E0ABA202 *pAVar10;
   uint uVar11;
   int *local_14;
-  
+
   iVar1 = param_1->field_01BA;
   iVar2 = param_1->field_0070;
   pAVar3 = (AnonShape_0075FEE0_E0ABA202 *)param_1->field_0068;

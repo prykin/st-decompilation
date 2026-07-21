@@ -22,25 +22,32 @@ undefined4 __fastcall FUN_004dd880(int param_1)
   int *local_10;
   uint *local_c;
   int *local_8;
-  
+
   local_20 = (AnonShape_004DDCC0_33DEB43E *)param_1;
+  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   GetPlayerRaceId(*(char *)(param_1 + 0x24));
   piVar8 = local_104;
   for (iVar6 = 0x37; iVar6 != 0; iVar6 = iVar6 + -1) {
     *piVar8 = -1;
     piVar8 = piVar8 + 1;
   }
+  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   if (*(int *)(param_1 + 0x24) != *(int *)(param_1 + 0x23d)) {
+    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     uVar2 = GetPlayerRaceId((char)*(int *)(param_1 + 0x23d));
+    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     iVar6 = *(int *)(param_1 + 0x235);
+    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     uVar3 = GetPlayerRaceId(*(char *)(param_1 + 0x24));
     if ((&DAT_007e1984)[(uVar3 & 0xff) + ((uVar2 & 0xff) + iVar6 * 3) * 3] == '\0')
     goto LAB_004dda3a;
   }
+  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   if (*(int *)(param_1 + 0x5ac) == 0x34) {
     local_24 = 1;
   }
   else {
+    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     local_24 = (-(uint)(*(int *)(param_1 + 0x5ac) != 0x5b) & 0xfffffffe) + 2;
   }
   local_14 = local_f4;

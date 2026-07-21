@@ -48,7 +48,7 @@ void __cdecl FUN_00645880(AnonShape_00645880_0D5933D4 *param_1)
   undefined2 local_2b;
   undefined4 local_29;
   undefined1 local_6;
-  
+
   iVar3 = *(int *)&param_1->field_0x4;
   puVar6 = local_5c;
   for (iVar5 = 0x16; iVar5 != 0; iVar5 = iVar5 + -1) {

@@ -16,11 +16,12 @@ void FUN_006d0020(HDC hdc,undefined4 param_2,undefined4 param_3,int param_4,int 
   uint uVar5;
   LPCSTR pCVar6;
   tagRECT local_14;
-  
+
   pHVar2 = hdc;
   iVar4 = Library::DKW::DDX::FUN_006ce770((uint)hdc,&hdc);
   iVar3 = param_8;
   if (iVar4 == 0) {
+    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     SetTextColor(hdc,*(COLORREF *)(param_8 + 0xc));
     color = *(COLORREF *)(iVar3 + 0x10);
     if (color == 0xffffffff) {

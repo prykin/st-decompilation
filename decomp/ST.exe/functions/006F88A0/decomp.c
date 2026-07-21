@@ -11,7 +11,7 @@ void FUN_006f88a0(undefined1 *param_1,int param_2,byte *param_3,int param_4,byte
   int iVar6;
   undefined1 *puVar7;
   int local_8;
-  
+
   if (-1 < param_9 + -1) {
     local_8 = param_9;
     do {

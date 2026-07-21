@@ -4,7 +4,7 @@ char * FUN_006b8240(char *param_1,int param_2)
 {
   char cVar1;
   int iVar2;
-  
+
   if (param_1 == (char *)0x0) {
     return (char *)0x0;
   }

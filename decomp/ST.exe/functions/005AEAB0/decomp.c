@@ -1,8 +1,10 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\load_obj.cpp
    ChooseMapTy::CreateCtrls
-   
+
    [STSwitchEnumApplier] Switch target field_1A5F uses
    /SubmarineTitans/Recovered/Enums/ChooseMapTy_field_1A5FState. Cases:
    CASE_0=0;CASE_1=1;CASE_2=2;CASE_3=3;CASE_4=4;CASE_5=5;CASE_6=6;CASE_7=7;CASE_9=9;CASE_A=10;CASE_B=11;CASE_C=12;CASE_10=16;CASE_13=19;CASE_14=20;CASE_15=21
@@ -20,8 +22,6 @@ void __thiscall ChooseMapTy::CreateCtrls(ChooseMapTy *this,char param_1)
   uint uVar6;
   uint uVar7;
   char cVar8;
-  undefined4 unaff_ESI;
-  void *unaff_EDI;
   int *piVar9;
   ccFntTy **ppcVar10;
   undefined4 *puVar11;
@@ -102,7 +102,7 @@ void __thiscall ChooseMapTy::CreateCtrls(ChooseMapTy *this,char param_1)
   undefined2 local_1c;
   ChooseMapTy *local_c;
   uint local_8;
-  
+
   puVar11 = local_598;
   local_c = this;
   for (iVar4 = 0x135; iVar4 != 0; iVar4 = iVar4 + -1) {
@@ -126,16 +126,14 @@ void __thiscall ChooseMapTy::CreateCtrls(ChooseMapTy *this,char param_1)
   }
   local_c4.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_c4;
-  iVar4 = Library::MSVCRT::__setjmp3(local_c4.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar4 = Library::MSVCRT::__setjmp3(local_c4.jumpBuffer,0);
   this_00 = local_c;
   if (iVar4 != 0) {
     g_currentExceptionFrame = local_c4.previous;
     iVar3 = ReportDebugMessage(s_E____titans_Start_load_obj_cpp_007cc728,0x39f,0,iVar4,&DAT_007a4ccc
                                ,s_ChooseMapTy__CreateCtrls_007cc858);
     if (iVar3 != 0) {
-      pcVar2 = (code *)swi(3);
-      (*pcVar2)();
-      return;
+      STDebugBreak(); /* noreturn in standalone pseudocode */
     }
     RaiseInternalException(iVar4,0,s_E____titans_Start_load_obj_cpp_007cc728,0x39f);
     return;
@@ -183,6 +181,7 @@ LAB_005aecc2:
         local_758[uVar5 * 0x1c] = uVar5 + 1;
         cVar8 = cVar8 + '\x01';
         local_758[uVar5 * 0x1c + 1] = 0;
+        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
         local_8 = CONCAT31(local_8._1_3_,cVar8);
         local_758[uVar5 * 0x1c + 3] = uVar5 * 0x7c + 0x112;
         uVar6 = local_8 & 0xff;

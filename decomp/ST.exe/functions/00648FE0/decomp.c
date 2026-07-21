@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* [STSourceProvenanceApplier begin]
@@ -17,10 +19,8 @@ void CreateAi(void)
   uint uVar6;
   char *pcVar7;
   cMf32 *pcVar8;
-  undefined4 unaff_ESI;
   int *piVar9;
   char *pcVar10;
-  void *unaff_EDI;
   int *piVar11;
   char *pcVar12;
   InternalExceptionFrame local_64;
@@ -31,21 +31,19 @@ void CreateAi(void)
   char *local_10;
   cMf32 *local_c;
   ushort *local_8;
-  
+
   local_c = (cMf32 *)0x0;
   local_8 = (ushort *)0x0;
   local_10 = (char *)0x0;
   local_64.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_64;
-  iVar3 = Library::MSVCRT::__setjmp3(local_64.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar3 = Library::MSVCRT::__setjmp3(local_64.jumpBuffer,0);
   if (iVar3 != 0) {
     g_currentExceptionFrame = local_64.previous;
     iVar4 = ReportDebugMessage(s_E____titans_ai_ai_creat_cpp_007d2880,0x10a,0,iVar3,&DAT_007a4ccc,
                                s_CreateAi_007d28c4);
     if (iVar4 != 0) {
-      pcVar2 = (code *)swi(3);
-      (*pcVar2)();
-      return;
+      STDebugBreak(); /* noreturn in standalone pseudocode */
     }
     if (local_8 != (ushort *)0x0) {
       FreeAndNull(&local_8);

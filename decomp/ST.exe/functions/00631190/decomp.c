@@ -6,9 +6,10 @@ FUN_00631190(void *this,uint param_1,short param_2,short param_3,short param_4,i
 {
   ushort *puVar1;
   int iVar2;
-  
+
   iVar2 = *(int *)((int)this + 0x38);
   if (param_1 < *(uint *)(iVar2 + 0xc)) {
+    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     iVar2 = *(int *)(iVar2 + 8) * param_1 + *(int *)(iVar2 + 0x1c);
   }
   else {

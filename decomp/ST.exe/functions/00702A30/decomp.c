@@ -21,7 +21,7 @@ void FUN_00702a30(undefined1 *param_1,int param_2,byte *param_3,int param_4,usho
   uint local_10;
   uint local_c;
   int local_8;
-  
+
   _DAT_00857000 = 1;
   pbVar9 = param_8;
 joined_r0x00702a47:
@@ -438,6 +438,7 @@ cf_common_join_00702F3A:
       }
     } while ((int)uVar4 < iVar6);
   }
+  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
   local_c._0_1_ = bVar1;
   if (((byte)local_c & 0xc0) == 0x80) {
     pbVar9 = pbVar9 + iVar6;

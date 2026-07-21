@@ -16,7 +16,7 @@ bool FUN_006b06a0(undefined4 *param_1,LOGPALETTE *param_2,int param_3,UINT param
   undefined4 *puVar11;
   tagLOGPALETTE *local_408;
   tagPALETTEENTRY *local_404;
-  
+
   if ((HGDIOBJ)*param_1 != (HGDIOBJ)0x0) {
     DeleteObject((HGDIOBJ)*param_1);
     *param_1 = 0;
@@ -34,6 +34,7 @@ bool FUN_006b06a0(undefined4 *param_1,LOGPALETTE *param_2,int param_3,UINT param
   param_2->palVersion = 0x300;
   param_2->palNumEntries = 0x100;
   piVar1 = (int *)param_1[0xf];
+  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
   if ((piVar1 == (int *)0x0) ||
      (iVar7 = (**(code **)(*piVar1 + 0x10))(piVar1,0,0,0x100,param_2->palPalEntry), iVar7 != 0)) {
     pHVar2 = GetDC((HWND)0x0);

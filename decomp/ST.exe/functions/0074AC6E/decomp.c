@@ -3,7 +3,7 @@ void __fastcall FUN_0074ac6e(AnonShape_0074AC6E_15F8B431 *param_1)
 
 {
   DWORD DVar1;
-  
+
   param_1->field_0120 = 0xfffffc18;
   param_1->field_0124 = 0xffffffff;
   DVar1 = timeGetTime();

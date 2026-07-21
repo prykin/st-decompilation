@@ -13,7 +13,7 @@ void FUN_0075a590(AnonShape_0075A180_7E367FD8 *param_1)
   int *piVar6;
   uint uVar7;
   int local_8;
-  
+
   local_8 = 0;
   iVar2 = param_1->field_0196;
   if (0 < param_1->field_001C) {

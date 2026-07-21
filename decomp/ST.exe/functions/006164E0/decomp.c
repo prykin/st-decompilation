@@ -20,7 +20,7 @@ undefined4 __thiscall FUN_006164e0(void *this,int *param_1,int *param_2,int *par
   int local_10;
   int local_c;
   int local_8;
-  
+
   iVar2 = thunk_FUN_00616280(this,&local_10,&local_14,&local_18);
   if (iVar2 < 0) {
     return 0xffffffff;
@@ -36,6 +36,7 @@ undefined4 __thiscall FUN_006164e0(void *this,int *param_1,int *param_2,int *par
   iVar6 = (iVar6 - iVar5) * *(int *)((int)this + 0x288);
   iVar5 = local_18 - *(short *)((int)this + 0x2cf);
   if (0xe1 < iVar5 * iVar5 + iVar4 * iVar4 + iVar3 * iVar3) {
+    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     if ((local_18 - iVar2) * *(int *)((int)this + 0x284) +
         (local_14 - local_c) * *(int *)((int)this + 0x280) +
         (local_10 - local_8) * *(int *)((int)this + 0x27c) < 0) {

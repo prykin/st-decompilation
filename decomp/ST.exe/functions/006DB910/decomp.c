@@ -5,7 +5,7 @@ int FUN_006db910(int param_1,int param_2,int param_3,int param_4)
   int iVar1;
   uint uVar2;
   uint uVar3;
-  
+
   uVar2 = param_3 - param_1;
   uVar3 = param_2 - param_4;
   if (uVar3 == 0) {

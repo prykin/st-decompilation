@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* Recovered from embedded debug metadata:
@@ -15,24 +17,23 @@ undefined4 __thiscall MTestTy::GetMessage(MTestTy *this,int param_1)
   int iVar6;
   undefined4 uVar7;
   int iVar8;
-  undefined4 unaff_ESI;
-  void *unaff_EDI;
   uint uVar9;
   char cVar10;
   uint uVar11;
   InternalExceptionFrame local_50;
   MTestTy *local_c;
   uint local_8;
-  
+
   local_8 = 0xffffffff;
   local_c = this;
   DVar5 = FUN_006e51b0(this->field_0010);
   this->field_00A1 = DVar5;
   local_50.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_50;
-  iVar6 = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar6 = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0);
   pMVar4 = local_c;
   if (iVar6 == 0) {
+    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     switch(*(undefined4 *)(param_1 + 0x10)) {
     case 0:
       NoneMTest(local_c);
@@ -161,9 +162,7 @@ undefined4 __thiscall MTestTy::GetMessage(MTestTy *this,int param_1)
   iVar8 = ReportDebugMessage(s_E____titans_Start_test_obj_cpp_007cdcbc,0xb5,0,iVar6,&DAT_007a4ccc,
                              s_MTestTy__GetMessage_007cdd44);
   if (iVar8 != 0) {
-    pcVar2 = (code *)swi(3);
-    uVar7 = (*pcVar2)();
-    return uVar7;
+    STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   RaiseInternalException(iVar6,0,s_E____titans_Start_test_obj_cpp_007cdcbc,0xb5);
   return 0xffff;

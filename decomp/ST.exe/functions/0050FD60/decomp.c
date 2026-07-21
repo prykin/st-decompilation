@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\frmpanel.cpp
@@ -10,8 +12,6 @@ void __thiscall FrmPanelTy::InitFrmPanel(FrmPanelTy *this)
   FrmPanelTy *this_00;
   int iVar2;
   LPSTR pCVar3;
-  undefined4 unaff_ESI;
-  void *unaff_EDI;
   char *pcVar4;
   undefined4 uVar5;
   undefined4 uVar6;
@@ -25,11 +25,11 @@ void __thiscall FrmPanelTy::InitFrmPanel(FrmPanelTy *this)
   undefined4 uVar14;
   InternalExceptionFrame local_4c;
   FrmPanelTy *local_8;
-  
+
   local_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_4c;
   local_8 = this;
-  iVar2 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar2 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
   this_00 = local_8;
   if (iVar2 == 0) {
     uVar13 = 0x77;
@@ -52,6 +52,7 @@ void __thiscall FrmPanelTy::InitFrmPanel(FrmPanelTy *this)
     uVar7 = 0xc0af;
     uVar6 = 0xc09f;
     pCVar3 = thunk_FUN_00571240(s_BUT_FLINE_007c2a4c,0);
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
     uVar6 = (**(code **)(iVar2 + 4))
                       (0,1,0x2b,0x19,0,1,1,pCVar3,uVar6,uVar7,uVar11,uVar13,uVar10,uVar12,uVar14);
     uVar5 = 1;
@@ -64,6 +65,7 @@ void __thiscall FrmPanelTy::InitFrmPanel(FrmPanelTy *this)
     uVar7 = 0xc0a0;
     this_00->field_01B3 = uVar6;
     pCVar3 = thunk_FUN_00571240(s_BUT_FBENDUP_007c2a3c,0);
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
     uVar6 = (**(code **)(iVar2 + 4))
                       (0,1,0x60,0x19,0,1,1,pCVar3,uVar7,uVar11,uVar13,uVar10,uVar12,uVar14,uVar5);
     uVar5 = 1;
@@ -76,6 +78,7 @@ void __thiscall FrmPanelTy::InitFrmPanel(FrmPanelTy *this)
     uVar7 = 0xc0a1;
     this_00->field_01B7 = uVar6;
     pCVar3 = thunk_FUN_00571240(s_BUT_FHOLD_007c2a30,0);
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
     uVar6 = (**(code **)(iVar2 + 4))
                       (0,1,0x95,0x19,0,1,1,pCVar3,uVar7,uVar11,uVar13,uVar10,uVar12,uVar14,uVar5);
     uVar5 = 1;
@@ -88,6 +91,7 @@ void __thiscall FrmPanelTy::InitFrmPanel(FrmPanelTy *this)
     uVar7 = 0xc0a2;
     this_00->field_01BB = uVar6;
     pCVar3 = thunk_FUN_00571240(s_BUT_FLOCK_007c2a24,0);
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
     uVar6 = (**(code **)(iVar2 + 4))
                       (0,1,0xca,0x19,0,1,1,pCVar3,uVar7,uVar11,uVar13,uVar10,uVar12,uVar14,uVar5);
     uVar5 = 1;
@@ -100,6 +104,7 @@ void __thiscall FrmPanelTy::InitFrmPanel(FrmPanelTy *this)
     uVar7 = 0xc0a3;
     this_00->field_01BF = uVar6;
     pCVar3 = thunk_FUN_00571240(s_BUT_FWALL_007c2a18,0);
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
     uVar6 = (**(code **)(iVar2 + 4))
                       (0,1,0x2b,0x31,0,1,1,pCVar3,uVar7,uVar11,uVar13,uVar10,uVar12,uVar14,uVar5);
     uVar5 = 1;
@@ -112,6 +117,7 @@ void __thiscall FrmPanelTy::InitFrmPanel(FrmPanelTy *this)
     uVar7 = 0xc0a4;
     this_00->field_01C3 = uVar6;
     pCVar3 = thunk_FUN_00571240(s_BUT_FBENDDN_007c2a08,0);
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
     uVar6 = (**(code **)(iVar2 + 4))
                       (0,1,0x60,0x31,0,1,1,pCVar3,uVar7,uVar11,uVar13,uVar10,uVar12,uVar14,uVar5);
     iVar2 = this_00->field_0000;
@@ -124,6 +130,7 @@ void __thiscall FrmPanelTy::InitFrmPanel(FrmPanelTy *this)
     this_00->field_01C7 = uVar6;
     uVar6 = 0xc0a5;
     pCVar3 = thunk_FUN_00571240(s_BUT_FSQUARE_007c29f8,0);
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
     uVar6 = (**(code **)(iVar2 + 4))
                       (0,1,0x95,0x31,0,1,1,pCVar3,uVar6,uVar7,uVar11,uVar13,uVar10,uVar12,uVar14);
     uVar5 = 1;
@@ -136,6 +143,7 @@ void __thiscall FrmPanelTy::InitFrmPanel(FrmPanelTy *this)
     uVar7 = 0xc0a6;
     this_00->field_01CB = uVar6;
     pCVar3 = thunk_FUN_00571240(s_BUT_FBREAK_007c29e8,0);
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
     uVar6 = (**(code **)(iVar2 + 4))
                       (0,1,0xca,0x31,0,1,1,pCVar3,uVar7,uVar11,uVar13,uVar10,uVar12,uVar14,uVar5);
     uVar14 = 1;
@@ -148,6 +156,7 @@ void __thiscall FrmPanelTy::InitFrmPanel(FrmPanelTy *this)
     uVar7 = 0xb108;
     this_00->field_01CF = uVar6;
     pCVar3 = thunk_FUN_00571240(s_BUT_FINC_007c29d0,0);
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
     uVar6 = (**(code **)(iVar2 + 4))
                       (0,1,0x2b,0x52,0,1,6,pCVar3,uVar7,uVar11,uVar13,uVar10,uVar12,pcVar4,uVar14);
     uVar14 = 1;
@@ -160,6 +169,7 @@ void __thiscall FrmPanelTy::InitFrmPanel(FrmPanelTy *this)
     uVar7 = 0xb10a;
     this_00->field_01D3 = uVar6;
     pCVar3 = thunk_FUN_00571240(s_BUT_FDEC_007c29b8,0);
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
     uVar6 = (**(code **)(iVar2 + 4))
                       (0,1,0x4d,0x52,0,1,6,pCVar3,uVar7,uVar11,uVar13,uVar10,uVar12,pcVar4,uVar14);
     uVar14 = 1;
@@ -172,6 +182,7 @@ void __thiscall FrmPanelTy::InitFrmPanel(FrmPanelTy *this)
     uVar7 = 0xb10c;
     this_00->field_01D7 = uVar6;
     pCVar3 = thunk_FUN_00571240(s_BUT_FRLFT_007c29ac,0);
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
     uVar6 = (**(code **)(iVar2 + 4))
                       (0,1,0xaa,0x52,0,1,6,pCVar3,uVar7,uVar11,uVar13,uVar10,uVar12,pcVar4,uVar14);
     uVar14 = 1;
@@ -184,6 +195,7 @@ void __thiscall FrmPanelTy::InitFrmPanel(FrmPanelTy *this)
     uVar7 = 0xb10e;
     this_00->field_01DB = uVar6;
     pCVar3 = thunk_FUN_00571240(s_BUT_FRRT_007c29a0,0);
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
     uVar6 = (**(code **)(iVar2 + 4))
                       (0,1,0xcc,0x52,0,1,6,pCVar3,uVar7,uVar11,uVar13,uVar10,uVar12,pcVar4,uVar14);
     this_00->field_01DF = uVar6;
@@ -194,9 +206,7 @@ void __thiscall FrmPanelTy::InitFrmPanel(FrmPanelTy *this)
   iVar8 = ReportDebugMessage(s_E____titans_Andrey_frmpanel_cpp_007c2958,0x43,0,iVar2,&DAT_007a4ccc,
                              s_FrmPanelTy__InitFrmPanel_007c2980);
   if (iVar8 != 0) {
-    pcVar1 = (code *)swi(3);
-    (*pcVar1)();
-    return;
+    STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   RaiseInternalException(iVar2,0,s_E____titans_Andrey_frmpanel_cpp_007c2958,0x43);
   return;

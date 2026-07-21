@@ -3,7 +3,8 @@ undefined4 __fastcall FUN_00627a60(int param_1)
 
 {
   int iVar1;
-  
+
+  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   iVar1 = *(int *)(param_1 + 0x2ae);
   if ((((iVar1 != 2) && (iVar1 != 3)) && (iVar1 != 4)) && (iVar1 != 5)) {
     return 1;

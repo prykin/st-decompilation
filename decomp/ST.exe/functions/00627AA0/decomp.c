@@ -7,7 +7,7 @@ bool __thiscall FUN_00627aa0(void *this,uint param_1)
   int iVar3;
   uint uVar4;
   bool bVar5;
-  
+
   iVar3 = *(int *)((int)this + 0x2ae);
   if (iVar3 == 2) {
     return false;
@@ -91,11 +91,11 @@ LAB_00627c8a:
   switch(*(undefined1 *)((int)this + 0x2ad)) {
   case 0:
   case 2:
-    bVar5 = thunk_FUN_0041d6c0(this,param_1);
-    return bVar5;
+    iVar3 = thunk_FUN_0041d6c0(this,param_1);
+    return SUB41(iVar3,0);
   case 1:
-    bVar5 = thunk_FUN_0041d620(this,param_1);
-    return bVar5;
+    iVar3 = thunk_FUN_0041d620(this,param_1);
+    return SUB41(iVar3,0);
   case 3:
     goto switchD_00627c97_default;
   default:

@@ -7,7 +7,7 @@ undefined4 * __fastcall FUN_00571cd0(AnonShape_00571CD0_C1ECCB3F *param_1)
   uint uVar3;
   char *pcVar4;
   char *pcVar5;
-  
+
   uVar2 = 0xffffffff;
   *(undefined4 *)&param_1->field_0x8 = 0;
   *(undefined4 *)&param_1->field_0xc = 0;

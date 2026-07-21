@@ -4,7 +4,7 @@ int __fastcall FUN_004ce7d0(AnonShape_004CE7D0_208BB40F *param_1)
 {
   int iVar1;
   int iVar2;
-  
+
   iVar2 = 1;
   iVar1 = param_1->field_04D0;
   if (iVar1 != 0) {

@@ -10,7 +10,7 @@ undefined4 __thiscall FUN_0068f8f0(void *this,short param_1)
   bool bVar5;
   uint local_38 [2];
   char local_30;
-  
+
   if (param_1 == 1) {
     if (*(short *)((int)this + 0x39) != 3) {
       return 1;

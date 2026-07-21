@@ -23,7 +23,7 @@ undefined4 FUN_006b92b0(int *param_1,int *param_2)
   int local_10;
   int local_c;
   int local_8;
-  
+
   if ((*(uint *)(*param_1 + 8) & 0x3000000) != 0) {
     Library::DKW::DDX::FUN_006bb370(*param_1,0,0);
     return 0;

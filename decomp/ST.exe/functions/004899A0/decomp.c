@@ -1,8 +1,10 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\To_boat.cpp
    STBoatC::GetDefenceTarget
-   
+
    [STSwitchEnumApplier] Switch target param_1 uses
    /SubmarineTitans/Recovered/Enums/STBoatC_GetDefenceTarget_param_1Enum. Cases:
    CASE_0=0;CASE_1=1;CASE_2=2;CASE_3=3;CASE_FFFFFFFF=4294967295 */
@@ -20,12 +22,12 @@ STBoatC::GetDefenceTarget(STBoatC *this,STBoatC_GetDefenceTarget_param_1Enum par
   int iVar6;
   int iVar7;
   undefined4 uVar8;
-  undefined4 extraout_ECX;
   DArrayTy *pDVar9;
   int iVar10;
   uint uVar11;
   short sVar12;
   short sVar13;
+  /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
   int *unaff_EDI;
   short sVar14;
   short sVar15;
@@ -37,11 +39,11 @@ STBoatC::GetDefenceTarget(STBoatC *this,STBoatC_GetDefenceTarget_param_1Enum par
   undefined4 local_50 [2];
   undefined4 local_48 [2];
   short local_40;
-  ushort uStack_3e;
+  short sStack_3e;
   undefined2 local_3c;
   int local_38;
   int local_34;
-  ushort *local_30;
+  undefined2 *local_30;
   int local_2c;
   undefined4 local_28;
   undefined4 local_24;
@@ -52,7 +54,7 @@ STBoatC::GetDefenceTarget(STBoatC *this,STBoatC_GetDefenceTarget_param_1Enum par
   int local_10;
   int local_c;
   STGameObjC *local_8;
-  
+
   local_34 = 0;
   local_20 = (undefined4 *)0x0;
   if ((this->field_079A == 0) || (0 < (int)this->field_073A)) {
@@ -71,12 +73,13 @@ LAB_0048a37f:
     }
     else {
       local_8 = STAllPlayersC::GetObjPtr
-                          (g_sTAllPlayers_007FA174,
-                           CONCAT31((int3)((uint)iVar10 >> 8),this->field_0x487),this->field_048B,
+                          (g_sTAllPlayers_007FA174,this->field_0x487,this->field_048B,
                            this->field_0483);
+      /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
       if (((local_8 != (STGameObjC *)0x0) &&
           (iVar10 = (*local_8->vtable[1].vfunc_24)(), iVar10 == 1)) &&
          (iVar10 = (*local_8->vtable[1].MoveStep)(local_8,unaff_EDI), iVar10 == 1)) {
+        /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
         unaff_EDI = *(int **)&this->field_0x24;
         iVar10 = (*local_8->vtable[1].vfunc_20)();
         if ((iVar10 == 1) && ((int)this->field_047F % 0x28 != 0)) {
@@ -97,7 +100,8 @@ LAB_0048a37f:
                                   (int)(short)this->field_0477,2,(int *)0x6,6,2,
                                   (uint)(*(int *)&this->field_0x736 != 0));
       if (pDVar3 != (DArrayTy *)0x0) {
-        this_00 = thunk_FUN_0042b760(CONCAT31((int3)((uint)extraout_ECX >> 8),this->field_0x24),
+        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+        this_00 = thunk_FUN_0042b760(this->field_0x24,
                                      CONCAT22((short)((uint)pDVar3 >> 0x10),this->field_0030));
         local_20 = thunk_FUN_0040c080(this_00,(uint)(ushort)this->field_0032,(uint *)pDVar3);
         local_18 = 0;
@@ -108,8 +112,10 @@ LAB_0048a37f:
               iVar6 = (8 - iVar10) * 0x32;
               DArrayGetElement(pDVar3,local_18,&local_8);
               iVar10 = (*local_8->vtable[1].vfunc_24)();
+              /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
               if ((iVar10 != 0) &&
                  (iVar10 = (*local_8->vtable[1].MoveStep)(local_8,unaff_EDI), iVar10 != 0)) {
+                /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
                 unaff_EDI = *(int **)&this->field_0x24;
                 iVar10 = (*local_8->vtable[1].vfunc_20)();
                 if (iVar10 != 0) {
@@ -144,27 +150,26 @@ LAB_0048a37f:
                                           local_14,local_10,local_c);
                     local_2c = 0;
                     if (this->field_0x2b2 != '\0') {
-                      local_30 = (ushort *)&this->field_0x2a8;
+                      local_30 = (undefined2 *)&this->field_0x2a8;
                       do {
                         puVar5 = (undefined4 *)
-                                 thunk_FUN_0041dc40(local_48,*(undefined4 *)(local_30 + -1),
+                                 thunk_FUN_0041dc40(local_48,(short)*(undefined4 *)(local_30 + -1),
                                                     local_30[1],(short)local_24);
                         local_40 = (short)*puVar5;
-                        uStack_3e = (ushort)((uint)*puVar5 >> 0x10);
-                        sVar12 = this->field_0043 - uStack_3e;
+                        sStack_3e = (short)((uint)*puVar5 >> 0x10);
+                        sVar12 = this->field_0043 - sStack_3e;
                         sVar13 = this->field_0041 + local_40;
+                        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                         local_28 = CONCAT22((short)((uint)puVar5 >> 0x10),
                                             this->field_0045 + *(short *)(puVar5 + 1));
-                        uStack_3e = *local_30;
+                        sStack_3e = *local_30;
                         local_40 = 0;
-                        puVar5 = (undefined4 *)
-                                 thunk_FUN_0041dc40(local_50,(uint)uStack_3e << 0x10,0,
-                                                    (short)local_24);
+                        puVar5 = (undefined4 *)thunk_FUN_0041dc40(local_50,0,0,(short)local_24);
                         local_40 = (short)*puVar5;
-                        uStack_3e = (ushort)((uint)*puVar5 >> 0x10);
+                        sStack_3e = (short)((uint)*puVar5 >> 0x10);
                         local_3c = *(undefined2 *)(puVar5 + 1);
                         sVar14 = (short)local_14 + local_40;
-                        sVar15 = (short)local_10 - uStack_3e;
+                        sVar15 = (short)local_10 - sStack_3e;
                         if (*(int *)&this->field_0x736 == 0) {
                           iVar6 = STSprGameObjC::CheckRay
                                             ((STSprGameObjC *)this,sVar13,sVar12,(short)local_28,
@@ -254,8 +259,10 @@ LAB_00489eb0:
           do {
             DArrayGetElement(pDVar3,local_18,&local_8);
             iVar10 = (*local_8->vtable[1].vfunc_24)();
+            /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
             if ((iVar10 != 0) &&
                (iVar10 = (*local_8->vtable[1].MoveStep)(local_8,unaff_EDI), iVar10 != 0)) {
+              /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
               unaff_EDI = *(int **)&this->field_0x24;
               iVar10 = (*local_8->vtable[1].vfunc_20)();
               if (iVar10 != 0) {
@@ -272,27 +279,26 @@ LAB_00489eb0:
                                         local_10,local_c);
                   local_2c = 0;
                   if (this->field_0x2b2 != '\0') {
-                    local_30 = (ushort *)&this->field_0x2a8;
+                    local_30 = (undefined2 *)&this->field_0x2a8;
                     do {
                       puVar5 = (undefined4 *)
-                               thunk_FUN_0041dc40(local_58,*(undefined4 *)(local_30 + -1),
+                               thunk_FUN_0041dc40(local_58,(short)*(undefined4 *)(local_30 + -1),
                                                   local_30[1],(short)local_24);
                       local_40 = (short)*puVar5;
-                      uStack_3e = (ushort)((uint)*puVar5 >> 0x10);
-                      sVar12 = this->field_0043 - uStack_3e;
+                      sStack_3e = (short)((uint)*puVar5 >> 0x10);
+                      sVar12 = this->field_0043 - sStack_3e;
                       sVar13 = this->field_0041 + local_40;
+                      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                       local_28 = CONCAT22((short)((uint)puVar5 >> 0x10),
                                           this->field_0045 + *(short *)(puVar5 + 1));
-                      uStack_3e = *local_30;
+                      sStack_3e = *local_30;
                       local_40 = 0;
-                      puVar5 = (undefined4 *)
-                               thunk_FUN_0041dc40(local_60,(uint)uStack_3e << 0x10,0,(short)local_24
-                                                 );
+                      puVar5 = (undefined4 *)thunk_FUN_0041dc40(local_60,0,0,(short)local_24);
                       local_40 = (short)*puVar5;
-                      uStack_3e = (ushort)((uint)*puVar5 >> 0x10);
+                      sStack_3e = (short)((uint)*puVar5 >> 0x10);
                       local_3c = *(undefined2 *)(puVar5 + 1);
                       sVar14 = (short)local_14 + local_40;
-                      sVar15 = (short)local_10 - uStack_3e;
+                      sVar15 = (short)local_10 - sStack_3e;
                       if (*(int *)&this->field_0x736 == 0) {
                         iVar6 = STSprGameObjC::CheckRay
                                           ((STSprGameObjC *)this,sVar13,sVar12,(short)local_28,
@@ -381,9 +387,7 @@ LAB_0048a2dd:
       iVar10 = ReportDebugMessage(s_E____titans_wlad_To_boat_cpp_007a9d3c,0x4677,0,0,&DAT_007a4ccc,
                                   s_STBoatC__GetDefenceTarget___inco_007ab974);
       if (iVar10 != 0) {
-        pcVar2 = (code *)swi(3);
-        uVar8 = (*pcVar2)();
-        return uVar8;
+        STDebugBreak(); /* noreturn in standalone pseudocode */
       }
       RaiseInternalException
                 (0,g_overwriteContext_007ED77C,s_E____titans_wlad_To_boat_cpp_007a9d3c,0x4678);

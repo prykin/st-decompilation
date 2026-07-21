@@ -10,7 +10,7 @@ FUN_0057bd70(void *this,short param_1,short param_2,short param_3,short param_4,
   short sVar4;
   short sVar5;
   short sVar6;
-  
+
   sVar2 = 0;
   sVar5 = 0;
   sVar6 = 0;

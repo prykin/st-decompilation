@@ -6,7 +6,7 @@ void FUN_00581060(void)
   undefined4 *puVar2;
   undefined4 local_24 [4];
   undefined4 local_14;
-  
+
   if (DAT_008117bc != (undefined4 *)0x0) {
     puVar2 = local_24;
     for (iVar1 = 8; iVar1 != 0; iVar1 = iVar1 + -1) {
@@ -14,6 +14,7 @@ void FUN_00581060(void)
       puVar2 = puVar2 + 1;
     }
     local_14 = 0x5de2;
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
     (**(code **)*DAT_008117bc)(local_24);
   }
   return;

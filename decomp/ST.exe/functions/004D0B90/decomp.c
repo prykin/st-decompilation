@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Artem\TLO_dock.cpp
@@ -12,30 +14,26 @@ int __thiscall TLOFakeTy::GetMessage(TLOFakeTy *this,AnonShape_0041AF40_F59F8577
   int iVar4;
   int exceptionCode;
   uint uVar5;
-  undefined4 unaff_ESI;
   byte *pbVar6;
   int iVar7;
-  void *unaff_EDI;
   undefined4 *puVar8;
   byte *pbVar9;
   InternalExceptionFrame local_50;
   STSprGameObjC *local_c;
   byte *local_8;
-  
+
   puVar8 = (undefined4 *)0x0;
   local_50.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_50;
   local_c = (STSprGameObjC *)this;
-  iVar4 = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar4 = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0);
   pSVar3 = local_c;
   if (iVar4 != 0) {
     g_currentExceptionFrame = local_50.previous;
     iVar7 = ReportDebugMessage(s_E____titans_Artem_TLO_dock_cpp_007bf39c,0x341,0,iVar4,&DAT_007a4ccc
                                ,s_TLOFakeTy__GetMessage_error_007bf3c4);
     if (iVar7 != 0) {
-      pcVar2 = (code *)swi(3);
-      iVar4 = (*pcVar2)();
-      return iVar4;
+      STDebugBreak(); /* noreturn in standalone pseudocode */
     }
     RaiseInternalException(iVar4,0,s_E____titans_Artem_TLO_dock_cpp_007bf39c,0x342);
     return iVar4;

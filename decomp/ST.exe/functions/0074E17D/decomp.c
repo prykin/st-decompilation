@@ -4,7 +4,7 @@ undefined4 __thiscall FUN_0074e17d(void *this,int *param_1,int param_2)
 {
   undefined4 *puVar1;
   int iVar2;
-  
+
   puVar1 = (undefined4 *)FUN_0074deba(param_2);
   while( true ) {
     if (puVar1 == (undefined4 *)0x0) {

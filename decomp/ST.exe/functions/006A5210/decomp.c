@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 undefined4 FUN_006a5210(void)
 
@@ -8,7 +10,7 @@ undefined4 FUN_006a5210(void)
   int iVar4;
   undefined4 uVar5;
   undefined4 local_c;
-  
+
   local_c = 1;
   if ((DAT_007ec178 & 1) == 0) {
     return 1;
@@ -20,41 +22,31 @@ undefined4 FUN_006a5210(void)
     case -6:
       iVar4 = Library::MSVCRT::FUN_00730fa0(0,0,0,0,&DAT_007a4ccc);
       if (iVar4 == 1) {
-        pcVar1 = (code *)swi(3);
-        uVar5 = (*pcVar1)();
-        return uVar5;
+        STDebugBreak(); /* noreturn in standalone pseudocode */
       }
       break;
     case -5:
       iVar4 = Library::MSVCRT::FUN_00730fa0(0,0,0,0,&DAT_007a4ccc);
       if (iVar4 == 1) {
-        pcVar1 = (code *)swi(3);
-        uVar5 = (*pcVar1)();
-        return uVar5;
+        STDebugBreak(); /* noreturn in standalone pseudocode */
       }
       break;
     case -4:
       iVar4 = Library::MSVCRT::FUN_00730fa0(0,0,0,0,&DAT_007a4ccc);
       if (iVar4 == 1) {
-        pcVar1 = (code *)swi(3);
-        uVar5 = (*pcVar1)();
-        return uVar5;
+        STDebugBreak(); /* noreturn in standalone pseudocode */
       }
       break;
     case -3:
       iVar4 = Library::MSVCRT::FUN_00730fa0(0,0,0,0,&DAT_007a4ccc);
       if (iVar4 == 1) {
-        pcVar1 = (code *)swi(3);
-        uVar5 = (*pcVar1)();
-        return uVar5;
+        STDebugBreak(); /* noreturn in standalone pseudocode */
       }
       break;
     default:
       iVar4 = Library::MSVCRT::FUN_00730fa0(0,0,0,0,&DAT_007a4ccc);
       if (iVar4 == 1) {
-        pcVar1 = (code *)swi(3);
-        uVar5 = (*pcVar1)();
-        return uVar5;
+        STDebugBreak(); /* noreturn in standalone pseudocode */
       }
     }
     return 0;
@@ -69,9 +61,7 @@ undefined4 FUN_006a5210(void)
       iVar4 = Library::MSVCRT::FUN_00730fa0
                         (0,0,0,0,(byte *)s_DAMAGE__before__hs_block____d__a_007ec7bc);
       if (iVar4 == 1) {
-        pcVar1 = (code *)swi(3);
-        uVar5 = (*pcVar1)();
-        return uVar5;
+        STDebugBreak(); /* noreturn in standalone pseudocode */
       }
       bVar2 = false;
     }
@@ -80,36 +70,29 @@ undefined4 FUN_006a5210(void)
       iVar4 = Library::MSVCRT::FUN_00730fa0
                         (0,0,0,0,(byte *)s_DAMAGE__after__hs_block____d__at_007ec788);
       if (iVar4 == 1) {
-        pcVar1 = (code *)swi(3);
-        uVar5 = (*pcVar1)();
-        return uVar5;
+        STDebugBreak(); /* noreturn in standalone pseudocode */
       }
       bVar2 = false;
     }
+    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
     if ((puVar3[5] == 0) &&
        (iVar4 = FUN_006a5130((char *)(puVar3 + 8),DAT_007ec184._1_1_,puVar3[4]), iVar4 == 0)) {
       iVar4 = Library::MSVCRT::FUN_00730fa0
                         (0,0,0,0,(byte *)s_DAMAGE__on_top_of_Free_block_at_0_007ec754);
       if (iVar4 == 1) {
-        pcVar1 = (code *)swi(3);
-        uVar5 = (*pcVar1)();
-        return uVar5;
+        STDebugBreak(); /* noreturn in standalone pseudocode */
       }
 LAB_006a541d:
       if ((puVar3[2] != 0) &&
          (iVar4 = Library::MSVCRT::FUN_00730fa0
                             (0,0,0,0,(byte *)s__hs_allocated_at_file__hs__d___007ec72c), iVar4 == 1)
          ) {
-        pcVar1 = (code *)swi(3);
-        uVar5 = (*pcVar1)();
-        return uVar5;
+        STDebugBreak(); /* noreturn in standalone pseudocode */
       }
       iVar4 = Library::MSVCRT::FUN_00730fa0
                         (0,0,0,0,(byte *)s__hs_located_at_0x_08X_is__u_byte_007ec6f8);
       if (iVar4 == 1) {
-        pcVar1 = (code *)swi(3);
-        uVar5 = (*pcVar1)();
-        return uVar5;
+        STDebugBreak(); /* noreturn in standalone pseudocode */
       }
       local_c = 0;
     }

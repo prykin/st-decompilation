@@ -8,7 +8,7 @@ void FUN_006d3c30(AnonShape_006D3C30_0FAA5DE6 *param_1,int param_2,int param_3,i
   HRGN pHVar2;
   RECT local_24;
   RECT local_14;
-  
+
   if (param_6 != (undefined4 *)0x0) {
     *param_6 = param_1->field_0484;
     param_6[1] = param_1->field_0488;

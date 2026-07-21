@@ -3,20 +3,19 @@ undefined4 __thiscall FUN_005f89f0(void *this,int param_1)
 
 {
   uint uVar1;
-  bool bVar2;
-  uint uVar3;
-  undefined3 extraout_var;
+  uint uVar2;
+  int iVar3;
   int iVar4;
   int iVar5;
   short sVar6;
   short sVar7;
   short sVar8;
-  
-  uVar3 = *(int *)((int)this + 0x1c) * 0x41c64e6d + 0x3039;
-  *(uint *)((int)this + 0x1c) = uVar3;
+
+  uVar2 = *(int *)((int)this + 0x1c) * 0x41c64e6d + 0x3039;
+  *(uint *)((int)this + 0x1c) = uVar2;
   uVar1 = *(int *)((int)this + 0x1c) * 0x41c64e6d + 0x3039;
   *(uint *)((int)this + 0x1c) = uVar1;
-  iVar4 = ((uVar3 >> 0x10) % 5 + *(int *)((int)this + 0x27d)) - param_1;
+  iVar4 = ((uVar2 >> 0x10) % 5 + *(int *)((int)this + 0x27d)) - param_1;
   iVar5 = ((uVar1 >> 0x10) % 5 + *(int *)((int)this + 0x281)) - param_1;
   if (iVar4 < 0) {
     iVar4 = 0;
@@ -35,8 +34,8 @@ undefined4 __thiscall FUN_005f89f0(void *this,int param_1)
     sVar6 = (short)iVar4;
     sVar7 = (short)iVar5;
     sVar8 = (short)param_1;
-    bVar2 = thunk_FUN_004961b0(sVar6,sVar7,sVar8);
-    if ((CONCAT31(extraout_var,bVar2) != 0) &&
+    iVar3 = thunk_FUN_004961b0(sVar6,sVar7,sVar8);
+    if ((iVar3 != 0) &&
        (((((sVar6 < 0 || (g_worldGrid.sizeX <= sVar6)) || (sVar7 < 0)) ||
          ((g_worldGrid.sizeY <= sVar7 || (sVar8 < 0)))) ||
         ((g_worldGrid.sizeZ <= sVar8 ||

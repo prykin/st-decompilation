@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\optpanel.cpp
@@ -23,19 +25,18 @@ void __thiscall OptPanelTy::PrepFiles(OptPanelTy *this,uint param_1)
   int iVar12;
   uint uVar13;
   uint uVar14;
+  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   cMf32 *extraout_ECX;
+  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   cMf32 *extraout_ECX_00;
   cMf32 *this_01;
   OptPanelTy *this_02;
-  undefined4 unaff_ESI;
   byte *pbVar15;
-  void *unaff_EDI;
   char *pcVar16;
   char *pcVar17;
   byte *pbVar18;
   bool bVar19;
-  CHAR *pCVar20;
-  undefined4 uVar21;
+  undefined4 uVar20;
   char local_3fc [260];
   byte local_2f8 [260];
   _WIN32_FIND_DATAA local_1f4;
@@ -49,7 +50,7 @@ void __thiscall OptPanelTy::PrepFiles(OptPanelTy *this,uint param_1)
   OptPanelTy *local_10;
   int local_c;
   uint local_8;
-  
+
   local_14 = 0x88000016;
   if (DAT_00808783 == '\x01') {
     local_14 = 0x88000116;
@@ -60,7 +61,7 @@ void __thiscall OptPanelTy::PrepFiles(OptPanelTy *this,uint param_1)
   local_70.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_70;
   local_10 = this;
-  iVar5 = Library::MSVCRT::__setjmp3(local_70.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar5 = Library::MSVCRT::__setjmp3(local_70.jumpBuffer,0);
   this_02 = local_10;
   if (iVar5 != 0) {
     g_currentExceptionFrame = local_70.previous;
@@ -70,9 +71,7 @@ void __thiscall OptPanelTy::PrepFiles(OptPanelTy *this,uint param_1)
       RaiseInternalException(iVar5,0,s_E____titans_Andrey_optpanel_cpp_007c70a0,0x44f);
       return;
     }
-    pcVar3 = (code *)swi(3);
-    (*pcVar3)();
-    return;
+    STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   if ((AnonShape_006B5570_4D68B99C *)local_10->field_01E9 != (AnonShape_006B5570_4D68B99C *)0x0) {
     FUN_006b5570((AnonShape_006B5570_4D68B99C *)local_10->field_01E9);
@@ -307,15 +306,13 @@ void __thiscall OptPanelTy::PrepFiles(OptPanelTy *this,uint param_1)
     do {
       pIVar4 = g_currentExceptionFrame;
       if (((byte)local_1f4.dwFileAttributes & 0x10) == 0) {
-        pCVar20 = local_1f4.cFileName;
         local_1c = &local_8;
-        uVar21 = 0;
         local_8 = 0;
-        Library::MSVCRT::FUN_0072e730((byte *)pCVar20,(byte *)0x0,(byte *)0x0,local_2f8,(byte *)0x0)
-        ;
+        Library::MSVCRT::FUN_0072e730
+                  ((byte *)local_1f4.cFileName,(byte *)0x0,(byte *)0x0,local_2f8,(byte *)0x0);
         local_b4.previous = g_currentExceptionFrame;
         g_currentExceptionFrame = &local_b4;
-        iVar5 = Library::MSVCRT::__setjmp3(local_b4.jumpBuffer,0,pCVar20,uVar21);
+        iVar5 = Library::MSVCRT::__setjmp3(local_b4.jumpBuffer,0);
         this_02 = local_10;
         hFindFile = local_18;
         pIVar4 = local_b4.previous;
@@ -381,6 +378,7 @@ void __thiscall OptPanelTy::PrepFiles(OptPanelTy *this,uint param_1)
           puVar8 = cMf32::RecGet(this_00,0x80,PTR_s_SAVE_DESC_0079ad04,(int *)&local_1c,0);
           if (puVar8 == (ushort *)0x0) {
             local_8 = 0;
+            /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
             this_01 = extraout_ECX;
           }
           else {
@@ -410,6 +408,7 @@ void __thiscall OptPanelTy::PrepFiles(OptPanelTy *this,uint param_1)
               } while (cVar1 != '\0');
               pcVar9 = FUN_006b8240((char *)local_2f8,~uVar13 - 1);
               Library::DKW::TBL::FUN_006b5aa0((uint *)this_02->field_01E9,pcVar9);
+              /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
               this_01 = extraout_ECX_00;
             }
           }
@@ -430,7 +429,7 @@ void __thiscall OptPanelTy::PrepFiles(OptPanelTy *this,uint param_1)
   if (uVar13 == 0) {
     if (this_02->field_01A4 != CASE_3) goto LAB_0053325d;
     Library::DKW::TBL::FUN_006b6020((uint *)this_02->field_01F1,0,&DAT_008016a0);
-    uVar21 = this_02->field_01B9;
+    uVar20 = this_02->field_01B9;
     this_02->field_0028 = 0x33;
     *(undefined4 *)&this_02->field_0x2c = this_02->field_01F1;
   }
@@ -466,10 +465,10 @@ void __thiscall OptPanelTy::PrepFiles(OptPanelTy *this,uint param_1)
     if (uVar13 <= param_1) {
       param_1 = uVar13 - 1;
     }
-    uVar21 = this_02->field_01B5;
+    uVar20 = this_02->field_01B5;
     *(uint *)&this_02->field_0x2c = param_1;
   }
-  FUN_006e6080(this_02,2,uVar21,(undefined4 *)&this_02->field_0x18);
+  FUN_006e6080(this_02,2,uVar20,(undefined4 *)&this_02->field_0x18);
 LAB_0053325d:
   this_02->field_0028 = 0x20;
   *(uint *)&this_02->field_0x2c = (uint)(uVar13 != 0);

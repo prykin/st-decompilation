@@ -11,8 +11,10 @@ void FUN_006b2020(int param_1,uint param_2,uint param_3)
   uint uVar7;
   int *piVar8;
   int iVar9;
-  
+
+  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   iVar2 = *(int *)(param_1 + 0x1ac);
+  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   if ((param_2 < *(uint *)(param_1 + 0x1a0)) &&
      (puVar3 = *(uint **)(*(int *)(param_1 + 0x1b0) + param_2 * 4), (*puVar3 & 0x80000) == 0)) {
     uVar7 = puVar3[0x12];
@@ -64,6 +66,7 @@ void FUN_006b2020(int param_1,uint param_2,uint param_3)
       puVar3[0x11] = param_3;
       uVar5 = FUN_006cee10(param_1,(int)puVar3);
       puVar3[0x14] = uVar5;
+      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
       iVar9 = *(int *)(param_1 + 0x1a0);
       if (((int)uVar7 < iVar9 + -1) &&
          (iVar6 = uVar7 + 1, *(int *)(*(int *)(iVar2 + 4 + uVar7 * 4) + 0x44) < (int)param_3)) {
@@ -78,6 +81,7 @@ void FUN_006b2020(int param_1,uint param_2,uint param_3)
               puVar4[0x12] = iVar6 - 1;
               iVar6 = iVar6 + 1;
               piVar8 = piVar8 + 1;
+            /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
             } while (iVar6 < *(int *)(param_1 + 0x1a0));
           }
         }
@@ -90,6 +94,7 @@ void FUN_006b2020(int param_1,uint param_2,uint param_3)
             *(int *)(iVar9 + 0x48) = iVar6 + -1;
             iVar6 = iVar6 + 1;
             piVar8 = piVar8 + 1;
+          /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
           } while (iVar6 < *(int *)(param_1 + 0x1a0));
         }
         *(uint **)(iVar2 + (iVar6 - 1U) * 4) = puVar3;

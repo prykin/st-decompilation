@@ -3,25 +3,23 @@ uint FUN_007479cd(int param_1,uint param_2,undefined4 *param_3,int *param_4)
 
 {
   int iVar1;
-  bool bVar2;
-  uint uVar3;
-  undefined3 extraout_var;
-  int iVar4;
+  uint uVar2;
+  int iVar3;
+  undefined4 *puVar4;
   undefined4 *puVar5;
-  undefined4 *puVar6;
   undefined4 local_4c [15];
   undefined4 local_10;
   undefined4 local_c;
   undefined4 local_8;
-  
+
   iVar1 = param_1;
   if (param_3 == (undefined4 *)0x0) {
-    uVar3 = 0x80004003;
+    uVar2 = 0x80004003;
   }
   else {
-    bVar2 = FUN_00747f3b((AnonShape_00747F3B_C97131D7 *)param_1);
-    if (CONCAT31(extraout_var,bVar2) == 1) {
-      uVar3 = 0x80040203;
+    iVar3 = FUN_00747f3b((AnonShape_00747F3B_C97131D7 *)param_1);
+    if (iVar3 == 1) {
+      uVar2 = 0x80040203;
     }
     else {
       if (param_4 == (int *)0x0) {
@@ -35,23 +33,24 @@ uint FUN_007479cd(int param_1,uint param_2,undefined4 *param_3,int *param_4)
       param_1 = 0;
       while (param_2 != 0) {
         FUN_0074b91d(local_4c);
-        iVar4 = *(int *)(iVar1 + 4);
-        *(int *)(iVar1 + 4) = iVar4 + 1;
-        iVar4 = (**(code **)(**(int **)(iVar1 + 8) + 0x34))(iVar4,local_4c);
-        if (iVar4 != 0) {
+        iVar3 = *(int *)(iVar1 + 4);
+        *(int *)(iVar1 + 4) = iVar3 + 1;
+        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+        iVar3 = (**(code **)(**(int **)(iVar1 + 8) + 0x34))(iVar3,local_4c);
+        if (iVar3 != 0) {
 LAB_00747a71:
           FUN_0074b916((int)local_4c);
           break;
         }
-        puVar5 = CoTaskMemAlloc(0x48);
-        *param_3 = puVar5;
-        if (puVar5 == (undefined4 *)0x0) goto LAB_00747a71;
+        puVar4 = CoTaskMemAlloc(0x48);
+        *param_3 = puVar4;
+        if (puVar4 == (undefined4 *)0x0) goto LAB_00747a71;
         param_3 = param_3 + 1;
-        puVar6 = local_4c;
-        for (iVar4 = 0x12; iVar4 != 0; iVar4 = iVar4 + -1) {
-          *puVar5 = *puVar6;
-          puVar6 = puVar6 + 1;
+        puVar5 = local_4c;
+        for (iVar3 = 0x12; iVar3 != 0; iVar3 = iVar3 + -1) {
+          *puVar4 = *puVar5;
           puVar5 = puVar5 + 1;
+          puVar4 = puVar4 + 1;
         }
         param_1 = param_1 + 1;
         param_2 = param_2 - 1;
@@ -63,9 +62,9 @@ LAB_00747a71:
       if (param_4 != (int *)0x0) {
         *param_4 = param_1;
       }
-      uVar3 = (uint)(param_2 != 0);
+      uVar2 = (uint)(param_2 != 0);
     }
   }
-  return uVar3;
+  return uVar2;
 }
 

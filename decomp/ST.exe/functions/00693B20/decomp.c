@@ -13,7 +13,7 @@ FUN_00693b20(void *param_1,int param_2,undefined1 param_3,undefined4 param_4,und
   char *pcVar7;
   undefined4 *puVar8;
   char *pcVar9;
-  
+
   iVar3 = thunk_FUN_00693e60(param_1,param_2);
   if (iVar3 != 0) {
     return (undefined4 *)0x0;

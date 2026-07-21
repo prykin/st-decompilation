@@ -7,7 +7,9 @@ undefined4 __cdecl FUN_005db030(byte *param_1,undefined4 param_2,char param_3)
   cMf32 *this;
   ushort *puVar3;
   bool bVar4;
+  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   cMf32 *extraout_ECX;
+  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   cMf32 *extraout_ECX_00;
   uint uVar5;
   uint uVar6;
@@ -22,27 +24,25 @@ undefined4 __cdecl FUN_005db030(byte *param_1,undefined4 param_2,char param_3)
   byte local_274 [260];
   byte local_170 [260];
   InternalExceptionFrame *local_6c;
-  undefined4 local_68 [9];
+  int local_68 [9];
   int iStackY_44;
   undefined1 uVar9;
   undefined4 uVar10;
   int *piVar11;
   undefined4 uVar12;
-  
+
   Library::MSVCRT::FUN_0072da40();
   uVar12 = 0;
   if (param_3 != '\0') {
     return 0;
   }
   Library::MSVCRT::FUN_0072e730(param_1,local_378,local_274,local_47c,(byte *)0x8f000405);
-  pbVar7 = local_378;
-  pbVar8 = local_170;
   Library::MSVCRT::__makepath
-            ((char *)pbVar8,(char *)pbVar7,(char *)local_274,(char *)local_47c,(char *)0x0);
+            ((char *)local_170,(char *)local_378,(char *)local_274,(char *)local_47c,(char *)0x0);
   local_6c = g_currentExceptionFrame;
   iStackY_44 = 0x5db0d9;
   g_currentExceptionFrame = (InternalExceptionFrame *)&local_6c;
-  iVar2 = Library::MSVCRT::__setjmp3(local_68,0,pbVar8,pbVar7);
+  iVar2 = Library::MSVCRT::__setjmp3(local_68,0);
   if (iVar2 != 0) {
     g_currentExceptionFrame = local_6c;
     return 0;
@@ -53,12 +53,14 @@ undefined4 __cdecl FUN_005db030(byte *param_1,undefined4 param_2,char param_3)
   iVar2 = 0;
   uVar10 = 0x5db113;
   puVar3 = cMf32::RecGet(this,0,PTR_s_DESCRIPTOR_0079c1d8,piVar11,0);
+  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   this_00 = extraout_ECX;
   if (puVar3 == (ushort *)0x0) goto cf_common_exit_005DB1E1;
   if ((char)*piVar11 == '\x05') {
     iVar2 = 0;
     uVar10 = 0x5db13b;
     puVar3 = cMf32::RecGet(this,0x80,PTR_s_SAVE_PLAYER_0079c1c8,(int *)&stack0xffffffe0,0);
+    /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
     this_00 = extraout_ECX_00;
     if (puVar3 == (ushort *)0x0) goto cf_common_exit_005DB1E1;
   }
@@ -77,6 +79,7 @@ joined_r0x005db18e:
     case '\x04':
       if (local_1e14 == -0x70fff7fb) goto cf_common_exit_005DB1AB;
       break;
+    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
     case '\x05':
       if (*(int *)((int)piVar11 + 5) == CONCAT31((int3)uVar10,uVar9)) goto cf_common_exit_005DB1AB;
     }

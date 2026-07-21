@@ -7,7 +7,7 @@ FUN_006b6230(int *param_1,char *param_2,undefined4 param_3,undefined4 param_4,un
   int *piVar2;
   int *piVar3;
   char *pcVar4;
-  
+
   piVar3 = (int *)*param_5;
   if (*piVar3 <= piVar3[1]) {
     iVar1 = *piVar3 + 10;

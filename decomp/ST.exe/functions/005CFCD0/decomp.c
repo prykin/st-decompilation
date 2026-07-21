@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\settmobj.cpp
@@ -13,17 +15,15 @@ void __thiscall SettMapMTy::UpdatePing(SettMapMTy *this,int param_1,undefined4 p
   void *pvVar5;
   int iVar6;
   uint uVar7;
-  undefined4 unaff_ESI;
-  void *unaff_EDI;
   bool bVar8;
   InternalExceptionFrame local_4c;
   SettMapMTy *local_8;
-  
+
   if (this->field_1F84 != (DArrayTy *)0x0) {
     local_4c.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_4c;
     local_8 = this;
-    iVar4 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
+    iVar4 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
     if (iVar4 == 0) {
       uVar7 = 0;
       pDVar1 = local_8->field_1F84;
@@ -32,6 +32,7 @@ void __thiscall SettMapMTy::UpdatePing(SettMapMTy *this,int param_1,undefined4 p
         bVar8 = uVar2 != 0;
         while( true ) {
           if (bVar8) {
+            /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(pDVar1, uVar7) (runtime stride) */
             pvVar5 = (void *)(pDVar1->elementSize * uVar7 + (int)pDVar1->data);
           }
           else {
@@ -62,9 +63,7 @@ void __thiscall SettMapMTy::UpdatePing(SettMapMTy *this,int param_1,undefined4 p
     iVar6 = ReportDebugMessage(s_E____titans_Start_settmobj_cpp_007cd258,0x4bf,0,iVar4,&DAT_007a4ccc
                                ,s_SettMapMTy__UpdatePing_007cd39c);
     if (iVar6 != 0) {
-      pcVar3 = (code *)swi(3);
-      (*pcVar3)();
-      return;
+      STDebugBreak(); /* noreturn in standalone pseudocode */
     }
     RaiseInternalException(iVar4,0,s_E____titans_Start_settmobj_cpp_007cd258,0x4bf);
   }

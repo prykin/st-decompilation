@@ -11,7 +11,7 @@ FUN_006a1c80(int *param_1,uint param_2,int param_3,int param_4,int param_5,undef
   ushort local_c;
   ushort uStack_a;
   ushort local_8;
-  
+
   uVar2 = param_2;
   if (((((-1 < (int)param_2) && ((int)param_2 < *param_1)) && (-1 < param_3)) &&
       ((param_3 < param_1[1] && (-1 < param_4)))) &&
@@ -24,6 +24,7 @@ FUN_006a1c80(int *param_1,uint param_2,int param_3,int param_4,int param_5,undef
       bVar1 = false;
     }
     if (param_5 == 1) {
+      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
       param_2 = ~CONCAT22(local_8,uStack_a) >> 0xd & 1;
     }
     else {

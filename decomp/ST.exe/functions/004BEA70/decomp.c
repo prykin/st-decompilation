@@ -22,28 +22,27 @@ bool __thiscall FUN_004bea70(void *this,int *param_1)
   STGroupBoatC *pSVar9;
   uint uVar10;
   uint uVar11;
+  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined3 extraout_var;
+  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined3 extraout_var_00;
+  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined3 extraout_var_01;
+  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined3 extraout_var_02;
-  undefined3 extraout_var_03;
-  undefined3 extraout_var_04;
-  undefined3 extraout_var_05;
-  undefined3 extraout_var_06;
   undefined1 *puVar12;
   undefined4 uVar13;
   short *psVar14;
-  undefined3 extraout_var_07;
   short sVar15;
-  undefined2 extraout_var_08;
+  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+  undefined2 extraout_var_03;
   undefined2 *puVar16;
   int *piVar17;
-  undefined4 extraout_EDX;
   undefined2 uVar18;
   bool bVar19;
   int *local_c;
   int *local_8;
-  
+
   piVar2 = param_1;
   *param_1 = *(int *)((int)this + 0x5ac);
   *(byte *)((int)param_1 + 5) =
@@ -98,6 +97,7 @@ LAB_004beb6d:
 LAB_004bebed:
       uVar4 = 0;
     }
+/* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
 LAB_004bebef:
     *(undefined1 *)((int)param_1 + 0xf) = uVar4;
   }
@@ -108,6 +108,7 @@ LAB_004beb63:
     if ((iVar6 != 1) && (iVar6 != 2)) goto LAB_004beb6d;
     if (*(int *)((int)this + 0x361) != 5) {
       *(undefined1 *)((int)param_1 + 9) = 0x20;
+      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
       iVar6 = (**(code **)(*(int *)this + 0x7c))();
       if ((iVar6 == 100) ||
          (((*(int *)((int)this + 0x245) != 0 && (*(int *)((int)this + 0x245) != 5)) ||
@@ -123,9 +124,9 @@ LAB_004beb63:
     *(undefined1 *)((int)param_1 + 0x15) = 0;
   }
   else {
-    pSVar9 = thunk_FUN_0042b760(CONCAT31((int3)((uint)extraout_EDX >> 8),
-                                         *(undefined1 *)((int)this + 0x24)),
-                                CONCAT22(extraout_var_08,*(undefined2 *)((int)this + 0x30)));
+    /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+    pSVar9 = thunk_FUN_0042b760(*(char *)((int)this + 0x24),
+                                CONCAT22(extraout_var_03,*(undefined2 *)((int)this + 0x30)));
     if ((pSVar9 == (STGroupBoatC *)0x0) || (pSVar9->field_001C == 0)) {
       *(undefined1 *)((int)param_1 + 0x15) = 1;
     }
@@ -822,6 +823,7 @@ LAB_004bffdb:
       if ((&DAT_007e1984)[(uVar11 & 0xff) + ((uVar10 & 0xff) + iVar6 * 3) * 3] != '\0')
       goto LAB_004bffdb;
     }
+/* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
 LAB_004bfffc:
     *(undefined1 *)((int)param_1 + 0x12) = 0;
     break;
@@ -889,6 +891,7 @@ LAB_004c00cc:
       if ((&DAT_007e1984)[(uVar11 & 0xff) + ((uVar10 & 0xff) + iVar6 * 3) * 3] != '\0')
       goto LAB_004c00cc;
     }
+/* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
 cf_common_join_004C01F3:
     *(undefined1 *)((int)param_1 + 0x11) = 0;
   }
@@ -983,6 +986,7 @@ cf_common_join_004C01F3:
               *(undefined2 *)((int)param_1 + 0x1e) = *(undefined2 *)(puVar12 + -8);
               *(undefined1 *)((int)param_1 + 0x1d) = *puVar12;
               break;
+            /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
             case 0x97:
               *(undefined1 *)((int)param_1 + 0x22) = 1;
               *(undefined2 *)((int)param_1 + 0x26) = uVar18;
@@ -995,42 +999,49 @@ cf_common_join_004C01F3:
               *(undefined2 *)((int)param_1 + 0x2a) = *(undefined2 *)(puVar12 + -8);
               *(undefined1 *)((int)param_1 + 0x29) = *puVar12;
               break;
+            /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
             case 0x99:
               *(undefined1 *)((int)param_1 + 0x2e) = 1;
               *(undefined2 *)((int)param_1 + 0x32) = uVar18;
               *(undefined2 *)(param_1 + 0xc) = *(undefined2 *)(puVar12 + -8);
               *(undefined1 *)((int)param_1 + 0x2f) = *puVar12;
               break;
+            /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
             case 0x9a:
               *(undefined1 *)(param_1 + 0xd) = 1;
               *(undefined2 *)(param_1 + 0xe) = uVar18;
               *(undefined2 *)((int)param_1 + 0x36) = *(undefined2 *)(puVar12 + -8);
               *(undefined1 *)((int)param_1 + 0x35) = *puVar12;
               break;
+            /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
             case 0xa6:
               *(undefined1 *)((int)param_1 + 0x3a) = 1;
               *(undefined2 *)((int)param_1 + 0x3e) = uVar18;
               *(undefined2 *)(param_1 + 0xf) = *(undefined2 *)(puVar12 + -8);
               *(undefined1 *)((int)param_1 + 0x3b) = *puVar12;
               break;
+            /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
             case 0xa7:
               *(undefined1 *)((int)param_1 + 0x46) = 1;
               *(undefined2 *)((int)param_1 + 0x4a) = uVar18;
               *(undefined2 *)(param_1 + 0x12) = *(undefined2 *)(puVar12 + -8);
               *(undefined1 *)((int)param_1 + 0x47) = *puVar12;
               break;
+            /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
             case 0xa9:
               *(undefined1 *)(param_1 + 0x10) = 1;
               *(undefined2 *)(param_1 + 0x11) = uVar18;
               *(undefined2 *)((int)param_1 + 0x42) = *(undefined2 *)(puVar12 + -8);
               *(undefined1 *)((int)param_1 + 0x41) = *puVar12;
               break;
+            /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
             case 0xab:
               *(undefined1 *)(param_1 + 0x13) = 1;
               *(undefined2 *)(param_1 + 0x14) = uVar18;
               *(undefined2 *)((int)param_1 + 0x4e) = *(undefined2 *)(puVar12 + -8);
               *(undefined1 *)((int)param_1 + 0x4d) = *puVar12;
               break;
+            /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
             case 0xac:
               *(undefined1 *)((int)param_1 + 0x52) = 1;
               *(undefined2 *)((int)param_1 + 0x56) = uVar18;
@@ -1084,18 +1095,17 @@ cf_common_join_004C01F3:
             iVar6 = thunk_FUN_004e7f20(*(int *)((int)this + 0x24),(int)param_1,iVar6 + 1);
           }
           else {
-            bVar19 = thunk_FUN_004e5910(*(int *)((int)this + 0x24),(uint)param_1);
-            iVar6 = CONCAT31(extraout_var_03,bVar19);
+            iVar6 = thunk_FUN_004e5910(*(int *)((int)this + 0x24),(uint)param_1);
           }
           if (iVar6 != 0) {
             uVar4 = thunk_FUN_004e6140(*(int *)((int)this + 0x24),(int)param_1);
             iVar6 = thunk_FUN_004e60d0(*(int *)((int)this + 0x24),(int)param_1);
-            if (((iVar6 < CONCAT31(extraout_var_04,uVar4)) &&
-                (bVar19 = thunk_FUN_004e5f90(*(int *)((int)this + 0x24),(uint)param_1),
-                CONCAT31(extraout_var_05,bVar19) == 0)) &&
-               (((&PTR_DAT_007bfc04)[*(int *)((int)this + 0x239)][(int)param_1] == '\0' ||
-                (bVar19 = thunk_FUN_004e5c40(*(int *)((int)this + 0x24),(uint)param_1),
-                CONCAT31(extraout_var_06,bVar19) != 0)))) {
+            /* ST_PSEUDO[return_width_artifact,raw_pointer_offset]: candidate call-output artifact: verify return width, clobbers, or x87 state; candidate structure field after proof; otherwise retain buffer arithmetic */
+            if (((iVar6 < CONCAT31(extraout_var_01,uVar4)) &&
+                (iVar6 = thunk_FUN_004e5f90(*(int *)((int)this + 0x24),(uint)param_1), iVar6 == 0))
+               && (((&PTR_DAT_007bfc04)[*(int *)((int)this + 0x239)][(int)param_1] == '\0' ||
+                   (bVar19 = thunk_FUN_004e5c40(*(int *)((int)this + 0x24),(uint)param_1),
+                   CONCAT31(extraout_var_02,bVar19) != 0)))) {
               *(short *)((int)piVar2 + 0x3a) = *(short *)((int)piVar2 + 0x3a) + 1;
             }
           }
@@ -1111,18 +1121,17 @@ cf_common_join_004C01F3:
             iVar6 = thunk_FUN_004e7f20(*(int *)((int)this + 0x24),(int)param_1,iVar6 + 1);
           }
           else {
-            bVar19 = thunk_FUN_004e5910(*(int *)((int)this + 0x24),(uint)param_1);
-            iVar6 = CONCAT31(extraout_var,bVar19);
+            iVar6 = thunk_FUN_004e5910(*(int *)((int)this + 0x24),(uint)param_1);
           }
           if (iVar6 != 0) {
             uVar4 = thunk_FUN_004e6140(*(int *)((int)this + 0x24),(int)param_1);
             iVar6 = thunk_FUN_004e60d0(*(int *)((int)this + 0x24),(int)param_1);
-            if (((iVar6 < CONCAT31(extraout_var_00,uVar4)) &&
-                (bVar19 = thunk_FUN_004e5f90(*(int *)((int)this + 0x24),(uint)param_1),
-                CONCAT31(extraout_var_01,bVar19) == 0)) &&
-               (((&PTR_DAT_007bfc04)[*(int *)((int)this + 0x239)][(int)param_1] == '\0' ||
-                (bVar19 = thunk_FUN_004e5c40(*(int *)((int)this + 0x24),(uint)param_1),
-                CONCAT31(extraout_var_02,bVar19) != 0)))) {
+            /* ST_PSEUDO[return_width_artifact,raw_pointer_offset]: candidate call-output artifact: verify return width, clobbers, or x87 state; candidate structure field after proof; otherwise retain buffer arithmetic */
+            if (((iVar6 < CONCAT31(extraout_var,uVar4)) &&
+                (iVar6 = thunk_FUN_004e5f90(*(int *)((int)this + 0x24),(uint)param_1), iVar6 == 0))
+               && (((&PTR_DAT_007bfc04)[*(int *)((int)this + 0x239)][(int)param_1] == '\0' ||
+                   (bVar19 = thunk_FUN_004e5c40(*(int *)((int)this + 0x24),(uint)param_1),
+                   CONCAT31(extraout_var_00,bVar19) != 0)))) {
               *(short *)((int)piVar2 + 0x3a) = *(short *)((int)piVar2 + 0x3a) + 1;
             }
           }
@@ -1199,6 +1208,7 @@ cf_common_join_004C01F3:
         param_1[0x12] = 100;
       }
       break;
+    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     case 2:
     case 3:
       *(undefined1 *)((int)param_1 + 0x47) = 2;
@@ -1208,6 +1218,7 @@ cf_common_join_004C01F3:
   case 0x41:
     *(undefined1 *)(param_1 + 7) = 0xff;
     goto switchD_004bef7c_caseD_37;
+  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   case 0x43:
   case 0x4c:
     *(undefined1 *)(param_1 + 7) = *(undefined1 *)((int)this + 0x4e0);
@@ -1265,6 +1276,7 @@ LAB_004c0f8e:
     cVar3 = ((char)(iVar6 / 100) + (char)(iVar6 >> 0x1f)) -
             (char)((longlong)iVar6 * 0x51eb851f >> 0x3f);
     goto LAB_004c0fcc;
+  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   case 0x50:
     *(undefined1 *)(param_1 + 7) =
          *(undefined1 *)&g_playerRuntime[*(int *)((int)this + 0x24)].field2110_0x97a;
@@ -1275,6 +1287,7 @@ LAB_004c0f8e:
     *(undefined1 *)(param_1 + 8) = g_playerRuntime[*(int *)((int)this + 0x24)].field_0x98a;
     *(undefined1 *)((int)param_1 + 0x21) = g_playerRuntime[*(int *)((int)this + 0x24)].field_0x98e;
     break;
+  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   case 0x52:
 switchD_004bef7c_caseD_52:
     *(undefined1 *)((int)param_1 + 0x47) = 0;
@@ -1289,18 +1302,21 @@ switchD_004bef7c_caseD_52:
             uVar18 = (undefined2)
                      *(int *)(&DAT_007e6028 + (*(int *)(puVar12 + -0xc) * 5 + -0x2ee) * 4);
             switch(*(int *)(puVar12 + -0xc)) {
+            /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
             case 0xad:
               *(undefined1 *)(param_1 + 0xd) = 1;
               *(undefined2 *)(param_1 + 0xe) = uVar18;
               *(undefined2 *)((int)param_1 + 0x36) = *(undefined2 *)(puVar12 + -8);
               *(undefined1 *)((int)param_1 + 0x35) = *puVar12;
               break;
+            /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
             case 0xae:
               *(undefined1 *)(param_1 + 0x10) = 1;
               *(undefined2 *)(param_1 + 0x11) = uVar18;
               *(undefined2 *)((int)param_1 + 0x42) = *(undefined2 *)(puVar12 + -8);
               *(undefined1 *)((int)param_1 + 0x41) = *puVar12;
               break;
+            /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
             case 0xb3:
               *(undefined1 *)((int)param_1 + 0x22) = 1;
               *(undefined2 *)((int)param_1 + 0x26) = uVar18;
@@ -1313,6 +1329,7 @@ switchD_004bef7c_caseD_52:
               *(undefined2 *)((int)param_1 + 0x2a) = *(undefined2 *)(puVar12 + -8);
               *(undefined1 *)((int)param_1 + 0x29) = *puVar12;
               break;
+            /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
             case 0xb8:
               *(undefined1 *)((int)param_1 + 0x3a) = 1;
               *(undefined2 *)((int)param_1 + 0x3e) = uVar18;
@@ -1325,12 +1342,14 @@ switchD_004bef7c_caseD_52:
               *(undefined2 *)((int)param_1 + 0x1e) = *(undefined2 *)(puVar12 + -8);
               *(undefined1 *)((int)param_1 + 0x1d) = *puVar12;
               break;
+            /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
             case 0xbd:
               *(undefined1 *)((int)param_1 + 0x2e) = 1;
               *(undefined2 *)((int)param_1 + 0x32) = uVar18;
               *(undefined2 *)(param_1 + 0xc) = *(undefined2 *)(puVar12 + -8);
               *(undefined1 *)((int)param_1 + 0x2f) = *puVar12;
               break;
+            /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
             case 0xbe:
               *(undefined1 *)((int)param_1 + 0x46) = 1;
               *(undefined2 *)((int)param_1 + 0x4a) = uVar18;
@@ -1349,6 +1368,7 @@ switchD_004bef7c_caseD_52:
     iVar6 = *(int *)((int)this + 0x4d4) * 0x21;
     iVar6 = iVar6 / 0x28 + (iVar6 >> 0x1f);
     goto cf_common_join_004C0FC5;
+  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   case 0x61:
     *(char *)(param_1 + 0xd) = (char)((*(int *)((int)this + 0x518) * 0x21) / DAT_007be8c4);
     if (*(int *)((int)this + 0x520) == 0) {
@@ -1411,6 +1431,7 @@ switchD_004bef7c_caseD_52:
     }
     *(undefined1 *)((int)piVar2 + 0x1b) = uVar4;
     break;
+  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   case 0x6e:
     *(undefined2 *)((int)param_1 + 0x3a) = 0;
     psVar14 = (short *)((int)this + 0x4e0);
@@ -1448,6 +1469,7 @@ LAB_004c0fbb:
     iVar6 = iVar6 / 5000 + (iVar6 >> 0x1f);
 cf_common_join_004C0FC5:
     cVar3 = (char)iVar6 - (char)(iVar6 >> 0x1f);
+/* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
 LAB_004c0fcc:
     *(char *)(param_1 + 0xd) = cVar3;
   }
@@ -1481,17 +1503,17 @@ LAB_004c0fcc:
     bVar19 = SUB41(iVar6,0);
     switch(iVar6) {
     case 0:
-      bVar19 = thunk_FUN_0044e1b0(*(int *)((int)this + 0x24));
-      if (CONCAT31(extraout_var_07,bVar19) == 0) {
+      iVar6 = thunk_FUN_0044e1b0(*(int *)((int)this + 0x24));
+      if (iVar6 == 0) {
         piVar2[0x16] = 0xbdf;
-        return bVar19;
+        return false;
       }
       if (*(int *)((int)this + 0x369) == 9) {
         piVar2[0x16] = 0xbc4;
-        return bVar19;
+        return SUB41(iVar6,0);
       }
       piVar2[0x16] = (-(uint)(*(int *)((int)this + 0x369) != 0x15) & 0xfffffffa) + 0xbc3;
-      return bVar19;
+      return SUB41(iVar6,0);
     case 1:
       piVar2[0x16] = 0xbbe;
       return bVar19;

@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\cpanel3.cpp
@@ -16,9 +18,7 @@ void __thiscall CPanelTy::UpdateStackPanel(CPanelTy *this,uint param_1)
   char *pcVar7;
   ushort *puVar8;
   byte bVar9;
-  undefined4 unaff_ESI;
   AnonShape_0043BEB0_1C00EC12 *pAVar10;
-  void *unaff_EDI;
   AnonShape_0043BEB0_1C00EC12 *pAVar11;
   bool bVar12;
   uint uVar13;
@@ -34,12 +34,12 @@ void __thiscall CPanelTy::UpdateStackPanel(CPanelTy *this,uint param_1)
   undefined1 *local_10;
   AnonShape_0043BEB0_1C00EC12 *local_c;
   byte local_5;
-  
+
   if (0x3ff < g_nWidth_00806730) {
     local_68.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_68;
     local_24 = this;
-    iVar6 = Library::MSVCRT::__setjmp3(local_68.jumpBuffer,0,unaff_EDI,unaff_ESI);
+    iVar6 = Library::MSVCRT::__setjmp3(local_68.jumpBuffer,0);
     this_00 = local_24;
     if (iVar6 == 0) {
       local_c = (AnonShape_0043BEB0_1C00EC12 *)(param_1 & 0xff);
@@ -61,6 +61,7 @@ void __thiscall CPanelTy::UpdateStackPanel(CPanelTy *this,uint param_1)
       local_18 = pAVar11;
       pcVar7[0] = pAVar10->field_0x0;
       pcVar7[1] = uVar2;
+      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
       STAllPlayersC::GetPanelInfo
                 (g_sTAllPlayers_007FA174,CONCAT31((int3)(param_1 >> 8),(char)param_1 + '\x0e'),
                  pAVar11);
@@ -99,6 +100,7 @@ void __thiscall CPanelTy::UpdateStackPanel(CPanelTy *this,uint param_1)
             *local_14 = this_00->field_0038;
             thunk_FUN_004f1c80(this_00,param_1,local_1c);
             bVar9 = ((char)param_1 == '\0') + 9;
+            /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
             local_18 = (AnonShape_0043BEB0_1C00EC12 *)CONCAT31(local_18._1_3_,bVar9);
             bVar5 = local_5;
             if (bVar9 < 0xb) {
@@ -116,6 +118,7 @@ void __thiscall CPanelTy::UpdateStackPanel(CPanelTy *this,uint param_1)
           local_14 = local_14 + 1;
           local_20 = local_20 + 0xb;
           local_c = (AnonShape_0043BEB0_1C00EC12 *)&local_c->field_000B;
+          /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
           local_1c = CONCAT31(local_1c._1_3_,bVar9);
           local_10 = local_10 + 1;
         } while (bVar9 < bVar5);
@@ -127,9 +130,7 @@ void __thiscall CPanelTy::UpdateStackPanel(CPanelTy *this,uint param_1)
     iVar14 = ReportDebugMessage(s_E____titans_Andrey_cpanel3_cpp_007c26a0,0x2a,0,iVar6,&DAT_007a4ccc
                                 ,s_CPanelTy__UpdateStackPanel_007c26e0);
     if (iVar14 != 0) {
-      pcVar1 = (code *)swi(3);
-      (*pcVar1)();
-      return;
+      STDebugBreak(); /* noreturn in standalone pseudocode */
     }
     RaiseInternalException(iVar6,0,s_E____titans_Andrey_cpanel3_cpp_007c26a0,0x2a);
   }

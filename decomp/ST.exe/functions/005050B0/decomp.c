@@ -8,7 +8,7 @@ int __thiscall FUN_005050b0(void *this,Global_sub_005050B0_param_1Enum param_1)
 {
   char cVar1;
   bool bVar2;
-  
+
   if (DAT_0080874e == '\x01') {
     bVar2 = *(char *)((int)this + 0x9d4) != '\x01';
   }

@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\settmobj.cpp
@@ -10,23 +12,21 @@ void __thiscall SettMapMTy::SendPlList(SettMapMTy *this,int param_1)
   SettMapMTy *pSVar2;
   int iVar3;
   int iVar4;
-  undefined4 unaff_ESI;
   uint uVar5;
   uint uVar6;
   undefined4 *puVar7;
-  void *unaff_EDI;
   undefined4 *puVar8;
   InternalExceptionFrame local_50;
   uint local_c;
   SettMapMTy *local_8;
-  
+
   local_50.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_50;
   local_8 = this;
-  iVar3 = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar3 = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0);
   pSVar2 = local_8;
   if (iVar3 == 0) {
-    uVar5 = *(int *)(local_8->field_1F84 + 0xc) * 0x60;
+    uVar5 = local_8->field_1F84->count * 0x60;
     uVar6 = uVar5 + 9;
     local_c = uVar6;
     if ((uint)local_8->field_222A < uVar6) {
@@ -37,8 +37,8 @@ void __thiscall SettMapMTy::SendPlList(SettMapMTy *this,int param_1)
     puVar8 = (undefined4 *)pSVar2->field_2226;
     *puVar8 = pSVar2->field_2121;
     puVar8[1] = DAT_00808aab;
-    *(undefined1 *)(puVar8 + 2) = pSVar2->field_1E26;
-    puVar7 = *(undefined4 **)(pSVar2->field_1F84 + 0x1c);
+    *(SettMapMTy_field_1E26State *)(puVar8 + 2) = pSVar2->field_1E26;
+    puVar7 = pSVar2->field_1F84->data;
     puVar8 = (undefined4 *)((int)puVar8 + 9);
     for (uVar5 = uVar5 >> 2; uVar5 != 0; uVar5 = uVar5 - 1) {
       *puVar8 = *puVar7;
@@ -58,9 +58,7 @@ void __thiscall SettMapMTy::SendPlList(SettMapMTy *this,int param_1)
   iVar4 = ReportDebugMessage(s_E____titans_Start_settmobj_cpp_007cd258,0x230,0,iVar3,&DAT_007a4ccc,
                              s_SettMapMTy__SendPlList_007cd364);
   if (iVar4 != 0) {
-    pcVar1 = (code *)swi(3);
-    (*pcVar1)();
-    return;
+    STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   RaiseInternalException(iVar3,0,s_E____titans_Start_settmobj_cpp_007cd258,0x230);
   return;

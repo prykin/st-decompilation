@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* [STSourceProvenanceApplier begin]
    Recovered source file: E:\__titans\ai\ai_mdef.cpp
@@ -14,8 +16,6 @@ _EnumRCField(short param_1,short param_2,short param_3,short param_4,short param
   int iVar2;
   undefined4 *puVar3;
   int iVar4;
-  undefined4 unaff_ESI;
-  void *unaff_EDI;
   uint uVar5;
   InternalExceptionFrame local_5c;
   int local_18;
@@ -24,19 +24,17 @@ _EnumRCField(short param_1,short param_2,short param_3,short param_4,short param
   short local_a;
   short local_8;
   short local_6;
-  
+
   local_14 = 0;
   local_5c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_5c;
-  iVar2 = Library::MSVCRT::__setjmp3(local_5c.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar2 = Library::MSVCRT::__setjmp3(local_5c.jumpBuffer,0);
   if (iVar2 != 0) {
     g_currentExceptionFrame = local_5c.previous;
     iVar4 = ReportDebugMessage(s_E____titans_ai_ai_mdef_cpp_007d2d58,0x37f,0,iVar2,&DAT_007a4ccc,
                                s__EnumRCField_007d2e04);
     if (iVar4 != 0) {
-      pcVar1 = (code *)swi(3);
-      iVar2 = (*pcVar1)();
-      return iVar2;
+      STDebugBreak(); /* noreturn in standalone pseudocode */
     }
     RaiseInternalException(iVar2,0,s_E____titans_ai_ai_mdef_cpp_007d2d58,0x380);
     return iVar2;
@@ -49,6 +47,7 @@ _EnumRCField(short param_1,short param_2,short param_3,short param_4,short param
   if (-1 < (int)uVar5) {
     do {
       if (uVar5 < PTR_007fa15c->count) {
+        /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(PTR_007fa15c, uVar5) (runtime stride) */
         puVar3 = (undefined4 *)(PTR_007fa15c->elementSize * uVar5 + (int)PTR_007fa15c->data);
       }
       else {
@@ -70,6 +69,7 @@ _EnumRCField(short param_1,short param_2,short param_3,short param_4,short param
           iVar2 = 0;
         }
         uVar5 = local_10;
+        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
         if (((iVar2 != 0) && (param_8 != (undefined *)0x0)) &&
            (iVar2 = (*(code *)param_8)(0,local_10,this,param_9), iVar2 != 0)) {
           g_currentExceptionFrame = local_5c.previous;

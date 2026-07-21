@@ -1,8 +1,10 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\To_boat.cpp
    STBoatC::BackBring
-   
+
    [STSwitchEnumApplier] Switch target field_0687 uses
    /SubmarineTitans/Recovered/Enums/STBoatC_field_0687State. Cases:
    CASE_0=0;CASE_1=1;CASE_2=2;CASE_3=3;CASE_4=4 */
@@ -16,7 +18,7 @@ int __thiscall STBoatC::BackBring(STBoatC *this,int *param_1)
   STWorldObject *this_00;
   code *pcVar4;
   int iVar5;
-  
+
   sVar1 = this->field_066F;
   sVar2 = this->field_0673;
   sVar3 = this->field_0671;
@@ -46,8 +48,6 @@ int __thiscall STBoatC::BackBring(STBoatC *this,int *param_1)
   if (iVar5 == 0) {
     return -1;
   }
-  pcVar4 = (code *)swi(3);
-  iVar5 = (*pcVar4)();
-  return iVar5;
+  STDebugBreak(); /* noreturn in standalone pseudocode */
 }
 

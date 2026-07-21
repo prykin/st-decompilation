@@ -9,7 +9,7 @@ undefined4 __thiscall FUN_00616280(void *this,int *param_1,int *param_2,int *par
   STWorldObject *this_00;
   STWorldObject *local_14;
   int local_10 [3];
-  
+
   local_10[2] = 0;
   sVar1 = *(short *)((int)this + 0x2c5);
   sVar2 = *(short *)((int)this + 0x2c9);
@@ -31,6 +31,7 @@ undefined4 __thiscall FUN_00616280(void *this,int *param_1,int *param_2,int *par
   *param_1 = (int)(short)local_10[2];
   *param_2 = (int)(short)local_10[1];
   *param_3 = (int)(short)local_10[0];
+  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   if ((((short)local_10[2] == *(short *)((int)this + 0x2cb)) &&
       ((short)local_10[1] == *(short *)((int)this + 0x2cd))) &&
      ((short)local_10[0] == *(short *)((int)this + 0x2cf))) {

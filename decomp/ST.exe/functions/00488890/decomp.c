@@ -30,7 +30,7 @@ void __thiscall FUN_00488890(void *this,int param_1)
   int local_10;
   int local_c;
   undefined4 *local_8;
-  
+
   local_18 = 0;
   local_14 = this;
   do {
@@ -123,6 +123,7 @@ void __thiscall FUN_00488890(void *this,int param_1)
         pvVar3 = local_14;
         if (local_44 == '\0') {
           if (local_74 == '\0') {
+/* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
 LAB_00488b5f:
             uVar7 = GetPlayerRaceId(*(char *)((int)local_14 + 0x24));
             local_10 = (uVar7 & 0xff) + local_7c[0] * 3;

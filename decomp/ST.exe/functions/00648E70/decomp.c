@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* [STSourceProvenanceApplier begin]
    Recovered source file: E:\__titans\ai\ai_creat.cpp
@@ -10,15 +12,13 @@ int __cdecl CreateArbiter(int param_1,char *param_2)
   code *pcVar1;
   int iVar2;
   int iVar3;
-  void *unaff_ESI;
-  InternalExceptionFrame *pIVar4;
-  undefined4 local_48 [16];
+  InternalExceptionFrame local_4c;
   ushort *local_8;
-  
-  pIVar4 = g_currentExceptionFrame;
+
   local_8 = (ushort *)0x0;
-  g_currentExceptionFrame = (InternalExceptionFrame *)&stack0xffffffb4;
-  iVar2 = Library::MSVCRT::__setjmp3(local_48,0,unaff_ESI,pIVar4);
+  local_4c.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &local_4c;
+  iVar2 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
   if (iVar2 == 0) {
     if ((PTR_00802a38 == (STPlaySystemC *)0x0) || (param_1 == 0)) {
       RaiseInternalException
@@ -34,16 +34,14 @@ int __cdecl CreateArbiter(int param_1,char *param_2)
     Library::Ourlib::SAPP::FUN_006e6200
               (PTR_00802a38,0x403,(undefined4 *)0x28,(undefined4 *)0x0,(int *)0x0,local_8,0);
     thunk_FUN_006484f0((int *)&local_8);
-    g_currentExceptionFrame = pIVar4;
+    g_currentExceptionFrame = local_4c.previous;
     return 0;
   }
-  g_currentExceptionFrame = pIVar4;
+  g_currentExceptionFrame = local_4c.previous;
   iVar3 = ReportDebugMessage(s_E____titans_ai_ai_creat_cpp_007d2880,0x8d,0,iVar2,&DAT_007a4ccc,
                              s_CreateArbiter_007d28b4);
   if (iVar3 != 0) {
-    pcVar1 = (code *)swi(3);
-    iVar2 = (*pcVar1)();
-    return iVar2;
+    STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   thunk_FUN_006484f0((int *)&local_8);
   RaiseInternalException(iVar2,0,s_E____titans_ai_ai_creat_cpp_007d2880,0x8f);

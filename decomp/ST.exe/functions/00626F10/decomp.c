@@ -7,7 +7,7 @@ undefined4 FUN_00626f10(Global_sub_00626F10_param_1Enum param_1)
 
 {
   undefined4 uVar1;
-  
+
   uVar1 = 0;
   switch(param_1) {
   case CASE_A6:

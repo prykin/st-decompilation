@@ -8,18 +8,16 @@ void __thiscall FUN_00568010(void *this,Global_sub_00568010_param_1Enum param_1)
 {
   SoundClassTy *this_00;
   int iVar1;
-  undefined4 unaff_ESI;
-  void *unaff_EDI;
   undefined4 *puVar2;
   InternalExceptionFrame local_50;
   SoundClassTy *local_c;
   uint local_8;
-  
+
   if (*(int *)((int)this + 0xf8b) != 0) {
     local_50.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_50;
     local_c = this;
-    iVar1 = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
+    iVar1 = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0);
     this_00 = local_c;
     if (iVar1 == 0) {
       switch(param_1) {

@@ -5,7 +5,7 @@ void FUN_006b3bb0(int *param_1,uint param_2)
   uint uVar1;
   int iVar2;
   uint *puVar3;
-  
+
   if (param_1 != (int *)0x0) {
     FUN_006b3af0(param_1,param_2);
     if (param_2 < (uint)param_1[0x68]) {

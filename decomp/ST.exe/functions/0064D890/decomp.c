@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\ai\ai_event.cpp
@@ -12,10 +14,7 @@ AiEventClassTy::_CreateRCCont
   code *pcVar1;
   bool bVar2;
   int iVar3;
-  undefined3 extraout_var;
   int iVar4;
-  undefined4 unaff_ESI;
-  void *unaff_EDI;
   InternalExceptionFrame local_6c;
   int local_28;
   uint local_24;
@@ -25,19 +24,17 @@ AiEventClassTy::_CreateRCCont
   undefined4 local_10;
   int local_c;
   int local_8;
-  
+
   local_28 = -1;
   local_6c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_6c;
-  iVar3 = Library::MSVCRT::__setjmp3(local_6c.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar3 = Library::MSVCRT::__setjmp3(local_6c.jumpBuffer,0);
   if (iVar3 != 0) {
     g_currentExceptionFrame = local_6c.previous;
     iVar4 = ReportDebugMessage(s_E____titans_ai_ai_event_cpp_007d2a34,0xee,0,iVar3,&DAT_007a4ccc,
                                s_AiEventClassTy___CreateRCCont_007d2ac0);
     if (iVar4 != 0) {
-      pcVar1 = (code *)swi(3);
-      iVar3 = (*pcVar1)();
-      return iVar3;
+      STDebugBreak(); /* noreturn in standalone pseudocode */
     }
     RaiseInternalException(iVar3,0,s_E____titans_ai_ai_event_cpp_007d2a34,0xef);
     return iVar3;
@@ -54,8 +51,8 @@ AiEventClassTy::_CreateRCCont
       local_8 = param_4;
       local_24 = (uint)(byte)(&DAT_008087e8)[(param_1 & 0xffff) * 0x51];
       local_10 = param_5;
-      bVar2 = thunk_FUN_004961b0((short)param_3,(short)param_4,(short)param_5);
-      if (CONCAT31(extraout_var,bVar2) == 0) {
+      iVar3 = thunk_FUN_004961b0((short)param_3,(short)param_4,(short)param_5);
+      if (iVar3 == 0) {
         local_20[0] = 3;
         local_20[1] = 0;
         local_20[2] = 3;

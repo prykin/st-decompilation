@@ -3,8 +3,9 @@ void FUN_00757280(undefined4 *param_1,undefined4 param_2)
 
 {
   undefined4 uVar1;
-  
+
   if (param_1[4] == 0) {
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
     uVar1 = (**(code **)*param_1)(param_1,1,0x1c);
     param_1[4] = uVar1;
   }

@@ -30,7 +30,7 @@ FUN_006a6f00(int param_1,int param_2,int param_3,int param_4,int param_5,uint pa
   byte *local_10;
   byte *local_c;
   int local_8;
-  
+
   local_8 = param_2 * param_3;
   iVar7 = param_2 * param_6 + param_5 + local_8 * param_7;
   local_1c = 0;

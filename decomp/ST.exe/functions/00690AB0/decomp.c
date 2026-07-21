@@ -3,7 +3,7 @@ void __fastcall FUN_00690ab0(AnonShape_00690AB0_91AAAD49 *param_1)
 
 {
   int iVar1;
-  
+
   if ((param_1->field_0089 == 0) ||
      ((uint)(param_1->field_008D + param_1->field_0089) <= (uint)param_1->field_012C)) {
     param_1->field_008D = param_1->field_012C;

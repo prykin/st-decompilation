@@ -7,7 +7,7 @@ undefined4 __cdecl FUN_00635da0(int param_1,int param_2,int param_3)
   uint uVar3;
   int iVar4;
   int iVar5;
-  
+
   sVar1 = (short)(param_1 >> 0x1f);
   if (param_1 < 0) {
     iVar4 = (short)(((short)(param_1 / 0xc9) + sVar1) -
@@ -56,6 +56,7 @@ undefined4 __cdecl FUN_00635da0(int param_1,int param_2,int param_3)
        uVar3 == 0)) {
       return 0;
     }
+    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
     return CONCAT31((int3)(uVar3 >> 8),1);
   }
   return uVar3;

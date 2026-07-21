@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\ai\ai_tact.cpp
@@ -14,15 +16,16 @@ AiTactClassTy::HelpOrganize(AiTactClassTy *this,AnonShape_00690650_F810CDF4 *par
   code *pcVar4;
   AiTactClassTy *this_01;
   short sVar5;
+  /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
   undefined4 in_EAX;
   int iVar6;
   STGameObjC *pSVar7;
   uint uVar8;
   DArrayTy *pDVar9;
   int iVar10;
-  undefined4 unaff_ESI;
   void *pvVar11;
-  void *unaff_EDI;
+  /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
+  undefined4 unaff_EDI;
   uint *puVar12;
   bool bVar13;
   InternalExceptionFrame local_98;
@@ -43,10 +46,13 @@ AiTactClassTy::HelpOrganize(AiTactClassTy *this,AnonShape_00690650_F810CDF4 *par
   uint local_10;
   AiTactClassTy *local_c;
   uint local_8;
-  
+
+  /* ST_PSEUDO[unresolved_register_input,packed_or_unaligned_piece]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention; expected named packed member, bit extract/compose, or unaligned load */
   local_10 = CONCAT22((short)((uint)in_EAX >> 0x10),param_1->field_0016);
+  /* ST_PSEUDO[unresolved_register_input,packed_or_unaligned_piece]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention; expected named packed member, bit extract/compose, or unaligned load */
   local_20 = CONCAT22((short)((uint)unaff_EDI >> 0x10),param_1->field_001A);
   bVar1 = param_1->field_0018;
+  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
   _local_14 = CONCAT31(uStack_13,bVar1);
   if (7 < bVar1) {
     return;
@@ -58,6 +64,7 @@ AiTactClassTy::HelpOrganize(AiTactClassTy *this,AnonShape_00690650_F810CDF4 *par
     return;
   }
   bVar2 = this->field_0x24;
+  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
   local_8 = CONCAT31(local_8._1_3_,bVar2);
   if (DAT_00808a8f != '\0') {
     bVar13 = (&DAT_008087ea)[(uint)bVar2 * 0x51] != (&DAT_008087ea)[(uint)bVar1 * 0x51];
@@ -89,7 +96,7 @@ LAB_00690763:
     local_98.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_98;
     local_c = this;
-    iVar6 = Library::MSVCRT::__setjmp3(local_98.jumpBuffer,0,unaff_EDI,unaff_ESI);
+    iVar6 = Library::MSVCRT::__setjmp3(local_98.jumpBuffer,0);
     this_01 = local_c;
     if (iVar6 == 0) {
       if (g_sTAllPlayers_007FA174 == (STAllPlayersC *)0x0) {
@@ -97,8 +104,7 @@ LAB_00690763:
       }
       else {
         pSVar7 = STAllPlayersC::GetObjPtr
-                           (g_sTAllPlayers_007FA174,(uint)(byte)local_c->field_0x24,local_10,CASE_1)
-        ;
+                           (g_sTAllPlayers_007FA174,local_c->field_0x24,local_10,CASE_1);
       }
       if ((pSVar7 != (STGameObjC *)0x0) &&
          (iVar6 = thunk_FUN_0068e290(this_01,*(short *)&pSVar7->field_0x30), iVar6 != 0)) {
@@ -116,6 +122,7 @@ LAB_00690763:
             bVar13 = pDVar9->count != 0;
             do {
               if (bVar13) {
+                /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(pDVar9, local_8) (runtime stride) */
                 pvVar11 = (void *)(pDVar9->elementSize * local_8 + (int)pDVar9->data);
               }
               else {
@@ -138,8 +145,10 @@ LAB_00690763:
                 local_42 = local_14;
                 AiFltClassTy::GetAiMess(this_00,local_54);
                 if ('\0' < local_4c) {
+                  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                   _local_1c = CONCAT22(*(undefined2 *)(iVar6 + 0x7d),
                                        *(undefined2 *)(*(int *)((int)pvVar11 + 4) + 0x7d));
+                  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                   local_18 = CONCAT22(*(undefined2 *)(iVar6 + 0x7b),(short)local_10);
                   Library::DKW::TBL::FUN_006ae1c0
                             ((uint *)local_c->field_00C9,(undefined4 *)&local_1c);
@@ -165,9 +174,7 @@ LAB_00690763:
     iVar10 = ReportDebugMessage(s_E____titans_ai_ai_tact_cpp_007d56e0,0x433,0,iVar6,&DAT_007a4ccc,
                                 s_AiTactClassTy__HelpOrganize_007d5894);
     if (iVar10 != 0) {
-      pcVar4 = (code *)swi(3);
-      (*pcVar4)();
-      return;
+      STDebugBreak(); /* noreturn in standalone pseudocode */
     }
     RaiseInternalException(iVar6,0,s_E____titans_ai_ai_tact_cpp_007d56e0,0x434);
   }

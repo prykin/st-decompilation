@@ -1,7 +1,7 @@
 
 /* [STPrototypeApplier] Propagated parameter 0.
    Evidence: 004F95B0 -> 005411A0 @ 004F95F6
-   
+
    [STPrototypeRepairApplier] Propagated parameter 2.
    Evidence: 004F9480 -> 005411A0 @ 004F94F8 | 004F95B0 -> 005411A0 @ 004F95F6 | 00532A80 ->
    005411A0 @ 00532B02 | 005DC050 -> 005411A0 @ 005DC23A | 005DC730 -> 005411A0 @ 005DC835 |
@@ -15,15 +15,13 @@ void __cdecl FUN_005411a0(uint *param_1,char *param_2,char *text)
   uint *puVar3;
   uint uVar4;
   uint uVar5;
-  undefined4 unaff_ESI;
-  void *unaff_EDI;
   char *pcVar6;
   InternalExceptionFrame local_4c;
   uint *local_8;
-  
+
   local_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_4c;
-  iVar2 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar2 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
   if (iVar2 != 0) {
     g_currentExceptionFrame = local_4c.previous;
     return;

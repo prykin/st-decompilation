@@ -27,7 +27,7 @@ void __thiscall FUN_0069e4d0(void *this,int param_1,int param_2,int param_3,int 
   int local_10;
   int local_c;
   int *local_8;
-  
+
   piVar9 = local_70;
   local_18 = this;
   for (iVar5 = 9; iVar5 != 0; iVar5 = iVar5 + -1) {
@@ -105,6 +105,7 @@ LAB_0069e69c:
     local_24 = local_70 + iVar5;
     if (0 < local_70[iVar5]) {
       local_28 = (int)asStack_c4[iVar5 * 2];
+      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
       local_3c[4] = (int)*(short *)((int)local_a0 + iVar5 * 4 + -0x22);
       local_10 = 0;
       local_20 = iVar5 * 0x28;

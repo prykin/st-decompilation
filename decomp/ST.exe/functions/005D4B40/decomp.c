@@ -8,7 +8,7 @@ undefined4 * FUN_005d4b40(void)
   SpriteClassTy *this_00;
   undefined4 *puVar3;
   int local_8;
-  
+
   this = (STGroupBoatC *)FUN_006b04d0(0x2245);
   if (this != (STGroupBoatC *)0x0) {
     STGroupBoatC::sub_006E5FB0(this);

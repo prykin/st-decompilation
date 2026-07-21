@@ -7,7 +7,7 @@ int __thiscall FUN_00711370(void *this,uint *param_1)
   int iVar3;
   undefined1 uVar4;
   int local_8;
-  
+
   uVar4 = 0;
   local_8 = 0;
   if (param_1 == (uint *)0x0) {
@@ -23,7 +23,7 @@ int __thiscall FUN_00711370(void *this,uint *param_1)
       uVar4 = (undefined1)*puVar2;
       *(undefined1 *)puVar2 = 0;
     }
-    iVar3 = FUN_00711110(this,param_1);
+    iVar3 = FUN_00711110(this,(char *)param_1);
     if (local_8 < iVar3) {
       local_8 = iVar3;
     }

@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\cpanel4.cpp
@@ -13,8 +15,6 @@ void __thiscall CPanelTy::PaintArsenal(CPanelTy *this)
   byte *pbVar5;
   AnonShape_GLOBAL_0081175C_57F682DD *pAVar6;
   byte bVar7;
-  undefined4 unaff_ESI;
-  void *unaff_EDI;
   uint uVar8;
   int iVar9;
   InternalExceptionFrame local_70;
@@ -28,11 +28,11 @@ void __thiscall CPanelTy::PaintArsenal(CPanelTy *this)
   uint local_10;
   int local_c;
   int local_8;
-  
+
   local_70.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_70;
   local_28 = this;
-  iVar3 = Library::MSVCRT::__setjmp3(local_70.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar3 = Library::MSVCRT::__setjmp3(local_70.jumpBuffer,0);
   pCVar2 = local_28;
   if (iVar3 != 0) {
     g_currentExceptionFrame = local_70.previous;
@@ -42,21 +42,22 @@ void __thiscall CPanelTy::PaintArsenal(CPanelTy *this)
       RaiseInternalException(iVar3,0,s_E____titans_Andrey_cpanel4_cpp_007c2700,0x184);
       return;
     }
-    pcVar1 = (code *)swi(3);
-    (*pcVar1)();
-    return;
+    STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  FUN_006b4170((AnonShape_006C7610_838EDECF *)local_28->field_0194,0,0x49,0x50,0x6f,0x37,0x3d);
-  FUN_006b4170((AnonShape_006C7610_838EDECF *)pCVar2->field_0194,0,0x4a,0x51,0x29,0x34,0x3f);
-  FUN_006b4170((AnonShape_006C7610_838EDECF *)pCVar2->field_0194,0,0x4b,0x52,0x27,0x32,0x3a);
+  FUN_006b4170((AnonShape_006B5B10_E0D06CF1 *)local_28->field_0194,0,0x49,0x50,0x6f,0x37,0x3d);
+  FUN_006b4170((AnonShape_006B5B10_E0D06CF1 *)pCVar2->field_0194,0,0x4a,0x51,0x29,0x34,0x3f);
+  FUN_006b4170((AnonShape_006B5B10_E0D06CF1 *)pCVar2->field_0194,0,0x4b,0x52,0x27,0x32,0x3a);
   if (pCVar2->field_09D4 == '\x01') {
+    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
     local_20 = CONCAT31(local_20._1_3_,4);
     bVar7 = 3;
   }
   else {
+    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
     local_20 = (uint)local_20._1_3_ << 8;
     bVar7 = 4;
   }
+  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
   local_10 = CONCAT31(local_10._1_3_,bVar7);
   if (bVar7 != 0) {
     local_14 = 0;
@@ -81,6 +82,7 @@ void __thiscall CPanelTy::PaintArsenal(CPanelTy *this)
           DibPut((AnonShape_006B5B10_E0D06CF1 *)pCVar2->field_0194,uVar8 * 4 + 0x76,local_1c + 2,
                  '\x01',pbVar5);
           bVar7 = (byte)local_10 + 1;
+          /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
           local_10 = CONCAT31(local_10._1_3_,bVar7);
           uVar8 = (uint)bVar7;
         } while (uVar8 < uVar4);
@@ -104,6 +106,7 @@ void __thiscall CPanelTy::PaintArsenal(CPanelTy *this)
         if ((int)uVar4 < 0x76) {
                     /* WARNING: Could not recover jumptable at 0x00505bca. Too many branches */
                     /* WARNING: Treating indirect jump as call */
+          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
           (*(code *)(&PTR_DAT_00505cec)[local_14])();
           return;
         }
@@ -111,6 +114,7 @@ void __thiscall CPanelTy::PaintArsenal(CPanelTy *this)
       else if ((int)uVar4 < 0x76) {
                     /* WARNING: Could not recover jumptable at 0x00505b82. Too many branches */
                     /* WARNING: Treating indirect jump as call */
+        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
         (*(code *)(&PTR_DAT_00505cdc)[local_14])();
         return;
       }

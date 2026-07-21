@@ -10,7 +10,7 @@ FUN_0060e470(int param_1,int param_2,int param_3,int param_4,int param_5,int par
   int iVar4;
   int iVar5;
   int local_8;
-  
+
   iVar1 = param_4;
   if (0x22a748 <
       (param_8 - param_5) * (param_8 - param_5) + (param_7 - param_4) * (param_7 - param_4)) {

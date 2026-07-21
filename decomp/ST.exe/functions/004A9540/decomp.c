@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* Recovered from embedded debug metadata:
@@ -11,8 +13,6 @@ void __thiscall OpticClassC::ReInitOptic(OpticClassC *this,int param_1)
   code *pcVar2;
   int errorCode;
   int iVar3;
-  undefined4 unaff_ESI;
-  void *unaff_EDI;
   uint uVar4;
   float10 fVar5;
   InternalExceptionFrame local_5c;
@@ -21,11 +21,11 @@ void __thiscall OpticClassC::ReInitOptic(OpticClassC *this,int param_1)
   float local_10;
   float local_c;
   float local_8;
-  
+
   local_5c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_5c;
   local_18 = this;
-  errorCode = Library::MSVCRT::__setjmp3(local_5c.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  errorCode = Library::MSVCRT::__setjmp3(local_5c.jumpBuffer,0);
   if (errorCode != 0) {
     g_currentExceptionFrame = local_5c.previous;
     iVar3 = ReportDebugMessage(s_E____titans_wlad_To_optic_cpp_007ac594,0x13c,0,errorCode,
@@ -34,9 +34,7 @@ void __thiscall OpticClassC::ReInitOptic(OpticClassC *this,int param_1)
       RaiseInternalException(errorCode,0,s_E____titans_wlad_To_optic_cpp_007ac594,0x13d);
       return;
     }
-    pcVar2 = (code *)swi(3);
-    (*pcVar2)();
-    return;
+    STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   DAT_0080745d = 0;
   _DAT_00807430 = 0x40200000;

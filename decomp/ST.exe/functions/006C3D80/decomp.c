@@ -11,7 +11,7 @@ void FUN_006c3d80(AnonShape_006C3D80_5E5410BE *param_1)
   int iVar7;
   tagRECT local_24;
   int local_8;
-  
+
   pAVar2 = param_1;
   GetClientRect(*(HWND *)(param_1->field_0028 + 4),&local_24);
   uVar1 = param_1->field_0004;

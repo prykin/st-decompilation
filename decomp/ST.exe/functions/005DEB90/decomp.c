@@ -13,8 +13,6 @@ undefined4 __fastcall FUN_005deb90(AnonShape_005DEB90_CA287120 *param_1)
   int iVar3;
   HANDLE pvVar4;
   BOOL BVar5;
-  undefined4 unaff_ESI;
-  void *unaff_EDI;
   _WIN32_FIND_DATAA local_5b0;
   byte local_470 [260];
   byte local_36c [260];
@@ -27,7 +25,7 @@ undefined4 __fastcall FUN_005deb90(AnonShape_005DEB90_CA287120 *param_1)
   int local_10;
   HANDLE local_c;
   DWORD local_8;
-  
+
   local_c = (HANDLE)0xffffffff;
   local_8 = 0;
   local_14 = 1;
@@ -39,7 +37,7 @@ undefined4 __fastcall FUN_005deb90(AnonShape_005DEB90_CA287120 *param_1)
   local_60.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_60;
   local_1c = (AnonShape_005DEB90_FE6FE747 *)param_1;
-  iVar3 = Library::MSVCRT::__setjmp3(local_60.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar3 = Library::MSVCRT::__setjmp3(local_60.jumpBuffer,0);
   pAVar2 = local_1c;
   if (iVar3 == 0) {
     local_8 = (local_1c->field_069E - local_1c->field_06AE) - local_1c->field_06B2;

@@ -8,7 +8,7 @@ void __fastcall FUN_0053a540(PlayPanelTy *param_1)
   int iVar4;
   undefined4 *puVar5;
   int *piVar6;
-  
+
   puVar1 = &param_1->field_0x18;
   puVar5 = (undefined4 *)puVar1;
   for (iVar4 = 8; iVar4 != 0; iVar4 = iVar4 + -1) {

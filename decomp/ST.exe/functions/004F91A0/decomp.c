@@ -4,7 +4,7 @@ void __thiscall FUN_004f91a0(void *this,byte param_1,undefined1 *param_2,int *pa
 {
   uint uVar1;
   uint uVar2;
-  
+
   if (param_1 < 8) {
     if (param_2 != (undefined1 *)0x0) {
       *param_2 = (&DAT_008087f7)[(uint)param_1 * 0x51];

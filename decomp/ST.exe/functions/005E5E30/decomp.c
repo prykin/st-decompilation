@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* Recovered from embedded debug metadata:
@@ -11,15 +13,13 @@ void __thiscall MTestTy::NoneMTest(MTestTy *this)
   MTestTy *pMVar2;
   int iVar3;
   int iVar4;
-  void *unaff_ESI;
-  InternalExceptionFrame *pIVar5;
-  undefined4 local_48 [16];
+  InternalExceptionFrame local_4c;
   MTestTy *local_8;
-  
-  pIVar5 = g_currentExceptionFrame;
-  g_currentExceptionFrame = (InternalExceptionFrame *)&stack0xffffffb4;
+
+  local_4c.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &local_4c;
   local_8 = this;
-  iVar3 = Library::MSVCRT::__setjmp3(local_48,0,unaff_ESI,pIVar5);
+  iVar3 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
   pMVar2 = local_8;
   if (iVar3 == 0) {
     if (local_8->field_00B3 == '\x01') {
@@ -40,16 +40,14 @@ void __thiscall MTestTy::NoneMTest(MTestTy *this)
       }
     }
     _DAT_00811774 = pMVar2->field_00A1;
-    g_currentExceptionFrame = pIVar5;
+    g_currentExceptionFrame = local_4c.previous;
     return;
   }
-  g_currentExceptionFrame = pIVar5;
+  g_currentExceptionFrame = local_4c.previous;
   iVar4 = ReportDebugMessage(s_E____titans_Start_test_obj_cpp_007cdcbc,0x6c,0,iVar3,&DAT_007a4ccc,
                              s_MTestTy__NoneMTest_007cdd2c);
   if (iVar4 != 0) {
-    pcVar1 = (code *)swi(3);
-    (*pcVar1)();
-    return;
+    STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   RaiseInternalException(iVar3,0,s_E____titans_Start_test_obj_cpp_007cdcbc,0x6c);
   return;

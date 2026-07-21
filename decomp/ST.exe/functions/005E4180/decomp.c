@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\task_obj.cpp
@@ -13,8 +15,6 @@ MTaskTy::CreateBut(MTaskTy *this,undefined4 param_1,undefined4 param_2,undefined
   int iVar2;
   undefined4 uVar3;
   int iVar4;
-  undefined4 unaff_ESI;
-  void *unaff_EDI;
   undefined4 *puVar5;
   undefined4 local_1cc [4];
   undefined4 local_1bc;
@@ -28,7 +28,7 @@ MTaskTy::CreateBut(MTaskTy *this,undefined4 param_1,undefined4 param_2,undefined
   InternalExceptionFrame local_50;
   MTaskTy *local_c;
   undefined4 local_8;
-  
+
   puVar5 = local_1cc;
   local_c = this;
   for (iVar4 = 0x5f; iVar4 != 0; iVar4 = iVar4 + -1) {
@@ -38,7 +38,7 @@ MTaskTy::CreateBut(MTaskTy *this,undefined4 param_1,undefined4 param_2,undefined
   local_8 = 0;
   local_50.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_50;
-  iVar4 = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar4 = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0);
   if (iVar4 == 0) {
     local_1cc[0] = param_2;
     local_1cc[1] = param_1;
@@ -52,7 +52,8 @@ MTaskTy::CreateBut(MTaskTy *this,undefined4 param_1,undefined4 param_2,undefined
     local_168 = 2;
     local_164 = param_8;
     local_16c = local_1ac;
-    (**(code **)(*(int *)local_c->field_000C + 8))(2,&local_8,0,local_1cc,0);
+    (*local_c->field_000C->vtable->CreateObject)
+              ((SystemClassTy *)local_c->field_000C,2,&local_8,(int *)0x0,local_1cc,0);
     g_currentExceptionFrame = local_50.previous;
     return local_8;
   }
@@ -60,9 +61,7 @@ MTaskTy::CreateBut(MTaskTy *this,undefined4 param_1,undefined4 param_2,undefined
   iVar2 = ReportDebugMessage(s_E____titans_Start_task_obj_cpp_007cd994,0x4a0,0,iVar4,&DAT_007a4ccc,
                              s_MTaskTy__CreateBut_007cdc74);
   if (iVar2 != 0) {
-    pcVar1 = (code *)swi(3);
-    uVar3 = (*pcVar1)();
-    return uVar3;
+    STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   RaiseInternalException(iVar4,0,s_E____titans_Start_task_obj_cpp_007cd994,0x4a0);
   return 0;

@@ -8,7 +8,7 @@ void FUN_006827a0(void)
 
 {
   int exceptionCode;
-  
+
   do {
     exceptionCode = thunk_FUN_006736f0();
     if (exceptionCode < 0) {

@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\prov_obj.cpp
@@ -11,8 +13,6 @@ void __thiscall PrividerTy::CreateCtrls(PrividerTy *this,char param_1)
   PrividerTy *this_00;
   int iVar3;
   int iVar4;
-  undefined4 unaff_ESI;
-  void *unaff_EDI;
   uint *puVar5;
   undefined4 *puVar6;
   undefined4 local_dd0 [19];
@@ -78,7 +78,7 @@ void __thiscall PrividerTy::CreateCtrls(PrividerTy *this,char param_1)
   PrividerTy *local_10;
   uint local_c;
   char local_5;
-  
+
   puVar5 = local_544;
   local_10 = this;
   for (iVar4 = 0x135; iVar4 != 0; iVar4 = iVar4 + -1) {
@@ -92,16 +92,14 @@ void __thiscall PrividerTy::CreateCtrls(PrividerTy *this,char param_1)
   }
   local_70.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_70;
-  iVar4 = Library::MSVCRT::__setjmp3(local_70.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar4 = Library::MSVCRT::__setjmp3(local_70.jumpBuffer,0);
   this_00 = local_10;
   if (iVar4 != 0) {
     g_currentExceptionFrame = local_70.previous;
     iVar3 = ReportDebugMessage(s_E____titans_Start_prov_obj_cpp_007ccd28,0x24d,0,iVar4,&DAT_007a4ccc
                                ,s_PrividerTy__CreateCtrls_007cce6c);
     if (iVar3 != 0) {
-      pcVar2 = (code *)swi(3);
-      (*pcVar2)();
-      return;
+      STDebugBreak(); /* noreturn in standalone pseudocode */
     }
     RaiseInternalException(iVar4,0,s_E____titans_Start_prov_obj_cpp_007ccd28,0x24d);
     return;
@@ -148,11 +146,13 @@ LAB_005bbb22:
         puVar6 = puVar6 + 1;
       }
       *(undefined2 *)puVar6 = 0;
+      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
       local_2c._2_2_ = (-(ushort)(local_544[6] != 0) & 2) - 1;
       local_1e = 1;
       local_20 = 1;
       local_22 = 1;
       local_28 = 1;
+      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
       local_2c._0_2_ = 1;
       MMsgTy::StatePanel(this_00->field_1A5B->field_02E6,(int)&local_2c);
     }

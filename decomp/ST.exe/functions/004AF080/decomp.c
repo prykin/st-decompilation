@@ -40,7 +40,7 @@ FUN_004af080(uint param_1,int param_2,int *param_3,int *param_4,int *param_5,int
   short local_a;
   short local_8;
   short local_6;
-  
+
   local_50 = 0;
   bVar4 = false;
   bVar5 = false;
@@ -131,6 +131,7 @@ LAB_004af2f0:
                   bVar23 = iVar10 < 0;
                 }
                 else {
+                  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
                   bVar23 = *(char *)((param_1 & 0xff) * 0x51 + 0x11ca + (int)g_appClass_00806728) !=
                            *(char *)((uint)bVar2 * 0x51 + 0x11ca + (int)g_appClass_00806728);
                 }
@@ -353,6 +354,7 @@ LAB_004af325:
                       local_3c = (char *)(iVar11 + (int)psVar8);
                       iVar11 = iVar1;
                       do {
+                        /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
                         if (((((-1 < iVar11) && (iVar11 < g_worldGrid.sizeX)) &&
                              ((iVar10 != iVar9 ||
                               ((iVar11 != iVar1 && ((iVar10 != iVar9 || (iVar11 != iVar15)))))))) &&
@@ -365,9 +367,11 @@ LAB_004af325:
                               (local_10->field_0018 == *(int *)(param_9 + 0x18))) ||
                              ((iVar12 = (*local_10->vtable->vfunc_2C)(), 0x53 < iVar12 &&
                               ((iVar12 = (*local_10->vtable->vfunc_2C)(), iVar12 < 0x5b &&
+                               /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
                                (*(int *)&local_10[2].field_0xfd == *(int *)(param_9 + 0x18))))))))))
                            ) {
                           iVar9 = (*local_10->vtable->vfunc_2C)();
+                          /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
                           if ((iVar9 == 0x53) && (local_10->field_0018 == *(int *)(param_9 + 0x18)))
                           {
                             bVar4 = true;

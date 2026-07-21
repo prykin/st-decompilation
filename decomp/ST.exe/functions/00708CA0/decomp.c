@@ -5,7 +5,7 @@ void FUN_00708ca0(byte *param_1,int param_2,ushort *param_3,int param_4,uint par
 {
   byte bVar1;
   int iVar2;
-  
+
   if (-1 < param_10 + -1) {
     do {
       iVar2 = param_9;

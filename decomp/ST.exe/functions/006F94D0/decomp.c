@@ -18,7 +18,7 @@ void FUN_006f94d0(byte *param_1,int param_2,ushort *param_3,int param_4,uint par
   ushort *puVar11;
   uint local_c;
   uint local_8;
-  
+
   _DAT_00857000 = 1;
   pbVar8 = param_6;
   do {

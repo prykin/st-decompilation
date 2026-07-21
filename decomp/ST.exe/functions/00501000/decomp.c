@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\cpanel2.cpp
@@ -12,16 +14,14 @@ void __thiscall CPanelTy::PaintBEnergy(CPanelTy *this)
   byte *pbVar4;
   int iVar5;
   byte bVar6;
-  undefined4 unaff_ESI;
-  void *unaff_EDI;
   InternalExceptionFrame local_50;
   CPanelTy *local_c;
   uint local_8;
-  
+
   local_50.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_50;
   local_c = this;
-  iVar3 = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar3 = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0);
   pCVar2 = local_c;
   if (iVar3 == 0) {
     iVar3 = FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)local_c->field_02B2,0);
@@ -41,6 +41,7 @@ void __thiscall CPanelTy::PaintBEnergy(CPanelTy *this)
           DibPut((AnonShape_006B5B10_E0D06CF1 *)pCVar2->field_018C,iVar3 + 3 + (local_8 & 0xff) * 4,
                  0x53,'\x01',pbVar4);
           bVar6 = bVar6 + 1;
+          /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
           local_8 = CONCAT31(local_8._1_3_,bVar6);
         } while (bVar6 < (byte)pCVar2->field_0BCD);
       }
@@ -52,9 +53,7 @@ void __thiscall CPanelTy::PaintBEnergy(CPanelTy *this)
   iVar5 = ReportDebugMessage(s_E____titans_Andrey_cpanel2_cpp_007c2524,0x21,0,iVar3,&DAT_007a4ccc,
                              s_CPanelTy__PaintBEnergy_007c254c);
   if (iVar5 != 0) {
-    pcVar1 = (code *)swi(3);
-    (*pcVar1)();
-    return;
+    STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   RaiseInternalException(iVar3,0,s_E____titans_Andrey_cpanel2_cpp_007c2524,0x21);
   return;

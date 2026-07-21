@@ -7,7 +7,7 @@ uint FUN_0074e337(int *param_1,undefined4 param_2,int *param_3,undefined4 param_
   int iVar2;
   DWORD DVar3;
   uint uVar4;
-  
+
   if (param_5 == (int *)0x0) {
     return 0x80004003;
   }
@@ -32,13 +32,16 @@ LAB_0074e3ab:
         return uVar4;
       }
     }
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
     uVar4 = (**(code **)(*param_3 + 0x18))(param_3,param_2,param_1);
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
     (**(code **)(*param_3 + 8))(param_3);
     if ((int)uVar4 < 0) {
       return uVar4;
     }
   }
   *param_5 = *param_1;
+  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
   (**(code **)(*(int *)*param_1 + 4))((int *)*param_1);
   return 0;
 }

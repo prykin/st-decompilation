@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\money.cpp
@@ -19,12 +21,12 @@ undefined4 __thiscall MoneyTy::GetMessage(MoneyTy *this,AnonShape_0052BF00_2F187
   undefined4 uVar9;
   int iVar10;
   ccFntTy *this_01;
+  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   ccFntTy *extraout_ECX;
+  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   ccFntTy *extraout_ECX_00;
   ccFntTy *this_02;
   char cVar11;
-  undefined4 unaff_ESI;
-  void *unaff_EDI;
   uint uVar12;
   byte bVar13;
   char *text_00;
@@ -43,11 +45,11 @@ undefined4 __thiscall MoneyTy::GetMessage(MoneyTy *this,AnonShape_0052BF00_2F187
   AnonShape_0052B990_04D99BFA *local_10;
   uint local_c;
   char local_5;
-  
+
   local_bc.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_bc;
   local_10 = (AnonShape_0052B990_04D99BFA *)this;
-  iVar6 = Library::MSVCRT::__setjmp3(local_bc.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar6 = Library::MSVCRT::__setjmp3(local_bc.jumpBuffer,0);
   this_00 = local_10;
   if (iVar6 == 0) {
     switch(param_1->field_0010) {
@@ -411,6 +413,7 @@ undefined4 __thiscall MoneyTy::GetMessage(MoneyTy *this,AnonShape_0052BF00_2F187
       this_02 = (ccFntTy *)0x0;
       if (*(int *)&this_00->field_0x7e != 0) {
         FreeAndNull((void **)&this_00->field_0x7e);
+        /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
         this_02 = extraout_ECX;
       }
       if (this_00->field_0082 != 0) {
@@ -419,6 +422,7 @@ undefined4 __thiscall MoneyTy::GetMessage(MoneyTy *this,AnonShape_0052BF00_2F187
       if (*(uint **)&this_00->field_0x6a != (uint *)0x0) {
         ccFntTy::operator(this_02,*(uint **)&this_00->field_0x6a);
         *(undefined4 *)&this_00->field_0x6a = 0;
+        /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
         this_02 = extraout_ECX_00;
       }
       if (*(uint **)&this_00->field_0x6e != (uint *)0x0) {
@@ -504,14 +508,18 @@ undefined4 __thiscall MoneyTy::GetMessage(MoneyTy *this,AnonShape_0052BF00_2F187
       }
       if (local_10->field_0x68 != cVar11) {
         if (local_10->field_0x68 != '\0') {
+          /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
           local_78._16_4_ = 0x4202;
           thunk_FUN_0052b760(local_10,&local_78);
+          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
           (*(code *)**(undefined4 **)PTR_00802a30)(&local_78);
         }
         this_00->field_0x68 = cVar11;
         if (cVar11 != '\0') {
+          /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
           local_78._16_4_ = 0x4201;
           thunk_FUN_0052b760(this_00,&local_78);
+          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
           (*(code *)**(undefined4 **)PTR_00802a30)(&local_78);
         }
       }
@@ -524,9 +532,7 @@ undefined4 __thiscall MoneyTy::GetMessage(MoneyTy *this,AnonShape_0052BF00_2F187
   iVar10 = ReportDebugMessage(s_E____titans_Andrey_money_cpp_007c6f48,0x12a,0,iVar6,&DAT_007a4ccc,
                               s_MoneyTy__GetMessage_007c6f6c);
   if (iVar10 != 0) {
-    pcVar3 = (code *)swi(3);
-    uVar9 = (*pcVar3)();
-    return uVar9;
+    STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   RaiseInternalException(iVar6,0,s_E____titans_Andrey_money_cpp_007c6f48,0x12a);
   return 0xffff;

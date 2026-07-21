@@ -1,11 +1,15 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\to_allpl.cpp
-   STAllPlayersC::ReplaceObject */
+   STAllPlayersC::ReplaceObject
+   [STAbiConsistencyApplier] stack_parameter_width: parameter=/char Evidence: entry-use width=/char;
+   unmasked_dword_reads=0; evidence=0043553B MOVSX ECX,byte ptr [EBP + 0x8] | 00435596 MOVSX
+   EAX,byte ptr [EBP + 0x8] */
 
 void __thiscall
-STAllPlayersC::ReplaceObject
-          (STAllPlayersC *this,undefined4 param_1,undefined4 param_2,undefined4 param_3)
+STAllPlayersC::ReplaceObject(STAllPlayersC *this,char param_1,undefined4 param_2,undefined4 param_3)
 
 {
   DArrayTy *pDVar1;
@@ -13,31 +17,29 @@ STAllPlayersC::ReplaceObject
   int errorCode;
   int iVar3;
   DArrayTy **ppDVar4;
-  undefined4 unaff_ESI;
   uint uVar5;
   uint index;
   int *piVar6;
-  void *unaff_EDI;
   dword dVar7;
+  /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
+  undefined3 in_stack_00000005;
   InternalExceptionFrame local_64;
   DArrayTy *local_20 [3];
   dword local_14;
   DArrayTy *local_10;
   void *local_c;
   undefined4 local_8;
-  
+
   local_64.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_64;
-  errorCode = Library::MSVCRT::__setjmp3(local_64.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  errorCode = Library::MSVCRT::__setjmp3(local_64.jumpBuffer,0);
   if (errorCode != 0) {
     g_currentExceptionFrame = local_64.previous;
     if (errorCode != -0x5001fff7) {
       iVar3 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0x117c,0,errorCode,
                                  &DAT_007a4ccc,s_STAllPlayersC__ReplaceObject_007a7380);
       if (iVar3 != 0) {
-        pcVar2 = (code *)swi(3);
-        (*pcVar2)();
-        return;
+        STDebugBreak(); /* noreturn in standalone pseudocode */
       }
       RaiseInternalException(errorCode,0,s_E____titans_wlad_to_allpl_cpp_007a6004,0x117d);
     }
@@ -47,8 +49,9 @@ STAllPlayersC::ReplaceObject
   do {
     uVar5 = (uint)DAT_0080874d;
     if ((*(int *)((int)(g_playerRuntime[uVar5].tempSlots + 2) + (int)local_10 + 4) == 0x19a) &&
-       (*(int *)((int)(g_playerRuntime[uVar5].tempSlots + 2) + (int)local_10 + 8) ==
-        (int)(char)param_1)) {
+       (*(int *)((int)(g_playerRuntime[uVar5].tempSlots + 2) + (int)local_10 + 8) == (int)param_1))
+    {
+      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
       pDVar1 = *(DArrayTy **)((int)(g_playerRuntime[uVar5].tempSlots + 2) + (int)local_10 + 0xe);
       uVar5 = 0;
       dVar7 = pDVar1->count;
@@ -66,7 +69,7 @@ STAllPlayersC::ReplaceObject
     }
     local_10 = (DArrayTy *)((int)local_10 + 0x10);
   } while ((int)local_10 < 0x91);
-  local_10 = g_playerRuntime[(char)param_1].pgPairs;
+  local_10 = g_playerRuntime[param_1].pgPairs;
   if (((local_10 != (DArrayTy *)0x0) && (local_14 = local_10->count, local_14 != 0)) &&
      (uVar5 = 0, 0 < (int)local_14)) {
     do {
@@ -97,11 +100,12 @@ STAllPlayersC::ReplaceObject
       do {
         DArrayGetElement(pDVar1,uVar5,&local_c);
         if (local_c != (void *)0x0) {
-          thunk_FUN_004a8220(local_c,(char)param_1,(short)param_2,(short)param_3);
+          thunk_FUN_004a8220(local_c,param_1,(short)param_2,(short)param_3);
         }
         uVar5 = uVar5 + 1;
       } while ((int)uVar5 < (int)dVar7);
     }
+    /* ST_PSEUDO[flattened_global_record_array]: expected g_playerRuntime[player].field[index...] after base/stride proof */
     local_10 = (DArrayTy *)((int)local_10 + 0xa62);
   } while ((int)local_10 < 0x7fa135);
   ppDVar4 = &g_playerRuntime[0].objects;
@@ -111,12 +115,14 @@ STAllPlayersC::ReplaceObject
        (piVar6 = pDVar1->data, 0 < (int)dVar7)) {
       do {
         if ((int *)*piVar6 != (int *)0x0) {
-          (**(code **)(*(int *)*piVar6 + 0x8c))(param_1,param_2,param_3);
+          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+          (**(code **)(*(int *)*piVar6 + 0x8c))(_param_1,param_2,param_3);
         }
         piVar6 = piVar6 + 1;
         dVar7 = dVar7 - 1;
       } while (dVar7 != 0);
     }
+    /* ST_PSEUDO[flattened_global_record_array]: expected g_playerRuntime[player].field[index...] after base/stride proof */
     ppDVar4 = (DArrayTy **)((int)ppDVar4 + 0xa62);
   } while ((int)ppDVar4 < 0x7fa139);
   g_currentExceptionFrame = local_64.previous;

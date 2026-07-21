@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\To_boat.cpp
@@ -9,14 +11,12 @@ void __thiscall STBoatC::ReleaseLoad(STBoatC *this,undefined4 param_1)
   code *pcVar1;
   int iVar2;
   int *piVar3;
-  
+
   if ((int)this->field_07C2 < 1) {
     iVar2 = ReportDebugMessage(s_E____titans_wlad_To_boat_cpp_007a9d3c,0x4f96,0,0,&DAT_007a4ccc,
                                s_STBoatC__ReleaseLoad_data_lload<_007aba78);
     if (iVar2 != 0) {
-      pcVar1 = (code *)swi(3);
-      (*pcVar1)();
-      return;
+      STDebugBreak(); /* noreturn in standalone pseudocode */
     }
   }
   else {

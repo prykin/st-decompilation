@@ -8,7 +8,7 @@ undefined4 __fastcall FUN_004e3880(AnonShape_004E3880_642C8E1A *param_1)
 
 {
   int exceptionCode;
-  
+
   param_1->field_04D0 = 0;
   param_1->field_04D4 = 0;
   param_1->field_04D8 = 0;

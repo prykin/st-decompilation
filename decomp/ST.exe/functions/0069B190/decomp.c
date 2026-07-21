@@ -17,7 +17,7 @@ int __thiscall FUN_0069b190(void *this,int param_1,int param_2,int param_3)
   int local_14;
   int local_c;
   int local_8;
-  
+
   local_c = 0;
   local_18 = 0;
   *(int *)((int)this + 0x582f) = param_1 * param_2;

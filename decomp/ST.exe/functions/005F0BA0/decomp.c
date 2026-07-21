@@ -7,7 +7,7 @@ undefined4 __fastcall FUN_005f0ba0(AnonShape_005F0BA0_C8D654C5 *param_1)
   char cVar2;
   int iVar3;
   int iVar4;
-  
+
   if ((uint)PTR_00802a38->field_00E4 % 5 == 0) {
     this = &param_1->field_0x1d5;
     uVar1 = *(uint *)(DAT_00806724 + 0x30 + param_1->field_02D2 * 4);
@@ -19,6 +19,7 @@ undefined4 __fastcall FUN_005f0ba0(AnonShape_005F0BA0_C8D654C5 *param_1)
         cVar2 = thunk_FUN_004ad610((int)this);
         if (cVar2 != '\0') {
           thunk_FUN_005ef5f0((int)param_1);
+          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
           (*(code *)**(undefined4 **)this)();
         }
       }

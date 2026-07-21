@@ -3,10 +3,11 @@ undefined4 __thiscall FUN_00692ae0(void *this,uint param_1,int param_2)
 
 {
   undefined4 uVar1;
-  
+
   uVar1 = 0;
   if ((-1 < param_2) && (param_2 < 5)) {
     if ((param_1 & 0x1000) == 0) {
+      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
       if ((*(byte *)((int)this +
                     (param_2 +
                     (((param_1 >> 4 & 0xf) + (param_1 >> 8 & 0xf) * 2) * 0xf + (param_1 & 0xf)) * 4)
@@ -14,6 +15,7 @@ undefined4 __thiscall FUN_00692ae0(void *this,uint param_1,int param_2)
         uVar1 = 1;
       }
     }
+    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     else if ((*(byte *)((int)this +
                        (param_2 +
                        (((param_1 >> 4 & 0xf) + (param_1 >> 8 & 0xf) * 2) * 0xf + (param_1 & 0xf)) *

@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\grig\traks.cpp
@@ -13,34 +15,32 @@ undefined4 __thiscall TraksClassTy::GetMessage(TraksClassTy *this,int param_1)
   DArrayTy *pDVar3;
   int iVar4;
   undefined4 uVar5;
-  undefined4 unaff_ESI;
-  void *unaff_EDI;
   InternalExceptionFrame local_58;
   TraksClassTy *local_14;
   byte *local_10;
   uint local_c;
   ushort *local_8;
-  
+
   local_58.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_58;
   local_14 = this;
-  errorCode = Library::MSVCRT::__setjmp3(local_58.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  errorCode = Library::MSVCRT::__setjmp3(local_58.jumpBuffer,0);
   this_00 = local_14;
   if (errorCode != 0) {
     g_currentExceptionFrame = local_58.previous;
+    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     iVar4 = ReportDebugMessage(s_E____titans_grig_traks_cpp_007c9104,0x151,0,errorCode,
                                s_TraksClassTy__GetMessage_error_m_007c91fc,
                                *(undefined4 *)(param_1 + 0x10));
     if (iVar4 != 0) {
-      pcVar2 = (code *)swi(3);
-      uVar5 = (*pcVar2)();
-      return uVar5;
+      STDebugBreak(); /* noreturn in standalone pseudocode */
     }
     RaiseInternalException(errorCode,0,s_E____titans_grig_traks_cpp_007c9104,0x152);
     return 0xffff;
   }
   local_14->field_0020 = PTR_00802a38->field_00E4;
   FUN_006e5fd0();
+  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   uVar1 = *(uint *)(param_1 + 0x10);
   if (uVar1 < 4) {
     if (uVar1 == 3) {

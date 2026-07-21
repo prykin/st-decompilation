@@ -3,7 +3,7 @@ void FUN_006c3aa0(int *param_1)
 
 {
   int iVar1;
-  
+
   FUN_006c3570((AnonShape_006C3570_37024033 *)param_1);
   DeleteCriticalSection((LPCRITICAL_SECTION)(param_1 + 0x142));
   FUN_006b98c0((int *)&DAT_008568d0,param_1);

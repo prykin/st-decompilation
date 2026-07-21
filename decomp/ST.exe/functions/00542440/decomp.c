@@ -3,10 +3,10 @@
    VTable: 0079ADB8 (store 00542453)
    Evidence: final_vptr=0079ADB8; returns_this=true; calls_before=1; field_writes_after=3;
    table_confidence=high
-   
+
    [STPrototypeApplier] Propagated return.
    Evidence: 00542440 returns InterSystemC::InterSystemC this @ 00542466
-   
+
    [STPrototypeApplier] Propagated parameter 1.
    Evidence: 00542D80 -> 00542440 @ 00542DC7 */
 

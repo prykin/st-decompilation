@@ -11,7 +11,7 @@ uint __thiscall FUN_00679c50(void *this,byte *param_1,byte *param_2)
   uint uVar6;
   byte *pbVar7;
   bool bVar8;
-  
+
   if ((param_1 == (byte *)0x0) || (param_2 == (byte *)0x0)) {
 LAB_00679d08:
     uVar6 = 0xffffffff;

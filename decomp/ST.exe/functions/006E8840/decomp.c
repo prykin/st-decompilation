@@ -9,7 +9,7 @@ void FUN_006e8840(AnonShape_006E8840_CF3FA5BA *param_1)
   int iVar5;
   int iVar6;
   int local_c;
-  
+
   piVar2 = param_1->field_00A0;
   if (piVar2 != (int *)0x0) {
     local_c = param_1->field_0094;

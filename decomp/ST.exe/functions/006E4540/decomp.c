@@ -8,7 +8,7 @@ int FUN_006e4540(AnonShape_006E3450_BC2FF034 *param_1,int param_2)
   uint uVar1;
   int iVar2;
   int iVar3;
-  
+
   iVar2 = 0;
   param_1->field_0004 = 0;
   do {

@@ -20,7 +20,7 @@ undefined4 __thiscall STBoatC::sub_004926C0(STBoatC *this,int param_1)
   short *local_10;
   int local_c;
   int local_8;
-  
+
   local_dc[2] = 0;
   local_dc[3] = 0;
   local_dc[0xc] = 0;

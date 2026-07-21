@@ -1,10 +1,14 @@
 
-bool FUN_00681d20(void)
+/* [STAbiConsistencyApplier] full_eax_return: return=/int Evidence: all observed callers consume
+   full EAX (1), none consume AL/AX, and every RET path defines full EAX; sites=00683C70 @ 00687348
+   -> TEST TEST EAX,EAX */
+
+int FUN_00681d20(void)
 
 {
   int iVar1;
   int iVar2;
-  
+
   iVar1 = DAT_008488b0;
   iVar2 = DAT_008488b0 * 0x2b14;
   if (0 < *(int *)(&DAT_00811ae8 + iVar2)) {
@@ -37,9 +41,9 @@ bool FUN_00681d20(void)
        ((((int)(&DAT_00811c84)[iVar1 * 0xac5] < 3 && (-1 < (int)(&DAT_00811c88)[iVar1 * 0xac5])) &&
         (((int)(&DAT_00811c88)[iVar1 * 0xac5] < 3 && (0 < *(int *)(&DAT_00811c94 + iVar1 * 0x158a)))
         )))) {
-      return 0 < *(int *)(&DAT_00811c98 + iVar1 * 0x158a);
+      return (uint)(0 < *(int *)(&DAT_00811c98 + iVar1 * 0x158a));
     }
   }
-  return false;
+  return 0;
 }
 

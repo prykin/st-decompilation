@@ -10,7 +10,7 @@ int __thiscall FUN_00714f00(void *this,char *source,size_t param_2)
   uint uVar3;
   size_t sVar4;
   char *pcVar5;
-  
+
   if (source == (char *)0x0) {
     return -0x34;
   }

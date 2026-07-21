@@ -5,63 +5,62 @@ FUN_0065e700(AnonShape_0065DA10_8B0AA883 *param_1,undefined4 param_2,int *param_
 
 {
   DArrayTy *array;
-  int *piVar1;
+  undefined2 *puVar1;
   STFishC *this;
-  int *extraout_ECX;
-  int *piVar2;
+  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   int extraout_EDX;
+  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   int extraout_EDX_00;
-  int iVar3;
-  uint uVar4;
-  bool bVar5;
+  int iVar2;
+  uint uVar3;
+  bool bVar4;
   short local_a;
   short local_8;
   short local_6;
-  
+
   array = (DArrayTy *)thunk_FUN_0065da10(param_1,param_2);
   if ((array == (DArrayTy *)0x0) || (array->count == 0)) {
     return 0xffffffff;
   }
-  uVar4 = 0;
+  uVar3 = 0;
   *param_5 = 0;
   *param_4 = 0;
   *param_3 = 0;
   if (0 < (int)array->count) {
-    bVar5 = array->count != 0;
-    piVar2 = param_3;
-    iVar3 = extraout_EDX;
+    bVar4 = array->count != 0;
+    /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+    iVar2 = extraout_EDX;
     do {
-      if (bVar5) {
-        piVar2 = array->data;
-        piVar1 = (int *)(array->elementSize * uVar4 + (int)piVar2);
+      if (bVar4) {
+        /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(array, uVar3) (runtime stride) */
+        puVar1 = (undefined2 *)(array->elementSize * uVar3 + (int)array->data);
       }
       else {
-        piVar1 = (int *)0x0;
+        puVar1 = (undefined2 *)0x0;
       }
+      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
       this = (STFishC *)
              STAllPlayersC::GetObjPtr
-                       (g_sTAllPlayers_007FA174,
-                        CONCAT31((int3)((uint)piVar2 >> 8),param_1->field_0024),
-                        CONCAT22((short)((uint)iVar3 >> 0x10),(short)*piVar1),CASE_1);
-      piVar2 = extraout_ECX;
-      iVar3 = extraout_EDX_00;
+                       (g_sTAllPlayers_007FA174,param_1->field_0024,
+                        CONCAT22((short)((uint)iVar2 >> 0x10),*puVar1),CASE_1);
+      /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+      iVar2 = extraout_EDX_00;
       if (this != (STFishC *)0x0) {
         STFishC::sub_004162B0(this,&local_6,&local_8,&local_a);
         *param_3 = *param_3 + (int)local_6;
-        iVar3 = (int)local_8;
-        *param_4 = *param_4 + iVar3;
-        piVar2 = (int *)(*param_5 + (int)local_a);
-        *param_5 = (int)piVar2;
+        iVar2 = (int)local_8;
+        *param_4 = *param_4 + iVar2;
+        *param_5 = *param_5 + (int)local_a;
       }
-      uVar4 = uVar4 + 1;
-      bVar5 = uVar4 < array->count;
-    } while ((int)uVar4 < (int)array->count);
+      uVar3 = uVar3 + 1;
+      bVar4 = uVar3 < array->count;
+    } while ((int)uVar3 < (int)array->count);
   }
   DArrayDestroy(array);
-  if (0 < (int)uVar4) {
-    *param_3 = *param_3 / (int)uVar4;
-    *param_4 = *param_4 / (int)uVar4;
-    *param_5 = *param_5 / (int)uVar4;
+  if (0 < (int)uVar3) {
+    *param_3 = *param_3 / (int)uVar3;
+    *param_4 = *param_4 / (int)uVar3;
+    *param_5 = *param_5 / (int)uVar3;
     return 0;
   }
   return 0xffffffff;

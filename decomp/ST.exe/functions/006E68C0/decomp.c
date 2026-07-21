@@ -14,7 +14,7 @@ undefined4 __thiscall FUN_006e68c0(void *this,int param_1,int param_2,int *param
   undefined4 uVar8;
   longlong lVar9;
   float local_8;
-  
+
   fVar3 = _DAT_0079034c;
   *param_3 = 0;
   *param_4 = 0;

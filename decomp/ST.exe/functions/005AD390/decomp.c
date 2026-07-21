@@ -1,8 +1,10 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\load_obj.cpp
    ChooseMapTy::NoneChooseMap
-   
+
    [STSwitchEnumApplier] Switch target field_1A5F uses
    /SubmarineTitans/Recovered/Enums/ChooseMapTy_field_1A5FState. Cases:
    CASE_0=0;CASE_1=1;CASE_2=2;CASE_3=3;CASE_4=4;CASE_5=5;CASE_6=6;CASE_7=7;CASE_9=9;CASE_A=10;CASE_B=11;CASE_C=12;CASE_10=16;CASE_13=19;CASE_14=20;CASE_15=21
@@ -20,8 +22,6 @@ void __thiscall ChooseMapTy::NoneChooseMap(ChooseMapTy *this,undefined4 *param_1
   DWORD DVar6;
   int iVar7;
   int iVar8;
-  undefined4 unaff_ESI;
-  void *unaff_EDI;
   uint *puVar9;
   int *piVar10;
   InternalExceptionFrame local_b0;
@@ -42,23 +42,21 @@ void __thiscall ChooseMapTy::NoneChooseMap(ChooseMapTy *this,undefined4 *param_1
   int local_10;
   AnonShape_005AD390_9AB360A8 *local_c;
   int local_8;
-  
+
   local_8 = 1;
   local_20 = this;
   DVar6 = timeGetTime();
   this->field_0061 = DVar6;
   local_b0.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_b0;
-  iVar7 = Library::MSVCRT::__setjmp3(local_b0.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar7 = Library::MSVCRT::__setjmp3(local_b0.jumpBuffer,0);
   this_00 = local_20;
   if (iVar7 != 0) {
     g_currentExceptionFrame = local_b0.previous;
     iVar8 = ReportDebugMessage(s_E____titans_Start_load_obj_cpp_007cc728,0x24e,0,iVar7,&DAT_007a4ccc
                                ,s_ChooseMapTy__NoneChooseMap_007cc7f0);
     if (iVar8 != 0) {
-      pcVar5 = (code *)swi(3);
-      (*pcVar5)();
-      return;
+      STDebugBreak(); /* noreturn in standalone pseudocode */
     }
     RaiseInternalException(iVar7,0,s_E____titans_Start_load_obj_cpp_007cc728,0x24e);
     return;
@@ -105,6 +103,7 @@ void __thiscall ChooseMapTy::NoneChooseMap(ChooseMapTy *this,undefined4 *param_1
               }
               local_6c[4] = (-(uint)(DAT_008067a0 != '\0') & 4) + 0x694d;
               if (this_00->field_1A5B->field_02E6 == (MMsgTy *)0x0) {
+                /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
                 (*(code *)this_00->field_0000->field_0000)(local_6c);
               }
               else {

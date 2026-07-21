@@ -15,15 +15,18 @@ uint __fastcall FUN_006978c0(int param_1)
   uint local_18;
   uint local_10;
   AnonShape_006978C0_CB24540D *local_8;
-  
+
+  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   uVar6 = *(uint *)(param_1 + 0x5853);
   if (uVar6 != 0) {
     iVar1 = *(int *)(uVar6 + 0xc);
     local_18 = 0;
     if (0 < iVar1) {
       do {
+        /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
         iVar2 = *(int *)(param_1 + 0x5853);
         if (local_18 < *(uint *)(iVar2 + 0xc)) {
+          /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
           local_8 = (AnonShape_006978C0_CB24540D *)
                     (*(int *)(iVar2 + 8) * local_18 + *(int *)(iVar2 + 0x1c));
         }
@@ -32,6 +35,7 @@ uint __fastcall FUN_006978c0(int param_1)
         }
         uVar3 = *(uint *)local_8;
         uVar6 = uVar3;
+        /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
         if ((((0 < (int)uVar3) && ((int)uVar3 <= *(int *)(param_1 + 0x5847) + -1)) &&
             (local_8->field_0009 == 4)) && (0xb < local_8->field_0011)) {
           iVar2 = local_8->field_0015;
@@ -62,6 +66,7 @@ uint __fastcall FUN_006978c0(int param_1)
             uVar6 = (uVar6 - 1 | 0xfffffffe) + 1;
           }
           uVar8 = uVar6 + 1;
+          /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
           if (*(int *)(param_1 + 0x5847) < (int)(*(int *)local_8 + uVar6 + 1)) {
             uVar8 = uVar6;
           }
@@ -76,6 +81,7 @@ uint __fastcall FUN_006978c0(int param_1)
                 bVar10 = *(int *)(uVar6 + 0xc) != 0;
                 do {
                   if (bVar10) {
+                    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
                     pbVar5 = (byte *)(*(int *)(uVar6 + 8) * local_10 + *(int *)(uVar6 + 0x1c));
                   }
                   else {
@@ -83,6 +89,7 @@ uint __fastcall FUN_006978c0(int param_1)
                   }
                   if (pbVar5[1] == 0) {
                     iVar2 = *(int *)(pbVar5 + 2);
+                    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
                     iVar4 = *(int *)(param_1 + 0x5833);
                     if (((*pbVar5 & 2) != 0) &&
                        (uVar6 = Library::MSVCRT::FUN_0072e6c0(),

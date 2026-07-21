@@ -13,7 +13,7 @@ undefined4 __fastcall FUN_004d9820(int *param_1)
   int iVar8;
   longlong lVar9;
   int local_8;
-  
+
   if (param_1[0x136] + 0x4bU <= (uint)PTR_00802a38->field_00E4) {
     param_1[0x136] = PTR_00802a38->field_00E4;
     param_1[0x137] = 0;

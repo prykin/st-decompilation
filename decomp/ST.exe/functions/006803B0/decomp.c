@@ -14,7 +14,7 @@ undefined4 * __cdecl FUN_006803b0(byte param_1)
   CHAR local_a8 [128];
   char local_28 [32];
   cMf32 *local_8;
-  
+
   iVar2 = DAT_00848a04;
   if (DAT_00848a04 < 1) {
     if (-1 < DAT_00848a00) goto LAB_00680474;

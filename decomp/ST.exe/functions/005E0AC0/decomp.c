@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\task_obj.cpp
@@ -16,20 +18,18 @@ void __thiscall MTaskTy::NoneMTask(MTaskTy *this)
   int iVar7;
   uint uVar8;
   uint uVar9;
-  undefined4 unaff_ESI;
   AnonShape_005E10A0_819783CC *pAVar10;
   SpriteClassTy *this_01;
-  void *unaff_EDI;
   uint *puVar11;
   uint uVar12;
   InternalExceptionFrame local_50;
   MTaskTy *local_c;
   uint local_8;
-  
+
   local_50.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_50;
   local_c = this;
-  iVar4 = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar4 = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0);
   this_00 = local_c;
   if (iVar4 != 0) {
     g_currentExceptionFrame = local_50.previous;
@@ -39,9 +39,7 @@ void __thiscall MTaskTy::NoneMTask(MTaskTy *this)
       RaiseInternalException(iVar4,0,s_E____titans_Start_task_obj_cpp_007cd994,0x19c);
       return;
     }
-    pcVar3 = (code *)swi(3);
-    (*pcVar3)();
-    return;
+    STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   if ((local_c->field_006D == '\x03') || (local_c->field_006D == '\x05')) {
     PlayScript(local_c);
@@ -55,6 +53,7 @@ void __thiscall MTaskTy::NoneMTask(MTaskTy *this)
         goto LAB_005e0b38;
       }
       do {
+        /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(pDVar5, uVar9) (runtime stride) */
         pAVar10 = (AnonShape_005E10A0_819783CC *)(pDVar5->elementSize * uVar9 + (int)pDVar5->data);
 LAB_005e0b38:
         if (((-1 < *(int *)pAVar10) && (pAVar10->field_003A != 0)) && (pAVar10->field_0031 != 0)) {
@@ -108,6 +107,7 @@ LAB_005e0b38:
         goto LAB_005e0ca3;
       }
       do {
+        /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(pDVar5, uVar9) (runtime stride) */
         pAVar10 = (AnonShape_005E10A0_819783CC *)(pDVar5->elementSize * uVar9 + (int)pDVar5->data);
 LAB_005e0ca3:
         if (((-1 < (int)*(uint *)pAVar10) && (*(int *)&pAVar10->field_0x10 != 0)) &&
@@ -137,6 +137,7 @@ LAB_005e0ca3:
         goto LAB_005e0d20;
       }
       do {
+        /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(pDVar5, local_8) (runtime stride) */
         this_01 = (SpriteClassTy *)(pDVar5->elementSize * local_8 + (int)pDVar5->data);
 LAB_005e0d20:
         uVar8 = local_8;

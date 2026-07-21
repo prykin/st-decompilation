@@ -1,12 +1,12 @@
 
 /* Inferred SoundClassTy method.
-   
+
    Central sound playback dispatcher.
    mode selects one of 12 playback behaviours.
    soundId identifies a sound resource.
    position is optional and supplies world coordinates.
    Calculates distance, volume and stereo/3D placement.
-   
+
    Inferred from:
    - proximity to SoundClassTy::CheckFader
    - calls through thunk 00404BD8
@@ -32,8 +32,6 @@ SoundClassTy::PlaySound
   uint *puVar12;
   int iVar13;
   uint uVar14;
-  undefined4 unaff_ESI;
-  void *unaff_EDI;
   SoundClassTy *pSVar15;
   AnonShape_0071A990_7656000F *pAVar16;
   InternalExceptionFrame local_64;
@@ -44,20 +42,21 @@ SoundClassTy::PlaySound
   int local_10;
   uint local_c;
   SoundClassTy *local_8;
-  
+
   if (this->field_0F8B == 0) {
     return;
   }
   local_64.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_64;
   local_8 = this;
-  iVar4 = Library::MSVCRT::__setjmp3(local_64.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar4 = Library::MSVCRT::__setjmp3(local_64.jumpBuffer,0);
   pSVar15 = local_8;
   if (iVar4 != 0) {
     g_currentExceptionFrame = local_64.previous;
     return;
   }
   switch(mode) {
+  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
   case SOUND_MODE_1:
     if (((DAT_00807300._1_1_ & 4) != 0) &&
        (puVar12 = (uint *)FUN_0071a990((AnonShape_0071A990_7656000F *)local_8->field_0DF3,soundId,-1
@@ -67,6 +66,7 @@ SoundClassTy::PlaySound
       return;
     }
     break;
+  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
   case SOUND_MODE_2:
     if ((DAT_00807300._1_1_ & 2) == 0) {
       g_currentExceptionFrame = local_64.previous;
@@ -91,6 +91,7 @@ SoundClassTy::PlaySound
       if (iVar4 <= iVar9) {
         bVar3 = (byte)iVar4;
       }
+      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
       local_c = CONCAT31((int3)uVar10,bVar3);
       if (iVar9 <= (int)(uint)bVar3) {
         g_currentExceptionFrame = local_64.previous;
@@ -207,6 +208,7 @@ LAB_0056959b:
                            (uint)(float)*(int *)(&DAT_007c9788 + iVar4),4,10);
     }
     goto LAB_005695ae;
+  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
   case SOUND_MODE_3:
     if ((DAT_00807300._1_1_ & 4) == 0) {
       g_currentExceptionFrame = local_64.previous;
@@ -229,6 +231,7 @@ LAB_0056959b:
       if (iVar4 <= *(int *)(&DAT_007c9788 + iVar9)) {
         bVar3 = (byte)iVar4;
       }
+      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
       local_18 = CONCAT31(local_18._1_3_,bVar3);
       if (*(int *)(&DAT_007c978c + iVar9) <= (int)(uint)bVar3) {
         g_currentExceptionFrame = local_64.previous;
@@ -352,6 +355,7 @@ LAB_005695ae:
       return;
     }
     break;
+  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
   case SOUND_MODE_4:
     if (((DAT_00807300._1_1_ & 1) != 0) &&
        (iVar4 = thunk_FUN_00568780(local_8,0x12,0x14), iVar4 != 0)) {
@@ -374,6 +378,7 @@ LAB_005695ae:
         if (iVar4 <= iVar9) {
           bVar3 = (byte)iVar4;
         }
+        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
         local_c = CONCAT31((int3)uVar10,bVar3);
         if (iVar9 <= (int)(uint)bVar3) {
           g_currentExceptionFrame = local_64.previous;
@@ -476,6 +481,7 @@ LAB_005695ae:
       }
     }
     break;
+  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
   case SOUND_MODE_5:
     if (((DAT_00807300._1_1_ & 8) != 0) &&
        (puVar12 = (uint *)FUN_0071a990((AnonShape_0071A990_7656000F *)local_8->field_0DF3,soundId,-1
@@ -485,6 +491,7 @@ LAB_005695ae:
       return;
     }
     break;
+  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
   case SOUND_MODE_6:
     if (((DAT_00807300._1_1_ & 1) != 0) &&
        (puVar12 = (uint *)FUN_0071a990((AnonShape_0071A990_7656000F *)local_8->field_0DF3,soundId,-1
@@ -494,6 +501,7 @@ LAB_005695ae:
       return;
     }
     break;
+  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
   case SOUND_MODE_7:
     if (((DAT_00807300._1_1_ & 4) != 0) &&
        (puVar12 = (uint *)FUN_0071a990((AnonShape_0071A990_7656000F *)local_8->field_0DF3,soundId,-1
@@ -564,6 +572,7 @@ LAB_005695ae:
       return;
     }
     break;
+  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
   case SOUND_MODE_12:
     if ((DAT_00807300._1_1_ & 1) == 0) {
       g_currentExceptionFrame = local_64.previous;

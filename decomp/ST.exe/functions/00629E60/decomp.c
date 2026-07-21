@@ -4,7 +4,7 @@ int __thiscall FUN_00629e60(void *this,int param_1)
 {
   uint uVar1;
   int iVar2;
-  
+
   iVar2 = -1;
   if (param_1 != 0) {
     *(undefined1 *)((int)this + 0x40) = 1;

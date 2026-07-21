@@ -5,7 +5,7 @@ FUN_006e67c0(void *this,undefined4 param_1,undefined4 param_2,undefined4 param_3
 
 {
   undefined4 *puVar1;
-  
+
   puVar1 = *(undefined4 **)((int)this + 0x452);
   do {
     if (puVar1 == (undefined4 *)0x0) {

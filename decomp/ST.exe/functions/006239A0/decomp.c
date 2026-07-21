@@ -13,6 +13,7 @@ undefined4 __fastcall FUN_006239a0(STMineSetC *param_1)
   int iVar2;
   undefined4 uVar3;
   int iVar4;
+  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined2 extraout_var;
   longlong lVar5;
   int *piVar6;
@@ -23,7 +24,7 @@ undefined4 __fastcall FUN_006239a0(STMineSetC *param_1)
   int local_10;
   int local_c;
   undefined4 local_8;
-  
+
   local_8 = 0;
   switch(param_1->field_02AE) {
   case CASE_0:
@@ -76,6 +77,7 @@ undefined4 __fastcall FUN_006239a0(STMineSetC *param_1)
     iVar2 = thunk_FUN_00627d90(1);
     uVar3 = thunk_FUN_00627db0(param_1,*(int *)&param_1->field_0x2c2,*(int *)&param_1->field_0x2c6,
                                iVar2);
+    /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
     STAllPlayersC::UnRegisterMine
               (g_sTAllPlayers_007FA174,CONCAT31((int3)((uint)uVar3 >> 8),param_1->field_0x262),
                CONCAT22(extraout_var,*(undefined2 *)&param_1->field_0x32),

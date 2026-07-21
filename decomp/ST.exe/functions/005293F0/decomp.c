@@ -2,7 +2,7 @@
 /* [STSwitchEnumApplier] Switch target param_1 uses
    /SubmarineTitans/Recovered/Enums/Global_sub_005293F0_param_1Enum. Cases:
    CASE_DC=220;CASE_DD=221;CASE_DE=222;CASE_DF=223;CASE_E0=224;CASE_E1=225;CASE_E2=226;CASE_E3=227
-   
+
    [STPrototypeApplier] Propagated return.
    Evidence: 005293F0 returns used as parameter 3 of HelpPanelTy::DrawTitle @ 00517BAD */
 
@@ -10,7 +10,7 @@ UINT __cdecl FUN_005293f0(Global_sub_005293F0_param_1Enum param_1)
 
 {
   UINT UVar1;
-  
+
   UVar1 = 10000;
   switch(param_1) {
   case CASE_DC:

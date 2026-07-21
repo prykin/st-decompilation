@@ -6,16 +6,17 @@ void __thiscall FUN_0056f250(void *this,char param_1,byte param_2,char *param_3)
   void *pvVar2;
   int iVar3;
   uint uVar4;
+  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   cMf32 *extraout_ECX;
+  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   cMf32 *extraout_ECX_00;
+  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   cMf32 *extraout_ECX_01;
   cMf32 *this_00;
   uint uVar5;
-  undefined4 unaff_ESI;
   byte *pbVar6;
   cMf32 *pcVar7;
   byte *pbVar8;
-  void *unaff_EDI;
   char *pcVar9;
   char *pcVar10;
   byte *pbVar11;
@@ -33,7 +34,7 @@ void __thiscall FUN_0056f250(void *this,char param_1,byte param_2,char *param_3)
   void *local_10;
   AnonShape_006B5050_99986F91 *local_c;
   uint local_8;
-  
+
   local_8 = 0x88000016;
   local_1a8[0] = 0;
   local_10 = this;
@@ -88,16 +89,19 @@ LAB_0056f325:
     }
     local_a4.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_a4;
-    iVar3 = Library::MSVCRT::__setjmp3(local_a4.jumpBuffer,0,unaff_EDI,unaff_ESI);
+    iVar3 = Library::MSVCRT::__setjmp3(local_a4.jumpBuffer,0);
     if (iVar3 == 0) {
+      /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
       if ((param_1 == '\0') || (this_00 = extraout_ECX, param_1 == '\x03')) {
         local_14 = (cMf32 *)Library::Ourlib::MF32INT::FUN_006f0ec0(0x345,local_1a8,1,0,0);
+        /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
         this_00 = extraout_ECX_00;
       }
       pcVar7 = local_14;
       if ((param_1 == '\0') || (param_1 == '\x03')) {
         Library::Ourlib::MFSTMAP::mfTMapSave(DAT_00806750,(int)local_14,s_3D_MAP_007ca1e4,'\x01');
         pvVar2 = local_10;
+        /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
         Library::Ourlib::MFANY::mfAnySave
                   (*(byte **)((int)local_10 + 0x7d12),*(uint *)((int)local_10 + 0x7d16),(int)pcVar7,
                    PTR_s_TEXTURE_0079b07c,'\x01');
@@ -110,10 +114,12 @@ LAB_0056f325:
                       (undefined4 *)0x0,'\0',(uint *)0x0);
         local_60.previous = g_currentExceptionFrame;
         g_currentExceptionFrame = &local_60;
-        iVar3 = Library::MSVCRT::__setjmp3(local_60.jumpBuffer,0,unaff_EDI,unaff_ESI);
+        iVar3 = Library::MSVCRT::__setjmp3(local_60.jumpBuffer,0);
         pvVar2 = local_10;
         pcVar7 = local_14;
+        /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
         if ((iVar3 == 0) && (*(uint **)((int)local_10 + 0x4ea7) != (uint *)0x0)) {
+          /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
           Library::Ourlib::MFSARR::mfSarSave
                     (*(uint **)((int)local_10 + 0x4ea7),(int)local_14,PTR_s_DESCRIPTION_0079b074,
                      '\x01');
@@ -131,7 +137,7 @@ LAB_0056f325:
                     FUN_006b50c0(0x8b,0x8b,(uint)*(ushort *)(DAT_0080679c + 0xe),uVar4,puVar12,iVar3
                                 );
           if (local_c != (AnonShape_006B5050_99986F91 *)0x0) {
-            FUN_006b4170((AnonShape_006C7610_838EDECF *)local_c,0,0,0,local_c->field_0004,
+            FUN_006b4170((AnonShape_006B5B10_E0D06CF1 *)local_c,0,0,0,local_c->field_0004,
                          (int)local_c->field_0008,0);
             FUN_006e6fb0(PTR_00807598,(AnonShape_006E6FB0_BC494FEA *)local_c,0,0,1);
             puVar14 = (uint *)0x0;
@@ -167,6 +173,7 @@ LAB_0056f325:
         }
         cMf32::RecPut(pcVar7,0x80,PTR_s_SAVE_DESC_0079b054,(byte *)&local_8,4,(undefined4 *)0x0,'\0'
                       ,(uint *)0x0);
+        /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
         this_00 = extraout_ECX_01;
       }
       cMf32::delete(this_00,pcVar7);

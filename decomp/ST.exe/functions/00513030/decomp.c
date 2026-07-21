@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\helppan.cpp
@@ -7,7 +9,7 @@ void __thiscall HelpPanelTy::ChangeTree(HelpPanelTy *this,int *param_1,int param
 
 {
   undefined1 *puVar1;
-  AnonShape_006B0C70_7C4FE646 *groupContent;
+  DArrayTy *groupContent;
   AnonPointee_HelpPanelTy_01B3 *pAVar2;
   undefined4 uVar3;
   code *pcVar4;
@@ -15,15 +17,14 @@ void __thiscall HelpPanelTy::ChangeTree(HelpPanelTy *this,int *param_1,int param
   HelpPanelTy *this_00;
   byte bVar6;
   int iVar7;
-  uint uVar8;
-  int iVar9;
-  int *piVar10;
+  void *pvVar8;
+  uint uVar9;
+  int iVar10;
   int *piVar11;
-  uint uVar12;
-  undefined4 unaff_ESI;
-  void *unaff_EDI;
-  int iVar13;
-  undefined4 *puVar14;
+  int *piVar12;
+  uint uVar13;
+  int iVar14;
+  undefined4 *puVar15;
   int local_d0 [20];
   InternalExceptionFrame local_80;
   undefined4 local_3c;
@@ -44,89 +45,90 @@ void __thiscall HelpPanelTy::ChangeTree(HelpPanelTy *this,int *param_1,int param
   uint local_c;
   undefined1 local_6;
   char local_5;
-  
+
   local_18 = param_2 + 1;
   local_14 = param_1;
   local_1c = 0;
   local_80.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_80;
   local_20 = this;
-  iVar7 = Library::MSVCRT::__setjmp3(local_80.jumpBuffer,0,unaff_EDI,unaff_ESI);
-  piVar11 = local_14;
+  iVar7 = Library::MSVCRT::__setjmp3(local_80.jumpBuffer,0);
+  piVar12 = local_14;
   this_00 = local_20;
   if (iVar7 != 0) {
     g_currentExceptionFrame = local_80.previous;
-    iVar9 = ReportDebugMessage(s_E____titans_Andrey_helppan_cpp_007c383c,0x26d,0,iVar7,&DAT_007a4ccc
-                               ,s_HelpPanelTy__ChangeTree_007c3a2c);
-    if (iVar9 != 0) {
-      pcVar4 = (code *)swi(3);
-      (*pcVar4)();
-      return;
+    iVar10 = ReportDebugMessage(s_E____titans_Andrey_helppan_cpp_007c383c,0x26d,0,iVar7,
+                                &DAT_007a4ccc,s_HelpPanelTy__ChangeTree_007c3a2c);
+    if (iVar10 != 0) {
+      STDebugBreak(); /* noreturn in standalone pseudocode */
     }
     RaiseInternalException(iVar7,0,s_E____titans_Andrey_helppan_cpp_007c383c,0x26d);
     return;
   }
+  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   if (*(char *)((int)local_14 + 0x12) == '\0') {
-    uVar8 = 0;
-    piVar10 = local_d0;
+    uVar9 = 0;
+    piVar11 = local_d0;
     for (iVar7 = 0x14; iVar7 != 0; iVar7 = iVar7 + -1) {
-      *piVar10 = 0;
-      piVar10 = piVar10 + 1;
+      *piVar11 = 0;
+      piVar11 = piVar11 + 1;
     }
     local_10 = local_10 & 0xffffff00;
     local_5 = '\0';
     if (*(uint *)sizeHelp_exref != 0) {
-      piVar10 = (int *)this_00->field_01C7;
+      piVar11 = (int *)this_00->field_01C7;
       do {
-        if ((*piVar10 == *piVar11) && (piVar10[1] == piVar11[1])) {
-          local_1c = uVar8;
+        if ((*piVar11 == *piVar12) && (piVar11[1] == piVar12[1])) {
+          local_1c = uVar9;
           break;
         }
-        uVar8 = uVar8 + 1;
-        piVar10 = (int *)((int)piVar10 + 0x11);
-      } while (uVar8 < *(uint *)sizeHelp_exref);
+        uVar9 = uVar9 + 1;
+        piVar11 = (int *)((int)piVar11 + 0x11);
+      } while (uVar9 < *(uint *)sizeHelp_exref);
     }
-    iVar9 = piVar11[1];
+    iVar10 = piVar12[1];
     local_24 = local_1c & 0xffff;
     iVar7 = local_24 - 1;
     local_c = local_24;
     if (0 < iVar7) {
-      iVar13 = iVar7 * 0x11;
+      iVar14 = iVar7 * 0x11;
       do {
-        if (iVar9 == 0) break;
-        piVar11 = (int *)(this_00->field_01C7 + iVar13);
-        if (*piVar11 == iVar9) {
-          local_d0[local_10 & 0xff] = iVar9;
-          iVar9 = piVar11[1];
+        if (iVar10 == 0) break;
+        piVar12 = (int *)(this_00->field_01C7 + iVar14);
+        if (*piVar12 == iVar10) {
+          local_d0[local_10 & 0xff] = iVar10;
+          iVar10 = piVar12[1];
+          /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
           local_10 = CONCAT31(local_10._1_3_,(byte)local_10 + '\x01');
           local_24 = local_c;
         }
         iVar7 = iVar7 + -1;
-        iVar13 = iVar13 + -0x11;
+        iVar14 = iVar14 + -0x11;
       } while (0 < iVar7);
     }
     local_24 = local_24 + 1;
-    uVar8 = local_18;
+    uVar9 = local_18;
     if (local_24 < *(uint *)sizeHelp_exref) {
-      uVar12 = local_24 * 0x11;
-      local_c = uVar12;
+      uVar13 = local_24 * 0x11;
+      local_c = uVar13;
       do {
-        iVar7 = *(int *)(this_00->field_01C7 + 4 + uVar12);
-        puVar14 = (undefined4 *)(this_00->field_01C7 + uVar12);
-        local_c = uVar12;
+        iVar7 = *(int *)(this_00->field_01C7 + 4 + uVar13);
+        puVar15 = (undefined4 *)(this_00->field_01C7 + uVar13);
+        local_c = uVar13;
         if (iVar7 == *local_14) {
-          local_3c = *puVar14;
-          local_38 = puVar14[1];
-          local_34 = puVar14[2];
-          local_30 = puVar14[3];
-          local_2c = *(undefined1 *)(puVar14 + 4);
+          local_3c = *puVar15;
+          local_38 = puVar15[1];
+          local_34 = puVar15[2];
+          local_30 = puVar15[3];
+          local_2c = *(undefined1 *)(puVar15 + 4);
+          /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
           local_2b = *(char *)((int)local_14 + 0x11) + '\x01';
           local_2a = 0;
           local_29 = 0;
-          Library::DKW::TBL::FUN_006b11d0((uint *)this_00->field_01B3,uVar8 & 0xffff,&local_3c);
-          uVar8 = uVar8 + 1;
+          Library::DKW::TBL::FUN_006b11d0((uint *)this_00->field_01B3,uVar9 & 0xffff,&local_3c);
+          uVar9 = uVar9 + 1;
           local_5 = '\x01';
-          local_18 = uVar8;
+          local_18 = uVar9;
         }
         else {
           if (iVar7 == 0) break;
@@ -141,6 +143,7 @@ void __thiscall HelpPanelTy::ChangeTree(HelpPanelTy *this,int *param_1,int param
                 goto LAB_00513233;
               }
               bVar6 = bVar6 + 1;
+              /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
               local_28 = CONCAT31(local_28._1_3_,bVar6);
             } while (bVar6 < (byte)local_10);
             bVar5 = false;
@@ -149,15 +152,15 @@ LAB_00513233:
           if (bVar5) break;
         }
         local_24 = local_24 + 1;
-        uVar12 = uVar12 + 0x11;
-        local_c = uVar12;
+        uVar13 = uVar13 + 0x11;
+        local_c = uVar13;
       } while (local_24 < *(uint *)sizeHelp_exref);
     }
-    piVar11 = local_14;
+    piVar12 = local_14;
     if (local_5 != '\0') {
       pAVar2 = this_00->field_01B3;
-      if ((uVar8 & 0xffff) - 1 < *(uint *)&pAVar2->field_0xc) {
-        iVar7 = ((uVar8 & 0xffff) - 1) * pAVar2->field_0008 + pAVar2->field_001C;
+      if ((uVar9 & 0xffff) - 1 < *(uint *)&pAVar2->field_0xc) {
+        iVar7 = ((uVar9 & 0xffff) - 1) * pAVar2->field_0008 + pAVar2->field_001C;
       }
       else {
         iVar7 = 0;
@@ -168,27 +171,29 @@ LAB_00513233:
     }
   }
   else {
-    groupContent = (AnonShape_006B0C70_7C4FE646 *)local_20->field_01B3;
-    uVar8 = param_2 + 1;
-    uVar12 = groupContent->field_000C;
-    while (((uVar8 < uVar12 &&
-            (iVar7 = groupContent->field_0008 * uVar8 + groupContent->field_001C, iVar7 != 0)) &&
-           (*(byte *)((int)piVar11 + 0x11) < *(byte *)(iVar7 + 0x11)))) {
-      FUN_006b0c70(groupContent,uVar8);
-      groupContent = (AnonShape_006B0C70_7C4FE646 *)this_00->field_01B3;
-      uVar12 = groupContent->field_000C;
+    groupContent = (DArrayTy *)local_20->field_01B3;
+    uVar9 = param_2 + 1;
+    uVar13 = groupContent->count;
+    /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(groupContent, uVar9) (runtime stride) */
+    while (((uVar9 < uVar13 &&
+            (pvVar8 = (void *)(groupContent->elementSize * uVar9 + (int)groupContent->data),
+            pvVar8 != (void *)0x0)) &&
+           (*(byte *)((int)piVar12 + 0x11) < *(byte *)((int)pvVar8 + 0x11)))) {
+      FUN_006b0c70(groupContent,uVar9);
+      groupContent = (DArrayTy *)this_00->field_01B3;
+      uVar13 = groupContent->count;
     }
   }
-  *(bool *)((int)piVar11 + 0x12) = *(char *)((int)piVar11 + 0x12) == '\0';
+  *(bool *)((int)piVar12 + 0x12) = *(char *)((int)piVar12 + 0x12) == '\0';
   if ((this_00->field_019C != 0) && (this_00->field_01A1 == 0)) {
     Library::DKW::WGR::FUN_006b55f0
-              ((AnonShape_006B84D0_7C7D97C6 *)this_00->field_0068,0,0x21,0x16,
+              ((AnonShape_006B5B10_E0D06CF1 *)this_00->field_0068,0,0x21,0x16,
                (byte *)this_00->field_01DC,0,0x21,0x16,0x19c,0x118);
     puVar1 = &this_00->field_0x18;
-    puVar14 = (undefined4 *)puVar1;
+    puVar15 = (undefined4 *)puVar1;
     for (iVar7 = 8; iVar7 != 0; iVar7 = iVar7 + -1) {
-      *puVar14 = 0;
-      puVar14 = puVar14 + 1;
+      *puVar15 = 0;
+      puVar15 = puVar15 + 1;
     }
     uVar3 = this_00->field_01B7;
     this_00->field_0028 = 0x28;

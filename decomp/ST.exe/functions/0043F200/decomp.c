@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\to_allpl.cpp
@@ -13,29 +15,25 @@ uint * __thiscall STAllPlayersC::GetTOBJList(STAllPlayersC *this,char param_1,by
   byte *pbVar5;
   int iVar6;
   uint *puVar7;
-  undefined4 unaff_ESI;
   byte *pbVar8;
-  void *unaff_EDI;
   bool bVar9;
   InternalExceptionFrame local_64;
   byte local_20 [16];
   DArrayTy *local_10;
   uint *local_c;
   dword local_8;
-  
+
   local_10 = g_playerRuntime[param_1].objects;
   local_8 = local_10->count;
   local_64.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_64;
-  iVar4 = Library::MSVCRT::__setjmp3(local_64.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar4 = Library::MSVCRT::__setjmp3(local_64.jumpBuffer,0);
   if (iVar4 != 0) {
     g_currentExceptionFrame = local_64.previous;
     iVar6 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0x2075,0,iVar4,&DAT_007a4ccc
                                ,s_STAllPlayersC__GetTOBJList_007a7f94);
     if (iVar6 != 0) {
-      pcVar3 = (code *)swi(3);
-      puVar7 = (uint *)(*pcVar3)();
-      return puVar7;
+      STDebugBreak(); /* noreturn in standalone pseudocode */
     }
     RaiseInternalException(iVar4,0,s_E____titans_wlad_to_allpl_cpp_007a6004,0x2076);
     return (uint *)0x0;
@@ -46,6 +44,7 @@ uint * __thiscall STAllPlayersC::GetTOBJList(STAllPlayersC *this,char param_1,by
     do {
       piVar2 = *(int **)((int)local_10->data + iVar4 * 4);
       if (piVar2 != (int *)0x0) {
+        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
         (**(code **)(*piVar2 + 0x74))(local_20);
         pbVar8 = local_20;
         pbVar5 = param_2;

@@ -6,7 +6,7 @@ FUN_00630bb0(void *this,short param_1,short param_2,short param_3,undefined4 par
 {
   int iVar1;
   undefined4 *puVar2;
-  
+
   puVar2 = (undefined4 *)((int)this + 0x40);
   for (iVar1 = 8; iVar1 != 0; iVar1 = iVar1 + -1) {
     *puVar2 = 0;

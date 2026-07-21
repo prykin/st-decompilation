@@ -4,7 +4,7 @@ undefined4 __fastcall FUN_006b0460(int *param_1,int *param_2,int *param_3)
 {
   int iVar1;
   int iVar2;
-  
+
   iVar2 = *param_2;
   iVar1 = iVar2 + param_2[2];
   if (iVar2 <= *param_3) {

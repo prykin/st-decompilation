@@ -12,7 +12,7 @@ void FUN_006dafd0(ushort *param_1,int param_2,ushort *param_3,int param_4,int pa
   ushort *puVar8;
   uint *puVar9;
   undefined4 *puVar10;
-  
+
   iVar5 = param_5;
   if (((uint)param_1 & 2) == 0) {
     do {

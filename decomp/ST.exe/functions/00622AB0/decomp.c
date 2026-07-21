@@ -14,7 +14,7 @@ int __thiscall FUN_00622ab0(void *this,undefined4 *param_1)
   undefined4 local_10;
   undefined4 local_c;
   undefined4 local_8;
-  
+
   puVar3 = param_1;
   puVar5 = (undefined4 *)((int)this + 0x25e);
   for (iVar2 = 0x42; iVar2 != 0; iVar2 = iVar2 + -1) {
@@ -24,6 +24,7 @@ int __thiscall FUN_00622ab0(void *this,undefined4 *param_1)
   }
   *(undefined1 *)puVar5 = *(undefined1 *)puVar3;
   *(undefined4 *)((int)this + 0x2ba) = 0xffffffff;
+  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   iVar2 = *(int *)((int)param_1 + 0x109);
   local_20 = (void *)Library::DKW::LIB::FUN_006aac70(0x44);
   iVar1 = 0;

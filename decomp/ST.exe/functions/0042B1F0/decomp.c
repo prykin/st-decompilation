@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\to_allpl.cpp
@@ -15,9 +17,7 @@ STAllPlayersC::GetGObjFromBox
   int iVar4;
   uint *puVar5;
   int iVar6;
-  undefined4 unaff_ESI;
   int iVar7;
-  void *unaff_EDI;
   InternalExceptionFrame local_70;
   int local_2c;
   int local_28;
@@ -29,7 +29,7 @@ STAllPlayersC::GetGObjFromBox
   int local_10;
   int local_c;
   int local_8;
-  
+
   local_8 = (int)param_2;
   local_14 = param_5 + -1 + local_8;
   local_c = (int)param_3;
@@ -38,16 +38,14 @@ STAllPlayersC::GetGObjFromBox
   local_1c = param_7 + -1 + local_18;
   local_70.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_70;
-  iVar4 = Library::MSVCRT::__setjmp3(local_70.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar4 = Library::MSVCRT::__setjmp3(local_70.jumpBuffer,0);
   if (iVar4 != 0) {
     g_currentExceptionFrame = local_70.previous;
     if (iVar4 != -0x5001fff7) {
       iVar6 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0x155,0,iVar4,
                                  &DAT_007a4ccc,s_STAllPlayersC__GetGObjFromBox_007a6078);
       if (iVar6 != 0) {
-        pcVar2 = (code *)swi(3);
-        (*pcVar2)();
-        return;
+        STDebugBreak(); /* noreturn in standalone pseudocode */
       }
       RaiseInternalException(iVar4,0,s_E____titans_wlad_to_allpl_cpp_007a6004,0x156);
     }
@@ -121,6 +119,7 @@ STAllPlayersC::GetGObjFromBox
             iVar4 = local_2c * 8 + -8;
             do {
               piVar1 = *(int **)((int)g_worldGrid.cells[1].objects + iVar4);
+              /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
               if (((piVar1 != (int *)0x0) && (piVar1[9] == (int)param_1)) &&
                  (iVar7 = (**(code **)(*piVar1 + 0xf8))(), iVar7 == 1)) {
                 iVar7 = piVar1[8];

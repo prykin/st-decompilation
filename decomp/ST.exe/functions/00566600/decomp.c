@@ -14,10 +14,8 @@ int FUN_00566600(int param_1)
   LPSTR pCVar5;
   uint uVar6;
   uint uVar7;
-  undefined4 unaff_ESI;
   byte *pbVar8;
   char *pcVar9;
-  void *unaff_EDI;
   byte *pbVar10;
   char *pcVar11;
   byte bVar12;
@@ -32,11 +30,11 @@ int FUN_00566600(int param_1)
   AnonShape_00566600_1A7DDCB2 *local_10;
   uint local_c;
   ushort *local_8;
-  
+
   local_1c = 0;
   local_60.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_60;
-  iVar2 = Library::MSVCRT::__setjmp3(local_60.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar2 = Library::MSVCRT::__setjmp3(local_60.jumpBuffer,0);
   if (iVar2 != 0) {
     g_currentExceptionFrame = local_60.previous;
     thunk_FUN_00566900((AnonShape_00566900_A2478973 *)local_10);

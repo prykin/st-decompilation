@@ -40,7 +40,7 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_004248D0::FUN_006e1ee0
   int local_1c;
   int local_14;
   int local_c;
-  
+
   pbVar12 = (byte *)param_1->field_0028;
   local_3c = 0;
   if ((*(int *)&this->field_0x124 == 0) || (*(int *)&this->field_0x124 == 10)) {
@@ -236,6 +236,7 @@ LAB_006e22a2:
             iVar3 = (iVar6 - iVar4) + 1;
             do {
               if (iVar13 < (int)(uint)*puVar9) {
+                /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                 local_c._0_2_ = (ushort)((uint)iVar10 >> 0x10);
                 *puVar9 = (ushort)local_c;
               }

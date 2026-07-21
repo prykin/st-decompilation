@@ -10,7 +10,7 @@ void FUN_006d1250(uint *param_1,int param_2,int param_3,uint *param_4)
   uint uVar6;
   byte bVar7;
   uint local_10;
-  
+
   if (param_4 == (uint *)0x0) {
     uVar6 = 0xff0000;
     local_10 = 0xff00;

@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\settsobj.cpp
@@ -27,25 +29,16 @@ undefined4 __thiscall SettMapSTy::GetMessage(SettMapSTy *this,AnonShape_005DE050
   undefined1 *puVar18;
   DArrayTy *pDVar19;
   void *pvVar20;
-  char *extraout_EAX;
   uint *puVar21;
-  char *extraout_EAX_00;
-  char *extraout_EAX_01;
-  char *extraout_EAX_02;
-  char *extraout_EAX_03;
   AnonNested_005D5560_0050_EBFA0A51 *pAVar22;
-  undefined4 extraout_EAX_04;
   uint uVar23;
-  undefined4 extraout_EAX_05;
   byte *pbVar24;
   undefined4 uVar25;
   byte bVar26;
   int iVar27;
   uint uVar28;
   char cVar29;
-  undefined4 unaff_ESI;
   uint uVar30;
-  void *unaff_EDI;
   AnonShape_005D5560_9031BF1B *pAVar31;
   char *pcVar32;
   char *pcVar33;
@@ -81,22 +74,20 @@ undefined4 __thiscall SettMapSTy::GetMessage(SettMapSTy *this,AnonShape_005DE050
   byte local_d;
   uint local_c;
   char *local_8;
-  
+
   local_44 = (SettMapTy *)this;
   DVar14 = FUN_006e51b0(this->field_0010);
   this->field_0061 = DVar14;
   local_c8.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_c8;
-  iVar15 = Library::MSVCRT::__setjmp3(local_c8.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar15 = Library::MSVCRT::__setjmp3(local_c8.jumpBuffer,0);
   this_00 = local_44;
   if (iVar15 != 0) {
     g_currentExceptionFrame = local_c8.previous;
     iVar27 = ReportDebugMessage(s_E____titans_Start_settsobj_cpp_007cd544,0x27d,0,iVar15,
                                 &DAT_007a4ccc,s_SettMapSTy__GetMessage_007cd5a8);
     if (iVar27 != 0) {
-      pcVar8 = (code *)swi(3);
-      uVar25 = (*pcVar8)();
-      return uVar25;
+      STDebugBreak(); /* noreturn in standalone pseudocode */
     }
     RaiseInternalException(iVar15,0,s_E____titans_Start_settsobj_cpp_007cd544,0x27d);
     return 0xffff;
@@ -109,6 +100,7 @@ undefined4 __thiscall SettMapSTy::GetMessage(SettMapSTy *this,AnonShape_005DE050
       if ((uVar30 != 0xffffffff) && (pDVar19 = this_00->field_1F84, pDVar19 != (DArrayTy *)0x0)) {
         pDVar3 = this_00->field_1E2F;
         if (uVar30 < pDVar3->count) {
+          /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(pDVar3, uVar30) (runtime stride) */
           pvVar16 = (void *)(pDVar3->elementSize * uVar30 + (int)pDVar3->data);
         }
         else {
@@ -116,6 +108,7 @@ undefined4 __thiscall SettMapSTy::GetMessage(SettMapSTy *this,AnonShape_005DE050
         }
         cVar29 = *(char *)((int)pvVar16 + 0x104);
         if (*(uint *)&param_1->field_0x18 < pDVar19->count) {
+          /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(pDVar19, *(uint *)&param_1->field_0x18) (runtime stride) */
           pvVar16 = (void *)(pDVar19->elementSize * *(uint *)&param_1->field_0x18 +
                             (int)pDVar19->data);
         }
@@ -131,6 +124,7 @@ undefined4 __thiscall SettMapSTy::GetMessage(SettMapSTy *this,AnonShape_005DE050
         if ((int)uVar30 < (int)pDVar19->count) {
           do {
             if (bVar36) {
+              /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(pDVar19, uVar30) (runtime stride) */
               pcVar17 = (char *)(pDVar19->elementSize * uVar30 + (int)pDVar19->data);
             }
             else {
@@ -143,6 +137,7 @@ undefined4 __thiscall SettMapSTy::GetMessage(SettMapSTy *this,AnonShape_005DE050
             bVar36 = uVar30 < pDVar19->count;
           } while ((int)uVar30 < (int)pDVar19->count);
         }
+        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
         (*(code *)this_00->field_0000->field_002C)();
       }
     }
@@ -151,6 +146,7 @@ undefined4 __thiscall SettMapSTy::GetMessage(SettMapSTy *this,AnonShape_005DE050
       if ((uVar30 != 0xffffffff) && (pDVar19 = this_00->field_1F84, pDVar19 != (DArrayTy *)0x0)) {
         pDVar3 = this_00->field_1E2F;
         if (uVar30 < pDVar3->count) {
+          /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(pDVar3, uVar30) (runtime stride) */
           pvVar16 = (void *)(pDVar3->elementSize * uVar30 + (int)pDVar3->data);
         }
         else {
@@ -158,6 +154,7 @@ undefined4 __thiscall SettMapSTy::GetMessage(SettMapSTy *this,AnonShape_005DE050
         }
         cVar29 = *(char *)((int)pvVar16 + 0x104);
         if (*(uint *)&param_1->field_0x18 < pDVar19->count) {
+          /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(pDVar19, *(uint *)&param_1->field_0x18) (runtime stride) */
           pvVar16 = (void *)(pDVar19->elementSize * *(uint *)&param_1->field_0x18 +
                             (int)pDVar19->data);
         }
@@ -173,6 +170,7 @@ undefined4 __thiscall SettMapSTy::GetMessage(SettMapSTy *this,AnonShape_005DE050
         if ((int)uVar30 < (int)pDVar19->count) {
           do {
             if (bVar36) {
+              /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(pDVar19, uVar30) (runtime stride) */
               pcVar17 = (char *)(pDVar19->elementSize * uVar30 + (int)pDVar19->data);
             }
             else {
@@ -185,6 +183,7 @@ undefined4 __thiscall SettMapSTy::GetMessage(SettMapSTy *this,AnonShape_005DE050
             bVar36 = uVar30 < pDVar19->count;
           } while ((int)uVar30 < (int)pDVar19->count);
         }
+        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
         (*(code *)this_00->field_0000->field_002C)();
       }
     }
@@ -192,6 +191,7 @@ undefined4 __thiscall SettMapSTy::GetMessage(SettMapSTy *this,AnonShape_005DE050
             && (pDVar19 = this_00->field_1F84, pDVar19 != (DArrayTy *)0x0)) {
       pDVar3 = this_00->field_1E2F;
       if (uVar30 < pDVar3->count) {
+        /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(pDVar3, uVar30) (runtime stride) */
         pvVar16 = (void *)(pDVar3->elementSize * uVar30 + (int)pDVar3->data);
       }
       else {
@@ -199,6 +199,7 @@ undefined4 __thiscall SettMapSTy::GetMessage(SettMapSTy *this,AnonShape_005DE050
       }
       local_d = *(byte *)((int)pvVar16 + 0x104);
       if (*(uint *)&param_1->field_0x18 < pDVar19->count) {
+        /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(pDVar19, *(uint *)&param_1->field_0x18) (runtime stride) */
         pvVar16 = (void *)(pDVar19->elementSize * *(uint *)&param_1->field_0x18 + (int)pDVar19->data
                           );
       }
@@ -219,6 +220,7 @@ undefined4 __thiscall SettMapSTy::GetMessage(SettMapSTy *this,AnonShape_005DE050
         if ((int)uVar30 < (int)pDVar19->count) {
           do {
             if (bVar36) {
+              /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(pDVar19, uVar30) (runtime stride) */
               pcVar17 = (char *)(pDVar19->elementSize * uVar30 + (int)pDVar19->data);
             }
             else {
@@ -231,6 +233,7 @@ undefined4 __thiscall SettMapSTy::GetMessage(SettMapSTy *this,AnonShape_005DE050
             bVar36 = uVar30 < pDVar19->count;
           } while ((int)uVar30 < (int)pDVar19->count);
         }
+        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
         (*(code *)this_00->field_0000->field_002C)();
         goto LAB_005d5ff8;
       }
@@ -241,6 +244,7 @@ undefined4 __thiscall SettMapSTy::GetMessage(SettMapSTy *this,AnonShape_005DE050
     if ((uVar30 != 0xffffffff) && (pDVar19 = this_00->field_1F84, pDVar19 != (DArrayTy *)0x0)) {
       pDVar3 = this_00->field_1E2F;
       if (uVar30 < pDVar3->count) {
+        /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(pDVar3, uVar30) (runtime stride) */
         pvVar16 = (void *)(pDVar3->elementSize * uVar30 + (int)pDVar3->data);
       }
       else {
@@ -248,6 +252,7 @@ undefined4 __thiscall SettMapSTy::GetMessage(SettMapSTy *this,AnonShape_005DE050
       }
       uVar30 = pDVar19->count;
       if (*(uint *)&param_1->field_0x18 < uVar30) {
+        /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(pDVar19, *(uint *)&param_1->field_0x18) (runtime stride) */
         pvVar20 = (void *)(pDVar19->elementSize * *(uint *)&param_1->field_0x18 + (int)pDVar19->data
                           );
       }
@@ -259,6 +264,7 @@ undefined4 __thiscall SettMapSTy::GetMessage(SettMapSTy *this,AnonShape_005DE050
           bVar36 = uVar30 != 0;
           do {
             if (bVar36) {
+              /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(pDVar19, uVar28) (runtime stride) */
               pvVar20 = (void *)(pDVar19->elementSize * uVar28 + (int)pDVar19->data);
             }
             else {
@@ -281,6 +287,7 @@ undefined4 __thiscall SettMapSTy::GetMessage(SettMapSTy *this,AnonShape_005DE050
         }
         pDVar19 = this_00->field_1F84;
         if (*(uint *)&param_1->field_0x18 < pDVar19->count) {
+          /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(pDVar19, *(uint *)&param_1->field_0x18) (runtime stride) */
           pvVar20 = (void *)(pDVar19->elementSize * *(uint *)&param_1->field_0x18 +
                             (int)pDVar19->data);
         }
@@ -304,6 +311,7 @@ undefined4 __thiscall SettMapSTy::GetMessage(SettMapSTy *this,AnonShape_005DE050
           bVar36 = uVar30 != 0;
           do {
             if (bVar36) {
+              /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(pDVar19, uVar28) (runtime stride) */
               pvVar16 = (void *)(pDVar19->elementSize * uVar28 + (int)pDVar19->data);
             }
             else {
@@ -318,6 +326,7 @@ undefined4 __thiscall SettMapSTy::GetMessage(SettMapSTy *this,AnonShape_005DE050
             bVar36 = uVar28 < uVar30;
           } while ((int)uVar28 < (int)uVar30);
         }
+        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
         (*(code *)this_00->field_0000->field_002C)();
 LAB_005d5ff8:
         SettMapTy::PaintSC(this_00);
@@ -329,6 +338,7 @@ LAB_005d5ff8:
     local_2c = (undefined1 *)0x1010101;
     if (this_00->field_1F84 != (DArrayTy *)0x0) {
       DAT_00808aa9 = 1;
+      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
       DAT_008087c4._2_1_ = '\0';
       DAT_0080874f = 0;
       puVar34 = (undefined4 *)((int)&DAT_008087c4 + 3);
@@ -349,6 +359,7 @@ LAB_005d5ff8:
         bVar36 = uVar30 != 0;
         do {
           if (bVar36) {
+            /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(pDVar19, uVar28) (runtime stride) */
             pcVar17 = (char *)(pDVar19->elementSize * uVar28 + (int)pDVar19->data);
           }
           else {
@@ -366,6 +377,7 @@ LAB_005d5ff8:
         bVar36 = uVar30 != 0;
         do {
           if (bVar36) {
+            /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(pDVar19, local_c) (runtime stride) */
             pcVar17 = (char *)(pDVar19->elementSize * local_c + (int)pDVar19->data);
           }
           else {
@@ -381,6 +393,7 @@ LAB_005d5ff8:
             else {
               local_8 = (char *)0x0;
             }
+            /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
             DAT_008087c4._2_1_ = DAT_008087c4._2_1_ + '\x01';
             if (pcVar17[2] == -1) {
               iVar15 = 0;
@@ -515,6 +528,7 @@ LAB_005d5ff8:
         bVar36 = pDVar19->count != 0;
         do {
           if (bVar36) {
+            /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(pDVar19, local_c) (runtime stride) */
             puVar18 = (undefined1 *)(pDVar19->elementSize * local_c + (int)pDVar19->data);
           }
           else {
@@ -577,12 +591,15 @@ LAB_005d5b7e:
                 }
               }
               local_124 = *(undefined4 *)(puVar18 + 6);
+              /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
               local_120._0_2_ = CONCAT11(*puVar18,puVar18[2]);
               local_11c = this_00->field_0061;
               if (bVar26 == 2) {
+                /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                 local_120 = CONCAT13(1,CONCAT12(1,(undefined2)local_120));
               }
               else {
+                /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                 local_120 = CONCAT13(1,CONCAT12((bVar26 != 3) + -1,(undefined2)local_120)) &
                             0xff02ffff;
               }
@@ -635,6 +652,7 @@ LAB_005d5b7e:
             iVar15 = MMsgTy::SetMessage(*(MMsgTy **)(iVar15 + 0x2e6),0x251f,'\x01',local_64,local_84
                                         ,(undefined4 *)0x0,0,0);
             if (iVar15 != 0) {
+              /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
               (*(code *)this_00->field_0000->field_0024)();
             }
           }
@@ -725,7 +743,9 @@ LAB_005d5b7e:
           this_00->field_21E7 = 1;
           this_00->field_0x21e3 = 1;
           this_00->field_0x21e1 = 1;
+          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
           (*(code *)this_00->field_0000->field_0008)();
+          /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
           pMVar4 = *(MMsgTy **)(this_00->field_1A5B + 0x2e6);
           if (pMVar4 != (MMsgTy *)0x0) {
             MMsgTy::HidePanel(pMVar4,1,0,1);
@@ -795,7 +815,9 @@ LAB_005d5b7e:
         this_00->field_21E7 = 1;
         this_00->field_0x21e2 = 1;
         this_00->field_0x21e1 = 1;
+        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
         (*(code *)this_00->field_0000->field_0008)();
+        /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
         pMVar4 = *(MMsgTy **)(this_00->field_1A5B + 0x2e6);
         if (pMVar4 != (MMsgTy *)0x0) {
           MMsgTy::HidePanel(pMVar4,1,0,1);
@@ -812,6 +834,7 @@ LAB_005d5b7e:
       local_14 = (AnonShape_005D5560_9031BF1B *)0x0;
     }
     else {
+      /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(pDVar19, uVar28) (runtime stride) */
       local_14 = (AnonShape_005D5560_9031BF1B *)(pDVar19->elementSize * uVar28 + (int)pDVar19->data)
       ;
     }
@@ -827,6 +850,7 @@ LAB_005d5b7e:
           bVar36 = uVar30 != 0;
           do {
             if (bVar36) {
+              /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(pDVar19, uVar28) (runtime stride) */
               pcVar17 = (char *)(pDVar19->elementSize * uVar28 + (int)pDVar19->data);
             }
             else {
@@ -851,6 +875,7 @@ LAB_005d5b7e:
         this_00->field_1F37 = 0xff;
         Library::DKW::TBL::FUN_006ae1c0
                   (&this_00->field_1E2F->flags,(undefined4 *)&this_00->field_0x1e33);
+        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
         local_8 = (char *)CONCAT31(local_8._1_3_,1);
         do {
           if (*(char *)((int)&local_40 + uVar30) != '\0') {
@@ -860,6 +885,7 @@ LAB_005d5b7e:
             if ((byte)local_14->field_0x2 == uVar30) {
               this_00->field_21A1 = (uint)local_8 & 0xff;
             }
+            /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
             local_8 = (char *)CONCAT31(local_8._1_3_,(char)local_8 + '\x01');
           }
           uVar30 = uVar30 + 1;
@@ -880,9 +906,8 @@ LAB_005d619b:
         this_00->field_2191 = 0x6500;
         this_00->field_1E2F->count = 0;
         local_28 = 1;
-        LoadResourceString(0x23f1,HINSTANCE_00807618);
+        pcVar17 = LoadResourceString(0x23f1,HINSTANCE_00807618);
         uVar30 = 0xffffffff;
-        pcVar17 = extraout_EAX;
         do {
           pcVar33 = pcVar17;
           if (uVar30 == 0) break;
@@ -911,9 +936,8 @@ LAB_005d619b:
         this_00->field_1F37 = 1;
         Library::DKW::TBL::FUN_006ae1c0
                   (&this_00->field_1E2F->flags,(undefined4 *)&this_00->field_0x1e33);
-        LoadResourceString(0x23f0,HINSTANCE_00807618);
+        pcVar17 = LoadResourceString(0x23f0,HINSTANCE_00807618);
         uVar30 = 0xffffffff;
-        pcVar17 = extraout_EAX_00;
         do {
           pcVar33 = pcVar17;
           if (uVar30 == 0) break;
@@ -947,9 +971,8 @@ LAB_005d619b:
           uVar30 = (uint)(local_14->field_0x4 != '\x02');
         }
         if (uVar30 != 0) {
-          LoadResourceString(0x23f2,HINSTANCE_00807618);
+          pcVar17 = LoadResourceString(0x23f2,HINSTANCE_00807618);
           uVar30 = 0xffffffff;
-          pcVar17 = extraout_EAX_01;
           do {
             pcVar33 = pcVar17;
             if (uVar30 == 0) break;
@@ -1010,6 +1033,7 @@ LAB_005d6676:
           if (0 < (int)uVar28) {
             do {
               if (bVar36) {
+                /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(pDVar19, uVar30) (runtime stride) */
                 pcVar17 = (char *)(pDVar19->elementSize * uVar30 + (int)pDVar19->data);
               }
               else {
@@ -1023,9 +1047,8 @@ LAB_005d6676:
             } while ((int)uVar30 < (int)uVar28);
           }
           if ((this_00->field_1E26 != 2) && (2 < (int)local_8)) {
-            LoadResourceString(8000,HINSTANCE_00807618);
+            pcVar17 = LoadResourceString(8000,HINSTANCE_00807618);
             uVar30 = 0xffffffff;
-            pcVar17 = extraout_EAX_02;
             do {
               pcVar33 = pcVar17;
               if (uVar30 == 0) break;
@@ -1057,9 +1080,8 @@ LAB_005d6676:
               bVar36 = local_14->field_0x3 != '\x03';
             }
             if (bVar36) {
-              LoadResourceString(0x1f42,HINSTANCE_00807618);
+              pcVar17 = LoadResourceString(0x1f42,HINSTANCE_00807618);
               uVar30 = 0xffffffff;
-              pcVar17 = extraout_EAX_03;
               do {
                 pcVar33 = pcVar17;
                 if (uVar30 == 0) break;
@@ -1137,11 +1159,13 @@ LAB_005d6676:
           local_28 = (uint)(byte)local_14->field_0x4;
           do {
             if (bVar36) {
+              /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(pDVar19, uVar30) (runtime stride) */
               pvVar16 = (void *)(pDVar19->elementSize * uVar30 + (int)pDVar19->data);
             }
             else {
               pvVar16 = (void *)0x0;
             }
+            /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
             if ((*(uint *)((int)pvVar16 + 0x104) == local_28) &&
                (*(uint *)((int)pvVar16 + 0x108) == (uint)(byte)local_14->field_0x5)) {
               this_00->field_21A1 = uVar30;
@@ -1173,6 +1197,7 @@ LAB_005d6676:
             bVar36 = uVar30 != 0;
             do {
               if (bVar36) {
+                /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(pDVar19, uVar28) (runtime stride) */
                 pvVar16 = (void *)(pDVar19->elementSize * uVar28 + (int)pDVar19->data);
               }
               else {
@@ -1214,6 +1239,7 @@ joined_r0x005d6701:
             bVar36 = pDVar19->count != 0;
             do {
               if (bVar36) {
+                /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(pDVar19, uVar30) (runtime stride) */
                 pcVar17 = (char *)(pDVar19->elementSize * uVar30 + (int)pDVar19->data);
               }
               else {
@@ -1242,6 +1268,7 @@ LAB_005d6784:
               uVar30 = uVar30 + 1;
               bVar36 = uVar30 < pDVar19->count;
             } while ((int)uVar30 < (int)pDVar19->count);
+            /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
             local_28 = CONCAT31(local_28._1_3_,cVar29);
           }
           if (cVar29 != -1) {
@@ -1259,14 +1286,15 @@ LAB_005d6784:
           do {
             iVar15 = uVar30 + 0x41;
             if (puVar18[uVar30 + 0x41] != '\0') {
-              LoadResourceString(0x1f4a,HINSTANCE_00807618);
-              wsprintfA(&this_00->field_0x1e33,&DAT_007cd508,extraout_EAX_04,iVar15);
+              pcVar17 = LoadResourceString(0x1f4a,HINSTANCE_00807618);
+              wsprintfA(&this_00->field_0x1e33,&DAT_007cd508,pcVar17,iVar15);
               this_00->field_1F37 = uVar30;
               Library::DKW::TBL::FUN_006ae1c0
                         (&this_00->field_1E2F->flags,(undefined4 *)&this_00->field_0x1e33);
               if ((byte)local_14->field_0x4a == uVar30) {
                 this_00->field_21A1 = (uint)local_8 & 0xff;
               }
+              /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
               local_8 = (char *)CONCAT31(local_8._1_3_,(char)local_8 + '\x01');
               puVar18 = local_2c;
             }
@@ -1288,12 +1316,15 @@ LAB_005d6784:
           goto LAB_005d619b;
         }
         uVar9 = (uint3)(uVar30 - 0x69ff >> 8);
+        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
         uVar30 = CONCAT31(uVar9 >> 3,DAT_0080874d);
         if (DAT_0080874d != 0xff) {
           bVar26 = local_14->field_0x2;
+          /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
           local_c = CONCAT31(uVar9 >> 3,bVar26);
           if ((bVar26 != 0xff) && (DAT_0080874d != bVar26)) {
             if (local_14->field_0x4 == '\x04') {
+              /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
               local_2c = (undefined1 *)CONCAT31(local_2c._1_3_,bVar26);
               if (DAT_0080874d == bVar26) {
                 uVar25 = 0;
@@ -1336,6 +1367,7 @@ LAB_005d6784:
             else {
               thunk_FUN_0056a960(&DAT_00807620,uVar30,bVar26);
             }
+            /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
             (*(code *)this_00->field_0000->field_002C)();
           }
         }
@@ -1364,10 +1396,11 @@ LAB_005d6784:
     pAVar35 = (AnonShape_005CBBE0_2D1CAA09 *)0x0;
   }
   else {
+    /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(pDVar19, uVar30) (runtime stride) */
     pAVar35 = (AnonShape_005CBBE0_2D1CAA09 *)(pDVar19->elementSize * uVar30 + (int)pDVar19->data);
   }
   local_28 = uVar28;
-  FUN_006b4170((AnonShape_006C7610_838EDECF *)(&this_00->field_20F4)[uVar28],0,*piVar7 + -0x113,0,
+  FUN_006b4170((AnonShape_006B5B10_E0D06CF1 *)(&this_00->field_20F4)[uVar28],0,*piVar7 + -0x113,0,
                piVar7[2],piVar7[3],0xff);
   if (pAVar35 == (AnonShape_005CBBE0_2D1CAA09 *)0x0) goto switchD_005d6abd_default;
   switch(local_2c) {
@@ -1409,7 +1442,7 @@ LAB_005d6784:
         default:
           uVar13 = 0xff;
         }
-        FUN_006b4170((AnonShape_006C7610_838EDECF *)(&this_00->field_20F4)[uVar28],0,local_24 + 2,
+        FUN_006b4170((AnonShape_006B5B10_E0D06CF1 *)(&this_00->field_20F4)[uVar28],0,local_24 + 2,
                      local_20 + 2,local_1c + -4,local_18 + -4,uVar13);
       }
     }
@@ -1504,6 +1537,7 @@ LAB_005d6c37:
     if (pAVar35->field_0x4 != '\x04') break;
     pDVar19 = pAVar35->field_0050;
     if ((uint)(byte)pAVar35->field_0x5 < pDVar19->count) {
+      /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(pDVar19, (uint)(byte)pAVar35->field_0x5) (runtime stride) */
       puVar21 = (uint *)(pDVar19->elementSize * (uint)(byte)pAVar35->field_0x5 + (int)pDVar19->data)
       ;
     }
@@ -1532,6 +1566,7 @@ LAB_005d6d70:
         if (((DAT_0080874d != 0xff) && (bVar26 = pAVar35->field_0x2, bVar26 != 0xff)) &&
            (DAT_0080874d != bVar26)) {
           local_28 = 0xffffffff;
+          /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
           local_2c = (undefined1 *)CONCAT31(local_2c._1_3_,bVar26);
           uVar30 = (uint)DAT_0080874d;
           bVar2 = g_playerRelationMatrix[uVar30][bVar26];
@@ -1577,8 +1612,8 @@ LAB_005d6d70:
       }
       else {
         iVar15 = (byte)pAVar35->field_0x4a + 0x41;
-        LoadResourceString(0x1f4a,HINSTANCE_00807618);
-        wsprintfA((LPSTR)&DAT_0080f33a,&DAT_007cd508,extraout_EAX_05,iVar15);
+        pcVar17 = LoadResourceString(0x1f4a,HINSTANCE_00807618);
+        wsprintfA((LPSTR)&DAT_0080f33a,&DAT_007cd508,pcVar17,iVar15);
         ccFntTy::SetSurf(PTR_0081176c->field_0034,(&this_00->field_20F4)[uVar28],0,local_24,local_20
                          ,local_1c,local_18);
         ccFntTy::WrStr(PTR_0081176c->field_0034,&DAT_0080f33a,-1,-1,2);

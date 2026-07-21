@@ -4,7 +4,7 @@ void FUN_006d7ca0(byte *param_1,int param_2,int param_3,int param_4,int param_5)
 {
   byte *pbVar1;
   int iVar2;
-  
+
   if ((0 < param_3) && (-1 < param_4 + -1)) {
     do {
       pbVar1 = param_1;

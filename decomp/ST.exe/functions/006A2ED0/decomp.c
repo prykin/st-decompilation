@@ -26,11 +26,12 @@ int __cdecl FUN_006a2ed0(short *param_1)
   uint uVar16;
   undefined4 *puVar17;
   int iVar18;
+  /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
   cMf32 *in_stack_00000008;
   int local_18;
   HoloTy *local_14;
   short *local_8;
-  
+
   local_8 = (short *)0x0;
   pAVar6 = (AnonShape_006DBCA0_EF06575F *)FUN_006b04d0(0x4f2);
   if (pAVar6 == (AnonShape_006DBCA0_EF06575F *)0x0) {
@@ -56,6 +57,7 @@ LAB_006a2f2f:
   *(undefined4 *)((int)&local_14[0x15].field_0007 + 2) = 0xe6e4e2e0;
   *(undefined2 *)((int)&local_14[0x15].field_000B + 2) = 0xeae8;
   iVar10 = 0;
+  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   if (0 < *(int *)((int)param_1 + 0x455)) {
     piVar13 = (int *)((int)param_1 + 0x459);
     do {
@@ -68,6 +70,7 @@ LAB_006a2f2f:
       }
       iVar10 = iVar10 + 1;
       piVar13 = piVar13 + 1;
+    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     } while (iVar10 < *(int *)((int)param_1 + 0x455));
   }
   FUN_006dd610(local_14,8,SUB84((double)((float)(int)*param_1 * _DAT_007904f4),0),
@@ -94,6 +97,7 @@ LAB_006a2f2f:
     iVar14 = iVar14 + 1;
     *(undefined1 *)((int)puVar17 + 2) = *(undefined1 *)((int)puVar8 + 2);
   } while (iVar10 < 0x4b79);
+  /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
   puVar7 = cMf32::RecGet(in_stack_00000008,1,PTR_s_PALETTE_0079d848,(int *)0x0,1);
   iVar10 = FUN_006b50c0(0x8b,0x8b,8,0x100,(undefined4 *)(puVar7 + 0x14),1);
   uVar16 = *(uint *)(iVar10 + 0x14);
@@ -111,17 +115,22 @@ LAB_006a2f2f:
     puVar8 = (undefined4 *)((int)puVar8 + 1);
   }
   param_1 = local_8;
+  /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
   in_stack_00000008 = (cMf32 *)0x45;
   iVar9 = FUN_006b4fa0(iVar10);
   local_18 = 0x46;
   iVar9 = iVar9 + ((uint)*(ushort *)(iVar10 + 0xe) * *(int *)(iVar10 + 4) + 0x1f >> 3 & 0x1ffffffc)
                   * (*(int *)(iVar10 + 8) + -1);
   iVar14 = 0x45;
+  /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
   iVar11 = (int)in_stack_00000008;
   do {
+    /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
     in_stack_00000008 = (cMf32 *)iVar11;
     iVar18 = iVar14;
+    /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
     if (iVar18 <= (int)in_stack_00000008) {
+      /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
       iVar14 = ((int)in_stack_00000008 - iVar18) + 1;
       puVar15 = (undefined1 *)(iVar9 + iVar18);
       do {
@@ -135,13 +144,17 @@ LAB_006a2f2f:
                     );
     local_18 = local_18 + -1;
     iVar14 = iVar18 + -1;
+    /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
     iVar11 = (int)in_stack_00000008 + 1;
   } while (local_18 != 0);
   local_18 = 0x45;
   do {
     iVar18 = iVar18 + 1;
+    /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
     in_stack_00000008 = (cMf32 *)((int)in_stack_00000008 + -1);
+    /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
     if (iVar18 <= (int)in_stack_00000008) {
+      /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
       iVar14 = ((int)in_stack_00000008 - iVar18) + 1;
       puVar15 = (undefined1 *)(iVar9 + iVar18);
       do {

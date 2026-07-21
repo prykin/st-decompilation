@@ -3,11 +3,9 @@ undefined4 __fastcall FUN_006367d0(int *param_1)
 
 {
   bool bVar1;
-  undefined3 extraout_var;
   int iVar2;
   uint uVar3;
   uint uVar4;
-  undefined3 extraout_var_00;
   int iVar5;
   short sVar6;
   short sVar7;
@@ -18,7 +16,7 @@ undefined4 __fastcall FUN_006367d0(int *param_1)
   short local_10;
   int local_c;
   int local_8;
-  
+
   bVar1 = false;
   if (param_1[0xb] != 0) {
     uVar10 = PTR_00802a38->field_00E4 - param_1[0xc];
@@ -50,9 +48,11 @@ undefined4 __fastcall FUN_006367d0(int *param_1)
                       }
                       iVar5 = (-(uint)(uVar4 != 0) & 2) - 1;
                       *(int *)(iVar11 + 0xe) =
+                           /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
                            (*(int *)(iVar11 + 0x26) * param_1[7]) / 10000 +
                            (int)(*(int *)(iVar11 + 0x2a) * iVar5 * uVar3) / 10000 + param_1[3];
                       *(int *)(iVar11 + 0x12) =
+                           /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
                            ((*(int *)(iVar11 + 0x2a) * param_1[7]) / 10000 -
                            (int)(*(int *)(iVar11 + 0x26) * iVar5 * uVar3) / 10000) + param_1[4];
                       iVar5 = param_1[5];
@@ -94,8 +94,8 @@ undefined4 __fastcall FUN_006367d0(int *param_1)
                         sVar7 = ((short)(iVar5 / 200) + sVar7) -
                                 (short)((longlong)iVar5 * 0x51eb851f >> 0x3f);
                       }
-                      bVar1 = thunk_FUN_004961b0(local_10,sVar6,sVar7);
-                      if (CONCAT31(extraout_var,bVar1) == 0) {
+                      iVar5 = thunk_FUN_004961b0(local_10,sVar6,sVar7);
+                      if (iVar5 == 0) {
                         *(undefined4 *)(iVar11 + 8) = 0;
                       }
                       else {
@@ -175,9 +175,11 @@ undefined4 __fastcall FUN_006367d0(int *param_1)
                   }
                   iVar5 = (-(uint)(uVar4 != 0) & 2) - 1;
                   *(int *)(iVar11 + 0xe) =
+                       /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
                        (*(int *)(iVar11 + 0x26) * param_1[7]) / 10000 +
                        (int)(*(int *)(iVar11 + 0x2a) * iVar5 * uVar3) / 10000 + param_1[3];
                   *(int *)(iVar11 + 0x12) =
+                       /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
                        ((*(int *)(iVar11 + 0x2a) * param_1[7]) / 10000 -
                        (int)(*(int *)(iVar11 + 0x26) * iVar5 * uVar3) / 10000) + param_1[4];
                   *(int *)(iVar11 + 0x16) = param_1[5];
@@ -226,8 +228,8 @@ undefined4 __fastcall FUN_006367d0(int *param_1)
                     sVar7 = ((short)(iVar5 / 200) + sVar7) -
                             (short)((longlong)iVar5 * 0x51eb851f >> 0x3f);
                   }
-                  bVar1 = thunk_FUN_004961b0(local_10,sVar6,sVar7);
-                  if (CONCAT31(extraout_var_00,bVar1) == 0) {
+                  iVar5 = thunk_FUN_004961b0(local_10,sVar6,sVar7);
+                  if (iVar5 == 0) {
                     *(undefined4 *)(iVar11 + 8) = 0;
                   }
                   else {

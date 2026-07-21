@@ -20,7 +20,7 @@ void FUN_006fa280(undefined1 *param_1,int param_2,ushort *param_3,int param_4,ui
   uint local_10;
   ushort *local_c;
   int local_8;
-  
+
   _DAT_00857000 = 1;
   iVar4 = param_10;
   do {

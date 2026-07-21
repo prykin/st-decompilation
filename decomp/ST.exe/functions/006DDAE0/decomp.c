@@ -5,7 +5,7 @@ void __thiscall FUN_006ddae0(void *this,int param_1,int param_2,int param_3,unde
   int iVar1;
   uint uVar2;
   undefined4 *puVar3;
-  
+
   *(int *)((int)this + 0x14c) = param_2;
   *(int *)((int)this + 0x148) = param_1;
   uVar2 = param_1 + param_2 + param_3;

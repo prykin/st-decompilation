@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\Grpway3d.cpp
@@ -13,16 +15,14 @@ uint * STGroupBoatC::Way3DGrpGetDistrPoint
   DArrayTy *array;
   uint *puVar3;
   int iVar4;
-  undefined4 unaff_ESI;
   int iVar5;
-  void *unaff_EDI;
   InternalExceptionFrame local_58;
   short local_14;
   short local_12;
   short local_10;
   int local_c;
   DArrayTy *local_8;
-  
+
   uVar2 = (ushort)param_2->field_000C;
   iVar4 = 0;
   local_c = 0;
@@ -34,6 +34,7 @@ uint * STGroupBoatC::Way3DGrpGetDistrPoint
   local_8 = array;
   uVar2 = thunk_FUN_004233c0((int)param_1);
   DAT_007f4d4c = (uint)uVar2;
+  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   if ((DAT_007f4d4c < 2) && (*(short *)((int)param_1 + 0x27) == 1)) {
     local_14 = (short)param_6;
     local_12 = (short)param_7;
@@ -43,8 +44,9 @@ uint * STGroupBoatC::Way3DGrpGetDistrPoint
   }
   local_58.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_58;
-  iVar4 = Library::MSVCRT::__setjmp3(local_58.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar4 = Library::MSVCRT::__setjmp3(local_58.jumpBuffer,0);
   if (iVar4 == 0) {
+    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     if (*(int *)((int)param_1 + 0x4d) != 0) {
       iVar4 = FUN_006db910(param_3,param_4,param_6,param_7);
       iVar4 = ((iVar4 * 4 + 0x2d) / 0x5a) * 0x5a;
@@ -74,6 +76,7 @@ uint * STGroupBoatC::Way3DGrpGetDistrPoint
       iVar4 = 0;
       if (0 < DAT_007f4cf8) {
         do {
+          /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
           iVar5 = (uint)*(ushort *)((int)param_1 + 0x27) - iVar4;
           local_14 = DAT_007f4d04[iVar5 * 0xe + -8];
           local_12 = DAT_007f4d04[iVar5 * 0xe + -6];
@@ -93,10 +96,12 @@ uint * STGroupBoatC::Way3DGrpGetDistrPoint
       local_10 = (short)param_8;
       local_14 = (short)param_6;
       local_12 = (short)param_7;
+      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
       if (*(short *)((int)param_1 + 0x27) != 0) {
         do {
           Library::DKW::TBL::FUN_006ae1c0(&local_8->flags,(undefined4 *)&local_14);
           iVar4 = iVar4 + 1;
+        /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
         } while (iVar4 < (int)(uint)*(ushort *)((int)param_1 + 0x27));
       }
     }
@@ -109,9 +114,7 @@ uint * STGroupBoatC::Way3DGrpGetDistrPoint
     iVar5 = ReportDebugMessage(s_E____titans_wlad_Grpway3d_cpp_007a4ca8,0xeae,0,iVar4,&DAT_007a4ccc,
                                s_STGroupBoatC__Way3DGrpGetDistrPo_007a4cf8);
     if (iVar5 != 0) {
-      pcVar1 = (code *)swi(3);
-      puVar3 = (uint *)(*pcVar1)();
-      return puVar3;
+      STDebugBreak(); /* noreturn in standalone pseudocode */
     }
   }
 LAB_004157e1:

@@ -45,7 +45,7 @@ int FUN_006cef60(int *param_1,uint *param_2,int param_3,int param_4,
   undefined1 *puStack_10;
   undefined *puStack_c;
   undefined4 local_8;
-  
+
   piVar3 = param_9;
   local_8 = 0xffffffff;
   puStack_c = &DAT_0079da38;
@@ -72,7 +72,9 @@ int FUN_006cef60(int *param_1,uint *param_2,int param_3,int param_4,
   pAVar6 = param_5;
   iVar11 = param_4;
   if (iVar4 == 0) goto cf_common_exit_006CF911;
+  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   if ((*(int *)(*param_1 + 0x20) == 0x10) && (local_24 = *(int *)(param_4 + 0xb4), local_24 == 0)) {
+    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     local_24 = *(int *)(*param_1 + 0x4c0);
   }
   if ((param_12 & 0xa0000000) != 0) {
@@ -83,6 +85,7 @@ int FUN_006cef60(int *param_1,uint *param_2,int param_3,int param_4,
     local_58 = (local_60 - local_38) + local_30;
     local_54 = local_2c + (local_5c - local_34);
     iVar11 = 0;
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
     while (iVar5 = (**(code **)(**(int **)(*param_1 + 0x44) + 0x14))
                              (*(int **)(*param_1 + 0x44),&local_38,param_5,&local_60,0x1008000,0),
           iVar5 != 0) {
@@ -124,6 +127,7 @@ int FUN_006cef60(int *param_1,uint *param_2,int param_3,int param_4,
       local_4c = 0;
       local_28 = 0;
       do {
+        /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
         iVar12 = FUN_006bbe40(*(int **)(*param_1 + 0x44),(uint *)&param_2,&param_3,0x20);
         local_28 = iVar12;
         if (iVar12 == 0) goto LAB_006cf209;
@@ -153,6 +157,7 @@ LAB_006cf209:
         if (iVar5 != 0) {
           iVar4 = local_60 - iVar4;
           uVar8 = local_5c - iVar9;
+          /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
           if (*(int *)(*param_1 + 0x20) == 0x10) {
             iVar5 = local_60 * 2 + local_5c * param_3;
           }
@@ -163,8 +168,10 @@ LAB_006cf209:
           uVar10 = param_12 & 0xff;
           if (uVar10 == 0) {
             local_8 = 1;
+            /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
             if (*(int *)(*param_1 + 0x20) == 0x10) {
               iVar5 = *(int *)(iVar11 + 0xbc) + 7;
+              /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
               FUN_006d3300((uint *)pAVar13,param_3,*(byte **)&pAVar6->field_0x6,iVar4,uVar8,local_58
                            ,local_54,local_24,*(byte **)(iVar11 + 0xb8),
                            (int)(iVar5 + (iVar5 >> 0x1f & 7U)) >> 3,
@@ -175,7 +182,8 @@ LAB_006cf209:
             }
             else {
               iVar5 = *(int *)(iVar11 + 0xbc) + 7;
-              FUN_006d2820((byte *)pAVar13,(AnonShape_006B84D0_7C7D97C6 *)param_3,
+              /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
+              FUN_006d2820((byte *)pAVar13,(AnonShape_006B5B10_E0D06CF1 *)param_3,
                            *(byte **)&pAVar6->field_0x6,iVar4,uVar8,local_58,(uint)local_54,
                            *(int *)(iVar11 + 0xb0),*(byte **)(iVar11 + 0xb8),
                            (int)(iVar5 + (iVar5 >> 0x1f & 7U)) >> 3,
@@ -211,6 +219,7 @@ LAB_006cf37b:
               }
               local_8 = 2;
               iVar5 = *(int *)(iVar11 + 0xbc) + 7;
+              /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
               FUN_006d8a60((AnonShape_006D8A60_D503343B *)pAVar13,param_3,
                            *(byte **)&pAVar6->field_0x6,iVar4,uVar8,local_58,(int)local_54,
                            (undefined *)(-(uint)((param_12 & 0x100) != 0) & local_20),
@@ -239,6 +248,7 @@ LAB_006cf37b:
       iVar12 = local_28;
     }
     if ((char)param_12 == '\x02') {
+      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
       (**(code **)(**(int **)(*param_1 + 0x44) + 0x80))(*(int **)(*param_1 + 0x44),0);
       local_28 = iVar12;
     }
@@ -251,6 +261,7 @@ LAB_006cf37b:
     local_4c = 0;
     local_28 = 0;
     do {
+      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
       iVar12 = FUN_006bbe40(*(int **)(*param_1 + 0x44),(uint *)&param_2,&param_3,0x20);
       local_28 = iVar12;
       if (iVar12 == 0) goto LAB_006cf695;
@@ -260,6 +271,7 @@ LAB_006cf37b:
     } while (local_4c < 2);
     if (iVar12 != 0) goto cf_common_exit_006CF911;
   }
+/* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
 LAB_006cf695:
   if (*(int *)(*param_1 + 0x20) == 0x10) {
     iVar12 = iVar5 * 2 + iVar7 * param_3;
@@ -272,6 +284,7 @@ LAB_006cf695:
   uVar14 = (param_9[1] - param_8) + iVar7;
   if (uVar10 == 0) {
     local_8 = 4;
+    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     if (*(int *)(*param_1 + 0x20) == 0x10) {
       iVar7 = *(int *)(iVar11 + 0xbc) + 7;
       FUN_006d3300(param_2,param_3,(byte *)param_5,iVar5,uVar14,uVar8,pbVar2,local_24,
@@ -281,7 +294,7 @@ LAB_006cf695:
     }
     else {
       iVar7 = *(int *)(iVar11 + 0xbc) + 7;
-      FUN_006d2820((byte *)param_2,(AnonShape_006B84D0_7C7D97C6 *)param_3,(byte *)param_5,iVar5,
+      FUN_006d2820((byte *)param_2,(AnonShape_006B5B10_E0D06CF1 *)param_3,(byte *)param_5,iVar5,
                    uVar14,uVar8,(uint)pbVar2,*(int *)(iVar11 + 0xb0),*(byte **)(iVar11 + 0xb8),
                    (int)(iVar7 + (iVar7 >> 0x1f & 7U)) >> 3,
                    (*(int *)(iVar11 + 0x28) - *(int *)(iVar11 + 0x18)) + iVar5,
@@ -319,6 +332,7 @@ LAB_006cf8ee:
     goto LAB_006cf8ee;
   }
   if ((char)param_12 == '\x02') {
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
     (**(code **)(**(int **)(*param_1 + 0x44) + 0x80))(*(int **)(*param_1 + 0x44),0);
   }
 cf_common_exit_006CF911:

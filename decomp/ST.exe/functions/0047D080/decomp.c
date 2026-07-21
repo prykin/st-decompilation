@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\To_boat.cpp
@@ -41,7 +43,7 @@ int __thiscall STBoatC::Annih(STBoatC *this,undefined4 *param_1)
   int local_10;
   int local_c;
   int local_8;
-  
+
   if ((param_1 == (undefined4 *)0x0) || (param_1 == (undefined4 *)0x1)) {
     puVar8 = &this->field_02CC;
     for (iVar9 = 0x17; iVar9 != 0; iVar9 = iVar9 + -1) {
@@ -79,10 +81,13 @@ LAB_0047d831:
   if (iVar9 == 0) {
     if (this->field_06A5 == 0) {
       iVar6 = (ushort)(this->field_068F * 200) + 0xfa;
+      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
       iVar19 = CONCAT22((short)((uint)iVar6 >> 0x10),this->field_068D + 1) * 0xc9;
+      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
       iVar10 = CONCAT22((short)((uint)iVar19 >> 0x10),this->field_068B + 1);
       iVar9 = iVar10 * 0xc9;
       uVar5 = (undefined2)((uint)(iVar10 * 0x19) >> 0x10);
+      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
       uVar5 = (*this->vtable->vfunc_10)
                         (CONCAT22(uVar5,this->field_0041),
                          CONCAT22((short)((uint)iVar9 >> 0x10),this->field_0043),
@@ -97,9 +102,7 @@ LAB_0047d831:
         iVar9 = ReportDebugMessage(s_E____titans_wlad_To_boat_cpp_007a9d3c,0x3896,0,0,&DAT_007a4ccc,
                                    s_STBoatC__Annih_ANNIH_MOVE_1_007ab67c);
         if (iVar9 != 0) {
-          pcVar4 = (code *)swi(3);
-          iVar9 = (*pcVar4)();
-          return iVar9;
+          STDebugBreak(); /* noreturn in standalone pseudocode */
         }
         return -1;
       }
@@ -130,7 +133,7 @@ LAB_0047d831:
           param_1 = (undefined4 *)&this->field_0x2b3;
           do {
             puVar8 = (undefined4 *)
-                     thunk_FUN_0041dc40(local_28,*param_1,*(undefined2 *)(param_1 + 1),
+                     thunk_FUN_0041dc40(local_28,(short)*param_1,*(undefined2 *)(param_1 + 1),
                                         this->field_006C);
             uVar3 = *puVar8;
             bVar21 = 0;
@@ -155,13 +158,17 @@ LAB_0047d831:
               bVar21 = 0;
               lVar12 = Library::MSVCRT::__ftol();
               iVar10 = (int)local_1c + this->field_0045 + local_8 + (int)(short)lVar12;
+              /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
               iVar6 = (int)this->field_0043 - (int)local_20._2_2_;
               iVar11 = (int)(short)local_20 + iVar9 + this->field_0041;
             }
             else {
               iVar10 = (int)local_1c + local_8 + this->field_0045;
+              /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
               local_20._2_2_ = (short)((uint)uVar3 >> 0x10);
+              /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
               iVar6 = (int)this->field_0043 - (int)local_20._2_2_;
+              /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
               local_20._0_2_ = (short)uVar3;
               iVar11 = (int)(short)local_20 + iVar9 + this->field_0041;
             }
@@ -176,9 +183,7 @@ LAB_0047d831:
           iVar9 = ReportDebugMessage(s_E____titans_wlad_To_boat_cpp_007a9d3c,0x38bd,0,0,
                                      &DAT_007a4ccc,s_STBoatC__Annih_ANNIH_MOVE_2_007ab658);
           if (iVar9 != 0) {
-            pcVar4 = (code *)swi(3);
-            iVar9 = (*pcVar4)();
-            return iVar9;
+            STDebugBreak(); /* noreturn in standalone pseudocode */
           }
           return -1;
         }
@@ -245,9 +250,7 @@ LAB_0047d241:
       iVar9 = ReportDebugMessage(s_E____titans_wlad_To_boat_cpp_007a9d3c,0x3902,0,0,&DAT_007a4ccc,
                                  s_STBoatC__Annih_incorrect_entry_007ab630);
       if (iVar9 != 0) {
-        pcVar4 = (code *)swi(3);
-        iVar9 = (*pcVar4)();
-        return iVar9;
+        STDebugBreak(); /* noreturn in standalone pseudocode */
       }
       return -1;
     }

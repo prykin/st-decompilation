@@ -24,7 +24,7 @@ void FUN_00754b80(AnonShape_00754B80_75BFDB7A *param_1,ushort *param_2,int param
   ushort *local_10;
   int local_c;
   ushort *local_8;
-  
+
   pAVar6 = param_1;
   if (param_7 == (uint *)0x0) {
     local_14 = 0x1f;

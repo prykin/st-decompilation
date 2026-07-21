@@ -7,14 +7,12 @@ undefined4 FUN_006748d0(void)
   uint uVar1;
   int iVar2;
   byte *pbVar3;
-  void *unaff_ESI;
   float10 fVar4;
   longlong lVar5;
-  InternalExceptionFrame *pIVar6;
-  undefined4 local_4c [16];
+  InternalExceptionFrame local_50;
   int local_c;
   int local_8;
-  
+
   DAT_007d2d18 = 0x25;
   DAT_00811914 = DAT_0081190c;
   local_8 = 0;
@@ -27,11 +25,11 @@ undefined4 FUN_006748d0(void)
       local_8 = 0x10;
     }
   }
-  pIVar6 = g_currentExceptionFrame;
-  g_currentExceptionFrame = (InternalExceptionFrame *)&stack0xffffffb0;
-  iVar2 = Library::MSVCRT::__setjmp3(local_4c,0,unaff_ESI,pIVar6);
+  local_50.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &local_50;
+  iVar2 = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0);
   if (iVar2 != 0) {
-    g_currentExceptionFrame = pIVar6;
+    g_currentExceptionFrame = local_50.previous;
     pbVar3 = DAT_0085755c;
     if (iVar2 == -0x3c) {
       while( true ) {
@@ -56,21 +54,23 @@ undefined4 FUN_006748d0(void)
   if (local_8 != 0) {
     DAT_00811914 = DAT_00811914 + 2;
     uVar1 = Library::DKW::STR::FUN_006b9770(DAT_0085755c,&DAT_00811914,local_8);
+    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
     _DAT_00857548 = (double)CONCAT44(DAT_0085754c,uVar1);
-    g_currentExceptionFrame = pIVar6;
+    g_currentExceptionFrame = local_50.previous;
     return 0;
   }
   fVar4 = FUN_006c8990(DAT_0085755c,&DAT_00811914,&local_c);
   _DAT_00857548 = (double)fVar4;
   if (local_c == 0) {
     lVar5 = Library::MSVCRT::__ftol();
+    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
     _DAT_00857548 = (double)CONCAT44(DAT_0085754c,(int)lVar5);
-    g_currentExceptionFrame = pIVar6;
+    g_currentExceptionFrame = local_50.previous;
     DAT_007d2d18 = 0x25;
     return 0;
   }
   DAT_007d2d18 = 0x37;
-  g_currentExceptionFrame = pIVar6;
+  g_currentExceptionFrame = local_50.previous;
   return 0;
 }
 

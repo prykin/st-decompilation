@@ -7,7 +7,7 @@ int FUN_0074e4fe(int *param_1,undefined4 param_2,int *param_3,undefined4 param_4
   char *pcVar2;
   int *piVar3;
   bool bVar4;
-  
+
   iVar1 = 0x10;
   bVar4 = true;
   pcVar2 = "";
@@ -20,10 +20,13 @@ int FUN_0074e4fe(int *param_1,undefined4 param_2,int *param_3,undefined4 param_4
     piVar3 = (int *)((int)piVar3 + 1);
   } while (bVar4);
   if (bVar4) {
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
     iVar1 = (**(code **)(*param_1 + 0x10))(param_1,0,param_4,&param_3);
     if (-1 < iVar1) {
+      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
       iVar1 = (**(code **)(*param_3 + 0x2c))
                         (param_3,param_1,param_2,param_5,param_6,param_7,param_8,param_9);
+      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
       (**(code **)(*param_3 + 8))(param_3);
     }
   }

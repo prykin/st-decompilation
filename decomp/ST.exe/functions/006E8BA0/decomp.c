@@ -3,7 +3,8 @@ void __thiscall FUN_006e8ba0(void *this,uint param_1)
 
 {
   uint *puVar1;
-  
+
+  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   if ((param_1 < *(uint *)((int)this + 0x310)) &&
      (puVar1 = (uint *)(*(int *)((int)this + 0x31c) + param_1 * 0x114),
      (*(uint *)(*(int *)((int)this + 0x31c) + param_1 * 0x114) & 0x8000) != 0)) {

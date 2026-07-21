@@ -8,7 +8,7 @@ undefined4 __thiscall FUN_00640170(void *this,int param_1,int param_2,undefined4
   undefined4 uVar2;
   int iVar3;
   undefined4 *puVar4;
-  
+
   uVar2 = 0;
   if (*(undefined4 **)((int)this + 0x37f) != (undefined4 *)0x0) {
     puVar4 = *(undefined4 **)((int)this + 0x37f);

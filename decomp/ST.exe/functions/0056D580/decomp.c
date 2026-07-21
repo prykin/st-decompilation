@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\tapp.cpp
@@ -9,24 +11,30 @@ void __thiscall STAppC::CloseGameDBs(STAppC *this)
   code *pcVar1;
   int errorCode;
   int iVar2;
+  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   cMf32 *extraout_ECX;
+  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   cMf32 *extraout_ECX_00;
+  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   cMf32 *extraout_ECX_01;
+  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   cMf32 *extraout_ECX_02;
+  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   cMf32 *extraout_ECX_03;
+  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   cMf32 *extraout_ECX_04;
   cMf32 *pcVar3;
-  undefined4 unaff_ESI;
-  void *unaff_EDI;
   InternalExceptionFrame local_48;
-  
+
   local_48.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_48;
-  errorCode = Library::MSVCRT::__setjmp3(local_48.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  errorCode = Library::MSVCRT::__setjmp3(local_48.jumpBuffer,0);
   if (errorCode == 0) {
+    /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
     pcVar3 = extraout_ECX;
     if (DAT_0080678c != 0) {
       FUN_0070a300(&DAT_0080678c);
+      /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
       pcVar3 = extraout_ECX_00;
     }
     cMf32::delete(pcVar3,DAT_00806788);
@@ -36,16 +44,20 @@ void __thiscall STAppC::CloseGameDBs(STAppC *this)
     }
     cMf32::delete(DAT_00806790,DAT_00806790);
     DAT_00806790 = (cMf32 *)0x0;
+    /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
     pcVar3 = extraout_ECX_01;
     if (DAT_0080677c != 0) {
       FUN_0070a300(&DAT_0080677c);
+      /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
       pcVar3 = extraout_ECX_02;
     }
     cMf32::delete(pcVar3,DAT_00806778);
     DAT_00806778 = (cMf32 *)0x0;
+    /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
     pcVar3 = extraout_ECX_03;
     if (DAT_00806774 != 0) {
       FUN_0070a300(&DAT_00806774);
+      /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
       pcVar3 = extraout_ECX_04;
     }
     cMf32::delete(pcVar3,PTR_00806770);
@@ -62,9 +74,7 @@ void __thiscall STAppC::CloseGameDBs(STAppC *this)
   iVar2 = ReportDebugMessage(s_E____titans_tapp_cpp_007ca0c8,0x417,0,errorCode,&DAT_007a4ccc,
                              s_STAppC__CloseGameDBs_007ca174);
   if (iVar2 != 0) {
-    pcVar1 = (code *)swi(3);
-    (*pcVar1)();
-    return;
+    STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   RaiseInternalException(errorCode,0,s_E____titans_tapp_cpp_007ca0c8,0x417);
   return;

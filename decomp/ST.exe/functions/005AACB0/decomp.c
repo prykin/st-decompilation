@@ -1,12 +1,14 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\hologram.cpp
    HoloTy::Init
-   
+
    [STSwitchEnumApplier] Switch target param_1 uses
    /SubmarineTitans/Recovered/Enums/HoloTy_Init_param_1Enum. Cases:
    CASE_1=1;CASE_2=2;CASE_3=3;CASE_4=4
-   
+
    [STSwitchEnumApplier] Switch target field_0001 uses
    /SubmarineTitans/Recovered/Enums/HoloTy_field_0001State. Cases:
    CASE_1=1;CASE_2=2;CASE_3=3;CASE_4=4 */
@@ -21,20 +23,18 @@ HoloTy::Init(HoloTy *this,HoloTy_Init_param_1Enum param_1,int param_2,int param_
   int iVar2;
   undefined4 *puVar3;
   uint uVar4;
-  undefined4 unaff_ESI;
-  void *unaff_EDI;
   uint uVar5;
   InternalExceptionFrame local_58;
   HoloTy *local_14;
   uint local_10;
   int local_c;
   uint local_8;
-  
+
   local_10 = 0;
   local_58.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_58;
   local_14 = this;
-  iVar2 = Library::MSVCRT::__setjmp3(local_58.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar2 = Library::MSVCRT::__setjmp3(local_58.jumpBuffer,0);
   this_00 = local_14;
   if (iVar2 != 0) {
     g_currentExceptionFrame = local_58.previous;
@@ -44,9 +44,7 @@ HoloTy::Init(HoloTy *this,HoloTy_Init_param_1Enum param_1,int param_2,int param_
       this_00->field_0000 = (char)local_10;
       return local_10 & 0xff;
     }
-    pcVar1 = (code *)swi(3);
-    uVar4 = (*pcVar1)();
-    return uVar4;
+    STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   local_14->field_0007 = param_4;
   if (param_4 != 0) {

@@ -37,7 +37,7 @@ FUN_006a64e0(int param_1,int param_2,int param_3,int param_4,int param_5,int par
   int local_10;
   uint local_c;
   int local_8;
-  
+
   local_14 = param_2 * param_3;
   local_34 = 0;
   *(undefined2 *)(param_1 + (param_2 * param_6 + param_5 + local_14 * param_7) * 2) = 1;

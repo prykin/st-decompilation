@@ -16,7 +16,7 @@ DWORD FUN_0074dcf0(undefined4 param_1,DWORD param_2,HWND param_3,UINT param_4)
   DWORD local_24;
   uint local_20;
   tagMSG local_1c;
-  
+
   bVar1 = false;
   if ((param_2 != 0xffffffff) && (param_2 != 0)) {
     local_24 = GetTickCount();

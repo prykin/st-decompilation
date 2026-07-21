@@ -4,19 +4,18 @@ undefined4 __thiscall FUN_005f8ba0(void *this,undefined4 *param_1,undefined4 *pa
 {
   short sVar1;
   short sVar2;
-  bool bVar3;
-  undefined3 extraout_var;
+  int iVar3;
   int iVar4;
   short sVar5;
-  
+
   iVar4 = *(int *)((int)this + 0x285);
   do {
     if (4 < iVar4) {
       return 0;
     }
     sVar5 = (short)iVar4;
-    bVar3 = thunk_FUN_004961b0(*(short *)((int)this + 0x27d),*(short *)((int)this + 0x281),sVar5);
-    if (CONCAT31(extraout_var,bVar3) != 0) {
+    iVar3 = thunk_FUN_004961b0(*(short *)((int)this + 0x27d),*(short *)((int)this + 0x281),sVar5);
+    if (iVar3 != 0) {
       sVar1 = *(short *)((int)this + 0x27d);
       sVar2 = *(short *)((int)this + 0x281);
       if ((((sVar1 < 0) || (g_worldGrid.sizeX <= sVar1)) || (sVar2 < 0)) ||

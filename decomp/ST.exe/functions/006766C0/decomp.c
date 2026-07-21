@@ -5,7 +5,7 @@ void FUN_006766c0(void)
   int iVar1;
   undefined4 *puVar2;
   undefined4 *puVar3;
-  
+
   puVar2 = &DAT_0080e83b;
   puVar3 = &g_playerRuntime[DAT_0080874d].field480_0x2eb;
   for (iVar1 = 5; iVar1 != 0; iVar1 = iVar1 + -1) {

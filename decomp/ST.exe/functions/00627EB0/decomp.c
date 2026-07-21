@@ -1,9 +1,11 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* Recovered from embedded debug metadata:
    E:\__titans\nick\to_Part.Cpp
    STParticleC::GetMessage
-   
+
    [STSwitchEnumApplier] Switch target field_00C2 uses
    /SubmarineTitans/Recovered/Enums/STParticleC_field_00C2State. Cases:
    CASE_0=0;CASE_1=1;CASE_2=2;CASE_3=3;CASE_4=4;CASE_8=8;CASE_10=16;CASE_20=32;CASE_40=64;CASE_80=128
@@ -25,9 +27,7 @@ STParticleC::GetMessage(STParticleC *this,AnonShape_00627EB0_4C14C976 *param_1)
   uint uVar9;
   int iVar10;
   undefined4 uVar11;
-  undefined4 unaff_ESI;
   AnonNested_00627EB0_0014_B8FBF6AA *pAVar12;
-  void *unaff_EDI;
   AnonShape_00629F90_C3CBACCB *pAVar13;
   undefined4 *puVar14;
   VisibleClassTy *pVVar15;
@@ -46,20 +46,18 @@ STParticleC::GetMessage(STParticleC *this,AnonShape_00627EB0_4C14C976 *param_1)
   AnonShape_00629F90_C3CBACCB *local_10;
   float local_c;
   float local_8;
-  
+
   local_7c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_7c;
   local_10 = (AnonShape_00629F90_C3CBACCB *)this;
-  iVar8 = Library::MSVCRT::__setjmp3(local_7c.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar8 = Library::MSVCRT::__setjmp3(local_7c.jumpBuffer,0);
   this_00 = local_10;
   if (iVar8 != 0) {
     g_currentExceptionFrame = local_7c.previous;
     iVar10 = ReportDebugMessage(s_E____titans_nick_to_Part_Cpp_007d1354,0x218,0,iVar8,&DAT_007a4ccc,
                                 s_STParticleC__GetMessage_007d1378);
     if (iVar10 != 0) {
-      pcVar5 = (code *)swi(3);
-      uVar11 = (*pcVar5)();
-      return uVar11;
+      STDebugBreak(); /* noreturn in standalone pseudocode */
     }
     RaiseInternalException(iVar8,0,s_E____titans_nick_to_Part_Cpp_007d1354,0x21a);
     return 0xffff;

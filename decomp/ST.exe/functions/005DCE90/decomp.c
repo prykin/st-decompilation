@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\startsys.cpp
@@ -12,20 +14,18 @@ int __thiscall StartSystemTy::GetMessage(StartSystemTy *this,int *param_1)
   int iVar3;
   cMf32 *this_01;
   int iVar4;
-  undefined4 unaff_ESI;
   int *piVar5;
-  void *unaff_EDI;
   undefined4 *puVar6;
   int *piVar7;
   InternalExceptionFrame local_8c;
   int local_48 [8];
   undefined4 local_28 [8];
   StartSystemTy *local_8;
-  
+
   local_8c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_8c;
   local_8 = this;
-  iVar3 = Library::MSVCRT::__setjmp3(local_8c.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar3 = Library::MSVCRT::__setjmp3(local_8c.jumpBuffer,0);
   this_00 = local_8;
   if (iVar3 != 0) {
     g_currentExceptionFrame = local_8c.previous;
@@ -35,9 +35,7 @@ int __thiscall StartSystemTy::GetMessage(StartSystemTy *this,int *param_1)
       RaiseInternalException(iVar3,0,s_E____titans_Start_startsys_cpp_007cd718,0x31b);
       return 0xffff;
     }
-    pcVar2 = (code *)swi(3);
-    iVar3 = (*pcVar2)();
-    return iVar3;
+    STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   uVar1 = param_1[4];
   if (uVar1 < 0x6121) {

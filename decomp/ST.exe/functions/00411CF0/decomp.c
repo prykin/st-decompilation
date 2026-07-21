@@ -10,7 +10,7 @@ int FUN_00411cf0(char *param_1,int param_2)
   char *pcVar6;
   char *pcVar7;
   char *pcVar8;
-  
+
   pcVar6 = param_1;
   iVar3 = 0;
   iVar5 = param_2 * -2 + 3;

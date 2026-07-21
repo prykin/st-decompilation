@@ -21,7 +21,7 @@ uint * FUN_0043f7b0(byte param_1,int *param_2,uint *param_3,int param_4,int para
   int local_14;
   int local_c;
   int local_8;
-  
+
   bVar5 = param_1;
   local_8 = (int)param_3 - (int)param_6;
   iVar6 = param_4 + param_7;
@@ -99,9 +99,11 @@ LAB_0043f9bd:
                              (&DAT_008087ea)[(uint)bVar1 * 0x51];
                   }
                   if (!bVar11) goto LAB_0043f9fa;
+                  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
                   iVar7 = (**(code **)(*piVar3 + 0xf8))();
                 }
                 else {
+                  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
                   iVar7 = (**(code **)(*piVar3 + 0xf8))();
                 }
                 if (iVar7 == 1) {
@@ -114,6 +116,7 @@ LAB_0043f9fa:
                  (param_2 != piVar3)) {
                 if (param_9 == 0) {
                   bVar1 = *(byte *)(piVar3 + 9);
+                  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                   param_8 = CONCAT31(param_8._1_3_,bVar1);
                   if (DAT_00808a8f == '\0') {
                     if (bVar1 == bVar5) {
@@ -145,9 +148,11 @@ LAB_0043fad9:
                              (&DAT_008087ea)[(uint)bVar1 * 0x51];
                   }
                   if (!bVar11) goto LAB_0043fb16;
+                  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
                   iVar7 = (**(code **)(*piVar3 + 0xf8))();
                 }
                 else {
+                  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
                   iVar7 = (**(code **)(*piVar3 + 0xf8))();
                 }
                 if (iVar7 == 1) {

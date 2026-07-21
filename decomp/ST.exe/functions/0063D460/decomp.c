@@ -6,7 +6,7 @@ FUN_0063d460(void *this,undefined4 param_1,undefined4 param_2,int param_3,int pa
   undefined4 uVar1;
   int iVar2;
   undefined4 *puVar3;
-  
+
   if (param_3 < 0) {
     param_3 = 0;
   }

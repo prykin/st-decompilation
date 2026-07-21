@@ -1,12 +1,14 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Artem\TLO_base.cpp
    TLOBaseTy::SetState
-   
+
    [STSwitchEnumApplier] Switch target field_0245 uses
    /SubmarineTitans/Recovered/Enums/TLOBaseTy_field_0245State. Cases:
    CASE_0=0;CASE_1=1;CASE_4=4;CASE_6=6;CASE_32=50;CASE_34=52;CASE_35=53;CASE_37=55;CASE_38=56;CASE_39=57;CASE_3B=59;CASE_40=64;CASE_41=65;CASE_48=72;CASE_49=73;CASE_4C=76;CASE_4F=79;CASE_50=80;CASE_52=82;CASE_53=83;CASE_54=84;CASE_55=85;CASE_56=86;CASE_57=87;CASE_58=88;CASE_59=89;CASE_5A=90;CASE_5B=91;CASE_5C=92;CASE_5E=94;CASE_5F=95;CASE_60=96;CASE_61=97;CASE_63=99;CASE_64=100;CASE_68=104;CASE_69=105;CASE_6A=106;CASE_6C=108;CASE_6D=109;CASE_6E=110;CASE_6F=111;CASE_70=112;CASE_73=115
-   
+
    [STSwitchEnumApplier] Switch target field_05AC uses
    /SubmarineTitans/Recovered/Enums/TLOBaseTy_field_05ACState. Cases:
    CASE_32=50;CASE_33=51;CASE_34=52;CASE_36=54;CASE_37=55;CASE_38=56;CASE_39=57;CASE_3A=58;CASE_3B=59;CASE_3D=61;CASE_40=64;CASE_41=65;CASE_43=67;CASE_45=69;CASE_48=72;CASE_49=73;CASE_4C=76;CASE_4D=77;CASE_4E=78;CASE_4F=79;CASE_52=82;CASE_5B=91;CASE_5C=92;CASE_5D=93;CASE_5E=94;CASE_5F=95;CASE_60=96;CASE_61=97;CASE_63=99;CASE_64=100;CASE_68=104;CASE_69=105;CASE_6A=106;CASE_6C=108;CASE_6E=110;CASE_6F=111;CASE_70=112;CASE_72=114;CASE_73=115
@@ -26,25 +28,23 @@ int __thiscall TLOBaseTy::SetState(TLOBaseTy *this,int param_1,int param_2)
   int iVar7;
   int iVar8;
   short sVar9;
-  undefined4 unaff_ESI;
+  /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
   void *unaff_EDI;
   InternalExceptionFrame local_50;
   AnonShape_004DC150_D7EBDFDF *local_c;
   int local_8;
-  
+
   local_50.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_50;
   local_c = (AnonShape_004DC150_D7EBDFDF *)this;
-  iVar5 = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar5 = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0);
   this_01 = local_c;
   if (iVar5 != 0) {
     g_currentExceptionFrame = local_50.previous;
     iVar8 = ReportDebugMessage(s_E____titans_Artem_TLO_base_cpp_007ac820,0xe1,0,iVar5,
                                s_TLOBaseTy__SetState_error__state_007ac7f0,param_1);
     if (iVar8 != 0) {
-      pcVar2 = (code *)swi(3);
-      iVar5 = (*pcVar2)();
-      return iVar5;
+      STDebugBreak(); /* noreturn in standalone pseudocode */
     }
     RaiseInternalException(iVar5,0,s_E____titans_Artem_TLO_base_cpp_007ac820,0xe2);
     return iVar5;
@@ -59,6 +59,7 @@ int __thiscall TLOBaseTy::SetState(TLOBaseTy *this,int param_1,int param_2)
     else {
       thunk_FUN_004cc810((AnonShape_004CC900_31EE9CAA *)this_01);
     }
+    /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
     LoadImages((TLOBaseTy *)this_01,unaff_EDI);
     if (*(int *)(&DAT_00791a10 + *(int *)&this_01->field_0x235 * 4) != 0) {
       AddSprInit((TLOBaseTy *)this_01);
@@ -71,16 +72,19 @@ int __thiscall TLOBaseTy::SetState(TLOBaseTy *this,int param_1,int param_2)
         {
           iVar5 = *(int *)this_01;
           uVar6 = GetPlayerRaceId(this_01->field_0x23d);
+          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
           (**(code **)(iVar5 + 0x90))
                     (3,*(undefined4 *)
                         (&DAT_007955d0 + ((uVar6 & 0xff) + *(int *)&this_01->field_0x235 * 3) * 4));
         }
       }
       else if (iVar5 == 2) {
+        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
         (**(code **)(*(int *)this_01 + 0x90))
                   (3,*(undefined4 *)(&DAT_007958ec + *(int *)&this_01->field_0x235 * 4));
       }
       else if (iVar5 == 3) {
+        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
         (**(code **)(*(int *)this_01 + 0x90))
                   (3,*(undefined4 *)(&DAT_007959f4 + *(int *)&this_01->field_0x235 * 4));
       }
@@ -130,9 +134,11 @@ int __thiscall TLOBaseTy::SetState(TLOBaseTy *this,int param_1,int param_2)
         *(undefined4 *)&this_01->field_0x251 = 1;
       }
       break;
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
     case 1:
       iVar5 = (**(code **)(*(int *)this_01 + 8))();
       if (iVar5 != 0) {
+        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
         (**(code **)(*(int *)this_01 + 0xe8))(0);
       }
       sVar4 = *(short *)&this_01->field_0x5b0;

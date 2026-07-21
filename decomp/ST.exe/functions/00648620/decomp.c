@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* [STSourceProvenanceApplier begin]
    Recovered source file: E:\__titans\ai\ai_boss_d.cpp
@@ -14,15 +16,13 @@ undefined4 * __cdecl BossDataPack(undefined4 *param_1,undefined4 *param_2,int pa
   undefined4 *puVar5;
   uint uVar6;
   uint uVar7;
-  undefined4 unaff_ESI;
-  void *unaff_EDI;
   InternalExceptionFrame local_4c;
   void *local_8;
-  
+
   local_8 = (void *)0x0;
   local_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_4c;
-  iVar2 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar2 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
   if (iVar2 == 0) {
     *param_4 = param_3 + 0x85U;
     puVar3 = Library::DKW::LIB::FUN_006aac10(param_3 + 0x85U);
@@ -60,9 +60,7 @@ undefined4 * __cdecl BossDataPack(undefined4 *param_1,undefined4 *param_2,int pa
   iVar4 = ReportDebugMessage(s_E____titans_ai_ai_boss_d_cpp_007d27f4,0x6b,0,iVar2,&DAT_007a4ccc,
                              s_BossDataPack_007d2818);
   if (iVar4 != 0) {
-    pcVar1 = (code *)swi(3);
-    puVar5 = (undefined4 *)(*pcVar1)();
-    return puVar5;
+    STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   RaiseInternalException(iVar2,0,s_E____titans_ai_ai_boss_d_cpp_007d27f4,0x6c);
   return (undefined4 *)0x0;

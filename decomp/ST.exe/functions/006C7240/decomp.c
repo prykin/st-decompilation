@@ -2,12 +2,12 @@
 undefined4 FUN_006c7240(AnonShape_006C7240_F2C56622 *param_1,int param_2,int param_3)
 
 {
-  AnonShape_006B84D0_7C7D97C6 *pAVar1;
+  AnonShape_006B5B10_E0D06CF1 *pAVar1;
   int iVar2;
   int iVar3;
   int iVar4;
-  
-  pAVar1 = (AnonShape_006B84D0_7C7D97C6 *)param_1->field_003A;
+
+  pAVar1 = (AnonShape_006B5B10_E0D06CF1 *)param_1->field_003A;
   iVar2 = pAVar1->field_0008;
   if (iVar2 < 0) {
     iVar2 = -iVar2;

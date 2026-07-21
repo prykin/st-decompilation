@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\infocen.cpp
@@ -12,15 +14,13 @@ InfocPanelTy::PaintInfocObj(InfocPanelTy *this,ushort param_1,uint param_2,int p
   char cVar3;
   int errorCode;
   int iVar4;
-  undefined4 unaff_ESI;
-  void *unaff_EDI;
   InternalExceptionFrame local_4c;
   InfocPanelTy *local_8;
-  
+
   local_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_4c;
   local_8 = this;
-  errorCode = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  errorCode = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
   pIVar2 = local_8;
   if (errorCode == 0) {
     if ((local_8->field_03D4 == -1) && (param_1 == 0xffff)) {
@@ -35,7 +35,7 @@ InfocPanelTy::PaintInfocObj(InfocPanelTy *this,ushort param_1,uint param_2,int p
     else {
       cVar3 = (-(DAT_0080874e != '\x01') & 0x89U) + 0x3a;
     }
-    FUN_006b4170((AnonShape_006C7610_838EDECF *)pIVar2->field_0068,0,param_3,param_4,0x2d,0xc,cVar3)
+    FUN_006b4170((AnonShape_006B5B10_E0D06CF1 *)pIVar2->field_0068,0,param_3,param_4,0x2d,0xc,cVar3)
     ;
     ccFntTy::SetSurf(pIVar2->field_0189,pIVar2->field_0068,0,param_3,param_4,0x2d,0xc);
     ccFntTy::WrStr(pIVar2->field_0189,(uint *)&pIVar2->field_0x18d,-1,-1,
@@ -47,9 +47,7 @@ InfocPanelTy::PaintInfocObj(InfocPanelTy *this,ushort param_1,uint param_2,int p
   iVar4 = ReportDebugMessage(s_E____titans_Andrey_infocen_cpp_007c3eb0,0xa9,0,errorCode,
                              &DAT_007a4ccc,s_InfocPanelTy__PaintInfocObj_007c3f94);
   if (iVar4 != 0) {
-    pcVar1 = (code *)swi(3);
-    (*pcVar1)();
-    return;
+    STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   RaiseInternalException(errorCode,0,s_E____titans_Andrey_infocen_cpp_007c3eb0,0xa9);
   return;

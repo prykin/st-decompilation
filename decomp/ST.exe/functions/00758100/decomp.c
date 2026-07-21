@@ -7,11 +7,12 @@ undefined4 FUN_00758100(AnonShape_00758100_FF0E5C9C *param_1)
   AnonNested_00758100_0010_55B841DF *pAVar3;
   int iVar4;
   byte *pbVar5;
-  
+
   pAVar3 = param_1->field_0010;
   iVar4 = pAVar3->field_0004;
   pbVar5 = (byte *)pAVar3->field_0000;
   if (iVar4 == 0) {
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
     iVar4 = (*(code *)pAVar3->field_000C)(param_1);
     if (iVar4 == 0) {
       return 0;
@@ -23,6 +24,7 @@ undefined4 FUN_00758100(AnonShape_00758100_FF0E5C9C *param_1)
   bVar1 = *pbVar5;
   pbVar5 = pbVar5 + 1;
   if (iVar4 == 0) {
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
     iVar4 = (*(code *)pAVar3->field_000C)(param_1);
     if (iVar4 == 0) {
       return 0;
@@ -33,6 +35,7 @@ undefined4 FUN_00758100(AnonShape_00758100_FF0E5C9C *param_1)
   bVar2 = *pbVar5;
   pAVar3->field_0000 = pbVar5 + 1;
   pAVar3->field_0004 = iVar4 + -1;
+  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
   (*(code *)param_1->field_0010->field_0010)(param_1,(uint)bVar1 * 0x100 + (uint)bVar2 + -2);
   return 1;
 }

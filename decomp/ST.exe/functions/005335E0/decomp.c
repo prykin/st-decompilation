@@ -8,19 +8,17 @@ void FUN_005335e0(void)
   DWORD DVar4;
   uint uVar5;
   uint uVar6;
-  undefined4 unaff_ESI;
   char *pcVar7;
-  void *unaff_EDI;
   char *pcVar8;
   char *pcVar9;
   InternalExceptionFrame local_54;
   uint local_10;
   undefined4 *local_c;
   undefined4 *local_8;
-  
+
   local_54.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_54;
-  iVar2 = Library::MSVCRT::__setjmp3(local_54.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar2 = Library::MSVCRT::__setjmp3(local_54.jumpBuffer,0);
   if (iVar2 != 0) {
     g_currentExceptionFrame = local_54.previous;
     return;
@@ -232,6 +230,7 @@ void FUN_005335e0(void)
   }
   local_8[10] = 0xc001;
   local_8[0xd] = 0;
+  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
   (**(code **)*local_8)(local_8 + 6);
   g_currentExceptionFrame = local_54.previous;
   return;

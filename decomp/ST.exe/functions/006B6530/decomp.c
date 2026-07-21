@@ -8,7 +8,7 @@ FUN_006b6530(AnonShape_006B6530_C4BC1053 *param_1,undefined4 param_2,byte param_
   int *piVar2;
   int *piVar3;
   char *pcVar4;
-  
+
   piVar3 = (int *)*param_4;
   if ((param_3 & 1) != 0) {
     return 0;

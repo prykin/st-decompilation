@@ -6,7 +6,7 @@ void __thiscall FUN_00566970(void *this,int param_1,int param_2)
   int iVar2;
   char *text;
   undefined4 *puVar3;
-  
+
   if (((*(int *)((int)this + 0x18) != 0) && (iVar2 = *(int *)((int)this + 0x28), iVar2 != 0)) &&
      (-1 < param_1)) {
     switch(*(undefined1 *)((int)this + 0x38)) {

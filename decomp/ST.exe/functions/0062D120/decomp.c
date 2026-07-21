@@ -9,7 +9,8 @@ FUN_0062d120(void *this,int param_1,int param_2,int param_3,int param_4,int para
   int iVar3;
   uint uVar4;
   bool bVar5;
-  
+
+  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   if ((this != (void *)0xffffffd0) && (iVar2 = *(int *)((int)this + param_1 * 4 + 0x30), iVar2 != 0)
      ) {
     if ((int)param_6 < 0) {
@@ -17,6 +18,7 @@ FUN_0062d120(void *this,int param_1,int param_2,int param_3,int param_4,int para
       uVar4 = 0;
       if (0 < (int)uVar1) {
         bVar5 = uVar1 != 0;
+        /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
         while ((((!bVar5 ||
                  (iVar3 = *(int *)(iVar2 + 8) * uVar4 + *(int *)(iVar2 + 0x1c), iVar3 == 0)) ||
                 (*(int *)(iVar3 + 4) != param_2)) ||
@@ -43,6 +45,7 @@ FUN_0062d120(void *this,int param_1,int param_2,int param_3,int param_4,int para
     }
     else {
       if (param_6 < *(uint *)(iVar2 + 0xc)) {
+        /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
         iVar2 = *(int *)(iVar2 + 8) * param_6 + *(int *)(iVar2 + 0x1c);
       }
       else {

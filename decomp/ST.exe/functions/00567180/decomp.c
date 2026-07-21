@@ -6,21 +6,22 @@ void __thiscall FUN_00567180(void *this,HWND param_1)
 
 {
   int iVar1;
-  InternalExceptionFrame *pIVar2;
-  int in_stack_ffffffb8;
-  
-  pIVar2 = g_currentExceptionFrame;
-  g_currentExceptionFrame = (InternalExceptionFrame *)&stack0xffffffb4;
-  iVar1 = Library::MSVCRT::__setjmp3((undefined4 *)&stack0xffffffb8,0,pIVar2,in_stack_ffffffb8);
+  InternalExceptionFrame local_4c;
+  void *local_8;
+
+  local_4c.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &local_4c;
+  local_8 = this;
+  iVar1 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
   if (iVar1 == 0) {
-    *(undefined4 *)((int)this + 0xf8b) = 1;
+    *(undefined4 *)((int)local_8 + 0xf8b) = 1;
     Library::DKW::SND::FUN_006c1530(param_1,1);
     FUN_006c2140(0x41200000);
-    g_currentExceptionFrame = pIVar2;
+    g_currentExceptionFrame = local_4c.previous;
     return;
   }
-  g_currentExceptionFrame = pIVar2;
-  *(undefined4 *)((int)this + 0xf8b) = 0;
+  g_currentExceptionFrame = local_4c.previous;
+  *(undefined4 *)((int)local_8 + 0xf8b) = 0;
   return;
 }
 

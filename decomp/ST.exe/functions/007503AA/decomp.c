@@ -10,7 +10,7 @@ undefined4 __thiscall FUN_007503aa(void *this,int *param_1,DWORD dwMilliseconds)
   DWORD DVar2;
   int iVar3;
   int iVar4;
-  
+
   lpCriticalSection = (LPCRITICAL_SECTION)((int)this + 8);
   while( true ) {
     EnterCriticalSection(lpCriticalSection);
@@ -38,6 +38,7 @@ undefined4 __thiscall FUN_007503aa(void *this,int *param_1,DWORD dwMilliseconds)
       return 0x80004004;
     }
   }
+  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
   (**(code **)(*(int *)(iVar4 + 0xc) + 4))(iVar4 + 0xc);
   *param_1 = iVar4;
   LeaveCriticalSection(lpCriticalSection);

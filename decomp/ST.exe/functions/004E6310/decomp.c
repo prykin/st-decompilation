@@ -16,8 +16,9 @@ void FUN_004e6310(int param_1,uint param_2,uint param_3)
   int local_10;
   int local_c;
   AnonShape_00494AE0_E545732F *local_8;
-  
+
   if ((((-1 < param_1) && (param_1 < 8)) && (0 < (int)param_2)) && ((int)param_2 < 0x9b)) {
+    /* ST_PSEUDO[flattened_global_record_array]: expected g_playerRuntime[player].field[index...] after base/stride proof */
     iVar11 = param_1 * 0xa62;
     *(uint *)(iVar11 + 0x7f5147 + param_2 * 4) = param_3;
     pbVar2 = (byte *)(iVar11 + 0x7f511f + ((int)(param_2 ^ 7) >> 3));
@@ -64,6 +65,7 @@ LAB_004e645f:
           (uVar10 = 0, pDVar7->count != 0)))) {
         do {
           DArrayGetElement(pDVar7,uVar10,&local_8);
+          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
           if ((local_8 != (AnonShape_00494AE0_E545732F *)0x0) &&
              (((iVar11 = (**(code **)(*(int *)local_8 + 0x2c))(), iVar11 == 0x36 ||
                (iVar11 = (**(code **)(*(int *)local_8 + 0x2c))(), iVar11 == 0x5d)) ||
@@ -81,6 +83,7 @@ LAB_004e645f:
           (uVar10 = 0, pDVar7->count != 0)))) {
         do {
           DArrayGetElement(pDVar7,uVar10,&local_8);
+          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
           if ((local_8 != (AnonShape_00494AE0_E545732F *)0x0) &&
              (((iVar11 = (**(code **)(*(int *)local_8 + 0x2c))(), iVar11 == 5 ||
                (iVar11 = (**(code **)(*(int *)local_8 + 0x2c))(), iVar11 == 0x21)) ||

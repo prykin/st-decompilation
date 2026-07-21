@@ -1,6 +1,6 @@
 
 /* [STVTableApplier] Virtual slot 0079DD34+0x24
-   
+
    [STVTableApplier] Virtual slot 007A1148+0x24 */
 
 byte FUN_00748d5a(int param_1)

@@ -12,17 +12,22 @@ undefined4 __fastcall FUN_004d32c0(STJellyGunC *param_1)
   STT3DSprC *this;
   int iVar2;
   uint uVar3;
+  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined2 extraout_var;
   undefined2 uVar7;
   uint uVar4;
   undefined4 uVar5;
   uint uVar6;
   int *piVar8;
+  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined2 extraout_var_00;
+  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined2 extraout_var_01;
   undefined2 uVar10;
   int iVar9;
+  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined4 extraout_EDX;
+  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined2 extraout_var_02;
   int iVar11;
   int iVar12;
@@ -42,11 +47,12 @@ undefined4 __fastcall FUN_004d32c0(STJellyGunC *param_1)
   int local_10;
   int local_c;
   int local_8;
-  
+
   iVar12 = 0;
   if (param_1[1].field_000C == (SystemClassTy *)0x0) {
     this = *(STT3DSprC **)&param_1[1].field_0xc8;
     if ((this->field_001C & 0x4000) != 0) {
+      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
       iVar9 = *(int *)(this->field_0020 + 0x210);
       if (iVar9 == 0x15) {
         if (((*(uint *)&param_1->field_0x1f1 & 0x4000) == 0) &&
@@ -87,6 +93,7 @@ undefined4 __fastcall FUN_004d32c0(STJellyGunC *param_1)
           } while (iVar12 != 0);
           if (DAT_00811784 != (void *)0x0) {
             uVar3 = GetPlayerRaceId(param_1->field_0x24);
+            /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
             thunk_FUN_005f23d0(DAT_00811784,*(int *)((int)&param_1->field_025A + 3),
                                *(int *)&param_1->field_0x261,*(int *)&param_1->field_0x265,
                                CONCAT31((int3)((uint)extraout_EDX >> 8),param_1->field_0x2c),
@@ -95,6 +102,7 @@ undefined4 __fastcall FUN_004d32c0(STJellyGunC *param_1)
         }
         else if ((*(int *)&param_1[1].field_0058 == 3) &&
                 (*(int *)((int)&param_1[1].field_0047 + 1) == 0)) {
+          /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
           if ((*(int *)&param_1[1].field_0x14 < 100) ||
              (iVar9._0_2_ = param_1[1].field_0054, iVar9._2_2_ = param_1[1].field_0056, iVar9 != 0))
           {
@@ -145,6 +153,7 @@ undefined4 __fastcall FUN_004d32c0(STJellyGunC *param_1)
             thunk_FUN_004abce0(puVar15,0xe,uVar3,uVar3,'\0');
             STT3DSprC::SetCurFase((STT3DSprC *)puVar15,'\x0e',uVar3);
             STT3DSprC::StartShow((STT3DSprC *)puVar15,0xe,PTR_00802a38->field_00E4);
+            /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
             if (**(int **)(*(int *)&param_1->field_0x1f5 + 0x1d4) < (int)uVar3) {
               uVar3 = 0;
             }
@@ -204,6 +213,7 @@ undefined4 __fastcall FUN_004d32c0(STJellyGunC *param_1)
           }
         }
       }
+      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
       else if (iVar9 == *(int *)(this->field_0020 + 0x20c)) {
         STT3DSprC::SetCurFase(this,'\x0e',0);
         STT3DSprC::StopShow(*(STT3DSprC **)&param_1[1].field_0xc8,0xe);
@@ -230,14 +240,17 @@ undefined4 __fastcall FUN_004d32c0(STJellyGunC *param_1)
               local_14 = local_14 + 1;
             } while ((int)local_14 < *(int *)&param_1->field_0x261 + iVar12);
           }
+          /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
           iVar12 = thunk_FUN_004b7520(CONCAT31((int3)(*(Global_sub_004B7520_param_2Enum *)
                                                        &param_1->field_0x259 >> 8),
                                                param_1->field_0x24),
                                       *(Global_sub_004B7520_param_2Enum *)&param_1->field_0x259);
           if (iVar12 != 0) {
             iVar12 = (*param_1->vtable->vfunc_2C)();
+            /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
             thunk_FUN_004b7710(CONCAT31((int3)((uint)iVar12 >> 8),param_1->field_0x24),iVar12);
           }
+          /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
           if ((99 < *(int *)&param_1[1].field_0x14) &&
              (iVar12._0_2_ = param_1[1].field_0054, iVar12._2_2_ = param_1[1].field_0056,
              iVar12 == 0)) {
@@ -248,18 +261,22 @@ undefined4 __fastcall FUN_004d32c0(STJellyGunC *param_1)
             param_1[1].field_0052 = 0;
             iVar12 = (*param_1->vtable->vfunc_08)();
             uVar7 = 0;
+            /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
             uVar10 = extraout_var_00;
             if (iVar12 != 0) {
+              /* ST_PSEUDO[return_width_artifact,raw_pointer_offset]: candidate call-output artifact: verify return width, clobbers, or x87 state; candidate structure field after proof; otherwise retain buffer arithmetic */
               thunk_FUN_004353b0(CONCAT31((int3)((uint)local_18 >> 8),param_1->field_0x24),
                                  CONCAT22((short)((uint)iVar12 >> 0x10),
                                           *(undefined2 *)&param_1->field_0x32),
                                  CONCAT22(extraout_var_02,*(undefined2 *)(local_18 + 0x32)));
+              /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
               uVar10 = extraout_var_01;
+              /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
               uVar7 = extraout_var;
             }
+            /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
             STAllPlayersC::ReplaceObject
-                      (g_sTAllPlayers_007FA174,
-                       CONCAT31((int3)((uint)local_18 >> 8),param_1->field_0x24),
+                      (g_sTAllPlayers_007FA174,param_1->field_0x24,
                        CONCAT22(uVar10,*(undefined2 *)&param_1->field_0x32),
                        CONCAT22(uVar7,*(undefined2 *)(local_18 + 0x32)));
           }
@@ -272,6 +289,7 @@ undefined4 __fastcall FUN_004d32c0(STJellyGunC *param_1)
       }
     }
     iVar12 = *(int *)((int)&param_1[1].field_005B + 1);
+    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     if (*(int *)(*(int *)&param_1->field_0x1f5 + 0x18 + iVar12 * 0x24) ==
         *(int *)(*(int *)&param_1->field_0x1f5 + iVar12 * 0x24 + 0x14)) {
       switch(*(undefined4 *)&param_1[1].field_0058) {
@@ -352,6 +370,7 @@ LAB_004d4378:
         iVar12 = *(int *)&param_1->field_0x241 * 0x20;
         *(undefined4 *)&param_1[1].field_0058 = 2;
         puVar15 = &param_1->field_01D5;
+        /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
         thunk_FUN_004abce0(puVar15,*(byte *)((int)&param_1[1].field_005B + 1),
                            *(int *)(iVar12 + 0x10 + *(int *)&param_1[1].field_0xd0),
                            *(int *)(iVar12 + 0x14 + *(int *)&param_1[1].field_0xd0),'\0');
@@ -378,6 +397,7 @@ LAB_004d4378:
                      PTR_00802a38->field_00E4);
         }
         (*param_1->vtable->vfunc_90)(3,0x362);
+        /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
         thunk_FUN_004abce0(*(void **)&param_1[1].field_0xc8,0xe,0,
                            **(int **)(*(int *)((int)*(void **)&param_1[1].field_0xc8 + 0x20) + 0x1f8
                                      ) + -1,'\0');
@@ -387,7 +407,9 @@ LAB_004d4378:
         break;
       case 2:
         if (99 < *(int *)&param_1[1].field_0x14) {
+          /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
           iVar11._0_2_ = param_1[1].field_0054;
+          /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
           iVar11._2_2_ = param_1[1].field_0056;
           if ((((iVar11 == 0) && (param_1[1].field_0010 == 0)) &&
               (param_1[1].field_000C == (SystemClassTy *)0x0)) &&
@@ -447,6 +469,7 @@ LAB_004d3f38:
               local_14 = local_14 - 1;
             } while (local_14 != 0);
           }
+/* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
 LAB_004d3f76:
           if (((99 < *(int *)&param_1[1].field_0x14) &&
               (iVar14._0_2_ = param_1[1].field_0054, iVar14._2_2_ = param_1[1].field_0056,
@@ -457,6 +480,7 @@ LAB_004d3f76:
           }
         }
         break;
+      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
       case 3:
         if (((*(uint *)(*(int *)&param_1[1].field_0xc8 + 0x1c) & 0x4000) == 0) &&
            (*(int *)((int)&param_1[1].field_004B + 1) == 0)) {
@@ -473,6 +497,7 @@ LAB_004d3f76:
                       ((STT3DSprC *)puVar15,*(char *)((int)&param_1[1].field_005B + 1) - 1);
           }
           (*param_1->vtable->vfunc_90)(3,0x362);
+          /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
           thunk_FUN_004abce0(*(void **)&param_1[1].field_0xc8,0xe,0,
                              **(int **)(*(int *)((int)*(void **)&param_1[1].field_0xc8 + 0x20) +
                                        0x1f8) + -1,'\0');
@@ -582,6 +607,7 @@ cf_error_exit_004D428D:
     if ((*(int *)&param_1[1].field_0058 == 2) && ((*(uint *)&param_1->field_0x1f1 & 0x4000) != 0)) {
       if ((*(int *)&param_1[1].field_0x14 < 100) &&
          ((param_1[1].field_0010 == 0 && (param_1[1].field_000C == (SystemClassTy *)0x0)))) {
+        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
         iVar12 = thunk_FUN_004b7520(CONCAT31((int3)(*(Global_sub_004B7520_param_2Enum *)
                                                      &param_1->field_0x259 >> 8),param_1->field_0x24
                                             ),
@@ -712,7 +738,9 @@ LAB_004d43f5:
               if (*(int *)&param_1[1].field_0x30 == 0) {
                 thunk_FUN_00621580(DAT_00811798,*(uint *)&param_1->field_0x24,3);
               }
+              /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
               iVar2._0_2_ = param_1[1].field_0034;
+              /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
               iVar2._2_2_ = param_1[1].field_0036;
               if (iVar2 == 0) {
                 thunk_FUN_00621580(DAT_00811798,*(uint *)&param_1->field_0x24,7);
@@ -748,6 +776,7 @@ LAB_004d43f5:
             if (99 < *(int *)&param_1[1].field_0x14) {
               *(undefined4 *)&param_1[1].field_0x14 = 100;
               thunk_FUN_004d7570(param_1->field_0x24,0,param_1->field_0018);
+              /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
               if (*(uint *)&param_1->field_0x24 == (uint)*(byte *)(param_1->field_0010 + 0x112d)) {
                 thunk_FUN_0052af50(0,*(float *)&param_1->field_0x1f9,*(float *)&param_1->field_0x1fd
                                   );
@@ -809,6 +838,7 @@ LAB_004d43f5:
                       *(uint *)(&DAT_00797748 + *(int *)&param_1[1].field_0xd4 * 0x44);
               piVar13[2] = uVar3;
               iVar12 = *(int *)&param_1[1].field_0xd4 * 0x44 + uVar3 * 8;
+              /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
               thunk_FUN_004ad380((void *)*piVar8,
                                  (*(int *)&param_1[1].field_0x6c - *(int *)(&DAT_0079774c + iVar12))
                                  + 0x10,(*(int *)&param_1[1].field_0x70 -
@@ -853,6 +883,7 @@ LAB_004d43f5:
   }
   puVar15 = &param_1->field_01D5;
   iVar12 = thunk_FUN_004ac910(puVar15,'\x06');
+  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   if ((iVar12 < *(int *)(*(int *)&param_1->field_0x1f5 + 0xec)) ||
      (iVar12 = thunk_FUN_004ac910(puVar15,'\a'),
      iVar12 < *(int *)(*(int *)&param_1->field_0x1f5 + 0x110))) {

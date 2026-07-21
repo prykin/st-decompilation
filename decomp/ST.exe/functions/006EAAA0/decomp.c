@@ -6,7 +6,7 @@ undefined4 __thiscall FUN_006eaaa0(void *this,uint param_1,int param_2)
   uint *puVar2;
   uint uVar3;
   uint uVar4;
-  
+
   if (param_1 < *(uint *)((int)this + 0x310)) {
     uVar3 = *(uint *)(*(int *)((int)this + 0x31c) + param_1 * 0x114);
     puVar1 = (uint *)(*(int *)((int)this + 0x31c) + param_1 * 0x114);

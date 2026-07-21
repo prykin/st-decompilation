@@ -22,7 +22,7 @@ FUN_005f3bf0(void *this,int param_1,int param_2,undefined4 param_3,char param_4)
   int local_10;
   int local_c;
   undefined4 local_8;
-  
+
   local_8 = 0;
   if (param_4 == '\0') {
     *(undefined2 *)((int)this + 0xd1) = *(undefined2 *)((int)this + 0x93);

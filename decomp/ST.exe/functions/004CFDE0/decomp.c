@@ -11,7 +11,7 @@ FUN_004cfde0(void *this,Global_sub_004CAFC0_param_1Enum param_1,uint param_2,uin
   int iVar2;
   uint uVar3;
   int iVar4;
-  
+
   uVar3 = GetPlayerRaceId(*(char *)((int)this + 0x23d));
   iVar1 = *(int *)((int)this + 0x245);
   iVar4 = (uVar3 & 0xff) - 1;
@@ -41,6 +41,7 @@ FUN_004cfde0(void *this,Global_sub_004CAFC0_param_1Enum param_1,uint param_2,uin
     return;
   }
   if (iVar2 == 4) {
+/* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
 LAB_004cff4c:
     uVar3 = *(uint *)((&PTR_DAT_007b5170)[iVar1] +
                      (param_2 + (iVar4 + *(int *)((int)this + 0x235) * 3) * 4) * 8);
@@ -50,6 +51,7 @@ LAB_004cff4c:
   }
   if (iVar2 != 5) {
     if (iVar2 == 2) {
+      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
       iVar1 = *(int *)((&PTR_DAT_007b5170)[iVar1] +
                       (param_2 + (iVar4 + *(int *)((int)this + 0x235) * 3) * 4) * 8);
       *param_3 = iVar1 - 0xfU;

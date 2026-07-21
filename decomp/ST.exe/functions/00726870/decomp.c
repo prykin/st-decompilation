@@ -4,7 +4,7 @@ void __cdecl FUN_00726870(int *param_1)
 {
   int *piVar1;
   int iVar2;
-  
+
   piVar1 = (int *)*param_1;
   if (piVar1 != (int *)0x0) {
     if (*(int *)((int)piVar1 + 0x11) != 0) {

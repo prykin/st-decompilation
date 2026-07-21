@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\nick\to_jbomb_m.Cpp
@@ -11,28 +13,24 @@ undefined4 __thiscall JumpManagC::GetMessage(JumpManagC *this,AnonShape_00617640
   int iVar3;
   int iVar4;
   undefined4 uVar5;
-  undefined4 unaff_ESI;
   AnonNested_00617640_0014_CD0B523E *pAVar6;
-  void *unaff_EDI;
   undefined4 *puVar7;
   InternalExceptionFrame local_54;
   byte *local_10;
   AnonShape_0060EA30_DCEB68AD *local_c;
   JumpManagC *local_8;
-  
+
   local_54.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_54;
   local_8 = this;
-  iVar3 = Library::MSVCRT::__setjmp3(local_54.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar3 = Library::MSVCRT::__setjmp3(local_54.jumpBuffer,0);
   pJVar2 = local_8;
   if (iVar3 != 0) {
     g_currentExceptionFrame = local_54.previous;
     iVar4 = ReportDebugMessage(s_E____titans_nick_to_jbomb_m_Cpp_007d005c,0x4b,0,iVar3,&DAT_007a4ccc
                                ,s_JumpManagC__GetMessage_007d0084);
     if (iVar4 != 0) {
-      pcVar1 = (code *)swi(3);
-      uVar5 = (*pcVar1)();
-      return uVar5;
+      STDebugBreak(); /* noreturn in standalone pseudocode */
     }
     RaiseInternalException(iVar3,0,s_E____titans_nick_to_jbomb_m_Cpp_007d005c,0x4d);
     return 0xffff;

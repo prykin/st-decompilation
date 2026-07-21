@@ -8,7 +8,7 @@ void __cdecl FUN_00575030(int *param_1,int param_2,int param_3)
   int iVar4;
   int iVar5;
   int iVar6;
-  
+
   piVar3 = param_1;
   iVar4 = (int)*(short *)((int)param_1 + 2) * (int)(short)*param_1;
   iVar5 = (short)*param_1 * param_3;

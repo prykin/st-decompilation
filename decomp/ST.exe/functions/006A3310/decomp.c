@@ -5,7 +5,7 @@ int __cdecl FUN_006a3310(int *param_1,int param_2,int param_3)
   int iVar1;
   int iVar2;
   int local_8;
-  
+
   local_8 = -1;
   iVar2 = 1;
   do {

@@ -1,8 +1,10 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\panel.cpp
    PanelTy::CreateBut
-   
+
    [STPrototypeApplier] Propagated parameter 8.
    Evidence: 00539280 -> 00538690 @ 005393BB | 0053EF20 -> 00538690 @ 0053F07B */
 
@@ -18,8 +20,6 @@ PanelTy::CreateBut(PanelTy *this,undefined4 param_1,int param_2,int param_3,int 
   int iVar3;
   int iVar4;
   undefined4 uVar5;
-  undefined4 unaff_ESI;
-  void *unaff_EDI;
   int *piVar6;
   InternalExceptionFrame local_1d0;
   int local_18c [4];
@@ -57,13 +57,13 @@ PanelTy::CreateBut(PanelTy *this,undefined4 param_1,int param_2,int param_3,int 
   PanelTy *local_10;
   ushort *local_c;
   undefined4 local_8;
-  
+
   local_c = (ushort *)0x0;
   local_8 = 0;
   local_1d0.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_1d0;
   local_10 = this;
-  iVar3 = Library::MSVCRT::__setjmp3(local_1d0.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar3 = Library::MSVCRT::__setjmp3(local_1d0.jumpBuffer,0);
   pPVar2 = local_10;
   if (iVar3 == 0) {
     piVar6 = local_18c;
@@ -119,6 +119,7 @@ PanelTy::CreateBut(PanelTy *this,undefined4 param_1,int param_2,int param_3,int 
       local_68 = FUN_0070aa70(DAT_00806790,param_14,0,1);
       local_64 = Library::Ourlib::MFIMG::mfImgGetWidth(DAT_00806790,0x12,param_14,1);
     }
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
     (**(code **)(*(int *)pPVar2->field_000C + 8))(2,&local_8,0,local_18c,0);
     g_currentExceptionFrame = local_1d0.previous;
     return local_8;
@@ -127,9 +128,7 @@ PanelTy::CreateBut(PanelTy *this,undefined4 param_1,int param_2,int param_3,int 
   iVar4 = ReportDebugMessage(s_E____titans_Andrey_panel_cpp_007c7390,0x97,0,iVar3,&DAT_007a4ccc,
                              s_PanelTy__CreateBut_007c7414);
   if (iVar4 != 0) {
-    pcVar1 = (code *)swi(3);
-    uVar5 = (*pcVar1)();
-    return uVar5;
+    STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   RaiseInternalException(iVar3,0,s_E____titans_Andrey_panel_cpp_007c7390,0x97);
   return 0;

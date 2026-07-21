@@ -1,7 +1,7 @@
 
 /* [STPrototypeApplier] Propagated parameter 3.
    Evidence: 007297E0 -> 0072AA60 @ 0072A2CC | 007297E0 -> 0072AA60 @ 0072A4E3
-   
+
    [STPrototypeApplier] Propagated parameter 5.
    Evidence: 007297E0 -> 0072AA60 @ 0072A2CC | 007297E0 -> 0072AA60 @ 0072A4E3 */
 
@@ -12,7 +12,7 @@ FUN_0072aa60(byte *param_1,int param_2,ushort *param_3,uint *param_4,int *param_
   int iVar1;
   int iVar2;
   uint uVar3;
-  
+
   iVar2 = param_5[1];
   if (iVar2 < param_5[2]) {
     do {

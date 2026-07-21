@@ -9,7 +9,7 @@ FUN_00616400(AnonShape_00616400_B4BF5EEF *param_1,int param_2,int param_3,int pa
   float fVar2;
   float fVar3;
   float10 fVar4;
-  
+
   fVar2 = (float)param_1->field_027C * _DAT_0079cea8;
   fVar3 = (float)param_1->field_0280 * _DAT_0079cea8;
   fVar4 = (float10)param_1->field_0284 * (float10)_DAT_0079cea8;

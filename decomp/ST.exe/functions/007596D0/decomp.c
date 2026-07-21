@@ -7,7 +7,7 @@ void FUN_007596d0(int *param_1)
   int iVar3;
   int iVar4;
   int iVar5;
-  
+
   iVar1 = *param_1;
   iVar4 = 0;
   iVar5 = 0;

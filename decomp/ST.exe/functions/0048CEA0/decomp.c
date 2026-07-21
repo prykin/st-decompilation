@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\To_boat.cpp
@@ -14,11 +16,11 @@ void __thiscall STBoatC::_CheckDefenceShots(STBoatC *this,int param_1)
   int iVar4;
   int iVar5;
   uint index;
-  undefined4 unaff_ESI;
+  /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
   int *unaff_EDI;
   uint *puVar6;
   InternalExceptionFrame local_68;
-  uint local_24;
+  undefined4 local_24;
   uint local_20;
   int local_1a;
   uint local_14;
@@ -26,21 +28,19 @@ void __thiscall STBoatC::_CheckDefenceShots(STBoatC *this,int param_1)
   short local_a;
   short local_8;
   short local_6;
-  
+
   local_14 = (int)this->field_0816 * (int)this->field_0816 * 0x9dd1;
   local_68.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_68;
   local_10 = this;
-  iVar3 = Library::MSVCRT::__setjmp3(local_68.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar3 = Library::MSVCRT::__setjmp3(local_68.jumpBuffer,0);
   pSVar2 = local_10;
   if (iVar3 != 0) {
     g_currentExceptionFrame = local_68.previous;
     iVar4 = ReportDebugMessage(s_E____titans_wlad_To_boat_cpp_007a9d3c,0x4bb4,0,iVar3,&DAT_007a4ccc,
                                s_STBoatC___CheckDefenceShots_007aba00);
     if (iVar4 != 0) {
-      pcVar1 = (code *)swi(3);
-      (*pcVar1)();
-      return;
+      STDebugBreak(); /* noreturn in standalone pseudocode */
     }
     RaiseInternalException(iVar3,0,s_E____titans_wlad_To_boat_cpp_007a9d3c,0x4bb5);
     return;
@@ -53,15 +53,19 @@ void __thiscall STBoatC::_CheckDefenceShots(STBoatC *this,int param_1)
         local_1a = local_1a - param_1;
         if (local_1a < 1) {
           puVar6 = (uint *)pSVar2->field_047B;
+          /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
           local_20 = CONCAT22(local_20._2_2_,0xffff);
         }
         else {
-          this_00 = STAllPlayersC::GetObjPtr(g_sTAllPlayers_007FA174,local_24,local_20,CASE_1);
+          this_00 = STAllPlayersC::GetObjPtr(g_sTAllPlayers_007FA174,(char)local_24,local_20,CASE_1)
+          ;
           if (this_00 != (STGameObjC *)0x0) {
             iVar3 = (*this_00->vtable[1].vfunc_24)();
             if (iVar3 == 1) {
+              /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
               iVar3 = (*this_00->vtable[1].MoveStep)(this_00,unaff_EDI);
               if (iVar3 == 1) {
+                /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
                 unaff_EDI = *(int **)&pSVar2->field_0x24;
                 iVar3 = (*this_00->vtable[1].vfunc_20)();
                 if (iVar3 == 1) {
@@ -70,6 +74,7 @@ void __thiscall STBoatC::_CheckDefenceShots(STBoatC *this,int param_1)
                   iVar4 = (int)pSVar2->field_0043 - (int)local_8;
                   iVar5 = (int)pSVar2->field_0045 - (int)local_6;
                   if (local_14 < (uint)(iVar4 * iVar4 + iVar3 * iVar3 + iVar5 * iVar5)) {
+                    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                     local_20 = CONCAT22(local_20._2_2_,0xffff);
                   }
                   puVar6 = (uint *)pSVar2->field_047B;
@@ -79,6 +84,7 @@ void __thiscall STBoatC::_CheckDefenceShots(STBoatC *this,int param_1)
             }
           }
           puVar6 = (uint *)pSVar2->field_047B;
+          /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
           local_20 = CONCAT22(local_20._2_2_,0xffff);
         }
 LAB_0048d016:

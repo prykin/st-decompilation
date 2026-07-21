@@ -11,7 +11,7 @@ int __fastcall FUN_007219a0(AnonShape_007219A0_88F70163 *param_1)
   uint uVar7;
   char *pcVar8;
   bool bVar9;
-  
+
   pAVar2 = param_1->field_0138;
   if ((pAVar2 == (AnonNested_007219A0_0138_7CAF6BF8 *)0x0) ||
      (uVar3 = pAVar2->field_0008, uVar3 == 0)) {

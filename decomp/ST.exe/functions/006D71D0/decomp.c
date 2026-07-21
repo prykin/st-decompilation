@@ -6,7 +6,7 @@ undefined4 __thiscall FUN_006d71d0(void *this,int param_1)
   void *this_01;
   undefined4 *puVar1;
   int local_8;
-  
+
   local_8 = 0;
   if ((*(int *)((int)this + 0x8c) == 0) || (*(int *)((int)this + 0x90) == 0)) {
     this_00 = (int *)Library::MSVCRT::FUN_0072e530(0xe8);
@@ -23,6 +23,7 @@ undefined4 __thiscall FUN_006d71d0(void *this,int param_1)
     *(int **)((int)this + 0x8c) = this_00;
     if (local_8 < 0) {
       if (this_00 != (int *)0x0) {
+        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
         (**(code **)(*this_00 + 0xc))(1);
       }
     }
@@ -37,10 +38,12 @@ undefined4 __thiscall FUN_006d71d0(void *this,int param_1)
       *(undefined4 **)((int)this + 0x90) = puVar1;
       if ((local_8 < 0) || (puVar1 == (undefined4 *)0x0)) {
         if (*(int **)((int)this + 0x8c) != (int *)0x0) {
+          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
           (**(code **)(**(int **)((int)this + 0x8c) + 0xc))(1);
         }
         *(undefined4 *)((int)this + 0x8c) = 0;
         if (*(int **)((int)this + 0x90) != (int *)0x0) {
+          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
           (**(code **)(**(int **)((int)this + 0x90) + 0xc))(1);
         }
         *(undefined4 *)((int)this + 0x90) = 0;

@@ -15,6 +15,7 @@ FUN_00728da0(void *this,int param_1,int param_2,short *param_3,uint param_4,int 
   uint uVar8;
   uint uVar9;
   int iVar10;
+  /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
   undefined4 unaff_EBX;
   int iVar11;
   int iVar12;
@@ -45,7 +46,7 @@ FUN_00728da0(void *this,int param_1,int param_2,short *param_3,uint param_4,int 
   undefined1 *puStack_10;
   undefined *puStack_c;
   undefined4 local_8;
-  
+
   puStack_c = &DAT_0079e2f8;
   puStack_10 = &LAB_0072d964;
   local_14 = ExceptionList;
@@ -364,6 +365,7 @@ LAB_007292a6:
     }
     local_44 = (int)sVar14;
     iVar10 = (int)sVar15;
+    /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
     iVar11 = (int)(short)unaff_EBX;
     local_9c = local_44;
     if (iVar11 < local_44) {
@@ -372,6 +374,7 @@ LAB_007292a6:
     if (local_44 < iVar11) {
       local_44 = iVar11;
     }
+    /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
     sVar16 = (short)((uint)unaff_EBX >> 0x10);
     iVar11 = (int)sVar16;
     local_a0 = iVar10;
@@ -406,6 +409,7 @@ LAB_007294f8:
         SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00728640::FUN_00728a80
                   (this,param_1,param_2,param_6);
       }
+      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
       else if (((local_9c < *(int *)((int)this + 0x30)) || (*(int *)((int)this + 0x38) <= local_44))
               || ((local_a0 < *(int *)((int)this + 0x34) || (*(int *)((int)this + 0x3c) <= local_50)
                   ))) {

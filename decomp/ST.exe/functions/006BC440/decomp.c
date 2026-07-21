@@ -13,7 +13,7 @@ FUN_006bc440(AnonShape_006BC440_9548EA86 *param_1,int param_2,int param_3,int pa
   char *pcVar7;
   int iVar8;
   int iVar9;
-  
+
   iVar8 = param_3 - *(int *)(&param_1->field_0x11c + param_1->field_01E4 * 8);
   if (iVar8 < 0) {
     param_5 = param_5 + iVar8;

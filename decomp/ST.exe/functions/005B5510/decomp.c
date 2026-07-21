@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\mmenuobj.cpp
@@ -13,8 +15,6 @@ MMObjTy::CreateSprBut
   int iVar2;
   int iVar3;
   undefined4 uVar4;
-  undefined4 unaff_ESI;
-  void *unaff_EDI;
   undefined4 *puVar5;
   undefined4 local_1cc [4];
   undefined4 local_1bc;
@@ -28,12 +28,12 @@ MMObjTy::CreateSprBut
   InternalExceptionFrame local_50;
   MMObjTy *local_c;
   undefined4 local_8;
-  
+
   local_8 = 0;
   local_50.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_50;
   local_c = this;
-  iVar2 = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar2 = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0);
   if (iVar2 == 0) {
     puVar5 = local_1cc;
     for (iVar2 = 0x5f; iVar2 != 0; iVar2 = iVar2 + -1) {
@@ -52,7 +52,8 @@ MMObjTy::CreateSprBut
     local_168 = 2;
     local_164 = param_8;
     local_16c = local_1ac;
-    (**(code **)(*(int *)local_c->field_000C + 8))(2,&local_8,0,local_1cc,0);
+    (*local_c->field_000C->vtable->CreateObject)
+              ((SystemClassTy *)local_c->field_000C,2,&local_8,(int *)0x0,local_1cc,0);
     g_currentExceptionFrame = local_50.previous;
     return local_8;
   }
@@ -60,9 +61,7 @@ MMObjTy::CreateSprBut
   iVar3 = ReportDebugMessage(s_E____titans_Start_mmenuobj_cpp_007cca38,0x47,0,iVar2,&DAT_007a4ccc,
                              s_MMObjTy__CreateSprBut_007cca78);
   if (iVar3 != 0) {
-    pcVar1 = (code *)swi(3);
-    uVar4 = (*pcVar1)();
-    return uVar4;
+    STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   RaiseInternalException(iVar2,0,s_E____titans_Start_mmenuobj_cpp_007cca38,0x47);
   return 0;

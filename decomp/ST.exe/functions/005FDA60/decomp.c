@@ -6,7 +6,7 @@ void __fastcall FUN_005fda60(AnonShape_005FDA60_3863B978 *param_1)
   STT3DSprC *pSVar1;
   int iVar2;
   int local_8;
-  
+
   value = &param_1->field_0233;
   iVar2 = 0;
   if (param_1->field_0233 != 0) {

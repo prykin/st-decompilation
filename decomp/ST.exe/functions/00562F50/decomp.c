@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* [STSourceProvenanceApplier begin]
@@ -79,7 +81,7 @@ void AiAiCalcMinesFields(uint param_1,int param_2,int param_3,int param_4,int pa
   undefined1 *puStack_10;
   undefined *puStack_c;
   int local_8;
-  
+
   local_8 = 0xffffffff;
   puStack_c = &DAT_0079aff0;
   puStack_10 = &LAB_0072d964;
@@ -968,9 +970,7 @@ LAB_005637bc:
       iVar14 = ReportDebugMessage(s_E____titans_scoreai_cpp_007c96b0,0xdc2,0,iVar13,&DAT_007a4ccc,
                                   s_AiAiCalcMinesFields_007c96e8);
       if (iVar14 != 0) {
-        pcVar3 = (code *)swi(3);
-        (*pcVar3)();
-        return;
+        STDebugBreak(); /* noreturn in standalone pseudocode */
       }
     }
     local_70 = iVar13;

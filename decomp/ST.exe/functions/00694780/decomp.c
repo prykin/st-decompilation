@@ -8,7 +8,7 @@ FUN_00694780(void *this,int param_1,uint param_2,uint param_3,int param_4,undefi
   uint uVar2;
   uint uVar3;
   undefined4 local_c;
-  
+
   local_c = 0;
   if (param_6 != 0) {
     do {

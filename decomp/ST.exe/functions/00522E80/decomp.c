@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\intercom.cpp
@@ -17,8 +19,6 @@ IntercomPanelTy::GetMessage(IntercomPanelTy *this,AnonShape_00522E80_C2E4EACA *p
   undefined4 uVar7;
   int iVar8;
   uint uVar9;
-  undefined4 unaff_ESI;
-  void *unaff_EDI;
   uint **ppuVar10;
   uint *local_8dc [3];
   int local_8d0;
@@ -41,11 +41,11 @@ IntercomPanelTy::GetMessage(IntercomPanelTy *this,AnonShape_00522E80_C2E4EACA *p
   InternalExceptionFrame local_50;
   IntercomPanelTy *local_c;
   uint local_8;
-  
+
   local_50.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_50;
   local_c = this;
-  iVar5 = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar5 = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0);
   this_00 = local_c;
   if (iVar5 != 0) {
     g_currentExceptionFrame = local_50.previous;
@@ -55,9 +55,7 @@ IntercomPanelTy::GetMessage(IntercomPanelTy *this,AnonShape_00522E80_C2E4EACA *p
       RaiseInternalException(iVar5,0,s_E____titans_Andrey_intercom_cpp_007c401c,0x197);
       return 0xffff;
     }
-    pcVar4 = (code *)swi(3);
-    uVar7 = (*pcVar4)();
-    return uVar7;
+    STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   if (param_1->field_0010 == 2) {
     PreInitIntercomPanel(local_c);
@@ -184,7 +182,7 @@ IntercomPanelTy::GetMessage(IntercomPanelTy *this,AnonShape_00522E80_C2E4EACA *p
     }
     pbVar3 = (byte *)this_00->field_019C;
     Library::DKW::WGR::FUN_006b55f0
-              ((AnonShape_006B84D0_7C7D97C6 *)this_00->field_0068,0,
+              ((AnonShape_006B5B10_E0D06CF1 *)this_00->field_0068,0,
                (-(uint)(DAT_0080874e != '\x03') & 0xffffffe7) + 0x1e,5,pbVar3,0,0,0,
                *(int *)(pbVar3 + 4),*(int *)(pbVar3 + 8));
     Library::DKW::DDX::FUN_006b3640

@@ -3,10 +3,10 @@
    Recovered source file: E:\__titans\Maps\CntLib.cpp
    Diagnostic line evidence: 78 (metadata/report site, not the function definition)
    [STSourceProvenanceApplier end]
-   
+
    [STPrototypeApplier] Propagated parameter 1.
    Evidence: 00691690 parameter used as this of cMf32::RecMemFree @ 006916D3
-   
+
    [STPrototypeApplier] Propagated parameter 2.
    Evidence: 00691690 parameter used as this of cMf32::RecChk @ 00691857 | 00691690 parameter used
    as this of cMf32::RecChk @ 006918C9 */
@@ -54,7 +54,7 @@ FUN_00691690(void *this,cMf32 *param_1,cMf32 *param_2,int param_3,undefined *par
   int *local_10;
   int local_c;
   uint local_8;
-  
+
   local_14 = this;
   local_38 = Library::Ourlib::MFAOBJ::mfAObjLoad(param_1,s_2D_CLT_007d59b8,0,0);
   if (local_38 != (ushort *)0x0) {
@@ -115,6 +115,7 @@ LAB_0069177d:
       do {
         if (((param_3 == 0) || (local_c != 0)) || (local_8 != 0)) {
           if (param_4 != (undefined *)0x0) {
+            /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
             (*(code *)param_4)(0);
           }
           uVar9 = local_8;
@@ -260,6 +261,7 @@ LAB_00691a65:
               }
               puVar10 = Library::Ourlib::MFSTMAP::FUN_006f0cd0(param_1,pcVar5,0);
               if (puVar10 == (ushort *)0x0) {
+                /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
                 psVar1 = (short *)(*(int *)((int)local_14 + (local_18 + local_8) * 4 + 0x1a74) +
                                   0x23);
                 *psVar1 = *psVar1 + 1;
@@ -348,6 +350,7 @@ LAB_00691a65:
                 puVar4 = puVar4 + 1;
               }
               if (puVar10 == (ushort *)0x0) {
+                /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
                 psVar1 = (short *)(*(int *)((int)local_14 + (local_18 + local_8) * 4 + 0x1b08) +
                                   0x23);
                 *psVar1 = *psVar1 + 1;

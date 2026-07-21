@@ -4,7 +4,7 @@ short * FUN_0074d59e(short *param_1,short *param_2,int param_3)
 {
   short sVar1;
   short *psVar2;
-  
+
   psVar2 = param_1;
   if (param_3 != 0) {
     do {

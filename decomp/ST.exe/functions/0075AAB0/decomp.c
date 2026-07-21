@@ -19,7 +19,7 @@ undefined4 FUN_0075aab0(AnonShape_0075AAB0_12234AD6 *param_1)
   int *local_10;
   int local_c;
   int local_8;
-  
+
   iVar7 = param_1->field_019A;
   local_8 = 0;
   local_24 = iVar7;
@@ -27,7 +27,9 @@ undefined4 FUN_0075aab0(AnonShape_0075AAB0_12234AD6 *param_1)
     local_1c = local_38;
     local_10 = (int *)&param_1->field_0x13a;
     do {
+      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
       iVar1 = *(int *)(*local_10 + 0xc);
+      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
       iVar1 = (**(code **)(*(int *)param_1 + 0x20))
                         (param_1,*(undefined4 *)(iVar7 + 0x48 + *(int *)(*local_10 + 4) * 4),
                          *(int *)&param_1->field_0x8c * iVar1,iVar1,1);
@@ -80,6 +82,7 @@ undefined4 FUN_0075aab0(AnonShape_0075AAB0_12234AD6 *param_1)
               iVar7 = local_24;
             } while (local_8 < param_1->field_0136);
           }
+          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
           iVar1 = (**(code **)(param_1->field_01AA + 4))(param_1,iVar7 + 0x20);
           if (iVar1 == 0) {
             *(int *)(iVar7 + 0x18) = local_c;
@@ -96,6 +99,7 @@ undefined4 FUN_0075aab0(AnonShape_0075AAB0_12234AD6 *param_1)
   uVar5 = *(int *)&param_1->field_0x8c + 1;
   *(uint *)&param_1->field_0x8c = uVar5;
   if (param_1->field_012E <= uVar5) {
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
     (**(code **)(param_1->field_01A2 + 0xc))(param_1);
     return 4;
   }

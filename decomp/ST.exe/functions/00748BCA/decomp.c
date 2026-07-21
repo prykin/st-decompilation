@@ -5,7 +5,7 @@ undefined4 FUN_00748bca(AnonShape_00748BCA_3A4BA79D *param_1,undefined4 *param_2
   uint uVar1;
   int iVar2;
   undefined4 uVar3;
-  
+
   if ((param_1->field_0004 & 0x100) == 0) {
     if ((param_1->field_0004 & 0x10) == 0) {
       uVar3 = 0x80040249;

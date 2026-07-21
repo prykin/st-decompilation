@@ -7,7 +7,7 @@ FUN_006a2e50(int param_1,int param_2,int param_3,int param_4,undefined4 param_5,
   char *pcVar1;
   int iVar2;
   char *pcVar3;
-  
+
   pcVar3 = param_6;
   if (0 < param_8) {
     param_6 = (char *)param_8;

@@ -1,8 +1,10 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\to_allpl.cpp
    STAllPlayersC::CheckTmps
-   
+
    [STPrototypeRepairApplier] Propagated parameter 5.
    Evidence: 00433E90 -> 0044AB90 @ 004343EA | 00433E90 -> 0044AB90 @ 0043443E | 00433E90 ->
    0044AB90 @ 004344DB | 00433E90 -> 0044AB90 @ 00434544 | 00433E90 -> 0044AB90 @ 004345A7 |
@@ -29,18 +31,21 @@ int STAllPlayersC::CheckTmps
   dword dVar4;
   uint uVar5;
   int iVar6;
+  /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
   short in_stack_00000006;
+  /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
   short in_stack_0000001a;
   DArrayTy *local_10;
   DArrayTy *local_c;
   DArrayTy *local_8;
-  
+
   iVar2 = objectType;
   uVar5 = 0;
   local_c = (DArrayTy *)0x0;
   local_10 = (DArrayTy *)0x0;
   local_8 = (DArrayTy *)0x0;
   if (tempGroup == 0) {
+    /* ST_PSEUDO[flattened_global_record_array]: expected g_playerRuntime[player].field[index...] after base/stride proof */
     iVar6 = playerId * 0xa62 + 0x7f4f83;
   }
   else {
@@ -50,10 +55,9 @@ int STAllPlayersC::CheckTmps
       if (iVar2 == 0) {
         return -1;
       }
-      pcVar1 = (code *)swi(3);
-      iVar2 = (*pcVar1)();
-      return iVar2;
+      STDebugBreak(); /* noreturn in standalone pseudocode */
     }
+    /* ST_PSEUDO[flattened_global_record_array]: expected g_playerRuntime[player].field[index...] after base/stride proof */
     iVar6 = playerId * 0xa62 + 0x7f4fd3;
   }
   if (0x19a < objectType) {
@@ -75,8 +79,9 @@ LAB_0044ac57:
     if (0 < (int)dVar4) {
       do {
         DArrayGetElement(local_c,uVar5,&stack0x0000001a);
+        /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
         if (in_stack_0000001a == -1) {
-          FUN_006b0c70((AnonShape_006B0C70_7C4FE646 *)local_c,uVar5);
+          FUN_006b0c70(local_c,uVar5);
           dVar4 = dVar4 - 1;
           uVar5 = uVar5 - 1;
         }
@@ -97,8 +102,9 @@ LAB_0044ac57:
             if (0 < iVar6) {
               do {
                 DArrayGetElement(local_8,uVar5,&stack0x00000006);
+                /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
                 if (in_stack_00000006 == -1) {
-                  FUN_006b0c70((AnonShape_006B0C70_7C4FE646 *)local_8,uVar5);
+                  FUN_006b0c70(local_8,uVar5);
                   iVar6 = iVar6 + -1;
                   uVar5 = uVar5 - 1;
                 }
@@ -109,14 +115,15 @@ LAB_0044ac57:
                   DArrayGetElement(local_10,0,&stack0x0000001a);
                   uVar5 = 0;
                   if (iVar6 < 1) break;
+                  /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
                   while (DArrayGetElement(local_8,uVar5,&stack0x00000006),
                         in_stack_0000001a != in_stack_00000006) {
                     uVar5 = uVar5 + 1;
                     if (iVar6 <= (int)uVar5) goto LAB_0044ada0;
                   }
-                  FUN_006b0c70((AnonShape_006B0C70_7C4FE646 *)local_10,0);
+                  FUN_006b0c70(local_10,0);
                   tempGroup = tempGroup - 1;
-                  FUN_006b0c70((AnonShape_006B0C70_7C4FE646 *)local_8,uVar5);
+                  FUN_006b0c70(local_8,uVar5);
                   iVar6 = iVar6 + -1;
                   if ((int)tempGroup < 1) break;
                 }
@@ -174,8 +181,6 @@ LAB_0044ae21:
   if (iVar2 == 0) {
     return -1;
   }
-  pcVar1 = (code *)swi(3);
-  iVar2 = (*pcVar1)();
-  return iVar2;
+  STDebugBreak(); /* noreturn in standalone pseudocode */
 }
 

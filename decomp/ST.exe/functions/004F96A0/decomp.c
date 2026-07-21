@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\cpanel.cpp
@@ -19,8 +21,6 @@ void __thiscall CPanelTy::PlayBrief(CPanelTy *this,int param_1)
   int iVar10;
   uint uVar11;
   uint uVar12;
-  undefined4 unaff_ESI;
-  void *unaff_EDI;
   undefined1 *puVar13;
   byte bVar14;
   byte bVar15;
@@ -30,12 +30,12 @@ void __thiscall CPanelTy::PlayBrief(CPanelTy *this,int param_1)
   CPanelTy *local_10;
   char *local_c;
   AnonShape_006B5570_4D68B99C *local_8;
-  
+
   if ((DAT_0080c4f7 == 1) && (this->field_024B != (DArrayTy *)0x0)) {
     local_54.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_54;
     local_10 = this;
-    iVar4 = Library::MSVCRT::__setjmp3(local_54.jumpBuffer,0,unaff_EDI,unaff_ESI);
+    iVar4 = Library::MSVCRT::__setjmp3(local_54.jumpBuffer,0);
     pCVar3 = local_10;
     if (iVar4 == 0) {
       pDVar5 = local_10->field_024B;
@@ -43,6 +43,7 @@ void __thiscall CPanelTy::PlayBrief(CPanelTy *this,int param_1)
       if ((uint)local_10->field_024F < uVar11) {
         do {
           if ((uint)pCVar3->field_024F < uVar11) {
+            /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(pDVar5, pCVar3->field_024F) (runtime stride) */
             puVar13 = (undefined1 *)(pDVar5->elementSize * pCVar3->field_024F + (int)pDVar5->data);
           }
           else {
@@ -64,7 +65,7 @@ void __thiscall CPanelTy::PlayBrief(CPanelTy *this,int param_1)
               Library::MSVCRT::FUN_0072e2b0((HoloTy *)pCVar3->field_01D8);
               pCVar3->field_01D8 = 0;
             }
-            FUN_006b4170((AnonShape_006C7610_838EDECF *)pCVar3->field_01B4,0,100,5,0x226,0x55,0);
+            FUN_006b4170((AnonShape_006B5B10_E0D06CF1 *)pCVar3->field_01B4,0,100,5,0x226,0x55,0);
             local_8 = (AnonShape_006B5570_4D68B99C *)
                       Library::DKW::TBL::FUN_006b54f0((uint *)0x0,10,10);
             if (*(int *)(puVar13 + 10) < 1) {
@@ -200,6 +201,7 @@ LAB_004f9a8a:
             pCVar3->field_0028 = 0x5dc6;
             *(undefined **)&pCVar3->field_0x2c = &DAT_0080c4d7;
             if (DAT_008117bc != (undefined4 *)0x0) {
+              /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
               (**(code **)*DAT_008117bc)(&pCVar3->field_0x18);
             }
             pCVar3->field_0260 = CASE_4;
@@ -218,9 +220,7 @@ LAB_004f9a8a:
     iVar10 = ReportDebugMessage(s_E____titans_Andrey_cpanel_cpp_007c1bd8,0x3b0,0,iVar4,&DAT_007a4ccc
                                 ,s_CPanelTy__PlayBrief_007c2248);
     if (iVar10 != 0) {
-      pcVar2 = (code *)swi(3);
-      (*pcVar2)();
-      return;
+      STDebugBreak(); /* noreturn in standalone pseudocode */
     }
     RaiseInternalException(iVar4,0,s_E____titans_Andrey_cpanel_cpp_007c1bd8,0x3b0);
   }

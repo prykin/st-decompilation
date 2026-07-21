@@ -3,7 +3,7 @@ void __thiscall FUN_0052b760(void *this,AnonShape_0052B760_30F4E0D5 *param_1)
 
 {
   ushort uVar1;
-  
+
   switch(*(undefined1 *)((int)this + 0x68)) {
   case 1:
     param_1->field_0014 = 3;

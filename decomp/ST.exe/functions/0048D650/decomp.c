@@ -1,8 +1,11 @@
 
 /* [STPrototypeApplier] Propagated parameter 1.
-   Evidence: 0048D650 parameter used as this of STFishC::sub_004162B0 @ 0048D671 */
+   Evidence: 0048D650 parameter used as this of STFishC::sub_004162B0 @ 0048D671
+   [STAbiConsistencyApplier] full_eax_return: return=/int Evidence: all observed callers consume
+   full EAX (2), none consume AL/AX, and every RET path defines full EAX; sites=00465C60 @ 00468124
+   -> CMP CMP EAX,0x1 | 00465C60 @ 004682DC -> CMP CMP EAX,0x1 */
 
-bool __thiscall FUN_0048d650(void *this,STFishC *param_1)
+int __thiscall FUN_0048d650(void *this,STFishC *param_1)
 
 {
   short sVar1;
@@ -14,7 +17,7 @@ bool __thiscall FUN_0048d650(void *this,STFishC *param_1)
   int local_10;
   undefined2 local_c [2];
   undefined2 local_8 [2];
-  
+
   local_14 = 1000000;
   STFishC::sub_004162B0(param_1,(undefined2 *)&param_1,local_8,local_c);
   local_10 = 0;
@@ -44,6 +47,6 @@ bool __thiscall FUN_0048d650(void *this,STFishC *param_1)
     } while (iVar5 < 2);
     local_10 = local_10 + 1;
   } while (local_10 < 2);
-  return local_14 != 1000000;
+  return (uint)(local_14 != 1000000);
 }
 

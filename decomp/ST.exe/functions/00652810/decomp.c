@@ -23,87 +23,49 @@ void __thiscall AiEventClassTy::GetMessage(AiEventClassTy *this,STMessage *messa
   undefined1 *puVar11;
   DArrayTy *pDVar12;
   AiPlrClassTy *pAVar13;
-  undefined3 extraout_var;
-  undefined3 extraout_var_00;
-  undefined3 extraout_var_01;
-  undefined3 extraout_var_02;
-  undefined3 extraout_var_03;
-  undefined3 extraout_var_04;
-  undefined3 extraout_var_05;
-  undefined3 extraout_var_06;
-  undefined3 extraout_var_07;
-  undefined3 extraout_var_08;
-  undefined3 extraout_var_09;
-  undefined3 extraout_var_10;
   AiFltClassTy *pAVar14;
-  undefined3 extraout_var_11;
-  undefined3 extraout_var_12;
   uint *puVar15;
-  undefined3 extraout_var_13;
   STGroupBoatC *pSVar16;
   uint uVar17;
   dword *pdVar18;
   undefined2 *puVar19;
   AnonShape_00679600_B8E418A8 *pAVar20;
-  undefined3 extraout_var_14;
-  undefined3 extraout_var_15;
   STJellyGunC *pSVar21;
-  undefined3 extraout_var_16;
   AnonShape_0065DA10_8B0AA883 *pAVar22;
-  undefined3 extraout_var_17;
-  undefined3 extraout_var_18;
-  undefined3 extraout_var_19;
-  undefined3 extraout_var_20;
-  undefined3 extraout_var_21;
-  undefined3 extraout_var_22;
-  undefined3 extraout_var_23;
-  undefined3 extraout_var_24;
-  undefined3 extraout_var_25;
-  undefined3 extraout_var_26;
-  undefined3 extraout_var_27;
-  undefined3 extraout_var_28;
-  undefined3 extraout_var_29;
-  undefined3 extraout_var_30;
-  undefined3 extraout_var_31;
-  undefined3 extraout_var_32;
-  undefined3 extraout_var_33;
-  undefined3 extraout_var_34;
-  undefined3 extraout_var_35;
-  undefined3 extraout_var_36;
-  undefined3 extraout_var_37;
   short sVar23;
   CPanelTy *pCVar24;
+  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined4 extraout_ECX;
+  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined4 extraout_ECX_00;
-  undefined4 extraout_ECX_01;
-  undefined4 extraout_ECX_02;
-  undefined4 extraout_ECX_03;
-  undefined4 extraout_ECX_04;
-  undefined4 extraout_ECX_05;
-  undefined4 extraout_ECX_06;
   short sVar25;
   DArrayTy *pDVar26;
   undefined2 uVar28;
+  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined4 extraout_EDX;
   undefined4 uVar27;
+  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined4 extraout_EDX_00;
+  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   DArrayTy *extraout_EDX_01;
+  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined4 extraout_EDX_02;
+  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined4 extraout_EDX_03;
+  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined4 extraout_EDX_04;
+  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined4 extraout_EDX_05;
   AnonShape_00652810_4F58F813 *pAVar29;
   AnonNested_00652810_000F_9CE8027E *pAVar30;
   STFishC *pSVar31;
   uint uVar32;
   uint uVar33;
-  undefined4 unaff_ESI;
-  void *unaff_EDI;
   undefined4 *puVar34;
   uint **ppuVar35;
   bool bVar36;
   int iVar37;
-  int iVar38;
+  AiFltClassTyVTable *pAVar38;
   dword dVar39;
   byte local_484 [256];
   byte local_384 [256];
@@ -183,12 +145,13 @@ void __thiscall AiEventClassTy::GetMessage(AiEventClassTy *this,STMessage *messa
   AiFltClassTy *local_10;
   DArrayTy *local_c;
   DArrayTy *local_8;
-  
+
   local_180 = (DArrayTy *)0x0;
   local_198 = 0;
   if ((g_sTAllPlayers_007FA174 != (STAllPlayersC *)0x0) &&
      (local_188 = this, iVar7 = sub_0065BD70(this,message,0), -1 < iVar7)) {
     local_194 = iVar7;
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
     uVar8 = (*(code *)this->field_0000->field_0018)();
     this->field_052B = uVar8;
     if ((iVar7 != 0x456) ||
@@ -197,7 +160,7 @@ void __thiscall AiEventClassTy::GetMessage(AiEventClassTy *this,STMessage *messa
       local_19c = *(int *)(this->field_04E2 + 8);
       local_284.previous = g_currentExceptionFrame;
       g_currentExceptionFrame = &local_284;
-      iVar7 = Library::MSVCRT::__setjmp3(local_284.jumpBuffer,0,unaff_EDI,unaff_ESI);
+      iVar7 = Library::MSVCRT::__setjmp3(local_284.jumpBuffer,0);
       this_00 = local_188;
       if (iVar7 == 0) {
         local_14 = 0;
@@ -207,6 +170,7 @@ void __thiscall AiEventClassTy::GetMessage(AiEventClassTy *this,STMessage *messa
           do {
             uVar33 = local_14;
             if (bVar36) {
+              /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(pDVar12, local_14) (runtime stride) */
               pAVar29 = (AnonShape_00652810_4F58F813 *)
                         (pDVar12->elementSize * local_14 + (int)pDVar12->data);
             }
@@ -226,11 +190,12 @@ void __thiscall AiEventClassTy::GetMessage(AiEventClassTy *this,STMessage *messa
                                            (int)*(short *)&pAVar29->field_0x9,(short *)local_16c);
                 uVar17 = uVar33;
                 if (iVar7 < 0) {
-                  iVar38 = this_00->field_0084;
+                  iVar37 = this_00->field_0084;
                   pcVar9 = &this_00->field_0x4;
                 }
                 else {
                   if (local_9c == '\b') {
+                    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                     if ((DArrayTy *)local_16c._8_4_ != (DArrayTy *)0x0) {
                       *(char *)pAVar29 = '\x01';
                       pAVar29->field_000B = 0;
@@ -264,11 +229,14 @@ void __thiscall AiEventClassTy::GetMessage(AiEventClassTy *this,STMessage *messa
                                 if (iVar7 != 0x76c) {
                                   switch(iVar7) {
                                   case 0x5dc:
-                                    iVar38 = thunk_FUN_00651010((short *)local_16c);
-                                    if (iVar38 != 0) {
-                                      iVar38 = (*(code *)this_00->field_0000->field_0018)();
-                                      if ((iVar38 != 8) ||
+                                    iVar37 = thunk_FUN_00651010((short *)local_16c);
+                                    if (iVar37 != 0) {
+                                      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+                                      iVar37 = (*(code *)this_00->field_0000->field_0018)();
+                                      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+                                      if ((iVar37 != 8) ||
                                          ((DArrayTy *)local_16c._8_4_ != (DArrayTy *)0x9)) {
+                                        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                         pDVar12 = (DArrayTy *)
                                                   thunk_FUN_00668f50(this_00,(char *)local_16c._8_4_
                                                                      ,(uint)local_160,
@@ -290,11 +258,14 @@ void __thiscall AiEventClassTy::GetMessage(AiEventClassTy *this,STMessage *messa
                                     }
                                     break;
                                   case 0x5dd:
-                                    bVar36 = thunk_FUN_00651120((int)local_16c);
-                                    if (CONCAT31(extraout_var_15,bVar36) != 0) {
-                                      iVar38 = (*(code *)this_00->field_0000->field_0018)();
-                                      if ((iVar38 != 8) ||
+                                    iVar37 = thunk_FUN_00651120((int)local_16c);
+                                    if (iVar37 != 0) {
+                                      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+                                      iVar37 = (*(code *)this_00->field_0000->field_0018)();
+                                      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+                                      if ((iVar37 != 8) ||
                                          ((DArrayTy *)local_16c._8_4_ != (DArrayTy *)0x9)) {
+                                        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                         pDVar12 = (DArrayTy *)
                                                   thunk_FUN_00668f50(this_00,(char *)local_16c._8_4_
                                                                      ,(uint)local_160,
@@ -303,24 +274,24 @@ void __thiscall AiEventClassTy::GetMessage(AiEventClassTy *this,STMessage *messa
                                           local_10 = (AiFltClassTy *)&local_34;
                                           local_c = pDVar12;
                                           do {
-                                            pSVar16 = thunk_FUN_0042b760(CONCAT31((int3)((uint)
-                                                  local_10 >> 8),*(undefined1 *)local_10),
-                                                  (uint)local_15c);
+                                            pSVar16 = thunk_FUN_0042b760(*(char *)&local_10->vtable,
+                                                                         (uint)local_15c);
                                             if (pSVar16 == (STGroupBoatC *)0x0) {
                                               thunk_FUN_0064d0e0(this_00,-0xaa,&DAT_008016a0,uVar33,
-                                                                 *(int *)local_10);
+                                                                 (int)local_10->vtable);
                                             }
                                             else {
                                               pSVar21 = (STJellyGunC *)
                                                         thunk_FUN_00423300((int)pSVar16);
                                               if (pSVar21 == (STJellyGunC *)0x0) {
-                                                iVar38 = *(int *)local_10;
+                                                pAVar38 = local_10->vtable;
                                                 uVar17 = uVar33;
                                                 pcVar9 = thunk_FUN_00674af0(iVar7);
                                                 thunk_FUN_0064d0e0(this_00,-0xab,pcVar9,uVar17,
-                                                                   iVar38);
+                                                                   (int)pAVar38);
                                               }
                                               else {
+                                                /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
                                                 thunk_FUN_0065d630(pSVar21,extraout_EDX_04);
                                               }
                                             }
@@ -334,11 +305,14 @@ void __thiscall AiEventClassTy::GetMessage(AiEventClassTy *this,STMessage *messa
                                     }
                                     break;
                                   case 0x5de:
-                                    bVar36 = thunk_FUN_00651160((int)local_16c);
-                                    if (CONCAT31(extraout_var_16,bVar36) != 0) {
-                                      iVar38 = (*(code *)this_00->field_0000->field_0018)();
-                                      if ((iVar38 != 8) ||
+                                    iVar37 = thunk_FUN_00651160((int)local_16c);
+                                    if (iVar37 != 0) {
+                                      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+                                      iVar37 = (*(code *)this_00->field_0000->field_0018)();
+                                      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+                                      if ((iVar37 != 8) ||
                                          ((DArrayTy *)local_16c._8_4_ != (DArrayTy *)0x9)) {
+                                        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                         pDVar12 = (DArrayTy *)
                                                   thunk_FUN_00668f50(this_00,(char *)local_16c._8_4_
                                                                      ,(uint)local_160,
@@ -347,24 +321,24 @@ void __thiscall AiEventClassTy::GetMessage(AiEventClassTy *this,STMessage *messa
                                           local_10 = (AiFltClassTy *)&local_34;
                                           local_c = pDVar12;
                                           do {
-                                            pSVar16 = thunk_FUN_0042b760(CONCAT31((int3)((uint)
-                                                  local_10 >> 8),*(undefined1 *)local_10),
-                                                  (uint)local_15c);
+                                            pSVar16 = thunk_FUN_0042b760(*(char *)&local_10->vtable,
+                                                                         (uint)local_15c);
                                             if (pSVar16 == (STGroupBoatC *)0x0) {
                                               thunk_FUN_0064d0e0(this_00,-0xaa,&DAT_008016a0,uVar33,
-                                                                 *(int *)local_10);
+                                                                 (int)local_10->vtable);
                                             }
                                             else {
                                               pAVar22 = (AnonShape_0065DA10_8B0AA883 *)
                                                         thunk_FUN_00423300((int)pSVar16);
                                               if (pAVar22 == (AnonShape_0065DA10_8B0AA883 *)0x0) {
-                                                iVar38 = *(int *)local_10;
+                                                pAVar38 = local_10->vtable;
                                                 uVar17 = uVar33;
                                                 pcVar9 = thunk_FUN_00674af0(iVar7);
                                                 thunk_FUN_0064d0e0(this_00,-0xab,pcVar9,uVar17,
-                                                                   iVar38);
+                                                                   (int)pAVar38);
                                               }
                                               else {
+                                                /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
                                                 thunk_FUN_0065e6c0(pAVar22,extraout_EDX_05);
                                               }
                                             }
@@ -378,11 +352,14 @@ void __thiscall AiEventClassTy::GetMessage(AiEventClassTy *this,STMessage *messa
                                     }
                                     break;
                                   case 0x5df:
-                                    bVar36 = thunk_FUN_00651160((int)local_16c);
-                                    if (CONCAT31(extraout_var_17,bVar36) != 0) {
-                                      iVar38 = (*(code *)this_00->field_0000->field_0018)();
-                                      if ((iVar38 != 8) ||
+                                    iVar37 = thunk_FUN_00651160((int)local_16c);
+                                    if (iVar37 != 0) {
+                                      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+                                      iVar37 = (*(code *)this_00->field_0000->field_0018)();
+                                      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+                                      if ((iVar37 != 8) ||
                                          ((DArrayTy *)local_16c._8_4_ != (DArrayTy *)0x9)) {
+                                        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                         pDVar12 = (DArrayTy *)
                                                   thunk_FUN_00668f50(this_00,(char *)local_16c._8_4_
                                                                      ,(uint)local_160,
@@ -391,25 +368,24 @@ void __thiscall AiEventClassTy::GetMessage(AiEventClassTy *this,STMessage *messa
                                           local_10 = (AiFltClassTy *)&local_34;
                                           local_8 = pDVar12;
                                           do {
-                                            pSVar16 = thunk_FUN_0042b760(CONCAT31((int3)((uint)
-                                                  local_10 >> 8),*(undefined1 *)local_10),
-                                                  (uint)local_15c);
+                                            pSVar16 = thunk_FUN_0042b760(*(char *)&local_10->vtable,
+                                                                         (uint)local_15c);
                                             if (pSVar16 == (STGroupBoatC *)0x0) {
                                               thunk_FUN_0064d0e0(this_00,-0xaa,&DAT_008016a0,uVar33,
-                                                                 *(int *)local_10);
+                                                                 (int)local_10->vtable);
                                             }
                                             else {
                                               local_17c = (void *)thunk_FUN_00423300((int)pSVar16);
                                               if (local_17c == (void *)0x0) {
-                                                iVar38 = *(int *)local_10;
+                                                pAVar38 = local_10->vtable;
                                                 uVar17 = uVar33;
                                                 pcVar9 = thunk_FUN_00674af0(iVar7);
                                                 thunk_FUN_0064d0e0(this_00,-0xab,pcVar9,uVar17,
-                                                                   iVar38);
+                                                                   (int)pAVar38);
                                               }
                                               else {
                                                 local_c = (DArrayTy *)
-                                                          _GetStaffGrpExch(*(undefined4 *)local_10);
+                                                          _GetStaffGrpExch(local_10->vtable);
                                                 if (local_c != (DArrayTy *)0x0) {
                                                   thunk_FUN_0065d940(local_17c,(uint *)local_c,0);
                                                   DArrayDestroy(local_c);
@@ -426,11 +402,14 @@ void __thiscall AiEventClassTy::GetMessage(AiEventClassTy *this,STMessage *messa
                                     }
                                     break;
                                   case 0x5e0:
-                                    bVar36 = thunk_FUN_006511a0((int)local_16c);
-                                    if (CONCAT31(extraout_var_18,bVar36) != 0) {
-                                      iVar38 = (*(code *)this_00->field_0000->field_0018)();
-                                      if ((iVar38 != 8) ||
+                                    iVar37 = thunk_FUN_006511a0((int)local_16c);
+                                    if (iVar37 != 0) {
+                                      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+                                      iVar37 = (*(code *)this_00->field_0000->field_0018)();
+                                      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+                                      if ((iVar37 != 8) ||
                                          ((DArrayTy *)local_16c._8_4_ != (DArrayTy *)0x9)) {
+                                        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                         pDVar12 = (DArrayTy *)
                                                   thunk_FUN_00668f50(this_00,(char *)local_16c._8_4_
                                                                      ,(uint)local_160,
@@ -438,20 +417,15 @@ void __thiscall AiEventClassTy::GetMessage(AiEventClassTy *this,STMessage *messa
                                         if (0 < (int)pDVar12) {
                                           pDVar26 = &local_34;
                                           local_c = pDVar12;
-                                          uVar8 = extraout_ECX_01;
                                           do {
-                                            pSVar16 = thunk_FUN_0042b760(CONCAT31((int3)((uint)uVar8
-                                                                                        >> 8),
-                                                                                  (char)pDVar26->
-                                                  flags),(uint)local_15c);
+                                            pSVar16 = thunk_FUN_0042b760((char)pDVar26->flags,
+                                                                         (uint)local_15c);
                                             if (pSVar16 == (STGroupBoatC *)0x0) {
                                               thunk_FUN_0064d0e0(this_00,-0xaa,&DAT_008016a0,uVar33,
                                                                  pDVar26->flags);
-                                              uVar8 = extraout_ECX_02;
                                             }
                                             else {
                                               thunk_FUN_00424530(pSVar16,(uint)local_158);
-                                              uVar8 = extraout_ECX_03;
                                             }
                                             pDVar26 = (DArrayTy *)&pDVar26->iteratorIndex;
                                             local_c = (DArrayTy *)((int)&local_c[-1].data + 3);
@@ -462,11 +436,14 @@ void __thiscall AiEventClassTy::GetMessage(AiEventClassTy *this,STMessage *messa
                                     }
                                     break;
                                   case 0x5e1:
-                                    bVar36 = thunk_FUN_006511a0((int)local_16c);
-                                    if (CONCAT31(extraout_var_19,bVar36) != 0) {
-                                      iVar38 = (*(code *)this_00->field_0000->field_0018)();
-                                      if ((iVar38 != 8) ||
+                                    iVar37 = thunk_FUN_006511a0((int)local_16c);
+                                    if (iVar37 != 0) {
+                                      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+                                      iVar37 = (*(code *)this_00->field_0000->field_0018)();
+                                      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+                                      if ((iVar37 != 8) ||
                                          ((DArrayTy *)local_16c._8_4_ != (DArrayTy *)0x9)) {
+                                        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                         pDVar12 = (DArrayTy *)
                                                   thunk_FUN_00668f50(this_00,(char *)local_16c._8_4_
                                                                      ,(uint)local_160,
@@ -474,20 +451,15 @@ void __thiscall AiEventClassTy::GetMessage(AiEventClassTy *this,STMessage *messa
                                         if (0 < (int)pDVar12) {
                                           pDVar26 = &local_34;
                                           local_c = pDVar12;
-                                          uVar8 = extraout_ECX_04;
                                           do {
-                                            pSVar16 = thunk_FUN_0042b760(CONCAT31((int3)((uint)uVar8
-                                                                                        >> 8),
-                                                                                  (char)pDVar26->
-                                                  flags),(uint)local_15c);
+                                            pSVar16 = thunk_FUN_0042b760((char)pDVar26->flags,
+                                                                         (uint)local_15c);
                                             if (pSVar16 == (STGroupBoatC *)0x0) {
                                               thunk_FUN_0064d0e0(this_00,-0xaa,&DAT_008016a0,uVar33,
                                                                  pDVar26->flags);
-                                              uVar8 = extraout_ECX_05;
                                             }
                                             else {
                                               thunk_FUN_00424620(pSVar16,(uint)local_158);
-                                              uVar8 = extraout_ECX_06;
                                             }
                                             pDVar26 = (DArrayTy *)&pDVar26->iteratorIndex;
                                             local_c = (DArrayTy *)((int)&local_c[-1].data + 3);
@@ -498,11 +470,14 @@ void __thiscall AiEventClassTy::GetMessage(AiEventClassTy *this,STMessage *messa
                                     }
                                     break;
                                   case 0x5e2:
-                                    bVar36 = thunk_FUN_006511e0((int)local_16c);
-                                    if (CONCAT31(extraout_var_20,bVar36) != 0) {
-                                      iVar38 = (*(code *)this_00->field_0000->field_0018)();
-                                      if ((iVar38 != 8) ||
+                                    iVar37 = thunk_FUN_006511e0((int)local_16c);
+                                    if (iVar37 != 0) {
+                                      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+                                      iVar37 = (*(code *)this_00->field_0000->field_0018)();
+                                      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+                                      if ((iVar37 != 8) ||
                                          ((DArrayTy *)local_16c._8_4_ != (DArrayTy *)0x9)) {
+                                        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                         pDVar12 = (DArrayTy *)
                                                   thunk_FUN_00668f50(this_00,(char *)local_16c._8_4_
                                                                      ,(uint)local_160,
@@ -511,28 +486,28 @@ void __thiscall AiEventClassTy::GetMessage(AiEventClassTy *this,STMessage *messa
                                           local_10 = (AiFltClassTy *)&local_34;
                                           local_c = pDVar12;
                                           do {
-                                            pSVar16 = thunk_FUN_0042b760(CONCAT31((int3)((uint)
-                                                  local_10 >> 8),*(undefined1 *)local_10),
-                                                  (uint)local_15c);
+                                            pSVar16 = thunk_FUN_0042b760(*(char *)&local_10->vtable,
+                                                                         (uint)local_15c);
                                             if (pSVar16 == (STGroupBoatC *)0x0) {
                                               thunk_FUN_0064d0e0(this_00,-0xaa,&DAT_008016a0,uVar33,
-                                                                 *(int *)local_10);
+                                                                 (int)local_10->vtable);
                                             }
                                             else {
                                               local_17c = (void *)thunk_FUN_00423300((int)pSVar16);
                                               if (local_17c == (void *)0x0) {
-                                                iVar38 = *(int *)local_10;
+                                                pAVar38 = local_10->vtable;
                                                 uVar17 = uVar33;
                                                 pcVar9 = thunk_FUN_00674af0(iVar7);
                                                 thunk_FUN_0064d0e0(this_00,-0xab,pcVar9,uVar17,
-                                                                   iVar38);
+                                                                   (int)pAVar38);
                                               }
                                               else {
                                                 pAVar13 = (AiPlrClassTy *)0x0;
                                                 local_8 = (DArrayTy *)0x0;
                                                 if (g_sTAllPlayers_007FA174 != (STAllPlayersC *)0x0)
                                                 {
-                                                  pAVar13 = thunk_FUN_004357f0(*(char *)local_10);
+                                                  pAVar13 = thunk_FUN_004357f0(*(char *)&local_10->
+                                                                                         vtable);
                                                 }
                                                 if (pAVar13 != (AiPlrClassTy *)0x0) {
                                                   local_8 = (DArrayTy *)
@@ -541,7 +516,7 @@ void __thiscall AiEventClassTy::GetMessage(AiEventClassTy *this,STMessage *messa
                                                 }
                                                 if (local_8 == (DArrayTy *)0x0) {
                                                   thunk_FUN_0064d0e0(this_00,-4,local_158,uVar33,
-                                                                     *(int *)local_10);
+                                                                     (int)local_10->vtable);
                                                 }
                                                 else {
                                                   thunk_FUN_0068e690(local_8,(int)local_17c);
@@ -558,11 +533,14 @@ void __thiscall AiEventClassTy::GetMessage(AiEventClassTy *this,STMessage *messa
                                     }
                                     break;
                                   case 0x5e3:
-                                    bVar36 = thunk_FUN_00651250((int)local_16c);
-                                    if (CONCAT31(extraout_var_21,bVar36) != 0) {
-                                      iVar38 = (*(code *)this_00->field_0000->field_0018)();
-                                      if ((iVar38 != 8) ||
+                                    iVar37 = thunk_FUN_00651250((int)local_16c);
+                                    if (iVar37 != 0) {
+                                      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+                                      iVar37 = (*(code *)this_00->field_0000->field_0018)();
+                                      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+                                      if ((iVar37 != 8) ||
                                          ((DArrayTy *)local_16c._8_4_ != (DArrayTy *)0x9)) {
+                                        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                         pDVar12 = (DArrayTy *)
                                                   thunk_FUN_00668f50(this_00,(char *)local_16c._8_4_
                                                                      ,(uint)local_160,
@@ -571,24 +549,23 @@ void __thiscall AiEventClassTy::GetMessage(AiEventClassTy *this,STMessage *messa
                                           local_10 = (AiFltClassTy *)&local_34;
                                           local_c = pDVar12;
                                           do {
-                                            pSVar16 = thunk_FUN_0042b760(CONCAT31((int3)((uint)
-                                                  local_10 >> 8),*(undefined1 *)local_10),
-                                                  (uint)local_15c);
+                                            pSVar16 = thunk_FUN_0042b760(*(char *)&local_10->vtable,
+                                                                         (uint)local_15c);
                                             if (pSVar16 == (STGroupBoatC *)0x0) {
                                               thunk_FUN_0064d0e0(this_00,-0xaa,&DAT_008016a0,uVar33,
-                                                                 *(int *)local_10);
+                                                                 (int)local_10->vtable);
                                             }
                                             else {
-                                              iVar38 = thunk_FUN_00423300((int)pSVar16);
-                                              if (iVar38 == 0) {
-                                                iVar38 = *(int *)local_10;
+                                              iVar37 = thunk_FUN_00423300((int)pSVar16);
+                                              if (iVar37 == 0) {
+                                                pAVar38 = local_10->vtable;
                                                 uVar17 = uVar33;
                                                 pcVar9 = thunk_FUN_00674af0(iVar7);
                                                 thunk_FUN_0064d0e0(this_00,-0xab,pcVar9,uVar17,
-                                                                   iVar38);
+                                                                   (int)pAVar38);
                                               }
                                               else {
-                                                thunk_FUN_0065d600(iVar38);
+                                                thunk_FUN_0065d600(iVar37);
                                               }
                                             }
                                             local_10 = (AiFltClassTy *)&local_10->field_0x4;
@@ -601,11 +578,14 @@ void __thiscall AiEventClassTy::GetMessage(AiEventClassTy *this,STMessage *messa
                                     }
                                     break;
                                   case 0x5e4:
-                                    iVar38 = thunk_FUN_00651290((short *)local_16c);
-                                    if (iVar38 != 0) {
-                                      iVar38 = (*(code *)this_00->field_0000->field_0018)();
-                                      if ((iVar38 != 8) ||
+                                    iVar37 = thunk_FUN_00651290((short *)local_16c);
+                                    if (iVar37 != 0) {
+                                      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+                                      iVar37 = (*(code *)this_00->field_0000->field_0018)();
+                                      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+                                      if ((iVar37 != 8) ||
                                          ((DArrayTy *)local_16c._8_4_ != (DArrayTy *)0x9)) {
+                                        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                         pDVar12 = (DArrayTy *)
                                                   thunk_FUN_00668f50(this_00,(char *)local_16c._8_4_
                                                                      ,(uint)local_160,
@@ -614,17 +594,16 @@ void __thiscall AiEventClassTy::GetMessage(AiEventClassTy *this,STMessage *messa
                                           local_10 = (AiFltClassTy *)&local_34;
                                           local_c = pDVar12;
                                           do {
-                                            pSVar16 = thunk_FUN_0042b760(CONCAT31((int3)((uint)
-                                                  local_10 >> 8),*(undefined1 *)local_10),
-                                                  (uint)local_15c);
+                                            pSVar16 = thunk_FUN_0042b760(*(char *)&local_10->vtable,
+                                                                         (uint)local_15c);
                                             uVar17 = uVar33;
                                             if (pSVar16 == (STGroupBoatC *)0x0) {
-                                              iVar38 = *(int *)local_10;
+                                              pAVar38 = local_10->vtable;
                                               pcVar9 = &DAT_008016a0;
                                               iVar37 = -0xaa;
 LAB_006577ae:
-                                              thunk_FUN_0064d0e0(this_00,iVar37,pcVar9,uVar17,iVar38
-                                                                );
+                                              thunk_FUN_0064d0e0(this_00,iVar37,pcVar9,uVar17,
+                                                                 (int)pAVar38);
                                             }
                                             else {
                                               pAVar14 = (AiFltClassTy *)
@@ -632,13 +611,13 @@ LAB_006577ae:
                                               if (((pAVar14 == (AiFltClassTy *)0x0) ||
                                                   (pAVar14->field_007B == 1)) ||
                                                  (pAVar14->field_007B == -0x8000)) {
-                                                iVar38 = *(int *)local_10;
+                                                pAVar38 = local_10->vtable;
                                                 pcVar9 = thunk_FUN_00674af0(iVar7);
                                                 iVar37 = -0xab;
                                                 goto LAB_006577ae;
                                               }
                                               puVar15 = local_68;
-                                              for (iVar38 = 0xd; iVar38 != 0; iVar38 = iVar38 + -1)
+                                              for (iVar37 = 0xd; iVar37 != 0; iVar37 = iVar37 + -1)
                                               {
                                                 *puVar15 = 0;
                                                 puVar15 = puVar15 + 1;
@@ -650,8 +629,9 @@ LAB_006577ae:
                                               uStack_5c = (undefined1)((uint)local_154 >> 0x18);
                                               uStack_59 = SUB41(local_14c,0);
                                               local_58 = (undefined1)((uint)local_14c >> 8);
+                                              /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                               local_60 = local_158._0_1_;
-                                              iVar38 = (int)local_144 * 0x19;
+                                              iVar37 = (int)local_144 * 0x19;
                                               uStack_5b = SUB41(local_150,0);
                                               uStack_5a = (undefined1)((uint)local_150 >> 8);
                                               local_68[0] = 1;
@@ -659,14 +639,14 @@ LAB_006577ae:
                                               uStack_56 = (undefined1)((uint)local_148 >> 8);
                                               uStack_55 = (undefined1)((uint)local_148 >> 0x10);
                                               uStack_54 = (undefined1)((uint)local_148 >> 0x18);
-                                              uStack_53 = (undefined1)iVar38;
-                                              uStack_52 = (undefined1)((uint)iVar38 >> 8);
-                                              uStack_51 = (undefined1)((uint)iVar38 >> 0x10);
-                                              uStack_50 = (undefined1)((uint)iVar38 >> 0x18);
-                                              iVar38 = local_140 * 0x19;
-                                              uStack_4f = (undefined1)iVar38;
-                                              local_4e = (undefined2)((uint)iVar38 >> 8);
-                                              uStack_4c = (undefined1)((uint)iVar38 >> 0x18);
+                                              uStack_53 = (undefined1)iVar37;
+                                              uStack_52 = (undefined1)((uint)iVar37 >> 8);
+                                              uStack_51 = (undefined1)((uint)iVar37 >> 0x10);
+                                              uStack_50 = (undefined1)((uint)iVar37 >> 0x18);
+                                              iVar37 = local_140 * 0x19;
+                                              uStack_4f = (undefined1)iVar37;
+                                              local_4e = (undefined2)((uint)iVar37 >> 8);
+                                              uStack_4c = (undefined1)((uint)iVar37 >> 0x18);
                                               AiFltClassTy::GetAiMess(pAVar14,local_68);
                                               uVar33 = local_14;
                                             }
@@ -680,11 +660,14 @@ LAB_006577ae:
                                     }
                                     break;
                                   case 0x5e5:
-                                    bVar36 = thunk_FUN_006514d0((short *)local_16c);
-                                    if (CONCAT31(extraout_var_22,bVar36) != 0) {
-                                      iVar38 = (*(code *)this_00->field_0000->field_0018)();
-                                      if ((iVar38 != 8) ||
+                                    iVar37 = thunk_FUN_006514d0((short *)local_16c);
+                                    if (iVar37 != 0) {
+                                      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+                                      iVar37 = (*(code *)this_00->field_0000->field_0018)();
+                                      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+                                      if ((iVar37 != 8) ||
                                          ((DArrayTy *)local_16c._8_4_ != (DArrayTy *)0x9)) {
+                                        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                         pDVar12 = (DArrayTy *)
                                                   thunk_FUN_00668f50(this_00,(char *)local_16c._8_4_
                                                                      ,(uint)local_160,
@@ -693,17 +676,16 @@ LAB_006577ae:
                                           local_10 = (AiFltClassTy *)&local_34;
                                           local_c = pDVar12;
                                           do {
-                                            pSVar16 = thunk_FUN_0042b760(CONCAT31((int3)((uint)
-                                                  local_10 >> 8),*(undefined1 *)local_10),
-                                                  (uint)local_15c);
+                                            pSVar16 = thunk_FUN_0042b760(*(char *)&local_10->vtable,
+                                                                         (uint)local_15c);
                                             uVar17 = uVar33;
                                             if (pSVar16 == (STGroupBoatC *)0x0) {
-                                              iVar38 = *(int *)local_10;
+                                              pAVar38 = local_10->vtable;
                                               pcVar9 = &DAT_008016a0;
                                               iVar37 = -0xaa;
 LAB_00657a41:
-                                              thunk_FUN_0064d0e0(this_00,iVar37,pcVar9,uVar17,iVar38
-                                                                );
+                                              thunk_FUN_0064d0e0(this_00,iVar37,pcVar9,uVar17,
+                                                                 (int)pAVar38);
                                             }
                                             else {
                                               pAVar14 = (AiFltClassTy *)
@@ -711,13 +693,13 @@ LAB_00657a41:
                                               if (((pAVar14 == (AiFltClassTy *)0x0) ||
                                                   (pAVar14->field_007B == 1)) ||
                                                  (pAVar14->field_007B == -0x8000)) {
-                                                iVar38 = *(int *)local_10;
+                                                pAVar38 = local_10->vtable;
                                                 pcVar9 = thunk_FUN_00674af0(iVar7);
                                                 iVar37 = -0xab;
                                                 goto LAB_00657a41;
                                               }
                                               puVar15 = local_68;
-                                              for (iVar38 = 0xd; iVar38 != 0; iVar38 = iVar38 + -1)
+                                              for (iVar37 = 0xd; iVar37 != 0; iVar37 = iVar37 + -1)
                                               {
                                                 *puVar15 = 0;
                                                 puVar15 = puVar15 + 1;
@@ -729,15 +711,16 @@ LAB_00657a41:
                                               uStack_5c = (undefined1)((uint)local_154 >> 0x18);
                                               uStack_59 = SUB41(local_14c,0);
                                               local_58 = (undefined1)((uint)local_14c >> 8);
+                                              /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                               local_60 = local_158._0_1_;
-                                              iVar38 = (int)local_148 * 0x19;
+                                              iVar37 = (int)local_148 * 0x19;
                                               uStack_5b = SUB41(local_150,0);
                                               uStack_5a = (undefined1)((uint)local_150 >> 8);
                                               local_68[0] = 2;
-                                              uStack_57 = (undefined1)iVar38;
-                                              uStack_56 = (undefined1)((uint)iVar38 >> 8);
-                                              uStack_55 = (undefined1)((uint)iVar38 >> 0x10);
-                                              uStack_54 = (undefined1)((uint)iVar38 >> 0x18);
+                                              uStack_57 = (undefined1)iVar37;
+                                              uStack_56 = (undefined1)((uint)iVar37 >> 8);
+                                              uStack_55 = (undefined1)((uint)iVar37 >> 0x10);
+                                              uStack_54 = (undefined1)((uint)iVar37 >> 0x18);
                                               AiFltClassTy::GetAiMess(pAVar14,local_68);
                                               uVar33 = local_14;
                                             }
@@ -751,11 +734,14 @@ LAB_00657a41:
                                     }
                                     break;
                                   case 0x5e6:
-                                    iVar38 = thunk_FUN_006513c0((short *)local_16c);
-                                    if (iVar38 != 0) {
-                                      iVar38 = (*(code *)this_00->field_0000->field_0018)();
-                                      if ((iVar38 != 8) ||
+                                    iVar37 = thunk_FUN_006513c0((short *)local_16c);
+                                    if (iVar37 != 0) {
+                                      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+                                      iVar37 = (*(code *)this_00->field_0000->field_0018)();
+                                      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+                                      if ((iVar37 != 8) ||
                                          ((DArrayTy *)local_16c._8_4_ != (DArrayTy *)0x9)) {
+                                        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                         pDVar12 = (DArrayTy *)
                                                   thunk_FUN_00668f50(this_00,(char *)local_16c._8_4_
                                                                      ,(uint)local_160,
@@ -764,17 +750,16 @@ LAB_00657a41:
                                           local_10 = (AiFltClassTy *)&local_34;
                                           local_c = pDVar12;
                                           do {
-                                            pSVar16 = thunk_FUN_0042b760(CONCAT31((int3)((uint)
-                                                  local_10 >> 8),*(undefined1 *)local_10),
-                                                  (uint)local_15c);
+                                            pSVar16 = thunk_FUN_0042b760(*(char *)&local_10->vtable,
+                                                                         (uint)local_15c);
                                             uVar17 = uVar33;
                                             if (pSVar16 == (STGroupBoatC *)0x0) {
-                                              iVar38 = *(int *)local_10;
+                                              pAVar38 = local_10->vtable;
                                               pcVar9 = &DAT_008016a0;
                                               iVar37 = -0xaa;
 LAB_006578fe:
-                                              thunk_FUN_0064d0e0(this_00,iVar37,pcVar9,uVar17,iVar38
-                                                                );
+                                              thunk_FUN_0064d0e0(this_00,iVar37,pcVar9,uVar17,
+                                                                 (int)pAVar38);
                                             }
                                             else {
                                               pAVar14 = (AiFltClassTy *)
@@ -782,13 +767,13 @@ LAB_006578fe:
                                               if (((pAVar14 == (AiFltClassTy *)0x0) ||
                                                   (pAVar14->field_007B == 1)) ||
                                                  (pAVar14->field_007B == -0x8000)) {
-                                                iVar38 = *(int *)local_10;
+                                                pAVar38 = local_10->vtable;
                                                 pcVar9 = thunk_FUN_00674af0(iVar7);
                                                 iVar37 = -0xab;
                                                 goto LAB_006578fe;
                                               }
                                               puVar15 = local_68;
-                                              for (iVar38 = 0xd; iVar38 != 0; iVar38 = iVar38 + -1)
+                                              for (iVar37 = 0xd; iVar37 != 0; iVar37 = iVar37 + -1)
                                               {
                                                 *puVar15 = 0;
                                                 puVar15 = puVar15 + 1;
@@ -798,6 +783,7 @@ LAB_006578fe:
                                               uStack_5e = (undefined1)((uint)local_154 >> 8);
                                               uStack_5d = (undefined1)((uint)local_154 >> 0x10);
                                               uStack_5c = (undefined1)((uint)local_154 >> 0x18);
+                                              /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                               local_60 = local_158._0_1_;
                                               uStack_59 = SUB41(local_14c,0);
                                               local_58 = (undefined1)((uint)local_14c >> 8);
@@ -807,12 +793,12 @@ LAB_006578fe:
                                               uStack_52 = (undefined1)((uint)local_148 >> 8);
                                               uStack_51 = (undefined1)((uint)local_148 >> 0x10);
                                               uStack_50 = (undefined1)((uint)local_148 >> 0x18);
-                                              iVar38 = (int)local_144 * 0x19;
+                                              iVar37 = (int)local_144 * 0x19;
                                               local_68[0] = 3;
-                                              uStack_57 = (undefined1)iVar38;
-                                              uStack_56 = (undefined1)((uint)iVar38 >> 8);
-                                              uStack_55 = (undefined1)((uint)iVar38 >> 0x10);
-                                              uStack_54 = (undefined1)((uint)iVar38 >> 0x18);
+                                              uStack_57 = (undefined1)iVar37;
+                                              uStack_56 = (undefined1)((uint)iVar37 >> 8);
+                                              uStack_55 = (undefined1)((uint)iVar37 >> 0x10);
+                                              uStack_54 = (undefined1)((uint)iVar37 >> 0x18);
                                               AiFltClassTy::GetAiMess(pAVar14,local_68);
                                               uVar33 = local_14;
                                             }
@@ -826,11 +812,14 @@ LAB_006578fe:
                                     }
                                     break;
                                   case 0x5e7:
-                                    iVar38 = thunk_FUN_006515b0((short *)local_16c);
-                                    if (iVar38 != 0) {
-                                      iVar38 = (*(code *)this_00->field_0000->field_0018)();
-                                      if ((iVar38 != 8) ||
+                                    iVar37 = thunk_FUN_006515b0((short *)local_16c);
+                                    if (iVar37 != 0) {
+                                      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+                                      iVar37 = (*(code *)this_00->field_0000->field_0018)();
+                                      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+                                      if ((iVar37 != 8) ||
                                          ((DArrayTy *)local_16c._8_4_ != (DArrayTy *)0x9)) {
+                                        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                         pDVar12 = (DArrayTy *)
                                                   thunk_FUN_00668f50(this_00,(char *)local_16c._8_4_
                                                                      ,(uint)local_160,
@@ -839,16 +828,15 @@ LAB_006578fe:
                                           local_8 = &local_34;
                                           local_c = pDVar12;
                                           do {
-                                            pSVar16 = thunk_FUN_0042b760(CONCAT31((int3)((uint)
-                                                  local_8 >> 8),(char)local_8->flags),
-                                                  (uint)local_15c);
+                                            pSVar16 = thunk_FUN_0042b760((char)local_8->flags,
+                                                                         (uint)local_15c);
                                             uVar17 = uVar33;
                                             if (pSVar16 == (STGroupBoatC *)0x0) {
                                               dVar39 = local_8->flags;
                                               pcVar9 = &DAT_008016a0;
-                                              iVar38 = -0xaa;
+                                              iVar37 = -0xaa;
 LAB_00657bce:
-                                              thunk_FUN_0064d0e0(this_00,iVar38,pcVar9,uVar17,dVar39
+                                              thunk_FUN_0064d0e0(this_00,iVar37,pcVar9,uVar17,dVar39
                                                                 );
                                             }
                                             else {
@@ -858,11 +846,11 @@ LAB_00657bce:
                                                  (local_10->field_007B == -0x8000)) {
                                                 dVar39 = local_8->flags;
                                                 pcVar9 = thunk_FUN_00674af0(iVar7);
-                                                iVar38 = -0xab;
+                                                iVar37 = -0xab;
                                                 goto LAB_00657bce;
                                               }
                                               puVar15 = local_68;
-                                              for (iVar38 = 0xd; iVar38 != 0; iVar38 = iVar38 + -1)
+                                              for (iVar37 = 0xd; iVar37 != 0; iVar37 = iVar37 + -1)
                                               {
                                                 *puVar15 = 0;
                                                 puVar15 = puVar15 + 1;
@@ -910,11 +898,14 @@ LAB_00657bce:
                                     }
                                     break;
                                   case 0x5e8:
-                                    bVar36 = thunk_FUN_00651730((int)local_16c);
-                                    if (CONCAT31(extraout_var_23,bVar36) != 0) {
-                                      iVar38 = (*(code *)this_00->field_0000->field_0018)();
-                                      if ((iVar38 != 8) ||
+                                    iVar37 = thunk_FUN_00651730((int)local_16c);
+                                    if (iVar37 != 0) {
+                                      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+                                      iVar37 = (*(code *)this_00->field_0000->field_0018)();
+                                      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+                                      if ((iVar37 != 8) ||
                                          ((DArrayTy *)local_16c._8_4_ != (DArrayTy *)0x9)) {
+                                        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                         pDVar12 = (DArrayTy *)
                                                   thunk_FUN_00668f50(this_00,(char *)local_16c._8_4_
                                                                      ,(uint)local_160,
@@ -923,16 +914,15 @@ LAB_00657bce:
                                           local_8 = &local_34;
                                           local_c = pDVar12;
                                           do {
-                                            pSVar16 = thunk_FUN_0042b760(CONCAT31((int3)((uint)
-                                                  local_8 >> 8),(char)local_8->flags),
-                                                  (uint)local_15c);
+                                            pSVar16 = thunk_FUN_0042b760((char)local_8->flags,
+                                                                         (uint)local_15c);
                                             uVar17 = uVar33;
                                             if (pSVar16 == (STGroupBoatC *)0x0) {
                                               dVar39 = local_8->flags;
                                               pcVar9 = &DAT_008016a0;
-                                              iVar38 = -0xaa;
+                                              iVar37 = -0xaa;
 LAB_00657ccf:
-                                              thunk_FUN_0064d0e0(this_00,iVar38,pcVar9,uVar17,dVar39
+                                              thunk_FUN_0064d0e0(this_00,iVar37,pcVar9,uVar17,dVar39
                                                                 );
                                             }
                                             else {
@@ -942,11 +932,11 @@ LAB_00657ccf:
                                                  (pAVar14->field_007B == -0x8000)) {
                                                 dVar39 = local_8->flags;
                                                 pcVar9 = thunk_FUN_00674af0(iVar7);
-                                                iVar38 = -0xab;
+                                                iVar37 = -0xab;
                                                 goto LAB_00657ccf;
                                               }
                                               puVar15 = local_68;
-                                              for (iVar38 = 0xd; iVar38 != 0; iVar38 = iVar38 + -1)
+                                              for (iVar37 = 0xd; iVar37 != 0; iVar37 = iVar37 + -1)
                                               {
                                                 *puVar15 = 0;
                                                 puVar15 = puVar15 + 1;
@@ -966,12 +956,15 @@ LAB_00657ccf:
                                     }
                                     break;
                                   case 0x5e9:
-                                    iVar38 = thunk_FUN_00651770((AnonShape_00651770_8F77396F *)
+                                    iVar37 = thunk_FUN_00651770((AnonShape_00651770_8F77396F *)
                                                                 local_16c);
-                                    if (iVar38 != 0) {
-                                      iVar38 = (*(code *)this_00->field_0000->field_0018)();
-                                      if ((iVar38 != 8) ||
+                                    if (iVar37 != 0) {
+                                      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+                                      iVar37 = (*(code *)this_00->field_0000->field_0018)();
+                                      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+                                      if ((iVar37 != 8) ||
                                          ((DArrayTy *)local_16c._8_4_ != (DArrayTy *)0x9)) {
+                                        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                         pDVar12 = (DArrayTy *)
                                                   thunk_FUN_00668f50(this_00,(char *)local_16c._8_4_
                                                                      ,(uint)local_160,
@@ -980,16 +973,15 @@ LAB_00657ccf:
                                           local_8 = &local_34;
                                           local_c = pDVar12;
                                           do {
-                                            pSVar16 = thunk_FUN_0042b760(CONCAT31((int3)((uint)
-                                                  local_8 >> 8),(char)local_8->flags),
-                                                  (uint)local_15c);
+                                            pSVar16 = thunk_FUN_0042b760((char)local_8->flags,
+                                                                         (uint)local_15c);
                                             uVar17 = uVar33;
                                             if (pSVar16 == (STGroupBoatC *)0x0) {
                                               dVar39 = local_8->flags;
                                               pcVar9 = &DAT_008016a0;
-                                              iVar38 = -0xaa;
+                                              iVar37 = -0xaa;
 LAB_00657dd9:
-                                              thunk_FUN_0064d0e0(this_00,iVar38,pcVar9,uVar17,dVar39
+                                              thunk_FUN_0064d0e0(this_00,iVar37,pcVar9,uVar17,dVar39
                                                                 );
                                             }
                                             else {
@@ -999,16 +991,17 @@ LAB_00657dd9:
                                                  (pAVar14->field_007B == -0x8000)) {
                                                 dVar39 = local_8->flags;
                                                 pcVar9 = thunk_FUN_00674af0(iVar7);
-                                                iVar38 = -0xab;
+                                                iVar37 = -0xab;
                                                 goto LAB_00657dd9;
                                               }
                                               puVar15 = local_68;
-                                              for (iVar38 = 0xd; iVar38 != 0; iVar38 = iVar38 + -1)
+                                              for (iVar37 = 0xd; iVar37 != 0; iVar37 = iVar37 + -1)
                                               {
                                                 *puVar15 = 0;
                                                 puVar15 = puVar15 + 1;
                                               }
                                               local_68[1] = PTR_00802a38->field_00E4;
+                                              /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                               local_60 = local_158._0_1_;
                                               local_68[0] = 6;
                                               AiFltClassTy::GetAiMess(pAVar14,local_68);
@@ -1024,11 +1017,14 @@ LAB_00657dd9:
                                     }
                                     break;
                                   case 0x5ea:
-                                    bVar36 = thunk_FUN_006517c0((short *)local_16c);
-                                    if (CONCAT31(extraout_var_24,bVar36) != 0) {
-                                      iVar38 = (*(code *)this_00->field_0000->field_0018)();
-                                      if ((iVar38 != 8) ||
+                                    iVar37 = thunk_FUN_006517c0((short *)local_16c);
+                                    if (iVar37 != 0) {
+                                      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+                                      iVar37 = (*(code *)this_00->field_0000->field_0018)();
+                                      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+                                      if ((iVar37 != 8) ||
                                          ((DArrayTy *)local_16c._8_4_ != (DArrayTy *)0x9)) {
+                                        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                         pDVar12 = (DArrayTy *)
                                                   thunk_FUN_00668f50(this_00,(char *)local_16c._8_4_
                                                                      ,(uint)local_160,
@@ -1037,16 +1033,15 @@ LAB_00657dd9:
                                           local_8 = &local_34;
                                           local_c = pDVar12;
                                           do {
-                                            pSVar16 = thunk_FUN_0042b760(CONCAT31((int3)((uint)
-                                                  local_8 >> 8),(char)local_8->flags),
-                                                  (uint)local_15c);
+                                            pSVar16 = thunk_FUN_0042b760((char)local_8->flags,
+                                                                         (uint)local_15c);
                                             uVar17 = uVar33;
                                             if (pSVar16 == (STGroupBoatC *)0x0) {
                                               dVar39 = local_8->flags;
                                               pcVar9 = &DAT_008016a0;
-                                              iVar38 = -0xaa;
+                                              iVar37 = -0xaa;
 LAB_00657f1c:
-                                              thunk_FUN_0064d0e0(this_00,iVar38,pcVar9,uVar17,dVar39
+                                              thunk_FUN_0064d0e0(this_00,iVar37,pcVar9,uVar17,dVar39
                                                                 );
                                             }
                                             else {
@@ -1057,11 +1052,11 @@ LAB_00657f1c:
                                                  (pAVar14->field_007B == -0x8000)) {
                                                 dVar39 = local_8->flags;
                                                 pcVar9 = thunk_FUN_00674af0(iVar7);
-                                                iVar38 = -0xab;
+                                                iVar37 = -0xab;
                                                 goto LAB_00657f1c;
                                               }
                                               puVar15 = local_68;
-                                              for (iVar38 = 0xd; iVar38 != 0; iVar38 = iVar38 + -1)
+                                              for (iVar37 = 0xd; iVar37 != 0; iVar37 = iVar37 + -1)
                                               {
                                                 *puVar15 = 0;
                                                 puVar15 = puVar15 + 1;
@@ -1073,15 +1068,16 @@ LAB_00657f1c:
                                               uStack_5c = (undefined1)((uint)local_154 >> 0x18);
                                               uStack_59 = SUB41(local_14c,0);
                                               local_58 = (undefined1)((uint)local_14c >> 8);
+                                              /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                               local_60 = local_158._0_1_;
-                                              iVar38 = (int)local_148 * 0x19;
+                                              iVar37 = (int)local_148 * 0x19;
                                               uStack_5b = SUB41(local_150,0);
                                               uStack_5a = (undefined1)((uint)local_150 >> 8);
                                               local_68[0] = 7;
-                                              uStack_57 = (undefined1)iVar38;
-                                              uStack_56 = (undefined1)((uint)iVar38 >> 8);
-                                              uStack_55 = (undefined1)((uint)iVar38 >> 0x10);
-                                              uStack_54 = (undefined1)((uint)iVar38 >> 0x18);
+                                              uStack_57 = (undefined1)iVar37;
+                                              uStack_56 = (undefined1)((uint)iVar37 >> 8);
+                                              uStack_55 = (undefined1)((uint)iVar37 >> 0x10);
+                                              uStack_54 = (undefined1)((uint)iVar37 >> 0x18);
                                               AiFltClassTy::GetAiMess(pAVar14,local_68);
                                               uVar33 = local_14;
                                             }
@@ -1095,11 +1091,14 @@ LAB_00657f1c:
                                     }
                                     break;
                                   case 0x5eb:
-                                    bVar36 = thunk_FUN_00651880((int)local_16c);
-                                    if (CONCAT31(extraout_var_25,bVar36) != 0) {
-                                      iVar38 = (*(code *)this_00->field_0000->field_0018)();
-                                      if ((iVar38 != 8) ||
+                                    iVar37 = thunk_FUN_00651880((int)local_16c);
+                                    if (iVar37 != 0) {
+                                      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+                                      iVar37 = (*(code *)this_00->field_0000->field_0018)();
+                                      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+                                      if ((iVar37 != 8) ||
                                          ((DArrayTy *)local_16c._8_4_ != (DArrayTy *)0x9)) {
+                                        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                         pDVar12 = (DArrayTy *)
                                                   thunk_FUN_00668f50(this_00,(char *)local_16c._8_4_
                                                                      ,(uint)local_160,
@@ -1108,16 +1107,15 @@ LAB_00657f1c:
                                           local_8 = &local_34;
                                           local_c = pDVar12;
                                           do {
-                                            pSVar16 = thunk_FUN_0042b760(CONCAT31((int3)((uint)
-                                                  local_8 >> 8),(char)local_8->flags),
-                                                  (uint)local_15c);
+                                            pSVar16 = thunk_FUN_0042b760((char)local_8->flags,
+                                                                         (uint)local_15c);
                                             uVar17 = uVar33;
                                             if (pSVar16 == (STGroupBoatC *)0x0) {
                                               dVar39 = local_8->flags;
                                               pcVar9 = &DAT_008016a0;
-                                              iVar38 = -0xaa;
+                                              iVar37 = -0xaa;
 LAB_0065806e:
-                                              thunk_FUN_0064d0e0(this_00,iVar38,pcVar9,uVar17,dVar39
+                                              thunk_FUN_0064d0e0(this_00,iVar37,pcVar9,uVar17,dVar39
                                                                 );
                                             }
                                             else {
@@ -1128,11 +1126,11 @@ LAB_0065806e:
                                                  (pAVar14->field_007B == -0x8000)) {
                                                 dVar39 = local_8->flags;
                                                 pcVar9 = thunk_FUN_00674af0(iVar7);
-                                                iVar38 = -0xab;
+                                                iVar37 = -0xab;
                                                 goto LAB_0065806e;
                                               }
                                               puVar15 = local_68;
-                                              for (iVar38 = 0xd; iVar38 != 0; iVar38 = iVar38 + -1)
+                                              for (iVar37 = 0xd; iVar37 != 0; iVar37 = iVar37 + -1)
                                               {
                                                 *puVar15 = 0;
                                                 puVar15 = puVar15 + 1;
@@ -1164,11 +1162,14 @@ LAB_0065806e:
                                     }
                                     break;
                                   case 0x5ec:
-                                    bVar36 = thunk_FUN_006518c0((int)local_16c);
-                                    if (CONCAT31(extraout_var_26,bVar36) != 0) {
-                                      iVar38 = (*(code *)this_00->field_0000->field_0018)();
-                                      if ((iVar38 != 8) ||
+                                    iVar37 = thunk_FUN_006518c0((int)local_16c);
+                                    if (iVar37 != 0) {
+                                      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+                                      iVar37 = (*(code *)this_00->field_0000->field_0018)();
+                                      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+                                      if ((iVar37 != 8) ||
                                          ((DArrayTy *)local_16c._8_4_ != (DArrayTy *)0x9)) {
+                                        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                         pDVar12 = (DArrayTy *)
                                                   thunk_FUN_00668f50(this_00,(char *)local_16c._8_4_
                                                                      ,(uint)local_160,
@@ -1177,16 +1178,15 @@ LAB_0065806e:
                                           local_8 = &local_34;
                                           local_c = pDVar12;
                                           do {
-                                            pSVar16 = thunk_FUN_0042b760(CONCAT31((int3)((uint)
-                                                  local_8 >> 8),(char)local_8->flags),
-                                                  (uint)local_15c);
+                                            pSVar16 = thunk_FUN_0042b760((char)local_8->flags,
+                                                                         (uint)local_15c);
                                             uVar17 = uVar33;
                                             if (pSVar16 == (STGroupBoatC *)0x0) {
                                               dVar39 = local_8->flags;
                                               pcVar9 = &DAT_008016a0;
-                                              iVar38 = -0xaa;
+                                              iVar37 = -0xaa;
 LAB_00658177:
-                                              thunk_FUN_0064d0e0(this_00,iVar38,pcVar9,uVar17,dVar39
+                                              thunk_FUN_0064d0e0(this_00,iVar37,pcVar9,uVar17,dVar39
                                                                 );
                                             }
                                             else {
@@ -1197,11 +1197,11 @@ LAB_00658177:
                                                  (pAVar14->field_007B == -0x8000)) {
                                                 dVar39 = local_8->flags;
                                                 pcVar9 = thunk_FUN_00674af0(iVar7);
-                                                iVar38 = -0xab;
+                                                iVar37 = -0xab;
                                                 goto LAB_00658177;
                                               }
                                               puVar15 = local_68;
-                                              for (iVar38 = 0xd; iVar38 != 0; iVar38 = iVar38 + -1)
+                                              for (iVar37 = 0xd; iVar37 != 0; iVar37 = iVar37 + -1)
                                               {
                                                 *puVar15 = 0;
                                                 puVar15 = puVar15 + 1;
@@ -1221,11 +1221,14 @@ LAB_00658177:
                                     }
                                     break;
                                   case 0x5ed:
-                                    iVar38 = thunk_FUN_00651df0((short *)local_16c);
-                                    if (iVar38 != 0) {
-                                      iVar38 = (*(code *)this_00->field_0000->field_0018)();
-                                      if ((iVar38 != 8) ||
+                                    iVar37 = thunk_FUN_00651df0((short *)local_16c);
+                                    if (iVar37 != 0) {
+                                      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+                                      iVar37 = (*(code *)this_00->field_0000->field_0018)();
+                                      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+                                      if ((iVar37 != 8) ||
                                          ((DArrayTy *)local_16c._8_4_ != (DArrayTy *)0x9)) {
+                                        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                         pDVar12 = (DArrayTy *)
                                                   thunk_FUN_00668f50(this_00,(char *)local_16c._8_4_
                                                                      ,(uint)local_160,
@@ -1234,16 +1237,15 @@ LAB_00658177:
                                           local_8 = &local_34;
                                           local_c = pDVar12;
                                           do {
-                                            pSVar16 = thunk_FUN_0042b760(CONCAT31((int3)((uint)
-                                                  local_8 >> 8),(char)local_8->flags),
-                                                  (uint)local_15c);
+                                            pSVar16 = thunk_FUN_0042b760((char)local_8->flags,
+                                                                         (uint)local_15c);
                                             uVar17 = uVar33;
                                             if (pSVar16 == (STGroupBoatC *)0x0) {
                                               dVar39 = local_8->flags;
                                               pcVar9 = &DAT_008016a0;
-                                              iVar38 = -0xaa;
+                                              iVar37 = -0xaa;
 LAB_00658b70:
-                                              thunk_FUN_0064d0e0(this_00,iVar38,pcVar9,uVar17,dVar39
+                                              thunk_FUN_0064d0e0(this_00,iVar37,pcVar9,uVar17,dVar39
                                                                 );
                                             }
                                             else {
@@ -1254,11 +1256,11 @@ LAB_00658b70:
                                                  (pAVar14->field_007B == -0x8000)) {
                                                 dVar39 = local_8->flags;
                                                 pcVar9 = thunk_FUN_00674af0(iVar7);
-                                                iVar38 = -0xab;
+                                                iVar37 = -0xab;
                                                 goto LAB_00658b70;
                                               }
                                               puVar15 = local_68;
-                                              for (iVar38 = 0xd; iVar38 != 0; iVar38 = iVar38 + -1)
+                                              for (iVar37 = 0xd; iVar37 != 0; iVar37 = iVar37 + -1)
                                               {
                                                 *puVar15 = 0;
                                                 puVar15 = puVar15 + 1;
@@ -1271,14 +1273,14 @@ LAB_00658b70:
                                               local_4e = (undefined2)((uint)local_14c >> 0x10);
                                               local_60 = SUB41(local_158,0);
                                               uStack_5f = (undefined1)((uint)local_158 >> 8);
-                                              iVar38 = (int)local_148 * 0x19;
+                                              iVar37 = (int)local_148 * 0x19;
                                               uStack_5c = SUB41(local_150,0);
                                               uStack_5b = (undefined1)((uint)local_150 >> 8);
                                               local_68[0] = 0x34;
-                                              uStack_5a = (undefined1)iVar38;
-                                              uStack_59 = (undefined1)((uint)iVar38 >> 8);
-                                              local_58 = (undefined1)((uint)iVar38 >> 0x10);
-                                              uStack_57 = (undefined1)((uint)iVar38 >> 0x18);
+                                              uStack_5a = (undefined1)iVar37;
+                                              uStack_59 = (undefined1)((uint)iVar37 >> 8);
+                                              local_58 = (undefined1)((uint)iVar37 >> 0x10);
+                                              uStack_57 = (undefined1)((uint)iVar37 >> 0x18);
                                               uStack_54 = (undefined1)local_140;
                                               uStack_53 = (undefined1)(local_140 >> 8);
                                               uStack_56 = SUB41(local_144,0);
@@ -1298,11 +1300,14 @@ LAB_00658b70:
                                     }
                                     break;
                                   case 0x5ee:
-                                    bVar36 = thunk_FUN_00651ed0((short *)local_16c);
-                                    if (CONCAT31(extraout_var_29,bVar36) != 0) {
-                                      iVar38 = (*(code *)this_00->field_0000->field_0018)();
-                                      if ((iVar38 != 8) ||
+                                    iVar37 = thunk_FUN_00651ed0((short *)local_16c);
+                                    if (iVar37 != 0) {
+                                      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+                                      iVar37 = (*(code *)this_00->field_0000->field_0018)();
+                                      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+                                      if ((iVar37 != 8) ||
                                          ((DArrayTy *)local_16c._8_4_ != (DArrayTy *)0x9)) {
+                                        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                         pDVar12 = (DArrayTy *)
                                                   thunk_FUN_00668f50(this_00,(char *)local_16c._8_4_
                                                                      ,(uint)local_160,
@@ -1311,16 +1316,15 @@ LAB_00658b70:
                                           local_8 = &local_34;
                                           local_c = pDVar12;
                                           do {
-                                            pSVar16 = thunk_FUN_0042b760(CONCAT31((int3)((uint)
-                                                  local_8 >> 8),(char)local_8->flags),
-                                                  (uint)local_15c);
+                                            pSVar16 = thunk_FUN_0042b760((char)local_8->flags,
+                                                                         (uint)local_15c);
                                             uVar17 = uVar33;
                                             if (pSVar16 == (STGroupBoatC *)0x0) {
                                               dVar39 = local_8->flags;
                                               pcVar9 = &DAT_008016a0;
-                                              iVar38 = -0xaa;
+                                              iVar37 = -0xaa;
 LAB_00658d01:
-                                              thunk_FUN_0064d0e0(this_00,iVar38,pcVar9,uVar17,dVar39
+                                              thunk_FUN_0064d0e0(this_00,iVar37,pcVar9,uVar17,dVar39
                                                                 );
                                             }
                                             else {
@@ -1331,11 +1335,11 @@ LAB_00658d01:
                                                  (local_10->field_007B == -0x8000)) {
                                                 dVar39 = local_8->flags;
                                                 pcVar9 = thunk_FUN_00674af0(iVar7);
-                                                iVar38 = -0xab;
+                                                iVar37 = -0xab;
                                                 goto LAB_00658d01;
                                               }
                                               puVar15 = local_68;
-                                              for (iVar38 = 0xd; iVar38 != 0; iVar38 = iVar38 + -1)
+                                              for (iVar37 = 0xd; iVar37 != 0; iVar37 = iVar37 + -1)
                                               {
                                                 *puVar15 = 0;
                                                 puVar15 = puVar15 + 1;
@@ -1365,6 +1369,7 @@ LAB_00658d01:
                                               uStack_5c = 0;
                                               uStack_5a = 0;
                                               uStack_59 = 0;
+                                              /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                               local_3b = local_144._0_2_;
                                               local_39 = local_13c * 0x19;
                                               local_60 = (undefined1)local_140;
@@ -1384,11 +1389,14 @@ LAB_00658d01:
                                     }
                                     break;
                                   case 0x5ef:
-                                    bVar36 = thunk_FUN_00652030((short *)local_16c);
-                                    if (CONCAT31(extraout_var_30,bVar36) != 0) {
-                                      iVar38 = (*(code *)this_00->field_0000->field_0018)();
-                                      if ((iVar38 != 8) ||
+                                    iVar37 = thunk_FUN_00652030((short *)local_16c);
+                                    if (iVar37 != 0) {
+                                      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+                                      iVar37 = (*(code *)this_00->field_0000->field_0018)();
+                                      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+                                      if ((iVar37 != 8) ||
                                          ((DArrayTy *)local_16c._8_4_ != (DArrayTy *)0x9)) {
+                                        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                         pDVar12 = (DArrayTy *)
                                                   thunk_FUN_00668f50(this_00,(char *)local_16c._8_4_
                                                                      ,(uint)local_160,
@@ -1397,16 +1405,15 @@ LAB_00658d01:
                                           local_8 = &local_34;
                                           local_c = pDVar12;
                                           do {
-                                            pSVar16 = thunk_FUN_0042b760(CONCAT31((int3)((uint)
-                                                  local_8 >> 8),(char)local_8->flags),
-                                                  (uint)local_15c);
+                                            pSVar16 = thunk_FUN_0042b760((char)local_8->flags,
+                                                                         (uint)local_15c);
                                             uVar17 = uVar33;
                                             if (pSVar16 == (STGroupBoatC *)0x0) {
                                               dVar39 = local_8->flags;
                                               pcVar9 = &DAT_008016a0;
-                                              iVar38 = -0xaa;
+                                              iVar37 = -0xaa;
 LAB_00658e8e:
-                                              thunk_FUN_0064d0e0(this_00,iVar38,pcVar9,uVar17,dVar39
+                                              thunk_FUN_0064d0e0(this_00,iVar37,pcVar9,uVar17,dVar39
                                                                 );
                                             }
                                             else {
@@ -1417,11 +1424,11 @@ LAB_00658e8e:
                                                  (pAVar14->field_007B == -0x8000)) {
                                                 dVar39 = local_8->flags;
                                                 pcVar9 = thunk_FUN_00674af0(iVar7);
-                                                iVar38 = -0xab;
+                                                iVar37 = -0xab;
                                                 goto LAB_00658e8e;
                                               }
                                               puVar15 = local_68;
-                                              for (iVar38 = 0xd; iVar38 != 0; iVar38 = iVar38 + -1)
+                                              for (iVar37 = 0xd; iVar37 != 0; iVar37 = iVar37 + -1)
                                               {
                                                 *puVar15 = 0;
                                                 puVar15 = puVar15 + 1;
@@ -1437,6 +1444,7 @@ LAB_00658e8e:
                                               uStack_51 = (undefined1)((uint)local_14c >> 8);
                                               uStack_50 = SUB41(local_148,0);
                                               uStack_4f = (undefined1)((uint)local_148 >> 8);
+                                              /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                               local_4e = local_144._0_2_;
                                               uStack_4c = (undefined1)local_140;
                                               cStack_4b = (char)(local_140 >> 8);
@@ -1463,11 +1471,14 @@ LAB_00658e8e:
                                     }
                                     break;
                                   case 0x5f0:
-                                    bVar36 = thunk_FUN_00652100((short *)local_16c);
-                                    if (CONCAT31(extraout_var_31,bVar36) != 0) {
-                                      iVar38 = (*(code *)this_00->field_0000->field_0018)();
-                                      if ((iVar38 != 8) ||
+                                    iVar37 = thunk_FUN_00652100((short *)local_16c);
+                                    if (iVar37 != 0) {
+                                      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+                                      iVar37 = (*(code *)this_00->field_0000->field_0018)();
+                                      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+                                      if ((iVar37 != 8) ||
                                          ((DArrayTy *)local_16c._8_4_ != (DArrayTy *)0x9)) {
+                                        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                         pDVar12 = (DArrayTy *)
                                                   thunk_FUN_00668f50(this_00,(char *)local_16c._8_4_
                                                                      ,(uint)local_160,
@@ -1476,16 +1487,15 @@ LAB_00658e8e:
                                           local_8 = &local_34;
                                           local_c = pDVar12;
                                           do {
-                                            pSVar16 = thunk_FUN_0042b760(CONCAT31((int3)((uint)
-                                                  local_8 >> 8),(char)local_8->flags),
-                                                  (uint)local_15c);
+                                            pSVar16 = thunk_FUN_0042b760((char)local_8->flags,
+                                                                         (uint)local_15c);
                                             uVar17 = uVar33;
                                             if (pSVar16 == (STGroupBoatC *)0x0) {
                                               dVar39 = local_8->flags;
                                               pcVar9 = &DAT_008016a0;
-                                              iVar38 = -0xaa;
+                                              iVar37 = -0xaa;
 LAB_00658fc8:
-                                              thunk_FUN_0064d0e0(this_00,iVar38,pcVar9,uVar17,dVar39
+                                              thunk_FUN_0064d0e0(this_00,iVar37,pcVar9,uVar17,dVar39
                                                                 );
                                             }
                                             else {
@@ -1496,11 +1506,11 @@ LAB_00658fc8:
                                                  (pAVar14->field_007B == -0x8000)) {
                                                 dVar39 = local_8->flags;
                                                 pcVar9 = thunk_FUN_00674af0(iVar7);
-                                                iVar38 = -0xab;
+                                                iVar37 = -0xab;
                                                 goto LAB_00658fc8;
                                               }
                                               puVar15 = local_68;
-                                              for (iVar38 = 0xd; iVar38 != 0; iVar38 = iVar38 + -1)
+                                              for (iVar37 = 0xd; iVar37 != 0; iVar37 = iVar37 + -1)
                                               {
                                                 *puVar15 = 0;
                                                 puVar15 = puVar15 + 1;
@@ -1514,12 +1524,12 @@ LAB_00658fc8:
                                               uStack_5f = (undefined1)((uint)local_150 >> 8);
                                               uStack_5e = (undefined1)((uint)local_150 >> 0x10);
                                               uStack_5d = (undefined1)((uint)local_150 >> 0x18);
-                                              iVar38 = (int)local_14c * 0x19;
+                                              iVar37 = (int)local_14c * 0x19;
                                               local_68[0] = 0x35;
-                                              local_58 = (undefined1)iVar38;
-                                              uStack_57 = (undefined1)((uint)iVar38 >> 8);
-                                              uStack_56 = (undefined1)((uint)iVar38 >> 0x10);
-                                              uStack_55 = (undefined1)((uint)iVar38 >> 0x18);
+                                              local_58 = (undefined1)iVar37;
+                                              uStack_57 = (undefined1)((uint)iVar37 >> 8);
+                                              uStack_56 = (undefined1)((uint)iVar37 >> 0x10);
+                                              uStack_55 = (undefined1)((uint)iVar37 >> 0x18);
                                               AiFltClassTy::GetAiMess(pAVar14,local_68);
                                               uVar33 = local_14;
                                             }
@@ -1533,11 +1543,14 @@ LAB_00658fc8:
                                     }
                                     break;
                                   case 0x5f1:
-                                    bVar36 = thunk_FUN_00651900((short *)local_16c);
-                                    if (CONCAT31(extraout_var_27,bVar36) != 0) {
-                                      iVar38 = (*(code *)this_00->field_0000->field_0018)();
-                                      if ((iVar38 != 8) ||
+                                    iVar37 = thunk_FUN_00651900((short *)local_16c);
+                                    if (iVar37 != 0) {
+                                      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+                                      iVar37 = (*(code *)this_00->field_0000->field_0018)();
+                                      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+                                      if ((iVar37 != 8) ||
                                          ((DArrayTy *)local_16c._8_4_ != (DArrayTy *)0x9)) {
+                                        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                         pDVar12 = (DArrayTy *)
                                                   thunk_FUN_00668f50(this_00,(char *)local_16c._8_4_
                                                                      ,(uint)local_160,
@@ -1546,16 +1559,15 @@ LAB_00658fc8:
                                           local_8 = &local_34;
                                           local_c = pDVar12;
                                           do {
-                                            pSVar16 = thunk_FUN_0042b760(CONCAT31((int3)((uint)
-                                                  local_8 >> 8),(char)local_8->flags),
-                                                  (uint)local_15c);
+                                            pSVar16 = thunk_FUN_0042b760((char)local_8->flags,
+                                                                         (uint)local_15c);
                                             uVar17 = uVar33;
                                             if (pSVar16 == (STGroupBoatC *)0x0) {
                                               dVar39 = local_8->flags;
                                               pcVar9 = &DAT_008016a0;
-                                              iVar38 = -0xaa;
+                                              iVar37 = -0xaa;
 LAB_006582b3:
-                                              thunk_FUN_0064d0e0(this_00,iVar38,pcVar9,uVar17,dVar39
+                                              thunk_FUN_0064d0e0(this_00,iVar37,pcVar9,uVar17,dVar39
                                                                 );
                                             }
                                             else {
@@ -1565,16 +1577,17 @@ LAB_006582b3:
                                                  (pAVar14->field_007B == -0x8000)) {
                                                 dVar39 = local_8->flags;
                                                 pcVar9 = thunk_FUN_00674af0(iVar7);
-                                                iVar38 = -0xab;
+                                                iVar37 = -0xab;
                                                 goto LAB_006582b3;
                                               }
                                               puVar15 = local_68;
-                                              for (iVar38 = 0xd; iVar38 != 0; iVar38 = iVar38 + -1)
+                                              for (iVar37 = 0xd; iVar37 != 0; iVar37 = iVar37 + -1)
                                               {
                                                 *puVar15 = 0;
                                                 puVar15 = puVar15 + 1;
                                               }
                                               local_68[1] = PTR_00802a38->field_00E4;
+                                              /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                               local_60 = local_158._0_1_;
                                               uStack_5f = SUB41(local_154,0);
                                               uStack_5e = (undefined1)((uint)local_154 >> 8);
@@ -1606,11 +1619,14 @@ LAB_006582b3:
                                     }
                                     break;
                                   case 0x5f2:
-                                    iVar38 = thunk_FUN_006519e0((short *)local_16c);
-                                    if (iVar38 != 0) {
-                                      iVar38 = (*(code *)this_00->field_0000->field_0018)();
-                                      if ((iVar38 != 8) ||
+                                    iVar37 = thunk_FUN_006519e0((short *)local_16c);
+                                    if (iVar37 != 0) {
+                                      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+                                      iVar37 = (*(code *)this_00->field_0000->field_0018)();
+                                      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+                                      if ((iVar37 != 8) ||
                                          ((DArrayTy *)local_16c._8_4_ != (DArrayTy *)0x9)) {
+                                        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                         pDVar12 = (DArrayTy *)
                                                   thunk_FUN_00668f50(this_00,(char *)local_16c._8_4_
                                                                      ,(uint)local_160,
@@ -1619,16 +1635,15 @@ LAB_006582b3:
                                           local_8 = &local_34;
                                           local_c = pDVar12;
                                           do {
-                                            pSVar16 = thunk_FUN_0042b760(CONCAT31((int3)((uint)
-                                                  local_8 >> 8),(char)local_8->flags),
-                                                  (uint)local_15c);
+                                            pSVar16 = thunk_FUN_0042b760((char)local_8->flags,
+                                                                         (uint)local_15c);
                                             uVar17 = uVar33;
                                             if (pSVar16 == (STGroupBoatC *)0x0) {
                                               dVar39 = local_8->flags;
                                               pcVar9 = &DAT_008016a0;
-                                              iVar38 = -0xaa;
+                                              iVar37 = -0xaa;
 LAB_00658416:
-                                              thunk_FUN_0064d0e0(this_00,iVar38,pcVar9,uVar17,dVar39
+                                              thunk_FUN_0064d0e0(this_00,iVar37,pcVar9,uVar17,dVar39
                                                                 );
                                             }
                                             else {
@@ -1637,11 +1652,11 @@ LAB_00658416:
                                               if (pAVar14 == (AiFltClassTy *)0x0) {
                                                 dVar39 = local_8->flags;
                                                 pcVar9 = thunk_FUN_00674af0(iVar7);
-                                                iVar38 = -0xab;
+                                                iVar37 = -0xab;
                                                 goto LAB_00658416;
                                               }
                                               puVar15 = local_68;
-                                              for (iVar38 = 0xd; iVar38 != 0; iVar38 = iVar38 + -1)
+                                              for (iVar37 = 0xd; iVar37 != 0; iVar37 = iVar37 + -1)
                                               {
                                                 *puVar15 = 0;
                                                 puVar15 = puVar15 + 1;
@@ -1651,18 +1666,19 @@ LAB_00658416:
                                               uStack_5e = (undefined1)((uint)local_154 >> 8);
                                               uStack_5b = SUB41(local_14c,0);
                                               uStack_5a = (undefined1)((uint)local_14c >> 8);
+                                              /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                               local_60 = local_158._0_1_;
-                                              iVar38 = (int)local_144 * 0x19;
+                                              iVar37 = (int)local_144 * 0x19;
                                               uStack_5d = SUB41(local_150,0);
                                               uStack_5c = (undefined1)((uint)local_150 >> 8);
                                               local_68[0] = 0xb;
                                               uStack_4f = SUB41(local_148,0);
                                               local_4e = (undefined2)((uint)local_148 >> 8);
                                               uStack_4c = (undefined1)((uint)local_148 >> 0x18);
-                                              uStack_59 = (undefined1)iVar38;
-                                              local_58 = (undefined1)((uint)iVar38 >> 8);
-                                              uStack_57 = (undefined1)((uint)iVar38 >> 0x10);
-                                              uStack_56 = (undefined1)((uint)iVar38 >> 0x18);
+                                              uStack_59 = (undefined1)iVar37;
+                                              local_58 = (undefined1)((uint)iVar37 >> 8);
+                                              uStack_57 = (undefined1)((uint)iVar37 >> 0x10);
+                                              uStack_56 = (undefined1)((uint)iVar37 >> 0x18);
                                               uStack_55 = (undefined1)local_140;
                                               uStack_54 = (undefined1)(local_140 >> 8);
                                               uStack_53 = (undefined1)local_13c;
@@ -1682,11 +1698,14 @@ LAB_00658416:
                                     }
                                     break;
                                   case 0x5f3:
-                                    iVar38 = thunk_FUN_00651b40((short *)local_16c);
-                                    if (iVar38 != 0) {
-                                      iVar38 = (*(code *)this_00->field_0000->field_0018)();
-                                      if ((iVar38 != 8) ||
+                                    iVar37 = thunk_FUN_00651b40((short *)local_16c);
+                                    if (iVar37 != 0) {
+                                      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+                                      iVar37 = (*(code *)this_00->field_0000->field_0018)();
+                                      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+                                      if ((iVar37 != 8) ||
                                          ((DArrayTy *)local_16c._8_4_ != (DArrayTy *)0x9)) {
+                                        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                         pDVar12 = (DArrayTy *)
                                                   thunk_FUN_00668f50(this_00,(char *)local_16c._8_4_
                                                                      ,(uint)local_160,
@@ -1695,16 +1714,15 @@ LAB_00658416:
                                           local_8 = &local_34;
                                           local_c = pDVar12;
                                           do {
-                                            pSVar16 = thunk_FUN_0042b760(CONCAT31((int3)((uint)
-                                                  local_8 >> 8),(char)local_8->flags),
-                                                  (uint)local_15c);
+                                            pSVar16 = thunk_FUN_0042b760((char)local_8->flags,
+                                                                         (uint)local_15c);
                                             uVar17 = uVar33;
                                             if (pSVar16 == (STGroupBoatC *)0x0) {
                                               dVar39 = local_8->flags;
                                               pcVar9 = &DAT_008016a0;
-                                              iVar38 = -0xaa;
+                                              iVar37 = -0xaa;
 LAB_00658543:
-                                              thunk_FUN_0064d0e0(this_00,iVar38,pcVar9,uVar17,dVar39
+                                              thunk_FUN_0064d0e0(this_00,iVar37,pcVar9,uVar17,dVar39
                                                                 );
                                             }
                                             else {
@@ -1715,11 +1733,11 @@ LAB_00658543:
                                                  (pAVar14->field_007B == -0x8000)) {
                                                 dVar39 = local_8->flags;
                                                 pcVar9 = thunk_FUN_00674af0(iVar7);
-                                                iVar38 = -0xab;
+                                                iVar37 = -0xab;
                                                 goto LAB_00658543;
                                               }
                                               puVar15 = local_68;
-                                              for (iVar38 = 0xd; iVar38 != 0; iVar38 = iVar38 + -1)
+                                              for (iVar37 = 0xd; iVar37 != 0; iVar37 = iVar37 + -1)
                                               {
                                                 *puVar15 = 0;
                                                 puVar15 = puVar15 + 1;
@@ -1729,13 +1747,14 @@ LAB_00658543:
                                               uStack_5e = (undefined1)((uint)local_154 >> 8);
                                               uStack_5d = (undefined1)((uint)local_154 >> 0x10);
                                               uStack_5c = (undefined1)((uint)local_154 >> 0x18);
+                                              /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                               local_60 = local_158._0_1_;
                                               local_68[0] = 0xc;
-                                              iVar38 = (int)local_150 * 0x19;
-                                              uStack_5b = (undefined1)iVar38;
-                                              uStack_5a = (undefined1)((uint)iVar38 >> 8);
-                                              uStack_59 = (undefined1)((uint)iVar38 >> 0x10);
-                                              local_58 = (undefined1)((uint)iVar38 >> 0x18);
+                                              iVar37 = (int)local_150 * 0x19;
+                                              uStack_5b = (undefined1)iVar37;
+                                              uStack_5a = (undefined1)((uint)iVar37 >> 8);
+                                              uStack_59 = (undefined1)((uint)iVar37 >> 0x10);
+                                              local_58 = (undefined1)((uint)iVar37 >> 0x18);
                                               AiFltClassTy::GetAiMess(pAVar14,local_68);
                                               uVar33 = local_14;
                                             }
@@ -1749,11 +1768,14 @@ LAB_00658543:
                                     }
                                     break;
                                   case 0x5f4:
-                                    iVar38 = thunk_FUN_00651bd0((short *)local_16c);
-                                    if (iVar38 != 0) {
-                                      iVar38 = (*(code *)this_00->field_0000->field_0018)();
-                                      if ((iVar38 != 8) ||
+                                    iVar37 = thunk_FUN_00651bd0((short *)local_16c);
+                                    if (iVar37 != 0) {
+                                      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+                                      iVar37 = (*(code *)this_00->field_0000->field_0018)();
+                                      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+                                      if ((iVar37 != 8) ||
                                          ((DArrayTy *)local_16c._8_4_ != (DArrayTy *)0x9)) {
+                                        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                         pDVar12 = (DArrayTy *)
                                                   thunk_FUN_00668f50(this_00,(char *)local_16c._8_4_
                                                                      ,(uint)local_160,
@@ -1762,16 +1784,15 @@ LAB_00658543:
                                           local_8 = &local_34;
                                           local_c = pDVar12;
                                           do {
-                                            pSVar16 = thunk_FUN_0042b760(CONCAT31((int3)((uint)
-                                                  local_8 >> 8),(char)local_8->flags),
-                                                  (uint)local_15c);
+                                            pSVar16 = thunk_FUN_0042b760((char)local_8->flags,
+                                                                         (uint)local_15c);
                                             uVar17 = uVar33;
                                             if (pSVar16 == (STGroupBoatC *)0x0) {
                                               dVar39 = local_8->flags;
                                               pcVar9 = &DAT_008016a0;
-                                              iVar38 = -0xaa;
+                                              iVar37 = -0xaa;
 LAB_00658670:
-                                              thunk_FUN_0064d0e0(this_00,iVar38,pcVar9,uVar17,dVar39
+                                              thunk_FUN_0064d0e0(this_00,iVar37,pcVar9,uVar17,dVar39
                                                                 );
                                             }
                                             else {
@@ -1782,11 +1803,11 @@ LAB_00658670:
                                                  (pAVar14->field_007B == -0x8000)) {
                                                 dVar39 = local_8->flags;
                                                 pcVar9 = thunk_FUN_00674af0(iVar7);
-                                                iVar38 = -0xab;
+                                                iVar37 = -0xab;
                                                 goto LAB_00658670;
                                               }
                                               puVar15 = local_68;
-                                              for (iVar38 = 0xd; iVar38 != 0; iVar38 = iVar38 + -1)
+                                              for (iVar37 = 0xd; iVar37 != 0; iVar37 = iVar37 + -1)
                                               {
                                                 *puVar15 = 0;
                                                 puVar15 = puVar15 + 1;
@@ -1796,13 +1817,14 @@ LAB_00658670:
                                               uStack_5e = (undefined1)((uint)local_154 >> 8);
                                               uStack_5d = (undefined1)((uint)local_154 >> 0x10);
                                               uStack_5c = (undefined1)((uint)local_154 >> 0x18);
+                                              /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                               local_60 = local_158._0_1_;
                                               local_68[0] = 0xd;
-                                              iVar38 = (int)local_150 * 0x19;
-                                              uStack_5b = (undefined1)iVar38;
-                                              uStack_5a = (undefined1)((uint)iVar38 >> 8);
-                                              uStack_59 = (undefined1)((uint)iVar38 >> 0x10);
-                                              local_58 = (undefined1)((uint)iVar38 >> 0x18);
+                                              iVar37 = (int)local_150 * 0x19;
+                                              uStack_5b = (undefined1)iVar37;
+                                              uStack_5a = (undefined1)((uint)iVar37 >> 8);
+                                              uStack_59 = (undefined1)((uint)iVar37 >> 0x10);
+                                              local_58 = (undefined1)((uint)iVar37 >> 0x18);
                                               AiFltClassTy::GetAiMess(pAVar14,local_68);
                                               uVar33 = local_14;
                                             }
@@ -1816,11 +1838,14 @@ LAB_00658670:
                                     }
                                     break;
                                   case 0x5f5:
-                                    iVar38 = thunk_FUN_00651cd0((short *)local_16c);
-                                    if (iVar38 != 0) {
-                                      iVar38 = (*(code *)this_00->field_0000->field_0018)();
-                                      if ((iVar38 != 8) ||
+                                    iVar37 = thunk_FUN_00651cd0((short *)local_16c);
+                                    if (iVar37 != 0) {
+                                      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+                                      iVar37 = (*(code *)this_00->field_0000->field_0018)();
+                                      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+                                      if ((iVar37 != 8) ||
                                          ((DArrayTy *)local_16c._8_4_ != (DArrayTy *)0x9)) {
+                                        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                         pDVar12 = (DArrayTy *)
                                                   thunk_FUN_00668f50(this_00,(char *)local_16c._8_4_
                                                                      ,(uint)local_160,
@@ -1829,16 +1854,15 @@ LAB_00658670:
                                           local_8 = &local_34;
                                           local_c = pDVar12;
                                           do {
-                                            pSVar16 = thunk_FUN_0042b760(CONCAT31((int3)((uint)
-                                                  local_8 >> 8),(char)local_8->flags),
-                                                  (uint)local_15c);
+                                            pSVar16 = thunk_FUN_0042b760((char)local_8->flags,
+                                                                         (uint)local_15c);
                                             uVar17 = uVar33;
                                             if (pSVar16 == (STGroupBoatC *)0x0) {
                                               dVar39 = local_8->flags;
                                               pcVar9 = &DAT_008016a0;
-                                              iVar38 = -0xaa;
+                                              iVar37 = -0xaa;
 LAB_006587e2:
-                                              thunk_FUN_0064d0e0(this_00,iVar38,pcVar9,uVar17,dVar39
+                                              thunk_FUN_0064d0e0(this_00,iVar37,pcVar9,uVar17,dVar39
                                                                 );
                                             }
                                             else {
@@ -1849,11 +1873,11 @@ LAB_006587e2:
                                                  (pAVar14->field_007B == -0x8000)) {
                                                 dVar39 = local_8->flags;
                                                 pcVar9 = thunk_FUN_00674af0(iVar7);
-                                                iVar38 = -0xab;
+                                                iVar37 = -0xab;
                                                 goto LAB_006587e2;
                                               }
                                               puVar15 = local_68;
-                                              for (iVar38 = 0xd; iVar38 != 0; iVar38 = iVar38 + -1)
+                                              for (iVar37 = 0xd; iVar37 != 0; iVar37 = iVar37 + -1)
                                               {
                                                 *puVar15 = 0;
                                                 puVar15 = puVar15 + 1;
@@ -1866,14 +1890,14 @@ LAB_006587e2:
                                               local_4e = (undefined2)((uint)local_14c >> 0x10);
                                               local_60 = SUB41(local_158,0);
                                               uStack_5f = (undefined1)((uint)local_158 >> 8);
-                                              iVar38 = (int)local_148 * 0x19;
+                                              iVar37 = (int)local_148 * 0x19;
                                               uStack_5c = SUB41(local_150,0);
                                               uStack_5b = (undefined1)((uint)local_150 >> 8);
                                               local_68[0] = 0xe;
-                                              uStack_5a = (undefined1)iVar38;
-                                              uStack_59 = (undefined1)((uint)iVar38 >> 8);
-                                              local_58 = (undefined1)((uint)iVar38 >> 0x10);
-                                              uStack_57 = (undefined1)((uint)iVar38 >> 0x18);
+                                              uStack_5a = (undefined1)iVar37;
+                                              uStack_59 = (undefined1)((uint)iVar37 >> 8);
+                                              local_58 = (undefined1)((uint)iVar37 >> 0x10);
+                                              uStack_57 = (undefined1)((uint)iVar37 >> 0x18);
                                               uStack_54 = (undefined1)local_140;
                                               uStack_53 = (undefined1)(local_140 >> 8);
                                               uStack_56 = SUB41(local_144,0);
@@ -1893,11 +1917,14 @@ LAB_006587e2:
                                     }
                                     break;
                                   case 0x5f6:
-                                    bVar36 = thunk_FUN_00651db0((int)local_16c);
-                                    if (CONCAT31(extraout_var_28,bVar36) != 0) {
-                                      iVar38 = (*(code *)this_00->field_0000->field_0018)();
-                                      if ((iVar38 != 8) ||
+                                    iVar37 = thunk_FUN_00651db0((int)local_16c);
+                                    if (iVar37 != 0) {
+                                      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+                                      iVar37 = (*(code *)this_00->field_0000->field_0018)();
+                                      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+                                      if ((iVar37 != 8) ||
                                          ((DArrayTy *)local_16c._8_4_ != (DArrayTy *)0x9)) {
+                                        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                         pDVar12 = (DArrayTy *)
                                                   thunk_FUN_00668f50(this_00,(char *)local_16c._8_4_
                                                                      ,(uint)local_160,
@@ -1906,16 +1933,15 @@ LAB_006587e2:
                                           local_8 = &local_34;
                                           local_c = pDVar12;
                                           do {
-                                            pSVar16 = thunk_FUN_0042b760(CONCAT31((int3)((uint)
-                                                  local_8 >> 8),(char)local_8->flags),
-                                                  (uint)local_15c);
+                                            pSVar16 = thunk_FUN_0042b760((char)local_8->flags,
+                                                                         (uint)local_15c);
                                             uVar17 = uVar33;
                                             if (pSVar16 == (STGroupBoatC *)0x0) {
                                               dVar39 = local_8->flags;
                                               pcVar9 = &DAT_008016a0;
-                                              iVar38 = -0xaa;
+                                              iVar37 = -0xaa;
 LAB_006588eb:
-                                              thunk_FUN_0064d0e0(this_00,iVar38,pcVar9,uVar17,dVar39
+                                              thunk_FUN_0064d0e0(this_00,iVar37,pcVar9,uVar17,dVar39
                                                                 );
                                             }
                                             else {
@@ -1926,11 +1952,11 @@ LAB_006588eb:
                                                  (pAVar14->field_007B == -0x8000)) {
                                                 dVar39 = local_8->flags;
                                                 pcVar9 = thunk_FUN_00674af0(iVar7);
-                                                iVar38 = -0xab;
+                                                iVar37 = -0xab;
                                                 goto LAB_006588eb;
                                               }
                                               puVar15 = local_68;
-                                              for (iVar38 = 0xd; iVar38 != 0; iVar38 = iVar38 + -1)
+                                              for (iVar37 = 0xd; iVar37 != 0; iVar37 = iVar37 + -1)
                                               {
                                                 *puVar15 = 0;
                                                 puVar15 = puVar15 + 1;
@@ -1950,11 +1976,14 @@ LAB_006588eb:
                                     }
                                     break;
                                   case 0x5f7:
-                                    iVar38 = thunk_FUN_00651c60((short *)local_16c);
-                                    if (iVar38 != 0) {
-                                      iVar38 = (*(code *)this_00->field_0000->field_0018)();
-                                      if ((iVar38 != 8) ||
+                                    iVar37 = thunk_FUN_00651c60((short *)local_16c);
+                                    if (iVar37 != 0) {
+                                      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+                                      iVar37 = (*(code *)this_00->field_0000->field_0018)();
+                                      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+                                      if ((iVar37 != 8) ||
                                          ((DArrayTy *)local_16c._8_4_ != (DArrayTy *)0x9)) {
+                                        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                         pDVar12 = (DArrayTy *)
                                                   thunk_FUN_00668f50(this_00,(char *)local_16c._8_4_
                                                                      ,(uint)local_160,
@@ -1963,16 +1992,15 @@ LAB_006588eb:
                                           local_8 = &local_34;
                                           local_c = pDVar12;
                                           do {
-                                            pSVar16 = thunk_FUN_0042b760(CONCAT31((int3)((uint)
-                                                  local_8 >> 8),(char)local_8->flags),
-                                                  (uint)local_15c);
+                                            pSVar16 = thunk_FUN_0042b760((char)local_8->flags,
+                                                                         (uint)local_15c);
                                             uVar17 = uVar33;
                                             if (pSVar16 == (STGroupBoatC *)0x0) {
                                               dVar39 = local_8->flags;
                                               pcVar9 = &DAT_008016a0;
-                                              iVar38 = -0xaa;
+                                              iVar37 = -0xaa;
 LAB_006589fe:
-                                              thunk_FUN_0064d0e0(this_00,iVar38,pcVar9,uVar17,dVar39
+                                              thunk_FUN_0064d0e0(this_00,iVar37,pcVar9,uVar17,dVar39
                                                                 );
                                             }
                                             else {
@@ -1982,16 +2010,17 @@ LAB_006589fe:
                                                  (pAVar14->field_007B == -0x8000)) {
                                                 dVar39 = local_8->flags;
                                                 pcVar9 = thunk_FUN_00674af0(iVar7);
-                                                iVar38 = -0xab;
+                                                iVar37 = -0xab;
                                                 goto LAB_006589fe;
                                               }
                                               puVar15 = local_68;
-                                              for (iVar38 = 0xd; iVar38 != 0; iVar38 = iVar38 + -1)
+                                              for (iVar37 = 0xd; iVar37 != 0; iVar37 = iVar37 + -1)
                                               {
                                                 *puVar15 = 0;
                                                 puVar15 = puVar15 + 1;
                                               }
                                               local_68[1] = PTR_00802a38->field_00E4;
+                                              /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                               local_60 = local_158._0_1_;
                                               local_68[0] = 0x10;
                                               uStack_5f = SUB41(local_154,0);
@@ -2011,11 +2040,14 @@ LAB_006589fe:
                                     }
                                     break;
                                   case 0x5f8:
-                                    bVar36 = thunk_FUN_006521c0((short *)local_16c);
-                                    if (CONCAT31(extraout_var_32,bVar36) != 0) {
-                                      iVar38 = (*(code *)this_00->field_0000->field_0018)();
-                                      if ((iVar38 != 8) ||
+                                    iVar37 = thunk_FUN_006521c0((short *)local_16c);
+                                    if (iVar37 != 0) {
+                                      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+                                      iVar37 = (*(code *)this_00->field_0000->field_0018)();
+                                      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+                                      if ((iVar37 != 8) ||
                                          ((DArrayTy *)local_16c._8_4_ != (DArrayTy *)0x9)) {
+                                        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                         pDVar12 = (DArrayTy *)
                                                   thunk_FUN_00668f50(this_00,(char *)local_16c._8_4_
                                                                      ,(uint)local_160,
@@ -2024,16 +2056,15 @@ LAB_006589fe:
                                           local_8 = &local_34;
                                           local_c = pDVar12;
                                           do {
-                                            pSVar16 = thunk_FUN_0042b760(CONCAT31((int3)((uint)
-                                                  local_8 >> 8),(char)local_8->flags),
-                                                  (uint)local_15c);
+                                            pSVar16 = thunk_FUN_0042b760((char)local_8->flags,
+                                                                         (uint)local_15c);
                                             uVar17 = uVar33;
                                             if (pSVar16 == (STGroupBoatC *)0x0) {
                                               dVar39 = local_8->flags;
                                               pcVar9 = &DAT_008016a0;
-                                              iVar38 = -0xaa;
+                                              iVar37 = -0xaa;
 LAB_00659143:
-                                              thunk_FUN_0064d0e0(this_00,iVar38,pcVar9,uVar17,dVar39
+                                              thunk_FUN_0064d0e0(this_00,iVar37,pcVar9,uVar17,dVar39
                                                                 );
                                             }
                                             else {
@@ -2044,11 +2075,11 @@ LAB_00659143:
                                                  (pAVar14->field_007B == -0x8000)) {
                                                 dVar39 = local_8->flags;
                                                 pcVar9 = thunk_FUN_00674af0(iVar7);
-                                                iVar38 = -0xab;
+                                                iVar37 = -0xab;
                                                 goto LAB_00659143;
                                               }
                                               puVar15 = local_68;
-                                              for (iVar38 = 0xd; iVar38 != 0; iVar38 = iVar38 + -1)
+                                              for (iVar37 = 0xd; iVar37 != 0; iVar37 = iVar37 + -1)
                                               {
                                                 *puVar15 = 0;
                                                 puVar15 = puVar15 + 1;
@@ -2072,12 +2103,13 @@ LAB_00659143:
                                               uStack_5d = (undefined1)((uint)local_13c >> 0x18);
                                               uStack_52 = SUB41(local_148,0);
                                               uStack_51 = (undefined1)((uint)local_148 >> 8);
-                                              iVar38 = (int)local_138 * 0x19;
+                                              iVar37 = (int)local_138 * 0x19;
                                               local_4e = (undefined2)local_140;
                                               local_68[0] = 0x36;
-                                              uStack_4c = (undefined1)iVar38;
-                                              cStack_4b = (char)((uint)iVar38 >> 8);
-                                              local_4a._0_2_ = (undefined2)((uint)iVar38 >> 0x10);
+                                              uStack_4c = (undefined1)iVar37;
+                                              cStack_4b = (char)((uint)iVar37 >> 8);
+                                              /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+                                              local_4a._0_2_ = (undefined2)((uint)iVar37 >> 0x10);
                                               AiFltClassTy::GetAiMess(pAVar14,local_68);
                                               uVar33 = local_14;
                                             }
@@ -2091,11 +2123,14 @@ LAB_00659143:
                                     }
                                     break;
                                   case 0x5f9:
-                                    bVar36 = thunk_FUN_00652460((short *)local_16c);
-                                    if (CONCAT31(extraout_var_34,bVar36) != 0) {
-                                      iVar38 = (*(code *)this_00->field_0000->field_0018)();
-                                      if ((iVar38 != 8) ||
+                                    iVar37 = thunk_FUN_00652460((short *)local_16c);
+                                    if (iVar37 != 0) {
+                                      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+                                      iVar37 = (*(code *)this_00->field_0000->field_0018)();
+                                      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+                                      if ((iVar37 != 8) ||
                                          ((DArrayTy *)local_16c._8_4_ != (DArrayTy *)0x9)) {
+                                        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                         pDVar12 = (DArrayTy *)
                                                   thunk_FUN_00668f50(this_00,(char *)local_16c._8_4_
                                                                      ,(uint)local_160,
@@ -2104,16 +2139,15 @@ LAB_00659143:
                                           local_8 = &local_34;
                                           local_c = pDVar12;
                                           do {
-                                            pSVar16 = thunk_FUN_0042b760(CONCAT31((int3)((uint)
-                                                  local_8 >> 8),(char)local_8->flags),
-                                                  (uint)local_15c);
+                                            pSVar16 = thunk_FUN_0042b760((char)local_8->flags,
+                                                                         (uint)local_15c);
                                             uVar17 = uVar33;
                                             if (pSVar16 == (STGroupBoatC *)0x0) {
                                               dVar39 = local_8->flags;
                                               pcVar9 = &DAT_008016a0;
-                                              iVar38 = -0xaa;
+                                              iVar37 = -0xaa;
 LAB_006594ec:
-                                              thunk_FUN_0064d0e0(this_00,iVar38,pcVar9,uVar17,dVar39
+                                              thunk_FUN_0064d0e0(this_00,iVar37,pcVar9,uVar17,dVar39
                                                                 );
                                             }
                                             else {
@@ -2124,11 +2158,11 @@ LAB_006594ec:
                                                  (pAVar14->field_007B == -0x8000)) {
                                                 dVar39 = local_8->flags;
                                                 pcVar9 = thunk_FUN_00674af0(iVar7);
-                                                iVar38 = -0xab;
+                                                iVar37 = -0xab;
                                                 goto LAB_006594ec;
                                               }
                                               puVar15 = local_68;
-                                              for (iVar38 = 0xd; iVar38 != 0; iVar38 = iVar38 + -1)
+                                              for (iVar37 = 0xd; iVar37 != 0; iVar37 = iVar37 + -1)
                                               {
                                                 *puVar15 = 0;
                                                 puVar15 = puVar15 + 1;
@@ -2150,11 +2184,11 @@ LAB_006594ec:
                                               uStack_5f = (undefined1)(local_140 >> 8);
                                               uStack_5e = (undefined1)(local_140 >> 0x10);
                                               uStack_5d = (undefined1)(local_140 >> 0x18);
-                                              iVar38 = local_13c * 0x19;
+                                              iVar37 = local_13c * 0x19;
                                               local_68[0] = 0x37;
-                                              uStack_50 = (undefined1)iVar38;
-                                              uStack_4f = (undefined1)((uint)iVar38 >> 8);
-                                              local_4e = (undefined2)((uint)iVar38 >> 0x10);
+                                              uStack_50 = (undefined1)iVar37;
+                                              uStack_4f = (undefined1)((uint)iVar37 >> 8);
+                                              local_4e = (undefined2)((uint)iVar37 >> 0x10);
                                               AiFltClassTy::GetAiMess(pAVar14,local_68);
                                               uVar33 = local_14;
                                             }
@@ -2168,11 +2202,14 @@ LAB_006594ec:
                                     }
                                     break;
                                   case 0x5fa:
-                                    bVar36 = thunk_FUN_00652540((short *)local_16c);
-                                    if (CONCAT31(extraout_var_35,bVar36) != 0) {
-                                      iVar38 = (*(code *)this_00->field_0000->field_0018)();
-                                      if ((iVar38 != 8) ||
+                                    iVar37 = thunk_FUN_00652540((short *)local_16c);
+                                    if (iVar37 != 0) {
+                                      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+                                      iVar37 = (*(code *)this_00->field_0000->field_0018)();
+                                      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+                                      if ((iVar37 != 8) ||
                                          ((DArrayTy *)local_16c._8_4_ != (DArrayTy *)0x9)) {
+                                        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                         pDVar12 = (DArrayTy *)
                                                   thunk_FUN_00668f50(this_00,(char *)local_16c._8_4_
                                                                      ,(uint)local_160,
@@ -2181,16 +2218,15 @@ LAB_006594ec:
                                           local_8 = &local_34;
                                           local_c = pDVar12;
                                           do {
-                                            pSVar16 = thunk_FUN_0042b760(CONCAT31((int3)((uint)
-                                                  local_8 >> 8),(char)local_8->flags),
-                                                  (uint)local_15c);
+                                            pSVar16 = thunk_FUN_0042b760((char)local_8->flags,
+                                                                         (uint)local_15c);
                                             uVar17 = uVar33;
                                             if (pSVar16 == (STGroupBoatC *)0x0) {
                                               dVar39 = local_8->flags;
                                               pcVar9 = &DAT_008016a0;
-                                              iVar38 = -0xaa;
+                                              iVar37 = -0xaa;
 LAB_00659640:
-                                              thunk_FUN_0064d0e0(this_00,iVar38,pcVar9,uVar17,dVar39
+                                              thunk_FUN_0064d0e0(this_00,iVar37,pcVar9,uVar17,dVar39
                                                                 );
                                             }
                                             else {
@@ -2201,11 +2237,11 @@ LAB_00659640:
                                                  (pAVar14->field_007B == -0x8000)) {
                                                 dVar39 = local_8->flags;
                                                 pcVar9 = thunk_FUN_00674af0(iVar7);
-                                                iVar38 = -0xab;
+                                                iVar37 = -0xab;
                                                 goto LAB_00659640;
                                               }
                                               puVar15 = local_68;
-                                              for (iVar38 = 0xd; iVar38 != 0; iVar38 = iVar38 + -1)
+                                              for (iVar37 = 0xd; iVar37 != 0; iVar37 = iVar37 + -1)
                                               {
                                                 *puVar15 = 0;
                                                 puVar15 = puVar15 + 1;
@@ -2223,12 +2259,12 @@ LAB_00659640:
                                               uStack_5f = (undefined1)((uint)local_148 >> 8);
                                               uStack_5e = (undefined1)((uint)local_148 >> 0x10);
                                               uStack_5d = (undefined1)((uint)local_148 >> 0x18);
-                                              iVar38 = (int)local_144 * 0x19;
+                                              iVar37 = (int)local_144 * 0x19;
                                               local_68[0] = 0x38;
-                                              uStack_54 = (undefined1)iVar38;
-                                              uStack_53 = (undefined1)((uint)iVar38 >> 8);
-                                              uStack_52 = (undefined1)((uint)iVar38 >> 0x10);
-                                              uStack_51 = (undefined1)((uint)iVar38 >> 0x18);
+                                              uStack_54 = (undefined1)iVar37;
+                                              uStack_53 = (undefined1)((uint)iVar37 >> 8);
+                                              uStack_52 = (undefined1)((uint)iVar37 >> 0x10);
+                                              uStack_51 = (undefined1)((uint)iVar37 >> 0x18);
                                               AiFltClassTy::GetAiMess(pAVar14,local_68);
                                               uVar33 = local_14;
                                             }
@@ -2242,11 +2278,14 @@ LAB_00659640:
                                     }
                                     break;
                                   case 0x5fb:
-                                    bVar36 = thunk_FUN_006525e0((short *)local_16c);
-                                    if (CONCAT31(extraout_var_36,bVar36) != 0) {
-                                      iVar38 = (*(code *)this_00->field_0000->field_0018)();
-                                      if ((iVar38 != 8) ||
+                                    iVar37 = thunk_FUN_006525e0((short *)local_16c);
+                                    if (iVar37 != 0) {
+                                      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+                                      iVar37 = (*(code *)this_00->field_0000->field_0018)();
+                                      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+                                      if ((iVar37 != 8) ||
                                          ((DArrayTy *)local_16c._8_4_ != (DArrayTy *)0x9)) {
+                                        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                         pDVar12 = (DArrayTy *)
                                                   thunk_FUN_00668f50(this_00,(char *)local_16c._8_4_
                                                                      ,(uint)local_160,
@@ -2255,16 +2294,15 @@ LAB_00659640:
                                           local_8 = &local_34;
                                           local_c = pDVar12;
                                           do {
-                                            pSVar16 = thunk_FUN_0042b760(CONCAT31((int3)((uint)
-                                                  local_8 >> 8),(char)local_8->flags),
-                                                  (uint)local_15c);
+                                            pSVar16 = thunk_FUN_0042b760((char)local_8->flags,
+                                                                         (uint)local_15c);
                                             uVar17 = uVar33;
                                             if (pSVar16 == (STGroupBoatC *)0x0) {
                                               dVar39 = local_8->flags;
                                               pcVar9 = &DAT_008016a0;
-                                              iVar38 = -0xaa;
+                                              iVar37 = -0xaa;
 LAB_00659785:
-                                              thunk_FUN_0064d0e0(this_00,iVar38,pcVar9,uVar17,dVar39
+                                              thunk_FUN_0064d0e0(this_00,iVar37,pcVar9,uVar17,dVar39
                                                                 );
                                             }
                                             else {
@@ -2275,11 +2313,11 @@ LAB_00659785:
                                                  (pAVar14->field_007B == -0x8000)) {
                                                 dVar39 = local_8->flags;
                                                 pcVar9 = thunk_FUN_00674af0(iVar7);
-                                                iVar38 = -0xab;
+                                                iVar37 = -0xab;
                                                 goto LAB_00659785;
                                               }
                                               puVar15 = local_68;
-                                              for (iVar38 = 0xd; iVar38 != 0; iVar38 = iVar38 + -1)
+                                              for (iVar37 = 0xd; iVar37 != 0; iVar37 = iVar37 + -1)
                                               {
                                                 *puVar15 = 0;
                                                 puVar15 = puVar15 + 1;
@@ -2293,14 +2331,14 @@ LAB_00659785:
                                               uStack_5d = (undefined1)((uint)local_14c >> 0x18);
                                               uStack_5c = SUB41(local_158,0);
                                               uStack_5b = (undefined1)((uint)local_158 >> 8);
-                                              iVar38 = (int)local_148 * 0x19;
+                                              iVar37 = (int)local_148 * 0x19;
                                               local_58 = SUB41(local_150,0);
                                               uStack_57 = (undefined1)((uint)local_150 >> 8);
                                               local_68[0] = 0x39;
-                                              uStack_56 = (undefined1)iVar38;
-                                              uStack_55 = (undefined1)((uint)iVar38 >> 8);
-                                              uStack_54 = (undefined1)((uint)iVar38 >> 0x10);
-                                              uStack_53 = (undefined1)((uint)iVar38 >> 0x18);
+                                              uStack_56 = (undefined1)iVar37;
+                                              uStack_55 = (undefined1)((uint)iVar37 >> 8);
+                                              uStack_54 = (undefined1)((uint)iVar37 >> 0x10);
+                                              uStack_53 = (undefined1)((uint)iVar37 >> 0x18);
                                               AiFltClassTy::GetAiMess(pAVar14,local_68);
                                               uVar33 = local_14;
                                             }
@@ -2314,11 +2352,14 @@ LAB_00659785:
                                     }
                                     break;
                                   case 0x5fc:
-                                    bVar36 = thunk_FUN_00652670((short *)local_16c);
-                                    if (CONCAT31(extraout_var_37,bVar36) != 0) {
-                                      iVar38 = (*(code *)this_00->field_0000->field_0018)();
-                                      if ((iVar38 != 8) ||
+                                    iVar37 = thunk_FUN_00652670((short *)local_16c);
+                                    if (iVar37 != 0) {
+                                      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+                                      iVar37 = (*(code *)this_00->field_0000->field_0018)();
+                                      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+                                      if ((iVar37 != 8) ||
                                          ((DArrayTy *)local_16c._8_4_ != (DArrayTy *)0x9)) {
+                                        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                         pDVar12 = (DArrayTy *)
                                                   thunk_FUN_00668f50(this_00,(char *)local_16c._8_4_
                                                                      ,(uint)local_160,
@@ -2327,16 +2368,15 @@ LAB_00659785:
                                           local_8 = &local_34;
                                           local_c = pDVar12;
                                           do {
-                                            pSVar16 = thunk_FUN_0042b760(CONCAT31((int3)((uint)
-                                                  local_8 >> 8),(char)local_8->flags),
-                                                  (uint)local_15c);
+                                            pSVar16 = thunk_FUN_0042b760((char)local_8->flags,
+                                                                         (uint)local_15c);
                                             uVar17 = uVar33;
                                             if (pSVar16 == (STGroupBoatC *)0x0) {
                                               dVar39 = local_8->flags;
                                               pcVar9 = &DAT_008016a0;
-                                              iVar38 = -0xaa;
+                                              iVar37 = -0xaa;
 LAB_006598ca:
-                                              thunk_FUN_0064d0e0(this_00,iVar38,pcVar9,uVar17,dVar39
+                                              thunk_FUN_0064d0e0(this_00,iVar37,pcVar9,uVar17,dVar39
                                                                 );
                                             }
                                             else {
@@ -2347,11 +2387,11 @@ LAB_006598ca:
                                                  (pAVar14->field_007B == -0x8000)) {
                                                 dVar39 = local_8->flags;
                                                 pcVar9 = thunk_FUN_00674af0(iVar7);
-                                                iVar38 = -0xab;
+                                                iVar37 = -0xab;
                                                 goto LAB_006598ca;
                                               }
                                               puVar15 = local_68;
-                                              for (iVar38 = 0xd; iVar38 != 0; iVar38 = iVar38 + -1)
+                                              for (iVar37 = 0xd; iVar37 != 0; iVar37 = iVar37 + -1)
                                               {
                                                 *puVar15 = 0;
                                                 puVar15 = puVar15 + 1;
@@ -2365,14 +2405,14 @@ LAB_006598ca:
                                               uStack_5d = (undefined1)((uint)local_14c >> 0x18);
                                               uStack_5c = SUB41(local_158,0);
                                               uStack_5b = (undefined1)((uint)local_158 >> 8);
-                                              iVar38 = (int)local_148 * 0x19;
+                                              iVar37 = (int)local_148 * 0x19;
                                               local_58 = SUB41(local_150,0);
                                               uStack_57 = (undefined1)((uint)local_150 >> 8);
                                               local_68[0] = 0x3a;
-                                              uStack_56 = (undefined1)iVar38;
-                                              uStack_55 = (undefined1)((uint)iVar38 >> 8);
-                                              uStack_54 = (undefined1)((uint)iVar38 >> 0x10);
-                                              uStack_53 = (undefined1)((uint)iVar38 >> 0x18);
+                                              uStack_56 = (undefined1)iVar37;
+                                              uStack_55 = (undefined1)((uint)iVar37 >> 8);
+                                              uStack_54 = (undefined1)((uint)iVar37 >> 0x10);
+                                              uStack_53 = (undefined1)((uint)iVar37 >> 0x18);
                                               AiFltClassTy::GetAiMess(pAVar14,local_68);
                                               uVar33 = local_14;
                                             }
@@ -2386,11 +2426,14 @@ LAB_006598ca:
                                     }
                                     break;
                                   case 0x5fd:
-                                    bVar36 = thunk_FUN_00652300((short *)local_16c);
-                                    if (CONCAT31(extraout_var_33,bVar36) != 0) {
-                                      iVar38 = (*(code *)this_00->field_0000->field_0018)();
-                                      if ((iVar38 != 8) ||
+                                    iVar37 = thunk_FUN_00652300((short *)local_16c);
+                                    if (iVar37 != 0) {
+                                      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+                                      iVar37 = (*(code *)this_00->field_0000->field_0018)();
+                                      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+                                      if ((iVar37 != 8) ||
                                          ((DArrayTy *)local_16c._8_4_ != (DArrayTy *)0x9)) {
+                                        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                         pDVar12 = (DArrayTy *)
                                                   thunk_FUN_00668f50(this_00,(char *)local_16c._8_4_
                                                                      ,(uint)local_160,
@@ -2399,16 +2442,15 @@ LAB_006598ca:
                                           local_8 = &local_34;
                                           local_c = pDVar12;
                                           do {
-                                            pSVar16 = thunk_FUN_0042b760(CONCAT31((int3)((uint)
-                                                  local_8 >> 8),(char)local_8->flags),
-                                                  (uint)local_15c);
+                                            pSVar16 = thunk_FUN_0042b760((char)local_8->flags,
+                                                                         (uint)local_15c);
                                             uVar17 = uVar33;
                                             if (pSVar16 == (STGroupBoatC *)0x0) {
                                               dVar39 = local_8->flags;
                                               pcVar9 = &DAT_008016a0;
-                                              iVar38 = -0xaa;
+                                              iVar37 = -0xaa;
 LAB_0065937a:
-                                              thunk_FUN_0064d0e0(this_00,iVar38,pcVar9,uVar17,dVar39
+                                              thunk_FUN_0064d0e0(this_00,iVar37,pcVar9,uVar17,dVar39
                                                                 );
                                             }
                                             else {
@@ -2419,12 +2461,12 @@ LAB_0065937a:
                                                  (local_10->field_007B == -0x8000)) {
                                                 dVar39 = local_8->flags;
                                                 pcVar9 = thunk_FUN_00674af0(iVar7);
-                                                iVar38 = -0xab;
+                                                iVar37 = -0xab;
                                                 goto LAB_0065937a;
                                               }
                                               ppuVar35 = &local_20c;
-                                              for (iVar38 = 0x12; puVar15 = local_158, iVar38 != 0;
-                                                  iVar38 = iVar38 + -1) {
+                                              for (iVar37 = 0x12; puVar15 = local_158, iVar37 != 0;
+                                                  iVar37 = iVar37 + -1) {
                                                 *ppuVar35 = (uint *)0x0;
                                                 ppuVar35 = ppuVar35 + 1;
                                               }
@@ -2438,8 +2480,11 @@ LAB_0065937a:
                                                 local_200 = (undefined2)uVar32;
                                               }
                                               local_1fe = (int)local_138 * 0x19;
+                                              /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                               local_1f6 = local_154._0_2_;
+                                              /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                               local_1f4 = local_150._0_2_;
+                                              /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                               local_1f2 = local_14c._0_2_;
                                               if (((int)local_148 < 0) ||
                                                  (pcVar9 = local_148, 7 < (int)local_148)) {
@@ -2466,7 +2511,7 @@ LAB_0065937a:
                                               }
                                               local_1e0 = -(uint)bVar1 & uVar32;
                                               puVar15 = local_240;
-                                              for (iVar38 = 0xd; iVar38 != 0; iVar38 = iVar38 + -1)
+                                              for (iVar37 = 0xd; iVar37 != 0; iVar37 = iVar37 + -1)
                                               {
                                                 *puVar15 = 0;
                                                 puVar15 = puVar15 + 1;
@@ -2488,11 +2533,14 @@ LAB_0065937a:
                                     }
                                     break;
                                   case 0x5fe:
-                                    iVar38 = thunk_FUN_00652700((short *)local_16c);
-                                    if (iVar38 != 0) {
-                                      iVar38 = (*(code *)this_00->field_0000->field_0018)();
-                                      if ((iVar38 != 8) ||
+                                    iVar37 = thunk_FUN_00652700((short *)local_16c);
+                                    if (iVar37 != 0) {
+                                      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+                                      iVar37 = (*(code *)this_00->field_0000->field_0018)();
+                                      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+                                      if ((iVar37 != 8) ||
                                          ((DArrayTy *)local_16c._8_4_ != (DArrayTy *)0x9)) {
+                                        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                         pDVar12 = (DArrayTy *)
                                                   thunk_FUN_00668f50(this_00,(char *)local_16c._8_4_
                                                                      ,(uint)local_160,
@@ -2501,16 +2549,15 @@ LAB_0065937a:
                                           local_8 = &local_34;
                                           local_c = pDVar12;
                                           do {
-                                            pSVar16 = thunk_FUN_0042b760(CONCAT31((int3)((uint)
-                                                  local_8 >> 8),(char)local_8->flags),
-                                                  (uint)local_15c);
+                                            pSVar16 = thunk_FUN_0042b760((char)local_8->flags,
+                                                                         (uint)local_15c);
                                             uVar17 = uVar33;
                                             if (pSVar16 == (STGroupBoatC *)0x0) {
                                               dVar39 = local_8->flags;
                                               pcVar9 = &DAT_008016a0;
-                                              iVar38 = -0xaa;
+                                              iVar37 = -0xaa;
 LAB_00659a1c:
-                                              thunk_FUN_0064d0e0(this_00,iVar38,pcVar9,uVar17,dVar39
+                                              thunk_FUN_0064d0e0(this_00,iVar37,pcVar9,uVar17,dVar39
                                                                 );
                                             }
                                             else {
@@ -2520,11 +2567,11 @@ LAB_00659a1c:
                                                  (pAVar14->field_007B != 1)) {
                                                 dVar39 = local_8->flags;
                                                 pcVar9 = thunk_FUN_00674af0(iVar7);
-                                                iVar38 = -0xab;
+                                                iVar37 = -0xab;
                                                 goto LAB_00659a1c;
                                               }
                                               puVar15 = local_68;
-                                              for (iVar38 = 0xd; iVar38 != 0; iVar38 = iVar38 + -1)
+                                              for (iVar37 = 0xd; iVar37 != 0; iVar37 = iVar37 + -1)
                                               {
                                                 *puVar15 = 0;
                                                 puVar15 = puVar15 + 1;
@@ -2544,15 +2591,15 @@ LAB_00659a1c:
                                               uStack_5d = (undefined1)((uint)local_144 >> 0x18);
                                               uStack_56 = SUB41(local_150,0);
                                               uStack_55 = (undefined1)((uint)local_150 >> 8);
-                                              iVar38 = local_140 * 0x19;
+                                              iVar37 = local_140 * 0x19;
                                               uStack_52 = SUB41(local_148,0);
                                               uStack_51 = (undefined1)((uint)local_148 >> 8);
                                               uStack_50 = (undefined1)((uint)local_148 >> 0x10);
                                               uStack_4f = (undefined1)((uint)local_148 >> 0x18);
                                               local_68[0] = 0x3b;
-                                              local_4e = (undefined2)iVar38;
-                                              uStack_4c = (undefined1)((uint)iVar38 >> 0x10);
-                                              cStack_4b = (char)((uint)iVar38 >> 0x18);
+                                              local_4e = (undefined2)iVar37;
+                                              uStack_4c = (undefined1)((uint)iVar37 >> 0x10);
+                                              cStack_4b = (char)((uint)iVar37 >> 0x18);
                                               AiFltClassTy::GetAiMess(pAVar14,local_68);
                                               uVar33 = local_14;
                                             }
@@ -2578,6 +2625,7 @@ LAB_00659a1c:
                                   thunk_FUN_0064d0e0(this_00,-0x7d,pcVar9,uVar17,iVar7);
                                 }
                                 else {
+                                  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                   DAT_0080c51e = (DArrayTy *)local_16c._8_4_;
                                 }
                               }
@@ -2592,7 +2640,9 @@ LAB_00659a1c:
                                 thunk_FUN_0064d0e0(this_00,-0x7d,pcVar9,uVar17,iVar7);
                               }
                               else {
+                                /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
                                 iVar7 = (*(code *)this_00->field_0000->field_0018)();
+                                /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                 if ((iVar7 == 8) && ((DArrayTy *)local_16c._8_4_ == (DArrayTy *)0x9)
                                    ) {
                                   iVar7 = -1;
@@ -2601,6 +2651,7 @@ LAB_00659a1c:
                                   thunk_FUN_0064d0e0(this_00,-0x7d,pcVar9,uVar17,iVar7);
                                 }
                                 else {
+                                  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                   pDVar12 = (DArrayTy *)
                                             thunk_FUN_00668f50(this_00,(char *)local_16c._8_4_,
                                                                (uint)local_160,&local_34.flags);
@@ -2642,16 +2693,18 @@ LAB_00659a1c:
                             }
                             switch(iVar7) {
                             case 0x594:
-                              iVar38 = thunk_FUN_0064feb0((int)local_16c);
-                              if (iVar38 == 0) break;
+                              iVar37 = thunk_FUN_0064feb0((int)local_16c);
+                              if (iVar37 == 0) break;
                               if (local_160 != (DArrayTy *)0x0) {
+                                /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                 _EnumArt(0,(byte *)local_16c._8_4_,0,0,0,-1,-1,-1,&LAB_004012cb,
                                          local_160);
                               }
                               goto cf_switch_join_00659A73;
                             case 0x595:
-                              iVar38 = thunk_FUN_0064fef0((short *)local_16c);
-                              if (iVar38 == 0) break;
+                              iVar37 = thunk_FUN_0064fef0((short *)local_16c);
+                              if (iVar37 == 0) break;
+                              /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                               if ((((DArrayTy *)local_16c._8_4_ == (DArrayTy *)0xdd) ||
                                   ((DArrayTy *)local_16c._8_4_ == (DArrayTy *)0xde)) ||
                                  ((DArrayTy *)local_16c._8_4_ == (DArrayTy *)0xe0)) {
@@ -2664,33 +2717,38 @@ LAB_00659a1c:
                                 local_18c = local_160;
                                 local_190 = local_15c;
                                 local_184 = local_158;
-                                iVar38 = thunk_FUN_004b1cf0(local_16c._8_4_,(int *)&local_18c,
+                                /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+                                iVar37 = thunk_FUN_004b1cf0(local_16c._8_4_,(int *)&local_18c,
                                                             (int *)&local_190,(int *)&local_184);
-                                if (iVar38 == 0) goto LAB_00655f4c;
+                                if (iVar37 == 0) goto LAB_00655f4c;
+                                /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                 thunk_FUN_00580450(local_18c,local_190,local_184,local_16c._8_4_,
                                                    local_154);
                               }
                               goto cf_switch_join_00659A73;
                             case 0x596:
-                              iVar38 = thunk_FUN_0064ff70((short *)local_16c);
-                              if (iVar38 == 0) break;
+                              iVar37 = thunk_FUN_0064ff70((short *)local_16c);
+                              if (iVar37 == 0) break;
                               DAT_008118fc = 0;
+                              /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                               _EnumRCField((short)local_16c._8_4_,(short)local_160,(short)local_15c,
                                            (short)local_158,(short)local_154,(short)local_150,
                                            (short)local_14c,&LAB_004047e1,&local_148);
                               goto cf_switch_join_00659A73;
                             case 0x597:
-                              iVar38 = thunk_FUN_00650090((short *)local_16c);
-                              if (iVar38 == 0) break;
+                              iVar37 = thunk_FUN_00650090((short *)local_16c);
+                              if (iVar37 == 0) break;
+                              /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                               _EnumRCField((short)local_15c,(short)local_158,(short)local_154,
                                            (short)local_150,(short)local_14c,(short)local_148,
                                            (short)local_144,&LAB_00405b6e,
                                            (int)local_160 << 0x10 | local_16c._8_4_ & 0xffff);
                               goto cf_switch_join_00659A73;
                             case 0x598:
-                              iVar38 = thunk_FUN_006501a0((short *)local_16c);
-                              if (iVar38 != 0) {
-                                iVar38 = _CreateDest(this_00,(short)local_16c._8_4_,(short)local_160
+                              iVar37 = thunk_FUN_006501a0((short *)local_16c);
+                              if (iVar37 != 0) {
+                                /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+                                iVar37 = _CreateDest(this_00,(short)local_16c._8_4_,(short)local_160
                                                      ,(short)local_15c,(short)local_158,
                                                      (short)local_154,(char *)local_150,local_14c,
                                                      local_148);
@@ -2698,27 +2756,32 @@ LAB_00659a1c:
                               }
                               break;
                             case 0x599:
-                              iVar38 = thunk_FUN_00650240((short *)local_16c);
-                              if (iVar38 == 0) break;
+                              iVar37 = thunk_FUN_00650240((short *)local_16c);
+                              if (iVar37 == 0) break;
                               DAT_008118fc = 0;
+                              /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                               _EnumDest((byte *)local_160,(char)local_16c._8_4_,(short)local_15c,
                                         (short)local_158,(short)local_154,(short)local_150,
                                         (short)local_14c,(short)local_148,&LAB_0040191a,&local_144);
                               goto cf_switch_join_00659A73;
                             case 0x59a:
-                              iVar38 = thunk_FUN_00650370((int)local_16c);
-                              if (iVar38 == 0) break;
+                              iVar37 = thunk_FUN_00650370((int)local_16c);
+                              if (iVar37 == 0) break;
                               if (local_160 != (DArrayTy *)0x0) {
+                                /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                 _EnumDest((byte *)local_16c._8_4_,-1,0,0,0,-1,-1,-1,&LAB_00403e18,
                                           local_160);
                               }
                               goto cf_switch_join_00659A73;
                             case 0x59b:
-                              iVar38 = thunk_FUN_006503b0((short *)local_16c);
-                              if (iVar38 != 0) {
-                                iVar38 = (*(code *)this_00->field_0000->field_0018)();
-                                if ((iVar38 != 8) ||
+                              iVar37 = thunk_FUN_006503b0((short *)local_16c);
+                              if (iVar37 != 0) {
+                                /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+                                iVar37 = (*(code *)this_00->field_0000->field_0018)();
+                                /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+                                if ((iVar37 != 8) ||
                                    ((DArrayTy *)local_16c._8_4_ != (DArrayTy *)0x9)) {
+                                  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                   pDVar12 = (DArrayTy *)
                                             thunk_FUN_00668f50(this_00,(char *)local_16c._8_4_,
                                                                (uint)local_160,&local_34.flags);
@@ -2726,12 +2789,12 @@ LAB_00659a1c:
                                     local_8 = &local_34;
                                     local_c = pDVar12;
                                     do {
-                                      iVar38 = _CreateMine(this_00,(ushort)local_8->flags,
+                                      iVar37 = _CreateMine(this_00,(ushort)local_8->flags,
                                                            (short)local_15c,(int)local_158,
                                                            (int)local_154,local_150,
                                                            (ushort)local_14c,local_148,local_144,
                                                            local_140);
-                                      if (iVar38 != 0) {
+                                      if (iVar37 != 0) {
                                         dVar39 = local_8->flags;
                                         uVar17 = uVar33;
                                         pcVar9 = thunk_FUN_00674af0(iVar7);
@@ -2747,11 +2810,14 @@ LAB_00659a1c:
                               }
                               break;
                             case 0x59c:
-                              iVar38 = thunk_FUN_00650480((short *)local_16c);
-                              if (iVar38 != 0) {
-                                iVar38 = (*(code *)this_00->field_0000->field_0018)();
-                                if ((iVar38 != 8) ||
+                              iVar37 = thunk_FUN_00650480((short *)local_16c);
+                              if (iVar37 != 0) {
+                                /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+                                iVar37 = (*(code *)this_00->field_0000->field_0018)();
+                                /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+                                if ((iVar37 != 8) ||
                                    ((DArrayTy *)local_16c._8_4_ != (DArrayTy *)0x9)) {
+                                  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                   pDVar12 = (DArrayTy *)
                                             thunk_FUN_00668f50(this_00,(char *)local_16c._8_4_,
                                                                (uint)local_160,&local_34.flags);
@@ -2773,11 +2839,14 @@ LAB_00659a1c:
                               }
                               break;
                             case 0x59d:
-                              iVar38 = thunk_FUN_00650600((short *)local_16c);
-                              if (iVar38 != 0) {
-                                iVar38 = (*(code *)this_00->field_0000->field_0018)();
-                                if ((iVar38 != 8) ||
+                              iVar37 = thunk_FUN_00650600((short *)local_16c);
+                              if (iVar37 != 0) {
+                                /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+                                iVar37 = (*(code *)this_00->field_0000->field_0018)();
+                                /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+                                if ((iVar37 != 8) ||
                                    ((DArrayTy *)local_16c._8_4_ != (DArrayTy *)0x9)) {
+                                  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                   pDVar12 = (DArrayTy *)
                                             thunk_FUN_00668f50(this_00,(char *)local_16c._8_4_,
                                                                (uint)local_160,&local_34.flags);
@@ -2801,11 +2870,14 @@ LAB_00659a1c:
                             default:
                               goto cf_switch_join_00659A73;
                             case 0x5aa:
-                              iVar38 = thunk_FUN_00650760((short *)local_16c);
-                              if (iVar38 != 0) {
-                                iVar38 = (*(code *)this_00->field_0000->field_0018)();
-                                if ((iVar38 != 8) ||
+                              iVar37 = thunk_FUN_00650760((short *)local_16c);
+                              if (iVar37 != 0) {
+                                /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+                                iVar37 = (*(code *)this_00->field_0000->field_0018)();
+                                /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+                                if ((iVar37 != 8) ||
                                    ((DArrayTy *)local_16c._8_4_ != (DArrayTy *)0x9)) {
+                                  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                   pDVar12 = (DArrayTy *)
                                             thunk_FUN_00668f50(this_00,(char *)local_16c._8_4_,
                                                                (uint)local_160,&local_34.flags);
@@ -2824,11 +2896,14 @@ LAB_00659a1c:
                               }
                               break;
                             case 0x5ab:
-                              iVar38 = thunk_FUN_00650760((short *)local_16c);
-                              if (iVar38 != 0) {
-                                iVar38 = (*(code *)this_00->field_0000->field_0018)();
-                                if ((iVar38 != 8) ||
+                              iVar37 = thunk_FUN_00650760((short *)local_16c);
+                              if (iVar37 != 0) {
+                                /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+                                iVar37 = (*(code *)this_00->field_0000->field_0018)();
+                                /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+                                if ((iVar37 != 8) ||
                                    ((DArrayTy *)local_16c._8_4_ != (DArrayTy *)0x9)) {
+                                  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                   pDVar12 = (DArrayTy *)
                                             thunk_FUN_00668f50(this_00,(char *)local_16c._8_4_,
                                                                (uint)local_160,&local_34.flags);
@@ -2847,11 +2922,14 @@ LAB_00659a1c:
                               }
                               break;
                             case 0x5ac:
-                              iVar38 = thunk_FUN_00650820((short *)local_16c);
-                              if (iVar38 != 0) {
-                                iVar38 = (*(code *)this_00->field_0000->field_0018)();
-                                if ((iVar38 != 8) ||
+                              iVar37 = thunk_FUN_00650820((short *)local_16c);
+                              if (iVar37 != 0) {
+                                /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+                                iVar37 = (*(code *)this_00->field_0000->field_0018)();
+                                /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+                                if ((iVar37 != 8) ||
                                    ((DArrayTy *)local_16c._8_4_ != (DArrayTy *)0x9)) {
+                                  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                   pDVar12 = (DArrayTy *)
                                             thunk_FUN_00668f50(this_00,(char *)local_16c._8_4_,
                                                                (uint)local_160,&local_34.flags);
@@ -2881,11 +2959,14 @@ LAB_00659a1c:
                               }
                               break;
                             case 0x5ad:
-                              iVar38 = thunk_FUN_006508c0((short *)local_16c);
-                              if (iVar38 != 0) {
-                                iVar38 = (*(code *)this_00->field_0000->field_0018)();
-                                if ((iVar38 != 8) ||
+                              iVar37 = thunk_FUN_006508c0((short *)local_16c);
+                              if (iVar37 != 0) {
+                                /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+                                iVar37 = (*(code *)this_00->field_0000->field_0018)();
+                                /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+                                if ((iVar37 != 8) ||
                                    ((DArrayTy *)local_16c._8_4_ != (DArrayTy *)0x9)) {
+                                  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                   pDVar12 = (DArrayTy *)
                                             thunk_FUN_00668f50(this_00,(char *)local_16c._8_4_,
                                                                (uint)local_160,&local_34.flags);
@@ -2904,11 +2985,14 @@ LAB_00659a1c:
                               }
                               break;
                             case 0x5ae:
-                              iVar38 = thunk_FUN_006509e0((int)local_16c);
-                              if (iVar38 != 0) {
-                                iVar38 = (*(code *)this_00->field_0000->field_0018)();
-                                if ((iVar38 != 8) ||
+                              iVar37 = thunk_FUN_006509e0((int)local_16c);
+                              if (iVar37 != 0) {
+                                /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+                                iVar37 = (*(code *)this_00->field_0000->field_0018)();
+                                /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+                                if ((iVar37 != 8) ||
                                    ((DArrayTy *)local_16c._8_4_ != (DArrayTy *)0x9)) {
+                                  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                   pDVar12 = (DArrayTy *)
                                             thunk_FUN_00668f50(this_00,(char *)local_16c._8_4_,
                                                                (uint)local_160,&local_34.flags);
@@ -2926,11 +3010,14 @@ LAB_00659a1c:
                               }
                               break;
                             case 0x5af:
-                              iVar38 = thunk_FUN_00650a20((short *)local_16c);
-                              if (iVar38 != 0) {
-                                iVar38 = (*(code *)this_00->field_0000->field_0018)();
-                                if ((iVar38 != 8) ||
+                              iVar37 = thunk_FUN_00650a20((short *)local_16c);
+                              if (iVar37 != 0) {
+                                /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+                                iVar37 = (*(code *)this_00->field_0000->field_0018)();
+                                /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+                                if ((iVar37 != 8) ||
                                    ((DArrayTy *)local_16c._8_4_ != (DArrayTy *)0x9)) {
+                                  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                   pDVar12 = (DArrayTy *)
                                             thunk_FUN_00668f50(this_00,(char *)local_16c._8_4_,
                                                                (uint)local_160,&local_34.flags);
@@ -2958,11 +3045,14 @@ LAB_00659a1c:
                               }
                               break;
                             case 0x5b0:
-                              iVar38 = thunk_FUN_00650a90((int)local_16c);
-                              if (iVar38 != 0) {
-                                iVar38 = (*(code *)this_00->field_0000->field_0018)();
-                                if ((iVar38 != 8) ||
+                              iVar37 = thunk_FUN_00650a90((int)local_16c);
+                              if (iVar37 != 0) {
+                                /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+                                iVar37 = (*(code *)this_00->field_0000->field_0018)();
+                                /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+                                if ((iVar37 != 8) ||
                                    ((DArrayTy *)local_16c._8_4_ != (DArrayTy *)0x9)) {
+                                  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                   pDVar12 = (DArrayTy *)
                                             thunk_FUN_00668f50(this_00,(char *)local_16c._8_4_,
                                                                (uint)local_160,&local_34.flags);
@@ -2990,11 +3080,14 @@ LAB_00659a1c:
                               }
                               break;
                             case 0x5b1:
-                              iVar38 = thunk_FUN_006507e0((int)local_16c);
-                              if (iVar38 != 0) {
-                                iVar38 = (*(code *)this_00->field_0000->field_0018)();
-                                if ((iVar38 != 8) ||
+                              iVar37 = thunk_FUN_006507e0((int)local_16c);
+                              if (iVar37 != 0) {
+                                /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+                                iVar37 = (*(code *)this_00->field_0000->field_0018)();
+                                /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+                                if ((iVar37 != 8) ||
                                    ((DArrayTy *)local_16c._8_4_ != (DArrayTy *)0x9)) {
+                                  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                   pDVar12 = (DArrayTy *)
                                             thunk_FUN_00668f50(this_00,(char *)local_16c._8_4_,
                                                                (uint)local_160,&local_34.flags);
@@ -3012,11 +3105,14 @@ LAB_00659a1c:
                               }
                               break;
                             case 0x5b2:
-                              iVar38 = thunk_FUN_006507e0((int)local_16c);
-                              if (iVar38 != 0) {
-                                iVar38 = (*(code *)this_00->field_0000->field_0018)();
-                                if ((iVar38 != 8) ||
+                              iVar37 = thunk_FUN_006507e0((int)local_16c);
+                              if (iVar37 != 0) {
+                                /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+                                iVar37 = (*(code *)this_00->field_0000->field_0018)();
+                                /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+                                if ((iVar37 != 8) ||
                                    ((DArrayTy *)local_16c._8_4_ != (DArrayTy *)0x9)) {
+                                  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                   pDVar12 = (DArrayTy *)
                                             thunk_FUN_00668f50(this_00,(char *)local_16c._8_4_,
                                                                (uint)local_160,&local_34.flags);
@@ -3034,11 +3130,14 @@ LAB_00659a1c:
                               }
                               break;
                             case 0x5b3:
-                              iVar38 = thunk_FUN_00650940((short *)local_16c);
-                              if (iVar38 != 0) {
-                                iVar38 = (*(code *)this_00->field_0000->field_0018)();
-                                if ((iVar38 != 8) ||
+                              iVar37 = thunk_FUN_00650940((short *)local_16c);
+                              if (iVar37 != 0) {
+                                /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+                                iVar37 = (*(code *)this_00->field_0000->field_0018)();
+                                /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+                                if ((iVar37 != 8) ||
                                    ((DArrayTy *)local_16c._8_4_ != (DArrayTy *)0x9)) {
+                                  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                   pDVar12 = (DArrayTy *)
                                             thunk_FUN_00668f50(this_00,(char *)local_16c._8_4_,
                                                                (uint)local_160,&local_34.flags);
@@ -3057,11 +3156,14 @@ LAB_00659a1c:
                               }
                               break;
                             case 0x5b4:
-                              iVar38 = thunk_FUN_00650b10((short *)local_16c);
-                              if (iVar38 != 0) {
-                                iVar38 = (*(code *)this_00->field_0000->field_0018)();
-                                if ((iVar38 != 8) ||
+                              iVar37 = thunk_FUN_00650b10((short *)local_16c);
+                              if (iVar37 != 0) {
+                                /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+                                iVar37 = (*(code *)this_00->field_0000->field_0018)();
+                                /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+                                if ((iVar37 != 8) ||
                                    ((DArrayTy *)local_16c._8_4_ != (DArrayTy *)0x9)) {
+                                  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                   pDVar12 = (DArrayTy *)
                                             thunk_FUN_00668f50(this_00,(char *)local_16c._8_4_,
                                                                (uint)local_160,&local_34.flags);
@@ -3099,11 +3201,14 @@ LAB_00659a1c:
                               }
                               break;
                             case 0x5b5:
-                              iVar38 = thunk_FUN_00650f50((int)local_16c);
-                              if (iVar38 != 0) {
-                                iVar38 = (*(code *)this_00->field_0000->field_0018)();
-                                if ((iVar38 != 8) ||
+                              iVar37 = thunk_FUN_00650f50((int)local_16c);
+                              if (iVar37 != 0) {
+                                /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+                                iVar37 = (*(code *)this_00->field_0000->field_0018)();
+                                /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+                                if ((iVar37 != 8) ||
                                    ((DArrayTy *)local_16c._8_4_ != (DArrayTy *)0x9)) {
+                                  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                   pDVar12 = (DArrayTy *)
                                             thunk_FUN_00668f50(this_00,(char *)local_16c._8_4_,
                                                                (uint)local_160,&local_34.flags);
@@ -3139,11 +3244,14 @@ LAB_00659a1c:
                               }
                               break;
                             case 0x5b6:
-                              bVar36 = thunk_FUN_00650f90((short *)local_16c);
-                              if (CONCAT31(extraout_var_14,bVar36) != 0) {
-                                iVar38 = (*(code *)this_00->field_0000->field_0018)();
-                                if ((iVar38 != 8) ||
+                              iVar37 = thunk_FUN_00650f90((short *)local_16c);
+                              if (iVar37 != 0) {
+                                /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+                                iVar37 = (*(code *)this_00->field_0000->field_0018)();
+                                /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+                                if ((iVar37 != 8) ||
                                    ((DArrayTy *)local_16c._8_4_ != (DArrayTy *)0x9)) {
+                                  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                   pDVar12 = (DArrayTy *)
                                             thunk_FUN_00668f50(this_00,(char *)local_16c._8_4_,
                                                                (uint)local_160,&local_34.flags);
@@ -3178,11 +3286,14 @@ LAB_00659a1c:
                               }
                               break;
                             case 0x5b7:
-                              iVar38 = thunk_FUN_00650bd0((short *)local_16c);
-                              if (iVar38 != 0) {
-                                iVar38 = (*(code *)this_00->field_0000->field_0018)();
-                                if ((iVar38 != 8) ||
+                              iVar37 = thunk_FUN_00650bd0((short *)local_16c);
+                              if (iVar37 != 0) {
+                                /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+                                iVar37 = (*(code *)this_00->field_0000->field_0018)();
+                                /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+                                if ((iVar37 != 8) ||
                                    ((DArrayTy *)local_16c._8_4_ != (DArrayTy *)0x9)) {
+                                  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                   pDVar12 = (DArrayTy *)
                                             thunk_FUN_00668f50(this_00,(char *)local_16c._8_4_,
                                                                (uint)local_160,&local_34.flags);
@@ -3191,20 +3302,21 @@ LAB_00659a1c:
                                     local_8 = pDVar12;
                                     do {
                                       local_c = (DArrayTy *)
-                                                thunk_FUN_00677290(*(undefined4 *)local_10,
-                                                                   (uint)local_15c,(char)local_158,
-                                                                   (short)local_154,(short)local_150
-                                                                   ,(short)local_14c,
-                                                                   (short)local_148,(short)local_144
-                                                                   ,(short)local_140,1);
+                                                thunk_FUN_00677290(local_10->vtable,(uint)local_15c,
+                                                                   (char)local_158,(short)local_154,
+                                                                   (short)local_150,(short)local_14c
+                                                                   ,(short)local_148,
+                                                                   (short)local_144,(short)local_140
+                                                                   ,1);
                                       if (local_c == (DArrayTy *)0x0) {
-                                        iVar38 = *(int *)local_10;
+                                        pAVar38 = local_10->vtable;
                                         uVar17 = uVar33;
                                         pcVar9 = thunk_FUN_00674af0(iVar7);
-                                        thunk_FUN_0064d0e0(this_00,-0xab,pcVar9,uVar17,iVar38);
+                                        thunk_FUN_0064d0e0(this_00,-0xab,pcVar9,uVar17,(int)pAVar38)
+                                        ;
                                       }
                                       else {
-                                        thunk_FUN_00675dc0(*(uint *)local_10,(uint *)local_c);
+                                        thunk_FUN_00675dc0((uint)local_10->vtable,(uint *)local_c);
                                         DArrayDestroy(local_c);
                                       }
                                       local_10 = (AiFltClassTy *)&local_10->field_0x4;
@@ -3217,11 +3329,14 @@ LAB_00659a1c:
                               }
                               break;
                             case 0x5b8:
-                              iVar38 = thunk_FUN_00650cf0((short *)local_16c);
-                              if (iVar38 != 0) {
-                                iVar38 = (*(code *)this_00->field_0000->field_0018)();
-                                if ((iVar38 != 8) ||
+                              iVar37 = thunk_FUN_00650cf0((short *)local_16c);
+                              if (iVar37 != 0) {
+                                /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+                                iVar37 = (*(code *)this_00->field_0000->field_0018)();
+                                /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+                                if ((iVar37 != 8) ||
                                    ((DArrayTy *)local_16c._8_4_ != (DArrayTy *)0x9)) {
+                                  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                   pDVar12 = (DArrayTy *)
                                             thunk_FUN_00668f50(this_00,(char *)local_16c._8_4_,
                                                                (uint)local_160,&local_34.flags);
@@ -3230,20 +3345,21 @@ LAB_00659a1c:
                                     local_8 = pDVar12;
                                     do {
                                       local_c = (DArrayTy *)
-                                                thunk_FUN_006773b0(*(undefined4 *)local_10,
-                                                                   (uint)local_15c,(char)local_158,
-                                                                   (short)local_154,(short)local_150
-                                                                   ,(short)local_14c,
-                                                                   (short)local_148,(short)local_144
-                                                                   ,(short)local_140,1);
+                                                thunk_FUN_006773b0(local_10->vtable,(uint)local_15c,
+                                                                   (char)local_158,(short)local_154,
+                                                                   (short)local_150,(short)local_14c
+                                                                   ,(short)local_148,
+                                                                   (short)local_144,(short)local_140
+                                                                   ,1);
                                       if (local_c == (DArrayTy *)0x0) {
-                                        iVar38 = *(int *)local_10;
+                                        pAVar38 = local_10->vtable;
                                         uVar17 = uVar33;
                                         pcVar9 = thunk_FUN_00674af0(iVar7);
-                                        thunk_FUN_0064d0e0(this_00,-0xab,pcVar9,uVar17,iVar38);
+                                        thunk_FUN_0064d0e0(this_00,-0xab,pcVar9,uVar17,(int)pAVar38)
+                                        ;
                                       }
                                       else {
-                                        thunk_FUN_00675dc0(*(uint *)local_10,(uint *)local_c);
+                                        thunk_FUN_00675dc0((uint)local_10->vtable,(uint *)local_c);
                                         DArrayDestroy(local_c);
                                       }
                                       local_10 = (AiFltClassTy *)&local_10->field_0x4;
@@ -3256,11 +3372,14 @@ LAB_00659a1c:
                               }
                               break;
                             case 0x5b9:
-                              iVar38 = thunk_FUN_00650e10((short *)local_16c);
-                              if (iVar38 != 0) {
-                                iVar38 = (*(code *)this_00->field_0000->field_0018)();
-                                if ((iVar38 != 8) ||
+                              iVar37 = thunk_FUN_00650e10((short *)local_16c);
+                              if (iVar37 != 0) {
+                                /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+                                iVar37 = (*(code *)this_00->field_0000->field_0018)();
+                                /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+                                if ((iVar37 != 8) ||
                                    ((DArrayTy *)local_16c._8_4_ != (DArrayTy *)0x9)) {
+                                  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                   pDVar12 = (DArrayTy *)
                                             thunk_FUN_00668f50(this_00,(char *)local_16c._8_4_,
                                                                (uint)local_160,&local_34.flags);
@@ -3269,7 +3388,7 @@ LAB_00659a1c:
                                     local_8 = pDVar12;
                                     do {
                                       local_c = (DArrayTy *)
-                                                thunk_FUN_006774c0(*(undefined4 *)local_10,
+                                                thunk_FUN_006774c0(local_10->vtable,
                                                                    (byte *)local_15c,(char)local_158
                                                                    ,(short)local_154,
                                                                    (short)local_150,(short)local_14c
@@ -3277,13 +3396,14 @@ LAB_00659a1c:
                                                                    (short)local_144,(short)local_140
                                                                    ,1);
                                       if (local_c == (DArrayTy *)0x0) {
-                                        iVar38 = *(int *)local_10;
+                                        pAVar38 = local_10->vtable;
                                         uVar17 = uVar33;
                                         pcVar9 = thunk_FUN_00674af0(iVar7);
-                                        thunk_FUN_0064d0e0(this_00,-0xab,pcVar9,uVar17,iVar38);
+                                        thunk_FUN_0064d0e0(this_00,-0xab,pcVar9,uVar17,(int)pAVar38)
+                                        ;
                                       }
                                       else {
-                                        thunk_FUN_00675dc0(*(uint *)local_10,(uint *)local_c);
+                                        thunk_FUN_00675dc0((uint)local_10->vtable,(uint *)local_c);
                                         DArrayDestroy(local_c);
                                       }
                                       local_10 = (AiFltClassTy *)&local_10->field_0x4;
@@ -3307,6 +3427,7 @@ LAB_00659a1c:
                             }
                             else {
                               DAT_008118fc = 0;
+                              /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                               _EnumArt((short)local_16c._8_4_,(byte *)local_160,(short)local_15c,
                                        (short)local_158,(short)local_154,(short)local_150,
                                        (short)local_14c,(short)local_148,&LAB_004022f2,&local_144);
@@ -3323,7 +3444,9 @@ LAB_00659a1c:
                                 thunk_FUN_0064d0e0(this_00,-0x7d,pcVar9,uVar17,iVar7);
                               }
                               else {
+                                /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
                                 iVar7 = (*(code *)this_00->field_0000->field_0018)();
+                                /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                 if ((iVar7 == 8) && ((DArrayTy *)local_16c._8_4_ == (DArrayTy *)0x9)
                                    ) {
                                   iVar7 = -1;
@@ -3332,9 +3455,10 @@ LAB_00659a1c:
                                   thunk_FUN_0064d0e0(this_00,-0x7d,pcVar9,uVar17,iVar7);
                                 }
                                 else {
+                                  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                   iVar7 = thunk_FUN_00668f50(this_00,(char *)local_16c._8_4_,
                                                              (uint)local_160,&local_34.flags);
-                                  iVar38 = 0;
+                                  iVar37 = 0;
                                   if (0 < iVar7) {
                                     pDVar12 = &local_34;
                                     do {
@@ -3344,9 +3468,9 @@ LAB_00659a1c:
                                         }
                                         break;
                                       }
-                                      iVar38 = iVar38 + 1;
+                                      iVar37 = iVar37 + 1;
                                       pDVar12 = (DArrayTy *)&pDVar12->iteratorIndex;
-                                    } while (iVar38 < iVar7);
+                                    } while (iVar37 < iVar7);
                                   }
                                 }
                               }
@@ -3362,6 +3486,7 @@ LAB_00659a1c:
                                   thunk_FUN_0064d0e0(this_00,-0x7d,pcVar9,uVar17,iVar7);
                                 }
                                 else {
+                                  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                   (&this_00->field_052F)[local_16c._8_4_] = local_160;
                                 }
                                 goto cf_switch_join_00659A73;
@@ -3377,7 +3502,9 @@ LAB_00659a1c:
                                       thunk_FUN_0064d0e0(this_00,-0x7d,pcVar9,uVar17,iVar7);
                                     }
                                     else {
+                                      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                       if ((DArrayTy *)local_16c._8_4_ == (DArrayTy *)0x9) {
+                                        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
                                         iVar7 = (*(code *)this_00->field_0000->field_0018)();
                                         if (iVar7 == 8) {
                                           pDVar12 = local_15c;
@@ -3394,6 +3521,7 @@ LAB_00659a1c:
                                           goto cf_switch_join_00659A73;
                                         }
                                       }
+                                      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                       pDVar12 = (DArrayTy *)
                                                 thunk_FUN_00668f50(this_00,(char *)local_16c._8_4_,
                                                                    (uint)local_160,&local_34.flags);
@@ -3439,6 +3567,7 @@ LAB_00659a1c:
                                     }
                                     else {
                                       pDVar12 = local_160;
+                                      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                       if ((DArrayTy *)local_16c._8_4_ == (DArrayTy *)0x0)
                                       goto cf_continue_loop_00659A80;
                                     }
@@ -3454,12 +3583,14 @@ LAB_00659a1c:
                                       pcVar9 = thunk_FUN_00674af0(0x515);
                                       thunk_FUN_0064d0e0(this_00,-0x7d,pcVar9,uVar17,iVar7);
                                     }
+                                    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                     else if ((DArrayTy *)local_16c._8_4_ == (DArrayTy *)0x0) {
                                       *(undefined1 *)local_178 = 0;
                                       local_178->field_000B = 0;
                                     }
                                     else {
                                       *(undefined1 *)local_178 = 1;
+                                      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                       local_178->field_000B = local_16c._8_4_;
                                     }
                                   }
@@ -3473,7 +3604,9 @@ LAB_00659a1c:
                                     thunk_FUN_0064d0e0(this_00,-0x7d,pcVar9,uVar17,iVar7);
                                   }
                                   else {
+                                    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                     if ((DArrayTy *)local_16c._8_4_ == (DArrayTy *)0x9) {
+                                      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
                                       iVar7 = (*(code *)this_00->field_0000->field_0018)();
                                       if (iVar7 == 8) {
                                         pDVar12 = local_15c;
@@ -3491,6 +3624,7 @@ LAB_00659a1c:
                                         goto cf_switch_join_00659A73;
                                       }
                                     }
+                                    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                     pDVar12 = (DArrayTy *)
                                               thunk_FUN_00668f50(this_00,(char *)local_16c._8_4_,
                                                                  (uint)local_160,&local_34.flags);
@@ -3536,7 +3670,9 @@ LAB_00659a1c:
                                     thunk_FUN_0064d0e0(this_00,-0x7d,pcVar9,uVar17,iVar7);
                                   }
                                   else {
+                                    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                     if ((DArrayTy *)local_16c._8_4_ == (DArrayTy *)0x9) {
+                                      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
                                       iVar7 = (*(code *)this_00->field_0000->field_0018)();
                                       if (iVar7 == 8) {
                                         *(uint **)(&this_00->field_0xde + (int)local_15c * 4) =
@@ -3544,6 +3680,7 @@ LAB_00659a1c:
                                         goto cf_switch_join_00659A73;
                                       }
                                     }
+                                    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                     pDVar12 = (DArrayTy *)
                                               thunk_FUN_00668f50(this_00,(char *)local_16c._8_4_,
                                                                  (uint)local_160,&local_34.flags);
@@ -3584,6 +3721,7 @@ LAB_00659a1c:
                                     thunk_FUN_0064d0e0(this_00,-0x7d,pcVar9,uVar17,iVar7);
                                   }
                                   else {
+                                    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                     (&DAT_0080e43b)[local_16c._8_4_] = local_160;
                                   }
                                 }
@@ -3593,14 +3731,16 @@ LAB_00659a1c:
 switchD_00652b42_switchD:
                                 switch(local_15c) {
                                 case (DArrayTy *)0x0:
-                                  iVar38 = thunk_FUN_0064ea10((int)local_16c);
-                                  if (iVar38 == 0) goto cf_common_join_00652A99;
+                                  iVar37 = thunk_FUN_0064ea10((int)local_16c);
+                                  if (iVar37 == 0) goto cf_common_join_00652A99;
                                   switch(iVar7) {
+                                  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                   case 2:
                                     *(int *)(&this_00->field_0xde + local_16c._8_4_ * 4) =
                                          (int)&local_160->flags +
                                          *(int *)(&this_00->field_0xde + local_16c._8_4_ * 4);
                                     break;
+                                  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                   case 5:
                                     *(DArrayTy **)(&this_00->field_0xde + local_16c._8_4_ * 4) =
                                          local_160;
@@ -3625,11 +3765,13 @@ switchD_00652b42_switchD:
                                            (int)local_160;
                                     }
                                     break;
+                                  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                   case 0x31:
                                     *(int *)(&this_00->field_0xde + local_16c._8_4_ * 4) =
                                          *(int *)(&this_00->field_0xde + local_16c._8_4_ * 4) *
                                          (int)local_160;
                                     break;
+                                  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                   case 0x3e:
                                     *(int *)(&this_00->field_0xde + local_16c._8_4_ * 4) =
                                          *(int *)(&this_00->field_0xde + local_16c._8_4_ * 4) -
@@ -3637,13 +3779,15 @@ switchD_00652b42_switchD:
                                   }
                                   break;
                                 case (DArrayTy *)0x1:
-                                  iVar38 = thunk_FUN_0064ea10((int)local_16c);
-                                  if (iVar38 == 0) goto cf_common_join_00652A99;
+                                  iVar37 = thunk_FUN_0064ea10((int)local_16c);
+                                  if (iVar37 == 0) goto cf_common_join_00652A99;
                                   switch(iVar7) {
+                                  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                   case 2:
                                     (&DAT_0080e43b)[local_16c._8_4_] =
                                          (int)&local_160->flags + (&DAT_0080e43b)[local_16c._8_4_];
                                     break;
+                                  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                   case 5:
                                     (&DAT_0080e43b)[local_16c._8_4_] = local_160;
                                     break;
@@ -3652,6 +3796,7 @@ switchD_00652b42_switchD:
                                       thunk_FUN_0064d0e0(this_00,-0x67,&DAT_008016a0,uVar33,-1);
                                     }
                                     else {
+                                      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                       (&DAT_0080e43b)[local_16c._8_4_] =
                                            (int)(&DAT_0080e43b)[local_16c._8_4_] / (int)local_160;
                                     }
@@ -3661,28 +3806,33 @@ switchD_00652b42_switchD:
                                       thunk_FUN_0064d0e0(this_00,-0x67,&DAT_008016a0,uVar33,-1);
                                     }
                                     else {
+                                      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                       (&DAT_0080e43b)[local_16c._8_4_] =
                                            (int)(&DAT_0080e43b)[local_16c._8_4_] % (int)local_160;
                                     }
                                     break;
+                                  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                   case 0x31:
                                     (&DAT_0080e43b)[local_16c._8_4_] =
                                          (&DAT_0080e43b)[local_16c._8_4_] * (int)local_160;
                                     break;
+                                  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                   case 0x3e:
                                     (&DAT_0080e43b)[local_16c._8_4_] =
                                          (&DAT_0080e43b)[local_16c._8_4_] - (int)local_160;
                                   }
                                   break;
                                 case (DArrayTy *)0x2:
-                                  iVar38 = thunk_FUN_0064ea60((int)local_16c);
-                                  if (iVar38 == 0) goto cf_common_join_00652A99;
+                                  iVar37 = thunk_FUN_0064ea60((int)local_16c);
+                                  if (iVar37 == 0) goto cf_common_join_00652A99;
                                   switch(iVar7) {
+                                  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                   case 2:
                                     (&this_00->field_052F)[local_16c._8_4_] =
                                          (int)&local_160->flags +
                                          (&this_00->field_052F)[local_16c._8_4_];
                                     break;
+                                  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                   case 5:
                                     (&this_00->field_052F)[local_16c._8_4_] = local_160;
                                     break;
@@ -3691,6 +3841,7 @@ switchD_00652b42_switchD:
                                       thunk_FUN_0064d0e0(this_00,-0x67,&DAT_008016a0,uVar33,-1);
                                     }
                                     else {
+                                      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                       (&this_00->field_052F)[local_16c._8_4_] =
                                            (int)(&this_00->field_052F)[local_16c._8_4_] /
                                            (int)local_160;
@@ -3701,24 +3852,28 @@ switchD_00652b42_switchD:
                                       thunk_FUN_0064d0e0(this_00,-0x67,&DAT_008016a0,uVar33,-1);
                                     }
                                     else {
+                                      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                       (&this_00->field_052F)[local_16c._8_4_] =
                                            (int)(&this_00->field_052F)[local_16c._8_4_] %
                                            (int)local_160;
                                     }
                                     break;
+                                  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                   case 0x31:
                                     (&this_00->field_052F)[local_16c._8_4_] =
                                          (&this_00->field_052F)[local_16c._8_4_] * (int)local_160;
                                     break;
+                                  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                   case 0x3e:
                                     (&this_00->field_052F)[local_16c._8_4_] =
                                          (&this_00->field_052F)[local_16c._8_4_] - (int)local_160;
                                   }
                                   break;
                                 case (DArrayTy *)0x3:
-                                  iVar38 = thunk_FUN_0064eaa0((int)local_16c);
-                                  if (iVar38 == 0) goto cf_common_join_00652A99;
+                                  iVar37 = thunk_FUN_0064eaa0((int)local_16c);
+                                  if (iVar37 == 0) goto cf_common_join_00652A99;
                                   if (iVar7 == 5) {
+                                    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                     Library::DKW::TBL::FUN_006b6020
                                               ((uint *)this_00->field_05B3,local_16c._8_4_,
                                                (char *)local_160);
@@ -3734,10 +3889,11 @@ switchD_00652b42_switchD:
                               case 0x31:
                                 goto switchD_00652b42_switchD;
                               case 0x19:
-                                iVar38 = thunk_FUN_0064e6c0((int)local_16c);
-                                if (iVar38 == 0) goto cf_common_join_00652A99;
+                                iVar37 = thunk_FUN_0064e6c0((int)local_16c);
+                                if (iVar37 == 0) goto cf_common_join_00652A99;
                                 if (local_174 != 0) {
                                   local_174 = 0;
+                                  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                   local_170 = (DArrayTy *)local_16c._8_4_;
                                   pDVar12 = local_170;
                                   goto cf_continue_loop_00659A80;
@@ -3745,13 +3901,15 @@ switchD_00652b42_switchD:
                                 local_174 = 0;
                                 break;
                               case 0x21:
-                                iVar38 = thunk_FUN_0064e740((int)local_16c);
+                                iVar37 = thunk_FUN_0064e740((int)local_16c);
+                                /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                 pDVar12 = (DArrayTy *)local_16c._8_4_;
-                                if (iVar38 == 0) goto cf_common_join_00652A99;
+                                if (iVar37 == 0) goto cf_common_join_00652A99;
                                 goto cf_continue_loop_00659A80;
                               case 0x23:
-                                iVar38 = thunk_FUN_0064e680((int)local_16c);
-                                if (iVar38 == 0) goto cf_common_join_00652A99;
+                                iVar37 = thunk_FUN_0064e680((int)local_16c);
+                                if (iVar37 == 0) goto cf_common_join_00652A99;
+                                /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                 if ((DArrayTy *)local_16c._8_4_ == (DArrayTy *)0x0) {
                                   local_170 = local_160;
                                   pDVar12 = local_170;
@@ -3762,18 +3920,22 @@ switchD_00652b42_switchD:
                             }
                             switch(iVar7) {
                             case 0x51b:
-                              iVar38 = thunk_FUN_0064e9a0((int)local_16c);
-                              if (iVar38 == 0) goto cf_common_join_00652A99;
+                              iVar37 = thunk_FUN_0064e9a0((int)local_16c);
+                              if (iVar37 == 0) goto cf_common_join_00652A99;
+                              /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                               Library::DKW::TBL::FUN_006b6020
                                         ((uint *)this_00->field_05B3,local_16c._8_4_,
                                          (char *)local_160);
                               break;
                             case 0x528:
-                              bVar36 = thunk_FUN_0064eb20((int)local_16c);
-                              if (CONCAT31(extraout_var,bVar36) != 0) {
-                                iVar38 = (*(code *)this_00->field_0000->field_0018)();
-                                if ((iVar38 != 8) ||
+                              iVar37 = thunk_FUN_0064eb20((int)local_16c);
+                              if (iVar37 != 0) {
+                                /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+                                iVar37 = (*(code *)this_00->field_0000->field_0018)();
+                                /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+                                if ((iVar37 != 8) ||
                                    ((DArrayTy *)local_16c._8_4_ != (DArrayTy *)0x9)) {
+                                  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                   pDVar12 = (DArrayTy *)
                                             thunk_FUN_00668f50(this_00,(char *)local_16c._8_4_,
                                                                (uint)local_160,&local_34.flags);
@@ -3796,11 +3958,14 @@ switchD_00652b42_switchD:
                               }
                               goto cf_common_join_00652A99;
                             case 0x529:
-                              iVar38 = thunk_FUN_0064eb60((int)local_16c);
-                              if (iVar38 != 0) {
-                                iVar38 = (*(code *)this_00->field_0000->field_0018)();
-                                if ((iVar38 != 8) ||
+                              iVar37 = thunk_FUN_0064eb60((int)local_16c);
+                              if (iVar37 != 0) {
+                                /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+                                iVar37 = (*(code *)this_00->field_0000->field_0018)();
+                                /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+                                if ((iVar37 != 8) ||
                                    ((DArrayTy *)local_16c._8_4_ != (DArrayTy *)0x9)) {
+                                  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                   pDVar12 = (DArrayTy *)
                                             thunk_FUN_00668f50(this_00,(char *)local_16c._8_4_,
                                                                (uint)local_160,&local_34.flags);
@@ -3824,14 +3989,17 @@ switchD_00652b42_switchD:
                               }
                               goto cf_common_join_00652A99;
                             case 0x52a:
-                              iVar38 = thunk_FUN_0064eba0((int)local_16c);
-                              if (iVar38 != 0) {
-                                iVar38 = (*(code *)this_00->field_0000->field_0018)();
-                                if ((iVar38 != 8) ||
+                              iVar37 = thunk_FUN_0064eba0((int)local_16c);
+                              if (iVar37 != 0) {
+                                /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+                                iVar37 = (*(code *)this_00->field_0000->field_0018)();
+                                /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+                                if ((iVar37 != 8) ||
                                    ((DArrayTy *)local_16c._8_4_ != (DArrayTy *)0x9)) {
+                                  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                   iVar7 = thunk_FUN_00668f50(this_00,(char *)local_16c._8_4_,
                                                              (uint)local_160,&local_34.flags);
-                                  iVar38 = 0;
+                                  iVar37 = 0;
                                   if (0 < iVar7) {
                                     pDVar12 = &local_34;
                                     do {
@@ -3841,29 +4009,31 @@ switchD_00652b42_switchD:
                                         }
                                         break;
                                       }
-                                      iVar38 = iVar38 + 1;
+                                      iVar37 = iVar37 + 1;
                                       pDVar12 = (DArrayTy *)&pDVar12->iteratorIndex;
-                                    } while (iVar38 < iVar7);
+                                    } while (iVar37 < iVar7);
                                   }
                                   break;
                                 }
                               }
                               goto cf_common_join_00652A99;
                             case 0x532:
-                              bVar36 = thunk_FUN_0064ebe0((int)local_16c);
-                              if (CONCAT31(extraout_var_00,bVar36) == 0)
-                              goto cf_common_join_00652A99;
+                              iVar37 = thunk_FUN_0064ebe0((int)local_16c);
+                              if (iVar37 == 0) goto cf_common_join_00652A99;
                               if (g_popUp_008016D8 != (PopUpTy *)0x0) {
+                                /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                 if ((DArrayTy *)local_16c._8_4_ == (DArrayTy *)0x9) {
+                                  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
                                   iVar7 = (*(code *)this_00->field_0000->field_0018)();
                                   if (iVar7 == 8) {
                                     thunk_FUN_0052d320(g_popUp_008016D8,(char *)local_15c,8);
                                     break;
                                   }
                                 }
+                                /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                 iVar7 = thunk_FUN_00668f50(this_00,(char *)local_16c._8_4_,
                                                            (uint)local_160,&local_34.flags);
-                                iVar38 = 0;
+                                iVar37 = 0;
                                 if (0 < iVar7) {
                                   pDVar12 = &local_34;
                                   do {
@@ -3871,17 +4041,18 @@ switchD_00652b42_switchD:
                                       thunk_FUN_0052d320(g_popUp_008016D8,(char *)local_15c,8);
                                       break;
                                     }
-                                    iVar38 = iVar38 + 1;
+                                    iVar37 = iVar37 + 1;
                                     pDVar12 = (DArrayTy *)&pDVar12->iteratorIndex;
-                                  } while (iVar38 < iVar7);
+                                  } while (iVar37 < iVar7);
                                 }
                               }
                               break;
                             case 0x533:
-                              bVar36 = thunk_FUN_0064ec30((int)local_16c);
-                              if (CONCAT31(extraout_var_01,bVar36) == 0)
-                              goto cf_common_join_00652A99;
+                              iVar37 = thunk_FUN_0064ec30((int)local_16c);
+                              if (iVar37 == 0) goto cf_common_join_00652A99;
+                              /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                               if ((DArrayTy *)local_16c._8_4_ == (DArrayTy *)0x9) {
+                                /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
                                 iVar7 = (*(code *)this_00->field_0000->field_0018)();
                                 if (iVar7 == 8) {
                                   if (DAT_00801694 != (void *)0x0) {
@@ -3891,9 +4062,10 @@ switchD_00652b42_switchD:
                                   break;
                                 }
                               }
+                              /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                               iVar7 = thunk_FUN_00668f50(this_00,(char *)local_16c._8_4_,
                                                          (uint)local_160,&local_34.flags);
-                              iVar38 = 0;
+                              iVar37 = 0;
                               if (0 < iVar7) {
                                 pDVar12 = &local_34;
                                 do {
@@ -3904,16 +4076,17 @@ switchD_00652b42_switchD:
                                     }
                                     break;
                                   }
-                                  iVar38 = iVar38 + 1;
+                                  iVar37 = iVar37 + 1;
                                   pDVar12 = (DArrayTy *)&pDVar12->iteratorIndex;
-                                } while (iVar38 < iVar7);
+                                } while (iVar37 < iVar7);
                               }
                               break;
                             case 0x534:
-                              bVar36 = thunk_FUN_0064ec80((AnonShape_0064EC80_53C284F2 *)local_16c);
-                              if (CONCAT31(extraout_var_02,bVar36) == 0)
-                              goto cf_common_join_00652A99;
+                              iVar37 = thunk_FUN_0064ec80((AnonShape_0064EC80_53C284F2 *)local_16c);
+                              if (iVar37 == 0) goto cf_common_join_00652A99;
+                              /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                               if ((DArrayTy *)local_16c._8_4_ == (DArrayTy *)0x9) {
+                                /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
                                 iVar7 = (*(code *)this_00->field_0000->field_0018)();
                                 if (iVar7 == 8) {
 LAB_006536dd:
@@ -3925,23 +4098,25 @@ LAB_006536dd:
                                   break;
                                 }
                               }
+                              /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                               iVar7 = thunk_FUN_00668f50(this_00,(char *)local_16c._8_4_,
                                                          (uint)local_160,&local_34.flags);
-                              iVar38 = 0;
+                              iVar37 = 0;
                               if (0 < iVar7) {
                                 pDVar12 = &local_34;
                                 do {
                                   if (pDVar12->flags == (uint)DAT_0080874d) goto LAB_006536dd;
-                                  iVar38 = iVar38 + 1;
+                                  iVar37 = iVar37 + 1;
                                   pDVar12 = (DArrayTy *)&pDVar12->iteratorIndex;
-                                } while (iVar38 < iVar7);
+                                } while (iVar37 < iVar7);
                               }
                               break;
                             case 0x535:
-                              bVar36 = thunk_FUN_0064ecd0((int)local_16c);
-                              if (CONCAT31(extraout_var_03,bVar36) == 0)
-                              goto cf_common_join_00652A99;
+                              iVar37 = thunk_FUN_0064ecd0((int)local_16c);
+                              if (iVar37 == 0) goto cf_common_join_00652A99;
+                              /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                               if ((DArrayTy *)local_16c._8_4_ == (DArrayTy *)0x9) {
+                                /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
                                 iVar7 = (*(code *)this_00->field_0000->field_0018)();
                                 if (iVar7 == 8) {
 LAB_00653778:
@@ -3952,23 +4127,25 @@ LAB_00653778:
                                   break;
                                 }
                               }
+                              /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                               iVar7 = thunk_FUN_00668f50(this_00,(char *)local_16c._8_4_,
                                                          (uint)local_160,&local_34.flags);
-                              iVar38 = 0;
+                              iVar37 = 0;
                               if (0 < iVar7) {
                                 pDVar12 = &local_34;
                                 do {
                                   if (pDVar12->flags == (uint)DAT_0080874d) goto LAB_00653778;
-                                  iVar38 = iVar38 + 1;
+                                  iVar37 = iVar37 + 1;
                                   pDVar12 = (DArrayTy *)&pDVar12->iteratorIndex;
-                                } while (iVar38 < iVar7);
+                                } while (iVar37 < iVar7);
                               }
                               break;
                             case 0x536:
-                              bVar36 = thunk_FUN_0064ed20((int)local_16c);
-                              if (CONCAT31(extraout_var_04,bVar36) == 0)
-                              goto cf_common_join_00652A99;
+                              iVar37 = thunk_FUN_0064ed20((int)local_16c);
+                              if (iVar37 == 0) goto cf_common_join_00652A99;
+                              /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                               if ((DArrayTy *)local_16c._8_4_ == (DArrayTy *)0x9) {
+                                /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
                                 iVar7 = (*(code *)this_00->field_0000->field_0018)();
                                 if (iVar7 == 8) {
                                   SoundClassTy::PlaySound_thunk
@@ -3977,9 +4154,10 @@ LAB_00653778:
                                   break;
                                 }
                               }
+                              /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                               iVar7 = thunk_FUN_00668f50(this_00,(char *)local_16c._8_4_,
                                                          (uint)local_160,&local_34.flags);
-                              iVar38 = 0;
+                              iVar37 = 0;
                               if (0 < iVar7) {
                                 pDVar12 = &local_34;
                                 do {
@@ -3989,16 +4167,17 @@ LAB_00653778:
                                                (char *)local_15c,0,(SoundPosition *)0x0,0);
                                     break;
                                   }
-                                  iVar38 = iVar38 + 1;
+                                  iVar37 = iVar37 + 1;
                                   pDVar12 = (DArrayTy *)&pDVar12->iteratorIndex;
-                                } while (iVar38 < iVar7);
+                                } while (iVar37 < iVar7);
                               }
                               break;
                             case 0x537:
-                              bVar36 = thunk_FUN_0064ed70((int)local_16c);
-                              if (CONCAT31(extraout_var_05,bVar36) == 0)
-                              goto cf_common_join_00652A99;
+                              iVar37 = thunk_FUN_0064ed70((int)local_16c);
+                              if (iVar37 == 0) goto cf_common_join_00652A99;
+                              /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                               if ((DArrayTy *)local_16c._8_4_ == (DArrayTy *)0x9) {
+                                /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
                                 iVar7 = (*(code *)this_00->field_0000->field_0018)();
                                 if (iVar7 == 8) {
                                   if (g_cPanel_00801688 != (CPanelTy *)0x0) {
@@ -4007,9 +4186,10 @@ LAB_00653778:
                                   break;
                                 }
                               }
+                              /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                               iVar7 = thunk_FUN_00668f50(this_00,(char *)local_16c._8_4_,
                                                          (uint)local_160,&local_34.flags);
-                              iVar38 = 0;
+                              iVar37 = 0;
                               if (0 < iVar7) {
                                 pDVar12 = &local_34;
                                 do {
@@ -4019,20 +4199,23 @@ LAB_00653778:
                                     }
                                     break;
                                   }
-                                  iVar38 = iVar38 + 1;
+                                  iVar37 = iVar37 + 1;
                                   pDVar12 = (DArrayTy *)&pDVar12->iteratorIndex;
-                                } while (iVar38 < iVar7);
+                                } while (iVar37 < iVar7);
                               }
                               break;
                             case 0x546:
-                              iVar38 = thunk_FUN_0064edc0((int)local_16c);
-                              if (iVar38 != 0) {
-                                iVar38 = (*(code *)this_00->field_0000->field_0018)();
-                                if ((iVar38 != 8) ||
+                              iVar37 = thunk_FUN_0064edc0((int)local_16c);
+                              if (iVar37 != 0) {
+                                /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+                                iVar37 = (*(code *)this_00->field_0000->field_0018)();
+                                /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+                                if ((iVar37 != 8) ||
                                    ((DArrayTy *)local_16c._8_4_ != (DArrayTy *)0x9)) {
+                                  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                   iVar7 = thunk_FUN_00668f50(this_00,(char *)local_16c._8_4_,
                                                              (uint)local_160,&local_34.flags);
-                                  iVar38 = 0;
+                                  iVar37 = 0;
                                   if (0 < iVar7) {
                                     pDVar12 = &local_34;
                                     do {
@@ -4047,13 +4230,13 @@ LAB_00653778:
                                           VisibleClassTy::VisHoleCreate
                                                     (g_visibleClass_00802A88,(int)local_15c,
                                                      (int)local_158,local_154,
-                                                     (&local_34.flags)[iVar38],local_150,iVar7);
+                                                     (&local_34.flags)[iVar37],local_150,iVar7);
                                         }
                                         break;
                                       }
-                                      iVar38 = iVar38 + 1;
+                                      iVar37 = iVar37 + 1;
                                       pDVar12 = (DArrayTy *)&pDVar12->iteratorIndex;
-                                    } while (iVar38 < iVar7);
+                                    } while (iVar37 < iVar7);
                                   }
                                   break;
                                 }
@@ -4061,15 +4244,18 @@ LAB_00653778:
                               goto cf_common_join_00652A99;
                             case 0x547:
                             case 0x548:
-                              iVar38 = thunk_FUN_0064ee00((int)local_16c);
-                              if (iVar38 != 0) {
-                                iVar38 = (*(code *)this_00->field_0000->field_0018)();
-                                if ((iVar38 != 8) ||
+                              iVar37 = thunk_FUN_0064ee00((int)local_16c);
+                              if (iVar37 != 0) {
+                                /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+                                iVar37 = (*(code *)this_00->field_0000->field_0018)();
+                                /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+                                if ((iVar37 != 8) ||
                                    ((DArrayTy *)local_16c._8_4_ != (DArrayTy *)0x9)) {
+                                  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                   local_10 = (AiFltClassTy *)
                                              thunk_FUN_00668f50(this_00,(char *)local_16c._8_4_,
                                                                 (uint)local_160,&local_34.flags);
-                                  iVar38 = 0;
+                                  iVar37 = 0;
                                   if (0 < (int)local_10) {
                                     pDVar12 = &local_34;
                                     do {
@@ -4093,23 +4279,26 @@ LAB_00653778:
                                         *(undefined4 *)&pAVar4->field_0x2d8 = 1;
                                         break;
                                       }
-                                      iVar38 = iVar38 + 1;
+                                      iVar37 = iVar37 + 1;
                                       pDVar12 = (DArrayTy *)&pDVar12->iteratorIndex;
-                                    } while (iVar38 < (int)local_10);
+                                    } while (iVar37 < (int)local_10);
                                   }
                                   break;
                                 }
                               }
                               goto cf_common_join_00652A99;
                             case 0x549:
-                              iVar38 = thunk_FUN_0064ee40((short *)local_16c);
-                              if (iVar38 != 0) {
-                                iVar38 = (*(code *)this_00->field_0000->field_0018)();
-                                if ((iVar38 != 8) ||
+                              iVar37 = thunk_FUN_0064ee40((short *)local_16c);
+                              if (iVar37 != 0) {
+                                /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+                                iVar37 = (*(code *)this_00->field_0000->field_0018)();
+                                /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+                                if ((iVar37 != 8) ||
                                    ((DArrayTy *)local_16c._8_4_ != (DArrayTy *)0x9)) {
+                                  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                   iVar7 = thunk_FUN_00668f50(this_00,(char *)local_16c._8_4_,
                                                              (uint)local_160,&local_34.flags);
-                                  iVar38 = 0;
+                                  iVar37 = 0;
                                   if (0 < iVar7) {
                                     pDVar12 = &local_34;
                                     do {
@@ -4120,31 +4309,34 @@ LAB_00653778:
                                         }
                                         break;
                                       }
-                                      iVar38 = iVar38 + 1;
+                                      iVar37 = iVar37 + 1;
                                       pDVar12 = (DArrayTy *)&pDVar12->iteratorIndex;
-                                    } while (iVar38 < iVar7);
+                                    } while (iVar37 < iVar7);
                                   }
                                   break;
                                 }
                               }
                               goto cf_common_join_00652A99;
                             case 0x54a:
-                              iVar38 = thunk_FUN_0064ee90((int)local_16c);
-                              if (iVar38 != 0) {
-                                iVar38 = (*(code *)this_00->field_0000->field_0018)();
-                                if ((iVar38 != 8) ||
+                              iVar37 = thunk_FUN_0064ee90((int)local_16c);
+                              if (iVar37 != 0) {
+                                /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+                                iVar37 = (*(code *)this_00->field_0000->field_0018)();
+                                /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+                                if ((iVar37 != 8) ||
                                    ((DArrayTy *)local_16c._8_4_ != (DArrayTy *)0x9)) {
+                                  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                   local_10 = (AiFltClassTy *)
                                              thunk_FUN_00668f50(this_00,(char *)local_16c._8_4_,
                                                                 (uint)local_160,&local_34.flags);
-                                  iVar38 = 0;
+                                  iVar37 = 0;
                                   if (0 < (int)local_10) {
                                     pDVar12 = &local_34;
 LAB_00653bb7:
                                     if (pDVar12->flags != (uint)DAT_0080874d) goto code_r0x00653bbb;
                                     if (g_opticClass_007FB2A0 != (OpticClassC *)0x0) {
                                       puVar34 = local_1c0;
-                                      for (iVar38 = 8; iVar38 != 0; iVar38 = iVar38 + -1) {
+                                      for (iVar37 = 8; iVar37 != 0; iVar37 = iVar37 + -1) {
                                         *puVar34 = 0;
                                         puVar34 = puVar34 + 1;
                                       }
@@ -4162,13 +4354,14 @@ LAB_00653bb7:
                                         local_1b0 = 0x107;
                                         break;
                                       default:
-                                        iVar38 = -1;
+                                        iVar37 = -1;
                                         uVar33 = local_14;
                                         pcVar9 = thunk_FUN_00674af0(iVar7);
-                                        thunk_FUN_0064d0e0(this_00,-0x7d,pcVar9,uVar33,iVar38);
+                                        thunk_FUN_0064d0e0(this_00,-0x7d,pcVar9,uVar33,iVar37);
                                         uVar33 = local_14;
                                         goto cf_switch_join_00659A73;
                                       }
+                                      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
                                       (*(code *)this_00->field_0000->field_0030)(3,0x100,local_1c0);
                                       uVar33 = local_14;
                                     }
@@ -4179,35 +4372,39 @@ LAB_00653bb7:
                               goto cf_common_join_00652A99;
                             case 0x54b:
                             case 0x54c:
-                              iVar38 = thunk_FUN_0064eed0((int)local_16c);
-                              if (iVar38 != 0) {
-                                iVar38 = (*(code *)this_00->field_0000->field_0018)();
-                                if ((iVar38 != 8) ||
+                              iVar37 = thunk_FUN_0064eed0((int)local_16c);
+                              if (iVar37 != 0) {
+                                /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+                                iVar37 = (*(code *)this_00->field_0000->field_0018)();
+                                /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+                                if ((iVar37 != 8) ||
                                    ((DArrayTy *)local_16c._8_4_ != (DArrayTy *)0x9)) {
+                                  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                   local_10 = (AiFltClassTy *)
                                              thunk_FUN_00668f50(this_00,(char *)local_16c._8_4_,
                                                                 (uint)local_160,&local_34.flags);
-                                  iVar38 = 0;
+                                  iVar37 = 0;
                                   if (0 < (int)local_10) {
                                     pDVar12 = &local_34;
                                     do {
                                       if (pDVar12->flags == (uint)DAT_0080874d) {
                                         if (g_opticClass_007FB2A0 != (OpticClassC *)0x0) {
                                           puVar34 = local_1c0;
-                                          for (iVar38 = 8; iVar38 != 0; iVar38 = iVar38 + -1) {
+                                          for (iVar37 = 8; iVar37 != 0; iVar37 = iVar37 + -1) {
                                             *puVar34 = 0;
                                             puVar34 = puVar34 + 1;
                                           }
                                           local_1b0 = (iVar7 != 0x54b) + 0x100;
+                                          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
                                           (*(code *)this_00->field_0000->field_0030)
                                                     (3,0x100,local_1c0);
                                           uVar33 = local_14;
                                         }
                                         break;
                                       }
-                                      iVar38 = iVar38 + 1;
+                                      iVar37 = iVar37 + 1;
                                       pDVar12 = (DArrayTy *)&pDVar12->iteratorIndex;
-                                    } while (iVar38 < (int)local_10);
+                                    } while (iVar37 < (int)local_10);
                                   }
                                   break;
                                 }
@@ -4218,14 +4415,17 @@ LAB_00653bb7:
                           }
                           switch(iVar7) {
                           case 0x54e:
-                            iVar38 = thunk_FUN_0064ef50((int)local_16c);
-                            if (iVar38 != 0) {
-                              iVar38 = (*(code *)this_00->field_0000->field_0018)();
-                              if ((iVar38 != 8) || ((DArrayTy *)local_16c._8_4_ != (DArrayTy *)0x9))
+                            iVar37 = thunk_FUN_0064ef50((int)local_16c);
+                            if (iVar37 != 0) {
+                              /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+                              iVar37 = (*(code *)this_00->field_0000->field_0018)();
+                              /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+                              if ((iVar37 != 8) || ((DArrayTy *)local_16c._8_4_ != (DArrayTy *)0x9))
                               {
+                                /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                 iVar7 = thunk_FUN_00668f50(this_00,(char *)local_16c._8_4_,
                                                            (uint)local_160,&local_34.flags);
-                                iVar38 = 0;
+                                iVar37 = 0;
                                 if (0 < iVar7) {
                                   pDVar12 = &local_34;
                                   do {
@@ -4234,9 +4434,9 @@ LAB_00653bb7:
                                                          (int)local_154);
                                       break;
                                     }
-                                    iVar38 = iVar38 + 1;
+                                    iVar37 = iVar37 + 1;
                                     pDVar12 = (DArrayTy *)&pDVar12->iteratorIndex;
-                                  } while (iVar38 < iVar7);
+                                  } while (iVar37 < iVar7);
                                 }
                                 goto cf_switch_join_00659A73;
                               }
@@ -4245,11 +4445,14 @@ LAB_00653bb7:
                           default:
                             goto cf_switch_join_00659A73;
                           case 0x55a:
-                            iVar38 = thunk_FUN_0064f080((int)local_16c);
-                            if (iVar38 != 0) {
-                              iVar38 = (*(code *)this_00->field_0000->field_0018)();
-                              if ((iVar38 != 8) || ((DArrayTy *)local_16c._8_4_ != (DArrayTy *)0x9))
+                            iVar37 = thunk_FUN_0064f080((int)local_16c);
+                            if (iVar37 != 0) {
+                              /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+                              iVar37 = (*(code *)this_00->field_0000->field_0018)();
+                              /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+                              if ((iVar37 != 8) || ((DArrayTy *)local_16c._8_4_ != (DArrayTy *)0x9))
                               {
+                                /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                 pDVar12 = (DArrayTy *)
                                           thunk_FUN_00668f50(this_00,(char *)local_16c._8_4_,
                                                              (uint)local_160,&local_34.flags);
@@ -4272,14 +4475,17 @@ LAB_00653bb7:
                             }
                             break;
                           case 0x55b:
-                            bVar36 = thunk_FUN_0064f0c0((int)local_16c);
-                            if (CONCAT31(extraout_var_06,bVar36) != 0) {
-                              iVar38 = (*(code *)this_00->field_0000->field_0018)();
-                              if ((iVar38 != 8) || ((DArrayTy *)local_16c._8_4_ != (DArrayTy *)0x9))
+                            iVar37 = thunk_FUN_0064f0c0((int)local_16c);
+                            if (iVar37 != 0) {
+                              /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+                              iVar37 = (*(code *)this_00->field_0000->field_0018)();
+                              /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+                              if ((iVar37 != 8) || ((DArrayTy *)local_16c._8_4_ != (DArrayTy *)0x9))
                               {
+                                /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                 iVar7 = thunk_FUN_00668f50(this_00,(char *)local_16c._8_4_,
                                                            (uint)local_160,&local_34.flags);
-                                iVar38 = 0;
+                                iVar37 = 0;
                                 if (0 < iVar7) {
                                   pDVar12 = &local_34;
                                   do {
@@ -4295,45 +4501,51 @@ LAB_00653bb7:
                                       }
                                       break;
                                     }
-                                    iVar38 = iVar38 + 1;
+                                    iVar37 = iVar37 + 1;
                                     pDVar12 = (DArrayTy *)&pDVar12->iteratorIndex;
-                                  } while (iVar38 < iVar7);
+                                  } while (iVar37 < iVar7);
                                 }
                                 goto cf_switch_join_00659A73;
                               }
                             }
                             break;
                           case 0x55c:
-                            iVar38 = thunk_FUN_0064f110((short *)local_16c);
-                            if (iVar38 != 0) {
-                              iVar38 = (*(code *)this_00->field_0000->field_0018)();
-                              if ((iVar38 != 8) || ((DArrayTy *)local_16c._8_4_ != (DArrayTy *)0x9))
+                            iVar37 = thunk_FUN_0064f110((short *)local_16c);
+                            if (iVar37 != 0) {
+                              /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+                              iVar37 = (*(code *)this_00->field_0000->field_0018)();
+                              /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+                              if ((iVar37 != 8) || ((DArrayTy *)local_16c._8_4_ != (DArrayTy *)0x9))
                               {
+                                /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                 iVar7 = thunk_FUN_00668f50(this_00,(char *)local_16c._8_4_,
                                                            (uint)local_160,&local_34.flags);
-                                iVar38 = 0;
+                                iVar37 = 0;
                                 if (0 < iVar7) {
                                   do {
-                                    (&DAT_0080c947)[iVar38] = local_158;
-                                    if ((&local_34.flags)[iVar38] == (uint)DAT_0080874d) {
+                                    (&DAT_0080c947)[iVar37] = local_158;
+                                    if ((&local_34.flags)[iVar37] == (uint)DAT_0080874d) {
                                       DAT_0080e301 = (char)local_15c;
                                     }
-                                    iVar38 = iVar38 + 1;
-                                  } while (iVar38 < iVar7);
+                                    iVar37 = iVar37 + 1;
+                                  } while (iVar37 < iVar7);
                                 }
                                 goto cf_switch_join_00659A73;
                               }
                             }
                             break;
                           case 0x55d:
-                            bVar36 = thunk_FUN_0064f160((int)local_16c);
-                            if (CONCAT31(extraout_var_07,bVar36) != 0) {
-                              iVar38 = (*(code *)this_00->field_0000->field_0018)();
-                              if ((iVar38 != 8) || ((DArrayTy *)local_16c._8_4_ != (DArrayTy *)0x9))
+                            iVar37 = thunk_FUN_0064f160((int)local_16c);
+                            if (iVar37 != 0) {
+                              /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+                              iVar37 = (*(code *)this_00->field_0000->field_0018)();
+                              /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+                              if ((iVar37 != 8) || ((DArrayTy *)local_16c._8_4_ != (DArrayTy *)0x9))
                               {
+                                /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                 iVar7 = thunk_FUN_00668f50(this_00,(char *)local_16c._8_4_,
                                                            (uint)local_160,&local_34.flags);
-                                iVar38 = 0;
+                                iVar37 = 0;
                                 if (0 < iVar7) {
                                   pDVar12 = &local_34;
 LAB_006540b9:
@@ -4353,26 +4565,32 @@ LAB_006540b9:
                             }
                             break;
                           case 0x55e:
-                            bVar36 = thunk_FUN_0064f1b0((short *)local_16c);
-                            if (CONCAT31(extraout_var_08,bVar36) != 0) {
-                              iVar38 = (*(code *)this_00->field_0000->field_0018)();
-                              if ((iVar38 != 8) || ((DArrayTy *)local_16c._8_4_ != (DArrayTy *)0x9))
+                            iVar37 = thunk_FUN_0064f1b0((short *)local_16c);
+                            if (iVar37 != 0) {
+                              /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+                              iVar37 = (*(code *)this_00->field_0000->field_0018)();
+                              /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+                              if ((iVar37 != 8) || ((DArrayTy *)local_16c._8_4_ != (DArrayTy *)0x9))
                               {
+                                /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                 iVar7 = thunk_FUN_00668f50(this_00,(char *)local_16c._8_4_,
                                                            (uint)local_160,&local_34.flags);
-                                iVar38 = 0;
+                                iVar37 = 0;
                                 if (0 < iVar7) {
                                   pDVar12 = &local_34;
                                   do {
                                     if (pDVar12->flags == (uint)DAT_0080874d) {
                                       DAT_0080e302 = (char)local_15c;
                                       DAT_0080e429 = (char)local_154;
+                                      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                       DAT_0080e428 = local_14c._0_1_;
+                                      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                       DAT_0080e427 = local_150._0_1_;
                                       _DAT_0080e432 = local_140;
                                       _DAT_0080e42a = local_148;
                                       _DAT_0080e42e = local_144;
                                       _DAT_0080e436 = local_13c;
+                                      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                       DAT_0080e43a = local_138._0_1_;
                                       if (DAT_008087a0 == '\x03') {
                                         Library::MSVCRT::FUN_0072e730
@@ -4390,23 +4608,26 @@ LAB_006540b9:
                                       }
                                       break;
                                     }
-                                    iVar38 = iVar38 + 1;
+                                    iVar37 = iVar37 + 1;
                                     pDVar12 = (DArrayTy *)&pDVar12->iteratorIndex;
-                                  } while (iVar38 < iVar7);
+                                  } while (iVar37 < iVar7);
                                 }
                                 goto cf_switch_join_00659A73;
                               }
                             }
                             break;
                           case 0x55f:
-                            bVar36 = thunk_FUN_0064ef90((AnonShape_0064EF90_4909407D *)local_16c);
-                            if (CONCAT31(extraout_var_09,bVar36) != 0) {
-                              iVar38 = (*(code *)this_00->field_0000->field_0018)();
-                              if ((iVar38 != 8) || ((DArrayTy *)local_16c._8_4_ != (DArrayTy *)0x9))
+                            iVar37 = thunk_FUN_0064ef90((AnonShape_0064EF90_4909407D *)local_16c);
+                            if (iVar37 != 0) {
+                              /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+                              iVar37 = (*(code *)this_00->field_0000->field_0018)();
+                              /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+                              if ((iVar37 != 8) || ((DArrayTy *)local_16c._8_4_ != (DArrayTy *)0x9))
                               {
+                                /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                 iVar7 = thunk_FUN_00668f50(this_00,(char *)local_16c._8_4_,
                                                            (uint)local_160,&local_34.flags);
-                                iVar38 = 0;
+                                iVar37 = 0;
                                 if (0 < iVar7) {
                                   pDVar12 = &local_34;
                                   do {
@@ -4421,23 +4642,26 @@ LAB_006540b9:
                                       }
                                       break;
                                     }
-                                    iVar38 = iVar38 + 1;
+                                    iVar37 = iVar37 + 1;
                                     pDVar12 = (DArrayTy *)&pDVar12->iteratorIndex;
-                                  } while (iVar38 < iVar7);
+                                  } while (iVar37 < iVar7);
                                 }
                                 goto cf_switch_join_00659A73;
                               }
                             }
                             break;
                           case 0x560:
-                            iVar38 = thunk_FUN_0064f000((int)local_16c);
-                            if (iVar38 != 0) {
-                              iVar38 = (*(code *)this_00->field_0000->field_0018)();
-                              if ((iVar38 != 8) || ((DArrayTy *)local_16c._8_4_ != (DArrayTy *)0x9))
+                            iVar37 = thunk_FUN_0064f000((int)local_16c);
+                            if (iVar37 != 0) {
+                              /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+                              iVar37 = (*(code *)this_00->field_0000->field_0018)();
+                              /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+                              if ((iVar37 != 8) || ((DArrayTy *)local_16c._8_4_ != (DArrayTy *)0x9))
                               {
+                                /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                 iVar7 = thunk_FUN_00668f50(this_00,(char *)local_16c._8_4_,
                                                            (uint)local_160,&local_34.flags);
-                                iVar38 = 0;
+                                iVar37 = 0;
                                 if (0 < iVar7) {
                                   pDVar12 = &local_34;
 LAB_00654362:
@@ -4453,14 +4677,17 @@ LAB_00654386:
                             }
                             break;
                           case 0x561:
-                            iVar38 = thunk_FUN_0064f040((int)local_16c);
-                            if (iVar38 != 0) {
-                              iVar38 = (*(code *)this_00->field_0000->field_0018)();
-                              if ((iVar38 != 8) || ((DArrayTy *)local_16c._8_4_ != (DArrayTy *)0x9))
+                            iVar37 = thunk_FUN_0064f040((int)local_16c);
+                            if (iVar37 != 0) {
+                              /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+                              iVar37 = (*(code *)this_00->field_0000->field_0018)();
+                              /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+                              if ((iVar37 != 8) || ((DArrayTy *)local_16c._8_4_ != (DArrayTy *)0x9))
                               {
+                                /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                 iVar7 = thunk_FUN_00668f50(this_00,(char *)local_16c._8_4_,
                                                            (uint)local_160,&local_34.flags);
-                                iVar38 = 0;
+                                iVar37 = 0;
                                 if (0 < iVar7) {
                                   pDVar12 = &local_34;
                                   do {
@@ -4474,23 +4701,26 @@ LAB_00654386:
                                                                ((uint *)0x0,10,10);
                                       goto LAB_00654386;
                                     }
-                                    iVar38 = iVar38 + 1;
+                                    iVar37 = iVar37 + 1;
                                     pDVar12 = (DArrayTy *)&pDVar12->iteratorIndex;
-                                  } while (iVar38 < iVar7);
+                                  } while (iVar37 < iVar7);
                                 }
                                 goto cf_switch_join_00659A73;
                               }
                             }
                             break;
                           case 0x562:
-                            bVar36 = thunk_FUN_0064ef90((AnonShape_0064EF90_4909407D *)local_16c);
-                            if (CONCAT31(extraout_var_10,bVar36) != 0) {
-                              iVar38 = (*(code *)this_00->field_0000->field_0018)();
-                              if ((iVar38 != 8) || ((DArrayTy *)local_16c._8_4_ != (DArrayTy *)0x9))
+                            iVar37 = thunk_FUN_0064ef90((AnonShape_0064EF90_4909407D *)local_16c);
+                            if (iVar37 != 0) {
+                              /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+                              iVar37 = (*(code *)this_00->field_0000->field_0018)();
+                              /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+                              if ((iVar37 != 8) || ((DArrayTy *)local_16c._8_4_ != (DArrayTy *)0x9))
                               {
+                                /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                 iVar7 = thunk_FUN_00668f50(this_00,(char *)local_16c._8_4_,
                                                            (uint)local_160,&local_34.flags);
-                                iVar38 = 0;
+                                iVar37 = 0;
                                 if (0 < iVar7) {
                                   pDVar12 = &local_34;
                                   do {
@@ -4508,23 +4738,26 @@ LAB_00654386:
                                       }
                                       break;
                                     }
-                                    iVar38 = iVar38 + 1;
+                                    iVar37 = iVar37 + 1;
                                     pDVar12 = (DArrayTy *)&pDVar12->iteratorIndex;
-                                  } while (iVar38 < iVar7);
+                                  } while (iVar37 < iVar7);
                                 }
                                 goto cf_switch_join_00659A73;
                               }
                             }
                             break;
                           case 0x563:
-                            iVar38 = thunk_FUN_0064f000((int)local_16c);
-                            if (iVar38 != 0) {
-                              iVar38 = (*(code *)this_00->field_0000->field_0018)();
-                              if ((iVar38 != 8) || ((DArrayTy *)local_16c._8_4_ != (DArrayTy *)0x9))
+                            iVar37 = thunk_FUN_0064f000((int)local_16c);
+                            if (iVar37 != 0) {
+                              /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+                              iVar37 = (*(code *)this_00->field_0000->field_0018)();
+                              /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+                              if ((iVar37 != 8) || ((DArrayTy *)local_16c._8_4_ != (DArrayTy *)0x9))
                               {
+                                /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                 iVar7 = thunk_FUN_00668f50(this_00,(char *)local_16c._8_4_,
                                                            (uint)local_160,&local_34.flags);
-                                iVar38 = 0;
+                                iVar37 = 0;
                                 if (0 < iVar7) {
                                   pDVar12 = &local_34;
                                   do {
@@ -4536,23 +4769,26 @@ LAB_00654386:
                                       }
                                       break;
                                     }
-                                    iVar38 = iVar38 + 1;
+                                    iVar37 = iVar37 + 1;
                                     pDVar12 = (DArrayTy *)&pDVar12->iteratorIndex;
-                                  } while (iVar38 < iVar7);
+                                  } while (iVar37 < iVar7);
                                 }
                                 goto cf_switch_join_00659A73;
                               }
                             }
                             break;
                           case 0x564:
-                            iVar38 = thunk_FUN_0064f040((int)local_16c);
-                            if (iVar38 != 0) {
-                              iVar38 = (*(code *)this_00->field_0000->field_0018)();
-                              if ((iVar38 != 8) || ((DArrayTy *)local_16c._8_4_ != (DArrayTy *)0x9))
+                            iVar37 = thunk_FUN_0064f040((int)local_16c);
+                            if (iVar37 != 0) {
+                              /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+                              iVar37 = (*(code *)this_00->field_0000->field_0018)();
+                              /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+                              if ((iVar37 != 8) || ((DArrayTy *)local_16c._8_4_ != (DArrayTy *)0x9))
                               {
+                                /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                 iVar7 = thunk_FUN_00668f50(this_00,(char *)local_16c._8_4_,
                                                            (uint)local_160,&local_34.flags);
-                                iVar38 = 0;
+                                iVar37 = 0;
                                 if (0 < iVar7) {
                                   pDVar12 = &local_34;
                                   do {
@@ -4566,9 +4802,9 @@ LAB_00654386:
                                                                ((uint *)0x0,10,10);
                                       break;
                                     }
-                                    iVar38 = iVar38 + 1;
+                                    iVar37 = iVar37 + 1;
                                     pDVar12 = (DArrayTy *)&pDVar12->iteratorIndex;
-                                  } while (iVar38 < iVar7);
+                                  } while (iVar37 < iVar7);
                                 }
                                 goto cf_switch_join_00659A73;
                               }
@@ -4576,27 +4812,32 @@ LAB_00654386:
                             break;
                           case 0x565:
                           case 0x566:
-                            iVar38 = thunk_FUN_0064f320((int)local_16c);
-                            if (iVar38 != 0) {
-                              iVar38 = (*(code *)this_00->field_0000->field_0018)();
-                              if (((iVar38 != 8) ||
+                            iVar37 = thunk_FUN_0064f320((int)local_16c);
+                            if (iVar37 != 0) {
+                              /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+                              iVar37 = (*(code *)this_00->field_0000->field_0018)();
+                              /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+                              if (((iVar37 != 8) ||
                                   ((local_15c != (DArrayTy *)0x9 &&
                                    ((DArrayTy *)local_16c._8_4_ != (DArrayTy *)0x9)))) &&
                                  (local_15c != (DArrayTy *)0xff)) {
-                                iVar38 = thunk_FUN_00668f50(this_00,(char *)local_15c,0,
+                                iVar37 = thunk_FUN_00668f50(this_00,(char *)local_15c,0,
                                                             &local_34.flags);
-                                if (iVar38 == 1) {
+                                if (iVar37 == 1) {
                                   local_8 = (DArrayTy *)local_34.flags;
+                                  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                   pAVar14 = (AiFltClassTy *)
                                             thunk_FUN_00668f50(this_00,(char *)local_16c._8_4_,
                                                                (uint)local_160,&local_34.flags);
                                   local_10 = pAVar14;
                                   if (0 < (int)pAVar14) {
                                     pDVar12 = &local_34;
+                                    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                     local_1a0 = CONCAT31(local_1a0._1_3_,iVar7 == 0x565);
                                     local_c = (DArrayTy *)pAVar14;
                                     do {
                                       local_c = (DArrayTy *)pAVar14;
+                                      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                       thunk_FUN_0056a8d0(&DAT_00807620,
                                                          CONCAT31((int3)((uint)pAVar14 >> 8),
                                                                   (char)pDVar12->flags),
@@ -4628,11 +4869,14 @@ LAB_00654386:
                             }
                             break;
                           case 0x567:
-                            iVar38 = thunk_FUN_0064f360((int)local_16c);
-                            if (iVar38 != 0) {
-                              iVar38 = (*(code *)this_00->field_0000->field_0018)();
-                              if ((iVar38 != 8) || ((DArrayTy *)local_16c._8_4_ != (DArrayTy *)0x9))
+                            iVar37 = thunk_FUN_0064f360((int)local_16c);
+                            if (iVar37 != 0) {
+                              /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+                              iVar37 = (*(code *)this_00->field_0000->field_0018)();
+                              /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+                              if ((iVar37 != 8) || ((DArrayTy *)local_16c._8_4_ != (DArrayTy *)0x9))
                               {
+                                /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                 local_10 = (AiFltClassTy *)
                                            thunk_FUN_00668f50(this_00,(char *)local_16c._8_4_,
                                                               (uint)local_160,&local_34.flags);
@@ -4667,14 +4911,17 @@ LAB_00654386:
                             }
                             break;
                           case 0x568:
-                            iVar38 = thunk_FUN_0064f3b0((int)local_16c);
-                            if (iVar38 != 0) {
-                              iVar38 = (*(code *)this_00->field_0000->field_0018)();
-                              if ((iVar38 != 8) || ((DArrayTy *)local_16c._8_4_ != (DArrayTy *)0x9))
+                            iVar37 = thunk_FUN_0064f3b0((int)local_16c);
+                            if (iVar37 != 0) {
+                              /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+                              iVar37 = (*(code *)this_00->field_0000->field_0018)();
+                              /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+                              if ((iVar37 != 8) || ((DArrayTy *)local_16c._8_4_ != (DArrayTy *)0x9))
                               {
+                                /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                 iVar7 = thunk_FUN_00668f50(this_00,(char *)local_16c._8_4_,
                                                            (uint)local_160,&local_34.flags);
-                                iVar38 = 0;
+                                iVar37 = 0;
                                 if (0 < iVar7) {
                                   pDVar12 = &local_34;
                                   do {
@@ -4682,25 +4929,29 @@ LAB_00654386:
                                       DAT_00808790 = 1;
                                       break;
                                     }
-                                    iVar38 = iVar38 + 1;
+                                    iVar37 = iVar37 + 1;
                                     pDVar12 = (DArrayTy *)&pDVar12->iteratorIndex;
-                                  } while (iVar38 < iVar7);
+                                  } while (iVar37 < iVar7);
                                 }
                                 goto cf_switch_join_00659A73;
                               }
                             }
                             break;
                           case 0x56a:
-                            iVar38 = thunk_FUN_0064f3f0((int)local_16c);
-                            if (iVar38 == 0) break;
+                            iVar37 = thunk_FUN_0064f3f0((int)local_16c);
+                            if (iVar37 == 0) break;
+                            /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                             thunk_FUN_0056abc0(&DAT_00807620,(char *)local_16c._8_4_);
                             goto cf_switch_join_00659A73;
                           case 0x578:
-                            bVar36 = thunk_FUN_0064f430((int)local_16c);
-                            if (CONCAT31(extraout_var_11,bVar36) != 0) {
-                              iVar38 = (*(code *)this_00->field_0000->field_0018)();
-                              if ((iVar38 != 8) || ((DArrayTy *)local_16c._8_4_ != (DArrayTy *)0x9))
+                            iVar37 = thunk_FUN_0064f430((int)local_16c);
+                            if (iVar37 != 0) {
+                              /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+                              iVar37 = (*(code *)this_00->field_0000->field_0018)();
+                              /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+                              if ((iVar37 != 8) || ((DArrayTy *)local_16c._8_4_ != (DArrayTy *)0x9))
                               {
+                                /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                 pDVar12 = (DArrayTy *)
                                           thunk_FUN_00668f50(this_00,(char *)local_16c._8_4_,
                                                              (uint)local_160,&local_34.flags);
@@ -4722,11 +4973,14 @@ LAB_00654386:
                             }
                             break;
                           case 0x579:
-                            bVar36 = thunk_FUN_0064f470((int)local_16c);
-                            if (CONCAT31(extraout_var_12,bVar36) != 0) {
-                              iVar38 = (*(code *)this_00->field_0000->field_0018)();
-                              if ((iVar38 != 8) || ((DArrayTy *)local_16c._8_4_ != (DArrayTy *)0x9))
+                            iVar37 = thunk_FUN_0064f470((int)local_16c);
+                            if (iVar37 != 0) {
+                              /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+                              iVar37 = (*(code *)this_00->field_0000->field_0018)();
+                              /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+                              if ((iVar37 != 8) || ((DArrayTy *)local_16c._8_4_ != (DArrayTy *)0x9))
                               {
+                                /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                 pDVar12 = (DArrayTy *)
                                           thunk_FUN_00668f50(this_00,(char *)local_16c._8_4_,
                                                              (uint)local_160,&local_34.flags);
@@ -4753,24 +5007,29 @@ LAB_00654386:
                             }
                             break;
                           case 0x57a:
-                            bVar36 = thunk_FUN_0064f4c0((int)local_16c);
-                            if (CONCAT31(extraout_var_13,bVar36) == 0) break;
+                            iVar37 = thunk_FUN_0064f4c0((int)local_16c);
+                            if (iVar37 == 0) break;
+                            /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                             pDVar12 = (DArrayTy *)local_16c._8_4_;
+                            /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                             if ((int)local_16c._8_4_ < 0) {
                               pDVar12 = (DArrayTy *)(DAT_00808a90 & 0xff);
                             }
                             thunk_FUN_004d8760((int)pDVar12);
                             goto cf_switch_join_00659A73;
                           case 0x57b:
-                            iVar38 = thunk_FUN_0064f500((short *)local_16c);
-                            if (iVar38 != 0) {
-                              iVar38 = (*(code *)this_00->field_0000->field_0018)();
-                              if ((iVar38 != 8) || ((DArrayTy *)local_16c._8_4_ != (DArrayTy *)0x9))
+                            iVar37 = thunk_FUN_0064f500((short *)local_16c);
+                            if (iVar37 != 0) {
+                              /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+                              iVar37 = (*(code *)this_00->field_0000->field_0018)();
+                              /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+                              if ((iVar37 != 8) || ((DArrayTy *)local_16c._8_4_ != (DArrayTy *)0x9))
                               {
                                 local_8 = local_15c;
                                 if ((int)local_15c < 0) {
                                   local_8 = (DArrayTy *)(uint)DAT_00808a9b;
                                 }
+                                /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                 pDVar12 = (DArrayTy *)
                                           thunk_FUN_00668f50(this_00,(char *)local_16c._8_4_,
                                                              (uint)local_160,&local_34.flags);
@@ -4784,34 +5043,40 @@ LAB_00654386:
                                     if (cVar5 == '\x01') {
                                       if ((int)local_8 < 3) {
                                         if (local_8 == (DArrayTy *)0x2) {
+                                          /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                           __CreateObjPl(this_00,CONCAT22(uVar28,(short)pDVar26->
                                                   flags),0xc,(short *)local_158,(short *)local_154,
                                                   (short *)local_150,0xfffe,0xffffffff,(char *)0x0,
                                                   100,1,0,0);
+                                          /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                           __CreateObjPl(this_00,CONCAT22((short)((uint)local_150 >>
                                                                                 0x10),
                                                                          (short)pDVar26->flags),1,
                                                         (short *)local_158,(short *)local_154,
                                                         (short *)local_150,0xfffe,0xffffffff,
                                                         (char *)0x0,100,1,0,0);
+                                          /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                           __CreateObjPl(this_00,CONCAT22((short)((uint)local_150 >>
                                                                                 0x10),
                                                                          (short)pDVar26->flags),1,
                                                         (short *)local_158,(short *)local_154,
                                                         (short *)local_150,0xfffe,0xffffffff,
                                                         (char *)0x0,100,1,0,0);
+                                          /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                           __CreateObjPl(this_00,CONCAT22((short)((uint)local_150 >>
                                                                                 0x10),
                                                                          (short)pDVar26->flags),2,
                                                         (short *)local_158,(short *)local_154,
                                                         (short *)local_150,0xfffe,0xffffffff,
                                                         (char *)0x0,100,1,0,0);
+                                          /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                           __CreateObjPl(this_00,CONCAT22((short)((uint)local_150 >>
                                                                                 0x10),
                                                                          (short)pDVar26->flags),3,
                                                         (short *)local_158,(short *)local_154,
                                                         (short *)local_150,0xfffe,0xffffffff,
                                                         (char *)0x0,100,1,0,0);
+                                          /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                           __CreateObjPl(this_00,CONCAT22((short)((uint)local_150 >>
                                                                                 0x10),
                                                                          (short)pDVar26->flags),6,
@@ -4820,6 +5085,7 @@ LAB_00654386:
                                                         (char *)0x0,100,1,0,0);
                                         }
                                         else if (local_8 == (DArrayTy *)0x0) {
+                                          /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                           __CreateObjPl(this_00,CONCAT22(uVar28,(short)pDVar26->
                                                   flags),0xc,(short *)local_158,(short *)local_154,
                                                   (short *)local_150,0xfffe,0xffffffff,(char *)0x0,
@@ -4827,22 +5093,26 @@ LAB_00654386:
                                         }
                                         else {
                                           if (local_8 != (DArrayTy *)0x1) goto LAB_00655324;
+                                          /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                           __CreateObjPl(this_00,CONCAT22(uVar28,(short)pDVar26->
                                                   flags),0xc,(short *)local_158,(short *)local_154,
                                                   (short *)local_150,0xfffe,0xffffffff,(char *)0x0,
                                                   100,1,0,0);
+                                          /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                           __CreateObjPl(this_00,CONCAT22((short)((uint)local_150 >>
                                                                                 0x10),
                                                                          (short)pDVar26->flags),1,
                                                         (short *)local_158,(short *)local_154,
                                                         (short *)local_150,0xfffe,0xffffffff,
                                                         (char *)0x0,100,1,0,0);
+                                          /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                           __CreateObjPl(this_00,CONCAT22((short)((uint)local_150 >>
                                                                                 0x10),
                                                                          (short)pDVar26->flags),1,
                                                         (short *)local_158,(short *)local_154,
                                                         (short *)local_150,0xfffe,0xffffffff,
                                                         (char *)0x0,100,1,0,0);
+                                          /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                           __CreateObjPl(this_00,CONCAT22((short)((uint)local_150 >>
                                                                                 0x10),
                                                                          (short)pDVar26->flags),2,
@@ -4864,34 +5134,40 @@ LAB_00655324:
                                     else if (cVar5 == '\x02') {
                                       if (2 < (int)local_8) goto joined_r0x00655322;
                                       if (local_8 == (DArrayTy *)0x2) {
+                                        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                         __CreateObjPl(this_00,CONCAT22(uVar28,(short)pDVar26->flags)
                                                       ,0x18,(short *)local_158,(short *)local_154,
                                                       (short *)local_150,0xfffe,0xffffffff,
                                                       (char *)0x0,100,1,0,0);
+                                        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                         __CreateObjPl(this_00,CONCAT22((short)((uint)local_150 >>
                                                                               0x10),
                                                                        (short)pDVar26->flags),0xd,
                                                       (short *)local_158,(short *)local_154,
                                                       (short *)local_150,0xfffe,0xffffffff,
                                                       (char *)0x0,100,1,0,0);
+                                        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                         __CreateObjPl(this_00,CONCAT22((short)((uint)local_150 >>
                                                                               0x10),
                                                                        (short)pDVar26->flags),0xd,
                                                       (short *)local_158,(short *)local_154,
                                                       (short *)local_150,0xfffe,0xffffffff,
                                                       (char *)0x0,100,1,0,0);
+                                        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                         __CreateObjPl(this_00,CONCAT22((short)((uint)local_150 >>
                                                                               0x10),
                                                                        (short)pDVar26->flags),0xe,
                                                       (short *)local_158,(short *)local_154,
                                                       (short *)local_150,0xfffe,0xffffffff,
                                                       (char *)0x0,100,1,0,0);
+                                        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                         __CreateObjPl(this_00,CONCAT22((short)((uint)local_150 >>
                                                                               0x10),
                                                                        (short)pDVar26->flags),0xf,
                                                       (short *)local_158,(short *)local_154,
                                                       (short *)local_150,0xfffe,0xffffffff,
                                                       (char *)0x0,100,1,0,0);
+                                        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                         __CreateObjPl(this_00,CONCAT22((short)((uint)local_150 >>
                                                                               0x10),
                                                                        (short)pDVar26->flags),0x12,
@@ -4900,6 +5176,7 @@ LAB_00655324:
                                                       (char *)0x0,100,1,0,0);
                                       }
                                       else if (local_8 == (DArrayTy *)0x0) {
+                                        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                         __CreateObjPl(this_00,CONCAT22(uVar28,(short)pDVar26->flags)
                                                       ,0x18,(short *)local_158,(short *)local_154,
                                                       (short *)local_150,0xfffe,0xffffffff,
@@ -4907,22 +5184,26 @@ LAB_00655324:
                                       }
                                       else {
                                         if (local_8 != (DArrayTy *)0x1) goto LAB_00655324;
+                                        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                         __CreateObjPl(this_00,CONCAT22(uVar28,(short)pDVar26->flags)
                                                       ,0x18,(short *)local_158,(short *)local_154,
                                                       (short *)local_150,0xfffe,0xffffffff,
                                                       (char *)0x0,100,1,0,0);
+                                        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                         __CreateObjPl(this_00,CONCAT22((short)((uint)local_150 >>
                                                                               0x10),
                                                                        (short)pDVar26->flags),0xd,
                                                       (short *)local_158,(short *)local_154,
                                                       (short *)local_150,0xfffe,0xffffffff,
                                                       (char *)0x0,100,1,0,0);
+                                        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                         __CreateObjPl(this_00,CONCAT22((short)((uint)local_150 >>
                                                                               0x10),
                                                                        (short)pDVar26->flags),0xd,
                                                       (short *)local_158,(short *)local_154,
                                                       (short *)local_150,0xfffe,0xffffffff,
                                                       (char *)0x0,100,1,0,0);
+                                        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                         __CreateObjPl(this_00,CONCAT22((short)((uint)local_150 >>
                                                                               0x10),
                                                                        (short)pDVar26->flags),0xe,
@@ -4934,46 +5215,54 @@ LAB_00655324:
                                     else if (cVar5 == '\x03') {
                                       if (2 < (int)local_8) goto joined_r0x00655322;
                                       if (local_8 == (DArrayTy *)0x2) {
+                                        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                         __CreateObjPl(this_00,CONCAT22(uVar28,(short)pDVar26->flags)
                                                       ,0x19,(short *)local_158,(short *)local_154,
                                                       (short *)local_150,0xfffe,0xffffffff,
                                                       (char *)0x0,100,1,0,0);
+                                        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                         __CreateObjPl(this_00,CONCAT22((short)((uint)local_150 >>
                                                                               0x10),
                                                                        (short)pDVar26->flags),0x19,
                                                       (short *)local_158,(short *)local_154,
                                                       (short *)local_150,0xfffe,0xffffffff,
                                                       (char *)0x0,100,1,0,0);
+                                        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                         __CreateObjPl(this_00,CONCAT22((short)((uint)local_150 >>
                                                                               0x10),
                                                                        (short)pDVar26->flags),0x19,
                                                       (short *)local_158,(short *)local_154,
                                                       (short *)local_150,0xfffe,0xffffffff,
                                                       (char *)0x0,100,1,0,0);
+                                        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                         __CreateObjPl(this_00,CONCAT22((short)((uint)local_150 >>
                                                                               0x10),
                                                                        (short)pDVar26->flags),0x1e,
                                                       (short *)local_158,(short *)local_154,
                                                       (short *)local_150,0xfffe,0xffffffff,
                                                       (char *)0x0,100,1,0,0);
+                                        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                         __CreateObjPl(this_00,CONCAT22((short)((uint)local_150 >>
                                                                               0x10),
                                                                        (short)pDVar26->flags),0x1e,
                                                       (short *)local_158,(short *)local_154,
                                                       (short *)local_150,0xfffe,0xffffffff,
                                                       (char *)0x0,100,1,0,0);
+                                        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                         __CreateObjPl(this_00,CONCAT22((short)((uint)local_150 >>
                                                                               0x10),
                                                                        (short)pDVar26->flags),0x1e,
                                                       (short *)local_158,(short *)local_154,
                                                       (short *)local_150,0xfffe,0xffffffff,
                                                       (char *)0x0,100,1,0,0);
+                                        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                         __CreateObjPl(this_00,CONCAT22((short)((uint)local_150 >>
                                                                               0x10),
                                                                        (short)pDVar26->flags),0x20,
                                                       (short *)local_158,(short *)local_154,
                                                       (short *)local_150,0xfffe,0xffffffff,
                                                       (char *)0x0,100,1,0,0);
+                                        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                         __CreateObjPl(this_00,CONCAT22((short)((uint)local_150 >>
                                                                               0x10),
                                                                        (short)pDVar26->flags),0x22,
@@ -4982,16 +5271,19 @@ LAB_00655324:
                                                       (char *)0x0,100,1,0,0);
                                       }
                                       else if (local_8 == (DArrayTy *)0x0) {
+                                        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                         __CreateObjPl(this_00,CONCAT22(uVar28,(short)pDVar26->flags)
                                                       ,0x19,(short *)local_158,(short *)local_154,
                                                       (short *)local_150,0xfffe,0xffffffff,
                                                       (char *)0x0,100,1,0,0);
+                                        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                         __CreateObjPl(this_00,CONCAT22((short)((uint)local_150 >>
                                                                               0x10),
                                                                        (short)pDVar26->flags),0x19,
                                                       (short *)local_158,(short *)local_154,
                                                       (short *)local_150,0xfffe,0xffffffff,
                                                       (char *)0x0,100,1,0,0);
+                                        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                         __CreateObjPl(this_00,CONCAT22((short)((uint)local_150 >>
                                                                               0x10),
                                                                        (short)pDVar26->flags),0x19,
@@ -5001,34 +5293,40 @@ LAB_00655324:
                                       }
                                       else {
                                         if (local_8 != (DArrayTy *)0x1) goto LAB_00655324;
+                                        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                         __CreateObjPl(this_00,CONCAT22(uVar28,(short)pDVar26->flags)
                                                       ,0x19,(short *)local_158,(short *)local_154,
                                                       (short *)local_150,0xfffe,0xffffffff,
                                                       (char *)0x0,100,1,0,0);
+                                        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                         __CreateObjPl(this_00,CONCAT22((short)((uint)local_150 >>
                                                                               0x10),
                                                                        (short)pDVar26->flags),0x19,
                                                       (short *)local_158,(short *)local_154,
                                                       (short *)local_150,0xfffe,0xffffffff,
                                                       (char *)0x0,100,1,0,0);
+                                        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                         __CreateObjPl(this_00,CONCAT22((short)((uint)local_150 >>
                                                                               0x10),
                                                                        (short)pDVar26->flags),0x19,
                                                       (short *)local_158,(short *)local_154,
                                                       (short *)local_150,0xfffe,0xffffffff,
                                                       (char *)0x0,100,1,0,0);
+                                        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                         __CreateObjPl(this_00,CONCAT22((short)((uint)local_150 >>
                                                                               0x10),
                                                                        (short)pDVar26->flags),0x1e,
                                                       (short *)local_158,(short *)local_154,
                                                       (short *)local_150,0xfffe,0xffffffff,
                                                       (char *)0x0,100,1,0,0);
+                                        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                         __CreateObjPl(this_00,CONCAT22((short)((uint)local_150 >>
                                                                               0x10),
                                                                        (short)pDVar26->flags),0x1e,
                                                       (short *)local_158,(short *)local_154,
                                                       (short *)local_150,0xfffe,0xffffffff,
                                                       (char *)0x0,100,1,0,0);
+                                        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                         __CreateObjPl(this_00,CONCAT22((short)((uint)local_150 >>
                                                                               0x10),
                                                                        (short)pDVar26->flags),0x1e,
@@ -5047,18 +5345,23 @@ LAB_00655324:
                             }
                             break;
                           case 0x582:
-                            iVar38 = thunk_FUN_0064f5a0((int)local_16c);
-                            if (iVar38 != 0) {
-                              iVar38 = (*(code *)this_00->field_0000->field_0018)();
-                              if ((iVar38 != 8) || ((DArrayTy *)local_16c._8_4_ != (DArrayTy *)0x9))
+                            iVar37 = thunk_FUN_0064f5a0((int)local_16c);
+                            if (iVar37 != 0) {
+                              /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+                              iVar37 = (*(code *)this_00->field_0000->field_0018)();
+                              /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+                              if ((iVar37 != 8) || ((DArrayTy *)local_16c._8_4_ != (DArrayTy *)0x9))
                               {
+                                /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                 pDVar12 = (DArrayTy *)
                                           thunk_FUN_00668f50(this_00,(char *)local_16c._8_4_,
                                                              (uint)local_160,&local_34.flags);
                                 if (0 < (int)pDVar12) {
                                   pDVar26 = &local_34;
                                   local_c = pDVar12;
+                                  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
                                   uVar8 = extraout_ECX;
+                                  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
                                   uVar27 = extraout_EDX;
                                   do {
                                     switch(local_15c) {
@@ -5097,16 +5400,19 @@ LAB_00655324:
                                       break;
                                     case (DArrayTy *)0xdf:
                                       if (local_158 == (uint *)0x0) {
+                                        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                         thunk_FUN_004b7140(CONCAT31((int3)((uint)uVar27 >> 8),
                                                                     (char)pDVar26->flags),
                                                            (int)local_154);
                                       }
                                       else if ((int)local_158 < 1) {
+                                        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                         thunk_FUN_004b70d0(CONCAT31((int3)((uint)local_158 >> 8),
                                                                     (char)pDVar26->flags),
                                                            (int)local_154);
                                       }
                                       else {
+                                        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                         thunk_FUN_004b7080(CONCAT31((int3)((uint)uVar8 >> 8),
                                                                     (char)pDVar26->flags),
                                                            (int)local_154);
@@ -5140,7 +5446,9 @@ LAB_00655324:
                                     thunk_FUN_004d78e0((char)pDVar26->flags);
                                     pDVar26 = (DArrayTy *)&pDVar26->iteratorIndex;
                                     local_c = (DArrayTy *)((int)&local_c[-1].data + 3);
+                                    /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
                                     uVar8 = extraout_ECX_00;
+                                    /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
                                     uVar27 = extraout_EDX_00;
                                   } while (local_c != (DArrayTy *)0x0);
                                 }
@@ -5149,12 +5457,14 @@ LAB_00655324:
                             }
                             break;
                           case 0x583:
-                            iVar38 = thunk_FUN_0064f5e0((int)local_16c);
-                            if (iVar38 == 0) break;
+                            iVar37 = thunk_FUN_0064f5e0((int)local_16c);
+                            if (iVar37 == 0) break;
+                            /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                             if ((DArrayTy *)local_16c._8_4_ == (DArrayTy *)0x0) {
                               thunk_FUN_004d8320(local_160);
                               goto cf_switch_join_00659A73;
                             }
+                            /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                             if ((int)local_16c._8_4_ < 1) {
                               local_c = local_160;
                               iVar7 = thunk_FUN_004d82b0(0);
@@ -5174,20 +5484,21 @@ LAB_0065565b:
                             thunk_FUN_004d82b0(0);
                             goto cf_switch_join_00659A73;
                           case 0x584:
-                            iVar38 = thunk_FUN_0064f620((short *)local_16c);
-                            if (iVar38 == 0) break;
-                            thunk_FUN_0064e5c0((char)local_16c._8_4_,local_160,local_15c,local_158,
-                                               local_154);
+                            iVar37 = thunk_FUN_0064f620((short *)local_16c);
+                            if (iVar37 == 0) break;
+                            /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+                            thunk_FUN_0064e5c0((char)local_16c._8_4_,(short)local_160,
+                                               (short)local_15c,local_158,local_154);
                             goto cf_switch_join_00659A73;
                           case 0x585:
-                            iVar38 = thunk_FUN_0064f6e0();
-                            if (iVar38 == 0) break;
+                            iVar37 = thunk_FUN_0064f6e0();
+                            if (iVar37 == 0) break;
                             DAT_00808794 = thunk_FUN_0056f930((AnonShape_0056F930_C6277D80 *)
                                                               &DAT_00807620);
                             goto cf_switch_join_00659A73;
                           case 0x58c:
-                            iVar38 = thunk_FUN_0064f700((short *)local_16c);
-                            if (iVar38 == 0) break;
+                            iVar37 = thunk_FUN_0064f700((short *)local_16c);
+                            if (iVar37 == 0) break;
                             pSVar31 = (STFishC *)0x0;
                             sVar25 = (short)local_160;
                             sVar23 = (short)local_15c;
@@ -5224,17 +5535,22 @@ LAB_00655871:
                                 pSVar31 = g_sTFish_00811984;
                               }
                             }
+                            /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                             if ((pSVar31 != (STFishC *)0x0) &&
                                ((DArrayTy *)local_16c._8_4_ != (DArrayTy *)0x0)) {
+                              /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                               (*pSVar31->vtable->vfunc_70)(local_16c._8_4_);
                             }
                             goto cf_switch_join_00659A73;
                           case 0x58d:
-                            iVar38 = thunk_FUN_0064f780((short *)local_16c);
-                            if (iVar38 != 0) {
-                              iVar38 = (*(code *)this_00->field_0000->field_0018)();
-                              if ((iVar38 != 8) || ((DArrayTy *)local_16c._8_4_ != (DArrayTy *)0x9))
+                            iVar37 = thunk_FUN_0064f780((short *)local_16c);
+                            if (iVar37 != 0) {
+                              /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+                              iVar37 = (*(code *)this_00->field_0000->field_0018)();
+                              /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+                              if ((iVar37 != 8) || ((DArrayTy *)local_16c._8_4_ != (DArrayTy *)0x9))
                               {
+                                /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                 pDVar12 = (DArrayTy *)
                                           thunk_FUN_00668f50(this_00,(char *)local_16c._8_4_,
                                                              (uint)local_160,&local_34.flags);
@@ -5246,16 +5562,18 @@ LAB_00655871:
                                     uVar17 = uVar33;
                                     if ((int)local_144 < 0) {
                                       local_c = (DArrayTy *)0xfffe;
+/* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
 LAB_00655972:
-                                      iVar38 = __CreateObjPl(this_00,CONCAT22((short)((uint)
-                                                  local_158 >> 0x10),*(undefined2 *)local_10),
-                                                  (short)local_15c,(short *)local_158,
-                                                  (short *)local_154,(short *)local_150,local_c,
-                                                  (uint)local_14c,local_148,local_140,local_13c,
-                                                  (int)local_138,local_134);
-                                      if (iVar38 != 0) {
+                                      iVar37 = __CreateObjPl(this_00,CONCAT22((short)((uint)
+                                                  local_158 >> 0x10),
+                                                  *(undefined2 *)&local_10->vtable),(short)local_15c
+                                                  ,(short *)local_158,(short *)local_154,
+                                                  (short *)local_150,local_c,(uint)local_14c,
+                                                  local_148,local_140,local_13c,(int)local_138,
+                                                  local_134);
+                                      if (iVar37 != 0) {
 LAB_006559d0:
-                                        iVar38 = *(int *)local_10;
+                                        pAVar38 = local_10->vtable;
 LAB_006559d6:
                                         pcVar9 = thunk_FUN_00674af0(iVar7);
                                         iVar37 = -0xab;
@@ -5264,32 +5582,30 @@ LAB_006559d6:
                                     }
                                     else {
                                       if ((int)local_144 < 1) goto LAB_00655972;
-                                      pSVar16 = thunk_FUN_0042b760(CONCAT31((int3)((uint)local_144
-                                                                                  >> 8),
-                                                                            *(undefined1 *)local_10)
-                                                                   ,(uint)local_144);
+                                      pSVar16 = thunk_FUN_0042b760(*(char *)&local_10->vtable,
+                                                                   (uint)local_144);
                                       if (pSVar16 != (STGroupBoatC *)0x0) {
-                                        iVar38 = thunk_FUN_00423300((int)pSVar16);
-                                        if (iVar38 != 0) {
+                                        iVar37 = thunk_FUN_00423300((int)pSVar16);
+                                        if (iVar37 != 0) {
                                           if (((int)local_15c < 0x32) || (0x73 < (int)local_15c)) {
                                             bVar36 = false;
                                           }
                                           else {
                                             bVar36 = true;
                                           }
-                                          if (((!bVar36) || (*(short *)(iVar38 + 0x7b) == 1)) &&
-                                             (*(short *)(iVar38 + 0x7b) != -0x8000))
+                                          if (((!bVar36) || (*(short *)(iVar37 + 0x7b) == 1)) &&
+                                             (*(short *)(iVar37 + 0x7b) != -0x8000))
                                           goto LAB_00655972;
                                           goto LAB_006559d0;
                                         }
-                                        iVar38 = *(int *)local_10;
+                                        pAVar38 = local_10->vtable;
                                         goto LAB_006559d6;
                                       }
-                                      iVar38 = *(int *)local_10;
+                                      pAVar38 = local_10->vtable;
                                       pcVar9 = &DAT_008016a0;
                                       iVar37 = -0xaa;
 LAB_006559e3:
-                                      thunk_FUN_0064d0e0(this_00,iVar37,pcVar9,uVar17,iVar38);
+                                      thunk_FUN_0064d0e0(this_00,iVar37,pcVar9,uVar17,(int)pAVar38);
                                     }
                                     local_10 = (AiFltClassTy *)&local_10->field_0x4;
                                     local_8 = (DArrayTy *)((int)&local_8[-1].data + 3);
@@ -5301,11 +5617,14 @@ LAB_006559e3:
                             }
                             break;
                           case 0x58e:
-                            iVar38 = thunk_FUN_0064f900((short *)local_16c);
-                            if (iVar38 != 0) {
-                              iVar38 = (*(code *)this_00->field_0000->field_0018)();
-                              if ((iVar38 != 8) || ((DArrayTy *)local_16c._8_4_ != (DArrayTy *)0x9))
+                            iVar37 = thunk_FUN_0064f900((short *)local_16c);
+                            if (iVar37 != 0) {
+                              /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+                              iVar37 = (*(code *)this_00->field_0000->field_0018)();
+                              /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+                              if ((iVar37 != 8) || ((DArrayTy *)local_16c._8_4_ != (DArrayTy *)0x9))
                               {
+                                /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                 pDVar12 = (DArrayTy *)
                                           thunk_FUN_00668f50(this_00,(char *)local_16c._8_4_,
                                                              (uint)local_160,&local_34.flags);
@@ -5313,10 +5632,11 @@ LAB_006559e3:
                                   local_10 = (AiFltClassTy *)&local_34;
                                   local_c = pDVar12;
                                   do {
-                                    local_8 = (DArrayTy *)_GetStaffGrpExch(*(undefined4 *)local_10);
+                                    local_8 = (DArrayTy *)_GetStaffGrpExch(local_10->vtable);
                                     if (local_8 != (DArrayTy *)0x0) {
                                       uVar32 = 0;
                                       uVar17 = local_8->count;
+                                      /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
                                       pDVar12 = extraout_EDX_01;
                                       if (0 < (int)uVar17) {
                                         do {
@@ -5328,10 +5648,10 @@ LAB_006559e3:
                                           else {
                                             pdVar18 = (dword *)0x0;
                                           }
+                                          /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                           STAllPlayersC::DestroyObjectMsg
                                                     (g_sTAllPlayers_007FA174,
-                                                     CONCAT31((int3)((uint)local_15c >> 8),
-                                                              *(undefined1 *)local_10),
+                                                     *(char *)&local_10->vtable,
                                                      CONCAT22((short)((uint)pDVar12 >> 0x10),
                                                               (short)*pdVar18),CASE_1,local_15c);
                                           uVar32 = uVar32 + 1;
@@ -5351,11 +5671,14 @@ LAB_006559e3:
                             }
                             break;
                           case 0x58f:
-                            iVar38 = thunk_FUN_0064f950((short *)local_16c);
-                            if (iVar38 != 0) {
-                              iVar38 = (*(code *)this_00->field_0000->field_0018)();
-                              if ((iVar38 != 8) || ((DArrayTy *)local_16c._8_4_ != (DArrayTy *)0x9))
+                            iVar37 = thunk_FUN_0064f950((short *)local_16c);
+                            if (iVar37 != 0) {
+                              /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+                              iVar37 = (*(code *)this_00->field_0000->field_0018)();
+                              /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+                              if ((iVar37 != 8) || ((DArrayTy *)local_16c._8_4_ != (DArrayTy *)0x9))
                               {
+                                /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                 pDVar12 = (DArrayTy *)
                                           thunk_FUN_00668f50(this_00,(char *)local_16c._8_4_,
                                                              (uint)local_160,&local_34.flags);
@@ -5364,26 +5687,28 @@ LAB_006559e3:
                                   local_c = pDVar12;
                                   do {
                                     if ((char)local_154 == '\b') {
-                                      cVar5 = *(char *)local_10;
+                                      cVar5 = *(char *)&local_10->vtable;
                                     }
                                     else if (((char)local_154 < '\0') ||
                                             (cVar5 = (char)local_154, '\b' < (char)local_154)) {
                                       cVar5 = -1;
                                     }
                                     pDVar12 = (DArrayTy *)
-                                              thunk_FUN_006775e0(*(undefined4 *)local_10,
-                                                                 (uint)local_158,(uint)local_15c,
-                                                                 local_150,cVar5,(short)local_14c,
-                                                                 (short)local_148,(short)local_144,
-                                                                 (short)local_140,(short)local_13c,
-                                                                 (short)local_138,1);
+                                              thunk_FUN_006775e0(local_10->vtable,(uint)local_158,
+                                                                 (uint)local_15c,local_150,cVar5,
+                                                                 (short)local_14c,(short)local_148,
+                                                                 (short)local_144,(short)local_140,
+                                                                 (short)local_13c,(short)local_138,1
+                                                                );
                                     if (pDVar12 != (DArrayTy *)0x0) {
                                       uVar33 = 0;
                                       if (0 < (int)pDVar12->count) {
                                         bVar36 = pDVar12->count != 0;
+                                        /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
                                         uVar8 = extraout_EDX_02;
                                         do {
                                           if (bVar36) {
+                                            /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(pDVar12, uVar33) (runtime stride) */
                                             puVar19 = (undefined2 *)
                                                       (pDVar12->elementSize * uVar33 +
                                                       (int)pDVar12->data);
@@ -5391,14 +5716,15 @@ LAB_006559e3:
                                           else {
                                             puVar19 = (undefined2 *)0x0;
                                           }
+                                          /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                           STAllPlayersC::DestroyObjectMsg
                                                     (g_sTAllPlayers_007FA174,
-                                                     CONCAT31((int3)((uint)local_134 >> 8),
-                                                              *(undefined1 *)local_10),
+                                                     *(char *)&local_10->vtable,
                                                      CONCAT22((short)((uint)uVar8 >> 0x10),*puVar19)
                                                      ,CASE_1,local_134);
                                           uVar33 = uVar33 + 1;
                                           bVar36 = uVar33 < pDVar12->count;
+                                          /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
                                           uVar8 = extraout_EDX_03;
                                         } while ((int)uVar33 < (int)pDVar12->count);
                                       }
@@ -5415,11 +5741,14 @@ LAB_006559e3:
                             }
                             break;
                           case 0x590:
-                            iVar38 = thunk_FUN_0064fb00((short *)local_16c);
-                            if (iVar38 != 0) {
-                              iVar38 = (*(code *)this_00->field_0000->field_0018)();
-                              if ((iVar38 != 8) || ((DArrayTy *)local_16c._8_4_ != (DArrayTy *)0x9))
+                            iVar37 = thunk_FUN_0064fb00((short *)local_16c);
+                            if (iVar37 != 0) {
+                              /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+                              iVar37 = (*(code *)this_00->field_0000->field_0018)();
+                              /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+                              if ((iVar37 != 8) || ((DArrayTy *)local_16c._8_4_ != (DArrayTy *)0x9))
                               {
+                                /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                 pDVar12 = (DArrayTy *)
                                           thunk_FUN_00668f50(this_00,(char *)local_16c._8_4_,
                                                              (uint)local_160,&local_34.flags);
@@ -5427,13 +5756,14 @@ LAB_006559e3:
                                   local_8 = &local_34;
                                   local_c = pDVar12;
                                   do {
-                                    iVar38 = _CreateRCCont(this_00,CONCAT22((short)((uint)local_158
+                                    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+                                    iVar37 = _CreateRCCont(this_00,CONCAT22((short)((uint)local_158
                                                                                    >> 0x10),
                                                                             (short)local_8->flags),
                                                            (short)local_15c,(int)local_158,
                                                            (int)local_154,local_150,local_14c,
                                                            local_148,(int)local_144);
-                                    if (iVar38 != 0) {
+                                    if (iVar37 != 0) {
                                       dVar39 = local_8->flags;
                                       uVar17 = uVar33;
                                       pcVar9 = thunk_FUN_00674af0(iVar7);
@@ -5449,11 +5779,14 @@ LAB_006559e3:
                             }
                             break;
                           case 0x591:
-                            iVar38 = thunk_FUN_0064fb80((short *)local_16c);
-                            if (iVar38 != 0) {
-                              iVar38 = (*(code *)this_00->field_0000->field_0018)();
-                              if ((iVar38 != 8) || ((DArrayTy *)local_16c._8_4_ != (DArrayTy *)0x9))
+                            iVar37 = thunk_FUN_0064fb80((short *)local_16c);
+                            if (iVar37 != 0) {
+                              /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+                              iVar37 = (*(code *)this_00->field_0000->field_0018)();
+                              /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+                              if ((iVar37 != 8) || ((DArrayTy *)local_16c._8_4_ != (DArrayTy *)0x9))
                               {
+                                /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                 pDVar12 = (DArrayTy *)
                                           thunk_FUN_00668f50(this_00,(char *)local_16c._8_4_,
                                                              (uint)local_160,&local_34.flags);
@@ -5475,26 +5808,27 @@ LAB_006559e3:
                             }
                             break;
                           case 0x592:
-                            iVar38 = thunk_FUN_0064fce0((short *)local_16c);
-                            if (iVar38 == 0) break;
-                            iVar38 = _CreateArt(this_00,(short)local_16c._8_4_,(short)local_160,
+                            iVar37 = thunk_FUN_0064fce0((short *)local_16c);
+                            if (iVar37 == 0) break;
+                            /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+                            iVar37 = _CreateArt(this_00,(short)local_16c._8_4_,(short)local_160,
                                                 (int)local_15c,(int)local_158,local_154,
                                                 (char *)local_150,local_14c,local_148);
 LAB_00655f44:
-                            if (iVar38 != 0) {
+                            if (iVar37 != 0) {
 LAB_00655f4c:
-                              iVar38 = -1;
+                              iVar37 = -1;
                               uVar17 = uVar33;
                               pcVar9 = thunk_FUN_00674af0(iVar7);
-                              thunk_FUN_0064d0e0(this_00,-0xab,pcVar9,uVar17,iVar38);
+                              thunk_FUN_0064d0e0(this_00,-0xab,pcVar9,uVar17,iVar37);
                             }
                             goto cf_switch_join_00659A73;
                           }
 cf_common_join_00652A99:
-                          iVar38 = -1;
+                          iVar37 = -1;
                           uVar17 = uVar33;
                           pcVar9 = thunk_FUN_00674af0(iVar7);
-                          thunk_FUN_0064d0e0(this_00,-0x7d,pcVar9,uVar17,iVar38);
+                          thunk_FUN_0064d0e0(this_00,-0x7d,pcVar9,uVar17,iVar37);
 cf_switch_join_00659A73:
                           pDVar12 = (DArrayTy *)((int)&local_170->flags + 1);
 cf_continue_loop_00659A80:
@@ -5506,11 +5840,11 @@ cf_continue_loop_00659A80:
                     }
                     goto LAB_00659aae;
                   }
-                  iVar38 = -1;
+                  iVar37 = -1;
                   pcVar9 = thunk_FUN_00674af0(iVar7);
                   iVar7 = -0x7d;
                 }
-                thunk_FUN_0064d0e0(this_00,iVar7,pcVar9,uVar17,iVar38);
+                thunk_FUN_0064d0e0(this_00,iVar7,pcVar9,uVar17,iVar37);
                 *(char *)pAVar29 = '\x01';
                 pAVar29->field_000B = 0;
               }
@@ -5527,10 +5861,10 @@ LAB_00659aae:
             bVar36 = local_14 < pDVar12->count;
           } while ((int)local_14 < (int)pDVar12->count);
         }
-        iVar38 = local_19c;
+        iVar37 = local_19c;
         pAVar2 = (AnonShape_006B7830_769CA2DF *)this_00->field_04E2;
         iVar7 = pAVar2->field_0008;
-        while (iVar38 < iVar7) {
+        while (iVar37 < iVar7) {
           FUN_006b7830(pAVar2,iVar7 - 1);
           pAVar2 = (AnonShape_006B7830_769CA2DF *)this_00->field_04E2;
           iVar7 = pAVar2->field_0008;
@@ -5551,19 +5885,19 @@ LAB_00659aae:
   }
   return;
 code_r0x00653bbb:
-  iVar38 = iVar38 + 1;
+  iVar37 = iVar37 + 1;
   pDVar12 = (DArrayTy *)&pDVar12->iteratorIndex;
-  if ((int)local_10 <= iVar38) goto cf_switch_join_00659A73;
+  if ((int)local_10 <= iVar37) goto cf_switch_join_00659A73;
   goto LAB_00653bb7;
 code_r0x00654366:
-  iVar38 = iVar38 + 1;
+  iVar37 = iVar37 + 1;
   pDVar12 = (DArrayTy *)&pDVar12->iteratorIndex;
-  if (iVar7 <= iVar38) goto cf_switch_join_00659A73;
+  if (iVar7 <= iVar37) goto cf_switch_join_00659A73;
   goto LAB_00654362;
 code_r0x006540bd:
-  iVar38 = iVar38 + 1;
+  iVar37 = iVar37 + 1;
   pDVar12 = (DArrayTy *)&pDVar12->iteratorIndex;
-  if (iVar7 <= iVar38) goto cf_switch_join_00659A73;
+  if (iVar7 <= iVar37) goto cf_switch_join_00659A73;
   goto LAB_006540b9;
 }
 

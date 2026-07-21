@@ -14,10 +14,11 @@ void FUN_0075d740(int param_1,int param_2,int param_3,int *param_4)
   int local_1c;
   int local_c;
   int local_8;
-  
+
   iVar1 = *param_4;
   local_c = 0;
   local_8 = 0;
+  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   if (0 < *(int *)(param_1 + 0x126)) {
     do {
       local_1c = 0;
@@ -39,6 +40,7 @@ void FUN_0075d740(int param_1,int param_2,int param_3,int *param_4)
         pbVar9 = pbVar9 + 2;
         pbVar6 = pbVar6 + 2;
         puVar2[1] = (char)(iVar8 * 3 + 7 + iVar4 >> 4);
+        /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
         for (iVar7 = *(int *)(param_2 + 0x28) + -2; puVar2 = puVar2 + 2, iVar7 != 0;
             iVar7 = iVar7 + -1) {
           iVar5 = (uint)*pbVar6 * 3 + (uint)*pbVar9;
@@ -54,6 +56,7 @@ void FUN_0075d740(int param_1,int param_2,int param_3,int *param_4)
         local_1c = local_1c + 1;
       } while (local_1c < 2);
       local_8 = local_8 + 1;
+    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     } while (local_c < *(int *)(param_1 + 0x126));
   }
   return;

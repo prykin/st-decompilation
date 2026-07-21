@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Igor\to_sat.cpp
@@ -16,11 +18,9 @@ undefined4 __thiscall STSatC::GetMessage(STSatC *this,AnonShape_0058C760_1E722DF
   undefined4 uVar7;
   uint uVar8;
   short sVar9;
-  undefined4 unaff_ESI;
   AnonShape_0058C760_4470B7C6 *pAVar10;
   undefined4 *puVar11;
   byte *pbVar12;
-  void *unaff_EDI;
   undefined4 *puVar13;
   byte *pbVar14;
   InternalExceptionFrame local_80;
@@ -38,14 +38,14 @@ undefined4 __thiscall STSatC::GetMessage(STSatC *this,AnonShape_0058C760_1E722DF
   uint local_10;
   byte *local_c;
   uint local_8;
-  
+
   if ((this->field_0231 == 7) && (param_1->field_0010 != 3)) {
     return 0;
   }
   local_80.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_80;
   local_1c = (STSprGameObjC *)this;
-  iVar5 = Library::MSVCRT::__setjmp3(local_80.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar5 = Library::MSVCRT::__setjmp3(local_80.jumpBuffer,0);
   this_00 = local_1c;
   if (iVar5 != 0) {
     g_currentExceptionFrame = local_80.previous;
@@ -55,9 +55,7 @@ undefined4 __thiscall STSatC::GetMessage(STSatC *this,AnonShape_0058C760_1E722DF
       RaiseInternalException(iVar5,0,s_E____titans_Igor_to_sat_cpp_007cbab8,0x1fe);
       return 0xffff;
     }
-    pcVar1 = (code *)swi(3);
-    uVar7 = (*pcVar1)();
-    return uVar7;
+    STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   STSprGameObjC::GetMessage(local_1c,(AnonShape_0041AF40_F59F8577 *)param_1);
   uVar8 = param_1->field_0010;
@@ -392,6 +390,7 @@ undefined4 __thiscall STSatC::GetMessage(STSatC *this,AnonShape_0058C760_1E722DF
     thunk_FUN_004ad5e0((int)&this_00->field_01D5);
   }
   else if (uVar8 == 0x113) {
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
     (**(code **)this_00->field_01D5)();
     g_currentExceptionFrame = local_80.previous;
     return 0;

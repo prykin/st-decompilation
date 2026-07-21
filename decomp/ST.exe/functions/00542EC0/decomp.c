@@ -6,25 +6,31 @@
 void __thiscall InterSystemC::~InterSystemC(InterSystemC *this)
 
 {
+  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   ccFntTy *extraout_ECX;
+  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   ccFntTy *extraout_ECX_00;
+  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   ccFntTy *extraout_ECX_01;
   ccFntTy *this_00;
-  
+
   this_00 = (ccFntTy *)this;
   if ((uint *)this->field_0024 != (uint *)0x0) {
     ccFntTy::operator((ccFntTy *)this,(uint *)this->field_0024);
     this->field_0024 = 0;
+    /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
     this_00 = extraout_ECX;
   }
   if ((uint *)this->field_0028 != (uint *)0x0) {
     ccFntTy::operator(this_00,(uint *)this->field_0028);
     this->field_0028 = 0;
+    /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
     this_00 = extraout_ECX_00;
   }
   if ((uint *)this->field_002C != (uint *)0x0) {
     ccFntTy::operator(this_00,(uint *)this->field_002C);
     this->field_002C = 0;
+    /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
     this_00 = extraout_ECX_01;
   }
   if ((uint *)this->field_0030 != (uint *)0x0) {

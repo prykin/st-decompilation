@@ -1,10 +1,10 @@
 
 /* [STPrototypeApplier] Propagated parameter 1.
    Evidence: 004CAFC0 -> 004DEEB0 @ 004CB08B
-   
+
    [STPrototypeApplier] Propagated parameter 3.
    Evidence: 004CAFC0 -> 004DEEB0 @ 004CB08B
-   
+
    [STPrototypeApplier] Propagated parameter 4.
    Evidence: 004CAFC0 -> 004DEEB0 @ 004CB08B */
 

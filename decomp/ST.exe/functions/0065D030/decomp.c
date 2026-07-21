@@ -5,7 +5,7 @@ void __cdecl FUN_0065d030(AnonShape_0065D030_CB0F82F0 *param_1)
   int iVar1;
   uint uVar2;
   bool bVar3;
-  
+
   if (param_1->field_0005 != '\0') {
     iVar1 = param_1->field_0462;
     uVar2 = 0;

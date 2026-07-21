@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* [STSourceProvenanceApplier begin]
    Recovered source file: E:\__titans\ai\ai_creat.cpp
@@ -14,10 +16,8 @@ undefined4 * CreateBossData(void)
   undefined4 *puVar5;
   uint uVar6;
   uint uVar7;
-  undefined4 unaff_ESI;
   uint *puVar8;
   char *pcVar9;
-  void *unaff_EDI;
   int *piVar10;
   char *pcVar11;
   uint *puVar12;
@@ -32,13 +32,13 @@ undefined4 * CreateBossData(void)
   undefined4 *local_10;
   undefined4 *local_c;
   uint *local_8;
-  
+
   local_c = (undefined4 *)0x0;
   local_8 = (uint *)0x0;
   local_10 = (undefined4 *)0x0;
   local_78.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_78;
-  iVar3 = Library::MSVCRT::__setjmp3(local_78.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar3 = Library::MSVCRT::__setjmp3(local_78.jumpBuffer,0);
   if (iVar3 != 0) {
     g_currentExceptionFrame = local_78.previous;
     thunk_FUN_0065d0f0((int *)&local_10);
@@ -47,9 +47,7 @@ undefined4 * CreateBossData(void)
     iVar4 = ReportDebugMessage(s_E____titans_ai_ai_creat_cpp_007d2880,0x1a7,0,iVar3,&DAT_007a4ccc,
                                s_CreateBossData_007d2940);
     if (iVar4 != 0) {
-      pcVar2 = (code *)swi(3);
-      puVar5 = (undefined4 *)(*pcVar2)();
-      return puVar5;
+      STDebugBreak(); /* noreturn in standalone pseudocode */
     }
     RaiseInternalException(iVar3,0,s_E____titans_ai_ai_creat_cpp_007d2880,0x1a8);
     return (undefined4 *)0x0;
@@ -236,6 +234,7 @@ undefined4 * CreateBossData(void)
   local_8 = thunk_FUN_00683c70(local_17c,(AnonShape_00683C70_22193481 *)&stack0xfffffb6c,&local_1c,
                                local_34,(undefined *)0x0);
   if (local_8 != (uint *)0x0) {
+    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     local_10 = EventDataPack(*(AnonShape_0065CD10_BA40DE58 **)((int)local_8 + 0x4e),&local_14);
     local_c = BossDataPack(local_8,local_10,local_14,&local_18);
     thunk_FUN_0065d0f0((int *)&local_10);

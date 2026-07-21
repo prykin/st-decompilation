@@ -7,7 +7,7 @@ int __thiscall FUN_00423220(void *this,int *param_1,int param_2)
   int iVar3;
   int iVar4;
   int iVar5;
-  
+
   iVar4 = 0;
   if (param_2 != 1) {
     piVar1 = param_1;

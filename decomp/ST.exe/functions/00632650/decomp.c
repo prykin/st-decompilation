@@ -16,7 +16,7 @@ FUN_00632650(void *this,uint param_1,int param_2,undefined4 param_3,
   uint uVar5;
   undefined4 *puVar6;
   undefined4 local_40 [15];
-  
+
   if (*(int *)this != 0) {
     thunk_FUN_00635fd0(this);
   }

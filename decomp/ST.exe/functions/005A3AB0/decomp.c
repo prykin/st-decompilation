@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\fsgs_obj.cpp
@@ -16,8 +18,6 @@ void __thiscall FSGSTy::SetInfo(FSGSTy *this,byte *param_1,uint param_2,byte *pa
   uint *puVar6;
   BOOL BVar7;
   int iVar8;
-  undefined4 unaff_ESI;
-  void *unaff_EDI;
   byte *pbVar9;
   bool bVar10;
   uint local_88 [8];
@@ -26,7 +26,7 @@ void __thiscall FSGSTy::SetInfo(FSGSTy *this,byte *param_1,uint param_2,byte *pa
   FSGSTy *local_14;
   uint *local_10;
   FILETIME local_c;
-  
+
   this_00 = PTR_00802a30;
   local_14 = this;
   if (PTR_00802a30 != (CursorClassTy *)0x0) {
@@ -59,7 +59,7 @@ LAB_005a3b63:
     if (iVar4 == 0) {
       local_68.previous = g_currentExceptionFrame;
       g_currentExceptionFrame = &local_68;
-      iVar4 = Library::MSVCRT::__setjmp3(local_68.jumpBuffer,0,unaff_EDI,unaff_ESI);
+      iVar4 = Library::MSVCRT::__setjmp3(local_68.jumpBuffer,0);
       if (iVar4 == 0) {
         pbVar5 = thunk_FUN_0055d590(s_Profile_Age_007cc1a8,param_2,param_3);
         this_01 = local_14;
@@ -130,9 +130,10 @@ LAB_005a3b63:
             }
             BVar7 = FileTimeToSystemTime(&local_c,&local_24);
             if (BVar7 != 0) {
+              /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
               wsprintfA((LPSTR)local_88,s__2d__2d__4d_007cc5a8,local_24._6_4_ & 0xffff,
                         local_24.wMonth,local_24.wYear);
-              FUN_006b4170((AnonShape_006C7610_838EDECF *)this_01->field_1AC0,0,0xe2,0x11b,0xb2,0x17
+              FUN_006b4170((AnonShape_006B5B10_E0D06CF1 *)this_01->field_1AC0,0,0xe2,0x11b,0xb2,0x17
                            ,0xff);
               ccFntTy::SetSurf(this_01->field_1A73,(int)this_01->field_1AC0,0,0xe2,0x11b,0xb2,0x17);
               ccFntTy::WrStr(this_01->field_1A73,local_88,-1,-1,0);
@@ -155,9 +156,7 @@ LAB_005a3b63:
       iVar8 = ReportDebugMessage(s_E____titans_Start_fsgs_obj_cpp_007cbf70,0xb4e,0,iVar4,
                                  &DAT_007a4ccc,s_FSGSTy__SetInfo_007cc594);
       if (iVar8 != 0) {
-        pcVar2 = (code *)swi(3);
-        (*pcVar2)();
-        return;
+        STDebugBreak(); /* noreturn in standalone pseudocode */
       }
       RaiseInternalException(iVar4,0,s_E____titans_Start_fsgs_obj_cpp_007cbf70,0xb4e);
     }

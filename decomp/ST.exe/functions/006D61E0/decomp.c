@@ -6,11 +6,12 @@ void FUN_006d61e0(int *param_1)
 {
   int iVar1;
   int iVar2;
-  
+
   iVar1 = param_1[6];
   iVar2 = *(int *)(iVar1 + 0x68) + -1;
   *(int *)(iVar1 + 0x68) = iVar2;
   if ((iVar2 < 1) && (*(int *)(iVar1 + 0x6c) != 0)) {
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
     (**(code **)(**(int **)(iVar1 + 100) + 0x80))(*(int **)(iVar1 + 100),0);
     if ((*(int *)(*(int *)(iVar1 + 0x5c) + 0x310) != 0) &&
        (iVar2 = *(int *)(*(int *)(*(int *)(iVar1 + 0x5c) + 0x288) + 0x28),

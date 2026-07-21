@@ -7,7 +7,7 @@ void FUN_006747e0(int param_1,int param_2)
   int iVar3;
   int iVar4;
   int iVar5;
-  
+
   uVar1 = *(undefined1 *)(DAT_00811914 + DAT_0085755c);
   *(undefined1 *)(DAT_00811914 + DAT_0085755c) = 0;
   iVar3 = 0;
@@ -18,6 +18,7 @@ void FUN_006747e0(int param_1,int param_2)
   }
   do {
     iVar4 = iVar5 + iVar3 >> 1;
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
     iVar2 = (*(code *)PTR_thunk_FUN_00673160_007d2d1c)
                       (DAT_0081190c + DAT_0085755c,*(undefined4 *)(param_1 + iVar4 * 8));
     if (iVar2 < 1) {

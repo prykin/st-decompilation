@@ -1,8 +1,10 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\mmenuobj.cpp
    MMMObjTy::OutBSlProc
-   
+
    [STPrototypeApplier] Propagated parameter 2.
    Evidence: 005B68B0 parameter used as this of MMMObjTy::OutRGlProc @ 005B690C */
 
@@ -15,17 +17,15 @@ MMMObjTy::OutBSlProc
   code *pcVar1;
   int errorCode;
   int iVar2;
-  undefined4 unaff_ESI;
-  void *unaff_EDI;
   InternalExceptionFrame local_50;
   int local_c;
   undefined4 *local_8;
-  
+
   if (param_8 != (undefined4 *)0x0) {
     local_8 = param_8;
     local_50.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_50;
-    errorCode = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
+    errorCode = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0);
     if (errorCode == 0) {
       OutRGlProc(param_2,param_1,param_2,param_3,param_4,param_5,param_6,param_7,param_8);
       local_c = param_4 + -0x15 + param_6;
@@ -39,9 +39,7 @@ MMMObjTy::OutBSlProc
     iVar2 = ReportDebugMessage(s_E____titans_Start_mmenuobj_cpp_007cca38,0x147,0,errorCode,
                                &DAT_007a4ccc,s_MMMObjTy__OutBSlProc_007ccb38);
     if (iVar2 != 0) {
-      pcVar1 = (code *)swi(3);
-      (*pcVar1)();
-      return;
+      STDebugBreak(); /* noreturn in standalone pseudocode */
     }
     RaiseInternalException(errorCode,0,s_E____titans_Start_mmenuobj_cpp_007cca38,0x147);
   }

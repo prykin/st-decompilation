@@ -14,7 +14,7 @@ undefined4 __thiscall FUN_004d0a80(void *this,int param_1,int param_2,int param_
   int iVar4;
   undefined4 *puVar5;
   undefined4 *puVar6;
-  
+
   iVar4 = 0;
   if (0 < *(int *)((int)this + 0x245)) {
     piVar1 = *(int **)((int)this + 0x24d);

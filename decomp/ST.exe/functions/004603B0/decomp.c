@@ -13,17 +13,21 @@ int __thiscall FUN_004603b0(void *this,STTorpC *param_1)
   undefined4 uVar4;
   undefined2 uVar5;
   int iVar6;
+  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined2 extraout_var;
   int iVar7;
+  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined2 extraout_var_00;
+  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined2 extraout_var_01;
+  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined2 extraout_var_02;
   undefined4 *puVar8;
   uint index;
   bool bVar9;
   undefined4 uVar10;
   uint local_8;
-  
+
   if ((param_1 == (STTorpC *)0x0) || (param_1 == (STTorpC *)0x1)) {
     puVar8 = (undefined4 *)((int)this + 0x2cc);
     for (iVar6 = 0x17; iVar6 != 0; iVar6 = iVar6 + -1) {
@@ -66,12 +70,15 @@ LAB_004604c9:
                   uVar4 = *(undefined4 *)&param_1->field_0x18;
                   *(undefined4 *)((int)this + 0x471) = uVar4;
                   sVar1 = *(short *)((int)this + 0x4b);
+                  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                   uVar4 = CONCAT22((short)((uint)uVar4 >> 0x10),sVar1);
                   if (sVar1 == 0) {
                     iVar3 = *(int *)this;
                     *(undefined2 *)((int)this + 0x469) = 1;
+                    /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
                     uVar5 = extraout_var;
                     uVar10 = 1;
+/* ST_PSEUDO[raw_indirect_call,packed_or_unaligned_piece]: expected typed vtable/callback call with explicit __thiscall receiver; expected named packed member, bit extract/compose, or unaligned load */
 LAB_00460581:
                     iVar6 = (**(code **)(iVar3 + 0x18))
                                       (CONCAT22(uVar5,*(undefined2 *)((int)this + 0x47)),
@@ -85,6 +92,7 @@ LAB_00460581:
                   }
                   else if (sVar1 == 4) {
                     *(undefined2 *)((int)this + 0x469) = 0xffff;
+                    /* ST_PSEUDO[return_width_artifact,raw_indirect_call]: candidate call-output artifact: verify return width, clobbers, or x87 state; expected typed vtable/callback call with explicit __thiscall receiver */
                     iVar6 = (**(code **)(*(int *)this + 0x18))
                                       (CONCAT22(extraout_var_02,*(undefined2 *)((int)this + 0x47)),
                                        CONCAT22(extraout_var,*(undefined2 *)((int)this + 0x49)),3);
@@ -103,6 +111,7 @@ LAB_00460581:
                     sVar1 = (short)iVar6;
                     *(short *)((int)this + 0x469) = sVar1;
                     uVar5 = (undefined2)((uint)iVar6 >> 0x10);
+                    /* ST_PSEUDO[raw_indirect_call,packed_or_unaligned_piece]: expected typed vtable/callback call with explicit __thiscall receiver; expected named packed member, bit extract/compose, or unaligned load */
                     iVar6 = (**(code **)(*(int *)this + 0x18))
                                       (CONCAT22(uVar5,*(undefined2 *)((int)this + 0x47)),
                                        CONCAT22((short)((uint)iVar3 >> 0x10),
@@ -112,8 +121,10 @@ LAB_00460581:
                       sVar1 = *(short *)((int)this + 0x469);
                       iVar3 = *(int *)this;
                       *(short *)((int)this + 0x469) = -sVar1;
+                      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                       uVar4 = CONCAT22((short)((uint)iVar6 >> 0x10),
                                        -sVar1 + *(short *)((int)this + 0x4b));
+                      /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
                       uVar5 = extraout_var_00;
                       uVar10 = uVar4;
                       goto LAB_00460581;
@@ -160,6 +171,7 @@ LAB_00460581:
   if ((*(int *)((int)this + 0x82e) == 2) && (iVar6 = thunk_FUN_00483f10((int)this), iVar6 == 1)) {
     sVar1 = *(short *)((int)this + 0x469);
     *(short *)((int)this + 0x469) = -sVar1;
+    /* ST_PSEUDO[return_width_artifact,raw_indirect_call]: candidate call-output artifact: verify return width, clobbers, or x87 state; expected typed vtable/callback call with explicit __thiscall receiver */
     iVar6 = (**(code **)(*(int *)this + 0x18))
                       (CONCAT22(extraout_var_01,*(undefined2 *)((int)this + 0x47)),
                        *(undefined2 *)((int)this + 0x49),-sVar1 + *(short *)((int)this + 0x4b));
@@ -187,6 +199,7 @@ LAB_00460581:
       *(undefined4 *)((int)this + 0x82e) = 0;
     }
   }
+  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
   iVar6 = (**(code **)(*(int *)this + 0xd8))();
   return (-(uint)(iVar6 != 0) & 0xfffffffd) + 2;
 }

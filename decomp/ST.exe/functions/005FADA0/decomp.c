@@ -9,7 +9,7 @@ undefined4 __thiscall FUN_005fada0(void *this,int param_1,uint param_2,int param
   short local_a;
   short local_8;
   short local_6;
-  
+
   uVar3 = 0;
   if (*(int *)((int)this + 0x2e6) == 0) {
     STColl3C::CreateAddSpr(this);
@@ -26,7 +26,7 @@ undefined4 __thiscall FUN_005fada0(void *this,int param_1,uint param_2,int param
     *(undefined2 *)puVar4 = 0;
     thunk_FUN_00416270(this,&local_6,(int *)&local_8,(int *)&local_a);
     if (param_3 == 1) {
-      thunk_FUN_005fac40(this,0,1,param_1,(int)local_6,(int)local_8,(int)local_a);
+      thunk_FUN_005fac40(this,0,1,param_1,local_6,local_8,(int)local_a);
     }
     else {
       *(int *)(*(int *)((int)this + 0x2e6) + 0x14) = (int)local_6;

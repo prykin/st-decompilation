@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\grig\visible.cpp
@@ -17,26 +19,22 @@ void __thiscall VisibleClassTy::InitData(VisibleClassTy *this)
   uint uVar9;
   uint uVar10;
   uint uVar11;
-  undefined4 unaff_ESI;
-  void *unaff_EDI;
   bool bVar12;
   InternalExceptionFrame local_50;
   VisibleClassTy *local_c;
   byte *local_8;
-  
+
   local_50.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_50;
   local_c = this;
-  iVar4 = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar4 = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0);
   pVVar3 = local_c;
   if (iVar4 != 0) {
     g_currentExceptionFrame = local_50.previous;
     iVar5 = ReportDebugMessage(s_E____titans_grig_visible_cpp_007c92cc,0x77,0,iVar4,&DAT_007a4ccc,
                                s_VisibleClassTy__InitData_007c92f0);
     if (iVar5 != 0) {
-      pcVar2 = (code *)swi(3);
-      (*pcVar2)();
-      return;
+      STDebugBreak(); /* noreturn in standalone pseudocode */
     }
     thunk_FUN_00558140((AnonShape_00558140_7CF35A3F *)local_c);
     RaiseInternalException(iVar4,0,s_E____titans_grig_visible_cpp_007c92cc,0x79);

@@ -1,7 +1,7 @@
 
 /* [STPrototypeApplier] Propagated parameter 0.
    Evidence: 006AD3A0 -> EXTERNAL:00000081 @ 006AD3ED | 006AD3A0 -> EXTERNAL:00000081 @ 006AD487
-   
+
    [STPrototypeApplier] Propagated parameter 1.
    Evidence: 006AD3A0 -> EXTERNAL:00000081 @ 006AD487 */
 
@@ -10,7 +10,7 @@ int FUN_006ad3a0(LPCSTR lpText,LPCSTR lpCaption,uint param_3)
 {
   int iVar1;
   HWND hWnd;
-  
+
   hWnd = (HWND)0x0;
   if (DAT_00854eb8 != (undefined4 *)0x0) {
     hWnd = (HWND)DAT_00854eb8[1];

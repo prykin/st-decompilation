@@ -1,5 +1,10 @@
 
-bool __thiscall FUN_004950b0(void *this,short *param_1,short *param_2,short *param_3)
+/* [STAbiConsistencyApplier] full_eax_return: return=/int Evidence: all observed callers consume
+   full EAX (3), none consume AL/AX, and every RET path defines full EAX; sites=0047C050 @ 0047C197
+   -> CMP CMP EAX,0x1 | 0047C050 @ 0047C3E8 -> CMP CMP EAX,0x1 | 0047C050 @ 0047C5C3 -> CMP CMP
+   EAX,0x1 */
+
+int __thiscall FUN_004950b0(void *this,short *param_1,short *param_2,short *param_3)
 
 {
   short sVar1;
@@ -11,7 +16,7 @@ bool __thiscall FUN_004950b0(void *this,short *param_1,short *param_2,short *par
   int iVar7;
   int local_c;
   int local_8;
-  
+
   local_c = 1000000;
   local_8 = 0;
   do {
@@ -26,7 +31,7 @@ bool __thiscall FUN_004950b0(void *this,short *param_1,short *param_2,short *par
         *param_1 = *(short *)((int)this + 0x66f) + sVar2;
         *param_2 = *(short *)((int)this + 0x671) + sVar6;
         *param_3 = *(short *)((int)this + 0x673) + 1;
-        return true;
+        return 1;
       }
       sVar1 = *(short *)((int)this + 0x673) + 1;
       sVar5 = sVar6 + *(short *)((int)this + 0x671);
@@ -52,7 +57,7 @@ bool __thiscall FUN_004950b0(void *this,short *param_1,short *param_2,short *par
     } while (iVar7 < 2);
     local_8 = local_8 + 1;
     if (1 < local_8) {
-      return local_c != 1000000;
+      return (uint)(local_c != 1000000);
     }
   } while( true );
 }

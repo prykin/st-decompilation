@@ -1,8 +1,10 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\fsgs_obj.cpp
    FSGSTy::PaintFSGS
-   
+
    [STSwitchEnumApplier] Switch target field_1A5F uses
    /SubmarineTitans/Recovered/Enums/FSGSTy_field_1A5FState. Cases:
    CASE_1=1;CASE_2=2;CASE_3=3;CASE_4=4;CASE_5=5;CASE_6=6;CASE_7=7;CASE_8=8;CASE_9=9;CASE_A=10 */
@@ -17,26 +19,25 @@ void __thiscall FSGSTy::PaintFSGS(FSGSTy *this,char param_1)
   FSGSTy *this_01;
   FSGSTy *pFVar3;
   undefined1 *this_02;
+  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   FSGSTy *extraout_ECX;
-  undefined4 unaff_EBX;
-  void *unaff_ESI;
+  /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
+  int unaff_ESI;
   InternalExceptionFrame local_50;
   FSGSTy *local_c;
   UINT local_8;
-  
+
   local_8 = 0;
   local_50.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_50;
   local_c = this;
-  errorCode = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0,unaff_ESI,unaff_EBX);
+  errorCode = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0);
   if (errorCode != 0) {
     g_currentExceptionFrame = local_50.previous;
     iVar2 = ReportDebugMessage(s_E____titans_Start_fsgs_obj_cpp_007cbf70,0x1c8,0,errorCode,
                                &DAT_007a4ccc,s_FSGSTy__PaintFSGS_007cc0bc);
     if (iVar2 != 0) {
-      pcVar1 = (code *)swi(3);
-      (*pcVar1)();
-      return;
+      STDebugBreak(); /* noreturn in standalone pseudocode */
     }
     RaiseInternalException(errorCode,0,s_E____titans_Start_fsgs_obj_cpp_007cbf70,0x1c8);
     return;
@@ -116,6 +117,7 @@ LAB_00596d8b:
     if ((this_00->field_1F2F == (HoloTy *)0x0) && (param_1 == '\0')) {
       OutSGlProc(DAT_0080759c,(int)DAT_0080759c,(MMMObjTy *)0x0,0,0x199,0x5e,0x174,0x175,
                  (int)&this_00->field_1A5B->field_0x140);
+      /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
       pFVar3 = extraout_ECX;
     }
     if (this_00->field_1F2B != (HoloTy *)0x0) {
@@ -142,7 +144,8 @@ LAB_00596d8b:
     }
     OutLadProc(DAT_0080759c,(int)DAT_0080759c,(MMMObjTy *)0x0,(MMMObjTy *)0x0,0x22,0x5e,
                (FSGSTy *)0x2e1,0x175);
-    PaintLadder(this_00,(int)unaff_ESI);
+    /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
+    PaintLadder(this_00,unaff_ESI);
     g_currentExceptionFrame = local_50.previous;
     return;
   case CASE_A:

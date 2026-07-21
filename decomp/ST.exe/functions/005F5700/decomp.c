@@ -16,7 +16,7 @@ int __thiscall FUN_005f5700(void *this,int param_1,int param_2)
   int local_10;
   int local_c;
   undefined4 local_8;
-  
+
   iVar3 = param_1;
   local_c = 0;
   iVar1 = *(int *)((int)this + 0x111);
@@ -75,15 +75,19 @@ int __thiscall FUN_005f5700(void *this,int param_1,int param_2)
         thunk_FUN_00416270(this_00,(undefined2 *)((int)&local_8 + 2),(int *)((int)&param_1 + 2),
                            &local_8);
         if (*(int *)&this_00[1].field_0x8 == 1) {
+          /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
           iVar5 = FUN_006aced8((int)local_8._2_2_,(int)param_1._2_2_,*(int *)((int)this + 0x111),
                                *(int *)((int)this + 0x115));
           if (param_2 <= iVar5) {
+            /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
             iVar5 = FUN_006aced8(local_8._2_2_ + 100,(int)param_1._2_2_,*(int *)((int)this + 0x111),
                                  *(int *)((int)this + 0x115));
             if (param_2 <= iVar5) {
+              /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
               iVar5 = FUN_006aced8((int)local_8._2_2_,param_1._2_2_ + 100,
                                    *(int *)((int)this + 0x111),*(int *)((int)this + 0x115));
               if (param_2 <= iVar5) {
+                /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                 iVar5 = FUN_006aced8(local_8._2_2_ + 100,param_1._2_2_ + 100,
                                      *(int *)((int)this + 0x111),*(int *)((int)this + 0x115));
                 if (param_2 <= iVar5) goto cf_continue_loop_005F5985;
@@ -92,6 +96,7 @@ int __thiscall FUN_005f5700(void *this,int param_1,int param_2)
           }
         }
         else {
+          /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
           iVar5 = FUN_006aced8((int)local_8._2_2_,(int)param_1._2_2_,*(int *)((int)this + 0x111),
                                *(int *)((int)this + 0x115));
           if (param_2 <= iVar5) goto cf_continue_loop_005F5985;

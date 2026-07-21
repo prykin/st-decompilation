@@ -10,7 +10,7 @@ void FUN_006bcd10(void)
   uint uVar6;
   uint uVar7;
   uint uVar8;
-  
+
   iVar2 = DAT_00854fc8;
 joined_r0x006bcd2a:
   do {

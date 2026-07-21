@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\to_allpl.cpp
@@ -13,9 +15,12 @@ STAllPlayersC::ResetActivityFromObjs
   STGameObjC *pSVar3;
   int iVar4;
   uint index;
+  /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
   int unaff_EDI;
+  char objPtr;
   STAllPlayersC_GetObjPtr_param_3Enum SVar5;
-  
+
+  objPtr = (char)param_1;
   if (param_2 < 0x19b) {
     if (param_2 == 0x19a) {
 LAB_0042d1f8:
@@ -27,8 +32,9 @@ LAB_0042d1f8:
       do {
         DArrayGetElement(param_3,index,&param_4);
         if ((((short)param_4 != -1) &&
-            (pSVar3 = GetObjPtr(this,param_1,param_4,CASE_1), pSVar3 != (STGameObjC *)0x0)) &&
+            (pSVar3 = GetObjPtr(this,objPtr,param_4,CASE_1), pSVar3 != (STGameObjC *)0x0)) &&
            ((*pSVar3->vtable[1].vfunc_14)(0), param_5 != 0)) {
+          /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
           STGameObjC::ResetSelfCheckFlag(pSVar3,unaff_EDI);
         }
         index = index + 1;
@@ -39,7 +45,7 @@ LAB_0042d1f8:
       if (param_2 == 0x5a) {
         SVar5 = CASE_4;
 LAB_0042d1c3:
-        pSVar3 = GetObjPtr(this,param_1,param_4,SVar5);
+        pSVar3 = GetObjPtr(this,objPtr,param_4,SVar5);
         if (pSVar3 == (STGameObjC *)0x0) {
           return;
         }
@@ -60,14 +66,12 @@ LAB_0042d270:
     iVar4 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0x406,0,0,&DAT_007a4ccc,
                                s_STAllPlayersC__ResetActivityFrom_007a6368);
     if (iVar4 != 0) {
-      pcVar2 = (code *)swi(3);
-      (*pcVar2)();
-      return;
+      STDebugBreak(); /* noreturn in standalone pseudocode */
     }
   }
   else {
     if (param_2 == 0x1a4) {
-      pSVar3 = GetObjPtr(this,param_1,param_4,CASE_5);
+      pSVar3 = GetObjPtr(this,objPtr,param_4,CASE_5);
       if (pSVar3 == (STGameObjC *)0x0) {
         return;
       }
@@ -86,7 +90,7 @@ LAB_0042d270:
       if (param_2 != 0x1b8) goto LAB_0042d270;
       SVar5 = CASE_6;
     }
-    pSVar3 = GetObjPtr(this,param_1,param_4,SVar5);
+    pSVar3 = GetObjPtr(this,objPtr,param_4,SVar5);
     if (pSVar3 == (STGameObjC *)0x0) {
       return;
     }

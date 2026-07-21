@@ -31,7 +31,7 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_006E6AF0::FUN_006e6af0
   uint local_10;
   int local_c;
   int local_8;
-  
+
   iVar9 = 0;
   pbVar4 = *(byte **)(param_1->field_0018 + (uint)(byte)param_1->field_0x16 * 4);
   iVar1 = 0;

@@ -38,7 +38,7 @@ void __cdecl FUN_00676930(uint param_1)
   undefined4 local_18;
   int local_14;
   uint *local_8;
-  
+
   if (g_sTAllPlayers_007FA174 != (STAllPlayersC *)0x0) {
     puVar5 = &DAT_0080c947;
     puVar6 = local_160;

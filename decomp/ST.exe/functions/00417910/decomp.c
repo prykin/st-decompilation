@@ -10,7 +10,7 @@ uint __thiscall STBoatC::sub_00417910(STBoatC *this,short param_1)
   uint uVar2;
   uint uVar3;
   int iVar4;
-  
+
   uVar3 = (uint)this->field_0086;
   iVar4 = (int)param_1;
   if ((int)(param_1 / this->field_0086) * uVar3 - iVar4 != 0) {

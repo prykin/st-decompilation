@@ -4,34 +4,44 @@ uint __fastcall FUN_00493250(int param_1)
 {
   int iVar1;
   uint uVar2;
-  
+
+  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   iVar1 = *(int *)(param_1 + 0x45d);
   uVar2 = 0;
+  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   if ((iVar1 == 0x14) && (*(int *)(param_1 + 0x5c0) == 3)) {
     uVar2 = 1;
   }
+  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   if (*(int *)(param_1 + 0x7ca) != 0) {
     uVar2 = uVar2 | 2;
   }
+  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   if ((iVar1 == 4) && (*(int *)(param_1 + 0x580) == 5)) {
     uVar2 = uVar2 | 4;
   }
+  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   if (0 < *(int *)(param_1 + 0x73a)) {
     uVar2 = uVar2 | 8;
   }
+  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   if ((iVar1 == 9) && (*(int *)(param_1 + 0x611) == 3)) {
     uVar2 = uVar2 | 0x10;
   }
+  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   if (((iVar1 == 0xc) && ((*(int *)(param_1 + 0x4d5) == 5 || (*(int *)(param_1 + 0x4d5) == 0xc))))
      || ((iVar1 == 0xd && (*(int *)(param_1 + 0x54c) == 5)))) {
     uVar2 = uVar2 | 0x20;
   }
+  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   if (0 < *(int *)(param_1 + 0x73a)) {
     uVar2 = uVar2 | 8;
   }
+  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   iVar1 = *(int *)(param_1 + 0x6f7);
   if (iVar1 != 0x16) {
     if (iVar1 == 0x23) {
+      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
       if (*(int *)(param_1 + 0x72e) != 1) {
         return uVar2;
       }
@@ -41,6 +51,7 @@ uint __fastcall FUN_00493250(int param_1)
       return uVar2;
     }
   }
+  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   if (*(int *)(param_1 + 0x732) == 1) {
     uVar2 = uVar2 | 0x80;
   }

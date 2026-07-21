@@ -28,7 +28,7 @@ FUN_005fd1b0(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4
   undefined4 local_13;
   undefined4 local_f;
   int local_8;
-  
+
   puVar6 = local_160;
   for (iVar2 = 0x55; iVar2 != 0; iVar2 = iVar2 + -1) {
     *puVar6 = 0;
@@ -96,6 +96,7 @@ FUN_005fd1b0(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4
   if (local_8 == 0) {
     return 0;
   }
+  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   return *(undefined4 *)(local_8 + 0x18);
 }
 

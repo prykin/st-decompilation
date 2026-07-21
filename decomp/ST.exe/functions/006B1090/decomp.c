@@ -6,7 +6,7 @@ void __cdecl FUN_006b1090(uint *param_1)
   int iVar2;
   int *piVar3;
   uint local_14 [4];
-  
+
   local_14[0] = 0;
   local_14[1] = 0;
   local_14[2] = 0;

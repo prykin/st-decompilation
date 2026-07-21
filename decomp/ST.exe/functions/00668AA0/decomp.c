@@ -2,7 +2,7 @@
 /* [STSwitchEnumApplier] Switch target param_1 uses
    /SubmarineTitans/Recovered/Enums/Global_sub_00668AA0_param_1Enum. Cases:
    CASE_0=0;CASE_1=1;CASE_2=2;CASE_3=3;CASE_4=4;CASE_5=5;CASE_6=6;CASE_7=7;CASE_8=8;CASE_9=9;CASE_A=10;CASE_B=11;CASE_7F6=2038;CASE_7F7=2039;CASE_7F8=2040;CASE_7F9=2041;CASE_7FA=2042;CASE_7FB=2043;CASE_80E=2062;CASE_80F=2063;CASE_810=2064;CASE_819=2073;CASE_81B=2075;CASE_81C=2076;CASE_81D=2077;CASE_82A=2090;CASE_82B=2091;CASE_82C=2092;CASE_82E=2094;CASE_82F=2095
-   
+
    [STSwitchEnumApplier] Switch target param_2 uses
    /SubmarineTitans/Recovered/Enums/Global_sub_00668AA0_param_2Enum. Cases:
    CASE_3=3;CASE_4=4;CASE_5=5;CASE_6=6;CASE_7=7;CASE_8=8;CASE_9=9 */
@@ -15,7 +15,7 @@ FUN_00668aa0(Global_sub_00668AA0_param_1Enum param_1,Global_sub_00668AA0_param_2
   int iVar1;
   bool bVar2;
   bool bVar3;
-  
+
   if ((int)param_1 < 0x80e) {
     if (0x80b < (int)param_1) goto switchD_00668c18_caseD_810;
     if (0x7f5 < (int)param_1) {

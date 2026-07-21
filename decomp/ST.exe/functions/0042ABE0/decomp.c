@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\to_allpl.cpp
@@ -16,26 +18,22 @@ STAllPlayersC::GetGObjFromZone2
   uint *puVar4;
   int iVar5;
   int *piVar6;
-  undefined4 unaff_ESI;
   int *piVar7;
-  void *unaff_EDI;
   InternalExceptionFrame local_54;
   int local_10;
   short *local_c;
   int local_8;
-  
+
   local_54.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_54;
-  iVar3 = Library::MSVCRT::__setjmp3(local_54.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar3 = Library::MSVCRT::__setjmp3(local_54.jumpBuffer,0);
   if (iVar3 != 0) {
     g_currentExceptionFrame = local_54.previous;
     if (iVar3 != -0x5001fff7) {
       iVar5 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0x10e,0,iVar3,
                                  &DAT_007a4ccc,s_STAllPlayersC__GetGObjFromZone2_007a6050);
       if (iVar5 != 0) {
-        pcVar2 = (code *)swi(3);
-        (*pcVar2)();
-        return;
+        STDebugBreak(); /* noreturn in standalone pseudocode */
       }
       RaiseInternalException(iVar3,0,s_E____titans_wlad_to_allpl_cpp_007a6004,0x10f);
     }
@@ -108,6 +106,7 @@ STAllPlayersC::GetGObjFromZone2
       uVar1 = piVar7[8];
       if (uVar1 < 0x1a5) {
         if (uVar1 == 0x1a4) {
+          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
           if ((param_16 != (int *)0x0) && (iVar5 = (**(code **)(*piVar7 + 0xec))(), iVar5 == 1)) {
             piVar7 = (int *)((int)piVar7 + 0x32);
             piVar6 = param_16;
@@ -117,6 +116,7 @@ LAB_0042b01f:
           }
         }
         else if (uVar1 == 0x14) {
+          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
           iVar5 = (**(code **)(*piVar7 + 0xec))();
           if (iVar5 == 1) {
             if (piVar7[9] != (int)param_1) {
@@ -135,6 +135,7 @@ LAB_0042b01f:
           }
         }
         else if (uVar1 == 0x5a) {
+          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
           if (((param_14 != (int *)0x0) &&
               (*(int *)(iVar3 + (int)local_c) == *(int *)((int)piVar7 + 0x1ed))) &&
              (iVar5 = (**(code **)(*piVar7 + 0xec))(), iVar5 == 1)) {
@@ -143,6 +144,7 @@ LAB_0042b01f:
             goto cf_common_join_0042B022;
           }
         }
+        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
         else if (((uVar1 == 0x172) && (param_15 != (int *)0x0)) &&
                 (iVar5 = (**(code **)(*piVar7 + 0xec))(), iVar5 == 1)) {
           piVar7 = (int *)((int)piVar7 + 0x32);
@@ -152,6 +154,7 @@ LAB_0042b01f:
       }
       else if (uVar1 < 0x1b9) {
         if (uVar1 == 0x1b8) {
+          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
           if ((param_17 != (int *)0x0) && (iVar5 = (**(code **)(*piVar7 + 0xec))(), iVar5 == 1)) {
             piVar7 = (int *)((int)piVar7 + 0x32);
             puVar4 = (uint *)*param_17;
@@ -160,6 +163,7 @@ LAB_0042b01f:
         }
         else if (uVar1 == 0x1ae) {
           if (piVar7[9] == (int)param_1) {
+            /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
             if ((param_12 != (int *)0x0) && (iVar5 = (**(code **)(*piVar7 + 0xec))(), iVar5 == 1)) {
               piVar7 = (int *)((int)piVar7 + 0x32);
               puVar4 = (uint *)*param_12;
@@ -167,6 +171,7 @@ cf_common_join_0042B022:
               Library::DKW::TBL::FUN_006ae1c0(puVar4,piVar7);
             }
           }
+          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
           else if ((param_13 != (int *)0x0) && (iVar5 = (**(code **)(*piVar7 + 0xec))(), iVar5 == 1)
                   ) {
             piVar7 = (int *)((int)piVar7 + 0x32);
@@ -175,6 +180,7 @@ cf_common_join_0042B022:
           }
         }
       }
+      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
       else if (((999 < uVar1) && (uVar1 < 0x3ea)) &&
               (iVar5 = (**(code **)(*piVar7 + 0xec))(), iVar5 == 1)) {
         if (piVar7[9] == (int)param_1) {

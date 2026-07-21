@@ -13,7 +13,7 @@ FUN_004934b0(void *this,short *param_1,short *param_2,short *param_3,int *param_
   short local_a;
   short local_8;
   short local_6;
-  
+
   uVar3 = 0;
   iVar4 = 1000000;
   array = g_playerRuntime[*(int *)((int)this + 0x24)].field2167_0x9da;

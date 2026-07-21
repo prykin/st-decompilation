@@ -10,7 +10,7 @@ void __thiscall FUN_004fae90(void *this,uint param_1,uint param_2)
   int local_10;
   int local_c;
   int local_8;
-  
+
   iVar3 = *(int *)((int)this + 0x4c);
   iVar1 = *(int *)((int)this + 0xa4);
   if (*(short *)((int)this + 0x23f) != 2) {
@@ -29,6 +29,7 @@ void __thiscall FUN_004fae90(void *this,uint param_1,uint param_2)
                           (g_sTAllPlayers_007FA174,(undefined2 *)0x0,(undefined2 *)0x0,
                            (undefined2 *)((int)&param_2 + 2));
         if (-1 < iVar3) {
+          /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
           local_c = (int)param_2._2_2_;
           if (local_c < 0) {
             local_c = 2;

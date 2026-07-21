@@ -19,7 +19,7 @@ int __thiscall FUN_006139a0(void *this,int *param_1,int *param_2,int *param_3)
   int local_10;
   undefined4 *local_c;
   int local_8;
-  
+
   local_8 = 0;
   local_18 = 0;
   local_10 = 0;

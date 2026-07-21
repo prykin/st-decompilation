@@ -3,7 +3,7 @@ undefined4 __thiscall FUN_0063ca50(void *this,undefined4 param_1)
 
 {
   int iVar1;
-  
+
   iVar1 = *(int *)((int)this + 0x29a);
   if (iVar1 == 1) {
     *(undefined4 *)((int)this + 0x292) = 10;

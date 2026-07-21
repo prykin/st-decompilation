@@ -10,7 +10,8 @@ undefined4 __fastcall FUN_004ec050(int param_1)
   AnonShape_004AB810_8E5693D5 *pAVar1;
   STT3DSprC *this;
   int exceptionCode;
-  
+
+  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   if (*(int *)(param_1 + 0x5ff) == 0) {
     pAVar1 = (AnonShape_004AB810_8E5693D5 *)Library::MSVCRT::FUN_0072e530(0x40);
     if (pAVar1 == (AnonShape_004AB810_8E5693D5 *)0x0) {
@@ -26,6 +27,7 @@ undefined4 __fastcall FUN_004ec050(int param_1)
                 (exceptionCode,g_overwriteContext_007ED77C,
                  s_E____titans_Artem_TLO_trade_cpp_007c1648,0x11b);
     }
+    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     thunk_FUN_004ad5e0(*(int *)(param_1 + 0x5ff));
   }
   return 0;

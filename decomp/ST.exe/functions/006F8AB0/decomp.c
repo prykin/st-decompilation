@@ -17,7 +17,7 @@ void FUN_006f8ab0(byte *param_1,int param_2,ushort *param_3,int param_4,uint par
   byte *pbVar10;
   uint local_c;
   uint local_8;
-  
+
   _DAT_00857000 = 1;
   pbVar7 = param_6;
   iVar6 = param_10;

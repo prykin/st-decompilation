@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\ai\ai_plr.cpp
@@ -12,29 +14,15 @@ void __thiscall AiPlrClassTy::ExecTech(AiPlrClassTy *this,void *param_1)
   undefined1 uVar3;
   int iVar4;
   DArrayTy *pDVar5;
+  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined3 extraout_var;
+  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined3 extraout_var_00;
-  undefined3 extraout_var_01;
-  undefined3 extraout_var_02;
-  undefined3 extraout_var_03;
   uint uVar6;
   undefined4 *puVar7;
   int iVar8;
-  uint extraout_EDX;
-  uint extraout_EDX_00;
-  uint extraout_EDX_01;
-  uint extraout_EDX_02;
-  uint extraout_EDX_03;
-  uint extraout_EDX_04;
-  uint extraout_EDX_05;
   uint uVar9;
-  uint extraout_EDX_06;
-  uint extraout_EDX_07;
-  uint extraout_EDX_08;
-  uint extraout_EDX_09;
-  undefined4 unaff_ESI;
   void *pvVar10;
-  void *unaff_EDI;
   STGameObjC *pSVar11;
   AnonShape_0068FD00_A5257008 *pAVar12;
   bool bVar13;
@@ -47,7 +35,7 @@ void __thiscall AiPlrClassTy::ExecTech(AiPlrClassTy *this,void *param_1)
   uint local_10;
   uint local_c;
   STGameObjC *local_8;
-  
+
   if (((this->field_0695 != (DArrayTy *)0x0) && (g_sTAllPlayers_007FA174 != (STAllPlayersC *)0x0))
      && ((this->field_066E == 0 ||
          ((uint)(this->field_0672 + this->field_066E) <= (uint)this->field_06FE)))) {
@@ -55,17 +43,17 @@ void __thiscall AiPlrClassTy::ExecTech(AiPlrClassTy *this,void *param_1)
     local_90.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_90;
     local_18 = this;
-    iVar4 = Library::MSVCRT::__setjmp3(local_90.jumpBuffer,0,unaff_EDI,unaff_ESI);
+    iVar4 = Library::MSVCRT::__setjmp3(local_90.jumpBuffer,0);
     this_00 = local_18;
     if (iVar4 == 0) {
       local_10 = 0;
       pDVar5 = local_18->field_06A1;
       if (0 < (int)pDVar5->count) {
         bVar13 = pDVar5->count != 0;
-        uVar9 = extraout_EDX;
         do {
           uVar6 = local_10;
           if (bVar13) {
+            /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(pDVar5, local_10) (runtime stride) */
             pvVar10 = (void *)(pDVar5->elementSize * local_10 + (int)pDVar5->data);
           }
           else {
@@ -77,37 +65,34 @@ void __thiscall AiPlrClassTy::ExecTech(AiPlrClassTy *this,void *param_1)
             iVar4 = thunk_FUN_004e60d0(*(int *)&this_00->field_0x5d7,
                                        (int)*(short *)((int)pvVar10 + 1));
             if (iVar4 < sVar1) {
-              bVar13 = thunk_FUN_004e5f90(*(int *)&this_00->field_0x5d7,
-                                          (int)*(short *)((int)pvVar10 + 1));
-              uVar9 = extraout_EDX_01;
-              if (CONCAT31(extraout_var,bVar13) == 0) {
+              iVar4 = thunk_FUN_004e5f90(*(int *)&this_00->field_0x5d7,
+                                         (int)*(short *)((int)pvVar10 + 1));
+              if (iVar4 == 0) {
                 pSVar11 = (STGameObjC *)(int)*(short *)((int)pvVar10 + 1);
                 local_14 = (int)*(short *)((int)pvVar10 + 3);
                 local_8 = pSVar11;
-                bVar13 = thunk_FUN_004e5910(*(int *)&this_00->field_0x5d7,(uint)pSVar11);
-                uVar9 = extraout_EDX_02;
-                if ((CONCAT31(extraout_var_00,bVar13) == 0) ||
+                iVar4 = thunk_FUN_004e5910(*(int *)&this_00->field_0x5d7,(uint)pSVar11);
+                /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+                if ((iVar4 == 0) ||
                    (bVar13 = thunk_FUN_004e5c40(*(int *)&this_00->field_0x5d7,(uint)pSVar11),
-                   uVar9 = extraout_EDX_03, CONCAT31(extraout_var_01,bVar13) == 0)) {
+                   CONCAT31(extraout_var,bVar13) == 0)) {
 LAB_0067b6db:
                   bVar13 = false;
                 }
                 else {
                   uVar3 = thunk_FUN_004e6140(*(int *)&this_00->field_0x5d7,(int)pSVar11);
-                  local_c = CONCAT31(extraout_var_02,uVar3);
+                  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+                  local_c = CONCAT31(extraout_var_00,uVar3);
                   iVar4 = thunk_FUN_004e60d0(*(int *)&this_00->field_0x5d7,(int)pSVar11);
-                  uVar9 = local_c;
                   if (((int)local_c <= iVar4) ||
                      ((iVar4 = thunk_FUN_004e60d0(*(int *)&this_00->field_0x5d7,(int)pSVar11),
-                      uVar9 = extraout_EDX_04, iVar4 != local_14 + -1 ||
-                      (bVar13 = thunk_FUN_004e5f90(*(int *)&this_00->field_0x5d7,(uint)pSVar11),
-                      uVar9 = extraout_EDX_05, CONCAT31(extraout_var_03,bVar13) != 0))))
-                  goto LAB_0067b6db;
+                      iVar4 != local_14 + -1 ||
+                      (iVar4 = thunk_FUN_004e5f90(*(int *)&this_00->field_0x5d7,(uint)pSVar11),
+                      iVar4 != 0)))) goto LAB_0067b6db;
                   bVar13 = true;
                 }
                 if (bVar13) {
                   pDVar5 = this_00->field_0695;
-                  uVar9 = 0;
                   local_c = 0;
                   uVar6 = pDVar5->count;
                   if (0 < (int)uVar6) {
@@ -120,6 +105,7 @@ LAB_0067b724:
                       }
                       else {
                         if (local_c < uVar6) {
+                          /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(pDVar5, local_c) (runtime stride) */
                           puVar7 = (undefined4 *)(pDVar5->elementSize * local_c + (int)pDVar5->data)
                           ;
                         }
@@ -135,7 +121,9 @@ LAB_0067b724:
                           *(undefined4 *)pAVar12 = 0;
                           pAVar12 = (AnonShape_0068FD00_A5257008 *)&pAVar12->field_0x4;
                         }
+                        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                         local_4c[0]._4_4_ = this_00->field_06FE;
+                        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                         local_4c[0]._0_4_ = 0x73;
                         local_4c[0].field_0009 = 1;
                         local_4c[0].field_000A = pvVar10;
@@ -143,25 +131,23 @@ LAB_0067b724:
                           AiTactClassTy::GetAiMess((AiTactClassTy *)local_8,local_4c);
                           uVar9 = local_c;
                         }
+                        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                         if ('\0' < (char)local_4c[0]._8_1_) {
                           *(undefined1 *)((int)pvVar10 + 7) = 1;
-                          uVar9 = CONCAT22((short)(uVar9 >> 0x10),local_4c[0]._14_2_);
                           *(undefined2 *)((int)pvVar10 + 8) = local_4c[0]._14_2_;
                           break;
                         }
                       }
                       pDVar5 = this_00->field_0695;
-                      uVar9 = uVar9 + 1;
+                      local_c = uVar9 + 1;
                       uVar6 = pDVar5->count;
-                      local_c = uVar9;
-                    } while ((int)uVar9 < (int)uVar6);
+                    } while ((int)local_c < (int)uVar6);
                   }
                 }
               }
             }
             else {
               *(undefined1 *)((int)pvVar10 + 7) = 2;
-              uVar9 = extraout_EDX_00;
             }
             break;
           case 1:
@@ -169,12 +155,11 @@ LAB_0067b724:
               local_8 = (STGameObjC *)0x0;
             }
             else {
+              /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
               local_8 = STAllPlayersC::GetObjPtr
-                                  (g_sTAllPlayers_007FA174,
-                                   CONCAT31((int3)(uVar9 >> 8),this_00->field_0x5d7),
+                                  (g_sTAllPlayers_007FA174,this_00->field_0x5d7,
                                    CONCAT22((short)((uint)pDVar5 >> 0x10),
                                             *(undefined2 *)((int)pvVar10 + 8)),CASE_1);
-              uVar9 = extraout_EDX_06;
             }
             if (local_8 == (STGameObjC *)0x0) {
               *(undefined1 *)((int)pvVar10 + 7) = 0;
@@ -187,7 +172,6 @@ LAB_0067b724:
               if (iVar4 < sVar1) {
                 iVar4 = thunk_FUN_004e3800(local_8,(int)*(short *)((int)pvVar10 + 1),
                                            (int)*(short *)((int)pvVar10 + 3));
-                uVar9 = extraout_EDX_08;
                 if (iVar4 == 0) {
                   *(undefined1 *)((int)pvVar10 + 7) = 0;
                   *(undefined2 *)((int)pvVar10 + 8) = 0;
@@ -195,15 +179,13 @@ LAB_0067b724:
               }
               else {
                 *(undefined1 *)((int)pvVar10 + 7) = 2;
-                uVar9 = extraout_EDX_07;
               }
             }
             break;
           case 2:
           case 3:
-            FUN_006b0c70((AnonShape_006B0C70_7C4FE646 *)pDVar5,local_10);
+            FUN_006b0c70(pDVar5,local_10);
             local_10 = uVar6 - 1;
-            uVar9 = extraout_EDX_09;
           }
           pDVar5 = this_00->field_06A1;
           local_10 = local_10 + 1;
@@ -233,9 +215,7 @@ LAB_0067b724:
     iVar8 = ReportDebugMessage(s_E____titans_ai_ai_plr_cpp_007d2e4c,0x40d,0,iVar4,&DAT_007a4ccc,
                                s_AiPlrClassTy__ExecTech_007d2f10);
     if (iVar8 != 0) {
-      pcVar2 = (code *)swi(3);
-      (*pcVar2)();
-      return;
+      STDebugBreak(); /* noreturn in standalone pseudocode */
     }
     RaiseInternalException(iVar4,0,s_E____titans_ai_ai_plr_cpp_007d2e4c,0x40e);
   }

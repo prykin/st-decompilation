@@ -8,7 +8,7 @@ FUN_0074f368(undefined4 param_1,undefined4 *param_2,char *param_3,undefined4 par
   int iVar2;
   char *pcVar3;
   bool bVar4;
-  
+
   if (param_2 == (undefined4 *)0x0) {
     return 0x80004003;
   }

@@ -13,7 +13,7 @@ undefined4 FUN_004d78e0(char param_1)
   int local_10;
   int local_c;
   int local_8;
-  
+
   iVar1 = (int)param_1;
   if (iVar1 == 0xff) {
     return 0;

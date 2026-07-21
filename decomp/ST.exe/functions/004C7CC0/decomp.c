@@ -9,14 +9,13 @@ FUN_004c7cc0(void *this,int param_1,uint param_2,uint param_3,int param_4,undefi
   int iVar2;
   bool bVar3;
   int iVar4;
-  undefined3 extraout_var;
   int *piVar5;
   uint uVar6;
   uint uVar7;
   int iVar8;
   undefined4 *puVar9;
   undefined4 *puVar10;
-  
+
   if ((int)param_3 < 0) {
     iVar4 = (param_3 ^ (int)param_3 >> 0x1f) - ((int)param_3 >> 0x1f);
     if ((*(int *)((int)this + 0x3d4) != 0) && (*(int *)((int)this + 0x607) != 0)) {
@@ -58,6 +57,7 @@ LAB_004c7d8c:
         if (iVar4 == 0) goto cf_common_exit_004C8287;
       } while (bVar3);
     }
+    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     if (((iVar4 != 0) && (*(int *)((int)this + 0x361) == param_1)) &&
        (*(uint *)((int)this + 0x369) == param_2)) {
       if (*(int *)((int)this + 0x36d) < iVar4) {
@@ -94,10 +94,10 @@ LAB_004c7d8c:
     iVar4 = thunk_FUN_004c7860(this,param_1,param_2,param_3,0,0);
     if (iVar4 != 0) {
       iVar4 = thunk_FUN_004c7860(this,param_1,param_2,param_3,1,0);
-      if ((iVar4 == 0) || (bVar3 = thunk_FUN_004c7c20((int)this), CONCAT31(extraout_var,bVar3) == 0)
-         ) {
+      if ((iVar4 == 0) || (iVar4 = thunk_FUN_004c7c20((int)this), iVar4 == 0)) {
         if (param_4 != 0) {
           iVar4 = thunk_FUN_004c9370(this,param_1,param_2,-1);
+          /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
           if ((*(int *)((int)this + 0x361) == param_1) && (*(uint *)((int)this + 0x369) == param_2))
           {
             iVar4 = iVar4 + *(int *)((int)this + 0x36d);
@@ -209,12 +209,14 @@ LAB_004c7d8c:
           {
             iVar4 = *(int *)this;
             uVar7 = GetPlayerRaceId(*(char *)((int)this + 0x23d));
+            /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
             (**(code **)(iVar4 + 0x90))
                       (3,*(undefined4 *)
                           (&DAT_00796230 + ((uVar7 & 0xff) + *(int *)((int)this + 0x235) * 3) * 4));
           }
         }
         else if (*(int *)((int)this + 0x361) == 6) {
+          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
           (**(code **)(*(int *)this + 0x90))(3,0x272);
         }
       }

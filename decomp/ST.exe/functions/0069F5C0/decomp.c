@@ -5,7 +5,7 @@ void __thiscall FUN_0069f5c0(void *this,uint param_1,uint param_2,uint param_3)
   uint uVar1;
   uint uVar2;
   uint *puVar3;
-  
+
   uVar1 = param_3;
   if (param_3 == 0) {
     uVar2 = Library::MSVCRT::FUN_0072e6c0();

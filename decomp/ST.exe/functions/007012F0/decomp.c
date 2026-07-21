@@ -26,7 +26,7 @@ void FUN_007012f0(undefined1 *param_1,int param_2,ushort *param_3,int param_4,ui
   uint local_10;
   ushort *local_c;
   uint local_8;
-  
+
   uVar1 = 0;
   _DAT_00857000 = 1;
   pbVar11 = param_6;

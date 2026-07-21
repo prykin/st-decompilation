@@ -25,7 +25,7 @@ FUN_00615430(void *this,int param_1,int param_2,int param_3,int param_4,int para
   int local_10;
   int local_c;
   undefined4 local_8;
-  
+
   puVar7 = param_10;
   local_8 = 0xffffffff;
   local_28 = FUN_006acf0d(param_2,param_3,param_4,param_8,param_9,(int)param_10);

@@ -20,7 +20,7 @@ void __thiscall FUN_00444e70(void *this,undefined4 *param_1)
   AnonShape_00444E70_523E22DE *local_10;
   undefined4 local_c;
   AnonShape_00444E70_E59ECBC3 *local_8;
-  
+
   iVar5 = 0;
   pAVar10 = (AnonShape_00444E70_E59ECBC3 *)(param_1 + 2);
   local_c = 0;
@@ -283,6 +283,7 @@ void __thiscall FUN_00444e70(void *this,undefined4 *param_1)
         } while ((int)local_10 < (int)uVar8);
       }
     }
+    /* ST_PSEUDO[flattened_global_record_array]: expected g_playerRuntime[player].field[index...] after base/stride proof */
     iVar5 = iVar5 + 0xa62;
     pAVar10 = (AnonShape_00444E70_E59ECBC3 *)&local_8[1].field_0x33;
   } while (iVar5 < 0x5310);

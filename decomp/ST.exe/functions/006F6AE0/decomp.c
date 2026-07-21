@@ -18,7 +18,7 @@ void FUN_006f6ae0(undefined1 *param_1,int param_2,ushort *param_3,int param_4,ui
   undefined1 *puVar10;
   int local_c;
   uint local_8;
-  
+
   pbVar3 = param_13 + param_8;
   _DAT_00857000 = 1;
   pbVar8 = (byte *)(param_11 + ((int)pbVar3 >> 3));

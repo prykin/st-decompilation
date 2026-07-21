@@ -14,7 +14,7 @@ void __thiscall FUN_0063d100(void *this,undefined4 *param_1)
   undefined4 local_10;
   undefined4 local_c;
   undefined4 local_8;
-  
+
   if (this == (void *)0x0) {
     puVar5 = (undefined4 *)0x0;
   }

@@ -15,7 +15,7 @@ void FUN_006accd0(undefined4 *param_1,undefined4 *param_2,int param_3,undefined 
   undefined4 local_f8 [59];
   undefined4 *local_c;
   AnonShape_006CE700_6E2936C3 *local_8;
-  
+
   pAVar3 = (AnonShape_006CE700_6E2936C3 *)param_1;
   if (1 < (int)param_2) {
     pAVar4 = (AnonShape_006CE700_6E2936C3 *)((int)param_2 * param_3 + (int)param_1);
@@ -41,6 +41,7 @@ cf_continue_loop_006ACD37:
         pAVar9 = (AnonShape_006CE700_F21E5976 *)((int)pAVar9 - param_3)) {
       while (pAVar2 = (AnonShape_006CE700_F21E5976 *)(&pAVar2->field_0x0 + param_3),
             pAVar2 <= pAVar9) {
+        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
         iVar5 = (*(code *)param_4)(pAVar2,local_8);
         if (0 < iVar5) {
           local_8 = (AnonShape_006CE700_6E2936C3 *)pAVar2;
@@ -59,6 +60,7 @@ cf_continue_loop_006ACD37:
     }
   }
   return;
+/* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
 code_r0x006acd43:
   iVar5 = (*(code *)param_4)(pAVar6,pAVar7);
   if (iVar5 < 1) goto cf_continue_loop_006ACD37;
@@ -66,6 +68,7 @@ LAB_006acd4f:
   do {
     pAVar8 = (AnonShape_006CE700_6E2936C3 *)((int)pAVar8 - param_3);
     if (pAVar8 <= pAVar7) break;
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
     iVar5 = (*(code *)param_4)(pAVar8,pAVar7);
   } while (-1 < iVar5);
   if (pAVar6 <= pAVar8) {

@@ -11,7 +11,7 @@ FUN_00624570(void *this,Global_sub_00624570_param_1Enum param_1,int param_2,int 
   int iVar2;
   uint uVar3;
   uint uVar4;
-  
+
   uVar1 = 0;
   switch(param_1) {
   case CASE_0:

@@ -11,7 +11,7 @@ void __fastcall FUN_0056f040(AnonShape_0056F040_86F75ABE *param_1)
   undefined4 *puVar7;
   char *pcVar8;
   int local_c;
-  
+
   iVar5 = 8;
   pcVar2 = &param_1->field_0x11a7;
   do {

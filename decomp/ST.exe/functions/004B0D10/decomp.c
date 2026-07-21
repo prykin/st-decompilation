@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* [STSourceProvenanceApplier begin]
    Recovered source file: E:\__titans\Artem\TLO_ai.cpp
@@ -14,16 +16,14 @@ FUN_004b0d10(uint param_1,int param_2,int *param_3,int *param_4,int *param_5,int
   int iVar3;
   undefined4 uVar4;
   int iVar5;
-  undefined4 unaff_ESI;
-  void *unaff_EDI;
   InternalExceptionFrame local_50;
   undefined4 local_c;
   int local_8;
-  
+
   local_c = 0;
   local_50.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_50;
-  iVar3 = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar3 = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0);
   if (iVar3 != 0) {
     g_currentExceptionFrame = local_50.previous;
     iVar5 = ReportDebugMessage(s_E____titans_Artem_TLO_ai_cpp_007ac758,0x313,0,iVar3,&DAT_007a4ccc,
@@ -32,18 +32,17 @@ FUN_004b0d10(uint param_1,int param_2,int *param_3,int *param_4,int *param_5,int
       RaiseInternalException(iVar3,0,s_E____titans_Artem_TLO_ai_cpp_007ac758,0x314);
       return 0;
     }
-    pcVar2 = (code *)swi(3);
-    uVar4 = (*pcVar2)();
-    return uVar4;
+    STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   if (((-1 < *param_3) && (local_8 = *param_4, -1 < local_8)) && (-1 < *param_5)) {
     if (param_9 == 0) {
       iVar3 = 0;
     }
     else {
+      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
       iVar3 = *(int *)(param_9 + 0x18);
     }
-    iVar3 = thunk_FUN_004ae0b0(*param_3,local_8,*param_5,param_2,param_1,(undefined4 *)0x0,
+    iVar3 = thunk_FUN_004ae0b0((short)*param_3,local_8,*param_5,param_2,param_1,(undefined4 *)0x0,
                                (int *)0x0,(int *)0x0,iVar3,(int *)0x0);
     if (iVar3 != 0) {
       g_currentExceptionFrame = local_50.previous;

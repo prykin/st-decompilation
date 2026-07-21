@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* [STSourceProvenanceApplier begin]
    Recovered source file: E:\__titans\ai\ai_boss_d.cpp
@@ -11,17 +13,15 @@ undefined4 * __cdecl LoadBossEdit(int param_1,char *param_2)
   int errorCode;
   int iVar2;
   undefined4 *puVar3;
-  undefined4 unaff_ESI;
-  void *unaff_EDI;
   InternalExceptionFrame local_50;
   undefined4 *local_c;
   ushort *local_8;
-  
+
   local_c = (undefined4 *)0x0;
   local_8 = (ushort *)0x0;
   local_50.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_50;
-  errorCode = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  errorCode = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0);
   if (errorCode == 0) {
     if ((param_1 == 0) || (param_2 == (char *)0x0)) {
       RaiseInternalException
@@ -39,9 +39,7 @@ undefined4 * __cdecl LoadBossEdit(int param_1,char *param_2)
   iVar2 = ReportDebugMessage(s_E____titans_ai_ai_boss_d_cpp_007d27f4,0x86,0,errorCode,&DAT_007a4ccc,
                              s_LoadBossEdit_007d2828);
   if (iVar2 != 0) {
-    pcVar1 = (code *)swi(3);
-    puVar3 = (undefined4 *)(*pcVar1)();
-    return puVar3;
+    STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   thunk_FUN_006484f0((int *)&local_8);
   thunk_FUN_006484f0((int *)&local_c);

@@ -16,7 +16,7 @@ FUN_005ee080(void *this,short param_1,short param_2,short param_3,short param_4,
   int local_14;
   int local_10;
   int local_c;
-  
+
   if (*(int *)((int)this + 0x236) == 0) {
     uVar4 = *(byte *)((int)this + 0x251) + 0xc;
     if (0x18 < uVar4) {
@@ -77,6 +77,7 @@ FUN_005ee080(void *this,short param_1,short param_2,short param_3,short param_4,
         uVar4 = uVar4 + 1;
       } while ((int)uVar4 < 5);
       _param_2 = 4;
+/* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
 LAB_005ee2fe:
       *(short *)((int)this + _param_2 * 6 + 0x2ea) = (short)iVar2;
       *(short *)((int)this + _param_2 * 6 + 0x2ec) = (short)iVar3;

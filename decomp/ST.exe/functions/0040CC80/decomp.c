@@ -8,7 +8,7 @@ int __thiscall FUN_0040cc80(void *this,uint param_1)
   short *psVar4;
   int iVar5;
   int local_8;
-  
+
   iVar1 = thunk_FUN_00423e70(this,param_1);
   if ((iVar1 == 0) || (*(int *)(iVar1 + 0x9f) == 0)) {
     return -4;

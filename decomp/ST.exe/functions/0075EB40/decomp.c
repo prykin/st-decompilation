@@ -23,7 +23,7 @@ void FUN_0075eb40(AnonShape_0075EB40_977462DD *param_1,int param_2,int param_3,i
   int local_10;
   int local_c;
   byte *local_8;
-  
+
   piVar9 = local_22c;
   for (iVar6 = 0x80; iVar6 != 0; iVar6 = iVar6 + -1) {
     *piVar9 = 0x7fffffff;

@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\frmpanel.cpp
@@ -10,28 +12,24 @@ void __thiscall FrmPanelTy::Update(FrmPanelTy *this)
   FrmPanelTy *this_00;
   int iVar2;
   int iVar3;
-  undefined4 unaff_ESI;
   int *piVar4;
-  void *unaff_EDI;
   int *piVar5;
   bool bVar6;
   InternalExceptionFrame local_54;
   int local_10 [2];
   FrmPanelTy *local_8;
-  
+
   local_54.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_54;
   local_8 = this;
-  iVar2 = Library::MSVCRT::__setjmp3(local_54.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar2 = Library::MSVCRT::__setjmp3(local_54.jumpBuffer,0);
   this_00 = local_8;
   if (iVar2 != 0) {
     g_currentExceptionFrame = local_54.previous;
     iVar3 = ReportDebugMessage(s_E____titans_Andrey_frmpanel_cpp_007c2958,0x70,0,iVar2,&DAT_007a4ccc
                                ,s_FrmPanelTy__Update_007c2aac);
     if (iVar3 != 0) {
-      pcVar1 = (code *)swi(3);
-      (*pcVar1)();
-      return;
+      STDebugBreak(); /* noreturn in standalone pseudocode */
     }
     RaiseInternalException(iVar2,0,s_E____titans_Andrey_frmpanel_cpp_007c2958,0x70);
     return;

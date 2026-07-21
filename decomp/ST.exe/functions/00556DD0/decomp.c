@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\grig\traks.cpp
@@ -17,8 +19,6 @@ undefined4 __thiscall TraksClassTy::TraksCreateCollection(TraksClassTy *this,int
   undefined4 uVar8;
   short sVar9;
   short sVar10;
-  undefined4 unaff_ESI;
-  void *unaff_EDI;
   cMf32 *pcVar11;
   char cVar12;
   InternalExceptionFrame local_7c;
@@ -35,7 +35,8 @@ undefined4 __thiscall TraksClassTy::TraksCreateCollection(TraksClassTy *this,int
   int local_10;
   int local_c;
   int local_8;
-  
+
+  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   if (((((*(byte *)(param_1 + 0x1b) & 1) == 0) && (DAT_0080731e == 0)) ||
       (this->field_0024 == (DArrayTy *)0x0)) ||
      ((param_1 == (int *)0x0 || (PTR_00806770 == (cMf32 *)0x0)))) {
@@ -44,7 +45,7 @@ undefined4 __thiscall TraksClassTy::TraksCreateCollection(TraksClassTy *this,int
   local_7c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_7c;
   local_34 = this;
-  iVar3 = Library::MSVCRT::__setjmp3(local_7c.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar3 = Library::MSVCRT::__setjmp3(local_7c.jumpBuffer,0);
   if (iVar3 == 0) {
     local_8 = FUN_006acf0d(param_1[4],param_1[5],param_1[6],param_1[7],param_1[8],param_1[9]);
     if (local_8 == 0) {
@@ -345,8 +346,6 @@ undefined4 __thiscall TraksClassTy::TraksCreateCollection(TraksClassTy *this,int
     RaiseInternalException(iVar3,0,s_E____titans_grig_traks_cpp_007c9104,0x1f8);
     return 0xffffffff;
   }
-  pcVar2 = (code *)swi(3);
-  uVar8 = (*pcVar2)();
-  return uVar8;
+  STDebugBreak(); /* noreturn in standalone pseudocode */
 }
 

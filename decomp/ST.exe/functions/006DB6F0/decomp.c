@@ -4,7 +4,7 @@ int FUN_006db6f0(int param_1)
 {
   int iVar1;
   bool bVar2;
-  
+
   bVar2 = param_1 < 0;
   if (bVar2) {
     param_1 = -param_1;
@@ -16,6 +16,7 @@ int FUN_006db6f0(int param_1)
     iVar1 = *(int *)(&DAT_007ee584 + param_1 * 4);
   }
   else {
+    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     iVar1 = -*(int *)(s_AppClassTy__DeleteObject_Error___007ee83c + param_1 * -4 + 0x18);
   }
   if (bVar2) {

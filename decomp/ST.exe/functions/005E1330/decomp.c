@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* Recovered from embedded debug metadata:
@@ -9,14 +11,13 @@ void __thiscall MTaskTy::PlayScript(MTaskTy *this)
 {
   char cVar1;
   code *pcVar2;
-  SpriteClassTy *pSVar3;
+  byte bVar3;
   byte bVar4;
   int iVar5;
   LPSTR text;
   undefined4 uVar6;
   ccFntTy *pcVar7;
   uint *puVar8;
-  uint *extraout_EAX;
   AnonPointee_MTaskTy_06BF *pAVar9;
   AnonShape_005E10A0_819783CC *pAVar10;
   char *pcVar11;
@@ -24,14 +25,16 @@ void __thiscall MTaskTy::PlayScript(MTaskTy *this)
   AnonShape_006B5570_4D68B99C *pAVar13;
   DArrayTy *pDVar14;
   int iVar15;
+  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   MTaskTy *extraout_ECX;
   cMf32 *this_00;
   uint uVar16;
+  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   ccFntTy *extraout_ECX_00;
+  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   ccFntTy *extraout_ECX_01;
   ccFntTy *this_01;
   MTaskTy *this_02;
-  undefined4 unaff_ESI;
   undefined1 *puVar17;
   byte *pbVar18;
   byte *pbVar19;
@@ -39,7 +42,6 @@ void __thiscall MTaskTy::PlayScript(MTaskTy *this)
   int *piVar21;
   undefined4 *puVar22;
   SpriteClassTy *pSVar23;
-  void *unaff_EDI;
   byte *pbVar24;
   char *pcVar25;
   uint *puVar26;
@@ -148,6 +150,7 @@ void __thiscall MTaskTy::PlayScript(MTaskTy *this)
   char local_66 [30];
   undefined2 uStackY_48;
   undefined2 local_46;
+  /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
   uint *in_stack_ffffffdc;
   UINT resourceId;
   undefined4 *puVar30;
@@ -157,13 +160,13 @@ void __thiscall MTaskTy::PlayScript(MTaskTy *this)
   void **ppvVar33;
   void **ppvVar34;
   void **value;
-  SpriteClassTy *pSVar35;
-  
+
   Library::MSVCRT::FUN_0072da40();
   local_278.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_278;
+  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   local_8c = extraout_ECX;
-  iVar5 = Library::MSVCRT::__setjmp3(local_278.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar5 = Library::MSVCRT::__setjmp3(local_278.jumpBuffer,0);
   if (iVar5 != 0) {
     g_currentExceptionFrame = local_278.previous;
     iVar15 = ReportDebugMessage(s_E____titans_Start_task_obj_cpp_007cd994,0x45f,0,iVar5,
@@ -172,16 +175,16 @@ void __thiscall MTaskTy::PlayScript(MTaskTy *this)
       RaiseInternalException(iVar5,0,s_E____titans_Start_task_obj_cpp_007cd994,0x45f);
       return;
     }
-    pcVar2 = (code *)swi(3);
-    (*pcVar2)();
-    return;
+    STDebugBreak(); /* noreturn in standalone pseudocode */
   }
+  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   uVar28 = *(uint *)(local_8c->field_0074 + 0xc);
   this_02 = local_8c;
   if ((int)local_8c->field_007C < (int)uVar28) {
     do {
       uVar16 = this_02->field_007C;
       if (uVar16 < uVar28) {
+        /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
         puVar17 = (undefined1 *)
                   (*(int *)(this_02->field_0074 + 8) * uVar16 + *(int *)(this_02->field_0074 + 0x1c)
                   );
@@ -196,21 +199,27 @@ void __thiscall MTaskTy::PlayScript(MTaskTy *this)
         if ((this_02->field_006E != '\x01') || ((puVar17[0xd] != '\0' && (puVar17[0xd] != '\x01'))))
         {
           switch(puVar17[0xd]) {
+          /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
           case 0:
             in_stack_ffffffdc = (uint *)0x0;
             break;
+          /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
           case 1:
             in_stack_ffffffdc = (uint *)0x1;
             break;
+          /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
           case 2:
             in_stack_ffffffdc = (uint *)0x2;
             break;
+          /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
           case 3:
             in_stack_ffffffdc = (uint *)0x3;
             break;
+          /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
           case 4:
             in_stack_ffffffdc = (uint *)0x4;
           }
+          /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
           uVar28 = (uint)in_stack_ffffffdc & 0xff;
           if ((&this_02->field_0291)[uVar28] != 0) {
             FUN_006b3af0((int *)DAT_008075a8,(&this_02->field_02A5)[uVar28]);
@@ -226,12 +235,14 @@ void __thiscall MTaskTy::PlayScript(MTaskTy *this)
             iVar15 = 1;
             iVar5 = this_02->field_005D + 0x28;
             uVar16 = FUN_006b4fe0(this_02->field_005D);
+            /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
             uVar6 = FUN_006b50c0(iVar5,local_84,(uint)*(ushort *)(this_02->field_005D + 0xe),uVar16,
                                  (undefined4 *)iVar5,iVar15);
             (&this_02->field_0653)[uVar28 * 3] = uVar6;
             *(undefined1 **)(&this_02->field_0x657 + uVar28 * 0xc) =
                  &this_02->field_0x91 + (uint)(puVar17[10] == '\x01') * 0x100;
             *(undefined4 *)(&this_02->field_0x65b + uVar28 * 0xc) = *(undefined4 *)(puVar17 + 9);
+            /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
             uVar6 = CreateBut(this_02,1,1,*(undefined4 *)(puVar17 + 0xf),
                               *(undefined4 *)(puVar17 + 0x13),iVar5,local_84,uVar28 + 0x6200,
                               uVar28 + 0x6212);
@@ -241,6 +252,7 @@ void __thiscall MTaskTy::PlayScript(MTaskTy *this)
             Library::DKW::DDX::FUN_006b3640
                       ((int *)DAT_008075a8,(&this_02->field_02A5)[uVar28],0xffffffff,uVar16,
                        *(uint *)(puVar17 + 0x13));
+            /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
             in_stack_ffffffdc = (uint *)0x5e1e40;
             FUN_006b2800((int)DAT_008075a8,*puVar8,uVar16,local_84);
             FUN_006b3020((int)DAT_008075a8,*puVar8,*(uint *)(puVar17 + 5));
@@ -289,17 +301,19 @@ void __thiscall MTaskTy::PlayScript(MTaskTy *this)
               piVar20 = piVar20 + 1;
               iVar5 = iVar5 + -1;
             } while (iVar5 != 0);
+            /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
             local_90 = CONCAT31((int3)((uint)local_90 >> 8),bVar4);
             local_80 = (AnonShape_006B5570_4D68B99C *)(uint)bVar4;
             if (local_80 == (AnonShape_006B5570_4D68B99C *)0x2) {
-              if ((DAT_00807340 == '\x01') || (DAT_00807340 == '\x03')) {
+              if ((DAT_00807340 == 1) || (DAT_00807340 == 3)) {
                 _DAT_00807340 = (uint)_DAT_00807341 << 8;
               }
             }
-            else if ((local_80 == (AnonShape_006B5570_4D68B99C *)0x3) && (DAT_00807340 == '\x03')) {
+            else if ((local_80 == (AnonShape_006B5570_4D68B99C *)0x3) && (DAT_00807340 == 3)) {
+              /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
               _DAT_00807340 = CONCAT31(_DAT_00807341,1);
             }
-            unaff_EDI = (void *)((uint)unaff_EDI & 0xffffff);
+            bVar3 = 0;
             if (bVar4 != 0) {
               local_88 = (int *)(puVar17 + 9);
               iVar5 = 0;
@@ -354,11 +368,11 @@ LAB_005e200a:
                     *piVar20 = iVar5 + 1;
                   }
                 }
-                piVar20[1] = (uint)((char)((uint)unaff_EDI >> 0x18) == DAT_00807340);
+                piVar20[1] = (uint)(bVar3 == DAT_00807340);
                 module = HINSTANCE_00807618;
                 piVar20[3] = piVar21[-4];
-                LoadResourceString(resourceId,module);
-                iVar15 = FUN_00711110(this_02->field_008D,extraout_EAX);
+                pcVar11 = LoadResourceString(resourceId,module);
+                iVar15 = FUN_00711110(this_02->field_008D,pcVar11);
                 iVar31 = 1;
                 piVar20[5] = iVar15 + 0x1b;
                 iVar15 = this_02->field_005D;
@@ -367,6 +381,7 @@ LAB_005e200a:
                 local_e8 = piVar20[5];
                 puVar22 = (undefined4 *)(iVar15 + 0x28);
                 uVar28 = FUN_006b4fe0(iVar15);
+                /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
                 iVar15 = FUN_006b50c0(local_e8,0x14,(uint)*(ushort *)(this_02->field_005D + 0xe),
                                       uVar28,puVar22,iVar31);
                 piVar27[-1] = iVar15;
@@ -375,11 +390,10 @@ LAB_005e200a:
                                 (uint)(*(char *)(iVar31 + 10) != '\0') * 0x100);
                 piVar20 = piVar20 + 0x1c;
                 piVar27[1] = *local_88;
-                bVar4 = (char)((uint)unaff_EDI >> 0x18) + 1;
+                bVar3 = bVar3 + 1;
                 iVar5 = iVar5 + 1;
-                unaff_EDI = (void *)CONCAT13(bVar4,(int3)unaff_EDI);
                 piVar27 = piVar27 + 3;
-              } while (bVar4 < (byte)local_90);
+              } while (bVar3 < (byte)local_90);
             }
             local_234[0] = 1;
             local_1ec = local_e68;
@@ -401,6 +415,7 @@ LAB_005e200a:
               Library::DKW::DDX::FUN_006b3640
                         ((int *)DAT_008075a8,*puVar26,0xffffffff,*puVar8,puVar8[1]);
               uVar28 = puVar8[3];
+              /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
               in_stack_ffffffdc = (uint *)0x5e21c3;
               FUN_006b2800((int)DAT_008075a8,*puVar26,puVar8[2],uVar28);
               FUN_006b3020((int)DAT_008075a8,*puVar26,*(uint *)(uVar28 + 5));
@@ -456,6 +471,7 @@ LAB_005e22f4:
                   iVar15 = iVar15 + 1;
                 } while (iVar15 < PTR_0080c4cb->field_0008);
               }
+              /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
               ccFntTy::FormIndentSarr
                         (this_02->field_008D,(uint *)PTR_0081176c->field_0548,
                          s________________007c21d8,(uint *)&DAT_007c21ec,
@@ -467,6 +483,7 @@ LAB_005e22f4:
               }
               puVar8 = Library::DKW::TBL::FUN_006b54f0((uint *)0x0,10,10);
               PTR_0081176c->field_0548 = puVar8;
+              /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
               local_ec = CONCAT31(local_ec._1_3_,(this_02->field_06C7 != '\x01') + -1) & 0xffffff02;
               LoadResourceString(0x2347,HINSTANCE_00807618);
               wsprintfA((LPSTR)local_c38,s___1d__s__007cdb14);
@@ -503,6 +520,7 @@ LAB_005e24c5:
               pcVar32 = (ccFntTy *)0x1;
               puVar22 = (undefined4 *)(this_02->field_005D + 0x28);
               uVar28 = FUN_006b4fe0(this_02->field_005D);
+              /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
               pAVar9 = (AnonPointee_MTaskTy_06BF *)
                        FUN_006b50c0(local_f0,iVar5,(uint)*(ushort *)(this_02->field_005D + 0xe),
                                     uVar28,puVar22,(int)pcVar32);
@@ -521,6 +539,7 @@ LAB_005e24c5:
               local_b10 = *(int *)(puVar17 + 0x12) + 0xf;
               pcVar7 = this_02->field_008D;
               local_b34[3] = *(undefined4 *)(PTR_0081176c->field_0548 + 8);
+              /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
               local_b24 = (*(int *)(puVar17 + 0x16) - *(int *)&this_02->field_0x2f5) + -0x2d;
               if (pcVar7->field_00A0 != 0) {
                 pcVar32 = pcVar7;
@@ -587,6 +606,7 @@ LAB_005e24c5:
               Library::DKW::DDX::FUN_006b3640
                         ((int *)DAT_008075a8,this_02->field_0484,0xffffffff,
                          *(uint *)&pcVar32->field_0xe,*(uint *)&pcVar32->field_0x12);
+              /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
               in_stack_ffffffdc = (uint *)0x5e2823;
               FUN_006b2800((int)DAT_008075a8,this_02->field_0484,*(uint *)&pcVar32->field_0x16,
                            *(uint *)&pcVar32->field_0x1a);
@@ -628,25 +648,33 @@ LAB_005e24c5:
               *(uint *)&this_02->field_0x450 = uVar28;
               this_02->field_03FB = (uint)(this_02->field_06CA == '\x01');
               if (this_02->field_02D5 != 0xffffffff) {
+                /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
                 in_stack_ffffffdc = (uint *)this_02->field_0319;
+                /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
                 Library::DKW::DDX::FUN_006b34d0
                           (in_stack_ffffffdc,this_02->field_02D5,0xfffffffe,this_02->field_02ED,
                            this_02->field_02F1);
               }
               if (this_02->field_0366 != 0xffffffff) {
+                /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
                 in_stack_ffffffdc = (uint *)this_02->field_03AA;
+                /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
                 Library::DKW::DDX::FUN_006b34d0
                           (in_stack_ffffffdc,this_02->field_0366,0xfffffffe,this_02->field_037E,
                            this_02->field_0382);
               }
               if (this_02->field_03F7 != 0xffffffff) {
+                /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
                 in_stack_ffffffdc = (uint *)this_02->field_043B;
+                /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
                 Library::DKW::DDX::FUN_006b34d0
                           (in_stack_ffffffdc,this_02->field_03F7,0xfffffffe,this_02->field_040F,
                            this_02->field_0413);
               }
               if (this_02->field_03F7 != 0xffffffff) {
+                /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
                 in_stack_ffffffdc = (uint *)this_02->field_043B;
+                /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
                 Library::DKW::DDX::FUN_006b3730
                           (in_stack_ffffffdc,this_02->field_03F7,this_02->field_03FB,
                            this_02->field_040F,this_02->field_0413);
@@ -666,10 +694,12 @@ LAB_005e24c5:
         uVar28 = *(uint *)(puVar17 + 0xf);
         if (uVar28 < pDVar14->count) {
           if (cVar1 == '\0') {
+            /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(array, index) (runtime elementSize cannot be a static C array) */
             pAVar10 = (AnonShape_005E10A0_819783CC *)
                       (this_02->field_064F->elementSize * uVar28 + (int)this_02->field_064F->data);
           }
           else {
+            /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(array, index) (runtime elementSize cannot be a static C array) */
             pAVar10 = (AnonShape_005E10A0_819783CC *)
                       (this_02->field_0647->elementSize * uVar28 + (int)this_02->field_0647->data);
           }
@@ -682,6 +712,7 @@ LAB_005e24c5:
              (*(int *)&pAVar10->field_0x20 != *(int *)(puVar17 + 0x14))) {
             TTaskItemClose(this_02,pAVar10);
             if (*(int *)(puVar17 + 0x14) < (int)PTR_0080c4c7->field_0008) {
+              /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
               pcVar11 = *(char **)(PTR_0080c4c7->field_0014 + *(int *)(puVar17 + 0x14) * 4);
             }
             else {
@@ -703,6 +734,7 @@ LAB_005e24c5:
                   iVar15 = 1;
                   puVar22 = (undefined4 *)(this_02->field_005D + 0x28);
                   uVar28 = FUN_006b4fe0(this_02->field_005D);
+                  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
                   uVar16 = FUN_006b50c0(local_fc,iVar5,(uint)*(ushort *)(this_02->field_005D + 0xe),
                                         uVar28,puVar22,iVar15);
                   local_13c[(local_7c & 0xff) + 1] = uVar16;
@@ -754,6 +786,7 @@ LAB_005e24c5:
                     FUN_006b5570(pAVar12);
                   }
                   bVar4 = (char)local_7c + 1;
+                  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                   local_7c = CONCAT31(local_7c._1_3_,bVar4);
                 } while (bVar4 < 3);
                 FUN_006b2330((uint)DAT_008075a8,local_13c,*(uint *)(puVar17 + 5),0x403db4,
@@ -772,6 +805,7 @@ LAB_005e24c5:
                 puVar22 = (undefined4 *)(this_02->field_005D + 0x28);
                 local_f4 = (-(uint)(puVar17[9] != '\x01') & 0xfffffffe) + 2;
                 uVar28 = FUN_006b4fe0(this_02->field_005D);
+                /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
                 local_13c[1] = FUN_006b50c0(local_f8,iVar5,
                                             (uint)*(ushort *)(this_02->field_005D + 0xe),uVar28,
                                             puVar22,iVar15);
@@ -786,6 +820,7 @@ LAB_005e24c5:
                   puVar22 = (undefined4 *)((int)puVar22 + 1);
                 }
                 if (puVar17[0x19] != '\0') {
+                  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                   local_110 = &this_02->field_0x91 + (uint)(local_106._1_1_ == '\x01') * 0x100;
                 }
                 ccFntTy::SetSurf(this_02->field_0089,local_13c[1],0,0,0,0,0);
@@ -831,6 +866,7 @@ LAB_005e24c5:
                 pDVar14 = this_02->field_0647;
               }
               Library::DKW::TBL::FUN_006ae140(&pDVar14->flags,uVar28,local_13c);
+              /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
               in_stack_ffffffdc = DAT_008075a8;
               Library::DKW::DDX::FUN_006b3640
                         ((int *)DAT_008075a8,local_13c[0],0,*(uint *)(puVar17 + 0x1a),
@@ -844,6 +880,7 @@ LAB_005e24c5:
             else {
               uVar28 = 0;
             }
+            /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
             in_stack_ffffffdc = DAT_008075a8;
             Library::DKW::DDX::FUN_006b3730
                       (DAT_008075a8,*(uint *)pAVar10,uVar28,*(uint *)(puVar17 + 0x1a),
@@ -873,11 +910,13 @@ LAB_005e24c5:
           puVar8 = (uint *)Library::Ourlib::MFWAV::mfWavLoad
                                      (this_02->field_0070,puVar17 + 0xd,0,(ushort *)0x0);
           if (puVar8 == (uint *)0x0) {
+            /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
             in_stack_ffffffdc = (uint *)0x5e2f3a;
             puVar8 = (uint *)Library::Ourlib::MFWAV::mfWavLoad
                                        (g_cMf32_00806798,puVar17 + 0xd,0,(ushort *)0x0);
             if (puVar8 == (uint *)0x0) break;
           }
+          /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
           in_stack_ffffffdc = (uint *)0x5e2f24;
           thunk_FUN_0056a130(&g_sound,0,'\x03',-1,puVar8);
         }
@@ -885,6 +924,7 @@ LAB_005e24c5:
       case 7:
         pDVar14 = this_02->field_064B;
         if (*(uint *)(puVar17 + 0xe) < pDVar14->count) {
+          /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(array, index) (runtime elementSize cannot be a static C array) */
           pSVar23 = (SpriteClassTy *)
                     (pDVar14->elementSize * *(uint *)(puVar17 + 0xe) + (int)pDVar14->data);
         }
@@ -898,7 +938,7 @@ LAB_005e24c5:
           local_94 = 1;
           local_2bc.previous = g_currentExceptionFrame;
           g_currentExceptionFrame = &local_2bc;
-          iVar5 = Library::MSVCRT::__setjmp3(local_2bc.jumpBuffer,0,unaff_EDI,pSVar23);
+          iVar5 = Library::MSVCRT::__setjmp3(local_2bc.jumpBuffer,0);
           if (iVar5 == 0) {
             ppvVar34 = ppvVar33;
             if (pSVar23 != (SpriteClassTy *)0x0) {
@@ -924,15 +964,11 @@ LAB_005e2ffb:
 LAB_005e3000:
                 if (iVar5 != 0) {
                   ppvVar34 = (void **)0x5e300e;
-                  pSVar35 = pSVar23;
                   SpriteClassTy::CloseSprite(pSVar23);
-                  pSVar3 = pSVar23 + 1;
                   value = (void **)((int)&pSVar23[1].field_0008 + 1);
-                  pSVar23 = pSVar35;
-                  if (*(int *)((int)&pSVar3->field_0008 + 1) != 0) {
+                  if (*(int *)((int)&pSVar23[1].field_0008 + 1) != 0) {
                     FreeAndNull(value);
                     ppvVar34 = value;
-                    pSVar23 = pSVar35;
                   }
                   goto LAB_005e3030;
                 }
@@ -978,11 +1014,13 @@ LAB_005e3030:
               SpriteClassTy::InitSprite
                         (&local_1dc,(int *)DAT_008075a8,*(uint *)((int)ppvVar33 + 5),'\x1e',
                          (undefined4 *)0x0,0,0);
+              /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
               in_stack_ffffffdc = (uint *)0x1e;
               iVar5 = SpriteClassTy::SetImages
                                 (&local_1dc,this_02->field_0070,CASE_1E,0,
                                  (char *)((int)ppvVar33 + 0x12),0xffffffff,0);
               if (iVar5 != 0) {
+                /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
                 in_stack_ffffffdc = (uint *)0x1e;
                 SpriteClassTy::SetImages
                           (&local_1dc,g_cMf32_00806798,CASE_1E,0,(char *)((int)ppvVar33 + 0x12),
@@ -1009,7 +1047,9 @@ LAB_005e3030:
               local_1dc.field_0040 = *(undefined4 *)((int)ppvVar33 + 0x46);
               local_14a = 0;
               local_146 = *(int *)((int)ppvVar33 + 0x42);
+              /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
               in_stack_ffffffdc = *(uint **)((int)ppvVar33 + 0x32);
+              /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
               local_142 = FUN_006c81c0((int)in_stack_ffffffdc,*(int *)((int)ppvVar33 + 0x36),
                                        *(int *)((int)ppvVar33 + 0x3a),*(int *)((int)ppvVar33 + 0x3e)
                                        ,local_146);
@@ -1018,6 +1058,7 @@ LAB_005e3030:
               }
             }
             if (local_1dc.field_0004 != 0xffffffff) {
+              /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
               in_stack_ffffffdc = local_1dc.field_0048;
               Library::DKW::DDX::FUN_006b3730
                         (local_1dc.field_0048,local_1dc.field_0004,local_1dc.field_0008,
@@ -1055,24 +1096,31 @@ LAB_005e3030:
         local_d9 = 1;
         local_d8 = 1;
         local_db = 1;
+        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
         local_e4[0]._0_1_ = 1;
         local_d7 = 2;
         local_d6 = 0x26201;
         uStackY_d2 = 0x22600;
+        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
         iStackY_ce._1_3_ = 0x91;
+        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
         iStackY_ce._0_1_ = 0;
         uStackY_ca = 0x2800;
         uStackY_c6 = uStackY_c6 & 0xffffff00;
         Library::DKW::TBL::FUN_006b11d0((uint *)this_02->field_0074,uVar16 + 1,local_e4);
         local_d7 = 1;
+        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
         local_d6 = CONCAT31(0x2d,(undefined1)local_d6);
         uStackY_d2 = 0x22600;
+        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
         iStackY_ce._0_1_ = 0;
         Library::DKW::TBL::FUN_006b11d0
                   ((uint *)this_02->field_0074,this_02->field_007C + 1,local_e4);
         local_d7 = 0;
+        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
         local_d6 = CONCAT31(0x23,(undefined1)local_d6);
         uStackY_d2 = 0x1f400;
+        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
         iStackY_ce = (uint)iStackY_ce._1_3_ << 8;
         Library::DKW::TBL::FUN_006b11d0
                   ((uint *)this_02->field_0074,this_02->field_007C + 1,local_e4);
@@ -1080,6 +1128,7 @@ LAB_005e3030:
         local_d8 = 0;
         local_db = 0;
         local_da = 0;
+        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
         local_e4[0]._0_1_ = 2;
         local_d7 = 1;
         local_d6 = 0x104;
@@ -1096,6 +1145,7 @@ LAB_005e3030:
         local_d8 = 0;
         local_db = 0;
         local_da = 0;
+        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
         local_e4[0]._0_1_ = 3;
         local_d7 = 1;
         local_d6 = 0x96;
@@ -1137,6 +1187,7 @@ LAB_005e3030:
             local_6d = 1;
             local_6c = 1;
             local_6f = 1;
+            /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
             local_78._1_4_ = *(undefined4 *)(puVar17 + 1);
             local_73 = 0x7ffffff0;
             local_78[0] = 7;
@@ -1160,8 +1211,8 @@ LAB_005e14be:
             } while (bVar4 != 0);
             iVar5 = 0;
 LAB_005e14c3:
-            pbVar18 = PTR_s_DEFAULT_BO_ANIMATED_0079c228;
-            pbVar24 = pbVar19;
+            pbVar18 = pbVar19;
+            pbVar24 = PTR_s_DEFAULT_BO_ANIMATED_0079c228;
             if (iVar5 == 0) {
               uVar28 = 0xffffffff;
               pcVar11 = &DAT_007cdc48;
@@ -1331,27 +1382,26 @@ LAB_005e14c3:
               }
               local_46 = 0x2df;
               Library::DKW::TBL::FUN_006b11d0(puVar8,iVar5 + 1,(undefined4 *)local_78);
-              pbVar18 = PTR_s_DEFAULT_BO_ANIMATED_0079c228;
-              pbVar24 = pbVar19;
+              pbVar24 = PTR_s_DEFAULT_BO_ANIMATED_0079c228;
             }
             do {
-              bVar4 = *pbVar19;
-              bVar29 = bVar4 < *pbVar18;
-              if (bVar4 != *pbVar18) {
+              bVar4 = *pbVar18;
+              bVar29 = bVar4 < *pbVar24;
+              if (bVar4 != *pbVar24) {
 LAB_005e16bc:
                 iVar5 = (1 - (uint)bVar29) - (uint)(bVar29 != 0);
                 goto LAB_005e16c1;
               }
               if (bVar4 == 0) break;
-              bVar4 = pbVar19[1];
-              bVar29 = bVar4 < pbVar18[1];
-              if (bVar4 != pbVar18[1]) goto LAB_005e16bc;
-              pbVar19 = pbVar19 + 2;
+              bVar4 = pbVar18[1];
+              bVar29 = bVar4 < pbVar24[1];
+              if (bVar4 != pbVar24[1]) goto LAB_005e16bc;
               pbVar18 = pbVar18 + 2;
+              pbVar24 = pbVar24 + 2;
             } while (bVar4 != 0);
             iVar5 = 0;
 LAB_005e16c1:
-            pbVar19 = PTR_s_DEFAULT_SI_ANIMATED_0079c22c;
+            pbVar18 = PTR_s_DEFAULT_SI_ANIMATED_0079c22c;
             if (iVar5 == 0) {
               uVar28 = 0xffffffff;
               pcVar11 = s_DEF_BO_ANI1_007cdbe8;
@@ -1577,22 +1627,22 @@ LAB_005e16c1:
               }
               local_46 = 0x78;
               Library::DKW::TBL::FUN_006b11d0(puVar8,iVar5 + 1,(undefined4 *)local_78);
-              pbVar19 = PTR_s_DEFAULT_SI_ANIMATED_0079c22c;
+              pbVar18 = PTR_s_DEFAULT_SI_ANIMATED_0079c22c;
             }
             do {
-              bVar4 = *pbVar24;
-              bVar29 = bVar4 < *pbVar19;
-              if (bVar4 != *pbVar19) {
+              bVar4 = *pbVar19;
+              bVar29 = bVar4 < *pbVar18;
+              if (bVar4 != *pbVar18) {
 LAB_005e1958:
                 iVar5 = (1 - (uint)bVar29) - (uint)(bVar29 != 0);
                 goto LAB_005e195d;
               }
               if (bVar4 == 0) break;
-              bVar4 = pbVar24[1];
-              bVar29 = bVar4 < pbVar19[1];
-              if (bVar4 != pbVar19[1]) goto LAB_005e1958;
-              pbVar24 = pbVar24 + 2;
+              bVar4 = pbVar19[1];
+              bVar29 = bVar4 < pbVar18[1];
+              if (bVar4 != pbVar18[1]) goto LAB_005e1958;
               pbVar19 = pbVar19 + 2;
+              pbVar18 = pbVar18 + 2;
             } while (bVar4 != 0);
             iVar5 = 0;
 LAB_005e195d:
@@ -1743,23 +1793,28 @@ LAB_005e195d:
         }
         iVar5 = this_02->field_0074;
         if ((uint)this_02->field_007C < *(uint *)(iVar5 + 0xc)) {
+          /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
           piVar20 = (int *)(*(int *)(iVar5 + 8) * this_02->field_007C + *(int *)(iVar5 + 0x1c));
         }
         else {
           piVar20 = (int *)0x0;
         }
         FUN_006bc360((ushort *)this_02->field_005D,local_1268,piVar20);
+        /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
         in_stack_ffffffdc = (uint *)0x0;
         Library::Ourlib::PALETTE::FUN_00718780
                   ((int)local_1268,0,0x100,0x1a,0x10,(undefined4 *)&this_02->field_0x91);
         Library::Ourlib::PALETTE::FUN_00718780
                   ((int)local_1268,0,0x100,0x2e,0x10,(undefined4 *)&this_02->field_0x191);
+        /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
         pcVar7 = extraout_ECX_00;
         if (this_02->field_007C != 0) {
           DarkScreen(DAT_0080759c,1,0);
           PaintMTask(this_02);
+          /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
           in_stack_ffffffdc = DAT_008075a8;
           thunk_FUN_0055ddf0(DAT_0080759c,(int *)DAT_008075a8,this_02->field_005D,10,2);
+          /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
           pcVar7 = extraout_ECX_01;
         }
         if (this_02->field_0089 != (ccFntTy *)0x0) {
@@ -1775,6 +1830,7 @@ LAB_005e195d:
         pcVar7 = (ccFntTy *)thunk_FUN_005df290(this_02->field_005D,(undefined *)0x0,DAT_00807dd9);
         this_02->field_008D = pcVar7;
         thunk_FUN_00568bc0(&g_sound,0);
+        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
         if ((DAT_00807300._1_1_ & 8) != 0) {
           puVar8 = (uint *)Library::Ourlib::MFWAV::mfWavLoad
                                      (this_02->field_0070,(char *)((int)piVar20 + 0x2d),0,
@@ -1786,20 +1842,24 @@ LAB_005e195d:
                                         (ushort *)0x0);
             *(uint **)&this_02->field_0x85 = puVar8;
             if (puVar8 == (uint *)0x0) {
+              /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
               in_stack_ffffffdc = (uint *)0x5e1cab;
               thunk_FUN_0056a130(&g_sound,0x14,'\x02',0,(uint *)0x0);
               break;
             }
           }
+          /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
           in_stack_ffffffdc = (uint *)0x5e1c94;
           thunk_FUN_0056a130(&g_sound,0,'\x02',0,puVar8);
         }
       }
       iVar5 = this_02->field_007C + 1;
       this_02->field_007C = iVar5;
+      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
       uVar28 = *(uint *)(this_02->field_0074 + 0xc);
     } while (iVar5 < (int)uVar28);
   }
+  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   if (this_02->field_007C == *(int *)(this_02->field_0074 + 0xc)) {
     if ((this_02->field_006D == '\x05') &&
        (pDVar14 = this_02->field_064B, pDVar14 != (DArrayTy *)0x0)) {
@@ -1810,6 +1870,7 @@ LAB_005e195d:
           goto LAB_005e34e0;
         }
         do {
+          /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(pDVar14, uVar28) (runtime stride) */
           pSVar23 = (SpriteClassTy *)(pDVar14->elementSize * uVar28 + (int)pDVar14->data);
 LAB_005e34e0:
           if ((pSVar23->field_0004 != -1) &&

@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\camp_obj.cpp
@@ -18,9 +20,7 @@ void __thiscall CampaignTy::NoneCampaign(CampaignTy *this,void *param_1)
   int *piVar9;
   undefined4 *puVar10;
   int iVar11;
-  undefined4 unaff_ESI;
   uint *puVar12;
-  void *unaff_EDI;
   undefined4 local_284 [112];
   InternalExceptionFrame local_c4;
   undefined4 local_80 [4];
@@ -37,23 +37,21 @@ void __thiscall CampaignTy::NoneCampaign(CampaignTy *this,void *param_1)
   undefined2 local_1c;
   CampaignTy *local_c;
   int local_8;
-  
+
   local_8 = 1;
   local_c = this;
   DVar5 = timeGetTime();
   this->field_0061 = DVar5;
   local_c4.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_c4;
-  iVar6 = Library::MSVCRT::__setjmp3(local_c4.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar6 = Library::MSVCRT::__setjmp3(local_c4.jumpBuffer,0);
   this_00 = local_c;
   if (iVar6 != 0) {
     g_currentExceptionFrame = local_c4.previous;
     iVar11 = ReportDebugMessage(s_E____titans_Start_camp_obj_cpp_007cbcd4,0x117,0,iVar6,
                                 &DAT_007a4ccc,s_CampaignTy__NoneCampaign_007cbe1c);
     if (iVar11 != 0) {
-      pcVar4 = (code *)swi(3);
-      (*pcVar4)();
-      return;
+      STDebugBreak(); /* noreturn in standalone pseudocode */
     }
     RaiseInternalException(iVar6,0,s_E____titans_Start_camp_obj_cpp_007cbcd4,0x117);
     return;
@@ -210,6 +208,7 @@ void __thiscall CampaignTy::NoneCampaign(CampaignTy *this,void *param_1)
       local_68 = 0x68ff;
       local_48 = 0x697f;
       local_50 = local_70;
+      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
       (**(code **)(**(int **)&this_00->field_0xc + 8))(5,&this_00->field_0x66,0,local_80,0);
       iVar6 = this_00->field_1A5B;
       if (*(int *)(iVar6 + 0x2e6) != 0) {
@@ -221,6 +220,7 @@ void __thiscall CampaignTy::NoneCampaign(CampaignTy *this,void *param_1)
         *(undefined2 *)puVar10 = 0;
         local_1c = 1;
         local_1e = 1;
+        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
         local_28._2_2_ = 1;
         MMsgTy::StatePanel(*(MMsgTy **)(iVar6 + 0x2e6),(int)&local_28);
       }

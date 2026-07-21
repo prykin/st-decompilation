@@ -1,8 +1,10 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\Tspr3d.cpp
    STT3DSprC::SetCurFase
-   
+
    [STPrototypeApplier] Propagated parameter 2.
    Evidence: 00643E20 -> 004ABE40 @ 00644070 | 00643E20 -> 004ABE40 @ 006440B4 | 00643E20 ->
    004ABE40 @ 00644202 | 00643E20 -> 004ABE40 @ 00644246 */
@@ -16,15 +18,13 @@ undefined4 __thiscall STT3DSprC::SetCurFase(STT3DSprC *this,char param_1,uint pa
   int iVar4;
   undefined4 uVar5;
   int *piVar6;
-  
+
   if (this->field_0018 != -1) {
     if ((param_1 < '\0') || (this->field_0014 + -1 < (int)param_1)) {
       iVar4 = ReportDebugMessage(s_E____titans_wlad_Tspr3d_cpp_007ac638,0x93,0,0,&DAT_007a4ccc,
                                  s_STT3DSprC__SetCurFase_wrong_leve_007ac67c);
       if (iVar4 != 0) {
-        pcVar3 = (code *)swi(3);
-        uVar5 = (*pcVar3)();
-        return uVar5;
+        STDebugBreak(); /* noreturn in standalone pseudocode */
       }
     }
     else {

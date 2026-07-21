@@ -14,7 +14,7 @@ FUN_00631910(void *this,undefined4 param_1,undefined4 param_2,undefined4 param_3
   undefined4 local_10;
   undefined4 local_c;
   undefined4 local_8;
-  
+
   puVar4 = local_28;
   for (iVar2 = 9; iVar2 != 0; iVar2 = iVar2 + -1) {
     *puVar4 = 0;

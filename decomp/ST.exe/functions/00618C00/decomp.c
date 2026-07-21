@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\nick\to_jump_mine.cpp
@@ -14,20 +16,18 @@ STJumpMineC::GetMessage(STJumpMineC *this,AnonShape_00618C00_CCBA84F5 *param_1)
   uint uVar4;
   int iVar5;
   undefined4 uVar6;
-  undefined4 unaff_ESI;
   AnonNested_00618C00_0014_AEDCAA43 *pAVar7;
-  void *unaff_EDI;
   undefined4 *puVar8;
   InternalExceptionFrame local_58;
   void *local_14;
   byte *local_10;
   AnonShape_0060EA30_DCEB68AD *local_c;
   STJellyGunC *local_8;
-  
+
   local_58.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_58;
   local_8 = (STJellyGunC *)this;
-  iVar3 = Library::MSVCRT::__setjmp3(local_58.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar3 = Library::MSVCRT::__setjmp3(local_58.jumpBuffer,0);
   this_00 = local_8;
   if (iVar3 != 0) {
     g_currentExceptionFrame = local_58.previous;
@@ -37,9 +37,7 @@ STJumpMineC::GetMessage(STJumpMineC *this,AnonShape_00618C00_CCBA84F5 *param_1)
       RaiseInternalException(iVar3,0,s_E____titans_nick_to_jump_mine_cp_007d0100,0xaf);
       return 0xffff;
     }
-    pcVar2 = (code *)swi(3);
-    uVar6 = (*pcVar2)();
-    return uVar6;
+    STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   uVar4 = param_1->field_0010;
   if (uVar4 < 0x110) {

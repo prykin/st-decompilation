@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\helppan.cpp
@@ -10,9 +12,7 @@ void __thiscall HelpPanelTy::CreateSlider(HelpPanelTy *this,int param_1)
   HelpPanelTy *this_00;
   int iVar2;
   int iVar3;
-  undefined4 unaff_ESI;
   int *piVar4;
-  void *unaff_EDI;
   int *piVar5;
   int local_424 [6];
   undefined4 local_40c;
@@ -51,7 +51,7 @@ void __thiscall HelpPanelTy::CreateSlider(HelpPanelTy *this,int param_1)
   undefined4 local_60;
   InternalExceptionFrame local_4c;
   HelpPanelTy *local_8;
-  
+
   piVar4 = local_424;
   local_8 = this;
   for (iVar2 = 0xf6; iVar2 != 0; iVar2 = iVar2 + -1) {
@@ -60,7 +60,7 @@ void __thiscall HelpPanelTy::CreateSlider(HelpPanelTy *this,int param_1)
   }
   local_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_4c;
-  iVar2 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar2 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
   this_00 = local_8;
   if (iVar2 == 0) {
     if (local_8->field_019C != 0) {
@@ -148,9 +148,7 @@ void __thiscall HelpPanelTy::CreateSlider(HelpPanelTy *this,int param_1)
   iVar3 = ReportDebugMessage(s_E____titans_Andrey_helppan_cpp_007c383c,0x1df,0,iVar2,&DAT_007a4ccc,
                              s_HelpPanelTy__CreateSlider_007c39ec);
   if (iVar3 != 0) {
-    pcVar1 = (code *)swi(3);
-    (*pcVar1)();
-    return;
+    STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   RaiseInternalException(iVar2,0,s_E____titans_Andrey_helppan_cpp_007c383c,0x1df);
   return;

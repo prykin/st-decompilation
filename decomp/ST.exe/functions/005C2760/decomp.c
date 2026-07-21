@@ -10,7 +10,7 @@ void FUN_005c2760(void)
   undefined4 local_2c;
   undefined1 local_20;
   undefined4 local_1e;
-  
+
   DVar2 = timeGetTime();
   DVar1 = DAT_00811754;
   if ((PTR_0081175c != (AnonShape_GLOBAL_0081175C_57F682DD *)0x0) && (99 < DVar2 - DAT_00811754)) {
@@ -30,8 +30,10 @@ void FUN_005c2760(void)
         puVar5 = puVar5 + 1;
       }
       *(undefined2 *)puVar5 = 0;
+      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
       local_2c._0_2_ = (undefined2)((uint)DAT_00807dd5 >> 0x10);
       local_20 = DAT_0080733b;
+      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
       local_2c._2_1_ = 0;
       local_1e = DAT_00808754;
       FUN_00715360(g_int_00811764,0,'\x1a',(char *)&local_2c,0x26,1,0xffffffff);

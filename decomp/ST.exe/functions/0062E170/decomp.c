@@ -12,7 +12,7 @@ void FUN_0062e170(undefined4 param_1,int param_2,int param_3,int param_4,undefin
   undefined4 local_10;
   undefined4 local_c;
   undefined4 local_8;
-  
+
   puVar2 = local_30;
   for (iVar1 = 0xb; iVar1 != 0; iVar1 = iVar1 + -1) {
     *puVar2 = 0;

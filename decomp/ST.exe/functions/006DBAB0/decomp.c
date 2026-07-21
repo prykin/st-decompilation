@@ -4,7 +4,7 @@ void __fastcall FUN_006dbab0(AnonShape_006DBAB0_2B877B8C *param_1)
 {
   uint uVar1;
   int iVar2;
-  
+
   do {
     iVar2 = 0;
     if (*(int *)param_1 != 0) {

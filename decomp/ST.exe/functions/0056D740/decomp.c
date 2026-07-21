@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\tapp.cpp
@@ -13,9 +15,7 @@ void __thiscall STAppC::ChangeResolution(STAppC *this,int param_1)
   DWORD DVar5;
   int iVar6;
   InternalExceptionFrame *pIVar7;
-  undefined4 unaff_ESI;
   uint uVar8;
-  void *unaff_EDI;
   undefined4 *puVar9;
   undefined4 local_4bc [256];
   InternalExceptionFrame local_bc;
@@ -26,7 +26,7 @@ void __thiscall STAppC::ChangeResolution(STAppC *this,int param_1)
   int local_10;
   uint local_c;
   int local_8;
-  
+
   local_8 = param_1;
   local_c = 0;
   if ((((param_1 != 0) || (g_nWidth_00806730 != 800)) &&
@@ -35,7 +35,7 @@ void __thiscall STAppC::ChangeResolution(STAppC *this,int param_1)
     local_58.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_58;
     local_14 = this;
-    iVar4 = Library::MSVCRT::__setjmp3(local_58.jumpBuffer,0,unaff_EDI,unaff_ESI);
+    iVar4 = Library::MSVCRT::__setjmp3(local_58.jumpBuffer,0);
     if (iVar4 == 0) {
       FUN_006b13e0(DAT_008075a8);
       pIVar7 = g_currentExceptionFrame;
@@ -81,7 +81,7 @@ void __thiscall STAppC::ChangeResolution(STAppC *this,int param_1)
           }
           g_currentExceptionFrame = &local_bc;
           local_bc.previous = pIVar7;
-          iVar4 = Library::MSVCRT::__setjmp3(local_bc.jumpBuffer,0,unaff_EDI,unaff_ESI);
+          iVar4 = Library::MSVCRT::__setjmp3(local_bc.jumpBuffer,0);
           uVar8 = local_c;
           if (iVar4 == 0) {
             DVar5 = Library::DKW::DDX::FUN_006b9b40
@@ -119,9 +119,7 @@ void __thiscall STAppC::ChangeResolution(STAppC *this,int param_1)
     iVar6 = ReportDebugMessage(s_E____titans_tapp_cpp_007ca0c8,0x44f,0,iVar4,&DAT_007a4ccc,
                                s_STAppC__ChangeResolution_007ca190);
     if (iVar6 != 0) {
-      pcVar3 = (code *)swi(3);
-      (*pcVar3)();
-      return;
+      STDebugBreak(); /* noreturn in standalone pseudocode */
     }
     RaiseInternalException(iVar4,0,s_E____titans_tapp_cpp_007ca0c8,0x44f);
   }

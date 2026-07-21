@@ -29,7 +29,7 @@ uint __cdecl FUN_006d7d9a(AnonShape_006D7D9A_A5401417 *param_1)
   byte local_11 [5];
   undefined4 *local_c;
   undefined4 *local_8;
-  
+
   pcVar3 = (code *)param_1->field_0042;
   pcVar4 = (code *)param_1->field_0046;
   iVar5 = param_1->field_0022;
@@ -85,6 +85,7 @@ LAB_006d7faf:
               uVar8 = local_2a;
             }
             for (; (int)uVar10 <= (int)uVar8;
+                /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
                 uVar8 = (uint)*(ushort *)((int)local_8 + uVar8 * 2 + 0x2000)) {
               *puVar15 = *(undefined1 *)((int)local_8 + uVar8 + 0x1000);
               puVar15 = puVar15 + -1;
@@ -125,6 +126,7 @@ LAB_006d7faf:
               if ((cVar2 != '\0') && (iVar6 <= local_36)) {
                 local_52 = local_52 + 1;
                 uVar8 = (uint)local_36 >> 0x10;
+                /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                 local_36 = CONCAT22((short)uVar8,
                                     (short)(char)*(undefined2 *)(&DAT_006d7d90 + local_52 * 2));
                 local_3a = (uint)(ushort)(short)(char)((ushort)*(undefined2 *)

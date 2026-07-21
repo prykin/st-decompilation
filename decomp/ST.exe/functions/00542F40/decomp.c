@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* Recovered from embedded debug metadata:
@@ -15,8 +17,6 @@ InterSystemC::GetMessage(InterSystemC *this,AnonShape_00542F40_93D3A62D *param_1
   undefined4 uVar5;
   BITMAPINFO *pBVar6;
   char *text;
-  undefined4 unaff_ESI;
-  void *unaff_EDI;
   char cVar7;
   byte bVar8;
   int *piVar9;
@@ -26,19 +26,17 @@ InterSystemC::GetMessage(InterSystemC *this,AnonShape_00542F40_93D3A62D *param_1
   InternalExceptionFrame local_50;
   tagBITMAPINFO *local_c;
   SystemClassTy *local_8;
-  
+
   local_50.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_50;
   local_8 = (SystemClassTy *)this;
-  iVar2 = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar2 = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0);
   if (iVar2 != 0) {
     g_currentExceptionFrame = local_50.previous;
     iVar11 = ReportDebugMessage(s_E____titans_Andrey_tintersys_cpp_007c7be8,0x11f,0,iVar2,
                                 &DAT_007a4ccc,s_InterSystemC__GetMessage_007c7c70);
     if (iVar11 != 0) {
-      pcVar1 = (code *)swi(3);
-      uVar5 = (*pcVar1)();
-      return uVar5;
+      STDebugBreak(); /* noreturn in standalone pseudocode */
     }
     RaiseInternalException(iVar2,0,s_E____titans_Andrey_tintersys_cpp_007c7be8,0x11f);
     return 0xffff;
@@ -54,6 +52,7 @@ InterSystemC::GetMessage(InterSystemC *this,AnonShape_00542F40_93D3A62D *param_1
         g_currentExceptionFrame = local_50.previous;
         return 0;
       }
+      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
       (**(code **)(*DAT_00801690 + 0x18))(1);
       g_currentExceptionFrame = local_50.previous;
       return 0;

@@ -28,8 +28,6 @@ FUN_00715360(int *param_1,int param_2,char param_3,char *param_4,uint param_5,in
   int iVar1;
   uint uVar2;
   uint uVar3;
-  undefined4 unaff_ESI;
-  void *unaff_EDI;
   uint *puVar4;
   char *pcVar5;
   InternalExceptionFrame local_6c;
@@ -38,14 +36,14 @@ FUN_00715360(int *param_1,int param_2,char param_3,char *param_4,uint param_5,in
   char local_23 [23];
   uint local_c;
   AnonShape_00715360_91615618 *local_8;
-  
+
   local_8 = (AnonShape_00715360_91615618 *)0x0;
   if (param_1 == (int *)0x0) {
     return 0;
   }
   local_6c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_6c;
-  iVar1 = Library::MSVCRT::__setjmp3(local_6c.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar1 = Library::MSVCRT::__setjmp3(local_6c.jumpBuffer,0);
   if (iVar1 != 0) {
     g_currentExceptionFrame = local_6c.previous;
     if (local_8 != (AnonShape_00715360_91615618 *)0x0) {

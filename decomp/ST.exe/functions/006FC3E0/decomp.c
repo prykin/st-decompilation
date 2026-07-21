@@ -22,7 +22,7 @@ void FUN_006fc3e0(byte *param_1,int param_2,ushort *param_3,int param_4,uint par
   byte *local_10;
   byte *local_c;
   ushort *local_8;
-  
+
   pbVar9 = (byte *)(param_13 + (param_15 >> 3));
   _DAT_00857000 = 1;
   iVar11 = param_10;

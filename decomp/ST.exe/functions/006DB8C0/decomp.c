@@ -7,7 +7,7 @@ longlong FUN_006db8c0(float param_1,float param_2,float param_3,float param_4)
   double dVar1;
   float10 fVar2;
   longlong lVar3;
-  
+
   fVar2 = (float10)fpatan(-((float10)param_4 - (float10)param_2),(float10)param_3 - (float10)param_1
                          );
   if (fVar2 < (float10)_DAT_0079034c) {

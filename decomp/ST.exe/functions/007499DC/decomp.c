@@ -8,7 +8,7 @@ char * FUN_007499dc(char *param_1)
   char *pcVar4;
   char *pcVar5;
   bool bVar6;
-  
+
   iVar3 = 0;
   ppuVar2 = &PTR_DAT_007a1270;
   do {

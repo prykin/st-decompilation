@@ -3,7 +3,7 @@ undefined4 __fastcall FUN_004e4aa0(int *param_1)
 
 {
   int iVar1;
-  
+
   param_1[0x134] = -1;
   param_1[0x135] = 0;
   iVar1 = PTR_00802a38->field_00E4;

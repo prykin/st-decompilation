@@ -12,7 +12,7 @@ uint __fastcall FUN_0044ce40(STAllPlayersC *param_1)
   uint index;
   uint local_c;
   STAllPlayersC *local_8;
-  
+
   uVar5 = 0;
   index = 0;
   array = g_playerRuntime[DAT_0080874d].tempSlots[0][0].objectIds;
@@ -22,8 +22,7 @@ uint __fastcall FUN_0044ce40(STAllPlayersC *param_1)
     do {
       DArrayGetElement(array,index,&local_c);
       if (((short)local_c != -1) &&
-         (pSVar2 = STAllPlayersC::GetObjPtr
-                             (local_8,CONCAT31((int3)(local_c >> 8),DAT_0080874d),local_c,CASE_1),
+         (pSVar2 = STAllPlayersC::GetObjPtr(local_8,DAT_0080874d,local_c,CASE_1),
          pSVar2 != (STGameObjC *)0x0)) {
         uVar3 = (*pSVar2->vtable->vfunc_2C)();
         switch(uVar3) {
@@ -162,6 +161,7 @@ uint __fastcall FUN_0044ce40(STAllPlayersC *param_1)
           }
                     /* WARNING: Could not recover jumptable at 0x0044d04b. Too many branches */
                     /* WARNING: Treating indirect jump as call */
+          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
           uVar5 = (*(code *)(&switchD_0044d04b::switchdataD_0044d1d0)
                             [*(byte *)((int)&PTR_caseD_3_0044d1d4 + uVar5 + 3)])();
           return uVar5;

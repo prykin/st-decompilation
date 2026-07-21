@@ -1,8 +1,10 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\tplaysys.cpp
    STPlaySystemC::SetCtrlCmd
-   
+
    [STPrototypeApplier] Propagated parameter 2.
    Evidence: 0054EDF0 -> 0054EEE0 @ 0054EE87 */
 
@@ -19,14 +21,14 @@ STPlaySystemC::SetCtrlCmd
   int iVar5;
   uint uVar6;
   uint uVar7;
-  undefined4 unaff_ESI;
-  void *unaff_EDI;
+  /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
+  int unaff_EDI;
   undefined4 *puVar8;
   InternalExceptionFrame local_54;
   int local_10;
   uint local_c;
   PlaySystemTy *local_8;
-  
+
   if ((int)param_5 < 0) {
     param_5 = 0;
     switch(param_3) {
@@ -79,7 +81,7 @@ STPlaySystemC::SetCtrlCmd
   g_currentExceptionFrame = &local_54;
   local_c = param_5;
   local_8 = (PlaySystemTy *)this;
-  iVar3 = Library::MSVCRT::__setjmp3(local_54.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar3 = Library::MSVCRT::__setjmp3(local_54.jumpBuffer,0);
   uVar7 = local_c;
   if (iVar3 == 0) {
     iVar3 = local_c + param_7;
@@ -128,7 +130,8 @@ STPlaySystemC::SetCtrlCmd
       }
       if (bVar2) {
         FUN_006b9910(&local_8->field_0039,(int)puVar4);
-        PlaySystemTy::SendClientMail(local_8,(int)unaff_EDI);
+        /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
+        PlaySystemTy::SendClientMail(local_8,unaff_EDI);
         g_currentExceptionFrame = local_54.previous;
         return;
       }
@@ -141,9 +144,7 @@ STPlaySystemC::SetCtrlCmd
   iVar5 = ReportDebugMessage(s_E____titans_Andrey_tplaysys_cpp_007c8430,0x55b,0,iVar3,&DAT_007a4ccc,
                              s_STPlaySystemC__SetCtrlCmd_007c85bc);
   if (iVar5 != 0) {
-    pcVar1 = (code *)swi(3);
-    (*pcVar1)();
-    return;
+    STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   RaiseInternalException(iVar3,0,s_E____titans_Andrey_tplaysys_cpp_007c8430,0x55d);
   return;

@@ -9,11 +9,12 @@ undefined4 __fastcall FUN_004dd070(AnonShape_004DD070_62E18556 *param_1)
   int iVar3;
   int iVar4;
   uint uVar5;
-  
+
   if ((((param_1->field_04D0 == 1) && (1 < DAT_00798f84)) && (param_1->field_04D4 < DAT_00798f84))
      && ((uint)(param_1->field_04DC + param_1->field_04D8) <= (uint)PTR_00802a38->field_00E4)) {
     param_1->field_04D8 = PTR_00802a38->field_00E4;
     iVar1 = thunk_FUN_004ac910(&param_1->field_0x1d5,'\x0e');
+    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     uVar2 = iVar1 - *(int *)(param_1->field_01F5 + 0x208);
     uVar5 = (int)uVar2 >> 0x1f;
     iVar4 = (uVar2 ^ uVar5) - uVar5;

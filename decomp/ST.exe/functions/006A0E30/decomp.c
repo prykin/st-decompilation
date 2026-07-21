@@ -5,7 +5,7 @@ void __thiscall FUN_006a0e30(void *this,uint param_1,int param_2,int param_3,int
   int *piVar1;
   uint uVar2;
   short sStack_a;
-  
+
   piVar1 = *(int **)((int)this + 8);
   uVar2 = *(uint *)((int)piVar1 + ((piVar1[1] * param_3 + param_2) * *piVar1 + param_1) * 6 + 8);
   sStack_a = (short)(uVar2 >> 0x10);

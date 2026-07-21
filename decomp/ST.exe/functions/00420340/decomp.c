@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\Tc_gobj.cpp
@@ -11,7 +13,7 @@ void __thiscall STSprGameObjC::LoadActFrame(STSprGameObjC *this,int *param_1)
   code *pcVar2;
   byte bVar3;
   STSprGameObjC_field_0259State SVar4;
-  undefined4 uVar5;
+  dword dVar5;
   uint uVar6;
   int iVar7;
   uint uVar8;
@@ -21,7 +23,7 @@ void __thiscall STSprGameObjC::LoadActFrame(STSprGameObjC *this,int *param_1)
   char *pcVar12;
   char local_24 [20];
   char local_10 [12];
-  
+
   uVar6 = 0xffffffff;
   pcVar10 = &DAT_007a5000;
   do {
@@ -97,7 +99,7 @@ void __thiscall STSprGameObjC::LoadActFrame(STSprGameObjC *this,int *param_1)
   if ((((iVar7 != 0x1ae) && (iVar7 != 0x172)) && (iVar7 != 0x5a)) &&
      ((iVar7 != 0x1a4 && (iVar7 != 0x1b8)))) {
     if ((iVar7 == 0x14) || (iVar7 == 1000)) {
-      SVar4 = (*this->vtable->vfunc_2C)();
+      SVar4 = (*this->vtable->slot_2C)(this);
     }
     else {
       if (iVar7 != 0x3e9) {
@@ -261,9 +263,7 @@ switchD_00420436_caseD_1:
       if (iVar7 == 0) {
         return;
       }
-      pcVar2 = (code *)swi(3);
-      (*pcVar2)();
-      return;
+      STDebugBreak(); /* noreturn in standalone pseudocode */
     case 0x32:
     case 0x33:
     case 0x34:
@@ -493,8 +493,8 @@ LAB_00420678:
     STT3DSprC::StartShow((STT3DSprC *)this_00,0xf,PTR_00802a38->field_00E4);
     return;
   }
-  uVar5 = (*this->vtable->vfunc_2C)();
-  switch(uVar5) {
+  dVar5 = (*this->vtable->slot_2C)(this);
+  switch(dVar5) {
   case 0xa6:
   case 0xa7:
   case 0xaf:
@@ -506,9 +506,7 @@ LAB_00420678:
     if (iVar7 == 0) {
       return;
     }
-    pcVar2 = (code *)swi(3);
-    (*pcVar2)();
-    return;
+    STDebugBreak(); /* noreturn in standalone pseudocode */
   case 0xdd:
   case 0xde:
   case 0xe0:

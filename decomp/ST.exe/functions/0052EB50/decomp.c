@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\optpanel.cpp
@@ -14,9 +16,7 @@ OptPanelTy::CreateSlider
   int iVar3;
   LPSTR pCVar4;
   int iVar5;
-  undefined4 unaff_ESI;
   uint *puVar6;
-  void *unaff_EDI;
   uint *puVar7;
   undefined4 uVar8;
   int *piVar9;
@@ -43,12 +43,12 @@ OptPanelTy::CreateSlider
   OptPanelTy *local_10;
   ushort *local_c;
   undefined4 local_8;
-  
+
   local_8 = 0;
   local_54.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_54;
   local_10 = this;
-  iVar3 = Library::MSVCRT::__setjmp3(local_54.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar3 = Library::MSVCRT::__setjmp3(local_54.jumpBuffer,0);
   pOVar2 = local_10;
   if (iVar3 == 0) {
     puVar6 = local_42c;
@@ -109,7 +109,8 @@ OptPanelTy::CreateSlider
     }
     local_2a4[3] = iVar3 + param_2;
     local_23c = 0xc006;
-    (**(code **)(*(int *)pOVar2->field_000C + 8))(4,&local_8,0,local_42c,0);
+    (*pOVar2->field_000C->vtable->CreateObject)
+              ((SystemClassTy *)pOVar2->field_000C,4,&local_8,(int *)0x0,local_42c,0);
     g_currentExceptionFrame = local_54.previous;
     return local_8;
   }
@@ -117,9 +118,7 @@ OptPanelTy::CreateSlider
   iVar10 = ReportDebugMessage(s_E____titans_Andrey_optpanel_cpp_007c70a0,0xa0,0,iVar3,&DAT_007a4ccc,
                               s_OptPanelTy__CreateSlider_007c716c);
   if (iVar10 != 0) {
-    pcVar1 = (code *)swi(3);
-    uVar8 = (*pcVar1)();
-    return uVar8;
+    STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   RaiseInternalException(iVar3,0,s_E____titans_Andrey_optpanel_cpp_007c70a0,0xa0);
   return 0xffffffff;

@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\cpanel4.cpp
@@ -13,8 +15,6 @@ void __thiscall CPanelTy::PaintMunition(CPanelTy *this,int param_1)
   byte *pbVar5;
   int iVar6;
   byte bVar7;
-  undefined4 unaff_ESI;
-  void *unaff_EDI;
   uint uVar8;
   char *pcVar9;
   bool bVar10;
@@ -31,7 +31,7 @@ void __thiscall CPanelTy::PaintMunition(CPanelTy *this,int param_1)
   int local_c;
   byte local_6;
   char local_5;
-  
+
   if (DAT_0080874e == '\x01') {
     bVar10 = this->field_09D4 != '\x01';
   }
@@ -42,7 +42,7 @@ void __thiscall CPanelTy::PaintMunition(CPanelTy *this,int param_1)
   local_70.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_70;
   local_2c = this;
-  iVar4 = Library::MSVCRT::__setjmp3(local_70.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar4 = Library::MSVCRT::__setjmp3(local_70.jumpBuffer,0);
   pCVar2 = local_2c;
   if (iVar4 != 0) {
     g_currentExceptionFrame = local_70.previous;
@@ -52,9 +52,7 @@ void __thiscall CPanelTy::PaintMunition(CPanelTy *this,int param_1)
       RaiseInternalException(iVar4,0,s_E____titans_Andrey_cpanel4_cpp_007c2700,0x153);
       return;
     }
-    pcVar1 = (code *)swi(3);
-    (*pcVar1)();
-    return;
+    STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   DibPut((AnonShape_006B5B10_E0D06CF1 *)local_2c->field_0194,param_1,0x36,'\x01',
          (byte *)local_2c->field_09F9);
@@ -70,6 +68,7 @@ void __thiscall CPanelTy::PaintMunition(CPanelTy *this,int param_1)
       case 4:
       case 5:
         goto cf_continue_loop_00505716;
+      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
       case 2:
         local_14 = CONCAT31(local_14._1_3_,1);
         break;
@@ -77,9 +76,11 @@ void __thiscall CPanelTy::PaintMunition(CPanelTy *this,int param_1)
         goto switchD_005052d8_caseD_5;
       case 6:
         goto switchD_005052d8_caseD_4;
+      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
       case 7:
         local_14 = CONCAT31(local_14._1_3_,5);
         break;
+      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
       case 8:
         local_14 = CONCAT31(local_14._1_3_,2);
         break;
@@ -95,14 +96,17 @@ void __thiscall CPanelTy::PaintMunition(CPanelTy *this,int param_1)
     case 7:
     case 8:
       goto cf_continue_loop_00505716;
+    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
     case 4:
 switchD_005052d8_caseD_4:
       local_14 = CONCAT31(local_14._1_3_,3);
       break;
+    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
     case 5:
 switchD_005052d8_caseD_5:
       local_14 = CONCAT31(local_14._1_3_,4);
       break;
+    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
     default:
 switchD_005052d8_default:
       local_14 = CONCAT31(local_14._1_3_,local_6);
@@ -277,6 +281,7 @@ switchD_00505324_default:
         DibPut((AnonShape_006B5B10_E0D06CF1 *)pCVar2->field_0194,param_1 + 0x4d + uVar8 * 4,local_20
                ,'\x01',pbVar5);
         bVar7 = (byte)local_18 + 1;
+        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
         local_18 = CONCAT31(local_18._1_3_,bVar7);
         uVar8 = (uint)bVar7;
       } while (uVar8 < local_1c);

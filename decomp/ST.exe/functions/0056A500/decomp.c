@@ -7,7 +7,7 @@ undefined4 FUN_0056a500(void)
   undefined1 local_2a;
   undefined1 local_20;
   undefined4 local_1e;
-  
+
   if (DAT_00808783 == '\x03') {
     DVar1 = timeGetTime();
     if (499 < DVar1 - DAT_00806720) {

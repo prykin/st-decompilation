@@ -16,7 +16,7 @@ void __fastcall FUN_0051da70(HelpPanelTy *param_1)
   int iVar12;
   int local_c;
   uint local_8;
-  
+
   if ((((DAT_0080734d != '\0') &&
        (*(char *)((int)&DAT_008087c4 + (uint)DAT_0080874d * 0x51 + 3) == '\0')) &&
       (DAT_0080874f == '\0')) && (DAT_00808783 != '\x03')) {

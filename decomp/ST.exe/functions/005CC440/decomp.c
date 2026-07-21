@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\settmobj.cpp
@@ -11,10 +13,8 @@ void __thiscall SettMapMTy::CreateCtrls(SettMapMTy *this,char param_1)
   undefined4 *puVar2;
   int iVar3;
   int iVar4;
-  undefined4 unaff_ESI;
   int iVar5;
   SettMapMTy *this_01;
-  void *unaff_EDI;
   ccFntTy **ppcVar6;
   ccFntTy *local_a80 [6];
   undefined4 local_a68;
@@ -39,7 +39,7 @@ void __thiscall SettMapMTy::CreateCtrls(SettMapMTy *this,char param_1)
   undefined4 *local_18;
   undefined4 local_14;
   SettMapMTy *local_8;
-  
+
   ppcVar6 = local_a80;
   local_8 = this;
   for (iVar3 = 0x223; iVar3 != 0; iVar3 = iVar3 + -1) {
@@ -58,7 +58,7 @@ void __thiscall SettMapMTy::CreateCtrls(SettMapMTy *this,char param_1)
   }
   local_a4.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_a4;
-  iVar3 = Library::MSVCRT::__setjmp3(local_a4.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar3 = Library::MSVCRT::__setjmp3(local_a4.jumpBuffer,0);
   this_01 = local_8;
   if (iVar3 == 0) {
     if (param_1 == '\0') {
@@ -144,9 +144,7 @@ void __thiscall SettMapMTy::CreateCtrls(SettMapMTy *this,char param_1)
   iVar4 = ReportDebugMessage(s_E____titans_Start_settmobj_cpp_007cd258,0x9d,0,iVar3,&DAT_007a4ccc,
                              s_SettMapMTy__CreateCtrls_007cd2b8);
   if (iVar4 != 0) {
-    pcVar1 = (code *)swi(3);
-    (*pcVar1)();
-    return;
+    STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   RaiseInternalException(iVar3,0,s_E____titans_Start_settmobj_cpp_007cd258,0x9d);
   return;

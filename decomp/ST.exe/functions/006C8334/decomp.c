@@ -12,7 +12,7 @@ uint __cdecl FUN_006c8334(uint param_1)
   ushort uVar8;
   uint uVar9;
   uint uVar10;
-  
+
   if (-1 < (int)param_1) {
     uVar3 = (ulonglong)param_1 * (ulonglong)DAT_007eda8c;
     uVar7 = (uint)(uVar3 >> 0x20);

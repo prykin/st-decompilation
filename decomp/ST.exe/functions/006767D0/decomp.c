@@ -5,16 +5,14 @@ int FUN_006767d0(void)
   int iVar1;
   cMf32 *this;
   cMf32 *this_00;
-  undefined4 unaff_ESI;
-  void *unaff_EDI;
   byte local_150 [260];
   InternalExceptionFrame local_4c;
   cMf32 *local_8;
-  
+
   local_8 = (cMf32 *)0x0;
   local_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_4c;
-  iVar1 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar1 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
   if (iVar1 == 0) {
     wsprintfA((LPSTR)local_150,s__s_s_s__s_007ca1ec,&DAT_00807680,PTR_s_SAVEGAME__0079d6c0,
               &DAT_00807ddd,PTR_s_PL_LOG_0079d6c4);

@@ -25,7 +25,7 @@ uint FUN_006b6500(int *param_1,int param_2)
 {
   uint uVar1;
   uint uVar2;
-  
+
   uVar1 = param_1[1];
   uVar2 = uVar1 & 0xfffffffd;
   param_1[1] = uVar2;

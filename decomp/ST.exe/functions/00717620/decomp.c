@@ -6,7 +6,7 @@ byte * FUN_00717620(byte *param_1,int param_2,int param_3,byte param_4,byte para
   uint uVar2;
   byte *pbVar3;
   uint uVar4;
-  
+
   uVar4 = param_2 * param_3;
   pbVar1 = (byte *)Library::DKW::LIB::FUN_006aac70(uVar4);
   pbVar3 = pbVar1;

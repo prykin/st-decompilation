@@ -7,7 +7,7 @@ int __thiscall FUN_007112e0(void *this,uint *param_1)
   bool bVar3;
   int iVar4;
   int local_8;
-  
+
   iVar4 = -1;
   bVar3 = false;
   local_8 = -1;

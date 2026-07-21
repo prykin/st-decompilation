@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\upginfo.cpp
@@ -11,7 +13,6 @@ void __thiscall UpgPanelTy::InitUpgPanel(UpgPanelTy *this)
   int iVar2;
   LPSTR pCVar3;
   ushort *puVar4;
-  void *unaff_ESI;
   undefined4 uVar5;
   undefined4 uVar6;
   uint uVar7;
@@ -21,14 +22,13 @@ void __thiscall UpgPanelTy::InitUpgPanel(UpgPanelTy *this)
   undefined4 uVar11;
   undefined4 uVar12;
   undefined4 *puVar13;
-  InternalExceptionFrame *pIVar14;
-  undefined4 local_48 [16];
+  InternalExceptionFrame local_4c;
   UpgPanelTy *local_8;
-  
-  pIVar14 = g_currentExceptionFrame;
-  g_currentExceptionFrame = (InternalExceptionFrame *)&stack0xffffffb4;
+
+  local_4c.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &local_4c;
   local_8 = this;
-  iVar2 = Library::MSVCRT::__setjmp3(local_48,0,unaff_ESI,pIVar14);
+  iVar2 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
   this_00 = local_8;
   if (iVar2 == 0) {
     uVar12 = 0x77;
@@ -57,16 +57,14 @@ void __thiscall UpgPanelTy::InitUpgPanel(UpgPanelTy *this)
     puVar4 = Library::Ourlib::MFRLOAD::mfRLoad
                        (DAT_00806794,CASE_B,pCVar3,uVar7,bVar8,iVar2,iVar9,puVar13);
     this_00->field_03F3 = puVar4;
-    g_currentExceptionFrame = pIVar14;
+    g_currentExceptionFrame = local_4c.previous;
     return;
   }
-  g_currentExceptionFrame = pIVar14;
+  g_currentExceptionFrame = local_4c.previous;
   iVar9 = ReportDebugMessage(s_E____titans_Andrey_upginfo_cpp_007c87b8,0x1d,0,iVar2,&DAT_007a4ccc,
                              s_UpgPanelTy__InitUpgPanel_007c87e0);
   if (iVar9 != 0) {
-    pcVar1 = (code *)swi(3);
-    (*pcVar1)();
-    return;
+    STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   RaiseInternalException(iVar2,0,s_E____titans_Andrey_upginfo_cpp_007c87b8,0x1d);
   return;

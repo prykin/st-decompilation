@@ -8,7 +8,7 @@ undefined4 * __fastcall FUN_00693910(AnonShape_00693910_1CC6632C *param_1)
   AnonShape_00693910_1CC6632C *pAVar4;
   undefined4 *puVar5;
   int local_8;
-  
+
   puVar2 = (undefined4 *)&param_1->field_0x4a;
   pAVar4 = param_1;
   for (iVar1 = 0x666; iVar1 != 0; iVar1 = iVar1 + -1) {

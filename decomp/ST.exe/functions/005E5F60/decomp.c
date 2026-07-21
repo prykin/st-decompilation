@@ -5,7 +5,7 @@ void __fastcall FUN_005e5f60(STJellyGunC *param_1)
   undefined4 uVar1;
   int iVar2;
   undefined4 *puVar3;
-  
+
   puVar3 = (undefined4 *)&param_1->field_0x61;
   for (iVar2 = 8; iVar2 != 0; iVar2 = iVar2 + -1) {
     *puVar3 = 0;

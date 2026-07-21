@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\nick\to_cont.cpp
@@ -19,13 +21,13 @@ STContainerC::GetMessage(STContainerC *this,AnonShape_005FB640_4C6A297D *param_1
   STGameObjC *this_01;
   int iVar9;
   byte bVar10;
+  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined2 extraout_var;
+  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined2 extraout_var_00;
   undefined2 uVar11;
-  undefined4 unaff_ESI;
   undefined4 *puVar12;
   undefined4 *puVar13;
-  void *unaff_EDI;
   undefined4 *puVar14;
   STWorldObject *pSVar15;
   int iVar16;
@@ -38,13 +40,13 @@ STContainerC::GetMessage(STContainerC *this,AnonShape_005FB640_4C6A297D *param_1
   AnonShape_0060EA30_DCEB68AD *local_10;
   STGameObjC *local_c;
   STContainerC *local_8;
-  
+
   local_8 = this;
   iVar6 = STSprGameObjC::GetMessage((STSprGameObjC *)this,(AnonShape_0041AF40_F59F8577 *)param_1);
   if (iVar6 != 0xffff) {
     local_60.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_60;
-    iVar6 = Library::MSVCRT::__setjmp3(local_60.jumpBuffer,0,unaff_EDI,unaff_ESI);
+    iVar6 = Library::MSVCRT::__setjmp3(local_60.jumpBuffer,0);
     this_00 = local_8;
     if (iVar6 == 0) {
       uVar7 = param_1->field_0010;
@@ -63,6 +65,7 @@ STContainerC::GetMessage(STContainerC *this,AnonShape_005FB640_4C6A297D *param_1
             g_currentExceptionFrame = local_60.previous;
             return 0;
           }
+          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
           (**(code **)local_8->field_01D5)();
           g_currentExceptionFrame = local_60.previous;
           return 0;
@@ -72,14 +75,15 @@ STContainerC::GetMessage(STContainerC *this,AnonShape_005FB640_4C6A297D *param_1
         case 0x128:
           iVar6 = param_1->field_0014;
           local_8->field_0315 = *(undefined1 *)(iVar6 + 0x18);
+          /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
           if (((local_8->field_024E != '\0') && (local_8->field_02AB != -1)) &&
              ((this_01 = (STGameObjC *)local_8->field_02AD, this_01 != (STGameObjC *)0x0 ||
               (this_01 = STAllPlayersC::GetObjPtr
-                                   (g_sTAllPlayers_007FA174,
-                                    CONCAT31((int3)((uint)param_1 >> 8),local_8->field_02A3),
+                                   (g_sTAllPlayers_007FA174,local_8->field_02A3,
                                     CONCAT22((short)(uVar7 - 0x112 >> 0x10),local_8->field_02AB),
                                     CASE_1), this_01 != (STGameObjC *)0x0)))) {
             thunk_FUN_00492510(this_01,this_00->field_0018);
+            /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
             (*(code *)this_00->field_0000->field_00AC)(this_01->field_0018);
           }
           switch(*(undefined4 *)(iVar6 + 0x18)) {
@@ -132,6 +136,7 @@ STContainerC::GetMessage(STContainerC *this,AnonShape_005FB640_4C6A297D *param_1
           g_currentExceptionFrame = local_60.previous;
           return 0;
         }
+        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
         iVar6 = (*(code *)local_8->field_0000->field_0124)(*puVar13);
         if (iVar6 == 0) {
           g_currentExceptionFrame = local_60.previous;
@@ -177,11 +182,14 @@ STContainerC::GetMessage(STContainerC *this,AnonShape_005FB640_4C6A297D *param_1
           g_currentExceptionFrame = local_60.previous;
           return 0;
         }
+        /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
         uVar11 = extraout_var;
         if (this_00->field_0250 != '\x03') {
           thunk_FUN_005f0d90((AnonShape_005F0D00_68DA5B8B *)this_00);
+          /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
           uVar11 = extraout_var_00;
         }
+        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
         STAllPlayersC::UnRegisterContainer
                   (g_sTAllPlayers_007FA174,CONCAT22(uVar11,this_00->field_0032),
                    (AnonShape_0044A730_DBE673B2 *)this_00);
@@ -249,6 +257,7 @@ STContainerC::GetMessage(STContainerC *this,AnonShape_005FB640_4C6A297D *param_1
         if ((((*(int *)&this_00->field_0x358 != 0) && (*(short *)&this_00->field_0x342 == 1)) &&
             (iVar6 = FUN_006e62d0(PTR_00802a38,*(int *)&this_00->field_0x358,&local_18), iVar6 != -4
             )) && ((void *)this_00->field_0211 != (void *)0x0)) {
+          /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
           FUN_006ea460((void *)this_00->field_0211,this_00->field_01ED,*(int *)(local_18 + 0x1ed));
         }
         if (g_sTAllPlayers_007FA174 != (STAllPlayersC *)0x0) {
@@ -366,13 +375,12 @@ STContainerC::GetMessage(STContainerC *this,AnonShape_005FB640_4C6A297D *param_1
     iVar9 = ReportDebugMessage(s_E____titans_nick_to_cont_cpp_007ce8e0,0x139,0,iVar6,&DAT_007a4ccc,
                                s_STContainerC__GetMessage_007ce904);
     if (iVar9 != 0) {
-      pcVar4 = (code *)swi(3);
-      uVar8 = (*pcVar4)();
-      return uVar8;
+      STDebugBreak(); /* noreturn in standalone pseudocode */
     }
     RaiseInternalException(iVar6,0,s_E____titans_nick_to_cont_cpp_007ce8e0,0x13b);
   }
   return 0xffff;
+/* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
 switchD_005fbd82_caseD_2:
   iVar9 = (*(code *)this_00->field_0000->field_0124)(20000);
   if (iVar9 == 0) {
@@ -394,7 +402,6 @@ switchD_005fbd08_caseD_129:
     g_currentExceptionFrame = local_60.previous;
     return 0;
   }
-  uVar7 = CONCAT22((short)((uint)param_1 >> 0x10),local_8->field_02AB);
   if (local_8->field_02AB == -1) {
     g_currentExceptionFrame = local_60.previous;
     return 0;
@@ -405,9 +412,10 @@ switchD_005fbd08_caseD_129:
   }
   local_c = (STGameObjC *)local_8->field_02AD;
   if (local_c == (STGameObjC *)0x0) {
+    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
     local_c = STAllPlayersC::GetObjPtr
-                        (g_sTAllPlayers_007FA174,CONCAT31((int3)(uVar7 >> 8),local_8->field_02A3),
-                         uVar7,CASE_1);
+                        (g_sTAllPlayers_007FA174,local_8->field_02A3,
+                         CONCAT22((short)((uint)param_1 >> 0x10),local_8->field_02AB),CASE_1);
   }
   if (local_c != (STGameObjC *)0x0) {
     this_00->field_0277 = (int)*(short *)&local_c->field_0x41;
@@ -430,6 +438,7 @@ switchD_005fbd08_caseD_129:
     this_00->field_02C6 = this_00->field_027F;
   }
   thunk_FUN_005ef5f0((int)this_00);
+  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
   iVar6 = (*(code *)this_00->field_0000->field_00D8)();
   if (iVar6 == 0) {
     g_currentExceptionFrame = local_60.previous;

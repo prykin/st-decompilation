@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\to_grpb.cpp
@@ -16,23 +18,18 @@ undefined4 __thiscall STGroupBoatC::Capture(STGroupBoatC *this,int param_1)
   STGameObjC *pSVar6;
   int iVar7;
   undefined4 uVar8;
+  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined2 extraout_var;
-  undefined4 extraout_ECX;
+  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined2 extraout_var_00;
+  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined2 extraout_var_01;
+  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined2 extraout_var_02;
   undefined2 uVar9;
-  undefined4 extraout_ECX_00;
-  undefined4 extraout_EDX;
   uint uVar10;
-  undefined4 extraout_EDX_00;
-  undefined4 extraout_EDX_01;
-  undefined4 extraout_EDX_02;
-  undefined4 extraout_EDX_03;
   uint uVar11;
-  undefined4 unaff_ESI;
   undefined4 *puVar12;
-  void *unaff_EDI;
   undefined4 *puVar13;
   STBoatC_CmdToObj_param_1Enum SVar14;
   undefined4 local_9c [5];
@@ -52,7 +49,8 @@ undefined4 __thiscall STGroupBoatC::Capture(STGroupBoatC *this,int param_1)
   uint local_10;
   uint local_c;
   uint local_8;
-  
+
+  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   local_c = *(uint *)(this->field_0029 + 0xc);
   local_18 = (DArrayTy *)0x0;
   local_20 = (DArrayTy *)0x0;
@@ -61,7 +59,7 @@ undefined4 __thiscall STGroupBoatC::Capture(STGroupBoatC *this,int param_1)
   local_7c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_7c;
   local_38 = this;
-  iVar4 = Library::MSVCRT::__setjmp3(local_7c.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar4 = Library::MSVCRT::__setjmp3(local_7c.jumpBuffer,0);
   pSVar3 = local_38;
   if (iVar4 != 0) {
     g_currentExceptionFrame = local_7c.previous;
@@ -71,11 +69,10 @@ undefined4 __thiscall STGroupBoatC::Capture(STGroupBoatC *this,int param_1)
       RaiseInternalException(iVar4,0,s_E____titans_wlad_to_grpb_cpp_007abe3c,0xbf5);
       return 0xffffffff;
     }
-    pcVar1 = (code *)swi(3);
-    uVar8 = (*pcVar1)();
-    return uVar8;
+    STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  if ((param_1 == 0) || (uVar8 = extraout_EDX, uVar9 = extraout_var, param_1 == 1)) {
+  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+  if ((param_1 == 0) || (uVar9 = extraout_var, param_1 == 1)) {
     puVar12 = (undefined4 *)&local_38->field_0x89;
     for (iVar4 = 0x15; iVar4 != 0; iVar4 = iVar4 + -1) {
       *puVar12 = 0;
@@ -104,9 +101,7 @@ undefined4 __thiscall STGroupBoatC::Capture(STGroupBoatC *this,int param_1)
         if ((short)local_8 != -1) {
           pSVar5 = (STBoatC *)
                    STAllPlayersC::GetObjPtr
-                             (g_sTAllPlayers_007FA174,
-                              CONCAT31((int3)((uint)extraout_ECX >> 8),pSVar3->field_0024),local_8,
-                              CASE_1);
+                             (g_sTAllPlayers_007FA174,pSVar3->field_0024,local_8,CASE_1);
           if (pSVar5 == (STBoatC *)0x0) {
             RaiseInternalException
                       (-0x5001fffc,g_overwriteContext_007ED77C,
@@ -143,27 +138,28 @@ LAB_0049f2b2:
       } while (uVar10 < local_c);
     }
     array = local_18;
+    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
     STAllPlayersC::RegisterPGPair
               (g_sTAllPlayers_007FA174,CONCAT31((int3)(local_c >> 8),pSVar3->field_0024),
                &array_00->flags,&local_18->flags);
-    uVar8 = extraout_EDX_00;
+    /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
     uVar9 = extraout_var_00;
     if (array_00 != (DArrayTy *)0x0) {
       DArrayDestroy(array_00);
-      uVar8 = extraout_EDX_01;
+      /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
       uVar9 = extraout_var_01;
     }
     if (array != (DArrayTy *)0x0) {
       DArrayDestroy(array);
-      uVar8 = extraout_EDX_02;
+      /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
       uVar9 = extraout_var_02;
     }
   }
   uVar10 = 0;
   if (*(int *)&pSVar3->field_0x2ca == 0) {
+    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
     pSVar6 = STAllPlayersC::GetObjPtr
-                       (g_sTAllPlayers_007FA174,
-                        CONCAT31((int3)((uint)uVar8 >> 8),pSVar3->field_0x2c3),
+                       (g_sTAllPlayers_007FA174,pSVar3->field_0x2c3,
                         CONCAT22(uVar9,pSVar3->field_02C4),CASE_1);
     if (((pSVar6 == (STGameObjC *)0x0) || (pSVar6->field_0018 != *(int *)&pSVar3->field_0x2c6)) ||
        (iVar4 = (*pSVar6->vtable[1].vfunc_34)((int)pSVar3->field_0024), iVar4 == 0)) {
@@ -177,9 +173,7 @@ LAB_0049f2b2:
           if ((short)local_8 != -1) {
             pSVar5 = (STBoatC *)
                      STAllPlayersC::GetObjPtr
-                               (g_sTAllPlayers_007FA174,
-                                CONCAT31((int3)((uint)extraout_EDX_03 >> 8),pSVar3->field_0024),
-                                local_8,CASE_1);
+                               (g_sTAllPlayers_007FA174,pSVar3->field_0024,local_8,CASE_1);
             local_34 = pSVar5;
             if (pSVar5 == (STBoatC *)0x0) {
               RaiseInternalException
@@ -220,9 +214,7 @@ LAB_0049f3f5:
         if ((short)local_8 != -1) {
           pSVar5 = (STBoatC *)
                    STAllPlayersC::GetObjPtr
-                             (g_sTAllPlayers_007FA174,
-                              CONCAT31((int3)((uint)extraout_ECX_00 >> 8),pSVar3->field_0024),
-                              local_8,CASE_1);
+                             (g_sTAllPlayers_007FA174,pSVar3->field_0024,local_8,CASE_1);
           if (pSVar5 == (STBoatC *)0x0) {
             RaiseInternalException
                       (-0x5001fffc,g_overwriteContext_007ED77C,

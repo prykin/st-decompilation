@@ -9,7 +9,7 @@ FUN_00558c00(void *this,Global_sub_00558C00_param_1Enum param_1,int param_2,int 
 
 {
   int iVar1;
-  
+
   switch(param_1) {
   case CASE_0:
     *param_4 = (param_2 - param_3) * 0xb505 + *(int *)((int)this + 0x30) * 0x8000 >> 0x10;

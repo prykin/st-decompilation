@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* [STSourceProvenanceApplier begin]
    Recovered source file: E:\__titans\ai\ai_tact_d.cpp
@@ -15,10 +17,8 @@ undefined4 * __cdecl TactDataPack(undefined4 *param_1,uint *param_2)
   AnonShape_GLOBAL_008489C4_F7BABFAC *pAVar6;
   int *piVar7;
   uint uVar8;
-  undefined4 unaff_ESI;
   undefined4 *puVar9;
   int iVar10;
-  void *unaff_EDI;
   undefined4 *puVar11;
   uint *puVar12;
   bool bVar13;
@@ -31,14 +31,14 @@ undefined4 * __cdecl TactDataPack(undefined4 *param_1,uint *param_2)
   uint local_10;
   int local_c;
   undefined4 *local_8;
-  
+
   local_8 = (undefined4 *)0x0;
   local_c = 0;
   local_14 = (void *)0x0;
   local_18 = 0;
   local_68.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_68;
-  iVar4 = Library::MSVCRT::__setjmp3(local_68.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar4 = Library::MSVCRT::__setjmp3(local_68.jumpBuffer,0);
   if (iVar4 == 0) {
     iVar4 = 8;
     local_24 = (int *)((int)param_1 + 0x85);
@@ -91,6 +91,7 @@ undefined4 * __cdecl TactDataPack(undefined4 *param_1,uint *param_2)
         bVar13 = *(int *)(iVar10 + 0xc) != 0;
         do {
           if (bVar13) {
+            /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
             iVar10 = *(int *)(iVar10 + 8) * local_20 + *(int *)(iVar10 + 0x1c);
           }
           else {
@@ -150,8 +151,6 @@ undefined4 * __cdecl TactDataPack(undefined4 *param_1,uint *param_2)
     RaiseInternalException(iVar4,0,s_E____titans_ai_ai_tact_d_cpp_007d58fc,0x8d);
     return (undefined4 *)0x0;
   }
-  pcVar3 = (code *)swi(3);
-  puVar5 = (undefined4 *)(*pcVar3)();
-  return puVar5;
+  STDebugBreak(); /* noreturn in standalone pseudocode */
 }
 

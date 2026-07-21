@@ -5,7 +5,7 @@ void __cdecl FUN_007184b0(float *param_1,float *param_2)
 
 {
   float10 fVar1;
-  
+
   *param_2 = param_1[1];
   if (*param_1 == 999.0) {
     param_2[2] = 0.0;

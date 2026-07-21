@@ -37,7 +37,7 @@ FUN_0069bdc0(void *this,int param_1,int param_2,int param_3,int param_4,int para
   undefined1 *puStack_10;
   undefined *puStack_c;
   undefined4 local_8;
-  
+
   local_8 = 0xffffffff;
   puStack_c = &DAT_0079d808;
   puStack_10 = &LAB_0072d964;
@@ -52,6 +52,7 @@ FUN_0069bdc0(void *this,int param_1,int param_2,int param_3,int param_4,int para
   else {
     local_48 = param_2 / 2 + param_3 / 2;
     local_48 = local_48 + local_48 / 2;
+    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     uVar5 = ((*(int *)((int)this + 0x5833) - param_2) / param_4 + 2) *
             ((*(int *)((int)this + 0x5837) - param_3) / param_4 + 2);
     ExceptionList = &local_14;
@@ -103,6 +104,7 @@ FUN_0069bdc0(void *this,int param_1,int param_2,int param_3,int param_4,int para
         }
       } while ((iVar4 < iVar2) && (local_24 != 0));
       local_64 = local_64 + param_4;
+      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
       if ((*(int *)((int)this + 0x5837) <= local_64) ||
          (((-1 < (int)local_3c &&
            (*(int *)((int)this + 0x5837) + -1 <= (int)local_78[local_3c * 0x10 + -1])) ||
@@ -177,10 +179,12 @@ LAB_0069c0f3:
                           (param_7->field_0018,local_78 + local_58[iVar3] * 0x10);
                 iVar4 = piVar7[iVar3];
                 *(short *)(param_6 + iVar3 * 4) =
+                     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
                      (short)((int)(local_78[iVar4 * 0x10 + 0xe] - local_78[iVar4 * 0x10 + 0xc]) / 2)
                      + *(short *)(local_78 + iVar4 * 0x10 + 0xc);
                 iVar4 = piVar7[iVar3];
                 *(short *)(param_6 + 2 + iVar3 * 4) =
+                     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
                      (short)((int)(local_78[iVar4 * 0x10 + 0xf] - local_78[iVar4 * 0x10 + 0xd]) / 2)
                      + *(short *)(local_78 + iVar4 * 0x10 + 0xd);
                 iVar3 = iVar3 + 1;

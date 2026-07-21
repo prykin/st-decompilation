@@ -7,7 +7,7 @@ undefined4 FUN_00496f00(int param_1)
   void *pvVar3;
   uint uVar4;
   bool bVar5;
-  
+
   uVar2 = 0;
   uVar4 = 0;
   uVar1 = PTR_007fb270->count;
@@ -15,6 +15,7 @@ undefined4 FUN_00496f00(int param_1)
     bVar5 = uVar1 != 0;
     while( true ) {
       if (bVar5) {
+        /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(PTR_007fb270, uVar4) (runtime stride) */
         pvVar3 = (void *)(PTR_007fb270->elementSize * uVar4 + (int)PTR_007fb270->data);
       }
       else {

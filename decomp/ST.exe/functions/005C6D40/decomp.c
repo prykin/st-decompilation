@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\sett_obj.cpp
@@ -7,14 +9,12 @@ void __thiscall SettMapTy::DeleteCtrls(SettMapTy *this)
 
 {
   SettMapTy_field_1E26State SVar1;
-  AnonShape_006C7610_838EDECF *pAVar2;
+  AnonShape_006B5B10_E0D06CF1 *pAVar2;
   code *pcVar3;
   SettMapTy *this_00;
   int iVar4;
   HoloTy *pHVar5;
   uint *puVar6;
-  undefined4 unaff_ESI;
-  void *unaff_EDI;
   int iVar7;
   uint uVar8;
   char cVar9;
@@ -23,19 +23,17 @@ void __thiscall SettMapTy::DeleteCtrls(SettMapTy *this)
   SettMapTy *local_10;
   int local_c;
   int local_8;
-  
+
   local_54.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_54;
   local_10 = this;
-  iVar4 = Library::MSVCRT::__setjmp3(local_54.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar4 = Library::MSVCRT::__setjmp3(local_54.jumpBuffer,0);
   if (iVar4 != 0) {
     g_currentExceptionFrame = local_54.previous;
     iVar7 = ReportDebugMessage(s_E____titans_Start_sett_obj_cpp_007cd0e8,0x3a4,0,iVar4,&DAT_007a4ccc
                                ,s_SettMapTy__DeleteCtrls_007cd208);
     if (iVar7 != 0) {
-      pcVar3 = (code *)swi(3);
-      (*pcVar3)();
-      return;
+      STDebugBreak(); /* noreturn in standalone pseudocode */
     }
     RaiseInternalException(iVar4,0,s_E____titans_Start_sett_obj_cpp_007cd0e8,0x3a4);
     return;
@@ -203,7 +201,7 @@ void __thiscall SettMapTy::DeleteCtrls(SettMapTy *this)
       StartSystemTy::sub_006E56B0(this_00->field_000C,PTR_0081176c->field_0389);
     }
     PTR_0081176c->field_0389 = 0;
-    pAVar2 = (AnonShape_006C7610_838EDECF *)PTR_0081176c->field_0544;
+    pAVar2 = (AnonShape_006B5B10_E0D06CF1 *)PTR_0081176c->field_0544;
     FUN_006b4170(pAVar2,0,0,0,pAVar2->field_0004,pAVar2->field_0008,0xff);
     if ((AnonShape_006B5570_4D68B99C *)PTR_0081176c->field_0548 !=
         (AnonShape_006B5570_4D68B99C *)0x0) {

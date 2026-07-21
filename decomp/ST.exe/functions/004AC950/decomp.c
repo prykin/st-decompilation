@@ -7,7 +7,7 @@ int __thiscall FUN_004ac950(void *this,int param_1)
   int iVar3;
   int iVar4;
   int iVar5;
-  
+
   iVar2 = *(int *)((int)this + 0x20);
   iVar3 = *(int *)(iVar2 + 0x10 + param_1 * 0x24);
   iVar4 = *(int *)(iVar2 + 0x14 + param_1 * 0x24);

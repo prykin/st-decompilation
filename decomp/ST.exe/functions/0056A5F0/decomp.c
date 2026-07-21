@@ -10,7 +10,7 @@ undefined4 * __thiscall STAppC::STAppC(STAppC *this,undefined4 param_1)
   DWORD DVar1;
   int iVar2;
   undefined4 *puVar3;
-  
+
   AppClassTy::AppClassTy((AppClassTy *)this,0,param_1);
   thunk_FUN_00571cd0((AnonShape_00571CD0_C1ECCB3F *)&this->field_0038);
   this->field_1111 = 10;

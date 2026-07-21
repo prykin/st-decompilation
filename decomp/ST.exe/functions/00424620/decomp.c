@@ -6,9 +6,8 @@ void __thiscall FUN_00424620(void *this,uint param_1)
   uint uVar2;
   STGameObjC *pSVar3;
   uint index;
-  undefined4 extraout_EDX;
   uint uVar4;
-  
+
   uVar2 = param_1;
   uVar1 = *(uint *)(*(int *)((int)this + 0x29) + 0xc);
   if (((param_1 & 1) != 0) && ((*(uint *)((int)this + 0x35) & 1) != 0)) {
@@ -33,9 +32,7 @@ void __thiscall FUN_00424620(void *this,uint param_1)
       DArrayGetElement(*(DArrayTy **)((int)this + 0x29),index,&param_1);
       if ((short)param_1 != -1) {
         pSVar3 = STAllPlayersC::GetObjPtr
-                           (g_sTAllPlayers_007FA174,
-                            CONCAT31((int3)((uint)extraout_EDX >> 8),
-                                     *(undefined1 *)((int)this + 0x24)),param_1,CASE_1);
+                           (g_sTAllPlayers_007FA174,*(char *)((int)this + 0x24),param_1,CASE_1);
         (*pSVar3->vtable[1].vfunc_30)(uVar2);
       }
       uVar4 = uVar4 + 1;

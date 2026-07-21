@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\nick\to_rab3m.cpp
@@ -11,32 +13,29 @@ undefined4 __thiscall STManRub3C::GetMessage(STManRub3C *this,int param_1)
   int iVar3;
   int iVar4;
   undefined4 uVar5;
-  void *unaff_ESI;
-  InternalExceptionFrame *pIVar6;
-  undefined4 local_54 [16];
+  InternalExceptionFrame local_58;
   byte *local_14;
   uint local_10;
   STManRub3C *local_c;
   ushort *local_8;
-  
-  pIVar6 = g_currentExceptionFrame;
+
   local_8 = (ushort *)0x0;
-  g_currentExceptionFrame = (InternalExceptionFrame *)&stack0xffffffa8;
+  local_58.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &local_58;
   local_c = this;
-  iVar3 = Library::MSVCRT::__setjmp3(local_54,0,unaff_ESI,pIVar6);
+  iVar3 = Library::MSVCRT::__setjmp3(local_58.jumpBuffer,0);
   pSVar2 = local_c;
   if (iVar3 != 0) {
-    g_currentExceptionFrame = pIVar6;
+    g_currentExceptionFrame = local_58.previous;
     iVar4 = ReportDebugMessage(s_E____titans_nick_to_rab3m_cpp_007d13ec,0x4e,0,iVar3,&DAT_007a4ccc,
                                s_STManRub3C__GetMessage_007d1410);
     if (iVar4 == 0) {
       RaiseInternalException(iVar3,0,s_E____titans_nick_to_rab3m_cpp_007d13ec,0x50);
       return 0xffff;
     }
-    pcVar1 = (code *)swi(3);
-    uVar5 = (*pcVar1)();
-    return uVar5;
+    STDebugBreak(); /* noreturn in standalone pseudocode */
   }
+  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   iVar3 = *(int *)(param_1 + 0x10);
   if (iVar3 == 2) {
     if (g_cMf32_00806754 != (cMf32 *)0x0) {
@@ -62,18 +61,18 @@ undefined4 __thiscall STManRub3C::GetMessage(STManRub3C *this,int param_1)
       thunk_FUN_0062dd40((int)pSVar2);
       thunk_FUN_0062e130((int)pSVar2);
       DAT_008117a4 = 0;
-      g_currentExceptionFrame = pIVar6;
+      g_currentExceptionFrame = local_58.previous;
       return 0;
     }
     if (iVar3 == 0x10f) {
       local_14 = thunk_FUN_0062d670(local_c,&local_10);
       STPlaySystemC::SaveObjData(PTR_00802a38,PTR_s_RUBBISH_3_0079d080,local_14,local_10,0xc);
       FreeAndNull(&local_14);
-      g_currentExceptionFrame = pIVar6;
+      g_currentExceptionFrame = local_58.previous;
       return 0;
     }
   }
-  g_currentExceptionFrame = pIVar6;
+  g_currentExceptionFrame = local_58.previous;
   return 0;
 }
 

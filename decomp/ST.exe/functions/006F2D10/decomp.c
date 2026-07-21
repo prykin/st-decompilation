@@ -8,7 +8,7 @@ uint __cdecl FUN_006f2d10(byte *param_1,byte *param_2)
   uint *puVar4;
   uint *puVar5;
   uint local_204 [128];
-  
+
   if (*param_2 != *param_1) {
     return (uint)*param_2 - (uint)*param_1;
   }
@@ -20,6 +20,7 @@ uint __cdecl FUN_006f2d10(byte *param_1,byte *param_2)
     *puVar4 = 0;
     puVar4 = puVar4 + 1;
   }
+  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   sVar1 = *(short *)(param_1 + 0x16);
   puVar4 = (uint *)(param_1 + 0x18);
   puVar5 = local_204;

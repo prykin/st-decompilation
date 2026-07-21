@@ -9,7 +9,7 @@ void __fastcall FUN_00664760(AiFltClassTy *param_1)
   bool bVar5;
   short local_10;
   short local_e [5];
-  
+
   uVar4 = 0;
   iVar3 = param_1->field_022F;
   param_1->field_009B = 0;
@@ -43,6 +43,7 @@ void __fastcall FUN_00664760(AiFltClassTy *param_1)
         psVar2 = (short *)0x0;
       }
       psVar1 = psVar2 + 1;
+      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
       thunk_FUN_00675950(CONCAT22((short)((uint)psVar2 >> 0x10),*psVar2),
                          CONCAT22((short)((uint)psVar1 >> 0x10),*psVar1),psVar2[2],psVar2,psVar1,
                          psVar2 + 2,0);
@@ -51,6 +52,7 @@ void __fastcall FUN_00664760(AiFltClassTy *param_1)
       bVar5 = uVar4 < *(uint *)(iVar3 + 0xc);
     } while ((int)uVar4 < (int)*(uint *)(iVar3 + 0xc));
   }
+  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   if (((param_1->field_0163 == '\x01') && (*(int *)(param_1->field_022F + 0xc) == 0)) &&
      (iVar3 = param_1->field_0284, iVar3 != 0)) {
     local_10 = *(short *)(iVar3 + 0x82) + -4;
@@ -62,6 +64,7 @@ void __fastcall FUN_00664760(AiFltClassTy *param_1)
     thunk_FUN_006756d0(&local_10,local_e,local_e + 2,local_e + 3);
     AiFltClassTy::AppendZone(param_1,&local_10);
   }
+  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   if ((param_1->field_0122 == '\x01') && (*(int *)(param_1->field_0223 + 0xc) == 0)) {
     iVar3 = param_1->field_022F;
     uVar4 = 0;

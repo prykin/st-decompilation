@@ -15,12 +15,11 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00727C80::FUN_00727da0
 
 {
   AnonShape_00727DA0_C4265AA0 *pAVar1;
-  byte bVar2;
-  bool bVar3;
+  bool bVar2;
+  byte bVar3;
   int iVar4;
-  undefined3 extraout_var;
-  undefined3 extraout_var_00;
   uint uVar5;
+  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   uint extraout_ECX;
   uint uVar6;
   undefined4 *puVar7;
@@ -38,7 +37,7 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00727C80::FUN_00727da0
   AnonShape_00728170_E57D1DF1 local_34;
   int local_c;
   AnonReceiver_00727C80 *local_8;
-  
+
   iVar4 = param_1->field_0028 + param_2 * 0x1c;
   puVar7 = (undefined4 *)
            ((uint)*(byte *)(param_1->field_0028 + 1 + param_2 * 0x1c) * 0x10 + param_3);
@@ -96,10 +95,12 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00727C80::FUN_00727da0
   } while ((int)piVar13 < 0x8570dc);
   if ((int)pAVar8 < (int)pAVar10) {
     DAT_00857098 = (int)pAVar8 >> 0x10;
+    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
     local_34._0_4_ = 0xffffffff;
     local_8 = this;
     iVar4 = FUN_00727c80((int *)&local_34,param_2);
     if (iVar4 != 0) {
+      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
       local_60._0_4_ = 1;
       iVar4 = FUN_00727c80((int *)&local_60,param_2);
       if (iVar4 != 0) {
@@ -124,11 +125,12 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00727C80::FUN_00727da0
                   if ((int)uVar14 < (int)DAT_008570dc) {
                     uVar14 = FUN_006db5f0(DAT_00857068,DAT_008570dc - uVar14);
                     uVar5 = uVar5 + uVar14;
+                    /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
                     uVar11 = extraout_ECX;
                     uVar14 = DAT_008570dc;
                   }
                   iVar4 = DAT_008570d8;
-                  bVar2 = DAT_008570a0;
+                  bVar3 = DAT_008570a0;
                   this = local_8;
                   if (uVar11 - uVar14 != 0 && (int)uVar14 <= (int)uVar11) {
                     uVar11 = uVar11 - uVar14 >> 0x10;
@@ -140,30 +142,33 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00727C80::FUN_00727da0
                       if ((*pbVar12 != 0xff) &&
                          (DAT_00857078 < (int)(*(int *)(puVar15 + -1) - uVar5))) {
                         *(byte *)(iVar4 + (uint)*pbVar12) =
-                             *(byte *)(iVar4 + (uint)*pbVar12) | bVar2;
+                             *(byte *)(iVar4 + (uint)*pbVar12) | bVar3;
                       }
                       uVar9 = uVar5 + DAT_00857068;
                       pbVar12 = pbVar12 + 1;
                       *puVar15 = (short)(uVar5 >> 0x10);
                       uVar14 = uVar6 - 1;
-                      bVar3 = 0 < (int)uVar6;
+                      bVar2 = 0 < (int)uVar6;
                       uVar6 = uVar14;
                       uVar5 = uVar9;
                       puVar15 = puVar15 + 1;
-                    } while (uVar14 != 0 && bVar3);
-                    bVar2 = DAT_008570f8;
+                    } while (uVar14 != 0 && bVar2);
+                    bVar3 = DAT_008570f8;
                     do {
-                      *pbVar16 = bVar2;
+                      *pbVar16 = bVar3;
                       pbVar16 = pbVar16 + 1;
                       uVar5 = uVar11 - 1;
-                      bVar3 = 0 < (int)uVar11;
+                      bVar2 = 0 < (int)uVar11;
                       uVar11 = uVar5;
-                    } while (uVar5 != 0 && bVar3);
+                    } while (uVar5 != 0 && bVar2);
                   }
                 }
               }
+              /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
               local_34._4_4_ = local_34._4_4_ + -1;
+              /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
               if (local_34._4_4_ == 0) {
+                /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                 iVar4 = FUN_00727c80((int *)&local_34,local_34._8_4_);
                 if (iVar4 == 0) {
                   return;
@@ -171,10 +176,14 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00727C80::FUN_00727da0
               }
               else {
                 local_34.field_0024 = local_34.field_0024 + local_c;
+                /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                 local_34.field_001C = local_34.field_001C + local_34._32_4_;
               }
+              /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
               local_60._4_4_ = local_60._4_4_ + -1;
+              /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
               if (local_60._4_4_ == 0) {
+                /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                 iVar4 = FUN_00727c80((int *)&local_60,local_60._8_4_);
                 if (iVar4 == 0) {
                   return;
@@ -182,6 +191,7 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00727C80::FUN_00727da0
               }
               else {
                 local_60.field_0024 = local_60.field_0024 + local_38;
+                /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                 local_60.field_001C = local_60.field_001C + local_60._32_4_;
               }
               DAT_00857098 = DAT_00857098 + 1;
@@ -197,10 +207,9 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00727C80::FUN_00727da0
             if (*(int *)&this->field_0x34 <= DAT_00857098) {
               FUN_00728170(&local_34,&local_60);
             }
-            bVar3 = FUN_00727d50((int *)&local_34);
-          } while (((CONCAT31(extraout_var,bVar3) != 0) &&
-                   (bVar3 = FUN_00727d50((int *)&local_60), CONCAT31(extraout_var_00,bVar3) != 0))
-                  && (DAT_00857098 = DAT_00857098 + 1, DAT_00857098 < *(int *)&this->field_0x3c));
+            iVar4 = FUN_00727d50((int *)&local_34);
+          } while (((iVar4 != 0) && (iVar4 = FUN_00727d50((int *)&local_60), iVar4 != 0)) &&
+                  (DAT_00857098 = DAT_00857098 + 1, DAT_00857098 < *(int *)&this->field_0x3c));
         }
       }
     }

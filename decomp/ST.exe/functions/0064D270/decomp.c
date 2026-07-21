@@ -1,14 +1,16 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\ai\ai_event.cpp
    AiEventClassTy::__CreateObjPl
-   
+
    [STPrototypeApplier] Propagated parameter 3.
    Evidence: 0064D270 -> 00675B10 @ 0064D376 | 0064D270 -> 00675B10 @ 0064D450
-   
+
    [STPrototypeApplier] Propagated parameter 4.
    Evidence: 0064D270 -> 00675B10 @ 0064D376 | 0064D270 -> 00675B10 @ 0064D450
-   
+
    [STPrototypeApplier] Propagated parameter 5.
    Evidence: 0064D270 -> 00675B10 @ 0064D376 | 0064D270 -> 00675B10 @ 0064D450 */
 
@@ -22,13 +24,10 @@ AiEventClassTy::__CreateObjPl
   code *pcVar1;
   bool bVar2;
   int iVar3;
-  undefined3 extraout_var;
   char *_Source;
   int iVar4;
-  undefined4 unaff_ESI;
   uint uVar5;
   uint uVar6;
-  void *unaff_EDI;
   uint *puVar7;
   Global_sub_004B1120_param_2Enum GVar8;
   InternalExceptionFrame local_e8;
@@ -60,20 +59,18 @@ AiEventClassTy::__CreateObjPl
   int local_10;
   int local_c;
   int local_8;
-  
+
   local_14 = -1;
   local_e8.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_e8;
   local_38 = this;
-  iVar3 = Library::MSVCRT::__setjmp3(local_e8.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar3 = Library::MSVCRT::__setjmp3(local_e8.jumpBuffer,0);
   if (iVar3 != 0) {
     g_currentExceptionFrame = local_e8.previous;
     iVar4 = ReportDebugMessage(s_E____titans_ai_ai_event_cpp_007d2a34,0xcb,0,iVar3,&DAT_007a4ccc,
                                s_AiEventClassTy____CreateObjPl_007d2a9c);
     if (iVar4 != 0) {
-      pcVar1 = (code *)swi(3);
-      iVar3 = (*pcVar1)();
-      return iVar3;
+      STDebugBreak(); /* noreturn in standalone pseudocode */
     }
     RaiseInternalException(iVar3,0,s_E____titans_ai_ai_event_cpp_007d2a34,0xcc);
     return iVar3;
@@ -92,8 +89,10 @@ AiEventClassTy::__CreateObjPl
       local_28[1] = 0;
       local_1c[0] = 7;
       local_1c[1] = 0;
+      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
       local_20 = CONCAT22((short)((uint)param_3 >> 0x10),
                           *(short *)((int)&DAT_008087eb + uVar5 * 0x51) + -3);
+      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
       local_30 = CONCAT22((short)(uVar5 * 9 >> 0x10),
                           *(short *)((int)&DAT_008087ef + uVar5 * 0x51) + -3);
       thunk_FUN_006756d0((short *)&local_20,(short *)&local_30,local_28,local_1c);
@@ -106,8 +105,8 @@ AiEventClassTy::__CreateObjPl
                                  (short *)&param_5,(int)param_2);
     }
     else {
-      bVar2 = thunk_FUN_004961b0((short)param_3,(short)param_4,(short)param_5);
-      if (CONCAT31(extraout_var,bVar2) == 0) {
+      iVar3 = thunk_FUN_004961b0((short)param_3,(short)param_4,(short)param_5);
+      if (iVar3 == 0) {
         local_2c = (int)param_3 + -1;
         local_24 = (int)param_4 + -1;
         local_18 = 3;
@@ -190,8 +189,8 @@ AiEventClassTy::__CreateObjPl
       iVar4 = 1;
       GVar8 = (Global_sub_004B1120_param_2Enum)param_2;
       uVar5 = param_1 & 0xffff;
-      iVar3 = thunk_FUN_004ae0b0(local_8,local_c,local_10,GVar8,uVar5,(undefined4 *)0x0,(int *)0x0,
-                                 (int *)0x0,1,(int *)0x0);
+      iVar3 = thunk_FUN_004ae0b0((short)param_3,local_c,local_10,GVar8,uVar5,(undefined4 *)0x0,
+                                 (int *)0x0,(int *)0x0,1,(int *)0x0);
       if (iVar3 == 0) {
         iVar4 = thunk_FUN_004b1120(uVar5,GVar8,&local_8,&local_c,&local_10,0,0);
       }

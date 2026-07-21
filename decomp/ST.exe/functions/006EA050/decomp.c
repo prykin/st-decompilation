@@ -16,7 +16,7 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_006EA050::FUN_006ea050
   int iVar4;
   undefined4 *puVar5;
   undefined4 *puVar6;
-  
+
   if (param_1 < *(uint *)&this->field_0x310) {
     puVar1 = (uint *)(*(int *)&this->field_0x31c + param_1 * 0x114);
     uVar2 = *(uint *)(*(int *)&this->field_0x31c + param_1 * 0x114);

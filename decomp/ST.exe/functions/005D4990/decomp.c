@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\settmobj.cpp
@@ -12,17 +14,15 @@ SettMapMTy::PrepareAFT(SettMapMTy *this,AnonShape_005D4990_5F0525CF *param_1,uin
   int iVar3;
   uint uVar4;
   uint uVar5;
-  undefined4 unaff_ESI;
-  void *unaff_EDI;
   undefined4 *puVar6;
   InternalExceptionFrame local_4c;
   SettMapMTy *local_8;
-  
+
   if ((param_1 != (AnonShape_005D4990_5F0525CF *)0x0) && (param_2 != (uint *)0x0)) {
     local_4c.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_4c;
     local_8 = this;
-    iVar2 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
+    iVar2 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
     if (iVar2 == 0) {
       if (*param_2 != 0xffffffff) {
         uVar5 = *(uint *)&local_8->field_1A5B->field_0x6a6;
@@ -69,9 +69,7 @@ SettMapMTy::PrepareAFT(SettMapMTy *this,AnonShape_005D4990_5F0525CF *param_1,uin
     iVar3 = ReportDebugMessage(s_E____titans_Start_settmobj_cpp_007cd258,0x9af,0,iVar2,&DAT_007a4ccc
                                ,s_SettMapMTy__PrepareAFT_007cd528);
     if (iVar3 != 0) {
-      pcVar1 = (code *)swi(3);
-      (*pcVar1)();
-      return;
+      STDebugBreak(); /* noreturn in standalone pseudocode */
     }
     RaiseInternalException(iVar2,0,s_E____titans_Start_settmobj_cpp_007cd258,0x9af);
   }

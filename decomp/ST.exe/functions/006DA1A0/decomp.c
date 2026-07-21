@@ -21,7 +21,7 @@ void FUN_006da1a0(int param_1,int param_2,int param_3,int param_4,byte *param_5,
   int *local_10;
   int local_c;
   int local_8;
-  
+
   if ((2 < param_8) && (2 < (int)param_9)) {
     local_8 = (int)param_10 * 2 + 1;
     if (param_8 <= local_8) {
@@ -56,6 +56,7 @@ void FUN_006da1a0(int param_1,int param_2,int param_3,int param_4,byte *param_5,
     else {
       param_9 = FUN_006cfe10(param_5,iVar7);
     }
+    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     sVar1 = *(short *)(param_5 + 0x12);
     local_c = (int)sVar1;
     param_1 = (int)pbVar4;

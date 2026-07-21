@@ -10,12 +10,14 @@ void FUN_005ff150(int param_1,int *param_2,int param_3)
   int *piVar6;
   int local_c;
   int local_8;
-  
+
   local_c = 0;
   piVar6 = param_2;
   if (0 < param_3) {
     do {
+      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
       iVar2 = *(int *)(param_1 + 0x10 + *piVar6 * 0x18);
+      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
       iVar3 = *(int *)(param_1 + *piVar6 * 0x18 + 0xc);
       piVar5 = param_2;
       local_8 = local_c;

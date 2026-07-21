@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\cpanel4.cpp
@@ -12,8 +14,6 @@ void __thiscall CPanelTy::SetCmdObj(CPanelTy *this,uint param_1)
   CPanelTy *pCVar4;
   int iVar5;
   int iVar6;
-  undefined4 unaff_ESI;
-  void *unaff_EDI;
   char *pcVar7;
   char *pcVar8;
   undefined4 *puVar9;
@@ -41,7 +41,7 @@ void __thiscall CPanelTy::SetCmdObj(CPanelTy *this,uint param_1)
   undefined2 local_c;
   undefined1 local_a;
   char local_8 [4];
-  
+
   if (DAT_00808784 != 0) {
     return;
   }
@@ -57,7 +57,7 @@ void __thiscall CPanelTy::SetCmdObj(CPanelTy *this,uint param_1)
   local_e8.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_e8;
   local_44 = this;
-  iVar5 = Library::MSVCRT::__setjmp3(local_e8.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar5 = Library::MSVCRT::__setjmp3(local_e8.jumpBuffer,0);
   if (iVar5 != 0) {
     g_currentExceptionFrame = local_e8.previous;
     iVar6 = ReportDebugMessage(s_E____titans_Andrey_cpanel4_cpp_007c2700,0xa1a,0,iVar5,&DAT_007a4ccc
@@ -66,9 +66,7 @@ void __thiscall CPanelTy::SetCmdObj(CPanelTy *this,uint param_1)
       RaiseInternalException(iVar5,0,s_E____titans_Andrey_cpanel4_cpp_007c2700,0xa1a);
       return;
     }
-    pcVar2 = (code *)swi(3);
-    (*pcVar2)();
-    return;
+    STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   thunk_FUN_005252c0(0xae);
   pCVar4 = local_44;
@@ -87,6 +85,7 @@ void __thiscall CPanelTy::SetCmdObj(CPanelTy *this,uint param_1)
     ProdPanelTy::SetPanel(g_prodPanel_00801680,'\0');
   }
   if (DAT_00801698 != (int *)0x0) {
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
     (**(code **)(*DAT_00801698 + 0x1c))(0);
   }
   if (DAT_00802a44 != (void *)0x0) {
@@ -96,15 +95,19 @@ void __thiscall CPanelTy::SetCmdObj(CPanelTy *this,uint param_1)
     ProdPanelTy::SetPanel(g_prodPanel_00801684,'\0');
   }
   if (DAT_00801678 != (int *)0x0) {
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
     (**(code **)(*DAT_00801678 + 0x1c))(0);
   }
   if (DAT_008016ec != (int *)0x0) {
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
     (**(code **)(*DAT_008016ec + 0x1c))(0);
   }
   if (DAT_00802a48 != (int *)0x0) {
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
     (**(code **)(*DAT_00802a48 + 0x1c))(0);
   }
   if (DAT_0080168c != (int *)0x0) {
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
     (**(code **)(*DAT_0080168c + 0x1c))(0);
   }
   thunk_FUN_0054a8d0(PTR_00802a30);
@@ -179,6 +182,7 @@ void __thiscall CPanelTy::SetCmdObj(CPanelTy *this,uint param_1)
   case 0x1e:
   case 0x1f:
     pcVar7 = &local_14;
+    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
     _local_14 = CONCAT31((-(uint3)(bVar1 != 0x1e) & 0xc) + 9,1);
     local_10 = 0;
     uStack_f = 1;

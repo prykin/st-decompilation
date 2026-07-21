@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\helppan.cpp
@@ -11,15 +13,13 @@ void __thiscall HelpPanelTy::SwitchOptPanel(HelpPanelTy *this,int param_1)
   HelpPanelTy *this_00;
   int errorCode;
   int iVar3;
-  undefined4 unaff_ESI;
-  void *unaff_EDI;
   InternalExceptionFrame local_4c;
   HelpPanelTy *local_8;
-  
+
   local_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_4c;
   local_8 = this;
-  errorCode = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  errorCode = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
   this_00 = local_8;
   if (errorCode != 0) {
     g_currentExceptionFrame = local_4c.previous;
@@ -29,9 +29,7 @@ void __thiscall HelpPanelTy::SwitchOptPanel(HelpPanelTy *this,int param_1)
       RaiseInternalException(errorCode,0,s_E____titans_Andrey_helppan_cpp_007c383c,0x10f);
       return;
     }
-    pcVar2 = (code *)swi(3);
-    (*pcVar2)();
-    return;
+    STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   sVar1 = local_8->field_0172;
   if (sVar1 == 1) {
@@ -45,6 +43,7 @@ void __thiscall HelpPanelTy::SwitchOptPanel(HelpPanelTy *this,int param_1)
       local_8->field_002E = 2;
       *(undefined4 *)&local_8->field_0x30 = local_8->field_0178;
       if (PTR_00802a30 != (CursorClassTy *)0x0) {
+        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
         (*(code *)**(undefined4 **)PTR_00802a30)(&local_8->field_0x18);
       }
     }

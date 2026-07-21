@@ -1,5 +1,9 @@
 
-byte __cdecl FUN_006800a0(byte *param_1)
+/* [STAbiConsistencyApplier] full_eax_return: return=/int Evidence: all observed callers consume
+   full EAX (1), none consume AL/AX, and every RET path defines full EAX; sites=006829B0 @ 006829BF
+   -> MOV MOV ESI,EAX */
+
+int __cdecl FUN_006800a0(byte *param_1)
 
 {
   byte bVar1;
@@ -9,7 +13,7 @@ byte __cdecl FUN_006800a0(byte *param_1)
   byte *pbVar5;
   int iVar6;
   bool bVar7;
-  
+
   iVar2 = thunk_FUN_0067ff00((char *)param_1);
   if (-1 < iVar2) {
     return 5;
@@ -105,6 +109,6 @@ LAB_006801d2:
     } while (iVar6 < iVar2);
   }
   iVar2 = thunk_FUN_0067fc10(param_1);
-  return (iVar2 < 0) - 1U & 4;
+  return (iVar2 < 0) - 1 & 4;
 }
 

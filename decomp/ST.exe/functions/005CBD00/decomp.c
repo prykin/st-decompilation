@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\settmobj.cpp
@@ -16,18 +18,16 @@ void __thiscall SettMapMTy::InitSettMap(SettMapMTy *this,char param_1)
   undefined4 *puVar7;
   HoloTy *pHVar8;
   uint uVar9;
-  undefined4 unaff_ESI;
-  void *unaff_EDI;
   int iVar10;
   char cVar11;
   InternalExceptionFrame local_50;
   SettMapMTy *local_c;
   uint local_8;
-  
+
   local_50.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_50;
   local_c = this;
-  iVar3 = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar3 = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0);
   if (iVar3 == 0) {
     DAT_00808783 = 3;
     DAT_00808754 = FUN_006e51b0(0x807620);
@@ -53,6 +53,7 @@ void __thiscall SettMapMTy::InitSettMap(SettMapMTy *this,char param_1)
     this_00->field_005D = pAVar1;
     puVar7 = &pAVar1[2].field_0008;
     uVar5 = FUN_006b4fe0((int)pAVar1);
+    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     pAVar6 = (AnonPointee_SettMapMTy_2204 *)
              FUN_006b50c0(0xfa,0x16,(uint)*(ushort *)(this_00->field_005D + 0xe),uVar5,puVar7,iVar3)
     ;
@@ -167,9 +168,7 @@ void __thiscall SettMapMTy::InitSettMap(SettMapMTy *this,char param_1)
   iVar10 = ReportDebugMessage(s_E____titans_Start_settmobj_cpp_007cd258,0x4f,0,iVar3,&DAT_007a4ccc,
                               s_SettMapMTy__InitSettMap_007cd280);
   if (iVar10 != 0) {
-    pcVar2 = (code *)swi(3);
-    (*pcVar2)();
-    return;
+    STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   RaiseInternalException(iVar3,0,s_E____titans_Start_settmobj_cpp_007cd258,0x4f);
   return;

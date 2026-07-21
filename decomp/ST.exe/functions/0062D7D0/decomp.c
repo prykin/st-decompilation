@@ -5,7 +5,7 @@ int FUN_0062d7d0(int *param_1,int *param_2)
   int iVar1;
   int iVar2;
   int *piVar3;
-  
+
   piVar3 = param_2;
   iVar2 = 0;
   param_2 = (int *)0x8;

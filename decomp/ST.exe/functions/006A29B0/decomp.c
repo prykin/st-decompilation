@@ -5,7 +5,7 @@ uint __cdecl FUN_006a29b0(int param_1,int param_2,int param_3,int param_4,uint p
   byte bVar1;
   byte bVar3;
   uint uVar2;
-  
+
   uVar2 = 0;
   bVar1 = (byte)param_3;
   if (param_4 != 1) {
@@ -26,6 +26,7 @@ uint __cdecl FUN_006a29b0(int param_1,int param_2,int param_3,int param_4,uint p
       else {
         bVar3 = (byte)param_2 & 0xf;
       }
+      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
       return (uint)CONCAT11(bVar3,bVar1);
     }
     if (param_4 == 2) {

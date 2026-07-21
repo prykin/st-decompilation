@@ -3,7 +3,7 @@ void FUN_006d7770(AnonShape_006D7770_4ECBDE32 *param_1)
 
 {
   int *piVar1;
-  
+
   piVar1 = (int *)param_1->field_0020;
   if ((short)piVar1[1] == -0x50ee) {
     param_1->field_0008 = (uint)*(ushort *)(piVar1 + 2);

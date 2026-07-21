@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\rpt_obj.cpp
@@ -15,8 +17,6 @@ void __thiscall MReportTy::PaintTab(MReportTy *this,AnonShape_005C1610_B64592CA 
   int iVar7;
   undefined1 uVar8;
   char cVar9;
-  undefined4 unaff_ESI;
-  void *unaff_EDI;
   int iVar10;
   byte bVar11;
   InternalExceptionFrame local_8c;
@@ -37,14 +37,14 @@ void __thiscall MReportTy::PaintTab(MReportTy *this,AnonShape_005C1610_B64592CA 
   int local_10;
   uint local_c;
   MReportTy *local_8;
-  
+
   local_44 = param_1->field_0014;
   local_40 = local_44->field_0010 - 0x46;
   local_48 = local_44->field_000C - 0x1a;
   local_8c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_8c;
   local_8 = this;
-  iVar5 = Library::MSVCRT::__setjmp3(local_8c.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar5 = Library::MSVCRT::__setjmp3(local_8c.jumpBuffer,0);
   pAVar4 = local_44;
   if (iVar5 != 0) {
     g_currentExceptionFrame = local_8c.previous;
@@ -54,15 +54,13 @@ void __thiscall MReportTy::PaintTab(MReportTy *this,AnonShape_005C1610_B64592CA 
       RaiseInternalException(iVar5,0,s_E____titans_Start_rpt_obj_cpp_007ccec8,0x369);
       return;
     }
-    pcVar3 = (code *)swi(3);
-    (*pcVar3)();
-    return;
+    STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   FUN_006b5f80(DAT_008075a8,local_44->field_000C,local_44->field_0010,local_44->field_0014,
                local_44->field_0018);
   iVar7 = local_40;
   iVar5 = local_48;
-  FUN_006b4170((AnonShape_006C7610_838EDECF *)local_8->field_0073,0,local_48,local_40,
+  FUN_006b4170((AnonShape_006B5B10_E0D06CF1 *)local_8->field_0073,0,local_48,local_40,
                pAVar4->field_0014,pAVar4->field_0018,0xff);
   uVar2 = pAVar4->field_0004;
   if (uVar2 == 0) {
@@ -117,12 +115,14 @@ LAB_005c1806:
   if (pAVar4->field_0004 < 2) {
     uVar2 = pAVar4->field_0000;
     cVar9 = -1;
+    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
     local_c = CONCAT31(local_c._1_3_,0xff);
     if (1 < uVar2) {
       cVar9 = DAT_0080c846;
       if (uVar2 != 2) {
         cVar9 = *(char *)((int)&DAT_0080c83a + uVar2 + 2);
       }
+      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
       local_c = CONCAT31(local_c._1_3_,cVar9);
     }
     if (cVar9 != -1) {
@@ -154,10 +154,10 @@ LAB_005c1806:
       default:
         uVar8 = 0xff;
       }
-      FUN_006b4170((AnonShape_006C7610_838EDECF *)local_8->field_0073,0,
+      FUN_006b4170((AnonShape_006B5B10_E0D06CF1 *)local_8->field_0073,0,
                    (-(uint)(pAVar4->field_0004 != 0) & 0xfffffffb) + 0xc + iVar5,iVar7 + 0xb,0x1a,
                    0xd,uVar8);
-      FUN_006b5ee0((int)local_8->field_0073,0,
+      FUN_006b5ee0((AnonShape_006B5B10_E0D06CF1 *)local_8->field_0073,0,
                    (-(uint)(pAVar4->field_0004 != 0) & 0xfffffffb) + 0xc + iVar5,iVar7 + 0xb,0x1a,
                    0xd,0,0xd);
     }

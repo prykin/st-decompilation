@@ -5,7 +5,8 @@ void __fastcall FUN_0065d590(int param_1)
   int iVar1;
   uint uVar2;
   bool bVar3;
-  
+
+  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   iVar1 = *(int *)(param_1 + 0x20b);
   uVar2 = 0;
   if (0 < *(int *)(iVar1 + 0xc)) {
@@ -18,6 +19,7 @@ void __fastcall FUN_0065d590(int param_1)
         iVar1 = 0;
       }
       *(undefined4 *)(iVar1 + 0x24) = 0;
+      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
       iVar1 = *(int *)(param_1 + 0x20b);
       uVar2 = uVar2 + 1;
       bVar3 = uVar2 < *(uint *)(iVar1 + 0xc);

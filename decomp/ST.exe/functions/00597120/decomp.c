@@ -1,9 +1,11 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* WARNING: Removing unreachable block (ram,0x00597a13) */
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\fsgs_obj.cpp
    FSGSTy::NoneFSGS
-   
+
    [STSwitchEnumApplier] Switch target field_0065 uses
    /SubmarineTitans/Recovered/Enums/FSGSTy_field_0065State. Cases:
    CASE_1=1;CASE_2=2;CASE_3=3;CASE_4=4;CASE_5=5;CASE_6=6;CASE_7=7;CASE_8=8;CASE_9=9;CASE_A=10 */
@@ -24,15 +26,13 @@ void __thiscall FSGSTy::NoneFSGS(FSGSTy *this,int param_1)
   undefined4 *puVar8;
   LPSTR pCVar9;
   ushort *puVar10;
-  char *extraout_EAX;
-  int iVar11;
-  uint uVar12;
-  undefined4 unaff_ESI;
-  void *unaff_EDI;
+  char *pcVar11;
+  int iVar12;
   uint uVar13;
-  byte bVar14;
-  char *pcVar15;
-  ulong uVar16;
+  uint uVar14;
+  byte bVar15;
+  char *pcVar16;
+  ulong uVar17;
   InternalExceptionFrame local_a8;
   char *local_64;
   char *local_60;
@@ -55,24 +55,22 @@ void __thiscall FSGSTy::NoneFSGS(FSGSTy *this,int param_1)
   undefined2 local_1a;
   undefined2 local_18;
   int local_8;
-  
-  uVar13 = 1;
+
+  uVar14 = 1;
   local_8 = 1;
   local_28 = (MMObjTy *)this;
   DVar5 = timeGetTime();
   this->field_0061 = DVar5;
   local_a8.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_a8;
-  iVar6 = Library::MSVCRT::__setjmp3(local_a8.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar6 = Library::MSVCRT::__setjmp3(local_a8.jumpBuffer,0);
   this_02 = local_28;
   if (iVar6 != 0) {
     g_currentExceptionFrame = local_a8.previous;
-    iVar11 = ReportDebugMessage(s_E____titans_Start_fsgs_obj_cpp_007cbf70,0x284,0,iVar6,
+    iVar12 = ReportDebugMessage(s_E____titans_Start_fsgs_obj_cpp_007cbf70,0x284,0,iVar6,
                                 &DAT_007a4ccc,s_FSGSTy__NoneFSGS_007cc0d4);
-    if (iVar11 != 0) {
-      pcVar3 = (code *)swi(3);
-      (*pcVar3)();
-      return;
+    if (iVar12 != 0) {
+      STDebugBreak(); /* noreturn in standalone pseudocode */
     }
     RaiseInternalException(iVar6,0,s_E____titans_Start_fsgs_obj_cpp_007cbf70,0x284);
     return;
@@ -86,15 +84,15 @@ void __thiscall FSGSTy::NoneFSGS(FSGSTy *this,int param_1)
            (iVar6 = *(int *)&this_02[0x22].field_0x80, iVar6 != 0)) {
           if (1 < *(uint *)(iVar6 + 0xc)) {
             do {
-              iVar6 = *(int *)(iVar6 + 8) * uVar13 + *(int *)(iVar6 + 0x1c);
+              iVar6 = *(int *)(iVar6 + 8) * uVar14 + *(int *)(iVar6 + 0x1c);
               if (iVar6 != 0) {
                 CFsgsConnection::PingPlayer
                           ((CFsgsConnection *)&DAT_00802a90,*(ulong *)&this_02[0x22].field_0x88,
                            *(ulong *)(iVar6 + 0x21));
               }
               iVar6 = *(int *)&this_02[0x22].field_0x80;
-              uVar13 = uVar13 + 1;
-            } while (uVar13 < *(uint *)(iVar6 + 0xc));
+              uVar14 = uVar14 + 1;
+            } while (uVar14 < *(uint *)(iVar6 + 0xc));
           }
           *(int *)&this_02[0x22].field_0x88 = *(int *)&this_02[0x22].field_0x88 + 1;
         }
@@ -154,24 +152,24 @@ void __thiscall FSGSTy::NoneFSGS(FSGSTy *this,int param_1)
       }
       iVar6 = *(int *)&this_02[0x1d].field_0xe0;
       *(int *)&this_02[0x1d].field_0xdc = *(int *)&this_02[0x1d].field_0xdc + -1;
-      uVar13 = *(uint *)(iVar6 + 0x14);
-      if (uVar13 == 0) {
-        uVar13 = ((uint)*(ushort *)(iVar6 + 0xe) * *(int *)(iVar6 + 4) + 0x1f >> 3 & 0x1ffffffc) *
+      uVar14 = *(uint *)(iVar6 + 0x14);
+      if (uVar14 == 0) {
+        uVar14 = ((uint)*(ushort *)(iVar6 + 0xe) * *(int *)(iVar6 + 4) + 0x1f >> 3 & 0x1ffffffc) *
                  *(int *)(iVar6 + 8);
       }
       puVar8 = (undefined4 *)FUN_006b4fa0(iVar6);
-      for (uVar12 = uVar13 >> 2; uVar12 != 0; uVar12 = uVar12 - 1) {
+      for (uVar13 = uVar14 >> 2; uVar13 != 0; uVar13 = uVar13 - 1) {
         *puVar8 = 0xffffffff;
         puVar8 = puVar8 + 1;
       }
       iVar6 = 0;
-      bVar14 = 0;
-      for (uVar13 = uVar13 & 3; uVar13 != 0; uVar13 = uVar13 - 1) {
+      bVar15 = 0;
+      for (uVar14 = uVar14 & 3; uVar14 != 0; uVar14 = uVar14 - 1) {
         *(undefined1 *)puVar8 = 0xff;
         puVar8 = (undefined4 *)((int)puVar8 + 1);
       }
       pCVar9 = FUN_006f2c00(s_MM_BAN__007cc058,2,*(undefined4 *)&this_02[0x1d].field_0xdc);
-      puVar10 = Library::Ourlib::MFIMG::mfImgLoad(g_cMf32_00806780,6,pCVar9,bVar14,iVar6);
+      puVar10 = Library::Ourlib::MFIMG::mfImgLoad(g_cMf32_00806780,6,pCVar9,bVar15,iVar6);
       DibPut(*(AnonShape_006B5B10_E0D06CF1 **)&this_02[0x1d].field_0xe0,0,0,'\x06',(byte *)puVar10);
       FUN_006b35d0(DAT_008075a8,*(uint *)&this_02[0x1d].field_0xd8);
       local_8 = 0;
@@ -243,7 +241,9 @@ void __thiscall FSGSTy::NoneFSGS(FSGSTy *this,int param_1)
       local_18 = 1;
       local_1a = 1;
       local_20 = 1;
+      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
       local_24._2_2_ = 1;
+      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
       local_24._0_2_ = 1;
     }
     this_02->field_0x65 = 1;
@@ -257,10 +257,10 @@ void __thiscall FSGSTy::NoneFSGS(FSGSTy *this,int param_1)
         thunk_FUN_0055d410((CFsgsConnection *)&DAT_00802a90);
       }
       else {
-        uVar16 = 0;
-        pcVar15 = &DAT_008016a0;
-        LoadResourceString(0x254d,HINSTANCE_00807618);
-        thunk_FUN_0055d390(&DAT_00802a90,extraout_EAX,pcVar15,uVar16);
+        uVar17 = 0;
+        pcVar16 = &DAT_008016a0;
+        pcVar11 = LoadResourceString(0x254d,HINSTANCE_00807618);
+        thunk_FUN_0055d390(&DAT_00802a90,pcVar11,pcVar16,uVar17);
         this_02[0x1d].field_0xab = 0;
       }
       break;
@@ -321,9 +321,9 @@ joined_r0x00597872:
     if (*(HoloTy **)&local_28[0x23].field_0x1a != (HoloTy *)0x0) {
       iVar6 = HoloTy::NextFas(*(HoloTy **)&local_28[0x23].field_0x1a);
       if (iVar6 == 0) {
-        uVar13 = *(uint *)(*(int *)&this_02[0x23].field_0x1a + 3);
-        if (-1 < (int)uVar13) {
-          FUN_006b3af0(DAT_008075a8,uVar13);
+        uVar14 = *(uint *)(*(int *)&this_02[0x23].field_0x1a + 3);
+        if (-1 < (int)uVar14) {
+          FUN_006b3af0(DAT_008075a8,uVar14);
         }
       }
       else {
@@ -333,9 +333,9 @@ joined_r0x00597872:
     if (*(HoloTy **)&this_02[0x23].field_0x1e != (HoloTy *)0x0) {
       iVar6 = HoloTy::NextFas(*(HoloTy **)&this_02[0x23].field_0x1e);
       if (iVar6 == 0) {
-        uVar13 = *(uint *)(*(int *)&this_02[0x23].field_0x1e + 3);
-        if (-1 < (int)uVar13) {
-          FUN_006b3af0(DAT_008075a8,uVar13);
+        uVar14 = *(uint *)(*(int *)&this_02[0x23].field_0x1e + 3);
+        if (-1 < (int)uVar14) {
+          FUN_006b3af0(DAT_008075a8,uVar14);
         }
       }
       else {
@@ -345,9 +345,9 @@ joined_r0x00597872:
     if (*(HoloTy **)&this_02[0x23].field_0x22 != (HoloTy *)0x0) {
       iVar6 = HoloTy::NextFas(*(HoloTy **)&this_02[0x23].field_0x22);
       if (iVar6 == 0) {
-        uVar13 = *(uint *)(*(int *)&this_02[0x23].field_0x22 + 3);
-        if (-1 < (int)uVar13) {
-          FUN_006b3af0(DAT_008075a8,uVar13);
+        uVar14 = *(uint *)(*(int *)&this_02[0x23].field_0x22 + 3);
+        if (-1 < (int)uVar14) {
+          FUN_006b3af0(DAT_008075a8,uVar14);
         }
       }
       else {
@@ -357,9 +357,9 @@ joined_r0x00597872:
     if (*(HoloTy **)&this_02[0x23].field_0x26 != (HoloTy *)0x0) {
       iVar6 = HoloTy::NextFas(*(HoloTy **)&this_02[0x23].field_0x26);
       if (iVar6 == 0) {
-        uVar13 = *(uint *)(*(int *)&this_02[0x23].field_0x26 + 3);
-        if (-1 < (int)uVar13) {
-          FUN_006b3af0(DAT_008075a8,uVar13);
+        uVar14 = *(uint *)(*(int *)&this_02[0x23].field_0x26 + 3);
+        if (-1 < (int)uVar14) {
+          FUN_006b3af0(DAT_008075a8,uVar14);
         }
       }
       else {
@@ -374,24 +374,24 @@ joined_r0x00597872:
       }
       iVar6 = *(int *)&this_02[0x1d].field_0xe0;
       *(int *)&this_02[0x1d].field_0xdc = *(int *)&this_02[0x1d].field_0xdc + 1;
-      uVar13 = *(uint *)(iVar6 + 0x14);
-      if (uVar13 == 0) {
-        uVar13 = ((uint)*(ushort *)(iVar6 + 0xe) * *(int *)(iVar6 + 4) + 0x1f >> 3 & 0x1ffffffc) *
+      uVar14 = *(uint *)(iVar6 + 0x14);
+      if (uVar14 == 0) {
+        uVar14 = ((uint)*(ushort *)(iVar6 + 0xe) * *(int *)(iVar6 + 4) + 0x1f >> 3 & 0x1ffffffc) *
                  *(int *)(iVar6 + 8);
       }
       puVar8 = (undefined4 *)FUN_006b4fa0(iVar6);
-      for (uVar12 = uVar13 >> 2; uVar12 != 0; uVar12 = uVar12 - 1) {
+      for (uVar13 = uVar14 >> 2; uVar13 != 0; uVar13 = uVar13 - 1) {
         *puVar8 = 0xffffffff;
         puVar8 = puVar8 + 1;
       }
       iVar6 = 0;
-      bVar14 = 0;
-      for (uVar13 = uVar13 & 3; uVar13 != 0; uVar13 = uVar13 - 1) {
+      bVar15 = 0;
+      for (uVar14 = uVar14 & 3; uVar14 != 0; uVar14 = uVar14 - 1) {
         *(undefined1 *)puVar8 = 0xff;
         puVar8 = (undefined4 *)((int)puVar8 + 1);
       }
       pCVar9 = FUN_006f2c00(s_MM_BAN__007cc058,2,*(undefined4 *)&this_02[0x1d].field_0xdc);
-      puVar10 = Library::Ourlib::MFIMG::mfImgLoad(g_cMf32_00806780,6,pCVar9,bVar14,iVar6);
+      puVar10 = Library::Ourlib::MFIMG::mfImgLoad(g_cMf32_00806780,6,pCVar9,bVar15,iVar6);
       DibPut(*(AnonShape_006B5B10_E0D06CF1 **)&this_02[0x1d].field_0xe0,0,0,'\x06',(byte *)puVar10);
       FUN_006b35d0(DAT_008075a8,*(uint *)&this_02[0x1d].field_0xd8);
       local_8 = 0;
@@ -441,12 +441,12 @@ joined_r0x00597872:
         g_currentExceptionFrame = local_a8.previous;
         return;
       }
-      bVar14 = this_02[0x1d].field_0xa3;
+      bVar15 = this_02[0x1d].field_0xa3;
       this_02->field_0x65 = 2;
-      if ((bVar14 != 0xff) && (*(int *)((int)this_02 + (uint)bVar14 * 0x1fb + 0xd1) != 0)) {
+      if ((bVar15 != 0xff) && (*(int *)((int)this_02 + (uint)bVar15 * 0x1fb + 0xd1) != 0)) {
         AppClassTy::PostNextMessage
                   ((AppClassTy *)&DAT_00807620,
-                   (undefined4 *)((int)this_02 + (uint)bVar14 * 0x1fb + 0xc1));
+                   (undefined4 *)((int)this_02 + (uint)bVar15 * 0x1fb + 0xc1));
         g_currentExceptionFrame = local_a8.previous;
         return;
       }

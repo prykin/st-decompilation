@@ -17,7 +17,7 @@ void FUN_0075a180(AnonShape_0075A180_7E367FD8 *param_1)
   int local_18;
   int *local_10;
   int local_c;
-  
+
   local_c = 0;
   iVar1 = param_1->field_012A;
   iVar2 = param_1->field_0196;

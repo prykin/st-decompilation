@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\fsgs_obj.cpp
@@ -16,9 +18,7 @@ void __thiscall FSGSTy::PaintLadder(FSGSTy *this,int param_1)
   StartServTy *this_00;
   uint uVar8;
   StartServTy *this_01;
-  undefined4 unaff_ESI;
   int *piVar9;
-  void *unaff_EDI;
   uint *puVar10;
   InternalExceptionFrame local_8c;
   StartServTy local_48 [52];
@@ -26,13 +26,13 @@ void __thiscall FSGSTy::PaintLadder(FSGSTy *this,int param_1)
   FSGSTy *local_10;
   uint local_c;
   StartServTy *local_8;
-  
+
   local_14 = this->field_1EDB;
   if (((this->field_1E8E != 0) && (this->field_1E92 != 0)) && (local_14 != 0)) {
     local_8c.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_8c;
     local_10 = this;
-    iVar4 = Library::MSVCRT::__setjmp3(local_8c.jumpBuffer,0,unaff_EDI,unaff_ESI);
+    iVar4 = Library::MSVCRT::__setjmp3(local_8c.jumpBuffer,0);
     if (iVar4 == 0) {
       FUN_006b5f80(DAT_008075a8,0x22,0x5e,0x2e1,0x175);
       pFVar2 = local_10;
@@ -106,9 +106,7 @@ void __thiscall FSGSTy::PaintLadder(FSGSTy *this,int param_1)
     iVar7 = ReportDebugMessage(s_E____titans_Start_fsgs_obj_cpp_007cbf70,0x49b,0,iVar4,&DAT_007a4ccc
                                ,s_FSGSTy__PaintLadder_007cc264);
     if (iVar7 != 0) {
-      pcVar1 = (code *)swi(3);
-      (*pcVar1)();
-      return;
+      STDebugBreak(); /* noreturn in standalone pseudocode */
     }
     RaiseInternalException(iVar4,0,s_E____titans_Start_fsgs_obj_cpp_007cbf70,0x49b);
   }

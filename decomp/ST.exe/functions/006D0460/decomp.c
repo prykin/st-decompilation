@@ -10,7 +10,7 @@ void FUN_006d0460(HDC param_1,int param_2,int param_3,BITMAPINFO *param_4,void *
   BITMAPINFO *pBVar4;
   UINT ColorUse;
   BITMAPINFO local_22c [12];
-  
+
   if (param_5 == (void *)0x0) {
     param_5 = (void *)FUN_006b4fa0((int)param_4);
   }

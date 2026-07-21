@@ -6,7 +6,7 @@ undefined4 __thiscall FUN_0065f5c0(void *this,short *param_1)
   int iVar2;
   uint uVar3;
   bool bVar4;
-  
+
   uVar3 = 0;
   iVar2 = *(int *)((int)this + 0x223);
   if (0 < *(int *)(iVar2 + 0xc)) {

@@ -7,18 +7,16 @@ undefined4 FUN_005ec9f0(int param_1)
   undefined1 *this;
   int iVar1;
   undefined4 uVar2;
-  undefined4 unaff_ESI;
-  void *unaff_EDI;
   InternalExceptionFrame local_54;
   undefined **local_10;
   undefined4 local_c;
   AnonShape_005EC9F0_B12E6711 *local_8;
-  
+
   local_c = 0;
   local_10 = &PTR_s_cont1_007cde70;
   local_54.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_54;
-  iVar1 = Library::MSVCRT::__setjmp3(local_54.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar1 = Library::MSVCRT::__setjmp3(local_54.jumpBuffer,0);
   if (iVar1 != 0) {
     g_currentExceptionFrame = local_54.previous;
     return local_c;

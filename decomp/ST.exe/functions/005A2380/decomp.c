@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\fsgs_obj.cpp
@@ -7,17 +9,15 @@ void __thiscall FSGSTy::AddPlayer(FSGSTy *this,undefined4 *param_1)
 
 {
   byte bVar1;
-  uint *puVar2;
+  DArrayTy *pDVar2;
   code *pcVar3;
   FSGSTy *this_00;
   int iVar4;
   undefined4 uVar5;
   int iVar6;
   uint uVar7;
-  undefined4 unaff_ESI;
   undefined4 *puVar8;
   byte *pbVar9;
-  void *unaff_EDI;
   byte *pbVar10;
   bool bVar11;
   byte local_b0 [48];
@@ -26,19 +26,21 @@ void __thiscall FSGSTy::AddPlayer(FSGSTy *this,undefined4 *param_1)
   undefined1 local_f;
   FSGSTy *local_c;
   undefined4 *local_8;
-  
+
   if ((this->field_1A5F == CASE_6) && (this->field_1A60 == '\0')) {
     local_80.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_80;
     local_c = this;
-    iVar4 = Library::MSVCRT::__setjmp3(local_80.jumpBuffer,0,unaff_EDI,unaff_ESI);
+    iVar4 = Library::MSVCRT::__setjmp3(local_80.jumpBuffer,0);
     this_00 = local_c;
     if (iVar4 == 0) {
       local_c->field_002D = 0x26;
       FUN_006e6080(local_c,2,local_c->field_1B20,(undefined4 *)&local_c->field_0x1d);
-      puVar2 = (uint *)this_00->field_1EA6;
-      if ((uint)*(ushort *)&this_00->field_0x31 < puVar2[3]) {
-        local_8 = (undefined4 *)(puVar2[2] * (uint)*(ushort *)&this_00->field_0x31 + puVar2[7]);
+      pDVar2 = this_00->field_1EA6;
+      if ((uint)*(ushort *)&this_00->field_0x31 < pDVar2->count) {
+        /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(pDVar2, (uint)*(ushort *)&this_00->field_0x31) (runtime stride) */
+        local_8 = (undefined4 *)
+                  (pDVar2->elementSize * (uint)*(ushort *)&this_00->field_0x31 + (int)pDVar2->data);
       }
       else {
         local_8 = (undefined4 *)0x0;
@@ -61,15 +63,15 @@ void __thiscall FSGSTy::AddPlayer(FSGSTy *this,undefined4 *param_1)
       }
       *(undefined1 *)puVar8 = *(undefined1 *)param_1;
       local_f = 0;
-      Library::DKW::TBL::FUN_006ae1c0(puVar2,local_3c);
+      Library::DKW::TBL::FUN_006ae1c0(&pDVar2->flags,local_3c);
       FUN_006b5f80(DAT_008075a8,0x1e9,0x5e,0x124,0xf3);
       PutDDXClip(0x1e9,0x5e,0,0,0x124,(byte *)0xf3,'\x01',(BITMAPINFO *)this_00->field_1E9A);
       this_00->field_002D = 0x28;
-      *(undefined4 *)&this_00->field_0x31 = *(undefined4 *)(this_00->field_1EA6 + 0xc);
+      *(dword *)&this_00->field_0x31 = this_00->field_1EA6->count;
       *(undefined2 *)&this_00->field_0x35 = 1;
       FUN_006e6080(this_00,2,this_00->field_1B20,(undefined4 *)&this_00->field_0x1d);
       this_00->field_002D = 0x20;
-      if ((*(int *)(this_00->field_1EA6 + 0xc) == 0) || (this_00->field_1A6B == 0)) {
+      if ((this_00->field_1EA6->count == 0) || (this_00->field_1A6B == 0)) {
         uVar5 = 0;
       }
       else {
@@ -79,15 +81,16 @@ void __thiscall FSGSTy::AddPlayer(FSGSTy *this,undefined4 *param_1)
       FUN_006e6080(this_00,2,this_00->field_1B20,(undefined4 *)&this_00->field_0x1d);
       if (local_8 != (undefined4 *)0x0) {
         uVar7 = 0;
-        local_8 = *(undefined4 **)(this_00->field_1EA6 + 0xc);
+        local_8 = (undefined4 *)this_00->field_1EA6->count;
         if (local_8 != (undefined4 *)0x0) {
           if (local_8 == (undefined4 *)0x0) {
             pbVar9 = (byte *)0x0;
             goto LAB_005a252f;
           }
           do {
-            pbVar9 = (byte *)(*(int *)(this_00->field_1EA6 + 8) * uVar7 +
-                             *(int *)(this_00->field_1EA6 + 0x1c));
+            /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(array, index) (runtime elementSize cannot be a static C array) */
+            pbVar9 = (byte *)(this_00->field_1EA6->elementSize * uVar7 +
+                             (int)this_00->field_1EA6->data);
 LAB_005a252f:
             if (pbVar9 != (byte *)0x0) {
               pbVar10 = local_b0;
@@ -133,9 +136,7 @@ LAB_005a2562:
     iVar6 = ReportDebugMessage(s_E____titans_Start_fsgs_obj_cpp_007cbf70,0xa12,0,iVar4,&DAT_007a4ccc
                                ,s_FSGSTy__AddPlayer_007cc4b4);
     if (iVar6 != 0) {
-      pcVar3 = (code *)swi(3);
-      (*pcVar3)();
-      return;
+      STDebugBreak(); /* noreturn in standalone pseudocode */
     }
     RaiseInternalException(iVar4,0,s_E____titans_Start_fsgs_obj_cpp_007cbf70,0xa12);
   }

@@ -1,13 +1,15 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\load_obj.cpp
    ChooseMapTy::PrepFiles
-   
+
    [STSwitchEnumApplier] Switch target field_1A5F uses
    /SubmarineTitans/Recovered/Enums/ChooseMapTy_field_1A5FState. Cases:
    CASE_1=1;CASE_2=2;CASE_4=4;CASE_5=5;CASE_9=9;CASE_A=10;CASE_B=11;CASE_C=12;CASE_13=19
-   
+
    [STSwitchEnumApplier] Switch target field_1A5F uses
    /SubmarineTitans/Recovered/Enums/ChooseMapTy_field_1A5FState. Cases:
    CASE_0=0;CASE_1=1;CASE_2=2;CASE_3=3;CASE_4=4;CASE_5=5;CASE_6=6;CASE_7=7;CASE_9=9;CASE_A=10;CASE_B=11;CASE_C=12;CASE_10=16;CASE_13=19;CASE_14=20;CASE_15=21
@@ -20,7 +22,7 @@ void __thiscall ChooseMapTy::PrepFiles(ChooseMapTy *this,uint param_1)
   ChooseMapTy_field_1A5FState CVar2;
   byte bVar3;
   StartSystemTy *pSVar4;
-  AnonShape_006C7610_838EDECF *pAVar5;
+  AnonShape_006B5B10_E0D06CF1 *pAVar5;
   code *pcVar6;
   int iVar7;
   AnonPointee_ChooseMapTy_1C97 *pAVar8;
@@ -34,24 +36,25 @@ void __thiscall ChooseMapTy::PrepFiles(ChooseMapTy *this,uint param_1)
   int iVar16;
   uint uVar17;
   cMf32 *this_00;
+  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   cMf32 *extraout_ECX;
+  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   cMf32 *extraout_ECX_00;
   cMf32 *pcVar18;
+  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   cMf32 *extraout_ECX_01;
   char *pcVar19;
   ChooseMapTy *this_01;
-  undefined4 unaff_ESI;
   byte *pbVar20;
   CHAR *pCVar21;
-  void *unaff_EDI;
   uint uVar22;
   byte *pbVar23;
   CHAR *pCVar24;
   char *pcVar25;
   undefined4 *puVar26;
   bool bVar27;
-  undefined4 uVar28;
-  AnonShape_006B8200_800652FF *pAVar29;
+  AnonShape_006B8200_800652FF *pAVar28;
+  undefined4 uVar29;
   byte local_370 [260];
   _WIN32_FIND_DATAA local_26c;
   InternalExceptionFrame local_12c;
@@ -72,7 +75,7 @@ void __thiscall ChooseMapTy::PrepFiles(ChooseMapTy *this,uint param_1)
   uint local_10;
   cMf32 *local_c;
   bool local_5;
-  
+
   local_2c = 0;
   local_c = (cMf32 *)0x0;
   local_30 = (cMf32 *)0x0;
@@ -115,16 +118,14 @@ switchD_005afd30_caseD_c:
   local_a4.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_a4;
   local_28 = this;
-  iVar7 = Library::MSVCRT::__setjmp3(local_a4.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar7 = Library::MSVCRT::__setjmp3(local_a4.jumpBuffer,0);
   this_01 = local_28;
   if (iVar7 != 0) {
     g_currentExceptionFrame = local_a4.previous;
     iVar16 = ReportDebugMessage(s_E____titans_Start_load_obj_cpp_007cc728,0x4f5,0,iVar7,
                                 &DAT_007a4ccc,s_ChooseMapTy__PrepFiles_007cc898);
     if (iVar16 != 0) {
-      pcVar6 = (code *)swi(3);
-      (*pcVar6)();
-      return;
+      STDebugBreak(); /* noreturn in standalone pseudocode */
     }
     RaiseInternalException(iVar7,0,s_E____titans_Start_load_obj_cpp_007cc728,0x4f5);
     return;
@@ -158,11 +159,13 @@ switchD_005afd30_caseD_c:
       puVar26 = puVar26 + 1;
     }
     *(undefined2 *)puVar26 = 0;
+    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
     local_60._2_2_ = 0xffff;
+    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
     local_60._0_2_ = 0xffff;
     MMsgTy::StatePanel(pSVar4->field_02E6,(int)&local_60);
   }
-  pAVar5 = (AnonShape_006C7610_838EDECF *)this_01->field_1C7B;
+  pAVar5 = (AnonShape_006B5B10_E0D06CF1 *)this_01->field_1C7B;
   FUN_006b4170(pAVar5,0,0,0,pAVar5->field_0004,pAVar5->field_0008,0);
   uVar22 = 0x3f;
   puVar9 = &this_01->field_1C23;
@@ -391,7 +394,7 @@ LAB_005b0041:
                 }
                 local_e8.previous = g_currentExceptionFrame;
                 g_currentExceptionFrame = &local_e8;
-                iVar7 = Library::MSVCRT::__setjmp3(local_e8.jumpBuffer,0,unaff_EDI,unaff_ESI);
+                iVar7 = Library::MSVCRT::__setjmp3(local_e8.jumpBuffer,0);
                 this_01 = local_28;
                 if (iVar7 == 0) {
                   pcVar11 = (cMf32 *)Library::Ourlib::MF32INT::FUN_006f0ec0
@@ -570,14 +573,12 @@ LAB_005b01f3:
   if (bVar27) {
     do {
       if (((byte)local_26c.dwFileAttributes & 0x10) == 0) {
-        pCVar21 = local_26c.cFileName;
-        uVar28 = 0;
         local_24 = (cMf32 *)0x0;
-        Library::MSVCRT::FUN_0072e730((byte *)pCVar21,(byte *)0x0,(byte *)0x0,local_370,(byte *)0x0)
-        ;
+        Library::MSVCRT::FUN_0072e730
+                  ((byte *)local_26c.cFileName,(byte *)0x0,(byte *)0x0,local_370,(byte *)0x0);
         local_12c.previous = g_currentExceptionFrame;
         g_currentExceptionFrame = &local_12c;
-        iVar7 = Library::MSVCRT::__setjmp3(local_12c.jumpBuffer,0,pCVar21,uVar28);
+        iVar7 = Library::MSVCRT::__setjmp3(local_12c.jumpBuffer,0);
         this_01 = local_28;
         if (iVar7 == 0) {
           uVar22 = 0xffffffff;
@@ -658,6 +659,7 @@ LAB_005b01f3:
           if (bVar27) {
             local_14 = &local_24;
             puVar12 = cMf32::RecGet(pcVar11,0x80,PTR_s_SAVE_DESC_0079c070,(int *)&local_14,0);
+            /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
             pcVar18 = extraout_ECX;
             if ((puVar12 != (ushort *)0x0) && (pcVar18 = local_24, local_c == local_24)) {
               Library::DKW::TBL::FUN_006ae1c0
@@ -675,12 +677,14 @@ LAB_005b051b:
               pAVar8 = this_01->field_1C97;
 LAB_005b0523:
               Library::DKW::TBL::FUN_006b5aa0((uint *)pAVar8,(char *)pbVar23);
+              /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
               pcVar18 = extraout_ECX_01;
             }
           }
           else {
             local_14 = (cMf32 **)&DAT_008087b6;
             puVar12 = cMf32::RecGet(pcVar11,0,PTR_s_DESCRIPTOR_0079c078,(int *)&local_14,0);
+            /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
             pcVar18 = extraout_ECX_00;
             if (((puVar12 != (ushort *)0x0) && (DAT_008087b6 != 0)) &&
                ((_DAT_008087ba == local_c ||
@@ -695,6 +699,7 @@ LAB_005b0523:
               iVar7 = 8;
               do {
                 if (((byte)pcVar19[0x22] < 8) && (*pcVar19 == '\0')) {
+                  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                   pcVar18 = (cMf32 *)CONCAT31((int3)((uint)pcVar18 >> 8),(char)pcVar18 + '\x01');
                 }
                 pcVar19 = pcVar19 + 0x51;
@@ -725,7 +730,7 @@ LAB_005b0523:
     this_01->field_002D = 0x22;
     *(undefined4 *)&this_01->field_0x31 = 0;
     FUN_006e6080(this_01,2,this_01->field_1A6C,(undefined4 *)&this_01->field_0x1d);
-    uVar28 = this_01->field_1A6C;
+    uVar29 = this_01->field_1A6C;
     this_01->field_002D = 5;
     goto LAB_005b07ac;
   }
@@ -796,7 +801,7 @@ LAB_005b0639:
             }
             iVar7 = Library::MSVCRT::__strcmpi(pcVar15,pcVar19);
             if (0 < iVar7) {
-              pAVar29 = (AnonShape_006B8200_800652FF *)this_01->field_1C97;
+              pAVar28 = (AnonShape_006B8200_800652FF *)this_01->field_1C97;
               goto LAB_005b06e8;
             }
           }
@@ -806,9 +811,9 @@ LAB_005b0639:
             LVar14 = CompareFileTime(&local_3c,&local_44);
             if (LVar14 < 0) {
               FUN_006b0cd0((AnonShape_00413AF0_B6B4EE9A *)this_01->field_1C9B,uVar22,uVar22 + 1);
-              pAVar29 = (AnonShape_006B8200_800652FF *)this_01->field_1C97;
+              pAVar28 = (AnonShape_006B8200_800652FF *)this_01->field_1C97;
 LAB_005b06e8:
-              FUN_006b8200(pAVar29,uVar22,uVar22 + 1);
+              FUN_006b8200(pAVar28,uVar22,uVar22 + 1);
               local_1c = 1;
             }
           }
@@ -829,9 +834,9 @@ LAB_005b06e8:
     param_1 = uVar22 - 1;
   }
   *(uint *)&this_01->field_0x31 = param_1;
-  uVar28 = this_01->field_1A6C;
+  uVar29 = this_01->field_1A6C;
 LAB_005b07ac:
-  FUN_006e6080(this_01,2,uVar28,(undefined4 *)&this_01->field_0x1d);
+  FUN_006e6080(this_01,2,uVar29,(undefined4 *)&this_01->field_0x1d);
   this_01->field_1A64 = 1;
   this_01->field_1A68 = this_01->field_0061;
   g_currentExceptionFrame = local_a4.previous;

@@ -1,8 +1,10 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\startsys.cpp
    StartSystemTy::ChatMessage
-   
+
    [STPrototypeApplier] Propagated parameter 1.
    Evidence: 005B0BA0 -> 005DD470 @ 005B0BFB | 005D1400 -> 005DD470 @ 005D1464 | 005EA680 ->
    005DD470 @ 005EA6DB */
@@ -12,17 +14,14 @@ void __thiscall StartSystemTy::ChatMessage(StartSystemTy *this,AnonShape_005DE05
 {
   ushort uVar1;
   AnonShape_006B5B10_E0D06CF1 *pAVar2;
-  AnonShape_006C7610_838EDECF *pAVar3;
-  code *pcVar4;
+  code *pcVar3;
   SystemClassTy *this_00;
-  undefined4 *puVar5;
+  undefined4 *puVar4;
+  int iVar5;
   int iVar6;
-  int iVar7;
+  uint uVar7;
   uint uVar8;
-  uint uVar9;
-  uint *puVar10;
-  undefined4 unaff_ESI;
-  void *unaff_EDI;
+  uint *puVar9;
   InternalExceptionFrame local_74;
   undefined4 local_30 [4];
   undefined4 local_20;
@@ -30,84 +29,83 @@ void __thiscall StartSystemTy::ChatMessage(StartSystemTy *this,AnonShape_005DE05
   int local_10;
   int local_c;
   SystemClassTy *local_8;
-  
-  puVar5 = local_30;
+
+  puVar4 = local_30;
   local_8 = (SystemClassTy *)this;
-  for (iVar7 = 8; iVar7 != 0; iVar7 = iVar7 + -1) {
-    *puVar5 = 0;
-    puVar5 = puVar5 + 1;
+  for (iVar6 = 8; iVar6 != 0; iVar6 = iVar6 + -1) {
+    *puVar4 = 0;
+    puVar4 = puVar4 + 1;
   }
   local_74.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_74;
-  iVar7 = Library::MSVCRT::__setjmp3(local_74.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar6 = Library::MSVCRT::__setjmp3(local_74.jumpBuffer,0);
   this_00 = local_8;
-  if (iVar7 != 0) {
+  if (iVar6 != 0) {
     g_currentExceptionFrame = local_74.previous;
-    iVar6 = ReportDebugMessage(s_E____titans_Start_startsys_cpp_007cd718,0x349,0,iVar7,&DAT_007a4ccc
+    iVar5 = ReportDebugMessage(s_E____titans_Start_startsys_cpp_007cd718,0x349,0,iVar6,&DAT_007a4ccc
                                ,s_StartSystemTy__ChatMessage_007cd86c);
-    if (iVar6 == 0) {
-      RaiseInternalException(iVar7,0,s_E____titans_Start_startsys_cpp_007cd718,0x349);
+    if (iVar5 == 0) {
+      RaiseInternalException(iVar6,0,s_E____titans_Start_startsys_cpp_007cd718,0x349);
       return;
     }
-    pcVar4 = (code *)swi(3);
-    (*pcVar4)();
-    return;
+    STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  iVar7 = *(int *)&param_1->field_0x10;
-  if (iVar7 == 0x633f) {
+  iVar6 = *(int *)&param_1->field_0x10;
+  if (iVar6 == 0x633f) {
     if ((((*(int *)((int)&local_8[0x33].parentSystem + 2) != 0) && (DAT_0080c4fa != 0)) &&
         (-1 < (int)local_8[0x2a].app)) &&
-       ((param_1 != (AnonShape_005DE050_5BD86458 *)0x0 && (iVar7 = param_1->field_001C, iVar7 != 0))
+       ((param_1 != (AnonShape_005DE050_5BD86458 *)0x0 && (iVar6 = param_1->field_001C, iVar6 != 0))
        )) {
-      puVar10 = (uint *)local_8[1].systemId;
-      local_10 = iVar7;
-      if (puVar10[0x28] != 0) {
-        FUN_00710790(puVar10);
+      puVar9 = (uint *)local_8[1].systemId;
+      local_10 = iVar6;
+      if (puVar9[0x28] != 0) {
+        FUN_00710790(puVar9);
       }
-      pAVar3 = *(AnonShape_006C7610_838EDECF **)((int)&this_00[0x33].parentSystem + 2);
-      local_c = *(int *)((int)puVar10 + 0x8a);
-      FUN_006b4170(pAVar3,0,0,0,pAVar3->field_0004,pAVar3->field_0008,0xff);
-      uVar8 = (uint)param_1->field_0016;
-      iVar6 = DAT_0080c4fa;
-      uVar9 = uVar8;
-      if ((int)uVar8 < (int)(uVar8 + *(int *)(iVar7 + 0x1e0))) {
+      pAVar2 = *(AnonShape_006B5B10_E0D06CF1 **)((int)&this_00[0x33].parentSystem + 2);
+      local_c = *(int *)((int)puVar9 + 0x8a);
+      FUN_006b4170(pAVar2,0,0,0,pAVar2->field_0004,pAVar2->field_0008,0xff);
+      uVar7 = (uint)param_1->field_0016;
+      iVar5 = DAT_0080c4fa;
+      uVar8 = uVar7;
+      if ((int)uVar7 < (int)(uVar7 + *(int *)(iVar6 + 0x1e0))) {
         do {
-          if ((int)uVar9 < *(int *)(iVar6 + 8)) {
-            puVar10 = *(uint **)(*(int *)(iVar6 + 0x14) + uVar9 * 4);
+          if ((int)uVar8 < *(int *)(iVar5 + 8)) {
+            puVar9 = *(uint **)(*(int *)(iVar5 + 0x14) + uVar8 * 4);
           }
           else {
-            puVar10 = (uint *)0x0;
+            puVar9 = (uint *)0x0;
           }
-          if (puVar10 != (uint *)0x0) {
-            iVar7 = *(int *)((int)&this_00[0x33].parentSystem + 2);
-            ccFntTy::SetSurf((ccFntTy *)this_00[1].systemId,iVar7,0,0,(uVar9 - uVar8) * local_c,
-                             *(int *)(iVar7 + 4),local_c);
-            ccFntTy::WrStr((ccFntTy *)this_00[1].systemId,puVar10,0,-1,0);
-            iVar6 = DAT_0080c4fa;
+          if (puVar9 != (uint *)0x0) {
+            iVar6 = *(int *)((int)&this_00[0x33].parentSystem + 2);
+            ccFntTy::SetSurf((ccFntTy *)this_00[1].systemId,iVar6,0,0,(uVar8 - uVar7) * local_c,
+                             *(int *)(iVar6 + 4),local_c);
+            ccFntTy::WrStr((ccFntTy *)this_00[1].systemId,puVar9,0,-1,0);
+            iVar5 = DAT_0080c4fa;
           }
-          uVar9 = uVar9 + 1;
-          uVar8 = (uint)param_1->field_0016;
-        } while ((int)uVar9 < (int)(uVar8 + *(int *)(local_10 + 0x1e0)));
+          uVar8 = uVar8 + 1;
+          uVar7 = (uint)param_1->field_0016;
+        /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
+        } while ((int)uVar8 < (int)(uVar7 + *(int *)(local_10 + 0x1e0)));
       }
       FUN_006b35d0(DAT_008075a8,(uint)this_00[0x2a].app);
     }
   }
   else {
-    if (iVar7 == 0xc0a0) {
-      iVar7 = *(int *)((int)&local_8[0x34].vtable + 2);
-      uVar9 = *(uint *)(iVar7 + 0x14);
-      if (uVar9 == 0) {
-        uVar9 = ((uint)*(ushort *)(iVar7 + 0xe) * *(int *)(iVar7 + 4) + 0x1f >> 3 & 0x1ffffffc) *
-                *(int *)(iVar7 + 8);
+    if (iVar6 == 0xc0a0) {
+      iVar6 = *(int *)((int)&local_8[0x34].vtable + 2);
+      uVar8 = *(uint *)(iVar6 + 0x14);
+      if (uVar8 == 0) {
+        uVar8 = ((uint)*(ushort *)(iVar6 + 0xe) * *(int *)(iVar6 + 4) + 0x1f >> 3 & 0x1ffffffc) *
+                *(int *)(iVar6 + 8);
       }
-      puVar5 = (undefined4 *)FUN_006b4fa0(iVar7);
-      for (uVar8 = uVar9 >> 2; uVar8 != 0; uVar8 = uVar8 - 1) {
-        *puVar5 = 0xffffffff;
-        puVar5 = puVar5 + 1;
+      puVar4 = (undefined4 *)FUN_006b4fa0(iVar6);
+      for (uVar7 = uVar8 >> 2; uVar7 != 0; uVar7 = uVar7 - 1) {
+        *puVar4 = 0xffffffff;
+        puVar4 = puVar4 + 1;
       }
-      for (uVar9 = uVar9 & 3; uVar9 != 0; uVar9 = uVar9 - 1) {
-        *(undefined1 *)puVar5 = 0xff;
-        puVar5 = (undefined4 *)((int)puVar5 + 1);
+      for (uVar8 = uVar8 & 3; uVar8 != 0; uVar8 = uVar8 - 1) {
+        *(undefined1 *)puVar4 = 0xff;
+        puVar4 = (undefined4 *)((int)puVar4 + 1);
       }
       ccFntTy::SetSurf((ccFntTy *)this_00[1].systemId,*(int *)((int)&this_00[0x34].vtable + 2),0,0,0
                        ,0,0);
@@ -125,7 +123,7 @@ void __thiscall StartSystemTy::ChatMessage(StartSystemTy *this,AnonShape_005DE05
       g_currentExceptionFrame = local_74.previous;
       return;
     }
-    if ((iVar7 == 0xc0a1) && (local_8[0x2a].objectLock != (void *)0x0)) {
+    if ((iVar6 == 0xc0a1) && (local_8[0x2a].objectLock != (void *)0x0)) {
       local_20 = 0x21;
       SystemClassTy::SendMessage(local_8,2,(int)local_8[0x2a].objectLock,(int)local_30);
       if (local_1c == 0) {

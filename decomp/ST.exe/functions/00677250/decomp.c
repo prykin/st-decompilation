@@ -4,7 +4,7 @@ undefined4 __cdecl FUN_00677250(undefined4 param_1,undefined4 param_2,int param_
 {
   uint *puVar1;
   uint uVar2;
-  
+
   puVar1 = param_4;
   if (param_4 != (uint *)0x0) {
     uVar2 = thunk_FUN_00423120(param_3);

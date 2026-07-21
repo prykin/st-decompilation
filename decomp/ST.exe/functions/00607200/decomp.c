@@ -13,6 +13,7 @@ FUN_00607200(void *this,int param_1,int param_2,int param_3,Global_sub_00606CD0_
   int *piVar8;
   AnonShape_00627EB0_4C14C976 *pAVar9;
   AnonNested_00627EB0_0014_B8FBF6AA *pAVar10;
+  /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
   char in_stack_00000020;
   uint local_10c [20];
   AnonShape_00627EB0_4C14C976 local_bc;
@@ -43,7 +44,8 @@ FUN_00607200(void *this,int param_1,int param_2,int param_3,Global_sub_00606CD0_
   uint local_10;
   int local_c;
   int local_8;
-  
+
+  /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
   local_10 = GetPlayerRaceId(in_stack_00000020);
   local_10 = local_10 & 0xff;
   local_14 = thunk_FUN_00606cd0(param_4,&local_6c,&local_78,&local_1c,&local_7c);
@@ -113,6 +115,7 @@ LAB_0060731e:
       if (uVar2 == 1) {
         uVar2 = *(int *)((int)this + 0x1c) * 0x41c64e6d + 0x3039;
         *(uint *)((int)this + 0x1c) = uVar2;
+        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
         uVar2 = (uint)CONCAT11(8,(char)((uVar2 >> 0x10) % 9) + '\a');
 LAB_0060740b:
         *puVar4 = uVar2;
@@ -121,6 +124,7 @@ LAB_0060740b:
         if (uVar2 == 2) {
           uVar2 = *(int *)((int)this + 0x1c) * 0x41c64e6d + 0x3039;
           *(uint *)((int)this + 0x1c) = uVar2;
+          /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
           uVar2 = (uint)CONCAT11(2,(char)((uVar2 >> 0x10) % 9) + '\a');
           goto LAB_0060740b;
         }
@@ -130,6 +134,7 @@ LAB_0060740b:
           if ((uVar2 & 0x30000) != 0) {
             uVar2 = *(int *)((int)this + 0x1c) * 0x41c64e6d + 0x3039;
             *(uint *)((int)this + 0x1c) = uVar2;
+            /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
             uVar2 = (uint)CONCAT11(0x20,(char)((uVar2 >> 0x10) % 5) + '\x05');
             goto LAB_0060740b;
           }
@@ -153,6 +158,7 @@ LAB_0060740b:
       if ((uVar2 >> 0x10) % 3 != 0) {
         uVar2 = *(int *)((int)this + 0x1c) * 0x41c64e6d + 0x3039;
         *(uint *)((int)this + 0x1c) = uVar2;
+        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
         uVar2 = (uint)CONCAT11(0x10,(char)((ulonglong)(uVar2 >> 0x10) % 3));
         goto LAB_006074c8;
       }
@@ -189,6 +195,7 @@ LAB_006074c8:
         pAVar10 = (AnonNested_00627EB0_0014_B8FBF6AA *)&pAVar10->field_0x4;
       }
       *(undefined2 *)&pAVar10->field_0000 = 0;
+      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
       local_68._8_4_ = 0;
       local_68.field_000C = 0;
       local_54 = *local_18;

@@ -8,7 +8,7 @@ undefined4 __fastcall FUN_004ed210(TLOBaseTy *param_1)
   int iVar2;
   int iVar3;
   int iVar4;
-  
+
   TVar1 = param_1->field_04D0;
   if ((TVar1 == CASE_3) || (TVar1 == CASE_5)) {
     iVar2 = thunk_FUN_004ac910(&param_1->field_01D5,'\x0e');

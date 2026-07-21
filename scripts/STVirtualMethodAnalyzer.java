@@ -289,6 +289,9 @@ public class STVirtualMethodAnalyzer extends GhidraScript {
         StructuralSignature structural = anchorChoice.anchor == null &&
             !anchorChoice.conflict.startsWith("competing_") ?
                 receiverOnlyLeafSignature(function) : null;
+        if (structural == null && anchorChoice.anchor == null &&
+                !anchorChoice.conflict.startsWith("competing_"))
+            structural = stackCleanupLeafSignature(function, family);
         boolean anchoredSignatureApply = family != null && anchorChoice.anchor != null &&
             !signatureManual && !owner.isBlank() && !ownerTypePath.isBlank() &&
             !signatureMatches(function, anchorChoice.anchor.function);
@@ -297,7 +300,7 @@ public class STVirtualMethodAnalyzer extends GhidraScript {
             !ownerTypePath.isBlank() && !structuralSignatureMatches(function, structural);
         boolean signatureApply = anchoredSignatureApply || structuralSignatureApply;
         if (structuralSignatureApply)
-            reasons.add("receiver_only_leaf_virtual_signature");
+            reasons.add(structural.evidence);
         boolean conventionApply = family != null && family.namedMethods.size() == 1 &&
             family.hasNamedThiscallAnchor && !signatureManual && !owner.isBlank() &&
             !ownerTypePath.isBlank() &&
@@ -314,11 +317,16 @@ public class STVirtualMethodAnalyzer extends GhidraScript {
         Anchor anchor = anchorChoice.anchor;
         String returnType = anchor != null ? anchor.function.getReturnType().getPathName() :
             structural != null ? structural.returnTypePath : "";
-        String parameters = anchor != null ? parameterSpecification(anchor.function) : "";
+        String parameters = anchor != null ? parameterSpecification(anchor.function) :
+            structural != null ? structural.parameters : "";
+        boolean varargs = anchor != null ? anchor.function.hasVarArgs() :
+            structural != null && structural.varargs;
+        boolean noreturn = anchor != null ? anchor.function.hasNoReturn() :
+            structural != null && structural.noreturn;
         String proposedSignature = anchor != null && !proposedName.isBlank() ?
             prototype(proposedName, anchor.function) :
             structural != null && !proposedName.isBlank() ?
-                "dword __thiscall " + proposedName + "()" : "";
+                structuralPrototype(proposedName, structural) : "";
         return new Proposal(function.getEntryPoint(), function.getName(true),
             function.getSymbol().getSource().toString(),
             function.getSignature().getPrototypeString(true),
@@ -329,8 +337,7 @@ public class STVirtualMethodAnalyzer extends GhidraScript {
             anchor == null ? "" : addr(anchor.function.getEntryPoint()),
             anchor == null ? "" : anchor.function.getName(true),
             anchor == null ? "" : anchor.function.getSignature().getPrototypeString(true),
-            returnType, parameters, anchor != null && anchor.function.hasVarArgs(),
-            anchor != null && anchor.function.hasNoReturn(), proposedSignature,
+            returnType, parameters, varargs, noreturn, proposedSignature,
             nameApply, conventionApply, signatureApply, confidence, String.join("; ", reasons));
     }
 
@@ -356,15 +363,131 @@ public class STVirtualMethodAnalyzer extends GhidraScript {
         }
         if (last == null || !"RET".equalsIgnoreCase(last.getMnemonicString()) ||
                 last.getNumOperands() != 0 || !readsEcx || !writesEax) return null;
-        return new StructuralSignature("/dword");
+        return new StructuralSignature("/dword", "", false, false,
+            "receiver_only_leaf_virtual_signature", "dword");
+    }
+
+    /**
+     * A leaf consisting only of RET n is a common no-op virtual implementation.
+     * On 32-bit MSVC this proves the number of explicit __thiscall arguments even
+     * though the body never reads them.  Prefer a reviewed implementation in the
+     * same slot family for the actual types; otherwise retain compilable dwords.
+     */
+    private StructuralSignature stackCleanupLeafSignature(Function function, Family family) {
+        if (function == null || family == null || function.isThunk() ||
+                function.getBody().getNumAddresses() > 16) return null;
+        InstructionIterator instructions = listing.getInstructions(function.getBody(), true);
+        Instruction returned = null;
+        int meaningful = 0;
+        while (instructions.hasNext()) {
+            Instruction instruction = instructions.next();
+            String mnemonic = instruction.getMnemonicString().toUpperCase(Locale.ROOT);
+            if (mnemonic.equals("NOP") || mnemonic.equals("INT3")) continue;
+            meaningful++;
+            if (!mnemonic.startsWith("RET") || returned != null) return null;
+            returned = instruction;
+        }
+        if (meaningful != 1 || returned == null || returned.getNumOperands() != 1) return null;
+        Integer cleanup = unsignedInteger(returned.getDefaultOperandRepresentation(0));
+        int pointerSize = currentProgram.getDefaultPointerSize();
+        if (cleanup == null || cleanup <= 0 || cleanup % pointerSize != 0) return null;
+        int count = cleanup / pointerSize;
+
+        Map<String, List<Function>> shapes = new TreeMap<>();
+        for (Context context : family.contexts) {
+            Function sibling = context.target;
+            if (sibling == null || sibling.equals(function) ||
+                    !"__thiscall".equals(sibling.getCallingConventionName()) ||
+                    explicitParameters(sibling).size() != count ||
+                    !trustedSignature(sibling)) continue;
+            shapes.computeIfAbsent(signatureShape(sibling), ignored -> new ArrayList<>())
+                .add(sibling);
+        }
+        if (shapes.size() == 1) {
+            List<Function> choices = shapes.values().iterator().next();
+            choices.sort(Comparator.comparing((Function item) ->
+                item.getSignatureSource() == SourceType.USER_DEFINED ? 0 : 1)
+                .thenComparing(Function::getEntryPoint));
+            Function sibling = choices.get(0);
+            return new StructuralSignature(sibling.getReturnType().getPathName(),
+                parameterSpecification(sibling), sibling.hasVarArgs(), sibling.hasNoReturn(),
+                "ret_stack_cleanup_signature_from_slot_sibling=" +
+                    sibling.getName(true) + " cleanup=" + cleanup,
+                sibling.getReturnType().getDisplayName());
+        }
+
+        List<String> parameters = new ArrayList<>();
+        for (int index = 1; index <= count; index++)
+            parameters.add("param_" + index + "=/undefined4");
+        return new StructuralSignature("/void", String.join(";", parameters), false, false,
+            "ret_stack_cleanup_argument_count cleanup=" + cleanup +
+                " (types remain provisional)", "void");
+    }
+
+    private boolean trustedSignature(Function function) {
+        if (function.getSignatureSource() == SourceType.USER_DEFINED ||
+                function.getSignatureSource() == SourceType.IMPORTED) return true;
+        for (FunctionTag tag : function.getTags()) {
+            String name = tag.getName();
+            if (name.equals("RECOVERED_SWITCH_ENUM") ||
+                    name.equals("RECOVERED_CURATED_PROPOSAL") ||
+                    name.equals("RECOVERED_VIRTUAL_METHOD") ||
+                    name.equals("RECOVERED_ABI_CONSISTENCY")) return true;
+        }
+        return false;
+    }
+
+    private Integer unsignedInteger(String text) {
+        String value = text == null ? "" : text.trim().toUpperCase(Locale.ROOT);
+        try {
+            if (value.startsWith("0X")) return Integer.parseUnsignedInt(value.substring(2), 16);
+            if (value.endsWith("H"))
+                return Integer.parseUnsignedInt(value.substring(0, value.length() - 1), 16);
+            return Integer.parseInt(value);
+        }
+        catch (NumberFormatException exception) { return null; }
     }
 
     private boolean structuralSignatureMatches(Function function, StructuralSignature signature) {
         if (!"__thiscall".equals(function.getCallingConventionName()) ||
-                !explicitParameters(function).isEmpty() || function.hasVarArgs() ||
-                function.hasNoReturn()) return false;
+                function.hasVarArgs() != signature.varargs ||
+                function.hasNoReturn() != signature.noreturn) return false;
         DataType expected = dataTypes.getDataType(signature.returnTypePath);
-        return expected != null && expected.isEquivalent(function.getReturnType());
+        if (expected == null || !expected.isEquivalent(function.getReturnType())) return false;
+        List<Parameter> actual = explicitParameters(function);
+        String[] desired = signature.parameters.isBlank() ? new String[0] :
+            signature.parameters.split(";", -1);
+        if (actual.size() != desired.length) return false;
+        for (int index = 0; index < desired.length; index++) {
+            int separator = desired[index].indexOf('=');
+            if (separator < 0) return false;
+            DataType type = dataTypes.getDataType(desired[index].substring(separator + 1));
+            if (type == null || !type.isEquivalent(actual.get(index).getFormalDataType()))
+                return false;
+        }
+        return true;
+    }
+
+    private String structuralPrototype(String qualified, StructuralSignature signature) {
+        StringBuilder out = new StringBuilder(signature.returnDisplayName)
+            .append(" __thiscall ").append(qualified).append('(');
+        boolean first = true;
+        if (!signature.parameters.isBlank()) {
+            for (String item : signature.parameters.split(";", -1)) {
+                int separator = item.indexOf('=');
+                if (separator <= 0) continue;
+                DataType type = dataTypes.getDataType(item.substring(separator + 1));
+                if (!first) out.append(", ");
+                first = false;
+                out.append(type == null ? item.substring(separator + 1) : type.getDisplayName())
+                    .append(' ').append(item.substring(0, separator));
+            }
+        }
+        if (signature.varargs) {
+            if (!first) out.append(", ");
+            out.append("...");
+        }
+        return out.append(')').toString();
     }
 
     private AnchorChoice chooseAnchor(Family family, String familyMethod, Function target) {
@@ -702,10 +825,13 @@ public class STVirtualMethodAnalyzer extends GhidraScript {
             "note_names=Only synthetic ANALYSIS/DEFAULT targets with one owner and one anchored " +
                 "slot-family method are auto-named.",
             "note_signatures=Signatures come only from one agreed, meaningful USER_DEFINED anchor " +
-                "shape, or from a branch-free receiver-only leaf getter with no stack arguments; " +
-                "auto this types must already exist.",
+                "shape, a branch-free receiver-only leaf getter, or a one-instruction RET n " +
+                "virtual no-op whose cleanup proves the explicit argument count; the applier " +
+                "establishes the proven class namespace before Ghidra synthesizes auto this.",
             "note_leaf_getters=Structural leaf recovery applies __thiscall dword() but does not " +
                 "invent a semantic method name or a narrower return type.",
+            "note_ret_cleanup=RET n no-ops reuse one trusted slot-family signature when available; " +
+                "otherwise they receive the proven count with provisional undefined4 arguments.",
             "note_conventions=Convention-only conversion requires one owner type and no explicit " +
                 "parameters; anchored signature replacement may safely rebuild parameters.",
             "note_thunks=Names and signatures target the final thunk destination; adjustor thunk " +
@@ -916,8 +1042,17 @@ public class STVirtualMethodAnalyzer extends GhidraScript {
     }
 
     private static class StructuralSignature {
-        final String returnTypePath;
-        StructuralSignature(String returnTypePath) { this.returnTypePath = returnTypePath; }
+        final String returnTypePath, parameters, evidence, returnDisplayName;
+        final boolean varargs, noreturn;
+        StructuralSignature(String returnTypePath, String parameters, boolean varargs,
+                boolean noreturn, String evidence, String returnDisplayName) {
+            this.returnTypePath = returnTypePath;
+            this.parameters = parameters;
+            this.varargs = varargs;
+            this.noreturn = noreturn;
+            this.evidence = evidence;
+            this.returnDisplayName = returnDisplayName;
+        }
     }
 
     private static class Proposal {

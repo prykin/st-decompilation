@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\helppan.cpp
@@ -12,8 +14,6 @@ void __thiscall HelpPanelTy::HomeBut(HelpPanelTy *this)
   int iVar3;
   undefined4 *puVar4;
   int iVar5;
-  undefined4 unaff_ESI;
-  void *unaff_EDI;
   InternalExceptionFrame local_64;
   undefined4 local_20;
   undefined4 local_1c;
@@ -25,11 +25,11 @@ void __thiscall HelpPanelTy::HomeBut(HelpPanelTy *this)
   undefined1 local_d;
   HelpPanelTy *local_c;
   uint local_8;
-  
+
   local_64.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_64;
   local_c = this;
-  iVar3 = Library::MSVCRT::__setjmp3(local_64.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar3 = Library::MSVCRT::__setjmp3(local_64.jumpBuffer,0);
   this_00 = local_c;
   if (iVar3 == 0) {
     HVar1 = local_c->field_01A1;
@@ -49,13 +49,14 @@ void __thiscall HelpPanelTy::HomeBut(HelpPanelTy *this)
       local_c->field_002E = 2;
       *(undefined4 *)&local_c->field_0x30 = local_c->field_0178;
       if (PTR_00802a30 != (CursorClassTy *)0x0) {
+        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
         (*(code *)**(undefined4 **)PTR_00802a30)(&local_c->field_0x18);
       }
     }
     this_00->field_01CF = 0xffffffff;
     this_00->field_01CB->count = 0;
     Library::DKW::WGR::FUN_006b55f0
-              ((AnonShape_006B84D0_7C7D97C6 *)this_00->field_0068,0,0x21,0x16,
+              ((AnonShape_006B5B10_E0D06CF1 *)this_00->field_0068,0,0x21,0x16,
                (byte *)this_00->field_01DC,0,0x21,0x16,0x1b8,0x118);
     local_8 = 0;
     *(undefined4 *)&this_00->field_01B3->field_0xc = 0;
@@ -87,9 +88,7 @@ void __thiscall HelpPanelTy::HomeBut(HelpPanelTy *this)
   iVar5 = ReportDebugMessage(s_E____titans_Andrey_helppan_cpp_007c383c,0x295,0,iVar3,&DAT_007a4ccc,
                              s_HelpPanelTy__HomeBut_007c3a64);
   if (iVar5 != 0) {
-    pcVar2 = (code *)swi(3);
-    (*pcVar2)();
-    return;
+    STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   RaiseInternalException(iVar3,0,s_E____titans_Andrey_helppan_cpp_007c383c,0x295);
   return;

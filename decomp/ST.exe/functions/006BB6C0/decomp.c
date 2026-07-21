@@ -9,7 +9,7 @@ int FUN_006bb6c0(int param_1,undefined4 *param_2,undefined4 param_3,undefined4 p
   uint local_20;
   int local_c;
   int local_8;
-  
+
   puVar2 = local_88;
   for (iVar1 = 0x1f; iVar1 != 0; iVar1 = iVar1 + -1) {
     *puVar2 = 0;
@@ -24,14 +24,17 @@ int FUN_006bb6c0(int param_1,undefined4 *param_2,undefined4 param_3,undefined4 p
   }
   local_88[2] = param_4;
   local_88[3] = param_3;
+  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
   iVar1 = (**(code **)(**(int **)(param_1 + 0x30) + 0x18))
                     (*(int **)(param_1 + 0x30),local_88,param_2,0);
   if ((iVar1 == 0) && (param_5 != -1)) {
     local_8 = param_5;
     local_c = param_5;
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
     iVar1 = (**(code **)(*(int *)*param_2 + 0x74))
                       ((int *)*param_2,(-((param_6 & 0x80) != 0) & 8U) + 8,&local_c);
     if (iVar1 != 0) {
+      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
       (**(code **)(*(int *)*param_2 + 8))((int *)*param_2);
       *param_2 = 0;
     }

@@ -9,7 +9,7 @@ int __cdecl FUN_0067fc10(byte *param_1)
   byte *pbVar5;
   int iVar6;
   bool bVar7;
-  
+
   iVar2 = *(int *)(DAT_00848a3c + 8);
   iVar6 = 0;
   if (0 < iVar2) {

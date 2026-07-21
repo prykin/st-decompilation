@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\behpanel.cpp
@@ -10,10 +12,8 @@ void __thiscall BehPanelTy::Update(BehPanelTy *this)
   BehPanelTy *this_00;
   int iVar2;
   int iVar3;
-  undefined4 unaff_ESI;
   int *piVar4;
   short *psVar5;
-  void *unaff_EDI;
   Global_sub_005272B0_param_1Enum *pGVar6;
   short *psVar7;
   bool bVar8;
@@ -28,11 +28,11 @@ void __thiscall BehPanelTy::Update(BehPanelTy *this)
   BehPanelTy *local_10;
   int local_c;
   Global_sub_005272B0_param_1Enum *local_8;
-  
+
   local_6c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_6c;
   local_10 = this;
-  iVar2 = Library::MSVCRT::__setjmp3(local_6c.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar2 = Library::MSVCRT::__setjmp3(local_6c.jumpBuffer,0);
   this_00 = local_10;
   if (iVar2 != 0) {
     g_currentExceptionFrame = local_6c.previous;
@@ -42,9 +42,7 @@ void __thiscall BehPanelTy::Update(BehPanelTy *this)
       RaiseInternalException(iVar2,0,s_E____titans_Andrey_behpanel_cpp_007c1694,0xb2);
       return;
     }
-    pcVar1 = (code *)swi(3);
-    (*pcVar1)();
-    return;
+    STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   local_28 = local_10->field_01AB;
   local_24 = *(undefined4 *)&local_10->field_0x1af;
@@ -97,6 +95,7 @@ void __thiscall BehPanelTy::Update(BehPanelTy *this)
     this_00->field_0028 = 0x20;
     FUN_006e6080(this_00,2,this_00->field_01C2,(undefined4 *)&this_00->field_0x18);
   }
+  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
   if (this_00->field_01BC != local_18._1_1_) {
     *(uint *)&this_00->field_0x2c = (uint)(byte)this_00->field_01BC;
     this_00->field_0028 = 0x20;

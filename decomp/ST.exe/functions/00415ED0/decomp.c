@@ -3,7 +3,7 @@
    Evidence: 004653B0 -> 00415ED0 @ 00465529 | 004653B0 -> 00415ED0 @ 0046570D | 0046C980 ->
    00415ED0 @ 0046CB8D | 0046C980 -> 00415ED0 @ 0046CD4F | 004714D0 -> 00415ED0 @ 004716C6 |
    004714D0 -> 00415ED0 @ 004718EB
-   
+
    [STMethodOwnerApplier] Structural method owner recovered as STJellyGunC.
    Evidence: this_call_owners=[STJellyGunC]; agreed_this_calls=1; incoming_this_accesses=2;
    incoming_edx_uses=0; incoming_stack_parameter_uses=5 */
@@ -22,7 +22,7 @@ undefined4 __thiscall STJellyGunC::sub_00415ED0(STJellyGunC *this,undefined4 *pa
   undefined1 *puStack_10;
   undefined *puStack_c;
   undefined4 local_8;
-  
+
   puStack_c = &DAT_007901b0;
   puStack_10 = &LAB_0072d964;
   local_14 = ExceptionList;

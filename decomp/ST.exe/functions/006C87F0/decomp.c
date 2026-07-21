@@ -11,7 +11,7 @@ int FUN_006c87f0(uint *param_1)
   uint uVar4;
   undefined4 *puVar5;
   char *pcVar6;
-  
+
   uVar4 = param_1[2];
   iVar3 = (uVar4 + 7 >> 3) + 0x18;
   if ((int)uVar4 < 1) {

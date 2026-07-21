@@ -14,7 +14,6 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00601500::FUN_00601500
 {
   undefined4 uVar1;
   uint uVar2;
-  undefined3 extraout_var;
   int iVar3;
   int iVar4;
   short sVar5;
@@ -35,7 +34,7 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00601500::FUN_00601500
   AnonReceiver_00601500 *local_10;
   uint local_c;
   int local_8;
-  
+
   sVar5 = (short)(param_1 >> 0x1f);
   if (param_1 < 0) {
     iVar10 = (short)(((short)(param_1 / 0xc9) + sVar5) -
@@ -153,8 +152,8 @@ cf_common_exit_00601B38:
     sVar5 = (short)iVar10;
     sVar9 = (short)iVar6;
     sVar13 = (short)local_8;
-    bVar11 = thunk_FUN_004961b0(sVar5,sVar9,sVar13);
-    if (CONCAT31(extraout_var,bVar11) == 0) {
+    iVar3 = thunk_FUN_004961b0(sVar5,sVar9,sVar13);
+    if (iVar3 == 0) {
       if ((((sVar5 < 0) || (g_worldGrid.sizeX <= sVar5)) ||
           ((sVar9 < 0 ||
            (((g_worldGrid.sizeY <= sVar9 || (sVar13 < 0)) || (g_worldGrid.sizeZ <= sVar13)))))) ||

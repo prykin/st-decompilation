@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\fsgs_obj.cpp
@@ -21,9 +23,7 @@ FSGSTy::SetBanner(FSGSTy *this,char *param_1,undefined4 param_2,int param_3,uint
   uint uVar11;
   uint uVar12;
   FSGSTy *pFVar13;
-  undefined4 unaff_ESI;
   char *pcVar14;
-  void *unaff_EDI;
   undefined4 local_8e0;
   undefined1 local_860 [41];
   undefined1 auStack_837 [855];
@@ -37,13 +37,13 @@ FSGSTy::SetBanner(FSGSTy *this,char *param_1,undefined4 param_2,int param_3,uint
   int local_10;
   FSGSTy *local_c;
   int *local_8;
-  
+
   if (((param_5 != (undefined4 *)0x0) && (this->field_1A97 != (AnonPointee_FSGSTy_1A97 *)0x0)) &&
      (this->field_0065 == 1)) {
     local_58.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_58;
     local_c = this;
-    iVar4 = Library::MSVCRT::__setjmp3(local_58.jumpBuffer,0,unaff_EDI,unaff_ESI);
+    iVar4 = Library::MSVCRT::__setjmp3(local_58.jumpBuffer,0);
     pFVar13 = local_c;
     if (iVar4 == 0) {
       if ((param_3 == 1) || (param_3 == 8)) {
@@ -60,7 +60,7 @@ FSGSTy::SetBanner(FSGSTy *this,char *param_1,undefined4 param_2,int param_3,uint
         local_8 = (int *)0x0;
         local_9c.previous = g_currentExceptionFrame;
         g_currentExceptionFrame = &local_9c;
-        iVar4 = Library::MSVCRT::__setjmp3(local_9c.jumpBuffer,0,unaff_EDI,unaff_ESI);
+        iVar4 = Library::MSVCRT::__setjmp3(local_9c.jumpBuffer,0);
         if (iVar4 == 0) {
           piVar8 = Library::DKW::GPC::FUN_006c7c50(param_5,param_4);
           pFVar13 = local_c;
@@ -106,7 +106,7 @@ FSGSTy::SetBanner(FSGSTy *this,char *param_1,undefined4 param_2,int param_3,uint
         pFVar13->field_1AA3 = 0;
         local_e0.previous = g_currentExceptionFrame;
         g_currentExceptionFrame = &local_e0;
-        iVar4 = Library::MSVCRT::__setjmp3(local_e0.jumpBuffer,0,unaff_EDI,unaff_ESI);
+        iVar4 = Library::MSVCRT::__setjmp3(local_e0.jumpBuffer,0);
         pFVar13 = local_c;
         if (iVar4 == 0) {
           puVar5 = (undefined4 *)Library::DKW::LIB::FUN_006aac70(param_4);
@@ -231,9 +231,7 @@ LAB_005a1cfd:
     iVar10 = ReportDebugMessage(s_E____titans_Start_fsgs_obj_cpp_007cbf70,0x9b5,0,iVar4,
                                 &DAT_007a4ccc,s_FSGSTy__SetBanner_007cc45c);
     if (iVar10 != 0) {
-      pcVar3 = (code *)swi(3);
-      (*pcVar3)();
-      return;
+      STDebugBreak(); /* noreturn in standalone pseudocode */
     }
     RaiseInternalException(iVar4,0,s_E____titans_Start_fsgs_obj_cpp_007cbf70,0x9b5);
   }

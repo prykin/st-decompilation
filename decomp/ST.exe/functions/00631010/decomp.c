@@ -15,12 +15,13 @@ void __fastcall FUN_00631010(AnonShape_00631010_DBA5BE90 *param_1)
   undefined4 local_18;
   undefined4 local_c;
   uint local_8;
-  
+
   iVar5 = param_1->field_0038;
   if (iVar5 != 0) {
     local_8 = *(uint *)(iVar5 + 0xc) - 1;
     if (-1 < (int)local_8) {
       if (local_8 < *(uint *)(iVar5 + 0xc)) {
+        /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
         puVar2 = (undefined4 *)(*(int *)(iVar5 + 8) * local_8 + *(int *)(iVar5 + 0x1c));
       }
       else {

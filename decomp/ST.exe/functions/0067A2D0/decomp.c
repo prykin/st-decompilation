@@ -3,7 +3,7 @@ void __fastcall FUN_0067a2d0(AnonShape_0067A2D0_742706D4 *param_1)
 
 {
   uint uVar1;
-  
+
   uVar1 = param_1->field_00A4 * 0x41c64e6d + 0x3039;
   param_1->field_00A4 = uVar1;
   param_1->field_0650 = (uVar1 >> 0x10 & 7) + 8;

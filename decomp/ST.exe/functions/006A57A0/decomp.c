@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 void __cdecl FUN_006a57a0(undefined4 *param_1)
 
@@ -7,13 +9,11 @@ void __cdecl FUN_006a57a0(undefined4 *param_1)
   undefined4 *puVar3;
   int iVar4;
   uint uVar5;
-  
+
   if (param_1 == (undefined4 *)0x0) {
     iVar4 = Library::MSVCRT::FUN_00730fa0(0,0,0,0,&DAT_007a4ccc);
     if (iVar4 == 1) {
-      pcVar1 = (code *)swi(3);
-      (*pcVar1)();
-      return;
+      STDebugBreak(); /* noreturn in standalone pseudocode */
     }
   }
   else {
@@ -37,9 +37,7 @@ void __cdecl FUN_006a57a0(undefined4 *param_1)
         iVar4 = Library::MSVCRT::FUN_00730fa0
                           (0,0,0,0,(byte *)s_Bad_memory_block_found_at_0x_08X_007ec8d8);
         if (iVar4 == 1) {
-          pcVar1 = (code *)swi(3);
-          (*pcVar1)();
-          return;
+          STDebugBreak(); /* noreturn in standalone pseudocode */
         }
       }
     }

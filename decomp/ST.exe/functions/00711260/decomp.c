@@ -6,7 +6,7 @@ int __thiscall FUN_00711260(void *this,uint *param_1)
   bool bVar2;
   int iVar3;
   undefined4 local_8;
-  
+
   bVar2 = false;
   local_8 = 0;
   if (param_1 == (uint *)0x0) {

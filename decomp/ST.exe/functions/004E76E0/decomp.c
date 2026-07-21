@@ -15,7 +15,7 @@ undefined4 FUN_004e76e0(int param_1,uint *param_2,undefined1 param_3)
   int *piVar11;
   undefined4 *puVar12;
   uint *local_c;
-  
+
   if ((param_1 < 0) || (7 < param_1)) {
     return 0;
   }

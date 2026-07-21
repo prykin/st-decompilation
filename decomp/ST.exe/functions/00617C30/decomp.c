@@ -7,7 +7,7 @@ undefined4 __thiscall FUN_00617c30(void *this,int param_1,int param_2)
   int iVar3;
   uint uVar4;
   bool bVar5;
-  
+
   iVar1 = *(int *)((int)this + 0x5e);
   if (iVar1 != 0) {
     uVar2 = *(uint *)(iVar1 + 0xc);
@@ -21,6 +21,7 @@ undefined4 __thiscall FUN_00617c30(void *this,int param_1,int param_2)
         else {
           iVar3 = 0;
         }
+        /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
         if ((*(short *)(iVar3 + 10) == param_1) && (*(short *)(iVar3 + 0xc) == param_2)) {
           return 1;
         }

@@ -32101,7 +32101,7 @@
 {"address":"0075DA78","name":"PTR_caseD_4_0075da78","type":"pointer","length":4,"value":"0075d8e5","referenced_from":[]}
 {"address":"00790000","name":"IMAGE_DEBUG_DIRECTORY_00790000","type":"IMAGE_DEBUG_DIRECTORY","length":28,"value":"","referenced_from":["00400150","004001C8","0040024C"]}
 {"address":"007900A0","name":"STGameObjCVTable","type":"STGameObjCVTable","length":212,"value":"","referenced_from":["004158E0 STGameObjC::STGameObjC"]}
-{"address":"00790508","name":"VTable_00790508","type":"VTable_00790508","length":40,"value":"","referenced_from":["004232A0 STGroupBoatC::sub_004232A0"]}
+{"address":"00790508","name":"STGroupCVTable","type":"STGroupCVTable","length":40,"value":"","referenced_from":["004232A0 STGroupBoatC::sub_004232A0"]}
 {"address":"0079059C","name":"STAllPlayersCVTable","type":"STAllPlayersCVTable","length":4,"value":"","referenced_from":["0042A940 STAllPlayersC::STAllPlayersC"]}
 {"address":"007905A0","name":"STBoatCVTable","type":"STBoatCVTable","length":292,"value":"","referenced_from":["0044E690 STBoatC::STBoatC"]}
 {"address":"00790700","name":"VTable_00790700","type":"VTable_00790700","length":4,"value":"","referenced_from":["0044E690 STBoatC::STBoatC"]}

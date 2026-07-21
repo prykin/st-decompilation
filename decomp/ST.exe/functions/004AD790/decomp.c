@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\Tspr3d.cpp
@@ -16,10 +18,8 @@ undefined4 * __thiscall STT3DSprC::SaveSpr(STT3DSprC *this,uint *param_1)
   uint uVar7;
   uint uVar8;
   uint uVar9;
-  undefined4 unaff_ESI;
   char *pcVar10;
   char *pcVar11;
-  void *unaff_EDI;
   AnonShape_004AD790_77673787 *pAVar12;
   InternalExceptionFrame local_60;
   char *local_1c;
@@ -28,11 +28,11 @@ undefined4 * __thiscall STT3DSprC::SaveSpr(STT3DSprC *this,uint *param_1)
   int local_10;
   char *local_c;
   int local_8;
-  
+
   local_60.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_60;
   local_18 = this;
-  iVar3 = Library::MSVCRT::__setjmp3(local_60.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar3 = Library::MSVCRT::__setjmp3(local_60.jumpBuffer,0);
   this_00 = local_18;
   if (iVar3 != 0) {
     g_currentExceptionFrame = local_60.previous;
@@ -41,9 +41,7 @@ undefined4 * __thiscall STT3DSprC::SaveSpr(STT3DSprC *this,uint *param_1)
     if (iVar3 == 0) {
       return (undefined4 *)0x0;
     }
-    pcVar2 = (code *)swi(3);
-    puVar6 = (undefined4 *)(*pcVar2)();
-    return puVar6;
+    STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   iVar3 = 0;
   *param_1 = (local_18->field_0014 + 1) * 0x24;

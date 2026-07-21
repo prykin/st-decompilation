@@ -7,7 +7,7 @@ void FUN_006d11f0(undefined4 *param_1,int param_2,byte *param_3,int param_4,int 
   bool bVar2;
   int iVar3;
   int iVar4;
-  
+
   if ((0 < param_5) && (0 < param_6)) {
     iVar3 = param_5;
     do {

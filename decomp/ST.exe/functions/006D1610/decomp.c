@@ -5,7 +5,7 @@ void FUN_006d1610(undefined8 *param_1,undefined8 *param_2,int param_3,uint param
   int iVar1;
   undefined8 *puVar2;
   undefined8 *puVar3;
-  
+
   if (param_1 <= param_2) {
     FUN_006cea60(param_1,param_3,param_2,param_3,param_4,param_5);
     return;

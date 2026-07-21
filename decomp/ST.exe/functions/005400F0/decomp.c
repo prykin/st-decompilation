@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\specpan.cpp
@@ -14,16 +16,14 @@ undefined4 __thiscall ProdPanelTy::GetMessage(ProdPanelTy *this,int param_1)
   LPSTR pCVar5;
   int iVar6;
   undefined4 uVar7;
-  undefined4 unaff_ESI;
-  void *unaff_EDI;
   char *text;
   InternalExceptionFrame local_4c;
   PanelTy *local_8;
-  
+
   local_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_4c;
   local_8 = (PanelTy *)this;
-  iVar4 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar4 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
   this_00 = local_8;
   if (iVar4 != 0) {
     g_currentExceptionFrame = local_4c.previous;
@@ -33,11 +33,10 @@ undefined4 __thiscall ProdPanelTy::GetMessage(ProdPanelTy *this,int param_1)
       RaiseInternalException(iVar4,0,s_E____titans_Andrey_specpan_cpp_007c7870,0x2a3);
       return 0xffff;
     }
-    pcVar3 = (code *)swi(3);
-    uVar7 = (*pcVar3)();
-    return uVar7;
+    STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   PanelTy::GetMessage(local_8,param_1);
+  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   uVar2 = *(uint *)(param_1 + 0x10);
   if (uVar2 < 0xc001) {
     if (uVar2 == 0xc000) {
@@ -57,6 +56,7 @@ undefined4 __thiscall ProdPanelTy::GetMessage(ProdPanelTy *this,int param_1)
           iVar6 = *(int *)this_00;
           this_00->field_0044 = iVar4;
           *(undefined2 *)((int)&this_00[3].field_002C + 2) = 1;
+          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
           (**(code **)(iVar6 + 0x18))(1);
         }
         Library::DKW::DDX::FUN_006b3640

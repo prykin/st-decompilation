@@ -3,7 +3,7 @@ uint FUN_006db990(uint param_1,int param_2)
 
 {
   uint uVar1;
-  
+
   if ((int)param_1 < 0) {
     param_1 = param_1 + ((0x167 - param_1) / 0x168) * 0x168;
   }

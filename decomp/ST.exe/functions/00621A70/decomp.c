@@ -7,9 +7,10 @@ void __fastcall FUN_00621a70(AnonShape_00621A70_2531BB4B *param_1)
   char *pcVar3;
   int local_c;
   int local_8;
-  
+
   uVar2 = 0;
   local_8 = 0;
+  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   if ((param_1->field_010A != 0) && (local_c = *(int *)(param_1->field_010A + 0xc), 0 < local_c)) {
     do {
       iVar1 = param_1->field_010A;
@@ -24,7 +25,7 @@ void __fastcall FUN_00621a70(AnonShape_00621A70_2531BB4B *param_1)
           uVar2 = uVar2 + 1;
         }
         else {
-          FUN_006b0c70((AnonShape_006B0C70_7C4FE646 *)param_1->field_010A,uVar2);
+          FUN_006b0c70((DArrayTy *)param_1->field_010A,uVar2);
         }
         if (*pcVar3 != '\0') {
           local_8 = local_8 + 1;

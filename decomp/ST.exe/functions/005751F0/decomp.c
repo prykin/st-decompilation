@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* [STSourceProvenanceApplier begin]
    Recovered source file: E:\__titans\tinittxt.cpp
@@ -14,18 +16,16 @@ void __cdecl LandInit(short *param_1)
   AnonShape_006DBCA0_EF06575F *pAVar5;
   uint *puVar6;
   undefined4 *puVar7;
-  undefined4 unaff_ESI;
-  void *unaff_EDI;
   int iVar8;
   InternalExceptionFrame local_54;
   int local_10;
   int local_c;
   undefined4 *local_8;
-  
+
   iVar8 = 0;
   local_54.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_54;
-  iVar4 = Library::MSVCRT::__setjmp3(local_54.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar4 = Library::MSVCRT::__setjmp3(local_54.jumpBuffer,0);
   if (iVar4 == 0) {
     pAVar5 = (AnonShape_006DBCA0_EF06575F *)FUN_006b04d0(0x4f2);
     if (pAVar5 == (AnonShape_006DBCA0_EF06575F *)0x0) {
@@ -47,6 +47,7 @@ void __cdecl LandInit(short *param_1)
     *(uint **)((int)param_1 + 0x44d) = puVar6;
     puVar6 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,0x14,0xc,0x14);
     *(uint **)((int)param_1 + 0x451) = puVar6;
+    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     if (0 < *(int *)((int)param_1 + 0x455)) {
       puVar7 = (undefined4 *)((int)param_1 + 0x459);
       do {
@@ -55,6 +56,7 @@ void __cdecl LandInit(short *param_1)
         }
         iVar8 = iVar8 + 1;
         puVar7 = puVar7 + 1;
+      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
       } while (iVar8 < *(int *)((int)param_1 + 0x455));
     }
     sVar1 = *param_1;
@@ -84,9 +86,7 @@ void __cdecl LandInit(short *param_1)
   iVar8 = ReportDebugMessage(s_E____titans_tinittxt_cpp_007ca6d0,0x17b,0,iVar4,&DAT_007a4ccc,
                              s_LandInit_007ca714);
   if (iVar8 != 0) {
-    pcVar3 = (code *)swi(3);
-    (*pcVar3)();
-    return;
+    STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   RaiseInternalException(iVar4,0,s_E____titans_tinittxt_cpp_007ca6d0,0x17c);
   return;

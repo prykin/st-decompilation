@@ -10,11 +10,12 @@ int __thiscall FUN_00696c40(void *this,uint param_1,int param_2,uint param_3)
   uint uVar6;
   bool bVar7;
   int local_8;
-  
+
   iVar1 = *(int *)((int)this + 0x5853);
   iVar2 = 0;
   local_8 = 0;
   if (param_1 < *(uint *)(iVar1 + 0xc)) {
+    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     iVar3 = *(int *)(iVar1 + 8) * param_1 + *(int *)(iVar1 + 0x1c);
     if ((iVar3 != 0) && (iVar3 = *(int *)(iVar3 + 0x19), iVar3 != 0)) {
       uVar6 = 0;

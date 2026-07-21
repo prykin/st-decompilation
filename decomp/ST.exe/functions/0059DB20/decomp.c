@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\fsgs_obj.cpp
@@ -15,9 +17,7 @@ void __thiscall FSGSTy::ChatCtrls(FSGSTy *this)
   uint *puVar7;
   MMObjTy *this_00;
   int iVar8;
-  int unaff_ESI;
   undefined4 *puVar9;
-  void *unaff_EDI;
   int *piVar10;
   undefined4 *puVar11;
   undefined4 local_1654 [11];
@@ -116,7 +116,7 @@ void __thiscall FSGSTy::ChatCtrls(FSGSTy *this)
   undefined4 uStackY_74;
   InternalExceptionFrame *pIVar12;
   int iVar13;
-  
+
   Library::MSVCRT::FUN_0072da40();
   puVar9 = local_1654;
   for (iVar8 = 0x223; iVar8 != 0; iVar8 = iVar8 + -1) {
@@ -135,7 +135,7 @@ void __thiscall FSGSTy::ChatCtrls(FSGSTy *this)
   }
   pIVar12 = g_currentExceptionFrame;
   g_currentExceptionFrame = (InternalExceptionFrame *)&stack0xffffffb4;
-  iVar8 = Library::MSVCRT::__setjmp3((undefined4 *)&stack0xffffffb8,0,unaff_EDI,unaff_ESI);
+  iVar8 = Library::MSVCRT::__setjmp3((int *)&stack0xffffffb8,0);
   if (iVar8 == 0) {
     this_00[0x1d].field_0xa9 = 0;
     if (*(int *)((int)&this_00[0x22].field_0066 + 2) != 0) {
@@ -150,6 +150,7 @@ void __thiscall FSGSTy::ChatCtrls(FSGSTy *this)
     iVar8 = 1;
     puVar9 = (undefined4 *)(*(int *)&this_00->field_0x5d + 0x28);
     uVar4 = FUN_006b4fe0(*(int *)&this_00->field_0x5d);
+    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     uVar5 = FUN_006b50c0(0x1bf,0x175,(uint)*(ushort *)(*(int *)&this_00->field_0x5d + 0xe),uVar4,
                          puVar9,iVar8);
     *(undefined4 *)((int)&this_00[0x22].field_0066 + 2) = uVar5;
@@ -425,9 +426,7 @@ void __thiscall FSGSTy::ChatCtrls(FSGSTy *this)
   iVar13 = ReportDebugMessage(s_E____titans_Start_fsgs_obj_cpp_007cbf70,0x758,0,iVar8,&DAT_007a4ccc)
   ;
   if (iVar13 != 0) {
-    pcVar2 = (code *)swi(3);
-    (*pcVar2)();
-    return;
+    STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   RaiseInternalException(iVar8,0,s_E____titans_Start_fsgs_obj_cpp_007cbf70,0x758);
   return;

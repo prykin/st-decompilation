@@ -6,7 +6,7 @@ int FUN_00753b40(AnonShape_00753B40_7E7955C3 *param_1)
   int iVar2;
   AnonShape_00753B40_7E7955C3 *pAVar3;
   int iVar4;
-  
+
   pAVar3 = param_1;
   pAVar1 = param_1->field_0008;
   iVar2 = pAVar1->field_001C;

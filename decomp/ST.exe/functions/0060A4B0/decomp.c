@@ -18,7 +18,7 @@ undefined4 __fastcall FUN_0060a4b0(AnonShape_0060A4B0_7BF9A20C *param_1)
   AnonShape_0060A4B0_7BF9A20C *local_10;
   int local_c;
   int local_8;
-  
+
   local_18 = 0;
   if (param_1->field_0234 != (AnonNested_0060A4B0_0234_BD227FFA *)0x0) {
     iVar1 = param_1->field_0234->field_000C;

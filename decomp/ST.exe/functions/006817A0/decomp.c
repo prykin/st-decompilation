@@ -5,7 +5,7 @@ undefined4 FUN_006817a0(void)
   int iVar1;
   undefined4 uVar2;
   int iVar3;
-  
+
   iVar1 = DAT_008488b0;
   uVar2 = 1;
   iVar3 = DAT_008488b0 * 0x2b14;

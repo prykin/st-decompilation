@@ -16,7 +16,7 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_005148A0::FUN_005148a0
   uint uVar4;
   int *piVar5;
   int iVar6;
-  
+
   if (param_1 < 1) {
     return;
   }

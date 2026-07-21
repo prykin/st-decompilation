@@ -3,7 +3,7 @@ void __thiscall FUN_00488ee0(void *this,undefined1 *param_1)
 
 {
   int iVar1;
-  
+
   *param_1 = 1;
   param_1[1] = 1;
   *(undefined4 *)(param_1 + 2) = *(undefined4 *)((int)this + 0x6f7);

@@ -9,7 +9,7 @@ FUN_004d0970(void *this,undefined4 param_1,undefined4 param_2,undefined4 param_3
 
 {
   int iVar1;
-  
+
   if (*(int *)((int)this + 0x249) <= *(int *)((int)this + 0x245) + 1) {
     iVar1 = *(int *)((int)this + 0x249) + 10;
     *(int *)((int)this + 0x249) = iVar1;

@@ -15,7 +15,7 @@ void FUN_0069f660(undefined4 param_1,int param_2,int param_3,int param_4,int par
   int iVar11;
   uint uVar12;
   bool bVar13;
-  
+
   uVar7 = param_4 - param_2 >> 0x1f;
   iVar11 = (param_4 - param_2 ^ uVar7) - uVar7;
   uVar7 = param_5 - param_3 >> 0x1f;

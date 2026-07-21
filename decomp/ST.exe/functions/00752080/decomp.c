@@ -5,6 +5,7 @@
 void FUN_00752080(int param_1,LONG lOffset)
 
 {
+  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   _llseek(*(HFILE *)(param_1 + 0x32),lOffset,0);
   return;
 }

@@ -1,7 +1,15 @@
 
-undefined4 __fastcall FUN_004a0ec0(int param_1)
+/* [STVirtualMethodApplier] Recovered from virtual table slot family.
+   Tables: 00790728
+   Entries: 00404453
+   Slots: 0xC
+   Anchor:
+   Evidence: slot_family_has_no_named_method; unique_owner_for_target;
+   receiver_only_leaf_virtual_signature */
+
+dword __thiscall STGroupBoatC::FUN_004a0ec0(STGroupBoatC *this)
 
 {
-  return *(undefined4 *)(param_1 + 0x1e6);
+  return this->field_01E6;
 }
 

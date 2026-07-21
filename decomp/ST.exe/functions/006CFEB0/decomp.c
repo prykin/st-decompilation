@@ -7,7 +7,7 @@ undefined4 __cdecl FUN_006cfeb0(int *param_1,int *param_2,int *param_3)
   int iVar3;
   int iVar4;
   int iVar5;
-  
+
   iVar1 = *param_2;
   iVar5 = iVar1;
   if (iVar1 <= *param_3) {

@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\to_grpb.cpp
@@ -16,12 +18,10 @@ undefined4 __thiscall STGroupBoatC::GrpMove(STGroupBoatC *this,int param_1)
   STGameObjC *pSVar5;
   int iVar6;
   undefined4 uVar7;
-  undefined4 extraout_ECX;
-  undefined4 extraout_ECX_00;
   uint uVar8;
   uint uVar9;
-  undefined4 unaff_ESI;
-  void *unaff_EDI;
+  /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
+  int unaff_EDI;
   undefined4 *puVar10;
   InternalExceptionFrame local_64;
   undefined4 local_20;
@@ -32,22 +32,21 @@ undefined4 __thiscall STGroupBoatC::GrpMove(STGroupBoatC *this,int param_1)
   uint local_10;
   uint local_c;
   undefined4 local_8;
-  
+
+  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   local_10 = *(uint *)(this->field_0029 + 0xc);
   uVar9 = 0;
   local_64.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_64;
   local_14 = (STGroupC *)this;
-  iVar4 = Library::MSVCRT::__setjmp3(local_64.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar4 = Library::MSVCRT::__setjmp3(local_64.jumpBuffer,0);
   this_00 = local_14;
   if (iVar4 != 0) {
     g_currentExceptionFrame = local_64.previous;
     iVar6 = ReportDebugMessage(s_E____titans_wlad_to_grpb_cpp_007abe3c,0x642,0,iVar4,&DAT_007a4ccc,
                                s_STGroupBoatC__GrpMove_007abf3c);
     if (iVar6 != 0) {
-      pcVar3 = (code *)swi(3);
-      uVar7 = (*pcVar3)();
-      return uVar7;
+      STDebugBreak(); /* noreturn in standalone pseudocode */
     }
     RaiseInternalException(iVar4,0,s_E____titans_wlad_to_grpb_cpp_007abe3c,0x643);
     return 0xffffffff;
@@ -60,14 +59,15 @@ undefined4 __thiscall STGroupBoatC::GrpMove(STGroupBoatC *this,int param_1)
     }
     sVar1 = *(short *)((int)&local_14[3].field_0029 + 1);
     sVar2 = *(short *)((int)&local_14[3].field_0027 + 1);
-    local_14[1].field_0000 = (int)*(short *)((int)&local_14[3].field_0025 + 1);
+    local_14[1].vtable = (STGroupCVTable *)(int)*(short *)((int)&local_14[3].field_0025 + 1);
     uVar7 = *(undefined4 *)((int)&local_14[3].field_0029 + 3);
     *(int *)&local_14[1].field_0x8 = (int)sVar1;
     *(undefined4 *)((int)&local_14[1].field_0027 + 1) = 0;
     *(int *)&local_14[1].field_0x4 = (int)sVar2;
     *(undefined4 *)((int)&local_14[0xc].field_0031 + 1) = uVar7;
-    array = (DArrayTy *)STGroupC::GetGroupContent(local_14,(int)unaff_EDI);
-    InitWay((STGroupBoatC *)this_00,array,this_00[1].field_0000,*(int *)&this_00[1].field_0x4,
+    /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
+    array = (DArrayTy *)STGroupC::GetGroupContent(local_14,unaff_EDI);
+    InitWay((STGroupBoatC *)this_00,array,(int)this_00[1].vtable,*(int *)&this_00[1].field_0x4,
             *(int *)&this_00[1].field_0x8);
     DArrayDestroy(array);
     local_20 = PTR_00802a38->field_00E4;
@@ -81,9 +81,7 @@ undefined4 __thiscall STGroupBoatC::GrpMove(STGroupBoatC *this,int param_1)
         if ((short)local_c != -1) {
           this_01 = (STBoatC *)
                     STAllPlayersC::GetObjPtr
-                              (g_sTAllPlayers_007FA174,
-                               CONCAT31((int3)((uint)extraout_ECX >> 8),this_00->field_0024),local_c
-                               ,CASE_1);
+                              (g_sTAllPlayers_007FA174,this_00->field_0024,local_c,CASE_1);
           if (this_01 == (STBoatC *)0x0) {
             RaiseInternalException
                       (-0x5001fffc,g_overwriteContext_007ED77C,
@@ -107,9 +105,7 @@ undefined4 __thiscall STGroupBoatC::GrpMove(STGroupBoatC *this,int param_1)
           DArrayGetElement((DArrayTy *)this_00->field_0029,uVar9,&local_c);
           if ((short)local_c != -1) {
             pSVar5 = STAllPlayersC::GetObjPtr
-                               (g_sTAllPlayers_007FA174,
-                                CONCAT31((int3)((uint)extraout_ECX_00 >> 8),this_00->field_0024),
-                                local_c,CASE_1);
+                               (g_sTAllPlayers_007FA174,this_00->field_0024,local_c,CASE_1);
             if (pSVar5 == (STGameObjC *)0x0) {
               RaiseInternalException
                         (-0x5001fffc,g_overwriteContext_007ED77C,

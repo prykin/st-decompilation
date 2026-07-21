@@ -7,7 +7,7 @@ undefined4 __thiscall FUN_005f8650(void *this,int param_1,int param_2,int param_
   short sVar3;
   short sVar4;
   short sVar5;
-  
+
   *(int *)((int)this + 0x2c9) = param_3;
   *(int *)((int)this + 0x2c1) = param_1;
   *(int *)((int)this + 0x2c5) = param_2;

@@ -1,6 +1,10 @@
 
-bool FUN_00695180(AnonShape_0052EFB0_8161B92D *param_1,AnonShape_00695180_3C0E4B54 *param_2,
-                 int param_3,int param_4)
+/* [STAbiConsistencyApplier] full_eax_return: return=/int Evidence: all observed callers consume
+   full EAX (1), none consume AL/AX, and every RET path defines full EAX; sites=006952B0 @ 006956B8
+   -> TEST TEST EAX,EAX */
+
+int FUN_00695180(AnonShape_0052EFB0_8161B92D *param_1,AnonShape_00695180_3C0E4B54 *param_2,
+                int param_3,int param_4)
 
 {
   int iVar1;
@@ -11,16 +15,18 @@ bool FUN_00695180(AnonShape_0052EFB0_8161B92D *param_1,AnonShape_00695180_3C0E4B
   int iVar6;
   int iVar7;
   int iVar8;
-  
+  uint local_8;
+
+  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   iVar1 = *(int *)(param_3 + 0x10);
   uVar5 = 0;
   iVar6 = 0;
   iVar8 = 0;
   if (param_1->field_000C != iVar1) {
-    return false;
+    return 0;
   }
   if (param_4 == 0) {
-    return true;
+    return 1;
   }
   if ((param_1->field_0014 == 0) && (0 < iVar1)) {
     iVar2 = param_1->field_0018;
@@ -43,7 +49,8 @@ bool FUN_00695180(AnonShape_0052EFB0_8161B92D *param_1,AnonShape_00695180_3C0E4B
       uVar5 = uVar5 + 1;
     } while ((int)uVar5 < iVar1);
   }
-  return param_2->field_0014 + param_2->field_0010 * 0x122 + iVar6 <
-         param_1->field_0014 + param_1->field_0010 * 0x122 + iVar8;
+  local_8 = (uint)(param_2->field_0014 + param_2->field_0010 * 0x122 + iVar6 <
+                  param_1->field_0014 + param_1->field_0010 * 0x122 + iVar8);
+  return local_8;
 }
 

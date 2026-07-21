@@ -7,7 +7,7 @@ void __cdecl FUN_0042a780(int *param_1)
   int iVar2;
   int *piVar3;
   int iVar4;
-  
+
   array = (DArrayTy *)Library::DKW::TBL::FUN_006ae290((uint *)0x0,100,4,100);
   iVar4 = 0;
   iVar2 = *param_1;
@@ -20,6 +20,7 @@ void __cdecl FUN_0042a780(int *param_1)
         do {
           uVar1 = array->iteratorIndex;
           if (array->count <= uVar1) goto LAB_0042a7e7;
+          /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(array, uVar1) (runtime stride) */
           piVar3 = (int *)(array->elementSize * uVar1 + (int)array->data);
           array->iteratorIndex = uVar1 + 1;
           if (piVar3 == (int *)0x0) goto LAB_0042a7e7;

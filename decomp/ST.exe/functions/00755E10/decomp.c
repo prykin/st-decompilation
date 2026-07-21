@@ -10,7 +10,8 @@ int FUN_00755e10(AnonShape_00755E10_BD685653 *param_1,int param_2,undefined4 par
   int iVar6;
   undefined4 uVar7;
   undefined2 local_8;
-  
+
+  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   iVar6 = *(short *)(param_1->field_0008 + 0x16) + -0x10;
   *(int *)(param_1->field_000C + 0x1c) = *(int *)(param_1->field_000C + 0x1c) + -1;
   iVar3 = param_1->field_000C;
@@ -23,6 +24,7 @@ int FUN_00755e10(AnonShape_00755E10_BD685653 *param_1,int param_2,undefined4 par
   iVar3 = param_1->field_000C;
   if (iVar2 < *(short *)(iVar1 + 8)) {
     if (*(short *)(iVar3 + 0x34) == 0) {
+      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
       iVar3 = (**(code **)(iVar3 + 8))(iVar2 + 0x18 + iVar1);
     }
     else {
@@ -37,9 +39,11 @@ int FUN_00755e10(AnonShape_00755E10_BD685653 *param_1,int param_2,undefined4 par
       iVar3 = param_1->field_000C;
       uVar7 = *(undefined4 *)(*(int *)(iVar3 + 0x44 + *(int *)(iVar3 + 0x1c) * 8) + 0x10 + iVar1);
       *(int *)(iVar3 + 0x1c) = *(int *)(iVar3 + 0x1c) + 1;
+      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
       iVar1 = FUN_00753b80((AnonShape_00750F20_F8C16F98 *)param_1,uVar7,
                            *(int *)(param_1->field_000C + 0x1c));
       iVar3 = param_1->field_0010;
+      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
       iVar5 = FUN_00753b80((AnonShape_00750F20_F8C16F98 *)param_1,param_3,
                            *(int *)(param_1->field_000C + 0x1c));
       if ((iVar6 <= (int)((int)*(short *)(iVar1 + 8) + (int)*(short *)(iVar5 + 8) + uVar4)) &&
@@ -80,6 +84,7 @@ int FUN_00755e10(AnonShape_00755E10_BD685653 *param_1,int param_2,undefined4 par
   }
   else {
     if (*(short *)(iVar3 + 0x34) == 0) {
+      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
       iVar3 = (**(code **)(iVar3 + 8))
                         (*(int *)(iVar3 + 0x44 + *(int *)(iVar3 + 0x1c) * 8) + 0x18 + iVar1);
     }
@@ -102,9 +107,11 @@ int FUN_00755e10(AnonShape_00755E10_BD685653 *param_1,int param_2,undefined4 par
         uVar7 = *(undefined4 *)(iVar2 + 0x10 + iVar1);
       }
       *(int *)(iVar3 + 0x1c) = *(int *)(iVar3 + 0x1c) + 1;
+      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
       iVar3 = FUN_00753b80((AnonShape_00750F20_F8C16F98 *)param_1,uVar7,
                            *(int *)(param_1->field_000C + 0x1c));
       iVar1 = FUN_00753c80((AnonShape_00753C80_4C8E695D *)param_1,(int)*(short *)(iVar3 + 8));
+      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
       iVar2 = FUN_00753b80((AnonShape_00750F20_F8C16F98 *)param_1,param_3,
                            *(int *)(param_1->field_000C + 0x1c));
       if ((iVar6 <= (int)((int)*(short *)(iVar2 + 8) + (int)*(short *)(iVar3 + 8) + uVar4)) &&

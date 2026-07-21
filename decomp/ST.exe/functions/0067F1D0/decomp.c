@@ -3,7 +3,7 @@ void FUN_0067f1d0(void)
 
 {
   int iVar1;
-  
+
   DAT_00848a20 = 0;
   DAT_00848a24 = 0;
   PTR_00848a1c = (AnonShape_GLOBAL_00848A1C_B6E50991 *)

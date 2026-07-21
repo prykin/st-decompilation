@@ -14,7 +14,8 @@ undefined4 __fastcall FUN_004d01f0(void *param_1)
   int local_10;
   int local_c;
   int local_8;
-  
+
+  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   if (*(int *)((int)param_1 + 0x5ff) == 0) {
     pAVar1 = (AnonShape_004AB810_8E5693D5 *)Library::MSVCRT::FUN_0072e530(0x40);
     if (pAVar1 == (AnonShape_004AB810_8E5693D5 *)0x0) {
@@ -31,10 +32,12 @@ undefined4 __fastcall FUN_004d01f0(void *param_1)
                  ,0x28b);
     }
     thunk_FUN_004ce9e0(param_1,&local_10,&local_c,&local_8);
+    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     thunk_FUN_004ad3c0(*(void **)((int)param_1 + 0x5ff),
                        (float)local_10 * _DAT_007904f8 * _DAT_007904f0,
                        (float)local_c * _DAT_007904f8 * _DAT_007904f0,
                        (float)local_8 * _DAT_007904f8 * _DAT_007904f0 + _DAT_007904fc);
+    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     thunk_FUN_004ad5e0(*(int *)((int)param_1 + 0x5ff));
   }
   return 0;

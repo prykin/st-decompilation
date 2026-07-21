@@ -1,7 +1,7 @@
 
 /* Library Function - Single Match
     public: virtual long __thiscall CBaseRenderer::EndOfStream(void)
-   
+
    Library: Visual Studio 2012 Release */
 
 long __thiscall CBaseRenderer::EndOfStream(CBaseRenderer *this)
@@ -11,6 +11,7 @@ long __thiscall CBaseRenderer::EndOfStream(CBaseRenderer *this)
      ) {
     SetEvent(*(HANDLE *)(this + 0x5c));
     if (*(int *)(this + 100) != 0) {
+      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
       (**(code **)(*(int *)this + 0x60))();
     }
   }

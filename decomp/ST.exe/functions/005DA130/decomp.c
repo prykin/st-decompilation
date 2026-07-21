@@ -23,7 +23,7 @@ void __cdecl FUN_005da130(ushort *param_1,undefined *param_2,BYTE param_3)
   undefined1 local_5d;
   char local_5c [32];
   byte local_3c [56];
-  
+
   puVar6 = local_78;
   for (iVar2 = 0xf; iVar2 != 0; iVar2 = iVar2 + -1) {
     *puVar6 = 0;

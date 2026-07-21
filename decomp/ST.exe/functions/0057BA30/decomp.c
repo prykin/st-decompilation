@@ -16,7 +16,7 @@ int __cdecl FUN_0057ba30(void *param_1,int param_2)
   int local_10;
   int local_c;
   short local_6;
-  
+
   pvVar3 = param_1;
   local_24 = 0;
   local_1c = (param_2 + -1) / 0xc9 + 1;
@@ -25,9 +25,13 @@ int __cdecl FUN_0057ba30(void *param_1,int param_2)
   }
   thunk_FUN_00416270(param_1,(undefined2 *)((int)&param_1 + 2),(int *)((int)&param_2 + 2),
                      (int *)&local_6);
+  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
   local_18 = param_2._2_2_ + 1 + local_1c;
+  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
   local_14 = param_2._2_2_ - local_1c;
+  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
   local_c = param_1._2_2_ - local_1c;
+  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
   local_10 = param_1._2_2_ + 1 + local_1c;
   iVar4 = local_6 - local_1c;
   local_1c = local_6 + 1 + local_1c;

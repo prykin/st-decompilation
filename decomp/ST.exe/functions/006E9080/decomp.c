@@ -7,7 +7,8 @@ undefined4 * __thiscall FUN_006e9080(void *this,uint param_1,uint param_2,uint p
   int iVar3;
   undefined4 *puVar4;
   undefined4 uVar5;
-  
+
+  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   if ((*(uint *)((int)this + 0x310) <= param_1) ||
      (puVar1 = (uint *)(*(int *)((int)this + 0x31c) + param_1 * 0x114), (*puVar1 & 0x8000) == 0)) {
     if (param_1 != 0xffffffff) {

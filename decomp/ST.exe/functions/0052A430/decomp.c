@@ -4,7 +4,7 @@ int __cdecl FUN_0052a430(AnonShape_0052A430_8E4D893F *param_1)
 {
   AnonNested_0052A430_0014_F40A3334 *pAVar1;
   uint local_8;
-  
+
   local_8 = 0;
   pAVar1 = param_1->field_0014;
   switch(pAVar1->field_0004) {

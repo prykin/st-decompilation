@@ -8,7 +8,7 @@ void __cdecl FUN_00676c40(AnonShape_00413AF0_B6B4EE9A *param_1,undefined *param_
   int iVar4;
   int iVar5;
   uint uVar6;
-  
+
   uVar3 = param_1->field_000C;
   if (1 < uVar3) {
     do {
@@ -31,6 +31,7 @@ void __cdecl FUN_00676c40(AnonShape_00413AF0_B6B4EE9A *param_1,undefined *param_
         else {
           iVar4 = 0;
         }
+        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
         iVar5 = (*(code *)param_2)(iVar4,iVar5);
         if (0 < iVar5) {
           FUN_006b0cd0(param_1,uVar6,uVar1);

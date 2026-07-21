@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\Tc_gobj.cpp
@@ -9,7 +11,7 @@ void __thiscall STGameObjC::ResetSelfCheckFlag(STGameObjC *this,int param_1)
   uint uVar1;
   code *pcVar2;
   int iVar3;
-  
+
   if (this->field_01CD != 1) {
     return;
   }
@@ -168,8 +170,6 @@ void __thiscall STGameObjC::ResetSelfCheckFlag(STGameObjC *this,int param_1)
   if (iVar3 == 0) {
     return;
   }
-  pcVar2 = (code *)swi(3);
-  (*pcVar2)();
-  return;
+  STDebugBreak(); /* noreturn in standalone pseudocode */
 }
 

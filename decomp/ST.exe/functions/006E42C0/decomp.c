@@ -8,7 +8,7 @@ undefined4 __thiscall FUN_006e42c0(void *this,int *param_1)
   int *piVar4;
   bool bVar5;
   int local_14 [4];
-  
+
   if (*(int *)((int)this + 0x14) != 0) {
     *(undefined4 *)(*(int *)((int)this + 0x14) + 4) = 0;
     uVar1 = FUN_006b1190(*(AnonShape_006B1190_EDB2B5FD **)((int)this + 0x14),local_14);
@@ -25,7 +25,7 @@ undefined4 __thiscall FUN_006e42c0(void *this,int *param_1)
         piVar4 = piVar4 + 1;
       } while (bVar5);
       if (bVar5) {
-        FUN_006b0c70(*(AnonShape_006B0C70_7C4FE646 **)((int)this + 0x14),uVar1);
+        FUN_006b0c70(*(DArrayTy **)((int)this + 0x14),uVar1);
       }
       uVar1 = FUN_006b1190(*(AnonShape_006B1190_EDB2B5FD **)((int)this + 0x14),local_14);
     }

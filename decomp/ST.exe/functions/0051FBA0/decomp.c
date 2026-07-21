@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\helpstr.cpp
@@ -18,17 +20,16 @@ undefined4 __thiscall HelpStringTy::GetMessage(HelpStringTy *this,int param_1)
   int iVar9;
   ccFntTy *this_01;
   uint uVar10;
-  undefined4 unaff_ESI;
-  void *unaff_EDI;
   InternalExceptionFrame local_4c;
   HelpStringTy *local_8;
-  
+
   local_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_4c;
   local_8 = this;
-  iVar2 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar2 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
   this_00 = local_8;
   if (iVar2 == 0) {
+    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     switch(*(undefined4 *)(param_1 + 0x10)) {
     case 0:
       if ((local_8->field_012E != 0) &&
@@ -94,9 +95,7 @@ undefined4 __thiscall HelpStringTy::GetMessage(HelpStringTy *this,int param_1)
   iVar9 = ReportDebugMessage(s_E____titans_Andrey_helpstr_cpp_007c3e4c,0x4d,0,iVar2,&DAT_007a4ccc,
                              s_HelpStringTy__GetMessage_007c3e90);
   if (iVar9 != 0) {
-    pcVar1 = (code *)swi(3);
-    uVar8 = (*pcVar1)();
-    return uVar8;
+    STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   RaiseInternalException(iVar2,0,s_E____titans_Andrey_helpstr_cpp_007c3e4c,0x4d);
   return 0xffff;

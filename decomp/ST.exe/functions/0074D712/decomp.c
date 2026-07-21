@@ -7,7 +7,7 @@ undefined4 * FUN_0074d712(undefined4 *param_1,undefined4 *param_2,uint param_3)
   undefined1 *puVar3;
   undefined1 *puVar4;
   undefined4 *puVar5;
-  
+
   if ((param_2 < param_1) && (param_1 < (undefined4 *)(param_3 + (int)param_2))) {
     puVar3 = (undefined1 *)((int)param_2 + param_3);
     puVar4 = (undefined1 *)((int)param_1 + param_3);

@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* Recovered from embedded debug metadata:
@@ -16,8 +18,6 @@ undefined4 __thiscall STGenBombC::LoadImagSpr(STGenBombC *this,int param_1,int p
   STT3DSprC *this_00;
   uint uVar7;
   int iVar8;
-  undefined4 unaff_ESI;
-  void *unaff_EDI;
   bool bVar9;
   char *text;
   undefined4 uVar10;
@@ -29,12 +29,12 @@ undefined4 __thiscall STGenBombC::LoadImagSpr(STGenBombC *this,int param_1,int p
   STGenBombC *local_10;
   int local_c;
   undefined4 local_8;
-  
+
   local_8 = 0;
   local_5c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_5c;
   local_10 = this;
-  iVar5 = Library::MSVCRT::__setjmp3(local_5c.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar5 = Library::MSVCRT::__setjmp3(local_5c.jumpBuffer,0);
   pSVar4 = local_10;
   if (iVar5 != 0) {
     g_currentExceptionFrame = local_5c.previous;
@@ -44,10 +44,9 @@ undefined4 __thiscall STGenBombC::LoadImagSpr(STGenBombC *this,int param_1,int p
       RaiseInternalException(iVar5,0,s_E____titans_nick_to_GnBom_cpp_007d0018,0x54d);
       return 0xffff;
     }
-    pcVar1 = (code *)swi(3);
-    uVar10 = (*pcVar1)();
-    return uVar10;
+    STDebugBreak(); /* noreturn in standalone pseudocode */
   }
+  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   if (*(int *)(local_10 + 0x252) == 0) {
     pAVar6 = (AnonShape_004AB810_8E5693D5 *)Library::MSVCRT::FUN_0072e530(0x40);
     if (pAVar6 == (AnonShape_004AB810_8E5693D5 *)0x0) {

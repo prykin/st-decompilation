@@ -28,27 +28,43 @@ void __thiscall FUN_00633770(void *this,int param_1,int param_2)
   float10 fVar22;
   float10 fVar23;
   float10 fVar24;
+  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   unkbyte10 extraout_ST0;
+  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   float10 extraout_ST0_00;
+  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   float10 extraout_ST0_01;
+  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   float10 extraout_ST0_02;
+  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   float10 extraout_ST0_03;
+  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   float10 extraout_ST0_04;
+  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   float10 extraout_ST0_05;
+  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   float10 extraout_ST0_06;
+  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   float10 extraout_ST0_07;
+  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   float10 extraout_ST0_08;
+  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   float10 extraout_ST0_09;
+  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   unkbyte10 extraout_ST0_10;
   float10 fVar25;
+  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   unkbyte10 extraout_ST1;
+  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   float10 extraout_ST1_00;
+  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   float10 extraout_ST1_01;
+  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   float10 extraout_ST1_02;
   longlong lVar26;
   int local_18;
   uint local_14;
-  
+
   switch(*(undefined4 *)((int)this + 0x11)) {
   case 0:
     uVar14 = 0;
@@ -84,6 +100,7 @@ void __thiscall FUN_00633770(void *this,int param_1,int param_2)
             fsin(fVar23);
             fcos(fVar22 * (float10)*(float *)((int)this + 0x8d));
             lVar26 = Library::MSVCRT::__ftol();
+            /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
             fsin(extraout_ST1);
             *(int *)(iVar19 + 0xd) = (int)lVar26 + *(int *)((int)this + 0x95);
             lVar26 = Library::MSVCRT::__ftol();
@@ -144,9 +161,11 @@ void __thiscall FUN_00633770(void *this,int param_1,int param_2)
       if (0 < (int)uVar14) {
         do {
           iVar15 = *(int *)this;
+          /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
           if ((local_14 < *(uint *)(iVar15 + 0xc)) &&
              (iVar15 = *(int *)(iVar15 + 8) * local_14 + *(int *)(iVar15 + 0x1c), iVar15 != 0)) {
             fVar25 = (float10)*(float *)(iVar15 + 0x21) + (float10)*(float *)((int)this + 0x8d);
+            /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
             fVar24 = (float10)fsin(((float10)*(int *)((int)this + 0x1d) * (float10)(int)local_14 *
                                    (float10)_DAT_0079c5a4) / (float10)*(int *)((int)this + 0x19) +
                                    (float10)*(float *)((int)this + 0x91));
@@ -263,10 +282,12 @@ void __thiscall FUN_00633770(void *this,int param_1,int param_2)
             lVar26 = Library::MSVCRT::__ftol();
             *(int *)(iVar19 + 0xd) = (int)lVar26 + *(int *)((int)this + 0x95);
             lVar26 = Library::MSVCRT::__ftol();
+            /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
             fcos(extraout_ST0);
             *(int *)(iVar19 + 0x11) = (int)lVar26 + *(int *)((int)this + 0x99);
             lVar26 = Library::MSVCRT::__ftol();
             *(int *)(iVar19 + 0x15) = (int)lVar26 + *(int *)((int)this + 0x9d);
+            /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
             fVar25 = extraout_ST0_00;
           }
           uVar14 = uVar14 + 1;
@@ -313,6 +334,7 @@ void __thiscall FUN_00633770(void *this,int param_1,int param_2)
           }
           lVar26 = Library::MSVCRT::__ftol();
           iVar15 = (int)lVar26;
+          /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
           fVar1 = (float)(extraout_ST0_01 - (float10)iVar15 * (float10)*(float *)((int)this + 0x75))
           ;
           if (iVar15 < 1) {
@@ -416,6 +438,7 @@ void __thiscall FUN_00633770(void *this,int param_1,int param_2)
             do {
               iVar15 = *(int *)this;
               if (local_14 < *(uint *)(iVar15 + 0xc)) {
+                /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
                 iVar15 = *(int *)(iVar15 + 8) * local_14 + *(int *)(iVar15 + 0x1c);
               }
               else {
@@ -700,9 +723,11 @@ void __thiscall FUN_00633770(void *this,int param_1,int param_2)
               lVar26 = Library::MSVCRT::__ftol();
               uVar14 = (int)(uint)lVar26 >> 0x1f;
               *(float *)((int)this + 0x49) =
+                   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
                    (float)(extraout_ST0_03 -
                           (float10)(int)(((uint)lVar26 ^ uVar14) - uVar14) *
                           (float10)*(float *)((int)this + 0x89));
+              /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
               fVar25 = extraout_ST1_00;
             }
             if (_DAT_0079034c < *(float *)((int)this + 0x49)) {
@@ -723,9 +748,11 @@ void __thiscall FUN_00633770(void *this,int param_1,int param_2)
               lVar26 = Library::MSVCRT::__ftol();
               uVar14 = (int)(uint)lVar26 >> 0x1f;
               *(float *)((int)this + 0x4d) =
+                   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
                    (float)(extraout_ST0_04 -
                           (float10)(int)(((uint)lVar26 ^ uVar14) - uVar14) *
                           (float10)*(float *)((int)this + 0x89));
+              /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
               fVar25 = extraout_ST1_01;
             }
             *(float *)((int)this + 0x59) = (float)((float10)*(float *)((int)this + 0x49) / fVar25);
@@ -949,6 +976,7 @@ void __thiscall FUN_00633770(void *this,int param_1,int param_2)
               *(int *)(iVar19 + 0x11) = (int)lVar26 + *(int *)((int)this + 0x91);
               lVar26 = Library::MSVCRT::__ftol();
               *(int *)(iVar19 + 0x15) = (int)lVar26 + *(int *)((int)this + 0x95);
+              /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
               fVar25 = extraout_ST0_05;
             }
             uVar11 = uVar11 + 1;
@@ -965,12 +993,14 @@ void __thiscall FUN_00633770(void *this,int param_1,int param_2)
           uVar7 = PTR_00802a38->field_00E4;
           *(int *)((int)this + 9) = iVar15;
           *(undefined4 *)((int)this + 5) = uVar7;
+          /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
           if (extraout_ST1_02 <= fVar25) {
             *(float *)((int)this + 0x79) = (float)extraout_ST1_02;
             return;
           }
           lVar26 = Library::MSVCRT::__ftol();
           *(float *)((int)this + 0x79) =
+               /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
                (float)(extraout_ST0_07 - (float10)((int)lVar26 << 1) * (float10)_DAT_0079d1a4);
         }
       }
@@ -1067,6 +1097,7 @@ void __thiscall FUN_00633770(void *this,int param_1,int param_2)
               *(int *)(iVar19 + 0x11) = (int)lVar26 + *(int *)((int)this + 0x91);
               lVar26 = Library::MSVCRT::__ftol();
               *(int *)(iVar19 + 0x15) = (int)lVar26 + *(int *)((int)this + 0x95);
+              /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
               fVar25 = extraout_ST0_08;
             }
             uVar14 = uVar14 + 1;
@@ -1079,6 +1110,7 @@ void __thiscall FUN_00633770(void *this,int param_1,int param_2)
           else {
             lVar26 = Library::MSVCRT::__ftol();
             *(float *)((int)this + 0x79) =
+                 /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
                  (float)(extraout_ST0_09 - (float10)((int)lVar26 << 1) * (float10)_DAT_0079d1a4);
           }
           *(undefined4 *)((int)this + 0x2d) = 6;
@@ -1151,6 +1183,7 @@ void __thiscall FUN_00633770(void *this,int param_1,int param_2)
             lVar26 = Library::MSVCRT::__ftol();
             *(int *)(iVar18 + 0xd) = (int)lVar26 + *(int *)((int)this + 0x95);
             lVar26 = Library::MSVCRT::__ftol();
+            /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
             fcos(extraout_ST0_10);
             *(int *)(iVar18 + 0x11) = (int)lVar26 + *(int *)((int)this + 0x99);
             lVar26 = Library::MSVCRT::__ftol();

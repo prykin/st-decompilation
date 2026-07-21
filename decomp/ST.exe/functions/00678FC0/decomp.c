@@ -11,7 +11,8 @@ void __fastcall FUN_00678fc0(int param_1)
   AnonShape_00413AF0_B6B4EE9A *pAVar7;
   uint uVar8;
   uint uVar9;
-  
+
+  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   pAVar7 = *(AnonShape_00413AF0_B6B4EE9A **)(param_1 + 0x695);
   uVar8 = pAVar7->field_000C;
   if (1 < (int)uVar8) {
@@ -79,6 +80,7 @@ LAB_00679087:
             bVar2 = true;
           }
         }
+        /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
         pAVar7 = *(AnonShape_00413AF0_B6B4EE9A **)(param_1 + 0x695);
         uVar8 = pAVar7->field_000C;
         uVar9 = uVar1;

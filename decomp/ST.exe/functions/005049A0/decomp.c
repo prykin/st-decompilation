@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\cpanel4.cpp
@@ -11,21 +13,20 @@ uint __thiscall CPanelTy::PaintPerResSI(CPanelTy *this)
   int iVar3;
   byte *pbVar4;
   uint uVar5;
+  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   uint extraout_EAX;
   byte bVar6;
   int iVar7;
-  undefined4 unaff_ESI;
-  void *unaff_EDI;
   uint uVar8;
   InternalExceptionFrame local_54;
   uint local_10;
   CPanelTy *local_c;
   uint local_8;
-  
+
   local_54.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_54;
   local_c = this;
-  iVar3 = Library::MSVCRT::__setjmp3(local_54.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar3 = Library::MSVCRT::__setjmp3(local_54.jumpBuffer,0);
   pCVar2 = local_c;
   if (iVar3 == 0) {
     PaintDamageXY(local_c,local_c->field_0194,0x5c,0x50,(uint)(byte)local_c->field_0C33,0x2714);
@@ -42,6 +43,7 @@ uint __thiscall CPanelTy::PaintPerResSI(CPanelTy *this)
         DibPut((AnonShape_006B5B10_E0D06CF1 *)pCVar2->field_0194,uVar8 * 4 + 0x35,0x7d,'\x01',pbVar4
               );
         bVar6 = bVar6 + 1;
+        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
         local_8 = CONCAT31(local_8._1_3_,bVar6);
         uVar8 = (uint)bVar6;
         uVar5 = local_10;
@@ -64,11 +66,10 @@ uint __thiscall CPanelTy::PaintPerResSI(CPanelTy *this)
   iVar7 = ReportDebugMessage(s_E____titans_Andrey_cpanel4_cpp_007c2700,0x68,0,iVar3,&DAT_007a4ccc,
                              s_CPanelTy__PaintPerResSI_007c2778);
   if (iVar7 != 0) {
-    pcVar1 = (code *)swi(3);
-    uVar5 = (*pcVar1)();
-    return uVar5;
+    STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   RaiseInternalException(iVar3,0,s_E____titans_Andrey_cpanel4_cpp_007c2700,0x68);
+  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   return extraout_EAX;
 }
 

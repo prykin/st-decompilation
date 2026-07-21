@@ -7,7 +7,7 @@ undefined4 __thiscall FUN_0071e060(void *this,int param_1,int param_2)
   undefined4 local_18;
   undefined4 local_14;
   undefined4 local_10;
-  
+
   if (-1 < *(int *)((int)this + 0x24)) {
     local_1c = *(undefined4 *)(*(int *)((int)this + 0x20) + *(int *)((int)this + 0x24) * 4);
     local_18 = 2;

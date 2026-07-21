@@ -50,7 +50,7 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00728640::FUN_00728a80
   AnonShape_00728A80_F2811CDB *local_10;
   int local_c;
   int local_8;
-  
+
   iVar15 = (int)*(short *)(DAT_00857110 + 2 + DAT_00857114 * 8);
   iVar14 = *(int *)&this->field_0x28;
   param_1 = param_1 + iVar15 * param_2;
@@ -116,6 +116,7 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00728640::FUN_00728a80
                     pbVar16 = pbVar16 + 2;
                     iVar8 = iVar8 + -2;
                     *(ushort *)puVar13 =
+                         /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                          CONCAT11(*(undefined1 *)(param_3 + (uint)*pbVar1),
                                   *(undefined1 *)(param_3 + uVar11));
                     uVar11 = (uint)*pbVar16;
@@ -123,11 +124,13 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00728640::FUN_00728a80
                   }
                   while (3 < iVar8) {
                     pbVar1 = pbVar16 + 2;
+                    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                     uVar12 = CONCAT11(*(undefined1 *)(param_3 + (uint)pbVar16[1]),
                                       *(undefined1 *)(param_3 + uVar11));
                     pbVar2 = pbVar16 + 3;
                     pbVar16 = pbVar16 + 4;
                     *puVar13 = (uint)uVar12 |
+                               /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                CONCAT22(uVar12,CONCAT11(*(undefined1 *)(param_3 + (uint)*pbVar2),
                                                         *(undefined1 *)(param_3 + (uint)*pbVar1)))
                                << 0x10;

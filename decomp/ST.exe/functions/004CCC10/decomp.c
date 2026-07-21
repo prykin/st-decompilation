@@ -11,9 +11,13 @@ void __thiscall FUN_004ccc10(void *this,int *param_1,int *param_2)
   undefined *puVar3;
   uint uVar4;
   int iVar5;
+  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined4 extraout_EDX;
+  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined4 extraout_EDX_00;
+  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined4 extraout_EDX_01;
+  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined4 extraout_EDX_02;
   int *piVar6;
   undefined4 *puVar7;
@@ -27,7 +31,7 @@ void __thiscall FUN_004ccc10(void *this,int *param_1,int *param_2)
   undefined2 local_10;
   short local_e;
   int local_8;
-  
+
   piVar8 = param_1;
   local_8 = *(int *)((int)this + 0x24);
   thunk_FUN_00423180();
@@ -64,10 +68,12 @@ void __thiscall FUN_004ccc10(void *this,int *param_1,int *param_2)
       if (uVar1 == 1) {
         iVar5 = *(int *)this;
         uVar9 = 0x74;
+/* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
 LAB_004ccd43:
         (**(code **)(iVar5 + 0x90))(6,uVar9);
       }
       else if (uVar1 == 2) {
+        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
         (**(code **)(*(int *)this + 0x90))(6,0x75);
       }
       else if (uVar1 == 3) {
@@ -96,6 +102,7 @@ LAB_004ccd43:
             local_10 = (undefined2)iVar5;
             uVar9 = thunk_FUN_004e60d0((int)piVar8,iVar5);
             local_e = (short)uVar9 + 1;
+            /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
             (**(code **)*DAT_008117bc)(local_28);
           }
         }
@@ -110,6 +117,7 @@ LAB_004ccd43:
   *(uint *)((int)this + 0x239) = (uVar1 & 0xff) - 1;
   thunk_FUN_004b9920(this);
   iVar5 = 0;
+  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   thunk_FUN_00419c70(this,extraout_EDX,0);
   thunk_FUN_0041f630(this);
   if ((*(int *)(&DAT_00792778 + *(int *)((int)this + 0x235) * 4) == 0) ||
@@ -122,14 +130,17 @@ LAB_004ccd43:
              thunk_FUN_004e81b0(*(int *)((int)this + 0x24),*(int *)((int)this + 0x235),0);
   }
   thunk_FUN_0041c3f0(this,puVar3);
+  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   uVar9 = extraout_EDX_00;
   if (*(int *)((int)this + 0x5ac) == 0x34) {
     thunk_FUN_004dd880((int)this);
+    /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
     uVar9 = extraout_EDX_01;
   }
   if (*(int *)((int)this + 0x24) == *(int *)((int)this + 0x23d)) {
 LAB_004ccedc:
     if (*(int *)((int)this + 0x5ac) == 0x50) {
+      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
       thunk_FUN_004b7080(CONCAT31((int3)((uint)uVar9 >> 8),*(undefined1 *)((int)this + 0x24)),0x28);
     }
     if ((*(int *)((int)this + 0x5ac) == 0x6f) || (*(int *)((int)this + 0x5ac) == 0x73)) {
@@ -151,6 +162,7 @@ LAB_004ccedc:
     uVar1 = GetPlayerRaceId((char)*(int *)((int)this + 0x23d));
     iVar2 = *(int *)((int)this + 0x235);
     uVar4 = GetPlayerRaceId(*(char *)((int)this + 0x24));
+    /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
     uVar9 = extraout_EDX_02;
     if ((&DAT_007e1984)[(uVar4 & 0xff) + (iVar2 * 3 + (uVar1 & 0xff)) * 3] != '\0')
     goto LAB_004ccedc;
@@ -177,6 +189,7 @@ LAB_004ccedc:
                          (uint)*(ushort *)((int)this + 0x32));
     }
   }
+/* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
 LAB_004cd038:
   if (((*(int *)((int)this + 0x5ac) == 0x6a) &&
       (*(uint *)((int)this + 0x4d4) <= (uint)PTR_00802a38->field_00E4)) &&
@@ -213,7 +226,9 @@ LAB_004cd038:
   if ((((iVar5 != 0x4d) || (*(int *)((int)this + 0x4d0) == 2)) &&
       ((iVar5 != 0x4c || (*(int *)((int)this + 0x4d0) == 2)))) &&
      ((iVar5 != 0x43 || (*(int *)((int)this + 0x4d0) == 2)))) {
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
     iVar5 = (**(code **)(*(int *)this + 0x2c))();
+    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
     thunk_FUN_004b76d0(CONCAT31((int3)((uint)iVar5 >> 8),*(undefined1 *)((int)this + 0x24)),iVar5);
   }
 LAB_004cd1d7:

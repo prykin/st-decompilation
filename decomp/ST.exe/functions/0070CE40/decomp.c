@@ -10,7 +10,7 @@ char * __cdecl FUN_0070ce40(char *param_1,char *param_2)
   char *pcVar6;
   char *pcVar7;
   char *pcVar8;
-  
+
   if ((*param_1 == '\0') || (*param_2 == '\0')) {
     return param_1;
   }

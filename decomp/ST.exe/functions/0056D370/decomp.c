@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\tapp.cpp
@@ -10,16 +12,14 @@ void __thiscall STAppC::OpenGameDBs(STAppC *this)
   code *pcVar2;
   int errorCode;
   int iVar3;
-  undefined4 unaff_ESI;
   undefined1 *puVar4;
-  void *unaff_EDI;
   InternalExceptionFrame local_4c;
   STAppC *local_8;
-  
+
   local_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_4c;
   local_8 = this;
-  errorCode = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  errorCode = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
   if (errorCode == 0) {
     puVar1 = &local_8->field_0x470;
     puVar4 = &local_8->field_7D1A;
@@ -45,9 +45,7 @@ void __thiscall STAppC::OpenGameDBs(STAppC *this)
   iVar3 = ReportDebugMessage(s_E____titans_tapp_cpp_007ca0c8,0x400,0,errorCode,&DAT_007a4ccc,
                              s_STAppC__OpenGameDBs_007ca130);
   if (iVar3 != 0) {
-    pcVar2 = (code *)swi(3);
-    (*pcVar2)();
-    return;
+    STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   RaiseInternalException(errorCode,0,s_E____titans_tapp_cpp_007ca0c8,0x400);
   return;

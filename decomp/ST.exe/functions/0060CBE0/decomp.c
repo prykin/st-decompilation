@@ -14,7 +14,7 @@ undefined2 * FUN_0060cbe0(undefined2 *param_1,int *param_2)
   int local_10;
   int local_c;
   undefined4 local_8;
-  
+
   local_2c = 0;
   iVar2 = (int)param_1 / 2;
   local_18 = 0;

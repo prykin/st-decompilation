@@ -9,7 +9,7 @@ uint __fastcall FUN_006c82bb(undefined4 param_1,uint param_2)
   uint uVar5;
   uint uVar6;
   bool bVar7;
-  
+
   if (DAT_007eda8c == 100) {
     param_2 = param_2 * 100;
   }
@@ -36,6 +36,7 @@ uint __fastcall FUN_006c82bb(undefined4 param_1,uint param_2)
       }
     }
     uVar2 = uVar5;
+    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
     if (CONCAT22((short)((uint)iVar4 >> 0x10),*(undefined2 *)(&DAT_006ce9a0 + uVar6 * 2)) - param_2
         < CONCAT22((short)(param_2 >> 0x10),uVar3 - *(short *)(&DAT_006ce9a0 + uVar5 * 2))) {
       uVar2 = uVar6 & 0x7fffffff;

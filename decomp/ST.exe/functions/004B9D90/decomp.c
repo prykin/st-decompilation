@@ -5,7 +5,7 @@ undefined4 __fastcall FUN_004b9d90(AnonShape_004B9D90_4F3151F9 *param_1)
   int iVar1;
   int iVar2;
   bool bVar3;
-  
+
   iVar2 = param_1->field_0245;
   if (iVar2 == 1) {
     return 0;

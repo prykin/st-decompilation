@@ -6,7 +6,7 @@ void __thiscall FUN_0060ca40(void *this,int param_1)
   int iVar2;
   int iVar3;
   int iVar4;
-  
+
   iVar4 = *(int *)((int)this + 0x209) - param_1;
   *(int *)((int)this + 0x209) = iVar4;
   thunk_FUN_0060bcb0(this,iVar4);

@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\nick\to_Rubb.cpp
@@ -13,17 +15,15 @@ int __thiscall STRubbishC::RubbishCreatePart(STRubbishC *this)
   AnonShape_004AB810_8E5693D5 *pAVar5;
   undefined4 uVar6;
   int iVar7;
-  undefined4 unaff_ESI;
-  void *unaff_EDI;
   InternalExceptionFrame local_50;
   STRubbishC *local_c;
   int local_8;
-  
+
   local_8 = -1;
   local_50.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_50;
   local_c = this;
-  iVar2 = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar2 = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0);
   if (iVar2 != 0) {
     g_currentExceptionFrame = local_50.previous;
     iVar7 = ReportDebugMessage(s_E____titans_nick_to_Rubb_cpp_007d1798,0xd9,0,iVar2,&DAT_007a4ccc,
@@ -32,9 +32,7 @@ int __thiscall STRubbishC::RubbishCreatePart(STRubbishC *this)
       RaiseInternalException(iVar2,0,s_E____titans_nick_to_Rubb_cpp_007d1798,0xdb);
       return 0xffff;
     }
-    pcVar1 = (code *)swi(3);
-    iVar2 = (*pcVar1)();
-    return iVar2;
+    STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   piVar3 = &local_c->field_01E5;
   iVar2 = 0;

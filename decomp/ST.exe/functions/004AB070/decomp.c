@@ -11,7 +11,7 @@ FUN_004ab070(void *this,Global_sub_004AB070_param_1Enum param_1,float param_2,in
 {
   DWORD DVar1;
   int iVar2;
-  
+
   DVar1 = timeGetTime();
   if (DVar1 - *(int *)((int)this + 0x18) < 0x32) {
     if (*(int *)((int)this + 0x1c) == -2) {

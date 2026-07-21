@@ -14,7 +14,7 @@ undefined4 __thiscall FUN_005ed1c0(void *this,int *param_1,int *param_2,int *par
   short sVar10;
   int iVar11;
   int local_8;
-  
+
   iVar8 = *(int *)((int)this + 0x2ba);
   *param_4 = iVar8;
   if (*(char *)((int)this + 0x25a) != '\0') {
@@ -179,6 +179,7 @@ joined_r0x005ed4b7:
   }
   else {
     if ((iVar8 + -0x1e <= iVar11) || (-1 < local_8)) {
+      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
       if (((0 < local_8) && (*(int *)((int)this + 0x26f) <= iVar11)) ||
          ((local_8 < 0 && (iVar11 <= *(int *)((int)this + 0x26f))))) {
         *(undefined4 *)((int)this + 0x287) = 0;

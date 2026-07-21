@@ -9,7 +9,7 @@ void __thiscall FUN_004be6c0(void *this,undefined4 *param_1)
   int iVar5;
   undefined4 *puVar6;
   int iVar7;
-  
+
   puVar6 = param_1;
   for (iVar5 = 0xd; iVar5 != 0; iVar5 = iVar5 + -1) {
     *puVar6 = 0;
@@ -39,8 +39,10 @@ void __thiscall FUN_004be6c0(void *this,undefined4 *param_1)
   case 4:
     *(undefined1 *)((int)param_1 + 2) = 1;
   }
+  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
   uVar2 = (**(code **)(*(int *)this + 0x7c))();
   *(undefined1 *)((int)param_1 + 0x1b) = uVar2;
+  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
   uVar2 = (**(code **)(*(int *)this + 0xc4))();
   *(undefined1 *)(param_1 + 7) = uVar2;
   *(undefined4 *)((int)param_1 + 3) = *(undefined4 *)((int)this + 0x5ac);
@@ -84,16 +86,19 @@ LAB_004be80a:
   else {
     *(undefined2 *)((int)param_1 + 0x26) = *(undefined2 *)((int)this + 0x2c5);
   }
+  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   if (((*(short *)((int)param_1 + 0x1e) == 0xa8) && (*(int *)((int)this + 0x5ac) == 0x45)) &&
      (*(undefined2 *)((int)param_1 + 0x26) = 0xffff, *(int *)((int)this + 0x4d0) == 0)) {
     *(undefined2 *)((int)param_1 + 0x1e) = 0;
   }
+  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   if ((*(short *)((int)param_1 + 0x1e) == 0xa3) && (*(int *)((int)this + 0x5ac) == 0x4e)) {
     *(undefined2 *)((int)param_1 + 0x26) = 0xffff;
     if ((*(int *)((int)this + 0x4d0) != 1) && (*(int *)((int)this + 0x4d0) != 4)) {
       *(undefined2 *)((int)param_1 + 0x1e) = 0;
     }
   }
+  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   if (((*(short *)((int)param_1 + 0x1e) == 0xb2) && (*(int *)((int)this + 0x5ac) == 0x70)) &&
      (*(undefined2 *)((int)param_1 + 0x26) = 0xffff, *(int *)((int)this + 0x4f0) == 0)) {
     *(undefined2 *)((int)param_1 + 0x1e) = 0;

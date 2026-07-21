@@ -14,7 +14,7 @@ void FUN_006b5b10(AnonShape_006B5B10_E0D06CF1 *param_1,int param_2,int param_3,i
   byte *pbVar9;
   int iVar10;
   int iVar11;
-  
+
   iVar10 = param_6;
   iVar3 = param_5;
   if (param_2 == 0) {

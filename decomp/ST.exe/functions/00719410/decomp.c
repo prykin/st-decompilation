@@ -14,7 +14,7 @@ FUN_00719410(undefined4 param_1,Global_sub_00719410_param_2Enum param_2,undefine
   char *local_10;
   undefined4 local_c;
   undefined4 local_8;
-  
+
   local_18 = 0;
   dwParam1 = 0;
   local_14 = 0;

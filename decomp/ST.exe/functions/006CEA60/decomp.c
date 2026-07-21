@@ -12,7 +12,7 @@ void FUN_006cea60(undefined8 *param_1,int param_2,undefined8 *param_3,int param_
   int iVar7;
   uint uVar8;
   uint uVar9;
-  
+
   if ((0 < (int)param_5) && (0 < param_6)) {
     uVar9 = param_4 - param_5;
     uVar6 = param_2 - param_5;

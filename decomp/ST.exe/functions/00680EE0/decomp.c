@@ -3,7 +3,7 @@ undefined4 FUN_00680ee0(void)
 
 {
   int iVar1;
-  
+
   iVar1 = DAT_008488b0;
   if ((*(int *)(&DAT_00811ae8 + DAT_008488b0 * 0x2b14) == 1) &&
      (0 < *(int *)(&DAT_00811c7c + DAT_008488b0 * 0x2b14))) {

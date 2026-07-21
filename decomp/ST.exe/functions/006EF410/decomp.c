@@ -5,11 +5,12 @@ int __cdecl FUN_006ef410(int param_1)
   int iVar1;
   int *piVar2;
   int iVar3;
-  
+
   iVar1 = 0;
   if (param_1 == 0) {
     return iVar1;
   }
+  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   iVar3 = *(int *)(param_1 + 0x455);
   if (0 < iVar3) {
     piVar2 = (int *)(param_1 + 0x459);

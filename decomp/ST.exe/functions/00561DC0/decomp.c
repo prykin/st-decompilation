@@ -16,7 +16,7 @@ int FUN_00561dc0(int param_1,int param_2,int param_3)
   undefined4 local_1c;
   undefined4 local_10;
   undefined4 local_c;
-  
+
   iVar1 = param_1 * 0x10000;
   iVar2 = param_2 * 0x10000;
   if (param_3 < 1) {

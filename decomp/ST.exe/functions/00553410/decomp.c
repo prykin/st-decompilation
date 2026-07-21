@@ -4,7 +4,7 @@ FUN_00553410(int param_1,int param_2,int param_3,int param_4,int param_5,undefin
 
 {
   int iVar1;
-  
+
   if ((((param_1 < 0) || (param_4 <= param_1)) || (param_2 < 0)) || (param_5 <= param_2)) {
     iVar1 = -1;
   }

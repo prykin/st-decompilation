@@ -23,7 +23,7 @@ undefined4 __thiscall FUN_006d5260(void *this,undefined4 *param_1)
   int local_10;
   void *local_c;
   undefined4 *local_8;
-  
+
   local_14 = (_RTL_CRITICAL_SECTION *)((int)this + 0x7c);
   local_c = this;
   EnterCriticalSection(local_14);
@@ -124,6 +124,7 @@ undefined4 __thiscall FUN_006d5260(void *this,undefined4 *param_1)
     }
     ReleaseDC((HWND)0x0,hdc);
     this = local_c;
+    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     FUN_006b0a20(*(undefined4 **)(*(int *)((int)local_c + 0x288) + 0x28),
                  (int)(&local_414 + iStart_00),iStart_00,(int)iStart - iStart_00,0);
     FUN_00747406(this,9,(int *)0x0,0);

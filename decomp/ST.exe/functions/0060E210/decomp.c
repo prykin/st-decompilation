@@ -14,9 +14,10 @@ undefined4 FUN_0060e210(undefined4 param_1,undefined4 param_2,int param_3,int pa
   double *pdVar5;
   int iVar6;
   float10 fVar7;
+  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   float10 extraout_ST1;
   longlong lVar8;
-  
+
   iVar1 = param_3;
   pdVar2 = (double *)Library::DKW::LIB::FUN_006aac70(param_3 * 8);
   if (pdVar2 != (double *)0x0) {
@@ -75,6 +76,7 @@ undefined4 FUN_0060e210(undefined4 param_1,undefined4 param_2,int param_3,int pa
         *(short *)(param_4 + 2) = (short)lVar8;
         param_4 = param_4 + 4;
         param_3 = param_3 + 1;
+        /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
         fVar7 = extraout_ST1;
       } while (param_3 < param_5);
     }

@@ -17,7 +17,7 @@ FUN_00413170(int param_1,int param_2,int param_3,int param_4,undefined4 *param_5
   int local_1c;
   int local_10;
   int local_8;
-  
+
   pcVar9 = (char *)*param_5;
   cVar2 = pcVar9[3];
   while ((-1 < cVar2 && (cVar2 < param_4))) {

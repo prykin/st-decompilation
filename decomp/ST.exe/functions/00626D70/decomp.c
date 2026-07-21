@@ -5,7 +5,8 @@ void __thiscall FUN_00626d70(void *this,AnonShape_00626D70_1F4C15C4 *param_1)
   undefined1 uVar1;
   undefined4 uVar2;
   int iVar3;
-  
+
+  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
   uVar2 = (**(code **)(*(int *)this + 0x2c))();
   *(undefined4 *)param_1 = uVar2;
   iVar3 = GetPlayerRaceId(*(char *)((int)this + 0x24));
@@ -24,6 +25,7 @@ void __thiscall FUN_00626d70(void *this,AnonShape_00626D70_1F4C15C4 *param_1)
     param_1->field_0005 = 4;
   }
   if (*(char *)((int)this + 0x2ad) == '\x03') {
+    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     iVar3 = ((*(int *)((int)this + 0x35f) - PTR_00802a38->field_00E4) + 0x1194) * 0x28;
     param_1[3].field_0x4 =
          ((char)(iVar3 / 0x1194) + (char)(iVar3 >> 0x1f)) -

@@ -8,7 +8,7 @@ undefined4 __thiscall FUN_00714fb0(void *this,int param_1,uint *param_2,char *pa
   int iVar4;
   uint *puVar5;
   uint *puVar6;
-  
+
   bVar2 = false;
   if (param_1 != 0) {
     *(int *)((int)this + 8) = param_1;

@@ -10,9 +10,7 @@ undefined4 __thiscall FUN_0056e9e0(void *this,int param_1)
   ushort *puVar6;
   uint uVar7;
   uint uVar8;
-  undefined4 unaff_ESI;
   byte *pbVar9;
-  void *unaff_EDI;
   byte *pbVar10;
   byte *pbVar11;
   byte local_160 [260];
@@ -22,7 +20,7 @@ undefined4 __thiscall FUN_0056e9e0(void *this,int param_1)
   undefined4 local_10;
   byte *local_c;
   cMf32 *local_8;
-  
+
   local_10 = 1;
   if (param_1 != 0) {
     *(undefined1 *)((int)this + 0x1163) = 1;
@@ -31,7 +29,7 @@ undefined4 __thiscall FUN_0056e9e0(void *this,int param_1)
   local_5c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_5c;
   local_18 = this;
-  iVar3 = Library::MSVCRT::__setjmp3(local_5c.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar3 = Library::MSVCRT::__setjmp3(local_5c.jumpBuffer,0);
   pvVar2 = local_18;
   if (iVar3 != 0) {
     g_currentExceptionFrame = local_5c.previous;

@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\cpanel.cpp
@@ -13,34 +15,32 @@ uint __thiscall CPanelTy::PaintSMap(CPanelTy *this)
   int errorCode;
   uint uVar5;
   int iVar6;
+  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   uint extraout_EAX;
   undefined *puVar7;
   char cVar8;
-  undefined4 unaff_ESI;
   uint uVar9;
-  void *unaff_EDI;
   char *pcVar10;
   char *pcVar11;
   InternalExceptionFrame local_50;
   char local_c;
   undefined3 uStack_b;
   CPanelTy *local_8;
-  
+
   local_50.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_50;
   local_8 = this;
-  errorCode = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  errorCode = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0);
   pCVar4 = local_8;
   if (errorCode != 0) {
     g_currentExceptionFrame = local_50.previous;
     iVar6 = ReportDebugMessage(s_E____titans_Andrey_cpanel_cpp_007c1bd8,0x2fc,0,errorCode,
                                &DAT_007a4ccc,s_CPanelTy__PaintSMap_007c216c);
     if (iVar6 != 0) {
-      pcVar3 = (code *)swi(3);
-      uVar5 = (*pcVar3)();
-      return uVar5;
+      STDebugBreak(); /* noreturn in standalone pseudocode */
     }
     RaiseInternalException(errorCode,0,s_E____titans_Andrey_cpanel_cpp_007c1bd8,0x2fc);
+    /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
     return extraout_EAX;
   }
   if ((uint)(local_8->field_0038 - local_8->field_0998) < 100) {
@@ -79,6 +79,7 @@ uint __thiscall CPanelTy::PaintSMap(CPanelTy *this)
       uVar9 = *(int *)(&DAT_008087f8 + uVar5 * 0x51) + pCVar4->field_09A0;
       uVar5 = uVar9 / 0xe10;
       cVar8 = (char)uVar5;
+      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
       _local_c = CONCAT31(uStack_b,cVar8);
       puVar1 = &pCVar4->field_0x1e1;
       if (cVar8 == '\0') {
@@ -101,6 +102,7 @@ uint __thiscall CPanelTy::PaintSMap(CPanelTy *this)
         uVar9 = *(uint *)(&DAT_008087f8 + uVar5 * 0x51) - uVar9;
         uVar5 = uVar9 / 0xe10;
         cVar8 = (char)uVar5;
+        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
         _local_c = CONCAT31(uStack_b,cVar8);
         if (cVar8 == '\0') {
           puVar7 = &DAT_007c2198;

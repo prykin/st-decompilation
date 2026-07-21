@@ -2,7 +2,7 @@
 /* [STMethodOwnerApplier] Structural method owner recovered as STGroupBoatC.
    Evidence: this_call_owners=[STGroupBoatC]; agreed_this_calls=1; incoming_this_accesses=2;
    incoming_edx_uses=0; incoming_stack_parameter_uses=0
-   
+
    [STPrototypeApplier] Propagated return.
    Evidence: 006E60E0 returns STGroupBoatC::sub_006E60E0 this @ 006E60F8 */
 

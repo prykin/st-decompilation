@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\To_dump.cpp
@@ -13,30 +15,27 @@ undefined4 __thiscall DumpClassC::GetMessage(DumpClassC *this,int param_1)
   undefined4 uVar5;
   uint uVar6;
   uint uVar7;
-  undefined4 unaff_ESI;
-  void *unaff_EDI;
   short *psVar8;
   STWorldObject **ppSVar9;
   undefined4 *puVar10;
   InternalExceptionFrame local_90;
   InternalExceptionFrame local_4c;
   DumpClassC *local_8;
-  
+
   local_8 = this;
   FUN_006e5fd0();
+  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   switch(*(undefined4 *)(param_1 + 0x10)) {
   case 2:
     local_4c.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_4c;
-    iVar3 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
+    iVar3 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
     if (iVar3 != 0) {
       g_currentExceptionFrame = local_4c.previous;
       iVar4 = ReportDebugMessage(s_E____titans_wlad_To_dump_cpp_007abdd4,0x3d,0,iVar3,&DAT_007a4ccc,
                                  s_DumpClassC__GetMessage___MESS_ID_007abda4);
       if (iVar4 != 0) {
-        pcVar1 = (code *)swi(3);
-        uVar5 = (*pcVar1)();
-        return uVar5;
+        STDebugBreak(); /* noreturn in standalone pseudocode */
       }
       iVar4 = 0x3e;
 LAB_00495c27:
@@ -123,15 +122,13 @@ LAB_00495c27:
   case 3:
     local_90.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_90;
-    iVar3 = Library::MSVCRT::__setjmp3(local_90.jumpBuffer,0,unaff_EDI,unaff_ESI);
+    iVar3 = Library::MSVCRT::__setjmp3(local_90.jumpBuffer,0);
     if (iVar3 != 0) {
       g_currentExceptionFrame = local_90.previous;
       iVar4 = ReportDebugMessage(s_E____titans_wlad_To_dump_cpp_007abdd4,0x58,0,iVar3,&DAT_007a4ccc,
                                  s_DumpClassC__GetMessage___MESS_ID_007abd74);
       if (iVar4 != 0) {
-        pcVar1 = (code *)swi(3);
-        uVar5 = (*pcVar1)();
-        return uVar5;
+        STDebugBreak(); /* noreturn in standalone pseudocode */
       }
       iVar4 = 0x59;
       goto LAB_00495c27;

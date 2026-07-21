@@ -15,7 +15,7 @@ undefined4 __fastcall FUN_0061e110(AnonShape_0061E110_A0361859 *param_1)
   int local_10;
   undefined4 local_c;
   int local_8;
-  
+
   sVar1 = param_1->field_0030;
   local_c = 0;
   if (sVar1 < 0) {

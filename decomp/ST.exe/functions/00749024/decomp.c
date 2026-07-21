@@ -4,7 +4,7 @@ FUN_00749024(void *this,undefined4 param_1,int param_2,undefined4 *param_3,int p
 
 {
   HANDLE pvVar1;
-  
+
   FUN_0074b7b8(this,param_1,param_2);
   InitializeCriticalSection((LPCRITICAL_SECTION)((int)this + 0x10));
   *(undefined4 *)((int)this + 0x28) = 0;

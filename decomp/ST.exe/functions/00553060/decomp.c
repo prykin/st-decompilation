@@ -6,7 +6,7 @@ undefined4 __cdecl FUN_00553060(int param_1)
   short *psVar2;
   uint uVar3;
   bool bVar4;
-  
+
   if (PTR_00802a4c != (AnonShape_GLOBAL_00802A4C_E3045C67 *)0x0) {
     uVar1 = PTR_00802a4c->field_000C;
     uVar3 = 0;

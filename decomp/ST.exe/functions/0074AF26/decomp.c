@@ -15,7 +15,7 @@ FUN_0074af26(void *this,uint param_1,uint param_2,undefined4 param_3,undefined4 
   uint local_1c [4];
   undefined4 local_c;
   undefined4 local_8;
-  
+
   local_c = param_3;
   local_8 = param_4;
   iVar3 = *(int *)((int)this + 0xf4);
@@ -55,6 +55,7 @@ FUN_0074af26(void *this,uint param_1,uint param_2,undefined4 param_3,undefined4 
   local_1c[2] = uVar2 + param_1;
   local_1c[3] = ((int)uVar2 >> 0x1f) + param_2 + (uint)CARRY4(uVar2,param_1);
   if (*(int *)((int)this + 0xac) == 0) {
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
     iVar3 = (**(code **)**(undefined4 **)(*(int *)((int)this + 0x78) + 0x18))();
     if (-1 < iVar3) {
       *(undefined4 *)((int)this + 0xac) = 0;
@@ -73,6 +74,7 @@ FUN_0074af26(void *this,uint param_1,uint param_2,undefined4 param_3,undefined4 
       puVar6 = puVar6 + 1;
       puVar7 = puVar7 + 1;
     }
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
     uVar4 = (**(code **)(iVar3 + 0xc))(piVar1,-(uint)(this != (void *)0x0) & (int)this + 0xcU);
   }
   return uVar4;

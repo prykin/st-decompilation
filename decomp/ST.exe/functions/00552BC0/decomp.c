@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\upginfo.cpp
@@ -13,10 +15,8 @@ void __thiscall UpgPanelTy::Update(UpgPanelTy *this)
   uint uVar5;
   byte *pbVar6;
   int iVar7;
-  undefined4 unaff_ESI;
   undefined4 *puVar8;
   Global_sub_005276E0_param_1Enum *pGVar9;
-  void *unaff_EDI;
   undefined4 *puVar10;
   AnonShape_GLOBAL_0081175C_57F682DD *pAVar11;
   undefined4 local_298 [144];
@@ -25,11 +25,11 @@ void __thiscall UpgPanelTy::Update(UpgPanelTy *this)
   int local_10;
   int local_c;
   int local_8;
-  
+
   local_58.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_58;
   local_14 = this;
-  iVar4 = Library::MSVCRT::__setjmp3(local_58.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar4 = Library::MSVCRT::__setjmp3(local_58.jumpBuffer,0);
   pUVar3 = local_14;
   if (iVar4 == 0) {
     puVar1 = &local_14->field_0x1ab;
@@ -106,9 +106,7 @@ void __thiscall UpgPanelTy::Update(UpgPanelTy *this)
   iVar7 = ReportDebugMessage(s_E____titans_Andrey_upginfo_cpp_007c87b8,0x54,0,iVar4,&DAT_007a4ccc,
                              s_UpgPanelTy__Update_007c8850);
   if (iVar7 != 0) {
-    pcVar2 = (code *)swi(3);
-    (*pcVar2)();
-    return;
+    STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   RaiseInternalException(iVar4,0,s_E____titans_Andrey_upginfo_cpp_007c87b8,0x54);
   return;

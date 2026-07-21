@@ -64,11 +64,12 @@ void __fastcall FUN_006ddd50(AnonShape_006DDD50_309FA381 *param_1)
   undefined1 *puStack_10;
   undefined *puStack_c;
   undefined4 local_8;
-  
+
   puStack_c = &DAT_0079dff8;
   puStack_10 = &LAB_0072d964;
   local_14 = ExceptionList;
   local_1c = &stack0xfffffed4;
+  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   if (((param_1->field_0004 == 0) || ((*(uint *)(param_1->field_0004 + 0xc) & 0x1100) != 0x100)) &&
      ((param_1->field_02DC == 0 || (param_1->field_02D8 != 0)))) {
     ExceptionList = &local_14;

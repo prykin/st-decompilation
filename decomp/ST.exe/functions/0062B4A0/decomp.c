@@ -13,7 +13,8 @@ uint __fastcall FUN_0062b4a0(int param_1)
   uint local_10;
   uint local_c;
   int local_8;
-  
+
+  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   local_14 = *(int *)(param_1 + 0x46);
   sVar3 = (short)(local_14 >> 0x1f);
   if (local_14 < 0) {
@@ -26,6 +27,7 @@ uint __fastcall FUN_0062b4a0(int param_1)
                          (short)((longlong)local_14 * 0x28c1979 >> 0x3f));
     local_c = uVar6;
   }
+  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   iVar1 = *(int *)(param_1 + 0x4a);
   sVar3 = (short)(iVar1 >> 0x1f);
   if (iVar1 < 0) {
@@ -38,6 +40,7 @@ uint __fastcall FUN_0062b4a0(int param_1)
                         (short)((longlong)iVar1 * 0x28c1979 >> 0x3f));
     local_8 = iVar7;
   }
+  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   iVar2 = *(int *)(param_1 + 0x4e);
   sVar3 = (short)(iVar2 >> 0x1f);
   if (iVar2 < 0) {
@@ -75,6 +78,7 @@ uint __fastcall FUN_0062b4a0(int param_1)
           uVar6 != 0)))))))) goto cf_common_exit_0062B616;
   }
   uVar5 = 0;
+/* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
 cf_common_exit_0062B616:
   return CONCAT31((int3)(uVar6 >> 8),(char)uVar5);
 }

@@ -11,7 +11,7 @@ FUN_00600580(int param_1,int param_2,int param_3,int param_4,int param_5,int par
   int iVar5;
   uint uVar6;
   int iVar7;
-  
+
   sVar1 = (short)(param_1 >> 0x1f);
   if (param_1 < 0) {
     param_1 = (short)(((short)(param_1 / 0xc9) + sVar1) -

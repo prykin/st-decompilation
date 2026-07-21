@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* [STSourceProvenanceApplier begin]
@@ -23,8 +25,6 @@ void __cdecl CreateMiniMap(short *param_1,int *param_2,uint param_3,byte *param_
   uint uVar12;
   int *piVar13;
   int iVar14;
-  undefined4 unaff_ESI;
-  void *unaff_EDI;
   undefined4 *puVar15;
   InternalExceptionFrame local_68;
   uint local_24;
@@ -35,7 +35,7 @@ void __cdecl CreateMiniMap(short *param_1,int *param_2,uint param_3,byte *param_
   AnonShape_006DDD50_309FA381 *local_10;
   int *local_c;
   float local_8;
-  
+
   *param_2 = 0;
   param_2[1] = 0;
   local_8 = 1.4142135;
@@ -46,7 +46,7 @@ void __cdecl CreateMiniMap(short *param_1,int *param_2,uint param_3,byte *param_
   param_2[3] = 0;
   local_68.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_68;
-  iVar9 = Library::MSVCRT::__setjmp3(local_68.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar9 = Library::MSVCRT::__setjmp3(local_68.jumpBuffer,0);
   if (iVar9 == 0) {
     if (PTR_00802a58 != (cLoadingTy *)0x0) {
       cLoadingTy::SetProcess(PTR_00802a58,0,s_Preparing_mini_map____007c6f28,900);
@@ -87,6 +87,7 @@ void __cdecl CreateMiniMap(short *param_1,int *param_2,uint param_3,byte *param_
     iVar9 = 0;
     this->field_043C = param_4[4];
     this->field_043D = bVar6;
+    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     if (0 < *(int *)((int)param_1 + 0x455)) {
       piVar13 = (int *)((int)param_1 + 0x459);
       do {
@@ -98,6 +99,7 @@ void __cdecl CreateMiniMap(short *param_1,int *param_2,uint param_3,byte *param_
         }
         iVar9 = iVar9 + 1;
         piVar13 = piVar13 + 1;
+      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
       } while (iVar9 < *(int *)((int)param_1 + 0x455));
     }
     local_24 = param_3 * param_3;
@@ -156,9 +158,7 @@ void __cdecl CreateMiniMap(short *param_1,int *param_2,uint param_3,byte *param_
                                 ,s_CreateMiniMap_007c6ef0);
     this = local_10;
     if (iVar14 != 0) {
-      pcVar5 = (code *)swi(3);
-      (*pcVar5)();
-      return;
+      STDebugBreak(); /* noreturn in standalone pseudocode */
     }
   }
   if (this != (AnonShape_006DDD50_309FA381 *)0x0) {

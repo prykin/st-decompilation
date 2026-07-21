@@ -10,12 +10,13 @@ void __fastcall FUN_0052b990(AnonShape_0052B990_04D99BFA *param_1)
   int iVar6;
   uint uVar7;
   uint local_8;
-  
+
   bVar2 = ((DAT_0080874e == '\x03') - 1U & 0xf9) + 0x14;
   FUN_006b5f80(DAT_008075a8,param_1->field_0030,param_1->field_0034,param_1->field_0058,
                param_1->field_005C);
   if (param_1->field_00A4 == '\0') {
     uVar1 = (uint)bVar2;
+    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
     local_8._0_1_ = 1;
     if (0 < (int)(uVar1 - (byte)param_1->field_00A2)) {
       uVar7 = 1;
@@ -23,6 +24,7 @@ void __fastcall FUN_0052b990(AnonShape_0052B990_04D99BFA *param_1)
         pBVar3 = (BITMAPINFO *)
                  FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)param_1->field_0082,0);
         PutDDX(param_1->field_0030 + -4 + uVar7 * 4,param_1->field_0034,'\x01',pBVar3);
+        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
         local_8._0_1_ = (byte)local_8 + 1;
         uVar7 = (uint)(byte)local_8;
       } while ((int)uVar7 <= (int)(uVar1 - (byte)param_1->field_00A2));

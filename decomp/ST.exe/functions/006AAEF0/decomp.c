@@ -5,7 +5,7 @@ int FUN_006aaef0(int param_1,int param_2,uint param_3,int param_4,int param_5)
   int iVar1;
   int iVar2;
   int iVar3;
-  
+
   iVar1 = param_4 - param_1;
   iVar2 = param_5 - param_2;
   iVar3 = iVar1;

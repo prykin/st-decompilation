@@ -2,17 +2,18 @@
 void __fastcall FUN_0048df40(AnonShape_0048DF40_8D46D7E8 *param_1,undefined4 param_2)
 
 {
+  short sVar1;
+  /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
   undefined4 in_EAX;
-  uint uVar1;
   int iVar2;
-  int iVar3;
-  
-  iVar2 = CONCAT22((short)((uint)param_1 >> 0x10),param_1->field_04DF);
-  iVar3 = CONCAT22((short)((uint)param_2 >> 0x10),param_1->field_04DD);
-  uVar1 = CONCAT22((short)((uint)in_EAX >> 0x10),param_1->field_04E1 + 1);
+
+  sVar1 = param_1->field_04E1 + 1;
+  /* ST_PSEUDO[unresolved_register_input,packed_or_unaligned_piece]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention; expected named packed member, bit extract/compose, or unaligned load */
   iVar2 = SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0048DFD0::thunk_FUN_0048dfd0
-                    ((AnonReceiver_0048DFD0 *)param_1,iVar3,iVar2,uVar1,iVar3,iVar2,(int *)uVar1,2,
-                     &param_1->field_04FC,&param_1->field_04FE,&param_1->field_0500);
+                    ((AnonReceiver_0048DFD0 *)param_1,param_1->field_04DD,param_1->field_04DF,sVar1,
+                     param_1->field_04DD,param_1->field_04DF,
+                     (int *)CONCAT22((short)((uint)in_EAX >> 0x10),sVar1),2,&param_1->field_04FC,
+                     &param_1->field_04FE,&param_1->field_0500);
   if (iVar2 == 0) {
     param_1->field_04FC = param_1->field_04DD;
     param_1->field_04FE = param_1->field_04DF;

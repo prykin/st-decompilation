@@ -9,7 +9,7 @@ undefined4 * __thiscall STAllPlayersC::STAllPlayersC(STAllPlayersC *this)
 {
   STPlayerRuntimeRecord *pSVar1;
   int iVar2;
-  
+
   STGroupBoatC::sub_006E60E0((STGroupBoatC *)this);
   this->vtable = &STAllPlayersCVTable;
   pSVar1 = g_playerRuntime;

@@ -10,33 +10,30 @@ ushort __thiscall FUN_004845e0(void *this,Global_sub_004845E0_param_1Enum param_
   byte bVar1;
   byte bVar2;
   int *this_00;
-  char cVar3;
+  int iVar3;
   int iVar4;
-  undefined3 extraout_var;
-  undefined3 extraout_var_00;
-  int iVar5;
-  undefined3 extraout_var_01;
+  uint uVar5;
   uint uVar6;
-  uint uVar7;
-  byte bVar8;
-  bool bVar9;
+  byte bVar7;
+  bool bVar8;
   undefined1 local_10 [4];
   int local_c;
   undefined4 local_8;
-  
+
   this_00 = param_2;
   if ((param_2 != (int *)0x0) && (param_2[8] == 1000)) {
     if (param_2[0x12d] != 0) {
       return 0;
     }
+    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     if (*(int *)((int)param_2 + 0x245) == 6) {
       return 0;
     }
   }
   switch(param_1) {
   case CASE_0:
-    iVar5 = thunk_FUN_00493cd0(this);
-    if (iVar5 != 0) {
+    iVar4 = thunk_FUN_00493cd0(this);
+    if (iVar4 != 0) {
       if (this_00 == (int *)0x0) {
         return 0;
       }
@@ -46,16 +43,17 @@ ushort __thiscall FUN_004845e0(void *this,Global_sub_004845E0_param_1Enum param_
       if (*(int *)((int)this + 0x24) != this_00[9]) {
         return 0;
       }
-      iVar5 = (**(code **)(*this_00 + 0xec))();
-      if (iVar5 != 0) {
-        iVar5 = this_00[8];
-        if (iVar5 == 1000) {
+      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+      iVar4 = (**(code **)(*this_00 + 0xec))();
+      if (iVar4 != 0) {
+        iVar4 = this_00[8];
+        if (iVar4 == 1000) {
           return 4;
         }
-        if (iVar5 == 0x3e9) {
+        if (iVar4 == 0x3e9) {
           return 4;
         }
-        if (iVar5 != 0x14) {
+        if (iVar4 != 0x14) {
           return 0;
         }
         return 3;
@@ -68,154 +66,173 @@ ushort __thiscall FUN_004845e0(void *this,Global_sub_004845E0_param_1Enum param_
     if (this_00 == (int *)0x0) {
       return 5;
     }
-    iVar5 = this_00[8];
-    if ((((iVar5 != 0x14) && (iVar5 != 1000)) && (iVar5 != 0x3e9)) && (iVar5 != 0x1ae)) {
+    iVar4 = this_00[8];
+    if ((((iVar4 != 0x14) && (iVar4 != 1000)) && (iVar4 != 0x3e9)) && (iVar4 != 0x1ae)) {
       return 5;
     }
-    iVar5 = *(int *)((int)this + 0x6f7);
-    if ((((iVar5 != 9) && (iVar5 != 0x15)) &&
+    iVar4 = *(int *)((int)this + 0x6f7);
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+    if ((((iVar4 != 9) && (iVar4 != 0x15)) &&
         ((*(int *)((int)this + 0x716) < *(int *)((int)this + 0x712) &&
-         ((iVar5 = thunk_FUN_004e8030(iVar5), iVar5 != 3 &&
-          (iVar5 = (**(code **)(*this_00 + 0x2c))(), iVar5 == 0x33)))))) &&
+         ((iVar4 = thunk_FUN_004e8030(iVar4), iVar4 != 3 &&
+          (iVar4 = (**(code **)(*this_00 + 0x2c))(), iVar4 == 0x33)))))) &&
        (*(int *)((int)this + 0x24) == this_00[9])) {
       return 0x18;
     }
-    iVar5 = (**(code **)(*this_00 + 0x2c))();
-    if ((((iVar5 == 0x62) && (*(int *)((int)this + 0x24) == this_00[9])) &&
-        (iVar5 = thunk_FUN_004d6df0(this), 0 < iVar5)) &&
-       (iVar5 = thunk_FUN_004e8030(*(int *)((int)this + 0x6f7)), iVar5 == 3)) {
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+    iVar4 = (**(code **)(*this_00 + 0x2c))();
+    if ((((iVar4 == 0x62) && (*(int *)((int)this + 0x24) == this_00[9])) &&
+        (iVar4 = thunk_FUN_004d6df0(this), 0 < iVar4)) &&
+       (iVar4 = thunk_FUN_004e8030(*(int *)((int)this + 0x6f7)), iVar4 == 3)) {
       return 0x1b;
     }
-    iVar5 = (**(code **)(*this_00 + 0x2c))();
-    if (((iVar5 == 0x37) || (iVar5 = (**(code **)(*this_00 + 0x2c))(), iVar5 == 0x6c)) &&
-       (iVar5 = thunk_FUN_004e8b10(this_00,*(uint *)((int)this + 0x24)), iVar5 == 1)) {
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+    iVar4 = (**(code **)(*this_00 + 0x2c))();
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+    if (((iVar4 == 0x37) || (iVar4 = (**(code **)(*this_00 + 0x2c))(), iVar4 == 0x6c)) &&
+       (iVar4 = thunk_FUN_004e8b10(this_00,*(uint *)((int)this + 0x24)), iVar4 == 1)) {
       return 0x1d;
     }
-    iVar5 = (**(code **)(*this_00 + 0x2c))();
-    if (((iVar5 == 0x16) || (iVar5 = (**(code **)(*this_00 + 0x2c))(), iVar5 == 0x25)) &&
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+    iVar4 = (**(code **)(*this_00 + 0x2c))();
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+    if (((iVar4 == 0x16) || (iVar4 = (**(code **)(*this_00 + 0x2c))(), iVar4 == 0x25)) &&
        (*(int *)((int)this_00 + 0x732) == 1)) {
-      bVar8 = *(byte *)(this_00 + 9);
+      bVar7 = *(byte *)(this_00 + 9);
       bVar1 = *(byte *)((int)this + 0x24);
+      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
       param_2 = (int *)CONCAT13(bVar1,param_2._0_3_);
+      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
       local_8 = CONCAT31(local_8._1_3_,bVar1);
       if (DAT_00808a8f == '\0') {
-        if (bVar8 == bVar1) {
+        if (bVar7 == bVar1) {
 LAB_004857a5:
-          iVar5 = 0;
+          iVar4 = 0;
         }
         else {
-          bVar2 = g_playerRelationMatrix[bVar8][bVar1];
-          if ((bVar2 == 0) && (g_playerRelationMatrix[bVar1][bVar8] == 0)) {
-            iVar5 = -2;
+          bVar2 = g_playerRelationMatrix[bVar7][bVar1];
+          if ((bVar2 == 0) && (g_playerRelationMatrix[bVar1][bVar7] == 0)) {
+            iVar4 = -2;
           }
-          else if ((bVar2 == 1) && (g_playerRelationMatrix[bVar1][bVar8] == 0)) {
-            iVar5 = -1;
+          else if ((bVar2 == 1) && (g_playerRelationMatrix[bVar1][bVar7] == 0)) {
+            iVar4 = -1;
           }
-          else if ((bVar2 == 0) && (g_playerRelationMatrix[bVar1][bVar8] == 1)) {
-            iVar5 = 1;
+          else if ((bVar2 == 0) && (g_playerRelationMatrix[bVar1][bVar7] == 1)) {
+            iVar4 = 1;
           }
           else {
-            if ((bVar2 != 1) || (g_playerRelationMatrix[bVar1][bVar8] != 1)) goto LAB_004857a5;
-            iVar5 = 2;
+            if ((bVar2 != 1) || (g_playerRelationMatrix[bVar1][bVar7] != 1)) goto LAB_004857a5;
+            iVar4 = 2;
           }
         }
-        bVar9 = iVar5 < 0;
+        bVar8 = iVar4 < 0;
       }
       else {
-        bVar9 = (&DAT_008087ea)[(uint)bVar1 * 0x51] != (&DAT_008087ea)[(uint)bVar8 * 0x51];
+        bVar8 = (&DAT_008087ea)[(uint)bVar1 * 0x51] != (&DAT_008087ea)[(uint)bVar7 * 0x51];
       }
-      if (bVar9) goto LAB_0048589a;
+      if (bVar8) goto LAB_0048589a;
+      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
       param_2 = (int *)CONCAT31(param_2._1_3_,bVar1);
-      param_1 = CONCAT31(param_1._1_3_,bVar8);
+      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+      param_1 = CONCAT31(param_1._1_3_,bVar7);
       if (DAT_00808a8f == '\0') {
-        if (bVar1 == bVar8) {
+        if (bVar1 == bVar7) {
 LAB_0048586d:
-          iVar5 = 0;
+          iVar4 = 0;
         }
         else {
-          bVar2 = g_playerRelationMatrix[bVar1][bVar8];
-          if ((bVar2 == 0) && (g_playerRelationMatrix[bVar8][bVar1] == 0)) {
-            iVar5 = -2;
+          bVar2 = g_playerRelationMatrix[bVar1][bVar7];
+          if ((bVar2 == 0) && (g_playerRelationMatrix[bVar7][bVar1] == 0)) {
+            iVar4 = -2;
           }
-          else if ((bVar2 == 1) && (g_playerRelationMatrix[bVar8][bVar1] == 0)) {
-            iVar5 = -1;
+          else if ((bVar2 == 1) && (g_playerRelationMatrix[bVar7][bVar1] == 0)) {
+            iVar4 = -1;
           }
-          else if ((bVar2 == 0) && (g_playerRelationMatrix[bVar8][bVar1] == 1)) {
-            iVar5 = 1;
+          else if ((bVar2 == 0) && (g_playerRelationMatrix[bVar7][bVar1] == 1)) {
+            iVar4 = 1;
           }
           else {
-            if ((bVar2 != 1) || (g_playerRelationMatrix[bVar8][bVar1] != 1)) goto LAB_0048586d;
-            iVar5 = 2;
+            if ((bVar2 != 1) || (g_playerRelationMatrix[bVar7][bVar1] != 1)) goto LAB_0048586d;
+            iVar4 = 2;
           }
         }
-        bVar9 = iVar5 < 0;
+        bVar8 = iVar4 < 0;
       }
       else {
-        bVar9 = (&DAT_008087ea)[(uint)bVar8 * 0x51] != (&DAT_008087ea)[(uint)bVar1 * 0x51];
+        bVar8 = (&DAT_008087ea)[(uint)bVar7 * 0x51] != (&DAT_008087ea)[(uint)bVar1 * 0x51];
       }
-      if (!bVar9) {
-        iVar5 = (**(code **)(*this_00 + 0xec))();
-        return (-(ushort)(iVar5 != 1) & 0xfffd) + 3;
+      if (!bVar8) {
+        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+        iVar4 = (**(code **)(*this_00 + 0xec))();
+        return (-(ushort)(iVar4 != 1) & 0xfffd) + 3;
       }
+/* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
 LAB_0048589a:
-      param_1 = CONCAT31(param_1._1_3_,bVar8);
-      bVar9 = thunk_FUN_0041d350(this_00,*(uint *)((int)this + 0x24));
-      return (-(ushort)(CONCAT31(extraout_var_01,bVar9) != 1) & 0xfff9) + 7;
+      param_1 = CONCAT31(param_1._1_3_,bVar7);
+      iVar4 = thunk_FUN_0041d350(this_00,*(uint *)((int)this + 0x24));
+      return (-(ushort)(iVar4 != 1) & 0xfff9) + 7;
     }
-    iVar5 = *(int *)((int)this + 0x6f7);
-    if (((iVar5 == 8) || (iVar5 == 0x14)) || (iVar5 == 0x1a)) {
-      iVar5 = (**(code **)(*this_00 + 0x2c))();
-      if (((iVar5 != 0x38) && (iVar5 = (**(code **)(*this_00 + 0x2c))(), iVar5 != 0x39)) &&
-         ((iVar5 = (**(code **)(*this_00 + 0x2c))(), iVar5 != 0x4f &&
-          (iVar5 = (**(code **)(*this_00 + 0x2c))(), iVar5 != 0x5e)))) {
-        iVar5 = (**(code **)(*this_00 + 0x2c))();
-        if (((iVar5 == 0x3b) || (iVar5 = (**(code **)(*this_00 + 0x2c))(), iVar5 == 0x60)) &&
+    iVar4 = *(int *)((int)this + 0x6f7);
+    if (((iVar4 == 8) || (iVar4 == 0x14)) || (iVar4 == 0x1a)) {
+      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+      iVar4 = (**(code **)(*this_00 + 0x2c))();
+      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+      if (((iVar4 != 0x38) && (iVar4 = (**(code **)(*this_00 + 0x2c))(), iVar4 != 0x39)) &&
+         ((iVar4 = (**(code **)(*this_00 + 0x2c))(), iVar4 != 0x4f &&
+          (iVar4 = (**(code **)(*this_00 + 0x2c))(), iVar4 != 0x5e)))) {
+        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+        iVar4 = (**(code **)(*this_00 + 0x2c))();
+        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+        if (((iVar4 == 0x3b) || (iVar4 = (**(code **)(*this_00 + 0x2c))(), iVar4 == 0x60)) &&
            ((*(int *)((int)this + 0x24) == this_00[9] &&
             (0 < *(int *)((int)this + 0x7da) + *(int *)((int)this + 0x7d6) +
                  *(int *)((int)this + 0x7d2))))) {
           return 0x13;
         }
-        bVar8 = *(byte *)(this_00 + 9);
+        bVar7 = *(byte *)(this_00 + 9);
         bVar1 = *(byte *)((int)this + 0x24);
-        param_2 = (int *)CONCAT31(param_2._1_3_,bVar8);
+        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+        param_2 = (int *)CONCAT31(param_2._1_3_,bVar7);
+        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
         param_1 = CONCAT31(param_1._1_3_,bVar1);
         if (DAT_00808a8f != '\0') {
-          iVar5 = (uint)bVar1 * 9;
+          iVar4 = (uint)bVar1 * 9;
           goto LAB_00486163;
         }
-        if (bVar8 == bVar1) {
+        if (bVar7 == bVar1) {
 LAB_00485d4a:
-          iVar5 = 0;
+          iVar4 = 0;
         }
         else {
-          uVar6 = (uint)bVar8;
-          uVar7 = (uint)bVar1;
-          bVar8 = g_playerRelationMatrix[uVar6][uVar7];
-          if ((bVar8 == 0) && (g_playerRelationMatrix[uVar7][uVar6] == 0)) {
-            iVar5 = -2;
+          uVar5 = (uint)bVar7;
+          uVar6 = (uint)bVar1;
+          bVar7 = g_playerRelationMatrix[uVar5][uVar6];
+          if ((bVar7 == 0) && (g_playerRelationMatrix[uVar6][uVar5] == 0)) {
+            iVar4 = -2;
           }
-          else if ((bVar8 == 1) && (g_playerRelationMatrix[uVar7][uVar6] == 0)) {
-            iVar5 = -1;
+          else if ((bVar7 == 1) && (g_playerRelationMatrix[uVar6][uVar5] == 0)) {
+            iVar4 = -1;
           }
-          else if ((bVar8 == 0) && (g_playerRelationMatrix[uVar7][uVar6] == 1)) {
-            iVar5 = 1;
+          else if ((bVar7 == 0) && (g_playerRelationMatrix[uVar6][uVar5] == 1)) {
+            iVar4 = 1;
           }
           else {
 LAB_004861ee:
-            if ((bVar8 != 1) || (g_playerRelationMatrix[uVar7][uVar6] != 1)) goto LAB_00485d4a;
-            iVar5 = 2;
+            if ((bVar7 != 1) || (g_playerRelationMatrix[uVar6][uVar5] != 1)) goto LAB_00485d4a;
+            iVar4 = 2;
           }
         }
 LAB_00485d4c:
-        bVar9 = iVar5 < 0;
+        bVar8 = iVar4 < 0;
 LAB_00485d55:
-        if (bVar9) {
+        if (bVar8) {
           return 0;
         }
         if (this_00[8] == 0x14) {
+/* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
 LAB_00485d68:
-          iVar5 = (**(code **)(*this_00 + 0xec))();
-          if (iVar5 == 1) {
+          iVar4 = (**(code **)(*this_00 + 0xec))();
+          if (iVar4 == 1) {
             return 3;
           }
         }
@@ -224,60 +241,67 @@ LAB_00485d68:
       if (*(int *)((int)this + 0x24) != this_00[9]) {
         return 0;
       }
-      iVar5 = (**(code **)(*this_00 + 0x88))(local_10);
-      if (0 < iVar5) {
+      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+      iVar4 = (**(code **)(*this_00 + 0x88))(local_10);
+      if (0 < iVar4) {
         return 0x12;
       }
+/* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
 LAB_00485f6a:
-      iVar5 = (**(code **)(*this_00 + 0xec))();
+      iVar4 = (**(code **)(*this_00 + 0xec))();
     }
     else {
-      if (((iVar5 == 7) || (iVar5 == 0x13)) || (iVar5 == 0x1b)) {
+      if (((iVar4 == 7) || (iVar4 == 0x13)) || (iVar4 == 0x1b)) {
         if (*(int *)((int)this + 0x7ca) != 0) {
-          iVar5 = (**(code **)(*this_00 + 0x2c))();
-          if ((iVar5 == 0x52) || (iVar5 == 0x5f)) {
+          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+          iVar4 = (**(code **)(*this_00 + 0x2c))();
+          if ((iVar4 == 0x52) || (iVar4 == 0x5f)) {
             FUN_006e62d0(PTR_00802a38,*(int *)((int)this + 0x7ca),&local_c);
+            /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
             if ((local_c != 0) && (*(int *)(local_c + 0x20) == 0x1a4)) {
               return 0x1e;
             }
           }
-          else if (iVar5 == 99) {
+          else if (iVar4 == 99) {
             return 0x1e;
           }
-          bVar8 = *(byte *)(this_00 + 9);
+          bVar7 = *(byte *)(this_00 + 9);
           bVar1 = *(byte *)((int)this + 0x24);
-          param_2 = (int *)CONCAT31(param_2._1_3_,bVar8);
+          /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+          param_2 = (int *)CONCAT31(param_2._1_3_,bVar7);
+          /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
           param_1 = CONCAT31(param_1._1_3_,bVar1);
           if (DAT_00808a8f == '\0') {
-            if (bVar8 == bVar1) {
+            if (bVar7 == bVar1) {
 LAB_00485f1f:
-              iVar5 = 0;
+              iVar4 = 0;
             }
             else {
-              bVar2 = g_playerRelationMatrix[bVar8][bVar1];
-              if ((bVar2 == 0) && (g_playerRelationMatrix[bVar1][bVar8] == 0)) {
-                iVar5 = -2;
+              bVar2 = g_playerRelationMatrix[bVar7][bVar1];
+              if ((bVar2 == 0) && (g_playerRelationMatrix[bVar1][bVar7] == 0)) {
+                iVar4 = -2;
               }
-              else if ((bVar2 == 1) && (g_playerRelationMatrix[bVar1][bVar8] == 0)) {
-                iVar5 = -1;
+              else if ((bVar2 == 1) && (g_playerRelationMatrix[bVar1][bVar7] == 0)) {
+                iVar4 = -1;
               }
-              else if ((bVar2 == 0) && (g_playerRelationMatrix[bVar1][bVar8] == 1)) {
-                iVar5 = 1;
+              else if ((bVar2 == 0) && (g_playerRelationMatrix[bVar1][bVar7] == 1)) {
+                iVar4 = 1;
               }
               else {
-                if ((bVar2 != 1) || (g_playerRelationMatrix[bVar1][bVar8] != 1)) goto LAB_00485f1f;
-                iVar5 = 2;
+                if ((bVar2 != 1) || (g_playerRelationMatrix[bVar1][bVar7] != 1)) goto LAB_00485f1f;
+                iVar4 = 2;
               }
             }
-            bVar9 = iVar5 < 0;
+            bVar8 = iVar4 < 0;
           }
           else {
-            bVar9 = (&DAT_008087ea)[(uint)bVar1 * 0x51] != (&DAT_008087ea)[(uint)bVar8 * 0x51];
+            bVar8 = (&DAT_008087ea)[(uint)bVar1 * 0x51] != (&DAT_008087ea)[(uint)bVar7 * 0x51];
           }
-          if (bVar9) {
+          if (bVar8) {
             return 0;
           }
-          if ((this_00[8] == 0x14) && (iVar5 = (**(code **)(*this_00 + 0xec))(), iVar5 == 1)) {
+          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+          if ((this_00[8] == 0x14) && (iVar4 = (**(code **)(*this_00 + 0xec))(), iVar4 == 1)) {
             return 3;
           }
           if ((this_00[8] != 1000) && (this_00[8] != 0x3e9)) {
@@ -285,174 +309,190 @@ LAB_00485f1f:
           }
           goto LAB_00485f6a;
         }
-        bVar8 = *(byte *)(this_00 + 9);
+        bVar7 = *(byte *)(this_00 + 9);
         bVar1 = *(byte *)((int)this + 0x24);
-        param_2 = (int *)CONCAT31(param_2._1_3_,bVar8);
+        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+        param_2 = (int *)CONCAT31(param_2._1_3_,bVar7);
+        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
         param_1 = CONCAT31(param_1._1_3_,bVar1);
         if (DAT_00808a8f == '\0') {
-          if (bVar8 == bVar1) {
+          if (bVar7 == bVar1) {
 LAB_0048602b:
-            iVar4 = 0;
+            iVar3 = 0;
           }
           else {
-            bVar2 = g_playerRelationMatrix[bVar8][bVar1];
-            if ((bVar2 == 0) && (g_playerRelationMatrix[bVar1][bVar8] == 0)) {
-              iVar4 = -2;
+            bVar2 = g_playerRelationMatrix[bVar7][bVar1];
+            if ((bVar2 == 0) && (g_playerRelationMatrix[bVar1][bVar7] == 0)) {
+              iVar3 = -2;
             }
-            else if ((bVar2 == 1) && (g_playerRelationMatrix[bVar1][bVar8] == 0)) {
-              iVar4 = -1;
+            else if ((bVar2 == 1) && (g_playerRelationMatrix[bVar1][bVar7] == 0)) {
+              iVar3 = -1;
             }
-            else if ((bVar2 == 0) && (g_playerRelationMatrix[bVar1][bVar8] == 1)) {
-              iVar4 = 1;
+            else if ((bVar2 == 0) && (g_playerRelationMatrix[bVar1][bVar7] == 1)) {
+              iVar3 = 1;
             }
             else {
-              if ((bVar2 != 1) || (g_playerRelationMatrix[bVar1][bVar8] != 1)) goto LAB_0048602b;
-              iVar4 = 2;
+              if ((bVar2 != 1) || (g_playerRelationMatrix[bVar1][bVar7] != 1)) goto LAB_0048602b;
+              iVar3 = 2;
             }
           }
-          bVar9 = iVar4 < 0;
+          bVar8 = iVar3 < 0;
         }
         else {
-          bVar9 = (&DAT_008087ea)[(uint)bVar1 * 0x51] != (&DAT_008087ea)[(uint)bVar8 * 0x51];
+          bVar8 = (&DAT_008087ea)[(uint)bVar1 * 0x51] != (&DAT_008087ea)[(uint)bVar7 * 0x51];
         }
-        if (bVar9) {
+        if (bVar8) {
           return 0;
         }
         if (this_00[8] == 0x14) {
-          if (iVar5 != 0x1b) {
-            iVar5 = (**(code **)(*this_00 + 0xbc))();
-            if ((iVar5 == 1) && (iVar5 = (**(code **)(*this_00 + 0x7c))(), iVar5 < 100)) {
+          if (iVar4 != 0x1b) {
+            /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+            iVar4 = (**(code **)(*this_00 + 0xbc))();
+            /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+            if ((iVar4 == 1) && (iVar4 = (**(code **)(*this_00 + 0x7c))(), iVar4 < 100)) {
               return 0x17;
             }
             goto LAB_00485d68;
           }
-          iVar5 = (**(code **)(*this_00 + 0xbc))();
-          if (iVar5 == 1) {
+          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+          iVar4 = (**(code **)(*this_00 + 0xbc))();
+          if (iVar4 == 1) {
             return 0x1a;
           }
-          iVar5 = (**(code **)(*this_00 + 0xec))();
-          if (iVar5 == 1) {
+          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+          iVar4 = (**(code **)(*this_00 + 0xec))();
+          if (iVar4 == 1) {
             return 3;
           }
         }
 LAB_00485caa:
-        iVar5 = this_00[8];
+        iVar4 = this_00[8];
       }
       else {
-        if (((iVar5 == 0xc) || (iVar5 == 0x18)) || (iVar5 == 0x19)) {
-          bVar8 = *(byte *)(this_00 + 9);
+        if (((iVar4 == 0xc) || (iVar4 == 0x18)) || (iVar4 == 0x19)) {
+          bVar7 = *(byte *)(this_00 + 9);
           bVar1 = *(byte *)((int)this + 0x24);
-          param_2 = (int *)CONCAT31(param_2._1_3_,bVar8);
+          /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+          param_2 = (int *)CONCAT31(param_2._1_3_,bVar7);
+          /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
           param_1 = CONCAT31(param_1._1_3_,bVar1);
           if (DAT_00808a8f == '\0') {
-            if (bVar8 == bVar1) goto LAB_00485d4a;
-            uVar6 = (uint)bVar8;
-            uVar7 = (uint)bVar1;
-            bVar8 = g_playerRelationMatrix[uVar6][uVar7];
-            if ((bVar8 == 0) && (g_playerRelationMatrix[uVar7][uVar6] == 0)) {
-              iVar5 = -2;
+            if (bVar7 == bVar1) goto LAB_00485d4a;
+            uVar5 = (uint)bVar7;
+            uVar6 = (uint)bVar1;
+            bVar7 = g_playerRelationMatrix[uVar5][uVar6];
+            if ((bVar7 == 0) && (g_playerRelationMatrix[uVar6][uVar5] == 0)) {
+              iVar4 = -2;
             }
-            else if ((bVar8 == 1) && (g_playerRelationMatrix[uVar7][uVar6] == 0)) {
-              iVar5 = -1;
+            else if ((bVar7 == 1) && (g_playerRelationMatrix[uVar6][uVar5] == 0)) {
+              iVar4 = -1;
             }
             else {
 LAB_00485d2d:
-              if ((bVar8 != 0) || (g_playerRelationMatrix[uVar7][uVar6] != 1)) goto LAB_004861ee;
-              iVar5 = 1;
+              if ((bVar7 != 0) || (g_playerRelationMatrix[uVar6][uVar5] != 1)) goto LAB_004861ee;
+              iVar4 = 1;
             }
             goto LAB_00485d4c;
           }
-          iVar5 = (uint)bVar1 * 9;
+          iVar4 = (uint)bVar1 * 9;
 LAB_00486163:
-          bVar9 = (&DAT_008087ea)[iVar5 * 9] != (&DAT_008087ea)[((uint)param_2 & 0xff) * 0x51];
+          bVar8 = (&DAT_008087ea)[iVar4 * 9] != (&DAT_008087ea)[((uint)param_2 & 0xff) * 0x51];
           goto LAB_00485d55;
         }
-        if (iVar5 == 9) {
-          bVar8 = *(byte *)(this_00 + 9);
+        if (iVar4 == 9) {
+          bVar7 = *(byte *)(this_00 + 9);
           bVar1 = *(byte *)((int)this + 0x24);
-          param_2 = (int *)CONCAT31(param_2._1_3_,bVar8);
+          /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+          param_2 = (int *)CONCAT31(param_2._1_3_,bVar7);
+          /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
           param_1 = CONCAT31(param_1._1_3_,bVar1);
           if (DAT_00808a8f != '\0') {
-            bVar9 = (&DAT_008087ea)[(uint)bVar1 * 0x51] != (&DAT_008087ea)[(uint)bVar8 * 0x51];
+            bVar8 = (&DAT_008087ea)[(uint)bVar1 * 0x51] != (&DAT_008087ea)[(uint)bVar7 * 0x51];
             goto LAB_004859d8;
           }
-          if (bVar8 == bVar1) {
+          if (bVar7 == bVar1) {
 LAB_004859cd:
-            iVar5 = 0;
+            iVar4 = 0;
           }
           else {
-            bVar2 = g_playerRelationMatrix[bVar8][bVar1];
-            if ((bVar2 == 0) && (g_playerRelationMatrix[bVar1][bVar8] == 0)) {
-              iVar5 = -2;
+            bVar2 = g_playerRelationMatrix[bVar7][bVar1];
+            if ((bVar2 == 0) && (g_playerRelationMatrix[bVar1][bVar7] == 0)) {
+              iVar4 = -2;
             }
-            else if ((bVar2 == 1) && (g_playerRelationMatrix[bVar1][bVar8] == 0)) {
-              iVar5 = -1;
+            else if ((bVar2 == 1) && (g_playerRelationMatrix[bVar1][bVar7] == 0)) {
+              iVar4 = -1;
             }
-            else if ((bVar2 == 0) && (g_playerRelationMatrix[bVar1][bVar8] == 1)) {
-              iVar5 = 1;
+            else if ((bVar2 == 0) && (g_playerRelationMatrix[bVar1][bVar7] == 1)) {
+              iVar4 = 1;
             }
             else {
-              if ((bVar2 != 1) || (g_playerRelationMatrix[bVar1][bVar8] != 1)) goto LAB_004859cd;
-              iVar5 = 2;
+              if ((bVar2 != 1) || (g_playerRelationMatrix[bVar1][bVar7] != 1)) goto LAB_004859cd;
+              iVar4 = 2;
             }
           }
-          bVar9 = iVar5 < 0;
+          bVar8 = iVar4 < 0;
 LAB_004859d8:
-          if (!bVar9) {
-            iVar5 = this_00[8];
-            if (iVar5 == 0x14) {
-              iVar5 = (**(code **)(*this_00 + 0xec))();
-              return (-(ushort)(iVar5 != 1) & 0xfffd) + 3;
+          if (!bVar8) {
+            iVar4 = this_00[8];
+            if (iVar4 == 0x14) {
+              /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+              iVar4 = (**(code **)(*this_00 + 0xec))();
+              return (-(ushort)(iVar4 != 1) & 0xfffd) + 3;
             }
-            if ((iVar5 == 1000) || (iVar5 == 0x3e9)) {
-              iVar5 = (**(code **)(*this_00 + 0xec))();
-              return (-(ushort)(iVar5 != 1) & 0xfffc) + 4;
+            if ((iVar4 == 1000) || (iVar4 == 0x3e9)) {
+              /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+              iVar4 = (**(code **)(*this_00 + 0xec))();
+              return (-(ushort)(iVar4 != 1) & 0xfffc) + 4;
             }
           }
           if ((this_00[8] != 1000) && (this_00[8] != 0x3e9)) {
             return 0;
           }
-          iVar5 = (**(code **)(*this_00 + 0x2c))();
-          if ((iVar5 != 0x3b) && (iVar5 = (**(code **)(*this_00 + 0x2c))(), iVar5 != 0x60)) {
+          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+          iVar4 = (**(code **)(*this_00 + 0x2c))();
+          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+          if ((iVar4 != 0x3b) && (iVar4 = (**(code **)(*this_00 + 0x2c))(), iVar4 != 0x60)) {
             return 0;
           }
           return 7;
         }
-        if (iVar5 != 0x1d) {
-          if ((iVar5 != 0x24) && (iVar5 != 0x25)) {
-            bVar8 = *(byte *)(this_00 + 9);
+        if (iVar4 != 0x1d) {
+          if ((iVar4 != 0x24) && (iVar4 != 0x25)) {
+            bVar7 = *(byte *)(this_00 + 9);
             bVar1 = *(byte *)((int)this + 0x24);
-            param_2 = (int *)CONCAT31(param_2._1_3_,bVar8);
+            /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+            param_2 = (int *)CONCAT31(param_2._1_3_,bVar7);
+            /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
             param_1 = CONCAT31(param_1._1_3_,bVar1);
             if (DAT_00808a8f == '\0') {
-              if (bVar8 == bVar1) {
+              if (bVar7 == bVar1) {
 LAB_00485c58:
-                iVar4 = 0;
+                iVar3 = 0;
               }
               else {
-                bVar2 = g_playerRelationMatrix[bVar8][bVar1];
-                if ((bVar2 == 0) && (g_playerRelationMatrix[bVar1][bVar8] == 0)) {
-                  iVar4 = -2;
+                bVar2 = g_playerRelationMatrix[bVar7][bVar1];
+                if ((bVar2 == 0) && (g_playerRelationMatrix[bVar1][bVar7] == 0)) {
+                  iVar3 = -2;
                 }
-                else if ((bVar2 == 1) && (g_playerRelationMatrix[bVar1][bVar8] == 0)) {
-                  iVar4 = -1;
+                else if ((bVar2 == 1) && (g_playerRelationMatrix[bVar1][bVar7] == 0)) {
+                  iVar3 = -1;
                 }
-                else if ((bVar2 == 0) && (g_playerRelationMatrix[bVar1][bVar8] == 1)) {
-                  iVar4 = 1;
+                else if ((bVar2 == 0) && (g_playerRelationMatrix[bVar1][bVar7] == 1)) {
+                  iVar3 = 1;
                 }
                 else {
-                  if ((bVar2 != 1) || (g_playerRelationMatrix[bVar1][bVar8] != 1))
+                  if ((bVar2 != 1) || (g_playerRelationMatrix[bVar1][bVar7] != 1))
                   goto LAB_00485c58;
-                  iVar4 = 2;
+                  iVar3 = 2;
                 }
               }
-              bVar9 = iVar4 < 0;
+              bVar8 = iVar3 < 0;
             }
             else {
-              bVar9 = (&DAT_008087ea)[(uint)bVar1 * 0x51] != (&DAT_008087ea)[(uint)bVar8 * 0x51];
+              bVar8 = (&DAT_008087ea)[(uint)bVar1 * 0x51] != (&DAT_008087ea)[(uint)bVar7 * 0x51];
             }
-            if (bVar9) {
-              if (iVar5 == 0x15) {
+            if (bVar8) {
+              if (iVar4 == 0x15) {
                 return 7;
               }
               if (0 < *(int *)((int)this + 0x7a2)) {
@@ -460,288 +500,305 @@ LAB_00485c58:
               }
               return 0;
             }
-            if ((this_00[8] == 0x14) && (iVar5 = (**(code **)(*this_00 + 0xec))(), iVar5 == 1)) {
+            /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+            if ((this_00[8] == 0x14) && (iVar4 = (**(code **)(*this_00 + 0xec))(), iVar4 == 1)) {
               return 3;
             }
             goto LAB_00485caa;
           }
-          bVar8 = *(byte *)(this_00 + 9);
+          bVar7 = *(byte *)(this_00 + 9);
           bVar1 = *(byte *)((int)this + 0x24);
-          param_2 = (int *)CONCAT31(param_2._1_3_,bVar8);
+          /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+          param_2 = (int *)CONCAT31(param_2._1_3_,bVar7);
+          /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
           param_1 = CONCAT31(param_1._1_3_,bVar1);
           if (DAT_00808a8f == '\0') {
-            if (bVar8 == bVar1) goto LAB_00485d4a;
-            uVar6 = (uint)bVar8;
-            uVar7 = (uint)bVar1;
-            bVar8 = g_playerRelationMatrix[uVar6][uVar7];
-            if ((bVar8 == 0) && (g_playerRelationMatrix[uVar7][uVar6] == 0)) {
-              iVar5 = -2;
+            if (bVar7 == bVar1) goto LAB_00485d4a;
+            uVar5 = (uint)bVar7;
+            uVar6 = (uint)bVar1;
+            bVar7 = g_playerRelationMatrix[uVar5][uVar6];
+            if ((bVar7 == 0) && (g_playerRelationMatrix[uVar6][uVar5] == 0)) {
+              iVar4 = -2;
             }
             else {
-              if ((bVar8 != 1) || (g_playerRelationMatrix[uVar7][uVar6] != 0)) goto LAB_00485d2d;
-              iVar5 = -1;
+              if ((bVar7 != 1) || (g_playerRelationMatrix[uVar6][uVar5] != 0)) goto LAB_00485d2d;
+              iVar4 = -1;
             }
             goto LAB_00485d4c;
           }
-          iVar5 = (uint)bVar1 * 9;
+          iVar4 = (uint)bVar1 * 9;
           goto LAB_00486163;
         }
-        bVar8 = *(byte *)(this_00 + 9);
+        bVar7 = *(byte *)(this_00 + 9);
         bVar1 = *(byte *)((int)this + 0x24);
-        param_2 = (int *)CONCAT31(param_2._1_3_,bVar8);
+        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+        param_2 = (int *)CONCAT31(param_2._1_3_,bVar7);
+        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
         param_1 = CONCAT31(param_1._1_3_,bVar1);
         if (DAT_00808a8f == '\0') {
-          if (bVar8 == bVar1) {
+          if (bVar7 == bVar1) {
 LAB_00485b29:
-            iVar5 = 0;
+            iVar4 = 0;
           }
           else {
-            bVar2 = g_playerRelationMatrix[bVar8][bVar1];
-            if ((bVar2 == 0) && (g_playerRelationMatrix[bVar1][bVar8] == 0)) {
-              iVar5 = -2;
+            bVar2 = g_playerRelationMatrix[bVar7][bVar1];
+            if ((bVar2 == 0) && (g_playerRelationMatrix[bVar1][bVar7] == 0)) {
+              iVar4 = -2;
             }
-            else if ((bVar2 == 1) && (g_playerRelationMatrix[bVar1][bVar8] == 0)) {
-              iVar5 = -1;
+            else if ((bVar2 == 1) && (g_playerRelationMatrix[bVar1][bVar7] == 0)) {
+              iVar4 = -1;
             }
-            else if ((bVar2 == 0) && (g_playerRelationMatrix[bVar1][bVar8] == 1)) {
-              iVar5 = 1;
+            else if ((bVar2 == 0) && (g_playerRelationMatrix[bVar1][bVar7] == 1)) {
+              iVar4 = 1;
             }
             else {
-              if ((bVar2 != 1) || (g_playerRelationMatrix[bVar1][bVar8] != 1)) goto LAB_00485b29;
-              iVar5 = 2;
+              if ((bVar2 != 1) || (g_playerRelationMatrix[bVar1][bVar7] != 1)) goto LAB_00485b29;
+              iVar4 = 2;
             }
           }
-          bVar9 = iVar5 < 0;
+          bVar8 = iVar4 < 0;
         }
         else {
-          bVar9 = (&DAT_008087ea)[(uint)bVar1 * 0x51] != (&DAT_008087ea)[(uint)bVar8 * 0x51];
+          bVar8 = (&DAT_008087ea)[(uint)bVar1 * 0x51] != (&DAT_008087ea)[(uint)bVar7 * 0x51];
         }
-        if (bVar9) {
+        if (bVar8) {
           return 0;
         }
-        if ((this_00[8] == 0x14) && (iVar5 = (**(code **)(*this_00 + 0xec))(), iVar5 == 1)) {
+        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+        if ((this_00[8] == 0x14) && (iVar4 = (**(code **)(*this_00 + 0xec))(), iVar4 == 1)) {
           return 3;
         }
-        iVar5 = this_00[8];
+        iVar4 = this_00[8];
       }
-      if ((iVar5 != 1000) && (iVar5 != 0x3e9)) {
+      if ((iVar4 != 1000) && (iVar4 != 0x3e9)) {
         return 0;
       }
-      iVar5 = (**(code **)(*this_00 + 0xec))();
+      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+      iVar4 = (**(code **)(*this_00 + 0xec))();
     }
-    if (iVar5 == 1) {
+    if (iVar4 == 1) {
       return 4;
     }
     break;
   case CASE_2:
-    iVar5 = thunk_FUN_00493cd0(this);
-    return (-(ushort)(iVar5 != 0) & 0xfffa) + 6;
+    iVar4 = thunk_FUN_00493cd0(this);
+    return (-(ushort)(iVar4 != 0) & 0xfffa) + 6;
   case CASE_3:
   case CASE_2B:
-    iVar5 = thunk_FUN_00493cd0(this);
-    if (iVar5 != 0) {
+    iVar4 = thunk_FUN_00493cd0(this);
+    if (iVar4 != 0) {
       return 0;
     }
     if (this_00 == (int *)0x0) {
       return 1;
     }
-    iVar5 = this_00[8];
-    if (((iVar5 != 0x14) && (iVar5 != 1000)) && ((iVar5 != 0x3e9 && (iVar5 != 0x1ae)))) {
+    iVar4 = this_00[8];
+    if (((iVar4 != 0x14) && (iVar4 != 1000)) && ((iVar4 != 0x3e9 && (iVar4 != 0x1ae)))) {
       return 1;
     }
     if (this_00 == this) {
       return 0;
     }
-    iVar4 = *(int *)((int)this + 0x6f7);
-    if (iVar4 == 7) {
+    iVar3 = *(int *)((int)this + 0x6f7);
+    if (iVar3 == 7) {
       return 1;
     }
-    if (iVar4 == 0x13) {
+    if (iVar3 == 0x13) {
       return 1;
     }
-    if (iVar4 == 8) {
+    if (iVar3 == 8) {
       return 1;
     }
-    if (iVar4 == 0x14) {
+    if (iVar3 == 0x14) {
       return 1;
     }
-    if (iVar4 == 0xc) {
+    if (iVar3 == 0xc) {
       return 1;
     }
-    if (iVar4 == 0x18) {
+    if (iVar3 == 0x18) {
       return 1;
     }
-    if (iVar4 == 0x19) {
+    if (iVar3 == 0x19) {
       return 1;
     }
-    if (iVar4 == 0x1a) {
+    if (iVar3 == 0x1a) {
       return 1;
     }
-    if (iVar4 == 0x1b) {
+    if (iVar3 == 0x1b) {
       return 1;
     }
-    if (iVar4 == 0x25) {
+    if (iVar3 == 0x25) {
       return 1;
     }
-    if (iVar4 != 9) {
-      if ((iVar4 != 0x15) && (*(int *)((int)this + 0x7a2) < 1)) {
+    if (iVar3 != 9) {
+      if ((iVar3 != 0x15) && (*(int *)((int)this + 0x7a2) < 1)) {
         return 1;
       }
-      iVar5 = (**(code **)(*this_00 + 0x2c))();
-      if (((iVar5 != 0x16) && (iVar5 = (**(code **)(*this_00 + 0x2c))(), iVar5 != 0x25)) ||
+      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+      iVar4 = (**(code **)(*this_00 + 0x2c))();
+      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+      if (((iVar4 != 0x16) && (iVar4 = (**(code **)(*this_00 + 0x2c))(), iVar4 != 0x25)) ||
          (*(int *)((int)this_00 + 0x732) != 1)) {
         param_2 = (int *)(uint)*(byte *)(this_00 + 9);
         param_1 = (Global_sub_004845E0_param_1Enum)*(byte *)((int)this + 0x24);
         if (DAT_00808a8f != '\0') {
-          bVar9 = (&DAT_008087ea)[param_1 * 0x51] != (&DAT_008087ea)[(int)param_2 * 0x51];
-          return (((ushort)bVar9 - (ushort)bVar9) - (ushort)bVar9 & 5) + 2;
+          bVar8 = (&DAT_008087ea)[param_1 * 0x51] != (&DAT_008087ea)[(int)param_2 * 0x51];
+          return (((ushort)bVar8 - (ushort)bVar8) - (ushort)bVar8 & 5) + 2;
         }
         if (*(byte *)(this_00 + 9) != *(byte *)((int)this + 0x24)) {
-          bVar8 = g_playerRelationMatrix[(int)param_2][param_1];
-          if ((bVar8 == 0) &&
+          bVar7 = g_playerRelationMatrix[(int)param_2][param_1];
+          if ((bVar7 == 0) &&
              (*(char *)((int)param_2 + (int)(g_playerRelationMatrix + param_1)) == '\0')) {
-            iVar5 = -2;
+            iVar4 = -2;
             goto cf_common_exit_00484B10;
           }
-          if ((bVar8 == 1) &&
+          if ((bVar7 == 1) &&
              (*(char *)((int)param_2 + (int)(g_playerRelationMatrix + param_1)) == '\0')) {
-            iVar5 = -1;
+            iVar4 = -1;
             goto cf_common_exit_00484B10;
           }
-          if ((bVar8 == 0) &&
+          if ((bVar7 == 0) &&
              (*(char *)((int)param_2 + (int)(g_playerRelationMatrix + param_1)) == '\x01')) {
-            iVar5 = 1;
+            iVar4 = 1;
             goto cf_common_exit_00484B10;
           }
-          if ((bVar8 == 1) &&
+          if ((bVar7 == 1) &&
              (*(char *)((int)param_2 + (int)(g_playerRelationMatrix + param_1)) == '\x01')) {
-            iVar5 = 2;
+            iVar4 = 2;
             goto cf_common_exit_00484B10;
           }
         }
-        iVar5 = 0;
+        iVar4 = 0;
 cf_common_exit_00484B10:
-        bVar9 = iVar5 < 0;
-        return (((ushort)bVar9 - (ushort)bVar9) - (ushort)bVar9 & 5) + 2;
+        bVar8 = iVar4 < 0;
+        return (((ushort)bVar8 - (ushort)bVar8) - (ushort)bVar8 & 5) + 2;
       }
-      bVar8 = *(byte *)(this_00 + 9);
+      bVar7 = *(byte *)(this_00 + 9);
       bVar1 = *(byte *)((int)this + 0x24);
+      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
       param_2 = (int *)CONCAT13(bVar1,param_2._0_3_);
+      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
       local_8 = CONCAT31(local_8._1_3_,bVar1);
       if (DAT_00808a8f == '\0') {
-        if (bVar8 == bVar1) {
+        if (bVar7 == bVar1) {
 LAB_00484943:
-          iVar5 = 0;
+          iVar4 = 0;
         }
         else {
-          bVar2 = g_playerRelationMatrix[bVar8][bVar1];
-          if ((bVar2 == 0) && (g_playerRelationMatrix[bVar1][bVar8] == 0)) {
-            iVar5 = -2;
+          bVar2 = g_playerRelationMatrix[bVar7][bVar1];
+          if ((bVar2 == 0) && (g_playerRelationMatrix[bVar1][bVar7] == 0)) {
+            iVar4 = -2;
           }
-          else if ((bVar2 == 1) && (g_playerRelationMatrix[bVar1][bVar8] == 0)) {
-            iVar5 = -1;
+          else if ((bVar2 == 1) && (g_playerRelationMatrix[bVar1][bVar7] == 0)) {
+            iVar4 = -1;
           }
-          else if ((bVar2 == 0) && (g_playerRelationMatrix[bVar1][bVar8] == 1)) {
-            iVar5 = 1;
+          else if ((bVar2 == 0) && (g_playerRelationMatrix[bVar1][bVar7] == 1)) {
+            iVar4 = 1;
           }
           else {
-            if ((bVar2 != 1) || (g_playerRelationMatrix[bVar1][bVar8] != 1)) goto LAB_00484943;
-            iVar5 = 2;
+            if ((bVar2 != 1) || (g_playerRelationMatrix[bVar1][bVar7] != 1)) goto LAB_00484943;
+            iVar4 = 2;
           }
         }
-        bVar9 = iVar5 < 0;
+        bVar8 = iVar4 < 0;
       }
       else {
-        bVar9 = (&DAT_008087ea)[(uint)bVar1 * 0x51] != (&DAT_008087ea)[(uint)bVar8 * 0x51];
+        bVar8 = (&DAT_008087ea)[(uint)bVar1 * 0x51] != (&DAT_008087ea)[(uint)bVar7 * 0x51];
       }
-      if (bVar9) goto LAB_00484a28;
+      if (bVar8) goto LAB_00484a28;
+      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
       param_2 = (int *)CONCAT31(param_2._1_3_,bVar1);
       if (DAT_00808a8f == '\0') {
-        if (bVar1 == bVar8) {
+        if (bVar1 == bVar7) {
 LAB_00484a0b:
-          iVar5 = 0;
+          iVar4 = 0;
         }
         else {
-          bVar2 = g_playerRelationMatrix[bVar1][bVar8];
-          if ((bVar2 == 0) && (g_playerRelationMatrix[bVar8][bVar1] == 0)) {
-            iVar5 = -2;
+          bVar2 = g_playerRelationMatrix[bVar1][bVar7];
+          if ((bVar2 == 0) && (g_playerRelationMatrix[bVar7][bVar1] == 0)) {
+            iVar4 = -2;
           }
-          else if ((bVar2 == 1) && (g_playerRelationMatrix[bVar8][bVar1] == 0)) {
-            iVar5 = -1;
+          else if ((bVar2 == 1) && (g_playerRelationMatrix[bVar7][bVar1] == 0)) {
+            iVar4 = -1;
           }
-          else if ((bVar2 == 0) && (g_playerRelationMatrix[bVar8][bVar1] == 1)) {
-            iVar5 = 1;
+          else if ((bVar2 == 0) && (g_playerRelationMatrix[bVar7][bVar1] == 1)) {
+            iVar4 = 1;
           }
           else {
-            if ((bVar2 != 1) || (g_playerRelationMatrix[bVar8][bVar1] != 1)) goto LAB_00484a0b;
-            iVar5 = 2;
+            if ((bVar2 != 1) || (g_playerRelationMatrix[bVar7][bVar1] != 1)) goto LAB_00484a0b;
+            iVar4 = 2;
           }
         }
-        bVar9 = iVar5 < 0;
+        bVar8 = iVar4 < 0;
       }
       else {
-        bVar9 = (&DAT_008087ea)[(uint)bVar8 * 0x51] != (&DAT_008087ea)[(uint)bVar1 * 0x51];
+        bVar8 = (&DAT_008087ea)[(uint)bVar7 * 0x51] != (&DAT_008087ea)[(uint)bVar1 * 0x51];
       }
-      if (!bVar9) {
+      if (!bVar8) {
         return 2;
       }
+/* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
 LAB_00484a28:
-      param_1 = CONCAT31(param_1._1_3_,bVar8);
-      bVar9 = thunk_FUN_0041d350(this_00,*(uint *)((int)this + 0x24));
-      return (-(ushort)(CONCAT31(extraout_var,bVar9) != 1) & 0xfffa) + 7;
+      param_1 = CONCAT31(param_1._1_3_,bVar7);
+      iVar4 = thunk_FUN_0041d350(this_00,*(uint *)((int)this + 0x24));
+      return (-(ushort)(iVar4 != 1) & 0xfffa) + 7;
     }
-    bVar8 = *(byte *)(this_00 + 9);
+    bVar7 = *(byte *)(this_00 + 9);
     bVar1 = *(byte *)((int)this + 0x24);
-    param_2 = (int *)CONCAT31(param_2._1_3_,bVar8);
+    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+    param_2 = (int *)CONCAT31(param_2._1_3_,bVar7);
+    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
     param_1 = CONCAT31(param_1._1_3_,bVar1);
     if (DAT_00808a8f != '\0') {
-      bVar9 = (&DAT_008087ea)[(uint)bVar1 * 0x51] != (&DAT_008087ea)[(uint)bVar8 * 0x51];
+      bVar8 = (&DAT_008087ea)[(uint)bVar1 * 0x51] != (&DAT_008087ea)[(uint)bVar7 * 0x51];
       goto LAB_004847df;
     }
-    if (bVar8 == bVar1) {
+    if (bVar7 == bVar1) {
 LAB_004847d4:
-      iVar4 = 0;
+      iVar3 = 0;
     }
     else {
-      bVar2 = g_playerRelationMatrix[bVar8][bVar1];
-      if ((bVar2 == 0) && (g_playerRelationMatrix[bVar1][bVar8] == 0)) {
-        iVar4 = -2;
+      bVar2 = g_playerRelationMatrix[bVar7][bVar1];
+      if ((bVar2 == 0) && (g_playerRelationMatrix[bVar1][bVar7] == 0)) {
+        iVar3 = -2;
       }
-      else if ((bVar2 == 1) && (g_playerRelationMatrix[bVar1][bVar8] == 0)) {
-        iVar4 = -1;
+      else if ((bVar2 == 1) && (g_playerRelationMatrix[bVar1][bVar7] == 0)) {
+        iVar3 = -1;
       }
-      else if ((bVar2 == 0) && (g_playerRelationMatrix[bVar1][bVar8] == 1)) {
-        iVar4 = 1;
+      else if ((bVar2 == 0) && (g_playerRelationMatrix[bVar1][bVar7] == 1)) {
+        iVar3 = 1;
       }
       else {
-        if ((bVar2 != 1) || (g_playerRelationMatrix[bVar1][bVar8] != 1)) goto LAB_004847d4;
-        iVar4 = 2;
+        if ((bVar2 != 1) || (g_playerRelationMatrix[bVar1][bVar7] != 1)) goto LAB_004847d4;
+        iVar3 = 2;
       }
     }
-    bVar9 = iVar4 < 0;
+    bVar8 = iVar3 < 0;
 LAB_004847df:
-    if (!bVar9) {
-      if (iVar5 == 0x14) {
+    if (!bVar8) {
+      if (iVar4 == 0x14) {
         return 3;
       }
-      if (iVar5 == 1000) {
+      if (iVar4 == 1000) {
         return 4;
       }
-      if (iVar5 == 0x3e9) {
+      if (iVar4 == 0x3e9) {
         return 4;
       }
     }
-    if (iVar5 != 1000) {
+    if (iVar4 != 1000) {
       return 1;
     }
-    iVar5 = (**(code **)(*this_00 + 0x2c))();
-    if ((iVar5 != 0x3b) && (iVar5 = (**(code **)(*this_00 + 0x2c))(), iVar5 != 0x60)) {
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+    iVar4 = (**(code **)(*this_00 + 0x2c))();
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+    if ((iVar4 != 0x3b) && (iVar4 = (**(code **)(*this_00 + 0x2c))(), iVar4 != 0x60)) {
       return 1;
     }
     return 7;
   case CASE_4:
-    iVar5 = thunk_FUN_00493cd0(this);
-    if (iVar5 == 0) {
+    iVar4 = thunk_FUN_00493cd0(this);
+    if (iVar4 == 0) {
       if (this_00 == (int *)0x0) {
         return 1;
       }
@@ -755,8 +812,9 @@ LAB_004847df:
         if (*(int *)((int)this + 0x712) <= *(int *)((int)this + 0x716)) {
           return 1;
         }
-        iVar5 = (**(code **)(*this_00 + 0x2c))();
-        if (iVar5 != 0x33) {
+        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+        iVar4 = (**(code **)(*this_00 + 0x2c))();
+        if (iVar4 != 0x33) {
           return 1;
         }
         if (*(int *)((int)this + 0x24) != this_00[9]) {
@@ -767,21 +825,21 @@ LAB_004847df:
     }
     break;
   case CASE_5:
-    iVar5 = thunk_FUN_00493cd0(this);
-    if (iVar5 == 0) {
+    iVar4 = thunk_FUN_00493cd0(this);
+    if (iVar4 == 0) {
       if (this_00 == (int *)0x0) {
         return 1;
       }
       if (this_00 != this) {
-        iVar5 = this_00[8];
-        if (((iVar5 != 0x14) && (iVar5 != 1000)) && (iVar5 != 0x3e9)) {
+        iVar4 = this_00[8];
+        if (((iVar4 != 0x14) && (iVar4 != 1000)) && (iVar4 != 0x3e9)) {
           return 1;
         }
         if (*(int *)((int)this + 0x24) != this_00[9]) {
           return 1;
         }
-        iVar5 = thunk_FUN_00490d90((int)this);
-        if (iVar5 != 1) {
+        iVar4 = thunk_FUN_00490d90((int)this);
+        if (iVar4 != 1) {
           return 1;
         }
         return 0xd;
@@ -789,30 +847,30 @@ LAB_004847df:
     }
     break;
   case CASE_6:
-    iVar5 = thunk_FUN_00493cd0(this);
-    return (-(ushort)(iVar5 != 0) & 0xfff1) + 0xf;
+    iVar4 = thunk_FUN_00493cd0(this);
+    return (-(ushort)(iVar4 != 0) & 0xfff1) + 0xf;
   case CASE_7:
-    iVar5 = thunk_FUN_00493cd0(this);
-    if (iVar5 == 0) {
+    iVar4 = thunk_FUN_00493cd0(this);
+    if (iVar4 == 0) {
       if (this_00 == (int *)0x0) {
         return 1;
       }
       if (this_00 != this) {
-        iVar5 = *(int *)((int)this + 0x6f7);
-        if (((iVar5 != 6) && (iVar5 != 0x12)) && (iVar5 != 0x22)) {
+        iVar4 = *(int *)((int)this + 0x6f7);
+        if (((iVar4 != 6) && (iVar4 != 0x12)) && (iVar4 != 0x22)) {
           return 1;
         }
-        iVar5 = (**(code **)(*this_00 + 0x108))(*(undefined4 *)((int)this + 0x24));
-        if (iVar5 != 1) {
+        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+        iVar4 = (**(code **)(*this_00 + 0x108))(*(undefined4 *)((int)this + 0x24));
+        if (iVar4 != 1) {
           return 1;
         }
-        cVar3 = thunk_FUN_004cca00(this_00,*(int *)((int)this + 0x24));
-        iVar5 = CONCAT31(extraout_var_00,cVar3);
-        if (iVar5 != 1) {
-          if (iVar5 == 2) {
+        iVar4 = thunk_FUN_004cca00(this_00,*(int *)((int)this + 0x24));
+        if (iVar4 != 1) {
+          if (iVar4 == 2) {
             return 10;
           }
-          if (iVar5 != 3) {
+          if (iVar4 != 3) {
             return 1;
           }
           return 0xb;
@@ -822,14 +880,14 @@ LAB_004847df:
     }
     break;
   case CASE_8:
-    iVar5 = thunk_FUN_00493cd0(this);
-    return (-(ushort)(iVar5 != 0) & 0xffef) + 0x11;
+    iVar4 = thunk_FUN_00493cd0(this);
+    return (-(ushort)(iVar4 != 0) & 0xffef) + 0x11;
   case CASE_9:
-    iVar5 = thunk_FUN_00493cd0(this);
-    return (-(ushort)(iVar5 != 0) & 0xfff8) + 8;
+    iVar4 = thunk_FUN_00493cd0(this);
+    return (-(ushort)(iVar4 != 0) & 0xfff8) + 8;
   case CASE_A:
-    iVar5 = thunk_FUN_00493cd0(this);
-    if (iVar5 != 0) {
+    iVar4 = thunk_FUN_00493cd0(this);
+    if (iVar4 != 0) {
       return 0;
     }
     if (this_00 == (int *)0x0) {
@@ -847,68 +905,70 @@ LAB_004847df:
     if (*(int *)((int)this + 0x72a) < 1) {
       return 1;
     }
-    iVar5 = (**(code **)(*this_00 + 0x2c))();
-    if ((iVar5 != 0x16) && (iVar5 = (**(code **)(*this_00 + 0x2c))(), iVar5 != 0x25)) {
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+    iVar4 = (**(code **)(*this_00 + 0x2c))();
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+    if ((iVar4 != 0x16) && (iVar4 = (**(code **)(*this_00 + 0x2c))(), iVar4 != 0x25)) {
       return 0xc;
     }
     if (*(int *)((int)this_00 + 0x732) != 1) {
       return 0xc;
     }
-    bVar8 = *(byte *)(this_00 + 9);
+    bVar7 = *(byte *)(this_00 + 9);
     bVar1 = *(byte *)((int)this + 0x24);
-    param_1 = (Global_sub_004845E0_param_1Enum)bVar8;
+    param_1 = (Global_sub_004845E0_param_1Enum)bVar7;
     local_8 = (uint)bVar1;
     if (DAT_00808a8f != '\0') {
-      bVar9 = (&DAT_008087ea)[local_8 * 0x51] != (&DAT_008087ea)[param_1 * 0x51];
+      bVar8 = (&DAT_008087ea)[local_8 * 0x51] != (&DAT_008087ea)[param_1 * 0x51];
       goto LAB_004853d2;
     }
-    if (bVar8 == bVar1) {
+    if (bVar7 == bVar1) {
 LAB_004853c7:
-      iVar5 = 0;
+      iVar4 = 0;
     }
     else {
       bVar2 = g_playerRelationMatrix[param_1][local_8];
       if ((bVar2 == 0) && (g_playerRelationMatrix[local_8][param_1] == 0)) {
-        iVar5 = -2;
+        iVar4 = -2;
       }
       else if ((bVar2 == 1) && (g_playerRelationMatrix[local_8][param_1] == 0)) {
-        iVar5 = -1;
+        iVar4 = -1;
       }
       else if ((bVar2 == 0) && (g_playerRelationMatrix[local_8][param_1] == 1)) {
-        iVar5 = 1;
+        iVar4 = 1;
       }
       else {
         if ((bVar2 != 1) || (g_playerRelationMatrix[local_8][param_1] != 1)) goto LAB_004853c7;
-        iVar5 = 2;
+        iVar4 = 2;
       }
     }
-    bVar9 = iVar5 < 0;
+    bVar8 = iVar4 < 0;
 LAB_004853d2:
-    if (!bVar9) {
-      param_1 = (Global_sub_004845E0_param_1Enum)bVar8;
+    if (!bVar8) {
+      param_1 = (Global_sub_004845E0_param_1Enum)bVar7;
       if (DAT_00808a8f != '\0') {
         return 0xc;
       }
-      if (bVar1 != bVar8) {
-        bVar8 = g_playerRelationMatrix[bVar1][param_1];
-        if ((bVar8 == 0) && (g_playerRelationMatrix[param_1][bVar1] == 0)) {
+      if (bVar1 != bVar7) {
+        bVar7 = g_playerRelationMatrix[bVar1][param_1];
+        if ((bVar7 == 0) && (g_playerRelationMatrix[param_1][bVar1] == 0)) {
           return 0xc;
         }
-        if ((bVar8 == 1) && (g_playerRelationMatrix[param_1][bVar1] == 0)) {
+        if ((bVar7 == 1) && (g_playerRelationMatrix[param_1][bVar1] == 0)) {
           return 0xc;
         }
-        if ((bVar8 == 0) && (g_playerRelationMatrix[param_1][bVar1] == 1)) {
+        if ((bVar7 == 0) && (g_playerRelationMatrix[param_1][bVar1] == 1)) {
           return 0xc;
         }
-        if ((bVar8 == 1) && (g_playerRelationMatrix[param_1][bVar1] == 1)) {
+        if ((bVar7 == 1) && (g_playerRelationMatrix[param_1][bVar1] == 1)) {
           return 0xc;
         }
       }
     }
     return 0xc;
   case CASE_D:
-    iVar5 = thunk_FUN_00493cd0(this);
-    if (iVar5 != 0) {
+    iVar4 = thunk_FUN_00493cd0(this);
+    if (iVar4 != 0) {
       return 0;
     }
     if (*(int *)((int)this + 0x7ca) != 0) {
@@ -923,51 +983,55 @@ LAB_004853d2:
     if (this_00[8] != 0x14) {
       return 1;
     }
-    iVar5 = (**(code **)(*this_00 + 0x7c))();
-    if (99 < iVar5) {
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+    iVar4 = (**(code **)(*this_00 + 0x7c))();
+    if (99 < iVar4) {
       return 1;
     }
-    bVar8 = *(byte *)(this_00 + 9);
+    bVar7 = *(byte *)(this_00 + 9);
     bVar1 = *(byte *)((int)this + 0x24);
-    param_2 = (int *)CONCAT31(param_2._1_3_,bVar8);
+    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+    param_2 = (int *)CONCAT31(param_2._1_3_,bVar7);
+    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
     param_1 = CONCAT31(param_1._1_3_,bVar1);
     if (DAT_00808a8f != '\0') {
-      bVar9 = (&DAT_008087ea)[(uint)bVar1 * 0x51] != (&DAT_008087ea)[(uint)bVar8 * 0x51];
+      bVar8 = (&DAT_008087ea)[(uint)bVar1 * 0x51] != (&DAT_008087ea)[(uint)bVar7 * 0x51];
       goto LAB_00485002;
     }
-    if (bVar8 == bVar1) {
+    if (bVar7 == bVar1) {
 LAB_00484ff7:
-      iVar5 = 0;
+      iVar4 = 0;
     }
     else {
-      bVar2 = g_playerRelationMatrix[bVar8][bVar1];
-      if ((bVar2 == 0) && (g_playerRelationMatrix[bVar1][bVar8] == 0)) {
-        iVar5 = -2;
+      bVar2 = g_playerRelationMatrix[bVar7][bVar1];
+      if ((bVar2 == 0) && (g_playerRelationMatrix[bVar1][bVar7] == 0)) {
+        iVar4 = -2;
       }
-      else if ((bVar2 == 1) && (g_playerRelationMatrix[bVar1][bVar8] == 0)) {
-        iVar5 = -1;
+      else if ((bVar2 == 1) && (g_playerRelationMatrix[bVar1][bVar7] == 0)) {
+        iVar4 = -1;
       }
-      else if ((bVar2 == 0) && (g_playerRelationMatrix[bVar1][bVar8] == 1)) {
-        iVar5 = 1;
+      else if ((bVar2 == 0) && (g_playerRelationMatrix[bVar1][bVar7] == 1)) {
+        iVar4 = 1;
       }
       else {
-        if ((bVar2 != 1) || (g_playerRelationMatrix[bVar1][bVar8] != 1)) goto LAB_00484ff7;
-        iVar5 = 2;
+        if ((bVar2 != 1) || (g_playerRelationMatrix[bVar1][bVar7] != 1)) goto LAB_00484ff7;
+        iVar4 = 2;
       }
     }
-    bVar9 = iVar5 < 0;
+    bVar8 = iVar4 < 0;
 LAB_00485002:
-    if (bVar9) {
+    if (bVar8) {
       return 1;
     }
-    iVar5 = (**(code **)(*this_00 + 0xbc))();
-    if (iVar5 != 1) {
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+    iVar4 = (**(code **)(*this_00 + 0xbc))();
+    if (iVar4 != 1) {
       return 1;
     }
     return 0x17;
   case CASE_E:
-    iVar5 = thunk_FUN_00493cd0(this);
-    if (iVar5 == 0) {
+    iVar4 = thunk_FUN_00493cd0(this);
+    if (iVar4 == 0) {
       if ((PTR_007fb2ac != (AnonShape_GLOBAL_007FB2AC_70073F41 *)0x0) &&
          (PTR_007fb2ac->field_0024 != 0)) {
         return 0x14;
@@ -976,8 +1040,8 @@ LAB_00485002:
     }
     break;
   case CASE_10:
-    iVar5 = thunk_FUN_00493cd0(this);
-    if (iVar5 != 0) {
+    iVar4 = thunk_FUN_00493cd0(this);
+    if (iVar4 != 0) {
       return 0;
     }
     if (this_00 == this) {
@@ -992,51 +1056,57 @@ LAB_00485002:
     if (this_00[9] != *(int *)((int)this + 0x24)) {
       return 1;
     }
-    iVar5 = thunk_FUN_004b9d90((AnonShape_004B9D90_4F3151F9 *)this_00);
-    if (iVar5 == 0) {
+    iVar4 = thunk_FUN_004b9d90((AnonShape_004B9D90_4F3151F9 *)this_00);
+    if (iVar4 == 0) {
       return 1;
     }
     thunk_FUN_004162f0(this_00,(undefined2 *)((int)&local_8 + 2),(undefined2 *)((int)&param_1 + 2),
                        (undefined2 *)((int)&param_2 + 2));
+    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
     return (((int)param_2._2_2_ <= g_worldGrid.sizeZ + -2) - 1 & 0xffeb) + 0x16;
   case CASE_11:
-    iVar5 = thunk_FUN_00493cd0(this);
-    if (iVar5 == 0) {
+    iVar4 = thunk_FUN_00493cd0(this);
+    if (iVar4 == 0) {
       if (this_00 == (int *)0x0) {
         return 1;
       }
       if (this_00 != this) {
-        iVar5 = *(int *)((int)this + 0x6f7);
-        if (((iVar5 != 8) && (iVar5 != 0x14)) && (iVar5 != 0x1a)) {
+        iVar4 = *(int *)((int)this + 0x6f7);
+        if (((iVar4 != 8) && (iVar4 != 0x14)) && (iVar4 != 0x1a)) {
           return 1;
         }
-        iVar5 = (**(code **)(*this_00 + 0x2c))();
-        if ((((iVar5 != 0x38) && (iVar5 = (**(code **)(*this_00 + 0x2c))(), iVar5 != 0x39)) &&
-            (iVar5 = (**(code **)(*this_00 + 0x2c))(), iVar5 != 0x4f)) &&
-           (iVar5 = (**(code **)(*this_00 + 0x2c))(), iVar5 != 0x5e)) {
+        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+        iVar4 = (**(code **)(*this_00 + 0x2c))();
+        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+        if ((((iVar4 != 0x38) && (iVar4 = (**(code **)(*this_00 + 0x2c))(), iVar4 != 0x39)) &&
+            (iVar4 = (**(code **)(*this_00 + 0x2c))(), iVar4 != 0x4f)) &&
+           (iVar4 = (**(code **)(*this_00 + 0x2c))(), iVar4 != 0x5e)) {
           return 1;
         }
         if (*(int *)((int)this + 0x24) == this_00[9]) {
-          iVar5 = (**(code **)(*this_00 + 0x88))(local_10);
-          return ((0 < iVar5) - 1 & 0xffef) + 0x12;
+          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+          iVar4 = (**(code **)(*this_00 + 0x88))(local_10);
+          return ((0 < iVar4) - 1 & 0xffef) + 0x12;
         }
         return 1;
       }
     }
     break;
   case CASE_12:
-    iVar5 = thunk_FUN_00493cd0(this);
-    if (iVar5 == 0) {
+    iVar4 = thunk_FUN_00493cd0(this);
+    if (iVar4 == 0) {
       if (this_00 == (int *)0x0) {
         return 1;
       }
       if (this_00 != this) {
-        iVar5 = *(int *)((int)this + 0x6f7);
-        if (((iVar5 != 8) && (iVar5 != 0x14)) && (iVar5 != 0x1a)) {
+        iVar4 = *(int *)((int)this + 0x6f7);
+        if (((iVar4 != 8) && (iVar4 != 0x14)) && (iVar4 != 0x1a)) {
           return 1;
         }
-        iVar5 = (**(code **)(*this_00 + 0x2c))();
-        if ((iVar5 != 0x3b) && (iVar5 = (**(code **)(*this_00 + 0x2c))(), iVar5 != 0x60)) {
+        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+        iVar4 = (**(code **)(*this_00 + 0x2c))();
+        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+        if ((iVar4 != 0x3b) && (iVar4 = (**(code **)(*this_00 + 0x2c))(), iVar4 != 0x60)) {
           return 1;
         }
         if (*(int *)((int)this + 0x24) != this_00[9]) {
@@ -1051,8 +1121,8 @@ LAB_00485002:
     }
     break;
   case CASE_13:
-    iVar5 = thunk_FUN_00493cd0(this);
-    if (iVar5 != 0) {
+    iVar4 = thunk_FUN_00493cd0(this);
+    if (iVar4 != 0) {
       return 0;
     }
     if (*(int *)((int)this + 0x7ca) != 0) {
@@ -1065,79 +1135,84 @@ LAB_00485002:
       return 0;
     }
     if (this_00[8] == 0x14) {
-      bVar8 = *(byte *)(this_00 + 9);
+      bVar7 = *(byte *)(this_00 + 9);
       bVar1 = *(byte *)((int)this + 0x24);
-      param_2 = (int *)CONCAT31(param_2._1_3_,bVar8);
+      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+      param_2 = (int *)CONCAT31(param_2._1_3_,bVar7);
+      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
       param_1 = CONCAT31(param_1._1_3_,bVar1);
       if (DAT_00808a8f == '\0') {
-        if (bVar8 == bVar1) {
+        if (bVar7 == bVar1) {
 LAB_00484e9f:
-          iVar5 = 0;
+          iVar4 = 0;
         }
         else {
-          bVar2 = g_playerRelationMatrix[bVar8][bVar1];
-          if ((bVar2 == 0) && (g_playerRelationMatrix[bVar1][bVar8] == 0)) {
-            iVar5 = -2;
+          bVar2 = g_playerRelationMatrix[bVar7][bVar1];
+          if ((bVar2 == 0) && (g_playerRelationMatrix[bVar1][bVar7] == 0)) {
+            iVar4 = -2;
           }
-          else if ((bVar2 == 1) && (g_playerRelationMatrix[bVar1][bVar8] == 0)) {
-            iVar5 = -1;
+          else if ((bVar2 == 1) && (g_playerRelationMatrix[bVar1][bVar7] == 0)) {
+            iVar4 = -1;
           }
-          else if ((bVar2 == 0) && (g_playerRelationMatrix[bVar1][bVar8] == 1)) {
-            iVar5 = 1;
+          else if ((bVar2 == 0) && (g_playerRelationMatrix[bVar1][bVar7] == 1)) {
+            iVar4 = 1;
           }
           else {
-            if ((bVar2 != 1) || (g_playerRelationMatrix[bVar1][bVar8] != 1)) goto LAB_00484e9f;
-            iVar5 = 2;
+            if ((bVar2 != 1) || (g_playerRelationMatrix[bVar1][bVar7] != 1)) goto LAB_00484e9f;
+            iVar4 = 2;
           }
         }
-        bVar9 = iVar5 < 0;
+        bVar8 = iVar4 < 0;
       }
       else {
-        bVar9 = (&DAT_008087ea)[(uint)bVar1 * 0x51] != (&DAT_008087ea)[(uint)bVar8 * 0x51];
+        bVar8 = (&DAT_008087ea)[(uint)bVar1 * 0x51] != (&DAT_008087ea)[(uint)bVar7 * 0x51];
       }
-      if ((!bVar9) || (iVar5 = (**(code **)(*this_00 + 0x120))(), iVar5 == 1)) goto LAB_00484ed2;
+      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+      if ((!bVar8) || (iVar4 = (**(code **)(*this_00 + 0x120))(), iVar4 == 1)) goto LAB_00484ed2;
     }
     if ((this_00[8] != 0x172) && (this_00[8] != 0x1a4)) {
       return 1;
     }
+/* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
 LAB_00484ed2:
-    iVar5 = (**(code **)(*this_00 + 0xbc))();
-    if (iVar5 != 1) {
+    iVar4 = (**(code **)(*this_00 + 0xbc))();
+    if (iVar4 != 1) {
       return 1;
     }
     return 0x1a;
   case CASE_18:
-    iVar5 = thunk_FUN_00493cd0(this);
-    if (iVar5 == 0) {
+    iVar4 = thunk_FUN_00493cd0(this);
+    if (iVar4 == 0) {
       return -(ushort)(this_00 != this) & 0x1d;
     }
     break;
   case CASE_2C:
-    iVar5 = thunk_FUN_00493cd0(this);
-    return (ushort)(iVar5 == 0);
+    iVar4 = thunk_FUN_00493cd0(this);
+    return (ushort)(iVar4 == 0);
   case CASE_2D:
-    iVar5 = thunk_FUN_00493cd0(this);
-    return (-(ushort)(iVar5 != 0) & 0xfff0) + 0x10;
+    iVar4 = thunk_FUN_00493cd0(this);
+    return (-(ushort)(iVar4 != 0) & 0xfff0) + 0x10;
   case CASE_48:
-    iVar5 = thunk_FUN_00493cd0(this);
-    if (iVar5 == 0) {
+    iVar4 = thunk_FUN_00493cd0(this);
+    if (iVar4 == 0) {
       if (this_00 == (int *)0x0) {
         return 1;
       }
       if (this_00 != this) {
-        iVar5 = (**(code **)(*this_00 + 0x2c))();
-        if (iVar5 != 0x62) {
+        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+        iVar4 = (**(code **)(*this_00 + 0x2c))();
+        if (iVar4 != 0x62) {
           return 1;
         }
         if (*(int *)((int)this + 0x24) != this_00[9]) {
           return 1;
         }
-        iVar5 = thunk_FUN_004d6df0(this);
-        if (iVar5 < 1) {
+        iVar4 = thunk_FUN_004d6df0(this);
+        if (iVar4 < 1) {
           return 1;
         }
-        iVar5 = thunk_FUN_004e8030(*(int *)((int)this + 0x6f7));
-        if (iVar5 != 3) {
+        iVar4 = thunk_FUN_004e8030(*(int *)((int)this + 0x6f7));
+        if (iVar4 != 3) {
           return 1;
         }
         return 0x1b;
@@ -1145,18 +1220,20 @@ LAB_00484ed2:
     }
     break;
   case CASE_4D:
-    iVar5 = thunk_FUN_00493cd0(this);
-    if (iVar5 == 0) {
+    iVar4 = thunk_FUN_00493cd0(this);
+    if (iVar4 == 0) {
       if (this_00 == (int *)0x0) {
         return 1;
       }
       if (this_00 != this) {
-        iVar5 = (**(code **)(*this_00 + 0x2c))();
-        if ((iVar5 != 0x37) && (iVar5 = (**(code **)(*this_00 + 0x2c))(), iVar5 != 0x6c)) {
+        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+        iVar4 = (**(code **)(*this_00 + 0x2c))();
+        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+        if ((iVar4 != 0x37) && (iVar4 = (**(code **)(*this_00 + 0x2c))(), iVar4 != 0x6c)) {
           return 1;
         }
-        iVar5 = thunk_FUN_004e8b10(this_00,*(uint *)((int)this + 0x24));
-        if (iVar5 != 1) {
+        iVar4 = thunk_FUN_004e8b10(this_00,*(uint *)((int)this + 0x24));
+        if (iVar4 != 1) {
           return 1;
         }
         return 0x1d;

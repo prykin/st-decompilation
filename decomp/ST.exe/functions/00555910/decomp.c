@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* Recovered from embedded debug metadata:
@@ -13,8 +15,6 @@ TraksClassTy::DrawTrakSprite(TraksClassTy *this,AnonShape_00555910_7455F960 *par
   int iVar3;
   short sVar4;
   int iVar5;
-  undefined4 unaff_ESI;
-  void *unaff_EDI;
   InternalExceptionFrame local_64;
   int local_20;
   int local_1c;
@@ -23,11 +23,11 @@ TraksClassTy::DrawTrakSprite(TraksClassTy *this,AnonShape_00555910_7455F960 *par
   int local_10;
   int local_c;
   TraksClassTy *local_8;
-  
+
   local_64.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_64;
   local_8 = this;
-  iVar3 = Library::MSVCRT::__setjmp3(local_64.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar3 = Library::MSVCRT::__setjmp3(local_64.jumpBuffer,0);
   if (iVar3 == 0) {
     sVar4 = param_1->field_0022;
     local_20 = (int)sVar4;
@@ -139,9 +139,7 @@ TraksClassTy::DrawTrakSprite(TraksClassTy *this,AnonShape_00555910_7455F960 *par
   iVar5 = ReportDebugMessage(s_E____titans_grig_traks_cpp_007c9104,0x96,0,iVar3,&DAT_007a4ccc,
                              s_TraksClassTy__DrawTrakSprite_err_007c9158);
   if (iVar5 != 0) {
-    pcVar2 = (code *)swi(3);
-    (*pcVar2)();
-    return;
+    STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   RaiseInternalException(iVar3,0,s_E____titans_grig_traks_cpp_007c9104,0x97);
   return;

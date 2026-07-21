@@ -35,7 +35,7 @@ void FUN_006d8a60(AnonShape_006D8A60_D503343B *param_1,int param_2,byte *param_3
   byte local_14;
   char local_10;
   uint local_8;
-  
+
   if (((int)param_6 < 1) || (param_7 < 1)) {
     return;
   }
@@ -51,6 +51,7 @@ void FUN_006d8a60(AnonShape_006D8A60_D503343B *param_1,int param_2,byte *param_3
   else {
     param_10 = (AnonShape_006D8A60_CD460E10 *)FUN_006cfe10(param_3,param_5);
   }
+  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   sVar2 = *(short *)(param_3 + 0x12);
 LAB_006d8b04:
   pAVar19 = (AnonShape_006D8A60_CD460E10 *)param_1;
@@ -209,6 +210,7 @@ LAB_006d8cab:
                   puVar20 = &param_10->field_0x3;
                   param_10 = param_10 + 1;
                   *pAVar19 = (AnonShape_006D8A60_CD460E10)
+                             /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                              (CONCAT22(CONCAT11(param_8[(uint)CONCAT11(*pbVar27,AVar17.field_0001) +
                                                         param_9 * -0x100],
                                                 param_8[(uint)CONCAT11(bVar22,AVar17._0_1_) +
@@ -238,6 +240,7 @@ LAB_006d8cab:
                     uVar25 = (uint)(byte)((char)uVar25 - 1);
                     param_10 = (AnonShape_006D8A60_CD460E10 *)&param_10->field_0001;
                     *(undefined *)pAVar19 =
+                         /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                          param_8[(uint)CONCAT11(bVar23,AVar17._0_1_) + param_9 * -0x100];
                     AVar17 = (AnonShape_006D8A60_CD460E10)((uint)AVar17 >> 8);
                     pAVar19 = (AnonShape_006D8A60_CD460E10 *)&pAVar19->field_0001;
@@ -248,6 +251,7 @@ LAB_006d8cab:
                     uVar25 = (uint)(byte)((char)uVar25 - 2);
                     param_10 = (AnonShape_006D8A60_CD460E10 *)&param_10->field_0002;
                     *(ushort *)pAVar19 =
+                         /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                          CONCAT11(param_8[(uint)CONCAT11(*pbVar27,AVar17.field_0001) +
                                           param_9 * -0x100],
                                   param_8[(uint)CONCAT11(bVar23,AVar17._0_1_) + param_9 * -0x100]);
@@ -260,7 +264,9 @@ LAB_006d8cab:
               param_10 = (AnonShape_006D8A60_CD460E10 *)&pAVar26->field_0001;
               pAVar18 = (AnonShape_006D8A60_CD460E10 *)&pAVar19->field_0001;
               *(undefined *)pAVar19 =
+                   /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                    param_8[(uint)CONCAT11(*(byte *)pAVar26,AVar17._0_1_) + param_9 * -0x100];
+              /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
               uVar15 = AVar17._1_2_;
               if (uVar25 != 1) {
                 if (((uint)pAVar18 & 3) == 0) {
@@ -270,6 +276,7 @@ LAB_006d8cab:
                 param_10 = (AnonShape_006D8A60_CD460E10 *)&pAVar26->field_0002;
                 pbVar27 = &pAVar19->field_0002;
                 *(undefined *)pAVar18 =
+                     /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                      param_8[(uint)CONCAT11(bVar23,(char)uVar15) + param_9 * -0x100];
                 uVar14 = (undefined1)((ushort)uVar15 >> 8);
                 pAVar18 = (AnonShape_006D8A60_CD460E10 *)pbVar27;
@@ -288,7 +295,9 @@ LAB_006d8cab:
           else {
             bVar23 = *(byte *)param_10;
             uVar25 = uVar25 & 0xffffff3f;
+            /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
             AVar17._0_2_ = CONCAT11(bVar23,bVar23);
+            /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
             AVar17._2_2_ = 0;
             if ((int)uVar16 < (int)uVar25) goto cf_common_join_006D8DA5;
             uVar16 = uVar16 - uVar25;
@@ -304,6 +313,7 @@ LAB_006d8cab:
                 pAVar19 = (AnonShape_006D8A60_CD460E10 *)&pAVar19->field_0002;
                 uVar25 = uVar25 - 2;
               }
+              /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
               AVar17._2_2_ = AVar17._0_2_;
               while (3 < (int)uVar25) {
                 *pAVar19 = AVar17;
@@ -313,6 +323,7 @@ LAB_006d8cab:
               pAVar18 = pAVar19;
               if (uVar25 == 0) goto LAB_006d8d94;
             }
+            /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
             bVar23 = AVar17._0_1_;
             if ((char)uVar25 != '\x01') {
               if ((char)uVar25 != '\x02') {
@@ -393,7 +404,9 @@ LAB_006d8d94:
               else {
                 bVar23 = *(byte *)param_10;
                 uVar25 = uVar25 & 0xffffff3f;
+                /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                 AVar6._0_2_ = CONCAT11(bVar23,bVar23);
+                /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                 AVar6._2_2_ = 0;
                 if ((int)uVar16 < (int)uVar25) goto cf_common_join_006D958E;
                 uVar16 = uVar16 - uVar25;
@@ -412,6 +425,7 @@ LAB_006d8d94:
                                 &((AnonShape_006D8A60_CD460E10 *)param_1)->field_0002;
                       uVar25 = uVar25 - 2;
                     }
+                    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                     AVar6._2_2_ = AVar6._0_2_;
                     while (3 < (int)uVar25) {
                       *param_1 = (AnonShape_006D8A60_D503343B)AVar6;
@@ -420,6 +434,7 @@ LAB_006d8d94:
                     }
                     if (uVar25 == 0) goto LAB_006d957d;
                   }
+                  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                   bVar23 = AVar6._0_1_;
                   if ((char)uVar25 != '\x01') {
                     if ((char)uVar25 != '\x02') {
@@ -438,6 +453,7 @@ LAB_006d9450:
                     bVar23 = (byte)uVar25;
                     while ('\x03' < (char)bVar23) {
                       *param_1 = (AnonShape_006D8A60_D503343B)
+                                 /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                  (CONCAT22(CONCAT11(param_8[(uint)AVar17 >> 8 & 0xff],
                                                     param_8[(uint)AVar17 & 0xff]),
                                            CONCAT11(param_8[(uint)AVar17 >> 0x18],
@@ -465,6 +481,7 @@ LAB_006d9450:
                       if (((uint)param_1 & 2) != 0) {
                         uVar25 = (uint)(byte)((char)uVar25 - 2);
                         *(ushort *)param_1 =
+                             /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                              CONCAT11(param_8[(uint)AVar17 >> 8 & 0xff],param_8[(uint)AVar17 & 0xff]
                                      );
                         param_1 = (AnonShape_006D8A60_D503343B *)
@@ -960,7 +977,9 @@ LAB_006d99e9:
                   }
                 }
                 else if (0 < (int)uVar25) {
+                  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                   AVar10._2_2_ = CONCAT11(bVar23,bVar23);
+                  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                   AVar10._0_2_ = CONCAT11(bVar23,bVar23);
                   pAVar21 = param_1;
                   for (uVar16 = uVar25 >> 2; uVar16 != 0; uVar16 = uVar16 - 1) {
@@ -1022,7 +1041,9 @@ LAB_006d99e9:
               } while (param_15 != 0);
             }
             else {
+              /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
               AVar11._2_2_ = CONCAT11(bVar23,bVar23);
+              /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
               AVar11._0_2_ = CONCAT11(bVar23,bVar23);
               for (uVar16 = param_15 >> 2; uVar16 != 0; uVar16 = uVar16 - 1) {
                 *pAVar21 = AVar11;
@@ -1076,7 +1097,9 @@ LAB_006d99e9:
                 else {
                   bVar23 = param_11[param_5];
                   if (0 < (int)uVar25) {
+                    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                     AVar8._2_2_ = CONCAT11(bVar23,bVar23);
+                    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                     AVar8._0_2_ = CONCAT11(bVar23,bVar23);
                     pAVar21 = param_1;
                     for (uVar16 = uVar25 >> 2; uVar16 != 0; uVar16 = uVar16 - 1) {
@@ -1146,7 +1169,9 @@ LAB_006d9c24:
               }
               else {
                 uVar14 = param_11[param_5];
+                /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                 AVar9._2_2_ = CONCAT11(uVar14,uVar14);
+                /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                 AVar9._0_2_ = CONCAT11(uVar14,uVar14);
                 for (uVar16 = param_15 >> 2; uVar16 != 0; uVar16 = uVar16 - 1) {
                   *pAVar21 = AVar9;
@@ -1178,7 +1203,9 @@ cf_common_join_006D8DA5:
   }
   if ((local_8 & 0x40) != 0) {
     bVar23 = *(byte *)param_10;
+    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
     AVar5._0_2_ = CONCAT11(bVar23,bVar23);
+    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
     AVar5._2_2_ = 0;
     pAVar18 = (AnonShape_006D8A60_CD460E10 *)&param_10->field_0001;
     if (3 < (int)uVar16) {
@@ -1192,6 +1219,7 @@ cf_common_join_006D8DA5:
         pAVar19 = (AnonShape_006D8A60_CD460E10 *)&pAVar19->field_0002;
         uVar16 = uVar16 - 2;
       }
+      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
       AVar5._2_2_ = AVar5._0_2_;
       while (3 < (int)uVar16) {
         *pAVar19 = AVar5;
@@ -1201,6 +1229,7 @@ cf_common_join_006D8DA5:
       param_1 = (AnonShape_006D8A60_D503343B *)pAVar19;
       if (uVar16 == 0) goto cf_common_join_006D9EAC;
     }
+    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
     bVar23 = AVar5._0_1_;
     if ((char)uVar16 != '\x01') {
       if ((char)uVar16 != '\x02') {
@@ -1262,6 +1291,7 @@ LAB_006d8e9b:
       puVar20 = &param_10->field_0x3;
       param_10 = param_10 + 1;
       *pAVar19 = (AnonShape_006D8A60_CD460E10)
+                 /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                  (CONCAT22(CONCAT11(param_8[(uint)CONCAT11(*pbVar27,AVar17.field_0001) +
                                             param_9 * -0x100],
                                     param_8[(uint)CONCAT11(bVar23,AVar17._0_1_) + param_9 * -0x100])
@@ -1276,6 +1306,7 @@ LAB_006d8e9b:
       pAVar19 = pAVar19 + 1;
       cVar12 = cVar12 + -4;
     }
+    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
     uVar16 = CONCAT31((int3)(uVar16 >> 8),cVar12);
     param_1 = (AnonShape_006D8A60_D503343B *)pAVar19;
     pAVar18 = param_10;
@@ -1285,6 +1316,7 @@ LAB_006d8e9b:
     AVar17 = (AnonShape_006D8A60_CD460E10)((uint)AVar17 >> (((byte)pAVar19 & 3) << 3));
     if (3 < uVar16) {
       if (((uint)pAVar19 & 1) != 0) {
+        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
         uVar16 = CONCAT31((int3)(uVar16 >> 8),(char)uVar16 + -1);
         param_10 = (AnonShape_006D8A60_CD460E10 *)&param_10->field_0001;
         *(undefined *)pAVar19 = param_8[(uint)CONCAT11(bVar23,AVar17._0_1_) + param_9 * -0x100];
@@ -1294,9 +1326,11 @@ LAB_006d8e9b:
       if (((uint)pAVar19 & 2) != 0) {
         bVar23 = *(byte *)param_10;
         pbVar27 = &param_10->field_0001;
+        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
         uVar16 = CONCAT31((int3)(uVar16 >> 8),(char)uVar16 + -2);
         param_10 = (AnonShape_006D8A60_CD460E10 *)&param_10->field_0002;
         *(ushort *)pAVar19 =
+             /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
              CONCAT11(param_8[(uint)CONCAT11(*pbVar27,AVar17.field_0001) + param_9 * -0x100],
                       param_8[(uint)CONCAT11(bVar23,AVar17._0_1_) + param_9 * -0x100]);
         pAVar19 = (AnonShape_006D8A60_CD460E10 *)&pAVar19->field_0002;
@@ -1308,6 +1342,7 @@ LAB_006d8e9b:
   param_1 = (AnonShape_006D8A60_D503343B *)&pAVar19->field_0001;
   *(undefined *)pAVar19 = param_8[(uint)CONCAT11(*(byte *)param_10,AVar17._0_1_) + param_9 * -0x100]
   ;
+  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
   uVar15 = AVar17._1_2_;
   pAVar18 = (AnonShape_006D8A60_CD460E10 *)&param_10->field_0001;
   if (uVar16 != 1) {
@@ -1316,6 +1351,7 @@ LAB_006d8e9b:
     }
     pbVar27 = &pAVar19->field_0002;
     *(undefined *)param_1 =
+         /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
          param_8[(uint)CONCAT11(param_10->field_0001,(char)uVar15) + param_9 * -0x100];
     uVar14 = (undefined1)((ushort)uVar15 >> 8);
     param_1 = (AnonShape_006D8A60_D503343B *)pbVar27;
@@ -1380,7 +1416,9 @@ cf_common_join_006D958E:
     goto cf_common_join_006D9EAC;
   }
   bVar23 = *(byte *)param_10;
+  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
   AVar7._0_2_ = CONCAT11(bVar23,bVar23);
+  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
   AVar7._2_2_ = 0;
   pAVar18 = (AnonShape_006D8A60_CD460E10 *)&param_10->field_0001;
   if ((bVar23 < (byte)param_9) || (local_14 < bVar23)) {
@@ -1397,6 +1435,7 @@ cf_common_join_006D958E:
                   &((AnonShape_006D8A60_CD460E10 *)param_1)->field_0002;
         uVar16 = uVar16 - 2;
       }
+      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
       AVar7._2_2_ = AVar7._0_2_;
       while (3 < (int)uVar16) {
         *param_1 = (AnonShape_006D8A60_D503343B)AVar7;
@@ -1405,6 +1444,7 @@ cf_common_join_006D958E:
       }
       if (uVar16 == 0) goto cf_common_join_006D9EAC;
     }
+    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
     bVar23 = AVar7._0_1_;
     if ((char)uVar16 != '\x01') {
       if ((char)uVar16 != '\x02') {
@@ -1423,6 +1463,7 @@ LAB_006d9621:
     cVar12 = (char)uVar16;
     while ('\x03' < cVar12) {
       *param_1 = (AnonShape_006D8A60_D503343B)
+                 /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                  (CONCAT22(CONCAT11(param_8[(uint)AVar17 >> 8 & 0xff],param_8[(uint)AVar17 & 0xff]),
                            CONCAT11(param_8[(uint)AVar17 >> 0x18],
                                     param_8[(uint)AVar17 >> 0x10 & 0xff])) << 0x10 |
@@ -1431,6 +1472,7 @@ LAB_006d9621:
       param_1 = param_1 + 1;
       cVar12 = cVar12 + -4;
     }
+    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
     uVar16 = CONCAT31((int3)(uVar16 >> 8),cVar12);
     if (cVar12 == '\0') goto cf_common_join_006D9EAC;
   }
@@ -1438,6 +1480,7 @@ LAB_006d9621:
     AVar17 = (AnonShape_006D8A60_CD460E10)((uint)AVar17 >> (((byte)param_1 & 3) << 3));
     if (3 < uVar16) {
       if (((uint)param_1 & 1) != 0) {
+        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
         uVar16 = CONCAT31((int3)(uVar16 >> 8),(char)uVar16 + -1);
         pAVar18 = (AnonShape_006D8A60_CD460E10 *)&param_10->field_0002;
         *(undefined *)param_1 = param_8[(uint)AVar17 & 0xff];
@@ -1446,8 +1489,10 @@ LAB_006d9621:
                   &((AnonShape_006D8A60_CD460E10 *)param_1)->field_0001;
       }
       if (((uint)param_1 & 2) != 0) {
+        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
         uVar16 = CONCAT31((int3)(uVar16 >> 8),(char)uVar16 + -2);
         *(ushort *)param_1 =
+             /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
              CONCAT11(param_8[(uint)AVar17 >> 8 & 0xff],param_8[(uint)AVar17 & 0xff]);
         param_1 = (AnonShape_006D8A60_D503343B *)
                   &((AnonShape_006D8A60_CD460E10 *)param_1)->field_0002;

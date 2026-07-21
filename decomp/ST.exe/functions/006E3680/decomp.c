@@ -7,7 +7,7 @@ void FUN_006e3680(AnonShape_006E3450_BC2FF034 *param_1)
 {
   uint uVar1;
   int iVar2;
-  
+
   param_1->field_0004 = 0;
   while( true ) {
     uVar1 = param_1->field_0004;

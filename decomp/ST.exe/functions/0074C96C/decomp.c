@@ -6,7 +6,7 @@ undefined4 __thiscall FUN_0074c96c(void *this,int param_1)
   undefined4 *puVar2;
   undefined4 uVar3;
   undefined4 local_8;
-  
+
   local_8 = 0;
   if (*(int *)((int)this + 0x8c) == 0) {
     pvVar1 = (void *)Library::MSVCRT::FUN_0072e530(0xe8);
@@ -30,6 +30,7 @@ undefined4 __thiscall FUN_0074c96c(void *this,int param_1)
     *(undefined4 **)((int)this + 0x90) = puVar2;
     if (puVar2 == (undefined4 *)0x0) {
       if (*(int **)((int)this + 0x8c) != (int *)0x0) {
+        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
         (**(code **)(**(int **)((int)this + 0x8c) + 0xc))(1);
       }
       *(undefined4 *)((int)this + 0x8c) = 0;

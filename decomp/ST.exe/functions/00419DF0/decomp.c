@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\Tc_gobj.cpp
@@ -16,7 +18,7 @@ void __thiscall STGameObjC::SetSelfCheckFlag(STGameObjC *this,int *param_1)
   AnonPointee_STGameObjC_01B1 *pAVar8;
   undefined4 *puVar9;
   undefined4 *puVar10;
-  
+
   if (this->field_01CD == 1) {
     return;
   }
@@ -78,9 +80,7 @@ cf_common_exit_00419F6C:
         if (iVar4 == 0) {
           return;
         }
-        pcVar3 = (code *)swi(3);
-        (*pcVar3)();
-        return;
+        STDebugBreak(); /* noreturn in standalone pseudocode */
       }
     }
     else if (uVar1 != 0x1b8) {
@@ -309,8 +309,6 @@ cf_common_exit_00419F6C:
   if (iVar4 == 0) {
     return;
   }
-  pcVar3 = (code *)swi(3);
-  (*pcVar3)();
-  return;
+  STDebugBreak(); /* noreturn in standalone pseudocode */
 }
 

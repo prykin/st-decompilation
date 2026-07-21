@@ -5,7 +5,7 @@ undefined4 __fastcall FUN_00724d40(void *param_1)
 
 {
   int iVar1;
-  
+
   *(undefined2 *)((int)param_1 + 0x17e) = *(undefined2 *)((int)param_1 + 0x198);
   *(undefined2 *)((int)param_1 + 0x17c) = *(undefined2 *)((int)param_1 + 0x194);
   *(int *)((int)param_1 + 0x180) = (int)param_1 + 0x24;

@@ -9,7 +9,7 @@ FUN_004c6bb0(void *this,undefined4 param_1,undefined4 param_2,undefined4 param_3
 
 {
   int iVar1;
-  
+
   *(undefined4 *)((int)this + 0x3e0) = param_1;
   *(undefined4 *)((int)this + 1000) = param_3;
   *(undefined4 *)((int)this + 0x3e4) = param_2;

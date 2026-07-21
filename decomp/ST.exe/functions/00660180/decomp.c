@@ -3,7 +3,7 @@
    Recovered source file: E:\__titans\ai\ai_flt.cpp
    Diagnostic line evidence: 1127 (metadata/report site, not the function definition)
    [STSourceProvenanceApplier end]
-   
+
    [STHiddenThisApplier] Anonymous hidden receiver recovered as
    /SubmarineTitans/Recovered/HiddenThis/AnonReceiver_00660180.
    Evidence: incoming_receiver_captures=1; receiver_accesses=5; incoming_edx_uses=0; calls=14;
@@ -19,8 +19,6 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00660180::FUN_00660180
   int iVar2;
   DArrayTy *array;
   STGroupBoatC *pSVar3;
-  undefined4 unaff_ESI;
-  void *unaff_EDI;
   undefined4 *puVar4;
   InternalExceptionFrame local_78;
   undefined4 local_34 [3];
@@ -37,7 +35,7 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00660180::FUN_00660180
   short asStack_10 [2];
   AnonShape_00660180_1CB7CB7C *local_c;
   DArrayTy *local_8;
-  
+
   *(undefined4 *)&this->field_0xa7 = 0;
   local_c = (AnonShape_00660180_1CB7CB7C *)this;
   if (param_2 != '\x02') {
@@ -65,7 +63,8 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00660180::FUN_00660180
         pSVar3 = (STGroupBoatC *)0x0;
       }
       else {
-        pSVar3 = thunk_FUN_0042b760(CONCAT31((int3)((uint)this >> 8),this->field_0x24),
+        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+        pSVar3 = thunk_FUN_0042b760(this->field_0x24,
                                     CONCAT22((short)((uint)param_1 >> 0x10),
                                              *(short *)&this->field_0x7d));
       }
@@ -81,7 +80,7 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00660180::FUN_00660180
   local_8 = (DArrayTy *)0x0;
   local_78.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_78;
-  iVar2 = Library::MSVCRT::__setjmp3(local_78.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar2 = Library::MSVCRT::__setjmp3(local_78.jumpBuffer,0);
   if (iVar2 != 0) {
     g_currentExceptionFrame = local_78.previous;
     if (local_8 != (DArrayTy *)0x0) {
@@ -94,17 +93,19 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00660180::FUN_00660180
   sStack_12 = param_1[4] / 2 + param_1[1];
   asStack_10[0] = param_1[5] / 2 + param_1[2];
   local_8 = array;
+  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
   thunk_FUN_00675950(CONCAT22(sStack_12,local_14),CONCAT22(asStack_10[0],sStack_12),asStack_10[0],
                      &local_14,&sStack_12,asStack_10,0);
   uVar1 = Library::DKW::TBL::FUN_006ae1c0((uint *)array,(undefined4 *)&local_14);
   local_18 = 1;
-  uVar1 = CONCAT22((short)(uVar1 >> 0x10),local_c->field_007D);
   local_1c = array;
   if ((local_c->field_007D == -2) || (g_sTAllPlayers_007FA174 == (STAllPlayersC *)0x0)) {
     pSVar3 = (STGroupBoatC *)0x0;
   }
   else {
-    pSVar3 = thunk_FUN_0042b760(CONCAT31((int3)(uVar1 >> 8),local_c->field_0024),uVar1);
+    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+    pSVar3 = thunk_FUN_0042b760(local_c->field_0024,
+                                CONCAT22((short)(uVar1 >> 0x10),local_c->field_007D));
   }
   if (pSVar3 == (STGroupBoatC *)0x0) {
     RaiseInternalException

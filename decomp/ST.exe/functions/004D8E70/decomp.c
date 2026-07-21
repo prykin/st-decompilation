@@ -4,7 +4,7 @@ undefined4 __thiscall FUN_004d8e70(void *this,int param_1,int param_2,undefined4
 {
   int iVar1;
   void *local_8;
-  
+
   local_8 = (void *)0x0;
   if (99 < *(int *)((int)this + 0x4ec)) {
     if (*(int *)((int)this + 0x4f0) == 0) {

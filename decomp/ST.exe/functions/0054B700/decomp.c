@@ -13,23 +13,21 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0054B700::FUN_0054b700
   AnonShape_0054B700_B3EE6DE9 *pAVar1;
   int iVar2;
   BITMAPINFO *pBVar3;
-  void *unaff_ESI;
   int iVar4;
   int iVar5;
   int iVar6;
-  InternalExceptionFrame *pIVar7;
-  undefined4 local_48 [16];
+  InternalExceptionFrame local_4c;
   AnonShape_0054B700_B3EE6DE9 *local_8;
-  
-  pIVar7 = g_currentExceptionFrame;
+
   if (param_1 == *(int *)&this->field_0x4df) {
     return;
   }
-  g_currentExceptionFrame = (InternalExceptionFrame *)&stack0xffffffb4;
+  local_4c.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &local_4c;
   local_8 = (AnonShape_0054B700_B3EE6DE9 *)this;
-  iVar2 = Library::MSVCRT::__setjmp3(local_48,0,unaff_ESI,pIVar7);
+  iVar2 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
   if (iVar2 != 0) {
-    g_currentExceptionFrame = pIVar7;
+    g_currentExceptionFrame = local_4c.previous;
     return;
   }
   if (DAT_0080874e == '\x03') {
@@ -84,7 +82,7 @@ LAB_0054b81b:
     }
     else {
       if (DAT_0080874e != '\x03') {
-        g_currentExceptionFrame = pIVar7;
+        g_currentExceptionFrame = local_4c.previous;
         return;
       }
       pBVar3 = (BITMAPINFO *)
@@ -94,7 +92,7 @@ LAB_0054b81b:
     }
     PutDDX(iVar2,iVar4,'\x06',pBVar3);
   }
-  g_currentExceptionFrame = pIVar7;
+  g_currentExceptionFrame = local_4c.previous;
   return;
 }
 

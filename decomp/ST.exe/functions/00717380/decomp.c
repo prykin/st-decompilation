@@ -12,7 +12,7 @@ void __fastcall FUN_00717380(AnonShape_00717380_FEFD061B *param_1)
   int iVar8;
   int iVar9;
   int *local_8;
-  
+
   if (param_1->field_0466 != 0) {
     iVar8 = 10000;
     iVar9 = *(int *)param_1->field_04D6;

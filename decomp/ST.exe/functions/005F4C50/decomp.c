@@ -22,7 +22,7 @@ FUN_005f4c50(void *this,float param_1,undefined4 param_2,int param_3,int param_4
   undefined4 local_12;
   undefined4 local_d;
   float local_8;
-  
+
   iVar5 = param_4;
   local_8 = _DAT_0079c5a4 / (float)param_5;
   *(int *)((int)this + 0x109) = param_5;
@@ -78,6 +78,7 @@ FUN_005f4c50(void *this,float param_1,undefined4 param_2,int param_3,int param_4
           else {
             iVar6 = *(int *)((int)this + 0x169);
             if ((uint)(iVar5 - param_5) < *(uint *)(iVar6 + 0xc)) {
+              /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
               iVar6 = *(int *)(iVar6 + 8) * (iVar5 - param_5) + *(int *)(iVar6 + 0x1c);
             }
             else {
@@ -87,7 +88,9 @@ FUN_005f4c50(void *this,float param_1,undefined4 param_2,int param_3,int param_4
             local_16 = *(int *)(iVar6 + 0x16);
             local_1a = iVar1;
           }
+          /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
           iVar6 = *(int *)((int)this + param_4 * 4 + 0x139);
+          /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
           local_2c._2_4_ = (iVar6 * iVar1) / 10000 + *(int *)((int)this + 0x111);
           local_26 = (iVar6 * local_16) / 10000 + *(int *)((int)this + 0x115);
           local_12 = DAT_007ce5ec;
@@ -95,6 +98,7 @@ FUN_005f4c50(void *this,float param_1,undefined4 param_2,int param_3,int param_4
           local_1e = 0;
           local_2c[1] = 3;
           local_d = 0xffffffff;
+          /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
           uVar4 = (uint)(*(int *)((int)this + param_4 * 4 + 0x159) != 0);
           if (*(char *)((int)this + 0x103) != '\0') {
             thunk_FUN_005f4a30((int)local_2c,3,uVar4);

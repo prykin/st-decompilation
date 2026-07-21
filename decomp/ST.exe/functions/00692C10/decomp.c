@@ -1,9 +1,11 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* [STSwitchEnumApplier] Switch target param_1 uses
    /SubmarineTitans/Recovered/Enums/Global_sub_00692C10_param_1Enum. Cases:
    CASE_A=10;CASE_14=20;CASE_32=50;CASE_5A=90;CASE_8C=140;CASE_10E=270;CASE_118=280;CASE_122=290;CASE_12C=300;CASE_172=370;CASE_BBE=3006;CASE_BBF=3007;CASE_BC0=3008;CASE_BC1=3009;CASE_BC3=3011
-   
+
    [STSourceProvenanceApplier begin]
    Recovered source file: E:\__titans\Maps\DefObj.cpp
    Diagnostic line evidence: 442 | 448 (metadata/report site, not the function definition)
@@ -27,7 +29,7 @@ FUN_00692c10(Global_sub_00692C10_param_1Enum param_1,int param_2,undefined4 *par
   char *pcVar11;
   undefined4 *puVar12;
   CHAR local_108 [260];
-  
+
   if (param_1 < 0x1a5) {
     if (param_1 == 0x1a4) {
       *param_3 = 0x155;
@@ -61,9 +63,7 @@ FUN_00692c10(Global_sub_00692C10_param_1Enum param_1,int param_2,undefined4 *par
           iVar7 = ReportDebugMessage(s_E____titans_Maps_DefObj_cpp_007d6218,0x1ba,0,uVar3,
                                      &DAT_007a4ccc,s_Out_of_Range_Entourage_Group_Ind_007d623c);
           if (iVar7 != 0) {
-            pcVar2 = (code *)swi(3);
-            puVar4 = (uint *)(*pcVar2)();
-            return puVar4;
+            STDebugBreak(); /* noreturn in standalone pseudocode */
           }
           uVar3 = 0;
         }
@@ -72,9 +72,7 @@ FUN_00692c10(Global_sub_00692C10_param_1Enum param_1,int param_2,undefined4 *par
           iVar5 = ReportDebugMessage(s_E____titans_Maps_DefObj_cpp_007d6218,0x1c0,0,param_5,
                                      &DAT_007a4ccc,s_Out_of_Range_Entourage_Index_007d61f4);
           if (iVar5 != 0) {
-            pcVar2 = (code *)swi(3);
-            puVar4 = (uint *)(*pcVar2)();
-            return puVar4;
+            STDebugBreak(); /* noreturn in standalone pseudocode */
           }
           param_5 = 0;
         }
@@ -207,6 +205,7 @@ FUN_00692c10(Global_sub_00692C10_param_1Enum param_1,int param_2,undefined4 *par
         *param_3 = 0x28;
         _DAT_007d5a1c = param_2;
         _DAT_007d5a14 = param_4;
+        /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
         _DAT_007d5a18 = *(undefined4 *)(&DAT_007d59e0 + (param_2 * 3 + -0x297) * 4);
         return (uint *)&DAT_007d59f8;
       case CASE_8C:

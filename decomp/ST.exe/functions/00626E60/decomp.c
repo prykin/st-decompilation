@@ -4,7 +4,7 @@ void __thiscall FUN_00626e60(void *this,int param_1)
 {
   int iVar1;
   uint uVar2;
-  
+
   uVar2 = 1;
   iVar1 = 0;
   do {

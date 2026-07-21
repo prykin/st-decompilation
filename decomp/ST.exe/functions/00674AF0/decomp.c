@@ -9,7 +9,7 @@ char * FUN_00674af0(int param_1)
   char *pcVar5;
   char *pcVar6;
   int *piVar7;
-  
+
   pcVar5 = &DAT_008016a0;
   if (DAT_00811934 != (char *)0x0) {
     cVar3 = *DAT_00811934;

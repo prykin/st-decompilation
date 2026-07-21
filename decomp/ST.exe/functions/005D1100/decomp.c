@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\settmobj.cpp
@@ -19,20 +21,19 @@ SettMapMTy::AddPlayerList(SettMapMTy *this,int param_1,uint param_2,int param_3,
   char *pcVar8;
   int iVar9;
   uint uVar10;
-  undefined4 unaff_ESI;
-  void *unaff_EDI;
   InternalExceptionFrame local_4c;
   SettMapMTy *local_8;
-  
+
   if (this->field_1F84 != (DArrayTy *)0x0) {
     local_4c.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_4c;
     local_8 = this;
-    errorCode = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
+    errorCode = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
     this_00 = local_8;
     if (errorCode == 0) {
       pDVar2 = local_8->field_1F84;
       if (param_2 < pDVar2->count) {
+        /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(pDVar2, param_2) (runtime stride) */
         pAVar6 = (AnonShape_005D00B0_9E7CC102 *)(pDVar2->elementSize * param_2 + (int)pDVar2->data);
       }
       else {
@@ -63,6 +64,7 @@ LAB_005d11ad:
             goto LAB_005d11ee;
           }
           do {
+            /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(pDVar2, uVar10) (runtime stride) */
             pvVar7 = (void *)(pDVar2->elementSize * uVar10 + (int)pDVar2->data);
 LAB_005d11ee:
             if ((((pvVar7 != (void *)0x0) && (DAT_0080874d == *(char *)((int)pvVar7 + 2))) &&
@@ -80,6 +82,7 @@ LAB_005d11ee:
             goto LAB_005d1245;
           }
           while( true ) {
+            /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(pDVar2, uVar10) (runtime stride) */
             pvVar7 = (void *)(pDVar2->elementSize * uVar10 + (int)pDVar2->data);
 LAB_005d1245:
             if (((pvVar7 != (void *)0x0) && (DAT_0080874d == *(char *)((int)pvVar7 + 2))) &&
@@ -104,9 +107,7 @@ LAB_005d1245:
     iVar9 = ReportDebugMessage(s_E____titans_Start_settmobj_cpp_007cd258,0x62f,0,errorCode,
                                &DAT_007a4ccc,s_SettMapMTy__AddPlayerList_007cd4c4);
     if (iVar9 != 0) {
-      pcVar4 = (code *)swi(3);
-      (*pcVar4)();
-      return;
+      STDebugBreak(); /* noreturn in standalone pseudocode */
     }
     RaiseInternalException(errorCode,0,s_E____titans_Start_settmobj_cpp_007cd258,0x62f);
   }

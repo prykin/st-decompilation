@@ -35,7 +35,7 @@ void __cdecl FUN_00574920(short *param_1,int param_2,int param_3,undefined4 *par
   undefined1 *puStack_10;
   undefined *puStack_c;
   undefined4 local_8;
-  
+
   local_8 = 0xffffffff;
   puStack_c = &DAT_0079b0f8;
   puStack_10 = &LAB_0072d964;
@@ -63,6 +63,7 @@ void __cdecl FUN_00574920(short *param_1,int param_2,int param_3,undefined4 *par
       if ((*(int *)(iVar2 + 0x10) != 0) && (*(int *)(iVar2 + 0x14) != 0)) {
         *(undefined4 *)(*(int *)((int)param_1 + 0x451) + 4) = 0;
         do {
+          /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
           iVar7 = *(int *)((int)param_1 + 0x451);
           uVar9 = *(uint *)(iVar7 + 4);
           if (uVar9 < *(uint *)(iVar7 + 0xc)) {
@@ -107,6 +108,7 @@ void __cdecl FUN_00574920(short *param_1,int param_2,int param_3,undefined4 *par
           if (*(short **)(iVar2 + 0xc) != (short *)0x0) {
             *(undefined4 *)(*(int *)((int)param_1 + 0x451) + 4) = 0;
             do {
+              /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
               iVar7 = *(int *)((int)param_1 + 0x451);
               uVar9 = *(uint *)(iVar7 + 4);
               if (uVar9 < *(uint *)(iVar7 + 0xc)) {
@@ -138,6 +140,7 @@ LAB_00574b4a:
               if (*(int *)(iVar2 + 0xc) != 0) {
                 *(undefined4 *)(*(int *)((int)param_1 + 0x451) + 4) = 0;
                 do {
+                  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
                   iVar7 = *(int *)((int)param_1 + 0x451);
                   uVar9 = *(uint *)(iVar7 + 4);
                   if (uVar9 < *(uint *)(iVar7 + 0xc)) {
@@ -283,6 +286,7 @@ LAB_00574e10:
         local_6c = *(undefined4 *)(iVar2 + 0x10);
         local_68 = *(undefined4 *)(iVar2 + 0x14);
         local_64 = *(undefined4 *)(iVar2 + 0xc);
+        /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
         Library::DKW::TBL::FUN_006ae1c0(*(uint **)((int)param_1 + 0x451),&local_6c);
       }
     }

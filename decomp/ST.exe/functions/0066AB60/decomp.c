@@ -15,7 +15,7 @@ int FUN_0066ab60(char playerId,byte *param_2,byte *param_3)
   int iVar7;
   byte *pbVar8;
   bool bVar9;
-  
+
   if (((param_2 != (byte *)0x0) && (param_3 != (byte *)0x0)) &&
      (g_sTAllPlayers_007FA174 != (STAllPlayersC *)0x0)) {
     this = thunk_FUN_004357f0(playerId);

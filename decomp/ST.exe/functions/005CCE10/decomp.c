@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\settmobj.cpp
@@ -16,9 +18,7 @@ void __thiscall SettMapMTy::SetListCtrls(SettMapMTy *this)
   int iVar8;
   uint uVar9;
   uint uVar10;
-  undefined4 unaff_ESI;
   char *pcVar11;
-  void *unaff_EDI;
   undefined4 *puVar12;
   bool bVar13;
   InternalExceptionFrame local_14c;
@@ -34,12 +34,12 @@ void __thiscall SettMapMTy::SetListCtrls(SettMapMTy *this)
   int local_10;
   cMf32 *local_c;
   uint local_8;
-  
+
   local_1c = 0;
   local_80.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_80;
   local_14 = this;
-  iVar6 = Library::MSVCRT::__setjmp3(local_80.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar6 = Library::MSVCRT::__setjmp3(local_80.jumpBuffer,0);
   if (iVar6 != 0) {
     g_currentExceptionFrame = local_80.previous;
     iVar8 = ReportDebugMessage(s_E____titans_Start_settmobj_cpp_007cd258,0x164,0,iVar6,&DAT_007a4ccc
@@ -48,9 +48,7 @@ void __thiscall SettMapMTy::SetListCtrls(SettMapMTy *this)
       RaiseInternalException(iVar6,0,s_E____titans_Start_settmobj_cpp_007cd258,0x164);
       return;
     }
-    pcVar4 = (code *)swi(3);
-    (*pcVar4)();
-    return;
+    STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   puVar12 = local_3c;
   for (iVar6 = 8; iVar6 != 0; iVar6 = iVar6 + -1) {
@@ -60,7 +58,7 @@ void __thiscall SettMapMTy::SetListCtrls(SettMapMTy *this)
   local_2c = 0x26;
   local_c4.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_c4;
-  iVar6 = Library::MSVCRT::__setjmp3(local_c4.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar6 = Library::MSVCRT::__setjmp3(local_c4.jumpBuffer,0);
   pSVar5 = local_14;
   if (iVar6 == 0) {
     FUN_006e6080(local_14,2,local_14->field_211D,local_3c);
@@ -88,6 +86,7 @@ void __thiscall SettMapMTy::SetListCtrls(SettMapMTy *this)
           pcVar11 = (char *)0x0;
         }
         else {
+          /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(pDVar3, uVar9) (runtime stride) */
           pcVar11 = (char *)(pDVar3->elementSize * uVar9 + (int)pDVar3->data);
         }
         SVar1 = pSVar5->field_1E26;
@@ -202,7 +201,7 @@ joined_r0x005cd0bb:
       }
       local_108.previous = g_currentExceptionFrame;
       g_currentExceptionFrame = &local_108;
-      iVar6 = Library::MSVCRT::__setjmp3(local_108.jumpBuffer,0,unaff_EDI,unaff_ESI);
+      iVar6 = Library::MSVCRT::__setjmp3(local_108.jumpBuffer,0);
       if (iVar6 == 0) {
         FUN_006e6080(local_14,2,local_14->field_211D,local_3c);
       }
@@ -218,7 +217,7 @@ joined_r0x005cd0bb:
       }
       g_currentExceptionFrame = &local_14c;
       local_14c.previous = local_108.previous;
-      iVar6 = Library::MSVCRT::__setjmp3(local_14c.jumpBuffer,0,unaff_EDI,unaff_ESI);
+      iVar6 = Library::MSVCRT::__setjmp3(local_14c.jumpBuffer,0);
       if (iVar6 == 0) {
         FUN_006e6080(local_14,2,local_14->field_211D,local_3c);
       }

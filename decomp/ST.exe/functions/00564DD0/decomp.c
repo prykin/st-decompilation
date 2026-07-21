@@ -8,7 +8,7 @@ void FUN_00564dd0(undefined4 param_1,undefined4 param_2,undefined4 *param_3,unde
   int iVar4;
   int iVar5;
   int iVar6;
-  
+
   iVar1 = *(int *)(DAT_00803300 + (int)param_4 * 0x14);
   iVar2 = *(int *)(DAT_00803300 + (int)param_4 * 0x14 + 4);
   iVar3 = DAT_008032ec;

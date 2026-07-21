@@ -3,7 +3,7 @@ undefined4 __thiscall FUN_00493050(void *this,int param_1)
 
 {
   int iVar1;
-  
+
   if ((*(int *)((int)this + 0x45d) == 3) &&
      ((*(int *)((int)this + 0x82e) == -1 || (*(int *)((int)this + 0x82e) == 0)))) {
     iVar1 = *(int *)((int)this + 0x6f7);

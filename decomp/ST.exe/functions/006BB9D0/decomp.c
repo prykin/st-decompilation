@@ -14,7 +14,7 @@ int FUN_006bb9d0(AnonShape_006BB9D0_BD42D958 *param_1,int param_2,int param_3,in
   undefined4 local_28;
   RECT local_24;
   RECT local_14;
-  
+
   pAVar2 = param_1;
   iVar4 = 0;
   if ((param_1->field_000C & 0x1100) == 0x100) {
@@ -38,11 +38,13 @@ int FUN_006bb9d0(AnonShape_006BB9D0_BD42D958 *param_1,int param_2,int param_3,in
   BVar3 = IntersectRect(&local_44,&local_24,&local_14);
   if (BVar3 != 0) {
     param_1 = (AnonShape_006BB9D0_BD42D958 *)0x0;
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
     while (piVar1 = (int *)pAVar2->field_0040,
           iVar4 = (**(code **)(*piVar1 + 0x14))
                             (piVar1,&local_44,param_6,&local_34,param_9 | 0x1000000,0), iVar4 != 0)
     {
       if (iVar4 == -0x7789fe3e) {
+        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
         (**(code **)(*param_6 + 0x6c))(param_6);
         FUN_006cec40((AnonShape_006CEC40_BB23E716 *)pAVar2);
       }

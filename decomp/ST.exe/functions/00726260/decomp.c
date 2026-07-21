@@ -8,7 +8,7 @@ void __cdecl FUN_00726260(uint *param_1)
   short *psVar1;
   int iVar2;
   int iVar3;
-  
+
   psVar1 = (short *)*param_1;
   if (psVar1 != (short *)0x0) {
     iVar2 = 0;

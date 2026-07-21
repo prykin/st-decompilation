@@ -11,7 +11,7 @@ undefined4 FUN_006b0cd0(AnonShape_00413AF0_B6B4EE9A *param_1,uint param_2,uint p
   int iVar4;
   int iVar5;
   int iVar6;
-  
+
   if ((param_2 < param_1->field_000C) && (param_3 < param_1->field_000C)) {
     iVar2 = param_1->field_0008;
     if (iVar2 == 4) {

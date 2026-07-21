@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\tradecen.cpp
@@ -15,20 +17,18 @@ void __thiscall TradePanelTy::InitTradePanel(TradePanelTy *this)
   ushort *puVar6;
   byte bVar7;
   int iVar8;
-  undefined4 unaff_ESI;
   uint *puVar9;
-  void *unaff_EDI;
   uint uVar10;
   int *piVar11;
   bool bVar12;
   undefined4 uVar13;
-  int *piVar14;
-  undefined4 uVar15;
-  int iVar16;
-  uint uVar17;
-  int iVar18;
-  UINT UVar19;
-  undefined4 *puVar20;
+  undefined4 uVar14;
+  int iVar15;
+  uint uVar16;
+  int iVar17;
+  UINT UVar18;
+  undefined4 *puVar19;
+  int *piVar20;
   undefined4 uVar21;
   undefined4 *puVar22;
   uint local_5e0 [84];
@@ -69,7 +69,7 @@ void __thiscall TradePanelTy::InitTradePanel(TradePanelTy *this)
   int local_10;
   uint local_c;
   byte local_5;
-  
+
   puVar3 = local_74;
   local_14 = this;
   for (iVar8 = 0x16; iVar8 != 0; iVar8 = iVar8 + -1) {
@@ -81,27 +81,27 @@ void __thiscall TradePanelTy::InitTradePanel(TradePanelTy *this)
     *puVar9 = 0;
     puVar9 = puVar9 + 1;
   }
-  piVar14 = local_490;
+  piVar20 = local_490;
   for (iVar8 = 0xf6; iVar8 != 0; iVar8 = iVar8 + -1) {
-    *piVar14 = 0;
-    piVar14 = piVar14 + 1;
+    *piVar20 = 0;
+    piVar20 = piVar20 + 1;
   }
   local_b8.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_b8;
-  puVar3 = (undefined4 *)Library::MSVCRT::__setjmp3(local_b8.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  puVar3 = (undefined4 *)Library::MSVCRT::__setjmp3(local_b8.jumpBuffer,0);
   this_00 = local_14;
   if (puVar3 == (undefined4 *)0x0) {
     uVar21 = 0x77;
     DAT_00802a44 = local_14;
     iVar8 = (-(uint)(DAT_0080874e != '\x03') & 0xfffffffa) + 0xde;
-    UVar19 = 0x36c0;
-    iVar18 = 0xb;
-    iVar16 = 0xbf;
-    uVar15 = 3;
+    UVar18 = 0x36c0;
+    iVar17 = 0xb;
+    iVar15 = 0xbf;
+    uVar14 = 3;
     uVar13 = 0x40;
     pCVar4 = thunk_FUN_00571240(s_BKG_TRADECENTERW_007c8680,0);
     SpecPanelTy::InitPanel
-              ((SpecPanelTy *)this_00,pCVar4,uVar13,uVar15,iVar16,iVar18,UVar19,iVar8,uVar21);
+              ((SpecPanelTy *)this_00,pCVar4,uVar13,uVar14,iVar15,iVar17,UVar18,iVar8,uVar21);
     pcVar5 = (ccFntTy *)
              ccFntTy::operator(DAT_00806790,0x19d,(cMf32 *)DAT_00806790,s_MONEY_FONT_007c211c,0);
     uVar10 = 1;
@@ -115,12 +115,12 @@ void __thiscall TradePanelTy::InitTradePanel(TradePanelTy *this)
                        (DAT_00806794,CASE_B,&DAT_007c2048,0xffffffff,0,1,0,(undefined4 *)0x0);
     this_00->field_01D5 = puVar6;
     iVar8 = 1;
-    uVar17 = 0xffffffff;
-    puVar20 = puVar3;
+    uVar16 = 0xffffffff;
+    puVar19 = puVar3;
     puVar22 = puVar3;
     pCVar4 = thunk_FUN_00571240(s_TRADE_RATE_007c8670,0);
     puVar6 = Library::Ourlib::MFRLOAD::mfRLoad
-                       (DAT_00806794,CASE_B,pCVar4,uVar17,(byte)puVar3,iVar8,(int)puVar20,puVar22);
+                       (DAT_00806794,CASE_B,pCVar4,uVar16,(byte)puVar3,iVar8,(int)puVar19,puVar22);
     local_5 = this_00->field_01D0;
     this_00->field_01D9 = puVar6;
     local_1c = this_00->field_005C;
@@ -129,14 +129,14 @@ void __thiscall TradePanelTy::InitTradePanel(TradePanelTy *this)
     puVar9 = local_5e0 + 1;
     local_c = (-(uint)(DAT_0080874e != '\x03') & 0xfffffffe) + 0x22 + this_00->field_003C;
     do {
-      iVar16 = local_1c;
+      iVar15 = local_1c;
       bVar12 = bVar7 == local_5;
       puVar9[-1] = uVar10;
       *puVar9 = (uint)bVar12;
       puVar9[2] = local_c;
       puVar9[4] = 0x3a;
       iVar8 = DAT_00806734;
-      if (iVar16 != 0) {
+      if (iVar15 != 0) {
         iVar8 = this_00->field_0044;
       }
       bVar7 = bVar7 + 1;
@@ -159,10 +159,11 @@ void __thiscall TradePanelTy::InitTradePanel(TradePanelTy *this)
     local_24 = 1;
     local_20 = 1;
     local_44 = local_64;
-    (**(code **)(*(int *)this_00->field_000C + 8))(5,&this_00->field_01C4,0,local_74,0);
+    (*this_00->field_000C->vtable->CreateObject)
+              ((SystemClassTy *)this_00->field_000C,5,&this_00->field_01C4,(int *)0x0,local_74,0);
     local_e8 = this_00->field_0008;
-    iVar16 = 1;
-    piVar14 = (int *)0x0;
+    iVar15 = 1;
+    piVar20 = (int *)0x0;
     uVar13 = 0;
     iVar8 = 1;
     local_490[0] = 0;
@@ -176,27 +177,27 @@ void __thiscall TradePanelTy::InitTradePanel(TradePanelTy *this)
     local_490[3] = 2;
     pCVar4 = thunk_FUN_00571240(s_BUT_TBUP_007c22d8,0);
     pCVar4 = FUN_006f2c00(pCVar4,iVar8,uVar13);
-    local_18 = cMf32::RecGet((cMf32 *)DAT_00806790,1,pCVar4,piVar14,iVar16);
+    local_18 = cMf32::RecGet((cMf32 *)DAT_00806790,1,pCVar4,piVar20,iVar15);
     local_478 = *(undefined4 *)(local_18 + 2);
     local_474 = *(undefined4 *)(local_18 + 4);
     cMf32::RecMemFree((cMf32 *)DAT_00806790,(uint *)&local_18);
     iVar8 = this_00->field_005C;
     local_490[4] = this_00->field_003C + 0x69;
-    iVar16 = DAT_00806734;
+    iVar15 = DAT_00806734;
     if (iVar8 != 0) {
-      iVar16 = this_00->field_0044;
+      iVar15 = this_00->field_0044;
     }
     local_424 = 2;
-    local_490[5] = iVar16 + 0x46;
+    local_490[5] = iVar15 + 0x46;
     local_428 = this_00->field_0008;
     local_420 = 0xc005;
     local_378 = 500;
     local_374 = 0x28;
-    piVar14 = local_490 + 2;
+    piVar20 = local_490 + 2;
     piVar11 = local_308;
-    for (iVar16 = 0x5f; iVar16 != 0; iVar16 = iVar16 + -1) {
-      *piVar11 = *piVar14;
-      piVar14 = piVar14 + 1;
+    for (iVar15 = 0x5f; iVar15 != 0; iVar15 = iVar15 + -1) {
+      *piVar11 = *piVar20;
+      piVar20 = piVar20 + 1;
       piVar11 = piVar11 + 1;
     }
     local_308[3] = DAT_00806734;
@@ -209,7 +210,8 @@ void __thiscall TradePanelTy::InitTradePanel(TradePanelTy *this)
     local_c4 = 1;
     local_c0 = 0x14;
     local_bc = 10;
-    (**(code **)(*(int *)this_00->field_000C + 8))(4,puVar3,0,local_490,0);
+    (*this_00->field_000C->vtable->CreateObject)
+              ((SystemClassTy *)this_00->field_000C,4,puVar3,(int *)0x0,local_490,0);
     puVar1 = &this_00->field_0x18;
     this_00->field_0028 = 0x28;
     *(undefined4 *)&this_00->field_0x2c = 0x186a1;
@@ -228,9 +230,7 @@ void __thiscall TradePanelTy::InitTradePanel(TradePanelTy *this)
   iVar8 = ReportDebugMessage(s_E____titans_Andrey_tradecen_cpp_007c8624,0x53,0,(int)puVar3,
                              &DAT_007a4ccc,s_TradePanelTy__InitTradePanel_007c864c);
   if (iVar8 != 0) {
-    pcVar2 = (code *)swi(3);
-    (*pcVar2)();
-    return;
+    STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   RaiseInternalException((int)puVar3,0,s_E____titans_Andrey_tradecen_cpp_007c8624,0x53);
   return;

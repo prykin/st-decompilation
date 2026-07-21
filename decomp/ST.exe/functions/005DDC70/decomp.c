@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\startsys.cpp
@@ -12,9 +14,7 @@ void __thiscall StartSystemTy::CreateBinDesc(StartSystemTy *this)
   StartSystemTy *this_00;
   int iVar4;
   int iVar5;
-  undefined4 unaff_ESI;
   undefined4 *puVar6;
-  void *unaff_EDI;
   int *piVar7;
   undefined4 *puVar8;
   int local_8c4 [6];
@@ -54,7 +54,7 @@ void __thiscall StartSystemTy::CreateBinDesc(StartSystemTy *this)
   undefined4 local_4b0;
   InternalExceptionFrame local_4c;
   StartSystemTy *local_8;
-  
+
   piVar7 = local_8c4;
   local_8 = this;
   for (iVar5 = 0x21e; iVar5 != 0; iVar5 = iVar5 + -1) {
@@ -63,7 +63,7 @@ void __thiscall StartSystemTy::CreateBinDesc(StartSystemTy *this)
   }
   local_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_4c;
-  iVar5 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar5 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
   this_00 = local_8;
   if (iVar5 == 0) {
     local_8c4[0] = 0;
@@ -147,9 +147,7 @@ void __thiscall StartSystemTy::CreateBinDesc(StartSystemTy *this)
   iVar4 = ReportDebugMessage(s_E____titans_Start_startsys_cpp_007cd718,0x3b8,0,iVar5,&DAT_007a4ccc,
                              s_StartSystemTy__CreateBinDesc_007cd8bc);
   if (iVar4 != 0) {
-    pcVar3 = (code *)swi(3);
-    (*pcVar3)();
-    return;
+    STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   RaiseInternalException(iVar5,0,s_E____titans_Start_startsys_cpp_007cd718,0x3b8);
   return;

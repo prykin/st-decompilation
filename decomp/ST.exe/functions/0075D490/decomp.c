@@ -15,7 +15,7 @@ void FUN_0075d490(AnonShape_0075D490_1FEB0A4F *param_1,int param_2,undefined4 *p
   undefined4 *puVar10;
   undefined4 *puVar11;
   undefined4 *local_8;
-  
+
   puVar3 = (undefined4 *)*param_4;
   iVar4 = param_1->field_01B2 + *(int *)(param_2 + 4);
   uVar5 = (uint)*(byte *)(iVar4 + 0x96);

@@ -9,7 +9,7 @@ undefined4 FUN_004e80f0(int param_1,Global_sub_004E80F0_param_2Enum param_2)
   int iVar1;
   int iVar2;
   undefined4 uVar3;
-  
+
   uVar3 = 0;
   switch(param_2) {
   case CASE_A3:

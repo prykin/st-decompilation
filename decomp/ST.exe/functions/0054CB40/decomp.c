@@ -1,7 +1,7 @@
 
 /* [STPrototypeApplier] Propagated parameter 1.
    Evidence: 0054C740 -> 0054CB40 @ 0054C78B
-   
+
    [STConstructorApplier] Recovered constructor candidate.
    VTable: 0079AE38 (store 0054CB53)
    Evidence: final_vptr=0079AE38; returns_this=true; calls_before=1; field_writes_after=7;

@@ -10,9 +10,10 @@ undefined4 __thiscall FUN_004eb010(void *this,int param_1)
   int iVar6;
   int local_10;
   int local_8;
-  
+
   iVar5 = 0;
   local_8 = 0;
+  /* ST_PSEUDO[flattened_global_record_array]: expected g_playerRuntime[player].field[index...] after base/stride proof */
   iVar6 = param_1 * 0xa62;
   g_playerRuntime[param_1].field2159_0x9c6 = 0;
   local_10 = 0;

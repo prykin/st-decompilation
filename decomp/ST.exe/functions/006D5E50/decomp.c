@@ -8,7 +8,7 @@ int FUN_006d5e50(int param_1,undefined4 *param_2,undefined4 *param_3)
   LONG local_10;
   LONG local_c;
   HANDLE local_8;
-  
+
   local_14 = (PRTL_CRITICAL_SECTION_DEBUG)*param_2;
   local_10 = param_2[1];
   local_c = param_2[2];

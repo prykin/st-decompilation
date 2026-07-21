@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\playpan.cpp
@@ -20,8 +22,6 @@ undefined4 __thiscall PlayPanelTy::GetMessage(PlayPanelTy *this,int param_1)
   byte *pbVar11;
   int iVar12;
   byte bVar13;
-  undefined4 unaff_ESI;
-  void *unaff_EDI;
   bool bVar14;
   int iVar15;
   char *text;
@@ -37,11 +37,11 @@ undefined4 __thiscall PlayPanelTy::GetMessage(PlayPanelTy *this,int param_1)
   uint local_10;
   ushort *local_c;
   uint local_8;
-  
+
   local_64.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_64;
   local_14 = this;
-  iVar7 = Library::MSVCRT::__setjmp3(local_64.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar7 = Library::MSVCRT::__setjmp3(local_64.jumpBuffer,0);
   this_00 = local_14;
   if (iVar7 != 0) {
     g_currentExceptionFrame = local_64.previous;
@@ -51,10 +51,9 @@ undefined4 __thiscall PlayPanelTy::GetMessage(PlayPanelTy *this,int param_1)
       RaiseInternalException(iVar7,0,s_E____titans_Andrey_playpan_cpp_007c7574,500);
       return 0xffff;
     }
-    pcVar17 = (code *)swi(3);
-    uVar10 = (*pcVar17)();
-    return uVar10;
+    STDebugBreak(); /* noreturn in standalone pseudocode */
   }
+  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   if (*(int *)(param_1 + 0x10) == 2) {
     puVar1 = &local_14->field_004C;
     FUN_006b1a50((int)DAT_008075a8,3,(undefined4 *)0x0,puVar1);
@@ -63,10 +62,13 @@ undefined4 __thiscall PlayPanelTy::GetMessage(PlayPanelTy *this,int param_1)
     this_00->field_0174 = this_00->field_0048 + this_00->field_0050;
   }
   PanelTy::GetMessage((PanelTy *)this_00,param_1);
+  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   uVar8 = *(uint *)(param_1 + 0x10);
   if (uVar8 < 0xb20a) {
     if (uVar8 == 0xb209) {
+      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
       iVar7 = *(int *)(*(int *)(param_1 + 0x14) + 0x10);
+      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
       local_10 = *(int *)(*(int *)(param_1 + 0x14) + 0xc) - this_00->field_003C;
       if (this_00->field_005C == 0) {
         iVar12 = this_00->field_0048;
@@ -97,14 +99,17 @@ undefined4 __thiscall PlayPanelTy::GetMessage(PlayPanelTy *this,int param_1)
             g_currentExceptionFrame = local_64.previous;
             return 0;
           }
+          /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
           iVar7 = **(int **)(param_1 + 0x14);
           if (iVar7 == 1) {
             bVar13 = 0;
+            /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
             local_8 = (uint)local_8._1_3_ << 8;
             if (DAT_00808aaf != 0) {
               do {
                 uVar8 = local_8 & 0xff;
                 bVar13 = bVar13 + 1;
+                /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                 local_8 = CONCAT31(local_8._1_3_,bVar13);
                 (&DAT_00808af7)[uVar8 * 0x9c] = 1;
               } while (bVar13 < DAT_00808aaf);
@@ -125,11 +130,13 @@ undefined4 __thiscall PlayPanelTy::GetMessage(PlayPanelTy *this,int param_1)
           if (iVar7 == 2) {
             if (DAT_0080874d < 8) {
               bVar13 = 0;
+              /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
               local_8 = (uint)local_8._1_3_ << 8;
               if (DAT_00808aaf != 0) {
                 do {
                   iVar7 = (local_8 & 0xff) * 0x9c;
                   bVar3 = (&DAT_00808af4)[iVar7];
+                  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                   local_c = (ushort *)CONCAT31(local_c._1_3_,bVar3);
                   if (DAT_00808a8f == '\0') {
                     if (bVar3 == DAT_0080874d) {
@@ -162,6 +169,7 @@ LAB_0053b42f:
                   }
                   (&DAT_00808af7)[iVar7] = bVar14;
                   bVar13 = bVar13 + 1;
+                  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                   local_8 = CONCAT31(local_8._1_3_,bVar13);
                 } while (bVar13 < DAT_00808aaf);
               }
@@ -190,6 +198,7 @@ LAB_0053b42f:
               do {
                 iVar7 = (local_8 & 0xff) * 0x9c;
                 bVar3 = (&DAT_00808af4)[iVar7];
+                /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                 local_c = (ushort *)CONCAT31(local_c._1_3_,bVar3);
                 if (DAT_00808a8f == '\0') {
                   if (bVar3 == DAT_0080874d) {
@@ -222,6 +231,7 @@ LAB_0053b2ea:
                 }
                 bVar13 = bVar13 + 1;
                 (&DAT_00808af7)[iVar7] = '\x01' - bVar14;
+                /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                 local_8 = CONCAT31(local_8._1_3_,bVar13);
               } while (bVar13 < DAT_00808aaf);
             }
@@ -249,6 +259,7 @@ LAB_0053b2ea:
       return 0;
     }
     if (uVar8 == 0x6200) {
+      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
       this_00->field_01C9 = *(undefined4 *)(param_1 + 0x14);
       PaintPlayPanel(this_00);
       this_00->field_0028 = 5;
@@ -322,7 +333,9 @@ LAB_0053b2ea:
   }
   else if (uVar8 < 0xb537) {
     if (0xb52e < uVar8) {
+      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
       iVar7 = (*(int **)(param_1 + 0x18))[1];
+      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
       local_10 = **(int **)(param_1 + 0x18) - this_00->field_003C;
       if (this_00->field_005C == 0) {
         iVar12 = this_00->field_0048;
@@ -330,11 +343,14 @@ LAB_0053b2ea:
       else {
         iVar12 = -this_00->field_0044;
       }
+      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
       if (*(short *)(param_1 + 0x14) == 0) {
         uVar8 = 1;
       }
       else {
+        /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
         bVar13 = *(char *)(param_1 + 0x10) - 0x2f;
+        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
         local_c = (ushort *)CONCAT31(local_c._1_3_,bVar13);
         uVar8 = (uint)((&DAT_00808af7)[(this_00->field_01C9 + (uint)bVar13) * 0x9c] == '\0');
       }
@@ -365,8 +381,10 @@ LAB_0053b2ea:
         bVar14 = false;
       }
       if ((bVar14) && (DAT_00808783 != '\x01')) {
+        /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
         iVar7 = (this_00->field_01C9 + (uint)(byte)(*(char *)(param_1 + 0x10) + 1)) * 0x9c;
         bVar13 = (&DAT_00808af4)[iVar7];
+        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
         local_10 = CONCAT31(local_10._1_3_,bVar13);
         if ((DAT_00808a8f == '\0') &&
            (((((&DAT_00808af5)[iVar7] != '\0' && (DAT_0080874d != 0xff)) && (bVar13 != 0xff)) &&
@@ -422,6 +440,7 @@ LAB_0053b2ea:
         }
       }
       break;
+    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     case 0xb50f:
     case 0xb510:
     case 0xb511:
@@ -431,6 +450,7 @@ LAB_0053b2ea:
     case 0xb515:
     case 0xb516:
       piVar16 = *(int **)(param_1 + 0x18);
+      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
       local_10 = CONCAT31(local_10._1_3_,*(char *)(param_1 + 0x10) + -0xf);
       local_c = (ushort *)(*piVar16 - this_00->field_003C);
       if (this_00->field_005C == 0) {
@@ -446,11 +466,13 @@ LAB_0053b2ea:
       else {
         cVar6 = (-(DAT_0080874e != '\x01') & 0x89U) + 0x3a;
       }
-      FUN_006b4170((AnonShape_006C7610_838EDECF *)this_00->field_0068,0,(int)local_c,local_8,
+      FUN_006b4170((AnonShape_006B5B10_E0D06CF1 *)this_00->field_0068,0,(int)local_c,local_8,
                    piVar16[2],piVar16[3],cVar6);
+      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
       if (*(short *)(param_1 + 0x14) != 0) {
         iVar7 = (this_00->field_01C9 + (local_10 & 0xff)) * 0x9c;
         bVar13 = (&DAT_00808af4)[iVar7];
+        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
         local_10 = CONCAT31(local_10._1_3_,bVar13);
         if (((DAT_0080874d != 0xff) && (bVar13 != 0xff)) && (DAT_0080874d != bVar13)) {
           iVar12 = -1;
@@ -521,7 +543,9 @@ LAB_0053b2ea:
     case 0xb525:
     case 0xb526:
       puVar2 = &this_00->field_0x18;
+      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
       bVar13 = *(char *)(param_1 + 0x10) - 0x1f;
+      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
       local_10 = CONCAT31(local_10._1_3_,bVar13);
       iVar7 = this_00->field_01C9 + (uint)bVar13;
       (&DAT_00808af7)[iVar7 * 0x9c] = (&DAT_00808af7)[iVar7 * 0x9c] == '\0';

@@ -5,10 +5,11 @@ undefined4 __thiscall FUN_0068e730(void *this,int param_1)
   int iVar1;
   uint uVar2;
   undefined4 *puVar3;
-  
+
   if (param_1 == 0) {
     return 0xfffffffc;
   }
+  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   uVar2 = thunk_FUN_0068e140(this,*(int *)(param_1 + 0x18));
   if ((int)uVar2 < 0) {
     return 0xfffffffc;
@@ -22,6 +23,7 @@ undefined4 __thiscall FUN_0068e730(void *this,int param_1)
   }
   puVar3[1] = 0;
   *puVar3 = 0;
+  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   AiTactClassTy::BackFromRepair(this,*(short *)(param_1 + 0x7d));
   thunk_FUN_0065d590(param_1);
   return 0;

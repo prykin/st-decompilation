@@ -6,7 +6,7 @@ void FUN_00749ca4(int *param_1,char *param_2,undefined4 *param_3)
   char *pcVar2;
   char *pcVar3;
   bool bVar4;
-  
+
   iVar1 = 0x10;
   bVar4 = true;
   pcVar2 = param_2;
@@ -35,6 +35,7 @@ void FUN_00749ca4(int *param_1,char *param_2,undefined4 *param_3)
       return;
     }
   }
+  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
   (**(code **)(*param_1 + 0x24))(param_2,param_3);
   return;
 }

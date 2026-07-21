@@ -13,22 +13,27 @@ void __fastcall FUN_00696810(void *param_1)
   uint local_10;
   int local_c;
   int local_8;
-  
+
   uVar3 = 0xffffffff;
+  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   thunk_FUN_006948e0(param_1,*(int *)((int)param_1 + 0x5833));
   local_c = 0;
+  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   if (0 < *(int *)((int)param_1 + 0x582f)) {
     do {
       iVar2 = local_c;
       local_14 = thunk_FUN_00696400(param_1,local_c,(int)local_38);
+      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
       local_10 = (uint)*(byte *)(*(int *)((int)param_1 + 0x584b) + iVar2);
       local_8 = 0;
       if (0 < local_14) {
         piVar1 = local_38;
         do {
+          /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
           uVar3 = (uint)*(short *)(*(int *)((int)param_1 + 0x584f) + *piVar1 * 2);
           if (-1 < (int)uVar3) {
             iVar2 = local_c;
+            /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
             if (*(byte *)(*piVar1 + *(int *)((int)param_1 + 0x584b)) == local_10) break;
             uVar3 = 0xffffffff;
           }
@@ -41,6 +46,7 @@ void __fastcall FUN_00696810(void *param_1)
         uVar5 = 0;
         iVar4 = 0;
         uVar3 = Library::MSVCRT::FUN_0072e6c0();
+        /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
         uVar3 = thunk_FUN_00695c10(param_1,local_10,(int)uVar3 % *(int *)((int)param_1 + 0x5847) + 1
                                    ,iVar4,uVar5,uVar6);
         if (-1 < (int)uVar3) goto LAB_006968cf;
@@ -50,6 +56,7 @@ LAB_006968cf:
         thunk_FUN_00695f70(param_1,uVar3,iVar2,0);
       }
       local_c = iVar2 + 1;
+    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     } while (local_c < *(int *)((int)param_1 + 0x582f));
   }
   return;

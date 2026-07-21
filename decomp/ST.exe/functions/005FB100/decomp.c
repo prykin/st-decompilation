@@ -8,7 +8,7 @@ void __fastcall FUN_005fb100(AnonShape_005FB100_42251CC8 *param_1)
   int iVar4;
   int iVar5;
   uint uVar6;
-  
+
   uVar6 = 0;
   iVar1 = (int)param_1->field_0045;
   iVar3 = (int)param_1->field_0043;

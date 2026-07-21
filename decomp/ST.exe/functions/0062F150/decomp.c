@@ -9,7 +9,7 @@ void __fastcall FUN_0062f150(AnonShape_0062F150_AF81DB77 *param_1)
   int local_10;
   int local_c;
   int local_8;
-  
+
   pVVar2 = g_visibleClass_00802A88;
   local_c = 0;
   if ((param_1->field_01F9 != '\0') && (g_visibleClass_00802A88 != (VisibleClassTy *)0x0)) {
@@ -47,6 +47,7 @@ LAB_0062f208:
           }
         }
       }
+      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
       else if (*(uint *)(iVar1 + 0x39) < (uint)(PTR_00802a38->field_00E4 - *(int *)(iVar1 + 0x35)))
       {
         *(undefined4 *)(iVar1 + 0x18) = 2;

@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\tsystem.cpp
@@ -11,16 +13,14 @@ void __thiscall GameSystemC::DoneSystem(GameSystemC *this,int param_1)
   GameSystemC *pGVar3;
   int errorCode;
   int iVar4;
-  undefined4 unaff_ESI;
-  void *unaff_EDI;
   InternalExceptionFrame local_4c;
   GameSystemC *local_8;
-  
+
   this->field_0430 = 0;
   local_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_4c;
   local_8 = this;
-  errorCode = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  errorCode = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
   pGVar3 = local_8;
   if (errorCode == 0) {
     if (local_8->field_0431 != 0) {
@@ -54,9 +54,7 @@ void __thiscall GameSystemC::DoneSystem(GameSystemC *this,int param_1)
   iVar4 = ReportDebugMessage(s_E____titans_tsystem_cpp_007cab5c,0xa7,0,errorCode,&DAT_007a4ccc,
                              s_GameSystemC__DoneSystem_007cac18);
   if (iVar4 != 0) {
-    pcVar1 = (code *)swi(3);
-    (*pcVar1)();
-    return;
+    STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   RaiseInternalException(errorCode,0,s_E____titans_tsystem_cpp_007cab5c,0xa7);
   return;

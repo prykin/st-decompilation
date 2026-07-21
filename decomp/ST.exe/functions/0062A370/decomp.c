@@ -18,7 +18,7 @@ int __thiscall FUN_0062a370(void *this,int param_1)
   int local_c;
   short local_8;
   short local_6;
-  
+
   local_2c = 0;
   iVar4 = param_1 - *(int *)((int)this + 0xae);
   iVar5 = *(int *)((int)this + 0x8e) * *(int *)((int)this + 0x9a) * iVar4;
@@ -29,7 +29,9 @@ int __thiscall FUN_0062a370(void *this,int param_1)
   iVar5 = iVar6 / 10000 +
           ((iVar6 * iVar4) / param_1 - (iVar4 * iVar4) / (*(int *)((int)this + 0xa2) << 1)) +
           *(int *)((int)this + 0x82);
+  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   iVar4 = (*(int *)((int)this + 0x92) * local_c) / 10000 + *(int *)((int)this + 0x7e);
+  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   local_10 = (*(int *)((int)this + 0x96) * local_c) / 10000 + *(int *)((int)this + 0x7a);
   if ((*(uint *)((int)this + 0x14) & 0xff00) == 0x400) {
     if (local_10 < 0) {
@@ -76,6 +78,7 @@ int __thiscall FUN_0062a370(void *this,int param_1)
     return 1;
   }
   if (uVar3 == 2) {
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
     if ((*(int **)((int)this + 0xeb) != (int *)0x0) &&
        (iVar4 = (**(code **)(**(int **)((int)this + 0xeb) + 0xe0))
                           (*(undefined4 *)((int)this + 0xef),(int)&param_1 + 2,&local_6,&local_8,

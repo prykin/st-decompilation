@@ -10,7 +10,7 @@ undefined4 __thiscall STBoatC::sub_00490570(STBoatC *this)
   short sVar2;
   short sVar3;
   short sVar4;
-  
+
   sVar1 = this->field_004B;
   if (sVar1 < 1) {
     sVar2 = this->field_0049;

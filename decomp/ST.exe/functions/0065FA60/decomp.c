@@ -14,8 +14,6 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0065FA60::FUN_0065fa60
   int iVar2;
   undefined4 *puVar3;
   uint uVar4;
-  undefined4 unaff_ESI;
-  void *unaff_EDI;
   DArrayTy *groupContent;
   InternalExceptionFrame local_5c;
   uint local_18;
@@ -24,12 +22,12 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0065FA60::FUN_0065fa60
   short local_a;
   short local_8;
   short local_6;
-  
+
   local_10 = (DArrayTy *)0x0;
   local_5c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_5c;
   local_14 = this;
-  iVar2 = Library::MSVCRT::__setjmp3(local_5c.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar2 = Library::MSVCRT::__setjmp3(local_5c.jumpBuffer,0);
   pAVar1 = local_14;
   if (iVar2 == 0) {
     if (param_2 == 0) {
@@ -66,6 +64,7 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0065FA60::FUN_0065fa60
       local_18 = local_10->count;
       while (uVar4 = local_18 - 1, -1 < (int)uVar4) {
         if (uVar4 < groupContent->count) {
+          /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(groupContent, uVar4) (runtime stride) */
           puVar3 = (undefined4 *)(groupContent->elementSize * uVar4 + (int)groupContent->data);
         }
         else {
@@ -79,7 +78,7 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0065FA60::FUN_0065fa60
               ((((int)*param_3 + (int)param_3[3] <= (int)local_6 ||
                 ((int)param_3[1] + (int)param_3[4] <= (int)local_8)) ||
                ((int)param_3[2] + (int)param_3[5] <= (int)local_a)))))) {
-            FUN_006b0c70((AnonShape_006B0C70_7C4FE646 *)groupContent,uVar4);
+            FUN_006b0c70(groupContent,uVar4);
             local_18 = uVar4;
           }
         }

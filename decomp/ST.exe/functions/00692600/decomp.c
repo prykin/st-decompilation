@@ -13,7 +13,7 @@ void __fastcall FUN_00692600(int *param_1)
   int local_14;
   int local_10;
   void **local_c;
-  
+
   local_c = (void **)(param_1 + 0x655);
   local_14 = 0;
   do {
@@ -87,6 +87,7 @@ void __fastcall FUN_00692600(int *param_1)
         if (param_1[iVar3 + 0x6c2] != 0) {
           piVar4 = param_1 + iVar3 + 0x6c2;
           iVar6 = 0;
+          /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
           if (0 < *(short *)(param_1[iVar3 + 0x6c2] + 0x23)) {
             do {
               if (*(int *)(*piVar4 + 0x2d + iVar6 * 4) != 0) {

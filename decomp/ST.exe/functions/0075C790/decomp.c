@@ -31,7 +31,7 @@ undefined4 FUN_0075c790(AnonShape_0075C790_3F1CCBA9 *param_1,int *param_2)
   int local_10;
   int local_c;
   int *local_8;
-  
+
   local_14 = param_1->field_0182;
   bVar7 = (byte)param_1->field_018A;
   local_18 = 1 << (bVar7 & 0x1f);
@@ -59,7 +59,7 @@ undefined4 FUN_0075c790(AnonShape_0075C790_3F1CCBA9 *param_1,int *param_2)
       local_4c = local_14c;
       do {
         if (iVar3 < 8) {
-          iVar3 = FUN_0075b720(&local_44,(uint)pAVar10,iVar3,0);
+          iVar3 = FUN_0075b720(&local_44,pAVar10,iVar3,0);
           if (iVar3 == 0) goto cf_break_loop_0075CB0B;
           iVar3 = local_34;
           pAVar10 = local_38;
@@ -74,6 +74,7 @@ LAB_0075c8af:
         else {
 LAB_0075c882:
           uVar4 = (int)pAVar10 >> ((char)iVar3 - 8U & 0x1f) & 0xff;
+          /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
           iVar8 = *(int *)(local_48 + 0xd4 + uVar4 * 4);
           if (iVar8 == 0) {
             iVar8 = 9;
@@ -90,7 +91,7 @@ LAB_0075c882:
             local_c = iVar8;
             if (local_10 == 0) goto LAB_0075ca4a;
             if ((iVar3 < local_10) &&
-               (iVar5 = FUN_0075b720(&local_44,(uint)pAVar10,iVar3,local_10), iVar3 = local_34,
+               (iVar5 = FUN_0075b720(&local_44,pAVar10,iVar3,local_10), iVar3 = local_34,
                pAVar10 = local_38, iVar5 == 0)) goto cf_break_loop_0075CB0B;
             iVar3 = iVar3 - local_10;
             local_c = local_c + ((int)pAVar10 >> ((byte)iVar3 & 0x1f) & iVar8 - 1U);
@@ -102,8 +103,8 @@ LAB_0075c882:
         }
         else {
           if ((iVar3 < 1) &&
-             (iVar8 = FUN_0075b720(&local_44,(uint)pAVar10,iVar3,1), iVar3 = local_34,
-             pAVar10 = local_38, iVar8 == 0)) goto cf_break_loop_0075CB0B;
+             (iVar8 = FUN_0075b720(&local_44,pAVar10,iVar3,1), iVar3 = local_34, pAVar10 = local_38,
+             iVar8 == 0)) goto cf_break_loop_0075CB0B;
           iVar3 = iVar3 + -1;
           if (((int)pAVar10 >> ((byte)iVar3 & 0x1f) & 1U) == 0) {
             local_28 = &DAT_007a1e94 + (int)param_2;
@@ -122,7 +123,7 @@ LAB_0075c882:
           }
           else {
             if ((iVar3 < 1) &&
-               (iVar8 = FUN_0075b720(&local_44,(uint)pAVar10,iVar3,1), iVar3 = local_34,
+               (iVar8 = FUN_0075b720(&local_44,pAVar10,iVar3,1), iVar3 = local_34,
                pAVar10 = local_38, iVar8 == 0)) goto cf_break_loop_0075CB0B;
             iVar3 = iVar3 + -1;
             if ((((int)pAVar10 >> ((byte)iVar3 & 0x1f) & 1U) != 0) &&
@@ -159,7 +160,7 @@ LAB_0075ca4a:
           puVar2 = (uint *)(local_1c + *local_8 * 4);
           if (*(int *)(local_1c + *local_8 * 4) != 0) {
             if ((iVar3 < 1) &&
-               (iVar8 = FUN_0075b720(&local_44,(uint)pAVar10,iVar3,1), iVar3 = local_34,
+               (iVar8 = FUN_0075b720(&local_44,pAVar10,iVar3,1), iVar3 = local_34,
                pAVar10 = local_38, iVar8 == 0)) {
 cf_break_loop_0075CB0B:
               if (0 < local_24) {

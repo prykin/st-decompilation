@@ -13,60 +13,70 @@ void __thiscall FUN_004fa870(void *this,Global_sub_004FA870_param_1Enum param_1)
   if ((((param_1 == 0) || (CASE_5 < param_1)) && (param_1 != CASE_E)) && (param_1 != CASE_F)) {
     if (param_1 == (CASE_4|CASE_2)) {
       if (g_prodPanel_008016E8 != (ProdPanelTy *)0x0) {
+        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
         (**(code **)(g_prodPanel_008016E8->field_0000 + 0x1c))();
         return;
       }
     }
     else if (param_1 == (CASE_4|CASE_2|CASE_1)) {
       if (g_prodPanel_0080167C != (ProdPanelTy *)0x0) {
+        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
         (**(code **)(g_prodPanel_0080167C->field_0000 + 0x1c))();
         return;
       }
     }
     else if (param_1 == 8) {
       if (g_prodPanel_00801684 != (ProdPanelTy *)0x0) {
+        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
         (**(code **)(g_prodPanel_00801684->field_0000 + 0x1c))();
         return;
       }
     }
     else if (param_1 == 9) {
       if (DAT_00801698 != (int *)0x0) {
+        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
         (**(code **)(*DAT_00801698 + 0x20))();
         return;
       }
     }
     else if (param_1 == 10) {
       if (DAT_00802a44 != (int *)0x0) {
+        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
         (**(code **)(*DAT_00802a44 + 0x20))();
         return;
       }
     }
     else if (param_1 == 0xb) {
       if (DAT_00801678 != (int *)0x0) {
+        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
         (**(code **)(*DAT_00801678 + 0x20))();
         return;
       }
     }
     else if (param_1 == 0xc) {
       if (g_prodPanel_00801680 != (ProdPanelTy *)0x0) {
+        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
         (**(code **)(g_prodPanel_00801680->field_0000 + 0x1c))();
         return;
       }
     }
     else if (param_1 == 0x10) {
       if (DAT_00802a48 != (int *)0x0) {
+        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
         (**(code **)(*DAT_00802a48 + 0x20))();
         return;
       }
     }
     else if (param_1 == 0x11) {
       if (DAT_0080168c != (int *)0x0) {
+        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
         (**(code **)(*DAT_0080168c + 0x20))();
         return;
       }
     }
     else if (param_1 == 0x12) {
       if (DAT_008016ec != (int *)0x0) {
+        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
         (**(code **)(*DAT_008016ec + 0x20))();
         return;
       }

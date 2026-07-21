@@ -9,7 +9,7 @@ void FUN_0075d590(AnonShape_0075D590_939A8180 *param_1,undefined4 param_2,int pa
   int iVar4;
   undefined1 *puVar5;
   undefined4 *puVar6;
-  
+
   puVar6 = (undefined4 *)*param_4;
   param_4 = (undefined4 *)0x0;
   if (0 < param_1->field_0126) {

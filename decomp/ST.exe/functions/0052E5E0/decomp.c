@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\optpanel.cpp
@@ -15,8 +17,6 @@ void __thiscall OptPanelTy::InitOptPanel(OptPanelTy *this)
   undefined4 uVar6;
   uint *puVar7;
   ccFntTy *this_01;
-  undefined4 unaff_ESI;
-  void *unaff_EDI;
   undefined4 uVar8;
   short sVar9;
   undefined2 uVar10;
@@ -32,11 +32,11 @@ void __thiscall OptPanelTy::InitOptPanel(OptPanelTy *this)
   undefined4 uVar20;
   InternalExceptionFrame local_4c;
   OptPanelTy *local_8;
-  
+
   local_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_4c;
   local_8 = this;
-  iVar2 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar2 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
   this_00 = local_8;
   if (iVar2 == 0) {
     g_optPanel_008016DC = local_8;
@@ -122,9 +122,7 @@ void __thiscall OptPanelTy::InitOptPanel(OptPanelTy *this)
   iVar16 = ReportDebugMessage(s_E____titans_Andrey_optpanel_cpp_007c70a0,0x5b,0,iVar2,&DAT_007a4ccc,
                               s_OptPanelTy__InitOptPanel_007c70ec);
   if (iVar16 != 0) {
-    pcVar1 = (code *)swi(3);
-    (*pcVar1)();
-    return;
+    STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   RaiseInternalException(iVar2,0,s_E____titans_Andrey_optpanel_cpp_007c70a0,0x5b);
   return;

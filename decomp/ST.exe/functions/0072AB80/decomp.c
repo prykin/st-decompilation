@@ -1,7 +1,7 @@
 
 /* [STPrototypeApplier] Propagated parameter 3.
    Evidence: 007297E0 -> 0072AB80 @ 0072A283 | 007297E0 -> 0072AB80 @ 0072A49A
-   
+
    [STPrototypeApplier] Propagated parameter 5.
    Evidence: 007297E0 -> 0072AB80 @ 0072A283 | 007297E0 -> 0072AB80 @ 0072A49A */
 
@@ -11,7 +11,7 @@ FUN_0072ab80(byte *param_1,int param_2,ushort *param_3,uint *param_4,int *param_
 {
   int iVar1;
   uint uVar2;
-  
+
   iVar1 = *param_5 + -1;
   *param_5 = iVar1;
   while (-1 < iVar1) {

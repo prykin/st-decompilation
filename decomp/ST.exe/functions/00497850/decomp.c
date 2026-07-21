@@ -7,8 +7,9 @@ FUN_00497850(int param_1,int param_2,int param_3,int param_4,int param_5,int par
   int iVar1;
   undefined4 uVar2;
   void *pvVar3;
-  
+
   if (-1 < (int)param_7) {
+    /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(PTR_007fb270, param_7) (runtime stride) */
     if ((((int)param_7 < (int)PTR_007fb270->count) && (param_7 < PTR_007fb270->count)) &&
        (pvVar3 = (void *)(PTR_007fb270->elementSize * param_7 + (int)PTR_007fb270->data),
        pvVar3 != (void *)0x0)) {

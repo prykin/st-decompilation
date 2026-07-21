@@ -5,13 +5,14 @@ int __fastcall FUN_0074f107(int *param_1)
   int iVar1;
   int *local_c;
   int *local_8;
-  
+
   if (param_1[0x12] == 1) {
     iVar1 = -0x7fffbffb;
   }
   else {
     local_c = param_1;
     local_8 = param_1;
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
     iVar1 = (**(code **)(*param_1 + 0x2c))(param_1,&local_c);
     if (-1 < iVar1) {
       EnterCriticalSection((LPCRITICAL_SECTION)(param_1 + 7));

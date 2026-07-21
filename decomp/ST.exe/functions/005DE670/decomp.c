@@ -17,9 +17,7 @@ void __fastcall FUN_005de670(AnonShape_005DE670_0D4D7A8C *param_1)
   BOOL BVar6;
   uint uVar7;
   uint uVar8;
-  undefined4 unaff_ESI;
   byte *pbVar9;
-  void *unaff_EDI;
   LPVOID lpBuffer;
   byte local_478 [260];
   byte local_374 [260];
@@ -34,7 +32,7 @@ void __fastcall FUN_005de670(AnonShape_005DE670_0D4D7A8C *param_1)
   HANDLE local_10;
   void *local_c;
   DWORD local_8;
-  
+
   param_1->field_06B2 = 0;
   param_1->field_06AE = 0;
   param_1->field_069E = 0;
@@ -48,7 +46,7 @@ void __fastcall FUN_005de670(AnonShape_005DE670_0D4D7A8C *param_1)
   }
   local_68.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_68;
-  iVar3 = Library::MSVCRT::__setjmp3(local_68.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar3 = Library::MSVCRT::__setjmp3(local_68.jumpBuffer,0);
   if (iVar3 != 0) {
     g_currentExceptionFrame = local_68.previous;
     if (local_14 != (HANDLE)0xffffffff) {

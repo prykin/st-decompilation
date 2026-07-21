@@ -41,16 +41,22 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_004603B0::FUN_004838e0
   longlong lVar28;
   longlong local_60;
   undefined8 local_48;
-  
+
+  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   sVar1 = *(short *)(param_1 + 0x3a);
+  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   uVar16 = (uint)*(short *)(param_1 + 0x34);
   uVar4 = (int)sVar1 - uVar16;
   uVar17 = (int)uVar4 >> 0x1f;
+  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   sVar2 = *(short *)(param_1 + 0x3c);
+  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   uVar18 = (uint)*(short *)(param_1 + 0x36);
   uVar5 = (int)sVar2 - uVar18;
   uVar19 = (int)uVar5 >> 0x1f;
+  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   sVar3 = *(short *)(param_1 + 0x3e);
+  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   uVar20 = (uint)*(short *)(param_1 + 0x38);
   uVar6 = (int)sVar3 - uVar20;
   uVar21 = (int)uVar6 >> 0x1f;
@@ -74,6 +80,7 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_004603B0::FUN_004838e0
         return 0;
       }
       uVar25 = Library::MSVCRT::__alldiv(uVar11,uVar15,uVar6,uVar21);
+      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
       uVar25 = CONCAT44(-((int)((ulonglong)uVar25 >> 0x20) + (uint)((int)uVar25 != 0)),-(int)uVar25)
       ;
     }
@@ -129,12 +136,14 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_004603B0::FUN_004838e0
   }
   uVar4 = uVar7 - (uint)uVar25;
   iVar12 = (((int)uVar7 >> 0x1f) - (int)((ulonglong)uVar25 >> 0x20)) - (uint)(uVar7 < (uint)uVar25);
+  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
   iVar13 = (((int)uVar8 >> 0x1f) - local_48._4_4_) - (uint)(uVar8 < (uint)local_48);
   iVar14 = (((int)uVar9 >> 0x1f) - iVar14) - (uint)(uVar9 < uVar20);
   iVar10 = ((int)*(short *)&this->field_0x237 << 2) / 5;
   lVar24 = Library::MSVCRT::__allmul(uVar9 - uVar20,iVar14,uVar9 - uVar20,iVar14);
   lVar22 = Library::MSVCRT::__allmul(uVar8 - (uint)local_48,iVar13,uVar8 - (uint)local_48,iVar13);
   lVar23 = Library::MSVCRT::__allmul(uVar4,iVar12,uVar4,iVar12);
+  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   if ((lVar22 + lVar24 + lVar23 <= (longlong)(iVar10 * iVar10)) &&
      (lVar22 = (longlong)(int)(uVar8 - (int)*(short *)(param_1 + 0x43)) *
                (longlong)((int)sVar2 - (int)*(short *)(param_1 + 0x43)) +

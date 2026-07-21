@@ -4,7 +4,7 @@
    Recovered source file: E:\__titans\nick\to_DcBom.cpp
    Diagnostic line evidence: 317 (metadata/report site, not the function definition)
    [STSourceProvenanceApplier end]
-   
+
    [STHiddenThisApplier] Anonymous hidden receiver recovered as
    /SubmarineTitans/Recovered/HiddenThis/AnonReceiver_005FDB50.
    Evidence: incoming_receiver_captures=1; receiver_accesses=9; incoming_edx_uses=0; calls=3;
@@ -34,7 +34,7 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_005FDB50::FUN_005fdb50
   int local_10;
   AnonReceiver_005FDB50 *local_c;
   int local_8;
-  
+
   if (param_2 < 0) {
     local_10 = *(int *)&this->field_0x226;
     local_14 = 0;
@@ -48,6 +48,7 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_005FDB50::FUN_005fdb50
     local_c = this;
     do {
       iVar5 = *(int *)(iVar8 + 0x39 + *(int *)&this->field_0x233);
+      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
       if ((((iVar5 != 4) && (iVar5 != 5)) &&
           (this_00 = *(STT3DSprC **)(iVar8 + *(int *)&this->field_0x233 + 0x42),
           this_00 != (STT3DSprC *)0x0)) && (-1 < param_2 || iVar5 != 2)) {

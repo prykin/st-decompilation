@@ -8,7 +8,7 @@ int __thiscall FUN_00618170(void *this,undefined4 *param_1)
   int *piVar4;
   undefined4 *puVar5;
   int local_8;
-  
+
   puVar3 = param_1;
   puVar5 = (undefined4 *)((int)this + 0x1c);
   for (iVar2 = 0x14; iVar2 != 0; iVar2 = iVar2 + -1) {

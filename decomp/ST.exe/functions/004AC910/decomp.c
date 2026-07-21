@@ -2,6 +2,7 @@
 undefined4 __thiscall FUN_004ac910(void *this,char param_1)
 
 {
+  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   if (((*(int *)((int)this + 0x18) != -1) && (-1 < param_1)) &&
      ((int)param_1 <= *(int *)((int)this + 0x14) + -1)) {
     return *(undefined4 *)(*(int *)((int)this + 0x20) + 0x18 + param_1 * 0x24);

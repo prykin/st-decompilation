@@ -1,9 +1,11 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* [STSourceProvenanceApplier begin]
    Recovered source file: E:\__titans\Igor\to_etorp.cpp
    Diagnostic line evidence: 76 (metadata/report site, not the function definition)
    [STSourceProvenanceApplier end]
-   
+
    [STPrototypeApplier] Propagated parameter 5.
    Evidence: 0057B670 -> 0057A2C0 @ 0057B6F7 */
 
@@ -80,7 +82,7 @@ FUN_0057a2c0(AnonShape_0057A2C0_A829D396 *param_1,uint param_2,int *param_3,int 
   undefined1 *puStack_10;
   undefined *puStack_c;
   undefined4 local_8;
-  
+
   local_8 = 0xffffffff;
   puStack_c = &DAT_0079b3a8;
   puStack_10 = &LAB_0072d964;
@@ -94,9 +96,7 @@ FUN_0057a2c0(AnonShape_0057A2C0_A829D396 *param_1,uint param_2,int *param_3,int 
     iVar9 = ReportDebugMessage(s_E____titans_Igor_to_etorp_cpp_007caf5c,0x4c,0,0,&DAT_007a4ccc,
                                s_ConusExplosion_Bad_parameters_or_007caf24);
     if (iVar9 != 0) {
-      pcVar6 = (code *)swi(3);
-      uVar11 = (*pcVar6)();
-      return uVar11;
+      STDebugBreak(); /* noreturn in standalone pseudocode */
     }
     if (*param_3 != 0) {
       FreeAndNull((void **)param_3);
@@ -170,6 +170,7 @@ LAB_0057ac02:
             uVar16 = (undefined2)((uint)iVar15 >> 0x10);
             uVar8 = (undefined2)((uint)puVar1 >> 0x10);
             local_d0 = iVar9;
+            /* ST_PSEUDO[raw_indirect_call,packed_or_unaligned_piece]: expected typed vtable/callback call with explicit __thiscall receiver; expected named packed member, bit extract/compose, or unaligned load */
             uVar8 = (**(code **)(*(int *)param_1 + 0x10))
                               (CONCAT22(uVar16,param_1->field_0041),
                                CONCAT22(uVar8,param_1->field_0043),
@@ -445,6 +446,7 @@ LAB_0057a96b:
                 puVar1 = (undefined2 *)(*param_3 + iVar9 * 8);
                 uVar16 = (undefined2)((uint)iVar14 >> 0x10);
                 uVar8 = (undefined2)((uint)puVar1 >> 0x10);
+                /* ST_PSEUDO[raw_indirect_call,packed_or_unaligned_piece]: expected typed vtable/callback call with explicit __thiscall receiver; expected named packed member, bit extract/compose, or unaligned load */
                 uVar8 = (**(code **)(*(int *)param_1 + 0x10))
                                   (CONCAT22(uVar16,param_1->field_0041),
                                    CONCAT22(uVar8,param_1->field_0043),

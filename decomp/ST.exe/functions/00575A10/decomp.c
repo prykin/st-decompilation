@@ -2,7 +2,7 @@
 undefined4 FUN_00575a10(HINSTANCE param_1,undefined4 param_2,undefined4 param_3,int param_4)
 
 {
-  uint *extraout_EAX;
+  char *resourceString;
   int iVar1;
   InternalExceptionFrame local_60;
   undefined1 *local_1c;
@@ -10,7 +10,7 @@ undefined4 FUN_00575a10(HINSTANCE param_1,undefined4 param_2,undefined4 param_3,
   undefined1 *puStack_10;
   undefined *puStack_c;
   undefined4 local_8;
-  
+
   local_8 = 0xffffffff;
   puStack_c = &DAT_0079b118;
   puStack_10 = &LAB_0072d964;
@@ -22,8 +22,8 @@ undefined4 FUN_00575a10(HINSTANCE param_1,undefined4 param_2,undefined4 param_3,
     ExceptionList = local_14;
     return 0xffffffff;
   }
-  LoadResourceString(100,HINSTANCE_00807618);
-  Library::MSVCRT::FUN_0072f260(0,extraout_EAX);
+  resourceString = LoadResourceString(100,HINSTANCE_00807618);
+  Library::MSVCRT::FUN_0072f260(0,resourceString);
   FUN_006ad190(0x18,s_dbg_msg_rpt_007caaec,0);
   thunk_FUN_004e82b0();
   local_8 = 0;

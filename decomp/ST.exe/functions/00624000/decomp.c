@@ -5,7 +5,7 @@ void __fastcall FUN_00624000(AnonShape_00624000_A9481D8E *param_1)
   undefined1 *this;
   char cVar1;
   ushort *puVar2;
-  
+
   this = &param_1->field_0x1d5;
   STT3DSprC::StopShow((STT3DSprC *)this,0xe);
   if (param_1->field_0352 != '\0') {

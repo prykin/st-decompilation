@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\main_obj.cpp
@@ -9,18 +11,16 @@ void __thiscall MainMenuTy::CloseButtons(MainMenuTy *this)
   code *pcVar1;
   int iVar2;
   DWORD DVar3;
-  undefined4 unaff_ESI;
   int *piVar4;
   MainMenuTy *this_00;
-  void *unaff_EDI;
   int iVar5;
   InternalExceptionFrame local_4c;
   MainMenuTy *local_8;
-  
+
   local_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_4c;
   local_8 = this;
-  iVar2 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar2 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
   this_00 = local_8;
   if (iVar2 == 0) {
     MMObjTy::CloseButtons((MMObjTy *)local_8);
@@ -51,8 +51,6 @@ void __thiscall MainMenuTy::CloseButtons(MainMenuTy *this)
     RaiseInternalException(iVar2,0,s_E____titans_Start_main_obj_cpp_007cc8e8,0xf7);
     return;
   }
-  pcVar1 = (code *)swi(3);
-  (*pcVar1)();
-  return;
+  STDebugBreak(); /* noreturn in standalone pseudocode */
 }
 

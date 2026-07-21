@@ -1,8 +1,10 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\To_boat.cpp
    STBoatC::CmdToObj
-   
+
    [STSwitchEnumApplier] Switch target param_1 uses
    /SubmarineTitans/Recovered/Enums/STBoatC_CmdToObj_param_1Enum. Cases:
    CASE_1=1;CASE_2=2;CASE_3=3;CASE_4=4;CASE_5=5;CASE_6=6;CASE_7=7;CASE_8=8;CASE_9=9;CASE_A=10;CASE_B=11;CASE_C=12;CASE_D=13;CASE_E=14;CASE_F=15;CASE_10=16;CASE_11=17;CASE_12=18;CASE_14=20;CASE_15=21;CASE_16=22;CASE_17=23;CASE_21=33
@@ -16,11 +18,9 @@ STBoatC::CmdToObj(STBoatC *this,STBoatC_CmdToObj_param_1Enum param_1,undefined4 
   code *pcVar2;
   int iVar3;
   undefined4 *puVar4;
-  
+
   if ((param_1 != CASE_21) && (param_1 != CASE_5)) {
-    STAllPlayersC::DeleteGuardBoat
-              (g_sTAllPlayers_007FA174,CONCAT31((int3)((uint)this >> 8),this->field_0x24),
-               this->field_0032,1);
+    STAllPlayersC::DeleteGuardBoat(g_sTAllPlayers_007FA174,this->field_0x24,this->field_0032,1);
   }
   this->field_02C4 = 1;
   switch(param_1) {
@@ -146,9 +146,7 @@ cf_common_exit_0045F1A9:
     iVar3 = ReportDebugMessage(s_E____titans_wlad_To_boat_cpp_007a9d3c,0x13a7,0,0,&DAT_007a4ccc,
                                s_STBoatC__CmdToObj_unknown_type_007aa080);
     if (iVar3 != 0) {
-      pcVar2 = (code *)swi(3);
-      (*pcVar2)();
-      return;
+      STDebugBreak(); /* noreturn in standalone pseudocode */
     }
     return;
   case CASE_14:

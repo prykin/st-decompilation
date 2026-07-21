@@ -3,7 +3,7 @@
    Recovered source file: E:\__titans\ai\ai_boss_d.cpp
    Diagnostic line evidence: 69 (metadata/report site, not the function definition)
    [STSourceProvenanceApplier end]
-   
+
    [STPrototypeApplier] Propagated parameter 0.
    Evidence: 00648780 -> 00648530 @ 006487F3 */
 
@@ -12,17 +12,15 @@ undefined4 * __cdecl FUN_00648530(ushort *param_1)
 {
   int iVar1;
   undefined4 *puVar2;
-  undefined4 unaff_ESI;
   ushort *puVar3;
-  void *unaff_EDI;
   AnonShape_00648530_D39EB612 *pAVar4;
   InternalExceptionFrame local_4c;
   AnonShape_00648530_D39EB612 *local_8;
-  
+
   local_8 = (AnonShape_00648530_D39EB612 *)0x0;
   local_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_4c;
-  iVar1 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar1 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
   if (iVar1 == 0) {
     local_8 = (AnonShape_00648530_D39EB612 *)Library::DKW::LIB::FUN_006aac10(0x85);
     puVar3 = param_1;

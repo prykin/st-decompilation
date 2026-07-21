@@ -5,7 +5,7 @@ undefined4 __thiscall FUN_005121f0(void *this,int param_1,int param_2)
   int iVar1;
   int *piVar2;
   uint uVar3;
-  
+
   uVar3 = 0;
   if (*(uint *)sizeHelp_exref != 0) {
     piVar2 = (int *)(*(int *)((int)this + 0x1c7) + 9);

@@ -27,7 +27,7 @@ undefined4 __thiscall FUN_004da390(void *this,uint param_1,byte *param_2,int par
   undefined3 uStack_f;
   void *local_c;
   byte *local_8;
-  
+
   pbVar3 = param_2;
   param_2[1] = 0xff;
   param_2[2] = 0xff;
@@ -61,6 +61,7 @@ undefined4 __thiscall FUN_004da390(void *this,uint param_1,byte *param_2,int par
       bVar1 = *pbVar4;
       if (((bVar1 != 0xff) && (bVar1 != param_1)) && (pbVar4[-1] != 0)) {
         if (param_3 != 0) {
+          /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
           _local_10 = CONCAT31(uStack_f,bVar1);
           if (DAT_00808a8f == '\0') {
             if (bVar1 == playerId) {

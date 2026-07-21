@@ -1,7 +1,7 @@
 
 /* [STPrototypeRepairApplier] Propagated parameter 1.
    Evidence: 006D4930 -> EXTERNAL:0000004F @ 006D496E
-   
+
    [STPrototypeApplier] Propagated parameter 3.
    Evidence: 006D4930 -> EXTERNAL:0000004F @ 006D496E */
 
@@ -13,7 +13,7 @@ DWORD FUN_006d4930(AnonShape_006D4930_676532DD *param_1,LPDWORD lpNumberOfBytesR
   BOOL BVar2;
   uint uVar3;
   undefined4 *puVar4;
-  
+
   puVar4 = param_3;
   if ((param_1->field_0008 & 0x100000) == 0) {
     if (param_1->field_0034 == 0) {

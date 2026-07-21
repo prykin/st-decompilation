@@ -7,7 +7,7 @@ undefined4 __cdecl FUN_00693560(Global_sub_00693560_param_1Enum param_1,int para
 
 {
   undefined4 uVar1;
-  
+
   uVar1 = 0xffffffff;
   if ((int)param_1 < 0x446) {
     if (param_1 == 0x445) {

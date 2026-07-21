@@ -3,7 +3,7 @@ void __thiscall FUN_004ad070(void *this,byte param_1)
 
 {
   byte *pbVar1;
-  
+
   if (((-1 < (char)param_1) && ((char)param_1 < ' ')) &&
      ((1 << (param_1 & 0x1f) & *(uint *)((int)this + 0x1c)) != 0)) {
     pbVar1 = (byte *)(*(int *)((int)this + 0x20) + 0xe + (char)param_1 * 0x24);

@@ -6,7 +6,7 @@ int FUN_006db820(int param_1)
   int iVar2;
   int iVar3;
   bool bVar4;
-  
+
   iVar2 = 0;
   bVar4 = param_1 < 0;
   if (bVar4) {

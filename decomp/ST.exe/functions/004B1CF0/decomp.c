@@ -9,7 +9,7 @@ int __cdecl FUN_004b1cf0(int param_1,int *param_2,int *param_3,int *param_4)
   int iVar5;
   int iVar6;
   int local_8;
-  
+
   iVar2 = thunk_FUN_004b1690(*param_2,*param_3,*param_4,param_1,0);
   if (iVar2 == 0) {
     sVar1 = g_worldGrid.sizeX;

@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\startsys.cpp
@@ -13,8 +15,6 @@ void __thiscall StartSystemTy::AddToChat(StartSystemTy *this,int param_1)
   char *text;
   int iVar4;
   int iVar5;
-  undefined4 unaff_ESI;
-  void *unaff_EDI;
   undefined4 *puVar6;
   InternalExceptionFrame local_78;
   undefined4 local_34 [4];
@@ -25,7 +25,7 @@ void __thiscall StartSystemTy::AddToChat(StartSystemTy *this,int param_1)
   AnonShape_006B5570_4D68B99C *local_10;
   StartSystemTy *local_c;
   char local_5;
-  
+
   puVar6 = local_34;
   local_c = this;
   for (iVar5 = 8; iVar5 != 0; iVar5 = iVar5 + -1) {
@@ -34,7 +34,7 @@ void __thiscall StartSystemTy::AddToChat(StartSystemTy *this,int param_1)
   }
   local_78.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_78;
-  iVar5 = Library::MSVCRT::__setjmp3(local_78.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar5 = Library::MSVCRT::__setjmp3(local_78.jumpBuffer,0);
   if (iVar5 == 0) {
     if ((param_1 != 0) &&
        (pAVar2 = (AnonShape_006B5570_4D68B99C *)Library::DKW::TBL::FUN_006b54f0((uint *)0x0,2,1),
@@ -53,7 +53,7 @@ void __thiscall StartSystemTy::AddToChat(StartSystemTy *this,int param_1)
       Library::DKW::TBL::FUN_006b5aa0((uint *)pAVar2,(char *)&DAT_0080f33a);
       pAVar3 = (AnonShape_006B5570_4D68B99C *)
                ccFntTy::FormSarr(this_00->field_0034,(uint *)pAVar2,s________________007c21d8,
-                                 *(int *)(this_00->field_067E + 4),0,0xffffffff,1);
+                                 this_00->field_067E->field_0004,0,0xffffffff,1);
       if (pAVar3 != (AnonShape_006B5570_4D68B99C *)0x0) {
         if (pAVar3->field_0008 != 0) {
           ccFntTy::SepColorStrInSarr(this_00->field_0034,(uint *)pAVar3,(uint *)pAVar3);
@@ -106,8 +106,6 @@ LAB_005dd982:
     RaiseInternalException(iVar5,0,s_E____titans_Start_startsys_cpp_007cd718,0x372);
     return;
   }
-  pcVar1 = (code *)swi(3);
-  (*pcVar1)();
-  return;
+  STDebugBreak(); /* noreturn in standalone pseudocode */
 }
 

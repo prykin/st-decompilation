@@ -2,7 +2,7 @@
 /* [STMethodOwnerApplier] Structural method owner recovered as STJellyGunC.
    Evidence: this_call_owners=[STJellyGunC]; agreed_this_calls=2; incoming_this_accesses=1;
    incoming_edx_uses=0; incoming_stack_parameter_uses=3
-   
+
    [STPrototypeApplier] Propagated parameter 3.
    Evidence: 005844E0 -> 00568DD0 @ 00584566 */
 
@@ -11,7 +11,7 @@ void __thiscall STJellyGunC::sub_005844E0(STJellyGunC *this,int param_1,int para
 {
   short sVar1;
   SoundPosition local_10;
-  
+
   sVar1 = (short)(param_1 >> 0x1f);
   if (param_1 < 0) {
     local_10.x = (short)(((short)(param_1 / 0xc9) + sVar1) -

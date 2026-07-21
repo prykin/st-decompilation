@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Artem\TLO_bfire.cpp
@@ -13,9 +15,7 @@ int __thiscall TLOBaseTy::fireProc(TLOBaseTy *this)
   uint uVar4;
   int iVar5;
   int *piVar6;
-  undefined4 unaff_ESI;
   uint *puVar7;
-  void *unaff_EDI;
   bool bVar8;
   InternalExceptionFrame local_5c;
   TLOBaseTy *local_18;
@@ -23,11 +23,11 @@ int __thiscall TLOBaseTy::fireProc(TLOBaseTy *this)
   undefined4 local_10;
   undefined4 local_c;
   int *local_8;
-  
+
   local_5c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_5c;
   local_18 = this;
-  iVar3 = Library::MSVCRT::__setjmp3(local_5c.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar3 = Library::MSVCRT::__setjmp3(local_5c.jumpBuffer,0);
   this_00 = local_18;
   if (iVar3 != 0) {
     g_currentExceptionFrame = local_5c.previous;
@@ -37,9 +37,7 @@ int __thiscall TLOBaseTy::fireProc(TLOBaseTy *this)
       RaiseInternalException(iVar3,0,s_E____titans_Artem_TLO_bfire_cpp_007ac910,0xb3);
       return iVar3;
     }
-    pcVar1 = (code *)swi(3);
-    iVar3 = (*pcVar1)();
-    return iVar3;
+    STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   if (0 < (int)local_18->field_025D) {
     puVar7 = &local_18->field_0285;
@@ -67,14 +65,18 @@ int __thiscall TLOBaseTy::fireProc(TLOBaseTy *this)
               uVar4 = puVar7[3];
               if (uVar4 != 0) {
                 if (&stack0x00000000 != (undefined1 *)0x14) {
+                  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                   local_14 = CONCAT22(local_14._2_2_,this_00->field_0041);
                 }
                 if (&stack0x00000000 != (undefined1 *)0x10) {
+                  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                   local_10 = CONCAT22(local_10._2_2_,this_00->field_0043);
                 }
                 if (&stack0x00000000 != &DAT_0000000c) {
+                  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                   local_c = CONCAT22(local_c._2_2_,this_00->field_0045);
                 }
+                /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                 sVar2 = (*this_00->vtable->vfunc_10)
                                   (CONCAT22((short)(uVar4 >> 0x10),*(undefined2 *)(uVar4 + 0x41)),
                                    *(undefined2 *)(uVar4 + 0x43),*(undefined2 *)(uVar4 + 0x45),

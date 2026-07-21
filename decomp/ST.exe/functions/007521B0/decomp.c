@@ -33,7 +33,7 @@ FUN_007521b0(int *param_1,AnonShape_006B4B20_3D4F4412 *param_2,uint param_3,int 
   uint local_14;
   uint local_10;
   int local_c;
-  
+
   *param_1 = 0;
   if (param_3 == 0) {
     param_3 = FUN_006b4fa0((int)param_2);

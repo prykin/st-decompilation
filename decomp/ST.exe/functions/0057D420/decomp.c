@@ -15,7 +15,7 @@ undefined4 __fastcall FUN_0057d420(AnonShape_0057D420_ACBACC73 *param_1)
   short local_10 [2];
   short local_c [2];
   short local_8 [2];
-  
+
   cVar7 = '\x06';
   iVar3 = param_1->field_0267;
   if ((iVar3 == 0xe7) || (iVar3 == 0xe8)) {

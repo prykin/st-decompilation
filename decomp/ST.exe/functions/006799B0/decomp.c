@@ -10,7 +10,7 @@ void __thiscall FUN_006799b0(void *this,uint param_1)
   bool bVar6;
   AnonShape_0068FD00_A5257008 local_3c [3];
   uint local_8;
-  
+
   local_8 = *(uint *)((int)this + 0x640);
   if (*(char *)((int)this + 0x644) == '\x01') {
     uVar1 = (ushort)param_1;
@@ -64,14 +64,18 @@ void __thiscall FUN_006799b0(void *this,uint param_1)
       }
     }
   }
+  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
   local_3c[0]._8_4_ = *(uint *)((int)this + 0x640);
+  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
   if (local_3c[0]._8_4_ != local_8) {
     pAVar5 = local_3c;
     for (iVar3 = 0xd; iVar3 != 0; iVar3 = iVar3 + -1) {
       *(undefined4 *)pAVar5 = 0;
       pAVar5 = (AnonShape_0068FD00_A5257008 *)&pAVar5->field_0x4;
     }
+    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
     local_3c[0]._4_4_ = *(undefined4 *)((int)this + 0x6fe);
+    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
     local_3c[0]._0_4_ = 0x6a;
     SubmarineTitans::Recovered::HiddenThis::AnonReceiver_006799B0::thunk_FUN_0067a020
               (this,local_3c,-1);

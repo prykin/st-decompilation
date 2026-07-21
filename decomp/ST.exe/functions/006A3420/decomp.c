@@ -7,7 +7,7 @@ void __cdecl FUN_006a3420(ushort *param_1,ushort *param_2)
 {
   uint uVar1;
   ushort uVar2;
-  
+
   uVar2 = param_1[2];
   uVar1 = Library::MSVCRT::FUN_0072e6c0();
   param_1[2] = uVar2 & 0xff00 ^ (ushort)param_2 & 0xf |

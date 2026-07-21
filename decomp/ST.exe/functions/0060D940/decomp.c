@@ -12,12 +12,14 @@ undefined4 __fastcall FUN_0060d940(AnonShape_0060D940_4FDF4902 *param_1)
   uint uVar6;
   int iVar7;
   float10 fVar8;
+  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   unkbyte10 extraout_ST1;
+  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   float10 extraout_ST1_00;
   longlong lVar9;
   int local_c;
   int local_8;
-  
+
   fVar8 = (float10)_DAT_0079034c;
   iVar4 = param_1->field_0244;
   if (iVar4 == 0) {
@@ -31,6 +33,7 @@ undefined4 __fastcall FUN_0060d940(AnonShape_0060D940_4FDF4902 *param_1)
       iVar4 = *(int *)(iVar4 + 0x10);
       uVar6 = iVar4 * local_8;
       lVar9 = Library::MSVCRT::__ftol();
+      /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
       fsin(extraout_ST1);
       iVar7 = (int)lVar9 + param_1->field_01E9;
       lVar9 = Library::MSVCRT::__ftol();
@@ -46,6 +49,7 @@ undefined4 __fastcall FUN_0060d940(AnonShape_0060D940_4FDF4902 *param_1)
             puVar5[7] = iVar3;
             uVar1 = param_1->field_01F1;
             puVar5[3] = iVar7;
+            /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
             puVar5[0xb] = (float)extraout_ST1_00;
             puVar5[8] = uVar1;
             puVar5[4] = iVar3;
@@ -56,10 +60,12 @@ undefined4 __fastcall FUN_0060d940(AnonShape_0060D940_4FDF4902 *param_1)
           }
           local_c = local_c + 1;
           uVar6 = uVar6 + 1;
+        /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
         } while (local_c < *(int *)(param_1->field_0244 + 0x10));
       }
       iVar4 = param_1->field_0244;
       local_8 = local_8 + 1;
+      /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
       fVar8 = extraout_ST1_00;
     } while (local_8 < *(int *)(iVar4 + 0xc));
   }

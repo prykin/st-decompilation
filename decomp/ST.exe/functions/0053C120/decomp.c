@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\research.cpp
@@ -16,8 +18,6 @@ void __thiscall ResearchPanelTy::InitResearchPanel(ResearchPanelTy *this)
   int iVar6;
   undefined4 uVar7;
   int iVar8;
-  undefined4 unaff_ESI;
-  void *unaff_EDI;
   int iVar9;
   int *piVar10;
   undefined4 local_1fc [84];
@@ -36,7 +36,7 @@ void __thiscall ResearchPanelTy::InitResearchPanel(ResearchPanelTy *this)
   ResearchPanelTy *local_10;
   int local_c;
   int local_8;
-  
+
   puVar5 = local_68;
   local_10 = this;
   for (iVar6 = 0x16; iVar6 != 0; iVar6 = iVar6 + -1) {
@@ -50,16 +50,14 @@ void __thiscall ResearchPanelTy::InitResearchPanel(ResearchPanelTy *this)
   }
   local_ac.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_ac;
-  iVar6 = Library::MSVCRT::__setjmp3(local_ac.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar6 = Library::MSVCRT::__setjmp3(local_ac.jumpBuffer,0);
   this_00 = local_10;
   if (iVar6 != 0) {
     g_currentExceptionFrame = local_ac.previous;
     iVar8 = ReportDebugMessage(s_E____titans_Andrey_research_cpp_007c76c8,0x39,0,iVar6,&DAT_007a4ccc
                                ,s_ResearchPanelTy__InitResearchPan_007c76f0);
     if (iVar8 != 0) {
-      pcVar1 = (code *)swi(3);
-      (*pcVar1)();
-      return;
+      STDebugBreak(); /* noreturn in standalone pseudocode */
     }
     RaiseInternalException(iVar6,0,s_E____titans_Andrey_research_cpp_007c76c8,0x39);
     return;
@@ -144,6 +142,7 @@ LAB_0053c30d:
     local_34 = 2;
     local_30 = 0xc0b4;
     local_38 = local_58;
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
     (**(code **)(*(int *)this_00->field_000C + 8))(5,&this_00[1].field_0x4,0,local_68,0);
   }
   g_currentExceptionFrame = local_ac.previous;

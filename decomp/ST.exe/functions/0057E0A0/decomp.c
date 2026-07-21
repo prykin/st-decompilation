@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* Recovered from embedded debug metadata:
@@ -17,7 +19,9 @@ STDcResourcC::GetMessage(STDcResourcC *this,AnonShape_0057E0A0_323CBAA3 *param_1
   byte bVar6;
   short sVar7;
   int iVar8;
+  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined2 extraout_var;
+  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined2 extraout_var_00;
   undefined2 uVar14;
   undefined4 uVar9;
@@ -25,15 +29,17 @@ STDcResourcC::GetMessage(STDcResourcC *this,AnonShape_0057E0A0_323CBAA3 *param_1
   undefined4 *puVar11;
   int iVar12;
   int iVar13;
+  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined2 extraout_var_01;
+  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined2 extraout_var_02;
+  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined2 extraout_var_03;
+  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined2 extraout_var_04;
-  undefined4 unaff_ESI;
   STWorldObject *pSVar15;
   int iVar16;
   byte *pbVar17;
-  void *unaff_EDI;
   undefined4 *puVar18;
   int iVar19;
   byte *pbVar20;
@@ -47,14 +53,14 @@ STDcResourcC::GetMessage(STDcResourcC *this,AnonShape_0057E0A0_323CBAA3 *param_1
   byte *local_10;
   byte *local_c;
   uint local_8;
-  
+
   if (((this->field_0x261 & 4) != 0) && (param_1->field_0010 != 3)) {
     return 0;
   }
   local_68.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_68;
   local_24 = (STSprGameObjC *)this;
-  iVar8 = Library::MSVCRT::__setjmp3(local_68.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar8 = Library::MSVCRT::__setjmp3(local_68.jumpBuffer,0);
   this_00 = local_24;
   if (iVar8 != 0) {
     g_currentExceptionFrame = local_68.previous;
@@ -64,15 +70,15 @@ STDcResourcC::GetMessage(STDcResourcC *this,AnonShape_0057E0A0_323CBAA3 *param_1
       RaiseInternalException(iVar8,0,s_E____titans_Igor_To_gold_cpp_007cb19c,0x16a);
       return 0xffff;
     }
-    pcVar3 = (code *)swi(3);
-    uVar9 = (*pcVar3)();
-    return uVar9;
+    STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   iVar8 = STSprGameObjC::GetMessage(local_24,(AnonShape_0041AF40_F59F8577 *)param_1);
+  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   uVar14 = extraout_var_01;
   if (iVar8 == 0xffff) {
     RaiseInternalException
               (0xffff,g_overwriteContext_007ED77C,s_E____titans_Igor_To_gold_cpp_007cb19c,0x56);
+    /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
     uVar14 = extraout_var_02;
   }
   uVar10 = param_1->field_0010;
@@ -201,6 +207,7 @@ STDcResourcC::GetMessage(STDcResourcC *this,AnonShape_0057E0A0_323CBAA3 *param_1
         return 0;
       }
       thunk_FUN_004d8530((STResourceC *)this_00);
+      /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
       uVar14 = extraout_var;
       if (*(int *)&this_00->field_0x26d != 0) {
         iVar8 = *(int *)&this_00->field_0x265 + -1;
@@ -214,9 +221,11 @@ STDcResourcC::GetMessage(STDcResourcC *this,AnonShape_0057E0A0_323CBAA3 *param_1
           *(int *)&this_00->field_0x265 = iVar8;
         }
         Library::MSVCRT::FUN_0072e2b0(*(HoloTy **)&this_00->field_0x26d);
+        /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
         uVar14 = extraout_var_00;
       }
       if (*(short *)&this_00->field_0x32 != -1) {
+        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
         STAllPlayersC::UnRegisterDeposit
                   (g_sTAllPlayers_007FA174,CONCAT22(uVar14,*(short *)&this_00->field_0x32),
                    (STResourceC *)this_00);
@@ -252,15 +261,15 @@ STDcResourcC::GetMessage(STDcResourcC *this,AnonShape_0057E0A0_323CBAA3 *param_1
         iVar8 = ReportDebugMessage(s_E____titans_Igor_To_gold_cpp_007cb19c,0x6a,0,0,&DAT_007a4ccc,
                                    s_STResourceC__Invalid_resource_ty_007cb214);
         if (iVar8 != 0) {
-          pcVar3 = (code *)swi(3);
-          uVar9 = (*pcVar3)();
-          return uVar9;
+          STDebugBreak(); /* noreturn in standalone pseudocode */
         }
         *(undefined4 *)&this_00->field_0x231 = 0xde;
+        /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
         uVar14 = extraout_var_04;
       }
       sVar7 = *(short *)&this_00->field_0x245;
       sVar1 = *(short *)&this_00->field_0x249;
+      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
       local_14 = CONCAT22(uVar14,sVar1);
       sVar2 = *(short *)&this_00->field_0x24d;
       if (((sVar7 < 0) || (g_worldGrid.sizeX <= sVar7)) ||
@@ -321,6 +330,7 @@ STDcResourcC::GetMessage(STDcResourcC *this,AnonShape_0057E0A0_323CBAA3 *param_1
       STAllPlayersC::RestoreGObjData((STAllPlayersC *)this_00,(undefined4 *)((int)local_18 + 0x46));
       sVar7 = *(short *)&this_00->field_0x245;
       sVar1 = *(short *)&this_00->field_0x249;
+      /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
       local_14 = CONCAT22(extraout_var_03,sVar1);
       sVar2 = *(short *)&this_00->field_0x24d;
       if (((((sVar7 < 0) || (g_worldGrid.sizeX <= sVar7)) || (sVar1 < 0)) ||
@@ -553,6 +563,7 @@ cf_common_join_0057E9C2:
         if ((*(int *)&this_00->field_0x255 != 0xe0) &&
            (iVar8 = 0, 0 < *(int *)&this_00->field_0x265)) {
           do {
+            /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
             thunk_FUN_004ace30(*(void **)(*(int *)&this_00->field_0x26d + iVar8 * 4),
                                *(uint *)(DAT_00806724 + 0x30 + (uint)(byte)this_00->field_0x272 * 4)
                                ,(int)*(short *)(DAT_00806724 + 0x2c));
@@ -569,6 +580,7 @@ cf_common_join_0057E9C2:
         (thunk_FUN_004ace30(&this_00->field_01D5,0,(int)*(short *)(DAT_00806724 + 0x2c)),
         *(int *)&this_00->field_0x255 != 0xe0)) && (iVar8 = 0, 0 < *(int *)&this_00->field_0x265)) {
       do {
+        /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
         thunk_FUN_004ace30(*(void **)(*(int *)&this_00->field_0x26d + iVar8 * 4),0,
                            (int)*(short *)(DAT_00806724 + 0x2c));
         iVar8 = iVar8 + 1;

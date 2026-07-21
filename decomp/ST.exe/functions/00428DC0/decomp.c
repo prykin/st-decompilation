@@ -9,7 +9,7 @@ FUN_00428dc0(uint *param_1,int param_2,int param_3,int param_4,undefined4 param_
   byte bVar4;
   uint uVar5;
   uint uVar6;
-  
+
   uVar5 = (uint)(param_2 * param_3) >> 2;
   do {
     while( true ) {

@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\to_allpl.cpp
@@ -13,21 +15,20 @@ STAllPlayersC::AddObjToTmp2
   int iVar2;
   undefined4 uVar3;
   STGameObjC *pSVar4;
-  undefined4 unaff_ESI;
+  char objPtr;
   STPlayerTempSlot *pSVar5;
-  void *unaff_EDI;
   Global_sub_0043FC50_param_1Enum GVar6;
   InternalExceptionFrame local_58;
   STPlayerTempSlot *local_14;
   undefined4 local_10;
   STAllPlayersC *local_c;
   STAllPlayersC_GetObjPtr_param_3Enum local_8;
-  
+
   local_10 = 0;
   local_58.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_58;
   local_c = this;
-  iVar2 = Library::MSVCRT::__setjmp3(local_58.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar2 = Library::MSVCRT::__setjmp3(local_58.jumpBuffer,0);
   if (iVar2 != 0) {
     g_currentExceptionFrame = local_58.previous;
     if (iVar2 == -0x5001fff7) {
@@ -38,18 +39,14 @@ STAllPlayersC::AddObjToTmp2
       iVar2 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0x251,0,0,&DAT_007a4ccc,
                                  s_STAllPlayersC__AddObjToTmp2_coin_007a61e0);
       if (iVar2 != 0) {
-        pcVar1 = (code *)swi(3);
-        uVar3 = (*pcVar1)();
-        return uVar3;
+        STDebugBreak(); /* noreturn in standalone pseudocode */
       }
     }
     else {
       iVar2 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0x252,0,0,&DAT_007a4ccc,
                                  s_STAllPlayersC__AddObjToTmp2_007a61bc);
       if (iVar2 != 0) {
-        pcVar1 = (code *)swi(3);
-        uVar3 = (*pcVar1)();
-        return uVar3;
+        STDebugBreak(); /* noreturn in standalone pseudocode */
       }
     }
     return 0xaffe0001;
@@ -75,23 +72,22 @@ LAB_0042bf8b:
     iVar2 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0x23b,0,0,&DAT_007a4ccc,
                                s_STAllPlayersC__AddObjToTmp2_inva_007a624c);
     if (iVar2 != 0) {
-      pcVar1 = (code *)swi(3);
-      uVar3 = (*pcVar1)();
-      return uVar3;
+      STDebugBreak(); /* noreturn in standalone pseudocode */
     }
     RaiseInternalException
               (-0x5001fff7,g_overwriteContext_007ED77C,s_E____titans_wlad_to_allpl_cpp_007a6004,
                0x23c);
   }
   pSVar5 = local_14 + param_3;
-  if (((pSVar5->objectType == param_4) && (pSVar5->playerId == (int)(char)param_5)) &&
+  objPtr = (char)param_5;
+  if (((pSVar5->objectType == param_4) && (pSVar5->playerId == (int)objPtr)) &&
      (pSVar5->objectId == (short)param_6)) {
     RaiseInternalException
               (-0x5001ffff,g_overwriteContext_007ED77C,s_E____titans_wlad_to_allpl_cpp_007a6004,
                0x23f);
   }
   pSVar5->objectType = param_4;
-  pSVar5->playerId = (int)(char)param_5;
+  pSVar5->playerId = (int)objPtr;
   pSVar5->objectId = (short)param_6;
   if (param_4 < 0x1a5) {
     if (param_4 == 0x1a4) {
@@ -120,15 +116,13 @@ LAB_0042bf8b:
   iVar2 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0x249,0,0,&DAT_007a4ccc,
                              s_STAllPlayersC__AddObjToTmp2_inva_007a6214);
   if (iVar2 != 0) {
-    pcVar1 = (code *)swi(3);
-    uVar3 = (*pcVar1)();
-    return uVar3;
+    STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   RaiseInternalException
             (-0x5001ffff,g_overwriteContext_007ED77C,s_E____titans_wlad_to_allpl_cpp_007a6004,0x24a)
   ;
 cf_common_exit_0042C072:
-  pSVar4 = GetObjPtr(local_c,param_5,param_6,local_8);
+  pSVar4 = GetObjPtr(local_c,objPtr,param_6,local_8);
   (*pSVar4->vtable[1].vfunc_14)(1);
   g_currentExceptionFrame = local_58.previous;
   return local_10;

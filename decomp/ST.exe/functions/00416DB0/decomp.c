@@ -15,7 +15,7 @@ undefined2 FUN_00416db0(short param_1,short param_2,undefined4 param_3,short par
   undefined1 *puStack_10;
   undefined *puStack_c;
   undefined4 local_8;
-  
+
   puStack_c = &DAT_007904e0;
   puStack_10 = &LAB_0072d964;
   local_14 = ExceptionList;

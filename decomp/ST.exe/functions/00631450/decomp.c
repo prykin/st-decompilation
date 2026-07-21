@@ -6,7 +6,8 @@ undefined4 __fastcall FUN_00631450(AnonShape_00631450_C4E92303 *param_1)
   ushort *puVar2;
   uint uVar3;
   short *psVar4;
-  
+
+  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   if ((param_1->field_0038 != 0) &&
      (uVar3 = *(int *)(param_1->field_0038 + 0xc) - 1, -1 < (int)uVar3)) {
     do {
@@ -24,7 +25,7 @@ undefined4 __fastcall FUN_00631450(AnonShape_00631450_C4E92303 *param_1)
                           ,1,*(int *)(psVar4 + 10));
       *(ushort **)(psVar4 + 8) = puVar2;
       if (puVar2 == (ushort *)0x0) {
-        FUN_006b0c70((AnonShape_006B0C70_7C4FE646 *)param_1->field_0038,uVar3);
+        FUN_006b0c70((DArrayTy *)param_1->field_0038,uVar3);
       }
       uVar3 = uVar3 - 1;
     } while (-1 < (int)uVar3);

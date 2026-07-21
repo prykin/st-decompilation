@@ -7,7 +7,7 @@ FUN_0060ece0(void *this,int param_1,int param_2,int param_3,int param_4,int para
   short *psVar1;
   int iVar2;
   short *psVar3;
-  
+
   *(int *)((int)this + 0x256) = param_8;
   *(short *)((int)this + 0x25a) = (short)param_2;
   *(short *)((int)this + 0x260) = (short)param_2;
@@ -27,6 +27,7 @@ FUN_0060ece0(void *this,int param_1,int param_2,int param_3,int param_4,int para
   }
   else {
     *(undefined4 *)((int)this + 0x28c) = 0;
+    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     if (((*(int *)((int)this + 0x2dd) != 0) && (1 < *(int *)((int)this + 0x2d5))) &&
        (param_1 < *(int *)((int)this + 0x2d5))) {
       iVar2 = param_1 * 0x1c;

@@ -9,7 +9,7 @@ undefined4 __cdecl FUN_0058d080(int param_1)
   int iVar5;
   undefined4 *puVar6;
   undefined4 *puVar7;
-  
+
   iVar5 = DAT_00811720 + -1;
   if (-1 < iVar5) {
     piVar2 = (int *)(DAT_00811718 + iVar5 * 4);

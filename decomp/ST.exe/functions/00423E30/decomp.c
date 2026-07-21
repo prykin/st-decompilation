@@ -5,7 +5,7 @@ void FUN_00423e30(int param_1,uint param_2,int param_3)
   uint uVar1;
   uint uVar2;
   undefined4 *puVar3;
-  
+
   if (param_2 < param_3 + param_2) {
     uVar1 = (param_3 + param_2) - param_2;
     puVar3 = (undefined4 *)(param_1 + param_2 * 2);

@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\sid_obj.cpp
@@ -10,16 +12,14 @@ void __thiscall SIDTy::DeleteCtrls(SIDTy *this)
   SIDTy *pSVar2;
   int iVar3;
   int iVar4;
-  undefined4 unaff_ESI;
   uint *puVar5;
-  void *unaff_EDI;
   InternalExceptionFrame local_4c;
   SIDTy *local_8;
-  
+
   local_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_4c;
   local_8 = this;
-  iVar3 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar3 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
   pSVar2 = local_8;
   if (iVar3 == 0) {
     iVar3 = 4;
@@ -49,9 +49,7 @@ void __thiscall SIDTy::DeleteCtrls(SIDTy *this)
   iVar4 = ReportDebugMessage(s_E____titans_Start_sid_obj_cpp_007cd5c4,0x110,0,iVar3,&DAT_007a4ccc,
                              s_SIDTy__DeleteCtrls_007cd67c);
   if (iVar4 != 0) {
-    pcVar1 = (code *)swi(3);
-    (*pcVar1)();
-    return;
+    STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   RaiseInternalException(iVar3,0,s_E____titans_Start_sid_obj_cpp_007cd5c4,0x110);
   return;

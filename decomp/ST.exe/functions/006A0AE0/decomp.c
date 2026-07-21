@@ -13,7 +13,7 @@ FUN_006a0ae0(void *this,int param_1,int param_2,undefined4 param_3,int param_4,u
   undefined4 local_9c;
   undefined2 local_98;
   undefined4 local_8;
-  
+
   local_8 = 0;
   puVar1 = thunk_FUN_00692c10(CASE_A,param_4,&local_8,0,param_5);
   puVar1 = puVar1 + 5;
@@ -24,7 +24,9 @@ FUN_006a0ae0(void *this,int param_1,int param_2,undefined4 param_3,int param_4,u
     puVar6 = puVar6 + 1;
   }
   *(short *)puVar6 = (short)*puVar1;
+  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
   local_9c._2_2_ = (undefined2)param_2;
+  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
   local_9c._0_2_ = (undefined2)param_1;
   uVar2 = thunk_FUN_006a06d0(this,(param_1 * 0x14) / 100,(param_2 * 0x14) / 100);
   local_98 = (undefined2)uVar2;

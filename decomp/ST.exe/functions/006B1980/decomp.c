@@ -5,7 +5,7 @@ void FUN_006b1980(int *param_1,int param_2,int param_3,int param_4,int param_5,i
 {
   int iVar1;
   int iVar2;
-  
+
   if (-1 < param_2) {
     if (((((param_1[param_2 * 4 + 5] != 0) || (param_1[param_2 * 4 + 6] != 0)) ||
          (param_1[param_2 * 4 + 7] != param_1[3])) || (param_1[(param_2 + 2) * 4] != param_1[4])) &&

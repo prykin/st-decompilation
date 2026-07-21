@@ -7,7 +7,7 @@ void FUN_007599d0(undefined4 param_1,int *param_2,int param_3)
   int iVar3;
   int iVar4;
   int iVar5;
-  
+
   iVar5 = 0;
   iVar1 = param_2[2];
   iVar3 = param_2[6] * iVar1;
@@ -31,10 +31,12 @@ void FUN_007599d0(undefined4 param_1,int *param_2,int param_3)
       }
       iVar2 = iVar2 * iVar1;
       if (param_3 == 0) {
+        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
         (*(code *)param_2[0xc])
                   (param_1,param_2 + 0xc,*(undefined4 *)(*param_2 + iVar5 * 4),iVar3,iVar2);
       }
       else {
+        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
         (*(code *)param_2[0xd])
                   (param_1,param_2 + 0xc,*(undefined4 *)(*param_2 + iVar5 * 4),iVar3,iVar2);
       }

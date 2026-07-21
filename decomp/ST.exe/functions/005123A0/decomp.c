@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\helppan.cpp
@@ -11,9 +13,7 @@ void __thiscall HelpPanelTy::CreateList(HelpPanelTy *this)
   DArrayTy *pDVar2;
   int iVar3;
   int iVar4;
-  undefined4 unaff_ESI;
   int *piVar5;
-  void *unaff_EDI;
   int *piVar6;
   int local_520 [4];
   undefined4 local_510;
@@ -65,7 +65,7 @@ void __thiscall HelpPanelTy::CreateList(HelpPanelTy *this)
   undefined4 local_5c;
   InternalExceptionFrame local_4c;
   HelpPanelTy *local_8;
-  
+
   piVar5 = local_520;
   local_8 = this;
   for (iVar3 = 0x135; iVar3 != 0; iVar3 = iVar3 + -1) {
@@ -74,14 +74,14 @@ void __thiscall HelpPanelTy::CreateList(HelpPanelTy *this)
   }
   local_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_4c;
-  iVar3 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar3 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
   this_00 = local_8;
   if (iVar3 == 0) {
     if (local_8->field_019C != 0) {
       StartSystemTy::sub_006E56B0(local_8->field_000C,local_8->field_019C);
     }
     Library::DKW::WGR::FUN_006b55f0
-              ((AnonShape_006B84D0_7C7D97C6 *)this_00->field_0068,0,0x21,0x16,
+              ((AnonShape_006B5B10_E0D06CF1 *)this_00->field_0068,0,0x21,0x16,
                (byte *)this_00->field_01DC,0,0x21,0x16,0x19c,0x118);
     local_520[0] = 0;
     local_520[2] = this_00->field_003C + 0x21;
@@ -189,9 +189,7 @@ void __thiscall HelpPanelTy::CreateList(HelpPanelTy *this)
   iVar4 = ReportDebugMessage(s_E____titans_Andrey_helppan_cpp_007c383c,0x1a5,0,iVar3,&DAT_007a4ccc,
                              s_HelpPanelTy__CreateList_007c39b8);
   if (iVar4 != 0) {
-    pcVar1 = (code *)swi(3);
-    (*pcVar1)();
-    return;
+    STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   RaiseInternalException(iVar3,0,s_E____titans_Andrey_helppan_cpp_007c383c,0x1a5);
   return;

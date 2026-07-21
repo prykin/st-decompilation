@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\bldobj.cpp
@@ -16,8 +18,6 @@ void __thiscall BldObjPanelTy::InitBldObjPanel(BldObjPanelTy *this)
   int iVar7;
   uint uVar8;
   undefined4 uVar9;
-  undefined4 unaff_ESI;
-  void *unaff_EDI;
   undefined4 *puVar10;
   bool bVar11;
   int *piVar12;
@@ -45,7 +45,7 @@ void __thiscall BldObjPanelTy::InitBldObjPanel(BldObjPanelTy *this)
   int local_10;
   int local_c;
   uint local_8;
-  
+
   puVar10 = local_74;
   local_1c = this;
   for (iVar7 = 0x16; iVar7 != 0; iVar7 = iVar7 + -1) {
@@ -59,7 +59,7 @@ void __thiscall BldObjPanelTy::InitBldObjPanel(BldObjPanelTy *this)
   }
   local_b8.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_b8;
-  iVar7 = Library::MSVCRT::__setjmp3(local_b8.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar7 = Library::MSVCRT::__setjmp3(local_b8.jumpBuffer,0);
   this_00 = local_1c;
   if (iVar7 != 0) {
     g_currentExceptionFrame = local_b8.previous;
@@ -69,9 +69,7 @@ void __thiscall BldObjPanelTy::InitBldObjPanel(BldObjPanelTy *this)
       RaiseInternalException(iVar7,0,s_E____titans_Andrey_bldobj_cpp_007c1984,0x3d);
       return;
     }
-    pcVar1 = (code *)swi(3);
-    (*pcVar1)();
-    return;
+    STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   iVar7 = 5;
   g_prodPanel_00801684 = (ProdPanelTy *)local_1c;
@@ -156,6 +154,7 @@ void __thiscall BldObjPanelTy::InitBldObjPanel(BldObjPanelTy *this)
       auStack_320[uVar8 * 0x1c + 1] = uVar9;
 switchD_004f0850_default:
       bVar2 = (char)local_8 + 1;
+      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
       local_8 = CONCAT31(local_8._1_3_,bVar2);
       uVar8 = (uint)bVar2;
     } while ((int)uVar8 < local_10);
@@ -172,6 +171,7 @@ switchD_004f0850_default:
   local_24 = 1;
   local_20 = 1;
   local_44 = local_64;
+  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
   (**(code **)(*(int *)this_00->field_000C + 8))(5,&this_00[1].field_0x10,0,local_74,0);
   g_currentExceptionFrame = local_b8.previous;
   return;

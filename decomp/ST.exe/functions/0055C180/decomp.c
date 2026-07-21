@@ -7,7 +7,7 @@ void __fastcall FUN_0055c180(CFsgsConnection *param_1)
   DWORD lastError;
   int iVar3;
   char *pcVar4;
-  
+
   *(undefined4 *)(param_1 + 0x6b8) = 0;
   CFsgsConnection::Initialize
             (param_1,(-(uint)((DAT_00807dd1 & 0xffff0000) != 0xd0dd0000) & 0x10) + 0x45535344,
@@ -23,6 +23,7 @@ void __fastcall FUN_0055c180(CFsgsConnection *param_1)
   } while (cVar1 != '\0');
   if (iVar3 == -2) {
     CFsgsConnection::GetFastestServer(param_1);
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
     (**(code **)(*(int *)param_1 + 0x3c))(1,100,0,0);
     return;
   }

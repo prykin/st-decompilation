@@ -11,7 +11,7 @@ void FUN_004a9990(void)
   float local_10;
   float local_c;
   float local_8;
-  
+
   _DAT_00807428 = _DAT_00807438 * DAT_00807420;
   _DAT_0080742c = DAT_00807424 * _DAT_00807438;
   _DAT_0080744d = ram0x0080743d * _DAT_00807438;

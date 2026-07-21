@@ -6,7 +6,7 @@ undefined4 __cdecl FUN_00719a60(undefined4 param_1,byte param_2,MCIDEVICEID *par
   undefined4 local_10;
   uint local_c;
   uint local_8;
-  
+
   if (*param_3 == 0) {
     return 1;
   }

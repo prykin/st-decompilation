@@ -4,7 +4,7 @@ undefined4 __cdecl FUN_0064e290(undefined4 param_1,undefined4 param_2,void *para
 {
   uint uVar1;
   short sVar2;
-  
+
   uVar1 = param_4 >> 0x10;
   sVar2 = (short)param_4;
   if (sVar2 < 0) {

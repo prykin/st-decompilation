@@ -11,7 +11,7 @@ void __fastcall FUN_0061e4f0(AnonShape_0061E4F0_131B61D9 *param_1)
   int iVar5;
   int iVar6;
   int local_8;
-  
+
   iVar5 = 0;
   if (0 < param_1->field_0093) {
     do {

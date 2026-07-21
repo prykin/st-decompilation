@@ -7,7 +7,7 @@ int FUN_0069ac20(int param_1,int param_2,int param_3,AnonNested_005F5B80_0169_79
   short *psVar3;
   uint uVar4;
   int local_8;
-  
+
   iVar2 = 0xff;
   local_8 = 0xff;
   if (param_4 != (AnonNested_005F5B80_0169_794156D7 *)0x0) {

@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 undefined4 __cdecl FUN_006a5130(char *param_1,char param_2,int param_3)
 
@@ -10,7 +12,7 @@ undefined4 __cdecl FUN_006a5130(char *param_1,char param_2,int param_3)
   undefined1 *puStack_10;
   undefined *puStack_c;
   undefined4 local_8;
-  
+
   puStack_c = &DAT_0079d850;
   puStack_10 = &LAB_0072d964;
   local_14 = ExceptionList;
@@ -33,8 +35,6 @@ undefined4 __cdecl FUN_006a5130(char *param_1,char param_2,int param_3)
     if (iVar4 == 1) break;
     uVar3 = 0;
   }
-  pcVar2 = (code *)swi(3);
-  uVar3 = (*pcVar2)();
-  return uVar3;
+  STDebugBreak(); /* noreturn in standalone pseudocode */
 }
 

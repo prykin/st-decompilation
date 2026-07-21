@@ -18,7 +18,7 @@ FUN_00696eb0(int *param_1,int param_2,int param_3,int param_4,int param_5,int pa
   char cStack_f;
   undefined4 local_c;
   int local_8;
-  
+
   local_c = 0;
   if (((((-1 < param_2) && (param_2 < *param_1)) && (-1 < param_3)) &&
       ((param_3 < param_1[1] && (-1 < param_4)))) &&
@@ -26,15 +26,18 @@ FUN_00696eb0(int *param_1,int param_2,int param_3,int param_4,int param_5,int pa
     iVar2 = thunk_FUN_006a1370(param_1,param_2,param_3,param_6,(undefined4 *)&local_14);
     iVar3 = thunk_FUN_006a1370(param_1,param_4,param_5,param_6,(undefined4 *)&local_1c);
     if (uStack_12 != 0) {
+      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
       pbVar5 = (byte *)(*(int *)(local_8 + 0x5833) * param_3 + *(int *)(local_8 + 0x584b) + param_2)
       ;
       *pbVar5 = *pbVar5 | '\x01' << ((byte)param_6 & 0x1f);
     }
     if (uStack_1a != 0) {
+      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
       pbVar5 = (byte *)(*(int *)(local_8 + 0x5833) * param_5 + *(int *)(local_8 + 0x584b) + param_4)
       ;
       *pbVar5 = *pbVar5 | '\x01' << ((byte)param_6 & 0x1f);
     }
+    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
     if ((((cStack_17 == cStack_f) && ((short)iVar2 == (short)iVar3)) &&
         (((-(uint)((uStack_12 & 0x2000) != 0) & 0xffffff01) + 0xffff & (uint)uStack_12) ==
          ((-(uint)((uStack_1a & 0x2000) != 0) & 0xffffff01) + 0xffff & (uint)uStack_1a))) &&

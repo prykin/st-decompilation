@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\grig\visible.cpp
@@ -15,7 +17,7 @@ undefined4 __thiscall VisibleClassTy::GetMessage(VisibleClassTy *this,int param_
   uint uVar5;
   uint uVar6;
   DArrayTy *pDVar7;
-  undefined4 unaff_ESI;
+  /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
   void *unaff_EDI;
   undefined4 *puVar8;
   bool bVar9;
@@ -24,14 +26,15 @@ undefined4 __thiscall VisibleClassTy::GetMessage(VisibleClassTy *this,int param_
   byte *local_10;
   uint local_c;
   ushort *local_8;
-  
+
   local_58.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_58;
   local_14 = this;
-  errorCode = Library::MSVCRT::__setjmp3(local_58.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  errorCode = Library::MSVCRT::__setjmp3(local_58.jumpBuffer,0);
   this_00 = local_14;
   if (errorCode == 0) {
     local_14->field_0108 = PTR_00802a38->field_00E4;
+    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     uVar5 = *(uint *)(param_1 + 0x10);
     if (uVar5 < 0x109) {
       if (uVar5 == 0x108) {
@@ -64,6 +67,7 @@ undefined4 __thiscall VisibleClassTy::GetMessage(VisibleClassTy *this,int param_
             bVar9 = pDVar7->count != 0;
             do {
               if (bVar9) {
+                /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(pDVar7, uVar5) (runtime stride) */
                 pcVar3 = (char *)(pDVar7->elementSize * uVar5 + (int)pDVar7->data);
               }
               else {
@@ -83,6 +87,7 @@ undefined4 __thiscall VisibleClassTy::GetMessage(VisibleClassTy *this,int param_
       }
       else if (uVar5 == 0) {
         if (local_14->field_0114 != 0) {
+          /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
           VisHoleExec(local_14,unaff_EDI);
         }
       }
@@ -128,6 +133,7 @@ undefined4 __thiscall VisibleClassTy::GetMessage(VisibleClassTy *this,int param_
     return 0;
   }
   g_currentExceptionFrame = local_58.previous;
+  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   iVar4 = ReportDebugMessage(s_E____titans_grig_visible_cpp_007c92cc,0x186,0,errorCode,
                              s_VisibleClassTy__GetMessage_error_007c9380,
                              *(undefined4 *)(param_1 + 0x10));
@@ -135,8 +141,6 @@ undefined4 __thiscall VisibleClassTy::GetMessage(VisibleClassTy *this,int param_
     RaiseInternalException(errorCode,0,s_E____titans_grig_visible_cpp_007c92cc,0x187);
     return 0xffff;
   }
-  pcVar1 = (code *)swi(3);
-  uVar2 = (*pcVar1)();
-  return uVar2;
+  STDebugBreak(); /* noreturn in standalone pseudocode */
 }
 

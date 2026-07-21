@@ -2,20 +2,21 @@
 undefined4 __thiscall FUN_006203f0(void *this,int param_1,int param_2,int param_3)
 
 {
-  AnonShape_006B0C70_7C4FE646 *groupContent;
+  DArrayTy *groupContent;
   uint uVar1;
   int *piVar2;
   undefined4 uVar3;
   undefined4 local_8;
-  
+
   uVar3 = 0xffffffff;
   local_8 = 0xffffffff;
   if ((*(int *)((int)this + 0xd1) != 0) &&
      (uVar1 = *(int *)(*(int *)((int)this + 0xd1) + 0xc) - 1, -1 < (int)uVar1)) {
     do {
-      groupContent = *(AnonShape_006B0C70_7C4FE646 **)((int)this + 0xd1);
-      if ((uVar1 < (uint)groupContent->field_000C) &&
-         (piVar2 = (int *)(groupContent->field_0008 * uVar1 + groupContent->field_001C),
+      groupContent = *(DArrayTy **)((int)this + 0xd1);
+      /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(groupContent, uVar1) (runtime stride) */
+      if ((uVar1 < groupContent->count) &&
+         (piVar2 = (int *)(groupContent->elementSize * uVar1 + (int)groupContent->data),
          piVar2 != (int *)0x0)) {
         if ((param_2 < piVar2[2] + -3) ||
            (((piVar2[2] + 3 < param_2 || (uVar3 = local_8, param_3 < piVar2[3] + -3)) ||

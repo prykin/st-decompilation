@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\to_allpl.cpp
@@ -14,9 +16,7 @@ STAllPlayersC::CalibrateTmp
   uint *puVar3;
   int iVar4;
   dword dVar5;
-  undefined4 unaff_ESI;
   uint index;
-  void *unaff_EDI;
   uint index_00;
   InternalExceptionFrame local_5c;
   DArrayTy *local_18;
@@ -25,21 +25,19 @@ STAllPlayersC::CalibrateTmp
   DArrayTy *local_c;
   short local_8;
   short local_6;
-  
+
   local_10 = (DArrayTy *)0x0;
   local_c = (DArrayTy *)0x0;
   local_5c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_5c;
-  iVar2 = Library::MSVCRT::__setjmp3(local_5c.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar2 = Library::MSVCRT::__setjmp3(local_5c.jumpBuffer,0);
   if (iVar2 != 0) {
     g_currentExceptionFrame = local_5c.previous;
     if (iVar2 != -0x5001fff7) {
       iVar4 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0x3095,0,iVar2,
                                  &DAT_007a4ccc,s_STAllPlayersC__CalibrateTmp_007a892c);
       if (iVar4 != 0) {
-        pcVar1 = (code *)swi(3);
-        (*pcVar1)();
-        return;
+        STDebugBreak(); /* noreturn in standalone pseudocode */
       }
       RaiseInternalException(iVar2,0,s_E____titans_wlad_to_allpl_cpp_007a6004,0x3096);
     }
@@ -51,18 +49,18 @@ STAllPlayersC::CalibrateTmp
                0x3075);
   }
   if (param_2 == 0) {
+    /* ST_PSEUDO[flattened_global_record_array]: expected g_playerRuntime[player].field[index...] after base/stride proof */
     local_18 = *(DArrayTy **)(param_3 * 0x10 + 0x7f4f8d + param_1 * 0xa62);
   }
   else if (param_2 == 1) {
+    /* ST_PSEUDO[flattened_global_record_array]: expected g_playerRuntime[(char)param_1].tempSlots[param_2][param_3].objectIds */
     local_18 = *(DArrayTy **)(param_3 * 0x10 + 0x7f4fdd + param_1 * 0xa62);
   }
   else {
     iVar2 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0x3079,0,0,&DAT_007a4ccc,
                                s_STAllPlayersC__CalibrateTmp_inva_007a8950);
     if (iVar2 != 0) {
-      pcVar1 = (code *)swi(3);
-      (*pcVar1)();
-      return;
+      STDebugBreak(); /* noreturn in standalone pseudocode */
     }
     RaiseInternalException
               (-0x5001fff7,g_overwriteContext_007ED77C,s_E____titans_wlad_to_allpl_cpp_007a6004,
@@ -104,10 +102,10 @@ STAllPlayersC::CalibrateTmp
             if (param_6 != (int *)0x0) {
               Library::DKW::TBL::FUN_006ae1c0((uint *)*param_6,(undefined4 *)&local_6);
             }
-            FUN_006b0c70((AnonShape_006B0C70_7C4FE646 *)local_10,index_00);
+            FUN_006b0c70(local_10,index_00);
             dVar5 = dVar5 - 1;
             index_00 = index_00 - 1;
-            FUN_006b0c70((AnonShape_006B0C70_7C4FE646 *)local_c,index);
+            FUN_006b0c70(local_c,index);
             local_14 = local_14 - 1;
             index = index - 1;
           }

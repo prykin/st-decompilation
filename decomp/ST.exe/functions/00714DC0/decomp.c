@@ -8,7 +8,7 @@ int __thiscall FUN_00714dc0(void *this,char *param_1)
   uint uVar4;
   char *pcVar5;
   char *pcVar6;
-  
+
   if (param_1 == (char *)0x0) {
     return -0x34;
   }

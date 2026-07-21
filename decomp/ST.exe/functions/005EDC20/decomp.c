@@ -15,7 +15,7 @@ undefined4 __fastcall FUN_005edc20(AnonShape_005EDC20_3D37DB9E *param_1)
   undefined4 uVar10;
   uint uVar11;
   undefined4 uVar12;
-  
+
   if (0 < param_1->field_005F) {
     sVar2 = param_1->field_005D;
     sVar1 = param_1->field_005F + -1;
@@ -35,7 +35,9 @@ undefined4 __fastcall FUN_005edc20(AnonShape_005EDC20_3D37DB9E *param_1)
           uVar12 = param_1->field_02C6;
           uVar10 = param_1->field_02C2;
           uVar8 = param_1->field_02BE;
+          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
           iVar4 = (**(code **)(*(int *)param_1 + 0x138))();
+          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
           iVar6 = (**(code **)(*(int *)param_1 + 0x130))();
           thunk_FUN_004ebda0(this,*(int *)&param_1->field_0x18,iVar6,iVar4,uVar8,uVar10,uVar12);
           thunk_FUN_005f05a0(param_1,(short)this[1].vtable,*(undefined2 *)&this[1].field_0xe);

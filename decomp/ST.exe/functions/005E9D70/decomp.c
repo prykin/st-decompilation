@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\wait_obj.cpp
@@ -6,15 +8,13 @@
 void __thiscall WaitTy::DeleteCtrls(WaitTy *this)
 
 {
-  AnonShape_006C7610_838EDECF *pAVar1;
+  AnonShape_006B5B10_E0D06CF1 *pAVar1;
   code *pcVar2;
   WaitTy *this_00;
   int iVar3;
   HoloTy *pHVar4;
   uint *puVar5;
   undefined1 *this_01;
-  undefined4 unaff_ESI;
-  void *unaff_EDI;
   int iVar6;
   uint uVar7;
   char cVar8;
@@ -22,19 +22,17 @@ void __thiscall WaitTy::DeleteCtrls(WaitTy *this)
   InternalExceptionFrame local_50;
   WaitTy *local_c;
   int local_8;
-  
+
   local_50.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_50;
   local_c = this;
-  iVar3 = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar3 = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0);
   if (iVar3 != 0) {
     g_currentExceptionFrame = local_50.previous;
     iVar6 = ReportDebugMessage(s_E____titans_Start_wait_obj_cpp_007cdd5c,0x34c,0,iVar3,&DAT_007a4ccc
                                ,s_WaitTy__DeleteCtrls_007cde3c);
     if (iVar6 != 0) {
-      pcVar2 = (code *)swi(3);
-      (*pcVar2)();
-      return;
+      STDebugBreak(); /* noreturn in standalone pseudocode */
     }
     RaiseInternalException(iVar3,0,s_E____titans_Start_wait_obj_cpp_007cdd5c,0x34c);
     return;
@@ -111,7 +109,7 @@ void __thiscall WaitTy::DeleteCtrls(WaitTy *this)
       StartSystemTy::sub_006E56B0(this_00->field_000C,PTR_0081176c->field_0389);
     }
     PTR_0081176c->field_0389 = 0;
-    pAVar1 = (AnonShape_006C7610_838EDECF *)PTR_0081176c->field_0544;
+    pAVar1 = (AnonShape_006B5B10_E0D06CF1 *)PTR_0081176c->field_0544;
     FUN_006b4170(pAVar1,0,0,0,pAVar1->field_0004,pAVar1->field_0008,0xff);
     if ((AnonShape_006B5570_4D68B99C *)PTR_0081176c->field_0548 !=
         (AnonShape_006B5570_4D68B99C *)0x0) {

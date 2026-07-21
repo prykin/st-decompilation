@@ -10,19 +10,17 @@ bool __fastcall FUN_005f0a30(STBoatC *param_1)
   STWorldObject *this;
   bool bVar3;
   ushort uVar4;
-  undefined3 extraout_var;
   uint uVar5;
   int iVar6;
   int iVar7;
   int iVar8;
-  
+
   uVar5 = (uint)(byte)param_1->field_0x24f;
   if ((param_1->field_0x24f != 0) &&
      (uVar5 = (uint)*(ushort *)&param_1->field_0x246, 0 < (short)*(ushort *)&param_1->field_0x246))
   {
-    bVar3 = thunk_FUN_004961b0(*(short *)&param_1->field_0x242,*(short *)&param_1->field_0x244,
+    uVar5 = thunk_FUN_004961b0(*(short *)&param_1->field_0x242,*(short *)&param_1->field_0x244,
                                (short)(uVar5 - 1));
-    uVar5 = CONCAT31(extraout_var,bVar3);
     if (uVar5 == 0) {
       sVar1 = *(short *)&param_1->field_0x242;
       sVar2 = *(short *)&param_1->field_0x244;

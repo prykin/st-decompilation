@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\mmsg_obj.cpp
@@ -13,17 +15,15 @@ void __thiscall MMsgTy::StatePanel(MMsgTy *this,int param_1)
   int errorCode;
   uint uVar4;
   int iVar5;
-  undefined4 unaff_ESI;
-  void *unaff_EDI;
   InternalExceptionFrame local_50;
   MMsgTy *local_c;
   uint local_8;
-  
+
   this->field_002D = 0x20;
   local_50.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_50;
   local_c = this;
-  errorCode = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  errorCode = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0);
   this_00 = local_c;
   if (errorCode == 0) {
     local_8 = local_8 & 0xffffff00;
@@ -45,6 +45,7 @@ void __thiscall MMsgTy::StatePanel(MMsgTy *this,int param_1)
           FUN_006e6080(this_00,2,(&this_00->field_0066)[uVar4],(undefined4 *)&this_00->field_0x1d);
         }
         bVar3 = (char)local_8 + 1;
+        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
         local_8 = CONCAT31(local_8._1_3_,bVar3);
       } while (bVar3 < (byte)this_00->field_009A);
     }
@@ -58,8 +59,6 @@ void __thiscall MMsgTy::StatePanel(MMsgTy *this,int param_1)
     RaiseInternalException(errorCode,0,s_E____titans_Start_mmsg_obj_cpp_007ccb74,0x1c1);
     return;
   }
-  pcVar2 = (code *)swi(3);
-  (*pcVar2)();
-  return;
+  STDebugBreak(); /* noreturn in standalone pseudocode */
 }
 

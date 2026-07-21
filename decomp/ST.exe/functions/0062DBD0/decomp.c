@@ -9,8 +9,9 @@ uint __thiscall FUN_0062dbd0(void *this,int param_1,int param_2)
   bool bVar5;
   int local_c;
   uint local_8;
-  
+
   local_8 = 0xffffffff;
+  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   iVar3 = *(int *)((int)this + param_1 * 4 + 0x50);
   if (iVar3 == 0) {
     return 0xffffffff;
@@ -19,6 +20,7 @@ uint __thiscall FUN_0062dbd0(void *this,int param_1,int param_2)
   uVar4 = 0;
   if (0 < iVar3) {
     do {
+      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
       iVar1 = *(int *)((int)this + param_1 * 4 + 0x50);
       if (((uVar4 < *(uint *)(iVar1 + 0xc)) &&
           (piVar2 = (int *)(*(int *)(iVar1 + 8) * uVar4 + *(int *)(iVar1 + 0x1c)),
@@ -33,11 +35,13 @@ uint __thiscall FUN_0062dbd0(void *this,int param_1,int param_2)
           piVar2 = piVar2 + 1;
           local_c = local_c + -1;
         } while (local_c != 0);
-        FUN_006b0c70(*(AnonShape_006B0C70_7C4FE646 **)((int)this + param_1 * 4 + 0x50),uVar4);
+        /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
+        FUN_006b0c70(*(DArrayTy **)((int)this + param_1 * 4 + 0x50),uVar4);
         local_8 = uVar4;
       }
       uVar4 = uVar4 + 1;
     } while ((int)uVar4 < iVar3);
+    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     if ((-1 < (int)local_8) && (iVar3 = *(int *)((int)this + param_1 * 4 + 0x70), iVar3 != 0)) {
       uVar4 = 0;
       if (0 < *(int *)(iVar3 + 0xc)) {
@@ -48,6 +52,7 @@ uint __thiscall FUN_0062dbd0(void *this,int param_1,int param_2)
             *(int *)(iVar3 + 4) = *(int *)(iVar3 + 4) + -1;
           }
           uVar4 = uVar4 + 1;
+          /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
           iVar3 = *(int *)((int)this + param_1 * 4 + 0x70);
           bVar5 = uVar4 < *(uint *)(iVar3 + 0xc);
         } while ((int)uVar4 < (int)*(uint *)(iVar3 + 0xc));

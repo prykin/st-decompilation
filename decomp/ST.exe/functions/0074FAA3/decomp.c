@@ -12,7 +12,7 @@ int * __thiscall FUN_0074faa3(void *this,int param_1,int param_2)
   int *piVar8;
   undefined4 *puVar9;
   uint local_8;
-  
+
   *(undefined4 *)((int)this + 0xc) = 0;
   *(undefined4 *)((int)this + 4) = 0;
   *(int *)((int)this + 8) = param_1;
@@ -73,6 +73,7 @@ int * __thiscall FUN_0074faa3(void *this,int param_1,int param_2)
         case 0xd:
           piVar2 = (int *)*piVar8;
           *(int **)(puVar7 + 4) = piVar2;
+          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
           (**(code **)(*piVar2 + 4))(piVar2);
           break;
         case 0x11:

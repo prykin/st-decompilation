@@ -9,7 +9,7 @@ int FUN_006b75c0(int *param_1,int param_2,int *param_3)
   int iVar2;
   DWORD DVar3;
   DWORD DVar4;
-  
+
   piVar1 = param_3;
   iVar2 = Library::DKW::DDX::FUN_006b7510(param_1,(int)param_3,(int *)&param_3,-1,0);
   if (iVar2 == 0) {

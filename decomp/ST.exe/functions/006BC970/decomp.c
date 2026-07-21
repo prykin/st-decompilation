@@ -18,7 +18,7 @@ uint FUN_006bc970(int *param_1,int param_2,int *param_3,int param_4)
   int local_10;
   int *local_c;
   uint local_8;
-  
+
   piVar2 = param_1;
   local_10 = 0;
   local_c = (int *)(param_2 * 0x10 + 8 + param_1[0x70]);

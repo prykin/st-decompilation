@@ -4,7 +4,7 @@ void __fastcall FUN_004fad20(void *param_1)
 {
   undefined1 *puVar1;
   int iVar2;
-  
+
   iVar2 = 6;
   puVar1 = (undefined1 *)((int)param_1 + 0xba8);
   do {

@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\to_allpl.cpp
@@ -14,14 +16,12 @@ uint __thiscall STAllPlayersC::PrepareToCmd(STAllPlayersC *this,undefined4 *para
   uint uVar5;
   STGameObjC *pSVar6;
   undefined4 *puVar7;
-  undefined4 extraout_ECX;
   uint uVar8;
-  undefined4 unaff_EBX;
   undefined4 *puVar9;
   uint *local_10;
   int local_c;
   DArrayTy *local_8;
-  
+
   puVar3 = param_2;
   local_c = 0xffff;
   local_10 = (uint *)0xffff;
@@ -37,8 +37,7 @@ uint __thiscall STAllPlayersC::PrepareToCmd(STAllPlayersC *this,undefined4 *para
     if (g_playerRuntime[uVar5].tempSlots[0][0].playerId == uVar5) {
       iVar4 = g_playerRuntime[uVar5].tempSlots[0][0].objectType;
       if (iVar4 == 0x3c) {
-        local_10 = (uint *)thunk_FUN_0042d770(CONCAT31((int3)((uint)unaff_EBX >> 8),DAT_0080874d),
-                                              (int *)&local_8);
+        local_10 = (uint *)thunk_FUN_0042d770(DAT_0080874d,(int *)&local_8);
         local_c = 0;
         if ((short)local_10 == 0x7fff) {
           uVar5 = local_8->count * local_8->elementSize;
@@ -79,8 +78,8 @@ uint __thiscall STAllPlayersC::PrepareToCmd(STAllPlayersC *this,undefined4 *para
         do {
           DArrayGetElement(array,uVar5,&param_2);
           if (((short)param_2 != -1) &&
-             (pSVar6 = GetObjPtr(this,CONCAT31((int3)((uint)extraout_ECX >> 8),DAT_0080874d),
-                                 (uint)param_2,CASE_1), ((uint)pSVar6[1].vtable & 4) == 0)) {
+             (pSVar6 = GetObjPtr(this,DAT_0080874d,(uint)param_2,CASE_1),
+             ((uint)pSVar6[1].vtable & 4) == 0)) {
             local_c = 1;
             local_10 = param_2;
             break;
@@ -94,9 +93,7 @@ uint __thiscall STAllPlayersC::PrepareToCmd(STAllPlayersC *this,undefined4 *para
     iVar4 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0x58f,0,0,&DAT_007a4ccc,
                                s_STAllPlayersC__PrepareToCmd_inva_007a6550);
     if (iVar4 != 0) {
-      pcVar2 = (code *)swi(3);
-      uVar5 = (*pcVar2)();
-      return uVar5;
+      STDebugBreak(); /* noreturn in standalone pseudocode */
     }
   }
   return local_c << 0x10 | (uint)local_10 & 0xffff;

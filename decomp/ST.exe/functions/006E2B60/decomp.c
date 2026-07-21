@@ -7,7 +7,7 @@ FUN_006e2b60(void *this,AnonShape_006E2B60_E36B924C *param_1,int param_2,int par
   byte *pbVar2;
   int local_c;
   int local_8;
-  
+
   pbVar2 = param_1->field_0028;
   iVar1 = 0;
   local_8 = 0;

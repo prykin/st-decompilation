@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* [STSourceProvenanceApplier begin]
@@ -33,7 +35,7 @@ FUN_004c6440(void *this,float param_1,int param_2,int *param_3,int *param_4,int 
   int local_10;
   int local_c;
   int local_8;
-  
+
   local_28 = 0;
   local_c = 3;
   local_20 = &DAT_0079aedc;
@@ -62,6 +64,7 @@ FUN_004c6440(void *this,float param_1,int param_2,int *param_3,int *param_4,int 
         (local_8 < g_worldGrid.sizeY)) &&
        ((((((g_visibleClass_00802A88 == (VisibleClassTy *)0x0 || (DAT_0080874d == 0xff)) ||
            ((g_visibleClass_00802A88->field_00F8 == 0 ||
+            /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
             ((thunk_FUN_00558c00(g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,
                                  local_10,local_8,&local_30,&local_34), (int)piVar8 < 0x79aed0 ||
              (0x79aee3 < (int)piVar8)))))) ||
@@ -72,7 +75,7 @@ FUN_004c6440(void *this,float param_1,int param_2,int *param_3,int *param_4,int 
          ((pVVar4->field_004C == 0 ||
           (*(char *)(iVar9 * pVVar4->field_0030 + pVVar4->field_004C + local_30) != '\0')))) &&
         (iVar9 = local_10,
-        thunk_FUN_004ae0b0(local_10,local_8,local_c,
+        thunk_FUN_004ae0b0((short)local_10,local_8,local_c,
                            *(Global_sub_004AE0B0_param_4Enum *)((int)this + 0x1c),(uint)DAT_0080874d
                            ,&local_2c,&local_24,&local_1c,0,*(int **)((int)this + 0x20)),
         local_24 != 0)))) break;
@@ -168,9 +171,7 @@ LAB_004c6848:
     iVar5 = ReportDebugMessage(s_E____titans_Artem_TLO_BldMark_cp_007ad2f4,0x98,0,0,&DAT_007a4ccc,
                                s_error_007ad33c);
     if (iVar5 != 0) {
-      pcVar2 = (code *)swi(3);
-      uVar7 = (*pcVar2)();
-      return uVar7;
+      STDebugBreak(); /* noreturn in standalone pseudocode */
     }
   }
   *(int *)((int)this + 0x30) = iVar9;

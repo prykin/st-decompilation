@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Artem\TLO_bspr.cpp
@@ -13,8 +15,6 @@ int __thiscall TLOBaseTy::ReloadLogoPlane(TLOBaseTy *this)
   int iVar5;
   undefined4 uVar6;
   int iVar7;
-  undefined4 unaff_ESI;
-  void *unaff_EDI;
   CHAR local_15c [256];
   InternalExceptionFrame local_5c;
   TLOBaseTy *local_18;
@@ -22,11 +22,11 @@ int __thiscall TLOBaseTy::ReloadLogoPlane(TLOBaseTy *this)
   int local_10;
   uint local_c;
   undefined4 *local_8;
-  
+
   local_5c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_5c;
   local_18 = this;
-  iVar5 = Library::MSVCRT::__setjmp3(local_5c.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar5 = Library::MSVCRT::__setjmp3(local_5c.jumpBuffer,0);
   pTVar4 = local_18;
   if (iVar5 == 0) {
     if (local_18->field_05F3 != 0) {
@@ -119,9 +119,7 @@ int __thiscall TLOBaseTy::ReloadLogoPlane(TLOBaseTy *this)
   iVar7 = ReportDebugMessage(s_E____titans_Artem_TLO_bspr_cpp_007ad4d0,0xf6,0,iVar5,&DAT_007a4ccc,
                              s_TLOBaseTy__ReloadLogoPlane_error_007ad4f8);
   if (iVar7 != 0) {
-    pcVar3 = (code *)swi(3);
-    iVar5 = (*pcVar3)();
-    return iVar5;
+    STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   RaiseInternalException(iVar5,0,s_E____titans_Artem_TLO_bspr_cpp_007ad4d0,0xf7);
   return iVar5;

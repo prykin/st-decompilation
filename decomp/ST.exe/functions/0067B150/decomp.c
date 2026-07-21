@@ -8,7 +8,7 @@ int __thiscall FUN_0067b150(void *this,int param_1)
   char *pcVar4;
   uint uVar5;
   bool bVar6;
-  
+
   iVar1 = *(int *)((int)this + 0x6a1);
   iVar3 = 0;
   uVar2 = *(uint *)(iVar1 + 0xc);

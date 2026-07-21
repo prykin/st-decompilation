@@ -7,7 +7,7 @@ bool __thiscall FUN_0074d212(void *this,uint param_1)
   DWORD local_10;
   HANDLE *local_c;
   DWORD local_8;
-  
+
   DVar1 = param_1;
   local_c = this;
   if (param_1 != 0xffffffff) {

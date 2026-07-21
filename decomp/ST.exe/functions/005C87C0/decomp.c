@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\sett_obj.cpp
@@ -13,17 +15,15 @@ void __thiscall SettMapTy::PaintSC(SettMapTy *this)
   DArrayTy *pDVar4;
   int iVar5;
   char *pcVar6;
-  undefined4 unaff_ESI;
   uint uVar7;
-  void *unaff_EDI;
   bool bVar8;
   InternalExceptionFrame local_4c;
   SettMapTy *local_8;
-  
+
   local_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_4c;
   local_8 = this;
-  errorCode = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  errorCode = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
   if (errorCode == 0) {
     if ((DAT_008087b6 != 0) && (PTR_0081176c->field_02F4 != 0)) {
       FUN_006e83f0((AnonShape_006B5B10_E0D06CF1 *)PTR_0081176c->field_02F0,0x14,0x14,0x8b,
@@ -36,6 +36,7 @@ void __thiscall SettMapTy::PaintSC(SettMapTy *this)
         uVar7 = 0;
         do {
           if (bVar8) {
+            /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(pDVar4, uVar7) (runtime stride) */
             pcVar6 = (char *)(pDVar4->elementSize * uVar7 + (int)pDVar4->data);
           }
           else {
@@ -92,8 +93,6 @@ void __thiscall SettMapTy::PaintSC(SettMapTy *this)
     RaiseInternalException(errorCode,0,s_E____titans_Start_sett_obj_cpp_007cd0e8,0x4ac);
     return;
   }
-  pcVar1 = (code *)swi(3);
-  (*pcVar1)();
-  return;
+  STDebugBreak(); /* noreturn in standalone pseudocode */
 }
 

@@ -7,7 +7,7 @@ void FUN_006b9910(undefined4 *param_1,int param_2)
 {
   int *piVar1;
   int *piVar2;
-  
+
   *(undefined4 *)param_2 = 0;
   piVar1 = (int *)*param_1;
   if (piVar1 != (int *)0x0) {

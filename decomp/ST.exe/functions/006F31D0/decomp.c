@@ -57,7 +57,7 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_006F31D0::FUN_006f31d0
   uint local_10;
   uint local_c;
   uint *local_8;
-  
+
   local_40 = 0;
   local_20 = 0;
   local_30 = (byte *)0x0;
@@ -193,30 +193,41 @@ LAB_006f3562:
     if (((uVar2 & 0xc000) == 0xc000) && ((local_60 != 0 || ((uVar2 & 0x80) != 0)))) {
       if ((uVar2 & 1) == 0) {
         iVar12 = *(int *)(puVar18[0x28] + 4 + local_4c * 8);
+        /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
         if (((iVar12 != 0) && (param_4 == (uVar2 & 4) >> 2)) &&
            (local_54 = (ushort *)(*(int *)&this->field_0x330 + local_5c),
            *(int *)(local_54 + 0xc) != 0)) {
           local_34 = *(byte **)(iVar12 + *psVar1 * 4);
+          /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
           local_64 = (int)*(short *)(local_34 + 0x14);
+          /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
           pbVar14 = (byte *)(int)*(short *)(local_34 + 0x12);
           if (((DAT_00857030 == 0) || ((puVar18[1] & 4) != 0)) ||
              ((*(byte *)(puVar18[0x29] + 2 + local_4c * 4) & 2) != 0)) {
+            /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
             if (((int)local_48 < (int)*(short *)(local_34 + 0x14) + (int)*(short *)(local_34 + 0x10)
                 ) && (puVar10 = &local_48->field_0x0 + local_50,
                      (int)*(short *)(local_34 + 0x10) <= (int)puVar10)) {
+              /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
               local_70 = puVar18[0x13] + (int)*(short *)(local_34 + 0xe);
+              /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
               local_68 = (int)*(short *)(local_34 + 0x12);
               if (param_2 < 0) {
+                /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
                 local_6c = (undefined1 *)(puVar18[0x14] + (int)*(short *)(local_34 + 0x10));
+                /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
                 local_64 = (int)*(short *)(local_34 + 0x14);
               }
               else {
+                /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
                 pAVar8 = (AnonShape_006F31D0_0BFF23DC *)(int)*(short *)(local_34 + 0x10);
                 pAVar16 = local_48;
                 if ((int)local_48 <= (int)pAVar8) {
                   pAVar16 = pAVar8;
                 }
+                /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
                 if ((int)(&pAVar8->field_0x0 + *(short *)(local_34 + 0x14)) <= (int)puVar10) {
+                  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
                   puVar10 = &pAVar8->field_0x0 + *(short *)(local_34 + 0x14);
                 }
                 local_6c = &pAVar16->field_0x0 + puVar18[0x14];
@@ -226,17 +237,22 @@ LAB_006f3562:
             }
           }
           else {
+            /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
             pAVar8 = (AnonShape_006F31D0_0BFF23DC *)(int)*(short *)(local_34 + 0x10);
+            /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
             pAVar16 = (AnonShape_006F31D0_0BFF23DC *)
                       (&pAVar8->field_0x0 + *(short *)(local_34 + 0x14));
             if (((int)local_48 < (int)pAVar16) &&
                (pAVar9 = (AnonShape_006F31D0_0BFF23DC *)(&local_48->field_0x0 + local_50),
                (int)pAVar8 <= (int)pAVar9)) {
               if (param_2 < 0) {
+                /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
                 pAVar9 = (AnonShape_006F31D0_0BFF23DC *)
                          ((int)*(short *)(local_34 + 0x10) + (int)*(short *)(local_34 + 0x14));
                 local_58 = pAVar8;
+                /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
                 pAVar16 = (AnonShape_006F31D0_0BFF23DC *)(int)*(short *)(local_34 + 0x10);
+                /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
                 pAVar3 = (AnonShape_006F31D0_0BFF23DC *)
                          ((int)*(short *)(local_34 + 0x14) + (int)*(short *)(local_34 + 0x10));
               }
@@ -260,7 +276,9 @@ LAB_006f3562:
               local_c = (int)pAVar16 % DAT_00857008;
               local_64 = ((int)pAVar3 / DAT_00857008) * 2;
               iVar12 = (int)pAVar9 % DAT_00857008;
+              /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
               local_10 = (int)*(short *)(local_34 + 0xe) % DAT_00857008;
+              /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
               iVar13 = ((int)*(short *)(local_34 + 0x12) + (int)*(short *)(local_34 + 0xe)) %
                        DAT_00857008;
               uVar7 = local_c;
@@ -272,14 +290,17 @@ LAB_006f3562:
                 uVar15 = local_10 + 1;
               }
               local_64 = local_64 + (iVar12 >> 1);
+              /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
               local_68 = (((int)*(short *)(local_34 + 0x12) + (int)*(short *)(local_34 + 0xe)) /
                          DAT_00857008) * 2 + (iVar13 >> 1);
+              /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
               local_70 = ((int)*(short *)(local_34 + 0xe) / DAT_00857008) * 2 + ((int)uVar15 >> 1);
               iVar12 = ((int)local_58 / DAT_00857008) * 2 + ((int)uVar7 >> 1);
               local_68 = local_68 - local_70;
               local_64 = local_64 - iVar12;
               local_70 = local_70 + puVar18[0x15];
               local_6c = (undefined1 *)(iVar12 + puVar18[0x16]);
+/* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
 LAB_006f397a:
               local_58 = *(AnonShape_006F31D0_0BFF23DC **)(local_54 + 0xc);
               if ((int)local_58 < 5) {
@@ -324,6 +345,7 @@ LAB_006f3a60:
                   if (((DAT_00857030 == 0) || ((puVar18[1] & 4) != 0)) ||
                      ((*(byte *)(puVar18[0x29] + 2 + local_4c * 4) & 2) != 0)) {
                     local_1c = (byte *)(DAT_00856fd0 - local_70);
+                    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
                     local_18 = (ushort *)
                                ((DAT_00856fd4 - *(short *)(local_34 + 0x10)) - puVar18[0x14]);
                     local_44 = (AnonShape_006F31D0_0BFF23DC *)puVar18[0x30];
@@ -337,6 +359,7 @@ LAB_006f3a60:
                       pbVar17 = FUN_006cfe10(local_34,(int)local_18);
                     }
                     uVar2 = *(ushort *)(local_2c[0x29] + 2 + local_4c * 4);
+                    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                     local_44 = (AnonShape_006F31D0_0BFF23DC *)
                                CONCAT22((short)(local_4c >> 0x10),uVar2);
                     if ((uVar2 & 0x100) == 0) {
@@ -490,6 +513,7 @@ LAB_006f3a60:
                           if ((uVar2 & 4) == 0) {
                             if (local_20 == 0) {
                               if (local_28 == 0) {
+                                /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
                                 FUN_006f6330(pbVar19,DAT_00857028,(ushort *)local_8,
                                              *(int *)&this->field_0x28 << 1,param_1,pbVar17,
                                              (int)pbVar14,(int)local_1c,(int)DAT_00856fd8,
@@ -497,6 +521,7 @@ LAB_006f3a60:
                                              (byte *)(int)*(short *)(local_34 + 0xe));
                               }
                               else {
+                                /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
                                 FUN_006f66c0(pbVar19,DAT_00857028,(ushort *)local_8,
                                              *(int *)&this->field_0x28 * 2,param_1,pbVar17,
                                              (int)pbVar14,(int)local_1c,(int)DAT_00856fd8,
@@ -506,6 +531,7 @@ LAB_006f3a60:
                               }
                             }
                             else if (local_28 == 0) {
+                              /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
                               FUN_006f6ae0(pbVar19,DAT_00857028,(ushort *)local_8,
                                            *(int *)&this->field_0x28 << 1,param_1,pbVar17,
                                            (int)pbVar14,(int)local_1c,(int)DAT_00856fd8,DAT_00856fdc
@@ -513,6 +539,7 @@ LAB_006f3a60:
                                            (byte *)(int)*(short *)(local_34 + 0xe),local_20);
                             }
                             else {
+                              /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
                               FUN_006f6ea0(pbVar19,DAT_00857028,(ushort *)local_8,
                                            *(int *)&this->field_0x28 * 2,param_1,pbVar17,
                                            (int)pbVar14,(int)local_1c,(int)DAT_00856fd8,DAT_00856fdc
@@ -522,6 +549,7 @@ LAB_006f3a60:
                             }
                           }
                           else if (local_40 != 0) {
+                            /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
                             FUN_006f81d0(pbVar19,DAT_00857028,local_30,*(int *)&this->field_0x28,
                                          (ushort *)local_8,*(int *)&this->field_0x28 * 2,param_1,
                                          pbVar17,(int)pbVar14,(int)local_1c,(int)DAT_00856fd8,
@@ -567,6 +595,7 @@ LAB_006f3a60:
                       uVar7 = (-(uint)(((uint)pbVar17 & 1) != 0) & 3) - 1;
                     }
                     local_44 = (AnonShape_006F31D0_0BFF23DC *)(DAT_00856fd0 - puVar18[0x15]);
+                    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
                     iVar12 = ((int)pbVar17 / 2) * DAT_00857008 +
                              (uVar7 - (int)*(short *)(local_34 + 0xe));
                     if (DAT_00857008 == 3) {
@@ -575,6 +604,7 @@ LAB_006f3a60:
                     else {
                       local_10 = ((uint)local_44 & 1) << 1 | 1;
                     }
+                    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
                     iVar13 = ((int)local_44 / 2) * DAT_00857008 +
                              (local_10 - (int)*(short *)(local_34 + 0xe));
                     uVar7 = (DAT_00856fdc - local_2c[0x16]) + DAT_00856fd4;
@@ -584,6 +614,7 @@ LAB_006f3a60:
                     else {
                       uVar15 = (-(uint)((uVar7 & 1) != 0) & 3) - 1;
                     }
+                    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
                     iVar4 = ((int)uVar7 / 2) * DAT_00857008 +
                             (uVar15 - (int)*(short *)(local_34 + 0x10));
                     local_18 = (ushort *)(DAT_00856fd4 - local_2c[0x16]);
@@ -593,6 +624,7 @@ LAB_006f3a60:
                     else {
                       local_c = ((uint)local_18 & 1) << 1 | 1;
                     }
+                    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
                     local_14 = ((int)local_18 / 2) * DAT_00857008 +
                                (local_c - (int)*(short *)(local_34 + 0x10));
                     if (local_2c[0x30] != 0) {
@@ -729,9 +761,11 @@ LAB_006f3a60:
                             }
                           }
                           else {
+                            /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
                             local_44 = (AnonShape_006F31D0_0BFF23DC *)
                                        (((int)*(short *)(local_34 + 0xe) -
                                         (int)*(short *)(DAT_00856fe4 + 0xe)) + iVar13);
+                            /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
                             iVar5 = ((int)*(short *)(local_34 + 0x10) -
                                     (int)*(short *)(DAT_00856fe4 + 0x10)) + local_14;
                             if (iVar5 < 1) {
@@ -912,6 +946,7 @@ LAB_006f3a58:
                 }
                 puVar18 = local_2c;
                 this = local_24;
+                /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
                 if (*(int *)(*(int *)&local_24->field_0x330 + 0x18 + local_5c) <=
                     (int)&local_58->field_0x1) goto LAB_006f4dec;
                 puVar11 = (uint *)((int)&local_58->field_0x3 * 0x10 + *(int *)&local_24->field_0x330
@@ -977,6 +1012,7 @@ LAB_006f363d:
     }
     goto LAB_006f4df8;
   }
+/* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
 LAB_006f4e0c:
   if (4 < *(int *)(local_5c + 0x18 + *(int *)&this->field_0x330)) {
     if (param_4 != 0) {

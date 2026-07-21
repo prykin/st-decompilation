@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* [STSourceProvenanceApplier begin]
    Recovered source file: E:\__titans\tsystem.cpp
@@ -11,13 +13,11 @@ void CreateBaseSystem(void)
   int errorCode;
   BaseSystemC *this;
   int iVar2;
-  void *unaff_ESI;
-  InternalExceptionFrame *pIVar3;
-  undefined4 local_44 [16];
-  
-  pIVar3 = g_currentExceptionFrame;
-  g_currentExceptionFrame = (InternalExceptionFrame *)&stack0xffffffb8;
-  errorCode = Library::MSVCRT::__setjmp3(local_44,0,unaff_ESI,pIVar3);
+  InternalExceptionFrame local_48;
+
+  local_48.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &local_48;
+  errorCode = Library::MSVCRT::__setjmp3(local_48.jumpBuffer,0);
   if (errorCode == 0) {
     this = (BaseSystemC *)Library::MSVCRT::FUN_0072e530(0x24);
     if (this == (BaseSystemC *)0x0) {
@@ -34,16 +34,14 @@ void CreateBaseSystem(void)
     (*DAT_00811638->vtable->InitSystem)((SystemClassTy *)DAT_00811638);
     AppClassTy::AddSystem((AppClassTy *)&DAT_00807620,(int *)DAT_00811638,0);
     DAT_00811638[8].vtable = (BaseSystemCVTable *)0x1;
-    g_currentExceptionFrame = pIVar3;
+    g_currentExceptionFrame = local_48.previous;
     return;
   }
-  g_currentExceptionFrame = pIVar3;
+  g_currentExceptionFrame = local_48.previous;
   iVar2 = ReportDebugMessage(s_E____titans_tsystem_cpp_007cab5c,0x40,0,errorCode,&DAT_007a4ccc,
                              s_CreateBaseSystem_007caba0);
   if (iVar2 != 0) {
-    pcVar1 = (code *)swi(3);
-    (*pcVar1)();
-    return;
+    STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   RaiseInternalException(errorCode,0,s_E____titans_tsystem_cpp_007cab5c,0x41);
   return;

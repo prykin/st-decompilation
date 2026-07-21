@@ -5,7 +5,7 @@ void __cdecl FUN_0071a4b0(int *param_1)
   int iVar1;
   undefined4 local_208 [128];
   uint local_8;
-  
+
   if (*param_1 != 0) {
     iVar1 = *(int *)(*param_1 + 5);
     if (iVar1 != 0) {

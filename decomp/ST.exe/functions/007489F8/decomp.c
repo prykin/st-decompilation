@@ -15,7 +15,7 @@ undefined4 __thiscall FUN_007489f8(void *this,undefined4 *param_1)
   undefined1 *puStack_1c;
   int **ppiStack_18;
   int *local_8;
-  
+
   apiStack_38[1] = *(int **)((int)this + 0x74);
   local_8 = this;
   if (apiStack_38[1] == (int *)0x0) {
@@ -25,6 +25,7 @@ undefined4 __thiscall FUN_007489f8(void *this,undefined4 *param_1)
       ppiStack_18 = &local_8;
       puStack_1c = &DAT_007a1b40;
       apuStack_2c[2] = (undefined4 *)0x748a46;
+      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
       (**(code **)*apuStack_2c[3])();
       piVar1 = local_8;
       if (local_8 != (int *)0x0) {
@@ -41,7 +42,9 @@ undefined4 __thiscall FUN_007489f8(void *this,undefined4 *param_1)
           param_1 = param_1 + 1;
           ppiVar7 = ppiVar7 + 1;
         }
+        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
         uVar2 = (**(code **)(iVar4 + 0xc))(piVar1,iVar3);
+        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
         (**(code **)(*local_8 + 8))(local_8);
       }
     }
@@ -61,6 +64,7 @@ undefined4 __thiscall FUN_007489f8(void *this,undefined4 *param_1)
       ppuVar6 = ppuVar6 + 1;
     }
     apiStack_38[0] = (int *)0x748a2a;
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
     uVar2 = (**(code **)(iVar3 + 0xc))();
   }
   return uVar2;

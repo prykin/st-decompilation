@@ -7,7 +7,7 @@ bool __fastcall FUN_0052b330(AnonShape_0052B330_71C9FFBF *param_1)
 
 {
   bool bVar1;
-  
+
   bVar1 = true;
   if (param_1->field_0DC7 != '\x01') {
     if (param_1->field_0DC7 != '\x02') {
@@ -71,6 +71,7 @@ cf_common_exit_0052B581:
   }
   param_1->field_0DB3 = 0;
   param_1->field_0DC8 = 0;
+  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   FUN_006e65c0(PTR_00807598,
                *(undefined4 *)(&param_1->field_0xdbf + (uint)(byte)param_1->field_0DCC * 4),
                (char)*(undefined2 *)

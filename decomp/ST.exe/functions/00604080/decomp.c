@@ -3,7 +3,7 @@
    VTable: 0079CB14 (store 00604098)
    Evidence: final_vptr=0079CB14; returns_this=true; calls_before=1; field_writes_after=8;
    table_confidence=high
-   
+
    [STPrototypeApplier] Propagated return.
    Evidence: 00604080 returns STExplosion::STExplosion this @ 006040F3 */
 
@@ -12,7 +12,7 @@ STExplosion * __thiscall STExplosion::STExplosion(STExplosion *this)
 {
   int iVar1;
   undefined4 *puVar2;
-  
+
   STGameObjC::STGameObjC((STGameObjC *)this);
   this->vtable = &STExplosionVTable;
   this->field_0215 = 0;

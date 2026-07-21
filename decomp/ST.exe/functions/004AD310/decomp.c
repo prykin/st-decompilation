@@ -3,7 +3,7 @@ void __fastcall FUN_004ad310(STT3DSprC *param_1)
 
 {
   int iVar1;
-  
+
   iVar1 = 0;
   if (0 < (int)param_1->field_0014) {
     do {

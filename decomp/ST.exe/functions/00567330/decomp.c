@@ -10,21 +10,20 @@ void __fastcall FUN_00567330(int param_1)
   int *piVar6;
   uint uVar7;
   uint uVar8;
-  undefined4 unaff_ESI;
   byte *pbVar9;
-  void *unaff_EDI;
   char *pcVar10;
   char *pcVar11;
   byte *pbVar12;
   byte local_150 [260];
   InternalExceptionFrame local_4c;
   int local_8;
-  
+
+  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   if ((*(int *)(param_1 + 0xdef) == 0) || (*(int *)(param_1 + 0xdf3) == 0)) {
     local_4c.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_4c;
     local_8 = param_1;
-    iVar4 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
+    iVar4 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
     iVar3 = local_8;
     if (iVar4 == 0) {
       uVar7 = 0xffffffff;

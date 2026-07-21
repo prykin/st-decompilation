@@ -15,19 +15,17 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00714CE0::FUN_00714ce0
   undefined4 *puVar3;
   uint uVar4;
   uint uVar5;
-  undefined4 unaff_ESI;
-  void *unaff_EDI;
   undefined4 *puVar6;
   InternalExceptionFrame local_4c;
   AnonReceiver_00714CE0 *local_8;
-  
+
   if ((int)param_1 <= *(int *)&this->field_0x4) {
     return 0;
   }
   local_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_4c;
   local_8 = this;
-  iVar2 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar2 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
   pAVar1 = local_8;
   if (iVar2 != 0) {
     g_currentExceptionFrame = local_4c.previous;

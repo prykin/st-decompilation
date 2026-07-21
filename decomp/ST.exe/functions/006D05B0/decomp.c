@@ -13,7 +13,7 @@ void FUN_006d05b0(undefined4 *param_1,int param_2,uint *param_3,int param_4,int 
   uint *puVar6;
   undefined4 *puVar7;
   undefined4 *puVar8;
-  
+
   if (0 < param_6) {
     do {
       iVar3 = param_5;

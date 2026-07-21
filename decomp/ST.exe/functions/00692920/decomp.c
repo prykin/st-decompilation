@@ -2,7 +2,7 @@
 /* [STPrototypeApplier] Propagated parameter 0.
    Evidence: 00692920 parameter used as this of cMf32::RecGet @ 00692946 | 00692920 parameter used
    as this of cMf32::RecMemFree @ 00692A69
-   
+
    [STPrototypeApplier] Propagated return.
    Evidence: 00692920 returns used as parameter 1 of FUN_006b4b20 @ 00691B46 | 00692920 returns used
    as parameter 1 of FUN_006b4b20 @ 00691DAB | 00692920 returns used as parameter 1 of FUN_006b4b20
@@ -23,7 +23,7 @@ FUN_00692920(cMf32 *param_1,undefined4 *param_2,undefined4 *param_3,int param_4,
   ushort *local_10;
   int local_c;
   int local_8;
-  
+
   puVar1 = param_3;
   pAVar2 = (AnonShape_006B4B20_3D4F4412 *)0x0;
   if (param_2 != (undefined4 *)0x0) {

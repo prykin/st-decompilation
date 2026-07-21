@@ -1,9 +1,11 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* [STSourceProvenanceApplier begin]
    Recovered source file: E:\__titans\ai\ai_flt_d.cpp
    Diagnostic line evidence: 117 | 118 (metadata/report site, not the function definition)
    [STSourceProvenanceApplier end]
-   
+
    [STPrototypeApplier] Propagated parameter 0.
    Evidence: 00683C70 -> 006684E0 @ 0068608A */
 
@@ -16,19 +18,17 @@ undefined4 * __cdecl FltDataPack(AnonShape_GLOBAL_008489C4_F7BABFAC *param_1,uin
   undefined4 *puVar4;
   int iVar5;
   uint **ppuVar6;
-  undefined4 unaff_ESI;
-  void *unaff_EDI;
   undefined4 *puVar7;
   uint *puVar8;
   InternalExceptionFrame local_50;
   int local_c;
   undefined4 *local_8;
-  
+
   local_8 = (undefined4 *)0x0;
   local_c = 0;
   local_50.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_50;
-  iVar3 = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar3 = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0);
   if (iVar3 == 0) {
     iVar3 = 7;
     ppuVar6 = &param_1->field_01EB;
@@ -75,9 +75,7 @@ undefined4 * __cdecl FltDataPack(AnonShape_GLOBAL_008489C4_F7BABFAC *param_1,uin
   iVar5 = ReportDebugMessage(s_E____titans_ai_ai_flt_d_cpp_007d2cc0,0x75,0,iVar3,&DAT_007a4ccc,
                              s_FltDataPack_007d2ce4);
   if (iVar5 != 0) {
-    pcVar2 = (code *)swi(3);
-    puVar4 = (undefined4 *)(*pcVar2)();
-    return puVar4;
+    STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   RaiseInternalException(iVar3,0,s_E____titans_ai_ai_flt_d_cpp_007d2cc0,0x76);
   return (undefined4 *)0x0;

@@ -13,7 +13,7 @@ undefined4 __thiscall FUN_004ca7b0(void *this,uint param_1,int param_2)
   uint local_10;
   int local_c;
   int local_8;
-  
+
   uVar7 = param_1;
   local_c = 0;
   this_00 = (STT3DSprC *)((int)this + 0x1d5);

@@ -9,7 +9,7 @@ void __thiscall FUN_0056abc0(void *this,char *param_1)
   undefined *puVar5;
   char *pcVar6;
   bool bVar7;
-  
+
   if (param_1 == (char *)0x0) {
     if (*(char *)((int)this + 0x1474) != '\0') {
       if (g_visibleClass_00802A88 != (VisibleClassTy *)0x0) {

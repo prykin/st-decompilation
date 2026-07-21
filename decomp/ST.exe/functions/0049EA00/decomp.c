@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\to_grpb.cpp
@@ -13,9 +15,6 @@ undefined4 __thiscall STGroupBoatC::SetMine(STGroupBoatC *this,int param_1)
   uint uVar5;
   int iVar6;
   undefined4 uVar7;
-  undefined4 extraout_EDX;
-  undefined4 unaff_ESI;
-  void *unaff_EDI;
   undefined4 *puVar8;
   uint uVar9;
   STBoatC_CmdToObj_param_1Enum SVar10;
@@ -30,14 +29,15 @@ undefined4 __thiscall STGroupBoatC::SetMine(STGroupBoatC *this,int param_1)
   undefined4 local_10;
   int local_c;
   uint local_8;
-  
+
+  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   local_c = *(int *)(this->field_0029 + 0xc);
   local_18 = 2;
   local_14 = 0;
   local_6c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_6c;
   local_1c = this;
-  iVar3 = Library::MSVCRT::__setjmp3(local_6c.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar3 = Library::MSVCRT::__setjmp3(local_6c.jumpBuffer,0);
   pSVar2 = local_1c;
   if (iVar3 == 0) {
     if ((param_1 == 0) || (param_1 == 1)) {
@@ -61,9 +61,7 @@ undefined4 __thiscall STGroupBoatC::SetMine(STGroupBoatC *this,int param_1)
           if ((short)local_8 != -1) {
             pSVar4 = (STBoatC *)
                      STAllPlayersC::GetObjPtr
-                               (g_sTAllPlayers_007FA174,
-                                CONCAT31((int3)((uint)extraout_EDX >> 8),pSVar2->field_0024),local_8
-                                ,CASE_1);
+                               (g_sTAllPlayers_007FA174,pSVar2->field_0024,local_8,CASE_1);
             if (pSVar4 == (STBoatC *)0x0) {
               RaiseInternalException
                         (-0x5001fffc,g_overwriteContext_007ED77C,
@@ -100,8 +98,7 @@ LAB_0049eb44:
           if ((short)local_8 != -1) {
             pSVar4 = (STBoatC *)
                      STAllPlayersC::GetObjPtr
-                               (g_sTAllPlayers_007FA174,
-                                CONCAT31((int3)(local_8 >> 8),pSVar2->field_0024),local_8,CASE_1);
+                               (g_sTAllPlayers_007FA174,pSVar2->field_0024,local_8,CASE_1);
             if (pSVar4 == (STBoatC *)0x0) {
               RaiseInternalException
                         (-0x5001fffc,g_overwriteContext_007ED77C,
@@ -131,9 +128,7 @@ LAB_0049eb44:
         RaiseInternalException(iVar3,0,s_E____titans_wlad_to_grpb_cpp_007abe3c,0xb4d);
         return 0xffffffff;
       }
-      pcVar1 = (code *)swi(3);
-      uVar7 = (*pcVar1)();
-      return uVar7;
+      STDebugBreak(); /* noreturn in standalone pseudocode */
     }
   }
   return local_18;

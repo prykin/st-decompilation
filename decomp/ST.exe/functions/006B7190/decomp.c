@@ -12,11 +12,12 @@ int FUN_006b7190(int *param_1)
   int local_10;
   int local_c;
   AnonShape_006B7190_816EEFBC *local_8;
-  
+
   piVar1 = param_1;
 LAB_006b719c:
   while( true ) {
     while( true ) {
+      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
       iVar2 = (**(code **)(*(int *)*piVar1 + 100))((int *)*piVar1,&local_10,local_14,0,0,&local_c);
       if (iVar2 != -0x7788ffe2) {
         if (iVar2 == -0x7788ff42) {
@@ -25,6 +26,7 @@ LAB_006b719c:
         return iVar2;
       }
       local_8 = (AnonShape_006B7190_816EEFBC *)Library::DKW::LIB::FUN_006aac70(local_c);
+      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
       iVar2 = (**(code **)(*(int *)*piVar1 + 100))
                         ((int *)*piVar1,&local_10,local_14,0,local_8,&local_c);
       if (iVar2 == -0x7788ff42) {

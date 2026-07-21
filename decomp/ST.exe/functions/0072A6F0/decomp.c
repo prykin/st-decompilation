@@ -10,7 +10,7 @@ FUN_0072a6f0(byte *param_1,int param_2,ushort *param_3,int param_4,int *param_5,
   int iVar1;
   int iVar2;
   uint uVar3;
-  
+
   iVar2 = param_5[1];
   if (iVar2 < param_5[2]) {
     do {

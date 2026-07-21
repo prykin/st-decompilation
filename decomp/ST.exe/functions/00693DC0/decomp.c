@@ -9,7 +9,7 @@ undefined4 FUN_00693dc0(cMf32 *param_1,undefined4 param_2)
   undefined4 *puVar4;
   undefined4 local_19a8 [1635];
   undefined4 uStackY_1c;
-  
+
   Library::MSVCRT::FUN_0072da40();
   thunk_FUN_00693910((AnonShape_00693910_1CC6632C *)local_19a8);
   pAVar3 = this;

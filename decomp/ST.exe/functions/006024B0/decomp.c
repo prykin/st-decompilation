@@ -4,12 +4,14 @@ void __fastcall FUN_006024b0(int param_1)
 {
   int iVar1;
   int iVar2;
-  
+
+  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   iVar2 = (int)(short)(*(short *)(param_1 + 0x255) * 0xc9 + 100);
   *(int *)(param_1 + 0x37b) = iVar2;
   iVar1 = (int)(short)(*(short *)(param_1 + 599) * 0xc9 + 100);
   *(int *)(param_1 + 0x37f) = iVar1;
   *(int *)(param_1 + 899) = (int)(short)(*(short *)(param_1 + 0x259) * 200 + 100);
+  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   if (*(int *)(param_1 + 0x241) == 1) {
     *(int *)(param_1 + 0x37b) = iVar2 + 100;
     *(int *)(param_1 + 0x37f) = iVar1 + 100;

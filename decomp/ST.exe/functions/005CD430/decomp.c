@@ -1,12 +1,14 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\settmobj.cpp
    SettMapMTy::PrepPlList
-   
+
    [STSwitchEnumApplier] Switch target field_1E26 uses
    /SubmarineTitans/Recovered/Enums/SettMapMTy_field_1E26State. Cases:
    CASE_4=4;CASE_5=5;CASE_7=7;CASE_C=12;CASE_F=15;CASE_10=16;CASE_13=19
-   
+
    [STSwitchEnumApplier] Switch target field_1E26 uses
    /SubmarineTitans/Recovered/Enums/SettMapMTy_field_1E26State. Cases:
    CASE_5=5;CASE_C=12;CASE_F=15;CASE_10=16 */
@@ -26,10 +28,8 @@ void __thiscall SettMapMTy::PrepPlList(SettMapMTy *this,int *param_1)
   byte *pbVar10;
   uint uVar11;
   SettMapMTy *pSVar12;
-  undefined4 unaff_ESI;
   uint uVar13;
   byte *pbVar14;
-  void *unaff_EDI;
   undefined4 *puVar15;
   char *pcVar16;
   bool bVar17;
@@ -49,21 +49,20 @@ void __thiscall SettMapMTy::PrepPlList(SettMapMTy *this,int *param_1)
   SettMapMTy *local_10;
   char *local_c;
   cMf32 *local_8;
-  
+
+  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
   this->field_211C = DAT_008087c4._2_1_;
   local_b8.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_b8;
   local_10 = this;
-  iVar5 = Library::MSVCRT::__setjmp3(local_b8.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar5 = Library::MSVCRT::__setjmp3(local_b8.jumpBuffer,0);
   pSVar12 = local_10;
   if (iVar5 != 0) {
     g_currentExceptionFrame = local_b8.previous;
     iVar9 = ReportDebugMessage(s_E____titans_Start_settmobj_cpp_007cd258,0x1cb,0,iVar5,&DAT_007a4ccc
                                ,s_SettMapMTy__PrepPlList_007cd310);
     if (iVar9 != 0) {
-      pcVar4 = (code *)swi(3);
-      (*pcVar4)();
-      return;
+      STDebugBreak(); /* noreturn in standalone pseudocode */
     }
     RaiseInternalException(iVar5,0,s_E____titans_Start_settmobj_cpp_007cd258,0x1cb);
     return;
@@ -82,6 +81,7 @@ void __thiscall SettMapMTy::PrepPlList(SettMapMTy *this,int *param_1)
       bVar17 = pDVar7->count != 0;
       do {
         if (bVar17) {
+          /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(pDVar7, uVar13) (runtime stride) */
           pvVar6 = (void *)(pDVar7->elementSize * uVar13 + (int)pDVar7->data);
         }
         else {
@@ -114,27 +114,35 @@ void __thiscall SettMapMTy::PrepPlList(SettMapMTy *this,int *param_1)
           *puVar15 = 0;
           puVar15 = puVar15 + 1;
         }
+        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
         local_74._0_1_ = 1;
+        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
         local_74._1_1_ = 1;
         if (((DAT_00807dd1 & 0xffff0000) == 0xd0dd0000) && (*pcVar8 == '\x03')) {
+          /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
           local_74._3_1_ = '\x01';
         }
         else {
+          /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
           local_74._3_1_ = *pcVar8;
         }
+        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
         local_74._2_1_ = cVar2;
         switch(pSVar12->field_1E26) {
+        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
         case CASE_5:
         case CASE_F:
           local_24 = CreateStrategList((int)local_8,
                                        CONCAT12(uStack_70,CONCAT11(local_74._3_1_,cVar2)) & 0xff,
                                        0xffffffff);
           break;
+        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
         default:
           local_24 = CreateOpponentList(local_8,CONCAT12(uStack_6f,
                                                          CONCAT11(uStack_70,local_74._3_1_)) & 0xff,
                                         DAT_0080995c);
           break;
+        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
         case CASE_C:
         case CASE_10:
           local_24 = CreateSaveStrategList
@@ -213,6 +221,7 @@ LAB_005cd675:
         bVar17 = uVar13 != 0;
         do {
           if (bVar17) {
+            /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(pDVar7, uVar11) (runtime stride) */
             pvVar6 = (void *)(pDVar7->elementSize * uVar11 + (int)pDVar7->data);
           }
           else {
@@ -241,6 +250,7 @@ LAB_005cd675:
         bVar17 = uVar13 != 0;
         do {
           if (bVar17) {
+            /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(pDVar7, uVar11) (runtime stride) */
             pvVar6 = (void *)(pDVar7->elementSize * uVar11 + (int)pDVar7->data);
           }
           else {
@@ -266,6 +276,7 @@ LAB_005cd675:
   }
 LAB_005cd7f2:
   SettMapTy::PaintSC((SettMapTy *)pSVar12);
+  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
   (*(code *)pSVar12->field_0000->field_0020)();
   g_currentExceptionFrame = local_b8.previous;
   return;

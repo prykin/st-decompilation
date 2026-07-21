@@ -6,7 +6,7 @@ void __fastcall FUN_005efcd0(AnonShape_005EFCD0_3603EDD8 *param_1)
   short sVar2;
   short sVar3;
   int iVar4;
-  
+
   sVar1 = param_1->field_0047;
   sVar2 = param_1->field_0049;
   sVar3 = param_1->field_004B;

@@ -18,7 +18,7 @@ FUN_00614c80(void *this,undefined4 *param_1,int param_2,int param_3,int param_4,
   int local_10;
   undefined4 local_c;
   undefined4 local_8;
-  
+
   puVar5 = param_1;
   if ((int)param_1 < 1) {
     param_1 = (undefined4 *)param_9;

@@ -13,7 +13,7 @@ FUN_006acf0d(int param_1,int param_2,int param_3,int param_4,int param_5,int par
   int iVar8;
   uint uVar9;
   int iVar10;
-  
+
   lVar1 = (longlong)(param_1 - param_4) * (longlong)(param_1 - param_4);
   iVar6 = (int)((ulonglong)lVar1 >> 0x20);
   if (-1 < lVar1) {

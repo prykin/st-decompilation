@@ -8,12 +8,13 @@ undefined4 FUN_00757d90(AnonShape_00757D90_5427B306 *param_1)
   int iVar4;
   byte *pbVar5;
   uint uVar6;
-  
+
   puVar3 = param_1->field_0010;
   pbVar5 = (byte *)*puVar3;
   iVar4 = puVar3[1];
   while( true ) {
     if (iVar4 == 0) {
+      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
       iVar4 = (*(code *)puVar3[3])(param_1);
       if (iVar4 == 0) {
         return 0;
@@ -31,6 +32,7 @@ undefined4 FUN_00757d90(AnonShape_00757D90_5427B306 *param_1)
       *puVar3 = pbVar5;
       puVar3[1] = iVar4;
       if (iVar4 == 0) {
+        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
         iVar4 = (*(code *)puVar3[3])(param_1);
         if (iVar4 == 0) {
           return 0;
@@ -42,6 +44,7 @@ undefined4 FUN_00757d90(AnonShape_00757D90_5427B306 *param_1)
     }
     do {
       if (iVar4 == 0) {
+        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
         iVar4 = (*(code *)puVar3[3])(param_1);
         if (iVar4 == 0) {
           return 0;
@@ -59,6 +62,7 @@ undefined4 FUN_00757d90(AnonShape_00757D90_5427B306 *param_1)
     *puVar3 = pbVar5;
     puVar3[1] = iVar4;
   }
+  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   if (*(int *)(param_1->field_01A6 + 0x5c) != 0) {
     *(undefined4 *)(param_1->field_01A6 + 0x5c) = 0;
   }

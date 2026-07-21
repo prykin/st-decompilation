@@ -5,7 +5,7 @@ undefined4 __fastcall FUN_00639990(AnonShape_00639990_2135AB0A *param_1)
   undefined1 *puVar1;
   int iVar2;
   undefined4 uVar3;
-  
+
   if (param_1->field_026F < 2) {
     puVar1 = &param_1->field_0x1d5;
     iVar2 = STT3DSprC::LoadSequence((STT3DSprC *)puVar1,0xd,DAT_00806774,s_trmbomb_007d1d9c,0x1d);

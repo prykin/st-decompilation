@@ -3,7 +3,7 @@ void FUN_006b0020(uint *param_1,int *param_2)
 
 {
   uint *puVar1;
-  
+
   if (param_2 != (int *)0x0) {
     *param_2 = 0;
   }

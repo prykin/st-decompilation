@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Artem\TLO_tele.cpp
@@ -17,8 +19,6 @@ int __thiscall TLOBaseTy::teleNone(TLOBaseTy *this)
   undefined *puVar8;
   int iVar9;
   int iVar10;
-  undefined4 unaff_ESI;
-  void *unaff_EDI;
   int iVar11;
   uint uVar12;
   InternalExceptionFrame local_64;
@@ -29,11 +29,11 @@ int __thiscall TLOBaseTy::teleNone(TLOBaseTy *this)
   short local_10 [2];
   short local_c [2];
   void *local_8;
-  
+
   local_64.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_64;
   local_20 = (STJellyGunC *)this;
-  iVar6 = Library::MSVCRT::__setjmp3(local_64.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar6 = Library::MSVCRT::__setjmp3(local_64.jumpBuffer,0);
   this_00 = local_20;
   if (iVar6 != 0) {
     g_currentExceptionFrame = local_64.previous;
@@ -43,9 +43,7 @@ int __thiscall TLOBaseTy::teleNone(TLOBaseTy *this)
       RaiseInternalException(iVar6,0,s_E____titans_Artem_TLO_tele_cpp_007c153c,0x1d6);
       return iVar6;
     }
-    pcVar4 = (code *)swi(3);
-    iVar6 = (*pcVar4)();
-    return iVar6;
+    STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   switch(*(undefined4 *)((int)&local_20[1].field_01D5 + 3)) {
   case 1:
@@ -112,9 +110,7 @@ int __thiscall TLOBaseTy::teleNone(TLOBaseTy *this)
         g_currentExceptionFrame = local_64.previous;
         return 0;
       }
-      pcVar4 = (code *)swi(3);
-      iVar6 = (*pcVar4)();
-      return iVar6;
+      STDebugBreak(); /* noreturn in standalone pseudocode */
     }
     if (iVar6 == 0) {
       iVar10 = (int)this_00->field_0045;

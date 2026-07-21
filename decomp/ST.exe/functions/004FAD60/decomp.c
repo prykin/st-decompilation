@@ -6,7 +6,7 @@ void __thiscall FUN_004fad60(void *this,uint param_1,uint param_2)
   uint uVar2;
   int iVar3;
   uint uVar4;
-  
+
   iVar3 = *(int *)((int)this + 0x4c);
   iVar1 = *(int *)((int)this + 0xa4);
   if (*(short *)((int)this + 0x23f) != 2) {

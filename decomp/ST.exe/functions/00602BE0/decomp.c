@@ -7,12 +7,13 @@ void __fastcall FUN_00602be0(AnonShape_00602BE0_B1CC517D *param_1)
   undefined4 *puVar3;
   int local_c;
   int local_8;
-  
+
   if (((int)param_1->field_039B < 0) && (iVar2 = thunk_FUN_006029c0(), iVar2 == 0)) {
     return;
   }
   if (param_1->field_036E == 2) {
     if (param_1->field_037A == '\x01') {
+      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
       FUN_006e9350(param_1->field_0211,param_1->field_01ED,
                    *(uint *)(DAT_00806724 + 0x30 + param_1->field_0397 * 4),
                    (int)*(short *)(DAT_00806724 + 0x2c));
@@ -61,6 +62,7 @@ void __fastcall FUN_00602be0(AnonShape_00602BE0_B1CC517D *param_1)
       param_1->field_037A = 0;
       return;
     }
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
     (**(code **)(*(int *)param_1 + 0xd8))();
     if (param_1->field_037A == '\0') {
       thunk_FUN_004ad460(&param_1->field_0x1d5,0);

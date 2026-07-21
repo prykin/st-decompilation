@@ -4,7 +4,7 @@
    Recovered source file: E:\__titans\ai\ai_interp.cpp
    Diagnostic line evidence: 338 (metadata/report site, not the function definition)
    [STSourceProvenanceApplier end]
-   
+
    [STHiddenThisApplier] Anonymous hidden receiver recovered as
    /SubmarineTitans/Recovered/HiddenThis/AnonReceiver_0064A970.
    Evidence: incoming_receiver_captures=1; receiver_accesses=37; incoming_edx_uses=0; calls=1;
@@ -17,8 +17,8 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0064A970::FUN_0066acc0
 
 {
   byte bVar1;
-  AnonReceiver_0064A970 *this_00;
   bool bVar2;
+  AnonReceiver_0064A970 *this_00;
   char cVar3;
   short sVar4;
   short sVar5;
@@ -39,15 +39,12 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0064A970::FUN_0066acc0
   Global_sub_006777D0_param_1Enum GVar20;
   undefined4 uVar21;
   uint *puVar22;
-  undefined3 extraout_var;
   AnonReceiver_0065DA50 *this_01;
   char *pcVar23;
   AnonShape_0065E360_B94C37CB *pAVar24;
   char *pcVar25;
   uint uVar26;
-  undefined4 unaff_ESI;
   AiFltClassTy **ppAVar27;
-  void *unaff_EDI;
   undefined4 *puVar28;
   undefined8 uVar29;
   undefined *puVar30;
@@ -140,12 +137,12 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0064A970::FUN_0066acc0
   undefined4 local_10;
   char *local_c;
   AiFltClassTy *local_8;
-  
+
   local_14 = (uint *)0x0;
   local_260.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_260;
   local_64 = this;
-  iVar11 = Library::MSVCRT::__setjmp3(local_260.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar11 = Library::MSVCRT::__setjmp3(local_260.jumpBuffer,0);
   this_00 = local_64;
   if (iVar11 != 0) {
     g_currentExceptionFrame = local_260.previous;
@@ -177,8 +174,8 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0064A970::FUN_0066acc0
     if (iVar11 == 0x7f6) {
       local_8 = (AiFltClassTy *)0x0;
       do {
-        if ((param_1[(int)&local_8->field_0x0] != '\x04') &&
-           (param_1[(int)&local_8->field_0x0] != '\x01')) {
+        if ((param_1[(int)&local_8->vtable] != '\x04') && (param_1[(int)&local_8->vtable] != '\x01')
+           ) {
           pcVar25 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
           if (pcVar25 != (char *)0x0) {
             Library::MSVCRT::_strncpy(&this_00->field_0x4,pcVar25,0x7f);
@@ -200,8 +197,8 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0064A970::FUN_0066acc0
       if (4 < param_2) {
         local_8 = (AiFltClassTy *)0x14;
         do {
-          if ((param_1[(int)&local_8->field_0x0] != '\x04') &&
-             (param_1[(int)&local_8->field_0x0] != '\x01')) {
+          if ((param_1[(int)&local_8->vtable] != '\x04') &&
+             (param_1[(int)&local_8->vtable] != '\x01')) {
             pcVar25 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
             if (pcVar25 != (char *)0x0) {
               Library::MSVCRT::_strncpy(&this_00->field_0x4,pcVar25,0x7f);
@@ -269,8 +266,8 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0064A970::FUN_0066acc0
         if (0 < param_2) {
           local_8 = (AiFltClassTy *)0x0;
           do {
-            if ((param_1[(int)&local_8->field_0x0] != '\x04') &&
-               (param_1[(int)&local_8->field_0x0] != '\x01')) {
+            if ((param_1[(int)&local_8->vtable] != '\x04') &&
+               (param_1[(int)&local_8->vtable] != '\x01')) {
               pcVar25 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
               if (pcVar25 != (char *)0x0) {
                 Library::MSVCRT::_strncpy(&this_00->field_0x4,pcVar25,0x7f);
@@ -558,7 +555,7 @@ LAB_0066bdcc:
                   pAVar13 = thunk_FUN_004357f0((char)local_50[0]);
                 }
                 if (pAVar13 != (AiPlrClassTy *)0x0) {
-                  iVar11 = (**(code **)(*(int *)&pAVar13->field_0x1c + 0x2c))(local_10);
+                  iVar11 = (*pAVar13->vtable_at_1c->vfunc_2C)(local_10);
                   local_c = (char *)(uint)(iVar11 == 0);
                   local_14 = Library::DKW::LIB::FUN_006aac10(4);
                   *local_14 = (uint)local_c;
@@ -667,7 +664,7 @@ cf_common_exit_00670456:
           pAVar13 = thunk_FUN_004357f0((char)local_50[0]);
         }
         if (pAVar13 != (AiPlrClassTy *)0x0) {
-          local_c = (char *)(**(code **)(*(int *)&pAVar13->field_0x1c + 0x1c))(local_10);
+          local_c = (char *)(*pAVar13->vtable_at_1c->vfunc_1C)(local_10);
           local_14 = Library::DKW::LIB::FUN_006aac10(4);
           *local_14 = (uint)local_c;
           goto cf_common_exit_00670431;
@@ -740,7 +737,7 @@ LAB_0066b1fb:
               pAVar13 = thunk_FUN_004357f0((char)local_50[0]);
             }
             if (pAVar13 != (AiPlrClassTy *)0x0) {
-              local_c = (char *)(**(code **)(*(int *)&pAVar13->field_0x1c + 0x14))();
+              local_c = (char *)(*pAVar13->vtable_at_1c->vfunc_14)();
               local_14 = Library::DKW::LIB::FUN_006aac10(4);
               *local_14 = (uint)local_c;
               break;
@@ -818,8 +815,8 @@ joined_r0x0066b1d2:
           if (0 < param_2) {
             local_8 = (AiFltClassTy *)0x0;
             do {
-              if ((param_1[(int)&local_8->field_0x0] != '\x04') &&
-                 (param_1[(int)&local_8->field_0x0] != '\x01')) {
+              if ((param_1[(int)&local_8->vtable] != '\x04') &&
+                 (param_1[(int)&local_8->vtable] != '\x01')) {
                 pcVar25 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
                 if (pcVar25 != (char *)0x0) {
                   Library::MSVCRT::_strncpy(&this_00->field_0x4,pcVar25,0x7f);
@@ -868,8 +865,8 @@ joined_r0x0066b1d2:
       if (0 < param_2) {
         local_8 = (AiFltClassTy *)0x0;
         do {
-          if ((param_1[(int)&local_8->field_0x0] != '\x04') &&
-             (param_1[(int)&local_8->field_0x0] != '\x01')) {
+          if ((param_1[(int)&local_8->vtable] != '\x04') &&
+             (param_1[(int)&local_8->vtable] != '\x01')) {
             pcVar25 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
             if (pcVar25 != (char *)0x0) {
               Library::MSVCRT::_strncpy(&this_00->field_0x4,pcVar25,0x7f);
@@ -913,8 +910,8 @@ LAB_0066bb5e:
       if (0 < param_2) {
         local_8 = (AiFltClassTy *)0x0;
         do {
-          if ((param_1[(int)&local_8->field_0x0] != '\x04') &&
-             (param_1[(int)&local_8->field_0x0] != '\x01')) {
+          if ((param_1[(int)&local_8->vtable] != '\x04') &&
+             (param_1[(int)&local_8->vtable] != '\x01')) {
             pcVar25 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
             if (pcVar25 != (char *)0x0) {
               Library::MSVCRT::_strncpy(&this_00->field_0x4,pcVar25,0x7f);
@@ -956,8 +953,8 @@ LAB_0066bff3:
       if (0 < param_2) {
         local_8 = (AiFltClassTy *)0x0;
         do {
-          if ((param_1[(int)&local_8->field_0x0] != '\x04') &&
-             (param_1[(int)&local_8->field_0x0] != '\x01')) {
+          if ((param_1[(int)&local_8->vtable] != '\x04') &&
+             (param_1[(int)&local_8->vtable] != '\x01')) {
             pcVar25 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
             if (pcVar25 != (char *)0x0) {
               Library::MSVCRT::_strncpy(&this_00->field_0x4,pcVar25,0x7f);
@@ -1000,8 +997,8 @@ LAB_0066bff3:
       if (0 < param_2) {
         local_8 = (AiFltClassTy *)0x0;
         do {
-          if ((param_1[(int)&local_8->field_0x0] != '\x04') &&
-             (param_1[(int)&local_8->field_0x0] != '\x01')) {
+          if ((param_1[(int)&local_8->vtable] != '\x04') &&
+             (param_1[(int)&local_8->vtable] != '\x01')) {
             pcVar25 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
             if (pcVar25 != (char *)0x0) {
               Library::MSVCRT::_strncpy(&this_00->field_0x4,pcVar25,0x7f);
@@ -1044,8 +1041,8 @@ LAB_0066bff3:
       if (0 < param_2) {
         local_8 = (AiFltClassTy *)0x0;
         do {
-          if ((param_1[(int)&local_8->field_0x0] != '\x04') &&
-             (param_1[(int)&local_8->field_0x0] != '\x01')) {
+          if ((param_1[(int)&local_8->vtable] != '\x04') &&
+             (param_1[(int)&local_8->vtable] != '\x01')) {
             pcVar25 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
             if (pcVar25 != (char *)0x0) {
               Library::MSVCRT::_strncpy(&this_00->field_0x4,pcVar25,0x7f);
@@ -1114,8 +1111,8 @@ LAB_0066bff3:
       if (0 < param_2) {
         local_8 = (AiFltClassTy *)0x0;
         do {
-          if ((param_1[(int)&local_8->field_0x0] != '\x04') &&
-             (param_1[(int)&local_8->field_0x0] != '\x01')) {
+          if ((param_1[(int)&local_8->vtable] != '\x04') &&
+             (param_1[(int)&local_8->vtable] != '\x01')) {
             pcVar25 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
             if (pcVar25 != (char *)0x0) {
               Library::MSVCRT::_strncpy(&this_00->field_0x4,pcVar25,0x7f);
@@ -1181,8 +1178,8 @@ LAB_0066bff3:
     case 0x7f0:
       local_8 = (AiFltClassTy *)0x0;
       do {
-        if ((param_1[(int)&local_8->field_0x0] != '\x04') &&
-           (param_1[(int)&local_8->field_0x0] != '\x01')) {
+        if ((param_1[(int)&local_8->vtable] != '\x04') && (param_1[(int)&local_8->vtable] != '\x01')
+           ) {
           pcVar25 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
           if (pcVar25 != (char *)0x0) {
             Library::MSVCRT::_strncpy(&this_00->field_0x4,pcVar25,0x7f);
@@ -1204,8 +1201,8 @@ LAB_0066bff3:
       if (3 < param_2) {
         local_8 = (AiFltClassTy *)0xf;
         do {
-          if ((param_1[(int)&local_8->field_0x0] != '\x04') &&
-             (param_1[(int)&local_8->field_0x0] != '\x01')) {
+          if ((param_1[(int)&local_8->vtable] != '\x04') &&
+             (param_1[(int)&local_8->vtable] != '\x01')) {
             pcVar25 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
             if (pcVar25 != (char *)0x0) {
               Library::MSVCRT::_strncpy(&this_00->field_0x4,pcVar25,0x7f);
@@ -1276,8 +1273,8 @@ cf_common_exit_0066DF5E:
       if (0 < param_2) {
         local_8 = (AiFltClassTy *)0x0;
         do {
-          if ((param_1[(int)&local_8->field_0x0] != '\x04') &&
-             (param_1[(int)&local_8->field_0x0] != '\x01')) {
+          if ((param_1[(int)&local_8->vtable] != '\x04') &&
+             (param_1[(int)&local_8->vtable] != '\x01')) {
             pcVar25 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
             if (pcVar25 != (char *)0x0) {
               Library::MSVCRT::_strncpy(&this_00->field_0x4,pcVar25,0x7f);
@@ -1308,7 +1305,7 @@ cf_common_exit_0066DF5E:
         local_8 = (AiFltClassTy *)local_50;
         do {
           local_18 = pcVar25;
-          puVar18 = (undefined4 *)thunk_FUN_0043e420(local_4f0,*(char *)local_8);
+          puVar18 = (undefined4 *)thunk_FUN_0043e420(local_4f0,*(char *)&local_8->vtable);
           pcVar25 = local_c;
           puVar28 = local_19c;
           for (iVar11 = 0x4e; iVar11 != 0; iVar11 = iVar11 + -1) {
@@ -1389,8 +1386,8 @@ cf_continue_loop_0066CACD:
       if (0 < param_2) {
         local_8 = (AiFltClassTy *)0x0;
         do {
-          if ((param_1[(int)&local_8->field_0x0] != '\x04') &&
-             (param_1[(int)&local_8->field_0x0] != '\x01')) {
+          if ((param_1[(int)&local_8->vtable] != '\x04') &&
+             (param_1[(int)&local_8->vtable] != '\x01')) {
             pcVar25 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
             if (pcVar25 != (char *)0x0) {
               Library::MSVCRT::_strncpy(&this_00->field_0x4,pcVar25,0x7f);
@@ -1421,7 +1418,7 @@ cf_continue_loop_0066CACD:
         local_8 = (AiFltClassTy *)local_50;
         do {
           local_18 = pcVar25;
-          puVar18 = (undefined4 *)thunk_FUN_0043e420(local_3b8,*(char *)local_8);
+          puVar18 = (undefined4 *)thunk_FUN_0043e420(local_3b8,*(char *)&local_8->vtable);
           pcVar25 = local_c;
           puVar28 = local_19c;
           for (iVar11 = 0x4e; iVar11 != 0; iVar11 = iVar11 + -1) {
@@ -1502,8 +1499,8 @@ cf_continue_loop_0066CD4A:
       if (0 < param_2) {
         local_8 = (AiFltClassTy *)0x0;
         do {
-          if ((param_1[(int)&local_8->field_0x0] != '\x04') &&
-             (param_1[(int)&local_8->field_0x0] != '\x01')) {
+          if ((param_1[(int)&local_8->vtable] != '\x04') &&
+             (param_1[(int)&local_8->vtable] != '\x01')) {
             pcVar25 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
             if (pcVar25 != (char *)0x0) {
               Library::MSVCRT::_strncpy(&this_00->field_0x4,pcVar25,0x7f);
@@ -1534,7 +1531,7 @@ cf_continue_loop_0066CD4A:
         local_8 = (AiFltClassTy *)local_50;
         do {
           local_18 = pcVar25;
-          puVar18 = (undefined4 *)thunk_FUN_0043e420(local_628,*(char *)local_8);
+          puVar18 = (undefined4 *)thunk_FUN_0043e420(local_628,*(char *)&local_8->vtable);
           pcVar25 = local_c;
           puVar28 = local_19c;
           for (iVar11 = 0x4e; iVar11 != 0; iVar11 = iVar11 + -1) {
@@ -1615,8 +1612,8 @@ cf_continue_loop_0066CFCA:
       if (0 < param_2) {
         local_8 = (AiFltClassTy *)0x0;
         do {
-          if ((param_1[(int)&local_8->field_0x0] != '\x04') &&
-             (param_1[(int)&local_8->field_0x0] != '\x01')) {
+          if ((param_1[(int)&local_8->vtable] != '\x04') &&
+             (param_1[(int)&local_8->vtable] != '\x01')) {
             pcVar25 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
             if (pcVar25 != (char *)0x0) {
               Library::MSVCRT::_strncpy(&this_00->field_0x4,pcVar25,0x7f);
@@ -1661,8 +1658,8 @@ cf_continue_loop_0066CFCA:
       if (0 < param_2) {
         local_8 = (AiFltClassTy *)0x0;
         do {
-          if ((param_1[(int)&local_8->field_0x0] != '\x04') &&
-             (param_1[(int)&local_8->field_0x0] != '\x01')) {
+          if ((param_1[(int)&local_8->vtable] != '\x04') &&
+             (param_1[(int)&local_8->vtable] != '\x01')) {
             pcVar25 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
             if (pcVar25 != (char *)0x0) {
               Library::MSVCRT::_strncpy(&this_00->field_0x4,pcVar25,0x7f);
@@ -1697,8 +1694,8 @@ cf_continue_loop_0066CFCA:
   case 0x7f7:
     local_8 = (AiFltClassTy *)0x0;
     do {
-      if ((param_1[(int)&local_8->field_0x0] != '\x04') &&
-         (param_1[(int)&local_8->field_0x0] != '\x01')) {
+      if ((param_1[(int)&local_8->vtable] != '\x04') && (param_1[(int)&local_8->vtable] != '\x01'))
+      {
         pcVar25 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
         if (pcVar25 != (char *)0x0) {
           Library::MSVCRT::_strncpy(&this_00->field_0x4,pcVar25,0x7f);
@@ -1720,8 +1717,8 @@ cf_continue_loop_0066CFCA:
     if (4 < param_2) {
       local_8 = (AiFltClassTy *)0x14;
       do {
-        if ((param_1[(int)&local_8->field_0x0] != '\x04') &&
-           (param_1[(int)&local_8->field_0x0] != '\x01')) {
+        if ((param_1[(int)&local_8->vtable] != '\x04') && (param_1[(int)&local_8->vtable] != '\x01')
+           ) {
           pcVar25 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
           if (pcVar25 != (char *)0x0) {
             Library::MSVCRT::_strncpy(&this_00->field_0x4,pcVar25,0x7f);
@@ -1802,8 +1799,8 @@ cf_continue_loop_0066CFCA:
     if (2 < param_2) {
       local_8 = (AiFltClassTy *)0xa;
       do {
-        if ((param_1[(int)&local_8->field_0x0] != '\x04') &&
-           (param_1[(int)&local_8->field_0x0] != '\x01')) {
+        if ((param_1[(int)&local_8->vtable] != '\x04') && (param_1[(int)&local_8->vtable] != '\x01')
+           ) {
           pcVar25 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
           if (pcVar25 != (char *)0x0) {
             Library::MSVCRT::_strncpy(&this_00->field_0x4,pcVar25,0x7f);
@@ -1851,8 +1848,8 @@ cf_continue_loop_0066CFCA:
     if (2 < param_2) {
       local_8 = (AiFltClassTy *)0xa;
       do {
-        if ((param_1[(int)&local_8->field_0x0] != '\x04') &&
-           (param_1[(int)&local_8->field_0x0] != '\x01')) {
+        if ((param_1[(int)&local_8->vtable] != '\x04') && (param_1[(int)&local_8->vtable] != '\x01')
+           ) {
           pcVar25 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
           if (pcVar25 != (char *)0x0) {
             Library::MSVCRT::_strncpy(&this_00->field_0x4,pcVar25,0x7f);
@@ -1883,8 +1880,8 @@ cf_continue_loop_0066CFCA:
   case 0x7fa:
     local_8 = (AiFltClassTy *)0x0;
     do {
-      if ((param_1[(int)&local_8->field_0x0] != '\x04') &&
-         (param_1[(int)&local_8->field_0x0] != '\x01')) {
+      if ((param_1[(int)&local_8->vtable] != '\x04') && (param_1[(int)&local_8->vtable] != '\x01'))
+      {
         pcVar25 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
         if (pcVar25 != (char *)0x0) {
           Library::MSVCRT::_strncpy(&this_00->field_0x4,pcVar25,0x7f);
@@ -1906,8 +1903,8 @@ cf_continue_loop_0066CFCA:
     if (5 < param_2) {
       local_8 = (AiFltClassTy *)0x19;
       do {
-        if ((param_1[(int)&local_8->field_0x0] != '\x04') &&
-           (param_1[(int)&local_8->field_0x0] != '\x01')) {
+        if ((param_1[(int)&local_8->vtable] != '\x04') && (param_1[(int)&local_8->vtable] != '\x01')
+           ) {
           pcVar25 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
           if (pcVar25 != (char *)0x0) {
             Library::MSVCRT::_strncpy(&this_00->field_0x4,pcVar25,0x7f);
@@ -1974,8 +1971,8 @@ cf_continue_loop_0066CFCA:
     if (0 < param_2) {
       local_8 = (AiFltClassTy *)0x0;
       do {
-        if ((param_1[(int)&local_8->field_0x0] != '\x04') &&
-           (param_1[(int)&local_8->field_0x0] != '\x01')) {
+        if ((param_1[(int)&local_8->vtable] != '\x04') && (param_1[(int)&local_8->vtable] != '\x01')
+           ) {
           pcVar25 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
           if (pcVar25 != (char *)0x0) {
             Library::MSVCRT::_strncpy(&this_00->field_0x4,pcVar25,0x7f);
@@ -2008,8 +2005,8 @@ cf_common_exit_0066DCED:
     if (0 < param_2) {
       local_8 = (AiFltClassTy *)0x0;
       do {
-        if ((param_1[(int)&local_8->field_0x0] != '\x04') &&
-           (param_1[(int)&local_8->field_0x0] != '\x01')) {
+        if ((param_1[(int)&local_8->vtable] != '\x04') && (param_1[(int)&local_8->vtable] != '\x01')
+           ) {
           pcVar25 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
           if (pcVar25 != (char *)0x0) {
             Library::MSVCRT::_strncpy(&this_00->field_0x4,pcVar25,0x7f);
@@ -2159,8 +2156,8 @@ cf_common_exit_0066DCED:
     if (2 < param_2) {
       local_8 = (AiFltClassTy *)0xa;
       do {
-        if ((param_1[(int)&local_8->field_0x0] != '\x04') &&
-           (param_1[(int)&local_8->field_0x0] != '\x01')) {
+        if ((param_1[(int)&local_8->vtable] != '\x04') && (param_1[(int)&local_8->vtable] != '\x01')
+           ) {
           pcVar25 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
           if (pcVar25 != (char *)0x0) {
             Library::MSVCRT::_strncpy(&this_00->field_0x4,pcVar25,0x7f);
@@ -2250,8 +2247,8 @@ cf_common_exit_0066DCED:
     if (2 < param_2) {
       local_8 = (AiFltClassTy *)0xa;
       do {
-        if ((param_1[(int)&local_8->field_0x0] != '\x04') &&
-           (param_1[(int)&local_8->field_0x0] != '\x01')) {
+        if ((param_1[(int)&local_8->vtable] != '\x04') && (param_1[(int)&local_8->vtable] != '\x01')
+           ) {
           pcVar25 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
           if (pcVar25 != (char *)0x0) {
             Library::MSVCRT::_strncpy(&this_00->field_0x4,pcVar25,0x7f);
@@ -2331,8 +2328,8 @@ cf_common_exit_0066DCED:
     if (1 < param_2) {
       local_8 = (AiFltClassTy *)0x5;
       do {
-        if ((param_1[(int)&local_8->field_0x0] != '\x04') &&
-           (param_1[(int)&local_8->field_0x0] != '\x01')) {
+        if ((param_1[(int)&local_8->vtable] != '\x04') && (param_1[(int)&local_8->vtable] != '\x01')
+           ) {
           pcVar25 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
           if (pcVar25 != (char *)0x0) {
             Library::MSVCRT::_strncpy(&this_00->field_0x4,pcVar25,0x7f);
@@ -2367,6 +2364,7 @@ cf_common_exit_0066DCED:
         ;
         (*this_00->vtable->slot_20)(iVar11,(int)local_60);
         (*this_00->vtable->slot_20)(local_8,(int)local_5e);
+        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
         (*this_00->vtable->slot_20)(local_c,(int)local_28._2_2_);
       }
       if (-1 < iVar15) {
@@ -2390,8 +2388,8 @@ cf_common_exit_0066DCED:
     if (1 < param_2) {
       local_8 = (AiFltClassTy *)0x5;
       do {
-        if ((param_1[(int)&local_8->field_0x0] != '\x04') &&
-           (param_1[(int)&local_8->field_0x0] != '\x01')) {
+        if ((param_1[(int)&local_8->vtable] != '\x04') && (param_1[(int)&local_8->vtable] != '\x01')
+           ) {
           pcVar25 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
           if (pcVar25 != (char *)0x0) {
             Library::MSVCRT::_strncpy(&this_00->field_0x4,pcVar25,0x7f);
@@ -2426,8 +2424,11 @@ cf_common_exit_0066DCED:
         STFishC::sub_004162B0
                   (g_sTFish_00811984,(undefined2 *)((int)&local_30 + 2),
                    (undefined2 *)((int)&local_24 + 2),(undefined2 *)((int)&local_1c + 2));
+        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
         (*this_00->vtable->slot_20)(iVar11,(int)local_30._2_2_);
+        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
         (*this_00->vtable->slot_20)(local_8,(int)local_24._2_2_);
+        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
         (*this_00->vtable->slot_20)(local_c,(int)local_1c._2_2_);
       }
       if (-1 < iVar15) {
@@ -2459,8 +2460,8 @@ cf_common_exit_0066DCED:
     if (2 < param_2) {
       local_8 = (AiFltClassTy *)0xa;
       do {
-        if ((param_1[(int)&local_8->field_0x0] != '\x04') &&
-           (param_1[(int)&local_8->field_0x0] != '\x01')) {
+        if ((param_1[(int)&local_8->vtable] != '\x04') && (param_1[(int)&local_8->vtable] != '\x01')
+           ) {
           pcVar25 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
           if (pcVar25 != (char *)0x0) {
             Library::MSVCRT::_strncpy(&this_00->field_0x4,pcVar25,0x7f);
@@ -2505,8 +2506,11 @@ cf_common_exit_0066DCED:
           STFishC::sub_004162B0
                     (g_sTFish_00811984,(undefined2 *)((int)&local_2c + 2),
                      (undefined2 *)((int)&local_18 + 2),(undefined2 *)((int)&local_10 + 2));
+          /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
           (*this_00->vtable->slot_20)(iVar11,(int)local_2c._2_2_);
+          /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
           (*this_00->vtable->slot_20)(local_8,(int)local_18._2_2_);
+          /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
           (*this_00->vtable->slot_20)(local_c,(int)local_10._2_2_);
         }
         if (-1 < iVar15) {
@@ -2535,8 +2539,8 @@ cf_common_exit_0066DCED:
     if (0 < param_2) {
       local_8 = (AiFltClassTy *)0x0;
       do {
-        if ((param_1[(int)&local_8->field_0x0] != '\x04') &&
-           (param_1[(int)&local_8->field_0x0] != '\x01')) {
+        if ((param_1[(int)&local_8->vtable] != '\x04') && (param_1[(int)&local_8->vtable] != '\x01')
+           ) {
           pcVar25 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
           if (pcVar25 != (char *)0x0) {
             Library::MSVCRT::_strncpy(&this_00->field_0x4,pcVar25,0x7f);
@@ -2588,8 +2592,8 @@ cf_common_exit_0066DCED:
     if (0 < param_2) {
       local_8 = (AiFltClassTy *)0x0;
       do {
-        if ((param_1[(int)&local_8->field_0x0] != '\x04') &&
-           (param_1[(int)&local_8->field_0x0] != '\x01')) {
+        if ((param_1[(int)&local_8->vtable] != '\x04') && (param_1[(int)&local_8->vtable] != '\x01')
+           ) {
           pcVar25 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
           if (pcVar25 != (char *)0x0) {
             Library::MSVCRT::_strncpy(&this_00->field_0x4,pcVar25,0x7f);
@@ -2620,8 +2624,8 @@ cf_common_exit_0066DCED:
     if (0 < param_2) {
       local_8 = (AiFltClassTy *)0x0;
       do {
-        if ((param_1[(int)&local_8->field_0x0] != '\x04') &&
-           (param_1[(int)&local_8->field_0x0] != '\x01')) {
+        if ((param_1[(int)&local_8->vtable] != '\x04') && (param_1[(int)&local_8->vtable] != '\x01')
+           ) {
           pcVar25 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
           if (pcVar25 != (char *)0x0) {
             Library::MSVCRT::_strncpy(&this_00->field_0x4,pcVar25,0x7f);
@@ -2702,8 +2706,8 @@ cf_common_exit_0066DCED:
     if (0 < param_2) {
       local_8 = (AiFltClassTy *)0x0;
       do {
-        if ((param_1[(int)&local_8->field_0x0] != '\x04') &&
-           (param_1[(int)&local_8->field_0x0] != '\x01')) {
+        if ((param_1[(int)&local_8->vtable] != '\x04') && (param_1[(int)&local_8->vtable] != '\x01')
+           ) {
           pcVar25 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
           if (pcVar25 != (char *)0x0) {
             Library::MSVCRT::_strncpy(&this_00->field_0x4,pcVar25,0x7f);
@@ -2736,9 +2740,9 @@ cf_common_exit_0066DCED:
     local_10 = (char *)0x0;
     iVar11 = thunk_FUN_00668f50(this_00,(char *)local_8,0,(uint *)local_50);
     if (iVar11 == 1) {
-      bVar2 = thunk_FUN_004e5f90((int)local_50[0],(uint)local_c);
+      iVar11 = thunk_FUN_004e5f90((int)local_50[0],(uint)local_c);
       local_14 = Library::DKW::LIB::FUN_006aac10(4);
-      *local_14 = (uint)(CONCAT31(extraout_var,bVar2) != 0);
+      *local_14 = (uint)(iVar11 != 0);
     }
     else {
       pcVar25 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
@@ -2757,8 +2761,8 @@ cf_common_exit_0066DCED:
     if (0 < param_2) {
       local_8 = (AiFltClassTy *)0x0;
       do {
-        if ((param_1[(int)&local_8->field_0x0] != '\x04') &&
-           (param_1[(int)&local_8->field_0x0] != '\x01')) {
+        if ((param_1[(int)&local_8->vtable] != '\x04') && (param_1[(int)&local_8->vtable] != '\x01')
+           ) {
           pcVar25 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
           if (pcVar25 != (char *)0x0) {
             Library::MSVCRT::_strncpy(&this_00->field_0x4,pcVar25,0x7f);
@@ -2790,7 +2794,7 @@ cf_common_exit_0066DCED:
       RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
     }
     local_14 = Library::DKW::LIB::FUN_006aac10(4);
-    *local_14 = *(uint *)(&DAT_007e481c + (int)(&local_8->field_0x0 + (int)local_c * 4) * 4);
+    *local_14 = *(uint *)(&DAT_007e481c + (int)(&local_8->vtable + (int)local_c) * 4);
     break;
   case 0x82a:
     if ((*param_1 != '\x04') && (*param_1 != '\x01')) {
@@ -2805,8 +2809,8 @@ cf_common_exit_0066DCED:
     if (1 < param_2) {
       local_8 = (AiFltClassTy *)0x5;
       do {
-        if ((param_1[(int)&local_8->field_0x0] != '\x06') &&
-           (param_1[(int)&local_8->field_0x0] != '\x03')) {
+        if ((param_1[(int)&local_8->vtable] != '\x06') && (param_1[(int)&local_8->vtable] != '\x03')
+           ) {
           pcVar25 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
           if (pcVar25 != (char *)0x0) {
             Library::MSVCRT::_strncpy(&this_00->field_0x4,pcVar25,0x7f);
@@ -2852,8 +2856,8 @@ cf_common_exit_0066DCED:
   case 0x82b:
     local_8 = (AiFltClassTy *)0x0;
     do {
-      if ((param_1[(int)&local_8->field_0x0] != '\x04') &&
-         (param_1[(int)&local_8->field_0x0] != '\x01')) {
+      if ((param_1[(int)&local_8->vtable] != '\x04') && (param_1[(int)&local_8->vtable] != '\x01'))
+      {
         pcVar25 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
         if (pcVar25 != (char *)0x0) {
           Library::MSVCRT::_strncpy(&this_00->field_0x4,pcVar25,0x7f);
@@ -2899,8 +2903,8 @@ cf_common_exit_0066DCED:
   case 0x82c:
     local_8 = (AiFltClassTy *)0x0;
     do {
-      if ((param_1[(int)&local_8->field_0x0] != '\x04') &&
-         (param_1[(int)&local_8->field_0x0] != '\x01')) {
+      if ((param_1[(int)&local_8->vtable] != '\x04') && (param_1[(int)&local_8->vtable] != '\x01'))
+      {
         pcVar25 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
         if (pcVar25 != (char *)0x0) {
           Library::MSVCRT::_strncpy(&this_00->field_0x4,pcVar25,0x7f);
@@ -2947,8 +2951,8 @@ cf_common_exit_0066DCED:
   case 0x82d:
     local_8 = (AiFltClassTy *)0x0;
     do {
-      if ((param_1[(int)&local_8->field_0x0] != '\x04') &&
-         (param_1[(int)&local_8->field_0x0] != '\x01')) {
+      if ((param_1[(int)&local_8->vtable] != '\x04') && (param_1[(int)&local_8->vtable] != '\x01'))
+      {
         pcVar25 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
         if (pcVar25 != (char *)0x0) {
           Library::MSVCRT::_strncpy(&this_00->field_0x4,pcVar25,0x7f);
@@ -2987,8 +2991,8 @@ cf_common_exit_0066DCED:
   case 0x82e:
     local_8 = (AiFltClassTy *)0x0;
     do {
-      if ((param_1[(int)&local_8->field_0x0] != '\x04') &&
-         (param_1[(int)&local_8->field_0x0] != '\x01')) {
+      if ((param_1[(int)&local_8->vtable] != '\x04') && (param_1[(int)&local_8->vtable] != '\x01'))
+      {
         pcVar25 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
         if (pcVar25 != (char *)0x0) {
           Library::MSVCRT::_strncpy(&this_00->field_0x4,pcVar25,0x7f);
@@ -3010,8 +3014,8 @@ cf_common_exit_0066DCED:
     if (6 < param_2) {
       local_8 = (AiFltClassTy *)0x1e;
       do {
-        if ((param_1[(int)&local_8->field_0x0] != '\x04') &&
-           (param_1[(int)&local_8->field_0x0] != '\x01')) {
+        if ((param_1[(int)&local_8->vtable] != '\x04') && (param_1[(int)&local_8->vtable] != '\x01')
+           ) {
           pcVar25 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
           if (pcVar25 != (char *)0x0) {
             Library::MSVCRT::_strncpy(&this_00->field_0x4,pcVar25,0x7f);
@@ -3073,8 +3077,8 @@ cf_common_exit_0066DCED:
   case 0x82f:
     local_8 = (AiFltClassTy *)0x0;
     do {
-      if ((param_1[(int)&local_8->field_0x0] != '\x04') &&
-         (param_1[(int)&local_8->field_0x0] != '\x01')) {
+      if ((param_1[(int)&local_8->vtable] != '\x04') && (param_1[(int)&local_8->vtable] != '\x01'))
+      {
         pcVar25 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
         if (pcVar25 != (char *)0x0) {
           Library::MSVCRT::_strncpy(&this_00->field_0x4,pcVar25,0x7f);
@@ -3152,8 +3156,8 @@ LAB_0066fbc1:
     if (0 < param_2) {
       local_8 = (AiFltClassTy *)0x0;
       do {
-        if ((param_1[(int)&local_8->field_0x0] != '\x04') &&
-           (param_1[(int)&local_8->field_0x0] != '\x01')) {
+        if ((param_1[(int)&local_8->vtable] != '\x04') && (param_1[(int)&local_8->vtable] != '\x01')
+           ) {
           pcVar25 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
           if (pcVar25 != (char *)0x0) {
             Library::MSVCRT::_strncpy(&this_00->field_0x4,pcVar25,0x7f);
@@ -3217,8 +3221,8 @@ LAB_0066fbc1:
     if (0 < param_2) {
       local_8 = (AiFltClassTy *)0x0;
       do {
-        if ((param_1[(int)&local_8->field_0x0] != '\x04') &&
-           (param_1[(int)&local_8->field_0x0] != '\x01')) {
+        if ((param_1[(int)&local_8->vtable] != '\x04') && (param_1[(int)&local_8->vtable] != '\x01')
+           ) {
           pcVar25 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
           if (pcVar25 != (char *)0x0) {
             Library::MSVCRT::_strncpy(&this_00->field_0x4,pcVar25,0x7f);
@@ -3281,8 +3285,8 @@ cf_common_exit_00670425:
     if (0 < param_2) {
       local_8 = (AiFltClassTy *)0x0;
       do {
-        if ((param_1[(int)&local_8->field_0x0] != '\x04') &&
-           (param_1[(int)&local_8->field_0x0] != '\x01')) {
+        if ((param_1[(int)&local_8->vtable] != '\x04') && (param_1[(int)&local_8->vtable] != '\x01')
+           ) {
           pcVar25 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
           if (pcVar25 != (char *)0x0) {
             Library::MSVCRT::_strncpy(&this_00->field_0x4,pcVar25,0x7f);

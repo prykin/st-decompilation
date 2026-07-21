@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\optpanel.cpp
@@ -13,34 +15,30 @@ undefined4 __thiscall OptPanelTy::CheckFiles(OptPanelTy *this,byte *param_1)
   byte *pbVar5;
   int iVar6;
   undefined4 uVar7;
-  undefined4 unaff_ESI;
   byte *pbVar8;
-  void *unaff_EDI;
   uint uVar9;
   bool bVar10;
   InternalExceptionFrame local_54;
   OptPanelTy *local_c;
   undefined4 local_8;
-  
+
   local_8 = 0;
   local_54.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_54;
   local_c = this;
-  iVar4 = Library::MSVCRT::__setjmp3(local_54.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar4 = Library::MSVCRT::__setjmp3(local_54.jumpBuffer,0);
   if (iVar4 != 0) {
     g_currentExceptionFrame = local_54.previous;
     iVar6 = ReportDebugMessage(s_E____titans_Andrey_optpanel_cpp_007c70a0,0x459,0,iVar4,
                                &DAT_007a4ccc,s_OptPanelTy__CheckFiles_007c72dc);
     if (iVar6 != 0) {
-      pcVar3 = (code *)swi(3);
-      uVar7 = (*pcVar3)();
-      return uVar7;
+      STDebugBreak(); /* noreturn in standalone pseudocode */
     }
     RaiseInternalException(iVar4,0,s_E____titans_Andrey_optpanel_cpp_007c70a0,0x459);
     return 0;
   }
   uVar9 = 0;
-  uVar2 = *(uint *)(local_c->field_01E9 + 8);
+  uVar2 = local_c->field_01E9->field_0008;
   if (uVar2 == 0) {
     g_currentExceptionFrame = local_54.previous;
     return local_8;
@@ -48,7 +46,7 @@ undefined4 __thiscall OptPanelTy::CheckFiles(OptPanelTy *this,byte *param_1)
   do {
     pbVar8 = param_1;
     if ((int)uVar9 < (int)uVar2) {
-      pbVar5 = *(byte **)(*(int *)(local_c->field_01E9 + 0x14) + uVar9 * 4);
+      pbVar5 = *(byte **)(local_c->field_01E9->field_0014 + uVar9 * 4);
     }
     else {
       pbVar5 = (byte *)0x0;

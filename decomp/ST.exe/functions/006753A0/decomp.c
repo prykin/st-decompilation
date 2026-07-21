@@ -8,7 +8,7 @@ int __cdecl FUN_006753a0(Global_sub_006753A0_param_1Enum param_1)
 
 {
   uint3 uVar1;
-  
+
   uVar1 = (uint3)(param_1 - CASE_32 >> 8);
   switch(param_1) {
   case CASE_32:
@@ -21,6 +21,7 @@ int __cdecl FUN_006753a0(Global_sub_006753A0_param_1Enum param_1)
   case CASE_4F:
   case CASE_50:
     return (uint)uVar1 << 8;
+  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
   case CASE_35:
   case CASE_37:
   case CASE_3C:
@@ -31,12 +32,14 @@ int __cdecl FUN_006753a0(Global_sub_006753A0_param_1Enum param_1)
   case CASE_4E:
   case CASE_52:
     return CONCAT31(uVar1,1);
+  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
   case CASE_36:
   case CASE_3D:
   case CASE_42:
   case CASE_43:
   case CASE_4D:
     return CONCAT31(uVar1,2);
+  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
   default:
     return CONCAT31(uVar1,0x7f);
   }

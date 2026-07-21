@@ -13,7 +13,7 @@ undefined4 __fastcall FUN_005eda50(AnonShape_005EDA50_4BDBD797 *param_1)
   int local_10;
   int local_c;
   int local_8;
-  
+
   uVar5 = 0;
   local_18 = 0;
   if (0 < param_1->field_005F) {
@@ -26,6 +26,7 @@ undefined4 __fastcall FUN_005eda50(AnonShape_005EDA50_4BDBD797 *param_1)
          (this = g_worldGrid.cells
                  [(int)g_worldGrid.planeStride * (int)sVar1 + (int)g_worldGrid.sizeX * (int)sVar2 +
                   (int)sVar3].objects[0], uVar5 = local_18, this != (STWorldObject *)0x0)))))) {
+      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
       if ((param_1->field_02E9 != '\0') &&
          (iVar4 = (**(code **)(*(int *)param_1 + 0x128))(), *(int *)&this->field_0x18 == iVar4)) {
         return 0;
@@ -34,6 +35,7 @@ undefined4 __fastcall FUN_005eda50(AnonShape_005EDA50_4BDBD797 *param_1)
       if ((((iVar4 == 0x52) || (iVar4 == 0x5f)) &&
           (iVar4 = thunk_FUN_004e1490((int)this), iVar4 != 0)) &&
          (*(int *)&this[0x23].field_0x1c == 0)) {
+        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
         iVar4 = (**(code **)(*(int *)param_1 + 0xc))();
         thunk_FUN_004ebcb0(this,*(int *)&param_1->field_0x18,iVar4);
         thunk_FUN_004ebfd0(this,&local_14,&local_10,&local_c,&local_8);

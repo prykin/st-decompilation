@@ -3,7 +3,7 @@ void __thiscall FUN_005804f0(void *this,undefined4 param_1,undefined2 param_2,un
 
 {
   uint uVar1;
-  
+
   *(undefined4 *)((int)this + 0x269) = param_1;
   uVar1 = *(uint *)((int)this + 0x255);
   *(undefined4 *)((int)this + 0x25d) = 1;

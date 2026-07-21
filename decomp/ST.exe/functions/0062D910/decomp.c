@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\nick\to_rab3m.cpp
@@ -16,8 +18,6 @@ STManRub3C::AddNewDock
   int *piVar5;
   uint uVar6;
   int iVar7;
-  undefined4 unaff_ESI;
-  void *unaff_EDI;
   InternalExceptionFrame local_7c;
   int local_38;
   undefined2 local_34;
@@ -29,22 +29,20 @@ STManRub3C::AddNewDock
   uint local_10;
   int local_c;
   STManRub3C *local_8;
-  
+
   *param_7 = 0;
   local_10 = 0xffffffff;
   local_7c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_7c;
   local_8 = this;
-  iVar3 = Library::MSVCRT::__setjmp3(local_7c.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar3 = Library::MSVCRT::__setjmp3(local_7c.jumpBuffer,0);
   pSVar2 = local_8;
   if (iVar3 != 0) {
     g_currentExceptionFrame = local_7c.previous;
     iVar7 = ReportDebugMessage(s_E____titans_nick_to_rab3m_cpp_007d13ec,0x1c8,0,iVar3,&DAT_007a4ccc,
                                s_STManRub3C__AddNewDock_007d1448);
     if (iVar7 != 0) {
-      pcVar1 = (code *)swi(3);
-      uVar6 = (*pcVar1)();
-      return uVar6;
+      STDebugBreak(); /* noreturn in standalone pseudocode */
     }
     RaiseInternalException(iVar3,0,s_E____titans_nick_to_rab3m_cpp_007d13ec,0x1ca);
     return 0xffff;
@@ -54,6 +52,7 @@ STManRub3C::AddNewDock
     *(uint **)(&pSVar2->field_0x50 + param_1 * 4) = puVar4;
   }
   else {
+    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     local_c = *(int *)(*(int *)(&local_8->field_0x50 + param_1 * 4) + 0xc);
     uVar6 = 0;
     if (0 < local_c) {

@@ -1,8 +1,10 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\cpanel4.cpp
    CPanelTy::Update4PanelWB
-   
+
    [STSwitchEnumApplier] Switch target field_0BF5 uses
    /SubmarineTitans/Recovered/Enums/CPanelTy_field_0BF5State. Cases:
    CASE_0=0;CASE_1=1;CASE_2=2;CASE_3=3;CASE_4=4;CASE_32=50;CASE_33=51;CASE_34=52;CASE_35=53;CASE_36=54;CASE_37=55;CASE_38=56;CASE_39=57;CASE_3A=58;CASE_3B=59;CASE_3C=60;CASE_3D=61;CASE_3E=62;CASE_3F=63;CASE_40=64;CASE_41=65;CASE_42=66;CASE_43=67;CASE_44=68;CASE_45=69;CASE_46=70;CASE_47=71;CASE_48=72;CASE_49=73;CASE_4A=74;CASE_4B=75;CASE_4C=76;CASE_4D=77;CASE_4E=78;CASE_4F=79;CASE_50=80;CASE_51=81;CASE_52=82;CASE_53=83;CASE_54=84;CASE_55=85;CASE_56=86;CASE_57=87;CASE_58=88;CASE_59=89;CASE_5A=90;CASE_5B=91;CASE_5C=92;CASE_5D=93;CASE_5E=94;CASE_61=97;CASE_62=98;CASE_63=99;CASE_64=100;CASE_67=103;CASE_68=104;CASE_6D=109;CASE_6E=110;CASE_6F=111;CASE_70=112;CASE_72=114;CASE_73=115;CASE_DD=221;CASE_DE=222;CASE_E0=224;CASE_FD=253;CASE_FE=254
@@ -14,7 +16,7 @@ void __thiscall CPanelTy::Update4PanelWB(CPanelTy *this)
   CPanelTy_field_0BF5State *pCVar1;
   CPanelTy_field_0BFAState CVar2;
   ushort *puVar3;
-  AnonShape_006B84D0_7C7D97C6 *pAVar4;
+  AnonShape_006B5B10_E0D06CF1 *pAVar4;
   code *pcVar5;
   CPanelTy *this_00;
   byte bVar6;
@@ -22,21 +24,22 @@ void __thiscall CPanelTy::Update4PanelWB(CPanelTy *this)
   int iVar8;
   uint uVar9;
   byte *pbVar10;
-  undefined4 extraout_EAX;
   undefined4 uVar11;
   char cVar12;
+  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined4 extraout_ECX;
+  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined4 extraout_ECX_00;
   char cVar13;
   int iVar14;
+  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined4 extraout_EDX;
+  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined4 extraout_EDX_00;
-  undefined4 unaff_ESI;
   CPanelTy_field_0BF5State *pCVar15;
   char *pcVar16;
   short *psVar17;
   int *piVar18;
-  void *unaff_EDI;
   CPanelTy_field_0BF5State *pCVar19;
   undefined4 *puVar20;
   short *psVar21;
@@ -77,11 +80,11 @@ void __thiscall CPanelTy::Update4PanelWB(CPanelTy *this)
   byte *local_10;
   uint local_c;
   byte *local_8;
-  
+
   local_c4.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_c4;
   local_80 = this;
-  iVar8 = Library::MSVCRT::__setjmp3(local_c4.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar8 = Library::MSVCRT::__setjmp3(local_c4.jumpBuffer,0);
   this_00 = local_80;
   if (iVar8 != 0) {
     g_currentExceptionFrame = local_c4.previous;
@@ -91,9 +94,7 @@ void __thiscall CPanelTy::Update4PanelWB(CPanelTy *this)
       RaiseInternalException(iVar8,0,s_E____titans_Andrey_cpanel4_cpp_007c2700,0x497);
       return;
     }
-    pcVar5 = (code *)swi(3);
-    (*pcVar5)();
-    return;
+    STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   pCVar1 = &local_80->field_0BF5;
   pCVar15 = pCVar1;
@@ -163,6 +164,7 @@ cf_common_exit_005091B9:
           }
           bVar6 = (byte)local_8 + 1;
           pcVar16 = pcVar16 + 1;
+          /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
           local_8 = (byte *)CONCAT31(local_8._1_3_,bVar6);
         } while (bVar6 < 6);
         thunk_FUN_004f1610(this_00,'\0');
@@ -198,17 +200,21 @@ cf_common_exit_005091B9:
       *(uint *)&this_00->field_0x2c = uVar9;
       FUN_006e6080(this_00,2,this_00->field_09C4,(undefined4 *)&this_00->field_0x18);
     }
+    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
     if (*(int *)&this_00->field_0xc12 == local_60._1_4_) {
-      iVar8 = (((AnonShape_006C7610_838EDECF *)this_00->field_0194)->field_0004 -
+      iVar8 = (((AnonShape_006B5B10_E0D06CF1 *)this_00->field_0194)->field_0004 -
               *(int *)(this_00->field_09ED + 2)) / 2;
       if (this_00->field_0C24 != local_4d[0]) {
-        FUN_006b4170((AnonShape_006C7610_838EDECF *)this_00->field_0194,0,iVar8 + 0x36,0x5d,7,0x21,0
+        FUN_006b4170((AnonShape_006B5B10_E0D06CF1 *)this_00->field_0194,0,iVar8 + 0x36,0x5d,7,0x21,0
                     );
         bVar6 = this_00->field_0C24;
+        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
         local_c = CONCAT31(local_c._1_3_,bVar6);
         cVar12 = (char)(((uint)bVar6 * 0x21) / 100);
+        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
         local_10 = (byte *)CONCAT31(local_10._1_3_,cVar12);
         if ((bVar6 != 0) && (cVar12 == '\0')) {
+          /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
           local_10 = (byte *)CONCAT31(local_10._1_3_,1);
         }
         if (bVar6 < 0x46) {
@@ -219,15 +225,16 @@ cf_common_exit_005091B9:
         }
         uVar9 = (uint)local_10 & 0xff;
         Library::DKW::WGR::FUN_006b55f0
-                  ((AnonShape_006B84D0_7C7D97C6 *)this_00->field_0194,0,iVar8 + 0x37,0x7e - uVar9,
+                  ((AnonShape_006B5B10_E0D06CF1 *)this_00->field_0194,0,iVar8 + 0x37,0x7e - uVar9,
                    (byte *)this_00->field_028A,0,iVar14,*(int *)(this_00->field_028A + 4) - uVar9,5,
                    uVar9);
         Library::DKW::WGR::FUN_006b55f0
-                  ((AnonShape_006B84D0_7C7D97C6 *)this_00->field_0194,0,iVar8 + 0x3f,0x5c,
+                  ((AnonShape_006B5B10_E0D06CF1 *)this_00->field_0194,0,iVar8 + 0x3f,0x5c,
                    (byte *)this_00->field_09ED,0,0x3f,0xc,0x75,0x11);
         Library::DKW::WGR::FUN_006b55f0
-                  ((AnonShape_006B84D0_7C7D97C6 *)this_00->field_0194,0,iVar8 + 0x3f,0x6c,
+                  ((AnonShape_006B5B10_E0D06CF1 *)this_00->field_0194,0,iVar8 + 0x3f,0x6c,
                    (byte *)this_00->field_09ED,0,0x3f,0x1c,0x44,0x13);
+        /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
         PaintDamageXY(this_00,this_00->field_0194,iVar8 + 0x41,0x5d,
                       CONCAT31((int3)((uint)extraout_EDX >> 8),this_00->field_0C24),0x2714);
         PaintCostsXY(this_00,this_00->field_0194,iVar8 + 0x41,0x68,this_00->field_0C1C,
@@ -318,6 +325,7 @@ cf_common_exit_005091B9:
         }
         bVar6 = (byte)local_8 + 1;
         pcVar16 = pcVar16 + 1;
+        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
         local_8 = (byte *)CONCAT31(local_8._1_3_,bVar6);
       } while (bVar6 < 6);
       thunk_FUN_004f1610(this_00,'\0');
@@ -366,20 +374,23 @@ cf_common_exit_005091B9:
     FUN_006e6080(this_00,2,this_00->field_030C,(undefined4 *)&this_00->field_0x18);
   }
   switch(this_00->field_0BF5) {
+  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
   case CASE_32:
   case CASE_40:
   case CASE_44:
   case CASE_49:
     if ((*(int *)&this_00->field_0xc12 == local_60._1_4_) && (this_00->field_0C26 == local_4b)) {
-      iVar8 = (((AnonShape_006C7610_838EDECF *)this_00->field_0194)->field_0004 -
+      iVar8 = (((AnonShape_006B5B10_E0D06CF1 *)this_00->field_0194)->field_0004 -
               *(int *)(this_00->field_09ED + 2)) / 2;
       if (this_00->field_0C24 != local_4d[0]) {
-        FUN_006b4170((AnonShape_006C7610_838EDECF *)this_00->field_0194,0,iVar8 + 0x36,0x5d,7,0x21,0
+        FUN_006b4170((AnonShape_006B5B10_E0D06CF1 *)this_00->field_0194,0,iVar8 + 0x36,0x5d,7,0x21,0
                     );
         bVar6 = this_00->field_0C24;
         cVar12 = (char)(((uint)bVar6 * 0x21) / 100);
+        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
         local_c = CONCAT31(local_c._1_3_,cVar12);
         if ((bVar6 != 0) && (cVar12 == '\0')) {
+          /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
           local_c = CONCAT31(local_c._1_3_,1);
         }
         if (bVar6 < 0x46) {
@@ -390,15 +401,16 @@ cf_common_exit_005091B9:
         }
         uVar9 = local_c & 0xff;
         Library::DKW::WGR::FUN_006b55f0
-                  ((AnonShape_006B84D0_7C7D97C6 *)this_00->field_0194,0,iVar8 + 0x37,0x7e - uVar9,
+                  ((AnonShape_006B5B10_E0D06CF1 *)this_00->field_0194,0,iVar8 + 0x37,0x7e - uVar9,
                    (byte *)this_00->field_028A,0,iVar14,*(int *)(this_00->field_028A + 4) - uVar9,5,
                    uVar9);
         Library::DKW::WGR::FUN_006b55f0
-                  ((AnonShape_006B84D0_7C7D97C6 *)this_00->field_0194,0,iVar8 + 0x3f,0x5c,
+                  ((AnonShape_006B5B10_E0D06CF1 *)this_00->field_0194,0,iVar8 + 0x3f,0x5c,
                    (byte *)this_00->field_09ED,0,0x3f,0xc,0x75,0x11);
         Library::DKW::WGR::FUN_006b55f0
-                  ((AnonShape_006B84D0_7C7D97C6 *)this_00->field_0194,0,iVar8 + 0x3f,0x6c,
+                  ((AnonShape_006B5B10_E0D06CF1 *)this_00->field_0194,0,iVar8 + 0x3f,0x6c,
                    (byte *)this_00->field_09ED,0,0x3f,0x1c,0x44,0x13);
+        /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
         PaintDamageXY(this_00,this_00->field_0194,iVar8 + 0x41,0x5d,
                       CONCAT31((int3)((uint)extraout_EDX_00 >> 8),this_00->field_0C24),0x2714);
         PaintCostsXY(this_00,this_00->field_0194,iVar8 + 0x41,0x68,this_00->field_0C1C,
@@ -415,8 +427,8 @@ cf_common_exit_005091B9:
              (((AnonShape_006B5B10_E0D06CF1 *)this_00->field_0194)->field_0004 -
              *(int *)(this_00->field_0A01 + 2)) / 2,0x37,'\x01',(byte *)this_00->field_0A01);
       uVar9 = (uint)(ushort)this_00->field_0C34;
-      LoadResourceString(0x2725,HINSTANCE_00807618);
-      wsprintfA((LPSTR)&DAT_0080f33a,s__1_s__0_d_007c286c,extraout_EAX,uVar9);
+      pcVar16 = LoadResourceString(0x2725,HINSTANCE_00807618);
+      wsprintfA((LPSTR)&DAT_0080f33a,s__1_s__0_d_007c286c,pcVar16,uVar9);
       ccFntTy::SetSurf(this_00->field_01B8,this_00->field_0194,0,0x56,0x39,0x6d,0x15);
       ccFntTy::WrTxt(this_00->field_01B8,&DAT_0080f33a,-2,-1,0,-1,-1);
       uVar9 = this_00->field_015C;
@@ -427,6 +439,7 @@ cf_common_exit_005091B9:
     }
     iVar8 = 0;
     goto LAB_00508b35;
+  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
   case CASE_33:
     if ((*(int *)&this_00->field_0xc12 == local_60._1_4_) && (this_00->field_0C16 == local_5b)) {
       iVar8 = 0x3a;
@@ -437,13 +450,16 @@ cf_common_exit_005091B9:
       iVar14 = (*(int *)(this_00->field_0194 + 4) - *(int *)(this_00->field_09ED + 2)) / 2;
       do {
         if (*local_8 != *local_10) {
-          FUN_006b4170((AnonShape_006C7610_838EDECF *)this_00->field_0194,0,iVar14 + 0x36,iVar8,7,
+          FUN_006b4170((AnonShape_006B5B10_E0D06CF1 *)this_00->field_0194,0,iVar14 + 0x36,iVar8,7,
                        0x21,0);
           bVar6 = *local_8;
+          /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
           local_1c = CONCAT31(local_1c._1_3_,bVar6);
           cVar12 = (char)(((uint)bVar6 * 0x21) / 100);
+          /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
           local_20 = CONCAT31(local_20._1_3_,cVar12);
           if ((bVar6 != 0) && (cVar12 == '\0')) {
+            /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
             local_20 = CONCAT31(local_20._1_3_,1);
           }
           if (bVar6 < 0x46) {
@@ -454,15 +470,16 @@ cf_common_exit_005091B9:
           }
           uVar9 = local_20 & 0xff;
           Library::DKW::WGR::FUN_006b55f0
-                    ((AnonShape_006B84D0_7C7D97C6 *)this_00->field_0194,0,iVar14 + 0x37,
+                    ((AnonShape_006B5B10_E0D06CF1 *)this_00->field_0194,0,iVar14 + 0x37,
                      (iVar8 - uVar9) + 0x21,(byte *)this_00->field_028A,0,local_14,
                      *(int *)(this_00->field_028A + 4) - uVar9,5,uVar9);
           Library::DKW::WGR::FUN_006b55f0
-                    ((AnonShape_006B84D0_7C7D97C6 *)this_00->field_0194,0,iVar14 + 0x3f,iVar8 + -1,
+                    ((AnonShape_006B5B10_E0D06CF1 *)this_00->field_0194,0,iVar14 + 0x3f,iVar8 + -1,
                      (byte *)this_00->field_09ED,0,0x3f,0xc,0x75,0x11);
           Library::DKW::WGR::FUN_006b55f0
-                    ((AnonShape_006B84D0_7C7D97C6 *)this_00->field_0194,0,iVar14 + 0x3f,iVar8 + 0xf,
+                    ((AnonShape_006B5B10_E0D06CF1 *)this_00->field_0194,0,iVar14 + 0x3f,iVar8 + 0xf,
                      (byte *)this_00->field_09ED,0,0x3f,0x1c,0x44,0x13);
+          /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
           PaintDamageXY(this_00,this_00->field_0194,iVar14 + 0x41,iVar8,
                         CONCAT31((int3)((uint)extraout_ECX >> 8),'d' - *local_8),0x36b1);
           PaintCostsXY(this_00,this_00->field_0194,iVar14 + 0x41,iVar8 + 0xb,*local_18,local_18[2],4
@@ -520,7 +537,7 @@ cf_common_exit_005091B9:
     uVar23 = this_00->field_0050;
     goto cf_common_exit_0050918D;
   case CASE_35:
-    iVar8 = (((AnonShape_006B84D0_7C7D97C6 *)this_00->field_0194)->field_0004 -
+    iVar8 = (((AnonShape_006B5B10_E0D06CF1 *)this_00->field_0194)->field_0004 -
             *(int *)(this_00->field_09ED + 2)) / 2;
     if (this_00->field_0C31 == local_40) {
       if (this_00->field_0C31 == '\0') {
@@ -541,7 +558,7 @@ cf_common_exit_005091B9:
       }
       if (this_00->field_0C33 == local_3e) goto cf_common_exit_00509192;
       Library::DKW::WGR::FUN_006b55f0
-                ((AnonShape_006B84D0_7C7D97C6 *)this_00->field_0194,0,iVar8 + 0x39,0x65,
+                ((AnonShape_006B5B10_E0D06CF1 *)this_00->field_0194,0,iVar8 + 0x39,0x65,
                  (byte *)this_00->field_09ED,0,0x39,0x15,0x4c,0x1b);
       PaintPerRes(this_00,iVar8);
       uVar9 = this_00->field_015C;
@@ -565,6 +582,7 @@ cf_common_exit_005091B9:
     if (0x28 < (byte)this_00->field_0C29) {
       this_00->field_0C29 = 0x28;
     }
+    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
     local_8 = (byte *)((uint)local_8._1_3_ << 8);
     if (this_00->field_0C29 != '\0') {
       do {
@@ -572,6 +590,7 @@ cf_common_exit_005091B9:
         DibPut((AnonShape_006B5B10_E0D06CF1 *)this_00->field_0194,
                iVar8 + 6 + ((uint)local_8 & 0xff) * 4,0x75,'\x01',pbVar10);
         bVar6 = (byte)local_8 + 1;
+        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
         local_8 = (byte *)CONCAT31(local_8._1_3_,bVar6);
       } while (bVar6 < (byte)this_00->field_0C29);
     }
@@ -605,6 +624,7 @@ cf_common_exit_0050918D:
   case CASE_3A:
     iVar8 = (*(int *)(this_00->field_0194 + 4) - *(int *)(this_00->field_09ED + 2)) / 2;
     if (this_00->field_0C3A != local_37) {
+      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
       local_8 = (byte *)((uint)local_8._1_3_ << 8);
       if (this_00->field_0C3A != '\0') {
         do {
@@ -613,6 +633,7 @@ cf_common_exit_0050918D:
           DibPut((AnonShape_006B5B10_E0D06CF1 *)this_00->field_0194,
                  iVar8 + 0x70 + ((uint)local_8 & 0xff) * 4,0x54,'\x01',pbVar10);
           bVar6 = (byte)local_8 + 1;
+          /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
           local_8 = (byte *)CONCAT31(local_8._1_3_,bVar6);
         } while (bVar6 < (byte)this_00->field_0C3A);
       }
@@ -642,6 +663,7 @@ cf_common_exit_0050918D:
           DibPut((AnonShape_006B5B10_E0D06CF1 *)this_00->field_0194,
                  iVar8 + 0x70 + ((uint)local_8 & 0xff) * 4,0x5f,'\x01',pbVar10);
           bVar6 = (byte)local_8 + 1;
+          /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
           local_8 = (byte *)CONCAT31(local_8._1_3_,bVar6);
         } while (bVar6 < (byte)this_00->field_0C3B);
       }
@@ -672,6 +694,7 @@ cf_common_exit_0050918D:
         DibPut((AnonShape_006B5B10_E0D06CF1 *)this_00->field_0194,iVar8 + 0xb + uVar9 * 4,0x76,
                '\x01',pbVar10);
         bVar6 = (byte)local_8 + 1;
+        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
         local_8 = (byte *)CONCAT31(local_8._1_3_,bVar6);
         uVar9 = (uint)bVar6;
       } while (uVar9 < local_c);
@@ -692,6 +715,7 @@ cf_common_exit_0050918D:
     goto cf_common_exit_00509192;
   case CASE_3C:
     cVar12 = this_00->field_0C3C;
+    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
     local_c = CONCAT31(local_c._1_3_,cVar12);
     if (local_35 != cVar12) {
       PaintCtrlObj(this_00,1);
@@ -700,11 +724,12 @@ cf_common_exit_0050918D:
       goto cf_common_exit_00509192;
     }
     puVar3 = this_00->field_09ED;
-    pAVar4 = (AnonShape_006B84D0_7C7D97C6 *)this_00->field_0194;
+    pAVar4 = (AnonShape_006B5B10_E0D06CF1 *)this_00->field_0194;
     iVar8 = (pAVar4->field_0004 - *(int *)(puVar3 + 2)) / 2;
     if (cVar12 == '\x01') {
       Library::DKW::WGR::FUN_006b55f0
                 (pAVar4,0,iVar8 + 0x39,0x65,(byte *)puVar3,0,0x39,0x15,0x4c,0x1b);
+      /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
       PaintDamageXY(this_00,this_00->field_0194,iVar8 + 0x39,0x65,
                     CONCAT31((int3)((uint)extraout_ECX_00 >> 8),this_00->field_0xc3d),0x2714);
       local_14 = 0;
@@ -738,6 +763,7 @@ cf_common_exit_0050918D:
                 (pAVar4,0,iVar8,0x71,(byte *)puVar3,0,0,0x21,*(int *)(puVar3 + 2),
                  *(int *)(puVar3 + 4) + -0x21);
       wsprintfA((LPSTR)&DAT_0080f33a,&DAT_007c1ae4,*(undefined4 *)&this_00->field_0xc3d);
+      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
       ccFntTy::SetSurf(this_00->field_01BC,this_00->field_0194,0,iVar8,0x71,
                        *(int *)(this_00->field_09ED + 2),*(int *)(this_00->field_09ED + 4) + -0x21);
       ccFntTy::WrStr(this_00->field_01BC,&DAT_0080f33a,-1,-1,0);

@@ -6,7 +6,7 @@ void __thiscall FUN_004d6890(void *this,AnonShape_004D6890_0C7826D6 *param_1)
   undefined1 uVar2;
   int iVar3;
   AnonShape_004D6890_0C7826D6 *pAVar4;
-  
+
   pAVar4 = param_1;
   for (iVar3 = 0xd; iVar3 != 0; iVar3 = iVar3 + -1) {
     *(undefined4 *)pAVar4 = 0;
@@ -19,6 +19,7 @@ void __thiscall FUN_004d6890(void *this,AnonShape_004D6890_0C7826D6 *param_1)
   uVar2 = *(undefined1 *)((int)this + 0x21d);
   param_1->field_0002 = 2;
   param_1->field_0001 = uVar2;
+  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
   uVar2 = (**(code **)(*(int *)this + 0x7c))();
   param_1->field_001B = uVar2;
   param_1->field_0003 = *(undefined4 *)((int)this + 0x259);

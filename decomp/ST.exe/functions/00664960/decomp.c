@@ -16,34 +16,56 @@ void __fastcall FUN_00664960(AiFltClassTy *param_1)
   short sVar9;
   int iVar10;
   short *psVar11;
+  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined2 extraout_var;
+  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   short extraout_var_00;
+  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined2 extraout_var_01;
+  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined2 extraout_var_02;
+  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined2 extraout_var_03;
   uint uVar12;
+  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined2 extraout_var_04;
+  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined2 extraout_var_05;
+  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined2 extraout_var_06;
   uint uVar13;
+  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined2 extraout_var_07;
   int iVar14;
+  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined2 extraout_var_08;
+  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined2 extraout_var_09;
+  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined2 extraout_var_10;
+  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined2 extraout_var_11;
+  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined2 extraout_var_12;
+  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined2 extraout_var_13;
+  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined2 extraout_var_14;
+  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined2 extraout_var_15;
   STGameObjC *this_00;
   undefined4 uVar15;
   undefined2 *puVar16;
+  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined4 extraout_EDX;
   int iVar17;
+  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined4 extraout_EDX_00;
+  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined4 extraout_EDX_01;
+  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined2 extraout_var_16;
+  /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
   int unaff_ESI;
   int iVar18;
   uint *puVar19;
@@ -86,7 +108,7 @@ void __fastcall FUN_00664960(AiFltClassTy *param_1)
   DArrayTy *local_10;
   uint local_c;
   AiPlrClassTy *local_8;
-  
+
   if ((param_1->field_008B != 0) &&
      ((uint)param_1->field_0280 < (uint)(*(int *)&param_1->field_0x8f + param_1->field_008B))) {
     return;
@@ -95,6 +117,7 @@ void __fastcall FUN_00664960(AiFltClassTy *param_1)
   local_8 = thunk_FUN_004357f0(param_1->field_0x24);
   iVar10 = SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00664540::thunk_FUN_00664540
                      ((AnonReceiver_00664540 *)param_1,local_44,&local_68);
+  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   uVar15 = extraout_EDX;
   while (-1 < iVar10) {
     switch(local_44[0]) {
@@ -103,33 +126,42 @@ void __fastcall FUN_00664960(AiFltClassTy *param_1)
     case 1:
       param_1->field_0x139 = (undefined1)local_3c;
       *(uint *)&param_1->field_0x13a =
+           /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
            CONCAT13(uStack_38,CONCAT12(local_3c._3_1_,CONCAT11(local_3c._2_1_,local_3c._1_1_)));
       *(ushort *)&param_1->field_0x13e = CONCAT11(uStack_36,uStack_37);
       *(ushort *)&param_1->field_0x140 = CONCAT11(uStack_34,uStack_35);
       *(uint *)&param_1->field_0x142 =
+           /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
            CONCAT13(uStack_2c,CONCAT12(uStack_2d,CONCAT11(uStack_2e,uStack_2f)));
       *(uint *)&param_1->field_0x146 =
+           /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
            CONCAT13(uStack_30,CONCAT12(uStack_31,CONCAT11(uStack_32,uStack_33)));
       *(undefined4 *)&param_1->field_0x14a = local_2b;
       break;
     case 2:
       param_1->field_0187 = (undefined1)local_3c;
+      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
       param_1->field_0188 =
            CONCAT13(uStack_38,CONCAT12(local_3c._3_1_,CONCAT11(local_3c._2_1_,local_3c._1_1_)));
+      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
       param_1->field_018C = CONCAT11(uStack_36,uStack_37);
       *(ushort *)&param_1->field_0x18e = CONCAT11(uStack_34,uStack_35);
       *(uint *)&param_1->field_0x190 =
+           /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
            CONCAT13(uStack_30,CONCAT12(uStack_31,CONCAT11(uStack_32,uStack_33)));
       break;
     case 3:
       param_1->field_0152 = (undefined1)local_3c;
+      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
       param_1->field_0153 =
            CONCAT13(uStack_38,CONCAT12(local_3c._3_1_,CONCAT11(local_3c._2_1_,local_3c._1_1_)));
       *(ushort *)&param_1->field_0x157 = CONCAT11(uStack_36,uStack_37);
       *(ushort *)&param_1->field_0x159 = CONCAT11(uStack_34,uStack_35);
       *(uint *)&param_1->field_0x15b =
+           /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
            CONCAT13(uStack_30,CONCAT12(uStack_31,CONCAT11(uStack_32,uStack_33)));
       *(uint *)&param_1->field_0x15f =
+           /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
            CONCAT13(uStack_2c,CONCAT12(uStack_2d,CONCAT11(uStack_2e,uStack_2f)));
       break;
     case 4:
@@ -148,18 +180,22 @@ void __fastcall FUN_00664960(AiFltClassTy *param_1)
     case 7:
       param_1->field_0163 = (undefined1)local_3c;
       *(uint *)&param_1->field_0x164 =
+           /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
            CONCAT13(uStack_38,CONCAT12(local_3c._3_1_,CONCAT11(local_3c._2_1_,local_3c._1_1_)));
       *(ushort *)&param_1->field_0x168 = CONCAT11(uStack_36,uStack_37);
       *(ushort *)&param_1->field_0x16a = CONCAT11(uStack_34,uStack_35);
       *(uint *)&param_1->field_0x16c =
+           /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
            CONCAT13(uStack_30,CONCAT12(uStack_31,CONCAT11(uStack_32,uStack_33)));
       *(uint *)&param_1->field_0x172 =
+           /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
            CONCAT13(uStack_2c,CONCAT12(uStack_2d,CONCAT11(uStack_2e,uStack_2f)));
       break;
     case 8:
       local_c = 0;
       local_4c = *(uint *)&param_1->field_022F->field_0xc;
       if (0 < (int)local_4c) {
+        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
         iVar10 = (int)CONCAT11(local_3c._1_1_,(undefined1)local_3c);
         do {
           if (local_c < local_4c) {
@@ -170,15 +206,19 @@ void __fastcall FUN_00664960(AiFltClassTy *param_1)
             psVar11 = (short *)0x0;
           }
           iVar17 = (int)psVar11[1];
+          /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
           local_50 = iVar10 + -1 + (int)CONCAT11(uStack_35,uStack_36);
           iVar14 = (int)*psVar11;
+          /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
           local_48 = (STGameObjC *)
                      (CONCAT11(local_3c._3_1_,local_3c._2_1_) + -1 +
                      (int)CONCAT11(uStack_33,uStack_34));
+          /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
           iVar10 = (int)CONCAT11(local_3c._1_1_,(undefined1)local_3c);
           local_10 = (DArrayTy *)(int)psVar11[3];
           local_58 = (int)psVar11[4];
           local_54 = iVar17 + -1 + local_58;
+          /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
           if (((iVar14 <= iVar10) && (iVar10 <= iVar14 + -1 + (int)local_10)) &&
              (((iVar17 <= CONCAT11(local_3c._3_1_,local_3c._2_1_) &&
                (((CONCAT11(local_3c._3_1_,local_3c._2_1_) <= local_54 && (iVar14 <= local_50)) &&
@@ -186,9 +226,12 @@ void __fastcall FUN_00664960(AiFltClassTy *param_1)
               ((iVar17 <= (int)local_48 && ((int)local_48 <= iVar17 + -1 + local_58))))))
           goto LAB_00665047;
           local_50 = iVar14 + -1 + (int)local_10;
+          /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
           iVar18 = (int)CONCAT11(local_3c._3_1_,local_3c._2_1_);
           local_54 = iVar17 + -1 + local_58;
+          /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
           local_48 = (STGameObjC *)(iVar18 + -1 + (int)CONCAT11(uStack_33,uStack_34));
+          /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
           if ((iVar10 <= iVar14) &&
              (((iVar3 = iVar10 + -1 + (int)CONCAT11(uStack_35,uStack_36), iVar14 <= iVar3 &&
                (iVar18 <= iVar17)) &&
@@ -214,12 +257,17 @@ void __fastcall FUN_00664960(AiFltClassTy *param_1)
       break;
     case 10:
       param_1->field_0x176 = (undefined1)local_3c;
+      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
       param_1->field_0177 = CONCAT11(local_3c._2_1_,local_3c._1_1_);
+      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
       param_1->field_0179 = CONCAT11(uStack_38,local_3c._3_1_);
       *(uint *)&param_1->field_0x17b =
+           /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
            CONCAT13(uStack_34,CONCAT12(uStack_35,CONCAT11(uStack_36,uStack_37)));
+      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
       param_1->field_017F = CONCAT13(uStack_30,CONCAT12(uStack_31,CONCAT11(uStack_32,uStack_33)));
       *(uint *)&param_1->field_0x183 =
+           /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
            CONCAT13(uStack_2c,CONCAT12(uStack_2d,CONCAT11(uStack_2e,uStack_2f)));
       break;
     case 0xb:
@@ -229,6 +277,7 @@ void __fastcall FUN_00664960(AiFltClassTy *param_1)
       *(ushort *)&param_1->field_0x105 = CONCAT11(uStack_36,uStack_37);
       *(undefined4 *)&param_1->field_0x111 = local_2b;
       *(uint *)&param_1->field_0x107 =
+           /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
            CONCAT13(uStack_32,CONCAT12(uStack_33,CONCAT11(uStack_34,uStack_35)));
       *(ushort *)&param_1->field_0x10b = CONCAT11(uStack_30,uStack_31);
       *(ushort *)&param_1->field_0x10d = CONCAT11(uStack_2e,uStack_2f);
@@ -236,18 +285,23 @@ void __fastcall FUN_00664960(AiFltClassTy *param_1)
       break;
     case 0xc:
       param_1->field_0x115 = (undefined1)local_3c;
+      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
       param_1->field_0116 =
            CONCAT13(uStack_38,CONCAT12(local_3c._3_1_,CONCAT11(local_3c._2_1_,local_3c._1_1_)));
       *(uint *)&param_1->field_0x11a =
+           /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
            CONCAT13(uStack_34,CONCAT12(uStack_35,CONCAT11(uStack_36,uStack_37)));
       break;
     case 0xd:
       param_1->field_0122 = (undefined1)local_3c;
       *(uint *)&param_1->field_0x129 =
+           /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
            CONCAT13(uStack_38,CONCAT12(local_3c._3_1_,CONCAT11(local_3c._2_1_,local_3c._1_1_)));
       *(uint *)&param_1->field_0x123 =
+           /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
            CONCAT13(uStack_34,CONCAT12(uStack_35,CONCAT11(uStack_36,uStack_37)));
       break;
+    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
     case 0xe:
       thunk_FUN_00675950(CONCAT13(local_3c._3_1_,
                                   CONCAT12(local_3c._2_1_,
@@ -268,6 +322,7 @@ void __fastcall FUN_00664960(AiFltClassTy *param_1)
           else {
             psVar11 = (short *)0x0;
           }
+          /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
           if ((((CONCAT11(local_3c._1_1_,(undefined1)local_3c) == *psVar11) &&
                (CONCAT11(local_3c._3_1_,local_3c._2_1_) == psVar11[1])) &&
               (CONCAT11(uStack_37,uStack_38) == psVar11[2])) &&
@@ -436,6 +491,7 @@ cf_common_join_00665024:
         if ((local_44[0] == 0) || (0x31 < local_44[0])) {
 switchD_006649d9_caseD_0:
           thunk_FUN_00664650(param_1,local_44[0]);
+          /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
           uVar15 = extraout_EDX_01;
           goto LAB_00665067;
         }
@@ -447,6 +503,7 @@ switchD_006649d9_caseD_0:
 LAB_00665047:
     iVar10 = SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00664540::thunk_FUN_00664540
                        ((AnonReceiver_00664540 *)param_1,local_44,&local_68);
+    /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
     uVar15 = extraout_EDX_00;
   }
 LAB_00665067:
@@ -466,6 +523,7 @@ LAB_00665067:
           }
 LAB_00666934:
           uVar7 = AiFltClassTy::sub_0065D9C0(param_1);
+          /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
           if ((int)*(short *)&param_1->field_0xd3 < CONCAT22(extraout_var_12,uVar7))
           goto cf_common_join_00666DC1;
           goto cf_common_join_00667047;
@@ -522,6 +580,7 @@ LAB_00666901:
                   param_1->field_00A7 = 0;
                 }
                 uVar7 = AiFltClassTy::sub_0065D9C0(param_1);
+                /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
                 if (((int)*(short *)&param_1->field_0x18e < CONCAT22(extraout_var_06,uVar7)) &&
                    ((*(int *)&param_1->field_0xab == 0 ||
                     ((uint)param_1->field_0280 <=
@@ -551,6 +610,7 @@ LAB_00665eba:
                 param_1->field_00A7 = 0;
               }
               uVar7 = AiFltClassTy::sub_0065D9C0(param_1);
+              /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
               if (((int)*(short *)&param_1->field_0x18e < CONCAT22(extraout_var_05,uVar7)) &&
                  ((*(int *)&param_1->field_0xab == 0 ||
                   ((uint)param_1->field_0280 <=
@@ -593,6 +653,7 @@ LAB_00665eba:
                 param_1->field_00A7 = 0;
               }
               uVar7 = AiFltClassTy::sub_0065D9C0(param_1);
+              /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
               if (((int)*(short *)&param_1->field_0x18e < CONCAT22(extraout_var_04,uVar7)) &&
                  ((*(int *)&param_1->field_0xab == 0 ||
                   ((uint)param_1->field_0280 <=
@@ -641,6 +702,7 @@ LAB_00665eba:
                 param_1->field_009B = 0x1f8;
               }
               else {
+                /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                 iVar10 = thunk_FUN_0065e9a0(param_1,*(uint *)&param_1->field_0xc7,
                                             (short *)&param_1->field_0195,
                                             *(uint *)&param_1->field_0xcb,
@@ -680,6 +742,7 @@ LAB_00665eba:
               }
             }
             else {
+              /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
               if (((param_1->field_00A7 == 0) &&
                   (uVar7 = AiFltClassTy::sub_0065D9C0(param_1),
                   (int)*(short *)&param_1->field_0x159 < CONCAT22(extraout_var_07,uVar7))) &&
@@ -731,6 +794,7 @@ LAB_0066641b:
             param_1->field_00A7 = 0;
           }
           uVar7 = AiFltClassTy::sub_0065D9C0(param_1);
+          /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
           if (CONCAT22(extraout_var_08,uVar7) <= (int)*(short *)&param_1->field_0xe4)
           goto cf_common_join_00667047;
           goto cf_common_join_00666DC1;
@@ -770,6 +834,7 @@ LAB_00666423:
           }
 LAB_006664d8:
           uVar7 = AiFltClassTy::sub_0065D9C0(param_1);
+          /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
           iVar10 = CONCAT22(extraout_var_09,uVar7);
           sVar8 = *(short *)&param_1->field_0xe4;
           goto LAB_006664e6;
@@ -790,6 +855,7 @@ LAB_006664d8:
             param_1->field_00A7 = 0;
           }
           uVar7 = AiFltClassTy::sub_0065D9C0(param_1);
+          /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
           if ((int)*(short *)&param_1->field_0xe4 < CONCAT22(extraout_var_11,uVar7))
           goto cf_common_join_00666DC1;
           goto cf_common_join_00667047;
@@ -799,6 +865,7 @@ LAB_006664d8:
         uVar12 = param_1->field_001C * 0x41c64e6d + 0x3039;
         param_1->field_001C = uVar12;
         uVar7 = AiFltClassTy::sub_0065D9C0(param_1);
+        /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
         uVar12 = CONCAT22(extraout_var_10,uVar7) / ((uVar12 >> 0x10) % 3 + 5);
         if (uVar12 == 0) {
           uVar12 = 1;
@@ -911,6 +978,7 @@ LAB_006668f9:
         param_1->field_00A7 = 0;
       }
       uVar7 = AiFltClassTy::sub_0065D9C0(param_1);
+      /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
       if ((int)*(short *)&param_1->field_0xd3 < CONCAT22(extraout_var_13,uVar7))
       goto cf_common_join_00666DC1;
       break;
@@ -946,12 +1014,14 @@ LAB_00666ddf:
         *(undefined4 *)&param_1->field_0xab = *(undefined4 *)&param_1->field_0xc7;
         *(undefined4 *)&param_1->field_0xaf = param_1->field_0280;
         thunk_FUN_0065fa10((AnonShape_0065FA10_37C5A4D3 *)param_1,(uint)bVar4,0,0,0);
+        /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
         uVar15 = CONCAT22(extraout_var_16,*(undefined2 *)&param_1->field_0xc3);
         iVar10 = thunk_FUN_00660620((AnonShape_00660620_6BCED4D7 *)param_1,uVar15,uVar15);
         goto joined_r0x00666ceb;
       }
       if (param_1->field_00A7 == 0) {
         uVar7 = AiFltClassTy::sub_0065D9C0(param_1);
+        /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
         iVar10 = CONCAT22(extraout_var_14,uVar7);
         sVar8 = *(short *)&param_1->field_0xc5;
 LAB_006664e6:
@@ -1006,6 +1076,7 @@ cf_common_join_00666DC1:
                                     *(short *)&param_1->field_0xc5,*(short *)&param_1->field_0xc7);
         goto joined_r0x00666ceb;
       }
+      /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
       if (((param_1->field_00A7 == 0) &&
           (uVar7 = AiFltClassTy::sub_0065D9C0(param_1),
           (int)*(short *)&param_1->field_0xc9 < CONCAT22(extraout_var_15,uVar7))) &&
@@ -1092,14 +1163,15 @@ joined_r0x00666ceb:
           if (0 < (int)uVar12) {
             do {
               if (local_c < uVar12) {
+                /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(local_10, local_c) (runtime stride) */
                 puVar16 = (undefined2 *)(local_10->elementSize * local_c + (int)local_10->data);
               }
               else {
                 puVar16 = (undefined2 *)0x0;
               }
+              /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
               this_00 = STAllPlayersC::GetObjPtr
-                                  (g_sTAllPlayers_007FA174,
-                                   CONCAT31((int3)((uint)local_10 >> 8),param_1->field_0x24),
+                                  (g_sTAllPlayers_007FA174,param_1->field_0x24,
                                    CONCAT22((short)(local_c >> 0x10),*puVar16),CASE_1);
               local_48 = this_00;
               switch(*(undefined4 *)&param_1->field_0xc3) {
@@ -1115,7 +1187,7 @@ joined_r0x00666ceb:
                   *(int *)&this_00[1].field_0xd4 = (int)sVar8;
                   *(int *)&this_00[1].field_0xd8 = (int)sVar6;
                   *(undefined4 *)&this_00[1].field_0xdc = 0;
-                  local_8 = (AiPlrClassTy *)&local_8->field_0x1;
+                  local_8 = (AiPlrClassTy *)((int)&local_8->vtable + 1);
                   if ((int)param_1->field_00B3 <= (int)local_8) goto cf_break_loop_0066703E;
                 }
                 break;
@@ -1130,7 +1202,7 @@ joined_r0x00666ceb:
                    (99 < *(int *)((int)&local_48[2].field_0149 + 1))) {
                   thunk_FUN_004d8e70(local_48,(int)*(short *)&param_1->field_0xc7,
                                      (int)*(short *)&param_1->field_0xc9,0);
-                  local_8 = (AiPlrClassTy *)&local_8->field_0x1;
+                  local_8 = (AiPlrClassTy *)((int)&local_8->vtable + 1);
                   if ((int)param_1->field_00B3 <= (int)local_8) goto cf_break_loop_0066703E;
                 }
               }
@@ -1315,6 +1387,7 @@ LAB_00665315:
     *(undefined4 *)&param_1->field_0x1f7 = 0x19;
     param_1->field_009B = 0x78;
     break;
+  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   case 0x28:
     if ((param_1->field_0122 == '\0') || (*(int *)(param_1->field_0223 + 0xc) == 0)) {
 LAB_00665607:
@@ -1334,6 +1407,7 @@ LAB_00665327:
       uVar12 = *(int *)&param_1->field_0x14e + *(int *)&param_1->field_0x14a;
       bVar22 = (uint)param_1->field_0280 < uVar12;
       bVar23 = param_1->field_0280 == uVar12;
+/* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
 LAB_0066534b:
       if ((!bVar22 && !bVar23) &&
          (uVar7 = AiFltClassTy::sub_0065D9C0(param_1),
@@ -1378,6 +1452,7 @@ LAB_006655ba:
     }
     param_1->field_00A3 = 1;
     iVar10 = param_1->field_0223;
+    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     if ((*(uint *)&param_1->field_0x12d < *(uint *)(iVar10 + 0xc)) &&
        (psVar11 = (short *)(*(int *)(iVar10 + 8) * *(uint *)&param_1->field_0x12d +
                            *(int *)(iVar10 + 0x1c)), psVar11 != (short *)0x0)) {
@@ -1417,6 +1492,7 @@ LAB_006655ba:
     else {
       if (param_1->field_00A7 == 0) goto cf_common_exit_00667066;
       uVar7 = AiFltClassTy::sub_0065D9C0(param_1);
+      /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
       if (CONCAT22(extraout_var_00,uVar7) != 0 && -1 < extraout_var_00) {
         uVar15 = param_1->field_0280;
         puVar21 = &stack0xffffff64;
@@ -1482,6 +1558,7 @@ LAB_006655ba:
       param_1->field_00A3 = 0;
       param_1->field_00A7 = 0;
     }
+    /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
     if (((param_1->field_0x139 == '\0') ||
         ((uint)param_1->field_0280 <=
          (uint)(*(int *)&param_1->field_0x14e + *(int *)&param_1->field_0x14a))) ||
@@ -1550,6 +1627,7 @@ LAB_006655ba:
       }
 LAB_00665a76:
       uVar7 = AiFltClassTy::sub_0065D9C0(param_1);
+      /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
       if (((int)*(short *)&param_1->field_0x140 < CONCAT22(extraout_var_02,uVar7)) &&
          ((*(int *)&param_1->field_0xab == 0 ||
           ((uint)param_1->field_0280 <=
@@ -1577,6 +1655,7 @@ LAB_00665b57:
         param_1->field_00A7 = 0;
       }
       uVar7 = AiFltClassTy::sub_0065D9C0(param_1);
+      /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
       if ((int)*(short *)&param_1->field_0x140 < CONCAT22(extraout_var_03,uVar7)) {
         if ((*(int *)&param_1->field_0xab == 0) ||
            ((uint)param_1->field_0280 <=
@@ -1634,6 +1713,7 @@ cf_common_exit_00667066:
   if (((param_1->field_0284 != (AnonPointee_AiFltClassTy_0284 *)0x0) &&
       (param_1->field_0x176 != '\0')) &&
      ((*(uint *)&param_1->field_0xeb & *(uint *)&param_1->field_0x17b) != 0)) {
+    /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
     AiFltClassTy::GoToRepair(param_1,unaff_ESI);
   }
   return;

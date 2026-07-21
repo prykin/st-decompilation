@@ -15,7 +15,7 @@ void FUN_00414a70(int param_1,int param_2)
   undefined1 *local_1c;
   int local_10;
   int local_8;
-  
+
   if (param_1 == 0) {
     local_10 = 0;
     local_1c = DAT_007f4d50;

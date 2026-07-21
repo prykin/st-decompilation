@@ -19,7 +19,7 @@ FUN_0043f380(char param_1,byte *param_2,short param_3,short param_4,short param_
   int local_10;
   int local_c;
   int local_8;
-  
+
   local_8 = (int)param_3;
   local_c = param_6 + -1 + local_8;
   _param_3 = (int)param_4;
@@ -49,6 +49,7 @@ FUN_0043f380(char param_1,byte *param_2,short param_3,short param_4,short param_
   iVar6 = g_worldGrid.sizeX * _param_3 + local_8 + (iVar3 + -1) * (int)g_worldGrid.planeStride;
   if (iVar3 <= _param_5) {
     _param_5 = _param_5 - iVar3;
+    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
     iVar3 = CONCAT22((short)((uint)iVar3 >> 0x10),g_worldGrid.sizeX);
     _param_5 = _param_5 + 1;
     iVar8 = local_c;
@@ -68,6 +69,7 @@ FUN_0043f380(char param_1,byte *param_2,short param_3,short param_4,short param_
               piVar2 = *(int **)((int)g_worldGrid.cells[1].objects + iVar3);
               pSVar5 = g_worldGrid.cells;
               if ((piVar2 != (int *)0x0) && (piVar2[9] == (int)param_1)) {
+                /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
                 (**(code **)(*piVar2 + 0x74))(local_20);
                 pbVar9 = local_20;
                 pbVar4 = param_2;
@@ -95,6 +97,7 @@ LAB_0043f4cd:
               iVar8 = iVar8 + -1;
               iVar3 = iVar3 + 8;
             } while (iVar8 != 0);
+            /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
             iVar3 = CONCAT22((short)((uint)pSVar5 >> 0x10),g_worldGrid.sizeX);
             iVar8 = local_c;
             iVar10 = local_8;
@@ -105,6 +108,7 @@ LAB_0043f4cd:
       _param_5 = _param_5 + -1;
     } while (_param_5 != 0);
   }
+  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
   return CONCAT22((short)((uint)iVar3 >> 0x10),param_6);
 }
 

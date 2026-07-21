@@ -4,7 +4,7 @@ void __fastcall FUN_00558140(AnonShape_00558140_7CF35A3F *param_1)
 {
   int iVar1;
   void **ppvVar2;
-  
+
   if (param_1->field_0038 != 0) {
     FreeAndNull((void **)&param_1->field_0038);
   }

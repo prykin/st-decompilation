@@ -1,9 +1,11 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\cpanel.cpp
    CPanelTy::InitCPanel
-   
+
    [STTypeFamilyApplier] EXACT_ANONYMOUS_LAYOUT.
    Evidence: exact anonymous structure fingerprint shared across functions */
 
@@ -22,15 +24,12 @@ void __thiscall CPanelTy::InitCPanel(CPanelTy *this)
   undefined4 uVar9;
   ushort *puVar10;
   char *pcVar11;
-  uint *extraout_EAX;
   uint *puVar12;
   uint uVar13;
   ccFntTy *this_01;
   ccFntTy *this_02;
   ccFntTy *this_03;
   undefined1 *puVar14;
-  undefined4 unaff_ESI;
-  void *unaff_EDI;
   undefined4 uVar15;
   short sVar16;
   undefined2 uVar17;
@@ -53,7 +52,7 @@ void __thiscall CPanelTy::InitCPanel(CPanelTy *this)
   ccFntTy *local_10;
   AnonNested_0052BDA0_007E_1B3446E2 *local_c;
   int *local_8;
-  
+
   local_24[0] = 0xe0;
   local_24[1] = 0xe2;
   local_24[2] = 0xe4;
@@ -63,7 +62,7 @@ void __thiscall CPanelTy::InitCPanel(CPanelTy *this)
   local_78.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_78;
   local_18 = this;
-  iVar3 = Library::MSVCRT::__setjmp3(local_78.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar3 = Library::MSVCRT::__setjmp3(local_78.jumpBuffer,0);
   this_00 = local_18;
   if (iVar3 == 0) {
     g_cPanel_00801688 = local_18;
@@ -382,14 +381,14 @@ void __thiscall CPanelTy::InitCPanel(CPanelTy *this)
     local_8 = (int *)0x3b60;
     local_14 = 4;
     do {
-      LoadResourceString((UINT)local_8,HINSTANCE_00807618);
+      puVar12 = (uint *)LoadResourceString((UINT)local_8,HINSTANCE_00807618);
       iVar22 = 1;
       puVar5 = (undefined4 *)(DAT_0080679c + 0x28);
-      local_1c = extraout_EAX;
+      local_1c = puVar12;
       uVar4 = FUN_006b4fe0(DAT_0080679c);
       uVar13 = (uint)*(ushort *)(DAT_0080679c + 0xe);
-      iVar3 = FUN_007111c0(this_00->field_01B8,extraout_EAX);
-      iVar19 = FUN_00711110(this_00->field_01B8,extraout_EAX);
+      iVar3 = FUN_007111c0(this_00->field_01B8,(char *)puVar12);
+      iVar19 = FUN_00711110(this_00->field_01B8,(char *)puVar12);
       local_c = (AnonNested_0052BDA0_007E_1B3446E2 *)
                 FUN_006b50c0(iVar19,iVar3,uVar13,uVar4,puVar5,iVar22);
       if (local_c != (AnonNested_0052BDA0_007E_1B3446E2 *)0x0) {
@@ -702,6 +701,7 @@ void __thiscall CPanelTy::InitCPanel(CPanelTy *this)
           FUN_006b28c0((int)DAT_008075a8,*puVar12,1);
         }
         bVar2 = bVar2 + 1;
+        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
         local_1c = (uint *)CONCAT31(local_1c._1_3_,bVar2);
         uVar4 = (uint)bVar2;
       } while (uVar4 < (-(uint)(DAT_00807348 != '\0') & 2) + 9);
@@ -938,6 +938,7 @@ void __thiscall CPanelTy::InitCPanel(CPanelTy *this)
       this_00->field_0028 = 0x5dc6;
       *(undefined **)&this_00->field_0x2c = &DAT_0080c4d7;
       if (DAT_008117bc != (undefined4 *)0x0) {
+        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
         (**(code **)*DAT_008117bc)(puVar14);
       }
       DAT_0080c4f9 = '\0';
@@ -949,9 +950,7 @@ void __thiscall CPanelTy::InitCPanel(CPanelTy *this)
   iVar19 = ReportDebugMessage(s_E____titans_Andrey_cpanel_cpp_007c1bd8,0x1bf,0,iVar3,&DAT_007a4ccc,
                               s_CPanelTy__InitCPanel_007c1bfc);
   if (iVar19 != 0) {
-    pcVar1 = (code *)swi(3);
-    (*pcVar1)();
-    return;
+    STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   RaiseInternalException(iVar3,0,s_E____titans_Andrey_cpanel_cpp_007c1bd8,0x1bf);
   return;

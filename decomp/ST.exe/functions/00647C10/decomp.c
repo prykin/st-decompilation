@@ -4,7 +4,7 @@ int __thiscall FUN_00647c10(void *this,int param_1,int param_2)
 {
   int iVar1;
   uint uVar2;
-  
+
   if (param_1 < 0) {
     iVar1 = *(int *)((int)this + 0x88);
   }

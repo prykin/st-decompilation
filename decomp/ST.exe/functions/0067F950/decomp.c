@@ -8,17 +8,15 @@ uint __cdecl FUN_0067f950(byte *param_1)
   byte *pbVar4;
   int iVar5;
   uint uVar6;
-  undefined4 unaff_ESI;
   byte *pbVar7;
-  void *unaff_EDI;
   bool bVar8;
   InternalExceptionFrame local_4c;
   undefined4 local_8;
-  
+
   local_8 = 0;
   local_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_4c;
-  uVar3 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  uVar3 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
   if (uVar3 != 0) {
     g_currentExceptionFrame = local_4c.previous;
     if (-1 < (int)uVar3) {

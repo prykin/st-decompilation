@@ -4,7 +4,7 @@ void __thiscall FUN_00639500(void *this,undefined4 param_1)
 {
   int iVar1;
   int iVar2;
-  
+
   iVar1 = (int)*(short *)((int)this + 0x245);
   *(int *)((int)this + 0x282) = (int)*(short *)((int)this + 0x249);
   *(int *)((int)this + 0x27a) = iVar1;

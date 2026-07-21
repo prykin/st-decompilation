@@ -1,10 +1,10 @@
 
 /* [STPrototypeApplier] Propagated parameter 1.
    Evidence: 004CAFC0 -> 004E8E50 @ 004CB180
-   
+
    [STPrototypeApplier] Propagated parameter 3.
    Evidence: 004CAFC0 -> 004E8E50 @ 004CB180
-   
+
    [STPrototypeApplier] Propagated parameter 4.
    Evidence: 004CAFC0 -> 004E8E50 @ 004CB180 */
 
@@ -16,7 +16,7 @@ FUN_004e8e50(void *this,Global_sub_004CAFC0_param_1Enum param_1,int param_2,uint
   int iVar1;
   uint uVar2;
   int iVar3;
-  
+
   uVar2 = GetPlayerRaceId(*(char *)((int)this + 0x23d));
   iVar1 = *(int *)((int)this + 0x245);
   iVar3 = (uVar2 & 0xff) - 1;
@@ -28,6 +28,7 @@ FUN_004e8e50(void *this,Global_sub_004CAFC0_param_1Enum param_1,int param_2,uint
                           (param_2 + (iVar3 + *(int *)((int)this + 0x235) * 3) * 4) * 8 + 4);
       return;
     }
+    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     uVar2 = *(uint *)((&PTR_DAT_007b8310)[iVar1] +
                      (param_2 + (iVar3 + *(int *)((int)this + 0x235) * 3) * 4) * 8);
     *param_4 = uVar2;

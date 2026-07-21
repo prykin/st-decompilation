@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\sound.cpp
@@ -11,25 +13,21 @@ void __thiscall SoundClassTy::CheckFader(SoundClassTy *this)
   int iVar3;
   DWORD DVar4;
   uint uVar5;
-  undefined4 unaff_ESI;
-  void *unaff_EDI;
   InternalExceptionFrame local_50;
   uint local_c;
   SoundClassTy *local_8;
-  
+
   local_50.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_50;
   local_8 = this;
-  iVar3 = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar3 = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0);
   pSVar2 = local_8;
   if (iVar3 != 0) {
     g_currentExceptionFrame = local_50.previous;
     iVar3 = ReportDebugMessage(s_E____titans_sound_cpp_007c97fc,0x205,0,iVar3,&DAT_007a4ccc,
                                s_SoundClassTy__CheckFader_007c9818);
     if (iVar3 != 0) {
-      pcVar1 = (code *)swi(3);
-      (*pcVar1)();
-      return;
+      STDebugBreak(); /* noreturn in standalone pseudocode */
     }
     return;
   }

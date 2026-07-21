@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\to_allpl.cpp
@@ -11,7 +13,7 @@ void STAllPlayersC::PushTV(char param_1,int param_2)
   int iVar2;
   STPlayerTempSlot (*paSVar3) [5];
   Global_sub_0043FC50_param_1Enum GVar4;
-  
+
   if (param_2 == 0) {
     GVar4 = CASE_E;
     paSVar3 = g_playerRuntime[param_1].tempSlots;
@@ -23,9 +25,7 @@ void STAllPlayersC::PushTV(char param_1,int param_2)
       if (iVar2 == 0) {
         return;
       }
-      pcVar1 = (code *)swi(3);
-      (*pcVar1)();
-      return;
+      STDebugBreak(); /* noreturn in standalone pseudocode */
     }
     GVar4 = CASE_F;
     paSVar3 = g_playerRuntime[param_1].tempSlots + 1;

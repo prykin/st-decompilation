@@ -4,7 +4,7 @@ undefined4 __thiscall FUN_004ea530(void *this,short param_1,short param_2,short 
 {
   AnonShape_004EA460_7CF77153 *this_00;
   int iVar1;
-  
+
   if (((((-1 < param_1) && (param_1 < g_worldGrid.sizeX)) && (-1 < param_2)) &&
       ((param_2 < g_worldGrid.sizeY && (-1 < param_3)))) &&
      ((param_3 < g_worldGrid.sizeZ &&
@@ -13,7 +13,9 @@ undefined4 __thiscall FUN_004ea530(void *this,short param_1,short param_2,short 
                  [(int)g_worldGrid.planeStride * (int)param_3 +
                   (int)g_worldGrid.sizeX * (int)param_2 + (int)param_1].objects[0],
       this_00 != (AnonShape_004EA460_7CF77153 *)0x0)))) {
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
     iVar1 = (**(code **)(*(int *)this_00 + 0x2c))();
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
     if ((iVar1 != 0x37) && (iVar1 = (**(code **)(*(int *)this_00 + 0x2c))(), iVar1 != 0x6c)) {
       return 0;
     }

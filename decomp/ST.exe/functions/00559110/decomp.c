@@ -19,7 +19,7 @@ FUN_00559110(void *this,int param_1,undefined *param_2,int param_3,uint param_4,
   int iVar13;
   int iVar14;
   undefined *local_c;
-  
+
   iVar10 = param_5;
   uVar7 = param_4;
   bVar8 = false;

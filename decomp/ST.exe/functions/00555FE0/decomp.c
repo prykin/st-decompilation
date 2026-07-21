@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\grig\traks.cpp
@@ -12,22 +14,20 @@ undefined4 * __thiscall TraksClassTy::PrepareToSave(TraksClassTy *this,uint *par
   undefined4 *puVar3;
   uint uVar4;
   uint uVar5;
-  undefined4 unaff_ESI;
-  void *unaff_EDI;
   undefined4 *puVar6;
   InternalExceptionFrame local_58;
   TraksClassTy *local_14;
   uint local_10;
   undefined4 *local_c;
   undefined4 *local_8;
-  
+
   local_8 = (undefined4 *)0x0;
   local_c = (undefined4 *)0x0;
   local_10 = 0;
   local_58.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_58;
   local_14 = this;
-  errorCode = Library::MSVCRT::__setjmp3(local_58.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  errorCode = Library::MSVCRT::__setjmp3(local_58.jumpBuffer,0);
   uVar5 = local_10;
   if (errorCode == 0) {
     *param_1 = local_10 + 0x5d;
@@ -66,9 +66,7 @@ undefined4 * __thiscall TraksClassTy::PrepareToSave(TraksClassTy *this,uint *par
   iVar2 = ReportDebugMessage(s_E____titans_grig_traks_cpp_007c9104,0xed,0,errorCode,&DAT_007a4ccc,
                              s_TraksClassTy__PrepareToSave_erro_007c91a8);
   if (iVar2 != 0) {
-    pcVar1 = (code *)swi(3);
-    puVar3 = (undefined4 *)(*pcVar1)();
-    return puVar3;
+    STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   RaiseInternalException(errorCode,0,s_E____titans_grig_traks_cpp_007c9104,0xee);
   return (undefined4 *)0x0;

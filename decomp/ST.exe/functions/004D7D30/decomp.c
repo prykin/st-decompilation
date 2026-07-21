@@ -7,7 +7,7 @@ undefined4 FUN_004d7d30(char param_1,int param_2,int param_3,int param_4)
   int iVar3;
   undefined4 uVar4;
   int *piVar5;
-  
+
   iVar2 = (int)param_1;
   uVar4 = 0;
   iVar3 = param_2 * 0x44;

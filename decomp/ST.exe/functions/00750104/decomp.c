@@ -5,9 +5,10 @@ undefined4 __thiscall FUN_00750104(void *this,AnonShape_00750104_599B328B *param
   int iVar1;
   int *this_00;
   int *local_8;
-  
+
   local_8 = this;
   EnterCriticalSection((LPCRITICAL_SECTION)((int)this + 8));
+  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
   (**(code **)(param_1->field_000C + 4))(&param_1->field_000C);
   this_00 = (int *)((int)this + 0x38);
   if (param_1->field_0030 == 0) {
@@ -16,6 +17,7 @@ undefined4 __thiscall FUN_00750104(void *this,AnonShape_00750104_599B328B *param
   local_8 = (int *)*this_00;
   while (local_8 != (int *)0x0) {
     iVar1 = FUN_0074ded7((int)local_8);
+    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     if ((param_1->field_001C < *(int *)(iVar1 + 0x1c)) ||
        ((param_1->field_001C <= *(int *)(iVar1 + 0x1c) &&
         (param_1->field_0018 < *(uint *)(iVar1 + 0x18))))) break;

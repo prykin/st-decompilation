@@ -23,7 +23,7 @@ undefined4 __thiscall FUN_0063cc50(void *this,int param_1)
   int local_10;
   int local_c;
   int local_8;
-  
+
   puVar8 = local_48;
   for (iVar5 = 0xb; iVar5 != 0; iVar5 = iVar5 + -1) {
     *puVar8 = 0;

@@ -7,7 +7,7 @@ void __thiscall FUN_004be240(void *this,char *param_1)
   uint uVar3;
   char *pcVar4;
   char *pcVar5;
-  
+
   uVar2 = 0xffffffff;
   *param_1 = '\0';
   pcVar4 = (char *)((int)this + 0x5c4);

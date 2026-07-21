@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\prov_obj.cpp
@@ -18,11 +20,8 @@ void __thiscall PrividerTy::InitPrivider(PrividerTy *this,char param_1,char para
   uint uVar7;
   AnonPointee_PrividerTy_1C82 *pAVar8;
   undefined4 *puVar9;
-  uint *extraout_EAX;
   HoloTy *pHVar10;
   uint uVar11;
-  undefined4 unaff_ESI;
-  void *unaff_EDI;
   char cVar12;
   int iVar13;
   undefined4 local_454 [256];
@@ -30,11 +29,11 @@ void __thiscall PrividerTy::InitPrivider(PrividerTy *this,char param_1,char para
   PrividerTy *local_10;
   int local_c;
   uint local_8;
-  
+
   local_54.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_54;
   local_10 = this;
-  iVar4 = Library::MSVCRT::__setjmp3(local_54.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar4 = Library::MSVCRT::__setjmp3(local_54.jumpBuffer,0);
   if (iVar4 == 0) {
     if (DAT_008067a0 != '\0') {
       CFsgsConnection::CloseGame((CFsgsConnection *)&DAT_00802a90);
@@ -79,18 +78,21 @@ void __thiscall PrividerTy::InitPrivider(PrividerTy *this,char param_1,char para
     }
     SpriteClassTy::InitSprite
               ((SpriteClassTy *)&this_02->field_1A77,DAT_008075a8,0x31,'\a',(undefined4 *)0x0,0,0);
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
     (**(code **)(this_02->field_1A77 + 4))(DAT_00806784,7,0,s_MM_SLDUP_007cc04c,0xffffffff);
     this_02->field_1A93 = 0x289;
     this_02->field_1A97 = 0x6a;
     this_02->field_1A7F = 0;
     SpriteClassTy::InitSprite
               ((SpriteClassTy *)&this_02->field_1B08,DAT_008075a8,0x31,'\a',(undefined4 *)0x0,0,0);
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
     (**(code **)(this_02->field_1B08 + 4))(DAT_00806784,7,0,s_MM_SLDDN_007cc040,0xffffffff);
     this_02->field_1B24 = 0x289;
     this_02->field_1B28 = 0x176;
     this_02->field_1B10 = 0;
     SpriteClassTy::InitSprite
               ((SpriteClassTy *)&this_02->field_1B99,DAT_008075a8,0x31,'\a',(undefined4 *)0x0,0,0);
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
     (**(code **)(this_02->field_1B99 + 4))(DAT_00806784,7,0,s_MM_SLDT_007cc034,0xffffffff);
     iVar4 = 1;
     this_02->field_1BB5 = 0x28e;
@@ -98,6 +100,7 @@ void __thiscall PrividerTy::InitPrivider(PrividerTy *this,char param_1,char para
     puVar9 = (undefined4 *)(this_02->field_005D + 0x28);
     this_02->field_1BA1 = 0;
     uVar7 = FUN_006b4fe0(this_02->field_005D);
+    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     pAVar8 = (AnonPointee_PrividerTy_1C82 *)
              FUN_006b50c0(0x208,0x143,(uint)*(ushort *)(this_02->field_005D + 0xe),uVar7,puVar9,
                           iVar4);
@@ -128,6 +131,7 @@ void __thiscall PrividerTy::InitPrivider(PrividerTy *this,char param_1,char para
     iVar4 = 1;
     puVar9 = (undefined4 *)(this_02->field_005D + 0x28);
     uVar7 = FUN_006b4fe0(this_02->field_005D);
+    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     iVar4 = FUN_006b50c0(0x22e,0x2e,(uint)*(ushort *)(this_02->field_005D + 0xe),uVar7,puVar9,iVar4)
     ;
     this_02->field_1C8E = iVar4;
@@ -149,8 +153,8 @@ void __thiscall PrividerTy::InitPrivider(PrividerTy *this,char param_1,char para
     uVar6 = 2;
     iVar13 = -1;
     iVar4 = -2;
-    LoadResourceString(0x26b5,HINSTANCE_00807618);
-    ccFntTy::WrStr(PTR_0081176c->field_0034,extraout_EAX,iVar4,iVar13,uVar6);
+    puVar5 = (uint *)LoadResourceString(0x26b5,HINSTANCE_00807618);
+    ccFntTy::WrStr(PTR_0081176c->field_0034,puVar5,iVar4,iVar13,uVar6);
     uVar7 = this_02->field_1C8E;
     puVar9 = &this_02->field_1C8A;
     FUN_006b2330((uint)DAT_008075a8,puVar9,0x31,0x4023f6,*(uint *)(uVar7 + 4),*(uint *)(uVar7 + 8),
@@ -304,8 +308,6 @@ void __thiscall PrividerTy::InitPrivider(PrividerTy *this,char param_1,char para
     RaiseInternalException(iVar4,0,s_E____titans_Start_prov_obj_cpp_007ccd28,0xac);
     return;
   }
-  pcVar3 = (code *)swi(3);
-  (*pcVar3)();
-  return;
+  STDebugBreak(); /* noreturn in standalone pseudocode */
 }
 

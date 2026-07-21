@@ -9,7 +9,7 @@ uint * FUN_006b00c0(uint *param_1,uint *param_2,undefined *param_3)
   int iVar5;
   uint *puVar6;
   uint *puVar7;
-  
+
   puVar2 = Library::DKW::TBL::FUN_006ae290(param_1,param_2[4],param_2[2],param_2[5]);
   if (puVar2 == (uint *)0x0) {
     return (uint *)0x0;
@@ -33,6 +33,7 @@ uint * FUN_006b00c0(uint *param_1,uint *param_2,undefined *param_3)
   }
   iVar5 = puVar2[4] - puVar2[3];
   if (iVar5 != 0) {
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
     (*(code *)param_3)(puVar2[7],puVar2[3],iVar5);
   }
   return puVar2;

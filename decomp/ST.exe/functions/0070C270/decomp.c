@@ -12,8 +12,10 @@ undefined4 * __cdecl FUN_0070c270(int param_1)
   byte *pbVar4;
   int iVar5;
   byte *pbVar6;
-  
+
+  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   iVar5 = *(int *)(param_1 + 0x20);
+  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   if (*(short *)(param_1 + 0xe) != 8) {
     return (undefined4 *)0x0;
   }

@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\nick\to_light.Cpp
@@ -14,16 +16,14 @@ undefined4 __thiscall STLightC::LoadNextLight(STLightC *this)
   uint *puVar5;
   int iVar6;
   undefined4 uVar7;
-  undefined4 unaff_ESI;
-  void *unaff_EDI;
   InternalExceptionFrame local_50;
   STLightC *local_c;
   uint local_8;
-  
+
   local_50.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_50;
   local_c = this;
-  iVar2 = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar2 = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0);
   this_00 = local_c;
   if (iVar2 == 0) {
     puVar3 = Library::Ourlib::MFRLOAD::mfRLoad
@@ -60,9 +60,7 @@ undefined4 __thiscall STLightC::LoadNextLight(STLightC *this)
   iVar6 = ReportDebugMessage(s_E____titans_nick_to_light_Cpp_007d01b0,0x13b,0,iVar2,&DAT_007a4ccc,
                              s_STLightC__LoadNextLight_007d01f0);
   if (iVar6 != 0) {
-    pcVar1 = (code *)swi(3);
-    uVar7 = (*pcVar1)();
-    return uVar7;
+    STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   RaiseInternalException(iVar2,0,s_E____titans_nick_to_light_Cpp_007d01b0,0x13d);
   return 0xffff;

@@ -9,7 +9,7 @@ undefined4 __thiscall FUN_0068fc70(void *this,int aiMess,short param_2)
   int iVar1;
   uint uVar2;
   bool bVar3;
-  
+
   uVar2 = 0;
   iVar1 = *(int *)((int)this + 0xa5);
   if (0 < *(int *)(iVar1 + 0xc)) {

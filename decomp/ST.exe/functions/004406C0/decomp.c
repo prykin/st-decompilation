@@ -9,6 +9,7 @@ int GetPlayerRaceId(char playerId)
   if (playerId == 0xff) {
     return (uint)(uint3)(playerId >> 7) << 8;
   }
+  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
   return CONCAT31(playerId >> 7,g_playerRuntime[playerId].raceId);
 }
 

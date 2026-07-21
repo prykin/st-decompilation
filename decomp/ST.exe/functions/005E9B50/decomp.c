@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\wait_obj.cpp
@@ -11,8 +13,6 @@ void __thiscall WaitTy::CreateCtrls(WaitTy *this)
   WaitTy *pWVar2;
   int iVar3;
   int iVar4;
-  undefined4 unaff_ESI;
-  void *unaff_EDI;
   ccFntTy **ppcVar5;
   ccFntTy *local_8d8 [6];
   undefined4 local_8c0;
@@ -27,7 +27,7 @@ void __thiscall WaitTy::CreateCtrls(WaitTy *this)
   undefined4 local_74;
   InternalExceptionFrame local_4c;
   WaitTy *local_8;
-  
+
   ppcVar5 = local_8d8;
   local_8 = this;
   for (iVar4 = 0x223; iVar4 != 0; iVar4 = iVar4 + -1) {
@@ -36,7 +36,7 @@ void __thiscall WaitTy::CreateCtrls(WaitTy *this)
   }
   local_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_4c;
-  iVar4 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar4 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
   pWVar2 = local_8;
   if (iVar4 == 0) {
     if (local_8->field_1A64 == 0) {
@@ -75,9 +75,7 @@ void __thiscall WaitTy::CreateCtrls(WaitTy *this)
   iVar3 = ReportDebugMessage(s_E____titans_Start_wait_obj_cpp_007cdd5c,0x303,0,iVar4,&DAT_007a4ccc,
                              s_WaitTy__CreateCtrls_007cde24);
   if (iVar3 != 0) {
-    pcVar1 = (code *)swi(3);
-    (*pcVar1)();
-    return;
+    STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   RaiseInternalException(iVar4,0,s_E____titans_Start_wait_obj_cpp_007cdd5c,0x303);
   return;

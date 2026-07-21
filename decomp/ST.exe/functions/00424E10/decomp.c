@@ -4,7 +4,7 @@
    Recovered source file: E:\__titans\wlad\Td3dshad.cpp
    Diagnostic line evidence: 1376 (metadata/report site, not the function definition)
    [STSourceProvenanceApplier end]
-   
+
    [STHiddenThisApplier] Anonymous hidden receiver recovered as
    /SubmarineTitans/Recovered/HiddenThis/AnonReceiver_004248D0.
    Evidence: incoming_receiver_captures=1; receiver_accesses=36; incoming_edx_uses=0; calls=7;
@@ -92,7 +92,7 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_004248D0::FUN_00424e10
   undefined1 *puStack_10;
   undefined *puStack_c;
   undefined4 local_8;
-  
+
   iVar17 = param_6;
   iVar22 = param_5;
   local_8 = 0xffffffff;
@@ -253,6 +253,7 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_004248D0::FUN_00424e10
               if (0 < iVar4) {
                 psVar19 = psVar5 + 1;
                 do {
+                  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                   uVar29 = CONCAT44(0xffffffff,(uint)*(byte *)(psVar19 + 2)) & 0xffffffff00000003;
                   thunk_FUN_004248d0(this,(int)local_a0,iVar22,(int)psVar19[-1],(int)*psVar19,
                                      (Global_sub_004248D0_param_5Enum)uVar29,
@@ -310,8 +311,10 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_004248D0::FUN_00424e10
             if (uVar15 == 0) {
               local_50 = 0x100;
               local_34 = 0x80;
+              /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
               local_d8 = (uint)CONCAT11(pbVar25[-1],*pbVar25);
               pbVar20 = pbVar25 + 1;
+              /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
               local_b4 = (uint)CONCAT11(local_138[-1],*local_138);
               local_94 = local_138 + 1;
             }
@@ -401,6 +404,7 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_004248D0::FUN_00424e10
         if (uVar15 == 0) {
           uVar26 = 0x100;
           uVar15 = 0x80;
+          /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
           uVar21 = (uint)CONCAT11(*pbVar25,*pbVar20);
           pbVar20 = pbVar25 + 2;
         }

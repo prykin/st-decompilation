@@ -10,7 +10,7 @@ FUN_005f88d0(void *this,int param_1,int param_2,int *param_3,undefined4 *param_4
   STWorldObject *this_00;
   int iVar4;
   undefined4 uVar5;
-  
+
   sVar1 = *(short *)((int)this + 0x285);
   sVar2 = *(short *)((int)this + 0x281);
   sVar3 = *(short *)((int)this + 0x27d);

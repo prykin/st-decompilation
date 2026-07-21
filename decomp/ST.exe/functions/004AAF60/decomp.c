@@ -4,7 +4,7 @@ void FUN_004aaf60(int param_1)
 {
   uint uVar1;
   int iVar2;
-  
+
   if (param_1 == 0) {
     uVar1 = DAT_0080743c & 0xff;
     if (uVar1 == 0) {

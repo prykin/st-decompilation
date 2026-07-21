@@ -28,7 +28,7 @@ undefined4 __fastcall FUN_004d2fd0(int param_1)
   byte *local_10;
   AnonShape_0060EA30_DCEB68AD *local_c;
   byte *local_8;
-  
+
   local_20 = (byte *)0x0;
   local_10 = (byte *)0x0;
   local_14 = (byte *)0x0;
@@ -63,11 +63,13 @@ undefined4 __fastcall FUN_004d2fd0(int param_1)
   local_59 = 0x14f;
   local_10 = (byte *)STT3DSprC::SaveSpr((STT3DSprC *)(param_1 + 0x1d5),&local_55);
   local_51 = local_5d + local_59;
+  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   local_14 = (byte *)STT3DSprC::SaveSpr(*(STT3DSprC **)(param_1 + 0x35c),&local_4d);
   local_49 = local_55 + local_51;
   iVar2 = 0;
   local_c = (AnonShape_0060EA30_DCEB68AD *)(local_4d + local_49);
   local_18 = 0;
+  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   if (*(int *)(param_1 + 0x370) == 0) {
     local_1c = (undefined4 *)(param_1 + 0x350);
     do {
@@ -128,11 +130,13 @@ undefined4 __fastcall FUN_004d2fd0(int param_1)
     pbVar5 = pbVar5 + 1;
     pbVar7 = pbVar7 + 1;
   }
+  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   if (*(int *)(param_1 + 0x370) == 0) {
     iVar2 = 0;
     do {
       uVar3 = *(uint *)((int)local_45 + iVar2);
       pbVar5 = *(byte **)((int)local_2c + iVar2);
+      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
       pbVar7 = local_8 + *(int *)((int)local_45 + iVar2 + 0xc);
       for (uVar4 = uVar3 >> 2; uVar4 != 0; uVar4 = uVar4 - 1) {
         *(undefined4 *)pbVar7 = *(undefined4 *)pbVar5;
@@ -147,11 +151,13 @@ undefined4 __fastcall FUN_004d2fd0(int param_1)
       }
     } while (iVar2 < 0xc);
   }
+  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   STPlaySystemC::SaveObjData(PTR_00802a38,*(undefined4 *)(param_1 + 0x18),local_8,local_c);
   FreeAndNull(&local_8);
   FreeAndNull(&local_20);
   FreeAndNull(&local_10);
   FreeAndNull(&local_14);
+  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   if (*(int *)(param_1 + 0x370) == 0) {
     value = local_2c;
     iVar2 = 3;

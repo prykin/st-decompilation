@@ -9,10 +9,12 @@ undefined4 __thiscall FUN_006264d0(void *this,int *param_1,int param_2)
   int iVar5;
   int iVar6;
   short sVar7;
+  /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
   undefined4 unaff_EBX;
   int *piVar8;
   int *piVar9;
   short sVar10;
+  /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
   undefined4 unaff_ESI;
   int iVar11;
   short sVar12;
@@ -56,7 +58,7 @@ undefined4 __thiscall FUN_006264d0(void *this,int *param_1,int param_2)
   int local_10;
   int local_c;
   int local_8;
-  
+
   puVar13 = local_bc;
   local_18 = this;
   for (iVar5 = 0x16; iVar5 != 0; iVar5 = iVar5 + -1) {
@@ -65,10 +67,13 @@ undefined4 __thiscall FUN_006264d0(void *this,int *param_1,int param_2)
   }
   iVar5 = param_2 * 6;
   sVar7 = *(short *)(&DAT_007d046c + iVar5) + *(short *)((int)this + 0x2c2);
+  /* ST_PSEUDO[unresolved_register_input,packed_or_unaligned_piece]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention; expected named packed member, bit extract/compose, or unaligned load */
   local_20 = CONCAT22((short)((uint)unaff_EBX >> 0x10),sVar7);
   sVar12 = *(short *)(&DAT_007d046e + iVar5) + *(short *)((int)this + 0x2c6);
+  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
   local_54 = CONCAT22((short)((uint)puVar13 >> 0x10),sVar12);
   sVar10 = *(short *)(&DAT_007d0470 + iVar5) + *(short *)((int)this + 0x2ca);
+  /* ST_PSEUDO[unresolved_register_input,packed_or_unaligned_piece]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention; expected named packed member, bit extract/compose, or unaligned load */
   local_40 = CONCAT22((short)((uint)unaff_ESI >> 0x10),sVar10);
   if (param_1 == (int *)0x0) {
     return 0;
@@ -160,6 +165,7 @@ undefined4 __thiscall FUN_006264d0(void *this,int *param_1,int param_2)
             }
           }
           else if (local_18[6] != *(int *)&pSVar3->field_0x18) {
+            /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
             iVar5 = (**(code **)(*param_1 + 0xf0))();
             if (iVar5 == 0) {
               return 0;
@@ -169,7 +175,9 @@ undefined4 __thiscall FUN_006264d0(void *this,int *param_1,int param_2)
                 ((byte)(&DAT_008087e9)[param_1[9] * 0x51] < 8)))) {
               bVar4 = *(byte *)&pSVar3[1].vtable;
               bVar1 = *(byte *)(piVar8 + 9);
+              /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
               _local_50 = CONCAT31(uStack_4f,bVar4);
+              /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
               _local_44 = CONCAT31(uStack_43,bVar1);
               if (DAT_00808a8f == '\0') {
                 if (bVar4 == bVar1) {
@@ -233,6 +241,7 @@ LAB_0062687f:
   local_bc[0] = 0x28;
   local_a0 = (undefined2)local_54;
   local_94 = 0x9b;
+  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
   local_96 = (**(code **)(*piVar8 + 0x10))(local_20,local_54,local_40,local_28,local_24,local_38);
   local_8f = piVar8[6];
   local_8b = 0xffff;

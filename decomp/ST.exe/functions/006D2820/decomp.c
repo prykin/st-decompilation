@@ -1,8 +1,8 @@
 
-/* [STPrototypeApplier] Propagated parameter 1.
+/* [STPrototypeRepairApplier] Propagated parameter 1.
    Evidence: 006B84D0 -> 006D2820 @ 006B85C2 */
 
-void FUN_006d2820(byte *param_1,AnonShape_006B84D0_7C7D97C6 *param_2,byte *param_3,int param_4,
+void FUN_006d2820(byte *param_1,AnonShape_006B5B10_E0D06CF1 *param_2,byte *param_3,int param_4,
                  uint param_5,uint param_6,uint param_7,int param_8,byte *param_9,int param_10,
                  uint param_11,byte *param_12)
 
@@ -19,7 +19,7 @@ void FUN_006d2820(byte *param_1,AnonShape_006B84D0_7C7D97C6 *param_2,byte *param
   int iVar10;
   byte *pbVar11;
   uint local_c;
-  
+
   if (param_9 != (byte *)0x0) {
     param_9 = param_9 + param_10 * (int)param_12 + ((int)param_11 >> 3);
   }
@@ -29,6 +29,7 @@ void FUN_006d2820(byte *param_1,AnonShape_006B84D0_7C7D97C6 *param_2,byte *param
   else {
     param_12 = FUN_006cfe10(param_3,param_5);
   }
+  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   uVar3 = (uint)*(short *)(param_3 + 0x12);
   bVar7 = (byte)param_11;
   if (param_6 == uVar3) {
@@ -255,12 +256,15 @@ LAB_006d2b87:
                 else if ((uVar6 & 0x40) == 0) {
                   if (-1 < (int)(uVar4 - 1)) {
                     do {
+                      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                       if ((*param_3 & param_7._3_1_) != 0) {
                         *param_1 = *param_12;
                       }
                       param_1 = param_1 + 1;
                       param_12 = param_12 + 1;
+                      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                       uVar8 = (uint)(param_7._3_1_ >> 1);
+                      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                       if (param_7._3_1_ >> 1 == 0) {
                         uVar8 = 0x80;
                         param_3 = param_3 + 1;
@@ -275,11 +279,14 @@ LAB_006d2b87:
                   param_12 = param_12 + 1;
                   if (-1 < (int)(uVar4 - 1)) {
                     do {
+                      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                       if ((*param_3 & param_7._3_1_) != 0) {
                         *param_1 = bVar2;
                       }
                       param_1 = param_1 + 1;
+                      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                       uVar8 = (uint)(param_7._3_1_ >> 1);
+                      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                       if (param_7._3_1_ >> 1 == 0) {
                         uVar8 = 0x80;
                         param_3 = param_3 + 1;
@@ -312,12 +319,15 @@ LAB_006d2b87:
             else if ((uVar6 & 0x40) == 0) {
               if (-1 < (int)(uVar5 - 1)) {
                 do {
+                  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                   if ((*param_3 & param_7._3_1_) != 0) {
                     *param_1 = *param_12;
                   }
                   param_1 = param_1 + 1;
                   param_12 = param_12 + 1;
+                  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                   uVar8 = (uint)(param_7._3_1_ >> 1);
+                  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                   if (param_7._3_1_ >> 1 == 0) {
                     uVar8 = 0x80;
                     param_3 = param_3 + 1;
@@ -332,11 +342,14 @@ LAB_006d2b87:
               param_12 = param_12 + 1;
               if (-1 < (int)(uVar5 - 1)) {
                 do {
+                  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                   if ((*param_3 & param_7._3_1_) != 0) {
                     *param_1 = bVar1;
                   }
                   param_1 = param_1 + 1;
+                  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                   uVar8 = (uint)(param_7._3_1_ >> 1);
+                  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                   if (param_7._3_1_ >> 1 == 0) {
                     uVar8 = 0x80;
                     param_3 = param_3 + 1;
@@ -599,12 +612,15 @@ LAB_006d306f:
               else if ((uVar6 & 0x40) == 0) {
                 if (-1 < (int)(uVar4 - 1)) {
                   do {
+                    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                     if ((*param_3 & param_7._3_1_) != 0) {
                       *param_1 = *(byte *)((uint)*param_12 + param_8);
                     }
                     param_1 = param_1 + 1;
                     param_12 = param_12 + 1;
+                    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                     uVar5 = (uint)(param_7._3_1_ >> 1);
+                    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                     if (param_7._3_1_ >> 1 == 0) {
                       uVar5 = 0x80;
                       param_3 = param_3 + 1;
@@ -620,11 +636,14 @@ LAB_006d306f:
                 bVar2 = *(byte *)((uint)bVar2 + param_8);
                 if (-1 < (int)(uVar4 - 1)) {
                   do {
+                    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                     if ((*param_3 & param_7._3_1_) != 0) {
                       *param_1 = bVar2;
                     }
                     param_1 = param_1 + 1;
+                    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                     uVar5 = (uint)(param_7._3_1_ >> 1);
+                    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                     if (param_7._3_1_ >> 1 == 0) {
                       uVar5 = 0x80;
                       param_3 = param_3 + 1;
@@ -657,12 +676,15 @@ LAB_006d306f:
           else if ((uVar6 & 0x40) == 0) {
             if (-1 < (int)(param_5 - 1)) {
               do {
+                /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                 if ((*param_3 & param_7._3_1_) != 0) {
                   *param_1 = *(byte *)((uint)*param_12 + param_8);
                 }
                 param_1 = param_1 + 1;
                 param_12 = param_12 + 1;
+                /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                 uVar5 = (uint)(param_7._3_1_ >> 1);
+                /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                 if (param_7._3_1_ >> 1 == 0) {
                   uVar5 = 0x80;
                   param_3 = param_3 + 1;
@@ -678,11 +700,14 @@ LAB_006d306f:
             bVar1 = *(byte *)((uint)bVar1 + param_8);
             if (-1 < (int)(param_5 - 1)) {
               do {
+                /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                 if ((*param_3 & param_7._3_1_) != 0) {
                   *param_1 = bVar1;
                 }
                 param_1 = param_1 + 1;
+                /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                 uVar5 = (uint)(param_7._3_1_ >> 1);
+                /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                 if (param_7._3_1_ >> 1 == 0) {
                   uVar5 = 0x80;
                   param_3 = param_3 + 1;

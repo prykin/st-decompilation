@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\upginfo.cpp
@@ -11,10 +13,8 @@ void __thiscall UpgPanelTy::ShiftControls(UpgPanelTy *this,int param_1)
   short sVar3;
   int errorCode;
   int iVar4;
-  undefined4 unaff_ESI;
-  void *unaff_EDI;
-  undefined4 local_44 [16];
-  
+  int local_44 [16];
+
   if (param_1 != this->field_005C) {
     SpecPanelTy::ShiftControls((SpecPanelTy *)this,param_1);
     sVar3 = (short)this->field_0174;
@@ -24,7 +24,7 @@ void __thiscall UpgPanelTy::ShiftControls(UpgPanelTy *this,int param_1)
     }
     this->field_002E = sVar3;
     pIVar2 = g_currentExceptionFrame;
-    errorCode = Library::MSVCRT::__setjmp3(local_44,0,unaff_EDI,unaff_ESI);
+    errorCode = Library::MSVCRT::__setjmp3(local_44,0);
     if (errorCode == 0) {
       g_currentExceptionFrame = pIVar2;
       return;
@@ -33,9 +33,7 @@ void __thiscall UpgPanelTy::ShiftControls(UpgPanelTy *this,int param_1)
     iVar4 = ReportDebugMessage(s_E____titans_Andrey_upginfo_cpp_007c87b8,0x36,0,errorCode,
                                &DAT_007a4ccc,s_UpgPanelTy__ShiftControls_007c8830);
     if (iVar4 != 0) {
-      pcVar1 = (code *)swi(3);
-      (*pcVar1)();
-      return;
+      STDebugBreak(); /* noreturn in standalone pseudocode */
     }
     RaiseInternalException(errorCode,0,s_E____titans_Andrey_upginfo_cpp_007c87b8,0x36);
   }

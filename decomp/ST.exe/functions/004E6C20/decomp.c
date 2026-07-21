@@ -7,7 +7,7 @@ int FUN_004e6c20(int param_1,int param_2)
   uint uVar3;
   int iVar4;
   int iVar5;
-  
+
   if ((((param_1 < 0) || (7 < param_1)) || (param_2 < 0x32)) || (0x73 < param_2)) {
     return 0;
   }

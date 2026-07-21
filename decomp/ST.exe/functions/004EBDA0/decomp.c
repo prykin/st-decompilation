@@ -5,7 +5,8 @@ FUN_004ebda0(void *this,int param_1,int param_2,int param_3,undefined4 param_4,u
 
 {
   int iVar1;
-  
+
+  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   if ((*(int *)((int)this + 0x508) == param_1) && (*(int *)((int)this + 0x4d0) == 3)) {
     iVar1 = thunk_FUN_004ac910((void *)((int)this + 0x1d5),'\x0e');
     if (iVar1 == *(int *)(*(int *)((int)this + 0x1f5) + 0x20c)) {

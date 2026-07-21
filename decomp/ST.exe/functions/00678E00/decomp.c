@@ -11,7 +11,7 @@ uint __thiscall FUN_00678e00(void *this,byte *param_1)
   byte *pbVar7;
   uint uVar8;
   bool bVar9;
-  
+
   iVar2 = *(int *)((int)this + 0x695);
   uVar6 = *(uint *)(iVar2 + 0xc);
   uVar8 = 0;

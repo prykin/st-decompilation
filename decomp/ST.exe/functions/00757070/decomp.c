@@ -6,7 +6,8 @@ void FUN_00757070(undefined4 *param_1)
   int iVar2;
   int iVar3;
   undefined4 *puVar4;
-  
+
+  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
   puVar1 = (undefined4 *)(**(code **)*param_1)(param_1,1,0x580);
   iVar2 = 0;
   *(undefined4 **)((int)param_1 + 0x132) = puVar1 + 0x40;
@@ -29,6 +30,7 @@ void FUN_00757070(undefined4 *param_1)
     *puVar4 = 0;
     puVar4 = puVar4 + 1;
   }
+  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   puVar4 = *(undefined4 **)((int)param_1 + 0x132);
   puVar1 = puVar1 + 0x140;
   for (iVar2 = 0x20; iVar2 != 0; iVar2 = iVar2 + -1) {

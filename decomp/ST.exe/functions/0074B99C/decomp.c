@@ -7,7 +7,7 @@ undefined4 __thiscall FUN_0074b99c(void *this,AnonShape_0074B99C_A57FB945 *param
   AnonShape_0074B99C_A57FB945 *pAVar3;
   char *pcVar4;
   bool bVar5;
-  
+
   iVar1 = 0x10;
   bVar5 = true;
   pcVar2 = this;

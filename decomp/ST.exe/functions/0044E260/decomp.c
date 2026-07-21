@@ -13,10 +13,13 @@ void FUN_0044e260(uint param_1,uint param_2,uint param_3,int *param_4)
   int iVar8;
   int iVar9;
   uint *puVar10;
+  /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
   STAllPlayersC *in_ECX;
   int iVar11;
+  /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
   STGroupBoatC **unaff_ESI;
   uint uVar12;
+  /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
   Global_sub_00498D20_param_1Enum unaff_EDI;
   STGroupBoatC *pSVar13;
   uint local_2c;
@@ -29,10 +32,11 @@ void FUN_0044e260(uint param_1,uint param_2,uint param_3,int *param_4)
   int local_10;
   int local_c;
   int local_8;
-  
+
   piVar4 = param_4;
-  local_14 = thunk_FUN_0042b760(param_1,param_2);
+  local_14 = thunk_FUN_0042b760((char)param_1,param_2);
   if (local_14 != (STGroupBoatC *)0x0) {
+    /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
     array = (DArrayTy *)STGroupC::GetGroupContent((STGroupC *)local_14,unaff_EDI);
     param_2 = array->count;
     if (param_2 != 0) {
@@ -41,15 +45,19 @@ void FUN_0044e260(uint param_1,uint param_2,uint param_3,int *param_4)
       if (0 < (int)param_2) {
         do {
           DArrayGetElement(array,uVar12,&local_2c);
-          local_14 = (STGroupBoatC *)STAllPlayersC::GetObjPtr(in_ECX,param_1,local_2c,CASE_1);
+          /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
+          local_14 = (STGroupBoatC *)STAllPlayersC::GetObjPtr(in_ECX,(char)param_1,local_2c,CASE_1);
+          /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
           if ((local_14 == (STGroupBoatC *)0x0) ||
              (iVar5 = (*local_14->vtable[6].vfunc_08)(local_14,unaff_EDI,unaff_ESI), iVar5 == 0)) {
-            FUN_006b0c70((AnonShape_006B0C70_7C4FE646 *)array,uVar12);
+            FUN_006b0c70(array,uVar12);
             param_2 = param_2 - 1;
             uVar12 = uVar12 - 1;
           }
           else {
+            /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
             unaff_ESI = &local_14;
+            /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
             unaff_EDI = Library::DKW::TBL::FUN_006ae140(&local_18->flags,uVar12,unaff_ESI);
           }
           uVar12 = uVar12 + 1;
@@ -77,7 +85,7 @@ void FUN_0044e260(uint param_1,uint param_2,uint param_3,int *param_4)
             if (local_c < iVar5) {
               local_c = iVar5;
             }
-            iVar5 = (int)*(short *)((int)&pSVar1[2].vfunc_0C + 1);
+            iVar5 = (int)*(short *)((int)&pSVar1[2].slot_0C + 1);
             uVar7 = iVar5 - iVar8;
             if ((int)uVar7 < (int)param_1) {
               param_1 = uVar7;
@@ -119,6 +127,7 @@ void FUN_0044e260(uint param_1,uint param_2,uint param_3,int *param_4)
                 iVar5 = iVar11 * 8 + -8;
                 do {
                   piVar2 = *(int **)((int)g_worldGrid.cells[1].objects + iVar5);
+                  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
                   if (((piVar2 != (int *)0x0) &&
                       (((iVar8 = piVar2[8], iVar8 == 0x14 || (iVar8 == 1000)) || (iVar8 == 0x3e9))))
                      && ((((param_3 & 1 << ((byte)piVar2[9] & 0x1f)) != 0 &&

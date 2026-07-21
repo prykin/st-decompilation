@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\task_obj.cpp
@@ -15,15 +17,13 @@ MTaskTy::CreateTextSSpr
   int iVar4;
   AnonShape_006B4B20_3D4F4412 *pAVar5;
   undefined4 *puVar6;
-  undefined4 unaff_ESI;
-  void *unaff_EDI;
   InternalExceptionFrame local_5c;
   int local_18;
   int local_14;
   uint local_10;
   uint local_c;
   AnonShape_005E3E80_D5AAB6C7 *local_8;
-  
+
   local_18 = param_2;
   local_c = param_5;
   local_14 = param_3;
@@ -31,7 +31,7 @@ MTaskTy::CreateTextSSpr
   local_8 = (AnonShape_005E3E80_D5AAB6C7 *)0x0;
   local_5c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_5c;
-  iVar3 = Library::MSVCRT::__setjmp3(local_5c.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar3 = Library::MSVCRT::__setjmp3(local_5c.jumpBuffer,0);
   if (iVar3 == 0) {
     if (((param_1 == (uint *)0x0) || ((char)*param_1 == '\0')) || (param_6 == (ccFntTy *)0x0)) {
       RaiseInternalException
@@ -91,8 +91,6 @@ MTaskTy::CreateTextSSpr
     RaiseInternalException(iVar3,0,s_E____titans_Start_task_obj_cpp_007cd994,0x488);
     return (undefined4 *)0x0;
   }
-  pcVar1 = (code *)swi(3);
-  puVar6 = (undefined4 *)(*pcVar1)();
-  return puVar6;
+  STDebugBreak(); /* noreturn in standalone pseudocode */
 }
 

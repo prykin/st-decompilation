@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\cpanel1.cpp
@@ -12,19 +14,16 @@ void __thiscall CPanelTy::PaintName(CPanelTy *this,int param_1)
   int iVar4;
   Global_sub_00523410_param_1Enum GVar5;
   UINT resourceId;
-  uint *extraout_EAX;
   uint *puVar6;
   int iVar7;
-  undefined4 unaff_ESI;
-  void *unaff_EDI;
   HINSTANCE module;
   InternalExceptionFrame local_4c;
   CPanelTy *local_8;
-  
+
   local_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_4c;
   local_8 = this;
-  iVar4 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar4 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
   pCVar2 = local_8;
   if (iVar4 == 0) {
     if (param_1 == 0) {
@@ -51,8 +50,7 @@ void __thiscall CPanelTy::PaintName(CPanelTy *this,int param_1)
       }
       module = HINSTANCE_00807618;
       resourceId = thunk_FUN_00523410(GVar5,cVar3,0);
-      LoadResourceString(resourceId,module);
-      puVar6 = extraout_EAX;
+      puVar6 = (uint *)LoadResourceString(resourceId,module);
     }
     else if (param_1 == 0) {
       puVar6 = (uint *)&pCVar2->field_0C5D;
@@ -71,8 +69,6 @@ void __thiscall CPanelTy::PaintName(CPanelTy *this,int param_1)
     RaiseInternalException(iVar4,0,s_E____titans_Andrey_cpanel1_cpp_007c23cc,0x1e);
     return;
   }
-  pcVar1 = (code *)swi(3);
-  (*pcVar1)();
-  return;
+  STDebugBreak(); /* noreturn in standalone pseudocode */
 }
 

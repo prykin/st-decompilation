@@ -23,7 +23,7 @@ void __thiscall FUN_0060d390(void *this,uint *param_1)
   undefined1 *puStack_10;
   undefined *puStack_c;
   undefined4 local_8;
-  
+
   puStack_c = &DAT_0079cd78;
   puStack_10 = &LAB_0072d964;
   local_14 = ExceptionList;
@@ -89,6 +89,7 @@ void __thiscall FUN_0060d390(void *this,uint *param_1)
         do {
           if (*piVar8 != 0) {
             *piVar5 = *piVar8;
+            /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
             piVar9 = *(int **)(local_58 + 0x40 + *(int *)((int)this + 0x244));
             piVar4 = piVar5;
             if (piVar9 != (int *)0x0) {

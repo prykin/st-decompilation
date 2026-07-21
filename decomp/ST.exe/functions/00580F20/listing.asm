@@ -1,4 +1,4 @@
-FUN_00580f20:
+STDcResourcC::FUN_00580f20:
 00580F20  8B 81 5D 02 00 00         MOV EAX,dword ptr [ECX + 0x25d]
 00580F26  48                        DEC EAX
 00580F27  F7 D8                     NEG EAX

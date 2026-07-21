@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\cp_sup.cpp
@@ -15,14 +17,12 @@ CPanelTy::PaintLBut(CPanelTy *this,byte param_1,AnonShape_004F3FE0_1578D6B9 *par
   undefined4 uVar5;
   LPSTR text;
   int iVar6;
-  undefined4 unaff_ESI;
-  void *unaff_EDI;
   InternalExceptionFrame local_58;
   CPanelTy *local_14;
   int local_10;
   int local_c;
   ushort *local_8;
-  
+
   uVar2 = (uint)param_1;
   local_8 = (ushort *)0x0;
   local_c = param_2->field_0018[1];
@@ -64,8 +64,9 @@ cf_common_join_004F4070:
     local_58.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_58;
     local_14 = this;
-    iVar4 = Library::MSVCRT::__setjmp3(local_58.jumpBuffer,0,unaff_EDI,unaff_ESI);
+    iVar4 = Library::MSVCRT::__setjmp3(local_58.jumpBuffer,0);
     if (iVar4 == 0) {
+      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
       uVar5 = (*(code *)param_6)(param_2);
       text = FUN_006f2c00(param_4,1,uVar5);
       local_8 = cMf32::RecGet(DAT_00806790,param_3,text,(int *)0x0,1);
@@ -92,9 +93,7 @@ cf_common_join_004F4070:
     iVar6 = ReportDebugMessage(s_E____titans_Andrey_cp_sup_cpp_007c1a4c,0x235,0,iVar4,&DAT_007a4ccc,
                                s_CPanelTy__PaintLBut_007c1b84);
     if (iVar6 != 0) {
-      pcVar1 = (code *)swi(3);
-      (*pcVar1)();
-      return;
+      STDebugBreak(); /* noreturn in standalone pseudocode */
     }
     RaiseInternalException(iVar4,0,s_E____titans_Andrey_cp_sup_cpp_007c1a4c,0x235);
   }

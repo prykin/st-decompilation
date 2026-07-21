@@ -11,16 +11,17 @@ undefined4 __thiscall FUN_004e91e0(void *this,STBoatC *param_1)
   int iVar4;
   int iVar5;
   uint uVar6;
-  undefined4 uVar7;
+  dword dVar7;
   short sVar8;
   int iVar9;
   short sVar10;
   int iVar11;
-  undefined4 *puVar12;
+  undefined4 uVar12;
   undefined4 *puVar13;
   undefined4 *puVar14;
-  int *piVar15;
-  
+  undefined4 *puVar15;
+  int *piVar16;
+
   if (*(int *)((int)this + 0x5ac) == 0x6c) {
     iVar4 = thunk_FUN_004e9930((int)this);
     if ((((iVar4 == 0) || (iVar4 = *(int *)((int)this + 0x61b), iVar4 == 0)) ||
@@ -34,21 +35,22 @@ undefined4 __thiscall FUN_004e91e0(void *this,STBoatC *param_1)
     }
   }
   else {
-    iVar4 = (*param_1->vtable->vfunc_2C)();
-    if ((iVar4 < 1) || (iVar4 = (*param_1->vtable->vfunc_2C)(), 0x28 < iVar4)) {
-      iVar4 = (*param_1->vtable->vfunc_2C)();
-      if ((iVar4 < 0x32) || (iVar4 = (*param_1->vtable->vfunc_2C)(), 0x73 < iVar4)) {
+    dVar7 = (*param_1->vtable->slot_2C)(param_1);
+    if (((int)dVar7 < 1) || (dVar7 = (*param_1->vtable->slot_2C)(param_1), 0x28 < (int)dVar7)) {
+      dVar7 = (*param_1->vtable->slot_2C)(param_1);
+      if (((int)dVar7 < 0x32) || (dVar7 = (*param_1->vtable->slot_2C)(param_1), 0x73 < (int)dVar7))
+      {
         iVar4 = 100;
       }
       else {
         uVar6 = GetPlayerRaceId(param_1->field_0x24);
-        iVar4 = (*param_1->vtable->vfunc_2C)();
-        iVar4 = *(int *)(&DAT_007e37b0 + ((uVar6 & 0xff) + iVar4 * 3) * 4);
+        dVar7 = (*param_1->vtable->slot_2C)(param_1);
+        iVar4 = *(int *)(&DAT_007e37b0 + ((uVar6 & 0xff) + dVar7 * 3) * 4);
       }
     }
     else {
-      iVar4 = (*param_1->vtable->vfunc_2C)();
-      iVar4 = *(int *)(&DAT_007e0d9c + iVar4 * 4);
+      dVar7 = (*param_1->vtable->slot_2C)(param_1);
+      iVar4 = *(int *)(&DAT_007e0d9c + dVar7 * 4);
     }
     if (((*(int *)((int)this + 0x4d0) * 100) / 100 < iVar4) || (*(int *)((int)this + 0x42c) == 0)) {
       bVar2 = false;
@@ -93,26 +95,26 @@ undefined4 __thiscall FUN_004e91e0(void *this,STBoatC *param_1)
       }
     }
     else {
-      piVar15 = (int *)((int)this + 0x4f0);
-      puVar14 = (undefined4 *)((int)this + 0x4ec);
+      piVar16 = (int *)((int)this + 0x4f0);
+      puVar15 = (undefined4 *)((int)this + 0x4ec);
       uVar6 = *(int *)((int)this + 0x1c) * 0x41c64e6d + 0x3039;
-      puVar13 = (undefined4 *)((int)this + 0x4e8);
+      puVar14 = (undefined4 *)((int)this + 0x4e8);
       *(uint *)((int)this + 0x1c) = uVar6;
-      puVar12 = (undefined4 *)((int)this + 0x4e4);
+      puVar13 = (undefined4 *)((int)this + 0x4e4);
       uVar6 = uVar6 >> 0x10;
-      uVar7 = *(undefined4 *)((int)this + 0x438);
+      uVar12 = *(undefined4 *)((int)this + 0x438);
       iVar4 = *(int *)((int)this + 0x434);
       iVar11 = *(int *)((int)this + 0x430);
-      iVar9 = (*param_1->vtable->vfunc_2C)();
-      thunk_FUN_004b2520(*(uint *)((int)this + 0x24),iVar9,iVar11,iVar4,uVar7,puVar12,puVar13,
-                         puVar14,uVar6,piVar15);
+      dVar7 = (*param_1->vtable->slot_2C)(param_1);
+      thunk_FUN_004b2520(*(uint *)((int)this + 0x24),dVar7,iVar11,iVar4,uVar12,puVar13,puVar14,
+                         puVar15,uVar6,piVar16);
     }
 LAB_004e946f:
     if (((-1 < *(int *)((int)this + 0x4e4)) && (-1 < *(int *)((int)this + 0x4e8))) &&
        (-1 < *(int *)((int)this + 0x4ec))) {
       *(undefined4 *)((int)this + 0x4d8) = param_1->field_0018;
-      uVar7 = (*param_1->vtable->vfunc_2C)();
-      *(undefined4 *)((int)this + 0x4dc) = uVar7;
+      dVar7 = (*param_1->vtable->slot_2C)(param_1);
+      *(dword *)((int)this + 0x4dc) = dVar7;
       if (DAT_00800bcc == (void *)0x0) {
         thunk_FUN_004d0f00();
       }

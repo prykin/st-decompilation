@@ -5,7 +5,7 @@ undefined4 __thiscall FUN_004cdf80(void *this,int param_1)
   undefined4 uVar1;
   int *piVar2;
   int iVar3;
-  
+
   uVar1 = 0;
   iVar3 = 0;
   if (0 < *(int *)((int)this + 0x524)) {

@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\ai\ai_flt.cpp
@@ -14,13 +16,11 @@ int __thiscall AiFltClassTy::AppendZone(AiFltClassTy *this,short *param_1)
   int iVar6;
   int iVar7;
   int iVar8;
-  undefined4 unaff_ESI;
   short *psVar9;
-  void *unaff_EDI;
   InternalExceptionFrame local_74;
   int local_30;
   int local_2c;
-  uint *local_28;
+  AnonPointee_AiFltClassTy_022F *local_28;
   uint local_24;
   int local_20;
   AiFltClassTy *local_1c;
@@ -29,12 +29,12 @@ int __thiscall AiFltClassTy::AppendZone(AiFltClassTy *this,short *param_1)
   int local_10;
   uint local_c;
   int local_8;
-  
+
   local_18 = 1;
   local_74.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_74;
   local_1c = this;
-  iVar5 = Library::MSVCRT::__setjmp3(local_74.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar5 = Library::MSVCRT::__setjmp3(local_74.jumpBuffer,0);
   if (iVar5 != 0) {
     g_currentExceptionFrame = local_74.previous;
     iVar7 = ReportDebugMessage(s_E____titans_ai_ai_flt_cpp_007d2b80,0x2df,0,iVar5,&DAT_007a4ccc,
@@ -43,13 +43,11 @@ int __thiscall AiFltClassTy::AppendZone(AiFltClassTy *this,short *param_1)
       RaiseInternalException(iVar5,0,s_E____titans_ai_ai_flt_cpp_007d2b80,0x2e0);
       return iVar5;
     }
-    pcVar3 = (code *)swi(3);
-    iVar5 = (*pcVar3)();
-    return iVar5;
+    STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   local_c = 0;
-  local_28 = (uint *)local_1c->field_022F;
-  local_24 = local_28[3];
+  local_28 = local_1c->field_022F;
+  local_24 = *(uint *)&local_28->field_0xc;
   if (0 < (int)local_24) {
     sVar2 = param_1[1];
     local_8 = (int)sVar2;
@@ -58,7 +56,7 @@ int __thiscall AiFltClassTy::AppendZone(AiFltClassTy *this,short *param_1)
     local_14 = (int)param_1[4];
     do {
       if (local_c < local_24) {
-        psVar9 = (short *)(local_28[2] * local_c + local_28[7]);
+        psVar9 = (short *)(local_28->field_0008 * local_c + local_28->field_001C);
       }
       else {
         psVar9 = (short *)0x0;
@@ -93,7 +91,7 @@ cf_common_exit_0065F468:
         bVar4 = true;
       }
       if (bVar4) {
-        Library::DKW::TBL::FUN_006ae140(local_28,local_c,(undefined4 *)param_1);
+        Library::DKW::TBL::FUN_006ae140((uint *)local_28,local_c,(undefined4 *)param_1);
         goto cf_common_exit_0065F468;
       }
       if ((int)local_1c->field_0170 <= (int)local_c) {

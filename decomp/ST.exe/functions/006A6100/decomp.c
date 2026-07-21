@@ -15,7 +15,7 @@ FUN_006a6100(int param_1,int param_2,int param_3,int param_4,int param_5,int par
   undefined4 local_2c;
   undefined4 local_18;
   undefined4 local_14;
-  
+
   uVar5 = param_4 - param_1 >> 0x1f;
   iVar7 = (param_4 - param_1 ^ uVar5) - uVar5;
   if (param_1 < param_4) {
@@ -118,6 +118,7 @@ FUN_006a6100(int param_1,int param_2,int param_3,int param_4,int param_5,int par
   if (param_7 != (int *)0x0) {
     *param_7 = iVar3;
   }
+  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   return *(undefined4 *)(((uVar5 + local_2c * 3) * 3 + local_14) * 4 + 0x7ed500);
 }
 

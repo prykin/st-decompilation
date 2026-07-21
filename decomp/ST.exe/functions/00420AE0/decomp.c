@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\Tc_gobj.cpp
@@ -21,7 +23,7 @@ void __thiscall STSprGameObjC::LoadLifeFrame(STSprGameObjC *this,int *param_1)
   char local_38 [20];
   char local_24 [20];
   char local_10 [12];
-  
+
   uVar5 = 0xffffffff;
   pcVar8 = s_lifelev_007a504c;
   do {
@@ -96,7 +98,7 @@ void __thiscall STSprGameObjC::LoadLifeFrame(STSprGameObjC *this,int *param_1)
   Library::MSVCRT::__itoa((uint)bVar3,pcVar9,_Radix);
   iVar6 = this->field_0020;
   if ((((iVar6 == 0x14) || (iVar6 == 1000)) || (iVar6 == 0x172)) || (iVar6 == 0x1a4)) {
-    SVar4 = (*this->vtable->vfunc_2C)();
+    SVar4 = (*this->vtable->slot_2C)(this);
   }
   else {
     if (iVar6 != 0x3e9) {
@@ -292,9 +294,7 @@ void __thiscall STSprGameObjC::LoadLifeFrame(STSprGameObjC *this,int *param_1)
     if (iVar6 == 0) {
       return;
     }
-    pcVar2 = (code *)swi(3);
-    (*pcVar2)();
-    return;
+    STDebugBreak(); /* noreturn in standalone pseudocode */
   case 0x32:
   case 0x33:
   case 0x34:

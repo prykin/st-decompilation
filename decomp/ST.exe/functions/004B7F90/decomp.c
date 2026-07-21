@@ -4,9 +4,10 @@ undefined4 __thiscall FUN_004b7f90(void *this,int param_1)
 {
   int iVar1;
   undefined4 uVar2;
-  
+
   uVar2 = 0;
   switch(*(undefined4 *)((int)this + 0x245)) {
+  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   case 0:
     if (((*(int *)((int)this + 0x255) != 0) && (param_1 == 2)) && (*(int *)((int)this + 0x259) != 0)
        ) {

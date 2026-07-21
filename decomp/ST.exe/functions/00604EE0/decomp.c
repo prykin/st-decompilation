@@ -10,7 +10,7 @@ int __thiscall FUN_00604ee0(void *this,int *param_1)
   AnonShape_00627EB0_4C14C976 local_2c;
   void *local_c;
   int local_8;
-  
+
   piVar5 = param_1;
   pAVar4 = &local_2c;
   for (iVar2 = 8; iVar2 != 0; iVar2 = iVar2 + -1) {

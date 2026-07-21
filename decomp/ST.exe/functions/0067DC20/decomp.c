@@ -1,9 +1,11 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* [STSourceProvenanceApplier begin]
    Recovered source file: E:\__titans\ai\ai_plr_d.cpp
    Diagnostic line evidence: 319 | 342 | 344 (metadata/report site, not the function definition)
    [STSourceProvenanceApplier end]
-   
+
    [STPrototypeApplier] Propagated parameter 0.
    Evidence: 0067DC20 parameter used as this of cMf32::RecMemFree @ 0067DDB2 | 0067DC20 parameter
    used as this of cMf32::RecNameGetNext @ 0067DDBA */
@@ -20,8 +22,6 @@ uint * __cdecl _CreateStgListByRoot(cMf32 *param_1,int param_2,char *param_3,uin
   uint uVar7;
   uint uVar8;
   undefined1 *_Source;
-  undefined4 unaff_ESI;
-  void *unaff_EDI;
   undefined4 *puVar9;
   char *pcVar10;
   undefined1 local_2ec [516];
@@ -34,7 +34,7 @@ uint * __cdecl _CreateStgListByRoot(cMf32 *param_1,int param_2,char *param_3,uin
   InternalExceptionFrame local_50;
   DArrayTy *local_c;
   AnonShape_0067DC20_B265FC02 *local_8;
-  
+
   puVar9 = (undefined4 *)local_2ec;
   for (iVar6 = 0x80; iVar6 != 0; iVar6 = iVar6 + -1) {
     *puVar9 = 0;
@@ -45,15 +45,13 @@ uint * __cdecl _CreateStgListByRoot(cMf32 *param_1,int param_2,char *param_3,uin
   local_8 = (AnonShape_0067DC20_B265FC02 *)0x0;
   local_50.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_50;
-  iVar6 = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar6 = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0);
   if (iVar6 != 0) {
     g_currentExceptionFrame = local_50.previous;
     iVar4 = ReportDebugMessage(s_E____titans_ai_ai_plr_d_cpp_007d2fa4,0x156,0,iVar6,&DAT_007a4ccc,
                                s__CreateStgListByRoot_007d3008);
     if (iVar4 != 0) {
-      pcVar2 = (code *)swi(3);
-      puVar5 = (uint *)(*pcVar2)();
-      return puVar5;
+      STDebugBreak(); /* noreturn in standalone pseudocode */
     }
     if (local_c != (DArrayTy *)0x0) {
       DArrayDestroy(local_c);

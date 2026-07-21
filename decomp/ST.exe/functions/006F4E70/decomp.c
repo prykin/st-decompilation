@@ -18,7 +18,7 @@ void FUN_006f4e70(byte *param_1,int param_2,uint *param_3,int param_4,int param_
   byte *pbVar9;
   byte *pbVar10;
   byte *pbVar11;
-  
+
   uVar7 = param_5 << 0x10;
   pbVar11 = param_6;
   if (DAT_00857000 != '\0') goto LAB_006f4f35;

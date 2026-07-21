@@ -13,9 +13,7 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00678E00::FUN_00679120
   int iVar1;
   AnonShape_00679120_6A32469C *pAVar2;
   uint uVar3;
-  undefined4 unaff_ESI;
   void **value;
-  void *unaff_EDI;
   InternalExceptionFrame local_68;
   undefined1 local_24 [4];
   uint local_20;
@@ -24,17 +22,18 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00678E00::FUN_00679120
   void *local_10;
   int local_c;
   int local_8;
-  
+
   local_68.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_68;
   local_14 = (AnonShape_00679120_6A32469C *)this;
-  uVar3 = Library::MSVCRT::__setjmp3(local_68.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  uVar3 = Library::MSVCRT::__setjmp3(local_68.jumpBuffer,0);
   pAVar2 = local_14;
   if (uVar3 == 0) {
     local_20 = thunk_FUN_00678e00(local_14,param_1);
     if (-1 < (int)local_20) {
       iVar1 = pAVar2->field_0695;
       if (local_20 < *(uint *)(iVar1 + 0xc)) {
+        /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
         value = (void **)(*(int *)(iVar1 + 8) * local_20 + *(int *)(iVar1 + 0x1c));
       }
       else {
@@ -63,6 +62,7 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00678E00::FUN_00679120
         STPlaySystemC::CreateGameObject(PTR_00802a38,0x38e,local_24,&local_10,*value,0);
         FreeAndNull(value);
         *value = local_10;
+        /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
         value[1] = *(void **)((int)local_10 + 0x18);
       }
     }

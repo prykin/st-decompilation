@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* Recovered from embedded debug metadata:
@@ -19,9 +21,7 @@ undefined4 __thiscall STParticleC::InitVisibelFlight(STParticleC *this,int param
   ushort *puVar10;
   int iVar11;
   undefined4 uVar12;
-  undefined4 unaff_ESI;
   undefined **ppuVar13;
-  void *unaff_EDI;
   bool bVar14;
   InternalExceptionFrame local_70;
   int local_2c;
@@ -34,7 +34,7 @@ undefined4 __thiscall STParticleC::InitVisibelFlight(STParticleC *this,int param
   uint local_10;
   uint local_c;
   undefined **local_8;
-  
+
   local_24 = *(uint *)&this->field_0x14 >> 8 & 0xff;
   ppuVar13 = (undefined **)0x0;
   local_8 = (undefined **)0x0;
@@ -129,19 +129,18 @@ LAB_00629242:
   if (ppuVar13 == (undefined **)0x0) {
     return 0xffffffff;
   }
+  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
   local_18 = CONCAT31(local_18._1_3_,this->field_0x14);
   local_70.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_70;
   local_1c = this;
-  iVar9 = Library::MSVCRT::__setjmp3(local_70.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar9 = Library::MSVCRT::__setjmp3(local_70.jumpBuffer,0);
   if (iVar9 != 0) {
     g_currentExceptionFrame = local_70.previous;
     iVar11 = ReportDebugMessage(s_E____titans_nick_to_Part_Cpp_007d1354,0x2ac,0,iVar9,&DAT_007a4ccc,
                                 s_STParticleC__InitVisibelFlight_007d1394);
     if (iVar11 != 0) {
-      pcVar4 = (code *)swi(3);
-      uVar12 = (*pcVar4)();
-      return uVar12;
+      STDebugBreak(); /* noreturn in standalone pseudocode */
     }
     RaiseInternalException(iVar9,0,s_E____titans_nick_to_Part_Cpp_007d1354,0x2ae);
     return 0xffff;

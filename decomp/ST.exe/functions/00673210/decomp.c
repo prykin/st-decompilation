@@ -6,13 +6,14 @@ int FUN_00673210(int param_1)
 {
   uint uVar1;
   undefined1 uVar2;
+  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined3 extraout_var;
   int iVar3;
   int iVar4;
   int iVar5;
   uint uVar6;
   int iVar7;
-  
+
   iVar4 = DAT_00811914;
   iVar5 = DAT_00857558;
   uVar6 = DAT_007d2d24;
@@ -24,6 +25,7 @@ int FUN_00673210(int param_1)
         thunk_FUN_006736b0();
         DAT_007d2d18 = 0x84e;
         uVar2 = thunk_FUN_00672b30();
+        /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
         if (CONCAT31(extraout_var,uVar2) == 0) {
           return -0xe;
         }
@@ -48,6 +50,7 @@ int FUN_00673210(int param_1)
           break;
         }
         if ((code *)PTR_0081194c->field_0014 != (code *)0x0) {
+          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
           (*(code *)PTR_0081194c->field_0014)(DAT_0085753c,0);
         }
         thunk_FUN_00672f00();

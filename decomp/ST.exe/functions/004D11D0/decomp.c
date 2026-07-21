@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Artem\TLO_embryo.cpp
@@ -17,17 +19,20 @@ int __thiscall TLOEmbryoTy::Create(TLOEmbryoTy *this,AnonShape_004D11D0_880D99AA
   uint uVar8;
   uint uVar9;
   STWorldObject *this_01;
+  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined2 extraout_var;
+  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined4 extraout_EDX;
+  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined4 extraout_EDX_00;
+  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined4 extraout_EDX_01;
+  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined4 extraout_EDX_02;
   undefined4 uVar10;
-  undefined4 unaff_ESI;
   AnonShape_004D11D0_880D99AA *pAVar11;
   int iVar12;
   undefined4 *puVar13;
-  void *unaff_EDI;
   undefined4 *puVar14;
   STT3DSprC **ppSVar15;
   short sVar16;
@@ -50,13 +55,13 @@ int __thiscall TLOEmbryoTy::Create(TLOEmbryoTy *this,AnonShape_004D11D0_880D99AA
   undefined4 local_10;
   int local_c;
   TLOEmbryoTy *local_8;
-  
+
   puVar14 = (undefined4 *)0x0;
   local_c = 0;
   local_cc.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_cc;
   local_3c = this;
-  iVar3 = Library::MSVCRT::__setjmp3(local_cc.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar3 = Library::MSVCRT::__setjmp3(local_cc.jumpBuffer,0);
   this_00 = local_3c;
   if (iVar3 != 0) {
     g_currentExceptionFrame = local_cc.previous;
@@ -66,9 +71,7 @@ int __thiscall TLOEmbryoTy::Create(TLOEmbryoTy *this,AnonShape_004D11D0_880D99AA
       RaiseInternalException(iVar3,0,s_E____titans_Artem_TLO_embryo_cpp_007bf4bc,0x167);
       return iVar3;
     }
-    pcVar2 = (code *)swi(3);
-    iVar3 = (*pcVar2)();
-    return iVar3;
+    STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   if (local_3c != (TLOEmbryoTy *)0x0) {
     puVar14 = (undefined4 *)&local_3c->field_0x231;
@@ -356,15 +359,14 @@ cf_common_join_004D1763:
       STAllPlayersC::RestoreGObjData
                 ((STAllPlayersC *)this_00,(undefined4 *)(&param_1->field_0x0 + param_1->field_0123))
       ;
+      /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
       thunk_FUN_00419cf0((int *)this_00,extraout_EDX,CONCAT22(extraout_var,this_00->field_0032));
     }
     else {
       iVar3 = ReportDebugMessage(s_E____titans_Artem_TLO_embryo_cpp_007bf4bc,0x160,0,0,&DAT_007a4ccc
                                  ,s_I_don_t_now_what_I_must_do___007bf498);
       if (iVar3 != 0) {
-        pcVar2 = (code *)swi(3);
-        iVar3 = (*pcVar2)();
-        return iVar3;
+        STDebugBreak(); /* noreturn in standalone pseudocode */
       }
     }
     goto LAB_004d22a1;
@@ -450,6 +452,7 @@ LAB_004d204d:
                  iVar12);
     }
     this_00->field_02EC = 1;
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
     (*(code *)this_00->field_0000->field_0090)(3,0x360);
     *(uint *)&this_00->field_0x2f0 = (-(uint)(this_00->field_0370 != 0) & 3) + 6;
     iVar3 = this_00->field_02EC + this_00->field_0241 * 4;
@@ -492,6 +495,7 @@ LAB_004d204d:
                          (float)this_00->field_0201);
       ppSVar15 = ppSVar15 + 1;
       local_8 = (TLOEmbryoTy *)((int)&local_8[-1].field_0370 + 3);
+      /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
       uVar10 = extraout_EDX_02;
     } while (8 < (int)local_8);
   }
@@ -532,13 +536,16 @@ LAB_004d1f0b:
       uVar8 = thunk_FUN_004ad650((int)this_00->field_035C);
       FUN_006ea340((void *)this_00->field_0211,uVar8,iVar3,uVar4);
       STT3DSprC::StartShow((STT3DSprC *)puVar14,this_00->field_0x2f0,PTR_00802a38->field_00E4);
+      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
       (*(code *)this_00->field_0000->field_0090)(3,0x362);
+      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
       thunk_FUN_004abce0(this_00->field_035C,0xe,0,
                          **(int **)(this_00->field_035C->field_0020 + 0x1f8) + -1,'\0');
       STT3DSprC::SetCurFase(this_00->field_035C,'\x0e',0);
       STT3DSprC::StartShow(this_00->field_035C,0xe,PTR_00802a38->field_00E4);
       thunk_FUN_004ad460(this_00->field_035C,0);
       thunk_FUN_004ad5e0((int)puVar14);
+      /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
       uVar10 = extraout_EDX_01;
     }
     else {
@@ -584,7 +591,9 @@ LAB_004d1df8:
       thunk_FUN_004d10a0(this_00,0);
       STT3DSprC::StartShow((STT3DSprC *)puVar14,this_00->field_0x2f0,PTR_00802a38->field_00E4);
       STT3DSprC::StartShow((STT3DSprC *)puVar14,this_00->field_0x2f0 - 1,PTR_00802a38->field_00E4);
+      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
       (**(code **)*puVar14)();
+      /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
       uVar10 = extraout_EDX_00;
     }
   }
@@ -597,10 +606,13 @@ LAB_004d1df8:
   thunk_FUN_004d76e0(this_00->field_0x24,0,this_00->field_0018,*(int *)(&DAT_008545ac + iVar3),
                      *(int *)(&DAT_007e1c50 + iVar3),*(int *)(&DAT_007e24fc + iVar3),
                      *(int *)(&DAT_007e3160 + iVar3));
+  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
   iVar3 = thunk_FUN_004b7520(CONCAT31((int3)((uint)this_00->field_0259 >> 8),this_00->field_0x24),
                              this_00->field_0259);
   if (iVar3 != 0) {
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
     iVar3 = (*(code *)this_00->field_0000->field_002C)();
+    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
     thunk_FUN_004b76d0(CONCAT31((int3)((uint)iVar3 >> 8),this_00->field_0x24),iVar3);
   }
   thunk_FUN_0041c3f0(this_00,(undefined *)0x5);

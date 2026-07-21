@@ -44,7 +44,7 @@ FUN_004b0250(uint param_1,int param_2,int *param_3,int *param_4,int *param_5,int
   short *local_10;
   STFishC *local_c;
   short *local_8;
-  
+
   local_3c = -1;
   local_54 = -1;
   local_50 = -1;
@@ -54,6 +54,7 @@ FUN_004b0250(uint param_1,int param_2,int *param_3,int *param_4,int *param_5,int
   if (g_worldGrid.sizeY <= g_worldGrid.sizeX) {
     sVar13 = g_worldGrid.sizeX;
   }
+  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
   local_88[9] = (int)sVar13 / (int)(uint)DAT_008087c4._2_1_;
   local_40 = thunk_FUN_004e81b0(param_1,param_2 + -0x32,0);
   local_10 = (short *)Library::DKW::LIB::FUN_006aac70(g_worldGrid.planeStride * 5);
@@ -62,6 +63,7 @@ FUN_004b0250(uint param_1,int param_2,int *param_3,int *param_4,int *param_5,int
   do {
     local_34 = (short *)(g_worldGrid.planeStride * local_18);
     local_14 = 0;
+    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
     uVar9 = g_worldGrid._0_4_;
     if (0 < g_worldGrid.sizeY) {
       do {
@@ -98,6 +100,7 @@ LAB_004b03a2:
                  ((PTR_00802a38 == (STPlaySystemC *)0x0 ||
                   ((byte)(&DAT_008087e9)[*(uint *)&local_c->field_0x24 * 0x51] < 8)))) {
                 bVar1 = local_c->field_0x24;
+                /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                 local_28 = (char *)CONCAT31(local_28._1_3_,bVar1);
                 if (*(char *)((int)&g_appClass_00806728[0x5d].field_0014 + 3) == '\0') {
                   if (bVar1 == (byte)param_1) {
@@ -137,6 +140,7 @@ LAB_004b04c9:
                   bVar16 = iVar8 < 0;
                 }
                 else {
+                  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
                   bVar16 = *(char *)((param_1 & 0xff) * 0x51 + 0x11ca + (int)g_appClass_00806728) !=
                            *(char *)((uint)bVar1 * 0x51 + 0x11ca + (int)g_appClass_00806728);
                 }
@@ -167,6 +171,7 @@ LAB_004b04c9:
 LAB_004b057d:
             iVar14 = iVar14 + 1;
             local_1c = local_1c + 4;
+            /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
             uVar9 = g_worldGrid._0_4_;
           } while (iVar14 < g_worldGrid.sizeX);
         }
@@ -182,6 +187,7 @@ LAB_004b057d:
       if (local_c != (STFishC *)0x0) {
         STFishC::sub_004162B0(local_c,&local_22,(undefined2 *)((int)&param_2 + 2),&local_2e);
         *(undefined1 *)
+         /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
          ((int)local_10 +
          (int)local_22 +
          (int)local_2e * (int)g_worldGrid.planeStride + (int)param_2._2_2_ * (int)g_worldGrid.sizeX)
@@ -191,6 +197,7 @@ LAB_004b057d:
     }
   }
   local_18 = 0;
+  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
   uVar9 = g_worldGrid._0_4_;
   sVar13 = g_worldGrid.sizeY;
   do {
@@ -326,6 +333,7 @@ LAB_004b057d:
                   do {
                     STFishC::sub_004162B0
                               (local_c,&local_22,(undefined2 *)((int)&param_2 + 2),&local_2e);
+                    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                     iVar11 = FUN_006aced8((int)local_22,(int)param_2._2_2_,iVar14,local_14);
                     if ((iVar11 <= iVar5) && ((iVar8 < 0 || (iVar11 < iVar8)))) {
                       iVar8 = iVar11;
@@ -367,6 +375,7 @@ LAB_004b0a54:
 LAB_004b0a79:
             iVar14 = iVar14 + 1;
             local_8 = (short *)(int)g_worldGrid.sizeX;
+            /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
             uVar9 = g_worldGrid._0_4_;
           } while (iVar14 < (int)local_8);
         }

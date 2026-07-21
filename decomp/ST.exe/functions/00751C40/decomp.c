@@ -7,7 +7,7 @@ void FUN_00751c40(undefined4 param_1,uint param_2,int param_3,uint *param_4,int 
   int local_28;
   int local_18;
   uint local_10 [3];
-  
+
   local_2a = (undefined2)param_3;
   local_18 = param_5;
   local_28 = 0;

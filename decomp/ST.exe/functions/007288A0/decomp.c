@@ -31,7 +31,7 @@ void __thiscall FUN_007288a0(void *this,int param_1,int param_2,int param_3)
   int local_10;
   AnonShape_007288A0_88D3FF06 *local_c;
   int local_8;
-  
+
   iVar10 = (int)*(short *)(DAT_00857110 + 2 + DAT_00857114 * 8);
   param_1 = param_1 + iVar10 * param_2;
   local_14 = *(int *)((int)this + 0x28);
@@ -77,6 +77,7 @@ void __thiscall FUN_007288a0(void *this,int param_1,int param_2,int param_3)
                 pbVar11 = pbVar11 + 2;
                 iVar7 = iVar7 + -2;
                 *(ushort *)puVar13 =
+                     /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                      CONCAT11(*(undefined1 *)(param_3 + (uint)*pbVar1),
                               *(undefined1 *)(param_3 + uVar8));
                 uVar8 = (uint)*pbVar11;
@@ -84,11 +85,13 @@ void __thiscall FUN_007288a0(void *this,int param_1,int param_2,int param_3)
               }
               while (3 < iVar7) {
                 pbVar1 = pbVar11 + 2;
+                /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                 uVar9 = CONCAT11(*(undefined1 *)(param_3 + (uint)pbVar11[1]),
                                  *(undefined1 *)(param_3 + uVar8));
                 pbVar2 = pbVar11 + 3;
                 pbVar11 = pbVar11 + 4;
                 *puVar13 = (uint)uVar9 |
+                           /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                            CONCAT22(uVar9,CONCAT11(*(undefined1 *)(param_3 + (uint)*pbVar2),
                                                    *(undefined1 *)(param_3 + (uint)*pbVar1))) <<
                            0x10;

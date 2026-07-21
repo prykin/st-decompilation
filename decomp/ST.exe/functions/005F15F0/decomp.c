@@ -18,7 +18,7 @@ FUN_005f15f0(void *this,undefined2 param_1,undefined2 param_2,undefined2 param_3
   undefined1 local_e;
   char local_d;
   undefined4 local_c;
-  
+
   if (*(int *)((int)this + 0x3c) == 0) {
     puVar1 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,10,0x20,10);
     *(uint **)((int)this + 0x3c) = puVar1;
@@ -32,7 +32,9 @@ FUN_005f15f0(void *this,undefined2 param_1,undefined2 param_2,undefined2 param_3
     *puVar4 = 0;
     puVar4 = puVar4 + 1;
   }
+  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
   local_24._0_2_ = param_1;
+  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
   local_24._2_2_ = param_2;
   local_20 = param_3;
   local_1e = param_4;

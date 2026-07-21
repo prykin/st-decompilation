@@ -8,7 +8,7 @@ undefined4 __thiscall FUN_004c7070(void *this,int param_1)
   short sVar4;
   int iVar5;
   undefined4 local_8;
-  
+
   local_8 = 0;
   uVar3 = 0;
   if (*(int *)((int)this + 0x3dc) == 0) {

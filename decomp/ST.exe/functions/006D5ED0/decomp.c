@@ -8,8 +8,6 @@ uint __fastcall FUN_006d5ed0(AnonShape_006D5ED0_5EF510E8 *param_1)
   undefined4 *puVar3;
   int iVar4;
   int iVar5;
-  undefined4 unaff_ESI;
-  void *unaff_EDI;
   LPCRITICAL_SECTION lpCriticalSection;
   AnonShape_006D5ED0_6A5D6B49 *pAVar6;
   InternalExceptionFrame local_5c;
@@ -18,7 +16,8 @@ uint __fastcall FUN_006d5ed0(AnonShape_006D5ED0_5EF510E8 *param_1)
   int local_10;
   AnonShape_006D5ED0_5EF510E8 *local_c;
   _RTL_CRITICAL_SECTION *local_8;
-  
+
+  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   iVar5 = *(int *)(param_1->field_005C + 0x288);
   if (param_1 == (AnonShape_006D5ED0_5EF510E8 *)0x0) {
     lpCriticalSection = (LPCRITICAL_SECTION)0x0;
@@ -38,12 +37,14 @@ uint __fastcall FUN_006d5ed0(AnonShape_006D5ED0_5EF510E8 *param_1)
   }
   if (param_1->field_003C < param_1->field_0038) {
     do {
+      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
       pAVar6 = (AnonShape_006D5ED0_6A5D6B49 *)(*(int *)(param_1->field_0058 + 0x44) + 0x30);
       local_14 = pAVar6;
+      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
       if (*(int *)(param_1->field_005C + 0x310) == 0) {
         local_5c.previous = g_currentExceptionFrame;
         g_currentExceptionFrame = &local_5c;
-        uVar2 = Library::MSVCRT::__setjmp3(local_5c.jumpBuffer,0,unaff_EDI,unaff_ESI);
+        uVar2 = Library::MSVCRT::__setjmp3(local_5c.jumpBuffer,0);
         param_1 = local_c;
         iVar5 = local_10;
         pAVar6 = local_14;
@@ -54,6 +55,7 @@ uint __fastcall FUN_006d5ed0(AnonShape_006D5ED0_5EF510E8 *param_1)
         }
         if (*(int *)(local_c + 1) == 0) {
           uVar2 = (int)local_14->field_0008 >> 0x1f;
+          /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
           Library::DKW::DDX::FUN_006c4350
                     (*(int *)(local_10 + 0x28),&local_c->field_0064,local_14->field_0004,
                      (local_14->field_0008 ^ uVar2) - uVar2,0,*(uint *)(local_10 + 4) & 0xc);
@@ -73,8 +75,10 @@ uint __fastcall FUN_006d5ed0(AnonShape_006D5ED0_5EF510E8 *param_1)
       }
       param_1->field_0060 = puVar3;
       if (puVar3 == (undefined4 *)0x0) {
+        /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
         if ((*(int *)(param_1->field_005C + 0x310) == 0) &&
            (piVar1 = (int *)param_1->field_0064, piVar1 != (int *)0x0)) {
+          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
           (**(code **)(*piVar1 + 8))(piVar1);
           param_1->field_0064 = 0;
         }

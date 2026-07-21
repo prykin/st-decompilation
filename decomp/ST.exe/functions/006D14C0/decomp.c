@@ -10,7 +10,7 @@ void FUN_006d14c0(ushort *param_1,int param_2,int param_3,uint *param_4)
   uint local_10;
   int local_c;
   int local_8;
-  
+
   if (param_4 == (uint *)0x0) {
     local_10 = 0x1f;
     local_18 = 0x7c00;
@@ -42,14 +42,18 @@ void FUN_006d14c0(ushort *param_1,int param_2,int param_3,uint *param_4)
     local_c = 0xb;
   }
   if (local_8 == -1) {
+    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
     local_8._0_1_ = 0;
     for (uVar1 = local_18; (uVar1 & 0x8000) == 0; uVar1 = uVar1 << 1) {
+      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
       local_8._0_1_ = (byte)local_8 + 1;
     }
   }
   if (param_4 == (uint *)0xffffffff) {
+    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
     param_4._0_1_ = 0;
     for (uVar1 = local_14; (uVar1 & 0x8000) == 0; uVar1 = uVar1 << 1) {
+      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
       param_4._0_1_ = (byte)param_4 + 1;
     }
   }

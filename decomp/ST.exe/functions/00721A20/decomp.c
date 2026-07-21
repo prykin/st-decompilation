@@ -8,7 +8,7 @@ void __thiscall FUN_00721a20(void *this,int param_1)
   undefined4 local_18;
   undefined4 local_14;
   int local_10;
-  
+
   local_1c = *(int *)((int)this + 0x1fc);
   if (local_1c != 0) {
     local_18 = 0x80000002;

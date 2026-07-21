@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\ai\ai_flt.cpp
@@ -10,6 +12,7 @@ void __thiscall AiFltClassTy::GoToRepair(AiFltClassTy *this,int param_1)
   bool bVar2;
   AiFltClassTy *pAVar3;
   undefined2 uVar4;
+  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined2 extraout_var;
   int iVar5;
   undefined2 *puVar6;
@@ -17,10 +20,10 @@ void __thiscall AiFltClassTy::GoToRepair(AiFltClassTy *this,int param_1)
   IMAGE_DOS_HEADER *pIVar7;
   DArrayTy *array;
   int iVar8;
+  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined4 extraout_EDX;
+  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined4 extraout_EDX_00;
-  undefined4 unaff_ESI;
-  void *unaff_EDI;
   InternalExceptionFrame local_68;
   uint local_24;
   int local_20;
@@ -30,13 +33,15 @@ void __thiscall AiFltClassTy::GoToRepair(AiFltClassTy *this,int param_1)
   DArrayTy *local_10;
   int local_c;
   DArrayTy *local_8;
-  
+
   if ((this->field_0203 == 0) ||
      ((uint)(this->field_0207 + this->field_0203) <= (uint)this->field_0280)) {
     this->field_0207 = this->field_0280;
     local_1c = this;
     uVar4 = sub_0065D9C0(this);
+    /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
     iVar5 = CONCAT22(extraout_var,uVar4);
+    /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
     if ((0 < iVar5) &&
        (local_20 = iVar5,
        local_c = thunk_FUN_00661800((AnonShape_0065DA10_8B0AA883 *)this,extraout_EDX),
@@ -46,9 +51,10 @@ void __thiscall AiFltClassTy::GoToRepair(AiFltClassTy *this,int param_1)
       local_10 = (DArrayTy *)0x0;
       local_68.previous = g_currentExceptionFrame;
       g_currentExceptionFrame = &local_68;
-      iVar5 = Library::MSVCRT::__setjmp3(local_68.jumpBuffer,0,unaff_EDI,unaff_ESI);
+      iVar5 = Library::MSVCRT::__setjmp3(local_68.jumpBuffer,0);
       pAVar3 = local_1c;
       if (iVar5 == 0) {
+        /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
         local_8 = (DArrayTy *)
                   thunk_FUN_0065da10((AnonShape_0065DA10_8B0AA883 *)local_1c,extraout_EDX_00);
         if (local_8 != (DArrayTy *)0x0) {
@@ -57,16 +63,16 @@ void __thiscall AiFltClassTy::GoToRepair(AiFltClassTy *this,int param_1)
           if (0 < (int)local_8->count) {
             do {
               if (local_14 < local_8->count) {
+                /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(local_8, local_14) (runtime stride) */
                 puVar6 = (undefined2 *)(local_8->elementSize * local_14 + (int)local_8->data);
               }
               else {
                 puVar6 = (undefined2 *)0x0;
               }
+              /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
               local_24 = CONCAT22((short)((uint)puVar6 >> 0x10),*puVar6);
               this_00 = STAllPlayersC::GetObjPtr
-                                  (g_sTAllPlayers_007FA174,
-                                   CONCAT31((int3)(local_24 >> 8),pAVar3->field_0x24),local_24,
-                                   CASE_1);
+                                  (g_sTAllPlayers_007FA174,pAVar3->field_0x24,local_24,CASE_1);
               if ((this_00 != (STGameObjC *)0x0) && ((int)pAVar3->field_0179 < local_20 - local_c))
               {
                 iVar5 = (*this_00->vtable->vfunc_2C)();
@@ -158,9 +164,7 @@ LAB_00661a96:
       iVar8 = ReportDebugMessage(s_E____titans_ai_ai_flt_cpp_007d2b80,0x6e9,0,iVar5,&DAT_007a4ccc,
                                  s_AiFltClassTy__GoToRepair_007d2c40);
       if (iVar8 != 0) {
-        pcVar1 = (code *)swi(3);
-        (*pcVar1)();
-        return;
+        STDebugBreak(); /* noreturn in standalone pseudocode */
       }
       RaiseInternalException(iVar5,0,s_E____titans_ai_ai_flt_cpp_007d2b80,0x6ea);
     }

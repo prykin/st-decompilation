@@ -18,7 +18,7 @@ void FUN_006f5240(byte *param_1,int param_2,uint *param_3,int param_4,int param_
   int iVar8;
   byte *pbVar9;
   byte *pbVar10;
-  
+
   _DAT_00857000 = 1;
 LAB_006f5259:
   while( true ) {

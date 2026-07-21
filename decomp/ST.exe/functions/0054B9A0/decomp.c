@@ -12,7 +12,7 @@ FUN_0054b9a0(void *this,int param_1,int param_2,int param_3,int param_4,int para
   int iVar2;
   int iVar3;
   int iVar4;
-  
+
   iVar4 = param_1 + 0xb;
   iVar2 = param_1 + -0xc + param_3;
   iVar1 = param_2 + 5;

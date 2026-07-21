@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\load_obj.cpp
@@ -14,16 +16,14 @@ ChooseMapTy::OutListProc
   int errorCode;
   int iVar3;
   byte bVar4;
-  undefined4 unaff_ESI;
-  void *unaff_EDI;
   InternalExceptionFrame local_50;
   int local_c;
   uint local_8;
-  
+
   local_c = param_8;
   local_50.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_50;
-  errorCode = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  errorCode = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0);
   if (errorCode != 0) {
     g_currentExceptionFrame = local_50.previous;
     iVar3 = ReportDebugMessage(s_E____titans_Start_load_obj_cpp_007cc728,0x1b,0,errorCode,
@@ -32,21 +32,23 @@ ChooseMapTy::OutListProc
       RaiseInternalException(errorCode,0,s_E____titans_Start_load_obj_cpp_007cc728,0x1b);
       return;
     }
-    pcVar1 = (code *)swi(3);
-    (*pcVar1)();
-    return;
+    STDebugBreak(); /* noreturn in standalone pseudocode */
   }
+  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   if ((local_c != 0) && (*(BITMAPINFO **)(local_c + 0x1c7b) != (BITMAPINFO *)0x0)) {
     bVar2 = 0;
     local_8 = local_8 & 0xffffff00;
     do {
       bVar4 = bVar2;
+      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
       if (*(int *)(local_c + 0x1c23 + (local_8 & 0xff) * 4) == param_2) break;
       bVar2 = bVar2 + 1;
+      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
       local_8 = CONCAT31(local_8._1_3_,bVar2);
       bVar4 = 0xff;
     } while (bVar2 < 0x16);
     if (bVar4 != 0xff) {
+      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
       Library::DKW::DDX::FUN_006b4680
                 (param_1,param_4,param_5,*(BITMAPINFO **)(local_c + 0x1c7b),(uint *)0x0,0,
                  param_5 + -0x3f,param_6,param_7,0);

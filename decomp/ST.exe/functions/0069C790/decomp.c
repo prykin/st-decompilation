@@ -12,7 +12,7 @@ int FUN_0069c790(uint *param_1,int param_2,uint param_3,uint param_4)
   int iVar5;
   int local_c;
   int local_8;
-  
+
   local_c = 0;
   if (param_3 < param_1[3]) {
     local_8 = param_1[2] * param_3 + param_1[7];

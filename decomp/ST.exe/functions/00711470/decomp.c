@@ -7,7 +7,7 @@ int FUN_00711470(uint *param_1)
   uint *puVar3;
   int iVar4;
   int iVar5;
-  
+
   iVar4 = 0;
   if (param_1 == (uint *)0x0) {
     return 0;

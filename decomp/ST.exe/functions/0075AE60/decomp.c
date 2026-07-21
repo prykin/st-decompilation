@@ -12,14 +12,16 @@ undefined4 FUN_0075ae60(undefined4 *param_1)
   undefined4 local_10;
   int local_c;
   undefined4 *local_8;
-  
+
   puVar2 = param_1;
+  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   iVar7 = *(int *)((int)param_1 + 0x19a);
   local_10 = 0;
   if ((param_1[0x35] == 0) || (param_1[0x26] == 0)) {
     return 0;
   }
   if (*(int *)(iVar7 + 0x70) == 0) {
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
     uVar3 = (**(code **)*param_1)(param_1,1,param_1[7] * 0x18);
     *(undefined4 *)(iVar7 + 0x70) = uVar3;
   }

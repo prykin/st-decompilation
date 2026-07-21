@@ -8,7 +8,7 @@ int FUN_004e7fc0(int param_1)
   int iVar4;
   int *piVar5;
   int *piVar6;
-  
+
   piVar6 = &DAT_0079a3fc;
   iVar2 = 0x54;
   piVar5 = &DAT_0079a3fc;

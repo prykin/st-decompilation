@@ -1,5 +1,9 @@
 
-char __thiscall
+/* [STAbiConsistencyApplier] full_eax_return: return=/int Evidence: all observed callers consume
+   full EAX (1), none consume AL/AX, and every RET path defines full EAX; sites=00697390 @ 0069751C
+   -> PUSH PUSH EAX */
+
+int __thiscall
 FUN_00698ca0(void *this,int param_1,int param_2,int param_3,int *param_4,int *param_5,
             undefined4 *param_6)
 
@@ -9,7 +13,7 @@ FUN_00698ca0(void *this,int param_1,int param_2,int param_3,int *param_4,int *pa
   uint uVar3;
   undefined4 local_c;
   uint local_8;
-  
+
   iVar1 = thunk_FUN_006a1370(*(int **)((int)this + 8),param_1,param_2,param_3,&local_c);
   *param_4 = -1;
   *param_5 = -1;
@@ -29,11 +33,11 @@ FUN_00698ca0(void *this,int param_1,int param_2,int param_3,int *param_4,int *pa
       iVar1 = (int)(short)iVar1 - uVar3;
       *param_4 = iVar1;
       if (param_3 == *param_5) {
-        return '\x04';
+        return 4;
       }
-      return (param_3 != iVar1) + '\x01';
+      return (param_3 != iVar1) + 1;
     }
   }
-  return '\0';
+  return 0;
 }
 

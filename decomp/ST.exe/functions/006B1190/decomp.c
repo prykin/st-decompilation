@@ -6,7 +6,7 @@ int __fastcall FUN_006b1190(AnonShape_006B1190_EDB2B5FD *param_1,undefined4 *par
   uint uVar2;
   uint uVar3;
   undefined4 *puVar4;
-  
+
   if ((uint)param_1->field_0004 < param_1->field_000C) {
     uVar3 = param_1->field_0008;
     puVar4 = (undefined4 *)(uVar3 * param_1->field_0004 + param_1->field_001C);

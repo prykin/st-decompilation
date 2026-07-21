@@ -10,7 +10,7 @@ FUN_00589a20(void *this,short param_1,short param_2,short param_3,short param_4,
   short sVar4;
   short sVar5;
   short sVar6;
-  
+
   sVar1 = *(short *)((int)this + 0x45) + -0x1c;
   sVar4 = *(short *)((int)this + 0x45) + 0x1c;
   sVar6 = *(short *)((int)this + 0x41) + -0x1c;

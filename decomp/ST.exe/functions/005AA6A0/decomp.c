@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\hologram.cpp
@@ -11,9 +13,8 @@ void __thiscall HoloTy::OutHoloProc(HoloTy *this,uint param_1)
   int iVar3;
   int iVar4;
   int iVar5;
-  undefined4 unaff_ESI;
-  void *unaff_EDI;
   uint uVar6;
+  /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
   AnonShape_005AA6A0_963F03BF *in_stack_00000020;
   BITMAPINFO *pBVar7;
   int iVar8;
@@ -22,14 +23,16 @@ void __thiscall HoloTy::OutHoloProc(HoloTy *this,uint param_1)
   InternalExceptionFrame local_50;
   int local_c;
   AnonShape_005AA6A0_963F03BF *local_8;
-  
+
+  /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
   local_8 = in_stack_00000020;
+  /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
   if (((in_stack_00000020 != (AnonShape_005AA6A0_963F03BF *)0x0) &&
       (in_stack_00000020->field_0007 != (BITMAPINFO *)0x0)) && (in_stack_00000020->field_000B != 0))
   {
     local_50.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_50;
-    iVar3 = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
+    iVar3 = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0);
     if (iVar3 == 0) {
       uVar6 = 0;
       if (local_8->field_000F != 0) {
@@ -76,9 +79,7 @@ switchD_005aa738_default:
     iVar4 = ReportDebugMessage(s_E____titans_Start_hologram_cpp_007cc674,0x1e,0,iVar3,&DAT_007a4ccc,
                                s_HoloTy__OutHoloProc_007cc69c);
     if (iVar4 != 0) {
-      pcVar2 = (code *)swi(3);
-      (*pcVar2)();
-      return;
+      STDebugBreak(); /* noreturn in standalone pseudocode */
     }
     RaiseInternalException(iVar3,0,s_E____titans_Start_hologram_cpp_007cc674,0x1e);
   }

@@ -7,7 +7,7 @@ undefined4 __thiscall FUN_0071c7c0(void *this,int *param_1)
   int *piVar3;
   bool bVar4;
   int local_68 [25];
-  
+
   if (*(int *)((int)this + 0x24) != 0) {
     *(undefined4 *)(*(int *)((int)this + 0x24) + 4) = 0;
     iVar1 = FUN_006b1190(*(AnonShape_006B1190_EDB2B5FD **)((int)this + 0x24),local_68);

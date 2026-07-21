@@ -8,7 +8,7 @@ char * __cdecl FUN_00529590(Global_sub_00529590_param_1Enum param_1,int param_2)
 
 {
   char *pcVar1;
-  
+
   switch(param_1) {
   case CASE_1:
     if (DAT_0080874e == '\x03') {

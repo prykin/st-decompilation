@@ -20,7 +20,7 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_004248D0::FUN_00427bb0
   int iVar8;
   int local_14;
   int local_8;
-  
+
   piVar3 = (int *)(param_1 * 0x10 + DAT_007f4d74);
   iVar6 = (DAT_007f4d80 + param_1) * *(int *)&this->field_0x37c + *(int *)&this->field_0x38c;
   bVar1 = 0;

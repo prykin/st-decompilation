@@ -13,7 +13,7 @@ undefined4 * __cdecl FUN_00540c40(void *param_1,uint *param_2,uint *param_3,int 
   char *pcVar9;
   int local_c;
   int local_8;
-  
+
   uVar3 = 0xffffffff;
   iVar5 = 0;
   pcVar6 = &DAT_008016a0;
@@ -41,16 +41,17 @@ undefined4 * __cdecl FUN_00540c40(void *param_1,uint *param_2,uint *param_3,int 
     pcVar9 = pcVar9 + 1;
   }
   if ((param_1 != (void *)0x0) && (param_2 != (uint *)0x0)) {
-    iVar2 = FUN_00711110(param_1,param_2);
+    iVar2 = FUN_00711110(param_1,(char *)param_2);
     if (param_4 < iVar2) {
       if (param_3 != (uint *)0x0) {
-        local_8 = FUN_00711110(param_1,param_3);
+        local_8 = FUN_00711110(param_1,(char *)param_3);
       }
       puVar8 = param_2;
       iVar2 = local_8;
       if (param_4 < local_8) goto LAB_00540d59;
       while (iVar2 < param_4) {
         uVar3 = FUN_00710fb0(param_1,(byte *)puVar8);
+        /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
         iVar5 = iVar5 + *(int *)((int)param_1 + 0x58) +
                         (int)*(short *)(*(int *)((int)param_1 + 0x9a) + 0x6a + (uVar3 & 0xffff) * 10
                                        );

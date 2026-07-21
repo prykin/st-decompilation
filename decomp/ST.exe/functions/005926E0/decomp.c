@@ -1,8 +1,10 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\camp_obj.cpp
    CampaignTy::AnimationCampaign
-   
+
    [STSwitchEnumApplier] Switch target field_1BE8 uses
    /SubmarineTitans/Recovered/Enums/CampaignTy_field_1BE8State. Cases:
    CASE_0=0;CASE_1=1;CASE_2=2;CASE_3=3;CASE_4=4;CASE_5=5;CASE_6=6;CASE_7=7;CASE_8=8 */
@@ -17,29 +19,25 @@ void __thiscall CampaignTy::AnimationCampaign(CampaignTy *this)
   BITMAPINFO *pBVar4;
   int iVar5;
   CampaignTy_field_1BE8State CVar6;
-  undefined4 unaff_ESI;
   undefined4 *puVar7;
   int *piVar8;
-  void *unaff_EDI;
   uint uVar9;
   char cVar10;
   InternalExceptionFrame local_68;
   int local_24 [7];
   CampaignTy *local_8;
-  
+
   local_68.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_68;
   local_8 = this;
-  iVar3 = Library::MSVCRT::__setjmp3(local_68.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar3 = Library::MSVCRT::__setjmp3(local_68.jumpBuffer,0);
   this_00 = local_8;
   if (iVar3 != 0) {
     g_currentExceptionFrame = local_68.previous;
     iVar5 = ReportDebugMessage(s_E____titans_Start_camp_obj_cpp_007cbcd4,0x1b3,0,iVar3,&DAT_007a4ccc
                                ,s_CampaignTy__AnimationCampaign_007cbe7c);
     if (iVar5 != 0) {
-      pcVar2 = (code *)swi(3);
-      (*pcVar2)();
-      return;
+      STDebugBreak(); /* noreturn in standalone pseudocode */
     }
     RaiseInternalException(iVar3,0,s_E____titans_Start_camp_obj_cpp_007cbcd4,0x1b3);
     return;
@@ -140,6 +138,7 @@ void __thiscall CampaignTy::AnimationCampaign(CampaignTy *this)
   case CASE_8:
     iVar5 = 2;
   }
+  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   if (*(int *)((&this_00->field_1B13)[local_24[2] + iVar3 * 0xf] + 0x14) -
       *(int *)((&this_00->field_1B13)[local_24[2] + iVar5 * 0xf] + 0x18) != 1)
   goto switchD_00592962_caseD_1;

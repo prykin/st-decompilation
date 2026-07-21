@@ -2,9 +2,9 @@
 int * __fastcall FUN_005545c0(int *param_1)
 
 {
-  uint *extraout_EAX;
+  char *resourceString;
   int iVar1;
-  
+
   param_1[4] = 0;
   param_1[3] = 0;
   param_1[6] = 0;
@@ -17,8 +17,8 @@ int * __fastcall FUN_005545c0(int *param_1)
   param_1[10] = 1;
   *(undefined4 *)(iVar1 + 0x58) = 1;
   *(undefined4 *)(iVar1 + 0x5c) = 1;
-  LoadResourceString(0x267a,HINSTANCE_00807618);
-  iVar1 = FUN_007111c0((void *)param_1[2],extraout_EAX);
+  resourceString = LoadResourceString(0x267a,HINSTANCE_00807618);
+  iVar1 = FUN_007111c0((void *)param_1[2],resourceString);
   param_1[0xe] = 0;
   param_1[0xd] = param_1[0xb] + iVar1;
   param_1[0x10] = 1;

@@ -6,8 +6,9 @@ void __thiscall FUN_00490a00(void *this,short param_1,short param_2,short param_
   short sVar2;
   short sVar3;
   STWorldObject *this_00;
-  
+
   sVar1 = *(short *)((int)this + 0x554);
+  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   if (((sVar1 != param_1) || (*(short *)((int)this + 0x556) != param_2)) ||
      (*(short *)((int)this + 0x558) != param_3)) {
     sVar2 = *(short *)((int)this + 0x558);

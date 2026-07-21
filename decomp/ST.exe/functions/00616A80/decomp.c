@@ -13,7 +13,9 @@ FUN_00616a80(void *this,int param_1,int param_2,int param_3,int *param_4,int *pa
   int iVar6;
   int iVar7;
   float10 fVar8;
+  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   float10 extraout_ST0;
+  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   float10 extraout_ST1;
   float10 fVar9;
   longlong lVar10;
@@ -35,7 +37,7 @@ FUN_00616a80(void *this,int param_1,int param_2,int param_3,int *param_4,int *pa
   int local_10;
   int local_c;
   float local_8;
-  
+
   fVar8 = thunk_FUN_00616400(this,param_1,param_2,param_3);
   local_8 = (float)fVar8;
   if (fVar8 == (float10)_DAT_0079034c) {
@@ -67,6 +69,7 @@ FUN_00616a80(void *this,int param_1,int param_2,int param_3,int *param_4,int *pa
   lVar10 = Library::MSVCRT::__ftol();
   local_20 = (int)lVar10;
   local_14 = *(int *)((int)this + 0x284);
+  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
   local_28 = CONCAT22((short)((ulonglong)lVar10 >> 0x10),*(short *)((int)this + 0x25e));
   local_1c = (float)local_14;
   local_8 = (float)(int)*(short *)((int)this + 0x25e);
@@ -92,9 +95,11 @@ FUN_00616a80(void *this,int param_1,int param_2,int param_3,int *param_4,int *pa
     *(short *)((int)this + 0x274) =
          (sVar3 - (((short)(iVar7 / 10000) + (short)(iVar7 >> 0x1f)) -
                   (short)((longlong)iVar7 * 0x68db8bad >> 0x3f))) + (short)iVar6;
+    /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
     fVar9 = extraout_ST1;
     lVar10 = Library::MSVCRT::__ftol();
     iVar7 = (int)lVar10 * 0x172;
+    /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
     local_4c = (float)-extraout_ST0;
     local_48 = -local_48;
     local_44 = -local_44;

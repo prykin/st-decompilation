@@ -4,7 +4,7 @@ undefined4 FUN_00615860(int param_1,int *param_2,int *param_3,int *param_4)
 {
   short sVar1;
   short local_94 [72];
-  
+
   local_94[10] = 0xe47c;
   local_94[0xd] = 0xde4d;
   local_94[0x10] = 0xda6a;

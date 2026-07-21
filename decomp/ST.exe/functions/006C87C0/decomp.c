@@ -6,7 +6,7 @@ undefined4 FUN_006c87c0(AnonShape_GLOBAL_0080C4CB_D58160AA *param_1,uint param_2
 
 {
   void **value;
-  
+
   if (param_2 < (uint)param_1->field_0008) {
     value = (void **)(param_1->field_0014 + param_2 * 4);
     if (*value != (void *)0x0) {

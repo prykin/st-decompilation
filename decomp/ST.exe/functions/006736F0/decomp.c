@@ -10,16 +10,14 @@ int FUN_006736f0(void)
   char *pcVar6;
   uint uVar7;
   uint uVar8;
-  undefined4 unaff_ESI;
   byte *pbVar9;
-  void *unaff_EDI;
   char *pcVar10;
   bool bVar11;
   InternalExceptionFrame local_54;
   uint local_10;
   byte *local_c;
   int *local_8;
-  
+
   local_8 = (int *)0x0;
   local_10 = DAT_007d2d24;
   iVar3 = FUN_00673d20();
@@ -169,6 +167,7 @@ LAB_006739cd:
     }
     if (cVar2 == ']') {
       DAT_00811914 = DAT_00811914 + 1;
+      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
       pcVar6 = (char *)(**(code **)&PTR_0081194c->field_0x10)(DAT_00857528);
       if (pcVar6 == (char *)0x0) {
         *DAT_00811948 = 0;
@@ -240,13 +239,14 @@ LAB_006739cd:
     if (DAT_007d2d18 == 0x3c) {
       local_54.previous = g_currentExceptionFrame;
       g_currentExceptionFrame = &local_54;
-      iVar3 = Library::MSVCRT::__setjmp3(local_54.jumpBuffer,0,unaff_EDI,unaff_ESI);
+      iVar3 = Library::MSVCRT::__setjmp3(local_54.jumpBuffer,0);
       if (iVar3 != 0) {
         g_currentExceptionFrame = local_54.previous;
         return iVar3;
       }
       thunk_FUN_00672b60((char *)DAT_00811948,PTR_0081194c);
       if ((code *)PTR_0081194c->field_0014 != (code *)0x0) {
+        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
         (*(code *)PTR_0081194c->field_0014)(DAT_00811948,1);
       }
       DAT_007d2d24 = DAT_007d2d24 | 0x80;

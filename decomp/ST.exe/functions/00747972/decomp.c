@@ -2,21 +2,20 @@
 undefined4 FUN_00747972(AnonShape_00747F3B_C97131D7 *param_1,undefined4 *param_2)
 
 {
-  bool bVar1;
-  undefined4 uVar2;
-  undefined3 extraout_var;
+  undefined4 uVar1;
+  int iVar2;
   void *this;
   undefined4 *puVar3;
-  
+
   if (param_2 == (undefined4 *)0x0) {
-    uVar2 = 0x80004003;
+    uVar1 = 0x80004003;
   }
   else {
-    uVar2 = 0;
-    bVar1 = FUN_00747f3b(param_1);
-    if (CONCAT31(extraout_var,bVar1) == 1) {
+    uVar1 = 0;
+    iVar2 = FUN_00747f3b(param_1);
+    if (iVar2 == 1) {
       *param_2 = 0;
-      uVar2 = 0x80040203;
+      uVar1 = 0x80040203;
     }
     else {
       this = (void *)Library::MSVCRT::FUN_0072e530(0x14);
@@ -28,10 +27,10 @@ undefined4 FUN_00747972(AnonShape_00747F3B_C97131D7 *param_1,undefined4 *param_2
       }
       *param_2 = puVar3;
       if (puVar3 == (undefined4 *)0x0) {
-        uVar2 = 0x8007000e;
+        uVar1 = 0x8007000e;
       }
     }
   }
-  return uVar2;
+  return uVar1;
 }
 

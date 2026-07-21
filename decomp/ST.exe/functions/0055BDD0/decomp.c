@@ -14,7 +14,7 @@ void FUN_0055bdd0(char *param_1,char *source)
   char *pcVar5;
   char *pcVar6;
   char *pcVar7;
-  
+
   if (param_1 == (char *)0x0) {
     Library::MSVCRT::_strncpy((char *)&DAT_0080f33a,source,0x834);
   }

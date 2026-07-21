@@ -85,7 +85,7 @@ FUN_006991c0(void *this,int param_1,int param_2,int param_3,int param_4,uint par
   undefined1 *puStack_10;
   undefined *puStack_c;
   undefined4 local_8;
-  
+
   local_8 = 0xffffffff;
   puStack_c = &DAT_0079d7b8;
   puStack_10 = &LAB_0072d964;
@@ -129,6 +129,7 @@ FUN_006991c0(void *this,int param_1,int param_2,int param_3,int param_4,uint par
   puVar7 = &stack0xfffffe98;
   if (0 < iVar16) {
     do {
+      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
       if ((((0 < local_dc % param_1) && (0 < local_dc / param_1)) &&
           (local_dc % param_1 < *(int *)((int)this + 0x5833) + -1)) &&
          (local_dc / param_1 < *(int *)((int)this + 0x5837) + -1)) {
@@ -143,6 +144,7 @@ FUN_006991c0(void *this,int param_1,int param_2,int param_3,int param_4,uint par
             iVar16 = 0;
             if (0 < iVar9) {
               do {
+                /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
                 if (*(short *)(*(int *)((int)this + 0x584f) +
                               (local_80[iVar16] + *(int *)((int)this + 0x582f) * iVar17) * 2) < 1) {
                   bVar20 = false;
@@ -557,6 +559,7 @@ LAB_00699f26:
                 iVar9 = local_48 * 10;
                 uVar4 = *(ushort *)(&stack0xfffffe98 + iVar9);
                 local_134 = (uint)uVar4;
+                /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                 local_134 = CONCAT22(*(short *)(&stack0xfffffe9a + iVar9),uVar4);
                 local_130 = (uint)*(ushort *)(&stack0xfffffe9c + iVar9);
                 *(undefined1 *)
@@ -582,6 +585,7 @@ LAB_00699f26:
                   iVar16 = local_58 * 10;
                   uVar4 = *(ushort *)(&stack0xfffffe98 + iVar16);
                   local_134 = (uint)uVar4;
+                  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                   local_134 = CONCAT22(*(short *)(&stack0xfffffe9a + iVar16),uVar4);
                   *(undefined1 *)
                    ((int)*(short *)(&stack0xfffffe9a + iVar16) * *(int *)((int)this + 0x5833) +
@@ -863,6 +867,7 @@ LAB_00699f26:
               ;
               local_134 = *(uint *)(local_9c + (uint)*(ushort *)(local_120 + local_20[iVar16]) * 10)
               ;
+              /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
               local_130 = CONCAT22(local_130._2_2_,
                                    *(undefined2 *)
                                     ((int)(local_9c +

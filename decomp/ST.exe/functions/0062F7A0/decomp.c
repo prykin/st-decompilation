@@ -3,7 +3,7 @@ void __fastcall FUN_0062f7a0(AnonShape_0062F7A0_700302F7 *param_1)
 
 {
   int iVar1;
-  
+
   iVar1 = 0;
   do {
     thunk_FUN_0062f6c0(param_1,iVar1);

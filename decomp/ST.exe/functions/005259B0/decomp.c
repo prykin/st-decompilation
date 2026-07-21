@@ -8,7 +8,7 @@ uint __cdecl FUN_005259b0(Global_sub_005259B0_param_1Enum param_1,ushort param_2
 
 {
   uint uVar1;
-  
+
   uVar1 = -(uint)(param_3 != '\0') & 0xff;
   if (param_2 < 5) {
     switch(param_1) {

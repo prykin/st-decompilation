@@ -22,7 +22,7 @@ FUN_00709470(void *this,int *param_1,int param_2,int param_3,int param_4,undefin
   undefined4 local_10;
   int local_c;
   int local_8;
-  
+
   if (param_3 == 0) {
     iVar8 = 0;
     iVar12 = 0;
@@ -60,6 +60,7 @@ FUN_00709470(void *this,int *param_1,int param_2,int param_3,int param_4,undefin
         iVar4 = *piVar9;
         if ((iVar4 != 0) && (0 < *(short *)(iVar4 + 0x12))) {
           sVar2 = *(short *)(iVar4 + 0x14);
+          /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
           local_10 = CONCAT22((short)((uint)piVar9 >> 0x10),sVar2);
           if (0 < sVar2) {
             iVar11 = (int)*(short *)(iVar4 + 0xe);

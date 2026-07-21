@@ -3,7 +3,7 @@ LPVOID __thiscall FUN_0074bad7(void *this,uint param_1)
 
 {
   LPVOID pvVar1;
-  
+
   if (*(uint *)((int)this + 0x40) != param_1) {
     pvVar1 = CoTaskMemAlloc(param_1);
     if (pvVar1 != (LPVOID)0x0) {

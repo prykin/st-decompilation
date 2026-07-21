@@ -8,7 +8,7 @@ void FUN_006189c0(int param_1,int *param_2,int param_3)
   int *piVar4;
   int *piVar5;
   int local_8;
-  
+
   iVar3 = param_1;
   local_8 = 0;
   piVar5 = param_2;

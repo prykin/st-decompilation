@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\To_boat.cpp
@@ -13,8 +15,6 @@ void __thiscall STBoatC::_AddDefenceShots(STBoatC *this,char param_1,short param
   int errorCode;
   uint *puVar4;
   int iVar5;
-  undefined4 unaff_ESI;
-  void *unaff_EDI;
   InternalExceptionFrame local_64;
   int local_20;
   short local_1c;
@@ -23,12 +23,12 @@ void __thiscall STBoatC::_AddDefenceShots(STBoatC *this,char param_1,short param
   STBoatC *local_10;
   uint local_c;
   undefined4 local_8;
-  
+
   local_8 = 200;
   local_64.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_64;
   local_10 = this;
-  errorCode = Library::MSVCRT::__setjmp3(local_64.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  errorCode = Library::MSVCRT::__setjmp3(local_64.jumpBuffer,0);
   pSVar2 = local_10;
   if (errorCode != 0) {
     g_currentExceptionFrame = local_64.previous;
@@ -36,9 +36,7 @@ void __thiscall STBoatC::_AddDefenceShots(STBoatC *this,char param_1,short param
       iVar5 = ReportDebugMessage(s_E____titans_wlad_To_boat_cpp_007a9d3c,0x4b84,0,errorCode,
                                  &DAT_007a4ccc,s_STBoatC___AddDefenceShots_007ab9e0);
       if (iVar5 != 0) {
-        pcVar1 = (code *)swi(3);
-        (*pcVar1)();
-        return;
+        STDebugBreak(); /* noreturn in standalone pseudocode */
       }
       RaiseInternalException(errorCode,0,s_E____titans_wlad_To_boat_cpp_007a9d3c,0x4b85);
     }

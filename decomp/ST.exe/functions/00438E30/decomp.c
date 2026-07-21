@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\to_allpl.cpp
@@ -12,24 +14,20 @@ void __thiscall STAllPlayersC::SaveTmp(STAllPlayersC *this,int param_1)
   int iVar4;
   uint uVar5;
   int iVar6;
-  undefined4 unaff_ESI;
-  void *unaff_EDI;
   InternalExceptionFrame local_50;
   undefined4 *local_c;
   STPlayerTempSlot (*local_8) [5];
-  
+
   local_50.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_50;
-  iVar4 = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar4 = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0);
   if (iVar4 != 0) {
     g_currentExceptionFrame = local_50.previous;
     if (iVar4 != -0x5001fff7) {
       iVar6 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0x16fd,0,0,&DAT_007a4ccc,
                                  s_STAllPlayersC__SaveTmp_007a745c);
       if (iVar6 != 0) {
-        pcVar2 = (code *)swi(3);
-        (*pcVar2)();
-        return;
+        STDebugBreak(); /* noreturn in standalone pseudocode */
       }
       RaiseInternalException(iVar4,0,s_E____titans_wlad_to_allpl_cpp_007a6004,0x16fe);
     }
@@ -41,6 +39,7 @@ void __thiscall STAllPlayersC::SaveTmp(STAllPlayersC *this,int param_1)
                0x16d8);
   }
   uVar5 = (uint)DAT_0080874d;
+  /* ST_PSEUDO[flattened_global_record_array]: expected g_playerRuntime[player].field[index...] after base/stride proof */
   iVar4 = uVar5 * 0xa62;
   if (g_playerRuntime[uVar5].field324_0x203 == 0) {
     local_8 = g_playerRuntime[uVar5].tempSlots;
@@ -52,9 +51,7 @@ void __thiscall STAllPlayersC::SaveTmp(STAllPlayersC *this,int param_1)
     iVar6 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0x16dd,0,0,&DAT_007a4ccc,
                                s_STAllPlayersC__SaveTmp_invalid_p_007a74ac);
     if (iVar6 != 0) {
-      pcVar2 = (code *)swi(3);
-      (*pcVar2)();
-      return;
+      STDebugBreak(); /* noreturn in standalone pseudocode */
     }
     RaiseInternalException
               (-0x5001fff7,g_overwriteContext_007ED77C,s_E____titans_wlad_to_allpl_cpp_007a6004,
@@ -108,8 +105,6 @@ LAB_00438fb0:
     g_currentExceptionFrame = local_50.previous;
     return;
   }
-  pcVar2 = (code *)swi(3);
-  (*pcVar2)();
-  return;
+  STDebugBreak(); /* noreturn in standalone pseudocode */
 }
 

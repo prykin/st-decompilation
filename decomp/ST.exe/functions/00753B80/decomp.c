@@ -6,6 +6,7 @@ void FUN_00753b80(AnonShape_00750F20_F8C16F98 *param_1,undefined4 param_2,int pa
 
 {
   if (param_3 == 0) {
+    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     param_2 = *(undefined4 *)(param_1->field_000C + 0x24);
   }
   param_1->field_0010 = param_2;

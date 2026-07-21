@@ -10,7 +10,7 @@ void __thiscall STJellyGunC::sub_00582580(STJellyGunC *this)
   undefined4 local_18;
   undefined4 local_14;
   undefined4 local_10;
-  
+
   local_10 = this->field_0008;
   local_18 = 0;
   local_14 = 10;

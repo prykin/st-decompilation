@@ -30,7 +30,7 @@ FUN_006d0cf0(AnonShape_006D0CF0_F5F86399 *param_1,int param_2,int param_3,
   undefined1 *puStack_10;
   undefined *puStack_c;
   undefined4 local_8;
-  
+
   local_8 = 0xffffffff;
   puStack_c = &DAT_0079daa0;
   puStack_10 = &LAB_0072d964;

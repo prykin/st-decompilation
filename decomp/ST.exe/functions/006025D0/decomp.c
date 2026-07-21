@@ -9,7 +9,7 @@ byte * __thiscall FUN_006025d0(void *this,undefined4 *param_1)
   int iVar2;
   undefined4 *puVar3;
   byte *pbVar4;
-  
+
   if (*(int *)((int)this + 0x36e) != 3) {
     pbVar1 = (byte *)Library::DKW::LIB::FUN_006aac70(0x17e);
     if (*(int *)((int)this + 0x36e) == 2) {

@@ -1,11 +1,16 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\to_allpl.cpp
-   STAllPlayersC::_AssignMDPairs */
+   STAllPlayersC::_AssignMDPairs
+   [STAbiConsistencyApplier] stack_parameter_width: parameter=/char Evidence: entry-use width=/char;
+   unmasked_dword_reads=0; evidence=00442F42 MOVSX EAX,byte ptr [EBP + 0x8] | 0044319E MOVSX
+   EAX,byte ptr [EBP + 0x8] */
 
 uint * __thiscall
 STAllPlayersC::_AssignMDPairs
-          (STAllPlayersC *this,uint param_1,int param_2,DArrayTy *param_3,DArrayTy *param_4,
+          (STAllPlayersC *this,char param_1,int param_2,DArrayTy *param_3,DArrayTy *param_4,
           DArrayTy *param_5)
 
 {
@@ -20,18 +25,22 @@ STAllPlayersC::_AssignMDPairs
   int iVar9;
   STWorldCell *pSVar10;
   undefined2 uVar11;
+  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined2 extraout_var;
+  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined2 extraout_var_00;
+  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined2 extraout_var_01;
+  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined2 extraout_var_02;
   dword dVar12;
-  undefined4 unaff_ESI;
   uint uVar13;
   uint uVar14;
   short *psVar15;
   dword dVar16;
   uint uVar17;
-  void *unaff_EDI;
+  /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
+  int unaff_EDI;
   short *psVar18;
   DArrayTy *pDVar19;
   undefined8 uVar20;
@@ -92,7 +101,7 @@ STAllPlayersC::_AssignMDPairs
   short local_10;
   int local_e;
   uint local_8;
-  
+
   local_d0[4] = 4;
   local_d0[0] = 0x38;
   local_d0[1] = 0x39;
@@ -103,16 +112,14 @@ STAllPlayersC::_AssignMDPairs
   local_114.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_114;
   local_8c = this;
-  iVar4 = Library::MSVCRT::__setjmp3(local_114.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar4 = Library::MSVCRT::__setjmp3(local_114.jumpBuffer,0);
   if (iVar4 != 0) {
     g_currentExceptionFrame = local_114.previous;
     if (iVar4 != -0x5001fff7) {
       iVar9 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0x25ed,0,iVar4,
                                  &DAT_007a4ccc,s_STAllPlayersC___AssignMDPairs_007a8114);
       if (iVar9 != 0) {
-        pcVar1 = (code *)swi(3);
-        puVar6 = (uint *)(*pcVar1)();
-        return puVar6;
+        STDebugBreak(); /* noreturn in standalone pseudocode */
       }
       RaiseInternalException(iVar4,0,s_E____titans_wlad_to_allpl_cpp_007a6004,0x25ee);
     }
@@ -135,7 +142,8 @@ LAB_00442f1f:
     piVar5 = local_d0;
     do {
       if (param_2 == *piVar5) {
-        local_84 = *(DArrayTy **)(iVar4 * 4 + 0x7f4e2f + (char)param_1 * 0xa62);
+        /* ST_PSEUDO[flattened_global_record_array]: expected g_playerRuntime[player].field[index...] after base/stride proof */
+        local_84 = *(DArrayTy **)(iVar4 * 4 + 0x7f4e2f + param_1 * 0xa62);
         break;
       }
       iVar4 = iVar4 + 1;
@@ -231,9 +239,7 @@ LAB_00442f1f:
     iVar4 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0x2522,0,0,&DAT_007a4ccc,
                                s_STAllPlayersC___AssignMDPairs_pa_007a81fc);
     if (iVar4 != 0) {
-      pcVar1 = (code *)swi(3);
-      puVar6 = (uint *)(*pcVar1)();
-      return puVar6;
+      STDebugBreak(); /* noreturn in standalone pseudocode */
     }
     RaiseInternalException
               (-0x5001fff7,g_overwriteContext_007ED77C,s_E____titans_wlad_to_allpl_cpp_007a6004,
@@ -241,15 +247,13 @@ LAB_00442f1f:
   }
   local_20 = (DArrayTy *)Library::DKW::TBL::FUN_006ae290((uint *)0x0,local_3c,6,1);
   local_30 = (DArrayTy *)Library::DKW::TBL::FUN_006ae290((uint *)0x0,local_2c,6,1);
-  pDVar8 = g_playerRuntime[(char)param_1].groups;
+  pDVar8 = g_playerRuntime[param_1].groups;
   local_bc = pDVar8;
   if (pDVar8 == (DArrayTy *)0x0) {
     iVar4 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0x252c,0,0,&DAT_007a4ccc,
                                s_STAllPlayersC___AssignMDPairs_gr_007a81c8);
     if (iVar4 != 0) {
-      pcVar1 = (code *)swi(3);
-      puVar6 = (uint *)(*pcVar1)();
-      return puVar6;
+      STDebugBreak(); /* noreturn in standalone pseudocode */
     }
     RaiseInternalException
               (-0x5001fffc,g_overwriteContext_007ED77C,s_E____titans_wlad_to_allpl_cpp_007a6004,
@@ -262,9 +266,9 @@ LAB_00442f1f:
     do {
       uVar14 = local_24;
       DArrayGetElement(pDVar8,local_24,&local_1c);
-      if ((local_1c != (STGroupC *)0x0) &&
-         (iVar4 = (**(code **)(local_1c->field_0000 + 0xc))(), iVar4 == 8)) {
-        local_48 = (DArrayTy *)STGroupC::GetGroupContent(local_1c,(int)unaff_EDI);
+      if ((local_1c != (STGroupC *)0x0) && (iVar4 = (*local_1c->vtable->vfunc_0C)(), iVar4 == 8)) {
+        /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
+        local_48 = (DArrayTy *)STGroupC::GetGroupContent(local_1c,unaff_EDI);
         local_b8 = local_48->count;
         if ((local_b8 != 0) && (local_44 = (DArrayTy *)0x0, 0 < (int)local_b8)) {
 LAB_0044326c:
@@ -277,9 +281,7 @@ LAB_0044326c:
               iVar4 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0x2539,0,0,
                                          &DAT_007a4ccc,s_STAllPlayersC___AssignMDPairs_pt_007a8198);
               if (iVar4 != 0) {
-                pcVar1 = (code *)swi(3);
-                puVar6 = (uint *)(*pcVar1)();
-                return puVar6;
+                STDebugBreak(); /* noreturn in standalone pseudocode */
               }
               RaiseInternalException
                         (-0x5001fffc,g_overwriteContext_007ED77C,
@@ -311,6 +313,7 @@ LAB_0044326c:
             *psVar18 = *psVar15;
             uVar14 = local_3c;
             if ((local_152 == -1) || (local_148 == -1)) goto cf_common_join_004435CD;
+            /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
             if ((((local_158[0] < 0) ||
                  ((g_worldGrid.sizeX <= local_158[0] ||
                   (pSVar10 = (STWorldCell *)
@@ -329,6 +332,7 @@ LAB_0044326c:
             }
             uVar11 = (undefined2)((uint)pSVar10 >> 0x10);
             if (local_40 == (STFishC *)0x0) goto cf_common_join_004435CD;
+            /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
             local_8 = CONCAT22((short)((uint)local_40 >> 0x10),*(undefined2 *)&local_40->field_0x32)
             ;
             uVar13 = 0;
@@ -336,6 +340,7 @@ LAB_0044326c:
               do {
                 DArrayGetElement(param_3,uVar13,&local_12);
                 iVar4 = local_13e;
+                /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
                 uVar11 = extraout_var;
                 if ((short)local_8 == local_12) {
                   uVar14 = local_20->count;
@@ -441,9 +446,7 @@ LAB_004436f7:
         iVar4 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0x25a4,0,0,&DAT_007a4ccc
                                    ,s_STAllPlayersC___AssignMDPairs_M_a_007a8168);
         if (iVar4 != 0) {
-          pcVar1 = (code *)swi(3);
-          puVar6 = (uint *)(*pcVar1)();
-          return puVar6;
+          STDebugBreak(); /* noreturn in standalone pseudocode */
         }
         RaiseInternalException
                   (-0x5001fff8,g_overwriteContext_007ED77C,s_E____titans_wlad_to_allpl_cpp_007a6004,
@@ -466,9 +469,7 @@ LAB_004436f7:
         iVar4 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0x25ad,0,0,&DAT_007a4ccc
                                    ,s_STAllPlayersC___AssignMDPairs_D_a_007a8138);
         if (iVar4 != 0) {
-          pcVar1 = (code *)swi(3);
-          puVar6 = (uint *)(*pcVar1)();
-          return puVar6;
+          STDebugBreak(); /* noreturn in standalone pseudocode */
         }
         RaiseInternalException
                   (-0x5001fff8,g_overwriteContext_007ED77C,s_E____titans_wlad_to_allpl_cpp_007a6004,
@@ -607,12 +608,14 @@ LAB_004436f7:
   DArrayDestroy(local_20);
   g_currentExceptionFrame = local_114.previous;
   return &local_4c->flags;
+  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   while (uVar13 = uVar13 + 1, uVar11 = extraout_var_00, (int)uVar13 < (int)uVar14) {
 LAB_0044343c:
     DArrayGetElement(local_20,uVar13,&local_10);
     if (local_10 == (short)local_8) {
       local_e = local_e + iVar4;
       Library::DKW::TBL::FUN_006ae140(&local_20->flags,uVar13,(undefined4 *)&local_10);
+      /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
       uVar11 = extraout_var_01;
       break;
     }
@@ -623,10 +626,12 @@ LAB_00443473:
 LAB_0044349d:
     local_e = iVar4;
     Library::DKW::TBL::FUN_006ae140(&local_20->flags,uVar13,(undefined4 *)&local_10);
+    /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
     uVar11 = extraout_var_02;
   }
 LAB_004434a2:
   uVar14 = local_2c;
+  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
   iVar4 = CONCAT22(uVar11,local_14e);
   if ((((local_14e < 0) || (g_worldGrid.sizeX <= local_14e)) || (local_14c < 0)) ||
      (((g_worldGrid.sizeY <= local_14c || (local_14a < 0)) || (g_worldGrid.sizeZ <= local_14a)))) {
@@ -640,6 +645,7 @@ LAB_004434a2:
                 (int)local_14c * (int)g_worldGrid.sizeX + iVar4].objects[0];
   }
   if (local_40 != (STFishC *)0x0) {
+    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
     local_8 = CONCAT22((short)((uint)iVar4 >> 0x10),*(undefined2 *)&local_40->field_0x32);
     uVar13 = 0;
     if (0 < (int)local_2c) {

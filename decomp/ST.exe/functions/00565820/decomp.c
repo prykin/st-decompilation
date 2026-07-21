@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* [STSourceProvenanceApplier begin]
    Recovered source file: E:\__titans\scoreai.cpp
@@ -22,10 +24,8 @@ uint * AiMinesDistribTgts(uint param_1,int param_2,int param_3,int param_4,int p
   uint uVar12;
   uint uVar13;
   int iVar14;
-  undefined4 unaff_ESI;
   byte *pbVar15;
   dword dVar16;
-  void *unaff_EDI;
   int iVar17;
   bool bVar18;
   InternalExceptionFrame local_d8;
@@ -58,7 +58,7 @@ uint * AiMinesDistribTgts(uint param_1,int param_2,int param_3,int param_4,int p
   int local_10;
   int local_c;
   int local_8;
-  
+
   local_94[5] = 0;
   local_94[0] = 0;
   local_94[6] = 0;
@@ -75,7 +75,7 @@ uint * AiMinesDistribTgts(uint param_1,int param_2,int param_3,int param_4,int p
   local_60 = 0;
   local_d8.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_d8;
-  iVar5 = Library::MSVCRT::__setjmp3(local_d8.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar5 = Library::MSVCRT::__setjmp3(local_d8.jumpBuffer,0);
   if (iVar5 == 0) {
     local_14 = FUN_00561240(param_4,param_5,param_6);
     iVar11 = local_14[2];
@@ -131,6 +131,7 @@ uint * AiMinesDistribTgts(uint param_1,int param_2,int param_3,int param_4,int p
             local_4c = iVar17 - iVar14;
             local_50 = local_1c;
             do {
+              /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
               if ((local_50->iteratorIndex != 0) &&
                  (*(int *)(local_50->iteratorIndex + 0x20) == 0x1ae)) {
                 if (0 < local_10) {
@@ -184,6 +185,7 @@ uint * AiMinesDistribTgts(uint param_1,int param_2,int param_3,int param_4,int p
                 if (((STWorldObject *)local_50->flags != (STWorldObject *)0x0) && (param_1 != 0xff))
                 {
                   bVar1 = *(byte *)&((STWorldObject *)local_50->flags)[1].vtable;
+                  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                   _local_6c = CONCAT31(uStack_6b,bVar1);
                   if (DAT_00808a8f == '\0') {
                     if (bVar1 == (byte)param_1) {
@@ -314,7 +316,9 @@ LAB_00565c6c:
       if (0 < local_28) {
         local_18 = (DArrayTy *)((int)local_2c * 8);
         do {
+          /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
           iVar5 = *(int *)((int)local_18 + 0x10 + (int)local_14) + local_38;
+          /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
           iVar9 = *(int *)((int)local_18 + 0xc + (int)local_14) + local_38;
           local_4c = iVar5;
           if (iVar9 <= iVar5) {
@@ -445,9 +449,7 @@ cf_common_exit_0056623F:
     iVar11 = ReportDebugMessage(s_E____titans_scoreai_cpp_007c96b0,0xeff,0,iVar5,&DAT_007a4ccc,
                                 s_AiMinesDistribTgts_007c9700);
     if (iVar11 != 0) {
-      pcVar4 = (code *)swi(3);
-      puVar8 = (uint *)(*pcVar4)();
-      return puVar8;
+      STDebugBreak(); /* noreturn in standalone pseudocode */
     }
   }
   local_60 = iVar5;

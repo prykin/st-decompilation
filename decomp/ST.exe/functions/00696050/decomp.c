@@ -3,8 +3,9 @@ void __thiscall FUN_00696050(void *this,uint param_1)
 
 {
   int iVar1;
-  
+
   iVar1 = *(int *)((int)this + 0x5853);
+  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   if (((iVar1 != 0) && (param_1 < *(uint *)(iVar1 + 0xc))) &&
      (iVar1 = *(int *)(iVar1 + 8) * param_1 + *(int *)(iVar1 + 0x1c), iVar1 != 0)) {
     if (*(DArrayTy **)(iVar1 + 0x15) != (DArrayTy *)0x0) {

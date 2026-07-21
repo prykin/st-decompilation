@@ -1,9 +1,14 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\to_allpl.cpp
-   STAllPlayersC::DistributeGuardBoats */
+   STAllPlayersC::DistributeGuardBoats
+   [STAbiConsistencyApplier] stack_parameter_width: parameter=/char Evidence: entry-use width=/char;
+   unmasked_dword_reads=0; evidence=00446F8D MOVSX ECX,byte ptr [EBP + 0x8] | 0044704C MOVSX
+   EAX,byte ptr [EBP + 0x8] */
 
-void __thiscall STAllPlayersC::DistributeGuardBoats(STAllPlayersC *this,uint param_1)
+void __thiscall STAllPlayersC::DistributeGuardBoats(STAllPlayersC *this,char param_1)
 
 {
   code *pcVar1;
@@ -14,12 +19,12 @@ void __thiscall STAllPlayersC::DistributeGuardBoats(STAllPlayersC *this,uint par
   DArrayTy *pDVar6;
   uint uVar7;
   dword dVar8;
-  undefined4 unaff_ESI;
   uint uVar9;
-  void *unaff_EDI;
   uint uVar10;
   undefined4 *puVar11;
   DArrayTy *pDVar12;
+  /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
+  undefined3 in_stack_00000005;
   InternalExceptionFrame local_e4;
   int local_a0;
   uint local_9c;
@@ -63,8 +68,8 @@ void __thiscall STAllPlayersC::DistributeGuardBoats(STAllPlayersC *this,uint par
   short local_e;
   DArrayTy *local_c;
   uint local_8;
-  
-  iVar5 = (int)(char)(byte)param_1;
+
+  iVar5 = (int)param_1;
   local_7c = g_playerRuntime[iVar5].pgPairs;
   local_48 = g_playerRuntime[iVar5].field2176_0x9fe;
   local_60 = g_playerRuntime[iVar5].field2175_0x9fa;
@@ -73,7 +78,7 @@ void __thiscall STAllPlayersC::DistributeGuardBoats(STAllPlayersC *this,uint par
     local_e4.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_e4;
     local_6c = this;
-    iVar5 = Library::MSVCRT::__setjmp3(local_e4.jumpBuffer,0,unaff_EDI,unaff_ESI);
+    iVar5 = Library::MSVCRT::__setjmp3(local_e4.jumpBuffer,0);
     pDVar3 = local_48;
     if (iVar5 == 0) {
       if (local_48 != (DArrayTy *)0x0) {
@@ -89,7 +94,8 @@ void __thiscall STAllPlayersC::DistributeGuardBoats(STAllPlayersC *this,uint par
         DArrayDestroy(pDVar3);
       }
       local_48 = (DArrayTy *)Library::DKW::TBL::FUN_006ae290((uint *)0x0,1,4,1);
-      local_a0 = (int)(char)(byte)param_1;
+      local_a0 = (int)param_1;
+      /* ST_PSEUDO[flattened_global_record_array]: expected g_playerRuntime[player].field[index...] after base/stride proof */
       iVar5 = local_a0 * 0xa62;
       g_playerRuntime[local_a0].field2176_0x9fe = local_48;
       pDVar3 = (DArrayTy *)local_60->count;
@@ -109,6 +115,7 @@ joined_r0x0044707d:
               local_c = (DArrayTy *)Library::DKW::TBL::FUN_006ae290((uint *)0x0,1,4,1);
               Library::DKW::TBL::FUN_006ae1c0((uint *)local_c,&local_8);
               local_58 = Library::DKW::TBL::FUN_006ae1c0(&local_48->flags,&local_c);
+              /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
               local_40 = *(DArrayTy **)(CONCAT22(uStack_50,uStack_52) + 0xc);
               local_14 = (DArrayTy *)0x0;
               if (0 < (int)local_40) goto LAB_00447106;
@@ -154,6 +161,7 @@ LAB_0044738a:
         do {
           DArrayGetElement(local_7c,local_8,&local_78);
           uVar7 = 0;
+          /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
           local_30 = *(DArrayTy **)(local_78 + 0xc);
           dVar8 = local_74->count;
           local_1c = (DArrayTy *)local_70->count;
@@ -207,13 +215,14 @@ LAB_0044738a:
             DArrayGetElement(local_48,local_8,&local_c);
             DArrayGetElement(local_c,0,&local_34);
             DArrayGetElement(local_60,local_34 & 0xffff,&local_54);
+            /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
             local_28 = (STFishC *)GetObjPtr(local_6c,param_1,CONCAT22(uStack_52,local_54),CASE_1);
             if (local_28 != (STFishC *)0x0) {
               STFishC::sub_004162B0(local_28,&local_e,&local_10,&local_16);
               DArrayGetElement(local_40,local_8,&local_c);
               pDVar3 = (DArrayTy *)
-                       thunk_FUN_0043f7b0((byte)param_1,(int *)0x0,(uint *)(int)local_e,
-                                          (int)local_10,(int)local_16,(int *)0x7,7,4,0);
+                       thunk_FUN_0043f7b0(param_1,(int *)0x0,(uint *)(int)local_e,(int)local_10,
+                                          (int)local_16,(int *)0x7,7,4,0);
               local_30 = pDVar3;
               if (pDVar3 != (DArrayTy *)0x0) {
                 pDVar6 = (DArrayTy *)pDVar3->count;
@@ -226,7 +235,7 @@ LAB_0044738a:
                     iVar5 = (*local_28->vtable->vfunc_F8)();
                     if (((iVar5 == 0) || (iVar5 = (*local_28->vtable->vfunc_F0)(), iVar5 == 0)) ||
                        (iVar5 = (*local_28->vtable->vfunc_F4)(local_a0), iVar5 == 0)) {
-                      FUN_006b0c70((AnonShape_006B0C70_7C4FE646 *)pDVar3,uVar7);
+                      FUN_006b0c70(pDVar3,uVar7);
                       uVar7 = uVar7 - 1;
                       local_14 = (DArrayTy *)((int)&local_14[-1].data + 3);
                       pDVar6 = (DArrayTy *)((int)&pDVar6[-1].data + 3);
@@ -318,11 +327,12 @@ LAB_0044738a:
               DArrayGetElement(local_48,local_8,&local_80);
               DArrayGetElement(local_80,0,&local_34);
               DArrayGetElement(local_60,local_34 & 0xffff,&local_54);
+              /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
               local_28 = (STFishC *)GetObjPtr(local_6c,param_1,CONCAT22(uStack_52,local_54),CASE_1);
               if (local_28 != (STFishC *)0x0) {
                 STFishC::sub_004162B0(local_28,&local_e,&local_10,&local_16);
                 PutOnPlaceGuardBoats
-                          (local_6c,param_1,(int)local_e,(int)local_10,local_16,(int)local_e,
+                          (local_6c,_param_1,(int)local_e,(int)local_10,local_16,(int)local_e,
                            (int)local_10,(int)local_16,local_84);
               }
             }
@@ -339,6 +349,7 @@ LAB_0044738a:
               DArrayGetElement(local_48,local_8,&local_80);
               DArrayGetElement(local_80,0,&local_34);
               DArrayGetElement(local_60,local_34 & 0xffff,&local_54);
+              /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
               local_28 = (STFishC *)GetObjPtr(local_6c,param_1,CONCAT22(uStack_52,local_54),CASE_1);
               if (local_28 != (STFishC *)0x0) {
                 STFishC::sub_004162B0(local_28,&local_e,&local_10,&local_16);
@@ -371,7 +382,7 @@ LAB_0044738a:
                         uVar10 = uVar10 + local_2c;
                         if ((local_88 != (DArrayTy *)0x0) && (local_88->count != 0)) {
                           PutOnPlaceGuardBoats
-                                    (local_6c,param_1,(int)local_e,(int)local_10,local_16,local_9c,
+                                    (local_6c,_param_1,(int)local_e,(int)local_10,local_16,local_9c,
                                      local_98,local_94,local_88);
                           DArrayDestroy(local_88);
                           local_88 = (DArrayTy *)0x0;
@@ -412,7 +423,9 @@ LAB_0044738a:
         if (0 < (int)dVar8) {
           do {
             DArrayGetElement(pDVar3,local_8,&local_54);
+            /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
             if ((DArrayTy *)CONCAT22(uStack_50,uStack_52) != (DArrayTy *)0x0) {
+              /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
               DArrayDestroy((DArrayTy *)CONCAT22(uStack_50,uStack_52));
             }
             local_8 = local_8 + 1;
@@ -490,9 +503,7 @@ LAB_0044738a:
       iVar4 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0x2b90,0,0,&DAT_007a4ccc,
                                  s_STAllPlayersC__DistributeGuardBo_007a8458);
       if (iVar4 != 0) {
-        pcVar1 = (code *)swi(3);
-        (*pcVar1)();
-        return;
+        STDebugBreak(); /* noreturn in standalone pseudocode */
       }
       RaiseInternalException(iVar5,0,s_E____titans_wlad_to_allpl_cpp_007a6004,0x2b91);
     }
@@ -500,6 +511,7 @@ LAB_0044738a:
   return;
 LAB_00447106:
   do {
+    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
     DArrayGetElement((DArrayTy *)CONCAT22(uStack_50,uStack_52),(uint)local_14,&local_2c);
     DArrayGetElement(local_7c,local_2c,&local_78);
     uVar10 = local_58;
@@ -537,6 +549,7 @@ LAB_004471ad:
   pDVar3 = local_30;
 LAB_004471bd:
   if (local_1c == (DArrayTy *)0x0) goto LAB_0044738a;
+  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
   local_28 = (STFishC *)GetObjPtr(local_6c,param_1,CONCAT22(uStack_52,local_54),CASE_1);
   if (local_28 != (STFishC *)0x0) {
     STFishC::sub_004162B0(local_28,&local_e,&local_10,&local_16);
@@ -544,6 +557,7 @@ LAB_004471bd:
     if ((int)local_8 < (int)pDVar3) {
       do {
         DArrayGetElement(pDVar6,local_8,&local_54);
+        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
         if ((((local_4e != 1) &&
              (local_28 = (STFishC *)GetObjPtr(local_6c,param_1,CONCAT22(uStack_52,local_54),CASE_1),
              local_28 != (STFishC *)0x0)) &&
@@ -556,9 +570,11 @@ LAB_004471bd:
           Library::DKW::TBL::FUN_006ae140(&pDVar6->flags,local_8,(undefined4 *)&local_54);
           Library::DKW::TBL::FUN_006ae1c0(&local_c->flags,&local_8);
           local_14 = (DArrayTy *)0x0;
+          /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
           local_40 = *(DArrayTy **)(CONCAT22(uStack_50,uStack_52) + 0xc);
           if (0 < (int)local_40) {
             do {
+              /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
               DArrayGetElement((DArrayTy *)CONCAT22(uStack_50,uStack_52),(uint)local_14,&local_2c);
               DArrayGetElement(local_7c,local_2c,&local_78);
               uVar10 = local_58;

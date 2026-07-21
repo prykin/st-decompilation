@@ -18,7 +18,7 @@ void FUN_006f5760(undefined1 *param_1,int param_2,uint *param_3,int param_4,int 
   byte *pbVar11;
   undefined1 *puVar12;
   int iStack_18;
-  
+
   DAT_0085702c = param_9;
   uVar7 = param_5 << 0x10;
   pbVar11 = param_6;

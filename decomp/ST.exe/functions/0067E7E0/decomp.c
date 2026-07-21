@@ -1,9 +1,11 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* [STSourceProvenanceApplier begin]
    Recovered source file: E:\__titans\ai\ai_plr_d.cpp
    Diagnostic line evidence: 534 | 581 | 584 (metadata/report site, not the function definition)
    [STSourceProvenanceApplier end]
-   
+
    [STPrototypeApplier] Propagated parameter 0.
    Evidence: 0056ADC0 -> 0067E7E0 @ 0056B0F4 */
 
@@ -22,9 +24,7 @@ uint * __cdecl CreateArbList(cMf32 *param_1,int param_2)
   uint uVar10;
   int iVar11;
   ushort *_Source;
-  undefined4 unaff_ESI;
   byte *pbVar12;
-  void *unaff_EDI;
   undefined4 *puVar13;
   char *pcVar14;
   char *pcVar15;
@@ -44,7 +44,7 @@ uint * __cdecl CreateArbList(cMf32 *param_1,int param_2)
   DArrayTy *local_10;
   ushort *local_c;
   DArrayTy *local_8;
-  
+
   puVar13 = (undefined4 *)local_33c;
   for (iVar8 = 0x80; iVar8 != 0; iVar8 = iVar8 + -1) {
     *puVar13 = 0;
@@ -55,7 +55,7 @@ uint * __cdecl CreateArbList(cMf32 *param_1,int param_2)
   local_10 = (DArrayTy *)0x0;
   local_a0.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_a0;
-  iVar8 = Library::MSVCRT::__setjmp3(local_a0.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar8 = Library::MSVCRT::__setjmp3(local_a0.jumpBuffer,0);
   if (iVar8 != 0) {
     g_currentExceptionFrame = local_a0.previous;
     iVar11 = ReportDebugMessage(s_E____titans_ai_ai_plr_d_cpp_007d2fa4,0x245,0,iVar8,&DAT_007a4ccc,
@@ -70,9 +70,7 @@ uint * __cdecl CreateArbList(cMf32 *param_1,int param_2)
       RaiseInternalException(iVar8,0,s_E____titans_ai_ai_plr_d_cpp_007d2fa4,0x248);
       return (uint *)0x0;
     }
-    pcVar3 = (code *)swi(3);
-    puVar7 = (uint *)(*pcVar3)();
-    return puVar7;
+    STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   if (param_1 == (cMf32 *)0x0) {
     RaiseInternalException
@@ -251,6 +249,7 @@ uint * __cdecl CreateArbList(cMf32 *param_1,int param_2)
         wsprintfA(local_c8,(char *)local_5c,iVar8);
       }
       uVar9 = 0;
+      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
       local_a8 = *(uint *)(local_c + 0x29);
       if (local_a8 == 0) {
         local_a8 = 1;
@@ -266,6 +265,7 @@ uint * __cdecl CreateArbList(cMf32 *param_1,int param_2)
           bVar17 = uVar10 != 0;
           do {
             if (bVar17) {
+              /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(local_10, uVar9) (runtime stride) */
               pvVar6 = (void *)(local_10->elementSize * uVar9 + (int)local_10->data);
             }
             else {

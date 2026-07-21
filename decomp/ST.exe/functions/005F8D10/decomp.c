@@ -7,15 +7,18 @@ undefined4 __fastcall FUN_005f8d10(int *param_1)
   short local_a;
   short local_8;
   short local_6;
-  
+
+  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
   uVar1 = (**(code **)(*param_1 + 0x1c))();
   thunk_FUN_005fa0b0((int)param_1);
   switch(uVar1) {
   case 0:
     uVar1 = 5;
+    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     if (*(char *)((int)param_1 + 0x29d) == '\x01') {
       if (*(char *)((int)param_1 + 699) == '\x01') {
         STFishC::sub_004162B0((STFishC *)param_1,&local_a,&local_8,&local_6);
+        /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
         if ((((int)local_a == *(int *)((int)param_1 + 0x291)) &&
             ((int)local_8 == *(int *)((int)param_1 + 0x295))) &&
            ((int)local_6 == *(int *)((int)param_1 + 0x299))) {
@@ -32,6 +35,7 @@ undefined4 __fastcall FUN_005f8d10(int *param_1)
       }
     }
     break;
+  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   case 1:
     if (*(int *)((int)param_1 + 0x2ea) != 0) {
       thunk_FUN_005f9450((AnonShape_005F9450_64149E40 *)param_1);
@@ -48,8 +52,11 @@ undefined4 __fastcall FUN_005f8d10(int *param_1)
       *(undefined1 *)((int)param_1 + 0x29f) = 0;
       return 0xc;
     }
+    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     if (*(char *)((int)param_1 + 0x29f) == '\0') {
+      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
       if (*(char *)((int)param_1 + 0x29d) != '\x01') {
+        /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
         if (*(char *)((int)param_1 + 0x29d) == '\x03') {
           *(undefined4 *)((int)param_1 + 0x2d5) = PTR_00802a38->field_00E4;
           iVar2 = PTR_00802a38->field_00E4;
@@ -63,10 +70,12 @@ undefined4 __fastcall FUN_005f8d10(int *param_1)
       }
     }
     else {
+      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
       if ((param_1[0xa8] != 0) && (*(char *)((int)param_1 + 0x29d) == '\0')) {
         STFishC::sub_004162B0((STFishC *)param_1,&local_a,&local_8,&local_6);
         return 10;
       }
+      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
       if (*(char *)((int)param_1 + 0x29d) != '\x01') {
 LAB_005f8ea2:
         *(undefined1 *)((int)param_1 + 699) = 2;

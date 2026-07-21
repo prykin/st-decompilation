@@ -9,13 +9,14 @@ void __thiscall FUN_0063fe70(void *this,char param_1)
   int iVar3;
   int iVar4;
   uint local_8;
-  
+
   if (*(int *)((int)this + 0x336) != 0) {
     iVar1 = *(int *)(*(int *)((int)this + 0x336) + 0xc);
     local_8 = 0;
     if (0 < iVar1) {
       do {
         iVar4 = *(int *)((int)this + 0x336);
+        /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
         if (((local_8 < *(uint *)(iVar4 + 0xc)) &&
             (iVar4 = *(int *)(iVar4 + 8) * local_8 + *(int *)(iVar4 + 0x1c), iVar4 != 0)) &&
            (uVar2 = *(uint *)(iVar4 + 0x38), -1 < (int)uVar2)) {

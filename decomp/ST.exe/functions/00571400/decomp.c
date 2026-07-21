@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\tapp.cpp
@@ -15,29 +17,25 @@ void __thiscall STAppC::ReadCmdPlay(STAppC *this,int param_1)
   BOOL BVar5;
   LPVOID pvVar6;
   int iVar7;
-  undefined4 unaff_ESI;
-  void *unaff_EDI;
   InternalExceptionFrame local_70;
   undefined1 local_2c [14];
   uint local_1e;
   STAppC *local_10;
   uint local_c;
   int local_8;
-  
+
   local_8 = 0;
   local_70.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_70;
   local_10 = this;
-  iVar3 = Library::MSVCRT::__setjmp3(local_70.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar3 = Library::MSVCRT::__setjmp3(local_70.jumpBuffer,0);
   pSVar2 = local_10;
   if (iVar3 != 0) {
     g_currentExceptionFrame = local_70.previous;
     iVar7 = ReportDebugMessage(s_E____titans_tapp_cpp_007ca0c8,0x914,0,iVar3,&DAT_007a4ccc,
                                s_STAppC__ReadCmdPlay_007ca25c);
     if (iVar7 != 0) {
-      pcVar1 = (code *)swi(3);
-      (*pcVar1)();
-      return;
+      STDebugBreak(); /* noreturn in standalone pseudocode */
     }
     RaiseInternalException(iVar3,0,s_E____titans_tapp_cpp_007ca0c8,0x914);
     return;

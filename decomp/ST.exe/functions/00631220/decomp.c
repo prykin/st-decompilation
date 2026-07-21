@@ -12,7 +12,7 @@ void __thiscall FUN_00631220(void *this,int *param_1)
   int local_10;
   undefined4 *local_c;
   uint local_8;
-  
+
   iVar2 = *(int *)((int)this + 0x38);
   local_c = (undefined4 *)0x0;
   local_8 = 0;

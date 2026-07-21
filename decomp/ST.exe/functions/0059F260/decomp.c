@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\fsgs_obj.cpp
@@ -13,8 +15,6 @@ void __thiscall FSGSTy::LadderCtrls(FSGSTy *this)
   undefined4 uVar4;
   LPBITMAPINFO ptVar5;
   int iVar6;
-  undefined4 unaff_ESI;
-  void *unaff_EDI;
   int iVar7;
   ccFntTy **ppcVar8;
   undefined4 *puVar9;
@@ -30,7 +30,7 @@ void __thiscall FSGSTy::LadderCtrls(FSGSTy *this)
   FSGSTy *local_10;
   int local_c;
   undefined4 *local_8;
-  
+
   ppcVar8 = local_8e0;
   local_10 = this;
   for (iVar6 = 0x223; iVar6 != 0; iVar6 = iVar6 + -1) {
@@ -39,7 +39,7 @@ void __thiscall FSGSTy::LadderCtrls(FSGSTy *this)
   }
   local_54.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_54;
-  iVar6 = Library::MSVCRT::__setjmp3(local_54.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar6 = Library::MSVCRT::__setjmp3(local_54.jumpBuffer,0);
   this_00 = local_10;
   if (iVar6 == 0) {
     if ((AnonShape_006B5570_4D68B99C *)local_10->field_1AE8 != (AnonShape_006B5570_4D68B99C *)0x0) {
@@ -57,6 +57,7 @@ void __thiscall FSGSTy::LadderCtrls(FSGSTy *this)
     iVar6 = 1;
     puVar9 = (undefined4 *)(this_00->field_005D + 0x28);
     uVar3 = FUN_006b4fe0(this_00->field_005D);
+    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     uVar4 = FUN_006b50c0(0x2e1,0x175,(uint)*(ushort *)(this_00->field_005D + 0xe),uVar3,puVar9,iVar6
                         );
     this_00->field_1E8E = uVar4;
@@ -117,9 +118,7 @@ void __thiscall FSGSTy::LadderCtrls(FSGSTy *this)
   iVar7 = ReportDebugMessage(s_E____titans_Start_fsgs_obj_cpp_007cbf70,0x81d,0,iVar6,&DAT_007a4ccc,
                              s_FSGSTy__LadderCtrls_007cc3a4);
   if (iVar7 != 0) {
-    pcVar1 = (code *)swi(3);
-    (*pcVar1)();
-    return;
+    STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   RaiseInternalException(iVar6,0,s_E____titans_Start_fsgs_obj_cpp_007cbf70,0x81d);
   return;

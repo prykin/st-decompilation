@@ -7,10 +7,11 @@ uint FUN_006c6be0(AnonShape_006C6BE0_5C8BBC13 *param_1)
   uint uVar3;
   int iVar4;
   bool bVar5;
-  
+
   pAVar2 = param_1;
   param_1->field_005E = 0;
   param_1->field_005F = 0;
+  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
   uVar3 = (*(code *)param_1->field_0042)(param_1,(int)&param_1 + 3,1);
   pAVar1 = param_1;
   do {
@@ -23,8 +24,10 @@ uint FUN_006c6be0(AnonShape_006C6BE0_5C8BBC13 *param_1)
       }
       return 0xfffffffb;
     }
+    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
     param_1._3_1_ = (char)((uint)pAVar1 >> 0x18);
     param_1 = pAVar1;
+    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
     if (param_1._3_1_ == '!') {
       uVar3 = FUN_006c6c80((int)pAVar2);
       if (uVar3 != 0) {
@@ -32,9 +35,11 @@ uint FUN_006c6be0(AnonShape_006C6BE0_5C8BBC13 *param_1)
       }
     }
     else {
+      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
       if (param_1._3_1_ == ',') {
         return 0;
       }
+      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
       bVar5 = param_1._3_1_ == ';';
       if (bVar5) {
         uVar3 = *(uint *)&pAVar2->field_0x56;
@@ -53,6 +58,7 @@ uint FUN_006c6be0(AnonShape_006C6BE0_5C8BBC13 *param_1)
         return 0xffffffff;
       }
     }
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
     uVar3 = (*(code *)pAVar2->field_0042)(pAVar2,(int)&param_1 + 3,1);
     pAVar1 = param_1;
   } while( true );

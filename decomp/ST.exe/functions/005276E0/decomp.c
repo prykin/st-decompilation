@@ -8,7 +8,7 @@ uint __cdecl FUN_005276e0(Global_sub_005276E0_param_1Enum param_1,byte param_2)
 
 {
   uint uVar1;
-  
+
   uVar1 = (DAT_0080874e == '\x03') + 0xa9;
   if (param_2 != 0xff) {
     switch(param_1) {

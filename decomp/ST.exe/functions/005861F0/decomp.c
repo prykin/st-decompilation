@@ -3,7 +3,7 @@
    VTable: 0079BA54 (store 0058620C)
    Evidence: final_vptr=0079BA54; returns_this=true; calls_before=2; field_writes_after=2;
    table_confidence=high
-   
+
    [STPrototypeApplier] Propagated return.
    Evidence: 005861F0 returns STMBombC::STMBombC this @ 0058622A */
 

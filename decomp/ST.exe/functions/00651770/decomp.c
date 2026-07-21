@@ -3,7 +3,7 @@ undefined4 __cdecl FUN_00651770(AnonShape_00651770_8F77396F *param_1)
 
 {
   int iVar1;
-  
+
   iVar1 = 0;
   do {
     if (*(char *)((int)&param_1[8].field_0010 + iVar1) != '\b') {

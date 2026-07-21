@@ -11,7 +11,7 @@ void __cdecl FUN_00710790(uint *param_1)
   undefined4 uVar4;
   int iVar5;
   int iVar6;
-  
+
   if (((param_1 != (uint *)0x0) && (param_1[0x28] != 0)) && (uVar3 = param_1[0x2a], uVar3 != 0)) {
     iVar6 = 0;
     *(undefined4 *)((int)param_1 + 0x9a) = *(undefined4 *)(uVar3 + 0x9a);
@@ -50,6 +50,7 @@ void __cdecl FUN_00710790(uint *param_1)
       FUN_00710790(puVar2);
     }
     *(undefined4 *)((int)param_1 + 0x8e) = *(undefined4 *)((int)puVar2 + 0x8e);
+    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     param_1[0x2b] = *(uint *)(param_1[0x2a] + 0xac);
   }
   return;

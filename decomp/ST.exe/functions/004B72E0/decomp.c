@@ -4,7 +4,7 @@ undefined4 FUN_004b72e0(char param_1,int param_2)
 {
   undefined4 uVar1;
   uint uVar2;
-  
+
   uVar1 = 0;
   if ((0x31 < param_2) && (param_2 < 0x74)) {
     uVar2 = GetPlayerRaceId(param_1);

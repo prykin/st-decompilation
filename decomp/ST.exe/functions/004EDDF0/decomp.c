@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\behpanel.cpp
@@ -10,15 +12,13 @@ void __thiscall BehPanelTy::DoneBehPanel(BehPanelTy *this)
   BehPanelTy *pBVar2;
   int errorCode;
   int iVar3;
-  undefined4 unaff_ESI;
-  void *unaff_EDI;
   InternalExceptionFrame local_4c;
   BehPanelTy *local_8;
-  
+
   local_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_4c;
   local_8 = this;
-  errorCode = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  errorCode = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
   pBVar2 = local_8;
   if (errorCode == 0) {
     if (local_8->field_01BE != 0) {
@@ -46,9 +46,7 @@ void __thiscall BehPanelTy::DoneBehPanel(BehPanelTy *this)
   iVar3 = ReportDebugMessage(s_E____titans_Andrey_behpanel_cpp_007c1694,0x77,0,errorCode,
                              &DAT_007a4ccc,s_BehPanelTy__DoneBehPanel_007c1718);
   if (iVar3 != 0) {
-    pcVar1 = (code *)swi(3);
-    (*pcVar1)();
-    return;
+    STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   RaiseInternalException(errorCode,0,s_E____titans_Andrey_behpanel_cpp_007c1694,0x77);
   return;

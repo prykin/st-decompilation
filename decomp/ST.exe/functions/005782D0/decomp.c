@@ -4,7 +4,7 @@ void FUN_005782d0(void)
 {
   DebugSystemC *this;
   int iVar1;
-  
+
   this = (DebugSystemC *)Library::MSVCRT::FUN_0072e530(0x24);
   if (this == (DebugSystemC *)0x0) {
     DAT_00811644 = (DebugSystemC *)0x0;

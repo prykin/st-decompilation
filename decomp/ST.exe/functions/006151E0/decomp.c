@@ -4,9 +4,10 @@ int __thiscall FUN_006151e0(void *this,undefined4 *param_1,int param_2,int param
 {
   int iVar1;
   uint uVar2;
-  
+
   iVar1 = thunk_FUN_00614ee0(this,(int)param_1,param_2,param_3,param_4);
   if (0 < iVar1) {
+    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     if (((param_1 != (undefined4 *)(*(int *)((int)this + 0x2d5) + -3)) || (iVar1 != 2)) &&
        ((param_1 != (undefined4 *)(*(int *)((int)this + 0x2d5) + -2) || (iVar1 < 1)))) {
       return 0;

@@ -13,9 +13,7 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00573260::FUN_00573260
 {
   int iVar1;
   uint uVar2;
-  InternalExceptionFrame *in_stack_fffffec8;
-  InternalExceptionFrame *pIVar3;
-  int in_stack_fffffecc;
+  InternalExceptionFrame local_138;
   InternalExceptionFrame local_f4;
   InternalExceptionFrame local_b0;
   InternalExceptionFrame local_6c;
@@ -28,16 +26,17 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00573260::FUN_00573260
   int local_10;
   int local_c;
   AnonReceiver_00573260 *local_8;
-  
+
   local_f4.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_f4;
   local_8 = this;
-  iVar1 = Library::MSVCRT::__setjmp3(local_f4.jumpBuffer,0,in_stack_fffffec8,in_stack_fffffecc);
+  iVar1 = Library::MSVCRT::__setjmp3(local_f4.jumpBuffer,0);
   if (iVar1 == 0) {
     if (*(int *)local_8 == 0) {
       uVar2 = 0;
     }
     else {
+      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
       uVar2 = *(uint *)(*(int *)&local_8->field_0x4 + 0x80) & 1;
     }
     if (uVar2 != 0) {
@@ -50,12 +49,13 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00573260::FUN_00573260
   }
   g_currentExceptionFrame = &local_b0;
   local_b0.previous = local_f4.previous;
-  iVar1 = Library::MSVCRT::__setjmp3(local_b0.jumpBuffer,0,in_stack_fffffec8,in_stack_fffffecc);
+  iVar1 = Library::MSVCRT::__setjmp3(local_b0.jumpBuffer,0);
   if (iVar1 == 0) {
     if (*(int *)local_8 == 0) {
       uVar2 = 0;
     }
     else {
+      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
       uVar2 = *(uint *)(*(int *)&local_8->field_0x4 + 0x50) & 1;
     }
     if (uVar2 != 0) {
@@ -66,15 +66,15 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00573260::FUN_00573260
   else {
     _DAT_00807312 = 0;
   }
-  g_currentExceptionFrame = (InternalExceptionFrame *)&stack0xfffffec8;
-  pIVar3 = local_b0.previous;
-  iVar1 = Library::MSVCRT::__setjmp3
-                    ((undefined4 *)&stack0xfffffecc,0,local_b0.previous,in_stack_fffffecc);
+  g_currentExceptionFrame = &local_138;
+  local_138.previous = local_b0.previous;
+  iVar1 = Library::MSVCRT::__setjmp3(local_138.jumpBuffer,0);
   if (iVar1 == 0) {
     if (*(int *)local_8 == 0) {
       uVar2 = 0;
     }
     else {
+      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
       uVar2 = *(uint *)(*(int *)&local_8->field_0x4 + 0x68) & 1;
     }
     if (uVar2 != 0) {
@@ -86,13 +86,14 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00573260::FUN_00573260
     _DAT_00807306 = 0;
   }
   g_currentExceptionFrame = &local_6c;
-  local_6c.previous = pIVar3;
-  iVar1 = Library::MSVCRT::__setjmp3(local_6c.jumpBuffer,0,pIVar3,in_stack_fffffecc);
+  local_6c.previous = local_138.previous;
+  iVar1 = Library::MSVCRT::__setjmp3(local_6c.jumpBuffer,0);
   if (iVar1 == 0) {
     if (*(int *)local_8 == 0) {
       uVar2 = 0;
     }
     else {
+      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
       uVar2 = *(uint *)(*(int *)&local_8->field_0x4 + 0x38) & 1;
     }
     if (uVar2 != 0) {

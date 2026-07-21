@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\To_boat.cpp
@@ -8,7 +10,7 @@ int __thiscall STBoatC::BackTeleport(STBoatC *this,int *param_1)
 {
   code *pcVar1;
   int iVar2;
-  
+
   this->field_00B7 = 0;
   switch(*(undefined4 *)&this->field_0x663) {
   case 0:
@@ -32,8 +34,6 @@ int __thiscall STBoatC::BackTeleport(STBoatC *this,int *param_1)
   if (iVar2 == 0) {
     return -1;
   }
-  pcVar1 = (code *)swi(3);
-  iVar2 = (*pcVar1)();
-  return iVar2;
+  STDebugBreak(); /* noreturn in standalone pseudocode */
 }
 

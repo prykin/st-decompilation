@@ -17,12 +17,13 @@ undefined4 __fastcall FUN_0060dab0(AnonShape_0060DAB0_7A3B9916 *param_1)
   int local_14;
   int local_10;
   int local_c;
-  
+
   iVar8 = param_1->field_0244;
   uVar6 = 2;
   if ((iVar8 != 0) && (param_1->field_0240 == 1)) {
     iVar7 = PTR_00802a38->field_00E4 - *(int *)(iVar8 + 0x28);
     *(int *)(iVar8 + 0x1c) = *(int *)(iVar8 + 0x1c) + 6;
+    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     iVar9 = *(int *)(param_1->field_0244 + 0x18) * iVar7;
     *(int *)(param_1->field_0244 + 0x14) = param_1->field_01FD + iVar9;
     iVar8 = param_1->field_0244;
@@ -52,6 +53,7 @@ undefined4 __fastcall FUN_0060dab0(AnonShape_0060DAB0_7A3B9916 *param_1)
                (iVar9 = *(int *)(iVar9 + 8) * uVar10 + *(int *)(iVar9 + 0x1c), iVar9 != 0)) {
               iVar4 = param_1->field_0244;
               iVar5 = *(int *)(iVar4 + 0x14);
+              /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
               psVar1 = (short *)(*(int *)(iVar4 + 8) + (local_10 / *(int *)(iVar4 + 0x10)) * 4);
               iVar4 = *(int *)(iVar4 + 0x1c);
               sVar2 = *psVar1;

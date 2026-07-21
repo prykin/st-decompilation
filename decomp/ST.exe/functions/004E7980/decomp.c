@@ -19,7 +19,7 @@ undefined4 FUN_004e7980(uint *param_1,int param_2,undefined1 param_3)
   undefined4 *local_1c;
   int local_10;
   int local_c;
-  
+
   puVar5 = param_1;
   if (((int)param_1 < 0) || (7 < (int)param_1)) {
     return 0;
@@ -50,6 +50,7 @@ undefined4 FUN_004e7980(uint *param_1,int param_2,undefined1 param_3)
       do {
         bVar2 = pbVar12[1];
         for (iVar10 = 1; (bVar2 != 0 && (iVar10 < 3)); iVar10 = iVar10 + 1) {
+          /* ST_PSEUDO[flattened_global_record_array]: expected g_playerRuntime[player].field[index...] after base/stride proof */
           if ((*(byte *)((int)puVar5 * 0xa62 + 0x7f510b + ((int)(pbVar12[iVar10] ^ 7) >> 3)) >>
                ((pbVar12[iVar10] ^ 7) & 7) & 1) == 0) goto LAB_004e7a7f;
           bVar2 = pbVar12[iVar10 + 1];
@@ -63,6 +64,7 @@ LAB_004e7a7f:
       do {
         bVar2 = pbVar12[1];
         for (iVar10 = 1; (bVar2 != 0 && (iVar10 < 3)); iVar10 = iVar10 + 1) {
+          /* ST_PSEUDO[flattened_global_record_array]: expected g_playerRuntime[player].field[index...] after base/stride proof */
           if ((*(byte *)((int)puVar5 * 0xa62 + 0x7f510b + ((int)(pbVar12[iVar10] ^ 7) >> 3)) >>
                ((pbVar12[iVar10] ^ 7) & 7) & 1) == 0) goto LAB_004e7b13;
           bVar2 = pbVar12[iVar10 + 1];

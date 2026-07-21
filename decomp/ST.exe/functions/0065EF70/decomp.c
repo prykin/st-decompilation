@@ -16,7 +16,7 @@ undefined4 __fastcall FUN_0065ef70(AnonShape_0065EF70_E78A8204 *param_1)
   byte local_c;
   undefined3 uStack_b;
   AnonShape_0065EF70_EB9B857D *local_8;
-  
+
   if (g_sTAllPlayers_007FA174 != (STAllPlayersC *)0x0) {
     pDVar3 = param_1->field_022F;
     local_1c = 0;
@@ -25,6 +25,7 @@ undefined4 __fastcall FUN_0065ef70(AnonShape_0065EF70_E78A8204 *param_1)
       local_8 = (AnonShape_0065EF70_EB9B857D *)param_1;
       do {
         if (bVar8) {
+          /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(pDVar3, local_1c) (runtime stride) */
           psVar6 = (short *)(pDVar3->elementSize * local_1c + (int)pDVar3->data);
           bVar5 = 0;
           pbVar7 = &DAT_008087e9;
@@ -38,6 +39,7 @@ undefined4 __fastcall FUN_0065ef70(AnonShape_0065EF70_E78A8204 *param_1)
           if (((int)pbVar7 < 0x808a71) && ((PTR_00802a38 == (STPlaySystemC *)0x0 || (*pbVar7 < 8))))
           {
             bVar1 = local_8->field_0024;
+            /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
             _local_c = CONCAT31(uStack_b,bVar1);
             if (DAT_00808a8f == '\0') {
               if (bVar5 == bVar1) {

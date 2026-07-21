@@ -9,7 +9,7 @@ FUN_0072a810(byte *param_1,int param_2,ushort *param_3,int param_4,int *param_5,
 {
   int iVar1;
   uint uVar2;
-  
+
   iVar1 = *param_5 + -1;
   *param_5 = iVar1;
   while (-1 < iVar1) {

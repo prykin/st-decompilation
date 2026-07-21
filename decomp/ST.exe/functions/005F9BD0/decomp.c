@@ -5,7 +5,7 @@ void FUN_005f9bd0(short param_1,short param_2,int param_3,int param_4,int *param
   short sVar1;
   short sVar2;
   int local_8;
-  
+
   *param_5 = 0;
   *param_6 = 0;
   local_8 = 0;

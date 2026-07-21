@@ -8,11 +8,12 @@ void FUN_006daed0(undefined4 *param_1,int param_2,int param_3,int param_4,int pa
   int iVar1;
   int iVar2;
   int *piVar3;
+  /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
   int unaff_EDI;
   int iVar4;
   bool bVar5;
   int local_8;
-  
+
   piVar3 = (int *)&stack0xffffffe8;
   Library::MSVCRT::FUN_0072da40();
   iVar1 = -(param_7 >> 1);

@@ -7,7 +7,7 @@ undefined4 __thiscall FUN_005ede30(void *this,undefined4 *param_1,undefined4 *pa
   uint uVar3;
   int iVar4;
   int iVar5;
-  
+
   iVar2 = *(int *)((int)this + 0x263);
   if (*(int *)((int)this + 0x26f) - iVar2 < 1) {
     iVar5 = -(uint)(*(int *)((int)this + 0x26f) != iVar2);

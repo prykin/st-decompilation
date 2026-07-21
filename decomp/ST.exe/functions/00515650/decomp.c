@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\helppan.cpp
@@ -13,18 +15,16 @@ HelpPanelTy::DrawObj(HelpPanelTy *this,int *param_1,int param_2,byte param_3,int
   uint uVar4;
   byte *pbVar5;
   int iVar6;
-  undefined4 unaff_ESI;
-  void *unaff_EDI;
   InternalExceptionFrame local_58;
   int local_14;
   HelpPanelTy *local_10;
   int local_c;
   AnonShape_00515650_BBDC7053 *local_8;
-  
+
   local_58.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_58;
   local_10 = this;
-  iVar3 = Library::MSVCRT::__setjmp3(local_58.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar3 = Library::MSVCRT::__setjmp3(local_58.jumpBuffer,0);
   pHVar2 = local_10;
   if (iVar3 == 0) {
     if (g_sTAllPlayers_007FA174 != (STAllPlayersC *)0x0) {
@@ -36,12 +36,12 @@ HelpPanelTy::DrawObj(HelpPanelTy *this,int *param_1,int param_2,byte param_3,int
         local_c = local_8->field_0008;
         iVar3 = (0x19c - local_14) / 2;
         Library::DKW::WGR::FUN_006b55f0
-                  ((AnonShape_006B84D0_7C7D97C6 *)pHVar2->field_0218,0,iVar3,*param_1,
+                  ((AnonShape_006B5B10_E0D06CF1 *)pHVar2->field_0218,0,iVar3,*param_1,
                    (byte *)pHVar2->field_021C,0,(*(int *)(pHVar2->field_021C + 2) - local_14) / 2,
                    (*(int *)(pHVar2->field_021C + 4) - local_c) / 2,local_14,local_c);
         FUN_006b5440((int)pHVar2->field_0218,0,iVar3,*param_1,(int)local_8,0,0xff);
-        FUN_006b5ee0((int)pHVar2->field_0218,0,iVar3 + -2,*param_1 + -2,local_14 + 4,local_c + 4,
-                     0x6f,0xd);
+        FUN_006b5ee0((AnonShape_006B5B10_E0D06CF1 *)pHVar2->field_0218,0,iVar3 + -2,*param_1 + -2,
+                     local_14 + 4,local_c + 4,0x6f,0xd);
         *param_1 = *param_1 + local_c + 10;
         FreeAndNull(&local_8);
       }
@@ -68,9 +68,7 @@ HelpPanelTy::DrawObj(HelpPanelTy *this,int *param_1,int param_2,byte param_3,int
   iVar6 = ReportDebugMessage(s_E____titans_Andrey_helppan_cpp_007c383c,0x3f3,0,iVar3,&DAT_007a4ccc,
                              s_HelpPanelTy__DrawObj_007c3b88);
   if (iVar6 != 0) {
-    pcVar1 = (code *)swi(3);
-    (*pcVar1)();
-    return;
+    STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   RaiseInternalException(iVar3,0,s_E____titans_Andrey_helppan_cpp_007c383c,0x3f3);
   return;

@@ -11,7 +11,7 @@ FUN_004d7480(char param_1,int param_2,undefined4 param_3,int param_4,int param_5
   int local_10;
   int local_c;
   int local_8;
-  
+
   local_18 = param_3;
   local_8 = param_7;
   iVar1 = (int)param_1;

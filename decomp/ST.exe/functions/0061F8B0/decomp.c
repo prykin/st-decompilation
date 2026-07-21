@@ -8,7 +8,7 @@ void __thiscall FUN_0061f8b0(void *this,int param_1,int param_2,uint param_3)
   uint uVar2;
   SoundPosition local_14;
   uint local_8;
-  
+
   local_8 = PTR_00802a38->field_00E4;
   if ((((DAT_0080874d == param_3) && (*(uint *)((int)this + 0xb5) <= local_8)) &&
       (((param_1 + 1 < PTR_00807598->field_0048 ||

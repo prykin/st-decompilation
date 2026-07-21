@@ -12,7 +12,7 @@ void FUN_0074bc89(AnonShape_0074BC89_92881050 *param_1,undefined4 *param_2)
   uint uVar5;
   undefined4 *puVar6;
   AnonShape_0074BC89_92881050 *pAVar7;
-  
+
   puVar2 = param_2;
   pAVar7 = param_1;
   for (iVar3 = 0x12; iVar3 != 0; iVar3 = iVar3 + -1) {
@@ -43,6 +43,7 @@ void FUN_0074bc89(AnonShape_0074BC89_92881050 *param_1,undefined4 *param_2)
   }
   piVar1 = param_1->field_003C;
   if (piVar1 != (int *)0x0) {
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
     (**(code **)(*piVar1 + 4))(piVar1);
   }
   return;

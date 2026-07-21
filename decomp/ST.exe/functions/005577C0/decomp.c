@@ -10,7 +10,7 @@ undefined4 * __thiscall VisibleClassTy::VisibleClassTy(VisibleClassTy *this)
   undefined4 uVar1;
   int iVar2;
   undefined4 *puVar3;
-  
+
   STGroupBoatC::sub_006E60E0((STGroupBoatC *)this);
   this->vtable = &VisibleClassTyVTable;
   g_visibleClass_00802A88 = this;

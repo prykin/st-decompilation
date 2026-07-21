@@ -21,12 +21,13 @@ FUN_0062d2d0(void *this,int param_1,int param_2,int param_3,undefined4 param_4,i
   undefined1 *puStack_10;
   undefined *puStack_c;
   undefined4 local_8;
-  
+
   puStack_c = &DAT_0079d088;
   puStack_10 = &LAB_0072d964;
   local_14 = ExceptionList;
   local_1c = &stack0xffffffa8;
   local_2c = 0;
+  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   if ((this != (void *)0xffffffd0) && (iVar6 = *(int *)((int)this + param_1 * 4 + 0x30), iVar6 != 0)
      ) {
     iVar6 = *(int *)(iVar6 + 0xc);
@@ -48,6 +49,7 @@ FUN_0062d2d0(void *this,int param_1,int param_2,int param_3,undefined4 param_4,i
     if (0 < iVar6) {
       local_4c[0] = aiStack_44 + 4;
       do {
+        /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
         iVar1 = *(int *)((int)this + param_1 * 4 + 0x30);
         if (uVar3 < *(uint *)(iVar1 + 0xc)) {
           piVar4 = (int *)(*(int *)(iVar1 + 8) * uVar3 + *(int *)(iVar1 + 0x1c));

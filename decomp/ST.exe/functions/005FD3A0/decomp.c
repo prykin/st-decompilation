@@ -11,7 +11,7 @@ undefined4 __thiscall FUN_005fd3a0(void *this,int param_1)
   AnonShape_0060EA30_DCEB68AD *local_c;
   short local_8;
   short local_6;
-  
+
   iVar3 = param_1;
   iVar2 = STGameObjC::GetMessage(this,(AnonShape_0041AF40_F59F8577 *)param_1);
   if (iVar2 == 0xffff) {
@@ -50,7 +50,9 @@ LAB_005fd4eb:
            (iVar3 = thunk_FUN_005ff3a0(this,&local_6,(undefined2 *)((int)&param_1 + 2),&local_8),
            iVar3 != 0)) {
           thunk_FUN_005fea50(this);
+          /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
           thunk_FUN_005feb60(this,(int)local_6,(int)param_1._2_2_,(int)local_8);
+          /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
           thunk_FUN_00600110(this,(int)local_6,(int)param_1._2_2_,0x45f);
           return 0;
         }

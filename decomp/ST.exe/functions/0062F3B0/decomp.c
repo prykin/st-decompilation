@@ -1,9 +1,11 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* Recovered from embedded debug metadata:
    E:\__titans\nick\to_Rubb.cpp
    STRubbishC::LoadImagSpr
-   
+
    [STSwitchEnumApplier] Switch target param_4 uses
    /SubmarineTitans/Recovered/Enums/STRubbishC_LoadImagSpr_param_4Enum. Cases:
    CASE_1=1;CASE_2=2;CASE_3=3;CASE_4=4;CASE_5=5;CASE_6=6 */
@@ -19,15 +21,13 @@ STRubbishC::LoadImagSpr
   int iVar2;
   int iVar3;
   undefined4 uVar4;
-  undefined4 unaff_ESI;
-  void *unaff_EDI;
   InternalExceptionFrame local_5c;
   undefined4 local_18;
   STT3DSprC *local_14;
   int local_10;
   int local_c;
   undefined **local_8;
-  
+
   local_18 = 0;
   switch(param_4) {
   case CASE_1:
@@ -66,7 +66,7 @@ LAB_0062f450:
   }
   local_5c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_5c;
-  iVar2 = Library::MSVCRT::__setjmp3(local_5c.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar2 = Library::MSVCRT::__setjmp3(local_5c.jumpBuffer,0);
   this_00 = local_14;
   if (iVar2 == 0) {
     iVar2 = STT3DSprC::Init(local_14,DAT_008073cc,0x5a,0x45,0,0xb4,0x8c,0x11);
@@ -91,9 +91,7 @@ LAB_0062f450:
     iVar3 = ReportDebugMessage(s_E____titans_nick_to_Rubb_cpp_007d1798,0x189,0,iVar2,&DAT_007a4ccc,
                                s_STRubbishC__LoadImagSpr_007d17fc);
     if (iVar3 != 0) {
-      pcVar1 = (code *)swi(3);
-      uVar4 = (*pcVar1)();
-      return uVar4;
+      STDebugBreak(); /* noreturn in standalone pseudocode */
     }
     RaiseInternalException(iVar2,0,s_E____titans_nick_to_Rubb_cpp_007d1798,0x18b);
   }

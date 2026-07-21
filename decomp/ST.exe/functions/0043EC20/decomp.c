@@ -19,7 +19,7 @@ uint * FUN_0043ec20(char param_1,Global_sub_0043EC20_param_2Enum param_2,short p
   int local_10;
   int local_c;
   int local_8;
-  
+
   local_8 = (int)param_3;
   local_c = param_6 + -1 + local_8;
   _param_3 = (int)param_4;
@@ -61,10 +61,12 @@ uint * FUN_0043ec20(char param_1,Global_sub_0043EC20_param_2Enum param_2,short p
             iVar6 = iVar3 * 8 + -8;
             do {
               piVar1 = *(int **)((int)g_worldGrid.cells[1].objects + iVar6);
+              /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
               if ((((piVar1 != (int *)0x0) && (piVar1[9] == (int)param_1)) && (piVar1 != (int *)0x0)
                   ) && ((GVar2 = (**(code **)(*piVar1 + 0x2c))(), GVar2 == param_2 &&
                         (iVar4 = (**(code **)(*piVar1 + 0xf8))(), iVar4 != 0)))) {
                 if (param_9 == 0) {
+/* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
 LAB_0043eda0:
                   if ((param_10 == -1) ||
                      (iVar4 = (**(code **)(*piVar1 + 0x6c))(), iVar4 == param_10)) {
@@ -74,6 +76,7 @@ LAB_0043eda0:
                 }
                 else {
                   switch(param_2) {
+                  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
                   case CASE_38:
                   case CASE_39:
                   case CASE_4F:

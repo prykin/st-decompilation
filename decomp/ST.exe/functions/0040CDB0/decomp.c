@@ -3,7 +3,7 @@ void __thiscall FUN_0040cdb0(void *this,uint param_1)
 
 {
   int iVar1;
-  
+
   iVar1 = thunk_FUN_00423e70(this,param_1);
   if (iVar1 != 0) {
     FreeAndNull((void **)(iVar1 + 0x9f));

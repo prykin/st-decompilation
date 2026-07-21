@@ -9,7 +9,7 @@ int __cdecl FUN_0067bc80(AnonShape_00413AF0_B6B4EE9A *param_1,uint param_2)
   uint uVar5;
   bool bVar6;
   int local_8;
-  
+
   uVar5 = 0;
   sVar4 = 10000;
   uVar2 = param_1->field_000C;
@@ -17,6 +17,7 @@ int __cdecl FUN_0067bc80(AnonShape_00413AF0_B6B4EE9A *param_1,uint param_2)
   bVar6 = uVar2 != 0;
   if (0 < (int)uVar2) {
     do {
+      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
       if ((((bVar6) && (iVar3 = param_1->field_0008 * uVar5 + param_1->field_001C, iVar3 != 0)) &&
           ((*(uint *)(iVar3 + 0x14) & param_2) != 0)) &&
          ((sVar1 = *(short *)(iVar3 + 0x1a), sVar1 < sVar4 &&

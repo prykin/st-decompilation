@@ -1,10 +1,10 @@
 
 /* [STPrototypeApplier] Propagated parameter 1.
    Evidence: 004CAFC0 -> 004DCAA0 @ 004CB0AE
-   
+
    [STPrototypeApplier] Propagated parameter 3.
    Evidence: 004CAFC0 -> 004DCAA0 @ 004CB0AE
-   
+
    [STPrototypeApplier] Propagated parameter 4.
    Evidence: 004CAFC0 -> 004DCAA0 @ 004CB0AE */
 
@@ -17,7 +17,7 @@ FUN_004dcaa0(void *this,Global_sub_004CAFC0_param_1Enum param_1,int param_2,uint
   int iVar2;
   uint uVar3;
   int iVar4;
-  
+
   uVar3 = GetPlayerRaceId(*(char *)((int)this + 0x23d));
   iVar1 = *(int *)((int)this + 0x245);
   iVar4 = (uVar3 & 0xff) - 1;

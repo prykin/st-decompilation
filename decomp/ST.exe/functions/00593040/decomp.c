@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\camp_obj.cpp
@@ -23,8 +25,8 @@ undefined4 __thiscall CampaignTy::GetMessage(CampaignTy *this,AnonShape_00593040
   int iVar13;
   uint uVar14;
   uint uVar15;
-  undefined4 unaff_ESI;
   char *pcVar16;
+  /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
   void *unaff_EDI;
   char *pcVar17;
   undefined4 *puVar18;
@@ -33,22 +35,20 @@ undefined4 __thiscall CampaignTy::GetMessage(CampaignTy *this,AnonShape_00593040
   undefined4 local_10;
   int *local_c;
   CampaignTy *local_8;
-  
+
   local_8 = this;
   DVar5 = FUN_006e51b0(this->field_0010);
   this->field_0061 = DVar5;
   local_54.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_54;
-  iVar6 = Library::MSVCRT::__setjmp3(local_54.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar6 = Library::MSVCRT::__setjmp3(local_54.jumpBuffer,0);
   this_00 = local_8;
   if (iVar6 != 0) {
     g_currentExceptionFrame = local_54.previous;
     iVar11 = ReportDebugMessage(s_E____titans_Start_camp_obj_cpp_007cbcd4,0x24f,0,iVar6,
                                 &DAT_007a4ccc,s_CampaignTy__GetMessage_007cbea0);
     if (iVar11 != 0) {
-      pcVar4 = (code *)swi(3);
-      uVar9 = (*pcVar4)();
-      return uVar9;
+      STDebugBreak(); /* noreturn in standalone pseudocode */
     }
     RaiseInternalException(iVar6,0,s_E____titans_Start_camp_obj_cpp_007cbcd4,0x24f);
     return 0xffff;
@@ -64,9 +64,11 @@ undefined4 __thiscall CampaignTy::GetMessage(CampaignTy *this,AnonShape_00593040
         PaintCampaign(this_00);
       }
       else if (uVar14 == 0) {
+        /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
         NoneCampaign(this_00,unaff_EDI);
       }
       else if (uVar14 == 2) {
+        /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
         InitCampaign(this_00,*(undefined4 *)(param_1->field_0014 + 0x14));
       }
       else if (uVar14 == 3) {
@@ -100,7 +102,9 @@ undefined4 __thiscall CampaignTy::GetMessage(CampaignTy *this,AnonShape_00593040
     break;
   case 0x6943:
     thunk_FUN_005b6350(this_00,0x6942,param_1->field_0014,0);
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
     (**(code **)(*(int *)this_00 + 8))();
+    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     pMVar3 = *(MMsgTy **)(this_00->field_1A5B + 0x2e6);
     if (pMVar3 != (MMsgTy *)0x0) {
       MMsgTy::HidePanel(pMVar3,1,0,1);
@@ -114,6 +118,7 @@ undefined4 __thiscall CampaignTy::GetMessage(CampaignTy *this,AnonShape_00593040
     *(undefined4 *)&this_00->field_0x55 = 1;
     thunk_FUN_005b66e0((STJellyGunC *)this_00);
     break;
+  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   case 0x694a:
     if ((((DAT_00807dd1 & 0xffff0000) == 0xd0dd0000) && (DAT_0080874e == 3)) &&
        (pMVar3 = *(MMsgTy **)(this_00->field_1A5B + 0x2e6), pMVar3 != (MMsgTy *)0x0)) {
@@ -165,7 +170,9 @@ undefined4 __thiscall CampaignTy::GetMessage(CampaignTy *this,AnonShape_00593040
           puVar18 = puVar18 + 1;
         }
         thunk_FUN_005b6350(this_00,(-(uint)(this_00->field_1FFC != 0) & 8) + 0x6948,0,0);
+        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
         (**(code **)(*(int *)this_00 + 8))();
+        /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
         pMVar3 = *(MMsgTy **)(this_00->field_1A5B + 0x2e6);
         if (pMVar3 != (MMsgTy *)0x0) {
           MMsgTy::HidePanel(pMVar3,1,0,1);

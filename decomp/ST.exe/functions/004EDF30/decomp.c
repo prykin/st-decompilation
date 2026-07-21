@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\behpanel.cpp
@@ -11,11 +13,9 @@ void __thiscall BehPanelTy::ShiftControls(BehPanelTy *this,int param_1)
   short sVar2;
   int errorCode;
   int iVar3;
-  undefined4 unaff_ESI;
-  void *unaff_EDI;
   InternalExceptionFrame local_4c;
   BehPanelTy *local_8;
-  
+
   if (param_1 != this->field_005C) {
     local_8 = this;
     SpecPanelTy::ShiftControls((SpecPanelTy *)this,param_1);
@@ -27,7 +27,7 @@ void __thiscall BehPanelTy::ShiftControls(BehPanelTy *this,int param_1)
     *(short *)&this->field_0x2e = sVar2;
     local_4c.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_4c;
-    errorCode = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
+    errorCode = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
     this_00 = local_8;
     if (errorCode == 0) {
       if (local_8->field_01BE != 0) {
@@ -49,9 +49,7 @@ void __thiscall BehPanelTy::ShiftControls(BehPanelTy *this,int param_1)
     iVar3 = ReportDebugMessage(s_E____titans_Andrey_behpanel_cpp_007c1694,0x87,0,errorCode,
                                &DAT_007a4ccc,s_BehPanelTy__ShiftControls_007c1738);
     if (iVar3 != 0) {
-      pcVar1 = (code *)swi(3);
-      (*pcVar1)();
-      return;
+      STDebugBreak(); /* noreturn in standalone pseudocode */
     }
     RaiseInternalException(errorCode,0,s_E____titans_Andrey_behpanel_cpp_007c1694,0x87);
   }

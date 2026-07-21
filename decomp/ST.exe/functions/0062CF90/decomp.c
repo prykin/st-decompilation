@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\nick\to_rab3m.cpp
@@ -13,8 +15,6 @@ uint __thiscall STManRub3C::AddNewRub3(STManRub3C *this,int *param_1)
   uint *puVar5;
   uint uVar6;
   int iVar7;
-  undefined4 unaff_ESI;
-  void *unaff_EDI;
   int *piVar8;
   InternalExceptionFrame local_74;
   int local_30 [4];
@@ -24,7 +24,7 @@ uint __thiscall STManRub3C::AddNewRub3(STManRub3C *this,int *param_1)
   uint local_10;
   STManRub3C *local_c;
   int *local_8;
-  
+
   local_10 = 0xffffffff;
   if (param_1 == (int *)0x0) {
     return 0xffffffff;
@@ -33,7 +33,7 @@ uint __thiscall STManRub3C::AddNewRub3(STManRub3C *this,int *param_1)
   local_74.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_74;
   local_c = this;
-  iVar4 = Library::MSVCRT::__setjmp3(local_74.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar4 = Library::MSVCRT::__setjmp3(local_74.jumpBuffer,0);
   piVar3 = local_8;
   pSVar2 = local_c;
   if (iVar4 == 0) {
@@ -65,9 +65,7 @@ uint __thiscall STManRub3C::AddNewRub3(STManRub3C *this,int *param_1)
   iVar7 = ReportDebugMessage(s_E____titans_nick_to_rab3m_cpp_007d13ec,0x86,0,iVar4,&DAT_007a4ccc,
                              s_STManRub3C__AddNewRub3_007d142c);
   if (iVar7 != 0) {
-    pcVar1 = (code *)swi(3);
-    uVar6 = (*pcVar1)();
-    return uVar6;
+    STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   RaiseInternalException(iVar4,0,s_E____titans_nick_to_rab3m_cpp_007d13ec,0x88);
   return 0xffff;

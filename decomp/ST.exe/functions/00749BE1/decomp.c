@@ -8,7 +8,7 @@ undefined4 __thiscall FUN_00749be1(void *this,undefined4 param_1,undefined4 para
   int iVar2;
   undefined4 *puVar3;
   void *local_8;
-  
+
   lpCriticalSection = (LPCRITICAL_SECTION)((int)this + 0x7c);
   local_8 = this;
   EnterCriticalSection(lpCriticalSection);
@@ -20,7 +20,9 @@ undefined4 __thiscall FUN_00749be1(void *this,undefined4 param_1,undefined4 para
       puVar3 = (undefined4 *)0x0;
     }
     else {
+      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
       iVar2 = (**(code **)(*(int *)this + 0x1c))(0);
+      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
       puVar3 = FUN_0074eef3(this_00,0,*(int *)((int)this + 4),&local_8,
                             -(uint)(iVar2 != 0) & iVar2 + 0xcU);
     }
@@ -31,15 +33,18 @@ undefined4 __thiscall FUN_00749be1(void *this,undefined4 param_1,undefined4 para
     }
     if ((int)local_8 < 0) {
       if (puVar3 != (undefined4 *)0x0) {
+        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
         (**(code **)(puVar3[2] + 0xc))(1);
       }
       *(undefined4 *)((int)this + 0x50) = 0;
       LeaveCriticalSection(lpCriticalSection);
       return 0x80004002;
     }
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
     uVar1 = (**(code **)(*(int *)this + 0x24))(param_1,param_2);
   }
   else {
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
     uVar1 = (*(code *)**(undefined4 **)(iVar2 + 8))(iVar2 + 8,param_1,param_2);
   }
   LeaveCriticalSection(lpCriticalSection);

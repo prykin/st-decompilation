@@ -6,7 +6,7 @@ void FUN_006b61a0(undefined4 *param_1,byte *param_2)
   int iVar2;
   int iVar3;
   int iVar4;
-  
+
   iVar4 = 0;
   while( true ) {
     bVar1 = *param_2;

@@ -1,6 +1,6 @@
 
 /* [STVTableApplier] Virtual slot 0079DB04+0x0
-   
+
    [STVTableApplier] Virtual slot 007A1568+0x0 */
 
 void FUN_006d74f0(int param_1,undefined4 param_2,undefined4 param_3)

@@ -16,7 +16,7 @@ FUN_005fd750(uint param_1,undefined2 param_2,undefined2 param_3,undefined2 param
   undefined4 local_10;
   undefined4 local_c;
   undefined4 local_8;
-  
+
   puVar3 = local_30;
   for (iVar2 = 0xb; iVar2 != 0; iVar2 = iVar2 + -1) {
     *puVar3 = 0;
@@ -30,7 +30,7 @@ FUN_005fd750(uint param_1,undefined2 param_2,undefined2 param_3,undefined2 param
   local_30[2] = 1;
   local_30[1] = param_1;
   local_30[0] = 0x82;
-  pSVar1 = STAllPlayersC::GetObjPtr(g_sTAllPlayers_007FA174,param_1,param_5,CASE_1);
+  pSVar1 = STAllPlayersC::GetObjPtr(g_sTAllPlayers_007FA174,(char)param_1,param_5,CASE_1);
   if (pSVar1 != (STGameObjC *)0x0) {
     iVar2 = (*pSVar1->vtable[1].vfunc_24)();
     if (iVar2 != 0) {

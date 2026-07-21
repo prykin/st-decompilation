@@ -20,11 +20,11 @@ int __thiscall FUN_007140e0(void *this,int param_1,char param_2)
   int local_18;
   int local_14;
   int local_10;
-  AnonShape_006C7610_838EDECF *local_c;
+  AnonShape_006B5B10_E0D06CF1 *local_c;
   undefined1 local_5;
-  
+
   iVar8 = 0;
-  local_c = (AnonShape_006C7610_838EDECF *)0x0;
+  local_c = (AnonShape_006B5B10_E0D06CF1 *)0x0;
   local_10 = 0;
   local_5 = 0;
   if ((((*(char **)((int)this + 0x58) == (char *)0x0) || (*(ccFntTy **)this == (ccFntTy *)0x0)) ||
@@ -36,7 +36,7 @@ int __thiscall FUN_007140e0(void *this,int param_1,char param_2)
   FUN_007109f0(*(void **)this,(AnonShape_007109F0_BD33A2FF *)((int)this + 0x10));
   this_00 = *(ccFntTy **)this;
   if (&stack0x00000000 != &DAT_0000000c) {
-    local_c = (AnonShape_006C7610_838EDECF *)this_00->field_0072;
+    local_c = (AnonShape_006B5B10_E0D06CF1 *)this_00->field_0072;
   }
   if (&stack0x00000000 != (undefined1 *)0x10) {
     iVar8 = this_00->field_0076;
@@ -205,7 +205,7 @@ int __thiscall FUN_007140e0(void *this,int param_1,char param_2)
         local_5 = (undefined1)*puVar4;
         *(undefined1 *)puVar4 = 0;
       }
-      iVar8 = FUN_00711110(*(void **)this,*(uint **)((int)this + 0x8c));
+      iVar8 = FUN_00711110(*(void **)this,*(char **)((int)this + 0x8c));
       iVar8 = (*(int *)((int)this + 0x5c) + *(int *)((int)this + 100)) / 2 - iVar8;
       if (puVar4 != (uint *)0x0) {
         *(undefined1 *)puVar4 = local_5;
@@ -219,7 +219,7 @@ int __thiscall FUN_007140e0(void *this,int param_1,char param_2)
         local_5 = (undefined1)*puVar4;
         *(undefined1 *)puVar4 = 0;
       }
-      iVar8 = FUN_00711110(*(void **)this,*(uint **)((int)this + 0x8c));
+      iVar8 = FUN_00711110(*(void **)this,*(char **)((int)this + 0x8c));
       iVar8 = *(int *)((int)this + 0x5c) - iVar8;
       if (puVar4 != (uint *)0x0) {
         *(undefined1 *)puVar4 = local_5;
@@ -231,7 +231,7 @@ int __thiscall FUN_007140e0(void *this,int param_1,char param_2)
         local_5 = (undefined1)*puVar4;
         *(undefined1 *)puVar4 = 0;
       }
-      iVar8 = FUN_00711110(*(void **)this,*(uint **)((int)this + 0x8c));
+      iVar8 = FUN_00711110(*(void **)this,*(char **)((int)this + 0x8c));
       iVar8 = (*(int *)((int)this + 0x5c) - iVar8) / 2;
       if (puVar4 != (uint *)0x0) {
         *(undefined1 *)puVar4 = local_5;
@@ -271,6 +271,7 @@ int __thiscall FUN_007140e0(void *this,int param_1,char param_2)
       if (this_00->field_00A0 != 0) {
         FUN_00710790((uint *)this_00);
       }
+      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
       iVar9 = *(int *)(*(int *)this + 0x5c) + *(int *)&this_00->field_0x8a +
               *(int *)((int)this + 0xa4);
       iVar8 = *(int *)((int)this + 0x7c) + 1;
@@ -470,7 +471,7 @@ int __thiscall FUN_007140e0(void *this,int param_1,char param_2)
         local_5 = (undefined1)*puVar4;
         *(undefined1 *)puVar4 = 0;
       }
-      iVar8 = FUN_00711110(*(void **)this,*(uint **)((int)this + 0x8c));
+      iVar8 = FUN_00711110(*(void **)this,*(char **)((int)this + 0x8c));
       iVar8 = (*(int *)((int)this + 0x5c) + *(int *)((int)this + 100)) / 2 - iVar8;
       if (puVar4 != (uint *)0x0) {
         *(undefined1 *)puVar4 = local_5;
@@ -483,7 +484,7 @@ int __thiscall FUN_007140e0(void *this,int param_1,char param_2)
         local_5 = (undefined1)*puVar4;
         *(undefined1 *)puVar4 = 0;
       }
-      iVar8 = FUN_00711110(*(void **)this,*(uint **)((int)this + 0x8c));
+      iVar8 = FUN_00711110(*(void **)this,*(char **)((int)this + 0x8c));
       iVar8 = *(int *)((int)this + 0x5c) - iVar8;
       if (puVar4 != (uint *)0x0) {
         *(undefined1 *)puVar4 = local_5;
@@ -495,7 +496,7 @@ int __thiscall FUN_007140e0(void *this,int param_1,char param_2)
         local_5 = (undefined1)*puVar4;
         *(undefined1 *)puVar4 = 0;
       }
-      iVar8 = FUN_00711110(*(void **)this,*(uint **)((int)this + 0x8c));
+      iVar8 = FUN_00711110(*(void **)this,*(char **)((int)this + 0x8c));
       iVar8 = (*(int *)((int)this + 0x5c) - iVar8) / 2;
       if (puVar4 != (uint *)0x0) {
         *(undefined1 *)puVar4 = local_5;

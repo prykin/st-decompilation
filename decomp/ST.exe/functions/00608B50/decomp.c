@@ -31,7 +31,7 @@ FUN_00608b50(void *this,uint param_1,uint *param_2,uint param_3,undefined4 param
   uint local_10;
   int local_c;
   int local_8;
-  
+
   local_14 = (uint)param_2 & 0xffff;
   local_10 = param_1 & 0xffff;
   local_c = (param_3 & 0xffff) - 0x32;
@@ -99,7 +99,9 @@ FUN_00608b50(void *this,uint param_1,uint *param_2,uint param_3,undefined4 param
         *(undefined2 *)&pAVar7->field_0000 = 0;
         local_1c = param_9;
         local_5c.field_0000 = 100;
+        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
         local_5c._4_4_ = 0xff;
+        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
         local_5c._8_4_ = 0;
         local_5c.field_000C = 0;
         if (0 < param_6) {

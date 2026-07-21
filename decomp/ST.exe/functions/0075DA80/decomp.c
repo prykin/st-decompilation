@@ -8,14 +8,18 @@ void FUN_0075da80(AnonShape_0075DA80_57A0CDEF *param_1)
   int iVar4;
   int iVar5;
   int local_8;
-  
+
   pAVar1 = param_1->field_01B6;
+  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
   uVar2 = (*(code *)**(undefined4 **)param_1)(param_1,1,0x400);
   pAVar1->field_0008 = uVar2;
+  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
   uVar2 = (*(code *)**(undefined4 **)param_1)(param_1,1,0x400);
   pAVar1->field_000C = uVar2;
+  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
   uVar2 = (*(code *)**(undefined4 **)param_1)(param_1,1,0x400);
   pAVar1->field_0010 = uVar2;
+  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
   uVar2 = (*(code *)**(undefined4 **)param_1)(param_1,1,0x400);
   pAVar1->field_0014 = uVar2;
   iVar3 = 0;

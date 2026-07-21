@@ -12,7 +12,7 @@ int FUN_00698de0(undefined1 *param_1,uint param_2,int param_3,undefined4 param_4
   uint *puVar7;
   short *psVar8;
   int local_8;
-  
+
   puVar2 = param_1;
   local_8 = 0;
   Library::MSVCRT::FUN_00730810(param_1,param_2,10,&LAB_00404a93);

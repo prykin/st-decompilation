@@ -10,7 +10,7 @@ void FUN_00750590(undefined1 *param_1,int param_2,byte *param_3,int param_4,int 
   int iVar5;
   byte *pbVar6;
   undefined1 *puVar7;
-  
+
   if ((0 < param_5) && (0 < param_6)) {
     iVar4 = param_5;
     if (2 < param_5) {

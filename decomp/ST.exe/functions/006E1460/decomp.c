@@ -51,7 +51,7 @@ FUN_006e1460(void *this,undefined4 param_1,undefined4 param_2,undefined4 param_3
   undefined1 *puStack_10;
   undefined *puStack_c;
   undefined4 local_8;
-  
+
   local_8 = 0xffffffff;
   puStack_c = &DAT_0079e138;
   puStack_10 = &LAB_0072d964;

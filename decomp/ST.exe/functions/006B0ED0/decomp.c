@@ -6,7 +6,7 @@ void __cdecl FUN_006b0ed0(int param_1)
   int iVar2;
   int iVar3;
   int *piVar4;
-  
+
   iVar3 = 0;
   piVar4 = (int *)&stack0x00000008;
   do {

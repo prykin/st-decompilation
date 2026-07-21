@@ -7,7 +7,7 @@ undefined4 FUN_00754f40(LPCSTR param_1)
   undefined4 uVar2;
   int local_24;
   uint local_20;
-  
+
   hFile = CreateFileA(param_1,0x80000000,0,(LPSECURITY_ATTRIBUTES)0x0,3,0x80,(HANDLE)0x0);
   if (hFile == (HANDLE)0xffffffff) {
     return 0;

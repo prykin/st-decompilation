@@ -10,7 +10,7 @@ FUN_006b5a50(AnonShape_006B5A50_BD82F60D *param_1,AnonShape_006B5A50_BD82F60D *p
   char *pcVar2;
   char *pcVar3;
   bool bVar4;
-  
+
   if ((param_1 == (AnonShape_006B5A50_BD82F60D *)0x0) ||
      (param_2 == (AnonShape_006B5A50_BD82F60D *)0x0)) {
     return 0xffffffcc;

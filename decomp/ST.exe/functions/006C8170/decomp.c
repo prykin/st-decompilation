@@ -1,5 +1,8 @@
 
-char * FUN_006c8170(char *param_1)
+/* [STPrototypeApplier] Propagated parameter 0.
+   Evidence: 005DA7A0 -> 006C8170 @ 005DA834 | 006B6230 -> 006C8170 @ 006B6290 */
+
+char * FUN_006c8170(char *resourceString)
 
 {
   char cVar1;
@@ -8,11 +11,11 @@ char * FUN_006c8170(char *param_1)
   uint uVar4;
   char *pcVar5;
   char *pcVar6;
-  
+
   pcVar2 = (char *)0x0;
-  if (param_1 != (char *)0x0) {
+  if (resourceString != (char *)0x0) {
     uVar3 = 0xffffffff;
-    pcVar2 = param_1;
+    pcVar2 = resourceString;
     do {
       if (uVar3 == 0) break;
       uVar3 = uVar3 - 1;
@@ -23,12 +26,12 @@ char * FUN_006c8170(char *param_1)
     if (pcVar2 != (char *)0x0) {
       uVar3 = 0xffffffff;
       do {
-        pcVar5 = param_1;
+        pcVar5 = resourceString;
         if (uVar3 == 0) break;
         uVar3 = uVar3 - 1;
-        pcVar5 = param_1 + 1;
-        cVar1 = *param_1;
-        param_1 = pcVar5;
+        pcVar5 = resourceString + 1;
+        cVar1 = *resourceString;
+        resourceString = pcVar5;
       } while (cVar1 != '\0');
       uVar3 = ~uVar3;
       pcVar5 = pcVar5 + -uVar3;

@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\to_allpl.cpp
@@ -25,6 +27,7 @@ STAllPlayersC::PutOnPlaceGuardBoats
   uint uVar14;
   int *piVar15;
   int iVar16;
+  char objPtr;
   int local_104 [8];
   int local_e4 [7];
   undefined4 local_c8;
@@ -83,7 +86,7 @@ STAllPlayersC::PutOnPlaceGuardBoats
   undefined4 local_10;
   undefined4 local_c;
   uint local_8;
-  
+
   uVar14 = param_5;
   local_c0 = 0;
   local_be = 2;
@@ -202,8 +205,11 @@ STAllPlayersC::PutOnPlaceGuardBoats
       }
     }
     local_18 = PTR_00802a38->field_00E4;
+    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
     local_14 = CONCAT22(sVar2,sVar3);
+    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
     local_10 = CONCAT22(local_10._2_2_,param_4);
+    objPtr = (char)param_1;
     local_1c = dVar11;
     local_20 = dVar11;
     if (iVar5 < 0x88) {
@@ -224,7 +230,7 @@ STAllPlayersC::PutOnPlaceGuardBoats
               do {
                 psVar13 = psVar13 + 3;
                 DArrayGetElement(param_8,local_8,&param_5);
-                pSVar7 = (STBoatC *)GetObjPtr(local_28,param_1,param_5,CASE_1);
+                pSVar7 = (STBoatC *)GetObjPtr(local_28,objPtr,param_5,CASE_1);
                 if (pSVar7 == (STBoatC *)0x0) {
                   iVar5 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0x2d64,0,0,
                                              &DAT_007a4ccc,
@@ -232,9 +238,7 @@ STAllPlayersC::PutOnPlaceGuardBoats
                   if (iVar5 == 0) {
                     return;
                   }
-                  pcVar1 = (code *)swi(3);
-                  (*pcVar1)();
-                  return;
+                  STDebugBreak(); /* noreturn in standalone pseudocode */
                 }
                 sVar4 = (short)iVar5;
                 if (psVar13[2] == 0) {
@@ -245,7 +249,9 @@ STAllPlayersC::PutOnPlaceGuardBoats
                   sVar10 = (sVar3 - sVar4) + *psVar13 + -2;
                   sVar4 = (sVar2 - sVar4) + -3;
                 }
+                /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                 local_10 = CONCAT22(sVar10,(undefined2)local_10);
+                /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                 local_c = CONCAT22(psVar13[1],sVar4);
                 iVar8 = thunk_FUN_0045ff10((int)pSVar7);
                 if (iVar8 == 5) {
@@ -284,7 +290,7 @@ STAllPlayersC::PutOnPlaceGuardBoats
                 uVar14 = local_8;
                 do {
                   DArrayGetElement(param_8,uVar14,&param_5);
-                  pSVar7 = (STBoatC *)GetObjPtr(local_28,param_1,param_5,CASE_1);
+                  pSVar7 = (STBoatC *)GetObjPtr(local_28,objPtr,param_5,CASE_1);
                   if (pSVar7 == (STBoatC *)0x0) {
                     iVar5 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0x2d83,0,0,
                                                &DAT_007a4ccc,
@@ -292,11 +298,11 @@ STAllPlayersC::PutOnPlaceGuardBoats
                     if (iVar5 == 0) {
                       return;
                     }
-                    pcVar1 = (code *)swi(3);
-                    (*pcVar1)();
-                    return;
+                    STDebugBreak(); /* noreturn in standalone pseudocode */
                   }
+                  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                   local_10 = CONCAT22((short)local_24 + 3 + sVar3,(undefined2)local_10);
+                  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                   local_c = CONCAT22(*puVar12,puVar12[-1] + sVar2);
                   iVar5 = thunk_FUN_0045ff10((int)pSVar7);
                   if (iVar5 == 5) {
@@ -336,7 +342,7 @@ STAllPlayersC::PutOnPlaceGuardBoats
                 do {
                   psVar13 = psVar13 + 3;
                   DArrayGetElement(param_8,local_8,&param_5);
-                  pSVar7 = (STBoatC *)GetObjPtr(local_28,param_1,param_5,CASE_1);
+                  pSVar7 = (STBoatC *)GetObjPtr(local_28,objPtr,param_5,CASE_1);
                   if (pSVar7 == (STBoatC *)0x0) {
                     iVar5 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0x2d45,0,0,
                                                &DAT_007a4ccc,
@@ -344,9 +350,7 @@ STAllPlayersC::PutOnPlaceGuardBoats
                     if (iVar5 == 0) {
                       return;
                     }
-                    pcVar1 = (code *)swi(3);
-                    (*pcVar1)();
-                    return;
+                    STDebugBreak(); /* noreturn in standalone pseudocode */
                   }
                   sVar4 = (short)iVar5;
                   if (psVar13[2] == 0) {
@@ -357,7 +361,9 @@ STAllPlayersC::PutOnPlaceGuardBoats
                     sVar10 = sVar4 + 3;
                     sVar4 = (*psVar13 - sVar4) + -2 + sVar2;
                   }
+                  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                   local_10 = CONCAT22(sVar10 + sVar3,(undefined2)local_10);
+                  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                   local_c = CONCAT22(psVar13[1],sVar4);
                   iVar8 = thunk_FUN_0045ff10((int)pSVar7);
                   if (iVar8 == 5) {
@@ -396,7 +402,7 @@ STAllPlayersC::PutOnPlaceGuardBoats
                 uVar14 = local_1c;
                 do {
                   DArrayGetElement(param_8,uVar14,&param_5);
-                  pSVar7 = (STBoatC *)GetObjPtr(local_28,param_1,param_5,CASE_1);
+                  pSVar7 = (STBoatC *)GetObjPtr(local_28,objPtr,param_5,CASE_1);
                   if (pSVar7 == (STBoatC *)0x0) {
                     iVar5 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0x2d2c,0,0,
                                                &DAT_007a4ccc,
@@ -404,11 +410,11 @@ STAllPlayersC::PutOnPlaceGuardBoats
                     if (iVar5 == 0) {
                       return;
                     }
-                    pcVar1 = (code *)swi(3);
-                    (*pcVar1)();
-                    return;
+                    STDebugBreak(); /* noreturn in standalone pseudocode */
                   }
+                  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                   local_10 = CONCAT22(puVar12[-1] + sVar3,(undefined2)local_10);
+                  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                   local_c = CONCAT22(*puVar12,(sVar2 - (short)local_24) + -3);
                   iVar5 = thunk_FUN_0045ff10((int)pSVar7);
                   if (iVar5 == 5) {
@@ -453,7 +459,7 @@ STAllPlayersC::PutOnPlaceGuardBoats
               if (0 < (int)_param_4) {
                 do {
                   DArrayGetElement(param_8,uVar14,&param_5);
-                  local_24 = (STBoatC *)GetObjPtr(local_28,param_1,param_5,CASE_1);
+                  local_24 = (STBoatC *)GetObjPtr(local_28,objPtr,param_5,CASE_1);
                   if (local_24 == (STBoatC *)0x0) {
                     iVar5 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0x2e0b,0,0,
                                                &DAT_007a4ccc,
@@ -461,9 +467,7 @@ STAllPlayersC::PutOnPlaceGuardBoats
                     if (iVar5 == 0) {
                       return;
                     }
-                    pcVar1 = (code *)swi(3);
-                    (*pcVar1)();
-                    return;
+                    STDebugBreak(); /* noreturn in standalone pseudocode */
                   }
                   do {
                     while( true ) {
@@ -484,14 +488,18 @@ LAB_00448970:
                     if (iVar8 == 0xb4) {
                       sVar10 = (sVar3 - sVar4) + -3;
                       sVar4 = (&sStack_c6)[iVar16 * 3] + sVar2;
+/* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
 LAB_00448aaf:
                       local_10 = CONCAT22(sVar10,(undefined2)local_10);
+                      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                       local_c = CONCAT22(*(undefined2 *)((int)&local_c4 + iVar16 * 6),sVar4);
                     }
                     else {
                       switch(iVar8) {
+                      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                       case 0:
                         local_10 = CONCAT22(sVar4 + 3 + sVar3,(undefined2)local_10);
+                        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                         local_c = CONCAT22(*(undefined2 *)((int)&local_c4 + iVar16 * 6),
                                            (&sStack_c6)[iVar16 * 3] + sVar2);
                         break;
@@ -501,21 +509,22 @@ switchD_004489a9_caseD_1:
                                                    ,0,&DAT_007a4ccc,
                                                    s_STAllPlayersC__PutOnPlaceGuardBo_007a85ec);
                         if (iVar8 != 0) {
-                          pcVar1 = (code *)swi(3);
-                          (*pcVar1)();
-                          return;
+                          STDebugBreak(); /* noreturn in standalone pseudocode */
                         }
                         break;
                       case 0x2d:
                         if (local_6a[iVar16 * 3 + 2] == 0) {
+                          /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                           local_10 = CONCAT22(local_6a[iVar16 * 3] + sVar4 + 2 + sVar3,
                                               (undefined2)local_10);
                           sVar4 = (sVar2 - sVar4) + -3;
                           goto LAB_00448bc0;
                         }
                         sVar10 = (sVar2 - sVar4) + -2 + local_6a[iVar16 * 3];
+/* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
 LAB_00448b30:
                         local_10 = CONCAT22(sVar4 + 3 + sVar3,(undefined2)local_10);
+                        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                         local_c = CONCAT22(local_6a[iVar16 * 3 + 1],sVar10);
                         break;
                       case 0x5a:
@@ -524,12 +533,15 @@ LAB_00448b30:
                         goto LAB_00448aaf;
                       case 0x87:
                         if (local_6a[iVar16 * 3 + 2] != 0) {
+                          /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                           local_10 = CONCAT22(-sVar4 + -2 + sVar3 + local_6a[iVar16 * 3],
                                               (undefined2)local_10);
                           sVar4 = -sVar4 + -3 + sVar2;
                           goto LAB_00448bc0;
                         }
+                        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                         local_10 = CONCAT22(-sVar4 + -3 + sVar3,(undefined2)local_10);
+                        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                         local_c = CONCAT22(local_6a[iVar16 * 3 + 1],
                                            ((-sVar4 + sVar2) - local_6a[iVar16 * 3]) + -2);
                       }
@@ -538,11 +550,13 @@ LAB_00448b30:
                   else {
                     if (iVar8 == 0xe1) {
                       if (local_6a[iVar16 * 3 + 2] == 0) {
+                        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                         local_10 = CONCAT22(((sVar3 - sVar4) - local_6a[iVar16 * 3]) + -2,
                                             (undefined2)local_10);
                         sVar4 = sVar4 + 3 + sVar2;
                       }
                       else {
+                        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                         local_10 = CONCAT22((sVar3 - sVar4) + -3,(undefined2)local_10);
                         sVar4 = ((sVar4 + sVar2) - local_6a[iVar16 * 3]) + 2;
                       }
@@ -556,15 +570,18 @@ LAB_00448bc0:
                           sVar10 = local_6a[iVar16 * 3] + sVar4 + 2 + sVar2;
                           goto LAB_00448b30;
                         }
+                        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                         local_10 = CONCAT22(((sVar4 + sVar3) - local_6a[iVar16 * 3]) + 2,
                                             (undefined2)local_10);
                         sVar4 = sVar4 + 3 + sVar2;
                         goto LAB_00448bc0;
                       }
+                      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                       local_10 = CONCAT22((&sStack_c6)[iVar16 * 3] + sVar3,(undefined2)local_10);
                       sVar4 = sVar4 + 3 + sVar2;
                       sVar10 = *(short *)((int)&local_c4 + iVar16 * 6);
                     }
+                    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                     local_c = CONCAT22(sVar10,sVar4);
                   }
                   pSVar7 = local_24;
@@ -611,7 +628,7 @@ LAB_00448bc0:
               uVar14 = local_8;
               do {
                 DArrayGetElement(param_8,uVar14,&param_5);
-                pSVar7 = (STBoatC *)GetObjPtr(local_28,param_1,param_5,CASE_1);
+                pSVar7 = (STBoatC *)GetObjPtr(local_28,objPtr,param_5,CASE_1);
                 if (pSVar7 == (STBoatC *)0x0) {
                   iVar5 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0x2d9b,0,0,
                                              &DAT_007a4ccc,
@@ -619,11 +636,11 @@ LAB_00448bc0:
                   if (iVar5 == 0) {
                     return;
                   }
-                  pcVar1 = (code *)swi(3);
-                  (*pcVar1)();
-                  return;
+                  STDebugBreak(); /* noreturn in standalone pseudocode */
                 }
+                /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                 local_10 = CONCAT22((sVar3 - (short)local_24) + -3,(undefined2)local_10);
+                /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                 local_c = CONCAT22(*puVar12,puVar12[-1] + sVar2);
                 iVar5 = thunk_FUN_0045ff10((int)pSVar7);
                 if (iVar5 == 5) {
@@ -662,7 +679,7 @@ LAB_00448bc0:
               do {
                 psVar13 = psVar13 + 3;
                 DArrayGetElement(param_8,local_8,&param_5);
-                pSVar7 = (STBoatC *)GetObjPtr(local_28,param_1,param_5,CASE_1);
+                pSVar7 = (STBoatC *)GetObjPtr(local_28,objPtr,param_5,CASE_1);
                 if (pSVar7 == (STBoatC *)0x0) {
                   iVar5 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0x2dd2,0,0,
                                              &DAT_007a4ccc,
@@ -670,21 +687,23 @@ LAB_00448bc0:
                   if (iVar5 == 0) {
                     return;
                   }
-                  pcVar1 = (code *)swi(3);
-                  (*pcVar1)();
-                  return;
+                  STDebugBreak(); /* noreturn in standalone pseudocode */
                 }
                 sVar4 = (short)iVar5;
                 if (psVar13[2] == 0) {
                   sVar9 = sVar4 + 3 + sVar2;
+                  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                   local_c = CONCAT22(local_c._2_2_,sVar9);
                   sVar10 = ((sVar3 - sVar4) - *psVar13) + -2;
+                  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                   local_c = CONCAT22(psVar13[1],sVar9);
                 }
                 else {
                   sVar10 = (sVar3 - sVar4) + -3;
+                  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                   local_c = CONCAT22(psVar13[1],(sVar4 - *psVar13) + 2 + sVar2);
                 }
+                /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                 local_10 = CONCAT22(sVar10,(undefined2)local_10);
                 iVar8 = thunk_FUN_0045ff10((int)pSVar7);
                 if (iVar8 == 5) {
@@ -721,7 +740,7 @@ LAB_00448bc0:
               uVar14 = local_8;
               do {
                 DArrayGetElement(param_8,uVar14,&param_5);
-                pSVar7 = (STBoatC *)GetObjPtr(local_28,param_1,param_5,CASE_1);
+                pSVar7 = (STBoatC *)GetObjPtr(local_28,objPtr,param_5,CASE_1);
                 if (pSVar7 == (STBoatC *)0x0) {
                   iVar5 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0x2df1,0,0,
                                              &DAT_007a4ccc,
@@ -729,11 +748,11 @@ LAB_00448bc0:
                   if (iVar5 == 0) {
                     return;
                   }
-                  pcVar1 = (code *)swi(3);
-                  (*pcVar1)();
-                  return;
+                  STDebugBreak(); /* noreturn in standalone pseudocode */
                 }
+                /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                 local_10 = CONCAT22(puVar12[-1] + sVar3,(undefined2)local_10);
+                /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                 local_c = CONCAT22(*puVar12,(short)local_24 + 3 + sVar2);
                 iVar5 = thunk_FUN_0045ff10((int)pSVar7);
                 if (iVar5 == 5) {
@@ -772,7 +791,7 @@ LAB_00448bc0:
               do {
                 psVar13 = psVar13 + 3;
                 DArrayGetElement(param_8,local_8,&param_5);
-                pSVar7 = (STBoatC *)GetObjPtr(local_28,param_1,param_5,CASE_1);
+                pSVar7 = (STBoatC *)GetObjPtr(local_28,objPtr,param_5,CASE_1);
                 if (pSVar7 == (STBoatC *)0x0) {
                   iVar5 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0x2db3,0,0,
                                              &DAT_007a4ccc,
@@ -780,9 +799,7 @@ LAB_00448bc0:
                   if (iVar5 == 0) {
                     return;
                   }
-                  pcVar1 = (code *)swi(3);
-                  (*pcVar1)();
-                  return;
+                  STDebugBreak(); /* noreturn in standalone pseudocode */
                 }
                 sVar4 = (short)iVar5;
                 if (psVar13[2] == 0) {
@@ -793,7 +810,9 @@ LAB_00448bc0:
                   sVar10 = (sVar4 - *psVar13) + 2;
                   sVar4 = sVar4 + 3 + sVar2;
                 }
+                /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                 local_10 = CONCAT22(sVar10 + sVar3,(undefined2)local_10);
+                /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                 local_c = CONCAT22(psVar13[1],sVar4);
                 iVar8 = thunk_FUN_0045ff10((int)pSVar7);
                 if (iVar8 == 5) {

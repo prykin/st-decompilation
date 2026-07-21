@@ -13,7 +13,7 @@ FUN_0061f5c0(undefined4 param_1,undefined2 param_2,undefined2 param_3,undefined2
   undefined2 local_16;
   undefined2 local_14;
   undefined2 local_12;
-  
+
   puVar2 = local_30;
   for (iVar1 = 10; iVar1 != 0; iVar1 = iVar1 + -1) {
     *puVar2 = 0;

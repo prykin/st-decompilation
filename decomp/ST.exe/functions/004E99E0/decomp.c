@@ -26,7 +26,7 @@ FUN_004e99e0(void *this,undefined4 param_1,undefined4 param_2,undefined4 param_3
   undefined4 local_21;
   undefined4 local_1d;
   undefined4 local_9;
-  
+
   if (*(int *)((int)this + 0x4f8) == 0) {
     puVar3 = &local_74;
     for (iVar2 = 0x1b; iVar2 != 0; iVar2 = iVar2 + -1) {

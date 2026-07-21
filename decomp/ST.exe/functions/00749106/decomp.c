@@ -13,7 +13,7 @@ FUN_00749106(AnonShape_00749106_79800343 *param_1,LPCRITICAL_SECTION lpCriticalS
   HANDLE pvVar3;
   undefined4 uVar4;
   LPCRITICAL_SECTION lpCriticalSection_00;
-  
+
   if ((lpCriticalSection == (LPCRITICAL_SECTION)0x0) || (param_3 == (undefined4 *)0x0)) {
     uVar4 = 0x80004003;
   }

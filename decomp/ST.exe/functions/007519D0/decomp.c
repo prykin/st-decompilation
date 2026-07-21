@@ -12,7 +12,7 @@ int __cdecl FUN_007519d0(ushort *param_1,byte *param_2)
   int iVar8;
   uint uVar9;
   byte *local_8;
-  
+
   local_8 = param_2;
   uVar4 = (uint)*param_1;
   puVar7 = (ushort *)0x10;

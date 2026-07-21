@@ -1,5 +1,10 @@
 
-void __thiscall FUN_0067bfd0(void *this,AnonNested_005F5B80_0169_794156D7 *param_1,int param_2)
+/* [STPrototypeApplier] Propagated parameter 2.
+   Evidence: 0067BFD0 -> 0067BC10 @ 0067C02E | 0067BFD0 -> 0067BC80 @ 0067C01C */
+
+void __thiscall
+FUN_0067bfd0(void *this,AnonNested_005F5B80_0169_794156D7 *param_1,
+            AnonShape_00413AF0_B6B4EE9A *param_2)
 
 {
   AnonReceiver_006799B0 *this_00;
@@ -20,7 +25,7 @@ void __thiscall FUN_0067bfd0(void *this,AnonNested_005F5B80_0169_794156D7 *param
   undefined4 local_25;
   AnonReceiver_006799B0 *local_c;
   uint local_8;
-  
+
   local_8 = 0;
   if (0 < (int)param_1->field_000C) {
     bVar6 = param_1->field_000C != 0;
@@ -30,11 +35,9 @@ void __thiscall FUN_0067bfd0(void *this,AnonNested_005F5B80_0169_794156D7 *param
       if ((((bVar6) &&
            (puVar3 = (ushort *)(param_1->field_0008 * local_8 + param_1->field_001C),
            puVar3 != (ushort *)0x0)) && (*puVar3 != 0)) &&
-         ((puVar1 = (ushort *)
-                    thunk_FUN_0067bc80((AnonShape_00413AF0_B6B4EE9A *)param_2,*(uint *)(puVar3 + 4))
-          , puVar1 != (ushort *)0x0 ||
-          (puVar1 = (ushort *)thunk_FUN_0067bc10((AnonShape_00413AF0_B6B4EE9A *)param_2),
-          puVar1 != (ushort *)0x0)))) {
+         ((puVar1 = (ushort *)thunk_FUN_0067bc80(param_2,*(uint *)(puVar3 + 4)),
+          puVar1 != (ushort *)0x0 ||
+          (puVar1 = (ushort *)thunk_FUN_0067bc10(param_2), puVar1 != (ushort *)0x0)))) {
         *(uint *)(puVar3 + 6) = (uint)*puVar1;
         ppAVar4 = &local_40;
         for (iVar2 = 0xd; this_00 = local_c, iVar2 != 0; iVar2 = iVar2 + -1) {

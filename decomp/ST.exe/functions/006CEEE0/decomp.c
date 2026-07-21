@@ -11,7 +11,7 @@ int FUN_006ceee0(AnonShape_006CEEE0_CDA60BFB *param_1,int *param_2,int param_3)
   undefined4 local_10;
   undefined4 local_c;
   undefined4 local_8;
-  
+
   iVar1 = param_3 * 0x10;
   local_14 = *(int *)(&param_1->field_0x14 + iVar1);
   local_10 = *(undefined4 *)(&param_1->field_0x18 + iVar1);

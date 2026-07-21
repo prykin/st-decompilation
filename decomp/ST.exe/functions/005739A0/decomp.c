@@ -4,7 +4,7 @@ void __fastcall FUN_005739a0(AnonShape_005739A0_A4724D00 *param_1)
 {
   int iVar1;
   undefined4 *puVar2;
-  
+
   puVar2 = &param_1->field_080E;
   for (iVar1 = 100; iVar1 != 0; iVar1 = iVar1 + -1) {
     *puVar2 = 0;

@@ -4,7 +4,7 @@ void __thiscall FUN_00621580(void *this,uint param_1,int param_2)
 {
   uint uVar1;
   int local_8;
-  
+
   local_8 = 0;
   if (DAT_0080874d != param_1) {
     return;

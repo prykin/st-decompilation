@@ -9,17 +9,19 @@ int __thiscall FUN_006961b0(void *this,uint param_1,uint param_2,int param_3,int
   int iVar5;
   bool bVar6;
   undefined4 local_8;
-  
+
   iVar5 = *(int *)((int)this + 0x5853);
   local_8 = 0;
   if (iVar5 != 0) {
     if (param_1 < *(uint *)(iVar5 + 0xc)) {
+      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
       iVar2 = *(int *)(iVar5 + 8) * param_1 + *(int *)(iVar5 + 0x1c);
     }
     else {
       iVar2 = 0;
     }
     if (param_2 < *(uint *)(iVar5 + 0xc)) {
+      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
       iVar5 = *(int *)(iVar5 + 8) * param_2 + *(int *)(iVar5 + 0x1c);
     }
     else {

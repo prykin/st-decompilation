@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\combo.cpp
@@ -11,16 +13,14 @@ void __thiscall ComboTy::DoneCombo(ComboTy *this)
   ComboTy *this_00;
   int iVar3;
   int iVar4;
-  undefined4 unaff_ESI;
-  void *unaff_EDI;
   undefined4 *puVar5;
   InternalExceptionFrame local_4c;
   ComboTy *local_8;
-  
+
   local_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_4c;
   local_8 = this;
-  iVar3 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar3 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
   this_00 = local_8;
   if (iVar3 == 0) {
     if (local_8->field_010C != 0) {
@@ -81,9 +81,7 @@ void __thiscall ComboTy::DoneCombo(ComboTy *this)
   iVar4 = ReportDebugMessage(s_E____titans_Start_combo_cpp_007cbeec,0x7f,0,iVar3,&DAT_007a4ccc,
                              s_ComboTy__DoneCombo_007cbf40);
   if (iVar4 != 0) {
-    pcVar2 = (code *)swi(3);
-    (*pcVar2)();
-    return;
+    STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   RaiseInternalException(iVar3,0,s_E____titans_Start_combo_cpp_007cbeec,0x7f);
   return;

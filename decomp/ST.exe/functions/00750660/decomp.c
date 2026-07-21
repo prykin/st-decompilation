@@ -10,7 +10,7 @@ void FUN_00750660(undefined1 *param_1,int param_2,undefined1 *param_3,int param_
   bool bVar3;
   int iVar4;
   int iVar5;
-  
+
   if ((0 < param_7) && (0 < param_8)) {
     _DAT_00857514 = param_8;
     _DAT_00857510 = param_2 - param_7;

@@ -5,7 +5,6 @@ void __thiscall FUN_0049a500(void *this,undefined2 *param_1,undefined2 *param_2,
   uint uVar1;
   STFishC *this_00;
   uint index;
-  undefined4 extraout_EDX;
   short sVar2;
   short sVar4;
   int local_1c;
@@ -16,7 +15,7 @@ void __thiscall FUN_0049a500(void *this,undefined2 *param_1,undefined2 *param_2,
   int local_8;
   int iVar3;
   int iVar5;
-  
+
   index = 0;
   uVar1 = *(uint *)(*(int *)((int)this + 0x29) + 0xc);
   if (*(short *)((int)this + 0x27) != 0) {
@@ -32,9 +31,7 @@ void __thiscall FUN_0049a500(void *this,undefined2 *param_1,undefined2 *param_2,
         if ((short)local_10 != -1) {
           this_00 = (STFishC *)
                     STAllPlayersC::GetObjPtr
-                              (g_sTAllPlayers_007FA174,
-                               CONCAT31((int3)((uint)extraout_EDX >> 8),
-                                        *(undefined1 *)((int)this + 0x24)),local_10,CASE_1);
+                              (g_sTAllPlayers_007FA174,*(char *)((int)this + 0x24),local_10,CASE_1);
           STFishC::sub_004162B0
                     (this_00,(undefined2 *)&local_14,(undefined2 *)&local_18,(undefined2 *)&local_1c
                     );

@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\fsgs_obj.cpp
@@ -18,18 +20,16 @@ void __thiscall FSGSTy::SetChannelList(FSGSTy *this,int param_1,undefined4 *para
   dword dVar8;
   char *_Str2;
   char *_Str1;
-  undefined4 unaff_ESI;
-  void *unaff_EDI;
   uint uVar9;
   InternalExceptionFrame local_50;
   FSGSTy *local_c;
   int local_8;
-  
+
   if ((this->field_1A5F == CASE_6) && (this->field_1A60 != '\0')) {
     local_50.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_50;
     local_c = this;
-    iVar4 = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
+    iVar4 = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0);
     this_00 = PTR_00802a30;
     if (iVar4 == 0) {
       if (PTR_00802a30 != (CursorClassTy *)0x0) {
@@ -56,6 +56,7 @@ void __thiscall FSGSTy::SetChannelList(FSGSTy *this,int param_1,undefined4 *para
         if (dVar8 != 1) {
           do {
             if (uVar9 < dVar8) {
+              /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(pDVar5, uVar9) (runtime stride) */
               _Str1 = (char *)(pDVar5->elementSize * uVar9 + (int)pDVar5->data);
             }
             else {
@@ -63,6 +64,7 @@ void __thiscall FSGSTy::SetChannelList(FSGSTy *this,int param_1,undefined4 *para
             }
             uVar1 = uVar9 + 1;
             if (uVar1 < dVar8) {
+              /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(pDVar5, uVar1) (runtime stride) */
               _Str2 = (char *)(pDVar5->elementSize * uVar1 + (int)pDVar5->data);
             }
             else {
@@ -101,9 +103,7 @@ void __thiscall FSGSTy::SetChannelList(FSGSTy *this,int param_1,undefined4 *para
     iVar7 = ReportDebugMessage(s_E____titans_Start_fsgs_obj_cpp_007cbf70,0xa9d,0,iVar4,&DAT_007a4ccc
                                ,s_FSGSTy__SetChannelList_007cc538);
     if (iVar7 != 0) {
-      pcVar3 = (code *)swi(3);
-      (*pcVar3)();
-      return;
+      STDebugBreak(); /* noreturn in standalone pseudocode */
     }
     RaiseInternalException(iVar4,0,s_E____titans_Start_fsgs_obj_cpp_007cbf70,0xa9d);
   }

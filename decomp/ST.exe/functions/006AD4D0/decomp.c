@@ -15,6 +15,7 @@ ReportDebugMessage(char *sourceFile,int sourceLine,int isFatal,int errorCode,cha
   char *pcVar8;
   char *pcVar9;
   undefined4 *puVar10;
+  /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
   undefined4 *unaff_EBP;
   uint *puVar11;
   uint *puVar12;
@@ -30,7 +31,7 @@ ReportDebugMessage(char *sourceFile,int sourceLine,int isFatal,int errorCode,cha
   char acStack_18d [65];
   CHAR local_14c [260];
   char debugMessage [64];
-  
+
   if (DAT_007ed798 == 0) {
     g_exceptionSourceFile = (char *)0x0;
     return 0;
@@ -81,26 +82,37 @@ ReportDebugMessage(char *sourceFile,int sourceLine,int isFatal,int errorCode,cha
   }
   puVar7 = &local_74c;
   if (DAT_00854ebc != 0) {
+    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
     local_74c._0_1_ = s_Program__007ed8a0[0];
+    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
     local_74c._1_1_ = s_Program__007ed8a0[1];
+    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
     local_74c._2_1_ = s_Program__007ed8a0[2];
+    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
     local_74c._3_1_ = s_Program__007ed8a0[3];
     local_748[0] = s_Program__007ed8a0[4];
     local_748[1] = s_Program__007ed8a0[5];
     local_748[2] = s_Program__007ed8a0[6];
     local_748[3] = s_Program__007ed8a0[7];
+    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
     local_744 = (char)s_Program__007ed8a0._8_2_;
+    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
     uStack_743._0_1_ = SUB21(s_Program__007ed8a0._8_2_,1);
     pcVar8 = local_14c;
     DVar3 = GetModuleFileNameA((HMODULE)0x0,local_14c,0x104);
     if (DVar3 == 0) {
+      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
       uStack_743._0_1_ = s_unknown_007ed898[0];
+      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
       uStack_743._1_1_ = s_unknown_007ed898[1];
+      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
       uStack_743._2_1_ = s_unknown_007ed898[2];
+      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
       uStack_743._3_1_ = s_unknown_007ed898[3];
       local_73f[0] = s_unknown_007ed898[4];
       local_73f[1] = s_unknown_007ed898[5];
       local_73f[2] = s_unknown_007ed898[6];
+      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
       auStack_73c[0]._0_1_ = s_unknown_007ed898[7];
       puVar7 = auStack_73c;
     }
@@ -225,10 +237,12 @@ ReportDebugMessage(char *sourceFile,int sourceLine,int isFatal,int errorCode,cha
       iVar2 = Library::MSVCRT::FUN_00730c40(pcVar9,0x7ed884);
       pcVar9 = pcVar9 + iVar2;
     }
+    /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
     if (((g_int_00854EB4 != (int *)0x0) && (BVar4 = IsBadReadPtr(&stack0xfffffffc,4), BVar4 == 0))
        && (BVar4 = IsBadReadPtr(unaff_EBP,8), BVar4 == 0)) {
       iVar2 = Library::MSVCRT::FUN_00730c40(pcVar9,0x7ed87c);
       pcVar9 = pcVar9 + iVar2;
+      /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
       BVar4 = IsBadReadPtr((void *)*unaff_EBP,8);
       if (BVar4 == 0) {
         iVar2 = Library::MSVCRT::FUN_00730c40(pcVar9,0x7ed874);
@@ -435,7 +449,9 @@ ReportDebugMessage(char *sourceFile,int sourceLine,int isFatal,int errorCode,cha
       }
       if ((DAT_00854eb8 != (undefined4 *)0x0) && ((DAT_00854eb8[2] & 0x2000000) != 0)) {
         DAT_00854eb8[2] = DAT_00854eb8[2] & 0xfdfffffe;
+        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
         (**(code **)(*(int *)DAT_00854eb8[0xc] + 0x50))((int *)DAT_00854eb8[0xc],DAT_00854eb8[1],8);
+        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
         (**(code **)(*(int *)DAT_00854eb8[0xc] + 0x4c))((int *)DAT_00854eb8[0xc]);
       }
       iVar2 = FUN_006ad3a0((LPCSTR)&local_74c,debugMessage,2);
@@ -443,6 +459,7 @@ ReportDebugMessage(char *sourceFile,int sourceLine,int isFatal,int errorCode,cha
         iVar2 = 1;
         if ((DAT_00854eb8 != (undefined4 *)0x0) && ((DAT_00854eb8[2] & 1) != 0)) {
           DAT_00854eb8[2] = DAT_00854eb8[2] & 0xfdfffffe;
+          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
           (**(code **)(*(int *)DAT_00854eb8[0xc] + 0x50))
                     ((int *)DAT_00854eb8[0xc],DAT_00854eb8[1],8);
           FUN_006b08f0(DAT_00854eb8,0x854aa4,0,0x100);

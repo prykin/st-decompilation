@@ -9,7 +9,7 @@ undefined4 __thiscall FUN_006d7000(void *this,int *param_1)
   int *piVar5;
   int *piVar6;
   bool bVar7;
-  
+
   iVar1 = *(int *)(*(int *)((int)this + 0xe0) + 0x90);
   piVar2 = *(int **)(iVar1 + 0x18);
   if (piVar2 == (int *)0x0) {
@@ -29,6 +29,7 @@ undefined4 __thiscall FUN_006d7000(void *this,int *param_1)
     piVar6 = piVar6 + 1;
   } while (bVar7);
   if (bVar7) {
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
     uVar3 = (**(code **)(*piVar2 + 0x2c))(piVar2,param_1);
     return uVar3;
   }

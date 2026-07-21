@@ -10,8 +10,6 @@ int __thiscall FUN_006d6a10(void *this,int *param_1)
   DWORD DVar6;
   BOOL BVar7;
   uint uVar8;
-  undefined4 unaff_ESI;
-  void *unaff_EDI;
   int iVar9;
   InternalExceptionFrame local_dc;
   InternalExceptionFrame local_98;
@@ -26,7 +24,7 @@ int __thiscall FUN_006d6a10(void *this,int *param_1)
   AnonReceiver_006CEC40 *local_10;
   int local_c;
   int local_8;
-  
+
   piVar2 = *(int **)((int)this + 0x2f8);
   if ((*(uint *)(*(int *)((int)this + 0x288) + 4) & 0x20000000) == 0) {
     return 0;
@@ -52,12 +50,13 @@ int __thiscall FUN_006d6a10(void *this,int *param_1)
   if (*(int *)((int)this + 0x30c) == 0) {
     local_98.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_98;
-    iVar9 = Library::MSVCRT::__setjmp3(local_98.jumpBuffer,0,unaff_EDI,unaff_ESI);
+    iVar9 = Library::MSVCRT::__setjmp3(local_98.jumpBuffer,0);
     this = local_10;
     if (iVar9 == 0) {
       iVar9 = SubmarineTitans::Recovered::HiddenThis::AnonReceiver_006CEC40::FUN_006d63e0
                         (local_10,param_1);
       local_8 = iVar9;
+      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
       Library::DKW::DDX::FUN_006bb370
                 (*(int *)(*(int *)&((AnonReceiver_006CEC40 *)this)->field_0x288 + 0x28),0,0);
       g_currentExceptionFrame = local_98.previous;
@@ -72,6 +71,7 @@ int __thiscall FUN_006d6a10(void *this,int *param_1)
     if ((uVar8 & 1) == 0) {
       if (*(int *)((int)this + 0x310) == 0) {
         if (*(int *)((int)this + 0x300) != 0) {
+          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
           (**(code **)(*piVar2 + 0x80))(piVar2,0);
           *(undefined4 *)((int)this + 0x300) = 0;
           *(undefined4 *)((int)this + 0x2fc) = 0;
@@ -105,10 +105,12 @@ int __thiscall FUN_006d6a10(void *this,int *param_1)
           local_c = 0;
           while( true ) {
             piVar4 = *(int **)(*(int *)(*(int *)((int)this + 0x288) + 0x28) + 0x40);
+            /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
             iVar9 = (**(code **)(*piVar4 + 0x14))(piVar4,&local_54,piVar2,&local_30,0x1000000,0);
             local_8 = iVar9;
             if (iVar9 == 0) break;
             if (iVar9 == -0x7789fe3e) {
+              /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
               (**(code **)(*piVar2 + 0x6c))(piVar2);
               FUN_006cec40(*(AnonShape_006CEC40_BB23E716 **)(*(int *)((int)this + 0x288) + 0x28));
             }
@@ -132,6 +134,7 @@ int __thiscall FUN_006d6a10(void *this,int *param_1)
       }
       else {
         if (*(int *)((int)this + 0x300) != 0) {
+          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
           (**(code **)(*piVar2 + 0x80))(piVar2,0);
           iVar3 = *(int *)(*(int *)((int)this + 0x288) + 0x28);
           if ((*(uint *)(iVar3 + 8) & 0x4000000) != 0) {
@@ -142,9 +145,10 @@ int __thiscall FUN_006d6a10(void *this,int *param_1)
         }
         local_dc.previous = g_currentExceptionFrame;
         g_currentExceptionFrame = &local_dc;
-        iVar9 = Library::MSVCRT::__setjmp3(local_dc.jumpBuffer,0,unaff_EDI,unaff_ESI);
+        iVar9 = Library::MSVCRT::__setjmp3(local_dc.jumpBuffer,0);
         this = local_10;
         if (iVar9 == 0) {
+          /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
           Library::DKW::DDX::FUN_006bb370(*(int *)(*(int *)&local_10->field_0x288 + 0x28),0,0);
           g_currentExceptionFrame = local_dc.previous;
           iVar9 = local_8;
@@ -157,6 +161,7 @@ int __thiscall FUN_006d6a10(void *this,int *param_1)
     }
     else if ((*(int *)((int)this + 0x304) == 0) || ((uVar8 & 0x2000000) != 0)) {
       if (*(int *)((int)this + 0x300) != 0) {
+        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
         (**(code **)(*piVar2 + 0x80))(piVar2,0);
         *(undefined4 *)((int)this + 0x300) = 0;
         *(undefined4 *)((int)this + 0x2fc) = 0;
@@ -183,9 +188,11 @@ int __thiscall FUN_006d6a10(void *this,int *param_1)
       do {
         if (*(int *)((int)this + 0x304) == 0) {
           piVar4 = *(int **)(*(int *)(*(int *)((int)this + 0x288) + 0x28) + 0x34);
+          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
           iVar9 = (**(code **)(*piVar4 + 0x14))(piVar4,&local_20,piVar2,&local_30,0x1000000,0);
         }
         else {
+          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
           iVar9 = (**(code **)(*piVar2 + 0x84))
                             (piVar2,&local_30,
                              *(undefined4 *)(*(int *)(*(int *)((int)this + 0x288) + 0x28) + 0x34),
@@ -194,6 +201,7 @@ int __thiscall FUN_006d6a10(void *this,int *param_1)
         local_8 = iVar9;
         if (iVar9 == 0) break;
         if (iVar9 == -0x7789fe3e) {
+          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
           (**(code **)(*piVar2 + 0x6c))(piVar2);
           FUN_006cec40(*(AnonShape_006CEC40_BB23E716 **)(*(int *)((int)this + 0x288) + 0x28));
         }
@@ -222,9 +230,11 @@ int __thiscall FUN_006d6a10(void *this,int *param_1)
   if (3 < *(uint *)(iVar3 + 0xe8)) {
     uVar8 = DVar6 - *(int *)(iVar3 + 0xec);
     *(uint *)(iVar3 + 0xfc) = *(int *)(iVar3 + 0xfc) + uVar8;
+    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     if (uVar8 < *(uint *)(*(int *)&((AnonReceiver_006CEC40 *)this)->field_0x288 + 0x100)) {
       *(uint *)(*(int *)&((AnonReceiver_006CEC40 *)this)->field_0x288 + 0x100) = uVar8;
     }
+    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     if (*(uint *)(*(int *)&((AnonReceiver_006CEC40 *)this)->field_0x288 + 0x104) < uVar8) {
       *(uint *)(*(int *)&((AnonReceiver_006CEC40 *)this)->field_0x288 + 0x104) = uVar8;
     }

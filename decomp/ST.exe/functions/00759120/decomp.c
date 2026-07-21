@@ -3,18 +3,20 @@ undefined4 FUN_00759120(AnonShape_00759120_E4E2134C *param_1)
 
 {
   int iVar1;
-  
+
   if (param_1->field_018E == 0) {
     iVar1 = FUN_00757d90((AnonShape_00757D90_5427B306 *)param_1);
     if (iVar1 == 0) {
       return 0;
     }
   }
+  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   iVar1 = *(int *)(param_1->field_01A6 + 0x58);
   if (param_1->field_018E == iVar1 + 0xd0) {
     param_1->field_018E = 0;
   }
   else {
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
     iVar1 = (**(code **)(param_1->field_0010 + 0x14))(param_1,iVar1);
     if (iVar1 == 0) {
       return 0;

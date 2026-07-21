@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* [STSourceProvenanceApplier begin]
    Recovered source file: E:\__titans\Artem\TLO_bmove.cpp
@@ -11,6 +13,7 @@ undefined4 __fastcall FUN_004c6d00(STJellyGunC *param_1)
   short sVar2;
   int iVar3;
   undefined4 uVar4;
+  /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
   int *unaff_EDI;
   undefined4 local_20;
   int local_1c;
@@ -20,16 +23,15 @@ undefined4 __fastcall FUN_004c6d00(STJellyGunC *param_1)
   short local_a;
   short local_8;
   short local_6;
-  
+
   if (*(int *)&param_1[1].field_0x168 == 0) {
+    /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
     iVar3 = (*param_1->vtable->MoveStep)((STGameObjC *)param_1,unaff_EDI);
     if (iVar3 == -1) {
       iVar3 = ReportDebugMessage(s_E____titans_Artem_TLO_bmove_cpp_007ad368,0x4f,0,-5,&DAT_007a4ccc,
                                  s_move_error_007ad390);
       if (iVar3 != 0) {
-        pcVar1 = (code *)swi(3);
-        uVar4 = (*pcVar1)();
-        return uVar4;
+        STDebugBreak(); /* noreturn in standalone pseudocode */
       }
       iVar3 = 0x4f;
     }
@@ -62,9 +64,7 @@ undefined4 __fastcall FUN_004c6d00(STJellyGunC *param_1)
         iVar3 = ReportDebugMessage(s_E____titans_Artem_TLO_bmove_cpp_007ad368,0x35,0,-5,
                                    &DAT_007a4ccc,s_stop_move_error_007ad3a0);
         if (iVar3 != 0) {
-          pcVar1 = (code *)swi(3);
-          uVar4 = (*pcVar1)();
-          return uVar4;
+          STDebugBreak(); /* noreturn in standalone pseudocode */
         }
         RaiseInternalException
                   (-5,g_overwriteContext_007ED77C,s_E____titans_Artem_TLO_bmove_cpp_007ad368,0x35);
@@ -100,9 +100,7 @@ LAB_004c6e4d:
     iVar3 = ReportDebugMessage(s_E____titans_Artem_TLO_bmove_cpp_007ad368,0x47,0,-5,&DAT_007a4ccc,
                                s_move_error_007ad390);
     if (iVar3 != 0) {
-      pcVar1 = (code *)swi(3);
-      uVar4 = (*pcVar1)();
-      return uVar4;
+      STDebugBreak(); /* noreturn in standalone pseudocode */
     }
     iVar3 = 0x47;
   }

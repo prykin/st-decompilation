@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\to_allpl.cpp
@@ -20,10 +22,8 @@ undefined4 __thiscall STAllPlayersC::GetMessage(STAllPlayersC *this,int param_1)
   uint uVar10;
   uint uVar11;
   char *pcVar12;
-  undefined4 unaff_ESI;
   DArrayTy **ppDVar13;
   undefined4 *puVar14;
-  void *unaff_EDI;
   int *piVar15;
   char cVar16;
   InternalExceptionFrame local_6c;
@@ -36,12 +36,12 @@ undefined4 __thiscall STAllPlayersC::GetMessage(STAllPlayersC *this,int param_1)
   STAllPlayersC *local_10;
   ushort *local_c;
   int local_8;
-  
+
   local_c = (ushort *)0x0;
   local_6c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_6c;
   local_10 = this;
-  iVar4 = Library::MSVCRT::__setjmp3(local_6c.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar4 = Library::MSVCRT::__setjmp3(local_6c.jumpBuffer,0);
   this_00 = local_10;
   if (iVar4 != 0) {
     g_currentExceptionFrame = local_6c.previous;
@@ -51,11 +51,10 @@ undefined4 __thiscall STAllPlayersC::GetMessage(STAllPlayersC *this,int param_1)
       RaiseInternalException(iVar4,0,s_E____titans_wlad_to_allpl_cpp_007a6004,0xa06);
       return 0xffff;
     }
-    pcVar3 = (code *)swi(3);
-    uVar8 = (*pcVar3)();
-    return uVar8;
+    STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   FUN_006e5fd0();
+  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   uVar11 = *(uint *)(param_1 + 0x10);
   if (uVar11 < 4) {
     if (uVar11 == 3) {
@@ -97,6 +96,7 @@ undefined4 __thiscall STAllPlayersC::GetMessage(STAllPlayersC *this,int param_1)
         thunk_FUN_004d7430(cVar16);
         thunk_FUN_004b7030(cVar16);
         local_20 = iVar4 + 1;
+        /* ST_PSEUDO[flattened_global_record_array]: expected g_playerRuntime[player].field[index...] after base/stride proof */
         local_14 = (DArrayTy **)((int)local_14 + 0xa62);
       } while ((int)local_14 < 0x7fa139);
       uVar11 = 0;
@@ -205,6 +205,7 @@ undefined4 __thiscall STAllPlayersC::GetMessage(STAllPlayersC *this,int param_1)
           puVar14 = puVar14 + 4;
           iVar4 = iVar4 + -1;
         } while (iVar4 != 0);
+        /* ST_PSEUDO[flattened_global_record_array]: expected g_playerRuntime[player].field[index...] after base/stride proof */
         local_14 = (DArrayTy **)((int)local_14 + 0xa62);
       } while ((int)local_14 < 0x7fa135);
       DArrayDestroy(PTR_007fa130);
@@ -231,20 +232,22 @@ undefined4 __thiscall STAllPlayersC::GetMessage(STAllPlayersC *this,int param_1)
       return 0;
     }
     if (uVar11 == 0) {
-      uVar11 = 0;
+      iVar4 = 0;
       local_14 = (DArrayTy **)&DAT_008087e9;
       piVar15 = &g_playerRuntime[0].field2179_0xa0a;
       do {
+        cVar16 = (char)iVar4;
         if (0x18 < (uint)(PTR_00802a38->field_00E4 - *piVar15)) {
-          OptimizeGuardBoats(this_00,(char)uVar11);
-          DistributeGuardBoats(this_00,uVar11);
+          OptimizeGuardBoats(this_00,cVar16);
+          DistributeGuardBoats(this_00,cVar16);
         }
         if ((*(char *)local_14 != -1) &&
-           (thunk_FUN_004eb150(this_00,uVar11), (uint)PTR_00802a38->field_00E4 % 10 == 0)) {
-          thunk_FUN_004d78e0((char)uVar11);
+           (thunk_FUN_004eb150(this_00,iVar4), (uint)PTR_00802a38->field_00E4 % 10 == 0)) {
+          thunk_FUN_004d78e0(cVar16);
         }
+        /* ST_PSEUDO[flattened_global_record_array]: expected g_playerRuntime[player].field[index...] after base/stride proof */
         piVar15 = (int *)((int)piVar15 + 0xa62);
-        uVar11 = uVar11 + 1;
+        iVar4 = iVar4 + 1;
         local_14 = (DArrayTy **)((int)local_14 + 0x51);
       } while ((int)piVar15 < 0x7fab3a);
       thunk_FUN_004da9c0(this_00);
@@ -291,6 +294,7 @@ undefined4 __thiscall STAllPlayersC::GetMessage(STAllPlayersC *this,int param_1)
             thunk_FUN_004d86a0((uint)piVar15,DAT_00808a90 >> 8 & 0xff);
             thunk_FUN_004d78e0(cVar16);
           }
+          /* ST_PSEUDO[flattened_global_record_array]: expected g_playerRuntime[player].field[index...] after base/stride proof */
           ppDVar13 = (DArrayTy **)((int)ppDVar13 + 0xa62);
           piVar15 = (int *)((int)piVar15 + 1);
           pcVar12 = pcVar12 + 0x51;
@@ -319,6 +323,7 @@ undefined4 __thiscall STAllPlayersC::GetMessage(STAllPlayersC *this,int param_1)
         pDVar6 = (DArrayTy *)Library::DKW::TBL::FUN_006ae310((uint *)0x0,0xf,4,5,0x40307b);
         *ppDVar13 = pDVar6;
         thunk_FUN_004b6fc0(cVar16);
+        /* ST_PSEUDO[flattened_global_record_array]: expected g_playerRuntime[player].field[index...] after base/stride proof */
         ppDVar13 = (DArrayTy **)((int)ppDVar13 + 0xa62);
         cVar16 = cVar16 + '\x01';
       } while ((int)ppDVar13 < 0x7fa135);
@@ -354,6 +359,7 @@ undefined4 __thiscall STAllPlayersC::GetMessage(STAllPlayersC *this,int param_1)
         cMf32::RecMemFree(g_cMf32_00806754,(uint *)&local_c);
       }
     }
+    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     thunk_FUN_004d8b70(*(char *)(*(int *)&this_00->field_0x10 + 0x112d));
     iVar4 = 0;
     do {

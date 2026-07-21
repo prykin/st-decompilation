@@ -14,7 +14,7 @@ FUN_00501d00(void *this,AnonShape_00501D00_3942B646 *param_1,AnonShape_00501D00_
   int *piVar9;
   bool bVar10;
   char local_5;
-  
+
   cVar3 = '\0';
   local_5 = '\0';
   pcVar4 = &param_1->field_0x9;

@@ -60,7 +60,7 @@ undefined4 __fastcall FUN_0061e7f0(AnonShape_0061E7F0_1BC555A1 *param_1)
   int local_10;
   int local_c;
   uint local_8;
-  
+
   local_3c = param_1->field_0093;
   local_40 = local_3c * 2;
   uVar14 = param_1->field_00AC * 0x41c64e6d + 0x3039;
@@ -70,6 +70,7 @@ undefined4 __fastcall FUN_0061e7f0(AnonShape_0061E7F0_1BC555A1 *param_1)
   local_2c = (uVar14 >> 0x10) % 3 + 3;
   local_30 = param_1->field_0093 * 3;
   if (param_1->field_00A3 != 0) {
+    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     local_1c = *(int *)(param_1->field_00A3 + 0xc);
   }
   local_c = 0;
@@ -113,8 +114,11 @@ LAB_0061eb1a:
                      fVar2 * param_1->field_008F + fVar4 * param_1->field_0083 + param_1->field_006B
           ;
           iVar15 = *(int *)(param_1->field_009F + uVar14 * 4);
+          /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
           fVar2 = *(float *)(local_18 + 0x1c + iVar15) * param_1->field_0047;
+          /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
           fVar4 = *(float *)(local_18 + 0x18 + iVar15) * param_1->field_0047;
+          /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
           fVar3 = *(float *)(local_18 + 0x14 + iVar15) * param_1->field_0047;
           local_70 = fVar3 * param_1->field_006F +
                      fVar2 * param_1->field_0087 + fVar4 * param_1->field_007B + param_1->field_0063
@@ -234,6 +238,7 @@ LAB_0061eefe:
             piVar13 = (int *)param_1->field_0057;
             goto LAB_0061efdd;
           }
+          /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
           iVar15 = *(int *)(*(int *)(param_1->field_009F + uVar14 * 4) + 0x24 + local_18);
           if (0 < iVar15) {
             *(int *)(param_1->field_0057 + param_1->field_0053 * 4) = iVar15;
@@ -257,6 +262,7 @@ LAB_0061eefe:
             local_44 = *(float *)(iVar15 + 0x1c);
             local_20 = iVar17 * local_8 + (int)local_44;
             if (local_20 != 0) {
+              /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
               if (*(byte *)(local_20 + 0x2e) != uVar14) {
                 local_24 = 1;
                 iVar15 = local_20;
@@ -275,6 +281,7 @@ LAB_0061eefe:
                   iVar15 = iVar15 + iVar17;
                 }
               }
+              /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
               if (*(byte *)(local_20 + 0x2e) != uVar14) goto LAB_0061eb1a;
               if (local_8 < local_34) {
                 iVar15 = iVar17 * local_8 + (int)local_44;
@@ -297,8 +304,11 @@ LAB_0061eefe:
               *(float *)(iVar15 + 8) = local_78 + param_1->field_0067;
               *(float *)(iVar15 + 0xc) = local_74 + param_1->field_006B;
               iVar17 = *(int *)(param_1->field_009F + uVar14 * 4);
+              /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
               fVar2 = *(float *)(local_18 + 0x1c + iVar17) * param_1->field_0047;
+              /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
               fVar4 = *(float *)(local_18 + 0x18 + iVar17) * param_1->field_0047;
+              /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
               fVar3 = *(float *)(local_18 + 0x14 + iVar17) * param_1->field_0047;
               local_70 = fVar3 * param_1->field_006F +
                          fVar2 * param_1->field_0087 + fVar4 * param_1->field_007B;

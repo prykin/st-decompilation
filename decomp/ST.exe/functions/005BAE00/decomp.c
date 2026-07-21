@@ -1,8 +1,10 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\prov_obj.cpp
    PrividerTy::NonePrivider
-   
+
    [STSwitchEnumApplier] Switch target field_0065 uses
    /SubmarineTitans/Recovered/Enums/PrividerTy_field_0065State. Cases:
    CASE_1=1;CASE_3=3;CASE_4=4;CASE_5=5 */
@@ -23,8 +25,6 @@ void __thiscall PrividerTy::NonePrivider(PrividerTy *this,undefined4 *param_1)
   DWORD DVar9;
   int iVar10;
   int iVar11;
-  undefined4 unaff_ESI;
-  void *unaff_EDI;
   uint *puVar12;
   char *pcVar13;
   undefined4 *puVar14;
@@ -47,14 +47,14 @@ void __thiscall PrividerTy::NonePrivider(PrividerTy *this,undefined4 *param_1)
   short *local_10;
   uint local_c;
   int local_8;
-  
+
   local_8 = 1;
   local_20 = this;
   DVar9 = timeGetTime();
   this->field_0061 = DVar9;
   local_a0.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_a0;
-  iVar10 = Library::MSVCRT::__setjmp3(local_a0.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar10 = Library::MSVCRT::__setjmp3(local_a0.jumpBuffer,0);
   this_01 = local_20;
   if (iVar10 != 0) {
     g_currentExceptionFrame = local_a0.previous;
@@ -64,9 +64,7 @@ void __thiscall PrividerTy::NonePrivider(PrividerTy *this,undefined4 *param_1)
       RaiseInternalException(iVar10,0,s_E____titans_Start_prov_obj_cpp_007ccd28,0x1bc);
       return;
     }
-    pcVar6 = (code *)swi(3);
-    (*pcVar6)();
-    return;
+    STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   switch(local_20->field_0065) {
   case CASE_1:
@@ -112,6 +110,7 @@ void __thiscall PrividerTy::NonePrivider(PrividerTy *this,undefined4 *param_1)
             if ((char)*local_18 == '\x01') {
               pcVar13 = (char *)((int)local_10 + 0xb);
               switch(*pcVar13) {
+              /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
               case '\x01':
                 local_c = CONCAT31((int3)uVar2,1);
                 local_14 = 0xe;
@@ -123,6 +122,7 @@ void __thiscall PrividerTy::NonePrivider(PrividerTy *this,undefined4 *param_1)
                 local_2b = *(undefined4 *)((int)psVar8 + 3);
                 local_27 = 0;
                 iVar10 = FUN_00725910(&DAT_0080f33a,s___DKD_007cce44,0,&LAB_00404e49,&local_2c,0);
+                /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                 local_c = CONCAT31(local_c._1_3_,(iVar10 != -0x70) + '\x01');
                 local_14 = (-(uint)(*pcVar13 != '\x02') & 2) + 0xd;
                 break;
@@ -133,6 +133,7 @@ void __thiscall PrividerTy::NonePrivider(PrividerTy *this,undefined4 *param_1)
                 local_37 = *(undefined4 *)((int)psVar8 + 3);
                 local_33 = *(undefined4 *)((int)psVar8 + 7);
                 iVar10 = FUN_00725910(&DAT_0080f33a,s___DKD_007cce44,0,&LAB_00404e49,&local_38,0);
+                /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                 local_c = CONCAT31(local_c._1_3_,iVar10 == -0x70);
                 local_14 = 0x10;
               }
@@ -140,6 +141,7 @@ void __thiscall PrividerTy::NonePrivider(PrividerTy *this,undefined4 *param_1)
             else if ((char)*local_18 != '\x03') goto LAB_005bb532;
             pCVar7 = PTR_00802a30;
             if ((char)*local_18 == '\x03') {
+              /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
               local_c = CONCAT31(local_c._1_3_,2);
             }
             while ((local_c & 0xff) != 1) {
@@ -151,6 +153,7 @@ void __thiscall PrividerTy::NonePrivider(PrividerTy *this,undefined4 *param_1)
                 this_00 = this_01->field_1A5B->field_02E6;
                 goto joined_r0x005bb4e0;
               }
+              /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
               if ((*(char *)((int)psVar8 + 0xd) == '\0') ||
                  (((char)*local_18 == '\x01' && (*(char *)((int)psVar8 + 0xb) == '\x05')))) {
                 if (PTR_00802a30 != (CursorClassTy *)0x0) {
@@ -168,6 +171,7 @@ void __thiscall PrividerTy::NonePrivider(PrividerTy *this,undefined4 *param_1)
                 UVar15 = 0x2523;
                 goto LAB_005bb2c6;
               }
+              /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
               local_c = CONCAT31(local_c._1_3_,2);
             }
             thunk_FUN_005b6350(this_01,0x6121,local_14,0x11);

@@ -30,7 +30,7 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00727C80::FUN_007282b0
   int local_10;
   int local_c;
   AnonReceiver_00727C80 *local_8;
-  
+
   pbVar1 = (byte *)(param_1->field_0028 + param_2 * 0x1c);
   puVar3 = (undefined4 *)((uint)pbVar1[1] * 0x10 + param_3);
   DAT_008570a8 = *puVar3;

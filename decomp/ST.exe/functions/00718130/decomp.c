@@ -12,7 +12,7 @@ void __cdecl FUN_00718130(byte *param_1,float *param_2)
   float fVar6;
   float fVar7;
   float fVar8;
-  
+
   fVar3 = (float)*param_1 * _DAT_0079e25c;
   fVar4 = (float)param_1[1] * _DAT_0079e25c;
   fVar5 = (float)param_1[2] * _DAT_0079e25c;

@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\startsys.cpp
@@ -13,9 +15,7 @@ void __thiscall StartSystemTy::CreateChatView(StartSystemTy *this)
   StartSystemTy *this_00;
   int iVar5;
   int iVar6;
-  undefined4 unaff_ESI;
   undefined4 *puVar7;
-  void *unaff_EDI;
   undefined4 *puVar8;
   undefined4 local_8c4 [5];
   int local_8b0;
@@ -44,7 +44,7 @@ void __thiscall StartSystemTy::CreateChatView(StartSystemTy *this)
   undefined4 local_620;
   InternalExceptionFrame local_4c;
   StartSystemTy *local_8;
-  
+
   puVar7 = local_8c4;
   local_8 = this;
   for (iVar6 = 0x21e; iVar6 != 0; iVar6 = iVar6 + -1) {
@@ -53,7 +53,7 @@ void __thiscall StartSystemTy::CreateChatView(StartSystemTy *this)
   }
   local_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_4c;
-  iVar6 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar6 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
   this_00 = local_8;
   if (iVar6 == 0) {
     local_8c4[0] = 0;
@@ -63,7 +63,7 @@ void __thiscall StartSystemTy::CreateChatView(StartSystemTy *this)
     local_8a0 = 499;
     local_8c4[2] = 1;
     local_8c4[3] = 0;
-    local_8c4[4] = *(undefined4 *)(local_8->field_067E + 4);
+    local_8c4[4] = local_8->field_067E->field_0004;
     if (pcVar1->field_00A0 != 0) {
       FUN_00710790((uint *)pcVar1);
     }
@@ -122,9 +122,7 @@ void __thiscall StartSystemTy::CreateChatView(StartSystemTy *this)
   iVar5 = ReportDebugMessage(s_E____titans_Start_startsys_cpp_007cd718,0x3f9,0,iVar6,&DAT_007a4ccc,
                              s_StartSystemTy__CreateChatView_007cd904);
   if (iVar5 != 0) {
-    pcVar4 = (code *)swi(3);
-    (*pcVar4)();
-    return;
+    STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   RaiseInternalException(iVar6,0,s_E____titans_Start_startsys_cpp_007cd718,0x3f9);
   return;

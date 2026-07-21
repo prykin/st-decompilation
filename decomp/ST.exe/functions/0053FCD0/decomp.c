@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\specpan.cpp
@@ -13,8 +15,6 @@ ProdPanelTy::PaintTab(ProdPanelTy *this,AnonShape_0053FCD0_D10A885A *param_1,und
   int *piVar4;
   undefined4 uVar5;
   LPSTR pCVar6;
-  undefined4 unaff_ESI;
-  void *unaff_EDI;
   int iVar7;
   int iVar8;
   InternalExceptionFrame local_58;
@@ -22,7 +22,7 @@ ProdPanelTy::PaintTab(ProdPanelTy *this,AnonShape_0053FCD0_D10A885A *param_1,und
   int local_10;
   int local_c;
   ushort *local_8;
-  
+
   pAVar1 = param_1->field_0014;
   local_8 = (ushort *)0x0;
   local_10 = pAVar1->field_000C - this->field_003C;
@@ -36,9 +36,10 @@ ProdPanelTy::PaintTab(ProdPanelTy *this,AnonShape_0053FCD0_D10A885A *param_1,und
     local_58.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_58;
     local_14 = this;
-    piVar4 = (int *)Library::MSVCRT::__setjmp3(local_58.jumpBuffer,0,unaff_EDI,unaff_ESI);
+    piVar4 = (int *)Library::MSVCRT::__setjmp3(local_58.jumpBuffer,0);
     if (piVar4 == (int *)0x0) {
       iVar8 = 1;
+      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
       uVar5 = (*(code *)param_2)(param_1);
       iVar7 = 2;
       pCVar6 = thunk_FUN_00571240(s_BUT_BLDTAB_007c7af4,0);
@@ -67,9 +68,7 @@ ProdPanelTy::PaintTab(ProdPanelTy *this,AnonShape_0053FCD0_D10A885A *param_1,und
     iVar7 = ReportDebugMessage(s_E____titans_Andrey_specpan_cpp_007c7870,0x255,0,(int)piVar4,
                                &DAT_007a4ccc,s_ProdPanelTy__PaintTab_007c7ac8);
     if (iVar7 != 0) {
-      pcVar2 = (code *)swi(3);
-      (*pcVar2)();
-      return;
+      STDebugBreak(); /* noreturn in standalone pseudocode */
     }
     RaiseInternalException((int)piVar4,0,s_E____titans_Andrey_specpan_cpp_007c7870,0x255);
   }

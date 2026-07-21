@@ -27,7 +27,7 @@ void __fastcall FUN_0067a390(AnonShape_00679600_B8E418A8 *param_1)
   int local_10;
   int local_c;
   int local_8;
-  
+
   if ((*(int *)&param_1->field_0x650 != 0) &&
      ((uint)param_1->field_06FE <
       (uint)(*(int *)&param_1->field_0x654 + *(int *)&param_1->field_0x650))) {

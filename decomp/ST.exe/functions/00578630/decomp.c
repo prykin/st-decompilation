@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Igor\to_crab.cpp
@@ -11,20 +13,18 @@ undefined4 __thiscall STCrabC::GetMessage(STCrabC *this,AnonShape_00578630_E75DF
   byte bVar3;
   STSprGameObjC *this_00;
   undefined1 uVar4;
-  bool bVar5;
-  short sVar6;
-  int iVar7;
-  undefined3 extraout_var;
-  undefined4 uVar8;
-  int iVar9;
-  uint uVar10;
-  STSprGameObjC_field_0259State SVar11;
-  undefined4 unaff_ESI;
-  STSprGameObjC_field_0259State *pSVar12;
-  byte *pbVar13;
-  void *unaff_EDI;
-  STSprGameObjC_field_0259State *pSVar14;
-  byte *pbVar15;
+  short sVar5;
+  int iVar6;
+  undefined4 uVar7;
+  int iVar8;
+  uint uVar9;
+  STSprGameObjC_field_0259State SVar10;
+  STSprGameObjC_field_0259State *pSVar11;
+  byte *pbVar12;
+  /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
+  int unaff_EDI;
+  STSprGameObjC_field_0259State *pSVar13;
+  byte *pbVar14;
   InternalExceptionFrame local_80;
   void *local_3c;
   undefined4 local_38;
@@ -40,32 +40,30 @@ undefined4 __thiscall STCrabC::GetMessage(STCrabC *this,AnonShape_00578630_E75DF
   uint local_10;
   STSprGameObjC_field_0259State *local_c;
   STSprGameObjC_field_0259State local_8;
-  
+
   if ((this->field_0239 == 3) && (param_1->field_0010 != 3)) {
     return 0;
   }
   local_80.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_80;
   local_1c = (STSprGameObjC *)this;
-  iVar7 = Library::MSVCRT::__setjmp3(local_80.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar6 = Library::MSVCRT::__setjmp3(local_80.jumpBuffer,0);
   this_00 = local_1c;
-  if (iVar7 != 0) {
+  if (iVar6 != 0) {
     g_currentExceptionFrame = local_80.previous;
-    iVar9 = ReportDebugMessage(s_E____titans_Igor_to_crab_cpp_007cad4c,0x1b7,0,iVar7,&DAT_007a4ccc,
+    iVar8 = ReportDebugMessage(s_E____titans_Igor_to_crab_cpp_007cad4c,0x1b7,0,iVar6,&DAT_007a4ccc,
                                s_STCrabC__GetMessage_007cad9c);
-    if (iVar9 != 0) {
-      pcVar2 = (code *)swi(3);
-      uVar8 = (*pcVar2)();
-      return uVar8;
+    if (iVar8 != 0) {
+      STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    RaiseInternalException(iVar7,0,s_E____titans_Igor_to_crab_cpp_007cad4c,0x1b8);
+    RaiseInternalException(iVar6,0,s_E____titans_Igor_to_crab_cpp_007cad4c,0x1b8);
     return 0xffff;
   }
   STSprGameObjC::GetMessage(local_1c,(AnonShape_0041AF40_F59F8577 *)param_1);
-  uVar10 = param_1->field_0010;
-  if (0x10f < uVar10) {
-    if (uVar10 != 0x128) {
-      if (uVar10 != 0x440f) {
+  uVar9 = param_1->field_0010;
+  if (0x10f < uVar9) {
+    if (uVar9 != 0x128) {
+      if (uVar9 != 0x440f) {
         g_currentExceptionFrame = local_80.previous;
         return 0;
       }
@@ -81,11 +79,11 @@ undefined4 __thiscall STCrabC::GetMessage(STCrabC *this,AnonShape_00578630_E75DF
       g_currentExceptionFrame = local_80.previous;
       return 0;
     }
-    uVar10 = thunk_FUN_004ad650((int)&this_00->field_01D5);
-    FUN_006eab60((void *)this_00->field_0211,uVar10);
+    uVar9 = thunk_FUN_004ad650((int)&this_00->field_01D5);
+    FUN_006eab60((void *)this_00->field_0211,uVar9);
     goto LAB_00578ea2;
   }
-  if (uVar10 == 0x10f) {
+  if (uVar9 == 0x10f) {
     local_14 = STT3DSprC::SaveSpr((STT3DSprC *)&this_00->field_01D5,&local_8);
     local_18 = (byte *)STAllPlayersC::SaveGObjData((STAllPlayersC *)this_00,(int *)&local_10);
     local_c = (STSprGameObjC_field_0259State *)
@@ -98,12 +96,12 @@ undefined4 __thiscall STCrabC::GetMessage(STCrabC *this,AnonShape_00578630_E75DF
       g_currentExceptionFrame = local_80.previous;
       return 0;
     }
-    pSVar12 = &this_00->field_0259;
-    pSVar14 = local_c;
-    for (iVar7 = 10; iVar7 != 0; iVar7 = iVar7 + -1) {
-      *pSVar14 = *pSVar12;
-      pSVar12 = pSVar12 + 1;
-      pSVar14 = pSVar14 + 1;
+    pSVar11 = &this_00->field_0259;
+    pSVar13 = local_c;
+    for (iVar6 = 10; iVar6 != 0; iVar6 = iVar6 + -1) {
+      *pSVar13 = *pSVar11;
+      pSVar11 = pSVar11 + 1;
+      pSVar13 = pSVar13 + 1;
     }
     local_c[3] = 2;
     local_c[10] = *(STSprGameObjC_field_0259State *)&this_00->field_0x235;
@@ -130,30 +128,30 @@ undefined4 __thiscall STCrabC::GetMessage(STCrabC *this,AnonShape_00578630_E75DF
     local_c[0xc] = *(STSprGameObjC_field_0259State *)&this_00->field_0x23d;
     local_c[0x17] = 0;
     local_c[0x18] = local_8;
-    pSVar12 = local_14;
-    pSVar14 = local_c + 0x19;
-    for (uVar10 = local_8 >> 2; uVar10 != 0; uVar10 = uVar10 - 1) {
-      *pSVar14 = *pSVar12;
-      pSVar12 = pSVar12 + 1;
-      pSVar14 = pSVar14 + 1;
+    pSVar11 = local_14;
+    pSVar13 = local_c + 0x19;
+    for (uVar9 = local_8 >> 2; uVar9 != 0; uVar9 = uVar9 - 1) {
+      *pSVar13 = *pSVar11;
+      pSVar11 = pSVar11 + 1;
+      pSVar13 = pSVar13 + 1;
     }
-    for (SVar11 = local_8 & 3; SVar11 != 0; SVar11 = SVar11 - 1) {
-      *(char *)pSVar14 = (char)*pSVar12;
-      pSVar12 = (STSprGameObjC_field_0259State *)((int)pSVar12 + 1);
-      pSVar14 = (STSprGameObjC_field_0259State *)((int)pSVar14 + 1);
+    for (SVar10 = local_8 & 3; SVar10 != 0; SVar10 = SVar10 - 1) {
+      *(char *)pSVar13 = (char)*pSVar11;
+      pSVar11 = (STSprGameObjC_field_0259State *)((int)pSVar11 + 1);
+      pSVar13 = (STSprGameObjC_field_0259State *)((int)pSVar13 + 1);
     }
     *(uint *)((int)local_c + local_8 + 100) = local_10;
-    pbVar13 = local_18;
-    pbVar15 = (byte *)((int)local_c + local_8 + 0x68);
-    for (uVar10 = local_10 >> 2; uVar10 != 0; uVar10 = uVar10 - 1) {
-      *(undefined4 *)pbVar15 = *(undefined4 *)pbVar13;
-      pbVar13 = pbVar13 + 4;
-      pbVar15 = pbVar15 + 4;
+    pbVar12 = local_18;
+    pbVar14 = (byte *)((int)local_c + local_8 + 0x68);
+    for (uVar9 = local_10 >> 2; uVar9 != 0; uVar9 = uVar9 - 1) {
+      *(undefined4 *)pbVar14 = *(undefined4 *)pbVar12;
+      pbVar12 = pbVar12 + 4;
+      pbVar14 = pbVar14 + 4;
     }
-    for (uVar10 = local_10 & 3; uVar10 != 0; uVar10 = uVar10 - 1) {
-      *pbVar15 = *pbVar13;
-      pbVar13 = pbVar13 + 1;
-      pbVar15 = pbVar15 + 1;
+    for (uVar9 = local_10 & 3; uVar9 != 0; uVar9 = uVar9 - 1) {
+      *pbVar14 = *pbVar12;
+      pbVar12 = pbVar12 + 1;
+      pbVar14 = pbVar14 + 1;
     }
     STPlaySystemC::SaveObjData
               (PTR_00802a38,this_00->field_0018,(byte *)local_c,
@@ -164,7 +162,7 @@ undefined4 __thiscall STCrabC::GetMessage(STCrabC *this,AnonShape_00578630_E75DF
     g_currentExceptionFrame = local_80.previous;
     return 0;
   }
-  if (uVar10 == 0) {
+  if (uVar9 == 0) {
     if (*(int *)&this_00->field_0x239 == 2) {
       g_currentExceptionFrame = local_80.previous;
       return 0;
@@ -173,8 +171,8 @@ undefined4 __thiscall STCrabC::GetMessage(STCrabC *this,AnonShape_00578630_E75DF
     g_currentExceptionFrame = local_80.previous;
     return 0;
   }
-  if (uVar10 != 2) {
-    if (uVar10 != 3) {
+  if (uVar9 != 2) {
+    if (uVar9 != 3) {
       g_currentExceptionFrame = local_80.previous;
       return 0;
     }
@@ -186,126 +184,127 @@ undefined4 __thiscall STCrabC::GetMessage(STCrabC *this,AnonShape_00578630_E75DF
   local_20 = param_1->field_0014;
   if (local_20[3] < 2) {
     *(undefined4 *)&this_00->field_0x239 = 3;
-    iVar7 = PTR_00802a38->field_00E4;
+    iVar6 = PTR_00802a38->field_00E4;
     *(undefined4 *)&this_00->field_0x23d = 0;
     *(undefined4 *)&this_00->field_0x231 = 0;
-    *(int *)&this_00->field_0x235 = iVar7 + -3;
-    pSVar12 = param_1->field_0014;
-    pSVar14 = &this_00->field_0259;
-    for (iVar7 = 10; iVar7 != 0; iVar7 = iVar7 + -1) {
-      *pSVar14 = *pSVar12;
-      pSVar12 = pSVar12 + 1;
-      pSVar14 = pSVar14 + 1;
+    *(int *)&this_00->field_0x235 = iVar6 + -3;
+    pSVar11 = param_1->field_0014;
+    pSVar13 = &this_00->field_0259;
+    for (iVar6 = 10; iVar6 != 0; iVar6 = iVar6 + -1) {
+      *pSVar13 = *pSVar11;
+      pSVar11 = pSVar11 + 1;
+      pSVar13 = pSVar13 + 1;
     }
-    Bad((STCrabC *)this_00,(int)unaff_EDI);
+    /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
+    Bad((STCrabC *)this_00,unaff_EDI);
     if (((((*(int *)&this_00->field_0x26d < 0) ||
           ((int)g_worldGrid.sizeX <= *(int *)&this_00->field_0x26d)) ||
          (*(int *)&this_00->field_0x271 < 0)) ||
         (((int)g_worldGrid.sizeY <= *(int *)&this_00->field_0x271 ||
-         (iVar7 = *(int *)&this_00->field_0x275, iVar7 < 0)))) ||
-       ((g_worldGrid.sizeZ <= iVar7 ||
-        (bVar5 = thunk_FUN_004961b0(*(short *)&this_00->field_0x26d,*(short *)&this_00->field_0x271,
-                                    (short)iVar7), CONCAT31(extraout_var,bVar5) == 0)))) {
+         (iVar6 = *(int *)&this_00->field_0x275, iVar6 < 0)))) ||
+       ((g_worldGrid.sizeZ <= iVar6 ||
+        (iVar6 = thunk_FUN_004961b0(*(short *)&this_00->field_0x26d,*(short *)&this_00->field_0x271,
+                                    (short)iVar6), iVar6 == 0)))) {
       thunk_FUN_005783f0((STJellyGunC *)this_00);
       *(undefined4 *)&this_00->field_0x239 = 2;
     }
     else {
       switch(*(undefined4 *)&this_00->field_0x279) {
       case 0xf2:
-        iVar7 = STT3DSprC::LoadSequence
+        iVar6 = STT3DSprC::LoadSequence
                           ((STT3DSprC *)&this_00->field_01D5,0xe,DAT_0080676c,s_crab1l_007cacb0,0x1d
                           );
-        if (iVar7 != 0) {
+        if (iVar6 != 0) {
           RaiseInternalException
                     (-1,g_overwriteContext_007ED77C,s_E____titans_Igor_to_crab_cpp_007cad4c,0xd2);
         }
-        iVar7 = STT3DSprC::LoadSequence
+        iVar6 = STT3DSprC::LoadSequence
                           ((STT3DSprC *)&this_00->field_01D5,0xd,DAT_0080676c,s_crab1l_m_007cacb8,
                            0x1d);
-        if (iVar7 != 0) {
-          iVar7 = 0xd5;
+        if (iVar6 != 0) {
+          iVar6 = 0xd5;
 cf_error_exit_00578B5D:
           RaiseInternalException
-                    (-1,g_overwriteContext_007ED77C,s_E____titans_Igor_to_crab_cpp_007cad4c,iVar7);
+                    (-1,g_overwriteContext_007ED77C,s_E____titans_Igor_to_crab_cpp_007cad4c,iVar6);
         }
         break;
       case 0xf3:
-        iVar7 = STT3DSprC::LoadSequence
+        iVar6 = STT3DSprC::LoadSequence
                           ((STT3DSprC *)&this_00->field_01D5,0xe,DAT_0080676c,s_crab2l_007cacc4,0x1d
                           );
-        if (iVar7 != 0) {
+        if (iVar6 != 0) {
           RaiseInternalException
                     (-1,g_overwriteContext_007ED77C,s_E____titans_Igor_to_crab_cpp_007cad4c,0xda);
         }
-        iVar7 = STT3DSprC::LoadSequence
+        iVar6 = STT3DSprC::LoadSequence
                           ((STT3DSprC *)&this_00->field_01D5,0xd,DAT_0080676c,s_crab2l_m_007caccc,
                            0x1d);
-        if (iVar7 != 0) {
-          iVar7 = 0xdd;
+        if (iVar6 != 0) {
+          iVar6 = 0xdd;
           goto cf_error_exit_00578B5D;
         }
         break;
       case 0xf4:
-        iVar7 = STT3DSprC::LoadSequence
+        iVar6 = STT3DSprC::LoadSequence
                           ((STT3DSprC *)&this_00->field_01D5,0xe,DAT_0080676c,s_crab1b_007cacd8,0x1d
                           );
-        if (iVar7 != 0) {
+        if (iVar6 != 0) {
           RaiseInternalException
                     (-1,g_overwriteContext_007ED77C,s_E____titans_Igor_to_crab_cpp_007cad4c,0xe2);
         }
-        iVar7 = STT3DSprC::LoadSequence
+        iVar6 = STT3DSprC::LoadSequence
                           ((STT3DSprC *)&this_00->field_01D5,0xd,DAT_0080676c,s_crab1b_m_007cace0,
                            0x1d);
-        if (iVar7 != 0) {
-          iVar7 = 0xe5;
+        if (iVar6 != 0) {
+          iVar6 = 0xe5;
           goto cf_error_exit_00578B5D;
         }
         break;
       case 0xf5:
-        iVar7 = STT3DSprC::LoadSequence
+        iVar6 = STT3DSprC::LoadSequence
                           ((STT3DSprC *)&this_00->field_01D5,0xe,DAT_0080676c,s_crab2b_007cacec,0x1d
                           );
-        if (iVar7 != 0) {
+        if (iVar6 != 0) {
           RaiseInternalException
                     (-1,g_overwriteContext_007ED77C,s_E____titans_Igor_to_crab_cpp_007cad4c,0xea);
         }
-        iVar7 = STT3DSprC::LoadSequence
+        iVar6 = STT3DSprC::LoadSequence
                           ((STT3DSprC *)&this_00->field_01D5,0xd,DAT_0080676c,s_crab2b_m_007cacf4,
                            0x1d);
-        if (iVar7 != 0) {
-          iVar7 = 0xed;
+        if (iVar6 != 0) {
+          iVar6 = 0xed;
           goto cf_error_exit_00578B5D;
         }
         break;
       case 0xf6:
-        iVar7 = STT3DSprC::LoadSequence
+        iVar6 = STT3DSprC::LoadSequence
                           ((STT3DSprC *)&this_00->field_01D5,0xe,DAT_0080676c,s_langus2_007cad14,
                            0x1d);
-        if (iVar7 != 0) {
+        if (iVar6 != 0) {
           RaiseInternalException
                     (-1,g_overwriteContext_007ED77C,s_E____titans_Igor_to_crab_cpp_007cad4c,0xfa);
         }
-        iVar7 = STT3DSprC::LoadSequence
+        iVar6 = STT3DSprC::LoadSequence
                           ((STT3DSprC *)&this_00->field_01D5,0xd,DAT_0080676c,s_langus2m_007cad1c,
                            0x1d);
-        if (iVar7 != 0) {
-          iVar7 = 0xfd;
+        if (iVar6 != 0) {
+          iVar6 = 0xfd;
           goto cf_error_exit_00578B5D;
         }
         break;
       case 0xf7:
-        iVar7 = STT3DSprC::LoadSequence
+        iVar6 = STT3DSprC::LoadSequence
                           ((STT3DSprC *)&this_00->field_01D5,0xe,DAT_0080676c,s_langus1_007cad00,
                            0x1d);
-        if (iVar7 != 0) {
+        if (iVar6 != 0) {
           RaiseInternalException
                     (-1,g_overwriteContext_007ED77C,s_E____titans_Igor_to_crab_cpp_007cad4c,0xf2);
         }
-        iVar7 = STT3DSprC::LoadSequence
+        iVar6 = STT3DSprC::LoadSequence
                           ((STT3DSprC *)&this_00->field_01D5,0xd,DAT_0080676c,s_langus1m_007cad08,
                            0x1d);
-        if (iVar7 != 0) {
-          iVar7 = 0xf5;
+        if (iVar6 != 0) {
+          iVar6 = 0xf5;
           goto cf_error_exit_00578B5D;
         }
       }
@@ -315,38 +314,38 @@ cf_error_exit_00578B5D:
       thunk_FUN_004ac610(puVar1,'\r');
       STT3DSprC::StartShow((STT3DSprC *)puVar1,0xe,PTR_00802a38->field_00E4);
       STT3DSprC::StartShow((STT3DSprC *)puVar1,0xd,PTR_00802a38->field_00E4);
-      sVar6 = *(short *)&this_00->field_0x275 * 200;
+      sVar5 = *(short *)&this_00->field_0x275 * 200;
       *(short *)&this_00->field_0x41 = *(short *)&this_00->field_0x26d * 0xc9 + 100;
       *(short *)&this_00->field_0x43 = *(short *)&this_00->field_0x271 * 0xc9 + 100;
-      *(short *)&this_00->field_0x45 = sVar6 + 100;
+      *(short *)&this_00->field_0x45 = sVar5 + 100;
       if ((*(int *)&this_00->field_0x279 < 0xf6) || (0xf7 < *(int *)&this_00->field_0x279)) {
-        sVar6 = sVar6 + 0x28;
+        sVar5 = sVar5 + 0x28;
       }
       else {
-        sVar6 = sVar6 + 0x82;
+        sVar5 = sVar5 + 0x82;
       }
-      *(short *)&this_00->field_0x45 = sVar6;
+      *(short *)&this_00->field_0x45 = sVar5;
       *(short *)&this_00->field_0x6c =
            (short)(*(int *)&this_00->field_0x27d / 0x2d) -
            (short)(*(int *)&this_00->field_0x27d / -0x4c000000);
-      uVar8 = thunk_FUN_005797b0(this_00,(undefined2 *)&this_00->field_0x4e,
+      uVar7 = thunk_FUN_005797b0(this_00,(undefined2 *)&this_00->field_0x4e,
                                  (undefined2 *)&this_00->field_0x50,
                                  (undefined2 *)&this_00->field_0x6c);
-      *(undefined4 *)&this_00->field_0x239 = uVar8;
+      *(undefined4 *)&this_00->field_0x239 = uVar7;
     }
   }
   else if (local_20[3] == 2) {
-    pSVar12 = local_20;
-    pSVar14 = &this_00->field_0259;
-    for (iVar7 = 10; iVar7 != 0; iVar7 = iVar7 + -1) {
-      *pSVar14 = *pSVar12;
-      pSVar12 = pSVar12 + 1;
-      pSVar14 = pSVar14 + 1;
+    pSVar11 = local_20;
+    pSVar13 = &this_00->field_0259;
+    for (iVar6 = 10; iVar6 != 0; iVar6 = iVar6 + -1) {
+      *pSVar13 = *pSVar11;
+      pSVar11 = pSVar11 + 1;
+      pSVar13 = pSVar13 + 1;
     }
     local_8 = local_20[0x18];
     STAllPlayersC::RestoreGObjData
               ((STAllPlayersC *)this_00,(undefined4 *)(local_8 + 0x68 + (int)local_20));
-    pSVar12 = local_20;
+    pSVar11 = local_20;
     *(STSprGameObjC_field_0259State *)&this_00->field_0x239 = local_20[0xb];
     *(STSprGameObjC_field_0259State *)&this_00->field_0x235 = local_20[10];
     *(short *)&this_00->field_0x41 = (short)local_20[0x14];
@@ -371,11 +370,11 @@ cf_error_exit_00578B5D:
     *(STSprGameObjC_field_0259State *)&this_00->field_0x23d = local_20[0xc];
     local_3c = (void *)Library::DKW::LIB::FUN_006aac70(0x44);
     if (local_3c != (void *)0x0) {
-      iVar7 = 0;
+      iVar6 = 0;
       do {
-        *(int **)(iVar7 + (int)local_3c) = DAT_0080676c;
-        iVar7 = iVar7 + 4;
-      } while (iVar7 < 0x44);
+        *(int **)(iVar6 + (int)local_3c) = DAT_0080676c;
+        iVar6 = iVar6 + 4;
+      } while (iVar6 < 0x44);
       local_38 = 0;
       local_34 = 0;
       local_30 = DAT_008073cc;
@@ -384,7 +383,7 @@ cf_error_exit_00578B5D:
       local_24 = 0;
       STT3DSprC::RestoreSpr
                 ((STT3DSprC *)&this_00->field_01D5,(int *)&local_3c,
-                 (AnonShape_004AD790_77673787 *)(pSVar12 + 0x19));
+                 (AnonShape_004AD790_77673787 *)(pSVar11 + 0x19));
       FreeAndNull(&local_3c);
     }
   }
@@ -392,8 +391,8 @@ cf_error_exit_00578B5D:
     g_currentExceptionFrame = local_80.previous;
     return 0;
   }
-  iVar7 = thunk_FUN_0058cfe0((int)this_00);
-  if (iVar7 != 0) {
+  iVar6 = thunk_FUN_0058cfe0((int)this_00);
+  if (iVar6 != 0) {
     g_currentExceptionFrame = local_80.previous;
     return 0;
   }

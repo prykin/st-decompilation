@@ -11,7 +11,7 @@ FUN_0062ab10(void *this,int param_1,int param_2,int param_3,int param_4,int para
   int iVar6;
   int iVar7;
   undefined4 local_8;
-  
+
   local_8 = 0;
   uVar5 = FUN_006c8334(param_4 * param_4 + param_5 * param_5 + param_6 * param_6);
   if (uVar5 == 0) {

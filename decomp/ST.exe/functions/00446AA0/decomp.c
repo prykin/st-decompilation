@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\to_allpl.cpp
@@ -13,11 +15,9 @@ void __thiscall STAllPlayersC::OptimizeGuardBoats(STAllPlayersC *this,char param
   int iVar5;
   uint index;
   DArrayTy *array;
-  undefined4 unaff_ESI;
   uint index_00;
   uint uVar6;
   dword index_01;
-  void *unaff_EDI;
   InternalExceptionFrame local_90;
   DArrayTy *local_4c;
   DArrayTy *local_48;
@@ -36,13 +36,13 @@ void __thiscall STAllPlayersC::OptimizeGuardBoats(STAllPlayersC *this,char param
   uint local_10;
   uint local_c;
   short local_6;
-  
+
   local_1c = g_playerRuntime[param_1].pgPairs;
   local_40 = g_playerRuntime[param_1].field2175_0x9fa;
   if (local_1c != (DArrayTy *)0x0) {
     local_90.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_90;
-    iVar3 = Library::MSVCRT::__setjmp3(local_90.jumpBuffer,0,unaff_EDI,unaff_ESI);
+    iVar3 = Library::MSVCRT::__setjmp3(local_90.jumpBuffer,0);
     if (iVar3 == 0) {
       local_18 = local_1c->count;
       array = local_1c;
@@ -91,7 +91,7 @@ void __thiscall STAllPlayersC::OptimizeGuardBoats(STAllPlayersC *this,char param
                     if (local_44 != (DArrayTy *)0x0) {
                       DArrayDestroy(local_44);
                     }
-                    FUN_006b0c70((AnonShape_006B0C70_7C4FE646 *)local_1c,local_10);
+                    FUN_006b0c70(local_1c,local_10);
                     local_18 = local_18 - 1;
                     local_30 = local_30 + -1;
                     local_10 = local_10 - 1;
@@ -183,9 +183,7 @@ void __thiscall STAllPlayersC::OptimizeGuardBoats(STAllPlayersC *this,char param
       iVar5 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0x2a25,0,0,&DAT_007a4ccc,
                                  s_STAllPlayersC__OptimizeGuardBoat_007a8430);
       if (iVar5 != 0) {
-        pcVar2 = (code *)swi(3);
-        (*pcVar2)();
-        return;
+        STDebugBreak(); /* noreturn in standalone pseudocode */
       }
       RaiseInternalException(iVar3,0,s_E____titans_wlad_to_allpl_cpp_007a6004,0x2a26);
     }

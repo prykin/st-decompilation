@@ -8,7 +8,7 @@ FUN_006a23a0(int *param_1,uint param_2,int param_3,int param_4,short *param_5,un
   int iVar2;
   undefined4 local_10 [2];
   int local_8;
-  
+
   local_8 = 0xff;
   if (param_4 == 0) {
     if (param_5[1] == 0) {

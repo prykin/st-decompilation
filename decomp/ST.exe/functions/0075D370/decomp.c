@@ -11,7 +11,7 @@ void FUN_0075d370(AnonShape_0075D370_6C1A68B3 *param_1,int *param_2,int *param_3
   uint uVar6;
   int local_c;
   int local_8;
-  
+
   pAVar2 = param_1;
   pAVar1 = param_1->field_01B2;
   if (param_1->field_0126 <= (int)pAVar1->field_005C) {
@@ -21,6 +21,7 @@ void FUN_0075d370(AnonShape_0075D370_6C1A68B3 *param_1,int *param_2,int *param_3
       puVar5 = &pAVar1->field_0xc;
       param_1 = (AnonShape_0075D370_6C1A68B3 *)param_2;
       do {
+        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
         (**(code **)(puVar5 + 0x28))
                   (pAVar2,local_8,*(int *)param_1 + *(int *)(puVar5 + 0x58) * *param_3 * 4,puVar5);
         param_1 = (AnonShape_0075D370_6C1A68B3 *)&param_1->field_0x4;
@@ -39,6 +40,7 @@ void FUN_0075d370(AnonShape_0075D370_6C1A68B3 *param_1,int *param_2,int *param_3
   if (uVar3 < uVar6) {
     uVar6 = uVar3;
   }
+  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
   (**(code **)(*(int *)&pAVar2->field_0x1b6 + 4))
             (pAVar2,&pAVar1->field_0xc,pAVar1->field_005C,param_5 + *param_6 * 4,uVar6);
   *param_6 = *param_6 + uVar6;

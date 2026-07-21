@@ -4,14 +4,15 @@ undefined4 __thiscall FUN_00630ac0(void *this,uint param_1)
 {
   int iVar1;
   short sVar2;
-  AnonShape_006B0C70_7C4FE646 *groupContent;
+  DArrayTy *groupContent;
   short *psVar3;
   int iVar4;
   int iVar5;
-  
-  groupContent = *(AnonShape_006B0C70_7C4FE646 **)((int)this + 0x38);
-  if (((uint)groupContent->field_000C <= param_1) ||
-     (psVar3 = (short *)(groupContent->field_0008 * param_1 + groupContent->field_001C),
+
+  groupContent = *(DArrayTy **)((int)this + 0x38);
+  /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(groupContent, param_1) (runtime stride) */
+  if ((groupContent->count <= param_1) ||
+     (psVar3 = (short *)(groupContent->elementSize * param_1 + (int)groupContent->data),
      psVar3 == (short *)0x0)) {
     return 0;
   }
