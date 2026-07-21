@@ -31,6 +31,7 @@ target_address	status	proposed_name	detail
 0041AE80	disabled		all apply flags are 0
 0041AEA0	disabled		all apply flags are 0
 0041AEC0	disabled		all apply flags are 0
+0041AF40	disabled	STGameObjC::GetMessage	all apply flags are 0
 0041C2C0	disabled		all apply flags are 0
 0041C2E0	disabled		all apply flags are 0
 0041C300	disabled		all apply flags are 0
@@ -62,6 +63,7 @@ target_address	status	proposed_name	detail
 0041F330	disabled		all apply flags are 0
 0041F350	disabled		all apply flags are 0
 0041F370	disabled		all apply flags are 0
+004210A0	disabled	STColl3C::vfunc_0	all apply flags are 0
 004210C0	disabled		all apply flags are 0
 00422E20	disabled		all apply flags are 0
 00422FF0	disabled		all apply flags are 0
@@ -72,6 +74,7 @@ target_address	status	proposed_name	detail
 004231C0	disabled		all apply flags are 0
 004231E0	disabled		all apply flags are 0
 00423200	disabled		all apply flags are 0
+00430A90	disabled	STAllPlayersC::GetMessage	all apply flags are 0
 0044E960	conflict	STBoatC::vfunc_4	Auto-parameter may not be modified
 0044EDC0	conflict	STBoatC::vfunc_C4	Auto-parameter may not be modified
 0044EDE0	disabled	STBoatC::vfunc_C8	all apply flags are 0
@@ -121,6 +124,7 @@ target_address	status	proposed_name	detail
 00494DF0	disabled	STBoatC::vfunc_94	all apply flags are 0
 00494F00	disabled	STBoatC::vfunc_98	all apply flags are 0
 004952C0	conflict	STBoatC::vfunc_120	Auto-parameter may not be modified
+00495980	disabled	DumpClassC::GetMessage	all apply flags are 0
 00497E00	disabled	STGroupBoatC::GetMessage	all apply flags are 0
 00498D20	disabled	STGroupBoatC::vfunc_8	all apply flags are 0
 004996F0	conflict	STGroupBoatC::vfunc_1C	Auto-parameter may not be modified
@@ -130,6 +134,7 @@ target_address	status	proposed_name	detail
 004A0EE0	disabled	STGroupBoatC::vfunc_4	all apply flags are 0
 004A4240	disabled	STGroupBoatC::ChangeMDNotify	all apply flags are 0
 004A4D60	disabled	STGroupBoatC::ChangeMDNotify	all apply flags are 0
+004A8920	disabled	OpticClassC::GetMessage	all apply flags are 0
 004B9FA0	disabled	TLOBaseTy::GetMessage	all apply flags are 0
 004BE0F0	conflict	TLOBaseTy::vfunc_2C	Auto-parameter may not be modified
 004BE110	disabled	TLOBaseTy::vfunc_C	all apply flags are 0
@@ -156,6 +161,7 @@ target_address	status	proposed_name	detail
 004C28B0	disabled	TLOBaseTy::vfunc_5C	all apply flags are 0
 004C5980	disabled	TLOBaseTy::vfunc_DC	all apply flags are 0
 004C5BD0	disabled	TLOBaseTy::vfunc_E0	all apply flags are 0
+004C6A00	disabled	TLOBldMark::GetMessage	all apply flags are 0
 004CC9C0	disabled	TLOBaseTy::vfunc_108	all apply flags are 0
 004CCAD0	disabled	TLOBaseTy::vfunc_10C	all apply flags are 0
 004CCC10	disabled	TLOBaseTy::vfunc_110	all apply flags are 0
@@ -170,13 +176,6 @@ target_address	status	proposed_name	detail
 004DA340	disabled	TLOBaseTy::vfunc_44	all apply flags are 0
 004E3200	disabled	TLOBaseTy::vfunc_38	all apply flags are 0
 004EB600	disabled	TLOBaseTy::vfunc_48	all apply flags are 0
-00511FA0	disabled	HelpPanelTy::SetPanel	all apply flags are 0
-0051DDD0	disabled	HelpPanelTy::GetMessage	all apply flags are 0
-00538690	disabled	PanelTy::CreateBut	all apply flags are 0
-005389E0	disabled	PanelTy::PaintBut	all apply flags are 0
-00538BA0	disabled	PanelTy::PaintTxtBut	all apply flags are 0
-00538DB0	disabled	PanelTy::PaintIBut	all apply flags are 0
-00538FC0	disabled	PanelTy::PaintLBut	all apply flags are 0
 00542480	disabled	InterSystemC::CreateSystemObjects	all apply flags are 0
 00542EC0	disabled	InterSystemC::~InterSystemC	all apply flags are 0
 00542F40	disabled	InterSystemC::GetMessage	all apply flags are 0
@@ -186,6 +185,8 @@ target_address	status	proposed_name	detail
 0054D180	disabled	STPlaySystemC::DoneSystem	all apply flags are 0
 0054D640	disabled	STPlaySystemC::Life	all apply flags are 0
 0054E4F0	disabled	STPlaySystemC::GetMessage	all apply flags are 0
+005564C0	disabled	TraksClassTy::GetMessage	all apply flags are 0
+00558840	disabled	VisibleClassTy::GetMessage	all apply flags are 0
 0055BD40	disabled	CFsgsConnection::vfunc_58	all apply flags are 0
 0055C0E0	disabled	CFsgsConnection::vfunc_48	all apply flags are 0
 0055C260	disabled	CFsgsConnection::vfunc_C	all apply flags are 0
@@ -295,6 +296,8 @@ target_address	status	proposed_name	detail
 005F0470	disabled	STSprGameObjC::vfunc_114	all apply flags are 0
 005F04B0	disabled	STSprGameObjC::vfunc_118	all apply flags are 0
 005F0E20	disabled	STSprGameObjC::vfunc_28	all apply flags are 0
+005F10D0	disabled	STManBasisC::GetMessage	all apply flags are 0
+005F27C0	disabled	STBHEShellC::GetMessage	all apply flags are 0
 005F5F20	disabled	STColl3C::GetMessage	all apply flags are 0
 005F6EC0	conflict	STColl3C::vfunc_78	Auto-parameter may not be modified
 005F6EE0	disabled	STColl3C::vfunc_7C	all apply flags are 0
@@ -309,6 +312,9 @@ target_address	status	proposed_name	detail
 006033D0	disabled	STDestC::vfunc_30	all apply flags are 0
 00603470	disabled	STDestC::vfunc_34	all apply flags are 0
 00603740	disabled	STExplosion::GetMessage	all apply flags are 0
+00617640	disabled	JumpManagC::GetMessage	all apply flags are 0
+00618C00	disabled	STJumpMineC::GetMessage	all apply flags are 0
+0061D190	disabled	STLightC::GetMessage	all apply flags are 0
 00621B50	disabled	STMineSetC::GetMessage	all apply flags are 0
 00626BC0	disabled	STMineSetC::vfunc_74	all apply flags are 0
 00626C00	disabled	STMineSetC::vfunc_70	all apply flags are 0
@@ -326,7 +332,29 @@ target_address	status	proposed_name	detail
 00627A60	disabled	STMineSetC::vfunc_F0	all apply flags are 0
 00627AA0	disabled	STMineSetC::vfunc_F4	all apply flags are 0
 00627E80	disabled	STMineSetC::vfunc_7C	all apply flags are 0
+0062CCA0	disabled	STManRub3C::GetMessage	all apply flags are 0
 0062E740	disabled	STRubbishC::GetMessage	all apply flags are 0
+00630430	disabled	STManRuinC::GetMessage	all apply flags are 0
+006461E0	disabled	STVolcanoC::GetMessage	all apply flags are 0
+00647B40	disabled	AiBossClassTy::vfunc_18	all apply flags are 0
+00647B60	disabled		all apply flags are 0
+00647B80	disabled		all apply flags are 0
+00647BA0	disabled		all apply flags are 0
+00647BE0	disabled		all apply flags are 0
+00647C10	disabled		all apply flags are 0
+00647C80	disabled		all apply flags are 0
+00647CA0	disabled		all apply flags are 0
+00647CE0	disabled		all apply flags are 0
+00647D10	disabled		all apply flags are 0
+00647D50	disabled		all apply flags are 0
+00647D90	disabled	AiBossClassTy::vfunc_30	all apply flags are 0
+00648030	disabled	AiBossClassTy::GetMessage	all apply flags are 0
+0064E580	disabled		all apply flags are 0
+00667D90	disabled	AiFltClassTy::GetMessage	all apply flags are 0
+00678930	conflict	AiPlrClassTy::vfunc_18	Auto-parameter may not be modified
+00678950	disabled	AiPlrClassTy::vfunc_30	all apply flags are 0
+0067C7E0	disabled	AiPlrClassTy::GetMessage	all apply flags are 0
+00690B90	disabled	AiTactClassTy::GetMessage	all apply flags are 0
 006E4FA0	disabled		all apply flags are 0
 006E5150	disabled	AppClassTy::vfunc_18	all apply flags are 0
 006E52D0	disabled		all apply flags are 0

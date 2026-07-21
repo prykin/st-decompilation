@@ -10,7 +10,7 @@ undefined4 __thiscall STGroupBoatC::GrpRepare(STGroupBoatC *this,int param_1)
   STGroupBoatC *this_00;
   int iVar2;
   uint *puVar3;
-  int *piVar4;
+  STGameObjC *pSVar4;
   STBoatC *this_01;
   uint uVar5;
   int iVar6;
@@ -36,12 +36,12 @@ undefined4 __thiscall STGroupBoatC::GrpRepare(STGroupBoatC *this,int param_1)
   if (iVar2 != 0) {
     g_currentExceptionFrame = local_58.previous;
     if (iVar2 == -0x5001fff7) {
-      if ((byte *)local_14->field_0160 != (byte *)0x0) {
-        FUN_006ae110((byte *)local_14->field_0160);
+      if ((DArrayTy *)local_14->field_0160 != (DArrayTy *)0x0) {
+        DArrayDestroy((DArrayTy *)local_14->field_0160);
         this_00->field_0160 = 0;
       }
-      if (this_00->field_029F != (uint *)0x0) {
-        FUN_006ae110((byte *)this_00->field_029F);
+      if ((DArrayTy *)this_00->field_029F != (DArrayTy *)0x0) {
+        DArrayDestroy((DArrayTy *)this_00->field_029F);
         this_00->field_029F = (uint *)0x0;
       }
       return 0;
@@ -63,8 +63,8 @@ undefined4 __thiscall STGroupBoatC::GrpRepare(STGroupBoatC *this,int param_1)
       puVar9 = puVar9 + 1;
     }
     local_14->field_0065 = 0;
-    if (local_14->field_029F != (uint *)0x0) {
-      FUN_006ae110((byte *)local_14->field_029F);
+    if ((DArrayTy *)local_14->field_029F != (DArrayTy *)0x0) {
+      DArrayDestroy((DArrayTy *)local_14->field_029F);
     }
     this_00->field_029B = this_00->field_015C;
     this_00->field_029F = (uint *)this_00->field_0160;
@@ -82,19 +82,19 @@ undefined4 __thiscall STGroupBoatC::GrpRepare(STGroupBoatC *this,int param_1)
       this_00->field_029F = puVar3;
       if (0 < (int)uVar8) {
         do {
-          FUN_006acc70((AnonShape_006ACC70_C8641025 *)this_00->field_0160,uVar10,&local_8);
+          DArrayGetElement((DArrayTy *)this_00->field_0160,uVar10,&local_8);
           if ((((short)local_8 != -1) &&
-              (piVar4 = (int *)STAllPlayersC::GetObjPtr
-                                         (g_sTAllPlayers_007FA174,
-                                          CONCAT31((int3)((uint)extraout_ECX >> 8),
-                                                   this_00->field_0024),local_8,CASE_1),
-              piVar4 != (int *)0x0)) && (iVar2 = (**(code **)(*piVar4 + 0x2c))(), iVar2 == 0x33)) {
+              (pSVar4 = STAllPlayersC::GetObjPtr
+                                  (g_sTAllPlayers_007FA174,
+                                   CONCAT31((int3)((uint)extraout_ECX >> 8),this_00->field_0024),
+                                   local_8,CASE_1), pSVar4 != (STGameObjC *)0x0)) &&
+             (iVar2 = (*pSVar4->vtable->vfunc_2C)(), iVar2 == 0x33)) {
             Library::DKW::TBL::FUN_006ae1c0(this_00->field_029F,&local_8);
           }
           uVar10 = uVar10 + 1;
         } while ((int)uVar10 < (int)uVar8);
       }
-      FUN_006ae110((byte *)this_00->field_0160);
+      DArrayDestroy((DArrayTy *)this_00->field_0160);
       this_00->field_0160 = 0;
       if (this_00->field_029F[3] == 0) {
         RaiseInternalException
@@ -124,7 +124,7 @@ undefined4 __thiscall STGroupBoatC::GrpRepare(STGroupBoatC *this,int param_1)
       local_c = uVar10;
       if (0 < (int)uVar10) {
         do {
-          FUN_006acc70((AnonShape_006ACC70_C8641025 *)this_00->field_0029,uVar8,&local_8);
+          DArrayGetElement((DArrayTy *)this_00->field_0029,uVar8,&local_8);
           if ((short)local_8 != -1) {
             this_01 = (STBoatC *)
                       STAllPlayersC::GetObjPtr

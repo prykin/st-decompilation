@@ -76,7 +76,7 @@ void __cdecl LandInit(short *param_1)
         local_c = local_c + 1;
       } while (local_c < local_10);
     }
-    FUN_006ab060(&local_8);
+    FreeAndNull(&local_8);
     g_currentExceptionFrame = local_54.previous;
     return;
   }

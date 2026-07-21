@@ -38,18 +38,18 @@ LAB_004c7175:
         }
         else {
           sVar4 = (short)iVar5;
-          if ((((SHORT_007fb240 <= sVar2) || (sVar1 < 0)) || (SHORT_007fb242 <= sVar1)) ||
-             (((sVar4 < 0 || (SHORT_007fb244 <= sVar4)) ||
-              (g_worldCells
-               [(int)sVar4 * (int)SHORT_007fb246 + (int)SHORT_007fb240 * (int)sVar1 + (int)sVar2].
-               objects[0] == (STWorldObject *)0x0)))) {
-            if (((sVar2 < 0) || (SHORT_007fb240 <= sVar2)) ||
+          if ((((g_worldGrid.sizeX <= sVar2) || (sVar1 < 0)) || (g_worldGrid.sizeY <= sVar1)) ||
+             (((sVar4 < 0 || (g_worldGrid.sizeZ <= sVar4)) ||
+              (g_worldGrid.cells
+               [(int)sVar4 * (int)g_worldGrid.planeStride + (int)g_worldGrid.sizeX * (int)sVar1 +
+                (int)sVar2].objects[0] == (STWorldObject *)0x0)))) {
+            if (((sVar2 < 0) || (g_worldGrid.sizeX <= sVar2)) ||
                ((sVar1 < 0 ||
-                (((SHORT_007fb242 <= sVar1 || (sVar4 < 0)) || (SHORT_007fb244 <= sVar4))))))
+                (((g_worldGrid.sizeY <= sVar1 || (sVar4 < 0)) || (g_worldGrid.sizeZ <= sVar4))))))
             goto LAB_004c719b;
-            sVar4 = *(short *)(DAT_007fb280 +
-                              ((int)sVar4 * (int)SHORT_007fb27e + (int)SHORT_007fb278 * (int)sVar1 +
-                              (int)sVar2) * 2);
+            sVar4 = g_pathingGrid.cells
+                    [(int)sVar4 * (int)g_pathingGrid.planeStride +
+                     (int)g_pathingGrid.sizeX * (int)sVar1 + (int)sVar2];
             if (sVar4 == -1) goto LAB_004c716e;
             goto LAB_004c7175;
           }

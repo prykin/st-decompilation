@@ -4,7 +4,7 @@
    ResearchPanelTy::PaintUpdBut */
 
 void __thiscall
-ResearchPanelTy::PaintUpdBut(ResearchPanelTy *this,AnonShape_0053C820_7DA0C7AE *param_1)
+ResearchPanelTy::PaintUpdBut(ResearchPanelTy *this,AnonShape_004EF320_444F9AB1 *param_1)
 
 {
   uint uVar1;
@@ -16,6 +16,7 @@ ResearchPanelTy::PaintUpdBut(ResearchPanelTy *this,AnonShape_0053C820_7DA0C7AE *
   int iVar7;
   undefined4 unaff_ESI;
   void *unaff_EDI;
+  AnonShape_GLOBAL_0081175C_57F682DD *pAVar8;
   InternalExceptionFrame local_5c;
   int local_18;
   int local_14;
@@ -53,19 +54,19 @@ ResearchPanelTy::PaintUpdBut(ResearchPanelTy *this,AnonShape_0053C820_7DA0C7AE *
   pRVar4 = local_10;
   if (iVar5 == 0) {
     if ((local_8 == (Global_sub_005276E0_param_1Enum *)0x0) || (local_8[8] == ~(CASE_80|CASE_7F))) {
-      iVar5 = local_10->field_018C;
+      pAVar8 = (AnonShape_GLOBAL_0081175C_57F682DD *)local_10->field_018C;
     }
     else {
-      iVar5 = local_10->field_0188;
+      pAVar8 = (AnonShape_GLOBAL_0081175C_57F682DD *)local_10->field_0188;
     }
-    pbVar6 = (byte *)FUN_0070b3a0(iVar5,local_c);
+    pbVar6 = (byte *)FUN_0070b3a0(pAVar8,local_c);
     iVar7 = local_14;
     iVar5 = local_18;
-    DibPut((AnonShape_006B84D0_7C7D97C6 *)pRVar4->field_0068,local_18,local_14,'\x01',pbVar6);
+    DibPut((AnonShape_006B5B10_E0D06CF1 *)pRVar4->field_0068,local_18,local_14,'\x01',pbVar6);
     if ((param_1->field_0014 == 3) && (local_8 != (Global_sub_005276E0_param_1Enum *)0x0)) {
-      pbVar6 = (byte *)FUN_0070b3a0(pRVar4->field_0190,7 - (uint)(local_8[8] != ~(CASE_80|CASE_7F)))
-      ;
-      DibPut((AnonShape_006B84D0_7C7D97C6 *)pRVar4->field_0068,iVar5,iVar7,'\x06',pbVar6);
+      pbVar6 = (byte *)FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)pRVar4->field_0190,
+                                    7 - (uint)(local_8[8] != ~(CASE_80|CASE_7F)));
+      DibPut((AnonShape_006B5B10_E0D06CF1 *)pRVar4->field_0068,iVar5,iVar7,'\x06',pbVar6);
     }
     Library::DKW::DDX::FUN_006b3640
               (DAT_008075a8,pRVar4->field_0060,0xffffffff,pRVar4->field_003C,pRVar4->field_0044);

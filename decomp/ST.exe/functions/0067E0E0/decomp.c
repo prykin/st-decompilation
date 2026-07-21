@@ -15,9 +15,9 @@ uint * __cdecl CreateStrategList(int param_1,int param_2,uint param_3)
   undefined4 unaff_ESI;
   void *unaff_EDI;
   InternalExceptionFrame local_4c;
-  byte *local_8;
+  DArrayTy *local_8;
   
-  local_8 = (byte *)0x0;
+  local_8 = (DArrayTy *)0x0;
   local_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_4c;
   errorCode = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
@@ -39,7 +39,7 @@ uint * __cdecl CreateStrategList(int param_1,int param_2,uint param_3)
     puVar3 = (uint *)(*pcVar1)();
     return puVar3;
   }
-  FUN_006ae110(local_8);
+  DArrayDestroy(local_8);
   RaiseInternalException(errorCode,0,s_E____titans_ai_ai_plr_d_cpp_007d2fa4,0x19c);
   return (uint *)0x0;
 }

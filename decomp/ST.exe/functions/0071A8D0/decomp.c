@@ -30,18 +30,18 @@ void __cdecl FUN_0071a8d0(int *param_1)
                 iVar2 = puVar1[3];
               } while (iVar3 < **(int **)(iVar4 + iVar2));
             }
-            FUN_006ab060((LPVOID *)(puVar1[3] + iVar4));
+            FreeAndNull((void **)(puVar1[3] + iVar4));
           }
           local_c = local_c + 1;
           iVar4 = iVar4 + 4;
         } while (local_c < (int)puVar1[2]);
       }
-      FUN_006ab060((LPVOID *)(puVar1 + 3));
+      FreeAndNull((void **)(puVar1 + 3));
     }
     if ((AnonShape_006B5570_4D68B99C *)puVar1[1] != (AnonShape_006B5570_4D68B99C *)0x0) {
       FUN_006b5570((AnonShape_006B5570_4D68B99C *)puVar1[1]);
     }
-    FUN_006ab060((LPVOID *)param_1);
+    FreeAndNull((void **)param_1);
   }
   return;
 }

@@ -57,11 +57,11 @@ FUN_00614c80(void *this,undefined4 *param_1,int param_2,int param_3,int param_4,
     if (iVar2 == 0) {
       if (*(undefined4 **)((int)this + 0x2e5) == (undefined4 *)0x0) {
         *(uint *)((int)this + 0x2e1) = uVar3;
-        *(LPVOID *)((int)this + 0x2e5) = param_1;
+        *(void **)((int)this + 0x2e5) = param_1;
         return param_8;
       }
       if (*(int *)((int)this + 0x2e1) < (int)uVar3) {
-        FUN_006ab060((LPVOID *)((int)this + 0x2e5));
+        FreeAndNull((void **)((int)this + 0x2e5));
         *(uint *)((int)this + 0x2e1) = uVar3;
         *(undefined4 **)((int)this + 0x2e5) = param_1;
         return param_8;
@@ -79,11 +79,11 @@ FUN_00614c80(void *this,undefined4 *param_1,int param_2,int param_3,int param_4,
         puVar6 = (undefined4 *)((int)puVar6 + 1);
       }
       *(uint *)((int)this + 0x2e1) = param_9;
-      FUN_006ab060(&param_1);
+      FreeAndNull(&param_1);
       return param_8;
     }
     if (param_1 != (undefined4 *)0x0) {
-      FUN_006ab060(&param_1);
+      FreeAndNull(&param_1);
     }
   }
   return 0;

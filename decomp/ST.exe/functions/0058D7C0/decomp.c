@@ -4,7 +4,7 @@
    E:\__titans\Igor\To_shark.cpp
    STSharkC::GetMessage */
 
-undefined4 __thiscall STSharkC::GetMessage(STSharkC *this,AnonShape_0058D7C0_0930224F *param_1)
+undefined4 __thiscall STSharkC::GetMessage(STSharkC *this,AnonShape_004B9FA0_DF027633 *param_1)
 
 {
   undefined1 *puVar1;
@@ -24,7 +24,7 @@ undefined4 __thiscall STSharkC::GetMessage(STSharkC *this,AnonShape_0058D7C0_093
   int *unaff_EDI;
   byte *pbVar13;
   InternalExceptionFrame local_80;
-  LPVOID local_3c;
+  void *local_3c;
   undefined4 local_38;
   int local_34;
   undefined4 local_30;
@@ -196,11 +196,12 @@ undefined4 __thiscall STSharkC::GetMessage(STSharkC *this,AnonShape_0058D7C0_093
         pbVar12 = pbVar12 + 1;
         pbVar13 = pbVar13 + 1;
       }
-      STPlaySystemC::SaveObjData(PTR_00802a38,this_00->field_0018,local_c,local_10 + 0x66 + local_8)
-      ;
-      FUN_006ab060(&local_18);
-      FUN_006ab060(&local_14);
-      FUN_006ab060(&local_c);
+      STPlaySystemC::SaveObjData
+                (PTR_00802a38,this_00->field_0018,local_c,
+                 (AnonShape_0060EA30_DCEB68AD *)(local_10 + 0x66 + local_8));
+      FreeAndNull(&local_18);
+      FreeAndNull(&local_14);
+      FreeAndNull(&local_c);
       g_currentExceptionFrame = local_80.previous;
       return 0;
     }
@@ -297,10 +298,10 @@ LAB_0058dc72:
             else if (*(int *)&this_00->field_0x273 == 0) {
               *(undefined4 *)&this_00->field_0x27b = 0x10e;
             }
-            else if (local_1c == (undefined4 *)(SHORT_007fb240 + -1)) {
+            else if (local_1c == (undefined4 *)(g_worldGrid.sizeX + -1)) {
               *(undefined4 *)&this_00->field_0x27b = 0xb4;
             }
-            else if (*(int *)&this_00->field_0x273 == SHORT_007fb242 + -1) {
+            else if (*(int *)&this_00->field_0x273 == g_worldGrid.sizeY + -1) {
               *(undefined4 *)&this_00->field_0x27b = 0x5a;
             }
             thunk_FUN_004ad3c0(puVar11,(float)(int)local_1c * _DAT_007904f8 + _DAT_007904f4,
@@ -358,8 +359,8 @@ LAB_0058dc72:
       *(undefined4 *)&this_00->field_0x257 = *(undefined4 *)((int)local_1c + 0x4e);
       *(undefined4 *)&this_00->field_0x241 = *(undefined4 *)((int)local_1c + 0x52);
       *(undefined4 *)&this_00->field_0x245 = *(undefined4 *)((int)local_1c + 0x56);
-      local_3c = (LPVOID)Library::DKW::LIB::FUN_006aac70(0x44);
-      if (local_3c != (LPVOID)0x0) {
+      local_3c = (void *)Library::DKW::LIB::FUN_006aac70(0x44);
+      if (local_3c != (void *)0x0) {
         iVar6 = 0;
         do {
           *(int **)(iVar6 + (int)local_3c) = DAT_0080676c;
@@ -379,8 +380,8 @@ LAB_0058dc72:
         local_30 = DAT_008073cc;
         STT3DSprC::RestoreSpr
                   ((STT3DSprC *)&this_00->field_01D5,(int *)&local_3c,
-                   (AnonShape_004ADBA0_E7CEFF88 *)((int)puVar11 + 0x62));
-        FUN_006ab060(&local_3c);
+                   (AnonShape_004AD790_77673787 *)((int)puVar11 + 0x62));
+        FreeAndNull(&local_3c);
         DumpClassC::WritePtr
                   (*(short *)&this_00->field_0x5b,*(short *)&this_00->field_0x5d,
                    *(short *)&this_00->field_0x5f,1,(AnonShape_00495EC0_95A268C6 *)this_00);

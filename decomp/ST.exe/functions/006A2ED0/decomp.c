@@ -160,7 +160,7 @@ LAB_006a2f2f:
     Library::MSVCRT::FUN_0072e2b0(local_14);
   }
   if (local_8 != (short *)0x0) {
-    FUN_006ab060(&local_8);
+    FreeAndNull(&local_8);
   }
   return iVar10;
 }

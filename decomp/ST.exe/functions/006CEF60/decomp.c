@@ -175,8 +175,9 @@ LAB_006cf209:
             }
             else {
               iVar5 = *(int *)(iVar11 + 0xbc) + 7;
-              FUN_006d2820((byte *)pAVar13,param_3,*(byte **)&pAVar6->field_0x6,iVar4,uVar8,local_58
-                           ,(uint)local_54,*(int *)(iVar11 + 0xb0),*(byte **)(iVar11 + 0xb8),
+              FUN_006d2820((byte *)pAVar13,(AnonShape_006B84D0_7C7D97C6 *)param_3,
+                           *(byte **)&pAVar6->field_0x6,iVar4,uVar8,local_58,(uint)local_54,
+                           *(int *)(iVar11 + 0xb0),*(byte **)(iVar11 + 0xb8),
                            (int)(iVar5 + (iVar5 >> 0x1f & 7U)) >> 3,
                            ((*param_9 - *(int *)(iVar11 + 0x18)) - param_7) +
                            *(int *)(iVar11 + 0x28) + local_60,
@@ -280,8 +281,8 @@ LAB_006cf695:
     }
     else {
       iVar7 = *(int *)(iVar11 + 0xbc) + 7;
-      FUN_006d2820((byte *)param_2,param_3,(byte *)param_5,iVar5,uVar14,uVar8,(uint)pbVar2,
-                   *(int *)(iVar11 + 0xb0),*(byte **)(iVar11 + 0xb8),
+      FUN_006d2820((byte *)param_2,(AnonShape_006B84D0_7C7D97C6 *)param_3,(byte *)param_5,iVar5,
+                   uVar14,uVar8,(uint)pbVar2,*(int *)(iVar11 + 0xb0),*(byte **)(iVar11 + 0xb8),
                    (int)(iVar7 + (iVar7 >> 0x1f & 7U)) >> 3,
                    (*(int *)(iVar11 + 0x28) - *(int *)(iVar11 + 0x18)) + iVar5,
                    (byte *)((*(int *)(iVar11 + 0x2c) - *(int *)(iVar11 + 0x1c)) + uVar14));

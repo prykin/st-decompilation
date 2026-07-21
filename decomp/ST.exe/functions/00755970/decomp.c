@@ -20,7 +20,7 @@ int FUN_00755970(AnonShape_00755970_4FB144E0 *param_1,ushort *param_2,int param_
   param_1->field_000C = *(undefined4 *)(param_1->field_0008 + 0x50);
   do {
     *(int *)(pAVar2->field_000C + 0x1c) = local_8;
-    iVar7 = FUN_00753b80((AnonShape_00753B80_E259A731 *)pAVar2,iVar7,local_8);
+    iVar7 = FUN_00753b80((AnonShape_00750F20_F8C16F98 *)pAVar2,iVar7,local_8);
     param_1 = (AnonShape_00755970_4FB144E0 *)0xffffffff;
     pAVar6 = (AnonShape_00755970_4FB144E0 *)0xffffffff;
     pAVar3 = (AnonShape_00755970_4FB144E0 *)0x0;

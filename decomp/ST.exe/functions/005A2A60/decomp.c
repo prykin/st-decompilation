@@ -1,7 +1,10 @@
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\fsgs_obj.cpp
-   FSGSTy::ChangePlayer */
+   FSGSTy::ChangePlayer
+   
+   [STTypeFamilyApplier] EXACT_ANONYMOUS_LAYOUT.
+   Evidence: exact anonymous structure fingerprint shared across functions */
 
 void __thiscall FSGSTy::ChangePlayer(FSGSTy *this,byte *param_1)
 
@@ -19,7 +22,7 @@ void __thiscall FSGSTy::ChangePlayer(FSGSTy *this,byte *param_1)
   bool bVar9;
   InternalExceptionFrame local_54;
   uint local_10;
-  AnonShape_005A2A60_B397ABCA *local_c;
+  AnonShape_00413AF0_B6B4EE9A *local_c;
   FSGSTy *local_8;
   
   if (((this->field_1A5F == CASE_6) && (this->field_1A60 == '\0')) &&
@@ -30,7 +33,7 @@ void __thiscall FSGSTy::ChangePlayer(FSGSTy *this,byte *param_1)
     iVar3 = Library::MSVCRT::__setjmp3(local_54.jumpBuffer,0,unaff_EDI,unaff_ESI);
     if (iVar3 == 0) {
       uVar6 = 0;
-      local_c = (AnonShape_005A2A60_B397ABCA *)local_8->field_1EA6;
+      local_c = (AnonShape_00413AF0_B6B4EE9A *)local_8->field_1EA6;
       local_10 = ((DArrayTy *)local_c)->count;
       if (local_10 != 0) {
         if (local_10 == 0) {

@@ -86,14 +86,14 @@ int __thiscall STBoatC::LoadObj(STBoatC *this,int param_1)
     *(short *)puVar1 = sVar18;
     this->field_058C = sVar20;
     this->field_058E = param_1;
-    if (((((sVar18 < 0) || (SHORT_007fb240 <= sVar18)) || (sVar19 < 0)) ||
-        ((SHORT_007fb242 <= sVar19 || (sVar20 < 0)))) || (SHORT_007fb244 <= sVar20)) {
+    if (((((sVar18 < 0) || (g_worldGrid.sizeX <= sVar18)) || (sVar19 < 0)) ||
+        ((g_worldGrid.sizeY <= sVar19 || (sVar20 < 0)))) || (g_worldGrid.sizeZ <= sVar20)) {
       local_c = (STWorldObject *)0x0;
     }
     else {
-      local_c = g_worldCells
-                [(int)sVar19 * (int)SHORT_007fb240 + (int)SHORT_007fb246 * (int)sVar20 + (int)sVar18
-                ].objects[0];
+      local_c = g_worldGrid.cells
+                [(int)sVar19 * (int)g_worldGrid.sizeX + (int)g_worldGrid.planeStride * (int)sVar20 +
+                 (int)sVar18].objects[0];
     }
     if ((local_c == (STWorldObject *)0x0) || (*(int *)&local_c->field_0x18 != param_1)) {
       iVar11 = FUN_006e62d0(PTR_00802a38,param_1,(int *)&local_c);
@@ -148,15 +148,15 @@ int __thiscall STBoatC::LoadObj(STBoatC *this,int param_1)
       sVar18 = *(short *)&this->field_0x588;
       sVar19 = this->field_058C;
       sVar20 = this->field_058A;
-      if ((((sVar18 < 0) || (SHORT_007fb240 <= sVar18)) ||
-          ((sVar20 < 0 || ((SHORT_007fb242 <= sVar20 || (sVar19 < 0)))))) ||
-         (SHORT_007fb244 <= sVar19)) {
+      if ((((sVar18 < 0) || (g_worldGrid.sizeX <= sVar18)) ||
+          ((sVar20 < 0 || ((g_worldGrid.sizeY <= sVar20 || (sVar19 < 0)))))) ||
+         (g_worldGrid.sizeZ <= sVar19)) {
         local_c = (STWorldObject *)0x0;
       }
       else {
-        local_c = g_worldCells
-                  [(int)sVar19 * (int)SHORT_007fb246 + (int)sVar20 * (int)SHORT_007fb240 +
-                   (int)sVar18].objects[0];
+        local_c = g_worldGrid.cells
+                  [(int)sVar19 * (int)g_worldGrid.planeStride + (int)sVar20 * (int)g_worldGrid.sizeX
+                   + (int)sVar18].objects[0];
       }
       if ((((local_c == (STWorldObject *)0x0) || (*(int *)&local_c->field_0x18 != this->field_058E))
           && (iVar11 = FUN_006e62d0(PTR_00802a38,this->field_058E,(int *)&local_c), iVar11 == -4))
@@ -216,14 +216,14 @@ int __thiscall STBoatC::LoadObj(STBoatC *this,int param_1)
       sVar18 = *(short *)&this->field_0x588;
       sVar19 = this->field_058C;
       sVar20 = this->field_058A;
-      if (((((sVar18 < 0) || (SHORT_007fb240 <= sVar18)) || (sVar20 < 0)) ||
-          ((SHORT_007fb242 <= sVar20 || (sVar19 < 0)))) || (SHORT_007fb244 <= sVar19)) {
+      if (((((sVar18 < 0) || (g_worldGrid.sizeX <= sVar18)) || (sVar20 < 0)) ||
+          ((g_worldGrid.sizeY <= sVar20 || (sVar19 < 0)))) || (g_worldGrid.sizeZ <= sVar19)) {
         local_c = (STWorldObject *)0x0;
       }
       else {
-        local_c = g_worldCells
-                  [(int)sVar19 * (int)SHORT_007fb246 + (int)sVar20 * (int)SHORT_007fb240 +
-                   (int)sVar18].objects[0];
+        local_c = g_worldGrid.cells
+                  [(int)sVar19 * (int)g_worldGrid.planeStride + (int)sVar20 * (int)g_worldGrid.sizeX
+                   + (int)sVar18].objects[0];
       }
       if (((local_c == (STWorldObject *)0x0) || (*(int *)&local_c->field_0x18 != this->field_058E))
          && (iVar11 = FUN_006e62d0(PTR_00802a38,this->field_058E,(int *)&local_c), iVar11 == -4)) {
@@ -288,14 +288,14 @@ LAB_004736e2:
     sVar18 = *(short *)&this->field_0x588;
     sVar19 = this->field_058C;
     sVar20 = this->field_058A;
-    if (((((sVar18 < 0) || (SHORT_007fb240 <= sVar18)) || (sVar20 < 0)) ||
-        ((SHORT_007fb242 <= sVar20 || (sVar19 < 0)))) || (SHORT_007fb244 <= sVar19)) {
+    if (((((sVar18 < 0) || (g_worldGrid.sizeX <= sVar18)) || (sVar20 < 0)) ||
+        ((g_worldGrid.sizeY <= sVar20 || (sVar19 < 0)))) || (g_worldGrid.sizeZ <= sVar19)) {
       local_c = (STWorldObject *)0x0;
     }
     else {
-      local_c = g_worldCells
-                [(int)sVar19 * (int)SHORT_007fb246 + (int)sVar20 * (int)SHORT_007fb240 + (int)sVar18
-                ].objects[0];
+      local_c = g_worldGrid.cells
+                [(int)sVar19 * (int)g_worldGrid.planeStride + (int)sVar20 * (int)g_worldGrid.sizeX +
+                 (int)sVar18].objects[0];
     }
     if (((local_c == (STWorldObject *)0x0) || (*(int *)&local_c->field_0x18 != this->field_058E)) &&
        (iVar11 = FUN_006e62d0(PTR_00802a38,this->field_058E,(int *)&local_c), iVar11 == -4)) {
@@ -316,15 +316,15 @@ cf_common_exit_0047405D:
       sVar18 = *(short *)&this->field_0x588;
       sVar19 = this->field_058C;
       sVar20 = this->field_058A;
-      if ((((sVar18 < 0) || (SHORT_007fb240 <= sVar18)) ||
-          ((sVar20 < 0 || ((SHORT_007fb242 <= sVar20 || (sVar19 < 0)))))) ||
-         (SHORT_007fb244 <= sVar19)) {
+      if ((((sVar18 < 0) || (g_worldGrid.sizeX <= sVar18)) ||
+          ((sVar20 < 0 || ((g_worldGrid.sizeY <= sVar20 || (sVar19 < 0)))))) ||
+         (g_worldGrid.sizeZ <= sVar19)) {
         pSVar6 = (STWorldObject *)0x0;
       }
       else {
-        pSVar6 = g_worldCells
-                 [(int)sVar19 * (int)SHORT_007fb246 + (int)sVar20 * (int)SHORT_007fb240 +
-                  (int)sVar18].objects[0];
+        pSVar6 = g_worldGrid.cells
+                 [(int)sVar19 * (int)g_worldGrid.planeStride + (int)sVar20 * (int)g_worldGrid.sizeX
+                  + (int)sVar18].objects[0];
       }
       FUN_006ea3e0((void *)this->field_0211,this->field_01ED,*(int *)&pSVar6[0xd].field_0x19);
       iVar11 = CONCAT22(extraout_var,this->field_058C * 200) + 100;
@@ -455,14 +455,14 @@ cf_common_exit_0047405D:
       sVar19 = this->field_058C;
       sVar20 = this->field_058A;
       if (((sVar18 < 0) ||
-          (((SHORT_007fb240 <= sVar18 || (sVar20 < 0)) || (SHORT_007fb242 <= sVar20)))) ||
-         ((sVar19 < 0 || (SHORT_007fb244 <= sVar19)))) {
+          (((g_worldGrid.sizeX <= sVar18 || (sVar20 < 0)) || (g_worldGrid.sizeY <= sVar20)))) ||
+         ((sVar19 < 0 || (g_worldGrid.sizeZ <= sVar19)))) {
         local_c = (STWorldObject *)0x0;
       }
       else {
-        local_c = g_worldCells
-                  [(int)sVar19 * (int)SHORT_007fb246 + (int)sVar20 * (int)SHORT_007fb240 +
-                   (int)sVar18].objects[0];
+        local_c = g_worldGrid.cells
+                  [(int)sVar19 * (int)g_worldGrid.planeStride + (int)sVar20 * (int)g_worldGrid.sizeX
+                   + (int)sVar18].objects[0];
       }
       if (((local_c != (STWorldObject *)0x0) && (*(int *)&local_c->field_0x18 == this->field_058E))
          && ((iVar11 = (*local_c->vtable[3].slots_00_28[5])(), iVar11 != 1 &&

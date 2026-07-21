@@ -1,7 +1,9 @@
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+/* [STReturnSemanticsApplier] boolean_return_domain.
+   Evidence: all explicit return values are constants in {0,1}: [0, 0, 0, 0, 1, 0] */
 
-undefined4 __fastcall FUN_0052b330(AnonShape_0052B330_71C9FFBF *param_1)
+bool __fastcall FUN_0052b330(AnonShape_0052B330_71C9FFBF *param_1)
 
 {
   bool bVar1;
@@ -9,13 +11,13 @@ undefined4 __fastcall FUN_0052b330(AnonShape_0052B330_71C9FFBF *param_1)
   bVar1 = true;
   if (param_1->field_0DC7 != '\x01') {
     if (param_1->field_0DC7 != '\x02') {
-      return 0;
+      return false;
     }
     if (0x13 < (uint)param_1->field_0DC8) {
-      return 0;
+      return false;
     }
     param_1->field_0DC8 = param_1->field_0DC8 + 1;
-    return 0;
+    return false;
   }
   param_1->field_0DC8 = param_1->field_0DC8 + 1;
   if (((param_1->field_0DCD == '\0') || (param_1->field_0DCD == '\x01')) &&
@@ -56,10 +58,10 @@ LAB_0052b416:
     if ((float)param_1->field_0DD6 != (float)param_1->field_0DCE) {
 cf_common_exit_0052B581:
       if (param_1->field_0DB3 == 0) {
-        return 0;
+        return false;
       }
       FUN_006e6540(param_1->field_0DB3,param_1->field_0DD6,param_1->field_0DDA,-1);
-      return 1;
+      return true;
     }
   }
   else if (!bVar1) goto cf_common_exit_0052B581;
@@ -75,6 +77,6 @@ cf_common_exit_0052B581:
                       (*(int *)(&param_1->field_0x9c8 + (uint)(byte)param_1->field_0DCC * 4) + 0x23)
                ,param_1->field_0DD6,param_1->field_0DDA,5,5,1);
   thunk_FUN_005252c0((param_1->field_0DCC != '\0') + CASE_B6);
-  return 0;
+  return false;
 }
 

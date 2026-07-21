@@ -2,11 +2,11 @@
 void __fastcall FUN_0074ac41(int *param_1)
 
 {
-  *param_1 = (int)&PTR_FUN_007a15e8;
-  param_1[3] = (int)&PTR_FUN_007a15a8;
-  param_1[4] = (int)&PTR_FUN_007a1590;
-  param_1[0x32] = (int)&PTR_FUN_007a1568;
-  param_1[0x33] = (int)&PTR_FUN_007a1550;
+  *param_1 = (int)&VTable_007A15E8;
+  param_1[3] = (int)&VTable_007A15A8;
+  param_1[4] = (int)&VTable_007A1590;
+  param_1[0x32] = (int)&VTable_007A1568;
+  param_1[0x33] = (int)&VTable_007A1550;
   FUN_00749b5f(param_1);
   return;
 }

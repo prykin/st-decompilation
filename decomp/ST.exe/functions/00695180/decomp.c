@@ -1,5 +1,5 @@
 
-bool FUN_00695180(AnonShape_00695180_D714D58B *param_1,AnonShape_00695180_3C0E4B54 *param_2,
+bool FUN_00695180(AnonShape_0052EFB0_8161B92D *param_1,AnonShape_00695180_3C0E4B54 *param_2,
                  int param_3,int param_4)
 
 {

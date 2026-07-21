@@ -1,5 +1,13 @@
 
-void __thiscall FUN_0054b700(void *this,int param_1)
+/* [STHiddenThisApplier] Anonymous hidden receiver recovered as
+   /SubmarineTitans/Recovered/HiddenThis/AnonReceiver_0054B700.
+   Evidence: incoming_receiver_captures=1; receiver_accesses=9; incoming_edx_uses=0; calls=2;
+   ecx_pointer_setup=2; ecx_scalar_setup=0; caller_cleanup_calls=0; callee_ret_pop=[4];
+   expected_stack=4; receiver_family_members=1; adopt_untyped_existing_thiscall */
+
+void __thiscall
+SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0054B700::FUN_0054b700
+          (AnonReceiver_0054B700 *this,int param_1)
 
 {
   AnonShape_0054B700_B3EE6DE9 *pAVar1;
@@ -14,11 +22,11 @@ void __thiscall FUN_0054b700(void *this,int param_1)
   AnonShape_0054B700_B3EE6DE9 *local_8;
   
   pIVar7 = g_currentExceptionFrame;
-  if (param_1 == *(int *)((int)this + 0x4df)) {
+  if (param_1 == *(int *)&this->field_0x4df) {
     return;
   }
   g_currentExceptionFrame = (InternalExceptionFrame *)&stack0xffffffb4;
-  local_8 = this;
+  local_8 = (AnonShape_0054B700_B3EE6DE9 *)this;
   iVar2 = Library::MSVCRT::__setjmp3(local_48,0,unaff_ESI,pIVar7);
   if (iVar2 != 0) {
     g_currentExceptionFrame = pIVar7;
@@ -42,7 +50,8 @@ void __thiscall FUN_0054b700(void *this,int param_1)
   if (DAT_0080874e == '\x01') {
     iVar2 = 1;
 LAB_0054b7e0:
-    pBVar3 = (BITMAPINFO *)FUN_0070b3a0(local_8->field_04E3,iVar2);
+    pBVar3 = (BITMAPINFO *)
+             FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)local_8->field_04E3,iVar2);
     iVar2 = pAVar1->field_04DF * -0x1d + 0x115;
     iVar4 = g_nWidth_00806730 + -0x18;
   }
@@ -52,7 +61,8 @@ LAB_0054b7e0:
       goto LAB_0054b7e0;
     }
     if (DAT_0080874e != '\x03') goto LAB_0054b81b;
-    pBVar3 = (BITMAPINFO *)FUN_0070b3a0(local_8->field_04E3,5);
+    pBVar3 = (BITMAPINFO *)FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)local_8->field_04E3,5)
+    ;
     iVar2 = pAVar1->field_04DF * -0x13 + 0x136;
     iVar4 = g_nWidth_00806730 + -0x15;
   }
@@ -61,12 +71,14 @@ LAB_0054b81b:
   pAVar1->field_04DF = param_1;
   if (-1 < param_1) {
     if (DAT_0080874e == '\x01') {
-      pBVar3 = (BITMAPINFO *)FUN_0070b3a0(pAVar1->field_04E3,0);
+      pBVar3 = (BITMAPINFO *)
+               FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)pAVar1->field_04E3,0);
       iVar4 = pAVar1->field_04DF * -0x1d + 0x115;
       iVar2 = g_nWidth_00806730 + -0x18;
     }
     else if (DAT_0080874e == '\x02') {
-      pBVar3 = (BITMAPINFO *)FUN_0070b3a0(pAVar1->field_04E3,2);
+      pBVar3 = (BITMAPINFO *)
+               FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)pAVar1->field_04E3,2);
       iVar4 = pAVar1->field_04DF * -0x1d + 0x115;
       iVar2 = g_nWidth_00806730 + -0x18;
     }
@@ -75,7 +87,8 @@ LAB_0054b81b:
         g_currentExceptionFrame = pIVar7;
         return;
       }
-      pBVar3 = (BITMAPINFO *)FUN_0070b3a0(pAVar1->field_04E3,4);
+      pBVar3 = (BITMAPINFO *)
+               FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)pAVar1->field_04E3,4);
       iVar4 = pAVar1->field_04DF * -0x13 + 0x136;
       iVar2 = g_nWidth_00806730 + -0x15;
     }

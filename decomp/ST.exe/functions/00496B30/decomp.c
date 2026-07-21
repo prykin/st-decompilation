@@ -33,18 +33,18 @@ void FUN_00496b30(uint param_1,int param_2,int param_3)
       param_1 = uVar1;
     }
     local_8 = piVar2[1] + 8;
-    if (SHORT_007fb242 < local_8) {
-      local_8 = (int)SHORT_007fb242;
+    if (g_worldGrid.sizeY < local_8) {
+      local_8 = (int)g_worldGrid.sizeY;
     }
     local_c = *piVar2 + 8;
-    if (SHORT_007fb240 < local_c) {
-      local_c = (int)SHORT_007fb240;
+    if (g_worldGrid.sizeX < local_c) {
+      local_c = (int)g_worldGrid.sizeX;
     }
     if (iVar3 < local_8) {
       local_10 = &DAT_007abc64 + iVar5 + iVar6 * 0xf;
       do {
         if ((int)param_1 < local_c) {
-          iVar6 = SHORT_007fb240 * iVar3 + param_1;
+          iVar6 = g_worldGrid.sizeX * iVar3 + param_1;
           iVar5 = local_c - param_1;
           pcVar4 = local_10;
           do {

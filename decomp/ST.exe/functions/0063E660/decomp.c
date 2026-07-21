@@ -21,7 +21,7 @@ void __fastcall FUN_0063e660(int param_1)
         uVar3 = uVar3 + 1;
       } while ((int)uVar3 < iVar1);
     }
-    FUN_006ae110(*(byte **)(param_1 + 0x336));
+    DArrayDestroy(*(DArrayTy **)(param_1 + 0x336));
     *(undefined4 *)(param_1 + 0x336) = 0;
   }
   return;

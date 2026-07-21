@@ -11,24 +11,25 @@ STExplosion::GetMessage(STExplosion *this,AnonShape_0041AF40_F59F8577 *param_1)
   undefined1 *puVar1;
   uint uVar2;
   AnonShape_006366D0_80B1100F *pAVar3;
-  AnonShape_00604FC0_D9906037 *pAVar4;
+  AnonShape_00604A90_035626E6 *pAVar4;
   int *piVar5;
   code *pcVar6;
   short sVar7;
   STGameObjC *this_00;
   STGameObjC *this_01;
   int iVar8;
-  undefined4 *puVar9;
-  int iVar10;
-  undefined4 uVar11;
+  AnonReceiver_00636260 *this_02;
+  int iVar9;
+  undefined4 uVar10;
   undefined4 unaff_ESI;
-  AnonShape_00604FC0_D9906037 *pAVar12;
+  AnonShape_00604A90_035626E6 *pAVar11;
   void *unaff_EDI;
-  byte **ppbVar13;
+  undefined4 *puVar12;
+  byte **value;
   InternalExceptionFrame local_54;
   STGameObjC *local_10;
   byte *local_c;
-  uint local_8;
+  AnonShape_0060EA30_DCEB68AD *local_8;
   
   local_54.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_54;
@@ -37,15 +38,15 @@ STExplosion::GetMessage(STExplosion *this,AnonShape_0041AF40_F59F8577 *param_1)
   this_00 = local_10;
   if (iVar8 != 0) {
     g_currentExceptionFrame = local_54.previous;
-    iVar10 = ReportDebugMessage(s_E____titans_nick_to_Expl_cpp_007cf630,0x1bb,0,iVar8,&DAT_007a4ccc,
-                                s_STExplosion__GetMessage_007cf654);
-    if (iVar10 == 0) {
+    iVar9 = ReportDebugMessage(s_E____titans_nick_to_Expl_cpp_007cf630,0x1bb,0,iVar8,&DAT_007a4ccc,
+                               s_STExplosion__GetMessage_007cf654);
+    if (iVar9 == 0) {
       RaiseInternalException(iVar8,0,s_E____titans_nick_to_Expl_cpp_007cf630,0x1bd);
       return 0xffff;
     }
     pcVar6 = (code *)swi(3);
-    uVar11 = (*pcVar6)();
-    return uVar11;
+    uVar10 = (*pcVar6)();
+    return uVar10;
   }
   iVar8 = STGameObjC::GetMessage(local_10,param_1);
   this_01 = local_10;
@@ -61,11 +62,12 @@ STExplosion::GetMessage(STExplosion *this,AnonShape_0041AF40_F59F8577 *param_1)
                   *(int *)&this_00[1].field_0xe6;
           if ((iVar8 == 0xf) && (this_00[1].field_0x9c != '\0')) {
             if (*(int *)((int)&this_00[1].field_00E8 + 2) == 0) {
-              puVar9 = thunk_FUN_00636200();
-              *(undefined4 **)((int)&this_00[1].field_00E8 + 2) = puVar9;
-              if (puVar9 != (undefined4 *)0x0) {
-                thunk_FUN_00636260(puVar9,this_00[1].field_0020,this_00[1].field_0024,
-                                   this_00[1].field_0028 + -0x28,0x96,0x1e,5,0);
+              this_02 = (AnonReceiver_00636260 *)thunk_FUN_00636200();
+              *(AnonReceiver_00636260 **)((int)&this_00[1].field_00E8 + 2) = this_02;
+              if (this_02 != (AnonReceiver_00636260 *)0x0) {
+                SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00636260::thunk_FUN_00636260
+                          (this_02,this_00[1].field_0020,this_00[1].field_0024,
+                           this_00[1].field_0028 + -0x28,0x96,0x1e,5,0);
               }
             }
           }
@@ -102,14 +104,14 @@ STExplosion::GetMessage(STExplosion *this,AnonShape_0041AF40_F59F8577 *param_1)
         uVar2 = this_00->field_001C * 0x41c64e6d + 0x3039;
         this_00->field_001C = uVar2;
         _DAT_00811790 = (uVar2 >> 0x10) % 0x33;
-        pAVar4 = (AnonShape_00604FC0_D9906037 *)param_1->field_0014;
+        pAVar4 = (AnonShape_00604A90_035626E6 *)param_1->field_0014;
         if (*(int *)&pAVar4->field_0xc == 0) {
-          pAVar12 = pAVar4;
-          puVar9 = (undefined4 *)&this_00[1].field_0x4;
+          pAVar11 = pAVar4;
+          puVar12 = (undefined4 *)&this_00[1].field_0x4;
           for (iVar8 = 0x10; iVar8 != 0; iVar8 = iVar8 + -1) {
-            *puVar9 = *(undefined4 *)pAVar12;
-            pAVar12 = (AnonShape_00604FC0_D9906037 *)&pAVar12->field_0x4;
-            puVar9 = puVar9 + 1;
+            *puVar12 = *(undefined4 *)pAVar11;
+            pAVar11 = (AnonShape_00604A90_035626E6 *)&pAVar11->field_0x4;
+            puVar12 = puVar12 + 1;
           }
           thunk_FUN_00605130((AnonShape_00605130_C97429EC *)local_10);
           puVar1 = &this_01[1].field_0xa1;
@@ -291,13 +293,13 @@ STExplosion::GetMessage(STExplosion *this,AnonShape_0041AF40_F59F8577 *param_1)
       g_currentExceptionFrame = local_54.previous;
       return 0;
     }
-    local_c = (byte *)STExplosionC::SaveObj((STExplosionC *)this_00,&local_8);
+    local_c = (byte *)STExplosionC::SaveObj((STExplosionC *)this_00,(uint *)&local_8);
     if (local_c == (byte *)0x0) {
       g_currentExceptionFrame = local_54.previous;
       return 0;
     }
     STPlaySystemC::SaveObjData(PTR_00802a38,this_00->field_0018,local_c,local_8);
-    ppbVar13 = &local_c;
+    value = &local_c;
   }
   else {
     if (uVar2 != 0x111) {
@@ -314,14 +316,14 @@ STExplosion::GetMessage(STExplosion *this,AnonShape_0041AF40_F59F8577 *param_1)
       g_currentExceptionFrame = local_54.previous;
       return 0;
     }
-    ppbVar13 = (byte **)&this_00[1].field_0xe2;
+    value = (byte **)&this_00[1].field_0xe2;
     if (*(int **)&this_00[1].field_0xe2 == (int *)0x0) {
       g_currentExceptionFrame = local_54.previous;
       return 0;
     }
     thunk_FUN_00604ee0(this_00,*(int **)&this_00[1].field_0xe2);
   }
-  FUN_006ab060(ppbVar13);
+  FreeAndNull(value);
   g_currentExceptionFrame = local_54.previous;
   return 0;
 }

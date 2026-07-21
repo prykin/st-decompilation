@@ -11,12 +11,13 @@ void __thiscall CPanelTy::PaintName(CPanelTy *this,int param_1)
   char cVar3;
   int iVar4;
   Global_sub_00523410_param_1Enum GVar5;
-  UINT uID;
+  UINT resourceId;
+  uint *extraout_EAX;
   uint *puVar6;
   int iVar7;
   undefined4 unaff_ESI;
   void *unaff_EDI;
-  HINSTANCE pHVar8;
+  HINSTANCE module;
   InternalExceptionFrame local_4c;
   CPanelTy *local_8;
   
@@ -48,9 +49,10 @@ void __thiscall CPanelTy::PaintName(CPanelTy *this,int param_1)
         cVar3 = pCVar2->field_0B6A;
         GVar5 = pCVar2->field_0B66;
       }
-      pHVar8 = HINSTANCE_00807618;
-      uID = thunk_FUN_00523410(GVar5,cVar3,0);
-      puVar6 = (uint *)FUN_006b0140(uID,pHVar8);
+      module = HINSTANCE_00807618;
+      resourceId = thunk_FUN_00523410(GVar5,cVar3,0);
+      LoadResourceString(resourceId,module);
+      puVar6 = extraout_EAX;
     }
     else if (param_1 == 0) {
       puVar6 = (uint *)&pCVar2->field_0C5D;

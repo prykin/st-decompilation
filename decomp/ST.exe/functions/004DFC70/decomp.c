@@ -29,7 +29,7 @@ int __thiscall FUN_004dfc70(void *this,int *param_1)
     local_14 = this;
     if (pDVar4->count != 0) {
       do {
-        FUN_006acc70((AnonShape_006ACC70_C8641025 *)pDVar4,uVar5,&param_1);
+        DArrayGetElement(pDVar4,uVar5,&param_1);
         if (param_1 != (int *)0x0) {
           if (param_1[8] == 0x14) {
             puVar8 = &local_18;
@@ -71,7 +71,7 @@ LAB_004dfd49:
     else {
       if (pDVar4->count != 0) {
         do {
-          FUN_006acc70((AnonShape_006ACC70_C8641025 *)pDVar4,uVar5,&local_1c);
+          DArrayGetElement(pDVar4,uVar5,&local_1c);
           local_8 = thunk_FUN_004df910(local_1c);
           local_8 = local_8 / 500;
           if (local_8 != 0) {

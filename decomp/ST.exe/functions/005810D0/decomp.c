@@ -13,7 +13,7 @@ STJellyManC * __thiscall STJellyManC::STJellyManC(STJellyManC *this)
   int iVar1;
   undefined4 *puVar2;
   
-  thunk_FUN_004158e0((STGroupBoatC *)this);
+  STGameObjC::STGameObjC((STGameObjC *)this);
   this->vtable = &STJellyManCVTable;
   puVar2 = (undefined4 *)&this->field_0x1d9;
   for (iVar1 = 0xb; iVar1 != 0; iVar1 = iVar1 + -1) {

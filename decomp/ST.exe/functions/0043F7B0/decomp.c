@@ -7,179 +7,168 @@ uint * FUN_0043f7b0(byte param_1,int *param_2,uint *param_3,int param_4,int para
 
 {
   byte bVar1;
-  char cVar2;
+  byte bVar2;
   int *piVar3;
   uint uVar4;
-  uint uVar5;
-  byte bVar6;
+  byte bVar5;
+  int iVar6;
+  DArrayTy *array;
   int iVar7;
-  uint *groupContent;
   int iVar8;
   int iVar9;
   int iVar10;
-  int iVar11;
-  bool bVar12;
+  bool bVar11;
   int local_14;
   int local_c;
   int local_8;
   
-  bVar6 = param_1;
+  bVar5 = param_1;
   local_8 = (int)param_3 - (int)param_6;
-  iVar7 = param_4 + param_7;
+  iVar6 = param_4 + param_7;
   param_4 = param_4 - param_7;
-  iVar10 = param_5 - param_8;
+  iVar9 = param_5 - param_8;
   if (local_8 < 0) {
     local_8 = 0;
   }
   local_c = (int)param_3 + (int)param_6;
-  if (SHORT_007fb240 + -1 < (int)param_3 + (int)param_6) {
-    local_c = SHORT_007fb240 + -1;
+  if (g_worldGrid.sizeX + -1 < (int)param_3 + (int)param_6) {
+    local_c = g_worldGrid.sizeX + -1;
   }
   if (param_4 < 0) {
     param_4 = 0;
   }
-  param_7 = iVar7;
-  if (SHORT_007fb242 + -1 < iVar7) {
-    param_7 = SHORT_007fb242 + -1;
+  param_7 = iVar6;
+  if (g_worldGrid.sizeY + -1 < iVar6) {
+    param_7 = g_worldGrid.sizeY + -1;
   }
-  if (iVar10 < 0) {
-    iVar10 = 0;
+  if (iVar9 < 0) {
+    iVar9 = 0;
   }
-  iVar7 = param_5 + param_8;
-  if (SHORT_007fb244 + -1 < param_5 + param_8) {
-    iVar7 = SHORT_007fb244 + -1;
+  iVar6 = param_5 + param_8;
+  if (g_worldGrid.sizeZ + -1 < param_5 + param_8) {
+    iVar6 = g_worldGrid.sizeZ + -1;
   }
-  groupContent = Library::DKW::TBL::FUN_006ae290((uint *)0x0,0xf,4,10);
-  iVar9 = SHORT_007fb240 * param_4 + local_8 + (iVar10 + -1) * (int)SHORT_007fb246;
-  if (iVar10 <= iVar7) {
-    local_14 = (iVar7 - iVar10) + 1;
+  array = (DArrayTy *)Library::DKW::TBL::FUN_006ae290((uint *)0x0,0xf,4,10);
+  iVar8 = g_worldGrid.sizeX * param_4 + local_8 + (iVar9 + -1) * (int)g_worldGrid.planeStride;
+  if (iVar9 <= iVar6) {
+    local_14 = (iVar6 - iVar9) + 1;
     do {
-      iVar9 = iVar9 + SHORT_007fb246;
-      iVar7 = iVar9 - SHORT_007fb240;
+      iVar8 = iVar8 + g_worldGrid.planeStride;
+      iVar6 = iVar8 - g_worldGrid.sizeX;
       if (param_4 <= param_7) {
-        iVar10 = (param_7 - param_4) + 1;
+        iVar9 = (param_7 - param_4) + 1;
         do {
-          iVar7 = iVar7 + SHORT_007fb240;
+          iVar6 = iVar6 + g_worldGrid.sizeX;
           if (local_8 <= local_c) {
             _param_1 = (local_c - local_8) + 1;
-            iVar11 = iVar7 * 8 + -8;
+            iVar10 = iVar6 * 8 + -8;
             do {
-              piVar3 = *(int **)((int)g_worldCells[1].objects + iVar11);
+              piVar3 = *(int **)((int)g_worldGrid.cells[1].objects + iVar10);
               if ((piVar3 != (int *)0x0) &&
-                 ((((iVar8 = piVar3[8], param_6 = piVar3, iVar8 == 0x14 || (iVar8 == 1000)) ||
-                   (iVar8 == 0x3e9)) && (param_2 != piVar3)))) {
+                 ((((iVar7 = piVar3[8], param_6 = piVar3, iVar7 == 0x14 || (iVar7 == 1000)) ||
+                   (iVar7 == 0x3e9)) && (param_2 != piVar3)))) {
                 if (param_9 == 0) {
                   bVar1 = *(byte *)(piVar3 + 9);
                   if (DAT_00808a8f == '\0') {
-                    if (bVar1 == bVar6) {
+                    if (bVar1 == bVar5) {
 LAB_0043f9bd:
-                      iVar8 = 0;
+                      iVar7 = 0;
                     }
                     else {
-                      uVar4 = (uint)bVar1;
-                      uVar5 = (uint)bVar6;
-                      cVar2 = *(char *)((int)&DAT_00808a4f + uVar4 * 8 + uVar5);
-                      if ((cVar2 == '\0') &&
-                         (*(char *)((int)&DAT_00808a4f + uVar5 * 8 + uVar4) == '\0')) {
-                        iVar8 = -2;
+                      uVar4 = (uint)bVar5;
+                      bVar2 = g_playerRelationMatrix[bVar1][uVar4];
+                      if ((bVar2 == 0) && (g_playerRelationMatrix[uVar4][bVar1] == 0)) {
+                        iVar7 = -2;
                       }
-                      else if ((cVar2 == '\x01') &&
-                              (*(char *)((int)&DAT_00808a4f + uVar5 * 8 + uVar4) == '\0')) {
-                        iVar8 = -1;
+                      else if ((bVar2 == 1) && (g_playerRelationMatrix[uVar4][bVar1] == 0)) {
+                        iVar7 = -1;
                       }
-                      else if ((cVar2 == '\0') &&
-                              (*(char *)((int)&DAT_00808a4f + uVar5 * 8 + uVar4) == '\x01')) {
-                        iVar8 = 1;
+                      else if ((bVar2 == 0) && (g_playerRelationMatrix[uVar4][bVar1] == 1)) {
+                        iVar7 = 1;
                       }
                       else {
-                        if ((cVar2 != '\x01') ||
-                           (*(char *)((int)&DAT_00808a4f + uVar5 * 8 + uVar4) != '\x01'))
+                        if ((bVar2 != 1) || (g_playerRelationMatrix[uVar4][bVar1] != 1))
                         goto LAB_0043f9bd;
-                        iVar8 = 2;
+                        iVar7 = 2;
                       }
                     }
-                    bVar12 = iVar8 < 0;
+                    bVar11 = iVar7 < 0;
                   }
                   else {
-                    bVar12 = (&DAT_008087ea)[(uint)bVar6 * 0x51] !=
+                    bVar11 = (&DAT_008087ea)[(uint)bVar5 * 0x51] !=
                              (&DAT_008087ea)[(uint)bVar1 * 0x51];
                   }
-                  if (!bVar12) goto LAB_0043f9fa;
-                  iVar8 = (**(code **)(*piVar3 + 0xf8))();
+                  if (!bVar11) goto LAB_0043f9fa;
+                  iVar7 = (**(code **)(*piVar3 + 0xf8))();
                 }
                 else {
-                  iVar8 = (**(code **)(*piVar3 + 0xf8))();
+                  iVar7 = (**(code **)(*piVar3 + 0xf8))();
                 }
-                if (iVar8 == 1) {
-                  Library::DKW::TBL::FUN_006ae1c0(groupContent,&param_6);
+                if (iVar7 == 1) {
+                  Library::DKW::TBL::FUN_006ae1c0((uint *)array,&param_6);
                 }
               }
 LAB_0043f9fa:
-              piVar3 = *(int **)((int)g_worldCells[1].objects + iVar11 + 4);
+              piVar3 = *(int **)((int)g_worldGrid.cells[1].objects + iVar10 + 4);
               if (((piVar3 != (int *)0x0) && (param_6 = piVar3, piVar3[8] == 0x1ae)) &&
                  (param_2 != piVar3)) {
                 if (param_9 == 0) {
                   bVar1 = *(byte *)(piVar3 + 9);
                   param_8 = CONCAT31(param_8._1_3_,bVar1);
                   if (DAT_00808a8f == '\0') {
-                    if (bVar1 == bVar6) {
+                    if (bVar1 == bVar5) {
 LAB_0043fad9:
-                      iVar8 = 0;
+                      iVar7 = 0;
                     }
                     else {
-                      uVar4 = (uint)bVar1;
-                      uVar5 = (uint)bVar6;
-                      cVar2 = *(char *)((int)&DAT_00808a4f + uVar4 * 8 + uVar5);
-                      if ((cVar2 == '\0') &&
-                         (*(char *)((int)&DAT_00808a4f + uVar5 * 8 + uVar4) == '\0')) {
-                        iVar8 = -2;
+                      uVar4 = (uint)bVar5;
+                      bVar2 = g_playerRelationMatrix[bVar1][uVar4];
+                      if ((bVar2 == 0) && (g_playerRelationMatrix[uVar4][bVar1] == 0)) {
+                        iVar7 = -2;
                       }
-                      else if ((cVar2 == '\x01') &&
-                              (*(char *)((int)&DAT_00808a4f + uVar5 * 8 + uVar4) == '\0')) {
-                        iVar8 = -1;
+                      else if ((bVar2 == 1) && (g_playerRelationMatrix[uVar4][bVar1] == 0)) {
+                        iVar7 = -1;
                       }
-                      else if ((cVar2 == '\0') &&
-                              (*(char *)((int)&DAT_00808a4f + uVar5 * 8 + uVar4) == '\x01')) {
-                        iVar8 = 1;
+                      else if ((bVar2 == 0) && (g_playerRelationMatrix[uVar4][bVar1] == 1)) {
+                        iVar7 = 1;
                       }
                       else {
-                        if ((cVar2 != '\x01') ||
-                           (*(char *)((int)&DAT_00808a4f + uVar5 * 8 + uVar4) != '\x01'))
+                        if ((bVar2 != 1) || (g_playerRelationMatrix[uVar4][bVar1] != 1))
                         goto LAB_0043fad9;
-                        iVar8 = 2;
+                        iVar7 = 2;
                       }
                     }
-                    bVar12 = iVar8 < 0;
+                    bVar11 = iVar7 < 0;
                   }
                   else {
-                    bVar12 = (&DAT_008087ea)[(uint)bVar6 * 0x51] !=
+                    bVar11 = (&DAT_008087ea)[(uint)bVar5 * 0x51] !=
                              (&DAT_008087ea)[(uint)bVar1 * 0x51];
                   }
-                  if (!bVar12) goto LAB_0043fb16;
-                  iVar8 = (**(code **)(*piVar3 + 0xf8))();
+                  if (!bVar11) goto LAB_0043fb16;
+                  iVar7 = (**(code **)(*piVar3 + 0xf8))();
                 }
                 else {
-                  iVar8 = (**(code **)(*piVar3 + 0xf8))();
+                  iVar7 = (**(code **)(*piVar3 + 0xf8))();
                 }
-                if (iVar8 == 1) {
-                  Library::DKW::TBL::FUN_006ae1c0(groupContent,&param_6);
+                if (iVar7 == 1) {
+                  Library::DKW::TBL::FUN_006ae1c0((uint *)array,&param_6);
                 }
               }
 LAB_0043fb16:
               _param_1 = _param_1 + -1;
-              iVar11 = iVar11 + 8;
+              iVar10 = iVar10 + 8;
             } while (_param_1 != 0);
           }
-          iVar10 = iVar10 + -1;
-        } while (iVar10 != 0);
+          iVar9 = iVar9 + -1;
+        } while (iVar9 != 0);
       }
       local_14 = local_14 + -1;
     } while (local_14 != 0);
   }
-  if (groupContent[3] == 0) {
-    FUN_006ae110((byte *)groupContent);
-    groupContent = (uint *)0x0;
+  if (array->count == 0) {
+    DArrayDestroy(array);
+    array = (DArrayTy *)0x0;
   }
-  return groupContent;
+  return &array->flags;
 }
 

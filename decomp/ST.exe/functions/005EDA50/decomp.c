@@ -20,12 +20,12 @@ undefined4 __fastcall FUN_005eda50(AnonShape_005EDA50_4BDBD797 *param_1)
     sVar2 = param_1->field_005D;
     sVar1 = param_1->field_005F + -1;
     sVar3 = param_1->field_005B;
-    if ((((-1 < sVar3) && (sVar3 < SHORT_007fb240)) && (-1 < sVar2)) &&
-       (((sVar2 < SHORT_007fb242 && (-1 < sVar1)) &&
-        ((sVar1 < SHORT_007fb244 &&
-         (this = g_worldCells
-                 [(int)SHORT_007fb246 * (int)sVar1 + (int)SHORT_007fb240 * (int)sVar2 + (int)sVar3].
-                 objects[0], uVar5 = local_18, this != (STWorldObject *)0x0)))))) {
+    if ((((-1 < sVar3) && (sVar3 < g_worldGrid.sizeX)) && (-1 < sVar2)) &&
+       (((sVar2 < g_worldGrid.sizeY && (-1 < sVar1)) &&
+        ((sVar1 < g_worldGrid.sizeZ &&
+         (this = g_worldGrid.cells
+                 [(int)g_worldGrid.planeStride * (int)sVar1 + (int)g_worldGrid.sizeX * (int)sVar2 +
+                  (int)sVar3].objects[0], uVar5 = local_18, this != (STWorldObject *)0x0)))))) {
       if ((param_1->field_02E9 != '\0') &&
          (iVar4 = (**(code **)(*(int *)param_1 + 0x128))(), *(int *)&this->field_0x18 == iVar4)) {
         return 0;

@@ -26,10 +26,10 @@ void __thiscall HoloTy::Done(HoloTy *this)
     }
     pHVar2->field_0003 = 0xffffffff;
     if (pHVar2->field_000B != 0) {
-      FUN_006ab060((LPVOID *)&pHVar2->field_000B);
+      FreeAndNull((void **)&pHVar2->field_000B);
     }
     if (pHVar2->field_0007 != 0) {
-      FUN_006ab060((LPVOID *)&pHVar2->field_0007);
+      FreeAndNull((void **)&pHVar2->field_0007);
     }
     g_currentExceptionFrame = pIVar4;
     return;

@@ -40,11 +40,11 @@ int __cdecl FUN_0057ba30(void *param_1,int param_2)
   if (iVar4 < 0) {
     iVar4 = 0;
   }
-  if (SHORT_007fb242 < local_18) {
-    local_18 = (int)SHORT_007fb242;
+  if (g_worldGrid.sizeY < local_18) {
+    local_18 = (int)g_worldGrid.sizeY;
   }
-  if (SHORT_007fb240 < local_10) {
-    local_10 = (int)SHORT_007fb240;
+  if (g_worldGrid.sizeX < local_10) {
+    local_10 = (int)g_worldGrid.sizeX;
   }
   if (4 < local_1c) {
     local_1c = 4;
@@ -53,17 +53,17 @@ int __cdecl FUN_0057ba30(void *param_1,int param_2)
     for (; iVar1 = local_c, iVar2 < local_18; iVar2 = iVar2 + 1) {
       for (; iVar1 < local_10; iVar1 = iVar1 + 1) {
         sVar7 = (short)iVar1;
-        if ((((-1 < sVar7) && (sVar7 < SHORT_007fb240)) && (sVar6 = (short)iVar2, -1 < sVar6)) &&
-           (((sVar6 < SHORT_007fb242 && (sVar5 = (short)iVar4, -1 < sVar5)) &&
-            ((sVar5 < SHORT_007fb244 &&
-             (g_worldCells
-              [(int)sVar5 * (int)SHORT_007fb246 + (int)sVar6 * (int)SHORT_007fb240 + (int)sVar7].
-              objects[0] != (STWorldObject *)0x0)))))) {
+        if ((((-1 < sVar7) && (sVar7 < g_worldGrid.sizeX)) && (sVar6 = (short)iVar2, -1 < sVar6)) &&
+           (((sVar6 < g_worldGrid.sizeY && (sVar5 = (short)iVar4, -1 < sVar5)) &&
+            ((sVar5 < g_worldGrid.sizeZ &&
+             (g_worldGrid.cells
+              [(int)sVar5 * (int)g_worldGrid.planeStride + (int)sVar6 * (int)g_worldGrid.sizeX +
+               (int)sVar7].objects[0] != (STWorldObject *)0x0)))))) {
           local_24 = local_24 + 1;
           thunk_FUN_0057b990(*(undefined4 *)((int)pvVar3 + 0x24),DAT_007e6620,
-                             (int)g_worldCells
-                                  [(int)sVar5 * (int)SHORT_007fb246 +
-                                   (int)sVar6 * (int)SHORT_007fb240 + (int)sVar7].objects[0],
+                             (int)g_worldGrid.cells
+                                  [(int)sVar5 * (int)g_worldGrid.planeStride +
+                                   (int)sVar6 * (int)g_worldGrid.sizeX + (int)sVar7].objects[0],
                              (short)*(undefined4 *)((int)pvVar3 + 0x25e),
                              *(undefined2 *)((int)pvVar3 + 0x262),0xac,0x110);
         }

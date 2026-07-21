@@ -16,7 +16,7 @@ int __thiscall FUN_005fd940(void *this,int param_1)
     do {
       if (iVar3 == param_1) {
         if (*(int *)(iVar4 + 0x4e + *(int *)((int)this + 0x233)) != 0) {
-          FUN_006ab060((LPVOID *)(iVar4 + 0x4e + *(int *)((int)this + 0x233)));
+          FreeAndNull((void **)(iVar4 + 0x4e + *(int *)((int)this + 0x233)));
           iVar2 = local_8;
         }
         pSVar1 = *(STT3DSprC **)(iVar4 + 0x42 + *(int *)((int)this + 0x233));

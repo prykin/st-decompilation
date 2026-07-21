@@ -16,7 +16,7 @@ undefined4 __fastcall FUN_004ddd50(int *param_1)
   
   bVar3 = false;
   bVar2 = false;
-  uVar4 = thunk_FUN_004406c0((char)param_1[9]);
+  uVar4 = GetPlayerRaceId((char)param_1[9]);
   uVar4 = uVar4 & 0xff;
   if (uVar4 == 1) {
     local_8 = 0x17;

@@ -1,5 +1,5 @@
 
-ushort * __cdecl FUN_0067bd00(AnonShape_0067BD00_6519094F *param_1,uint param_2)
+ushort * __cdecl FUN_0067bd00(AnonShape_00413AF0_B6B4EE9A *param_1,uint param_2)
 
 {
   uint uVar1;

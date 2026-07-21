@@ -72,7 +72,7 @@ byte * __thiscall FUN_0062d670(void *this,uint *param_1)
         puVar6 = (uint *)((int)puVar6 + 1);
         puVar8 = (uint *)((int)puVar8 + 1);
       }
-      FUN_006ab060(&local_14);
+      FreeAndNull(&local_14);
     }
 switchD_0062d6cc_default:
     param_1 = (uint *)((int)param_1 + 1);

@@ -11,8 +11,8 @@ void __fastcall FUN_00717870(AnonShape_00717870_6CEBD31A *param_1)
     FUN_006a5e90(*(short **)((int)param_1->field_0472 + iVar1));
     iVar1 = iVar1 + 4;
   } while (iVar1 < 0x140);
-  FUN_006ab060(&param_1->field_0472);
-  FUN_006ab060((LPVOID *)&param_1->field_0x46e);
+  FreeAndNull(&param_1->field_0472);
+  FreeAndNull((void **)&param_1->field_0x46e);
   param_1->field_0466 = 0;
   return;
 }

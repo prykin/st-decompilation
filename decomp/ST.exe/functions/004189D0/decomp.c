@@ -28,7 +28,7 @@ undefined4 __thiscall STGameObjC::MoveStep(STGameObjC *this,int *param_1)
   }
   if (iVar5 == 2) {
     thunk_FUN_00416840(this,(undefined2 *)&local_10,(undefined2 *)&local_c,(undefined2 *)&local_8);
-    iVar5 = (**(code **)(this->field_0000 + 0x18))(local_10,local_c,local_8);
+    iVar5 = (**(code **)&this->field_0000->field_0x18)(local_10,local_c,local_8);
     if (iVar5 != 1) {
       *(short *)&this->field_0xfa = *(short *)&this->field_0xfa + 1;
       if (*(short *)&this->field_0xfa <= (short)this->field_00F8) {
@@ -73,7 +73,9 @@ undefined4 __thiscall STGameObjC::MoveStep(STGameObjC *this,int *param_1)
         *(undefined4 *)&this->field_0xe4 = 0;
         this->field_0xe3 = 0;
         thunk_FUN_004167a0((AnonShape_004167A0_C6E28A87 *)this);
-        iVar5 = thunk_FUN_00418030(this,(short)local_10,(short)local_c,(short)local_8);
+        iVar5 = SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00417FF0::thunk_FUN_00418030
+                          ((AnonReceiver_00417FF0 *)this,(short)local_10,(short)local_c,
+                           (short)local_8);
         if (iVar5 == -1) {
           return 0xffffffff;
         }

@@ -12,7 +12,7 @@ void __cdecl FUN_00428e50(short *param_1)
   undefined2 uVar2;
   AnonShape_00428E50_DFCBD4F2 *pAVar3;
   double dVar4;
-  DArrayTy *groupContent;
+  DArrayTy *array;
   AnonShape_006DBCA0_EF06575F *pAVar5;
   AnonShape_006DDD50_309FA381 *pAVar6;
   undefined4 *puVar7;
@@ -640,15 +640,15 @@ LAB_00429d7d:
         local_48 = local_48 + 1;
       } while (local_90 < *(int *)((int)param_1 + 0x455));
     }
-    groupContent = local_44;
+    array = local_44;
     local_44->iteratorIndex = 0;
-    while (uVar11 = groupContent->iteratorIndex, uVar11 < groupContent->count) {
-      pvVar10 = (void *)(groupContent->elementSize * uVar11 + (int)groupContent->data);
-      groupContent->iteratorIndex = uVar11 + 1;
+    while (uVar11 = array->iteratorIndex, uVar11 < array->count) {
+      pvVar10 = (void *)(array->elementSize * uVar11 + (int)array->data);
+      array->iteratorIndex = uVar11 + 1;
       if (pvVar10 == (void *)0x0) break;
       FUN_006a5e90(*(short **)((int)pvVar10 + 4));
     }
-    FUN_006ae110((byte *)groupContent);
+    DArrayDestroy(array);
     local_9 = local_9 << 1;
     local_40 = (int *)((int)local_40 + 1);
     local_2c = CONCAT31(local_2c._1_3_,(byte)local_2c << 2);

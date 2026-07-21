@@ -1,4 +1,4 @@
-FUN_004158e0:
+STGameObjC::STGameObjC:
 004158E0  53                        PUSH EBX
 004158E1  56                        PUSH ESI
 004158E2  57                        PUSH EDI

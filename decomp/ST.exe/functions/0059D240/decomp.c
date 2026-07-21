@@ -71,10 +71,10 @@ void __thiscall FSGSTy::LicCtrls(FSGSTy *this)
   if (iVar7 == 0) {
     puVar8 = &local_8->field_1E8E;
     if (local_8->field_1E8E != 0) {
-      FUN_006ab060((LPVOID *)puVar8);
+      FreeAndNull((void **)puVar8);
     }
     if (this_00->field_1E92 != 0) {
-      FUN_006ab060((LPVOID *)&this_00->field_1E92);
+      FreeAndNull((void **)&this_00->field_1E92);
     }
     iVar7 = 1;
     puVar10 = (undefined4 *)(this_00->field_005D + 0x28);
@@ -142,7 +142,9 @@ void __thiscall FSGSTy::LicCtrls(FSGSTy *this)
       local_4b0 = 0x6335;
       local_688[3] = uVar4;
       local_4b8 = local_88c;
-      (**(code **)(*(int *)this_00->field_000C + 8))(8,&this_00->field_1B14,0,local_8c4,0);
+      (*this_00->field_000C->vtable->CreateObject)
+                ((SystemClassTy *)this_00->field_000C,8,&this_00->field_1B14,(int *)0x0,local_8c4,0)
+      ;
       this_00->field_002D = 5;
       FUN_006e6080(this_00,2,this_00->field_1B14,(undefined4 *)&this_00->field_0x1d);
       if (this_00->field_1B2C != 0xffffffff) {

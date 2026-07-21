@@ -1,7 +1,14 @@
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+/* [STHiddenThisApplier] Anonymous hidden receiver recovered as
+   /SubmarineTitans/Recovered/HiddenThis/AnonReceiver_0054A9B0.
+   Evidence: incoming_receiver_captures=1; receiver_accesses=18; incoming_edx_uses=0; calls=16;
+   ecx_pointer_setup=16; ecx_scalar_setup=0; caller_cleanup_calls=0; callee_ret_pop=[12];
+   expected_stack=12; receiver_family_members=1 */
 
-void __thiscall FUN_0054a9b0(void *this,float param_1,float param_2)
+void __thiscall
+SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0054A9B0::FUN_0054a9b0
+          (AnonReceiver_0054A9B0 *this,float param_1,float param_2,float param_3)
 
 {
   uint uVar1;
@@ -15,7 +22,6 @@ void __thiscall FUN_0054a9b0(void *this,float param_1,float param_2)
   void *unaff_EDI;
   int iVar8;
   longlong lVar9;
-  float in_stack_0000000c;
   InternalExceptionFrame local_58;
   int local_14;
   int local_10;
@@ -28,7 +34,7 @@ void __thiscall FUN_0054a9b0(void *this,float param_1,float param_2)
   }
   local_58.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_58;
-  local_c = this;
+  local_c = (AnonShape_0054A9B0_643B0813 *)this;
   iVar5 = Library::MSVCRT::__setjmp3(local_58.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (iVar5 != 0) {
     g_currentExceptionFrame = local_58.previous;
@@ -50,7 +56,7 @@ void __thiscall FUN_0054a9b0(void *this,float param_1,float param_2)
     lVar9 = Library::MSVCRT::__ftol();
     iVar5 = (int)(short)lVar9;
   }
-  if (in_stack_0000000c < _DAT_0079034c) {
+  if (param_3 < _DAT_0079034c) {
     lVar9 = Library::MSVCRT::__ftol();
     iVar8 = (short)lVar9 + -1;
   }
@@ -136,8 +142,8 @@ void __thiscall FUN_0054a9b0(void *this,float param_1,float param_2)
     *(undefined4 *)(pAVar4->field_04EB + 8) = 0;
     pAVar4->field_04EF = param_1;
     pAVar4->field_04F3 = param_2;
-    pAVar4->field_04F7 = in_stack_0000000c;
-    FUN_006e2970(PTR_00807598,param_1,param_2,in_stack_0000000c,(int *)(pAVar4->field_04EB + 0x1c),
+    pAVar4->field_04F7 = param_3;
+    FUN_006e2970(PTR_00807598,param_1,param_2,param_3,(int *)(pAVar4->field_04EB + 0x1c),
                  (int *)(pAVar4->field_04EB + 0x20));
     *(int *)(pAVar4->field_04EB + 0x1c) =
          *(int *)(pAVar4->field_04EB + 0x1c) - *(int *)(pAVar4->field_04E7 + 9) / 2;
@@ -164,8 +170,9 @@ cf_common_exit_0054ACFD:
     FUN_006e98e0(PTR_00807598,local_8,0,*(undefined4 *)pAVar4->field_04E7,
                  *(int *)((int)pAVar4->field_04E7 + 0x21),1);
     FUN_006eaaa0(PTR_00807598,local_8,0);
-    FUN_006ea960(PTR_00807598,local_8,param_1,param_2,in_stack_0000000c + _DAT_007904fc);
-    FUN_006ea050(PTR_00807598,local_8,1,0xffffffff,0);
+    FUN_006ea960(PTR_00807598,local_8,param_1,param_2,param_3 + _DAT_007904fc);
+    AnonReceiver_006EA050::FUN_006ea050
+              ((AnonReceiver_006EA050 *)PTR_00807598,local_8,1,0xffffffff,0);
   }
   g_currentExceptionFrame = local_58.previous;
   return;

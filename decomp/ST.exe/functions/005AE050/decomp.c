@@ -8,7 +8,7 @@ void __thiscall ChooseMapTy::ShowDescription(ChooseMapTy *this,uint param_1)
 {
   char cVar1;
   ChooseMapTy_field_1A5FState CVar2;
-  AnonPointee_StartSystemTy_0544 *pAVar3;
+  AnonShape_006C7610_838EDECF *pAVar3;
   ccFntTy *pcVar4;
   StartSystemTy *pSVar5;
   code *pcVar6;
@@ -58,9 +58,9 @@ void __thiscall ChooseMapTy::ShowDescription(ChooseMapTy *this,uint param_1)
     return;
   }
   puVar8 = Library::Ourlib::MFIMG::mfImgLoad(g_cMf32_00806780,1,s_MM_MAPB_007cc790,0,1);
-  DibPut((AnonShape_006B84D0_7C7D97C6 *)PTR_0081176c->field_02F0,0,0,'\x01',(byte *)puVar8);
-  pAVar3 = PTR_0081176c->field_0544;
-  FUN_006b4170((int)pAVar3,0,0,0,pAVar3->field_0004,pAVar3->field_0008,0xff);
+  DibPut((AnonShape_006B5B10_E0D06CF1 *)PTR_0081176c->field_02F0,0,0,'\x01',(byte *)puVar8);
+  pAVar3 = (AnonShape_006C7610_838EDECF *)PTR_0081176c->field_0544;
+  FUN_006b4170(pAVar3,0,0,0,pAVar3->field_0004,pAVar3->field_0008,0xff);
   if ((AnonShape_006B5570_4D68B99C *)PTR_0081176c->field_0548 != (AnonShape_006B5570_4D68B99C *)0x0)
   {
     FUN_006b5570((AnonShape_006B5570_4D68B99C *)PTR_0081176c->field_0548);

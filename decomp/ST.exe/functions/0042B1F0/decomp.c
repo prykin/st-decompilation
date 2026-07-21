@@ -56,14 +56,14 @@ STAllPlayersC::GetGObjFromBox
   if (local_8 < 0) {
     local_8 = 0;
   }
-  iVar4 = SHORT_007fb240 + -1;
+  iVar4 = g_worldGrid.sizeX + -1;
   if (iVar4 < local_14) {
     local_14 = iVar4;
   }
   if (local_c < 0) {
     local_c = 0;
   }
-  iVar4 = SHORT_007fb242 + -1;
+  iVar4 = g_worldGrid.sizeY + -1;
   if (iVar4 < local_10) {
     local_10 = iVar4;
   }
@@ -71,12 +71,13 @@ STAllPlayersC::GetGObjFromBox
     local_18 = 0;
   }
   iVar6 = local_18;
-  iVar4 = SHORT_007fb244 + -1;
+  iVar4 = g_worldGrid.sizeZ + -1;
   if (iVar4 < local_1c) {
     local_1c = iVar4;
   }
   iVar4 = local_1c;
-  if ((((SHORT_007fb240 < local_8) || (SHORT_007fb242 < local_c)) || (SHORT_007fb244 < local_18)) ||
+  if ((((g_worldGrid.sizeX < local_8) || (g_worldGrid.sizeY < local_c)) ||
+      (g_worldGrid.sizeZ < local_18)) ||
      (((local_14 < local_8 || (local_10 < local_c)) || (local_1c < local_18)))) {
     RaiseInternalException
               (-0x5001fff7,g_overwriteContext_007ED77C,s_E____titans_wlad_to_allpl_cpp_007a6004,
@@ -103,23 +104,23 @@ STAllPlayersC::GetGObjFromBox
   if (param_11 != (int *)0x0) {
     *param_11 = 0;
   }
-  iVar7 = SHORT_007fb240 * local_c + local_8 + (iVar6 + -1) * (int)SHORT_007fb246;
+  iVar7 = g_worldGrid.sizeX * local_c + local_8 + (iVar6 + -1) * (int)g_worldGrid.planeStride;
   if (iVar6 <= iVar4) {
     local_24 = (iVar4 - iVar6) + 1;
     iVar4 = local_c;
     do {
-      iVar7 = iVar7 + SHORT_007fb246;
-      local_2c = iVar7 - SHORT_007fb240;
+      iVar7 = iVar7 + g_worldGrid.planeStride;
+      local_2c = iVar7 - g_worldGrid.sizeX;
       if (iVar4 <= local_10) {
         local_20 = (local_10 - iVar4) + 1;
         local_28 = iVar7;
         do {
-          local_2c = local_2c + SHORT_007fb240;
+          local_2c = local_2c + g_worldGrid.sizeX;
           if (local_8 <= local_14) {
             iVar6 = (local_14 - local_8) + 1;
             iVar4 = local_2c * 8 + -8;
             do {
-              piVar1 = *(int **)((int)g_worldCells[1].objects + iVar4);
+              piVar1 = *(int **)((int)g_worldGrid.cells[1].objects + iVar4);
               if (((piVar1 != (int *)0x0) && (piVar1[9] == (int)param_1)) &&
                  (iVar7 = (**(code **)(*piVar1 + 0xf8))(), iVar7 == 1)) {
                 iVar7 = piVar1[8];

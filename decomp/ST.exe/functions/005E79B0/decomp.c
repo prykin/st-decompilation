@@ -9,8 +9,8 @@ void __thiscall WaitTy::PaintWait(WaitTy *this,char param_1)
   code *pcVar1;
   WaitTy *pWVar2;
   int errorCode;
-  uint *puVar3;
-  int iVar4;
+  uint *extraout_EAX;
+  int iVar3;
   ChatGlassTy *extraout_ECX;
   undefined1 *this_00;
   ChatGlassTy *extraout_ECX_00;
@@ -19,10 +19,10 @@ void __thiscall WaitTy::PaintWait(WaitTy *this,char param_1)
   StartServTy *this_02;
   undefined4 unaff_EBX;
   void *unaff_ESI;
+  uint uVar4;
   uint uVar5;
-  uint uVar6;
-  ccFntTy *pcVar7;
-  undefined4 uVar8;
+  ccFntTy *pcVar6;
+  undefined4 uVar7;
   InternalExceptionFrame local_4c;
   WaitTy *local_8;
   
@@ -55,19 +55,19 @@ void __thiscall WaitTy::PaintWait(WaitTy *this,char param_1)
                 (this_01,(int)DAT_0080759c,0,0,200,0x1f1,400,0x62,
                  (undefined4 *)&pWVar2->field_1A5B->field_0x140);
     }
-    uVar8 = 0;
-    pcVar7 = (ccFntTy *)PTR_0081176c->field_0030;
-    uVar6 = 0xffffffff;
-    uVar5 = 0xfffffffe;
-    puVar3 = (uint *)FUN_006b0140(0x26ae,HINSTANCE_00807618);
-    StartServTy::WrTextDDX(this_02,0,0xe9,0x14,0x14c,0x18,puVar3,uVar5,uVar6,pcVar7,uVar8);
+    uVar7 = 0;
+    pcVar6 = (ccFntTy *)PTR_0081176c->field_0030;
+    uVar5 = 0xffffffff;
+    uVar4 = 0xfffffffe;
+    LoadResourceString(0x26ae,HINSTANCE_00807618);
+    StartServTy::WrTextDDX(this_02,0,0xe9,0x14,0x14c,0x18,extraout_EAX,uVar4,uVar5,pcVar6,uVar7);
     g_currentExceptionFrame = local_4c.previous;
     return;
   }
   g_currentExceptionFrame = local_4c.previous;
-  iVar4 = ReportDebugMessage(s_E____titans_Start_wait_obj_cpp_007cdd5c,0xeb,0,errorCode,
+  iVar3 = ReportDebugMessage(s_E____titans_Start_wait_obj_cpp_007cdd5c,0xeb,0,errorCode,
                              &DAT_007a4ccc,s_WaitTy__PaintWait_007cddac);
-  if (iVar4 != 0) {
+  if (iVar3 != 0) {
     pcVar1 = (code *)swi(3);
     (*pcVar1)();
     return;

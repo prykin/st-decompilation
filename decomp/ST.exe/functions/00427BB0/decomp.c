@@ -1,5 +1,13 @@
 
-undefined4 __thiscall FUN_00427bb0(void *this,int param_1,int param_2,int param_3)
+/* [STHiddenThisApplier] Anonymous hidden receiver recovered as
+   /SubmarineTitans/Recovered/HiddenThis/AnonReceiver_004248D0.
+   Evidence: incoming_receiver_captures=1; receiver_accesses=3; incoming_edx_uses=0; calls=5;
+   ecx_pointer_setup=5; ecx_scalar_setup=0; caller_cleanup_calls=0; callee_ret_pop=[12];
+   expected_stack=12; receiver_family_members=21; adopt_untyped_existing_thiscall */
+
+undefined4 __thiscall
+SubmarineTitans::Recovered::HiddenThis::AnonReceiver_004248D0::FUN_00427bb0
+          (AnonReceiver_004248D0 *this,int param_1,int param_2,int param_3)
 
 {
   byte bVar1;
@@ -14,7 +22,7 @@ undefined4 __thiscall FUN_00427bb0(void *this,int param_1,int param_2,int param_
   int local_8;
   
   piVar3 = (int *)(param_1 * 0x10 + DAT_007f4d74);
-  iVar6 = (DAT_007f4d80 + param_1) * *(int *)((int)this + 0x37c) + *(int *)((int)this + 0x38c);
+  iVar6 = (DAT_007f4d80 + param_1) * *(int *)&this->field_0x37c + *(int *)&this->field_0x38c;
   bVar1 = 0;
   local_8 = 0x7fffffff;
   if (param_1 <= param_2) {
@@ -96,7 +104,7 @@ LAB_00427cca:
         }
       }
       piVar3 = piVar3 + 4;
-      iVar6 = iVar6 + *(int *)((int)this + 0x37c);
+      iVar6 = iVar6 + *(int *)&this->field_0x37c;
       param_1 = iVar4 + 1;
     } while (iVar4 + 1 <= param_2);
     if (local_8 != 0x7fffffff) {

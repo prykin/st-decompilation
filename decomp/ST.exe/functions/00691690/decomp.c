@@ -193,13 +193,12 @@ LAB_00691a65:
                   this_00->field_013C = 0;
                   if (param_3 != 0) {
                     puVar4 = (undefined4 *)(0x28 / (longlong)*(int *)(&DAT_007dfa90 + iVar12 * 4));
-                    local_3c = (AnonShape_006B4B20_3D4F4412 *)
-                               thunk_FUN_00692920(param_2,(undefined4 *)this_00->field_000C,puVar4,
+                    local_3c = thunk_FUN_00692920(param_2,(undefined4 *)this_00->field_000C,puVar4,
                                                   (int)puVar4,1);
                     piVar2 = local_28;
                     FUN_006b4b20((int *)(*local_28 + 0x2d + (int)(local_24 + (int)local_10) * 4),
                                  local_3c,0,0);
-                    FUN_006ab060(&local_3c);
+                    FreeAndNull(&local_3c);
                     psVar1 = (short *)(*piVar2 + 0x23);
                     *psVar1 = *psVar1 + 1;
                     *(undefined4 *)(*piVar2 + 0x25) = 0;
@@ -288,13 +287,12 @@ LAB_00691a65:
                 this_00->field_013C = 0;
                 if (param_3 != 0) {
                   puVar4 = (undefined4 *)(0x28 / (longlong)*(int *)(&DAT_007dfa90 + iVar12 * 4));
-                  local_2c = (AnonShape_006B4B20_3D4F4412 *)
-                             thunk_FUN_00692920(param_2,(undefined4 *)this_00->field_000C,puVar4,
+                  local_2c = thunk_FUN_00692920(param_2,(undefined4 *)this_00->field_000C,puVar4,
                                                 (int)puVar4,1);
                   iVar15 = local_18 + local_8;
                   FUN_006b4b20((int *)(*(int *)((int)pvVar3 + iVar15 * 4 + 0x1a74) + 0x2d +
                                       (int)local_10 * 4),local_2c,0,0);
-                  FUN_006ab060(&local_2c);
+                  FreeAndNull(&local_2c);
                   psVar1 = (short *)(*(int *)((int)pvVar3 + iVar15 * 4 + 0x1a74) + 0x23);
                   *psVar1 = *psVar1 + 1;
                 }
@@ -377,13 +375,12 @@ LAB_00691a65:
                 this_00->field_013C = 0;
                 if (param_3 != 0) {
                   puVar4 = (undefined4 *)(0x28 / (longlong)*(int *)(&DAT_007dfa90 + iVar12 * 4));
-                  local_34 = (AnonShape_006B4B20_3D4F4412 *)
-                             thunk_FUN_00692920(param_2,(undefined4 *)this_00->field_000C,puVar4,
+                  local_34 = thunk_FUN_00692920(param_2,(undefined4 *)this_00->field_000C,puVar4,
                                                 (int)puVar4,1);
                   iVar15 = local_18 + local_8;
                   FUN_006b4b20((int *)(*(int *)((int)pvVar3 + iVar15 * 4 + 0x1b08) + 0x2d +
                                       (int)local_10 * 4),local_34,0,0);
-                  FUN_006ab060(&local_34);
+                  FreeAndNull(&local_34);
                   psVar1 = (short *)(*(int *)((int)pvVar3 + iVar15 * 4 + 0x1b08) + 0x23);
                   *psVar1 = *psVar1 + 1;
                 }

@@ -103,10 +103,10 @@ cf_error_exit_004CC50A:
     (**(code **)(*(int *)param_1 + 0x90))(3,0x363);
   }
   if (*(int *)&param_1->field_0x43c == 2) {
-    uVar1 = thunk_FUN_004406c0(param_1->field_023D);
+    uVar1 = GetPlayerRaceId(param_1->field_023D);
     if (*(int *)(&DAT_00795f18 + ((uVar1 & 0xff) + param_1->field_0235 * 3) * 4) != 0) {
       iVar2 = *(int *)param_1;
-      uVar1 = thunk_FUN_004406c0(param_1->field_023D);
+      uVar1 = GetPlayerRaceId(param_1->field_023D);
       (**(code **)(iVar2 + 0x90))
                 (3,*(undefined4 *)(&DAT_00795f18 + ((uVar1 & 0xff) + param_1->field_0235 * 3) * 4));
     }

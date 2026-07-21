@@ -30,8 +30,8 @@ void FUN_006b94e0(AnonShape_006B94E0_A7E74DF0 *param_1,undefined4 param_2,int pa
   iVar3 = param_5 + -1 + param_7;
   iVar5 = param_1->field_04A0;
   uVar6 = param_1->field_04A4;
-  FUN_006bbb00((int)param_1,0xd);
-  FUN_006c6450((int)param_1,puVar1[1]);
+  FUN_006bbb00(param_1,0xd);
+  FUN_006c6450(param_1,puVar1[1]);
   FUN_006c6410((AnonShape_006C6410_3502CDE7 *)param_1,puVar1[2]);
   param_3 = 0;
   if (0 < iVar8) {
@@ -81,9 +81,9 @@ void FUN_006b94e0(AnonShape_006B94E0_A7E74DF0 *param_1,undefined4 param_2,int pa
     } while (param_3 < iVar8);
   }
 cf_common_exit_006B96BA:
-  FUN_006bbb00((int)param_1,uVar4);
+  FUN_006bbb00(param_1,uVar4);
   FUN_006c6410((AnonShape_006C6410_3502CDE7 *)param_1,iVar5);
-  FUN_006c6450((int)param_1,uVar6);
+  FUN_006c6450(param_1,uVar6);
   return;
 }
 

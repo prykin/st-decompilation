@@ -5,7 +5,7 @@ FUN_006d6160(void *this,undefined4 param_1,undefined4 param_2,undefined4 param_3
 
 {
   FUN_00748a83(this,param_2,param_1,param_3,param_4,param_5);
-  *(undefined ***)this = &PTR_FUN_0079dd34;
+  *(VTable_0079DD34 **)this = &VTable_0079DD34;
   return this;
 }
 

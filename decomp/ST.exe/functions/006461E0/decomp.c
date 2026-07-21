@@ -25,7 +25,7 @@ undefined4 __thiscall STVolcanoC::GetMessage(STVolcanoC *this,AnonShape_006461E0
   undefined4 *puVar9;
   InternalExceptionFrame local_54;
   byte *local_10;
-  uint local_c;
+  AnonShape_0060EA30_DCEB68AD *local_c;
   STJellyGunC *local_8;
   
   local_54.previous = g_currentExceptionFrame;
@@ -288,7 +288,7 @@ undefined4 __thiscall STVolcanoC::GetMessage(STVolcanoC *this,AnonShape_006461E0
   else if (uVar2 == 0x10f) {
     local_10 = (byte *)thunk_FUN_00646d40(local_8,&local_c);
     STPlaySystemC::SaveObjData(PTR_00802a38,this_00->field_0018,local_10,local_c);
-    FUN_006ab060(&local_10);
+    FreeAndNull(&local_10);
   }
   g_currentExceptionFrame = local_54.previous;
   return 0;

@@ -1,7 +1,7 @@
 
 /* WARNING: Removing unreachable block (ram,0x00483eb6) */
 
-undefined4 __thiscall FUN_00483e30(void *this,AnonShape_00483E30_F0F8D504 *param_1)
+undefined4 __thiscall FUN_00483e30(void *this,AnonShape_00482DB0_070D50BF *param_1)
 
 {
   uint uVar1;

@@ -172,8 +172,9 @@ STJellyManC::GetMessage(STJellyManC *this,AnonShape_00581BF0_F07EE3A2 *param_1)
     local_8[0x37] = 0;
     local_8[0x38] = 0;
     local_8[0x39] = 0;
-    STPlaySystemC::SaveObjData(PTR_00802a38,pSVar5->field_0018,local_8,0x3a);
-    FUN_006ab060(&local_8);
+    STPlaySystemC::SaveObjData
+              (PTR_00802a38,pSVar5->field_0018,local_8,(AnonShape_0060EA30_DCEB68AD *)0x3a);
+    FreeAndNull(&local_8);
     g_currentExceptionFrame = local_54.previous;
     return 0;
   }
@@ -188,13 +189,13 @@ STJellyManC::GetMessage(STJellyManC *this,AnonShape_00581BF0_F07EE3A2 *param_1)
       return 0;
     }
     if (*(int *)&pSVar5[1].field_0x36 != 0) {
-      FUN_006ab060((LPVOID *)&pSVar5[1].field_0x36);
+      FreeAndNull((void **)&pSVar5[1].field_0x36);
     }
     if (*(int *)&pSVar5[1].field_0x3a == 0) {
       g_currentExceptionFrame = local_54.previous;
       return 0;
     }
-    FUN_006ab060((LPVOID *)&pSVar5[1].field_0x3a);
+    FreeAndNull((void **)&pSVar5[1].field_0x3a);
     g_currentExceptionFrame = local_54.previous;
     return 0;
   }
@@ -214,8 +215,8 @@ STJellyManC::GetMessage(STJellyManC *this,AnonShape_00581BF0_F07EE3A2 *param_1)
     }
     *(undefined2 *)puVar11 = *(undefined2 *)puVar12;
     if (((((int)pSVar5[1].field_001C < 0) || ((int)pSVar5[1].field_0020 < 0)) ||
-        ((int)SHORT_007fb240 < (int)pSVar5[1].field_0024)) ||
-       ((int)SHORT_007fb242 < (int)pSVar5[1].field_0028)) {
+        ((int)g_worldGrid.sizeX < (int)pSVar5[1].field_0024)) ||
+       ((int)g_worldGrid.sizeY < (int)pSVar5[1].field_0028)) {
       iVar6 = ReportDebugMessage(s_E____titans_Igor_to_jell_m_cpp_007cb2f0,0x13d,0,0,&DAT_007a4ccc,
                                  s_Bad_init_coordinates_007cb3ac);
       if (iVar6 != 0) {

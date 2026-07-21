@@ -45,19 +45,19 @@ FUN_005fa360(void *this,undefined4 *param_1,int param_2,int param_3,int param_4,
         }
         iVar3 = *(short *)(&DAT_007ce7b0 + (iVar4 + local_8) * 4) + param_2;
         iVar6 = *(short *)(&DAT_007ce7b2 + (iVar4 + local_8) * 4) + param_3;
-        if ((((-1 < iVar3) && (iVar3 < SHORT_007fb240)) && (-1 < iVar6)) &&
-           (((iVar6 < SHORT_007fb242 && (-1 < local_14)) && (local_14 < SHORT_007fb244)))) {
+        if ((((-1 < iVar3) && (iVar3 < g_worldGrid.sizeX)) && (-1 < iVar6)) &&
+           (((iVar6 < g_worldGrid.sizeY && (-1 < local_14)) && (local_14 < g_worldGrid.sizeZ)))) {
           sVar7 = (short)iVar3;
           sVar8 = (short)iVar6;
           sVar9 = (short)local_14;
           bVar2 = thunk_FUN_004961b0(sVar7,sVar8,sVar9);
           if ((CONCAT31(extraout_var,bVar2) != 0) &&
-             (((sVar7 < 0 || (SHORT_007fb240 <= sVar7)) ||
+             (((sVar7 < 0 || (g_worldGrid.sizeX <= sVar7)) ||
               ((sVar8 < 0 ||
-               ((((SHORT_007fb242 <= sVar8 || (sVar9 < 0)) || (SHORT_007fb244 <= sVar9)) ||
-                (g_worldCells
-                 [(int)SHORT_007fb246 * (int)sVar9 + (int)SHORT_007fb240 * (int)sVar8 + (int)sVar7].
-                 objects[0] == (STWorldObject *)0x0)))))))) {
+               ((((g_worldGrid.sizeY <= sVar8 || (sVar9 < 0)) || (g_worldGrid.sizeZ <= sVar9)) ||
+                (g_worldGrid.cells
+                 [(int)g_worldGrid.planeStride * (int)sVar9 + (int)g_worldGrid.sizeX * (int)sVar8 +
+                  (int)sVar7].objects[0] == (STWorldObject *)0x0)))))))) {
             bVar1 = true;
             break;
           }

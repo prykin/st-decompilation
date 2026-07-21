@@ -11,14 +11,14 @@ void __thiscall CPanelTy::PaintNameRes(CPanelTy *this,int param_1)
   int iVar3;
   uint uVar4;
   byte *pbVar5;
-  UINT uID;
-  uint *puVar6;
+  UINT resourceId;
+  uint *extraout_EAX;
   undefined4 unaff_ESI;
   void *unaff_EDI;
-  HINSTANCE pHVar7;
+  HINSTANCE module;
+  int iVar6;
+  int iVar7;
   int iVar8;
-  int iVar9;
-  int iVar10;
   InternalExceptionFrame local_4c;
   CPanelTy *local_8;
   
@@ -29,25 +29,25 @@ void __thiscall CPanelTy::PaintNameRes(CPanelTy *this,int param_1)
   pCVar2 = local_8;
   if (iVar3 == 0) {
     uVar4 = thunk_FUN_005276e0(local_8->field_0C31,local_8->field_0C32);
-    pbVar5 = (byte *)FUN_0070b3a0(pCVar2->field_029A,uVar4);
-    DibPut((AnonShape_006B84D0_7C7D97C6 *)pCVar2->field_0194,param_1 + 5,0x65,'\x01',pbVar5);
+    pbVar5 = (byte *)FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)pCVar2->field_029A,uVar4);
+    DibPut((AnonShape_006B5B10_E0D06CF1 *)pCVar2->field_0194,param_1 + 5,0x65,'\x01',pbVar5);
     ccFntTy::SetSurf(pCVar2->field_01B8,pCVar2->field_0194,0,param_1 + 2,0x52,0xb2,10);
-    iVar10 = -1;
-    iVar9 = -1;
-    uVar4 = 0;
     iVar8 = -1;
+    iVar7 = -1;
+    uVar4 = 0;
+    iVar6 = -1;
     iVar3 = -2;
-    pHVar7 = HINSTANCE_00807618;
-    uID = thunk_FUN_00528060(pCVar2->field_0C31,pCVar2->field_0C32);
-    puVar6 = (uint *)FUN_006b0140(uID,pHVar7);
-    ccFntTy::WrTxt(pCVar2->field_01B8,puVar6,iVar3,iVar8,uVar4,iVar9,iVar10);
+    module = HINSTANCE_00807618;
+    resourceId = thunk_FUN_00528060(pCVar2->field_0C31,pCVar2->field_0C32);
+    LoadResourceString(resourceId,module);
+    ccFntTy::WrTxt(pCVar2->field_01B8,extraout_EAX,iVar3,iVar6,uVar4,iVar7,iVar8);
     g_currentExceptionFrame = local_4c.previous;
     return;
   }
   g_currentExceptionFrame = local_4c.previous;
-  iVar8 = ReportDebugMessage(s_E____titans_Andrey_cpanel4_cpp_007c2700,0x76,0,iVar3,&DAT_007a4ccc,
+  iVar6 = ReportDebugMessage(s_E____titans_Andrey_cpanel4_cpp_007c2700,0x76,0,iVar3,&DAT_007a4ccc,
                              s_CPanelTy__PaintNameRes_007c2794);
-  if (iVar8 != 0) {
+  if (iVar6 != 0) {
     pcVar1 = (code *)swi(3);
     (*pcVar1)();
     return;

@@ -31,7 +31,7 @@ STBHEShellC::GetMessage(STBHEShellC *this,AnonShape_005F27C0_470044FE *param_1)
   int local_28;
   int local_24;
   byte *local_20;
-  uint local_1c;
+  AnonShape_0060EA30_DCEB68AD *local_1c;
   int local_18;
   AnonShape_005F4FA0_36330E3A *local_14;
   int local_10;
@@ -85,14 +85,15 @@ STBHEShellC::GetMessage(STBHEShellC *this,AnonShape_005F27C0_470044FE *param_1)
       }
       puVar12 = &LAB_00403170;
     }
-    FUN_006e9520(PTR_00807598,uVar9,0,(uint)puVar12,(uint)local_14);
+    SubmarineTitans::Recovered::HiddenThis::AnonReceiver_004248D0::FUN_006e9520
+              ((AnonReceiver_004248D0 *)PTR_00807598,uVar9,0,(uint)puVar12,(uint)local_14);
     g_currentExceptionFrame = local_6c.previous;
     return 0;
   }
   if (uVar9 == 0x10f) {
     local_20 = thunk_FUN_005f5a90(local_14,(int *)&local_1c);
     STPlaySystemC::SaveObjData(PTR_00802a38,*(undefined4 *)&this_00->field_0x18,local_20,local_1c);
-    FUN_006ab060(&local_20);
+    FreeAndNull(&local_20);
     g_currentExceptionFrame = local_6c.previous;
     return 0;
   }
@@ -150,7 +151,8 @@ STBHEShellC::GetMessage(STBHEShellC *this,AnonShape_005F27C0_470044FE *param_1)
                                  *(int *)&this_00->field_0x69);
       this_00->field_0103 = (char)iVar4;
       if ((char)iVar4 != '\0') {
-        thunk_FUN_005f35f0(this_00);
+        SubmarineTitans::Recovered::HiddenThis::AnonReceiver_005F35F0::thunk_FUN_005f35f0
+                  ((AnonReceiver_005F35F0 *)this_00,*(int *)&this_00->field_0x87);
       }
       *(undefined4 *)&this_00->field_0x7d = DAT_007e66d4;
       g_currentExceptionFrame = local_6c.previous;
@@ -168,18 +170,19 @@ STBHEShellC::GetMessage(STBHEShellC *this,AnonShape_005F27C0_470044FE *param_1)
       g_currentExceptionFrame = local_6c.previous;
       return 0;
     }
-    thunk_FUN_005f35f0(this_00);
+    SubmarineTitans::Recovered::HiddenThis::AnonReceiver_005F35F0::thunk_FUN_005f35f0
+              ((AnonReceiver_005F35F0 *)this_00,*(int *)&this_00->field_0x87);
     g_currentExceptionFrame = local_6c.previous;
     return 0;
   }
   switch(*(undefined4 *)&local_14->field_0x104) {
   case 0:
     uVar9 = thunk_FUN_005f4370(local_14,&local_8,&local_10,&local_c,0);
-    uVar7 = thunk_FUN_00601500(&this_00->field_0x20,local_8,local_10,local_c,
-                               *(int *)&this_00->field_0x93,*(int *)&this_00->field_0x97,
-                               *(int *)&this_00->field_0x9b,*(int *)&this_00->field_0x51,0x1e,
-                               *(int *)&this_00->field_0x81,*(undefined2 *)&this_00->field_0x85,0xb5
-                               ,0,0);
+    uVar7 = SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00601500::thunk_FUN_00601500
+                      ((AnonReceiver_00601500 *)&this_00->field_0x20,local_8,local_10,local_c,
+                       *(int *)&this_00->field_0x93,*(int *)&this_00->field_0x97,
+                       *(int *)&this_00->field_0x9b,*(int *)&this_00->field_0x51,0x1e,
+                       *(int *)&this_00->field_0x81,*(undefined2 *)&this_00->field_0x85,0xb5,0,0);
     if (0 < (int)uVar7) {
       if (uVar7 == 5) {
         thunk_FUN_005f3470((STJellyGunC *)this_00);
@@ -207,11 +210,11 @@ LAB_005f2b3a:
     break;
   case 1:
     uVar9 = thunk_FUN_005f4370(local_14,&local_8,&local_10,&local_c,1);
-    uVar7 = thunk_FUN_00601500(&this_00->field_0x20,local_8,local_10,local_c,
-                               *(int *)&this_00->field_0x93,*(int *)&this_00->field_0x97,
-                               *(int *)&this_00->field_0x9b,*(int *)&this_00->field_0x51,0x1e,
-                               *(int *)&this_00->field_0x81,*(undefined2 *)&this_00->field_0x85,0xb5
-                               ,0,0);
+    uVar7 = SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00601500::thunk_FUN_00601500
+                      ((AnonReceiver_00601500 *)&this_00->field_0x20,local_8,local_10,local_c,
+                       *(int *)&this_00->field_0x93,*(int *)&this_00->field_0x97,
+                       *(int *)&this_00->field_0x9b,*(int *)&this_00->field_0x51,0x1e,
+                       *(int *)&this_00->field_0x81,*(undefined2 *)&this_00->field_0x85,0xb5,0,0);
     if (0 < (int)uVar7) {
       if (uVar7 != 5) goto LAB_005f2b3a;
       goto switchD_005f29cb_caseD_5;
@@ -405,7 +408,7 @@ switchD_005f29cb_default:
   }
   iVar4 = *(int *)&this_00->field_0x104;
   if (((iVar4 != 5) && (iVar4 != 3)) && (iVar4 != 4)) {
-    thunk_FUN_005f4680((int)this_00);
+    thunk_FUN_005f4680((AnonReceiver_005F35F0 *)this_00);
     g_currentExceptionFrame = local_6c.previous;
     return 0;
   }

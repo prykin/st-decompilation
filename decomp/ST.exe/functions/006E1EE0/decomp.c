@@ -1,7 +1,14 @@
 
+/* [STHiddenThisApplier] Anonymous hidden receiver recovered as
+   /SubmarineTitans/Recovered/HiddenThis/AnonReceiver_004248D0.
+   Evidence: incoming_receiver_captures=1; receiver_accesses=26; incoming_edx_uses=0; calls=3;
+   ecx_pointer_setup=2; ecx_scalar_setup=0; caller_cleanup_calls=0; callee_ret_pop=[16];
+   expected_stack=16; receiver_family_members=21; adopt_untyped_existing_thiscall */
+
 bool __thiscall
-FUN_006e1ee0(void *this,AnonShape_006E1EE0_698AE49A *param_1,undefined4 *param_2,int param_3,
-            int *param_4)
+SubmarineTitans::Recovered::HiddenThis::AnonReceiver_004248D0::FUN_006e1ee0
+          (AnonReceiver_004248D0 *this,AnonShape_006E1EE0_698AE49A *param_1,undefined4 *param_2,
+          int param_3,int *param_4)
 
 {
   byte bVar1;
@@ -36,7 +43,7 @@ FUN_006e1ee0(void *this,AnonShape_006E1EE0_698AE49A *param_1,undefined4 *param_2
   
   pbVar12 = (byte *)param_1->field_0028;
   local_3c = 0;
-  if ((*(int *)((int)this + 0x124) == 0) || (*(int *)((int)this + 0x124) == 10)) {
+  if ((*(int *)&this->field_0x124 == 0) || (*(int *)&this->field_0x124 == 10)) {
     local_50 = param_1->field_003C;
   }
   else {
@@ -71,13 +78,13 @@ FUN_006e1ee0(void *this,AnonShape_006E1EE0_698AE49A *param_1,undefined4 *param_2
   default:
     bVar1 = 0;
   }
-  iVar10 = *(int *)((int)this + 0xa8);
+  iVar10 = *(int *)&this->field_0xa8;
   local_28 = 0;
   local_48 = 0;
   iVar2 = 0x7fffffff;
   if (0 < param_1->field_0024) {
     do {
-      if (((*(byte *)((int)this + 0xac) & *pbVar12) != 0) &&
+      if (((this->field_0xac & *pbVar12) != 0) &&
          ((local_50 == 0 ||
           (('\x02' << ((byte)(iVar10 << 1) & 0x1f) & *(byte *)(local_48 + local_50)) != 0)))) {
         iVar2 = (param_2 + (uint)pbVar12[1] * 4)[3];
@@ -127,10 +134,10 @@ FUN_006e1ee0(void *this,AnonShape_006E1EE0_698AE49A *param_1,undefined4 *param_2
           local_2c = iVar6;
         }
         if (((iVar2 != 0 || iVar3 != 0) || iVar4 != 0) ||
-           ((((local_40 >> 0x10 < *(int *)((int)this + 0x38) &&
-              (*(int *)((int)this + 0x30) <= local_38 >> 0x10)) &&
-             (local_44 >> 0x10 < *(int *)((int)this + 0x3c))) &&
-            (*(int *)((int)this + 0x34) <= local_2c >> 0x10)))) {
+           ((((local_40 >> 0x10 < *(int *)&this->field_0x38 &&
+              (*(int *)&this->field_0x30 <= local_38 >> 0x10)) &&
+             (local_44 >> 0x10 < *(int *)&this->field_0x3c)) &&
+            (*(int *)&this->field_0x34 <= local_2c >> 0x10)))) {
           iVar2 = (param_2 + (uint)pbVar12[1] * 4)[2];
           if (piVar11[2] < iVar2) {
             iVar2 = piVar11[2];
@@ -195,32 +202,32 @@ LAB_006e22a2:
     } while (local_48 < param_1->field_0024);
   }
   iVar10 = local_c;
-  if ((*(int *)((int)this + 0x2b0) != 0) && (0 < local_28)) {
+  if ((*(int *)&this->field_0x2b0 != 0) && (0 < local_28)) {
     local_30 = local_30 >> 0x10;
-    iVar3 = *(int *)((int)this + 0x2c8);
+    iVar3 = *(int *)&this->field_0x2c8;
     if (local_30 - iVar3 < 0) {
       local_30 = iVar3;
     }
-    iVar4 = (local_30 - iVar3) / *(int *)((int)this + 0x2c0);
+    iVar4 = (local_30 - iVar3) / *(int *)&this->field_0x2c0;
     local_34 = local_34 >> 0x10;
-    if (*(int *)((int)this + 0x28) < local_34) {
-      local_34 = *(int *)((int)this + 0x28);
+    if (*(int *)&this->field_0x28 < local_34) {
+      local_34 = *(int *)&this->field_0x28;
     }
-    iVar6 = (local_34 - iVar3) / *(int *)((int)this + 0x2c0);
+    iVar6 = (local_34 - iVar3) / *(int *)&this->field_0x2c0;
     local_1c = iVar2 >> 0x10;
     iVar13 = local_c >> 0x10;
     iVar3 = local_20 >> 0x10;
     if (bVar1 == 0) {
-      iVar2 = *(int *)((int)this + 0x2cc);
+      iVar2 = *(int *)&this->field_0x2cc;
       if (local_1c - iVar2 < 0) {
         local_1c = iVar2;
       }
-      iVar7 = (local_1c - iVar2) / *(int *)((int)this + 0x2c4);
-      if (*(int *)((int)this + 0x2c) < iVar3) {
-        iVar3 = *(int *)((int)this + 0x2c);
+      iVar7 = (local_1c - iVar2) / *(int *)&this->field_0x2c4;
+      if (*(int *)&this->field_0x2c < iVar3) {
+        iVar3 = *(int *)&this->field_0x2c;
       }
-      iVar3 = (iVar3 - iVar2) / *(int *)((int)this + 0x2c4);
-      iVar2 = *(int *)((int)this + 0x2b0) + iVar7 * *(int *)((int)this + 0x2b8) * 2;
+      iVar3 = (iVar3 - iVar2) / *(int *)&this->field_0x2c4;
+      iVar2 = *(int *)&this->field_0x2b0 + iVar7 * *(int *)&this->field_0x2b8 * 2;
       if (iVar7 <= iVar3) {
         param_2 = (undefined4 *)((iVar3 - iVar7) + 1);
         do {
@@ -237,28 +244,28 @@ LAB_006e22a2:
             } while (iVar3 != 0);
           }
           param_2 = (undefined4 *)((int)param_2 + -1);
-          iVar2 = iVar2 + *(int *)((int)this + 0x2b8) * 2;
+          iVar2 = iVar2 + *(int *)&this->field_0x2b8 * 2;
         } while (param_2 != (undefined4 *)0x0);
       }
     }
     else {
       iVar2 = (local_14 - local_c) / (local_20 - iVar2 >> 0x10);
-      iVar10 = *(int *)((int)this + 0x2cc);
+      iVar10 = *(int *)&this->field_0x2cc;
       local_14 = local_14 >> 0x10;
       if (local_1c - iVar10 < 0) {
         local_14 = local_14 - ((iVar10 - local_1c) * iVar2 >> 0x10);
         local_1c = iVar10;
       }
-      local_54 = *(int *)((int)this + 0x2c4);
+      local_54 = *(int *)&this->field_0x2c4;
       iVar8 = (local_1c - iVar10) / local_54;
       local_14 = local_14 - ((local_54 - (local_1c - iVar10) % local_54) * iVar2 >> 0x10);
-      iVar7 = *(int *)((int)this + 0x2c);
+      iVar7 = *(int *)&this->field_0x2c;
       if (iVar7 < iVar3) {
         iVar13 = iVar13 + ((iVar3 - iVar7) * iVar2 >> 0x10);
         iVar3 = iVar7;
       }
       local_54 = (iVar3 - iVar10) / local_54;
-      iVar10 = *(int *)((int)this + 0x2b0) + iVar8 * *(int *)((int)this + 0x2b8) * 2;
+      iVar10 = *(int *)&this->field_0x2b0 + iVar8 * *(int *)&this->field_0x2b8 * 2;
       if (iVar8 < local_54) {
         local_54 = local_54 - iVar8;
         do {
@@ -273,8 +280,8 @@ LAB_006e22a2:
               iVar3 = iVar3 + -1;
             } while (iVar3 != 0);
           }
-          local_14 = local_14 - (iVar2 * *(int *)((int)this + 0x2c4) >> 0x10);
-          iVar10 = iVar10 + *(int *)((int)this + 0x2b8) * 2;
+          local_14 = local_14 - (iVar2 * *(int *)&this->field_0x2c4 >> 0x10);
+          iVar10 = iVar10 + *(int *)&this->field_0x2b8 * 2;
           local_54 = local_54 + -1;
         } while (local_54 != 0);
       }

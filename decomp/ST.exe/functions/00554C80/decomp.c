@@ -23,8 +23,9 @@ void __thiscall cLoadingTy::DrawLineCR(cLoadingTy *this,uint *param_1)
   pcVar2 = local_8;
   if (iVar3 == 0) {
     thunk_FUN_00555680(local_8,(char *)param_1);
-    FUN_006b4170(pcVar2->field_0004,0,pcVar2->field_0014 + pcVar2->field_000C,
-                 pcVar2->field_0010 + pcVar2->field_0018,pcVar2->field_001C,pcVar2->field_0034,0);
+    FUN_006b4170((AnonShape_006C7610_838EDECF *)pcVar2->field_0004,0,
+                 pcVar2->field_0014 + pcVar2->field_000C,pcVar2->field_0010 + pcVar2->field_0018,
+                 pcVar2->field_001C,pcVar2->field_0034,0);
     ccFntTy::WrStr(pcVar2->field_0008,param_1,pcVar2->field_000C,pcVar2->field_0010,
                    pcVar2->field_0024);
     iVar3 = pcVar2->field_0018 + pcVar2->field_0010;
@@ -44,12 +45,13 @@ void __thiscall cLoadingTy::DrawLineCR(cLoadingTy *this,uint *param_1)
     }
     else {
       Library::DKW::WGR::FUN_006b55f0
-                ((undefined4 *)pcVar2->field_0004,0,pcVar2->field_0014,pcVar2->field_0018,
-                 (byte *)pcVar2->field_0004,0,pcVar2->field_0014,
+                ((AnonShape_006B84D0_7C7D97C6 *)pcVar2->field_0004,0,pcVar2->field_0014,
+                 pcVar2->field_0018,(byte *)pcVar2->field_0004,0,pcVar2->field_0014,
                  pcVar2->field_0034 + pcVar2->field_0018,pcVar2->field_001C,
                  pcVar2->field_0020 - pcVar2->field_0034);
-      FUN_006b4170(pcVar2->field_0004,0,pcVar2->field_0014 + pcVar2->field_000C,
-                   pcVar2->field_0010 + pcVar2->field_0018,pcVar2->field_001C,pcVar2->field_0034,0);
+      FUN_006b4170((AnonShape_006C7610_838EDECF *)pcVar2->field_0004,0,
+                   pcVar2->field_0014 + pcVar2->field_000C,pcVar2->field_0010 + pcVar2->field_0018,
+                   pcVar2->field_001C,pcVar2->field_0034,0);
       Library::DKW::DDX::FUN_006b42d0
                 ((uint)DAT_0080759c,pcVar2->field_0014,pcVar2->field_0018,
                  (BITMAPINFO *)pcVar2->field_0000,(uint *)0x0,pcVar2->field_0014,pcVar2->field_0018,

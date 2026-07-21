@@ -7,14 +7,15 @@ void __thiscall HelpPanelTy::LinkAct(HelpPanelTy *this,int param_1,int param_2)
 
 {
   char cVar1;
-  code *pcVar2;
-  HelpPanelTy *pHVar3;
-  int iVar4;
-  int *piVar5;
-  uint uVar6;
-  int iVar7;
-  uint uVar8;
-  HelpPanelTy *pHVar9;
+  AnonPointee_HelpPanelTy_01B3 *pAVar2;
+  code *pcVar3;
+  HelpPanelTy *pHVar4;
+  int iVar5;
+  int *piVar6;
+  uint uVar7;
+  int iVar8;
+  uint uVar9;
+  HelpPanelTy *pHVar10;
   undefined4 unaff_ESI;
   void *unaff_EDI;
   InternalExceptionFrame local_54;
@@ -25,28 +26,28 @@ void __thiscall HelpPanelTy::LinkAct(HelpPanelTy *this,int param_1,int param_2)
   local_54.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_54;
   local_8 = this;
-  iVar4 = Library::MSVCRT::__setjmp3(local_54.jumpBuffer,0,unaff_EDI,unaff_ESI);
-  if (iVar4 != 0) {
+  iVar5 = Library::MSVCRT::__setjmp3(local_54.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  if (iVar5 != 0) {
     g_currentExceptionFrame = local_54.previous;
-    iVar7 = ReportDebugMessage(s_E____titans_Andrey_helppan_cpp_007c383c,0x350,0,iVar4,&DAT_007a4ccc
+    iVar8 = ReportDebugMessage(s_E____titans_Andrey_helppan_cpp_007c383c,0x350,0,iVar5,&DAT_007a4ccc
                                ,s_HelpPanelTy__LinkAct_007c3b20);
-    if (iVar7 == 0) {
-      RaiseInternalException(iVar4,0,s_E____titans_Andrey_helppan_cpp_007c383c,0x350);
+    if (iVar8 == 0) {
+      RaiseInternalException(iVar5,0,s_E____titans_Andrey_helppan_cpp_007c383c,0x350);
       return;
     }
-    pcVar2 = (code *)swi(3);
-    (*pcVar2)();
+    pcVar3 = (code *)swi(3);
+    (*pcVar3)();
     return;
   }
   local_c = *(uint *)sizeHelp_exref;
   if (local_c != 0) {
-    uVar6 = 0;
-    pHVar9 = local_8;
+    uVar7 = 0;
+    pHVar10 = local_8;
     do {
-      pHVar3 = local_8;
-      iVar7 = uVar6 * 0x11;
-      cVar1 = *(char *)(pHVar9->field_01C7 + 8 + iVar7);
-      iVar4 = pHVar9->field_01C7 + iVar7;
+      pHVar4 = local_8;
+      iVar8 = uVar7 * 0x11;
+      cVar1 = *(char *)(pHVar10->field_01C7 + 8 + iVar8);
+      iVar5 = pHVar10->field_01C7 + iVar8;
       switch(cVar1) {
       case '\x01':
       case '\x02':
@@ -54,37 +55,38 @@ void __thiscall HelpPanelTy::LinkAct(HelpPanelTy *this,int param_1,int param_2)
       case '\x04':
       case '\v':
       case '\f':
-        if ((*(int *)(iVar4 + 9) != param_1) ||
-           (((cVar1 != '\x03' && (cVar1 != '\f')) && (*(int *)(iVar4 + 0xd) != param_2))))
+        if ((*(int *)(iVar5 + 9) != param_1) ||
+           (((cVar1 != '\x03' && (cVar1 != '\f')) && (*(int *)(iVar5 + 0xd) != param_2))))
         goto switchD_00514a29_caseD_5;
-        thunk_FUN_005148a0(local_8,uVar6);
-        iVar4 = pHVar3->field_01B3;
-        uVar8 = 0;
-        uVar6 = *(uint *)(iVar4 + 0xc);
-        if (uVar6 == 0) {
+        SubmarineTitans::Recovered::HiddenThis::AnonReceiver_005148A0::thunk_FUN_005148a0
+                  ((AnonReceiver_005148A0 *)local_8,uVar7);
+        pAVar2 = pHVar4->field_01B3;
+        uVar9 = 0;
+        uVar7 = *(uint *)&pAVar2->field_0xc;
+        if (uVar7 == 0) {
 LAB_00514ab9:
-          uVar6 = *(uint *)sizeHelp_exref;
-          pHVar9 = pHVar3;
-          local_c = uVar6;
+          uVar7 = *(uint *)sizeHelp_exref;
+          pHVar10 = pHVar4;
+          local_c = uVar7;
         }
         else {
-          local_10 = (int *)(iVar7 + pHVar3->field_01C7);
-          if (uVar6 == 0) {
-            piVar5 = (int *)0x0;
+          local_10 = (int *)(iVar8 + pHVar4->field_01C7);
+          if (uVar7 == 0) {
+            piVar6 = (int *)0x0;
             goto LAB_00514a8f;
           }
           do {
-            piVar5 = (int *)(*(int *)(iVar4 + 8) * uVar8 + *(int *)(iVar4 + 0x1c));
+            piVar6 = (int *)(pAVar2->field_0008 * uVar9 + pAVar2->field_001C);
 LAB_00514a8f:
-            if ((*piVar5 == *local_10) && (piVar5[1] == local_10[1])) {
-              pHVar3->field_01B7 = uVar8;
+            if ((*piVar6 == *local_10) && (piVar6[1] == local_10[1])) {
+              pHVar4->field_01B7 = uVar9;
               goto LAB_00514ab9;
             }
-            uVar8 = uVar8 + 1;
-          } while (uVar8 < uVar6);
-          uVar6 = *(uint *)sizeHelp_exref;
-          pHVar9 = pHVar3;
-          local_c = uVar6;
+            uVar9 = uVar9 + 1;
+          } while (uVar9 < uVar7);
+          uVar7 = *(uint *)sizeHelp_exref;
+          pHVar10 = pHVar4;
+          local_c = uVar7;
         }
         break;
       case '\x05':
@@ -94,10 +96,10 @@ LAB_00514a8f:
       case '\t':
       case '\n':
 switchD_00514a29_caseD_5:
-        pHVar9 = pHVar3;
+        pHVar10 = pHVar4;
       }
-      uVar6 = uVar6 + 1;
-    } while (uVar6 < local_c);
+      uVar7 = uVar7 + 1;
+    } while (uVar7 < local_c);
   }
   g_currentExceptionFrame = local_54.previous;
   return;

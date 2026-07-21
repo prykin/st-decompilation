@@ -3,7 +3,7 @@
    E:\__titans\Andrey\bldobj.cpp
    BldObjPanelTy::PaintBldBut */
 
-void __thiscall BldObjPanelTy::PaintBldBut(BldObjPanelTy *this,AnonShape_004F0E60_091DB1BE *param_1)
+void __thiscall BldObjPanelTy::PaintBldBut(BldObjPanelTy *this,AnonShape_004EF320_444F9AB1 *param_1)
 
 {
   int *piVar1;
@@ -15,6 +15,7 @@ void __thiscall BldObjPanelTy::PaintBldBut(BldObjPanelTy *this,AnonShape_004F0E6
   byte *pbVar6;
   int iVar7;
   undefined4 unaff_ESI;
+  AnonShape_GLOBAL_0081175C_57F682DD *pAVar8;
   void *unaff_EDI;
   InternalExceptionFrame local_5c;
   int local_18;
@@ -46,13 +47,13 @@ void __thiscall BldObjPanelTy::PaintBldBut(BldObjPanelTy *this,AnonShape_004F0E6
   }
   else {
     if ((char)local_8[2] == 0) {
-      iVar7 = this->field_018C;
+      pAVar8 = (AnonShape_GLOBAL_0081175C_57F682DD *)this->field_018C;
     }
     else {
-      iVar7 = this->field_0188;
+      pAVar8 = (AnonShape_GLOBAL_0081175C_57F682DD *)this->field_0188;
     }
     uVar5 = thunk_FUN_00526ba0(*local_8,*(byte *)((int)local_8 + 9));
-    local_c = (ushort *)FUN_0070b3a0(iVar7,uVar5);
+    local_c = (ushort *)FUN_0070b3a0(pAVar8,uVar5);
   }
   local_5c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_5c;
@@ -61,11 +62,12 @@ void __thiscall BldObjPanelTy::PaintBldBut(BldObjPanelTy *this,AnonShape_004F0E6
   pBVar3 = local_14;
   iVar7 = local_18;
   if (errorCode == 0) {
-    DibPut((AnonShape_006B84D0_7C7D97C6 *)local_14->field_0068,local_18,local_10,'\x01',
+    DibPut((AnonShape_006B5B10_E0D06CF1 *)local_14->field_0068,local_18,local_10,'\x01',
            (byte *)local_c);
     if ((param_1->field_0014 == 3) && (local_8 != (Global_sub_00526BA0_param_1Enum *)0x0)) {
-      pbVar6 = (byte *)FUN_0070b3a0(pBVar3->field_0190,9 - (uint)((char)local_8[2] != 0));
-      DibPut((AnonShape_006B84D0_7C7D97C6 *)pBVar3->field_0068,iVar7,iVar4,'\x06',pbVar6);
+      pbVar6 = (byte *)FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)pBVar3->field_0190,
+                                    9 - (uint)((char)local_8[2] != 0));
+      DibPut((AnonShape_006B5B10_E0D06CF1 *)pBVar3->field_0068,iVar7,iVar4,'\x06',pbVar6);
     }
     Library::DKW::DDX::FUN_006b3640
               (DAT_008075a8,pBVar3->field_0060,0xffffffff,pBVar3->field_003C,pBVar3->field_0044);

@@ -143,7 +143,7 @@ void __thiscall FSGSTy::InitFSGS(FSGSTy *this,byte param_1)
   }
   text = FUN_006f2c00(s_MM_BAN__007cc058,2,this_01->field_1A93);
   puVar6 = Library::Ourlib::MFIMG::mfImgLoad(g_cMf32_00806780,6,text,bVar18,iVar4);
-  DibPut((AnonShape_006B84D0_7C7D97C6 *)this_01->field_1A97,0,0,'\x06',(byte *)puVar6);
+  DibPut((AnonShape_006B5B10_E0D06CF1 *)this_01->field_1A97,0,0,'\x06',(byte *)puVar6);
   pAVar13 = this_01->field_1A97;
   FUN_006b2330((uint)DAT_008075a8,&this_01->field_1A8F,0x31,0x4023f6,pAVar13->field_0004,
                pAVar13->field_0008,(uint)pAVar13);

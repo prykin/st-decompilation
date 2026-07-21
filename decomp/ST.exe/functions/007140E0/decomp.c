@@ -20,11 +20,11 @@ int __thiscall FUN_007140e0(void *this,int param_1,char param_2)
   int local_18;
   int local_14;
   int local_10;
-  int local_c;
+  AnonShape_006C7610_838EDECF *local_c;
   undefined1 local_5;
   
   iVar8 = 0;
-  local_c = 0;
+  local_c = (AnonShape_006C7610_838EDECF *)0x0;
   local_10 = 0;
   local_5 = 0;
   if ((((*(char **)((int)this + 0x58) == (char *)0x0) || (*(ccFntTy **)this == (ccFntTy *)0x0)) ||
@@ -36,7 +36,7 @@ int __thiscall FUN_007140e0(void *this,int param_1,char param_2)
   FUN_007109f0(*(void **)this,(AnonShape_007109F0_BD33A2FF *)((int)this + 0x10));
   this_00 = *(ccFntTy **)this;
   if (&stack0x00000000 != &DAT_0000000c) {
-    local_c = this_00->field_0072;
+    local_c = (AnonShape_006C7610_838EDECF *)this_00->field_0072;
   }
   if (&stack0x00000000 != (undefined1 *)0x10) {
     iVar8 = this_00->field_0076;
@@ -527,6 +527,6 @@ cf_common_exit_00714ACB:
   *(int *)((int)this + 0xc) = *(int *)((int)this + 0xc) + 1;
   *(int *)((int)this + 4) = *(int *)((int)this + 4) + 1;
   FUN_007109f0(*(void **)this,&local_6c);
-  return local_c;
+  return (int)local_c;
 }
 

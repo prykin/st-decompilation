@@ -9,6 +9,7 @@ import java.io.File;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.nio.file.StandardCopyOption;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.HashMap;
@@ -27,6 +28,7 @@ import ghidra.app.script.GhidraScript;
 import ghidra.program.model.address.Address;
 import ghidra.program.model.data.DataType;
 import ghidra.program.model.data.Pointer;
+import ghidra.program.model.data.VoidDataType;
 import ghidra.program.model.listing.AutoParameterType;
 import ghidra.program.model.listing.Function;
 import ghidra.program.model.listing.FunctionIterator;
@@ -45,6 +47,7 @@ public class STHiddenThisAnalyzer extends GhidraScript {
     private static final int BACKWARD_LIMIT = 24;
     private static final int FORWARD_LIMIT = 4;
     private static final long MAX_RECEIVER_SIZE = 0x100000L;
+    private static final long MAX_AUTOMATIC_RECEIVER_SIZE = 0x4000L;
     private static final Pattern MEMORY = Pattern.compile(
         ".*\\[([A-Z][A-Z0-9]{1,3})(?:\\s*\\+\\s*(-?(?:0X[0-9A-F]+|[0-9]+)))?\\].*");
     private static final Pattern IMMEDIATE = Pattern.compile(
@@ -68,6 +71,8 @@ public class STHiddenThisAnalyzer extends GhidraScript {
         if (selected == null) return;
         Path directory = programDirectory(selected);
         Files.createDirectories(directory);
+        Path proposalPath = directory.resolve("hidden_this_proposals.tsv");
+        prepareProposalOutput(proposalPath);
         listing = currentProgram.getListing();
 
         FunctionIterator functions = currentProgram.getFunctionManager().getFunctions(true);
@@ -98,7 +103,7 @@ public class STHiddenThisAnalyzer extends GhidraScript {
             if (proposal != null) proposals.add(proposal);
         }
         proposals.sort(Comparator.comparing(row -> row.address));
-        writeTsv(directory.resolve("hidden_this_proposals.tsv"), proposals);
+        writeTsv(proposalPath, proposals);
         writeJson(directory.resolve("hidden_this_proposals.jsonl"), proposals);
         writeSummary(directory.resolve("hidden_this_summary.txt"), proposals);
 
@@ -221,18 +226,24 @@ public class STHiddenThisAnalyzer extends GhidraScript {
         Function function = body.function;
         boolean scriptOwned = hasTag(function, TAG);
         boolean alreadyThiscall = "__thiscall".equals(function.getCallingConventionName());
-        if (alreadyThiscall && !scriptOwned) return null;
+        boolean interruptedApply = alreadyThiscall && !scriptOwned &&
+            synthetic(function.getName(true)) && untypedThisReceiver(function);
+        if (alreadyThiscall && !scriptOwned && !interruptedApply) return null;
         if (!alreadyThiscall && !Set.of("__stdcall", "__cdecl", "unknown")
                 .contains(function.getCallingConventionName())) return null;
         if (!scriptOwned && !synthetic(function.getName(true))) return null;
         if (body.receiverCaptures + body.receiverAccesses == 0) return null;
 
         CallEvidence calls = callEvidence(function, thunkIndex);
+        if (calls.pointerSetup == 0 && !scriptOwned) return null;
         int expectedStack = expectedStackBytes(function);
         boolean retMatches = body.returnPops.size() == 1 &&
             body.returnPops.iterator().next() == expectedStack;
         boolean manualSignature = protectedSource(function.getSignatureSource());
-        boolean strong = calls.pointerSetup >= 2 && calls.scalarSetup == 0 &&
+        boolean corroboratedSingleCall = calls.pointerSetup == 1 &&
+            body.receiverAccesses >= 6 && group.memberCount >= 2;
+        boolean strong = (calls.pointerSetup >= 2 || corroboratedSingleCall) &&
+            calls.scalarSetup == 0 &&
             calls.cleanupCalls == 0 && body.receiverCaptures > 0 &&
             body.receiverAccesses >= 2 && body.incomingEdxUses == 0 && retMatches &&
             !manualSignature;
@@ -240,8 +251,10 @@ public class STHiddenThisAnalyzer extends GhidraScript {
         boolean conventionApply = strong && !alreadyThiscall;
         String typeName = "AnonReceiver_" + addr(group.anchor);
         String typePath = "/SubmarineTitans/Recovered/HiddenThis/" + typeName;
+        boolean plausibleAutomaticSize = group.observedSize <= MAX_AUTOMATIC_RECEIVER_SIZE;
         boolean receiverTypeApply = (strong || previouslyApplied) &&
-            !receiverTypeMatches(function, typePath) && !manualSignature;
+            plausibleAutomaticSize && !receiverTypeMatches(function, typePath) &&
+            !manualSignature;
         String confidence = strong || previouslyApplied ? "high" :
             calls.pointerSetup > 0 && calls.scalarSetup == 0 ? "medium" : "review";
         List<String> reasons = new ArrayList<>();
@@ -254,12 +267,40 @@ public class STHiddenThisAnalyzer extends GhidraScript {
         reasons.add("caller_cleanup_calls=" + calls.cleanupCalls);
         reasons.add("callee_ret_pop=" + set(body.returnPops));
         reasons.add("expected_stack=" + expectedStack);
+        reasons.add("receiver_family_members=" + group.memberCount);
         if (!retMatches) reasons.add("stack_discipline_mismatch");
         if (manualSignature) reasons.add("manual_signature_preserved");
+        if (!plausibleAutomaticSize)
+            reasons.add("receiver_size_requires_review(limit=0x" +
+                Long.toHexString(MAX_AUTOMATIC_RECEIVER_SIZE).toUpperCase(Locale.ROOT) + ")");
         if (previouslyApplied) reasons.add("previously_applied");
+        if (interruptedApply) reasons.add("adopt_untyped_existing_thiscall");
+        if (corroboratedSingleCall) reasons.add("single_call_corroborated_by_receiver_family");
         return new Proposal(function, conventionApply, receiverTypeApply, typeName, typePath,
-            group.observedSize, group.vtableSlots, calls, expectedStack, confidence,
+            group.observedSize, group.vtableSlots, group.memberCount, calls, expectedStack,
+            confidence,
             String.join("; ", reasons));
+    }
+
+    private void prepareProposalOutput(Path path) throws Exception {
+        if (!Files.isRegularFile(path)) return;
+        String header;
+        try (java.io.BufferedReader reader = Files.newBufferedReader(path,
+                StandardCharsets.UTF_8)) {
+            header = reader.readLine();
+        }
+        if (header != null && header.split("\\t", -1).length > 0 &&
+                !header.contains("analysis_version")) {
+            Path backup = path.resolveSibling("hidden_this_legacy_v1.tsv");
+            if (!Files.exists(backup))
+                Files.copy(path, backup, StandardCopyOption.COPY_ATTRIBUTES);
+            Path marker = path.resolveSibling("hidden_this_legacy_repair_complete.txt");
+            if (!Files.isRegularFile(marker))
+                throw new IllegalStateException("Legacy hidden-this proposals detected. " +
+                    "Run STHiddenThisApplier on the existing hidden_this_proposals.tsv " +
+                    "first; it will restore any partial version-1 changes.");
+            Files.delete(marker);
+        }
     }
 
     private CallEvidence callEvidence(Function target, Map<Address, Set<Function>> thunkIndex) {
@@ -332,6 +373,7 @@ public class STHiddenThisAnalyzer extends GhidraScript {
         for (BodyEvidence body : bodies.values()) {
             Address root = groups.find(body.function.getEntryPoint());
             GroupEvidence group = result.computeIfAbsent(root, ignored -> new GroupEvidence(root));
+            group.memberCount++;
             if (body.function.getEntryPoint().compareTo(group.anchor) < 0)
                 group.anchor = body.function.getEntryPoint();
             group.observedSize = Math.max(group.observedSize, body.observedSize);
@@ -406,8 +448,25 @@ public class STHiddenThisAnalyzer extends GhidraScript {
     }
 
     private boolean candidateBody(Function function) {
-        return function != null && !function.isExternal() && !function.isThunk() &&
-            !isLibrary(function);
+        if (function == null || function.isExternal() || function.isThunk() ||
+                isLibrary(function)) return false;
+        boolean scriptOwned = hasTag(function, TAG);
+        if (!scriptOwned && !synthetic(function.getName(true))) return false;
+        String convention = function.getCallingConventionName();
+        if (Set.of("__stdcall", "__cdecl", "unknown").contains(convention)) return true;
+        return "__thiscall".equals(convention) &&
+            (scriptOwned || untypedThisReceiver(function));
+    }
+
+    private boolean untypedThisReceiver(Function function) {
+        for (Parameter parameter : function.getParameters()) {
+            if (!parameter.isAutoParameter() ||
+                    parameter.getAutoParameterType() != AutoParameterType.THIS ||
+                    !(parameter.getDataType() instanceof Pointer pointer)) continue;
+            DataType pointed = pointer.getDataType();
+            return pointed == null || VoidDataType.isVoidDataType(pointed);
+        }
+        return false;
     }
 
     private boolean isLibrary(Function function) {
@@ -548,9 +607,11 @@ public class STHiddenThisAnalyzer extends GhidraScript {
             out.write("convention_apply\treceiver_type_apply\taddress\texpected_name\t" +
                 "expected_name_source\texpected_signature\texpected_signature_source\t" +
                 "expected_calling_convention\tproposed_calling_convention\t" +
-                "receiver_type_name\treceiver_type_path\tobserved_size\tvtable_slots\t" +
+                "receiver_type_name\treceiver_type_path\tobserved_size\tgroup_members\t" +
+                "vtable_slots\t" +
                 "calls\tecx_pointer_setup\tecx_scalar_setup\tecx_live_prior\t" +
-                "caller_cleanup_calls\texpected_stack_bytes\tconfidence\treason\n");
+                "caller_cleanup_calls\texpected_stack_bytes\tconfidence\treason\t" +
+                "analysis_version\n");
             for (Proposal row : rows) {
                 Function f = row.function;
                 out.write(bit(row.conventionApply) + "\t" + bit(row.receiverTypeApply) +
@@ -559,11 +620,12 @@ public class STHiddenThisAnalyzer extends GhidraScript {
                     tsv(f.getSignature().getPrototypeString(true)) + "\t" +
                     f.getSignatureSource() + "\t" + f.getCallingConventionName() +
                     "\t__thiscall\t" + row.typeName + "\t" + row.typePath + "\t" +
-                    row.observedSize + "\t" + offsets(row.vtableSlots) + "\t" +
+                    row.observedSize + "\t" + row.groupMembers + "\t" +
+                    offsets(row.vtableSlots) + "\t" +
                     row.calls.calls + "\t" + row.calls.pointerSetup + "\t" +
                     row.calls.scalarSetup + "\t" + row.calls.liveEcx + "\t" +
                     row.calls.cleanupCalls + "\t" + row.expectedStack + "\t" +
-                    row.confidence + "\t" + tsv(row.reason) + "\n");
+                    row.confidence + "\t" + tsv(row.reason) + "\t2\n");
             }
         }
     }
@@ -574,7 +636,8 @@ public class STHiddenThisAnalyzer extends GhidraScript {
             row.conventionApply + ",\"receiver_type_apply\":" + row.receiverTypeApply +
             ",\"address\":" + q(addr(row.address)) + ",\"function\":" +
             q(row.function.getName(true)) + ",\"receiver_type_path\":" + q(row.typePath) +
-            ",\"observed_size\":" + row.observedSize + ",\"vtable_slots\":" +
+            ",\"analysis_version\":2,\"observed_size\":" + row.observedSize +
+            ",\"group_members\":" + row.groupMembers + ",\"vtable_slots\":" +
             q(offsets(row.vtableSlots)) + ",\"confidence\":" + q(row.confidence) +
             ",\"reason\":" + q(row.reason) + "}");
         Files.write(path, lines, StandardCharsets.UTF_8);
@@ -586,9 +649,13 @@ public class STHiddenThisAnalyzer extends GhidraScript {
             "convention_apply=" + rows.stream().filter(row -> row.conventionApply).count(),
             "receiver_type_apply=" + rows.stream().filter(row -> row.receiverTypeApply).count(),
             "note=No class owner or semantic method name is invented.",
-            "note_safety=High confidence requires incoming ECX capture/use, two explicit " +
-                "pointer receiver call sites, no scalar ECX setup or caller cleanup, no live " +
-                "incoming EDX use, and exact RET n/stack-parameter agreement.",
+            "note_safety=High confidence requires incoming ECX capture/use, either two " +
+                "explicit pointer receiver call sites or one such call corroborated by a " +
+                "multi-function same-receiver family, no scalar ECX setup or caller cleanup, " +
+                "no live incoming EDX use, and exact RET n/stack-parameter agreement.",
+            "note_size=Anonymous receiver layouts larger than 0x" +
+                Long.toHexString(MAX_AUTOMATIC_RECEIVER_SIZE).toUpperCase(Locale.ROOT) +
+                " bytes remain review-only.",
             "note_vtable=Generated anonymous vtables contain neutral void-pointer slots only; " +
                 "a later signature pass may refine individually proven slots."),
             StandardCharsets.UTF_8);
@@ -643,7 +710,7 @@ public class STHiddenThisAnalyzer extends GhidraScript {
         BodyEvidence(Function function) { this.function = function; }
     }
     private static class GroupEvidence {
-        Address anchor; long observedSize;
+        Address anchor; long observedSize; int memberCount;
         final Set<Long> vtableSlots = new TreeSet<>();
         GroupEvidence(Address anchor) { this.anchor = anchor; }
     }
@@ -651,15 +718,17 @@ public class STHiddenThisAnalyzer extends GhidraScript {
         final Function function; final Address address;
         final boolean conventionApply, receiverTypeApply;
         final String typeName, typePath, confidence, reason;
-        final long observedSize; final Set<Long> vtableSlots;
+        final long observedSize; final int groupMembers; final Set<Long> vtableSlots;
         final CallEvidence calls; final int expectedStack;
         Proposal(Function function, boolean conventionApply, boolean receiverTypeApply,
                 String typeName, String typePath, long observedSize, Set<Long> vtableSlots,
-                CallEvidence calls, int expectedStack, String confidence, String reason) {
+                int groupMembers, CallEvidence calls, int expectedStack, String confidence,
+                String reason) {
             this.function = function; this.address = function.getEntryPoint();
             this.conventionApply = conventionApply; this.receiverTypeApply = receiverTypeApply;
             this.typeName = typeName; this.typePath = typePath;
             this.observedSize = Math.max(4, observedSize);
+            this.groupMembers = groupMembers;
             this.vtableSlots = new TreeSet<>(vtableSlots); this.calls = calls;
             this.expectedStack = expectedStack; this.confidence = confidence; this.reason = reason;
         }

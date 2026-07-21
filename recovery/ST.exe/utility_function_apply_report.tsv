@@ -1,0 +1,6 @@
+function_address	semantic_id	status	detail
+006AB060	free_and_null	applied	FreeAndNull __stdcall
+006AE110	darray_destroy	applied	DArrayDestroy __stdcall
+006B0140	load_resource_string	applied	LoadResourceString __stdcall
+006ACC70	darray_get_element	applied	DArrayGetElement __fastcall
+004406C0	player_race_id	applied	GetPlayerRaceId __stdcall

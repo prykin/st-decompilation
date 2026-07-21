@@ -25,7 +25,7 @@ undefined4 __thiscall STOctopusC::GetMessage(STOctopusC *this,AnonShape_00589C10
   undefined4 *puVar13;
   byte *pbVar14;
   InternalExceptionFrame local_88;
-  LPVOID local_44;
+  void *local_44;
   undefined4 local_40;
   undefined4 local_3c;
   undefined4 local_38;
@@ -96,7 +96,7 @@ undefined4 __thiscall STOctopusC::GetMessage(STOctopusC *this,AnonShape_00589C10
         g_currentExceptionFrame = local_88.previous;
         return 0;
       }
-      iVar7 = thunk_FUN_0058d160(0,0,SHORT_007fb240 + -1,SHORT_007fb242 + -1,(int)this_00,
+      iVar7 = thunk_FUN_0058d160(0,0,g_worldGrid.sizeX + -1,g_worldGrid.sizeY + -1,(int)this_00,
                                  (int)(short)((short)param_1->field_0014 * 0xc9 + 100),
                                  (int)(short)((short)param_1->field_0018 * 0xc9 + 100),
                                  (int)(short)((short)((uint)param_1->field_0014 >> 0x10) * 0xc9 +
@@ -354,10 +354,12 @@ undefined4 __thiscall STOctopusC::GetMessage(STOctopusC *this,AnonShape_00589C10
       pbVar12 = pbVar12 + 1;
       pbVar14 = pbVar14 + 1;
     }
-    STPlaySystemC::SaveObjData(PTR_00802a38,this_00->field_0018,local_c,local_10 + 0x96 + local_8);
-    FUN_006ab060(&local_14);
-    FUN_006ab060(&local_18);
-    FUN_006ab060(&local_c);
+    STPlaySystemC::SaveObjData
+              (PTR_00802a38,this_00->field_0018,local_c,
+               (AnonShape_0060EA30_DCEB68AD *)(local_10 + 0x96 + local_8));
+    FreeAndNull(&local_14);
+    FreeAndNull(&local_18);
+    FreeAndNull(&local_c);
     g_currentExceptionFrame = local_88.previous;
     return 0;
   }
@@ -402,11 +404,11 @@ undefined4 __thiscall STOctopusC::GetMessage(STOctopusC *this,AnonShape_00589C10
     }
     Bad((STOctopusC *)this_00,(int)unaff_EDI);
     if (((((*(int *)&this_00->field_0x299 < 0) ||
-          ((int)SHORT_007fb240 <= *(int *)&this_00->field_0x299)) ||
+          ((int)g_worldGrid.sizeX <= *(int *)&this_00->field_0x299)) ||
          (*(int *)&this_00->field_0x29d < 0)) ||
-        (((int)SHORT_007fb242 <= *(int *)&this_00->field_0x29d ||
+        (((int)g_worldGrid.sizeY <= *(int *)&this_00->field_0x29d ||
          (iVar7 = *(int *)&this_00->field_0x2a1, iVar7 < 0)))) ||
-       ((SHORT_007fb244 <= iVar7 ||
+       ((g_worldGrid.sizeZ <= iVar7 ||
         (bVar5 = thunk_FUN_004961b0(*(short *)&this_00->field_0x299,*(short *)&this_00->field_0x29d,
                                     (short)iVar7), CONCAT31(extraout_var,bVar5) == 0))))
     goto LAB_0058a0d0;
@@ -503,8 +505,8 @@ cf_error_exit_0058A005:
     *(undefined2 *)&this_00->field_0x52 = *(undefined2 *)((int)local_1c + 0x82);
     *(undefined2 *)&this_00->field_0x6c = *(undefined2 *)(local_1c + 0x21);
     *(undefined4 *)&this_00->field_0x24d = local_1c[0xc];
-    local_44 = (LPVOID)Library::DKW::LIB::FUN_006aac70(0x44);
-    if (local_44 != (LPVOID)0x0) {
+    local_44 = (void *)Library::DKW::LIB::FUN_006aac70(0x44);
+    if (local_44 != (void *)0x0) {
       iVar7 = 0;
       do {
         if (iVar7 == 8) {
@@ -523,8 +525,8 @@ cf_error_exit_0058A005:
       local_2c = 0;
       STT3DSprC::RestoreSpr
                 ((STT3DSprC *)&this_00->field_01D5,(int *)&local_44,
-                 (AnonShape_004ADBA0_E7CEFF88 *)((int)puVar11 + 0x92));
-      FUN_006ab060(&local_44);
+                 (AnonShape_004AD790_77673787 *)((int)puVar11 + 0x92));
+      FreeAndNull(&local_44);
     }
   }
   if ((*(int *)&this_00->field_0x249 == 3) || (iVar7 = thunk_FUN_0058cfe0((int)this_00), iVar7 != 0)

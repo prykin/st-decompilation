@@ -1,5 +1,5 @@
 
-int FUN_0069ac20(int param_1,int param_2,int param_3,AnonShape_0069AC20_BA305C93 *param_4)
+int FUN_0069ac20(int param_1,int param_2,int param_3,AnonNested_005F5B80_0169_794156D7 *param_4)
 
 {
   int iVar1;
@@ -10,7 +10,7 @@ int FUN_0069ac20(int param_1,int param_2,int param_3,AnonShape_0069AC20_BA305C93
   
   iVar2 = 0xff;
   local_8 = 0xff;
-  if (param_4 != (AnonShape_0069AC20_BA305C93 *)0x0) {
+  if (param_4 != (AnonNested_005F5B80_0169_794156D7 *)0x0) {
     iVar1 = param_4->field_000C;
     uVar4 = 0;
     if (0 < iVar1) {

@@ -11,7 +11,7 @@ void __cdecl _AddObjGrpExch(uint param_1,int *param_2)
   bool bVar2;
   bool bVar3;
   int iVar4;
-  uint *groupContent;
+  DArrayTy *array;
   int iVar5;
   undefined4 unaff_ESI;
   void *unaff_EDI;
@@ -56,10 +56,10 @@ void __cdecl _AddObjGrpExch(uint param_1,int *param_2)
   bVar3 = true;
 LAB_00675f12:
   if (bVar3) {
-    groupContent = Library::DKW::TBL::FUN_006ae290((uint *)0x0,1,2,1);
-    Library::DKW::TBL::FUN_006ae1c0(groupContent,(undefined4 *)((int)param_2 + 0x32));
-    thunk_FUN_00675dc0(param_1,groupContent);
-    FUN_006ae110((byte *)groupContent);
+    array = (DArrayTy *)Library::DKW::TBL::FUN_006ae290((uint *)0x0,1,2,1);
+    Library::DKW::TBL::FUN_006ae1c0((uint *)array,(undefined4 *)((int)param_2 + 0x32));
+    thunk_FUN_00675dc0(param_1,(uint *)array);
+    DArrayDestroy(array);
   }
   g_currentExceptionFrame = local_48.previous;
   return;

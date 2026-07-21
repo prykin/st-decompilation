@@ -18,10 +18,9 @@ STAllPlayersC::DestroyObjectMsg
 {
   code *pcVar1;
   uint uVar2;
-  uint uVar3;
-  int iVar4;
-  undefined4 uVar5;
-  DArrayTy *pDVar6;
+  int iVar3;
+  undefined4 uVar4;
+  DArrayTy *array;
   undefined1 local_40 [16];
   undefined4 local_30;
   undefined4 *local_2c;
@@ -37,36 +36,35 @@ STAllPlayersC::DestroyObjectMsg
   uVar2 = param_2;
   switch(param_3) {
   case CASE_1:
-    pDVar6 = g_playerRuntime[(char)param_1].objects;
+    array = g_playerRuntime[(char)param_1].objects;
     break;
   case CASE_2:
-    pDVar6 = PTR_007fa154;
+    array = PTR_007fa154;
     break;
   case CASE_3:
-    pDVar6 = PTR_007fa158;
+    array = PTR_007fa158;
     break;
   case CASE_4:
-    pDVar6 = PTR_007fa15c;
+    array = PTR_007fa15c;
     break;
   case CASE_5:
-    pDVar6 = PTR_007fa160;
+    array = PTR_007fa160;
     break;
   case CASE_6:
-    pDVar6 = PTR_007fa164;
+    array = PTR_007fa164;
     break;
   default:
-    iVar4 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0x2eb1,0,0,&DAT_007a4ccc,
+    iVar3 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0x2eb1,0,0,&DAT_007a4ccc,
                                s_STAllPlayersC__DestroyObjectMsg_007a86e0);
-    if (iVar4 == 0) {
+    if (iVar3 == 0) {
       return 0;
     }
     pcVar1 = (code *)swi(3);
-    uVar5 = (*pcVar1)();
-    return uVar5;
+    uVar4 = (*pcVar1)();
+    return uVar4;
   }
-  if (((pDVar6 != (DArrayTy *)0x0) &&
-      (uVar3 = FUN_006acc70((AnonShape_006ACC70_C8641025 *)pDVar6,param_2 & 0xffff,&param_1),
-      uVar3 != 0xfffffffc)) && (param_1 != 0)) {
+  if (((array != (DArrayTy *)0x0) &&
+      (iVar3 = DArrayGetElement(array,param_2 & 0xffff,&param_1), iVar3 != -4)) && (param_1 != 0)) {
     local_20 = 10000;
     local_1c = 0;
     local_18 = 0xfe;

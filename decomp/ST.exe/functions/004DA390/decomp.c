@@ -3,7 +3,7 @@ undefined4 __thiscall FUN_004da390(void *this,uint param_1,byte *param_2,int par
 
 {
   byte bVar1;
-  char cVar2;
+  byte bVar2;
   byte *pbVar3;
   byte *pbVar4;
   short sVar5;
@@ -13,10 +13,9 @@ undefined4 __thiscall FUN_004da390(void *this,uint param_1,byte *param_2,int par
   int iVar9;
   undefined4 *puVar10;
   int iVar11;
-  byte bVar12;
-  uint uVar13;
-  undefined4 *puVar14;
-  bool bVar15;
+  byte playerId;
+  undefined4 *puVar12;
+  bool bVar13;
   undefined4 local_280 [78];
   undefined4 local_148 [3];
   undefined2 local_13c;
@@ -43,9 +42,9 @@ undefined4 __thiscall FUN_004da390(void *this,uint param_1,byte *param_2,int par
   local_c = this;
   do {
     pbVar4 = local_8;
-    bVar12 = (byte)param_1;
+    playerId = (byte)param_1;
     if (*local_8 != 0xff) {
-      uVar6 = thunk_FUN_004406c0(*local_8);
+      uVar6 = GetPlayerRaceId(*local_8);
       uVar6 = uVar6 & 0xff;
       if (uVar6 == 1) {
         param_2 = (byte *)0x3d;
@@ -64,39 +63,34 @@ undefined4 __thiscall FUN_004da390(void *this,uint param_1,byte *param_2,int par
         if (param_3 != 0) {
           _local_10 = CONCAT31(uStack_f,bVar1);
           if (DAT_00808a8f == '\0') {
-            if (bVar1 == bVar12) {
+            if (bVar1 == playerId) {
 LAB_004da4d3:
               iVar7 = 0;
             }
             else {
-              uVar6 = (uint)bVar1;
-              uVar13 = param_1 & 0xff;
-              cVar2 = *(char *)((int)&DAT_00808a4f + uVar6 * 8 + uVar13);
-              if ((cVar2 == '\0') && (*(char *)((int)&DAT_00808a4f + uVar13 * 8 + uVar6) == '\0')) {
+              uVar6 = param_1 & 0xff;
+              bVar2 = g_playerRelationMatrix[bVar1][uVar6];
+              if ((bVar2 == 0) && (g_playerRelationMatrix[uVar6][bVar1] == 0)) {
                 iVar7 = -2;
               }
-              else if ((cVar2 == '\x01') &&
-                      (*(char *)((int)&DAT_00808a4f + uVar13 * 8 + uVar6) == '\0')) {
+              else if ((bVar2 == 1) && (g_playerRelationMatrix[uVar6][bVar1] == 0)) {
                 iVar7 = -1;
               }
-              else if ((cVar2 == '\0') &&
-                      (*(char *)((int)&DAT_00808a4f + uVar13 * 8 + uVar6) == '\x01')) {
+              else if ((bVar2 == 0) && (g_playerRelationMatrix[uVar6][bVar1] == 1)) {
                 iVar7 = 1;
               }
               else {
-                if ((cVar2 != '\x01') ||
-                   (*(char *)((int)&DAT_00808a4f + uVar13 * 8 + uVar6) != '\x01'))
-                goto LAB_004da4d3;
+                if ((bVar2 != 1) || (g_playerRelationMatrix[uVar6][bVar1] != 1)) goto LAB_004da4d3;
                 iVar7 = 2;
               }
             }
-            bVar15 = iVar7 < 0;
+            bVar13 = iVar7 < 0;
           }
           else {
-            bVar15 = (&DAT_008087ea)[(param_1 & 0xff) * 0x51] != (&DAT_008087ea)[(uint)bVar1 * 0x51]
+            bVar13 = (&DAT_008087ea)[(param_1 & 0xff) * 0x51] != (&DAT_008087ea)[(uint)bVar1 * 0x51]
             ;
           }
-          if ((bVar15) &&
+          if ((bVar13) &&
              ((g_playerRuntime[param_1].field2180_0xa0e != 3 ||
               (iVar7 = thunk_FUN_004e60d0((uint)bVar1,(int)param_2),
               (uint)((&DAT_00798f74)[iVar7] + g_playerRuntime[param_1].field2183_0xa1a) <=
@@ -108,7 +102,7 @@ LAB_004da4d3:
         *(undefined4 *)(pbVar3 + (uint)*pbVar3 * 0x10 + 9) = uVar8;
         uVar8 = thunk_FUN_004d89b0(bVar1);
         *(undefined4 *)(pbVar3 + (uint)*pbVar3 * 0x10 + 0xd) = uVar8;
-        iVar7 = thunk_FUN_004406c0(bVar1);
+        iVar7 = GetPlayerRaceId(bVar1);
         if ((char)iVar7 == '\x03') {
           uVar8 = thunk_FUN_004e4410(uVar6);
         }
@@ -116,7 +110,7 @@ LAB_004da4d3:
           uVar8 = thunk_FUN_004d8af0(bVar1);
         }
         *(undefined4 *)(pbVar3 + (uint)*pbVar3 * 0x10 + 0x11) = uVar8;
-        iVar7 = thunk_FUN_004406c0(bVar1);
+        iVar7 = GetPlayerRaceId(bVar1);
         if ((char)iVar7 == '\x03') {
           iVar11 = thunk_FUN_004e41c0(param_1);
           iVar7 = thunk_FUN_004e4180(param_1);
@@ -140,11 +134,11 @@ LAB_004da4d3:
         }
         *(int *)(pbVar3 + (uint)*pbVar3 * 0x10 + 0x15) = iVar7;
         puVar10 = (undefined4 *)thunk_FUN_0043e420(local_280,bVar1);
-        puVar14 = local_148;
+        puVar12 = local_148;
         for (iVar7 = 0x4e; iVar7 != 0; iVar7 = iVar7 + -1) {
-          *puVar14 = *puVar10;
+          *puVar12 = *puVar10;
           puVar10 = puVar10 + 1;
-          puVar14 = puVar14 + 1;
+          puVar12 = puVar12 + 1;
         }
         sVar5 = (short)local_148[1] + (short)local_148[0];
         *(short *)(pbVar3 + (uint)*pbVar3 * 0x10 + 0x89) = sVar5 + (short)local_148[2];
@@ -163,16 +157,16 @@ LAB_004da4d3:
 LAB_004da71f:
     local_8 = local_8 + 0x51;
     if (0x808a70 < (int)local_8) {
-      uVar8 = thunk_FUN_004d8870(bVar12);
+      uVar8 = thunk_FUN_004d8870(playerId);
       *(undefined4 *)(pbVar3 + 0x79) = uVar8;
-      uVar8 = thunk_FUN_004d89b0(bVar12);
+      uVar8 = thunk_FUN_004d89b0(playerId);
       *(undefined4 *)(pbVar3 + 0x7d) = uVar8;
-      iVar7 = thunk_FUN_004406c0(bVar12);
+      iVar7 = GetPlayerRaceId(playerId);
       if ((char)iVar7 == '\x03') {
         uVar8 = thunk_FUN_004e4410(param_1);
       }
       else {
-        uVar8 = thunk_FUN_004d8af0(bVar12);
+        uVar8 = thunk_FUN_004d8af0(playerId);
       }
       *(undefined4 *)(pbVar3 + 0x81) = uVar8;
       iVar7 = g_playerRuntime[param_1].field2108_0x972;
@@ -187,12 +181,12 @@ LAB_004da71f:
         }
       }
       *(int *)(pbVar3 + 0x85) = iVar11;
-      puVar10 = (undefined4 *)thunk_FUN_0043e420(local_280,bVar12);
-      puVar14 = local_148;
+      puVar10 = (undefined4 *)thunk_FUN_0043e420(local_280,playerId);
+      puVar12 = local_148;
       for (iVar7 = 0x4e; iVar7 != 0; iVar7 = iVar7 + -1) {
-        *puVar14 = *puVar10;
+        *puVar12 = *puVar10;
         puVar10 = puVar10 + 1;
-        puVar14 = puVar14 + 1;
+        puVar12 = puVar12 + 1;
       }
       sVar5 = (short)local_148[1] + (short)local_148[0];
       *(short *)(pbVar3 + 0xfb) = sVar5;
@@ -204,7 +198,7 @@ LAB_004da71f:
       *(short *)(pbVar3 + 0x105) = (short)local_130;
       *(short *)(pbVar3 + 0x101) = sVar5 + (short)local_130;
       *(undefined2 *)(pbVar3 + 0x107) = local_12c;
-      pbVar3[8] = bVar12;
+      pbVar3[8] = playerId;
       return 0;
     }
   } while( true );

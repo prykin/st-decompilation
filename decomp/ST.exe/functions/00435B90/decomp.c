@@ -11,37 +11,36 @@ short FUN_00435b90(uint param_1,DArrayTy *param_2,Global_sub_00435B90_param_3Enu
 
 {
   byte bVar1;
-  char cVar2;
+  byte bVar2;
   dword dVar3;
-  uint uVar4;
   uint objPtr;
-  int *piVar5;
-  short sVar6;
-  int *piVar7;
-  int iVar8;
+  int *piVar4;
+  short sVar5;
+  STGameObjC *pSVar6;
+  int iVar7;
   STAllPlayersC *in_ECX;
-  uint uVar9;
-  byte bVar10;
-  bool bVar11;
+  uint uVar8;
+  byte bVar9;
+  bool bVar10;
   uint local_10;
   int local_c;
   
-  piVar5 = param_4;
+  piVar4 = param_4;
   objPtr = param_1;
   dVar3 = param_2->count;
   local_10 = 0;
   local_c = 0;
-  bVar10 = (byte)param_1;
+  bVar9 = (byte)param_1;
   if ((param_4 != (int *)0x0) &&
-     ((7 < bVar10 ||
-      ((PTR_00802a38 != (STPlaySystemC *)0x0 && (7 < (byte)(&DAT_008087e9)[(char)bVar10 * 0x51])))))
-     ) {
+     ((7 < bVar9 ||
+      ((PTR_00802a38 != (STPlaySystemC *)0x0 && (7 < (byte)(&DAT_008087e9)[(char)bVar9 * 0x51]))))))
+  {
     return 1;
   }
   param_4 = (int *)0x0;
   if (0 < (int)dVar3) {
     do {
-      FUN_006acc70((AnonShape_006ACC70_C8641025 *)param_2,(uint)param_4,&param_1);
+      DArrayGetElement(param_2,(uint)param_4,&param_1);
       if ((short)param_1 != -1) {
         local_10 = param_1;
         local_c = local_c + 1;
@@ -49,25 +48,25 @@ short FUN_00435b90(uint param_1,DArrayTy *param_2,Global_sub_00435B90_param_3Enu
       param_4 = (int *)((int)param_4 + 1);
     } while ((int)param_4 < (int)dVar3);
     if (local_c == 1) {
-      piVar7 = (int *)STAllPlayersC::GetObjPtr(in_ECX,objPtr,local_10,CASE_1);
-      sVar6 = (**(code **)(*piVar7 + 0x28))(param_3,piVar5,param_5,param_6);
-      return sVar6;
+      pSVar6 = STAllPlayersC::GetObjPtr(in_ECX,objPtr,local_10,CASE_1);
+      sVar5 = (*pSVar6->vtable->vfunc_28)(param_3,piVar4,param_5,param_6);
+      return sVar5;
     }
   }
   switch(param_3) {
   case CASE_0:
-    if ((piVar5 == (int *)0x0) ||
-       (((iVar8 = piVar5[8], iVar8 != 0x14 && (iVar8 != 1000)) && (iVar8 != 0x3e9)))) {
+    if ((piVar4 == (int *)0x0) ||
+       (((iVar7 = piVar4[8], iVar7 != 0x14 && (iVar7 != 1000)) && (iVar7 != 0x3e9)))) {
       param_4 = (int *)0x0;
       if ((int)dVar3 < 1) {
         return 0;
       }
       do {
-        FUN_006acc70((AnonShape_006ACC70_C8641025 *)param_2,(uint)param_4,&param_1);
+        DArrayGetElement(param_2,(uint)param_4,&param_1);
         if ((short)param_1 != -1) {
-          piVar7 = (int *)STAllPlayersC::GetObjPtr(in_ECX,objPtr,param_1,CASE_1);
-          sVar6 = (**(code **)(*piVar7 + 0x28))(0,piVar5,param_5,param_6);
-          if (sVar6 == 5) {
+          pSVar6 = STAllPlayersC::GetObjPtr(in_ECX,objPtr,param_1,CASE_1);
+          sVar5 = (*pSVar6->vtable->vfunc_28)(0,piVar4,param_5,param_6);
+          if (sVar5 == 5) {
             return 5;
           }
         }
@@ -75,141 +74,139 @@ short FUN_00435b90(uint param_1,DArrayTy *param_2,Global_sub_00435B90_param_3Enu
       } while ((int)param_4 < (int)dVar3);
       return 0;
     }
-    iVar8 = (**(code **)(*piVar5 + 0x2c))();
-    if ((((iVar8 == 99) || (iVar8 = (**(code **)(*piVar5 + 0x2c))(), iVar8 == 0x52)) ||
-        (iVar8 = (**(code **)(*piVar5 + 0x2c))(), iVar8 == 0x5f)) &&
+    iVar7 = (**(code **)(*piVar4 + 0x2c))();
+    if ((((iVar7 == 99) || (iVar7 = (**(code **)(*piVar4 + 0x2c))(), iVar7 == 0x52)) ||
+        (iVar7 = (**(code **)(*piVar4 + 0x2c))(), iVar7 == 0x5f)) &&
        (param_4 = (int *)0x0, 0 < (int)dVar3)) {
       do {
-        FUN_006acc70((AnonShape_006ACC70_C8641025 *)param_2,(uint)param_4,&param_1);
+        DArrayGetElement(param_2,(uint)param_4,&param_1);
         if ((short)param_1 != -1) {
-          piVar7 = (int *)STAllPlayersC::GetObjPtr(in_ECX,objPtr,param_1,CASE_1);
-          sVar6 = (**(code **)(*piVar7 + 0x28))(0,piVar5,param_5,param_6);
-          if (sVar6 == 0x1e) {
+          pSVar6 = STAllPlayersC::GetObjPtr(in_ECX,objPtr,param_1,CASE_1);
+          sVar5 = (*pSVar6->vtable->vfunc_28)(0,piVar4,param_5,param_6);
+          if (sVar5 == 0x1e) {
             return 0x1e;
           }
         }
         param_4 = (int *)((int)param_4 + 1);
       } while ((int)param_4 < (int)dVar3);
     }
-    bVar1 = *(byte *)(piVar5 + 9);
+    bVar1 = *(byte *)(piVar4 + 9);
     param_3 = CONCAT31(param_3._1_3_,bVar1);
     if (DAT_00808a8f == '\0') {
-      if (bVar1 == bVar10) {
+      if (bVar1 == bVar9) {
 LAB_004366b0:
-        iVar8 = 0;
+        iVar7 = 0;
       }
       else {
-        uVar4 = (uint)bVar1;
-        uVar9 = objPtr & 0xff;
-        cVar2 = *(char *)((int)&DAT_00808a4f + uVar4 * 8 + uVar9);
-        if ((cVar2 == '\0') && (*(char *)((int)&DAT_00808a4f + uVar9 * 8 + uVar4) == '\0')) {
-          iVar8 = -2;
+        uVar8 = objPtr & 0xff;
+        bVar2 = g_playerRelationMatrix[bVar1][uVar8];
+        if ((bVar2 == 0) && (g_playerRelationMatrix[uVar8][bVar1] == 0)) {
+          iVar7 = -2;
         }
-        else if ((cVar2 == '\x01') && (*(char *)((int)&DAT_00808a4f + uVar9 * 8 + uVar4) == '\0')) {
-          iVar8 = -1;
+        else if ((bVar2 == 1) && (g_playerRelationMatrix[uVar8][bVar1] == 0)) {
+          iVar7 = -1;
         }
-        else if ((cVar2 == '\0') && (*(char *)((int)&DAT_00808a4f + uVar9 * 8 + uVar4) == '\x01')) {
-          iVar8 = 1;
+        else if ((bVar2 == 0) && (g_playerRelationMatrix[uVar8][bVar1] == 1)) {
+          iVar7 = 1;
         }
         else {
-          if ((cVar2 != '\x01') || (*(char *)((int)&DAT_00808a4f + uVar9 * 8 + uVar4) != '\x01'))
-          goto LAB_004366b0;
-          iVar8 = 2;
+          if ((bVar2 != 1) || (g_playerRelationMatrix[uVar8][bVar1] != 1)) goto LAB_004366b0;
+          iVar7 = 2;
         }
       }
-      bVar11 = iVar8 < 0;
+      bVar10 = iVar7 < 0;
     }
     else {
-      bVar11 = (&DAT_008087ea)[(objPtr & 0xff) * 0x51] != (&DAT_008087ea)[(uint)bVar1 * 0x51];
+      bVar10 = (&DAT_008087ea)[(objPtr & 0xff) * 0x51] != (&DAT_008087ea)[(uint)bVar1 * 0x51];
     }
-    if (!bVar11) {
-      if (piVar5[8] != 0x14) {
-        if ((piVar5[8] != 0x3e9) && (piVar5[9] == (int)(char)bVar10)) {
-          iVar8 = (**(code **)(*piVar5 + 0x2c))();
-          if ((iVar8 == 0x33) && (param_4 = (int *)0x0, 0 < (int)dVar3)) {
+    if (!bVar10) {
+      if (piVar4[8] != 0x14) {
+        if ((piVar4[8] != 0x3e9) && (piVar4[9] == (int)(char)bVar9)) {
+          iVar7 = (**(code **)(*piVar4 + 0x2c))();
+          if ((iVar7 == 0x33) && (param_4 = (int *)0x0, 0 < (int)dVar3)) {
             do {
-              FUN_006acc70((AnonShape_006ACC70_C8641025 *)param_2,(uint)param_4,&param_1);
+              DArrayGetElement(param_2,(uint)param_4,&param_1);
               if ((short)param_1 != -1) {
-                piVar7 = (int *)STAllPlayersC::GetObjPtr(in_ECX,objPtr,param_1,CASE_1);
-                sVar6 = (**(code **)(*piVar7 + 0x28))(0,piVar5,param_5,param_6);
-                if (sVar6 == 0x18) {
+                pSVar6 = STAllPlayersC::GetObjPtr(in_ECX,objPtr,param_1,CASE_1);
+                sVar5 = (*pSVar6->vtable->vfunc_28)(0,piVar4,param_5,param_6);
+                if (sVar5 == 0x18) {
                   return 0x18;
                 }
               }
               param_4 = (int *)((int)param_4 + 1);
             } while ((int)param_4 < (int)dVar3);
           }
-          iVar8 = (**(code **)(*piVar5 + 0x2c))();
-          if (((iVar8 == 0x37) || (iVar8 = (**(code **)(*piVar5 + 0x2c))(), iVar8 == 0x6c)) &&
+          iVar7 = (**(code **)(*piVar4 + 0x2c))();
+          if (((iVar7 == 0x37) || (iVar7 = (**(code **)(*piVar4 + 0x2c))(), iVar7 == 0x6c)) &&
              (param_4 = (int *)0x0, 0 < (int)dVar3)) {
             do {
-              FUN_006acc70((AnonShape_006ACC70_C8641025 *)param_2,(uint)param_4,&param_1);
+              DArrayGetElement(param_2,(uint)param_4,&param_1);
               if ((short)param_1 != -1) {
-                piVar7 = (int *)STAllPlayersC::GetObjPtr(in_ECX,objPtr,param_1,CASE_1);
-                sVar6 = (**(code **)(*piVar7 + 0x28))(0,piVar5,param_5,param_6);
-                if (sVar6 == 0x1d) {
+                pSVar6 = STAllPlayersC::GetObjPtr(in_ECX,objPtr,param_1,CASE_1);
+                sVar5 = (*pSVar6->vtable->vfunc_28)(0,piVar4,param_5,param_6);
+                if (sVar5 == 0x1d) {
                   return 0x1d;
                 }
               }
               param_4 = (int *)((int)param_4 + 1);
             } while ((int)param_4 < (int)dVar3);
           }
-          iVar8 = (**(code **)(*piVar5 + 0x2c))();
-          if ((((iVar8 == 0x38) || (iVar8 = (**(code **)(*piVar5 + 0x2c))(), iVar8 == 0x39)) ||
-              ((iVar8 = (**(code **)(*piVar5 + 0x2c))(), iVar8 == 0x4f ||
-               (iVar8 = (**(code **)(*piVar5 + 0x2c))(), iVar8 == 0x5e)))) &&
+          iVar7 = (**(code **)(*piVar4 + 0x2c))();
+          if ((((iVar7 == 0x38) || (iVar7 = (**(code **)(*piVar4 + 0x2c))(), iVar7 == 0x39)) ||
+              ((iVar7 = (**(code **)(*piVar4 + 0x2c))(), iVar7 == 0x4f ||
+               (iVar7 = (**(code **)(*piVar4 + 0x2c))(), iVar7 == 0x5e)))) &&
              (param_4 = (int *)0x0, 0 < (int)dVar3)) {
             do {
-              FUN_006acc70((AnonShape_006ACC70_C8641025 *)param_2,(uint)param_4,&param_1);
+              DArrayGetElement(param_2,(uint)param_4,&param_1);
               if ((short)param_1 != -1) {
-                piVar7 = (int *)STAllPlayersC::GetObjPtr(in_ECX,objPtr,param_1,CASE_1);
-                sVar6 = (**(code **)(*piVar7 + 0x28))(0,piVar5,param_5,param_6);
-                if (sVar6 == 0x12) {
+                pSVar6 = STAllPlayersC::GetObjPtr(in_ECX,objPtr,param_1,CASE_1);
+                sVar5 = (*pSVar6->vtable->vfunc_28)(0,piVar4,param_5,param_6);
+                if (sVar5 == 0x12) {
                   return 0x12;
                 }
               }
               param_4 = (int *)((int)param_4 + 1);
             } while ((int)param_4 < (int)dVar3);
           }
-          iVar8 = (**(code **)(*piVar5 + 0xec))();
-          return (-(ushort)(iVar8 != 1) & 0xfffc) + 4;
+          iVar7 = (**(code **)(*piVar4 + 0xec))();
+          return (-(ushort)(iVar7 != 1) & 0xfffc) + 4;
         }
-        iVar8 = (**(code **)(*piVar5 + 0xec))();
-        return (-(ushort)(iVar8 != 1) & 0xfffc) + 4;
+        iVar7 = (**(code **)(*piVar4 + 0xec))();
+        return (-(ushort)(iVar7 != 1) & 0xfffc) + 4;
       }
       param_4 = (int *)0x0;
       if (0 < (int)dVar3) {
         do {
-          FUN_006acc70((AnonShape_006ACC70_C8641025 *)param_2,(uint)param_4,&param_1);
+          DArrayGetElement(param_2,(uint)param_4,&param_1);
           if ((short)param_1 != -1) {
-            piVar7 = (int *)STAllPlayersC::GetObjPtr(in_ECX,objPtr,param_1,CASE_1);
-            sVar6 = (**(code **)(*piVar7 + 0x28))(0,piVar5,param_5,param_6);
-            if (sVar6 == 0x17) {
+            pSVar6 = STAllPlayersC::GetObjPtr(in_ECX,objPtr,param_1,CASE_1);
+            sVar5 = (*pSVar6->vtable->vfunc_28)(0,piVar4,param_5,param_6);
+            if (sVar5 == 0x17) {
               return 0x17;
             }
-            if (sVar6 == 0x1a) {
+            if (sVar5 == 0x1a) {
               return 0x1a;
             }
           }
           param_4 = (int *)((int)param_4 + 1);
         } while ((int)param_4 < (int)dVar3);
       }
-      iVar8 = (**(code **)(*piVar5 + 0xec))();
-      return (-(ushort)(iVar8 != 1) & 0xfffd) + 3;
+      iVar7 = (**(code **)(*piVar4 + 0xec))();
+      return (-(ushort)(iVar7 != 1) & 0xfffd) + 3;
     }
-    iVar8 = (**(code **)(*piVar5 + 0x2c))();
+    iVar7 = (**(code **)(*piVar4 + 0x2c))();
     param_4 = (int *)0x0;
-    if (iVar8 == 0x6c) {
+    if (iVar7 == 0x6c) {
       if (0 < (int)dVar3) {
         do {
-          FUN_006acc70((AnonShape_006ACC70_C8641025 *)param_2,(uint)param_4,&param_1);
+          DArrayGetElement(param_2,(uint)param_4,&param_1);
           if ((short)param_1 != -1) {
-            piVar7 = (int *)STAllPlayersC::GetObjPtr(in_ECX,objPtr,param_1,CASE_1);
-            sVar6 = (**(code **)(*piVar7 + 0x28))(0,piVar5,param_5,param_6);
-            if (sVar6 == 7) {
+            pSVar6 = STAllPlayersC::GetObjPtr(in_ECX,objPtr,param_1,CASE_1);
+            sVar5 = (*pSVar6->vtable->vfunc_28)(0,piVar4,param_5,param_6);
+            if (sVar5 == 7) {
               return 7;
             }
-            if (sVar6 == 0x1d) {
+            if (sVar5 == 0x1d) {
               return 0x1d;
             }
           }
@@ -222,11 +219,11 @@ LAB_004366b0:
     }
     else if (0 < (int)dVar3) {
       do {
-        FUN_006acc70((AnonShape_006ACC70_C8641025 *)param_2,(uint)param_4,&param_1);
+        DArrayGetElement(param_2,(uint)param_4,&param_1);
         if ((short)param_1 != -1) {
-          piVar7 = (int *)STAllPlayersC::GetObjPtr(in_ECX,objPtr,param_1,CASE_1);
-          sVar6 = (**(code **)(*piVar7 + 0x28))(0,piVar5,param_5,param_6);
-          if (sVar6 == 7) {
+          pSVar6 = STAllPlayersC::GetObjPtr(in_ECX,objPtr,param_1,CASE_1);
+          sVar5 = (*pSVar6->vtable->vfunc_28)(0,piVar4,param_5,param_6);
+          if (sVar5 == 7) {
             return 7;
           }
         }
@@ -241,11 +238,11 @@ switchD_00435c5c_caseD_1:
     param_4 = (int *)0x0;
     if (0 < (int)dVar3) {
       do {
-        FUN_006acc70((AnonShape_006ACC70_C8641025 *)param_2,(uint)param_4,&param_1);
+        DArrayGetElement(param_2,(uint)param_4,&param_1);
         if ((short)param_1 != -1) {
-          piVar7 = (int *)STAllPlayersC::GetObjPtr(in_ECX,objPtr,param_1,CASE_1);
-          sVar6 = (**(code **)(*piVar7 + 0x28))(2,piVar5,param_5,param_6);
-          if (sVar6 == 6) {
+          pSVar6 = STAllPlayersC::GetObjPtr(in_ECX,objPtr,param_1,CASE_1);
+          sVar5 = (*pSVar6->vtable->vfunc_28)(2,piVar4,param_5,param_6);
+          if (sVar5 == 6) {
             return 6;
           }
         }
@@ -256,20 +253,20 @@ switchD_00435c5c_caseD_1:
     break;
   case CASE_3:
   case CASE_2B:
-    if (piVar5 == (int *)0x0) {
+    if (piVar4 == (int *)0x0) {
       return 1;
     }
     param_4 = (int *)0x0;
     if (0 < (int)dVar3) {
       do {
-        FUN_006acc70((AnonShape_006ACC70_C8641025 *)param_2,(uint)param_4,&param_1);
+        DArrayGetElement(param_2,(uint)param_4,&param_1);
         if ((short)param_1 != -1) {
-          piVar7 = (int *)STAllPlayersC::GetObjPtr(in_ECX,objPtr,param_1,CASE_1);
-          sVar6 = (**(code **)(*piVar7 + 0x28))(param_3,piVar5,param_5,param_6);
-          if (sVar6 == 7) {
+          pSVar6 = STAllPlayersC::GetObjPtr(in_ECX,objPtr,param_1,CASE_1);
+          sVar5 = (*pSVar6->vtable->vfunc_28)(param_3,piVar4,param_5,param_6);
+          if (sVar5 == 7) {
             return 7;
           }
-          if (sVar6 == 2) {
+          if (sVar5 == 2) {
             return 2;
           }
         }
@@ -278,17 +275,17 @@ switchD_00435c5c_caseD_1:
     }
     return 1;
   case CASE_4:
-    if (piVar5 == (int *)0x0) {
+    if (piVar4 == (int *)0x0) {
       return 1;
     }
     param_4 = (int *)0x0;
     if (0 < (int)dVar3) {
       do {
-        FUN_006acc70((AnonShape_006ACC70_C8641025 *)param_2,(uint)param_4,&param_1);
+        DArrayGetElement(param_2,(uint)param_4,&param_1);
         if ((short)param_1 != -1) {
-          piVar7 = (int *)STAllPlayersC::GetObjPtr(in_ECX,objPtr,param_1,CASE_1);
-          sVar6 = (**(code **)(*piVar7 + 0x28))(4,piVar5,param_5,param_6);
-          if (sVar6 == 0x18) {
+          pSVar6 = STAllPlayersC::GetObjPtr(in_ECX,objPtr,param_1,CASE_1);
+          sVar5 = (*pSVar6->vtable->vfunc_28)(4,piVar4,param_5,param_6);
+          if (sVar5 == 0x18) {
             return 0x18;
           }
         }
@@ -298,17 +295,17 @@ switchD_00435c5c_caseD_1:
     }
     break;
   case CASE_5:
-    if (piVar5 == (int *)0x0) {
+    if (piVar4 == (int *)0x0) {
       return 1;
     }
     param_4 = (int *)0x0;
     if (0 < (int)dVar3) {
       do {
-        FUN_006acc70((AnonShape_006ACC70_C8641025 *)param_2,(uint)param_4,&param_1);
+        DArrayGetElement(param_2,(uint)param_4,&param_1);
         if ((short)param_1 != -1) {
-          piVar7 = (int *)STAllPlayersC::GetObjPtr(in_ECX,objPtr,param_1,CASE_1);
-          sVar6 = (**(code **)(*piVar7 + 0x28))(5,piVar5,param_5,param_6);
-          if (sVar6 == 0xd) {
+          pSVar6 = STAllPlayersC::GetObjPtr(in_ECX,objPtr,param_1,CASE_1);
+          sVar5 = (*pSVar6->vtable->vfunc_28)(5,piVar4,param_5,param_6);
+          if (sVar5 == 0xd) {
             return 0xd;
           }
         }
@@ -321,11 +318,11 @@ switchD_00435c5c_caseD_1:
     param_4 = (int *)0x0;
     if (0 < (int)dVar3) {
       do {
-        FUN_006acc70((AnonShape_006ACC70_C8641025 *)param_2,(uint)param_4,&param_1);
+        DArrayGetElement(param_2,(uint)param_4,&param_1);
         if ((short)param_1 != -1) {
-          piVar7 = (int *)STAllPlayersC::GetObjPtr(in_ECX,objPtr,param_1,CASE_1);
-          sVar6 = (**(code **)(*piVar7 + 0x28))(6,piVar5,param_5,param_6);
-          if (sVar6 == 0xf) {
+          pSVar6 = STAllPlayersC::GetObjPtr(in_ECX,objPtr,param_1,CASE_1);
+          sVar5 = (*pSVar6->vtable->vfunc_28)(6,piVar4,param_5,param_6);
+          if (sVar5 == 0xf) {
             return 0xf;
           }
         }
@@ -335,23 +332,23 @@ switchD_00435c5c_caseD_1:
     }
     break;
   case CASE_7:
-    if (piVar5 == (int *)0x0) {
+    if (piVar4 == (int *)0x0) {
       return 1;
     }
     param_4 = (int *)0x0;
     if (0 < (int)dVar3) {
       do {
-        FUN_006acc70((AnonShape_006ACC70_C8641025 *)param_2,(uint)param_4,&param_1);
+        DArrayGetElement(param_2,(uint)param_4,&param_1);
         if ((short)param_1 != -1) {
-          piVar7 = (int *)STAllPlayersC::GetObjPtr(in_ECX,objPtr,param_1,CASE_1);
-          sVar6 = (**(code **)(*piVar7 + 0x28))(7,piVar5,param_5,param_6);
-          if (sVar6 == 9) {
+          pSVar6 = STAllPlayersC::GetObjPtr(in_ECX,objPtr,param_1,CASE_1);
+          sVar5 = (*pSVar6->vtable->vfunc_28)(7,piVar4,param_5,param_6);
+          if (sVar5 == 9) {
             return 9;
           }
-          if (sVar6 == 10) {
+          if (sVar5 == 10) {
             return 10;
           }
-          if (sVar6 == 0xb) {
+          if (sVar5 == 0xb) {
             return 0xb;
           }
         }
@@ -363,11 +360,11 @@ switchD_00435c5c_caseD_1:
     param_4 = (int *)0x0;
     if (0 < (int)dVar3) {
       do {
-        FUN_006acc70((AnonShape_006ACC70_C8641025 *)param_2,(uint)param_4,&param_1);
+        DArrayGetElement(param_2,(uint)param_4,&param_1);
         if ((short)param_1 != -1) {
-          piVar7 = (int *)STAllPlayersC::GetObjPtr(in_ECX,objPtr,param_1,CASE_1);
-          sVar6 = (**(code **)(*piVar7 + 0x28))(8,piVar5,param_5,param_6);
-          if (sVar6 == 0x11) {
+          pSVar6 = STAllPlayersC::GetObjPtr(in_ECX,objPtr,param_1,CASE_1);
+          sVar5 = (*pSVar6->vtable->vfunc_28)(8,piVar4,param_5,param_6);
+          if (sVar5 == 0x11) {
             return 0x11;
           }
         }
@@ -380,11 +377,11 @@ switchD_00435c5c_caseD_1:
     param_4 = (int *)0x0;
     if (0 < (int)dVar3) {
       do {
-        FUN_006acc70((AnonShape_006ACC70_C8641025 *)param_2,(uint)param_4,&param_1);
+        DArrayGetElement(param_2,(uint)param_4,&param_1);
         if ((short)param_1 != -1) {
-          piVar7 = (int *)STAllPlayersC::GetObjPtr(in_ECX,objPtr,param_1,CASE_1);
-          sVar6 = (**(code **)(*piVar7 + 0x28))(9,piVar5,param_5,param_6);
-          if (sVar6 == 8) {
+          pSVar6 = STAllPlayersC::GetObjPtr(in_ECX,objPtr,param_1,CASE_1);
+          sVar5 = (*pSVar6->vtable->vfunc_28)(9,piVar4,param_5,param_6);
+          if (sVar5 == 8) {
             return 8;
           }
         }
@@ -394,17 +391,17 @@ switchD_00435c5c_caseD_1:
     }
     break;
   case CASE_A:
-    if (piVar5 == (int *)0x0) {
+    if (piVar4 == (int *)0x0) {
       return 1;
     }
     param_4 = (int *)0x0;
     if (0 < (int)dVar3) {
       do {
-        FUN_006acc70((AnonShape_006ACC70_C8641025 *)param_2,(uint)param_4,&param_1);
+        DArrayGetElement(param_2,(uint)param_4,&param_1);
         if ((short)param_1 != -1) {
-          piVar7 = (int *)STAllPlayersC::GetObjPtr(in_ECX,objPtr,param_1,CASE_1);
-          sVar6 = (**(code **)(*piVar7 + 0x28))(10,piVar5,param_5,param_6);
-          if (sVar6 == 0xc) {
+          pSVar6 = STAllPlayersC::GetObjPtr(in_ECX,objPtr,param_1,CASE_1);
+          sVar5 = (*pSVar6->vtable->vfunc_28)(10,piVar4,param_5,param_6);
+          if (sVar5 == 0xc) {
             return 0xc;
           }
         }
@@ -414,16 +411,16 @@ switchD_00435c5c_caseD_1:
     }
     break;
   case CASE_D:
-    if ((piVar5 != (int *)0x0) && (param_4 = (int *)0x0, 0 < (int)dVar3)) {
+    if ((piVar4 != (int *)0x0) && (param_4 = (int *)0x0, 0 < (int)dVar3)) {
       do {
-        FUN_006acc70((AnonShape_006ACC70_C8641025 *)param_2,(uint)param_4,&param_1);
+        DArrayGetElement(param_2,(uint)param_4,&param_1);
         if ((short)param_1 != -1) {
-          piVar7 = (int *)STAllPlayersC::GetObjPtr(in_ECX,objPtr,param_1,CASE_1);
-          if (piVar5 == piVar7) {
+          pSVar6 = STAllPlayersC::GetObjPtr(in_ECX,objPtr,param_1,CASE_1);
+          if ((STGameObjC *)piVar4 == pSVar6) {
             return 0;
           }
-          sVar6 = (**(code **)(*piVar7 + 0x28))(0xd,piVar5,param_5,param_6);
-          if (sVar6 == 0x17) {
+          sVar5 = (*pSVar6->vtable->vfunc_28)(0xd,piVar4,param_5,param_6);
+          if (sVar5 == 0x17) {
             return 0x17;
           }
         }
@@ -438,14 +435,14 @@ switchD_00435c5c_caseD_1:
     param_4 = (int *)0x0;
     if (0 < (int)dVar3) {
       do {
-        FUN_006acc70((AnonShape_006ACC70_C8641025 *)param_2,(uint)param_4,&param_1);
+        DArrayGetElement(param_2,(uint)param_4,&param_1);
         if ((short)param_1 != -1) {
-          piVar7 = (int *)STAllPlayersC::GetObjPtr(in_ECX,objPtr,param_1,CASE_1);
-          if (piVar5 == piVar7) {
+          pSVar6 = STAllPlayersC::GetObjPtr(in_ECX,objPtr,param_1,CASE_1);
+          if ((STGameObjC *)piVar4 == pSVar6) {
             return 0;
           }
-          sVar6 = (**(code **)(*piVar7 + 0x28))(0xe,piVar5,param_5,param_6);
-          if (sVar6 == 0x14) {
+          sVar5 = (*pSVar6->vtable->vfunc_28)(0xe,piVar4,param_5,param_6);
+          if (sVar5 == 0x14) {
             return 0x14;
           }
         }
@@ -454,17 +451,17 @@ switchD_00435c5c_caseD_1:
     }
     return 0x15;
   case CASE_10:
-    if (piVar5 == (int *)0x0) {
+    if (piVar4 == (int *)0x0) {
       return 1;
     }
     param_4 = (int *)0x0;
     if (0 < (int)dVar3) {
       do {
-        FUN_006acc70((AnonShape_006ACC70_C8641025 *)param_2,(uint)param_4,&param_1);
+        DArrayGetElement(param_2,(uint)param_4,&param_1);
         if ((short)param_1 != -1) {
-          piVar7 = (int *)STAllPlayersC::GetObjPtr(in_ECX,objPtr,param_1,CASE_1);
-          sVar6 = (**(code **)(*piVar7 + 0x28))(0x10,piVar5,param_5,param_6);
-          if (sVar6 == 0x16) {
+          pSVar6 = STAllPlayersC::GetObjPtr(in_ECX,objPtr,param_1,CASE_1);
+          sVar5 = (*pSVar6->vtable->vfunc_28)(0x10,piVar4,param_5,param_6);
+          if (sVar5 == 0x16) {
             return 0x16;
           }
         }
@@ -474,17 +471,17 @@ switchD_00435c5c_caseD_1:
     }
     break;
   case CASE_11:
-    if (piVar5 == (int *)0x0) {
+    if (piVar4 == (int *)0x0) {
       return 1;
     }
     param_4 = (int *)0x0;
     if (0 < (int)dVar3) {
       do {
-        FUN_006acc70((AnonShape_006ACC70_C8641025 *)param_2,(uint)param_4,&param_1);
+        DArrayGetElement(param_2,(uint)param_4,&param_1);
         if ((short)param_1 != -1) {
-          piVar7 = (int *)STAllPlayersC::GetObjPtr(in_ECX,objPtr,param_1,CASE_1);
-          sVar6 = (**(code **)(*piVar7 + 0x28))(0x11,piVar5,param_5,param_6);
-          if (sVar6 == 0x12) {
+          pSVar6 = STAllPlayersC::GetObjPtr(in_ECX,objPtr,param_1,CASE_1);
+          sVar5 = (*pSVar6->vtable->vfunc_28)(0x11,piVar4,param_5,param_6);
+          if (sVar5 == 0x12) {
             return 0x12;
           }
         }
@@ -494,17 +491,17 @@ switchD_00435c5c_caseD_1:
     }
     break;
   case CASE_12:
-    if (piVar5 == (int *)0x0) {
+    if (piVar4 == (int *)0x0) {
       return 1;
     }
     param_4 = (int *)0x0;
     if (0 < (int)dVar3) {
       do {
-        FUN_006acc70((AnonShape_006ACC70_C8641025 *)param_2,(uint)param_4,&param_1);
+        DArrayGetElement(param_2,(uint)param_4,&param_1);
         if ((short)param_1 != -1) {
-          piVar7 = (int *)STAllPlayersC::GetObjPtr(in_ECX,objPtr,param_1,CASE_1);
-          sVar6 = (**(code **)(*piVar7 + 0x28))(0x12,piVar5,param_5,param_6);
-          if (sVar6 == 0x13) {
+          pSVar6 = STAllPlayersC::GetObjPtr(in_ECX,objPtr,param_1,CASE_1);
+          sVar5 = (*pSVar6->vtable->vfunc_28)(0x12,piVar4,param_5,param_6);
+          if (sVar5 == 0x13) {
             return 0x13;
           }
         }
@@ -514,20 +511,20 @@ switchD_00435c5c_caseD_1:
     }
     break;
   case CASE_13:
-    if (piVar5 == (int *)0x0) {
+    if (piVar4 == (int *)0x0) {
       return 1;
     }
     param_4 = (int *)0x0;
     if (0 < (int)dVar3) {
       do {
-        FUN_006acc70((AnonShape_006ACC70_C8641025 *)param_2,(uint)param_4,&param_1);
+        DArrayGetElement(param_2,(uint)param_4,&param_1);
         if ((short)param_1 != -1) {
-          piVar7 = (int *)STAllPlayersC::GetObjPtr(in_ECX,objPtr,param_1,CASE_1);
-          if (piVar5 == piVar7) {
+          pSVar6 = STAllPlayersC::GetObjPtr(in_ECX,objPtr,param_1,CASE_1);
+          if ((STGameObjC *)piVar4 == pSVar6) {
             return 0;
           }
-          sVar6 = (**(code **)(*piVar7 + 0x28))(0x13,piVar5,param_5,param_6);
-          if (sVar6 == 0x1a) {
+          sVar5 = (*pSVar6->vtable->vfunc_28)(0x13,piVar4,param_5,param_6);
+          if (sVar5 == 0x1a) {
             return 0x1a;
           }
         }
@@ -542,14 +539,14 @@ switchD_00435c5c_caseD_1:
     param_4 = (int *)0x0;
     if (0 < (int)dVar3) {
       do {
-        FUN_006acc70((AnonShape_006ACC70_C8641025 *)param_2,(uint)param_4,&param_1);
+        DArrayGetElement(param_2,(uint)param_4,&param_1);
         if ((short)param_1 != -1) {
-          piVar7 = (int *)STAllPlayersC::GetObjPtr(in_ECX,objPtr,param_1,CASE_1);
-          if (piVar5 == piVar7) {
+          pSVar6 = STAllPlayersC::GetObjPtr(in_ECX,objPtr,param_1,CASE_1);
+          if ((STGameObjC *)piVar4 == pSVar6) {
             return 0;
           }
-          sVar6 = (**(code **)(*piVar7 + 0x28))(0x18,piVar5,param_5,param_6);
-          if (sVar6 == 0x1d) {
+          sVar5 = (*pSVar6->vtable->vfunc_28)(0x18,piVar4,param_5,param_6);
+          if (sVar5 == 0x1d) {
             return 0x1d;
           }
         }
@@ -564,11 +561,11 @@ switchD_00435c5c_caseD_1:
     param_4 = (int *)0x0;
     if (0 < (int)dVar3) {
       do {
-        FUN_006acc70((AnonShape_006ACC70_C8641025 *)param_2,(uint)param_4,&param_1);
+        DArrayGetElement(param_2,(uint)param_4,&param_1);
         if ((short)param_1 != -1) {
-          piVar7 = (int *)STAllPlayersC::GetObjPtr(in_ECX,objPtr,param_1,CASE_1);
-          sVar6 = (**(code **)(*piVar7 + 0x28))(0x2d,piVar5,param_5,param_6);
-          if (sVar6 == 0x10) {
+          pSVar6 = STAllPlayersC::GetObjPtr(in_ECX,objPtr,param_1,CASE_1);
+          sVar5 = (*pSVar6->vtable->vfunc_28)(0x2d,piVar4,param_5,param_6);
+          if (sVar5 == 0x10) {
             return 0x10;
           }
         }
@@ -578,17 +575,17 @@ switchD_00435c5c_caseD_1:
     }
     break;
   case CASE_4D:
-    if (piVar5 == (int *)0x0) {
+    if (piVar4 == (int *)0x0) {
       return 1;
     }
     param_4 = (int *)0x0;
     if (0 < (int)dVar3) {
       do {
-        FUN_006acc70((AnonShape_006ACC70_C8641025 *)param_2,(uint)param_4,&param_1);
+        DArrayGetElement(param_2,(uint)param_4,&param_1);
         if ((short)param_1 != -1) {
-          piVar7 = (int *)STAllPlayersC::GetObjPtr(in_ECX,objPtr,param_1,CASE_1);
-          sVar6 = (**(code **)(*piVar7 + 0x28))(0x4d,piVar5,param_5,param_6);
-          if (sVar6 == 0x1d) {
+          pSVar6 = STAllPlayersC::GetObjPtr(in_ECX,objPtr,param_1,CASE_1);
+          sVar5 = (*pSVar6->vtable->vfunc_28)(0x4d,piVar4,param_5,param_6);
+          if (sVar5 == 0x1d) {
             return 0x1d;
           }
         }

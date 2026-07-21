@@ -25,7 +25,8 @@ undefined4 __thiscall FUN_004e91e0(void *this,STBoatC *param_1)
     iVar4 = thunk_FUN_004e9930((int)this);
     if ((((iVar4 == 0) || (iVar4 = *(int *)((int)this + 0x61b), iVar4 == 0)) ||
         (*(int *)(iVar4 + 0x20) != 1000)) ||
-       ((*(int *)(iVar4 + 0x4d8) != 0xffff || (SHORT_007fb244 + -1 <= *(int *)(iVar4 + 0x5b8))))) {
+       ((*(int *)(iVar4 + 0x4d8) != 0xffff || (g_worldGrid.sizeZ + -1 <= *(int *)(iVar4 + 0x5b8)))))
+    {
       bVar2 = false;
     }
     else {
@@ -40,7 +41,7 @@ undefined4 __thiscall FUN_004e91e0(void *this,STBoatC *param_1)
         iVar4 = 100;
       }
       else {
-        uVar6 = thunk_FUN_004406c0(param_1->field_0x24);
+        uVar6 = GetPlayerRaceId(param_1->field_0x24);
         iVar4 = (*param_1->vtable->vfunc_2C)();
         iVar4 = *(int *)(&DAT_007e37b0 + ((uVar6 & 0xff) + iVar4 * 3) * 4);
       }
@@ -72,12 +73,13 @@ undefined4 __thiscall FUN_004e91e0(void *this,STBoatC *param_1)
             iVar5 = iVar1;
             do {
               sVar3 = (short)iVar5;
-              if (((((sVar3 < 0) || (SHORT_007fb240 <= sVar3)) || (sVar8 = (short)iVar9, sVar8 < 0))
-                  || ((SHORT_007fb242 <= sVar8 || (sVar10 < 0)))) ||
-                 ((SHORT_007fb244 <= sVar10 ||
-                  (g_worldCells
-                   [(int)sVar8 * (int)SHORT_007fb240 + (int)SHORT_007fb246 * (int)sVar10 +
-                    (int)sVar3].objects[0] == (STWorldObject *)0x0)))) {
+              if (((((sVar3 < 0) || (g_worldGrid.sizeX <= sVar3)) ||
+                   (sVar8 = (short)iVar9, sVar8 < 0)) ||
+                  ((g_worldGrid.sizeY <= sVar8 || (sVar10 < 0)))) ||
+                 ((g_worldGrid.sizeZ <= sVar10 ||
+                  (g_worldGrid.cells
+                   [(int)sVar8 * (int)g_worldGrid.sizeX + (int)g_worldGrid.planeStride * (int)sVar10
+                    + (int)sVar3].objects[0] == (STWorldObject *)0x0)))) {
                 *(int *)((int)this + 0x4e4) = iVar5;
                 *(int *)((int)this + 0x4e8) = iVar9;
                 *(int *)((int)this + 0x4ec) = *(int *)(iVar11 + 0x5b8) + 1;

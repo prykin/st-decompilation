@@ -34,7 +34,7 @@ STJellyGunC::GetMessage(STJellyGunC *this,AnonShape_00583270_A36DCD7A *param_1)
   undefined4 local_48;
   STSprGameObjC *local_3c;
   AnonShape_00583270_F758043B *local_38;
-  LPVOID local_34;
+  void *local_34;
   undefined4 local_30;
   undefined4 local_2c;
   undefined4 local_28;
@@ -278,8 +278,8 @@ STJellyGunC::GetMessage(STJellyGunC *this,AnonShape_00583270_A36DCD7A *param_1)
           this_00->field_0x250 = local_38->field_0061;
           this_00->field_0x251 = local_38->field_0062;
           *(undefined4 *)&this_00->field_0x252 = local_38->field_0063;
-          local_34 = (LPVOID)Library::DKW::LIB::FUN_006aac70(0x44);
-          if (local_34 != (LPVOID)0x0) {
+          local_34 = (void *)Library::DKW::LIB::FUN_006aac70(0x44);
+          if (local_34 != (void *)0x0) {
             iVar6 = 0;
             do {
               piVar14 = DAT_00806774;
@@ -299,8 +299,8 @@ STJellyGunC::GetMessage(STJellyGunC *this,AnonShape_00583270_A36DCD7A *param_1)
             local_1c = 0;
             STT3DSprC::RestoreSpr
                       ((STT3DSprC *)&this_00->field_01D5,(int *)&local_34,
-                       (AnonShape_004ADBA0_E7CEFF88 *)&pAVar11->field_0x6b);
-            FUN_006ab060(&local_34);
+                       (AnonShape_004AD790_77673787 *)&pAVar11->field_0x6b);
+            FreeAndNull(&local_34);
             DumpClassC::WritePtr
                       (*(short *)&this_00->field_0x5b,*(short *)&this_00->field_0x5d,
                        *(short *)&this_00->field_0x5f,1,(AnonShape_00495EC0_95A268C6 *)this_00);
@@ -431,10 +431,11 @@ STJellyGunC::GetMessage(STJellyGunC *this,AnonShape_00583270_A36DCD7A *param_1)
           pbVar17 = pbVar17 + 1;
         }
         STPlaySystemC::SaveObjData
-                  (PTR_00802a38,this_00->field_0018,local_c,local_10 + 0x6f + local_8);
-        FUN_006ab060(&local_14);
-        FUN_006ab060(&local_18);
-        FUN_006ab060(&local_c);
+                  (PTR_00802a38,this_00->field_0018,local_c,
+                   (AnonShape_0060EA30_DCEB68AD *)(local_10 + 0x6f + local_8));
+        FreeAndNull(&local_14);
+        FreeAndNull(&local_18);
+        FreeAndNull(&local_c);
         g_currentExceptionFrame = local_a0.previous;
         return 0;
       }

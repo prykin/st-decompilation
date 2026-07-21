@@ -20,7 +20,7 @@ undefined4 __thiscall STLightC::GetMessage(STLightC *this,AnonShape_0061D190_F4B
   InternalExceptionFrame local_60;
   SoundPosition local_1c;
   byte *local_10;
-  uint local_c;
+  AnonShape_0060EA30_DCEB68AD *local_c;
   STJellyGunC *local_8;
   
   local_60.previous = g_currentExceptionFrame;
@@ -157,7 +157,7 @@ LAB_0061d434:
   else if (uVar4 == 0x10f) {
     local_10 = thunk_FUN_0061d710(local_8,(int *)&local_c);
     STPlaySystemC::SaveObjData(PTR_00802a38,this_00->field_0018,local_10,local_c);
-    FUN_006ab060(&local_10);
+    FreeAndNull(&local_10);
   }
   g_currentExceptionFrame = local_60.previous;
   return 0;

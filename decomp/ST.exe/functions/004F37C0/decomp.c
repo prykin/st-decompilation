@@ -77,7 +77,7 @@ CPanelTy::PaintBBut(CPanelTy *this,byte param_1,AnonShape_004F37C0_C7280A38 *par
 LAB_004f38ad:
     iVar5 = iVar5 - local_8->field_00C0;
   }
-  DibPut((AnonShape_006B84D0_7C7D97C6 *)(&local_8->field_0180)[uVar2],
+  DibPut((AnonShape_006B5B10_E0D06CF1 *)(&local_8->field_0180)[uVar2],
          local_10->field_0000 - (&local_8->field_003C)[uVar2],iVar5 - iVar4,param_3,(byte *)local_c)
   ;
   cMf32::RecMemFree(DAT_00806790,(uint *)&local_c);

@@ -19,11 +19,11 @@ undefined4 __fastcall FUN_004d7270(int *param_1)
         uVar3 = thunk_FUN_004ad650((int)param_1 + 0x1d5);
         thunk_FUN_00637c50(uVar3,uVar4,iVar1);
       }
-      uVar3 = thunk_FUN_004406c0(*(char *)((int)param_1 + 0x23d));
+      uVar3 = GetPlayerRaceId(*(char *)((int)param_1 + 0x23d));
       if (*(int *)(&DAT_00796230 + ((uVar3 & 0xff) + *(int *)((int)param_1 + 0x235) * 3) * 4) != 0)
       {
         iVar1 = *param_1;
-        uVar3 = thunk_FUN_004406c0(*(char *)((int)param_1 + 0x23d));
+        uVar3 = GetPlayerRaceId(*(char *)((int)param_1 + 0x23d));
         (**(code **)(iVar1 + 0x90))
                   (3,*(undefined4 *)
                       (&DAT_00796230 + ((uVar3 & 0xff) + *(int *)((int)param_1 + 0x235) * 3) * 4));

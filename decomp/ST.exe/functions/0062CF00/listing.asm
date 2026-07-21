@@ -1,4 +1,4 @@
-FUN_0062cf00:
+STManRub3C::STManRub3C:
 0062CF00  56                        PUSH ESI
 0062CF01  57                        PUSH EDI
 0062CF02  8B F1                     MOV ESI,ECX

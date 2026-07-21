@@ -21,7 +21,7 @@ void __cdecl FUN_00726260(uint *param_1)
         iVar3 = iVar3 + 10;
       } while (iVar2 < (int)psVar1[1] * (int)*psVar1);
     }
-    FUN_006ab060((LPVOID *)param_1);
+    FreeAndNull((void **)param_1);
   }
   return;
 }

@@ -33,10 +33,10 @@ void __thiscall OptPanelTy::DoneOptPanel(OptPanelTy *this)
   if (iVar3 == 0) {
     if ((AnonShape_006B5570_4D68B99C *)local_8->field_01E9 != (AnonShape_006B5570_4D68B99C *)0x0) {
       FUN_006b5570((AnonShape_006B5570_4D68B99C *)local_8->field_01E9);
-      pOVar2->field_01E9 = 0;
+      pOVar2->field_01E9 = (AnonPointee_OptPanelTy_01E9 *)0x0;
     }
-    if ((byte *)pOVar2->field_01ED != (byte *)0x0) {
-      FUN_006ae110((byte *)pOVar2->field_01ED);
+    if ((DArrayTy *)pOVar2->field_01ED != (DArrayTy *)0x0) {
+      DArrayDestroy((DArrayTy *)pOVar2->field_01ED);
       pOVar2->field_01ED = 0;
     }
     if ((AnonShape_006B5570_4D68B99C *)pOVar2->field_01F1 != (AnonShape_006B5570_4D68B99C *)0x0) {
@@ -45,7 +45,7 @@ void __thiscall OptPanelTy::DoneOptPanel(OptPanelTy *this)
     }
     this_00 = (ccFntTy *)0x0;
     if (pOVar2->field_01E5 != 0) {
-      FUN_006ab060((LPVOID *)&pOVar2->field_01E5);
+      FreeAndNull((void **)&pOVar2->field_01E5);
       this_00 = extraout_ECX;
     }
     if ((AnonShape_006B5570_4D68B99C *)pOVar2->field_02F9 != (AnonShape_006B5570_4D68B99C *)0x0) {
@@ -53,11 +53,11 @@ void __thiscall OptPanelTy::DoneOptPanel(OptPanelTy *this)
       this_00 = extraout_ECX_00;
     }
     pOVar2->field_02F9 = (uint *)0x0;
-    if ((byte *)pOVar2->field_02FD != (byte *)0x0) {
-      FUN_006ae110((byte *)pOVar2->field_02FD);
+    if (pOVar2->field_02FD != (DArrayTy *)0x0) {
+      DArrayDestroy(pOVar2->field_02FD);
       this_00 = extraout_ECX_01;
     }
-    pOVar2->field_02FD = 0;
+    pOVar2->field_02FD = (DArrayTy *)0x0;
     if (pOVar2->field_01DD != (HANDLE)0x0) {
       FindCloseChangeNotification(pOVar2->field_01DD);
       pOVar2->field_01DD = (HANDLE)0x0;

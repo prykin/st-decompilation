@@ -10,25 +10,25 @@
 undefined4 FUN_0042c300(uint param_1,uint param_2,int param_3,uint param_4,uint param_5)
 
 {
-  AnonShape_006ACC70_C8641025 *pAVar1;
-  int iVar2;
-  int *piVar3;
+  DArrayTy *array;
+  int iVar1;
+  STGameObjC *pSVar2;
   STAllPlayersC *in_ECX;
-  int *piVar4;
-  int iVar5;
-  uint uVar6;
-  Global_sub_0043FC50_param_1Enum GVar7;
+  int *piVar3;
+  int iVar4;
+  uint index;
+  Global_sub_0043FC50_param_1Enum GVar5;
   
-  iVar2 = param_3;
-  iVar5 = 0;
+  iVar1 = param_3;
+  iVar4 = 0;
   if (param_2 == 0) {
-    iVar5 = (char)param_1 * 0xa62 + 0x7f4f83;
+    iVar4 = (char)param_1 * 0xa62 + 0x7f4f83;
     if (param_3 == 0) {
       thunk_FUN_0043fc50(CASE_1,0);
-      GVar7 = CASE_2;
+      GVar5 = CASE_2;
     }
     else {
-      GVar7 = CASE_E;
+      GVar5 = CASE_E;
     }
   }
   else {
@@ -38,40 +38,40 @@ undefined4 FUN_0042c300(uint param_1,uint param_2,int param_3,uint param_4,uint 
                  0x28f);
       goto LAB_0042c3a0;
     }
-    iVar5 = (char)param_1 * 0xa62 + 0x7f4fd3;
+    iVar4 = (char)param_1 * 0xa62 + 0x7f4fd3;
     if (param_3 == 0) {
       thunk_FUN_0043fc50(CASE_4,0);
-      GVar7 = CASE_5;
+      GVar5 = CASE_5;
     }
     else {
-      GVar7 = CASE_F;
+      GVar5 = CASE_F;
     }
   }
-  thunk_FUN_0043fc50(GVar7,0);
+  thunk_FUN_0043fc50(GVar5,0);
 LAB_0042c3a0:
-  piVar4 = (int *)(iVar2 * 0x10 + iVar5);
-  if (((*piVar4 == 0x3c) || (*piVar4 == 0x19a)) && (piVar4[1] == (int)(char)param_4)) {
-    pAVar1 = *(AnonShape_006ACC70_C8641025 **)((int)piVar4 + 10);
-    uVar6 = 0;
-    param_2 = pAVar1->field_000C;
+  piVar3 = (int *)(iVar1 * 0x10 + iVar4);
+  if (((*piVar3 == 0x3c) || (*piVar3 == 0x19a)) && (piVar3[1] == (int)(char)param_4)) {
+    array = *(DArrayTy **)((int)piVar3 + 10);
+    index = 0;
+    param_2 = array->count;
     if (0 < (int)param_2) {
       do {
-        FUN_006acc70(pAVar1,uVar6,&param_1);
+        DArrayGetElement(array,index,&param_1);
         if ((short)param_1 == (short)param_5) {
-          piVar3 = (int *)STAllPlayersC::GetObjPtr(in_ECX,param_4,param_5,CASE_1);
-          (**(code **)(*piVar3 + 0xe8))(0);
+          pSVar2 = STAllPlayersC::GetObjPtr(in_ECX,param_4,param_5,CASE_1);
+          (*pSVar2->vtable[1].vfunc_14)(0);
           param_1 = 0xffff;
-          Library::DKW::TBL::FUN_006ae140((uint *)pAVar1,uVar6,&param_1);
-          *(short *)((int)piVar4 + 0xe) = *(short *)((int)piVar4 + 0xe) + -1;
-          if (*(short *)((int)piVar4 + 0xe) == 0) {
-            FUN_006ae110(*(byte **)((int)piVar4 + 10));
-            *(undefined4 *)((int)piVar4 + 10) = 0;
-            *piVar4 = 0;
+          Library::DKW::TBL::FUN_006ae140(&array->flags,index,&param_1);
+          *(short *)((int)piVar3 + 0xe) = *(short *)((int)piVar3 + 0xe) + -1;
+          if (*(short *)((int)piVar3 + 0xe) == 0) {
+            DArrayDestroy(*(DArrayTy **)((int)piVar3 + 10));
+            *(undefined4 *)((int)piVar3 + 10) = 0;
+            *piVar3 = 0;
           }
           return 0;
         }
-        uVar6 = uVar6 + 1;
-      } while ((int)uVar6 < (int)param_2);
+        index = index + 1;
+      } while ((int)index < (int)param_2);
     }
   }
   return 0xffffffff;

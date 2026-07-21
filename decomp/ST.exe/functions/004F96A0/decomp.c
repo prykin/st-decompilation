@@ -64,7 +64,7 @@ void __thiscall CPanelTy::PlayBrief(CPanelTy *this,int param_1)
               Library::MSVCRT::FUN_0072e2b0((HoloTy *)pCVar3->field_01D8);
               pCVar3->field_01D8 = 0;
             }
-            FUN_006b4170(pCVar3->field_01B4,0,100,5,0x226,0x55,0);
+            FUN_006b4170((AnonShape_006C7610_838EDECF *)pCVar3->field_01B4,0,100,5,0x226,0x55,0);
             local_8 = (AnonShape_006B5570_4D68B99C *)
                       Library::DKW::TBL::FUN_006b54f0((uint *)0x0,10,10);
             if (*(int *)(puVar13 + 10) < 1) {
@@ -103,7 +103,7 @@ void __thiscall CPanelTy::PlayBrief(CPanelTy *this,int param_1)
                                                    0x226,0x55,0);
               if (pbVar7 != (byte *)0x0) {
                 ccFntTy::WrSarr(pCVar3->field_01D4,(int)local_8,0,-1,0,0,0);
-                DibPut((AnonShape_006B84D0_7C7D97C6 *)pCVar3->field_01B4,100,5,'\x01',pbVar7);
+                DibPut((AnonShape_006B5B10_E0D06CF1 *)pCVar3->field_01B4,100,5,'\x01',pbVar7);
                 ccFntTy::EraseSufr(pCVar3->field_01D4);
                 if (puVar13[0xe] != '\0') {
                   thunk_FUN_005252c0(0x1e);

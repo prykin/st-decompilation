@@ -17,7 +17,7 @@ FUN_004dc4b0(void *this,Global_sub_004CAFC0_param_1Enum param_1,int param_2,uint
   uint uVar2;
   int iVar3;
   
-  uVar2 = thunk_FUN_004406c0(*(char *)((int)this + 0x23d));
+  uVar2 = GetPlayerRaceId(*(char *)((int)this + 0x23d));
   iVar1 = *(int *)((int)this + 0x245);
   iVar3 = (uVar2 & 0xff) - 1;
   if ((0xc < (int)param_1) && ((int)param_1 < 0xf)) {

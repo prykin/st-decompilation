@@ -70,8 +70,8 @@ LAB_004c2616:
     if ((AnonShape_004C21A0_FDE833A6 *)param_2 != local_8) {
       if (param_2 == (int *)0x0) {
         if (local_8->field_0245 == 4) {
-          if ((((-1 < iVar5) && (iVar5 < SHORT_007fb240)) && (-1 < param_4)) &&
-             (param_4 < SHORT_007fb242)) {
+          if ((((-1 < iVar5) && (iVar5 < g_worldGrid.sizeX)) && (-1 < param_4)) &&
+             (param_4 < g_worldGrid.sizeY)) {
             sVar4 = 5;
           }
           break;
@@ -84,9 +84,9 @@ LAB_004c2616:
         sVar4 = 0x1d;
         break;
       }
-      if ((((-1 < iVar5) && (iVar5 < SHORT_007fb240)) &&
+      if ((((-1 < iVar5) && (iVar5 < g_worldGrid.sizeX)) &&
           ((-1 < param_4 &&
-           ((param_4 < SHORT_007fb242 &&
+           ((param_4 < g_worldGrid.sizeY &&
             (uVar2 = thunk_FUN_004c5350(local_8,0,param_2,iVar5,param_4,0,0,1), uVar2 != 0)))))) &&
          ((iVar5 = (&DAT_00792ca0)[local_8->field_0235 * 6], iVar5 != 0xa8 &&
           ((iVar5 != 0xa3 && (iVar5 != 0xbe)))))) {
@@ -114,8 +114,8 @@ LAB_004c2616:
     if ((AnonShape_004C21A0_FDE833A6 *)param_2 == local_8) {
       sVar4 = 0;
     }
-    else if ((((-1 < iVar5) && (iVar5 < SHORT_007fb240)) && (-1 < param_4)) &&
-            (param_4 < SHORT_007fb242)) {
+    else if ((((-1 < iVar5) && (iVar5 < g_worldGrid.sizeX)) && (-1 < param_4)) &&
+            (param_4 < g_worldGrid.sizeY)) {
       uVar2 = thunk_FUN_004c5350(local_8,0,param_2,iVar5,param_4,0,0,0);
       sVar4 = (-(ushort)(uVar2 != 0) & 6) + 1;
     }
@@ -143,15 +143,15 @@ joined_r0x004c231f:
       sVar4 = 6;
       break;
     }
-    if (((iVar5 < 0) || (SHORT_007fb240 <= iVar5)) || ((param_4 < 0 || (SHORT_007fb242 <= param_4)))
-       ) break;
+    if (((iVar5 < 0) || (g_worldGrid.sizeX <= iVar5)) ||
+       ((param_4 < 0 || (g_worldGrid.sizeY <= param_4)))) break;
     goto cf_common_exit_004C2352;
   case CASE_2A:
   case CASE_43:
-    if (((((-1 < iVar5) && (iVar5 < SHORT_007fb240)) &&
+    if (((((-1 < iVar5) && (iVar5 < g_worldGrid.sizeX)) &&
          ((-1 < param_4 &&
-          ((param_4 < SHORT_007fb242 && (g_visibleClass_00802A88 != (VisibleClassTy *)0x0)))))) &&
-        (0x27 < *(int *)&local_8[2].field_0x3c)) &&
+          ((param_4 < g_worldGrid.sizeY && (g_visibleClass_00802A88 != (VisibleClassTy *)0x0))))))
+        && (0x27 < *(int *)&local_8[2].field_0x3c)) &&
        (iVar5 = thunk_FUN_0055ad00(g_visibleClass_00802A88,iVar5,param_4,2,
                                    *(uint *)&local_8->field_0x24,7), iVar5 == 0)) {
       sVar4 = 0x19;

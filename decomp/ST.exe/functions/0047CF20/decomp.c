@@ -21,12 +21,12 @@ int __thiscall STBoatC::BackBring(STBoatC *this,int *param_1)
   sVar2 = this->field_0673;
   sVar3 = this->field_0671;
   this->field_00B7 = 0;
-  if ((((((-1 < sVar1) && (sVar1 < SHORT_007fb240)) && (-1 < sVar3)) &&
-       ((sVar3 < SHORT_007fb242 && (-1 < sVar2)))) &&
-      ((sVar2 < SHORT_007fb244 &&
-       ((this_00 = g_worldCells
-                   [(int)SHORT_007fb246 * (int)sVar2 + (int)SHORT_007fb240 * (int)sVar3 + (int)sVar1
-                   ].objects[0], this_00 != (STWorldObject *)0x0 &&
+  if ((((((-1 < sVar1) && (sVar1 < g_worldGrid.sizeX)) && (-1 < sVar3)) &&
+       ((sVar3 < g_worldGrid.sizeY && (-1 < sVar2)))) &&
+      ((sVar2 < g_worldGrid.sizeZ &&
+       ((this_00 = g_worldGrid.cells
+                   [(int)g_worldGrid.planeStride * (int)sVar2 + (int)g_worldGrid.sizeX * (int)sVar3
+                    + (int)sVar1].objects[0], this_00 != (STWorldObject *)0x0 &&
         (*(int *)&this_00->field_0x18 == this->field_0679)))))) && (this->field_0675 == 99)) {
     thunk_FUN_004b7d50(this_00,this);
   }

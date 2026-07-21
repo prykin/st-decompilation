@@ -6,6 +6,7 @@ undefined4 FUN_005da7a0(void)
   bool bVar2;
   int iVar3;
   int *piVar4;
+  char *extraout_EAX;
   char *pcVar5;
   undefined4 unaff_ESI;
   void *unaff_EDI;
@@ -32,8 +33,8 @@ undefined4 FUN_005da7a0(void)
         }
       }
       if (bVar2) {
-        pcVar5 = (char *)FUN_006b0140(0x254b,HINSTANCE_00807618);
-        pcVar5 = FUN_006c8170(pcVar5);
+        LoadResourceString(0x254b,HINSTANCE_00807618);
+        pcVar5 = FUN_006c8170(extraout_EAX);
         if (pcVar5 != (char *)0x0) {
           iVar3 = *puVar1;
           Library::MSVCRT::FUN_0072da70

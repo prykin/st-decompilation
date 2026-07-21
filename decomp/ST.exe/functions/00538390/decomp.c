@@ -35,7 +35,7 @@ void __thiscall PanelTy::DonePanel(PanelTy *this)
     }
     pPVar2->field_0060 = 0xffffffff;
     if (pPVar2->field_0068 != 0) {
-      FUN_006ab060((LPVOID *)&pPVar2->field_0068);
+      FreeAndNull((void **)&pPVar2->field_0068);
     }
     g_currentExceptionFrame = local_4c.previous;
     return;

@@ -10,7 +10,7 @@ uint * STGroupBoatC::Way3DGrpGetDistrPoint
 {
   code *pcVar1;
   ushort uVar2;
-  DArrayTy *groupContent;
+  DArrayTy *array;
   uint *puVar3;
   int iVar4;
   undefined4 unaff_ESI;
@@ -30,15 +30,15 @@ uint * STGroupBoatC::Way3DGrpGetDistrPoint
   if (uVar2 == 0) {
     return (uint *)0x0;
   }
-  groupContent = (DArrayTy *)Library::DKW::TBL::FUN_006ae290((uint *)0x0,(uint)uVar2,6,1);
-  local_8 = groupContent;
+  array = (DArrayTy *)Library::DKW::TBL::FUN_006ae290((uint *)0x0,(uint)uVar2,6,1);
+  local_8 = array;
   uVar2 = thunk_FUN_004233c0((int)param_1);
   DAT_007f4d4c = (uint)uVar2;
   if ((DAT_007f4d4c < 2) && (*(short *)((int)param_1 + 0x27) == 1)) {
     local_14 = (short)param_6;
     local_12 = (short)param_7;
     local_10 = (short)param_8;
-    Library::DKW::TBL::FUN_006ae1c0((uint *)groupContent,(undefined4 *)&local_14);
+    Library::DKW::TBL::FUN_006ae1c0((uint *)array,(undefined4 *)&local_14);
     goto LAB_004157f0;
   }
   local_58.previous = g_currentExceptionFrame;
@@ -116,15 +116,15 @@ uint * STGroupBoatC::Way3DGrpGetDistrPoint
   }
 LAB_004157e1:
   FUN_006a5e90(DAT_007f4d04);
-  groupContent = local_8;
+  array = local_8;
 LAB_004157f0:
   if (iVar4 != 0) {
-    FUN_006ae110((byte *)groupContent);
+    DArrayDestroy(array);
     local_8 = (DArrayTy *)0x0;
     RaiseInternalException
               (iVar4,g_overwriteContext_007ED77C,s_E____titans_wlad_Grpway3d_cpp_007a4ca8,0xeb8);
     return (uint *)0x0;
   }
-  return &groupContent->flags;
+  return &array->flags;
 }
 

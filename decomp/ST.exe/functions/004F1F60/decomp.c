@@ -11,13 +11,14 @@ CPanelTy::PaintDamageXY
   code *pcVar1;
   CPanelTy *pCVar2;
   int iVar3;
-  uint *puVar4;
+  uint *extraout_EAX;
+  uint *extraout_EAX_00;
   undefined4 unaff_ESI;
   void *unaff_EDI;
-  int iVar5;
-  uint uVar6;
+  int iVar4;
+  uint uVar5;
+  int iVar6;
   int iVar7;
-  int iVar8;
   InternalExceptionFrame local_4c;
   CPanelTy *local_8;
   
@@ -28,31 +29,31 @@ CPanelTy::PaintDamageXY
   pCVar2 = local_8;
   if (iVar3 == 0) {
     ccFntTy::SetSurf(local_8->field_01B8,param_1,0,param_2,param_3,0x30,10);
-    iVar8 = -1;
     iVar7 = -1;
-    uVar6 = 5;
-    iVar5 = -1;
+    iVar6 = -1;
+    uVar5 = 5;
+    iVar4 = -1;
     iVar3 = 0;
-    puVar4 = (uint *)FUN_006b0140(param_5,HINSTANCE_00807618);
-    ccFntTy::WrTxt(pCVar2->field_01B8,puVar4,iVar3,iVar5,uVar6,iVar7,iVar8);
+    LoadResourceString(param_5,HINSTANCE_00807618);
+    ccFntTy::WrTxt(pCVar2->field_01B8,extraout_EAX,iVar3,iVar4,uVar5,iVar6,iVar7);
     wsprintfA(&pCVar2->field_0x1e1,&DAT_007c1aa4,param_4 & 0xff);
     ccFntTy::SetSurf(pCVar2->field_01BC,param_1,0,param_2 + 0xc,param_3 + 10,0x14,0xf);
     ccFntTy::WrTxt(pCVar2->field_01BC,(uint *)&pCVar2->field_0x1e1,-3,-1,1,-1,-1);
     ccFntTy::SetSurf(pCVar2->field_01B8,param_1,0,param_2 + 0x22,param_3 + 0xd,10,10);
-    iVar8 = -1;
     iVar7 = -1;
-    uVar6 = 5;
-    iVar5 = -1;
+    iVar6 = -1;
+    uVar5 = 5;
+    iVar4 = -1;
     iVar3 = -1;
-    puVar4 = (uint *)FUN_006b0140(0x36b2,HINSTANCE_00807618);
-    ccFntTy::WrTxt(pCVar2->field_01B8,puVar4,iVar3,iVar5,uVar6,iVar7,iVar8);
+    LoadResourceString(0x36b2,HINSTANCE_00807618);
+    ccFntTy::WrTxt(pCVar2->field_01B8,extraout_EAX_00,iVar3,iVar4,uVar5,iVar6,iVar7);
     g_currentExceptionFrame = local_4c.previous;
     return;
   }
   g_currentExceptionFrame = local_4c.previous;
-  iVar5 = ReportDebugMessage(s_E____titans_Andrey_cp_sup_cpp_007c1a4c,0xa3,0,iVar3,&DAT_007a4ccc,
+  iVar4 = ReportDebugMessage(s_E____titans_Andrey_cp_sup_cpp_007c1a4c,0xa3,0,iVar3,&DAT_007a4ccc,
                              s_CPanelTy__PaintDamageXY_007c1a88);
-  if (iVar5 != 0) {
+  if (iVar4 != 0) {
     pcVar1 = (code *)swi(3);
     (*pcVar1)();
     return;

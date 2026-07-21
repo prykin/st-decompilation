@@ -10,14 +10,8 @@ void __thiscall FUN_0062af90(void *this,int param_1,int param_2,int param_3)
   short sVar6;
   int iVar7;
   STWorldObject *this_00;
-  undefined4 *puVar8;
-  undefined4 local_38 [5];
-  int local_24;
-  int local_20;
-  int local_1c;
-  undefined4 local_18;
-  undefined4 local_14;
-  uint local_10;
+  AnonShape_0062FCA0_22A9EE35 *pAVar8;
+  AnonShape_0062FCA0_22A9EE35 local_38;
   undefined4 local_c;
   AnonShape_0062AF90_A19AAC76 *local_8;
   
@@ -49,32 +43,32 @@ void __thiscall FUN_0062af90(void *this,int param_1,int param_2,int param_3)
     iVar2 = (int)(short)(((short)(param_3 / 200) + sVar6) -
                         (short)((longlong)param_3 * 0x51eb851f >> 0x3f));
   }
-  if ((((-1 < iVar7) && (iVar7 < SHORT_007fb240)) && (-1 < iVar4)) &&
-     (((iVar4 < SHORT_007fb242 && (-1 < iVar2)) && (iVar2 < SHORT_007fb244)))) {
+  if ((((-1 < iVar7) && (iVar7 < g_worldGrid.sizeX)) && (-1 < iVar4)) &&
+     (((iVar4 < g_worldGrid.sizeY && (-1 < iVar2)) && (iVar2 < g_worldGrid.sizeZ)))) {
     sVar6 = (short)iVar7;
-    if (((sVar6 < 0) || (SHORT_007fb240 <= sVar6)) ||
+    if (((sVar6 < 0) || (g_worldGrid.sizeX <= sVar6)) ||
        ((sVar3 = (short)iVar4, sVar3 < 0 ||
-        (((SHORT_007fb242 <= sVar3 || (sVar1 = (short)iVar2, sVar1 < 0)) ||
-         (SHORT_007fb244 <= sVar1)))))) {
+        (((g_worldGrid.sizeY <= sVar3 || (sVar1 = (short)iVar2, sVar1 < 0)) ||
+         (g_worldGrid.sizeZ <= sVar1)))))) {
       this_00 = (STWorldObject *)0x0;
     }
     else {
-      this_00 = g_worldCells
-                [(int)SHORT_007fb246 * (int)sVar1 + (int)sVar3 * (int)SHORT_007fb240 + (int)sVar6].
-                objects[1];
+      this_00 = g_worldGrid.cells
+                [(int)g_worldGrid.planeStride * (int)sVar1 + (int)sVar3 * (int)g_worldGrid.sizeX +
+                 (int)sVar6].objects[1];
     }
-    puVar8 = local_38;
+    pAVar8 = &local_38;
     local_8 = this;
     for (iVar7 = 0xc; iVar7 != 0; iVar7 = iVar7 + -1) {
-      *puVar8 = 0;
-      puVar8 = puVar8 + 1;
+      *(undefined4 *)pAVar8 = 0;
+      pAVar8 = (AnonShape_0062FCA0_22A9EE35 *)&pAVar8->field_0x4;
     }
-    local_1c = param_3;
-    local_24 = param_1;
+    local_38._28_4_ = param_3;
+    local_38._20_4_ = param_1;
     local_c = local_8->field_0018;
-    local_20 = param_2;
-    local_14 = local_8->field_0004;
-    local_18 = 1000;
+    local_38._24_4_ = param_2;
+    local_38._36_4_ = local_8->field_0004;
+    local_38.field_0020 = 1000;
     switch(local_8->field_0015) {
     case 1:
       if (local_8->field_001C == 1) {
@@ -98,16 +92,16 @@ void __thiscall FUN_0062af90(void *this,int param_1,int param_2,int param_3)
     case 0x40:
       iVar5 = 6;
     }
-    local_10 = iVar5 << 0x10 | (uint)local_8->field_0014;
-    local_38[0] = 0xbe;
-    local_38[1] = 0xff;
-    local_38[2] = 0;
-    local_38[3] = 1;
+    local_38.field_0028 = iVar5 << 0x10 | (uint)local_8->field_0014;
+    local_38._0_4_ = 0xbe;
+    local_38._4_4_ = 0xff;
+    local_38._8_4_ = 0;
+    local_38._12_4_ = 1;
     if ((this_00 != (STWorldObject *)0x0) && (this_00->value_20 == 0xbe)) {
-      thunk_FUN_006301b0(this_00,(int)local_38);
+      thunk_FUN_006301b0(this_00,&local_38);
       return;
     }
-    (*PTR_00802a38->vtable->vfunc_08)(0x132,0,0,local_38,0);
+    (*PTR_00802a38->vtable->vfunc_08)(0x132,0,0,&local_38,0);
   }
   return;
 }

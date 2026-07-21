@@ -9,39 +9,40 @@ undefined4 * __thiscall AiFltClassTy::PrepareToSave(AiFltClassTy *this,uint *par
   code *pcVar1;
   AiFltClassTy *pAVar2;
   int errorCode;
-  undefined4 *puVar3;
-  int iVar4;
+  AnonShape_GLOBAL_008489C4_F7BABFAC *pAVar3;
+  undefined4 *puVar4;
+  int iVar5;
   void *unaff_ESI;
-  InternalExceptionFrame *pIVar5;
+  InternalExceptionFrame *pIVar6;
   undefined4 local_48 [16];
   AiFltClassTy *local_8;
   
-  pIVar5 = g_currentExceptionFrame;
+  pIVar6 = g_currentExceptionFrame;
   g_currentExceptionFrame = (InternalExceptionFrame *)&stack0xffffffb4;
   local_8 = this;
-  errorCode = Library::MSVCRT::__setjmp3(local_48,0,unaff_ESI,pIVar5);
+  errorCode = Library::MSVCRT::__setjmp3(local_48,0,unaff_ESI,pIVar6);
   pAVar2 = local_8;
   if (errorCode == 0) {
     if (local_8 == (AiFltClassTy *)0x0) {
-      puVar3 = (undefined4 *)0x0;
+      pAVar3 = (AnonShape_GLOBAL_008489C4_F7BABFAC *)0x0;
     }
     else {
-      puVar3 = &local_8->field_0020;
+      pAVar3 = (AnonShape_GLOBAL_008489C4_F7BABFAC *)&local_8->field_0020;
     }
-    puVar3 = FltDataPack(puVar3,param_1);
-    *puVar3 = 900;
-    puVar3[3] = 1;
-    *(undefined4 *)((int)puVar3 + 0x66) = pAVar2->field_001C;
-    g_currentExceptionFrame = pIVar5;
-    return puVar3;
+    puVar4 = FltDataPack(pAVar3,param_1);
+    *puVar4 = 900;
+    puVar4[3] = 1;
+    *(undefined4 *)((int)puVar4 + 0x66) = pAVar2->field_001C;
+    g_currentExceptionFrame = pIVar6;
+    return puVar4;
   }
-  g_currentExceptionFrame = pIVar5;
-  iVar4 = ReportDebugMessage(s_E____titans_ai_ai_flt_cpp_007d2b80,0x4f,0,errorCode,&DAT_007a4ccc,
+  g_currentExceptionFrame = pIVar6;
+  iVar5 = ReportDebugMessage(s_E____titans_ai_ai_flt_cpp_007d2b80,0x4f,0,errorCode,&DAT_007a4ccc,
                              s_AiFltClassTy__PrepareToSave_007d2bbc);
-  if (iVar4 != 0) {
+  if (iVar5 != 0) {
     pcVar1 = (code *)swi(3);
-    puVar3 = (undefined4 *)(*pcVar1)();
-    return puVar3;
+    puVar4 = (undefined4 *)(*pcVar1)();
+    return puVar4;
   }
   RaiseInternalException(errorCode,0,s_E____titans_ai_ai_flt_cpp_007d2b80,0x50);
   return (undefined4 *)0x0;

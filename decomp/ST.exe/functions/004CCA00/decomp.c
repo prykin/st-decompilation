@@ -11,7 +11,7 @@ char __thiscall FUN_004cca00(void *this,int param_1)
                 ) != 0)) {
       return '\x03';
     }
-    uVar1 = thunk_FUN_004406c0((char)param_1);
+    uVar1 = GetPlayerRaceId((char)param_1);
     return ((&DAT_007e1987)
             [(*(int *)((int)this + 0x235) * 3 + *(int *)((int)this + 0x239)) * 3 + (uVar1 & 0xff)]
            != '\0') + '\x01';

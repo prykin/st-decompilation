@@ -25,20 +25,20 @@ bool __thiscall STSharkC::sub_0058F430(STSharkC *this)
   iVar6 = this->field_0047 + -4;
   if (iVar6 < this->field_0047 + 4) {
     do {
-      if (((iVar6 <= SHORT_007fb240) && (-1 < iVar6)) &&
-         (iVar9 = this->field_0049 + -4, sVar7 = SHORT_007fb240, iVar9 < this->field_0049 + 4)) {
+      if (((iVar6 <= g_worldGrid.sizeX) && (-1 < iVar6)) &&
+         (iVar9 = this->field_0049 + -4, sVar7 = g_worldGrid.sizeX, iVar9 < this->field_0049 + 4)) {
         do {
-          if ((iVar9 <= SHORT_007fb242) && (-1 < iVar9)) {
+          if ((iVar9 <= g_worldGrid.sizeY) && (-1 < iVar9)) {
             local_c = 0;
             do {
               sVar5 = (short)iVar6;
               if ((((-1 < sVar5) && (sVar5 < sVar7)) &&
                   ((sVar8 = (short)iVar9, -1 < sVar8 &&
-                   ((((sVar8 < SHORT_007fb242 && (sVar1 = (short)local_c, -1 < sVar1)) &&
-                     (sVar1 < SHORT_007fb244)) &&
-                    ((this_00 = g_worldCells
-                                [(int)sVar8 * (int)sVar7 + (int)sVar1 * (int)SHORT_007fb246 +
-                                 (int)sVar5].objects[0], this_00 != (STWorldObject *)0x0 &&
+                   ((((sVar8 < g_worldGrid.sizeY && (sVar1 = (short)local_c, -1 < sVar1)) &&
+                     (sVar1 < g_worldGrid.sizeZ)) &&
+                    ((this_00 = g_worldGrid.cells
+                                [(int)sVar8 * (int)sVar7 + (int)sVar1 * (int)g_worldGrid.planeStride
+                                 + (int)sVar5].objects[0], this_00 != (STWorldObject *)0x0 &&
                      (this_00->value_20 == 0x14)))))))) &&
                  (iVar2 = (*this_00->vtable->GetObjectTypeId)(this_00), iVar2 == 0x15)) {
                 iVar2 = this->field_0047 - iVar6;
@@ -65,7 +65,7 @@ bool __thiscall STSharkC::sub_0058F430(STSharkC *this)
                 }
               }
               local_c = local_c + 1;
-              sVar7 = SHORT_007fb240;
+              sVar7 = g_worldGrid.sizeX;
             } while (local_c < 5);
           }
           iVar9 = iVar9 + 1;

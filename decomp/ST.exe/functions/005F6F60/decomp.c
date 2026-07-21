@@ -203,7 +203,8 @@ LAB_005f7400:
       *(undefined4 *)((int)param_1 + 0x2dd) = 4;
       uVar4 = *(uint *)(*(int *)((int)param_1 + 0x2e6) + 4);
       if (-1 < (int)uVar4) {
-        FUN_006ea050(*(void **)((int)param_1 + 0x211),uVar4,1,0xffffffff,0);
+        SubmarineTitans::Recovered::HiddenThis::AnonReceiver_006EA050::FUN_006ea050
+                  (*(AnonReceiver_006EA050 **)((int)param_1 + 0x211),uVar4,1,0xffffffff,0);
         *(undefined4 *)(*(int *)((int)param_1 + 0x2e6) + 4) = 0xffffffff;
         thunk_FUN_005fa030((AnonShape_005F9F70_43CA4DAC *)param_1);
       }

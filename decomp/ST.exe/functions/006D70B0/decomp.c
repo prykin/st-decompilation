@@ -4,10 +4,10 @@ FUN_006d70b0(void *this,undefined4 param_1,int param_2,undefined4 param_3,undefi
 
 {
   FUN_0074c952(this,param_1,param_2,(undefined4 *)&DAT_0079dae0);
-  *(undefined ***)this = &PTR_FUN_0079ddec;
+  *(VTable_0079DDEC **)this = &VTable_0079DDEC;
   *(undefined4 *)((int)this + 0xa0) = param_4;
-  *(undefined ***)((int)this + 0xc) = &PTR_FUN_0079ddb0;
-  *(undefined ***)((int)this + 0x10) = &PTR_FUN_0079dd9c;
+  *(VTable_0079DDB0 **)((int)this + 0xc) = &VTable_0079DDB0;
+  *(VTable_0079DD9C **)((int)this + 0x10) = &VTable_0079DD9C;
   return this;
 }
 

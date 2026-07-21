@@ -8,7 +8,7 @@ void __thiscall FSGSTy::LadderCtrls(FSGSTy *this)
 {
   code *pcVar1;
   FSGSTy *this_00;
-  uint *puVar2;
+  AnonPointee_FSGSTy_1AE8 *pAVar2;
   uint uVar3;
   undefined4 uVar4;
   LPBITMAPINFO ptVar5;
@@ -18,7 +18,8 @@ void __thiscall FSGSTy::LadderCtrls(FSGSTy *this)
   int iVar7;
   ccFntTy **ppcVar8;
   undefined4 *puVar9;
-  ccFntTy *local_8e0 [19];
+  ccFntTy *local_8e0 [8];
+  AnonPointee_FSGSTy_1AE8 *local_8c0;
   undefined4 local_894;
   undefined4 local_890;
   undefined4 local_88c;
@@ -44,14 +45,14 @@ void __thiscall FSGSTy::LadderCtrls(FSGSTy *this)
     if ((AnonShape_006B5570_4D68B99C *)local_10->field_1AE8 != (AnonShape_006B5570_4D68B99C *)0x0) {
       FUN_006b5570((AnonShape_006B5570_4D68B99C *)local_10->field_1AE8);
     }
-    puVar2 = Library::DKW::TBL::FUN_006b54f0((uint *)0x0,1,1);
-    this_00->field_1AE8 = puVar2;
-    Library::DKW::TBL::FUN_006b5aa0(puVar2,&DAT_008016a0);
+    pAVar2 = (AnonPointee_FSGSTy_1AE8 *)Library::DKW::TBL::FUN_006b54f0((uint *)0x0,1,1);
+    this_00->field_1AE8 = pAVar2;
+    Library::DKW::TBL::FUN_006b5aa0((uint *)pAVar2,&DAT_008016a0);
     if (this_00->field_1E8E != 0) {
-      FUN_006ab060((LPVOID *)&this_00->field_1E8E);
+      FreeAndNull((void **)&this_00->field_1E8E);
     }
     if (this_00->field_1E92 != 0) {
-      FUN_006ab060((LPVOID *)&this_00->field_1E92);
+      FreeAndNull((void **)&this_00->field_1E92);
     }
     iVar6 = 1;
     puVar9 = (undefined4 *)(this_00->field_005D + 0x28);
@@ -90,7 +91,7 @@ void __thiscall FSGSTy::LadderCtrls(FSGSTy *this)
       ppcVar8 = ppcVar8 + 1;
     }
     local_8e0[2] = this_00->field_1A73;
-    local_8e0[8] = (ccFntTy *)this_00->field_1AE8;
+    local_8c0 = this_00->field_1AE8;
     local_894 = this_00->field_0008;
     local_850 = 2;
     local_890 = 2;

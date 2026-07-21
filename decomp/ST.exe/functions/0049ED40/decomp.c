@@ -8,10 +8,10 @@ undefined4 __thiscall STGroupBoatC::DCBomb(STGroupBoatC *this,int param_1)
 {
   code *pcVar1;
   STGroupBoatC *pSVar2;
-  DArrayTy *groupContent;
+  DArrayTy *array;
   int iVar3;
   STBoatC *pSVar4;
-  uint *groupContent_00;
+  DArrayTy *array_00;
   uint uVar5;
   int iVar6;
   undefined4 uVar7;
@@ -19,7 +19,7 @@ undefined4 __thiscall STGroupBoatC::DCBomb(STGroupBoatC *this,int param_1)
   undefined4 unaff_ESI;
   void *unaff_EDI;
   undefined4 *puVar8;
-  uint uVar9;
+  uint index;
   InternalExceptionFrame local_78;
   undefined4 local_34;
   undefined2 local_30;
@@ -30,14 +30,14 @@ undefined4 __thiscall STGroupBoatC::DCBomb(STGroupBoatC *this,int param_1)
   uint local_20;
   undefined4 local_1c;
   int local_18;
-  uint *local_14;
+  DArrayTy *local_14;
   int local_10;
   DArrayTy *local_c;
   uint local_8;
   
   local_10 = *(int *)(this->field_0029 + 0xc);
   local_c = (DArrayTy *)0x0;
-  local_14 = (uint *)0x0;
+  local_14 = (DArrayTy *)0x0;
   local_24 = 2;
   local_18 = 0;
   local_78.previous = g_currentExceptionFrame;
@@ -60,11 +60,11 @@ undefined4 __thiscall STGroupBoatC::DCBomb(STGroupBoatC *this,int param_1)
       local_34 = PTR_00802a38->field_00E4;
       local_2c = local_28->field_02C1;
       local_2e = local_28->field_02BF;
-      groupContent_00 = local_14;
+      array_00 = local_14;
       local_1c = local_34;
       if (0 < local_10) {
         do {
-          FUN_006acc70((AnonShape_006ACC70_C8641025 *)pSVar2->field_0029,local_20,&local_8);
+          DArrayGetElement((DArrayTy *)pSVar2->field_0029,local_20,&local_8);
           if ((short)local_8 != -1) {
             pSVar4 = (STBoatC *)
                      STAllPlayersC::GetObjPtr
@@ -77,11 +77,11 @@ undefined4 __thiscall STGroupBoatC::DCBomb(STGroupBoatC *this,int param_1)
                          s_E____titans_wlad_to_grpb_cpp_007abe3c,0xb6b);
             }
             if ((pSVar4->field_06F7 == CASE_4) && (0 < *(int *)&pSVar4->field_0x7be)) {
-              if (groupContent_00 == (uint *)0x0) {
-                groupContent_00 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,1,2,1);
-                local_14 = groupContent_00;
+              if (array_00 == (DArrayTy *)0x0) {
+                array_00 = (DArrayTy *)Library::DKW::TBL::FUN_006ae290((uint *)0x0,1,2,1);
+                local_14 = array_00;
               }
-              Library::DKW::TBL::FUN_006ae1c0(groupContent_00,&local_8);
+              Library::DKW::TBL::FUN_006ae1c0(&array_00->flags,&local_8);
               STBoatC::CmdToObj(pSVar4,CASE_A,&local_34);
             }
             else {
@@ -100,25 +100,25 @@ undefined4 __thiscall STGroupBoatC::DCBomb(STGroupBoatC *this,int param_1)
           local_20 = local_20 + 1;
         } while ((int)local_20 < local_10);
       }
-      groupContent = local_c;
+      array = local_c;
       STAllPlayersC::RegisterPGPair
                 (g_sTAllPlayers_007FA174,CONCAT31((int3)((uint)local_10 >> 8),pSVar2->field_0024),
-                 groupContent_00,&local_c->flags);
-      if (groupContent_00 != (uint *)0x0) {
-        FUN_006ae110((byte *)groupContent_00);
+                 &array_00->flags,&local_c->flags);
+      if (array_00 != (DArrayTy *)0x0) {
+        DArrayDestroy(array_00);
       }
-      if (groupContent != (DArrayTy *)0x0) {
-        FUN_006ae110((byte *)groupContent);
+      if (array != (DArrayTy *)0x0) {
+        DArrayDestroy(array);
       }
       RaiseInternalException
                 (-0x5001fff7,g_overwriteContext_007ED77C,s_E____titans_wlad_to_grpb_cpp_007abe3c,
                  0xb84);
     }
-    uVar9 = 0;
+    index = 0;
     if ((uint)PTR_00802a38->field_00E4 % 0x1e == 10) {
       if (0 < local_10) {
         do {
-          FUN_006acc70((AnonShape_006ACC70_C8641025 *)pSVar2->field_0029,uVar9,&local_8);
+          DArrayGetElement((DArrayTy *)pSVar2->field_0029,index,&local_8);
           if ((short)local_8 != -1) {
             pSVar4 = (STBoatC *)
                      STAllPlayersC::GetObjPtr
@@ -135,8 +135,8 @@ undefined4 __thiscall STGroupBoatC::DCBomb(STGroupBoatC *this,int param_1)
               break;
             }
           }
-          uVar9 = uVar9 + 1;
-        } while ((int)uVar9 < local_10);
+          index = index + 1;
+        } while ((int)index < local_10);
       }
       if (local_18 == 0) {
         local_24 = 0;

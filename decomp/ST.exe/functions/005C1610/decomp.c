@@ -62,8 +62,8 @@ void __thiscall MReportTy::PaintTab(MReportTy *this,AnonShape_005C1610_B64592CA 
                local_44->field_0018);
   iVar7 = local_40;
   iVar5 = local_48;
-  FUN_006b4170((int)local_8->field_0073,0,local_48,local_40,pAVar4->field_0014,pAVar4->field_0018,
-               0xff);
+  FUN_006b4170((AnonShape_006C7610_838EDECF *)local_8->field_0073,0,local_48,local_40,
+               pAVar4->field_0014,pAVar4->field_0018,0xff);
   uVar2 = pAVar4->field_0004;
   if (uVar2 == 0) {
     local_3c = iVar5 + 5;
@@ -79,7 +79,7 @@ void __thiscall MReportTy::PaintTab(MReportTy *this,AnonShape_005C1610_B64592CA 
     local_1c = local_34;
     local_14 = local_3c;
     FUN_006c7ea0(local_8->field_0073,0,&local_3c,6,0x4c);
-    FUN_006c7f10((int)local_8->field_0073,0,&local_3c,6,0x18);
+    FUN_006c7f10((AnonShape_006B5B10_E0D06CF1 *)local_8->field_0073,0,&local_3c,6,0x18);
     iVar6 = iVar5 + -1 + pAVar4->field_0014;
 LAB_005c17e9:
     bVar11 = 0x18;
@@ -105,7 +105,7 @@ LAB_005c17e9:
     local_10 = (pAVar4->field_0018 - 3) + iVar7;
     local_1c = local_34;
     FUN_006c7ea0(local_8->field_0073,0,&local_3c,6,0x4c);
-    FUN_006c7f10((int)local_8->field_0073,0,&local_3c,6,0x18);
+    FUN_006c7f10((AnonShape_006B5B10_E0D06CF1 *)local_8->field_0073,0,&local_3c,6,0x18);
     bVar11 = 0x4c;
     iVar6 = iVar5 + -1 + pAVar4->field_0014;
     iVar1 = pAVar4->field_0018 - 2;
@@ -154,7 +154,7 @@ LAB_005c1806:
       default:
         uVar8 = 0xff;
       }
-      FUN_006b4170((int)local_8->field_0073,0,
+      FUN_006b4170((AnonShape_006C7610_838EDECF *)local_8->field_0073,0,
                    (-(uint)(pAVar4->field_0004 != 0) & 0xfffffffb) + 0xc + iVar5,iVar7 + 0xb,0x1a,
                    0xd,uVar8);
       FUN_006b5ee0((int)local_8->field_0073,0,

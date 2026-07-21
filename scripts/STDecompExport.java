@@ -571,9 +571,20 @@ public class STDecompExport extends GhidraScript {
         if (type == null) return;
         String key = "type\u0000" + type.getPathName();
         if (!result.add(key)) return;
-        // A composite's full layout is intentionally excluded here.  Only components
+        // Structure layouts are dependency-scoped below. A union is different: member
+        // order and every overlapping alternative can change which expression the
+        // decompiler selects for the same byte offset, so its complete ordered layout is
+        // a real per-function dependency whenever the union type is referenced.
+        if (type instanceof ghidra.program.model.data.Union union) {
+            result.add(key + "\u0000" + type.getLength() + "\u0000" +
+                nullToEmpty(type.getDescription()) + "\u0000" + dataTypeDetailJson(type));
+            for (ghidra.program.model.data.DataTypeComponent component : union.getComponents())
+                collectTypeIdentity(component.getDataType(), result);
+            return;
+        }
+        // A structure's full layout is intentionally excluded here. Only components
         // actually addressed by this function are added below.
-        if (type instanceof ghidra.program.model.data.Composite) return;
+        if (type instanceof ghidra.program.model.data.Structure) return;
         result.add(key + "\u0000" + type.getLength() + "\u0000" +
             nullToEmpty(type.getDescription()) + "\u0000" + dataTypeDetailJson(type));
         if (type instanceof ghidra.program.model.data.Pointer pointer) {

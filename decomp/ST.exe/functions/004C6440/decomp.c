@@ -58,8 +58,8 @@ FUN_004c6440(void *this,float param_1,int param_2,int *param_3,int *param_4,int 
       local_8 = (int)(short)lVar11;
     }
     pVVar4 = g_visibleClass_00802A88;
-    if (((((-1 < iVar9) && (iVar9 < SHORT_007fb240)) && (-1 < local_8)) &&
-        (local_8 < SHORT_007fb242)) &&
+    if (((((-1 < iVar9) && (iVar9 < g_worldGrid.sizeX)) && (-1 < local_8)) &&
+        (local_8 < g_worldGrid.sizeY)) &&
        ((((((g_visibleClass_00802A88 == (VisibleClassTy *)0x0 || (DAT_0080874d == 0xff)) ||
            ((g_visibleClass_00802A88->field_00F8 == 0 ||
             ((thunk_FUN_00558c00(g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,

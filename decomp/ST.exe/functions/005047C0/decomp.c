@@ -37,8 +37,8 @@ uint __thiscall CPanelTy::PaintPerRes(CPanelTy *this,int param_1)
     if (local_10 != 0) {
       uVar7 = 0;
       do {
-        pbVar3 = (byte *)FUN_0070b3a0(this_00->field_02B6,3);
-        DibPut((AnonShape_006B84D0_7C7D97C6 *)this_00->field_0194,param_1 + 0xb + uVar7 * 4,0x5c,
+        pbVar3 = (byte *)FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_02B6,3);
+        DibPut((AnonShape_006B5B10_E0D06CF1 *)this_00->field_0194,param_1 + 0xb + uVar7 * 4,0x5c,
                '\x01',pbVar3);
         bVar5 = (byte)local_8 + 1;
         local_8 = CONCAT31(local_8._1_3_,bVar5);
@@ -50,8 +50,8 @@ uint __thiscall CPanelTy::PaintPerRes(CPanelTy *this,int param_1)
       iVar2 = param_1 + 0xb + (local_8 & 0xff) * 4;
       iVar6 = 0x28 - (local_8 & 0xff);
       do {
-        pbVar3 = (byte *)FUN_0070b3a0(this_00->field_02B6,0);
-        uVar4 = DibPut((AnonShape_006B84D0_7C7D97C6 *)this_00->field_0194,iVar2,0x5c,'\x01',pbVar3);
+        pbVar3 = (byte *)FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_02B6,0);
+        uVar4 = DibPut((AnonShape_006B5B10_E0D06CF1 *)this_00->field_0194,iVar2,0x5c,'\x01',pbVar3);
         iVar2 = iVar2 + 4;
         iVar6 = iVar6 + -1;
       } while (iVar6 != 0);

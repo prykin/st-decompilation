@@ -5,7 +5,7 @@
    Diagnostic line evidence: 63 | 88 (metadata/report site, not the function definition)
    [STSourceProvenanceApplier end] */
 
-undefined4 __fastcall FUN_004ecea0(AnonShape_004ECEA0_52E8E272 *param_1)
+undefined4 __fastcall FUN_004ecea0(AnonShape_004D9C80_80F657D3 *param_1)
 
 {
   undefined4 uVar1;

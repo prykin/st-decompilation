@@ -82,12 +82,12 @@ FUN_006383e0(int param_1,int param_2,int param_3,undefined4 param_4,undefined2 p
     local_78 = 0;
   }
   iVar5 = iVar5 + 1 + param_9;
-  if (SHORT_007fb242 < iVar5) {
-    iVar5 = (int)SHORT_007fb242;
+  if (g_worldGrid.sizeY < iVar5) {
+    iVar5 = (int)g_worldGrid.sizeY;
   }
   local_7c = iVar10 + 1 + param_9;
-  if (SHORT_007fb240 < local_7c) {
-    local_7c = (int)SHORT_007fb240;
+  if (g_worldGrid.sizeX < local_7c) {
+    local_7c = (int)g_worldGrid.sizeX;
   }
   local_90 = iVar6 + 1 + param_9;
   if (5 < local_90) {
@@ -113,15 +113,15 @@ FUN_006383e0(int param_1,int param_2,int param_3,undefined4 param_4,undefined2 p
         iVar6 = local_78;
         do {
           sVar9 = (short)iVar10;
-          if (((((sVar9 < 0) || (SHORT_007fb240 <= sVar9)) || (sVar2 = (short)iVar8, sVar2 < 0)) ||
-              ((SHORT_007fb242 <= sVar2 || (sVar7 = (short)iVar6, sVar7 < 0)))) ||
-             (SHORT_007fb244 <= sVar7)) {
+          if (((((sVar9 < 0) || (g_worldGrid.sizeX <= sVar9)) || (sVar2 = (short)iVar8, sVar2 < 0))
+              || ((g_worldGrid.sizeY <= sVar2 || (sVar7 = (short)iVar6, sVar7 < 0)))) ||
+             (g_worldGrid.sizeZ <= sVar7)) {
             this = (STWorldObject *)0x0;
           }
           else {
-            this = g_worldCells
-                   [(int)sVar2 * (int)SHORT_007fb240 + (int)sVar7 * (int)SHORT_007fb246 + (int)sVar9
-                   ].objects[0];
+            this = g_worldGrid.cells
+                   [(int)sVar2 * (int)g_worldGrid.sizeX + (int)sVar7 * (int)g_worldGrid.planeStride
+                    + (int)sVar9].objects[0];
           }
           if ((this != (STWorldObject *)0x0) &&
              (iVar3 = (*this->vtable[5].slots_00_28[0])(), iVar8 = local_50, iVar3 != 0)) {

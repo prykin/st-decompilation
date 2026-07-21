@@ -1,8 +1,16 @@
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+/* [STHiddenThisApplier] Anonymous hidden receiver recovered as
+   /SubmarineTitans/Recovered/HiddenThis/AnonReceiver_00727C80.
+   Evidence: incoming_receiver_captures=1; receiver_accesses=7; incoming_edx_uses=0; calls=1;
+   ecx_pointer_setup=1; ecx_scalar_setup=0; caller_cleanup_calls=0; callee_ret_pop=[12];
+   expected_stack=12; receiver_family_members=4; adopt_untyped_existing_thiscall;
+   single_call_corroborated_by_receiver_family */
 
 void __thiscall
-FUN_007282b0(void *this,AnonShape_007282B0_AFD740A9 *param_1,uint param_2,int param_3)
+SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00727C80::FUN_007282b0
+          (AnonReceiver_00727C80 *this,AnonShape_007282B0_AFD740A9 *param_1,uint param_2,int param_3
+          )
 
 {
   byte *pbVar1;
@@ -21,7 +29,7 @@ FUN_007282b0(void *this,AnonShape_007282B0_AFD740A9 *param_1,uint param_2,int pa
   int local_2c;
   int local_10;
   int local_c;
-  void *local_8;
+  AnonReceiver_00727C80 *local_8;
   
   pbVar1 = (byte *)(param_1->field_0028 + param_2 * 0x1c);
   puVar3 = (undefined4 *)((uint)pbVar1[1] * 0x10 + param_3);
@@ -67,7 +75,7 @@ FUN_007282b0(void *this,AnonShape_007282B0_AFD740A9 *param_1,uint param_2,int pa
     else {
       if ((param_1->field_0048 != 0) &&
          ((double)*(float *)(param_1->field_0020 + 8 + (uint)pbVar1[1] * 0xc) <=
-          -(*(double *)((int)this + 0xd0) * _DAT_007901c0))) {
+          -(*(double *)&this->field_0xd0 * _DAT_007901c0))) {
         _DAT_008570f8 = ((int)param_1->field_0008 - (uint)param_1->field_0048) * 2;
       }
       if ((*(byte *)(param_1->field_003C + param_2) & DAT_00857058) == 0) {
@@ -116,9 +124,9 @@ LAB_007284f0:
     if (iVar4 != 0) {
       local_60 = 1;
       iVar4 = FUN_00727c80(&local_60,iVar6);
-      if ((iVar4 != 0) && (DAT_00857098 < *(int *)((int)this + 0x3c))) {
+      if ((iVar4 != 0) && (DAT_00857098 < *(int *)&this->field_0x3c)) {
         do {
-          if (*(int *)((int)this + 0x34) <= DAT_00857098) {
+          if (*(int *)&this->field_0x34 <= DAT_00857098) {
             FUN_007285d0((int)&local_34,(int)&local_60);
           }
           local_30 = local_30 + -1;
@@ -142,7 +150,7 @@ LAB_007284f0:
             local_3c = local_3c + local_38;
           }
           DAT_00857098 = DAT_00857098 + 1;
-        } while (DAT_00857098 < *(int *)((int)this + 0x3c));
+        } while (DAT_00857098 < *(int *)&this->field_0x3c);
       }
     }
   }

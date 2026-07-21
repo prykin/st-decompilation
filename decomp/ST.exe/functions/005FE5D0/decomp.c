@@ -4,7 +4,7 @@ bool __thiscall FUN_005fe5d0(void *this,int param_1,undefined2 *param_2,int para
 {
   short *psVar1;
   bool bVar2;
-  LPVOID pvVar3;
+  void *pvVar3;
   int iVar4;
   undefined3 extraout_var;
   uint uVar5;
@@ -30,10 +30,10 @@ bool __thiscall FUN_005fe5d0(void *this,int param_1,undefined2 *param_2,int para
   }
   psVar1 = (short *)(param_1 * 0x52 + *(int *)((int)this + 0x233));
   if (*(int *)(psVar1 + 0x27) != 0) {
-    FUN_006ab060((LPVOID *)(psVar1 + 0x27));
+    FreeAndNull((void **)(psVar1 + 0x27));
   }
-  pvVar3 = (LPVOID)Library::DKW::LIB::FUN_006aac70(600);
-  *(LPVOID *)(psVar1 + 0x27) = pvVar3;
+  pvVar3 = (void *)Library::DKW::LIB::FUN_006aac70(600);
+  *(void **)(psVar1 + 0x27) = pvVar3;
   psVar1[0x23] = 0;
   psVar1[0x24] = 0;
   psVar1[0x25] = 0;
@@ -81,8 +81,8 @@ bool __thiscall FUN_005fe5d0(void *this,int param_1,undefined2 *param_2,int para
           iVar7 = (int)(short)(((short)(local_18 / 200) + sVar9) -
                               (short)((longlong)local_18 * 0x51eb851f >> 0x3f));
         }
-        if ((((iVar4 < 0) || (SHORT_007fb240 <= iVar4)) || (iVar8 < 0)) ||
-           (((SHORT_007fb242 <= iVar8 || (iVar7 < 0)) || (SHORT_007fb244 <= iVar7)))) {
+        if ((((iVar4 < 0) || (g_worldGrid.sizeX <= iVar4)) || (iVar8 < 0)) ||
+           (((g_worldGrid.sizeY <= iVar8 || (iVar7 < 0)) || (g_worldGrid.sizeZ <= iVar7)))) {
           local_8 = local_8 + -1;
           if (local_8 < 1) {
             thunk_FUN_005fd6a0(this);
@@ -99,12 +99,12 @@ bool __thiscall FUN_005fe5d0(void *this,int param_1,undefined2 *param_2,int para
           local_24 = iVar8;
           local_20 = iVar4;
           if ((CONCAT31(extraout_var,bVar2) == 0) &&
-             ((((((-1 < sVar9 && (sVar9 < SHORT_007fb240)) && (-1 < sVar10)) &&
-                ((sVar10 < SHORT_007fb242 && (-1 < sVar11)))) &&
-               ((sVar11 < SHORT_007fb244 &&
-                (g_worldCells
-                 [(int)SHORT_007fb246 * (int)sVar11 + (int)SHORT_007fb240 * (int)sVar10 + (int)sVar9
-                 ].objects[0] != (STWorldObject *)0x0)))) ||
+             ((((((-1 < sVar9 && (sVar9 < g_worldGrid.sizeX)) && (-1 < sVar10)) &&
+                ((sVar10 < g_worldGrid.sizeY && (-1 < sVar11)))) &&
+               ((sVar11 < g_worldGrid.sizeZ &&
+                (g_worldGrid.cells
+                 [(int)g_worldGrid.planeStride * (int)sVar11 + (int)g_worldGrid.sizeX * (int)sVar10
+                  + (int)sVar9].objects[0] != (STWorldObject *)0x0)))) ||
               (uVar5 = thunk_FUN_00496250(local_10,local_14,local_18), -1 < (int)uVar5)))) {
             local_c = 0;
           }

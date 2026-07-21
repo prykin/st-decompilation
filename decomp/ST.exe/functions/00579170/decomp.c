@@ -18,8 +18,8 @@ bool __thiscall STCrabC::Bad(STCrabC *this,int param_1)
   int iVar5;
   int iVar6;
   
-  iVar6 = (int)SHORT_007fb240;
-  iVar5 = (int)SHORT_007fb242;
+  iVar6 = (int)g_worldGrid.sizeX;
+  iVar5 = (int)g_worldGrid.sizeY;
   if ((((iVar6 + -1 < *(int *)&this->field_0x26d) || (*(int *)&this->field_0x26d < 0)) ||
       (iVar5 + -1 < *(int *)&this->field_0x271)) || (*(int *)&this->field_0x271 < 0)) {
     iVar4 = ReportDebugMessage(s_E____titans_Igor_to_crab_cpp_007cad4c,0x202,0,0,&DAT_007a4ccc,

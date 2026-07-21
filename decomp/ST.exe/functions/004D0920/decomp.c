@@ -10,9 +10,9 @@
 TLOFakeTy * __thiscall TLOFakeTy::TLOFakeTy(TLOFakeTy *this)
 
 {
-  thunk_FUN_004158e0((STGroupBoatC *)this);
+  STGameObjC::STGameObjC((STGameObjC *)this);
   thunk_FUN_004ab810((AnonShape_004AB810_8E5693D5 *)&this->field_01D5);
-  this->field_01D5 = &PTR_LAB_007976c0;
+  this->field_01D5 = &VTable_007976C0;
   this->vtable = &TLOFakeTyVTable;
   this->field_024D = 0;
   return this;

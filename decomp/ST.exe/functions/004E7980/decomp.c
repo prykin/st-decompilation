@@ -24,7 +24,7 @@ undefined4 FUN_004e7980(uint *param_1,int param_2,undefined1 param_3)
   if (((int)param_1 < 0) || (7 < (int)param_1)) {
     return 0;
   }
-  uVar6 = thunk_FUN_004406c0((char)param_1);
+  uVar6 = GetPlayerRaceId((char)param_1);
   iVar7 = (uVar6 & 0xff) - 1;
   puVar11 = &DAT_00801020;
   for (iVar10 = 0xc3; iVar10 != 0; iVar10 = iVar10 + -1) {

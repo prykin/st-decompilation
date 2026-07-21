@@ -21,8 +21,8 @@ void FUN_006b76d0(int *param_1)
       FUN_006a5e90((short *)puVar3[4]);
     }
     FUN_006d25a0(param_1 + 0x11);
-    FUN_006ab060((LPVOID *)(param_1 + 0xd));
-    FUN_006ab060((LPVOID *)(param_1 + 0xc));
+    FreeAndNull((void **)(param_1 + 0xd));
+    FreeAndNull((void **)(param_1 + 0xc));
   }
   return;
 }

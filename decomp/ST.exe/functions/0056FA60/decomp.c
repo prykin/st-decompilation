@@ -500,7 +500,7 @@ switchD_0056fad2_caseD_6102:
         goto switchD_0056fad2_caseD_6105;
       }
       local_8 = (byte *)0x1;
-      Library::DKW::DV::FUN_006c4110((int)PTR_008075a0);
+      Library::DKW::DV::FUN_006c4110(PTR_008075a0);
       if ((PTR_008075a0->field_0004 & 0x40000000) != 0) {
         FUN_006c3f00((int)PTR_008075a0);
       }
@@ -667,7 +667,7 @@ cf_common_exit_0057073B:
       thunk_FUN_00567220((AnonShape_00567220_C9DD1C7D *)&local_18->field_0038);
       pSVar7->field_4EFA = 1;
       if (iVar8 == 0) {
-        Library::DKW::DV::FUN_006c4000((int)PTR_008075a0);
+        Library::DKW::DV::FUN_006c4000(PTR_008075a0);
         g_currentExceptionFrame = local_a4.previous;
         return 0;
       }
@@ -851,11 +851,11 @@ LAB_00570ab6:
                   }
                 }
               } while (local_8 != (byte *)0x0);
-              FUN_006ae110((byte *)local_c);
+              DArrayDestroy(local_c);
               goto LAB_00570c2f;
             }
           }
-          FUN_006ae110((byte *)local_c);
+          DArrayDestroy(local_c);
         }
       }
     }

@@ -12,7 +12,7 @@ undefined4 * FUN_005bd2e0(void)
   this = (STGroupBoatC *)FUN_006b04d0(0x1c9e);
   if (this != (STGroupBoatC *)0x0) {
     STGroupBoatC::sub_006E5FB0(this);
-    this->vtable = (STGroupBoatCVTable *)&PTR_FUN_0079c018;
+    this->vtable = (STGroupBoatCVTable *)&VTable_0079C018;
     this->field_0018 = 0;
     this->field_005D = 0;
     puVar2 = (undefined4 *)((int)&this->field_001C + 1);

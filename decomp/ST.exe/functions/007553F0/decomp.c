@@ -15,7 +15,7 @@ FUN_007553f0(AnonShape_007553F0_ACB112C2 *param_1,int *param_2,undefined4 *param
   
   iVar4 = *(int *)(param_1->field_0008 + 0x50);
   param_1->field_000C = iVar4;
-  iVar3 = FUN_00753b80((AnonShape_00753B80_E259A731 *)param_1,
+  iVar3 = FUN_00753b80((AnonShape_00750F20_F8C16F98 *)param_1,
                        *(undefined4 *)(iVar4 + 0x40 + *(int *)(iVar4 + 0x1c) * 8),
                        *(int *)(iVar4 + 0x1c));
   iVar4 = *(int *)(param_1->field_000C + 0x44 + *(int *)(param_1->field_000C + 0x1c) * 8);
@@ -28,14 +28,14 @@ FUN_007553f0(AnonShape_007553F0_ACB112C2 *param_1,int *param_2,undefined4 *param
   }
   while (iVar4 != -1) {
     *(int *)(param_1->field_000C + 0x1c) = *(int *)(param_1->field_000C + 0x1c) + 1;
-    iVar3 = FUN_00753b80((AnonShape_00753B80_E259A731 *)param_1,iVar4,
+    iVar3 = FUN_00753b80((AnonShape_00750F20_F8C16F98 *)param_1,iVar4,
                          *(int *)(param_1->field_000C + 0x1c));
     *(undefined4 *)(param_1->field_000C + 0x44 + *(int *)(param_1->field_000C + 0x1c) * 8) =
          0xffffffff;
     iVar4 = *(int *)(iVar3 + 4);
   }
 LAB_00755464:
-  FUN_00757450((AnonShape_00757450_3CCFEA7C *)param_1,
+  FUN_00757450((AnonShape_00753C80_4C8E695D *)param_1,
                *(int *)(param_1->field_000C + 0x44 + *(int *)(param_1->field_000C + 0x1c) * 8));
   iVar4 = param_1->field_000C;
   iVar2 = *(int *)(iVar4 + 0x1c);
@@ -47,9 +47,9 @@ LAB_00755464:
       }
       *(int *)(iVar4 + 0x1c) = iVar2 + -1;
       iVar4 = *(int *)(param_1->field_000C + 0x1c);
-      iVar3 = FUN_00753b80((AnonShape_00753B80_E259A731 *)param_1,
+      iVar3 = FUN_00753b80((AnonShape_00750F20_F8C16F98 *)param_1,
                            *(undefined4 *)(param_1->field_000C + 0x40 + iVar4 * 8),iVar4);
-      FUN_00757450((AnonShape_00757450_3CCFEA7C *)param_1,
+      FUN_00757450((AnonShape_00753C80_4C8E695D *)param_1,
                    *(int *)(param_1->field_000C + 0x44 + *(int *)(param_1->field_000C + 0x1c) * 8));
       iVar4 = param_1->field_000C;
       iVar2 = *(int *)(iVar4 + 0x1c);

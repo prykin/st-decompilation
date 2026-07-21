@@ -58,11 +58,12 @@ int __thiscall FUN_0062a370(void *this,int param_1)
       }
     }
   }
-  uVar3 = thunk_FUN_00601500((void *)((int)this + 0xd7),local_10,iVar4,iVar5,
-                             *(int *)((int)this + 0x46),*(int *)((int)this + 0x4a),
-                             *(int *)((int)this + 0x4e),0xff,
-                             *(int *)(&DAT_007d0a1c + (uint)*(byte *)((int)this + 0x14) * 4),0,
-                             0xffff,0x14e,0,0);
+  uVar3 = SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00601500::thunk_FUN_00601500
+                    ((AnonReceiver_00601500 *)((int)this + 0xd7),local_10,iVar4,iVar5,
+                     *(int *)((int)this + 0x46),*(int *)((int)this + 0x4a),
+                     *(int *)((int)this + 0x4e),0xff,
+                     *(int *)(&DAT_007d0a1c + (uint)*(byte *)((int)this + 0x14) * 4),0,0xffff,0x14e,
+                     0,0);
   if ((uVar3 == 0) || (local_14 == 0)) {
     uVar2 = *(undefined4 *)((int)this + 0x4e);
     *(int *)((int)this + 0x86) = *(int *)((int)this + 0x86) + local_c;

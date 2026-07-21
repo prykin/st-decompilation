@@ -12,7 +12,7 @@ void __fastcall FUN_0068e010(int param_1)
   }
   thunk_FUN_00691480(pAVar1);
   if (*(int *)(param_1 + 0x130) != 0) {
-    FUN_006ab060((LPVOID *)(param_1 + 0x130));
+    FreeAndNull((void **)(param_1 + 0x130));
   }
   return;
 }

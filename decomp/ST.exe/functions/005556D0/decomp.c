@@ -1,20 +1,25 @@
 
-undefined4 * __fastcall FUN_005556d0(undefined4 *param_1)
+/* [STConstructorApplier] Recovered constructor candidate.
+   VTable: 0079AEC0 (store 005556D9)
+   Evidence: final_vptr=0079AEC0; returns_this=true; calls_before=1; field_writes_after=2;
+   incoming_edx_uses=0; incoming_stack_parameter_uses=0; table_confidence=high */
+
+undefined4 * __thiscall TraksClassTy::TraksClassTy(TraksClassTy *this)
 
 {
   int iVar1;
   undefined4 *puVar2;
   
-  STGroupBoatC::sub_006E60E0((STGroupBoatC *)param_1);
-  *param_1 = &PTR_LAB_0079aec0;
-  g_traksClass_00802A7C = (TraksClassTy *)param_1;
-  param_1[9] = 0;
-  param_1[0x20a] = 0xffffffff;
-  puVar2 = param_1 + 10;
+  STGroupBoatC::sub_006E60E0((STGroupBoatC *)this);
+  this->vtable = &TraksClassTyVTable;
+  g_traksClass_00802A7C = this;
+  this->field_0024 = (DArrayTy *)0x0;
+  this->field_0828 = 0xffffffff;
+  puVar2 = (undefined4 *)&this->field_0x28;
   for (iVar1 = 0x200; iVar1 != 0; iVar1 = iVar1 + -1) {
     *puVar2 = 0;
     puVar2 = puVar2 + 1;
   }
-  return param_1;
+  return &this->vtable;
 }
 

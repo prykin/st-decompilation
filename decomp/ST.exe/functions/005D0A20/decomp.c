@@ -45,8 +45,8 @@ void __thiscall SettMapMTy::ChangePlayerState(SettMapMTy *this,uint param_1)
               pcVar5 = (char *)0x0;
             }
             if ((pcVar5 == (char *)0x0) || (*pcVar5 != '\0')) break;
-            if (*(byte **)(pcVar5 + 0x50) != (byte *)0x0) {
-              FUN_006ae110(*(byte **)(pcVar5 + 0x50));
+            if (*(DArrayTy **)(pcVar5 + 0x50) != (DArrayTy *)0x0) {
+              DArrayDestroy(*(DArrayTy **)(pcVar5 + 0x50));
             }
             FUN_006b0c70((AnonShape_006B0C70_7C4FE646 *)pSVar4->field_1F84,uVar1);
           }

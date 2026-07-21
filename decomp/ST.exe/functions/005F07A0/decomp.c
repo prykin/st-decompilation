@@ -21,18 +21,18 @@ undefined4 __fastcall FUN_005f07a0(STBoatC *param_1)
       sVar1 = *(short *)&param_1->field_0x242;
       sVar2 = *(short *)&param_1->field_0x244;
       sVar4 = *(short *)&param_1->field_0x246 + -1;
-      if ((((-1 < sVar1) && (sVar1 < SHORT_007fb240)) && (-1 < sVar2)) &&
-         (((sVar2 < SHORT_007fb242 && (-1 < sVar4)) &&
-          ((sVar4 < SHORT_007fb244 &&
+      if ((((-1 < sVar1) && (sVar1 < g_worldGrid.sizeX)) && (-1 < sVar2)) &&
+         (((sVar2 < g_worldGrid.sizeY && (-1 < sVar4)) &&
+          ((sVar4 < g_worldGrid.sizeZ &&
            (this = (STFishC *)
-                   g_worldCells
-                   [(int)SHORT_007fb246 * (int)sVar4 + (int)SHORT_007fb240 * (int)sVar2 + (int)sVar1
-                   ].objects[0], this != (STFishC *)0x0)))))) {
+                   g_worldGrid.cells
+                   [(int)g_worldGrid.planeStride * (int)sVar4 + (int)g_worldGrid.sizeX * (int)sVar2
+                    + (int)sVar1].objects[0], this != (STFishC *)0x0)))))) {
         iVar5 = (*this->vtable->vfunc_2C)();
         if (iVar5 == 99) {
           iVar5 = thunk_FUN_004b7d00(this,(int *)param_1);
           if (iVar5 != 0) {
-            iVar5 = thunk_FUN_005f09b0(param_1,(AnonShape_005F09B0_8503F451 *)this);
+            iVar5 = thunk_FUN_005f09b0(param_1,(AnonShape_005EFAE0_B406B78B *)this);
             if (iVar5 != 0) {
               bVar3 = thunk_FUN_004b7d90((int *)this);
               if (CONCAT31(extraout_var_00,bVar3) != 0) {

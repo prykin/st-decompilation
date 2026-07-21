@@ -5,8 +5,11 @@ FUN_006a34e0(int *param_1,uint param_2,int param_3,uint param_4,int param_5,int 
 
 {
   undefined1 uVar1;
+  bool bVar2;
   undefined3 extraout_var;
-  int iVar2;
+  int iVar3;
+  undefined3 extraout_var_00;
+  undefined3 extraout_var_01;
   ushort local_c [4];
   
   if ((((((-1 < (int)param_2) && ((int)param_2 < *param_1)) && (-1 < param_3)) &&
@@ -15,15 +18,15 @@ FUN_006a34e0(int *param_1,uint param_2,int param_3,uint param_4,int param_5,int 
      ((-1 < param_5 && (param_5 < param_1[1])))) {
     uVar1 = thunk_FUN_006a3390(param_2,param_3,param_4,param_5);
     thunk_FUN_006a3420(param_7,(ushort *)CONCAT31(extraout_var,uVar1));
-    iVar2 = thunk_FUN_006a1370(param_1,param_4,param_5,param_6,(undefined4 *)local_c);
-    iVar2 = thunk_FUN_006a24e0(local_c,(int)(short)iVar2,param_7,param_6,0xff);
-    if (iVar2 == 0) {
+    iVar3 = thunk_FUN_006a1370(param_1,param_4,param_5,param_6,(undefined4 *)local_c);
+    bVar2 = thunk_FUN_006a24e0(local_c,(int)(short)iVar3,param_7,param_6,0xff);
+    if (CONCAT31(extraout_var_00,bVar2) == 0) {
       thunk_FUN_006a2920(param_1,param_4,param_5,param_6,0xff,param_8,param_9);
     }
     thunk_FUN_006a1620(param_1,param_4,param_5,param_6,0xff,param_7,param_8,param_9);
-    iVar2 = thunk_FUN_006a1370(param_1,param_2,param_3,param_6,(undefined4 *)local_c);
-    iVar2 = thunk_FUN_006a24e0(local_c,(int)(short)iVar2,param_7,param_6,0xff);
-    if (iVar2 == 0) {
+    iVar3 = thunk_FUN_006a1370(param_1,param_2,param_3,param_6,(undefined4 *)local_c);
+    bVar2 = thunk_FUN_006a24e0(local_c,(int)(short)iVar3,param_7,param_6,0xff);
+    if (CONCAT31(extraout_var_01,bVar2) == 0) {
       thunk_FUN_006a2920(param_1,param_2,param_3,param_6,0xff,param_8,param_9);
     }
     thunk_FUN_006a3930(param_1,param_2,param_3,param_6,param_7,param_8,param_9);

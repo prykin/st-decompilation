@@ -9,7 +9,7 @@ void __cdecl FUN_00726bd0(int *param_1)
     if (*(cMf32 **)(iVar1 + 2) != (cMf32 *)0x0) {
       cMf32::RecMemFree(*(cMf32 **)(iVar1 + 2),(uint *)(iVar1 + 10));
     }
-    FUN_006ab060((LPVOID *)param_1);
+    FreeAndNull((void **)param_1);
   }
   return;
 }

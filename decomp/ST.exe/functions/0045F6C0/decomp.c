@@ -26,7 +26,7 @@ undefined4 __thiscall STBoatC::sub_0045F6C0(STBoatC *this)
   int iVar16;
   
   iVar14 = 0;
-  uVar6 = thunk_FUN_004406c0(this->field_0x24);
+  uVar6 = GetPlayerRaceId(this->field_0x24);
   uVar6 = uVar6 & 0xff;
   if (uVar6 == 1) {
     iVar14 = *(int *)&this->field_0x24;

@@ -26,7 +26,7 @@ undefined4 __thiscall STCrabC::GetMessage(STCrabC *this,AnonShape_00578630_E75DF
   STSprGameObjC_field_0259State *pSVar14;
   byte *pbVar15;
   InternalExceptionFrame local_80;
-  LPVOID local_3c;
+  void *local_3c;
   undefined4 local_38;
   undefined4 local_34;
   undefined4 local_30;
@@ -156,10 +156,11 @@ undefined4 __thiscall STCrabC::GetMessage(STCrabC *this,AnonShape_00578630_E75DF
       pbVar15 = pbVar15 + 1;
     }
     STPlaySystemC::SaveObjData
-              (PTR_00802a38,this_00->field_0018,(byte *)local_c,local_10 + 0x68 + local_8);
-    FUN_006ab060(&local_14);
-    FUN_006ab060(&local_18);
-    FUN_006ab060(&local_c);
+              (PTR_00802a38,this_00->field_0018,(byte *)local_c,
+               (AnonShape_0060EA30_DCEB68AD *)(local_10 + 0x68 + local_8));
+    FreeAndNull(&local_14);
+    FreeAndNull(&local_18);
+    FreeAndNull(&local_c);
     g_currentExceptionFrame = local_80.previous;
     return 0;
   }
@@ -198,11 +199,11 @@ undefined4 __thiscall STCrabC::GetMessage(STCrabC *this,AnonShape_00578630_E75DF
     }
     Bad((STCrabC *)this_00,(int)unaff_EDI);
     if (((((*(int *)&this_00->field_0x26d < 0) ||
-          ((int)SHORT_007fb240 <= *(int *)&this_00->field_0x26d)) ||
+          ((int)g_worldGrid.sizeX <= *(int *)&this_00->field_0x26d)) ||
          (*(int *)&this_00->field_0x271 < 0)) ||
-        (((int)SHORT_007fb242 <= *(int *)&this_00->field_0x271 ||
+        (((int)g_worldGrid.sizeY <= *(int *)&this_00->field_0x271 ||
          (iVar7 = *(int *)&this_00->field_0x275, iVar7 < 0)))) ||
-       ((SHORT_007fb244 <= iVar7 ||
+       ((g_worldGrid.sizeZ <= iVar7 ||
         (bVar5 = thunk_FUN_004961b0(*(short *)&this_00->field_0x26d,*(short *)&this_00->field_0x271,
                                     (short)iVar7), CONCAT31(extraout_var,bVar5) == 0)))) {
       thunk_FUN_005783f0((STJellyGunC *)this_00);
@@ -368,8 +369,8 @@ cf_error_exit_00578B5D:
     this_00->field_0x6c = ((byte *)((int)local_20 + 0x5a))[0];
     this_00->field_0x6d = bVar3;
     *(STSprGameObjC_field_0259State *)&this_00->field_0x23d = local_20[0xc];
-    local_3c = (LPVOID)Library::DKW::LIB::FUN_006aac70(0x44);
-    if (local_3c != (LPVOID)0x0) {
+    local_3c = (void *)Library::DKW::LIB::FUN_006aac70(0x44);
+    if (local_3c != (void *)0x0) {
       iVar7 = 0;
       do {
         *(int **)(iVar7 + (int)local_3c) = DAT_0080676c;
@@ -383,8 +384,8 @@ cf_error_exit_00578B5D:
       local_24 = 0;
       STT3DSprC::RestoreSpr
                 ((STT3DSprC *)&this_00->field_01D5,(int *)&local_3c,
-                 (AnonShape_004ADBA0_E7CEFF88 *)(pSVar12 + 0x19));
-      FUN_006ab060(&local_3c);
+                 (AnonShape_004AD790_77673787 *)(pSVar12 + 0x19));
+      FreeAndNull(&local_3c);
     }
   }
   if (*(int *)&this_00->field_0x239 == 3) {

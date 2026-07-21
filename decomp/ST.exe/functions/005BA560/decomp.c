@@ -67,11 +67,11 @@ void __thiscall PrividerTy::DonePrivider(PrividerTy *this)
       FUN_006b3bb0(DAT_008075a8,pPVar4->field_1C8A);
     }
     pPVar4->field_1C8A = 0xffffffff;
-    if (pPVar4->field_1C82 != 0) {
-      FUN_006ab060((LPVOID *)&pPVar4->field_1C82);
+    if (pPVar4->field_1C82 != (AnonPointee_PrividerTy_1C82 *)0x0) {
+      FreeAndNull(&pPVar4->field_1C82);
     }
     if (pPVar4->field_1C8E != 0) {
-      FUN_006ab060((LPVOID *)&pPVar4->field_1C8E);
+      FreeAndNull((void **)&pPVar4->field_1C8E);
     }
     if (pPVar4->field_1C96 != (HoloTy *)0x0) {
       HoloTy::Done(pPVar4->field_1C96);

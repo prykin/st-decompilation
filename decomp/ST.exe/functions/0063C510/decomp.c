@@ -25,11 +25,12 @@ int __thiscall FUN_0063c510(void *this,int param_1)
       *(int *)((int)this + 0x26e) = *(int *)((int)this + 0x282);
     }
     if (*(int *)((int)this + 0x26e) < 1000) {
-      thunk_FUN_00601500((void *)((int)this + 899),*(int *)((int)this + 0x266),
-                         *(int *)((int)this + 0x26a),*(int *)((int)this + 0x26e),
-                         *(int *)((int)this + 0x272),*(int *)((int)this + 0x276),
-                         *(int *)((int)this + 0x27a),*(int *)((int)this + 0x235),50000,
-                         *(int *)((int)this + 0x25d),*(undefined2 *)((int)this + 0x261),0xa8,0,0);
+      SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00601500::thunk_FUN_00601500
+                ((AnonReceiver_00601500 *)((int)this + 899),*(int *)((int)this + 0x266),
+                 *(int *)((int)this + 0x26a),*(int *)((int)this + 0x26e),*(int *)((int)this + 0x272)
+                 ,*(int *)((int)this + 0x276),*(int *)((int)this + 0x27a),
+                 *(int *)((int)this + 0x235),50000,*(int *)((int)this + 0x25d),
+                 *(undefined2 *)((int)this + 0x261),0xa8,0,0);
     }
   }
   iVar4 = thunk_FUN_0063cb30(this);

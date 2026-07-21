@@ -48,7 +48,7 @@ undefined4 __thiscall TLOBaseTy::procResult(TLOBaseTy *this)
       return uVar5;
     case CASE_5:
       local_8 = 1;
-      uVar3 = thunk_FUN_004406c0(local_c->field_023D);
+      uVar3 = GetPlayerRaceId(local_c->field_023D);
       *(undefined4 *)&pTVar2->field_0x241 =
            *(undefined4 *)(&DAT_007e4178 + ((uVar3 & 0xff) + pTVar2->field_0235 * 3) * 4);
       thunk_FUN_004cc900((AnonShape_004CC900_31EE9CAA *)pTVar2);

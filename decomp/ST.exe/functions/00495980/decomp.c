@@ -1,5 +1,4 @@
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\To_dump.cpp
    DumpClassC::GetMessage */
@@ -16,8 +15,9 @@ undefined4 __thiscall DumpClassC::GetMessage(DumpClassC *this,int param_1)
   uint uVar7;
   undefined4 unaff_ESI;
   void *unaff_EDI;
-  STWorldObject **ppSVar8;
-  undefined4 *puVar9;
+  short *psVar8;
+  STWorldObject **ppSVar9;
+  undefined4 *puVar10;
   InternalExceptionFrame local_90;
   InternalExceptionFrame local_4c;
   DumpClassC *local_8;
@@ -43,69 +43,77 @@ LAB_00495c27:
       RaiseInternalException(iVar3,0,s_E____titans_wlad_To_dump_cpp_007abdd4,iVar4);
       return 0xffff;
     }
-    SHORT_007fb278 = *DAT_00806750;
-    SHORT_007fb27a = DAT_00806750[1];
-    SHORT_007fb27c = 5;
-    SHORT_007fb27e = *DAT_00806750 * DAT_00806750[1];
-    DAT_007fb280 = (undefined4 *)
-                   Library::DKW::LIB::FUN_006aac70((int)SHORT_007fb27a * (int)SHORT_007fb278 * 10);
-    if (DAT_007fb280 == (undefined4 *)0x0) {
+    g_pathingGrid.sizeX = *DAT_00806750;
+    g_pathingGrid.sizeY = DAT_00806750[1];
+    g_pathingGrid.sizeZ = 5;
+    g_pathingGrid.planeStride = *DAT_00806750 * DAT_00806750[1];
+    g_pathingGrid.cells =
+         (short *)Library::DKW::LIB::FUN_006aac70
+                            ((int)g_pathingGrid.sizeY * (int)g_pathingGrid.sizeX * 10);
+    if (g_pathingGrid.cells == (short *)0x0) {
       RaiseInternalException
                 (-1,g_overwriteContext_007ED77C,s_E____titans_wlad_To_dump_cpp_007abdd4,0x2b);
     }
-    uVar6 = (int)SHORT_007fb27c * (int)SHORT_007fb27a * (int)SHORT_007fb278;
-    puVar9 = DAT_007fb280;
+    uVar6 = (int)g_pathingGrid.sizeZ * (int)g_pathingGrid.sizeY * (int)g_pathingGrid.sizeX;
+    psVar8 = g_pathingGrid.cells;
     for (uVar7 = (uVar6 & 0x7fffffff) >> 1; uVar7 != 0; uVar7 = uVar7 - 1) {
-      *puVar9 = 0;
-      puVar9 = puVar9 + 1;
+      psVar8[0] = 0;
+      psVar8[1] = 0;
+      psVar8 = psVar8 + 2;
     }
     for (uVar6 = uVar6 * 2 & 3; uVar6 != 0; uVar6 = uVar6 - 1) {
-      *(undefined1 *)puVar9 = 0;
-      puVar9 = (undefined4 *)((int)puVar9 + 1);
+      *(undefined1 *)psVar8 = 0;
+      psVar8 = (short *)((int)psVar8 + 1);
     }
-    SHORT_007fb232 = SHORT_007fb27a;
-    DAT_007fb234 = SHORT_007fb27c;
-    SHORT_007fb230 = SHORT_007fb278;
-    _DAT_007fb236 = SHORT_007fb27e;
-    DAT_007fb238 = Library::DKW::LIB::FUN_006aac70
-                             ((int)SHORT_007fb27c * (int)SHORT_007fb27a * (int)SHORT_007fb278 * 2);
-    if (DAT_007fb238 == 0) {
+    g_pathingScratchGrid.sizeY = g_pathingGrid.sizeY;
+    g_pathingScratchGrid.sizeZ = g_pathingGrid.sizeZ;
+    g_pathingScratchGrid.sizeX = g_pathingGrid.sizeX;
+    g_pathingScratchGrid.planeStride = g_pathingGrid.planeStride;
+    g_pathingScratchGrid.cells =
+         (short *)Library::DKW::LIB::FUN_006aac70
+                            ((int)g_pathingGrid.sizeZ * (int)g_pathingGrid.sizeY *
+                             (int)g_pathingGrid.sizeX * 2);
+    if (g_pathingScratchGrid.cells == (short *)0x0) {
       RaiseInternalException
                 (-1,g_overwriteContext_007ED77C,s_E____titans_wlad_To_dump_cpp_007abdd4,0x30);
     }
-    SHORT_007fb242 = SHORT_007fb27a;
-    SHORT_007fb244 = SHORT_007fb27c;
-    SHORT_007fb240 = SHORT_007fb278;
-    SHORT_007fb246 = SHORT_007fb27e;
-    g_worldCells = (STWorldCell *)
-                   Library::DKW::LIB::FUN_006aac70
-                             ((int)SHORT_007fb27c * (int)SHORT_007fb27a * (int)SHORT_007fb278 * 8);
-    if (g_worldCells == (STWorldCell *)0x0) {
+    g_worldGrid.sizeY = g_pathingGrid.sizeY;
+    g_worldGrid.sizeZ = g_pathingGrid.sizeZ;
+    g_worldGrid.sizeX = g_pathingGrid.sizeX;
+    g_worldGrid.planeStride = g_pathingGrid.planeStride;
+    g_worldGrid.cells =
+         (STWorldCell *)
+         Library::DKW::LIB::FUN_006aac70
+                   ((int)g_pathingGrid.sizeZ * (int)g_pathingGrid.sizeY * (int)g_pathingGrid.sizeX *
+                    8);
+    if (g_worldGrid.cells == (STWorldCell *)0x0) {
       RaiseInternalException
                 (-1,g_overwriteContext_007ED77C,s_E____titans_wlad_To_dump_cpp_007abdd4,0x34);
     }
-    iVar3 = ((int)SHORT_007fb244 * (int)SHORT_007fb242 * (int)SHORT_007fb240 & 0x1fffffffU) << 1;
-    ppSVar8 = g_worldCells->objects;
+    iVar3 = ((int)g_worldGrid.sizeZ * (int)g_worldGrid.sizeY * (int)g_worldGrid.sizeX & 0x1fffffffU)
+            << 1;
+    ppSVar9 = (g_worldGrid.cells)->objects;
     for (; iVar3 != 0; iVar3 = iVar3 + -1) {
-      *ppSVar8 = (STWorldObject *)0x0;
-      ppSVar8 = ppSVar8 + 1;
+      *ppSVar9 = (STWorldObject *)0x0;
+      ppSVar9 = ppSVar9 + 1;
     }
     for (iVar3 = 0; iVar3 != 0; iVar3 = iVar3 + -1) {
-      *(undefined1 *)ppSVar8 = 0;
-      ppSVar8 = (STWorldObject **)((int)ppSVar8 + 1);
+      *(undefined1 *)ppSVar9 = 0;
+      ppSVar9 = (STWorldObject **)((int)ppSVar9 + 1);
     }
     DAT_007fb26c = (undefined4 *)
-                   Library::DKW::LIB::FUN_006aac70((int)SHORT_007fb232 * (int)SHORT_007fb230);
-    iVar3 = (int)SHORT_007fb232;
-    iVar4 = (int)SHORT_007fb230;
-    puVar9 = DAT_007fb26c;
+                   Library::DKW::LIB::FUN_006aac70
+                             ((int)g_pathingScratchGrid.sizeY * (int)g_pathingScratchGrid.sizeX);
+    iVar3 = (int)g_pathingScratchGrid.sizeY;
+    iVar4 = (int)g_pathingScratchGrid.sizeX;
+    puVar10 = DAT_007fb26c;
     for (uVar6 = (uint)(iVar3 * iVar4) >> 2; uVar6 != 0; uVar6 = uVar6 - 1) {
-      *puVar9 = 0;
-      puVar9 = puVar9 + 1;
+      *puVar10 = 0;
+      puVar10 = puVar10 + 1;
     }
     for (uVar6 = iVar3 * iVar4 & 3; uVar6 != 0; uVar6 = uVar6 - 1) {
-      *(undefined1 *)puVar9 = 0;
-      puVar9 = (undefined4 *)((int)puVar9 + 1);
+      *(undefined1 *)puVar10 = 0;
+      puVar10 = (undefined4 *)((int)puVar10 + 1);
     }
     PTR_007fb270 = (DArrayTy *)Library::DKW::TBL::FUN_006ae290((uint *)0x0,10,0x18,10);
     thunk_FUN_00495e50();
@@ -129,19 +137,19 @@ LAB_00495c27:
       goto LAB_00495c27;
     }
     thunk_FUN_00495ea0();
-    if (DAT_007fb280 != (undefined4 *)0x0) {
-      FUN_006ab060(&DAT_007fb280);
+    if (g_pathingGrid.cells != (short *)0x0) {
+      FreeAndNull(&g_pathingGrid.cells);
     }
-    if (DAT_007fb238 != 0) {
-      FUN_006ab060((LPVOID *)&DAT_007fb238);
+    if (g_pathingScratchGrid.cells != (short *)0x0) {
+      FreeAndNull(&g_pathingScratchGrid.cells);
     }
-    if (g_worldCells != (STWorldCell *)0x0) {
-      FUN_006ab060(&g_worldCells);
+    if (g_worldGrid.cells != (STWorldCell *)0x0) {
+      FreeAndNull(&g_worldGrid.cells);
     }
     pDVar2 = local_8;
     thunk_FUN_00497000();
     if (PTR_007fb270 != (DArrayTy *)0x0) {
-      FUN_006ae110((byte *)PTR_007fb270);
+      DArrayDestroy(PTR_007fb270);
     }
     iVar3 = FUN_006e4d40((void *)pDVar2->field_0010,pDVar2->field_000C);
     if (iVar3 == 1) {

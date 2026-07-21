@@ -8,10 +8,13 @@
    [STSourceProvenanceApplier end]
    
    [STPrototypeRepairApplier] Propagated parameter 0.
-   Evidence: 0068CEC0 -> EXTERNAL:0000001F @ 0068D116 */
+   Evidence: 0068CEC0 -> EXTERNAL:0000001F @ 0068D116
+   
+   [STTypeFamilyApplier] EXACT_ANONYMOUS_LAYOUT.
+   Evidence: exact anonymous structure fingerprint shared across functions */
 
 uint * __cdecl
-FUN_0068cec0(LPCSTR lpFileName,AnonShape_0068CEC0_66639411 *param_2,int *param_3,undefined *param_4)
+FUN_0068cec0(LPCSTR lpFileName,AnonShape_00683C70_22193481 *param_2,int *param_3,undefined *param_4)
 
 {
   char cVar1;
@@ -80,7 +83,7 @@ FUN_0068cec0(LPCSTR lpFileName,AnonShape_0068CEC0_66639411 *param_2,int *param_3
       RaiseInternalException
                 (-6,g_overwriteContext_007ED77C,s_E____titans_ai_ai_script_cpp_007d5604,0xa39);
     }
-    thunk_FUN_00672b60(lpFileName,&PTR_LAB_007d3fa8);
+    thunk_FUN_00672b60(lpFileName,(AnonShape_GLOBAL_0081194C_4D1525E6 *)&PTR_LAB_007d3fa8);
     g_currentExceptionFrame = (InternalExceptionFrame *)&local_74;
     local_74 = local_b8.previous;
     iVar4 = Library::MSVCRT::__setjmp3(local_70,0,pvVar16,iVar17);
@@ -93,7 +96,7 @@ FUN_0068cec0(LPCSTR lpFileName,AnonShape_0068CEC0_66639411 *param_2,int *param_3
       thunk_FUN_00672970(this_03,1);
       thunk_FUN_006728f0((undefined4 *)&DAT_007d3f78);
       thunk_FUN_00680040();
-      if (param_2 == (AnonShape_0068CEC0_66639411 *)0x0) {
+      if (param_2 == (AnonShape_00683C70_22193481 *)0x0) {
         RaiseInternalException
                   (-0x34,g_overwriteContext_007ED77C,s_E____titans_ai_ai_script_cpp_007d5604,0xa55);
       }

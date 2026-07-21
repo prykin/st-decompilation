@@ -19,7 +19,7 @@ void FUN_0054edf0(undefined4 *param_1,undefined4 *param_2,uint param_3,uint para
       STPlaySystemC::SetCtrlCmd(in_ECX,DAT_0080874d,uVar1,cVar2,param_2,param_4,param_1,param_3);
     }
     if (param_1 != (undefined4 *)0x0) {
-      FUN_006ab060(&param_1);
+      FreeAndNull(&param_1);
     }
   }
   return;

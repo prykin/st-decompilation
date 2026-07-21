@@ -8,11 +8,11 @@ void __fastcall FUN_00678fc0(int param_1)
   int iVar4;
   int *piVar5;
   int iVar6;
-  AnonShape_006B0CD0_C8D121FA *pAVar7;
+  AnonShape_00413AF0_B6B4EE9A *pAVar7;
   uint uVar8;
   uint uVar9;
   
-  pAVar7 = *(AnonShape_006B0CD0_C8D121FA **)(param_1 + 0x695);
+  pAVar7 = *(AnonShape_00413AF0_B6B4EE9A **)(param_1 + 0x695);
   uVar8 = pAVar7->field_000C;
   if (1 < (int)uVar8) {
     do {
@@ -36,7 +36,7 @@ void __fastcall FUN_00678fc0(int param_1)
           piVar3 = (int *)0x0;
         }
         if ((*piVar5 != 0) && (*piVar3 != 0)) {
-          if ((pAVar7 == (AnonShape_006B0CD0_C8D121FA *)0x0) ||
+          if ((pAVar7 == (AnonShape_00413AF0_B6B4EE9A *)0x0) ||
              (((int)uVar1 < 0 || ((int)uVar8 <= (int)uVar1)))) {
 LAB_00679056:
             iVar6 = 0;
@@ -56,7 +56,7 @@ LAB_00679056:
               iVar6 = *piVar5 + 0x20;
             }
           }
-          if (((pAVar7 == (AnonShape_006B0CD0_C8D121FA *)0x0) || ((int)uVar9 < 0)) ||
+          if (((pAVar7 == (AnonShape_00413AF0_B6B4EE9A *)0x0) || ((int)uVar9 < 0)) ||
              ((int)uVar8 <= (int)uVar9)) {
 LAB_00679087:
             iVar4 = 0;
@@ -79,7 +79,7 @@ LAB_00679087:
             bVar2 = true;
           }
         }
-        pAVar7 = *(AnonShape_006B0CD0_C8D121FA **)(param_1 + 0x695);
+        pAVar7 = *(AnonShape_00413AF0_B6B4EE9A **)(param_1 + 0x695);
         uVar8 = pAVar7->field_000C;
         uVar9 = uVar1;
       } while ((int)uVar1 < (int)(uVar8 - 1));

@@ -67,8 +67,8 @@ FUN_0061bdb0(void *this,Global_sub_0061BDB0_param_1Enum param_1,int param_2,int 
       *(int *)((int)this + 0xd7) = (int)(short)lVar6;
     }
     if ((((-1 < *(int *)((int)this + 0x9f)) && (-1 < *(int *)((int)this + 0xa3))) &&
-        (*(int *)((int)this + 0x9f) < SHORT_007fb240 * 0xc9)) &&
-       (*(int *)((int)this + 0xa3) < SHORT_007fb242 * 0xc9)) {
+        (*(int *)((int)this + 0x9f) < g_worldGrid.sizeX * 0xc9)) &&
+       (*(int *)((int)this + 0xa3) < g_worldGrid.sizeY * 0xc9)) {
       *(undefined4 *)((int)this + 0xd7) = *(undefined4 *)((int)this + 0xa7);
       goto LAB_0061c0e4;
     }

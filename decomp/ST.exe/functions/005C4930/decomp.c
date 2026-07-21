@@ -6,7 +6,7 @@
 void __thiscall SettMapTy::DoneSettMap(SettMapTy *this)
 
 {
-  byte *groupContent;
+  DArrayTy *array;
   MMsgTy *this_00;
   code *pcVar1;
   MMObjTy *pMVar2;
@@ -18,8 +18,8 @@ void __thiscall SettMapTy::DoneSettMap(SettMapTy *this)
   undefined4 unaff_ESI;
   void *unaff_EDI;
   uint uVar5;
-  LPVOID *ppvVar6;
-  bool bVar7;
+  void **value;
+  bool bVar6;
   InternalExceptionFrame local_4c;
   MMObjTy *local_8;
   
@@ -98,56 +98,56 @@ void __thiscall SettMapTy::DoneSettMap(SettMapTy *this)
       cMf32::RecMemFree(g_cMf32_00806780,(uint *)&pMVar2[0x22].field_0x5);
     }
     if (*(int *)&pMVar2[0x20].field_0x7 != 0) {
-      FUN_006ab060((LPVOID *)&pMVar2[0x20].field_0x7);
+      FreeAndNull((void **)&pMVar2[0x20].field_0x7);
     }
     PTR_0081175c = (AnonShape_GLOBAL_0081175C_57F682DD *)0x0;
-    if (*(byte **)&pMVar2[0x23].field_0x73 != (byte *)0x0) {
-      FUN_006ae110(*(byte **)&pMVar2[0x23].field_0x73);
+    if (*(DArrayTy **)&pMVar2[0x23].field_0x73 != (DArrayTy *)0x0) {
+      DArrayDestroy(*(DArrayTy **)&pMVar2[0x23].field_0x73);
     }
     iVar3 = *(int *)&pMVar2[0x23].field_0x7b;
     *(undefined4 *)&pMVar2[0x23].field_0x73 = 0;
     if (iVar3 != 0) {
       uVar5 = 0;
       if (0 < *(int *)(iVar3 + 0xc)) {
-        bVar7 = *(int *)(iVar3 + 0xc) != 0;
+        bVar6 = *(int *)(iVar3 + 0xc) != 0;
         do {
-          if (bVar7) {
+          if (bVar6) {
             iVar3 = *(int *)(iVar3 + 8) * uVar5 + *(int *)(iVar3 + 0x1c);
           }
           else {
             iVar3 = 0;
           }
-          if ((iVar3 != 0) && (*(byte **)(iVar3 + 0x50) != (byte *)0x0)) {
-            FUN_006ae110(*(byte **)(iVar3 + 0x50));
+          if ((iVar3 != 0) && (*(DArrayTy **)(iVar3 + 0x50) != (DArrayTy *)0x0)) {
+            DArrayDestroy(*(DArrayTy **)(iVar3 + 0x50));
           }
           iVar3 = *(int *)&pMVar2[0x23].field_0x7b;
           uVar5 = uVar5 + 1;
-          bVar7 = uVar5 < *(uint *)(iVar3 + 0xc);
+          bVar6 = uVar5 < *(uint *)(iVar3 + 0xc);
         } while ((int)uVar5 < (int)*(uint *)(iVar3 + 0xc));
       }
-      FUN_006ae110(*(byte **)&pMVar2[0x23].field_0x7b);
+      DArrayDestroy(*(DArrayTy **)&pMVar2[0x23].field_0x7b);
       *(undefined4 *)&pMVar2[0x23].field_0x7b = 0;
     }
-    groupContent = *(byte **)((int)&pMVar2[0x22].field_0008 + 1);
-    if (groupContent != (byte *)0x0) {
-      FUN_006ae110(groupContent);
+    array = *(DArrayTy **)((int)&pMVar2[0x22].field_0008 + 1);
+    if (array != (DArrayTy *)0x0) {
+      DArrayDestroy(array);
     }
     *(undefined4 *)((int)&pMVar2[0x22].field_0008 + 1) = 0;
     SpriteClassTy::CloseSprite((SpriteClassTy *)((int)&pMVar2[0x20].field_0008 + 3));
     SpriteClassTy::CloseSprite((SpriteClassTy *)&pMVar2[0x20].field_0x9c);
     SpriteClassTy::CloseSprite((SpriteClassTy *)&pMVar2[0x21].field_0x4a);
-    ppvVar6 = (LPVOID *)&pMVar2[0x25].field_0x25;
+    value = (void **)&pMVar2[0x25].field_0x25;
     iVar3 = 10;
     do {
-      FUN_006b3bb0(DAT_008075a8,(uint)ppvVar6[-10]);
-      if (*ppvVar6 != (LPVOID)0x0) {
-        FUN_006ab060(ppvVar6);
+      FUN_006b3bb0(DAT_008075a8,(uint)value[-10]);
+      if (*value != (void *)0x0) {
+        FreeAndNull(value);
       }
-      ppvVar6 = ppvVar6 + 1;
+      value = value + 1;
       iVar3 = iVar3 + -1;
     } while (iVar3 != 0);
     if (*(int *)&pMVar2[0x21].field_0xdb != 0) {
-      FUN_006ab060((LPVOID *)&pMVar2[0x21].field_0xdb);
+      FreeAndNull((void **)&pMVar2[0x21].field_0xdb);
     }
     FUN_006b3bb0(DAT_008075a8,*(uint *)&pMVar2[0x21].field_0xdf);
     if ((pMVar2[0x26].field_0x35 != '\0') &&

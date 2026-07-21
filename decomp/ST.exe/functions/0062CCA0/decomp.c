@@ -68,7 +68,7 @@ undefined4 __thiscall STManRub3C::GetMessage(STManRub3C *this,int param_1)
     if (iVar3 == 0x10f) {
       local_14 = thunk_FUN_0062d670(local_c,&local_10);
       STPlaySystemC::SaveObjData(PTR_00802a38,PTR_s_RUBBISH_3_0079d080,local_14,local_10,0xc);
-      FUN_006ab060(&local_14);
+      FreeAndNull(&local_14);
       g_currentExceptionFrame = pIVar6;
       return 0;
     }

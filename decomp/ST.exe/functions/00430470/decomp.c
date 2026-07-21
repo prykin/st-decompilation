@@ -7,13 +7,13 @@ undefined4 __thiscall STAllPlayersC::RegisterTorpedo(STAllPlayersC *this,int par
 
 {
   code *pcVar1;
-  uint uVar2;
+  uint index;
   int errorCode;
-  int iVar3;
-  undefined4 uVar4;
+  int iVar2;
+  undefined4 uVar3;
   undefined2 extraout_var;
   undefined4 unaff_ESI;
-  uint uVar5;
+  uint index_00;
   void *unaff_EDI;
   InternalExceptionFrame local_4c;
   int local_8;
@@ -28,40 +28,40 @@ undefined4 __thiscall STAllPlayersC::RegisterTorpedo(STAllPlayersC *this,int par
                   (-0x5001fffc,g_overwriteContext_007ED77C,s_E____titans_wlad_to_allpl_cpp_007a6004,
                    0x7e2);
       }
-      uVar5 = PTR_007fa130->count;
-      uVar2 = uVar5;
-      if (uVar5 != 0) {
-        while (uVar2 = uVar2 - 1, -1 < (int)uVar2) {
-          FUN_006acc70((AnonShape_006ACC70_C8641025 *)PTR_007fa130,uVar2,&local_8);
+      index_00 = PTR_007fa130->count;
+      index = index_00;
+      if (index_00 != 0) {
+        while (index = index - 1, -1 < (int)index) {
+          DArrayGetElement(PTR_007fa130,index,&local_8);
           if (local_8 == 0) {
-            uVar5 = uVar2;
+            index_00 = index;
           }
         }
       }
     }
     else {
-      uVar5 = (uint)param_2;
-      if ((uVar5 < PTR_007fa130->count) &&
-         (FUN_006acc70((AnonShape_006ACC70_C8641025 *)PTR_007fa130,uVar5,&local_8), local_8 != 0)) {
+      index_00 = (uint)param_2;
+      if ((index_00 < PTR_007fa130->count) &&
+         (DArrayGetElement(PTR_007fa130,index_00,&local_8), local_8 != 0)) {
         RaiseInternalException
                   (-0x5001fffa,g_overwriteContext_007ED77C,s_E____titans_wlad_to_allpl_cpp_007a6004,
                    0x7f0);
       }
     }
-    Library::DKW::TBL::FUN_006ae140(&PTR_007fa130->flags,uVar5,&param_1);
+    Library::DKW::TBL::FUN_006ae140(&PTR_007fa130->flags,index_00,&param_1);
     DAT_007fa134 = DAT_007fa134 + 1;
     g_currentExceptionFrame = local_4c.previous;
-    return CONCAT22((short)((uint)DAT_007fa134 >> 0x10),(short)uVar5);
+    return CONCAT22((short)((uint)DAT_007fa134 >> 0x10),(short)index_00);
   }
   g_currentExceptionFrame = local_4c.previous;
-  iVar3 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0x7f6,0,errorCode,
+  iVar2 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0x7f6,0,errorCode,
                              &DAT_007a4ccc,s_STAllPlayersC__RegisterTorpedo_007a6718);
-  if (iVar3 == 0) {
+  if (iVar2 == 0) {
     RaiseInternalException(errorCode,0,s_E____titans_wlad_to_allpl_cpp_007a6004,0x7f7);
     return CONCAT22(extraout_var,0xffff);
   }
   pcVar1 = (code *)swi(3);
-  uVar4 = (*pcVar1)();
-  return uVar4;
+  uVar3 = (*pcVar1)();
+  return uVar3;
 }
 

@@ -114,7 +114,7 @@ void __thiscall FUN_00721520(void *this,int param_1,uint param_2)
           }
           FUN_006b7830(*(AnonShape_006B7830_769CA2DF **)((int)this + 0x138),uVar6);
           Library::DKW::TBL::FUN_006b6020(*(uint **)((int)this + 0x138),uVar6 - 1,local_c);
-          FUN_006ab060(&local_c);
+          FreeAndNull(&local_c);
           FUN_00721080(this,~uVar3 - 1,uVar6 - 1);
           return;
         }
@@ -199,7 +199,7 @@ void __thiscall FUN_00721520(void *this,int param_1,uint param_2)
           }
           FUN_006b7830(*(AnonShape_006B7830_769CA2DF **)((int)this + 0x138),uVar6 + 1);
           Library::DKW::TBL::FUN_006b6020(*(uint **)((int)this + 0x138),uVar6,local_c);
-          FUN_006ab060(&local_c);
+          FreeAndNull(&local_c);
           FUN_00721080(this,param_1,param_2);
           return;
         }

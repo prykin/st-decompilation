@@ -4,7 +4,7 @@
    E:\__titans\Igor\To_fish.cpp
    STFishC::GetMessage */
 
-undefined4 __thiscall STFishC::GetMessage(STFishC *this,AnonShape_0057BF60_09E2DBC1 *param_1)
+undefined4 __thiscall STFishC::GetMessage(STFishC *this,AnonShape_004B9FA0_DF027633 *param_1)
 
 {
   undefined1 *puVar1;
@@ -26,7 +26,7 @@ undefined4 __thiscall STFishC::GetMessage(STFishC *this,AnonShape_0057BF60_09E2D
   undefined4 *puVar13;
   byte *pbVar14;
   InternalExceptionFrame local_80;
-  LPVOID local_3c;
+  void *local_3c;
   undefined4 local_38;
   undefined4 local_34;
   undefined4 local_30;
@@ -192,10 +192,12 @@ undefined4 __thiscall STFishC::GetMessage(STFishC *this,AnonShape_0057BF60_09E2D
       pbVar12 = pbVar12 + 1;
       pbVar14 = pbVar14 + 1;
     }
-    STPlaySystemC::SaveObjData(PTR_00802a38,this_00->field_0018,local_c,local_10 + 0x46 + local_8);
-    FUN_006ab060(&local_14);
-    FUN_006ab060(&local_18);
-    FUN_006ab060(&local_c);
+    STPlaySystemC::SaveObjData
+              (PTR_00802a38,this_00->field_0018,local_c,
+               (AnonShape_0060EA30_DCEB68AD *)(local_10 + 0x46 + local_8));
+    FreeAndNull(&local_14);
+    FreeAndNull(&local_18);
+    FreeAndNull(&local_c);
     g_currentExceptionFrame = local_80.previous;
     return 0;
   }
@@ -243,8 +245,8 @@ undefined4 __thiscall STFishC::GetMessage(STFishC *this,AnonShape_0057BF60_09E2D
       *(undefined2 *)&this_00->field_0x235 = *(undefined2 *)(local_20 + 0xc);
       *(undefined2 *)&this_00->field_0x237 = *(undefined2 *)((int)local_20 + 0x32);
       *(undefined2 *)&this_00->field_0x239 = *(undefined2 *)(local_20 + 0xd);
-      local_3c = (LPVOID)Library::DKW::LIB::FUN_006aac70(0x44);
-      if (local_3c != (LPVOID)0x0) {
+      local_3c = (void *)Library::DKW::LIB::FUN_006aac70(0x44);
+      if (local_3c != (void *)0x0) {
         iVar6 = 0;
         do {
           if (iVar6 == 8) {
@@ -263,8 +265,8 @@ undefined4 __thiscall STFishC::GetMessage(STFishC *this,AnonShape_0057BF60_09E2D
         local_24 = 0;
         STT3DSprC::RestoreSpr
                   ((STT3DSprC *)&this_00->field_01D5,(int *)&local_3c,
-                   (AnonShape_004ADBA0_E7CEFF88 *)((int)puVar11 + 0x42));
-        FUN_006ab060(&local_3c);
+                   (AnonShape_004AD790_77673787 *)((int)puVar11 + 0x42));
+        FreeAndNull(&local_3c);
         DumpClassC::WritePtr
                   (*(short *)&this_00->field_0x5b,*(short *)&this_00->field_0x5d,
                    *(short *)&this_00->field_0x5f,1,(AnonShape_00495EC0_95A268C6 *)this_00);
@@ -289,10 +291,10 @@ undefined4 __thiscall STFishC::GetMessage(STFishC *this,AnonShape_0057BF60_09E2D
   *(undefined2 *)&this_00->field_0x5d = 0xffff;
   *(undefined2 *)&this_00->field_0x5b = 0xffff;
   if ((((((*(int *)&this_00->field_0x257 < 0) ||
-         ((int)SHORT_007fb240 <= *(int *)&this_00->field_0x257)) ||
+         ((int)g_worldGrid.sizeX <= *(int *)&this_00->field_0x257)) ||
         (iVar6 = *(int *)((int)&this_00->field_0259 + 2), iVar6 < 0)) ||
-       ((SHORT_007fb242 <= iVar6 || (iVar6 = *(int *)&this_00->field_0x25f, iVar6 < 0)))) ||
-      ((SHORT_007fb244 <= iVar6 ||
+       ((g_worldGrid.sizeY <= iVar6 || (iVar6 = *(int *)&this_00->field_0x25f, iVar6 < 0)))) ||
+      ((g_worldGrid.sizeZ <= iVar6 ||
        ((iVar6 = thunk_FUN_00417a20(this_00,*(short *)&this_00->field_0x257,
                                     *(undefined2 *)((int)&this_00->field_0259 + 2),(short)iVar6,1),
         iVar6 != 0 || (iVar6 = thunk_FUN_00417e70(this_00,8), iVar6 != 0)))))) ||
@@ -373,7 +375,7 @@ cf_common_exit_0057C3E4:
 switchD_0057c669_caseD_127:
   puVar1 = &this_00->field_0x235;
   local_20 = (undefined4 *)(int)(short)((short)param_1->field_0018 * 0xc9 + 100);
-  iVar6 = thunk_FUN_0058d160(0,0,SHORT_007fb240 + -1,SHORT_007fb242 + -1,(int)this_00,
+  iVar6 = thunk_FUN_0058d160(0,0,g_worldGrid.sizeX + -1,g_worldGrid.sizeY + -1,(int)this_00,
                              (int)(short)((short)param_1->field_0014 * 0xc9 + 100),(int)local_20,
                              (int)(short)((short)((uint)param_1->field_0014 >> 0x10) * 0xc9 + 100),
                              (int)(short)((short)((uint)param_1->field_0018 >> 0x10) * 0xc9 + 100),

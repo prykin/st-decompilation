@@ -13,9 +13,9 @@ STLBombC * __thiscall STLBombC::STLBombC(STLBombC *this)
   int iVar1;
   STLBombC *pSVar2;
   
-  thunk_FUN_004158e0((STGroupBoatC *)this);
+  STGameObjC::STGameObjC((STGameObjC *)this);
   thunk_FUN_004ab810((AnonShape_004AB810_8E5693D5 *)&this->field_01D5);
-  this->field_01D5 = &PTR_LAB_0079ba50;
+  this->field_01D5 = &VTable_0079BA50;
   this->vtable = &STLBombCVTable;
   this->field_0231 = 2;
   this->field_0235 = 0;

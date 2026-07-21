@@ -11,7 +11,7 @@ undefined4 __thiscall FUN_00608e90(void *this,AnonShape_00608E90_523B07BC *param
   undefined4 *puVar7;
   undefined4 *puVar8;
   byte *local_c;
-  uint local_8;
+  AnonShape_0060EA30_DCEB68AD *local_8;
   
   iVar2 = STGameObjC::GetMessage(this,(AnonShape_0041AF40_F59F8577 *)param_1);
   if (iVar2 == 0xffff) {
@@ -20,12 +20,12 @@ undefined4 __thiscall FUN_00608e90(void *this,AnonShape_00608E90_523B07BC *param
   uVar3 = param_1->field_0010;
   if (3 < uVar3) {
     if (uVar3 == 0x10f) {
-      local_c = (byte *)thunk_FUN_0060c020(this,&local_8);
+      local_c = (byte *)thunk_FUN_0060c020(this,(uint *)&local_8);
       if (local_c == (byte *)0x0) {
         return 0;
       }
       STPlaySystemC::SaveObjData(PTR_00802a38,*(undefined4 *)((int)this + 0x18),local_c,local_8);
-      FUN_006ab060(&local_c);
+      FreeAndNull(&local_c);
       return 0;
     }
     if (uVar3 != 0x111) {

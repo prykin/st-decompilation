@@ -4,10 +4,11 @@ void __thiscall FUN_005505d0(void *this,int param_1,int *param_2)
 {
   char *pcVar1;
   DWORD DVar2;
-  undefined4 uVar3;
-  byte bVar4;
-  uint uVar5;
-  undefined4 *puVar6;
+  char *text;
+  undefined4 extraout_EAX;
+  byte bVar3;
+  uint uVar4;
+  undefined4 *puVar5;
   CHAR local_10c [260];
   uint local_8;
   
@@ -36,30 +37,30 @@ void __thiscall FUN_005505d0(void *this,int param_1,int *param_2)
         }
         if ((DVar2 - *(int *)((int)this + 0xa7)) / 5 < 0x7d1) {
           if (g_popUp_008016D8 != (PopUpTy *)0x0) {
-            uVar5 = 9;
-            pcVar1 = (char *)FUN_006b0140(17000,HINSTANCE_00807618);
-            thunk_FUN_0052d320(g_popUp_008016D8,pcVar1,uVar5);
+            uVar4 = 9;
+            LoadResourceString(17000,HINSTANCE_00807618);
+            thunk_FUN_0052d320(g_popUp_008016D8,text,uVar4);
           }
           *(undefined1 *)((int)this + 0xbb) = 0;
         }
       }
       if (DAT_0080735e != '\0') {
-        bVar4 = 0;
+        bVar3 = 0;
         param_2 = (int *)0x0;
         if (DAT_00808aaf != 0) {
           do {
-            puVar6 = &DAT_00808ab0 + (int)param_2 * 0x27;
+            puVar5 = &DAT_00808ab0 + (int)param_2 * 0x27;
             if (((&DAT_00808af0)[(int)param_2 * 0x27] == param_1) &&
                ((&DAT_00808af6)[(int)param_2 * 0x9c] != '\0')) {
-              uVar3 = FUN_006b0140(0x426d,HINSTANCE_00807618);
-              wsprintfA(local_10c,s__s__s_007c411c,uVar3,puVar6);
+              LoadResourceString(0x426d,HINSTANCE_00807618);
+              wsprintfA(local_10c,s__s__s_007c411c,extraout_EAX,puVar5);
               if (g_popUp_008016D8 != (PopUpTy *)0x0) {
                 thunk_FUN_0052d320(g_popUp_008016D8,local_10c,8);
               }
             }
-            bVar4 = bVar4 + 1;
-            param_2 = (int *)(uint)bVar4;
-          } while (bVar4 < DAT_00808aaf);
+            bVar3 = bVar3 + 1;
+            param_2 = (int *)(uint)bVar3;
+          } while (bVar3 < DAT_00808aaf);
           return;
         }
       }

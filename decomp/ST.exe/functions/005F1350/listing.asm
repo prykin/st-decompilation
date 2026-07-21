@@ -1,4 +1,4 @@
-FUN_005f1350:
+STManBasisC::STManBasisC:
 005F1350  56                        PUSH ESI
 005F1351  57                        PUSH EDI
 005F1352  8B F1                     MOV ESI,ECX

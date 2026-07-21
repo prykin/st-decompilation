@@ -5,7 +5,7 @@ void FUN_004ea6e0(uint param_1,int param_2,int param_3,undefined4 param_4)
   uint uVar1;
   int iVar2;
   
-  uVar1 = thunk_FUN_004406c0(DAT_0080874d);
+  uVar1 = GetPlayerRaceId(DAT_0080874d);
   uVar1 = uVar1 & 0xff;
   if (uVar1 == 1) {
     iVar2 = thunk_FUN_004e60d0((uint)DAT_0080874d,0x40);

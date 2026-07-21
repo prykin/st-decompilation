@@ -13,7 +13,7 @@ STExplosion * __thiscall STExplosion::STExplosion(STExplosion *this)
   int iVar1;
   undefined4 *puVar2;
   
-  thunk_FUN_004158e0((STGroupBoatC *)this);
+  STGameObjC::STGameObjC((STGameObjC *)this);
   this->vtable = &STExplosionVTable;
   this->field_0215 = 0;
   puVar2 = (undefined4 *)&this->field_0x219;

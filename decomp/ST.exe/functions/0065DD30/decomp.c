@@ -138,7 +138,7 @@ cf_common_join_0065DF91:
         iVar9 = local_10;
       } while ((int)local_14 < (int)uVar4);
     }
-    FUN_006ae110((byte *)local_1c);
+    DArrayDestroy(local_1c);
   }
   return iVar9;
 }

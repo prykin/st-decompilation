@@ -14,9 +14,9 @@ FUN_004cfa00(void *this,Global_sub_004CFA00_param_1Enum param_1,int param_2,int 
   uint uVar4;
   int iVar5;
   
-  iVar2 = thunk_FUN_004406c0(*(char *)((int)this + 0x23d));
+  iVar2 = GetPlayerRaceId(*(char *)((int)this + 0x23d));
   iVar3 = (-(uint)((char)iVar2 != '\x01') & 0xfffffffd) + 0x13;
-  uVar4 = thunk_FUN_004406c0(*(char *)((int)this + 0x23d));
+  uVar4 = GetPlayerRaceId(*(char *)((int)this + 0x23d));
   iVar2 = *(int *)((int)this + 0x245);
   iVar5 = (uVar4 & 0xff) - 1;
   switch(param_1) {

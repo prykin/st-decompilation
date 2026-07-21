@@ -18,8 +18,8 @@ void __cdecl FUN_0065d030(AnonShape_0065D030_CB0F82F0 *param_1)
         else {
           iVar1 = 0;
         }
-        if (*(byte **)(iVar1 + 0xf) != (byte *)0x0) {
-          FUN_006ae110(*(byte **)(iVar1 + 0xf));
+        if (*(DArrayTy **)(iVar1 + 0xf) != (DArrayTy *)0x0) {
+          DArrayDestroy(*(DArrayTy **)(iVar1 + 0xf));
           *(undefined4 *)(iVar1 + 0xf) = 0;
         }
         iVar1 = param_1->field_0462;
@@ -27,7 +27,7 @@ void __cdecl FUN_0065d030(AnonShape_0065D030_CB0F82F0 *param_1)
         bVar3 = uVar2 < *(uint *)(iVar1 + 0xc);
       } while ((int)uVar2 < (int)*(uint *)(iVar1 + 0xc));
     }
-    FUN_006ae110((byte *)param_1->field_0462);
+    DArrayDestroy((DArrayTy *)param_1->field_0462);
     param_1->field_0462 = 0;
     FUN_006b5570((AnonShape_006B5570_4D68B99C *)param_1->field_0456);
     param_1->field_0456 = 0;

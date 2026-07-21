@@ -18,7 +18,7 @@ void __thiscall AiPlrClassTy::ExecTech(AiPlrClassTy *this,void *param_1)
   undefined3 extraout_var_02;
   undefined3 extraout_var_03;
   uint uVar6;
-  uint *puVar7;
+  undefined4 *puVar7;
   int iVar8;
   uint extraout_EDX;
   uint extraout_EDX_00;
@@ -35,7 +35,7 @@ void __thiscall AiPlrClassTy::ExecTech(AiPlrClassTy *this,void *param_1)
   undefined4 unaff_ESI;
   void *pvVar10;
   void *unaff_EDI;
-  AiTactClassTy *pAVar11;
+  STGameObjC *pSVar11;
   AnonShape_0068FD00_A5257008 *pAVar12;
   bool bVar13;
   int local_c8 [7];
@@ -46,7 +46,7 @@ void __thiscall AiPlrClassTy::ExecTech(AiPlrClassTy *this,void *param_1)
   int local_14;
   uint local_10;
   uint local_c;
-  AiTactClassTy *local_8;
+  STGameObjC *local_8;
   
   if (((this->field_0695 != (DArrayTy *)0x0) && (g_sTAllPlayers_007FA174 != (STAllPlayersC *)0x0))
      && ((this->field_066E == 0 ||
@@ -81,26 +81,26 @@ void __thiscall AiPlrClassTy::ExecTech(AiPlrClassTy *this,void *param_1)
                                           (int)*(short *)((int)pvVar10 + 1));
               uVar9 = extraout_EDX_01;
               if (CONCAT31(extraout_var,bVar13) == 0) {
-                pAVar11 = (AiTactClassTy *)(int)*(short *)((int)pvVar10 + 1);
+                pSVar11 = (STGameObjC *)(int)*(short *)((int)pvVar10 + 1);
                 local_14 = (int)*(short *)((int)pvVar10 + 3);
-                local_8 = pAVar11;
-                bVar13 = thunk_FUN_004e5910(*(int *)&this_00->field_0x5d7,(uint)pAVar11);
+                local_8 = pSVar11;
+                bVar13 = thunk_FUN_004e5910(*(int *)&this_00->field_0x5d7,(uint)pSVar11);
                 uVar9 = extraout_EDX_02;
                 if ((CONCAT31(extraout_var_00,bVar13) == 0) ||
-                   (bVar13 = thunk_FUN_004e5c40(*(int *)&this_00->field_0x5d7,(uint)pAVar11),
+                   (bVar13 = thunk_FUN_004e5c40(*(int *)&this_00->field_0x5d7,(uint)pSVar11),
                    uVar9 = extraout_EDX_03, CONCAT31(extraout_var_01,bVar13) == 0)) {
 LAB_0067b6db:
                   bVar13 = false;
                 }
                 else {
-                  uVar3 = thunk_FUN_004e6140(*(int *)&this_00->field_0x5d7,(int)pAVar11);
+                  uVar3 = thunk_FUN_004e6140(*(int *)&this_00->field_0x5d7,(int)pSVar11);
                   local_c = CONCAT31(extraout_var_02,uVar3);
-                  iVar4 = thunk_FUN_004e60d0(*(int *)&this_00->field_0x5d7,(int)pAVar11);
+                  iVar4 = thunk_FUN_004e60d0(*(int *)&this_00->field_0x5d7,(int)pSVar11);
                   uVar9 = local_c;
                   if (((int)local_c <= iVar4) ||
-                     ((iVar4 = thunk_FUN_004e60d0(*(int *)&this_00->field_0x5d7,(int)pAVar11),
+                     ((iVar4 = thunk_FUN_004e60d0(*(int *)&this_00->field_0x5d7,(int)pSVar11),
                       uVar9 = extraout_EDX_04, iVar4 != local_14 + -1 ||
-                      (bVar13 = thunk_FUN_004e5f90(*(int *)&this_00->field_0x5d7,(uint)pAVar11),
+                      (bVar13 = thunk_FUN_004e5f90(*(int *)&this_00->field_0x5d7,(uint)pSVar11),
                       uVar9 = extraout_EDX_05, CONCAT31(extraout_var_03,bVar13) != 0))))
                   goto LAB_0067b6db;
                   bVar13 = true;
@@ -116,19 +116,20 @@ LAB_0067b6db:
                       if (((pDVar5 == (DArrayTy *)0x0) || ((int)local_c < 0)) ||
                          ((int)uVar6 <= (int)local_c)) {
 LAB_0067b724:
-                        local_8 = (AiTactClassTy *)0x0;
+                        local_8 = (STGameObjC *)0x0;
                       }
                       else {
                         if (local_c < uVar6) {
-                          puVar7 = (uint *)(pDVar5->elementSize * local_c + (int)pDVar5->data);
+                          puVar7 = (undefined4 *)(pDVar5->elementSize * local_c + (int)pDVar5->data)
+                          ;
                         }
                         else {
-                          puVar7 = (uint *)0x0;
+                          puVar7 = (undefined4 *)0x0;
                         }
                         if (puVar7[1] == 0) goto LAB_0067b724;
-                        local_8 = (AiTactClassTy *)*puVar7;
+                        local_8 = (STGameObjC *)*puVar7;
                       }
-                      if (local_8 != (AiTactClassTy *)0x0) {
+                      if (local_8 != (STGameObjC *)0x0) {
                         pAVar12 = local_4c;
                         for (iVar4 = 0xd; iVar4 != 0; iVar4 = iVar4 + -1) {
                           *(undefined4 *)pAVar12 = 0;
@@ -139,7 +140,7 @@ LAB_0067b724:
                         local_4c[0].field_0009 = 1;
                         local_4c[0].field_000A = pvVar10;
                         if (&stack0x00000000 != (undefined1 *)0x4c) {
-                          AiTactClassTy::GetAiMess(local_8,local_4c);
+                          AiTactClassTy::GetAiMess((AiTactClassTy *)local_8,local_4c);
                           uVar9 = local_c;
                         }
                         if ('\0' < (char)local_4c[0]._8_1_) {
@@ -165,18 +166,17 @@ LAB_0067b724:
             break;
           case 1:
             if (g_sTAllPlayers_007FA174 == (STAllPlayersC *)0x0) {
-              local_8 = (AiTactClassTy *)0x0;
+              local_8 = (STGameObjC *)0x0;
             }
             else {
-              local_8 = (AiTactClassTy *)
-                        STAllPlayersC::GetObjPtr
+              local_8 = STAllPlayersC::GetObjPtr
                                   (g_sTAllPlayers_007FA174,
                                    CONCAT31((int3)(uVar9 >> 8),this_00->field_0x5d7),
                                    CONCAT22((short)((uint)pDVar5 >> 0x10),
                                             *(undefined2 *)((int)pvVar10 + 8)),CASE_1);
               uVar9 = extraout_EDX_06;
             }
-            if (local_8 == (AiTactClassTy *)0x0) {
+            if (local_8 == (STGameObjC *)0x0) {
               *(undefined1 *)((int)pvVar10 + 7) = 0;
               *(undefined2 *)((int)pvVar10 + 8) = 0;
             }

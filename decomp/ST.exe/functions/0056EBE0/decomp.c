@@ -6,9 +6,10 @@ void __fastcall FUN_0056ebe0(int param_1)
 {
   char cVar1;
   uint *puVar2;
-  uint *groupContent;
-  uint *groupContent_00;
-  uint *puVar3;
+  DArrayTy *array;
+  DArrayTy *array_00;
+  DArrayTy *array_01;
+  DArrayTy *pDVar3;
   uint uVar4;
   uint uVar5;
   int iVar6;
@@ -71,9 +72,9 @@ void __fastcall FUN_0056ebe0(int param_1)
     puVar2 = Library::DKW::TBL::FUN_006b54f0((uint *)0x0,10,10);
     *(uint **)(param_1 + 0x4eab) = puVar2;
   }
-  puVar2 = CreateOpponentList(g_cMf32_0080675C,1,*(uint *)(param_1 + 0x233c));
-  groupContent = CreateOpponentList(g_cMf32_0080675C,2,*(uint *)(param_1 + 0x233c));
-  groupContent_00 = CreateOpponentList(g_cMf32_0080675C,3,*(uint *)(param_1 + 0x233c));
+  array = (DArrayTy *)CreateOpponentList(g_cMf32_0080675C,1,*(uint *)(param_1 + 0x233c));
+  array_00 = (DArrayTy *)CreateOpponentList(g_cMf32_0080675C,2,*(uint *)(param_1 + 0x233c));
+  array_01 = (DArrayTy *)CreateOpponentList(g_cMf32_0080675C,3,*(uint *)(param_1 + 0x233c));
   pcVar7 = (char *)(param_1 + 0x11a7);
   local_8 = 8;
   do {
@@ -101,15 +102,15 @@ void __fastcall FUN_0056ebe0(int param_1)
       pcVar10 = pcVar10 + 1;
     }
     if ((pcVar7[0x22] != -1) && (*pcVar7 == '\x01')) {
-      puVar3 = puVar2;
-      if ((pcVar7[0x21] != '\x01') && (puVar3 = groupContent, pcVar7[0x21] != '\x02')) {
-        puVar3 = groupContent_00;
+      pDVar3 = array;
+      if ((pcVar7[0x21] != '\x01') && (pDVar3 = array_00, pcVar7[0x21] != '\x02')) {
+        pDVar3 = array_01;
       }
-      if ((puVar3 == (uint *)0x0) || (puVar3[3] == 0)) {
+      if ((pDVar3 == (DArrayTy *)0x0) || (pDVar3->count == 0)) {
         pcVar9 = &DAT_008016a0;
       }
       else {
-        pcVar9 = (char *)(puVar3[7] + 0x4c);
+        pcVar9 = (char *)((int)pDVar3->data + 0x4c);
       }
       uVar4 = 0xffffffff;
       do {
@@ -137,14 +138,14 @@ void __fastcall FUN_0056ebe0(int param_1)
     pcVar7 = pcVar7 + 0x51;
     local_8 = local_8 + -1;
     if (local_8 == 0) {
-      if (puVar2 != (uint *)0x0) {
-        FUN_006ae110((byte *)puVar2);
+      if (array != (DArrayTy *)0x0) {
+        DArrayDestroy(array);
       }
-      if (groupContent != (uint *)0x0) {
-        FUN_006ae110((byte *)groupContent);
+      if (array_00 != (DArrayTy *)0x0) {
+        DArrayDestroy(array_00);
       }
-      if (groupContent_00 != (uint *)0x0) {
-        FUN_006ae110((byte *)groupContent_00);
+      if (array_01 != (DArrayTy *)0x0) {
+        DArrayDestroy(array_01);
       }
       return;
     }

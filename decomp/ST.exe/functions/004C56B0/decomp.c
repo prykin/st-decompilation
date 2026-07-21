@@ -78,12 +78,12 @@ undefined4 __thiscall FUN_004c56b0(void *this,void *param_1)
       else {
         sVar7 = ((short)(iVar4 / 0xc9) + sVar7) - (short)((longlong)iVar4 * 0x28c1979 >> 0x3f);
       }
-      if (((((sVar7 < 0) || (SHORT_007fb240 <= sVar7)) || (sVar6 < 0)) ||
-          ((SHORT_007fb242 <= sVar6 || (sVar5 < 0)))) ||
-         ((SHORT_007fb244 <= sVar5 ||
-          (g_worldCells
-           [(int)sVar6 * (int)SHORT_007fb240 + (int)sVar5 * (int)SHORT_007fb246 + (int)sVar7].
-           objects[1] == (STWorldObject *)0x0)))) {
+      if (((((sVar7 < 0) || (g_worldGrid.sizeX <= sVar7)) || (sVar6 < 0)) ||
+          ((g_worldGrid.sizeY <= sVar6 || (sVar5 < 0)))) ||
+         ((g_worldGrid.sizeZ <= sVar5 ||
+          (g_worldGrid.cells
+           [(int)sVar6 * (int)g_worldGrid.sizeX + (int)sVar5 * (int)g_worldGrid.planeStride +
+            (int)sVar7].objects[1] == (STWorldObject *)0x0)))) {
         return 1;
       }
     }

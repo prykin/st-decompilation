@@ -27,7 +27,7 @@ void __thiscall FUN_00575120(void *this,short *param_1,int param_2,int param_3)
             Library::DKW::LIB::FUN_006aac70
                       ((uint)*(byte *)(param_1 + 2) * (uint)*(byte *)(param_1 + 2));
   thunk_FUN_00574920(param_1,param_2,param_3,local_8);
-  FUN_006ab060(&local_8);
+  FreeAndNull(&local_8);
   return;
 }
 

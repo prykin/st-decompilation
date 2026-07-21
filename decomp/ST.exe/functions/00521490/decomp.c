@@ -137,8 +137,9 @@ InfocPanelTy::GetMessage(InfocPanelTy *this,AnonShape_00521490_CB9EAEC2 *param_1
     else if ((piVar1[1] == 1) && (bVar6 != 0xff)) {
       uVar11 = bVar6 + 9;
     }
-    pbVar8 = (byte *)FUN_0070b3a0(*(int *)&this_00[2].field_0xaa,uVar11);
-    DibPut((AnonShape_006B84D0_7C7D97C6 *)this_00->field_0068,iVar7 - iVar9,iVar2 - iVar5,'\x01',
+    pbVar8 = (byte *)FUN_0070b3a0(*(AnonShape_GLOBAL_0081175C_57F682DD **)&this_00[2].field_0xaa,
+                                  uVar11);
+    DibPut((AnonShape_006B5B10_E0D06CF1 *)this_00->field_0068,iVar7 - iVar9,iVar2 - iVar5,'\x01',
            pbVar8);
     Library::DKW::DDX::FUN_006b3640
               (DAT_008075a8,*(uint *)&this_00->field_0x60,0xffffffff,this_00->field_003C,

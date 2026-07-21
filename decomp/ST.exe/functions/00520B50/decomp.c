@@ -35,7 +35,8 @@ InfocPanelTy::PaintInfocObj(InfocPanelTy *this,ushort param_1,uint param_2,int p
     else {
       cVar3 = (-(DAT_0080874e != '\x01') & 0x89U) + 0x3a;
     }
-    FUN_006b4170(pIVar2->field_0068,0,param_3,param_4,0x2d,0xc,cVar3);
+    FUN_006b4170((AnonShape_006C7610_838EDECF *)pIVar2->field_0068,0,param_3,param_4,0x2d,0xc,cVar3)
+    ;
     ccFntTy::SetSurf(pIVar2->field_0189,pIVar2->field_0068,0,param_3,param_4,0x2d,0xc);
     ccFntTy::WrStr(pIVar2->field_0189,(uint *)&pIVar2->field_0x18d,-1,-1,
                    (DAT_0080874e != '\x03') - 1 & 5);

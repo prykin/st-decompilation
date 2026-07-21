@@ -14,20 +14,21 @@ uint __fastcall FUN_004836c0(AnonShape_004836C0_617DC527 *param_1)
   sVar3 = *(short *)&param_1->field_0x800;
   uVar5 = CONCAT22((short)((uint)*(int *)&param_1->field_0x7fc >> 0x10),sVar3);
   if (*(int *)&param_1->field_0x7fc == 3) {
-    if (((sVar3 < 0) || (SHORT_007fb240 <= sVar3)) ||
-       ((sVar2 < 0 || (((SHORT_007fb242 <= sVar2 || (sVar1 < 0)) || (SHORT_007fb244 <= sVar1))))))
+    if (((sVar3 < 0) || (g_worldGrid.sizeX <= sVar3)) ||
+       ((sVar2 < 0 ||
+        (((g_worldGrid.sizeY <= sVar2 || (sVar1 < 0)) || (g_worldGrid.sizeZ <= sVar1))))))
     goto cf_common_exit_004837CF;
-    pSVar4 = g_worldCells
-             [(int)SHORT_007fb246 * (int)sVar1 + (int)SHORT_007fb240 * (int)sVar2 + (int)sVar3].
-             objects[1];
+    pSVar4 = g_worldGrid.cells
+             [(int)g_worldGrid.planeStride * (int)sVar1 + (int)g_worldGrid.sizeX * (int)sVar2 +
+              (int)sVar3].objects[1];
   }
   else {
-    if ((((sVar3 < 0) || (SHORT_007fb240 <= sVar3)) || (sVar2 < 0)) ||
-       (((SHORT_007fb242 <= sVar2 || (sVar1 < 0)) || (SHORT_007fb244 <= sVar1))))
+    if ((((sVar3 < 0) || (g_worldGrid.sizeX <= sVar3)) || (sVar2 < 0)) ||
+       (((g_worldGrid.sizeY <= sVar2 || (sVar1 < 0)) || (g_worldGrid.sizeZ <= sVar1))))
     goto cf_common_exit_004837CF;
-    pSVar4 = g_worldCells
-             [(int)SHORT_007fb246 * (int)sVar1 + (int)SHORT_007fb240 * (int)sVar2 + (int)sVar3].
-             objects[0];
+    pSVar4 = g_worldGrid.cells
+             [(int)g_worldGrid.planeStride * (int)sVar1 + (int)g_worldGrid.sizeX * (int)sVar2 +
+              (int)sVar3].objects[0];
   }
   uVar5 = 0;
   if (pSVar4 != (STWorldObject *)0x0) {

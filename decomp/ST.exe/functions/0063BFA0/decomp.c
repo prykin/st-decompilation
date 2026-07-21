@@ -2,14 +2,14 @@
 undefined4 * __fastcall FUN_0063bfa0(AnonShape_0063BFA0_2C9DA96E *param_1)
 
 {
-  thunk_FUN_004158e0((STGroupBoatC *)param_1);
+  STGameObjC::STGameObjC((STGameObjC *)param_1);
   thunk_FUN_004ab810((AnonShape_004AB810_8E5693D5 *)&param_1->field_01D5);
-  param_1->field_01D5 = &PTR_LAB_0079d49c;
+  param_1->field_01D5 = &VTable_0079D49C;
   param_1->field_0292 = 0;
   param_1->field_029A = 0;
   param_1->field_029F = 0;
   param_1->field_0336 = 0;
-  *(undefined ***)param_1 = &PTR_thunk_FUN_00639c90_0079d33c;
+  *(VTable_0079D33C **)param_1 = &VTable_0079D33C;
   param_1->field_033A = 0xffffffff;
   param_1->field_0353 = 0xffffffff;
   param_1->field_0363 = 0xffffffff;

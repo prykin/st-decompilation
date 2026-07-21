@@ -13,7 +13,7 @@ int __thiscall STBoatC::Capture(STBoatC *this,int param_1)
   short sVar5;
   undefined2 uVar6;
   int iVar7;
-  int *piVar8;
+  STGameObjC *pSVar8;
   int iVar9;
   int iVar10;
   uint uVar11;
@@ -103,12 +103,12 @@ cf_common_exit_00476DBA:
       }
       break;
     case 1:
-      piVar8 = (int *)STAllPlayersC::GetObjPtr
-                                (g_sTAllPlayers_007FA174,
-                                 CONCAT31((int3)((uint)extraout_EDX >> 8),this->field_0x5fc),
-                                 CONCAT22(extraout_var,*(undefined2 *)&this->field_0x5fd),CASE_1);
-      if (((piVar8 != (int *)0x0) && (piVar8[6] == *(int *)&this->field_0x5ff)) &&
-         (iVar7 = (**(code **)(*piVar8 + 0x108))(*(undefined4 *)&this->field_0x24), iVar7 != 0)) {
+      pSVar8 = STAllPlayersC::GetObjPtr
+                         (g_sTAllPlayers_007FA174,
+                          CONCAT31((int3)((uint)extraout_EDX >> 8),this->field_0x5fc),
+                          CONCAT22(extraout_var,*(undefined2 *)&this->field_0x5fd),CASE_1);
+      if (((pSVar8 != (STGameObjC *)0x0) && (pSVar8->field_0018 == *(int *)&this->field_0x5ff)) &&
+         (iVar7 = (*pSVar8->vtable[1].vfunc_34)(*(undefined4 *)&this->field_0x24), iVar7 != 0)) {
         return 2;
       }
       sub_004602B0(this);
@@ -141,20 +141,20 @@ cf_common_exit_00476DBA:
     if (iVar7 != 0) {
       return -1;
     }
-    piVar8 = (int *)STAllPlayersC::GetObjPtr
-                              (g_sTAllPlayers_007FA174,
-                               CONCAT31((int3)((uint)extraout_ECX >> 8),this->field_0x5fc),
-                               (uint)*(ushort *)&this->field_0x5fd,CASE_1);
-    if (piVar8 == (int *)0x0) {
+    pSVar8 = STAllPlayersC::GetObjPtr
+                       (g_sTAllPlayers_007FA174,
+                        CONCAT31((int3)((uint)extraout_ECX >> 8),this->field_0x5fc),
+                        (uint)*(ushort *)&this->field_0x5fd,CASE_1);
+    if (pSVar8 == (STGameObjC *)0x0) {
       return 0;
     }
-    if (piVar8[6] != *(int *)&this->field_0x5ff) {
+    if (pSVar8->field_0018 != *(int *)&this->field_0x5ff) {
       return 0;
     }
-    iVar7 = (**(code **)(*piVar8 + 0x108))(*(undefined4 *)&this->field_0x24);
+    iVar7 = (*pSVar8->vtable[1].vfunc_34)(*(undefined4 *)&this->field_0x24);
     if (iVar7 != 0) {
-      if (piVar8[0xb] == 0) {
-        thunk_FUN_004cd3e0(piVar8,this->field_0018,*(undefined4 *)&this->field_0x24);
+      if (pSVar8->field_002C == 0) {
+        thunk_FUN_004cd3e0(pSVar8,this->field_0018,*(undefined4 *)&this->field_0x24);
         SVar3 = this->field_06F7;
         this->field_0611 = CASE_3;
         if (SVar3 == CASE_6) {
@@ -171,7 +171,7 @@ cf_common_exit_00476DBA:
         (*this->vtable->vfunc_90)(3,0x151);
         return 2;
       }
-      if (piVar8[0xb] != 1) {
+      if (pSVar8->field_002C != 1) {
         return 2;
       }
       sVar19 = *(short *)&this->field_0x609;
@@ -184,14 +184,14 @@ cf_common_exit_00476DBA:
           for (; (int)sVar22 <= sVar21 + 1; sVar22 = sVar22 + 1) {
             if ((((((sVar19 != this->field_0047) || (sVar22 != this->field_0049)) &&
                   (sVar5 = *(short *)&this->field_0x60d + 1, -1 < sVar19)) &&
-                 ((sVar19 < SHORT_007fb240 && (-1 < sVar22)))) && (sVar22 < SHORT_007fb242)) &&
-               (((-1 < sVar5 && (sVar5 < SHORT_007fb244)) &&
-                ((pSVar2 = g_worldCells
-                           [(int)SHORT_007fb240 * (int)sVar22 +
-                            iVar18 + (int)sVar5 * (int)SHORT_007fb246].objects[0],
-                 pSVar2 != (STWorldObject *)0x0 &&
-                 ((pSVar2->value_20 == 0x14 && (*(int *)((int)&pSVar2[0x1f].vtable + 1) == 9))))))))
-            {
+                 ((sVar19 < g_worldGrid.sizeX && (-1 < sVar22)))) && (sVar22 < g_worldGrid.sizeY))
+               && (((-1 < sVar5 && (sVar5 < g_worldGrid.sizeZ)) &&
+                   ((pSVar2 = g_worldGrid.cells
+                              [(int)g_worldGrid.sizeX * (int)sVar22 +
+                               iVar18 + (int)sVar5 * (int)g_worldGrid.planeStride].objects[0],
+                    pSVar2 != (STWorldObject *)0x0 &&
+                    ((pSVar2->value_20 == 0x14 && (*(int *)((int)&pSVar2[0x1f].vtable + 1) == 9)))))
+                   ))) {
               iVar9 = *(int *)&pSVar2[0x2b].field_0x5;
               if (iVar9 == 2) {
                 return 2;
@@ -328,17 +328,17 @@ cf_common_exit_00476DBA:
         return -1;
       }
       if (local_8 == 0) {
-        piVar8 = (int *)STAllPlayersC::GetObjPtr
-                                  (g_sTAllPlayers_007FA174,CONCAT31(uVar17,this->field_0x5fc),
-                                   CONCAT22((short)((uint)iVar7 >> 0x10),
-                                            *(undefined2 *)&this->field_0x5fd),CASE_1);
-        if (((piVar8 == (int *)0x0) || (piVar8[6] != *(int *)&this->field_0x5ff)) ||
-           (iVar7 = (**(code **)(*piVar8 + 0x108))(*(undefined4 *)&this->field_0x24), iVar7 == 0)) {
+        pSVar8 = STAllPlayersC::GetObjPtr
+                           (g_sTAllPlayers_007FA174,CONCAT31(uVar17,this->field_0x5fc),
+                            CONCAT22((short)((uint)iVar7 >> 0x10),*(undefined2 *)&this->field_0x5fd)
+                            ,CASE_1);
+        if (((pSVar8 == (STGameObjC *)0x0) || (pSVar8->field_0018 != *(int *)&this->field_0x5ff)) ||
+           (iVar7 = (*pSVar8->vtable[1].vfunc_34)(*(undefined4 *)&this->field_0x24), iVar7 == 0)) {
           this->field_0611 = CASE_4;
           *(undefined4 *)&this->field_0x615 = 0;
         }
         else {
-          thunk_FUN_004cd3e0(piVar8,this->field_0018,*(undefined4 *)&this->field_0x24);
+          thunk_FUN_004cd3e0(pSVar8,this->field_0018,*(undefined4 *)&this->field_0x24);
           SVar3 = this->field_06F7;
           this->field_0611 = CASE_3;
           if (SVar3 == CASE_6) {
@@ -552,7 +552,7 @@ cf_common_exit_00477B2E:
       (**(code **)(*(int *)pAVar15 + 0x110))(*(undefined4 *)&this->field_0x24,this->field_06F3);
     }
     else if (iVar7 != 2) goto cf_common_exit_0047746B;
-    uVar11 = thunk_FUN_004406c0(pAVar15->field_0x24);
+    uVar11 = GetPlayerRaceId(pAVar15->field_0x24);
     iVar7 = (**(code **)(*(int *)pAVar15 + 0x2c))();
     local_64.data = &local_40;
     local_40 = *(undefined4 *)(&DAT_007e1374 + ((uVar11 & 0xff) + iVar7 * 3) * 4);

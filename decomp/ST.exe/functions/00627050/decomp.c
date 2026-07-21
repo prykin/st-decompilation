@@ -14,7 +14,7 @@ void __thiscall FUN_00627050(void *this,char *param_1)
   param_1[1] = '\x01';
   uVar1 = (**(code **)(*(int *)this + 0x2c))();
   *(undefined4 *)(param_1 + 2) = uVar1;
-  iVar2 = thunk_FUN_004406c0(*(char *)((int)this + 0x24));
+  iVar2 = GetPlayerRaceId(*(char *)((int)this + 0x24));
   param_1[6] = (char)iVar2;
   *(undefined4 *)(param_1 + 7) = *(undefined4 *)((int)this + 0x18);
   return;

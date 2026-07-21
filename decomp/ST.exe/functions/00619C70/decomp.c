@@ -64,9 +64,9 @@ int __fastcall FUN_00619c70(STJumpMineC *param_1)
     case 2:
       iVar11 = (int)param_1->field_00C9;
       iVar12 = (int)param_1->field_00CB;
-      if ((((-1 < iVar11) && (-1 < iVar12)) && (iVar9 = (int)SHORT_007fb240, iVar11 < iVar9)) &&
-         ((iVar12 < SHORT_007fb242 && (*(char *)(iVar9 * iVar12 + DAT_007fb26c + iVar11) != '\0'))))
-      {
+      if ((((-1 < iVar11) && (-1 < iVar12)) && (iVar9 = (int)g_worldGrid.sizeX, iVar11 < iVar9)) &&
+         ((iVar12 < g_worldGrid.sizeY && (*(char *)(iVar9 * iVar12 + DAT_007fb26c + iVar11) != '\0')
+          ))) {
         if ((((&DAT_007fb24c)[*(int *)&param_1->field_0x51] == 0) ||
             (*(char *)(iVar9 * iVar12 + (&DAT_007fb24c)[*(int *)&param_1->field_0x51] + iVar11) ==
              '\0')) &&
@@ -225,8 +225,8 @@ LAB_0061a4fd:
     case 2:
       iVar9 = (int)param_1->field_00CB;
       if (((((param_1->field_00C9 < 0) || (iVar9 < 0)) ||
-           (iVar7 = (int)SHORT_007fb240, iVar7 <= param_1->field_00C9)) ||
-          (((SHORT_007fb242 <= iVar9 ||
+           (iVar7 = (int)g_worldGrid.sizeX, iVar7 <= param_1->field_00C9)) ||
+          (((g_worldGrid.sizeY <= iVar9 ||
             (iVar8 = (int)param_1->field_00C9,
             *(char *)(iVar7 * iVar9 + DAT_007fb26c + iVar8) == '\0')) ||
            ((local_2c = (&DAT_007fb24c)[*(int *)&param_1->field_0x51], local_2c != 0 &&
@@ -328,11 +328,12 @@ LAB_0061a4fd:
       local_24 = local_18;
     }
     if ((local_30 < 3) ||
-       (uVar5 = thunk_FUN_00601500(&param_1->field_0x20,iVar12,local_8,uVar10,
-                                   *(int *)&param_1->field_0xdb,*(int *)&param_1->field_0xdf,
-                                   *(int *)&param_1->field_0xe3,*(int *)&param_1->field_0x51,
-                                   DAT_007e66ac,*(int *)&param_1->field_0x85,
-                                   *(undefined2 *)&param_1->field_0x89,0xb3,0,0), (int)uVar5 < 1)) {
+       (uVar5 = SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00601500::thunk_FUN_00601500
+                          ((AnonReceiver_00601500 *)&param_1->field_0x20,iVar12,local_8,uVar10,
+                           *(int *)&param_1->field_0xdb,*(int *)&param_1->field_0xdf,
+                           *(int *)&param_1->field_0xe3,*(int *)&param_1->field_0x51,DAT_007e66ac,
+                           *(int *)&param_1->field_0x85,*(undefined2 *)&param_1->field_0x89,0xb3,0,0
+                          ), (int)uVar5 < 1)) {
       sVar3 = (short)local_18;
       *(int *)&param_1->field_0xdb = param_1->field_009F;
       *(int *)&param_1->field_0xdf = param_1->field_00A3;

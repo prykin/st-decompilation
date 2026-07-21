@@ -1,5 +1,8 @@
 
-short * __cdecl FUN_0067bba0(AnonShape_0067BBA0_56C30601 *param_1,uint param_2)
+/* [STTypeFamilyApplier] EXACT_ANONYMOUS_LAYOUT.
+   Evidence: exact anonymous structure fingerprint shared across functions */
+
+short * __cdecl FUN_0067bba0(AnonShape_00413AF0_B6B4EE9A *param_1,uint param_2)
 
 {
   uint uVar1;

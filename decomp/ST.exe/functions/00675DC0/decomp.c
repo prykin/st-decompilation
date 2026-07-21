@@ -8,7 +8,7 @@ void __cdecl FUN_00675dc0(uint param_1,uint *param_2)
 {
   uint uVar1;
   undefined2 *puVar2;
-  int *piVar3;
+  STGameObjC *pSVar3;
   int iVar4;
   uint uVar5;
   uint uVar6;
@@ -25,12 +25,12 @@ void __cdecl FUN_00675dc0(uint param_1,uint *param_2)
       do {
         puVar2 = (undefined2 *)(param_2[2] * uVar5 + param_2[7]);
 LAB_00675dfe:
-        piVar3 = (int *)STAllPlayersC::GetObjPtr
-                                  (g_sTAllPlayers_007FA174,param_1,
-                                   CONCAT22((short)((uint)puVar2 >> 0x10),*puVar2),CASE_1);
-        if (((piVar3 != (int *)0x0) && (iVar4 = (**(code **)(*piVar3 + 0x2c))(), iVar4 == 0x78)) &&
-           (iVar4 = (**(code **)(*piVar3 + 0x2c))(), iVar4 == 0x78)) {
-          *(undefined4 *)((int)piVar3 + 0x269) = 0xffffffff;
+        pSVar3 = STAllPlayersC::GetObjPtr
+                           (g_sTAllPlayers_007FA174,param_1,
+                            CONCAT22((short)((uint)puVar2 >> 0x10),*puVar2),CASE_1);
+        if (((pSVar3 != (STGameObjC *)0x0) && (iVar4 = (*pSVar3->vtable->vfunc_2C)(), iVar4 == 0x78)
+            ) && (iVar4 = (*pSVar3->vtable->vfunc_2C)(), iVar4 == 0x78)) {
+          *(undefined4 *)&pSVar3[1].field_0x98 = 0xffffffff;
         }
         uVar6 = uVar6 + 1;
         uVar5 = uVar6 & 0xffff;

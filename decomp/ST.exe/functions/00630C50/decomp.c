@@ -1,7 +1,15 @@
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+/* [STHiddenThisApplier] Anonymous hidden receiver recovered as
+   /SubmarineTitans/Recovered/HiddenThis/AnonReceiver_006308F0.
+   Evidence: incoming_receiver_captures=1; receiver_accesses=12; incoming_edx_uses=0; calls=5;
+   ecx_pointer_setup=5; ecx_scalar_setup=0; caller_cleanup_calls=0; callee_ret_pop=[20];
+   expected_stack=20; receiver_family_members=8 */
 
-ushort * __thiscall FUN_00630c50(void *this,int param_1,int param_2,int param_3,int param_4)
+ushort * __thiscall
+SubmarineTitans::Recovered::HiddenThis::AnonReceiver_006308F0::FUN_00630c50
+          (AnonReceiver_006308F0 *this,undefined4 param_1,int param_2,int param_3,int param_4,
+          int param_5)
 
 {
   undefined1 *puVar1;
@@ -11,7 +19,6 @@ ushort * __thiscall FUN_00630c50(void *this,int param_1,int param_2,int param_3,
   int iVar5;
   undefined4 unaff_ESI;
   void *unaff_EDI;
-  int in_stack_00000014;
   uint uVar6;
   uint uVar7;
   uint uVar8;
@@ -24,7 +31,7 @@ ushort * __thiscall FUN_00630c50(void *this,int param_1,int param_2,int param_3,
   
   local_c = (ushort *)0x0;
   if (param_2 == 1) {
-    if (in_stack_00000014 == 3) {
+    if (param_5 == 3) {
       local_8 = &PTR_s_ruin_s10_007d1850;
     }
     else {
@@ -33,13 +40,13 @@ ushort * __thiscall FUN_00630c50(void *this,int param_1,int param_2,int param_3,
   }
   else {
     local_8 = &PTR_s_ruin_s40_007d186c;
-    if (in_stack_00000014 != 3) {
+    if (param_5 != 3) {
       local_8 = &PTR_s_ruin_40_007d1834;
     }
   }
   local_58.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_58;
-  local_10 = this;
+  local_10 = (AnonShape_00630C50_5716D423 *)this;
   iVar3 = Library::MSVCRT::__setjmp3(local_58.jumpBuffer,0,unaff_EDI,unaff_ESI);
   pAVar2 = local_10;
   if (iVar3 != 0) {

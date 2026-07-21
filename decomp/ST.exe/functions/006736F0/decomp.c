@@ -245,7 +245,7 @@ LAB_006739cd:
         g_currentExceptionFrame = local_54.previous;
         return iVar3;
       }
-      thunk_FUN_00672b60((char *)DAT_00811948,(undefined4 *)PTR_0081194c);
+      thunk_FUN_00672b60((char *)DAT_00811948,PTR_0081194c);
       if ((code *)PTR_0081194c->field_0014 != (code *)0x0) {
         (*(code *)PTR_0081194c->field_0014)(DAT_00811948,1);
       }

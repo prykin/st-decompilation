@@ -33,7 +33,7 @@ undefined4 __cdecl FUN_00680890(byte param_1,byte *param_2,uint param_3,undefine
   bVar2 = thunk_FUN_00680570();
   uVar4 = (uint)bVar2;
   pcVar5 = s_M_ANY_007ef0a4 + (uint)param_1 * 10;
-  text = (char *)FUN_006b0140(0x1b5a,HINSTANCE_00807618);
+  LoadResourceString(0x1b5a,HINSTANCE_00807618);
   wsprintfA(local_408,text,pcVar5,pcVar3,param_3,uVar4,uVar7);
   thunk_FUN_00674ef0(local_408);
   return 1;

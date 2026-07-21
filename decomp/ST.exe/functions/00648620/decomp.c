@@ -17,9 +17,9 @@ undefined4 * __cdecl BossDataPack(undefined4 *param_1,undefined4 *param_2,int pa
   undefined4 unaff_ESI;
   void *unaff_EDI;
   InternalExceptionFrame local_4c;
-  LPVOID local_8;
+  void *local_8;
   
-  local_8 = (LPVOID)0x0;
+  local_8 = (void *)0x0;
   local_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_4c;
   iVar2 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
@@ -54,8 +54,8 @@ undefined4 * __cdecl BossDataPack(undefined4 *param_1,undefined4 *param_2,int pa
     return puVar3;
   }
   g_currentExceptionFrame = local_4c.previous;
-  if (local_8 != (LPVOID)0x0) {
-    FUN_006ab060(&local_8);
+  if (local_8 != (void *)0x0) {
+    FreeAndNull(&local_8);
   }
   iVar4 = ReportDebugMessage(s_E____titans_ai_ai_boss_d_cpp_007d27f4,0x6b,0,iVar2,&DAT_007a4ccc,
                              s_BossDataPack_007d2818);

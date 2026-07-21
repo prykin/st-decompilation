@@ -7,7 +7,7 @@ undefined4 STAllPlayersC::_SubMDObject(undefined4 *param_1,uint param_2)
 
 {
   ushort uVar1;
-  AnonShape_006ACC70_C8641025 *pAVar2;
+  DArrayTy *pDVar2;
   code *pcVar3;
   STFishC *this;
   uint uVar4;
@@ -56,8 +56,8 @@ undefined4 STAllPlayersC::_SubMDObject(undefined4 *param_1,uint param_2)
     local_10 = 0;
     do {
       if (uVar4 == *(int *)((int)local_2c + local_10)) {
-        pAVar2 = *(AnonShape_006ACC70_C8641025 **)(local_10 + 0x7f4e2f + (char)param_1 * 0xa62);
-        uVar1 = (ushort)pAVar2->field_000C;
+        pDVar2 = *(DArrayTy **)(local_10 + 0x7f4e2f + (char)param_1 * 0xa62);
+        uVar1 = (ushort)pDVar2->count;
         if (uVar1 != 0) {
           STFishC::sub_004162B0(this,(undefined2 *)((int)&param_2 + 2),&local_6,&local_8);
           uVar4 = 0;
@@ -65,12 +65,12 @@ undefined4 STAllPlayersC::_SubMDObject(undefined4 *param_1,uint param_2)
           this = local_14;
           if (uVar1 != 0) {
             do {
-              FUN_006acc70(pAVar2,uVar4,(undefined4 *)&local_50);
+              DArrayGetElement(pDVar2,uVar4,&local_50);
               if ((((local_4a != -1) && (local_42 != -1)) && (local_50 == param_2._2_2_)) &&
                  (((local_4e == local_6 && (local_4c == local_8)) && (local_4a == local_1c)))) {
                 local_42 = -1;
                 local_4a = -1;
-                Library::DKW::TBL::FUN_006ae140((uint *)pAVar2,uVar4,(undefined4 *)&local_50);
+                Library::DKW::TBL::FUN_006ae140(&pDVar2->flags,uVar4,(undefined4 *)&local_50);
                 local_c = 1;
               }
               uVar4 = uVar4 + 1;
@@ -89,19 +89,18 @@ undefined4 STAllPlayersC::_SubMDObject(undefined4 *param_1,uint param_2)
   local_14 = (STFishC *)0x4;
   param_1 = &g_playerRuntime[(char)param_1].field6_0xf;
   do {
-    pAVar2 = (AnonShape_006ACC70_C8641025 *)*param_1;
-    if ((pAVar2 != (AnonShape_006ACC70_C8641025 *)0x0) &&
-       (uVar1 = (ushort)pAVar2->field_000C, uVar1 != 0)) {
+    pDVar2 = (DArrayTy *)*param_1;
+    if ((pDVar2 != (DArrayTy *)0x0) && (uVar1 = (ushort)pDVar2->count, uVar1 != 0)) {
       uVar4 = 0;
       local_18 = (uint)uVar1;
       if (uVar1 != 0) {
         do {
-          FUN_006acc70(pAVar2,uVar4,(undefined4 *)&local_50);
+          DArrayGetElement(pDVar2,uVar4,&local_50);
           if (((((local_4a != -1) && (local_42 != -1)) && (local_48 == param_2._2_2_)) &&
               ((local_46 == local_6 && (local_44 == local_8)))) && (local_42 == local_1c)) {
             local_42 = -1;
             local_4a = -1;
-            Library::DKW::TBL::FUN_006ae140((uint *)pAVar2,uVar4,(undefined4 *)&local_50);
+            Library::DKW::TBL::FUN_006ae140((uint *)pDVar2,uVar4,(undefined4 *)&local_50);
             local_c = 1;
           }
           uVar4 = uVar4 + 1;

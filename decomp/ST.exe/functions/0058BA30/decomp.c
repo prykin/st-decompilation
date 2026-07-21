@@ -13,9 +13,9 @@ STSatC * __thiscall STSatC::STSatC(STSatC *this)
   int iVar1;
   undefined4 *puVar2;
   
-  thunk_FUN_004158e0((STGroupBoatC *)this);
+  STGameObjC::STGameObjC((STGameObjC *)this);
   thunk_FUN_004ab810((AnonShape_004AB810_8E5693D5 *)&this->field_01D5);
-  this->field_01D5 = &PTR_LAB_0079be7c;
+  this->field_01D5 = &VTable_0079BE7C;
   this->vtable = &STSatCVTable;
   this->field_0231 = 1;
   this->field_0239 = 0;

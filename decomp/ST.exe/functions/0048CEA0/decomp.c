@@ -9,14 +9,14 @@ void __thiscall STBoatC::_CheckDefenceShots(STBoatC *this,int param_1)
   code *pcVar1;
   STBoatC *pSVar2;
   int iVar3;
-  int *this_00;
-  AnonShape_006ACC70_C8641025 *pAVar4;
+  STGameObjC *this_00;
+  DArrayTy *array;
+  int iVar4;
   int iVar5;
-  int iVar6;
-  uint uVar7;
+  uint index;
   undefined4 unaff_ESI;
-  void *unaff_EDI;
-  uint *puVar8;
+  int *unaff_EDI;
+  uint *puVar6;
   InternalExceptionFrame local_68;
   uint local_24;
   uint local_20;
@@ -35,9 +35,9 @@ void __thiscall STBoatC::_CheckDefenceShots(STBoatC *this,int param_1)
   pSVar2 = local_10;
   if (iVar3 != 0) {
     g_currentExceptionFrame = local_68.previous;
-    iVar5 = ReportDebugMessage(s_E____titans_wlad_To_boat_cpp_007a9d3c,0x4bb4,0,iVar3,&DAT_007a4ccc,
+    iVar4 = ReportDebugMessage(s_E____titans_wlad_To_boat_cpp_007a9d3c,0x4bb4,0,iVar3,&DAT_007a4ccc,
                                s_STBoatC___CheckDefenceShots_007aba00);
-    if (iVar5 != 0) {
+    if (iVar4 != 0) {
       pcVar1 = (code *)swi(3);
       (*pcVar1)();
       return;
@@ -45,48 +45,48 @@ void __thiscall STBoatC::_CheckDefenceShots(STBoatC *this,int param_1)
     RaiseInternalException(iVar3,0,s_E____titans_wlad_To_boat_cpp_007a9d3c,0x4bb5);
     return;
   }
-  pAVar4 = (AnonShape_006ACC70_C8641025 *)local_10->field_047B;
-  if ((pAVar4 != (AnonShape_006ACC70_C8641025 *)0x0) && (uVar7 = 0, 0 < (int)pAVar4->field_000C)) {
+  array = (DArrayTy *)local_10->field_047B;
+  if ((array != (DArrayTy *)0x0) && (index = 0, 0 < (int)array->count)) {
     do {
-      FUN_006acc70(pAVar4,uVar7,&local_24);
+      DArrayGetElement(array,index,&local_24);
       if ((short)local_20 != -1) {
         local_1a = local_1a - param_1;
         if (local_1a < 1) {
-          puVar8 = (uint *)pSVar2->field_047B;
+          puVar6 = (uint *)pSVar2->field_047B;
           local_20 = CONCAT22(local_20._2_2_,0xffff);
         }
         else {
-          this_00 = (int *)STAllPlayersC::GetObjPtr
-                                     (g_sTAllPlayers_007FA174,local_24,local_20,CASE_1);
-          if (this_00 != (int *)0x0) {
-            iVar3 = (**(code **)(*this_00 + 0xf8))();
+          this_00 = STAllPlayersC::GetObjPtr(g_sTAllPlayers_007FA174,local_24,local_20,CASE_1);
+          if (this_00 != (STGameObjC *)0x0) {
+            iVar3 = (*this_00->vtable[1].vfunc_24)();
             if (iVar3 == 1) {
-              iVar3 = (**(code **)(*this_00 + 0xf0))();
+              iVar3 = (*this_00->vtable[1].MoveStep)(this_00,unaff_EDI);
               if (iVar3 == 1) {
-                iVar3 = (**(code **)(*this_00 + 0xf4))(*(undefined4 *)&pSVar2->field_0x24);
+                unaff_EDI = *(int **)&pSVar2->field_0x24;
+                iVar3 = (*this_00->vtable[1].vfunc_20)();
                 if (iVar3 == 1) {
                   thunk_FUN_00416270(this_00,&local_a,(int *)&local_8,(int *)&local_6);
                   iVar3 = (int)pSVar2->field_0041 - (int)local_a;
-                  iVar5 = (int)pSVar2->field_0043 - (int)local_8;
-                  iVar6 = (int)pSVar2->field_0045 - (int)local_6;
-                  if (local_14 < (uint)(iVar5 * iVar5 + iVar3 * iVar3 + iVar6 * iVar6)) {
+                  iVar4 = (int)pSVar2->field_0043 - (int)local_8;
+                  iVar5 = (int)pSVar2->field_0045 - (int)local_6;
+                  if (local_14 < (uint)(iVar4 * iVar4 + iVar3 * iVar3 + iVar5 * iVar5)) {
                     local_20 = CONCAT22(local_20._2_2_,0xffff);
                   }
-                  puVar8 = (uint *)pSVar2->field_047B;
+                  puVar6 = (uint *)pSVar2->field_047B;
                   goto LAB_0048d016;
                 }
               }
             }
           }
-          puVar8 = (uint *)pSVar2->field_047B;
+          puVar6 = (uint *)pSVar2->field_047B;
           local_20 = CONCAT22(local_20._2_2_,0xffff);
         }
 LAB_0048d016:
-        Library::DKW::TBL::FUN_006ae140(puVar8,uVar7,&local_24);
+        Library::DKW::TBL::FUN_006ae140(puVar6,index,&local_24);
       }
-      pAVar4 = (AnonShape_006ACC70_C8641025 *)pSVar2->field_047B;
-      uVar7 = uVar7 + 1;
-    } while ((int)uVar7 < (int)pAVar4->field_000C);
+      array = (DArrayTy *)pSVar2->field_047B;
+      index = index + 1;
+    } while ((int)index < (int)array->count);
   }
   g_currentExceptionFrame = local_68.previous;
   return;

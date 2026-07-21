@@ -34,14 +34,14 @@ int __thiscall STBoatC::BackDismant(STBoatC *this,int *param_1,undefined4 param_
     sVar1 = this->field_06A9;
     sVar2 = this->field_06AD;
     sVar3 = this->field_06AB;
-    if (((((sVar1 < 0) || (SHORT_007fb240 <= sVar1)) || (sVar3 < 0)) ||
-        ((SHORT_007fb242 <= sVar3 || (sVar2 < 0)))) || (SHORT_007fb244 <= sVar2)) {
+    if (((((sVar1 < 0) || (g_worldGrid.sizeX <= sVar1)) || (sVar3 < 0)) ||
+        ((g_worldGrid.sizeY <= sVar3 || (sVar2 < 0)))) || (g_worldGrid.sizeZ <= sVar2)) {
       param_1 = (int *)0x0;
     }
     else {
-      param_1 = (int *)g_worldCells
-                       [(int)SHORT_007fb246 * (int)sVar2 + (int)SHORT_007fb240 * (int)sVar3 +
-                        (int)sVar1].objects[0];
+      param_1 = (int *)g_worldGrid.cells
+                       [(int)g_worldGrid.planeStride * (int)sVar2 +
+                        (int)g_worldGrid.sizeX * (int)sVar3 + (int)sVar1].objects[0];
     }
     if ((((AnonShape_004B9D90_4F3151F9 *)param_1 == (AnonShape_004B9D90_4F3151F9 *)0x0) ||
         (*(int *)&((AnonShape_004B9D90_4F3151F9 *)param_1)->field_0x18 != this->field_06AF)) ||
@@ -79,14 +79,14 @@ int __thiscall STBoatC::BackDismant(STBoatC *this,int *param_1,undefined4 param_
     sVar1 = this->field_06A9;
     sVar2 = this->field_06AD;
     sVar3 = this->field_06AB;
-    if (((((sVar1 < 0) || (SHORT_007fb240 <= sVar1)) || (sVar3 < 0)) ||
-        ((SHORT_007fb242 <= sVar3 || (sVar2 < 0)))) || (SHORT_007fb244 <= sVar2)) {
+    if (((((sVar1 < 0) || (g_worldGrid.sizeX <= sVar1)) || (sVar3 < 0)) ||
+        ((g_worldGrid.sizeY <= sVar3 || (sVar2 < 0)))) || (g_worldGrid.sizeZ <= sVar2)) {
       param_1 = (int *)0x0;
     }
     else {
-      param_1 = (int *)g_worldCells
-                       [(int)SHORT_007fb246 * (int)sVar2 + (int)SHORT_007fb240 * (int)sVar3 +
-                        (int)sVar1].objects[0];
+      param_1 = (int *)g_worldGrid.cells
+                       [(int)g_worldGrid.planeStride * (int)sVar2 +
+                        (int)g_worldGrid.sizeX * (int)sVar3 + (int)sVar1].objects[0];
     }
     if ((((AnonShape_004B9D90_4F3151F9 *)param_1 == (AnonShape_004B9D90_4F3151F9 *)0x0) ||
         (*(int *)&((AnonShape_004B9D90_4F3151F9 *)param_1)->field_0x18 != this->field_06AF)) ||

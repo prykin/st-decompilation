@@ -43,7 +43,7 @@ undefined4 __fastcall FUN_006193e0(AnonShape_006193E0_B2745ECE *param_1)
   }
   param_1->field_00CD = sVar6;
   if ((((-1 < sVar4) && (-1 < sVar5)) && (-1 < sVar6)) &&
-     (((sVar4 < SHORT_007fb240 && (sVar5 < SHORT_007fb242)) && (sVar6 < 5)))) {
+     (((sVar4 < g_worldGrid.sizeX && (sVar5 < g_worldGrid.sizeY)) && (sVar6 < 5)))) {
     param_1->field_00E7 = param_1->field_006D;
     param_1->field_00EB = param_1->field_0071;
     param_1->field_00EF = param_1->field_0075;

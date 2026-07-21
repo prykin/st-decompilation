@@ -1,4 +1,4 @@
-FUN_00495920:
+DumpClassC::DumpClassC:
 00495920  56                        PUSH ESI
 00495921  8B F1                     MOV ESI,ECX
 00495923  E8 88 06 25 00            CALL 0x006e5fb0

@@ -19,9 +19,9 @@ void __thiscall Visible::PrepareAfterSave(Visible *this,ushort *param_1)
   uint uVar7;
   undefined4 unaff_ESI;
   uint *puVar8;
-  LPVOID *ppvVar9;
+  void **value;
   void *unaff_EDI;
-  int iVar10;
+  int iVar9;
   InternalExceptionFrame local_58;
   Visible *local_14;
   int local_10;
@@ -86,18 +86,18 @@ void __thiscall Visible::PrepareAfterSave(Visible *this,ushort *param_1)
     return;
   }
   g_currentExceptionFrame = local_58.previous;
-  iVar10 = 4;
-  ppvVar9 = (LPVOID *)&local_14->field_003C;
+  iVar9 = 4;
+  value = (void **)&local_14->field_003C;
   do {
-    if (*ppvVar9 != (LPVOID)0x0) {
-      FUN_006ab060(ppvVar9);
+    if (*value != (void *)0x0) {
+      FreeAndNull(value);
     }
-    ppvVar9 = ppvVar9 + 1;
-    iVar10 = iVar10 + -1;
-  } while (iVar10 != 0);
-  iVar10 = ReportDebugMessage(s_E____titans_grig_visible_cpp_007c92cc,0x132,0,errorCode,
-                              &DAT_007a4ccc,s_Visible__PrepareAfterSave_error_007c9358);
-  if (iVar10 != 0) {
+    value = value + 1;
+    iVar9 = iVar9 + -1;
+  } while (iVar9 != 0);
+  iVar9 = ReportDebugMessage(s_E____titans_grig_visible_cpp_007c92cc,0x132,0,errorCode,&DAT_007a4ccc
+                             ,s_Visible__PrepareAfterSave_error_007c9358);
+  if (iVar9 != 0) {
     pcVar1 = (code *)swi(3);
     (*pcVar1)();
     return;

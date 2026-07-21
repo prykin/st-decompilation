@@ -2,15 +2,15 @@
 void __cdecl FUN_0065d1f0(int *param_1)
 
 {
-  byte *groupContent;
+  DArrayTy *array;
   
   if (*param_1 != 0) {
-    groupContent = *(byte **)(*param_1 + 0xf);
-    if (groupContent != (byte *)0x0) {
-      FUN_006ae110(groupContent);
+    array = *(DArrayTy **)(*param_1 + 0xf);
+    if (array != (DArrayTy *)0x0) {
+      DArrayDestroy(array);
       *(undefined4 *)(*param_1 + 0xf) = 0;
     }
-    FUN_006ab060((LPVOID *)param_1);
+    FreeAndNull((void **)param_1);
   }
   return;
 }

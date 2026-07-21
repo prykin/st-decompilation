@@ -7,7 +7,7 @@ void __thiscall FSGSTy::DoneFSGS(FSGSTy *this)
 
 {
   AnonShape_006B5570_4D68B99C *pAVar1;
-  byte *groupContent;
+  DArrayTy *array;
   MMsgTy *this_00;
   code *pcVar2;
   MMObjTy *pMVar3;
@@ -59,7 +59,7 @@ void __thiscall FSGSTy::DoneFSGS(FSGSTy *this)
     iVar4 = *(int *)&pMVar3[0x1e].field_0x72;
     *(undefined4 *)&pMVar3[0x22].field_0x78 = 0;
     if (iVar4 != 0) {
-      FUN_006ab060((LPVOID *)&pMVar3[0x1e].field_0x72);
+      FreeAndNull((void **)&pMVar3[0x1e].field_0x72);
     }
     if (*(HoloTy **)&pMVar3[0x23].field_0x1a != (HoloTy *)0x0) {
       HoloTy::Done(*(HoloTy **)&pMVar3[0x23].field_0x1a);
@@ -82,30 +82,30 @@ void __thiscall FSGSTy::DoneFSGS(FSGSTy *this)
       *(undefined4 *)&pMVar3[0x23].field_0x26 = 0;
     }
     if (*(int *)((int)&pMVar3[0x22].field_0066 + 2) != 0) {
-      FUN_006ab060((LPVOID *)((int)&pMVar3[0x22].field_0066 + 2));
+      FreeAndNull((void **)((int)&pMVar3[0x22].field_0066 + 2));
     }
     if (*(int *)&pMVar3[0x22].field_0x6c != 0) {
-      FUN_006ab060((LPVOID *)&pMVar3[0x22].field_0x6c);
+      FreeAndNull((void **)&pMVar3[0x22].field_0x6c);
     }
     if (*(int *)&pMVar3[0x22].field_0x70 != 0) {
-      FUN_006ab060((LPVOID *)&pMVar3[0x22].field_0x70);
+      FreeAndNull((void **)&pMVar3[0x22].field_0x70);
     }
     if (*(int *)&pMVar3[0x22].field_0x74 != 0) {
-      FUN_006ab060((LPVOID *)&pMVar3[0x22].field_0x74);
+      FreeAndNull((void **)&pMVar3[0x22].field_0x74);
     }
     if (-1 < (int)*(uint *)&pMVar3[0x1e].field_0x22) {
       FUN_006b3bb0(DAT_008075a8,*(uint *)&pMVar3[0x1e].field_0x22);
     }
     *(undefined4 *)&pMVar3[0x1e].field_0x22 = 0xffffffff;
     if (*(int *)&pMVar3[0x1e].field_0x26 != 0) {
-      FUN_006ab060((LPVOID *)&pMVar3[0x1e].field_0x26);
+      FreeAndNull((void **)&pMVar3[0x1e].field_0x26);
     }
     if (*(uint *)&pMVar3[0x1e].field_0x19 != 0) {
       StartSystemTy::sub_006E56B0(pMVar3->field_000C,*(uint *)&pMVar3[0x1e].field_0x19);
     }
     *(undefined4 *)&pMVar3[0x1e].field_0x19 = 0;
     if (*(int *)&pMVar3[0x1e].field_0x11 != 0) {
-      FUN_006ab060((LPVOID *)&pMVar3[0x1e].field_0x11);
+      FreeAndNull((void **)&pMVar3[0x1e].field_0x11);
     }
     if (*(AnonShape_006C6FC0_B2C34C14 **)&pMVar3[0x1e].field_0x5 !=
         (AnonShape_006C6FC0_B2C34C14 *)0x0) {
@@ -114,7 +114,7 @@ void __thiscall FSGSTy::DoneFSGS(FSGSTy *this)
     iVar4 = *(int *)((int)&pMVar3[0x1e].vtable + 1);
     *(undefined4 *)&pMVar3[0x1e].field_0x5 = 0;
     if (iVar4 != 0) {
-      FUN_006ab060((LPVOID *)((int)&pMVar3[0x1e].vtable + 1));
+      FreeAndNull((void **)((int)&pMVar3[0x1e].vtable + 1));
     }
     if (-1 < (int)*(uint *)&pMVar3[0x1d].field_0xd8) {
       FUN_006b3bb0(DAT_008075a8,*(uint *)&pMVar3[0x1d].field_0xd8);
@@ -122,7 +122,7 @@ void __thiscall FSGSTy::DoneFSGS(FSGSTy *this)
     *(undefined4 *)&pMVar3[0x1d].field_0xd8 = 0xffffffff;
     this_01 = (ccFntTy *)0x0;
     if (*(int *)&pMVar3[0x1d].field_0xe0 != 0) {
-      FUN_006ab060((LPVOID *)&pMVar3[0x1d].field_0xe0);
+      FreeAndNull((void **)&pMVar3[0x1d].field_0xe0);
       this_01 = extraout_ECX;
     }
     if (*(uint **)&pMVar3[0x1d].field_0xc0 != (uint *)0x0) {
@@ -142,10 +142,10 @@ void __thiscall FSGSTy::DoneFSGS(FSGSTy *this)
     if (*(HGDIOBJ *)&pMVar3[0x1d].field_0xb0 != (HGDIOBJ)0x0) {
       DeleteObject(*(HGDIOBJ *)&pMVar3[0x1d].field_0xb0);
     }
-    groupContent = *(byte **)&pMVar3[0x23].field_0xaa;
+    array = *(DArrayTy **)&pMVar3[0x23].field_0xaa;
     *(undefined4 *)&pMVar3[0x1d].field_0xb0 = 0;
-    if (groupContent != (byte *)0x0) {
-      FUN_006ae110(groupContent);
+    if (array != (DArrayTy *)0x0) {
+      DArrayDestroy(array);
     }
     iVar4 = *(int *)&pMVar3->field_0x4d;
     *(undefined4 *)&pMVar3[0x23].field_0xaa = 0;

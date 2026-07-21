@@ -18,7 +18,8 @@ void __cdecl FUN_00637ae0(int param_1,int param_2,int param_3)
                  (float)param_3 * _DAT_007904f8 * _DAT_007904f0 + _DAT_007904fc);
     FUN_006ea270(PTR_00807598,local_8,0,0);
     FUN_006ea4e0(PTR_00807598,local_8,1,0x5a,0x45);
-    FUN_006ea050(PTR_00807598,local_8,1,0xffffffff,0);
+    SubmarineTitans::Recovered::HiddenThis::AnonReceiver_006EA050::FUN_006ea050
+              ((AnonReceiver_006EA050 *)PTR_00807598,local_8,1,0xffffffff,0);
     FUN_006eaaa0(PTR_00807598,local_8,0);
   }
   return;

@@ -72,12 +72,12 @@ int __fastcall FUN_00604350(AnonShape_00604350_448AE2F1 *param_1)
         local_c = 0;
       }
       local_14 = local_10 + 4;
-      if ((int)SHORT_007fb242 < local_10 + 4) {
-        local_14 = (int)SHORT_007fb242;
+      if ((int)g_worldGrid.sizeY < local_10 + 4) {
+        local_14 = (int)g_worldGrid.sizeY;
       }
       local_10 = iVar1 + 4;
-      if (SHORT_007fb240 < local_10) {
-        local_10 = (int)SHORT_007fb240;
+      if (g_worldGrid.sizeX < local_10) {
+        local_10 = (int)g_worldGrid.sizeX;
       }
       if ((((((DAT_0080874d == -1) || (g_visibleClass_00802A88->field_00F8 == 0)) ||
             ((thunk_FUN_00558c00(g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,iVar1,

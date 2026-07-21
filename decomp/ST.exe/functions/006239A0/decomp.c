@@ -9,7 +9,7 @@ undefined4 __fastcall FUN_006239a0(STMineSetC *param_1)
 {
   VisibleClassTy *this;
   uint uVar1;
-  undefined4 *this_00;
+  AnonReceiver_00636260 *this_00;
   int iVar2;
   undefined4 uVar3;
   int iVar4;
@@ -56,11 +56,12 @@ undefined4 __fastcall FUN_006239a0(STMineSetC *param_1)
         thunk_FUN_00622670(param_1);
       }
       if (param_1->field_0363 == 0) {
-        this_00 = thunk_FUN_00636200();
+        this_00 = (AnonReceiver_00636260 *)thunk_FUN_00636200();
         param_1->field_0363 = this_00;
-        if (this_00 != (undefined4 *)0x0) {
-          thunk_FUN_00636260(this_00,*(uint *)&param_1->field_0x2c2,*(int *)&param_1->field_0x2c6,
-                             *(int *)&param_1->field_0x2ca + -0x28,0x82,0x14,5,1);
+        if (this_00 != (AnonReceiver_00636260 *)0x0) {
+          SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00636260::thunk_FUN_00636260
+                    (this_00,*(uint *)&param_1->field_0x2c2,*(int *)&param_1->field_0x2c6,
+                     *(int *)&param_1->field_0x2ca + -0x28,0x82,0x14,5,1);
         }
       }
     }

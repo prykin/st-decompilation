@@ -1,6 +1,4 @@
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 undefined4 __fastcall FUN_004e3910(int *param_1)
 
 {
@@ -46,48 +44,48 @@ undefined4 __fastcall FUN_004e3910(int *param_1)
             local_10 = 1;
             local_8 = (DArrayTy *)Library::DKW::TBL::FUN_006ae290((uint *)0x0,10000,0xc,10);
             iVar10 = 0;
-            uVar8 = _SHORT_007fb240;
-            if (0 < SHORT_007fb242) {
+            uVar8 = g_worldGrid._0_4_;
+            if (0 < g_worldGrid.sizeY) {
               do {
                 iVar4 = 0;
-                if (0 < SHORT_007fb244) {
+                if (0 < g_worldGrid.sizeZ) {
                   do {
                     sVar2 = (short)iVar10;
                     sVar13 = (short)iVar4;
                     bVar1 = thunk_FUN_004961b0(0,sVar2,sVar13);
                     if ((CONCAT31(extraout_var,bVar1) != 0) &&
-                       (((sVar3 = (short)_SHORT_007fb240, sVar3 < 1 || (sVar2 < 0)) ||
-                        (((SHORT_007fb242 <= sVar2 ||
-                          (((sVar13 < 0 || (SHORT_007fb244 <= sVar13)) ||
-                           (g_worldCells
-                            [(int)sVar2 * (int)sVar3 + (int)sVar13 * (int)SHORT_007fb246].objects[0]
-                            == (STWorldObject *)0x0)))) &&
-                         ((((sVar2 < 0 || (SHORT_007fb242 <= sVar2)) || (sVar13 < 0)) ||
-                          ((SHORT_007fb244 <= sVar13 ||
-                           (g_worldCells
-                            [(int)sVar2 * (int)sVar3 + (int)sVar13 * (int)SHORT_007fb246].objects[1]
-                            == (STWorldObject *)0x0)))))))))) {
+                       (((sVar3 = g_worldGrid.sizeX, sVar3 < 1 || (sVar2 < 0)) ||
+                        (((g_worldGrid.sizeY <= sVar2 ||
+                          (((sVar13 < 0 || (g_worldGrid.sizeZ <= sVar13)) ||
+                           (g_worldGrid.cells
+                            [(int)sVar2 * (int)sVar3 + (int)sVar13 * (int)g_worldGrid.planeStride].
+                            objects[0] == (STWorldObject *)0x0)))) &&
+                         ((((sVar2 < 0 || (g_worldGrid.sizeY <= sVar2)) || (sVar13 < 0)) ||
+                          ((g_worldGrid.sizeZ <= sVar13 ||
+                           (g_worldGrid.cells
+                            [(int)sVar2 * (int)sVar3 + (int)sVar13 * (int)g_worldGrid.planeStride].
+                            objects[1] == (STWorldObject *)0x0)))))))))) {
                       local_20 = (STSharkC *)0x0;
                       local_1c = iVar10;
                       local_18 = iVar4;
                       Library::DKW::TBL::FUN_006ae1c0(&local_8->flags,&local_20);
                     }
-                    bVar1 = thunk_FUN_004961b0((short)_SHORT_007fb240 + -1,sVar2,sVar13);
+                    bVar1 = thunk_FUN_004961b0(g_worldGrid.sizeX + -1,sVar2,sVar13);
                     if (CONCAT31(extraout_var_00,bVar1) != 0) {
-                      sVar3 = (short)_SHORT_007fb240;
+                      sVar3 = g_worldGrid.sizeX;
                       if (((short)(sVar3 + -1) < 0) ||
                          ((((((sVar3 <= (short)(sVar3 + -1) || (sVar2 < 0)) ||
-                             (SHORT_007fb242 <= sVar2)) ||
-                            ((sVar13 < 0 || (SHORT_007fb244 <= sVar13)))) ||
-                           (g_worldCells
-                            [(int)sVar2 * (int)sVar3 + (int)sVar13 * (int)SHORT_007fb246 +
+                             (g_worldGrid.sizeY <= sVar2)) ||
+                            ((sVar13 < 0 || (g_worldGrid.sizeZ <= sVar13)))) ||
+                           (g_worldGrid.cells
+                            [(int)sVar2 * (int)sVar3 + (int)sVar13 * (int)g_worldGrid.planeStride +
                              (int)(short)(sVar3 + -1)].objects[0] == (STWorldObject *)0x0)) &&
                           (((((short)(sVar3 + -1) < 0 || (sVar3 <= (short)(sVar3 + -1))) ||
                             ((sVar2 < 0 ||
-                             (((SHORT_007fb242 <= sVar2 || (sVar13 < 0)) ||
-                              (SHORT_007fb244 <= sVar13)))))) ||
-                           (g_worldCells
-                            [(int)sVar2 * (int)sVar3 + (int)sVar13 * (int)SHORT_007fb246 +
+                             (((g_worldGrid.sizeY <= sVar2 || (sVar13 < 0)) ||
+                              (g_worldGrid.sizeZ <= sVar13)))))) ||
+                           (g_worldGrid.cells
+                            [(int)sVar2 * (int)sVar3 + (int)sVar13 * (int)g_worldGrid.planeStride +
                              (int)(short)(sVar3 + -1)].objects[1] == (STWorldObject *)0x0)))))) {
                         local_20 = (STSharkC *)(sVar3 + -1);
                         local_1c = iVar10;
@@ -96,15 +94,15 @@ undefined4 __fastcall FUN_004e3910(int *param_1)
                       }
                     }
                     iVar4 = iVar4 + 1;
-                    uVar8 = _SHORT_007fb240;
+                    uVar8 = g_worldGrid._0_4_;
                     param_1 = local_14;
-                  } while (iVar4 < SHORT_007fb244);
+                  } while (iVar4 < g_worldGrid.sizeZ);
                 }
                 iVar10 = iVar10 + 1;
-              } while (iVar10 < SHORT_007fb242);
+              } while (iVar10 < g_worldGrid.sizeY);
             }
             pSVar11 = (STSharkC *)0x0;
-            sVar2 = SHORT_007fb244;
+            sVar2 = g_worldGrid.sizeZ;
             if (0 < (short)uVar8) {
               do {
                 iVar10 = 0;
@@ -114,49 +112,52 @@ undefined4 __fastcall FUN_004e3910(int *param_1)
                     sVar13 = (short)iVar10;
                     bVar1 = thunk_FUN_004961b0(sVar2,0,sVar13);
                     if (CONCAT31(extraout_var_01,bVar1) != 0) {
-                      if (((((sVar2 < 0) || (SHORT_007fb240 <= sVar2)) ||
-                           ((SHORT_007fb242 < 1 || ((sVar13 < 0 || (SHORT_007fb244 <= sVar13))))))
-                          || (g_worldCells[(int)sVar13 * (int)SHORT_007fb246 + (int)sVar2].objects
-                              [0] == (STWorldObject *)0x0)) &&
-                         (((((sVar2 < 0 || (SHORT_007fb240 <= sVar2)) || (SHORT_007fb242 < 1)) ||
-                           ((sVar13 < 0 || (SHORT_007fb244 <= sVar13)))) ||
-                          (g_worldCells[(int)sVar13 * (int)SHORT_007fb246 + (int)sVar2].objects[1]
-                           == (STWorldObject *)0x0)))) {
+                      if (((((sVar2 < 0) || (g_worldGrid.sizeX <= sVar2)) ||
+                           ((g_worldGrid.sizeY < 1 ||
+                            ((sVar13 < 0 || (g_worldGrid.sizeZ <= sVar13)))))) ||
+                          (g_worldGrid.cells
+                           [(int)sVar13 * (int)g_worldGrid.planeStride + (int)sVar2].objects[0] ==
+                           (STWorldObject *)0x0)) &&
+                         (((((sVar2 < 0 || (g_worldGrid.sizeX <= sVar2)) || (g_worldGrid.sizeY < 1))
+                           || ((sVar13 < 0 || (g_worldGrid.sizeZ <= sVar13)))) ||
+                          (g_worldGrid.cells
+                           [(int)sVar13 * (int)g_worldGrid.planeStride + (int)sVar2].objects[1] ==
+                           (STWorldObject *)0x0)))) {
                         local_1c = 0;
                         local_20 = pSVar11;
                         local_18 = iVar10;
                         Library::DKW::TBL::FUN_006ae1c0(&local_8->flags,&local_20);
                       }
                     }
-                    bVar1 = thunk_FUN_004961b0(sVar2,SHORT_007fb242 + -1,sVar13);
+                    bVar1 = thunk_FUN_004961b0(sVar2,g_worldGrid.sizeY + -1,sVar13);
                     if (CONCAT31(extraout_var_02,bVar1) != 0) {
-                      sVar3 = SHORT_007fb242 + -1;
-                      sVar7 = (short)_SHORT_007fb240;
+                      sVar3 = g_worldGrid.sizeY + -1;
+                      sVar7 = g_worldGrid.sizeX;
                       if ((((sVar2 < 0) || (sVar7 <= sVar2)) ||
                           ((sVar3 < 0 ||
-                           ((((SHORT_007fb242 <= sVar3 || (sVar13 < 0)) ||
-                             (SHORT_007fb244 <= sVar13)) ||
-                            (g_worldCells
-                             [(int)sVar13 * (int)SHORT_007fb246 + (int)sVar7 * (int)sVar3 +
+                           ((((g_worldGrid.sizeY <= sVar3 || (sVar13 < 0)) ||
+                             (g_worldGrid.sizeZ <= sVar13)) ||
+                            (g_worldGrid.cells
+                             [(int)sVar13 * (int)g_worldGrid.planeStride + (int)sVar7 * (int)sVar3 +
                               (int)sVar2].objects[0] == (STWorldObject *)0x0)))))) &&
                          (((sVar2 < 0 || (sVar7 <= sVar2)) ||
                           ((sVar3 < 0 ||
-                           (((SHORT_007fb242 <= sVar3 || (sVar13 < 0)) ||
-                            ((SHORT_007fb244 <= sVar13 ||
-                             (g_worldCells
-                              [(int)sVar13 * (int)SHORT_007fb246 + (int)sVar3 * (int)sVar7 +
-                               (int)sVar2].objects[1] == (STWorldObject *)0x0)))))))))) {
-                        local_1c = SHORT_007fb242 + -1;
+                           (((g_worldGrid.sizeY <= sVar3 || (sVar13 < 0)) ||
+                            ((g_worldGrid.sizeZ <= sVar13 ||
+                             (g_worldGrid.cells
+                              [(int)sVar13 * (int)g_worldGrid.planeStride + (int)sVar3 * (int)sVar7
+                               + (int)sVar2].objects[1] == (STWorldObject *)0x0)))))))))) {
+                        local_1c = g_worldGrid.sizeY + -1;
                         local_20 = pSVar11;
                         local_18 = iVar10;
                         Library::DKW::TBL::FUN_006ae1c0(&local_8->flags,&local_20);
                       }
                     }
                     iVar10 = iVar10 + 1;
-                    uVar8 = _SHORT_007fb240;
+                    uVar8 = g_worldGrid._0_4_;
                     param_1 = local_14;
-                    sVar2 = SHORT_007fb244;
-                  } while (iVar10 < SHORT_007fb244);
+                    sVar2 = g_worldGrid.sizeZ;
+                  } while (iVar10 < g_worldGrid.sizeZ);
                 }
                 pSVar11 = (STSharkC *)((int)&pSVar11->vtable + 1);
               } while ((int)pSVar11 < (int)(short)uVar8);
@@ -164,23 +165,22 @@ undefined4 __fastcall FUN_004e3910(int *param_1)
             if (local_8->count != 0) {
               uVar5 = param_1[7] * 0x41c64e6d + 0x3039;
               param_1[7] = uVar5;
-              FUN_006acc70((AnonShape_006ACC70_C8641025 *)local_8,(uVar5 >> 0x10) % local_8->count,
-                           &local_20);
+              DArrayGetElement(local_8,(uVar5 >> 0x10) % local_8->count,&local_20);
               iVar10 = param_1[0x16c] + -8;
               if (iVar10 < 0) {
                 iVar10 = 0;
               }
               iVar4 = param_1[0x16c] + 8;
-              if (SHORT_007fb240 <= iVar4) {
-                iVar4 = SHORT_007fb240 + -1;
+              if (g_worldGrid.sizeX <= iVar4) {
+                iVar4 = g_worldGrid.sizeX + -1;
               }
               iVar9 = param_1[0x16d] + -8;
               if (iVar9 < 0) {
                 iVar9 = 0;
               }
               iVar6 = param_1[0x16d] + 8;
-              if (SHORT_007fb242 <= iVar6) {
-                iVar6 = SHORT_007fb242 + -1;
+              if (g_worldGrid.sizeY <= iVar6) {
+                iVar6 = g_worldGrid.sizeY + -1;
               }
               iVar10 = STSharkC::CreateShark
                                  (local_20,(int)local_20,local_1c,local_18,iVar10,iVar9,iVar4,iVar6,
@@ -195,7 +195,7 @@ undefined4 __fastcall FUN_004e3910(int *param_1)
               STT3DSprC::StartShow(this,0xb,PTR_00802a38->field_00E4);
               (**(code **)(*param_1 + 0x90))(3,0x25d);
             }
-            FUN_006ae110((byte *)local_8);
+            DArrayDestroy(local_8);
           }
         }
         else {

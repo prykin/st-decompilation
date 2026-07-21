@@ -341,7 +341,7 @@ LAB_006a76ae:
       local_10 = pbVar6;
     }
   }
-  FUN_006ab060(&local_18);
+  FreeAndNull(&local_18);
   return local_1c;
 }
 

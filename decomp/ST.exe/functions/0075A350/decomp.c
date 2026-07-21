@@ -37,7 +37,7 @@ void FUN_0075a350(AnonShape_0075A350_15A0BA61 *param_1,undefined4 param_2,uint *
   *(undefined4 *)(iVar2 + 0x34) = 0;
   *(int *)(iVar2 + 0x48) = param_1->field_012A + -1;
   if (*(int *)(iVar2 + 0x4c) == param_1->field_012E) {
-    FUN_0075a590((AnonShape_0075A590_EA8FABF2 *)param_1);
+    FUN_0075a590((AnonShape_0075A180_7E367FD8 *)param_1);
   }
   *(undefined4 *)(iVar2 + 0x44) = 1;
 LAB_0075a413:
@@ -47,7 +47,7 @@ LAB_0075a413:
              *(undefined4 *)(iVar2 + 0x48),param_2,param_3,param_4);
   if (*(uint *)(iVar2 + 0x48) <= *puVar1) {
     if (*(int *)(iVar2 + 0x4c) == 1) {
-      FUN_0075a490((AnonShape_0075A490_EF74CB12 *)param_1);
+      FUN_0075a490((AnonShape_0075A180_7E367FD8 *)param_1);
     }
     *(undefined4 *)(iVar2 + 0x30) = 0;
     *(uint *)(iVar2 + 0x40) = *(uint *)(iVar2 + 0x40) ^ 1;

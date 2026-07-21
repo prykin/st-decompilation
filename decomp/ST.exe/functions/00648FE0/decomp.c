@@ -48,7 +48,7 @@ void CreateAi(void)
       return;
     }
     if (local_8 != (ushort *)0x0) {
-      FUN_006ab060(&local_8);
+      FreeAndNull(&local_8);
     }
     RaiseInternalException(iVar3,0,s_E____titans_ai_ai_creat_cpp_007d2880,0x10c);
     return;
@@ -115,7 +115,7 @@ void CreateAi(void)
         *(short *)piVar11 = (short)*piVar9;
         *(undefined1 *)((int)piVar11 + 2) = *(undefined1 *)((int)piVar9 + 2);
         if (DAT_0080ed12 != (int *)0x0) {
-          FUN_006ab060(&DAT_0080ed12);
+          FreeAndNull(&DAT_0080ed12);
           local_c = g_cMf32_00806754;
           break;
         }
@@ -207,7 +207,7 @@ LAB_00649255:
             } while (local_14 < (int)(uint)DAT_00808aaf);
           }
           StartStrateg(local_8,uVar5);
-          FUN_006ab060(&local_8);
+          FreeAndNull(&local_8);
         }
       }
       local_18 = pcVar10 + 0x51;

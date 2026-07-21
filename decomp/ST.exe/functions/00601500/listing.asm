@@ -1,4 +1,4 @@
-FUN_00601500:
+SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00601500::FUN_00601500:
 00601500  55                        PUSH EBP
 00601501  8B EC                     MOV EBP,ESP
 00601503  83 EC 24                  SUB ESP,0x24
@@ -581,7 +581,7 @@ LAB_00601aeb:
 LAB_00601b33:
 00601B33  83 FA 01                  CMP EDX,0x1
 00601B36  75 1E                     JNZ 0x00601b56
-FUN_00601500::cf_common_exit_00601B38:
+SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00601500::FUN_00601500::cf_common_exit_00601B38:
 00601B38  8B 55 08                  MOV EDX,dword ptr [EBP + 0x8]
 00601B3B  89 71 28                  MOV dword ptr [ECX + 0x28],ESI
 00601B3E  89 51 20                  MOV dword ptr [ECX + 0x20],EDX

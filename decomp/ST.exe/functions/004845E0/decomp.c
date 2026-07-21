@@ -18,7 +18,8 @@ ushort __thiscall FUN_004845e0(void *this,Global_sub_004845E0_param_1Enum param_
   undefined3 extraout_var_01;
   uint uVar6;
   uint uVar7;
-  bool bVar8;
+  byte bVar8;
+  bool bVar9;
   undefined1 local_10 [4];
   int local_c;
   undefined4 local_8;
@@ -93,83 +94,73 @@ ushort __thiscall FUN_004845e0(void *this,Global_sub_004845E0_param_1Enum param_
     iVar5 = (**(code **)(*this_00 + 0x2c))();
     if (((iVar5 == 0x16) || (iVar5 = (**(code **)(*this_00 + 0x2c))(), iVar5 == 0x25)) &&
        (*(int *)((int)this_00 + 0x732) == 1)) {
-      bVar1 = *(byte *)(this_00 + 9);
-      bVar2 = *(byte *)((int)this + 0x24);
-      param_2 = (int *)CONCAT13(bVar2,param_2._0_3_);
-      local_8 = CONCAT31(local_8._1_3_,bVar2);
+      bVar8 = *(byte *)(this_00 + 9);
+      bVar1 = *(byte *)((int)this + 0x24);
+      param_2 = (int *)CONCAT13(bVar1,param_2._0_3_);
+      local_8 = CONCAT31(local_8._1_3_,bVar1);
       if (DAT_00808a8f == '\0') {
-        if (bVar1 == bVar2) {
+        if (bVar8 == bVar1) {
 LAB_004857a5:
           iVar5 = 0;
         }
         else {
-          uVar6 = (uint)bVar1;
-          uVar7 = (uint)bVar2;
-          cVar3 = *(char *)((int)&DAT_00808a4f + uVar6 * 8 + uVar7);
-          if ((cVar3 == '\0') && (*(char *)((int)&DAT_00808a4f + uVar7 * 8 + uVar6) == '\0')) {
+          bVar2 = g_playerRelationMatrix[bVar8][bVar1];
+          if ((bVar2 == 0) && (g_playerRelationMatrix[bVar1][bVar8] == 0)) {
             iVar5 = -2;
           }
-          else if ((cVar3 == '\x01') && (*(char *)((int)&DAT_00808a4f + uVar7 * 8 + uVar6) == '\0'))
-          {
+          else if ((bVar2 == 1) && (g_playerRelationMatrix[bVar1][bVar8] == 0)) {
             iVar5 = -1;
           }
-          else if ((cVar3 == '\0') && (*(char *)((int)&DAT_00808a4f + uVar7 * 8 + uVar6) == '\x01'))
-          {
+          else if ((bVar2 == 0) && (g_playerRelationMatrix[bVar1][bVar8] == 1)) {
             iVar5 = 1;
           }
           else {
-            if ((cVar3 != '\x01') || (*(char *)((int)&DAT_00808a4f + uVar7 * 8 + uVar6) != '\x01'))
-            goto LAB_004857a5;
+            if ((bVar2 != 1) || (g_playerRelationMatrix[bVar1][bVar8] != 1)) goto LAB_004857a5;
             iVar5 = 2;
           }
         }
-        bVar8 = iVar5 < 0;
+        bVar9 = iVar5 < 0;
       }
       else {
-        bVar8 = (&DAT_008087ea)[(uint)bVar2 * 0x51] != (&DAT_008087ea)[(uint)bVar1 * 0x51];
+        bVar9 = (&DAT_008087ea)[(uint)bVar1 * 0x51] != (&DAT_008087ea)[(uint)bVar8 * 0x51];
       }
-      if (bVar8) goto LAB_0048589a;
-      param_2 = (int *)CONCAT31(param_2._1_3_,bVar2);
-      param_1 = CONCAT31(param_1._1_3_,bVar1);
+      if (bVar9) goto LAB_0048589a;
+      param_2 = (int *)CONCAT31(param_2._1_3_,bVar1);
+      param_1 = CONCAT31(param_1._1_3_,bVar8);
       if (DAT_00808a8f == '\0') {
-        if (bVar2 == bVar1) {
+        if (bVar1 == bVar8) {
 LAB_0048586d:
           iVar5 = 0;
         }
         else {
-          uVar6 = (uint)bVar2;
-          uVar7 = (uint)bVar1;
-          cVar3 = *(char *)((int)&DAT_00808a4f + uVar6 * 8 + uVar7);
-          if ((cVar3 == '\0') && (*(char *)((int)&DAT_00808a4f + uVar7 * 8 + uVar6) == '\0')) {
+          bVar2 = g_playerRelationMatrix[bVar1][bVar8];
+          if ((bVar2 == 0) && (g_playerRelationMatrix[bVar8][bVar1] == 0)) {
             iVar5 = -2;
           }
-          else if ((cVar3 == '\x01') && (*(char *)((int)&DAT_00808a4f + uVar7 * 8 + uVar6) == '\0'))
-          {
+          else if ((bVar2 == 1) && (g_playerRelationMatrix[bVar8][bVar1] == 0)) {
             iVar5 = -1;
           }
-          else if ((cVar3 == '\0') && (*(char *)((int)&DAT_00808a4f + uVar7 * 8 + uVar6) == '\x01'))
-          {
+          else if ((bVar2 == 0) && (g_playerRelationMatrix[bVar8][bVar1] == 1)) {
             iVar5 = 1;
           }
           else {
-            if ((cVar3 != '\x01') || (*(char *)((int)&DAT_00808a4f + uVar7 * 8 + uVar6) != '\x01'))
-            goto LAB_0048586d;
+            if ((bVar2 != 1) || (g_playerRelationMatrix[bVar8][bVar1] != 1)) goto LAB_0048586d;
             iVar5 = 2;
           }
         }
-        bVar8 = iVar5 < 0;
+        bVar9 = iVar5 < 0;
       }
       else {
-        bVar8 = (&DAT_008087ea)[(uint)bVar1 * 0x51] != (&DAT_008087ea)[(uint)bVar2 * 0x51];
+        bVar9 = (&DAT_008087ea)[(uint)bVar8 * 0x51] != (&DAT_008087ea)[(uint)bVar1 * 0x51];
       }
-      if (!bVar8) {
+      if (!bVar9) {
         iVar5 = (**(code **)(*this_00 + 0xec))();
         return (-(ushort)(iVar5 != 1) & 0xfffd) + 3;
       }
 LAB_0048589a:
-      param_1 = CONCAT31(param_1._1_3_,bVar1);
-      bVar8 = thunk_FUN_0041d350(this_00,*(uint *)((int)this + 0x24));
-      return (-(ushort)(CONCAT31(extraout_var_01,bVar8) != 1) & 0xfff9) + 7;
+      param_1 = CONCAT31(param_1._1_3_,bVar8);
+      bVar9 = thunk_FUN_0041d350(this_00,*(uint *)((int)this + 0x24));
+      return (-(ushort)(CONCAT31(extraout_var_01,bVar9) != 1) & 0xfff9) + 7;
     }
     iVar5 = *(int *)((int)this + 0x6f7);
     if (((iVar5 == 8) || (iVar5 == 0x14)) || (iVar5 == 0x1a)) {
@@ -184,44 +175,41 @@ LAB_0048589a:
                  *(int *)((int)this + 0x7d2))))) {
           return 0x13;
         }
-        bVar1 = *(byte *)(this_00 + 9);
-        bVar2 = *(byte *)((int)this + 0x24);
-        param_2 = (int *)CONCAT31(param_2._1_3_,bVar1);
-        param_1 = CONCAT31(param_1._1_3_,bVar2);
+        bVar8 = *(byte *)(this_00 + 9);
+        bVar1 = *(byte *)((int)this + 0x24);
+        param_2 = (int *)CONCAT31(param_2._1_3_,bVar8);
+        param_1 = CONCAT31(param_1._1_3_,bVar1);
         if (DAT_00808a8f != '\0') {
-          iVar5 = (uint)bVar2 * 9;
+          iVar5 = (uint)bVar1 * 9;
           goto LAB_00486163;
         }
-        if (bVar1 == bVar2) {
+        if (bVar8 == bVar1) {
 LAB_00485d4a:
           iVar5 = 0;
         }
         else {
-          uVar6 = (uint)bVar1;
-          uVar7 = (uint)bVar2;
-          cVar3 = *(char *)((int)&DAT_00808a4f + uVar6 * 8 + uVar7);
-          if ((cVar3 == '\0') && (*(char *)((int)&DAT_00808a4f + uVar7 * 8 + uVar6) == '\0')) {
+          uVar6 = (uint)bVar8;
+          uVar7 = (uint)bVar1;
+          bVar8 = g_playerRelationMatrix[uVar6][uVar7];
+          if ((bVar8 == 0) && (g_playerRelationMatrix[uVar7][uVar6] == 0)) {
             iVar5 = -2;
           }
-          else if ((cVar3 == '\x01') && (*(char *)((int)&DAT_00808a4f + uVar7 * 8 + uVar6) == '\0'))
-          {
+          else if ((bVar8 == 1) && (g_playerRelationMatrix[uVar7][uVar6] == 0)) {
             iVar5 = -1;
           }
-          else if ((cVar3 == '\0') && (*(char *)((int)&DAT_00808a4f + uVar7 * 8 + uVar6) == '\x01'))
-          {
+          else if ((bVar8 == 0) && (g_playerRelationMatrix[uVar7][uVar6] == 1)) {
             iVar5 = 1;
           }
           else {
 LAB_004861ee:
-            if ((cVar3 != '\x01') || (*(char *)((int)&DAT_00808a4f + uVar7 * 8 + uVar6) != '\x01'))
-            goto LAB_00485d4a;
+            if ((bVar8 != 1) || (g_playerRelationMatrix[uVar7][uVar6] != 1)) goto LAB_00485d4a;
             iVar5 = 2;
           }
         }
 LAB_00485d4c:
-        bVar8 = iVar5 < 0;
+        bVar9 = iVar5 < 0;
 LAB_00485d55:
-        if (bVar8) {
+        if (bVar9) {
           return 0;
         }
         if (this_00[8] == 0x14) {
@@ -256,42 +244,37 @@ LAB_00485f6a:
           else if (iVar5 == 99) {
             return 0x1e;
           }
-          bVar1 = *(byte *)(this_00 + 9);
-          bVar2 = *(byte *)((int)this + 0x24);
-          param_2 = (int *)CONCAT31(param_2._1_3_,bVar1);
-          param_1 = CONCAT31(param_1._1_3_,bVar2);
+          bVar8 = *(byte *)(this_00 + 9);
+          bVar1 = *(byte *)((int)this + 0x24);
+          param_2 = (int *)CONCAT31(param_2._1_3_,bVar8);
+          param_1 = CONCAT31(param_1._1_3_,bVar1);
           if (DAT_00808a8f == '\0') {
-            if (bVar1 == bVar2) {
+            if (bVar8 == bVar1) {
 LAB_00485f1f:
               iVar5 = 0;
             }
             else {
-              uVar6 = (uint)bVar1;
-              uVar7 = (uint)bVar2;
-              cVar3 = *(char *)((int)&DAT_00808a4f + uVar6 * 8 + uVar7);
-              if ((cVar3 == '\0') && (*(char *)((int)&DAT_00808a4f + uVar7 * 8 + uVar6) == '\0')) {
+              bVar2 = g_playerRelationMatrix[bVar8][bVar1];
+              if ((bVar2 == 0) && (g_playerRelationMatrix[bVar1][bVar8] == 0)) {
                 iVar5 = -2;
               }
-              else if ((cVar3 == '\x01') &&
-                      (*(char *)((int)&DAT_00808a4f + uVar7 * 8 + uVar6) == '\0')) {
+              else if ((bVar2 == 1) && (g_playerRelationMatrix[bVar1][bVar8] == 0)) {
                 iVar5 = -1;
               }
-              else if ((cVar3 == '\0') &&
-                      (*(char *)((int)&DAT_00808a4f + uVar7 * 8 + uVar6) == '\x01')) {
+              else if ((bVar2 == 0) && (g_playerRelationMatrix[bVar1][bVar8] == 1)) {
                 iVar5 = 1;
               }
               else {
-                if ((cVar3 != '\x01') ||
-                   (*(char *)((int)&DAT_00808a4f + uVar7 * 8 + uVar6) != '\x01')) goto LAB_00485f1f;
+                if ((bVar2 != 1) || (g_playerRelationMatrix[bVar1][bVar8] != 1)) goto LAB_00485f1f;
                 iVar5 = 2;
               }
             }
-            bVar8 = iVar5 < 0;
+            bVar9 = iVar5 < 0;
           }
           else {
-            bVar8 = (&DAT_008087ea)[(uint)bVar2 * 0x51] != (&DAT_008087ea)[(uint)bVar1 * 0x51];
+            bVar9 = (&DAT_008087ea)[(uint)bVar1 * 0x51] != (&DAT_008087ea)[(uint)bVar8 * 0x51];
           }
-          if (bVar8) {
+          if (bVar9) {
             return 0;
           }
           if ((this_00[8] == 0x14) && (iVar5 = (**(code **)(*this_00 + 0xec))(), iVar5 == 1)) {
@@ -302,42 +285,37 @@ LAB_00485f1f:
           }
           goto LAB_00485f6a;
         }
-        bVar1 = *(byte *)(this_00 + 9);
-        bVar2 = *(byte *)((int)this + 0x24);
-        param_2 = (int *)CONCAT31(param_2._1_3_,bVar1);
-        param_1 = CONCAT31(param_1._1_3_,bVar2);
+        bVar8 = *(byte *)(this_00 + 9);
+        bVar1 = *(byte *)((int)this + 0x24);
+        param_2 = (int *)CONCAT31(param_2._1_3_,bVar8);
+        param_1 = CONCAT31(param_1._1_3_,bVar1);
         if (DAT_00808a8f == '\0') {
-          if (bVar1 == bVar2) {
+          if (bVar8 == bVar1) {
 LAB_0048602b:
             iVar4 = 0;
           }
           else {
-            uVar6 = (uint)bVar1;
-            uVar7 = (uint)bVar2;
-            cVar3 = *(char *)((int)&DAT_00808a4f + uVar6 * 8 + uVar7);
-            if ((cVar3 == '\0') && (*(char *)((int)&DAT_00808a4f + uVar7 * 8 + uVar6) == '\0')) {
+            bVar2 = g_playerRelationMatrix[bVar8][bVar1];
+            if ((bVar2 == 0) && (g_playerRelationMatrix[bVar1][bVar8] == 0)) {
               iVar4 = -2;
             }
-            else if ((cVar3 == '\x01') &&
-                    (*(char *)((int)&DAT_00808a4f + uVar7 * 8 + uVar6) == '\0')) {
+            else if ((bVar2 == 1) && (g_playerRelationMatrix[bVar1][bVar8] == 0)) {
               iVar4 = -1;
             }
-            else if ((cVar3 == '\0') &&
-                    (*(char *)((int)&DAT_00808a4f + uVar7 * 8 + uVar6) == '\x01')) {
+            else if ((bVar2 == 0) && (g_playerRelationMatrix[bVar1][bVar8] == 1)) {
               iVar4 = 1;
             }
             else {
-              if ((cVar3 != '\x01') || (*(char *)((int)&DAT_00808a4f + uVar7 * 8 + uVar6) != '\x01')
-                 ) goto LAB_0048602b;
+              if ((bVar2 != 1) || (g_playerRelationMatrix[bVar1][bVar8] != 1)) goto LAB_0048602b;
               iVar4 = 2;
             }
           }
-          bVar8 = iVar4 < 0;
+          bVar9 = iVar4 < 0;
         }
         else {
-          bVar8 = (&DAT_008087ea)[(uint)bVar2 * 0x51] != (&DAT_008087ea)[(uint)bVar1 * 0x51];
+          bVar9 = (&DAT_008087ea)[(uint)bVar1 * 0x51] != (&DAT_008087ea)[(uint)bVar8 * 0x51];
         }
-        if (bVar8) {
+        if (bVar9) {
           return 0;
         }
         if (this_00[8] == 0x14) {
@@ -362,72 +340,65 @@ LAB_00485caa:
       }
       else {
         if (((iVar5 == 0xc) || (iVar5 == 0x18)) || (iVar5 == 0x19)) {
-          bVar1 = *(byte *)(this_00 + 9);
-          bVar2 = *(byte *)((int)this + 0x24);
-          param_2 = (int *)CONCAT31(param_2._1_3_,bVar1);
-          param_1 = CONCAT31(param_1._1_3_,bVar2);
+          bVar8 = *(byte *)(this_00 + 9);
+          bVar1 = *(byte *)((int)this + 0x24);
+          param_2 = (int *)CONCAT31(param_2._1_3_,bVar8);
+          param_1 = CONCAT31(param_1._1_3_,bVar1);
           if (DAT_00808a8f == '\0') {
-            if (bVar1 == bVar2) goto LAB_00485d4a;
-            uVar6 = (uint)bVar1;
-            uVar7 = (uint)bVar2;
-            cVar3 = *(char *)((int)&DAT_00808a4f + uVar6 * 8 + uVar7);
-            if ((cVar3 == '\0') && (*(char *)((int)&DAT_00808a4f + uVar7 * 8 + uVar6) == '\0')) {
+            if (bVar8 == bVar1) goto LAB_00485d4a;
+            uVar6 = (uint)bVar8;
+            uVar7 = (uint)bVar1;
+            bVar8 = g_playerRelationMatrix[uVar6][uVar7];
+            if ((bVar8 == 0) && (g_playerRelationMatrix[uVar7][uVar6] == 0)) {
               iVar5 = -2;
             }
-            else if ((cVar3 == '\x01') &&
-                    (*(char *)((int)&DAT_00808a4f + uVar7 * 8 + uVar6) == '\0')) {
+            else if ((bVar8 == 1) && (g_playerRelationMatrix[uVar7][uVar6] == 0)) {
               iVar5 = -1;
             }
             else {
 LAB_00485d2d:
-              if ((cVar3 != '\0') || (*(char *)((int)&DAT_00808a4f + uVar7 * 8 + uVar6) != '\x01'))
-              goto LAB_004861ee;
+              if ((bVar8 != 0) || (g_playerRelationMatrix[uVar7][uVar6] != 1)) goto LAB_004861ee;
               iVar5 = 1;
             }
             goto LAB_00485d4c;
           }
-          iVar5 = (uint)bVar2 * 9;
+          iVar5 = (uint)bVar1 * 9;
 LAB_00486163:
-          bVar8 = (&DAT_008087ea)[iVar5 * 9] != (&DAT_008087ea)[((uint)param_2 & 0xff) * 0x51];
+          bVar9 = (&DAT_008087ea)[iVar5 * 9] != (&DAT_008087ea)[((uint)param_2 & 0xff) * 0x51];
           goto LAB_00485d55;
         }
         if (iVar5 == 9) {
-          bVar1 = *(byte *)(this_00 + 9);
-          bVar2 = *(byte *)((int)this + 0x24);
-          param_2 = (int *)CONCAT31(param_2._1_3_,bVar1);
-          param_1 = CONCAT31(param_1._1_3_,bVar2);
+          bVar8 = *(byte *)(this_00 + 9);
+          bVar1 = *(byte *)((int)this + 0x24);
+          param_2 = (int *)CONCAT31(param_2._1_3_,bVar8);
+          param_1 = CONCAT31(param_1._1_3_,bVar1);
           if (DAT_00808a8f != '\0') {
-            bVar8 = (&DAT_008087ea)[(uint)bVar2 * 0x51] != (&DAT_008087ea)[(uint)bVar1 * 0x51];
+            bVar9 = (&DAT_008087ea)[(uint)bVar1 * 0x51] != (&DAT_008087ea)[(uint)bVar8 * 0x51];
             goto LAB_004859d8;
           }
-          if (bVar1 == bVar2) {
+          if (bVar8 == bVar1) {
 LAB_004859cd:
             iVar5 = 0;
           }
           else {
-            uVar6 = (uint)bVar1;
-            uVar7 = (uint)bVar2;
-            cVar3 = *(char *)((int)&DAT_00808a4f + uVar6 * 8 + uVar7);
-            if ((cVar3 == '\0') && (*(char *)((int)&DAT_00808a4f + uVar7 * 8 + uVar6) == '\0')) {
+            bVar2 = g_playerRelationMatrix[bVar8][bVar1];
+            if ((bVar2 == 0) && (g_playerRelationMatrix[bVar1][bVar8] == 0)) {
               iVar5 = -2;
             }
-            else if ((cVar3 == '\x01') &&
-                    (*(char *)((int)&DAT_00808a4f + uVar7 * 8 + uVar6) == '\0')) {
+            else if ((bVar2 == 1) && (g_playerRelationMatrix[bVar1][bVar8] == 0)) {
               iVar5 = -1;
             }
-            else if ((cVar3 == '\0') &&
-                    (*(char *)((int)&DAT_00808a4f + uVar7 * 8 + uVar6) == '\x01')) {
+            else if ((bVar2 == 0) && (g_playerRelationMatrix[bVar1][bVar8] == 1)) {
               iVar5 = 1;
             }
             else {
-              if ((cVar3 != '\x01') || (*(char *)((int)&DAT_00808a4f + uVar7 * 8 + uVar6) != '\x01')
-                 ) goto LAB_004859cd;
+              if ((bVar2 != 1) || (g_playerRelationMatrix[bVar1][bVar8] != 1)) goto LAB_004859cd;
               iVar5 = 2;
             }
           }
-          bVar8 = iVar5 < 0;
+          bVar9 = iVar5 < 0;
 LAB_004859d8:
-          if (!bVar8) {
+          if (!bVar9) {
             iVar5 = this_00[8];
             if (iVar5 == 0x14) {
               iVar5 = (**(code **)(*this_00 + 0xec))();
@@ -449,44 +420,38 @@ LAB_004859d8:
         }
         if (iVar5 != 0x1d) {
           if ((iVar5 != 0x24) && (iVar5 != 0x25)) {
-            bVar1 = *(byte *)(this_00 + 9);
-            bVar2 = *(byte *)((int)this + 0x24);
-            param_2 = (int *)CONCAT31(param_2._1_3_,bVar1);
-            param_1 = CONCAT31(param_1._1_3_,bVar2);
+            bVar8 = *(byte *)(this_00 + 9);
+            bVar1 = *(byte *)((int)this + 0x24);
+            param_2 = (int *)CONCAT31(param_2._1_3_,bVar8);
+            param_1 = CONCAT31(param_1._1_3_,bVar1);
             if (DAT_00808a8f == '\0') {
-              if (bVar1 == bVar2) {
+              if (bVar8 == bVar1) {
 LAB_00485c58:
                 iVar4 = 0;
               }
               else {
-                uVar6 = (uint)bVar1;
-                uVar7 = (uint)bVar2;
-                cVar3 = *(char *)((int)&DAT_00808a4f + uVar6 * 8 + uVar7);
-                if ((cVar3 == '\0') && (*(char *)((int)&DAT_00808a4f + uVar7 * 8 + uVar6) == '\0'))
-                {
+                bVar2 = g_playerRelationMatrix[bVar8][bVar1];
+                if ((bVar2 == 0) && (g_playerRelationMatrix[bVar1][bVar8] == 0)) {
                   iVar4 = -2;
                 }
-                else if ((cVar3 == '\x01') &&
-                        (*(char *)((int)&DAT_00808a4f + uVar7 * 8 + uVar6) == '\0')) {
+                else if ((bVar2 == 1) && (g_playerRelationMatrix[bVar1][bVar8] == 0)) {
                   iVar4 = -1;
                 }
-                else if ((cVar3 == '\0') &&
-                        (*(char *)((int)&DAT_00808a4f + uVar7 * 8 + uVar6) == '\x01')) {
+                else if ((bVar2 == 0) && (g_playerRelationMatrix[bVar1][bVar8] == 1)) {
                   iVar4 = 1;
                 }
                 else {
-                  if ((cVar3 != '\x01') ||
-                     (*(char *)((int)&DAT_00808a4f + uVar7 * 8 + uVar6) != '\x01'))
+                  if ((bVar2 != 1) || (g_playerRelationMatrix[bVar1][bVar8] != 1))
                   goto LAB_00485c58;
                   iVar4 = 2;
                 }
               }
-              bVar8 = iVar4 < 0;
+              bVar9 = iVar4 < 0;
             }
             else {
-              bVar8 = (&DAT_008087ea)[(uint)bVar2 * 0x51] != (&DAT_008087ea)[(uint)bVar1 * 0x51];
+              bVar9 = (&DAT_008087ea)[(uint)bVar1 * 0x51] != (&DAT_008087ea)[(uint)bVar8 * 0x51];
             }
-            if (bVar8) {
+            if (bVar9) {
               if (iVar5 == 0x15) {
                 return 7;
               }
@@ -500,64 +465,58 @@ LAB_00485c58:
             }
             goto LAB_00485caa;
           }
-          bVar1 = *(byte *)(this_00 + 9);
-          bVar2 = *(byte *)((int)this + 0x24);
-          param_2 = (int *)CONCAT31(param_2._1_3_,bVar1);
-          param_1 = CONCAT31(param_1._1_3_,bVar2);
+          bVar8 = *(byte *)(this_00 + 9);
+          bVar1 = *(byte *)((int)this + 0x24);
+          param_2 = (int *)CONCAT31(param_2._1_3_,bVar8);
+          param_1 = CONCAT31(param_1._1_3_,bVar1);
           if (DAT_00808a8f == '\0') {
-            if (bVar1 == bVar2) goto LAB_00485d4a;
-            uVar6 = (uint)bVar1;
-            uVar7 = (uint)bVar2;
-            cVar3 = *(char *)((int)&DAT_00808a4f + uVar6 * 8 + uVar7);
-            if ((cVar3 == '\0') && (*(char *)((int)&DAT_00808a4f + uVar7 * 8 + uVar6) == '\0')) {
+            if (bVar8 == bVar1) goto LAB_00485d4a;
+            uVar6 = (uint)bVar8;
+            uVar7 = (uint)bVar1;
+            bVar8 = g_playerRelationMatrix[uVar6][uVar7];
+            if ((bVar8 == 0) && (g_playerRelationMatrix[uVar7][uVar6] == 0)) {
               iVar5 = -2;
             }
             else {
-              if ((cVar3 != '\x01') || (*(char *)((int)&DAT_00808a4f + uVar7 * 8 + uVar6) != '\0'))
-              goto LAB_00485d2d;
+              if ((bVar8 != 1) || (g_playerRelationMatrix[uVar7][uVar6] != 0)) goto LAB_00485d2d;
               iVar5 = -1;
             }
             goto LAB_00485d4c;
           }
-          iVar5 = (uint)bVar2 * 9;
+          iVar5 = (uint)bVar1 * 9;
           goto LAB_00486163;
         }
-        bVar1 = *(byte *)(this_00 + 9);
-        bVar2 = *(byte *)((int)this + 0x24);
-        param_2 = (int *)CONCAT31(param_2._1_3_,bVar1);
-        param_1 = CONCAT31(param_1._1_3_,bVar2);
+        bVar8 = *(byte *)(this_00 + 9);
+        bVar1 = *(byte *)((int)this + 0x24);
+        param_2 = (int *)CONCAT31(param_2._1_3_,bVar8);
+        param_1 = CONCAT31(param_1._1_3_,bVar1);
         if (DAT_00808a8f == '\0') {
-          if (bVar1 == bVar2) {
+          if (bVar8 == bVar1) {
 LAB_00485b29:
             iVar5 = 0;
           }
           else {
-            uVar6 = (uint)bVar1;
-            uVar7 = (uint)bVar2;
-            cVar3 = *(char *)((int)&DAT_00808a4f + uVar6 * 8 + uVar7);
-            if ((cVar3 == '\0') && (*(char *)((int)&DAT_00808a4f + uVar7 * 8 + uVar6) == '\0')) {
+            bVar2 = g_playerRelationMatrix[bVar8][bVar1];
+            if ((bVar2 == 0) && (g_playerRelationMatrix[bVar1][bVar8] == 0)) {
               iVar5 = -2;
             }
-            else if ((cVar3 == '\x01') &&
-                    (*(char *)((int)&DAT_00808a4f + uVar7 * 8 + uVar6) == '\0')) {
+            else if ((bVar2 == 1) && (g_playerRelationMatrix[bVar1][bVar8] == 0)) {
               iVar5 = -1;
             }
-            else if ((cVar3 == '\0') &&
-                    (*(char *)((int)&DAT_00808a4f + uVar7 * 8 + uVar6) == '\x01')) {
+            else if ((bVar2 == 0) && (g_playerRelationMatrix[bVar1][bVar8] == 1)) {
               iVar5 = 1;
             }
             else {
-              if ((cVar3 != '\x01') || (*(char *)((int)&DAT_00808a4f + uVar7 * 8 + uVar6) != '\x01')
-                 ) goto LAB_00485b29;
+              if ((bVar2 != 1) || (g_playerRelationMatrix[bVar1][bVar8] != 1)) goto LAB_00485b29;
               iVar5 = 2;
             }
           }
-          bVar8 = iVar5 < 0;
+          bVar9 = iVar5 < 0;
         }
         else {
-          bVar8 = (&DAT_008087ea)[(uint)bVar2 * 0x51] != (&DAT_008087ea)[(uint)bVar1 * 0x51];
+          bVar9 = (&DAT_008087ea)[(uint)bVar1 * 0x51] != (&DAT_008087ea)[(uint)bVar8 * 0x51];
         }
-        if (bVar8) {
+        if (bVar9) {
           return 0;
         }
         if ((this_00[8] == 0x14) && (iVar5 = (**(code **)(*this_00 + 0xec))(), iVar5 == 1)) {
@@ -634,147 +593,134 @@ LAB_00485b29:
         param_2 = (int *)(uint)*(byte *)(this_00 + 9);
         param_1 = (Global_sub_004845E0_param_1Enum)*(byte *)((int)this + 0x24);
         if (DAT_00808a8f != '\0') {
-          bVar8 = (&DAT_008087ea)[param_1 * 0x51] != (&DAT_008087ea)[(int)param_2 * 0x51];
-          return (((ushort)bVar8 - (ushort)bVar8) - (ushort)bVar8 & 5) + 2;
+          bVar9 = (&DAT_008087ea)[param_1 * 0x51] != (&DAT_008087ea)[(int)param_2 * 0x51];
+          return (((ushort)bVar9 - (ushort)bVar9) - (ushort)bVar9 & 5) + 2;
         }
         if (*(byte *)(this_00 + 9) != *(byte *)((int)this + 0x24)) {
-          cVar3 = *(char *)((int)&DAT_00808a4f + (int)param_2 * 8 + param_1);
-          if ((cVar3 == '\0') &&
-             (*(char *)((int)&DAT_00808a4f + (int)param_2 + param_1 * 8) == '\0')) {
+          bVar8 = g_playerRelationMatrix[(int)param_2][param_1];
+          if ((bVar8 == 0) &&
+             (*(char *)((int)param_2 + (int)(g_playerRelationMatrix + param_1)) == '\0')) {
             iVar5 = -2;
             goto cf_common_exit_00484B10;
           }
-          if ((cVar3 == '\x01') &&
-             (*(char *)((int)&DAT_00808a4f + (int)param_2 + param_1 * 8) == '\0')) {
+          if ((bVar8 == 1) &&
+             (*(char *)((int)param_2 + (int)(g_playerRelationMatrix + param_1)) == '\0')) {
             iVar5 = -1;
             goto cf_common_exit_00484B10;
           }
-          if ((cVar3 == '\0') &&
-             (*(char *)((int)&DAT_00808a4f + (int)param_2 + param_1 * 8) == '\x01')) {
+          if ((bVar8 == 0) &&
+             (*(char *)((int)param_2 + (int)(g_playerRelationMatrix + param_1)) == '\x01')) {
             iVar5 = 1;
             goto cf_common_exit_00484B10;
           }
-          if ((cVar3 == '\x01') &&
-             (*(char *)((int)&DAT_00808a4f + (int)param_2 + param_1 * 8) == '\x01')) {
+          if ((bVar8 == 1) &&
+             (*(char *)((int)param_2 + (int)(g_playerRelationMatrix + param_1)) == '\x01')) {
             iVar5 = 2;
             goto cf_common_exit_00484B10;
           }
         }
         iVar5 = 0;
 cf_common_exit_00484B10:
-        bVar8 = iVar5 < 0;
-        return (((ushort)bVar8 - (ushort)bVar8) - (ushort)bVar8 & 5) + 2;
+        bVar9 = iVar5 < 0;
+        return (((ushort)bVar9 - (ushort)bVar9) - (ushort)bVar9 & 5) + 2;
       }
-      bVar1 = *(byte *)(this_00 + 9);
-      bVar2 = *(byte *)((int)this + 0x24);
-      param_2 = (int *)CONCAT13(bVar2,param_2._0_3_);
-      local_8 = CONCAT31(local_8._1_3_,bVar2);
+      bVar8 = *(byte *)(this_00 + 9);
+      bVar1 = *(byte *)((int)this + 0x24);
+      param_2 = (int *)CONCAT13(bVar1,param_2._0_3_);
+      local_8 = CONCAT31(local_8._1_3_,bVar1);
       if (DAT_00808a8f == '\0') {
-        if (bVar1 == bVar2) {
+        if (bVar8 == bVar1) {
 LAB_00484943:
           iVar5 = 0;
         }
         else {
-          uVar6 = (uint)bVar1;
-          uVar7 = (uint)bVar2;
-          cVar3 = *(char *)((int)&DAT_00808a4f + uVar6 * 8 + uVar7);
-          if ((cVar3 == '\0') && (*(char *)((int)&DAT_00808a4f + uVar7 * 8 + uVar6) == '\0')) {
+          bVar2 = g_playerRelationMatrix[bVar8][bVar1];
+          if ((bVar2 == 0) && (g_playerRelationMatrix[bVar1][bVar8] == 0)) {
             iVar5 = -2;
           }
-          else if ((cVar3 == '\x01') && (*(char *)((int)&DAT_00808a4f + uVar7 * 8 + uVar6) == '\0'))
-          {
+          else if ((bVar2 == 1) && (g_playerRelationMatrix[bVar1][bVar8] == 0)) {
             iVar5 = -1;
           }
-          else if ((cVar3 == '\0') && (*(char *)((int)&DAT_00808a4f + uVar7 * 8 + uVar6) == '\x01'))
-          {
+          else if ((bVar2 == 0) && (g_playerRelationMatrix[bVar1][bVar8] == 1)) {
             iVar5 = 1;
           }
           else {
-            if ((cVar3 != '\x01') || (*(char *)((int)&DAT_00808a4f + uVar7 * 8 + uVar6) != '\x01'))
-            goto LAB_00484943;
+            if ((bVar2 != 1) || (g_playerRelationMatrix[bVar1][bVar8] != 1)) goto LAB_00484943;
             iVar5 = 2;
           }
         }
-        bVar8 = iVar5 < 0;
+        bVar9 = iVar5 < 0;
       }
       else {
-        bVar8 = (&DAT_008087ea)[(uint)bVar2 * 0x51] != (&DAT_008087ea)[(uint)bVar1 * 0x51];
+        bVar9 = (&DAT_008087ea)[(uint)bVar1 * 0x51] != (&DAT_008087ea)[(uint)bVar8 * 0x51];
       }
-      if (bVar8) goto LAB_00484a28;
-      param_2 = (int *)CONCAT31(param_2._1_3_,bVar2);
+      if (bVar9) goto LAB_00484a28;
+      param_2 = (int *)CONCAT31(param_2._1_3_,bVar1);
       if (DAT_00808a8f == '\0') {
-        if (bVar2 == bVar1) {
+        if (bVar1 == bVar8) {
 LAB_00484a0b:
           iVar5 = 0;
         }
         else {
-          uVar6 = (uint)bVar2;
-          uVar7 = (uint)bVar1;
-          cVar3 = *(char *)((int)&DAT_00808a4f + uVar6 * 8 + uVar7);
-          if ((cVar3 == '\0') && (*(char *)((int)&DAT_00808a4f + uVar7 * 8 + uVar6) == '\0')) {
+          bVar2 = g_playerRelationMatrix[bVar1][bVar8];
+          if ((bVar2 == 0) && (g_playerRelationMatrix[bVar8][bVar1] == 0)) {
             iVar5 = -2;
           }
-          else if ((cVar3 == '\x01') && (*(char *)((int)&DAT_00808a4f + uVar7 * 8 + uVar6) == '\0'))
-          {
+          else if ((bVar2 == 1) && (g_playerRelationMatrix[bVar8][bVar1] == 0)) {
             iVar5 = -1;
           }
-          else if ((cVar3 == '\0') && (*(char *)((int)&DAT_00808a4f + uVar7 * 8 + uVar6) == '\x01'))
-          {
+          else if ((bVar2 == 0) && (g_playerRelationMatrix[bVar8][bVar1] == 1)) {
             iVar5 = 1;
           }
           else {
-            if ((cVar3 != '\x01') || (*(char *)((int)&DAT_00808a4f + uVar7 * 8 + uVar6) != '\x01'))
-            goto LAB_00484a0b;
+            if ((bVar2 != 1) || (g_playerRelationMatrix[bVar8][bVar1] != 1)) goto LAB_00484a0b;
             iVar5 = 2;
           }
         }
-        bVar8 = iVar5 < 0;
+        bVar9 = iVar5 < 0;
       }
       else {
-        bVar8 = (&DAT_008087ea)[(uint)bVar1 * 0x51] != (&DAT_008087ea)[(uint)bVar2 * 0x51];
+        bVar9 = (&DAT_008087ea)[(uint)bVar8 * 0x51] != (&DAT_008087ea)[(uint)bVar1 * 0x51];
       }
-      if (!bVar8) {
+      if (!bVar9) {
         return 2;
       }
 LAB_00484a28:
-      param_1 = CONCAT31(param_1._1_3_,bVar1);
-      bVar8 = thunk_FUN_0041d350(this_00,*(uint *)((int)this + 0x24));
-      return (-(ushort)(CONCAT31(extraout_var,bVar8) != 1) & 0xfffa) + 7;
+      param_1 = CONCAT31(param_1._1_3_,bVar8);
+      bVar9 = thunk_FUN_0041d350(this_00,*(uint *)((int)this + 0x24));
+      return (-(ushort)(CONCAT31(extraout_var,bVar9) != 1) & 0xfffa) + 7;
     }
-    bVar1 = *(byte *)(this_00 + 9);
-    bVar2 = *(byte *)((int)this + 0x24);
-    param_2 = (int *)CONCAT31(param_2._1_3_,bVar1);
-    param_1 = CONCAT31(param_1._1_3_,bVar2);
+    bVar8 = *(byte *)(this_00 + 9);
+    bVar1 = *(byte *)((int)this + 0x24);
+    param_2 = (int *)CONCAT31(param_2._1_3_,bVar8);
+    param_1 = CONCAT31(param_1._1_3_,bVar1);
     if (DAT_00808a8f != '\0') {
-      bVar8 = (&DAT_008087ea)[(uint)bVar2 * 0x51] != (&DAT_008087ea)[(uint)bVar1 * 0x51];
+      bVar9 = (&DAT_008087ea)[(uint)bVar1 * 0x51] != (&DAT_008087ea)[(uint)bVar8 * 0x51];
       goto LAB_004847df;
     }
-    if (bVar1 == bVar2) {
+    if (bVar8 == bVar1) {
 LAB_004847d4:
       iVar4 = 0;
     }
     else {
-      uVar6 = (uint)bVar1;
-      uVar7 = (uint)bVar2;
-      cVar3 = *(char *)((int)&DAT_00808a4f + uVar6 * 8 + uVar7);
-      if ((cVar3 == '\0') && (*(char *)((int)&DAT_00808a4f + uVar7 * 8 + uVar6) == '\0')) {
+      bVar2 = g_playerRelationMatrix[bVar8][bVar1];
+      if ((bVar2 == 0) && (g_playerRelationMatrix[bVar1][bVar8] == 0)) {
         iVar4 = -2;
       }
-      else if ((cVar3 == '\x01') && (*(char *)((int)&DAT_00808a4f + uVar7 * 8 + uVar6) == '\0')) {
+      else if ((bVar2 == 1) && (g_playerRelationMatrix[bVar1][bVar8] == 0)) {
         iVar4 = -1;
       }
-      else if ((cVar3 == '\0') && (*(char *)((int)&DAT_00808a4f + uVar7 * 8 + uVar6) == '\x01')) {
+      else if ((bVar2 == 0) && (g_playerRelationMatrix[bVar1][bVar8] == 1)) {
         iVar4 = 1;
       }
       else {
-        if ((cVar3 != '\x01') || (*(char *)((int)&DAT_00808a4f + uVar7 * 8 + uVar6) != '\x01'))
-        goto LAB_004847d4;
+        if ((bVar2 != 1) || (g_playerRelationMatrix[bVar1][bVar8] != 1)) goto LAB_004847d4;
         iVar4 = 2;
       }
     }
-    bVar8 = iVar4 < 0;
+    bVar9 = iVar4 < 0;
 LAB_004847df:
-    if (!bVar8) {
+    if (!bVar9) {
       if (iVar5 == 0x14) {
         return 3;
       }
@@ -908,57 +854,53 @@ LAB_004847df:
     if (*(int *)((int)this_00 + 0x732) != 1) {
       return 0xc;
     }
-    bVar1 = *(byte *)(this_00 + 9);
-    bVar2 = *(byte *)((int)this + 0x24);
-    param_1 = (Global_sub_004845E0_param_1Enum)bVar1;
-    uVar6 = (uint)bVar2;
-    local_8 = (uint)bVar2;
+    bVar8 = *(byte *)(this_00 + 9);
+    bVar1 = *(byte *)((int)this + 0x24);
+    param_1 = (Global_sub_004845E0_param_1Enum)bVar8;
+    local_8 = (uint)bVar1;
     if (DAT_00808a8f != '\0') {
-      bVar8 = (&DAT_008087ea)[local_8 * 0x51] != (&DAT_008087ea)[param_1 * 0x51];
+      bVar9 = (&DAT_008087ea)[local_8 * 0x51] != (&DAT_008087ea)[param_1 * 0x51];
       goto LAB_004853d2;
     }
-    if (bVar1 == bVar2) {
+    if (bVar8 == bVar1) {
 LAB_004853c7:
       iVar5 = 0;
     }
     else {
-      cVar3 = *(char *)((int)&DAT_00808a4f + param_1 * 8 + local_8);
-      if ((cVar3 == '\0') && (*(char *)((int)&DAT_00808a4f + local_8 * 8 + param_1) == '\0')) {
+      bVar2 = g_playerRelationMatrix[param_1][local_8];
+      if ((bVar2 == 0) && (g_playerRelationMatrix[local_8][param_1] == 0)) {
         iVar5 = -2;
       }
-      else if ((cVar3 == '\x01') && (*(char *)((int)&DAT_00808a4f + local_8 * 8 + param_1) == '\0'))
-      {
+      else if ((bVar2 == 1) && (g_playerRelationMatrix[local_8][param_1] == 0)) {
         iVar5 = -1;
       }
-      else if ((cVar3 == '\0') && (*(char *)((int)&DAT_00808a4f + local_8 * 8 + param_1) == '\x01'))
-      {
+      else if ((bVar2 == 0) && (g_playerRelationMatrix[local_8][param_1] == 1)) {
         iVar5 = 1;
       }
       else {
-        if ((cVar3 != '\x01') || (*(char *)((int)&DAT_00808a4f + local_8 * 8 + param_1) != '\x01'))
-        goto LAB_004853c7;
+        if ((bVar2 != 1) || (g_playerRelationMatrix[local_8][param_1] != 1)) goto LAB_004853c7;
         iVar5 = 2;
       }
     }
-    bVar8 = iVar5 < 0;
+    bVar9 = iVar5 < 0;
 LAB_004853d2:
-    if (!bVar8) {
-      param_1 = (Global_sub_004845E0_param_1Enum)bVar1;
+    if (!bVar9) {
+      param_1 = (Global_sub_004845E0_param_1Enum)bVar8;
       if (DAT_00808a8f != '\0') {
         return 0xc;
       }
-      if (bVar2 != bVar1) {
-        cVar3 = *(char *)((int)&DAT_00808a4f + uVar6 * 8 + param_1);
-        if ((cVar3 == '\0') && (*(char *)((int)&DAT_00808a4f + param_1 * 8 + uVar6) == '\0')) {
+      if (bVar1 != bVar8) {
+        bVar8 = g_playerRelationMatrix[bVar1][param_1];
+        if ((bVar8 == 0) && (g_playerRelationMatrix[param_1][bVar1] == 0)) {
           return 0xc;
         }
-        if ((cVar3 == '\x01') && (*(char *)((int)&DAT_00808a4f + param_1 * 8 + uVar6) == '\0')) {
+        if ((bVar8 == 1) && (g_playerRelationMatrix[param_1][bVar1] == 0)) {
           return 0xc;
         }
-        if ((cVar3 == '\0') && (*(char *)((int)&DAT_00808a4f + param_1 * 8 + uVar6) == '\x01')) {
+        if ((bVar8 == 0) && (g_playerRelationMatrix[param_1][bVar1] == 1)) {
           return 0xc;
         }
-        if ((cVar3 == '\x01') && (*(char *)((int)&DAT_00808a4f + param_1 * 8 + uVar6) == '\x01')) {
+        if ((bVar8 == 1) && (g_playerRelationMatrix[param_1][bVar1] == 1)) {
           return 0xc;
         }
       }
@@ -985,40 +927,37 @@ LAB_004853d2:
     if (99 < iVar5) {
       return 1;
     }
-    bVar1 = *(byte *)(this_00 + 9);
-    bVar2 = *(byte *)((int)this + 0x24);
-    param_2 = (int *)CONCAT31(param_2._1_3_,bVar1);
-    param_1 = CONCAT31(param_1._1_3_,bVar2);
+    bVar8 = *(byte *)(this_00 + 9);
+    bVar1 = *(byte *)((int)this + 0x24);
+    param_2 = (int *)CONCAT31(param_2._1_3_,bVar8);
+    param_1 = CONCAT31(param_1._1_3_,bVar1);
     if (DAT_00808a8f != '\0') {
-      bVar8 = (&DAT_008087ea)[(uint)bVar2 * 0x51] != (&DAT_008087ea)[(uint)bVar1 * 0x51];
+      bVar9 = (&DAT_008087ea)[(uint)bVar1 * 0x51] != (&DAT_008087ea)[(uint)bVar8 * 0x51];
       goto LAB_00485002;
     }
-    if (bVar1 == bVar2) {
+    if (bVar8 == bVar1) {
 LAB_00484ff7:
       iVar5 = 0;
     }
     else {
-      uVar6 = (uint)bVar1;
-      uVar7 = (uint)bVar2;
-      cVar3 = *(char *)((int)&DAT_00808a4f + uVar6 * 8 + uVar7);
-      if ((cVar3 == '\0') && (*(char *)((int)&DAT_00808a4f + uVar7 * 8 + uVar6) == '\0')) {
+      bVar2 = g_playerRelationMatrix[bVar8][bVar1];
+      if ((bVar2 == 0) && (g_playerRelationMatrix[bVar1][bVar8] == 0)) {
         iVar5 = -2;
       }
-      else if ((cVar3 == '\x01') && (*(char *)((int)&DAT_00808a4f + uVar7 * 8 + uVar6) == '\0')) {
+      else if ((bVar2 == 1) && (g_playerRelationMatrix[bVar1][bVar8] == 0)) {
         iVar5 = -1;
       }
-      else if ((cVar3 == '\0') && (*(char *)((int)&DAT_00808a4f + uVar7 * 8 + uVar6) == '\x01')) {
+      else if ((bVar2 == 0) && (g_playerRelationMatrix[bVar1][bVar8] == 1)) {
         iVar5 = 1;
       }
       else {
-        if ((cVar3 != '\x01') || (*(char *)((int)&DAT_00808a4f + uVar7 * 8 + uVar6) != '\x01'))
-        goto LAB_00484ff7;
+        if ((bVar2 != 1) || (g_playerRelationMatrix[bVar1][bVar8] != 1)) goto LAB_00484ff7;
         iVar5 = 2;
       }
     }
-    bVar8 = iVar5 < 0;
+    bVar9 = iVar5 < 0;
 LAB_00485002:
-    if (bVar8) {
+    if (bVar9) {
       return 1;
     }
     iVar5 = (**(code **)(*this_00 + 0xbc))();
@@ -1059,7 +998,7 @@ LAB_00485002:
     }
     thunk_FUN_004162f0(this_00,(undefined2 *)((int)&local_8 + 2),(undefined2 *)((int)&param_1 + 2),
                        (undefined2 *)((int)&param_2 + 2));
-    return (((int)param_2._2_2_ <= SHORT_007fb244 + -2) - 1 & 0xffeb) + 0x16;
+    return (((int)param_2._2_2_ <= g_worldGrid.sizeZ + -2) - 1 & 0xffeb) + 0x16;
   case CASE_11:
     iVar5 = thunk_FUN_00493cd0(this);
     if (iVar5 == 0) {
@@ -1126,42 +1065,37 @@ LAB_00485002:
       return 0;
     }
     if (this_00[8] == 0x14) {
-      bVar1 = *(byte *)(this_00 + 9);
-      bVar2 = *(byte *)((int)this + 0x24);
-      param_2 = (int *)CONCAT31(param_2._1_3_,bVar1);
-      param_1 = CONCAT31(param_1._1_3_,bVar2);
+      bVar8 = *(byte *)(this_00 + 9);
+      bVar1 = *(byte *)((int)this + 0x24);
+      param_2 = (int *)CONCAT31(param_2._1_3_,bVar8);
+      param_1 = CONCAT31(param_1._1_3_,bVar1);
       if (DAT_00808a8f == '\0') {
-        if (bVar1 == bVar2) {
+        if (bVar8 == bVar1) {
 LAB_00484e9f:
           iVar5 = 0;
         }
         else {
-          uVar6 = (uint)bVar1;
-          uVar7 = (uint)bVar2;
-          cVar3 = *(char *)((int)&DAT_00808a4f + uVar6 * 8 + uVar7);
-          if ((cVar3 == '\0') && (*(char *)((int)&DAT_00808a4f + uVar7 * 8 + uVar6) == '\0')) {
+          bVar2 = g_playerRelationMatrix[bVar8][bVar1];
+          if ((bVar2 == 0) && (g_playerRelationMatrix[bVar1][bVar8] == 0)) {
             iVar5 = -2;
           }
-          else if ((cVar3 == '\x01') && (*(char *)((int)&DAT_00808a4f + uVar7 * 8 + uVar6) == '\0'))
-          {
+          else if ((bVar2 == 1) && (g_playerRelationMatrix[bVar1][bVar8] == 0)) {
             iVar5 = -1;
           }
-          else if ((cVar3 == '\0') && (*(char *)((int)&DAT_00808a4f + uVar7 * 8 + uVar6) == '\x01'))
-          {
+          else if ((bVar2 == 0) && (g_playerRelationMatrix[bVar1][bVar8] == 1)) {
             iVar5 = 1;
           }
           else {
-            if ((cVar3 != '\x01') || (*(char *)((int)&DAT_00808a4f + uVar7 * 8 + uVar6) != '\x01'))
-            goto LAB_00484e9f;
+            if ((bVar2 != 1) || (g_playerRelationMatrix[bVar1][bVar8] != 1)) goto LAB_00484e9f;
             iVar5 = 2;
           }
         }
-        bVar8 = iVar5 < 0;
+        bVar9 = iVar5 < 0;
       }
       else {
-        bVar8 = (&DAT_008087ea)[(uint)bVar2 * 0x51] != (&DAT_008087ea)[(uint)bVar1 * 0x51];
+        bVar9 = (&DAT_008087ea)[(uint)bVar1 * 0x51] != (&DAT_008087ea)[(uint)bVar8 * 0x51];
       }
-      if ((!bVar8) || (iVar5 = (**(code **)(*this_00 + 0x120))(), iVar5 == 1)) goto LAB_00484ed2;
+      if ((!bVar9) || (iVar5 = (**(code **)(*this_00 + 0x120))(), iVar5 == 1)) goto LAB_00484ed2;
     }
     if ((this_00[8] != 0x172) && (this_00[8] != 0x1a4)) {
       return 1;

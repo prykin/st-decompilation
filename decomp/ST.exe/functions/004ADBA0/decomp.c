@@ -4,7 +4,7 @@
    STT3DSprC::RestoreSpr */
 
 void __thiscall
-STT3DSprC::RestoreSpr(STT3DSprC *this,int *param_1,AnonShape_004ADBA0_E7CEFF88 *param_2)
+STT3DSprC::RestoreSpr(STT3DSprC *this,int *param_1,AnonShape_004AD790_77673787 *param_2)
 
 {
   byte *pbVar1;

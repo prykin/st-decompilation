@@ -87,15 +87,15 @@ void __thiscall SettMapMTy::PrepPlList(SettMapMTy *this,int *param_1)
         else {
           pvVar6 = (void *)0x0;
         }
-        if ((pvVar6 != (void *)0x0) && (*(byte **)((int)pvVar6 + 0x50) != (byte *)0x0)) {
-          FUN_006ae110(*(byte **)((int)pvVar6 + 0x50));
+        if ((pvVar6 != (void *)0x0) && (*(DArrayTy **)((int)pvVar6 + 0x50) != (DArrayTy *)0x0)) {
+          DArrayDestroy(*(DArrayTy **)((int)pvVar6 + 0x50));
         }
         pDVar7 = pSVar12->field_1F84;
         uVar13 = uVar13 + 1;
         bVar17 = uVar13 < pDVar7->count;
       } while ((int)uVar13 < (int)pDVar7->count);
     }
-    FUN_006ae110((byte *)pSVar12->field_1F84);
+    DArrayDestroy(pSVar12->field_1F84);
   }
   pDVar7 = (DArrayTy *)Library::DKW::TBL::FUN_006ae290((uint *)0x0,8,0x60,8);
   pSVar12->field_1F84 = pDVar7;

@@ -15,18 +15,18 @@ void __thiscall ChooseMapTy::PaintChooseMap(ChooseMapTy *this,char param_1)
   code *pcVar2;
   ChooseMapTy *pCVar3;
   int errorCode;
-  UINT uID;
-  uint *puVar4;
-  int iVar5;
+  UINT resourceId;
+  uint *extraout_EAX;
+  int iVar4;
   MMMObjTy *this_00;
   undefined1 *this_01;
   StartServTy *this_02;
   undefined4 unaff_EBX;
   void *unaff_ESI;
+  uint uVar5;
   uint uVar6;
-  uint uVar7;
-  ccFntTy *pcVar8;
-  undefined4 uVar9;
+  ccFntTy *pcVar7;
+  undefined4 uVar8;
   InternalExceptionFrame local_4c;
   ChooseMapTy *local_8;
   
@@ -36,9 +36,9 @@ void __thiscall ChooseMapTy::PaintChooseMap(ChooseMapTy *this,char param_1)
   errorCode = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0,unaff_ESI,unaff_EBX);
   if (errorCode != 0) {
     g_currentExceptionFrame = local_4c.previous;
-    iVar5 = ReportDebugMessage(s_E____titans_Start_load_obj_cpp_007cc728,0x1bb,0,errorCode,
+    iVar4 = ReportDebugMessage(s_E____titans_Start_load_obj_cpp_007cc728,0x1bb,0,errorCode,
                                &DAT_007a4ccc,s_ChooseMapTy__PaintChooseMap_007cc7cc);
-    if (iVar5 != 0) {
+    if (iVar4 != 0) {
       pcVar2 = (code *)swi(3);
       (*pcVar2)();
       return;
@@ -74,12 +74,12 @@ void __thiscall ChooseMapTy::PaintChooseMap(ChooseMapTy *this,char param_1)
   case CASE_2:
   case CASE_4:
   case CASE_5:
-    pcVar8 = (ccFntTy *)PTR_0081176c->field_0030;
-    uID = 0x26ae;
+    pcVar7 = (ccFntTy *)PTR_0081176c->field_0030;
+    resourceId = 0x26ae;
     break;
   case CASE_3:
-    pcVar8 = (ccFntTy *)PTR_0081176c->field_0030;
-    uID = 0x26af;
+    pcVar7 = (ccFntTy *)PTR_0081176c->field_0030;
+    resourceId = 0x26af;
     break;
   default:
     goto switchD_005ad1b8_caseD_6;
@@ -87,18 +87,18 @@ void __thiscall ChooseMapTy::PaintChooseMap(ChooseMapTy *this,char param_1)
   case CASE_A:
   case CASE_B:
   case CASE_C:
-    pcVar8 = (ccFntTy *)PTR_0081176c->field_0030;
-    uID = 0x26ad;
+    pcVar7 = (ccFntTy *)PTR_0081176c->field_0030;
+    resourceId = 0x26ad;
     break;
   case CASE_13:
-    pcVar8 = (ccFntTy *)PTR_0081176c->field_0030;
-    uID = (DAT_00803400 != '\f') + 0x26ad;
+    pcVar7 = (ccFntTy *)PTR_0081176c->field_0030;
+    resourceId = (DAT_00803400 != '\f') + 0x26ad;
   }
-  uVar9 = 0;
-  uVar7 = 0xffffffff;
-  uVar6 = 0xfffffffe;
-  puVar4 = (uint *)FUN_006b0140(uID,HINSTANCE_00807618);
-  StartServTy::WrTextDDX(this_02,0,0xe9,0x14,0x14c,0x18,puVar4,uVar6,uVar7,pcVar8,uVar9);
+  uVar8 = 0;
+  uVar6 = 0xffffffff;
+  uVar5 = 0xfffffffe;
+  LoadResourceString(resourceId,HINSTANCE_00807618);
+  StartServTy::WrTextDDX(this_02,0,0xe9,0x14,0x14c,0x18,extraout_EAX,uVar5,uVar6,pcVar7,uVar8);
 switchD_005ad1b8_caseD_6:
   g_currentExceptionFrame = local_4c.previous;
   return;

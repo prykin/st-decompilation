@@ -105,10 +105,10 @@ void __thiscall WaitTy::DoneWait(WaitTy *this)
     }
     *(undefined4 *)&pMVar2[0x1e].field_0x56 = 0;
     if (*(int *)&pMVar2[0x1e].field_0x52 != 0) {
-      FUN_006ab060((LPVOID *)&pMVar2[0x1e].field_0x52);
+      FreeAndNull((void **)&pMVar2[0x1e].field_0x52);
     }
     if (*(int *)&pMVar2[0x1d].field_0xcc != 0) {
-      FUN_006ab060((LPVOID *)&pMVar2[0x1d].field_0xcc);
+      FreeAndNull((void **)&pMVar2[0x1d].field_0xcc);
     }
     if ((*(int *)&pMVar2->field_0x4d == 0x6102) &&
        (this_00 = *(MMsgTy **)(*(int *)&pMVar2[0x1d].field_0xa4 + 0x2e6), this_00 != (MMsgTy *)0x0))

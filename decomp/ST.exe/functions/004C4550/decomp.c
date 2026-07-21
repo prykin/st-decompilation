@@ -222,13 +222,14 @@ undefined4 __thiscall FUN_004c4550(void *this,int *param_1)
       piVar1 = (int *)((int)this + (int)param_1 * 0x80 + 0x2a5);
       iVar3 = (int)param_1 * 0x80;
       param_1 = piVar1;
-      thunk_FUN_004db160(g_sTAllPlayers_007FA174,*(int *)((int)this + 0x24),0xa8,piVar1,piVar9,
-                         (int *)((int)this + iVar3 + 0x2ad),&local_1c);
+      SubmarineTitans::Recovered::HiddenThis::AnonReceiver_004DB160::thunk_FUN_004db160
+                ((AnonReceiver_004DB160 *)g_sTAllPlayers_007FA174,*(int *)((int)this + 0x24),0xa8,
+                 piVar1,piVar9,(int *)((int)this + iVar3 + 0x2ad),&local_1c);
       thunk_FUN_00584a30(*(undefined4 *)((int)this + 0x4e0),*(undefined4 *)((int)this + 0x4e4),
                          *(undefined4 *)((int)this + 0x4e8),*param_1 * 0xc9 + 100,
                          *piVar9 * 0xc9 + 100,*(undefined4 *)((int)this + 0x24),local_1c,
                          *(undefined4 *)((int)this + 0x18),*(undefined2 *)((int)this + 0x32));
-      uVar4 = thunk_FUN_004406c0(DAT_0080874d);
+      uVar4 = GetPlayerRaceId(DAT_0080874d);
       uVar4 = uVar4 & 0xff;
       if (uVar4 == 1) {
         (**(code **)(*(int *)this + 0x90))(6,0x9e);
@@ -248,14 +249,15 @@ undefined4 __thiscall FUN_004c4550(void *this,int *param_1)
       piVar1 = (int *)((int)this + (int)param_1 * 0x80 + 0x2a5);
       iVar3 = (int)param_1 * 0x80;
       param_1 = piVar1;
-      thunk_FUN_004db160(g_sTAllPlayers_007FA174,*(int *)((int)this + 0x24),0xa8,piVar1,piVar9,
-                         (int *)((int)this + iVar3 + 0x2ad),&local_1c);
+      SubmarineTitans::Recovered::HiddenThis::AnonReceiver_004DB160::thunk_FUN_004db160
+                ((AnonReceiver_004DB160 *)g_sTAllPlayers_007FA174,*(int *)((int)this + 0x24),0xa8,
+                 piVar1,piVar9,(int *)((int)this + iVar3 + 0x2ad),&local_1c);
       thunk_FUN_006405f0(0xa8,*(undefined4 *)((int)this + 0x24),*(undefined4 *)((int)this + 0x18),
                          *(undefined2 *)((int)this + 0x32),(short)*(undefined4 *)((int)this + 0x4e0)
                          ,(short)*(undefined4 *)((int)this + 0x4e4),
                          (short)*(undefined4 *)((int)this + 0x4e8),(short)*param_1 * 0xc9 + 100,
                          (short)*piVar9 * 0xc9 + 100,(short)local_1c);
-      uVar4 = thunk_FUN_004406c0(DAT_0080874d);
+      uVar4 = GetPlayerRaceId(DAT_0080874d);
       uVar4 = uVar4 & 0xff;
       if (uVar4 == 1) {
         (**(code **)(*(int *)this + 0x90))(6,0x98);
@@ -292,14 +294,15 @@ undefined4 __thiscall FUN_004c4550(void *this,int *param_1)
       piVar1 = (int *)((int)this + (int)param_1 * 0x80 + 0x2a5);
       iVar3 = (int)param_1 * 0x80;
       param_1 = piVar1;
-      thunk_FUN_004db160(g_sTAllPlayers_007FA174,*(int *)((int)this + 0x24),0xa8,piVar1,piVar9,
-                         (int *)((int)this + iVar3 + 0x2ad),&local_1c);
+      SubmarineTitans::Recovered::HiddenThis::AnonReceiver_004DB160::thunk_FUN_004db160
+                ((AnonReceiver_004DB160 *)g_sTAllPlayers_007FA174,*(int *)((int)this + 0x24),0xa8,
+                 piVar1,piVar9,(int *)((int)this + iVar3 + 0x2ad),&local_1c);
       thunk_FUN_006405f0(0xbe,*(undefined4 *)((int)this + 0x24),*(undefined4 *)((int)this + 0x18),
                          *(undefined2 *)((int)this + 0x32),(short)*(undefined4 *)((int)this + 0x4e0)
                          ,(short)*(undefined4 *)((int)this + 0x4e4),
                          (short)*(undefined4 *)((int)this + 0x4e8),(short)*param_1 * 0xc9 + 100,
                          (short)*piVar9 * 0xc9 + 100,(short)local_1c);
-      uVar4 = thunk_FUN_004406c0(DAT_0080874d);
+      uVar4 = GetPlayerRaceId(DAT_0080874d);
       uVar4 = uVar4 & 0xff;
       if (uVar4 == 1) {
         (**(code **)(*(int *)this + 0x90))(6,0x9b);
@@ -364,12 +367,12 @@ undefined4 __thiscall FUN_004c4550(void *this,int *param_1)
           sVar7 = ((short)(local_18 / 0xc9) + sVar7) -
                   (short)((longlong)local_18 * 0x28c1979 >> 0x3f);
         }
-        if ((((sVar7 < 0) || (SHORT_007fb240 <= sVar7)) || (sVar6 < 0)) ||
-           (((SHORT_007fb242 <= sVar6 || (sVar8 = (short)local_14, sVar8 < 0)) ||
-            ((SHORT_007fb244 <= sVar8 ||
-             (g_worldCells
-              [(int)sVar6 * (int)SHORT_007fb240 + (int)sVar8 * (int)SHORT_007fb246 + (int)sVar7].
-              objects[1] == (STWorldObject *)0x0)))))) {
+        if ((((sVar7 < 0) || (g_worldGrid.sizeX <= sVar7)) || (sVar6 < 0)) ||
+           (((g_worldGrid.sizeY <= sVar6 || (sVar8 = (short)local_14, sVar8 < 0)) ||
+            ((g_worldGrid.sizeZ <= sVar8 ||
+             (g_worldGrid.cells
+              [(int)sVar6 * (int)g_worldGrid.sizeX + (int)sVar8 * (int)g_worldGrid.planeStride +
+               (int)sVar7].objects[1] == (STWorldObject *)0x0)))))) {
           STJellyManC::Error(local_24,local_18,param_1,local_10);
           *(undefined4 *)((int)this + (int)piVar9 * 0x80 + 0x29d) = 1;
           *(int *)((int)this + (int)piVar9 * 0x80 + 0x2c5) =

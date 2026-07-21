@@ -13,7 +13,7 @@ undefined4 __thiscall FUN_004b9bb0(void *this,int param_1,undefined2 param_2,und
   
   iVar2 = *(int *)((int)this + 0x241) - param_1;
   *(int *)((int)this + 0x241) = iVar2;
-  uVar1 = thunk_FUN_004406c0(*(char *)((int)this + 0x23d));
+  uVar1 = GetPlayerRaceId(*(char *)((int)this + 0x23d));
   *(int *)((int)this + 0x5d7) =
        (iVar2 * 100) /
        *(int *)(&DAT_007e4178 + ((uVar1 & 0xff) + *(int *)((int)this + 0x235) * 3) * 4);

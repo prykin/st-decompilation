@@ -8,7 +8,7 @@ undefined4 __thiscall FUN_005fd3a0(void *this,int param_1)
   undefined4 *puVar4;
   undefined4 *puVar5;
   byte *local_10;
-  uint local_c;
+  AnonShape_0060EA30_DCEB68AD *local_c;
   short local_8;
   short local_6;
   
@@ -65,7 +65,8 @@ LAB_005fd4eb:
         }
         *(undefined1 *)puVar4 = 0;
         if (*(char *)((int)this + 0x232) != '\0') {
-          thunk_FUN_005fdb50(this,0,-1);
+          SubmarineTitans::Recovered::HiddenThis::AnonReceiver_005FDB50::thunk_FUN_005fdb50
+                    (this,0,-1);
           return 0;
         }
       }
@@ -74,7 +75,7 @@ LAB_005fd4eb:
   else if ((uVar1 == 0x10f) &&
           (local_10 = (byte *)thunk_FUN_006012d0(this,(int *)&local_c), local_10 != (byte *)0x0)) {
     STPlaySystemC::SaveObjData(PTR_00802a38,*(undefined4 *)((int)this + 0x18),local_10,local_c);
-    FUN_006ab060(&local_10);
+    FreeAndNull(&local_10);
   }
   return 0;
 }

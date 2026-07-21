@@ -1,5 +1,5 @@
 
-void __fastcall FUN_00694c80(AnonShape_00694C80_7D3552BD *param_1)
+void __fastcall FUN_00694c80(AnonNested_0075DA80_01B6_323D7698 *param_1)
 
 {
   if ((param_1->field_0010 != 0) && (param_1->field_0014 != 0)) {

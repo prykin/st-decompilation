@@ -1,0 +1,10 @@
+program=ST.exe
+candidate_functions=262
+unsettled_type_propagation_functions=4
+proposals=5
+auto_apply=4
+review_only=1
+decompile_failures=0
+policy=Only STPointerShapeApplier-owned four-byte locals in unsettled functions are considered.
+policy_apply=Automatic reset requires a narrow scalar source, or both a scalar source and an explicit scalar cast. Address-of-member use alone remains review-only.
+effect=Reset to undefined4 removes a function-wide pointer constraint; it does not rename or split variables.

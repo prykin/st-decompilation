@@ -1,4 +1,4 @@
-FUN_0042a940:
+STAllPlayersC::STAllPlayersC:
 0042A940  56                        PUSH ESI
 0042A941  57                        PUSH EDI
 0042A942  8B F1                     MOV ESI,ECX

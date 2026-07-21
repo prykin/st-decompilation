@@ -24,7 +24,7 @@ undefined4 __thiscall FUN_004e96c0(void *this,int *param_1)
         iVar1 = 100;
       }
       else {
-        uVar2 = thunk_FUN_004406c0((char)param_1[9]);
+        uVar2 = GetPlayerRaceId((char)param_1[9]);
         iVar1 = (**(code **)(*param_1 + 0x2c))();
         iVar1 = *(int *)(&DAT_007e37b0 + ((uVar2 & 0xff) + iVar1 * 3) * 4);
       }
@@ -42,7 +42,7 @@ undefined4 __thiscall FUN_004e96c0(void *this,int *param_1)
   if (*(int *)((int)this + 0x4f0) != 0) {
     if (DAT_00811798 == (void *)0x0) {
       if (*(uint *)((int)this + 0x24) == (uint)*(byte *)(*(int *)((int)this + 0x10) + 0x112d)) {
-        uVar2 = thunk_FUN_004406c0(*(char *)((int)this + 0x23d));
+        uVar2 = GetPlayerRaceId(*(char *)((int)this + 0x23d));
         uVar2 = uVar2 & 0xff;
         if (uVar2 == 1) {
           iVar1 = *(int *)this;

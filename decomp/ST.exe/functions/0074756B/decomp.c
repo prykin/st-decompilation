@@ -10,7 +10,7 @@ undefined4 * __thiscall FUN_0074756b(void *this,AnonShape_0074756B_58F08DE7 *par
   *(AnonShape_0074756B_58F08DE7 **)((int)this + 0xc) = param_1;
   *(undefined4 *)((int)this + 0x14) = 1;
   FUN_0074de63((undefined4 *)((int)this + 0x18));
-  *(undefined ***)this = &PTR_FUN_007a1108;
+  *(VTable_007A1108 **)this = &VTable_007A1108;
   piVar1 = (int *)(*(int *)((int)this + 0xc) + 0xc);
   (**(code **)(*piVar1 + 4))(piVar1);
   if (param_1 == (AnonShape_0074756B_58F08DE7 *)0x0) {

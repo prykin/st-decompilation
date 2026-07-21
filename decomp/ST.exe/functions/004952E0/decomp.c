@@ -20,24 +20,25 @@ bool __thiscall STBoatC::sub_004952E0(STBoatC *this)
   sVar1 = this->field_066F;
   sVar2 = this->field_0673;
   sVar3 = this->field_0671;
-  if (((((-1 < sVar1) && (sVar1 < SHORT_007fb240)) && (-1 < sVar3)) &&
-      ((sVar3 < SHORT_007fb242 && (-1 < sVar2)))) &&
-     ((sVar2 < SHORT_007fb244 &&
-      ((pSVar5 = g_worldCells
-                 [(int)SHORT_007fb246 * (int)sVar2 + (int)SHORT_007fb240 * (int)sVar3 + (int)sVar1].
-                 objects[0], pSVar5 != (STWorldObject *)0x0 && (pSVar5->value_20 == 1000)))))) {
+  if (((((-1 < sVar1) && (sVar1 < g_worldGrid.sizeX)) && (-1 < sVar3)) &&
+      ((sVar3 < g_worldGrid.sizeY && (-1 < sVar2)))) &&
+     ((sVar2 < g_worldGrid.sizeZ &&
+      ((pSVar5 = g_worldGrid.cells
+                 [(int)g_worldGrid.planeStride * (int)sVar2 + (int)g_worldGrid.sizeX * (int)sVar3 +
+                  (int)sVar1].objects[0], pSVar5 != (STWorldObject *)0x0 &&
+       (pSVar5->value_20 == 1000)))))) {
     thunk_FUN_004b7d50(pSVar5,this);
   }
   uVar4 = this->field_0423;
   uVar7 = (uint)uVar4;
   sVar1 = this->field_0427;
   sVar2 = this->field_0425;
-  if ((((-1 < (short)uVar4) && ((short)uVar4 < SHORT_007fb240)) && (-1 < sVar2)) &&
-     (((sVar2 < SHORT_007fb242 && (-1 < sVar1)) && (sVar1 < SHORT_007fb244)))) {
+  if ((((-1 < (short)uVar4) && ((short)uVar4 < g_worldGrid.sizeX)) && (-1 < sVar2)) &&
+     (((sVar2 < g_worldGrid.sizeY && (-1 < sVar1)) && (sVar1 < g_worldGrid.sizeZ)))) {
     uVar7 = (uint)(short)uVar4;
-    pSVar5 = g_worldCells
-             [(int)SHORT_007fb246 * (int)sVar1 + (int)SHORT_007fb240 * (int)sVar2 + uVar7].objects
-             [0];
+    pSVar5 = g_worldGrid.cells
+             [(int)g_worldGrid.planeStride * (int)sVar1 + (int)g_worldGrid.sizeX * (int)sVar2 +
+              uVar7].objects[0];
     if ((pSVar5 != (STWorldObject *)0x0) && (pSVar5->value_20 == 1000)) {
       bVar6 = thunk_FUN_004b7d50(pSVar5,this);
       uVar7 = (uint)bVar6;

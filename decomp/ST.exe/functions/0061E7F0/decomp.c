@@ -127,9 +127,9 @@ LAB_0061eb1a:
           ;
           if (((local_70 < _DAT_0079034c) || (local_6c < _DAT_0079034c)) ||
              ((local_68 < _DAT_0079034c ||
-              (((lVar16 = Library::MSVCRT::__ftol(), SHORT_007fb240 <= (short)lVar16 ||
-                (lVar16 = Library::MSVCRT::__ftol(), SHORT_007fb242 <= (short)lVar16)) ||
-               (lVar16 = Library::MSVCRT::__ftol(), SHORT_007fb244 <= (short)lVar16)))))) {
+              (((lVar16 = Library::MSVCRT::__ftol(), g_worldGrid.sizeX <= (short)lVar16 ||
+                (lVar16 = Library::MSVCRT::__ftol(), g_worldGrid.sizeY <= (short)lVar16)) ||
+               (lVar16 = Library::MSVCRT::__ftol(), g_worldGrid.sizeZ <= (short)lVar16)))))) {
             *(undefined4 *)(param_1->field_0057 + local_c * 4) = 0xfffffffe;
             iVar15 = 0;
             if (param_1->field_0053 < 1) goto LAB_0061f035;
@@ -155,8 +155,9 @@ LAB_0061eb1a:
             lVar16 = Library::MSVCRT::__ftol();
             iVar11 = (int)lVar16;
             lVar16 = Library::MSVCRT::__ftol();
-            thunk_FUN_00601500(param_1 + 1,(int)lVar16,iVar11,iVar10,iVar9,iVar8,iVar7,iVar17,iVar18
-                               ,iVar15,uVar19,iVar20,uVar5,uVar21);
+            SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00601500::thunk_FUN_00601500
+                      ((AnonReceiver_00601500 *)(param_1 + 1),(int)lVar16,iVar11,iVar10,iVar9,iVar8,
+                       iVar7,iVar17,iVar18,iVar15,uVar19,iVar20,uVar5,uVar21);
           }
           if (*(int *)(param_1->field_0057 + uVar14 * 4) == 0) {
             uVar12 = 2;

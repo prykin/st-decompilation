@@ -40,7 +40,7 @@ void __thiscall FUN_00498d20(void *this,Global_sub_00498D20_param_1Enum orderTyp
       *(uint **)((int)this + 0xef) = puVar1;
       if (0 < (int)uVar5) {
         do {
-          FUN_006acc70(data,uVar6,&local_8);
+          DArrayGetElement(data,uVar6,&local_8);
           Library::DKW::TBL::FUN_006ae140(*(uint **)((int)this + 0xef),uVar6,&local_8);
           uVar6 = uVar6 + 1;
         } while ((int)uVar6 < (int)uVar5);
@@ -65,7 +65,7 @@ void __thiscall FUN_00498d20(void *this,Global_sub_00498D20_param_1Enum orderTyp
       *(uint **)((int)this + 0x160) = puVar1;
       if (0 < (int)uVar5) {
         do {
-          FUN_006acc70(data,uVar6,(undefined4 *)((int)&orderType + 2));
+          DArrayGetElement(data,uVar6,(byte *)((int)&orderType + 2));
           Library::DKW::TBL::FUN_006ae140
                     (*(uint **)((int)this + 0x160),uVar6,(undefined4 *)((int)&orderType + 2));
           uVar6 = uVar6 + 1;
@@ -91,7 +91,7 @@ void __thiscall FUN_00498d20(void *this,Global_sub_00498D20_param_1Enum orderTyp
       *(uint **)((int)this + 0x168) = puVar1;
       if (0 < (int)uVar5) {
         do {
-          FUN_006acc70(data,uVar6,(undefined4 *)((int)&orderType + 2));
+          DArrayGetElement(data,uVar6,(byte *)((int)&orderType + 2));
           Library::DKW::TBL::FUN_006ae140
                     (*(uint **)((int)this + 0x168),uVar6,(undefined4 *)((int)&orderType + 2));
           uVar6 = uVar6 + 1;
@@ -149,7 +149,7 @@ void __thiscall FUN_00498d20(void *this,Global_sub_00498D20_param_1Enum orderTyp
       *(uint **)((int)this + 0x10f) = puVar1;
       if (0 < (int)uVar5) {
         do {
-          FUN_006acc70(data,uVar6,(undefined4 *)((int)&orderType + 2));
+          DArrayGetElement(data,uVar6,(byte *)((int)&orderType + 2));
           Library::DKW::TBL::FUN_006ae140
                     (*(uint **)((int)this + 0x10f),uVar6,(undefined4 *)((int)&orderType + 2));
           uVar6 = uVar6 + 1;
@@ -164,7 +164,7 @@ void __thiscall FUN_00498d20(void *this,Global_sub_00498D20_param_1Enum orderTyp
       *(uint **)((int)this + 0x127) = puVar1;
       if (0 < (int)uVar5) {
         do {
-          FUN_006acc70(data,uVar6,(undefined4 *)((int)&orderType + 2));
+          DArrayGetElement(data,uVar6,(byte *)((int)&orderType + 2));
           Library::DKW::TBL::FUN_006ae140
                     (*(uint **)((int)this + 0x127),uVar6,(undefined4 *)((int)&orderType + 2));
           uVar6 = uVar6 + 1;

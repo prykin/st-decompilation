@@ -38,7 +38,7 @@ void __thiscall ResearchPanelTy::Update(ResearchPanelTy *this)
       uVar2 = *(uint *)((&this_00->field_027A)[(byte)this_00->field_0278] + 0xc);
     }
     thunk_FUN_0053f510(this_00,uVar2,uVar4);
-    thunk_FUN_0053c620((AnonShape_0053C620_58AD6CA0 *)this_00);
+    thunk_FUN_0053c620((AnonShape_004EF140_16642BA0 *)this_00);
     g_currentExceptionFrame = pIVar5;
     return;
   }

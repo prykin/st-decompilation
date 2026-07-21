@@ -99,7 +99,8 @@ undefined4 __fastcall FUN_00600750(AnonShape_00600750_A7773F7A *param_1)
         else {
           *(undefined4 *)(iVar6 + 0x39 + param_1->field_0233) = 3;
           if ((param_1->field_0232 == '\0') ||
-             (iVar3 = thunk_FUN_005fdb50(param_1,1,iVar4), iVar3 != 0)) {
+             (iVar3 = SubmarineTitans::Recovered::HiddenThis::AnonReceiver_005FDB50::
+                      thunk_FUN_005fdb50((AnonReceiver_005FDB50 *)param_1,1,iVar4), iVar3 != 0)) {
 LAB_00600928:
             thunk_FUN_005fd940(param_1,iVar4);
           }
@@ -146,7 +147,8 @@ LAB_00600928:
         if (((*(uint *)(iVar3 + 0x3d) <= (uint)PTR_00802a38->field_00E4) &&
             (iVar3 = thunk_FUN_005ff1f0(param_1,local_8,3,param_1->field_022E), -1 < iVar3)) &&
            (iVar3 = thunk_FUN_005fff60(param_1,local_8,iVar3), iVar4 = local_8, iVar3 != 0)) {
-          iVar3 = thunk_FUN_005fdb50(param_1,0,local_8);
+          iVar3 = SubmarineTitans::Recovered::HiddenThis::AnonReceiver_005FDB50::thunk_FUN_005fdb50
+                            ((AnonReceiver_005FDB50 *)param_1,0,local_8);
           if (iVar3 != 0) goto LAB_00600928;
           *(undefined4 *)(iVar6 + 0x39 + param_1->field_0233) = 1;
         }

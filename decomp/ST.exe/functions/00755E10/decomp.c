@@ -16,10 +16,10 @@ int FUN_00755e10(AnonShape_00755E10_BD685653 *param_1,int param_2,undefined4 par
   iVar3 = param_1->field_000C;
   iVar1 = *(int *)(iVar3 + 0x1c);
   iVar5 = *(int *)(iVar3 + 0x44 + iVar1 * 8);
-  iVar1 = FUN_00753b80((AnonShape_00753B80_E259A731 *)param_1,
+  iVar1 = FUN_00753b80((AnonShape_00750F20_F8C16F98 *)param_1,
                        *(undefined4 *)(iVar3 + 0x40 + iVar1 * 8),iVar1);
   *(uint *)(param_1->field_0008 + 8) = *(uint *)(param_1->field_0008 + 8) | 0x10;
-  iVar2 = FUN_00757450((AnonShape_00757450_3CCFEA7C *)param_1,iVar5);
+  iVar2 = FUN_00757450((AnonShape_00753C80_4C8E695D *)param_1,iVar5);
   iVar3 = param_1->field_000C;
   if (iVar2 < *(short *)(iVar1 + 8)) {
     if (*(short *)(iVar3 + 0x34) == 0) {
@@ -37,10 +37,10 @@ int FUN_00755e10(AnonShape_00755E10_BD685653 *param_1,int param_2,undefined4 par
       iVar3 = param_1->field_000C;
       uVar7 = *(undefined4 *)(*(int *)(iVar3 + 0x44 + *(int *)(iVar3 + 0x1c) * 8) + 0x10 + iVar1);
       *(int *)(iVar3 + 0x1c) = *(int *)(iVar3 + 0x1c) + 1;
-      iVar1 = FUN_00753b80((AnonShape_00753B80_E259A731 *)param_1,uVar7,
+      iVar1 = FUN_00753b80((AnonShape_00750F20_F8C16F98 *)param_1,uVar7,
                            *(int *)(param_1->field_000C + 0x1c));
       iVar3 = param_1->field_0010;
-      iVar5 = FUN_00753b80((AnonShape_00753B80_E259A731 *)param_1,param_3,
+      iVar5 = FUN_00753b80((AnonShape_00750F20_F8C16F98 *)param_1,param_3,
                            *(int *)(param_1->field_000C + 0x1c));
       if ((iVar6 <= (int)((int)*(short *)(iVar1 + 8) + (int)*(short *)(iVar5 + 8) + uVar4)) &&
          ((int)*(short *)(iVar1 + 8) <= (int)((int)*(short *)(iVar5 + 8) + uVar4))) {
@@ -102,10 +102,10 @@ int FUN_00755e10(AnonShape_00755E10_BD685653 *param_1,int param_2,undefined4 par
         uVar7 = *(undefined4 *)(iVar2 + 0x10 + iVar1);
       }
       *(int *)(iVar3 + 0x1c) = *(int *)(iVar3 + 0x1c) + 1;
-      iVar3 = FUN_00753b80((AnonShape_00753B80_E259A731 *)param_1,uVar7,
+      iVar3 = FUN_00753b80((AnonShape_00750F20_F8C16F98 *)param_1,uVar7,
                            *(int *)(param_1->field_000C + 0x1c));
       iVar1 = FUN_00753c80((AnonShape_00753C80_4C8E695D *)param_1,(int)*(short *)(iVar3 + 8));
-      iVar2 = FUN_00753b80((AnonShape_00753B80_E259A731 *)param_1,param_3,
+      iVar2 = FUN_00753b80((AnonShape_00750F20_F8C16F98 *)param_1,param_3,
                            *(int *)(param_1->field_000C + 0x1c));
       if ((iVar6 <= (int)((int)*(short *)(iVar2 + 8) + (int)*(short *)(iVar3 + 8) + uVar4)) &&
          ((int)*(short *)(iVar3 + 8) <= (int)((int)*(short *)(iVar2 + 8) + uVar4))) {

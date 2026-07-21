@@ -1,5 +1,5 @@
 
-void __fastcall FUN_00592620(AnonShape_00592620_9AEC2C08 *param_1)
+void __fastcall FUN_00592620(AnonShape_005925A0_ACA54D35 *param_1)
 
 {
   int *piVar1;

@@ -223,7 +223,7 @@ STAllPlayersC::PutOnPlaceGuardBoats
               local_8 = local_1c;
               do {
                 psVar13 = psVar13 + 3;
-                FUN_006acc70((AnonShape_006ACC70_C8641025 *)param_8,local_8,&param_5);
+                DArrayGetElement(param_8,local_8,&param_5);
                 pSVar7 = (STBoatC *)GetObjPtr(local_28,param_1,param_5,CASE_1);
                 if (pSVar7 == (STBoatC *)0x0) {
                   iVar5 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0x2d64,0,0,
@@ -249,7 +249,8 @@ STAllPlayersC::PutOnPlaceGuardBoats
                 local_c = CONCAT22(psVar13[1],sVar4);
                 iVar8 = thunk_FUN_0045ff10((int)pSVar7);
                 if (iVar8 == 5) {
-                  thunk_FUN_00490cd0(pSVar7,local_18,local_14,local_10,local_c);
+                  SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00490CD0::thunk_FUN_00490cd0
+                            ((AnonReceiver_00490CD0 *)pSVar7,local_18,local_14,local_10,local_c);
                 }
                 else {
                   STBoatC::CmdToObj(pSVar7,CASE_5,&local_18);
@@ -282,7 +283,7 @@ STAllPlayersC::PutOnPlaceGuardBoats
                 puVar12 = &local_be;
                 uVar14 = local_8;
                 do {
-                  FUN_006acc70((AnonShape_006ACC70_C8641025 *)param_8,uVar14,&param_5);
+                  DArrayGetElement(param_8,uVar14,&param_5);
                   pSVar7 = (STBoatC *)GetObjPtr(local_28,param_1,param_5,CASE_1);
                   if (pSVar7 == (STBoatC *)0x0) {
                     iVar5 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0x2d83,0,0,
@@ -299,7 +300,9 @@ STAllPlayersC::PutOnPlaceGuardBoats
                   local_c = CONCAT22(*puVar12,puVar12[-1] + sVar2);
                   iVar5 = thunk_FUN_0045ff10((int)pSVar7);
                   if (iVar5 == 5) {
-                    thunk_FUN_00490cd0(pSVar7,local_18,local_14,local_10,local_c);
+                    SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00490CD0::
+                    thunk_FUN_00490cd0((AnonReceiver_00490CD0 *)pSVar7,local_18,local_14,local_10,
+                                       local_c);
                   }
                   else {
                     STBoatC::CmdToObj(pSVar7,CASE_5,&local_18);
@@ -332,7 +335,7 @@ STAllPlayersC::PutOnPlaceGuardBoats
                 local_8 = local_1c;
                 do {
                   psVar13 = psVar13 + 3;
-                  FUN_006acc70((AnonShape_006ACC70_C8641025 *)param_8,local_8,&param_5);
+                  DArrayGetElement(param_8,local_8,&param_5);
                   pSVar7 = (STBoatC *)GetObjPtr(local_28,param_1,param_5,CASE_1);
                   if (pSVar7 == (STBoatC *)0x0) {
                     iVar5 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0x2d45,0,0,
@@ -358,7 +361,9 @@ STAllPlayersC::PutOnPlaceGuardBoats
                   local_c = CONCAT22(psVar13[1],sVar4);
                   iVar8 = thunk_FUN_0045ff10((int)pSVar7);
                   if (iVar8 == 5) {
-                    thunk_FUN_00490cd0(pSVar7,local_18,local_14,local_10,local_c);
+                    SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00490CD0::
+                    thunk_FUN_00490cd0((AnonReceiver_00490CD0 *)pSVar7,local_18,local_14,local_10,
+                                       local_c);
                   }
                   else {
                     STBoatC::CmdToObj(pSVar7,CASE_5,&local_18);
@@ -390,7 +395,7 @@ STAllPlayersC::PutOnPlaceGuardBoats
                 puVar12 = &local_be;
                 uVar14 = local_1c;
                 do {
-                  FUN_006acc70((AnonShape_006ACC70_C8641025 *)param_8,uVar14,&param_5);
+                  DArrayGetElement(param_8,uVar14,&param_5);
                   pSVar7 = (STBoatC *)GetObjPtr(local_28,param_1,param_5,CASE_1);
                   if (pSVar7 == (STBoatC *)0x0) {
                     iVar5 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0x2d2c,0,0,
@@ -407,7 +412,9 @@ STAllPlayersC::PutOnPlaceGuardBoats
                   local_c = CONCAT22(*puVar12,(sVar2 - (short)local_24) + -3);
                   iVar5 = thunk_FUN_0045ff10((int)pSVar7);
                   if (iVar5 == 5) {
-                    thunk_FUN_00490cd0(pSVar7,local_18,local_14,local_10,local_c);
+                    SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00490CD0::
+                    thunk_FUN_00490cd0((AnonReceiver_00490CD0 *)pSVar7,local_18,local_14,local_10,
+                                       local_c);
                   }
                   else {
                     STBoatC::CmdToObj(pSVar7,CASE_5,&local_18);
@@ -445,7 +452,7 @@ STAllPlayersC::PutOnPlaceGuardBoats
               uVar14 = local_8;
               if (0 < (int)_param_4) {
                 do {
-                  FUN_006acc70((AnonShape_006ACC70_C8641025 *)param_8,uVar14,&param_5);
+                  DArrayGetElement(param_8,uVar14,&param_5);
                   local_24 = (STBoatC *)GetObjPtr(local_28,param_1,param_5,CASE_1);
                   if (local_24 == (STBoatC *)0x0) {
                     iVar5 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0x2e0b,0,0,
@@ -567,7 +574,9 @@ LAB_00448bc0:
                     STBoatC::CmdToObj(pSVar7,CASE_5,&local_18);
                   }
                   else {
-                    thunk_FUN_00490cd0(pSVar7,local_18,local_14,local_10,local_c);
+                    SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00490CD0::
+                    thunk_FUN_00490cd0((AnonReceiver_00490CD0 *)pSVar7,local_18,local_14,local_10,
+                                       local_c);
                   }
                   param_6 = param_6 + 1;
                   uVar14 = uVar14 + 1;
@@ -601,7 +610,7 @@ LAB_00448bc0:
               puVar12 = &local_be;
               uVar14 = local_8;
               do {
-                FUN_006acc70((AnonShape_006ACC70_C8641025 *)param_8,uVar14,&param_5);
+                DArrayGetElement(param_8,uVar14,&param_5);
                 pSVar7 = (STBoatC *)GetObjPtr(local_28,param_1,param_5,CASE_1);
                 if (pSVar7 == (STBoatC *)0x0) {
                   iVar5 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0x2d9b,0,0,
@@ -618,7 +627,8 @@ LAB_00448bc0:
                 local_c = CONCAT22(*puVar12,puVar12[-1] + sVar2);
                 iVar5 = thunk_FUN_0045ff10((int)pSVar7);
                 if (iVar5 == 5) {
-                  thunk_FUN_00490cd0(pSVar7,local_18,local_14,local_10,local_c);
+                  SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00490CD0::thunk_FUN_00490cd0
+                            ((AnonReceiver_00490CD0 *)pSVar7,local_18,local_14,local_10,local_c);
                 }
                 else {
                   STBoatC::CmdToObj(pSVar7,CASE_5,&local_18);
@@ -651,7 +661,7 @@ LAB_00448bc0:
               local_8 = local_1c;
               do {
                 psVar13 = psVar13 + 3;
-                FUN_006acc70((AnonShape_006ACC70_C8641025 *)param_8,local_8,&param_5);
+                DArrayGetElement(param_8,local_8,&param_5);
                 pSVar7 = (STBoatC *)GetObjPtr(local_28,param_1,param_5,CASE_1);
                 if (pSVar7 == (STBoatC *)0x0) {
                   iVar5 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0x2dd2,0,0,
@@ -678,7 +688,8 @@ LAB_00448bc0:
                 local_10 = CONCAT22(sVar10,(undefined2)local_10);
                 iVar8 = thunk_FUN_0045ff10((int)pSVar7);
                 if (iVar8 == 5) {
-                  thunk_FUN_00490cd0(pSVar7,local_18,local_14,local_10,local_c);
+                  SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00490CD0::thunk_FUN_00490cd0
+                            ((AnonReceiver_00490CD0 *)pSVar7,local_18,local_14,local_10,local_c);
                 }
                 else {
                   STBoatC::CmdToObj(pSVar7,CASE_5,&local_18);
@@ -709,7 +720,7 @@ LAB_00448bc0:
               puVar12 = &local_be;
               uVar14 = local_8;
               do {
-                FUN_006acc70((AnonShape_006ACC70_C8641025 *)param_8,uVar14,&param_5);
+                DArrayGetElement(param_8,uVar14,&param_5);
                 pSVar7 = (STBoatC *)GetObjPtr(local_28,param_1,param_5,CASE_1);
                 if (pSVar7 == (STBoatC *)0x0) {
                   iVar5 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0x2df1,0,0,
@@ -726,7 +737,8 @@ LAB_00448bc0:
                 local_c = CONCAT22(*puVar12,(short)local_24 + 3 + sVar2);
                 iVar5 = thunk_FUN_0045ff10((int)pSVar7);
                 if (iVar5 == 5) {
-                  thunk_FUN_00490cd0(pSVar7,local_18,local_14,local_10,local_c);
+                  SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00490CD0::thunk_FUN_00490cd0
+                            ((AnonReceiver_00490CD0 *)pSVar7,local_18,local_14,local_10,local_c);
                 }
                 else {
                   STBoatC::CmdToObj(pSVar7,CASE_5,&local_18);
@@ -759,7 +771,7 @@ LAB_00448bc0:
               local_8 = local_1c;
               do {
                 psVar13 = psVar13 + 3;
-                FUN_006acc70((AnonShape_006ACC70_C8641025 *)param_8,local_8,&param_5);
+                DArrayGetElement(param_8,local_8,&param_5);
                 pSVar7 = (STBoatC *)GetObjPtr(local_28,param_1,param_5,CASE_1);
                 if (pSVar7 == (STBoatC *)0x0) {
                   iVar5 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0x2db3,0,0,
@@ -785,7 +797,8 @@ LAB_00448bc0:
                 local_c = CONCAT22(psVar13[1],sVar4);
                 iVar8 = thunk_FUN_0045ff10((int)pSVar7);
                 if (iVar8 == 5) {
-                  thunk_FUN_00490cd0(pSVar7,local_18,local_14,local_10,local_c);
+                  SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00490CD0::thunk_FUN_00490cd0
+                            ((AnonReceiver_00490CD0 *)pSVar7,local_18,local_14,local_10,local_c);
                 }
                 else {
                   STBoatC::CmdToObj(pSVar7,CASE_5,&local_18);

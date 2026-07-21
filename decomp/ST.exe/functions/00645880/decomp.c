@@ -148,7 +148,7 @@ void __cdecl FUN_00645880(AnonShape_00645880_0D5933D4 *param_1)
     (*PTR_00802a38->vtable->vfunc_08)(0x150,0,0,local_98,0);
     return;
   }
-  uVar2 = thunk_FUN_004406c0(*(char *)param_1);
+  uVar2 = GetPlayerRaceId(*(char *)param_1);
   uVar2 = uVar2 & 0xff;
   if (uVar2 == 1) {
     iVar3 = thunk_FUN_004e60d0(*(int *)param_1,0x3c);
@@ -192,7 +192,7 @@ cf_common_exit_00645953:
   local_5c[0] = 0x28;
   local_5c[3] = 1;
   local_5c[2] = 1;
-  uVar2 = thunk_FUN_004406c0((char)local_5c[1]);
+  uVar2 = GetPlayerRaceId((char)local_5c[1]);
   if ((uVar2 & 0xff) == 1) {
     GVar7 = *(Global_sub_00645D30_param_2Enum *)&param_1->field_0x4;
     iVar3 = *(int *)param_1;

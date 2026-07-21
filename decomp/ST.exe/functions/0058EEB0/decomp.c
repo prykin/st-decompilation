@@ -5,8 +5,8 @@ void __fastcall FUN_0058eeb0(AnonShape_0058EEB0_904026FD *param_1)
   int iVar1;
   int iVar2;
   
-  iVar1 = SHORT_007fb240 + -1;
-  iVar2 = SHORT_007fb242 + -1;
+  iVar1 = g_worldGrid.sizeX + -1;
+  iVar2 = g_worldGrid.sizeY + -1;
   if (((((int)param_1->field_027F < 0) || (param_1->field_0287 < 0)) ||
       ((int)param_1->field_0283 < 0)) ||
      (((param_1->field_028B < 0 || (iVar1 < (int)param_1->field_027F)) ||

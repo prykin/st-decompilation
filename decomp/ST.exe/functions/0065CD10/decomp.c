@@ -135,7 +135,7 @@ undefined4 * __cdecl EventDataPack(AnonShape_0065CD10_BA40DE58 *param_1,uint *pa
   }
   g_currentExceptionFrame = local_50.previous;
   if (local_8 != (AnonShape_0065CD10_CB9334E9 *)0x0) {
-    FUN_006ab060(&local_8);
+    FreeAndNull(&local_8);
   }
   iVar6 = ReportDebugMessage(s_E____titans_ai_ai_event_d_cpp_007d2b4c,0x89,0,iVar2,&DAT_007a4ccc,
                              s_EventDataPack_007d2b70);

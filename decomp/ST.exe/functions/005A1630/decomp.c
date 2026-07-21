@@ -16,14 +16,14 @@ void __thiscall FSGSTy::Finished(FSGSTy *this,int param_1)
   FSGSTy *pFVar6;
   int iVar7;
   undefined4 *puVar8;
-  uint *puVar9;
+  uint *extraout_EAX;
+  uint uVar9;
   uint uVar10;
-  uint uVar11;
   undefined4 unaff_ESI;
   void *unaff_EDI;
+  int iVar11;
   int iVar12;
   int iVar13;
-  int iVar14;
   InternalExceptionFrame local_6c;
   undefined4 local_28 [8];
   FSGSTy *local_8;
@@ -56,28 +56,28 @@ void __thiscall FSGSTy::Finished(FSGSTy *this,int param_1)
         return;
       }
       pAVar3 = local_8->field_1AC0;
-      uVar11 = pAVar3->field_0014;
-      if (uVar11 == 0) {
-        uVar11 = ((uint)(ushort)pAVar3->field_000E * pAVar3->field_0004 + 0x1f >> 3 & 0x1ffffffc) *
+      uVar10 = pAVar3->field_0014;
+      if (uVar10 == 0) {
+        uVar10 = ((uint)(ushort)pAVar3->field_000E * pAVar3->field_0004 + 0x1f >> 3 & 0x1ffffffc) *
                  pAVar3->field_0008;
       }
       puVar8 = (undefined4 *)FUN_006b4fa0((int)pAVar3);
-      for (uVar10 = uVar11 >> 2; uVar10 != 0; uVar10 = uVar10 - 1) {
+      for (uVar9 = uVar10 >> 2; uVar9 != 0; uVar9 = uVar9 - 1) {
         *puVar8 = 0xffffffff;
         puVar8 = puVar8 + 1;
       }
-      for (uVar11 = uVar11 & 3; uVar11 != 0; uVar11 = uVar11 - 1) {
+      for (uVar10 = uVar10 & 3; uVar10 != 0; uVar10 = uVar10 - 1) {
         *(undefined1 *)puVar8 = 0xff;
         puVar8 = (undefined4 *)((int)puVar8 + 1);
       }
       ccFntTy::SetSurf(pFVar6->field_1A73,(int)pFVar6->field_1AC0,0,0,0x16,0x1b8,0xf0);
-      iVar14 = -1;
       iVar13 = -1;
-      uVar11 = 2;
       iVar12 = -1;
+      uVar10 = 2;
+      iVar11 = -1;
       iVar7 = -2;
-      puVar9 = (uint *)FUN_006b0140(0x25b9,HINSTANCE_00807618);
-      ccFntTy::WrTxt(pFVar6->field_1A73,puVar9,iVar7,iVar12,uVar11,iVar13,iVar14);
+      LoadResourceString(0x25b9,HINSTANCE_00807618);
+      ccFntTy::WrTxt(pFVar6->field_1A73,extraout_EAX,iVar7,iVar11,uVar10,iVar12,iVar13);
       FUN_006b35d0(DAT_008075a8,pFVar6->field_1ABC);
       pSVar4 = pFVar6->field_1A5B;
       puVar8 = local_28;
@@ -99,9 +99,9 @@ void __thiscall FSGSTy::Finished(FSGSTy *this,int param_1)
       return;
     }
     g_currentExceptionFrame = local_6c.previous;
-    iVar12 = ReportDebugMessage(s_E____titans_Start_fsgs_obj_cpp_007cbf70,0x95b,0,iVar7,
+    iVar11 = ReportDebugMessage(s_E____titans_Start_fsgs_obj_cpp_007cbf70,0x95b,0,iVar7,
                                 &DAT_007a4ccc,s_FSGSTy__Finished_007cc448);
-    if (iVar12 != 0) {
+    if (iVar11 != 0) {
       pcVar5 = (code *)swi(3);
       (*pcVar5)();
       return;

@@ -8,7 +8,7 @@ void __thiscall FUN_00626d70(void *this,AnonShape_00626D70_1F4C15C4 *param_1)
   
   uVar2 = (**(code **)(*(int *)this + 0x2c))();
   *(undefined4 *)param_1 = uVar2;
-  iVar3 = thunk_FUN_004406c0(*(char *)((int)this + 0x24));
+  iVar3 = GetPlayerRaceId(*(char *)((int)this + 0x24));
   param_1->field_0x4 = (char)iVar3;
   if (*(char *)((int)this + 0x2ad) == '\x02') {
     if (*(uint *)((int)this + 0x262) == (uint)DAT_0080874d) {

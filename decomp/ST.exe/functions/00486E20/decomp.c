@@ -42,12 +42,12 @@ void __thiscall FUN_00486e20(void *this,undefined4 *param_1)
   bVar1 = *(byte *)(puVar2 + 1);
   if (bVar1 != 0) {
     if (bVar1 < 3) {
-      iVar5 = thunk_FUN_004406c0(*(char *)((int)this + 0x24));
+      iVar5 = GetPlayerRaceId(*(char *)((int)this + 0x24));
       if ((char)iVar5 == '\x03') goto cf_common_exit_00486ED3;
     }
     else if ((bVar1 == 3) &&
-            ((iVar5 = thunk_FUN_004406c0(*(char *)((int)this + 0x24)), (char)iVar5 == '\x01' ||
-             (iVar5 = thunk_FUN_004406c0(*(char *)((int)this + 0x24)), (char)iVar5 == '\x02')))) {
+            ((iVar5 = GetPlayerRaceId(*(char *)((int)this + 0x24)), (char)iVar5 == '\x01' ||
+             (iVar5 = GetPlayerRaceId(*(char *)((int)this + 0x24)), (char)iVar5 == '\x02')))) {
 cf_common_exit_00486ED3:
       *(undefined1 *)((int)puVar2 + 5) = 3;
       return;

@@ -1,5 +1,5 @@
 
-undefined4 __fastcall FUN_004eccf0(AnonShape_004ECCF0_985987C1 *param_1)
+undefined4 __fastcall FUN_004eccf0(AnonShape_004ECC70_4D35D723 *param_1)
 
 {
   int iVar1;

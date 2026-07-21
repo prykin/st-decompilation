@@ -104,12 +104,12 @@ void __fastcall FUN_00585020(AnonShape_00585020_1C9B1418 *param_1)
     if ((local_14 < 5) &&
        (bVar3 = thunk_FUN_004961b0(local_10,local_8,sVar7), CONCAT31(extraout_var_01,bVar3) == 0)) {
       if ((((-1 < local_10) &&
-           (((local_10 < SHORT_007fb240 && (-1 < local_8)) && (local_8 < SHORT_007fb242)))) &&
-          (((-1 < sVar7 && (sVar7 < SHORT_007fb244)) &&
-           (pSVar2 = g_worldCells
-                     [(int)SHORT_007fb246 * (int)sVar7 + (int)SHORT_007fb240 * (int)local_8 +
-                      (int)local_10].objects[0], pSVar2 != (STWorldObject *)0x0)))) &&
-         (pSVar2->value_20 != 0xaa)) {
+           (((local_10 < g_worldGrid.sizeX && (-1 < local_8)) && (local_8 < g_worldGrid.sizeY)))) &&
+          (((-1 < sVar7 && (sVar7 < g_worldGrid.sizeZ)) &&
+           (pSVar2 = g_worldGrid.cells
+                     [(int)g_worldGrid.planeStride * (int)sVar7 +
+                      (int)g_worldGrid.sizeX * (int)local_8 + (int)local_10].objects[0],
+           pSVar2 != (STWorldObject *)0x0)))) && (pSVar2->value_20 != 0xaa)) {
         thunk_FUN_00584c50(param_1,&pSVar2->vtable);
         thunk_FUN_005860d0(param_1,(int)(short)param_1->field_0041,(int)(short)param_1->field_0043,
                            0x464);
@@ -230,12 +230,12 @@ void __fastcall FUN_00585020(AnonShape_00585020_1C9B1418 *param_1)
     if ((local_14 < 5) &&
        (bVar3 = thunk_FUN_004961b0(local_10,local_8,sVar7), CONCAT31(extraout_var_00,bVar3) == 0)) {
       if (((-1 < local_10) &&
-          ((((local_10 < SHORT_007fb240 && (-1 < local_8)) && (local_8 < SHORT_007fb242)) &&
-           ((-1 < sVar7 && (sVar7 < SHORT_007fb244)))))) &&
-         ((pSVar2 = g_worldCells
-                    [(int)SHORT_007fb246 * (int)sVar7 + (int)SHORT_007fb240 * (int)local_8 +
-                     (int)local_10].objects[0], pSVar2 != (STWorldObject *)0x0 &&
-          (pSVar2->value_20 != 0xaa)))) {
+          ((((local_10 < g_worldGrid.sizeX && (-1 < local_8)) && (local_8 < g_worldGrid.sizeY)) &&
+           ((-1 < sVar7 && (sVar7 < g_worldGrid.sizeZ)))))) &&
+         ((pSVar2 = g_worldGrid.cells
+                    [(int)g_worldGrid.planeStride * (int)sVar7 +
+                     (int)g_worldGrid.sizeX * (int)local_8 + (int)local_10].objects[0],
+          pSVar2 != (STWorldObject *)0x0 && (pSVar2->value_20 != 0xaa)))) {
         thunk_FUN_00584c50(param_1,&pSVar2->vtable);
       }
       param_1->field_0231 = 2;

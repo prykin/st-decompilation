@@ -196,7 +196,7 @@ cf_common_exit_005EEDDF:
         }
         else if ((param_1->field_0231 == 0xfe) && (g_sTAllPlayers_007FA174 != (STAllPlayersC *)0x0))
         {
-          thunk_FUN_005f0d90((AnonShape_005F0D90_C3146DC2 *)param_1);
+          thunk_FUN_005f0d90((AnonShape_005F0D00_68DA5B8B *)param_1);
           iVar4 = STAllPlayersC::UnRegisterContainer
                             (g_sTAllPlayers_007FA174,CONCAT22(extraout_var_00,param_1->field_0032),
                              (AnonShape_0044A730_DBE673B2 *)param_1);

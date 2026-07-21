@@ -56,51 +56,51 @@
    0042B620 @ 0067BE5F | 0067C7E0 -> 0042B620 @ 0067CAEE | 0068F020 -> 0042B620 @ 0068F101 |
    0068F360 -> 0042B620 @ 0068F415 | 0068F660 -> 0042B620 @ 0068F6E1 */
 
-uint __thiscall
+STGameObjC * __thiscall
 STAllPlayersC::GetObjPtr
           (STAllPlayersC *this,uint objPtr,uint param_2,STAllPlayersC_GetObjPtr_param_3Enum param_3)
 
 {
   code *pcVar1;
   int iVar2;
-  uint uVar3;
-  DArrayTy *pDVar4;
+  STGameObjC *pSVar3;
+  DArrayTy *array;
   
   switch(param_3) {
   case CASE_1:
-    pDVar4 = g_playerRuntime[(char)objPtr].objects;
-    if (pDVar4 == (DArrayTy *)0x0) {
-      return 0;
+    array = g_playerRuntime[(char)objPtr].objects;
+    if (array == (DArrayTy *)0x0) {
+      return (STGameObjC *)0x0;
     }
     break;
   case CASE_2:
-    pDVar4 = PTR_007fa154;
+    array = PTR_007fa154;
     if (PTR_007fa154 == (DArrayTy *)0x0) {
-      return 0;
+      return (STGameObjC *)0x0;
     }
     break;
   case CASE_3:
-    pDVar4 = PTR_007fa158;
+    array = PTR_007fa158;
     if (PTR_007fa158 == (DArrayTy *)0x0) {
-      return 0;
+      return (STGameObjC *)0x0;
     }
     break;
   case CASE_4:
-    pDVar4 = PTR_007fa15c;
+    array = PTR_007fa15c;
     if (PTR_007fa15c == (DArrayTy *)0x0) {
-      return 0;
+      return (STGameObjC *)0x0;
     }
     break;
   case CASE_5:
-    pDVar4 = PTR_007fa160;
+    array = PTR_007fa160;
     if (PTR_007fa160 == (DArrayTy *)0x0) {
-      return 0;
+      return (STGameObjC *)0x0;
     }
     break;
   case CASE_6:
-    pDVar4 = PTR_007fa164;
+    array = PTR_007fa164;
     if (PTR_007fa164 == (DArrayTy *)0x0) {
-      return 0;
+      return (STGameObjC *)0x0;
     }
     break;
   default:
@@ -108,13 +108,13 @@ STAllPlayersC::GetObjPtr
                                s_STAllPlayersC__GetObjPtr_player__007a609c,(int)(char)objPtr,
                                param_2 & 0xffff);
     if (iVar2 == 0) {
-      return 0;
+      return (STGameObjC *)0x0;
     }
     pcVar1 = (code *)swi(3);
-    uVar3 = (*pcVar1)();
-    return uVar3;
+    pSVar3 = (STGameObjC *)(*pcVar1)();
+    return pSVar3;
   }
-  uVar3 = FUN_006acc70((AnonShape_006ACC70_C8641025 *)pDVar4,param_2 & 0xffff,&objPtr);
-  return -(uint)(uVar3 != 0xfffffffc) & objPtr;
+  iVar2 = DArrayGetElement(array,param_2 & 0xffff,&objPtr);
+  return (STGameObjC *)(-(uint)(iVar2 != -4) & objPtr);
 }
 

@@ -41,7 +41,7 @@ FUN_0069f8d0(int param_1,int param_2,int param_3,int param_4,int param_5,int par
   local_20 = 0;
   if ((param_4 == param_6) && (iVar3 = 1, param_5 == param_7)) {
 LAB_0069fb6f:
-    FUN_006ab060(&local_18);
+    FreeAndNull(&local_18);
     local_28 = (undefined2 *)Library::DKW::LIB::FUN_006aac70(iVar3 * 4);
     if (local_28 != (undefined2 *)0x0) {
       local_20 = 1;

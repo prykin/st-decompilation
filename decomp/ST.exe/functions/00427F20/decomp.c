@@ -292,7 +292,8 @@ FUN_00427f20(void *this,float param_1,float param_2,float param_3,int param_4,in
     } while (iVar6 <= param_4);
   }
   if (param_5 < 1) {
-    local_30 = thunk_FUN_00427bb0(this,iVar4,iVar3,0);
+    local_30 = SubmarineTitans::Recovered::HiddenThis::AnonReceiver_004248D0::thunk_FUN_00427bb0
+                         (this,iVar4,iVar3,0);
 joined_r0x004286bb:
     puVar2 = local_1c;
     if (local_30 != 0) goto cf_common_join_004286D0;
@@ -303,7 +304,8 @@ joined_r0x004286bb:
       iVar6 = iVar3;
     }
     if ((iVar4 <= iVar6) &&
-       (local_30 = thunk_FUN_00427bb0(this,iVar4,iVar6,0), puVar2 = local_1c, local_30 != 0))
+       (local_30 = SubmarineTitans::Recovered::HiddenThis::AnonReceiver_004248D0::thunk_FUN_00427bb0
+                             (this,iVar4,iVar6,0), puVar2 = local_1c, local_30 != 0))
     goto cf_common_join_004286D0;
     iVar6 = -param_5;
     if (-param_5 < iVar4) {
@@ -314,21 +316,24 @@ joined_r0x004286bb:
       iVar8 = iVar3;
     }
     if ((iVar6 <= iVar8) &&
-       ((local_30 = thunk_FUN_00427bb0(this,iVar6,iVar8,-1), puVar2 = local_1c, local_30 != 0 ||
-        (local_30 = thunk_FUN_00427bb0(this,iVar6,iVar8,1), puVar2 = local_1c, local_30 != 0))))
+       ((local_30 = SubmarineTitans::Recovered::HiddenThis::AnonReceiver_004248D0::
+                    thunk_FUN_00427bb0(this,iVar6,iVar8,-1), puVar2 = local_1c, local_30 != 0 ||
+        (local_30 = SubmarineTitans::Recovered::HiddenThis::AnonReceiver_004248D0::
+                    thunk_FUN_00427bb0(this,iVar6,iVar8,1), puVar2 = local_1c, local_30 != 0))))
     goto cf_common_join_004286D0;
     iVar6 = param_5 + 1;
     if (param_5 + 1 < iVar4) {
       iVar6 = iVar4;
     }
     if (iVar6 <= iVar3) {
-      local_30 = thunk_FUN_00427bb0(this,iVar6,iVar3,0);
+      local_30 = SubmarineTitans::Recovered::HiddenThis::AnonReceiver_004248D0::thunk_FUN_00427bb0
+                           (this,iVar6,iVar3,0);
       goto joined_r0x004286bb;
     }
   }
   puVar2 = local_1c;
   if (DAT_007f4d78 == 0) {
-    FUN_006ab060(&DAT_007f4d6c);
+    FreeAndNull(&DAT_007f4d6c);
     puVar2 = local_1c;
   }
 cf_common_join_004286D0:
@@ -344,7 +349,7 @@ cf_common_join_004286D0:
           iVar4 = iVar4 + 1;
         } while (iVar4 < param_6[7]);
       }
-      FUN_006ab060((LPVOID *)(param_6 + 8));
+      FreeAndNull((void **)(param_6 + 8));
     }
     *param_6 = DAT_007f4d7c;
     param_6[1] = DAT_007f4d80;

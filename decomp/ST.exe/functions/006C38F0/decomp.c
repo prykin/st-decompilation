@@ -3,7 +3,7 @@ undefined4 FUN_006c38f0(int param_1,int param_2,int param_3,undefined4 param_4)
 
 {
   undefined4 *puVar1;
-  int iVar2;
+  AnonShape_006C3FC0_72DDFA27 *pAVar2;
   undefined4 uVar3;
   uint uVar4;
   code *pcVar5;
@@ -11,9 +11,9 @@ undefined4 FUN_006c38f0(int param_1,int param_2,int param_3,undefined4 param_4)
   
   pcVar5 = (code *)0x0;
   local_8 = 0;
-  iVar2 = FUN_006c38d0(DAT_008568d0,param_1);
-  if (iVar2 != 0) {
-    pcVar5 = *(code **)(iVar2 + 0x88);
+  pAVar2 = (AnonShape_006C3FC0_72DDFA27 *)FUN_006c38d0(DAT_008568d0,param_1);
+  if (pAVar2 != (AnonShape_006C3FC0_72DDFA27 *)0x0) {
+    pcVar5 = *(code **)&pAVar2[3].field_0x10;
   }
   if (param_2 == 0x1c) {
     puVar1 = DAT_008568d0;
@@ -56,10 +56,10 @@ LAB_006c3a62:
   else {
     if (param_2 != 0x100) {
       if (param_2 == 0x101) {
-        if ((param_3 == 0x1b) && ((*(uint *)(iVar2 + 4) & 0x20000000) != 0)) {
-          Library::DKW::DV::FUN_006c4110(iVar2);
+        if ((param_3 == 0x1b) && ((pAVar2->field_0004 & 0x20000000) != 0)) {
+          Library::DKW::DV::FUN_006c4110(pAVar2);
           if (pcVar5 != (code *)0x0) {
-            uVar3 = (*pcVar5)(param_1,*(undefined4 *)(iVar2 + 0x80),2,0);
+            uVar3 = (*pcVar5)(param_1,*(undefined4 *)&pAVar2[3].field_0x8,2,0);
             return uVar3;
           }
         }
@@ -74,7 +74,7 @@ LAB_006c3a62:
       }
       return 0;
     }
-    if ((param_3 == 0x1b) && ((*(uint *)(iVar2 + 4) & 0x20000000) != 0)) {
+    if ((param_3 == 0x1b) && ((pAVar2->field_0004 & 0x20000000) != 0)) {
       return 0;
     }
     if (pcVar5 != (code *)0x0) {

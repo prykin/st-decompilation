@@ -26,7 +26,7 @@ void __fastcall FUN_00501a10(AnonShape_00501A10_7BD31715 *param_1)
       param_1->field_0454 = param_1->field_00A0 + 8;
       param_1->field_0458 = 100;
       param_1->field_045C = 0x3c;
-      uVar2 = FUN_0070b3a0(param_1->field_077C,0);
+      uVar2 = FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)param_1->field_077C,0);
       param_1->field_0460 = uVar2;
       param_1->field_0464 = param_1->field_0458;
       param_1->field_0468 = 0x4e87;
@@ -34,7 +34,7 @@ void __fastcall FUN_00501a10(AnonShape_00501A10_7BD31715 *param_1)
       param_1->field_0470 = param_1->field_00A0 + 6;
       param_1->field_0474 = 0x20;
       param_1->field_0478 = 0x35;
-      uVar2 = FUN_0070b3a0(param_1->field_077C,2);
+      uVar2 = FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)param_1->field_077C,2);
       param_1->field_047C = uVar2;
       param_1->field_0484 = 0x2ef0;
       param_1->field_0480 = param_1->field_0474;
@@ -46,9 +46,9 @@ void __fastcall FUN_00501a10(AnonShape_00501A10_7BD31715 *param_1)
     case 0x16:
     case 0x17:
     case 0x25:
-      iVar3 = FUN_0070b3a0(param_1->field_02B2,0);
+      iVar3 = FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)param_1->field_02B2,0);
       param_1->field_043C = *(undefined4 *)(iVar3 + 4);
-      iVar3 = FUN_0070b3a0(param_1->field_02B2,0);
+      iVar3 = FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)param_1->field_02B2,0);
       param_1->field_0440 = *(undefined4 *)(iVar3 + 8);
       *(int *)puVar1 =
            (*(int *)(param_1->field_018C + 4) - param_1->field_043C) / 2 + param_1->field_0048;

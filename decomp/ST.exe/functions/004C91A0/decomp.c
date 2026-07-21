@@ -12,7 +12,7 @@ undefined4 __fastcall FUN_004c91a0(void *param_1)
     *(int *)((int)param_1 + 0x365) = *(int *)((int)param_1 + 0x361);
     iVar1 = thunk_FUN_004c90c0(param_1);
     if (iVar1 != 0) {
-      iVar1 = thunk_FUN_004406c0(*(char *)((int)param_1 + 0x24));
+      iVar1 = GetPlayerRaceId(*(char *)((int)param_1 + 0x24));
       if (((char)iVar1 != '\x03') && (*(int *)((int)param_1 + 0x398) != 0)) {
         thunk_FUN_004d87b0(*(char *)((int)param_1 + 0x24),
                            (*(int *)((int)param_1 + 0x394) * *(int *)((int)param_1 + 0x398)) / 100);

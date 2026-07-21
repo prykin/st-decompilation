@@ -12,7 +12,7 @@ STAllPlayersC::AddObjToTmp2
   code *pcVar1;
   int iVar2;
   undefined4 uVar3;
-  int *piVar4;
+  STGameObjC *pSVar4;
   undefined4 unaff_ESI;
   STPlayerTempSlot *pSVar5;
   void *unaff_EDI;
@@ -128,8 +128,8 @@ LAB_0042bf8b:
             (-0x5001ffff,g_overwriteContext_007ED77C,s_E____titans_wlad_to_allpl_cpp_007a6004,0x24a)
   ;
 cf_common_exit_0042C072:
-  piVar4 = (int *)GetObjPtr(local_c,param_5,param_6,local_8);
-  (**(code **)(*piVar4 + 0xe8))(1);
+  pSVar4 = GetObjPtr(local_c,param_5,param_6,local_8);
+  (*pSVar4->vtable[1].vfunc_14)(1);
   g_currentExceptionFrame = local_58.previous;
   return local_10;
 }

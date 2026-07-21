@@ -32,11 +32,12 @@ int __thiscall FUN_0040ae40(void *this,uint param_1,char param_2)
   uint uVar12;
   undefined3 extraout_var_09;
   short *psVar13;
-  int iVar14;
+  short *psVar14;
   int iVar15;
-  undefined4 unaff_ESI;
   int iVar16;
-  short *psVar17;
+  undefined4 unaff_ESI;
+  int iVar17;
+  short *psVar18;
   void *unaff_EDI;
   InternalExceptionFrame local_90;
   int local_4c;
@@ -64,7 +65,7 @@ int __thiscall FUN_0040ae40(void *this,uint param_1,char param_2)
     return -4;
   }
   local_48 = pAVar9;
-  FUN_006ab060((LPVOID *)&pAVar9[1].field_0x3b);
+  FreeAndNull((void **)&pAVar9[1].field_0x3b);
   *(undefined4 *)&pAVar9[1].field_0x3f = 0;
   *(undefined4 *)&pAVar9[1].field_0x43 = 0;
   pAVar9[1].field_0047 = 0;
@@ -74,7 +75,7 @@ int __thiscall FUN_0040ae40(void *this,uint param_1,char param_2)
   if (sVar1 < 0) {
     return -4;
   }
-  if (SHORT_007fb278 <= sVar1) {
+  if (g_pathingGrid.sizeX <= sVar1) {
     return -4;
   }
   sVar2 = pAVar9->field_0049;
@@ -82,39 +83,39 @@ int __thiscall FUN_0040ae40(void *this,uint param_1,char param_2)
   if (sVar2 < 0) {
     return -4;
   }
-  if (SHORT_007fb27a <= sVar2) {
+  if (g_pathingGrid.sizeY <= sVar2) {
     return -4;
   }
   sVar3 = pAVar9->field_004B;
   if (sVar3 < 0) {
     return -4;
   }
-  if (SHORT_007fb27c <= sVar3) {
+  if (g_pathingGrid.sizeZ <= sVar3) {
     return -4;
   }
   iVar10 = *(int *)&pAVar9[1].field_0x57;
   if (iVar10 < 0) {
     return -4;
   }
-  if (SHORT_007fb278 <= iVar10) {
+  if (g_pathingGrid.sizeX <= iVar10) {
     return -4;
   }
-  iVar14._0_2_ = pAVar9[1].field_005B;
-  iVar14._2_2_ = pAVar9[1].field_005D;
-  if (iVar14 < 0) {
-    return -4;
-  }
-  if (SHORT_007fb27a <= iVar14) {
-    return -4;
-  }
-  iVar15 = *(int *)&pAVar9[1].field_005F;
+  iVar15._0_2_ = pAVar9[1].field_005B;
+  iVar15._2_2_ = pAVar9[1].field_005D;
   if (iVar15 < 0) {
     return -4;
   }
-  if (SHORT_007fb27c <= iVar15) {
+  if (g_pathingGrid.sizeY <= iVar15) {
     return -4;
   }
-  local_3c = FUN_006aadd0((int)sVar1,(int)sVar2,(int)sVar3,iVar10,iVar14,iVar15);
+  iVar16 = *(int *)&pAVar9[1].field_005F;
+  if (iVar16 < 0) {
+    return -4;
+  }
+  if (g_pathingGrid.sizeZ <= iVar16) {
+    return -4;
+  }
+  local_3c = FUN_006aadd0((int)sVar1,(int)sVar2,(int)sVar3,iVar10,iVar15,iVar16);
   if (local_3c <= *(int *)&pAVar9[1].field_0x53) {
     return 0;
   }
@@ -133,9 +134,9 @@ int __thiscall FUN_0040ae40(void *this,uint param_1,char param_2)
   if (local_3c != 1) goto LAB_0040b56a;
   local_8 = *(int *)&local_48[1].field_005F;
   local_c = *(int *)&local_48[1].field_005B;
-  iVar14 = local_8 * SHORT_007fb27e;
-  iVar10 = local_c * SHORT_007fb278;
-  if (*(short *)((int)DAT_007fb280 + (*(int *)&local_48[1].field_0x57 + iVar10 + iVar14) * 2) < 0) {
+  iVar15 = local_8 * g_pathingGrid.planeStride;
+  iVar10 = local_c * g_pathingGrid.sizeX;
+  if (g_pathingGrid.cells[*(int *)&local_48[1].field_0x57 + iVar10 + iVar15] < 0) {
     puVar11 = (undefined4 *)Library::DKW::LIB::FUN_006aac70(0x90);
     *(undefined4 **)&pAVar9[1].field_0x3b = puVar11;
     for (iVar10 = 0x24; iVar10 != 0; iVar10 = iVar10 + -1) {
@@ -152,27 +153,25 @@ int __thiscall FUN_0040ae40(void *this,uint param_1,char param_2)
     *(undefined2 *)(*(int *)&pAVar9[1].field_0x3b + 0x4e) = 0;
   }
   else {
-    iVar15 = (int)local_48->field_0047;
+    iVar16 = (int)local_48->field_0047;
     psVar13 = (short *)0x0;
     local_10 = (short *)0x0;
-    if (iVar15 == *(int *)&local_48[1].field_0x57) {
+    if (iVar16 == *(int *)&local_48[1].field_0x57) {
       if (local_48->field_0049 == local_c) {
         psVar13 = (short *)0x1;
       }
       else if (local_48->field_004B == local_8) {
         psVar13 = (short *)0x1;
       }
-      else if (((((*(ushort *)
-                    ((int)DAT_007fb280 +
-                    ((int)local_48->field_0049 * (int)SHORT_007fb278 + iVar15 + iVar14) * 2) &
-                  0xc000) != 0xc000) &&
-                (bVar8 = thunk_FUN_00497920(local_48,iVar15,(int)local_48->field_0049,local_8),
+      else if (((((g_pathingGrid.cells
+                   [(int)local_48->field_0049 * (int)g_pathingGrid.sizeX + iVar16 + iVar15] &
+                  0xc000U) != 0xc000) &&
+                (bVar8 = thunk_FUN_00497920(local_48,iVar16,(int)local_48->field_0049,local_8),
                 CONCAT31(extraout_var,bVar8) != 0)) &&
-               ((*(ushort *)
-                  ((int)DAT_007fb280 +
-                  ((int)SHORT_007fb278 * *(int *)&pAVar9[1].field_005B +
-                  (int)pAVar9->field_0047 + (int)SHORT_007fb27e * (int)pAVar9->field_004B) * 2) &
-                0xc000) != 0xc000)) &&
+               ((g_pathingGrid.cells
+                 [(int)g_pathingGrid.sizeX * *(int *)&pAVar9[1].field_005B +
+                  (int)pAVar9->field_0047 + (int)g_pathingGrid.planeStride * (int)pAVar9->field_004B
+                 ] & 0xc000U) != 0xc000)) &&
               (uVar5._0_2_ = pAVar9[1].field_005B, uVar5._2_2_ = pAVar9[1].field_005D,
               bVar8 = thunk_FUN_00497920(pAVar9,(int)pAVar9->field_0047,uVar5,
                                          (int)pAVar9->field_004B),
@@ -181,23 +180,22 @@ int __thiscall FUN_0040ae40(void *this,uint param_1,char param_2)
       }
     }
     else {
-      iVar16 = (int)local_48->field_0049;
-      if (iVar16 == local_c) {
+      iVar17 = (int)local_48->field_0049;
+      if (iVar17 == local_c) {
         if (local_48->field_004B == local_8) {
           psVar13 = (short *)0x1;
           goto LAB_0040b481;
         }
-        uVar4 = *(ushort *)((int)DAT_007fb280 + (iVar16 * SHORT_007fb278 + iVar15 + iVar14) * 2);
-        iVar14 = local_8;
+        uVar4 = g_pathingGrid.cells[iVar17 * g_pathingGrid.sizeX + iVar16 + iVar15];
+        iVar15 = local_8;
 joined_r0x0040b258:
         if (((uVar4 & 0xc000) != 0xc000) &&
-           (bVar8 = thunk_FUN_00497920(local_48,iVar15,iVar16,iVar14),
+           (bVar8 = thunk_FUN_00497920(local_48,iVar16,iVar17,iVar15),
            CONCAT31(extraout_var_01,bVar8) != 0)) {
-          if (((*(ushort *)
-                 ((int)DAT_007fb280 +
-                 ((int)SHORT_007fb278 * (int)pAVar9->field_0049 +
-                 *(int *)&pAVar9[1].field_0x57 + (int)SHORT_007fb27e * (int)pAVar9->field_004B) * 2)
-               & 0xc000) != 0xc000) &&
+          if (((g_pathingGrid.cells
+                [(int)g_pathingGrid.sizeX * (int)pAVar9->field_0049 +
+                 *(int *)&pAVar9[1].field_0x57 +
+                 (int)g_pathingGrid.planeStride * (int)pAVar9->field_004B] & 0xc000U) != 0xc000) &&
              (bVar8 = thunk_FUN_00497920(pAVar9,*(undefined4 *)&pAVar9[1].field_0x57,
                                          (int)pAVar9->field_0049,(int)pAVar9->field_004B),
              CONCAT31(extraout_var_02,bVar8) != 0)) {
@@ -207,55 +205,50 @@ joined_r0x0040b258:
         }
       }
       else {
-        iVar14 = (int)local_48->field_004B;
-        if (iVar14 == local_8) {
-          uVar4 = *(ushort *)((int)DAT_007fb280 + (iVar14 * SHORT_007fb27e + iVar15 + iVar10) * 2);
-          iVar16 = local_c;
+        iVar15 = (int)local_48->field_004B;
+        if (iVar15 == local_8) {
+          uVar4 = g_pathingGrid.cells[iVar15 * g_pathingGrid.planeStride + iVar16 + iVar10];
+          iVar17 = local_c;
           goto joined_r0x0040b258;
         }
-        if (((((((*(ushort *)((int)DAT_007fb280 + (iVar14 * SHORT_007fb27e + iVar15 + iVar10) * 2) &
-                 0xc000) != 0xc000) &&
-               (bVar8 = thunk_FUN_00497920(local_48,iVar15,local_c,iVar14),
+        if (((((((g_pathingGrid.cells[iVar15 * g_pathingGrid.planeStride + iVar16 + iVar10] &
+                 0xc000U) != 0xc000) &&
+               (bVar8 = thunk_FUN_00497920(local_48,iVar16,local_c,iVar15),
                CONCAT31(extraout_var_03,bVar8) != 0)) &&
-              ((*(ushort *)
-                 ((int)DAT_007fb280 +
-                 ((int)SHORT_007fb278 * (int)pAVar9->field_0049 +
-                 *(int *)&pAVar9[1].field_0x57 + (int)SHORT_007fb27e * (int)pAVar9->field_004B) * 2)
-               & 0xc000) != 0xc000)) &&
+              ((g_pathingGrid.cells
+                [(int)g_pathingGrid.sizeX * (int)pAVar9->field_0049 +
+                 *(int *)&pAVar9[1].field_0x57 +
+                 (int)g_pathingGrid.planeStride * (int)pAVar9->field_004B] & 0xc000U) != 0xc000)) &&
              (((bVar8 = thunk_FUN_00497920(pAVar9,*(undefined4 *)&pAVar9[1].field_0x57,
                                            (int)pAVar9->field_0049,(int)pAVar9->field_004B),
                CONCAT31(extraout_var_04,bVar8) != 0 &&
-               ((*(ushort *)
-                  ((int)DAT_007fb280 +
-                  ((int)SHORT_007fb278 * *(int *)&pAVar9[1].field_005B +
-                  *(int *)&pAVar9[1].field_0x57 + (int)SHORT_007fb27e * (int)pAVar9->field_004B) * 2
-                  ) & 0xc000) != 0xc000)) &&
-              ((uVar6._0_2_ = pAVar9[1].field_005B, uVar6._2_2_ = pAVar9[1].field_005D,
-               bVar8 = thunk_FUN_00497920(pAVar9,*(undefined4 *)&pAVar9[1].field_0x57,uVar6,
-                                          (int)pAVar9->field_004B),
-               CONCAT31(extraout_var_05,bVar8) != 0 &&
-               (((*(ushort *)
-                   ((int)DAT_007fb280 +
-                   ((int)SHORT_007fb27e * *(int *)&pAVar9[1].field_005F +
-                   (int)pAVar9->field_0047 + (int)SHORT_007fb278 * *(int *)&pAVar9[1].field_005B) *
-                   2) & 0xc000) != 0xc000 &&
-                (uVar7._0_2_ = pAVar9[1].field_005B, uVar7._2_2_ = pAVar9[1].field_005D,
-                bVar8 = thunk_FUN_00497920(pAVar9,(int)pAVar9->field_0047,uVar7,
-                                           *(int *)&pAVar9[1].field_005F),
-                CONCAT31(extraout_var_06,bVar8) != 0)))))))) &&
-            ((*(ushort *)
-               ((int)DAT_007fb280 +
-               ((int)SHORT_007fb27e * *(int *)&pAVar9[1].field_005F +
-               *(int *)&pAVar9[1].field_0x57 + (int)SHORT_007fb278 * (int)pAVar9->field_0049) * 2) &
-             0xc000) != 0xc000)) &&
+               ((g_pathingGrid.cells
+                 [(int)g_pathingGrid.sizeX * *(int *)&pAVar9[1].field_005B +
+                  *(int *)&pAVar9[1].field_0x57 +
+                  (int)g_pathingGrid.planeStride * (int)pAVar9->field_004B] & 0xc000U) != 0xc000))
+              && ((uVar6._0_2_ = pAVar9[1].field_005B, uVar6._2_2_ = pAVar9[1].field_005D,
+                  bVar8 = thunk_FUN_00497920(pAVar9,*(undefined4 *)&pAVar9[1].field_0x57,uVar6,
+                                             (int)pAVar9->field_004B),
+                  CONCAT31(extraout_var_05,bVar8) != 0 &&
+                  (((g_pathingGrid.cells
+                     [(int)g_pathingGrid.planeStride * *(int *)&pAVar9[1].field_005F +
+                      (int)pAVar9->field_0047 +
+                      (int)g_pathingGrid.sizeX * *(int *)&pAVar9[1].field_005B] & 0xc000U) != 0xc000
+                   && (uVar7._0_2_ = pAVar9[1].field_005B, uVar7._2_2_ = pAVar9[1].field_005D,
+                      bVar8 = thunk_FUN_00497920(pAVar9,(int)pAVar9->field_0047,uVar7,
+                                                 *(int *)&pAVar9[1].field_005F),
+                      CONCAT31(extraout_var_06,bVar8) != 0)))))))) &&
+            ((g_pathingGrid.cells
+              [(int)g_pathingGrid.planeStride * *(int *)&pAVar9[1].field_005F +
+               *(int *)&pAVar9[1].field_0x57 + (int)g_pathingGrid.sizeX * (int)pAVar9->field_0049] &
+             0xc000U) != 0xc000)) &&
            ((bVar8 = thunk_FUN_00497920(pAVar9,*(undefined4 *)&pAVar9[1].field_0x57,
                                         (int)pAVar9->field_0049,*(undefined4 *)&pAVar9[1].field_005F
                                        ), CONCAT31(extraout_var_07,bVar8) != 0 &&
-            ((*(ushort *)
-               ((int)DAT_007fb280 +
-               ((int)SHORT_007fb27e * *(int *)&pAVar9[1].field_005F +
-               (int)pAVar9->field_0047 + (int)SHORT_007fb278 * (int)pAVar9->field_0049) * 2) &
-             0xc000) != 0xc000)))) {
+            ((g_pathingGrid.cells
+              [(int)g_pathingGrid.planeStride * *(int *)&pAVar9[1].field_005F +
+               (int)pAVar9->field_0047 + (int)g_pathingGrid.sizeX * (int)pAVar9->field_0049] &
+             0xc000U) != 0xc000)))) {
           bVar8 = thunk_FUN_00497920(pAVar9,(int)pAVar9->field_0047,(int)pAVar9->field_0049,
                                      *(undefined4 *)&pAVar9[1].field_005F);
           psVar13 = (short *)0x1;
@@ -307,43 +300,43 @@ LAB_0040b56a:
       iVar10 = (int)sVar1;
     }
     iVar10 = -iVar10;
-    if (sVar1 + 2 < (int)SHORT_007fb278) {
+    if (sVar1 + 2 < (int)g_pathingGrid.sizeX) {
       local_30 = 2;
     }
     else {
-      local_30 = ((int)SHORT_007fb278 - (int)sVar1) + -1;
+      local_30 = ((int)g_pathingGrid.sizeX - (int)sVar1) + -1;
     }
     sVar1 = pAVar9->field_0049;
-    iVar14 = 2;
+    iVar15 = 2;
     if (sVar1 < 2) {
-      iVar14 = (int)sVar1;
+      iVar15 = (int)sVar1;
     }
-    uVar12 = -iVar14;
-    if (sVar1 + 2 < (int)SHORT_007fb27a) {
+    uVar12 = -iVar15;
+    if (sVar1 + 2 < (int)g_pathingGrid.sizeY) {
       local_c = 2;
     }
     else {
-      local_c = ((int)SHORT_007fb27a - (int)sVar1) + -1;
+      local_c = ((int)g_pathingGrid.sizeY - (int)sVar1) + -1;
     }
     sVar1 = pAVar9->field_004B;
-    iVar14 = 2;
+    iVar15 = 2;
     if (sVar1 < 2) {
-      iVar14 = (int)sVar1;
+      iVar15 = (int)sVar1;
     }
-    local_4c = -iVar14;
-    if (sVar1 + 2 < (int)SHORT_007fb27c) {
-      iVar15 = 2;
+    local_4c = -iVar15;
+    if (sVar1 + 2 < (int)g_pathingGrid.sizeZ) {
+      iVar16 = 2;
     }
     else {
-      iVar15 = ((int)SHORT_007fb27c - (int)sVar1) + -1;
+      iVar16 = ((int)g_pathingGrid.sizeZ - (int)sVar1) + -1;
     }
     local_18 = (short *)0x0;
     local_44 = uVar12;
-    local_34 = iVar15;
+    local_34 = iVar16;
     local_1c = local_4c;
     local_8 = iVar10;
-    if (-iVar15 == iVar14 || local_4c < iVar15) {
-      local_20 = local_10 + (iVar14 * -7 + uVar12) * 7;
+    if (-iVar16 == iVar15 || local_4c < iVar16) {
+      local_20 = local_10 + (iVar15 * -7 + uVar12) * 7;
       do {
         local_38 = local_20;
         local_24 = uVar12;
@@ -365,18 +358,18 @@ LAB_0040b56a:
             }
             local_38 = local_38 + 7;
             local_24 = local_24 + 1;
-            iVar15 = local_34;
+            iVar16 = local_34;
             uVar12 = local_44;
             iVar10 = local_8;
           } while ((int)local_24 <= local_c);
         }
         local_1c = local_1c + 1;
         local_20 = local_20 + 0x31;
-      } while (local_1c <= iVar15);
+      } while (local_1c <= iVar16);
     }
     psVar13 = local_40;
     if (local_18 == (short *)0x0) {
-      FUN_006ab060(&local_28);
+      FreeAndNull(&local_28);
       psVar13 = (short *)0x0;
     }
     local_24 = 0;
@@ -385,54 +378,55 @@ LAB_0040b56a:
     }
     local_24 = local_24 | 1;
     psVar13 = Library::DKW::WAY::FUN_006a9190
-                        ((int)DAT_007fb280,(int)SHORT_007fb278,(int)SHORT_007fb27a,
-                         (int)SHORT_007fb27c,(short *)(int)pAVar9->field_0047,
+                        ((int)g_pathingGrid.cells,(int)g_pathingGrid.sizeX,(int)g_pathingGrid.sizeY,
+                         (int)g_pathingGrid.sizeZ,(short *)(int)pAVar9->field_0047,
                          (short *)(int)pAVar9->field_0049,(short *)(int)pAVar9->field_004B,
                          *(short **)&pAVar9[1].field_0x57,*(short **)&pAVar9[1].field_005B,
                          *(short **)&pAVar9[1].field_005F,*(int *)&pAVar9[1].field_0x53,
                          (int *)&pAVar9[1].field_0x3f,local_28,psVar13,local_24);
     *(short **)&pAVar9[1].field_0x3b = psVar13;
     if (psVar13 == (short *)0x0) {
-      psVar17 = (short *)((int)SHORT_007fb27a * (int)SHORT_007fb278);
-      local_40 = psVar17;
-      local_2c = (short *)Library::DKW::LIB::FUN_006aac70((int)SHORT_007fb27c * (int)psVar17 * 2);
-      iVar10 = (int)SHORT_007fb27c;
-      puVar11 = DAT_007fb280;
-      psVar13 = local_2c;
-      for (uVar12 = (iVar10 * (int)psVar17 & 0x7fffffffU) >> 1; uVar12 != 0; uVar12 = uVar12 - 1) {
-        *(undefined4 *)psVar13 = *puVar11;
-        puVar11 = puVar11 + 1;
+      psVar18 = (short *)((int)g_pathingGrid.sizeY * (int)g_pathingGrid.sizeX);
+      local_40 = psVar18;
+      local_2c = (short *)Library::DKW::LIB::FUN_006aac70
+                                    ((int)g_pathingGrid.sizeZ * (int)psVar18 * 2);
+      iVar10 = (int)g_pathingGrid.sizeZ;
+      psVar13 = g_pathingGrid.cells;
+      psVar14 = local_2c;
+      for (uVar12 = (iVar10 * (int)psVar18 & 0x7fffffffU) >> 1; uVar12 != 0; uVar12 = uVar12 - 1) {
+        *(undefined4 *)psVar14 = *(undefined4 *)psVar13;
         psVar13 = psVar13 + 2;
+        psVar14 = psVar14 + 2;
       }
-      for (uVar12 = iVar10 * (int)psVar17 * 2 & 3; uVar12 != 0; uVar12 = uVar12 - 1) {
-        *(undefined1 *)psVar13 = *(undefined1 *)puVar11;
-        puVar11 = (undefined4 *)((int)puVar11 + 1);
+      for (uVar12 = iVar10 * (int)psVar18 * 2 & 3; uVar12 != 0; uVar12 = uVar12 - 1) {
+        *(char *)psVar14 = (char)*psVar13;
         psVar13 = (short *)((int)psVar13 + 1);
+        psVar14 = (short *)((int)psVar14 + 1);
       }
       if ((local_18 != (short *)0x0) && (local_1c = local_4c, local_4c <= local_34)) {
         local_18 = local_10 + (local_4c * 7 + local_44) * 7;
         do {
           local_10 = local_2c +
-                     ((int)pAVar9->field_0049 + local_44) * (int)SHORT_007fb278 +
+                     ((int)pAVar9->field_0049 + local_44) * (int)g_pathingGrid.sizeX +
                      (pAVar9->field_004B + local_1c) * (int)local_40 + (int)pAVar9->field_0047;
           if ((int)local_44 <= local_c) {
             iVar10 = (local_c - local_44) + 1;
             psVar13 = local_18;
             do {
               if (local_8 <= local_30) {
-                psVar17 = psVar13 + local_8;
-                iVar14 = (local_30 - local_8) + 1;
+                psVar14 = psVar13 + local_8;
+                iVar15 = (local_30 - local_8) + 1;
                 do {
-                  if (*psVar17 < 0) {
-                    *(short *)(((int)local_10 - (int)psVar13) + (int)psVar17) = *psVar17;
+                  if (*psVar14 < 0) {
+                    *(short *)(((int)local_10 - (int)psVar13) + (int)psVar14) = *psVar14;
                   }
-                  psVar17 = psVar17 + 1;
-                  iVar14 = iVar14 + -1;
-                } while (iVar14 != 0);
+                  psVar14 = psVar14 + 1;
+                  iVar15 = iVar15 + -1;
+                } while (iVar15 != 0);
               }
               psVar13 = psVar13 + 7;
               iVar10 = iVar10 + -1;
-              local_10 = local_10 + SHORT_007fb278;
+              local_10 = local_10 + g_pathingGrid.sizeX;
             } while (iVar10 != 0);
             local_20 = (short *)0x0;
           }
@@ -441,15 +435,15 @@ LAB_0040b56a:
         } while (local_1c <= local_34);
       }
       psVar13 = Library::DKW::WAY::FUN_006a8270
-                          ((int)local_2c,(int)SHORT_007fb278,(int)SHORT_007fb27a,
-                           (undefined4 *)(int)SHORT_007fb27c,(short *)(int)pAVar9->field_0047,
+                          ((int)local_2c,(int)g_pathingGrid.sizeX,(int)g_pathingGrid.sizeY,
+                           (undefined4 *)(int)g_pathingGrid.sizeZ,(short *)(int)pAVar9->field_0047,
                            (short *)(int)pAVar9->field_0049,(short *)(int)pAVar9->field_004B,
                            *(short **)&pAVar9[1].field_0x57,*(short **)&pAVar9[1].field_005B,
                            *(short **)&pAVar9[1].field_005F,*(int *)&pAVar9[1].field_0x53,
                            (int *)&pAVar9[1].field_0x3f,local_24);
       *(short **)&pAVar9[1].field_0x3b = psVar13;
     }
-    FUN_006ab060(&local_28);
+    FreeAndNull(&local_28);
   }
   g_currentExceptionFrame = local_90.previous;
   FUN_006a5e90(local_2c);

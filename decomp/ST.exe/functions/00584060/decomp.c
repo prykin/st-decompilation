@@ -8,7 +8,7 @@ STJellyGunC::sub_00584060(STJellyGunC *this,int *param_1,int *param_2,int *param
 
 {
   bool bVar1;
-  int *this_00;
+  STGameObjC *this_00;
   int iVar2;
   uint uVar3;
   undefined3 extraout_var;
@@ -24,12 +24,11 @@ STJellyGunC::sub_00584060(STJellyGunC *this,int *param_1,int *param_2,int *param
   short local_6;
   
   if (this->field_023D != 0) {
-    this_00 = (int *)STAllPlayersC::GetObjPtr
-                               (g_sTAllPlayers_007FA174,
-                                CONCAT31((int3)((uint)this >> 8),this->field_0x241),
-                                CONCAT22((short)((uint)this->field_023D >> 0x10),this->field_0245),
-                                CASE_1);
-    if ((this_00 != (int *)0x0) && (iVar2 = (**(code **)(*this_00 + 0xf8))(), iVar2 != 0)) {
+    this_00 = STAllPlayersC::GetObjPtr
+                        (g_sTAllPlayers_007FA174,CONCAT31((int3)((uint)this >> 8),this->field_0x241)
+                         ,CONCAT22((short)((uint)this->field_023D >> 0x10),this->field_0245),CASE_1)
+    ;
+    if ((this_00 != (STGameObjC *)0x0) && (iVar2 = (*this_00->vtable[1].vfunc_24)(), iVar2 != 0)) {
       thunk_FUN_004162f0(this_00,&local_6,&local_8,&local_a);
       *param_1 = (int)local_6;
       *param_2 = (int)local_8;

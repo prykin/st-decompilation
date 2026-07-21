@@ -96,9 +96,9 @@ FUN_006991c0(void *this,int param_1,int param_2,int param_3,int param_4,uint par
   local_8c = 0;
   ExceptionList = &local_14;
   local_d4 = param_1 * param_2;
-  FUN_006ab060((LPVOID *)((int)this + 0x584b));
+  FreeAndNull((void **)((int)this + 0x584b));
   puVar8 = (undefined4 *)Library::DKW::LIB::FUN_006aac70(param_1 * param_2);
-  *(LPVOID *)((int)this + 0x584b) = puVar8;
+  *(void **)((int)this + 0x584b) = puVar8;
   uVar14 = *(uint *)((int)this + 0x582f);
   for (uVar13 = uVar14 >> 2; uVar13 != 0; uVar13 = uVar13 - 1) {
     *puVar8 = 0;
@@ -630,7 +630,7 @@ LAB_00699f26:
         do {
           iVar9 = thunk_FUN_0069ac20((int)*(short *)(local_9c + uVar14 * 10),
                                      (int)*(short *)((int)(local_9c + uVar14 * 10) + 2),0xf,
-                                     (AnonShape_0069AC20_BA305C93 *)param_8->field_001C);
+                                     (AnonNested_005F5B80_0169_794156D7 *)param_8->field_001C);
           if (0xf < iVar9) {
             *(uint *)(&stack0xfffffe98 + iVar16 * 4) = iVar9 << 0x10 | uVar14 & 0xffff;
             iVar16 = iVar16 + 1;

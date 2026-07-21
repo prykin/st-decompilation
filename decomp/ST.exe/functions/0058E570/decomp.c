@@ -111,13 +111,14 @@ LAB_0058ea68:
         sVar1 = this->field_0231;
         sVar2 = this->field_0235;
         sVar3 = this->field_0233;
-        if (((((-1 < sVar1) && (sVar1 < SHORT_007fb240)) &&
-             ((-1 < sVar3 && ((sVar3 < SHORT_007fb242 && (-1 < sVar2)))))) &&
-            (sVar2 < SHORT_007fb244)) &&
+        if (((((-1 < sVar1) && (sVar1 < g_worldGrid.sizeX)) &&
+             ((-1 < sVar3 && ((sVar3 < g_worldGrid.sizeY && (-1 < sVar2)))))) &&
+            (sVar2 < g_worldGrid.sizeZ)) &&
            ((((pSVar8 = (STFishC *)
-                        g_worldCells
-                        [(int)SHORT_007fb246 * (int)sVar2 + (int)SHORT_007fb240 * (int)sVar3 +
-                         (int)sVar1].objects[0], local_8 = pSVar8, pSVar8 != (STFishC *)0x0 &&
+                        g_worldGrid.cells
+                        [(int)g_worldGrid.planeStride * (int)sVar2 +
+                         (int)g_worldGrid.sizeX * (int)sVar3 + (int)sVar1].objects[0],
+              local_8 = pSVar8, pSVar8 != (STFishC *)0x0 &&
               (STFishC::sub_004162B0(pSVar8,&this->field_0231,&this->field_0233,&this->field_0235),
               this->field_0047 == this->field_0231)) && (this->field_0049 == this->field_0233)) &&
             ((this->field_004B == this->field_0235 &&
@@ -158,16 +159,16 @@ LAB_0058ea68:
       local_10 = CONCAT22(extraout_var_02,sVar2);
       this->field_0257 = CONCAT31(extraout_var_00,bVar5);
       sVar3 = this->field_0231;
-      if (((sVar3 < 0) || (SHORT_007fb240 <= sVar3)) ||
-         ((sVar2 < 0 || (((SHORT_007fb242 <= sVar2 || (sVar1 < 0)) || (SHORT_007fb244 <= sVar1))))))
-      {
+      if (((sVar3 < 0) || (g_worldGrid.sizeX <= sVar3)) ||
+         ((sVar2 < 0 ||
+          (((g_worldGrid.sizeY <= sVar2 || (sVar1 < 0)) || (g_worldGrid.sizeZ <= sVar1)))))) {
         local_8 = (STFishC *)0x0;
       }
       else {
         local_8 = (STFishC *)
-                  g_worldCells
-                  [(int)SHORT_007fb246 * (int)sVar1 + (int)SHORT_007fb240 * (int)sVar2 + (int)sVar3]
-                  .objects[0];
+                  g_worldGrid.cells
+                  [(int)g_worldGrid.planeStride * (int)sVar1 + (int)g_worldGrid.sizeX * (int)sVar2 +
+                   (int)sVar3].objects[0];
       }
       if (((this->field_0047 != sVar3) || (this->field_0049 != sVar2)) ||
          ((this->field_004B != sVar1 ||
@@ -177,7 +178,9 @@ LAB_0058ea68:
                                CONCAT31((int3)(local_10 >> 8),this->field_0x249),
                                CONCAT22((short)((uint3)extraout_var_00 >> 8),this->field_024D),
                                CASE_1), local_8 != pSVar8)))) {
-        iVar6 = thunk_FUN_00418030(this,this->field_0231,this->field_0233,this->field_0235);
+        iVar6 = SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00417FF0::thunk_FUN_00418030
+                          ((AnonReceiver_00417FF0 *)this,this->field_0231,this->field_0233,
+                           this->field_0235);
         thunk_FUN_00417ff0(this,8);
         thunk_FUN_00418010(this,6);
         if (iVar6 != 0) {
@@ -240,7 +243,8 @@ LAB_0058e87e:
     else if (iVar6 == 1) {
       thunk_FUN_00417ff0(this,10);
       thunk_FUN_00418010(this,8);
-      thunk_FUN_00418030(this,this->field_0231,this->field_0233,this->field_0235);
+      SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00417FF0::thunk_FUN_00418030
+                ((AnonReceiver_00417FF0 *)this,this->field_0231,this->field_0233,this->field_0235);
       this->field_0257 = CASE_2;
     }
     break;

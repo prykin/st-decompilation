@@ -32,11 +32,11 @@ void __thiscall FUN_004ce0f0(void *this,int *param_1)
         }
         local_38[0] = local_8;
         local_30 = 1;
-        uVar3 = thunk_FUN_004406c0(*(char *)((int)this + 0x24));
+        uVar3 = GetPlayerRaceId(*(char *)((int)this + 0x24));
         local_2a = *(undefined2 *)(&DAT_00854350 + ((uVar3 & 0xff) + iVar4) * 4);
-        uVar3 = thunk_FUN_004406c0(*(char *)((int)this + 0x24));
+        uVar3 = GetPlayerRaceId(*(char *)((int)this + 0x24));
         local_2e = *(undefined2 *)(&DAT_007e19f4 + ((uVar3 & 0xff) + iVar4) * 4);
-        uVar3 = thunk_FUN_004406c0(*(char *)((int)this + 0x24));
+        uVar3 = GetPlayerRaceId(*(char *)((int)this + 0x24));
         local_2c = *(undefined2 *)(&DAT_007e2f04 + ((uVar3 & 0xff) + iVar4) * 4);
         Library::DKW::TBL::FUN_006ae1c0((uint *)*param_1,local_38);
       }

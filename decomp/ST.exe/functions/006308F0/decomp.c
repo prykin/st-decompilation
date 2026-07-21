@@ -20,14 +20,14 @@ FUN_006308f0(void *this,int param_1,int param_2,int param_3,int param_4,undefine
   int local_8;
   
   uVar5 = 0xffffffff;
-  iVar4 = (SHORT_007fb240 * param_3 + param_2) * (int)SHORT_007fb242 + param_1;
+  iVar4 = (g_worldGrid.sizeX * param_3 + param_2) * (int)g_worldGrid.sizeY + param_1;
   local_8 = 0;
   if (param_4 == 1) {
     cVar1 = *(char *)(*(int *)((int)this + 0x34) + iVar4);
   }
   else {
     iVar3 = *(int *)((int)this + 0x34);
-    local_8 = SHORT_007fb242 + iVar4;
+    local_8 = g_worldGrid.sizeY + iVar4;
     if (*(char *)(iVar3 + iVar4) != '\0') {
       return 0xffffffff;
     }

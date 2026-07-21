@@ -1,4 +1,4 @@
-FUN_0065d230:
+AiFltClassTy::AiFltClassTy:
 0065D230  56                        PUSH ESI
 0065D231  57                        PUSH EDI
 0065D232  8B F1                     MOV ESI,ECX

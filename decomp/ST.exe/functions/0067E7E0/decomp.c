@@ -62,10 +62,10 @@ uint * __cdecl CreateArbList(cMf32 *param_1,int param_2)
                                 s_CreateArbList_007d30e0);
     if (iVar11 == 0) {
       if (local_8 != (DArrayTy *)0x0) {
-        FUN_006ae110((byte *)local_8);
+        DArrayDestroy(local_8);
       }
       if (local_10 != (DArrayTy *)0x0) {
-        FUN_006ae110((byte *)local_10);
+        DArrayDestroy(local_10);
       }
       RaiseInternalException(iVar8,0,s_E____titans_ai_ai_plr_d_cpp_007d2fa4,0x248);
       return (uint *)0x0;
@@ -111,7 +111,7 @@ uint * __cdecl CreateArbList(cMf32 *param_1,int param_2)
   do {
     if (pcVar5 == (char *)0x0) {
       if (local_10 != (DArrayTy *)0x0) {
-        FUN_006ae110((byte *)local_10);
+        DArrayDestroy(local_10);
       }
       g_currentExceptionFrame = local_a0.previous;
       return &local_8->flags;

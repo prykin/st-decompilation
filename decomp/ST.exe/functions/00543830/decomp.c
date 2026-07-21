@@ -26,7 +26,7 @@ void __thiscall CursorClassTy::DoneCursor(CursorClassTy *this)
     }
     pCVar2->field_04D6 = 0xffffffff;
     if (pCVar2->field_04D2 != 0) {
-      FUN_006ab060((LPVOID *)&pCVar2->field_04D2);
+      FreeAndNull((void **)&pCVar2->field_04D2);
     }
     pCVar2->field_04E3 = 0;
     pCVar2->field_04E7 = 0;

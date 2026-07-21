@@ -14,7 +14,7 @@ void __thiscall CPanelTy::PaintInfoObj(CPanelTy *this)
   int iVar5;
   undefined4 unaff_EBX;
   void *unaff_ESI;
-  AnonShape_006B84D0_7C7D97C6 *pAVar6;
+  AnonShape_006B5B10_E0D06CF1 *pAVar6;
   InternalExceptionFrame local_4c;
   CPanelTy *local_8;
   
@@ -35,28 +35,28 @@ void __thiscall CPanelTy::PaintInfoObj(CPanelTy *this)
     RaiseInternalException(iVar3,0,s_E____titans_Andrey_cpanel1_cpp_007c23cc,0xb5);
     return;
   }
-  DibPut((AnonShape_006B84D0_7C7D97C6 *)local_8->field_01A0,0,0,'\x01',(byte *)local_8->field_0B43);
-  DibPut((AnonShape_006B84D0_7C7D97C6 *)this_00->field_019C,0,0,'\x01',(byte *)this_00->field_0B47);
+  DibPut((AnonShape_006B5B10_E0D06CF1 *)local_8->field_01A0,0,0,'\x01',(byte *)local_8->field_0B43);
+  DibPut((AnonShape_006B5B10_E0D06CF1 *)this_00->field_019C,0,0,'\x01',(byte *)this_00->field_0B47);
   if (this_00->field_02E6 != 0) {
     thunk_FUN_004f1890(this_00,1);
   }
   if (this_00->field_0C51 == '\0') {
     if (DAT_0080874e == '\x03') {
-      DibPut((AnonShape_006B84D0_7C7D97C6 *)this_00->field_0194,0x73,0,'\x06',
+      DibPut((AnonShape_006B5B10_E0D06CF1 *)this_00->field_0194,0x73,0,'\x06',
              (byte *)this_00->field_09F9);
       goto LAB_004fef26;
     }
-    pbVar4 = (byte *)FUN_0070b3a0(this_00->field_029E,1);
-    pAVar6 = (AnonShape_006B84D0_7C7D97C6 *)this_00->field_0198;
+    pbVar4 = (byte *)FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_029E,1);
+    pAVar6 = (AnonShape_006B5B10_E0D06CF1 *)this_00->field_0198;
   }
   else {
     if (DAT_0080874e == '\x03') {
-      DibPut((AnonShape_006B84D0_7C7D97C6 *)this_00->field_0194,0x73,0,'\x06',
+      DibPut((AnonShape_006B5B10_E0D06CF1 *)this_00->field_0194,0x73,0,'\x06',
              (byte *)this_00->field_0A01);
       goto LAB_004fef26;
     }
-    pbVar4 = (byte *)FUN_0070b3a0(this_00->field_029E,0);
-    pAVar6 = (AnonShape_006B84D0_7C7D97C6 *)this_00->field_0198;
+    pbVar4 = (byte *)FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_029E,0);
+    pAVar6 = (AnonShape_006B5B10_E0D06CF1 *)this_00->field_0198;
   }
   DibPut(pAVar6,0,0,'\x01',pbVar4);
 LAB_004fef26:

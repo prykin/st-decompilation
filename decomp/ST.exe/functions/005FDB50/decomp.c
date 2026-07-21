@@ -3,9 +3,17 @@
 /* [STSourceProvenanceApplier begin]
    Recovered source file: E:\__titans\nick\to_DcBom.cpp
    Diagnostic line evidence: 317 (metadata/report site, not the function definition)
-   [STSourceProvenanceApplier end] */
+   [STSourceProvenanceApplier end]
+   
+   [STHiddenThisApplier] Anonymous hidden receiver recovered as
+   /SubmarineTitans/Recovered/HiddenThis/AnonReceiver_005FDB50.
+   Evidence: incoming_receiver_captures=1; receiver_accesses=9; incoming_edx_uses=0; calls=3;
+   ecx_pointer_setup=3; ecx_scalar_setup=0; caller_cleanup_calls=0; callee_ret_pop=[8];
+   expected_stack=8; receiver_family_members=1; adopt_untyped_existing_thiscall */
 
-undefined4 __thiscall FUN_005fdb50(void *this,int param_1,int param_2)
+undefined4 __thiscall
+SubmarineTitans::Recovered::HiddenThis::AnonReceiver_005FDB50::FUN_005fdb50
+          (AnonReceiver_005FDB50 *this,int param_1,int param_2)
 
 {
   char cVar1;
@@ -24,11 +32,11 @@ undefined4 __thiscall FUN_005fdb50(void *this,int param_1,int param_2)
   int local_18;
   int local_14;
   int local_10;
-  void *local_c;
+  AnonReceiver_005FDB50 *local_c;
   int local_8;
   
   if (param_2 < 0) {
-    local_10 = *(int *)((int)this + 0x226);
+    local_10 = *(int *)&this->field_0x226;
     local_14 = 0;
   }
   else {
@@ -39,9 +47,9 @@ undefined4 __thiscall FUN_005fdb50(void *this,int param_1,int param_2)
     iVar8 = local_14 * 0x52;
     local_c = this;
     do {
-      iVar5 = *(int *)(iVar8 + 0x39 + *(int *)((int)this + 0x233));
+      iVar5 = *(int *)(iVar8 + 0x39 + *(int *)&this->field_0x233);
       if ((((iVar5 != 4) && (iVar5 != 5)) &&
-          (this_00 = *(STT3DSprC **)(iVar8 + *(int *)((int)this + 0x233) + 0x42),
+          (this_00 = *(STT3DSprC **)(iVar8 + *(int *)&this->field_0x233 + 0x42),
           this_00 != (STT3DSprC *)0x0)) && (-1 < param_2 || iVar5 != 2)) {
         local_8 = iVar8;
         if ((iVar5 == 1) || (iVar5 == 2)) {
@@ -57,18 +65,18 @@ undefined4 __thiscall FUN_005fdb50(void *this,int param_1,int param_2)
             return 0xffff;
           }
           thunk_FUN_004ad380(this_00,0x5a,0x45);
-          iVar5 = iVar8 + *(int *)((int)this + 0x233);
+          iVar5 = iVar8 + *(int *)&this->field_0x233;
           local_18 = (int)*(short *)(iVar5 + 6);
           thunk_FUN_004ad3c0(this_00,(float)local_18 * _DAT_007904f8 * _DAT_007904f0,
                              (float)(int)*(short *)(iVar5 + 8) * _DAT_007904f8 * _DAT_007904f0,
-                             (float)(int)*(short *)(iVar8 + 10 + *(int *)((int)this + 0x233)) *
+                             (float)(int)*(short *)(iVar8 + 10 + *(int *)&this->field_0x233) *
                              _DAT_007904f8 * _DAT_007904f0 + _DAT_007904fc);
           STT3DSprC::StartShow(this_00,0xd,PTR_00802a38->field_00E4);
-          *(undefined1 *)(iVar8 + 0x41 + *(int *)((int)this + 0x233)) = 1;
+          *(undefined1 *)(iVar8 + 0x41 + *(int *)&this->field_0x233) = 1;
           pVVar3 = g_visibleClass_00802A88;
           if (g_visibleClass_00802A88 != (VisibleClassTy *)0x0) {
-            iVar5 = iVar8 + *(int *)((int)this + 0x233);
-            sVar2 = *(short *)(iVar8 + 10 + *(int *)((int)this + 0x233));
+            iVar5 = iVar8 + *(int *)&this->field_0x233;
+            sVar2 = *(short *)(iVar8 + 10 + *(int *)&this->field_0x233);
             if (sVar2 < 0) {
               iVar7 = (short)((sVar2 / 200 + (sVar2 >> 0xf)) -
                              (short)((longlong)(int)sVar2 * 0x51eb851f >> 0x3f)) + -1;
@@ -110,7 +118,7 @@ joined_r0x005fe09b:
               this = local_c;
               if (cVar1 == '\0') {
                 thunk_FUN_004ad430((int)this_00);
-                *(undefined1 *)(local_8 + 0x41 + *(int *)((int)local_c + 0x233)) = 0;
+                *(undefined1 *)(local_8 + 0x41 + *(int *)&local_c->field_0x233) = 0;
                 iVar8 = local_8;
                 this = local_c;
               }
@@ -127,8 +135,8 @@ joined_r0x005fe09b:
             thunk_FUN_004ad310(this_00);
           }
           else {
-            uVar4 = *(int *)((int)this + 0x1c) * 0x41c64e6d + 0x3039;
-            *(uint *)((int)this + 0x1c) = uVar4;
+            uVar4 = *(int *)&this->field_0x1c * 0x41c64e6d + 0x3039;
+            *(uint *)&this->field_0x1c = uVar4;
             iVar5 = STT3DSprC::LoadSequence
                               (this_00,0xd,DAT_00806774,(&PTR_s_Expb24_007ce934)[uVar4 >> 0x10 & 1],
                                0x1d);
@@ -144,22 +152,22 @@ joined_r0x005fe09b:
               return 0xffff;
             }
             STT3DSprC::StartShow(this_00,0xe,PTR_00802a38->field_00E4);
-            *(undefined1 *)(iVar8 + 0x28 + *(int *)((int)this + 0x233)) = 1;
+            *(undefined1 *)(iVar8 + 0x28 + *(int *)&this->field_0x233) = 1;
             thunk_FUN_004ac700(this_00,'\x0f');
             STT3DSprC::StartShow(this_00,0xd,PTR_00802a38->field_00E4);
             thunk_FUN_004acf20(this_00,DAT_008032b8,0x10);
             thunk_FUN_004acfe0(this_00,'\x0e');
-            iVar5 = iVar8 + *(int *)((int)this + 0x233);
+            iVar5 = iVar8 + *(int *)&this->field_0x233;
             local_18 = (int)*(short *)(iVar5 + 6);
             thunk_FUN_004ad3c0(this_00,(float)local_18 * _DAT_007904f8 * _DAT_007904f0,
                                (float)(int)*(short *)(iVar5 + 8) * _DAT_007904f8 * _DAT_007904f0,
-                               (float)(int)*(short *)(iVar8 + 10 + *(int *)((int)this + 0x233)) *
+                               (float)(int)*(short *)(iVar8 + 10 + *(int *)&this->field_0x233) *
                                _DAT_007904f8 * _DAT_007904f0 + _DAT_007904fc);
-            *(undefined1 *)(iVar8 + 0x41 + *(int *)((int)this + 0x233)) = 1;
+            *(undefined1 *)(iVar8 + 0x41 + *(int *)&this->field_0x233) = 1;
             pVVar3 = g_visibleClass_00802A88;
             if (g_visibleClass_00802A88 != (VisibleClassTy *)0x0) {
-              sVar2 = *(short *)(iVar8 + 10 + *(int *)((int)this + 0x233));
-              iVar8 = iVar8 + *(int *)((int)this + 0x233);
+              sVar2 = *(short *)(iVar8 + 10 + *(int *)&this->field_0x233);
+              iVar8 = iVar8 + *(int *)&this->field_0x233;
               if (sVar2 < 0) {
                 iVar5 = (short)((sVar2 / 200 + (sVar2 >> 0xf)) -
                                (short)((longlong)(int)sVar2 * 0x51eb851f >> 0x3f)) + -1;

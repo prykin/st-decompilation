@@ -7,12 +7,12 @@
 void __cdecl _AddAllGrpExch(uint param_1)
 
 {
-  uint uVar1;
+  dword dVar1;
   code *pcVar2;
   int iVar3;
-  uint *groupContent;
+  DArrayTy *array;
   ushort *puVar4;
-  int *piVar5;
+  STGameObjC *pSVar5;
   int iVar6;
   uint uVar7;
   uint uVar8;
@@ -36,40 +36,39 @@ void __cdecl _AddAllGrpExch(uint param_1)
     return;
   }
   if (g_sTAllPlayers_007FA174 != (STAllPlayersC *)0x0) {
-    groupContent = STAllPlayersC::GetObjsList((char)param_1);
-    if (groupContent != (uint *)0x0) {
-      uVar1 = groupContent[3];
-      if (uVar1 != 0) {
+    array = (DArrayTy *)STAllPlayersC::GetObjsList((char)param_1);
+    if (array != (DArrayTy *)0x0) {
+      dVar1 = array->count;
+      if (dVar1 != 0) {
         uVar8 = 0;
-        if (uVar1 != 0) {
+        if (dVar1 != 0) {
           uVar7 = 0;
-          if (uVar1 == 0) {
+          if (dVar1 == 0) {
             puVar4 = (ushort *)0x0;
             goto LAB_00676053;
           }
           do {
-            puVar4 = (ushort *)(groupContent[2] * uVar7 + groupContent[7]);
+            puVar4 = (ushort *)(array->elementSize * uVar7 + (int)array->data);
 LAB_00676053:
-            piVar5 = (int *)STAllPlayersC::GetObjPtr
-                                      (g_sTAllPlayers_007FA174,param_1,(uint)*puVar4,CASE_1);
-            if (piVar5 != (int *)0x0) {
-              iVar3 = (**(code **)(*piVar5 + 0x2c))();
+            pSVar5 = STAllPlayersC::GetObjPtr(g_sTAllPlayers_007FA174,param_1,(uint)*puVar4,CASE_1);
+            if (pSVar5 != (STGameObjC *)0x0) {
+              iVar3 = (*pSVar5->vtable->vfunc_2C)();
               if (iVar3 == 0x78) {
-                iVar3 = (**(code **)(*piVar5 + 0x2c))();
+                iVar3 = (*pSVar5->vtable->vfunc_2C)();
                 if (iVar3 == 0x78) {
-                  *(undefined4 *)((int)piVar5 + 0x269) = 0xffffffff;
+                  *(undefined4 *)&pSVar5[1].field_0x98 = 0xffffffff;
                 }
               }
             }
             uVar8 = uVar8 + 1;
             uVar7 = uVar8 & 0xffff;
-          } while (uVar7 < groupContent[3]);
+          } while (uVar7 < array->count);
         }
         STAllPlayersC::AddObjsToGroup
-                  (g_sTAllPlayers_007FA174,param_1,0,groupContent,(undefined2 *)0x0);
+                  (g_sTAllPlayers_007FA174,param_1,0,(uint *)array,(undefined2 *)0x0);
       }
-      if (groupContent != (uint *)0x0) {
-        FUN_006ae110((byte *)groupContent);
+      if (array != (DArrayTy *)0x0) {
+        DArrayDestroy(array);
       }
     }
   }

@@ -6,7 +6,7 @@ int FUN_00755180(AnonShape_00755180_CB9F7747 *param_1,LPCSTR param_2,undefined4 
   undefined4 *puVar1;
   int iVar2;
   undefined4 unaff_ESI;
-  undefined4 **ppuVar3;
+  undefined4 **value;
   void *unaff_EDI;
   InternalExceptionFrame local_4c;
   int local_8;
@@ -30,20 +30,20 @@ int FUN_00755180(AnonShape_00755180_CB9F7747 *param_1,LPCSTR param_2,undefined4 
     else {
       Library::DKW::FMM::FUN_006d4510(param_1->field_0008,param_2,0x100000);
     }
-    ppuVar3 = &param_1->field_0008;
+    value = &param_1->field_0008;
     g_currentExceptionFrame = local_4c.previous;
-    if ((uint)(*ppuVar3)[0xe] < 0x20) {
-      FUN_006d46a0(*ppuVar3,0);
-      FUN_006ab060(ppuVar3);
+    if ((uint)(*value)[0xe] < 0x20) {
+      FUN_006d46a0(*value,0);
+      FreeAndNull(value);
       return -5;
     }
     puVar1 = FUN_006b04d0(0x80);
-    (*ppuVar3)[0x13] = puVar1;
-    (*ppuVar3)[0x14] = (*ppuVar3)[0x13];
-    puVar1 = *ppuVar3;
+    (*value)[0x13] = puVar1;
+    (*value)[0x14] = (*value)[0x13];
+    puVar1 = *value;
     if (puVar1[0x14] == 0) {
       FUN_006d46a0(puVar1,0);
-      FUN_006ab060(ppuVar3);
+      FreeAndNull(value);
       return -2;
     }
     FUN_007550c0((AnonShape_007550C0_25940DF4 *)puVar1[0x13],param_3);
@@ -51,7 +51,7 @@ int FUN_00755180(AnonShape_00755180_CB9F7747 *param_1,LPCSTR param_2,undefined4 
     return local_8;
   }
   g_currentExceptionFrame = local_4c.previous;
-  FUN_006ab060(&param_1->field_0008);
+  FreeAndNull(&param_1->field_0008);
   return iVar2;
 }
 

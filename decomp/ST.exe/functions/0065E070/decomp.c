@@ -146,7 +146,7 @@ cf_continue_loop_0065E27E:
           bVar13 = local_18 < local_1c->count;
         } while ((int)local_18 < (int)local_1c->count);
       }
-      FUN_006ae110((byte *)local_1c);
+      DArrayDestroy(local_1c);
     }
     local_c = local_c + 1;
     local_10 = local_10 + 1;

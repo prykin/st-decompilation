@@ -69,12 +69,12 @@ int __fastcall FUN_0060dd70(AnonShape_0060DD70_701DD710 *param_1)
       local_c = 0;
     }
     local_1c = iVar4 + 1 + iVar6;
-    if (SHORT_007fb242 < local_1c) {
-      local_1c = (int)SHORT_007fb242;
+    if (g_worldGrid.sizeY < local_1c) {
+      local_1c = (int)g_worldGrid.sizeY;
     }
     local_10 = iVar4 + 1 + iVar5;
-    if (SHORT_007fb240 < local_10) {
-      local_10 = (int)SHORT_007fb240;
+    if (g_worldGrid.sizeX < local_10) {
+      local_10 = (int)g_worldGrid.sizeX;
     }
     if (DAT_0080874d == -1) {
       return local_14;

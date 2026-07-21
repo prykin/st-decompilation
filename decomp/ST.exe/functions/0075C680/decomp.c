@@ -22,7 +22,7 @@ undefined4 FUN_0075c680(AnonShape_0075C680_AC52F0A7 *param_1,undefined4 *param_2
   iVar1 = param_1->field_01AA;
   local_c = 1 << ((byte)param_1->field_018A & 0x1f);
   if (((*(int *)&param_1->field_0x10c != 0) && (*(int *)(iVar1 + 0x28) == 0)) &&
-     (iVar4 = FUN_0075c3b0((AnonShape_0075C3B0_6803BA0D *)param_1), iVar4 == 0)) {
+     (iVar4 = FUN_0075c3b0((AnonShape_0075BE40_B9FD5FDF *)param_1), iVar4 == 0)) {
     return 0;
   }
   local_14 = param_1;

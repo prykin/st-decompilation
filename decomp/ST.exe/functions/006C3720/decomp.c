@@ -23,7 +23,7 @@ undefined4 FUN_006c3720(WPARAM param_1)
         param_1 = 0;
       }
       else {
-        Library::DKW::DV::FUN_006c4110(WVar2);
+        Library::DKW::DV::FUN_006c4110((AnonShape_006C3FC0_72DDFA27 *)WVar2);
         if ((param_1 != 0) && ((uVar1 & 0x20000000) != 0)) {
           PostMessageA(*(HWND *)(WVar2 + 0x78),*(UINT *)(WVar2 + 0x80),param_1,lParam);
         }

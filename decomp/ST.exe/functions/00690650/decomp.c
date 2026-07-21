@@ -9,21 +9,22 @@ AiTactClassTy::HelpOrganize(AiTactClassTy *this,AnonShape_00690650_F810CDF4 *par
 {
   byte bVar1;
   byte bVar2;
-  char cVar3;
+  byte bVar3;
   AiFltClassTy *this_00;
   code *pcVar4;
-  uint uVar5;
   AiTactClassTy *this_01;
-  short sVar6;
+  short sVar5;
   undefined4 in_EAX;
-  int iVar7;
+  int iVar6;
+  STGameObjC *pSVar7;
   uint uVar8;
-  int iVar9;
-  undefined4 unaff_ESI;
+  DArrayTy *pDVar9;
   int iVar10;
+  undefined4 unaff_ESI;
+  void *pvVar11;
   void *unaff_EDI;
-  uint *puVar11;
-  bool bVar12;
+  uint *puVar12;
+  bool bVar13;
   InternalExceptionFrame local_98;
   uint local_54 [2];
   char local_4c;
@@ -59,89 +60,87 @@ AiTactClassTy::HelpOrganize(AiTactClassTy *this,AnonShape_00690650_F810CDF4 *par
   bVar2 = this->field_0x24;
   local_8 = CONCAT31(local_8._1_3_,bVar2);
   if (DAT_00808a8f != '\0') {
-    bVar12 = (&DAT_008087ea)[(uint)bVar2 * 0x51] != (&DAT_008087ea)[(uint)bVar1 * 0x51];
+    bVar13 = (&DAT_008087ea)[(uint)bVar2 * 0x51] != (&DAT_008087ea)[(uint)bVar1 * 0x51];
     goto LAB_00690763;
   }
   if (bVar1 == bVar2) {
 LAB_00690758:
-    iVar7 = 0;
+    iVar6 = 0;
   }
   else {
-    uVar8 = (uint)bVar1;
-    uVar5 = (uint)bVar2;
-    cVar3 = *(char *)((int)&DAT_00808a4f + uVar8 * 8 + uVar5);
-    if ((cVar3 == '\0') && (*(char *)((int)&DAT_00808a4f + uVar5 * 8 + uVar8) == '\0')) {
-      iVar7 = -2;
+    bVar3 = g_playerRelationMatrix[bVar1][bVar2];
+    if ((bVar3 == 0) && (g_playerRelationMatrix[bVar2][bVar1] == 0)) {
+      iVar6 = -2;
     }
-    else if ((cVar3 == '\x01') && (*(char *)((int)&DAT_00808a4f + uVar5 * 8 + uVar8) == '\0')) {
-      iVar7 = -1;
+    else if ((bVar3 == 1) && (g_playerRelationMatrix[bVar2][bVar1] == 0)) {
+      iVar6 = -1;
     }
-    else if ((cVar3 == '\0') && (*(char *)((int)&DAT_00808a4f + uVar5 * 8 + uVar8) == '\x01')) {
-      iVar7 = 1;
+    else if ((bVar3 == 0) && (g_playerRelationMatrix[bVar2][bVar1] == 1)) {
+      iVar6 = 1;
     }
     else {
-      if ((cVar3 != '\x01') || (*(char *)((int)&DAT_00808a4f + uVar5 * 8 + uVar8) != '\x01'))
-      goto LAB_00690758;
-      iVar7 = 2;
+      if ((bVar3 != 1) || (g_playerRelationMatrix[bVar2][bVar1] != 1)) goto LAB_00690758;
+      iVar6 = 2;
     }
   }
-  bVar12 = iVar7 < 0;
+  bVar13 = iVar6 < 0;
 LAB_00690763:
-  if ((bVar12) && (param_1->field_001A != -1)) {
+  if ((bVar13) && (param_1->field_001A != -1)) {
     local_98.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_98;
     local_c = this;
-    iVar7 = Library::MSVCRT::__setjmp3(local_98.jumpBuffer,0,unaff_EDI,unaff_ESI);
+    iVar6 = Library::MSVCRT::__setjmp3(local_98.jumpBuffer,0,unaff_EDI,unaff_ESI);
     this_01 = local_c;
-    if (iVar7 == 0) {
+    if (iVar6 == 0) {
       if (g_sTAllPlayers_007FA174 == (STAllPlayersC *)0x0) {
-        uVar8 = 0;
+        pSVar7 = (STGameObjC *)0x0;
       }
       else {
-        uVar8 = STAllPlayersC::GetObjPtr
-                          (g_sTAllPlayers_007FA174,(uint)(byte)local_c->field_0x24,local_10,CASE_1);
+        pSVar7 = STAllPlayersC::GetObjPtr
+                           (g_sTAllPlayers_007FA174,(uint)(byte)local_c->field_0x24,local_10,CASE_1)
+        ;
       }
-      if ((uVar8 != 0) && (iVar7 = thunk_FUN_0068e290(this_01,*(short *)(uVar8 + 0x30)), iVar7 != 0)
-         ) {
-        if (*(short *)(iVar7 + 0x7b) == 1) {
-          sVar6 = (short)local_10;
+      if ((pSVar7 != (STGameObjC *)0x0) &&
+         (iVar6 = thunk_FUN_0068e290(this_01,*(short *)&pSVar7->field_0x30), iVar6 != 0)) {
+        if (*(short *)(iVar6 + 0x7b) == 1) {
+          sVar5 = (short)local_10;
         }
         else {
-          sVar6 = -1;
+          sVar5 = -1;
         }
-        uVar8 = thunk_FUN_00690550(this_01,*(short *)(iVar7 + 0x7d),sVar6);
+        uVar8 = thunk_FUN_00690550(this_01,*(short *)(iVar6 + 0x7d),sVar5);
         if ((int)uVar8 < 0) {
-          iVar10 = this_01->field_00A5;
+          pDVar9 = this_01->field_00A5;
           local_8 = 0;
-          if (0 < *(int *)(iVar10 + 0xc)) {
-            bVar12 = *(int *)(iVar10 + 0xc) != 0;
+          if (0 < (int)pDVar9->count) {
+            bVar13 = pDVar9->count != 0;
             do {
-              if (bVar12) {
-                iVar10 = *(int *)(iVar10 + 8) * local_8 + *(int *)(iVar10 + 0x1c);
+              if (bVar13) {
+                pvVar11 = (void *)(pDVar9->elementSize * local_8 + (int)pDVar9->data);
               }
               else {
-                iVar10 = 0;
+                pvVar11 = (void *)0x0;
               }
-              if ((iVar10 != 0) &&
-                 (this_00 = *(AiFltClassTy **)(iVar10 + 4), this_00 != (AiFltClassTy *)0x0)) {
-                puVar11 = local_54;
-                for (iVar9 = 0xd; iVar9 != 0; iVar9 = iVar9 + -1) {
-                  *puVar11 = 0;
-                  puVar11 = puVar11 + 1;
+              if ((pvVar11 != (void *)0x0) &&
+                 (this_00 = *(AiFltClassTy **)((int)pvVar11 + 4), this_00 != (AiFltClassTy *)0x0)) {
+                puVar12 = local_54;
+                for (iVar10 = 0xd; iVar10 != 0; iVar10 = iVar10 + -1) {
+                  *puVar12 = 0;
+                  puVar12 = puVar12 + 1;
                 }
                 local_54[0] = 100;
                 local_4b = 1;
                 local_54[1] = local_c->field_012C;
-                local_48 = *(undefined2 *)(iVar7 + 0x7d);
+                local_48 = *(undefined2 *)(iVar6 + 0x7d);
                 local_4a = (undefined2)local_10;
-                local_46 = *(undefined2 *)(iVar7 + 0x7b);
+                local_46 = *(undefined2 *)(iVar6 + 0x7b);
                 local_44 = (undefined2)local_20;
                 local_42 = local_14;
                 AiFltClassTy::GetAiMess(this_00,local_54);
                 if ('\0' < local_4c) {
-                  _local_1c = CONCAT22(*(undefined2 *)(iVar7 + 0x7d),
-                                       *(undefined2 *)(*(int *)(iVar10 + 4) + 0x7d));
-                  local_18 = CONCAT22(*(undefined2 *)(iVar7 + 0x7b),(short)local_10);
+                  _local_1c = CONCAT22(*(undefined2 *)(iVar6 + 0x7d),
+                                       *(undefined2 *)(*(int *)((int)pvVar11 + 4) + 0x7d));
+                  local_18 = CONCAT22(*(undefined2 *)(iVar6 + 0x7b),(short)local_10);
                   Library::DKW::TBL::FUN_006ae1c0
                             ((uint *)local_c->field_00C9,(undefined4 *)&local_1c);
                   g_currentExceptionFrame = local_98.previous;
@@ -149,9 +148,9 @@ LAB_00690763:
                 }
               }
               local_8 = local_8 + 1;
-              iVar10 = local_c->field_00A5;
-              bVar12 = local_8 < *(uint *)(iVar10 + 0xc);
-              if ((int)*(uint *)(iVar10 + 0xc) <= (int)local_8) {
+              pDVar9 = local_c->field_00A5;
+              bVar13 = local_8 < pDVar9->count;
+              if ((int)pDVar9->count <= (int)local_8) {
                 g_currentExceptionFrame = local_98.previous;
                 return;
               }
@@ -163,14 +162,14 @@ LAB_00690763:
       return;
     }
     g_currentExceptionFrame = local_98.previous;
-    iVar10 = ReportDebugMessage(s_E____titans_ai_ai_tact_cpp_007d56e0,0x433,0,iVar7,&DAT_007a4ccc,
+    iVar10 = ReportDebugMessage(s_E____titans_ai_ai_tact_cpp_007d56e0,0x433,0,iVar6,&DAT_007a4ccc,
                                 s_AiTactClassTy__HelpOrganize_007d5894);
     if (iVar10 != 0) {
       pcVar4 = (code *)swi(3);
       (*pcVar4)();
       return;
     }
-    RaiseInternalException(iVar7,0,s_E____titans_ai_ai_tact_cpp_007d56e0,0x434);
+    RaiseInternalException(iVar6,0,s_E____titans_ai_ai_tact_cpp_007d56e0,0x434);
   }
   return;
 }

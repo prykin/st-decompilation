@@ -132,7 +132,8 @@ LAB_005a3b63:
             if (BVar7 != 0) {
               wsprintfA((LPSTR)local_88,s__2d__2d__4d_007cc5a8,local_24._6_4_ & 0xffff,
                         local_24.wMonth,local_24.wYear);
-              FUN_006b4170((int)this_01->field_1AC0,0,0xe2,0x11b,0xb2,0x17,0xff);
+              FUN_006b4170((AnonShape_006C7610_838EDECF *)this_01->field_1AC0,0,0xe2,0x11b,0xb2,0x17
+                           ,0xff);
               ccFntTy::SetSurf(this_01->field_1A73,(int)this_01->field_1AC0,0,0xe2,0x11b,0xb2,0x17);
               ccFntTy::WrStr(this_01->field_1A73,local_88,-1,-1,0);
             }

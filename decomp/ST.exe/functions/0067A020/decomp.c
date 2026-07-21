@@ -1,5 +1,13 @@
 
-void __thiscall FUN_0067a020(void *this,AnonShape_0068FD00_A5257008 *param_1,int param_2)
+/* [STHiddenThisApplier] Anonymous hidden receiver recovered as
+   /SubmarineTitans/Recovered/HiddenThis/AnonReceiver_006799B0.
+   Evidence: incoming_receiver_captures=1; receiver_accesses=2; incoming_edx_uses=0; calls=9;
+   ecx_pointer_setup=9; ecx_scalar_setup=0; caller_cleanup_calls=0; callee_ret_pop=[8];
+   expected_stack=8; receiver_family_members=3; adopt_untyped_existing_thiscall */
+
+void __thiscall
+SubmarineTitans::Recovered::HiddenThis::AnonReceiver_006799B0::FUN_0067a020
+          (AnonReceiver_006799B0 *this,AnonShape_0068FD00_A5257008 *param_1,int param_2)
 
 {
   AiTactClassTy *this_00;
@@ -8,7 +16,7 @@ void __thiscall FUN_0067a020(void *this,AnonShape_0068FD00_A5257008 *param_1,int
   int iVar3;
   uint uVar4;
   
-  iVar3 = *(int *)((int)this + 0x695);
+  iVar3 = *(int *)&this->field_0x695;
   if (iVar3 != 0) {
     uVar1 = *(uint *)(iVar3 + 0xc);
     uVar4 = 0;
@@ -33,7 +41,7 @@ void __thiscall FUN_0067a020(void *this,AnonShape_0068FD00_A5257008 *param_1,int
           }
         }
         uVar4 = uVar4 + 1;
-        iVar3 = *(int *)((int)this + 0x695);
+        iVar3 = *(int *)&this->field_0x695;
         uVar1 = *(uint *)(iVar3 + 0xc);
       } while ((int)uVar4 < (int)uVar1);
     }

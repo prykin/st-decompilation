@@ -61,7 +61,7 @@ FUN_0065e9a0(void *this,uint param_1,short *param_2,uint param_3,uint param_4,by
   local_c = 0xffffffff;
 LAB_0065eaf3:
   if (local_8 != (uint *)0x0) {
-    FUN_006ab060(&local_8);
+    FreeAndNull(&local_8);
   }
   return local_c;
 }

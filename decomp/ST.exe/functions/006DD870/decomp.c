@@ -16,7 +16,7 @@ void __fastcall FUN_006dd870(AnonShape_006DD870_3C379B38 *param_1)
   
   if (((param_1->field_0148 < 1) || (param_1->field_0154 == 0)) ||
      (param_1->field_0164 <= param_1->field_015C)) {
-    FUN_006ab060((LPVOID *)&param_1->field_0158);
+    FreeAndNull((void **)&param_1->field_0158);
   }
   else {
     if (param_1->field_0158 == 0) {

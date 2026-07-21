@@ -17,7 +17,7 @@ void __fastcall FUN_00506040(AnonShape_00506040_A874E362 *param_1)
       param_1->field_056C = param_1->field_00A8 + 8;
       param_1->field_0570 = 100;
       param_1->field_0574 = 0x3c;
-      uVar1 = FUN_0070b3a0(param_1->field_077C,1);
+      uVar1 = FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)param_1->field_077C,1);
       param_1->field_0578 = uVar1;
       param_1->field_057C = param_1->field_0570;
       param_1->field_0580 = 0x4e87;
@@ -25,7 +25,7 @@ void __fastcall FUN_00506040(AnonShape_00506040_A874E362 *param_1)
       param_1->field_0588 = param_1->field_00A8 + 6;
       param_1->field_058C = 0x20;
       param_1->field_0590 = 0x35;
-      uVar1 = FUN_0070b3a0(param_1->field_077C,3);
+      uVar1 = FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)param_1->field_077C,3);
       param_1->field_0594 = uVar1;
       param_1->field_0598 = param_1->field_058C;
       param_1->field_059C = 0x2ef0;

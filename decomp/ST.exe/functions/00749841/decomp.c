@@ -1,5 +1,8 @@
 
-int FUN_00749841(AnonShape_00749841_39B3C899 *param_1)
+/* [STTypeFamilyApplier] EXACT_ANONYMOUS_LAYOUT.
+   Evidence: exact anonymous structure fingerprint shared across functions */
+
+int FUN_00749841(AnonShape_006B5B10_E0D06CF1 *param_1)
 
 {
   int iVar1;

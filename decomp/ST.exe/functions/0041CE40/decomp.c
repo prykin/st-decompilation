@@ -8,10 +8,11 @@ void __thiscall FUN_0041ce40(void *this,int param_1)
   
   *(int *)((int)this + 0x105) = param_1;
   if (g_visibleClass_00802A88 != (VisibleClassTy *)0x0) {
-    thunk_FUN_005594a0(g_visibleClass_00802A88,(int)*(short *)((int)this + 0x5b),
-                       (int)*(short *)((int)this + 0x5d),(char)*(undefined2 *)((int)this + 0x5f),
-                       *(undefined **)((int)this + 0x24),param_1,*(undefined4 *)((int)this + 0x18),
-                       0xffffffff);
+    SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00558C00::thunk_FUN_005594a0
+              ((AnonReceiver_00558C00 *)g_visibleClass_00802A88,(int)*(short *)((int)this + 0x5b),
+               (int)*(short *)((int)this + 0x5d),(char)*(undefined2 *)((int)this + 0x5f),
+               *(undefined **)((int)this + 0x24),param_1,*(undefined4 *)((int)this + 0x18),
+               0xffffffff);
   }
   iVar1 = (**(code **)(*(int *)this + 8))();
   if ((iVar1 == 1) && (*(uint *)((int)this + 0x24) == (uint)DAT_0080874d)) {

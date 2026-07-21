@@ -28,7 +28,7 @@ undefined4 FUN_004137f0(void *param_1,int param_2,uint param_3,int param_4)
   *(uint *)((int)param_1 + 0x49) = *(uint *)((int)param_1 + 0x49) | 1;
   if (param_2 != -1) {
     *(int *)((int)param_1 + 0x4d) = param_2;
-    FUN_006ab060((LPVOID *)((int)param_1 + 0x59));
+    FreeAndNull((void **)((int)param_1 + 0x59));
   }
   if ((param_2 == -2) || (param_2 == -3)) {
     iVar5 = *(int *)(*(int *)((int)param_1 + 0x29) + 0xc);
@@ -53,9 +53,9 @@ undefined4 FUN_004137f0(void *param_1,int param_2,uint param_3,int param_4)
           iVar2 = thunk_FUN_00423e70(this,CONCAT22((short)((uint)psVar4 >> 0x10),*psVar4));
           if (iVar2 != 0) {
             iVar3 = *(int *)(iVar2 + 199);
-            if ((((iVar3 < 0) || (SHORT_007fb278 <= iVar3)) || (*(int *)(iVar2 + 0xcb) < 0)) ||
-               ((((int)SHORT_007fb27a <= *(int *)(iVar2 + 0xcb) || (*(int *)(iVar2 + 0xcf) < 0)) ||
-                ((int)SHORT_007fb27c <= *(int *)(iVar2 + 0xcf))))) {
+            if ((((iVar3 < 0) || (g_pathingGrid.sizeX <= iVar3)) || (*(int *)(iVar2 + 0xcb) < 0)) ||
+               ((((int)g_pathingGrid.sizeY <= *(int *)(iVar2 + 0xcb) || (*(int *)(iVar2 + 0xcf) < 0)
+                 ) || ((int)g_pathingGrid.sizeZ <= *(int *)(iVar2 + 0xcf))))) {
               *piVar6 = *(short *)(iVar2 + 0x5b) * 4 + 2;
               piVar6[1] = *(short *)(iVar2 + 0x5d) * 4 + 2;
               iVar3 = (int)*(short *)(iVar2 + 0x5f);

@@ -1,13 +1,17 @@
 
 /* [STPrototypeApplier] Propagated parameter 0.
-   Evidence: 006C2050 -> 006AB060 @ 006C212A */
+   Evidence: 006C2050 -> 006AB060 @ 006C212A
+   
+   [STUtilityFunctionApplier] free_and_null: frees a non-null allocation and clears the caller-owned
+   pointer
+   Evidence: body pattern verified */
 
-void FUN_006ab060(LPVOID *param_1)
+void FreeAndNull(void **value)
 
 {
-  if (*param_1 != (undefined4 *)0x0) {
-    Library::MSVCRT::thunk_FUN_006a4950(*param_1);
-    *param_1 = (LPVOID)0x0;
+  if (*value != (undefined4 *)0x0) {
+    Library::MSVCRT::thunk_FUN_006a4950(*value);
+    *value = (void *)0x0;
   }
   return;
 }

@@ -23,7 +23,7 @@ void __thiscall STBoatC::GetInfo16(STBoatC *this,AnonShape_00488F30_727896DE *pa
     *(undefined4 *)pAVar6 = 0xffffffff;
     pAVar6 = (AnonShape_00488F30_727896DE *)&pAVar6->field_0x4;
   }
-  uVar2 = thunk_FUN_004406c0(this->field_0x24);
+  uVar2 = GetPlayerRaceId(this->field_0x24);
   uVar2 = uVar2 & 0xff;
   if (uVar2 == 1) {
     uVar3 = thunk_FUN_004e60d0(*(int *)&this->field_0x24,5);

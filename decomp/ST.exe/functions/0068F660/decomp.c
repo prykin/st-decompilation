@@ -11,7 +11,7 @@ void __thiscall AiTactClassTy::GiveObjByGrpNum(AiTactClassTy *this,DArrayTy *par
   bool bVar3;
   int errorCode;
   undefined2 *puVar4;
-  int *objPtr;
+  STGameObjC *objPtr;
   AiFltClassTy *this_00;
   int iVar5;
   undefined4 extraout_EDX;
@@ -40,17 +40,17 @@ void __thiscall AiTactClassTy::GiveObjByGrpNum(AiTactClassTy *this,DArrayTy *par
           puVar4 = (undefined2 *)0x0;
         }
         if (g_sTAllPlayers_007FA174 == (STAllPlayersC *)0x0) {
-          objPtr = (int *)0x0;
+          objPtr = (STGameObjC *)0x0;
         }
         else {
-          objPtr = (int *)STAllPlayersC::GetObjPtr
-                                    (g_sTAllPlayers_007FA174,
-                                     CONCAT31((int3)((uint)uVar6 >> 8),local_8->field_0x24),
-                                     CONCAT22((short)((uint)puVar4 >> 0x10),*puVar4),CASE_1);
+          objPtr = STAllPlayersC::GetObjPtr
+                             (g_sTAllPlayers_007FA174,
+                              CONCAT31((int3)((uint)uVar6 >> 8),local_8->field_0x24),
+                              CONCAT22((short)((uint)puVar4 >> 0x10),*puVar4),CASE_1);
           uVar6 = extraout_EDX_00;
         }
-        if (objPtr != (int *)0x0) {
-          uVar7 = (**(code **)(*objPtr + 0x2c))();
+        if (objPtr != (STGameObjC *)0x0) {
+          uVar7 = (*objPtr->vtable->vfunc_2C)();
           uVar6 = (undefined4)((ulonglong)uVar7 >> 0x20);
           if (((int)uVar7 < 1) || (0x28 < (int)uVar7)) {
             bVar3 = false;
@@ -59,7 +59,7 @@ void __thiscall AiTactClassTy::GiveObjByGrpNum(AiTactClassTy *this,DArrayTy *par
             bVar3 = true;
           }
           if ((bVar3) &&
-             (this_00 = (AiFltClassTy *)thunk_FUN_0068e290(local_8,(short)objPtr[0x207]),
+             (this_00 = (AiFltClassTy *)thunk_FUN_0068e290(local_8,*(short *)&objPtr[4].field_0xd8),
              uVar6 = extraout_EDX_01, this_00 != (AiFltClassTy *)0x0)) {
             AiFltClassTy::_AddObjFlt(this_00,(uint)objPtr,0);
             FUN_006b0c70((AnonShape_006B0C70_7C4FE646 *)param_1,uVar1);

@@ -6,7 +6,7 @@
 void __thiscall ChooseMapTy::DeleteCtrls(ChooseMapTy *this)
 
 {
-  AnonPointee_StartSystemTy_0544 *pAVar1;
+  AnonShape_006C7610_838EDECF *pAVar1;
   code *pcVar2;
   ChooseMapTy *this_00;
   int iVar3;
@@ -133,8 +133,8 @@ void __thiscall ChooseMapTy::DeleteCtrls(ChooseMapTy *this)
       StartSystemTy::sub_006E56B0(this_00->field_000C,PTR_0081176c->field_0389);
     }
     PTR_0081176c->field_0389 = 0;
-    pAVar1 = PTR_0081176c->field_0544;
-    FUN_006b4170((int)pAVar1,0,0,0,pAVar1->field_0004,pAVar1->field_0008,0xff);
+    pAVar1 = (AnonShape_006C7610_838EDECF *)PTR_0081176c->field_0544;
+    FUN_006b4170(pAVar1,0,0,0,pAVar1->field_0004,pAVar1->field_0008,0xff);
     if ((AnonShape_006B5570_4D68B99C *)PTR_0081176c->field_0548 !=
         (AnonShape_006B5570_4D68B99C *)0x0) {
       FUN_006b5570((AnonShape_006B5570_4D68B99C *)PTR_0081176c->field_0548);

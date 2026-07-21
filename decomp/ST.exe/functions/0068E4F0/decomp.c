@@ -2,10 +2,10 @@
 uint * __thiscall FUN_0068e4f0(void *this,int param_1)
 
 {
-  uint uVar1;
-  uint *groupContent;
+  dword dVar1;
+  DArrayTy *array;
   int iVar2;
-  uint *groupContent_00;
+  DArrayTy *array_00;
   undefined2 *puVar3;
   int extraout_EDX;
   int extraout_EDX_00;
@@ -18,7 +18,7 @@ uint * __thiscall FUN_0068e4f0(void *this,int param_1)
   undefined4 local_c;
   uint local_8;
   
-  groupContent = Library::DKW::TBL::FUN_006ae290((uint *)0x0,0x14,2,0x14);
+  array = (DArrayTy *)Library::DKW::TBL::FUN_006ae290((uint *)0x0,0x14,2,0x14);
   iVar2 = *(int *)((int)this + 0xa5);
   local_8 = 0;
   if (0 < *(int *)(iVar2 + 0xc)) {
@@ -34,29 +34,29 @@ uint * __thiscall FUN_0068e4f0(void *this,int param_1)
         iVar2 = 0;
       }
       if ((*(AnonShape_0065E360_B94C37CB **)(iVar2 + 4) != (AnonShape_0065E360_B94C37CB *)0x0) &&
-         (groupContent_00 =
-               thunk_FUN_0065e360(*(AnonShape_0065E360_B94C37CB **)(iVar2 + 4),iVar4,param_1),
-         iVar4 = extraout_EDX_00, groupContent_00 != (uint *)0x0)) {
-        uVar1 = groupContent_00[3];
-        if ((uVar1 != 0) && (uVar5 = 0, uVar6 = local_8, 0 < (int)uVar1)) {
-          bVar7 = uVar1 != 0;
+         (array_00 = (DArrayTy *)
+                     thunk_FUN_0065e360(*(AnonShape_0065E360_B94C37CB **)(iVar2 + 4),iVar4,param_1),
+         iVar4 = extraout_EDX_00, array_00 != (DArrayTy *)0x0)) {
+        dVar1 = array_00->count;
+        if ((dVar1 != 0) && (uVar5 = 0, uVar6 = local_8, 0 < (int)dVar1)) {
+          bVar7 = dVar1 != 0;
           iVar2 = extraout_EDX_00;
           do {
             if (bVar7) {
-              puVar3 = (undefined2 *)(groupContent_00[2] * uVar5 + groupContent_00[7]);
+              puVar3 = (undefined2 *)(array_00->elementSize * uVar5 + (int)array_00->data);
             }
             else {
               puVar3 = (undefined2 *)0x0;
             }
             local_c = CONCAT22((short)((uint)iVar2 >> 0x10),*puVar3);
-            Library::DKW::TBL::FUN_006ae1c0(groupContent,&local_c);
+            Library::DKW::TBL::FUN_006ae1c0((uint *)array,&local_c);
             uVar5 = uVar5 + 1;
-            bVar7 = uVar5 < groupContent_00[3];
+            bVar7 = uVar5 < array_00->count;
             iVar2 = extraout_EDX_01;
             uVar6 = local_8;
-          } while ((int)uVar5 < (int)groupContent_00[3]);
+          } while ((int)uVar5 < (int)array_00->count);
         }
-        FUN_006ae110((byte *)groupContent_00);
+        DArrayDestroy(array_00);
         iVar4 = extraout_EDX_02;
       }
       local_8 = uVar6 + 1;
@@ -64,10 +64,10 @@ uint * __thiscall FUN_0068e4f0(void *this,int param_1)
       bVar7 = local_8 < *(uint *)(iVar2 + 0xc);
     } while ((int)local_8 < (int)*(uint *)(iVar2 + 0xc));
   }
-  if (groupContent[3] != 0) {
-    return groupContent;
+  if (array->count != 0) {
+    return &array->flags;
   }
-  FUN_006ae110((byte *)groupContent);
+  DArrayDestroy(array);
   return (uint *)0x0;
 }
 

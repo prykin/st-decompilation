@@ -36,9 +36,9 @@ MTaskTy::PrepareTSurf(MTaskTy *this,AnonShape_005E11D0_D0F8BE03 *param_1,char pa
       puVar2 = (undefined4 *)((int)puVar2 + 1);
     }
     if (param_2 != '\0') {
-      FUN_006c7610((AnonShape_006C7610_838EDECF *)param_1,0,0,0,param_1->field_0004,
+      FUN_006c7610((AnonShape_006B5B10_E0D06CF1 *)param_1,0,0,0,param_1->field_0004,
                    param_1->field_0008,2,0);
-      FUN_006c7570((AnonShape_006C7570_82D7EB54 *)param_1,0,0,0,(undefined4 *)param_1->field_0004,
+      FUN_006c7570((AnonShape_006B5B10_E0D06CF1 *)param_1,0,0,0,(undefined4 *)param_1->field_0004,
                    param_1->field_0008,2,(-(param_3 != '\x01') & 0xecU) + 0x2c);
     }
     g_currentExceptionFrame = local_48.previous;

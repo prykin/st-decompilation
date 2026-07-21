@@ -10,7 +10,7 @@ STGroupBoatC::GetPatrolTask(STGroupBoatC *this,int param_1,uint param_2,uint par
   code *pcVar1;
   int iVar2;
   uint uVar3;
-  uint *puVar4;
+  AnonPointee_STGroupBoatC_022E *pAVar4;
   undefined4 local_2c;
   int local_26;
   int local_22;
@@ -22,11 +22,10 @@ STGroupBoatC::GetPatrolTask(STGroupBoatC *this,int param_1,uint param_2,uint par
   int local_e;
   int local_a;
   
-  if ((AnonShape_006ACC70_C8641025 *)this->field_022A == (AnonShape_006ACC70_C8641025 *)0x0) {
+  if ((DArrayTy *)this->field_022A == (DArrayTy *)0x0) {
     return 1;
   }
-  FUN_006acc70((AnonShape_006ACC70_C8641025 *)this->field_022A,this->field_0232,
-               (undefined4 *)&local_14);
+  DArrayGetElement((DArrayTy *)this->field_022A,this->field_0232,&local_14);
   if (param_1 == 1) {
     local_1e = thunk_FUN_0040bc90(this,param_2 & 0xffff,(short *)(int)local_14,
                                   (short *)(int)local_12,(short *)(int)local_10,'\0');
@@ -34,7 +33,7 @@ STGroupBoatC::GetPatrolTask(STGroupBoatC *this,int param_1,uint param_2,uint par
       if ((1 < (ushort)this->field_0027) &&
          (((this->field_0236 == 1 && (local_1e <= local_a / 2)) ||
           ((this->field_0236 == 0 && (local_1e <= local_e / 2)))))) {
-        FUN_006acc70((AnonShape_006ACC70_C8641025 *)this->field_022E,param_3,&local_2c);
+        DArrayGetElement((DArrayTy *)this->field_022E,param_3,&local_2c);
         if (local_1a != 0) {
           if (local_1a == 1) {
             if (local_1e < local_26) {
@@ -78,8 +77,8 @@ STGroupBoatC::GetPatrolTask(STGroupBoatC *this,int param_1,uint param_2,uint par
     if (this->field_023E == 0) {
       this->field_023E = 1;
     }
-    FUN_006acc70((AnonShape_006ACC70_C8641025 *)this->field_022E,param_3,&local_2c);
-    puVar4 = (uint *)this->field_022E;
+    DArrayGetElement((DArrayTy *)this->field_022E,param_3,&local_2c);
+    pAVar4 = this->field_022E;
   }
   else {
     iVar2 = thunk_FUN_00423e70(this,param_2);
@@ -95,11 +94,11 @@ STGroupBoatC::GetPatrolTask(STGroupBoatC *this,int param_1,uint param_2,uint par
     if (this->field_023E == 0) {
       this->field_023E = 1;
     }
-    FUN_006acc70((AnonShape_006ACC70_C8641025 *)this->field_022E,param_3,&local_2c);
-    puVar4 = (uint *)this->field_022E;
+    DArrayGetElement((DArrayTy *)this->field_022E,param_3,&local_2c);
+    pAVar4 = this->field_022E;
   }
   local_2c = 1;
-  Library::DKW::TBL::FUN_006ae140(puVar4,param_3,&local_2c);
+  Library::DKW::TBL::FUN_006ae140((uint *)pAVar4,param_3,&local_2c);
   iVar2 = sub_004A7E30(this,1);
   return (uint)(iVar2 != 0);
 }

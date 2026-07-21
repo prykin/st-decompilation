@@ -1,6 +1,8 @@
 // Apply reviewed vtable_proposals.tsv and vtable_slots.tsv from STVTableAnalyzer.
-// Table rows use apply=1. Slot rows use create_apply=1 for boundaries and
-// rename_apply=1 for reviewed names; creation never implies renaming.
+// Table rows use layout_apply=1 for a physical layout and apply=1 for a resolved owner.
+// Exact this-relative stores may type both primary and secondary owner vptr fields.
+// Slot rows use create_apply=1 for boundaries and rename_apply=1 for reviewed names;
+// creation never implies renaming.
 // Existing user-defined symbols, data layouts, functions, and data types are preserved.
 // @author OpenAI
 // @category SubmarineTitans.Recovery
@@ -37,6 +39,7 @@ import ghidra.program.model.data.DataUtilities;
 import ghidra.program.model.data.FunctionDefinition;
 import ghidra.program.model.data.FunctionDefinitionDataType;
 import ghidra.program.model.data.ParameterDefinition;
+import ghidra.program.model.data.Pointer;
 import ghidra.program.model.data.PointerDataType;
 import ghidra.program.model.data.Structure;
 import ghidra.program.model.data.StructureDataType;
@@ -335,9 +338,10 @@ public class STVTableApplier extends GhidraScript {
 
     private void deferTables(List<Map<String, String>> proposals) {
         for (Map<String, String> row : proposals) {
-            if (!enabled(row.get("apply"))) continue;
+            if (!enabled(row.get("apply")) && !enabled(row.get("layout_apply"))) continue;
+            String name = selectedTableName(row);
             report.add(new ReportRow("table", row.get("table_address"), "deferred",
-                unt(row.get("proposed_name")),
+                name,
                 "function boundaries changed; re-run STVTableAnalyzer first"));
         }
     }
@@ -347,13 +351,23 @@ public class STVTableApplier extends GhidraScript {
         for (Map<String, String> row : proposals) {
             monitor.checkCancelled();
             String addressText = row.get("table_address");
-            String proposedName = unt(row.get("proposed_name"));
-            if (!enabled(row.get("apply"))) {
+            boolean semanticApply = enabled(row.get("apply"));
+            boolean layoutApply = enabled(row.get("layout_apply"));
+            String proposedName = selectedTableName(row);
+            if (!semanticApply && !layoutApply) {
                 report.add(new ReportRow("table", addressText, "skipped", proposedName,
-                    "apply=0"));
+                    "apply=0; layout_apply=0"));
                 continue;
             }
             try {
+                Map<String, String> effectiveProposal = row;
+                if (!semanticApply) {
+                    effectiveProposal = new LinkedHashMap<>(row);
+                    effectiveProposal.put("owner", "");
+                    effectiveProposal.put("proposed_name", proposedName);
+                    effectiveProposal.put("confidence", "physical");
+                    effectiveProposal.put("reason", "strong_vptr_store_layout_only");
+                }
                 Address tableAddress = address(addressText);
                 int slotCount = Integer.parseInt(row.get("slot_count"));
                 List<Map<String, String>> slots = slotsByTable.getOrDefault(addressText, List.of());
@@ -374,7 +388,8 @@ public class STVTableApplier extends GhidraScript {
                     continue;
                 }
 
-                StructureResolution typeResolution = resolveStructure(proposedName, slots, row);
+                StructureResolution typeResolution = resolveStructure(proposedName, slots,
+                    effectiveProposal);
                 if (typeResolution.error != null) {
                     report.add(new ReportRow("table", addressText, "conflict", proposedName,
                         typeResolution.error));
@@ -409,7 +424,7 @@ public class STVTableApplier extends GhidraScript {
                         structure.getLength(), clearMode);
                 }
                 installTableLabel(tableAddress, proposedName);
-                addTableComment(tableAddress, row);
+                addTableComment(tableAddress, effectiveProposal);
                 boolean retainedPriorType = false;
                 if (replacedOwnedType != null &&
                         !replacedOwnedType.getPathName().equals(structure.getPathName())) {
@@ -423,12 +438,162 @@ public class STVTableApplier extends GhidraScript {
                     typeResolution.detail + " " + structure.getPathName() + "; " +
                     slotCount + " slots" + (retainedPriorType ?
                     "; retained prior type because its generated baseline is unknown/modified" : "")));
+                if (semanticApply) typeOwnerVptr(row, structure);
             }
             catch (Exception exception) {
                 report.add(new ReportRow("table", addressText, "failed", proposedName,
                     message(exception)));
             }
         }
+    }
+
+    private String selectedTableName(Map<String, String> row) {
+        if (enabled(row.get("apply"))) return unt(row.get("proposed_name"));
+        String layoutName = unt(row.get("layout_name"));
+        return layoutName.isBlank() ? unt(row.get("proposed_name")) : layoutName;
+    }
+
+    private void typeOwnerVptr(Map<String, String> proposal, Structure vtable) {
+        String ownerName = unt(proposal.get("owner"));
+        if (ownerName.isBlank()) return;
+        String tableAddress = proposal.get("table_address");
+        Set<Long> offsets = thisVptrOffsets(proposal);
+        if (offsets.isEmpty()) {
+            report.add(new ReportRow("owner_vptr", ownerName, "skipped", ownerName,
+                "no exact this-relative vptr store offset"));
+            return;
+        }
+        Structure owner = findOwnerStructure(ownerName);
+        if (owner == null) {
+            report.add(new ReportRow("owner_vptr", ownerName, "skipped", ownerName,
+                "owner structure not found for table " + tableAddress));
+            return;
+        }
+        DataType desired = new PointerDataType(vtable, pointerSize, dataTypes);
+        String description = owner.getDescription();
+        String storedHash = storedLayoutHash(description);
+        String currentHash = structureLayoutHash(owner);
+        boolean generatedUnchanged = description != null &&
+            description.contains("[STClassLayoutApplier]") && storedHash != null &&
+            storedHash.equals(currentHash);
+
+        for (long offsetLong : offsets) {
+            String reportAddress = ownerName + "+" + String.format("0x%X", offsetLong);
+            if (offsetLong < 0 || offsetLong > Integer.MAX_VALUE - pointerSize ||
+                    offsetLong + pointerSize > owner.getLength()) {
+                report.add(new ReportRow("owner_vptr", reportAddress, "skipped", ownerName,
+                    "vptr store lies outside the recovered owner layout"));
+                continue;
+            }
+            int offset = (int)offsetLong;
+            DataTypeComponent component = owner.getComponentAt(offset);
+            if (component != null && component.getOffset() == offset &&
+                    component.getDataType().isEquivalent(desired)) {
+                report.add(new ReportRow("owner_vptr", reportAddress, "already_present", ownerName,
+                    "owner already points to " + vtable.getPathName()));
+                continue;
+            }
+            if (!generatedUnchanged) {
+                report.add(new ReportRow("owner_vptr", reportAddress, "skipped", ownerName,
+                    "manual or modified owner layout preserved"));
+                continue;
+            }
+            if (!replaceableGeneratedVptr(owner, component, offset)) {
+                report.add(new ReportRow("owner_vptr", reportAddress, "skipped", ownerName,
+                    "offset is not a generated generic vptr field"));
+                continue;
+            }
+            String priorComment = component == null || component.getComment() == null ? "" :
+                component.getComment();
+            String comment = (priorComment.isBlank() ? "" : priorComment + "\n") +
+                COMMENT_MARKER + " vptr for " + ownerName + "; table=" + tableAddress;
+            String fieldName = offset == 0 ? "vtable" :
+                "vtable_at_" + Integer.toHexString(offset);
+            owner.replaceAtOffset(offset, desired, pointerSize, fieldName, comment);
+            refreshGeneratedLayoutHash(owner);
+            generatedUnchanged = true;
+            report.add(new ReportRow("owner_vptr", reportAddress, "updated", ownerName,
+                "typed owner offset as " + vtable.getPathName() + " *"));
+        }
+    }
+
+    private Set<Long> thisVptrOffsets(Map<String, String> proposal) {
+        Set<Long> result = new TreeSet<>();
+        String encoded = unt(proposal.get("this_vptr_offsets"));
+        for (String part : encoded.split("\\s*\\|\\s*")) {
+            String value = part.trim();
+            if (value.isEmpty() || value.equalsIgnoreCase("unknown")) continue;
+            try {
+                result.add(value.startsWith("0x") || value.startsWith("0X") ?
+                    Long.parseUnsignedLong(value.substring(2), 16) : Long.parseLong(value));
+            }
+            catch (NumberFormatException ignored) { }
+        }
+        // Compatibility with proposals produced immediately before this-relative offsets were
+        // added: the old primary marker proves offset zero, but nothing about secondary stores.
+        if (result.isEmpty() && enabled(proposal.get("primary_vptr_store"))) result.add(0L);
+        return result;
+    }
+
+    private Structure findOwnerStructure(String ownerName) {
+        String leaf = ownerName;
+        int separator = leaf.lastIndexOf("::");
+        if (separator >= 0) leaf = leaf.substring(separator + 2);
+        DataType direct = dataTypes.getDataType("/" + leaf);
+        if (direct instanceof Structure structure) return structure;
+        List<DataType> matches = new ArrayList<>();
+        dataTypes.findDataTypes(leaf, matches);
+        for (DataType match : matches) {
+            if (match instanceof Structure structure &&
+                    !structure.getPathName().startsWith(VTABLES.getPath())) return structure;
+        }
+        return null;
+    }
+
+    private boolean replaceableGeneratedVptr(Structure owner, DataTypeComponent component,
+            int baseOffset) {
+        if (component != null && component.getOffset() == baseOffset &&
+                component.getLength() == pointerSize) {
+            DataType type = component.getDataType();
+            if (type instanceof Pointer pointer) {
+                DataType pointed = pointer.getDataType();
+                if (pointed == null || pointed instanceof VoidDataType) return true;
+                String path = pointed.getPathName();
+                String name = pointed.getName().toLowerCase(Locale.ROOT);
+                return path.contains("/Recovered/ClassPointees/AnonPointee_") ||
+                    name.startsWith("undefined") || name.equals("void");
+            }
+            String comment = component.getComment();
+            String name = type.getName().toLowerCase(Locale.ROOT);
+            if (name.startsWith("undefined") &&
+                    (comment == null || comment.contains("[STClassLayoutApplier]"))) return true;
+        }
+
+        // Some conservative class layouts have no observed read at the store offset, so the vptr
+        // range remains four separate undefined bytes.  Replacing that generated padding is
+        // safe after the owner-layout hash check above.
+        int rangeEnd = baseOffset + pointerSize;
+        for (int offset = baseOffset; offset < rangeEnd; offset++) {
+            DataTypeComponent part = owner.getComponentAt(offset);
+            if (part == null || part.getOffset() < 0 ||
+                    part.getOffset() < baseOffset ||
+                    part.getOffset() + part.getLength() > rangeEnd) return false;
+            String name = part.getDataType().getName().toLowerCase(Locale.ROOT);
+            String field = part.getFieldName();
+            String comment = part.getComment();
+            if (!name.startsWith("undefined") || field != null && !field.isBlank() ||
+                    comment != null && !comment.isBlank()) return false;
+        }
+        return true;
+    }
+
+    private void refreshGeneratedLayoutHash(Structure structure) {
+        String description = structure.getDescription();
+        if (description == null) description = "";
+        int index = description.indexOf(LAYOUT_HASH_MARKER);
+        if (index >= 0) description = description.substring(0, index);
+        structure.setDescription(description + LAYOUT_HASH_MARKER +
+            structureLayoutHash(structure));
     }
 
     private StructureResolution resolveStructure(String name, List<Map<String, String>> slots,

@@ -57,7 +57,7 @@ undefined4 __thiscall STGroupBoatC::SetMine(STGroupBoatC *this,int param_1)
       local_10 = local_28;
       if (0 < local_c) {
         do {
-          FUN_006acc70((AnonShape_006ACC70_C8641025 *)pSVar2->field_0029,uVar9,&local_8);
+          DArrayGetElement((DArrayTy *)pSVar2->field_0029,uVar9,&local_8);
           if ((short)local_8 != -1) {
             pSVar4 = (STBoatC *)
                      STAllPlayersC::GetObjPtr
@@ -96,7 +96,7 @@ LAB_0049eb44:
       uVar9 = 0;
       if (0 < local_c) {
         do {
-          FUN_006acc70((AnonShape_006ACC70_C8641025 *)pSVar2->field_0029,uVar9,&local_8);
+          DArrayGetElement((DArrayTy *)pSVar2->field_0029,uVar9,&local_8);
           if ((short)local_8 != -1) {
             pSVar4 = (STBoatC *)
                      STAllPlayersC::GetObjPtr

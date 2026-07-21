@@ -19,9 +19,10 @@ void FUN_00496cc0(int param_1,int param_2,uint param_3,undefined4 param_4,uint p
       param_5 = thunk_FUN_004969f0(param_1,param_2,uVar1,param_4,param_5,pvVar3,0xffffffff);
       if ((&DAT_007fb24c)[uVar1] == 0) {
         puVar5 = (undefined4 *)
-                 Library::DKW::LIB::FUN_006aac70((int)SHORT_007fb232 * (int)SHORT_007fb230);
-        iVar4 = (int)SHORT_007fb232;
-        iVar6 = (int)SHORT_007fb230;
+                 Library::DKW::LIB::FUN_006aac70
+                           ((int)g_pathingScratchGrid.sizeY * (int)g_pathingScratchGrid.sizeX);
+        iVar4 = (int)g_pathingScratchGrid.sizeY;
+        iVar6 = (int)g_pathingScratchGrid.sizeX;
         (&DAT_007fb24c)[uVar1] = puVar5;
         for (uVar2 = (uint)(iVar4 * iVar6) >> 2; uVar2 != 0; uVar2 = uVar2 - 1) {
           *puVar5 = 0;

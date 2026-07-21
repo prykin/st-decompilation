@@ -4,8 +4,8 @@ int __fastcall FUN_004620f0(STBoatC *param_1)
 {
   int iVar1;
   
-  if ((byte *)param_1->field_047B != (byte *)0x0) {
-    FUN_006ae110((byte *)param_1->field_047B);
+  if ((DArrayTy *)param_1->field_047B != (DArrayTy *)0x0) {
+    DArrayDestroy((DArrayTy *)param_1->field_047B);
     param_1->field_047B = 0;
   }
   iVar1 = param_1->field_082E;

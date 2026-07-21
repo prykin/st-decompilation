@@ -1,12 +1,12 @@
 
-undefined4 __thiscall FUN_00604fc0(void *this,AnonShape_00604FC0_D9906037 *param_1)
+undefined4 __thiscall FUN_00604fc0(void *this,AnonShape_00604A90_035626E6 *param_1)
 
 {
   undefined4 uVar1;
   int *piVar2;
   int iVar3;
   uint uVar4;
-  AnonShape_00604FC0_D9906037 *pAVar5;
+  AnonShape_00604A90_035626E6 *pAVar5;
   undefined4 *puVar6;
   uint uVar7;
   undefined4 *puVar8;
@@ -17,7 +17,7 @@ undefined4 __thiscall FUN_00604fc0(void *this,AnonShape_00604FC0_D9906037 *param
   puVar6 = (undefined4 *)((int)this + 0x1d5);
   for (iVar3 = 0x10; iVar3 != 0; iVar3 = iVar3 + -1) {
     *puVar6 = *(undefined4 *)pAVar5;
-    pAVar5 = (AnonShape_00604FC0_D9906037 *)&pAVar5->field_0x4;
+    pAVar5 = (AnonShape_00604A90_035626E6 *)&pAVar5->field_0x4;
     puVar6 = puVar6 + 1;
   }
   *(undefined4 *)((int)this + 0x215) = *(undefined4 *)&param_1->field_0x40;

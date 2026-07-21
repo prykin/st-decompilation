@@ -14,7 +14,7 @@ uint * __thiscall STGroupBoatC::Scout(STGroupBoatC *this,int param_1)
   code *pcVar3;
   STGroupBoatC *pSVar4;
   int iVar5;
-  AnonShape_006ACC70_C8641025 *groupContent;
+  DArrayTy *array;
   STBoatC *pSVar6;
   uint uVar7;
   int iVar8;
@@ -38,7 +38,7 @@ uint * __thiscall STGroupBoatC::Scout(STGroupBoatC *this,int param_1)
   undefined2 local_24;
   undefined2 local_22;
   undefined2 local_20;
-  AnonShape_006ACC70_C8641025 *local_1c;
+  DArrayTy *local_1c;
   STGroupBoatC *local_18;
   uint *local_14;
   DArrayTy *local_10;
@@ -75,24 +75,24 @@ uint * __thiscall STGroupBoatC::Scout(STGroupBoatC *this,int param_1)
       if (local_10 == (DArrayTy *)0x0) {
         return (uint *)0x0;
       }
-      groupContent = (AnonShape_006ACC70_C8641025 *)
-                     Way3DGrpGetDistrPoint
-                               (pSVar4,(AnonShape_00413AF0_B6B4EE9A *)pSVar4->field_0029,
-                                (int)*(short *)&pSVar4->field_0x2f8,(int)pSVar4->field_02FA,
-                                (int)*(short *)&pSVar4->field_0x2fc,(int)pSVar4->field_02FE,
-                                (int)*(short *)puVar1,(int)*psVar2);
-      local_1c = groupContent;
-      if (groupContent == (AnonShape_006ACC70_C8641025 *)0x0) {
-        FUN_006ae110((byte *)local_10);
+      array = (DArrayTy *)
+              Way3DGrpGetDistrPoint
+                        (pSVar4,(AnonShape_00413AF0_B6B4EE9A *)pSVar4->field_0029,
+                         (int)*(short *)&pSVar4->field_0x2f8,(int)pSVar4->field_02FA,
+                         (int)*(short *)&pSVar4->field_0x2fc,(int)pSVar4->field_02FE,
+                         (int)*(short *)puVar1,(int)*psVar2);
+      local_1c = array;
+      if (array == (DArrayTy *)0x0) {
+        DArrayDestroy(local_10);
         return (uint *)0x0;
       }
       uVar11 = 0;
       local_3c = PTR_00802a38->field_00E4;
       if (0 < (int)local_8) {
         do {
-          FUN_006acc70((AnonShape_006ACC70_C8641025 *)local_10,uVar11,(undefined4 *)&local_24);
-          FUN_006acc70(groupContent,uVar11,(undefined4 *)&local_2c);
-          FUN_006acc70((AnonShape_006ACC70_C8641025 *)pSVar4->field_0029,uVar11,&local_c);
+          DArrayGetElement(local_10,uVar11,&local_24);
+          DArrayGetElement(array,uVar11,&local_2c);
+          DArrayGetElement((DArrayTy *)pSVar4->field_0029,uVar11,&local_c);
           if ((short)local_c != -1) {
             pSVar6 = (STBoatC *)
                      STAllPlayersC::GetObjPtr
@@ -111,19 +111,19 @@ uint * __thiscall STGroupBoatC::Scout(STGroupBoatC *this,int param_1)
             local_30 = local_2a;
             local_2e = local_28;
             STBoatC::CmdToObj(pSVar6,CASE_8,&local_3c);
-            groupContent = local_1c;
+            array = local_1c;
           }
           uVar11 = uVar11 + 1;
         } while ((int)uVar11 < (int)local_8);
       }
-      FUN_006ae110((byte *)local_10);
-      FUN_006ae110((byte *)groupContent);
+      DArrayDestroy(local_10);
+      DArrayDestroy(array);
     }
     if ((uint)PTR_00802a38->field_00E4 % 0x19 == 3) {
       uVar11 = 0;
       if (0 < (int)local_8) {
         do {
-          FUN_006acc70((AnonShape_006ACC70_C8641025 *)pSVar4->field_0029,uVar11,&local_c);
+          DArrayGetElement((DArrayTy *)pSVar4->field_0029,uVar11,&local_c);
           if ((short)local_c != -1) {
             pSVar6 = (STBoatC *)
                      STAllPlayersC::GetObjPtr

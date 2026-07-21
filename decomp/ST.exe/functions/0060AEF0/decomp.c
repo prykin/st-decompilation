@@ -6,7 +6,7 @@ int __fastcall FUN_0060aef0(void *param_1)
   undefined4 *puVar2;
   byte bVar3;
   byte bVar4;
-  char cVar5;
+  byte bVar5;
   int *piVar6;
   undefined4 uVar7;
   void *this;
@@ -122,12 +122,12 @@ int __fastcall FUN_0060aef0(void *param_1)
     local_24 = 0;
   }
   iVar19 = iVar12 + 1 + local_8c;
-  if (SHORT_007fb242 < iVar19) {
-    iVar19 = (int)SHORT_007fb242;
+  if (g_worldGrid.sizeY < iVar19) {
+    iVar19 = (int)g_worldGrid.sizeY;
   }
   local_68 = iVar12 + 1 + local_7c;
-  if (SHORT_007fb240 < local_68) {
-    local_68 = (int)SHORT_007fb240;
+  if (g_worldGrid.sizeX < local_68) {
+    local_68 = (int)g_worldGrid.sizeX;
   }
   local_8 = 0;
   local_78 = iVar19;
@@ -152,17 +152,17 @@ int __fastcall FUN_0060aef0(void *param_1)
           local_3c = 0;
           do {
             sVar16 = (short)local_98;
-            if (((((sVar16 < 0) || (SHORT_007fb240 <= sVar16)) ||
+            if (((((sVar16 < 0) || (g_worldGrid.sizeX <= sVar16)) ||
                  (sVar15 = (short)local_40, sVar15 < 0)) ||
-                ((SHORT_007fb242 <= sVar15 || (sVar11 = (short)local_3c, sVar11 < 0)))) ||
-               (SHORT_007fb244 <= sVar11)) {
+                ((g_worldGrid.sizeY <= sVar15 || (sVar11 = (short)local_3c, sVar11 < 0)))) ||
+               (g_worldGrid.sizeZ <= sVar11)) {
               pSVar18 = (STFishC *)0x0;
             }
             else {
               pSVar18 = (STFishC *)
-                        g_worldCells
-                        [(int)SHORT_007fb246 * (int)sVar11 + (int)SHORT_007fb240 * (int)sVar15 +
-                         (int)sVar16].objects[0];
+                        g_worldGrid.cells
+                        [(int)g_worldGrid.planeStride * (int)sVar11 +
+                         (int)g_worldGrid.sizeX * (int)sVar15 + (int)sVar16].objects[0];
             }
             if ((pSVar18 != (STFishC *)0x0) &&
                (iVar12 = (*pSVar18->vtable->vfunc_F0)(), iVar12 != 0)) {
@@ -199,24 +199,18 @@ LAB_0060b2ce:
                       iVar12 = 0;
                     }
                     else {
-                      uVar14 = (uint)bVar3;
-                      uVar21 = (uint)bVar4;
-                      cVar5 = *(char *)((int)&DAT_00808a4f + uVar14 * 8 + uVar21);
-                      if ((cVar5 == '\0') &&
-                         (*(char *)((int)&DAT_00808a4f + uVar21 * 8 + uVar14) == '\0')) {
+                      bVar5 = g_playerRelationMatrix[bVar3][bVar4];
+                      if ((bVar5 == 0) && (g_playerRelationMatrix[bVar4][bVar3] == 0)) {
                         iVar12 = -2;
                       }
-                      else if ((cVar5 == '\x01') &&
-                              (*(char *)((int)&DAT_00808a4f + uVar21 * 8 + uVar14) == '\0')) {
+                      else if ((bVar5 == 1) && (g_playerRelationMatrix[bVar4][bVar3] == 0)) {
                         iVar12 = -1;
                       }
-                      else if ((cVar5 == '\0') &&
-                              (*(char *)((int)&DAT_00808a4f + uVar21 * 8 + uVar14) == '\x01')) {
+                      else if ((bVar5 == 0) && (g_playerRelationMatrix[bVar4][bVar3] == 1)) {
                         iVar12 = 1;
                       }
                       else {
-                        if ((cVar5 != '\x01') ||
-                           (*(char *)((int)&DAT_00808a4f + uVar21 * 8 + uVar14) != '\x01'))
+                        if ((bVar5 != 1) || (g_playerRelationMatrix[bVar4][bVar3] != 1))
                         goto LAB_0060b2ce;
                         iVar12 = 2;
                       }
@@ -276,24 +270,18 @@ LAB_0060b48b:
                       iVar12 = 0;
                     }
                     else {
-                      uVar14 = (uint)bVar3;
-                      uVar21 = (uint)bVar4;
-                      cVar5 = *(char *)((int)&DAT_00808a4f + uVar14 * 8 + uVar21);
-                      if ((cVar5 == '\0') &&
-                         (*(char *)((int)&DAT_00808a4f + uVar21 * 8 + uVar14) == '\0')) {
+                      bVar5 = g_playerRelationMatrix[bVar3][bVar4];
+                      if ((bVar5 == 0) && (g_playerRelationMatrix[bVar4][bVar3] == 0)) {
                         iVar12 = -2;
                       }
-                      else if ((cVar5 == '\x01') &&
-                              (*(char *)((int)&DAT_00808a4f + uVar21 * 8 + uVar14) == '\0')) {
+                      else if ((bVar5 == 1) && (g_playerRelationMatrix[bVar4][bVar3] == 0)) {
                         iVar12 = -1;
                       }
-                      else if ((cVar5 == '\0') &&
-                              (*(char *)((int)&DAT_00808a4f + uVar21 * 8 + uVar14) == '\x01')) {
+                      else if ((bVar5 == 0) && (g_playerRelationMatrix[bVar4][bVar3] == 1)) {
                         iVar12 = 1;
                       }
                       else {
-                        if ((cVar5 != '\x01') ||
-                           (*(char *)((int)&DAT_00808a4f + uVar21 * 8 + uVar14) != '\x01'))
+                        if ((bVar5 != 1) || (g_playerRelationMatrix[bVar4][bVar3] != 1))
                         goto LAB_0060b48b;
                         iVar12 = 2;
                       }

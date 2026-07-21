@@ -98,10 +98,10 @@ FUN_0055c320(void *this,byte *param_1,char *param_2,char *param_3,
     } while (iVar5 < param_4->field_0008);
   }
   if (*(int *)((int)this + 0x644) != 0) {
-    FUN_006ab060((LPVOID *)((int)this + 0x644));
+    FreeAndNull((void **)((int)this + 0x644));
   }
   param_1 = (byte *)Library::DKW::LIB::FUN_006aac10((uint)(param_1 + param_4->field_0008));
-  *(LPVOID *)((int)this + 0x644) = param_1;
+  *(void **)((int)this + 0x644) = param_1;
   if (param_1 == (byte *)0x0) {
     *(undefined1 *)((int)this + 10) = 1;
     return;

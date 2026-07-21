@@ -12,7 +12,7 @@ FUN_005ff430(void *this,Global_sub_005FF430_param_1Enum param_1,int param_2,unde
   undefined2 *puVar1;
   short sVar2;
   STAllPlayersC_GetObjPtr_param_3Enum SVar3;
-  int *this_00;
+  STGameObjC *this_00;
   int iVar4;
   uint uVar5;
   undefined4 extraout_ECX;
@@ -27,15 +27,15 @@ FUN_005ff430(void *this,Global_sub_005FF430_param_1Enum param_1,int param_2,unde
     SVar3 = thunk_FUN_00601db0(*(Global_sub_00601DB0_param_1Enum *)
                                 (*(int *)((int)this + 0x23b) + 4 +
                                 *(int *)(*(int *)((int)this + 0x23f) + param_2 * 4) * 0x18));
-    this_00 = (int *)STAllPlayersC::GetObjPtr
-                               (g_sTAllPlayers_007FA174,
-                                CONCAT31((int3)((uint)extraout_ECX >> 8),*(undefined1 *)(puVar1 + 4)
-                                        ),CONCAT22((short)(SVar3 >> 0x10),*puVar1),SVar3);
-    if (this_00 == (int *)0x0) {
+    this_00 = STAllPlayersC::GetObjPtr
+                        (g_sTAllPlayers_007FA174,
+                         CONCAT31((int3)((uint)extraout_ECX >> 8),*(undefined1 *)(puVar1 + 4)),
+                         CONCAT22((short)(SVar3 >> 0x10),*puVar1),SVar3);
+    if (this_00 == (STGameObjC *)0x0) {
       return 0;
     }
     thunk_FUN_00416270(this_00,(undefined2 *)&param_3,&param_4,(int *)((int)&param_5 + 2));
-    iVar4 = (**(code **)(*this_00 + 0x78))();
+    iVar4 = (*this_00->vtable->vfunc_78)();
     if (iVar4 < 1) {
       return 0;
     }

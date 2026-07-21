@@ -56,7 +56,7 @@ uint * __cdecl _CreateStgListByRoot(cMf32 *param_1,int param_2,char *param_3,uin
       return puVar5;
     }
     if (local_c != (DArrayTy *)0x0) {
-      FUN_006ae110((byte *)local_c);
+      DArrayDestroy(local_c);
     }
     RaiseInternalException(iVar6,0,s_E____titans_ai_ai_plr_d_cpp_007d2fa4,0x158);
     return (uint *)0x0;

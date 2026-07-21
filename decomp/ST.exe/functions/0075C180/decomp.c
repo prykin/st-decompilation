@@ -30,7 +30,7 @@ undefined4 FUN_0075c180(AnonShape_0075C180_8EED234B *param_1,undefined4 *param_2
   local_18 = param_1->field_018A;
   local_c = param_1->field_01AA;
   if (((param_1->field_010C != 0) && (*(int *)(param_1->field_01AA + 0x28) == 0)) &&
-     (iVar3 = FUN_0075c3b0((AnonShape_0075C3B0_6803BA0D *)param_1), iVar3 == 0)) {
+     (iVar3 = FUN_0075c3b0((AnonShape_0075BE40_B9FD5FDF *)param_1), iVar3 == 0)) {
     return 0;
   }
   iVar7 = local_c;
@@ -67,7 +67,7 @@ undefined4 FUN_0075c180(AnonShape_0075C180_8EED234B *param_1,undefined4 *param_2
         if (7 < local_3c) goto LAB_0075c271;
         iVar5 = 1;
 LAB_0075c29e:
-        uVar4 = FUN_0075b800(&local_4c,(uint)param_1,iVar3,iVar7,iVar5);
+        uVar4 = FUN_0075b800(&local_4c,param_1,iVar3,iVar7,iVar5);
         if ((int)uVar4 < 0) {
           return 0;
         }

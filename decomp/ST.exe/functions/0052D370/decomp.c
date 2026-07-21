@@ -50,7 +50,7 @@ void __thiscall PopUpTy::AddStr(PopUpTy *this,char *param_1,uint param_2)
         wsprintfA((LPSTR)local_8,s__s_1d_s_007c6fe4,&DAT_007c6ff0,param_2 & 0xff,param_1);
         pAVar4 = (AnonShape_006B5570_4D68B99C *)ccFntTy::_TxtToSarr(this_00->field_0094,local_8);
         local_c = pAVar4;
-        FUN_006ab060(&local_8);
+        FreeAndNull(&local_8);
       }
       pAVar5 = local_10;
       if (pAVar4 != (AnonShape_006B5570_4D68B99C *)0x0) {
@@ -86,7 +86,7 @@ LAB_0052d48d:
                 puVar8 = (uint *)0x0;
               }
               uVar9 = FUN_00711110(this_00->field_0094,puVar8);
-              uVar10 = *(uint *)(this_00->field_0090 + 4);
+              uVar10 = this_00->field_0090->field_0004;
               if ((int)uVar10 <= (int)uVar9) {
                 uVar9 = uVar10;
               }

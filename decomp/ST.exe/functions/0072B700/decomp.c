@@ -3,7 +3,7 @@ undefined4 * __fastcall FUN_0072b700(undefined4 *param_1)
 
 {
   STGroupBoatC::sub_006E5FB0((STGroupBoatC *)param_1);
-  *param_1 = &PTR_GetMessage_0079e360;
+  *param_1 = &VTable_0079E360;
   param_1[6] = 0;
   param_1[7] = 0;
   param_1[0x38] = 0;

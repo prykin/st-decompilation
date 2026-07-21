@@ -210,7 +210,7 @@ LAB_0069c0f3:
     }
 LAB_0069c1df:
     local_40 = iVar4;
-    FUN_006ab060(&local_78);
+    FreeAndNull(&local_78);
   }
   ExceptionList = local_14;
   return local_40;

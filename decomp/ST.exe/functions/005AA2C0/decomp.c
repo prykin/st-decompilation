@@ -12,7 +12,7 @@ undefined4 * FUN_005aa2c0(void)
   this = (STGroupBoatC *)FUN_006b04d0(0x20c3);
   if (this != (STGroupBoatC *)0x0) {
     STGroupBoatC::sub_006E5FB0(this);
-    this->vtable = (STGroupBoatCVTable *)&PTR_FUN_0079c018;
+    this->vtable = (STGroupBoatCVTable *)&VTable_0079C018;
     this->field_0018 = 0;
     this->field_005D = 0;
     puVar2 = (undefined4 *)((int)&this->field_001C + 1);
@@ -62,7 +62,7 @@ undefined4 * FUN_005aa2c0(void)
     SpriteClassTy::SpriteClassTy((SpriteClassTy *)&this[9].field_0139);
     SpriteClassTy::SpriteClassTy((SpriteClassTy *)&this[9].field_01CA);
     SpriteClassTy::SpriteClassTy((SpriteClassTy *)((int)&this[9].field_025A + 1));
-    this->vtable = (STGroupBoatCVTable *)&PTR_LAB_0079c02c;
+    this->vtable = (STGroupBoatCVTable *)&VTable_0079C02C;
     *(undefined4 *)((int)&this[8].field_01DA + 1) = 1;
     *(undefined1 *)&this->field_0065 = 1;
     *(undefined1 *)((int)&this[8].field_01CE + 3) = 0;

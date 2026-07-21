@@ -6,8 +6,8 @@
 void __thiscall SettMapSTy::SetListCtrls(SettMapSTy *this)
 
 {
-  int iVar1;
-  undefined4 uVar2;
+  DArrayTy *pDVar1;
+  AnonPointee_SettMapSTy_0000 *pAVar2;
   code *pcVar3;
   char cVar4;
   SettMapSTy *pSVar5;
@@ -55,23 +55,23 @@ void __thiscall SettMapSTy::SetListCtrls(SettMapSTy *this)
     iVar9 = 0;
     iVar6 = local_10;
     do {
-      if ((&pSVar5->field_0000)[iVar6 + iVar9] != 0) {
-        iVar1 = pSVar5->field_1F84;
-        if ((iVar1 == 0) || (uVar8 = pSVar5->field_1F88 + local_c, *(uint *)(iVar1 + 0xc) <= uVar8))
-        {
+      if ((&pSVar5->field_0000)[iVar6 + iVar9] != (AnonPointee_SettMapSTy_0000 *)0x0) {
+        pDVar1 = pSVar5->field_1F84;
+        if ((pDVar1 == (DArrayTy *)0x0) ||
+           (uVar8 = pSVar5->field_1F88 + local_c, pDVar1->count <= uVar8)) {
           pcVar10 = (char *)0x0;
         }
         else {
-          pcVar10 = (char *)(*(int *)(iVar1 + 8) * uVar8 + *(int *)(iVar1 + 0x1c));
+          pcVar10 = (char *)(pDVar1->elementSize * uVar8 + (int)pDVar1->data);
         }
-        uVar2 = (&pSVar5->field_0000)[iVar6 + iVar9];
+        pAVar2 = (&pSVar5->field_0000)[iVar6 + iVar9];
         pSVar5->field_0031 = 0;
-        pSVar5->field_0025 = uVar2;
+        pSVar5->field_0025 = pAVar2;
         if (pcVar10 != (char *)0x0) {
           switch(iVar9) {
           case 0:
-            if (*(byte **)(pcVar10 + 0x50) != (byte *)0x0) {
-              FUN_006ae110(*(byte **)(pcVar10 + 0x50));
+            if (*(DArrayTy **)(pcVar10 + 0x50) != (DArrayTy *)0x0) {
+              DArrayDestroy(*(DArrayTy **)(pcVar10 + 0x50));
             }
             if (pSVar5->field_1E26 == '\x02') {
               puVar7 = CreateStrategList((int)local_8,(uint)(byte)pcVar10[2],0xffffffff);

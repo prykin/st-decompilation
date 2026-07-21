@@ -8,7 +8,7 @@ FUN_00709470(void *this,int *param_1,int param_2,int param_3,int param_4,undefin
   byte *pbVar3;
   int iVar4;
   undefined1 *puVar5;
-  AnonShape_006B84D0_7C7D97C6 *pAVar6;
+  AnonShape_006B5B10_E0D06CF1 *pAVar6;
   undefined4 *puVar7;
   int iVar8;
   int *piVar9;
@@ -101,7 +101,7 @@ FUN_00709470(void *this,int *param_1,int param_2,int param_3,int param_4,undefin
   } while (iVar14 != 0);
   iVar8 = iVar8 + param_4 * 2;
   if ((0 < iVar8) && (iVar12 = iVar12 + param_4 * 2, 0 < iVar12)) {
-    pAVar6 = (AnonShape_006B84D0_7C7D97C6 *)FUN_006b50c0(iVar8,iVar12,8,0x100,&local_414,1);
+    pAVar6 = (AnonShape_006B5B10_E0D06CF1 *)FUN_006b50c0(iVar8,iVar12,8,0x100,&local_414,1);
     uVar13 = pAVar6[1].field_0004;
     if (uVar13 == 0) {
       uVar13 = ((uint)pAVar6->field_000E * pAVar6->field_0004 + 0x1f >> 3 & 0x1ffffffc) *

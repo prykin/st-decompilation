@@ -32,19 +32,19 @@ void __fastcall FUN_005de670(AnonShape_005DE670_0D4D7A8C *param_1)
   uint local_18;
   HANDLE local_14;
   HANDLE local_10;
-  LPVOID local_c;
+  void *local_c;
   DWORD local_8;
   
   param_1->field_06B2 = 0;
   param_1->field_06AE = 0;
   param_1->field_069E = 0;
   local_8 = 0;
-  local_c = (LPVOID)0x0;
+  local_c = (void *)0x0;
   local_14 = (HANDLE)0xffffffff;
   local_10 = (HANDLE)0xffffffff;
   local_1c = (AnonShape_005DE670_7D81EFA7 *)param_1;
   if (param_1->field_069A != (LPVOID)0x0) {
-    FUN_006ab060(&param_1->field_069A);
+    FreeAndNull(&param_1->field_069A);
   }
   local_68.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_68;
@@ -57,8 +57,8 @@ void __fastcall FUN_005de670(AnonShape_005DE670_0D4D7A8C *param_1)
     if (local_10 != (HANDLE)0xffffffff) {
       CloseHandle(local_10);
     }
-    if (local_c != (LPVOID)0x0) {
-      FUN_006ab060(&local_c);
+    if (local_c != (void *)0x0) {
+      FreeAndNull(&local_c);
     }
     local_1c->field_06B2 = 0;
     local_1c->field_06AE = 0;
@@ -104,7 +104,7 @@ void __fastcall FUN_005de670(AnonShape_005DE670_0D4D7A8C *param_1)
     RaiseInternalException
               (-1,g_overwriteContext_007ED77C,s_E____titans_Start_startsys_cpp_007cd718,0x41c);
   }
-  local_c = (LPVOID)Library::DKW::LIB::FUN_006aac70
+  local_c = (void *)Library::DKW::LIB::FUN_006aac70
                               (pAVar2->field_06AE + local_18 + pAVar2->field_06B2);
   if (local_c == (LPVOID)0x0) {
     RaiseInternalException
@@ -155,7 +155,7 @@ void __fastcall FUN_005de670(AnonShape_005DE670_0D4D7A8C *param_1)
     pbVar9 = pbVar9 + 1;
     local_24 = local_24 + 1;
   }
-  *(LPVOID *)&pAVar2->field_0x69a = local_c;
+  *(void **)&pAVar2->field_0x69a = local_c;
   uVar7 = pAVar2->field_06B2 + pAVar2->field_06AE + local_18;
   pAVar2->field_069E = uVar7;
   if ((g_int_00811764 == (int *)0x0) || (g_int_00811764[10] != 1)) {

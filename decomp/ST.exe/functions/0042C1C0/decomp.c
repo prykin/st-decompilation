@@ -14,7 +14,7 @@ STAllPlayersC::AddObjsToTmp
   undefined4 uVar3;
   undefined4 unaff_ESI;
   void *unaff_EDI;
-  uint uVar4;
+  uint index;
   InternalExceptionFrame local_54;
   dword local_10;
   STAllPlayersC *local_c;
@@ -31,15 +31,15 @@ STAllPlayersC::AddObjsToTmp
                  0x266);
     }
     local_10 = param_4->count;
-    uVar4 = 0;
+    index = 0;
     if (0 < (int)local_10) {
       do {
-        FUN_006acc70((AnonShape_006ACC70_C8641025 *)param_4,uVar4,&local_8);
+        DArrayGetElement(param_4,index,&local_8);
         if ((short)local_8 != -1) {
           AddObjToTmp(local_c,(char)param_1,param_2,param_3,param_1,local_8);
         }
-        uVar4 = uVar4 + 1;
-      } while ((int)uVar4 < (int)local_10);
+        index = index + 1;
+      } while ((int)index < (int)local_10);
     }
     g_currentExceptionFrame = local_54.previous;
   }

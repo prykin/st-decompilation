@@ -37,17 +37,17 @@ undefined4 * __thiscall AiBossClassTy::PrepareToSave(AiBossClassTy *this,uint *p
     local_c = BossDataPack(puVar4,local_8,local_10,param_1);
     *(undefined1 *)local_c = 1;
     if (local_8 != (undefined4 *)0x0) {
-      FUN_006ab060(&local_8);
+      FreeAndNull(&local_8);
     }
     g_currentExceptionFrame = pIVar5;
     return local_c;
   }
   g_currentExceptionFrame = pIVar5;
   if (local_8 != (undefined4 *)0x0) {
-    FUN_006ab060(&local_8);
+    FreeAndNull(&local_8);
   }
   if (local_c != (undefined4 *)0x0) {
-    FUN_006ab060(&local_c);
+    FreeAndNull(&local_c);
   }
   iVar3 = ReportDebugMessage(s_E____titans_ai_ai_boss_cpp_007d2750,0x4c,0,errorCode,&DAT_007a4ccc,
                              s_AiBossClassTy__PrepareToSave_007d278c);

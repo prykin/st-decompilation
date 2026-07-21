@@ -119,29 +119,33 @@ cf_common_join_0063EACD:
               do {
                 if (-1 < (short)local_c) {
                   sVar3 = (short)local_10;
-                  if ((((((short)local_c < SHORT_007fb240) && (-1 < sVar8)) &&
-                       (sVar8 < SHORT_007fb242)) && ((-1 < sVar3 && (sVar3 < SHORT_007fb244)))) &&
-                     (g_worldCells
-                      [(int)sVar3 * (int)SHORT_007fb246 + (int)SHORT_007fb240 * (int)sVar8 +
-                       (int)(short)local_c].objects[0] != (STWorldObject *)0x0)) {
+                  if ((((((short)local_c < g_worldGrid.sizeX) && (-1 < sVar8)) &&
+                       (sVar8 < g_worldGrid.sizeY)) && ((-1 < sVar3 && (sVar3 < g_worldGrid.sizeZ)))
+                      ) && (g_worldGrid.cells
+                            [(int)sVar3 * (int)g_worldGrid.planeStride +
+                             (int)g_worldGrid.sizeX * (int)sVar8 + (int)(short)local_c].objects[0]
+                            != (STWorldObject *)0x0)) {
                     thunk_FUN_00601d10(*(undefined4 *)((int)this + 0x259),local_1c,
-                                       (int)g_worldCells
-                                            [(int)sVar3 * (int)SHORT_007fb246 +
-                                             (int)SHORT_007fb240 * (int)sVar8 + (int)(short)local_c]
-                                            .objects[0],(short)*(undefined4 *)((int)this + 0x25d),
+                                       (int)g_worldGrid.cells
+                                            [(int)sVar3 * (int)g_worldGrid.planeStride +
+                                             (int)g_worldGrid.sizeX * (int)sVar8 +
+                                             (int)(short)local_c].objects[0],
+                                       (short)*(undefined4 *)((int)this + 0x25d),
                                        *(undefined2 *)((int)this + 0x261),0xa8,0x110);
                   }
-                  if ((((short)local_c < SHORT_007fb240) && (-1 < sVar8)) &&
-                     ((sVar8 < SHORT_007fb242 &&
-                      (((-1 < sVar3 && (sVar3 < SHORT_007fb244)) &&
-                       (g_worldCells
-                        [(int)sVar3 * (int)SHORT_007fb246 + (int)SHORT_007fb240 * (int)sVar8 +
-                         (int)(short)local_c].objects[1] != (STWorldObject *)0x0)))))) {
+                  if ((((short)local_c < g_worldGrid.sizeX) && (-1 < sVar8)) &&
+                     ((sVar8 < g_worldGrid.sizeY &&
+                      (((-1 < sVar3 && (sVar3 < g_worldGrid.sizeZ)) &&
+                       (g_worldGrid.cells
+                        [(int)sVar3 * (int)g_worldGrid.planeStride +
+                         (int)g_worldGrid.sizeX * (int)sVar8 + (int)(short)local_c].objects[1] !=
+                        (STWorldObject *)0x0)))))) {
                     thunk_FUN_00601d10(*(undefined4 *)((int)this + 0x259),local_1c,
-                                       (int)g_worldCells
-                                            [(int)sVar3 * (int)SHORT_007fb246 +
-                                             (int)SHORT_007fb240 * (int)sVar8 + (int)(short)local_c]
-                                            .objects[1],(short)*(undefined4 *)((int)this + 0x25d),
+                                       (int)g_worldGrid.cells
+                                            [(int)sVar3 * (int)g_worldGrid.planeStride +
+                                             (int)g_worldGrid.sizeX * (int)sVar8 +
+                                             (int)(short)local_c].objects[1],
+                                       (short)*(undefined4 *)((int)this + 0x25d),
                                        *(undefined2 *)((int)this + 0x261),0xa8,0x110);
                   }
                 }
@@ -183,16 +187,17 @@ cf_common_join_0063EACD:
             }
             local_10 = 0;
             do {
-              if ((((-1 < (short)local_c) && ((short)local_c < SHORT_007fb240)) && (-1 < sVar8)) &&
-                 (((sVar8 < SHORT_007fb242 && (sVar3 = (short)local_10, -1 < sVar3)) &&
-                  ((sVar3 < SHORT_007fb244 &&
-                   (g_worldCells
-                    [(int)sVar3 * (int)SHORT_007fb246 + (int)SHORT_007fb240 * (int)sVar8 +
-                     (int)(short)local_c].objects[0] != (STWorldObject *)0x0)))))) {
+              if ((((-1 < (short)local_c) && ((short)local_c < g_worldGrid.sizeX)) && (-1 < sVar8))
+                 && (((sVar8 < g_worldGrid.sizeY && (sVar3 = (short)local_10, -1 < sVar3)) &&
+                     ((sVar3 < g_worldGrid.sizeZ &&
+                      (g_worldGrid.cells
+                       [(int)sVar3 * (int)g_worldGrid.planeStride +
+                        (int)g_worldGrid.sizeX * (int)sVar8 + (int)(short)local_c].objects[0] !=
+                       (STWorldObject *)0x0)))))) {
                 thunk_FUN_00601d10(*(undefined4 *)((int)this + 0x259),local_1c,
-                                   (int)g_worldCells
-                                        [(int)sVar3 * (int)SHORT_007fb246 +
-                                         (int)SHORT_007fb240 * (int)sVar8 + (int)(short)local_c].
+                                   (int)g_worldGrid.cells
+                                        [(int)sVar3 * (int)g_worldGrid.planeStride +
+                                         (int)g_worldGrid.sizeX * (int)sVar8 + (int)(short)local_c].
                                         objects[0],(short)*(undefined4 *)((int)this + 0x25d),
                                    *(undefined2 *)((int)this + 0x261),0xa8,0x110);
               }

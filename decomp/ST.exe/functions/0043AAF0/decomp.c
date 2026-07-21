@@ -45,7 +45,7 @@ STAllPlayersC::GetCamPoint
       local_c = 0;
       if (0 < (int)dVar1) {
         do {
-          FUN_006acc70((AnonShape_006ACC70_C8641025 *)param_3,local_c,&local_10);
+          DArrayGetElement(param_3,local_c,&local_10);
           if ((short)local_10 != -1) {
             uVar6 = uVar6 + 1;
             pSVar5 = (STFishC *)GetObjPtr(g_sTAllPlayers_007FA174,param_2,local_10,CASE_1);
@@ -60,7 +60,7 @@ STAllPlayersC::GetCamPoint
         if (uVar6 != 0) {
           local_c = 0;
           do {
-            FUN_006acc70((AnonShape_006ACC70_C8641025 *)param_3,local_c,&local_10);
+            DArrayGetElement(param_3,local_c,&local_10);
             if ((short)local_10 != -1) {
               pSVar5 = (STFishC *)GetObjPtr(g_sTAllPlayers_007FA174,param_2,local_10,CASE_1);
               STFishC::sub_004162B0

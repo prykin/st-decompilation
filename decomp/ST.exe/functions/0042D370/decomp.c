@@ -10,56 +10,56 @@ STAllPlayersC::SetActivityToObjs
 {
   code *pcVar1;
   uint objPtr;
-  int *piVar2;
+  STGameObjC *pSVar2;
   int iVar3;
-  uint uVar4;
-  STAllPlayersC_GetObjPtr_param_3Enum SVar5;
+  uint index;
+  STAllPlayersC_GetObjPtr_param_3Enum SVar4;
   
   objPtr = param_1;
   if (0x19a < param_2) {
     if (param_2 == 0x1a4) {
-      piVar2 = (int *)GetObjPtr(this,param_1,param_4,CASE_5);
-      if (piVar2 == (int *)0x0) {
+      pSVar2 = GetObjPtr(this,param_1,param_4,CASE_5);
+      if (pSVar2 == (STGameObjC *)0x0) {
         return;
       }
-      (**(code **)(*piVar2 + 0xe8))(1);
+      (*pSVar2->vtable[1].vfunc_14)(1);
       return;
     }
     if (param_2 == 0x1ae) {
-      SVar5 = CASE_3;
+      SVar4 = CASE_3;
     }
     else {
       if (param_2 != 0x1b8) goto LAB_0042d41b;
-      SVar5 = CASE_6;
+      SVar4 = CASE_6;
     }
     goto cf_common_exit_0042D44C;
   }
   if (param_2 == 0x19a) {
 LAB_0042d3b2:
-    uVar4 = 0;
+    index = 0;
     param_4 = param_3->count;
     if ((int)param_4 < 1) {
       return;
     }
     do {
-      FUN_006acc70((AnonShape_006ACC70_C8641025 *)param_3,uVar4,&param_1);
+      DArrayGetElement(param_3,index,&param_1);
       if (((short)param_1 != -1) &&
-         (piVar2 = (int *)GetObjPtr(this,objPtr,param_1,CASE_1), piVar2 != (int *)0x0)) {
-        (**(code **)(*piVar2 + 0xe8))(1);
+         (pSVar2 = GetObjPtr(this,objPtr,param_1,CASE_1), pSVar2 != (STGameObjC *)0x0)) {
+        (*pSVar2->vtable[1].vfunc_14)(1);
       }
-      uVar4 = uVar4 + 1;
-    } while ((int)uVar4 < (int)param_4);
+      index = index + 1;
+    } while ((int)index < (int)param_4);
     return;
   }
   if (param_2 < 0x5b) {
     if (param_2 == 0x5a) {
-      SVar5 = CASE_4;
+      SVar4 = CASE_4;
 cf_common_exit_0042D44C:
-      piVar2 = (int *)GetObjPtr(this,param_1,param_4,SVar5);
-      if (piVar2 == (int *)0x0) {
+      pSVar2 = GetObjPtr(this,param_1,param_4,SVar4);
+      if (pSVar2 == (STGameObjC *)0x0) {
         return;
       }
-      (**(code **)(*piVar2 + 0xe8))(1);
+      (*pSVar2->vtable[1].vfunc_14)(1);
       return;
     }
     if (param_2 == 0) {
@@ -68,7 +68,7 @@ cf_common_exit_0042D44C:
     if (param_2 == 0x3c) goto LAB_0042d3b2;
   }
   else if (param_2 == 0x172) {
-    SVar5 = CASE_2;
+    SVar4 = CASE_2;
     goto cf_common_exit_0042D44C;
   }
 LAB_0042d41b:

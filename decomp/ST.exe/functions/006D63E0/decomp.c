@@ -1,5 +1,14 @@
 
-int __thiscall FUN_006d63e0(void *this,int *param_1)
+/* [STHiddenThisApplier] Anonymous hidden receiver recovered as
+   /SubmarineTitans/Recovered/HiddenThis/AnonReceiver_006CEC40.
+   Evidence: incoming_receiver_captures=1; receiver_accesses=17; incoming_edx_uses=0; calls=1;
+   ecx_pointer_setup=1; ecx_scalar_setup=0; caller_cleanup_calls=0; callee_ret_pop=[4];
+   expected_stack=4; receiver_family_members=3; adopt_untyped_existing_thiscall;
+   single_call_corroborated_by_receiver_family */
+
+int __thiscall
+SubmarineTitans::Recovered::HiddenThis::AnonReceiver_006CEC40::FUN_006d63e0
+          (AnonReceiver_006CEC40 *this,int *param_1)
 
 {
   int iVar1;
@@ -38,20 +47,20 @@ int __thiscall FUN_006d63e0(void *this,int *param_1)
   puStack_10 = &LAB_0072d964;
   local_14 = ExceptionList;
   local_1c = &stack0xffffff0c;
-  iVar8 = *(int *)((int)this + 0x284);
+  iVar8 = *(int *)&this->field_0x284;
   local_b4[0] = (HDC)0x0;
-  if ((*(uint *)(*(int *)(*(int *)((int)this + 0x288) + 0x28) + 0xc) & 0x100) == 0) {
+  if ((*(uint *)(*(int *)(*(int *)&this->field_0x288 + 0x28) + 0xc) & 0x100) == 0) {
     ExceptionList = &local_14;
     iVar4 = (**(code **)(*param_1 + 0xc))(param_1,&local_bc);
     if (iVar4 < 0) {
       ExceptionList = local_14;
       return iVar4;
     }
-    iVar4 = *(int *)(*(int *)((int)this + 0x288) + 0x28);
+    iVar4 = *(int *)(*(int *)&this->field_0x288 + 0x28);
     if ((*(uint *)(iVar4 + 8) & 0x4000000) != 0) {
       EnterCriticalSection((LPCRITICAL_SECTION)(iVar4 + 0x4f0));
     }
-    iVar4 = *(int *)((int)this + 0x288);
+    iVar4 = *(int *)&this->field_0x288;
     if (((*(uint *)(iVar4 + 4) & 8) == 0) &&
        (((*(uint *)(iVar4 + 4) & 4) == 0 ||
         ((*(int *)(iVar4 + 0x20) == *(int *)(iVar4 + 0x10) &&
@@ -64,7 +73,7 @@ int __thiscall FUN_006d63e0(void *this,int *param_1)
         (*pcVar2)(*(undefined4 *)(*(int *)(iVar4 + 0x28) + 0x4ec),iVar7,iVar1,local_a0,
                   *(undefined4 *)(iVar4 + 0x24));
       }
-      iVar4 = *(int *)((int)this + 0x288);
+      iVar4 = *(int *)&this->field_0x288;
       Library::DKW::DDX::FUN_006b42d0
                 (*(uint *)(iVar4 + 0x28),iVar7,iVar1,(BITMAPINFO *)(iVar8 + 0x30),local_bc,
                  *(int *)(iVar4 + 8),*(int *)(iVar4 + 0xc),*(DWORD *)(iVar4 + 0x10),
@@ -90,7 +99,7 @@ int __thiscall FUN_006d63e0(void *this,int *param_1)
         (**(code **)(iVar4 + 0x4e4))
                   (*(undefined4 *)(iVar4 + 0x4ec),iVar7,local_a4,local_a0,local_9c);
       }
-      iVar4 = *(int *)((int)this + 0x288);
+      iVar4 = *(int *)&this->field_0x288;
       if ((*(int *)(*(int *)(iVar4 + 0x28) + 0x20) < 0x11) && (*(ushort *)(iVar8 + 0x3e) < 0x11)) {
         uVar5 = (uint)*(ushort *)(iVar8 + 0x3e) * *(int *)(iVar8 + 0x34) + 0x1f >> 3 & 0x1ffffffc;
         BVar6 = IsBadReadPtr((uint *)(((*(int *)(iVar8 + 0x38) - *(int *)(iVar4 + 0xc)) -
@@ -112,13 +121,13 @@ int __thiscall FUN_006d63e0(void *this,int *param_1)
             iVar7 = (**(code **)(*piVar3 + 100))(piVar3,&local_d0,local_98,0x21,0);
             if (iVar7 == 0) goto LAB_006d666f;
             if (iVar7 != -0x7789fe3e) break;
-            FUN_006cec40(*(AnonShape_006CEC40_BB23E716 **)(*(int *)((int)this + 0x288) + 0x28));
+            FUN_006cec40(*(AnonShape_006CEC40_BB23E716 **)(*(int *)&this->field_0x288 + 0x28));
             iVar4 = iVar4 + 1;
           } while (iVar4 < 2);
           if (iVar7 == 0) {
 LAB_006d666f:
             local_8 = 0;
-            iVar4 = *(int *)((int)this + 0x288);
+            iVar4 = *(int *)&this->field_0x288;
             if (*(int *)(*(int *)(iVar4 + 0x28) + 0x20) == 8) {
               uVar5 = (uint)*(ushort *)(iVar8 + 0x3e) * *(int *)(iVar8 + 0x34) + 0x1f >> 3 &
                       0x1ffffffc;
@@ -173,22 +182,22 @@ LAB_006d666f:
           iVar4 = (**(code **)(*piVar3 + 0x44))(piVar3,local_b4);
           if (iVar4 == 0) goto LAB_006d68c8;
           if (iVar4 == -0x7789fe3e) {
-            FUN_006cec40(*(AnonShape_006CEC40_BB23E716 **)(*(int *)((int)this + 0x288) + 0x28));
+            FUN_006cec40(*(AnonShape_006CEC40_BB23E716 **)(*(int *)&this->field_0x288 + 0x28));
           }
           else if (iVar4 != -0x7789fde4) break;
           local_b8 = local_b8 + 1;
         } while (local_b8 < 40000);
         if (iVar4 == 0) {
 LAB_006d68c8:
-          iVar4 = *(int *)(*(int *)((int)this + 0x288) + 0x28);
+          iVar4 = *(int *)(*(int *)&this->field_0x288 + 0x28);
           SetViewportOrgEx(local_b4[0],*(int *)(iVar4 + 0x10),*(int *)(iVar4 + 0x14),(LPPOINT)0x0);
-          hrgn = *(HRGN *)(*(int *)(*(int *)((int)this + 0x288) + 0x28) + 0x494);
+          hrgn = *(HRGN *)(*(int *)(*(int *)&this->field_0x288 + 0x28) + 0x494);
           if (hrgn != (HRGN)0x0) {
             SelectClipRgn(local_b4[0],hrgn);
           }
-          *(HDC **)(*(int *)(*(int *)((int)this + 0x288) + 0x28) + 0x47c) = local_b4;
-          *(int **)(*(int *)(*(int *)((int)this + 0x288) + 0x28) + 0x480) = piVar3;
-          iVar4 = *(int *)((int)this + 0x288);
+          *(HDC **)(*(int *)(*(int *)&this->field_0x288 + 0x28) + 0x47c) = local_b4;
+          *(int **)(*(int *)(*(int *)&this->field_0x288 + 0x28) + 0x480) = piVar3;
+          iVar4 = *(int *)&this->field_0x288;
           StretchDIBits(local_b4[0],local_a8,local_a4,local_a0,local_9c,*(int *)(iVar4 + 8),
                         *(int *)(iVar4 + 0xc),*(int *)(iVar4 + 0x10),*(int *)(iVar4 + 0x14),local_bc
                         ,(BITMAPINFO *)(iVar8 + 0x30),0,0xcc0020);
@@ -197,16 +206,16 @@ LAB_006d68c8:
             iVar4 = (**(code **)(*piVar3 + 0x68))(piVar3,local_b4[0]);
             if (iVar4 == 0) break;
             if (iVar4 == -0x7789fe3e) {
-              FUN_006cec40(*(AnonShape_006CEC40_BB23E716 **)(*(int *)((int)this + 0x288) + 0x28));
+              FUN_006cec40(*(AnonShape_006CEC40_BB23E716 **)(*(int *)&this->field_0x288 + 0x28));
             }
             else if (iVar4 != -0x7789fde4) break;
             iVar8 = iVar8 + 1;
           } while (iVar8 < 40000);
         }
-        *(undefined4 *)(*(int *)(*(int *)((int)this + 0x288) + 0x28) + 0x47c) = 0;
+        *(undefined4 *)(*(int *)(*(int *)&this->field_0x288 + 0x28) + 0x47c) = 0;
       }
     }
-    iVar8 = *(int *)(*(int *)((int)this + 0x288) + 0x28);
+    iVar8 = *(int *)(*(int *)&this->field_0x288 + 0x28);
     if ((*(uint *)(iVar8 + 8) & 0x4000000) != 0) {
       LeaveCriticalSection((LPCRITICAL_SECTION)(iVar8 + 0x4f0));
     }

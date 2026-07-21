@@ -6,10 +6,10 @@
 void __cdecl FUN_0068cda0(int *param_1,Global_sub_0068CDA0_param_2Enum param_2)
 
 {
-  AnonShape_006B5570_4D68B99C *groupContent;
+  DArrayTy *array;
   
-  groupContent = (AnonShape_006B5570_4D68B99C *)*param_1;
-  if (groupContent != (AnonShape_006B5570_4D68B99C *)0x0) {
+  array = (DArrayTy *)*param_1;
+  if (array != (DArrayTy *)0x0) {
     switch(param_2) {
     case CASE_1:
       thunk_FUN_006686c0(param_1);
@@ -27,12 +27,12 @@ void __cdecl FUN_0068cda0(int *param_1,Global_sub_0068CDA0_param_2Enum param_2)
       thunk_FUN_0065d0f0(param_1);
       return;
     case CASE_9:
-      FUN_006b5570(groupContent);
+      FUN_006b5570((AnonShape_006B5570_4D68B99C *)array);
       *param_1 = 0;
       return;
     case CASE_A:
     case CASE_40:
-      FUN_006ae110((byte *)groupContent);
+      DArrayDestroy(array);
       *param_1 = 0;
     }
   }

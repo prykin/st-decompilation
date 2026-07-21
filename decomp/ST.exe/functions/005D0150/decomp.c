@@ -1,7 +1,10 @@
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\settmobj.cpp
-   SettMapMTy::CheckPlList */
+   SettMapMTy::CheckPlList
+   
+   [STTypeFamilyApplier] EXACT_ANONYMOUS_LAYOUT.
+   Evidence: exact anonymous structure fingerprint shared across functions */
 
 void __thiscall SettMapMTy::CheckPlList(SettMapMTy *this,void *param_1)
 
@@ -25,7 +28,7 @@ void __thiscall SettMapMTy::CheckPlList(SettMapMTy *this,void *param_1)
   dword dVar15;
   char *pcVar16;
   InternalExceptionFrame local_5c;
-  AnonShape_005D0150_383DDE8F *local_18;
+  AnonShape_00413AF0_B6B4EE9A *local_18;
   uint local_14;
   uint local_10;
   SettMapMTy *local_c;
@@ -56,8 +59,8 @@ void __thiscall SettMapMTy::CheckPlList(SettMapMTy *this,void *param_1)
             pvVar7 = (void *)(pDVar12->elementSize * uVar13 + (int)pDVar12->data);
 LAB_005d01c2:
             if ((pvVar7 != (void *)0x0) && (*(char *)((int)pvVar7 + 4) == '\x03')) {
-              if (*(byte **)((int)pvVar7 + 0x50) != (byte *)0x0) {
-                FUN_006ae110(*(byte **)((int)pvVar7 + 0x50));
+              if (*(DArrayTy **)((int)pvVar7 + 0x50) != (DArrayTy *)0x0) {
+                DArrayDestroy(*(DArrayTy **)((int)pvVar7 + 0x50));
               }
               FUN_006b0c70((AnonShape_006B0C70_7C4FE646 *)pSVar3->field_1F84,uVar13);
               uVar13 = uVar13 - 1;
@@ -87,8 +90,8 @@ LAB_005d021c:
               if (*pcVar8 == '\0') {
                 if (pcVar8[4] == '\x01') {
                   if (local_6 == '\0') goto LAB_005d024d;
-                  if (*(byte **)(pcVar8 + 0x50) != (byte *)0x0) {
-                    FUN_006ae110(*(byte **)(pcVar8 + 0x50));
+                  if (*(DArrayTy **)(pcVar8 + 0x50) != (DArrayTy *)0x0) {
+                    DArrayDestroy(*(DArrayTy **)(pcVar8 + 0x50));
                   }
                   FUN_006b0c70((AnonShape_006B0C70_7C4FE646 *)pSVar3->field_1F84,uVar14);
                   bVar2 = true;
@@ -189,8 +192,8 @@ LAB_005d0391:
             }
             if (((((pcVar8 != (char *)0x0) && (pcVar10 != (char *)0x0)) && (*pcVar8 == '\0')) &&
                 ((pcVar8[4] != '\x01' && (*pcVar10 == '\0')))) && (pcVar10[4] == '\x01')) {
-              if (*(byte **)(pcVar10 + 0x50) != (byte *)0x0) {
-                FUN_006ae110(*(byte **)(pcVar10 + 0x50));
+              if (*(DArrayTy **)(pcVar10 + 0x50) != (DArrayTy *)0x0) {
+                DArrayDestroy(*(DArrayTy **)(pcVar10 + 0x50));
               }
               FUN_006b0c70((AnonShape_006B0C70_7C4FE646 *)local_c->field_1F84,uVar14 - 1);
               local_5 = '\x01';
@@ -202,7 +205,7 @@ LAB_005d0391:
       } while (local_5 != '\0');
       local_5 = '\0';
       local_10 = 0;
-      local_18 = (AnonShape_005D0150_383DDE8F *)local_c->field_1F84;
+      local_18 = (AnonShape_00413AF0_B6B4EE9A *)local_c->field_1F84;
       dVar15 = ((DArrayTy *)local_18)->count;
       if (dVar15 != 0) {
         do {
@@ -226,8 +229,8 @@ LAB_005d045a:
                   local_6 = local_6 + '\x01';
                 }
                 if (pcVar10[4] != '\x02') goto cf_continue_loop_005D0486;
-                if (*(byte **)(pcVar8 + 0x50) != (byte *)0x0) {
-                  FUN_006ae110(*(byte **)(pcVar8 + 0x50));
+                if (*(DArrayTy **)(pcVar8 + 0x50) != (DArrayTy *)0x0) {
+                  DArrayDestroy(*(DArrayTy **)(pcVar8 + 0x50));
                 }
                 pcVar16 = pcVar8;
                 for (iVar6 = 0x18; iVar6 != 0; iVar6 = iVar6 + -1) {
@@ -253,15 +256,15 @@ LAB_005d048e:
                   pcVar8 = (char *)0x0;
                 }
                 if ((pcVar8 == (char *)0x0) || (*pcVar8 != '\0')) break;
-                if (*(byte **)(pcVar8 + 0x50) != (byte *)0x0) {
-                  FUN_006ae110(*(byte **)(pcVar8 + 0x50));
+                if (*(DArrayTy **)(pcVar8 + 0x50) != (DArrayTy *)0x0) {
+                  DArrayDestroy(*(DArrayTy **)(pcVar8 + 0x50));
                 }
                 FUN_006b0c70((AnonShape_006B0C70_7C4FE646 *)local_c->field_1F84,uVar13);
               }
             }
           }
           local_10 = local_10 + 1;
-          local_18 = (AnonShape_005D0150_383DDE8F *)local_c->field_1F84;
+          local_18 = (AnonShape_00413AF0_B6B4EE9A *)local_c->field_1F84;
           dVar15 = ((DArrayTy *)local_18)->count;
         } while (local_10 < dVar15);
       }

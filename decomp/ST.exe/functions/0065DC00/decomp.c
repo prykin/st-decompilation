@@ -3,70 +3,71 @@ int __fastcall FUN_0065dc00(int param_1,undefined4 param_2,uint param_3,char par
 
 {
   char cVar1;
-  uint *groupContent;
-  undefined2 *puVar2;
-  int *piVar3;
-  int iVar4;
-  uint uVar5;
-  IMAGE_DOS_HEADER *pIVar6;
+  DArrayTy *array;
+  dword dVar2;
+  undefined2 *puVar3;
+  STGameObjC *pSVar4;
+  int iVar5;
+  void *pvVar6;
+  IMAGE_DOS_HEADER *pIVar7;
   undefined4 extraout_ECX;
-  uint uVar7;
-  uint extraout_ECX_00;
-  uint extraout_ECX_01;
-  uint uVar8;
+  void *pvVar8;
+  void *extraout_ECX_00;
+  void *extraout_ECX_01;
+  uint uVar9;
   int local_8;
   
   local_8 = 0;
-  groupContent = thunk_FUN_0065da10((AnonShape_0065DA10_8B0AA883 *)param_1,param_2);
-  if (groupContent == (uint *)0x0) {
+  array = (DArrayTy *)thunk_FUN_0065da10((AnonShape_0065DA10_8B0AA883 *)param_1,param_2);
+  if (array == (DArrayTy *)0x0) {
     return 0;
   }
   cVar1 = *(char *)(param_1 + 0x81);
   if ((cVar1 < '\0') || ('\a' < cVar1)) {
     cVar1 = (char)*(undefined4 *)(param_1 + 0x24);
   }
-  uVar7 = CONCAT31((int3)((uint)extraout_ECX >> 8),param_4);
+  pvVar8 = (void *)CONCAT31((int3)((uint)extraout_ECX >> 8),param_4);
   if ((param_4 != '\b') && ((param_4 < '\0' || (cVar1 = param_4, '\b' < param_4)))) {
     param_4 = -1;
     cVar1 = param_4;
   }
   param_4 = cVar1;
-  uVar5 = groupContent[3];
-  uVar8 = 0;
-  if (0 < (int)uVar5) {
+  dVar2 = array->count;
+  uVar9 = 0;
+  if (0 < (int)dVar2) {
     do {
-      if (uVar8 < uVar5) {
-        uVar7 = groupContent[7];
-        puVar2 = (undefined2 *)(groupContent[2] * uVar8 + uVar7);
+      if (uVar9 < dVar2) {
+        pvVar8 = array->data;
+        puVar3 = (undefined2 *)(array->elementSize * uVar9 + (int)pvVar8);
       }
       else {
-        puVar2 = (undefined2 *)0x0;
+        puVar3 = (undefined2 *)0x0;
       }
-      piVar3 = (int *)STAllPlayersC::GetObjPtr
-                                (g_sTAllPlayers_007FA174,
-                                 CONCAT31((int3)(uVar7 >> 8),*(undefined1 *)(param_1 + 0x24)),
-                                 CONCAT22((short)((uint)puVar2 >> 0x10),*puVar2),CASE_1);
-      uVar7 = extraout_ECX_00;
-      if ((piVar3 != (int *)0x0) &&
-         (iVar4 = (**(code **)(*piVar3 + 0xf8))(), uVar7 = extraout_ECX_01, iVar4 != 0)) {
+      pSVar4 = STAllPlayersC::GetObjPtr
+                         (g_sTAllPlayers_007FA174,
+                          CONCAT31((int3)((uint)pvVar8 >> 8),*(undefined1 *)(param_1 + 0x24)),
+                          CONCAT22((short)((uint)puVar3 >> 0x10),*puVar3),CASE_1);
+      pvVar8 = extraout_ECX_00;
+      if ((pSVar4 != (STGameObjC *)0x0) &&
+         (iVar5 = (*pSVar4->vtable[1].vfunc_24)(), pvVar8 = extraout_ECX_01, iVar5 != 0)) {
         if (-1 < param_4) {
-          uVar5 = (**(code **)(*piVar3 + 0x6c))();
-          uVar7 = (int)param_4;
-          if ((int)param_4 != uVar5) goto LAB_0065dcca;
+          pvVar6 = (void *)(*pSVar4->vtable->vfunc_6C)();
+          pvVar8 = (void *)(int)param_4;
+          if ((void *)(int)param_4 != pvVar6) goto LAB_0065dcca;
         }
-        iVar4 = (**(code **)(*piVar3 + 0x2c))();
-        pIVar6 = thunk_FUN_00674fb0(iVar4);
-        uVar7 = param_3;
-        if ((param_3 & (uint)pIVar6) != 0) {
+        iVar5 = (*pSVar4->vtable->vfunc_2C)();
+        pIVar7 = thunk_FUN_00674fb0(iVar5);
+        pvVar8 = (void *)param_3;
+        if ((param_3 & (uint)pIVar7) != 0) {
           local_8 = local_8 + 1;
         }
       }
 LAB_0065dcca:
-      uVar5 = groupContent[3];
-      uVar8 = uVar8 + 1;
-    } while ((int)uVar8 < (int)uVar5);
+      dVar2 = array->count;
+      uVar9 = uVar9 + 1;
+    } while ((int)uVar9 < (int)dVar2);
   }
-  FUN_006ae110((byte *)groupContent);
+  DArrayDestroy(array);
   return local_8;
 }
 

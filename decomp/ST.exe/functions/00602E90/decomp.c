@@ -1,7 +1,14 @@
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+/* [STHiddenThisApplier] Anonymous hidden receiver recovered as
+   /SubmarineTitans/Recovered/HiddenThis/AnonReceiver_00602E90.
+   Evidence: incoming_receiver_captures=1; receiver_accesses=13; incoming_edx_uses=0; calls=2;
+   ecx_pointer_setup=2; ecx_scalar_setup=0; caller_cleanup_calls=0; callee_ret_pop=[0];
+   expected_stack=0; receiver_family_members=1 */
 
-undefined4 * __thiscall FUN_00602e90(void *this)
+undefined4 * __thiscall
+SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00602E90::FUN_00602e90
+          (AnonReceiver_00602E90 *this)
 
 {
   AnonShape_00602E90_7075769A *pAVar1;
@@ -17,7 +24,7 @@ undefined4 * __thiscall FUN_00602e90(void *this)
   local_8 = (undefined4 *)0x0;
   local_50.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_50;
-  local_c = this;
+  local_c = (AnonShape_00602E90_7075769A *)this;
   iVar2 = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
   pAVar1 = local_c;
   if (iVar2 == 0) {

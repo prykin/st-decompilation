@@ -1,9 +1,12 @@
 
+/* [STTypeFamilyApplier] EXACT_ANONYMOUS_LAYOUT.
+   Evidence: exact anonymous structure fingerprint shared across functions */
+
 void __thiscall FUN_006315d0(void *this,int param_1,int param_2,int param_3,int param_4)
 
 {
   short sVar1;
-  void *this_00;
+  AnonReceiver_006308F0 *this_00;
   int iVar2;
   short *psVar3;
   undefined4 *puVar4;
@@ -20,13 +23,13 @@ void __thiscall FUN_006315d0(void *this,int param_1,int param_2,int param_3,int 
   short local_1e;
   undefined4 local_1c;
   undefined4 local_10;
-  void *local_c;
-  AnonShape_006315D0_2C2F0A18 *local_8;
+  AnonReceiver_006308F0 *local_c;
+  AnonShape_00413AF0_B6B4EE9A *local_8;
   
-  local_8 = *(AnonShape_006315D0_2C2F0A18 **)((int)this + 0x38);
-  if ((local_8 != (AnonShape_006315D0_2C2F0A18 *)0x0) &&
+  local_8 = *(AnonShape_00413AF0_B6B4EE9A **)((int)this + 0x38);
+  if ((local_8 != (AnonShape_00413AF0_B6B4EE9A *)0x0) &&
      (iVar7 = *(int *)((int)this + 0x34), iVar7 != 0)) {
-    iVar2 = (SHORT_007fb240 * param_3 + param_2) * (int)SHORT_007fb242 + param_1;
+    iVar2 = (g_worldGrid.sizeX * param_3 + param_2) * (int)g_worldGrid.sizeY + param_1;
     if (param_4 == 1) {
       if (*(char *)(iVar7 + iVar2) != '\0') {
         return;
@@ -36,7 +39,7 @@ void __thiscall FUN_006315d0(void *this,int param_1,int param_2,int param_3,int 
       if (param_4 != 4) {
         return;
       }
-      iVar8 = SHORT_007fb242 + iVar2;
+      iVar8 = g_worldGrid.sizeY + iVar2;
       if ((((*(char *)(iVar7 + iVar2) == '\0') && (*(char *)(iVar7 + 1 + iVar2) == '\0')) &&
           (*(char *)(iVar7 + iVar8) == '\0')) && (*(char *)(iVar7 + 1 + iVar8) == '\0')) {
         return;
@@ -85,20 +88,21 @@ LAB_00631713:
               }
               thunk_FUN_00630bb0(this_00,local_24,local_22,local_20,local_1c,(int)local_1e,local_10)
               ;
-              *(undefined4 *)((int)this_00 + 0x44) = 1;
-              if ((*(int *)((int)this_00 + 0x48) == 0) ||
-                 (puVar5 = thunk_FUN_00630c50(this_00,*(int *)((int)this_00 + 0x40),
-                                              *(int *)((int)this_00 + 0x4c),1,1),
+              *(undefined4 *)&this_00->field_0x44 = 1;
+              if ((*(int *)&this_00->field_0x48 == 0) ||
+                 (puVar5 = SubmarineTitans::Recovered::HiddenThis::AnonReceiver_006308F0::
+                           thunk_FUN_00630c50(this_00,*(undefined4 *)&this_00->field_0x40,
+                                              *(int *)&this_00->field_0x4c,1,1,0),
                  puVar5 != (ushort *)0x0)) {
-                *(undefined4 *)((int)this_00 + 0x44) = 2;
+                *(undefined4 *)&this_00->field_0x44 = 2;
               }
-              uVar6 = thunk_FUN_00631880(this_00,(undefined4 *)((int)this_00 + 0x40),
-                                         *(undefined4 *)((int)this_00 + 0x61));
-              if (((uVar6 == 0) && (*(int *)((int)this_00 + 0x48) != 0)) &&
-                 (*(uint *)((int)this_00 + 0x61) != 0)) {
-                FUN_006e8ba0(PTR_00807598,*(uint *)((int)this_00 + 0x61));
+              uVar6 = thunk_FUN_00631880(this_00,(undefined4 *)&this_00->field_0x40,
+                                         *(undefined4 *)&this_00->field_0x61);
+              if (((uVar6 == 0) && (*(int *)&this_00->field_0x48 != 0)) &&
+                 (*(uint *)&this_00->field_0x61 != 0)) {
+                FUN_006e8ba0(PTR_00807598,*(uint *)&this_00->field_0x61);
               }
-              *(undefined4 *)((int)this_00 + 0x61) = 0xffffffff;
+              *(undefined4 *)&this_00->field_0x61 = 0xffffffff;
               return;
             }
           }

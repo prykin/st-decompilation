@@ -5,7 +5,7 @@ void FUN_00755da0(uint param_1,undefined4 *param_2)
   int iVar1;
   
   iVar1 = *(int *)(*(int *)(param_1 + 0xc) + 0x1c);
-  iVar1 = FUN_00753b80((AnonShape_00753B80_E259A731 *)param_1,
+  iVar1 = FUN_00753b80((AnonShape_00750F20_F8C16F98 *)param_1,
                        *(undefined4 *)(*(int *)(param_1 + 0xc) + 0x40 + iVar1 * 8),iVar1);
   *param_2 = *(undefined4 *)
               (*(int *)(*(int *)(param_1 + 0xc) + 0x44 +

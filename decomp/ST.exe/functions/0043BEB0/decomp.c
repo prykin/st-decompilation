@@ -19,7 +19,7 @@ STAllPlayersC::GetPanelInfo
   undefined2 *puVar8;
   undefined3 uVar12;
   undefined4 uVar9;
-  int *piVar10;
+  STGameObjC *pSVar10;
   AnonShape_0043BEB0_1C00EC12 *pAVar11;
   undefined4 extraout_ECX;
   undefined4 extraout_ECX_00;
@@ -49,7 +49,7 @@ STAllPlayersC::GetPanelInfo
   uint local_20;
   DArrayTy *local_1c;
   undefined2 *local_18;
-  uint local_14;
+  dword local_14;
   STAllPlayersC *local_10;
   uint local_c;
   undefined2 local_8;
@@ -94,7 +94,7 @@ STAllPlayersC::GetPanelInfo
         param_2->field_0001 = 0;
       }
       param_2->field_0002 = 1;
-      iVar4 = thunk_FUN_004406c0(DAT_0080874d);
+      iVar4 = GetPlayerRaceId(DAT_0080874d);
       pAVar18->field_0007 = (char)iVar4;
       local_1c = g_playerRuntime[uVar19].tempSlots[0][0].objectIds;
       local_14 = local_1c->count;
@@ -110,7 +110,7 @@ STAllPlayersC::GetPanelInfo
       }
       do {
         uVar15 = local_24;
-        FUN_006acc70((AnonShape_006ACC70_C8641025 *)local_1c,local_24,&local_c);
+        DArrayGetElement(local_1c,local_24,&local_c);
         if ((short)local_c != -1) {
           this_00 = (STFishC *)
                     GetObjPtr(local_10,CONCAT31((int3)((uint)extraout_ECX >> 8),
@@ -135,8 +135,7 @@ STAllPlayersC::GetPanelInfo
     if ((int)local_14 < 1) {
       return;
     }
-    while (FUN_006acc70((AnonShape_006ACC70_C8641025 *)pDVar2,uVar15,&local_c), (short)local_c == -1
-          ) {
+    while (DArrayGetElement(pDVar2,uVar15,&local_c), (short)local_c == -1) {
       uVar15 = uVar15 + 1;
       if ((int)local_14 <= (int)uVar15) {
         return;
@@ -175,8 +174,7 @@ STAllPlayersC::GetPanelInfo
         if ((int)local_14 < 1) {
           return;
         }
-        while (FUN_006acc70((AnonShape_006ACC70_C8641025 *)pDVar2,uVar15,&local_c),
-              (short)local_c == -1) {
+        while (DArrayGetElement(pDVar2,uVar15,&local_c), (short)local_c == -1) {
           uVar15 = uVar15 + 1;
           if ((int)local_14 <= (int)uVar15) {
             return;
@@ -191,14 +189,14 @@ STAllPlayersC::GetPanelInfo
         return;
       }
       param_2->field_0005 = 2;
-      iVar4 = thunk_FUN_004406c0(DAT_0080874d);
+      iVar4 = GetPlayerRaceId(DAT_0080874d);
       pAVar18->field_0004 = (char)iVar4;
       local_1c = g_playerRuntime[uVar19].tempSlots[0][0].objectIds;
       local_14 = local_1c->count;
       dVar17 = 0;
       if (0 < (int)local_14) {
         do {
-          FUN_006acc70((AnonShape_006ACC70_C8641025 *)local_1c,dVar17,&local_c);
+          DArrayGetElement(local_1c,dVar17,&local_c);
           if ((short)local_c != -1) {
             pAVar5 = (AnonShape_00493CD0_11D91B87 *)
                      GetObjPtr(this,CONCAT31((int3)((uint)extraout_ECX_00 >> 8),DAT_0080874d),
@@ -225,12 +223,13 @@ LAB_0043c293:
         pAVar18[1].field_0001 = 3;
         if (0 < (int)local_14) {
           do {
-            FUN_006acc70((AnonShape_006ACC70_C8641025 *)local_1c,dVar17,&local_c);
+            DArrayGetElement(local_1c,dVar17,&local_c);
             if ((short)local_c != -1) {
-              uVar19 = GetObjPtr(this,CONCAT31((int3)((uint)extraout_ECX_01 >> 8),DAT_0080874d),
-                                 local_c,CASE_1);
-              pSVar6 = thunk_FUN_0042b760(CONCAT31((int3)(uVar19 >> 8),DAT_0080874d),
-                                          CONCAT22(extraout_var,*(undefined2 *)(uVar19 + 0x30)));
+              pSVar10 = GetObjPtr(this,CONCAT31((int3)((uint)extraout_ECX_01 >> 8),DAT_0080874d),
+                                  local_c,CASE_1);
+              pSVar6 = thunk_FUN_0042b760(CONCAT31((int3)((uint)pSVar10 >> 8),DAT_0080874d),
+                                          CONCAT22(extraout_var,*(undefined2 *)&pSVar10->field_0x30)
+                                         );
               if ((pSVar6 != (STGroupBoatC *)0x0) &&
                  (pAVar18[1].field_0001 = 1, pSVar6->field_001C == 0)) break;
             }
@@ -256,7 +255,7 @@ LAB_0043c293:
         puVar13 = puVar13 + 1;
         puVar8 = puVar8 + 1;
       } while ((int)(puVar13 + (-0xf - (int)pAVar18)) < 6);
-      FUN_006ab060(&local_18);
+      FreeAndNull(&local_18);
       uVar19 = 0;
       pAVar18[2].field_0011 = 1;
       pAVar18[2].field_0x10 = 1;
@@ -264,10 +263,11 @@ LAB_0043c293:
       pAVar18[2].field_000E = 1;
       if (0 < (int)local_14) {
         do {
-          FUN_006acc70((AnonShape_006ACC70_C8641025 *)local_1c,uVar19,&local_c);
+          DArrayGetElement(local_1c,uVar19,&local_c);
           if ((short)local_c != -1) {
-            uVar15 = GetObjPtr(local_10,CONCAT31((int3)(local_c >> 8),DAT_0080874d),local_c,CASE_1);
-            (&pAVar18[2].field_000E)[*(int *)(uVar15 + 0x7ee)] = 3;
+            pSVar10 = GetObjPtr(local_10,CONCAT31((int3)(local_c >> 8),DAT_0080874d),local_c,CASE_1)
+            ;
+            (&pAVar18[2].field_000E)[*(int *)&pSVar10[4].field_0xaa] = 3;
           }
           uVar19 = uVar19 + 1;
         } while ((int)uVar19 < (int)local_14);
@@ -325,14 +325,15 @@ LAB_0043c293:
       uVar19 = local_20;
       if (0 < (int)local_14) {
         do {
-          FUN_006acc70((AnonShape_006ACC70_C8641025 *)local_1c,local_24,&local_c);
+          DArrayGetElement(local_1c,local_24,&local_c);
           if ((short)local_c != -1) {
             local_28 = (STPlayerTempSlot *)((int)&local_28->objectType + 1);
-            uVar15 = GetObjPtr(local_10,CONCAT31((int3)(local_c >> 8),DAT_0080874d),local_c,CASE_1);
+            pSVar10 = GetObjPtr(local_10,CONCAT31((int3)(local_c >> 8),DAT_0080874d),local_c,CASE_1)
+            ;
             if (local_28 == (STPlayerTempSlot *)0x1) {
-              uVar19 = (uint)*(ushort *)(uVar15 + 0x30);
+              uVar19 = (uint)*(ushort *)&pSVar10->field_0x30;
             }
-            else if (uVar19 != *(ushort *)(uVar15 + 0x30)) {
+            else if (uVar19 != *(ushort *)&pSVar10->field_0x30) {
               return;
             }
           }
@@ -782,8 +783,7 @@ LAB_0043ca5a:
       if ((int)local_14 < 1) {
         return;
       }
-      while (FUN_006acc70((AnonShape_006ACC70_C8641025 *)pDVar2,uVar15,&local_c),
-            (short)local_c == -1) {
+      while (DArrayGetElement(pDVar2,uVar15,&local_c), (short)local_c == -1) {
         uVar15 = uVar15 + 1;
         if ((int)local_14 <= (int)uVar15) {
           return;
@@ -794,8 +794,8 @@ LAB_0043ca5a:
 LAB_0043ca31:
       SVar20 = CASE_1;
 cf_common_exit_0043CA35:
-      piVar10 = (int *)GetObjPtr(local_10,uVar19,local_c,SVar20);
-      (**(code **)(*piVar10 + 0x34))(param_2);
+      pSVar10 = GetObjPtr(local_10,uVar19,local_c,SVar20);
+      (*pSVar10->vtable->vfunc_34)(param_2);
       return;
     }
     if ((char)param_1 != '\x05') {
@@ -828,12 +828,12 @@ cf_common_exit_0043CA35:
           return;
         }
         do {
-          FUN_006acc70((AnonShape_006ACC70_C8641025 *)pDVar2,uVar15,&local_c);
+          DArrayGetElement(pDVar2,uVar15,&local_c);
           if ((short)local_c != -1) {
-            piVar10 = (int *)GetObjPtr(local_10,CONCAT31((int3)(local_c >> 8),
-                                                         (char)g_playerRuntime[uVar19].tempSlots[1]
-                                                               [0].playerId),local_c,CASE_1);
-            (**(code **)(*piVar10 + 0x38))(param_2);
+            pSVar10 = GetObjPtr(local_10,CONCAT31((int3)(local_c >> 8),
+                                                  (char)g_playerRuntime[uVar19].tempSlots[1][0].
+                                                        playerId),local_c,CASE_1);
+            (*pSVar10->vtable->vfunc_38)(param_2);
             return;
           }
           uVar15 = uVar15 + 1;
@@ -870,12 +870,12 @@ cf_common_exit_0043CA35:
           return;
         }
         do {
-          FUN_006acc70((AnonShape_006ACC70_C8641025 *)pDVar2,uVar15,&local_c);
+          DArrayGetElement(pDVar2,uVar15,&local_c);
           if ((short)local_c != -1) {
-            piVar10 = (int *)GetObjPtr(local_10,CONCAT31((int3)(local_c >> 8),
-                                                         (char)g_playerRuntime[uVar19].tempSlots[1]
-                                                               [0].playerId),local_c,CASE_1);
-            (**(code **)(*piVar10 + 0x3c))(param_2);
+            pSVar10 = GetObjPtr(local_10,CONCAT31((int3)(local_c >> 8),
+                                                  (char)g_playerRuntime[uVar19].tempSlots[1][0].
+                                                        playerId),local_c,CASE_1);
+            (*pSVar10->vtable->vfunc_3C)(param_2);
             return;
           }
           uVar15 = uVar15 + 1;
@@ -913,12 +913,12 @@ cf_common_exit_0043CA35:
           return;
         }
         do {
-          FUN_006acc70((AnonShape_006ACC70_C8641025 *)local_1c,uVar15,&local_c);
+          DArrayGetElement(local_1c,uVar15,&local_c);
           if ((short)local_c != -1) {
-            piVar10 = (int *)GetObjPtr(local_10,CONCAT31((int3)(local_c >> 8),
-                                                         (char)g_playerRuntime[uVar19].tempSlots[0]
-                                                               [0].playerId),local_c,CASE_1);
-            (**(code **)(*piVar10 + 0x40))(pAVar18);
+            pSVar10 = GetObjPtr(local_10,CONCAT31((int3)(local_c >> 8),
+                                                  (char)g_playerRuntime[uVar19].tempSlots[0][0].
+                                                        playerId),local_c,CASE_1);
+            (*pSVar10->vtable->vfunc_40)(pAVar18);
             return;
           }
           uVar15 = uVar15 + 1;
@@ -951,12 +951,12 @@ cf_common_exit_0043CA35:
           return;
         }
         do {
-          FUN_006acc70((AnonShape_006ACC70_C8641025 *)pDVar2,uVar15,&local_c);
+          DArrayGetElement(pDVar2,uVar15,&local_c);
           if ((short)local_c != -1) {
-            piVar10 = (int *)GetObjPtr(local_10,CONCAT31((int3)(local_c >> 8),
-                                                         (char)g_playerRuntime[uVar19].tempSlots[1]
-                                                               [0].playerId),local_c,CASE_1);
-            (**(code **)(*piVar10 + 0x44))(param_2);
+            pSVar10 = GetObjPtr(local_10,CONCAT31((int3)(local_c >> 8),
+                                                  (char)g_playerRuntime[uVar19].tempSlots[1][0].
+                                                        playerId),local_c,CASE_1);
+            (*pSVar10->vtable->vfunc_44)(param_2);
             return;
           }
           uVar15 = uVar15 + 1;
@@ -973,21 +973,21 @@ cf_common_exit_0043CA35:
           return;
         }
         pDVar2 = g_playerRuntime[uVar19].tempSlots[1][0].objectIds;
-        uVar15 = 0;
-        uVar19 = pDVar2->count;
-        if ((int)uVar19 < 1) {
+        uVar19 = 0;
+        dVar17 = pDVar2->count;
+        if ((int)dVar17 < 1) {
           return;
         }
         do {
-          FUN_006acc70((AnonShape_006ACC70_C8641025 *)pDVar2,uVar15,&local_c);
+          DArrayGetElement(pDVar2,uVar19,&local_c);
           if ((short)local_c != -1) {
-            piVar10 = (int *)GetObjPtr(local_10,CONCAT31((int3)(local_c >> 8),
-                                                         (char)local_28->playerId),local_c,CASE_1);
-            (**(code **)(*piVar10 + 0x48))(param_2);
+            pSVar10 = GetObjPtr(local_10,CONCAT31((int3)(local_c >> 8),(char)local_28->playerId),
+                                local_c,CASE_1);
+            (*pSVar10->vtable->vfunc_48)(param_2);
             return;
           }
-          uVar15 = uVar15 + 1;
-        } while ((int)uVar15 < (int)uVar19);
+          uVar19 = uVar19 + 1;
+        } while ((int)uVar19 < (int)dVar17);
         return;
       }
       if ((char)param_1 != '\v') {
@@ -1020,12 +1020,12 @@ cf_common_exit_0043CA35:
             return;
           }
           do {
-            FUN_006acc70((AnonShape_006ACC70_C8641025 *)pDVar2,uVar15,&local_c);
+            DArrayGetElement(pDVar2,uVar15,&local_c);
             if ((short)local_c != -1) {
-              piVar10 = (int *)GetObjPtr(local_10,CONCAT31((int3)(local_c >> 8),
-                                                           (char)g_playerRuntime[uVar19].tempSlots
-                                                                 [1][0].playerId),local_c,CASE_1);
-              (**(code **)(*piVar10 + 0x50))(param_2);
+              pSVar10 = GetObjPtr(local_10,CONCAT31((int3)(local_c >> 8),
+                                                    (char)g_playerRuntime[uVar19].tempSlots[1][0].
+                                                          playerId),local_c,CASE_1);
+              (*pSVar10->vtable->vfunc_50)(param_2);
               return;
             }
             uVar15 = uVar15 + 1;
@@ -1053,7 +1053,7 @@ LAB_0043d41d:
                 local_14 = pDVar2->count;
                 if (0 < (int)local_14) {
                   do {
-                    FUN_006acc70((AnonShape_006ACC70_C8641025 *)pDVar2,uVar19,&local_c);
+                    DArrayGetElement(pDVar2,uVar19,&local_c);
                     if ((short)local_c != -1) {
                       SVar20 = CASE_1;
                       uVar15 = CONCAT31((int3)(local_c >> 8),param_2[-1].field_000E);
@@ -1088,8 +1088,8 @@ LAB_0043d41d:
               uVar19 = CONCAT22((short)((uint)pAVar11 >> 0x10),
                                 *(undefined2 *)&pAVar11[-1].field_0012);
 LAB_0043d447:
-              piVar10 = (int *)GetObjPtr(local_10,uVar15,uVar19,SVar20);
-              (**(code **)(*piVar10 + 0x58))(pAVar18);
+              pSVar10 = GetObjPtr(local_10,uVar15,uVar19,SVar20);
+              (*pSVar10->vtable->vfunc_58)(pAVar18);
             }
             pAVar11 = (AnonShape_0043BEB0_1C00EC12 *)&param_2->field_0x10;
             pAVar18 = (AnonShape_0043BEB0_1C00EC12 *)&pAVar18->field_000B;
@@ -1112,7 +1112,7 @@ LAB_0043d447:
                   local_14 = local_1c->count;
                   if (0 < (int)local_14) {
                     do {
-                      FUN_006acc70((AnonShape_006ACC70_C8641025 *)local_1c,uVar19,&local_c);
+                      DArrayGetElement(local_1c,uVar19,&local_c);
                       if ((short)local_c != -1) {
                         uVar15 = CONCAT31((int3)((uint)extraout_ECX_03 >> 8),
                                           (char)*(int *)(psVar16 + -2));
@@ -1164,8 +1164,8 @@ LAB_0043d5b1:
               uVar15 = 0xffffffff;
               uVar19 = CONCAT22((short)((uint)iVar4 >> 0x10),*psVar16);
 LAB_0043d5b7:
-              piVar10 = (int *)GetObjPtr(local_10,uVar15,uVar19,SVar20);
-              (**(code **)(*piVar10 + 0x5c))(pAVar18);
+              pSVar10 = GetObjPtr(local_10,uVar15,uVar19,SVar20);
+              (*pSVar10->vtable->vfunc_5C)(pAVar18);
             }
 LAB_0043d5c4:
             psVar16 = psVar16 + 8;
@@ -1202,15 +1202,15 @@ LAB_0043d5c4:
             local_14 = pDVar2->count;
             if (0 < (int)local_14) {
               do {
-                FUN_006acc70((AnonShape_006ACC70_C8641025 *)pDVar2,uVar19,&local_c);
+                DArrayGetElement(pDVar2,uVar19,&local_c);
                 if ((short)local_c != -1) {
                   iVar4 = iVar4 + 1;
-                  uVar15 = GetObjPtr(local_10,CONCAT31((int3)((uint)extraout_ECX_04 >> 8),
-                                                       DAT_0080874d),local_c,CASE_1);
+                  pSVar10 = GetObjPtr(local_10,CONCAT31((int3)((uint)extraout_ECX_04 >> 8),
+                                                        DAT_0080874d),local_c,CASE_1);
                   if (iVar4 == 1) {
-                    local_20 = (uint)*(ushort *)(uVar15 + 0x30);
+                    local_20 = (uint)*(ushort *)&pSVar10->field_0x30;
                   }
-                  else if (local_20 != *(ushort *)(uVar15 + 0x30)) {
+                  else if (local_20 != *(ushort *)&pSVar10->field_0x30) {
                     return;
                   }
                 }
@@ -1260,11 +1260,10 @@ LAB_0043d5c4:
             return;
           }
           if (iVar4 == 0x1ae) {
-            piVar10 = (int *)GetObjPtr(this,0xffffffff,
-                                       CONCAT22((short)(uVar19 * 0xa62 + 0x7f4f83 >> 0x10),
-                                                g_playerRuntime[uVar19].tempSlots[0][0].objectId),
-                                       CASE_3);
-            (**(code **)(*piVar10 + 100))(param_2);
+            pSVar10 = GetObjPtr(this,0xffffffff,
+                                CONCAT22((short)(uVar19 * 0xa62 + 0x7f4f83 >> 0x10),
+                                         g_playerRuntime[uVar19].tempSlots[0][0].objectId),CASE_3);
+            (*pSVar10->vtable->vfunc_64)(param_2);
             return;
           }
           iVar4 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0x1f5d,0,0,
@@ -1302,12 +1301,12 @@ LAB_0043d5c4:
         local_14 = pDVar2->count;
         if (0 < (int)local_14) {
           do {
-            FUN_006acc70((AnonShape_006ACC70_C8641025 *)pDVar2,uVar15,&local_c);
+            DArrayGetElement(pDVar2,uVar15,&local_c);
             if ((short)local_c != -1) {
-              piVar10 = (int *)GetObjPtr(local_10,CONCAT31((int3)(local_c >> 8),
-                                                           (char)g_playerRuntime[uVar19].tempSlots
-                                                                 [0][0].playerId),local_c,CASE_1);
-              (**(code **)(*piVar10 + 0x60))(param_2);
+              pSVar10 = GetObjPtr(local_10,CONCAT31((int3)(local_c >> 8),
+                                                    (char)g_playerRuntime[uVar19].tempSlots[0][0].
+                                                          playerId),local_c,CASE_1);
+              (*pSVar10->vtable->vfunc_60)(param_2);
               break;
             }
             uVar15 = uVar15 + 1;
@@ -1345,12 +1344,12 @@ LAB_0043d5c4:
           return;
         }
         do {
-          FUN_006acc70((AnonShape_006ACC70_C8641025 *)pDVar2,uVar15,&local_c);
+          DArrayGetElement(pDVar2,uVar15,&local_c);
           if ((short)local_c != -1) {
-            piVar10 = (int *)GetObjPtr(local_10,CONCAT31((int3)((uint)extraout_ECX_02 >> 8),
-                                                         (char)g_playerRuntime[uVar19].tempSlots[0]
-                                                               [0].playerId),local_c,CASE_1);
-            (**(code **)(*piVar10 + 0x4c))(param_2);
+            pSVar10 = GetObjPtr(local_10,CONCAT31((int3)((uint)extraout_ECX_02 >> 8),
+                                                  (char)g_playerRuntime[uVar19].tempSlots[0][0].
+                                                        playerId),local_c,CASE_1);
+            (*pSVar10->vtable->vfunc_4C)(param_2);
             return;
           }
           uVar15 = uVar15 + 1;
@@ -1382,30 +1381,31 @@ LAB_0043d5c4:
       local_1c = pDVar2;
       if (0 < (int)local_14) {
         do {
-          FUN_006acc70((AnonShape_006ACC70_C8641025 *)pDVar2,uVar19,&local_c);
+          DArrayGetElement(pDVar2,uVar19,&local_c);
           if ((short)local_c != -1) {
-            uVar15 = GetObjPtr(local_10,CONCAT31((int3)(local_c >> 8),DAT_0080874d),local_c,CASE_1);
-            if (*(int *)(uVar15 + 0x7e6) == 0) {
+            pSVar10 = GetObjPtr(local_10,CONCAT31((int3)(local_c >> 8),DAT_0080874d),local_c,CASE_1)
+            ;
+            if (*(int *)&pSVar10[4].field_0xa2 == 0) {
               pAVar18->field_0011 = 3;
             }
             else {
               pAVar18->field_0x10 = 3;
             }
-            if ((pAVar18->field_0012 == '\x03') && (*(int *)(uVar15 + 0x7ea) == 0)) {
+            if ((pAVar18->field_0012 == '\x03') && (*(int *)&pSVar10[4].field_0xa6 == 0)) {
               pAVar18->field_0012 = 1;
             }
           }
           uVar19 = uVar19 + 1;
         } while ((int)uVar19 < (int)local_14);
       }
-      uVar19 = 0;
+      dVar17 = 0;
       if (0 < (int)local_14) {
         do {
-          FUN_006acc70((AnonShape_006ACC70_C8641025 *)pDVar2,uVar19,&local_c);
+          DArrayGetElement(pDVar2,dVar17,&local_c);
           if ((short)local_c != -1) {
-            piVar10 = (int *)GetObjPtr(local_10,CONCAT31((int3)((uint)extraout_EDX >> 8),
-                                                         DAT_0080874d),local_c,CASE_1);
-            uVar9 = (**(code **)(*piVar10 + 0x2c))();
+            pSVar10 = GetObjPtr(local_10,CONCAT31((int3)((uint)extraout_EDX >> 8),DAT_0080874d),
+                                local_c,CASE_1);
+            uVar9 = (*pSVar10->vtable->vfunc_2C)();
             switch(uVar9) {
             case 7:
             case 8:
@@ -1422,29 +1422,30 @@ LAB_0043d5c4:
               goto switchD_0043d1bf_caseD_a;
             }
           }
-          uVar19 = uVar19 + 1;
-        } while ((int)uVar19 < (int)local_14);
+          dVar17 = dVar17 + 1;
+        } while ((int)dVar17 < (int)local_14);
       }
 switchD_0043d1bf_caseD_a:
-      if (uVar19 == local_14) {
+      if (dVar17 == local_14) {
         pAVar18->field_000A = 0;
         pAVar18->field_000B = 0;
         pAVar18->field_0xc = 0;
         pAVar18->field_000D = 0;
       }
-      param_2 = (AnonShape_0043BEB0_1C00EC12 *)(uint)(uVar19 == local_14);
+      param_2 = (AnonShape_0043BEB0_1C00EC12 *)(uint)(dVar17 == local_14);
       iVar4 = 0;
       uVar19 = 0;
       if (0 < (int)local_14) {
         do {
-          FUN_006acc70((AnonShape_006ACC70_C8641025 *)local_1c,uVar19,&local_c);
+          DArrayGetElement(local_1c,uVar19,&local_c);
           if ((short)local_c != -1) {
             iVar4 = iVar4 + 1;
-            uVar15 = GetObjPtr(local_10,CONCAT31((int3)(local_c >> 8),DAT_0080874d),local_c,CASE_1);
+            pSVar10 = GetObjPtr(local_10,CONCAT31((int3)(local_c >> 8),DAT_0080874d),local_c,CASE_1)
+            ;
             if (iVar4 == 1) {
-              local_20 = (uint)*(ushort *)(uVar15 + 0x30);
+              local_20 = (uint)*(ushort *)&pSVar10->field_0x30;
             }
-            else if (local_20 != *(ushort *)(uVar15 + 0x30)) {
+            else if (local_20 != *(ushort *)&pSVar10->field_0x30) {
               return;
             }
           }
@@ -1528,8 +1529,7 @@ LAB_0043cb81:
     if ((int)local_14 < 1) {
       return;
     }
-    while (FUN_006acc70((AnonShape_006ACC70_C8641025 *)pDVar2,uVar15,&local_c), (short)local_c == -1
-          ) {
+    while (DArrayGetElement(pDVar2,uVar15,&local_c), (short)local_c == -1) {
       uVar15 = uVar15 + 1;
       if ((int)local_14 <= (int)uVar15) {
         return;
@@ -1539,8 +1539,8 @@ LAB_0043cb81:
   }
   SVar20 = CASE_1;
 cf_common_exit_0043CB5C:
-  piVar10 = (int *)GetObjPtr(local_10,uVar19,local_c,SVar20);
-  (**(code **)(*piVar10 + 0x30))(param_2);
+  pSVar10 = GetObjPtr(local_10,uVar19,local_c,SVar20);
+  (*pSVar10->vtable->vfunc_30)(param_2);
   return;
 cf_common_exit_0043C94C:
   *(undefined1 *)param_2 = 3;

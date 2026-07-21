@@ -67,7 +67,7 @@ undefined4 __fastcall FUN_004b8c80(int *param_1)
           thunk_FUN_004cbf70((int)param_1);
         }
         uVar5 = (uint)(*(int *)((int)param_1 + 0x24d) == 4);
-        uVar3 = thunk_FUN_004406c0((char)param_1[9]);
+        uVar3 = GetPlayerRaceId((char)param_1[9]);
         thunk_FUN_0062b830((int)*(short *)((int)param_1 + 0x41),(int)*(short *)((int)param_1 + 0x43)
                            ,(int)*(short *)((int)param_1 + 0x45),param_1[0x16b],param_1,0xffffffff,
                            0xffffffff,uVar3 & 0xff,uVar5);
@@ -96,9 +96,9 @@ undefined4 __fastcall FUN_004b8c80(int *param_1)
   }
   else if (iVar2 == 6) {
     if (param_1[0x12f] != 4) {
-      iVar2 = thunk_FUN_004406c0(*(char *)((int)param_1 + 0x23d));
+      iVar2 = GetPlayerRaceId(*(char *)((int)param_1 + 0x23d));
       if ((char)iVar2 == '\x03') {
-        uVar3 = thunk_FUN_004406c0(*(char *)((int)param_1 + 0x23d));
+        uVar3 = GetPlayerRaceId(*(char *)((int)param_1 + 0x23d));
         if ((uint)PTR_00802a38->field_00E4 <
             (uint)(*(int *)(&DAT_007e3dc0 +
                            ((uVar3 & 0xff) + *(int *)((int)param_1 + 0x235) * 3) * 4) / 3 +
@@ -115,7 +115,7 @@ undefined4 __fastcall FUN_004b8c80(int *param_1)
           return 0;
         }
         if (iVar2 == 2) {
-          uVar3 = thunk_FUN_004406c0(*(char *)((int)param_1 + 0x23d));
+          uVar3 = GetPlayerRaceId(*(char *)((int)param_1 + 0x23d));
           if ((uint)(*(int *)(&DAT_007e3dc0 +
                              ((uVar3 & 0xff) + *(int *)((int)param_1 + 0x235) * 3) * 4) / 3 +
                     param_1[0x12e]) <= (uint)PTR_00802a38->field_00E4) {
@@ -201,7 +201,7 @@ cf_common_exit_004B9130:
     }
     if (param_1[9] != (uint)*(byte *)(param_1[4] + 0x112d)) goto cf_common_exit_004B8F5A;
     thunk_FUN_0052af50(0,*(float *)((int)param_1 + 0x1f9),*(float *)((int)param_1 + 0x1fd));
-    uVar3 = thunk_FUN_004406c0((char)param_1[9]);
+    uVar3 = GetPlayerRaceId((char)param_1[9]);
     uVar3 = uVar3 & 0xff;
     if (uVar3 == 1) {
       iVar2 = *param_1;

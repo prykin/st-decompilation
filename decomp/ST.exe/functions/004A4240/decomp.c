@@ -77,7 +77,7 @@ void __thiscall STGroupBoatC::ChangeMDNotify(STGroupBoatC *this,int param_1,uint
         iVar2 = *(int *)(this_00->field_0266 + 0xc);
         if (0 < iVar2) {
           do {
-            FUN_006acc70((AnonShape_006ACC70_C8641025 *)this_00->field_0266,uVar7,&local_10);
+            DArrayGetElement((DArrayTy *)this_00->field_0266,uVar7,&local_10);
             if ((short)local_10 == -1) break;
             uVar7 = uVar7 + 1;
           } while ((int)uVar7 < iVar2);
@@ -125,7 +125,7 @@ void __thiscall STGroupBoatC::ChangeMDNotify(STGroupBoatC *this,int param_1,uint
       iVar2 = *(int *)(this_00->field_0266 + 0xc);
       if (0 < iVar2) {
         do {
-          FUN_006acc70((AnonShape_006ACC70_C8641025 *)this_00->field_0266,uVar7,&local_10);
+          DArrayGetElement((DArrayTy *)this_00->field_0266,uVar7,&local_10);
           if ((short)local_10 == -1) break;
           uVar7 = uVar7 + 1;
         } while ((int)uVar7 < iVar2);
@@ -204,7 +204,7 @@ void __thiscall STGroupBoatC::ChangeMDNotify(STGroupBoatC *this,int param_1,uint
       iVar2 = *(int *)(this_00->field_024E + 0xc);
       if (0 < iVar2) {
         do {
-          FUN_006acc70((AnonShape_006ACC70_C8641025 *)this_00->field_024E,uVar7,&local_10);
+          DArrayGetElement((DArrayTy *)this_00->field_024E,uVar7,&local_10);
           if ((short)local_10 == -1) break;
           uVar7 = uVar7 + 1;
         } while ((int)uVar7 < iVar2);
@@ -230,7 +230,7 @@ void __thiscall STGroupBoatC::ChangeMDNotify(STGroupBoatC *this,int param_1,uint
       iVar2 = *(int *)(this_00->field_0266 + 0xc);
       if (0 < iVar2) {
         do {
-          FUN_006acc70((AnonShape_006ACC70_C8641025 *)this_00->field_0266,uVar7,&local_10);
+          DArrayGetElement((DArrayTy *)this_00->field_0266,uVar7,&local_10);
           if ((short)local_10 == (short)param_2) {
             local_10 = 0xffff;
             Library::DKW::TBL::FUN_006ae140((uint *)this_00->field_0266,uVar7,&local_10);
@@ -281,7 +281,7 @@ void __thiscall STGroupBoatC::ChangeMDNotify(STGroupBoatC *this,int param_1,uint
     uVar7 = *(uint *)(this_00->field_0266 + 0xc);
     if (0 < (int)uVar7) {
       do {
-        FUN_006acc70((AnonShape_006ACC70_C8641025 *)this_00->field_0266,uVar8,&local_10);
+        DArrayGetElement((DArrayTy *)this_00->field_0266,uVar8,&local_10);
         if ((short)local_10 == (short)param_2) {
           local_10 = 0xffff;
           Library::DKW::TBL::FUN_006ae140((uint *)this_00->field_0266,uVar8,&local_10);
@@ -335,7 +335,7 @@ void __thiscall STGroupBoatC::ChangeMDNotify(STGroupBoatC *this,int param_1,uint
       iVar2 = *(int *)(this_00->field_024E + 0xc);
       if (0 < iVar2) {
         do {
-          FUN_006acc70((AnonShape_006ACC70_C8641025 *)this_00->field_024E,uVar7,&local_10);
+          DArrayGetElement((DArrayTy *)this_00->field_024E,uVar7,&local_10);
           if ((short)local_10 == (short)param_2) {
             local_10 = 0xffff;
             Library::DKW::TBL::FUN_006ae140((uint *)this_00->field_024E,uVar7,&local_10);
@@ -385,7 +385,7 @@ void __thiscall STGroupBoatC::ChangeMDNotify(STGroupBoatC *this,int param_1,uint
     uVar7 = *(uint *)(this_00->field_024E + 0xc);
     if (0 < (int)uVar7) {
       do {
-        FUN_006acc70((AnonShape_006ACC70_C8641025 *)this_00->field_024E,uVar8,&local_10);
+        DArrayGetElement((DArrayTy *)this_00->field_024E,uVar8,&local_10);
         if ((short)local_10 == (short)param_2) {
           local_10 = 0xffff;
           Library::DKW::TBL::FUN_006ae140((uint *)this_00->field_024E,uVar8,&local_10);

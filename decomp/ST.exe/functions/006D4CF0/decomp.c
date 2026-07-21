@@ -47,7 +47,7 @@ undefined4 __cdecl FUN_006d4cf0(AnonShape_006D4CF0_8A8947BE *param_1,int *param_
            ((piVar7[0x10] == 3 &&
             ((*(short *)((int)piVar7 + 0x3e) == 0x10 || (*(short *)((int)piVar7 + 0x3e) == 0x20)))))
            ))) && ((piVar7[0x11] == 0 ||
-                   (iVar5 = FUN_00749841((AnonShape_00749841_39B3C899 *)(piVar7 + 0xc)),
+                   (iVar5 = FUN_00749841((AnonShape_006B5B10_E0D06CF1 *)(piVar7 + 0xc)),
                    piVar7[0x11] == iVar5)))) {
         uVar3 = *(ushort *)((int)piVar7 + 0x3e);
         iVar5 = param_1->field_0028;

@@ -1,5 +1,8 @@
 
-void FUN_0075dd30(AnonShape_0075DD30_F9FDCD0D *param_1,int *param_2,int param_3,undefined4 *param_4,
+/* [STTypeFamilyApplier] EXACT_ANONYMOUS_LAYOUT.
+   Evidence: exact anonymous structure fingerprint shared across functions */
+
+void FUN_0075dd30(AnonShape_0075DB50_5854A0B6 *param_1,int *param_2,int param_3,undefined4 *param_4,
                  int param_5)
 
 {

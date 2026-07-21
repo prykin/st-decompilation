@@ -2,7 +2,10 @@
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\cpanel.cpp
-   CPanelTy::InitCPanel */
+   CPanelTy::InitCPanel
+   
+   [STTypeFamilyApplier] EXACT_ANONYMOUS_LAYOUT.
+   Evidence: exact anonymous structure fingerprint shared across functions */
 
 void __thiscall CPanelTy::InitCPanel(CPanelTy *this)
 
@@ -19,6 +22,7 @@ void __thiscall CPanelTy::InitCPanel(CPanelTy *this)
   undefined4 uVar9;
   ushort *puVar10;
   char *pcVar11;
+  uint *extraout_EAX;
   uint *puVar12;
   uint uVar13;
   ccFntTy *this_01;
@@ -47,7 +51,7 @@ void __thiscall CPanelTy::InitCPanel(CPanelTy *this)
   CPanelTy *local_18;
   int local_14;
   ccFntTy *local_10;
-  AnonShape_004F5690_7820B819 *local_c;
+  AnonNested_0052BDA0_007E_1B3446E2 *local_c;
   int *local_8;
   
   local_24[0] = 0xe0;
@@ -378,17 +382,17 @@ void __thiscall CPanelTy::InitCPanel(CPanelTy *this)
     local_8 = (int *)0x3b60;
     local_14 = 4;
     do {
-      puVar12 = (uint *)FUN_006b0140((UINT)local_8,HINSTANCE_00807618);
+      LoadResourceString((UINT)local_8,HINSTANCE_00807618);
       iVar22 = 1;
       puVar5 = (undefined4 *)(DAT_0080679c + 0x28);
-      local_1c = puVar12;
+      local_1c = extraout_EAX;
       uVar4 = FUN_006b4fe0(DAT_0080679c);
       uVar13 = (uint)*(ushort *)(DAT_0080679c + 0xe);
-      iVar3 = FUN_007111c0(this_00->field_01B8,puVar12);
-      iVar19 = FUN_00711110(this_00->field_01B8,puVar12);
-      local_c = (AnonShape_004F5690_7820B819 *)FUN_006b50c0(iVar19,iVar3,uVar13,uVar4,puVar5,iVar22)
-      ;
-      if (local_c != (AnonShape_004F5690_7820B819 *)0x0) {
+      iVar3 = FUN_007111c0(this_00->field_01B8,extraout_EAX);
+      iVar19 = FUN_00711110(this_00->field_01B8,extraout_EAX);
+      local_c = (AnonNested_0052BDA0_007E_1B3446E2 *)
+                FUN_006b50c0(iVar19,iVar3,uVar13,uVar4,puVar5,iVar22);
+      if (local_c != (AnonNested_0052BDA0_007E_1B3446E2 *)0x0) {
         uVar4 = local_c->field_0014;
         if (uVar4 == 0) {
           uVar4 = ((uint)local_c->field_000E * local_c->field_0004 + 0x1f >> 3 & 0x1ffffffc) *
@@ -406,7 +410,7 @@ void __thiscall CPanelTy::InitCPanel(CPanelTy *this)
         ccFntTy::SetSurf(this_00->field_01B8,(int)local_c,0,0,0,0,0);
         ccFntTy::WrStr(this_00->field_01B8,local_1c,0,0,0);
         FUN_006b4b20((int *)local_10,(AnonShape_006B4B20_3D4F4412 *)local_c,0,0x3a);
-        FUN_006ab060(&local_c);
+        FreeAndNull(&local_c);
       }
       local_8 = (int *)((int)local_8 + 1);
       local_10 = (ccFntTy *)((int)local_10 + 4);

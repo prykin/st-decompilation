@@ -84,7 +84,7 @@ switchD_005b4c27_default:
   if (uVar4 < 0x6903) {
     if (uVar4 == 0x6902) {
       if (this_00->field_1EE3 == '\0') {
-        thunk_FUN_005b4860((AnonShape_005B4860_900BE0CB *)this_00);
+        thunk_FUN_005b4860((AnonShape_005B47E0_F4E5CF5A *)this_00);
         (**(code **)(*(int *)this_00->field_000C + 0x10))(0x309,0);
         goto cf_common_exit_005B4EEC;
       }
@@ -170,7 +170,7 @@ LAB_005b4df8:
                                (undefined4 *)0x0,0,0);
     if (iVar3 == 0) break;
   case 0x6940:
-    thunk_FUN_005b4860((AnonShape_005B4860_900BE0CB *)this_00);
+    thunk_FUN_005b4860((AnonShape_005B47E0_F4E5CF5A *)this_00);
     break;
   case 0x693f:
     thunk_FUN_005b47e0((AnonShape_005B47E0_F4E5CF5A *)this_00);

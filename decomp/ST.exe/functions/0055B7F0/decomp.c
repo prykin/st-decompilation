@@ -49,14 +49,14 @@ void __thiscall FUN_0055b7f0(void *this,int param_1,undefined *param_2)
           }
           else if (*pcVar1 == '\x01') {
             if (param_1 == 0) {
-              thunk_FUN_00559620(this,(int)*(short *)(pcVar1 + 2),(int)*(short *)(pcVar1 + 4),
-                                 pcVar1[6],(undefined *)piVar3,(uint)(byte)pcVar1[7],
-                                 *(undefined4 *)(pcVar1 + 8),2);
+              SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00558C00::thunk_FUN_00559620
+                        (this,(int)*(short *)(pcVar1 + 2),(int)*(short *)(pcVar1 + 4),pcVar1[6],
+                         (undefined *)piVar3,(uint)(byte)pcVar1[7],*(undefined4 *)(pcVar1 + 8),2);
             }
             else {
-              thunk_FUN_005594a0(this,(int)*(short *)(pcVar1 + 2),(int)*(short *)(pcVar1 + 4),
-                                 pcVar1[6],(undefined *)piVar3,(uint)(byte)pcVar1[7],
-                                 *(undefined4 *)(pcVar1 + 8),2);
+              SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00558C00::thunk_FUN_005594a0
+                        (this,(int)*(short *)(pcVar1 + 2),(int)*(short *)(pcVar1 + 4),pcVar1[6],
+                         (undefined *)piVar3,(uint)(byte)pcVar1[7],*(undefined4 *)(pcVar1 + 8),2);
             }
           }
         }

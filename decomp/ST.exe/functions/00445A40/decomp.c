@@ -9,7 +9,7 @@ STAllPlayersC::RegisterPGPair(STAllPlayersC *this,uint param_1,uint *param_2,uin
 {
   code *pcVar1;
   int iVar2;
-  int *piVar3;
+  STGameObjC *pSVar3;
   DArrayTy *pDVar4;
   STBoatC *this_00;
   int iVar5;
@@ -26,7 +26,7 @@ STAllPlayersC::RegisterPGPair(STAllPlayersC *this,uint param_1,uint *param_2,uin
   uint *local_3c;
   int local_38;
   STAllPlayersC *local_34;
-  uint local_30;
+  dword local_30;
   undefined4 local_2c;
   DArrayTy *local_28;
   DArrayTy **local_24;
@@ -49,13 +49,13 @@ STAllPlayersC::RegisterPGPair(STAllPlayersC *this,uint param_1,uint *param_2,uin
   if (iVar2 != 0) {
     g_currentExceptionFrame = local_88.previous;
     if (local_28 != (DArrayTy *)0x0) {
-      FUN_006ae110((byte *)local_28);
+      DArrayDestroy(local_28);
     }
     if (local_18 != (DArrayTy *)0x0) {
-      FUN_006ae110((byte *)local_18);
+      DArrayDestroy(local_18);
     }
     if (local_14 != (DArrayTy *)0x0) {
-      FUN_006ae110((byte *)local_14);
+      DArrayDestroy(local_14);
     }
     if (iVar2 != -0x5001fff7) {
       iVar5 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0x28a2,0,0,&DAT_007a4ccc,
@@ -82,10 +82,10 @@ STAllPlayersC::RegisterPGPair(STAllPlayersC *this,uint param_1,uint *param_2,uin
   this_01 = local_34;
   if (0 < (int)uVar7) {
     do {
-      FUN_006acc70((AnonShape_006ACC70_C8641025 *)local_18,uVar8,&local_8);
+      DArrayGetElement(local_18,uVar8,&local_8);
       this_01 = local_34;
-      piVar3 = (int *)GetObjPtr(local_34,param_1,local_8,CASE_1);
-      if ((piVar3 == (int *)0x0) || (iVar2 = (**(code **)(*piVar3 + 0xf8))(), iVar2 == 0)) {
+      pSVar3 = GetObjPtr(local_34,param_1,local_8,CASE_1);
+      if ((pSVar3 == (STGameObjC *)0x0) || (iVar2 = (*pSVar3->vtable[1].vfunc_24)(), iVar2 == 0)) {
         FUN_006b0c70((AnonShape_006B0C70_7C4FE646 *)local_18,uVar8);
         uVar7 = uVar7 - 1;
         uVar8 = uVar8 - 1;
@@ -102,10 +102,11 @@ STAllPlayersC::RegisterPGPair(STAllPlayersC *this,uint param_1,uint *param_2,uin
   uVar7 = 0;
   if (0 < (int)local_c) {
     do {
-      FUN_006acc70((AnonShape_006ACC70_C8641025 *)local_14,uVar7,&local_8);
-      piVar3 = (int *)GetObjPtr(this_01,param_1,local_8,CASE_1);
-      if (((piVar3 == (int *)0x0) || (iVar2 = thunk_FUN_00490d90((int)piVar3), iVar2 == 0)) ||
-         ((iVar2 = (**(code **)(*piVar3 + 0xf8))(), iVar2 == 0 || ((short)piVar3[0xc] == -1)))) {
+      DArrayGetElement(local_14,uVar7,&local_8);
+      pSVar3 = GetObjPtr(this_01,param_1,local_8,CASE_1);
+      if (((pSVar3 == (STGameObjC *)0x0) || (iVar2 = thunk_FUN_00490d90((int)pSVar3), iVar2 == 0))
+         || ((iVar2 = (*pSVar3->vtable[1].vfunc_24)(), iVar2 == 0 ||
+             (*(short *)&pSVar3->field_0x30 == -1)))) {
         FUN_006b0c70((AnonShape_006B0C70_7C4FE646 *)local_14,uVar7);
         local_c = local_c - 1;
         uVar7 = uVar7 - 1;
@@ -122,11 +123,11 @@ STAllPlayersC::RegisterPGPair(STAllPlayersC *this,uint param_1,uint *param_2,uin
   pDVar4 = local_28;
   if (0 < (int)local_10) {
     do {
-      FUN_006acc70((AnonShape_006ACC70_C8641025 *)local_18,uVar7,&local_8);
+      DArrayGetElement(local_18,uVar7,&local_8);
       uVar8 = 0;
       if (0 < (int)local_c) {
         do {
-          FUN_006acc70((AnonShape_006ACC70_C8641025 *)local_14,uVar8,(undefined4 *)&local_1a);
+          DArrayGetElement(local_14,uVar8,&local_1a);
           if ((short)local_8 == local_1a) {
             if (pDVar4 == (DArrayTy *)0x0) {
               pDVar4 = (DArrayTy *)Library::DKW::TBL::FUN_006ae290((uint *)0x0,1,2,1);
@@ -158,7 +159,7 @@ STAllPlayersC::RegisterPGPair(STAllPlayersC *this,uint param_1,uint *param_2,uin
     if (0 < (int)local_30) {
       local_24 = &g_playerRuntime[cVar6].pgPairs;
       do {
-        FUN_006acc70((AnonShape_006ACC70_C8641025 *)pDVar4,local_20,&local_8);
+        DArrayGetElement(pDVar4,local_20,&local_8);
         this_00 = (STBoatC *)GetObjPtr(this_01,param_1,local_8,CASE_1);
         local_2c = PTR_00802a38->field_00E4;
         STBoatC::CmdToObj(this_00,CASE_21,&local_2c);
@@ -201,7 +202,7 @@ LAB_00445dca:
       local_20 = 0;
       if (0 < (int)local_30) {
         do {
-          FUN_006acc70((AnonShape_006ACC70_C8641025 *)pDVar4,local_20,&local_8);
+          DArrayGetElement(pDVar4,local_20,&local_8);
           Library::DKW::TBL::FUN_006ae1c0(&local_14->flags,&local_8);
           local_20 = local_20 + 1;
         } while ((int)local_20 < (int)local_30);
@@ -210,7 +211,7 @@ LAB_00445dca:
   }
   local_10 = local_18->count;
   local_c = local_14->count;
-  FUN_006ae110((byte *)pDVar4);
+  DArrayDestroy(pDVar4);
   local_28 = (DArrayTy *)0x0;
 LAB_00445e36:
   uVar7 = 0;
@@ -218,7 +219,7 @@ LAB_00445e36:
     local_24 = &g_playerRuntime[cVar6].pgPairs;
     do {
       if (*local_24 == (DArrayTy *)0x0) break;
-      FUN_006acc70((AnonShape_006ACC70_C8641025 *)local_14,uVar7,&local_8);
+      DArrayGetElement(local_14,uVar7,&local_8);
       iVar2 = _DeleteGuardBoat(this_01,param_1,(short)local_8,1);
       if (iVar2 == -1) {
         _DeleteGuardBoat(this_01,param_1,(short)local_8,0);
@@ -231,7 +232,7 @@ LAB_00445e36:
     local_24 = &g_playerRuntime[cVar6].pgPairs;
     do {
       if (*local_24 == (DArrayTy *)0x0) break;
-      FUN_006acc70((AnonShape_006ACC70_C8641025 *)local_18,uVar7,&local_8);
+      DArrayGetElement(local_18,uVar7,&local_8);
       _DeleteGuardBoat(this_01,param_1,(short)local_8,1);
       uVar7 = uVar7 + 1;
     } while ((int)uVar7 < (int)local_10);
@@ -249,10 +250,10 @@ LAB_00445e36:
   OptimizeGuardBoats(this_01,cVar6);
   DistributeGuardBoats(this_01,param_1);
   if (local_18 != (DArrayTy *)0x0) {
-    FUN_006ae110((byte *)local_18);
+    DArrayDestroy(local_18);
   }
   if (local_14 != (DArrayTy *)0x0) {
-    FUN_006ae110((byte *)local_14);
+    DArrayDestroy(local_14);
   }
   g_currentExceptionFrame = local_88.previous;
   return;

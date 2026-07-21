@@ -38,10 +38,10 @@ void FUN_00413af0(void *param_1,AnonShape_00413AF0_B6B4EE9A *param_2,int param_3
   puStack_10 = &LAB_0072d964;
   local_14 = ExceptionList;
   DAT_007f4d04 = (int *)0x0;
-  DAT_007f4cf0 = DAT_007fb280;
-  DAT_007f4d2c = (int)SHORT_007fb278;
-  DAT_007f4d30 = (int)SHORT_007fb27a;
-  DAT_007f4d34 = (int)SHORT_007fb27c;
+  DAT_007f4cf0 = g_pathingGrid.cells;
+  DAT_007f4d2c = (int)g_pathingGrid.sizeX;
+  DAT_007f4d30 = (int)g_pathingGrid.sizeY;
+  DAT_007f4d34 = (int)g_pathingGrid.sizeZ;
   if ((DAT_007f4d50 == 0) || (ExceptionList = &local_14, DAT_007f4d54 == 0)) {
     ExceptionList = &local_14;
     FUN_00414980(4000);
@@ -86,14 +86,15 @@ void FUN_00413af0(void *param_1,AnonShape_00413AF0_B6B4EE9A *param_2,int param_3
            iVar9 != 0)) {
           iVar12 = *(int *)(iVar9 + 199);
           if (((iVar12 < 0) ||
-              (((SHORT_007fb278 <= iVar12 || (iVar11 = *(int *)(iVar9 + 0xcb), iVar11 < 0)) ||
-               (SHORT_007fb27a <= iVar11)))) ||
-             ((iVar4 = *(int *)(iVar9 + 0xcf), iVar4 < 0 || (SHORT_007fb27c <= iVar4)))) {
+              (((g_pathingGrid.sizeX <= iVar12 || (iVar11 = *(int *)(iVar9 + 0xcb), iVar11 < 0)) ||
+               (g_pathingGrid.sizeY <= iVar11)))) ||
+             ((iVar4 = *(int *)(iVar9 + 0xcf), iVar4 < 0 || (g_pathingGrid.sizeZ <= iVar4)))) {
             sVar1 = *(short *)(iVar9 + 0x47);
             if ((-1 < sVar1) &&
-               (((sVar1 < SHORT_007fb278 && (sVar2 = *(short *)(iVar9 + 0x49), -1 < sVar2)) &&
-                ((sVar2 < SHORT_007fb27a &&
-                 ((sVar3 = *(short *)(iVar9 + 0x4b), -1 < sVar3 && (sVar3 < SHORT_007fb27c)))))))) {
+               (((sVar1 < g_pathingGrid.sizeX && (sVar2 = *(short *)(iVar9 + 0x49), -1 < sVar2)) &&
+                ((sVar2 < g_pathingGrid.sizeY &&
+                 ((sVar3 = *(short *)(iVar9 + 0x4b), -1 < sVar3 && (sVar3 < g_pathingGrid.sizeZ)))))
+                ))) {
               uVar13 = sVar3 * iVar7 + sVar2 * DAT_007f4d2c + (int)sVar1 ^ 7;
               DAT_007f4cfc[(int)uVar13 >> 3] =
                    DAT_007f4cfc[(int)uVar13 >> 3] | '\x01' << (uVar13 & 7);
@@ -138,15 +139,15 @@ void FUN_00413af0(void *param_1,AnonShape_00413AF0_B6B4EE9A *param_2,int param_3
           *(undefined4 *)(iVar9 + 0xb7) = 0;
           if (0 < DAT_007f4d24) {
             iVar12 = *(int *)(iVar9 + 199);
-            if (((((iVar12 < 0) || (SHORT_007fb278 <= iVar12)) ||
+            if (((((iVar12 < 0) || (g_pathingGrid.sizeX <= iVar12)) ||
                  (iVar11 = *(int *)(iVar9 + 0xcb), iVar11 < 0)) ||
-                ((SHORT_007fb27a <= iVar11 || (iVar4 = *(int *)(iVar9 + 0xcf), iVar4 < 0)))) ||
-               (SHORT_007fb27c <= iVar4)) {
+                ((g_pathingGrid.sizeY <= iVar11 || (iVar4 = *(int *)(iVar9 + 0xcf), iVar4 < 0)))) ||
+               (g_pathingGrid.sizeZ <= iVar4)) {
               sVar1 = *(short *)(iVar9 + 0x47);
-              if (((-1 < sVar1) && (sVar1 < SHORT_007fb278)) &&
+              if (((-1 < sVar1) && (sVar1 < g_pathingGrid.sizeX)) &&
                  ((sVar2 = *(short *)(iVar9 + 0x49), -1 < sVar2 &&
-                  (((sVar2 < SHORT_007fb27a && (sVar3 = *(short *)(iVar9 + 0x4b), -1 < sVar3)) &&
-                   (sVar3 < SHORT_007fb27c)))))) {
+                  (((sVar2 < g_pathingGrid.sizeY && (sVar3 = *(short *)(iVar9 + 0x4b), -1 < sVar3))
+                   && (sVar3 < g_pathingGrid.sizeZ)))))) {
                 local_20 = sVar2 * DAT_007f4d2c + sVar3 * iVar7 + (int)sVar1;
               }
             }
@@ -246,15 +247,15 @@ void FUN_00413af0(void *param_1,AnonShape_00413AF0_B6B4EE9A *param_2,int param_3
           DAT_007f4d04[DAT_007f4d40 * 7 + 6] = local_28;
           if (0 < DAT_007f4d24) {
             iVar12 = *(int *)(iVar9 + 199);
-            if (((iVar12 < 0) || (SHORT_007fb278 <= iVar12)) ||
+            if (((iVar12 < 0) || (g_pathingGrid.sizeX <= iVar12)) ||
                ((iVar11 = *(int *)(iVar9 + 0xcb), iVar11 < 0 ||
-                (((SHORT_007fb27a <= iVar11 || (iVar4 = *(int *)(iVar9 + 0xcf), iVar4 < 0)) ||
-                 (SHORT_007fb27c <= iVar4)))))) {
+                (((g_pathingGrid.sizeY <= iVar11 || (iVar4 = *(int *)(iVar9 + 0xcf), iVar4 < 0)) ||
+                 (g_pathingGrid.sizeZ <= iVar4)))))) {
               sVar1 = *(short *)(iVar9 + 0x47);
-              if (((-1 < sVar1) && (sVar1 < SHORT_007fb278)) &&
+              if (((-1 < sVar1) && (sVar1 < g_pathingGrid.sizeX)) &&
                  ((sVar2 = *(short *)(iVar9 + 0x49), -1 < sVar2 &&
-                  (((sVar2 < SHORT_007fb27a && (sVar3 = *(short *)(iVar9 + 0x4b), -1 < sVar3)) &&
-                   (sVar3 < SHORT_007fb27c)))))) {
+                  (((sVar2 < g_pathingGrid.sizeY && (sVar3 = *(short *)(iVar9 + 0x4b), -1 < sVar3))
+                   && (sVar3 < g_pathingGrid.sizeZ)))))) {
                 local_20 = sVar2 * DAT_007f4d2c + sVar3 * iVar7 + (int)sVar1;
               }
             }

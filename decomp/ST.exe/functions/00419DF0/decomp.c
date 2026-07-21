@@ -119,7 +119,7 @@ cf_common_exit_00419F6C:
       else if (uVar1 != 0x3e9) goto cf_common_exit_00419F6C;
     }
   }
-  (*(code *)this->field_0000->field_0030)(this->field_0121);
+  (*this->vtable->vfunc_30)(this->field_0121);
   puVar9 = (undefined4 *)this->field_0121;
   puVar10 = (undefined4 *)this->field_011D;
   for (iVar4 = 0xd; iVar4 != 0; iVar4 = iVar4 + -1) {
@@ -128,7 +128,7 @@ cf_common_exit_00419F6C:
     puVar10 = puVar10 + 1;
   }
   *(undefined2 *)puVar10 = *(undefined2 *)puVar9;
-  (*(code *)this->field_0000->field_0034)(this->field_0129);
+  (*this->vtable->vfunc_34)(this->field_0129);
   puVar9 = (undefined4 *)this->field_0129;
   puVar10 = (undefined4 *)this->field_0125;
   for (iVar4 = 0x17; iVar4 != 0; iVar4 = iVar4 + -1) {
@@ -139,14 +139,14 @@ cf_common_exit_00419F6C:
   uVar1 = this->field_0020;
   if (uVar1 < 0x1af) {
     if (uVar1 == 0x1ae) {
-      (*(code *)this->field_0000->field_0058)(this->field_01B1);
+      (*this->vtable->vfunc_58)(this->field_01B1);
       pAVar8 = this->field_01B1;
       pAVar7 = this->field_01AD;
       pAVar7->field_0000 = pAVar8->field_0000;
       pAVar7->field_0004 = pAVar8->field_0004;
       pAVar7->field_0008 = pAVar8->field_0008;
       pAVar7->field_000A = pAVar8->field_000A;
-      (**(code **)&this->field_0000->field_0x64)(this->field_01C9);
+      (*this->vtable->vfunc_64)(this->field_01C9);
       puVar9 = (undefined4 *)this->field_01C9;
       puVar10 = (undefined4 *)this->field_01C5;
       *puVar10 = *puVar9;
@@ -159,33 +159,33 @@ cf_common_exit_00419F6C:
       }
       if (uVar1 == 0x14) {
         puVar9 = &this->field_0171;
-        if ((byte *)this->field_0171 != (byte *)0x0) {
-          FUN_006ae110((byte *)this->field_0171);
+        if ((DArrayTy *)this->field_0171 != (DArrayTy *)0x0) {
+          DArrayDestroy((DArrayTy *)this->field_0171);
         }
-        if ((byte *)this->field_0175 != (byte *)0x0) {
-          FUN_006ae110((byte *)this->field_0175);
+        if ((DArrayTy *)this->field_0175 != (DArrayTy *)0x0) {
+          DArrayDestroy((DArrayTy *)this->field_0175);
         }
-        if ((byte *)this->field_0179 != (byte *)0x0) {
-          FUN_006ae110((byte *)this->field_0179);
+        if ((DArrayTy *)this->field_0179 != (DArrayTy *)0x0) {
+          DArrayDestroy((DArrayTy *)this->field_0179);
         }
-        if ((byte *)this->field_017D != (byte *)0x0) {
-          FUN_006ae110((byte *)this->field_017D);
+        if ((DArrayTy *)this->field_017D != (DArrayTy *)0x0) {
+          DArrayDestroy((DArrayTy *)this->field_017D);
         }
-        if ((byte *)this->field_0181 != (byte *)0x0) {
-          FUN_006ae110((byte *)this->field_0181);
+        if ((DArrayTy *)this->field_0181 != (DArrayTy *)0x0) {
+          DArrayDestroy((DArrayTy *)this->field_0181);
         }
         *puVar9 = 0;
         this->field_0175 = 0;
         this->field_0179 = 0;
         this->field_017D = 0;
         this->field_0181 = 0;
-        (*(code *)this->field_0000->field_0040)(puVar9);
+        (*this->vtable->vfunc_40)(puVar9);
         Library::DKW::TBL::FUN_006afe40(&this->field_015D,(uint *)*puVar9);
         Library::DKW::TBL::FUN_006afe40(&this->field_0161,(uint *)this->field_0175);
         Library::DKW::TBL::FUN_006afe40(&this->field_0165,(uint *)this->field_0179);
         Library::DKW::TBL::FUN_006afe40(&this->field_0169,(uint *)this->field_017D);
         Library::DKW::TBL::FUN_006afe40(&this->field_016D,(uint *)this->field_0181);
-        (*(code *)this->field_0000->field_004C)(this->field_0199);
+        (*this->vtable->vfunc_4C)(this->field_0199);
         pAVar6 = this->field_0199;
         pAVar5 = this->field_0195;
         pAVar5->field_0000 = pAVar6->field_0000;
@@ -194,14 +194,14 @@ cf_common_exit_00419F6C:
         pAVar5->field_000C = pAVar6->field_000C;
         pAVar5->field_0010 = pAVar6->field_0010;
         pAVar5->field_0012 = pAVar6->field_0012;
-        (*(code *)this->field_0000->field_0058)(this->field_01B1);
+        (*this->vtable->vfunc_58)(this->field_01B1);
         pAVar8 = this->field_01B1;
         pAVar7 = this->field_01AD;
         pAVar7->field_0000 = pAVar8->field_0000;
         pAVar7->field_0004 = pAVar8->field_0004;
         pAVar7->field_0008 = pAVar8->field_0008;
         pAVar7->field_000A = pAVar8->field_000A;
-        (*(code *)this->field_0000->field_0060)(this->field_01C1);
+        (*this->vtable->vfunc_60)(this->field_01C1);
         puVar9 = (undefined4 *)this->field_01C1;
         puVar10 = (undefined4 *)this->field_01BD;
         for (iVar4 = 0x90; iVar4 != 0; iVar4 = iVar4 + -1) {
@@ -225,40 +225,40 @@ cf_common_exit_00419F6C:
     }
     if (uVar1 == 1000) {
       puVar9 = &this->field_0135;
-      if ((byte *)this->field_0135 != (byte *)0x0) {
-        FUN_006ae110((byte *)this->field_0135);
+      if ((DArrayTy *)this->field_0135 != (DArrayTy *)0x0) {
+        DArrayDestroy((DArrayTy *)this->field_0135);
       }
-      if ((byte *)this->field_0139 != (byte *)0x0) {
-        FUN_006ae110((byte *)this->field_0139);
+      if ((DArrayTy *)this->field_0139 != (DArrayTy *)0x0) {
+        DArrayDestroy((DArrayTy *)this->field_0139);
       }
       *puVar9 = 0;
       this->field_0139 = 0;
-      (**(code **)&this->field_0000->field_0x38)(puVar9);
+      (*this->vtable->vfunc_38)(puVar9);
       Library::DKW::TBL::FUN_006afe40(&this->field_012D,(uint *)*puVar9);
       Library::DKW::TBL::FUN_006afe40(&this->field_0131,(uint *)this->field_0139);
       puVar9 = &this->field_014D;
-      if ((byte *)this->field_014D != (byte *)0x0) {
-        FUN_006ae110((byte *)this->field_014D);
+      if ((DArrayTy *)this->field_014D != (DArrayTy *)0x0) {
+        DArrayDestroy((DArrayTy *)this->field_014D);
       }
-      if ((byte *)this->field_0151 != (byte *)0x0) {
-        FUN_006ae110((byte *)this->field_0151);
+      if ((DArrayTy *)this->field_0151 != (DArrayTy *)0x0) {
+        DArrayDestroy((DArrayTy *)this->field_0151);
       }
-      if ((byte *)this->field_0155 != (byte *)0x0) {
-        FUN_006ae110((byte *)this->field_0155);
+      if ((DArrayTy *)this->field_0155 != (DArrayTy *)0x0) {
+        DArrayDestroy((DArrayTy *)this->field_0155);
       }
-      if ((byte *)this->field_0159 != (byte *)0x0) {
-        FUN_006ae110((byte *)this->field_0159);
+      if ((DArrayTy *)this->field_0159 != (DArrayTy *)0x0) {
+        DArrayDestroy((DArrayTy *)this->field_0159);
       }
       *puVar9 = 0;
       this->field_0151 = 0;
       this->field_0155 = 0;
       this->field_0159 = 0;
-      (**(code **)&this->field_0000->field_0x3c)(puVar9);
+      (*this->vtable->vfunc_3C)(puVar9);
       Library::DKW::TBL::FUN_006afe40(&this->field_013D,(uint *)*puVar9);
       Library::DKW::TBL::FUN_006afe40(&this->field_0141,(uint *)this->field_0151);
       Library::DKW::TBL::FUN_006afe40(&this->field_0145,(uint *)this->field_0155);
       Library::DKW::TBL::FUN_006afe40(&this->field_0149,(uint *)this->field_0159);
-      (**(code **)&this->field_0000->field_0x44)(this->field_0189);
+      (*this->vtable->vfunc_44)(this->field_0189);
       puVar9 = (undefined4 *)this->field_0189;
       puVar10 = (undefined4 *)this->field_0185;
       for (iVar4 = 0x4a; iVar4 != 0; iVar4 = iVar4 + -1) {
@@ -267,7 +267,7 @@ cf_common_exit_00419F6C:
         puVar10 = puVar10 + 1;
       }
       *(undefined1 *)puVar10 = *(undefined1 *)puVar9;
-      (**(code **)&this->field_0000->field_0x48)(this->field_0191);
+      (*this->vtable->vfunc_48)(this->field_0191);
       puVar10 = (undefined4 *)this->field_0191;
       puVar2 = (undefined4 *)this->field_018D;
       puVar9 = &this->field_01A1;
@@ -275,23 +275,23 @@ cf_common_exit_00419F6C:
       puVar2[1] = puVar10[1];
       puVar2[2] = puVar10[2];
       puVar2[3] = puVar10[3];
-      if ((byte *)*puVar9 != (byte *)0x0) {
-        FUN_006ae110((byte *)*puVar9);
+      if ((DArrayTy *)*puVar9 != (DArrayTy *)0x0) {
+        DArrayDestroy((DArrayTy *)*puVar9);
         *puVar9 = 0;
       }
-      if ((byte *)this->field_019D != (byte *)0x0) {
-        FUN_006ae110((byte *)this->field_019D);
+      if ((DArrayTy *)this->field_019D != (DArrayTy *)0x0) {
+        DArrayDestroy((DArrayTy *)this->field_019D);
         this->field_019D = 0;
       }
-      (**(code **)&this->field_0000->field_0x50)(puVar9);
+      (*this->vtable->vfunc_50)(puVar9);
       Library::DKW::TBL::FUN_006afe40(&this->field_019D,(uint *)*puVar9);
-      (**(code **)&this->field_0000->field_0x54)(this->field_01A9);
+      (*this->vtable->vfunc_54)(this->field_01A9);
       puVar9 = (undefined4 *)this->field_01A9;
       puVar10 = (undefined4 *)this->field_01A5;
       *puVar10 = *puVar9;
       puVar10[1] = puVar9[1];
       puVar10[2] = puVar9[2];
-      (**(code **)&this->field_0000->field_0x5c)(this->field_01B9);
+      (*this->vtable->vfunc_5C)(this->field_01B9);
       puVar9 = (undefined4 *)this->field_01B9;
       puVar10 = (undefined4 *)this->field_01B5;
       *puVar10 = *puVar9;

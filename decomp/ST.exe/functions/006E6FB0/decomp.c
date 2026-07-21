@@ -202,14 +202,14 @@ FUN_006e6fb0(void *this,AnonShape_006E6FB0_BC494FEA *param_1,int param_2,int par
           pAVar3 != (AnonShape_006E6AF0_D2F012A7 *)0x0;
           pAVar3 = *(AnonShape_006E6AF0_D2F012A7 **)pAVar3) {
         if (pAVar3->field_0xc != '\0') {
-          FUN_006e6af0(this,pAVar3);
+          SubmarineTitans::Recovered::HiddenThis::AnonReceiver_006E6AF0::FUN_006e6af0(this,pAVar3);
         }
       }
       for (pAVar3 = *(AnonShape_006E6AF0_D2F012A7 **)((int)this + 0x446);
           pAVar3 != (AnonShape_006E6AF0_D2F012A7 *)0x0;
           pAVar3 = *(AnonShape_006E6AF0_D2F012A7 **)pAVar3) {
         if (pAVar3->field_0xc != '\0') {
-          FUN_006e6af0(this,pAVar3);
+          SubmarineTitans::Recovered::HiddenThis::AnonReceiver_006E6AF0::FUN_006e6af0(this,pAVar3);
         }
       }
       DAT_00856d84 = *(int *)((int)this + 0x3dc) / 2;
@@ -644,7 +644,7 @@ LAB_006e7ff9:
     pAVar3 = *(AnonShape_006E6AF0_D2F012A7 **)((int)this + 0x442);
     while (pAVar3 != (AnonShape_006E6AF0_D2F012A7 *)0x0) {
       if (param_4 != 0) {
-        FUN_006e6af0(this,pAVar3);
+        SubmarineTitans::Recovered::HiddenThis::AnonReceiver_006E6AF0::FUN_006e6af0(this,pAVar3);
       }
       *(short *)&pAVar3->field_0x14 = *(short *)&pAVar3->field_0x14 + -1;
       if (*(short *)&pAVar3->field_0x14 < 1) {
@@ -666,14 +666,14 @@ LAB_006e7ff9:
           pAVar3 != (AnonShape_006E6AF0_D2F012A7 *)0x0;
           pAVar3 = *(AnonShape_006E6AF0_D2F012A7 **)pAVar3) {
         if (pAVar3->field_0xc == '\0') {
-          FUN_006e6af0(this,pAVar3);
+          SubmarineTitans::Recovered::HiddenThis::AnonReceiver_006E6AF0::FUN_006e6af0(this,pAVar3);
         }
       }
       for (pAVar3 = *(AnonShape_006E6AF0_D2F012A7 **)((int)this + 0x446);
           pAVar3 != (AnonShape_006E6AF0_D2F012A7 *)0x0;
           pAVar3 = *(AnonShape_006E6AF0_D2F012A7 **)pAVar3) {
         if (pAVar3->field_0xc == '\0') {
-          FUN_006e6af0(this,pAVar3);
+          SubmarineTitans::Recovered::HiddenThis::AnonReceiver_006E6AF0::FUN_006e6af0(this,pAVar3);
         }
       }
     }

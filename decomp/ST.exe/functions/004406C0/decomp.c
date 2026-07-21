@@ -1,10 +1,14 @@
 
-int FUN_004406c0(char param_1)
+/* [STUtilityFunctionApplier] player_race_id: maps a player id to its race id and preserves the -1
+   sentinel
+   Evidence: body pattern verified */
+
+int GetPlayerRaceId(char playerId)
 
 {
-  if (param_1 == 0xff) {
-    return (uint)(uint3)(param_1 >> 7) << 8;
+  if (playerId == 0xff) {
+    return (uint)(uint3)(playerId >> 7) << 8;
   }
-  return CONCAT31(param_1 >> 7,g_playerRuntime[param_1].raceId);
+  return CONCAT31(playerId >> 7,g_playerRuntime[playerId].raceId);
 }
 

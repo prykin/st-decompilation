@@ -49,15 +49,16 @@ LAB_004b004a:
             iVar1 = (int)local_8;
             iVar2 = (int)local_6;
             uVar3 = local_18;
-            if ((((((g_worldCells
-                     [SHORT_007fb240 * iVar1 + iVar2 + (int)SHORT_007fb246 * (int)local_a].objects
-                     [0] == (STWorldObject *)0x0) && (-1 < local_6)) && (local_6 < SHORT_007fb240))
-                 && ((-1 < local_8 && (local_8 < SHORT_007fb242)))) &&
+            if ((((((g_worldGrid.cells
+                     [g_worldGrid.sizeX * iVar1 +
+                      iVar2 + (int)g_worldGrid.planeStride * (int)local_a].objects[0] ==
+                     (STWorldObject *)0x0) && (-1 < local_6)) && (local_6 < g_worldGrid.sizeX)) &&
+                 ((-1 < local_8 && (local_8 < g_worldGrid.sizeY)))) &&
                 ((-1 < local_a &&
-                 ((local_a < SHORT_007fb244 &&
-                  (*(short *)(DAT_007fb280 +
-                             (SHORT_007fb278 * iVar1 + iVar2 + (int)SHORT_007fb27e * (int)local_a) *
-                             2) == 0)))))) &&
+                 ((local_a < g_worldGrid.sizeZ &&
+                  (g_pathingGrid.cells
+                   [g_pathingGrid.sizeX * iVar1 +
+                    iVar2 + (int)g_pathingGrid.planeStride * (int)local_a] == 0)))))) &&
                ((local_a < 4 &&
                 ((iVar1 = FUN_006aced8(iVar2,iVar1,param_6,param_7), local_14 < 0 ||
                  (iVar1 < local_14)))))) {

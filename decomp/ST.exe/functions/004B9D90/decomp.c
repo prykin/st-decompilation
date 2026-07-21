@@ -63,7 +63,7 @@ undefined4 __fastcall FUN_004b9d90(AnonShape_004B9D90_4F3151F9 *param_1)
       if (*(int *)(iVar2 + 0x4d8) != 0xffff) {
         return 0;
       }
-      if (SHORT_007fb244 + -1 <= *(int *)(iVar2 + 0x5b8)) {
+      if (g_worldGrid.sizeZ + -1 <= *(int *)(iVar2 + 0x5b8)) {
         return 0;
       }
     }

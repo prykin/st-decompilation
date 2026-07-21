@@ -1,18 +1,22 @@
 program=ST.exe
-candidate_tables=131
-candidate_slots=3077
+candidate_tables=178
+candidate_slots=3128
 interior_code_slots=0
 auto_create_function_targets=0
-high_auto_apply=34
-medium=88
+high_auto_apply=56
+physical_layout_auto_apply=158
+primary_vptr_store_tables=90
+medium=113
 low=9
-owner_conflicts=9
-constructor_anchored_tables=31
-review_only_named_vptr_writer_tables=1
-minimum_slots=3
+owner_conflicts=8
+constructor_anchored_tables=53
+review_only_named_vptr_writer_tables=18
+minimum_unreferenced_run_slots=3
+minimum_strong_vptr_slots=1
 note=Analyzer is read-only. Table apply is conservative; rename_apply is always 0.
 note_apply=create_apply=1 creates only missing function boundaries; it never renames them.
 note_rename=Set rename_apply=1 only after reviewing proposed_function.
 note_interior=interior_target=true usually denotes an adjustor thunk or a missing function boundary.
 note_relations=Related layouts help distinguish inherited base slots from the actual table owner.
+note_subobjects=Exact this-relative stores distinguish the primary vptr from secondary polymorphic subobjects.
 note_constructors=An exact recovered constructor-to-table marker outranks inherited slot namespaces; other named vptr writers remain review-only.

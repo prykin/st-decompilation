@@ -49,7 +49,7 @@ undefined4 __thiscall WaitTy::GetMessage(WaitTy *this,AnonShape_005DE050_5BD8645
     return 0xffff;
   }
   thunk_FUN_005b6450(local_c,(int)param_1);
-  StartSystemTy::ChatMessage(PTR_0081176c,(int)param_1);
+  StartSystemTy::ChatMessage(PTR_0081176c,param_1);
   uVar8 = *(uint *)&param_1->field_0x10;
   if (uVar8 < 0x6336) {
     if (uVar8 == 0x6335) {
@@ -142,7 +142,7 @@ undefined4 __thiscall WaitTy::GetMessage(WaitTy *this,AnonShape_005DE050_5BD8645
       }
     }
     else if (uVar8 == 0x6940) {
-      thunk_FUN_005e9a40((AnonShape_005E9A40_265F7E5B *)this_02);
+      thunk_FUN_005e9a40((AnonShape_005E9970_7C1AA6F1 *)this_02);
     }
     goto cf_common_exit_005EAB6A;
   }

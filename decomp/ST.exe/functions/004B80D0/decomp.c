@@ -66,11 +66,11 @@ int __thiscall TLOBaseTy::SetState(TLOBaseTy *this,int param_1,int param_2)
     if (param_2 != 0) {
       iVar5 = *(int *)&this_01->field_0x245;
       if (iVar5 == 1) {
-        uVar6 = thunk_FUN_004406c0(this_01->field_0x23d);
+        uVar6 = GetPlayerRaceId(this_01->field_0x23d);
         if (*(int *)(&DAT_007955d0 + ((uVar6 & 0xff) + *(int *)&this_01->field_0x235 * 3) * 4) != 0)
         {
           iVar5 = *(int *)this_01;
-          uVar6 = thunk_FUN_004406c0(this_01->field_0x23d);
+          uVar6 = GetPlayerRaceId(this_01->field_0x23d);
           (**(code **)(iVar5 + 0x90))
                     (3,*(undefined4 *)
                         (&DAT_007955d0 + ((uVar6 & 0xff) + *(int *)&this_01->field_0x235 * 3) * 4));
@@ -97,14 +97,14 @@ int __thiscall TLOBaseTy::SetState(TLOBaseTy *this,int param_1,int param_2)
       sVar4 = *(short *)&this_01->field_0x5b0;
       sVar1 = *(short *)&this_01->field_0x5b8;
       sVar9 = *(short *)&this_01->field_0x5b4;
-      if (((((sVar4 < 0) || (SHORT_007fb240 <= sVar4)) || (sVar9 < 0)) ||
-          ((SHORT_007fb242 <= sVar9 || (sVar1 < 0)))) || (SHORT_007fb244 <= sVar1)) {
+      if (((((sVar4 < 0) || (g_worldGrid.sizeX <= sVar4)) || (sVar9 < 0)) ||
+          ((g_worldGrid.sizeY <= sVar9 || (sVar1 < 0)))) || (g_worldGrid.sizeZ <= sVar1)) {
         sVar4 = -1;
       }
       else {
-        sVar4 = *(short *)(DAT_007fb280 +
-                          ((int)SHORT_007fb278 * (int)sVar9 + (int)SHORT_007fb27e * (int)sVar1 +
-                          (int)sVar4) * 2);
+        sVar4 = g_pathingGrid.cells
+                [(int)g_pathingGrid.sizeX * (int)sVar9 + (int)g_pathingGrid.planeStride * (int)sVar1
+                 + (int)sVar4];
       }
       if (sVar4 == 0) {
         local_8 = *(int *)&this_01->field_0x5b4;
@@ -138,15 +138,15 @@ int __thiscall TLOBaseTy::SetState(TLOBaseTy *this,int param_1,int param_2)
       sVar4 = *(short *)&this_01->field_0x5b0;
       sVar1 = *(short *)&this_01->field_0x5b8;
       sVar9 = *(short *)&this_01->field_0x5b4;
-      if (((sVar4 < 0) || (SHORT_007fb240 <= sVar4)) ||
-         (((sVar9 < 0 || ((SHORT_007fb242 <= sVar9 || (sVar1 < 0)))) || (SHORT_007fb244 <= sVar1))))
-      {
+      if (((sVar4 < 0) || (g_worldGrid.sizeX <= sVar4)) ||
+         (((sVar9 < 0 || ((g_worldGrid.sizeY <= sVar9 || (sVar1 < 0)))) ||
+          (g_worldGrid.sizeZ <= sVar1)))) {
         sVar4 = -1;
       }
       else {
-        sVar4 = *(short *)(DAT_007fb280 +
-                          ((int)SHORT_007fb278 * (int)sVar9 + (int)SHORT_007fb27e * (int)sVar1 +
-                          (int)sVar4) * 2);
+        sVar4 = g_pathingGrid.cells
+                [(int)g_pathingGrid.sizeX * (int)sVar9 + (int)g_pathingGrid.planeStride * (int)sVar1
+                 + (int)sVar4];
       }
       if (sVar4 != 0) {
         local_8 = *(int *)&this_01->field_0x5b4;
@@ -273,15 +273,15 @@ int __thiscall TLOBaseTy::SetState(TLOBaseTy *this,int param_1,int param_2)
       sVar4 = *(short *)&this_01->field_0x5b0;
       sVar1 = *(short *)&this_01->field_0x5b8;
       sVar9 = *(short *)&this_01->field_0x5b4;
-      if (((sVar4 < 0) || (SHORT_007fb240 <= sVar4)) ||
-         ((sVar9 < 0 || (((SHORT_007fb242 <= sVar9 || (sVar1 < 0)) || (SHORT_007fb244 <= sVar1))))))
-      {
+      if (((sVar4 < 0) || (g_worldGrid.sizeX <= sVar4)) ||
+         ((sVar9 < 0 ||
+          (((g_worldGrid.sizeY <= sVar9 || (sVar1 < 0)) || (g_worldGrid.sizeZ <= sVar1)))))) {
         sVar9 = -1;
       }
       else {
-        sVar9 = *(short *)(DAT_007fb280 +
-                          ((int)SHORT_007fb278 * (int)sVar9 + (int)SHORT_007fb27e * (int)sVar1 +
-                          (int)sVar4) * 2);
+        sVar9 = g_pathingGrid.cells
+                [(int)g_pathingGrid.sizeX * (int)sVar9 + (int)g_pathingGrid.planeStride * (int)sVar1
+                 + (int)sVar4];
       }
       if (sVar9 != 0) {
         iVar5 = thunk_FUN_00496140(sVar4,*(short *)&this_01->field_0x5b4,sVar1);
@@ -306,7 +306,7 @@ int __thiscall TLOBaseTy::SetState(TLOBaseTy *this,int param_1,int param_2)
       thunk_FUN_004e4b60((AnonShape_004E4B60_EABE8E44 *)this_01);
       break;
     case 0x45:
-      thunk_FUN_004ea7e0((AnonShape_004EA7E0_AD59BCE4 *)this_01);
+      thunk_FUN_004ea7e0((AnonShape_004D9BD0_B3B50583 *)this_01);
       break;
     case 0x4e:
       thunk_FUN_004d9bd0((AnonShape_004D9BD0_B3B50583 *)this_01);
@@ -321,7 +321,7 @@ int __thiscall TLOBaseTy::SetState(TLOBaseTy *this,int param_1,int param_2)
       thunk_FUN_004d8db0((AnonShape_004D8DB0_597A2A4F *)this_01);
       break;
     case 0x72:
-      thunk_FUN_004ecdf0((AnonShape_004ECDF0_4DB4D99D *)this_01);
+      thunk_FUN_004ecdf0((AnonShape_004D9BD0_B3B50583 *)this_01);
     }
     if (*(int *)(&DAT_00794d94 + *(int *)&this_01->field_0x235 * 4) != 0) {
       thunk_FUN_004c2e60((int)this_01);

@@ -15,6 +15,7 @@ MReportTy::PaintBut(MReportTy *this,AnonShape_005C0B00_CBE14AB4 *param_1,UINT pa
   AnonPointee_MReportTy_0077 *pAVar5;
   int iVar6;
   undefined4 *puVar7;
+  uint *extraout_EAX;
   int iVar8;
   char cVar9;
   uint uVar10;
@@ -68,15 +69,16 @@ MReportTy::PaintBut(MReportTy *this,AnonShape_005C0B00_CBE14AB4 *param_1,UINT pa
       *(undefined1 *)puVar7 = 0xff;
       puVar7 = (undefined4 *)((int)puVar7 + 1);
     }
-    FUN_006c7610((AnonShape_006C7610_838EDECF *)pAVar5,0,0,0,(uint)local_8,(uint)local_1c,param_3,
+    FUN_006c7610((AnonShape_006B5B10_E0D06CF1 *)pAVar5,0,0,0,(uint)local_8,(uint)local_1c,param_3,
                  0x4c);
-    FUN_006c7570((AnonShape_006C7570_82D7EB54 *)pAVar5,0,2,2,local_8 + -1,(int)(pbVar4 + -4),param_3
+    FUN_006c7570((AnonShape_006B5B10_E0D06CF1 *)pAVar5,0,2,2,local_8 + -1,(int)(pbVar4 + -4),param_3
                  ,(byte)_local_10);
-    FUN_006c7570((AnonShape_006C7570_82D7EB54 *)pAVar5,0,0,0,local_8,(int)pbVar4,param_3,
+    FUN_006c7570((AnonShape_006B5B10_E0D06CF1 *)pAVar5,0,0,0,local_8,(int)pbVar4,param_3,
                  (byte)_local_10);
     if (((param_4 == '\0') && (param_2 != 0)) || ((param_4 != '\0' && (param_5 != (uint *)0x0)))) {
       if (param_4 == '\0') {
-        param_5 = (uint *)FUN_006b0140(param_2,HINSTANCE_00807618);
+        LoadResourceString(param_2,HINSTANCE_00807618);
+        param_5 = extraout_EAX;
       }
       local_18 = param_5;
       ccFntTy::SetSurf(local_c->field_0083,(int)pAVar5,0,0,0,0,0);

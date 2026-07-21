@@ -10,15 +10,16 @@ undefined4 __thiscall STGroupBoatC::GrpGoToDeep(STGroupBoatC *this,int param_1)
   STGroupBoatC *pSVar2;
   int iVar3;
   STBoatC *this_00;
-  int iVar4;
-  undefined4 uVar5;
+  STGameObjC *pSVar4;
+  int iVar5;
+  undefined4 uVar6;
   undefined4 extraout_ECX;
-  uint uVar6;
+  uint uVar7;
   undefined4 extraout_EDX;
   undefined4 unaff_ESI;
   void *unaff_EDI;
-  undefined4 *puVar7;
-  uint uVar8;
+  undefined4 *puVar8;
+  uint uVar9;
   InternalExceptionFrame local_6c;
   undefined4 local_28;
   undefined2 local_24;
@@ -40,29 +41,29 @@ undefined4 __thiscall STGroupBoatC::GrpGoToDeep(STGroupBoatC *this,int param_1)
   pSVar2 = local_1c;
   if (iVar3 != 0) {
     g_currentExceptionFrame = local_6c.previous;
-    iVar4 = ReportDebugMessage(s_E____titans_wlad_to_grpb_cpp_007abe3c,0x73c,0,iVar3,&DAT_007a4ccc,
+    iVar5 = ReportDebugMessage(s_E____titans_wlad_to_grpb_cpp_007abe3c,0x73c,0,iVar3,&DAT_007a4ccc,
                                s_STGroupBoatC__GrpGoToDeep_007abf74);
-    if (iVar4 == 0) {
+    if (iVar5 == 0) {
       RaiseInternalException(iVar3,0,s_E____titans_wlad_to_grpb_cpp_007abe3c,0x73d);
       return 0xffffffff;
     }
     pcVar1 = (code *)swi(3);
-    uVar5 = (*pcVar1)();
-    return uVar5;
+    uVar6 = (*pcVar1)();
+    return uVar6;
   }
   if ((param_1 == 0) || (param_1 == 1)) {
-    puVar7 = (undefined4 *)&local_1c->field_0x89;
+    puVar8 = (undefined4 *)&local_1c->field_0x89;
     for (iVar3 = 0x15; iVar3 != 0; iVar3 = iVar3 + -1) {
-      *puVar7 = 0;
-      puVar7 = puVar7 + 1;
+      *puVar8 = 0;
+      puVar8 = puVar8 + 1;
     }
-    uVar8 = 0;
+    uVar9 = 0;
     local_1c->field_0222 = local_1c->field_00FF;
     local_1c->field_0065 = 0;
     if (local_18 != 0) {
-      uVar6 = 0;
+      uVar7 = 0;
       do {
-        FUN_006acc70((AnonShape_006ACC70_C8641025 *)pSVar2->field_0029,uVar6,&local_14);
+        DArrayGetElement((DArrayTy *)pSVar2->field_0029,uVar7,&local_14);
         if ((short)local_14 != -1) {
           this_00 = (STBoatC *)
                     STAllPlayersC::GetObjPtr
@@ -82,39 +83,39 @@ undefined4 __thiscall STGroupBoatC::GrpGoToDeep(STGroupBoatC *this,int param_1)
           local_20 = 0xffff;
           STBoatC::CmdToObj(this_00,CASE_1,&local_28);
         }
-        uVar8 = uVar8 + 1;
-        uVar6 = uVar8 & 0xffff;
-      } while (uVar6 < local_18);
+        uVar9 = uVar9 + 1;
+        uVar7 = uVar9 & 0xffff;
+      } while (uVar7 < local_18);
     }
     local_10 = 2;
   }
-  uVar5 = local_10;
+  uVar6 = local_10;
   if (param_1 == 2) {
     if ((uint)PTR_00802a38->field_00E4 % 3 == 0) {
-      uVar6 = 0;
-      uVar8 = 0;
+      uVar7 = 0;
+      uVar9 = 0;
       local_10 = 0;
-      uVar5 = 0;
+      uVar6 = 0;
       if (local_18 != 0) {
         do {
-          FUN_006acc70((AnonShape_006ACC70_C8641025 *)pSVar2->field_0029,uVar8,&local_14);
+          DArrayGetElement((DArrayTy *)pSVar2->field_0029,uVar9,&local_14);
           if ((short)local_14 != -1) {
-            uVar8 = STAllPlayersC::GetObjPtr
-                              (g_sTAllPlayers_007FA174,
-                               CONCAT31((int3)((uint)extraout_ECX >> 8),pSVar2->field_0024),local_14
-                               ,CASE_1);
-            if (uVar8 == 0) {
+            pSVar4 = STAllPlayersC::GetObjPtr
+                               (g_sTAllPlayers_007FA174,
+                                CONCAT31((int3)((uint)extraout_ECX >> 8),pSVar2->field_0024),
+                                local_14,CASE_1);
+            if (pSVar4 == (STGameObjC *)0x0) {
               RaiseInternalException
                         (-0x5001fffc,g_overwriteContext_007ED77C,
                          s_E____titans_wlad_to_grpb_cpp_007abe3c,0x732);
             }
-            iVar3 = thunk_FUN_0045ff30(uVar8);
-            if (((iVar3 != 0) || (iVar3 = thunk_FUN_0045ff10(uVar8), iVar3 == 1)) ||
-               (iVar3 = thunk_FUN_0045ff10(uVar8), iVar3 == 0)) goto LAB_0049b6c1;
+            iVar3 = thunk_FUN_0045ff30((int)pSVar4);
+            if (((iVar3 != 0) || (iVar3 = thunk_FUN_0045ff10((int)pSVar4), iVar3 == 1)) ||
+               (iVar3 = thunk_FUN_0045ff10((int)pSVar4), iVar3 == 0)) goto LAB_0049b6c1;
           }
-          uVar6 = uVar6 + 1;
-          uVar8 = uVar6 & 0xffff;
-          if (local_18 <= uVar8) {
+          uVar7 = uVar7 + 1;
+          uVar9 = uVar7 & 0xffff;
+          if (local_18 <= uVar9) {
             g_currentExceptionFrame = local_6c.previous;
             return local_10;
           }
@@ -124,10 +125,10 @@ undefined4 __thiscall STGroupBoatC::GrpGoToDeep(STGroupBoatC *this,int param_1)
     else {
 LAB_0049b6c1:
       local_10 = 2;
-      uVar5 = local_10;
+      uVar6 = local_10;
     }
   }
-  local_10 = uVar5;
+  local_10 = uVar6;
   g_currentExceptionFrame = local_6c.previous;
   return local_10;
 }

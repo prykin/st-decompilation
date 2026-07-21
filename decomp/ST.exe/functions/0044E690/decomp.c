@@ -14,9 +14,9 @@ STBoatC * __thiscall STBoatC::STBoatC(STBoatC *this)
   undefined4 *puVar2;
   STBoatC_field_06F3State *pSVar3;
   
-  thunk_FUN_004158e0((STGroupBoatC *)this);
+  STGameObjC::STGameObjC((STGameObjC *)this);
   thunk_FUN_004ab810((AnonShape_004AB810_8E5693D5 *)&this->field_01D5);
-  this->field_01D5 = &PTR_LAB_00790700;
+  this->field_01D5 = &VTable_00790700;
   this->vtable = &STBoatCVTable;
   puVar2 = (undefined4 *)&this->field_0x231;
   for (iVar1 = 0x23; iVar1 != 0; iVar1 = iVar1 + -1) {

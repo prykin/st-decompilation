@@ -9,7 +9,11 @@ void __thiscall MAdvTy::PaintMAdv(MAdvTy *this)
   code *pcVar1;
   MAdvTy *pMVar2;
   int iVar3;
-  uint *puVar4;
+  uint *extraout_EAX;
+  uint *extraout_EAX_00;
+  uint *extraout_EAX_01;
+  uint *extraout_EAX_02;
+  uint *extraout_EAX_03;
   StartServTy *this_00;
   StartServTy *this_01;
   StartServTy *extraout_ECX;
@@ -17,9 +21,10 @@ void __thiscall MAdvTy::PaintMAdv(MAdvTy *this)
   StartServTy *extraout_ECX_00;
   StartServTy *this_03;
   void *unaff_ESI;
+  int iVar4;
   int iVar5;
   int iVar6;
-  int iVar7;
+  uint *puVar7;
   uint uVar8;
   uint uVar9;
   ccFntTy *pcVar10;
@@ -41,48 +46,51 @@ void __thiscall MAdvTy::PaintMAdv(MAdvTy *this)
     uVar9 = 0xffffffff;
     if (pMVar2->field_005D == '\0') {
       uVar8 = 0xfffffffe;
-      puVar4 = (uint *)FUN_006b0140(0x25e4,HINSTANCE_00807618);
-      StartServTy::WrTextDDX(this_02,0,0,0x1b8,800,0x14,puVar4,uVar8,uVar9,pcVar10,uVar11);
+      LoadResourceString(0x25e4,HINSTANCE_00807618);
+      StartServTy::WrTextDDX(this_02,0,0,0x1b8,800,0x14,extraout_EAX_02,uVar8,uVar9,pcVar10,uVar11);
       pcVar10 = (ccFntTy *)PTR_0081176c->field_0030;
       uVar11 = 1;
       uVar8 = 0xffffffff;
       uVar9 = 0xffffffff;
-      puVar4 = (uint *)FUN_006b0140(0x25e8,HINSTANCE_00807618);
-      iVar7 = 0x8c;
-      iVar6 = 800;
-      iVar5 = 0x1cc;
+      LoadResourceString(0x25e8,HINSTANCE_00807618);
+      iVar6 = 0x8c;
+      iVar5 = 800;
+      iVar4 = 0x1cc;
       iVar3 = 0;
       this_03 = extraout_ECX_00;
+      puVar7 = extraout_EAX_03;
     }
     else {
       uVar8 = 0xffffffff;
-      puVar4 = (uint *)FUN_006b0140(0x25e5,HINSTANCE_00807618);
-      StartServTy::WrTextDDX(this_00,0,10,10,0x30c,0x32,puVar4,uVar8,uVar9,pcVar10,uVar11);
+      LoadResourceString(0x25e5,HINSTANCE_00807618);
+      StartServTy::WrTextDDX(this_00,0,10,10,0x30c,0x32,extraout_EAX,uVar8,uVar9,pcVar10,uVar11);
       pcVar10 = (ccFntTy *)PTR_0081176c->field_0030;
       uVar11 = 1;
       uVar8 = 0xffffffff;
       uVar9 = 0;
-      puVar4 = (uint *)FUN_006b0140(0x25e6,HINSTANCE_00807618);
-      StartServTy::WrTextDDX(this_01,0,0x10e,0x3c,0x20d,0xfa,puVar4,uVar9,uVar8,pcVar10,uVar11);
+      LoadResourceString(0x25e6,HINSTANCE_00807618);
+      StartServTy::WrTextDDX
+                (this_01,0,0x10e,0x3c,0x20d,0xfa,extraout_EAX_00,uVar9,uVar8,pcVar10,uVar11);
       pcVar10 = (ccFntTy *)PTR_0081176c->field_0030;
       uVar11 = 1;
       uVar8 = 0xffffffff;
       uVar9 = 0;
-      puVar4 = (uint *)FUN_006b0140(0x25e7,HINSTANCE_00807618);
-      iVar7 = 0xe6;
-      iVar6 = 0x302;
-      iVar5 = 0x172;
+      LoadResourceString(0x25e7,HINSTANCE_00807618);
+      iVar6 = 0xe6;
+      iVar5 = 0x302;
+      iVar4 = 0x172;
       iVar3 = 0x14;
       this_03 = extraout_ECX;
+      puVar7 = extraout_EAX_01;
     }
-    StartServTy::WrTextDDX(this_03,0,iVar3,iVar5,iVar6,iVar7,puVar4,uVar9,uVar8,pcVar10,uVar11);
+    StartServTy::WrTextDDX(this_03,0,iVar3,iVar4,iVar5,iVar6,puVar7,uVar9,uVar8,pcVar10,uVar11);
     g_currentExceptionFrame = pIVar12;
     return;
   }
   g_currentExceptionFrame = pIVar12;
-  iVar5 = ReportDebugMessage(s_E____titans_Start_adv_obj_cpp_007cbc24,0x4d,0,iVar3,&DAT_007a4ccc,
+  iVar4 = ReportDebugMessage(s_E____titans_Start_adv_obj_cpp_007cbc24,0x4d,0,iVar3,&DAT_007a4ccc,
                              s_MAdvTy__PaintMAdv_007cbc74);
-  if (iVar5 != 0) {
+  if (iVar4 != 0) {
     pcVar1 = (code *)swi(3);
     (*pcVar1)();
     return;

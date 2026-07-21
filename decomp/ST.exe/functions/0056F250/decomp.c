@@ -131,7 +131,8 @@ LAB_0056f325:
                     FUN_006b50c0(0x8b,0x8b,(uint)*(ushort *)(DAT_0080679c + 0xe),uVar4,puVar12,iVar3
                                 );
           if (local_c != (AnonShape_006B5050_99986F91 *)0x0) {
-            FUN_006b4170((int)local_c,0,0,0,local_c->field_0004,(int)local_c->field_0008,0);
+            FUN_006b4170((AnonShape_006C7610_838EDECF *)local_c,0,0,0,local_c->field_0004,
+                         (int)local_c->field_0008,0);
             FUN_006e6fb0(PTR_00807598,(AnonShape_006E6FB0_BC494FEA *)local_c,0,0,1);
             puVar14 = (uint *)0x0;
             cVar13 = '\0';
@@ -139,7 +140,7 @@ LAB_0056f325:
             uVar4 = FUN_006b5050(local_c);
             cMf32::RecPut(pcVar7,0xc,PTR_s_SMALL_MAP_0079b084,(byte *)local_c,uVar4,puVar12,cVar13,
                           puVar14);
-            FUN_006ab060(&local_c);
+            FreeAndNull(&local_c);
           }
         }
         cMf32::RecPut(pcVar7,0xc,PTR_s_TYPE_START_0079b08c,(byte *)((int)pvVar2 + 0x1180),1,

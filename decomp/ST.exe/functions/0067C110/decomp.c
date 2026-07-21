@@ -1,5 +1,5 @@
 
-void __fastcall FUN_0067c110(void *param_1)
+void __fastcall FUN_0067c110(AnonReceiver_006799B0 *param_1)
 
 {
   int iVar1;
@@ -13,11 +13,12 @@ void __fastcall FUN_0067c110(void *param_1)
     *ppAVar2 = (AnonShape_0068FD00_A5257008 *)0x0;
     ppAVar2 = ppAVar2 + 1;
   }
-  local_34 = *(undefined4 *)((int)param_1 + 0x6fe);
-  *(undefined4 *)((int)param_1 + 0x689) = 0;
+  local_34 = *(undefined4 *)&param_1->field_0x6fe;
+  *(undefined4 *)&param_1->field_0x689 = 0;
   local_38 = (AnonShape_0068FD00_A5257008 *)0x67;
   local_30 = 1;
-  thunk_FUN_0067a020(param_1,(AnonShape_0068FD00_A5257008 *)&local_38,-1);
+  SubmarineTitans::Recovered::HiddenThis::AnonReceiver_006799B0::thunk_FUN_0067a020
+            (param_1,(AnonShape_0068FD00_A5257008 *)&local_38,-1);
   return;
 }
 

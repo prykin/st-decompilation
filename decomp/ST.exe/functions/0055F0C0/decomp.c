@@ -163,7 +163,7 @@ int * FUN_0055f0c0(int *param_1,uint param_2,uint param_3,int param_4,uint param
     } while (local_60 != 0);
   }
   if (local_2c < 0) {
-    FUN_006ab060(local_44);
+    FreeAndNull(local_44);
   }
   ExceptionList = local_14;
   return local_44[0];

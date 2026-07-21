@@ -7,7 +7,7 @@ int __thiscall FUN_00622ab0(void *this,undefined4 *param_1)
   undefined4 *puVar3;
   int *piVar4;
   undefined4 *puVar5;
-  LPVOID local_20;
+  void *local_20;
   undefined4 local_1c;
   undefined4 local_18;
   undefined4 local_14;
@@ -25,7 +25,7 @@ int __thiscall FUN_00622ab0(void *this,undefined4 *param_1)
   *(undefined1 *)puVar5 = *(undefined1 *)puVar3;
   *(undefined4 *)((int)this + 0x2ba) = 0xffffffff;
   iVar2 = *(int *)((int)param_1 + 0x109);
-  local_20 = (LPVOID)Library::DKW::LIB::FUN_006aac70(0x44);
+  local_20 = (void *)Library::DKW::LIB::FUN_006aac70(0x44);
   iVar1 = 0;
   do {
     *(undefined4 *)(iVar1 + (int)local_20) = DAT_00806774;
@@ -40,9 +40,9 @@ int __thiscall FUN_00622ab0(void *this,undefined4 *param_1)
   local_8 = 0;
   STT3DSprC::RestoreSpr
             ((STT3DSprC *)((int)this + 0x1d5),(int *)&local_20,
-             (AnonShape_004ADBA0_E7CEFF88 *)((int)param_1 + 0x10d));
-  FUN_006ab060(&local_20);
-  piVar4 = (int *)(&((AnonShape_004ADBA0_E7CEFF88 *)((int)param_1 + 0x10d))->field_0x0 + iVar2);
+             (AnonShape_004AD790_77673787 *)((int)param_1 + 0x10d));
+  FreeAndNull(&local_20);
+  piVar4 = (int *)(&((AnonShape_004AD790_77673787 *)((int)param_1 + 0x10d))->field_0x0 + iVar2);
   iVar1 = *piVar4;
   STAllPlayersC::RestoreGObjData(this,piVar4 + 1);
   return iVar1 + iVar2 + 0x109;

@@ -15,12 +15,12 @@ FUN_0062e240(void *this,undefined4 param_1,int param_2,int param_3,int param_4,i
   
   sVar4 = (short)param_2;
   local_8 = this;
-  if (((((((-1 < sVar4) && (sVar4 < SHORT_007fb240)) && (sVar5 = (short)param_3, -1 < sVar5)) &&
-        ((sVar5 < SHORT_007fb242 && (sVar2 = (short)param_4, -1 < sVar2)))) &&
-       ((sVar2 < SHORT_007fb244 &&
-        ((this_00 = g_worldCells
-                    [(int)SHORT_007fb246 * (int)sVar2 + (int)SHORT_007fb240 * (int)sVar5 +
-                     (int)sVar4].objects[0], this_00 != (STWorldObject *)0x0 &&
+  if (((((((-1 < sVar4) && (sVar4 < g_worldGrid.sizeX)) && (sVar5 = (short)param_3, -1 < sVar5)) &&
+        ((sVar5 < g_worldGrid.sizeY && (sVar2 = (short)param_4, -1 < sVar2)))) &&
+       ((sVar2 < g_worldGrid.sizeZ &&
+        ((this_00 = g_worldGrid.cells
+                    [(int)g_worldGrid.planeStride * (int)sVar2 + (int)g_worldGrid.sizeX * (int)sVar5
+                     + (int)sVar4].objects[0], this_00 != (STWorldObject *)0x0 &&
          (*(int *)&this_00->field_0x18 == param_5)))))) &&
       ((this_00->value_20 == 1000 &&
        (iVar3 = (*this_00->vtable->GetObjectTypeId)(this_00), iVar3 == 0x6e)))) ||

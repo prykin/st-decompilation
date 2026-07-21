@@ -8,25 +8,25 @@ void __thiscall STGroupC::SetAVPar(STGroupC *this,uint param_1)
 {
   uint uVar1;
   code *pcVar2;
-  void *this_00;
+  STGameObjC *this_00;
   int iVar3;
   undefined4 extraout_ECX;
+  uint index;
   uint uVar4;
-  uint uVar5;
   
-  uVar5 = 0;
+  uVar4 = 0;
   uVar1 = *(uint *)(this->field_0029 + 0xc);
   this->field_0039 = param_1;
   if (uVar1 != 0) {
-    uVar4 = 0;
+    index = 0;
     do {
-      FUN_006acc70((AnonShape_006ACC70_C8641025 *)this->field_0029,uVar4,&param_1);
+      DArrayGetElement((DArrayTy *)this->field_0029,index,&param_1);
       if ((short)param_1 != -1) {
-        this_00 = (void *)STAllPlayersC::GetObjPtr
-                                    (g_sTAllPlayers_007FA174,
-                                     CONCAT31((int3)((uint)extraout_ECX >> 8),this->field_0024),
-                                     param_1,CASE_1);
-        if (this_00 == (void *)0x0) {
+        this_00 = STAllPlayersC::GetObjPtr
+                            (g_sTAllPlayers_007FA174,
+                             CONCAT31((int3)((uint)extraout_ECX >> 8),this->field_0024),param_1,
+                             CASE_1);
+        if (this_00 == (STGameObjC *)0x0) {
           iVar3 = ReportDebugMessage(s_E____titans_wlad_tc_grp_cpp_007a50a4,0x256,0,0,&DAT_007a4ccc,
                                      s_STGroupC__SetAVPar_007a51a4);
           if (iVar3 != 0) {
@@ -38,13 +38,13 @@ void __thiscall STGroupC::SetAVPar(STGroupC *this,uint param_1)
                     (-0x5001fffc,g_overwriteContext_007ED77C,s_E____titans_wlad_tc_grp_cpp_007a50a4,
                      599);
         }
-        if (*(int *)((int)this_00 + 0x20) == 0x14) {
+        if (this_00->field_0020 == 0x14) {
           thunk_FUN_004956c0(this_00,this->field_0039);
         }
       }
-      uVar5 = uVar5 + 1;
-      uVar4 = uVar5 & 0xffff;
-    } while (uVar4 < uVar1);
+      uVar4 = uVar4 + 1;
+      index = uVar4 & 0xffff;
+    } while (index < uVar1);
   }
   return;
 }

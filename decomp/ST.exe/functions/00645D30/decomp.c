@@ -10,7 +10,7 @@ undefined4 __cdecl FUN_00645d30(int param_1,Global_sub_00645D30_param_2Enum para
   uint uVar1;
   undefined4 uVar2;
   
-  uVar1 = thunk_FUN_004406c0((char)param_1);
+  uVar1 = GetPlayerRaceId((char)param_1);
   uVar1 = uVar1 & 0xff;
   switch(param_2) {
   case CASE_96:

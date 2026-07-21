@@ -68,19 +68,19 @@ STBoatC::Dismant(STBoatC *this,AnonShape_004B9D90_4F3151F9 *param_1,undefined4 p
     this->field_06AB = sVar18;
     this->field_06AD = sVar14;
     this->field_06AF = local_1c;
-    if (SHORT_007fb244 + -2 < (int)sVar14) {
+    if (g_worldGrid.sizeZ + -2 < (int)sVar14) {
       return 0;
     }
-    if ((((sVar15 < 0) || (SHORT_007fb240 <= sVar15)) ||
-        ((sVar18 < 0 || ((SHORT_007fb242 <= sVar18 || (sVar14 < 0)))))) ||
-       (SHORT_007fb244 <= sVar14)) {
+    if ((((sVar15 < 0) || (g_worldGrid.sizeX <= sVar15)) ||
+        ((sVar18 < 0 || ((g_worldGrid.sizeY <= sVar18 || (sVar14 < 0)))))) ||
+       (g_worldGrid.sizeZ <= sVar14)) {
       param_1 = (AnonShape_004B9D90_4F3151F9 *)0x0;
     }
     else {
       param_1 = (AnonShape_004B9D90_4F3151F9 *)
-                g_worldCells
-                [(int)SHORT_007fb246 * (int)sVar14 + (int)SHORT_007fb240 * (int)sVar18 + (int)sVar15
-                ].objects[0];
+                g_worldGrid.cells
+                [(int)g_worldGrid.planeStride * (int)sVar14 + (int)g_worldGrid.sizeX * (int)sVar18 +
+                 (int)sVar15].objects[0];
     }
     if (param_1 == (AnonShape_004B9D90_4F3151F9 *)0x0) {
       return 0;
@@ -113,13 +113,13 @@ STBoatC::Dismant(STBoatC *this,AnonShape_004B9D90_4F3151F9 *param_1,undefined4 p
         sVar14 = (short)local_8 + this->field_06A9;
         do {
           sVar7 = sVar15 + (short)local_18;
-          if (((((-1 < sVar14) && (sVar14 < SHORT_007fb240)) && (-1 < sVar7)) &&
-              ((sVar7 < SHORT_007fb242 && (-1 < sVar18)))) &&
-             ((sVar18 < SHORT_007fb244 &&
+          if (((((-1 < sVar14) && (sVar14 < g_worldGrid.sizeX)) && (-1 < sVar7)) &&
+              ((sVar7 < g_worldGrid.sizeY && (-1 < sVar18)))) &&
+             ((sVar18 < g_worldGrid.sizeZ &&
               (iVar8 = local_14,
-              *(short *)(DAT_007fb280 +
-                        ((int)SHORT_007fb278 * (int)sVar7 + (int)SHORT_007fb27e * (int)sVar18 +
-                        (int)sVar14) * 2) == 0)))) goto LAB_0047f4cd;
+              g_pathingGrid.cells
+              [(int)g_pathingGrid.sizeX * (int)sVar7 + (int)g_pathingGrid.planeStride * (int)sVar18
+               + (int)sVar14] == 0)))) goto LAB_0047f4cd;
           local_18 = local_18 + 1;
         } while (local_18 < 2);
         local_8 = local_8 + 1;
@@ -136,25 +136,25 @@ STBoatC::Dismant(STBoatC *this,AnonShape_004B9D90_4F3151F9 *param_1,undefined4 p
     if (sVar18 < 0) {
       return 0;
     }
-    if (SHORT_007fb240 <= sVar18) {
+    if (g_worldGrid.sizeX <= sVar18) {
       return 0;
     }
     if (sVar15 < 0) {
       return 0;
     }
-    if (SHORT_007fb242 <= sVar15) {
+    if (g_worldGrid.sizeY <= sVar15) {
       return 0;
     }
     if (sVar14 < 0) {
       return 0;
     }
-    if (SHORT_007fb244 <= sVar14) {
+    if (g_worldGrid.sizeZ <= sVar14) {
       return 0;
     }
     iVar8 = CONCAT22(uVar6,sVar18);
-    if (*(short *)(DAT_007fb280 +
-                  ((int)sVar14 * (int)SHORT_007fb27e + (int)sVar15 * (int)SHORT_007fb278 +
-                  (int)sVar18) * 2) != 0) {
+    if (g_pathingGrid.cells
+        [(int)sVar14 * (int)g_pathingGrid.planeStride + (int)sVar15 * (int)g_pathingGrid.sizeX +
+         (int)sVar18] != 0) {
       return 0;
     }
 LAB_0047f4cd:
@@ -173,16 +173,16 @@ LAB_0047f4cd:
       sVar18 = this->field_06AD;
       sVar14 = this->field_06AB;
       this->field_00B7 = 0;
-      if (((sVar15 < 0) || (SHORT_007fb240 <= sVar15)) ||
+      if (((sVar15 < 0) || (g_worldGrid.sizeX <= sVar15)) ||
          ((sVar14 < 0 ||
-          (((SHORT_007fb242 <= sVar14 || (sVar18 < 0)) || (SHORT_007fb244 <= sVar18)))))) {
+          (((g_worldGrid.sizeY <= sVar14 || (sVar18 < 0)) || (g_worldGrid.sizeZ <= sVar18)))))) {
         param_1 = (AnonShape_004B9D90_4F3151F9 *)0x0;
       }
       else {
         param_1 = (AnonShape_004B9D90_4F3151F9 *)
-                  g_worldCells
-                  [(int)sVar18 * (int)SHORT_007fb246 + (int)sVar14 * (int)SHORT_007fb240 +
-                   (int)sVar15].objects[0];
+                  g_worldGrid.cells
+                  [(int)sVar18 * (int)g_worldGrid.planeStride + (int)sVar14 * (int)g_worldGrid.sizeX
+                   + (int)sVar15].objects[0];
       }
       if (((param_1 == (AnonShape_004B9D90_4F3151F9 *)0x0) ||
           (*(int *)&param_1->field_0x18 != this->field_06AF)) ||
@@ -218,16 +218,16 @@ LAB_0047e0a4:
       sVar15 = this->field_06A9;
       sVar18 = this->field_06AD;
       sVar14 = this->field_06AB;
-      if (((sVar15 < 0) || (SHORT_007fb240 <= sVar15)) ||
+      if (((sVar15 < 0) || (g_worldGrid.sizeX <= sVar15)) ||
          ((sVar14 < 0 ||
-          (((SHORT_007fb242 <= sVar14 || (sVar18 < 0)) || (SHORT_007fb244 <= sVar18)))))) {
+          (((g_worldGrid.sizeY <= sVar14 || (sVar18 < 0)) || (g_worldGrid.sizeZ <= sVar18)))))) {
         param_1 = (AnonShape_004B9D90_4F3151F9 *)0x0;
       }
       else {
         param_1 = (AnonShape_004B9D90_4F3151F9 *)
-                  g_worldCells
-                  [(int)sVar18 * (int)SHORT_007fb246 + (int)sVar14 * (int)SHORT_007fb240 +
-                   (int)sVar15].objects[0];
+                  g_worldGrid.cells
+                  [(int)sVar18 * (int)g_worldGrid.planeStride + (int)sVar14 * (int)g_worldGrid.sizeX
+                   + (int)sVar15].objects[0];
       }
       if (((param_1 == (AnonShape_004B9D90_4F3151F9 *)0x0) ||
           (*(int *)&param_1->field_0x18 != this->field_06AF)) ||
@@ -268,16 +268,16 @@ LAB_0047e0a4:
         sVar15 = this->field_06A9;
         sVar18 = this->field_06AD;
         sVar14 = this->field_06AB;
-        if ((((sVar15 < 0) || (SHORT_007fb240 <= sVar15)) ||
-            ((sVar14 < 0 || ((SHORT_007fb242 <= sVar14 || (sVar18 < 0)))))) ||
-           (SHORT_007fb244 <= sVar18)) {
+        if ((((sVar15 < 0) || (g_worldGrid.sizeX <= sVar15)) ||
+            ((sVar14 < 0 || ((g_worldGrid.sizeY <= sVar14 || (sVar18 < 0)))))) ||
+           (g_worldGrid.sizeZ <= sVar18)) {
           param_1 = (AnonShape_004B9D90_4F3151F9 *)0x0;
         }
         else {
           param_1 = (AnonShape_004B9D90_4F3151F9 *)
-                    g_worldCells
-                    [(int)sVar18 * (int)SHORT_007fb246 + (int)sVar14 * (int)SHORT_007fb240 +
-                     (int)sVar15].objects[0];
+                    g_worldGrid.cells
+                    [(int)sVar18 * (int)g_worldGrid.planeStride +
+                     (int)sVar14 * (int)g_worldGrid.sizeX + (int)sVar15].objects[0];
         }
         if (param_1 == (AnonShape_004B9D90_4F3151F9 *)0x0) {
           return 0;
@@ -431,15 +431,15 @@ LAB_0047edd5:
         sVar15 = this->field_06A9;
         sVar18 = this->field_06AD;
         sVar14 = this->field_06AB;
-        if ((((sVar15 < 0) || (SHORT_007fb240 <= sVar15)) || (sVar14 < 0)) ||
-           (((SHORT_007fb242 <= sVar14 || (sVar18 < 0)) || (SHORT_007fb244 <= sVar18)))) {
+        if ((((sVar15 < 0) || (g_worldGrid.sizeX <= sVar15)) || (sVar14 < 0)) ||
+           (((g_worldGrid.sizeY <= sVar14 || (sVar18 < 0)) || (g_worldGrid.sizeZ <= sVar18)))) {
           param_1 = (AnonShape_004B9D90_4F3151F9 *)0x0;
         }
         else {
           param_1 = (AnonShape_004B9D90_4F3151F9 *)
-                    g_worldCells
-                    [(int)sVar18 * (int)SHORT_007fb246 + (int)sVar14 * (int)SHORT_007fb240 +
-                     (int)sVar15].objects[0];
+                    g_worldGrid.cells
+                    [(int)sVar18 * (int)g_worldGrid.planeStride +
+                     (int)sVar14 * (int)g_worldGrid.sizeX + (int)sVar15].objects[0];
         }
         if (((param_1 != (AnonShape_004B9D90_4F3151F9 *)0x0) &&
             (*(int *)&param_1->field_0x18 == this->field_06AF)) &&
@@ -580,12 +580,14 @@ LAB_0047edd5:
                 return iVar8;
               }
               if (local_10 == 0) {
-                uVar13 = CONCAT22((short)(uVar11 >> 0x10),this->field_06AB);
+                iVar8 = CONCAT22((short)(uVar11 >> 0x10),this->field_06AB);
                 uVar11 = (uint)(ushort)(this->field_06AD + 1);
-                iVar8 = CONCAT22((short)((uint)&this->field_0x6b3 >> 0x10),this->field_06A9);
+                iVar17 = CONCAT22((short)((uint)&this->field_0x6b3 >> 0x10),this->field_06A9);
                 this->field_06C3 = CASE_6;
-                thunk_FUN_0048dfd0(this,iVar8,uVar13,uVar11,iVar8,(int *)uVar13,uVar11,(short *)0x1,
-                                   (short *)&this->field_0x6b3,(short *)&this->field_0x6b5);
+                SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0048DFD0::thunk_FUN_0048dfd0
+                          ((AnonReceiver_0048DFD0 *)this,iVar17,iVar8,uVar11,iVar17,iVar8,
+                           (int *)uVar11,1,(short *)&this->field_0x6b3,(short *)&this->field_0x6b5,
+                           (short *)&this->field_0x6b7);
                 sub_00481520(this,(int)*(short *)&this->field_0x6b3,
                              (int)*(short *)&this->field_0x6b5,(int)*(short *)&this->field_0x6b7);
                 iVar8 = sub_0045FF50(this,0);
@@ -624,11 +626,13 @@ LAB_0047edd5:
             return -(uint)(iVar8 != 0);
           }
           if (iVar8 == 3) {
-            uVar13 = CONCAT22(extraout_var_02,this->field_06AB);
+            iVar8 = CONCAT22(extraout_var_02,this->field_06AB);
             uVar11 = (uint)(ushort)(this->field_06AD + 1);
-            iVar8 = CONCAT22((short)((uint)&this->field_0x6b3 >> 0x10),this->field_06A9);
-            thunk_FUN_0048dfd0(this,iVar8,uVar13,uVar11,iVar8,(int *)uVar13,uVar11,(short *)0x1,
-                               (short *)&this->field_0x6b3,(short *)&this->field_0x6b5);
+            iVar17 = CONCAT22((short)((uint)&this->field_0x6b3 >> 0x10),this->field_06A9);
+            SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0048DFD0::thunk_FUN_0048dfd0
+                      ((AnonReceiver_0048DFD0 *)this,iVar17,iVar8,uVar11,iVar17,iVar8,(int *)uVar11,
+                       1,(short *)&this->field_0x6b3,(short *)&this->field_0x6b5,
+                       (short *)&this->field_0x6b7);
             sub_00481520(this,(int)*(short *)&this->field_0x6b3,(int)*(short *)&this->field_0x6b5,
                          (int)*(short *)&this->field_0x6b7);
             sub_0045FF50(this,0);
@@ -638,15 +642,15 @@ LAB_0047edd5:
         sVar15 = this->field_06A9;
         sVar18 = this->field_06AD;
         sVar14 = this->field_06AB;
-        if (((((sVar15 < 0) || (SHORT_007fb240 <= sVar15)) || (sVar14 < 0)) ||
-            ((SHORT_007fb242 <= sVar14 || (sVar18 < 0)))) || (SHORT_007fb244 <= sVar18)) {
+        if (((((sVar15 < 0) || (g_worldGrid.sizeX <= sVar15)) || (sVar14 < 0)) ||
+            ((g_worldGrid.sizeY <= sVar14 || (sVar18 < 0)))) || (g_worldGrid.sizeZ <= sVar18)) {
           param_1 = (AnonShape_004B9D90_4F3151F9 *)0x0;
         }
         else {
           param_1 = (AnonShape_004B9D90_4F3151F9 *)
-                    g_worldCells
-                    [(int)sVar18 * (int)SHORT_007fb246 + (int)sVar14 * (int)SHORT_007fb240 +
-                     (int)sVar15].objects[0];
+                    g_worldGrid.cells
+                    [(int)sVar18 * (int)g_worldGrid.planeStride +
+                     (int)sVar14 * (int)g_worldGrid.sizeX + (int)sVar15].objects[0];
         }
         if (((param_1 != (AnonShape_004B9D90_4F3151F9 *)0x0) &&
             (*(int *)&param_1->field_0x18 == this->field_06AF)) &&
@@ -670,12 +674,14 @@ LAB_0047edd5:
           *(undefined4 *)&param_1->field_0x4b0 = 0;
         }
         if (*(int *)&this->field_0x6b9 != 1) {
-          uVar11 = CONCAT22((short)((uint)iVar8 >> 0x10),this->field_06AB);
-          iVar8 = CONCAT22((short)((uint)param_1 >> 0x10),this->field_06AD + 1);
+          iVar8 = CONCAT22((short)((uint)iVar8 >> 0x10),this->field_06AB);
+          uVar11 = CONCAT22((short)((uint)param_1 >> 0x10),this->field_06AD + 1);
           iVar17 = CONCAT22((short)((uint)&this->field_0x6b3 >> 0x10),this->field_06A9);
           this->field_06C3 = CASE_6;
-          thunk_FUN_0048dfd0(this,iVar17,uVar11,iVar8,iVar17,(int *)uVar11,iVar8,(short *)0x1,
-                             (short *)&this->field_0x6b3,(short *)&this->field_0x6b5);
+          SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0048DFD0::thunk_FUN_0048dfd0
+                    ((AnonReceiver_0048DFD0 *)this,iVar17,iVar8,uVar11,iVar17,iVar8,(int *)uVar11,1,
+                     (short *)&this->field_0x6b3,(short *)&this->field_0x6b5,
+                     (short *)&this->field_0x6b7);
           sub_00481520(this,(int)*(short *)&this->field_0x6b3,(int)*(short *)&this->field_0x6b5,
                        (int)*(short *)&this->field_0x6b7);
           iVar8 = sub_0045FF50(this,0);
@@ -697,15 +703,15 @@ cf_common_exit_0047F19A:
       sVar15 = this->field_06A9;
       sVar18 = this->field_06AD;
       sVar14 = this->field_06AB;
-      if ((((sVar15 < 0) || (SHORT_007fb240 <= sVar15)) || (sVar14 < 0)) ||
-         (((SHORT_007fb242 <= sVar14 || (sVar18 < 0)) || (SHORT_007fb244 <= sVar18)))) {
+      if ((((sVar15 < 0) || (g_worldGrid.sizeX <= sVar15)) || (sVar14 < 0)) ||
+         (((g_worldGrid.sizeY <= sVar14 || (sVar18 < 0)) || (g_worldGrid.sizeZ <= sVar18)))) {
         param_1 = (AnonShape_004B9D90_4F3151F9 *)0x0;
       }
       else {
         param_1 = (AnonShape_004B9D90_4F3151F9 *)
-                  g_worldCells
-                  [(int)sVar18 * (int)SHORT_007fb246 + (int)sVar14 * (int)SHORT_007fb240 +
-                   (int)sVar15].objects[0];
+                  g_worldGrid.cells
+                  [(int)sVar18 * (int)g_worldGrid.planeStride + (int)sVar14 * (int)g_worldGrid.sizeX
+                   + (int)sVar15].objects[0];
       }
       if (((param_1 == (AnonShape_004B9D90_4F3151F9 *)0x0) ||
           (*(int *)&param_1->field_0x18 != this->field_06AF)) ||
@@ -739,15 +745,15 @@ cf_common_exit_0047F19A:
       sVar15 = this->field_06A9;
       sVar18 = this->field_06AD;
       sVar14 = this->field_06AB;
-      if (((((sVar15 < 0) || (SHORT_007fb240 <= sVar15)) || (sVar14 < 0)) ||
-          ((SHORT_007fb242 <= sVar14 || (sVar18 < 0)))) || (SHORT_007fb244 <= sVar18)) {
+      if (((((sVar15 < 0) || (g_worldGrid.sizeX <= sVar15)) || (sVar14 < 0)) ||
+          ((g_worldGrid.sizeY <= sVar14 || (sVar18 < 0)))) || (g_worldGrid.sizeZ <= sVar18)) {
         param_1 = (AnonShape_004B9D90_4F3151F9 *)0x0;
       }
       else {
         param_1 = (AnonShape_004B9D90_4F3151F9 *)
-                  g_worldCells
-                  [(int)sVar18 * (int)SHORT_007fb246 + (int)sVar14 * (int)SHORT_007fb240 +
-                   (int)sVar15].objects[0];
+                  g_worldGrid.cells
+                  [(int)sVar18 * (int)g_worldGrid.planeStride + (int)sVar14 * (int)g_worldGrid.sizeX
+                   + (int)sVar15].objects[0];
       }
       if (((param_1 == (AnonShape_004B9D90_4F3151F9 *)0x0) ||
           (*(int *)&param_1->field_0x18 != this->field_06AF)) ||
@@ -769,15 +775,15 @@ cf_common_exit_0047F19A:
       sVar15 = this->field_06A9;
       sVar18 = this->field_06AD;
       sVar14 = this->field_06AB;
-      if ((((sVar15 < 0) || (SHORT_007fb240 <= sVar15)) || (sVar14 < 0)) ||
-         (((SHORT_007fb242 <= sVar14 || (sVar18 < 0)) || (SHORT_007fb244 <= sVar18)))) {
+      if ((((sVar15 < 0) || (g_worldGrid.sizeX <= sVar15)) || (sVar14 < 0)) ||
+         (((g_worldGrid.sizeY <= sVar14 || (sVar18 < 0)) || (g_worldGrid.sizeZ <= sVar18)))) {
         param_1 = (AnonShape_004B9D90_4F3151F9 *)0x0;
       }
       else {
         param_1 = (AnonShape_004B9D90_4F3151F9 *)
-                  g_worldCells
-                  [(int)sVar18 * (int)SHORT_007fb246 + (int)sVar14 * (int)SHORT_007fb240 +
-                   (int)sVar15].objects[0];
+                  g_worldGrid.cells
+                  [(int)sVar18 * (int)g_worldGrid.planeStride + (int)sVar14 * (int)g_worldGrid.sizeX
+                   + (int)sVar15].objects[0];
       }
       if (((param_1 == (AnonShape_004B9D90_4F3151F9 *)0x0) ||
           (*(int *)&param_1->field_0x18 != this->field_06AF)) ||

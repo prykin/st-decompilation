@@ -42,7 +42,7 @@ FSGSTy::SetLadder(FSGSTy *this,undefined4 param_1,undefined4 param_2,int param_3
     if (iVar2 == 0) {
       puVar6 = &local_8->field_1EDB;
       if (local_8->field_1EDB != 0) {
-        FUN_006ab060((LPVOID *)puVar6);
+        FreeAndNull((void **)puVar6);
       }
       this_01->field_1EDF = param_2;
       this_01->field_1EE3 = param_3;

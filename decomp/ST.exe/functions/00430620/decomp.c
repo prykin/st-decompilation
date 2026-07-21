@@ -7,8 +7,7 @@ undefined4 __thiscall STAllPlayersC::IsTorpLive(STAllPlayersC *this,short param_
 
 {
   code *pcVar1;
-  int errorCode;
-  uint uVar2;
+  int iVar2;
   int iVar3;
   undefined4 uVar4;
   void *unaff_ESI;
@@ -20,23 +19,23 @@ undefined4 __thiscall STAllPlayersC::IsTorpLive(STAllPlayersC *this,short param_
   pIVar5 = g_currentExceptionFrame;
   local_c = 0;
   g_currentExceptionFrame = (InternalExceptionFrame *)&stack0xffffffb0;
-  errorCode = Library::MSVCRT::__setjmp3(local_4c,0,unaff_ESI,pIVar5);
-  if (errorCode != 0) {
+  iVar2 = Library::MSVCRT::__setjmp3(local_4c,0,unaff_ESI,pIVar5);
+  if (iVar2 != 0) {
     g_currentExceptionFrame = pIVar5;
-    if (errorCode != -0x5001fff7) {
-      iVar3 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0x80b,0,errorCode,
+    if (iVar2 != -0x5001fff7) {
+      iVar3 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0x80b,0,iVar2,
                                  &DAT_007a4ccc,s_STAllPlayersC__IsTorpLive_007a6740);
       if (iVar3 != 0) {
         pcVar1 = (code *)swi(3);
         uVar4 = (*pcVar1)();
         return uVar4;
       }
-      RaiseInternalException(errorCode,0,s_E____titans_wlad_to_allpl_cpp_007a6004,0x80c);
+      RaiseInternalException(iVar2,0,s_E____titans_wlad_to_allpl_cpp_007a6004,0x80c);
     }
     return local_c;
   }
-  uVar2 = FUN_006acc70((AnonShape_006ACC70_C8641025 *)PTR_007fa130,(int)param_1,&local_8);
-  if (uVar2 != 0xfffffffc) {
+  iVar2 = DArrayGetElement(PTR_007fa130,(int)param_1,&local_8);
+  if (iVar2 != -4) {
     if (local_8 == 0) {
       RaiseInternalException
                 (-0x5001fff7,g_overwriteContext_007ED77C,s_E____titans_wlad_to_allpl_cpp_007a6004,

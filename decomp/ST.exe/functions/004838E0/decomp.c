@@ -1,7 +1,14 @@
 
 /* WARNING: Removing unreachable block (ram,0x00483caa) */
+/* [STHiddenThisApplier] Anonymous hidden receiver recovered as
+   /SubmarineTitans/Recovered/HiddenThis/AnonReceiver_004603B0.
+   Evidence: incoming_receiver_captures=1; receiver_accesses=4; incoming_edx_uses=0; calls=3;
+   ecx_pointer_setup=3; ecx_scalar_setup=0; caller_cleanup_calls=0; callee_ret_pop=[4];
+   expected_stack=4; receiver_family_members=3; adopt_untyped_existing_thiscall */
 
-undefined4 __thiscall FUN_004838e0(void *this,int param_1)
+undefined4 __thiscall
+SubmarineTitans::Recovered::HiddenThis::AnonReceiver_004603B0::FUN_004838e0
+          (AnonReceiver_004603B0 *this,int param_1)
 
 {
   short sVar1;
@@ -47,9 +54,9 @@ undefined4 __thiscall FUN_004838e0(void *this,int param_1)
   uVar20 = (uint)*(short *)(param_1 + 0x38);
   uVar6 = (int)sVar3 - uVar20;
   uVar21 = (int)uVar6 >> 0x1f;
-  uVar7 = (uint)*(short *)((int)this + 0x45);
-  uVar8 = (uint)*(short *)((int)this + 0x43);
-  uVar9 = (uint)*(short *)((int)this + 0x41);
+  uVar7 = (uint)*(short *)&this->field_0x45;
+  uVar8 = (uint)*(short *)&this->field_0x43;
+  uVar9 = (uint)*(short *)&this->field_0x41;
   lVar22 = Library::MSVCRT::__allmul(uVar9,(int)uVar9 >> 0x1f,uVar4,uVar17);
   lVar23 = Library::MSVCRT::__allmul(uVar8,(int)uVar8 >> 0x1f,uVar5,uVar19);
   lVar24 = Library::MSVCRT::__allmul(uVar7,(int)uVar7 >> 0x1f,uVar6,uVar21);
@@ -124,7 +131,7 @@ undefined4 __thiscall FUN_004838e0(void *this,int param_1)
   iVar12 = (((int)uVar7 >> 0x1f) - (int)((ulonglong)uVar25 >> 0x20)) - (uint)(uVar7 < (uint)uVar25);
   iVar13 = (((int)uVar8 >> 0x1f) - local_48._4_4_) - (uint)(uVar8 < (uint)local_48);
   iVar14 = (((int)uVar9 >> 0x1f) - iVar14) - (uint)(uVar9 < uVar20);
-  iVar10 = ((int)*(short *)((int)this + 0x237) << 2) / 5;
+  iVar10 = ((int)*(short *)&this->field_0x237 << 2) / 5;
   lVar24 = Library::MSVCRT::__allmul(uVar9 - uVar20,iVar14,uVar9 - uVar20,iVar14);
   lVar22 = Library::MSVCRT::__allmul(uVar8 - (uint)local_48,iVar13,uVar8 - (uint)local_48,iVar13);
   lVar23 = Library::MSVCRT::__allmul(uVar4,iVar12,uVar4,iVar12);

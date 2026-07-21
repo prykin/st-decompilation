@@ -18,12 +18,12 @@ void __thiscall CPanelTy::SetNewDeep(CPanelTy *this,byte param_1,undefined1 para
   byte bVar10;
   undefined4 unaff_ESI;
   void *unaff_EDI;
-  AnonShape_006B84D0_7C7D97C6 *pAVar11;
+  AnonShape_006B5B10_E0D06CF1 *pAVar11;
   InternalExceptionFrame local_58;
   byte local_14;
   undefined3 uStack_13;
   CPanelTy *local_10;
-  AnonShape_006B84D0_7C7D97C6 *local_c;
+  AnonShape_006B5B10_E0D06CF1 *local_c;
   undefined1 local_5;
   
   if (DAT_00808784 == 0) {
@@ -66,7 +66,7 @@ void __thiscall CPanelTy::SetNewDeep(CPanelTy *this,byte param_1,undefined1 para
       iVar5 = Library::MSVCRT::__setjmp3(local_58.jumpBuffer,0,unaff_EDI,unaff_ESI);
       pCVar4 = local_10;
       if (iVar5 == 0) {
-        pAVar11 = (AnonShape_006B84D0_7C7D97C6 *)(uint)param_1;
+        pAVar11 = (AnonShape_006B5B10_E0D06CF1 *)(uint)param_1;
         bVar10 = *(byte *)((int)&pAVar11[0x2a].field_0008 + (int)local_10);
         local_c = pAVar11;
         if (bVar10 != 0xff) {
@@ -77,9 +77,10 @@ void __thiscall CPanelTy::SetNewDeep(CPanelTy *this,byte param_1,undefined1 para
                 uVar7 = uVar7 + 5;
               }
               uVar9 = (uint)(byte)local_10->field_02A8;
-              pbVar6 = (byte *)FUN_0070b3a0(local_10->field_02A2,uVar7);
+              pbVar6 = (byte *)FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)
+                                            local_10->field_02A2,uVar7);
               iVar5 = (5 - uVar9) * 0xb;
-              pAVar11 = (AnonShape_006B84D0_7C7D97C6 *)pCVar4->field_018C;
+              pAVar11 = (AnonShape_006B5B10_E0D06CF1 *)pCVar4->field_018C;
             }
             else {
               uVar7 = (uint)bVar10;
@@ -90,8 +91,9 @@ void __thiscall CPanelTy::SetNewDeep(CPanelTy *this,byte param_1,undefined1 para
                 iVar5 = uVar7 + 0x19;
               }
               uVar9 = (uint)*(byte *)((int)&pAVar11[0x2a].field_0008 + (int)local_10);
-              pbVar6 = (byte *)FUN_0070b3a0(local_10->field_02A2,iVar5);
-              pAVar11 = (AnonShape_006B84D0_7C7D97C6 *)pCVar4->field_0194;
+              pbVar6 = (byte *)FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)
+                                            local_10->field_02A2,iVar5);
+              pAVar11 = (AnonShape_006B5B10_E0D06CF1 *)pCVar4->field_0194;
               iVar5 = uVar9 * 0xb + 0x87;
             }
             DibPut(pAVar11,iVar5,uVar9 * 0xb + 0xb,'\x06',pbVar6);
@@ -111,14 +113,14 @@ void __thiscall CPanelTy::SetNewDeep(CPanelTy *this,byte param_1,undefined1 para
           else {
             if (param_1 == 0) {
               cVar1 = (&local_10->field_0xb8d)[(byte)local_10->field_02A8];
-              local_c = (AnonShape_006B84D0_7C7D97C6 *)local_10->field_0188;
+              local_c = (AnonShape_006B5B10_E0D06CF1 *)local_10->field_0188;
             }
             else {
               cVar1 = (&local_10->field_0xc7b)[bVar10];
-              local_c = (AnonShape_006B84D0_7C7D97C6 *)local_10->field_0198;
+              local_c = (AnonShape_006B5B10_E0D06CF1 *)local_10->field_0198;
             }
-            pbVar6 = (byte *)FUN_0070b3a0(local_10->field_02A2,
-                                          (-(uint)(cVar1 != '\0') & 0xfffffffe) + 2);
+            pbVar6 = (byte *)FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)local_10->field_02A2
+                                          ,(-(uint)(cVar1 != '\0') & 0xfffffffe) + 2);
             DibPut(local_c,7,
                    (uint)*(byte *)((int)&pAVar11[0x2a].field_0008 + (int)pCVar4) * 0x1d + 6,'\x01',
                    pbVar6);

@@ -1,5 +1,8 @@
 
-undefined4 __cdecl FUN_006a24e0(ushort *param_1,int param_2,ushort *param_3,int param_4,int param_5)
+/* [STReturnSemanticsApplier] boolean_return_domain.
+   Evidence: all explicit return values are constants in {0,1}: [0, 1, 1, 0, 0] */
+
+bool __cdecl FUN_006a24e0(ushort *param_1,int param_2,ushort *param_3,int param_4,int param_5)
 
 {
   ushort uVar1;
@@ -36,24 +39,24 @@ undefined4 __cdecl FUN_006a24e0(ushort *param_1,int param_2,ushort *param_3,int 
         if (param_5 == 1) {
           uVar1 = param_1[1];
           if ((uVar1 == param_3[1]) && (uVar1 == 0)) {
-            return 0;
+            return false;
           }
           if ((uVar1 & 0x2000) != 0) {
-            return 1;
+            return true;
           }
         }
         else {
           uVar1 = *param_1;
           if ((uVar1 != *param_3) || (uVar1 != 1)) {
             if ((uVar1 & 0x2000) != 0) {
-              return 1;
+              return true;
             }
-            return 0;
+            return false;
           }
         }
       }
     }
   }
-  return 0;
+  return false;
 }
 

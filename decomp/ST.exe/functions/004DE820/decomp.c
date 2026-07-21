@@ -7,7 +7,7 @@ undefined4 __fastcall FUN_004de820(int *param_1)
   int iVar3;
   undefined2 extraout_var_01;
   STGroupBoatC *this;
-  AnonShape_006B1190_EDB2B5FD *groupContent;
+  DArrayTy *array;
   TLOBaseTy *this_00;
   undefined3 extraout_var;
   undefined3 extraout_var_00;
@@ -24,32 +24,31 @@ undefined4 __fastcall FUN_004de820(int *param_1)
   this = thunk_FUN_0042b760(CONCAT31((int3)((uint)extraout_ECX >> 8),(char)param_1[9]),
                             CONCAT22(extraout_var_01,(short)param_1[0xc]));
   if (((this != (STGroupBoatC *)0x0) &&
-      (groupContent = (AnonShape_006B1190_EDB2B5FD *)
-                      STGroupC::GetGroupContent((STGroupC *)this,iVar3),
-      groupContent != (AnonShape_006B1190_EDB2B5FD *)0x0)) && (groupContent->field_000C != 0)) {
-    groupContent->field_0004 = 0;
-    iVar3 = FUN_006b1190(groupContent,&local_8);
+      (array = (DArrayTy *)STGroupC::GetGroupContent((STGroupC *)this,iVar3),
+      array != (DArrayTy *)0x0)) && (array->count != 0)) {
+    array->iteratorIndex = 0;
+    iVar3 = FUN_006b1190((AnonShape_006B1190_EDB2B5FD *)array,&local_8);
     while (-1 < iVar3) {
       this_00 = (TLOBaseTy *)
                 STAllPlayersC::GetObjPtr
                           (g_sTAllPlayers_007FA174,
                            CONCAT31((int3)((uint)iVar3 >> 8),(char)param_1[9]),local_8,CASE_1);
       if (((this_00 != (TLOBaseTy *)0x0) && (iVar3 = (*this_00->vtable->vfunc_2C)(), iVar3 == 0x45))
-         && ((this_00->field_04D0 == 0 &&
+         && ((this_00->field_04D0 == CASE_0 &&
              ((iVar3 = thunk_FUN_004c7860(this_00,3,0,1,1,1), iVar3 != 0 &&
               (bVar1 = thunk_FUN_004c7c20((int)this_00), CONCAT31(extraout_var,bVar1) != 0)))))) {
         iVar3 = thunk_FUN_004c7860(this_00,3,0,1,1,1);
         if ((iVar3 != 0) &&
            (bVar2 = thunk_FUN_004c7c20((int)this_00), CONCAT31(extraout_var_00,bVar2) != 0)) {
           thunk_FUN_004c7cc0(this_00,3,0,1,0,0xffffffff,0,0xff,(char *)0x0);
-          this_00->field_04D0 = 2;
+          this_00->field_04D0 = CASE_2;
           TLOBaseTy::RotateSpr(this_00,0);
         }
         bVar2 = true;
       }
-      iVar3 = FUN_006b1190(groupContent,&local_8);
+      iVar3 = FUN_006b1190((AnonShape_006B1190_EDB2B5FD *)array,&local_8);
     }
-    FUN_006ae110((byte *)groupContent);
+    DArrayDestroy(array);
     if (bVar2) {
       return 1;
     }

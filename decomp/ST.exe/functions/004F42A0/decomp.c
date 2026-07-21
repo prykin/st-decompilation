@@ -71,12 +71,12 @@ cf_common_join_004F4331:
       local_8 = cMf32::RecGet(DAT_00806790,param_3,text,(int *)0x0,1);
       pCVar3 = local_14;
       uVar2 = (uint)param_1;
-      DibPut((AnonShape_006B84D0_7C7D97C6 *)(&local_14->field_0180)[uVar2],local_10,local_c,param_3,
+      DibPut((AnonShape_006B5B10_E0D06CF1 *)(&local_14->field_0180)[uVar2],local_10,local_c,param_3,
              (byte *)local_8);
       cMf32::RecMemFree(DAT_00806790,(uint *)&local_8);
       if ((param_2->field_0014->field_0004 == 3) && (param_5 != (char *)0x0)) {
         local_8 = cMf32::RecGet(DAT_00806790,6,param_5,(int *)0x0,1);
-        DibPut((AnonShape_006B84D0_7C7D97C6 *)(&pCVar3->field_0180)[uVar2],local_10,local_c,'\x06',
+        DibPut((AnonShape_006B5B10_E0D06CF1 *)(&pCVar3->field_0180)[uVar2],local_10,local_c,'\x06',
                (byte *)local_8);
         cMf32::RecMemFree(DAT_00806790,(uint *)&local_8);
       }

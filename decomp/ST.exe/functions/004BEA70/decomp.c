@@ -49,7 +49,7 @@ bool __thiscall FUN_004bea70(void *this,int *param_1)
   *(byte *)((int)param_1 + 5) =
        ((*(uint *)((int)this + 0x24) != (uint)*(byte *)(*(int *)((int)this + 0x10) + 0x112d)) - 1U &
        0xfe) + 3;
-  iVar6 = thunk_FUN_004406c0(*(char *)((int)this + 0x23d));
+  iVar6 = GetPlayerRaceId(*(char *)((int)this + 0x23d));
   *(char *)(param_1 + 1) = (char)iVar6;
   if (((*(byte *)((int)this + 0x1d1) & 4) == 0) && (*(int *)((int)this + 0x420) == 0)) {
     uVar4 = 1;
@@ -82,7 +82,7 @@ bool __thiscall FUN_004bea70(void *this,int *param_1)
   }
   iVar6 = thunk_FUN_004e8030(*(int *)((int)this + 0x5ac));
   if (iVar6 == 3) {
-    iVar7 = thunk_FUN_004406c0(*(char *)((int)this + 0x24));
+    iVar7 = GetPlayerRaceId(*(char *)((int)this + 0x24));
     if ((char)iVar7 != '\x03') {
 LAB_004beb5f:
       *(undefined1 *)((int)param_1 + 5) = 3;
@@ -102,7 +102,7 @@ LAB_004bebef:
     *(undefined1 *)((int)param_1 + 0xf) = uVar4;
   }
   else {
-    iVar7 = thunk_FUN_004406c0(*(char *)((int)this + 0x24));
+    iVar7 = GetPlayerRaceId(*(char *)((int)this + 0x24));
     if ((char)iVar7 == '\x03') goto LAB_004beb5f;
 LAB_004beb63:
     if ((iVar6 != 1) && (iVar6 != 2)) goto LAB_004beb6d;
@@ -142,9 +142,9 @@ LAB_004bf427:
       uVar4 = 1;
     }
     else {
-      uVar10 = thunk_FUN_004406c0((char)*(int *)((int)this + 0x23d));
+      uVar10 = GetPlayerRaceId((char)*(int *)((int)this + 0x23d));
       iVar6 = *(int *)((int)this + 0x235);
-      uVar11 = thunk_FUN_004406c0(*(char *)((int)this + 0x24));
+      uVar11 = GetPlayerRaceId(*(char *)((int)this + 0x24));
       if ((&DAT_007e1984)[(uVar11 & 0xff) + ((uVar10 & 0xff) + iVar6 * 3) * 3] != '\0')
       goto LAB_004bf427;
 LAB_004bf438:
@@ -153,9 +153,9 @@ LAB_004bf438:
     *(undefined1 *)(param_1 + 4) = uVar4;
     *(undefined1 *)((int)param_1 + 0xb) = 0x26;
     if (*(int *)((int)this + 0x24) != *(int *)((int)this + 0x23d)) {
-      uVar10 = thunk_FUN_004406c0((char)*(int *)((int)this + 0x23d));
+      uVar10 = GetPlayerRaceId((char)*(int *)((int)this + 0x23d));
       iVar6 = *(int *)((int)this + 0x235);
-      uVar11 = thunk_FUN_004406c0(*(char *)((int)this + 0x24));
+      uVar11 = GetPlayerRaceId(*(char *)((int)this + 0x24));
       if ((&DAT_007e1984)[(uVar11 & 0xff) + ((uVar10 & 0xff) + iVar6 * 3) * 3] == '\0')
       goto cf_common_join_004C01F3;
     }
@@ -165,9 +165,9 @@ LAB_004bf438:
   case 0x33:
     *(undefined1 *)((int)param_1 + 10) = 0x26;
     if (*(int *)((int)this + 0x24) != *(int *)((int)this + 0x23d)) {
-      uVar10 = thunk_FUN_004406c0((char)*(int *)((int)this + 0x23d));
+      uVar10 = GetPlayerRaceId((char)*(int *)((int)this + 0x23d));
       iVar6 = *(int *)((int)this + 0x235);
-      uVar11 = thunk_FUN_004406c0(*(char *)((int)this + 0x24));
+      uVar11 = GetPlayerRaceId(*(char *)((int)this + 0x24));
       if ((&DAT_007e1984)[(uVar11 & 0xff) + ((uVar10 & 0xff) + iVar6 * 3) * 3] == '\0')
       goto cf_common_join_004C0278;
     }
@@ -176,9 +176,9 @@ LAB_004bf438:
   case 0x35:
     *(undefined1 *)((int)param_1 + 10) = 0x21;
     if (*(int *)((int)this + 0x24) != *(int *)((int)this + 0x23d)) {
-      uVar10 = thunk_FUN_004406c0((char)*(int *)((int)this + 0x23d));
+      uVar10 = GetPlayerRaceId((char)*(int *)((int)this + 0x23d));
       iVar6 = *(int *)((int)this + 0x235);
-      uVar11 = thunk_FUN_004406c0(*(char *)((int)this + 0x24));
+      uVar11 = GetPlayerRaceId(*(char *)((int)this + 0x24));
       if ((&DAT_007e1984)[(uVar11 & 0xff) + ((uVar10 & 0xff) + iVar6 * 3) * 3] == '\0')
       goto cf_common_join_004C0278;
     }
@@ -193,9 +193,9 @@ LAB_004bef54:
   case 0x37:
     *(undefined1 *)((int)param_1 + 10) = 0x26;
     if (*(int *)((int)this + 0x24) != *(int *)((int)this + 0x23d)) {
-      uVar10 = thunk_FUN_004406c0((char)*(int *)((int)this + 0x23d));
+      uVar10 = GetPlayerRaceId((char)*(int *)((int)this + 0x23d));
       iVar6 = *(int *)((int)this + 0x235);
-      uVar11 = thunk_FUN_004406c0(*(char *)((int)this + 0x24));
+      uVar11 = GetPlayerRaceId(*(char *)((int)this + 0x24));
       if ((&DAT_007e1984)[(uVar11 & 0xff) + ((uVar10 & 0xff) + iVar6 * 3) * 3] == '\0')
       goto cf_common_join_004C0278;
     }
@@ -204,9 +204,9 @@ LAB_004bef54:
   case 0x3a:
     *(undefined1 *)((int)param_1 + 10) = 0x22;
     if (*(int *)((int)this + 0x24) != *(int *)((int)this + 0x23d)) {
-      uVar10 = thunk_FUN_004406c0((char)*(int *)((int)this + 0x23d));
+      uVar10 = GetPlayerRaceId((char)*(int *)((int)this + 0x23d));
       iVar6 = *(int *)((int)this + 0x235);
-      uVar11 = thunk_FUN_004406c0(*(char *)((int)this + 0x24));
+      uVar11 = GetPlayerRaceId(*(char *)((int)this + 0x24));
       if ((&DAT_007e1984)[(uVar11 & 0xff) + ((uVar10 & 0xff) + iVar6 * 3) * 3] == '\0')
       goto cf_common_join_004C0278;
     }
@@ -216,9 +216,9 @@ LAB_004bef54:
     *(undefined1 *)((int)param_1 + 10) = 0x28;
     if (*(int *)((int)this + 0x245) == 0) {
       if (*(int *)((int)this + 0x24) != *(int *)((int)this + 0x23d)) {
-        uVar10 = thunk_FUN_004406c0((char)*(int *)((int)this + 0x23d));
+        uVar10 = GetPlayerRaceId((char)*(int *)((int)this + 0x23d));
         iVar6 = *(int *)((int)this + 0x235);
-        uVar11 = thunk_FUN_004406c0(*(char *)((int)this + 0x24));
+        uVar11 = GetPlayerRaceId(*(char *)((int)this + 0x24));
         if ((&DAT_007e1984)[(uVar11 & 0xff) + ((uVar10 & 0xff) + iVar6 * 3) * 3] == '\0')
         goto LAB_004bf7a5;
       }
@@ -233,9 +233,9 @@ LAB_004bf7a5:
     *(undefined1 *)((int)param_1 + 0xb) = 0x29;
     if (*(int *)((int)this + 0x245) != 0) goto cf_common_join_004C01F3;
     if (*(int *)((int)this + 0x24) != *(int *)((int)this + 0x23d)) {
-      uVar10 = thunk_FUN_004406c0((char)*(int *)((int)this + 0x23d));
+      uVar10 = GetPlayerRaceId((char)*(int *)((int)this + 0x23d));
       iVar6 = *(int *)((int)this + 0x235);
-      uVar11 = thunk_FUN_004406c0(*(char *)((int)this + 0x24));
+      uVar11 = GetPlayerRaceId(*(char *)((int)this + 0x24));
       if ((&DAT_007e1984)[(uVar11 & 0xff) + ((uVar10 & 0xff) + iVar6 * 3) * 3] == '\0')
       goto cf_common_join_004C01F3;
     }
@@ -280,7 +280,7 @@ LAB_004becaa:
     }
     *(undefined1 *)(param_1 + 4) = uVar4;
 switchD_004bec4d_caseD_36:
-    uVar10 = thunk_FUN_004406c0(*(char *)((int)this + 0x24));
+    uVar10 = GetPlayerRaceId(*(char *)((int)this + 0x24));
     uVar10 = uVar10 & 0xff;
     if (uVar10 == 1) {
       iVar6 = 0x1d;
@@ -305,7 +305,7 @@ switchD_004bec4d_caseD_36:
       }
       *(undefined1 *)(param_1 + 4) = uVar4;
     }
-    uVar10 = thunk_FUN_004406c0(*(char *)((int)this + 0x24));
+    uVar10 = GetPlayerRaceId(*(char *)((int)this + 0x24));
     if ((uVar10 & 0xff) == 1) {
       iVar6 = 0x10;
     }
@@ -315,7 +315,7 @@ switchD_004bec4d_caseD_36:
     else {
       iVar6 = 0;
     }
-    uVar10 = thunk_FUN_004406c0(*(char *)((int)this + 0x23d));
+    uVar10 = GetPlayerRaceId(*(char *)((int)this + 0x23d));
     if (*(int *)(&DAT_00791b14 + ((uVar10 & 0xff) + *(int *)((int)this + 0x235) * 3) * 4) != 0) {
       if (((iVar6 == 0) ||
           (iVar7 = thunk_FUN_004e60d0(*(int *)((int)this + 0x24),iVar6), iVar7 == 0)) ||
@@ -390,9 +390,9 @@ LAB_004bf5fe:
       uVar4 = 1;
     }
     else {
-      uVar10 = thunk_FUN_004406c0((char)*(int *)((int)this + 0x23d));
+      uVar10 = GetPlayerRaceId((char)*(int *)((int)this + 0x23d));
       iVar6 = *(int *)((int)this + 0x235);
-      uVar11 = thunk_FUN_004406c0(*(char *)((int)this + 0x24));
+      uVar11 = GetPlayerRaceId(*(char *)((int)this + 0x24));
       if ((&DAT_007e1984)[(uVar11 & 0xff) + ((uVar10 & 0xff) + iVar6 * 3) * 3] != '\0')
       goto LAB_004bf5fe;
 LAB_004bf624:
@@ -401,9 +401,9 @@ LAB_004bf624:
     *(undefined1 *)(param_1 + 4) = uVar4;
     *(undefined1 *)((int)param_1 + 0xb) = 0x26;
     if (*(int *)((int)this + 0x24) != *(int *)((int)this + 0x23d)) {
-      uVar10 = thunk_FUN_004406c0((char)*(int *)((int)this + 0x23d));
+      uVar10 = GetPlayerRaceId((char)*(int *)((int)this + 0x23d));
       iVar6 = *(int *)((int)this + 0x235);
-      uVar11 = thunk_FUN_004406c0(*(char *)((int)this + 0x24));
+      uVar11 = GetPlayerRaceId(*(char *)((int)this + 0x24));
       if ((&DAT_007e1984)[(uVar11 & 0xff) + ((uVar10 & 0xff) + iVar6 * 3) * 3] == '\0')
       goto cf_common_join_004C01F3;
     }
@@ -413,9 +413,9 @@ LAB_004bf624:
   case 0x43:
     *(undefined1 *)((int)param_1 + 10) = 0x23;
     if (*(int *)((int)this + 0x24) != *(int *)((int)this + 0x23d)) {
-      uVar10 = thunk_FUN_004406c0((char)*(int *)((int)this + 0x23d));
+      uVar10 = GetPlayerRaceId((char)*(int *)((int)this + 0x23d));
       iVar6 = *(int *)((int)this + 0x235);
-      uVar11 = thunk_FUN_004406c0(*(char *)((int)this + 0x24));
+      uVar11 = GetPlayerRaceId(*(char *)((int)this + 0x24));
       if ((&DAT_007e1984)[(uVar11 & 0xff) + ((uVar10 & 0xff) + iVar6 * 3) * 3] == '\0')
       goto cf_common_join_004C0278;
     }
@@ -428,9 +428,9 @@ joined_r0x004bf200:
   case 0x44:
     *(undefined1 *)((int)param_1 + 10) = 0x1b;
     if (*(int *)((int)this + 0x24) != *(int *)((int)this + 0x23d)) {
-      uVar10 = thunk_FUN_004406c0((char)*(int *)((int)this + 0x23d));
+      uVar10 = GetPlayerRaceId((char)*(int *)((int)this + 0x23d));
       iVar6 = *(int *)((int)this + 0x235);
-      uVar11 = thunk_FUN_004406c0(*(char *)((int)this + 0x24));
+      uVar11 = GetPlayerRaceId(*(char *)((int)this + 0x24));
       if ((&DAT_007e1984)[(uVar11 & 0xff) + ((uVar10 & 0xff) + iVar6 * 3) * 3] == '\0')
       goto cf_common_join_004C0278;
     }
@@ -444,9 +444,9 @@ LAB_004bf708:
   case 0x45:
     *(undefined1 *)((int)param_1 + 10) = 0x1a;
     if (*(int *)((int)this + 0x24) != *(int *)((int)this + 0x23d)) {
-      uVar10 = thunk_FUN_004406c0((char)*(int *)((int)this + 0x23d));
+      uVar10 = GetPlayerRaceId((char)*(int *)((int)this + 0x23d));
       iVar6 = *(int *)((int)this + 0x235);
-      uVar11 = thunk_FUN_004406c0(*(char *)((int)this + 0x24));
+      uVar11 = GetPlayerRaceId(*(char *)((int)this + 0x24));
       if ((&DAT_007e1984)[(uVar11 & 0xff) + ((uVar10 & 0xff) + iVar6 * 3) * 3] == '\0')
       goto cf_common_join_004C0278;
     }
@@ -464,9 +464,9 @@ LAB_004bf508:
       uVar4 = 1;
     }
     else {
-      uVar10 = thunk_FUN_004406c0((char)*(int *)((int)this + 0x23d));
+      uVar10 = GetPlayerRaceId((char)*(int *)((int)this + 0x23d));
       iVar6 = *(int *)((int)this + 0x235);
-      uVar11 = thunk_FUN_004406c0(*(char *)((int)this + 0x24));
+      uVar11 = GetPlayerRaceId(*(char *)((int)this + 0x24));
       if ((&DAT_007e1984)[(uVar11 & 0xff) + ((uVar10 & 0xff) + iVar6 * 3) * 3] != '\0')
       goto LAB_004bf508;
 LAB_004bf52e:
@@ -475,9 +475,9 @@ LAB_004bf52e:
     *(undefined1 *)(param_1 + 4) = uVar4;
     *(undefined1 *)((int)param_1 + 0xb) = 0x26;
     if (*(int *)((int)this + 0x24) != *(int *)((int)this + 0x23d)) {
-      uVar10 = thunk_FUN_004406c0((char)*(int *)((int)this + 0x23d));
+      uVar10 = GetPlayerRaceId((char)*(int *)((int)this + 0x23d));
       iVar6 = *(int *)((int)this + 0x235);
-      uVar11 = thunk_FUN_004406c0(*(char *)((int)this + 0x24));
+      uVar11 = GetPlayerRaceId(*(char *)((int)this + 0x24));
       if ((&DAT_007e1984)[(uVar11 & 0xff) + ((uVar10 & 0xff) + iVar6 * 3) * 3] == '\0')
       goto cf_common_join_004C01F3;
     }
@@ -488,9 +488,9 @@ LAB_004bf52e:
     if (*(int *)((int)this + 0x4d0) != 1) {
       *(undefined1 *)((int)param_1 + 10) = 0x24;
       if (*(int *)((int)this + 0x24) != *(int *)((int)this + 0x23d)) {
-        uVar10 = thunk_FUN_004406c0((char)*(int *)((int)this + 0x23d));
+        uVar10 = GetPlayerRaceId((char)*(int *)((int)this + 0x23d));
         iVar6 = *(int *)((int)this + 0x235);
-        uVar11 = thunk_FUN_004406c0(*(char *)((int)this + 0x24));
+        uVar11 = GetPlayerRaceId(*(char *)((int)this + 0x24));
         if ((&DAT_007e1984)[(uVar11 & 0xff) + ((uVar10 & 0xff) + iVar6 * 3) * 3] == '\0')
         goto cf_common_join_004C0278;
       }
@@ -500,9 +500,9 @@ LAB_004bf52e:
     }
     *(undefined1 *)((int)param_1 + 10) = 0x25;
     if (*(int *)((int)this + 0x24) != *(int *)((int)this + 0x23d)) {
-      uVar10 = thunk_FUN_004406c0((char)*(int *)((int)this + 0x23d));
+      uVar10 = GetPlayerRaceId((char)*(int *)((int)this + 0x23d));
       iVar6 = *(int *)((int)this + 0x235);
-      uVar11 = thunk_FUN_004406c0(*(char *)((int)this + 0x24));
+      uVar11 = GetPlayerRaceId(*(char *)((int)this + 0x24));
       if ((&DAT_007e1984)[(uVar11 & 0xff) + ((uVar10 & 0xff) + iVar6 * 3) * 3] == '\0')
       goto cf_common_join_004C0278;
     }
@@ -520,9 +520,9 @@ LAB_004beff1:
       uVar4 = 1;
     }
     else {
-      uVar10 = thunk_FUN_004406c0((char)*(int *)((int)this + 0x23d));
+      uVar10 = GetPlayerRaceId((char)*(int *)((int)this + 0x23d));
       iVar6 = *(int *)((int)this + 0x235);
-      uVar11 = thunk_FUN_004406c0(*(char *)((int)this + 0x24));
+      uVar11 = GetPlayerRaceId(*(char *)((int)this + 0x24));
       if ((&DAT_007e1984)[(uVar11 & 0xff) + ((uVar10 & 0xff) + iVar6 * 3) * 3] != '\0')
       goto LAB_004beff1;
 LAB_004bf02b:
@@ -531,9 +531,9 @@ LAB_004bf02b:
     *(undefined1 *)(param_1 + 4) = uVar4;
     *(undefined1 *)((int)param_1 + 0xb) = 0x19;
     if (*(int *)((int)this + 0x24) != *(int *)((int)this + 0x23d)) {
-      uVar10 = thunk_FUN_004406c0((char)*(int *)((int)this + 0x23d));
+      uVar10 = GetPlayerRaceId((char)*(int *)((int)this + 0x23d));
       iVar6 = *(int *)((int)this + 0x235);
-      uVar11 = thunk_FUN_004406c0(*(char *)((int)this + 0x24));
+      uVar11 = GetPlayerRaceId(*(char *)((int)this + 0x24));
       if ((&DAT_007e1984)[(uVar11 & 0xff) + ((uVar10 & 0xff) + iVar6 * 3) * 3] == '\0')
       goto cf_common_join_004C01F3;
     }
@@ -548,9 +548,9 @@ LAB_004bf873:
       uVar4 = 1;
     }
     else {
-      uVar10 = thunk_FUN_004406c0((char)*(int *)((int)this + 0x23d));
+      uVar10 = GetPlayerRaceId((char)*(int *)((int)this + 0x23d));
       iVar6 = *(int *)((int)this + 0x235);
-      uVar11 = thunk_FUN_004406c0(*(char *)((int)this + 0x24));
+      uVar11 = GetPlayerRaceId(*(char *)((int)this + 0x24));
       if ((&DAT_007e1984)[(uVar11 & 0xff) + ((uVar10 & 0xff) + iVar6 * 3) * 3] != '\0')
       goto LAB_004bf873;
 LAB_004bf884:
@@ -559,9 +559,9 @@ LAB_004bf884:
     *(undefined1 *)(param_1 + 4) = uVar4;
     *(undefined1 *)((int)param_1 + 0xb) = 0x31;
     if (*(int *)((int)this + 0x24) != *(int *)((int)this + 0x23d)) {
-      uVar10 = thunk_FUN_004406c0((char)*(int *)((int)this + 0x23d));
+      uVar10 = GetPlayerRaceId((char)*(int *)((int)this + 0x23d));
       iVar6 = *(int *)((int)this + 0x235);
-      uVar11 = thunk_FUN_004406c0(*(char *)((int)this + 0x24));
+      uVar11 = GetPlayerRaceId(*(char *)((int)this + 0x24));
       if ((&DAT_007e1984)[(uVar11 & 0xff) + ((uVar10 & 0xff) + iVar6 * 3) * 3] == '\0')
       goto cf_common_join_004C01F3;
     }
@@ -576,9 +576,9 @@ LAB_004bf954:
       uVar4 = 1;
     }
     else {
-      uVar10 = thunk_FUN_004406c0((char)*(int *)((int)this + 0x23d));
+      uVar10 = GetPlayerRaceId((char)*(int *)((int)this + 0x23d));
       iVar6 = *(int *)((int)this + 0x235);
-      uVar11 = thunk_FUN_004406c0(*(char *)((int)this + 0x24));
+      uVar11 = GetPlayerRaceId(*(char *)((int)this + 0x24));
       if ((&DAT_007e1984)[(uVar11 & 0xff) + ((uVar10 & 0xff) + iVar6 * 3) * 3] != '\0')
       goto LAB_004bf954;
 LAB_004bf965:
@@ -593,9 +593,9 @@ LAB_004bf9c0:
       uVar4 = 1;
     }
     else {
-      uVar10 = thunk_FUN_004406c0((char)*(int *)((int)this + 0x23d));
+      uVar10 = GetPlayerRaceId((char)*(int *)((int)this + 0x23d));
       iVar6 = *(int *)((int)this + 0x235);
-      uVar11 = thunk_FUN_004406c0(*(char *)((int)this + 0x24));
+      uVar11 = GetPlayerRaceId(*(char *)((int)this + 0x24));
       if ((&DAT_007e1984)[(uVar11 & 0xff) + ((uVar10 & 0xff) + iVar6 * 3) * 3] != '\0')
       goto LAB_004bf9c0;
 LAB_004bf9f7:
@@ -604,9 +604,9 @@ LAB_004bf9f7:
     *(undefined1 *)((int)param_1 + 0x11) = uVar4;
     *(undefined1 *)(param_1 + 3) = 0x46;
     if (*(int *)((int)this + 0x24) != *(int *)((int)this + 0x23d)) {
-      uVar10 = thunk_FUN_004406c0((char)*(int *)((int)this + 0x23d));
+      uVar10 = GetPlayerRaceId((char)*(int *)((int)this + 0x23d));
       iVar6 = *(int *)((int)this + 0x235);
-      uVar11 = thunk_FUN_004406c0(*(char *)((int)this + 0x24));
+      uVar11 = GetPlayerRaceId(*(char *)((int)this + 0x24));
       if ((&DAT_007e1984)[(uVar11 & 0xff) + ((uVar10 & 0xff) + iVar6 * 3) * 3] == '\0')
       goto LAB_004bfffc;
     }
@@ -622,9 +622,9 @@ LAB_004bf9f7:
   case 0x5a:
     *(undefined1 *)((int)param_1 + 10) = 0x41;
     if (*(int *)((int)this + 0x24) != *(int *)((int)this + 0x23d)) {
-      uVar10 = thunk_FUN_004406c0((char)*(int *)((int)this + 0x23d));
+      uVar10 = GetPlayerRaceId((char)*(int *)((int)this + 0x23d));
       iVar6 = *(int *)((int)this + 0x235);
-      uVar11 = thunk_FUN_004406c0(*(char *)((int)this + 0x24));
+      uVar11 = GetPlayerRaceId(*(char *)((int)this + 0x24));
       if ((&DAT_007e1984)[(uVar11 & 0xff) + ((uVar10 & 0xff) + iVar6 * 3) * 3] == '\0')
       goto cf_common_join_004C0278;
     }
@@ -641,9 +641,9 @@ LAB_004bfbca:
       uVar4 = 1;
     }
     else {
-      uVar10 = thunk_FUN_004406c0((char)*(int *)((int)this + 0x23d));
+      uVar10 = GetPlayerRaceId((char)*(int *)((int)this + 0x23d));
       iVar6 = *(int *)((int)this + 0x235);
-      uVar11 = thunk_FUN_004406c0(*(char *)((int)this + 0x24));
+      uVar11 = GetPlayerRaceId(*(char *)((int)this + 0x24));
       if ((&DAT_007e1984)[(uVar11 & 0xff) + ((uVar10 & 0xff) + iVar6 * 3) * 3] != '\0')
       goto LAB_004bfbca;
 LAB_004bfbdb:
@@ -652,9 +652,9 @@ LAB_004bfbdb:
     *(undefined1 *)(param_1 + 4) = uVar4;
     *(undefined1 *)((int)param_1 + 0xb) = 0x37;
     if (*(int *)((int)this + 0x24) != *(int *)((int)this + 0x23d)) {
-      uVar10 = thunk_FUN_004406c0((char)*(int *)((int)this + 0x23d));
+      uVar10 = GetPlayerRaceId((char)*(int *)((int)this + 0x23d));
       iVar6 = *(int *)((int)this + 0x235);
-      uVar11 = thunk_FUN_004406c0(*(char *)((int)this + 0x24));
+      uVar11 = GetPlayerRaceId(*(char *)((int)this + 0x24));
       if ((&DAT_007e1984)[(uVar11 & 0xff) + ((uVar10 & 0xff) + iVar6 * 3) * 3] == '\0')
       goto cf_common_join_004C01F3;
     }
@@ -664,9 +664,9 @@ LAB_004bfbdb:
   case 0x5d:
     *(undefined1 *)((int)param_1 + 10) = 0x43;
     if (*(int *)((int)this + 0x24) != *(int *)((int)this + 0x23d)) {
-      uVar10 = thunk_FUN_004406c0((char)*(int *)((int)this + 0x23d));
+      uVar10 = GetPlayerRaceId((char)*(int *)((int)this + 0x23d));
       iVar6 = *(int *)((int)this + 0x235);
-      uVar11 = thunk_FUN_004406c0(*(char *)((int)this + 0x24));
+      uVar11 = GetPlayerRaceId(*(char *)((int)this + 0x24));
       if ((&DAT_007e1984)[(uVar11 & 0xff) + ((uVar10 & 0xff) + iVar6 * 3) * 3] == '\0')
       goto cf_common_join_004C0278;
     }
@@ -683,9 +683,9 @@ LAB_004c0170:
       uVar4 = 1;
     }
     else {
-      uVar10 = thunk_FUN_004406c0((char)*(int *)((int)this + 0x23d));
+      uVar10 = GetPlayerRaceId((char)*(int *)((int)this + 0x23d));
       iVar6 = *(int *)((int)this + 0x235);
-      uVar11 = thunk_FUN_004406c0(*(char *)((int)this + 0x24));
+      uVar11 = GetPlayerRaceId(*(char *)((int)this + 0x24));
       if ((&DAT_007e1984)[(uVar11 & 0xff) + ((uVar10 & 0xff) + iVar6 * 3) * 3] != '\0')
       goto LAB_004c0170;
 LAB_004c0181:
@@ -694,9 +694,9 @@ LAB_004c0181:
     *(undefined1 *)(param_1 + 4) = uVar4;
     *(undefined1 *)((int)param_1 + 0xb) = 0x31;
     if (*(int *)((int)this + 0x24) != *(int *)((int)this + 0x23d)) {
-      uVar10 = thunk_FUN_004406c0((char)*(int *)((int)this + 0x23d));
+      uVar10 = GetPlayerRaceId((char)*(int *)((int)this + 0x23d));
       iVar6 = *(int *)((int)this + 0x235);
-      uVar11 = thunk_FUN_004406c0(*(char *)((int)this + 0x24));
+      uVar11 = GetPlayerRaceId(*(char *)((int)this + 0x24));
       if ((&DAT_007e1984)[(uVar11 & 0xff) + ((uVar10 & 0xff) + iVar6 * 3) * 3] == '\0')
       goto cf_common_join_004C01F3;
     }
@@ -706,9 +706,9 @@ LAB_004c0181:
   case 0x61:
     *(undefined1 *)((int)param_1 + 10) = 0x3b;
     if (*(int *)((int)this + 0x24) != *(int *)((int)this + 0x23d)) {
-      uVar10 = thunk_FUN_004406c0((char)*(int *)((int)this + 0x23d));
+      uVar10 = GetPlayerRaceId((char)*(int *)((int)this + 0x23d));
       iVar6 = *(int *)((int)this + 0x235);
-      uVar11 = thunk_FUN_004406c0(*(char *)((int)this + 0x24));
+      uVar11 = GetPlayerRaceId(*(char *)((int)this + 0x24));
       if ((&DAT_007e1984)[(uVar11 & 0xff) + ((uVar10 & 0xff) + iVar6 * 3) * 3] == '\0')
       goto cf_common_join_004C0278;
     }
@@ -717,9 +717,9 @@ LAB_004c0181:
   case 100:
     *(undefined1 *)((int)param_1 + 10) = 0x40;
     if (*(int *)((int)this + 0x24) != *(int *)((int)this + 0x23d)) {
-      uVar10 = thunk_FUN_004406c0((char)*(int *)((int)this + 0x23d));
+      uVar10 = GetPlayerRaceId((char)*(int *)((int)this + 0x23d));
       iVar6 = *(int *)((int)this + 0x235);
-      uVar11 = thunk_FUN_004406c0(*(char *)((int)this + 0x24));
+      uVar11 = GetPlayerRaceId(*(char *)((int)this + 0x24));
       if ((&DAT_007e1984)[(uVar11 & 0xff) + ((uVar10 & 0xff) + iVar6 * 3) * 3] == '\0')
       goto cf_common_join_004C0278;
     }
@@ -760,9 +760,9 @@ LAB_004c0261:
   case 0x6c:
     *(undefined1 *)((int)param_1 + 10) = 0x3e;
     if (*(int *)((int)this + 0x24) != *(int *)((int)this + 0x23d)) {
-      uVar10 = thunk_FUN_004406c0((char)*(int *)((int)this + 0x23d));
+      uVar10 = GetPlayerRaceId((char)*(int *)((int)this + 0x23d));
       iVar6 = *(int *)((int)this + 0x235);
-      uVar11 = thunk_FUN_004406c0(*(char *)((int)this + 0x24));
+      uVar11 = GetPlayerRaceId(*(char *)((int)this + 0x24));
       if ((&DAT_007e1984)[(uVar11 & 0xff) + ((uVar10 & 0xff) + iVar6 * 3) * 3] == '\0')
       goto cf_common_join_004C0278;
     }
@@ -781,9 +781,9 @@ LAB_004bfee5:
       uVar4 = 1;
     }
     else {
-      uVar10 = thunk_FUN_004406c0((char)*(int *)((int)this + 0x23d));
+      uVar10 = GetPlayerRaceId((char)*(int *)((int)this + 0x23d));
       iVar6 = *(int *)((int)this + 0x235);
-      uVar11 = thunk_FUN_004406c0(*(char *)((int)this + 0x24));
+      uVar11 = GetPlayerRaceId(*(char *)((int)this + 0x24));
       if ((&DAT_007e1984)[(uVar11 & 0xff) + ((uVar10 & 0xff) + iVar6 * 3) * 3] != '\0')
       goto LAB_004bfee5;
 LAB_004bff0a:
@@ -798,9 +798,9 @@ LAB_004bff65:
       uVar4 = 1;
     }
     else {
-      uVar10 = thunk_FUN_004406c0((char)*(int *)((int)this + 0x23d));
+      uVar10 = GetPlayerRaceId((char)*(int *)((int)this + 0x23d));
       iVar6 = *(int *)((int)this + 0x235);
-      uVar11 = thunk_FUN_004406c0(*(char *)((int)this + 0x24));
+      uVar11 = GetPlayerRaceId(*(char *)((int)this + 0x24));
       if ((&DAT_007e1984)[(uVar11 & 0xff) + ((uVar10 & 0xff) + iVar6 * 3) * 3] != '\0')
       goto LAB_004bff65;
 LAB_004bff80:
@@ -816,9 +816,9 @@ LAB_004bffdb:
       }
     }
     else {
-      uVar10 = thunk_FUN_004406c0((char)*(int *)((int)this + 0x23d));
+      uVar10 = GetPlayerRaceId((char)*(int *)((int)this + 0x23d));
       iVar6 = *(int *)((int)this + 0x235);
-      uVar11 = thunk_FUN_004406c0(*(char *)((int)this + 0x24));
+      uVar11 = GetPlayerRaceId(*(char *)((int)this + 0x24));
       if ((&DAT_007e1984)[(uVar11 & 0xff) + ((uVar10 & 0xff) + iVar6 * 3) * 3] != '\0')
       goto LAB_004bffdb;
     }
@@ -829,9 +829,9 @@ LAB_004bfffc:
     if (*(int *)((int)this + 0x4f0) == 0) {
       *(undefined1 *)((int)param_1 + 10) = 0x36;
       if (*(int *)((int)this + 0x24) != *(int *)((int)this + 0x23d)) {
-        uVar10 = thunk_FUN_004406c0((char)*(int *)((int)this + 0x23d));
+        uVar10 = GetPlayerRaceId((char)*(int *)((int)this + 0x23d));
         iVar6 = *(int *)((int)this + 0x235);
-        uVar11 = thunk_FUN_004406c0(*(char *)((int)this + 0x24));
+        uVar11 = GetPlayerRaceId(*(char *)((int)this + 0x24));
         if ((&DAT_007e1984)[(uVar11 & 0xff) + ((uVar10 & 0xff) + iVar6 * 3) * 3] == '\0')
         goto cf_common_join_004C0278;
       }
@@ -841,9 +841,9 @@ LAB_004bfffc:
     else {
       *(undefined1 *)((int)param_1 + 10) = 0x34;
       if (*(int *)((int)this + 0x24) != *(int *)((int)this + 0x23d)) {
-        uVar10 = thunk_FUN_004406c0((char)*(int *)((int)this + 0x23d));
+        uVar10 = GetPlayerRaceId((char)*(int *)((int)this + 0x23d));
         iVar6 = *(int *)((int)this + 0x235);
-        uVar11 = thunk_FUN_004406c0(*(char *)((int)this + 0x24));
+        uVar11 = GetPlayerRaceId(*(char *)((int)this + 0x24));
         if ((&DAT_007e1984)[(uVar11 & 0xff) + ((uVar10 & 0xff) + iVar6 * 3) * 3] == '\0')
         goto cf_common_join_004C0278;
       }
@@ -863,9 +863,9 @@ LAB_004c005c:
       uVar4 = 1;
     }
     else {
-      uVar10 = thunk_FUN_004406c0((char)*(int *)((int)this + 0x23d));
+      uVar10 = GetPlayerRaceId((char)*(int *)((int)this + 0x23d));
       iVar6 = *(int *)((int)this + 0x235);
-      uVar11 = thunk_FUN_004406c0(*(char *)((int)this + 0x24));
+      uVar11 = GetPlayerRaceId(*(char *)((int)this + 0x24));
       if ((&DAT_007e1984)[(uVar11 & 0xff) + ((uVar10 & 0xff) + iVar6 * 3) * 3] != '\0')
       goto LAB_004c005c;
 LAB_004c006d:
@@ -883,9 +883,9 @@ LAB_004c00cc:
       }
     }
     else {
-      uVar10 = thunk_FUN_004406c0((char)*(int *)((int)this + 0x23d));
+      uVar10 = GetPlayerRaceId((char)*(int *)((int)this + 0x23d));
       iVar6 = *(int *)((int)this + 0x235);
-      uVar11 = thunk_FUN_004406c0(*(char *)((int)this + 0x24));
+      uVar11 = GetPlayerRaceId(*(char *)((int)this + 0x24));
       if ((&DAT_007e1984)[(uVar11 & 0xff) + ((uVar10 & 0xff) + iVar6 * 3) * 3] != '\0')
       goto LAB_004c00cc;
     }
@@ -899,7 +899,7 @@ cf_common_join_004C01F3:
   case 0x5c:
     if (*(int *)((int)this + 0x361) == 1) {
       *(undefined4 *)((int)param_1 + 0x1d) = *(undefined4 *)((int)this + 0x369);
-      iVar6 = thunk_FUN_004406c0(*(char *)((int)this + 0x24));
+      iVar6 = GetPlayerRaceId(*(char *)((int)this + 0x24));
       if ((char)iVar6 == '\x03') {
         sVar5 = (short)*(undefined4 *)((int)this + 0x3a4);
         sVar15 = (short)*(undefined4 *)((int)this + 0x3b4);
@@ -912,7 +912,7 @@ cf_common_join_004C01F3:
       *(short *)((int)param_1 + 0x2b) =
            (short)((*(int *)((int)this + 0x39c) * (100 - *(int *)((int)this + 0x394))) / 100);
       *(undefined1 *)((int)param_1 + 0x2f) = *(undefined1 *)((int)this + 0x394);
-      iVar6 = thunk_FUN_004406c0(*(char *)((int)this + 0x24));
+      iVar6 = GetPlayerRaceId(*(char *)((int)this + 0x24));
       *(char *)((int)param_1 + 0x25) = (char)iVar6;
       if (*(int *)((int)this + 0x5ac) == 0x40) {
         iVar6 = thunk_FUN_004c9370(this,1,9,-1);
@@ -958,7 +958,7 @@ cf_common_join_004C01F3:
                              piVar17[3]);
         *puVar16 = 0xffff;
         *(char *)((int)param_1 + 0x2f + (int)piVar2) = (char)((piVar17[2] * 100) / piVar17[3]);
-        iVar6 = thunk_FUN_004406c0(*(char *)((int)this + 0x24));
+        iVar6 = GetPlayerRaceId(*(char *)((int)this + 0x24));
         *(char *)((int)param_1 + 0x25 + (int)piVar2) = (char)iVar6;
       }
       param_1 = (int *)((int)param_1 + 1);
@@ -1175,7 +1175,7 @@ cf_common_join_004C01F3:
       *(undefined1 *)((int)param_1 + 0x47) = 3;
       break;
     case 1:
-      uVar10 = thunk_FUN_004406c0(*(char *)((int)this + 0x24));
+      uVar10 = GetPlayerRaceId(*(char *)((int)this + 0x24));
       uVar10 = uVar10 & 0xff;
       if (uVar10 == 1) {
         iVar6 = 0x3d;
@@ -1222,7 +1222,7 @@ cf_common_join_004C01F3:
            *(short *)((int)this + 0x3a0) - *(short *)((int)this + 0x3b0);
       *(short *)((int)param_1 + 0x2b) =
            *(short *)((int)this + 0x39c) - *(short *)((int)this + 0x3ac);
-      iVar6 = thunk_FUN_004406c0(*(char *)((int)this + 0x24));
+      iVar6 = GetPlayerRaceId(*(char *)((int)this + 0x24));
       *(char *)((int)param_1 + 0x25) = (char)iVar6;
       *(undefined2 *)((int)param_1 + 0x3f) = *(undefined2 *)((int)this + 0x4d0);
     }
@@ -1381,7 +1381,7 @@ switchD_004bef7c_caseD_52:
     do {
       if (param_1[-2] != 0) {
         *local_c = *param_1;
-        iVar7 = thunk_FUN_004406c0(*(char *)((int)this + 0x24));
+        iVar7 = GetPlayerRaceId(*(char *)((int)this + 0x24));
         *(char *)(iVar6 + 0x25 + (int)piVar2) = (char)iVar7;
         *(char *)(iVar6 + 0x2f + (int)piVar2) = (char)param_1[2];
       }
@@ -1468,7 +1468,7 @@ LAB_004c0fcc:
       return bVar19;
     }
     if (*(int *)((int)this + 0x3c8) != 0) {
-      iVar6 = thunk_FUN_004406c0(*(char *)((int)this + 0x24));
+      iVar6 = GetPlayerRaceId(*(char *)((int)this + 0x24));
       iVar6 = (-(uint)((char)iVar6 != '\x03') & 0xffffffe1) + 0xbdb;
       piVar2[0x16] = iVar6;
       return SUB41(iVar6,0);
@@ -1619,7 +1619,8 @@ LAB_004c0fcc:
       iVar6 = 0;
       if ((((iVar7 != 0) && (iVar6 = *(int *)((int)this + 0x61b), iVar6 != 0)) &&
           (*(int *)(iVar6 + 0x20) == 1000)) &&
-         ((*(int *)(iVar6 + 0x4d8) == 0xffff && (*(int *)(iVar6 + 0x5b8) < SHORT_007fb244 + -1)))) {
+         ((*(int *)(iVar6 + 0x4d8) == 0xffff && (*(int *)(iVar6 + 0x5b8) < g_worldGrid.sizeZ + -1)))
+         ) {
         piVar2[0x16] = 0xbe0;
         return SUB41(iVar6,0);
       }

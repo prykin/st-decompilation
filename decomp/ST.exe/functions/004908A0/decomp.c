@@ -23,13 +23,13 @@ bool __thiscall FUN_004908a0(void *this,STFishC *param_1,int param_2)
     sVar4 = local_8[0] + (short)iVar6;
     sVar3 = local_c[0] + 1;
     sVar1 = (short)param_1 + (short)iVar5;
-    if ((((sVar1 < 0) || (SHORT_007fb240 <= sVar1)) || (sVar4 < 0)) ||
-       (((SHORT_007fb242 <= sVar4 || (sVar3 < 0)) ||
-        ((SHORT_007fb244 <= sVar3 ||
+    if ((((sVar1 < 0) || (g_worldGrid.sizeX <= sVar1)) || (sVar4 < 0)) ||
+       (((g_worldGrid.sizeY <= sVar4 || (sVar3 < 0)) ||
+        ((g_worldGrid.sizeZ <= sVar3 ||
          (iVar5 = param_2,
-         g_worldCells
-         [(int)SHORT_007fb246 * (int)sVar3 + (int)SHORT_007fb240 * (int)sVar4 + (int)sVar1].objects
-         [0] == (STWorldObject *)0x0)))))) {
+         g_worldGrid.cells
+         [(int)g_worldGrid.planeStride * (int)sVar3 + (int)g_worldGrid.sizeX * (int)sVar4 +
+          (int)sVar1].objects[0] == (STWorldObject *)0x0)))))) {
       iVar2 = FUN_006aadd0((int)*(short *)((int)this + 0x47),(int)*(short *)((int)this + 0x49),
                            (int)*(short *)((int)this + 0x4b),(short)param_1 + iVar5,
                            local_8[0] + iVar6,local_c[0] + 1);

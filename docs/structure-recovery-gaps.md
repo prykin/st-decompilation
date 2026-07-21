@@ -13,14 +13,14 @@ objects: one expression can belong to several rows.
 | Raw constant access relative to `this` | 11,219 | 1,122 | Direct fields belong to `STClassLayoutAnalyzer`; nested pointee fields are now recovered too. Residue usually means a wrong owner/calling convention, a preserved manual class, or conflicting/overlapping widths. |
 | Raw constant access relative to a parameter | 5,319 | 1,058 | `STPointerShapeAnalyzer`; automatic application requires a persistent, replaceable Ghidra parameter and sufficient consistent evidence. |
 | Raw constant access relative to a temporary | 7,191 | 928 | Aliases with a persistent origin are redirected to that origin. A genuinely transient High Variable remains report-only because Listing-variable typing cannot safely represent an SSA split. |
-| Variable index/stride in an address | 2,912 | 731 | This is an array/record problem rather than a fixed field. Known global player records use `STGlobalRecordAnalyzer`; unknown strides still require an array-element/record proof before application. |
+| Variable index/stride in an address | 2,912 | 731 | This is an array/record problem rather than a fixed field. Known global player records use `STGlobalRecordAnalyzer`; `STGlobalAggregateAnalyzer` audits SIB-indexed ranges and installs only bounded arrays/matrices. Unknown strides still require an array-element/record proof before application. |
 | Absolute indexed global record | 49 | 32 | The confirmed `0xA62` player record is handled by `STGlobalRecordAnalyzer`. Other bases/strides stay separate candidates; an address plus a multiplication alone does not prove record boundaries or count. |
-| Raw indirect/vtable call | 2,658 | 856 | `STVTable*` and `STVirtualMethod*` recover table ownership and slots. `STHiddenThis*` now recovers ownerless ECX receivers and installs a neutral vtable skeleton when stack discipline agrees. A raw call by itself is still not enough to invent a semantic class or slot signature. Receiver-only leaf virtual getters receive a conservative `__thiscall dword()` proposal. |
+| Raw indirect/vtable call | 2,658 | 856 | `STVTable*` and `STVirtualMethod*` recover table ownership and slots. `STIndirectCall*` audits all remaining sites and refines trusted table slots, including the shared `STGameObjCVTable`; `STHiddenThis*` handles ownerless ECX receivers. A raw call by itself is still not enough to invent a semantic class or callback signature. |
 | Already typed `->vtable->slot` call | 822 | 225 | This is successful recovery, not residue. Ghidra intentionally prints the receiver as the first argument of an indirect `__thiscall` function pointer. |
 | Decompiled partial-field syntax (`._offset_size_`) | 1,815 | 282 | This mixes real subfield operations with missing stack aggregates. Confirmed `CmdToPlsObj` copy ranges are installed as discriminator-specific structures; giant compiler temporaries and reused SSA storage still require function-specific proof. |
 | Flat packed-command field access | 75 | 1 | All matches are in `STAllPlayersC::CmdToPlsObj`. `STPackedValue32` now exposes whole-dword, two-word, and four-byte views without choosing one layout for every command variant. |
 | Casted access through an existing `field_XXXX` | 2,128 | 457 | The parent structure exists but the field type is missing. Nested class/pointer-shape recovery now types non-overlapping pointees; known `DArrayTy` fields receive the semantic type. |
-| Generic `field_XXXX` occurrences | 54,082 | 1,914 | Not all are structural failures. Often layout and widths are already correct and only semantic field names are unknown. Naming needs call/accessor/state evidence, not another anonymous type. |
+| Generic `field_XXXX` occurrences | 54,082 | 1,914 | Not all are structural failures. Often layout and widths are already correct and only semantic field names are unknown. `STTypeFamily*` removes exact duplicate anonymous layouts, but naming still needs call/accessor/state evidence rather than another shape. |
 
 ## Important non-equivalent cases
 
@@ -79,6 +79,20 @@ The payload is discriminator-dependent, so its common field names remain
 intentionally neutral. Four-byte packed values provide `.whole`, `.words.low/high`,
 and `.bytes.byte0..byte3` views. Confirmed position layouts are separate union
 members; pretending there is one universal active layout would lose information.
+
+One current `commandType == 0x14` store still appears as
+
+```c
+*(int *)((int)&local_68->packed.value_05 + 3) = value;
+```
+
+The arithmetic is an aligned dword at payload offset `+0x08`, used as the third
+grid coordinate in that arm. Making an aligned position view the default union
+member cleans this one expression but makes several unaligned discriminator arms
+worse, so the scripts deliberately do not reorder the union globally. The exact
+presentation requires a Ghidra per-use union facet (`Force Field`) or a persistent
+high-variable split for that switch arm; it is not evidence for changing the shared
+payload layout.
 
 ## Confirmed world-cell case
 

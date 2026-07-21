@@ -6,7 +6,7 @@
 void __thiscall STGroupBoatC::sub_006E5FB0(STGroupBoatC *this)
 
 {
-  this->vtable = (STGroupBoatCVTable *)&PTR_FUN_0079e1ac;
+  this->vtable = (STGroupBoatCVTable *)&VTable_0079E1AC;
   this->field_0004 = 0;
   this->field_0008 = 0;
   this->field_000C = 0;

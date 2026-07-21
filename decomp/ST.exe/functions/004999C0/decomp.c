@@ -10,12 +10,12 @@ STGroupBoatC::ReMakePVecAndTgtListExt(STGroupBoatC *this,char param_1,short para
   code *pcVar1;
   STGroupBoatC *this_00;
   int iVar2;
-  uint *groupContent;
+  DArrayTy *array;
   int iVar3;
   undefined4 uVar4;
   undefined4 unaff_ESI;
   void *unaff_EDI;
-  uint uVar5;
+  uint index;
   InternalExceptionFrame local_54;
   STGroupBoatC *local_10;
   undefined2 local_c;
@@ -39,23 +39,22 @@ STGroupBoatC::ReMakePVecAndTgtListExt(STGroupBoatC *this,char param_1,short para
                 (-0x5001fffc,g_overwriteContext_007ED77C,s_E____titans_wlad_to_grpb_cpp_007abe3c,
                  0x50b);
     }
-    uVar5 = 0;
+    index = 0;
     iVar2 = *(int *)(this_00->field_020E + 0xc);
     if (0 < iVar2) {
       do {
-        FUN_006acc70((AnonShape_006ACC70_C8641025 *)this_00->field_020E,uVar5,(undefined4 *)local_8)
-        ;
+        DArrayGetElement((DArrayTy *)this_00->field_020E,index,local_8);
         if (((local_6 != -1) && (local_8[0] == param_1)) && (local_6 == param_2)) {
-          groupContent = Library::DKW::TBL::FUN_006ae290((uint *)0x0,1,4,1);
+          array = (DArrayTy *)Library::DKW::TBL::FUN_006ae290((uint *)0x0,1,4,1);
           local_c = 0xffff;
-          local_a = (undefined2)uVar5;
-          Library::DKW::TBL::FUN_006ae1c0(groupContent,(undefined4 *)&local_c);
-          ReMakePVecAndTgtList(this_00,groupContent);
-          FUN_006ae110((byte *)groupContent);
+          local_a = (undefined2)index;
+          Library::DKW::TBL::FUN_006ae1c0((uint *)array,(undefined4 *)&local_c);
+          ReMakePVecAndTgtList(this_00,(uint *)array);
+          DArrayDestroy(array);
           break;
         }
-        uVar5 = uVar5 + 1;
-      } while ((int)uVar5 < iVar2);
+        index = index + 1;
+      } while ((int)index < iVar2);
     }
     g_currentExceptionFrame = local_54.previous;
   }

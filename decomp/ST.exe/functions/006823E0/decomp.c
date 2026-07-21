@@ -69,11 +69,11 @@ void __cdecl FUN_006823e0(int param_1,float *param_2)
           }
           else {
             if (param_1 != 3) {
-              FUN_006ab060(&param_2);
+              FreeAndNull(&param_2);
               RaiseInternalException
                         (-0x6b,g_overwriteContext_007ED77C,s_E____titans_ai_ai_script_cpp_007d5604,
                          0x195);
-              FUN_006ab060(&param_2);
+              FreeAndNull(&param_2);
               return;
             }
             iVar7 = thunk_FUN_0064a940(DAT_00848a14,iVar7);
@@ -94,7 +94,7 @@ void __cdecl FUN_006823e0(int param_1,float *param_2)
             local_f = (float)CONCAT22(local_f._2_2_,(short)iVar7);
           }
           thunk_FUN_00682370((undefined4 *)&local_10);
-          FUN_006ab060(&param_2);
+          FreeAndNull(&param_2);
           return;
         }
       }

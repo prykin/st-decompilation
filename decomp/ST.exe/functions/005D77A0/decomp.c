@@ -12,7 +12,7 @@ undefined4 * FUN_005d77a0(void)
   this = (STGroupBoatC *)FUN_006b04d0(0x21fc);
   if (this != (STGroupBoatC *)0x0) {
     STGroupBoatC::sub_006E5FB0(this);
-    this->vtable = (STGroupBoatCVTable *)&PTR_FUN_0079c018;
+    this->vtable = (STGroupBoatCVTable *)&VTable_0079C018;
     this->field_0018 = 0;
     this->field_005D = 0;
     puVar2 = (undefined4 *)((int)&this->field_001C + 1);
@@ -122,7 +122,7 @@ undefined4 * FUN_005d77a0(void)
     this[10].field_0xaa = 1;
     this[10].field_0xab = 1;
     this[10].field_0xa8 = 4;
-    this->vtable = (STGroupBoatCVTable *)&PTR_GetMessage_0079c160;
+    this->vtable = (STGroupBoatCVTable *)&VTable_0079C160;
     return &this->vtable;
   }
   return (undefined4 *)0x0;

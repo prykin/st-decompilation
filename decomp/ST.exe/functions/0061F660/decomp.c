@@ -63,7 +63,7 @@ undefined4 __thiscall SndUnderAttMenegC::GetMessage(SndUnderAttMenegC *this,int 
   }
   else if (iVar3 == 2) {
     if (DAT_007fb284 != 0) {
-      *(int *)&local_8->field_0x1c = (int)SHORT_007fb240 / 2;
+      *(int *)&local_8->field_0x1c = (int)g_worldGrid.sizeX / 2;
       g_currentExceptionFrame = local_50.previous;
       return 0;
     }

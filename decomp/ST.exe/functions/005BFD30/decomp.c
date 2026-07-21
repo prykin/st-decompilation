@@ -29,7 +29,7 @@ void __thiscall MReportTy::PaintMainScore(MReportTy *this,int param_1,uint param
       local_10 = param_3 * 0x26 + 0x38;
       local_8 = uVar4;
       do {
-        DibPut((AnonShape_006B84D0_7C7D97C6 *)pMVar2->field_0073,iVar3,local_10,'\x06',
+        DibPut((AnonShape_006B5B10_E0D06CF1 *)pMVar2->field_0073,iVar3,local_10,'\x06',
                (byte *)pMVar2->field_006F);
         iVar3 = iVar3 + 6;
         local_8 = local_8 - 1;
@@ -37,7 +37,7 @@ void __thiscall MReportTy::PaintMainScore(MReportTy *this,int param_1,uint param
     }
     wsprintfA((LPSTR)&DAT_0080f33a,&DAT_007cd004,param_1);
     uVar4 = param_3 * 0x26 + 0x30;
-    FUN_006b4170((int)pMVar2->field_0073,0,0x280,uVar4,0x50,0x1c,0);
+    FUN_006b4170((AnonShape_006C7610_838EDECF *)pMVar2->field_0073,0,0x280,uVar4,0x50,0x1c,0);
     FUN_006b5ee0((int)pMVar2->field_0073,0,0x280,uVar4,0x50,0x1c,0x18,0xd);
     ccFntTy::SetSurf(pMVar2->field_008B,(int)pMVar2->field_0073,0,0x280,uVar4,0x50,0x1c);
     ccFntTy::WrStr(pMVar2->field_008B,&DAT_0080f33a,-1,-1,8);

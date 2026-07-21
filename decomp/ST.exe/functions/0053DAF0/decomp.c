@@ -13,15 +13,15 @@ UPanelTy::PaintIBut(UPanelTy *this,AnonShape_0053DAF0_3BDC2979 *param_1,char *pa
   undefined4 uVar3;
   LPSTR text;
   ushort *puVar4;
-  uint *puVar5;
+  uint *extraout_EAX;
   undefined4 unaff_ESI;
   void *unaff_EDI;
-  uint uVar6;
-  byte bVar7;
-  int iVar8;
-  undefined4 *puVar9;
-  int iVar10;
-  undefined4 *puVar11;
+  uint uVar5;
+  byte bVar6;
+  int iVar7;
+  undefined4 *puVar8;
+  int iVar9;
+  undefined4 *puVar10;
   InternalExceptionFrame local_58;
   AnonNested_0053DAF0_0018_BAFC63C8 *local_14;
   UPanelTy *local_10;
@@ -42,33 +42,33 @@ UPanelTy::PaintIBut(UPanelTy *this,AnonShape_0053DAF0_3BDC2979 *param_1,char *pa
   errorCode = (undefined4 *)Library::MSVCRT::__setjmp3(local_58.jumpBuffer,0,unaff_EDI,unaff_ESI);
   pUVar2 = local_10;
   if (errorCode == (undefined4 *)0x0) {
-    iVar8 = 1;
-    uVar6 = 0xffffffff;
-    puVar9 = errorCode;
-    puVar11 = errorCode;
+    iVar7 = 1;
+    uVar5 = 0xffffffff;
+    puVar8 = errorCode;
+    puVar10 = errorCode;
     uVar3 = thunk_FUN_00529fe0((int)param_1);
-    bVar7 = (byte)errorCode;
+    bVar6 = (byte)errorCode;
     text = FUN_006f2c00(param_2,1,uVar3);
     puVar4 = Library::Ourlib::MFRLOAD::mfRLoad
-                       (DAT_00806794,CASE_1,text,uVar6,bVar7,iVar8,(int)puVar9,puVar11);
-    uVar6 = local_8;
-    DibPut((AnonShape_006B84D0_7C7D97C6 *)pUVar2->field_0068,local_c,local_8,'\x01',(byte *)puVar4);
-    ccFntTy::SetSurf(*(ccFntTy **)&PTR_00802a28->field_0x24,pUVar2->field_0068,0,local_c,uVar6,
+                       (DAT_00806794,CASE_1,text,uVar5,bVar6,iVar7,(int)puVar8,puVar10);
+    uVar5 = local_8;
+    DibPut((AnonShape_006B5B10_E0D06CF1 *)pUVar2->field_0068,local_c,local_8,'\x01',(byte *)puVar4);
+    ccFntTy::SetSurf(*(ccFntTy **)&PTR_00802a28->field_0x24,pUVar2->field_0068,0,local_c,uVar5,
                      local_14->field_0008,local_14->field_000C);
     uVar3 = thunk_FUN_00529fe0((int)param_1);
-    iVar10 = -1;
-    iVar8 = -2;
-    puVar5 = (uint *)FUN_006b0140(param_3,HINSTANCE_00807618);
-    ccFntTy::WrStr(*(ccFntTy **)&PTR_00802a28->field_0x24,puVar5,iVar8,iVar10,uVar3);
+    iVar9 = -1;
+    iVar7 = -2;
+    LoadResourceString(param_3,HINSTANCE_00807618);
+    ccFntTy::WrStr(*(ccFntTy **)&PTR_00802a28->field_0x24,extraout_EAX,iVar7,iVar9,uVar3);
     Library::DKW::DDX::FUN_006b3640
               (DAT_008075a8,pUVar2->field_0060,0xffffffff,pUVar2->field_003C,pUVar2->field_0044);
     g_currentExceptionFrame = local_58.previous;
     return;
   }
   g_currentExceptionFrame = local_58.previous;
-  iVar8 = ReportDebugMessage(s_E____titans_Andrey_specpan_cpp_007c7870,0x51,0,(int)errorCode,
+  iVar7 = ReportDebugMessage(s_E____titans_Andrey_specpan_cpp_007c7870,0x51,0,(int)errorCode,
                              &DAT_007a4ccc,s_UPanelTy__PaintIBut_007c78cc);
-  if (iVar8 != 0) {
+  if (iVar7 != 0) {
     pcVar1 = (code *)swi(3);
     (*pcVar1)();
     return;

@@ -8,7 +8,7 @@ StartSystemTy::PaintBinDesc(StartSystemTy *this,AnonShape_005DE050_5BD86458 *par
 
 {
   ccFntTy *pcVar1;
-  AnonPointee_StartSystemTy_0544 *pAVar2;
+  AnonShape_006C7610_838EDECF *pAVar2;
   code *pcVar3;
   StartSystemTy *pSVar4;
   int errorCode;
@@ -38,8 +38,8 @@ StartSystemTy::PaintBinDesc(StartSystemTy *this,AnonShape_005DE050_5BD86458 *par
     errorCode = Library::MSVCRT::__setjmp3(local_54.jumpBuffer,0,unaff_EDI,unaff_ESI);
     pSVar4 = local_10;
     if (errorCode == 0) {
-      pAVar2 = local_10->field_0544;
-      FUN_006b4170((int)pAVar2,0,0,0,pAVar2->field_0004,pAVar2->field_0008,0xff);
+      pAVar2 = (AnonShape_006C7610_838EDECF *)local_10->field_0544;
+      FUN_006b4170(pAVar2,0,0,0,pAVar2->field_0004,pAVar2->field_0008,0xff);
       uVar5 = (uint)param_1->field_0016;
       uVar8 = uVar5;
       if ((int)uVar5 < (int)(*(int *)(local_c + 0x1e0) + uVar5)) {

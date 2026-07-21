@@ -1,5 +1,5 @@
 
-undefined4 __fastcall FUN_004df2b0(AnonShape_004DF2B0_8C37D68B *param_1)
+undefined4 __fastcall FUN_004df2b0(AnonShape_004DC660_217FA9F0 *param_1)
 
 {
   undefined4 uVar1;

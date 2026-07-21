@@ -4,7 +4,7 @@ FUN_0055ad00(void *this,int param_1,int param_2,undefined4 param_3,uint param_4,
 
 {
   int iVar1;
-  char cVar2;
+  byte bVar2;
   uint uVar3;
   int iVar4;
   undefined *puVar5;
@@ -33,21 +33,18 @@ LAB_0055ae0a:
           else {
             uVar3 = param_4 & 0xff;
             uVar6 = local_1c & 0xff;
-            cVar2 = *(char *)((int)&DAT_00808a4f + uVar3 * 8 + uVar6);
-            if ((cVar2 == '\0') && (*(char *)((int)&DAT_00808a4f + uVar6 * 8 + uVar3) == '\0')) {
+            bVar2 = g_playerRelationMatrix[uVar3][uVar6];
+            if ((bVar2 == 0) && (g_playerRelationMatrix[uVar6][uVar3] == 0)) {
               iVar4 = -2;
             }
-            else if ((cVar2 == '\x01') &&
-                    (*(char *)((int)&DAT_00808a4f + uVar6 * 8 + uVar3) == '\0')) {
+            else if ((bVar2 == 1) && (g_playerRelationMatrix[uVar6][uVar3] == 0)) {
               iVar4 = -1;
             }
-            else if ((cVar2 == '\0') &&
-                    (*(char *)((int)&DAT_00808a4f + uVar6 * 8 + uVar3) == '\x01')) {
+            else if ((bVar2 == 0) && (g_playerRelationMatrix[uVar6][uVar3] == 1)) {
               iVar4 = 1;
             }
             else {
-              if ((cVar2 != '\x01') || (*(char *)((int)&DAT_00808a4f + uVar6 * 8 + uVar3) != '\x01')
-                 ) goto LAB_0055ae0a;
+              if ((bVar2 != 1) || (g_playerRelationMatrix[uVar6][uVar3] != 1)) goto LAB_0055ae0a;
               iVar4 = 2;
             }
           }

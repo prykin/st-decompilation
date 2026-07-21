@@ -39,8 +39,8 @@ StartServTy::WrSarrDDX
     else {
       local_c = (BITMAPINFO *)
                 Library::DKW::WGR::FUN_006b55f0
-                          ((undefined4 *)0x0,0,0,0,(byte *)param_1,0,param_2,param_3,local_8,param_5
-                          );
+                          ((AnonShape_006B84D0_7C7D97C6 *)0x0,0,0,0,(byte *)param_1,0,param_2,
+                           param_3,local_8,param_5);
       ccFntTy::SetSurf(param_9,(int)local_c,0,0,0,0,0);
     }
     ccFntTy::WrSarr(param_9,param_6,0,-1,param_7,param_8,param_10);

@@ -184,7 +184,7 @@ IntercomPanelTy::GetMessage(IntercomPanelTy *this,AnonShape_00522E80_C2E4EACA *p
     }
     pbVar3 = (byte *)this_00->field_019C;
     Library::DKW::WGR::FUN_006b55f0
-              ((undefined4 *)this_00->field_0068,0,
+              ((AnonShape_006B84D0_7C7D97C6 *)this_00->field_0068,0,
                (-(uint)(DAT_0080874e != '\x03') & 0xffffffe7) + 0x1e,5,pbVar3,0,0,0,
                *(int *)(pbVar3 + 4),*(int *)(pbVar3 + 8));
     Library::DKW::DDX::FUN_006b3640

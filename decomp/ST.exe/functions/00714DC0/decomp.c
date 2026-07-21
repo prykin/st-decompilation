@@ -20,7 +20,7 @@ int __thiscall FUN_00714dc0(void *this,char *param_1)
     cVar1 = *pcVar5;
     pcVar5 = pcVar5 + 1;
   } while (cVar1 != '\0');
-  iVar2 = FUN_00714ce0(this,~uVar3);
+  iVar2 = SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00714CE0::FUN_00714ce0(this,~uVar3);
   if (iVar2 == 0) {
     if (*(char **)this != (char *)0x0) {
       uVar3 = 0xffffffff;

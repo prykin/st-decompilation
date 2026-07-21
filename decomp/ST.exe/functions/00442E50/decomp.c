@@ -17,7 +17,6 @@ STAllPlayersC::_AssignMDPairs
   uint *puVar6;
   STFishC *pSVar7;
   DArrayTy *pDVar8;
-  AnonShape_006ACC70_C8641025 *groupContent;
   int iVar9;
   STWorldCell *pSVar10;
   undefined2 uVar11;
@@ -151,7 +150,7 @@ LAB_00442f1f:
   uVar13 = 0;
   if (0 < (int)uVar14) {
     do {
-      FUN_006acc70((AnonShape_006ACC70_C8641025 *)param_3,uVar13,&local_8);
+      DArrayGetElement(param_3,uVar13,&local_8);
       if ((short)local_8 != -1) break;
       uVar13 = uVar13 + 1;
     } while ((int)uVar13 < (int)uVar14);
@@ -165,7 +164,7 @@ LAB_00442f1f:
   uVar14 = 0;
   if (0 < (int)local_2c) {
     do {
-      FUN_006acc70((AnonShape_006ACC70_C8641025 *)param_4,uVar14,&local_8);
+      DArrayGetElement(param_4,uVar14,&local_8);
       if ((pSVar7 != (STFishC *)0x0) && ((short)local_8 != -1)) break;
       uVar14 = uVar14 + 1;
     } while ((int)uVar14 < (int)local_2c);
@@ -178,7 +177,7 @@ LAB_00442f1f:
   uVar14 = 0;
   if (0 < (int)local_38) {
     do {
-      FUN_006acc70((AnonShape_006ACC70_C8641025 *)param_5,uVar14,&local_8);
+      DArrayGetElement(param_5,uVar14,&local_8);
       if ((short)local_8 != -1) break;
       uVar14 = uVar14 + 1;
     } while ((int)uVar14 < (int)local_38);
@@ -192,13 +191,13 @@ LAB_00442f1f:
   uVar14 = 0;
   if (0 < (int)local_28) {
     do {
-      FUN_006acc70((AnonShape_006ACC70_C8641025 *)local_84,uVar14,(undefined4 *)&local_70);
+      DArrayGetElement(local_84,uVar14,&local_70);
       if ((local_6a != -1) && (local_62 != -1)) {
         bVar2 = false;
         uVar13 = 0;
         if (0 < (int)local_3c) {
           do {
-            FUN_006acc70((AnonShape_006ACC70_C8641025 *)param_3,uVar13,&local_8);
+            DArrayGetElement(param_3,uVar13,&local_8);
             if (local_6a == (short)local_8) {
               bVar2 = true;
               break;
@@ -211,7 +210,7 @@ LAB_00442f1f:
           uVar13 = 0;
           if (0 < (int)local_2c) {
             do {
-              FUN_006acc70((AnonShape_006ACC70_C8641025 *)param_4,uVar13,&local_8);
+              DArrayGetElement(param_4,uVar13,&local_8);
               if (local_62 == (short)local_8) {
                 bVar2 = true;
                 break;
@@ -228,7 +227,7 @@ LAB_00442f1f:
     } while ((int)uVar14 < (int)local_28);
   }
   if (local_34->count == 0) {
-    FUN_006ae110((byte *)local_34);
+    DArrayDestroy(local_34);
     iVar4 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0x2522,0,0,&DAT_007a4ccc,
                                s_STAllPlayersC___AssignMDPairs_pa_007a81fc);
     if (iVar4 != 0) {
@@ -262,7 +261,7 @@ LAB_00442f1f:
   if (0 < (int)dVar12) {
     do {
       uVar14 = local_24;
-      FUN_006acc70((AnonShape_006ACC70_C8641025 *)pDVar8,local_24,&local_1c);
+      DArrayGetElement(pDVar8,local_24,&local_1c);
       if ((local_1c != (STGroupC *)0x0) &&
          (iVar4 = (**(code **)(local_1c->field_0000 + 0xc))(), iVar4 == 8)) {
         local_48 = (DArrayTy *)STGroupC::GetGroupContent(local_1c,(int)unaff_EDI);
@@ -270,7 +269,7 @@ LAB_00442f1f:
         if ((local_b8 != 0) && (local_44 = (DArrayTy *)0x0, 0 < (int)local_b8)) {
 LAB_0044326c:
           uVar14 = local_38;
-          FUN_006acc70((AnonShape_006ACC70_C8641025 *)local_48,(uint)local_44,&local_8);
+          DArrayGetElement(local_48,(uint)local_44,&local_8);
           if ((short)local_8 != -1) {
             pSVar7 = (STFishC *)GetObjPtr(local_8c,param_1,local_8,CASE_1);
             local_40 = pSVar7;
@@ -294,7 +293,7 @@ LAB_0044326c:
             uVar13 = 0;
             if (0 < (int)uVar14) {
               do {
-                FUN_006acc70((AnonShape_006ACC70_C8641025 *)param_5,uVar13,(undefined4 *)&local_12);
+                DArrayGetElement(param_5,uVar13,&local_12);
                 if ((short)local_8 == local_12) break;
                 uVar13 = uVar13 + 1;
               } while ((int)uVar13 < (int)uVar14);
@@ -313,19 +312,20 @@ LAB_0044326c:
             uVar14 = local_3c;
             if ((local_152 == -1) || (local_148 == -1)) goto cf_common_join_004435CD;
             if ((((local_158[0] < 0) ||
-                 ((SHORT_007fb240 <= local_158[0] ||
+                 ((g_worldGrid.sizeX <= local_158[0] ||
                   (pSVar10 = (STWorldCell *)
                              CONCAT22((short)((ulonglong)uVar20 >> 0x30),local_158[1]),
-                  local_158[1] < 0)))) || (SHORT_007fb242 <= local_158[1])) ||
-               ((local_158[2] < 0 || (SHORT_007fb244 <= local_158[2])))) {
+                  local_158[1] < 0)))) || (g_worldGrid.sizeY <= local_158[1])) ||
+               ((local_158[2] < 0 || (g_worldGrid.sizeZ <= local_158[2])))) {
               local_40 = (STFishC *)0x0;
             }
             else {
               local_40 = (STFishC *)
-                         g_worldCells
-                         [(int)local_158[2] * (int)SHORT_007fb246 +
-                          (int)local_158[1] * (int)SHORT_007fb240 + (int)local_158[0]].objects[0];
-              pSVar10 = g_worldCells;
+                         g_worldGrid.cells
+                         [(int)local_158[2] * (int)g_worldGrid.planeStride +
+                          (int)local_158[1] * (int)g_worldGrid.sizeX + (int)local_158[0]].objects[0]
+              ;
+              pSVar10 = g_worldGrid.cells;
             }
             uVar11 = (undefined2)((uint)pSVar10 >> 0x10);
             if (local_40 == (STFishC *)0x0) goto cf_common_join_004435CD;
@@ -334,7 +334,7 @@ LAB_0044326c:
             uVar13 = 0;
             if (0 < (int)local_3c) {
               do {
-                FUN_006acc70((AnonShape_006ACC70_C8641025 *)param_3,uVar13,(undefined4 *)&local_12);
+                DArrayGetElement(param_3,uVar13,&local_12);
                 iVar4 = local_13e;
                 uVar11 = extraout_var;
                 if ((short)local_8 == local_12) {
@@ -356,7 +356,7 @@ LAB_0044326c:
           goto cf_common_join_004435CD;
         }
 LAB_004435f1:
-        FUN_006ae110((byte *)local_48);
+        DArrayDestroy(local_48);
       }
       local_24 = uVar14 + 1;
     } while ((int)local_24 < (int)dVar12);
@@ -364,7 +364,7 @@ LAB_004435f1:
   local_24 = 0;
   if (0 < (int)local_3c) {
     do {
-      FUN_006acc70((AnonShape_006ACC70_C8641025 *)param_3,local_24,&local_8);
+      DArrayGetElement(param_3,local_24,&local_8);
       pDVar8 = local_20;
       sVar3 = (short)local_8;
       if (sVar3 != -1) {
@@ -374,7 +374,7 @@ LAB_004435f1:
         if (dVar12 != 0) {
           if (0 < (int)dVar12) {
             do {
-              FUN_006acc70((AnonShape_006ACC70_C8641025 *)pDVar8,dVar16,(undefined4 *)&local_10);
+              DArrayGetElement(pDVar8,dVar16,&local_10);
               sVar3 = (short)local_8;
               if (local_10 == sVar3) break;
               dVar16 = dVar16 + 1;
@@ -393,7 +393,7 @@ LAB_00443676:
   local_24 = 0;
   if (0 < (int)local_2c) {
     do {
-      FUN_006acc70((AnonShape_006ACC70_C8641025 *)param_4,local_24,&local_8);
+      DArrayGetElement(param_4,local_24,&local_8);
       pDVar8 = local_30;
       sVar3 = (short)local_8;
       if (sVar3 != -1) {
@@ -403,7 +403,7 @@ LAB_00443676:
         if (dVar12 != 0) {
           if (0 < (int)dVar12) {
             do {
-              FUN_006acc70((AnonShape_006ACC70_C8641025 *)pDVar8,dVar16,(undefined4 *)&local_10);
+              DArrayGetElement(pDVar8,dVar16,&local_10);
               sVar3 = (short)local_8;
               if (local_10 == sVar3) break;
               dVar16 = dVar16 + 1;
@@ -423,13 +423,13 @@ LAB_004436f7:
   local_28 = local_34->count;
   if (0 < (int)local_28) {
     do {
-      FUN_006acc70((AnonShape_006ACC70_C8641025 *)local_34,uVar14,(undefined4 *)&local_70);
+      DArrayGetElement(local_34,uVar14,&local_70);
       uVar17 = 0;
       uVar13 = local_20->count;
       local_3c = uVar13;
       if (0 < (int)uVar13) {
         do {
-          FUN_006acc70((AnonShape_006ACC70_C8641025 *)local_20,uVar17,(undefined4 *)&local_10);
+          DArrayGetElement(local_20,uVar17,&local_10);
           if (local_10 == local_6a) {
             local_54 = local_e;
             break;
@@ -454,7 +454,7 @@ LAB_004436f7:
       local_2c = uVar13;
       if (0 < (int)uVar13) {
         do {
-          FUN_006acc70((AnonShape_006ACC70_C8641025 *)local_30,uVar17,(undefined4 *)&local_10);
+          DArrayGetElement(local_30,uVar17,&local_10);
           if (local_10 == local_62) {
             local_50 = local_e;
             break;
@@ -478,8 +478,8 @@ LAB_004436f7:
       uVar14 = uVar14 + 1;
     } while ((int)uVar14 < (int)local_28);
   }
-  FUN_006ae110((byte *)local_20);
-  FUN_006ae110((byte *)local_30);
+  DArrayDestroy(local_20);
+  DArrayDestroy(local_30);
   uVar14 = local_38;
   pDVar19 = (DArrayTy *)0x0;
   uVar13 = 0;
@@ -487,7 +487,7 @@ LAB_004436f7:
   pDVar8 = local_30;
   if (0 < (int)local_38) {
     do {
-      FUN_006acc70((AnonShape_006ACC70_C8641025 *)param_5,uVar13,&local_8);
+      DArrayGetElement(param_5,uVar13,&local_8);
       if ((short)local_8 != -1) {
         pDVar19 = (DArrayTy *)((int)&pDVar19->flags + 1);
       }
@@ -506,7 +506,7 @@ LAB_004436f7:
       local_48 = (DArrayTy *)0x5f5e100;
       if (0 < (int)local_28) {
         do {
-          FUN_006acc70((AnonShape_006ACC70_C8641025 *)pDVar19,uVar14,(undefined4 *)&local_70);
+          DArrayGetElement(pDVar19,uVar14,&local_70);
           if (local_5c + local_54 < 0x65) {
             iVar4 = 0;
           }
@@ -530,7 +530,7 @@ LAB_004436f7:
       }
       dVar12 = local_28;
       uVar14 = local_b4;
-      FUN_006acc70((AnonShape_006ACC70_C8641025 *)pDVar19,local_b4,(undefined4 *)&local_70);
+      DArrayGetElement(pDVar19,local_b4,&local_70);
       local_54 = local_54 + local_5c;
       local_50 = local_50 + local_58;
       Library::DKW::TBL::FUN_006ae140(&pDVar19->flags,uVar14,(undefined4 *)&local_70);
@@ -538,7 +538,7 @@ LAB_004436f7:
       uVar14 = 0;
       if (0 < (int)dVar12) {
         do {
-          FUN_006acc70((AnonShape_006ACC70_C8641025 *)pDVar19,uVar14,&local_b0);
+          DArrayGetElement(pDVar19,uVar14,&local_b0);
           if (local_aa == local_6a) {
             local_94 = local_54;
           }
@@ -555,29 +555,28 @@ LAB_004436f7:
     } while (pDVar8 != (DArrayTy *)0x0);
     local_44 = (DArrayTy *)0x0;
   }
-  FUN_006ae110((byte *)pDVar19);
+  DArrayDestroy(pDVar19);
   uVar14 = local_38;
-  groupContent = (AnonShape_006ACC70_C8641025 *)
-                 Library::DKW::TBL::FUN_006ae290((uint *)0x0,local_38,2,1);
+  pDVar8 = (DArrayTy *)Library::DKW::TBL::FUN_006ae290((uint *)0x0,local_38,2,1);
   uVar13 = 0;
   if (0 < (int)uVar14) {
     do {
-      FUN_006acc70((AnonShape_006ACC70_C8641025 *)param_5,uVar13,&local_8);
-      Library::DKW::TBL::FUN_006ae140((uint *)groupContent,uVar13,&local_8);
+      DArrayGetElement(param_5,uVar13,&local_8);
+      Library::DKW::TBL::FUN_006ae140((uint *)pDVar8,uVar13,&local_8);
       uVar13 = uVar13 + 1;
     } while ((int)uVar13 < (int)uVar14);
   }
-  pDVar8 = local_30;
+  pDVar19 = local_30;
   local_4c = (DArrayTy *)Library::DKW::TBL::FUN_006ae290((uint *)0x0,(uint)local_30,0xe,1);
   local_24 = 0;
-  if (0 < (int)pDVar8) {
+  if (0 < (int)pDVar19) {
     do {
-      FUN_006acc70((AnonShape_006ACC70_C8641025 *)local_20,local_24,(undefined4 *)&local_70);
+      DArrayGetElement(local_20,local_24,&local_70);
       uVar14 = 0;
       iVar4 = 100000000;
       if (0 < (int)local_38) {
         do {
-          FUN_006acc70(groupContent,uVar14,&local_8);
+          DArrayGetElement(pDVar8,uVar14,&local_8);
           if ((short)local_8 != -1) {
             local_40 = (STFishC *)GetObjPtr(local_8c,param_1,local_8,CASE_1);
             STFishC::sub_004162B0(local_40,&local_18,&local_14,&local_16);
@@ -592,7 +591,7 @@ LAB_004436f7:
         } while ((int)uVar14 < (int)local_38);
       }
       uVar14 = local_88;
-      FUN_006acc70(groupContent,local_88,&local_8);
+      DArrayGetElement(pDVar8,local_88,&local_8);
       local_80 = local_6a;
       local_7c = (short)local_8;
       local_7a = local_5c;
@@ -600,17 +599,17 @@ LAB_004436f7:
       local_76 = local_58;
       Library::DKW::TBL::FUN_006ae1c0(&local_4c->flags,(undefined4 *)&local_80);
       local_8 = 0xffff;
-      Library::DKW::TBL::FUN_006ae140((uint *)groupContent,uVar14,&local_8);
+      Library::DKW::TBL::FUN_006ae140((uint *)pDVar8,uVar14,&local_8);
       local_24 = local_24 + 1;
     } while ((int)local_24 < (int)local_30);
   }
-  FUN_006ae110((byte *)groupContent);
-  FUN_006ae110((byte *)local_20);
+  DArrayDestroy(pDVar8);
+  DArrayDestroy(local_20);
   g_currentExceptionFrame = local_114.previous;
   return &local_4c->flags;
   while (uVar13 = uVar13 + 1, uVar11 = extraout_var_00, (int)uVar13 < (int)uVar14) {
 LAB_0044343c:
-    FUN_006acc70((AnonShape_006ACC70_C8641025 *)local_20,uVar13,(undefined4 *)&local_10);
+    DArrayGetElement(local_20,uVar13,&local_10);
     if (local_10 == (short)local_8) {
       local_e = local_e + iVar4;
       Library::DKW::TBL::FUN_006ae140(&local_20->flags,uVar13,(undefined4 *)&local_10);
@@ -629,23 +628,23 @@ LAB_0044349d:
 LAB_004434a2:
   uVar14 = local_2c;
   iVar4 = CONCAT22(uVar11,local_14e);
-  if ((((local_14e < 0) || (SHORT_007fb240 <= local_14e)) || (local_14c < 0)) ||
-     (((SHORT_007fb242 <= local_14c || (local_14a < 0)) || (SHORT_007fb244 <= local_14a)))) {
+  if ((((local_14e < 0) || (g_worldGrid.sizeX <= local_14e)) || (local_14c < 0)) ||
+     (((g_worldGrid.sizeY <= local_14c || (local_14a < 0)) || (g_worldGrid.sizeZ <= local_14a)))) {
     local_40 = (STFishC *)0x0;
   }
   else {
     iVar4 = (int)local_14e;
     local_40 = (STFishC *)
-               g_worldCells
-               [(int)local_14a * (int)SHORT_007fb246 + (int)local_14c * (int)SHORT_007fb240 + iVar4]
-               .objects[0];
+               g_worldGrid.cells
+               [(int)local_14a * (int)g_worldGrid.planeStride +
+                (int)local_14c * (int)g_worldGrid.sizeX + iVar4].objects[0];
   }
   if (local_40 != (STFishC *)0x0) {
     local_8 = CONCAT22((short)((uint)iVar4 >> 0x10),*(undefined2 *)&local_40->field_0x32);
     uVar13 = 0;
     if (0 < (int)local_2c) {
       do {
-        FUN_006acc70((AnonShape_006ACC70_C8641025 *)param_4,uVar13,(undefined4 *)&local_12);
+        DArrayGetElement(param_4,uVar13,&local_12);
         pDVar8 = local_30;
         sVar3 = (short)local_8;
         if (sVar3 == local_12) {
@@ -671,7 +670,7 @@ cf_common_join_004435CD:
   goto LAB_0044326c;
   while (uVar13 = uVar13 + 1, (int)uVar13 < (int)uVar14) {
 LAB_0044355f:
-    FUN_006acc70((AnonShape_006ACC70_C8641025 *)pDVar8,uVar13,(undefined4 *)&local_10);
+    DArrayGetElement(pDVar8,uVar13,&local_10);
     sVar3 = (short)local_8;
     if (local_10 == sVar3) {
       local_e = local_e + local_13a;

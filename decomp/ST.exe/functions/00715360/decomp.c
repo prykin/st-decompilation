@@ -49,7 +49,7 @@ FUN_00715360(int *param_1,int param_2,char param_3,char *param_4,uint param_5,in
   if (iVar1 != 0) {
     g_currentExceptionFrame = local_6c.previous;
     if (local_8 != (AnonShape_00715360_91615618 *)0x0) {
-      FUN_006ab060(&local_8);
+      FreeAndNull(&local_8);
     }
     return iVar1;
   }
@@ -102,7 +102,7 @@ FUN_00715360(int *param_1,int param_2,char param_3,char *param_4,uint param_5,in
     }
     Library::DKW::DDX::FUN_006b7650(param_1,param_2,local_8,uVar2);
     if (local_8 != (AnonShape_00715360_91615618 *)0x0) {
-      FUN_006ab060(&local_8);
+      FreeAndNull(&local_8);
       g_currentExceptionFrame = local_6c.previous;
       return 0;
     }

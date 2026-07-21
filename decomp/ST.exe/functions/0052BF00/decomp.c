@@ -400,17 +400,17 @@ undefined4 __thiscall MoneyTy::GetMessage(MoneyTy *this,AnonShape_0052BF00_2F187
       local_24 = uVar9;
       FUN_006e6000(this_00,3,1,local_38);
       if (*(int *)&this_00->field_0x72 != 0) {
-        FUN_006ab060((LPVOID *)&this_00->field_0x72);
+        FreeAndNull((void **)&this_00->field_0x72);
       }
       if (*(int *)&this_00->field_0x76 != 0) {
-        FUN_006ab060((LPVOID *)&this_00->field_0x76);
+        FreeAndNull((void **)&this_00->field_0x76);
       }
       if (*(int *)&this_00->field_0x7a != 0) {
-        FUN_006ab060((LPVOID *)&this_00->field_0x7a);
+        FreeAndNull((void **)&this_00->field_0x7a);
       }
       this_02 = (ccFntTy *)0x0;
       if (*(int *)&this_00->field_0x7e != 0) {
-        FUN_006ab060((LPVOID *)&this_00->field_0x7e);
+        FreeAndNull((void **)&this_00->field_0x7e);
         this_02 = extraout_ECX;
       }
       if (this_00->field_0082 != 0) {

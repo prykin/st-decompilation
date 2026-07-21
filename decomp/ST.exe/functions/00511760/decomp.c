@@ -58,23 +58,23 @@ void __thiscall HelpPanelTy::DoneHelpPanel(HelpPanelTy *this)
       this_00 = extraout_ECX_02;
     }
     pHVar2->field_019C = 0;
-    if ((byte *)pHVar2->field_01B3 != (byte *)0x0) {
-      FUN_006ae110((byte *)pHVar2->field_01B3);
+    if ((DArrayTy *)pHVar2->field_01B3 != (DArrayTy *)0x0) {
+      DArrayDestroy((DArrayTy *)pHVar2->field_01B3);
       this_00 = extraout_ECX_03;
     }
-    pHVar2->field_01B3 = 0;
-    if ((byte *)pHVar2->field_01BB != (byte *)0x0) {
-      FUN_006ae110((byte *)pHVar2->field_01BB);
+    pHVar2->field_01B3 = (AnonPointee_HelpPanelTy_01B3 *)0x0;
+    if (pHVar2->field_01BB != (DArrayTy *)0x0) {
+      DArrayDestroy(pHVar2->field_01BB);
       this_00 = extraout_ECX_04;
     }
-    pHVar2->field_01BB = 0;
-    if ((byte *)pHVar2->field_01CB != (byte *)0x0) {
-      FUN_006ae110((byte *)pHVar2->field_01CB);
+    pHVar2->field_01BB = (DArrayTy *)0x0;
+    if (pHVar2->field_01CB != (DArrayTy *)0x0) {
+      DArrayDestroy(pHVar2->field_01CB);
       this_00 = extraout_ECX_05;
     }
-    pHVar2->field_01CB = 0;
-    if ((byte *)pHVar2->field_01D7 != (byte *)0x0) {
-      FUN_006ae110((byte *)pHVar2->field_01D7);
+    pHVar2->field_01CB = (DArrayTy *)0x0;
+    if ((DArrayTy *)pHVar2->field_01D7 != (DArrayTy *)0x0) {
+      DArrayDestroy((DArrayTy *)pHVar2->field_01D7);
       this_00 = extraout_ECX_06;
     }
     pHVar2->field_01D7 = 0;
@@ -118,11 +118,11 @@ void __thiscall HelpPanelTy::DoneHelpPanel(HelpPanelTy *this)
       ccFntTy::operator(this_00,(uint *)pHVar2->field_01E8);
       pHVar2->field_01E8 = (ccFntTy *)0x0;
     }
-    if (pHVar2->field_0218 != 0) {
-      FUN_006ab060((LPVOID *)&pHVar2->field_0218);
+    if (pHVar2->field_0218 != (AnonPointee_HelpPanelTy_0218 *)0x0) {
+      FreeAndNull(&pHVar2->field_0218);
     }
     if (pHVar2->field_01EC != 0) {
-      FUN_006ab060((LPVOID *)&pHVar2->field_01EC);
+      FreeAndNull((void **)&pHVar2->field_01EC);
     }
     if (pHVar2->field_024C != (ushort *)0x0) {
       cMf32::RecMemFree(DAT_00806790,(uint *)&pHVar2->field_024C);

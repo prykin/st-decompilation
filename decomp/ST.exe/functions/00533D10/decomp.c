@@ -18,6 +18,7 @@ undefined4 __thiscall OptPanelTy::GetMessage(OptPanelTy *this,int param_1)
   DWORD DVar9;
   uint uVar10;
   undefined4 *puVar11;
+  uint *extraout_EAX;
   LPSTR pCVar12;
   cMf32 *pcVar13;
   byte *pbVar14;
@@ -173,8 +174,9 @@ undefined4 __thiscall OptPanelTy::GetMessage(OptPanelTy *this,int param_1)
               }
               ccFntTy::WrStr(this_00->field_017C,puVar28,2,-1,uVar10);
               Library::DKW::WGR::FUN_006b55f0
-                        ((undefined4 *)this_00->field_0068,0,*(ushort *)(param_1 + 0x18) + 0x26,
-                         *(ushort *)(param_1 + 0x1a) + 0x31,(byte *)this_00->field_01E5,0,0,0,200,
+                        ((AnonShape_006B84D0_7C7D97C6 *)this_00->field_0068,0,
+                         *(ushort *)(param_1 + 0x18) + 0x26,*(ushort *)(param_1 + 0x1a) + 0x31,
+                         (byte *)this_00->field_01E5,0,0,0,200,
                          *(int *)((byte *)this_00->field_01E5 + 8));
               Library::DKW::DDX::FUN_006b3640
                         (DAT_008075a8,this_00->field_0060,0xffffffff,this_00->field_003C,
@@ -234,8 +236,8 @@ undefined4 __thiscall OptPanelTy::GetMessage(OptPanelTy *this,int param_1)
                 ccFntTy::WrStr(this_00->field_017C,puVar28,0,-1,0);
                 pbVar14 = (byte *)this_00->field_01E5;
                 Library::DKW::WGR::FUN_006b55f0
-                          ((undefined4 *)this_00->field_0068,0,0x26,0x1c,pbVar14,0,0,0,
-                           *(int *)(pbVar14 + 4),*(int *)(pbVar14 + 8));
+                          ((AnonShape_006B84D0_7C7D97C6 *)this_00->field_0068,0,0x26,0x1c,pbVar14,0,
+                           0,0,*(int *)(pbVar14 + 4),*(int *)(pbVar14 + 8));
                 g_currentExceptionFrame = local_8c.previous;
                 return 0;
               }
@@ -266,7 +268,8 @@ undefined4 __thiscall OptPanelTy::GetMessage(OptPanelTy *this,int param_1)
               iVar32 = -1;
               iVar30 = 0;
               if (iVar8 == 0) {
-                puVar28 = (uint *)FUN_006b0140(0x2711,HINSTANCE_00807618);
+                LoadResourceString(0x2711,HINSTANCE_00807618);
+                puVar28 = extraout_EAX;
               }
               else {
                 puVar28 = &DAT_0080f33a;
@@ -274,8 +277,8 @@ undefined4 __thiscall OptPanelTy::GetMessage(OptPanelTy *this,int param_1)
               ccFntTy::WrStr(this_00->field_017C,puVar28,iVar30,iVar32,uVar33);
               pbVar14 = (byte *)this_00->field_01E5;
               Library::DKW::WGR::FUN_006b55f0
-                        ((undefined4 *)this_00->field_0068,0,0x26,0x1c,pbVar14,0,0,0,
-                         *(int *)(pbVar14 + 4),*(int *)(pbVar14 + 8));
+                        ((AnonShape_006B84D0_7C7D97C6 *)this_00->field_0068,0,0x26,0x1c,pbVar14,0,0,
+                         0,*(int *)(pbVar14 + 4),*(int *)(pbVar14 + 8));
               g_currentExceptionFrame = local_8c.previous;
               return 0;
             }
@@ -306,7 +309,7 @@ undefined4 __thiscall OptPanelTy::GetMessage(OptPanelTy *this,int param_1)
               FUN_00710790((uint *)pcVar31);
             }
             local_8 = *(uint *)&pcVar31->field_0x8a;
-            FUN_006b4170(this_00->field_0068,0,0x26,0x1a,0xca,0x6f,
+            FUN_006b4170((AnonShape_006C7610_838EDECF *)this_00->field_0068,0,0x26,0x1a,0xca,0x6f,
                          (DAT_0080874e != '\x03') - 1U & 0x73);
             uVar16 = (uint)*(ushort *)(param_1 + 0x16);
             uVar10 = uVar16;
@@ -751,7 +754,7 @@ LAB_00534654:
           puVar22 = puVar22 + 1;
         }
         if (DAT_0080ed12 != (undefined4 *)0x0) {
-          FUN_006ab060(&DAT_0080ed12);
+          FreeAndNull(&DAT_0080ed12);
         }
         DAT_0080ed12 = (undefined4 *)Library::DKW::LIB::FUN_006aac70(0x8db);
         puVar11 = &DAT_0080bae8;
@@ -1655,10 +1658,10 @@ switchD_00534835_caseD_1:
           cMf32::delete(pcVar18,pcVar13);
         }
         if (local_20 != (ushort *)0x0) {
-          FUN_006ab060(&local_20);
+          FreeAndNull(&local_20);
         }
         if (local_14 != (undefined4 *)0x0) {
-          FUN_006ab060(&local_14);
+          FreeAndNull(&local_14);
         }
       }
       else {
@@ -1667,7 +1670,7 @@ switchD_00534835_caseD_1:
           *(undefined1 *)local_14 = 0;
           *(byte *)((int)local_14 + 1) = DAT_0080874d;
           thunk_FUN_0054edf0((undefined4 *)0x32,local_14,1,2);
-          FUN_006ab060(&local_14);
+          FreeAndNull(&local_14);
           local_1c = (uint *)0x1;
         }
       }
@@ -1765,7 +1768,7 @@ switchD_00534835_caseD_1:
       return 0;
     case CASE_D:
       DAT_00807346 = (*(char *)(param_1 + 0x14) + '\x01') * '\x05';
-      DibPut((AnonShape_006B84D0_7C7D97C6 *)this_00->field_0068,0xaa,0x6f,'\x01',
+      DibPut((AnonShape_006B5B10_E0D06CF1 *)this_00->field_0068,0xaa,0x6f,'\x01',
              (byte *)this_00->field_018C);
       wsprintfA(&this_00->field_0x6c,&DAT_007c1890,(uint)(byte)DAT_00807346);
       ccFntTy::SetSurf(this_00->field_017C,this_00->field_0068,0,0xaa,0x6f,
@@ -1913,7 +1916,7 @@ LAB_00535ef1:
       return 0;
     case CASE_D:
       DAT_00807347 = *(byte *)(param_1 + 0x14);
-      DibPut((AnonShape_006B84D0_7C7D97C6 *)this_00->field_0068,0xaa,0x81,'\x01',
+      DibPut((AnonShape_006B5B10_E0D06CF1 *)this_00->field_0068,0xaa,0x81,'\x01',
              (byte *)this_00->field_018C);
       wsprintfA(&this_00->field_0x6c,&DAT_007c1890,DAT_00807347 + 1);
       ccFntTy::SetSurf(this_00->field_017C,this_00->field_0068,0,0xaa,0x81,
@@ -2357,8 +2360,8 @@ cf_common_exit_00536EE8:
       }
       pbVar14 = (byte *)this_00->field_01E5;
       Library::DKW::WGR::FUN_006b55f0
-                ((undefined4 *)this_00->field_0068,0,0x26,0x1c,pbVar14,0,0,0,*(int *)(pbVar14 + 4),
-                 *(int *)(pbVar14 + 8));
+                ((AnonShape_006B84D0_7C7D97C6 *)this_00->field_0068,0,0x26,0x1c,pbVar14,0,0,0,
+                 *(int *)(pbVar14 + 4),*(int *)(pbVar14 + 8));
       Library::DKW::DDX::FUN_006b3640
                 (DAT_008075a8,this_00->field_0060,0xffffffff,this_00->field_003C,this_00->field_0044
                 );

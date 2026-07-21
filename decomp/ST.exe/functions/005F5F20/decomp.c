@@ -24,7 +24,7 @@ undefined4 __thiscall STColl3C::GetMessage(STColl3C *this,AnonShape_005F5F20_58E
   STWorldObject *pSVar11;
   InternalExceptionFrame local_60;
   byte *local_1c;
-  uint local_18;
+  AnonShape_0060EA30_DCEB68AD *local_18;
   short local_14 [2];
   short local_10 [2];
   short local_c [2];
@@ -77,9 +77,9 @@ undefined4 __thiscall STColl3C::GetMessage(STColl3C *this,AnonShape_005F5F20_58E
     }
   }
   if (uVar1 == 0x10f) {
-    local_1c = thunk_FUN_005f66f0(local_8,&local_18);
+    local_1c = thunk_FUN_005f66f0(local_8,(uint *)&local_18);
     STPlaySystemC::SaveObjData(PTR_00802a38,this_00->field_0018,local_1c,local_18);
-    FUN_006ab060(&local_1c);
+    FreeAndNull(&local_1c);
     g_currentExceptionFrame = local_60.previous;
     return 0;
   }
@@ -156,7 +156,7 @@ undefined4 __thiscall STColl3C::GetMessage(STColl3C *this,AnonShape_005F5F20_58E
     thunk_FUN_005fa8b0(local_8,(int *)&local_8->field_0x27d,(int *)&local_8->field_0x281,
                        (int *)&local_8->field_0x285);
     this_00->field_0269 = 600;
-    this_00->field_02DD = 1;
+    this_00->field_02DD = CASE_1;
     this_00->field_02E1 = PTR_00802a38->field_00E4 + this_00->field_0259;
     if (DAT_008117a4 != (void *)0x0) {
       thunk_FUN_0062e550(DAT_008117a4,this_00->field_0235,this_00->field_0018,this_00->field_0255);
@@ -174,17 +174,18 @@ undefined4 __thiscall STColl3C::GetMessage(STColl3C *this,AnonShape_005F5F20_58E
   STFishC::sub_004162B0((STFishC *)this_00,local_14,local_10,local_c);
   bVar5 = thunk_FUN_004961b0(local_14[0],local_10[0],local_c[0]);
   if (CONCAT31(extraout_var,bVar5) != 0) {
-    if (((((local_14[0] < 0) || (SHORT_007fb240 <= local_14[0])) || (local_10[0] < 0)) ||
-        ((SHORT_007fb242 <= local_10[0] || (local_c[0] < 0)))) || (SHORT_007fb244 <= local_c[0])) {
+    if (((((local_14[0] < 0) || (g_worldGrid.sizeX <= local_14[0])) || (local_10[0] < 0)) ||
+        ((g_worldGrid.sizeY <= local_10[0] || (local_c[0] < 0)))) ||
+       (g_worldGrid.sizeZ <= local_c[0])) {
       pSVar11 = (STWorldObject *)0x0;
     }
     else {
-      pSVar11 = g_worldCells
-                [(int)SHORT_007fb246 * (int)local_c[0] + (int)SHORT_007fb240 * (int)local_10[0] +
-                 (int)local_14[0]].objects[0];
+      pSVar11 = g_worldGrid.cells
+                [(int)g_worldGrid.planeStride * (int)local_c[0] +
+                 (int)g_worldGrid.sizeX * (int)local_10[0] + (int)local_14[0]].objects[0];
     }
     if ((pSVar11 == (STWorldObject *)0x0) &&
-       ((this_00->field_02DD == 1 ||
+       ((this_00->field_02DD == CASE_1 ||
         (iVar6 = DumpClassC::WritePtr
                            (local_14[0],local_10[0],local_c[0],0,
                             (AnonShape_00495EC0_95A268C6 *)this_00), iVar6 == 0))))
@@ -215,7 +216,7 @@ switchD_005f6301_caseD_110:
   this_00->field_0275 = (uint)*(byte *)(piVar2 + 2);
   this_00->field_0279 = (uint)*(ushort *)((int)piVar2 + 0xe);
   thunk_FUN_005fa070((int *)this_00);
-  this_00->field_02DD = 0xd;
+  this_00->field_02DD = CASE_C|CASE_1;
   g_currentExceptionFrame = local_60.previous;
   return 0;
 }

@@ -20,7 +20,8 @@ void __fastcall FUN_0052b990(AnonShape_0052B990_04D99BFA *param_1)
     if (0 < (int)(uVar1 - (byte)param_1->field_00A2)) {
       uVar7 = 1;
       do {
-        pBVar3 = (BITMAPINFO *)FUN_0070b3a0(param_1->field_0082,0);
+        pBVar3 = (BITMAPINFO *)
+                 FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)param_1->field_0082,0);
         PutDDX(param_1->field_0030 + -4 + uVar7 * 4,param_1->field_0034,'\x01',pBVar3);
         local_8._0_1_ = (byte)local_8 + 1;
         uVar7 = (uint)(byte)local_8;
@@ -31,7 +32,8 @@ void __fastcall FUN_0052b990(AnonShape_0052B990_04D99BFA *param_1)
       iVar5 = (uint)bVar4 * 4;
       iVar6 = (uVar1 - bVar4) + 1;
       do {
-        pBVar3 = (BITMAPINFO *)FUN_0070b3a0(param_1->field_0082,4);
+        pBVar3 = (BITMAPINFO *)
+                 FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)param_1->field_0082,4);
         PutDDX(param_1->field_0030 + -4 + iVar5,param_1->field_0034,'\x01',pBVar3);
         iVar5 = iVar5 + 4;
         iVar6 = iVar6 + -1;
@@ -44,7 +46,8 @@ void __fastcall FUN_0052b990(AnonShape_0052B990_04D99BFA *param_1)
     if (param_1->field_00A2 != '\0') {
       do {
         pBVar3 = (BITMAPINFO *)
-                 FUN_0070b3a0(param_1->field_0082,(-(uint)(DAT_0080874e != '\x03') & 2) + 1);
+                 FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)param_1->field_0082,
+                              (-(uint)(DAT_0080874e != '\x03') & 2) + 1);
         PutDDX(param_1->field_0030 + -4 + local_8 * 4,param_1->field_0034,'\x01',pBVar3);
         bVar4 = bVar4 + 1;
         local_8 = (uint)bVar4;
@@ -55,7 +58,8 @@ void __fastcall FUN_0052b990(AnonShape_0052B990_04D99BFA *param_1)
       iVar5 = (uint)bVar4 * 4;
       iVar6 = ((uint)bVar2 - (uint)bVar4) + 1;
       do {
-        pBVar3 = (BITMAPINFO *)FUN_0070b3a0(param_1->field_0082,0);
+        pBVar3 = (BITMAPINFO *)
+                 FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)param_1->field_0082,0);
         PutDDX(param_1->field_0030 + -4 + iVar5,param_1->field_0034,'\x01',pBVar3);
         iVar5 = iVar5 + 4;
         iVar6 = iVar6 + -1;

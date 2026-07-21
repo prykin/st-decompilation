@@ -1,5 +1,5 @@
 
-void __fastcall FUN_0053c620(AnonShape_0053C620_58AD6CA0 *param_1)
+void __fastcall FUN_0053c620(AnonShape_004EF140_16642BA0 *param_1)
 
 {
   uint uVar1;

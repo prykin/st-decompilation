@@ -21,7 +21,7 @@ STJumpMineC::GetMessage(STJumpMineC *this,AnonShape_00618C00_CCBA84F5 *param_1)
   InternalExceptionFrame local_58;
   void *local_14;
   byte *local_10;
-  uint local_c;
+  AnonShape_0060EA30_DCEB68AD *local_c;
   STJellyGunC *local_8;
   
   local_58.previous = g_currentExceptionFrame;
@@ -46,7 +46,7 @@ STJumpMineC::GetMessage(STJumpMineC *this,AnonShape_00618C00_CCBA84F5 *param_1)
     if (uVar4 == 0x10f) {
       local_10 = (byte *)thunk_FUN_00619350(local_8,&local_c);
       STPlaySystemC::SaveObjData(PTR_00802a38,this_00->field_0018,local_10,local_c);
-      FUN_006ab060(&local_10);
+      FreeAndNull(&local_10);
       g_currentExceptionFrame = local_58.previous;
       return 0;
     }
@@ -156,14 +156,18 @@ LAB_00618ce0:
   }
   else if (uVar4 == 0x112) {
     if ((-1 < (int)*(uint *)&local_8->field_0x97) && (*(int *)&local_8->field_0x93 != 5)) {
-      FUN_006e9520(PTR_00807598,*(uint *)&local_8->field_0x97,0,0,(uint)local_8);
+      SubmarineTitans::Recovered::HiddenThis::AnonReceiver_004248D0::FUN_006e9520
+                ((AnonReceiver_004248D0 *)PTR_00807598,*(uint *)&local_8->field_0x97,0,0,
+                 (uint)local_8);
       g_currentExceptionFrame = local_58.previous;
       return 0;
     }
   }
   else if (((uVar4 == 0x113) && (-1 < (int)*(uint *)&local_8->field_0x97)) &&
           (*(int *)&local_8->field_0x93 != 5)) {
-    FUN_006e9520(PTR_00807598,*(uint *)&local_8->field_0x97,0,0x401109,(uint)&local_8->field_004D);
+    SubmarineTitans::Recovered::HiddenThis::AnonReceiver_004248D0::FUN_006e9520
+              ((AnonReceiver_004248D0 *)PTR_00807598,*(uint *)&local_8->field_0x97,0,0x401109,
+               (uint)&local_8->field_004D);
     g_currentExceptionFrame = local_58.previous;
     return 0;
   }

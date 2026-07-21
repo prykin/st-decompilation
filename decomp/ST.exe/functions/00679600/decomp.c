@@ -2,7 +2,7 @@
 void __fastcall FUN_00679600(AnonShape_00679600_B8E418A8 *param_1)
 
 {
-  char cVar1;
+  byte bVar1;
   char cVar2;
   short sVar3;
   uint uVar4;
@@ -44,19 +44,18 @@ LAB_0067971a:
       else {
         uVar4 = uVar4 & 0xff;
         uVar7 = uVar7 & 0xff;
-        cVar1 = *(char *)((int)&DAT_00808a4f + uVar4 * 8 + uVar7);
-        if ((cVar1 == '\0') && (*(char *)((int)&DAT_00808a4f + uVar7 * 8 + uVar4) == '\0')) {
+        bVar1 = g_playerRelationMatrix[uVar4][uVar7];
+        if ((bVar1 == 0) && (g_playerRelationMatrix[uVar7][uVar4] == 0)) {
           iVar6 = -2;
         }
-        else if ((cVar1 == '\x01') && (*(char *)((int)&DAT_00808a4f + uVar7 * 8 + uVar4) == '\0')) {
+        else if ((bVar1 == 1) && (g_playerRelationMatrix[uVar7][uVar4] == 0)) {
           iVar6 = -1;
         }
-        else if ((cVar1 == '\0') && (*(char *)((int)&DAT_00808a4f + uVar7 * 8 + uVar4) == '\x01')) {
+        else if ((bVar1 == 0) && (g_playerRelationMatrix[uVar7][uVar4] == 1)) {
           iVar6 = 1;
         }
         else {
-          if ((cVar1 != '\x01') || (*(char *)((int)&DAT_00808a4f + uVar7 * 8 + uVar4) != '\x01'))
-          goto LAB_0067971a;
+          if ((bVar1 != 1) || (g_playerRelationMatrix[uVar7][uVar4] != 1)) goto LAB_0067971a;
           iVar6 = 2;
         }
       }
@@ -82,23 +81,20 @@ LAB_0067971a:
         }
         else {
           uVar7 = uVar7 & 0xff;
-          cVar2 = *(char *)((int)&DAT_00808a4f + uVar4 * 8 + uVar7);
-          if ((cVar2 == '\0') && (*(char *)((int)&DAT_00808a4f + uVar7 * 8 + uVar4) == '\0')) {
+          bVar1 = g_playerRelationMatrix[uVar4][uVar7];
+          if ((bVar1 == 0) && (g_playerRelationMatrix[uVar7][uVar4] == 0)) {
             iVar5 = -2;
             param_1 = local_8;
           }
-          else if ((cVar2 == '\x01') && (*(char *)((int)&DAT_00808a4f + uVar7 * 8 + uVar4) == '\0'))
-          {
+          else if ((bVar1 == 1) && (g_playerRelationMatrix[uVar7][uVar4] == 0)) {
             iVar5 = -1;
             param_1 = local_8;
           }
-          else if ((cVar2 == '\0') && (*(char *)((int)&DAT_00808a4f + uVar7 * 8 + uVar4) == '\x01'))
-          {
+          else if ((bVar1 == 0) && (g_playerRelationMatrix[uVar7][uVar4] == 1)) {
             iVar5 = 1;
             param_1 = local_8;
           }
-          else if ((cVar2 == '\x01') &&
-                  (*(char *)((int)&DAT_00808a4f + uVar7 * 8 + uVar4) == '\x01')) {
+          else if ((bVar1 == 1) && (g_playerRelationMatrix[uVar7][uVar4] == 1)) {
             iVar5 = 2;
             param_1 = local_8;
           }
@@ -141,8 +137,9 @@ cf_common_exit_0067989B:
     local_48[0]._4_4_ = param_1->field_06FE;
     local_48[0]._0_4_ = 0x6a;
     local_48[0]._8_4_ = uVar4;
-    thunk_FUN_0067a020(param_1,local_48,-1);
-    thunk_FUN_0067c110(param_1);
+    SubmarineTitans::Recovered::HiddenThis::AnonReceiver_006799B0::thunk_FUN_0067a020
+              ((AnonReceiver_006799B0 *)param_1,local_48,-1);
+    thunk_FUN_0067c110((AnonReceiver_006799B0 *)param_1);
   }
   return;
 }

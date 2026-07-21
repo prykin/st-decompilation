@@ -6,7 +6,7 @@ void __thiscall FUN_0065d940(void *this,uint *param_1,int param_2)
 
 {
   undefined2 *puVar1;
-  uint objPtr;
+  STGameObjC *objPtr;
   void *extraout_ECX;
   void *extraout_ECX_00;
   void *pvVar2;
@@ -31,8 +31,8 @@ void __thiscall FUN_0065d940(void *this,uint *param_1,int param_2)
                             CONCAT31((int3)((uint)pvVar2 >> 8),*(undefined1 *)((int)this + 0x24)),
                             CONCAT22((short)((uint)puVar1 >> 0x10),*puVar1),CASE_1);
         pvVar2 = extraout_ECX;
-        if (objPtr != 0) {
-          AiFltClassTy::_AddObjFlt(this,objPtr,param_2);
+        if (objPtr != (STGameObjC *)0x0) {
+          AiFltClassTy::_AddObjFlt(this,(uint)objPtr,param_2);
           pvVar2 = extraout_ECX_00;
         }
         uVar3 = uVar3 + 1;

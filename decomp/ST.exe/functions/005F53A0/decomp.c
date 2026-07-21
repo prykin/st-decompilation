@@ -22,7 +22,7 @@ void __fastcall FUN_005f53a0(AnonShape_005F53A0_843EB0E7 *param_1)
         uVar4 = uVar4 + 1;
       } while ((int)uVar4 < iVar1);
     }
-    FUN_006ae110((byte *)param_1->field_0169);
+    DArrayDestroy((DArrayTy *)param_1->field_0169);
     param_1->field_0169 = (AnonNested_005F53A0_0169_99CDD61C *)0x0;
   }
   return;

@@ -43,14 +43,14 @@ void FUN_006c7430(AnonShape_006C7430_D1D36538 *param_1)
   local_1c = &stack0xffffff7c;
   if (local_8 == 0) {
     if (param_1->field_0072 == (byte *)0x0) {
-      FUN_006b4170(param_1->field_003A,param_1->field_003E,local_20,local_24,local_28,local_2c,
-                   param_1->field_0011);
+      FUN_006b4170((AnonShape_006C7610_838EDECF *)param_1->field_003A,param_1->field_003E,local_20,
+                   local_24,local_28,local_2c,param_1->field_0011);
     }
     else {
       local_1c = &stack0xffffff7c;
       Library::DKW::WGR::FUN_006b55f0
-                ((undefined4 *)param_1->field_003A,param_1->field_003E,local_20,local_24,
-                 param_1->field_0072,0,0,0,local_28,local_2c);
+                ((AnonShape_006B84D0_7C7D97C6 *)param_1->field_003A,param_1->field_003E,local_20,
+                 local_24,param_1->field_0072,0,0,0,local_28,local_2c);
     }
     g_currentExceptionFrame = local_70.previous;
     ExceptionList = local_14;

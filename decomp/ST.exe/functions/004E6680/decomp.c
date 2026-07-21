@@ -13,7 +13,7 @@ void FUN_004e6680(int param_1)
   int iVar9;
   int local_8;
   
-  uVar2 = thunk_FUN_004406c0((char)param_1);
+  uVar2 = GetPlayerRaceId((char)param_1);
   local_8 = 0x42;
   iVar3 = (uVar2 & 0xff) - 1;
   pbVar8 = &DAT_007c0dd4;

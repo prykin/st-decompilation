@@ -34,8 +34,8 @@ void __thiscall HelpPanelTy::IndexBut(HelpPanelTy *this)
     local_8->field_01A1 = CASE_8|CASE_2;
     local_8->field_01A3 = 0;
     Library::DKW::WGR::FUN_006b55f0
-              ((undefined4 *)local_8->field_0068,0,0x21,0x16,(byte *)local_8->field_01DC,0,0x21,0x16
-               ,0x1b8,0x118);
+              ((AnonShape_006B84D0_7C7D97C6 *)local_8->field_0068,0,0x21,0x16,
+               (byte *)local_8->field_01DC,0,0x21,0x16,0x1b8,0x118);
     if (this_00->field_0178 != 0) {
       this_00->field_0028 = 0x4202;
       *(undefined2 *)&this_00->field_0x2c = 0;

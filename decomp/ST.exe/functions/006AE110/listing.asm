@@ -1,4 +1,4 @@
-FUN_006ae110:
+DArrayDestroy:
 006AE110  55                        PUSH EBP
 006AE111  8B EC                     MOV EBP,ESP
 006AE113  56                        PUSH ESI

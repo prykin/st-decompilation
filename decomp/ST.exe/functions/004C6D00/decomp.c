@@ -43,9 +43,9 @@ undefined4 __fastcall FUN_004c6d00(STJellyGunC *param_1)
         *(undefined4 *)&param_1[1].field_0x168 = 1;
         *(undefined4 *)&param_1[1].field_0x16c = 0;
       }
-      iVar3 = thunk_FUN_00418030(param_1,*(short *)&param_1[1].field_0x14c,
-                                 *(short *)&param_1[1].field_0x150,*(short *)&param_1[1].field_0x154
-                                );
+      iVar3 = SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00417FF0::thunk_FUN_00418030
+                        ((AnonReceiver_00417FF0 *)param_1,*(short *)&param_1[1].field_0x14c,
+                         *(short *)&param_1[1].field_0x150,*(short *)&param_1[1].field_0x154);
       if (iVar3 != -1) {
         if (iVar3 == 2) {
           *(undefined4 *)&param_1[1].field_0x148 = 0;

@@ -9,7 +9,7 @@ uint __thiscall STGroupC::GetTOBJQty(STGroupC *this,int param_1)
   code *pcVar1;
   STGroupC *pSVar2;
   int iVar3;
-  int *piVar4;
+  STGameObjC *pSVar4;
   int iVar5;
   undefined2 extraout_var;
   undefined4 extraout_EDX;
@@ -33,18 +33,18 @@ uint __thiscall STGroupC::GetTOBJQty(STGroupC *this,int param_1)
     local_14 = *(int *)(local_10->field_0029 + 0xc);
     if (0 < local_14) {
       do {
-        FUN_006acc70((AnonShape_006ACC70_C8641025 *)pSVar2->field_0029,uVar6,&local_c);
+        DArrayGetElement((DArrayTy *)pSVar2->field_0029,uVar6,&local_c);
         if ((short)local_c != -1) {
-          piVar4 = (int *)STAllPlayersC::GetObjPtr
-                                    (g_sTAllPlayers_007FA174,
-                                     CONCAT31((int3)((uint)extraout_EDX >> 8),pSVar2->field_0024),
-                                     local_c,CASE_1);
-          if (piVar4 == (int *)0x0) {
+          pSVar4 = STAllPlayersC::GetObjPtr
+                             (g_sTAllPlayers_007FA174,
+                              CONCAT31((int3)((uint)extraout_EDX >> 8),pSVar2->field_0024),local_c,
+                              CASE_1);
+          if (pSVar4 == (STGameObjC *)0x0) {
             RaiseInternalException
                       (-0x5001fffc,g_overwriteContext_007ED77C,
                        s_E____titans_wlad_tc_grp_cpp_007a50a4,0x66);
           }
-          iVar3 = (**(code **)(*piVar4 + 0x2c))();
+          iVar3 = (*pSVar4->vtable->vfunc_2C)();
           if (iVar3 == param_1) {
             local_8 = local_8 + 1;
           }

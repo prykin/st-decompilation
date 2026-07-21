@@ -50,7 +50,7 @@ undefined4 * __cdecl FUN_0070c9e0(AnonShape_0070C9E0_7137F001 *param_1,char para
       uVar6 = 0;
       if (0 < (int)local_c) {
         do {
-          cVar1 = FUN_0070c9a0((AnonShape_0070C9A0_D70EB495 *)param_1,uVar6,iVar7);
+          cVar1 = FUN_0070c9a0((AnonShape_006B5B10_E0D06CF1 *)param_1,uVar6,iVar7);
           if (cVar1 != param_2) {
             iVar4 = ((int)(uVar6 + ((int)uVar6 >> 0x1f & 7U)) >> 3) + local_8;
             uVar5 = uVar6 & 0x80000007;

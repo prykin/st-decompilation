@@ -1,8 +1,10 @@
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+/* [STTypeFamilyApplier] EXACT_ANONYMOUS_LAYOUT.
+   Evidence: exact anonymous structure fingerprint shared across functions */
 
 void __cdecl
-FUN_006e83f0(AnonShape_006E83F0_6F955BEB *param_1,int param_2,int param_3,int param_4,int param_5)
+FUN_006e83f0(AnonShape_006B5B10_E0D06CF1 *param_1,int param_2,int param_3,int param_4,int param_5)
 
 {
   int iVar1;

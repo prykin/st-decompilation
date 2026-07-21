@@ -40,7 +40,7 @@ void __fastcall FUN_00717380(AnonShape_00717380_FEFD061B *param_1)
       iVar9 = 0;
       param_1->field_04E6 = *(undefined4 *)(param_1->field_04DA + iVar8);
       do {
-        FUN_006ab060((LPVOID *)(iVar9 + param_1->field_0472));
+        FreeAndNull((void **)(iVar9 + param_1->field_0472));
         iVar9 = iVar9 + 4;
       } while (iVar9 < 0x140);
       iVar9 = param_1->field_04D2;

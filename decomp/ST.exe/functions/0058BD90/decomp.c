@@ -143,8 +143,8 @@ switchD_0058bec9_caseD_2:
     sVar6 = (short)((int)(iVar3 + (iVar3 >> 0x1f & 0x3fffU)) >> 0xe) + param_1->field_0271;
     param_1->field_0045 = sVar6;
     if ((((sVar6 < 0x4b0) && ((uint)PTR_00802a38->field_00E4 % 0x11 == 0)) &&
-        ((int)sVar7 < SHORT_007fb240 * 0xc9)) &&
-       (((0 < sVar7 && ((int)sVar8 < SHORT_007fb242 * 0xc9)) && (0 < sVar8)))) {
+        ((int)sVar7 < g_worldGrid.sizeX * 0xc9)) &&
+       (((0 < sVar7 && ((int)sVar8 < g_worldGrid.sizeY * 0xc9)) && (0 < sVar8)))) {
       param_1->field_0231 = 4;
     }
     goto LAB_0058c38c;
@@ -183,15 +183,16 @@ switchD_0058bec9_caseD_0:
     iVar3 = (int)(short)((sVar8 / 200 + (sVar8 >> 0xf)) -
                         (short)((longlong)(int)sVar8 * 0x51eb851f >> 0x3f));
   }
-  if (((sVar6 < 0) || (SHORT_007fb240 <= sVar6)) ||
+  if (((sVar6 < 0) || (g_worldGrid.sizeX <= sVar6)) ||
      ((sVar7 < 0 ||
-      ((((SHORT_007fb242 <= sVar7 || (sVar8 = (short)iVar3, sVar8 < 0)) || (SHORT_007fb244 <= sVar8)
-        ) || ((g_worldCells
-               [(int)SHORT_007fb246 * (int)sVar8 + (int)SHORT_007fb240 * (int)sVar7 + (int)sVar6].
-               objects[0] == (STWorldObject *)0x0 ||
-              (g_worldCells
-               [(int)SHORT_007fb246 * (int)sVar8 + (int)SHORT_007fb240 * (int)sVar7 + (int)sVar6].
-               objects[0]->value_20 == 400)))))))) {
+      ((((g_worldGrid.sizeY <= sVar7 || (sVar8 = (short)iVar3, sVar8 < 0)) ||
+        (g_worldGrid.sizeZ <= sVar8)) ||
+       ((g_worldGrid.cells
+         [(int)g_worldGrid.planeStride * (int)sVar8 + (int)g_worldGrid.sizeX * (int)sVar7 +
+          (int)sVar6].objects[0] == (STWorldObject *)0x0 ||
+        (g_worldGrid.cells
+         [(int)g_worldGrid.planeStride * (int)sVar8 + (int)g_worldGrid.sizeX * (int)sVar7 +
+          (int)sVar6].objects[0]->value_20 == 400)))))))) {
     if ((5 < iVar3) && ((*(byte *)&PTR_00802a38->field_00E4 & 3) == 0)) {
       iVar3 = param_1->field_0239 + 1;
       param_1->field_0239 = iVar3;

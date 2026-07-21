@@ -14,17 +14,17 @@ void __thiscall STGameObjC::ResetSelfCheckFlag(STGameObjC *this,int param_1)
     return;
   }
   this->field_01CD = 0;
-  FUN_006ab060((LPVOID *)&this->field_011D);
-  FUN_006ab060((LPVOID *)&this->field_0121);
-  FUN_006ab060((LPVOID *)&this->field_0125);
-  FUN_006ab060((LPVOID *)&this->field_0129);
+  FreeAndNull((void **)&this->field_011D);
+  FreeAndNull((void **)&this->field_0121);
+  FreeAndNull((void **)&this->field_0125);
+  FreeAndNull((void **)&this->field_0129);
   uVar1 = this->field_0020;
   if (uVar1 < 0x1af) {
     if (uVar1 == 0x1ae) {
-      FUN_006ab060(&this->field_01AD);
-      FUN_006ab060(&this->field_01B1);
-      FUN_006ab060((LPVOID *)&this->field_01C5);
-      FUN_006ab060((LPVOID *)&this->field_01C9);
+      FreeAndNull(&this->field_01AD);
+      FreeAndNull(&this->field_01B1);
+      FreeAndNull((void **)&this->field_01C5);
+      FreeAndNull((void **)&this->field_01C9);
       return;
     }
     if (uVar1 < 0x173) {
@@ -32,52 +32,52 @@ void __thiscall STGameObjC::ResetSelfCheckFlag(STGameObjC *this,int param_1)
         return;
       }
       if (uVar1 == 0x14) {
-        if ((byte *)this->field_0171 != (byte *)0x0) {
-          FUN_006ae110((byte *)this->field_0171);
+        if ((DArrayTy *)this->field_0171 != (DArrayTy *)0x0) {
+          DArrayDestroy((DArrayTy *)this->field_0171);
         }
-        if ((byte *)this->field_0175 != (byte *)0x0) {
-          FUN_006ae110((byte *)this->field_0175);
+        if ((DArrayTy *)this->field_0175 != (DArrayTy *)0x0) {
+          DArrayDestroy((DArrayTy *)this->field_0175);
         }
-        if ((byte *)this->field_0179 != (byte *)0x0) {
-          FUN_006ae110((byte *)this->field_0179);
+        if ((DArrayTy *)this->field_0179 != (DArrayTy *)0x0) {
+          DArrayDestroy((DArrayTy *)this->field_0179);
         }
-        if ((byte *)this->field_017D != (byte *)0x0) {
-          FUN_006ae110((byte *)this->field_017D);
+        if ((DArrayTy *)this->field_017D != (DArrayTy *)0x0) {
+          DArrayDestroy((DArrayTy *)this->field_017D);
         }
-        if ((byte *)this->field_0181 != (byte *)0x0) {
-          FUN_006ae110((byte *)this->field_0181);
+        if ((DArrayTy *)this->field_0181 != (DArrayTy *)0x0) {
+          DArrayDestroy((DArrayTy *)this->field_0181);
         }
         this->field_0171 = 0;
         this->field_0175 = 0;
         this->field_0179 = 0;
         this->field_017D = 0;
         this->field_0181 = 0;
-        if ((byte *)this->field_015D != (byte *)0x0) {
-          FUN_006ae110((byte *)this->field_015D);
+        if ((DArrayTy *)this->field_015D != (DArrayTy *)0x0) {
+          DArrayDestroy((DArrayTy *)this->field_015D);
         }
-        if ((byte *)this->field_0161 != (byte *)0x0) {
-          FUN_006ae110((byte *)this->field_0161);
+        if ((DArrayTy *)this->field_0161 != (DArrayTy *)0x0) {
+          DArrayDestroy((DArrayTy *)this->field_0161);
         }
-        if ((byte *)this->field_0165 != (byte *)0x0) {
-          FUN_006ae110((byte *)this->field_0165);
+        if ((DArrayTy *)this->field_0165 != (DArrayTy *)0x0) {
+          DArrayDestroy((DArrayTy *)this->field_0165);
         }
-        if ((byte *)this->field_0169 != (byte *)0x0) {
-          FUN_006ae110((byte *)this->field_0169);
+        if ((DArrayTy *)this->field_0169 != (DArrayTy *)0x0) {
+          DArrayDestroy((DArrayTy *)this->field_0169);
         }
-        if ((byte *)this->field_016D != (byte *)0x0) {
-          FUN_006ae110((byte *)this->field_016D);
+        if ((DArrayTy *)this->field_016D != (DArrayTy *)0x0) {
+          DArrayDestroy((DArrayTy *)this->field_016D);
         }
         this->field_015D = 0;
         this->field_0161 = 0;
         this->field_0165 = 0;
         this->field_0169 = 0;
         this->field_016D = 0;
-        FUN_006ab060(&this->field_0195);
-        FUN_006ab060(&this->field_0199);
-        FUN_006ab060(&this->field_01AD);
-        FUN_006ab060(&this->field_01B1);
-        FUN_006ab060((LPVOID *)&this->field_01BD);
-        FUN_006ab060((LPVOID *)&this->field_01C1);
+        FreeAndNull(&this->field_0195);
+        FreeAndNull(&this->field_0199);
+        FreeAndNull(&this->field_01AD);
+        FreeAndNull(&this->field_01B1);
+        FreeAndNull((void **)&this->field_01BD);
+        FreeAndNull((void **)&this->field_01C1);
         return;
       }
       if (uVar1 == 0x5a) {
@@ -93,70 +93,70 @@ void __thiscall STGameObjC::ResetSelfCheckFlag(STGameObjC *this,int param_1)
       return;
     }
     if (uVar1 == 1000) {
-      if ((byte *)this->field_0135 != (byte *)0x0) {
-        FUN_006ae110((byte *)this->field_0135);
+      if ((DArrayTy *)this->field_0135 != (DArrayTy *)0x0) {
+        DArrayDestroy((DArrayTy *)this->field_0135);
       }
-      if ((byte *)this->field_0139 != (byte *)0x0) {
-        FUN_006ae110((byte *)this->field_0139);
+      if ((DArrayTy *)this->field_0139 != (DArrayTy *)0x0) {
+        DArrayDestroy((DArrayTy *)this->field_0139);
       }
       this->field_0135 = 0;
       this->field_0139 = 0;
-      if ((byte *)this->field_012D != (byte *)0x0) {
-        FUN_006ae110((byte *)this->field_012D);
+      if ((DArrayTy *)this->field_012D != (DArrayTy *)0x0) {
+        DArrayDestroy((DArrayTy *)this->field_012D);
       }
-      if ((byte *)this->field_0131 != (byte *)0x0) {
-        FUN_006ae110((byte *)this->field_0131);
+      if ((DArrayTy *)this->field_0131 != (DArrayTy *)0x0) {
+        DArrayDestroy((DArrayTy *)this->field_0131);
       }
       this->field_012D = 0;
       this->field_0131 = 0;
-      if ((byte *)this->field_014D != (byte *)0x0) {
-        FUN_006ae110((byte *)this->field_014D);
+      if ((DArrayTy *)this->field_014D != (DArrayTy *)0x0) {
+        DArrayDestroy((DArrayTy *)this->field_014D);
       }
-      if ((byte *)this->field_0151 != (byte *)0x0) {
-        FUN_006ae110((byte *)this->field_0151);
+      if ((DArrayTy *)this->field_0151 != (DArrayTy *)0x0) {
+        DArrayDestroy((DArrayTy *)this->field_0151);
       }
-      if ((byte *)this->field_0155 != (byte *)0x0) {
-        FUN_006ae110((byte *)this->field_0155);
+      if ((DArrayTy *)this->field_0155 != (DArrayTy *)0x0) {
+        DArrayDestroy((DArrayTy *)this->field_0155);
       }
-      if ((byte *)this->field_0159 != (byte *)0x0) {
-        FUN_006ae110((byte *)this->field_0159);
+      if ((DArrayTy *)this->field_0159 != (DArrayTy *)0x0) {
+        DArrayDestroy((DArrayTy *)this->field_0159);
       }
       this->field_014D = 0;
       this->field_0151 = 0;
       this->field_0155 = 0;
       this->field_0159 = 0;
-      if ((byte *)this->field_013D != (byte *)0x0) {
-        FUN_006ae110((byte *)this->field_013D);
+      if ((DArrayTy *)this->field_013D != (DArrayTy *)0x0) {
+        DArrayDestroy((DArrayTy *)this->field_013D);
       }
-      if ((byte *)this->field_0141 != (byte *)0x0) {
-        FUN_006ae110((byte *)this->field_0141);
+      if ((DArrayTy *)this->field_0141 != (DArrayTy *)0x0) {
+        DArrayDestroy((DArrayTy *)this->field_0141);
       }
-      if ((byte *)this->field_0145 != (byte *)0x0) {
-        FUN_006ae110((byte *)this->field_0145);
+      if ((DArrayTy *)this->field_0145 != (DArrayTy *)0x0) {
+        DArrayDestroy((DArrayTy *)this->field_0145);
       }
-      if ((byte *)this->field_0149 != (byte *)0x0) {
-        FUN_006ae110((byte *)this->field_0149);
+      if ((DArrayTy *)this->field_0149 != (DArrayTy *)0x0) {
+        DArrayDestroy((DArrayTy *)this->field_0149);
       }
       this->field_013D = 0;
       this->field_0141 = 0;
       this->field_0145 = 0;
       this->field_0149 = 0;
-      FUN_006ab060((LPVOID *)&this->field_0185);
-      FUN_006ab060((LPVOID *)&this->field_0189);
-      FUN_006ab060((LPVOID *)&this->field_018D);
-      FUN_006ab060((LPVOID *)&this->field_0191);
-      if ((byte *)this->field_01A1 != (byte *)0x0) {
-        FUN_006ae110((byte *)this->field_01A1);
+      FreeAndNull((void **)&this->field_0185);
+      FreeAndNull((void **)&this->field_0189);
+      FreeAndNull((void **)&this->field_018D);
+      FreeAndNull((void **)&this->field_0191);
+      if ((DArrayTy *)this->field_01A1 != (DArrayTy *)0x0) {
+        DArrayDestroy((DArrayTy *)this->field_01A1);
         this->field_01A1 = 0;
       }
-      if ((byte *)this->field_019D != (byte *)0x0) {
-        FUN_006ae110((byte *)this->field_019D);
+      if ((DArrayTy *)this->field_019D != (DArrayTy *)0x0) {
+        DArrayDestroy((DArrayTy *)this->field_019D);
         this->field_019D = 0;
       }
-      FUN_006ab060((LPVOID *)&this->field_01A5);
-      FUN_006ab060((LPVOID *)&this->field_01A9);
-      FUN_006ab060((LPVOID *)&this->field_01B5);
-      FUN_006ab060((LPVOID *)&this->field_01B9);
+      FreeAndNull((void **)&this->field_01A5);
+      FreeAndNull((void **)&this->field_01A9);
+      FreeAndNull((void **)&this->field_01B5);
+      FreeAndNull((void **)&this->field_01B9);
       return;
     }
     if (uVar1 == 0x3e9) {

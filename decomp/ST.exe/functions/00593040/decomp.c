@@ -57,7 +57,7 @@ undefined4 __thiscall CampaignTy::GetMessage(CampaignTy *this,AnonShape_00593040
   uVar14 = param_1->field_0010;
   if (uVar14 < 0x6941) {
     if (uVar14 == 0x6940) {
-      thunk_FUN_00592620((AnonShape_00592620_9AEC2C08 *)this_00);
+      thunk_FUN_00592620((AnonShape_005925A0_ACA54D35 *)this_00);
     }
     else if (uVar14 < 6) {
       if (uVar14 == 5) {

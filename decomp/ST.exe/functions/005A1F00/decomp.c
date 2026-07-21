@@ -199,7 +199,7 @@ LAB_005a2188:
         FUN_006e6080(this_00,2,this_00->field_1B14,(undefined4 *)&this_00->field_0x1d);
       }
     }
-    FUN_006ab060(&local_c);
+    FreeAndNull(&local_c);
   }
   g_currentExceptionFrame = local_5c.previous;
   return;

@@ -10,9 +10,9 @@
 STFishC * __thiscall STFishC::STFishC(STFishC *this)
 
 {
-  thunk_FUN_004158e0((STGroupBoatC *)this);
+  STGameObjC::STGameObjC((STGameObjC *)this);
   thunk_FUN_004ab810((AnonShape_004AB810_8E5693D5 *)&this->field_01D5);
-  this->field_01D5 = &PTR_LAB_0079b524;
+  this->field_01D5 = &VTable_0079B524;
   this->vtable = &STFishCVTable;
   this->field_023B = 0;
   return this;

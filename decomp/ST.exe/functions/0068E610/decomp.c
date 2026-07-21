@@ -20,8 +20,9 @@ int __thiscall FUN_0068e610(void *this,int param_1)
       else {
         iVar1 = 0;
       }
-      if (*(void **)(iVar1 + 4) != (void *)0x0) {
-        uVar2 = thunk_FUN_0065da50(*(void **)(iVar1 + 4),param_1,-1);
+      if (*(AnonReceiver_0065DA50 **)(iVar1 + 4) != (AnonReceiver_0065DA50 *)0x0) {
+        uVar2 = SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0065DA50::thunk_FUN_0065da50
+                          (*(AnonReceiver_0065DA50 **)(iVar1 + 4),param_1,-1);
         iVar3 = iVar3 + uVar2;
       }
       iVar1 = *(int *)((int)this + 0xa5);

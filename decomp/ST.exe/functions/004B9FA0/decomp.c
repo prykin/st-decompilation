@@ -97,7 +97,7 @@ int __thiscall TLOBaseTy::GetMessage(TLOBaseTy *this,AnonShape_004B9FA0_DF027633
   undefined4 local_24;
   undefined4 local_20;
   undefined4 local_1c;
-  uint *local_18;
+  AnonShape_0060EA30_DCEB68AD *local_18;
   int local_14;
   byte *local_10;
   AnonShape_004B9FA0_0EE05DAC *local_c;
@@ -358,7 +358,7 @@ int __thiscall TLOBaseTy::GetMessage(TLOBaseTy *this,AnonShape_004B9FA0_DF027633
             break;
           case 0x6f:
           case 0x73:
-            thunk_FUN_004eccf0((AnonShape_004ECCF0_985987C1 *)this_00);
+            thunk_FUN_004eccf0((AnonShape_004ECC70_4D35D723 *)this_00);
             break;
           case 0x70:
             thunk_FUN_004d8f80((AnonShape_004D8F80_1255A4D6 *)this_00);
@@ -442,7 +442,7 @@ int __thiscall TLOBaseTy::GetMessage(TLOBaseTy *this,AnonShape_004B9FA0_DF027633
         *(undefined1 *)((int)puVar34 + 2) = *(undefined1 *)((int)puVar32 + 2);
         *(undefined4 *)&this_00->field_0x231 = *(undefined4 *)(iVar19 + 0xc);
         *(int *)&this_00->field_0x235 = *(int *)&this_00[1].field_0x29d + -0x32;
-        uVar20 = thunk_FUN_004406c0(this_00->field_0024);
+        uVar20 = GetPlayerRaceId(this_00->field_0024);
         *(uint *)&this_00->field_0x239 = (uVar20 & 0xff) - 1;
         uVar13 = *(undefined3 *)&this_00->field_0x25;
         this_00->field_0x23d = this_00->field_0024;
@@ -502,7 +502,7 @@ int __thiscall TLOBaseTy::GetMessage(TLOBaseTy *this,AnonShape_004B9FA0_DF027633
           if ((100 < *(int *)&this_00[1].field_0x2c8) || (*(int *)&this_00[1].field_0x2c8 < 0)) {
             *(undefined4 *)&this_00[1].field_0x2c8 = 100;
           }
-          uVar20 = thunk_FUN_004406c0(this_00->field_0x23d);
+          uVar20 = GetPlayerRaceId(this_00->field_0x23d);
           *(int *)&this_00->field_0x241 =
                (*(int *)(&DAT_007e4178 + ((uVar20 & 0xff) + *(int *)&this_00->field_0x235 * 3) * 4)
                * *(int *)&this_00[1].field_0x2c8) / 100;
@@ -565,7 +565,7 @@ int __thiscall TLOBaseTy::GetMessage(TLOBaseTy *this,AnonShape_004B9FA0_DF027633
             thunk_FUN_004e3880((AnonShape_004E3880_642C8E1A *)this_00);
             break;
           case 0x43:
-            thunk_FUN_004df2b0((AnonShape_004DF2B0_8C37D68B *)this_00);
+            thunk_FUN_004df2b0((AnonShape_004DC660_217FA9F0 *)this_00);
             break;
           case 0x44:
             thunk_FUN_004de7b0((int)this_00);
@@ -678,7 +678,7 @@ int __thiscall TLOBaseTy::GetMessage(TLOBaseTy *this,AnonShape_004B9FA0_DF027633
             }
             (**(code **)*DAT_008117bc)(local_7c);
           }
-          uVar20 = thunk_FUN_004406c0(this_00->field_0x23d);
+          uVar20 = GetPlayerRaceId(this_00->field_0x23d);
           if (*(int *)&this_00->field_0x241 !=
               *(int *)(&DAT_007e4178 + ((uVar20 & 0xff) + *(int *)&this_00->field_0x235 * 3) * 4)) {
             thunk_FUN_004cc840((int *)this_00);
@@ -690,11 +690,11 @@ int __thiscall TLOBaseTy::GetMessage(TLOBaseTy *this,AnonShape_004B9FA0_DF027633
           if (((*(int *)&this_00->field_0x231 == 1) &&
               (*(uint *)&this_00->field_0024 ==
                (uint)*(byte *)(*(int *)&this_00->field_0x10 + 0x112d))) &&
-             (uVar20 = thunk_FUN_004406c0(this_00->field_0x23d),
+             (uVar20 = GetPlayerRaceId(this_00->field_0x23d),
              *(int *)(&DAT_007952b8 + ((uVar20 & 0xff) + *(int *)&this_00->field_0x235 * 3) * 4) !=
              0)) {
             pSVar27 = this_00->vtable;
-            uVar20 = thunk_FUN_004406c0(this_00->field_0x23d);
+            uVar20 = GetPlayerRaceId(this_00->field_0x23d);
             (*pSVar27->vfunc_90)
                       (4,*(undefined4 *)
                           (&DAT_007952b8 + ((uVar20 & 0xff) + *(int *)&this_00->field_0x235 * 3) * 4
@@ -702,7 +702,7 @@ int __thiscall TLOBaseTy::GetMessage(TLOBaseTy *this,AnonShape_004B9FA0_DF027633
           }
           if (((*(int *)&this_00->field_0x231 == 0) || (*(int *)&this_00->field_0x231 == 3)) &&
              (DAT_00811784 != (void *)0x0)) {
-            uVar20 = thunk_FUN_004406c0(this_00->field_0024);
+            uVar20 = GetPlayerRaceId(this_00->field_0024);
             thunk_FUN_005f23d0(DAT_00811784,*(int *)&this_00[1].field_0x2a1,
                                *(int *)&this_00[1].field_0x2a5,*(int *)&this_00[1].field_0x2a9,
                                CONCAT31((int3)((uint)extraout_ECX >> 8),this_00->field_0x2c),
@@ -798,7 +798,7 @@ int __thiscall TLOBaseTy::GetMessage(TLOBaseTy *this,AnonShape_004B9FA0_DF027633
           }
           STT3DSprC::RestoreSpr
                     ((STT3DSprC *)&this_00->field_01D5,(int *)&local_34,
-                     (AnonShape_004ADBA0_E7CEFF88 *)(&local_c->field_0x0 + local_c->field_03DA));
+                     (AnonShape_004AD790_77673787 *)(&local_c->field_0x0 + local_c->field_03DA));
           if ((*(int *)&this_00[1].field_0x2e8 != 0) &&
              (*(int *)(&DAT_00790c2c + *(int *)&this_00->field_0x235 * 4) != 0)) {
             iVar19 = 1;
@@ -849,7 +849,7 @@ int __thiscall TLOBaseTy::GetMessage(TLOBaseTy *this,AnonShape_004B9FA0_DF027633
             local_28 = 0;
             STT3DSprC::RestoreSpr
                       (*(STT3DSprC **)&this_00[1].field_0x2f0,(int *)&local_34,
-                       (AnonShape_004ADBA0_E7CEFF88 *)(&local_c->field_0x0 + local_c->field_03E2));
+                       (AnonShape_004AD790_77673787 *)(&local_c->field_0x0 + local_c->field_03E2));
             uVar30 = 10;
             iVar19 = thunk_FUN_004ad650((int)&this_00->field_01D5);
             uVar20 = thunk_FUN_004ad650(*(int *)&this_00[1].field_0x2f0);
@@ -889,7 +889,7 @@ int __thiscall TLOBaseTy::GetMessage(TLOBaseTy *this,AnonShape_004B9FA0_DF027633
             local_28 = 0;
             STT3DSprC::RestoreSpr
                       (*(STT3DSprC **)&this_00[1].field_0x2f4,(int *)&local_34,
-                       (AnonShape_004ADBA0_E7CEFF88 *)(&local_c->field_0x0 + local_c->field_03F2));
+                       (AnonShape_004AD790_77673787 *)(&local_c->field_0x0 + local_c->field_03F2));
             if (((this_00[1].field_0135 != 0) && (this_00[1].field_0139 != 0)) &&
                (-1 < (int)this_00[1].field_013D)) {
               STT3DSprC::UnLoadSequence((STT3DSprC *)&this_00->field_01D5,6);
@@ -899,7 +899,7 @@ int __thiscall TLOBaseTy::GetMessage(TLOBaseTy *this,AnonShape_004B9FA0_DF027633
               FUN_006ea340((void *)this_00->field_0211,uVar20,iVar19,uVar30);
             }
           }
-          FUN_006ab060(&local_34);
+          FreeAndNull(&local_34);
           if ((*(int *)&this_00[1].field_0x15d == 4) && (*(int *)&this_00[1].field_0x181 != 0)) {
             iVar19 = 0;
             uVar20 = thunk_FUN_004ad650((int)&this_00->field_01D5);
@@ -1046,8 +1046,9 @@ int __thiscall TLOBaseTy::GetMessage(TLOBaseTy *this,AnonShape_004B9FA0_DF027633
         local_8 = (byte *)STT3DSprC::SaveSpr(*(STT3DSprC **)&this_00[1].field_0x2f4,&local_ce);
         local_ca = local_d6 + local_d2;
       }
-      local_18 = (uint *)((*(int *)&this_00[1].field_0xc5 + 0x1a) * 0x27 + local_ce + local_d6 +
-                          local_de + local_e6);
+      local_18 = (AnonShape_0060EA30_DCEB68AD *)
+                 ((*(int *)&this_00[1].field_0xc5 + 0x1a) * 0x27 + local_ce + local_d6 + local_de +
+                 local_e6);
       local_10 = (byte *)Library::DKW::LIB::FUN_006aac10((uint)local_18);
       puVar34 = local_4bc;
       pbVar33 = local_10;
@@ -1120,24 +1121,24 @@ int __thiscall TLOBaseTy::GetMessage(TLOBaseTy *this,AnonShape_004B9FA0_DF027633
         pbVar33 = pbVar33 + 1;
         pbVar36 = pbVar36 + 1;
       }
-      STPlaySystemC::SaveObjData(PTR_00802a38,this_00->field_0018,local_10,(uint)local_18);
+      STPlaySystemC::SaveObjData(PTR_00802a38,this_00->field_0018,local_10,local_18);
       if (local_40 != (byte *)0x0) {
-        FUN_006ab060(&local_40);
+        FreeAndNull(&local_40);
       }
       if (local_3c != (byte *)0x0) {
-        FUN_006ab060(&local_3c);
+        FreeAndNull(&local_3c);
       }
       if (local_10 != (byte *)0x0) {
-        FUN_006ab060(&local_10);
+        FreeAndNull(&local_10);
       }
       if (local_38 != (byte *)0x0) {
-        FUN_006ab060(&local_38);
+        FreeAndNull(&local_38);
       }
       if (local_8 == (byte *)0x0) {
         g_currentExceptionFrame = local_c4.previous;
         return 0;
       }
-      FUN_006ab060(&local_8);
+      FreeAndNull(&local_8);
       g_currentExceptionFrame = local_c4.previous;
       return 0;
     }
@@ -1221,7 +1222,7 @@ LAB_004bb547:
         local_5c[0] = local_5c[0] - iVar19;
         local_c = pAVar26;
       }
-      uVar20 = thunk_FUN_004406c0(this_00->field_0024);
+      uVar20 = GetPlayerRaceId(this_00->field_0024);
       uVar20 = uVar20 & 0xff;
       if (uVar20 == 1) {
         iVar19 = *(int *)&this_00->field_0024;
@@ -1256,7 +1257,7 @@ LAB_004bb58d:
       iVar19 = local_5c[0] - iVar19 / 10;
       goto LAB_004bb5dd;
     }
-    uVar20 = thunk_FUN_004406c0(this_00->field_0024);
+    uVar20 = GetPlayerRaceId(this_00->field_0024);
     uVar20 = uVar20 & 0xff;
     if (uVar20 == 1) {
       iVar28 = *(int *)&this_00->field_0024;
@@ -1337,7 +1338,7 @@ LAB_004bb5dd:
         SetState((TLOBaseTy *)this_00,1,iVar19);
         if ((*(int *)&this_00[1].field_0x2d0 == 0) || (*(int *)&this_00[1].field_0x2d0 == 4)) {
           uVar30 = (uint)(*(int *)&this_00->field_0x24d == 4);
-          uVar20 = thunk_FUN_004406c0(this_00->field_0024);
+          uVar20 = GetPlayerRaceId(this_00->field_0024);
           thunk_FUN_0062b830((int)*(short *)&this_00->field_0x41,(int)*(short *)&this_00->field_0x43
                              ,(int)*(short *)&this_00->field_0x45,
                              *(undefined4 *)&this_00[1].field_0x29d,(int *)this_00,0xffffffff,
@@ -1434,51 +1435,46 @@ LAB_004bb5dd:
       g_currentExceptionFrame = local_c4.previous;
       return 0;
     }
-    local_18 = (uint *)param_1->field_0014;
-    if ((7 < *local_18) ||
-       ((PTR_00802a38 != (STPlaySystemC *)0x0 && (7 < (byte)(&DAT_008087e9)[*local_18 * 0x51]))))
-    goto LAB_004bbcb2;
-    bVar2 = (byte)*local_18;
-    bVar1 = this_00->field_0024;
-    local_14 = CONCAT31(local_14._1_3_,bVar2);
-    local_8 = (byte *)CONCAT31(local_8._1_3_,bVar1);
+    local_18 = (AnonShape_0060EA30_DCEB68AD *)param_1->field_0014;
+    if ((7 < *(uint *)local_18) ||
+       ((PTR_00802a38 != (STPlaySystemC *)0x0 &&
+        (7 < (byte)(&DAT_008087e9)[*(uint *)local_18 * 0x51])))) goto LAB_004bbcb2;
+    bVar1 = *(byte *)local_18;
+    bVar2 = this_00->field_0024;
+    local_14 = CONCAT31(local_14._1_3_,bVar1);
+    local_8 = (byte *)CONCAT31(local_8._1_3_,bVar2);
     if (DAT_00808a8f == '\0') {
-      if (bVar2 == bVar1) {
+      if (bVar1 == bVar2) {
 LAB_004bbc2b:
         iVar19 = 0;
       }
       else {
-        uVar20 = (uint)bVar2;
-        uVar30 = (uint)bVar1;
-        cVar38 = *(char *)((int)&DAT_00808a4f + uVar20 * 8 + uVar30);
-        if ((cVar38 == '\0') && (*(char *)((int)&DAT_00808a4f + uVar30 * 8 + uVar20) == '\0')) {
+        bVar3 = g_playerRelationMatrix[bVar1][bVar2];
+        if ((bVar3 == 0) && (g_playerRelationMatrix[bVar2][bVar1] == 0)) {
           iVar19 = -2;
         }
-        else if ((cVar38 == '\x01') && (*(char *)((int)&DAT_00808a4f + uVar30 * 8 + uVar20) == '\0')
-                ) {
+        else if ((bVar3 == 1) && (g_playerRelationMatrix[bVar2][bVar1] == 0)) {
           iVar19 = -1;
         }
-        else if ((cVar38 == '\0') && (*(char *)((int)&DAT_00808a4f + uVar30 * 8 + uVar20) == '\x01')
-                ) {
+        else if ((bVar3 == 0) && (g_playerRelationMatrix[bVar2][bVar1] == 1)) {
           iVar19 = 1;
         }
         else {
-          if ((cVar38 != '\x01') || (*(char *)((int)&DAT_00808a4f + uVar30 * 8 + uVar20) != '\x01'))
-          goto LAB_004bbc2b;
+          if ((bVar3 != 1) || (g_playerRelationMatrix[bVar2][bVar1] != 1)) goto LAB_004bbc2b;
           iVar19 = 2;
         }
       }
       bVar37 = iVar19 < 0;
     }
     else {
-      bVar37 = (&DAT_008087ea)[(uint)bVar1 * 0x51] != (&DAT_008087ea)[(uint)bVar2 * 0x51];
+      bVar37 = (&DAT_008087ea)[(uint)bVar2 * 0x51] != (&DAT_008087ea)[(uint)bVar1 * 0x51];
     }
     if ((bVar37) && (iVar19 = FUN_006b0fd0(0x800f90), iVar19 != 0)) {
       *(undefined4 *)&this_00[1].field_0x111 = 1;
       *(uint *)&this_00->field_0x265 = *(uint *)&this_00->field_0x265 & 0xfffffffd;
       *(undefined4 *)&this_00->field_0x26d = 0;
       *(undefined4 *)&this_00[1].field_0x115 = PTR_00802a38->field_00E4;
-      *(uint *)&this_00[1].field_0x119 = local_18[1];
+      *(undefined4 *)&this_00[1].field_0x119 = *(undefined4 *)&local_18->field_0x4;
       param_1->field_0018 = 1;
       g_currentExceptionFrame = local_c4.previous;
       return 0;
@@ -1498,8 +1494,8 @@ LAB_004bbcb2:
     return 0;
   }
   iVar19 = param_1->field_0014;
-  bVar2 = *(byte *)(iVar19 + 0xe);
-  switch(bVar2) {
+  bVar1 = *(byte *)(iVar19 + 0xe);
+  switch(bVar1) {
   case 8:
     if ((*(int *)&this_00->field_0x245 == 4) && (*(int *)&this_00[1].field_0xcd != 0)) {
       if (*(int *)&this_00->field_0x249 != -1) {
@@ -1517,12 +1513,12 @@ LAB_004bbcb2:
   case 9:
     iVar28 = *(int *)&this_00[1].field_0x29d;
     if (iVar28 == 0x33) {
-      bVar2 = **(byte **)(iVar19 + 0x17);
-      if ((bVar2 != 0) && (bVar2 != 1)) {
+      bVar1 = **(byte **)(iVar19 + 0x17);
+      if ((bVar1 != 0) && (bVar1 != 1)) {
         g_currentExceptionFrame = local_c4.previous;
         return 0;
       }
-      thunk_FUN_004e2190(this_00,(uint)bVar2);
+      thunk_FUN_004e2190(this_00,(uint)bVar1);
       g_currentExceptionFrame = local_c4.previous;
       return 0;
     }
@@ -1536,9 +1532,9 @@ LAB_004bc117:
       bVar37 = true;
     }
     else {
-      uVar20 = thunk_FUN_004406c0((char)*(int *)&this_00->field_0x23d);
+      uVar20 = GetPlayerRaceId((char)*(int *)&this_00->field_0x23d);
       iVar19 = *(int *)&this_00->field_0x235;
-      uVar30 = thunk_FUN_004406c0(this_00->field_0024);
+      uVar30 = GetPlayerRaceId(this_00->field_0024);
       if ((&DAT_007e1984)[(uVar30 & 0xff) + (iVar19 * 3 + (uVar20 & 0xff)) * 3] != '\0')
       goto LAB_004bc117;
       bVar37 = false;
@@ -1555,7 +1551,7 @@ LAB_004bc117:
       g_currentExceptionFrame = local_c4.previous;
       return 0;
     }
-    if (SHORT_007fb240 <= iVar25) {
+    if (g_worldGrid.sizeX <= iVar25) {
       g_currentExceptionFrame = local_c4.previous;
       return 0;
     }
@@ -1564,7 +1560,7 @@ LAB_004bc117:
       g_currentExceptionFrame = local_c4.previous;
       return 0;
     }
-    if (SHORT_007fb242 <= iVar28) {
+    if (g_worldGrid.sizeY <= iVar28) {
       g_currentExceptionFrame = local_c4.previous;
       return 0;
     }
@@ -1594,7 +1590,7 @@ LAB_004bc117:
       g_currentExceptionFrame = local_c4.previous;
       return 0;
     }
-    if (SHORT_007fb240 <= (short)(ushort)**(byte **)(iVar19 + 0x17)) {
+    if (g_worldGrid.sizeX <= (short)(ushort)**(byte **)(iVar19 + 0x17)) {
       g_currentExceptionFrame = local_c4.previous;
       return 0;
     }
@@ -1631,16 +1627,16 @@ LAB_004bc4c0:
           }
         }
         else if ((((*(int *)(&DAT_00792a90 + *(int *)&this_00->field_0x235 * 8) == 2) &&
-                  (bVar2 = pcVar11[5], (short)(ushort)bVar2 < SHORT_007fb240)) &&
-                 (bVar1 = pcVar11[6], (short)(ushort)bVar1 < SHORT_007fb242)) &&
-                (bVar3 = pcVar11[7], (short)(ushort)bVar3 < SHORT_007fb240)) {
+                  (bVar1 = pcVar11[5], (short)(ushort)bVar1 < g_worldGrid.sizeX)) &&
+                 (bVar2 = pcVar11[6], (short)(ushort)bVar2 < g_worldGrid.sizeY)) &&
+                (bVar3 = pcVar11[7], (short)(ushort)bVar3 < g_worldGrid.sizeX)) {
           if (*(int *)&this_00[1].field_0x29d == 0x70) {
-            thunk_FUN_004d8e70(this_00,(uint)bVar2,(uint)bVar1,(uint)bVar3);
+            thunk_FUN_004d8e70(this_00,(uint)bVar1,(uint)bVar2,(uint)bVar3);
           }
           else {
             *(uint *)&this_00->field_0x265 = *(uint *)&this_00->field_0x265 | 2;
-            *(uint *)&this_00->field_0x2a5 = (uint)bVar2;
-            *(uint *)&this_00->field_0x2a9 = (uint)bVar1;
+            *(uint *)&this_00->field_0x2a5 = (uint)bVar1;
+            *(uint *)&this_00->field_0x2a9 = (uint)bVar2;
             *(uint *)&this_00->field_0x2ad = (uint)bVar3;
           }
         }
@@ -1755,7 +1751,7 @@ LAB_004bc4c0:
             g_currentExceptionFrame = local_c4.previous;
             return 0;
           }
-          uVar20 = thunk_FUN_004406c0(this_00->field_0x23d);
+          uVar20 = GetPlayerRaceId(this_00->field_0x23d);
           uVar20 = uVar20 & 0xff;
           if (uVar20 == 1) {
             (*this_00->vtable->vfunc_90)(4,0x210);
@@ -1923,7 +1919,7 @@ LAB_004bc4c0:
     if ((*(uint *)&this_00->field_0024 == (uint)*(byte *)(*(int *)&this_00->field_0x10 + 0x112d)) &&
        ((iVar19 = *(int *)&this_00[1].field_0x29d, iVar19 == 0x35 ||
         ((0x53 < iVar19 && (iVar19 < 0x5b)))))) {
-      uVar20 = thunk_FUN_004406c0(this_00->field_0x23d);
+      uVar20 = GetPlayerRaceId(this_00->field_0x23d);
       uVar20 = uVar20 & 0xff;
       if (uVar20 == 1) {
         pSVar27 = this_00->vtable;
@@ -1988,11 +1984,11 @@ LAB_004bbfe9:
   case 0x23:
     puVar8 = *(uint **)(iVar19 + 0x17);
     uVar20 = puVar8[1];
-    if (((((-1 < (int)uVar20) && ((int)uVar20 < (int)SHORT_007fb240)) &&
+    if (((((-1 < (int)uVar20) && ((int)uVar20 < (int)g_worldGrid.sizeX)) &&
          (uVar30 = puVar8[2], -1 < (int)uVar30)) &&
-        (((int)uVar30 < (int)SHORT_007fb242 && (uVar9 = puVar8[3], -1 < (int)uVar9)))) &&
-       (((int)uVar9 < (int)SHORT_007fb240 && ((uVar10 = *puVar8, 0x31 < uVar10 && (uVar10 < 0x74))))
-       )) {
+        (((int)uVar30 < (int)g_worldGrid.sizeY && (uVar9 = puVar8[3], -1 < (int)uVar9)))) &&
+       (((int)uVar9 < (int)g_worldGrid.sizeX &&
+        ((uVar10 = *puVar8, 0x31 < uVar10 && (uVar10 < 0x74)))))) {
       if (*(int *)&this_00[1].field_0x29d == 0x53) {
         thunk_FUN_004cdfd0(this_00,uVar10,uVar20,uVar30,uVar9);
         g_currentExceptionFrame = local_c4.previous;
@@ -2043,29 +2039,30 @@ LAB_004bbfe9:
       iVar19 = *(int *)&this_00[1].field_0x2a9 + -2;
       if (-1 < iVar19) {
         sVar18 = *(short *)&this_00[1].field_0x2a1;
-        local_14 = CONCAT22((short)(bVar2 - 8 >> 0x10),sVar18);
+        local_14 = CONCAT22((short)(bVar1 - 8 >> 0x10),sVar18);
         sVar4 = *(short *)&this_00[1].field_0x2a5;
         do {
           sVar17 = (short)iVar19;
-          if (((((sVar18 < 0) || (SHORT_007fb240 <= sVar18)) || (sVar4 < 0)) ||
-              ((SHORT_007fb242 <= sVar4 || (sVar17 < 0)))) || (SHORT_007fb244 <= sVar17)) {
+          if (((((sVar18 < 0) || (g_worldGrid.sizeX <= sVar18)) || (sVar4 < 0)) ||
+              ((g_worldGrid.sizeY <= sVar4 || (sVar17 < 0)))) || (g_worldGrid.sizeZ <= sVar17)) {
             pSVar31 = (STWorldObject *)0x0;
           }
           else {
-            pSVar31 = g_worldCells
-                      [(int)SHORT_007fb246 * (int)sVar17 + (int)SHORT_007fb240 * (int)sVar4 +
-                       (int)sVar18].objects[0];
+            pSVar31 = g_worldGrid.cells
+                      [(int)g_worldGrid.planeStride * (int)sVar17 +
+                       (int)g_worldGrid.sizeX * (int)sVar4 + (int)sVar18].objects[0];
           }
           if (pSVar31 == (STWorldObject *)0x0) {
-            if (((sVar18 < 0) || (SHORT_007fb240 <= sVar18)) ||
+            if (((sVar18 < 0) || (g_worldGrid.sizeX <= sVar18)) ||
                ((sVar4 < 0 ||
-                (((SHORT_007fb242 <= sVar4 || (sVar17 < 0)) || (SHORT_007fb244 <= sVar17)))))) {
+                (((g_worldGrid.sizeY <= sVar4 || (sVar17 < 0)) || (g_worldGrid.sizeZ <= sVar17))))))
+            {
               sVar17 = -1;
             }
             else {
-              sVar17 = *(short *)(DAT_007fb280 +
-                                 ((int)SHORT_007fb27e * (int)sVar17 +
-                                  (int)SHORT_007fb278 * (int)sVar4 + (int)sVar18) * 2);
+              sVar17 = g_pathingGrid.cells
+                       [(int)g_pathingGrid.planeStride * (int)sVar17 +
+                        (int)g_pathingGrid.sizeX * (int)sVar4 + (int)sVar18];
             }
             if (sVar17 == -1) {
               local_8 = (byte *)0x1;
@@ -2080,22 +2077,21 @@ LAB_004bbfe9:
       if (local_8 == (byte *)0x0) {
         sVar18 = *(short *)&this_00[1].field_0x2a1;
         sVar4 = *(short *)&this_00[1].field_0x2a5;
-        if (((sVar18 < 0) || (SHORT_007fb240 <= sVar18)) ||
-           ((sVar4 < 0 || ((SHORT_007fb242 <= sVar4 || (SHORT_007fb244 < 1)))))) {
+        if (((sVar18 < 0) || (g_worldGrid.sizeX <= sVar18)) ||
+           ((sVar4 < 0 || ((g_worldGrid.sizeY <= sVar4 || (g_worldGrid.sizeZ < 1)))))) {
           pSVar31 = (STWorldObject *)0x0;
         }
         else {
-          pSVar31 = g_worldCells[(int)SHORT_007fb240 * (int)sVar4 + (int)sVar18].objects[0];
+          pSVar31 = g_worldGrid.cells[(int)g_worldGrid.sizeX * (int)sVar4 + (int)sVar18].objects[0];
         }
         bVar37 = false;
         if (pSVar31 == (STWorldObject *)0x0) {
-          if ((((sVar18 < 0) || (SHORT_007fb240 <= sVar18)) || (sVar4 < 0)) ||
-             ((SHORT_007fb242 <= sVar4 || (SHORT_007fb244 < 1)))) {
+          if ((((sVar18 < 0) || (g_worldGrid.sizeX <= sVar18)) || (sVar4 < 0)) ||
+             ((g_worldGrid.sizeY <= sVar4 || (g_worldGrid.sizeZ < 1)))) {
             sVar18 = -1;
           }
           else {
-            sVar18 = *(short *)(DAT_007fb280 + ((int)SHORT_007fb278 * (int)sVar4 + (int)sVar18) * 2)
-            ;
+            sVar18 = g_pathingGrid.cells[(int)g_pathingGrid.sizeX * (int)sVar4 + (int)sVar18];
           }
           if (sVar18 == 0) {
             thunk_FUN_004c6c70(this_00,*(undefined4 *)&this_00[1].field_0x2a1,

@@ -10,9 +10,9 @@
 STCrabC * __thiscall STCrabC::STCrabC(STCrabC *this)
 
 {
-  thunk_FUN_004158e0((STGroupBoatC *)this);
+  STGameObjC::STGameObjC((STGameObjC *)this);
   thunk_FUN_004ab810((AnonShape_004AB810_8E5693D5 *)&this->field_01D5);
-  this->field_01D5 = &PTR_LAB_0079b398;
+  this->field_01D5 = &VTable_0079B398;
   this->vtable = &STCrabCVTable;
   this->field_0239 = 0;
   return this;

@@ -86,7 +86,7 @@ undefined4 __fastcall FUN_004d32c0(STJellyGunC *param_1)
             piVar8 = piVar8 + 4;
           } while (iVar12 != 0);
           if (DAT_00811784 != (void *)0x0) {
-            uVar3 = thunk_FUN_004406c0(param_1->field_0x24);
+            uVar3 = GetPlayerRaceId(param_1->field_0x24);
             thunk_FUN_005f23d0(DAT_00811784,*(int *)((int)&param_1->field_025A + 3),
                                *(int *)&param_1->field_0x261,*(int *)&param_1->field_0x265,
                                CONCAT31((int3)((uint)extraout_EDX >> 8),param_1->field_0x2c),
@@ -596,16 +596,16 @@ LAB_004d43f5:
           if (iVar12 != 0) goto LAB_004d43f5;
         }
         *(undefined4 *)&param_1[1].field_0x24 = uVar5;
-        uVar3 = thunk_FUN_004406c0(param_1->field_0x24);
+        uVar3 = GetPlayerRaceId(param_1->field_0x24);
         local_14 = *(uint *)(&DAT_007e3dc0 +
                             ((uVar3 & 0xff) + *(int *)&param_1[1].field_0xd4 * 3) * 4);
         if (DAT_0080c51e != 0) {
           uVar3 = 0;
           iVar12 = 0;
           do {
-            uVar6 = thunk_FUN_004406c0(param_1->field_0x24);
+            uVar6 = GetPlayerRaceId(param_1->field_0x24);
             if (uVar3 < *(uint *)(&DAT_007e3dc0 + ((uVar6 & 0xff) + iVar12) * 4)) {
-              uVar3 = thunk_FUN_004406c0(param_1->field_0x24);
+              uVar3 = GetPlayerRaceId(param_1->field_0x24);
               uVar3 = *(uint *)(&DAT_007e3dc0 + ((uVar3 & 0xff) + iVar12) * 4);
             }
             iVar12 = iVar12 + 3;
@@ -751,7 +751,7 @@ LAB_004d43f5:
               if (*(uint *)&param_1->field_0x24 == (uint)*(byte *)(param_1->field_0010 + 0x112d)) {
                 thunk_FUN_0052af50(0,*(float *)&param_1->field_0x1f9,*(float *)&param_1->field_0x1fd
                                   );
-                uVar3 = thunk_FUN_004406c0(param_1->field_0x24);
+                uVar3 = GetPlayerRaceId(param_1->field_0x24);
                 uVar3 = uVar3 & 0xff;
                 if (uVar3 == 1) {
                   (*param_1->vtable->vfunc_90)(6,0x62);
@@ -875,7 +875,7 @@ LAB_004d43f5:
         } while (iVar12 != 0);
       }
       iVar12 = 0;
-      uVar3 = thunk_FUN_004406c0(param_1->field_0x24);
+      uVar3 = GetPlayerRaceId(param_1->field_0x24);
       thunk_FUN_0062b830((int)param_1->field_0041,(int)param_1->field_0043,(int)param_1->field_0045,
                          *(undefined4 *)&param_1->field_0x259,(int *)param_1,0xffffffff,0xffffffff,
                          uVar3 & 0xff,iVar12);

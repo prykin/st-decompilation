@@ -1,4 +1,4 @@
-FUN_004a88c0:
+OpticClassC::OpticClassC:
 004A88C0  56                        PUSH ESI
 004A88C1  8B F1                     MOV ESI,ECX
 004A88C3  E8 E8 D6 23 00            CALL 0x006e5fb0

@@ -8,16 +8,17 @@ void __thiscall HelpPanelTy::CreateList(HelpPanelTy *this)
 {
   code *pcVar1;
   HelpPanelTy *this_00;
-  int iVar2;
+  DArrayTy *pDVar2;
   int iVar3;
+  int iVar4;
   undefined4 unaff_ESI;
-  int *piVar4;
-  void *unaff_EDI;
   int *piVar5;
+  void *unaff_EDI;
+  int *piVar6;
   int local_520 [4];
   undefined4 local_510;
   undefined4 local_50c;
-  undefined4 local_508;
+  dword local_508;
   undefined4 local_504;
   undefined4 local_4f8;
   undefined4 local_4f4;
@@ -65,23 +66,23 @@ void __thiscall HelpPanelTy::CreateList(HelpPanelTy *this)
   InternalExceptionFrame local_4c;
   HelpPanelTy *local_8;
   
-  piVar4 = local_520;
+  piVar5 = local_520;
   local_8 = this;
-  for (iVar2 = 0x135; iVar2 != 0; iVar2 = iVar2 + -1) {
-    *piVar4 = 0;
-    piVar4 = piVar4 + 1;
+  for (iVar3 = 0x135; iVar3 != 0; iVar3 = iVar3 + -1) {
+    *piVar5 = 0;
+    piVar5 = piVar5 + 1;
   }
   local_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_4c;
-  iVar2 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar3 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
   this_00 = local_8;
-  if (iVar2 == 0) {
+  if (iVar3 == 0) {
     if (local_8->field_019C != 0) {
       StartSystemTy::sub_006E56B0(local_8->field_000C,local_8->field_019C);
     }
     Library::DKW::WGR::FUN_006b55f0
-              ((undefined4 *)this_00->field_0068,0,0x21,0x16,(byte *)this_00->field_01DC,0,0x21,0x16
-               ,0x19c,0x118);
+              ((AnonShape_006B84D0_7C7D97C6 *)this_00->field_0068,0,0x21,0x16,
+               (byte *)this_00->field_01DC,0,0x21,0x16,0x19c,0x118);
     local_520[0] = 0;
     local_520[2] = this_00->field_003C + 0x21;
     if (this_00->field_005C == 0) {
@@ -93,13 +94,13 @@ void __thiscall HelpPanelTy::CreateList(HelpPanelTy *this)
     local_520[3] = local_520[3] + 0x16;
     local_510 = 0x19c;
     local_50c = 0x118;
-    if (this_00->field_01A1 == '\0') {
-      iVar2 = this_00->field_01B3;
+    if (this_00->field_01A1 == 0) {
+      pDVar2 = (DArrayTy *)this_00->field_01B3;
     }
     else {
-      iVar2 = this_00->field_01BB;
+      pDVar2 = this_00->field_01BB;
     }
-    local_508 = *(undefined4 *)(iVar2 + 0xc);
+    local_508 = pDVar2->count;
     local_504 = 0;
     local_4f8 = this_00->field_0008;
     local_3f0[0] = 0;
@@ -131,20 +132,20 @@ void __thiscall HelpPanelTy::CreateList(HelpPanelTy *this)
     local_2cc = FUN_0070aa70(DAT_00806790,s_BUT_MSLUP_007c39e0,0,1);
     local_2c8 = Library::Ourlib::MFIMG::mfImgGetWidth(DAT_00806790,0x12,s_BUT_MSLUP_007c39e0,1);
     local_390 = this_00->field_0008;
-    iVar2 = this_00->field_005C;
+    iVar3 = this_00->field_005C;
     local_38c = 2;
     local_274 = 2;
     local_2e0 = 500;
     local_2dc = 0x32;
     local_388 = 0x8164;
-    piVar4 = local_3f0;
-    piVar5 = local_270;
-    for (iVar3 = 0x5f; iVar3 != 0; iVar3 = iVar3 + -1) {
-      *piVar5 = *piVar4;
-      piVar4 = piVar4 + 1;
+    piVar5 = local_3f0;
+    piVar6 = local_270;
+    for (iVar4 = 0x5f; iVar4 != 0; iVar4 = iVar4 + -1) {
+      *piVar6 = *piVar5;
       piVar5 = piVar5 + 1;
+      piVar6 = piVar6 + 1;
     }
-    if (iVar2 == 0) {
+    if (iVar3 == 0) {
       local_270[3] = -this_00->field_0048;
     }
     else {
@@ -175,24 +176,24 @@ void __thiscall HelpPanelTy::CreateList(HelpPanelTy *this)
     local_5c = 1;
     (*this_00->field_000C->vtable->CreateObject)
               ((SystemClassTy *)this_00->field_000C,7,&this_00->field_019C,(int *)0x0,local_520,0);
-    iVar2 = this_00->field_019C;
-    if (iVar2 != 0) {
+    iVar3 = this_00->field_019C;
+    if (iVar3 != 0) {
       this_00->field_0028 = 0x20;
       *(undefined4 *)&this_00->field_0x2c = 1;
-      FUN_006e6080(this_00,2,iVar2,(undefined4 *)&this_00->field_0x18);
+      FUN_006e6080(this_00,2,iVar3,(undefined4 *)&this_00->field_0x18);
     }
     g_currentExceptionFrame = local_4c.previous;
     return;
   }
   g_currentExceptionFrame = local_4c.previous;
-  iVar3 = ReportDebugMessage(s_E____titans_Andrey_helppan_cpp_007c383c,0x1a5,0,iVar2,&DAT_007a4ccc,
+  iVar4 = ReportDebugMessage(s_E____titans_Andrey_helppan_cpp_007c383c,0x1a5,0,iVar3,&DAT_007a4ccc,
                              s_HelpPanelTy__CreateList_007c39b8);
-  if (iVar3 != 0) {
+  if (iVar4 != 0) {
     pcVar1 = (code *)swi(3);
     (*pcVar1)();
     return;
   }
-  RaiseInternalException(iVar2,0,s_E____titans_Andrey_helppan_cpp_007c383c,0x1a5);
+  RaiseInternalException(iVar3,0,s_E____titans_Andrey_helppan_cpp_007c383c,0x1a5);
   return;
 }
 

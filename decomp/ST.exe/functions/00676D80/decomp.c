@@ -6,7 +6,10 @@
    
    [STPrototypeApplier] Propagated parameter 12.
    Evidence: 00677290 -> 00676D80 @ 00677314 | 006773B0 -> 00676D80 @ 00677431 | 006774C0 ->
-   00676D80 @ 00677544 | 006775E0 -> 00676D80 @ 00677665 */
+   00676D80 @ 00677544 | 006775E0 -> 00676D80 @ 00677665
+   
+   [STTypeFamilyApplier] EXACT_ANONYMOUS_LAYOUT.
+   Evidence: exact anonymous structure fingerprint shared across functions */
 
 int __cdecl
 _EnumPlObj(undefined4 param_1,uint param_2,uint param_3,byte *param_4,char param_5,short param_6,
@@ -30,7 +33,7 @@ _EnumPlObj(undefined4 param_1,uint param_2,uint param_3,byte *param_4,char param
   bool bVar11;
   InternalExceptionFrame local_70;
   byte local_2c [16];
-  AnonShape_00676D80_A0E8D1CB *local_1c;
+  AnonNested_005F5B80_0169_794156D7 *local_1c;
   int local_18;
   uint local_14;
   int local_10;
@@ -61,8 +64,8 @@ _EnumPlObj(undefined4 param_1,uint param_2,uint param_3,byte *param_4,char param
     RaiseInternalException(iVar3,0,s_E____titans_ai_ai_mdef_cpp_007d2d58,0x296);
     return iVar3;
   }
-  local_1c = (AnonShape_00676D80_A0E8D1CB *)thunk_FUN_0042a990((char)param_1);
-  if (local_1c == (AnonShape_00676D80_A0E8D1CB *)0x0) {
+  local_1c = (AnonNested_005F5B80_0169_794156D7 *)thunk_FUN_0042a990((char)param_1);
+  if (local_1c == (AnonNested_005F5B80_0169_794156D7 *)0x0) {
     RaiseInternalException
               (-0x34,g_overwriteContext_007ED77C,s_E____titans_ai_ai_mdef_cpp_007d2d58,0x293);
   }

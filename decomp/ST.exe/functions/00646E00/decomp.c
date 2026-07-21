@@ -70,12 +70,12 @@ int FUN_00646e00(int param_1,int param_2,int param_3)
       param_2 = 0;
     }
     local_8 = iVar5 + 4;
-    if (SHORT_007fb242 < local_8) {
-      local_8 = (int)SHORT_007fb242;
+    if (g_worldGrid.sizeY < local_8) {
+      local_8 = (int)g_worldGrid.sizeY;
     }
     param_3 = iVar4 + 4;
-    if (SHORT_007fb240 < param_3) {
-      param_3 = (int)SHORT_007fb240;
+    if (g_worldGrid.sizeX < param_3) {
+      param_3 = (int)g_worldGrid.sizeX;
     }
     if ((((((DAT_0080874d != -1) && (g_visibleClass_00802A88->field_00F8 != 0)) &&
           ((thunk_FUN_00558c00(g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,iVar4,

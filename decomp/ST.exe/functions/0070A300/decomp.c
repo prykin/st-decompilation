@@ -17,9 +17,9 @@ void __cdecl FUN_0070a300(int *param_1)
         }
         iVar1 = FUN_006b1190(*(AnonShape_006B1190_EDB2B5FD **)(*param_1 + 4),local_34);
       }
-      FUN_006ae110(*(byte **)(*param_1 + 4));
+      DArrayDestroy(*(DArrayTy **)(*param_1 + 4));
     }
-    FUN_006ab060((LPVOID *)param_1);
+    FreeAndNull((void **)param_1);
   }
   return;
 }

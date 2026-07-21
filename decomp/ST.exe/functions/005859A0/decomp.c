@@ -24,7 +24,7 @@ undefined4 __thiscall STLBombC::GetMessage(STLBombC *this,AnonShape_005859A0_2C0
   undefined4 *puVar13;
   byte *pbVar14;
   InternalExceptionFrame local_80;
-  LPVOID local_3c;
+  void *local_3c;
   int local_38;
   int local_34;
   undefined4 local_30;
@@ -178,10 +178,11 @@ undefined4 __thiscall STLBombC::GetMessage(STLBombC *this,AnonShape_005859A0_2C0
           pbVar14 = pbVar14 + 1;
         }
         STPlaySystemC::SaveObjData
-                  (PTR_00802a38,this_00->field_0018,local_c,local_10 + 0x67 + local_8);
-        FUN_006ab060(&local_18);
-        FUN_006ab060(&local_14);
-        FUN_006ab060(&local_c);
+                  (PTR_00802a38,this_00->field_0018,local_c,
+                   (AnonShape_0060EA30_DCEB68AD *)(local_10 + 0x67 + local_8));
+        FreeAndNull(&local_18);
+        FreeAndNull(&local_14);
+        FreeAndNull(&local_c);
         g_currentExceptionFrame = local_80.previous;
         return 0;
       }
@@ -254,8 +255,8 @@ undefined4 __thiscall STLBombC::GetMessage(STLBombC *this,AnonShape_005859A0_2C0
           *(undefined2 *)&this_00->field_0x41 = local_20->field_0052;
           *(undefined2 *)&this_00->field_0x43 = *(undefined2 *)&local_20->field_0x54;
           *(undefined2 *)&this_00->field_0x45 = local_20->field_0056;
-          local_3c = (LPVOID)Library::DKW::LIB::FUN_006aac70(0x44);
-          if (local_3c != (LPVOID)0x0) {
+          local_3c = (void *)Library::DKW::LIB::FUN_006aac70(0x44);
+          if (local_3c != (void *)0x0) {
             iVar5 = 0;
             do {
               *(int **)(iVar5 + (int)local_3c) = DAT_00806774;
@@ -276,8 +277,8 @@ undefined4 __thiscall STLBombC::GetMessage(STLBombC *this,AnonShape_005859A0_2C0
             local_24 = 0;
             STT3DSprC::RestoreSpr
                       ((STT3DSprC *)&this_00->field_01D5,(int *)&local_3c,
-                       (AnonShape_004ADBA0_E7CEFF88 *)&pAVar10->field_0x63);
-            FUN_006ab060(&local_3c);
+                       (AnonShape_004AD790_77673787 *)&pAVar10->field_0x63);
+            FreeAndNull(&local_3c);
           }
         }
         iVar5 = *(int *)&this_00->field_0x26c;

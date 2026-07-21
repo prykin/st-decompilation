@@ -10,7 +10,7 @@ undefined4 __fastcall FUN_004cd480(AnonShape_004CC900_31EE9CAA *param_1)
   undefined4 uVar6;
   
   iVar3 = 0;
-  uVar1 = thunk_FUN_004406c0(param_1->field_0x464);
+  uVar1 = GetPlayerRaceId(param_1->field_0x464);
   uVar1 = uVar1 & 0xff;
   if (uVar1 == 1) {
     iVar2 = thunk_FUN_004e60d0(*(int *)&param_1->field_0x464,0x98);
@@ -43,7 +43,7 @@ LAB_004cd4c0:
     uVar4 = 1;
     if (*(uint *)&param_1->field_0x464 != (uint)DAT_0080874d) goto cf_common_exit_004CD624;
     thunk_FUN_0052af50(1,*(float *)&param_1->field_0x1f9,*(float *)&param_1->field_0x1fd);
-    uVar1 = thunk_FUN_004406c0(param_1->field_0x24);
+    uVar1 = GetPlayerRaceId(param_1->field_0x24);
     uVar1 = uVar1 & 0xff;
     if (uVar1 == 1) {
       iVar3 = *(int *)param_1;
@@ -64,7 +64,7 @@ LAB_004cd4c0:
     uVar4 = 2;
     if (*(uint *)&param_1->field_0x464 != (uint)DAT_0080874d) goto cf_common_exit_004CD624;
     thunk_FUN_0052af50(1,*(float *)&param_1->field_0x1f9,*(float *)&param_1->field_0x1fd);
-    uVar1 = thunk_FUN_004406c0(param_1->field_0x24);
+    uVar1 = GetPlayerRaceId(param_1->field_0x24);
     uVar1 = uVar1 & 0xff;
     if (uVar1 == 1) {
       iVar3 = *(int *)param_1;

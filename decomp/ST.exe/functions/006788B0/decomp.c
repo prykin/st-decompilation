@@ -1,19 +1,24 @@
 
-undefined4 * __fastcall FUN_006788b0(undefined4 *param_1)
+/* [STConstructorApplier] Recovered constructor candidate.
+   VTable: 0079D714 (store 006788C5)
+   Evidence: final_vptr=0079D714; returns_this=true; calls_before=2; field_writes_after=3;
+   incoming_edx_uses=0; incoming_stack_parameter_uses=0; table_confidence=high */
+
+undefined4 * __thiscall AiPlrClassTy::AiPlrClassTy(AiPlrClassTy *this)
 
 {
   int iVar1;
   undefined4 *puVar2;
   
-  STGroupBoatC::sub_006E60E0((STGroupBoatC *)param_1);
-  thunk_FUN_0064cc90(param_1 + 7);
-  *param_1 = &PTR_LAB_0079d714;
-  param_1[7] = &PTR_thunk_FUN_00647b60_0079d6d4;
-  if (param_1 == (undefined4 *)0x0) {
+  STGroupBoatC::sub_006E60E0((STGroupBoatC *)this);
+  thunk_FUN_0064cc90(&this->vtable_at_1c);
+  this->vtable = &AiPlrClassTyVTable;
+  this->vtable_at_1c = &AiPlrClassTyVTable_at_1C;
+  if (this == (AiPlrClassTy *)0x0) {
     puVar2 = (undefined4 *)0x0;
   }
   else {
-    puVar2 = (undefined4 *)((int)param_1 + 0x5d3);
+    puVar2 = &this->field_05D3;
   }
   for (iVar1 = 0x4a; iVar1 != 0; iVar1 = iVar1 + -1) {
     *puVar2 = 0;
@@ -21,8 +26,8 @@ undefined4 * __fastcall FUN_006788b0(undefined4 *param_1)
   }
   *(undefined2 *)puVar2 = 0;
   *(undefined1 *)((int)puVar2 + 2) = 0;
-  *(undefined4 *)((int)param_1 + 0x5d3) = 0x398;
-  param_1[400] = 0xff;
-  return param_1;
+  this->field_05D3 = 0x398;
+  *(undefined4 *)&this->field_0x640 = 0xff;
+  return &this->vtable;
 }
 

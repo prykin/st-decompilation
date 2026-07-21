@@ -63,9 +63,9 @@ undefined4 __thiscall FUN_00639c90(void *this,AnonShape_0041AF40_F59F8577 *param
       }
       STPlaySystemC::SaveObjData
                 (PTR_00802a38,*(undefined4 *)((int)this + 0x18),local_8,
-                 (uint)(&param_1->field_0x0 + local_10));
-      FUN_006ab060(&local_8);
-      FUN_006ab060(&local_14);
+                 (AnonShape_0060EA30_DCEB68AD *)(&param_1->field_0x0 + local_10));
+      FreeAndNull(&local_8);
+      FreeAndNull(&local_14);
       return 0;
     }
     if (uVar10 != 0x128) {

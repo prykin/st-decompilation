@@ -15,7 +15,7 @@ FUN_006e9af0(void *this,uint param_1,uint param_2,uint param_3,uint param_4,uint
      (pAVar1 = (AnonShape_006E8840_CF3FA5BA *)(*(int *)((int)this + 0x31c) + param_1 * 0x114),
      (*(uint *)(*(int *)((int)this + 0x31c) + param_1 * 0x114) & 0x8000) != 0)) {
     if ((pAVar1->field_0x4 & 1) != 0) {
-      FUN_006ab060(&pAVar1->field_00A0);
+      FreeAndNull(&pAVar1->field_00A0);
     }
     pAVar1->field_0034 = param_4;
     *(uint *)&pAVar1->field_0x4 = *(uint *)&pAVar1->field_0x4 & 0xfffffffe;
@@ -25,7 +25,7 @@ FUN_006e9af0(void *this,uint param_1,uint param_2,uint param_3,uint param_4,uint
     pAVar1->field_00A0 = (int *)param_3;
     if (((int)param_2 < 1) || (pAVar1->field_0094 == param_2)) {
       if ((int)param_2 < 0) {
-        FUN_006ab060((LPVOID *)(pAVar1 + 1));
+        FreeAndNull((void **)(pAVar1 + 1));
       }
     }
     else {

@@ -8,7 +8,7 @@ void __thiscall CPanelTy::PaintLife(CPanelTy *this,int param_1)
 {
   code *pcVar1;
   CPanelTy *this_00;
-  undefined4 *puVar2;
+  AnonShape_006B84D0_7C7D97C6 *pAVar2;
   byte bVar3;
   int iVar4;
   int iVar5;
@@ -20,17 +20,17 @@ void __thiscall CPanelTy::PaintLife(CPanelTy *this,int param_1)
   UINT UVar8;
   InternalExceptionFrame local_5c;
   CPanelTy *local_18;
-  undefined4 *local_14;
+  AnonShape_006B84D0_7C7D97C6 *local_14;
   uint local_10;
   uint local_c;
   char local_5;
   
   if (param_1 == 0) {
-    local_14 = (undefined4 *)this->field_019C;
+    local_14 = (AnonShape_006B84D0_7C7D97C6 *)this->field_019C;
     bVar3 = this->field_0C6C;
   }
   else {
-    local_14 = (undefined4 *)this->field_0184;
+    local_14 = (AnonShape_006B84D0_7C7D97C6 *)this->field_0184;
     bVar3 = this->field_0B7E;
   }
   local_c = CONCAT31(local_c._1_3_,bVar3);
@@ -45,7 +45,7 @@ void __thiscall CPanelTy::PaintLife(CPanelTy *this,int param_1)
     g_currentExceptionFrame = &local_5c;
     local_18 = this;
     iVar4 = Library::MSVCRT::__setjmp3(local_5c.jumpBuffer,0,unaff_EDI,unaff_ESI);
-    puVar2 = local_14;
+    pAVar2 = local_14;
     this_00 = local_18;
     if (iVar4 == 0) {
       bVar3 = (byte)local_c;
@@ -70,7 +70,7 @@ void __thiscall CPanelTy::PaintLife(CPanelTy *this,int param_1)
         UVar8 = 0x36b1;
         uVar7 = CONCAT31((int3)((uint)extraout_EDX >> 8),'d' - bVar3);
       }
-      PaintDamageXY(this_00,(int)puVar2,5,0x27,uVar7,UVar8);
+      PaintDamageXY(this_00,(int)pAVar2,5,0x27,uVar7,UVar8);
       g_currentExceptionFrame = local_5c.previous;
       return;
     }

@@ -892,8 +892,9 @@ LAB_006defd4:
         }
         iVar6 = FUN_006b0460(local_70,&local_b4,&local_38);
         if (iVar6 != 0) {
-          FUN_00708d10(param_1,param_1->field_000C,param_1->field_0028,pbVar4,local_54,local_5c,
-                       local_40,puVar10[4],1);
+          SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00702510::FUN_00708d10
+                    ((AnonReceiver_00702510 *)param_1,param_1->field_000C,param_1->field_0028,pbVar4
+                     ,local_54,local_5c,local_40,puVar10[4],1);
         }
       }
       local_24 = local_24 + 1;
@@ -936,8 +937,9 @@ LAB_006defd4:
       }
       iVar6 = FUN_006b0460(local_70,&local_b4,&local_38);
       if (iVar6 != 0) {
-        FUN_00708d10(param_1,param_1->field_000C,param_1->field_0028,pbVar4,local_54,local_5c,
-                     puVar10[6] + local_40,0,1);
+        SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00702510::FUN_00708d10
+                  ((AnonReceiver_00702510 *)param_1,param_1->field_000C,param_1->field_0028,pbVar4,
+                   local_54,local_5c,puVar10[6] + local_40,0,1);
       }
     }
   }
@@ -978,8 +980,9 @@ LAB_006defd4:
       }
       iVar6 = FUN_006b0460(local_70,&local_b4,&local_38);
       if (iVar6 != 0) {
-        FUN_00708d10(param_1,param_1->field_000C,param_1->field_0028,pbVar4,local_54,local_5c,
-                     local_40,puVar10[4],0);
+        SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00702510::FUN_00708d10
+                  ((AnonReceiver_00702510 *)param_1,param_1->field_000C,param_1->field_0028,pbVar4,
+                   local_54,local_5c,local_40,puVar10[4],0);
       }
       local_24 = local_24 + 1;
       puVar10 = puVar10 + 0xb;
@@ -1020,8 +1023,9 @@ LAB_006defd4:
     }
     iVar6 = FUN_006b0460(local_70,&local_b4,&local_38);
     if (iVar6 != 0) {
-      FUN_00708d10(param_1,param_1->field_000C,param_1->field_0028,pbVar4,local_54,local_5c,
-                   puVar10[6] + local_40,0,0);
+      SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00702510::FUN_00708d10
+                ((AnonReceiver_00702510 *)param_1,param_1->field_000C,param_1->field_0028,pbVar4,
+                 local_54,local_5c,puVar10[6] + local_40,0,0);
     }
   }
   if (((((param_1->field_0124 != 10) && (param_1->field_0124 != 1)) && (param_1->field_0298 != 0))

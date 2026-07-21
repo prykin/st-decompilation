@@ -118,7 +118,7 @@ byte * __thiscall FUN_0061d710(void *this,int *param_1)
     pbVar10 = pbVar10 + 1;
     pbVar12 = pbVar12 + 1;
   }
-  FUN_006ab060(&local_14);
+  FreeAndNull(&local_14);
   *param_1 = iVar4;
   return pbVar2;
 }

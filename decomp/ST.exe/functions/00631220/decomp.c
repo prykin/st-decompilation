@@ -64,7 +64,7 @@ void __thiscall FUN_00631220(void *this,int *param_1)
       puVar6 = (undefined4 *)((int)puVar6 + 1);
     }
     if (local_14 != (undefined4 *)0x0) {
-      FUN_006ab060(&local_14);
+      FreeAndNull(&local_14);
     }
   }
   if (*(undefined4 **)((int)this + 0x34) != (undefined4 *)0x0) {

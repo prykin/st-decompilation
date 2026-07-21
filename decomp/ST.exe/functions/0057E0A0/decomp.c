@@ -113,9 +113,11 @@ STDcResourcC::GetMessage(STDcResourcC *this,AnonShape_0057E0A0_323CBAA3 *param_1
         pbVar17 = pbVar17 + 1;
         pbVar20 = pbVar20 + 1;
       }
-      STPlaySystemC::SaveObjData(PTR_00802a38,this_00->field_0018,local_c,local_8 + 0x46);
-      FUN_006ab060(&local_10);
-      FUN_006ab060(&local_c);
+      STPlaySystemC::SaveObjData
+                (PTR_00802a38,this_00->field_0018,local_c,
+                 (AnonShape_0060EA30_DCEB68AD *)(local_8 + 0x46));
+      FreeAndNull(&local_10);
+      FreeAndNull(&local_c);
       g_currentExceptionFrame = local_68.previous;
       return 0;
     }
@@ -126,14 +128,14 @@ STDcResourcC::GetMessage(STDcResourcC *this,AnonShape_0057E0A0_323CBAA3 *param_1
     sVar7 = *(short *)&this_00->field_0x245;
     sVar1 = *(short *)&this_00->field_0x24d;
     sVar2 = *(short *)&this_00->field_0x249;
-    if ((((sVar7 < 0) || (SHORT_007fb240 <= sVar7)) || (sVar2 < 0)) ||
-       (((SHORT_007fb242 <= sVar2 || (sVar1 < 0)) || (SHORT_007fb244 <= sVar1)))) {
+    if ((((sVar7 < 0) || (g_worldGrid.sizeX <= sVar7)) || (sVar2 < 0)) ||
+       (((g_worldGrid.sizeY <= sVar2 || (sVar1 < 0)) || (g_worldGrid.sizeZ <= sVar1)))) {
       pSVar15 = (STWorldObject *)0x0;
     }
     else {
-      pSVar15 = g_worldCells
-                [(int)sVar1 * (int)SHORT_007fb246 + (int)sVar2 * (int)SHORT_007fb240 + (int)sVar7].
-                objects[0];
+      pSVar15 = g_worldGrid.cells
+                [(int)sVar1 * (int)g_worldGrid.planeStride + (int)sVar2 * (int)g_worldGrid.sizeX +
+                 (int)sVar7].objects[0];
     }
     if (pSVar15 == (STWorldObject *)0x0) {
       g_currentExceptionFrame = local_68.previous;
@@ -261,24 +263,24 @@ STDcResourcC::GetMessage(STDcResourcC *this,AnonShape_0057E0A0_323CBAA3 *param_1
       sVar1 = *(short *)&this_00->field_0x249;
       local_14 = CONCAT22(uVar14,sVar1);
       sVar2 = *(short *)&this_00->field_0x24d;
-      if (((sVar7 < 0) || (SHORT_007fb240 <= sVar7)) ||
-         (((sVar1 < 0 || ((SHORT_007fb242 <= sVar1 || (sVar2 < 0)))) || (SHORT_007fb244 <= sVar2))))
-      {
+      if (((sVar7 < 0) || (g_worldGrid.sizeX <= sVar7)) ||
+         (((sVar1 < 0 || ((g_worldGrid.sizeY <= sVar1 || (sVar2 < 0)))) ||
+          (g_worldGrid.sizeZ <= sVar2)))) {
         pSVar15 = (STWorldObject *)0x0;
       }
       else {
-        pSVar15 = g_worldCells
-                  [(int)SHORT_007fb246 * (int)sVar2 + (int)SHORT_007fb240 * (int)sVar1 + (int)sVar7]
-                  .objects[0];
+        pSVar15 = g_worldGrid.cells
+                  [(int)g_worldGrid.planeStride * (int)sVar2 + (int)g_worldGrid.sizeX * (int)sVar1 +
+                   (int)sVar7].objects[0];
       }
-      if (((((sVar7 < 0) || (SHORT_007fb240 <= sVar7)) || (sVar1 < 0)) ||
-          ((SHORT_007fb242 <= sVar1 || (sVar2 < 0)))) || (SHORT_007fb244 <= sVar2)) {
+      if (((((sVar7 < 0) || (g_worldGrid.sizeX <= sVar7)) || (sVar1 < 0)) ||
+          ((g_worldGrid.sizeY <= sVar1 || (sVar2 < 0)))) || (g_worldGrid.sizeZ <= sVar2)) {
         sVar7 = -1;
       }
       else {
-        sVar7 = *(short *)(DAT_007fb280 +
-                          ((int)SHORT_007fb278 * (int)sVar1 + (int)SHORT_007fb27e * (int)sVar2 +
-                          (int)sVar7) * 2);
+        sVar7 = g_pathingGrid.cells
+                [(int)g_pathingGrid.sizeX * (int)sVar1 + (int)g_pathingGrid.planeStride * (int)sVar2
+                 + (int)sVar7];
       }
       if ((sVar7 != 0) &&
          ((pSVar15 == (STWorldObject *)0x0 ||
@@ -321,24 +323,24 @@ STDcResourcC::GetMessage(STDcResourcC *this,AnonShape_0057E0A0_323CBAA3 *param_1
       sVar1 = *(short *)&this_00->field_0x249;
       local_14 = CONCAT22(extraout_var_03,sVar1);
       sVar2 = *(short *)&this_00->field_0x24d;
-      if (((((sVar7 < 0) || (SHORT_007fb240 <= sVar7)) || (sVar1 < 0)) ||
-          ((SHORT_007fb242 <= sVar1 || (sVar2 < 0)))) || (SHORT_007fb244 <= sVar2)) {
+      if (((((sVar7 < 0) || (g_worldGrid.sizeX <= sVar7)) || (sVar1 < 0)) ||
+          ((g_worldGrid.sizeY <= sVar1 || (sVar2 < 0)))) || (g_worldGrid.sizeZ <= sVar2)) {
         pSVar15 = (STWorldObject *)0x0;
       }
       else {
-        pSVar15 = g_worldCells
-                  [(int)sVar1 * (int)SHORT_007fb240 + (int)SHORT_007fb246 * (int)sVar2 + (int)sVar7]
-                  .objects[0];
+        pSVar15 = g_worldGrid.cells
+                  [(int)sVar1 * (int)g_worldGrid.sizeX + (int)g_worldGrid.planeStride * (int)sVar2 +
+                   (int)sVar7].objects[0];
       }
-      if (((sVar7 < 0) || (SHORT_007fb240 <= sVar7)) ||
-         ((sVar1 < 0 || (((SHORT_007fb242 <= sVar1 || (sVar2 < 0)) || (SHORT_007fb244 <= sVar2))))))
-      {
+      if (((sVar7 < 0) || (g_worldGrid.sizeX <= sVar7)) ||
+         ((sVar1 < 0 ||
+          (((g_worldGrid.sizeY <= sVar1 || (sVar2 < 0)) || (g_worldGrid.sizeZ <= sVar2)))))) {
         sVar7 = -1;
       }
       else {
-        sVar7 = *(short *)(DAT_007fb280 +
-                          ((int)sVar1 * (int)SHORT_007fb278 + (int)SHORT_007fb27e * (int)sVar2 +
-                          (int)sVar7) * 2);
+        sVar7 = g_pathingGrid.cells
+                [(int)sVar1 * (int)g_pathingGrid.sizeX + (int)g_pathingGrid.planeStride * (int)sVar2
+                 + (int)sVar7];
       }
       if ((sVar7 != 0) &&
          ((pSVar15 == (STWorldObject *)0x0 ||

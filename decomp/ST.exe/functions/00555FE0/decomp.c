@@ -51,17 +51,17 @@ undefined4 * __thiscall TraksClassTy::PrepareToSave(TraksClassTy *this,uint *par
         puVar3 = (undefined4 *)((int)puVar3 + 1);
         puVar6 = (undefined4 *)((int)puVar6 + 1);
       }
-      FUN_006ab060(&local_c);
+      FreeAndNull(&local_c);
     }
     g_currentExceptionFrame = local_58.previous;
     return local_8;
   }
   g_currentExceptionFrame = local_58.previous;
   if (local_8 != (undefined4 *)0x0) {
-    FUN_006ab060(&local_8);
+    FreeAndNull(&local_8);
   }
   if (local_c != (undefined4 *)0x0) {
-    FUN_006ab060(&local_c);
+    FreeAndNull(&local_c);
   }
   iVar2 = ReportDebugMessage(s_E____titans_grig_traks_cpp_007c9104,0xed,0,errorCode,&DAT_007a4ccc,
                              s_TraksClassTy__PrepareToSave_erro_007c91a8);

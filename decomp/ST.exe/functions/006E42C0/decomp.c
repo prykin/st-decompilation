@@ -29,8 +29,8 @@ undefined4 __thiscall FUN_006e42c0(void *this,int *param_1)
       }
       uVar1 = FUN_006b1190(*(AnonShape_006B1190_EDB2B5FD **)((int)this + 0x14),local_14);
     }
-    if (*(int *)(*(byte **)((int)this + 0x14) + 0xc) == 0) {
-      FUN_006ae110(*(byte **)((int)this + 0x14));
+    if ((*(DArrayTy **)((int)this + 0x14))->count == 0) {
+      DArrayDestroy(*(DArrayTy **)((int)this + 0x14));
       *(undefined4 *)((int)this + 0x14) = 0;
     }
   }

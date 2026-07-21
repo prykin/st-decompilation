@@ -40,13 +40,13 @@ undefined4 * __thiscall VisibleClassTy::PrepareToSave(VisibleClassTy *this,uint 
   if (iVar3 != 0) {
     g_currentExceptionFrame = local_68.previous;
     if (local_c != (undefined4 *)0x0) {
-      FUN_006ab060(&local_c);
+      FreeAndNull(&local_c);
     }
     if (local_14 != (undefined4 *)0x0) {
-      FUN_006ab060(&local_14);
+      FreeAndNull(&local_14);
     }
     if (local_8 != (undefined4 *)0x0) {
-      FUN_006ab060(&local_8);
+      FreeAndNull(&local_8);
     }
     iVar5 = ReportDebugMessage(s_E____titans_grig_visible_cpp_007c92cc,0x105,0,iVar3,&DAT_007a4ccc,
                                s_VisibleClassTy__PrepareToSave_er_007c932c);
@@ -59,8 +59,8 @@ undefined4 * __thiscall VisibleClassTy::PrepareToSave(VisibleClassTy *this,uint 
     return (undefined4 *)0x0;
   }
   if (local_24->field_0114 != 0) {
-    local_c = (undefined4 *)FUN_006b0020((uint *)local_24->field_00F4,(int *)&local_10);
-    local_14 = (undefined4 *)FUN_006b0020((uint *)pVVar2->field_0110,(int *)&local_18);
+    local_c = (undefined4 *)FUN_006b0020(&local_24->field_00F4->flags,(int *)&local_10);
+    local_14 = (undefined4 *)FUN_006b0020(&pVVar2->field_0110->flags,(int *)&local_18);
     if (pVVar2->field_0114 != 0) {
       iVar3 = pVVar2->field_002C * pVVar2->field_0028 * 4;
       goto LAB_0055832e;
@@ -128,7 +128,7 @@ LAB_0055832e:
         puVar9 = (undefined4 *)((int)puVar9 + 1);
       }
       local_20 = (undefined4 *)((int)puVar4 + local_10);
-      FUN_006ab060(&local_c);
+      FreeAndNull(&local_c);
       puVar4 = local_20;
     }
     if (local_14 != (undefined4 *)0x0) {
@@ -143,7 +143,7 @@ LAB_0055832e:
         puVar8 = (undefined4 *)((int)puVar8 + 1);
         puVar4 = (undefined4 *)((int)puVar4 + 1);
       }
-      FUN_006ab060(&local_14);
+      FreeAndNull(&local_14);
     }
   }
   g_currentExceptionFrame = local_68.previous;

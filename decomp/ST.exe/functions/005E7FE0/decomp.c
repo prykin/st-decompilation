@@ -7,20 +7,25 @@ void __thiscall WaitTy::ShowDescription(WaitTy *this)
 
 {
   undefined1 *puVar1;
-  AnonPointee_StartSystemTy_0544 *pAVar2;
+  AnonShape_006C7610_838EDECF *pAVar2;
   code *pcVar3;
   cMf32 *pcVar4;
   int iVar5;
   ushort *puVar6;
   uint *puVar7;
-  undefined4 uVar8;
-  undefined4 uVar9;
-  int iVar10;
+  undefined4 extraout_EAX;
+  undefined4 extraout_EAX_00;
+  undefined4 extraout_EAX_01;
+  undefined4 extraout_EAX_02;
+  undefined4 extraout_EAX_03;
+  uint *extraout_EAX_04;
+  int iVar8;
   cMf32 *this_00;
   undefined4 unaff_ESI;
   WaitTy *this_01;
   void *unaff_EDI;
-  byte *pbVar11;
+  byte *pbVar9;
+  undefined4 uVar10;
   byte local_1a8 [260];
   InternalExceptionFrame local_a4;
   InternalExceptionFrame local_60;
@@ -37,9 +42,9 @@ void __thiscall WaitTy::ShowDescription(WaitTy *this)
   iVar5 = Library::MSVCRT::__setjmp3(local_60.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (iVar5 != 0) {
     g_currentExceptionFrame = local_60.previous;
-    iVar10 = ReportDebugMessage(s_E____titans_Start_wait_obj_cpp_007cdd5c,0x15e,0,iVar5,
-                                &DAT_007a4ccc,s_WaitTy__ShowDescription_007cddd8);
-    if (iVar10 == 0) {
+    iVar8 = ReportDebugMessage(s_E____titans_Start_wait_obj_cpp_007cdd5c,0x15e,0,iVar5,&DAT_007a4ccc
+                               ,s_WaitTy__ShowDescription_007cddd8);
+    if (iVar8 == 0) {
       RaiseInternalException(iVar5,0,s_E____titans_Start_wait_obj_cpp_007cdd5c,0x15e);
       return;
     }
@@ -48,9 +53,9 @@ void __thiscall WaitTy::ShowDescription(WaitTy *this)
     return;
   }
   puVar6 = Library::Ourlib::MFIMG::mfImgLoad(g_cMf32_00806780,1,s_MM_MAPB_007cc790,0,1);
-  DibPut((AnonShape_006B84D0_7C7D97C6 *)PTR_0081176c->field_02F0,0,0,'\x01',(byte *)puVar6);
-  pAVar2 = PTR_0081176c->field_0544;
-  FUN_006b4170((int)pAVar2,0,0,0,pAVar2->field_0004,pAVar2->field_0008,0xff);
+  DibPut((AnonShape_006B5B10_E0D06CF1 *)PTR_0081176c->field_02F0,0,0,'\x01',(byte *)puVar6);
+  pAVar2 = (AnonShape_006C7610_838EDECF *)PTR_0081176c->field_0544;
+  FUN_006b4170(pAVar2,0,0,0,pAVar2->field_0004,pAVar2->field_0008,0xff);
   if ((AnonShape_006B5570_4D68B99C *)PTR_0081176c->field_0548 != (AnonShape_006B5570_4D68B99C *)0x0)
   {
     FUN_006b5570((AnonShape_006B5570_4D68B99C *)PTR_0081176c->field_0548);
@@ -59,9 +64,10 @@ void __thiscall WaitTy::ShowDescription(WaitTy *this)
   this_01 = local_8;
   PTR_0081176c->field_0548 = puVar7;
   if (local_8->field_1A8F == -1) {
-    uVar8 = FUN_006b0140(0x252c,HINSTANCE_00807618);
-    uVar9 = FUN_006b0140(0x252a,HINSTANCE_00807618);
-    wsprintfA((LPSTR)&DAT_0080f33a,s__s___s__007c85fc,uVar9,uVar8);
+    LoadResourceString(0x252c,HINSTANCE_00807618);
+    uVar10 = extraout_EAX;
+    LoadResourceString(0x252a,HINSTANCE_00807618);
+    wsprintfA((LPSTR)&DAT_0080f33a,s__s___s__007c85fc,extraout_EAX_00,uVar10);
     iVar5 = 0;
     puVar7 = &DAT_0080f33a;
   }
@@ -85,20 +91,22 @@ void __thiscall WaitTy::ShowDescription(WaitTy *this)
         StartSystemTy::LoadMapData(PTR_0081176c,local_10,(local_8->field_1A93 != '\x02') + '\x04');
         local_c = 1;
         Library::MSVCRT::FUN_0072e730(&DAT_0080ed16,(byte *)0x0,(byte *)0x0,local_1a8,(byte *)0x0);
-        pbVar11 = local_1a8;
-        uVar8 = FUN_006b0140(0x252a,HINSTANCE_00807618);
-        wsprintfA((LPSTR)&DAT_0080f33a,s__s___s__007c85fc,uVar8,pbVar11);
+        pbVar9 = local_1a8;
+        LoadResourceString(0x252a,HINSTANCE_00807618);
+        wsprintfA((LPSTR)&DAT_0080f33a,s__s___s__007c85fc,extraout_EAX_01,pbVar9);
         AddStr(this_01,&DAT_0080f33a,0);
         cMf32::delete(this_00,pcVar4);
       }
       goto LAB_005e829d;
     }
-    uVar8 = FUN_006b0140(0x252b,HINSTANCE_00807618);
-    uVar9 = FUN_006b0140(0x252a,HINSTANCE_00807618);
-    wsprintfA((LPSTR)&DAT_0080f33a,s__s___s__007c85fc,uVar9,uVar8);
+    LoadResourceString(0x252b,HINSTANCE_00807618);
+    uVar10 = extraout_EAX_02;
+    LoadResourceString(0x252a,HINSTANCE_00807618);
+    wsprintfA((LPSTR)&DAT_0080f33a,s__s___s__007c85fc,extraout_EAX_03,uVar10);
     AddStr(this_01,&DAT_0080f33a,0);
     iVar5 = 0;
-    puVar7 = (uint *)FUN_006b0140(0x252d,HINSTANCE_00807618);
+    LoadResourceString(0x252d,HINSTANCE_00807618);
+    puVar7 = extraout_EAX_04;
   }
   AddStr(this_01,puVar7,iVar5);
 LAB_005e829d:

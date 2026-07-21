@@ -78,10 +78,10 @@ uint __thiscall STAllPlayersC::CreateBoat(STAllPlayersC *this,undefined4 *param_
     uVar6 = extraout_EDX_01;
     uVar5 = extraout_var_02;
   }
-  if ((((*(short *)(param_1 + 7) < 0) || (SHORT_007fb240 <= *(short *)(param_1 + 7))) ||
+  if ((((*(short *)(param_1 + 7) < 0) || (g_worldGrid.sizeX <= *(short *)(param_1 + 7))) ||
       (*(short *)((int)param_1 + 0x1e) < 0)) ||
-     (((SHORT_007fb242 <= *(short *)((int)param_1 + 0x1e) || (*(short *)(param_1 + 8) < 0)) ||
-      (SHORT_007fb244 <= *(short *)(param_1 + 8))))) {
+     (((g_worldGrid.sizeY <= *(short *)((int)param_1 + 0x1e) || (*(short *)(param_1 + 8) < 0)) ||
+      (g_worldGrid.sizeZ <= *(short *)(param_1 + 8))))) {
     iVar2 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0x27c8,0,0,&DAT_007a4ccc,
                                s_STAllPlayersC__CreateBoat___inco_007a8274);
     if (iVar2 != 0) {

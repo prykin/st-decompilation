@@ -125,14 +125,19 @@ The current work focuses on recovering what the binary can prove:
 - calling conventions, callsite/thunk evidence, parameters, and selected free-function names;
 - anonymous hidden-`this` receivers proven from ECX flow and stack discipline;
 - message IDs and anonymous state/switch domains;
-- vtables, virtual slots, constructors, thunks, and class relationships;
+- physical and owner-resolved vtables (including one-slot and secondary-subobject
+  tables), virtual slots, direct-JMP thunks, constructors, and class relationships;
 - non-virtual method ownership, cleanup/destructor shapes, and direct-call prototype propagation;
 - reverse return-type recovery from typed arguments, class receivers, and field/global stores;
 - one-shot audited repair of stale automatically propagated prototypes;
+- verified semantics for high-fanout utility functions and conservative `void`/boolean/noreturn returns;
 - conservative class layouts and field types;
 - packed global record arrays recovered from x86 stride, range, and field-access evidence;
+- bounded indexed global aggregates such as the player relation matrix;
 - typed global data recovered from class-receiver and trusted-argument use;
 - pointer-backed structures recovered from fixed-offset dereferences and typed helper calls;
+- exact anonymous type-family consolidation and named return-to-local propagation;
+- trusted indirect-call and shared base-vtable prototypes, with a full review-only callsite audit;
 - statically linked CRT, DKW, and internal `Ourlib` modules;
 - structured control-flow labels where the decompiler emits unavoidable gotos.
 

@@ -6,7 +6,7 @@
 void STAllPlayersC::RemoveActiveTV(char param_1)
 
 {
-  DArrayTy *groupContent;
+  DArrayTy *array;
   code *pcVar1;
   int iVar2;
   STAllPlayersC *in_ECX;
@@ -32,9 +32,9 @@ void STAllPlayersC::RemoveActiveTV(char param_1)
     paSVar4 = g_playerRuntime[iVar3].tempSlots + 1;
   }
   ResetActivityFromTmp(in_ECX,param_1,iVar2,0,1);
-  groupContent = (*paSVar4)[0].objectIds;
-  if (groupContent != (DArrayTy *)0x0) {
-    FUN_006ae110((byte *)groupContent);
+  array = (*paSVar4)[0].objectIds;
+  if (array != (DArrayTy *)0x0) {
+    DArrayDestroy(array);
     (*paSVar4)[0].objectIds = (DArrayTy *)0x0;
   }
   (*paSVar4)[0].objectType = 0;

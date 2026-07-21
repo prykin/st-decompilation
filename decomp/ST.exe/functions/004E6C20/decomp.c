@@ -12,7 +12,7 @@ int FUN_004e6c20(int param_1,int param_2)
     return 0;
   }
   iVar4 = 1;
-  uVar3 = thunk_FUN_004406c0((char)param_1);
+  uVar3 = GetPlayerRaceId((char)param_1);
   iVar5 = 0;
   iVar1 = param_2 + -0x32 + ((uVar3 & 0xff) - 1) * 0x42;
   iVar2 = iVar1 * 3;

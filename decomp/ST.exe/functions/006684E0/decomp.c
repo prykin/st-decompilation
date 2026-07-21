@@ -2,9 +2,12 @@
 /* [STSourceProvenanceApplier begin]
    Recovered source file: E:\__titans\ai\ai_flt_d.cpp
    Diagnostic line evidence: 117 | 118 (metadata/report site, not the function definition)
-   [STSourceProvenanceApplier end] */
+   [STSourceProvenanceApplier end]
+   
+   [STPrototypeApplier] Propagated parameter 0.
+   Evidence: 00683C70 -> 006684E0 @ 0068608A */
 
-undefined4 * __cdecl FltDataPack(undefined4 *param_1,uint *param_2)
+undefined4 * __cdecl FltDataPack(AnonShape_GLOBAL_008489C4_F7BABFAC *param_1,uint *param_2)
 
 {
   uint *puVar1;
@@ -12,7 +15,7 @@ undefined4 * __cdecl FltDataPack(undefined4 *param_1,uint *param_2)
   int iVar3;
   undefined4 *puVar4;
   int iVar5;
-  int *piVar6;
+  uint **ppuVar6;
   undefined4 unaff_ESI;
   void *unaff_EDI;
   undefined4 *puVar7;
@@ -28,23 +31,23 @@ undefined4 * __cdecl FltDataPack(undefined4 *param_1,uint *param_2)
   iVar3 = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (iVar3 == 0) {
     iVar3 = 7;
-    piVar6 = (int *)((int)param_1 + 0x1eb);
+    ppuVar6 = &param_1->field_01EB;
     do {
-      iVar5 = *piVar6;
-      if (iVar5 != 0) {
-        iVar5 = *(int *)(iVar5 + 0xc) * *(int *)(iVar5 + 8) + 0x1c;
+      puVar8 = *ppuVar6;
+      if (puVar8 != (uint *)0x0) {
+        iVar5 = puVar8[3] * puVar8[2] + 0x1c;
         local_c = local_c + iVar5;
-        piVar6[2] = iVar5;
+        ppuVar6[2] = (uint *)iVar5;
       }
-      piVar6 = piVar6 + 3;
+      ppuVar6 = ppuVar6 + 3;
       iVar3 = iVar3 + -1;
     } while (iVar3 != 0);
     *param_2 = local_c + 0x260U;
     puVar4 = Library::DKW::LIB::FUN_006aac10(local_c + 0x260U);
     puVar7 = puVar4;
     for (iVar3 = 0x98; iVar3 != 0; iVar3 = iVar3 + -1) {
-      *puVar7 = *param_1;
-      param_1 = param_1 + 1;
+      *puVar7 = *(undefined4 *)param_1;
+      param_1 = (AnonShape_GLOBAL_008489C4_F7BABFAC *)&param_1->field_0x4;
       puVar7 = puVar7 + 1;
     }
     iVar3 = 0;
@@ -67,7 +70,7 @@ undefined4 * __cdecl FltDataPack(undefined4 *param_1,uint *param_2)
   }
   g_currentExceptionFrame = local_50.previous;
   if (local_8 != (undefined4 *)0x0) {
-    FUN_006ab060(&local_8);
+    FreeAndNull(&local_8);
   }
   iVar5 = ReportDebugMessage(s_E____titans_ai_ai_flt_d_cpp_007d2cc0,0x75,0,iVar3,&DAT_007a4ccc,
                              s_FltDataPack_007d2ce4);

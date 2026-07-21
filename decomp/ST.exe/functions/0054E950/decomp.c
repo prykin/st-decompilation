@@ -48,7 +48,7 @@ void __thiscall STPlaySystemC::AddToRep(STPlaySystemC *this,undefined4 *param_1,
         iVar3 = FUN_006b98c0(puVar7,local_8);
         if (iVar3 != 0) {
           if (local_8 != (int *)0x0) {
-            FUN_006ab060(&local_8);
+            FreeAndNull(&local_8);
           }
           pSVar2->field_0069 = pSVar2->field_0069 + -1;
         }

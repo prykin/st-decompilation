@@ -73,7 +73,8 @@ void __thiscall FUN_006799b0(void *this,uint param_1)
     }
     local_3c[0]._4_4_ = *(undefined4 *)((int)this + 0x6fe);
     local_3c[0]._0_4_ = 0x6a;
-    thunk_FUN_0067a020(this,local_3c,-1);
+    SubmarineTitans::Recovered::HiddenThis::AnonReceiver_006799B0::thunk_FUN_0067a020
+              (this,local_3c,-1);
   }
   return;
 }

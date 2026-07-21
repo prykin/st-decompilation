@@ -61,8 +61,8 @@ void FUN_006ba600(undefined4 *param_1)
       (**(code **)(*piVar1 + 8))(piVar1);
       param_1[0xb] = 0;
     }
-    FUN_006ab060((LPVOID *)(param_1 + 0x130));
-    FUN_006ab060((LPVOID *)(param_1 + 0x137));
+    FreeAndNull((void **)(param_1 + 0x130));
+    FreeAndNull((void **)(param_1 + 0x137));
     if ((HGDIOBJ)param_1[0x138] != (HGDIOBJ)0x0) {
       DeleteObject((HGDIOBJ)param_1[0x138]);
     }
