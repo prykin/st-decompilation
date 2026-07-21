@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* [STTypeFamilyApplier] RETURN_TO_LOCAL_FAMILY.
@@ -30,7 +32,6 @@ void __fastcall FUN_00586af0(int *param_1)
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined2 extraout_var_00;
   STWorldObject *pSVar18;
-  undefined4 *puVar19;
   undefined4 **ppuVar20;
   bool bVar21;
   undefined4 *local_6c [8];
@@ -142,7 +143,7 @@ void __fastcall FUN_00586af0(int *param_1)
     if (local_44 == (STGameObjC *)0x0) {
 LAB_00587844:
       local_44 = (STGameObjC *)thunk_FUN_00586320((AnonShape_00586320_9792A2C7 *)param_1);
-      *(undefined4 *)((int)param_1 + 0x253) = PTR_00802a38->field_00E4;
+      *(uint *)((int)param_1 + 0x253) = PTR_00802a38->field_00E4;
       /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
       if ((local_44 == (STGameObjC *)0x0) || (*(int *)((int)param_1 + 0x231) != 0)) {
         *(undefined4 *)((int)param_1 + 0x26b) = 0;
@@ -266,7 +267,7 @@ LAB_00587844:
     local_1c = local_14;
     local_18 = iVar7;
     local_c = local_10;
-    if (((((*(byte *)&PTR_00802a38->field_00E4 & 1) != 0) && (local_44->field_0047 == local_34)) &&
+    if (((((PTR_00802a38->field_00E4 & 1) != 0) && (local_44->field_0047 == local_34)) &&
         (local_44->field_0049 == local_38)) && (local_44->field_004B == local_3c)) {
       uVar14 = (undefined2)((uint)local_3c >> 0x10);
       /* ST_PSEUDO[raw_indirect_call,packed_or_unaligned_piece]: expected typed vtable/callback call with explicit __thiscall receiver; expected named packed member, bit extract/compose, or unaligned load */
@@ -597,7 +598,7 @@ LAB_005882a0:
   }
   else if (iVar7 == 1) {
     if (*(int *)((int)param_1 + 599) == 0) {
-      *(undefined4 *)((int)param_1 + 599) = PTR_00802a38->field_00E4;
+      *(uint *)((int)param_1 + 599) = PTR_00802a38->field_00E4;
     }
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     lVar4 = (longlong)*(int *)((int)param_1 + 0x235) * 0xeeff;
@@ -972,11 +973,11 @@ LAB_00587648:
       *(undefined4 *)((int)param_1 + 0x25f) = 0xfffffffe;
     }
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-    if (10 < (uint)(PTR_00802a38->field_00E4 - *(int *)((int)param_1 + 0x253))) {
+    if (10 < PTR_00802a38->field_00E4 - *(int *)((int)param_1 + 0x253)) {
       thunk_FUN_00586320((AnonShape_00586320_9792A2C7 *)param_1);
-      *(undefined4 *)((int)param_1 + 0x253) = PTR_00802a38->field_00E4;
+      *(uint *)((int)param_1 + 0x253) = PTR_00802a38->field_00E4;
     }
-    if (4000 < (uint)(PTR_00802a38->field_00E4 - *(int *)((int)param_1 + 599))) {
+    if (4000 < PTR_00802a38->field_00E4 - *(int *)((int)param_1 + 599)) {
       *(undefined4 *)((int)param_1 + 0x231) = 2;
       STT3DSprC::StopShow((STT3DSprC *)((int)param_1 + 0x1d5),0xe);
       thunk_FUN_004ad5e0((int)param_1 + 0x1d5);
@@ -997,11 +998,7 @@ LAB_00587761:
                           (g_sTAllPlayers_007FA174,(char)*(int *)((int)param_1 + 0x26f),
                            CONCAT22(extraout_var,*(undefined2 *)((int)param_1 + 0x273)),CASE_1);
       if (pSVar11 != (STGameObjC *)0x0) {
-        puVar19 = &DAT_008116f0;
-        for (iVar7 = 7; iVar7 != 0; iVar7 = iVar7 + -1) {
-          *puVar19 = 0;
-          puVar19 = puVar19 + 1;
-        }
+        memset(&DAT_008116f0, 0, 0x1c); /* compiler bulk-zero initialization */
         DAT_008116f0 = DAT_007e660c;
         _DAT_008116fc = (undefined2)param_1[0xa9];
         _DAT_008116fe = (undefined2)param_1[0xa8];

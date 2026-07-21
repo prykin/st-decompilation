@@ -371,11 +371,8 @@ int __thiscall MoneyTy::GetMessage(MoneyTy *this,STMessage *message)
         *(undefined1 *)puVar7 = uVar1;
         puVar7 = (undefined4 *)((int)puVar7 + 1);
       }
-      puVar7 = local_38;
-      for (iVar6 = 8; iVar6 != 0; iVar6 = iVar6 + -1) {
-        *puVar7 = 0;
-        puVar7 = puVar7 + 1;
-      }
+      memset(local_38, 0, 0x20); /* compiler bulk-zero initialization */
+      iVar6 = 0;
       local_24 = *(undefined4 *)&this_00->field_0x8;
       local_28 = 0x13;
       FUN_006e6000(this_00,3,1,local_38);
@@ -397,11 +394,7 @@ int __thiscall MoneyTy::GetMessage(MoneyTy *this,STMessage *message)
     case MESS_SHARED_0003:
       DAT_008016d4 = (AnonShape_0052B990_04D99BFA *)0x0;
       uVar13 = *(undefined4 *)&local_10->field_0x8;
-      puVar7 = local_38;
-      for (iVar6 = 8; iVar6 != 0; iVar6 = iVar6 + -1) {
-        *puVar7 = 0;
-        puVar7 = puVar7 + 1;
-      }
+      memset(local_38, 0, 0x20); /* compiler bulk-zero initialization */
       local_28 = 0x14;
       local_24 = uVar13;
       FUN_006e6000(this_00,3,1,local_38);

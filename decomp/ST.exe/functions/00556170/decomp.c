@@ -39,7 +39,7 @@ void __thiscall TraksClassTy::PrepareAfterSave(TraksClassTy *this,ushort *param_
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     local_c->field_001C = *(undefined4 *)(param_1 + 0xc);
     if ((char)param_1[0xe] == '\0') {
-      pDVar4 = (DArrayTy *)Library::DKW::TBL::FUN_006ae290((uint *)0x0,0x32,0x3c,0x32);
+      pDVar4 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,0x32,0x3c,0x32);
       pTVar2->field_0024 = pDVar4;
     }
     else {

@@ -53,7 +53,7 @@ FUN_00616a80(void *this,int param_1,int param_2,int param_3,int *param_4,int *pa
     uVar1 = *(int *)((int)this + 0x1c) * 0x41c64e6d + 0x3039;
     *(uint *)((int)this + 0x1c) = uVar1;
     *(uint *)((int)this + 0x294) = (uVar1 >> 0x10) % 0xb + 10 + PTR_00802a38->field_00E4;
-    *(undefined4 *)((int)this + 0x298) = PTR_00802a38->field_00E4;
+    *(uint *)((int)this + 0x298) = PTR_00802a38->field_00E4;
     return iVar6;
   }
   local_c = *(int *)((int)this + 0x27c);
@@ -117,8 +117,8 @@ FUN_00616a80(void *this,int param_1,int param_2,int param_3,int *param_4,int *pa
     iVar7 = thunk_FUN_0062ba50(&local_4c,(float *)((int)this + 0x29d));
     if (iVar7 != 0) {
       *(undefined4 *)((int)this + 0x20c) = 5;
-      *(undefined4 *)((int)this + 0x294) = PTR_00802a38->field_00E4;
-      *(undefined4 *)((int)this + 0x298) = PTR_00802a38->field_00E4;
+      *(uint *)((int)this + 0x294) = PTR_00802a38->field_00E4;
+      *(uint *)((int)this + 0x298) = PTR_00802a38->field_00E4;
       *(undefined1 *)((int)this + 0x29c) = 0;
       *param_4 = *(short *)((int)this + 0x25a) + iVar5;
       *param_5 = *(short *)((int)this + 0x25c) + iVar6;

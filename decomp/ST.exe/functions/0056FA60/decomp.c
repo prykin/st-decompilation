@@ -32,7 +32,7 @@ int __thiscall STAppC::GetMessage(STAppC *this,STMessage *message)
   STMessageId *pSVar17;
   uint uVar18;
   int iVar19;
-  STAppCVTable *pSVar20;
+  AnonPointee_STAppC_0000 *pAVar20;
   byte *pbVar21;
   char *pcVar22;
   undefined4 *puVar23;
@@ -103,7 +103,8 @@ switchD_0056fad2_caseD_6105:
         if (pSVar12 != (StartSystemTy *)0x0) {
           StartSystemTy::StartSystemTy(pSVar12,pSVar10);
         }
-        (*PTR_0081176c->vtable->InitSystem)(PTR_0081176c);
+        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+        (**(code **)PTR_0081176c->vtable)();
         AppClassTy::AddSystem((AppClassTy *)pSVar10,(int *)PTR_0081176c,0);
       }
       else {
@@ -131,11 +132,8 @@ switchD_0056fad2_caseD_6105:
     case 0x60ff:
       if (pSVar10->field_0FC3 != 0) {
         FUN_006c1e20();
-        puVar15 = (undefined4 *)&pSVar10->field_0xe43;
-        for (iVar11 = 0x60; iVar11 != 0; iVar11 = iVar11 + -1) {
-          *puVar15 = 0;
-          puVar15 = puVar15 + 1;
-        }
+        memset(&pSVar10->field_0xe43, 0, 0x180); /* compiler bulk-zero initialization */
+        iVar11 = 0;
       }
       pCVar9 = PTR_00802a30;
       PTR_00802a30->field_0493 = 0;
@@ -231,11 +229,7 @@ switchD_0056fad2_caseD_6105:
       DAT_0080674c = 0;
       if (pSVar10->field_0FC3 != 0) {
         FUN_006c1e20();
-        puVar15 = (undefined4 *)&pSVar10->field_0xe43;
-        for (iVar11 = 0x60; iVar11 != 0; iVar11 = iVar11 + -1) {
-          *puVar15 = 0;
-          puVar15 = puVar15 + 1;
-        }
+        memset(&pSVar10->field_0xe43, 0, 0x180); /* compiler bulk-zero initialization */
       }
       thunk_FUN_005713b0((int)pSVar10);
       DVar13 = FUN_006e51b0((int)pSVar10);
@@ -251,8 +245,8 @@ switchD_0056fad2_caseD_6105:
       if (PTR_00802a30->field_00A9 == 0) {
         Library::DKW::DDX::FUN_006b8b10((int *)PTR_00802a30->field_00AD);
       }
-      else if (PTR_00802a30->field_001C != 0xffffffff) {
-        FUN_006b3af0((int *)PTR_00802a30->field_0060,PTR_00802a30->field_001C);
+      else if (PTR_00802a30->field_001C != (cLoadingTy *)0xffffffff) {
+        FUN_006b3af0((int *)PTR_00802a30->field_0060,(uint)PTR_00802a30->field_001C);
       }
       DarkScreen(DAT_0080759c,10,2);
       ChangeResolution(pSVar10,0);
@@ -292,11 +286,8 @@ switchD_0056fad2_caseD_6102:
       ChangeResolution(pSVar10,0);
       if (pSVar10->field_0FC3 != 0) {
         FUN_006c1e20();
-        puVar15 = (undefined4 *)&pSVar10->field_0xe43;
-        for (iVar11 = 0x60; iVar11 != 0; iVar11 = iVar11 + -1) {
-          *puVar15 = 0;
-          puVar15 = puVar15 + 1;
-        }
+        memset(&pSVar10->field_0xe43, 0, 0x180); /* compiler bulk-zero initialization */
+        iVar11 = 0;
       }
       thunk_FUN_005713b0((int)pSVar10);
       pCVar9 = PTR_00802a30;
@@ -309,7 +300,8 @@ switchD_0056fad2_caseD_6102:
         if (pSVar12 != (StartSystemTy *)0x0) {
           StartSystemTy::StartSystemTy(pSVar12,pSVar10);
         }
-        (*PTR_0081176c->vtable->InitSystem)(PTR_0081176c);
+        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+        (**(code **)PTR_0081176c->vtable)();
         AppClassTy::AddSystem((AppClassTy *)pSVar10,(int *)PTR_0081176c,0);
       }
       else {
@@ -347,11 +339,12 @@ switchD_0056fad2_caseD_6102:
       (&pSVar10->field_0x11a7)[(uint)(byte)pSVar10->field_112D * 0x51] = 0;
       if (PTR_00802a38 != (STPlaySystemC *)0x0) {
         FUN_006e57b0(PTR_00802a38,0x121);
-        (*PTR_00802a38->vtable->vfunc_08)(0x121,0,0,0,0);
+        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+        (*(code *)PTR_00802a38->vtable->field_0008)(0x121,0,0,0,0);
         local_b8 = 0xf;
         local_b4 = 0x4405;
-        (*PTR_00802a38->vtable->SendMessage)
-                  ((SystemWithNamedObjClassTy *)PTR_00802a38,(int)local_c4);
+        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+        (*(code *)PTR_00802a38->vtable->field_0018)(local_c4);
       }
       if (PTR_00802a28 != (ccFntTy *)0x0) {
         thunk_FUN_005711d0(pSVar10,(int *)&PTR_00802a28);
@@ -377,7 +370,7 @@ switchD_0056fad2_caseD_6102:
       pCVar9->field_04BE = (&DAT_00807574)[uVar24 * 4];
       if (g_opticClass_007FB2A0 != (OpticClassC *)0x0) {
         OpticClassC::ReInitOptic(g_opticClass_007FB2A0,_DAT_00807348 & 0xff);
-        FUN_006b1a50((int)DAT_008075a8,3,(undefined4 *)0x0,&local_60);
+        FUN_006b1a50((int)PTR_008075a8,3,(undefined4 *)0x0,&local_60);
         if (g_cPanel_00801688 != (CPanelTy *)0x0) {
           thunk_FUN_004a9b60(local_60,local_5c,local_58,
                              local_54 -
@@ -488,7 +481,7 @@ switchD_0056fad2_caseD_6102:
           local_30 = (STMessageArg)0x6;
         }
       }
-      pSVar20 = pSVar10->vtable;
+      pAVar20 = pSVar10->vtable;
       pSVar17 = local_44;
       goto LAB_00570c77;
     }
@@ -518,11 +511,7 @@ switchD_0056fad2_caseD_6102:
       }
       if (pSVar10->field_0FC3 != 0) {
         FUN_006c1e20();
-        puVar15 = (undefined4 *)&pSVar10->field_0xe43;
-        for (iVar11 = 0x60; iVar11 != 0; iVar11 = iVar11 + -1) {
-          *puVar15 = 0;
-          puVar15 = puVar15 + 1;
-        }
+        memset(&pSVar10->field_0xe43, 0, 0x180); /* compiler bulk-zero initialization */
       }
       thunk_FUN_005713b0((int)pSVar10);
       pCVar9 = PTR_00802a30;
@@ -535,10 +524,10 @@ switchD_0056fad2_caseD_6102:
       if (PTR_00802a30->field_00A9 == 0) {
         Library::DKW::DDX::FUN_006b8b10((int *)PTR_00802a30->field_00AD);
       }
-      else if (PTR_00802a30->field_001C != 0xffffffff) {
-        FUN_006b3af0((int *)PTR_00802a30->field_0060,PTR_00802a30->field_001C);
+      else if (PTR_00802a30->field_001C != (cLoadingTy *)0xffffffff) {
+        FUN_006b3af0((int *)PTR_00802a30->field_0060,(uint)PTR_00802a30->field_001C);
       }
-      FUN_006b5f80(DAT_008075a8,0,0,g_nWidth_00806730,DAT_00806734);
+      FUN_006b5f80((int *)PTR_008075a8,0,0,g_nWidth_00806730,DAT_00806734);
       Library::DKW::DDX::FUN_006bab60((int)DAT_0080759c,0);
       Library::DKW::DDX::FUN_006bb370((int)DAT_0080759c,0,0);
       local_14c.previous = g_currentExceptionFrame;
@@ -554,7 +543,7 @@ switchD_0056fad2_caseD_6102:
           Library::DKW::DDX::FUN_006b9b40
                     (DAT_0080759c,0x10000001,g_nWidth_00806730,DAT_00806734,8,g_nWidth_00806730,
                      DAT_00806734,0,0,0x100);
-          Library::DKW::DDX::FUN_006b1470(DAT_008075a8);
+          Library::DKW::DDX::FUN_006b1470((int *)PTR_008075a8);
         }
         pSVar10 = local_18;
         puVar15 = &local_18->field_0038;
@@ -567,7 +556,7 @@ switchD_0056fad2_caseD_6102:
       }
       uVar24 = 0;
       local_48 = 0;
-      FUN_006b13e0(DAT_008075a8);
+      FUN_006b13e0((int *)PTR_008075a8);
       if (((ushort)DAT_0080350c & 0xff) == 1) {
         local_24 = 0x280;
         local_20 = 0x1e0;
@@ -705,20 +694,15 @@ cf_common_exit_0057073B:
     dVar7 = (message->arg0).u32;
     local_10 = 1;
     if (dVar7 == 1) {
-      puVar15 = (undefined4 *)&pSVar10->field_0x113a;
-      for (iVar11 = 8; iVar11 != 0; iVar11 = iVar11 + -1) {
-        *puVar15 = 0;
-        puVar15 = puVar15 + 1;
-      }
-      puVar15 = &DAT_00803408;
-      for (iVar11 = 0x46; iVar11 != 0; iVar11 = iVar11 + -1) {
-        *puVar15 = 0;
-        puVar15 = puVar15 + 1;
-      }
-      uVar24 = PTR_00806740->field_0004;
-      if (uVar24 < PTR_00806740->field_000C) {
-        puVar15 = (undefined4 *)(PTR_00806740->field_0008 * uVar24 + PTR_00806740->field_001C);
-        PTR_00806740->field_0004 = uVar24 + 1;
+      memset(&pSVar10->field_0x113a, 0, 0x20); /* compiler bulk-zero initialization */
+      iVar11 = 0;
+      memset(&DAT_00803408, 0, 0x118); /* compiler bulk-zero initialization */
+      iVar11 = 0;
+      uVar24 = PTR_00806740->iteratorIndex;
+      if (uVar24 < PTR_00806740->count) {
+        /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(PTR_00806740, uVar24) (runtime stride) */
+        puVar15 = (undefined4 *)(PTR_00806740->elementSize * uVar24 + (int)PTR_00806740->data);
+        PTR_00806740->iteratorIndex = uVar24 + 1;
       }
       else {
         puVar15 = (undefined4 *)0x0;
@@ -748,16 +732,10 @@ cf_common_exit_0057073B:
       local_44[4] = 0x7100;
     }
     else if (dVar7 == 3) {
-      puVar15 = &DAT_00803408;
-      for (iVar11 = 0x46; iVar11 != 0; iVar11 = iVar11 + -1) {
-        *puVar15 = 0;
-        puVar15 = puVar15 + 1;
-      }
-      puVar15 = (undefined4 *)&pSVar10->field_0x113a;
-      for (iVar11 = 8; iVar11 != 0; iVar11 = iVar11 + -1) {
-        *puVar15 = 0;
-        puVar15 = puVar15 + 1;
-      }
+      memset(&DAT_00803408, 0, 0x118); /* compiler bulk-zero initialization */
+      iVar11 = 0;
+      memset(&pSVar10->field_0x113a, 0, 0x20); /* compiler bulk-zero initialization */
+      iVar11 = 0;
       pSVar10->field_1146 = 1;
       pSVar10->field_114A = 0x6104;
       pSVar10->field_114E = 0;
@@ -768,11 +746,8 @@ cf_common_exit_0057073B:
       }
       local_44[4] = 0x7100;
       if ((DAT_00807330 & 2) != 0) {
-        puVar15 = (undefined4 *)&stack0xfffff65c;
-        for (iVar11 = 0xc6; iVar11 != 0; iVar11 = iVar11 + -1) {
-          *puVar15 = 0;
-          puVar15 = puVar15 + 1;
-        }
+        memset(&stack0xfffff65c, 0, 0x318); /* compiler bulk-zero initialization */
+        iVar11 = 0;
         Library::MSVCRT::FUN_0072e730(&pSVar10->field_0x7c0a,local_14,local_24c,local_44c,local_54c)
         ;
         Library::MSVCRT::__makepath
@@ -874,11 +849,8 @@ LAB_00570ab6:
       }
     }
     else if (dVar7 == 4) {
-      puVar15 = (undefined4 *)&pSVar10->field_0x113a;
-      for (iVar11 = 8; iVar11 != 0; iVar11 = iVar11 + -1) {
-        *puVar15 = 0;
-        puVar15 = puVar15 + 1;
-      }
+      memset(&pSVar10->field_0x113a, 0, 0x20); /* compiler bulk-zero initialization */
+      iVar11 = 0;
       pSVar17 = local_44;
       for (iVar11 = 8; iVar11 != 0; iVar11 = iVar11 + -1) {
         *pSVar17 = MESS_ID_NONE;
@@ -905,14 +877,16 @@ LAB_00570c2f:
     }
     pvVar16 = FindFirstFileA((LPCSTR)&DAT_00803408,&local_68c);
     if (pvVar16 != (HANDLE)0xffffffff) {
-      (*pSVar10->vtable->GetMessage)(pSVar10,(int)local_44);
+      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+      (*(code *)pSVar10->vtable->field_0018)(local_44);
       g_currentExceptionFrame = local_a4.previous;
       return 0;
     }
-    pSVar20 = pSVar10->vtable;
+    pAVar20 = pSVar10->vtable;
     pSVar17 = (STMessageId *)&pSVar10->field_0x113a;
+/* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
 LAB_00570c77:
-    (*pSVar20->GetMessage)(pSVar10,(int)pSVar17);
+    (*(code *)pAVar20->field_0018)(pSVar17);
   }
   g_currentExceptionFrame = local_a4.previous;
   return 0;

@@ -13,8 +13,8 @@ undefined4 __thiscall STMineSetC::LoadImagMineSet(STMineSetC *this,int param_1)
   code *pcVar1;
   STMineSetC *pSVar2;
   int iVar3;
-  undefined4 uVar4;
-  int iVar5;
+  int iVar4;
+  undefined4 uVar5;
   InternalExceptionFrame local_50;
   STMineSetC *local_c;
   undefined4 local_8;
@@ -27,17 +27,17 @@ undefined4 __thiscall STMineSetC::LoadImagMineSet(STMineSetC *this,int param_1)
   pSVar2 = local_c;
   if (iVar3 != 0) {
     g_currentExceptionFrame = local_50.previous;
-    iVar5 = ReportDebugMessage("E:\\__titans\\nick\\to_mine_set.cpp",0x2df,0,iVar3,
+    iVar4 = ReportDebugMessage("E:\\__titans\\nick\\to_mine_set.cpp",0x2df,0,iVar3,
                                "%s","STMineSetC::LoadImagMineSet");
-    if (iVar5 != 0) {
+    if (iVar4 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
     RaiseInternalException(iVar3,0,"E:\\__titans\\nick\\to_mine_set.cpp",0x2e1);
     return 0xffff;
   }
   this_00 = &local_c->field_01D5;
-  uVar4 = thunk_FUN_004ad650((int)this_00);
-  pSVar2->field_02BA = uVar4;
+  iVar3 = thunk_FUN_004ad650((int)this_00);
+  pSVar2->field_02BA = iVar3;
   if (param_1 == 0) {
     iVar3 = STT3DSprC::LoadSequence
                       ((STT3DSprC *)this_00,0xe,DAT_00806774,

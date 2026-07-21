@@ -13,7 +13,7 @@ int __thiscall STPlaySystemC::GetMessage(STPlaySystemC *this,STMessage *message)
 
 {
   char cVar1;
-  STPlaySystemCVTable *pSVar2;
+  AnonPointee_STPlaySystemC_0000 *pAVar2;
   code *pcVar3;
   cMf32 *this_00;
   int *piVar4;
@@ -103,15 +103,12 @@ int __thiscall STPlaySystemC::GetMessage(STPlaySystemC *this,STMessage *message)
           pSVar10 = local_c;
         }
         uVar9 = 0;
-        pSVar2 = pSVar10->vtable;
-        puVar6 = local_2c;
-        for (iVar5 = 8; iVar5 != 0; iVar5 = iVar5 + -1) {
-          *puVar6 = 0;
-          puVar6 = puVar6 + 1;
-        }
+        pAVar2 = pSVar10->vtable;
+        memset(local_2c, 0, 0x20); /* compiler bulk-zero initialization */
         local_2c[3] = 0xf;
         local_2c[4] = 0x111;
-        (*pSVar2->SendMessage)((SystemWithNamedObjClassTy *)pSVar10,(int)local_2c);
+        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+        (*(code *)pAVar2->field_0018)(local_2c);
         if (DAT_00808783 == '\x03') {
           pSVar10->field_0038 = 1;
           if (g_int_00811764 != (int *)0x0) {

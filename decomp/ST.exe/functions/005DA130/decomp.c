@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* [STPrototypeApplier] Propagated parameter 0.
    Evidence: 005DB4F0 -> 005DA130 @ 005DB713 */
@@ -6,11 +8,9 @@ void __cdecl FUN_005da130(ushort *param_1,undefined *param_2,BYTE param_3)
 
 {
   char cVar1;
-  int iVar2;
   uint uVar3;
   uint uVar4;
   char *pcVar5;
-  undefined4 *puVar6;
   char *pcVar7;
   undefined4 local_78 [5];
   undefined1 local_64;
@@ -24,11 +24,7 @@ void __cdecl FUN_005da130(ushort *param_1,undefined *param_2,BYTE param_3)
   char local_5c [32];
   byte local_3c [56];
 
-  puVar6 = local_78;
-  for (iVar2 = 0xf; iVar2 != 0; iVar2 = iVar2 + -1) {
-    *puVar6 = 0;
-    puVar6 = puVar6 + 1;
-  }
+  memset(local_78, 0, 0x3c); /* compiler bulk-zero initialization */
   local_61 = param_3;
   uVar3 = 0xffffffff;
   pcVar5 = "Verdana";

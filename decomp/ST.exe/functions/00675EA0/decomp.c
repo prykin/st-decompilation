@@ -55,9 +55,9 @@ void __cdecl _AddObjGrpExch(uint param_1,int *param_2)
   bVar3 = true;
 LAB_00675f12:
   if (bVar3) {
-    array = (DArrayTy *)Library::DKW::TBL::FUN_006ae290((uint *)0x0,1,2,1);
-    Library::DKW::TBL::FUN_006ae1c0((uint *)array,(undefined4 *)((int)param_2 + 0x32));
-    thunk_FUN_00675dc0(param_1,(uint *)array);
+    array = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,1,2,1);
+    Library::DKW::TBL::FUN_006ae1c0(&array->flags,(undefined4 *)((int)param_2 + 0x32));
+    thunk_FUN_00675dc0(param_1,&array->flags);
     DArrayDestroy(array);
   }
   g_currentExceptionFrame = local_48.previous;

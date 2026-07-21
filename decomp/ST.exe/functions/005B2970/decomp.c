@@ -15,25 +15,24 @@ void __thiscall MainMenuTy::InitMainMenu(MainMenuTy *this,char param_1)
   LPSTR pCVar3;
   ushort *puVar4;
   AnonPointee_MainMenuTy_1AA7 *pAVar5;
-  ccFntTy *pcVar6;
-  undefined4 *puVar7;
-  int iVar8;
-  byte bVar9;
+  undefined4 *puVar6;
+  int iVar7;
+  byte bVar8;
+  undefined4 uVar9;
   undefined4 uVar10;
-  undefined4 uVar11;
   InternalExceptionFrame local_4c;
   MainMenuTy *local_8;
 
-  iVar8 = 0;
+  iVar7 = 0;
   local_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_4c;
   local_8 = this;
   iVar2 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
   if (iVar2 != 0) {
     g_currentExceptionFrame = local_4c.previous;
-    iVar8 = ReportDebugMessage("E:\\__titans\\Start\\main_obj.cpp",0x48,0,iVar2,"%s",
+    iVar7 = ReportDebugMessage("E:\\__titans\\Start\\main_obj.cpp",0x48,0,iVar2,"%s",
                                "MainMenuTy::InitMainMenu");
-    if (iVar8 == 0) {
+    if (iVar7 == 0) {
       RaiseInternalException(iVar2,0,"E:\\__titans\\Start\\main_obj.cpp",0x48);
       return;
     }
@@ -52,22 +51,22 @@ void __thiscall MainMenuTy::InitMainMenu(MainMenuTy *this,char param_1)
     if (PTR_00802a30->field_00A9 == 0) {
       Library::DKW::DDX::FUN_006b8b10((int *)PTR_00802a30->field_00AD);
     }
-    else if (PTR_00802a30->field_001C != 0xffffffff) {
-      FUN_006b3af0((int *)PTR_00802a30->field_0060,PTR_00802a30->field_001C);
+    else if (PTR_00802a30->field_001C != (cLoadingTy *)0xffffffff) {
+      FUN_006b3af0((int *)PTR_00802a30->field_0060,(uint)PTR_00802a30->field_001C);
     }
   }
   this_01 = local_8;
   if (PTR_0081176c->field_0028 != 0) {
-    puVar7 = &local_8->field_1A7F;
+    puVar6 = &local_8->field_1A7F;
     do {
       iVar2 = 0;
-      bVar9 = 0;
-      pCVar3 = FUN_006f2c00("MM_FLC",2,iVar8);
-      puVar4 = Library::Ourlib::MFANY::mfAnyLoad(g_cMf32_00806780,pCVar3,bVar9,iVar2);
-      *puVar7 = puVar4;
-      iVar8 = iVar8 + 1;
-      puVar7 = puVar7 + 1;
-    } while (iVar8 < 10);
+      bVar8 = 0;
+      pCVar3 = FUN_006f2c00("MM_FLC",2,iVar7);
+      puVar4 = Library::Ourlib::MFANY::mfAnyLoad(g_cMf32_00806780,pCVar3,bVar8,iVar2);
+      *puVar6 = puVar4;
+      iVar7 = iVar7 + 1;
+      puVar6 = puVar6 + 1;
+    } while (iVar7 < 10);
   }
   iVar2 = 0;
   do {
@@ -78,49 +77,49 @@ void __thiscall MainMenuTy::InitMainMenu(MainMenuTy *this,char param_1)
       if (pAVar5 != (AnonPointee_MainMenuTy_1AA7 *)0x0) {
         switch(iVar2) {
         case 0:
-          uVar11 = 0x5d;
-          uVar10 = 0;
+          uVar10 = 0x5d;
+          uVar9 = 0;
           break;
         case 1:
-          uVar11 = 0x5d;
-          uVar10 = 0x20f;
+          uVar10 = 0x5d;
+          uVar9 = 0x20f;
           break;
         case 2:
-          uVar11 = 0x65;
-          uVar10 = 0x104;
+          uVar10 = 0x65;
+          uVar9 = 0x104;
           break;
         case 3:
-          uVar11 = 0xab;
-          uVar10 = 0x104;
+          uVar10 = 0xab;
+          uVar9 = 0x104;
           break;
         case 4:
-          uVar11 = 0x23;
-          uVar10 = 0x2f5;
+          uVar10 = 0x23;
+          uVar9 = 0x2f5;
           break;
         case 5:
-          uVar11 = 0x134;
-          uVar10 = 0;
+          uVar10 = 0x134;
+          uVar9 = 0;
           break;
         case 6:
-          uVar11 = 0x131;
-          uVar10 = 0x275;
+          uVar10 = 0x131;
+          uVar9 = 0x275;
           break;
         case 7:
-          uVar11 = 0x32;
-          uVar10 = 0x5a;
+          uVar10 = 0x32;
+          uVar9 = 0x5a;
           break;
         case 8:
-          uVar11 = 0x39;
-          uVar10 = 0x22c;
+          uVar10 = 0x39;
+          uVar9 = 0x22c;
           break;
         case 9:
-          uVar11 = 0x39;
-          uVar10 = 0x2f5;
+          uVar10 = 0x39;
+          uVar9 = 0x2f5;
           break;
         default:
           goto switchD_005b2a8d_default;
         }
-        FUN_006c4a00((undefined4 *)pAVar5,DAT_0080759c,uVar10,uVar11);
+        FUN_006c4a00((undefined4 *)pAVar5,DAT_0080759c,uVar9,uVar10);
       }
     }
 switchD_005b2a8d_default:
@@ -141,8 +140,8 @@ switchD_005b2a8d_default:
       MMObjTy::InitSprBut((MMObjTy *)this_01,(AnonShape_005B5240_B2C8755B *)&this_01->field_0x887,
                           "MM_MBUT04",0x143,0x1ac,7,8,0,0,0x9d,0x38,0x33,
                           "MM_MABUT04",8,9,9,6,0x32,0,(ccFntTy *)0x0,0,0,0,-1,-1);
-      pcVar6 = (ccFntTy *)FUN_0070a9f0(g_cMf32_00806780,"MM_BKG",0,1);
-      PTR_0081176c->field_002C = pcVar6;
+      puVar4 = (ushort *)FUN_0070a9f0(g_cMf32_00806780,"MM_BKG",0,1);
+      PTR_0081176c->field_002C = puVar4;
       DarkScreen(DAT_0080759c,1,0);
       /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
       if (*(MMsgTy **)(this_01->field_1A5B + 0x2e6) != (MMsgTy *)0x0) {
@@ -152,15 +151,14 @@ switchD_005b2a8d_default:
         MMsgTy::ShowSprites(*(MMsgTy **)(this_01->field_1A5B + 0x2e6));
         *(undefined4 *)(*(int *)(this_01->field_1A5B + 0x2e6) + 0x1cab) = this_01->field_0008;
       }
-      FUN_006bc360((ushort *)PTR_0081176c->field_002C,(undefined4 *)&this_01->field_0x1adf,
-                   (int *)0x0);
+      FUN_006bc360(PTR_0081176c->field_002C,(undefined4 *)&this_01->field_0x1adf,(int *)0x0);
       this_00 = PTR_00802a30;
       if (PTR_00802a30 != (CursorClassTy *)0x0) {
         iVar2 = PTR_00802a30->field_00C9;
-        iVar8 = PTR_00802a30->field_00C5;
+        iVar7 = PTR_00802a30->field_00C5;
         PTR_00802a30->field_0493 = 1;
         this_00->field_0494 = 0xffff;
-        CursorClassTy::SetGCType(this_00,CASE_0,iVar8,iVar2);
+        CursorClassTy::SetGCType(this_00,CASE_0,iVar7,iVar2);
         CursorClassTy::DrawSprite(this_00,this_00->field_00C5,this_00->field_00C9);
         this_00->field_00D2 = 0;
         this_00->field_04DF = 0xffffffff;

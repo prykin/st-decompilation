@@ -41,7 +41,7 @@ int __thiscall SpecPanelTy::GetMessage(SpecPanelTy *this,STMessage *message)
     return 0xffff;
   }
   if (message->id == MESS_ID_CREATE) {
-    FUN_006b1a50((int)DAT_008075a8,3,(undefined4 *)0x0,(undefined4 *)&local_8->field_0x4c);
+    FUN_006b1a50((int)PTR_008075a8,3,(undefined4 *)0x0,(undefined4 *)&local_8->field_0x4c);
     iVar4 = this_00->field_0050 + this_00->field_0058;
     this_00->field_0044 = iVar4;
     this_00->field_0174 = (this_00->field_0048 - iVar4) + DAT_00806734;
@@ -69,7 +69,7 @@ int __thiscall SpecPanelTy::GetMessage(SpecPanelTy *this,STMessage *message)
           (*(code *)this_00->field_0000->field_0018)(1);
         }
         Library::DKW::DDX::FUN_006b3640
-                  (DAT_008075a8,this_00->field_0060,0xffffffff,this_00->field_003C,
+                  ((int *)PTR_008075a8,this_00->field_0060,0xffffffff,this_00->field_003C,
                    this_00->field_0044);
         g_currentExceptionFrame = local_4c.previous;
         return 0;
@@ -84,7 +84,7 @@ int __thiscall SpecPanelTy::GetMessage(SpecPanelTy *this,STMessage *message)
           this_00->field_0172 = 2;
         }
         Library::DKW::DDX::FUN_006b3640
-                  (DAT_008075a8,this_00->field_0060,0xffffffff,this_00->field_003C,
+                  ((int *)PTR_008075a8,this_00->field_0060,0xffffffff,this_00->field_003C,
                    this_00->field_0044);
         g_currentExceptionFrame = local_4c.previous;
         return 0;

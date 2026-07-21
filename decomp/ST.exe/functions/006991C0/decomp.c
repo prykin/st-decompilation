@@ -634,7 +634,7 @@ LAB_00699f26:
         do {
           iVar9 = thunk_FUN_0069ac20((int)*(short *)(local_9c + uVar14 * 10),
                                      (int)*(short *)((int)(local_9c + uVar14 * 10) + 2),0xf,
-                                     (AnonNested_005F5B80_0169_794156D7 *)param_8->field_001C);
+                                     (DArrayTy *)param_8->field_001C);
           if (0xf < iVar9) {
             *(uint *)(&stack0xfffffe98 + iVar16 * 4) = iVar9 << 0x10 | uVar14 & 0xffff;
             iVar16 = iVar16 + 1;

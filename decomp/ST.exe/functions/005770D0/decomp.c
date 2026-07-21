@@ -23,8 +23,8 @@ void __thiscall GameSystemC::DoneSystem(GameSystemC *this,int param_1)
   errorCode = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
   pGVar3 = local_8;
   if (errorCode == 0) {
-    if (local_8->field_0431 != 0) {
-      FUN_00725680(&local_8->field_0431);
+    if (local_8->field_0431 != (void *)0x0) {
+      FUN_00725680((int *)&local_8->field_0431);
     }
     FUN_0070b1d0(&DAT_00806724);
     if (PTR_00802a28 != (ccFntTy *)0x0) {

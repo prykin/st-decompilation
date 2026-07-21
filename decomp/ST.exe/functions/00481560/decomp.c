@@ -4,14 +4,13 @@ FUN_00481560(void *this,short param_1,short param_2,short param_3,short param_4,
             short param_6)
 
 {
-  DArrayTy *array;
   void *pvVar1;
   uint uVar2;
   uint uVar3;
   undefined4 *puVar4;
   int iVar5;
   uint uVar6;
-  uint *puVar7;
+  DArrayTy *pDVar7;
   int iVar8;
   int iVar9;
   int iVar10;
@@ -452,29 +451,29 @@ FUN_00481560(void *this,short param_1,short param_2,short param_3,short param_4,
           local_c = *puVar4;
           local_8 = *(short *)(puVar4 + 1);
           /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-          array = *(DArrayTy **)((int)pvVar1 + local_44 * 4 + 0x282);
-          if (array == (DArrayTy *)0x0) {
-            puVar7 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,1,6,1);
-            *(uint **)((int)pvVar1 + uVar2 * 4 + 0x282) = puVar7;
-            uVar3 = Library::DKW::TBL::FUN_006ae1c0(puVar7,&local_c);
+          pDVar7 = *(DArrayTy **)((int)pvVar1 + local_44 * 4 + 0x282);
+          if (pDVar7 == (DArrayTy *)0x0) {
+            pDVar7 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,1,6,1);
+            *(DArrayTy **)((int)pvVar1 + uVar2 * 4 + 0x282) = pDVar7;
+            uVar3 = Library::DKW::TBL::FUN_006ae1c0(&pDVar7->flags,&local_c);
             return uVar3 << 0x10 | uVar2 & 0xffff;
           }
           _param_1 = 0xffffffff;
-          uVar3 = array->count - 1;
+          uVar3 = pDVar7->count - 1;
           if (-1 < (int)uVar3) {
             do {
-              DArrayGetElement(array,uVar3,&local_2c);
+              DArrayGetElement(pDVar7,uVar3,&local_2c);
               if (local_2c == 0x7fff) {
                 _param_1 = uVar3;
               }
               uVar3 = uVar3 - 1;
             } while (-1 < (int)uVar3);
             if (_param_1 != 0xffffffff) {
-              Library::DKW::TBL::FUN_006ae140(&array->flags,_param_1,&local_c);
+              Library::DKW::TBL::FUN_006ae140(&pDVar7->flags,_param_1,&local_c);
               return _param_1 << 0x10 | uVar2 & 0xffff;
             }
           }
-          uVar3 = Library::DKW::TBL::FUN_006ae1c0(&array->flags,&local_c);
+          uVar3 = Library::DKW::TBL::FUN_006ae1c0(&pDVar7->flags,&local_c);
           return uVar3 << 0x10 | uVar2 & 0xffff;
         }
       }

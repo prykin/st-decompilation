@@ -21,13 +21,13 @@ STAllPlayersC::RegisterPGPair(STAllPlayersC *this,uint param_1,uint *param_2,uin
   bool bVar8;
   char objPtr;
   InternalExceptionFrame local_88;
-  uint *local_44;
-  uint *local_40;
-  uint *local_3c;
+  DArrayTy *local_44;
+  DArrayTy *local_40;
+  DArrayTy *local_3c;
   int local_38;
   STAllPlayersC *local_34;
   dword local_30;
-  undefined4 local_2c;
+  uint local_2c;
   DArrayTy *local_28;
   DArrayTy **local_24;
   uint local_20;
@@ -132,7 +132,7 @@ STAllPlayersC::RegisterPGPair(STAllPlayersC *this,uint param_1,uint *param_2,uin
           DArrayGetElement(local_14,uVar7,&local_1a);
           if ((short)local_8 == local_1a) {
             if (pDVar4 == (DArrayTy *)0x0) {
-              pDVar4 = (DArrayTy *)Library::DKW::TBL::FUN_006ae290((uint *)0x0,1,2,1);
+              pDVar4 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,1,2,1);
               local_28 = pDVar4;
             }
             Library::DKW::TBL::FUN_006ae1c0(&pDVar4->flags,&local_8);
@@ -238,13 +238,13 @@ LAB_00445e36:
       uVar6 = uVar6 + 1;
     } while ((int)uVar6 < (int)local_10);
   }
-  local_44 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,local_10,2,1);
+  local_44 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,local_10,2,1);
   Library::DKW::TBL::FUN_006afe40((int *)&local_44,&local_18->flags);
-  local_40 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,local_c,2,1);
+  local_40 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,local_c,2,1);
   Library::DKW::TBL::FUN_006afe40((int *)&local_40,&local_14->flags);
-  local_3c = Library::DKW::TBL::FUN_006ae290((uint *)0x0,1,4,1);
+  local_3c = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,1,4,1);
   if (g_playerRuntime[objPtr].pgPairs == (DArrayTy *)0x0) {
-    pDVar4 = (DArrayTy *)Library::DKW::TBL::FUN_006ae290((uint *)0x0,1,0xc,1);
+    pDVar4 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,1,0xc,1);
     g_playerRuntime[objPtr].pgPairs = pDVar4;
   }
   Library::DKW::TBL::FUN_006ae1c0(&(g_playerRuntime[objPtr].pgPairs)->flags,&local_44);

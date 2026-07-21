@@ -64,7 +64,7 @@ uint __thiscall CPanelTy::PaintSMap(CPanelTy *this)
   FUN_006e6fb0(PTR_00807598,(AnonShape_006E6FB0_BC494FEA *)pCVar4->field_0190,5,7,
                (uint)(pCVar4->field_023F != CASE_2));
   uVar5 = PTR_00802a38->field_00E4 * 0x51eb851f;
-  uVar9 = (uint)PTR_00802a38->field_00E4 / 0x19;
+  uVar9 = PTR_00802a38->field_00E4 / 0x19;
   if (300 < uVar9 - DAT_0080c4cf) {
     uVar5 = thunk_FUN_0056f930((AnonShape_0056F930_C6277D80 *)&DAT_00807620);
     DAT_00808794 = uVar5;
@@ -147,14 +147,14 @@ uint __thiscall CPanelTy::PaintSMap(CPanelTy *this)
       if (DAT_0080c4d3 != 2) {
         ccFntTy::WrTxt(pCVar4->field_01CC,(uint *)&pCVar4->field_0x1e1,0xd,10,0,-1,-1);
         uVar5 = Library::DKW::DDX::FUN_006b3640
-                          (DAT_008075a8,pCVar4->field_0174,0xffffffff,pCVar4->field_00EC,
+                          ((int *)PTR_008075a8,pCVar4->field_0174,0xffffffff,pCVar4->field_00EC,
                            pCVar4->field_00F0);
       }
     }
   }
   if ((pCVar4->field_023F != CASE_2) && (uVar5 = pCVar4->field_0158, -1 < (int)uVar5)) {
     uVar5 = Library::DKW::DDX::FUN_006b3640
-                      (DAT_008075a8,uVar5,0xffffffff,pCVar4->field_004C,pCVar4->field_00A4);
+                      ((int *)PTR_008075a8,uVar5,0xffffffff,pCVar4->field_004C,pCVar4->field_00A4);
   }
   g_currentExceptionFrame = local_50.previous;
   return uVar5;

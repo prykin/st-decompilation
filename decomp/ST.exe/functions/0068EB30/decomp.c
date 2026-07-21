@@ -37,7 +37,7 @@ AiTactClassTy::PrepareToSave(AiTactClassTy *this,AnonShape_0068EB30_4F4B480A *pa
     param_1->field_0006 = param_1->field_0006 + (param_2 + (sVar1 + 1) * 0x14) * 0x32;
     param_1->field_003A = pAVar3->field_012C;
     Library::DKW::TBL::FUN_006ae1c0(&pAVar3->field_00BD->flags,(undefined4 *)param_1);
-    thunk_FUN_00676c40((AnonShape_00413AF0_B6B4EE9A *)pAVar3->field_00BD,&LAB_0040242d);
+    thunk_FUN_00676c40(pAVar3->field_00BD,&LAB_0040242d);
     g_currentExceptionFrame = local_4c.previous;
     return 0;
   }

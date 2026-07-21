@@ -14,8 +14,6 @@ void CreatePlaySystem(void)
   STPlaySystemC *this;
   int iVar2;
   byte bVar3;
-  /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-  int unaff_ESI;
   InternalExceptionFrame local_50;
   uint *local_c;
   uint local_8;
@@ -29,22 +27,29 @@ void CreatePlaySystem(void)
       PTR_00802a38 = (STPlaySystemC *)0x0;
     }
     else {
-      PTR_00802a38 = (STPlaySystemC *)STPlaySystemC::STPlaySystemC(this,g_appClass_00806728);
+      PTR_00802a38 = STPlaySystemC::STPlaySystemC(this,g_appClass_00806728);
     }
     if (PTR_00802a38 == (STPlaySystemC *)0x0) {
       RaiseInternalException
                 (-1,g_overwriteContext_007ED77C,"E:\\__titans\\Andrey\\tplaysys.cpp",0x7d);
     }
     PTR_00802a38->field_00E0 = 0;
-    /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-    (*PTR_00802a38->vtable->InitSystem)(PTR_00802a38,unaff_ESI);
-    (*PTR_00802a38->vtable->vfunc_08)(0x1100,0,&g_sTAllPlayers_007FA174,0,0);
-    (*PTR_00802a38->vtable->vfunc_08)(0x109,0,0,0,0);
-    (*PTR_00802a38->vtable->vfunc_08)(0x121,0,0,0,0);
-    (*PTR_00802a38->vtable->vfunc_08)(0x143,&DAT_00811794,0,0,0);
-    (*PTR_00802a38->vtable->vfunc_08)(0x145,&DAT_008117a0,0,0,0);
-    (*PTR_00802a38->vtable->vfunc_08)(0x146,&DAT_008117ac,0,0,0);
-    (*PTR_00802a38->vtable->vfunc_08)(0x15b,&DAT_00811780,0,0,0);
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+    (**(code **)PTR_00802a38->vtable)();
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+    (*(code *)PTR_00802a38->vtable->field_0008)(0x1100,0,&g_sTAllPlayers_007FA174,0,0);
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+    (*(code *)PTR_00802a38->vtable->field_0008)(0x109,0,0,0,0);
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+    (*(code *)PTR_00802a38->vtable->field_0008)(0x121,0,0,0,0);
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+    (*(code *)PTR_00802a38->vtable->field_0008)(0x143,&DAT_00811794,0,0,0);
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+    (*(code *)PTR_00802a38->vtable->field_0008)(0x145,&DAT_008117a0,0,0,0);
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+    (*(code *)PTR_00802a38->vtable->field_0008)(0x146,&DAT_008117ac,0,0,0);
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+    (*(code *)PTR_00802a38->vtable->field_0008)(0x15b,&DAT_00811780,0,0,0);
     thunk_FUN_0058d6f0();
     if (DAT_0080879c == 0) {
       bVar3 = 0;

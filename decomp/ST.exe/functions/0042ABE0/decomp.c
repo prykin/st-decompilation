@@ -15,10 +15,11 @@ STAllPlayersC::GetGObjFromZone2
   uint uVar1;
   code *pcVar2;
   int iVar3;
-  uint *puVar4;
+  DArrayTy *pDVar4;
   int iVar5;
   int *piVar6;
   int *piVar7;
+  uint *puVar8;
   InternalExceptionFrame local_54;
   int local_10;
   short *local_c;
@@ -49,52 +50,52 @@ STAllPlayersC::GetGObjFromZone2
               );
   }
   if ((param_6 != (int *)0x0) && (*param_6 == 0)) {
-    puVar4 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,0,2,5);
-    *param_6 = (int)puVar4;
+    pDVar4 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,0,2,5);
+    *param_6 = (int)pDVar4;
   }
   if ((param_7 != (int *)0x0) && (*param_7 == 0)) {
-    puVar4 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,0,2,5);
-    *param_7 = (int)puVar4;
+    pDVar4 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,0,2,5);
+    *param_7 = (int)pDVar4;
   }
   if ((param_8 != (int *)0x0) && (*param_8 == 0)) {
-    puVar4 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,0,2,5);
-    *param_8 = (int)puVar4;
+    pDVar4 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,0,2,5);
+    *param_8 = (int)pDVar4;
   }
   if ((param_9 != (int *)0x0) && (*param_9 == 0)) {
-    puVar4 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,0,2,5);
-    *param_9 = (int)puVar4;
+    pDVar4 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,0,2,5);
+    *param_9 = (int)pDVar4;
   }
   if ((param_10 != (int *)0x0) && (*param_10 == 0)) {
-    puVar4 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,0,2,5);
-    *param_10 = (int)puVar4;
+    pDVar4 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,0,2,5);
+    *param_10 = (int)pDVar4;
   }
   if ((param_11 != (int *)0x0) && (*param_11 == 0)) {
-    puVar4 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,0,2,5);
-    *param_11 = (int)puVar4;
+    pDVar4 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,0,2,5);
+    *param_11 = (int)pDVar4;
   }
   if ((param_12 != (int *)0x0) && (*param_12 == 0)) {
-    puVar4 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,0,2,5);
-    *param_12 = (int)puVar4;
+    pDVar4 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,0,2,5);
+    *param_12 = (int)pDVar4;
   }
   if ((param_13 != (int *)0x0) && (*param_13 == 0)) {
-    puVar4 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,0,2,5);
-    *param_13 = (int)puVar4;
+    pDVar4 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,0,2,5);
+    *param_13 = (int)pDVar4;
   }
   if ((param_14 != (int *)0x0) && (*param_14 == 0)) {
-    puVar4 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,0,2,5);
-    *param_14 = (int)puVar4;
+    pDVar4 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,0,2,5);
+    *param_14 = (int)pDVar4;
   }
   if ((param_15 != (int *)0x0) && (*param_15 == 0)) {
-    puVar4 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,0,2,5);
-    *param_15 = (int)puVar4;
+    pDVar4 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,0,2,5);
+    *param_15 = (int)pDVar4;
   }
   if ((param_16 != (int *)0x0) && (*param_16 == 0)) {
-    puVar4 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,0,2,5);
-    *param_16 = (int)puVar4;
+    pDVar4 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,0,2,5);
+    *param_16 = (int)pDVar4;
   }
   if ((param_17 != (int *)0x0) && (*param_17 == 0)) {
-    puVar4 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,0,2,5);
-    *param_17 = (int)puVar4;
+    pDVar4 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,0,2,5);
+    *param_17 = (int)pDVar4;
   }
   Library::Ourlib::ST3DSPR::FUN_006ead90
             (PTR_00807598,param_2,param_3,param_4,param_5,&local_c,&local_8);
@@ -111,7 +112,7 @@ STAllPlayersC::GetGObjFromZone2
             piVar7 = (int *)((int)piVar7 + 0x32);
             piVar6 = param_16;
 LAB_0042b01f:
-            puVar4 = (uint *)*piVar6;
+            puVar8 = (uint *)*piVar6;
             goto cf_common_join_0042B022;
           }
         }
@@ -129,7 +130,7 @@ LAB_0042b01f:
             }
             if (param_6 != (int *)0x0) {
               piVar7 = (int *)((int)piVar7 + 0x32);
-              puVar4 = (uint *)*param_6;
+              puVar8 = (uint *)*param_6;
               goto cf_common_join_0042B022;
             }
           }
@@ -140,7 +141,7 @@ LAB_0042b01f:
               (*(int *)(iVar3 + (int)local_c) == *(int *)((int)piVar7 + 0x1ed))) &&
              (iVar5 = (**(code **)(*piVar7 + 0xec))(), iVar5 == 1)) {
             piVar7 = (int *)((int)piVar7 + 0x32);
-            puVar4 = (uint *)*param_14;
+            puVar8 = (uint *)*param_14;
             goto cf_common_join_0042B022;
           }
         }
@@ -157,7 +158,7 @@ LAB_0042b01f:
           /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
           if ((param_17 != (int *)0x0) && (iVar5 = (**(code **)(*piVar7 + 0xec))(), iVar5 == 1)) {
             piVar7 = (int *)((int)piVar7 + 0x32);
-            puVar4 = (uint *)*param_17;
+            puVar8 = (uint *)*param_17;
             goto cf_common_join_0042B022;
           }
         }
@@ -166,16 +167,16 @@ LAB_0042b01f:
             /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
             if ((param_12 != (int *)0x0) && (iVar5 = (**(code **)(*piVar7 + 0xec))(), iVar5 == 1)) {
               piVar7 = (int *)((int)piVar7 + 0x32);
-              puVar4 = (uint *)*param_12;
+              puVar8 = (uint *)*param_12;
 cf_common_join_0042B022:
-              Library::DKW::TBL::FUN_006ae1c0(puVar4,piVar7);
+              Library::DKW::TBL::FUN_006ae1c0(puVar8,piVar7);
             }
           }
           /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
           else if ((param_13 != (int *)0x0) && (iVar5 = (**(code **)(*piVar7 + 0xec))(), iVar5 == 1)
                   ) {
             piVar7 = (int *)((int)piVar7 + 0x32);
-            puVar4 = (uint *)*param_13;
+            puVar8 = (uint *)*param_13;
             goto cf_common_join_0042B022;
           }
         }
@@ -186,7 +187,7 @@ cf_common_join_0042B022:
         if (piVar7[9] == (int)param_1) {
           if (param_9 != (int *)0x0) {
             piVar7 = (int *)((int)piVar7 + 0x32);
-            puVar4 = (uint *)*param_9;
+            puVar8 = (uint *)*param_9;
             goto cf_common_join_0042B022;
           }
         }

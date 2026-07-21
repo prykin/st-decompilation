@@ -411,9 +411,9 @@ LAB_004d3b23:
                             8));
         /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
         cVar1 = *(char *)((int)param_1 + 0x2f0);
-        uVar4 = PTR_00802a38->field_00E4;
+        uVar2 = PTR_00802a38->field_00E4;
 LAB_004d4378:
-        STT3DSprC::StartShow((STT3DSprC *)((int)param_1 + 0x1d5),cVar1 - 1,uVar4);
+        STT3DSprC::StartShow((STT3DSprC *)((int)param_1 + 0x1d5),cVar1 - 1,uVar2);
         break;
       /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
       case 1:
@@ -691,7 +691,7 @@ cf_error_exit_004D428D:
               STT3DSprC::SetCurFase(pSVar13,*(char *)((int)param_1 + 0x2f0) + -1,uVar2);
               /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
               cVar1 = *(char *)((int)param_1 + 0x2f0);
-              uVar4 = PTR_00802a38->field_00E4;
+              uVar2 = PTR_00802a38->field_00E4;
               goto LAB_004d4378;
             }
           }
@@ -751,8 +751,8 @@ LAB_004d43f5:
           thunk_FUN_00621580(DAT_00811798,*(uint *)((int)param_1 + 0x24),5);
         }
         /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-        if (*(int *)((int)param_1 + 0x2b0) + uVar2 <= (uint)PTR_00802a38->field_00E4) {
-          *(undefined4 *)((int)param_1 + 0x2b0) = PTR_00802a38->field_00E4;
+        if (*(int *)((int)param_1 + 0x2b0) + uVar2 <= PTR_00802a38->field_00E4) {
+          *(uint *)((int)param_1 + 0x2b0) = PTR_00802a38->field_00E4;
           /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
           iVar8 = (*(int *)((int)param_1 + 0x368) * 3 + *(int *)((int)param_1 + 0x36c)) * 4;
           iVar11 = *(int *)(&DAT_008545ac + iVar8);
@@ -968,7 +968,7 @@ LAB_004d43f5:
         do {
           if (*piVar12 == 0) {
             /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-            if (((((uint)piVar12[1] <= (uint)PTR_00802a38->field_00E4) &&
+            if (((((uint)piVar12[1] <= PTR_00802a38->field_00E4) &&
                  (*(int *)((int)param_1 + 0x2b4) != 0)) && (*(int *)((int)param_1 + 0x2a8) < 100))
                && ((*(int *)((int)param_1 + 0x2a4) == 0 && (*(int *)((int)param_1 + 0x2a0) == 0))))
             {
@@ -1101,7 +1101,7 @@ LAB_004d4d4f:
   /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   if ((*(int *)((int)param_1 + 0x338) != 0) &&
      ((uint)(*(int *)((int)param_1 + 0x344) + *(int *)((int)param_1 + 0x340)) <=
-      (uint)PTR_00802a38->field_00E4)) {
+      PTR_00802a38->field_00E4)) {
     *(undefined4 *)((int)param_1 + 0x338) = 0;
   }
   return 0;

@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 int FUN_006942a0(void)
 
@@ -28,11 +30,8 @@ int FUN_006942a0(void)
   iVar1 = local_8;
   g_currentExceptionFrame = local_54.previous;
   if (local_8 != 0) {
-    puVar3 = (undefined4 *)(local_10 + 0x11);
-    for (iVar2 = 0xa2; iVar2 != 0; iVar2 = iVar2 + -1) {
-      *puVar3 = 0;
-      puVar3 = puVar3 + 1;
-    }
+    memset((void *)(local_10 + 0x11), 0, 0x288); /* compiler bulk-zero initialization */
+    iVar2 = 0;
     puVar3 = (undefined4 *)(local_c + 0x11);
     puVar4 = (undefined4 *)(local_10 + 0x11);
     for (iVar2 = 0xa2; iVar2 != 0; iVar2 = iVar2 + -1) {

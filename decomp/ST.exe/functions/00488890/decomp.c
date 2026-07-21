@@ -7,11 +7,10 @@ void __thiscall FUN_00488890(void *this,int param_1)
   undefined4 *puVar2;
   void *pvVar3;
   uint uVar4;
-  uint *puVar5;
+  DArrayTy *pDVar5;
   int iVar6;
   uint uVar7;
   int iVar8;
-  DArrayTy *array;
   int iVar9;
   int *piVar10;
   int local_7c [2];
@@ -57,8 +56,8 @@ void __thiscall FUN_00488890(void *this,int param_1)
       local_8 = &DAT_00801370 + (uVar4 & 0xff) * 4;
     }
     if (*(int *)(param_1 + iVar9 * 4) == 0) {
-      puVar5 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,5,0x30,5);
-      *(uint **)(param_1 + iVar9 * 4) = puVar5;
+      pDVar5 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,5,0x30,5);
+      *(DArrayTy **)(param_1 + iVar9 * 4) = pDVar5;
     }
     local_10 = 0;
     local_c = 0x32;
@@ -109,15 +108,15 @@ void __thiscall FUN_00488890(void *this,int param_1)
       local_c = iVar8 + 1;
       local_10 = local_10 + 3;
     } while (iVar8 + -0x31 < 0x42);
-    array = *(DArrayTy **)(param_1 + iVar9 * 4);
-    puVar1 = (undefined4 *)array->count;
+    pDVar5 = *(DArrayTy **)(param_1 + iVar9 * 4);
+    puVar1 = (undefined4 *)pDVar5->count;
     puVar2 = puVar1;
     while (puVar2 != (undefined4 *)0x0) {
       local_1c = (undefined4 *)0x0;
       uVar4 = 0;
       if ((int)puVar1 + -2 < 0) break;
       do {
-        DArrayGetElement(array,uVar4,local_4c);
+        DArrayGetElement(pDVar5,uVar4,local_4c);
         index = uVar4 + 1;
         DArrayGetElement(*(DArrayTy **)(param_1 + iVar9 * 4),index,local_7c);
         pvVar3 = local_14;
@@ -137,8 +136,8 @@ LAB_00488b5f:
         }
         else if (local_44 == local_74) goto LAB_00488b5f;
 LAB_00488bce:
-        array = *(DArrayTy **)(param_1 + iVar9 * 4);
-        puVar1 = (undefined4 *)array->count;
+        pDVar5 = *(DArrayTy **)(param_1 + iVar9 * 4);
+        puVar1 = (undefined4 *)pDVar5->count;
         uVar4 = index;
         this = local_14;
         puVar2 = local_1c;

@@ -16,7 +16,6 @@ int __thiscall AiTactClassTy::GetAiMess(AiTactClassTy *this,AnonShape_0068FD00_A
   void *pvVar5;
   int iVar6;
   uint uVar7;
-  uint *puVar8;
   bool bVar9;
   InternalExceptionFrame local_80;
   uint local_3c [3];
@@ -50,11 +49,7 @@ int __thiscall AiTactClassTy::GetAiMess(AiTactClassTy *this,AnonShape_0068FD00_A
       return 0;
     case 0x6c:
       if (param_1->field_0x8 == '\0') {
-        puVar8 = local_3c;
-        for (iVar3 = 0xd; iVar3 != 0; iVar3 = iVar3 + -1) {
-          *puVar8 = 0;
-          puVar8 = puVar8 + 1;
-        }
+        memset(local_3c, 0, 0x34); /* compiler bulk-zero initialization */
         local_3c[0] = 0x6d;
         local_30 = 1;
         local_3c[1] = local_8->field_012C;
@@ -93,11 +88,7 @@ int __thiscall AiTactClassTy::GetAiMess(AiTactClassTy *this,AnonShape_0068FD00_A
             pvVar5 = (void *)0x0;
           }
           if ((pvVar5 != (void *)0x0) && (*(int *)((int)pvVar5 + 4) != 0)) {
-            puVar8 = local_3c;
-            for (iVar3 = 0xd; iVar3 != 0; iVar3 = iVar3 + -1) {
-              *puVar8 = 0;
-              puVar8 = puVar8 + 1;
-            }
+            memset(local_3c, 0, 0x34); /* compiler bulk-zero initialization */
             local_3c[1] = this_00->field_012C;
             local_3c[0] = 0x70;
             uVar1 = *(undefined4 *)((int)&param_1->field_000A + 2);

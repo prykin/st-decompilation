@@ -170,8 +170,7 @@ int __thiscall STGroupBoatC::GetMessage(STGroupBoatC *this,STMessage *message)
       DArrayDestroy(pDVar7);
       *(undefined4 *)((int)&this_00[7].field_0031 + 2) = 0;
     }
-    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-    uVar8 = *(uint *)(this_00->field_0029 + 0xc);
+    uVar8 = this_00->field_0029[3];
     if ((uVar8 != 0) && (index = 0, uVar8 != 0)) {
       do {
         DArrayGetElement((DArrayTy *)this_00->field_0029,index,&local_14);
@@ -204,7 +203,7 @@ int __thiscall STGroupBoatC::GetMessage(STGroupBoatC *this,STMessage *message)
     }
     if ((DArrayTy *)this_00[9].field_0029 != (DArrayTy *)0x0) {
       DArrayDestroy((DArrayTy *)this_00[9].field_0029);
-      this_00[9].field_0029 = 0;
+      this_00[9].field_0029 = (uint *)0x0;
     }
     if (*(DArrayTy **)&this_00[10].field_0x4 != (DArrayTy *)0x0) {
       DArrayDestroy(*(DArrayTy **)&this_00[10].field_0x4);
@@ -275,12 +274,12 @@ int __thiscall STGroupBoatC::GetMessage(STGroupBoatC *this,STMessage *message)
       *(undefined4 *)((int)&this_00[7].field_002D + 2) = 0;
     }
     if ((*(int *)((int)&this_00[1].field_002D + 3) == 1) &&
-       (iVar4 = this_00->field_002D, *(undefined4 *)((int)&this_00[1].field_002D + 3) = 0,
-       iVar4 != 0)) {
+       (puVar5 = this_00->field_002D, *(undefined4 *)((int)&this_00[1].field_002D + 3) = 0,
+       puVar5 != (uint *)0x0)) {
       /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
       RechargeNewCmd((STGroupBoatC *)this_00,unaff_EDI);
       DArrayDestroy((DArrayTy *)this_00->field_002D);
-      this_00->field_002D = 0;
+      this_00->field_002D = (uint *)0x0;
     }
     if (*(int *)((int)&this_00[1].field_0031 + 3) == 1) {
       pDVar7 = *(DArrayTy **)((int)&this_00[7].field_001C + 3);

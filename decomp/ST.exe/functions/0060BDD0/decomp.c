@@ -1,10 +1,11 @@
+#include "../../pseudocode_runtime.h"
+
 
 undefined4 __thiscall FUN_0060bdd0(void *this,undefined4 *param_1)
 
 {
   int iVar1;
   int **ppiVar2;
-  int *piVar3;
   int *local_58 [6];
   undefined4 local_40;
   int local_38 [3];
@@ -22,11 +23,7 @@ undefined4 __thiscall FUN_0060bdd0(void *this,undefined4 *param_1)
     *ppiVar2 = (int *)0x0;
     ppiVar2 = ppiVar2 + 1;
   }
-  piVar3 = local_38;
-  for (iVar1 = 7; iVar1 != 0; iVar1 = iVar1 + -1) {
-    *piVar3 = 0;
-    piVar3 = piVar3 + 1;
-  }
+  memset(local_38, 0, 0x1c); /* compiler bulk-zero initialization */
   local_58[3] = (int *)0x4;
   local_58[2] = (int *)param_1[6];
   local_38[1] = *(undefined4 *)((int)this + 0x1f5);

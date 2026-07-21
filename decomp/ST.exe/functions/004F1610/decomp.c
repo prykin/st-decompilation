@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 void __thiscall FUN_004f1610(void *this,char param_1)
 
@@ -6,7 +8,6 @@ void __thiscall FUN_004f1610(void *this,char param_1)
   int iVar2;
   byte bVar3;
   uint uVar4;
-  undefined4 *puVar5;
   int iVar6;
   undefined4 local_9c [19];
   undefined1 local_50 [16];
@@ -33,11 +34,8 @@ void __thiscall FUN_004f1610(void *this,char param_1)
       do {
         uVar4 = local_8;
         iVar6 = local_c;
-        puVar5 = local_30;
-        for (iVar2 = 8; iVar2 != 0; iVar2 = iVar2 + -1) {
-          *puVar5 = 0;
-          puVar5 = puVar5 + 1;
-        }
+        memset(local_30, 0, 0x20); /* compiler bulk-zero initialization */
+        iVar2 = 0;
         if (param_1 == '\0') {
           cVar1 = *(char *)((int)this + 0xbfd);
         }
@@ -50,11 +48,7 @@ void __thiscall FUN_004f1610(void *this,char param_1)
         }
         else {
           uVar4 = uVar4 & 0xff;
-          puVar5 = local_9c;
-          for (iVar2 = 0x13; iVar2 != 0; iVar2 = iVar2 + -1) {
-            *puVar5 = 0;
-            puVar5 = puVar5 + 1;
-          }
+          memset(local_9c, 0, 0x4c); /* compiler bulk-zero initialization */
           local_9c[0] = 8;
           local_20 = 0x5a;
           /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */

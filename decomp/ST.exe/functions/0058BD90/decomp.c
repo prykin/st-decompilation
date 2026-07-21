@@ -94,7 +94,7 @@ switchD_0058bec9_caseD_2:
     if (param_1->field_0231 == 2) {
       local_8 = 0x18;
     }
-    if ((*(byte *)&PTR_00802a38->field_00E4 & 3) == 0) {
+    if ((PTR_00802a38->field_00E4 & 3) == 0) {
       if (param_1->field_0235 == 0) {
         if (param_1->field_023D < param_1->field_0241) {
           iVar2 = param_1->field_0239 + 1;
@@ -141,7 +141,7 @@ switchD_0058bec9_caseD_2:
     param_1->field_0043 = sVar7;
     sVar5 = (short)((int)(iVar2 + (iVar2 >> 0x1f & 0x3fffU)) >> 0xe) + param_1->field_0271;
     param_1->field_0045 = sVar5;
-    if ((((sVar5 < 0x4b0) && ((uint)PTR_00802a38->field_00E4 % 0x11 == 0)) &&
+    if ((((sVar5 < 0x4b0) && (PTR_00802a38->field_00E4 % 0x11 == 0)) &&
         ((int)sVar6 < g_worldGrid.sizeX * 0xc9)) &&
        (((0 < sVar6 && ((int)sVar7 < g_worldGrid.sizeY * 0xc9)) && (0 < sVar7)))) {
       param_1->field_0231 = 4;
@@ -192,7 +192,7 @@ switchD_0058bec9_caseD_0:
         (g_worldGrid.cells
          [(int)g_worldGrid.planeStride * (int)sVar7 + (int)g_worldGrid.sizeX * (int)sVar6 +
           (int)sVar5].objects[0]->value_20 == 400)))))))) {
-    if ((5 < iVar2) && ((*(byte *)&PTR_00802a38->field_00E4 & 3) == 0)) {
+    if ((5 < iVar2) && ((PTR_00802a38->field_00E4 & 3) == 0)) {
       iVar2 = param_1->field_0239 + 1;
       param_1->field_0239 = iVar2;
       if (*(short *)(DAT_00806724 + 0x23) <= iVar2) {
@@ -207,7 +207,7 @@ switchD_0058bec9_caseD_0:
       thunk_FUN_004ace30(&param_1->field_0x1d5,*(uint *)(DAT_00806724 + 0x30 + iVar2 * 4),
                          (int)*(short *)(DAT_00806724 + 0x2c));
     }
-    if ((*(byte *)&PTR_00802a38->field_00E4 & 1) == 0) {
+    if ((PTR_00802a38->field_00E4 & 1) == 0) {
       iVar2 = thunk_FUN_004ac910(&param_1->field_0x1d5,'\x0e');
       local_8 = iVar2 + 1;
       if (0x18 < (int)local_8) {

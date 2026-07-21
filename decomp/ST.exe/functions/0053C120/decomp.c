@@ -11,7 +11,7 @@ void __thiscall ResearchPanelTy::InitResearchPanel(ResearchPanelTy *this)
   code *pcVar1;
   ResearchPanelTy *this_00;
   int iVar2;
-  uint *puVar3;
+  DArrayTy *pDVar3;
   LPSTR text;
   ushort *puVar4;
   undefined4 *puVar5;
@@ -43,11 +43,7 @@ void __thiscall ResearchPanelTy::InitResearchPanel(ResearchPanelTy *this)
     *puVar5 = 0;
     puVar5 = puVar5 + 1;
   }
-  puVar5 = local_1fc;
-  for (iVar6 = 0x54; iVar6 != 0; iVar6 = iVar6 + -1) {
-    *puVar5 = 0;
-    puVar5 = puVar5 + 1;
-  }
+  memset(local_1fc, 0, 0x150); /* compiler bulk-zero initialization */
   local_ac.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_ac;
   iVar6 = Library::MSVCRT::__setjmp3(local_ac.jumpBuffer,0);
@@ -66,8 +62,8 @@ void __thiscall ResearchPanelTy::InitResearchPanel(ResearchPanelTy *this)
   g_prodPanel_008016E8 = (ProdPanelTy *)local_10;
   puVar5 = &local_10->field_027A;
   do {
-    puVar3 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,0x28,0x30,10);
-    *puVar5 = puVar3;
+    pDVar3 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,0x28,0x30,10);
+    *puVar5 = pDVar3;
     puVar5 = puVar5 + 1;
     iVar6 = iVar6 + -1;
   } while (iVar6 != 0);
@@ -142,8 +138,8 @@ LAB_0053c30d:
     local_34 = 2;
     local_30 = 0xc0b4;
     local_38 = local_58;
-    (*this_00->field_000C->vtable->CreateObject)
-              ((SystemClassTy *)this_00->field_000C,5,&this_00->field_0282,(int *)0x0,local_68,0);
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+    (*(code *)this_00->field_000C->vtable->field_0008)(5,&this_00->field_0282,0,local_68,0);
   }
   g_currentExceptionFrame = local_ac.previous;
   return;

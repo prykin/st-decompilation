@@ -52,8 +52,8 @@ MTaskTy::CreateBut(MTaskTy *this,undefined4 param_1,undefined4 param_2,undefined
     local_168 = 2;
     local_164 = param_8;
     local_16c = local_1ac;
-    (*local_c->field_000C->vtable->CreateObject)
-              ((SystemClassTy *)local_c->field_000C,2,&local_8,(int *)0x0,local_1cc,0);
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+    (*(code *)local_c->field_000C->vtable->field_0008)(2,&local_8,0,local_1cc,0);
     g_currentExceptionFrame = local_50.previous;
     return local_8;
   }

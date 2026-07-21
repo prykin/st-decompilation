@@ -35,9 +35,13 @@ import ghidra.program.model.data.Undefined;
 import ghidra.program.model.listing.CommentType;
 import ghidra.program.model.listing.Data;
 import ghidra.program.model.listing.Function;
+import ghidra.program.model.listing.GhidraClass;
 import ghidra.program.model.listing.Listing;
+import ghidra.program.model.listing.Parameter;
 import ghidra.program.model.listing.Variable;
+import ghidra.program.model.symbol.Namespace;
 import ghidra.program.model.symbol.SourceType;
+import ghidra.program.model.symbol.SymbolTable;
 
 public class STPointerShapeApplier extends GhidraScript {
     private static final String MARKER = "[STPointerShapeApplier]";
@@ -246,7 +250,7 @@ public class STPointerShapeApplier extends GhidraScript {
                     "persistent variable baseline is stale/ambiguous"));
                 continue;
             }
-            applyLocal(row, variable);
+            applyLocal(row, function, variable);
         }
     }
 
@@ -265,15 +269,14 @@ public class STPointerShapeApplier extends GhidraScript {
         return storageMatches.size() == 1 ? storageMatches.get(0) : null;
     }
 
-    private void applyLocal(Map<String, String> row, Variable variable) {
+    private void applyLocal(Map<String, String> row, Function function, Variable variable) {
         try {
             DataType proposed = resolvePointer(unt(row.get("proposed_type")));
             if (proposed == null) throw new IllegalArgumentException("proposed type is missing");
             String currentType = typeSpecification(variable.getDataType());
             String proposedType = typeSpecification(proposed);
             SourceType source = variable.getSource();
-            boolean owned = variable.getComment() != null &&
-                variable.getComment().contains(MARKER);
+            boolean owned = scriptOwnedPointer(variable.getComment());
             if (currentType.equals(proposedType) || proposed.isEquivalent(variable.getDataType())) {
                 addVariableComment(variable, row);
                 report.add(targetReport(row, "unchanged", "type already applied"));
@@ -293,7 +296,10 @@ public class STPointerShapeApplier extends GhidraScript {
                 report.add(targetReport(row, "preserved", "concrete non-generic variable type"));
                 return;
             }
-            variable.setDataType(proposed, SourceType.ANALYSIS);
+            if (variable instanceof Parameter parameter && parameter.isAutoParameter()) {
+                variable = applyAutoThis(function, proposed);
+            }
+            else variable.setDataType(proposed, SourceType.ANALYSIS);
             addVariableComment(variable, row);
             report.add(targetReport(row, "applied", currentType + " -> " +
                 typeSpecification(proposed)));
@@ -301,6 +307,54 @@ public class STPointerShapeApplier extends GhidraScript {
         catch (Exception exception) {
             report.add(targetReport(row, "conflict", message(exception)));
         }
+    }
+
+    /**
+     * Ghidra synthesizes the this parameter from a function's class namespace;
+     * calling Variable.setDataType on that auto-parameter always throws.  A
+     * unique high-confidence pointer-shape target therefore attaches an
+     * otherwise global helper to the matching class and lets Ghidra regenerate
+     * the receiver type through its normal __thiscall model.
+     */
+    private Parameter applyAutoThis(Function function, DataType proposed)
+            throws Exception {
+        DataType type = proposed;
+        while (type instanceof TypeDef typedef) type = typedef.getBaseDataType();
+        if (!(type instanceof Pointer pointer))
+            throw new IllegalArgumentException("auto this proposal is not a pointer");
+        type = pointer.getDataType();
+        while (type instanceof TypeDef typedef) type = typedef.getBaseDataType();
+        if (!(type instanceof Structure structure))
+            throw new IllegalArgumentException("auto this proposal has no class structure");
+        if (structure.getPathName().contains("/Recovered/PointerShapes/") ||
+                structure.getPathName().contains("/Recovered/ClassPointees/") ||
+                structure.getPathName().contains("/Recovered/HiddenThis/"))
+            throw new IllegalArgumentException(
+                "anonymous auto-this ownership must be handled by STHiddenThisAnalyzer");
+
+        SymbolTable symbols = currentProgram.getSymbolTable();
+        Namespace global = currentProgram.getGlobalNamespace();
+        Namespace current = function.getParentNamespace();
+        Namespace target = symbols.getNamespace(structure.getName(), global);
+        if (target == null)
+            target = symbols.createClass(global, structure.getName(), SourceType.ANALYSIS);
+        if (!(target instanceof GhidraClass))
+            throw new IllegalArgumentException("matching namespace is not a class: " +
+                target.getName(true));
+        if (!current.equals(global) && !current.equals(target))
+            throw new IllegalArgumentException("function already belongs to " +
+                current.getName(true));
+        if (!function.getCallingConventionName().equals("__thiscall"))
+            throw new IllegalArgumentException("auto this target is not __thiscall");
+        if (!current.equals(target)) function.setParentNamespace(target);
+
+        Parameter refreshed = null;
+        for (Parameter candidate : function.getParameters())
+            if (candidate.isAutoParameter()) { refreshed = candidate; break; }
+        if (refreshed == null || !(refreshed.getDataType() instanceof Pointer actual) ||
+                !structure.isEquivalent(actual.getDataType()))
+            throw new IllegalStateException("class namespace did not regenerate the this type");
+        return refreshed;
     }
 
     private void applyGlobal(Map<String, String> row) {
@@ -444,7 +498,13 @@ public class STPointerShapeApplier extends GhidraScript {
 
     private boolean owned(Address address) {
         String comment = listing.getComment(CommentType.PLATE, address);
-        return comment != null && comment.contains(MARKER);
+        return scriptOwnedPointer(comment);
+    }
+
+    private boolean scriptOwnedPointer(String comment) {
+        return comment != null && (comment.contains(MARKER) ||
+            comment.contains("[STTypeFamilyApplier]") ||
+            comment.contains("[STGlobalDataApplier]"));
     }
 
     private String layoutHash(Structure structure) {

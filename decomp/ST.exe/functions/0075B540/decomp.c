@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 void FUN_0075b540(undefined4 *param_1,int param_2,int *param_3)
 
@@ -91,11 +93,7 @@ void FUN_0075b540(undefined4 *param_1,int param_2,int *param_3)
   piVar7 = (int *)0x0;
   iVar5 = 1;
   *(undefined4 *)(iVar4 + 0x88) = 0xfffff;
-  puVar12 = (undefined4 *)(iVar4 + 0xd4);
-  for (iVar9 = 0x100; iVar9 != 0; iVar9 = iVar9 + -1) {
-    *puVar12 = 0;
-    puVar12 = puVar12 + 1;
-  }
+  memset((void *)(iVar4 + 0xd4), 0, 0x400); /* compiler bulk-zero initialization */
   param_3 = (int *)0x0;
   local_8 = 7;
   do {

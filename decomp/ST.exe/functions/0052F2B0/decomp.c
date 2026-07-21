@@ -108,42 +108,42 @@ void __thiscall OptPanelTy::SwitchOptPanel(OptPanelTy *this,char param_1)
       local_8 = ProdPanelTy::SetPanel(g_prodPanel_00801684,'\0');
     }
     bVar5 = local_8 != 0;
-    if (DAT_00801698 != (int *)0x0) {
+    if (g_infocPanel_00801698 != (InfocPanelTy *)0x0) {
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-      local_8 = (**(code **)(*DAT_00801698 + 0x1c))(0);
+      local_8 = (**(code **)(*(int *)g_infocPanel_00801698 + 0x1c))(0);
     }
     bVar6 = local_8 != 0;
-    if (DAT_00802a44 != (void *)0x0) {
-      local_8 = thunk_FUN_00552160(DAT_00802a44,'\0','\0');
+    if (g_tradePanel_00802A44 != (TradePanelTy *)0x0) {
+      local_8 = thunk_FUN_00552160(g_tradePanel_00802A44,'\0','\0');
     }
     bVar7 = local_8 != 0;
-    if (DAT_00801678 != (int *)0x0) {
+    if (g_behPanel_00801678 != (BehPanelTy *)0x0) {
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-      local_8 = (**(code **)(*DAT_00801678 + 0x1c))(0);
+      local_8 = (*(code *)g_behPanel_00801678->field_0000[2].field_0004)(0);
     }
     bVar8 = local_8 != 0;
-    if (DAT_008016ec != (int *)0x0) {
+    if (g_sAMPanel_008016EC != (SAMPanelTy *)0x0) {
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-      local_8 = (**(code **)(*DAT_008016ec + 0x1c))(0);
+      local_8 = (**(code **)&g_sAMPanel_008016EC->field_0000[1].field_0x8)(0);
     }
     bVar9 = local_8 != 0;
-    if (DAT_00802a48 != (int *)0x0) {
+    if (g_upgPanel_00802A48 != (UpgPanelTy *)0x0) {
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-      local_8 = (**(code **)(*DAT_00802a48 + 0x1c))(0);
+      local_8 = (**(code **)(*(int *)g_upgPanel_00802A48 + 0x1c))(0);
     }
     bVar10 = local_8 != 0;
-    if (DAT_0080168c != (int *)0x0) {
+    if (g_frmPanel_0080168C != (FrmPanelTy *)0x0) {
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-      local_8 = (**(code **)(*DAT_0080168c + 0x1c))(0);
+      local_8 = (*(code *)g_frmPanel_0080168C->field_0000->field_001C)(0);
     }
     bVar11 = local_8 != 0;
     if (g_prodPanel_00801680 != (ProdPanelTy *)0x0) {
       local_8 = ProdPanelTy::SetPanel(g_prodPanel_00801680,'\0');
     }
     bVar12 = local_8 != 0;
-    if (PTR_00801690 != (AnonShape_GLOBAL_00801690_2AA401C1 *)0x0) {
+    if (g_helpPanel_00801690 != (AnonShape_GLOBAL_00801690_2AA401C1 *)0x0) {
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-      local_8 = (**(code **)(*(int *)PTR_00801690 + 0x18))(0);
+      local_8 = (**(code **)(*(int *)g_helpPanel_00801690 + 0x18))(0);
     }
     bVar13 = local_8 != 0;
     if (g_playPanel_008016E4 != (PlayPanelTy *)0x0) {

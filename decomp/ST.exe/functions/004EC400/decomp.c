@@ -9,7 +9,7 @@ undefined4 __fastcall FUN_004ec400(AnonShape_004EC400_367D4575 *param_1)
   int iVar3;
 
   if (param_1->field_04D0 == 4) {
-    if (param_1->field_0514 + 1 <= (uint)PTR_00802a38->field_00E4) {
+    if (param_1->field_0514 + 1 <= PTR_00802a38->field_00E4) {
       iVar3 = param_1->field_0504 + 3;
       param_1->field_0514 = PTR_00802a38->field_00E4;
       param_1->field_0510 = param_1->field_0510 + 1;
@@ -20,7 +20,7 @@ undefined4 __fastcall FUN_004ec400(AnonShape_004EC400_367D4575 *param_1)
                          (float)iVar3 * _DAT_007904f8 * _DAT_007904f0 + _DAT_007904fc);
     }
   }
-  if ((param_1->field_04D0 == 6) && (param_1->field_0514 + 1 <= (uint)PTR_00802a38->field_00E4)) {
+  if ((param_1->field_04D0 == 6) && (param_1->field_0514 + 1 <= PTR_00802a38->field_00E4)) {
     param_1->field_0514 = PTR_00802a38->field_00E4;
     param_1->field_0510 = param_1->field_0510 + 1;
     iVar1 = param_1->field_04FC;

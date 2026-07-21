@@ -29,11 +29,11 @@ void __fastcall FUN_005c05f0(AnonShape_005C05F0_AB1ACC3B *param_1)
     if (PTR_00802a30->field_00A9 == 0) {
       Library::DKW::DDX::FUN_006b8b10((int *)PTR_00802a30->field_00AD);
     }
-    else if (PTR_00802a30->field_001C != 0xffffffff) {
-      FUN_006b3af0((int *)PTR_00802a30->field_0060,PTR_00802a30->field_001C);
+    else if (PTR_00802a30->field_001C != (cLoadingTy *)0xffffffff) {
+      FUN_006b3af0((int *)PTR_00802a30->field_0060,(uint)PTR_00802a30->field_001C);
     }
   }
-  FUN_006b5f80(DAT_008075a8,0,0,g_nWidth_00806730,DAT_00806734);
+  FUN_006b5f80((int *)PTR_008075a8,0,0,g_nWidth_00806730,DAT_00806734);
   if ((HoloTy *)param_1->field_0453 != (HoloTy *)0x0) {
     HoloTy::Done((HoloTy *)param_1->field_0453);
     Library::MSVCRT::FUN_0072e2b0((HoloTy *)param_1->field_0453);
@@ -70,7 +70,7 @@ void __fastcall FUN_005c05f0(AnonShape_005C05F0_AB1ACC3B *param_1)
     cVar6 = '\x01';
     uVar5 = 0x10;
     iVar4 = 1;
-    iVar2 = Library::DKW::DDX::FUN_006bf9f0(DAT_008075a8,0x47,0x46,0x2bd,0x15e);
+    iVar2 = Library::DKW::DDX::FUN_006bf9f0((int *)PTR_008075a8,0x47,0x46,0x2bd,0x15e);
     uVar5 = HoloTy::Init((HoloTy *)param_1->field_0453,CASE_2,0x47,0x46,iVar2,iVar4,uVar5,cVar6,
                          uVar7);
     if (uVar5 != 0) {
@@ -79,7 +79,7 @@ void __fastcall FUN_005c05f0(AnonShape_005C05F0_AB1ACC3B *param_1)
       *(undefined4 *)(iVar2 + 0x17) = 0xffffffff;
       uVar5 = *(uint *)(param_1->field_0453 + 3);
       if (-1 < (int)uVar5) {
-        Library::DKW::DDX::FUN_006b3430(DAT_008075a8,uVar5);
+        Library::DKW::DDX::FUN_006b3430((int *)PTR_008075a8,uVar5);
       }
       HoloTy::NextFas((HoloTy *)param_1->field_0453);
     }
@@ -111,7 +111,7 @@ void __fastcall FUN_005c05f0(AnonShape_005C05F0_AB1ACC3B *param_1)
     cVar6 = '\x01';
     uVar5 = 0x10;
     iVar4 = 1;
-    iVar2 = Library::DKW::DDX::FUN_006bf9f0(DAT_008075a8,0x1a,10,0x2e9,0x32);
+    iVar2 = Library::DKW::DDX::FUN_006bf9f0((int *)PTR_008075a8,0x1a,10,0x2e9,0x32);
     uVar5 = HoloTy::Init((HoloTy *)param_1->field_0457,CASE_3,0x1a,10,iVar2,iVar4,uVar5,cVar6,uVar7)
     ;
     if (uVar5 != 0) {
@@ -120,7 +120,7 @@ void __fastcall FUN_005c05f0(AnonShape_005C05F0_AB1ACC3B *param_1)
       *(undefined4 *)(iVar2 + 0x17) = 0xffffffff;
       uVar5 = *(uint *)(param_1->field_0457 + 3);
       if (-1 < (int)uVar5) {
-        Library::DKW::DDX::FUN_006b3430(DAT_008075a8,uVar5);
+        Library::DKW::DDX::FUN_006b3430((int *)PTR_008075a8,uVar5);
       }
       HoloTy::NextFas((HoloTy *)param_1->field_0457);
     }
@@ -131,9 +131,9 @@ void __fastcall FUN_005c05f0(AnonShape_005C05F0_AB1ACC3B *param_1)
     if (PTR_00802a30->field_00A9 == 0) {
       Library::DKW::DDX::FUN_006b8a60((byte *)PTR_00802a30->field_00AD);
     }
-    else if (PTR_00802a30->field_001C != 0xffffffff) {
+    else if (PTR_00802a30->field_001C != (cLoadingTy *)0xffffffff) {
       Library::DKW::DDX::FUN_006b34d0
-                ((uint *)PTR_00802a30->field_0060,PTR_00802a30->field_001C,0xfffffffe,
+                ((uint *)PTR_00802a30->field_0060,(uint)PTR_00802a30->field_001C,0xfffffffe,
                  PTR_00802a30->field_0034,PTR_00802a30->field_0038);
       param_1->field_0065 = 4;
       return;

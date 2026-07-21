@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* [STConstructorApplier] Recovered constructor candidate.
    VTable: 0079BD1C (store 0058BA59)
@@ -10,8 +12,6 @@
 STSatC * __thiscall STSatC::STSatC(STSatC *this)
 
 {
-  int iVar1;
-  undefined4 *puVar2;
 
   STGameObjC::STGameObjC((STGameObjC *)this);
   thunk_FUN_004ab810((AnonShape_004AB810_8E5693D5 *)&this->field_01D5);
@@ -22,12 +22,7 @@ STSatC * __thiscall STSatC::STSatC(STSatC *this)
   this->field_0245 = 0;
   this->field_023D = 0;
   this->field_0235 = 0;
-  puVar2 = (undefined4 *)&this->field_0x275;
-  for (iVar1 = 9; iVar1 != 0; iVar1 = iVar1 + -1) {
-    *puVar2 = 0;
-    puVar2 = puVar2 + 1;
-  }
-  *(undefined2 *)puVar2 = 0;
+  memset(&this->field_0x275, 0, 0x26); /* compiler bulk-zero initialization */
   return this;
 }
 

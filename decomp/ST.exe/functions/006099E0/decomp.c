@@ -13,7 +13,6 @@ uint __thiscall STFieldC::CreateField(STFieldC *this,uint param_1)
   int iVar3;
   DArrayTy *pDVar4;
   int iVar5;
-  undefined4 *puVar6;
   uint uVar7;
   undefined4 local_90 [15];
   undefined4 local_54;
@@ -46,15 +45,11 @@ uint __thiscall STFieldC::CreateField(STFieldC *this,uint param_1)
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   if (local_c->field_0234 == (DArrayTy *)0x0) {
-    pDVar4 = (DArrayTy *)Library::DKW::TBL::FUN_006ae290((uint *)0x0,param_1,0x40,10);
+    pDVar4 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,param_1,0x40,10);
     pSVar2->field_0234 = pDVar4;
   }
   if ((pSVar2->field_0234 != (DArrayTy *)0x0) && (param_1 != 0)) {
-    puVar6 = local_90;
-    for (iVar3 = 0x10; iVar3 != 0; iVar3 = iVar3 + -1) {
-      *puVar6 = 0;
-      puVar6 = puVar6 + 1;
-    }
+    memset(local_90, 0, 0x40); /* compiler bulk-zero initialization */
     local_54 = 0xffffffff;
     if (0 < (int)param_1) {
       do {

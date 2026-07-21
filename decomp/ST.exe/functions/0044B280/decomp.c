@@ -13,7 +13,7 @@ STAllPlayersC::CalibrateTmp
 {
   code *pcVar1;
   int iVar2;
-  uint *puVar3;
+  DArrayTy *pDVar3;
   int iVar4;
   dword dVar5;
   uint index;
@@ -73,16 +73,16 @@ STAllPlayersC::CalibrateTmp
                0x307c);
   }
   if ((param_5 != (int *)0x0) && (*param_5 == 0)) {
-    puVar3 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,0,2,1);
-    *param_5 = (int)puVar3;
+    pDVar3 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,0,2,1);
+    *param_5 = (int)pDVar3;
   }
   if ((param_6 != (int *)0x0) && (*param_6 == 0)) {
-    puVar3 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,0,2,1);
-    *param_6 = (int)puVar3;
+    pDVar3 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,0,2,1);
+    *param_6 = (int)pDVar3;
   }
   if ((param_7 != (int *)0x0) && (*param_7 == 0)) {
-    puVar3 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,0,2,1);
-    *param_7 = (int)puVar3;
+    pDVar3 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,0,2,1);
+    *param_7 = (int)pDVar3;
   }
   if (((param_5 == (int *)0x0) && (param_6 == (int *)0x0)) && (param_7 == (int *)0x0)) {
     RaiseInternalException

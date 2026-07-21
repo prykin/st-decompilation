@@ -39,15 +39,15 @@ void __thiscall ChooseMapTy::DoneChooseMap(ChooseMapTy *this)
       if (PTR_00802a30->field_00A9 == 0) {
         Library::DKW::DDX::FUN_006b8b10((int *)PTR_00802a30->field_00AD);
       }
-      else if (PTR_00802a30->field_001C != 0xffffffff) {
-        FUN_006b3af0((int *)PTR_00802a30->field_0060,PTR_00802a30->field_001C);
+      else if (PTR_00802a30->field_001C != (cLoadingTy *)0xffffffff) {
+        FUN_006b3af0((int *)PTR_00802a30->field_0060,(uint)PTR_00802a30->field_001C);
       }
     }
     iVar4 = *(int *)&pMVar3->field_0x4d;
     if (((iVar4 != 0x6120) && (iVar4 != 0x6121)) && (iVar4 != 0x6105)) {
       DarkScreen(DAT_0080759c,10,2);
     }
-    if (PTR_0081176c->field_002C != (ccFntTy *)0x0) {
+    if (PTR_0081176c->field_002C != (ushort *)0x0) {
       cMf32::RecMemFree(g_cMf32_00806780,(uint *)&PTR_0081176c->field_002C);
     }
     if (*(HoloTy **)&pMVar3[0x24].field_0xcc != (HoloTy *)0x0) {
@@ -62,14 +62,14 @@ void __thiscall ChooseMapTy::DoneChooseMap(ChooseMapTy *this)
     iVar4 = 0x16;
     do {
       if (*puVar6 != 0xffffffff) {
-        FUN_006b3bb0(DAT_008075a8,*puVar6);
+        FUN_006b3bb0((int *)PTR_008075a8,*puVar6);
         *puVar6 = 0xffffffff;
       }
       puVar6 = puVar6 + 1;
       iVar4 = iVar4 + -1;
     } while (iVar4 != 0);
     if (*(uint *)&pMVar3[0x20].field_0x27 != 0xffffffff) {
-      FUN_006b3bb0(DAT_008075a8,*(uint *)&pMVar3[0x20].field_0x27);
+      FUN_006b3bb0((int *)PTR_008075a8,*(uint *)&pMVar3[0x20].field_0x27);
     }
     this_00 = *(HoloTy **)&pMVar3[0x24].field_0xd0;
     *(undefined4 *)&pMVar3[0x20].field_0x27 = 0xffffffff;
@@ -89,7 +89,7 @@ void __thiscall ChooseMapTy::DoneChooseMap(ChooseMapTy *this)
         FUN_006b3af0((int *)PTR_0081176c->field_04F7,PTR_0081176c->field_04B3);
       }
       if (-1 < PTR_0081176c->field_0540) {
-        FUN_006b3af0(DAT_008075a8,PTR_0081176c->field_0540);
+        FUN_006b3af0((int *)PTR_008075a8,PTR_0081176c->field_0540);
       }
     }
     if (*(HoloTy **)&pMVar3[0x24].field_0xd4 != (HoloTy *)0x0) {
@@ -107,10 +107,10 @@ void __thiscall ChooseMapTy::DoneChooseMap(ChooseMapTy *this)
         FUN_006b3af0((int *)PTR_0081176c->field_0635,PTR_0081176c->field_05F1);
       }
       if (-1 < PTR_0081176c->field_0558) {
-        FUN_006b3af0(DAT_008075a8,PTR_0081176c->field_0558);
+        FUN_006b3af0((int *)PTR_008075a8,PTR_0081176c->field_0558);
       }
       if (-1 < PTR_0081176c->field_0554) {
-        FUN_006b3af0(DAT_008075a8,PTR_0081176c->field_0554);
+        FUN_006b3af0((int *)PTR_008075a8,PTR_0081176c->field_0554);
       }
     }
     if (*(int *)&pMVar3[0x20].field_0x1b != 0) {

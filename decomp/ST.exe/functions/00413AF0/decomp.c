@@ -1,6 +1,5 @@
 
-void FUN_00413af0(void *param_1,AnonShape_00413AF0_B6B4EE9A *param_2,int param_3,int param_4,
-                 int param_5)
+void FUN_00413af0(void *param_1,DArrayTy *param_2,int param_3,int param_4,int param_5)
 
 {
   short sVar1;
@@ -134,8 +133,9 @@ void FUN_00413af0(void *param_1,AnonShape_00413AF0_B6B4EE9A *param_2,int param_3
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     if (*(short *)((int)param_1 + 0x27) != 0) {
       do {
-        if (local_28 < param_2->field_000C) {
-          puVar9 = (undefined2 *)(param_2->field_0008 * local_28 + param_2->field_001C);
+        if (local_28 < param_2->count) {
+          /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(param_2, local_28) (runtime stride) */
+          puVar9 = (undefined2 *)(param_2->elementSize * local_28 + (int)param_2->data);
         }
         else {
           puVar9 = (undefined2 *)0x0;
@@ -248,8 +248,9 @@ void FUN_00413af0(void *param_1,AnonShape_00413AF0_B6B4EE9A *param_2,int param_3
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     if (*(short *)((int)param_1 + 0x27) != 0) {
       do {
-        if (local_28 < param_2->field_000C) {
-          puVar9 = (undefined2 *)(param_2->field_0008 * local_28 + param_2->field_001C);
+        if (local_28 < param_2->count) {
+          /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(param_2, local_28) (runtime stride) */
+          puVar9 = (undefined2 *)(param_2->elementSize * local_28 + (int)param_2->data);
         }
         else {
           puVar9 = (undefined2 *)0x0;

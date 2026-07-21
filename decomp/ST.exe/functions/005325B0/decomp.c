@@ -64,7 +64,7 @@ void __thiscall OptPanelTy::PrepAsses(OptPanelTy *this,void *param_1)
   iVar5 = Library::MSVCRT::__setjmp3(local_94.jumpBuffer,0);
   if (iVar5 != 0) {
     g_currentExceptionFrame = local_94.previous;
-    pDVar7 = (DArrayTy *)Library::DKW::TBL::FUN_006ae290((uint *)0x0,1,0x98,1);
+    pDVar7 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,1,0x98,1);
     local_8->field_02FD = pDVar7;
     pOVar12 = local_8;
     goto LAB_00532758;

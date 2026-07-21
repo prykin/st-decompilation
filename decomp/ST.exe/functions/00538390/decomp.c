@@ -12,7 +12,6 @@ void __thiscall PanelTy::DonePanel(PanelTy *this)
   PanelTy *pPVar2;
   int iVar3;
   int iVar4;
-  undefined4 *puVar5;
   InternalExceptionFrame local_4c;
   PanelTy *local_8;
 
@@ -22,18 +21,14 @@ void __thiscall PanelTy::DonePanel(PanelTy *this)
   iVar3 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
   pPVar2 = local_8;
   if (iVar3 == 0) {
-    puVar5 = (undefined4 *)&local_8->field_0x18;
-    for (iVar3 = 8; iVar3 != 0; iVar3 = iVar3 + -1) {
-      *puVar5 = 0;
-      puVar5 = puVar5 + 1;
-    }
+    memset(&local_8->field_0x18, 0, 0x20); /* compiler bulk-zero initialization */
     local_8->field_0028 = 0x14;
     local_8->field_002C = local_8->field_0008;
     FUN_006e6000(local_8,3,1,(undefined4 *)&local_8->field_0x18);
-    if (-1 < (int)pPVar2->field_0060) {
-      FUN_006b3bb0(DAT_008075a8,pPVar2->field_0060);
+    if (-1 < pPVar2->field_0060) {
+      FUN_006b3bb0((int *)PTR_008075a8,pPVar2->field_0060);
     }
-    pPVar2->field_0060 = 0xffffffff;
+    pPVar2->field_0060 = -1;
     if (pPVar2->field_0068 != 0) {
       FreeAndNull((void **)&pPVar2->field_0068);
     }

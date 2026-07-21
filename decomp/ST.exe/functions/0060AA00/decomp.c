@@ -135,9 +135,9 @@ void __fastcall FUN_0060aa00(AnonShape_0060AA00_19A5DB50 *param_1)
     }
     else {
       param_1->field_0226 = param_1->field_01FD;
-      iVar6 = PTR_00802a38->field_00E4;
+      uVar3 = PTR_00802a38->field_00E4;
       param_1->field_0248 = 1;
-      param_1->field_0250 = iVar6 + 0x1e;
+      param_1->field_0250 = uVar3 + 0x1e;
     }
   }
   uVar3 = param_1->field_0226 - param_1->field_01F9 / 2;

@@ -26,14 +26,14 @@ undefined4 __thiscall FUN_006164e0(void *this,int *param_1,int *param_2,int *par
     return 0xffffffff;
   }
   iVar5 = *(int *)((int)this + 0x298);
-  iVar6 = PTR_00802a38->field_00E4;
+  uVar7 = PTR_00802a38->field_00E4;
   local_8 = (int)*(short *)((int)this + 0x25a);
   local_c = (int)*(short *)((int)this + 0x25c);
-  *(int *)((int)this + 0x298) = iVar6;
+  *(uint *)((int)this + 0x298) = uVar7;
   iVar2 = (int)*(short *)((int)this + 0x25e);
   iVar3 = local_10 - *(short *)((int)this + 0x2cb);
   iVar4 = local_14 - *(short *)((int)this + 0x2cd);
-  iVar6 = (iVar6 - iVar5) * *(int *)((int)this + 0x288);
+  iVar6 = (uVar7 - iVar5) * *(int *)((int)this + 0x288);
   iVar5 = local_18 - *(short *)((int)this + 0x2cf);
   if (0xe1 < iVar5 * iVar5 + iVar4 * iVar4 + iVar3 * iVar3) {
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
@@ -52,7 +52,7 @@ undefined4 __thiscall FUN_006164e0(void *this,int *param_1,int *param_2,int *par
         uVar7 = *(int *)((int)this + 0x1c) * 0x41c64e6d + 0x3039;
         *(uint *)((int)this + 0x1c) = uVar7;
         *(uint *)((int)this + 0x294) = (uVar7 >> 0x10) % 0xb + 10 + PTR_00802a38->field_00E4;
-        *(undefined4 *)((int)this + 0x298) = PTR_00802a38->field_00E4;
+        *(uint *)((int)this + 0x298) = PTR_00802a38->field_00E4;
       }
     }
     else {
@@ -118,12 +118,12 @@ undefined4 __thiscall FUN_006164e0(void *this,int *param_1,int *param_2,int *par
           *(undefined1 *)((int)this + 0x29c) = 1;
           iVar2 = iVar2 + 10;
         }
-        iVar6 = FUN_006acf0d((int)*(short *)((int)this + 0x25a),(int)*(short *)((int)this + 0x25c),
+        iVar3 = FUN_006acf0d((int)*(short *)((int)this + 0x25a),(int)*(short *)((int)this + 0x25c),
                              (int)*(short *)((int)this + 0x25e),local_8,local_c,iVar2);
-        if (iVar6 != 0) {
-          *(int *)((int)this + 0x27c) = ((local_8 - *(short *)((int)this + 0x25a)) * 10000) / iVar6;
-          *(int *)((int)this + 0x280) = ((iVar5 - *(short *)((int)this + 0x25c)) * 10000) / iVar6;
-          *(int *)((int)this + 0x284) = ((iVar2 - *(short *)((int)this + 0x25e)) * 10000) / iVar6;
+        if (iVar3 != 0) {
+          *(int *)((int)this + 0x27c) = ((local_8 - *(short *)((int)this + 0x25a)) * 10000) / iVar3;
+          *(int *)((int)this + 0x280) = ((iVar5 - *(short *)((int)this + 0x25c)) * 10000) / iVar3;
+          *(int *)((int)this + 0x284) = ((iVar2 - *(short *)((int)this + 0x25e)) * 10000) / iVar3;
         }
       }
     }

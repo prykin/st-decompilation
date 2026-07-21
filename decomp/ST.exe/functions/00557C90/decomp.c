@@ -90,8 +90,8 @@ void __thiscall VisibleClassTy::Init(VisibleClassTy *this)
     } while (iVar11 < 3);
     Library::Ourlib::STDARK::FUN_007176f0
               (PTR_00807598,&this_00->field_003C,this_00->field_0028,this_00->field_002C,
-               (int)&this_00->field_0118,this_00->field_004C,this_00->field_0030,this_00->field_0034
-               ,(int)&this_00->field_01D8,3,0x10,&DAT_007c9290,&DAT_007c929c);
+               (int)&this_00->field_0118,(int)this_00->field_004C,this_00->field_0030,
+               this_00->field_0034,(int)&this_00->field_01D8,3,0x10,&DAT_007c9290,&DAT_007c929c);
     pDVar9 = this_00->field_0110;
     uVar12 = 0;
     if (0 < (int)pDVar9->count) {

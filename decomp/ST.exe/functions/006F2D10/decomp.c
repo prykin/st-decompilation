@@ -1,9 +1,10 @@
+#include "../../pseudocode_runtime.h"
+
 
 uint __cdecl FUN_006f2d10(byte *param_1,byte *param_2)
 
 {
   short sVar1;
-  int iVar2;
   uint uVar3;
   uint *puVar4;
   uint *puVar5;
@@ -15,11 +16,7 @@ uint __cdecl FUN_006f2d10(byte *param_1,byte *param_2)
   if (param_2[1] == 0) {
     return 0;
   }
-  puVar4 = local_204;
-  for (iVar2 = 0x80; iVar2 != 0; iVar2 = iVar2 + -1) {
-    *puVar4 = 0;
-    puVar4 = puVar4 + 1;
-  }
+  memset(local_204, 0, 0x200); /* compiler bulk-zero initialization */
   /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   sVar1 = *(short *)(param_1 + 0x16);
   puVar4 = (uint *)(param_1 + 0x18);

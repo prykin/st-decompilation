@@ -4,7 +4,7 @@
    Evidence: final_vptr=0079059C; returns_this=true; calls_before=1; field_writes_after=0;
    incoming_edx_uses=0; incoming_stack_parameter_uses=0; table_confidence=high */
 
-undefined4 * __thiscall STAllPlayersC::STAllPlayersC(STAllPlayersC *this)
+STAllPlayersC * __thiscall STAllPlayersC::STAllPlayersC(STAllPlayersC *this)
 
 {
   STPlayerRuntimeRecord *pSVar1;
@@ -22,6 +22,6 @@ undefined4 * __thiscall STAllPlayersC::STAllPlayersC(STAllPlayersC *this)
     pSVar1->raceId = 0;
     pSVar1 = pSVar1 + 1;
   } while ((int)pSVar1 < 0x7fa130);
-  return &this->vtable;
+  return this;
 }
 

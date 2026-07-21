@@ -27,7 +27,7 @@ STAllPlayersC::_DeleteGuardBoat(STAllPlayersC *this,char param_1,short param_2,i
   DArrayTy *local_20;
   STAllPlayersC *local_1c;
   undefined4 local_18;
-  undefined4 local_14;
+  uint local_14;
   DArrayTy *local_10;
   uint local_c;
   dword local_8;

@@ -21,7 +21,6 @@ void __thiscall AiTactClassTy::ExecClaim(AiTactClassTy *this,int param_1)
   int iVar10;
   void *pvVar11;
   void *pvVar12;
-  uint *puVar13;
   bool bVar14;
   InternalExceptionFrame local_88;
   uint local_44 [2];
@@ -35,8 +34,7 @@ void __thiscall AiTactClassTy::ExecClaim(AiTactClassTy *this,int param_1)
   uint local_c;
   uint local_8;
 
-  if ((this->field_0091 == 0) || ((uint)(this->field_0095 + this->field_0091) <= this->field_012C))
-  {
+  if ((this->field_0091 == 0) || (this->field_0095 + this->field_0091 <= this->field_012C)) {
     this->field_0095 = this->field_012C;
     local_88.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_88;
@@ -83,11 +81,8 @@ void __thiscall AiTactClassTy::ExecClaim(AiTactClassTy *this,int param_1)
                   }
                   this_00 = *(AiFltClassTy **)((int)pvVar11 + 4);
                   if (this_00 != (AiFltClassTy *)0x0) {
-                    puVar13 = local_44;
-                    for (iVar8 = 0xd; iVar8 != 0; iVar8 = iVar8 + -1) {
-                      *puVar13 = 0;
-                      puVar13 = puVar13 + 1;
-                    }
+                    memset(local_44, 0, 0x34); /* compiler bulk-zero initialization */
+                    iVar8 = 0;
                     local_44[1] = pAVar6->field_012C;
                     local_44[0] = 0x68;
                     uStack_3a = SUB42(pvVar12,0);
@@ -129,11 +124,8 @@ void __thiscall AiTactClassTy::ExecClaim(AiTactClassTy *this,int param_1)
                 pvVar11 = (void *)0x0;
               }
               if ((pvVar11 != (void *)0x0) && (*(int *)((int)pvVar11 + 4) != 0)) {
-                puVar13 = local_44;
-                for (iVar8 = 0xd; iVar8 != 0; iVar8 = iVar8 + -1) {
-                  *puVar13 = 0;
-                  puVar13 = puVar13 + 1;
-                }
+                memset(local_44, 0, 0x34); /* compiler bulk-zero initialization */
+                iVar8 = 0;
                 local_44[1] = pAVar6->field_012C;
                 local_44[0] = 0x69;
                 uStack_3a = (undefined2)((uint)pvVar12 >> 8);
@@ -165,11 +157,7 @@ void __thiscall AiTactClassTy::ExecClaim(AiTactClassTy *this,int param_1)
                 pvVar11 = (void *)0x0;
               }
               if ((pvVar11 != (void *)0x0) && (*(int *)((int)pvVar11 + 4) != 0)) {
-                puVar13 = local_44;
-                for (iVar8 = 0xd; iVar8 != 0; iVar8 = iVar8 + -1) {
-                  *puVar13 = 0;
-                  puVar13 = puVar13 + 1;
-                }
+                memset(local_44, 0, 0x34); /* compiler bulk-zero initialization */
                 local_44[1] = pAVar6->field_012C;
                 local_44[0] = 0x6b;
                 cStack_3b = (char)((uint)pvVar12 >> 8);

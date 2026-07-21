@@ -17,7 +17,6 @@ SetAccelerator(int param_1,undefined4 param_2,undefined4 param_3,undefined4 para
   uint uVar3;
   int iVar4;
   uint *puVar5;
-  int *piVar6;
   uint *puVar7;
   bool bVar8;
   uint local_100 [19];
@@ -49,11 +48,8 @@ SetAccelerator(int param_1,undefined4 param_2,undefined4 param_3,undefined4 para
     }
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  puVar5 = local_50;
-  for (iVar2 = 0x13; iVar2 != 0; iVar2 = iVar2 + -1) {
-    *puVar5 = 0;
-    puVar5 = puVar5 + 1;
-  }
+  memset(local_50, 0, 0x4c); /* compiler bulk-zero initialization */
+  iVar2 = 0;
   local_3c = param_2;
   local_1c = param_2;
   local_38 = param_3;
@@ -65,11 +61,7 @@ SetAccelerator(int param_1,undefined4 param_2,undefined4 param_3,undefined4 para
   local_30 = param_9;
   local_50[2] = param_7;
   local_2c = param_11;
-  piVar6 = local_70;
-  for (iVar2 = 8; iVar2 != 0; iVar2 = iVar2 + -1) {
-    *piVar6 = 0;
-    piVar6 = piVar6 + 1;
-  }
+  memset(local_70, 0, 0x20); /* compiler bulk-zero initialization */
   local_c = param_12;
   local_5c = local_50;
   local_50[1] = param_6;
@@ -78,16 +70,16 @@ SetAccelerator(int param_1,undefined4 param_2,undefined4 param_3,undefined4 para
   local_70[3] = 3;
   FUN_006e3db0((int)local_70);
   if (param_1 != 0) {
-    if (DAT_008026f0 == (DArrayTy *)0x0) {
-      DAT_008026f0 = (DArrayTy *)Library::DKW::TBL::FUN_006ae290((uint *)0x0,10,0x4c,10);
+    if (g_dArray_008026F0 == (DArrayTy *)0x0) {
+      g_dArray_008026F0 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,10,0x4c,10);
     }
-    Library::DKW::TBL::FUN_006ae1c0(&DAT_008026f0->flags,local_50);
+    Library::DKW::TBL::FUN_006ae1c0(&g_dArray_008026F0->flags,local_50);
     g_currentExceptionFrame = local_b4.previous;
     return;
   }
-  if (DAT_008026f0 != (DArrayTy *)0x0) {
-    DAT_008026f0->iteratorIndex = 0;
-    uVar3 = FUN_006b1190((AnonShape_006B1190_EDB2B5FD *)DAT_008026f0,local_100);
+  if (g_dArray_008026F0 != (DArrayTy *)0x0) {
+    g_dArray_008026F0->iteratorIndex = 0;
+    uVar3 = FUN_006b1190((AnonShape_006B1190_EDB2B5FD *)g_dArray_008026F0,local_100);
     if (-1 < (int)uVar3) {
       do {
         iVar2 = 0x13;
@@ -102,17 +94,17 @@ SetAccelerator(int param_1,undefined4 param_2,undefined4 param_3,undefined4 para
           puVar7 = puVar7 + 1;
         } while (bVar8);
         if (bVar8) {
-          FUN_006b0c70(DAT_008026f0,uVar3);
-          if (DAT_008026f0->count != 0) {
+          FUN_006b0c70(g_dArray_008026F0,uVar3);
+          if (g_dArray_008026F0->count != 0) {
             g_currentExceptionFrame = local_b4.previous;
             return;
           }
-          DArrayDestroy(DAT_008026f0);
-          DAT_008026f0 = (DArrayTy *)0x0;
+          DArrayDestroy(g_dArray_008026F0);
+          g_dArray_008026F0 = (DArrayTy *)0x0;
           g_currentExceptionFrame = local_b4.previous;
           return;
         }
-        uVar3 = FUN_006b1190((AnonShape_006B1190_EDB2B5FD *)DAT_008026f0,local_100);
+        uVar3 = FUN_006b1190((AnonShape_006B1190_EDB2B5FD *)g_dArray_008026F0,local_100);
         if ((int)uVar3 < 0) {
           g_currentExceptionFrame = local_b4.previous;
           return;

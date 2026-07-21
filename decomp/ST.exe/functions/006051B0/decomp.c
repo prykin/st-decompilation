@@ -142,16 +142,16 @@ STExplosionC::LoadImagSpr(STExplosionC *this,undefined4 param_1,undefined4 param
       }
       else {
         if (((local_1c < 0) || (pVVar3->field_0030 <= local_1c)) ||
-           (((&DAT_0079aed0)[local_14] + local_20 < 0 ||
-            (pVVar3->field_0034 <= (&DAT_0079aed0)[local_14] + local_20)))) {
+           ((g_centeredOffsets5[local_14] + local_20 < 0 ||
+            (pVVar3->field_0034 <= g_centeredOffsets5[local_14] + local_20)))) {
           bVar10 = false;
         }
         else {
           bVar10 = true;
         }
-        if ((bVar10) && (pVVar3->field_004C != 0)) {
-          bVar10 = *(char *)(((&DAT_0079aed0)[local_14] + local_20) * pVVar3->field_0030 +
-                             pVVar3->field_004C + local_1c) != '\0';
+        if ((bVar10) && (pVVar3->field_004C != (byte *)0x0)) {
+          bVar10 = pVVar3->field_004C
+                   [local_1c + (g_centeredOffsets5[local_14] + local_20) * pVVar3->field_0030] != 0;
         }
         else {
           bVar10 = true;

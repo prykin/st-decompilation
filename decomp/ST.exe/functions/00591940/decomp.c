@@ -38,7 +38,7 @@ void __thiscall CampaignTy::PaintCampaign(CampaignTy *this)
     RaiseInternalException(iVar3,0,"E:\\__titans\\Start\\camp_obj.cpp",0xb5);
     return;
   }
-  FUN_006b5f80(DAT_008075a8,0,0,g_nWidth_00806730,DAT_00806734);
+  FUN_006b5f80((int *)PTR_008075a8,0,0,g_nWidth_00806730,DAT_00806734);
   PutDDX(0,0,'\x01',(BITMAPINFO *)PTR_0081176c->field_002C);
   pCVar2 = local_8;
   pcVar11 = PTR_0081176c->field_0030;

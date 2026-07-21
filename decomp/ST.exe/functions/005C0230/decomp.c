@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 void __fastcall FUN_005c0230(MReportTy *param_1)
 
@@ -6,7 +8,6 @@ void __fastcall FUN_005c0230(MReportTy *param_1)
   int *piVar2;
   byte bVar3;
   int iVar4;
-  undefined4 *puVar5;
   int iVar6;
   bool bVar7;
   int local_4bc [280];
@@ -20,16 +21,10 @@ void __fastcall FUN_005c0230(MReportTy *param_1)
   int *local_14;
   undefined4 local_10;
 
-  puVar5 = local_5c;
-  for (iVar4 = 0x16; iVar4 != 0; iVar4 = iVar4 + -1) {
-    *puVar5 = 0;
-    puVar5 = puVar5 + 1;
-  }
-  piVar2 = local_4bc;
-  for (iVar4 = 0x118; iVar4 != 0; iVar4 = iVar4 + -1) {
-    *piVar2 = 0;
-    piVar2 = piVar2 + 1;
-  }
+  memset(local_5c, 0, 0x58); /* compiler bulk-zero initialization */
+  iVar4 = 0;
+  memset(local_4bc, 0, 0x460); /* compiler bulk-zero initialization */
+  iVar4 = 0;
   param_1->field_0353 = 0x7d;
   param_1->field_0357 = 0x7e;
   param_1->field_035B = 0x93;
@@ -75,11 +70,7 @@ void __fastcall FUN_005c0230(MReportTy *param_1)
   *(undefined4 *)&param_1->field_0x43b = 0x251;
   *(undefined4 *)&param_1->field_0x43f = 0x43;
   *(undefined4 *)&param_1->field_0x44b = 0x244e;
-  puVar5 = (undefined4 *)&param_1->field_0x1d;
-  for (iVar4 = 8; iVar4 != 0; iVar4 = iVar4 + -1) {
-    *puVar5 = 0;
-    puVar5 = puVar5 + 1;
-  }
+  memset(&param_1->field_0x1d, 0, 0x20); /* compiler bulk-zero initialization */
   param_1->field_002D = 0x13;
   *(undefined4 *)&param_1->field_0x31 = param_1->field_0008;
   FUN_006e6000(param_1,3,1,(undefined4 *)&param_1->field_0x1d);

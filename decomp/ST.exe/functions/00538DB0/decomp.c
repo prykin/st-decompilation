@@ -84,7 +84,8 @@ LAB_00538de2:
   puVar5 = (uint *)LoadResourceString(param_3,HINSTANCE_00807618);
   ccFntTy::WrStr(*(ccFntTy **)&PTR_00802a28->field_0x24,puVar5,iVar8,iVar10,uVar3);
   Library::DKW::DDX::FUN_006b3640
-            (DAT_008075a8,pPVar2->field_0060,0xffffffff,pPVar2->field_003C,pPVar2->field_0044);
+            ((int *)PTR_008075a8,pPVar2->field_0060,0xffffffff,pPVar2->field_003C,pPVar2->field_0044
+            );
   g_currentExceptionFrame = local_58.previous;
   return;
 }

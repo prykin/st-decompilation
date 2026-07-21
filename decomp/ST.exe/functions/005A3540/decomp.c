@@ -74,8 +74,8 @@ void __thiscall FSGSTy::SetGameList(FSGSTy *this,int param_1,int *param_2)
       pDVar13->count = 0;
       do {
         if (param_1 == 0) {
-          FUN_006b5f80(DAT_008075a8,0x13,0x5e,0x174,0x175);
-          PutDDXClip(0x13,0x5e,0,0,0x174,(byte *)0x175,'\x01',(BITMAPINFO *)this_01->field_1E9A);
+          FUN_006b5f80((int *)PTR_008075a8,0x13,0x5e,0x174,0x175);
+          PutDDXClip(0x13,0x5e,0,0,0x174,(byte *)0x175,'\x01',this_01->field_1E9A);
           this_01->field_002D = 0x28;
           *(dword *)&this_01->field_0x31 = this_01->field_1EBE->count;
           *(undefined2 *)&this_01->field_0x35 = 1;

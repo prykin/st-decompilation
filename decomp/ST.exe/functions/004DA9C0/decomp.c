@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 undefined4 __fastcall FUN_004da9c0(undefined4 param_1)
 
@@ -11,7 +13,6 @@ undefined4 __fastcall FUN_004da9c0(undefined4 param_1)
   undefined4 uVar7;
   byte playerId;
   byte *pbVar8;
-  undefined4 *puVar9;
   int *piVar10;
   bool bVar11;
   int local_2bc [155];
@@ -58,8 +59,7 @@ undefined4 __fastcall FUN_004da9c0(undefined4 param_1)
       }
       iVar5 = thunk_FUN_004e60d0(uVar6,iVar4);
       iVar4 = DAT_00798f74;
-      if ((uint)(*(int *)(&DAT_00798f6c + iVar5 * 4) + piVar10[3]) <= (uint)PTR_00802a38->field_00E4
-         ) {
+      if ((uint)(*(int *)(&DAT_00798f6c + iVar5 * 4) + piVar10[3]) <= PTR_00802a38->field_00E4) {
         if ((uint)piVar10[1] % 3 == 1) {
           *piVar10 = 0;
           piVar10[2] = 1;
@@ -143,7 +143,7 @@ LAB_004dabff:
           if (bVar11) {
             iVar4 = thunk_FUN_004e60d0((int)local_8,iVar4);
             uVar3 = (&DAT_00798f74)[iVar4];
-            if (((uint)PTR_00802a38->field_00E4 < piVar10[3] + uVar3) &&
+            if ((PTR_00802a38->field_00E4 < piVar10[3] + uVar3) &&
                (local_10 = (int *)0x1, local_28 < uVar3)) {
               local_28 = uVar3;
             }
@@ -201,7 +201,7 @@ LAB_004dad15:
               if (((local_c != (byte *)uVar6) && (local_14 != uVar6)) &&
                  (((int)pbVar8 < 0x808a71 &&
                   (((PTR_00802a38 == (STPlaySystemC *)0x0 || (*pbVar8 < 8)) &&
-                   ((uint)PTR_00802a38->field_00E4 <= *local_20)))))) {
+                   (PTR_00802a38->field_00E4 <= *local_20)))))) {
                 local_30 = thunk_FUN_004e60d0(local_14,iVar4);
                 local_30 = local_30 + 1;
                 iVar5 = thunk_FUN_004e60d0(uVar6,iVar4);
@@ -223,11 +223,7 @@ LAB_004dad15:
         } while (iVar4 < 0x9b);
         uVar6 = local_14;
         if (DAT_008117bc != (undefined4 *)0x0) {
-          puVar9 = local_50;
-          for (iVar4 = 8; iVar4 != 0; iVar4 = iVar4 + -1) {
-            *puVar9 = 0;
-            puVar9 = puVar9 + 1;
-          }
+          memset(local_50, 0, 0x20); /* compiler bulk-zero initialization */
           local_40 = 0x5dea;
           local_3c = (undefined2)uVar3;
           iVar4 = 0;

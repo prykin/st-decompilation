@@ -189,17 +189,10 @@ void AiCalcDispositionAreas
       Library::MSVCRT::FUN_0072da40();
       local_1c = &stack0xfffffe14;
       local_8 = 0xffffffff;
-      puVar6 = (undefined4 *)&stack0xfffffe14;
-      for (iVar14 = 0x20; iVar14 != 0; iVar14 = iVar14 + -1) {
-        *puVar6 = 0;
-        puVar6 = puVar6 + 1;
-      }
+      memset(&stack0xfffffe14, 0, 0x80); /* compiler bulk-zero initialization */
+      iVar14 = 0;
       DAT_008033b8 = DAT_008032fc + 0x40;
-      puVar6 = DAT_008033b0;
-      for (iVar14 = 0x10; iVar14 != 0; iVar14 = iVar14 + -1) {
-        *puVar6 = 0;
-        puVar6 = puVar6 + 1;
-      }
+      memset(DAT_008033b0, 0, 0x40); /* compiler bulk-zero initialization */
       DAT_008032f8 = DAT_00803300;
       DAT_008032f4 = DAT_00803300 + 500;
       uVar18 = 0;

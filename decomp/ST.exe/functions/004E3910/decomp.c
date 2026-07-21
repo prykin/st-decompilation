@@ -23,7 +23,7 @@ undefined4 __fastcall FUN_004e3910(int *param_1)
   int local_c;
   DArrayTy *local_8;
 
-  if ((uint)param_1[0x13a] <= (uint)PTR_00802a38->field_00E4) {
+  if ((uint)param_1[0x13a] <= PTR_00802a38->field_00E4) {
     uVar5 = param_1[7] * 0x41c64e6d + 0x3039;
     param_1[7] = uVar5;
     local_10 = 0;
@@ -37,7 +37,7 @@ undefined4 __fastcall FUN_004e3910(int *param_1)
           local_c = iVar9;
           if (local_10 == 0) {
             local_10 = 1;
-            local_8 = (DArrayTy *)Library::DKW::TBL::FUN_006ae290((uint *)0x0,10000,0xc,10);
+            local_8 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,10000,0xc,10);
             iVar9 = 0;
             /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
             uVar8 = g_worldGrid._0_4_;

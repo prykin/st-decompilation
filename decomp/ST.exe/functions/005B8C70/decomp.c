@@ -15,7 +15,6 @@ void __thiscall MMsgTy::HidePanel(MMsgTy *this,int param_1,int param_2,int param
   int iVar4;
   byte bVar5;
   uint *puVar6;
-  int *piVar7;
   InternalExceptionFrame local_70;
   int local_2c [8];
   MMsgTy *local_c;
@@ -48,15 +47,12 @@ void __thiscall MMsgTy::HidePanel(MMsgTy *this,int param_1,int param_2,int param
       }
       iVar3 = this_00->field_1CAB;
       if (iVar3 != 0) {
-        piVar7 = local_2c;
-        for (iVar4 = 8; iVar4 != 0; iVar4 = iVar4 + -1) {
-          *piVar7 = 0;
-          piVar7 = piVar7 + 1;
-        }
+        memset(local_2c, 0, 0x20); /* compiler bulk-zero initialization */
         local_2c[3] = 2;
         local_2c[4] = 0x6940;
         local_2c[2] = iVar3;
-        (*this_00->field_000C->vtable->vfunc_18)(local_2c);
+        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+        (*(code *)this_00->field_000C->vtable->field_0018)(local_2c);
       }
       if (param_1 == 0) {
         this_00->field_0065 = 2;

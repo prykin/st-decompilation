@@ -21,8 +21,8 @@ TLOBaseTy * __thiscall TLOBaseTy::TLOBaseTy(TLOBaseTy *this)
   this->field_0607 = (AnonPointee_TLOBaseTy_0607 *)0x0;
   this->field_0251 = 0;
   this->field_061B = 0;
-  this->field_061F = 0;
-  this->vtable = &TLOBaseTyVTable;
+  this->field_061F = (void *)0x0;
+  this->vtable = (AnonPointee_TLOBaseTy_0000 *)&TLOBaseTyVTable;
   this->field_0245 = ~CASE_0;
   this->field_0249 = 0xffffffff;
   this->field_024D = 0xffffffff;

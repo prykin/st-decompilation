@@ -5,7 +5,7 @@
    E:\__titans\wlad\To_boat.cpp
    STBoatC::ReleaseLoad */
 
-void __thiscall STBoatC::ReleaseLoad(STBoatC *this,undefined4 param_1)
+void __thiscall STBoatC::ReleaseLoad(STBoatC *this,uint param_1)
 
 {
   code *pcVar1;
@@ -39,7 +39,8 @@ void __thiscall STBoatC::ReleaseLoad(STBoatC *this,undefined4 param_1)
       this->field_0076 = 1;
       return;
     }
-    iVar2 = (*this->vtable->vfunc_AC)(param_1);
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+    iVar2 = (**(code **)&this->vtable->field_0xac)(param_1);
     if (iVar2 == 1) {
       this->field_05C0 = 2;
     }

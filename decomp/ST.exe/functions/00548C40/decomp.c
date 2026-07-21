@@ -191,13 +191,13 @@ void __thiscall CursorClassTy::TakeCmdToRun(CursorClassTy *this,int param_1)
   }
   if (this_00->field_04DE != '\0') {
     if (((this_00->field_0494 == 0x48) && (pSVar2 = this_00->field_049A, pSVar2 != (STFishC *)0x0))
-       && (PTR_00801690 != (AnonShape_GLOBAL_00801690_2AA401C1 *)0x0)) {
+       && (g_helpPanel_00801690 != (AnonShape_GLOBAL_00801690_2AA401C1 *)0x0)) {
       dVar6 = (*pSVar2->vtable->slot_2C)(pSVar2);
       if (dVar6 == 0x78) {
         dVar6 = *(dword *)&this_00->field_049A->field_0x259;
       }
       iVar5 = (*pSVar2->vtable->vfunc_0C)();
-      thunk_FUN_00514bc0(PTR_00801690,dVar6,iVar5);
+      thunk_FUN_00514bc0(g_helpPanel_00801690,dVar6,iVar5);
       this_00->field_04DE = 0;
     }
     goto switchD_00548db5_caseD_3;
@@ -275,12 +275,7 @@ void __thiscall CursorClassTy::TakeCmdToRun(CursorClassTy *this,int param_1)
       }
       pSVar2 = this_00->field_049A;
       if (pSVar2 == (STFishC *)0x0) break;
-      puVar13 = (undefined4 *)local_1e4;
-      for (iVar5 = 8; iVar5 != 0; iVar5 = iVar5 + -1) {
-        *puVar13 = 0;
-        puVar13 = puVar13 + 1;
-      }
-      *(undefined1 *)puVar13 = 0;
+      memset((void *)local_1e4, 0, 0x21); /* compiler bulk-zero initialization */
       STFishC::sub_004162B0(pSVar2,&local_56,&local_68,&local_2e);
       /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
       local_1e4._1_4_ = SEXT24(local_56);
@@ -292,22 +287,22 @@ void __thiscall CursorClassTy::TakeCmdToRun(CursorClassTy *this,int param_1)
       puVar13 = (undefined4 *)0x17;
       goto cf_common_join_0054A19A;
     case 0xe:
-      if (PTR_007fb2ac != (AnonShape_GLOBAL_007FB2AC_70073F41 *)0x0) {
+      if (g_tLOBldMark_007FB2AC != (AnonShape_GLOBAL_007FB2AC_70073F41 *)0x0) {
         local_b8 = this_00->field_04AA;
         local_b4 = 0;
         local_b0 = 0;
         local_ac = 0;
-        if (PTR_007fb2ac->field_0024 != 0) {
+        if (g_tLOBldMark_007FB2AC->field_0024 != 0) {
           if (&stack0x00000000 != (undefined1 *)0xb4) {
-            local_b4 = PTR_007fb2ac->field_0030;
+            local_b4 = g_tLOBldMark_007FB2AC->field_0030;
           }
           if (&stack0x00000000 != (undefined1 *)0xb0) {
-            local_b0 = PTR_007fb2ac->field_0034;
+            local_b0 = g_tLOBldMark_007FB2AC->field_0034;
           }
           if (&stack0x00000000 != (undefined1 *)0xac) {
-            local_ac = PTR_007fb2ac->field_0038;
+            local_ac = g_tLOBldMark_007FB2AC->field_0038;
           }
-          if (PTR_007fb2ac->field_0024 != 0) {
+          if (g_tLOBldMark_007FB2AC->field_0024 != 0) {
             thunk_FUN_0054edf0((undefined4 *)0x23,&local_b8,0,0xffffffff);
             iVar5 = FUN_006e1dd0(PTR_00807598,this_00->field_00C5 - this_00->field_04B2,
                                  this_00->field_00C9 - this_00->field_04B6,&local_10,&local_c,
@@ -423,11 +418,7 @@ void __thiscall CursorClassTy::TakeCmdToRun(CursorClassTy *this,int param_1)
       }
       break;
     }
-    puVar13 = (undefined4 *)local_120;
-    for (iVar5 = 6; iVar5 != 0; iVar5 = iVar5 + -1) {
-      *puVar13 = 0;
-      puVar13 = puVar13 + 1;
-    }
+    memset((void *)local_120, 0, 0x18); /* compiler bulk-zero initialization */
     if (this_00->field_049A == (STFishC *)0x0) {
       iVar5 = FUN_006e1dd0(PTR_00807598,this_00->field_00C5 - this_00->field_04B2,
                            this_00->field_00C9 - this_00->field_04B6,&local_10,&local_c,
@@ -524,11 +515,7 @@ void __thiscall CursorClassTy::TakeCmdToRun(CursorClassTy *this,int param_1)
   case 0xb:
     pSVar2 = this_00->field_049A;
     if (pSVar2 == (STFishC *)0x0) break;
-    puVar13 = (undefined4 *)local_160;
-    for (iVar5 = 6; iVar5 != 0; iVar5 = iVar5 + -1) {
-      *puVar13 = 0;
-      puVar13 = puVar13 + 1;
-    }
+    memset((void *)local_160, 0, 0x18); /* compiler bulk-zero initialization */
     STFishC::sub_004162B0
               (pSVar2,(undefined2 *)local_3e,(undefined2 *)local_6c,(undefined2 *)local_46);
     local_15b = local_3e[0];
@@ -586,12 +573,7 @@ void __thiscall CursorClassTy::TakeCmdToRun(CursorClassTy *this,int param_1)
     }
     pSVar2 = this_00->field_049A;
     if (pSVar2 == (STFishC *)0x0) break;
-    puVar13 = (undefined4 *)local_1c0;
-    for (iVar5 = 8; iVar5 != 0; iVar5 = iVar5 + -1) {
-      *puVar13 = 0;
-      puVar13 = puVar13 + 1;
-    }
-    *(undefined1 *)puVar13 = 0;
+    memset((void *)local_1c0, 0, 0x21); /* compiler bulk-zero initialization */
     STFishC::sub_004162B0(pSVar2,&local_36,&local_58,&local_62);
     /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
     local_1c0._1_4_ = SEXT24(local_36);
@@ -673,22 +655,22 @@ void __thiscall CursorClassTy::TakeCmdToRun(CursorClassTy *this,int param_1)
     puVar13 = (undefined4 *)0x1f;
     goto cf_common_join_0054A19A;
   case 0x14:
-    if (PTR_007fb2ac != (AnonShape_GLOBAL_007FB2AC_70073F41 *)0x0) {
+    if (g_tLOBldMark_007FB2AC != (AnonShape_GLOBAL_007FB2AC_70073F41 *)0x0) {
       local_c8 = this_00->field_04AA;
       local_c4 = 0;
       local_c0 = 0;
       local_bc = 0;
-      if (PTR_007fb2ac->field_0024 != 0) {
+      if (g_tLOBldMark_007FB2AC->field_0024 != 0) {
         if (&stack0x00000000 != (undefined1 *)0xc4) {
-          local_c4 = PTR_007fb2ac->field_0030;
+          local_c4 = g_tLOBldMark_007FB2AC->field_0030;
         }
         if (&stack0x00000000 != (undefined1 *)0xc0) {
-          local_c0 = PTR_007fb2ac->field_0034;
+          local_c0 = g_tLOBldMark_007FB2AC->field_0034;
         }
         if (&stack0x00000000 != (undefined1 *)0xbc) {
-          local_bc = PTR_007fb2ac->field_0038;
+          local_bc = g_tLOBldMark_007FB2AC->field_0038;
         }
-        if (PTR_007fb2ac->field_0024 != 0) {
+        if (g_tLOBldMark_007FB2AC->field_0024 != 0) {
           thunk_FUN_0054edf0((undefined4 *)0x23,&local_c8,0,0xffffffff);
           iVar5 = FUN_006e1dd0(PTR_00807598,this_00->field_00C5 - this_00->field_04B2,
                                this_00->field_00C9 - this_00->field_04B6,&local_10,&local_c,
@@ -713,12 +695,7 @@ void __thiscall CursorClassTy::TakeCmdToRun(CursorClassTy *this,int param_1)
   case 0x18:
     pSVar2 = this_00->field_049A;
     if (pSVar2 == (STFishC *)0x0) break;
-    puVar13 = (undefined4 *)local_260;
-    for (iVar5 = 8; iVar5 != 0; iVar5 = iVar5 + -1) {
-      *puVar13 = 0;
-      puVar13 = puVar13 + 1;
-    }
-    *(undefined1 *)puVar13 = 0;
+    memset((void *)local_260, 0, 0x21); /* compiler bulk-zero initialization */
     STFishC::sub_004162B0(pSVar2,&local_6e,&local_66,&local_6a);
     /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
     local_260._1_4_ = SEXT24(local_6e);
@@ -780,12 +757,7 @@ void __thiscall CursorClassTy::TakeCmdToRun(CursorClassTy *this,int param_1)
   case 0x1b:
     pSVar2 = this_00->field_049A;
     if (pSVar2 == (STFishC *)0x0) break;
-    puVar13 = (undefined4 *)local_23c;
-    for (iVar5 = 8; iVar5 != 0; iVar5 = iVar5 + -1) {
-      *puVar13 = 0;
-      puVar13 = puVar13 + 1;
-    }
-    *(undefined1 *)puVar13 = 0;
+    memset((void *)local_23c, 0, 0x21); /* compiler bulk-zero initialization */
     STFishC::sub_004162B0(pSVar2,&local_70,&local_38,&local_60);
     /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
     local_23c._1_4_ = SEXT24(local_70);
@@ -925,12 +897,7 @@ cf_common_join_0054A19A:
   case 0x1f:
     pSVar2 = this_00->field_049A;
     if (pSVar2 == (STFishC *)0x0) break;
-    puVar13 = local_284;
-    for (iVar5 = 8; iVar5 != 0; iVar5 = iVar5 + -1) {
-      *puVar13 = 0;
-      puVar13 = puVar13 + 1;
-    }
-    *(undefined1 *)puVar13 = 0;
+    memset(local_284, 0, 0x21); /* compiler bulk-zero initialization */
     /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
     local_284[0]._0_1_ = 0x19;
     local_267 = pSVar2->field_0018;

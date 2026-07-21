@@ -14,7 +14,7 @@ undefined4 * __cdecl FUN_0067d1d0(ushort *param_1)
   int iVar2;
   undefined4 *puVar3;
   undefined4 uVar4;
-  uint *puVar5;
+  DArrayTy *pDVar5;
   undefined4 *puVar6;
   AnonShape_0067D1D0_21940C5B *pAVar7;
   ushort *puVar8;
@@ -58,8 +58,8 @@ undefined4 * __cdecl FUN_0067d1d0(ushort *param_1)
       iVar2 = iVar2 + 0xc;
     } while (iVar2 < 0x3c);
     if (*(int *)&pAVar7[1].field_0x3a == 0) {
-      puVar5 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,10,0x10,5);
-      *(uint **)&local_8[1].field_0x3a = puVar5;
+      pDVar5 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,10,0x10,5);
+      *(DArrayTy **)&local_8[1].field_0x3a = pDVar5;
       pAVar7 = local_8;
     }
     iVar2 = *(int *)&pAVar7[1].field_0x3a;

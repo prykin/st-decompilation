@@ -95,7 +95,7 @@ LAB_004da4d3:
              ((g_playerRuntime[param_1].field2180_0xa0e != 3 ||
               (iVar7 = thunk_FUN_004e60d0((uint)bVar1,(int)param_2),
               (uint)((&DAT_00798f74)[iVar7] + g_playerRuntime[param_1].field2183_0xa1a) <=
-              (uint)PTR_00802a38->field_00E4)))) goto LAB_004da71f;
+              PTR_00802a38->field_00E4)))) goto LAB_004da71f;
         }
         bVar1 = *local_8;
         uVar6 = (uint)bVar1;

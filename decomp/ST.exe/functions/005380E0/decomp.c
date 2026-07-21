@@ -20,8 +20,8 @@ void __thiscall OptPanelTy::UpdateObjectives(OptPanelTy *this)
   errorCode = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
   if (errorCode == 0) {
     PrepMissObj(local_8);
-    if (PTR_00801690 != (AnonShape_GLOBAL_00801690_2AA401C1 *)0x0) {
-      thunk_FUN_00515180(PTR_00801690,'\a');
+    if (g_helpPanel_00801690 != (AnonShape_GLOBAL_00801690_2AA401C1 *)0x0) {
+      thunk_FUN_00515180(g_helpPanel_00801690,'\a');
     }
     g_currentExceptionFrame = local_4c.previous;
     return;

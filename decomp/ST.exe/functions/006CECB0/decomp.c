@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 int FUN_006cecb0(AnonShape_006CECB0_97249119 *param_1,int param_2)
 
@@ -5,7 +7,6 @@ int FUN_006cecb0(AnonShape_006CECB0_97249119 *param_1,int param_2)
   int *piVar1;
   uint uVar2;
   int iVar3;
-  undefined4 *puVar4;
   undefined4 local_38c [95];
   undefined4 local_210;
   byte local_20c;
@@ -18,11 +19,7 @@ int FUN_006cecb0(AnonShape_006CECB0_97249119 *param_1,int param_2)
   uint local_18 [4];
   int *local_8;
 
-  puVar4 = local_94;
-  for (iVar3 = 0x1f; iVar3 != 0; iVar3 = iVar3 + -1) {
-    *puVar4 = 0;
-    puVar4 = puVar4 + 1;
-  }
+  memset(local_94, 0, 0x7c); /* compiler bulk-zero initialization */
   local_94[3] = param_1->field_0018;
   local_94[2] = param_1->field_001C;
   local_8 = (int *)0x0;

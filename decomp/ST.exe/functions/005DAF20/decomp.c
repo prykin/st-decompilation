@@ -32,7 +32,7 @@ LAB_005dafab:
   if ((AnonShape_006B5570_4D68B99C *)this->field_0696 != (AnonShape_006B5570_4D68B99C *)0x0) {
     FUN_006b5570((AnonShape_006B5570_4D68B99C *)this->field_0696);
   }
-  this->field_0696 = (AnonPointee_StartSystemTy_0696 *)0x0;
+  this->field_0696 = (uint *)0x0;
   return;
 }
 

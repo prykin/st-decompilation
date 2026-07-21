@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 void __cdecl
 FUN_0062b830(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4,
@@ -6,7 +8,6 @@ FUN_0062b830(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4
 {
   int *this;
   int iVar1;
-  undefined4 *puVar2;
   undefined4 local_44 [5];
   uint local_30;
   undefined4 local_2c;
@@ -20,11 +21,7 @@ FUN_0062b830(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4
   undefined4 local_8;
 
   this = param_5;
-  puVar2 = local_44;
-  for (iVar1 = 0x10; iVar1 != 0; iVar1 = iVar1 + -1) {
-    *puVar2 = 0;
-    puVar2 = puVar2 + 1;
-  }
+  memset(local_44, 0, 0x40); /* compiler bulk-zero initialization */
   local_28 = param_1;
   local_24 = param_2;
   local_18 = param_5[6];
@@ -41,7 +38,8 @@ FUN_0062b830(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4
   local_8 = param_7;
   local_30 = (uint)(*(int *)(&DAT_00791d68 + iVar1 * 4) == 1);
   local_c = param_6;
-  (*PTR_00802a38->vtable->vfunc_08)(0x124,0,0,local_44,0);
+  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+  (*(code *)PTR_00802a38->vtable->field_0008)(0x124,0,0,local_44,0);
   STFishC::sub_004162B0
             ((STFishC *)this,(undefined2 *)((int)&param_3 + 2),(undefined2 *)((int)&param_2 + 2),
              (undefined2 *)((int)&param_1 + 2));

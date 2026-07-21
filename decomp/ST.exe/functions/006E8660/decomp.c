@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 undefined4 __thiscall
 FUN_006e8660(void *this,int *param_1,uint param_2,uint param_3,uint param_4,uint param_5,
@@ -6,7 +8,6 @@ FUN_006e8660(void *this,int *param_1,uint param_2,uint param_3,uint param_4,uint
 {
   int iVar1;
   undefined4 *puVar2;
-  int iVar3;
   AnonShape_006E8840_CF3FA5BA *pAVar4;
   AnonShape_006E8840_CF3FA5BA *pAVar5;
   int local_8;
@@ -41,11 +42,7 @@ FUN_006e8660(void *this,int *param_1,uint param_2,uint param_3,uint param_4,uint
         return 0xfffffffe;
       }
       *(int *)((int)this + 0x31c) = iVar1;
-      puVar2 = (undefined4 *)(iVar1 + *(int *)((int)this + 0x314) * 0x114);
-      for (iVar3 = 0x2b2; iVar3 != 0; iVar3 = iVar3 + -1) {
-        *puVar2 = 0;
-        puVar2 = puVar2 + 1;
-      }
+      memset((void *)(iVar1 + *(int *)((int)this + 0x314) * 0x114), 0, 0xac8); /* compiler bulk-zero initialization */
       *(int *)((int)this + 0x318) = *(int *)((int)this + 0x318) + 10;
     }
     local_8 = *(int *)((int)this + 0x314);

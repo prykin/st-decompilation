@@ -22,14 +22,14 @@ void __thiscall CursorClassTy::DoneCursor(CursorClassTy *this)
   pCVar2 = local_8;
   if (errorCode == 0) {
     if (-1 < local_8->field_04D6) {
-      FUN_006b3bb0(DAT_008075a8,local_8->field_04D6);
+      FUN_006b3bb0((int *)PTR_008075a8,local_8->field_04D6);
     }
     pCVar2->field_04D6 = -1;
-    if (pCVar2->field_04D2 != (AnonPointee_CursorClassTy_04D2 *)0x0) {
+    if (pCVar2->field_04D2 != (ushort *)0x0) {
       FreeAndNull(&pCVar2->field_04D2);
     }
-    pCVar2->field_04E3 = 0;
-    pCVar2->field_04E7 = 0;
+    pCVar2->field_04E3 = (ushort *)0x0;
+    pCVar2->field_04E7 = (ushort *)0x0;
     if (pCVar2->field_04EB != (SpriteClassTy *)0x0) {
       SpriteClassTy::CloseSprite(pCVar2->field_04EB);
       Library::MSVCRT::FUN_0072e2b0((HoloTy *)pCVar2->field_04EB);

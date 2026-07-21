@@ -14,7 +14,6 @@ void __thiscall CursorClassTy::InitCursor(CursorClassTy *this,undefined4 param_1
   int iVar3;
   ushort *puVar4;
   uint uVar5;
-  AnonPointee_CursorClassTy_04D2 *pAVar6;
   InternalExceptionFrame local_50;
   CursorClassTy *local_c;
   ushort *local_8;
@@ -26,7 +25,8 @@ void __thiscall CursorClassTy::InitCursor(CursorClassTy *this,undefined4 param_1
   this_00 = local_c;
   if (iVar3 == 0) {
     SpriteClassTy::InitSprite
-              ((SpriteClassTy *)&local_c->field_0018,DAT_008075a8,0,'\a',(undefined4 *)0x0,0,0);
+              ((SpriteClassTy *)&local_c->field_0018,(int *)PTR_008075a8,0,'\a',(undefined4 *)0x0,0,
+               0);
     Library::DKW::DDX::FUN_006b88d0
               (&this_00->field_00AD,DAT_0080759c,0,(BITMAPINFO *)0x0,0x8000000,0,(BITMAPINFO *)0x0,0
               );
@@ -43,14 +43,13 @@ void __thiscall CursorClassTy::InitCursor(CursorClassTy *this,undefined4 param_1
     puVar4 = local_8 + 0x14;
     iVar3 = 1;
     uVar5 = FUN_006b4fe0((int)local_8);
-    pAVar6 = (AnonPointee_CursorClassTy_04D2 *)
-             FUN_006b50c0(800,0x96,(uint)local_8[7],uVar5,(undefined4 *)puVar4,iVar3);
-    this_00->field_04D2 = pAVar6;
+    puVar4 = (ushort *)FUN_006b50c0(800,0x96,(uint)local_8[7],uVar5,(undefined4 *)puVar4,iVar3);
+    this_00->field_04D2 = puVar4;
     cMf32::RecMemFree(g_cMf32_00806780,(uint *)&local_8);
     piVar1 = &this_00->field_04D6;
-    FUN_006b2330((uint)DAT_008075a8,(uint *)piVar1,1,0x4047ff,0,0,(uint)this_00->field_04D2);
-    FUN_006b28c0((int)DAT_008075a8,*piVar1,1);
-    FUN_006b3af0(DAT_008075a8,*piVar1);
+    FUN_006b2330((uint)PTR_008075a8,(uint *)piVar1,1,0x4047ff,0,0,(uint)this_00->field_04D2);
+    FUN_006b28c0((int)PTR_008075a8,*piVar1,1);
+    FUN_006b3af0((int *)PTR_008075a8,*piVar1);
     g_currentExceptionFrame = local_50.previous;
     return;
   }

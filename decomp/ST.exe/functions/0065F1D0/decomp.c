@@ -20,7 +20,7 @@ int __thiscall AiFltClassTy::AppendZone(AiFltClassTy *this,short *param_1)
   InternalExceptionFrame local_74;
   int local_30;
   int local_2c;
-  AnonPointee_AiFltClassTy_022F *local_28;
+  DArrayTy *local_28;
   uint local_24;
   int local_20;
   AiFltClassTy *local_1c;
@@ -46,8 +46,8 @@ int __thiscall AiFltClassTy::AppendZone(AiFltClassTy *this,short *param_1)
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   local_c = 0;
-  local_28 = local_1c->field_022F;
-  local_24 = *(uint *)&local_28->field_0xc;
+  local_28 = (DArrayTy *)local_1c->field_022F;
+  local_24 = local_28->count;
   if (0 < (int)local_24) {
     sVar2 = param_1[1];
     local_8 = (int)sVar2;
@@ -56,7 +56,8 @@ int __thiscall AiFltClassTy::AppendZone(AiFltClassTy *this,short *param_1)
     local_14 = (int)param_1[4];
     do {
       if (local_c < local_24) {
-        psVar9 = (short *)(local_28->field_0008 * local_c + local_28->field_001C);
+        /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(local_28, local_c) (runtime stride) */
+        psVar9 = (short *)(local_28->elementSize * local_c + (int)local_28->data);
       }
       else {
         psVar9 = (short *)0x0;

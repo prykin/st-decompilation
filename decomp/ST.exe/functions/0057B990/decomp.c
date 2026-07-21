@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 void __cdecl
 FUN_0057b990(undefined4 param_1,undefined4 param_2,int param_3,undefined2 param_4,undefined2 param_5
@@ -5,7 +7,6 @@ FUN_0057b990(undefined4 param_1,undefined4 param_2,int param_3,undefined2 param_
 
 {
   int iVar1;
-  undefined4 *puVar2;
   undefined4 local_40 [5];
   undefined4 *local_2c;
   undefined4 local_20 [3];
@@ -13,16 +14,9 @@ FUN_0057b990(undefined4 param_1,undefined4 param_2,int param_3,undefined2 param_
   undefined2 local_12;
 
   if (param_3 != 0) {
-    puVar2 = local_40;
-    for (iVar1 = 8; iVar1 != 0; iVar1 = iVar1 + -1) {
-      *puVar2 = 0;
-      puVar2 = puVar2 + 1;
-    }
-    puVar2 = local_20;
-    for (iVar1 = 7; iVar1 != 0; iVar1 = iVar1 + -1) {
-      *puVar2 = 0;
-      puVar2 = puVar2 + 1;
-    }
+    memset(local_40, 0, 0x20); /* compiler bulk-zero initialization */
+    iVar1 = 0;
+    memset(local_20, 0, 0x1c); /* compiler bulk-zero initialization */
     local_20[2] = param_1;
     local_20[0] = param_2;
     local_14 = param_5;
@@ -32,7 +26,8 @@ FUN_0057b990(undefined4 param_1,undefined4 param_2,int param_3,undefined2 param_
     local_2c = local_20;
     local_40[3] = 2;
     local_40[4] = param_7;
-    (*PTR_00802a38->vtable->SendMessage)((SystemWithNamedObjClassTy *)PTR_00802a38,(int)local_40);
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+    (*(code *)PTR_00802a38->vtable->field_0018)(local_40);
   }
   return;
 }

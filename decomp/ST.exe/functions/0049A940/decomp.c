@@ -15,13 +15,12 @@ undefined4 __thiscall STGroupBoatC::GrpMove(STGroupBoatC *this,int param_1)
   int iVar4;
   undefined4 uVar5;
   uint index;
-  undefined4 *puVar6;
   uint uVar7;
   InternalExceptionFrame local_58;
   STGroupBoatC *local_14;
   uint local_10;
   uint local_c;
-  undefined4 local_8;
+  uint local_8;
 
   /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   local_10 = *(uint *)(this->field_0029 + 0xc);
@@ -32,11 +31,7 @@ undefined4 __thiscall STGroupBoatC::GrpMove(STGroupBoatC *this,int param_1)
   pSVar2 = local_14;
   if (iVar3 == 0) {
     if ((param_1 == 0) || (param_1 == 1)) {
-      puVar6 = &local_14->field_0089;
-      for (iVar3 = 0x15; iVar3 != 0; iVar3 = iVar3 + -1) {
-        *puVar6 = 0;
-        puVar6 = puVar6 + 1;
-      }
+      memset(&local_14->field_0089, 0, 0x54); /* compiler bulk-zero initialization */
       uVar7 = 0;
       local_14->field_0065 = 0;
       local_8 = PTR_00802a38->field_00E4;

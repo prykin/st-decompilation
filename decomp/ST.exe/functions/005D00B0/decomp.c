@@ -1,10 +1,10 @@
+#include "../../pseudocode_runtime.h"
+
 
 void __thiscall FUN_005d00b0(void *this,AnonShape_005D00B0_9E7CC102 *param_1,uint param_2)
 
 {
   uint *puVar1;
-  int iVar2;
-  undefined4 *puVar3;
   undefined4 local_64;
   undefined1 local_60;
   undefined1 local_1a;
@@ -16,11 +16,7 @@ void __thiscall FUN_005d00b0(void *this,AnonShape_005D00B0_9E7CC102 *param_1,uin
   undefined4 local_8;
 
   puVar1 = param_1->field_0050;
-  puVar3 = &local_64;
-  for (iVar2 = 0x18; iVar2 != 0; iVar2 = iVar2 + -1) {
-    *puVar3 = 0;
-    puVar3 = puVar3 + 1;
-  }
+  memset(&local_64, 0, 0x60); /* compiler bulk-zero initialization */
   /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
   local_64._3_1_ = param_1->field_0003;
   /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */

@@ -3,7 +3,7 @@ int __thiscall
 FUN_005f14b0(void *this,short param_1,short param_2,short param_3,byte param_4,short param_5)
 
 {
-  uint *puVar1;
+  DArrayTy *pDVar1;
   uint uVar2;
   int iVar3;
   short *psVar4;
@@ -12,14 +12,14 @@ FUN_005f14b0(void *this,short param_1,short param_2,short param_3,byte param_4,s
   short local_1c;
   byte local_1a;
   short local_19;
-  undefined4 local_17;
+  uint local_17;
   undefined4 *local_13;
   int local_f;
 
   if (*(int *)((int)this + 0x38) == 0) {
-    puVar1 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,10,0x19,10);
-    *(uint **)((int)this + 0x38) = puVar1;
-    if (puVar1 == (uint *)0x0) {
+    pDVar1 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,10,0x19,10);
+    *(DArrayTy **)((int)this + 0x38) = pDVar1;
+    if (pDVar1 == (DArrayTy *)0x0) {
       return -1;
     }
   }

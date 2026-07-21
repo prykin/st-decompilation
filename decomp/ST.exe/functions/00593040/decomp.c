@@ -32,7 +32,6 @@ int __thiscall CampaignTy::GetMessage(CampaignTy *this,STMessage *message)
   /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
   void *unaff_EDI;
   char *pcVar16;
-  undefined4 *puVar17;
   byte bVar18;
   InternalExceptionFrame local_54;
   undefined4 local_10;
@@ -81,7 +80,7 @@ int __thiscall CampaignTy::GetMessage(CampaignTy *this,STMessage *message)
     else if (SVar2 == MESS_MMSGTY_68FF) {
       DAT_0080874e = *(byte *)(message->arg0).ptr;
       if (PTR_0081176c->field_0028 == 0) {
-        FUN_006b5f80(DAT_008075a8,0,0,g_nWidth_00806730,DAT_00806734);
+        FUN_006b5f80((int *)PTR_008075a8,0,0,g_nWidth_00806730,DAT_00806734);
         iVar7 = 0;
         bVar18 = 0;
         text = FUN_006f2c00("CMPG_BKG",1,(uint)DAT_0080874e);
@@ -167,11 +166,7 @@ int __thiscall CampaignTy::GetMessage(CampaignTy *this,STMessage *message)
       DAT_008087a0 = 8;
       iVar7 = thunk_FUN_0056e9e0(&DAT_00807620,1);
       if (iVar7 != 0) {
-        puVar17 = &DAT_0080c522;
-        for (iVar7 = 0x9fc; iVar7 != 0; iVar7 = iVar7 + -1) {
-          *puVar17 = 0;
-          puVar17 = puVar17 + 1;
-        }
+        memset(&DAT_0080c522, 0, 0x27f0); /* compiler bulk-zero initialization */
         thunk_FUN_005b6350(this_00,(-(uint)(this_00->field_1FFC != 0) & 8) + 0x6948,0,0);
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
         (**(code **)(this_00->field_0000 + 8))();

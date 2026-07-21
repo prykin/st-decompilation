@@ -15,18 +15,18 @@ undefined4 __thiscall STGroupBoatC::SetMine(STGroupBoatC *this,int param_1)
   uint uVar5;
   int iVar6;
   undefined4 uVar7;
-  undefined4 *puVar8;
   uint uVar9;
   STBoatC_CmdToObj_param_1Enum SVar10;
+  uint *puVar11;
   InternalExceptionFrame local_6c;
-  undefined4 local_28;
+  uint local_28;
   undefined2 local_24;
   undefined2 local_22;
   short local_20;
   STGroupBoatC *local_1c;
   undefined4 local_18;
   int local_14;
-  undefined4 local_10;
+  uint local_10;
   int local_c;
   uint local_8;
 
@@ -41,11 +41,7 @@ undefined4 __thiscall STGroupBoatC::SetMine(STGroupBoatC *this,int param_1)
   pSVar2 = local_1c;
   if (iVar3 == 0) {
     if ((param_1 == 0) || (param_1 == 1)) {
-      puVar8 = &local_1c->field_0089;
-      for (iVar3 = 0x15; iVar3 != 0; iVar3 = iVar3 + -1) {
-        *puVar8 = 0;
-        puVar8 = puVar8 + 1;
-      }
+      memset(&local_1c->field_0089, 0, 0x54); /* compiler bulk-zero initialization */
       uVar9 = 0;
       local_1c->field_0065 = 0;
       *(undefined4 *)&local_1c->field_0x2b3 = local_1c->field_0182;
@@ -72,16 +68,16 @@ undefined4 __thiscall STGroupBoatC::SetMine(STGroupBoatC *this,int param_1)
 LAB_0049eb2a:
               if (pSVar4->field_07BE < 1) goto LAB_0049eb44;
               local_20 = pSVar4->field_004B;
-              puVar8 = &local_28;
+              puVar11 = &local_28;
               SVar10 = CASE_7;
             }
             else {
               if (pSVar4->field_07B6 == *(int *)&pSVar2->field_0x2b9) goto LAB_0049eb2a;
 LAB_0049eb44:
-              puVar8 = &local_10;
+              puVar11 = &local_10;
               SVar10 = CASE_3;
             }
-            STBoatC::CmdToObj(pSVar4,SVar10,puVar8);
+            STBoatC::CmdToObj(pSVar4,SVar10,puVar11);
           }
           uVar9 = uVar9 + 1;
         } while ((int)uVar9 < local_c);
@@ -90,7 +86,7 @@ LAB_0049eb44:
                 (-0x5001fff7,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_grpb.cpp",
                  0xb3c);
     }
-    if ((uint)PTR_00802a38->field_00E4 % 0x1e == 5) {
+    if (PTR_00802a38->field_00E4 % 0x1e == 5) {
       uVar9 = 0;
       if (0 < local_c) {
         do {

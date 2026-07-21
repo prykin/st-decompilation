@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* [STPrototypeRepairApplier] Propagated parameter 1.
@@ -15,19 +17,14 @@ void __thiscall FUN_005734c0(void *this,LPDWORD lpcbData,PHKEY phkResult)
   int iVar4;
   uint uVar5;
   char *pcVar6;
-  undefined4 *puVar7;
   char *pcVar8;
   void *local_8;
 
   local_8 = this;
   if (((uint)phkResult & 1) != 0) {
     _DAT_008072f8 = 0;
-    puVar7 = (undefined4 *)&DAT_008072f8;
-    for (iVar4 = 0x20; iVar4 != 0; iVar4 = iVar4 + -1) {
-      *puVar7 = 0;
-      puVar7 = puVar7 + 1;
-    }
-    *(undefined2 *)puVar7 = 0;
+    memset(&DAT_008072f8, 0, 0x82); /* compiler bulk-zero initialization */
+    iVar4 = 0;
     _DAT_008072fc = 0x82;
     uVar2 = 0;
     do {
@@ -71,11 +68,7 @@ void __thiscall FUN_005734c0(void *this,LPDWORD lpcbData,PHKEY phkResult)
     thunk_FUN_005739a0(this);
   }
   if (((uint)phkResult & 2) != 0) {
-    puVar7 = &DAT_008071f8;
-    for (iVar4 = 0x40; iVar4 != 0; iVar4 = iVar4 + -1) {
-      *puVar7 = 0;
-      puVar7 = puVar7 + 1;
-    }
+    memset(&DAT_008071f8, 0, 0x100); /* compiler bulk-zero initialization */
   }
   if (lpcbData == (LPDWORD)0x0) goto LAB_005737e5;
   LVar3 = RegOpenKeyA((HKEY)0x80000001,"SOFTWARE\\Microsoft\\Windows\\CurrentVersion",(PHKEY)&phkResult

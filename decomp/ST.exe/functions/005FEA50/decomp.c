@@ -22,7 +22,7 @@ void __fastcall FUN_005fea50(AnonShape_005FEA50_174FA294 *param_1)
           uVar2 = uVar2 >> 0x10 & 7;
         }
         else if (iVar1 == 5) {
-          uVar2 = PTR_00802a38->field_00E4 + -0x4a + uVar4;
+          uVar2 = (PTR_00802a38->field_00E4 - 0x4a) + uVar4;
         }
         else if (uVar4 < 0x99) {
           uVar2 = param_1->field_001C * 0x41c64e6d + 0x3039;
@@ -30,7 +30,7 @@ void __fastcall FUN_005fea50(AnonShape_005FEA50_174FA294 *param_1)
           uVar2 = uVar2 >> 0x10 & 7;
         }
         else {
-          uVar2 = PTR_00802a38->field_00E4 + -0x94 + uVar4;
+          uVar2 = (PTR_00802a38->field_00E4 - 0x94) + uVar4;
         }
       }
       else {

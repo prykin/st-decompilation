@@ -16,10 +16,9 @@ undefined4 __thiscall STGroupBoatC::GrpGoToDeep(STGroupBoatC *this,int param_1)
   int iVar5;
   undefined4 uVar6;
   uint uVar7;
-  undefined4 *puVar8;
   uint uVar9;
   InternalExceptionFrame local_6c;
-  undefined4 local_28;
+  uint local_28;
   undefined2 local_24;
   undefined2 local_22;
   undefined2 local_20;
@@ -49,11 +48,7 @@ undefined4 __thiscall STGroupBoatC::GrpGoToDeep(STGroupBoatC *this,int param_1)
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   if ((param_1 == 0) || (param_1 == 1)) {
-    puVar8 = &local_1c->field_0089;
-    for (iVar3 = 0x15; iVar3 != 0; iVar3 = iVar3 + -1) {
-      *puVar8 = 0;
-      puVar8 = puVar8 + 1;
-    }
+    memset(&local_1c->field_0089, 0, 0x54); /* compiler bulk-zero initialization */
     uVar9 = 0;
     *(undefined4 *)&local_1c->field_0x222 = local_1c->field_00FF;
     local_1c->field_0065 = 0;
@@ -87,7 +82,7 @@ undefined4 __thiscall STGroupBoatC::GrpGoToDeep(STGroupBoatC *this,int param_1)
   }
   uVar6 = local_10;
   if (param_1 == 2) {
-    if ((uint)PTR_00802a38->field_00E4 % 3 == 0) {
+    if (PTR_00802a38->field_00E4 % 3 == 0) {
       uVar7 = 0;
       uVar9 = 0;
       local_10 = 0;

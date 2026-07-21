@@ -41,24 +41,24 @@ int __thiscall FUN_004fab10(void *this,Global_sub_004FAB10_param_1Enum param_1)
       return (uint)(g_prodPanel_00801684->field_0172 != 2);
     }
   case CASE_9:
-    if (DAT_00801698 != 0) {
-      return (uint)(*(short *)(DAT_00801698 + 0x172) != 2);
+    if (g_infocPanel_00801698 != (InfocPanelTy *)0x0) {
+      return (uint)(g_infocPanel_00801698->field_0172 != 2);
     }
   case CASE_A:
-    if (DAT_00802a44 != 0) {
-      return (uint)(*(short *)(DAT_00802a44 + 0x172) != 2);
+    if (g_tradePanel_00802A44 != (TradePanelTy *)0x0) {
+      return (uint)(*(short *)&g_tradePanel_00802A44->field_0x172 != 2);
     }
   case CASE_B:
-    if (DAT_00801678 != 0) {
-      return (uint)(*(short *)(DAT_00801678 + 0x172) != 2);
+    if (g_behPanel_00801678 != (BehPanelTy *)0x0) {
+      return (uint)(g_behPanel_00801678->field_0172 != 2);
     }
   case CASE_C:
     if (g_prodPanel_00801680 != (ProdPanelTy *)0x0) {
       return (uint)(g_prodPanel_00801680->field_0172 != 2);
     }
   case CASE_10:
-    if (DAT_00802a48 != 0) {
-      return (uint)(*(short *)(DAT_00802a48 + 0x172) != 2);
+    if (g_upgPanel_00802A48 != (UpgPanelTy *)0x0) {
+      return (uint)(*(short *)&g_upgPanel_00802A48->field_0x172 != 2);
     }
     break;
   default:
@@ -68,13 +68,13 @@ int __thiscall FUN_004fab10(void *this,Global_sub_004FAB10_param_1Enum param_1)
   case CASE_12:
     goto switchD_004fab25_caseD_12;
   }
-  if (DAT_0080168c != 0) {
-    return (uint)(*(short *)(DAT_0080168c + 0x172) != 2);
+  if (g_frmPanel_0080168C != (FrmPanelTy *)0x0) {
+    return (uint)(*(short *)&g_frmPanel_0080168C->field_0x172 != 2);
   }
 switchD_004fab25_caseD_12:
-  if (DAT_008016ec == 0) {
+  if (g_sAMPanel_008016EC == (SAMPanelTy *)0x0) {
     return 0;
   }
-  return (uint)(*(short *)(DAT_008016ec + 0x172) != 2);
+  return (uint)(*(short *)&g_sAMPanel_008016EC->field_0x172 != 2);
 }
 

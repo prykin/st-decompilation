@@ -1,22 +1,19 @@
+#include "../../pseudocode_runtime.h"
+
 
 void __thiscall
 FUN_0063d460(void *this,undefined4 param_1,undefined4 param_2,int param_3,int param_4)
 
 {
-  undefined4 uVar1;
+  uint uVar1;
   int iVar2;
-  undefined4 *puVar3;
 
   if (param_3 < 0) {
     param_3 = 0;
   }
   if (param_4 == 10) {
-    puVar3 = (undefined4 *)((int)this + 0x2a4);
-    for (iVar2 = 0x24; iVar2 != 0; iVar2 = iVar2 + -1) {
-      *puVar3 = 0;
-      puVar3 = puVar3 + 1;
-    }
-    *(undefined2 *)puVar3 = 0;
+    memset((void *)((int)this + 0x2a4), 0, 0x92); /* compiler bulk-zero initialization */
+    iVar2 = 0;
     *(undefined4 *)((int)this + 0x2a8) = param_2;
     *(undefined4 *)((int)this + 0x2a4) = param_1;
     *(int *)((int)this + 0x2ac) = param_3;
@@ -28,12 +25,7 @@ FUN_0063d460(void *this,undefined4 param_1,undefined4 param_2,int param_3,int pa
   }
   else {
     if (param_4 == 0xb) {
-      puVar3 = (undefined4 *)((int)this + 0x2a4);
-      for (iVar2 = 0x24; iVar2 != 0; iVar2 = iVar2 + -1) {
-        *puVar3 = 0;
-        puVar3 = puVar3 + 1;
-      }
-      *(undefined2 *)puVar3 = 0;
+      memset((void *)((int)this + 0x2a4), 0, 0x92); /* compiler bulk-zero initialization */
       *(undefined4 *)((int)this + 0x2a8) = param_2;
       *(undefined4 *)((int)this + 0x2a4) = param_1;
       *(undefined4 *)((int)this + 0x2b4) = 0x32;
@@ -44,7 +36,7 @@ FUN_0063d460(void *this,undefined4 param_1,undefined4 param_2,int param_3,int pa
       *(undefined4 *)((int)this + 0x2c0) = 0;
       uVar1 = PTR_00802a38->field_00E4;
       *(undefined4 *)((int)this + 0x33e) = 0;
-      *(undefined4 *)((int)this + 0x32e) = uVar1;
+      *(uint *)((int)this + 0x32e) = uVar1;
       return;
     }
     if (param_4 == 0xc) {
@@ -58,7 +50,7 @@ FUN_0063d460(void *this,undefined4 param_1,undefined4 param_2,int param_3,int pa
       *(undefined1 *)((int)this + 0x328) = 4;
       *(undefined4 *)((int)this + 700) = 0x24;
       *(int *)((int)this + 0x32a) = (iVar2 * 0x23) / 5;
-      *(undefined4 *)((int)this + 0x32e) = PTR_00802a38->field_00E4;
+      *(uint *)((int)this + 0x32e) = PTR_00802a38->field_00E4;
       return;
     }
   }

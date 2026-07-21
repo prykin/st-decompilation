@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* [ST_RECOVERY:ai_event_get_message_v1]
@@ -60,7 +62,6 @@ void __thiscall AiEventClassTy::GetMessage(AiEventClassTy *this,STMessage *messa
   STFishC *pSVar30;
   uint uVar31;
   uint uVar32;
-  undefined4 *puVar33;
   uint **ppuVar34;
   bool bVar35;
   int iVar36;
@@ -88,7 +89,7 @@ void __thiscall AiEventClassTy::GetMessage(AiEventClassTy *this,STMessage *messa
   undefined4 local_1c0 [4];
   int local_1b0;
   undefined4 local_1a0;
-  int local_19c;
+  uint local_19c;
   int local_198;
   int local_194;
   DArrayTy *local_190;
@@ -154,9 +155,8 @@ void __thiscall AiEventClassTy::GetMessage(AiEventClassTy *this,STMessage *messa
     uVar8 = (*(code *)this->field_0000->field_0018)();
     this->field_052B = uVar8;
     if ((iVar7 != 0x456) ||
-       (((uint)PTR_00802a38->field_00E4 % 0x19 == this->field_00D2 ||
-        (PTR_00802a38->field_00E4 == 1)))) {
-      local_19c = *(int *)(this->field_04E2 + 8);
+       ((PTR_00802a38->field_00E4 % 0x19 == this->field_00D2 || (PTR_00802a38->field_00E4 == 1)))) {
+      local_19c = this->field_04E2[2];
       local_284.previous = g_currentExceptionFrame;
       g_currentExceptionFrame = &local_284;
       iVar7 = Library::MSVCRT::__setjmp3(local_284.jumpBuffer,0);
@@ -3875,8 +3875,8 @@ switchD_00652b42_switchD:
                                   if (iVar7 == 5) {
                                     /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                     Library::DKW::TBL::FUN_006b6020
-                                              ((uint *)this_00->field_05B3,local_16c._8_4_,
-                                               (char *)local_160);
+                                              (this_00->field_05B3,local_16c._8_4_,(char *)local_160
+                                              );
                                   }
                                 }
                                 goto cf_switch_join_00659A73;
@@ -3924,8 +3924,7 @@ switchD_00652b42_switchD:
                               if (iVar36 == 0) goto cf_common_join_00652A99;
                               /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                               Library::DKW::TBL::FUN_006b6020
-                                        ((uint *)this_00->field_05B3,local_16c._8_4_,
-                                         (char *)local_160);
+                                        (this_00->field_05B3,local_16c._8_4_,(char *)local_160);
                               break;
                             case 0x528:
                               iVar36 = thunk_FUN_0064eb20((int)local_16c);
@@ -4335,11 +4334,7 @@ LAB_00653778:
 LAB_00653bb7:
                                     if (pDVar12->flags != (uint)DAT_0080874d) goto code_r0x00653bbb;
                                     if (g_opticClass_007FB2A0 != (OpticClassC *)0x0) {
-                                      puVar33 = local_1c0;
-                                      for (iVar36 = 8; iVar36 != 0; iVar36 = iVar36 + -1) {
-                                        *puVar33 = 0;
-                                        puVar33 = puVar33 + 1;
-                                      }
+                                      memset(local_1c0, 0, 0x20); /* compiler bulk-zero initialization */
                                       switch(local_15c) {
                                       case (DArrayTy *)0x0:
                                         local_1b0 = 0x104;
@@ -4389,11 +4384,8 @@ LAB_00653bb7:
                                     do {
                                       if (pDVar12->flags == (uint)DAT_0080874d) {
                                         if (g_opticClass_007FB2A0 != (OpticClassC *)0x0) {
-                                          puVar33 = local_1c0;
-                                          for (iVar36 = 8; iVar36 != 0; iVar36 = iVar36 + -1) {
-                                            *puVar33 = 0;
-                                            puVar33 = puVar33 + 1;
-                                          }
+                                          memset(local_1c0, 0, 0x20); /* compiler bulk-zero initialization */
+                                          iVar36 = 0;
                                           local_1b0 = (iVar7 != 0x54b) + 0x100;
                                           /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
                                           (*(code *)this_00->field_0000->field_0030)
@@ -4551,11 +4543,7 @@ LAB_00653bb7:
 LAB_006540b9:
                                   if (pDVar12->flags != (uint)DAT_0080874d) goto code_r0x006540bd;
                                   DAT_0080e300 = (char)local_15c;
-                                  puVar33 = &DAT_0080e303;
-                                  for (iVar7 = 8; iVar7 != 0; iVar7 = iVar7 + -1) {
-                                    *puVar33 = 0;
-                                    puVar33 = puVar33 + 1;
-                                  }
+                                  memset(&DAT_0080e303, 0, 0x20); /* compiler bulk-zero initialization */
                                   Library::MSVCRT::_strncpy
                                             ((char *)&DAT_0080e303,(char *)local_158,0x1f);
                                   uVar32 = local_14;
@@ -4697,8 +4685,8 @@ LAB_00654386:
                                         FUN_006b5570((AnonShape_006B5570_4D68B99C *)PTR_0080c4cb);
                                       }
                                       PTR_0080c4cb = (AnonShape_GLOBAL_0080C4CB_D58160AA *)
-                                                     Library::DKW::TBL::FUN_006b54f0
-                                                               ((uint *)0x0,10,10);
+                                                     Library::DKW::TBL::SArrayCreate
+                                                               ((DArrayTy *)0x0,10,10);
                                       goto LAB_00654386;
                                     }
                                     iVar36 = iVar36 + 1;
@@ -4728,8 +4716,8 @@ LAB_00654386:
                                       if (PTR_0080c4c7 == (AnonShape_GLOBAL_0080C4C7_5A4CB754 *)0x0)
                                       {
                                         PTR_0080c4c7 = (AnonShape_GLOBAL_0080C4C7_5A4CB754 *)
-                                                       Library::DKW::TBL::FUN_006b54f0
-                                                                 ((uint *)0x0,10,10);
+                                                       Library::DKW::TBL::SArrayCreate
+                                                                 ((DArrayTy *)0x0,10,10);
                                       }
                                       iVar7 = Library::DKW::TBL::FUN_006b5aa0
                                                         ((uint *)PTR_0080c4c7,(char *)local_158);
@@ -4798,8 +4786,8 @@ LAB_00654386:
                                         FUN_006b5570((AnonShape_006B5570_4D68B99C *)PTR_0080c4c7);
                                       }
                                       PTR_0080c4c7 = (AnonShape_GLOBAL_0080C4C7_5A4CB754 *)
-                                                     Library::DKW::TBL::FUN_006b54f0
-                                                               ((uint *)0x0,10,10);
+                                                     Library::DKW::TBL::SArrayCreate
+                                                               ((DArrayTy *)0x0,10,10);
                                       break;
                                     }
                                     iVar36 = iVar36 + 1;
@@ -5861,10 +5849,10 @@ LAB_00659aae:
             bVar35 = local_14 < pDVar12->count;
           } while ((int)local_14 < (int)pDVar12->count);
         }
-        iVar36 = local_19c;
+        uVar32 = local_19c;
         pAVar2 = (AnonShape_006B7830_769CA2DF *)this_00->field_04E2;
         iVar7 = pAVar2->field_0008;
-        while (iVar36 < iVar7) {
+        while ((int)uVar32 < iVar7) {
           FUN_006b7830(pAVar2,iVar7 - 1);
           pAVar2 = (AnonShape_006B7830_769CA2DF *)this_00->field_04E2;
           iVar7 = pAVar2->field_0008;

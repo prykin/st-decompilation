@@ -1,16 +1,12 @@
+#include "../../pseudocode_runtime.h"
+
 
 undefined4 FUN_004d0f00(void)
 
 {
-  int iVar1;
-  undefined4 *puVar2;
   undefined4 local_20 [7];
 
-  puVar2 = local_20;
-  for (iVar1 = 7; iVar1 != 0; iVar1 = iVar1 + -1) {
-    *puVar2 = 0;
-    puVar2 = puVar2 + 1;
-  }
+  memset(local_20, 0, 0x1c); /* compiler bulk-zero initialization */
   local_20[4] = 0;
   local_20[3] = 1;
   local_20[2] = 2;

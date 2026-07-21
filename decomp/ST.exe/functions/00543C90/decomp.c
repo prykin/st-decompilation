@@ -22,11 +22,11 @@ void __thiscall CursorClassTy::DrawSprite(CursorClassTy *this,int param_1,int pa
   local_c = this;
   local_10 = FUN_006e51b0((int)this->field_0010);
   local_8 = 0;
-  if (this->field_001C == 0xffffffff) {
+  if (this->field_001C == (cLoadingTy *)0xffffffff) {
     iVar5 = 0;
   }
   else {
-    iVar5 = FUN_006b33f0(this->field_0060,this->field_001C);
+    iVar5 = FUN_006b33f0(this->field_0060,(uint)this->field_001C);
   }
   if (iVar5 != 0) {
     local_54.previous = g_currentExceptionFrame;
@@ -56,7 +56,7 @@ void __thiscall CursorClassTy::DrawSprite(CursorClassTy *this,int param_1,int pa
         }
         else {
           Library::DKW::DDX::FUN_006b3640
-                    ((int *)DAT_008075a8,local_c->field_001C,local_c->field_0020,
+                    ((int *)PTR_008075a8,(uint)local_c->field_001C,local_c->field_0020,
                      local_c->field_00B9 + local_c->field_0034,
                      local_c->field_00BD + local_c->field_0038);
         }
@@ -77,13 +77,13 @@ void __thiscall CursorClassTy::DrawSprite(CursorClassTy *this,int param_1,int pa
           FUN_006e2970(PTR_00807598,pCVar4->field_04EF,pCVar4->field_04F3,pCVar4->field_04F7,
                        &pCVar4->field_04EB->field_001C,&pCVar4->field_04EB->field_0020);
           pCVar4->field_04EB->field_001C =
-               pCVar4->field_04EB->field_001C - *(int *)(pCVar4->field_04E7 + 9) / 2;
+               pCVar4->field_04EB->field_001C - *(int *)((int)pCVar4->field_04E7 + 9) / 2;
           /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
           pCVar4->field_04EB->field_0020 =
-               pCVar4->field_04EB->field_0020 - *(int *)(pCVar4->field_04E7 + 0xd) / 2;
+               pCVar4->field_04EB->field_0020 - *(int *)((int)pCVar4->field_04E7 + 0xd) / 2;
           pSVar1 = pCVar4->field_04EB;
           Library::DKW::DDX::FUN_006b3730
-                    (DAT_008075a8,pSVar1->field_0004,pSVar1->field_0008,pSVar1->field_001C,
+                    ((uint *)PTR_008075a8,pSVar1->field_0004,pSVar1->field_0008,pSVar1->field_001C,
                      pSVar1->field_0020);
         }
       }

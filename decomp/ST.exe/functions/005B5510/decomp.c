@@ -15,7 +15,6 @@ MMObjTy::CreateSprBut
   int iVar2;
   int iVar3;
   undefined4 uVar4;
-  undefined4 *puVar5;
   undefined4 local_1cc [4];
   undefined4 local_1bc;
   undefined4 local_1b8;
@@ -35,11 +34,7 @@ MMObjTy::CreateSprBut
   local_c = this;
   iVar2 = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0);
   if (iVar2 == 0) {
-    puVar5 = local_1cc;
-    for (iVar2 = 0x5f; iVar2 != 0; iVar2 = iVar2 + -1) {
-      *puVar5 = 0;
-      puVar5 = puVar5 + 1;
-    }
+    memset(local_1cc, 0, 0x17c); /* compiler bulk-zero initialization */
     local_1cc[0] = param_2;
     local_1cc[1] = param_1;
     local_1bc = param_5;
@@ -52,8 +47,8 @@ MMObjTy::CreateSprBut
     local_168 = 2;
     local_164 = param_8;
     local_16c = local_1ac;
-    (*local_c->field_000C->vtable->CreateObject)
-              ((SystemClassTy *)local_c->field_000C,2,&local_8,(int *)0x0,local_1cc,0);
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+    (*(code *)local_c->field_000C->vtable->field_0008)(2,&local_8,0,local_1cc,0);
     g_currentExceptionFrame = local_50.previous;
     return local_8;
   }

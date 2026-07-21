@@ -28,11 +28,8 @@ void __thiscall CursorClassTy::AddOpticAcc(CursorClassTy *this)
   local_8 = this;
   iVar2 = Library::MSVCRT::__setjmp3(local_b8.jumpBuffer,0);
   if (iVar2 == 0) {
-    puVar4 = local_28;
-    for (iVar2 = 8; iVar2 != 0; iVar2 = iVar2 + -1) {
-      *puVar4 = 0;
-      puVar4 = puVar4 + 1;
-    }
+    memset(local_28, 0, 0x20); /* compiler bulk-zero initialization */
+    iVar2 = 0;
     puVar4 = local_74;
     for (iVar2 = 0x13; this_00 = local_8, iVar2 != 0; iVar2 = iVar2 + -1) {
       *puVar4 = 0;

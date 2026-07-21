@@ -9,8 +9,7 @@ uint FUN_0042d770(char param_1,int *param_2)
   dword dVar1;
   uint uVar2;
   ushort uVar3;
-  uint *puVar4;
-  DArrayTy *array_00;
+  DArrayTy *pDVar4;
   STGameObjC *pSVar5;
   int iVar6;
   STGroupBoatC *pSVar7;
@@ -32,23 +31,23 @@ uint FUN_0042d770(char param_1,int *param_2)
   array = g_playerRuntime[param_1].tempSlots[0][0].objectIds;
   local_1c = 1;
   local_20 = 1;
-  puVar4 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,0,2,1);
-  *param_2 = (int)puVar4;
+  pDVar4 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,0,2,1);
+  *param_2 = (int)pDVar4;
   dVar1 = array->count;
   if (dVar1 == 0) {
     /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-    return CONCAT22((short)((uint)puVar4 >> 0x10),0xffff);
+    return CONCAT22((short)((uint)pDVar4 >> 0x10),0xffff);
   }
-  array_00 = (DArrayTy *)Library::DKW::TBL::FUN_006ae290((uint *)0x0,0,2,1);
+  pDVar4 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,0,2,1);
   local_14 = 0;
-  local_10 = array_00;
+  local_10 = pDVar4;
   if (0 < (int)dVar1) {
     do {
       DArrayGetElement(array,local_14,&local_c);
       if ((short)local_c != -1) {
         pSVar5 = STAllPlayersC::GetObjPtr(local_24,param_1,local_c,CASE_1);
         iVar6 = thunk_FUN_00493cd0((AnonShape_00493CD0_11D91B87 *)pSVar5);
-        array_00 = local_10;
+        pDVar4 = local_10;
         /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
         if ((iVar6 == 0) &&
            (local_28 = CONCAT22((short)((uint)pSVar5 >> 0x10),pSVar5->field_0030),
@@ -56,19 +55,19 @@ uint FUN_0042d770(char param_1,int *param_2)
           local_1c = iVar6;
           Library::DKW::TBL::FUN_006ae1c0(&local_10->flags,&local_28);
           Library::DKW::TBL::FUN_006ae1c0((uint *)*param_2,&local_c);
-          array_00 = local_10;
+          pDVar4 = local_10;
         }
       }
       local_14 = local_14 + 1;
     } while ((int)local_14 < (int)dVar1);
     if (local_1c == 0) {
-      uVar2 = array_00->count;
+      uVar2 = pDVar4->count;
       if (1 < uVar2) {
-        DArrayGetElement(array_00,0,&local_8);
+        DArrayGetElement(pDVar4,0,&local_8);
         index = 1;
         if (1 < (int)uVar2) {
           do {
-            DArrayGetElement(array_00,index,&local_6);
+            DArrayGetElement(pDVar4,index,&local_6);
             if (local_6 != local_8) {
               local_20 = 0;
               break;
@@ -79,7 +78,7 @@ uint FUN_0042d770(char param_1,int *param_2)
       }
       local_18 = 0x7fff;
       if (local_20 == 1) {
-        DArrayGetElement(array_00,0,&local_c);
+        DArrayGetElement(pDVar4,0,&local_c);
         pSVar7 = thunk_FUN_0042b760(param_1,local_c);
         uVar3 = thunk_FUN_004233c0((int)pSVar7);
         /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
@@ -89,7 +88,7 @@ uint FUN_0042d770(char param_1,int *param_2)
       }
     }
   }
-  DArrayDestroy(array_00);
+  DArrayDestroy(pDVar4);
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   return CONCAT22(extraout_var,(undefined2)local_18);
 }

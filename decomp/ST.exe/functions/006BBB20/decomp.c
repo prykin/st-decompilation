@@ -1,11 +1,11 @@
+#include "../../pseudocode_runtime.h"
+
 
 int FUN_006bbb20(AnonShape_006BBB20_56723FCF *param_1,int param_2)
 
 {
   int *piVar1;
   uint uVar2;
-  int iVar3;
-  undefined4 *puVar4;
   undefined4 local_428 [95];
   undefined4 local_2ac;
   byte local_2a8;
@@ -53,11 +53,7 @@ int FUN_006bbb20(AnonShape_006BBB20_56723FCF *param_1,int param_2)
     if ((param_1->field_0044 != 0) && ((local_38[0] & 0x4000) == 0)) goto LAB_006bbbce;
 LAB_006bbc85:
     if (local_8 != 0) {
-      puVar4 = local_b4;
-      for (iVar3 = 0x1f; iVar3 != 0; iVar3 = iVar3 + -1) {
-        *puVar4 = 0;
-        puVar4 = puVar4 + 1;
-      }
+      memset(local_b4, 0, 0x7c); /* compiler bulk-zero initialization */
       local_b4[3] = param_1->field_0018;
       local_b4[2] = param_1->field_001C;
       local_b4[0] = 0x7c;
@@ -129,11 +125,7 @@ LAB_006bbc85:
     if ((param_1->field_0044 == 0) || ((local_38[0] & 0x4000) == 0)) goto LAB_006bbc85;
 LAB_006bbbce:
     local_10 = 1;
-    puVar4 = local_130;
-    for (iVar3 = 0x1f; iVar3 != 0; iVar3 = iVar3 + -1) {
-      *puVar4 = 0;
-      puVar4 = puVar4 + 1;
-    }
+    memset(local_130, 0, 0x7c); /* compiler bulk-zero initialization */
     local_130[3] = param_1->field_0018;
     local_130[2] = param_1->field_001C;
     local_130[0] = 0x7c;

@@ -43,7 +43,7 @@ void __thiscall MReportTy::NoneMReport(MReportTy *this)
     if (((local_c->field_0067 != '\0') && (local_c->field_0069 == '\0')) &&
        (local_c->field_0068 != '\0')) {
       bVar4 = false;
-      FUN_006b5f80(DAT_008075a8,0,0,g_nWidth_00806730,DAT_00806734);
+      FUN_006b5f80((int *)PTR_008075a8,0,0,g_nWidth_00806730,DAT_00806734);
       if (DAT_0080c83e != 0xffffffff) {
         do {
           if (iVar6 == 0) {
@@ -95,7 +95,7 @@ LAB_005bfb27:
       }
       if (bVar4) {
         thunk_FUN_005b6730(this_00,0x1e,'\x01',-1);
-        FUN_006b5f80(DAT_008075a8,0,0,g_nWidth_00806730,DAT_00806734);
+        FUN_006b5f80((int *)PTR_008075a8,0,0,g_nWidth_00806730,DAT_00806734);
         PutDDXClip(0x1a,0x46,0x1a,0x46,this_00->field_0073->field_0004,
                    (byte *)this_00->field_0073->field_0008,'\x01',(BITMAPINFO *)this_00->field_005D)
         ;
@@ -145,7 +145,7 @@ LAB_005bfb27:
       if (iVar5 == 0) {
         uVar7 = this_00->field_0453->field_0003;
         if (-1 < (int)uVar7) {
-          FUN_006b3af0(DAT_008075a8,uVar7);
+          FUN_006b3af0((int *)PTR_008075a8,uVar7);
         }
       }
       else {
@@ -157,7 +157,7 @@ LAB_005bfb27:
       if (iVar5 == 0) {
         uVar7 = this_00->field_0457->field_0003;
         if (-1 < (int)uVar7) {
-          FUN_006b3af0(DAT_008075a8,uVar7);
+          FUN_006b3af0((int *)PTR_008075a8,uVar7);
         }
       }
       else {

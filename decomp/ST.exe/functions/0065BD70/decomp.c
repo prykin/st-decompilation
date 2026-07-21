@@ -157,7 +157,7 @@ int __thiscall AiEventClassTy::sub_0065BD70(AiEventClassTy *this,STMessage *mess
     goto cf_common_exit_0065C65B;
   case MESS_AIBOSSCLASSTY_5DC6:
     pcVar9 = (message->arg0).ptr;
-    puVar11 = (uint *)this->field_05B3;
+    puVar11 = this->field_05B3;
     uVar12 = 0;
     break;
   default:
@@ -205,7 +205,7 @@ int __thiscall AiEventClassTy::sub_0065BD70(AiEventClassTy *this,STMessage *mess
 /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
 LAB_0065c021:
           (**(code **)&pSVar4->vtable->field_0x74)(local_1c);
-          Library::DKW::TBL::FUN_006b6020((uint *)this->field_05B3,0,local_1c);
+          Library::DKW::TBL::FUN_006b6020(this->field_05B3,0,local_1c);
         }
       }
     }
@@ -243,7 +243,7 @@ LAB_0065c021:
       this->field_054F = uVar5;
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
       (**(code **)&pSVar4->vtable->field_0x74)(local_1c);
-      Library::DKW::TBL::FUN_006b6020((uint *)this->field_05B3,0,local_1c);
+      Library::DKW::TBL::FUN_006b6020(this->field_05B3,0,local_1c);
     }
     wVar8 = (pSVar2->arg1).words.low;
     if (((-1 < (short)wVar8) && ((short)wVar8 < 8)) &&
@@ -282,7 +282,7 @@ LAB_0065c021:
       this->field_054B = (int)local_6;
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
       (**(code **)&pSVar4->vtable->field_0x74)(local_1c);
-      Library::DKW::TBL::FUN_006b6020((uint *)this->field_05B3,0,local_1c);
+      Library::DKW::TBL::FUN_006b6020(this->field_05B3,0,local_1c);
     }
     wVar8 = (pSVar2->arg1).words.low;
     if ((((short)wVar8 < 0) || (7 < (short)wVar8)) ||
@@ -377,7 +377,7 @@ cf_common_exit_0065C570:
     this->field_053B = (uint)(message->arg0).words.high;
     this->field_053F = (uint)(message->arg2).words.low;
     if ((message->arg1).u32 == 0) goto cf_common_exit_0065C65B;
-    puVar11 = (uint *)this->field_05B3;
+    puVar11 = this->field_05B3;
     pcVar9 = (char *)((message->arg1).u32 + 0x3b);
     uVar12 = 0;
     break;
@@ -436,7 +436,7 @@ LAB_0065c4bb:
     this->field_0577 = uVar12;
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
     (**(code **)&pSVar4->vtable->field_0x74)(local_1c);
-    puVar11 = (uint *)this->field_05B3;
+    puVar11 = this->field_05B3;
     pcVar9 = local_1c;
     uVar12 = 1;
     break;
@@ -450,13 +450,13 @@ LAB_0065c4bb:
     this->field_0533 = (uint)(byte)(&DAT_008087e8)[iVar7 * 0x51];
     this->field_0537 = (uint)(byte)(&DAT_008087ea)[iVar7 * 0x51];
     if ((message->arg1).u32 == 0) goto cf_common_exit_0065C65B;
-    puVar11 = (uint *)this->field_05B3;
+    puVar11 = this->field_05B3;
     pcVar9 = (char *)((message->arg1).u32 + 0x92);
     uVar12 = 0;
   }
   Library::DKW::TBL::FUN_006b6020(puVar11,uVar12,pcVar9);
 cf_common_exit_0065C65B:
-  this->field_05A7 = (uint)PTR_00802a38->field_00E4 / 0x19;
+  this->field_05A7 = PTR_00802a38->field_00E4 / 0x19;
   this->field_05AB = PTR_00802a38->field_00E4;
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
   uVar5 = (*(code *)this->field_0000->field_0014)();

@@ -22,7 +22,6 @@ MMsgTy::SetPanel(MMsgTy *this,UINT param_1,int param_2,int param_3,UINT param_4)
   uint uVar10;
   UINT *pUVar11;
   UINT *pUVar12;
-  int *piVar13;
   int iVar14;
   int iVar15;
   ccFntTy_CreateTypeSSpr_param_4Enum cVar16;
@@ -96,11 +95,8 @@ MMsgTy::SetPanel(MMsgTy *this,UINT param_1,int param_2,int param_3,UINT param_4)
           local_10 = (UINT *)(uVar10 * 0x27 + param_2);
           if (*local_10 == 0) {
             puVar7 = (undefined4 *)(uVar10 * 0x1fb + 0xbc + (int)this_00);
-            for (iVar4 = 9; iVar4 != 0; iVar4 = iVar4 + -1) {
-              *puVar7 = 0;
-              puVar7 = puVar7 + 1;
-            }
-            *(undefined2 *)puVar7 = 0;
+            memset(puVar7, 0, 0x26); /* compiler bulk-zero initialization */
+            puVar7 = (undefined4 *)((byte *)puVar7 + 0x24);
             *(undefined1 *)((int)puVar7 + 2) = 0;
           }
           else {
@@ -168,12 +164,7 @@ MMsgTy::SetPanel(MMsgTy *this,UINT param_1,int param_2,int param_3,UINT param_4)
           local_8 = CONCAT31(local_8._1_3_,bVar3);
         } while (bVar3 < (byte)this_00->field_0x9a);
       }
-      puVar7 = (undefined4 *)&this_00[0x20].field_0x22;
-      for (iVar4 = 6; iVar4 != 0; iVar4 = iVar4 + -1) {
-        *puVar7 = 0;
-        puVar7 = puVar7 + 1;
-      }
-      *(undefined2 *)puVar7 = 0;
+      memset(&this_00[0x20].field_0x22, 0, 0x1a); /* compiler bulk-zero initialization */
       *(undefined4 *)&this_00[0x20].field_0x3c = 0x1010101;
       *(undefined4 *)&this_00[0x20].field_0x40 = 0x1010101;
       *(undefined4 *)&this_00[0x20].field_0x44 = 0x1010101;
@@ -183,15 +174,12 @@ MMsgTy::SetPanel(MMsgTy *this,UINT param_1,int param_2,int param_3,UINT param_4)
       iVar4 = *(int *)&this_00[0x20].field_0x4b;
       if (iVar4 != 0) {
         pSVar1 = this_00->field_000C;
-        piVar13 = local_34;
-        for (iVar9 = 8; iVar9 != 0; iVar9 = iVar9 + -1) {
-          *piVar13 = 0;
-          piVar13 = piVar13 + 1;
-        }
+        memset(local_34, 0, 0x20); /* compiler bulk-zero initialization */
         local_34[3] = 2;
         local_34[4] = 0x6940;
         local_34[2] = iVar4;
-        (*pSVar1->vtable->vfunc_18)(local_34);
+        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+        (*(code *)pSVar1->vtable->field_0018)(local_34);
       }
       g_currentExceptionFrame = local_78.previous;
       return 1;

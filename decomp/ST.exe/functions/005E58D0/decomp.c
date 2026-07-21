@@ -14,7 +14,6 @@ void __thiscall MTestTy::InitMTest(MTestTy *this)
   int iVar2;
   ushort *puVar3;
   int iVar4;
-  undefined4 *puVar5;
   undefined4 local_44c [256];
   InternalExceptionFrame local_4c;
   MTestTy *local_8;
@@ -28,8 +27,8 @@ void __thiscall MTestTy::InitMTest(MTestTy *this)
       if (PTR_00802a30->field_00A9 == 0) {
         Library::DKW::DDX::FUN_006b8b10((int *)PTR_00802a30->field_00AD);
       }
-      else if (PTR_00802a30->field_001C != 0xffffffff) {
-        FUN_006b3af0((int *)PTR_00802a30->field_0060,PTR_00802a30->field_001C);
+      else if (PTR_00802a30->field_001C != (cLoadingTy *)0xffffffff) {
+        FUN_006b3af0((int *)PTR_00802a30->field_0060,(uint)PTR_00802a30->field_001C);
       }
     }
     puVar3 = (ushort *)FUN_0070a9f0(g_cMf32_00806780,"LOADSINGLE",0,1);
@@ -39,11 +38,7 @@ void __thiscall MTestTy::InitMTest(MTestTy *this)
     PTR_0081176c->field_0140 = 0x1f;
     Library::Ourlib::PALETTE::FUN_00718780
               ((int)local_44c,0,0x100,0x8b,0x15,(undefined4 *)&PTR_0081176c->field_0x144);
-    puVar5 = (undefined4 *)&this_01->field_0x61;
-    for (iVar2 = 8; iVar2 != 0; iVar2 = iVar2 + -1) {
-      *puVar5 = 0;
-      puVar5 = puVar5 + 1;
-    }
+    memset(&this_01->field_0x61, 0, 0x20); /* compiler bulk-zero initialization */
     this_01->field_0071 = 0x13;
     this_01->field_0075 = this_01->field_0008;
     FUN_006e6000(this_01,3,1,(undefined4 *)&this_01->field_0x61);
@@ -53,7 +48,7 @@ void __thiscall MTestTy::InitMTest(MTestTy *this)
     }
     DarkScreen(DAT_0080759c,1,0);
     PaintMTest(this_01);
-    thunk_FUN_0055ddf0(DAT_0080759c,DAT_008075a8,this_01->field_005D,10,2);
+    thunk_FUN_0055ddf0(DAT_0080759c,(int *)PTR_008075a8,this_01->field_005D,10,2);
     this_00 = PTR_00802a30;
     if (PTR_00802a30 != (CursorClassTy *)0x0) {
       iVar2 = PTR_00802a30->field_00C9;

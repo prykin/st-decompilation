@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 undefined4 __thiscall FUN_0061ca90(void *this,int param_1,int param_2,int param_3,int *param_4)
 
@@ -21,7 +23,6 @@ undefined4 __thiscall FUN_0061ca90(void *this,int param_1,int param_2,int param_
   int iVar16;
   int *piVar17;
   int iVar18;
-  int *piVar19;
   bool bVar20;
   int local_800 [495];
   void *local_44;
@@ -163,11 +164,7 @@ LAB_0061cd61:
                 if ((bVar20) && (iVar16 = (*this_00->vtable[5].slots_00_28[2])(), iVar16 != 0)) {
                   thunk_FUN_00416270(this_00,&local_6,(int *)((int)&param_3 + 2),(int *)&local_22);
                   uVar4 = *(undefined2 *)&this_00[1].field_0xe;
-                  piVar19 = piVar17;
-                  for (iVar16 = 0xb; iVar16 != 0; iVar16 = iVar16 + -1) {
-                    *piVar19 = 0;
-                    piVar19 = piVar19 + 1;
-                  }
+                  memset(piVar17, 0, 0x2c); /* compiler bulk-zero initialization */
                   uVar10 = *(undefined4 *)&this_00->field_0x18;
                   *piVar17 = (int)this_00[1].vtable;
                   uVar6 = (undefined2)local_28;

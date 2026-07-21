@@ -240,12 +240,12 @@ int __thiscall STAllPlayersC::GetMessage(STAllPlayersC *this,STMessage *message)
       piVar15 = &g_playerRuntime[0].field2179_0xa0a;
       do {
         cVar16 = (char)iVar5;
-        if (0x18 < (uint)(PTR_00802a38->field_00E4 - *piVar15)) {
+        if (0x18 < PTR_00802a38->field_00E4 - *piVar15) {
           OptimizeGuardBoats(this_00,cVar16);
           DistributeGuardBoats(this_00,cVar16);
         }
         if ((*(char *)local_14 != -1) &&
-           (thunk_FUN_004eb150(this_00,iVar5), (uint)PTR_00802a38->field_00E4 % 10 == 0)) {
+           (thunk_FUN_004eb150(this_00,iVar5), PTR_00802a38->field_00E4 % 10 == 0)) {
           thunk_FUN_004d78e0(cVar16);
         }
         /* ST_PSEUDO[flattened_global_record_array]: expected g_playerRuntime[player].field[index...] after base/stride proof */

@@ -33,23 +33,23 @@ void __thiscall FUN_004fa870(void *this,Global_sub_004FA870_param_1Enum param_1)
       }
     }
     else if (param_1 == 9) {
-      if (DAT_00801698 != (int *)0x0) {
+      if (g_infocPanel_00801698 != (InfocPanelTy *)0x0) {
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-        (**(code **)(*DAT_00801698 + 0x20))();
+        (**(code **)(*(int *)g_infocPanel_00801698 + 0x20))();
         return;
       }
     }
     else if (param_1 == 10) {
-      if (DAT_00802a44 != (int *)0x0) {
+      if (g_tradePanel_00802A44 != (TradePanelTy *)0x0) {
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-        (**(code **)(*DAT_00802a44 + 0x20))();
+        (**(code **)&g_tradePanel_00802A44->field_0000[1].field_0xc)();
         return;
       }
     }
     else if (param_1 == 0xb) {
-      if (DAT_00801678 != (int *)0x0) {
+      if (g_behPanel_00801678 != (BehPanelTy *)0x0) {
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-        (**(code **)(*DAT_00801678 + 0x20))();
+        (*(code *)g_behPanel_00801678->field_0000[2].field_0008)();
         return;
       }
     }
@@ -61,29 +61,30 @@ void __thiscall FUN_004fa870(void *this,Global_sub_004FA870_param_1Enum param_1)
       }
     }
     else if (param_1 == 0x10) {
-      if (DAT_00802a48 != (int *)0x0) {
+      if (g_upgPanel_00802A48 != (UpgPanelTy *)0x0) {
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-        (**(code **)(*DAT_00802a48 + 0x20))();
+        (**(code **)(*(int *)g_upgPanel_00802A48 + 0x20))();
         return;
       }
     }
     else if (param_1 == 0x11) {
-      if (DAT_0080168c != (int *)0x0) {
+      if (g_frmPanel_0080168C != (FrmPanelTy *)0x0) {
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-        (**(code **)(*DAT_0080168c + 0x20))();
+        (**(code **)(g_frmPanel_0080168C->field_0000 + 1))();
         return;
       }
     }
     else if (param_1 == 0x12) {
-      if (DAT_008016ec != (int *)0x0) {
+      if (g_sAMPanel_008016EC != (SAMPanelTy *)0x0) {
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-        (**(code **)(*DAT_008016ec + 0x20))();
+        (**(code **)&g_sAMPanel_008016EC->field_0000[1].field_0xc)();
         return;
       }
     }
-    else if ((param_1 == 0x13) && (PTR_00801690 != (AnonShape_GLOBAL_00801690_2AA401C1 *)0x0)) {
-      thunk_FUN_00515180(PTR_00801690,'\x06');
-      thunk_FUN_00515180(PTR_00801690,'\x05');
+    else if ((param_1 == 0x13) &&
+            (g_helpPanel_00801690 != (AnonShape_GLOBAL_00801690_2AA401C1 *)0x0)) {
+      thunk_FUN_00515180(g_helpPanel_00801690,'\x06');
+      thunk_FUN_00515180(g_helpPanel_00801690,'\x05');
       return;
     }
   }

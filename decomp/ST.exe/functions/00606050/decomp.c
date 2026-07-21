@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 int __thiscall
 FUN_00606050(void *this,int param_1,int param_2,int param_3,int param_4,uint *param_5,
@@ -10,10 +12,8 @@ FUN_00606050(void *this,int param_1,int param_2,int param_3,int param_4,uint *pa
   uint uVar4;
   int iVar5;
   int iVar6;
-  int *piVar7;
   uint *puVar8;
   STMessage *pSVar9;
-  undefined4 *puVar10;
   uint local_100 [20];
   STMessage local_b0;
   int local_90 [6];
@@ -73,11 +73,7 @@ FUN_00606050(void *this,int param_1,int param_2,int param_3,int param_4,uint *pa
     return -1;
   }
   iVar6 = 0;
-  piVar7 = local_90;
-  for (iVar2 = 6; iVar2 != 0; iVar2 = iVar2 + -1) {
-    *piVar7 = 0;
-    piVar7 = piVar7 + 1;
-  }
+  memset(local_90, 0, 0x18); /* compiler bulk-zero initialization */
   param_7 = 0;
   if (0 < local_28) {
     param_5 = local_100;
@@ -183,12 +179,7 @@ LAB_00606321:
   param_5 = (uint *)0x0;
   if (0 < local_c) {
     do {
-      puVar10 = local_70;
-      for (iVar2 = 0x11; iVar2 != 0; iVar2 = iVar2 + -1) {
-        *puVar10 = 0;
-        puVar10 = puVar10 + 1;
-      }
-      *(undefined2 *)puVar10 = 0;
+      memset(local_70, 0, 0x46); /* compiler bulk-zero initialization */
       local_54 = local_18;
       local_70[1] = param_8;
       local_30 = param_9;

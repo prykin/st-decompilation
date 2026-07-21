@@ -17,7 +17,7 @@ int __thiscall HelpStringTy::GetMessage(HelpStringTy *this,STMessage *message)
   int iVar2;
   ccFntTy *pcVar3;
   uint uVar4;
-  AnonPointee_HelpStringTy_012A *pAVar5;
+  ushort *puVar5;
   undefined4 *puVar6;
   DWORD DVar7;
   int iVar8;
@@ -37,11 +37,7 @@ int __thiscall HelpStringTy::GetMessage(HelpStringTy *this,STMessage *message)
       if ((local_8->field_012E != 0) &&
          (DVar7 = FUN_006e51b0(local_8->field_0010),
          this_00->field_0126 <= DVar7 - this_00->field_0122)) {
-        puVar6 = (undefined4 *)&this_00->field_0018;
-        for (iVar2 = 0x41; iVar2 != 0; iVar2 = iVar2 + -1) {
-          *puVar6 = 0;
-          puVar6 = puVar6 + 1;
-        }
+        memset(&this_00->field_0018, 0, 0x104); /* compiler bulk-zero initialization */
         OutStr(this_00);
         this_00->field_011C = 0;
         this_00->field_012E = 0;
@@ -55,17 +51,17 @@ int __thiscall HelpStringTy::GetMessage(HelpStringTy *this,STMessage *message)
       puVar6 = (undefined4 *)(DAT_0080679c + 0x28);
       iVar2 = 1;
       uVar4 = FUN_006b4fe0(DAT_0080679c);
-      pAVar5 = (AnonPointee_HelpStringTy_012A *)
+      puVar5 = (ushort *)
                FUN_006b50c0((g_nWidth_00806730 -
                             ((-(uint)(DAT_0080874e != '\x03') & 0xfffffff6) + 0x1e)) + -0x87,0x12,
                             (uint)*(ushort *)(DAT_0080679c + 0xe),uVar4,puVar6,iVar2);
-      this_00->field_012A = pAVar5;
-      uVar4 = pAVar5->field_0014;
+      this_00->field_012A = puVar5;
+      uVar4 = *(uint *)(puVar5 + 10);
       if (uVar4 == 0) {
-        uVar4 = ((uint)(ushort)pAVar5->field_000E * pAVar5->field_0004 + 0x1f >> 3 & 0x1ffffffc) *
-                pAVar5->field_0008;
+        uVar4 = ((uint)puVar5[7] * *(int *)(puVar5 + 2) + 0x1f >> 3 & 0x1ffffffc) *
+                *(int *)(puVar5 + 4);
       }
-      puVar6 = (undefined4 *)FUN_006b4fa0((int)pAVar5);
+      puVar6 = (undefined4 *)FUN_006b4fa0((int)puVar5);
       for (uVar9 = uVar4 >> 2; uVar9 != 0; uVar9 = uVar9 - 1) {
         *puVar6 = 0;
         puVar6 = puVar6 + 1;
@@ -82,7 +78,7 @@ int __thiscall HelpStringTy::GetMessage(HelpStringTy *this,STMessage *message)
         ccFntTy::operator(this_01,(uint *)local_8->field_011E);
         this_00->field_011E = (ccFntTy *)0x0;
       }
-      if (this_00->field_012A != (AnonPointee_HelpStringTy_012A *)0x0) {
+      if (this_00->field_012A != (ushort *)0x0) {
         FreeAndNull(&this_00->field_012A);
       }
       break;

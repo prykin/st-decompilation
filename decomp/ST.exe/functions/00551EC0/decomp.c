@@ -33,9 +33,9 @@ void __thiscall TradePanelTy::PaintIndicators(TradePanelTy *this)
   if (iVar5 == 0) {
     puVar1 = &local_10->field_0x18d;
     wsprintfA(puVar1,"%6d",
-              (uint)*(ushort *)(&local_10->field_0x1bc + (uint)local_10->field_01D0 * 2));
+              (uint)*(ushort *)(&local_10->field_0x1bc + (uint)(byte)local_10->field_01D0 * 2));
     ccFntTy::SetSurf(pTVar4->field_01DD,pTVar4->field_0068,0,0x67,0x36,0x23,0xc);
-    ccFntTy::WrStr(pTVar4->field_01DD,(uint *)puVar1,-1,-1,-(uint)(pTVar4->field_01D0 != 0) & 2);
+    ccFntTy::WrStr(pTVar4->field_01DD,(uint *)puVar1,-1,-1,-(uint)(pTVar4->field_01D0 != '\0') & 2);
     if (pTVar4->field_01BB == '\0') {
       local_8 = 0;
       iVar5 = 0xb4;

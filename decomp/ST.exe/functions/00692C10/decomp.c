@@ -46,12 +46,7 @@ FUN_00692c10(Global_sub_00692C10_param_1Enum param_1,int param_2,undefined4 *par
       switch(param_1) {
       case CASE_A:
         *param_3 = 0xa6;
-        pGVar10 = &DAT_00853cd8;
-        for (iVar7 = 0x29; iVar7 != 0; iVar7 = iVar7 + -1) {
-          *pGVar10 = 0;
-          pGVar10 = pGVar10 + 1;
-        }
-        *(undefined2 *)pGVar10 = 0;
+        memset(&DAT_00853cd8, 0, 0xa6); /* compiler bulk-zero initialization */
         DAT_00853cd8 = param_1;
         _DAT_00853cdc = 0xff;
         _DAT_00853ce0 = 2;

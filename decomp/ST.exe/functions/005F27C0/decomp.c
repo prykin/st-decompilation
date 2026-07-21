@@ -160,12 +160,7 @@ int __thiscall STBHEShellC::GetMessage(STBHEShellC *this,STMessage *message)
       return 0;
     }
     thunk_FUN_005f5b80(local_14,puVar8);
-    puVar8 = (undefined4 *)&this_00->field_0x20;
-    for (iVar5 = 0xb; iVar5 != 0; iVar5 = iVar5 + -1) {
-      *puVar8 = 0;
-      puVar8 = puVar8 + 1;
-    }
-    *(undefined1 *)puVar8 = 0;
+    memset(&this_00->field_0x20, 0, 0x2d); /* compiler bulk-zero initialization */
     *(undefined4 *)&this_00->field_0x1c = *(undefined4 *)&this_00->field_0x16d;
     if (this_00->field_0103 == '\0') {
       g_currentExceptionFrame = local_6c.previous;
@@ -343,16 +338,16 @@ LAB_005f2d8b:
       }
       else {
         if (((local_24 < 0) || (pVVar4->field_0030 <= local_24)) ||
-           (((&DAT_0079aed0)[local_18] + local_28 < 0 ||
-            (pVVar4->field_0034 <= (&DAT_0079aed0)[local_18] + local_28)))) {
+           ((g_centeredOffsets5[local_18] + local_28 < 0 ||
+            (pVVar4->field_0034 <= g_centeredOffsets5[local_18] + local_28)))) {
           bVar11 = false;
         }
         else {
           bVar11 = true;
         }
-        if ((bVar11) && (pVVar4->field_004C != 0)) {
-          bVar11 = *(char *)(((&DAT_0079aed0)[local_18] + local_28) * pVVar4->field_0030 +
-                             pVVar4->field_004C + local_24) != '\0';
+        if ((bVar11) && (pVVar4->field_004C != (byte *)0x0)) {
+          bVar11 = pVVar4->field_004C
+                   [local_24 + (g_centeredOffsets5[local_18] + local_28) * pVVar4->field_0030] != 0;
         }
         else {
           bVar11 = true;

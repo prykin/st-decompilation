@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 int __cdecl
 FUN_00637350(int param_1,int param_2,int param_3,int param_4,uint param_5,undefined2 param_6,
@@ -16,8 +18,6 @@ FUN_00637350(int param_1,int param_2,int param_3,int param_4,uint param_5,undefi
   short sVar9;
   int iVar10;
   short sVar11;
-  uint *puVar12;
-  int *piVar13;
   int iVar14;
   bool bVar15;
   int local_58 [5];
@@ -84,11 +84,7 @@ FUN_00637350(int param_1,int param_2,int param_3,int param_4,uint param_5,undefi
   if (5 < local_c) {
     local_c = 5;
   }
-  puVar12 = local_38;
-  for (iVar10 = 7; iVar10 != 0; iVar10 = iVar10 + -1) {
-    *puVar12 = 0;
-    puVar12 = puVar12 + 1;
-  }
+  memset(local_38, 0, 0x1c); /* compiler bulk-zero initialization */
   local_38[2] = param_5;
   local_2a = param_6;
   local_2c = param_7;
@@ -160,11 +156,7 @@ LAB_006375fd:
                   iVar10 = FUN_006aced8((int)param_4._2_2_,(int)param_3._2_2_,param_1,param_2);
                   uVar7 = param_9;
                   if (iVar10 < 0x28b) {
-                    piVar13 = local_58;
-                    for (iVar10 = 8; iVar10 != 0; iVar10 = iVar10 + -1) {
-                      *piVar13 = 0;
-                      piVar13 = piVar13 + 1;
-                    }
+                    memset(local_58, 0, 0x20); /* compiler bulk-zero initialization */
                     local_58[2] = *(int *)&this->field_0x18;
                     local_58[3] = 4;
                     local_58[4] = 0x110;

@@ -14,13 +14,12 @@ undefined4 __thiscall STGroupBoatC::GrpAttack(STGroupBoatC *this,int param_1)
   short sVar4;
   short sVar5;
   int iVar6;
-  uint *puVar7;
+  DArrayTy *pDVar7;
   STGameObjC *pSVar8;
   int iVar9;
   undefined4 uVar10;
   STWorldObject *pSVar11;
   STGroupBoatC *pSVar12;
-  undefined4 *puVar13;
   uint uVar14;
   STGroupBoatC *pSVar15;
   bool bVar16;
@@ -61,18 +60,15 @@ undefined4 __thiscall STGroupBoatC::GrpAttack(STGroupBoatC *this,int param_1)
   }
   if (param_1 == 1) {
     DArrayDestroy((DArrayTy *)local_8->field_020E);
-    pSVar12->field_020E = 0;
+    pSVar12->field_020E = (uint *)0x0;
     pSVar12->field_0212 = 0;
     FreeAndNull(&pSVar12->field_021E);
     param_1 = 0;
   }
   pSVar15 = local_8;
   if (param_1 == 0) {
-    puVar13 = &pSVar12->field_0089;
-    for (iVar6 = 0x15; iVar6 != 0; iVar6 = iVar6 + -1) {
-      *puVar13 = 0;
-      puVar13 = puVar13 + 1;
-    }
+    memset(&pSVar12->field_0089, 0, 0x54); /* compiler bulk-zero initialization */
+    iVar6 = 0;
     pSVar12->field_0065 = 0;
     if (pSVar12->field_00E7 == 0) {
       /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
@@ -84,12 +80,12 @@ undefined4 __thiscall STGroupBoatC::GrpAttack(STGroupBoatC *this,int param_1)
       }
       if ((DArrayTy *)pSVar15->field_020E != (DArrayTy *)0x0) {
         DArrayDestroy((DArrayTy *)pSVar15->field_020E);
-        pSVar15->field_020E = 0;
+        pSVar15->field_020E = (uint *)0x0;
         pSVar15->field_0212 = 0;
       }
-      puVar7 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,0,4,1);
+      pDVar7 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,0,4,1);
       sVar5 = 0;
-      local_8->field_020E = puVar7;
+      local_8->field_020E = &pDVar7->flags;
       pSVar12 = local_8;
       if (0 < local_18) {
         uVar14 = 0;
@@ -106,8 +102,7 @@ undefined4 __thiscall STGroupBoatC::GrpAttack(STGroupBoatC *this,int param_1)
                      iVar6 == 1 &&
                      (iVar6 = (**(code **)&pSVar8->vtable[1].field_0x24)((int)local_8->field_0024),
                      pSVar12 = local_8, iVar6 == 1)))))) {
-            Library::DKW::TBL::FUN_006ae140
-                      ((uint *)local_8->field_020E,uVar14,(undefined4 *)&local_2c);
+            Library::DKW::TBL::FUN_006ae140(local_8->field_020E,uVar14,(undefined4 *)&local_2c);
             pSVar12 = local_8;
           }
           sVar5 = sVar5 + 1;
@@ -116,8 +111,7 @@ undefined4 __thiscall STGroupBoatC::GrpAttack(STGroupBoatC *this,int param_1)
       }
       DArrayDestroy((DArrayTy *)pSVar12->field_00EF);
       pSVar12->field_00EF = 0;
-      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-      if (*(int *)(pSVar12->field_020E + 0xc) == 0) {
+      if (pSVar12->field_020E[3] == 0) {
         RaiseInternalException
                   (-0x5001fff7,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_grpb.cpp",
                    0x69d);
@@ -127,13 +121,13 @@ undefined4 __thiscall STGroupBoatC::GrpAttack(STGroupBoatC *this,int param_1)
     if (local_8->field_00E7 == 1) {
       if ((DArrayTy *)local_8->field_020E != (DArrayTy *)0x0) {
         DArrayDestroy((DArrayTy *)local_8->field_020E);
-        pSVar12->field_020E = 0;
+        pSVar12->field_020E = (uint *)0x0;
         pSVar12->field_0212 = 0;
       }
-      puVar7 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,1,4,1);
-      pSVar12->field_020E = puVar7;
+      pDVar7 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,1,4,1);
+      pSVar12->field_020E = &pDVar7->flags;
       /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-      local_c = CONCAT22((short)((uint)puVar7 >> 0x10),pSVar12->field_00F3);
+      local_c = CONCAT22((short)((uint)pDVar7 >> 0x10),pSVar12->field_00F3);
       iVar6 = (int)pSVar12->field_00F3;
       local_18 = 0;
       if (iVar6 < pSVar12->field_00F9 + iVar6) {
@@ -224,7 +218,7 @@ LAB_0049b073:
                            iVar6 == 1)) {
                           local_18 = iVar6;
                           Library::DKW::TBL::FUN_006ae1c0
-                                    ((uint *)pSVar12->field_020E,(undefined4 *)&local_2c);
+                                    (pSVar12->field_020E,(undefined4 *)&local_2c);
                         }
                       }
                     }
@@ -278,7 +272,7 @@ LAB_0049aec9:
                            iVar9 == 1)) {
                           local_18 = iVar9;
                           Library::DKW::TBL::FUN_006ae1c0
-                                    ((uint *)pSVar12->field_020E,(undefined4 *)&local_2c);
+                                    (pSVar12->field_020E,(undefined4 *)&local_2c);
                         }
                         sVar5 = (short)local_c;
                         goto LAB_0049af27;
@@ -300,7 +294,7 @@ LAB_0049aec9:
       }
       if (local_18 == 0) {
         DArrayDestroy((DArrayTy *)pSVar12->field_020E);
-        pSVar12->field_020E = 0;
+        pSVar12->field_020E = (uint *)0x0;
         RaiseInternalException
                   (-0x5001fff7,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_grpb.cpp",
                    0x6ce);
@@ -310,9 +304,8 @@ LAB_0049aec9:
     pSVar15 = local_8;
     if (pSVar12->field_00EB == 1) {
       sVar5 = 0;
-      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-      iVar6 = *(int *)(local_8->field_020E + 0xc);
-      if (0 < iVar6) {
+      uVar14 = local_8->field_020E[3];
+      if (0 < (int)uVar14) {
         do {
           DArrayGetElement((DArrayTy *)local_8->field_020E,(int)sVar5,&local_2c);
           /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
@@ -321,15 +314,14 @@ LAB_0049aec9:
                                  (g_sTAllPlayers_007FA174,local_2c,CONCAT22(uStack_28,uStack_2a),
                                   CASE_1), pSVar8->field_0020 != 0x14)) {
             FUN_006b0c70((DArrayTy *)local_8->field_020E,(int)sVar5);
-            iVar6 = iVar6 + -1;
+            uVar14 = uVar14 - 1;
             sVar5 = sVar5 + -1;
           }
           sVar5 = sVar5 + 1;
-        } while (sVar5 < iVar6);
+        } while ((int)sVar5 < (int)uVar14);
       }
       pSVar15 = local_8;
-      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-      if (*(int *)(local_8->field_020E + 0xc) == 0) {
+      if (local_8->field_020E[3] == 0) {
         RaiseInternalException
                   (-0x5001fff7,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_grpb.cpp",
                    0x6e3);

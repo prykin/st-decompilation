@@ -373,7 +373,7 @@ cf_continue_loop_0062607F:
     } while ((int)local_24 < 0x7d046e);
     if (bVar15) {
       local_18 = 1;
-      *(undefined4 *)((int)this + 0x346) = PTR_00802a38->field_00E4;
+      *(uint *)((int)this + 0x346) = PTR_00802a38->field_00E4;
     }
   }
   return local_18;

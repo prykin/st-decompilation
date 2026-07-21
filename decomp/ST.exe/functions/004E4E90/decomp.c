@@ -12,7 +12,7 @@ undefined4 __thiscall FUN_004e4e90(void *this,int param_1,int param_2)
                 (g_visibleClass_00802A88,param_1,param_2,(undefined *)0x2,
                  *(uint *)((int)this + 0x24),(undefined *)0x7,500);
       *(undefined4 *)((int)this + 0x4d4) = 0;
-      *(undefined4 *)((int)this + 0x4d8) = PTR_00802a38->field_00E4;
+      *(uint *)((int)this + 0x4d8) = PTR_00802a38->field_00E4;
     }
   }
   return 0;

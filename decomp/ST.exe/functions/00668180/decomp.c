@@ -15,7 +15,7 @@ FUN_00668180(char *text,undefined2 param_2,undefined2 param_3,undefined2 param_4
 
 {
   int exceptionCode;
-  uint *puVar1;
+  DArrayTy *pDVar1;
   InternalExceptionFrame local_4c;
   AnonShape_00668180_E8377840 *local_8;
 
@@ -35,16 +35,16 @@ FUN_00668180(char *text,undefined2 param_2,undefined2 param_3,undefined2 param_4
     local_8->field_0061 = param_5;
     local_8->field_023F = 0x3fffffff;
     if (local_8->field_01EB == 0) {
-      puVar1 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,10,0x2c,10);
-      local_8->field_01EB = puVar1;
+      pDVar1 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,10,0x2c,10);
+      local_8->field_01EB = pDVar1;
     }
     if (local_8->field_0203 == 0) {
-      puVar1 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,10,0x14,10);
-      local_8->field_0203 = puVar1;
+      pDVar1 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,10,0x14,10);
+      local_8->field_0203 = pDVar1;
     }
     if (local_8->field_020F == 0) {
-      puVar1 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,10,0xc,10);
-      local_8->field_020F = puVar1;
+      pDVar1 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,10,0xc,10);
+      local_8->field_020F = pDVar1;
     }
     g_currentExceptionFrame = local_4c.previous;
     return (AnonShape_GLOBAL_008489C4_F7BABFAC *)local_8;

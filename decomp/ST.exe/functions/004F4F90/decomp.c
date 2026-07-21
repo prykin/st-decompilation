@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 undefined4 * __fastcall FUN_004f4f90(AnonShape_004F4F90_2D6E0DDA *param_1)
 
@@ -16,26 +18,13 @@ undefined4 * __fastcall FUN_004f4f90(AnonShape_004F4F90_2D6E0DDA *param_1)
   *(undefined4 *)&param_1->field_0x13c = 0;
   *(undefined4 *)&param_1->field_0x12c = 1;
   puVar1 = &param_1->field_0x94;
-  puVar2 = (undefined4 *)&param_1->field_0x3c;
-  for (iVar3 = 0xb; iVar3 != 0; iVar3 = iVar3 + -1) {
-    *puVar2 = 0;
-    puVar2 = puVar2 + 1;
-  }
-  puVar2 = (undefined4 *)puVar1;
-  for (iVar3 = 0xb; iVar3 != 0; iVar3 = iVar3 + -1) {
-    *puVar2 = 0;
-    puVar2 = puVar2 + 1;
-  }
-  puVar2 = (undefined4 *)&param_1->field_0x68;
-  for (iVar3 = 0xb; iVar3 != 0; iVar3 = iVar3 + -1) {
-    *puVar2 = 0;
-    puVar2 = puVar2 + 1;
-  }
-  puVar2 = (undefined4 *)&param_1->field_0xc0;
-  for (iVar3 = 0xb; iVar3 != 0; iVar3 = iVar3 + -1) {
-    *puVar2 = 0;
-    puVar2 = puVar2 + 1;
-  }
+  memset(&param_1->field_0x3c, 0, 0x2c); /* compiler bulk-zero initialization */
+  iVar3 = 0;
+  memset((void *)puVar1, 0, 0x2c); /* compiler bulk-zero initialization */
+  iVar3 = 0;
+  memset(&param_1->field_0x68, 0, 0x2c); /* compiler bulk-zero initialization */
+  iVar3 = 0;
+  memset(&param_1->field_0xc0, 0, 0x2c); /* compiler bulk-zero initialization */
   if (DAT_0080874e == '\x03') {
     *(undefined4 *)&param_1->field_0x68 = 0x53;
     *(undefined4 *)puVar1 = DAT_00806734;
@@ -166,32 +155,19 @@ undefined4 * __fastcall FUN_004f4f90(AnonShape_004F4F90_2D6E0DDA *param_1)
   *(undefined4 *)&param_1->field_0x310 = 0;
   *(undefined4 *)&param_1->field_0x314 = 0;
   *(undefined4 *)&param_1->field_0x318 = 0;
-  puVar2 = (undefined4 *)&param_1->field_0x31c;
-  for (iVar3 = 0x118; iVar3 != 0; iVar3 = iVar3 + -1) {
-    *puVar2 = 0;
-    puVar2 = puVar2 + 1;
-  }
+  memset(&param_1->field_0x31c, 0, 0x460); /* compiler bulk-zero initialization */
+  iVar3 = 0;
   *(undefined4 *)&param_1->field_0x77c = 0;
   *(undefined2 *)&param_1->field_0x2a8 = 0xffff;
   *(undefined4 *)&param_1->field_0x958 = 0;
   *(undefined4 *)&param_1->field_0x954 = 0;
   *(undefined4 *)&param_1->field_0x95c = 0;
-  puVar2 = (undefined4 *)&param_1->field_0xb63;
-  for (iVar3 = 0xd; iVar3 != 0; iVar3 = iVar3 + -1) {
-    *puVar2 = 0;
-    puVar2 = puVar2 + 1;
-  }
-  *(undefined2 *)puVar2 = 0;
-  puVar2 = (undefined4 *)&param_1->field_0x974;
-  for (iVar3 = 8; iVar3 != 0; iVar3 = iVar3 + -1) {
-    *puVar2 = 0;
-    puVar2 = puVar2 + 1;
-  }
-  puVar2 = (undefined4 *)&param_1->field_0xb99;
-  for (iVar3 = 0x17; iVar3 != 0; iVar3 = iVar3 + -1) {
-    *puVar2 = 0;
-    puVar2 = puVar2 + 1;
-  }
+  memset(&param_1->field_0xb63, 0, 0x36); /* compiler bulk-zero initialization */
+  iVar3 = 0;
+  memset(&param_1->field_0x974, 0, 0x20); /* compiler bulk-zero initialization */
+  iVar3 = 0;
+  memset(&param_1->field_0xb99, 0, 0x5c); /* compiler bulk-zero initialization */
+  iVar3 = 0;
   *(undefined4 *)&param_1->field_0x960 = 0;
   *(undefined4 *)&param_1->field_0x964 = 0;
   *(undefined4 *)&param_1->field_0x968 = 0;
@@ -200,12 +176,9 @@ undefined4 * __fastcall FUN_004f4f90(AnonShape_004F4F90_2D6E0DDA *param_1)
   *(undefined4 *)&param_1->field_0x994 = 0;
   *(undefined4 *)&param_1->field_0x99c = 0;
   *(undefined4 *)&param_1->field_0x998 = 0;
-  *(uint *)&param_1->field_0x9a0 = (uint)PTR_00802a38->field_00E4 / 0x19;
-  puVar2 = (undefined4 *)&param_1->field_0x9a4;
-  for (iVar3 = 7; iVar3 != 0; iVar3 = iVar3 + -1) {
-    *puVar2 = 0;
-    puVar2 = puVar2 + 1;
-  }
+  *(uint *)&param_1->field_0x9a0 = PTR_00802a38->field_00E4 / 0x19;
+  memset(&param_1->field_0x9a4, 0, 0x1c); /* compiler bulk-zero initialization */
+  iVar3 = 0;
   *(undefined4 *)&param_1->field_0x9c0 = 0;
   *(undefined4 *)&param_1->field_0x9c4 = 0;
   param_1->field_0DB3 = 0;
@@ -219,52 +192,29 @@ undefined4 * __fastcall FUN_004f4f90(AnonShape_004F4F90_2D6E0DDA *param_1)
   param_1->field_0233 = 0;
   param_1->field_023B = 0xffffffff;
   param_1->field_0237 = 0xffffffff;
-  puVar2 = (undefined4 *)&param_1->field_0x9d9;
-  for (iVar3 = 0xf; iVar3 != 0; iVar3 = iVar3 + -1) {
-    *puVar2 = 0;
-    puVar2 = puVar2 + 1;
-  }
-  puVar2 = (undefined4 *)&param_1->field_0xbf5;
-  for (iVar3 = 0x17; iVar3 != 0; iVar3 = iVar3 + -1) {
-    *puVar2 = 0;
-    puVar2 = puVar2 + 1;
-  }
+  memset(&param_1->field_0x9d9, 0, 0x3c); /* compiler bulk-zero initialization */
+  iVar3 = 0;
+  memset(&param_1->field_0xbf5, 0, 0x5c); /* compiler bulk-zero initialization */
+  iVar3 = 0;
   *(undefined4 *)&param_1->field_0x9d0 = 0;
   param_1->field_0x9d4 = 1;
-  puVar2 = (undefined4 *)&param_1->field_0xa15;
-  for (iVar3 = 6; iVar3 != 0; iVar3 = iVar3 + -1) {
-    *puVar2 = 0;
-    puVar2 = puVar2 + 1;
-  }
+  memset(&param_1->field_0xa15, 0, 0x18); /* compiler bulk-zero initialization */
+  iVar3 = 0;
   param_1->field_0B1B = 0;
   param_1->field_09D5 = 0;
   param_1->field_0B17 = 0;
-  puVar2 = (undefined4 *)&param_1->field_0xb1f;
-  for (iVar3 = 6; iVar3 != 0; iVar3 = iVar3 + -1) {
-    *puVar2 = 0;
-    puVar2 = puVar2 + 1;
-  }
+  memset(&param_1->field_0xb1f, 0, 0x18); /* compiler bulk-zero initialization */
+  iVar3 = 0;
   param_1->field_0B37 = 0;
   param_1->field_0B3B = 0;
   param_1->field_0B3F = 0;
   param_1->field_0B47 = 0;
   param_1->field_0B43 = 0;
-  puVar2 = (undefined4 *)&param_1->field_0xc51;
-  for (iVar3 = 0xd; iVar3 != 0; iVar3 = iVar3 + -1) {
-    *puVar2 = 0;
-    puVar2 = puVar2 + 1;
-  }
-  *(undefined2 *)puVar2 = 0;
-  puVar2 = (undefined4 *)&param_1->field_0xc87;
-  for (iVar3 = 0x21; iVar3 != 0; iVar3 = iVar3 + -1) {
-    *puVar2 = 0;
-    puVar2 = puVar2 + 1;
-  }
-  puVar2 = (undefined4 *)&param_1->field_0xd0b;
-  for (iVar3 = 0xc; iVar3 != 0; iVar3 = iVar3 + -1) {
-    *puVar2 = 0;
-    puVar2 = puVar2 + 1;
-  }
+  memset(&param_1->field_0xc51, 0, 0x36); /* compiler bulk-zero initialization */
+  iVar3 = 0;
+  memset(&param_1->field_0xc87, 0, 0x84); /* compiler bulk-zero initialization */
+  iVar3 = 0;
+  memset(&param_1->field_0xd0b, 0, 0x30); /* compiler bulk-zero initialization */
   return (undefined4 *)param_1;
 }
 

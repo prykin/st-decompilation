@@ -20,7 +20,7 @@ void __thiscall MTaskTy::TTaskItemClose(MTaskTy *this,AnonShape_005E10A0_819783C
   if (iVar2 == 0) {
     if (param_1 != (AnonShape_005E10A0_819783CC *)0x0) {
       if (-1 < (int)*(uint *)param_1) {
-        FUN_006b3bb0(DAT_008075a8,*(uint *)param_1);
+        FUN_006b3bb0((int *)PTR_008075a8,*(uint *)param_1);
       }
       *(undefined4 *)param_1 = 0xffffffff;
       iVar2 = 3;

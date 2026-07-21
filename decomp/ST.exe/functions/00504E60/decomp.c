@@ -58,9 +58,10 @@ void __thiscall CPanelTy::PaintIDSObj(CPanelTy *this)
   puVar4 = (uint *)LoadResourceString(resourceId,HINSTANCE_00807618);
   ccFntTy::WrTxt(pCVar2->field_01B8,puVar4,iVar3,iVar5,uVar6,iVar7,iVar8);
 cf_common_exit_00504F81:
-  if (-1 < (int)pCVar2->field_015C) {
+  if (-1 < pCVar2->field_015C) {
     Library::DKW::DDX::FUN_006b3640
-              (DAT_008075a8,pCVar2->field_015C,0xffffffff,pCVar2->field_0050,pCVar2->field_00A8);
+              ((int *)PTR_008075a8,pCVar2->field_015C,0xffffffff,pCVar2->field_0050,
+               pCVar2->field_00A8);
   }
   g_currentExceptionFrame = local_4c.previous;
   return;

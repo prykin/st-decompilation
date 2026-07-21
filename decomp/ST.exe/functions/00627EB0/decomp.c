@@ -126,12 +126,7 @@ int __thiscall STParticleC::GetMessage(STParticleC *this,STMessage *message)
       return 0;
     }
     thunk_FUN_0062aef0(local_10,puVar12);
-    puVar12 = (undefined4 *)&this_00[2].field_0x47;
-    for (iVar9 = 0xb; iVar9 != 0; iVar9 = iVar9 + -1) {
-      *puVar12 = 0;
-      puVar12 = puVar12 + 1;
-    }
-    *(undefined1 *)puVar12 = 0;
+    memset(&this_00[2].field_0x47, 0, 0x2d); /* compiler bulk-zero initialization */
     iVar9 = *(int *)((int)&this_00[2].field_0030 + 2);
     if (iVar9 == 3) {
       thunk_FUN_0062a860((int)this_00);
@@ -233,16 +228,17 @@ int __thiscall STParticleC::GetMessage(STParticleC *this,STMessage *message)
         (local_24 = local_1c, local_28 = local_20, 4 < (int)local_c)))) goto LAB_006282e0;
 LAB_00628286:
     if (((local_24 < 0) || (pVVar14->field_0030 <= local_24)) ||
-       (((&DAT_0079aed0)[(int)local_c] + local_28 < 0 ||
-        (pVVar14->field_0034 <= (&DAT_0079aed0)[(int)local_c] + local_28)))) {
+       ((g_centeredOffsets5[(int)local_c] + local_28 < 0 ||
+        (pVVar14->field_0034 <= g_centeredOffsets5[(int)local_c] + local_28)))) {
       bVar15 = false;
     }
     else {
       bVar15 = true;
     }
-    if ((bVar15) && (pVVar14->field_004C != 0)) {
-      bVar15 = *(char *)(((&DAT_0079aed0)[(int)local_c] + local_28) * pVVar14->field_0030 +
-                         pVVar14->field_004C + local_24) != '\0';
+    if ((bVar15) && (pVVar14->field_004C != (byte *)0x0)) {
+      bVar15 = pVVar14->field_004C
+               [local_24 + (g_centeredOffsets5[(int)local_c] + local_28) * pVVar14->field_0030] != 0
+      ;
     }
     else {
       bVar15 = true;
@@ -294,9 +290,9 @@ LAB_006283bd:
       *piVar1 = *piVar1 + 1;
     }
     else if (uVar10 < 0x2d) {
-      if ((*(byte *)&PTR_00802a38->field_00E4 & 1) == 0) goto LAB_006283bd;
+      if ((PTR_00802a38->field_00E4 & 1) == 0) goto LAB_006283bd;
     }
-    else if ((uint)PTR_00802a38->field_00E4 % 3 == 0) goto LAB_006283bd;
+    else if (PTR_00802a38->field_00E4 % 3 == 0) goto LAB_006283bd;
     if (*(int *)((int)&this_00[2].field_0024 + 2) <= *(int *)((int)&this_00[2].field_0020 + 2)) {
       *(undefined4 *)((int)&this_00[2].field_0020 + 2) = 0;
     }
@@ -433,16 +429,17 @@ LAB_006282e0:
         }
         else {
           if (((local_2c < 0) || (pVVar14->field_0030 <= local_2c)) ||
-             (((&DAT_0079aed0)[(int)local_c] + local_30 < 0 ||
-              (pVVar14->field_0034 <= (&DAT_0079aed0)[(int)local_c] + local_30)))) {
+             ((g_centeredOffsets5[(int)local_c] + local_30 < 0 ||
+              (pVVar14->field_0034 <= g_centeredOffsets5[(int)local_c] + local_30)))) {
             bVar15 = false;
           }
           else {
             bVar15 = true;
           }
-          if ((bVar15) && (pVVar14->field_004C != 0)) {
-            bVar15 = *(char *)(((&DAT_0079aed0)[(int)local_c] + local_30) * pVVar14->field_0030 +
-                               pVVar14->field_004C + local_2c) != '\0';
+          if ((bVar15) && (pVVar14->field_004C != (byte *)0x0)) {
+            bVar15 = pVVar14->field_004C
+                     [local_2c + (g_centeredOffsets5[(int)local_c] + local_30) * pVVar14->field_0030
+                     ] != 0;
           }
           else {
             bVar15 = true;
@@ -536,16 +533,17 @@ LAB_006282e0:
     }
     else {
       if (((local_34 < 0) || (pVVar14->field_0030 <= local_34)) ||
-         (((&DAT_0079aed0)[(int)local_c] + local_38 < 0 ||
-          (pVVar14->field_0034 <= (&DAT_0079aed0)[(int)local_c] + local_38)))) {
+         ((g_centeredOffsets5[(int)local_c] + local_38 < 0 ||
+          (pVVar14->field_0034 <= g_centeredOffsets5[(int)local_c] + local_38)))) {
         bVar15 = false;
       }
       else {
         bVar15 = true;
       }
-      if ((bVar15) && (pVVar14->field_004C != 0)) {
-        bVar15 = *(char *)(((&DAT_0079aed0)[(int)local_c] + local_38) * pVVar14->field_0030 +
-                           local_34 + pVVar14->field_004C) != '\0';
+      if ((bVar15) && (pVVar14->field_004C != (byte *)0x0)) {
+        bVar15 = pVVar14->field_004C
+                 [(g_centeredOffsets5[(int)local_c] + local_38) * pVVar14->field_0030 + local_34] !=
+                 0;
       }
       else {
         bVar15 = true;

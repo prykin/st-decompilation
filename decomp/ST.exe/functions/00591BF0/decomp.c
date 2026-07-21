@@ -172,16 +172,9 @@ void __thiscall CampaignTy::NoneCampaign(CampaignTy *this,void *param_1)
     }
     if (local_8 != 0) {
       iVar11 = 1;
-      puVar10 = local_80;
-      for (iVar6 = 0x16; iVar6 != 0; iVar6 = iVar6 + -1) {
-        *puVar10 = 0;
-        puVar10 = puVar10 + 1;
-      }
-      puVar10 = local_284;
-      for (iVar6 = 0x70; iVar6 != 0; iVar6 = iVar6 + -1) {
-        *puVar10 = 0;
-        puVar10 = puVar10 + 1;
-      }
+      memset(local_80, 0, 0x58); /* compiler bulk-zero initialization */
+      iVar6 = 0;
+      memset(local_284, 0, 0x1c0); /* compiler bulk-zero initialization */
       puVar10 = local_284 + 1;
       iVar6 = 3;
       piVar9 = (int *)&this_00->field_0x491;
@@ -212,12 +205,7 @@ void __thiscall CampaignTy::NoneCampaign(CampaignTy *this,void *param_1)
       (**(code **)(*(int *)this_00->field_000C + 8))(5,&this_00->field_0x66,0,local_80,0);
       iVar6 = this_00->field_1A5B;
       if (*(int *)(iVar6 + 0x2e6) != 0) {
-        puVar10 = &local_28;
-        for (iVar11 = 6; iVar11 != 0; iVar11 = iVar11 + -1) {
-          *puVar10 = 0;
-          puVar10 = puVar10 + 1;
-        }
-        *(undefined2 *)puVar10 = 0;
+        memset(&local_28, 0, 0x1a); /* compiler bulk-zero initialization */
         local_1c = 1;
         local_1e = 1;
         /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */

@@ -22,7 +22,7 @@ int __thiscall FUN_005ec4a0(void *this,undefined4 *param_1)
     puVar3 = puVar3 + 1;
   }
   *(undefined1 *)puVar3 = *(undefined1 *)puVar2;
-  iVar1 = thunk_FUN_005ec850(this,(int *)((int)param_1 + 0x246));
+  iVar1 = STAllPlayersC::thunk_FUN_005ec850(this,(int *)((int)param_1 + 0x246));
   return iVar1 + 0x246;
 }
 

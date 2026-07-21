@@ -8,15 +8,15 @@
 void __thiscall STGroupBoatC::ChangeMDNotify(STGroupBoatC *this,int param_1,uint param_2)
 
 {
-  code *pcVar1;
+  uint uVar1;
+  code *pcVar2;
   STGroupBoatC *this_00;
-  int iVar2;
-  STGameObjC *this_01;
   int iVar3;
+  STGameObjC *this_01;
   int iVar4;
-  uint *puVar5;
-  int *piVar6;
-  uint uVar7;
+  int iVar5;
+  uint *puVar6;
+  int *piVar7;
   uint uVar8;
   DArrayTy *pDVar9;
   DArrayTy *pDVar10;
@@ -41,17 +41,17 @@ void __thiscall STGroupBoatC::ChangeMDNotify(STGroupBoatC *this,int param_1,uint
   local_78.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_78;
   local_24 = this;
-  iVar2 = Library::MSVCRT::__setjmp3(local_78.jumpBuffer,0);
+  iVar3 = Library::MSVCRT::__setjmp3(local_78.jumpBuffer,0);
   this_00 = local_24;
-  if (iVar2 != 0) {
+  if (iVar3 != 0) {
     g_currentExceptionFrame = local_78.previous;
-    if (iVar2 != -0x5001fff7) {
-      iVar3 = ReportDebugMessage("E:\\__titans\\wlad\\to_grpb.cpp",0x126a,0,iVar2,
+    if (iVar3 != -0x5001fff7) {
+      iVar4 = ReportDebugMessage("E:\\__titans\\wlad\\to_grpb.cpp",0x126a,0,iVar3,
                                  "%s","STGroupBoatC::ChangeMDNotify");
-      if (iVar3 != 0) {
+      if (iVar4 != 0) {
         STDebugBreak(); /* noreturn in standalone pseudocode */
       }
-      RaiseInternalException(iVar2,0,"E:\\__titans\\wlad\\to_grpb.cpp",0x126b);
+      RaiseInternalException(iVar3,0,"E:\\__titans\\wlad\\to_grpb.cpp",0x126b);
     }
     return;
   }
@@ -59,26 +59,25 @@ void __thiscall STGroupBoatC::ChangeMDNotify(STGroupBoatC *this,int param_1,uint
   local_18 = this_01;
   if (param_1 == 1) {
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-    iVar2 = (**(code **)&this_01->vtable->field_0x2c)();
+    iVar3 = (**(code **)&this_01->vtable->field_0x2c)();
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-    if ((iVar2 == 0x3b) || (iVar2 = (**(code **)&this_01->vtable->field_0x2c)(), iVar2 == 0x60)) {
+    if ((iVar3 == 0x3b) || (iVar3 = (**(code **)&this_01->vtable->field_0x2c)(), iVar3 == 0x60)) {
       if ((this_00->field_0262 == 1) || (this_00->field_0262 == 0)) {
-        if (this_00->field_0266 == 0) {
+        if (this_00->field_0266 == (uint *)0x0) {
           RaiseInternalException
                     (-0x5001fff7,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_grpb.cpp"
                      ,0x11f2);
         }
-        uVar7 = 0;
-        /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-        iVar2 = *(int *)(this_00->field_0266 + 0xc);
-        if (0 < iVar2) {
+        uVar8 = 0;
+        uVar1 = this_00->field_0266[3];
+        if (0 < (int)uVar1) {
           do {
-            DArrayGetElement((DArrayTy *)this_00->field_0266,uVar7,&local_10);
+            DArrayGetElement((DArrayTy *)this_00->field_0266,uVar8,&local_10);
             if ((short)local_10 == -1) break;
-            uVar7 = uVar7 + 1;
-          } while ((int)uVar7 < iVar2);
+            uVar8 = uVar8 + 1;
+          } while ((int)uVar8 < (int)uVar1);
         }
-        Library::DKW::TBL::FUN_006ae140((uint *)this_00->field_0266,uVar7,&param_2);
+        Library::DKW::TBL::FUN_006ae140(this_00->field_0266,uVar8,&param_2);
         DistributeMD(this_00,0,(DArrayTy *)this_00->field_024E,(DArrayTy *)this_00->field_0266,
                      (DArrayTy *)this_00->field_0029);
         this_01 = local_18;
@@ -112,40 +111,39 @@ void __thiscall STGroupBoatC::ChangeMDNotify(STGroupBoatC *this,int param_1,uint
         g_currentExceptionFrame = local_78.previous;
         return;
       }
-      if (this_00->field_0266 == 0) {
+      if (this_00->field_0266 == (uint *)0x0) {
         RaiseInternalException
                   (-0x5001fff7,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_grpb.cpp",
                    0x11fe);
       }
-      uVar7 = 0;
-      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-      iVar2 = *(int *)(this_00->field_0266 + 0xc);
-      if (0 < iVar2) {
+      uVar8 = 0;
+      uVar1 = this_00->field_0266[3];
+      if (0 < (int)uVar1) {
         do {
-          DArrayGetElement((DArrayTy *)this_00->field_0266,uVar7,&local_10);
+          DArrayGetElement((DArrayTy *)this_00->field_0266,uVar8,&local_10);
           if ((short)local_10 == -1) break;
-          uVar7 = uVar7 + 1;
-        } while ((int)uVar7 < iVar2);
+          uVar8 = uVar8 + 1;
+        } while ((int)uVar8 < (int)uVar1);
       }
-      puVar5 = (uint *)this_00->field_0266;
+      puVar6 = this_00->field_0266;
     }
     else {
-      iVar2 = 0;
+      iVar3 = 0;
       if (0 < local_1c) {
-        piVar6 = local_34;
+        piVar7 = local_34;
         do {
           /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-          iVar3 = (**(code **)&local_18->vtable->field_0x2c)();
+          iVar4 = (**(code **)&local_18->vtable->field_0x2c)();
           this_01 = local_18;
-          if (iVar3 == *piVar6) break;
-          iVar2 = iVar2 + 1;
-          piVar6 = piVar6 + 1;
-        } while (iVar2 < local_1c);
+          if (iVar4 == *piVar7) break;
+          iVar3 = iVar3 + 1;
+          piVar7 = piVar7 + 1;
+        } while (iVar3 < local_1c);
       }
-      if (iVar2 == local_1c) {
-        iVar2 = ReportDebugMessage("E:\\__titans\\wlad\\to_grpb.cpp",0x120a,0,0,"%s",
+      if (iVar3 == local_1c) {
+        iVar3 = ReportDebugMessage("E:\\__titans\\wlad\\to_grpb.cpp",0x120a,0,0,"%s",
                                    "STGroupBoatC::ChangeMDNotify invalid type");
-        if (iVar2 != 0) {
+        if (iVar3 != 0) {
           STDebugBreak(); /* noreturn in standalone pseudocode */
         }
         RaiseInternalException
@@ -157,14 +155,14 @@ void __thiscall STGroupBoatC::ChangeMDNotify(STGroupBoatC *this,int param_1,uint
         return;
       }
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-      iVar2 = (**(code **)&this_01->vtable->field_0x2c)();
-      if (iVar2 != this_00->field_025E) {
+      iVar3 = (**(code **)&this_01->vtable->field_0x2c)();
+      if (iVar3 != this_00->field_025E) {
         g_currentExceptionFrame = local_78.previous;
         return;
       }
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-      iVar2 = (**(code **)&this_01->vtable->field_0x88)(local_14);
-      if (iVar2 < 1) {
+      iVar3 = (**(code **)&this_01->vtable->field_0x88)(local_14);
+      if (iVar3 < 1) {
         g_currentExceptionFrame = local_78.previous;
         return;
       }
@@ -193,53 +191,51 @@ void __thiscall STGroupBoatC::ChangeMDNotify(STGroupBoatC *this,int param_1,uint
         g_currentExceptionFrame = local_78.previous;
         return;
       }
-      if (this_00->field_024E == 0) {
+      if (this_00->field_024E == (uint *)0x0) {
         RaiseInternalException
                   (-0x5001fff7,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_grpb.cpp",
                    0x1215);
       }
-      uVar7 = 0;
-      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-      iVar2 = *(int *)(this_00->field_024E + 0xc);
-      if (0 < iVar2) {
+      uVar8 = 0;
+      uVar1 = this_00->field_024E[3];
+      if (0 < (int)uVar1) {
         do {
-          DArrayGetElement((DArrayTy *)this_00->field_024E,uVar7,&local_10);
+          DArrayGetElement((DArrayTy *)this_00->field_024E,uVar8,&local_10);
           if ((short)local_10 == -1) break;
-          uVar7 = uVar7 + 1;
-        } while ((int)uVar7 < iVar2);
+          uVar8 = uVar8 + 1;
+        } while ((int)uVar8 < (int)uVar1);
       }
-      puVar5 = (uint *)this_00->field_024E;
+      puVar6 = this_00->field_024E;
     }
-    Library::DKW::TBL::FUN_006ae140(puVar5,uVar7,&param_2);
+    Library::DKW::TBL::FUN_006ae140(puVar6,uVar8,&param_2);
     pDVar11 = (DArrayTy *)this_00->field_0029;
     pDVar10 = (DArrayTy *)this_00->field_0266;
     pDVar9 = (DArrayTy *)this_00->field_024E;
     goto LAB_004a4aab;
   }
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-  iVar2 = (**(code **)&this_01->vtable->field_0x2c)();
+  iVar3 = (**(code **)&this_01->vtable->field_0x2c)();
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-  if ((iVar2 == 0x3b) ||
-     (iVar3 = (**(code **)&this_01->vtable->field_0x2c)(), iVar2 = local_1c, iVar3 == 0x60)) {
+  if ((iVar3 == 0x3b) ||
+     (iVar4 = (**(code **)&this_01->vtable->field_0x2c)(), iVar3 = local_1c, iVar4 == 0x60)) {
     if ((this_00->field_0262 == 1) || (this_00->field_0262 == 0)) {
-      if (this_00->field_0266 == 0) {
+      if (this_00->field_0266 == (uint *)0x0) {
         RaiseInternalException
                   (-0x5001fff7,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_grpb.cpp",
                    0x1226);
       }
-      uVar7 = 0;
-      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-      iVar2 = *(int *)(this_00->field_0266 + 0xc);
-      if (0 < iVar2) {
+      uVar8 = 0;
+      uVar1 = this_00->field_0266[3];
+      if (0 < (int)uVar1) {
         do {
-          DArrayGetElement((DArrayTy *)this_00->field_0266,uVar7,&local_10);
+          DArrayGetElement((DArrayTy *)this_00->field_0266,uVar8,&local_10);
           if ((short)local_10 == (short)param_2) {
             local_10 = 0xffff;
-            Library::DKW::TBL::FUN_006ae140((uint *)this_00->field_0266,uVar7,&local_10);
+            Library::DKW::TBL::FUN_006ae140(this_00->field_0266,uVar8,&local_10);
             break;
           }
-          uVar7 = uVar7 + 1;
-        } while ((int)uVar7 < iVar2);
+          uVar8 = uVar8 + 1;
+        } while ((int)uVar8 < (int)uVar1);
       }
       DistributeMD(this_00,0,(DArrayTy *)this_00->field_024E,(DArrayTy *)this_00->field_0266,
                    (DArrayTy *)this_00->field_0029);
@@ -274,51 +270,50 @@ void __thiscall STGroupBoatC::ChangeMDNotify(STGroupBoatC *this,int param_1,uint
       g_currentExceptionFrame = local_78.previous;
       return;
     }
-    if (this_00->field_0266 == 0) {
+    if (this_00->field_0266 == (uint *)0x0) {
       RaiseInternalException
                 (-0x5001fff7,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_grpb.cpp",
                  0x1234);
     }
     uVar8 = 0;
-    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-    uVar7 = *(uint *)(this_00->field_0266 + 0xc);
-    if (0 < (int)uVar7) {
+    uVar1 = this_00->field_0266[3];
+    if (0 < (int)uVar1) {
       do {
         DArrayGetElement((DArrayTy *)this_00->field_0266,uVar8,&local_10);
         if ((short)local_10 == (short)param_2) {
           local_10 = 0xffff;
-          Library::DKW::TBL::FUN_006ae140((uint *)this_00->field_0266,uVar8,&local_10);
+          Library::DKW::TBL::FUN_006ae140(this_00->field_0266,uVar8,&local_10);
           break;
         }
         uVar8 = uVar8 + 1;
-      } while ((int)uVar8 < (int)uVar7);
+      } while ((int)uVar8 < (int)uVar1);
     }
-    if (uVar8 == uVar7) {
-      iVar2 = ReportDebugMessage("E:\\__titans\\wlad\\to_grpb.cpp",0x123b,0,0,"%s",
+    if (uVar8 == uVar1) {
+      iVar3 = ReportDebugMessage("E:\\__titans\\wlad\\to_grpb.cpp",0x123b,0,0,"%s",
                                  "STGroupBoatC::ChangeMDNotify depot is absent");
-      if (iVar2 != 0) {
+      if (iVar3 != 0) {
         STDebugBreak(); /* noreturn in standalone pseudocode */
       }
-      iVar2 = 0x123c;
+      iVar3 = 0x123c;
       goto LAB_004a4a83;
     }
   }
   else {
-    iVar3 = 0;
+    iVar4 = 0;
     if (0 < local_1c) {
       local_20 = local_34;
       do {
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-        iVar4 = (**(code **)&local_18->vtable->field_0x2c)();
-        if (iVar4 == *local_20) break;
-        iVar3 = iVar3 + 1;
+        iVar5 = (**(code **)&local_18->vtable->field_0x2c)();
+        if (iVar5 == *local_20) break;
+        iVar4 = iVar4 + 1;
         local_20 = local_20 + 1;
-      } while (iVar3 < iVar2);
+      } while (iVar4 < iVar3);
     }
-    if (iVar3 == iVar2) {
-      iVar2 = ReportDebugMessage("E:\\__titans\\wlad\\to_grpb.cpp",0x1246,0,0,"%s",
+    if (iVar4 == iVar3) {
+      iVar3 = ReportDebugMessage("E:\\__titans\\wlad\\to_grpb.cpp",0x1246,0,0,"%s",
                                  "STGroupBoatC::ChangeMDNotify invalid type");
-      if (iVar2 != 0) {
+      if (iVar3 != 0) {
         STDebugBreak(); /* noreturn in standalone pseudocode */
       }
       RaiseInternalException
@@ -326,24 +321,23 @@ void __thiscall STGroupBoatC::ChangeMDNotify(STGroupBoatC *this,int param_1,uint
                  0x1247);
     }
     if (this_00->field_024A == 0) {
-      if (this_00->field_024E == 0) {
+      if (this_00->field_024E == (uint *)0x0) {
         RaiseInternalException
                   (-0x5001fff7,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_grpb.cpp",
                    0x124b);
       }
-      uVar7 = 0;
-      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-      iVar2 = *(int *)(this_00->field_024E + 0xc);
-      if (0 < iVar2) {
+      uVar8 = 0;
+      uVar1 = this_00->field_024E[3];
+      if (0 < (int)uVar1) {
         do {
-          DArrayGetElement((DArrayTy *)this_00->field_024E,uVar7,&local_10);
+          DArrayGetElement((DArrayTy *)this_00->field_024E,uVar8,&local_10);
           if ((short)local_10 == (short)param_2) {
             local_10 = 0xffff;
-            Library::DKW::TBL::FUN_006ae140((uint *)this_00->field_024E,uVar7,&local_10);
+            Library::DKW::TBL::FUN_006ae140(this_00->field_024E,uVar8,&local_10);
             break;
           }
-          uVar7 = uVar7 + 1;
-        } while ((int)uVar7 < iVar2);
+          uVar8 = uVar8 + 1;
+        } while ((int)uVar8 < (int)uVar1);
       }
       DistributeMD(this_00,0,(DArrayTy *)this_00->field_024E,(DArrayTy *)this_00->field_0266,
                    (DArrayTy *)this_00->field_0029);
@@ -377,36 +371,35 @@ void __thiscall STGroupBoatC::ChangeMDNotify(STGroupBoatC *this,int param_1,uint
       g_currentExceptionFrame = local_78.previous;
       return;
     }
-    if (this_00->field_024E == 0) {
+    if (this_00->field_024E == (uint *)0x0) {
       RaiseInternalException
                 (-0x5001fff7,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_grpb.cpp",
                  0x1259);
     }
     uVar8 = 0;
-    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-    uVar7 = *(uint *)(this_00->field_024E + 0xc);
-    if (0 < (int)uVar7) {
+    uVar1 = this_00->field_024E[3];
+    if (0 < (int)uVar1) {
       do {
         DArrayGetElement((DArrayTy *)this_00->field_024E,uVar8,&local_10);
         if ((short)local_10 == (short)param_2) {
           local_10 = 0xffff;
-          Library::DKW::TBL::FUN_006ae140((uint *)this_00->field_024E,uVar8,&local_10);
+          Library::DKW::TBL::FUN_006ae140(this_00->field_024E,uVar8,&local_10);
           break;
         }
         uVar8 = uVar8 + 1;
-      } while ((int)uVar8 < (int)uVar7);
+      } while ((int)uVar8 < (int)uVar1);
     }
-    if (uVar8 == uVar7) {
-      iVar2 = ReportDebugMessage("E:\\__titans\\wlad\\to_grpb.cpp",0x1260,0,0,"%s",
+    if (uVar8 == uVar1) {
+      iVar3 = ReportDebugMessage("E:\\__titans\\wlad\\to_grpb.cpp",0x1260,0,0,"%s",
                                  "STGroupBoatC::ChangeMDNotify mine is absent");
-      if (iVar2 != 0) {
+      if (iVar3 != 0) {
         STDebugBreak(); /* noreturn in standalone pseudocode */
       }
-      iVar2 = 0x1261;
+      iVar3 = 0x1261;
 LAB_004a4a83:
       RaiseInternalException
                 (-0x5001fffe,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_grpb.cpp",
-                 iVar2);
+                 iVar3);
     }
   }
   pDVar11 = (DArrayTy *)this_00->field_0029;

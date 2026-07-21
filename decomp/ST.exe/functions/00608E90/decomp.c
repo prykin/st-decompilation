@@ -81,7 +81,7 @@ undefined4 __thiscall FUN_00608e90(void *this,AnonShape_00608E90_523B07BC *param
       return 0;
     }
     if (*(int *)((int)this + 0x248) == 1) {
-      if (*(uint *)((int)this + 0x250) <= (uint)PTR_00802a38->field_00E4) {
+      if (*(uint *)((int)this + 0x250) <= PTR_00802a38->field_00E4) {
         if ((*(int *)((int)this + 0x20d) == 5) && (iVar2 = thunk_FUN_0060cef0(this), iVar2 == 0)) {
           thunk_FUN_006099a0(this);
         }
@@ -113,9 +113,9 @@ undefined4 __thiscall FUN_00608e90(void *this,AnonShape_00608E90_523B07BC *param
         iVar2 = thunk_FUN_0060d070(this);
         if ((0 < iVar2) && (iVar2 == 2)) {
           thunk_FUN_0060d220((int)this);
-          iVar2 = PTR_00802a38->field_00E4;
+          uVar3 = PTR_00802a38->field_00E4;
           *(undefined4 *)((int)this + 0x248) = 1;
-          *(int *)((int)this + 0x250) = iVar2 + 200;
+          *(uint *)((int)this + 0x250) = uVar3 + 200;
         }
         break;
       case 6:
@@ -155,7 +155,7 @@ undefined4 __thiscall FUN_00608e90(void *this,AnonShape_00608E90_523B07BC *param
     puVar8 = puVar8 + 1;
   }
   if (*(int *)((int)this + 0x1e1) == 2) {
-    thunk_FUN_0060c1a0(this,param_1->field_0014);
+    STFieldC::thunk_FUN_0060c1a0(this,param_1->field_0014);
     return 0;
   }
   iVar2 = *(int *)((int)this + 0x1f9) / 0xc9;

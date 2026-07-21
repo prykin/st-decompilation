@@ -196,7 +196,7 @@ LAB_00442f1f:
               (-0x5001fff7,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_allpl.cpp",
                0x2507);
   }
-  local_34 = (DArrayTy *)Library::DKW::TBL::FUN_006ae290((uint *)0x0,0,0x24,1);
+  local_34 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,0,0x24,1);
   uVar14 = 0;
   if (0 < (int)local_28) {
     do {
@@ -246,8 +246,8 @@ LAB_00442f1f:
               (-0x5001fff7,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_allpl.cpp",
                0x2524);
   }
-  local_20 = (DArrayTy *)Library::DKW::TBL::FUN_006ae290((uint *)0x0,local_3c,6,1);
-  local_30 = (DArrayTy *)Library::DKW::TBL::FUN_006ae290((uint *)0x0,local_2c,6,1);
+  local_20 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,local_3c,6,1);
+  local_30 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,local_2c,6,1);
   pDVar8 = g_playerRuntime[param_1].groups;
   local_bc = pDVar8;
   if (pDVar8 == (DArrayTy *)0x0) {
@@ -502,7 +502,7 @@ LAB_004436f7:
   }
   local_30 = pDVar8;
   pDVar8 = local_30;
-  local_20 = (DArrayTy *)Library::DKW::TBL::FUN_006ae290((uint *)0x0,(uint)local_30,0x24,1);
+  local_20 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,(uint)local_30,0x24,1);
   pDVar19 = local_34;
   if (0 < (int)pDVar8) {
     do {
@@ -562,17 +562,17 @@ LAB_004436f7:
   }
   DArrayDestroy(pDVar19);
   uVar14 = local_38;
-  pDVar8 = (DArrayTy *)Library::DKW::TBL::FUN_006ae290((uint *)0x0,local_38,2,1);
+  pDVar8 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,local_38,2,1);
   uVar13 = 0;
   if (0 < (int)uVar14) {
     do {
       DArrayGetElement(param_5,uVar13,&local_8);
-      Library::DKW::TBL::FUN_006ae140((uint *)pDVar8,uVar13,&local_8);
+      Library::DKW::TBL::FUN_006ae140(&pDVar8->flags,uVar13,&local_8);
       uVar13 = uVar13 + 1;
     } while ((int)uVar13 < (int)uVar14);
   }
   pDVar19 = local_30;
-  local_4c = (DArrayTy *)Library::DKW::TBL::FUN_006ae290((uint *)0x0,(uint)local_30,0xe,1);
+  local_4c = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,(uint)local_30,0xe,1);
   local_24 = 0;
   if (0 < (int)pDVar19) {
     do {
@@ -604,7 +604,7 @@ LAB_004436f7:
       local_76 = local_58;
       Library::DKW::TBL::FUN_006ae1c0(&local_4c->flags,(undefined4 *)&local_80);
       local_8 = 0xffff;
-      Library::DKW::TBL::FUN_006ae140((uint *)pDVar8,uVar14,&local_8);
+      Library::DKW::TBL::FUN_006ae140(&pDVar8->flags,uVar14,&local_8);
       local_24 = local_24 + 1;
     } while ((int)local_24 < (int)local_30);
   }

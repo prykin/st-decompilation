@@ -74,11 +74,9 @@ int __thiscall STJumpMineC::GetMessage(STJumpMineC *this,STMessage *message)
       if (puVar6[3] == 2) {
         thunk_FUN_006193a0(local_8,puVar6);
         puVar6 = (undefined4 *)&this_00->field_0x20;
-        for (iVar3 = 0xb; iVar3 != 0; iVar3 = iVar3 + -1) {
-          *puVar6 = 0;
-          puVar6 = puVar6 + 1;
-        }
-        *(undefined1 *)puVar6 = 0;
+        memset(puVar6, 0, 0x2d); /* compiler bulk-zero initialization */
+        puVar6 = (undefined4 *)((byte *)puVar6 + 0x2c);
+        iVar3 = 0;
         this_00->field_001C = this_00->field_014C;
         if ((this_00->field_0150 != '\0') && (this_00->field_0093 != CASE_5)) {
           LoadImagJMine(this_00,1);
@@ -151,14 +149,14 @@ LAB_00618ce0:
     }
   }
   else if (SVar1 == MESS_STOCTOPUSC_0112) {
-    if ((-1 < (int)local_8->field_0097) && (local_8->field_0093 != CASE_5)) {
+    if ((-1 < local_8->field_0097) && (local_8->field_0093 != CASE_5)) {
       SubmarineTitans::Recovered::HiddenThis::AnonReceiver_004248D0::FUN_006e9520
                 ((AnonReceiver_004248D0 *)PTR_00807598,local_8->field_0097,0,0,(uint)local_8);
       g_currentExceptionFrame = local_58.previous;
       return 0;
     }
   }
-  else if (((SVar1 == MESS_STSPRGAMEOBJC_0113) && (-1 < (int)local_8->field_0097)) &&
+  else if (((SVar1 == MESS_STSPRGAMEOBJC_0113) && (-1 < local_8->field_0097)) &&
           (local_8->field_0093 != CASE_5)) {
     SubmarineTitans::Recovered::HiddenThis::AnonReceiver_004248D0::FUN_006e9520
               ((AnonReceiver_004248D0 *)PTR_00807598,local_8->field_0097,0,0x401109,

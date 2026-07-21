@@ -87,7 +87,7 @@ void __thiscall StartSystemTy::ChatMessage(StartSystemTy *this,AnonShape_005DE05
         /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
         } while ((int)uVar8 < (int)(uVar7 + *(int *)(local_10 + 0x1e0)));
       }
-      FUN_006b35d0(DAT_008075a8,(uint)this_00[0x2a].app);
+      FUN_006b35d0((int *)PTR_008075a8,(uint)this_00[0x2a].app);
     }
   }
   else {
@@ -119,7 +119,7 @@ void __thiscall StartSystemTy::ChatMessage(StartSystemTy *this,AnonShape_005DE05
         FUN_006b5b10(pAVar2,0,(uint)uVar1,*(ushort *)&param_1->field_0x1a + 2,(uint)uVar1,
                      (pAVar2->field_0008 - (uint)*(ushort *)&param_1->field_0x1a) + -5,9,0xd);
       }
-      FUN_006b35d0(DAT_008075a8,this_00[0x2a].systemId);
+      FUN_006b35d0((int *)PTR_008075a8,this_00[0x2a].systemId);
       g_currentExceptionFrame = local_74.previous;
       return;
     }

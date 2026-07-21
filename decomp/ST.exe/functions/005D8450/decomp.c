@@ -21,10 +21,9 @@ void __thiscall SIDTy::CreateCtrls(SIDTy *this)
   char *pcVar9;
   char *pcVar10;
   char *pcVar11;
-  undefined4 *puVar12;
   ccFntTy **ppcVar13;
   ccFntTy *local_db0 [8];
-  AnonPointee_SIDTy_1CD0 *local_d90;
+  uint *local_d90;
   undefined4 local_d64;
   undefined4 local_d60;
   undefined4 local_d5c;
@@ -171,11 +170,8 @@ void __thiscall SIDTy::CreateCtrls(SIDTy *this)
   if (pvVar4 == (HANDLE)0xffffffff) {
     this_00->field_1CC4 = (HANDLE)0x0;
   }
-  puVar12 = local_524;
-  for (iVar3 = 0x135; iVar3 != 0; iVar3 = iVar3 + -1) {
-    *puVar12 = 0;
-    puVar12 = puVar12 + 1;
-  }
+  memset(local_524, 0, 0x4d4); /* compiler bulk-zero initialization */
+  iVar3 = 0;
   local_524[0] = 0;
   local_524[2] = 0xe4;
   local_524[3] = 0x1be;
@@ -237,8 +233,8 @@ void __thiscall SIDTy::CreateCtrls(SIDTy *this)
   local_394 = local_4fc;
   local_214 = local_4fc;
   local_a4 = local_4fc;
-  (*this_00->field_000C->vtable->CreateObject)
-            ((SystemClassTy *)this_00->field_000C,7,&this_00->field_1AF1,(int *)0x0,local_524,0);
+  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+  (*(code *)this_00->field_000C->vtable->field_0008)(7,&this_00->field_1AF1,0,local_524,0);
   ppcVar13 = local_db0;
   for (iVar3 = 0x223; iVar3 != 0; iVar3 = iVar3 + -1) {
     *ppcVar13 = (ccFntTy *)0x0;
@@ -261,14 +257,14 @@ void __thiscall SIDTy::CreateCtrls(SIDTy *this)
   local_d20 = 2;
   local_d1c = 0x68ff;
   local_d24 = local_d64;
-  (*this_00->field_000C->vtable->CreateObject)
-            ((SystemClassTy *)this_00->field_000C,6,&this_00->field_1AF5,(int *)0x0,local_db0,1);
+  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+  (*(code *)this_00->field_000C->vtable->field_0008)(6,&this_00->field_1AF5,0,local_db0,1);
   uVar5 = MMObjTy::CreateSprBut((MMObjTy *)this_00,1,1,0x1e8,0x228,0x55,0x12,0x6900,0x6980);
   this_00->field_1AF9 = uVar5;
   uVar5 = MMObjTy::CreateSprBut((MMObjTy *)this_00,1,1,0x1e8,0x23b,0x55,0x12,0x6901,0x6981);
   this_00->field_1AFD = uVar5;
   PrepFiles(this_00);
-  Library::DKW::DDX::FUN_006b3430(DAT_008075a8,this_00->field_1CB4);
+  Library::DKW::DDX::FUN_006b3430((int *)PTR_008075a8,this_00->field_1CB4);
   if (this_00->field_1B05 != 0xffffffff) {
     Library::DKW::DDX::FUN_006b34d0
               ((uint *)this_00->field_1B49,this_00->field_1B05,0xfffffffe,this_00->field_1B1D,

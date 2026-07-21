@@ -9,7 +9,7 @@ void __thiscall FSGSTy::ConnectProc(FSGSTy *this,int param_1,int param_2)
 
 {
   char cVar1;
-  AnonPointee_FSGSTy_1AC0 *pAVar2;
+  ushort *puVar2;
   code *pcVar3;
   FSGSTy *pFVar4;
   int iVar5;
@@ -22,7 +22,7 @@ void __thiscall FSGSTy::ConnectProc(FSGSTy *this,int param_1,int param_2)
   InternalExceptionFrame local_4c;
   FSGSTy *local_8;
 
-  if (((this->field_1A5F == CASE_1) && (this->field_1AC0 != (AnonPointee_FSGSTy_1AC0 *)0x0)) &&
+  if (((this->field_1A5F == CASE_1) && (this->field_1AC0 != (ushort *)0x0)) &&
      (-1 < this->field_1ABC)) {
     local_4c.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_4c;
@@ -30,13 +30,13 @@ void __thiscall FSGSTy::ConnectProc(FSGSTy *this,int param_1,int param_2)
     iVar5 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
     pFVar4 = local_8;
     if (iVar5 == 0) {
-      pAVar2 = local_8->field_1AC0;
-      uVar10 = pAVar2->field_0014;
+      puVar2 = local_8->field_1AC0;
+      uVar10 = *(uint *)(puVar2 + 10);
       if (uVar10 == 0) {
-        uVar10 = ((uint)(ushort)pAVar2->field_000E * pAVar2->field_0004 + 0x1f >> 3 & 0x1ffffffc) *
-                 pAVar2->field_0008;
+        uVar10 = ((uint)puVar2[7] * *(int *)(puVar2 + 2) + 0x1f >> 3 & 0x1ffffffc) *
+                 *(int *)(puVar2 + 4);
       }
-      puVar6 = (undefined4 *)FUN_006b4fa0((int)pAVar2);
+      puVar6 = (undefined4 *)FUN_006b4fa0((int)puVar2);
       for (uVar9 = uVar10 >> 2; uVar9 != 0; uVar9 = uVar9 - 1) {
         *puVar6 = 0xffffffff;
         puVar6 = puVar6 + 1;
@@ -77,7 +77,7 @@ void __thiscall FSGSTy::ConnectProc(FSGSTy *this,int param_1,int param_2)
         }
       }
       ccFntTy::WrTxt(pFVar4->field_1A73,&DAT_0080f33a,-1,-1,2,-1,-1);
-      FUN_006b35d0(DAT_008075a8,pFVar4->field_1ABC);
+      FUN_006b35d0((int *)PTR_008075a8,pFVar4->field_1ABC);
       g_currentExceptionFrame = local_4c.previous;
       return;
     }

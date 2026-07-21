@@ -118,7 +118,7 @@ int __thiscall STAlgaC::GetMessage(STAlgaC *this,STMessage *message)
       /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
       return extraout_EAX;
     }
-    array = (DArrayTy *)Library::DKW::TBL::FUN_006ae290((uint *)0x0,10,0x24,10);
+    array = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,10,0x24,10);
     local_14 = array;
     local_18 = 0;
     if (0 < (int)local_20) {
@@ -221,9 +221,9 @@ LAB_005761b9:
             piVar20 = &local_60;
             local_60 = local_2c->field_0030;
             if ((int)local_2c->field_0034 <= local_60) {
-              uVar14 = Library::DKW::LIB::FUN_006acf50
-                                 (local_2c->field_0038,local_2c->field_0034 * 8 + 0x50);
-              pSVar17->field_0038 = uVar14;
+              iVar9 = Library::DKW::LIB::FUN_006acf50
+                                (local_2c->field_0038,local_2c->field_0034 * 8 + 0x50);
+              pSVar17->field_0038 = iVar9;
               pSVar17->field_0034 = pSVar17->field_0034 + 10;
             }
             pcVar13 = FUN_006c49b0((char *)local_8);

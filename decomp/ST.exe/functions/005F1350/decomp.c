@@ -11,14 +11,14 @@ STManBasisC * __thiscall STManBasisC::STManBasisC(STManBasisC *this)
 
 {
   int iVar1;
-  undefined4 *puVar2;
+  ushort **ppuVar2;
 
   sub_006E60E0(this);
   this->vtable = &STManBasisCVTable;
-  puVar2 = &this->field_0020;
+  ppuVar2 = &this->field_0020;
   for (iVar1 = 10; iVar1 != 0; iVar1 = iVar1 + -1) {
-    *puVar2 = 0;
-    puVar2 = puVar2 + 1;
+    *ppuVar2 = (ushort *)0x0;
+    ppuVar2 = ppuVar2 + 1;
   }
   return this;
 }

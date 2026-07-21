@@ -48,7 +48,7 @@ undefined4 __fastcall FUN_00480600(void *param_1)
     iVar2 = thunk_FUN_004e60d0(*(int *)((int)param_1 + 0x24),0x24);
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     if ((iVar2 < 1) ||
-       ((uint)(*(int *)((int)param_1 + 0x77a) + PTR_00802a38->field_00E4) %
+       ((*(int *)((int)param_1 + 0x77a) + PTR_00802a38->field_00E4) %
         (*(uint *)((int)param_1 + 0x77e) * 2) <= *(uint *)((int)param_1 + 0x77e))) {
       iVar2 = thunk_FUN_0041caf0(param_1);
     }
@@ -65,7 +65,7 @@ undefined4 __fastcall FUN_00480600(void *param_1)
   case 9:
     puVar5 = (undefined4 *)(((8 - (int)*(short *)((int)param_1 + 0x6c) / 0x2d) * 0xf) % 0x78);
     iVar2 = ((4 - DAT_008073fc) * 0x1e) % 0x78;
-    if ((*(byte *)&PTR_00802a38->field_00E4 & 1) == 0) {
+    if ((PTR_00802a38->field_00E4 & 1) == 0) {
       *(int *)((int)param_1 + 0x822) = *(int *)((int)param_1 + 0x822) + 1;
     }
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */

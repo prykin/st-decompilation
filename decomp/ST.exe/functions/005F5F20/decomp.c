@@ -157,7 +157,7 @@ int __thiscall STColl3C::GetMessage(STColl3C *this,STMessage *message)
                        (int *)&local_8->field_0x285);
     *(undefined4 *)&this_00->field_0x269 = 600;
     *(undefined4 *)&this_00->field_0x2dd = 1;
-    *(int *)&this_00->field_0x2e1 = PTR_00802a38->field_00E4 + *(int *)&this_00->field_0x259;
+    *(uint *)&this_00->field_0x2e1 = PTR_00802a38->field_00E4 + *(int *)&this_00->field_0x259;
     if (DAT_008117a4 != (void *)0x0) {
       thunk_FUN_0062e550(DAT_008117a4,*(int *)&this_00->field_0x235,*(int *)&this_00->field_0x18,
                          *(int *)&this_00->field_0x255);
@@ -166,7 +166,7 @@ int __thiscall STColl3C::GetMessage(STColl3C *this,STMessage *message)
     g_currentExceptionFrame = local_60.previous;
     return 0;
   }
-  iVar5 = thunk_FUN_005f68b0(local_8,puVar7);
+  iVar5 = STAllPlayersC::thunk_FUN_005f68b0((STAllPlayersC *)local_8,puVar7);
   if (iVar5 == 0) {
     thunk_FUN_005f66b0(this_00);
     g_currentExceptionFrame = local_60.previous;

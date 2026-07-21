@@ -42,12 +42,28 @@ public class STGlobalAggregateAnalyzer extends GhidraScript {
         scanIndexedGlobals();
         List<Row> rows = new ArrayList<>();
         rows.add(playerRelationMatrix());
+        Map<Integer, Integer> centeredNames = new HashMap<>();
         for (Map.Entry<Address, Evidence> entry : indexed.entrySet()) {
             if (entry.getValue().sites.size() < 3 || entry.getKey().getOffset() == 0x00808a4fL)
                 continue;
             Data data = currentProgram.getListing().getDefinedDataAt(entry.getKey());
             Symbol symbol = currentProgram.getSymbolTable().getPrimarySymbol(entry.getKey());
             if (data == null || symbol == null) continue;
+            int centeredCount = centeredOffsetCount(entry.getKey());
+            if (centeredCount > 0 && entry.getValue().scales.keySet().equals(
+                    java.util.Set.of(4))) {
+                int ordinal = centeredNames.merge(centeredCount, 1, Integer::sum);
+                String proposedName = "g_centeredOffsets" + centeredCount +
+                    (ordinal == 1 ? "" : "_" + addr(entry.getKey()));
+                rows.add(new Row(true, addr(entry.getKey()), symbol.getName(),
+                    symbol.getSource().toString(), data.getDataType().getPathName(),
+                    data.getLength(), proposedName, "array:" + centeredCount + ":/int",
+                    centeredCount * 4, "centered_offset_lookup", "high",
+                    "dword SIB lookup; exact centered sequence " +
+                    centeredSequence(centeredCount) + "; indexed sites=" +
+                    entry.getValue().sites.size()));
+                continue;
+            }
             rows.add(new Row(false, addr(entry.getKey()), symbol.getName(),
                 symbol.getSource().toString(), data.getDataType().getPathName(), data.getLength(),
                 "", "", 0, "indexed_global_candidate", "review",
@@ -89,6 +105,26 @@ public class STGlobalAggregateAnalyzer extends GhidraScript {
                 }
             }
         }
+    }
+
+    /** Recognize compiler-emitted {-n..n} neighbourhood lookup tables. */
+    private int centeredOffsetCount(Address base) {
+        try {
+            int radius = currentProgram.getMemory().getInt(base);
+            if (radius < 1 || radius > 64) return 0;
+            int count = radius * 2 + 1;
+            if (!currentProgram.getMemory().contains(base.add((long)count * 4 - 1))) return 0;
+            for (int index = 0; index < count; index++)
+                if (currentProgram.getMemory().getInt(base.add((long)index * 4)) != radius - index)
+                    return 0;
+            return count;
+        }
+        catch (Exception ignored) { return 0; }
+    }
+
+    private String centeredSequence(int count) {
+        int radius = count / 2;
+        return "{" + radius + "..0.." + (-radius) + "}";
     }
 
     private Row playerRelationMatrix() {

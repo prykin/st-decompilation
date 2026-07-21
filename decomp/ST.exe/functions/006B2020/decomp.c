@@ -1,113 +1,109 @@
 
-void FUN_006b2020(int param_1,uint param_2,uint param_3)
+void FUN_006b2020(AnonShape_006B2020_F949DD3E *param_1,uint param_2,uint param_3)
 
 {
   int iVar1;
   int iVar2;
   uint *puVar3;
-  uint *puVar4;
-  uint uVar5;
-  int iVar6;
+  int iVar4;
+  uint *puVar5;
+  AnonNested_006B2020_01A0_B4F1EFF3 *pAVar6;
   uint uVar7;
-  int *piVar8;
-  int iVar9;
+  uint uVar8;
+  int *piVar9;
+  int iVar10;
 
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  iVar2 = *(int *)(param_1 + 0x1ac);
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  if ((param_2 < *(uint *)(param_1 + 0x1a0)) &&
-     (puVar3 = *(uint **)(*(int *)(param_1 + 0x1b0) + param_2 * 4), (*puVar3 & 0x80000) == 0)) {
-    uVar7 = puVar3[0x12];
+  iVar2 = param_1->field_01AC;
+  if ((param_2 < param_1->field_01A0) &&
+     (puVar3 = *(uint **)(param_1->field_01B0 + param_2 * 4), (*puVar3 & 0x80000) == 0)) {
+    uVar8 = puVar3[0x12];
     if ((int)param_3 < (int)puVar3[0x11]) {
       puVar3[0x11] = param_3;
-      uVar5 = FUN_006cee10(param_1,(int)puVar3);
-      puVar3[0x14] = uVar5;
-      if ((0 < (int)uVar7) && ((int)param_3 < *(int *)(*(int *)(iVar2 + -4 + uVar7 * 4) + 0x44))) {
+      uVar7 = FUN_006cee10((int)param_1,(int)puVar3);
+      puVar3[0x14] = uVar7;
+      if ((0 < (int)uVar8) && ((int)param_3 < *(int *)(*(int *)(iVar2 + -4 + uVar8 * 4) + 0x44))) {
         if ((*puVar3 & 0x4000) == 0) {
-          iVar9 = uVar7 - 1;
-          if (-1 < iVar9) {
-            piVar8 = (int *)(iVar2 + iVar9 * 4);
+          iVar10 = uVar8 - 1;
+          if (-1 < iVar10) {
+            piVar9 = (int *)(iVar2 + iVar10 * 4);
             do {
-              puVar4 = (uint *)*piVar8;
-              if (((int)puVar4[0x11] <= (int)param_3) &&
-                 ((param_3 != puVar4[0x11] || ((*puVar4 & 0x4000) == 0)))) break;
-              uVar7 = iVar9 + 1;
-              piVar8[1] = (int)puVar4;
-              iVar9 = iVar9 + -1;
-              piVar8 = piVar8 + -1;
-              puVar4[0x12] = uVar7;
-            } while (-1 < iVar9);
+              puVar5 = (uint *)*piVar9;
+              if (((int)puVar5[0x11] <= (int)param_3) &&
+                 ((param_3 != puVar5[0x11] || ((*puVar5 & 0x4000) == 0)))) break;
+              uVar8 = iVar10 + 1;
+              piVar9[1] = (int)puVar5;
+              iVar10 = iVar10 + -1;
+              piVar9 = piVar9 + -1;
+              puVar5[0x12] = uVar8;
+            } while (-1 < iVar10);
           }
         }
         else {
-          iVar9 = uVar7 - 1;
-          if (-1 < iVar9) {
-            piVar8 = (int *)(iVar2 + iVar9 * 4);
+          iVar10 = uVar8 - 1;
+          if (-1 < iVar10) {
+            piVar9 = (int *)(iVar2 + iVar10 * 4);
             do {
-              iVar6 = *piVar8;
-              if (*(int *)(iVar6 + 0x44) <= (int)param_3) break;
-              iVar1 = iVar9 + 1;
-              piVar8[1] = iVar6;
-              iVar9 = iVar9 + -1;
-              piVar8 = piVar8 + -1;
-              *(int *)(iVar6 + 0x48) = iVar1;
-            } while (-1 < iVar9);
+              iVar4 = *piVar9;
+              if (*(int *)(iVar4 + 0x44) <= (int)param_3) break;
+              iVar1 = iVar10 + 1;
+              piVar9[1] = iVar4;
+              iVar10 = iVar10 + -1;
+              piVar9 = piVar9 + -1;
+              *(int *)(iVar4 + 0x48) = iVar1;
+            } while (-1 < iVar10);
           }
         }
-        *(uint **)(iVar2 + (iVar9 + 1U) * 4) = puVar3;
-        puVar3[0x12] = iVar9 + 1U;
+        *(uint **)(iVar2 + (iVar10 + 1U) * 4) = puVar3;
+        puVar3[0x12] = iVar10 + 1U;
         if ((*puVar3 & 0x20) != 0) {
-          *(undefined4 *)(param_1 + 0x1b4) = 1;
+          param_1->field_01B4 = 1;
           return;
         }
       }
     }
     else if ((int)puVar3[0x11] < (int)param_3) {
       puVar3[0x11] = param_3;
-      uVar5 = FUN_006cee10(param_1,(int)puVar3);
-      puVar3[0x14] = uVar5;
-      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-      iVar9 = *(int *)(param_1 + 0x1a0);
-      if (((int)uVar7 < iVar9 + -1) &&
-         (iVar6 = uVar7 + 1, *(int *)(*(int *)(iVar2 + 4 + uVar7 * 4) + 0x44) < (int)param_3)) {
+      uVar7 = FUN_006cee10((int)param_1,(int)puVar3);
+      puVar3[0x14] = uVar7;
+      pAVar6 = param_1->field_01A0;
+      if (((int)uVar8 < (int)((int)&pAVar6[-1].field_0048 + 3)) &&
+         (iVar10 = uVar8 + 1, *(int *)(*(int *)(iVar2 + 4 + uVar8 * 4) + 0x44) < (int)param_3)) {
         if ((*puVar3 & 0x4000) == 0) {
-          if (iVar6 < iVar9) {
-            piVar8 = (int *)(iVar2 + iVar6 * 4);
+          if (iVar10 < (int)pAVar6) {
+            piVar9 = (int *)(iVar2 + iVar10 * 4);
             do {
-              puVar4 = (uint *)*piVar8;
-              if (((int)param_3 <= (int)puVar4[0x11]) &&
-                 ((param_3 != puVar4[0x11] || ((*puVar4 & 0x4000) == 0)))) break;
-              piVar8[-1] = (int)puVar4;
-              puVar4[0x12] = iVar6 - 1;
-              iVar6 = iVar6 + 1;
-              piVar8 = piVar8 + 1;
-            /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-            } while (iVar6 < *(int *)(param_1 + 0x1a0));
+              puVar5 = (uint *)*piVar9;
+              if (((int)param_3 <= (int)puVar5[0x11]) &&
+                 ((param_3 != puVar5[0x11] || ((*puVar5 & 0x4000) == 0)))) break;
+              piVar9[-1] = (int)puVar5;
+              puVar5[0x12] = iVar10 - 1;
+              iVar10 = iVar10 + 1;
+              piVar9 = piVar9 + 1;
+            } while (iVar10 < (int)param_1->field_01A0);
           }
         }
-        else if (iVar6 < iVar9) {
-          piVar8 = (int *)(iVar2 + iVar6 * 4);
+        else if (iVar10 < (int)pAVar6) {
+          piVar9 = (int *)(iVar2 + iVar10 * 4);
           do {
-            iVar9 = *piVar8;
-            if ((int)param_3 <= *(int *)(iVar9 + 0x44)) break;
-            piVar8[-1] = iVar9;
-            *(int *)(iVar9 + 0x48) = iVar6 + -1;
-            iVar6 = iVar6 + 1;
-            piVar8 = piVar8 + 1;
-          /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-          } while (iVar6 < *(int *)(param_1 + 0x1a0));
+            iVar4 = *piVar9;
+            if ((int)param_3 <= *(int *)(iVar4 + 0x44)) break;
+            piVar9[-1] = iVar4;
+            *(int *)(iVar4 + 0x48) = iVar10 + -1;
+            iVar10 = iVar10 + 1;
+            piVar9 = piVar9 + 1;
+          } while (iVar10 < (int)param_1->field_01A0);
         }
-        *(uint **)(iVar2 + (iVar6 - 1U) * 4) = puVar3;
-        puVar3[0x12] = iVar6 - 1U;
+        *(uint **)(iVar2 + (iVar10 - 1U) * 4) = puVar3;
+        puVar3[0x12] = iVar10 - 1U;
         if ((*puVar3 & 0x20) != 0) {
-          *(undefined4 *)(param_1 + 0x1b4) = 1;
+          param_1->field_01B4 = 1;
           return;
         }
       }
     }
     else {
-      uVar7 = FUN_006cee10(param_1,(int)puVar3);
-      puVar3[0x14] = uVar7;
+      uVar8 = FUN_006cee10((int)param_1,(int)puVar3);
+      puVar3[0x14] = uVar8;
     }
   }
   return;

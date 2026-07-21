@@ -14,7 +14,6 @@ STSharkC::CreateShark
   code *pcVar1;
   undefined4 uVar2;
   int iVar3;
-  undefined4 *puVar4;
   undefined4 local_38 [5];
   int local_24;
   int local_20;
@@ -25,11 +24,7 @@ STSharkC::CreateShark
   undefined4 local_c;
   undefined4 local_8;
 
-  puVar4 = local_38;
-  for (iVar3 = 0xd; iVar3 != 0; iVar3 = iVar3 + -1) {
-    *puVar4 = 0;
-    puVar4 = puVar4 + 1;
-  }
+  memset(local_38, 0, 0x34); /* compiler bulk-zero initialization */
   local_14 = param_4;
   local_8 = param_7;
   local_38[1] = param_9;
@@ -53,7 +48,8 @@ STSharkC::CreateShark
   local_24 = param_1;
   local_20 = param_2;
   local_1c = param_3;
-  (*PTR_00802a38->vtable->vfunc_08)(0x129,0,&param_9,local_38,0);
+  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+  (*(code *)PTR_00802a38->vtable->field_0008)(0x129,0,&param_9,local_38,0);
   return param_9;
 }
 

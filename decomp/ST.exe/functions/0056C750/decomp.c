@@ -43,10 +43,10 @@ void __thiscall STAppC::DoneApp(STAppC *this)
       FreeAndNull(&local_8->field_1189);
     }
     pSVar3->field_118D = 0;
-    if (PTR_00806740 != (AnonShape_GLOBAL_00806740_0AFD1484 *)0x0) {
-      DArrayDestroy((DArrayTy *)PTR_00806740);
+    if (PTR_00806740 != (DArrayTy *)0x0) {
+      DArrayDestroy(PTR_00806740);
     }
-    PTR_00806740 = (AnonShape_GLOBAL_00806740_0AFD1484 *)0x0;
+    PTR_00806740 = (DArrayTy *)0x0;
     thunk_FUN_005711d0(pSVar3,(int *)&PTR_0081163c);
     thunk_FUN_005711d0(pSVar3,(int *)&PTR_0081176c);
     CloseGameDBs(pSVar3);
@@ -54,11 +54,11 @@ void __thiscall STAppC::DoneApp(STAppC *this)
     if ((DArrayTy *)pSVar3->field_4EE2 != (DArrayTy *)0x0) {
       DArrayDestroy((DArrayTy *)pSVar3->field_4EE2);
     }
-    pSVar3->field_4EE2 = 0;
+    pSVar3->field_4EE2 = (uint *)0x0;
     if ((DArrayTy *)pSVar3->field_4EE6 != (DArrayTy *)0x0) {
       DArrayDestroy((DArrayTy *)pSVar3->field_4EE6);
     }
-    pSVar3->field_4EE6 = 0;
+    pSVar3->field_4EE6 = (uint *)0x0;
     if (PTR_008075a0 != (AnonShape_006C3FC0_72DDFA27 *)0x0) {
       FUN_006c3aa0((int *)PTR_008075a0);
       PTR_008075a0 = (AnonShape_006C3FC0_72DDFA27 *)0x0;
@@ -67,9 +67,9 @@ void __thiscall STAppC::DoneApp(STAppC *this)
       FUN_006c2ac0(g_int_008075A4);
       g_int_008075A4 = (int *)0x0;
     }
-    if (DAT_008075a8 != (int *)0x0) {
-      Library::DKW::DDX::FUN_006b3cc0(DAT_008075a8);
-      DAT_008075a8 = (int *)0x0;
+    if (PTR_008075a8 != (AnonShape_006B1B10_121F236C *)0x0) {
+      Library::DKW::DDX::FUN_006b3cc0((int *)PTR_008075a8);
+      PTR_008075a8 = (AnonShape_006B1B10_121F236C *)0x0;
     }
     if (DAT_0080759c != (undefined4 *)0x0) {
       FUN_006ba600(DAT_0080759c);
@@ -123,17 +123,17 @@ void __thiscall STAppC::DoneApp(STAppC *this)
     if ((AnonShape_006B5570_4D68B99C *)pSVar3->field_4EA7 != (AnonShape_006B5570_4D68B99C *)0x0) {
       FUN_006b5570((AnonShape_006B5570_4D68B99C *)pSVar3->field_4EA7);
     }
-    pSVar3->field_4EA7 = 0;
+    pSVar3->field_4EA7 = (uint *)0x0;
     if ((AnonShape_006B5570_4D68B99C *)pSVar3->field_4EAB != (AnonShape_006B5570_4D68B99C *)0x0) {
       FUN_006b5570((AnonShape_006B5570_4D68B99C *)pSVar3->field_4EAB);
     }
-    pSVar3->field_4EAB = 0;
+    pSVar3->field_4EAB = (uint *)0x0;
     if ((AnonShape_006B5570_4D68B99C *)pSVar3->field_4EDA != (AnonShape_006B5570_4D68B99C *)0x0) {
       FUN_006b5570((AnonShape_006B5570_4D68B99C *)pSVar3->field_4EDA);
     }
-    pSVar3->field_4EDA = 0;
-    if (pSVar3->field_7D12 != 0) {
-      FreeAndNull((void **)&pSVar3->field_7D12);
+    pSVar3->field_4EDA = (uint *)0x0;
+    if (pSVar3->field_7D12 != (ushort *)0x0) {
+      FreeAndNull(&pSVar3->field_7D12);
     }
     if (pSVar3->field_76F2 != 0) {
       FreeAndNull((void **)&pSVar3->field_76F2);

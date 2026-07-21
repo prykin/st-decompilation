@@ -58,7 +58,7 @@ int STGroupBoatC::Way3DGrpDistribTgt
   g_currentExceptionFrame = &local_50;
   iVar8 = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0);
   if (iVar8 == 0) {
-    uVar10 = thunk_FUN_00413af0(param_1,param_2,param_3,param_4,param_5);
+    uVar10 = thunk_FUN_00413af0(param_1,(DArrayTy *)param_2,param_3,param_4,param_5);
     uVar7 = (undefined4)((ulonglong)uVar10 >> 0x20);
     uVar9 = 0;
     if ((int)uVar10 == 0) {

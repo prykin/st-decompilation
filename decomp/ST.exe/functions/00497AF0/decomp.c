@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* [STConstructorApplier] Recovered constructor candidate.
    VTable: 00790728 (store 00497B05)
@@ -11,7 +13,8 @@ STGroupBoatC * __thiscall STGroupBoatC::STGroupBoatC(STGroupBoatC *this)
 
 {
   int iVar1;
-  undefined4 *puVar2;
+  uint **ppuVar2;
+  undefined4 *puVar3;
 
   sub_004232A0(this);
   this->vtable = &STGroupBoatCVTable;
@@ -23,41 +26,25 @@ STGroupBoatC * __thiscall STGroupBoatC::STGroupBoatC(STGroupBoatC *this)
   this->field_004D = 0;
   this->field_0049 = 0;
   this->field_0059 = 0;
-  puVar2 = &this->field_005D;
-  for (iVar1 = 0x61; iVar1 != 0; iVar1 = iVar1 + -1) {
-    *puVar2 = 0;
-    puVar2 = puVar2 + 1;
-  }
-  *(undefined1 *)puVar2 = 0;
-  puVar2 = (undefined4 *)&this->field_0x1e2;
-  for (iVar1 = 10; iVar1 != 0; iVar1 = iVar1 + -1) {
-    *puVar2 = 0;
-    puVar2 = puVar2 + 1;
-  }
-  puVar2 = &this->field_020A;
-  for (iVar1 = 6; iVar1 != 0; iVar1 = iVar1 + -1) {
-    *puVar2 = 0;
-    puVar2 = puVar2 + 1;
-  }
-  puVar2 = &this->field_0226;
+  memset(&this->field_005D, 0, 0x185); /* compiler bulk-zero initialization */
+  iVar1 = 0;
+  memset(&this->field_0x1e2, 0, 0x28); /* compiler bulk-zero initialization */
+  iVar1 = 0;
+  memset(&this->field_020A, 0, 0x18); /* compiler bulk-zero initialization */
+  iVar1 = 0;
+  ppuVar2 = &this->field_0226;
   for (iVar1 = 9; iVar1 != 0; iVar1 = iVar1 + -1) {
-    *puVar2 = 0;
-    puVar2 = puVar2 + 1;
+    *ppuVar2 = (uint *)0x0;
+    ppuVar2 = ppuVar2 + 1;
   }
   this->field_0232 = -1;
   this->field_0236 = 1;
-  puVar2 = &this->field_024A;
-  for (iVar1 = 0xb; iVar1 != 0; iVar1 = iVar1 + -1) {
-    *puVar2 = 0;
-    puVar2 = puVar2 + 1;
-  }
-  puVar2 = (undefined4 *)&this->field_0276;
-  for (iVar1 = 7; iVar1 != 0; iVar1 = iVar1 + -1) {
-    *puVar2 = 0;
-    puVar2 = puVar2 + 1;
-  }
-  *(undefined2 *)puVar2 = 0;
-  *(undefined1 *)((int)puVar2 + 2) = 0;
+  memset(&this->field_024A, 0, 0x2c); /* compiler bulk-zero initialization */
+  iVar1 = 0;
+  puVar3 = (undefined4 *)&this->field_0276;
+  memset(puVar3, 0, 0x1e); /* compiler bulk-zero initialization */
+  puVar3 = (undefined4 *)((byte *)puVar3 + 0x1c);
+  *(undefined1 *)((int)puVar3 + 2) = 0;
   *(undefined4 *)&this->field_0x295 = 0;
   this->field_0299 = 0;
   this->field_029B = 0;

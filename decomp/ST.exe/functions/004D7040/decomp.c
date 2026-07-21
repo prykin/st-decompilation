@@ -62,9 +62,9 @@ undefined4 __fastcall FUN_004d7040(int *param_1)
       iVar1 = FUN_006b12a8((int)lVar5,iVar1);
       iVar1 = FUN_006b1280(iVar1);
       /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-      if ((uint)(*(int *)((int)param_1 + 0x119) + iVar1) < (uint)PTR_00802a38->field_00E4) {
+      if ((uint)(*(int *)((int)param_1 + 0x119) + iVar1) < PTR_00802a38->field_00E4) {
         iVar1 = *param_1;
-        *(undefined4 *)((int)param_1 + 0x119) = PTR_00802a38->field_00E4;
+        *(uint *)((int)param_1 + 0x119) = PTR_00802a38->field_00E4;
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
         iVar3 = (**(code **)(iVar1 + 0x78))();
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */

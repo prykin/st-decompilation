@@ -133,8 +133,8 @@ void __thiscall HelpPanelTy::CreateSlider(HelpPanelTy *this,int param_1)
     local_c4 = 0x8166;
     local_8c = 1;
     local_88 = 1;
-    (*this_00->field_000C->vtable->CreateObject)
-              ((SystemClassTy *)this_00->field_000C,4,&this_00->field_019C,(int *)0x0,local_424,0);
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+    (*(code *)this_00->field_000C->vtable->field_0008)(4,&this_00->field_019C,0,local_424,0);
     iVar2 = this_00->field_019C;
     if ((iVar2 != 0) && (param_1 != 0)) {
       this_00->field_0028 = 0x20;

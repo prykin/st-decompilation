@@ -2,7 +2,7 @@
 uint __thiscall FUN_00695f70(void *this,uint param_1,int param_2,int param_3)
 
 {
-  uint *puVar1;
+  DArrayTy *pDVar1;
   uint uVar2;
   int iVar3;
   undefined2 local_c;
@@ -17,9 +17,9 @@ LAB_00696007:
   }
   else {
     if (*(int *)(iVar3 + 0x15) == 0) {
-      puVar1 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,10,6,10);
-      *(uint **)(iVar3 + 0x15) = puVar1;
-      if (puVar1 == (uint *)0x0) goto LAB_00696007;
+      pDVar1 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,10,6,10);
+      *(DArrayTy **)(iVar3 + 0x15) = pDVar1;
+      if (pDVar1 == (DArrayTy *)0x0) goto LAB_00696007;
     }
     local_c = 0;
     iStack_a = param_2;

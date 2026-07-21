@@ -16,7 +16,7 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_005FDB50::FUN_005fdb50
           (AnonReceiver_005FDB50 *this,int param_1,int param_2)
 
 {
-  char cVar1;
+  byte bVar1;
   short sVar2;
   STT3DSprC *this_00;
   VisibleClassTy *pVVar3;
@@ -111,13 +111,13 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_005FDB50::FUN_005fdb50
                                      iVar5,iVar6,&local_24,&local_28), iVar8 = local_8,
                  this = local_c, -1 < iVar7 &&
                  ((((iVar7 < 5 && (-1 < local_24)) && (local_24 < pVVar3->field_0030)) &&
-                  ((iVar5 = (&DAT_0079aed0)[iVar7] + local_28, -1 < iVar5 &&
-                   (iVar5 < pVVar3->field_0034)))))))) && (pVVar3->field_004C != 0)) {
-              cVar1 = *(char *)(iVar5 * pVVar3->field_0030 + pVVar3->field_004C + local_24);
+                  ((iVar5 = g_centeredOffsets5[iVar7] + local_28, -1 < iVar5 &&
+                   (iVar5 < pVVar3->field_0034)))))))) && (pVVar3->field_004C != (byte *)0x0)) {
+              bVar1 = pVVar3->field_004C[local_24 + iVar5 * pVVar3->field_0030];
 joined_r0x005fe09b:
               iVar8 = local_8;
               this = local_c;
-              if (cVar1 == '\0') {
+              if (bVar1 == 0) {
                 thunk_FUN_004ad430((int)this_00);
                 *(undefined1 *)(local_8 + 0x41 + *(int *)&local_c->field_0x233) = 0;
                 iVar8 = local_8;
@@ -202,9 +202,9 @@ joined_r0x005fe09b:
                                        iVar6,iVar7,&local_1c,&local_20), iVar8 = local_8,
                    this = local_c, -1 < iVar5 &&
                    (((iVar5 < 5 && (-1 < local_1c)) && (local_1c < pVVar3->field_0030)))))) &&
-                 (((iVar5 = (&DAT_0079aed0)[iVar5] + local_20, -1 < iVar5 &&
-                   (iVar5 < pVVar3->field_0034)) && (pVVar3->field_004C != 0)))) {
-                cVar1 = *(char *)(iVar5 * pVVar3->field_0030 + pVVar3->field_004C + local_1c);
+                 (((iVar5 = g_centeredOffsets5[iVar5] + local_20, -1 < iVar5 &&
+                   (iVar5 < pVVar3->field_0034)) && (pVVar3->field_004C != (byte *)0x0)))) {
+                bVar1 = pVVar3->field_004C[local_1c + iVar5 * pVVar3->field_0030];
                 goto joined_r0x005fe09b;
               }
             }

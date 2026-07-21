@@ -8,7 +8,7 @@
 void __thiscall FSGSTy::PaintLogPsw(FSGSTy *this)
 
 {
-  AnonPointee_FSGSTy_1AC0 *pAVar1;
+  ushort *puVar1;
   code *pcVar2;
   FSGSTy *pFVar3;
   int iVar4;
@@ -27,13 +27,13 @@ void __thiscall FSGSTy::PaintLogPsw(FSGSTy *this)
   iVar4 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
   pFVar3 = local_8;
   if (iVar4 == 0) {
-    pAVar1 = local_8->field_1AC0;
-    uVar8 = pAVar1->field_0014;
+    puVar1 = local_8->field_1AC0;
+    uVar8 = *(uint *)(puVar1 + 10);
     if (uVar8 == 0) {
-      uVar8 = ((uint)(ushort)pAVar1->field_000E * pAVar1->field_0004 + 0x1f >> 3 & 0x1ffffffc) *
-              pAVar1->field_0008;
+      uVar8 = ((uint)puVar1[7] * *(int *)(puVar1 + 2) + 0x1f >> 3 & 0x1ffffffc) *
+              *(int *)(puVar1 + 4);
     }
-    puVar5 = (undefined4 *)FUN_006b4fa0((int)pAVar1);
+    puVar5 = (undefined4 *)FUN_006b4fa0((int)puVar1);
     for (uVar7 = uVar8 >> 2; uVar7 != 0; uVar7 = uVar7 - 1) {
       *puVar5 = 0xffffffff;
       puVar5 = puVar5 + 1;
@@ -70,8 +70,8 @@ void __thiscall FSGSTy::PaintLogPsw(FSGSTy *this)
     puVar6 = (uint *)LoadResourceString(0x2554,HINSTANCE_00807618);
     ccFntTy::WrStr(pFVar3->field_1A73,puVar6,iVar4,iVar9,uVar10);
     FUN_006b5ee0((AnonShape_006B5B10_E0D06CF1 *)pFVar3->field_1AC0,0,0x18,0xc4,0xb6,0x16,0xf,0xd);
-    Library::DKW::DDX::FUN_006b3430(DAT_008075a8,pFVar3->field_1ABC);
-    FUN_006b35d0(DAT_008075a8,pFVar3->field_1ABC);
+    Library::DKW::DDX::FUN_006b3430((int *)PTR_008075a8,pFVar3->field_1ABC);
+    FUN_006b35d0((int *)PTR_008075a8,pFVar3->field_1ABC);
     g_currentExceptionFrame = local_4c.previous;
     return;
   }

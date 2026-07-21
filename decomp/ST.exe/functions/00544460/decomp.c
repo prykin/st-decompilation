@@ -12,7 +12,6 @@ void __thiscall CursorClassTy::DelSysAcc(CursorClassTy *this)
   CursorClassTy *this_00;
   int iVar2;
   int iVar3;
-  undefined4 *puVar4;
   AnonShape_00544100_1A02F945 *pAVar5;
   InternalExceptionFrame local_b8;
   AnonShape_00544100_1A02F945 local_74;
@@ -27,11 +26,8 @@ void __thiscall CursorClassTy::DelSysAcc(CursorClassTy *this)
   iVar2 = Library::MSVCRT::__setjmp3(local_b8.jumpBuffer,0);
   this_00 = local_8;
   if (iVar2 == 0) {
-    puVar4 = local_28;
-    for (iVar2 = 8; iVar2 != 0; iVar2 = iVar2 + -1) {
-      *puVar4 = 0;
-      puVar4 = puVar4 + 1;
-    }
+    memset(local_28, 0, 0x20); /* compiler bulk-zero initialization */
+    iVar2 = 0;
     local_14 = (AnonShape_00544100_1A02F945 *)this_00->field_0008;
     local_18 = 0x14;
     FUN_006e6000(this_00,3,1,local_28);

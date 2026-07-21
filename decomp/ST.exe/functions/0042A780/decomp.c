@@ -8,7 +8,7 @@ void __cdecl FUN_0042a780(int *param_1)
   int *piVar3;
   int iVar4;
 
-  array = (DArrayTy *)Library::DKW::TBL::FUN_006ae290((uint *)0x0,100,4,100);
+  array = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,100,4,100);
   iVar4 = 0;
   iVar2 = *param_1;
   if (0 < *(int *)(iVar2 + 0x455)) {
@@ -27,7 +27,7 @@ void __cdecl FUN_0042a780(int *param_1)
         } while (*(int *)(iVar2 + 0x40) != *piVar3);
         if (piVar3 == (int *)0x0) {
 LAB_0042a7e7:
-          Library::DKW::TBL::FUN_006ae1c0((uint *)array,(void **)(iVar2 + 0x40));
+          Library::DKW::TBL::FUN_006ae1c0(&array->flags,(void **)(iVar2 + 0x40));
           FreeAndNull((void **)(iVar2 + 0x40));
         }
       }

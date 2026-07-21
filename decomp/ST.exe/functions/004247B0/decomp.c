@@ -16,8 +16,7 @@ void __thiscall STGroupC::SetAVPar(STGroupC *this,uint param_1)
   uint uVar4;
 
   uVar4 = 0;
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  uVar1 = *(uint *)(this->field_0029 + 0xc);
+  uVar1 = this->field_0029[3];
   this->field_0039 = param_1;
   if (uVar1 != 0) {
     index = 0;

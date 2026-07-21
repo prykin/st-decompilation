@@ -8,7 +8,7 @@
 void __thiscall StartSystemTy::InitChat(StartSystemTy *this)
 
 {
-  AnonPointee_StartSystemTy_067E *pAVar1;
+  ushort *puVar1;
   code *pcVar2;
   int errorCode;
   undefined4 *puVar3;
@@ -23,19 +23,18 @@ void __thiscall StartSystemTy::InitChat(StartSystemTy *this)
   local_8 = this;
   errorCode = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
   if (errorCode == 0) {
-    if (DAT_0080c4fa != (AnonShape_006B5570_4D68B99C *)0x0) {
-      FUN_006b5570(DAT_0080c4fa);
+    if (DAT_0080c4fa != (DArrayTy *)0x0) {
+      FUN_006b5570((AnonShape_006B5570_4D68B99C *)DAT_0080c4fa);
     }
-    DAT_0080c4fa = (AnonShape_006B5570_4D68B99C *)
-                   Library::DKW::TBL::FUN_006b54f0((uint *)0x0,100,0x14);
-    pAVar1 = local_8->field_067E;
-    if (pAVar1 != (AnonPointee_StartSystemTy_067E *)0x0) {
-      uVar6 = pAVar1->field_0014;
+    DAT_0080c4fa = Library::DKW::TBL::SArrayCreate((DArrayTy *)0x0,100,0x14);
+    puVar1 = local_8->field_067E;
+    if (puVar1 != (ushort *)0x0) {
+      uVar6 = *(uint *)(puVar1 + 10);
       if (uVar6 == 0) {
-        uVar6 = ((uint)(ushort)pAVar1->field_000E * pAVar1->field_0004 + 0x1f >> 3 & 0x1ffffffc) *
-                pAVar1->field_0008;
+        uVar6 = ((uint)puVar1[7] * *(int *)(puVar1 + 2) + 0x1f >> 3 & 0x1ffffffc) *
+                *(int *)(puVar1 + 4);
       }
-      puVar3 = (undefined4 *)FUN_006b4fa0((int)pAVar1);
+      puVar3 = (undefined4 *)FUN_006b4fa0((int)puVar1);
       for (uVar5 = uVar6 >> 2; uVar5 != 0; uVar5 = uVar5 - 1) {
         *puVar3 = 0xffffffff;
         puVar3 = puVar3 + 1;

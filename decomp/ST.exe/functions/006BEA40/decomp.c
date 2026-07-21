@@ -56,9 +56,10 @@ int FUN_006bea40(int *param_1,uint param_2)
     ExceptionList = &local_14;
     local_1c = &stack0xffffff4c;
     Library::DKW::DDX::FUN_006c4630((int)pAVar1,pAVar1->field_0044,local_60);
-    DAT_00854f74 = Library::DKW::DDX::FUN_006c4880
-                             ((int)pAVar1,DAT_00854f30,DAT_00854f34,DAT_00854f38,DAT_00854f3c,
-                              *(uint *)&pAVar1->field_0x20);
+    g_tagBITMAPINFO_00854F74 =
+         Library::DKW::DDX::FUN_006c4880
+                   ((int)pAVar1,DAT_00854f30,DAT_00854f34,DAT_00854f38,DAT_00854f3c,
+                    *(uint *)&pAVar1->field_0x20);
     Library::DKW::DDX::FUN_006c44e0((int)pAVar1,local_60);
     ExceptionList = local_14;
     return 0;

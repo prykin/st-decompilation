@@ -39,17 +39,17 @@ void __thiscall MReportTy::SetCtrl(MReportTy *this)
     if (local_c->field_008F != 0) {
       StartSystemTy::sub_006E56B0(local_c->field_000C,local_c->field_008F);
       this_01->field_008F = 0;
-      FUN_006b5f80(DAT_008075a8,0x262,0x226,0x91,0x28);
+      FUN_006b5f80((int *)PTR_008075a8,0x262,0x226,0x91,0x28);
       PutDDXClip(0x262,0x226,0x262,0x226,0x91,(byte *)0x28,'\x01',(BITMAPINFO *)this_01->field_005D)
       ;
     }
     if (this_01->field_009B != 0) {
       StartSystemTy::sub_006E56B0(this_01->field_000C,this_01->field_009B);
       this_01->field_009B = 0;
-      FUN_006b5f80(DAT_008075a8,0x1e,0x1ea,300,0x1e);
+      FUN_006b5f80((int *)PTR_008075a8,0x1e,0x1ea,300,0x1e);
       PutDDXClip(0x1e,0x1ea,0x1e,0x1ea,300,(byte *)0x1e,'\x01',(BITMAPINFO *)this_01->field_005D);
     }
-    FUN_006b5f80(DAT_008075a8,0x174,0x1a9,400,0x32);
+    FUN_006b5f80((int *)PTR_008075a8,0x174,0x1a9,400,0x32);
     PutDDXClip(0x174,0x1a9,0x174,0x1a9,400,(byte *)0x32,'\x01',(BITMAPINFO *)this_01->field_005D);
     if ((this_01->field_0066 == '\x01') &&
        (this_01->field_0067 = 0, (&this_01->field_0347)[(byte)this_01->field_006A]->count != 0)) {
@@ -98,11 +98,7 @@ void __thiscall MReportTy::SetCtrl(MReportTy *this)
       }
     }
     puVar1 = &this_01->field_0x1d;
-    puVar6 = (undefined4 *)puVar1;
-    for (iVar5 = 8; iVar5 != 0; iVar5 = iVar5 + -1) {
-      *puVar6 = 0;
-      puVar6 = puVar6 + 1;
-    }
+    memset((void *)puVar1, 0, 0x20); /* compiler bulk-zero initialization */
     this_01->field_002D = 0x23;
     iVar5 = 0;
     do {

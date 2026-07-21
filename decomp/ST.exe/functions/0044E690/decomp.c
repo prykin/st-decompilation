@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* [STConstructorApplier] Recovered constructor candidate.
    VTable: 007905A0 (store 0044E6B9)
@@ -18,25 +20,19 @@ STBoatC * __thiscall STBoatC::STBoatC(STBoatC *this)
   STGameObjC::STGameObjC((STGameObjC *)this);
   thunk_FUN_004ab810((AnonShape_004AB810_8E5693D5 *)&this->field_01D5);
   this->field_01D5 = &VTable_00790700;
-  this->vtable = &STBoatCVTable;
+  this->vtable = (AnonPointee_STBoatC_0000 *)&STBoatCVTable;
   puVar2 = (undefined4 *)&this->field_0x231;
-  for (iVar1 = 0x23; iVar1 != 0; iVar1 = iVar1 + -1) {
-    *puVar2 = 0;
-    puVar2 = puVar2 + 1;
-  }
-  *(undefined2 *)puVar2 = 0;
+  memset(puVar2, 0, 0x8e); /* compiler bulk-zero initialization */
+  puVar2 = (undefined4 *)((byte *)puVar2 + 0x8c);
+  iVar1 = 0;
   *(undefined1 *)((int)puVar2 + 2) = 0;
-  puVar2 = &this->field_02C0;
-  for (iVar1 = 0x65; iVar1 != 0; iVar1 = iVar1 + -1) {
-    *puVar2 = 0;
-    puVar2 = puVar2 + 1;
-  }
-  *(undefined1 *)puVar2 = 0;
+  memset(&this->field_02C0, 0, 0x195); /* compiler bulk-zero initialization */
+  iVar1 = 0;
   this->field_0455 = 0;
   this->field_0459 = 0;
   this->field_045D = 0;
   this->field_0461 = 0;
-  this->field_0465 = 0;
+  this->field_0465 = (void *)0x0;
   psVar3 = &this->field_0469;
   for (iVar1 = 9; iVar1 != 0; iVar1 = iVar1 + -1) {
     *(undefined4 *)psVar3 = 0;
@@ -59,27 +55,17 @@ STBoatC * __thiscall STBoatC::STBoatC(STBoatC *this)
   }
   *psVar3 = 0;
   *(undefined1 *)(psVar3 + 1) = 0;
-  puVar2 = (undefined4 *)&this->field_0510;
-  for (iVar1 = 7; iVar1 != 0; iVar1 = iVar1 + -1) {
-    *puVar2 = 0;
-    puVar2 = puVar2 + 1;
-  }
+  memset(&this->field_0510, 0, 0x1c); /* compiler bulk-zero initialization */
+  iVar1 = 0;
   psVar3 = &this->field_052C;
   for (iVar1 = 10; iVar1 != 0; iVar1 = iVar1 + -1) {
     *(undefined4 *)psVar3 = 0;
     psVar3 = psVar3 + 2;
   }
-  puVar2 = (undefined4 *)&this->field_0588;
-  for (iVar1 = 6; iVar1 != 0; iVar1 = iVar1 + -1) {
-    *puVar2 = 0;
-    puVar2 = puVar2 + 1;
-  }
-  puVar2 = (undefined4 *)&this->field_05A0;
-  for (iVar1 = 10; iVar1 != 0; iVar1 = iVar1 + -1) {
-    *puVar2 = 0;
-    puVar2 = puVar2 + 1;
-  }
-  *(undefined2 *)puVar2 = 0;
+  memset(&this->field_0588, 0, 0x18); /* compiler bulk-zero initialization */
+  iVar1 = 0;
+  memset(&this->field_05A0, 0, 0x2a); /* compiler bulk-zero initialization */
+  iVar1 = 0;
   *(undefined4 *)&this->field_0x5ca = 0;
   *(undefined4 *)&this->field_0x5ce = 0;
   *(undefined4 *)&this->field_0x5d2 = 0;
@@ -93,34 +79,16 @@ STBoatC * __thiscall STBoatC::STBoatC(STBoatC *this)
   *(undefined4 *)&this->field_0x5f0 = 0;
   *(undefined4 *)&this->field_0x5f4 = 0;
   this->field_05F8 = 0;
-  puVar2 = (undefined4 *)&this->field_05FC;
-  for (iVar1 = 7; iVar1 != 0; iVar1 = iVar1 + -1) {
-    *puVar2 = 0;
-    puVar2 = puVar2 + 1;
-  }
-  *(undefined1 *)puVar2 = 0;
-  puVar2 = &this->field_0619;
-  for (iVar1 = 7; iVar1 != 0; iVar1 = iVar1 + -1) {
-    *puVar2 = 0;
-    puVar2 = puVar2 + 1;
-  }
-  puVar2 = &this->field_0635;
-  for (iVar1 = 0xd; iVar1 != 0; iVar1 = iVar1 + -1) {
-    *puVar2 = 0;
-    puVar2 = puVar2 + 1;
-  }
-  *(undefined2 *)puVar2 = 0;
-  puVar2 = &this->field_066B;
-  for (iVar1 = 8; iVar1 != 0; iVar1 = iVar1 + -1) {
-    *puVar2 = 0;
-    puVar2 = puVar2 + 1;
-  }
-  puVar2 = (undefined4 *)&this->field_068B;
-  for (iVar1 = 7; iVar1 != 0; iVar1 = iVar1 + -1) {
-    *puVar2 = 0;
-    puVar2 = puVar2 + 1;
-  }
-  *(undefined2 *)puVar2 = 0;
+  memset(&this->field_05FC, 0, 0x1d); /* compiler bulk-zero initialization */
+  iVar1 = 0;
+  memset(&this->field_0619, 0, 0x1c); /* compiler bulk-zero initialization */
+  iVar1 = 0;
+  memset(&this->field_0635, 0, 0x36); /* compiler bulk-zero initialization */
+  iVar1 = 0;
+  memset(&this->field_066B, 0, 0x20); /* compiler bulk-zero initialization */
+  iVar1 = 0;
+  memset(&this->field_068B, 0, 0x1e); /* compiler bulk-zero initialization */
+  iVar1 = 0;
   psVar3 = &this->field_06A9;
   for (iVar1 = 8; iVar1 != 0; iVar1 = iVar1 + -1) {
     *(undefined4 *)psVar3 = 0;

@@ -2,7 +2,7 @@
 /* [STTypeFamilyApplier] EXACT_ANONYMOUS_LAYOUT.
    Evidence: exact anonymous structure fingerprint shared across functions */
 
-short * __cdecl FUN_0067bb50(AnonShape_00413AF0_B6B4EE9A *param_1)
+short * __cdecl FUN_0067bb50(DArrayTy *param_1)
 
 {
   uint uVar1;
@@ -11,12 +11,13 @@ short * __cdecl FUN_0067bb50(AnonShape_00413AF0_B6B4EE9A *param_1)
   bool bVar4;
 
   uVar3 = 0;
-  uVar1 = param_1->field_000C;
+  uVar1 = param_1->count;
   if (0 < (int)uVar1) {
     bVar4 = uVar1 != 0;
     do {
+      /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(param_1, uVar3) (runtime stride) */
       if ((((bVar4) &&
-           (psVar2 = (short *)(param_1->field_0008 * uVar3 + param_1->field_001C),
+           (psVar2 = (short *)(param_1->elementSize * uVar3 + (int)param_1->data),
            psVar2 != (short *)0x0)) && (*psVar2 != 0)) && (*(int *)(psVar2 + 6) < 0)) {
         return psVar2;
       }

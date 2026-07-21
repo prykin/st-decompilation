@@ -146,7 +146,7 @@ LAB_004b288e:
     if (*(int *)puVar1 < 0) {
       *(undefined4 *)&local_30[0x22].field_0x8 = 0;
     }
-    *(undefined4 *)&local_30[0x22].field_0xc = PTR_00802a38->field_00E4;
+    *(uint *)&local_30[0x22].field_0xc = PTR_00802a38->field_00E4;
     /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
     uVar11 = g_worldGrid._0_4_;
   }

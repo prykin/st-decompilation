@@ -14,7 +14,7 @@ undefined4 __fastcall FUN_004d9820(int *param_1)
   longlong lVar9;
   int local_8;
 
-  if (param_1[0x136] + 0x4bU <= (uint)PTR_00802a38->field_00E4) {
+  if (param_1[0x136] + 0x4bU <= PTR_00802a38->field_00E4) {
     param_1[0x136] = PTR_00802a38->field_00E4;
     param_1[0x137] = 0;
     param_1[0x138] = 0;
@@ -72,7 +72,7 @@ undefined4 __fastcall FUN_004d9820(int *param_1)
     iVar6 = FUN_006b1280(iVar6);
   }
   param_1[0x139] = iVar6;
-  if ((uint)(param_1[0x139] + param_1[0x135]) <= (uint)PTR_00802a38->field_00E4) {
+  if ((uint)(param_1[0x139] + param_1[0x135]) <= PTR_00802a38->field_00E4) {
     param_1[0x135] = PTR_00802a38->field_00E4;
     param_1[0x134] = param_1[0x134] + 2;
     thunk_FUN_004d82b0(2);

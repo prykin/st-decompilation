@@ -7,12 +7,13 @@ undefined4 __thiscall FUN_0056e9e0(void *this,int param_1)
   int iVar3;
   cMf32 *pcVar4;
   uint *puVar5;
-  ushort *puVar6;
-  uint uVar7;
+  DArrayTy *pDVar6;
+  ushort *puVar7;
   uint uVar8;
-  byte *pbVar9;
+  uint uVar9;
   byte *pbVar10;
   byte *pbVar11;
+  byte *pbVar12;
   byte local_160 [260];
   InternalExceptionFrame local_5c;
   void *local_18;
@@ -45,8 +46,8 @@ undefined4 __thiscall FUN_0056e9e0(void *this,int param_1)
   puVar5 = Library::Ourlib::MFSARR::mfSarLoad(pcVar4,PTR_s_DESCRIPTION_0079b074,0);
   *(uint **)((int)pvVar2 + 0x4ea7) = puVar5;
   if (puVar5 == (uint *)0x0) {
-    puVar5 = Library::DKW::TBL::FUN_006b54f0((uint *)0x0,10,10);
-    *(uint **)((int)pvVar2 + 0x4ea7) = puVar5;
+    pDVar6 = Library::DKW::TBL::SArrayCreate((DArrayTy *)0x0,10,10);
+    *(DArrayTy **)((int)pvVar2 + 0x4ea7) = pDVar6;
   }
   if (*(AnonShape_006B5570_4D68B99C **)((int)pvVar2 + 0x4eab) != (AnonShape_006B5570_4D68B99C *)0x0)
   {
@@ -55,43 +56,43 @@ undefined4 __thiscall FUN_0056e9e0(void *this,int param_1)
   puVar5 = Library::Ourlib::MFSARR::mfSarLoad(pcVar4,PTR_s_OBJECTIVES_0079b078,0);
   *(uint **)((int)pvVar2 + 0x4eab) = puVar5;
   if (puVar5 == (uint *)0x0) {
-    puVar5 = Library::DKW::TBL::FUN_006b54f0((uint *)0x0,10,10);
-    *(uint **)((int)pvVar2 + 0x4eab) = puVar5;
+    pDVar6 = Library::DKW::TBL::SArrayCreate((DArrayTy *)0x0,10,10);
+    *(DArrayTy **)((int)pvVar2 + 0x4eab) = pDVar6;
   }
-  pbVar11 = (byte *)((int)pvVar2 + 0x4da3);
-  pbVar9 = pbVar11;
+  pbVar12 = (byte *)((int)pvVar2 + 0x4da3);
+  pbVar10 = pbVar12;
   for (iVar3 = 0x41; iVar3 != 0; iVar3 = iVar3 + -1) {
-    pbVar9[0] = 0;
-    pbVar9[1] = 0;
-    pbVar9[2] = 0;
-    pbVar9[3] = 0;
-    pbVar9 = pbVar9 + 4;
+    pbVar10[0] = 0;
+    pbVar10[1] = 0;
+    pbVar10[2] = 0;
+    pbVar10[3] = 0;
+    pbVar10 = pbVar10 + 4;
   }
-  local_14 = pbVar11;
-  puVar6 = cMf32::RecGet(local_8,0xc,PTR_s_TITLE_MISSION_0079b070,(int *)&local_14,0);
-  if ((puVar6 == (ushort *)0x0) || (*pbVar11 == 0)) {
+  local_14 = pbVar12;
+  puVar7 = cMf32::RecGet(local_8,0xc,PTR_s_TITLE_MISSION_0079b070,(int *)&local_14,0);
+  if ((puVar7 == (ushort *)0x0) || (*pbVar12 == 0)) {
     Library::MSVCRT::FUN_0072e730(local_c,(byte *)0x0,(byte *)0x0,local_160,(byte *)0x0);
-    uVar7 = 0xffffffff;
-    pbVar9 = local_160;
+    uVar8 = 0xffffffff;
+    pbVar10 = local_160;
     do {
-      pbVar10 = pbVar9;
-      if (uVar7 == 0) break;
-      uVar7 = uVar7 - 1;
-      pbVar10 = pbVar9 + 1;
-      bVar1 = *pbVar9;
-      pbVar9 = pbVar10;
+      pbVar11 = pbVar10;
+      if (uVar8 == 0) break;
+      uVar8 = uVar8 - 1;
+      pbVar11 = pbVar10 + 1;
+      bVar1 = *pbVar10;
+      pbVar10 = pbVar11;
     } while (bVar1 != 0);
-    uVar7 = ~uVar7;
-    pbVar9 = pbVar10 + -uVar7;
-    for (uVar8 = uVar7 >> 2; uVar8 != 0; uVar8 = uVar8 - 1) {
-      *(undefined4 *)pbVar11 = *(undefined4 *)pbVar9;
-      pbVar9 = pbVar9 + 4;
-      pbVar11 = pbVar11 + 4;
+    uVar8 = ~uVar8;
+    pbVar10 = pbVar11 + -uVar8;
+    for (uVar9 = uVar8 >> 2; uVar9 != 0; uVar9 = uVar9 - 1) {
+      *(undefined4 *)pbVar12 = *(undefined4 *)pbVar10;
+      pbVar10 = pbVar10 + 4;
+      pbVar12 = pbVar12 + 4;
     }
-    for (uVar7 = uVar7 & 3; uVar7 != 0; uVar7 = uVar7 - 1) {
-      *pbVar11 = *pbVar9;
-      pbVar9 = pbVar9 + 1;
-      pbVar11 = pbVar11 + 1;
+    for (uVar8 = uVar8 & 3; uVar8 != 0; uVar8 = uVar8 - 1) {
+      *pbVar12 = *pbVar10;
+      pbVar10 = pbVar10 + 1;
+      pbVar12 = pbVar12 + 1;
     }
   }
   cMf32::delete(local_8,local_8);

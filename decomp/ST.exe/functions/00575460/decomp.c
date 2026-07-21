@@ -20,7 +20,7 @@ void __cdecl FUN_00575460(AnonShape_00575460_06C413C6 *param_1)
     DAT_0080760c = (HoloTy *)0x0;
   }
   if (param_1 != (AnonShape_00575460_06C413C6 *)0x0) {
-    array = (DArrayTy *)Library::DKW::TBL::FUN_006ae290((uint *)0x0,0x14,4,0x14);
+    array = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,0x14,4,0x14);
     *(undefined4 *)(param_1->field_0451 + 4) = 0;
     while( true ) {
       iVar1 = param_1->field_0451;
@@ -30,7 +30,7 @@ void __cdecl FUN_00575460(AnonShape_00575460_06C413C6 *param_1)
       *(uint *)(iVar1 + 4) = uVar2 + 1;
       if (iVar5 == 0) break;
       puVar6 = (undefined4 *)(iVar5 + 8);
-      Library::DKW::TBL::FUN_006ae1c0((uint *)array,puVar6);
+      Library::DKW::TBL::FUN_006ae1c0(&array->flags,puVar6);
       FUN_006a5e90((short *)*puVar6);
     }
     DArrayDestroy((DArrayTy *)param_1->field_0451);
@@ -52,7 +52,7 @@ void __cdecl FUN_00575460(AnonShape_00575460_06C413C6 *param_1)
           } while (*value != (void *)*puVar6);
           if (puVar6 == (undefined4 *)0x0) {
 LAB_0057554f:
-            Library::DKW::TBL::FUN_006ae1c0((uint *)array,value);
+            Library::DKW::TBL::FUN_006ae1c0(&array->flags,value);
             FreeAndNull(value);
           }
           *value = (void *)0x0;

@@ -33,7 +33,7 @@ undefined4 __thiscall FUN_00627400(void *this,undefined4 param_1)
     }
   }
   else {
-    if (*(uint *)((int)this + 0x315) < (uint)PTR_00802a38->field_00E4) {
+    if (*(uint *)((int)this + 0x315) < PTR_00802a38->field_00E4) {
       thunk_FUN_00627390((int)this);
       return *(undefined4 *)((int)this + 0x2ae);
     }

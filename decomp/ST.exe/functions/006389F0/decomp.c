@@ -1,10 +1,11 @@
+#include "../../pseudocode_runtime.h"
+
 
 undefined4 __cdecl FUN_006389f0(short param_1,short param_2,short param_3)
 
 {
   STWorldObject *pSVar1;
   int iVar2;
-  undefined4 *puVar3;
   undefined4 local_28 [8];
   undefined4 local_8;
 
@@ -23,11 +24,7 @@ undefined4 __cdecl FUN_006389f0(short param_1,short param_2,short param_3)
       local_8 = 0xffffffff;
     }
     else {
-      puVar3 = local_28;
-      for (iVar2 = 8; iVar2 != 0; iVar2 = iVar2 + -1) {
-        *puVar3 = 0;
-        puVar3 = puVar3 + 1;
-      }
+      memset(local_28, 0, 0x20); /* compiler bulk-zero initialization */
       switch(pSVar1->value_20) {
       case 0x32:
       case 0xfa:
@@ -36,8 +33,8 @@ undefined4 __cdecl FUN_006389f0(short param_1,short param_2,short param_3)
         local_28[2] = *(undefined4 *)&pSVar1->field_0x8;
         local_28[3] = 2;
         local_28[4] = 0x128;
-        (*PTR_00802a38->vtable->SendMessage)
-                  ((SystemWithNamedObjClassTy *)PTR_00802a38,(int)local_28);
+        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+        (*(code *)PTR_00802a38->vtable->field_0018)(local_28);
         return 1;
       }
     }

@@ -1,11 +1,11 @@
+#include "../../pseudocode_runtime.h"
+
 
 undefined4 __fastcall FUN_004e3120(TLOBaseTy *param_1)
 
 {
   undefined2 uVar1;
   undefined4 uVar2;
-  int iVar3;
-  undefined4 *puVar4;
   undefined4 local_24 [4];
   undefined4 local_14;
   undefined2 local_10;
@@ -17,11 +17,7 @@ undefined4 __fastcall FUN_004e3120(TLOBaseTy *param_1)
     thunk_FUN_004e5f20(*(int *)&param_1->field_0x24,param_1->field_0369);
     if (DAT_008117bc != (undefined4 *)0x0) {
       uVar1 = *(undefined2 *)&param_1->field_0x24;
-      puVar4 = local_24;
-      for (iVar3 = 8; iVar3 != 0; iVar3 = iVar3 + -1) {
-        *puVar4 = 0;
-        puVar4 = puVar4 + 1;
-      }
+      memset(local_24, 0, 0x20); /* compiler bulk-zero initialization */
       local_e = *(undefined2 *)&param_1->field_0x32;
       local_c = *(undefined2 *)&param_1->field_0369;
       local_14 = 0x5de8;

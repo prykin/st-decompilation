@@ -15,7 +15,6 @@ void __thiscall MAdvTy::InitMAdv(MAdvTy *this)
   LPSTR text;
   undefined4 uVar3;
   int iVar4;
-  undefined4 *puVar5;
   byte bVar6;
   InternalExceptionFrame local_4c;
   MAdvTy *local_8;
@@ -29,8 +28,8 @@ void __thiscall MAdvTy::InitMAdv(MAdvTy *this)
       if (PTR_00802a30->field_00A9 == 0) {
         Library::DKW::DDX::FUN_006b8b10((int *)PTR_00802a30->field_00AD);
       }
-      else if (PTR_00802a30->field_001C != 0xffffffff) {
-        FUN_006b3af0((int *)PTR_00802a30->field_0060,PTR_00802a30->field_001C);
+      else if (PTR_00802a30->field_001C != (cLoadingTy *)0xffffffff) {
+        FUN_006b3af0((int *)PTR_00802a30->field_0060,(uint)PTR_00802a30->field_001C);
       }
     }
     this_01 = local_8;
@@ -39,11 +38,7 @@ void __thiscall MAdvTy::InitMAdv(MAdvTy *this)
     text = FUN_006f2c00(&DAT_007cbc5c,1,(uint)(local_8->field_005D != '\0'));
     uVar3 = FUN_0070a9f0(g_cMf32_00806780,text,bVar6,iVar2);
     this_01->field_005E = uVar3;
-    puVar5 = (undefined4 *)&this_01->field_0x18;
-    for (iVar2 = 8; iVar2 != 0; iVar2 = iVar2 + -1) {
-      *puVar5 = 0;
-      puVar5 = puVar5 + 1;
-    }
+    memset(&this_01->field_0x18, 0, 0x20); /* compiler bulk-zero initialization */
     this_01->field_002C = this_01->field_0008;
     this_01->field_0028 = 0x13;
     FUN_006e6000(this_01,3,1,(undefined4 *)&this_01->field_0x18);
@@ -53,7 +48,7 @@ void __thiscall MAdvTy::InitMAdv(MAdvTy *this)
     }
     DarkScreen(DAT_0080759c,1,0);
     PaintMAdv(this_01);
-    thunk_FUN_0055ddf0(DAT_0080759c,DAT_008075a8,this_01->field_005E,10,2);
+    thunk_FUN_0055ddf0(DAT_0080759c,(int *)PTR_008075a8,this_01->field_005E,10,2);
     this_00 = PTR_00802a30;
     if (PTR_00802a30 != (CursorClassTy *)0x0) {
       iVar2 = PTR_00802a30->field_00C9;

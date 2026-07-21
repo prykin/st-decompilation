@@ -42,7 +42,6 @@ void __thiscall CPanelTy::Update4PanelWB(CPanelTy *this)
   int *piVar18;
   CPanelTy_field_0BF5State *pCVar19;
   short *psVar20;
-  undefined4 *puVar21;
   byte *pbVar22;
   bool bVar23;
   uint uVar24;
@@ -240,9 +239,9 @@ cf_common_exit_005091B9:
                       CONCAT31((int3)((uint)extraout_EDX >> 8),this_00->field_0C24),0x2714);
         PaintCostsXY(this_00,this_00->field_0194,iVar8 + 0x41,0x68,this_00->field_0C1C,
                      this_00->field_0C20,4,2);
-        if (-1 < (int)this_00->field_015C) {
+        if (-1 < this_00->field_015C) {
           Library::DKW::DDX::FUN_006b3640
-                    (DAT_008075a8,this_00->field_015C,0xffffffff,this_00->field_0050,
+                    ((int *)PTR_008075a8,this_00->field_015C,0xffffffff,this_00->field_0050,
                      this_00->field_00A8);
         }
       }
@@ -415,9 +414,9 @@ cf_common_exit_005091B9:
                       CONCAT31((int3)((uint)extraout_EDX_00 >> 8),this_00->field_0C24),0x2714);
         PaintCostsXY(this_00,this_00->field_0194,iVar8 + 0x41,0x68,this_00->field_0C1C,
                      this_00->field_0C20,4,2);
-        if (-1 < (int)this_00->field_015C) {
+        if (-1 < this_00->field_015C) {
           Library::DKW::DDX::FUN_006b3640
-                    (DAT_008075a8,this_00->field_015C,0xffffffff,this_00->field_0050,
+                    ((int *)PTR_008075a8,this_00->field_015C,0xffffffff,this_00->field_0050,
                      this_00->field_00A8);
         }
       }
@@ -483,9 +482,9 @@ cf_common_exit_005091B9:
                         CONCAT31((int3)((uint)extraout_ECX >> 8),'d' - *local_8),0x36b1);
           PaintCostsXY(this_00,this_00->field_0194,iVar14 + 0x41,iVar8 + 0xb,*local_18,local_18[2],4
                        ,2);
-          if (-1 < (int)this_00->field_015C) {
+          if (-1 < this_00->field_015C) {
             Library::DKW::DDX::FUN_006b3640
-                      (DAT_008075a8,this_00->field_015C,0xffffffff,this_00->field_0050,
+                      ((int *)PTR_008075a8,this_00->field_015C,0xffffffff,this_00->field_0050,
                        this_00->field_00A8);
           }
         }
@@ -544,11 +543,7 @@ cf_common_exit_005091B9:
           PaintCtrlObj(this_00,1);
           iVar8 = this_00->field_0302;
           if (iVar8 != 0) {
-            puVar21 = local_e4;
-            for (iVar14 = 8; iVar14 != 0; iVar14 = iVar14 + -1) {
-              *puVar21 = 0;
-              puVar21 = puVar21 + 1;
-            }
+            memset(local_e4, 0, 0x20); /* compiler bulk-zero initialization */
             local_d4 = 5;
             FUN_006e6080(this_00,2,iVar8,local_e4);
           }
@@ -617,7 +612,7 @@ LAB_00509179:
       uVar25 = this_00->field_00A8;
       uVar24 = this_00->field_0050;
 cf_common_exit_0050918D:
-      Library::DKW::DDX::FUN_006b3640(DAT_008075a8,uVar9,0xffffffff,uVar24,uVar25);
+      Library::DKW::DDX::FUN_006b3640((int *)PTR_008075a8,uVar9,0xffffffff,uVar24,uVar25);
     }
     goto cf_common_exit_00509192;
   case CASE_3A:
@@ -647,9 +642,9 @@ cf_common_exit_0050918D:
           local_c = local_c - 1;
         } while (local_c != 0);
       }
-      if (-1 < (int)this_00->field_015C) {
+      if (-1 < this_00->field_015C) {
         Library::DKW::DDX::FUN_006b3640
-                  (DAT_008075a8,this_00->field_015C,0xffffffff,this_00->field_0050,
+                  ((int *)PTR_008075a8,this_00->field_015C,0xffffffff,this_00->field_0050,
                    this_00->field_00A8);
       }
     }
@@ -677,9 +672,9 @@ cf_common_exit_0050918D:
           local_c = local_c - 1;
         } while (local_c != 0);
       }
-      if (-1 < (int)this_00->field_015C) {
+      if (-1 < this_00->field_015C) {
         Library::DKW::DDX::FUN_006b3640
-                  (DAT_008075a8,this_00->field_015C,0xffffffff,this_00->field_0050,
+                  ((int *)PTR_008075a8,this_00->field_015C,0xffffffff,this_00->field_0050,
                    this_00->field_00A8);
       }
     }
@@ -826,11 +821,7 @@ switchD_00508349_caseD_dd:
     g_currentExceptionFrame = local_c4.previous;
     return;
   }
-  puVar21 = local_104;
-  for (iVar14 = 8; iVar14 != 0; iVar14 = iVar14 + -1) {
-    *puVar21 = 0;
-    puVar21 = puVar21 + 1;
-  }
+  memset(local_104, 0, 0x20); /* compiler bulk-zero initialization */
   local_f4 = 5;
   FUN_006e6080(this_00,2,iVar8,local_104);
   g_currentExceptionFrame = local_c4.previous;

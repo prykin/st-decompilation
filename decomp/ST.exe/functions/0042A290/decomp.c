@@ -100,7 +100,7 @@ short * __cdecl LoadLand(cMf32 *param_1,char *text)
     FUN_006dd800(this,219.932);
     this->field_0124 = 5;
     FUN_006dd610(this,4,0,0x40240000,0,0x40240000);
-    local_c = (DArrayTy *)Library::DKW::TBL::FUN_006ae290((uint *)0x0,100,8,100);
+    local_c = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,100,8,100);
     local_18 = 0;
     if (0 < *(int *)((int)psVar4 + 0x455)) {
       local_14 = (int *)((int)psVar4 + 0x459);

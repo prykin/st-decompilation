@@ -19,7 +19,6 @@ void __thiscall SettMapMTy::SetListCtrls(SettMapMTy *this)
   uint uVar9;
   uint uVar10;
   char *pcVar11;
-  undefined4 *puVar12;
   bool bVar13;
   InternalExceptionFrame local_14c;
   InternalExceptionFrame local_108;
@@ -50,11 +49,7 @@ void __thiscall SettMapMTy::SetListCtrls(SettMapMTy *this)
     }
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  puVar12 = local_3c;
-  for (iVar6 = 8; iVar6 != 0; iVar6 = iVar6 + -1) {
-    *puVar12 = 0;
-    puVar12 = puVar12 + 1;
-  }
+  memset(local_3c, 0, 0x20); /* compiler bulk-zero initialization */
   local_2c = 0x26;
   local_c4.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_c4;
@@ -183,7 +178,8 @@ joined_r0x005cd0bb:
             }
           }
         }
-        (*pSVar5->field_000C->vtable->vfunc_18)(&pSVar5->field_0x1d);
+        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+        (*(code *)pSVar5->field_000C->vtable->field_0018)(&pSVar5->field_0x1d);
         uVar10 = local_8;
       }
       local_18 = local_18 + 1;

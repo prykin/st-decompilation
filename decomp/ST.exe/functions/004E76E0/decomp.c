@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 undefined4 FUN_004e76e0(int param_1,uint *param_2,undefined1 param_3)
 
@@ -21,20 +23,13 @@ undefined4 FUN_004e76e0(int param_1,uint *param_2,undefined1 param_3)
   }
   uVar4 = GetPlayerRaceId((char)param_1);
   iVar5 = (uVar4 & 0xff) - 1;
-  puVar10 = &DAT_00801020;
-  for (iVar8 = 0xc3; iVar8 != 0; iVar8 = iVar8 + -1) {
-    *puVar10 = 0;
-    puVar10 = puVar10 + 1;
-  }
+  memset(&DAT_00801020, 0, 0x30c); /* compiler bulk-zero initialization */
+  iVar8 = 0;
   DAT_00801020 = param_2;
   DAT_00801024 = param_3;
   do {
     _param_3 = 0;
-    puVar10 = &DAT_00800bd0;
-    for (iVar8 = 0xc3; iVar8 != 0; iVar8 = iVar8 + -1) {
-      *puVar10 = 0;
-      puVar10 = puVar10 + 1;
-    }
+    memset(&DAT_00800bd0, 0, 0x30c); /* compiler bulk-zero initialization */
     if (DAT_00801020 == (uint *)0x0) {
       return 0;
     }

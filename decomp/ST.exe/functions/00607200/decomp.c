@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 int __thiscall
 FUN_00607200(void *this,int param_1,int param_2,int param_3,Global_sub_00606CD0_param_1Enum param_4)
@@ -9,7 +11,6 @@ FUN_00607200(void *this,int param_1,int param_2,int param_3,Global_sub_00606CD0_
   uint uVar4;
   uint uVar5;
   int iVar6;
-  int *piVar7;
   STMessage *pSVar8;
   undefined4 *puVar9;
   /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
@@ -57,11 +58,7 @@ FUN_00607200(void *this,int param_1,int param_2,int param_3,Global_sub_00606CD0_
   if (iVar2 != iVar6) {
     return -1;
   }
-  piVar7 = local_9c;
-  for (iVar2 = 8; iVar2 != 0; iVar2 = iVar2 + -1) {
-    *piVar7 = 0;
-    piVar7 = piVar7 + 1;
-  }
+  memset(local_9c, 0, 0x20); /* compiler bulk-zero initialization */
   local_8 = 0;
   if (0 < local_78) {
     puVar3 = local_10c;
@@ -188,12 +185,7 @@ LAB_006074c8:
     local_20 = (undefined4 *)((int)this + 0x219);
     do {
       iVar2 = local_8;
-      puVar9 = local_68;
-      for (iVar6 = 0x11; iVar6 != 0; iVar6 = iVar6 + -1) {
-        *puVar9 = 0;
-        puVar9 = puVar9 + 1;
-      }
-      *(undefined2 *)puVar9 = 0;
+      memset(local_68, 0, 0x46); /* compiler bulk-zero initialization */
       local_68[2] = 0;
       local_68[3] = 0;
       local_54 = *local_18;

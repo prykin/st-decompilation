@@ -4,9 +4,14 @@
    incoming_edx_uses=0; incoming_stack_parameter_uses=0
 
    [STPrototypeApplier] Propagated return.
-   Evidence: 004232A0 returns STGroupBoatC::sub_004232A0 this @ 004232C9 */
+   Evidence: 004232A0 returns STGroupBoatC::sub_004232A0 this @ 004232C9
 
-STGroupBoatC * __thiscall STGroupBoatC::sub_004232A0(STGroupBoatC *this)
+   [STConstructorApplier] Recovered constructor candidate.
+   VTable: 00790508 (store 004232AA)
+   Evidence: final_vptr=00790508; returns_this=true; calls_before=1; field_writes_after=7;
+   incoming_edx_uses=0; incoming_stack_parameter_uses=0; table_confidence=high */
+
+STGroupC * __thiscall STGroupBoatC::sub_004232A0(STGroupBoatC *this)
 
 {
   sub_006E60E0(this);
@@ -18,6 +23,6 @@ STGroupBoatC * __thiscall STGroupBoatC::sub_004232A0(STGroupBoatC *this)
   this->field_0027 = 0;
   this->field_0035 = 0;
   this->field_0039 = 0;
-  return this;
+  return (STGroupC *)this;
 }
 

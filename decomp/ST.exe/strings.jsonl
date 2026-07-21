@@ -3568,7 +3568,7 @@
 {"address":"007ED9C0","type":"string","length":82,"value":"\"\\n%d ===========================================  %02d.%02d.%d  %d:%02d:%02d.%03d\\n\"","referenced_from":["006ADC30 FUN_006adc30"]}
 {"address":"007EDA14","type":"string","length":23,"value":"\"E:\\\\DKW\\\\TBL\\\\C\\\\darrput.c\"","referenced_from":["006AE140 Library::DKW::TBL::FUN_006ae140"]}
 {"address":"007EDA2C","type":"string","length":24,"value":"\"E:\\\\DKW\\\\TBL\\\\C\\\\darrappe.c\"","referenced_from":["006AE1C0 Library::DKW::TBL::FUN_006ae1c0"]}
-{"address":"007EDA44","type":"string","length":24,"value":"\"E:\\\\DKW\\\\TBL\\\\C\\\\darrcrea.c\"","referenced_from":["006AE290 Library::DKW::TBL::FUN_006ae290","006AE310 Library::DKW::TBL::FUN_006ae310"]}
+{"address":"007EDA44","type":"string","length":24,"value":"\"E:\\\\DKW\\\\TBL\\\\C\\\\darrcrea.c\"","referenced_from":["006AE290 Library::DKW::TBL::DArrayCreate","006AE310 Library::DKW::TBL::FUN_006ae310"]}
 {"address":"007EDA5C","type":"string","length":24,"value":"\"E:\\\\DKW\\\\WAY\\\\C\\\\sway3d.cpp\"","referenced_from":["006AE7D0 Library::DKW::WAY::FUN_006ae7d0","006AFBA0 Library::DKW::WAY::FUN_006afba0"]}
 {"address":"007EDA74","type":"string","length":23,"value":"\"E:\\\\DKW\\\\TBL\\\\C\\\\darrcpy.c\"","referenced_from":["006AFE40 Library::DKW::TBL::FUN_006afe40"]}
 {"address":"007EDAA8","type":"string","length":24,"value":"\"E:\\\\DKW\\\\TBL\\\\C\\\\darrinse.c\"","referenced_from":["006B11D0 Library::DKW::TBL::FUN_006b11d0"]}
@@ -3577,7 +3577,7 @@
 {"address":"007EDB08","type":"string","length":24,"value":"\"E:\\\\DKW\\\\DDX\\\\C\\\\dddibtpc.c\"","referenced_from":["006B4680 Library::DKW::DDX::FUN_006b4680"]}
 {"address":"007EDB20","type":"string","length":24,"value":"\"E:\\\\DKW\\\\DDX\\\\C\\\\dddibtps.c\"","referenced_from":["006B48E0 Library::DKW::DDX::FUN_006b48e0"]}
 {"address":"007EDB38","type":"string","length":24,"value":"\"E:\\\\DKW\\\\WGR\\\\C\\\\dibtrans.c\"","referenced_from":["006B5110 Library::DKW::WGR::FUN_006b5110"]}
-{"address":"007EDB50","type":"string","length":24,"value":"\"E:\\\\DKW\\\\TBL\\\\C\\\\sarrcrea.c\"","referenced_from":["006B54F0 Library::DKW::TBL::FUN_006b54f0"]}
+{"address":"007EDB50","type":"string","length":24,"value":"\"E:\\\\DKW\\\\TBL\\\\C\\\\sarrcrea.c\"","referenced_from":["006B54F0 Library::DKW::TBL::SArrayCreate"]}
 {"address":"007EDB68","type":"string","length":23,"value":"\"E:\\\\DKW\\\\WGR\\\\C\\\\dibcopy.c\"","referenced_from":["006B55F0 Library::DKW::WGR::FUN_006b55f0"]}
 {"address":"007EDB80","type":"string","length":24,"value":"\"E:\\\\DKW\\\\TBL\\\\C\\\\sarrappe.c\"","referenced_from":["006B5AA0 Library::DKW::TBL::FUN_006b5aa0"]}
 {"address":"007EDB98","type":"string","length":23,"value":"\"E:\\\\DKW\\\\TBL\\\\C\\\\sarrput.c\"","referenced_from":["006B6020 Library::DKW::TBL::FUN_006b6020"]}

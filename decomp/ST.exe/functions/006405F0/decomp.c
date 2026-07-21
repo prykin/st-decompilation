@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 void __cdecl
 FUN_006405f0(int param_1,undefined4 param_2,undefined4 param_3,undefined2 param_4,undefined2 param_5
@@ -5,8 +7,6 @@ FUN_006405f0(int param_1,undefined4 param_2,undefined4 param_3,undefined2 param_
             undefined2 param_10)
 
 {
-  int iVar1;
-  undefined4 *puVar2;
   undefined4 local_38 [5];
   undefined4 local_24;
   undefined2 local_1c;
@@ -20,11 +20,7 @@ FUN_006405f0(int param_1,undefined4 param_2,undefined4 param_3,undefined2 param_
   undefined2 local_8;
   undefined2 local_6;
 
-  puVar2 = local_38;
-  for (iVar1 = 0xd; iVar1 != 0; iVar1 = iVar1 + -1) {
-    *puVar2 = 0;
-    puVar2 = puVar2 + 1;
-  }
+  memset(local_38, 0, 0x34); /* compiler bulk-zero initialization */
   if (param_1 == 0xa8) {
     local_24 = 1;
   }

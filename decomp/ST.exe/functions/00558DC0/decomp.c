@@ -73,7 +73,7 @@ FUN_00558dc0(void *this,int param_1,int param_2,undefined *param_3,int *param_4,
           do {
             if (*piVar10 != 0) {
               thunk_FUN_00558c00(this,GVar8,param_1,param_2,(int *)&param_6,(int *)&param_4);
-              param_4 = (int *)((int)param_4 + (&DAT_0079aed0)[(int)param_3]);
+              param_4 = (int *)((int)param_4 + g_centeredOffsets5[(int)param_3]);
               thunk_FUN_00553b00((int)param_6,(int)param_4,*piVar10,*(uint *)((int)this + 0x28),
                                  *(int *)((int)this + 0x2c),(undefined *)param_5);
             }
@@ -88,7 +88,7 @@ FUN_00558dc0(void *this,int param_1,int param_2,undefined *param_3,int *param_4,
                              param_2,(int *)&param_6,(int *)&param_4);
           param_6 = (int *)((int)param_6 - uVar11);
           param_5 = 0;
-          param_4 = (int *)((int)param_4 + ((&DAT_0079aed0)[(int)param_3] - uVar11));
+          param_4 = (int *)((int)param_4 + (g_centeredOffsets5[(int)param_3] - uVar11));
           param_3 = puVar6;
           if (0 < iVar4) {
             do {

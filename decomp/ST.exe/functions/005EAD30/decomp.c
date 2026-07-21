@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 undefined4 * FUN_005ead30(void)
 
@@ -15,16 +17,10 @@ undefined4 * FUN_005ead30(void)
     *this = &VTable_0079C018;
     this[6] = 0;
     *(undefined4 *)((int)this + 0x5d) = 0;
-    puVar2 = (undefined4 *)((int)this + 0x1d);
-    for (iVar1 = 8; iVar1 != 0; iVar1 = iVar1 + -1) {
-      *puVar2 = 0;
-      puVar2 = puVar2 + 1;
-    }
-    puVar2 = (undefined4 *)((int)this + 0x3d);
-    for (iVar1 = 8; iVar1 != 0; iVar1 = iVar1 + -1) {
-      *puVar2 = 0;
-      puVar2 = puVar2 + 1;
-    }
+    memset((void *)((int)this + 0x1d), 0, 0x20); /* compiler bulk-zero initialization */
+    iVar1 = 0;
+    memset((void *)((int)this + 0x3d), 0, 0x20); /* compiler bulk-zero initialization */
+    iVar1 = 0;
     DAT_0080879c = 0;
     this_00 = (SpriteClassTy *)(this + 0x5d);
     local_8 = 0xd;
@@ -38,20 +34,15 @@ undefined4 * FUN_005ead30(void)
     *this = &MMObjTyVTable;
     *(undefined1 *)((int)this + 0x65) = 2;
     *(undefined1 *)((int)this + 0x9a) = 0;
-    puVar2 = (undefined4 *)((int)this + 0x66);
-    for (iVar1 = 0xd; iVar1 != 0; iVar1 = iVar1 + -1) {
-      *puVar2 = 0;
-      puVar2 = puVar2 + 1;
-    }
+    memset((void *)((int)this + 0x66), 0, 0x34); /* compiler bulk-zero initialization */
+    iVar1 = 0;
     local_8 = 0xd;
     puVar2 = this + 0x2f;
     do {
       puVar3 = puVar2;
-      for (iVar1 = 9; iVar1 != 0; iVar1 = iVar1 + -1) {
-        *puVar3 = 0;
-        puVar3 = puVar3 + 1;
-      }
-      *(undefined2 *)puVar3 = 0;
+      memset(puVar3, 0, 0x26); /* compiler bulk-zero initialization */
+      puVar3 = (undefined4 *)((byte *)puVar3 + 0x24);
+      iVar1 = 0;
       *(undefined1 *)((int)puVar3 + 2) = 0;
       local_8 = local_8 + -1;
       puVar2 = (undefined4 *)((int)puVar2 + 0x1fb);

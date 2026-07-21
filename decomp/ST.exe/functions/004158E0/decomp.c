@@ -1,10 +1,12 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* [STConstructorApplier] Recovered constructor candidate.
    VTable: 007900A0 (store 004158EC)
    Evidence: final_vptr=007900A0; returns_this=true; calls_before=1; field_writes_after=67;
    incoming_edx_uses=0; incoming_stack_parameter_uses=0; table_confidence=high */
 
-undefined4 * __thiscall STGameObjC::STGameObjC(STGameObjC *this)
+STGameObjC * __thiscall STGameObjC::STGameObjC(STGameObjC *this)
 
 {
   int iVar1;
@@ -19,11 +21,9 @@ undefined4 * __thiscall STGameObjC::STGameObjC(STGameObjC *this)
   this->field_0030 = 0xffff;
   this->field_0032 = 0xffff;
   puVar2 = (undefined4 *)&this->field_0x34;
-  for (iVar1 = 0x17; iVar1 != 0; iVar1 = iVar1 + -1) {
-    *puVar2 = 0;
-    puVar2 = puVar2 + 1;
-  }
-  *(undefined2 *)puVar2 = 0;
+  memset(puVar2, 0, 0x5e); /* compiler bulk-zero initialization */
+  puVar2 = (undefined4 *)((byte *)puVar2 + 0x5c);
+  iVar1 = 0;
   *(undefined1 *)((int)puVar2 + 2) = 0;
   this->field_005F = 0xffff;
   this->field_005D = 0xffff;
@@ -31,12 +31,7 @@ undefined4 * __thiscall STGameObjC::STGameObjC(STGameObjC *this)
   this->field_006E = 0x2f;
   this->field_0062 = 1;
   this->field_0061 = 1;
-  puVar2 = (undefined4 *)&this->field_0x93;
-  for (iVar1 = 0x1b; iVar1 != 0; iVar1 = iVar1 + -1) {
-    *puVar2 = 0;
-    puVar2 = puVar2 + 1;
-  }
-  *(undefined2 *)puVar2 = 0;
+  memset(&this->field_0x93, 0, 0x6e); /* compiler bulk-zero initialization */
   this->field_00FD = 1;
   this->field_00CF = 0xffffffff;
   this->field_00CB = 0xffffffff;
@@ -88,10 +83,10 @@ undefined4 * __thiscall STGameObjC::STGameObjC(STGameObjC *this)
   this->field_01B5 = (AnonPointee_STGameObjC_01B5 *)0x0;
   this->field_01C1 = 0;
   this->field_01BD = 0;
-  this->field_01C9 = (AnonPointee_STGameObjC_01C9 *)0x0;
-  this->field_01C5 = (AnonPointee_STGameObjC_01C5 *)0x0;
+  this->field_01C9 = (ushort *)0x0;
+  this->field_01C5 = (ushort *)0x0;
   this->field_01CD = 0;
   this->field_01D1 = 0;
-  return &this->vtable;
+  return this;
 }
 

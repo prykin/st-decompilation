@@ -45,7 +45,8 @@ int __thiscall STBoatC::BackUnLoadRC(STBoatC *this,STBoatC *param_1)
     iVar5 = this->field_0550;
     if (((iVar5 == 0) || (iVar5 == 1)) || (iVar5 == 2)) {
       sub_0048D930(this);
-      iVar5 = (*this->vtable->vfunc_D8)();
+      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+      iVar5 = (*(code *)this->vtable->field_00D8)();
       return -(uint)(iVar5 != 0);
     }
     if (iVar5 == 3) {
@@ -55,8 +56,8 @@ int __thiscall STBoatC::BackUnLoadRC(STBoatC *this,STBoatC *param_1)
       /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
       iVar3 = CONCAT22((short)((uint)iVar5 >> 0x10),this->field_053C * 0xc9) + 100;
       uVar2 = (undefined2)((uint)iVar7 >> 0x10);
-      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-      uVar2 = (*this->vtable->vfunc_10)
+      /* ST_PSEUDO[raw_indirect_call,packed_or_unaligned_piece]: expected typed vtable/callback call with explicit __thiscall receiver; expected named packed member, bit extract/compose, or unaligned load */
+      uVar2 = (*(code *)this->vtable->field_0010)
                         (CONCAT22(uVar2,this->field_0041),
                          CONCAT22((short)((uint)iVar3 >> 0x10),this->field_0043),
                          CONCAT22(uVar2,this->field_0045),iVar3,iVar7,iVar5);
@@ -84,7 +85,8 @@ int __thiscall STBoatC::BackUnLoadRC(STBoatC *this,STBoatC *param_1)
         goto cf_error_exit_0046F13E;
       }
       if (iVar5 != 0) {
-        iVar5 = (*this->vtable->vfunc_D8)();
+        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+        iVar5 = (*(code *)this->vtable->field_00D8)();
         return (-(uint)(iVar5 != 0) & 0xfffffffd) + 2;
       }
       sub_0048D930(this);
@@ -120,8 +122,8 @@ int __thiscall STBoatC::BackUnLoadRC(STBoatC *this,STBoatC *param_1)
       /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
       iVar3 = CONCAT22((short)((uint)iVar5 >> 0x10),this->field_053C * 0xc9) + 100;
       uVar2 = (undefined2)((uint)iVar7 >> 0x10);
-      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-      uVar2 = (*this->vtable->vfunc_10)
+      /* ST_PSEUDO[raw_indirect_call,packed_or_unaligned_piece]: expected typed vtable/callback call with explicit __thiscall receiver; expected named packed member, bit extract/compose, or unaligned load */
+      uVar2 = (*(code *)this->vtable->field_0010)
                         (CONCAT22(uVar2,this->field_0041),
                          CONCAT22((short)((uint)iVar3 >> 0x10),this->field_0043),
                          CONCAT22(uVar2,this->field_0045),iVar3,iVar7,iVar5);
@@ -135,8 +137,9 @@ int __thiscall STBoatC::BackUnLoadRC(STBoatC *this,STBoatC *param_1)
         if (uVar4 == 0) {
           this->field_0550 = 2;
         }
+/* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
 cf_common_exit_0046F0F9:
-        iVar5 = (*this->vtable->vfunc_D8)();
+        iVar5 = (*(code *)this->vtable->field_00D8)();
         return (-(uint)(iVar5 != 0) & 0xfffffffd) + 2;
       }
       iVar5 = ReportDebugMessage("E:\\__titans\\wlad\\To_boat.cpp",0x2864,0,0,"%s",
@@ -165,11 +168,13 @@ switchD_0046eff1_default:
       iVar5 = STJellyGunC::sub_00415ED0((STJellyGunC *)this,&local_8,(int *)&param_1);
       if (iVar5 != -1) {
         if (iVar5 != 0) {
-          iVar5 = (*this->vtable->vfunc_D8)();
+          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+          iVar5 = (*(code *)this->vtable->field_00D8)();
           return (-(uint)(iVar5 != 0) & 0xfffffffd) + 2;
         }
+/* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
 LAB_0046f1fd:
-        iVar5 = (*this->vtable->vfunc_D8)();
+        iVar5 = (*(code *)this->vtable->field_00D8)();
         return -(uint)(iVar5 != 0);
       }
       iVar5 = ReportDebugMessage("E:\\__titans\\wlad\\To_boat.cpp",0x287c,0,0,"%s",

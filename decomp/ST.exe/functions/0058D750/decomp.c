@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* [STConstructorApplier] Recovered constructor candidate.
    VTable: 0079BE80 (store 0058D77B)
@@ -10,19 +12,13 @@
 STSharkC * __thiscall STSharkC::STSharkC(STSharkC *this)
 
 {
-  int iVar1;
-  undefined4 *puVar2;
 
   STGameObjC::STGameObjC((STGameObjC *)this);
   thunk_FUN_004ab810((AnonShape_004AB810_8E5693D5 *)&this->field_01D5);
   this->field_01D5 = &VTable_0079BFE0;
-  this->vtable = &STSharkCVTable;
+  this->vtable = (AnonPointee_STSharkC_0000 *)&STSharkCVTable;
   this->field_0257 = CASE_0;
-  puVar2 = (undefined4 *)&this->field_0x25b;
-  for (iVar1 = 0xd; iVar1 != 0; iVar1 = iVar1 + -1) {
-    *puVar2 = 0;
-    puVar2 = puVar2 + 1;
-  }
+  memset(&this->field_0x25b, 0, 0x34); /* compiler bulk-zero initialization */
   this->field_023D = 0;
   this->field_0249 = 0xff;
   return this;

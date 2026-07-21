@@ -1,12 +1,13 @@
+#include "../../pseudocode_runtime.h"
+
 
 void __thiscall FUN_004ce0f0(void *this,int *param_1)
 
 {
-  uint *puVar1;
+  DArrayTy *pDVar1;
   int iVar2;
   uint uVar3;
   int iVar4;
-  int *piVar5;
   int local_38 [2];
   undefined1 local_30;
   undefined2 local_2e;
@@ -15,8 +16,8 @@ void __thiscall FUN_004ce0f0(void *this,int *param_1)
   int local_8;
 
   if (*param_1 == 0) {
-    puVar1 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,5,0x30,5);
-    *param_1 = (int)puVar1;
+    pDVar1 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,5,0x30,5);
+    *param_1 = (int)pDVar1;
   }
   *(undefined4 *)(*param_1 + 0xc) = 0;
   if (*(int *)((int)this + 0x5ac) == 0x53) {
@@ -26,11 +27,7 @@ void __thiscall FUN_004ce0f0(void *this,int *param_1)
       /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
       iVar2 = thunk_FUN_004e6010(*(int *)((int)this + 0x24),local_8 + -0x32);
       if (iVar2 != 0) {
-        piVar5 = local_38;
-        for (iVar2 = 0xc; iVar2 != 0; iVar2 = iVar2 + -1) {
-          *piVar5 = 0;
-          piVar5 = piVar5 + 1;
-        }
+        memset(local_38, 0, 0x30); /* compiler bulk-zero initialization */
         local_38[0] = local_8;
         local_30 = 1;
         uVar3 = GetPlayerRaceId(*(char *)((int)this + 0x24));

@@ -23,7 +23,6 @@ CPanelTy::CreateBut(CPanelTy *this,byte param_1,undefined4 param_2,int param_3,i
   int iVar4;
   int iVar5;
   undefined4 uVar6;
-  int *piVar7;
   InternalExceptionFrame local_1d0;
   int local_18c [4];
   int local_17c;
@@ -69,11 +68,7 @@ CPanelTy::CreateBut(CPanelTy *this,byte param_1,undefined4 param_2,int param_3,i
   iVar4 = Library::MSVCRT::__setjmp3(local_1d0.jumpBuffer,0);
   pCVar3 = local_10;
   if (iVar4 == 0) {
-    piVar7 = local_18c;
-    for (iVar4 = 0x5f; iVar4 != 0; iVar4 = iVar4 + -1) {
-      *piVar7 = 0;
-      piVar7 = piVar7 + 1;
-    }
+    memset(local_18c, 0, 0x17c); /* compiler bulk-zero initialization */
     local_18c[1] = param_2;
     local_18c[0] = param_3;
     if (text != (char *)0x0) {
@@ -162,8 +157,8 @@ CPanelTy::CreateBut(CPanelTy *this,byte param_1,undefined4 param_2,int param_3,i
       local_68 = FUN_0070aa70(DAT_00806790,param_13,0,1);
       local_64 = Library::Ourlib::MFIMG::mfImgGetWidth(DAT_00806790,0x12,param_13,1);
     }
-    (*pCVar3->field_000C->vtable->CreateObject)
-              ((SystemClassTy *)pCVar3->field_000C,2,&local_c,(int *)0x0,local_18c,0);
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+    (*(code *)pCVar3->field_000C->vtable->field_0008)(2,&local_c,0,local_18c,0);
     g_currentExceptionFrame = local_1d0.previous;
     return local_c;
   }

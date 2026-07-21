@@ -175,16 +175,16 @@ LAB_0061364b:
   }
   else {
     if (((local_14 < 0) || (pVVar3->field_0030 <= local_14)) ||
-       (((&DAT_0079aed0)[local_c] + local_18 < 0 ||
-        (pVVar3->field_0034 <= (&DAT_0079aed0)[local_c] + local_18)))) {
+       ((g_centeredOffsets5[local_c] + local_18 < 0 ||
+        (pVVar3->field_0034 <= g_centeredOffsets5[local_c] + local_18)))) {
       bVar9 = false;
     }
     else {
       bVar9 = true;
     }
-    if ((bVar9) && (pVVar3->field_004C != 0)) {
-      bVar9 = *(char *)(((&DAT_0079aed0)[local_c] + local_18) * pVVar3->field_0030 +
-                        pVVar3->field_004C + local_14) != '\0';
+    if ((bVar9) && (pVVar3->field_004C != (byte *)0x0)) {
+      bVar9 = pVVar3->field_004C
+              [local_14 + (g_centeredOffsets5[local_c] + local_18) * pVVar3->field_0030] != 0;
     }
     else {
       bVar9 = true;

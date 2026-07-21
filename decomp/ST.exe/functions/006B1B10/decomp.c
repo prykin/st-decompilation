@@ -1,5 +1,5 @@
 
-uint FUN_006b1b10(int param_1,uint param_2,uint param_3)
+uint FUN_006b1b10(AnonShape_006B1B10_121F236C *param_1,uint param_2,uint param_3)
 
 {
   uint *puVar1;
@@ -9,17 +9,15 @@ uint FUN_006b1b10(int param_1,uint param_2,uint param_3)
   int iVar5;
 
   uVar3 = 0xfffffffd;
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  if (param_2 < *(uint *)(param_1 + 0x1a0)) {
-    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-    puVar1 = *(uint **)(*(int *)(param_1 + 0x1b0) + param_2 * 4);
+  if (param_2 < param_1->field_01A0) {
+    puVar1 = *(uint **)(param_1->field_01B0 + param_2 * 4);
     if ((*puVar1 & 0x88000) == 0x8000) {
       uVar3 = puVar1[0x13];
       puVar1[0x13] = param_3;
       if ((*puVar1 & 0x20) != 0) {
-        *(undefined4 *)(param_1 + 0x1b4) = 1;
+        param_1->field_01B4 = 1;
       }
-      uVar4 = FUN_006cee10(param_1,(int)puVar1);
+      uVar4 = FUN_006cee10((int)param_1,(int)puVar1);
       puVar1[0x14] = uVar4;
       if (((*puVar1 & 0x4000000) != 0) && (puVar1[0x34] != 0)) {
         uVar4 = puVar1[0x30];

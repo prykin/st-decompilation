@@ -97,7 +97,7 @@ int __thiscall SettMapTy::NoneSettMap(SettMapTy *this,int *param_1)
       SVar2 = this_00->field_1E26;
       if ((((SVar2 == 6) || (SVar2 == CASE_7)) || (SVar2 == 0xe)) && (this_00->field_0x21e3 != '\0')
          ) {
-        Library::DKW::DDX::FUN_006b3430(DAT_008075a8,this_00->field_1F80);
+        Library::DKW::DDX::FUN_006b3430((int *)PTR_008075a8,this_00->field_1F80);
       }
       if (this_00->field_21E8 != (HoloTy *)0x0) {
         HoloTy::Done(this_00->field_21E8);
@@ -123,7 +123,7 @@ int __thiscall SettMapTy::NoneSettMap(SettMapTy *this,int *param_1)
         puVar9 = &this_00->field_20CC;
         iVar7 = 10;
         do {
-          Library::DKW::DDX::FUN_006b3430(DAT_008075a8,*puVar9);
+          Library::DKW::DDX::FUN_006b3430((int *)PTR_008075a8,*puVar9);
           puVar9 = puVar9 + 1;
           iVar7 = iVar7 + -1;
         } while (iVar7 != 0);
@@ -134,7 +134,7 @@ int __thiscall SettMapTy::NoneSettMap(SettMapTy *this,int *param_1)
         this_00->field_21F4 = (HoloTy *)0x0;
       }
       if (this_00->field_0x21e5 != '\0') {
-        Library::DKW::DDX::FUN_006b3430(DAT_008075a8,this_00->field_1E22);
+        Library::DKW::DDX::FUN_006b3430((int *)PTR_008075a8,this_00->field_1E22);
       }
       if (this_00->field_21EC != (HoloTy *)0x0) {
         HoloTy::Done(this_00->field_21EC);
@@ -158,10 +158,10 @@ int __thiscall SettMapTy::NoneSettMap(SettMapTy *this,int *param_1)
                     ((uint *)PTR_0081176c->field_04F7,PTR_0081176c->field_04B3,0xfffffffe,
                      PTR_0081176c->field_04CB,PTR_0081176c->field_04CF);
         }
-        Library::DKW::DDX::FUN_006b3430(DAT_008075a8,PTR_0081176c->field_0540);
+        Library::DKW::DDX::FUN_006b3430((int *)PTR_008075a8,PTR_0081176c->field_0540);
       }
       if (this_00->field_0x21e4 != '\0') {
-        Library::DKW::DDX::FUN_006b3430(DAT_008075a8,PTR_0081176c->field_02EC);
+        Library::DKW::DDX::FUN_006b3430((int *)PTR_008075a8,PTR_0081176c->field_02EC);
         if (PTR_0081176c->field_02FC != 0xffffffff) {
           FUN_006b3af0((int *)PTR_0081176c->field_0340,PTR_0081176c->field_02FC);
         }
@@ -182,8 +182,8 @@ int __thiscall SettMapTy::NoneSettMap(SettMapTy *this,int *param_1)
                     ((uint *)PTR_0081176c->field_0635,PTR_0081176c->field_05F1,0xfffffffe,
                      PTR_0081176c->field_0609,PTR_0081176c->field_060D);
         }
-        Library::DKW::DDX::FUN_006b3430(DAT_008075a8,PTR_0081176c->field_0558);
-        Library::DKW::DDX::FUN_006b3430(DAT_008075a8,PTR_0081176c->field_0554);
+        Library::DKW::DDX::FUN_006b3430((int *)PTR_008075a8,PTR_0081176c->field_0558);
+        Library::DKW::DDX::FUN_006b3430((int *)PTR_008075a8,PTR_0081176c->field_0554);
       }
       this_00->field_0065 = 1;
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
@@ -217,7 +217,7 @@ int __thiscall SettMapTy::NoneSettMap(SettMapTy *this,int *param_1)
       if (iVar7 == 0) {
         uVar4 = this_00->field_21E8->field_0003;
         if (-1 < (int)uVar4) {
-          FUN_006b3af0(DAT_008075a8,uVar4);
+          FUN_006b3af0((int *)PTR_008075a8,uVar4);
         }
       }
       else {
@@ -229,7 +229,7 @@ int __thiscall SettMapTy::NoneSettMap(SettMapTy *this,int *param_1)
       if (iVar7 == 0) {
         uVar4 = this_00->field_21F4->field_0003;
         if (-1 < (int)uVar4) {
-          FUN_006b3af0(DAT_008075a8,uVar4);
+          FUN_006b3af0((int *)PTR_008075a8,uVar4);
         }
       }
       else {
@@ -243,7 +243,7 @@ int __thiscall SettMapTy::NoneSettMap(SettMapTy *this,int *param_1)
       if (iVar7 == 0) {
         uVar4 = this_00->field_21EC->field_0003;
         if (-1 < (int)uVar4) {
-          FUN_006b3af0(DAT_008075a8,uVar4);
+          FUN_006b3af0((int *)PTR_008075a8,uVar4);
         }
       }
       else {
@@ -257,7 +257,7 @@ int __thiscall SettMapTy::NoneSettMap(SettMapTy *this,int *param_1)
       if (iVar7 == 0) {
         uVar4 = this_00->field_21F0->field_0003;
         if (-1 < (int)uVar4) {
-          FUN_006b3af0(DAT_008075a8,uVar4);
+          FUN_006b3af0((int *)PTR_008075a8,uVar4);
         }
       }
       else {
@@ -271,7 +271,7 @@ int __thiscall SettMapTy::NoneSettMap(SettMapTy *this,int *param_1)
       if (iVar7 == 0) {
         uVar4 = this_00->field_21F8->field_0003;
         if (-1 < (int)uVar4) {
-          FUN_006b3af0(DAT_008075a8,uVar4);
+          FUN_006b3af0((int *)PTR_008075a8,uVar4);
         }
       }
       else {

@@ -16,9 +16,9 @@ uint * __thiscall STGroupC::GetTOBJList(STGroupC *this,int param_1)
   uint *puVar6;
   uint index;
   InternalExceptionFrame local_58;
-  int local_14;
+  uint local_14;
   STGroupC *local_10;
-  uint *local_c;
+  DArrayTy *local_c;
   uint local_8;
 
   local_58.previous = g_currentExceptionFrame;
@@ -26,12 +26,11 @@ uint * __thiscall STGroupC::GetTOBJList(STGroupC *this,int param_1)
   local_10 = this;
   iVar3 = Library::MSVCRT::__setjmp3(local_58.jumpBuffer,0);
   if (iVar3 == 0) {
-    local_c = Library::DKW::TBL::FUN_006ae290((uint *)0x0,0,2,1);
+    local_c = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,0,2,1);
     pSVar2 = local_10;
     index = 0;
-    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-    local_14 = *(int *)(local_10->field_0029 + 0xc);
-    if (0 < local_14) {
+    local_14 = local_10->field_0029[3];
+    if (0 < (int)local_14) {
       do {
         DArrayGetElement((DArrayTy *)pSVar2->field_0029,index,&local_8);
         if ((short)local_8 != -1) {
@@ -45,14 +44,14 @@ uint * __thiscall STGroupC::GetTOBJList(STGroupC *this,int param_1)
           /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
           iVar3 = (**(code **)&pSVar4->vtable->field_0x2c)();
           if (iVar3 == param_1) {
-            Library::DKW::TBL::FUN_006ae1c0(local_c,&local_8);
+            Library::DKW::TBL::FUN_006ae1c0(&local_c->flags,&local_8);
           }
         }
         index = index + 1;
-      } while ((int)index < local_14);
+      } while ((int)index < (int)local_14);
     }
     g_currentExceptionFrame = local_58.previous;
-    return local_c;
+    return &local_c->flags;
   }
   g_currentExceptionFrame = local_58.previous;
   iVar5 = ReportDebugMessage("E:\\__titans\\wlad\\tc_grp.cpp",0x86,0,iVar3,"%s",
@@ -61,6 +60,6 @@ uint * __thiscall STGroupC::GetTOBJList(STGroupC *this,int param_1)
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   RaiseInternalException(iVar3,0,"E:\\__titans\\wlad\\tc_grp.cpp",0x87);
-  return local_c;
+  return &local_c->flags;
 }
 

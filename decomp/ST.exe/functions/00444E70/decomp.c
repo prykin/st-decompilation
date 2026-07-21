@@ -4,7 +4,7 @@ void __thiscall FUN_00444e70(void *this,undefined4 *param_1)
 {
   AnonShape_00444E70_E59ECBC3 *pAVar1;
   undefined4 uVar2;
-  uint *puVar3;
+  DArrayTy *pDVar3;
   uint uVar4;
   int iVar5;
   int iVar6;
@@ -12,7 +12,8 @@ void __thiscall FUN_00444e70(void *this,undefined4 *param_1)
   uint uVar8;
   undefined4 *puVar9;
   AnonShape_00444E70_E59ECBC3 *pAVar10;
-  undefined4 *puVar11;
+  uint *puVar11;
+  undefined4 *puVar12;
   undefined4 local_20;
   undefined4 local_1c;
   undefined4 local_18;
@@ -58,11 +59,11 @@ void __thiscall FUN_00444e70(void *this,undefined4 *param_1)
          *(undefined4 *)&pAVar10->field_0x2c;
     local_14 = (AnonShape_00444E70_8EFB8E54 *)0x5;
     puVar9 = (undefined4 *)&pAVar10->field_0x30;
-    puVar11 = (undefined4 *)((int)&g_playerRuntime[0].field19_0x2b + iVar5);
+    puVar12 = (undefined4 *)((int)&g_playerRuntime[0].field19_0x2b + iVar5);
     for (iVar6 = 0x4e; iVar6 != 0; iVar6 = iVar6 + -1) {
-      *puVar11 = *puVar9;
+      *puVar12 = *puVar9;
       puVar9 = puVar9 + 1;
-      puVar11 = puVar11 + 1;
+      puVar12 = puVar12 + 1;
     }
     puVar9 = (undefined4 *)((int)&g_playerRuntime[0].tempSlots[0][0].playerId + iVar5);
     local_10 = (AnonShape_00444E70_523E22DE *)&local_8->field_0x16c;
@@ -147,106 +148,106 @@ void __thiscall FUN_00444e70(void *this,undefined4 *param_1)
     *(undefined4 *)((int)&g_playerRuntime[0].field478_0x2e3 + iVar5) =
          *(undefined4 *)&pAVar1->field_0x338;
     puVar9 = (undefined4 *)&pAVar1->field_0x33c;
-    puVar11 = (undefined4 *)((int)&g_playerRuntime[0].field480_0x2eb + iVar5);
+    puVar12 = (undefined4 *)((int)&g_playerRuntime[0].field480_0x2eb + iVar5);
     for (iVar6 = 5; iVar6 != 0; iVar6 = iVar6 + -1) {
-      *puVar11 = *puVar9;
+      *puVar12 = *puVar9;
       puVar9 = puVar9 + 1;
-      puVar11 = puVar11 + 1;
+      puVar12 = puVar12 + 1;
     }
     puVar9 = (undefined4 *)&local_8->field_0x350;
-    puVar11 = (undefined4 *)((int)&g_playerRuntime[0].field494_0x2ff + iVar5);
+    puVar12 = (undefined4 *)((int)&g_playerRuntime[0].field494_0x2ff + iVar5);
     for (iVar6 = 5; iVar6 != 0; iVar6 = iVar6 + -1) {
-      *puVar11 = *puVar9;
+      *puVar12 = *puVar9;
       puVar9 = puVar9 + 1;
-      puVar11 = puVar11 + 1;
+      puVar12 = puVar12 + 1;
     }
     puVar9 = (undefined4 *)&local_8->field_0x364;
-    puVar11 = (undefined4 *)((int)&g_playerRuntime[0].field508_0x313 + iVar5);
+    puVar12 = (undefined4 *)((int)&g_playerRuntime[0].field508_0x313 + iVar5);
     for (iVar6 = 5; iVar6 != 0; iVar6 = iVar6 + -1) {
-      *puVar11 = *puVar9;
+      *puVar12 = *puVar9;
       puVar9 = puVar9 + 1;
-      puVar11 = puVar11 + 1;
+      puVar12 = puVar12 + 1;
     }
     puVar9 = (undefined4 *)&local_8->field_0x378;
-    puVar11 = (undefined4 *)((int)&g_playerRuntime[0].field522_0x327 + iVar5);
+    puVar12 = (undefined4 *)((int)&g_playerRuntime[0].field522_0x327 + iVar5);
     for (iVar6 = 0x9b; iVar6 != 0; iVar6 = iVar6 + -1) {
-      *puVar11 = *puVar9;
+      *puVar12 = *puVar9;
       puVar9 = puVar9 + 1;
-      puVar11 = puVar11 + 1;
+      puVar12 = puVar12 + 1;
     }
     puVar9 = (undefined4 *)&local_8->field_0x5e4;
-    puVar11 = (undefined4 *)((int)&g_playerRuntime[0].field1136_0x593 + iVar5);
+    puVar12 = (undefined4 *)((int)&g_playerRuntime[0].field1136_0x593 + iVar5);
     for (iVar6 = 0x6a; iVar6 != 0; iVar6 = iVar6 + -1) {
-      *puVar11 = *puVar9;
+      *puVar12 = *puVar9;
       puVar9 = puVar9 + 1;
-      puVar11 = puVar11 + 1;
+      puVar12 = puVar12 + 1;
     }
     puVar9 = (undefined4 *)&local_8->field_0x78c;
-    puVar11 = (undefined4 *)((int)&g_playerRuntime[0].field1554_0x73b + iVar5);
+    puVar12 = (undefined4 *)((int)&g_playerRuntime[0].field1554_0x73b + iVar5);
     for (iVar6 = 0x26; iVar6 != 0; iVar6 = iVar6 + -1) {
-      *puVar11 = *puVar9;
+      *puVar12 = *puVar9;
       puVar9 = puVar9 + 1;
-      puVar11 = puVar11 + 1;
+      puVar12 = puVar12 + 1;
     }
-    *(undefined2 *)puVar11 = *(undefined2 *)puVar9;
-    *(undefined1 *)((int)puVar11 + 2) = *(undefined1 *)((int)puVar9 + 2);
+    *(undefined2 *)puVar12 = *(undefined2 *)puVar9;
+    *(undefined1 *)((int)puVar12 + 2) = *(undefined1 *)((int)puVar9 + 2);
     *(undefined4 *)((int)&g_playerRuntime[0].field1705_0x7d6 + iVar5) = local_8->field_0827;
     puVar9 = (undefined4 *)&local_8->field_0x82b;
-    puVar11 = (undefined4 *)((int)&g_playerRuntime[0].field1706_0x7da + iVar5);
+    puVar12 = (undefined4 *)((int)&g_playerRuntime[0].field1706_0x7da + iVar5);
     for (iVar6 = 0x66; iVar6 != 0; iVar6 = iVar6 + -1) {
-      *puVar11 = *puVar9;
+      *puVar12 = *puVar9;
       puVar9 = puVar9 + 1;
-      puVar11 = puVar11 + 1;
+      puVar12 = puVar12 + 1;
     }
     *(undefined4 *)((int)&g_playerRuntime[0].field2108_0x972 + iVar5) = local_8->field_09C3;
     *(undefined4 *)((int)&g_playerRuntime[0].field2109_0x976 + iVar5) = local_8->field_09C7;
     puVar9 = (undefined4 *)&local_8->field_0x9cb;
-    puVar11 = (undefined4 *)((int)&g_playerRuntime[0].field2110_0x97a + iVar5);
+    puVar12 = (undefined4 *)((int)&g_playerRuntime[0].field2110_0x97a + iVar5);
     for (iVar6 = 6; iVar6 != 0; iVar6 = iVar6 + -1) {
-      *puVar11 = *puVar9;
+      *puVar12 = *puVar9;
       puVar9 = puVar9 + 1;
-      puVar11 = puVar11 + 1;
+      puVar12 = puVar12 + 1;
     }
     *(undefined4 *)((int)&g_playerRuntime[0].field2132_0x996 + iVar5) = local_8->field_09E3;
     *(undefined4 *)((int)&g_playerRuntime[0].field2133_0x99a + iVar5) = local_8->field_09E7;
     *(undefined4 *)((int)&g_playerRuntime[0].field2134_0x99e + iVar5) = local_8->field_09EB;
     local_14 = (AnonShape_00444E70_8EFB8E54 *)0x6;
     puVar9 = (undefined4 *)&local_8->field_0x9ef;
-    puVar11 = (undefined4 *)((int)&g_playerRuntime[0].field2135_0x9a2 + iVar5);
+    puVar12 = (undefined4 *)((int)&g_playerRuntime[0].field2135_0x9a2 + iVar5);
     for (iVar6 = 10; iVar6 != 0; iVar6 = iVar6 + -1) {
-      *puVar11 = *puVar9;
+      *puVar12 = *puVar9;
       puVar9 = puVar9 + 1;
-      puVar11 = puVar11 + 1;
+      puVar12 = puVar12 + 1;
     }
-    puVar3 = (uint *)(&g_playerRuntime[0].field_0x7ee + iVar5);
+    puVar11 = (uint *)(&g_playerRuntime[0].field_0x7ee + iVar5);
     piVar7 = (int *)&local_8->field_0xa77;
     local_10 = (AnonShape_00444E70_523E22DE *)0x0;
     do {
-      FUN_006b0060(puVar3,(uint *)(*piVar7 + (int)param_1));
+      FUN_006b0060(puVar11,(uint *)(*piVar7 + (int)param_1));
       piVar7 = piVar7 + 2;
-      puVar3 = puVar3 + 0x11;
+      puVar11 = puVar11 + 0x11;
       local_14 = (AnonShape_00444E70_8EFB8E54 *)((int)&local_14[-1].field_000E + 1);
     } while (local_14 != (AnonShape_00444E70_8EFB8E54 *)0x0);
     puVar9 = (undefined4 *)&local_8->field_0xa17;
-    puVar11 = (undefined4 *)((int)&g_playerRuntime[0].field2180_0xa0e + iVar5);
+    puVar12 = (undefined4 *)((int)&g_playerRuntime[0].field2180_0xa0e + iVar5);
     for (iVar6 = 5; iVar6 != 0; iVar6 = iVar6 + -1) {
-      *puVar11 = *puVar9;
+      *puVar12 = *puVar9;
       puVar9 = puVar9 + 1;
-      puVar11 = puVar11 + 1;
+      puVar12 = puVar12 + 1;
     }
     puVar9 = (undefined4 *)&local_8->field_0xa2b;
-    puVar11 = (undefined4 *)((int)&g_playerRuntime[0].field2185_0xa22 + iVar5);
+    puVar12 = (undefined4 *)((int)&g_playerRuntime[0].field2185_0xa22 + iVar5);
     for (iVar6 = 8; iVar6 != 0; iVar6 = iVar6 + -1) {
-      *puVar11 = *puVar9;
+      *puVar12 = *puVar9;
       puVar9 = puVar9 + 1;
-      puVar11 = puVar11 + 1;
+      puVar12 = puVar12 + 1;
     }
     puVar9 = (undefined4 *)&local_8->field_0xa4b;
-    puVar11 = (undefined4 *)((int)&g_playerRuntime[0].field2211_0xa42 + iVar5);
+    puVar12 = (undefined4 *)((int)&g_playerRuntime[0].field2211_0xa42 + iVar5);
     for (iVar6 = 8; iVar6 != 0; iVar6 = iVar6 + -1) {
-      *puVar11 = *puVar9;
+      *puVar12 = *puVar9;
       puVar9 = puVar9 + 1;
-      puVar11 = puVar11 + 1;
+      puVar12 = puVar12 + 1;
     }
     *(undefined4 *)((int)&g_playerRuntime[0].field2175_0x9fa + iVar5) = 0;
     *(undefined4 *)((int)&g_playerRuntime[0].field2176_0x9fe + iVar5) = 0;
@@ -258,8 +259,8 @@ void __thiscall FUN_00444e70(void *this,undefined4 *param_1)
     }
     else {
       uVar8 = local_8->field_0A6F / 0x18;
-      puVar3 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,uVar8,0xc,1);
-      *(uint **)((int)&g_playerRuntime[0].pgPairs + iVar5) = puVar3;
+      pDVar3 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,uVar8,0xc,1);
+      *(DArrayTy **)((int)&g_playerRuntime[0].pgPairs + iVar5) = pDVar3;
       local_10 = (AnonShape_00444E70_523E22DE *)0x0;
       if (uVar8 != 0) {
         piVar7 = (int *)((int)param_1 + local_8->field_0A6B + 0x10);
@@ -288,11 +289,11 @@ void __thiscall FUN_00444e70(void *this,undefined4 *param_1)
     pAVar10 = (AnonShape_00444E70_E59ECBC3 *)&local_8[1].field_0x33;
   } while (iVar5 < 0x5310);
   puVar9 = param_1 + 0x1557;
-  puVar11 = &DAT_007fa138;
+  puVar12 = &DAT_007fa138;
   for (iVar5 = 6; iVar5 != 0; iVar5 = iVar5 + -1) {
-    *puVar11 = *puVar9;
+    *puVar12 = *puVar9;
     puVar9 = puVar9 + 1;
-    puVar11 = puVar11 + 1;
+    puVar12 = puVar12 + 1;
   }
   local_8 = pAVar10;
   if (0 < (int)param_1[0x155d]) {
@@ -313,16 +314,16 @@ void __thiscall FUN_00444e70(void *this,undefined4 *param_1)
   DAT_007fa168 = (undefined4 *)Library::DKW::LIB::FUN_006aac70(param_1[0x1563]);
   uVar8 = param_1[0x1563];
   puVar9 = (undefined4 *)(param_1[0x1562] + (int)param_1);
-  puVar11 = DAT_007fa168;
+  puVar12 = DAT_007fa168;
   for (uVar4 = uVar8 >> 2; uVar4 != 0; uVar4 = uVar4 - 1) {
-    *puVar11 = *puVar9;
+    *puVar12 = *puVar9;
     puVar9 = puVar9 + 1;
-    puVar11 = puVar11 + 1;
+    puVar12 = puVar12 + 1;
   }
   for (uVar8 = uVar8 & 3; uVar8 != 0; uVar8 = uVar8 - 1) {
-    *(undefined1 *)puVar11 = *(undefined1 *)puVar9;
+    *(undefined1 *)puVar12 = *(undefined1 *)puVar9;
     puVar9 = (undefined4 *)((int)puVar9 + 1);
-    puVar11 = (undefined4 *)((int)puVar11 + 1);
+    puVar12 = (undefined4 *)((int)puVar12 + 1);
   }
   return;
 }

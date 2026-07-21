@@ -8,7 +8,7 @@ undefined4 __fastcall FUN_004e28d0(int param_1)
   /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   if (g_playerRuntime[*(int *)(param_1 + 0x24)].field2167_0x9da == (DArrayTy *)0x0) {
     local_8 = param_1;
-    pDVar1 = (DArrayTy *)Library::DKW::TBL::FUN_006ae290((uint *)0x0,10,4,10);
+    pDVar1 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,10,4,10);
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     g_playerRuntime[*(int *)(param_1 + 0x24)].field2167_0x9da = pDVar1;
   }

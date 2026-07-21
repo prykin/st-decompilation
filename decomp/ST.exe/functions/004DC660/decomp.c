@@ -2,7 +2,7 @@
 undefined4 __fastcall FUN_004dc660(AnonShape_004DC660_217FA9F0 *param_1)
 
 {
-  undefined4 uVar1;
+  uint uVar1;
 
   if (*(char *)((int)&DAT_008087c4 + param_1->field_0024 * 0x51 + 3) == '\x01') {
     param_1->field_04D0 = 2;

@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* WARNING: Type propagation algorithm not settling */
 
@@ -69,7 +71,6 @@ void __fastcall FUN_00664960(AiFltClassTy *param_1)
   int iVar17;
   uint *puVar18;
   uint *puVar19;
-  undefined4 *puVar20;
   bool bVar21;
   bool bVar22;
   undefined4 local_9c;
@@ -109,7 +110,7 @@ void __fastcall FUN_00664960(AiFltClassTy *param_1)
   AiPlrClassTy *local_8;
 
   if ((param_1->field_008B != 0) &&
-     (param_1->field_0280 < (uint)(param_1->field_008F + param_1->field_008B))) {
+     (param_1->field_0280 < param_1->field_008F + param_1->field_008B)) {
     return;
   }
   param_1->field_008F = param_1->field_0280;
@@ -165,7 +166,7 @@ void __fastcall FUN_00664960(AiFltClassTy *param_1)
       break;
     case 4:
       Library::DKW::TBL::FUN_006ae1c0(&param_1->field_020B->flags,&local_3c);
-      thunk_FUN_00676c40((AnonShape_00413AF0_B6B4EE9A *)param_1->field_020B,&LAB_004013cf);
+      thunk_FUN_00676c40(param_1->field_020B,&LAB_004013cf);
       goto cf_common_join_00665024;
     case 5:
       if (param_1->field_020B != (DArrayTy *)0x0) {
@@ -582,7 +583,7 @@ LAB_00666901:
                 /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
                 if (((int)param_1->field_018E < CONCAT22(extraout_var_06,uVar6)) &&
                    ((param_1->field_00AB == 0 ||
-                    (param_1->field_0280 <= (uint)(param_1->field_00AF + param_1->field_00AB)))))
+                    (param_1->field_0280 <= param_1->field_00AF + param_1->field_00AB))))
                 goto cf_common_exit_00667066;
                 if (this != (AiPlrClassTy *)0x0) {
                   thunk_FUN_0067bf60(this,-1,param_1->field_00F7);
@@ -611,7 +612,7 @@ LAB_00665eba:
               /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
               if (((int)param_1->field_018E < CONCAT22(extraout_var_05,uVar6)) &&
                  ((param_1->field_00AB == 0 ||
-                  (param_1->field_0280 <= (uint)(param_1->field_00AF + param_1->field_00AB)))))
+                  (param_1->field_0280 <= param_1->field_00AF + param_1->field_00AB))))
               goto cf_common_exit_00667066;
               if (local_8 != (AiPlrClassTy *)0x0) {
                 thunk_FUN_0067bf60(local_8,-1,param_1->field_00F7);
@@ -653,7 +654,7 @@ LAB_00665eba:
               /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
               if (((int)param_1->field_018E < CONCAT22(extraout_var_04,uVar6)) &&
                  ((param_1->field_00AB == 0 ||
-                  (param_1->field_0280 <= (uint)(param_1->field_00AF + param_1->field_00AB)))))
+                  (param_1->field_0280 <= param_1->field_00AF + param_1->field_00AB))))
               goto cf_common_exit_00667066;
               if (local_8 != (AiPlrClassTy *)0x0) {
                 thunk_FUN_0067bf60(local_8,-1,param_1->field_00F7);
@@ -731,7 +732,7 @@ LAB_00665eba:
                       thunk_FUN_00660180((AnonReceiver_00660180 *)param_1,
                                          (short *)&param_1->field_0x195,(char)param_1->field_015F);
               if (iVar9 == 0) goto cf_common_exit_00667066;
-              if (param_1->field_0284 != (AnonPointee_AiFltClassTy_0284 *)0x0) {
+              if (param_1->field_0284 != (ushort *)0x0) {
                 thunk_FUN_00690610(param_1->field_0284,param_1->field_007D);
               }
             }
@@ -741,9 +742,9 @@ LAB_00665eba:
                   (uVar6 = AiFltClassTy::sub_0065D9C0(param_1),
                   (int)param_1->field_0159 < CONCAT22(extraout_var_07,uVar6))) &&
                  ((param_1->field_00AB == 0 ||
-                  (param_1->field_0280 <= (uint)(param_1->field_00AF + param_1->field_00AB)))))
+                  (param_1->field_0280 <= param_1->field_00AF + param_1->field_00AB))))
               goto cf_common_exit_00667066;
-              if (param_1->field_0284 != (AnonPointee_AiFltClassTy_0284 *)0x0) {
+              if (param_1->field_0284 != (ushort *)0x0) {
                 thunk_FUN_00690610(param_1->field_0284,param_1->field_007D);
               }
             }
@@ -851,7 +852,7 @@ LAB_006664d8:
           goto cf_common_join_00667047;
         }
         param_1->field_00A3 = 1;
-        *(undefined4 *)(param_1->field_023B + 0xc) = 0;
+        param_1->field_023B[3] = 0;
         uVar11 = param_1->field_001C * 0x41c64e6d + 0x3039;
         param_1->field_001C = uVar11;
         uVar6 = AiFltClassTy::sub_0065D9C0(param_1);
@@ -860,10 +861,9 @@ LAB_006664d8:
         if (uVar11 == 0) {
           uVar11 = 1;
         }
-        iVar9 = thunk_FUN_0065eb70(param_1,*(uint *)&param_1->field_0xc7,uVar11,
-                                   (uint *)param_1->field_023B,*(uint *)&param_1->field_0xcb,
-                                   *(uint *)&param_1->field_0xcf,&param_1->field_0xd5,
-                                   (uint)(byte)param_1->field_0xd3);
+        iVar9 = thunk_FUN_0065eb70(param_1,*(uint *)&param_1->field_0xc7,uVar11,param_1->field_023B,
+                                   *(uint *)&param_1->field_0xcb,*(uint *)&param_1->field_0xcf,
+                                   &param_1->field_0xd5,(uint)(byte)param_1->field_0xd3);
         if (iVar9 < 1) {
           thunk_FUN_0065f980((int)param_1);
           param_1->field_009B = 0;
@@ -1068,7 +1068,7 @@ cf_common_join_00666DC1:
           (uVar6 = AiFltClassTy::sub_0065D9C0(param_1),
           (int)*(short *)&param_1->field_0xc9 < CONCAT22(extraout_var_15,uVar6))) &&
          ((param_1->field_00AB == 0 ||
-          (param_1->field_0280 <= (uint)(param_1->field_00AF + param_1->field_00AB)))))
+          (param_1->field_0280 <= param_1->field_00AF + param_1->field_00AB))))
       goto cf_common_exit_00667066;
       break;
     case 0x23a:
@@ -1083,7 +1083,7 @@ cf_common_join_00666DC1:
       }
       if ((param_1->field_00A7 == 0) &&
          ((param_1->field_00AB == 0 ||
-          (param_1->field_0280 <= (uint)(param_1->field_00AF + param_1->field_00AB)))))
+          (param_1->field_0280 <= param_1->field_00AF + param_1->field_00AB))))
       goto cf_common_exit_00667066;
       break;
     case 0x244:
@@ -1284,14 +1284,9 @@ LAB_006650bc:
     }
 LAB_006651f3:
     if ((param_1->field_00AB == 0) ||
-       (param_1->field_0280 <= (uint)(param_1->field_00AF + param_1->field_00AB)))
+       (param_1->field_0280 <= param_1->field_00AF + param_1->field_00AB))
     goto cf_common_exit_00667066;
-    puVar20 = &param_1->field_01AD;
-    for (iVar9 = 0x12; iVar9 != 0; iVar9 = iVar9 + -1) {
-      *puVar20 = 0;
-      puVar20 = puVar20 + 1;
-    }
-    *(undefined2 *)puVar20 = 0;
+    memset(&param_1->field_01AD, 0, 0x4a); /* compiler bulk-zero initialization */
     if (param_1->field_00B3 != 0) {
       thunk_FUN_0065f980((int)param_1);
     }
@@ -1321,8 +1316,7 @@ LAB_00665315:
     if (param_1->field_00A3 != 0) {
       if ((param_1->field_00A7 != 0) ||
          ((param_1->field_00AB != 0 &&
-          ((uint)(param_1->field_00AF + param_1->field_00AB) < param_1->field_0280))))
-      goto LAB_0066530b;
+          (param_1->field_00AF + param_1->field_00AB < param_1->field_0280)))) goto LAB_0066530b;
       goto LAB_00665327;
     }
     param_1->field_00A3 = 1;
@@ -1351,14 +1345,10 @@ LAB_00665315:
     }
     if ((param_1->field_00A7 == 0) &&
        ((param_1->field_00AB == 0 ||
-        (param_1->field_0280 <= (uint)(param_1->field_00AF + param_1->field_00AB)))))
+        (param_1->field_0280 <= param_1->field_00AF + param_1->field_00AB))))
     goto cf_common_exit_00667066;
-    puVar20 = &param_1->field_01AD;
-    for (iVar9 = 0x12; iVar9 != 0; iVar9 = iVar9 + -1) {
-      *puVar20 = 0;
-      puVar20 = puVar20 + 1;
-    }
-    *(undefined2 *)puVar20 = 0;
+    memset(&param_1->field_01AD, 0, 0x4a); /* compiler bulk-zero initialization */
+    iVar9 = 0;
     if (param_1->field_00B3 != 0) {
       thunk_FUN_0065f980((int)param_1);
     }
@@ -1418,12 +1408,11 @@ LAB_006655ba:
         }
       }
       else {
-        if ((uint)(param_1->field_0131 + iVar9) < param_1->field_0280) goto LAB_006655ba;
+        if (param_1->field_0131 + iVar9 < param_1->field_0280) goto LAB_006655ba;
         if (iVar9 == 0) goto LAB_006655b2;
       }
       if ((param_1->field_00AB != 0) &&
-         ((uint)(param_1->field_00AF + param_1->field_00AB) < param_1->field_0280))
-      goto LAB_00665607;
+         (param_1->field_00AF + param_1->field_00AB < param_1->field_0280)) goto LAB_00665607;
       goto LAB_00665327;
     }
     param_1->field_00A3 = 1;
@@ -1468,11 +1457,7 @@ LAB_006655ba:
       /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
       if (CONCAT22(extraout_var_00,uVar6) != 0 && -1 < extraout_var_00) {
         uVar11 = param_1->field_0280;
-        puVar20 = &stack0xffffff64;
-        for (iVar9 = 0xd; iVar9 != 0; iVar9 = iVar9 + -1) {
-          *puVar20 = 0;
-          puVar20 = puVar20 + 1;
-        }
+        memset(&stack0xffffff64, 0, 0x34); /* compiler bulk-zero initialization */
         local_9c = 0x72;
         local_94 = 2;
         local_98 = uVar11;
@@ -1524,7 +1509,7 @@ LAB_006655ba:
       goto cf_common_exit_00667066;
     }
     if ((param_1->field_00AB != 0) &&
-       ((uint)(param_1->field_00AF + param_1->field_00AB) < param_1->field_0280)) {
+       (param_1->field_00AF + param_1->field_00AB < param_1->field_0280)) {
       param_1->field_009B = 0x14;
       param_1->field_009F = 0;
       param_1->field_00A3 = 0;
@@ -1532,7 +1517,7 @@ LAB_006655ba:
     }
     /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
     if (((param_1->field_0139 == '\0') ||
-        (param_1->field_0280 <= (uint)(param_1->field_014E + param_1->field_014A))) ||
+        (param_1->field_0280 <= param_1->field_014E + param_1->field_014A)) ||
        (uVar6 = AiFltClassTy::sub_0065D9C0(param_1),
        CONCAT22(extraout_var_01,uVar6) < (int)param_1->field_013E)) goto LAB_00665886;
     goto LAB_0066586a;
@@ -1549,7 +1534,7 @@ LAB_006655ba:
     }
     if ((param_1->field_00A7 == 0) &&
        ((param_1->field_00AB == 0 ||
-        (param_1->field_0280 <= (uint)(param_1->field_00AF + param_1->field_00AB)))))
+        (param_1->field_0280 <= param_1->field_00AF + param_1->field_00AB))))
     goto cf_common_exit_00667066;
     goto cf_common_join_0066704E;
   case 0x6e:
@@ -1599,7 +1584,7 @@ LAB_00665a76:
       /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
       if (((int)param_1->field_0140 < CONCAT22(extraout_var_02,uVar6)) &&
          ((param_1->field_00AB == 0 ||
-          (param_1->field_0280 <= (uint)(param_1->field_00AF + param_1->field_00AB)))))
+          (param_1->field_0280 <= param_1->field_00AF + param_1->field_00AB))))
       goto cf_common_exit_00667066;
 LAB_00665aac:
       param_1->field_014E = param_1->field_0280;
@@ -1626,7 +1611,7 @@ LAB_00665b57:
       /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
       if ((int)param_1->field_0140 < CONCAT22(extraout_var_03,uVar6)) {
         if ((param_1->field_00AB == 0) ||
-           (param_1->field_0280 <= (uint)(param_1->field_00AF + param_1->field_00AB)))
+           (param_1->field_0280 <= param_1->field_00AF + param_1->field_00AB))
         goto cf_common_exit_00667066;
         param_1->field_014E = param_1->field_0280;
         goto cf_common_join_0066704E;
@@ -1666,7 +1651,7 @@ cf_common_join_0066704E:
       param_1->field_00AF = param_1->field_0280;
       goto cf_common_exit_00667066;
     }
-    if (param_1->field_0280 <= (uint)(param_1->field_00AF + param_1->field_00AB))
+    if (param_1->field_0280 <= param_1->field_00AF + param_1->field_00AB)
     goto cf_common_exit_00667066;
     param_1->field_009B = param_1->field_009F;
   }
@@ -1676,8 +1661,8 @@ LAB_0066705a:
   param_1->field_00A3 = 0;
   param_1->field_00A7 = 0;
 cf_common_exit_00667066:
-  if (((param_1->field_0284 != (AnonPointee_AiFltClassTy_0284 *)0x0) &&
-      (param_1->field_0176 != '\0')) && ((param_1->field_00EB & param_1->field_017B) != 0)) {
+  if (((param_1->field_0284 != (ushort *)0x0) && (param_1->field_0176 != '\0')) &&
+     ((param_1->field_00EB & param_1->field_017B) != 0)) {
     /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
     AiFltClassTy::GoToRepair(param_1,unaff_ESI);
   }

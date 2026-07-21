@@ -54,6 +54,36 @@ the function is lifted into a compilable translation unit. Ghidra's database
 function is not globally marked noreturn, so this presentation choice cannot
 corrupt control-flow analysis elsewhere.
 
+## Automatically normalized bulk zero initialization
+
+MSVC frequently lowers aggregate initialization to `REP STOSD` followed by a
+short tail store. Ghidra renders that machine operation as a loop over an
+`undefined4 *` and, for an odd byte count, a final `undefined1` store:
+
+```c
+puVar2 = (undefined4 *)&this->field_0x1c;
+for (iVar1 = 0x25; iVar1 != 0; iVar1 = iVar1 + -1) {
+  *puVar2 = 0;
+  puVar2 = puVar2 + 1;
+}
+*(undefined1 *)puVar2 = 0;
+```
+
+Those transfer widths do not prove that the initialized range is an array of
+37 integers. It can contain independently recovered integers, pointers, enums,
+packed fields, and padding. Creating an overlapping array in the Ghidra class
+would therefore make later decompilation worse. The exporter instead folds the
+exact zero-loop semantics into:
+
+```c
+memset(&this->field_0x1c, 0, 0x95); /* compiler bulk-zero initialization */
+```
+
+Dead loop temporaries are removed. If a temporary is genuinely live after the
+loop, the exporter preserves its post-loop value. The generated runtime header
+includes `<string.h>`, and every normalized site is recorded as
+`bulk_zero_initialization` in `pseudocode_idioms.jsonl`.
+
 ## Catalogued forms awaiting typed rewriting
 
 Every export recreates `decomp/ST.exe/pseudocode_idioms.jsonl`. Each JSON object

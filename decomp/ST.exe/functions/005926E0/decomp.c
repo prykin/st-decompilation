@@ -324,7 +324,7 @@ LAB_00592b82:
       }
       if (uVar9 <= local_8->field_0061 - piVar8[4]) {
         pBVar4 = (BITMAPINFO *)FUN_0070b3a0(pAVar1,(int)(short)pAVar1->field_0029);
-        FUN_006b5f80(DAT_008075a8,*piVar8,piVar8[1],(int)*(short *)(pAVar1 + 1),
+        FUN_006b5f80((int *)PTR_008075a8,*piVar8,piVar8[1],(int)*(short *)(pAVar1 + 1),
                      (int)*(short *)&pAVar1[1].field_0x2);
         PutDDX(*piVar8,piVar8[1],'\x01',pBVar4);
         if ((char)piVar8[5] != '\0') {

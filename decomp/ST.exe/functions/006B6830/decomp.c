@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 int FUN_006b6830(undefined4 *param_1)
 
@@ -8,7 +10,6 @@ int FUN_006b6830(undefined4 *param_1)
   undefined4 unaff_EBX;
   /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
   undefined4 unaff_ESI;
-  undefined4 *puVar3;
   /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
   undefined4 in_stack_ffffffd4;
   /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
@@ -21,11 +22,7 @@ int FUN_006b6830(undefined4 *param_1)
     iVar2 = (**(code **)(*(int *)*param_1 + 0x18))((int *)*param_1,param_1 + 0xe,0,0,0,0,0x100);
     if (iVar2 == 0) {
       piVar1 = (int *)*param_1;
-      puVar3 = (undefined4 *)&stack0xffffffd4;
-      for (iVar2 = 10; iVar2 != 0; iVar2 = iVar2 + -1) {
-        *puVar3 = 0;
-        puVar3 = puVar3 + 1;
-      }
+      memset(&stack0xffffffd4, 0, 0x28); /* compiler bulk-zero initialization */
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
       (**(code **)(*piVar1 + 0x4c))(piVar1,param_1[0xe],&stack0xffffffd4,0);
       return 0;

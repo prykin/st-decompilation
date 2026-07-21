@@ -23,7 +23,7 @@ void __thiscall SAMPanelTy::DoneSAMPanel(SAMPanelTy *this)
   pSVar2 = local_8;
   if (iVar3 == 0) {
     iVar3 = 7;
-    local_8->field_01B1 = 0;
+    local_8->field_01B1 = (ushort *)0x0;
     puVar5 = &local_8->field_01B5;
     do {
       if (*puVar5 != 0) {
@@ -33,7 +33,7 @@ void __thiscall SAMPanelTy::DoneSAMPanel(SAMPanelTy *this)
       puVar5 = puVar5 + 1;
       iVar3 = iVar3 + -1;
     } while (iVar3 != 0);
-    DAT_008016ec = 0;
+    g_sAMPanel_008016EC = (SAMPanelTy *)0x0;
     g_currentExceptionFrame = local_4c.previous;
     return;
   }

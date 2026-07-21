@@ -8,7 +8,7 @@ undefined4 __fastcall FUN_005f0ba0(AnonShape_005F0BA0_C8D654C5 *param_1)
   int iVar3;
   int iVar4;
 
-  if ((uint)PTR_00802a38->field_00E4 % 5 == 0) {
+  if (PTR_00802a38->field_00E4 % 5 == 0) {
     this = &param_1->field_0x1d5;
     uVar1 = *(uint *)(DAT_00806724 + 0x30 + param_1->field_02D2 * 4);
     if (param_1->field_02B5 == 1) {

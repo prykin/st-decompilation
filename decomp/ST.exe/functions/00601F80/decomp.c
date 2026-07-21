@@ -48,7 +48,7 @@ int __thiscall STDestC::GetMessage(STDestC *this,STMessage *message)
           if ((local_8->field_036E != 0) && (local_8->field_036E != 4)) {
             thunk_FUN_00602be0(local_8);
           }
-          if ((*(byte *)&PTR_00802a38->field_00E4 & 0xf) == 0) {
+          if ((PTR_00802a38->field_00E4 & 0xf) == 0) {
             thunk_FUN_00603120((AnonShape_00603120_1977E258 *)this_00);
             g_currentExceptionFrame = local_54.previous;
             return 0;

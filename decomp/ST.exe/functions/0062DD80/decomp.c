@@ -9,13 +9,14 @@ uint __thiscall
 STManRub3C::AddNewColl3(STManRub3C *this,int param_1,int param_2,int param_3,int param_4)
 
 {
-  code *pcVar1;
-  STManRub3C *pSVar2;
-  int iVar3;
-  uint *puVar4;
-  int *piVar5;
-  uint uVar6;
-  int iVar7;
+  uint *puVar1;
+  code *pcVar2;
+  STManRub3C *pSVar3;
+  int iVar4;
+  DArrayTy *pDVar5;
+  int *piVar6;
+  uint uVar7;
+  int iVar8;
   InternalExceptionFrame local_60;
   int local_1c;
   int local_18;
@@ -29,52 +30,52 @@ STManRub3C::AddNewColl3(STManRub3C *this,int param_1,int param_2,int param_3,int
   local_60.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_60;
   local_c = this;
-  iVar3 = Library::MSVCRT::__setjmp3(local_60.jumpBuffer,0);
-  pSVar2 = local_c;
-  if (iVar3 != 0) {
+  iVar4 = Library::MSVCRT::__setjmp3(local_60.jumpBuffer,0);
+  pSVar3 = local_c;
+  if (iVar4 != 0) {
     g_currentExceptionFrame = local_60.previous;
-    iVar7 = ReportDebugMessage("E:\\__titans\\nick\\to_rab3m.cpp",0x24d,0,iVar3,"%s",
+    iVar8 = ReportDebugMessage("E:\\__titans\\nick\\to_rab3m.cpp",0x24d,0,iVar4,"%s",
                                "STManRub3C::AddNewColl3");
-    if (iVar7 != 0) {
+    if (iVar8 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    RaiseInternalException(iVar3,0,"E:\\__titans\\nick\\to_rab3m.cpp",0x24f);
+    RaiseInternalException(iVar4,0,"E:\\__titans\\nick\\to_rab3m.cpp",0x24f);
     return 0xffff;
   }
   if (*(int *)(&local_c->field_0x70 + param_1 * 4) == 0) {
-    puVar4 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,10,0xc,10);
-    *(uint **)(&pSVar2->field_0x70 + param_1 * 4) = puVar4;
+    pDVar5 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,10,0xc,10);
+    *(DArrayTy **)(&pSVar3->field_0x70 + param_1 * 4) = pDVar5;
   }
   else {
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-    iVar3 = *(int *)(*(int *)(&local_c->field_0x70 + param_1 * 4) + 0xc);
-    uVar6 = 0;
-    if (0 < iVar3) {
+    iVar4 = *(int *)(*(int *)(&local_c->field_0x70 + param_1 * 4) + 0xc);
+    uVar7 = 0;
+    if (0 < iVar4) {
       do {
-        iVar7 = *(int *)(&local_c->field_0x70 + param_1 * 4);
-        if (uVar6 < *(uint *)(iVar7 + 0xc)) {
-          piVar5 = (int *)(*(int *)(iVar7 + 8) * uVar6 + *(int *)(iVar7 + 0x1c));
+        iVar8 = *(int *)(&local_c->field_0x70 + param_1 * 4);
+        if (uVar7 < *(uint *)(iVar8 + 0xc)) {
+          piVar6 = (int *)(*(int *)(iVar8 + 8) * uVar7 + *(int *)(iVar8 + 0x1c));
         }
         else {
-          piVar5 = (int *)0x0;
+          piVar6 = (int *)0x0;
         }
-        if ((piVar5 != (int *)0x0) && (*piVar5 == param_2)) {
+        if ((piVar6 != (int *)0x0) && (*piVar6 == param_2)) {
           local_8 = 1;
-          piVar5[1] = param_3;
-          piVar5[2] = param_4;
+          piVar6[1] = param_3;
+          piVar6[2] = param_4;
         }
-        uVar6 = uVar6 + 1;
-      } while ((int)uVar6 < iVar3);
+        uVar7 = uVar7 + 1;
+      } while ((int)uVar7 < iVar4);
     }
   }
-  puVar4 = *(uint **)(&pSVar2->field_0x70 + param_1 * 4);
-  if ((puVar4 != (uint *)0x0) && (local_8 == 0)) {
+  puVar1 = *(uint **)(&pSVar3->field_0x70 + param_1 * 4);
+  if ((puVar1 != (uint *)0x0) && (local_8 == 0)) {
     local_1c = param_2;
     local_18 = param_3;
     local_14 = param_4;
-    uVar6 = Library::DKW::TBL::FUN_006ae1c0(puVar4,&local_1c);
+    uVar7 = Library::DKW::TBL::FUN_006ae1c0(puVar1,&local_1c);
     g_currentExceptionFrame = local_60.previous;
-    return uVar6;
+    return uVar7;
   }
   g_currentExceptionFrame = local_60.previous;
   return local_10;

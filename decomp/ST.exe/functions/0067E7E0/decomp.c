@@ -25,7 +25,6 @@ uint * __cdecl CreateArbList(cMf32 *param_1,int param_2)
   int iVar11;
   ushort *_Source;
   byte *pbVar12;
-  undefined4 *puVar13;
   char *pcVar14;
   char *pcVar15;
   byte *pbVar16;
@@ -45,12 +44,7 @@ uint * __cdecl CreateArbList(cMf32 *param_1,int param_2)
   ushort *local_c;
   DArrayTy *local_8;
 
-  puVar13 = (undefined4 *)local_33c;
-  for (iVar8 = 0x80; iVar8 != 0; iVar8 = iVar8 + -1) {
-    *puVar13 = 0;
-    puVar13 = puVar13 + 1;
-  }
-  *(undefined1 *)puVar13 = 0;
+  memset((void *)local_33c, 0, 0x201); /* compiler bulk-zero initialization */
   local_8 = (DArrayTy *)0x0;
   local_10 = (DArrayTy *)0x0;
   local_a0.previous = g_currentExceptionFrame;
@@ -76,7 +70,7 @@ uint * __cdecl CreateArbList(cMf32 *param_1,int param_2)
     RaiseInternalException
               (-0x34,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_plr_d.cpp",0x216);
   }
-  local_8 = (DArrayTy *)Library::DKW::TBL::FUN_006ae290((uint *)0x0,5,0x98,5);
+  local_8 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,5,0x98,5);
   if (param_2 != 0) {
     local_10 = (DArrayTy *)CreateOpponentList(param_1,0,0xffffffff);
   }

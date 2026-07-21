@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 void __fastcall FUN_0058bb90(AnonShape_0058BB90_CF74AF20 *param_1)
 
@@ -5,7 +7,6 @@ void __fastcall FUN_0058bb90(AnonShape_0058BB90_CF74AF20 *param_1)
   undefined4 uVar1;
   int iVar2;
   int iVar3;
-  undefined4 *puVar4;
   undefined *puVar5;
   undefined4 local_60 [6];
   short local_46;
@@ -22,11 +23,7 @@ void __fastcall FUN_0058bb90(AnonShape_0058BB90_CF74AF20 *param_1)
   int local_8;
 
   uVar1 = param_1->field_0279;
-  puVar4 = local_60;
-  for (iVar3 = 0x16; iVar3 != 0; iVar3 = iVar3 + -1) {
-    *puVar4 = 0;
-    puVar4 = puVar4 + 1;
-  }
+  memset(local_60, 0, 0x58); /* compiler bulk-zero initialization */
   local_2f = param_1->field_0299;
   local_34 = 0;
   local_33 = param_1->field_0295;

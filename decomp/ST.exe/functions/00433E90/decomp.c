@@ -226,7 +226,7 @@ cf_common_exit_0043440E:
       iVar3 = g_playerRuntime[playerId].tempSlots[1][0].objectType;
       if (iVar3 < 0x19b) {
         if (iVar3 == 0x19a) {
-          objectIds = Library::DKW::TBL::FUN_006ae290((uint *)0x0,0,2,1);
+          objectIds = &Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,0,2,1)->flags;
           Library::DKW::TBL::FUN_006ae1c0(objectIds,(undefined4 *)((int)piVar2 + 0x32));
           iVar3 = CheckTmps(playerId,1,0x19a,(char)piVar2[9],(DArrayTy *)objectIds,0);
           if (-1 < iVar3) {
@@ -240,7 +240,7 @@ cf_common_exit_0043440E:
           goto LAB_00434c44;
         }
 LAB_004349ac:
-        objectIds = Library::DKW::TBL::FUN_006ae290((uint *)0x0,0,2,1);
+        objectIds = &Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,0,2,1)->flags;
         Library::DKW::TBL::FUN_006ae1c0(objectIds,(undefined4 *)((int)piVar2 + 0x32));
         iVar3 = CheckTmps(playerId,1,0x19a,(char)piVar2[9],(DArrayTy *)objectIds,0);
         if (iVar3 < 1) goto LAB_00434c92;
@@ -257,7 +257,7 @@ LAB_00434c12:
           STDebugBreak(); /* noreturn in standalone pseudocode */
         }
 LAB_00434c44:
-        objectIds = Library::DKW::TBL::FUN_006ae290((uint *)0x0,0,2,1);
+        objectIds = &Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,0,2,1)->flags;
         Library::DKW::TBL::FUN_006ae1c0(objectIds,(undefined4 *)((int)piVar2 + 0x32));
         iVar3 = CheckTmps(playerId,1,0x19a,(char)piVar2[9],(DArrayTy *)objectIds,0);
         if (0 < iVar3) {
@@ -289,7 +289,7 @@ LAB_00434c92:
           if ((iVar3 != 0x5a) && (iVar3 != 0x172)) goto LAB_00434ab0;
           goto LAB_00434ae2;
         }
-        objectIds = Library::DKW::TBL::FUN_006ae290((uint *)0x0,0,2,1);
+        objectIds = &Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,0,2,1)->flags;
         Library::DKW::TBL::FUN_006ae1c0(objectIds,(undefined4 *)((int)piVar2 + 0x32));
         iVar3 = CheckTmps(playerId,1,0x19a,(char)piVar2[9],(DArrayTy *)objectIds,0);
         if (0 < iVar3) {
@@ -319,7 +319,7 @@ LAB_00434ab0:
           STDebugBreak(); /* noreturn in standalone pseudocode */
         }
 LAB_00434ae2:
-        objectIds = Library::DKW::TBL::FUN_006ae290((uint *)0x0,0,2,1);
+        objectIds = &Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,0,2,1)->flags;
         Library::DKW::TBL::FUN_006ae1c0(objectIds,(undefined4 *)((int)piVar2 + 0x32));
         iVar3 = CheckTmps(playerId,1,0x19a,(char)piVar2[9],(DArrayTy *)objectIds,0);
         if (0 < iVar3) {
@@ -366,7 +366,7 @@ cf_common_exit_00434CB8:
               SelfCheckObjControl(this);
               return;
             }
-            objectIds = Library::DKW::TBL::FUN_006ae290((uint *)0x0,0,2,1);
+            objectIds = &Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,0,2,1)->flags;
             Library::DKW::TBL::FUN_006ae1c0(objectIds,(undefined4 *)((int)piVar2 + 0x32));
             iVar3 = CheckTmps(playerId,0,0x3c,(char)piVar2[9],(DArrayTy *)objectIds,0);
             if (iVar3 < 1) {
@@ -402,7 +402,7 @@ cf_common_exit_00434CB8:
             if (param_4 == 1) {
               return;
             }
-            objectIds = Library::DKW::TBL::FUN_006ae290((uint *)0x0,0,2,1);
+            objectIds = &Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,0,2,1)->flags;
             Library::DKW::TBL::FUN_006ae1c0(objectIds,(undefined4 *)((int)piVar2 + 0x32));
             iVar3 = CheckTmps(playerId,0,0x3c,(char)piVar2[9],(DArrayTy *)objectIds,0);
             if (iVar3 < 1) {
@@ -418,7 +418,7 @@ LAB_0043414f:
           goto cf_common_exit_00434CB8;
         }
 LAB_0043429d:
-        objectIds = Library::DKW::TBL::FUN_006ae290((uint *)0x0,0,2,1);
+        objectIds = &Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,0,2,1)->flags;
         Library::DKW::TBL::FUN_006ae1c0(objectIds,(undefined4 *)((int)piVar2 + 0x32));
         iVar3 = CheckTmps(playerId,0,0x3c,(char)piVar2[9],(DArrayTy *)objectIds,0);
         /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
@@ -443,7 +443,7 @@ LAB_0043429d:
         iVar3 = g_playerRuntime[playerId].tempSlots[0][0].objectType;
         if (iVar3 == 0) goto LAB_0043429d;
         if (iVar3 == 0x3c) {
-          objectIds = Library::DKW::TBL::FUN_006ae290((uint *)0x0,0,2,1);
+          objectIds = &Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,0,2,1)->flags;
           Library::DKW::TBL::FUN_006ae1c0(objectIds,(undefined4 *)((int)piVar2 + 0x32));
           iVar3 = CheckTmps(playerId,0,0x3c,(char)piVar2[9],(DArrayTy *)objectIds,0);
           if (iVar3 < 0) goto LAB_0043404a;
@@ -458,7 +458,7 @@ LAB_0043429d:
           }
           STDebugBreak(); /* noreturn in standalone pseudocode */
         }
-        objectIds = Library::DKW::TBL::FUN_006ae290((uint *)0x0,0,2,1);
+        objectIds = &Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,0,2,1)->flags;
         Library::DKW::TBL::FUN_006ae1c0(objectIds,(undefined4 *)((int)piVar2 + 0x32));
         iVar3 = CheckTmps(playerId,0,0x3c,(char)piVar2[9],(DArrayTy *)objectIds,0);
         if (0 < iVar3) {

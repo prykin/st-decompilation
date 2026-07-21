@@ -15,7 +15,6 @@ uint __thiscall STTmMineC::CreatePart(STTmMineC *this,uint param_1)
   int iVar5;
   void *pvVar6;
   uint uVar7;
-  undefined4 *puVar8;
   undefined4 local_8c [15];
   InternalExceptionFrame local_50;
   STTmMineC *local_c;
@@ -38,7 +37,7 @@ uint __thiscall STTmMineC::CreatePart(STTmMineC *this,uint param_1)
     return 0xffff;
   }
   if (local_c->field_0336 == (DArrayTy *)0x0) {
-    pDVar4 = (DArrayTy *)Library::DKW::TBL::FUN_006ae290((uint *)0x0,param_1,0x3c,10);
+    pDVar4 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,param_1,0x3c,10);
     pSVar2->field_0336 = pDVar4;
     if (pDVar4 == (DArrayTy *)0x0) {
       g_currentExceptionFrame = local_50.previous;
@@ -47,11 +46,7 @@ uint __thiscall STTmMineC::CreatePart(STTmMineC *this,uint param_1)
   }
   if (param_1 != 0) {
     uVar7 = 0;
-    puVar8 = local_8c;
-    for (iVar3 = 0xf; iVar3 != 0; iVar3 = iVar3 + -1) {
-      *puVar8 = 0;
-      puVar8 = puVar8 + 1;
-    }
+    memset(local_8c, 0, 0x3c); /* compiler bulk-zero initialization */
     if (0 < (int)param_1) {
       do {
         local_8 = Library::DKW::TBL::FUN_006ae1c0(&pSVar2->field_0336->flags,local_8c);

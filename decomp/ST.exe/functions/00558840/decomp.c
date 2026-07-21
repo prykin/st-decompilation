@@ -16,15 +16,15 @@ int __thiscall VisibleClassTy::GetMessage(VisibleClassTy *this,STMessage *messag
   code *pcVar2;
   VisibleClassTy *this_00;
   int iVar3;
-  undefined4 uVar4;
-  char *pcVar5;
-  int iVar6;
+  char *pcVar4;
+  int iVar5;
+  uint uVar6;
   uint uVar7;
-  uint uVar8;
-  DArrayTy *pDVar9;
+  DArrayTy *pDVar8;
   /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
   void *unaff_EDI;
-  undefined4 *puVar10;
+  undefined4 *puVar9;
+  byte *pbVar10;
   bool bVar11;
   InternalExceptionFrame local_58;
   VisibleClassTy *local_14;
@@ -43,49 +43,52 @@ int __thiscall VisibleClassTy::GetMessage(VisibleClassTy *this,STMessage *messag
     if (SVar1 < MESS_STSPRGAMEOBJC_0109) {
       if (SVar1 == MESS_SHARED_0108) {
         if (local_14->field_0114 != 0) {
-          uVar4 = thunk_FUN_004ab050();
+          iVar3 = thunk_FUN_004ab050();
+          uVar6 = this_00->field_0030 * this_00->field_0034;
+          this_00->field_010C = iVar3;
+          puVar9 = this_00->field_0050;
+          for (uVar7 = (uVar6 & 0x7fffffff) >> 1; uVar7 != 0; uVar7 = uVar7 - 1) {
+            *puVar9 = 0;
+            puVar9 = puVar9 + 1;
+          }
+          for (uVar6 = uVar6 * 2 & 3; uVar6 != 0; uVar6 = uVar6 - 1) {
+            *(undefined1 *)puVar9 = 0;
+            puVar9 = (undefined4 *)((int)puVar9 + 1);
+          }
           uVar7 = this_00->field_0030 * this_00->field_0034;
-          this_00->field_010C = uVar4;
-          puVar10 = (undefined4 *)this_00->field_0050;
-          for (uVar8 = (uVar7 & 0x7fffffff) >> 1; uVar8 != 0; uVar8 = uVar8 - 1) {
-            *puVar10 = 0;
-            puVar10 = puVar10 + 1;
+          pbVar10 = this_00->field_004C;
+          for (uVar6 = uVar7 >> 2; uVar6 != 0; uVar6 = uVar6 - 1) {
+            pbVar10[0] = 0;
+            pbVar10[1] = 0;
+            pbVar10[2] = 0;
+            pbVar10[3] = 0;
+            pbVar10 = pbVar10 + 4;
           }
-          for (uVar7 = uVar7 * 2 & 3; uVar7 != 0; uVar7 = uVar7 - 1) {
-            *(undefined1 *)puVar10 = 0;
-            puVar10 = (undefined4 *)((int)puVar10 + 1);
+          for (uVar7 = uVar7 & 3; uVar7 != 0; uVar7 = uVar7 - 1) {
+            *pbVar10 = 0;
+            pbVar10 = pbVar10 + 1;
           }
-          uVar8 = this_00->field_0030 * this_00->field_0034;
-          puVar10 = (undefined4 *)this_00->field_004C;
-          for (uVar7 = uVar8 >> 2; uVar7 != 0; uVar7 = uVar7 - 1) {
-            *puVar10 = 0;
-            puVar10 = puVar10 + 1;
-          }
-          for (uVar8 = uVar8 & 3; uVar8 != 0; uVar8 = uVar8 - 1) {
-            *(undefined1 *)puVar10 = 0;
-            puVar10 = (undefined4 *)((int)puVar10 + 1);
-          }
-          pDVar9 = this_00->field_0110;
-          uVar7 = 0;
-          if (0 < (int)pDVar9->count) {
-            bVar11 = pDVar9->count != 0;
+          pDVar8 = this_00->field_0110;
+          uVar6 = 0;
+          if (0 < (int)pDVar8->count) {
+            bVar11 = pDVar8->count != 0;
             do {
               if (bVar11) {
-                /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(pDVar9, uVar7) (runtime stride) */
-                pcVar5 = (char *)(pDVar9->elementSize * uVar7 + (int)pDVar9->data);
+                /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(pDVar8, uVar6) (runtime stride) */
+                pcVar4 = (char *)(pDVar8->elementSize * uVar6 + (int)pDVar8->data);
               }
               else {
-                pcVar5 = (char *)0x0;
+                pcVar4 = (char *)0x0;
               }
-              if (*pcVar5 == '\0') {
-                thunk_FUN_00558dc0(this_00,(int)*(short *)(pcVar5 + 2),(int)*(short *)(pcVar5 + 4),
-                                   (undefined *)(int)pcVar5[6],(int *)(uint)(byte)pcVar5[1],
-                                   (uint)(byte)pcVar5[7],*(int **)(pcVar5 + 8),0x4000);
+              if (*pcVar4 == '\0') {
+                thunk_FUN_00558dc0(this_00,(int)*(short *)(pcVar4 + 2),(int)*(short *)(pcVar4 + 4),
+                                   (undefined *)(int)pcVar4[6],(int *)(uint)(byte)pcVar4[1],
+                                   (uint)(byte)pcVar4[7],*(int **)(pcVar4 + 8),0x4000);
               }
-              pDVar9 = this_00->field_0110;
-              uVar7 = uVar7 + 1;
-              bVar11 = uVar7 < pDVar9->count;
-            } while ((int)uVar7 < (int)pDVar9->count);
+              pDVar8 = this_00->field_0110;
+              uVar6 = uVar6 + 1;
+              bVar11 = uVar6 < pDVar8->count;
+            } while ((int)uVar6 < (int)pDVar8->count);
           }
         }
       }
@@ -137,9 +140,9 @@ int __thiscall VisibleClassTy::GetMessage(VisibleClassTy *this,STMessage *messag
     return 0;
   }
   g_currentExceptionFrame = local_58.previous;
-  iVar6 = ReportDebugMessage("E:\\__titans\\grig\\visible.cpp",0x186,0,iVar3,
+  iVar5 = ReportDebugMessage("E:\\__titans\\grig\\visible.cpp",0x186,0,iVar3,
                              "VisibleClassTy::GetMessage error mess->id == %lX",message->id);
-  if (iVar6 == 0) {
+  if (iVar5 == 0) {
     RaiseInternalException(iVar3,0,"E:\\__titans\\grig\\visible.cpp",0x187);
     return 0xffff;
   }

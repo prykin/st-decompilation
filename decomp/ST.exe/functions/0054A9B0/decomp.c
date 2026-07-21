@@ -74,16 +74,16 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0054A9B0::FUN_0054a9b0
     }
     else {
       if ((((local_10 < 0) || (pVVar3->field_0028 <= local_10)) ||
-          ((&DAT_0079aed0)[iVar8] + local_14 < 0)) ||
-         (pVVar3->field_002C <= (&DAT_0079aed0)[iVar8] + local_14)) {
+          (g_centeredOffsets5[iVar8] + local_14 < 0)) ||
+         (pVVar3->field_002C <= g_centeredOffsets5[iVar8] + local_14)) {
         bVar2 = false;
       }
       else {
         bVar2 = true;
       }
-      if (((bVar2) && ((int)pVVar3->field_010C < 4)) &&
-         ((&pVVar3->field_003C)[pVVar3->field_010C] != 0)) {
-        uVar6 = (uint)*(byte *)(((&DAT_0079aed0)[iVar8] + local_14) * pVVar3->field_0028 +
+      if (((bVar2) && (pVVar3->field_010C < 4)) && ((&pVVar3->field_003C)[pVVar3->field_010C] != 0))
+      {
+        uVar6 = (uint)*(byte *)((g_centeredOffsets5[iVar8] + local_14) * pVVar3->field_0028 +
                                 (&pVVar3->field_003C)[pVVar3->field_010C] + local_10);
       }
       else {
@@ -92,16 +92,16 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0054A9B0::FUN_0054a9b0
       if ((int)uVar6 < 0) goto cf_common_exit_0054ACFD;
       if (uVar6 == 0xf) {
         if (((local_10 < 0) || (pVVar3->field_0030 <= local_10)) ||
-           (((&DAT_0079aed0)[iVar8] + local_14 < 0 ||
-            (pVVar3->field_0034 <= (&DAT_0079aed0)[iVar8] + local_14)))) {
+           ((g_centeredOffsets5[iVar8] + local_14 < 0 ||
+            (pVVar3->field_0034 <= g_centeredOffsets5[iVar8] + local_14)))) {
           bVar2 = false;
         }
         else {
           bVar2 = true;
         }
-        if ((bVar2) && (pVVar3->field_004C != 0)) {
-          uVar6 = (uint)*(byte *)(((&DAT_0079aed0)[iVar8] + local_14) * pVVar3->field_0030 +
-                                  pVVar3->field_004C + local_10);
+        if ((bVar2) && (pVVar3->field_004C != (byte *)0x0)) {
+          uVar6 = (uint)pVVar3->field_004C
+                        [local_10 + (g_centeredOffsets5[iVar8] + local_14) * pVVar3->field_0030];
         }
         else {
           uVar6 = 0xffffffff;
@@ -126,14 +126,14 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0054A9B0::FUN_0054a9b0
       pSVar7 = (SpriteClassTy *)0x0;
     }
     else {
-      pSVar7 = (SpriteClassTy *)SpriteClassTy::SpriteClassTy(pSVar7);
+      pSVar7 = SpriteClassTy::SpriteClassTy(pSVar7);
     }
     pAVar4->field_04EB = pSVar7;
     if (pSVar7 == (SpriteClassTy *)0x0) {
       g_currentExceptionFrame = local_58.previous;
       return;
     }
-    SpriteClassTy::InitSprite(pSVar7,DAT_008075a8,1,'\a',(undefined4 *)0x0,0,0);
+    SpriteClassTy::InitSprite(pSVar7,(int *)PTR_008075a8,1,'\a',(undefined4 *)0x0,0,0);
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
     (**(code **)(*(int *)pAVar4->field_04EB + 4))
               (DAT_00806784,7,0,"CUR_CONFIRM2D",0xffffffff);

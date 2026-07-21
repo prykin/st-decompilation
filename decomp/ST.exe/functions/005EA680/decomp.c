@@ -15,21 +15,22 @@ int __thiscall WaitTy::GetMessage(WaitTy *this,STMessage *message)
   char cVar1;
   STMessageId SVar2;
   MMsgTy *this_00;
+  uint *puVar3;
   StartSystemTy *this_01;
-  code *pcVar3;
+  code *pcVar4;
   WaitTy *this_02;
-  bool bVar4;
-  DWORD DVar5;
-  int iVar6;
+  bool bVar5;
+  DWORD DVar6;
+  int iVar7;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined3 extraout_var;
-  int iVar7;
-  uint uVar8;
+  int iVar8;
   uint uVar9;
+  uint uVar10;
   /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
   int *unaff_EDI;
-  char *pcVar10;
   char *pcVar11;
+  char *pcVar12;
   char local_4a4 [64];
   char local_464 [1044];
   InternalExceptionFrame local_50;
@@ -37,20 +38,20 @@ int __thiscall WaitTy::GetMessage(WaitTy *this,STMessage *message)
   char *local_8;
 
   local_c = this;
-  DVar5 = FUN_006e51b0(this->field_0010);
-  this->field_0061 = DVar5;
+  DVar6 = FUN_006e51b0(this->field_0010);
+  this->field_0061 = DVar6;
   local_50.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_50;
-  iVar6 = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0);
+  iVar7 = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0);
   this_02 = local_c;
-  if (iVar6 != 0) {
+  if (iVar7 != 0) {
     g_currentExceptionFrame = local_50.previous;
-    iVar7 = ReportDebugMessage("E:\\__titans\\Start\\wait_obj.cpp",0x3bb,0,iVar6,"%s"
+    iVar8 = ReportDebugMessage("E:\\__titans\\Start\\wait_obj.cpp",0x3bb,0,iVar7,"%s"
                                ,"WaitTy::GetMessage");
-    if (iVar7 != 0) {
+    if (iVar8 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    RaiseInternalException(iVar6,0,"E:\\__titans\\Start\\wait_obj.cpp",0x3bb);
+    RaiseInternalException(iVar7,0,"E:\\__titans\\Start\\wait_obj.cpp",0x3bb);
     return 0xffff;
   }
   thunk_FUN_005b6450(local_c,(int)message);
@@ -182,107 +183,106 @@ int __thiscall WaitTy::GetMessage(WaitTy *this,STMessage *message)
     goto cf_common_exit_005EAB6A;
   }
   if (SVar2 != MESS_SHARED_C0A2) goto cf_common_exit_005EAB6A;
-  iVar6 = thunk_FUN_005ddb40((int)this_02->field_1A5B);
-  if (iVar6 == 0) {
+  iVar7 = thunk_FUN_005ddb40((int)this_02->field_1A5B);
+  if (iVar7 == 0) {
     if (DAT_008067a0 != '\0') {
-      iVar6 = this_02->field_1A5B->field_0686;
-      if (*(int *)(iVar6 + 8) < 1) {
-        pcVar10 = (char *)0x0;
+      puVar3 = this_02->field_1A5B->field_0686;
+      if ((int)puVar3[2] < 1) {
+        pcVar11 = (char *)0x0;
       }
       else {
-        pcVar10 = (char *)**(undefined4 **)(iVar6 + 0x14);
+        pcVar11 = *(char **)puVar3[5];
       }
-      bVar4 = thunk_FUN_005717e0(pcVar10);
+      bVar5 = thunk_FUN_005717e0(pcVar11);
       /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
-      if (CONCAT31(extraout_var,bVar4) != 0) {
-        iVar6 = this_02->field_1A5B->field_0686;
-        if (*(int *)(iVar6 + 8) < 1) {
+      if (CONCAT31(extraout_var,bVar5) != 0) {
+        puVar3 = this_02->field_1A5B->field_0686;
+        if ((int)puVar3[2] < 1) {
           CFsgsConnection::SendChatMessage((CFsgsConnection *)&DAT_00802a90,(char *)0x0);
         }
         else {
-          CFsgsConnection::SendChatMessage
-                    ((CFsgsConnection *)&DAT_00802a90,(char *)**(undefined4 **)(iVar6 + 0x14));
+          CFsgsConnection::SendChatMessage((CFsgsConnection *)&DAT_00802a90,*(char **)puVar3[5]);
         }
         goto LAB_005eab28;
       }
     }
-    pcVar10 = local_4a4;
-    for (iVar6 = 0x114; iVar6 != 0; iVar6 = iVar6 + -1) {
-      pcVar10[0] = '\0';
-      pcVar10[1] = '\0';
-      pcVar10[2] = '\0';
-      pcVar10[3] = '\0';
-      pcVar10 = pcVar10 + 4;
-    }
-    *pcVar10 = '\0';
-    pcVar10 = &DAT_00807e1d;
-    if (DAT_008067a0 == '\0') {
-      pcVar10 = (char *)&DAT_00807ddd;
-    }
-    uVar8 = 0xffffffff;
-    do {
-      pcVar11 = pcVar10;
-      if (uVar8 == 0) break;
-      uVar8 = uVar8 - 1;
-      pcVar11 = pcVar10 + 1;
-      cVar1 = *pcVar10;
-      pcVar10 = pcVar11;
-    } while (cVar1 != '\0');
-    uVar8 = ~uVar8;
-    this_01 = this_02->field_1A5B;
-    pcVar10 = pcVar11 + -uVar8;
     pcVar11 = local_4a4;
-    for (uVar9 = uVar8 >> 2; uVar9 != 0; uVar9 = uVar9 - 1) {
-      *(undefined4 *)pcVar11 = *(undefined4 *)pcVar10;
-      pcVar10 = pcVar10 + 4;
+    for (iVar7 = 0x114; iVar7 != 0; iVar7 = iVar7 + -1) {
+      pcVar11[0] = '\0';
+      pcVar11[1] = '\0';
+      pcVar11[2] = '\0';
+      pcVar11[3] = '\0';
       pcVar11 = pcVar11 + 4;
     }
-    for (uVar8 = uVar8 & 3; uVar8 != 0; uVar8 = uVar8 - 1) {
-      *pcVar11 = *pcVar10;
-      pcVar10 = pcVar10 + 1;
-      pcVar11 = pcVar11 + 1;
+    *pcVar11 = '\0';
+    pcVar11 = &DAT_00807e1d;
+    if (DAT_008067a0 == '\0') {
+      pcVar11 = (char *)&DAT_00807ddd;
     }
-    iVar6 = this_01->field_0686;
-    if (*(int *)(iVar6 + 8) < 1) {
-      pcVar10 = (char *)0x0;
+    uVar9 = 0xffffffff;
+    do {
+      pcVar12 = pcVar11;
+      if (uVar9 == 0) break;
+      uVar9 = uVar9 - 1;
+      pcVar12 = pcVar11 + 1;
+      cVar1 = *pcVar11;
+      pcVar11 = pcVar12;
+    } while (cVar1 != '\0');
+    uVar9 = ~uVar9;
+    this_01 = this_02->field_1A5B;
+    pcVar11 = pcVar12 + -uVar9;
+    pcVar12 = local_4a4;
+    for (uVar10 = uVar9 >> 2; uVar10 != 0; uVar10 = uVar10 - 1) {
+      *(undefined4 *)pcVar12 = *(undefined4 *)pcVar11;
+      pcVar11 = pcVar11 + 4;
+      pcVar12 = pcVar12 + 4;
+    }
+    for (uVar9 = uVar9 & 3; uVar9 != 0; uVar9 = uVar9 - 1) {
+      *pcVar12 = *pcVar11;
+      pcVar11 = pcVar11 + 1;
+      pcVar12 = pcVar12 + 1;
+    }
+    puVar3 = this_01->field_0686;
+    if ((int)puVar3[2] < 1) {
+      pcVar11 = (char *)0x0;
     }
     else {
-      pcVar10 = (char *)**(undefined4 **)(iVar6 + 0x14);
+      pcVar11 = *(char **)puVar3[5];
     }
-    uVar8 = 0xffffffff;
+    uVar9 = 0xffffffff;
     do {
-      pcVar11 = pcVar10;
-      if (uVar8 == 0) break;
-      uVar8 = uVar8 - 1;
-      pcVar11 = pcVar10 + 1;
-      cVar1 = *pcVar10;
-      pcVar10 = pcVar11;
+      pcVar12 = pcVar11;
+      if (uVar9 == 0) break;
+      uVar9 = uVar9 - 1;
+      pcVar12 = pcVar11 + 1;
+      cVar1 = *pcVar11;
+      pcVar11 = pcVar12;
     } while (cVar1 != '\0');
-    uVar8 = ~uVar8;
-    pcVar10 = pcVar11 + -uVar8;
-    pcVar11 = local_464;
-    for (uVar9 = uVar8 >> 2; uVar9 != 0; uVar9 = uVar9 - 1) {
-      *(undefined4 *)pcVar11 = *(undefined4 *)pcVar10;
-      pcVar10 = pcVar10 + 4;
+    uVar9 = ~uVar9;
+    pcVar11 = pcVar12 + -uVar9;
+    pcVar12 = local_464;
+    for (uVar10 = uVar9 >> 2; uVar10 != 0; uVar10 = uVar10 - 1) {
+      *(undefined4 *)pcVar12 = *(undefined4 *)pcVar11;
       pcVar11 = pcVar11 + 4;
+      pcVar12 = pcVar12 + 4;
     }
-    for (uVar8 = uVar8 & 3; uVar8 != 0; uVar8 = uVar8 - 1) {
-      *pcVar11 = *pcVar10;
-      pcVar10 = pcVar10 + 1;
+    for (uVar9 = uVar9 & 3; uVar9 != 0; uVar9 = uVar9 - 1) {
+      *pcVar12 = *pcVar11;
       pcVar11 = pcVar11 + 1;
+      pcVar12 = pcVar12 + 1;
     }
     local_8 = local_464;
     StartSystemTy::AddToChat(this_01,(int)local_4a4);
     FUN_00715360(g_int_00811764,0,'\x1b',local_4a4,0x451,1,0xffffffff);
   }
 LAB_005eab28:
-  Library::DKW::TBL::FUN_006b6020((uint *)this_02->field_1A5B->field_0686,0,&DAT_008016a0);
+  Library::DKW::TBL::FUN_006b6020(this_02->field_1A5B->field_0686,0,&DAT_008016a0);
   this_02->field_002D = 0x33;
-  *(undefined4 *)&this_02->field_0x31 = this_02->field_1A5B->field_0686;
+  *(uint **)&this_02->field_0x31 = this_02->field_1A5B->field_0686;
   FUN_006e6080(this_02,2,this_02->field_1A5B->field_054C,(undefined4 *)&this_02->field_0x1d);
 cf_common_exit_005EAB6A:
   g_currentExceptionFrame = local_50.previous;
-  iVar6 = MMObjTy::GetMessage((MMObjTy *)this_02,message);
-  return iVar6;
+  iVar7 = MMObjTy::GetMessage((MMObjTy *)this_02,message);
+  return iVar7;
 }
 

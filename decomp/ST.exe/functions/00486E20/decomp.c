@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 void __thiscall FUN_00486e20(void *this,undefined4 *param_1)
 
@@ -9,16 +11,11 @@ void __thiscall FUN_00486e20(void *this,undefined4 *param_1)
   int iVar5;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined2 extraout_var;
-  undefined4 *puVar6;
   bool bVar7;
   undefined4 local_8;
 
   puVar2 = param_1;
-  puVar6 = param_1;
-  for (iVar5 = 0x17; iVar5 != 0; iVar5 = iVar5 + -1) {
-    *puVar6 = 0;
-    puVar6 = puVar6 + 1;
-  }
+  memset(param_1, 0, 0x5c); /* compiler bulk-zero initialization */
   *param_1 = *(undefined4 *)((int)this + 0x6f7);
   local_8 = this;
   iVar5 = thunk_FUN_004e8030(*(int *)((int)this + 0x6f7));

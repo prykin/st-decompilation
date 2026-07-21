@@ -17,23 +17,17 @@ undefined4 __thiscall STBoatC::Bring(STBoatC *this,STBoatC *param_1)
   ushort uVar7;
   int iVar8;
   undefined4 uVar9;
-  dword dVar10;
+  int iVar10;
   int iVar11;
-  int iVar12;
   STWorldObject *this_00;
-  undefined4 *puVar13;
-  undefined4 local_14;
+  uint local_14;
   short local_10;
   short local_e;
   short local_c;
   STBoatC *local_8;
 
   if ((param_1 == (STBoatC *)0x0) || (param_1 == (STBoatC *)0x1)) {
-    puVar13 = &this->field_02CC;
-    for (iVar8 = 0x17; iVar8 != 0; iVar8 = iVar8 + -1) {
-      *puVar13 = 0;
-      puVar13 = puVar13 + 1;
-    }
+    memset(&this->field_02CC, 0, 0x5c); /* compiler bulk-zero initialization */
     SVar5 = this->field_06F7;
     this->field_02C4 = 0;
     if ((((SVar5 != CASE_7) && (SVar5 != CASE_13)) && (SVar5 != CASE_1B)) || (this->field_07CA == 0)
@@ -70,15 +64,16 @@ undefined4 __thiscall STBoatC::Bring(STBoatC *this,STBoatC *param_1)
     if (param_1 == (STBoatC *)0x0) {
       return 0;
     }
-    dVar10 = (*param_1->vtable->slot_2C)(param_1);
-    this->field_0675 = dVar10;
-    if ((((dVar10 != 0x52) && (dVar10 != 0x5f)) || (this->field_066B != 0x1a4)) && (dVar10 != 99)) {
+    iVar8 = (*(STWorldObject_GetObjectTypeId *)param_1->vtable->field_002C)
+                      ((STWorldObject *)param_1);
+    this->field_0675 = iVar8;
+    if ((((iVar8 != 0x52) && (iVar8 != 0x5f)) || (this->field_066B != 0x1a4)) && (iVar8 != 99)) {
       return 0;
     }
-    iVar12 = this->field_0673 + 1;
+    iVar11 = this->field_0673 + 1;
     iVar8 = (int)this->field_0671;
     this->field_0679 = param_1->field_0018;
-    iVar11 = (int)this->field_066F;
+    iVar10 = (int)this->field_066F;
     this->field_0687 = CASE_0;
     this->field_00B7 = 3;
     goto cf_common_exit_0047C9FE;
@@ -104,8 +99,9 @@ undefined4 __thiscall STBoatC::Bring(STBoatC *this,STBoatC *param_1)
                   [(int)g_worldGrid.planeStride * (int)sVar2 + (int)g_worldGrid.sizeX * (int)sVar3 +
                    (int)sVar1].objects[0];
       }
+      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
       if (((param_1 != (STBoatC *)0x0) && (param_1->field_0018 == this->field_0679)) &&
-         (iVar8 = (*param_1->vtable->vfunc_F8)(), iVar8 != 0)) {
+         (iVar8 = (**(code **)&param_1->vtable->field_0xf8)(), iVar8 != 0)) {
         return 2;
       }
       sub_004602B0(this);
@@ -148,8 +144,9 @@ undefined4 __thiscall STBoatC::Bring(STBoatC *this,STBoatC *param_1)
                     [(int)sVar2 * (int)g_worldGrid.planeStride + (int)sVar3 * (int)g_worldGrid.sizeX
                      + (int)sVar1].objects[0];
         }
+        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
         if (((param_1 != (STBoatC *)0x0) && (param_1->field_0018 == this->field_0679)) &&
-           ((iVar8 = (*param_1->vtable->vfunc_F8)(), iVar8 != 0 &&
+           ((iVar8 = (**(code **)&param_1->vtable->field_0xf8)(), iVar8 != 0 &&
             ((param_1->field_0020 != 1000 ||
              ((*(int *)((int)&param_1->field_04B3 + 1) == 0 &&
               (*(int *)((int)&param_1->field_0244 + 1) != 6)))))))) {
@@ -173,8 +170,9 @@ undefined4 __thiscall STBoatC::Bring(STBoatC *this,STBoatC *param_1)
                     [(int)sVar2 * (int)g_worldGrid.planeStride + (int)sVar3 * (int)g_worldGrid.sizeX
                      + (int)sVar1].objects[0];
         }
+        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
         if (((param_1 != (STBoatC *)0x0) && (param_1->field_0018 == this->field_0679)) &&
-           (iVar8 = (*param_1->vtable->vfunc_F8)(), iVar8 != 0)) {
+           (iVar8 = (**(code **)&param_1->vtable->field_0xf8)(), iVar8 != 0)) {
           return 2;
         }
         break;
@@ -183,9 +181,9 @@ undefined4 __thiscall STBoatC::Bring(STBoatC *this,STBoatC *param_1)
       case 3:
         iVar8 = thunk_FUN_004950b0(this,&this->field_067D,&this->field_067F,&this->field_0681);
         if (iVar8 == 1) {
-          iVar12 = (int)this->field_0681;
+          iVar11 = (int)this->field_0681;
           iVar8 = (int)this->field_067F;
-          iVar11 = (int)this->field_067D;
+          iVar10 = (int)this->field_067D;
           goto cf_common_exit_0047C9FE;
         }
         sVar1 = this->field_066F;
@@ -202,8 +200,9 @@ undefined4 __thiscall STBoatC::Bring(STBoatC *this,STBoatC *param_1)
                     [(int)sVar2 * (int)g_worldGrid.planeStride + (int)sVar3 * (int)g_worldGrid.sizeX
                      + (int)sVar1].objects[0];
         }
+        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
         if (((param_1 != (STBoatC *)0x0) && (param_1->field_0018 == this->field_0679)) &&
-           (iVar8 = (*param_1->vtable->vfunc_F8)(), iVar8 != 0)) {
+           (iVar8 = (**(code **)&param_1->vtable->field_0xf8)(), iVar8 != 0)) {
           if (this->field_0675 == 99) {
             thunk_FUN_004b7d50(param_1,this);
           }
@@ -244,8 +243,9 @@ undefined4 __thiscall STBoatC::Bring(STBoatC *this,STBoatC *param_1)
                     [(int)sVar2 * (int)g_worldGrid.planeStride + (int)sVar3 * (int)g_worldGrid.sizeX
                      + (int)sVar1].objects[0];
         }
+        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
         if (((param_1 != (STBoatC *)0x0) && (param_1->field_0018 == this->field_0679)) &&
-           (iVar8 = (*param_1->vtable->vfunc_F8)(), iVar8 != 0)) {
+           (iVar8 = (**(code **)&param_1->vtable->field_0xf8)(), iVar8 != 0)) {
           if (this->field_0675 == 99) {
             thunk_FUN_004b7d50(param_1,this);
           }
@@ -330,9 +330,9 @@ undefined4 __thiscall STBoatC::Bring(STBoatC *this,STBoatC *param_1)
               ((AnonReceiver_0048DFD0 *)this,this->field_066F,this->field_0671,uVar7,
                this->field_066F,this->field_0671,(int *)(uint)uVar7,2,&this->field_067D,
                &this->field_067F,&this->field_0681);
-    iVar12 = (int)this->field_0681;
+    iVar11 = (int)this->field_0681;
     iVar8 = (int)this->field_067F;
-    iVar11 = (int)this->field_067D;
+    iVar10 = (int)this->field_067D;
     goto cf_common_exit_0047C9FE;
   }
   this->field_0683 = this->field_0683 + 1;
@@ -363,8 +363,9 @@ undefined4 __thiscall STBoatC::Bring(STBoatC *this,STBoatC *param_1)
               [(int)g_worldGrid.planeStride * (int)sVar2 + (int)g_worldGrid.sizeX * (int)sVar3 +
                (int)sVar1].objects[0];
   }
+  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
   if (((param_1 == (STBoatC *)0x0) || (param_1->field_0018 != this->field_0679)) ||
-     (iVar8 = (*param_1->vtable->vfunc_F8)(), iVar8 == 0)) {
+     (iVar8 = (**(code **)&param_1->vtable->field_0xf8)(), iVar8 == 0)) {
 cf_common_exit_0047C74D:
     sub_004602B0(this);
     return 0;
@@ -405,8 +406,10 @@ switchD_0047c090_caseD_0:
               [(int)g_worldGrid.planeStride * (int)sVar2 + (int)g_worldGrid.sizeX * (int)sVar3 +
                (int)sVar1].objects[0];
   }
+  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
   if (((param_1 == (STBoatC *)0x0) || (param_1->field_0018 != this->field_0679)) ||
-     (iVar8 = (*param_1->vtable->vfunc_F8)(), iVar8 == 0)) goto cf_common_exit_0047C74D;
+     (iVar8 = (**(code **)&param_1->vtable->field_0xf8)(), iVar8 == 0))
+  goto cf_common_exit_0047C74D;
   iVar8 = thunk_FUN_004950b0(this,&this->field_067D,&this->field_067F,&this->field_0681);
   if (iVar8 != 1) goto cf_common_exit_0047C68C;
   if (this->field_0675 == 99) {
@@ -427,12 +430,12 @@ cf_common_exit_0047C68C:
     return 0xffffffff;
   }
 cf_common_exit_0047C43E:
-  iVar12 = (int)this->field_0681;
+  iVar11 = (int)this->field_0681;
   iVar8 = (int)this->field_067F;
-  iVar11 = (int)this->field_067D;
+  iVar10 = (int)this->field_067D;
   this->field_0687 = CASE_2;
 cf_common_exit_0047C9FE:
-  sub_00481520(this,iVar11,iVar8,iVar12);
+  sub_00481520(this,iVar10,iVar8,iVar11);
   sub_00460260(this,0);
   return 2;
 }

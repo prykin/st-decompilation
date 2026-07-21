@@ -14,20 +14,15 @@ int __thiscall STBoatC::Recharge(STBoatC *this,int param_1)
   short sVar4;
   STWorldObject *pSVar5;
   code *pcVar6;
-  STBoatCVTable *pSVar7;
+  AnonPointee_STBoatC_0000 *pAVar7;
   int iVar8;
   int iVar9;
   int iVar10;
   /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
   int unaff_EDI;
-  undefined4 *puVar11;
 
   if ((param_1 == 0) || (param_1 == 1)) {
-    puVar11 = &this->field_02CC;
-    for (iVar9 = 0x17; iVar9 != 0; iVar9 = iVar9 + -1) {
-      *puVar11 = 0;
-      puVar11 = puVar11 + 1;
-    }
+    memset(&this->field_02CC, 0, 0x5c); /* compiler bulk-zero initialization */
     this->field_02C4 = 0;
     iVar9 = thunk_FUN_004d6df0((int *)this);
     /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
@@ -94,18 +89,20 @@ int __thiscall STBoatC::Recharge(STBoatC *this,int param_1)
     this->field_00B7 = 3;
     sub_00481520(this,(int)this->field_061D,(int)this->field_061F,(int)this->field_0621);
     sub_00460260(this,0);
-    pSVar7 = this->vtable;
+    pAVar7 = this->vtable;
+/* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
 LAB_0047926a:
-    iVar9 = (*pSVar7->vfunc_D8)();
+    iVar9 = (*(code *)pAVar7->field_00D8)();
     return (-(uint)(iVar9 != 0) & 0xfffffffd) + 2;
   }
   iVar9 = this->field_0631;
   if (iVar9 == 0) {
     iVar9 = *(int *)&this->field_0x62d + 1;
     *(int *)&this->field_0x62d = iVar9;
-    pSVar7 = this->vtable;
+    pAVar7 = this->vtable;
     if (iVar9 != 2) goto LAB_0047926a;
-    iVar9 = (*pSVar7->vfunc_D8)();
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+    iVar9 = (*(code *)pAVar7->field_00D8)();
     if (iVar9 != 0) {
       return -1;
     }
@@ -216,8 +213,9 @@ LAB_0047885b:
     }
     sub_004602B0(this);
     this->field_00B7 = 0;
+/* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
 cf_common_exit_00478E51:
-    (*this->vtable->vfunc_90)(3,0x1b2);
+    (*(code *)this->vtable->field_0090)(3,0x1b2);
     return 0;
   }
   if (iVar9 == 2) {
@@ -333,7 +331,8 @@ LAB_00478b1a:
       }
       iVar9 = thunk_FUN_004d6f70((int *)this);
       if (iVar9 != 1) goto LAB_00478ff2;
-      (*this->vtable->vfunc_90)(3,0x1b2);
+      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+      (*(code *)this->vtable->field_0090)(3,0x1b2);
       puVar1 = &this->field_0x62b;
       if (*(int *)&pSVar5[0x1d].field_0x18 == 0) {
 LAB_00478f91:
@@ -358,8 +357,9 @@ LAB_00478f91:
       sub_00481520(this,(int)*(short *)&this->field_0x627,(int)*(short *)&this->field_0x629,
                    (int)*(short *)puVar1);
       sub_00460260(this,0);
+/* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
 LAB_00478ff2:
-      iVar9 = (*this->vtable->vfunc_D8)();
+      iVar9 = (*(code *)this->vtable->field_00D8)();
       return (-(uint)(iVar9 != 0) & 0xfffffffd) + 2;
     }
     iVar9 = sub_00460260(this,2);

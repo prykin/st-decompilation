@@ -15,7 +15,6 @@ int __thiscall STBoatC::DCBomb(STBoatC *this,int param_1)
   int iVar5;
   /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
   int unaff_ESI;
-  undefined4 *puVar6;
 
   if ((param_1 != 0) && (param_1 != 1)) {
     if (this->field_05F8 != 0) {
@@ -25,7 +24,8 @@ int __thiscall STBoatC::DCBomb(STBoatC *this,int param_1)
                              *(short *)&this->field_0x5ee * 0xc9 + 100,100,
                              (uint)(ushort)this->field_0032,0xf);
           this->field_07BE = this->field_07BE + -0xf;
-          iVar5 = (*this->vtable->vfunc_D8)();
+          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+          iVar5 = (*(code *)this->vtable->field_00D8)();
           return -(uint)(iVar5 != 0);
         }
         thunk_FUN_005fd750(this->field_0024,*(short *)&this->field_0x5ec * 0xc9 + 100,
@@ -33,7 +33,8 @@ int __thiscall STBoatC::DCBomb(STBoatC *this,int param_1)
                            (uint)(ushort)this->field_0032,this->field_07BE);
         this->field_07BE = 0;
       }
-      iVar5 = (*this->vtable->vfunc_D8)();
+      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+      iVar5 = (*(code *)this->vtable->field_00D8)();
       return -(uint)(iVar5 != 0);
     }
     iVar5 = sub_0045FF50(this,2);
@@ -61,11 +62,7 @@ int __thiscall STBoatC::DCBomb(STBoatC *this,int param_1)
     }
     return 2;
   }
-  puVar6 = &this->field_02CC;
-  for (iVar5 = 0x17; iVar5 != 0; iVar5 = iVar5 + -1) {
-    *puVar6 = 0;
-    puVar6 = puVar6 + 1;
-  }
+  memset(&this->field_02CC, 0, 0x5c); /* compiler bulk-zero initialization */
   this->field_02C4 = 0;
   if (0 < this->field_07BE) {
     *(undefined2 *)&this->field_0x5ec = this->field_03E2;

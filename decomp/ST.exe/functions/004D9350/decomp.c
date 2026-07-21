@@ -24,10 +24,10 @@ undefined4 __fastcall FUN_004d9350(TLOBaseTy *param_1)
     if (DAT_00798de0 < 2) {
       return 0;
     }
-    if (DAT_00798de0 <= (int)param_1->field_04D4) {
+    if (DAT_00798de0 <= param_1->field_04D4) {
       return 0;
     }
-    if ((uint)PTR_00802a38->field_00E4 < (uint)(param_1->field_04DC + param_1->field_04D8)) {
+    if (PTR_00802a38->field_00E4 < param_1->field_04DC + param_1->field_04D8) {
       return 0;
     }
     iVar4 = param_1->field_04D4 + 1;
@@ -46,7 +46,7 @@ undefined4 __fastcall FUN_004d9350(TLOBaseTy *param_1)
                        (float)param_1->field_04E0 * _DAT_007904f8 * _DAT_007904f0,
                        (float)iVar2 * _DAT_007904f8 * _DAT_007904f0,
                        (float)iVar3 * _DAT_007904f8 * _DAT_007904f0 + _DAT_007904fc);
-    if ((int)param_1->field_04D4 < *(int *)(&DAT_00798dd0 + param_1->field_04D0 * 4)) {
+    if (param_1->field_04D4 < *(int *)(&DAT_00798dd0 + param_1->field_04D0 * 4)) {
       return 0;
     }
     if (param_1->field_04D0 == CASE_4) {

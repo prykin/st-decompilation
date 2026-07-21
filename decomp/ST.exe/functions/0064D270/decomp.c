@@ -28,7 +28,6 @@ AiEventClassTy::__CreateObjPl
   int iVar4;
   uint uVar5;
   uint uVar6;
-  uint *puVar7;
   Global_sub_004B1120_param_2Enum GVar8;
   InternalExceptionFrame local_e8;
   uint local_a4 [5];
@@ -121,12 +120,7 @@ AiEventClassTy::__CreateObjPl
     }
     uVar5 = param_7;
     if (iVar3 != 0) {
-      puVar7 = local_a4;
-      for (iVar3 = 0x1a; iVar3 != 0; iVar3 = iVar3 + -1) {
-        *puVar7 = 0;
-        puVar7 = puVar7 + 1;
-      }
-      *(undefined1 *)puVar7 = 0;
+      memset(local_a4, 0, 0x69); /* compiler bulk-zero initialization */
       local_a4[3] = 0;
       local_a4[1] = param_1 & 0xffff;
       if (((int)param_7 < 0) || (local_90 = param_7, 7 < (int)param_7)) {

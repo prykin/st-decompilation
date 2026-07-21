@@ -52,12 +52,12 @@ int __thiscall InterSystemC::GetMessage(InterSystemC *this,STMessage *message)
       if (PTR_00802a30 != (CursorClassTy *)0x0) {
         thunk_FUN_0054b540(PTR_00802a30);
       }
-      if (PTR_00801690 == (AnonShape_GLOBAL_00801690_2AA401C1 *)0x0) {
+      if (g_helpPanel_00801690 == (AnonShape_GLOBAL_00801690_2AA401C1 *)0x0) {
         g_currentExceptionFrame = local_50.previous;
         return 0;
       }
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-      (**(code **)(*(int *)PTR_00801690 + 0x18))(1);
+      (**(code **)(*(int *)g_helpPanel_00801690 + 0x18))(1);
       g_currentExceptionFrame = local_50.previous;
       return 0;
     }
@@ -120,7 +120,7 @@ switchD_00543107_caseD_b904:
       return 0;
     }
     piVar10 = (message->arg1).ptr;
-    FUN_006b5f80(DAT_008075a8,*piVar10,piVar10[1],piVar10[2],piVar10[3]);
+    FUN_006b5f80((int *)PTR_008075a8,*piVar10,piVar10[1],piVar10[2],piVar10[3]);
     SVar1 = message->id;
     if (SVar1 == MESS_INTERSYSTEMC_B900) {
       text = "BUT_FILEOPT";
@@ -182,7 +182,7 @@ LAB_00543291:
         return 0;
       }
       piVar10 = (message->arg1).ptr;
-      FUN_006b5f80(DAT_008075a8,*piVar10,piVar10[1],piVar10[2],piVar10[3]);
+      FUN_006b5f80((int *)PTR_008075a8,*piVar10,piVar10[1],piVar10[2],piVar10[3]);
       puVar13 = (undefined4 *)0x0;
       iVar11 = 0;
       iVar12 = 1;

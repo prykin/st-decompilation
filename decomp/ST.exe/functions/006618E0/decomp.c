@@ -34,8 +34,7 @@ void __thiscall AiFltClassTy::GoToRepair(AiFltClassTy *this,int param_1)
   int local_c;
   DArrayTy *local_8;
 
-  if ((this->field_0203 == 0) || ((uint)(this->field_0207 + this->field_0203) <= this->field_0280))
-  {
+  if ((this->field_0203 == 0) || (this->field_0207 + this->field_0203 <= this->field_0280)) {
     this->field_0207 = this->field_0280;
     local_1c = this;
     uVar4 = sub_0065D9C0(this);
@@ -132,7 +131,7 @@ LAB_00661a96:
                     }
                     if ((bVar2) && (local_18 != 0)) {
                       if (array == (DArrayTy *)0x0) {
-                        array = (DArrayTy *)Library::DKW::TBL::FUN_006ae290((uint *)0x0,10,2,10);
+                        array = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,10,2,10);
                         local_10 = array;
                       }
                       Library::DKW::TBL::FUN_006ae1c0(&array->flags,&local_24);

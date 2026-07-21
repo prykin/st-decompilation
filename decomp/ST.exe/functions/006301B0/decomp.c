@@ -5,7 +5,7 @@
 void __thiscall FUN_006301b0(void *this,AnonShape_0062FCA0_22A9EE35 *param_1)
 
 {
-  thunk_FUN_0062fca0(this,param_1);
+  STRubbishC::thunk_FUN_0062fca0(this,param_1);
   return;
 }
 

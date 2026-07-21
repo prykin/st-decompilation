@@ -26,7 +26,6 @@ void AiAiCalcMinesFields(uint param_1,int param_2,int param_3,int param_4,int pa
   int iVar13;
   int iVar14;
   STWorldCell *pSVar15;
-  undefined4 *puVar16;
   uint uVar17;
   int iVar18;
   int *piVar19;
@@ -189,17 +188,10 @@ void AiAiCalcMinesFields(uint param_1,int param_2,int param_3,int param_4,int pa
       Library::MSVCRT::FUN_0072da40();
       local_1c = &stack0xfffffe18;
       local_8 = 0xffffffff;
-      puVar16 = (undefined4 *)&stack0xfffffe18;
-      for (iVar13 = 0x20; iVar13 != 0; iVar13 = iVar13 + -1) {
-        *puVar16 = 0;
-        puVar16 = puVar16 + 1;
-      }
+      memset(&stack0xfffffe18, 0, 0x80); /* compiler bulk-zero initialization */
+      iVar13 = 0;
       DAT_008033b8 = DAT_008032fc + 0x40;
-      puVar16 = DAT_008033b0;
-      for (iVar13 = 0x10; iVar13 != 0; iVar13 = iVar13 + -1) {
-        *puVar16 = 0;
-        puVar16 = puVar16 + 1;
-      }
+      memset(DAT_008033b0, 0, 0x40); /* compiler bulk-zero initialization */
       DAT_008032f8 = DAT_00803300;
       DAT_008032f4 = DAT_00803300 + 500;
       uVar17 = 0;

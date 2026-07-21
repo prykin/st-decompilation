@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* WARNING: Removing unreachable block (ram,0x00572660) */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
@@ -18,7 +20,6 @@ void __fastcall FUN_00572510(AnonShape_00572510_F06DC155 *param_1)
   uint uVar8;
   cMf32 *this_01;
   char *pcVar9;
-  undefined4 *puVar10;
   char *pcVar11;
   int iVar12;
   byte *pbVar13;
@@ -75,11 +76,7 @@ void __fastcall FUN_00572510(AnonShape_00572510_F06DC155 *param_1)
           cMf32::RecGet(this_00,0xc,PTR_s_MOUKEYS_PLAYER_0079b0e4,(int *)&local_8,1);
           local_8 = &this->field_0x7c5;
           this->field_0DEE = 1;
-          puVar10 = (undefined4 *)local_8;
-          for (iVar4 = 0x10; iVar4 != 0; iVar4 = iVar4 + -1) {
-            *puVar10 = 0;
-            puVar10 = puVar10 + 1;
-          }
+          memset((void *)local_8, 0, 0x40); /* compiler bulk-zero initialization */
           *(undefined4 *)&this->field_0x805 = 0;
           *(undefined4 *)&this->field_0x809 = 0;
           this->field_0x80d = 0;

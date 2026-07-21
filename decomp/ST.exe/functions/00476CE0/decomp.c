@@ -21,7 +21,7 @@ int __thiscall STBoatC::Capture(STBoatC *this,int param_1)
   uint uVar11;
   undefined4 *puVar12;
   uint uVar13;
-  STBoatCVTable *pSVar14;
+  AnonPointee_STBoatC_0000 *pAVar14;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined2 extraout_var;
   uint uVar15;
@@ -43,7 +43,9 @@ int __thiscall STBoatC::Capture(STBoatC *this,int param_1)
   short sVar23;
   byte bVar24;
   undefined4 uVar25;
-  STMessage local_64;
+  undefined1 local_64 [16];
+  undefined4 local_54;
+  undefined4 *local_50;
   undefined1 local_44 [4];
   undefined4 local_40;
   undefined4 local_3c;
@@ -61,11 +63,7 @@ int __thiscall STBoatC::Capture(STBoatC *this,int param_1)
   int local_8;
 
   if ((param_1 == 0) || (param_1 == 1)) {
-    puVar12 = &this->field_02CC;
-    for (iVar7 = 0x17; iVar7 != 0; iVar7 = iVar7 + -1) {
-      *puVar12 = 0;
-      puVar12 = puVar12 + 1;
-    }
+    memset(&this->field_02CC, 0, 0x5c); /* compiler bulk-zero initialization */
     this->field_02C4 = 0;
     this->field_05FD = *(undefined2 *)&this->field_0x3ed;
     this->field_05FC = this->field_0x3ec;
@@ -135,7 +133,8 @@ cf_common_exit_00476DBA:
     return 0;
   }
   if (SVar1 == CASE_1) {
-    iVar7 = (*this->vtable->vfunc_D8)();
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+    iVar7 = (*(code *)this->vtable->field_00D8)();
     if (iVar7 != 0) {
       return -1;
     }
@@ -156,17 +155,20 @@ cf_common_exit_00476DBA:
         SVar3 = this->field_06F7;
         this->field_0611 = CASE_3;
         if (SVar3 == CASE_6) {
-          (*this->vtable->vfunc_90)(3,0xed);
+          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+          (*(code *)this->vtable->field_0090)(3,0xed);
           return 2;
         }
         if (SVar3 != CASE_12) {
           if (SVar3 != CASE_22) {
             return 2;
           }
-          (*this->vtable->vfunc_90)(3,0x1d2);
+          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+          (*(code *)this->vtable->field_0090)(3,0x1d2);
           return 2;
         }
-        (*this->vtable->vfunc_90)(3,0x151);
+        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+        (*(code *)this->vtable->field_0090)(3,0x151);
         return 2;
       }
       if (pSVar8->field_002C != 1) {
@@ -222,8 +224,8 @@ cf_common_exit_00476DBA:
       iVar10 = CONCAT22((short)((uint)iVar16 >> 0x10),this->field_0609 + 1);
       iVar7 = iVar10 * 0xc9;
       uVar6 = (undefined2)((uint)(iVar10 * 0x19) >> 0x10);
-      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-      uVar6 = (*this->vtable->vfunc_10)
+      /* ST_PSEUDO[raw_indirect_call,packed_or_unaligned_piece]: expected typed vtable/callback call with explicit __thiscall receiver; expected named packed member, bit extract/compose, or unaligned load */
+      uVar6 = (*(code *)this->vtable->field_0010)
                         (CONCAT22(uVar6,this->field_0041),
                          CONCAT22((short)((uint)iVar7 >> 0x10),this->field_0043),
                          CONCAT22(uVar6,this->field_0045),iVar7,iVar16,iVar9);
@@ -260,8 +262,8 @@ cf_common_exit_00476DBA:
         do {
           puVar12 = (undefined4 *)
                     thunk_FUN_0041dc40(local_24,(short)*(undefined4 *)
-                                                        ((int)&this->field_02B3 + (short)param_1 * 6
-                                                        ),(&this->field_02B7)[(short)param_1 * 3],
+                                                        (&this->field_0x2b3 + (short)param_1 * 6),
+                                       *(undefined2 *)(&this->field_0x2b7 + (short)param_1 * 6),
                                        this->field_006C);
           uVar25 = *puVar12;
           local_18 = *(short *)(puVar12 + 1);
@@ -340,19 +342,21 @@ cf_common_exit_00476DBA:
           SVar3 = this->field_06F7;
           this->field_0611 = CASE_3;
           if (SVar3 == CASE_6) {
-            pSVar14 = this->vtable;
+            pAVar14 = this->vtable;
             uVar25 = 0xed;
           }
           else {
             if (SVar3 == CASE_12) {
-              (*this->vtable->vfunc_90)(3,0x151);
+              /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+              (*(code *)this->vtable->field_0090)(3,0x151);
               goto cf_common_exit_0047746B;
             }
             if (SVar3 != CASE_22) goto cf_common_exit_0047746B;
-            pSVar14 = this->vtable;
+            pAVar14 = this->vtable;
             uVar25 = 0x1d2;
           }
-          (*pSVar14->vfunc_90)(3,uVar25);
+          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+          (*(code *)pAVar14->field_0090)(3,uVar25);
         }
       }
     }
@@ -378,7 +382,8 @@ cf_common_exit_00476DBA:
           return -1;
         }
         if (iVar7 == 0) {
-          iVar7 = (*this->vtable->vfunc_D8)();
+          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+          iVar7 = (*(code *)this->vtable->field_00D8)();
           return -(uint)(iVar7 != 0);
         }
         if (iVar7 == 3) {
@@ -387,8 +392,9 @@ cf_common_exit_00476DBA:
           sub_00481520(this,(int)this->field_0609,(int)this->field_060B,(int)this->field_060D);
           sub_0045FF50(this,0);
         }
+/* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
 cf_common_exit_00477B2E:
-        iVar7 = (*this->vtable->vfunc_D8)();
+        iVar7 = (*(code *)this->vtable->field_00D8)();
         return (-(uint)(iVar7 != 0) & 0xfffffffd) + 2;
       }
       if (this->field_0615 == 0) {
@@ -398,8 +404,8 @@ cf_common_exit_00477B2E:
         /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
         iVar16 = CONCAT22((short)((uint)iVar7 >> 0x10),this->field_0603 * 0xc9) + 100;
         uVar6 = (undefined2)((uint)iVar9 >> 0x10);
-        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-        uVar6 = (*this->vtable->vfunc_10)
+        /* ST_PSEUDO[raw_indirect_call,packed_or_unaligned_piece]: expected typed vtable/callback call with explicit __thiscall receiver; expected named packed member, bit extract/compose, or unaligned load */
+        uVar6 = (*(code *)this->vtable->field_0010)
                           (CONCAT22(uVar6,this->field_0041),
                            CONCAT22((short)((uint)iVar16 >> 0x10),this->field_0043),
                            CONCAT22(uVar6,this->field_0045),iVar16,iVar9,iVar7);
@@ -437,9 +443,9 @@ cf_common_exit_00477B2E:
           do {
             puVar12 = (undefined4 *)
                       thunk_FUN_0041dc40(local_24,(short)*(undefined4 *)
-                                                          ((int)&this->field_02B3 +
-                                                          (short)param_1 * 6),
-                                         (&this->field_02B7)[(short)param_1 * 3],this->field_006C);
+                                                          (&this->field_0x2b3 + (short)param_1 * 6),
+                                         *(undefined2 *)(&this->field_0x2b7 + (short)param_1 * 6),
+                                         this->field_006C);
             uVar25 = *puVar12;
             local_18 = *(short *)(puVar12 + 1);
             local_1c = uVar25;
@@ -515,7 +521,8 @@ cf_common_exit_00477B2E:
           }
         }
       }
-      iVar7 = (*this->vtable->vfunc_D8)();
+      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+      iVar7 = (*(code *)this->vtable->field_00D8)();
       return (-(uint)(iVar7 != 0) & 0xfffffffd) + 2;
     }
     pSVar8 = STAllPlayersC::GetObjPtr
@@ -528,10 +535,12 @@ cf_common_exit_00477B2E:
          ((int)this->field_0043 == (this->field_060B + 1) * 0xc9)) {
         this->field_0611 = CASE_4;
         this->field_0615 = 0;
-        iVar7 = (*this->vtable->vfunc_D8)();
+        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+        iVar7 = (*(code *)this->vtable->field_00D8)();
         return (-(uint)(iVar7 != 0) & 0xfffffffd) + 2;
       }
-      iVar7 = (*this->vtable->vfunc_D8)();
+      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+      iVar7 = (*(code *)this->vtable->field_00D8)();
       return -(uint)(iVar7 != 0);
     }
     iVar7 = thunk_FUN_004cd480((AnonShape_004CC900_31EE9CAA *)pSVar8);
@@ -554,13 +563,14 @@ cf_common_exit_00477B2E:
     uVar11 = GetPlayerRaceId(*(char *)&pSVar8->field_0024);
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
     iVar7 = (**(code **)&pSVar8->vtable->field_0x2c)();
-    local_64.arg0.ptr = &local_40;
+    local_50 = &local_40;
     local_40 = *(undefined4 *)(&DAT_007e1374 + ((uVar11 & 0xff) + iVar7 * 3) * 4);
     local_38 = 0xff;
     local_3c = 0;
     local_2c = 1;
-    local_64.id = MESS_TORPHIT;
-    (*this->vtable->GetMessage)(this,&local_64);
+    local_54 = 0x110;
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+    (**(code **)this->vtable)(local_64);
     iVar7 = (this->field_0609 + 1) * 0xc9;
     if ((this->field_0041 == iVar7) &&
        (iVar7 = (this->field_060B + 1) * 0xc9, this->field_0043 == iVar7)) {
@@ -577,8 +587,9 @@ cf_common_exit_00477B2E:
       }
     }
   }
+/* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
 cf_common_exit_0047746B:
-  iVar7 = (*this->vtable->vfunc_D8)();
+  iVar7 = (*(code *)this->vtable->field_00D8)();
   return (-(uint)(iVar7 != 0) & 0xfffffffd) + 2;
 }
 

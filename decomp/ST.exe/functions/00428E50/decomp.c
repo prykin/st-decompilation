@@ -180,7 +180,7 @@ LAB_00428e95:
     /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
     _local_50 = CONCAT31(uStack_4f,(byte)local_2c >> 1);
     FUN_006dd610(pAVar6,(uint)local_40,0,0x40240000,0,0x40240000);
-    local_44 = (DArrayTy *)Library::DKW::TBL::FUN_006ae290((uint *)0x0,10,0x1c,10);
+    local_44 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,10,0x1c,10);
     DAT_007f4dd0 = 0;
     local_90 = 0;
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */

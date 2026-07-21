@@ -93,8 +93,8 @@ int __thiscall SAMPanelTy::GetMessage(SAMPanelTy *this,STMessage *message)
       DibPut((AnonShape_006B5B10_E0D06CF1 *)this_00->field_0068,iVar10 - iVar6,iVar3 - iVar8,'\x01',
              pbVar9);
       Library::DKW::DDX::FUN_006b3640
-                (DAT_008075a8,this_00->field_0060,0xffffffff,this_00->field_003C,this_00->field_0044
-                );
+                ((int *)PTR_008075a8,this_00->field_0060,0xffffffff,this_00->field_003C,
+                 this_00->field_0044);
     }
     else if (SVar1 == MESS_SAMPANELTY_B518) {
       pAVar2 = this_00->field_0000;

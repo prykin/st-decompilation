@@ -28,7 +28,7 @@ FUN_004ebda0(void *this,int param_1,int param_2,int param_3,undefined4 param_4,u
       *(undefined4 *)((int)this + 0x504) = param_6;
       *(undefined4 *)((int)this + 0x4d0) = 6;
       *(undefined4 *)((int)this + 0x510) = 0;
-      *(undefined4 *)((int)this + 0x514) = PTR_00802a38->field_00E4;
+      *(uint *)((int)this + 0x514) = PTR_00802a38->field_00E4;
       thunk_FUN_004ec0f0(this);
       TLOBaseTy::RotateSpr(this,0);
     }

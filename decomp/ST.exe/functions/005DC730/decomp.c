@@ -14,7 +14,7 @@ StartSystemTy::SetObjectives(StartSystemTy *this,int param_1,char *param_2,int p
   AnonShape_006B5570_4D68B99C *pAVar3;
   StartSystemTy *this_00;
   int iVar4;
-  uint *puVar5;
+  DArrayTy *pDVar5;
   undefined1 *puVar6;
   char *pcVar7;
   uint uVar8;
@@ -50,7 +50,7 @@ StartSystemTy::SetObjectives(StartSystemTy *this,int param_1,char *param_2,int p
     ;
     if (PTR_0080c4c7 == (AnonShape_GLOBAL_0080C4C7_5A4CB754 *)0x0) {
       PTR_0080c4c7 = (AnonShape_GLOBAL_0080C4C7_5A4CB754 *)
-                     Library::DKW::TBL::FUN_006b54f0((uint *)0x0,10,10);
+                     Library::DKW::TBL::SArrayCreate((DArrayTy *)0x0,10,10);
     }
     if (PTR_0080c4cb != (AnonShape_GLOBAL_0080C4CB_D58160AA *)0x0) {
       FUN_006b5570((AnonShape_006B5570_4D68B99C *)PTR_0080c4cb);
@@ -61,14 +61,14 @@ StartSystemTy::SetObjectives(StartSystemTy *this,int param_1,char *param_2,int p
     }
     if (PTR_0080c4cb == (AnonShape_GLOBAL_0080C4CB_D58160AA *)0x0) {
       PTR_0080c4cb = (AnonShape_GLOBAL_0080C4CB_D58160AA *)
-                     Library::DKW::TBL::FUN_006b54f0((uint *)0x0,10,10);
+                     Library::DKW::TBL::SArrayCreate((DArrayTy *)0x0,10,10);
     }
     this_00 = local_8;
     if ((AnonShape_006B5570_4D68B99C *)local_8->field_0548 != (AnonShape_006B5570_4D68B99C *)0x0) {
       FUN_006b5570((AnonShape_006B5570_4D68B99C *)local_8->field_0548);
     }
-    puVar5 = Library::DKW::TBL::FUN_006b54f0((uint *)0x0,10,10);
-    this_00->field_0548 = puVar5;
+    pDVar5 = Library::DKW::TBL::SArrayCreate((DArrayTy *)0x0,10,10);
+    this_00->field_0548 = &pDVar5->flags;
     iVar4 = 0;
     if (0 < PTR_0080c4cb->field_0008) {
       if (PTR_0080c4cb->field_0008 < 1) {
@@ -78,7 +78,7 @@ StartSystemTy::SetObjectives(StartSystemTy *this,int param_1,char *param_2,int p
       do {
         pcVar7 = *(char **)(PTR_0080c4cb->field_0014 + iVar4 * 4);
 LAB_005dc828:
-        thunk_FUN_005411a0((uint *)this_00->field_0548,pcVar7,"@- %s");
+        thunk_FUN_005411a0(this_00->field_0548,pcVar7,"@- %s");
         iVar4 = iVar4 + 1;
       } while (iVar4 < PTR_0080c4cb->field_0008);
     }
@@ -89,35 +89,35 @@ LAB_005dc828:
     *puVar6 = DAT_007cc854;
     local_c = (AnonShape_006B5570_4D68B99C *)
               ccFntTy::FormIndentSarr
-                        (this_00->field_0034,(uint *)this_00->field_0548," ,.;:!?/\\()[]{}",
+                        (this_00->field_0034,this_00->field_0548," ,.;:!?/\\()[]{}",
                          (uint *)&DAT_007c21ec,this_00->field_0544->field_0004 + -0x14,0,0xffffffff,
                          (char *)0x0,1);
     if ((AnonShape_006B5570_4D68B99C *)this_00->field_0548 != (AnonShape_006B5570_4D68B99C *)0x0) {
       FUN_006b5570((AnonShape_006B5570_4D68B99C *)this_00->field_0548);
     }
-    puVar5 = Library::DKW::TBL::FUN_006b54f0((uint *)0x0,10,10);
-    this_00->field_0548 = puVar5;
+    pDVar5 = Library::DKW::TBL::SArrayCreate((DArrayTy *)0x0,10,10);
+    this_00->field_0548 = &pDVar5->flags;
     puVar6 = &this_00->field_0x3c;
     pcVar7 = LoadResourceString(0x2347,HINSTANCE_00807618);
     wsprintfA(puVar6,"&2 %s:",pcVar7);
-    Library::DKW::TBL::FUN_006b5aa0((uint *)this_00->field_0548,puVar6);
+    Library::DKW::TBL::FUN_006b5aa0(this_00->field_0548,puVar6);
     wsprintfA(puVar6,"&0 %s",&DAT_0080c3c3);
-    Library::DKW::TBL::FUN_006b5aa0((uint *)this_00->field_0548,puVar6);
-    Library::DKW::TBL::FUN_006b5aa0((uint *)this_00->field_0548,&DAT_007c3b5c);
+    Library::DKW::TBL::FUN_006b5aa0(this_00->field_0548,puVar6);
+    Library::DKW::TBL::FUN_006b5aa0(this_00->field_0548,&DAT_007c3b5c);
     uVar8 = DAT_008087c4 & 0xffff;
     uVar10 = (uint)DAT_008087c2;
     pcVar7 = LoadResourceString(0x2344,HINSTANCE_00807618);
     wsprintfA(puVar6,"&2 %s: &0%d&2x&0%d",pcVar7,uVar10,uVar8);
-    Library::DKW::TBL::FUN_006b5aa0((uint *)this_00->field_0548,puVar6);
+    Library::DKW::TBL::FUN_006b5aa0(this_00->field_0548,puVar6);
     uVar8 = DAT_008087c4 >> 0x10 & 0xff;
     pcVar7 = LoadResourceString(0x2345,HINSTANCE_00807618);
     wsprintfA(puVar6,"&2 %s: &0%d",pcVar7,uVar8);
-    Library::DKW::TBL::FUN_006b5aa0((uint *)this_00->field_0548,puVar6);
-    Library::DKW::TBL::FUN_006b5aa0((uint *)this_00->field_0548,&DAT_007c3b5c);
+    Library::DKW::TBL::FUN_006b5aa0(this_00->field_0548,puVar6);
+    Library::DKW::TBL::FUN_006b5aa0(this_00->field_0548,&DAT_007c3b5c);
     pcVar7 = LoadResourceString(0x2346,HINSTANCE_00807618);
     wsprintfA(puVar6,"&2 %s:",pcVar7);
-    Library::DKW::TBL::FUN_006b5aa0((uint *)this_00->field_0548,puVar6);
-    Library::DKW::TBL::FUN_006b5aa0((uint *)this_00->field_0548,&DAT_007c3b5c);
+    Library::DKW::TBL::FUN_006b5aa0(this_00->field_0548,puVar6);
+    Library::DKW::TBL::FUN_006b5aa0(this_00->field_0548,&DAT_007c3b5c);
     pAVar3 = local_c;
     if (local_c != (AnonShape_006B5570_4D68B99C *)0x0) {
       if (local_c->field_0008 != 0) {
@@ -132,7 +132,7 @@ LAB_005dc828:
         do {
           pcVar7 = *(char **)(pAVar3->field_0014 + iVar4 * 4);
 LAB_005dca07:
-          Library::DKW::TBL::FUN_006b5aa0((uint *)this_00->field_0548,pcVar7);
+          Library::DKW::TBL::FUN_006b5aa0(this_00->field_0548,pcVar7);
           iVar4 = iVar4 + 1;
         } while (iVar4 < (int)pAVar3->field_0008);
       }
@@ -140,7 +140,7 @@ LAB_005dca07:
     }
     local_1c = 0x28;
     /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-    local_18 = CONCAT22(*(undefined2 *)(this_00->field_0548 + 8),1);
+    local_18 = CONCAT22((short)this_00->field_0548[2],1);
     if (this_00->field_0389 != 0) {
       SystemClassTy::SendMessage((SystemClassTy *)this_00,2,this_00->field_0389,(int)local_2c);
     }

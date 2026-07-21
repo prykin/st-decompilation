@@ -44,7 +44,7 @@ uint * FUN_0043ec20(char param_1,Global_sub_0043EC20_param_2Enum param_2,short p
   if (g_worldGrid.sizeZ + -1 < iVar3) {
     iVar3 = g_worldGrid.sizeZ + -1;
   }
-  array = (DArrayTy *)Library::DKW::TBL::FUN_006ae290((uint *)0x0,0,2,1);
+  array = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,0,2,1);
   iVar4 = g_worldGrid.sizeX * _param_3 + local_8 + (iVar5 + -1) * (int)g_worldGrid.planeStride;
   if (iVar5 <= iVar3) {
     _param_5 = (iVar3 - iVar5) + 1;
@@ -71,7 +71,7 @@ LAB_0043eda0:
                   if ((param_10 == -1) ||
                      (iVar4 = (**(code **)(*piVar1 + 0x6c))(), iVar4 == param_10)) {
                     Library::DKW::TBL::FUN_006ae1c0
-                              ((uint *)array,(undefined4 *)((int)piVar1 + 0x32));
+                              (&array->flags,(undefined4 *)((int)piVar1 + 0x32));
                   }
                 }
                 else {

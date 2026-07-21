@@ -22,7 +22,7 @@ uint * __thiscall FUN_0068e4f0(void *this,int param_1)
   undefined4 local_c;
   uint local_8;
 
-  array = (DArrayTy *)Library::DKW::TBL::FUN_006ae290((uint *)0x0,0x14,2,0x14);
+  array = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,0x14,2,0x14);
   iVar2 = *(int *)((int)this + 0xa5);
   local_8 = 0;
   if (0 < *(int *)(iVar2 + 0xc)) {
@@ -58,7 +58,7 @@ uint * __thiscall FUN_0068e4f0(void *this,int param_1)
             }
             /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
             local_c = CONCAT22((short)((uint)iVar2 >> 0x10),*puVar3);
-            Library::DKW::TBL::FUN_006ae1c0((uint *)array,&local_c);
+            Library::DKW::TBL::FUN_006ae1c0(&array->flags,&local_c);
             uVar5 = uVar5 + 1;
             bVar7 = uVar5 < array_00->count;
             /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */

@@ -82,10 +82,10 @@ int __thiscall FUN_0063c510(void *this,int param_1)
                                   iVar4,&local_c,&local_10), local_8 < 0)) ||
              ((4 < local_8 || (local_c < 0)))) ||
             ((pVVar2->field_0030 <= local_c ||
-             ((local_10 = (&DAT_0079aed0)[local_8] + local_10, local_10 < 0 ||
+             ((local_10 = g_centeredOffsets5[local_8] + local_10, local_10 < 0 ||
               (pVVar2->field_0034 <= local_10)))))) ||
-           ((pVVar2->field_004C == 0 ||
-            (*(char *)(local_10 * pVVar2->field_0030 + pVVar2->field_004C + local_c) != '\0')))) {
+           ((pVVar2->field_004C == (byte *)0x0 ||
+            (pVVar2->field_004C[local_c + local_10 * pVVar2->field_0030] != 0)))) {
           if (*(char *)((int)this + 0x29f) == '\0') {
             thunk_FUN_004ad460((void *)((int)this + 0x1d5),0);
             *(undefined1 *)((int)this + 0x29f) = 1;

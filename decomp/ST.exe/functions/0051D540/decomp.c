@@ -33,12 +33,7 @@ void __thiscall HelpPanelTy::TipProc(HelpPanelTy *this,void *param_1,int param_2
 
   local_10 = this;
   local_14 = thunk_FUN_00529d80((Global_sub_00529D80_param_1Enum)param_1,param_2);
-  puVar7 = local_34;
-  for (iVar9 = 6; iVar9 != 0; iVar9 = iVar9 + -1) {
-    *puVar7 = 0;
-    puVar7 = puVar7 + 1;
-  }
-  *(undefined1 *)puVar7 = 0;
+  memset(local_34, 0, 0x19); /* compiler bulk-zero initialization */
   local_c = 0;
   local_78.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_78;
@@ -166,7 +161,8 @@ LAB_0051d689:
             ((int)this_00->field_0068,0,0x21,(ushort)this_00->field_01AF + 0x16,
              (int)this_00->field_0218,0,0,0,0x19c,0x117 - (uint)(ushort)this_00->field_01AF,0xff);
   Library::DKW::DDX::FUN_006b3640
-            (DAT_008075a8,this_00->field_0060,0xffffffff,this_00->field_003C,this_00->field_0044);
+            ((int *)PTR_008075a8,this_00->field_0060,0xffffffff,this_00->field_003C,
+             this_00->field_0044);
   g_currentExceptionFrame = local_78.previous;
   return;
 }

@@ -80,7 +80,7 @@ STT3DSprC::LoadSequence(STT3DSprC *this,byte param_1,int *param_2,char *text,byt
     }
     return 0xffffffff;
   }
-  if (local_c->field_0018 == 0xffffffff) {
+  if (local_c->field_0018 == -1) {
     RaiseInternalException
               (-1,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\Tspr3d.cpp",0x22);
   }

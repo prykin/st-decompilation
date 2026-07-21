@@ -58,7 +58,7 @@ undefined4 __thiscall STVolcanoC::LoadImagVolcano(STVolcanoC *this,int param_1)
       FUN_006ea460(PTR_00807598,local_c,local_8);
       pSVar2->field_0086 = local_c;
     }
-    if ((param_1 != 0) && ((int)pSVar2->field_007A < 0)) {
+    if ((param_1 != 0) && (pSVar2->field_007A < 0)) {
       puVar3 = Library::Ourlib::MFRLOAD::mfRLoad
                          (DAT_00806764,CASE_1D,"expl_vop",0xffffffff,0,1,0,
                           (undefined4 *)0x0);

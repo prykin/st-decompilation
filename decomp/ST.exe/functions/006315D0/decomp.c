@@ -24,11 +24,10 @@ void __thiscall FUN_006315d0(void *this,int param_1,int param_2,int param_3,int 
   undefined4 local_1c;
   undefined4 local_10;
   AnonReceiver_006308F0 *local_c;
-  AnonShape_00413AF0_B6B4EE9A *local_8;
+  DArrayTy *local_8;
 
-  local_8 = *(AnonShape_00413AF0_B6B4EE9A **)((int)this + 0x38);
-  if ((local_8 != (AnonShape_00413AF0_B6B4EE9A *)0x0) &&
-     (iVar7 = *(int *)((int)this + 0x34), iVar7 != 0)) {
+  local_8 = *(DArrayTy **)((int)this + 0x38);
+  if ((local_8 != (DArrayTy *)0x0) && (iVar7 = *(int *)((int)this + 0x34), iVar7 != 0)) {
     iVar2 = (g_worldGrid.sizeX * param_3 + param_2) * (int)g_worldGrid.sizeY + param_1;
     if (param_4 == 1) {
       if (*(char *)(iVar7 + iVar2) != '\0') {
@@ -45,13 +44,14 @@ void __thiscall FUN_006315d0(void *this,int param_1,int param_2,int param_3,int 
         return;
       }
     }
-    uVar6 = local_8->field_000C;
+    uVar6 = local_8->count;
     uVar9 = 0;
     if (0 < (int)uVar6) {
       bVar11 = uVar6 != 0;
       do {
         if (bVar11) {
-          psVar3 = (short *)(local_8->field_0008 * uVar9 + local_8->field_001C);
+          /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(local_8, uVar9) (runtime stride) */
+          psVar3 = (short *)(local_8->elementSize * uVar9 + (int)local_8->data);
         }
         else {
           psVar3 = (short *)0x0;
@@ -67,7 +67,8 @@ LAB_00631713:
                 return;
               }
               if (uVar9 < uVar6) {
-                puVar4 = (undefined4 *)(local_8->field_0008 * uVar9 + local_8->field_001C);
+                /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(local_8, uVar9) (runtime stride) */
+                puVar4 = (undefined4 *)(local_8->elementSize * uVar9 + (int)local_8->data);
               }
               else {
                 puVar4 = (undefined4 *)0x0;

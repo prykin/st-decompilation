@@ -6,7 +6,7 @@
 undefined4 __thiscall STBoatC::sub_0045F6C0(STBoatC *this)
 
 {
-  AnonPointee_STBoatC_0097 *pAVar1;
+  ushort *puVar1;
   bool bVar2;
   bool bVar3;
   byte bVar4;
@@ -63,17 +63,17 @@ LAB_0045f710:
   this->field_0061 = bVar4;
   this->field_00E3 = 1;
   this->field_0062 = bVar4 >> 1;
-  pAVar1 = this->field_0097;
+  puVar1 = this->field_0097;
   this->field_00D3 = 1;
   /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-  iVar15 = CONCAT22((short)((uint)iVar14 >> 0x10),pAVar1->field_0008 * 0xc9) + 100;
+  iVar15 = CONCAT22((short)((uint)iVar14 >> 0x10),puVar1[4] * 0xc9) + 100;
   sVar13 = (short)iVar15;
   uVar6 = (int)sVar13 - (int)this->field_0041;
   /* ST_PSEUDO[unresolved_register_input,packed_or_unaligned_piece]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention; expected named packed member, bit extract/compose, or unaligned load */
-  iVar12 = CONCAT22((short)((uint)unaff_EBX >> 0x10),pAVar1->field_000A * 0xc9) + 100;
+  iVar12 = CONCAT22((short)((uint)unaff_EBX >> 0x10),puVar1[5] * 0xc9) + 100;
   uVar11 = (int)uVar6 >> 0x1f;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
-  iVar10 = CONCAT22(extraout_var,pAVar1->field_000C * 200) + 100;
+  iVar10 = CONCAT22(extraout_var,puVar1[6] * 200) + 100;
   iVar14 = (uVar6 ^ uVar11) - uVar11;
   sVar5 = (short)iVar12;
   uVar6 = (int)sVar5 - (int)this->field_0043;
@@ -102,8 +102,8 @@ LAB_0045f710:
     }
     if ((!bVar2) || (!bVar3)) {
       uVar9 = (undefined2)((uint)iVar10 >> 0x10);
-      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-      sVar5 = (*this->vtable->vfunc_10)
+      /* ST_PSEUDO[raw_indirect_call,packed_or_unaligned_piece]: expected typed vtable/callback call with explicit __thiscall receiver; expected named packed member, bit extract/compose, or unaligned load */
+      sVar5 = (*(code *)this->vtable->field_0010)
                         (CONCAT22(uVar9,this->field_0041),CONCAT22(uVar9,this->field_0043),
                          CONCAT22((short)((uint)iVar16 >> 0x10),this->field_0045),iVar15,iVar12,
                          iVar10);

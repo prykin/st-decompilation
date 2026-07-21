@@ -32,7 +32,8 @@ int __thiscall STBoatC::BackDismant(STBoatC *this,int *param_1,undefined4 param_
   case CASE_3:
     this->field_06C3 = CASE_5;
     this->field_06C7 = 0;
-    iVar5 = (*this->vtable->vfunc_D8)();
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+    iVar5 = (*(code *)this->vtable->field_00D8)();
     return (-(uint)(iVar5 != 0) & 0xfffffffd) + 2;
   case CASE_4:
     sVar1 = this->field_06A9;
@@ -63,7 +64,8 @@ int __thiscall STBoatC::BackDismant(STBoatC *this,int *param_1,undefined4 param_
     else {
       this->field_06C3 = CASE_6;
     }
-    iVar5 = (*this->vtable->vfunc_D8)();
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+    iVar5 = (*(code *)this->vtable->field_00D8)();
     return (-(uint)(iVar5 != 0) & 0xfffffffd) + 2;
   /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
   case CASE_5:

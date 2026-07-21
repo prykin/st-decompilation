@@ -3,7 +3,7 @@ void __thiscall FUN_00617ed0(void *this,int param_1,int *param_2)
 
 {
   STFishC *pSVar1;
-  uint *puVar2;
+  DArrayTy *pDVar2;
   int iVar3;
   undefined4 local_18;
   uint local_14;
@@ -13,8 +13,8 @@ void __thiscall FUN_00617ed0(void *this,int param_1,int *param_2)
   undefined2 local_6;
 
   if (*(int *)((int)this + 0x66) == 0) {
-    puVar2 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,10,8,10);
-    *(uint **)((int)this + 0x66) = puVar2;
+    pDVar2 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,10,8,10);
+    *(DArrayTy **)((int)this + 0x66) = pDVar2;
   }
   iVar3 = *(int *)((int)this + 0x66);
   if (iVar3 != 0) {

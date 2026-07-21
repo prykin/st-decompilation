@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 void __thiscall
 FUN_00645f10(void *this,void *param_1,undefined2 param_2,undefined2 param_3,undefined2 param_4)
@@ -5,8 +7,6 @@ FUN_00645f10(void *this,void *param_1,undefined2 param_2,undefined2 param_3,unde
 {
   uint uVar1;
   void *pvVar2;
-  int iVar3;
-  undefined4 *puVar4;
   undefined4 local_60 [5];
   undefined2 local_4c;
   undefined2 local_4a;
@@ -28,11 +28,7 @@ FUN_00645f10(void *this,void *param_1,undefined2 param_2,undefined2 param_3,unde
 
   pvVar2 = param_1;
   if (param_1 != (void *)0x0) {
-    puVar4 = local_60;
-    for (iVar3 = 0x16; iVar3 != 0; iVar3 = iVar3 + -1) {
-      *puVar4 = 0;
-      puVar4 = puVar4 + 1;
-    }
+    memset(local_60, 0, 0x58); /* compiler bulk-zero initialization */
     local_60[3] = 1;
     local_60[2] = 1;
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
@@ -61,7 +57,8 @@ FUN_00645f10(void *this,void *param_1,undefined2 param_2,undefined2 param_3,unde
     *(uint *)((int)this + 0x1c) = uVar1;
     local_3c = (short)((ulonglong)(uVar1 >> 0x10) % 0x3d) + *(short *)((int)this + 0x24f) + -0x1e;
     local_38 = *(undefined4 *)((int)this + 0x259);
-    (*PTR_00802a38->vtable->vfunc_08)(0x106,0,0,local_60,0);
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+    (*(code *)PTR_00802a38->vtable->field_0008)(0x106,0,0,local_60,0);
   }
   return;
 }

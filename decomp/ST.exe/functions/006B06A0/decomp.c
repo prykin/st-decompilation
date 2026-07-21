@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 bool FUN_006b06a0(undefined4 *param_1,LOGPALETTE *param_2,int param_3,UINT param_4,int param_5)
 
@@ -114,11 +116,7 @@ bool FUN_006b06a0(undefined4 *param_1,LOGPALETTE *param_2,int param_3,UINT param
         *puVar11 = 0xffffffff;
         puVar11 = puVar11 + 1;
       }
-      puVar11 = (undefined4 *)(param_1[0x137] + 0x8000);
-      for (iVar7 = 0x2000; iVar7 != 0; iVar7 = iVar7 + -1) {
-        *puVar11 = 0;
-        puVar11 = puVar11 + 1;
-      }
+      memset((void *)(param_1[0x137] + 0x8000), 0, 0x8000); /* compiler bulk-zero initialization */
       pHVar5 = CreatePalette((LOGPALETTE *)&local_408);
       param_1[0x138] = pHVar5;
       if (pHVar5 == (HPALETTE)0x0) {

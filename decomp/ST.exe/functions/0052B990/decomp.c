@@ -12,7 +12,7 @@ void __fastcall FUN_0052b990(AnonShape_0052B990_04D99BFA *param_1)
   uint local_8;
 
   bVar2 = ((DAT_0080874e == '\x03') - 1U & 0xf9) + 0x14;
-  FUN_006b5f80(DAT_008075a8,param_1->field_0030,param_1->field_0034,param_1->field_0058,
+  FUN_006b5f80((int *)PTR_008075a8,param_1->field_0030,param_1->field_0034,param_1->field_0058,
                param_1->field_005C);
   if (param_1->field_00A4 == '\0') {
     uVar1 = (uint)bVar2;

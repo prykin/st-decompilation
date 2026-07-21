@@ -9,7 +9,7 @@ undefined4 __fastcall FUN_004b8c80(TLOBaseTy *param_1)
   int iVar5;
   TLOBaseTy_field_0245State TVar6;
   uint uVar7;
-  TLOBaseTyVTable *pTVar8;
+  AnonPointee_TLOBaseTy_0000 *pAVar8;
   /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
   void *unaff_EDI;
   void *pvVar9;
@@ -26,7 +26,7 @@ undefined4 __fastcall FUN_004b8c80(TLOBaseTy *param_1)
   local_8 = 0;
   if (TVar6 == CASE_1) {
     if (param_1->field_05DF == 5) {
-      if (param_1->field_04CC + 2 <= (uint)PTR_00802a38->field_00E4) {
+      if (param_1->field_04CC + 2 <= PTR_00802a38->field_00E4) {
         param_1->field_04CC = PTR_00802a38->field_00E4;
         iVar3 = param_1->field_04C8 + 1;
         param_1->field_04C8 = iVar3;
@@ -58,7 +58,8 @@ undefined4 __fastcall FUN_004b8c80(TLOBaseTy *param_1)
         sub_006E60A0(param_1,local_2c);
         return 0;
       }
-      (*param_1->vtable->vfunc_D8)();
+      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+      (**(code **)&param_1->vtable->field_0xd8)();
       iVar3 = thunk_FUN_004ac910(puVar1,'\x04');
       if (iVar3 == *(int *)(&DAT_007cdf52 + *(int *)(&DAT_0079125c + param_1->field_0235 * 4) * 0x32
                            )) {
@@ -106,9 +107,9 @@ undefined4 __fastcall FUN_004b8c80(TLOBaseTy *param_1)
       iVar3 = GetPlayerRaceId(*(char *)&param_1->field_023D);
       if ((char)iVar3 == '\x03') {
         uVar4 = GetPlayerRaceId(*(char *)&param_1->field_023D);
-        if ((uint)PTR_00802a38->field_00E4 <
-            (uint)(*(int *)(&DAT_007e3dc0 + ((uVar4 & 0xff) + param_1->field_0235 * 3) * 4) / 3 +
-                  param_1->field_04B8)) goto cf_common_exit_004B9130;
+        if (PTR_00802a38->field_00E4 <
+            *(int *)(&DAT_007e3dc0 + ((uVar4 & 0xff) + param_1->field_0235 * 3) * 4) / 3 +
+            param_1->field_04B8) goto cf_common_exit_004B9130;
       }
       else {
         iVar3 = thunk_FUN_004ac910(&param_1->field_01D5,'\x05');
@@ -118,19 +119,23 @@ undefined4 __fastcall FUN_004b8c80(TLOBaseTy *param_1)
           param_1->field_04BC = 2;
           /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
           TLOBaseTy::LoadImages(param_1,unaff_EDI);
-          (*param_1->vtable->vfunc_D8)();
+          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+          (**(code **)&param_1->vtable->field_0xd8)();
           return 0;
         }
         if (iVar3 == 2) {
           uVar4 = GetPlayerRaceId(*(char *)&param_1->field_023D);
-          if ((uint)(*(int *)(&DAT_007e3dc0 + ((uVar4 & 0xff) + param_1->field_0235 * 3) * 4) / 3 +
-                    param_1->field_04B8) <= (uint)PTR_00802a38->field_00E4) {
+          if (*(int *)(&DAT_007e3dc0 + ((uVar4 & 0xff) + param_1->field_0235 * 3) * 4) / 3 +
+              param_1->field_04B8 <= PTR_00802a38->field_00E4) {
             pvVar9 = (void *)0x3;
-            (*param_1->vtable->vfunc_90)(3,0x361);
+            /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+            (*(code *)param_1->vtable->field_0090)(3,0x361);
             param_1->field_04BC = 3;
             TLOBaseTy::LoadImages(param_1,pvVar9);
-            (*param_1->vtable->vfunc_90)(3,0x361);
-            (*param_1->vtable->vfunc_D8)();
+            /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+            (*(code *)param_1->vtable->field_0090)(3,0x361);
+            /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+            (**(code **)&param_1->vtable->field_0xd8)();
             return 0;
           }
           goto cf_common_exit_004B9130;
@@ -140,9 +145,11 @@ undefined4 __fastcall FUN_004b8c80(TLOBaseTy *param_1)
       param_1->field_04BC = 4;
       /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
       TLOBaseTy::LoadImages(param_1,unaff_EDI);
-      (*param_1->vtable->vfunc_90)(3,0x362);
+      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+      (*(code *)param_1->vtable->field_0090)(3,0x362);
+/* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
 cf_common_exit_004B9130:
-      (*param_1->vtable->vfunc_D8)();
+      (**(code **)&param_1->vtable->field_0xd8)();
       return 0;
     }
     puVar1 = &param_1->field_01D5;
@@ -160,10 +167,13 @@ cf_common_exit_004B9130:
       }
       thunk_FUN_004cc900((AnonShape_004CC900_31EE9CAA *)param_1);
       STT3DSprC::StopShow((STT3DSprC *)puVar1,5);
-      iVar3 = (*param_1->vtable->vfunc_08)();
+      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+      iVar3 = (**(code **)&param_1->vtable->field_0x8)();
       if (iVar3 != 0) {
-        (*param_1->vtable->SetActivity)(param_1,0);
-        (*param_1->vtable->vfunc_D8)();
+        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+        (**(code **)&param_1->vtable->field_0xe8)(0);
+        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+        (**(code **)&param_1->vtable->field_0xd8)();
         return 0;
       }
       goto cf_common_exit_004B9130;
@@ -210,19 +220,21 @@ cf_common_exit_004B9130:
     uVar4 = GetPlayerRaceId(*(char *)&param_1->field_0024);
     uVar4 = uVar4 & 0xff;
     if (uVar4 == 1) {
-      pTVar8 = param_1->vtable;
+      pAVar8 = param_1->vtable;
       uVar10 = 0x68;
     }
     else {
       if (uVar4 == 2) {
-        (*param_1->vtable->vfunc_90)(6,0x69);
+        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+        (*(code *)param_1->vtable->field_0090)(6,0x69);
         goto cf_common_exit_004B8F5A;
       }
       if (uVar4 != 3) goto cf_common_exit_004B8F5A;
-      pTVar8 = param_1->vtable;
+      pAVar8 = param_1->vtable;
       uVar10 = 0x6a;
     }
-    (*pTVar8->vfunc_90)(6,uVar10);
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+    (*(code *)pAVar8->field_0090)(6,uVar10);
 cf_common_exit_004B8F5A:
     param_1->field_0241 = 0;
     param_1->field_05D7 = 0;
@@ -234,7 +246,8 @@ cf_common_exit_004B8F5A:
     local_20 = 0;
     local_1c = 10;
     sub_006E60A0(param_1,local_2c);
-    (*param_1->vtable->vfunc_D8)();
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+    (**(code **)&param_1->vtable->field_0xd8)();
     return 0;
   }
   if (((param_1->field_0255 == 0) || (param_1->field_0245 != CASE_0)) || (param_1->field_0249 != 2))
@@ -247,7 +260,8 @@ cf_common_exit_004B8F5A:
               (iVar3 = FUN_006e62d0(PTR_00802a38,param_1->field_040C,(int *)&local_c), iVar3 == 0)))
              ))) {
         thunk_FUN_0060d340(local_c);
-        (*param_1->vtable->vfunc_90)(3,0x3d9);
+        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+        (*(code *)param_1->vtable->field_0090)(3,0x3d9);
       }
       if (*(int *)(&DAT_00791a10 + param_1->field_0235 * 4) != 0) {
         local_8 = thunk_FUN_004cc130((int)param_1);
@@ -257,8 +271,8 @@ cf_common_exit_004B8F5A:
     if (param_1->field_03DC != 0) goto cf_common_join_004B92EE;
   }
   else {
-    if ((uint)PTR_00802a38->field_00E4 <
-        (uint)(*(int *)(&DAT_00792040 + param_1->field_0235 * 4) + param_1->field_0285))
+    if (PTR_00802a38->field_00E4 <
+        *(int *)(&DAT_00792040 + param_1->field_0235 * 4) + param_1->field_0285)
     goto cf_common_join_004B92EE;
     param_1->field_0285 = PTR_00802a38->field_00E4;
     iVar3 = (int)param_1->field_0259 / 0xf;
@@ -302,7 +316,7 @@ cf_common_join_004B92EE:
      TVar6 != param_1->field_0245)) {
     TLOBaseTy::SetState(param_1,TVar6,1);
   }
-  if ((param_1->field_05DF != 0) && (param_1->field_04CC + 2 <= (uint)PTR_00802a38->field_00E4)) {
+  if ((param_1->field_05DF != 0) && (param_1->field_04CC + 2 <= PTR_00802a38->field_00E4)) {
     param_1->field_04CC = PTR_00802a38->field_00E4;
     iVar3 = param_1->field_04C8 + -1;
     param_1->field_04C8 = iVar3;
@@ -317,7 +331,8 @@ cf_common_join_004B92EE:
     }
     thunk_FUN_004ace30(&param_1->field_01D5,uVar4,iVar5);
   }
-  (*param_1->vtable->vfunc_D8)();
+  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+  (**(code **)&param_1->vtable->field_0xd8)();
   return 0;
 }
 

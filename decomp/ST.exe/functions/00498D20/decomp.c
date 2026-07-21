@@ -7,7 +7,7 @@
 void __thiscall FUN_00498d20(void *this,Global_sub_00498D20_param_1Enum orderType,void *data)
 
 {
-  uint *puVar1;
+  DArrayTy *pDVar1;
   int iVar2;
   int *piVar3;
   undefined4 *puVar4;
@@ -35,9 +35,9 @@ void __thiscall FUN_00498d20(void *this,Global_sub_00498D20_param_1Enum orderTyp
     if (*(int *)((int)this + 0xe7) == 0) {
       data = *(void **)((int)this + 0xef);
       uVar5 = *(uint *)((int)data + 0xc);
-      puVar1 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,uVar5,4,1);
+      pDVar1 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,uVar5,4,1);
       uVar6 = 0;
-      *(uint **)((int)this + 0xef) = puVar1;
+      *(DArrayTy **)((int)this + 0xef) = pDVar1;
       if (0 < (int)uVar5) {
         do {
           DArrayGetElement(data,uVar6,&local_8);
@@ -60,9 +60,9 @@ void __thiscall FUN_00498d20(void *this,Global_sub_00498D20_param_1Enum orderTyp
     if (*(int *)((int)this + 0x15c) == 0) {
       data = *(void **)((int)this + 0x160);
       uVar5 = *(uint *)((int)data + 0xc);
-      puVar1 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,uVar5,2,1);
+      pDVar1 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,uVar5,2,1);
       uVar6 = 0;
-      *(uint **)((int)this + 0x160) = puVar1;
+      *(DArrayTy **)((int)this + 0x160) = pDVar1;
       if (0 < (int)uVar5) {
         do {
           DArrayGetElement(data,uVar6,(byte *)((int)&orderType + 2));
@@ -86,9 +86,9 @@ void __thiscall FUN_00498d20(void *this,Global_sub_00498D20_param_1Enum orderTyp
     if (*(int *)((int)this + 0x164) == 0) {
       data = *(void **)((int)this + 0x168);
       uVar5 = *(uint *)((int)data + 0xc);
-      puVar1 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,uVar5,2,1);
+      pDVar1 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,uVar5,2,1);
       uVar6 = 0;
-      *(uint **)((int)this + 0x168) = puVar1;
+      *(DArrayTy **)((int)this + 0x168) = pDVar1;
       if (0 < (int)uVar5) {
         do {
           DArrayGetElement(data,uVar6,(byte *)((int)&orderType + 2));
@@ -108,8 +108,8 @@ void __thiscall FUN_00498d20(void *this,Global_sub_00498D20_param_1Enum orderTyp
     *(undefined4 *)((int)this + 0x107) = *(undefined4 *)((int)data + 4);
     iVar2 = *piVar3;
     data = *(void **)(iVar2 + 0xc);
-    puVar1 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,1,6,1);
-    *piVar3 = (int)puVar1;
+    pDVar1 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,1,6,1);
+    *piVar3 = (int)pDVar1;
     uVar5 = 0;
     if (0 < (int)data) {
       do {
@@ -144,9 +144,9 @@ void __thiscall FUN_00498d20(void *this,Global_sub_00498D20_param_1Enum orderTyp
     if (*(int *)((int)this + 0x10b) == 0) {
       data = *(void **)((int)this + 0x10f);
       uVar5 = *(uint *)((int)data + 0xc);
-      puVar1 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,uVar5,2,1);
+      pDVar1 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,uVar5,2,1);
       uVar6 = 0;
-      *(uint **)((int)this + 0x10f) = puVar1;
+      *(DArrayTy **)((int)this + 0x10f) = pDVar1;
       if (0 < (int)uVar5) {
         do {
           DArrayGetElement(data,uVar6,(byte *)((int)&orderType + 2));
@@ -159,9 +159,9 @@ void __thiscall FUN_00498d20(void *this,Global_sub_00498D20_param_1Enum orderTyp
     if (*(int *)((int)this + 0x123) == 0) {
       data = *(void **)((int)this + 0x127);
       uVar5 = *(uint *)((int)data + 0xc);
-      puVar1 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,uVar5,2,1);
+      pDVar1 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,uVar5,2,1);
       uVar6 = 0;
-      *(uint **)((int)this + 0x127) = puVar1;
+      *(DArrayTy **)((int)this + 0x127) = pDVar1;
       if (0 < (int)uVar5) {
         do {
           DArrayGetElement(data,uVar6,(byte *)((int)&orderType + 2));
@@ -271,8 +271,8 @@ LAB_00499129:
     *(undefined4 *)((int)this + 0x61) = 1;
     *(undefined4 *)((int)this + 0x71) = 1;
     if (*(int *)((int)this + 0x1ca) == 0) {
-      puVar1 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,1,2,1);
-      *(uint **)((int)this + 0x1ca) = puVar1;
+      pDVar1 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,1,2,1);
+      *(DArrayTy **)((int)this + 0x1ca) = pDVar1;
     }
     Library::DKW::TBL::FUN_006ae1c0(*(uint **)((int)this + 0x1ca),data);
     return;
@@ -280,8 +280,8 @@ LAB_00499129:
     *(undefined4 *)((int)this + 0x61) = 1;
     *(undefined4 *)((int)this + 0x75) = 1;
     if (*(int *)((int)this + 0x1ce) == 0) {
-      puVar1 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,1,4,1);
-      *(uint **)((int)this + 0x1ce) = puVar1;
+      pDVar1 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,1,4,1);
+      *(DArrayTy **)((int)this + 0x1ce) = pDVar1;
     }
     Library::DKW::TBL::FUN_006ae1c0(*(uint **)((int)this + 0x1ce),data);
     return;
@@ -289,8 +289,8 @@ LAB_00499129:
     *(undefined4 *)((int)this + 0x61) = 1;
     *(undefined4 *)((int)this + 0x79) = 1;
     if (*(int *)((int)this + 0x1d2) == 0) {
-      puVar1 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,1,2,1);
-      *(uint **)((int)this + 0x1d2) = puVar1;
+      pDVar1 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,1,2,1);
+      *(DArrayTy **)((int)this + 0x1d2) = pDVar1;
     }
     Library::DKW::TBL::FUN_006ae1c0(*(uint **)((int)this + 0x1d2),data);
     return;
@@ -298,8 +298,8 @@ LAB_00499129:
     *(undefined4 *)((int)this + 0x61) = 1;
     *(undefined4 *)((int)this + 0x7d) = 1;
     if (*(int *)((int)this + 0x1d6) == 0) {
-      puVar1 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,1,2,1);
-      *(uint **)((int)this + 0x1d6) = puVar1;
+      pDVar1 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,1,2,1);
+      *(DArrayTy **)((int)this + 0x1d6) = pDVar1;
     }
     Library::DKW::TBL::FUN_006ae1c0(*(uint **)((int)this + 0x1d6),data);
     return;
@@ -307,8 +307,8 @@ LAB_00499129:
     *(undefined4 *)((int)this + 0x61) = 1;
     *(undefined4 *)((int)this + 0x81) = 1;
     if (*(int *)((int)this + 0x1da) == 0) {
-      puVar1 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,1,2,1);
-      *(uint **)((int)this + 0x1da) = puVar1;
+      pDVar1 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,1,2,1);
+      *(DArrayTy **)((int)this + 0x1da) = pDVar1;
     }
     Library::DKW::TBL::FUN_006ae1c0(*(uint **)((int)this + 0x1da),data);
   }

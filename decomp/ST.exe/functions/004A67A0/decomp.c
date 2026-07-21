@@ -15,12 +15,11 @@ void __thiscall STGroupBoatC::RestoreGrpBData(STGroupBoatC *this,undefined4 *par
   undefined4 uVar5;
   DArrayTy *pDVar6;
   uint *puVar7;
-  AnonPointee_STGroupBoatC_021E *pAVar8;
-  AnonPointee_STGroupBoatC_022E *pAVar9;
-  int iVar10;
+  ushort *puVar8;
+  int iVar9;
+  uint uVar10;
   uint uVar11;
-  uint uVar12;
-  undefined4 *puVar13;
+  undefined4 *puVar12;
   InternalExceptionFrame local_50;
   undefined4 *local_c;
   STGroupBoatC *local_8;
@@ -33,9 +32,9 @@ void __thiscall STGroupBoatC::RestoreGrpBData(STGroupBoatC *this,undefined4 *par
   puVar2 = local_c;
   if (iVar3 != 0) {
     g_currentExceptionFrame = local_50.previous;
-    iVar10 = ReportDebugMessage("E:\\__titans\\wlad\\to_grpb.cpp",0x158b,0,iVar3,"%s"
-                                ,"STGroupBoatC::RestoreGrpBData");
-    if (iVar10 == 0) {
+    iVar9 = ReportDebugMessage("E:\\__titans\\wlad\\to_grpb.cpp",0x158b,0,iVar3,"%s",
+                               "STGroupBoatC::RestoreGrpBData");
+    if (iVar9 == 0) {
       RaiseInternalException(iVar3,0,"E:\\__titans\\wlad\\to_grpb.cpp",0x158c);
       return;
     }
@@ -51,18 +50,18 @@ void __thiscall STGroupBoatC::RestoreGrpBData(STGroupBoatC *this,undefined4 *par
   local_8->field_005D = local_c[9];
   local_8->field_0061 = local_c[10];
   local_8->field_0065 = local_c[0xb];
-  puVar13 = local_c + 0xc;
+  puVar12 = local_c + 0xc;
   puVar4 = (undefined4 *)&local_8->field_0x69;
   for (iVar3 = 8; iVar3 != 0; iVar3 = iVar3 + -1) {
-    *puVar4 = *puVar13;
-    puVar13 = puVar13 + 1;
+    *puVar4 = *puVar12;
+    puVar12 = puVar12 + 1;
     puVar4 = puVar4 + 1;
   }
-  puVar13 = local_c + 0x14;
+  puVar12 = local_c + 0x14;
   puVar4 = &local_8->field_0089;
   for (iVar3 = 0x15; iVar3 != 0; iVar3 = iVar3 + -1) {
-    *puVar4 = *puVar13;
-    puVar13 = puVar13 + 1;
+    *puVar4 = *puVar12;
+    puVar12 = puVar12 + 1;
     puVar4 = puVar4 + 1;
   }
   *(undefined4 *)&local_8->field_0xdd = local_c[0x29];
@@ -117,15 +116,15 @@ void __thiscall STGroupBoatC::RestoreGrpBData(STGroupBoatC *this,undefined4 *par
   local_8->field_0133 = *(undefined2 *)((int)local_c + 0x106);
   /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   local_8->field_0135 = *(undefined2 *)(local_c + 0x42);
-  puVar13 = (undefined4 *)((int)local_c + 0x10a);
+  puVar12 = (undefined4 *)((int)local_c + 0x10a);
   puVar4 = (undefined4 *)&local_8->field_0137;
   for (iVar3 = 7; iVar3 != 0; iVar3 = iVar3 + -1) {
-    *puVar4 = *puVar13;
-    puVar13 = puVar13 + 1;
+    *puVar4 = *puVar12;
+    puVar12 = puVar12 + 1;
     puVar4 = puVar4 + 1;
   }
-  *(undefined2 *)puVar4 = *(undefined2 *)puVar13;
-  *(undefined1 *)((int)puVar4 + 2) = *(undefined1 *)((int)puVar13 + 2);
+  *(undefined2 *)puVar4 = *(undefined2 *)puVar12;
+  *(undefined1 *)((int)puVar4 + 2) = *(undefined1 *)((int)puVar12 + 2);
   *(undefined4 *)&local_8->field_0x156 = *(undefined4 *)((int)local_c + 0x129);
   /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   local_8->field_015A = *(undefined2 *)((int)local_c + 0x12d);
@@ -193,11 +192,11 @@ void __thiscall STGroupBoatC::RestoreGrpBData(STGroupBoatC *this,undefined4 *par
   /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   local_8->field_01C3 = *(undefined2 *)((int)local_c + 0x19e);
   local_8->field_01C5 = local_c[0x68];
-  puVar13 = (undefined4 *)((int)local_c + 0x1d5);
+  puVar12 = (undefined4 *)((int)local_c + 0x1d5);
   puVar4 = (undefined4 *)&local_8->field_0x1e2;
   for (iVar3 = 10; iVar3 != 0; iVar3 = iVar3 + -1) {
-    *puVar4 = *puVar13;
-    puVar13 = puVar13 + 1;
+    *puVar4 = *puVar12;
+    puVar12 = puVar12 + 1;
     puVar4 = puVar4 + 1;
   }
   /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
@@ -249,15 +248,15 @@ void __thiscall STGroupBoatC::RestoreGrpBData(STGroupBoatC *this,undefined4 *par
   local_8->field_0272 = *(short *)((int)local_c + 0x27d);
   /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   local_8->field_0274 = *(short *)((int)local_c + 0x27f);
-  puVar13 = (undefined4 *)((int)local_c + 0x281);
+  puVar12 = (undefined4 *)((int)local_c + 0x281);
   puVar4 = (undefined4 *)&local_8->field_0276;
   for (iVar3 = 7; iVar3 != 0; iVar3 = iVar3 + -1) {
-    *puVar4 = *puVar13;
-    puVar13 = puVar13 + 1;
+    *puVar4 = *puVar12;
+    puVar12 = puVar12 + 1;
     puVar4 = puVar4 + 1;
   }
-  *(undefined2 *)puVar4 = *(undefined2 *)puVar13;
-  *(undefined1 *)((int)puVar4 + 2) = *(undefined1 *)((int)puVar13 + 2);
+  *(undefined2 *)puVar4 = *(undefined2 *)puVar12;
+  *(undefined1 *)((int)puVar4 + 2) = *(undefined1 *)((int)puVar12 + 2);
   *(undefined4 *)&local_8->field_0x295 = local_c[0xa8];
   /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   local_8->field_0299 = *(undefined2 *)(local_c + 0xa9);
@@ -314,16 +313,16 @@ void __thiscall STGroupBoatC::RestoreGrpBData(STGroupBoatC *this,undefined4 *par
   else {
     puVar4 = (undefined4 *)Library::DKW::LIB::FUN_006aac70(local_c[8]);
     local_8->field_0059 = puVar4;
-    uVar12 = puVar2[8];
-    puVar13 = (undefined4 *)(puVar2[7] + (int)puVar2);
-    for (uVar11 = uVar12 >> 2; uVar11 != 0; uVar11 = uVar11 - 1) {
-      *puVar4 = *puVar13;
-      puVar13 = puVar13 + 1;
+    uVar11 = puVar2[8];
+    puVar12 = (undefined4 *)(puVar2[7] + (int)puVar2);
+    for (uVar10 = uVar11 >> 2; uVar10 != 0; uVar10 = uVar10 - 1) {
+      *puVar4 = *puVar12;
+      puVar12 = puVar12 + 1;
       puVar4 = puVar4 + 1;
     }
-    for (uVar12 = uVar12 & 3; uVar12 != 0; uVar12 = uVar12 - 1) {
-      *(undefined1 *)puVar4 = *(undefined1 *)puVar13;
-      puVar13 = (undefined4 *)((int)puVar13 + 1);
+    for (uVar11 = uVar11 & 3; uVar11 != 0; uVar11 = uVar11 - 1) {
+      *(undefined1 *)puVar4 = *(undefined1 *)puVar12;
+      puVar12 = (undefined4 *)((int)puVar12 + 1);
       puVar4 = (undefined4 *)((int)puVar4 + 1);
     }
   }
@@ -357,12 +356,11 @@ void __thiscall STGroupBoatC::RestoreGrpBData(STGroupBoatC *this,undefined4 *par
     local_8->field_0127 = uVar5;
   }
   if (*(int *)((int)puVar2 + 0x133) == -1) {
-    local_8->field_0160 = (uint *)0x0;
+    local_8->field_0160 = 0;
   }
   else {
-    puVar7 = (uint *)FUN_006b0060((uint *)0x0,(uint *)(*(int *)((int)puVar2 + 0x133) + (int)puVar2))
-    ;
-    local_8->field_0160 = puVar7;
+    uVar5 = FUN_006b0060((uint *)0x0,(uint *)(*(int *)((int)puVar2 + 0x133) + (int)puVar2));
+    local_8->field_0160 = uVar5;
   }
   if (*(int *)((int)puVar2 + 0x1a5) == -1) {
     local_8->field_01CA = 0;
@@ -407,66 +405,71 @@ void __thiscall STGroupBoatC::RestoreGrpBData(STGroupBoatC *this,undefined4 *par
     local_8->field_01DE = uVar5;
   }
   if (*(int *)((int)puVar2 + 0x1fd) == -1) {
-    local_8->field_020E = 0;
+    local_8->field_020E = (uint *)0x0;
   }
   else {
-    uVar5 = FUN_006b0060((uint *)0x0,(uint *)(*(int *)((int)puVar2 + 0x1fd) + (int)puVar2));
-    local_8->field_020E = uVar5;
+    puVar7 = (uint *)FUN_006b0060((uint *)0x0,(uint *)(*(int *)((int)puVar2 + 0x1fd) + (int)puVar2))
+    ;
+    local_8->field_020E = puVar7;
   }
   if ((*(int *)((int)puVar2 + 0x211) == -1) ||
-     (uVar12 = *(uint *)((int)puVar2 + 0x215), (int)uVar12 < 1)) {
-    local_8->field_021E = (AnonPointee_STGroupBoatC_021E *)0x0;
+     (uVar11 = *(uint *)((int)puVar2 + 0x215), (int)uVar11 < 1)) {
+    local_8->field_021E = (ushort *)0x0;
   }
   else {
-    pAVar8 = (AnonPointee_STGroupBoatC_021E *)Library::DKW::LIB::FUN_006aac70(uVar12);
-    local_8->field_021E = pAVar8;
-    puVar13 = (undefined4 *)((int)puVar2 + *(int *)((int)puVar2 + 0x211));
-    for (uVar11 = uVar12 >> 2; uVar11 != 0; uVar11 = uVar11 - 1) {
-      pAVar8->field_0000 = *puVar13;
-      puVar13 = puVar13 + 1;
-      pAVar8 = (AnonPointee_STGroupBoatC_021E *)&pAVar8->field_0004;
+    puVar8 = (ushort *)Library::DKW::LIB::FUN_006aac70(uVar11);
+    local_8->field_021E = puVar8;
+    puVar12 = (undefined4 *)((int)puVar2 + *(int *)((int)puVar2 + 0x211));
+    for (uVar10 = uVar11 >> 2; uVar10 != 0; uVar10 = uVar10 - 1) {
+      *(undefined4 *)puVar8 = *puVar12;
+      puVar12 = puVar12 + 1;
+      puVar8 = puVar8 + 2;
     }
-    for (uVar12 = uVar12 & 3; uVar12 != 0; uVar12 = uVar12 - 1) {
-      *(undefined1 *)&pAVar8->field_0000 = *(undefined1 *)puVar13;
-      puVar13 = (undefined4 *)((int)puVar13 + 1);
-      pAVar8 = (AnonPointee_STGroupBoatC_021E *)((int)&pAVar8->field_0000 + 1);
+    for (uVar11 = uVar11 & 3; uVar11 != 0; uVar11 = uVar11 - 1) {
+      *(undefined1 *)puVar8 = *(undefined1 *)puVar12;
+      puVar12 = (undefined4 *)((int)puVar12 + 1);
+      puVar8 = (ushort *)((int)puVar8 + 1);
     }
   }
   if (*(int *)((int)puVar2 + 0x21d) == -1) {
-    local_8->field_0226 = 0;
+    local_8->field_0226 = (uint *)0x0;
   }
   else {
-    uVar5 = FUN_006b0060((uint *)0x0,(uint *)(*(int *)((int)puVar2 + 0x21d) + (int)puVar2));
-    local_8->field_0226 = uVar5;
+    puVar7 = (uint *)FUN_006b0060((uint *)0x0,(uint *)(*(int *)((int)puVar2 + 0x21d) + (int)puVar2))
+    ;
+    local_8->field_0226 = puVar7;
   }
   if (*(int *)((int)puVar2 + 0x225) == -1) {
-    local_8->field_022A = 0;
+    local_8->field_022A = (uint *)0x0;
   }
   else {
-    uVar5 = FUN_006b0060((uint *)0x0,(uint *)(*(int *)((int)puVar2 + 0x225) + (int)puVar2));
-    local_8->field_022A = uVar5;
+    puVar7 = (uint *)FUN_006b0060((uint *)0x0,(uint *)(*(int *)((int)puVar2 + 0x225) + (int)puVar2))
+    ;
+    local_8->field_022A = puVar7;
   }
   if (*(int *)((int)puVar2 + 0x22d) == -1) {
-    local_8->field_022E = (AnonPointee_STGroupBoatC_022E *)0x0;
+    local_8->field_022E = (uint *)0x0;
   }
   else {
-    pAVar9 = (AnonPointee_STGroupBoatC_022E *)
-             FUN_006b0060((uint *)0x0,(uint *)(*(int *)((int)puVar2 + 0x22d) + (int)puVar2));
-    local_8->field_022E = pAVar9;
+    puVar7 = (uint *)FUN_006b0060((uint *)0x0,(uint *)(*(int *)((int)puVar2 + 0x22d) + (int)puVar2))
+    ;
+    local_8->field_022E = puVar7;
   }
   if (*(int *)((int)puVar2 + 0x251) == -1) {
-    local_8->field_024E = 0;
+    local_8->field_024E = (uint *)0x0;
   }
   else {
-    uVar5 = FUN_006b0060((uint *)0x0,(uint *)(*(int *)((int)puVar2 + 0x251) + (int)puVar2));
-    local_8->field_024E = uVar5;
+    puVar7 = (uint *)FUN_006b0060((uint *)0x0,(uint *)(*(int *)((int)puVar2 + 0x251) + (int)puVar2))
+    ;
+    local_8->field_024E = puVar7;
   }
   if (*(int *)((int)puVar2 + 0x26d) == -1) {
-    local_8->field_0266 = 0;
+    local_8->field_0266 = (uint *)0x0;
   }
   else {
-    uVar5 = FUN_006b0060((uint *)0x0,(uint *)(*(int *)((int)puVar2 + 0x26d) + (int)puVar2));
-    local_8->field_0266 = uVar5;
+    puVar7 = (uint *)FUN_006b0060((uint *)0x0,(uint *)(*(int *)((int)puVar2 + 0x26d) + (int)puVar2))
+    ;
+    local_8->field_0266 = puVar7;
   }
   if (*(int *)((int)puVar2 + 0x2aa) == -1) {
     *(undefined4 *)&local_8->field_0x29f = 0;

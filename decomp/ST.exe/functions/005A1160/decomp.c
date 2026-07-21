@@ -9,7 +9,7 @@ void __thiscall FSGSTy::CheckUpdate(FSGSTy *this)
 
 {
   char cVar1;
-  AnonPointee_FSGSTy_1AC0 *pAVar2;
+  ushort *puVar2;
   MMsgTy *this_00;
   code *pcVar3;
   FSGSTy *pFVar4;
@@ -74,13 +74,13 @@ void __thiscall FSGSTy::CheckUpdate(FSGSTy *this)
     pcVar6 = pcVar6 + 1;
     pcVar11 = pcVar11 + 1;
   }
-  pAVar2 = local_c->field_1AC0;
-  uVar9 = pAVar2->field_0014;
+  puVar2 = local_c->field_1AC0;
+  uVar9 = *(uint *)(puVar2 + 10);
   if (uVar9 == 0) {
-    uVar9 = ((uint)(ushort)pAVar2->field_000E * pAVar2->field_0004 + 0x1f >> 3 & 0x1ffffffc) *
-            pAVar2->field_0008;
+    uVar9 = ((uint)puVar2[7] * *(int *)(puVar2 + 2) + 0x1f >> 3 & 0x1ffffffc) * *(int *)(puVar2 + 4)
+    ;
   }
-  puVar7 = (undefined4 *)FUN_006b4fa0((int)pAVar2);
+  puVar7 = (undefined4 *)FUN_006b4fa0((int)puVar2);
   for (uVar10 = uVar9 >> 2; uVar10 != 0; uVar10 = uVar10 - 1) {
     *puVar7 = 0xffffffff;
     puVar7 = puVar7 + 1;
@@ -97,17 +97,10 @@ void __thiscall FSGSTy::CheckUpdate(FSGSTy *this)
   iVar5 = -2;
   puVar8 = (uint *)LoadResourceString(0x25bd,HINSTANCE_00807618);
   ccFntTy::WrTxt(pFVar4->field_1A73,puVar8,iVar5,iVar12,uVar9,iVar13,iVar14);
-  FUN_006b35d0(DAT_008075a8,pFVar4->field_1ABC);
-  puVar7 = local_2c;
-  for (iVar5 = 8; iVar5 != 0; iVar5 = iVar5 + -1) {
-    *puVar7 = 0;
-    puVar7 = puVar7 + 1;
-  }
-  puVar7 = local_4c;
-  for (iVar5 = 8; iVar5 != 0; iVar5 = iVar5 + -1) {
-    *puVar7 = 0;
-    puVar7 = puVar7 + 1;
-  }
+  FUN_006b35d0((int *)PTR_008075a8,pFVar4->field_1ABC);
+  memset(local_2c, 0, 0x20); /* compiler bulk-zero initialization */
+  iVar5 = 0;
+  memset(local_4c, 0, 0x20); /* compiler bulk-zero initialization */
   local_4c[2] = pFVar4->field_0008;
   local_2c[3] = 2;
   local_2c[4] = 0x6957;

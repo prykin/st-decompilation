@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* [STSourceProvenanceApplier begin]
    Recovered source file: E:\__titans\Maps\CntLib.cpp
@@ -150,11 +152,7 @@ LAB_0069177d:
                   uVar9 = local_8 + 1;
                 }
                 pcVar5 = thunk_FUN_006a2d00(1,local_c,uVar9,local_18 + 1,(uint)local_10);
-                puVar4 = local_8c;
-                for (iVar15 = 0x14; iVar15 != 0; iVar15 = iVar15 + -1) {
-                  *puVar4 = 0;
-                  puVar4 = puVar4 + 1;
-                }
+                memset(local_8c, 0, 0x50); /* compiler bulk-zero initialization */
                 puVar10 = Library::Ourlib::MFSTMAP::FUN_006f0cd0(param_1,pcVar5,0);
                 if (puVar10 == (ushort *)0x0) {
                   *(short *)(*local_28 + 0x23) = *(short *)(*local_28 + 0x23) + 1;
@@ -254,11 +252,7 @@ LAB_00691a65:
               }
               local_1c = (int *)((int)local_10 + 1);
               pcVar5 = thunk_FUN_006a2d00(0,local_c,uVar9,0,(uint)local_1c);
-              puVar4 = local_8c;
-              for (iVar15 = 0x14; iVar15 != 0; iVar15 = iVar15 + -1) {
-                *puVar4 = 0;
-                puVar4 = puVar4 + 1;
-              }
+              memset(local_8c, 0, 0x50); /* compiler bulk-zero initialization */
               puVar10 = Library::Ourlib::MFSTMAP::FUN_006f0cd0(param_1,pcVar5,0);
               if (puVar10 == (ushort *)0x0) {
                 /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
@@ -344,11 +338,7 @@ LAB_00691a65:
               }
               pcVar5 = thunk_FUN_006a2d00(3,local_c,uVar9,1,(uint)local_10);
               puVar10 = Library::Ourlib::MFSTMAP::FUN_006f0cd0(param_1,pcVar5,0);
-              puVar4 = local_8c;
-              for (iVar15 = 0x14; iVar15 != 0; iVar15 = iVar15 + -1) {
-                *puVar4 = 0;
-                puVar4 = puVar4 + 1;
-              }
+              memset(local_8c, 0, 0x50); /* compiler bulk-zero initialization */
               if (puVar10 == (ushort *)0x0) {
                 /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
                 psVar1 = (short *)(*(int *)((int)local_14 + (local_18 + local_8) * 4 + 0x1b08) +

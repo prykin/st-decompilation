@@ -1,4 +1,4 @@
-FUN_004803d0:
+STBoatC::FUN_004803d0:
 004803D0  55                        PUSH EBP
 004803D1  8B EC                     MOV EBP,ESP
 004803D3  8B 55 08                  MOV EDX,dword ptr [EBP + 0x8]

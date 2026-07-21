@@ -35,7 +35,7 @@ void __thiscall MTestTy::NoneMTest(MTestTy *this)
       if (iVar3 == 0) {
         pMVar2->field_00B3 = 0;
         if (-1 < g_holo_00811778->field_0003) {
-          FUN_006b3af0(DAT_008075a8,g_holo_00811778->field_0003);
+          FUN_006b3af0((int *)PTR_008075a8,g_holo_00811778->field_0003);
         }
       }
     }

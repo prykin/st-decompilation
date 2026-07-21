@@ -98,7 +98,8 @@ void __thiscall STSprGameObjC::LoadLifeFrame(STSprGameObjC *this,int *param_1)
   Library::MSVCRT::__itoa((uint)bVar3,pcVar9,_Radix);
   iVar6 = this->field_0020;
   if ((((iVar6 == 0x14) || (iVar6 == 1000)) || (iVar6 == 0x172)) || (iVar6 == 0x1a4)) {
-    SVar4 = (*this->vtable->slot_2C)(this);
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+    SVar4 = (*(code *)this->vtable->field_002C)();
   }
   else {
     if (iVar6 != 0x3e9) {
@@ -562,7 +563,8 @@ void __thiscall STSprGameObjC::LoadLifeFrame(STSprGameObjC *this,int *param_1)
   FUN_006ea5e0((void *)this->field_0211,this->field_01ED,1,0);
   thunk_FUN_004ac610(this_00,'\x01');
   STT3DSprC::StartShow((STT3DSprC *)this_00,1,PTR_00802a38->field_00E4);
-  iVar6 = (*this->vtable->vfunc_0C)();
+  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+  iVar6 = (*(code *)this->vtable->field_000C)();
   if (iVar6 != 3) {
     return;
   }

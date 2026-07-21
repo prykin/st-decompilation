@@ -74,11 +74,7 @@ void __thiscall MReportTy::SetCtrl(MReportTy *this,int param_1)
     PTR_0081176c->field_0038 = pcVar6;
     if (param_1 != 0) {
       local_2c[2] = pMVar2->field_0008;
-      puVar8 = local_2c;
-      for (iVar3 = 8; iVar3 != 0; iVar3 = iVar3 + -1) {
-        *puVar8 = 0;
-        puVar8 = puVar8 + 1;
-      }
+      memset(local_2c, 0, 0x20); /* compiler bulk-zero initialization */
       local_2c[3] = 2;
       local_2c[4] = 0x70ff;
       AppClassTy::PostNextMessage((AppClassTy *)&DAT_00807620,local_2c);

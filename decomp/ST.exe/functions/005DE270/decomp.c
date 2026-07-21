@@ -12,11 +12,12 @@ void __thiscall StartSystemTy::CreateChatView(StartSystemTy *this)
   undefined4 uVar2;
   undefined4 uVar3;
   code *pcVar4;
-  StartSystemTy *this_00;
-  int iVar5;
+  StartSystemTy *pSVar5;
   int iVar6;
-  undefined4 *puVar7;
-  undefined4 *puVar8;
+  int iVar7;
+  int *piVar8;
+  undefined4 *puVar9;
+  int *piVar10;
   undefined4 local_8c4 [5];
   int local_8b0;
   undefined4 local_8ac;
@@ -29,7 +30,7 @@ void __thiscall StartSystemTy::CreateChatView(StartSystemTy *this)
   undefined4 local_814;
   undefined4 local_810;
   undefined4 local_80c;
-  undefined4 local_808 [4];
+  int local_808 [4];
   undefined4 local_7f8;
   undefined4 local_7f4;
   undefined4 local_7a8;
@@ -38,24 +39,24 @@ void __thiscall StartSystemTy::CreateChatView(StartSystemTy *this)
   undefined4 local_6f8;
   undefined4 local_6f4;
   undefined4 local_68c;
-  undefined4 local_688 [4];
+  int local_688 [4];
   undefined4 local_678;
   undefined4 local_674;
   undefined4 local_620;
   InternalExceptionFrame local_4c;
   StartSystemTy *local_8;
 
-  puVar7 = local_8c4;
+  puVar9 = local_8c4;
   local_8 = this;
-  for (iVar6 = 0x21e; iVar6 != 0; iVar6 = iVar6 + -1) {
-    *puVar7 = 0;
-    puVar7 = puVar7 + 1;
+  for (iVar7 = 0x21e; iVar7 != 0; iVar7 = iVar7 + -1) {
+    *puVar9 = 0;
+    puVar9 = puVar9 + 1;
   }
   local_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_4c;
-  iVar6 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
-  this_00 = local_8;
-  if (iVar6 == 0) {
+  iVar7 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
+  pSVar5 = local_8;
+  if (iVar7 == 0) {
     local_8c4[0] = 0;
     local_8c4[1] = 2;
     pcVar1 = local_8->field_0034;
@@ -63,15 +64,15 @@ void __thiscall StartSystemTy::CreateChatView(StartSystemTy *this)
     local_8a0 = 499;
     local_8c4[2] = 1;
     local_8c4[3] = 0;
-    local_8c4[4] = local_8->field_067E->field_0004;
+    local_8c4[4] = *(undefined4 *)(local_8->field_067E + 2);
     if (pcVar1->field_00A0 != 0) {
       FUN_00710790((uint *)pcVar1);
     }
     local_8b0 = *(int *)&pcVar1->field_0x8a;
     local_8a8 = (undefined4)(0x49 / (longlong)local_8b0);
-    local_808[2] = this_00->field_0609;
-    local_808[3] = this_00->field_060D;
-    local_7f8 = this_00->field_0611;
+    local_808[2] = pSVar5->field_0609;
+    local_808[3] = pSVar5->field_060D;
+    local_7f8 = pSVar5->field_0611;
     local_888 = 0;
     local_810 = 0;
     local_80c = 2;
@@ -82,49 +83,49 @@ void __thiscall StartSystemTy::CreateChatView(StartSystemTy *this)
     local_8ac = 1;
     local_884 = 0x633f;
     local_814 = 4;
-    local_7f4 = this_00->field_0615;
-    uVar2 = this_00->field_0580;
+    local_7f4 = pSVar5->field_0615;
+    uVar2 = pSVar5->field_0580;
     local_6f8 = 500;
     local_6f4 = 0x32;
     local_7a0 = 0x6341;
-    local_88c = this_00->field_0014;
+    local_88c = pSVar5->field_0014;
     local_7a8 = local_88c;
-    uVar3 = this_00->field_0578;
-    puVar7 = local_808;
-    puVar8 = local_688;
-    for (iVar6 = 0x5f; iVar6 != 0; iVar6 = iVar6 + -1) {
-      *puVar8 = *puVar7;
-      puVar7 = puVar7 + 1;
-      puVar8 = puVar8 + 1;
+    uVar3 = pSVar5->field_0578;
+    piVar8 = local_808;
+    piVar10 = local_688;
+    for (iVar7 = 0x5f; iVar7 != 0; iVar7 = iVar7 + -1) {
+      *piVar10 = *piVar8;
+      piVar8 = piVar8 + 1;
+      piVar10 = piVar10 + 1;
     }
-    local_688[3] = this_00->field_057C;
-    local_674 = this_00->field_0584;
+    local_688[3] = pSVar5->field_057C;
+    local_674 = pSVar5->field_0584;
     local_620 = 0x6340;
     local_688[2] = uVar3;
     local_678 = uVar2;
-    (*this_00->vtable->CreateObject)
-              ((SystemClassTy *)this_00,8,&this_00->field_0550,(int *)0x0,local_8c4,0);
-    Library::DKW::DDX::FUN_006b3430(DAT_008075a8,this_00->field_0558);
-    if (this_00->field_0560 != 0xffffffff) {
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+    (*(code *)pSVar5->vtable->field_0008)(8,&pSVar5->field_0550,0,local_8c4,0);
+    Library::DKW::DDX::FUN_006b3430((int *)PTR_008075a8,pSVar5->field_0558);
+    if (pSVar5->field_0560 != 0xffffffff) {
       Library::DKW::DDX::FUN_006b34d0
-                ((uint *)this_00->field_05A4,this_00->field_0560,0xfffffffe,this_00->field_0578,
-                 this_00->field_057C);
+                ((uint *)pSVar5->field_05A4,pSVar5->field_0560,0xfffffffe,pSVar5->field_0578,
+                 pSVar5->field_057C);
     }
-    if (this_00->field_05F1 != 0xffffffff) {
+    if (pSVar5->field_05F1 != 0xffffffff) {
       Library::DKW::DDX::FUN_006b34d0
-                ((uint *)this_00->field_0635,this_00->field_05F1,0xfffffffe,this_00->field_0609,
-                 this_00->field_060D);
+                ((uint *)pSVar5->field_0635,pSVar5->field_05F1,0xfffffffe,pSVar5->field_0609,
+                 pSVar5->field_060D);
     }
     g_currentExceptionFrame = local_4c.previous;
     return;
   }
   g_currentExceptionFrame = local_4c.previous;
-  iVar5 = ReportDebugMessage("E:\\__titans\\Start\\startsys.cpp",0x3f9,0,iVar6,"%s",
+  iVar6 = ReportDebugMessage("E:\\__titans\\Start\\startsys.cpp",0x3f9,0,iVar7,"%s",
                              "StartSystemTy::CreateChatView");
-  if (iVar5 != 0) {
+  if (iVar6 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  RaiseInternalException(iVar6,0,"E:\\__titans\\Start\\startsys.cpp",0x3f9);
+  RaiseInternalException(iVar7,0,"E:\\__titans\\Start\\startsys.cpp",0x3f9);
   return;
 }
 

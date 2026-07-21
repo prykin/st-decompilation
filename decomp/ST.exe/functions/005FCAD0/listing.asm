@@ -1,4 +1,4 @@
-FUN_005fcad0:
+STAllPlayersC::FUN_005fcad0:
 005FCAD0  55                        PUSH EBP
 005FCAD1  8B EC                     MOV EBP,ESP
 005FCAD3  83 EC 18                  SUB ESP,0x18

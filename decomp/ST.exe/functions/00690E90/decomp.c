@@ -11,7 +11,7 @@ undefined4 * __cdecl FUN_00690e90(char *source,undefined2 param_2,undefined2 par
 
 {
   int exceptionCode;
-  uint *puVar1;
+  DArrayTy *pDVar1;
   InternalExceptionFrame local_4c;
   AnonShape_00690E90_9F986EB9 *local_8;
 
@@ -28,8 +28,8 @@ undefined4 * __cdecl FUN_00690e90(char *source,undefined2 param_2,undefined2 par
     local_8->field_0019 = param_2;
     *(undefined2 *)&local_8->field_0x5c = param_3;
     if (local_8->field_0085 == 0) {
-      puVar1 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,10,8,10);
-      local_8->field_0085 = puVar1;
+      pDVar1 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,10,8,10);
+      local_8->field_0085 = pDVar1;
     }
     g_currentExceptionFrame = local_4c.previous;
     return (undefined4 *)local_8;

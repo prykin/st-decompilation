@@ -1,6 +1,8 @@
 function_address	semantic_id	status	detail
 006AB060	free_and_null	disabled	apply=0
 006AE110	darray_destroy	disabled	apply=0
-006B0140	load_resource_string	applied	LoadResourceString __stdcall
+006AE290	darray_create	applied	DArrayCreate __stdcall
+006B54F0	sarray_create	applied	SArrayCreate __stdcall
+006B0140	load_resource_string	unchanged	desired name and prototype already present
 006ACC70	darray_get_element	disabled	apply=0
 004406C0	player_race_id	unchanged	desired name and prototype already present

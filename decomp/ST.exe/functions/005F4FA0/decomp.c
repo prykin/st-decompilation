@@ -25,7 +25,7 @@ int __fastcall FUN_005f4fa0(AnonShape_005F4FA0_36330E3A *param_1)
   if ((param_1->field_0169 != 0) && (local_8 = 0, 0 < param_1->field_010D)) {
     do {
       uVar7 = local_8 * param_1->field_0109;
-      if ((uint)PTR_00802a38->field_00E4 < *(uint *)(&param_1->field_0x159 + local_8 * 4)) {
+      if (PTR_00802a38->field_00E4 < *(uint *)(&param_1->field_0x159 + local_8 * 4)) {
         local_c = 1;
       }
       else {

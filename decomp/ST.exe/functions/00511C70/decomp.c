@@ -14,17 +14,12 @@ void __thiscall HelpPanelTy::ShiftControls(HelpPanelTy *this,int param_1)
   int iVar3;
   int iVar4;
   int *piVar5;
-  undefined4 *puVar6;
   InternalExceptionFrame local_4c;
   HelpPanelTy *local_8;
 
   if (param_1 != this->field_005C) {
     this->field_005C = param_1;
-    puVar6 = (undefined4 *)&this->field_0x18;
-    for (iVar4 = 8; iVar4 != 0; iVar4 = iVar4 + -1) {
-      *puVar6 = 0;
-      puVar6 = puVar6 + 1;
-    }
+    memset(&this->field_0x18, 0, 0x20); /* compiler bulk-zero initialization */
     sVar2 = (short)this->field_0174;
     this->field_0028 = 0x24;
     if (param_1 == 0) {
@@ -51,11 +46,7 @@ void __thiscall HelpPanelTy::ShiftControls(HelpPanelTy *this,int param_1)
       } while (iVar4 != 0);
       if (this_00->field_019C != 0) {
         FUN_006e6080(this_00,2,this_00->field_019C,(undefined4 *)&this_00->field_0x18);
-        puVar6 = (undefined4 *)&this_00->field_0x18;
-        for (iVar4 = 8; iVar4 != 0; iVar4 = iVar4 + -1) {
-          *puVar6 = 0;
-          puVar6 = puVar6 + 1;
-        }
+        memset(&this_00->field_0x18, 0, 0x20); /* compiler bulk-zero initialization */
       }
       g_currentExceptionFrame = local_4c.previous;
       return;

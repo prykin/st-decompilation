@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 undefined4 __thiscall FUN_004c4550(void *this,int *param_1)
 
@@ -63,10 +65,8 @@ undefined4 __thiscall FUN_004c4550(void *this,int *param_1)
     if (*(int *)(iVar10 + 0x291 + (int)this) != 0) {
       if ((&DAT_00792ca0)[iVar3 * 3] == 0xb1) {
         puVar5 = local_b0;
-        for (iVar3 = 10; iVar3 != 0; iVar3 = iVar3 + -1) {
-          *puVar5 = 0;
-          puVar5 = puVar5 + 1;
-        }
+        memset(puVar5, 0, 0x28); /* compiler bulk-zero initialization */
+        puVar5 = (undefined4 *)((byte *)puVar5 + 0x28);
         *(undefined4 *)((int)this + iVar10 + 0x29d) = 1;
         *(undefined2 *)puVar5 = 0;
         local_b0[1] = *(undefined4 *)((int)this + 0x24);
@@ -95,11 +95,7 @@ undefined4 __thiscall FUN_004c4550(void *this,int *param_1)
         return 0;
       }
       *(undefined4 *)((int)this + iVar10 + 0x29d) = 1;
-      puVar5 = local_84;
-      for (iVar3 = 0x16; iVar3 != 0; iVar3 = iVar3 + -1) {
-        *puVar5 = 0;
-        puVar5 = puVar5 + 1;
-      }
+      memset(local_84, 0, 0x58); /* compiler bulk-zero initialization */
       /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
       local_18 = *(int *)(&DAT_007932d0 + ((int)param_1 + *(int *)((int)this + 0x235) * 2) * 0x16);
       if (local_18 == 0) {
@@ -208,7 +204,7 @@ undefined4 __thiscall FUN_004c4550(void *this,int *param_1)
                 STPlaySystemC::CreateGameObject(PTR_00802a38,iVar3,0,0,local_84,0);
               }
               *(int *)((int)this + iVar10 + 0x2c5) = *(int *)((int)this + iVar10 + 0x2c5) + -1;
-              *(undefined4 *)((int)this + iVar10 + 0x2c9) = PTR_00802a38->field_00E4;
+              *(uint *)((int)this + iVar10 + 0x2c9) = PTR_00802a38->field_00E4;
               iVar3 = local_18;
               piVar9 = param_1;
             }

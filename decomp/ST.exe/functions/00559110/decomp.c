@@ -66,7 +66,7 @@ FUN_00559110(void *this,int param_1,undefined *param_2,int param_3,uint param_4,
                              (int)param_2,(int *)&param_4,&param_6);
           param_5 = 0;
           param_4 = param_4 - iVar12;
-          param_6 = param_6 + ((&DAT_0079aed0)[param_3] - iVar12);
+          param_6 = param_6 + (g_centeredOffsets5[param_3] - iVar12);
           param_2 = puVar9;
           if (0 < iVar11) {
             do {

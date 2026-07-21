@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* [STPrototypeApplier] Propagated parameter 1.
    Evidence: 006618E0 -> 0068FA00 @ 00661B54 */
@@ -8,7 +10,6 @@ void __thiscall FUN_0068fa00(void *this,uint *param_1)
   AiFltClassTy *this_00;
   int iVar1;
   uint uVar2;
-  uint *puVar3;
   bool bVar4;
   uint local_38 [2];
   char local_30;
@@ -28,11 +29,7 @@ void __thiscall FUN_0068fa00(void *this,uint *param_1)
       }
       this_00 = *(AiFltClassTy **)(iVar1 + 4);
       if ((this_00 != (AiFltClassTy *)0x0) && (this_00->field_007B == -0x8000)) {
-        puVar3 = local_38;
-        for (iVar1 = 0xd; iVar1 != 0; iVar1 = iVar1 + -1) {
-          *puVar3 = 0;
-          puVar3 = puVar3 + 1;
-        }
+        memset(local_38, 0, 0x34); /* compiler bulk-zero initialization */
         local_38[1] = *(undefined4 *)((int)this + 300);
         local_2e = param_1;
         local_38[0] = 0x75;

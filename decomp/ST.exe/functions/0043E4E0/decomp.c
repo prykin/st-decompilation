@@ -15,8 +15,9 @@ uint * STAllPlayersC::GetObjsList(char param_1)
   uint uVar5;
   ushort uVar6;
   int iVar7;
-  uint *puVar8;
+  DArrayTy *pDVar8;
   int iVar9;
+  uint *puVar10;
   InternalExceptionFrame local_58;
   DArrayTy *local_14;
   dword local_10;
@@ -32,7 +33,7 @@ uint * STAllPlayersC::GetObjsList(char param_1)
   iVar7 = Library::MSVCRT::__setjmp3(local_58.jumpBuffer,0);
   uVar5 = local_c;
   if (iVar7 == 0) {
-    puVar8 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,local_c,2,1);
+    pDVar8 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,local_c,2,1);
     dVar4 = local_10;
     pDVar3 = local_14;
     if ((uVar5 != 0) && (local_8 = 0, 0 < (int)local_10)) {
@@ -40,13 +41,13 @@ uint * STAllPlayersC::GetObjsList(char param_1)
         piVar1 = *(int **)((int)pDVar3->data + local_8 * 4);
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
         if ((piVar1 != (int *)0x0) && (iVar7 = (**(code **)(*piVar1 + 0xf8))(), iVar7 == 1)) {
-          Library::DKW::TBL::FUN_006ae1c0(puVar8,&local_8);
+          Library::DKW::TBL::FUN_006ae1c0(&pDVar8->flags,&local_8);
         }
         local_8 = local_8 + 1;
       } while (local_8 < (int)dVar4);
     }
     g_currentExceptionFrame = local_58.previous;
-    return puVar8;
+    return &pDVar8->flags;
   }
   g_currentExceptionFrame = local_58.previous;
   iVar9 = ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0x1f8c,0,iVar7,"%s",

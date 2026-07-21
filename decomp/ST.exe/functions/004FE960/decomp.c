@@ -18,7 +18,6 @@ void __thiscall CPanelTy::PaintInfoBoat(CPanelTy *this)
   int iVar7;
   char cVar8;
   AnonShape_006B5B10_E0D06CF1 *pAVar9;
-  dword dVar10;
   InternalExceptionFrame local_50;
   CPanelTy *local_c;
   uint local_8;
@@ -40,7 +39,7 @@ void __thiscall CPanelTy::PaintInfoBoat(CPanelTy *this)
   }
   DibPut((AnonShape_006B5B10_E0D06CF1 *)local_c->field_0180,0,0,'\x01',(byte *)local_c->field_0954);
   DibPut((AnonShape_006B5B10_E0D06CF1 *)this_00->field_0184,0,0,'\x01',(byte *)this_00->field_0958);
-  if (this_00->field_02E2 != 0) {
+  if (this_00->field_02E2 != (ushort *)0x0) {
     thunk_FUN_004f1890(this_00,0);
   }
   if (this_00->field_0B63 == '\0') {
@@ -65,9 +64,9 @@ void __thiscall CPanelTy::PaintInfoBoat(CPanelTy *this)
 LAB_004fea77:
   PaintDeep(this_00,1);
   if (this_00->field_0B63 == '\x02') {
-    dVar10 = this_00->field_0B95->count;
+    uVar5 = this_00->field_0B95[3];
     pcVar4 = LoadResourceString(0x36b9,HINSTANCE_00807618);
-    wsprintfA((LPSTR)&DAT_0080f33a,"&1%s&0%d",pcVar4,dVar10);
+    wsprintfA((LPSTR)&DAT_0080f33a,"&1%s&0%d",pcVar4,uVar5);
     ccFntTy::SetSurf(this_00->field_01B8,this_00->field_0184,0,2,0xf,
                      *(int *)(this_00->field_0958 + 2) + -4,0x2d);
     ccFntTy::WrTxt(this_00->field_01B8,&DAT_0080f33a,-2,-1,0,-1,-1);
@@ -115,17 +114,20 @@ LAB_004fea77:
       PaintEnergy(this_00,1);
     }
   }
-  if (-1 < (int)this_00->field_0148) {
+  if (-1 < this_00->field_0148) {
     Library::DKW::DDX::FUN_006b3640
-              (DAT_008075a8,this_00->field_0148,0xffffffff,this_00->field_003C,this_00->field_0094);
+              ((int *)PTR_008075a8,this_00->field_0148,0xffffffff,this_00->field_003C,
+               this_00->field_0094);
   }
-  if (-1 < (int)this_00->field_014C) {
+  if (-1 < this_00->field_014C) {
     Library::DKW::DDX::FUN_006b3640
-              (DAT_008075a8,this_00->field_014C,0xffffffff,this_00->field_0040,this_00->field_0098);
+              ((int *)PTR_008075a8,this_00->field_014C,0xffffffff,this_00->field_0040,
+               this_00->field_0098);
   }
-  if ((DAT_0080874e != '\x03') && (-1 < (int)this_00->field_0150)) {
+  if ((DAT_0080874e != '\x03') && (-1 < this_00->field_0150)) {
     Library::DKW::DDX::FUN_006b3640
-              (DAT_008075a8,this_00->field_0150,0xffffffff,this_00->field_0044,this_00->field_009C);
+              ((int *)PTR_008075a8,this_00->field_0150,0xffffffff,this_00->field_0044,
+               this_00->field_009C);
   }
   g_currentExceptionFrame = local_50.previous;
   return;

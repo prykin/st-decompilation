@@ -1,4 +1,4 @@
-FUN_004e2ad0:
+TLOBaseTy::FUN_004e2ad0:
 004E2AD0  55                        PUSH EBP
 004E2AD1  8B EC                     MOV EBP,ESP
 004E2AD3  83 EC 20                  SUB ESP,0x20
@@ -51,7 +51,7 @@ LAB_004e2b5f:
 004E2B5F  6A 04                     PUSH 0x4
 004E2B61  8B CE                     MOV ECX,ESI
 004E2B63  FF 92 90 00 00 00         CALL dword ptr [EDX + 0x90]
-FUN_004e2ad0::cf_common_exit_004E2B69:
+TLOBaseTy::FUN_004e2ad0::cf_common_exit_004E2B69:
 004E2B69  A1 BC 17 81 00            MOV EAX,[0x008117bc]
 004E2B6E  85 C0                     TEST EAX,EAX
 004E2B70  74 56                     JZ 0x004e2bc8

@@ -2,7 +2,7 @@
 void __fastcall FUN_00647370(AnonShape_00647370_C4EFCC30 *param_1)
 
 {
-  undefined4 uVar1;
+  uint uVar1;
 
   param_1->field_0065 = param_1->field_003C;
   param_1->field_0069 = param_1->field_0040;

@@ -54,7 +54,8 @@ UPanelTy::PaintLBut(UPanelTy *this,AnonShape_0053DCC0_5B8C160B *param_1,byte par
         cMf32::RecMemFree(DAT_00806790,(uint *)&local_8);
       }
       Library::DKW::DDX::FUN_006b3640
-                (DAT_008075a8,pUVar3->field_0060,0xffffffff,pUVar3->field_003C,pUVar3->field_0044);
+                ((int *)PTR_008075a8,pUVar3->field_0060,0xffffffff,pUVar3->field_003C,
+                 pUVar3->field_0044);
       g_currentExceptionFrame = local_58.previous;
       return;
     }

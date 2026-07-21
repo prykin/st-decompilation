@@ -1,5 +1,5 @@
 
-ushort * __cdecl FUN_0067bd00(AnonShape_00413AF0_B6B4EE9A *param_1,uint param_2)
+ushort * __cdecl FUN_0067bd00(DArrayTy *param_1,uint param_2)
 
 {
   uint uVar1;
@@ -8,12 +8,13 @@ ushort * __cdecl FUN_0067bd00(AnonShape_00413AF0_B6B4EE9A *param_1,uint param_2)
   bool bVar4;
 
   uVar3 = 0;
-  uVar1 = param_1->field_000C;
+  uVar1 = param_1->count;
   if (0 < (int)uVar1) {
     bVar4 = uVar1 != 0;
     do {
+      /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(param_1, uVar3) (runtime stride) */
       if (((bVar4) &&
-          (puVar2 = (ushort *)(param_1->field_0008 * uVar3 + param_1->field_001C),
+          (puVar2 = (ushort *)(param_1->elementSize * uVar3 + (int)param_1->data),
           puVar2 != (ushort *)0x0)) && (*puVar2 == param_2)) {
         return puVar2;
       }

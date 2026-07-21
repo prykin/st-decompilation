@@ -47,7 +47,7 @@ void __thiscall FSGSTy::DoLogon(FSGSTy *this)
       local_14 = 0;
       local_10 = 0;
       local_c = 0;
-      thunk_FUN_005b8f40(pSVar1->field_02E6,&local_18);
+      MMsgTy::thunk_FUN_005b8f40(pSVar1->field_02E6,&local_18);
     }
     g_currentExceptionFrame = local_5c.previous;
     return;

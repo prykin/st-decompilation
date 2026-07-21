@@ -46,7 +46,7 @@ STAllPlayersC::GetTOBJListFromDArr
     }
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  local_c = (DArrayTy *)Library::DKW::TBL::FUN_006ae290((uint *)0x0,0,2,1);
+  local_c = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,0,2,1);
   this_00 = local_14;
   iVar4 = 0;
   if (0 < local_10) {

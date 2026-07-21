@@ -68,9 +68,9 @@ undefined4 __fastcall FUN_00643e20(AnonShape_00643E20_B7FEAA75 *param_1,undefine
                               iVar9,&local_1c,&local_20), iVar5 = extraout_EDX, iVar11 < 0)) ||
          (((iVar5 = extraout_EDX, 4 < iVar11 || (iVar5 = local_1c, local_1c < 0)) ||
           ((pVVar3->field_0030 <= local_1c ||
-           ((local_20 = (&DAT_0079aed0)[iVar11] + local_20, local_20 < 0 ||
-            (pVVar3->field_0034 <= local_20)))))))) || (pVVar3->field_004C == 0)) ||
-       (*(char *)(local_20 * pVVar3->field_0030 + pVVar3->field_004C + local_1c) != '\0')) {
+           ((local_20 = g_centeredOffsets5[iVar11] + local_20, local_20 < 0 ||
+            (pVVar3->field_0034 <= local_20)))))))) || (pVVar3->field_004C == (byte *)0x0)) ||
+       (pVVar3->field_004C[local_1c + local_20 * pVVar3->field_0030] != 0)) {
       local_1c = iVar5;
       if (param_1->field_01E7 == '\x01') {
         thunk_FUN_004ad460(&param_1->field_0x1d5,0);

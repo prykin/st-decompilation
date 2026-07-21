@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 undefined4 __cdecl FUN_0057b670(int *param_1,uint param_2,uint param_3,int param_4,int param_5)
 
@@ -7,7 +9,6 @@ undefined4 __cdecl FUN_0057b670(int *param_1,uint param_2,uint param_3,int param
   uint uVar2;
   int iVar3;
   uint uVar4;
-  int *piVar5;
   int local_60 [5];
   undefined2 local_4c;
   undefined2 local_4a;
@@ -71,11 +72,7 @@ LAB_0057b6ff:
       do {
         uVar2 = param_3;
         uVar1 = *(undefined2 *)((int)this + 0x247);
-        piVar5 = local_60;
-        for (iVar3 = 0x16; iVar3 != 0; iVar3 = iVar3 + -1) {
-          *piVar5 = 0;
-          piVar5 = piVar5 + 1;
-        }
+        memset(local_60, 0, 0x58); /* compiler bulk-zero initialization */
         local_4c = *(undefined2 *)((int)this + 0x245);
         local_60[3] = 1;
         local_60[2] = 1;
@@ -114,7 +111,8 @@ LAB_0057b6ff:
         }
         local_38 = param_1;
         local_3a = *(undefined2 *)((int)local_8 + uVar4 * 8 + 6);
-        (*PTR_00802a38->vtable->vfunc_08)(0x106,0,0,local_60,0);
+        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+        (*(code *)PTR_00802a38->vtable->field_0008)(0x106,0,0,local_60,0);
         uVar4 = uVar4 + 1;
       } while ((int)uVar4 < (int)(uVar2 + 1));
     }

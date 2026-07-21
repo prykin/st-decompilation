@@ -79,28 +79,28 @@ HoloTy::Init(HoloTy *this,HoloTy_Init_param_1Enum param_1,int param_2,int param_
     this_00->field_000B = puVar4;
     if (puVar4 != (undefined4 *)0x0) {
       piVar1 = &this_00->field_0003;
-      FUN_006b2330((uint)DAT_008075a8,(uint *)piVar1,10,0x402842,0,0,(uint)this_00);
+      FUN_006b2330((uint)PTR_008075a8,(uint *)piVar1,10,0x402842,0,0,(uint)this_00);
       uVar5 = *piVar1;
       if (-1 < (int)uVar5) {
         switch(this_00->field_0001) {
         case CASE_1:
         case CASE_3:
-          FUN_006b2800((int)DAT_008075a8,uVar5,this_00->field_002B,DAT_00806734);
+          FUN_006b2800((int)PTR_008075a8,uVar5,this_00->field_002B,DAT_00806734);
           uVar5 = this_00->field_0023;
           uVar6 = 0;
           break;
         case CASE_2:
         case CASE_4:
-          FUN_006b2800((int)DAT_008075a8,uVar5,g_nWidth_00806730,this_00->field_002F);
+          FUN_006b2800((int)PTR_008075a8,uVar5,g_nWidth_00806730,this_00->field_002F);
           uVar6 = this_00->field_0027;
           uVar5 = 0;
           break;
         default:
           goto switchD_005aadcd_default;
         }
-        Library::DKW::DDX::FUN_006b3640(DAT_008075a8,*piVar1,0xffffffff,uVar5,uVar6);
+        Library::DKW::DDX::FUN_006b3640((int *)PTR_008075a8,*piVar1,0xffffffff,uVar5,uVar6);
 switchD_005aadcd_default:
-        FUN_006b3af0(DAT_008075a8,*piVar1);
+        FUN_006b3af0((int *)PTR_008075a8,*piVar1);
         this_00->field_0002 = param_7;
         if (param_7 == '\0') {
           this_00->field_0017 = -1;

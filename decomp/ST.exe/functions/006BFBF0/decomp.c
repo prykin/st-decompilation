@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 void FUN_006bfbf0(AnonShape_006BFBF0_13F73F95 *param_1)
 
@@ -11,7 +13,6 @@ void FUN_006bfbf0(AnonShape_006BFBF0_13F73F95 *param_1)
   int iVar7;
   uint uVar8;
   undefined4 *puVar9;
-  uint *puVar10;
   undefined4 *puVar11;
   uint local_34 [4];
   undefined1 *local_24;
@@ -24,11 +25,8 @@ void FUN_006bfbf0(AnonShape_006BFBF0_13F73F95 *param_1)
   undefined4 *local_8;
 
   pAVar4 = param_1;
-  puVar10 = local_34;
-  for (iVar7 = 9; iVar7 != 0; iVar7 = iVar7 + -1) {
-    *puVar10 = 0;
-    puVar10 = puVar10 + 1;
-  }
+  memset(local_34, 0, 0x24); /* compiler bulk-zero initialization */
+  iVar7 = 0;
   local_24 = &param_1->field_0x8a;
   *(undefined4 *)&param_1->field_0x18 = 0x7fffffff;
   puVar9 = (undefined4 *)&param_1->field_0x4c;

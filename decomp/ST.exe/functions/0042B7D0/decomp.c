@@ -95,7 +95,8 @@ STAllPlayersC::AddObjsToGroup
       local_2c = 0;
       local_40 = 1;
       local_38 = uVar6 & 0xffff;
-      (*PTR_00802a38->vtable->vfunc_08)(0x10ff,local_1c,&local_10,local_4c,0);
+      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+      (*(code *)PTR_00802a38->vtable->field_0008)(0x10ff,local_1c,&local_10,local_4c,0);
       Library::DKW::TBL::FUN_006ae140(&array->flags,uVar6 & 0xffff,&local_10);
       STGroupC::AddObjs(local_10,(DArrayTy *)groupContent,0);
       local_5 = 2;

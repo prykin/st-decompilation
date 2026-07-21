@@ -32,17 +32,17 @@ void __thiscall SoundClassTy::CheckFader(SoundClassTy *this)
     return;
   }
   if (local_8->field_0DFB == 0) {
-    if (-1 < (int)local_8->field_0E03) {
+    if (-1 < local_8->field_0E03) {
       FUN_006c1ba0(local_8->field_0E03);
     }
-    pSVar2->field_0E03 = 0xffffffff;
+    pSVar2->field_0E03 = -1;
   }
-  if (-1 < (int)pSVar2->field_0E03) {
+  if (-1 < pSVar2->field_0E03) {
     FUN_006c1f00(pSVar2->field_0E03,&local_c,(uint *)0x0);
     if (local_c == 1) {
       DVar4 = timeGetTime();
       uVar5 = DVar4 - pSVar2->field_0DFF;
-      if (pSVar2->field_0DFB < uVar5) {
+      if ((uint)pSVar2->field_0DFB < uVar5) {
         FUN_006c1ba0(pSVar2->field_0E03);
         g_currentExceptionFrame = local_50.previous;
         return;
@@ -53,7 +53,7 @@ void __thiscall SoundClassTy::CheckFader(SoundClassTy *this)
       g_currentExceptionFrame = local_50.previous;
       return;
     }
-    pSVar2->field_0E03 = 0xffffffff;
+    pSVar2->field_0E03 = -1;
   }
   g_currentExceptionFrame = local_50.previous;
   return;

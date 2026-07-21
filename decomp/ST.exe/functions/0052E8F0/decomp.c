@@ -40,19 +40,19 @@ void __thiscall OptPanelTy::DoneOptPanel(OptPanelTy *this)
   if (iVar3 == 0) {
     if ((AnonShape_006B5570_4D68B99C *)local_8->field_01E9 != (AnonShape_006B5570_4D68B99C *)0x0) {
       FUN_006b5570((AnonShape_006B5570_4D68B99C *)local_8->field_01E9);
-      pOVar2->field_01E9 = (AnonPointee_OptPanelTy_01E9 *)0x0;
+      pOVar2->field_01E9 = (uint *)0x0;
     }
     if ((DArrayTy *)pOVar2->field_01ED != (DArrayTy *)0x0) {
       DArrayDestroy((DArrayTy *)pOVar2->field_01ED);
-      pOVar2->field_01ED = 0;
+      pOVar2->field_01ED = (uint *)0x0;
     }
     if ((AnonShape_006B5570_4D68B99C *)pOVar2->field_01F1 != (AnonShape_006B5570_4D68B99C *)0x0) {
       FUN_006b5570((AnonShape_006B5570_4D68B99C *)pOVar2->field_01F1);
-      pOVar2->field_01F1 = 0;
+      pOVar2->field_01F1 = (uint *)0x0;
     }
     this_00 = (ccFntTy *)0x0;
-    if (pOVar2->field_01E5 != 0) {
-      FreeAndNull((void **)&pOVar2->field_01E5);
+    if (pOVar2->field_01E5 != (ushort *)0x0) {
+      FreeAndNull(&pOVar2->field_01E5);
       /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
       this_00 = extraout_ECX;
     }
@@ -109,7 +109,7 @@ void __thiscall OptPanelTy::DoneOptPanel(OptPanelTy *this)
       ccFntTy::operator(this_00,(uint *)pOVar2->field_0180);
       pOVar2->field_0180 = (ccFntTy *)0x0;
     }
-    pOVar2->field_0198 = 0;
+    pOVar2->field_0198 = (ushort *)0x0;
     ppuVar5 = &pOVar2->field_0184;
     iVar3 = 5;
     do {

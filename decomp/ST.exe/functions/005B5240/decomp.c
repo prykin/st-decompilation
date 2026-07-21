@@ -43,19 +43,16 @@ MMObjTy::InitSprBut(MMObjTy *this,AnonShape_005B5240_B2C8755B *param_1,char *tex
   iVar2 = Library::MSVCRT::__setjmp3(local_48.jumpBuffer,0);
   if (iVar2 == 0) {
     puVar4 = (undefined4 *)&param_1->field_0x21;
-    for (iVar2 = 9; iVar2 != 0; iVar2 = iVar2 + -1) {
-      *puVar4 = 0;
-      puVar4 = puVar4 + 1;
-    }
-    *(undefined2 *)puVar4 = 0;
+    memset(puVar4, 0, 0x26); /* compiler bulk-zero initialization */
+    puVar4 = (undefined4 *)((byte *)puVar4 + 0x24);
     *(undefined1 *)((int)puVar4 + 2) = 0;
     *(undefined4 *)&param_1->field_0x8 = param_9;
     *(undefined4 *)param_1 = param_7;
     *(undefined4 *)&param_1->field_0x4 = param_8;
     *(undefined4 *)&param_1->field_0xc = param_10;
     SpriteClassTy::InitSprite
-              ((SpriteClassTy *)&param_1->field_0x48,DAT_008075a8,param_11,'\a',(undefined4 *)0x0,0,
-               0);
+              ((SpriteClassTy *)&param_1->field_0x48,(int *)PTR_008075a8,param_11,'\a',
+               (undefined4 *)0x0,0,0);
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
     (**(code **)(*(int *)&param_1->field_0x48 + 4))(DAT_00806784,7,0,text,0xffffffff);
     *(int *)&param_1->field_0x64 = param_3;
@@ -78,7 +75,7 @@ MMObjTy::InitSprBut(MMObjTy *this,AnonShape_005B5240_B2C8755B *param_1,char *tex
       *(undefined4 *)&param_1->field_0x1c = param_16;
       param_1->field_01AA = param_17;
       SpriteClassTy::InitSprite
-                ((SpriteClassTy *)&param_1->field_0x16a,DAT_008075a8,param_11 - 1,'\a',
+                ((SpriteClassTy *)&param_1->field_0x16a,(int *)PTR_008075a8,param_11 - 1,'\a',
                  (undefined4 *)0x0,0,0);
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
       (**(code **)(*(int *)&param_1->field_0x16a + 4))(DAT_00806784,7,0,param_12,0xffffffff);
@@ -87,7 +84,7 @@ MMObjTy::InitSprBut(MMObjTy *this,AnonShape_005B5240_B2C8755B *param_1,char *tex
       param_1->field_018A = param_4 + param_14;
     }
     SpriteClassTy::InitSprite
-              ((SpriteClassTy *)&param_1->field_0xd9,DAT_008075a8,param_11 - 2,'\a',
+              ((SpriteClassTy *)&param_1->field_0xd9,(int *)PTR_008075a8,param_11 - 2,'\a',
                (undefined4 *)0x0,0,0);
     param_1->field_00F5 = param_3 + param_5;
     param_1->field_00F9 = param_4 + param_6;

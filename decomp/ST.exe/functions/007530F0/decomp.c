@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 undefined4 * FUN_007530f0(undefined4 *param_1,LPCSTR param_2,DWORD param_3,undefined4 param_4)
 
@@ -15,11 +17,8 @@ undefined4 * FUN_007530f0(undefined4 *param_1,LPCSTR param_2,DWORD param_3,undef
     return (undefined4 *)0x0;
   }
   puVar3 = (undefined4 *)puVar1[0xd];
-  puVar4 = puVar3;
-  for (iVar2 = 10; iVar2 != 0; iVar2 = iVar2 + -1) {
-    *puVar4 = 0;
-    puVar4 = puVar4 + 1;
-  }
+  memset(puVar3, 0, 0x28); /* compiler bulk-zero initialization */
+  iVar2 = 0;
   *puVar3 = 0x4d464b44;
   *(undefined2 *)(puVar3 + 1) = 0x101;
   puVar3[3] = 0x20;

@@ -1,18 +1,14 @@
+#include "../../pseudocode_runtime.h"
+
 
 undefined4 __thiscall FUN_00660420(void *this,undefined4 param_1)
 
 {
   STGroupBoatC *this_00;
-  int iVar1;
-  undefined4 *puVar2;
   undefined4 local_1c [6];
 
   *(undefined4 *)((int)this + 0xa7) = 0;
-  puVar2 = local_1c;
-  for (iVar1 = 6; iVar1 != 0; iVar1 = iVar1 + -1) {
-    *puVar2 = 0;
-    puVar2 = puVar2 + 1;
-  }
+  memset(local_1c, 0, 0x18); /* compiler bulk-zero initialization */
   local_1c[0] = 0;
   local_1c[2] = param_1;
   if ((*(short *)((int)this + 0x7d) != -2) && (g_sTAllPlayers_007FA174 != (STAllPlayersC *)0x0)) {

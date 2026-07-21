@@ -1,16 +1,12 @@
+#include "../../pseudocode_runtime.h"
+
 
 void __thiscall FUN_0060bcb0(void *this,int param_1)
 
 {
-  int iVar1;
-  int *piVar2;
   int local_24 [8];
 
-  piVar2 = local_24;
-  for (iVar1 = 8; iVar1 != 0; iVar1 = iVar1 + -1) {
-    *piVar2 = 0;
-    piVar2 = piVar2 + 1;
-  }
+  memset(local_24, 0, 0x20); /* compiler bulk-zero initialization */
   if (param_1 < 0) {
     param_1 = 0;
   }

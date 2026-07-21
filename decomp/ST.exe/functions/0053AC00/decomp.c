@@ -132,7 +132,8 @@ void __thiscall PlayPanelTy::PaintPlayPanel(PlayPanelTy *this)
     if (local_10 == 0) {
       local_8 = iVar4;
       Library::DKW::DDX::FUN_006b3640
-                (DAT_008075a8,pPVar3->field_0060,0xffffffff,pPVar3->field_003C,pPVar3->field_0044);
+                ((int *)PTR_008075a8,pPVar3->field_0060,0xffffffff,pPVar3->field_003C,
+                 pPVar3->field_0044);
       g_currentExceptionFrame = local_58.previous;
       return;
     }

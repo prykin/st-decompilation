@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 undefined4 __cdecl
 FUN_004b0250(uint param_1,int param_2,int *param_3,int *param_4,int *param_5,int param_6,int param_7
@@ -19,7 +21,6 @@ FUN_004b0250(uint param_1,int param_2,int *param_3,int *param_4,int *param_5,int
   uint uVar13;
   short sVar14;
   int iVar15;
-  int *piVar16;
   bool bVar17;
   int local_88 [10];
   int local_60;
@@ -59,7 +60,7 @@ FUN_004b0250(uint param_1,int param_2,int *param_3,int *param_4,int *param_5,int
   local_88[9] = (int)sVar14 / (int)(uint)DAT_008087c4._2_1_;
   local_40 = thunk_FUN_004e81b0(param_1,param_2 + -0x32,0);
   local_10 = (short *)Library::DKW::LIB::FUN_006aac70(g_worldGrid.planeStride * 5);
-  local_2c = (DArrayTy *)Library::DKW::TBL::FUN_006ae290((uint *)0x0,10,4,10);
+  local_2c = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,10,4,10);
   local_18 = 0;
   do {
     local_34 = (short *)(g_worldGrid.planeStride * local_18);
@@ -213,11 +214,7 @@ LAB_004b057d:
                    (((cVar2 = *(char *)((local_18 + 1) * iVar9 + iVar12 + iVar15 + (int)local_10),
                      cVar2 != '\x01' && (cVar2 != '\x03')) && (cVar2 != '\x02')))))) {
               local_34 = (short *)(iVar9 * local_18 + (int)local_10);
-              piVar16 = local_88;
-              for (iVar9 = 8; iVar9 != 0; iVar9 = iVar9 + -1) {
-                *piVar16 = 0;
-                piVar16 = piVar16 + 1;
-              }
+              memset(local_88, 0, 0x20); /* compiler bulk-zero initialization */
               param_1 = 0;
               if (0 < local_40) {
                 local_20 = local_14 + -1;

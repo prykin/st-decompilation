@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* [STSourceProvenanceApplier begin]
    Recovered source file: E:\__titans\ai\ai_script.cpp
@@ -239,11 +241,7 @@ uint * FUN_00683c70(uint *lpFileName,AnonShape_00683C70_22193481 *param_2,undefi
       thunk_FUN_00680530();
       thunk_FUN_00680310();
       DAT_007d3fa4 = 1;
-      puVar5 = &DAT_00811a90;
-      for (iVar2 = 0xac5; iVar2 != 0; iVar2 = iVar2 + -1) {
-        *puVar5 = 0;
-        puVar5 = puVar5 + 1;
-      }
+      memset(&DAT_00811a90, 0, 0x2b14); /* compiler bulk-zero initialization */
       DAT_008488b0 = 0;
       DAT_00811a90 = 0;
       DAT_00811a98 = 0;
@@ -1404,11 +1402,8 @@ cf_error_exit_0068A22B:
         if (DAT_007d2d18 == 6) {
           DAT_008488b0 = DAT_008488b0 + 1;
           iVar2 = DAT_008488b0 * 0xac5;
-          puVar5 = &DAT_00811a90 + iVar2;
-          for (iVar9 = 0xac5; iVar9 != 0; iVar9 = iVar9 + -1) {
-            *puVar5 = 0;
-            puVar5 = puVar5 + 1;
-          }
+          memset(&DAT_00811a90 + iVar2, 0, 0x2b14); /* compiler bulk-zero initialization */
+          iVar9 = 0;
           (&DAT_00811a90)[iVar2] = 0;
         }
         else if (DAT_007d2d18 != 0x1d) {
@@ -1422,11 +1417,7 @@ cf_error_exit_0068A22B:
     }
     g_currentExceptionFrame = local_16c.previous;
     if (param_4 != (int *)0x0) {
-      piVar19 = param_4;
-      for (iVar9 = 6; iVar9 != 0; iVar9 = iVar9 + -1) {
-        *piVar19 = 0;
-        piVar19 = piVar19 + 1;
-      }
+      memset(param_4, 0, 0x18); /* compiler bulk-zero initialization */
       *param_4 = iVar2;
       param_4[2] = DAT_00857554;
       Library::MSVCRT::FUN_0072e730
@@ -1498,11 +1489,7 @@ cf_error_exit_0068A22B:
   else {
     g_currentExceptionFrame = local_1b0.previous;
     if (param_4 != (int *)0x0) {
-      piVar19 = param_4;
-      for (iVar9 = 6; iVar9 != 0; iVar9 = iVar9 + -1) {
-        *piVar19 = 0;
-        piVar19 = piVar19 + 1;
-      }
+      memset(param_4, 0, 0x18); /* compiler bulk-zero initialization */
       *param_4 = iVar2;
       param_4[2] = 0;
       if (lpFileName != (uint *)0x0) {
@@ -2203,7 +2190,7 @@ cf_common_join_006895D5:
         RaiseInternalException
                   (-0x8c,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",0x83a);
       }
-      PTR_008489d8 = (DArrayTy *)Library::DKW::TBL::FUN_006ae290((uint *)0x0,5,0x220,5);
+      PTR_008489d8 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,5,0x220,5);
       DAT_008488b0 = DAT_008488b0 + -1;
       goto switchD_006841b6_default;
     }
@@ -2240,7 +2227,7 @@ cf_common_join_006895D5:
                        0x85b);
           }
           DAT_008489dc = (AnonShape_0065CD10_BA40DE58 *)
-                         Library::DKW::TBL::FUN_006b54f0((uint *)0x0,5,5);
+                         Library::DKW::TBL::SArrayCreate((DArrayTy *)0x0,5,5);
           DAT_008488b0 = DAT_008488b0 + -1;
           goto switchD_006841b6_default;
         }
@@ -2654,11 +2641,7 @@ cf_common_join_006895D5:
                     (-0x8e,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",0x78d
                     );
         }
-        puVar5 = local_128;
-        for (iVar2 = 0xb; iVar2 != 0; iVar2 = iVar2 + -1) {
-          *puVar5 = 0;
-          puVar5 = puVar5 + 1;
-        }
+        memset(local_128, 0, 0x2c); /* compiler bulk-zero initialization */
         local_128[0] = (&DAT_00811c80)[DAT_008488b0 * 0xac5];
         local_128[1] = (&DAT_00811c84)[DAT_008488b0 * 0xac5];
         local_128[2] = (&DAT_00811c88)[DAT_008488b0 * 0xac5];
@@ -2910,11 +2893,8 @@ cf_common_join_006895D5:
             goto switchD_006841b6_default;
           }
           if (*(char *)(&DAT_00811aec)[DAT_008488b0 * 0xac5] != '\0') {
-            puVar5 = (undefined4 *)(*(int *)&DAT_008489b4->field_0x4e + 6);
-            for (iVar2 = 0x10; iVar2 != 0; iVar2 = iVar2 + -1) {
-              *puVar5 = 0;
-              puVar5 = puVar5 + 1;
-            }
+            memset((void *)(*(int *)&DAT_008489b4->field_0x4e + 6), 0, 0x40); /* compiler bulk-zero initialization */
+            iVar2 = 0;
             Library::MSVCRT::_strncpy
                       ((char *)(*(int *)&DAT_008489b4->field_0x4e + 6),
                        (char *)(&DAT_00811aec)[DAT_008488b0 * 0xac5],0x3f);
@@ -2923,11 +2903,7 @@ cf_common_join_006895D5:
           }
         }
         else if (*(char *)(&DAT_00811aec)[DAT_008488b0 * 0xac5] != '\0') {
-          puVar5 = (undefined4 *)(*(int *)&DAT_008489b8->field_0x106 + 6);
-          for (iVar2 = 0x10; iVar2 != 0; iVar2 = iVar2 + -1) {
-            *puVar5 = 0;
-            puVar5 = puVar5 + 1;
-          }
+          memset((void *)(*(int *)&DAT_008489b8->field_0x106 + 6), 0, 0x40); /* compiler bulk-zero initialization */
           Library::MSVCRT::_strncpy
                     ((char *)(*(int *)&DAT_008489b8->field_0x106 + 6),
                      (char *)(&DAT_00811aec)[DAT_008488b0 * 0xac5],0x3f);
@@ -3040,7 +3016,7 @@ cf_common_join_006895D5:
                     (-0x8c,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",0x818
                     );
         }
-        PTR_008489d4 = (DArrayTy *)Library::DKW::TBL::FUN_006ae290((uint *)0x0,3,0x118,1);
+        PTR_008489d4 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,3,0x118,1);
         DAT_008488b0 = DAT_008488b0 + -1;
         goto switchD_006841b6_default;
       case 0x4b1:

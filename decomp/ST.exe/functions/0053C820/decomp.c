@@ -44,7 +44,7 @@ ResearchPanelTy::PaintUpdBut(ResearchPanelTy *this,AnonShape_004EF320_444F9AB1 *
   local_10 = this;
   if ((param_1->field_0014 == 0) || (local_8 == (Global_sub_005276E0_param_1Enum *)0x0)) {
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-    local_c = (int)*(short *)(this->field_0188 + 0x23) - ((DAT_0080874e != '\x03') + 1);
+    local_c = (int)*(short *)((int)this->field_0188 + 0x23) - ((DAT_0080874e != '\x03') + 1);
   }
   else {
     local_c = thunk_FUN_005276e0(*local_8,(byte)((uint)*(undefined4 *)local_8 >> 0x10));
@@ -70,7 +70,8 @@ ResearchPanelTy::PaintUpdBut(ResearchPanelTy *this,AnonShape_004EF320_444F9AB1 *
       DibPut((AnonShape_006B5B10_E0D06CF1 *)pRVar4->field_0068,iVar5,iVar7,'\x06',pbVar6);
     }
     Library::DKW::DDX::FUN_006b3640
-              (DAT_008075a8,pRVar4->field_0060,0xffffffff,pRVar4->field_003C,pRVar4->field_0044);
+              ((int *)PTR_008075a8,pRVar4->field_0060,0xffffffff,pRVar4->field_003C,
+               pRVar4->field_0044);
     g_currentExceptionFrame = local_5c.previous;
     return;
   }

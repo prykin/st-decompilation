@@ -67,12 +67,7 @@ void __thiscall CPanelTy::Update5Panel(CPanelTy *this)
     pcVar9 = pcVar9 + 4;
   }
   *(undefined2 *)pcVar9 = *(undefined2 *)puVar7;
-  puVar7 = (undefined4 *)puVar1;
-  for (iVar5 = 0xc; iVar5 != 0; iVar5 = iVar5 + -1) {
-    *puVar7 = 0;
-    puVar7 = puVar7 + 1;
-  }
-  *(undefined2 *)puVar7 = 0;
+  memset((void *)puVar1, 0, 0x32); /* compiler bulk-zero initialization */
   STAllPlayersC::GetPanelInfo(g_sTAllPlayers_007FA174,5,(AnonShape_0043BEB0_1C00EC12 *)puVar1);
   if (local_44 != this_00->field_0C51) {
     if (g_prodPanel_008016E8 != (ProdPanelTy *)0x0) {
@@ -81,12 +76,12 @@ void __thiscall CPanelTy::Update5Panel(CPanelTy *this)
     if (g_prodPanel_0080167C != (ProdPanelTy *)0x0) {
       ProdPanelTy::SetPanel(g_prodPanel_0080167C,'\0');
     }
-    if (DAT_00801698 != (int *)0x0) {
+    if (g_infocPanel_00801698 != (InfocPanelTy *)0x0) {
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-      (**(code **)(*DAT_00801698 + 0x1c))(0);
+      (**(code **)(*(int *)g_infocPanel_00801698 + 0x1c))(0);
     }
-    if (DAT_00802a44 != (void *)0x0) {
-      thunk_FUN_00552160(DAT_00802a44,'\0','\0');
+    if (g_tradePanel_00802A44 != (TradePanelTy *)0x0) {
+      thunk_FUN_00552160(g_tradePanel_00802A44,'\0','\0');
     }
     if (g_prodPanel_00801680 != (ProdPanelTy *)0x0) {
       ProdPanelTy::SetPanel(g_prodPanel_00801680,'\0');
@@ -103,12 +98,12 @@ void __thiscall CPanelTy::Update5Panel(CPanelTy *this)
     if (g_prodPanel_0080167C != (ProdPanelTy *)0x0) {
       ProdPanelTy::SetPanel(g_prodPanel_0080167C,'\0');
     }
-    if (DAT_00801698 != (int *)0x0) {
+    if (g_infocPanel_00801698 != (InfocPanelTy *)0x0) {
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-      (**(code **)(*DAT_00801698 + 0x1c))(0);
+      (**(code **)(*(int *)g_infocPanel_00801698 + 0x1c))(0);
     }
-    if (DAT_00802a44 != (void *)0x0) {
-      thunk_FUN_00552160(DAT_00802a44,'\0','\0');
+    if (g_tradePanel_00802A44 != (TradePanelTy *)0x0) {
+      thunk_FUN_00552160(g_tradePanel_00802A44,'\0','\0');
     }
     if (g_prodPanel_00801680 != (ProdPanelTy *)0x0) {
       ProdPanelTy::SetPanel(g_prodPanel_00801680,'\0');
@@ -124,12 +119,12 @@ void __thiscall CPanelTy::Update5Panel(CPanelTy *this)
       if (g_prodPanel_0080167C != (ProdPanelTy *)0x0) {
         ProdPanelTy::SetPanel(g_prodPanel_0080167C,'\0');
       }
-      if (DAT_00801698 != (int *)0x0) {
+      if (g_infocPanel_00801698 != (InfocPanelTy *)0x0) {
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-        (**(code **)(*DAT_00801698 + 0x1c))(0);
+        (**(code **)(*(int *)g_infocPanel_00801698 + 0x1c))(0);
       }
-      if (DAT_00802a44 != (void *)0x0) {
-        thunk_FUN_00552160(DAT_00802a44,'\0','\0');
+      if (g_tradePanel_00802A44 != (TradePanelTy *)0x0) {
+        thunk_FUN_00552160(g_tradePanel_00802A44,'\0','\0');
       }
       if (g_prodPanel_00801680 != (ProdPanelTy *)0x0) {
         ProdPanelTy::SetPanel(g_prodPanel_00801680,'\0');
@@ -141,9 +136,9 @@ void __thiscall CPanelTy::Update5Panel(CPanelTy *this)
                 ((AnonShape_006B5B10_E0D06CF1 *)this_00->field_019C,0,1,0,
                  (byte *)this_00->field_0B47,0,1,0,0x4e,0x20);
       PaintName(this_00,0);
-      if (-1 < (int)this_00->field_0164) {
+      if (-1 < this_00->field_0164) {
         Library::DKW::DDX::FUN_006b3640
-                  (DAT_008075a8,this_00->field_0164,0xffffffff,this_00->field_0058,
+                  ((int *)PTR_008075a8,this_00->field_0164,0xffffffff,this_00->field_0058,
                    this_00->field_00B0);
       }
     }
@@ -171,9 +166,9 @@ LAB_00500126:
                 ((AnonShape_006B5B10_E0D06CF1 *)this_00->field_019C,0,1,0,
                  (byte *)this_00->field_0B47,0,1,0,0x4e,0x20);
       PaintName(this_00,0);
-      if (-1 < (int)this_00->field_0164) {
+      if (-1 < this_00->field_0164) {
         Library::DKW::DDX::FUN_006b3640
-                  (DAT_008075a8,this_00->field_0164,0xffffffff,this_00->field_0058,
+                  ((int *)PTR_008075a8,this_00->field_0164,0xffffffff,this_00->field_0058,
                    this_00->field_00B0);
       }
     }
@@ -183,9 +178,9 @@ LAB_00500126:
                 ((AnonShape_006B5B10_E0D06CF1 *)this_00->field_019C,0,1,0x1f,
                  (byte *)this_00->field_0B47,0,1,0x1f,0x4e,0x11);
       PaintLife(this_00,0);
-      if (-1 < (int)this_00->field_0164) {
+      if (-1 < this_00->field_0164) {
         Library::DKW::DDX::FUN_006b3640
-                  (DAT_008075a8,this_00->field_0164,0xffffffff,this_00->field_0058,
+                  ((int *)PTR_008075a8,this_00->field_0164,0xffffffff,this_00->field_0058,
                    this_00->field_00B0);
       }
     }
@@ -203,9 +198,9 @@ LAB_00500126:
                 ((AnonShape_006B5B10_E0D06CF1 *)this_00->field_019C,0,1,0x2f,
                  (byte *)this_00->field_0B47,0,1,0x2f,0x4e,0x24);
       PaintWeap(this_00,0);
-      if (-1 < (int)this_00->field_0164) {
+      if (-1 < this_00->field_0164) {
         Library::DKW::DDX::FUN_006b3640
-                  (DAT_008075a8,this_00->field_0164,0xffffffff,this_00->field_0058,
+                  ((int *)PTR_008075a8,this_00->field_0164,0xffffffff,this_00->field_0058,
                    this_00->field_00B0);
       }
     }
@@ -226,9 +221,9 @@ LAB_00500126:
       /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
       _local_8 = CONCAT31(uStack_7,bVar4);
       if (bVar4 < 0xb) {
-        if (-1 < (int)(&this_00->field_0148)[bVar4]) {
+        if (-1 < (&this_00->field_0148)[bVar4]) {
           Library::DKW::DDX::FUN_006b3640
-                    (DAT_008075a8,(&this_00->field_0148)[bVar4],0xffffffff,
+                    ((int *)PTR_008075a8,(&this_00->field_0148)[bVar4],0xffffffff,
                      (&this_00->field_003C)[bVar4],(&this_00->field_0094)[bVar4]);
         }
       }

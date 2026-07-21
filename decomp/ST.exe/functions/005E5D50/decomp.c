@@ -19,7 +19,7 @@ void __thiscall MTestTy::PaintMTest(MTestTy *this)
   local_8 = this;
   errorCode = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
   if (errorCode == 0) {
-    FUN_006b5f80(DAT_008075a8,0,0,g_nWidth_00806730,DAT_00806734);
+    FUN_006b5f80((int *)PTR_008075a8,0,0,g_nWidth_00806730,DAT_00806734);
     PutDDX(0,0,'\x01',(BITMAPINFO *)local_8->field_005D);
     g_currentExceptionFrame = local_4c.previous;
     return;

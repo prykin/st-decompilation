@@ -2,7 +2,7 @@
 /* [STTypeFamilyApplier] EXACT_ANONYMOUS_LAYOUT.
    Evidence: exact anonymous structure fingerprint shared across functions */
 
-uint * FUN_0065f840(AnonNested_005F5B80_0169_794156D7 *param_1,uint param_2,int param_3)
+uint * FUN_0065f840(DArrayTy *param_1,uint param_2,int param_3)
 
 {
   int iVar1;
@@ -16,8 +16,8 @@ uint * FUN_0065f840(AnonNested_005F5B80_0169_794156D7 *param_1,uint param_2,int 
   DArrayTy *local_8;
 
   local_8 = (DArrayTy *)0x0;
-  if ((((param_1 != (AnonNested_005F5B80_0169_794156D7 *)0x0) && (param_1->field_000C != 0)) &&
-      ((int)param_2 < (int)param_1->field_000C)) && (0 < param_3)) {
+  if ((((param_1 != (DArrayTy *)0x0) && (param_1->count != 0)) &&
+      ((int)param_2 < (int)param_1->count)) && (0 < param_3)) {
     local_54.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_54;
     iVar1 = Library::MSVCRT::__setjmp3(local_54.jumpBuffer,0);
@@ -28,8 +28,8 @@ uint * FUN_0065f840(AnonNested_005F5B80_0169_794156D7 *param_1,uint param_2,int 
       }
       return (uint *)0x0;
     }
-    pDVar2 = (DArrayTy *)Library::DKW::TBL::FUN_006ae290((uint *)0x0,5,6,5);
-    uVar3 = param_1->field_000C;
+    pDVar2 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,5,6,5);
+    uVar3 = param_1->count;
     uVar5 = param_2;
     local_8 = pDVar2;
     if ((int)param_2 < (int)uVar3) {
@@ -39,15 +39,16 @@ uint * FUN_0065f840(AnonNested_005F5B80_0169_794156D7 *param_1,uint param_2,int 
           return &pDVar2->flags;
         }
         if (uVar5 < uVar3) {
-          puVar4 = (undefined4 *)(param_1->field_0008 * uVar5 + param_1->field_001C);
+          /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(param_1, uVar5) (runtime stride) */
+          puVar4 = (undefined4 *)(param_1->elementSize * uVar5 + (int)param_1->data);
         }
         else {
           puVar4 = (undefined4 *)0x0;
         }
         local_10 = *puVar4;
         local_c = *(undefined2 *)(puVar4 + 1);
-        Library::DKW::TBL::FUN_006ae1c0((uint *)pDVar2,&local_10);
-        uVar3 = param_1->field_000C;
+        Library::DKW::TBL::FUN_006ae1c0(&pDVar2->flags,&local_10);
+        uVar3 = param_1->count;
         uVar5 = uVar5 + 1;
       } while ((int)uVar5 < (int)uVar3);
     }

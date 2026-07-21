@@ -1,0 +1,723 @@
+address	name	current_type	raw_target	classification	target_name	target_data_type	pointee	anonymous_pointee	script_owned	evidence_sites	proposed_type	type_apply
+0042690C	PTR_caseD_10_0042690c	/pointer	00425B0C	code_pointer	SubmarineTitans::Recovered::HiddenThis::AnonReceiver_004248D0::FUN_00424e10			0	0	0		0
+00426910	PTR_caseD_20_00426910	/pointer	00425C0E	code_pointer	SubmarineTitans::Recovered::HiddenThis::AnonReceiver_004248D0::FUN_00424e10			0	0	0		0
+00438688	PTR_caseD_29_00438688	/pointer	004371A8	code_pointer	STAllPlayersC::CmdToPlsObj			0	0	0		0
+004493D8	PTR_caseD_1_004493d8	/pointer	004493BF	code_pointer	STAllPlayersC::PutOnPlaceGuardBoats			0	0	0		0
+004BD358	PTR_caseD_2a_004bd358	/pointer	004BCF6D	code_pointer	TLOBaseTy::GetMessage			0	0	0		0
+004CFB64	PTR_caseD_d_004cfb64	/pointer	004CFA63	code_pointer	FUN_004cfa00			0	0	0		0
+004CFD5C	PTR_caseD_d_004cfd5c	/pointer	004CFC24	code_pointer	FUN_004cfbe0			0	0	0		0
+004E0710	PTR_caseD_1_004e0710	/pointer	004E04F8	code_pointer	FUN_004e04a0			0	0	0		0
+005018F8	PTR_caseD_16_005018f8	/pointer	0050177C	code_pointer	CPanelTy::PaintCtrlBoat			0	0	0		0
+00501C48	PTR_caseD_16_00501c48	/pointer	00501BCD	code_pointer	FUN_00501a10			0	0	0		0
+0050224C	PTR_caseD_16_0050224c	/pointer	005020D5	code_pointer	CPanelTy::Update2PanelWB			0	0	0		0
+00505CDC	PTR_DAT_00505cdc	pointer:/undefined	00505B89	initialized_data_pointer	DAT_00505b89		/undefined	0	0	0		0
+00505CEC	PTR_DAT_00505cec	pointer:/undefined	00505BD1	initialized_data_pointer	DAT_00505bd1		/undefined	0	0	0		0
+00511560	PTR_LAB_00511560	/pointer	00511476	control_flow_table_entry	LAB_00511476			0	0	0		0
+00511564	PTR_LAB_00511564	/pointer	0051147D	control_flow_table_entry	LAB_0051147d			0	0	0		0
+00520A58	PTR_caseD_0_00520a58	/pointer	005209AF	code_pointer	InfocPanelTy::Update			0	0	0		0
+00520A5C	PTR_caseD_1_00520a5c	/pointer	005209AA	code_pointer	InfocPanelTy::Update			0	0	0		0
+00520A60	PTR_caseD_2_00520a60	/pointer	0052099C	code_pointer	InfocPanelTy::Update			0	0	0		0
+00531CE8	PTR_LAB_00531ce8	pointer:/undefined	00530AA9	control_flow_table_entry	LAB_00530aa9		/undefined	0	0	0		0
+0053BC8C	PTR_caseD_0_0053bc8c	/pointer	0053B845	code_pointer	PlayPanelTy::GetMessage			0	0	0		0
+0053BC90	PTR_caseD_1_0053bc90	/pointer	0053B825	code_pointer	PlayPanelTy::GetMessage			0	0	0		0
+0053BC94	PTR_caseD_2_0053bc94	/pointer	0053B803	code_pointer	PlayPanelTy::GetMessage			0	0	0		0
+0053BCA0	PTR_caseD_0_0053bca0	/pointer	0053B9B8	code_pointer	PlayPanelTy::GetMessage			0	0	0		0
+0053BCA4	PTR_caseD_1_0053bca4	/pointer	0053B9B6	code_pointer	PlayPanelTy::GetMessage			0	0	0		0
+0053BCA8	PTR_caseD_2_0053bca8	/pointer	0053B9A8	code_pointer	PlayPanelTy::GetMessage			0	0	0		0
+0054FDB4	PTR_caseD_34_0054fdb4	/pointer	0054FCB9	code_pointer	STPlaySystemC::PrepareMail			0	0	0		0
+0058850C	PTR_caseD_1_0058850c	/pointer	00587FE7	code_pointer	FUN_00586af0			0	0	0		0
+0058F398	PTR_caseD_1_0058f398	/pointer	0058F359	code_pointer	FUN_0058f1e0			0	0	0		0
+0058F39C	PTR_caseD_1_0058f39c	/pointer	0058F359	code_pointer	FUN_0058f1e0			0	0	0		0
+00591420	PTR_caseD_1_00591420	/pointer	00590D91	code_pointer	CampaignTy::InitCampaign			0	0	0		0
+005AC58C	PTR_caseD_6_005ac58c	/pointer	005AB679	code_pointer	ChooseMapTy::InitChooseMap			0	0	0		0
+005AC604	PTR_caseD_6_005ac604	/pointer	005AC28D	code_pointer	ChooseMapTy::InitChooseMap			0	0	0		0
+005ADC54	PTR_caseD_6_005adc54	/pointer	005ADBF7	code_pointer	ChooseMapTy::NoneChooseMap			0	0	0		0
+005ADC78	PTR_caseD_6_005adc78	/pointer	005ADB3D	code_pointer	ChooseMapTy::NoneChooseMap			0	0	0		0
+005ADC9C	PTR_caseD_6_005adc9c	/pointer	005ADB41	code_pointer	ChooseMapTy::NoneChooseMap			0	0	0		0
+005B086C	PTR_caseD_3_005b086c	/pointer	005AFD90	code_pointer	ChooseMapTy::PrepFiles			0	0	0		0
+005B2180	PTR_caseD_6_005b2180	/pointer	005B138B	code_pointer	ChooseMapTy::GetMessage			0	0	0		0
+005B219C	PTR_caseD_6_005b219c	/pointer	005B182E	code_pointer	ChooseMapTy::GetMessage			0	0	0		0
+005CF6A4	PTR_caseD_6_005cf6a4	/pointer	005CE4E2	code_pointer	SettMapMTy::NoneSettMap			0	0	0		0
+005CF6EC	PTR_caseD_20_005cf6ec	/pointer	005CF063	code_pointer	SettMapMTy::NoneSettMap			0	0	0		0
+005D0E18	PTR_caseD_0_005d0e18	/pointer	005D0DA9	code_pointer	SettMapMTy::ChangePlayerTeam			0	0	0		0
+005D0E1C	PTR_caseD_1_005d0e1c	/pointer	005D0D8D	code_pointer	SettMapMTy::ChangePlayerTeam			0	0	0		0
+005D0E20	PTR_caseD_2_005d0e20	/pointer	005D0D6D	code_pointer	SettMapMTy::ChangePlayerTeam			0	0	0		0
+005D3D3C	PTR_caseD_6_005d3d3c	/pointer	005D214C	code_pointer	SettMapMTy::GetMessage			0	0	0		0
+005D3DB8	PTR_caseD_0_005d3db8	/pointer	005D3ABE	code_pointer	SettMapMTy::GetMessage			0	0	0		0
+005D3DBC	PTR_caseD_1_005d3dbc	/pointer	005D3AB7	code_pointer	SettMapMTy::GetMessage			0	0	0		0
+005D3DC0	PTR_caseD_2_005d3dc0	/pointer	005D3AA9	code_pointer	SettMapMTy::GetMessage			0	0	0		0
+005D50BC	PTR_caseD_1_005d50bc	/pointer	005D4FC6	code_pointer	SettMapSTy::SetListCtrls			0	0	0		0
+005D706C	PTR_caseD_0_005d706c	/pointer	005D69F6	code_pointer	SettMapSTy::GetMessage			0	0	0		0
+005D7070	PTR_caseD_1_005d7070	/pointer	005D69DA	code_pointer	SettMapSTy::GetMessage			0	0	0		0
+005D7074	PTR_caseD_2_005d7074	/pointer	005D69BA	code_pointer	SettMapSTy::GetMessage			0	0	0		0
+005D70B4	PTR_caseD_0_005d70b4	/pointer	005D6F70	code_pointer	SettMapSTy::GetMessage			0	0	0		0
+005D70B8	PTR_caseD_1_005d70b8	/pointer	005D6F69	code_pointer	SettMapSTy::GetMessage			0	0	0		0
+005D70BC	PTR_caseD_2_005d70bc	/pointer	005D6F5B	code_pointer	SettMapSTy::GetMessage			0	0	0		0
+005E93F8	PTR_caseD_1b_005e93f8	/pointer	005E9199	code_pointer	WaitTy::NoneWait			0	0	0		0
+006096B0	PTR_caseD_3_006096b0	/pointer	006092A7	code_pointer	FUN_00608e90			0	0	0		0
+006096B8	PTR_caseD_5_006096b8	/pointer	0060926A	code_pointer	FUN_00608e90			0	0	0		0
+006096CC	PTR_caseD_0_006096cc	/pointer	006092D9	code_pointer	FUN_00608e90			0	0	0		0
+0062D8C8	PTR_caseD_1_0062d8c8	/pointer	0062D88E	code_pointer	FUN_0062d840			0	0	0		0
+006613D4	PTR_caseD_64_006613d4	/pointer	00661149	code_pointer	FUN_00660f70			0	0	0		0
+0066726C	PTR_caseD_24e_0066726c	/pointer	00666DEA	code_pointer	FUN_00664960			0	0	0		0
+0067456C	PTR_caseD_1d_0067456c	/pointer	00673E2C	code_pointer	FUN_00673d20			0	0	0		0
+00682C1C	PTR_caseD_2_00682c1c	/pointer	00682A50	code_pointer	FUN_006829b0			0	0	0		0
+00682F3C	PTR_caseD_2_00682f3c	/pointer	00682EEF	code_pointer	FUN_00682ec0			0	0	0		0
+0068AB30	PTR_caseD_3_0068ab30	/pointer	00684DC8	code_pointer	FUN_00683c70			0	0	0		0
+006BB310	PTR_caseD_20_006bb310	/pointer	006BB086	code_pointer	Library::DKW::DDX::FUN_006bac60			0	0	0		0
+006BB340	PTR_caseD_20_006bb340	/pointer	006BB1C3	code_pointer	Library::DKW::DDX::FUN_006bac60			0	0	0		0
+006BF65C	PTR_caseD_20_006bf65c	/pointer	006BEF0D	code_pointer	FUN_006bea40			0	0	0		0
+006BF68C	PTR_caseD_20_006bf68c	/pointer	006BF0B6	code_pointer	FUN_006bea40			0	0	0		0
+006BF6BC	PTR_caseD_20_006bf6bc	/pointer	006BF1E1	code_pointer	FUN_006bea40			0	0	0		0
+006BF6EC	PTR_caseD_20_006bf6ec	/pointer	006BF32D	code_pointer	FUN_006bea40			0	0	0		0
+006CE6B4	PTR_caseD_3_006ce6b4	/pointer	006CD0D8	code_pointer	FUN_006c8ec0			0	0	0		0
+006F9A94	PTR_caseD_4_006f9a94	/pointer	006F9672	code_pointer	FUN_006f94d0			0	0	0		0
+006F9AA4	PTR_caseD_4_006f9aa4	/pointer	006F975E	code_pointer	FUN_006f94d0			0	0	0		0
+006FA248	PTR_caseD_4_006fa248	/pointer	006F9CB2	code_pointer	FUN_006f9ad0			0	0	0		0
+006FA258	PTR_caseD_4_006fa258	/pointer	006F9E00	code_pointer	FUN_006f9ad0			0	0	0		0
+006FB460	PTR_caseD_4_006fb460	/pointer	006FAF93	code_pointer	FUN_006fadc0			0	0	0		0
+006FBD04	PTR_caseD_4_006fbd04	/pointer	006FB6A4	code_pointer	FUN_006fb4a0			0	0	0		0
+007024D0	PTR_caseD_2_007024d0	/pointer	00701DED	code_pointer	FUN_00701ad0			0	0	0		0
+007024E0	PTR_caseD_2_007024e0	/pointer	00701F16	code_pointer	FUN_00701ad0			0	0	0		0
+00703120	PTR_caseD_4_00703120	/pointer	00702BE2	code_pointer	FUN_00702a30			0	0	0		0
+00703130	PTR_caseD_4_00703130	/pointer	00702D0D	code_pointer	FUN_00702a30			0	0	0		0
+00703140	PTR_caseD_4_00703140	/pointer	00702EC9	code_pointer	FUN_00702a30			0	0	0		0
+00703D00	PTR_caseD_4_00703d00	/pointer	00703814	code_pointer	FUN_00703650			0	0	0		0
+00703D10	PTR_caseD_4_00703d10	/pointer	00703939	code_pointer	FUN_00703650			0	0	0		0
+007055A8	PTR_caseD_2_007055a8	/pointer	0070545E	code_pointer	FUN_00705180			0	0	0		0
+007055B8	PTR_caseD_2_007055b8	/pointer	007054B8	code_pointer	FUN_00705180			0	0	0		0
+00706890	PTR_caseD_4_00706890	/pointer	007064CF	code_pointer	FUN_00706340			0	0	0		0
+0072DD00	PTR_caseD_0_0072dd00	/pointer	0072DD47	code_pointer	Library::MSVCRT::FUN_0072da70			0	0	0		0
+0073A5C0	PTR_caseD_0_0073a5c0	/pointer	0073A607	code_pointer	Library::MSVCRT::FUN_0073a330			0	0	0		0
+0073C328	PTR_caseD_5_0073c328	/pointer	0073B962	code_pointer	Library::MSVCRT::FUN_0073b6f0			0	0	0		0
+0073C32C	PTR_caseD_6_0073c32c	/pointer	0073B9AE	code_pointer	Library::MSVCRT::FUN_0073b6f0			0	0	0		0
+00740BAF	PTR_caseD_20_00740baf	/pointer	007407F5	code_pointer	Library::MSVCRT::FUN_00740700			0	0	0		0
+00743F12	PTR_caseD_a_00743f12	/pointer	00743CD3	code_pointer	Library::MSVCRT::FUN_007434d0			0	0	0		0
+00790C1C	PTR_s_tlo_bubbles_00790c1c	/pointer	007AD59C	string_pointer	s_tlo_bubbles_007ad59c	/string		0	0	0		0
+00790C20	PTR_s_tlo_emb6_00790c20	/pointer	007AD590	string_pointer	s_tlo_emb6_007ad590	/string		0	0	0		0
+00790C24	PTR_DAT_00790c24	/pointer	007AD58C	initialized_data_pointer	DAT_007ad58c			0	0	0		0
+00790C28	PTR_s_tlo_capture_00790c28	/pointer	007AD57C	string_pointer	s_tlo_capture_007ad57c	/string		0	0	0		0
+0079ACEC	PTR_s_SAVEGAME\\_0079acec	/pointer	007C7094	string_pointer	s_SAVEGAME\\_007c7094	/string		0	0	0		0
+0079ACF0	PTR_s_SYSTEM\\_0079acf0	/pointer	007C7088	string_pointer	s_SYSTEM\\_007c7088	/string		0	0	0		0
+0079ACF4	PTR_DAT_0079acf4	/pointer	007C7080	initialized_data_pointer	DAT_007c7080	/undefined1		0	0	0		0
+0079ACF8	PTR_DAT_0079acf8	/pointer	007C7078	initialized_data_pointer	DAT_007c7078	/undefined1		0	0	0		0
+0079ACFC	PTR_s_STRATEGS_0079acfc	/pointer	007C706C	string_pointer	s_STRATEGS_007c706c	/string		0	0	0		0
+0079AD00	PTR_DAT_0079ad00	/pointer	007C7064	initialized_data_pointer	DAT_007c7064	/undefined1		0	0	0		0
+0079AD04	PTR_s_SAVE_DESC_0079ad04	/pointer	007C7058	string_pointer	s_SAVE_DESC_007c7058	/string		0	0	0		0
+0079ADE4	PTR_s_SAVEGAME\\_0079ade4	/pointer	007C7094	string_pointer	s_SAVEGAME\\_007c7094	/string		0	0	0		0
+0079ADE8	PTR_s_SAVE_QUICKSAVE_0079ade8	/pointer	007C7D4C	string_pointer	s_SAVE_QUICKSAVE_007c7d4c	/string		0	0	0		0
+0079ADEC	PTR_s_SAVE_DESC_0079adec	/pointer	007C7058	string_pointer	s_SAVE_DESC_007c7058	/string		0	0	0		0
+0079AE2C	PTR_s_LAST_NAME_0079ae2c	/pointer	007C8410	string_pointer	s_LAST_NAME_007c8410	/string		0	0	0		0
+0079AE30	PTR_DAT_0079ae30	/pointer	007C8408	initialized_data_pointer	DAT_007c8408			0	0	0		0
+0079AEBC	PTR_s_TRACKS_0079aebc	/pointer	007C90FC	string_pointer	s_TRACKS_007c90fc	/string		0	0	0		0
+0079AEC4	PTR_s_VISIBILITY_0079aec4	/pointer	007C92BC	string_pointer	s_VISIBILITY_007c92bc	/string		0	0	0		0
+0079AEC8	PTR_DAT_0079aec8	/pointer	007C92B4	initialized_data_pointer	DAT_007c92b4			0	0	0		0
+0079AECC	PTR_DAT_0079aecc	/pointer	007C92AC	initialized_data_pointer	DAT_007c92ac			0	0	0		0
+0079AEF0	PTR_s_UPDATES\\_0079aef0	/pointer	007C94C0	string_pointer	s_UPDATES\\_007c94c0	/string		0	0	0		0
+0079AEF4	PTR_s_ST.INF_0079aef4	/pointer	007C94B8	string_pointer	s_ST.INF_007c94b8	/string		0	0	0		0
+0079AF6C	PTR_s_PLT_MMGLASS_0079af6c	/pointer	007C958C	string_pointer	s_PLT_MMGLASS_007c958c	/string		0	0	0		0
+0079AF70	PTR_s_PLT_PAUSE_0079af70	/pointer	007C9580	string_pointer	s_PLT_PAUSE_007c9580	/string		0	0	0		0
+0079AF74	PTR_s_PLT_EXPLITE_0079af74	/pointer	007C9570	string_pointer	s_PLT_EXPLITE_007c9570	/string		0	0	0		0
+0079AF78	PTR_s_PLT_SHAD30_0079af78	/pointer	007C9560	string_pointer	s_PLT_SHAD30_007c9560	/string		0	0	0		0
+0079AF7C	PTR_s_PLT_SHAD40_0079af7c	/pointer	007C9550	string_pointer	s_PLT_SHAD40_007c9550	/string		0	0	0		0
+0079AF80	PTR_s_PLT_SHAD60_0079af80	/pointer	007C9540	string_pointer	s_PLT_SHAD60_007c9540	/string		0	0	0		0
+0079AF84	PTR_s_PLT_FOG_0079af84	/pointer	007C9534	string_pointer	s_PLT_FOG_007c9534	/string		0	0	0		0
+0079AF88	PTR_s_PLT_MMSHAD_0079af88	/pointer	007C9524	string_pointer	s_PLT_MMSHAD_007c9524	/string		0	0	0		0
+0079AF8C	PTR_s_PLT_NUCL_0079af8c	/pointer	007C9518	string_pointer	s_PLT_NUCL_007c9518	/string		0	0	0		0
+0079AF90	PTR_s_PLT_GLOW_0079af90	/pointer	007C950C	string_pointer	s_PLT_GLOW_007c950c	/string		0	0	0		0
+0079AF94	PTR_s_PLT_DKD_0079af94	/pointer	007C9500	string_pointer	s_PLT_DKD_007c9500	/string		0	0	0		0
+0079AF98	PTR_s_PLT_FSGSGLASS_0079af98	/pointer	007C94F0	string_pointer	s_PLT_FSGSGLASS_007c94f0	/string		0	0	0		0
+0079AF9C	PTR_s_PLT_FSGSSHAD_0079af9c	/pointer	007C94E0	string_pointer	s_PLT_FSGSSHAD_007c94e0	/string		0	0	0		0
+0079B00C	PTR_s_music_0079b00c	/pointer	007C9740	string_pointer	s_music_007c9740	/string		0	0	0		0
+0079B010	PTR_s_GM_SET_0079b010	/pointer	007C9738	string_pointer	s_GM_SET_007c9738	/string		0	0	0		0
+0079B014	PTR_s_GM_PEACE_0079b014	/pointer	007C972C	string_pointer	s_GM_PEACE_007c972c	/string		0	0	0		0
+0079B018	PTR_s_GM_PWAR_0079b018	/pointer	007C9720	string_pointer	s_GM_PWAR_007c9720	/string		0	0	0		0
+0079B01C	PTR_s_GM_WAR_0079b01c	/pointer	007C9718	string_pointer	s_GM_WAR_007c9718	/string		0	0	0		0
+0079B028	PTR_s_sounds_0079b028	/pointer	007C97E8	string_pointer	s_sounds_007c97e8	/string		0	0	0		0
+0079B02C	PTR_s_SAVEGAME\\_0079b02c	/pointer	007C7094	string_pointer	s_SAVEGAME\\_007c7094	/string		0	0	0		0
+0079B030	PTR_s_SYSTEM\\_0079b030	/pointer	007C7088	string_pointer	s_SYSTEM\\_007c7088	/string		0	0	0		0
+0079B034	PTR_DAT_0079b034	/pointer	007C7080	initialized_data_pointer	DAT_007c7080	/undefined1		0	0	0		0
+0079B038	PTR_DAT_0079b038	/pointer	007C7078	initialized_data_pointer	DAT_007c7078	/undefined1		0	0	0		0
+0079B03C	PTR_s_CAMPAIGN.VPS_0079b03c	/pointer	007CA094	string_pointer	s_CAMPAIGN.VPS_007ca094	/string		0	0	0		0
+0079B040	PTR_s_STARTUP.VPS_0079b040	/pointer	007CA084	string_pointer	s_STARTUP.VPS_007ca084	/string		0	0	0		0
+0079B044	PTR_s_SAVE_QUICKSAVE_0079b044	/pointer	007C7D4C	string_pointer	s_SAVE_QUICKSAVE_007c7d4c	/string		0	0	0		0
+0079B048	PTR_s_TASKS_0079b048	/pointer	007CA07C	string_pointer	s_TASKS_007ca07c	/string		0	0	0		0
+0079B04C	PTR_s_STRATEGS_0079b04c	/pointer	007C706C	string_pointer	s_STRATEGS_007c706c	/string		0	0	0		0
+0079B050	PTR_DAT_0079b050	/pointer	007C7064	initialized_data_pointer	DAT_007c7064	/undefined1		0	0	0		0
+0079B054	PTR_s_SAVE_DESC_0079b054	/pointer	007C7058	string_pointer	s_SAVE_DESC_007c7058	/string		0	0	0		0
+0079B058	PTR_s_SAVE_PLAYER_0079b058	/pointer	007CA06C	string_pointer	s_SAVE_PLAYER_007ca06c	/string		0	0	0		0
+0079B05C	PTR_s_RND_INIT_0079b05c	/pointer	007CA060	string_pointer	s_RND_INIT_007ca060	/string		0	0	0		0
+0079B060	PTR_s_RESTART_GAME_0079b060	/pointer	007CA050	string_pointer	s_RESTART_GAME_007ca050	/string		0	0	0		0
+0079B064	PTR_s_STATETIMER_GAME_0079b064	/pointer	007CA03C	string_pointer	s_STATETIMER_GAME_007ca03c	/string		0	0	0		0
+0079B068	PTR_s_AUTOSAVETIME_GAME_0079b068	/pointer	007CA024	string_pointer	s_AUTOSAVETIME_GAME_007ca024	/string		0	0	0		0
+0079B06C	PTR_s_BRIEFING_GAME_0079b06c	/pointer	007CA014	string_pointer	s_BRIEFING_GAME_007ca014	/string		0	0	0		0
+0079B070	PTR_s_TITLE_MISSION_0079b070	/pointer	007CA004	string_pointer	s_TITLE_MISSION_007ca004	/string		0	0	0		0
+0079B074	PTR_s_DESCRIPTION_0079b074	/pointer	007C9FF4	string_pointer	s_DESCRIPTION_007c9ff4	/string		0	0	0		0
+0079B078	PTR_s_OBJECTIVES_0079b078	/pointer	007C9FE4	string_pointer	s_OBJECTIVES_007c9fe4	/string		0	0	0		0
+0079B07C	PTR_s_TEXTURE_0079b07c	/pointer	007C9FD8	string_pointer	s_TEXTURE_007c9fd8	/string		0	0	0		0
+0079B080	PTR_s_DESCRIPTOR_0079b080	/pointer	007C9FC8	string_pointer	s_DESCRIPTOR_007c9fc8	/string		0	0	0		0
+0079B084	PTR_s_SMALL_MAP_0079b084	/pointer	007C9FBC	string_pointer	s_SMALL_MAP_007c9fbc	/string		0	0	0		0
+0079B088	PTR_s_ORIG_DB_0079b088	/pointer	007C9FB0	string_pointer	s_ORIG_DB_007c9fb0	/string		0	0	0		0
+0079B08C	PTR_s_TYPE_START_0079b08c	/pointer	007C9FA0	string_pointer	s_TYPE_START_007c9fa0	/string		0	0	0		0
+0079B090	PTR_s_REPORT_0079b090	/pointer	007C9F98	string_pointer	s_REPORT_007c9f98	/string		0	0	0		0
+0079B0CC	PTR_s_SAVEGAME\\_0079b0cc	/pointer	007C7094	string_pointer	s_SAVEGAME\\_007c7094	/string		0	0	0		0
+0079B0D0	PTR_s_PL_LOG_0079b0d0	/pointer	007CA67C	string_pointer	s_PL_LOG_007ca67c	/string		0	0	0		0
+0079B0D4	PTR_s_OPTIONS_PLAYER_0079b0d4	/pointer	007CA668	string_pointer	s_OPTIONS_PLAYER_007ca668	/string		0	0	0		0
+0079B0D8	PTR_s_ACCKEYS_PLAYER_0079b0d8	/pointer	007CA654	string_pointer	s_ACCKEYS_PLAYER_007ca654	/string		0	0	0		0
+0079B0DC	PTR_s_AIKEYS_PLAYER_0079b0dc	/pointer	007CA644	string_pointer	s_AIKEYS_PLAYER_007ca644	/string		0	0	0		0
+0079B0E0	PTR_s_SYSKEYS_PLAYER_0079b0e0	/pointer	007CA630	string_pointer	s_SYSKEYS_PLAYER_007ca630	/string		0	0	0		0
+0079B0E4	PTR_s_MOUKEYS_PLAYER_0079b0e4	/pointer	007CA61C	string_pointer	s_MOUKEYS_PLAYER_007ca61c	/string		0	0	0		0
+0079B0E8	PTR_s_LASTLOG_0079b0e8	/pointer	007CA610	string_pointer	s_LASTLOG_007ca610	/string		0	0	0		0
+0079B0EC	PTR_s_LASTPSW_0079b0ec	/pointer	007CA604	string_pointer	s_LASTPSW_007ca604	/string		0	0	0		0
+0079B114	PTR_s_UPDATES\\_0079b114	/pointer	007C94C0	string_pointer	s_UPDATES\\_007c94c0	/string		0	0	0		0
+0079B18C	PTR_s_SAVEGAME\\_0079b18c	/pointer	007C7094	string_pointer	s_SAVEGAME\\_007c7094	/string		0	0	0		0
+0079B190	PTR_s_SYSTEM\\_0079b190	/pointer	007C7088	string_pointer	s_SYSTEM\\_007c7088	/string		0	0	0		0
+0079B194	PTR_DAT_0079b194	/pointer	007C7080	initialized_data_pointer	DAT_007c7080	/undefined1		0	0	0		0
+0079B198	PTR_s_STRATEGS_0079b198	/pointer	007C706C	string_pointer	s_STRATEGS_007c706c	/string		0	0	0		0
+0079B19C	PTR_DAT_0079b19c	/pointer	007C7064	initialized_data_pointer	DAT_007c7064	/undefined1		0	0	0		0
+0079B1A0	PTR_s_SAVE_DESC_0079b1a0	/pointer	007C7058	string_pointer	s_SAVE_DESC_007c7058	/string		0	0	0		0
+0079B1A4	PTR_s_DESCRIPTOR_0079b1a4	/pointer	007C9FC8	string_pointer	s_DESCRIPTOR_007c9fc8	/string		0	0	0		0
+0079B1A8	PTR_s_ANIM_PALETTE_0079b1a8	/pointer	007CAB4C	string_pointer	s_ANIM_PALETTE_007cab4c	/string		0	0	0		0
+0079BFE8	PTR_s_MISSIONS\\_0079bfe8	/pointer	007CBCC8	string_pointer	s_MISSIONS\\_007cbcc8	/string		0	0	0		0
+0079BFEC	PTR_DAT_0079bfec	/pointer	007CBCC0	initialized_data_pointer	DAT_007cbcc0			0	0	0		0
+0079BFF0	PTR_s_TUTOR_0079bff0	/pointer	007CBCB8	string_pointer	s_TUTOR_007cbcb8	/string		0	0	0		0
+0079C020	PTR_s_UPDATES\\_0079c020	/pointer	007C94C0	string_pointer	s_UPDATES\\_007c94c0	/string		0	0	0		0
+0079C024	PTR_s_ST.INF_0079c024	/pointer	007C94B8	string_pointer	s_ST.INF_007c94b8	/string		0	0	0		0
+0079C04C	PTR_s_SAVEGAME\\_0079c04c	/pointer	007C7094	string_pointer	s_SAVEGAME\\_007c7094	/string		0	0	0		0
+0079C050	PTR_s_CUSTOM\\_0079c050	/pointer	007CC71C	string_pointer	s_CUSTOM\\_007cc71c	/string		0	0	0		0
+0079C054	PTR_s_MISSIONS\\_0079c054	/pointer	007CBCC8	string_pointer	s_MISSIONS\\_007cbcc8	/string		0	0	0		0
+0079C058	PTR_DAT_0079c058	/pointer	007C7080	initialized_data_pointer	DAT_007c7080	/undefined1		0	0	0		0
+0079C05C	PTR_s_CAMPAIGN.VPS_0079c05c	/pointer	007CA094	string_pointer	s_CAMPAIGN.VPS_007ca094	/string		0	0	0		0
+0079C060	PTR_s_ADDON_0079c060	/pointer	007CC714	string_pointer	s_ADDON_007cc714	/string		0	0	0		0
+0079C064	PTR_s_MISSION_0079c064	/pointer	007CC708	string_pointer	s_MISSION_007cc708	/string		0	0	0		0
+0079C068	PTR_DAT_0079c068	/pointer	007CC704	initialized_data_pointer	DAT_007cc704			0	0	0		0
+0079C06C	PTR_DAT_0079c06c	/pointer	007C7064	initialized_data_pointer	DAT_007c7064	/undefined1		0	0	0		0
+0079C070	PTR_s_SAVE_DESC_0079c070	/pointer	007C7058	string_pointer	s_SAVE_DESC_007c7058	/string		0	0	0		0
+0079C074	PTR_s_OBJECTIVES_0079c074	/pointer	007C9FE4	string_pointer	s_OBJECTIVES_007c9fe4	/string		0	0	0		0
+0079C078	PTR_s_DESCRIPTOR_0079c078	/pointer	007C9FC8	string_pointer	s_DESCRIPTOR_007c9fc8	/string		0	0	0		0
+0079C0B8	PTR_s_SAVEGAME\\_0079c0b8	/pointer	007C7094	string_pointer	s_SAVEGAME\\_007c7094	/string		0	0	0		0
+0079C0BC	PTR_s_CUSTOM\\_0079c0bc	/pointer	007CC71C	string_pointer	s_CUSTOM\\_007cc71c	/string		0	0	0		0
+0079C0D4	PTR_s_SAVEGAME\\_0079c0d4	/pointer	007C7094	string_pointer	s_SAVEGAME\\_007c7094	/string		0	0	0		0
+0079C0D8	PTR_s_PL_LOG_0079c0d8	/pointer	007CA67C	string_pointer	s_PL_LOG_007ca67c	/string		0	0	0		0
+0079C0DC	PTR_DAT_0079c0dc	/pointer	007CCEC0	initialized_data_pointer	DAT_007ccec0	/undefined4		0	0	0		0
+0079C0E8	PTR_s_MISSIONS\\_0079c0e8	/pointer	007CBCC8	string_pointer	s_MISSIONS\\_007cbcc8	/string		0	0	0		0
+0079C0EC	PTR_s_SYSTEM\\_0079c0ec	/pointer	007C7088	string_pointer	s_SYSTEM\\_007c7088	/string		0	0	0		0
+0079C0F0	PTR_DAT_0079c0f0	/pointer	007C7080	initialized_data_pointer	DAT_007c7080	/undefined1		0	0	0		0
+0079C0F4	PTR_s_RANDOM_0079c0f4	/pointer	007CD0E0	string_pointer	s_RANDOM_007cd0e0	/string		0	0	0		0
+0079C0F8	PTR_s_GENERATE_RND_0079c0f8	/pointer	007CD0D0	string_pointer	s_GENERATE_RND_007cd0d0	/string		0	0	0		0
+0079C0FC	PTR_s_INTERFACE_RND_0079c0fc	/pointer	007CD0C0	string_pointer	s_INTERFACE_RND_007cd0c0	/string		0	0	0		0
+0079C100	PTR_s_STRATEGS_0079c100	/pointer	007C706C	string_pointer	s_STRATEGS_007c706c	/string		0	0	0		0
+0079C104	PTR_s_TITLE_MISSION_0079c104	/pointer	007CA004	string_pointer	s_TITLE_MISSION_007ca004	/string		0	0	0		0
+0079C108	PTR_s_DESCRIPTION_0079c108	/pointer	007C9FF4	string_pointer	s_DESCRIPTION_007c9ff4	/string		0	0	0		0
+0079C10C	PTR_s_OBJECTIVES_0079c10c	/pointer	007C9FE4	string_pointer	s_OBJECTIVES_007c9fe4	/string		0	0	0		0
+0079C110	PTR_s_DESCRIPTOR_0079c110	/pointer	007C9FC8	string_pointer	s_DESCRIPTOR_007c9fc8	/string		0	0	0		0
+0079C114	PTR_s_SMALL_MAP_0079c114	/pointer	007C9FBC	string_pointer	s_SMALL_MAP_007c9fbc	/string		0	0	0		0
+0079C19C	PTR_s_SAVEGAME\\_0079c19c	/pointer	007C7094	string_pointer	s_SAVEGAME\\_007c7094	/string		0	0	0		0
+0079C1A0	PTR_s_PL_LOG_0079c1a0	/pointer	007CA67C	string_pointer	s_PL_LOG_007ca67c	/string		0	0	0		0
+0079C1A4	PTR_s_OPTIONS_PLAYER_0079c1a4	/pointer	007CA668	string_pointer	s_OPTIONS_PLAYER_007ca668	/string		0	0	0		0
+0079C1BC	PTR_s_CUSTOM\\_0079c1bc	/pointer	007CC71C	string_pointer	s_CUSTOM\\_007cc71c	/string		0	0	0		0
+0079C1C0	PTR_DAT_0079c1c0	/pointer	007C7080	initialized_data_pointer	DAT_007c7080	/undefined1		0	0	0		0
+0079C1C4	PTR_DAT_0079c1c4	/pointer	007C7078	initialized_data_pointer	DAT_007c7078	/undefined1		0	0	0		0
+0079C1C8	PTR_s_SAVE_PLAYER_0079c1c8	/pointer	007CA06C	string_pointer	s_SAVE_PLAYER_007ca06c	/string		0	0	0		0
+0079C1CC	PTR_s_TITLE_MISSION_0079c1cc	/pointer	007CA004	string_pointer	s_TITLE_MISSION_007ca004	/string		0	0	0		0
+0079C1D0	PTR_s_DESCRIPTION_0079c1d0	/pointer	007C9FF4	string_pointer	s_DESCRIPTION_007c9ff4	/string		0	0	0		0
+0079C1D4	PTR_s_OBJECTIVES_0079c1d4	/pointer	007C9FE4	string_pointer	s_OBJECTIVES_007c9fe4	/string		0	0	0		0
+0079C1D8	PTR_s_DESCRIPTOR_0079c1d8	/pointer	007C9FC8	string_pointer	s_DESCRIPTOR_007c9fc8	/string		0	0	0		0
+0079C1DC	PTR_s_SMALL_MAP_0079c1dc	/pointer	007C9FBC	string_pointer	s_SMALL_MAP_007c9fbc	/string		0	0	0		0
+0079C214	PTR_s_TASKPLAY_0079c214	/pointer	007CD988	string_pointer	s_TASKPLAY_007cd988	/string		0	0	0		0
+0079C218	PTR_s_TITLE_MISSION_0079c218	/pointer	007CA004	string_pointer	s_TITLE_MISSION_007ca004	/string		0	0	0		0
+0079C21C	PTR_s_DESCRIPTION_0079c21c	/pointer	007C9FF4	string_pointer	s_DESCRIPTION_007c9ff4	/string		0	0	0		0
+0079C220	PTR_s_OBJECTIVES_0079c220	/pointer	007C9FE4	string_pointer	s_OBJECTIVES_007c9fe4	/string		0	0	0		0
+0079C224	PTR_s_DEFAULT_WS_ANIMATED_0079c224	/pointer	007CD970	string_pointer	s_DEFAULT_WS_ANIMATED_007cd970	/string		0	0	0		0
+0079C228	PTR_s_DEFAULT_BO_ANIMATED_0079c228	/pointer	007CD958	string_pointer	s_DEFAULT_BO_ANIMATED_007cd958	/string		0	0	0		0
+0079C22C	PTR_s_DEFAULT_SI_ANIMATED_0079c22c	/pointer	007CD940	string_pointer	s_DEFAULT_SI_ANIMATED_007cd940	/string		0	0	0		0
+0079C240	PTR_s_SAVEGAME\\_0079c240	/pointer	007C7094	string_pointer	s_SAVEGAME\\_007c7094	/string		0	0	0		0
+0079C244	PTR_s_CUSTOM\\_0079c244	/pointer	007CC71C	string_pointer	s_CUSTOM\\_007cc71c	/string		0	0	0		0
+0079C57C	PTR_s_BASIS_MAN_0079c57c	/pointer	007CE554	string_pointer	s_BASIS_MAN_007ce554	/string		0	0	0		0
+0079D080	PTR_s_RUBBISH_3_0079d080	/pointer	007D13E0	string_pointer	s_RUBBISH_3_007d13e0	/string		0	0	0		0
+0079D198	PTR_DAT_0079d198	/pointer	007D19F0	initialized_data_pointer	DAT_007d19f0			0	0	0		0
+0079D614	PTR_s_AIBOSS_0079d614	/pointer	007D2748	string_pointer	s_AIBOSS_007d2748	/string		0	0	0		0
+0079D65C	PTR_DAT_0079d65c	/pointer	007D2860	initialized_data_pointer	DAT_007d2860			0	0	0		0
+0079D660	PTR_s_AIPLAYER_0079d660	/pointer	007D2854	string_pointer	s_AIPLAYER_007d2854	/string		0	0	0		0
+0079D664	PTR_s_AIBOSS_0079d664	/pointer	007D2748	string_pointer	s_AIBOSS_007d2748	/string		0	0	0		0
+0079D668	PTR_s_STRATEG_0079d668	/pointer	007D2848	string_pointer	s_STRATEG_007d2848	/string		0	0	0		0
+0079D6C0	PTR_s_SAVEGAME\\_0079d6c0	/pointer	007C7094	string_pointer	s_SAVEGAME\\_007c7094	/string		0	0	0		0
+0079D6C4	PTR_s_PL_LOG_0079d6c4	/pointer	007CA67C	string_pointer	s_PL_LOG_007ca67c	/string		0	0	0		0
+0079D6C8	PTR_DAT_0079d6c8	/pointer	007CCEC0	initialized_data_pointer	DAT_007ccec0	/undefined4		0	0	0		0
+0079D6D0	PTR_s_AIPLAYER_0079d6d0	/pointer	007D2854	string_pointer	s_AIPLAYER_007d2854	/string		0	0	0		0
+0079D718	PTR_s_OBJECTIVES_0079d718	/pointer	007C9FE4	string_pointer	s_OBJECTIVES_007c9fe4	/string		0	0	0		0
+0079D71C	PTR_s_AIPLAYER_0079d71c	/pointer	007D2854	string_pointer	s_AIPLAYER_007d2854	/string		0	0	0		0
+0079D720	PTR_s_AIBOSS_0079d720	/pointer	007D2748	string_pointer	s_AIBOSS_007d2748	/string		0	0	0		0
+0079D724	PTR_s_ASSISTANT_0079d724	/pointer	007D2F98	string_pointer	s_ASSISTANT_007d2f98	/string		0	0	0		0
+0079D728	PTR_s_OPPONENT_0079d728	/pointer	007D2F8C	string_pointer	s_OPPONENT_007d2f8c	/string		0	0	0		0
+0079D72C	PTR_s_STRATEG_0079d72c	/pointer	007D2848	string_pointer	s_STRATEG_007d2848	/string		0	0	0		0
+0079D734	PTR_s___EMPTY___0079d734	/pointer	007D4308	string_pointer	s___EMPTY___007d4308	/string		0	0	0		0
+0079D738	PTR_s___CONST__%03d_0079d738	/pointer	007D42F8	string_pointer	s___CONST__%03d_007d42f8	/string		0	0	0		0
+0079D73C	PTR_s___INCLUDE__%03d_0079d73c	/pointer	007D42E4	string_pointer	s___INCLUDE__%03d_007d42e4	/string		0	0	0		0
+0079D740	PTR_s___EXPAR__%03d_0079d740	/pointer	007D42D4	string_pointer	s___EXPAR__%03d_007d42d4	/string		0	0	0		0
+0079D744	PTR_s__RT%d_0079d744	/pointer	007D42CC	string_pointer	s__RT%d_007d42cc	/string		0	0	0		0
+0079D748	PTR_s__GL%d_0079d748	/pointer	007D42C4	string_pointer	s__GL%d_007d42c4	/string		0	0	0		0
+0079D74C	PTR_s__PI%d_0079d74c	/pointer	007D42BC	string_pointer	s__PI%d_007d42bc	/string		0	0	0		0
+0079D750	PTR_s__PS%d_0079d750	/pointer	007D42B4	string_pointer	s__PS%d_007d42b4	/string		0	0	0		0
+0079D770	PTR_s_DESCRIPTOR_0079d770	/pointer	007C9FC8	string_pointer	s_DESCRIPTOR_007c9fc8	/string		0	0	0		0
+0079D774	PTR_s_GENERATE_RND_0079d774	/pointer	007CD0D0	string_pointer	s_GENERATE_RND_007cd0d0	/string		0	0	0		0
+0079D778	PTR_s_INTERFACE_RND_0079d778	/pointer	007CD0C0	string_pointer	s_INTERFACE_RND_007cd0c0	/string		0	0	0		0
+0079D838	PTR_s_TITLE_MISSION_0079d838	/pointer	007CA004	string_pointer	s_TITLE_MISSION_007ca004	/string		0	0	0		0
+0079D83C	PTR_s_TEXTURE_0079d83c	/pointer	007C9FD8	string_pointer	s_TEXTURE_007c9fd8	/string		0	0	0		0
+0079D840	PTR_s_SMALL_MAP_0079d840	/pointer	007C9FBC	string_pointer	s_SMALL_MAP_007c9fbc	/string		0	0	0		0
+0079D848	PTR_s_PALETTE_0079d848	/pointer	007CA1C8	string_pointer	s_PALETTE_007ca1c8	/string		0	0	0		0
+007A1270	PTR_DAT_007a1270	/pointer	007A1BB0	initialized_data_pointer	DAT_007a1bb0	/undefined1		0	0	0		0
+007A127C	PTR_DAT_007a127c	/pointer	007A1BA0	initialized_data_pointer	DAT_007a1ba0	/undefined1		0	0	0		0
+007A1284	PTR_s_RGB_VGA_007a1284	/pointer	007A132C	string_pointer	s_RGB_VGA_007a132c	/string		0	0	0		0
+007A5250	PTR_DAT_007a5250	/pointer	007F4DE8	initialized_data_pointer	DAT_007f4de8			0	0	0		0
+007AD25C	PTR_s_tlo_bldmark_si_007ad25c	pointer:/undefined	007AD2B8	string_pointer	s_tlo_bldmark_si_007ad2b8	/string	/undefined	0	0	0		0
+007B5170	PTR_DAT_007b5170	pointer:/undefined	007AD5B0	initialized_data_pointer	DAT_007ad5b0		/undefined	0	0	0		0
+007B5180	PTR_DAT_007b5180	/pointer	007B1FF0	initialized_data_pointer	DAT_007b1ff0			0	0	0		0
+007B8310	PTR_DAT_007b8310	pointer:/undefined	007B5190	initialized_data_pointer	DAT_007b5190		/undefined	0	0	0		0
+007B8320	PTR_DAT_007b8320	/pointer	007FE430	initialized_data_pointer	DAT_007fe430			0	0	0		0
+007B8330	PTR_s_dyaws_body_007b8330	/pointer	007BE898	string_pointer	s_dyaws_body_007be898	/string		0	0	0		0
+007B8334	PTR_s_dyaws_id_007b8334	/pointer	007BE88C	string_pointer	s_dyaws_id_007be88c	/string		0	0	0		0
+007BB198	PTR_PTR_007bb198	pointer:/undefined	007B8330	initialized_data_pointer	PTR_s_dyaws_body_007b8330	/pointer	/undefined	0	0	0		0
+007BB1A8	PTR_DAT_007bb1a8	/pointer	007B95C0	initialized_data_pointer	DAT_007b95c0			0	0	0		0
+007BB1B4	PTR_s_tlo_sha_ws_007bb1b4	/pointer	007BDDE4	string_pointer	s_tlo_sha_ws_007bdde4	/string		0	0	0		0
+007BF3E8	PTR_s_tlo_embws1_007bf3e8	/pointer	007BF418	string_pointer	s_tlo_embws1_007bf418	/string		0	0	0		0
+007BFC04	PTR_DAT_007bfc04	/pointer	007BFA30	initialized_data_pointer	DAT_007bfa30			0	0	0		0
+007BFC08	PTR_DAT_007bfc08	/pointer	007BFACC	initialized_data_pointer	DAT_007bfacc			0	0	0		0
+007C0DC8	PTR_DAT_007c0dc8	/pointer	007BFC10	initialized_data_pointer	DAT_007bfc10			0	0	0		0
+007C83B0	PTR_DAT_007c83b0	/pointer	007C8400	initialized_data_pointer	DAT_007c8400	/undefined1		0	0	0		0
+007CB08C	PTR_s_rc276_c%d_007cb08c	/pointer	007CB190	string_pointer	s_rc276_c%d_007cb190	/string		0	0	0		0
+007CB090	PTR_s_rc276_%d_007cb090	/pointer	007CB184	string_pointer	s_rc276_%d_007cb184	/string		0	0	0		0
+007CB094	PTR_s_rgold_c0_007cb094	/pointer	007CB178	string_pointer	s_rgold_c0_007cb178	/string		0	0	0		0
+007CB098	PTR_s_rgold_%d_007cb098	/pointer	007CB16C	string_pointer	s_rgold_%d_007cb16c	/string		0	0	0		0
+007CB09C	PTR_s_rmeta_c%d_007cb09c	/pointer	007CB160	string_pointer	s_rmeta_c%d_007cb160	/string		0	0	0		0
+007CB0A0	PTR_s_rmeta_%d_007cb0a0	/pointer	007CB154	string_pointer	s_rmeta_%d_007cb154	/string		0	0	0		0
+007CB0A4	PTR_s_term0_007cb0a4	pointer:/undefined	007CB14C	string_pointer	s_term0_007cb14c	/string	/undefined	0	0	0		0
+007CB0B4	PTR_s_termsd_007cb0b4	/pointer	007CB134	string_pointer	s_termsd_007cb134	/string		0	0	0		0
+007CDE70	PTR_s_cont1_007cde70	pointer:/undefined	007CE4E4	string_pointer	s_cont1_007ce4e4	/string	/undefined	0	0	0		0
+007CE530	PTR_s_basis_10_007ce530	/pointer	007CE548	string_pointer	s_basis_10_007ce548	/string		0	0	0		0
+007CE534	PTR_s_basis_40_007ce534	/pointer	007CE53C	string_pointer	s_basis_40_007ce53c	/string		0	0	0		0
+007CE5A0	PTR_s_adcbo_007ce5a0	pointer:/undefined	007CE68C	string_pointer	s_adcbo_007ce68c	/string	/undefined	0	0	0		0
+007CE5F8	PTR_s_pics_g_007ce5f8	pointer:/undefined	007CE674	string_pointer	s_pics_g_007ce674	/string	/undefined	0	0	0		0
+007CE6E0	PTR_s_col3l0_007ce6e0	pointer:/undefined	007CE860	string_pointer	s_col3l0_007ce860	/string	/undefined	0	0	0		0
+007CE934	PTR_s_Expb24_007ce934	/pointer	007CEBC0	string_pointer	s_Expb24_007cebc0	/string		0	0	0		0
+007CEBEC	PTR_s_Dest1_0_007cebec	pointer:/undefined	007CED28	string_pointer	s_Dest1_0_007ced28	/string	/undefined	0	0	0		0
+007CEC00	PTR_s_Dest4_0_007cec00	pointer:/undefined	007CED1C	string_pointer	s_Dest4_0_007ced1c	/string	/undefined	0	0	0		0
+007CEC3C	PTR_s_dest0s0_007cec3c	pointer:/undefined	007CECEC	string_pointer	s_dest0s0_007cecec	/string	/undefined	0	0	0		0
+007CED70	PTR_s_expl_bt0_007ced70	pointer:/undefined	007BF540	string_pointer	s_expl_bt0_007bf540	/string	/undefined	0	0	0		0
+007CED98	PTR_s_expl_bm0_007ced98	pointer:/undefined	007CF624	string_pointer	s_expl_bm0_007cf624	/string	/undefined	0	0	0		0
+007CEDC0	PTR_s_expl_bbt0_007cedc0	pointer:/undefined	007AD564	string_pointer	s_expl_bbt0_007ad564	/string	/undefined	0	0	0		0
+007CF6D0	PTR_s_pics_g_007cf6d0	pointer:/undefined	007CE674	string_pointer	s_pics_g_007ce674	/string	/undefined	0	0	0		0
+007D0164	PTR_s_light01_007d0164	pointer:/undefined	007D01A4	string_pointer	s_light01_007d01a4	/string	/undefined	0	0	0		0
+007D02C4	PTR_DAT_007d02c4	pointer:/undefined	007D06A8	initialized_data_pointer	DAT_007d06a8		/undefined	0	0	0		0
+007D02D4	PTR_s_mine0_007d02d4	pointer:/undefined	007D0688	string_pointer	s_mine0_007d0688	/string	/undefined	0	0	0		0
+007D0354	PTR_s_expdeep_007d0354	pointer:/undefined	007D05A4	string_pointer	s_expdeep_007d05a4	/string	/undefined	0	0	0		0
+007D0364	PTR_DAT_007d0364	pointer:/undefined	007D0588	initialized_data_pointer	DAT_007d0588	/undefined1	/undefined	0	0	0		0
+007D0374	PTR_DAT_007d0374	pointer:/undefined	007D0570	initialized_data_pointer	DAT_007d0570	/undefined1	/undefined	0	0	0		0
+007D0718	PTR_s_particle0_007d0718	pointer:/undefined	007D1348	string_pointer	s_particle0_007d1348	/string	/undefined	0	0	0		0
+007D0758	PTR_s_particle01_007d0758	pointer:/undefined	007D126C	string_pointer	s_particle01_007d126c	/string	/undefined	0	0	0		0
+007D0798	PTR_s_partdw01_007d0798	pointer:/undefined	007D1170	string_pointer	s_partdw01_007d1170	/string	/undefined	0	0	0		0
+007D07D8	PTR_s_part_w0_007d07d8	pointer:/undefined	007D114C	string_pointer	s_part_w0_007d114c	/string	/undefined	0	0	0		0
+007D0800	PTR_s_part_g0_007d0800	pointer:/undefined	007D10D4	string_pointer	s_part_g0_007d10d4	/string	/undefined	0	0	0		0
+007D0828	PTR_s_gr2part0_007d0828	pointer:/undefined	007D105C	string_pointer	s_gr2part0_007d105c	/string	/undefined	0	0	0		0
+007D0870	PTR_s_gr1part0_007d0870	pointer:/undefined	007D0F84	string_pointer	s_gr1part0_007d0f84	/string	/undefined	0	0	0		0
+007D08BC	PTR_s_rubb3_007d08bc	/pointer	007D0EB0	string_pointer	s_rubb3_007d0eb0	/string		0	0	0		0
+007D08C4	PTR_s_partsi01_007d08c4	pointer:/undefined	007D0EA4	string_pointer	s_partsi01_007d0ea4	/string	/undefined	0	0	0		0
+007D0924	PTR_s_part_s0_007d0924	pointer:/undefined	007D0E80	string_pointer	s_part_s0_007d0e80	/string	/undefined	0	0	0		0
+007D0984	PTR_s_grsi0_007d0984	pointer:/undefined	007D0E0C	string_pointer	s_grsi0_007d0e0c	/string	/undefined	0	0	0		0
+007D09D8	PTR_s_stoun0_007d09d8	pointer:/undefined	007D0DC4	string_pointer	s_stoun0_007d0dc4	/string	/undefined	0	0	0		0
+007D0C40	PTR_s_expl_sb0_007d0c40	/pointer	007D0D70	string_pointer	s_expl_sb0_007d0d70	/string		0	0	0		0
+007D0C44	PTR_s_expl_sb1_007d0c44	/pointer	007D0D64	string_pointer	s_expl_sb1_007d0d64	/string		0	0	0		0
+007D1480	PTR_s_rubb_w0_007d1480	pointer:/undefined	007D178C	string_pointer	s_rubb_w0_007d178c	/string	/undefined	0	0	0		0
+007D14A8	PTR_s_rubb_g0_007d14a8	pointer:/undefined	007D1714	string_pointer	s_rubb_g0_007d1714	/string	/undefined	0	0	0		0
+007D14D0	PTR_s_rubb3_007d14d0	pointer:/undefined	007D0EB0	string_pointer	s_rubb3_007d0eb0	/string	/undefined	0	0	0		0
+007D14F8	PTR_s_rubb_gb0_007d14f8	pointer:/undefined	007D169C	string_pointer	s_rubb_gb0_007d169c	/string	/undefined	0	0	0		0
+007D1514	PTR_s_rubb_gw0_007d1514	pointer:/undefined	007D1648	string_pointer	s_rubb_gw0_007d1648	/string	/undefined	0	0	0		0
+007D1818	PTR_s_ruin_10_007d1818	pointer:/undefined	007D19E4	string_pointer	s_ruin_10_007d19e4	/string	/undefined	0	0	0		0
+007D1834	PTR_s_ruin_40_007d1834	pointer:/undefined	007D1990	string_pointer	s_ruin_40_007d1990	/string	/undefined	0	0	0		0
+007D1850	PTR_s_ruin_s10_007d1850	pointer:/undefined	007D193C	string_pointer	s_ruin_s10_007d193c	/string	/undefined	0	0	0		0
+007D186C	PTR_s_ruin_s40_007d186c	pointer:/undefined	007D18E8	string_pointer	s_ruin_s40_007d18e8	/string	/undefined	0	0	0		0
+007D1BB4	PTR_s_pics_g_007d1bb4	pointer:/undefined	007CE674	string_pointer	s_pics_g_007ce674	/string	/undefined	0	0	0		0
+007D1BCC	PTR_s_starR_007d1bcc	/pointer	007D1D24	string_pointer	s_starR_007d1d24	/string		0	0	0		0
+007D1BD0	PTR_s_starF_007d1bd0	/pointer	007CF848	string_pointer	s_starF_007cf848	/string		0	0	0		0
+007D1F68	PTR_s_blast_p_007d1f68	pointer:/undefined	007D2090	string_pointer	s_blast_p_007d2090	/string	/undefined	0	0	0		0
+007D2D1C	PTR_thunk_FUN_00673160_007d2d1c	/pointer	00402F2C	code_pointer	thunk_FUN_00673160			0	0	0		0
+007D3FA8	PTR_LAB_007d3fa8	pointer:/undefined	00405DA8	control_flow_table_entry	LAB_00405da8		/undefined	0	0	0		0
+007D7F70	PTR_DAT_007d7f70	pointer:/undefined	007D62F0	initialized_data_pointer	DAT_007d62f0		/undefined	0	0	0		0
+007EC188	PTR_DAT_007ec188	/pointer	007EC1C0	initialized_data_pointer	DAT_007ec1c0			0	0	0		0
+007EC18C	PTR_s_Normal_007ec18c	pointer:/undefined	007EC1B8	string_pointer	s_Normal_007ec1b8	/string	/undefined	0	0	0		0
+007ED56C	PTR_DAT_007ed56c	/pointer	007ED534	initialized_data_pointer	DAT_007ed534	/undefined4		0	0	0		0
+007ED714	PTR_DAT_007ed714	/pointer	007ED6DC	initialized_data_pointer	DAT_007ed6dc			0	0	0		0
+007EDE0C	PTR_DAT_007ede0c	/pointer	007EDDEC	initialized_data_pointer	DAT_007eddec			0	0	0		0
+007F0AFC	PTR_DAT_007f0afc	/pointer	007C3B5C	initialized_data_pointer	DAT_007c3b5c	/undefined1		0	0	0		0
+007F0B00	PTR_DAT_007f0b00	/pointer	007C72D8	initialized_data_pointer	DAT_007c72d8	/undefined1		0	0	0		0
+007F0B04	PTR_DAT_007f0b04	/pointer	008016A0	initialized_data_pointer	DAT_008016a0	/undefined1		0	0	0		0
+007F10F8	PTR_FUN_007f10f8	/pointer	0072DDB0	code_pointer	Library::MSVCRT::FUN_0072ddb0			0	0	0		0
+007F123C	PTR_s_LC_COLLATE_007f123c	/pointer	0079FED8	string_pointer	s_LC_COLLATE_0079fed8	/string		0	0	0		0
+007F1240	PTR_DAT_007f1240	/pointer	007F1120	initialized_data_pointer	DAT_007f1120			0	0	0		0
+007F1248	PTR_s_LC_CTYPE_007f1248	/pointer	0079FECC	string_pointer	s_LC_CTYPE_0079fecc	/string		0	0	0		0
+007F124C	PTR_DAT_007f124c	pointer:/undefined	007F1120	initialized_data_pointer	DAT_007f1120		/undefined	0	0	0		0
+007F1280	PTR_DAT_007f1280	/pointer	007F128A	initialized_data_pointer	DAT_007f128a			0	0	0		0
+007F1284	PTR_DAT_007f1284	/pointer	007F128A	initialized_data_pointer	DAT_007f128a			0	0	0		0
+007F1498	PTR_FUN_007f1498	/pointer	00730E80	code_pointer	Library::MSVCRT::FUN_00730e80			0	0	0		0
+007F14B8	PTR_s_Warning_007f14b8	/pointer	0079FF4C	string_pointer	s_Warning_0079ff4c	/string		0	0	0		0
+007F14CC	PTR___exit_007f14cc	/pointer	0072EFA0	code_pointer	Library::MSVCRT::__exit			0	0	0		0
+007F1530	PTR___fptrap_007f1530	/pointer	007406A0	code_pointer	Library::MSVCRT::__fptrap			0	0	0		0
+007F1534	PTR___fptrap_007f1534	/pointer	007406A0	code_pointer	Library::MSVCRT::__fptrap			0	0	0		0
+007F1538	PTR___fptrap_007f1538	/pointer	007406A0	code_pointer	Library::MSVCRT::__fptrap			0	0	0		0
+007F153C	PTR___fptrap_007f153c	/pointer	007406A0	code_pointer	Library::MSVCRT::__fptrap			0	0	0		0
+007F1540	PTR___fptrap_007f1540	/pointer	007406A0	code_pointer	Library::MSVCRT::__fptrap			0	0	0		0
+007F1544	PTR___fptrap_007f1544	/pointer	007406A0	code_pointer	Library::MSVCRT::__fptrap			0	0	0		0
+007F1554	PTR_DAT_007f1554	/pointer	007A0260	initialized_data_pointer	DAT_007a0260			0	0	0		0
+007F177C	PTR_s_Spanish_-_Traditional_Sort_007f177c	/pointer	007A0450	string_pointer	s_Spanish_-_Traditional_Sort_007a0450	/string		0	0	0		0
+007F1784	PTR_s_Spain_007f1784	/pointer	007A0448	string_pointer	s_Spain_007a0448	/string		0	0	0		0
+007F1C28	PTR_s_america_007f1c28	/pointer	007A0558	string_pointer	s_america_007a0558	/string		0	0	0		0
+007F1CE0	PTR_s_american_007f1ce0	/pointer	007A0968	string_pointer	s_american_007a0968	/string		0	0	0		0
+007F1F58	PTR_DAT_007f1f58	/pointer	007A0A34	initialized_data_pointer	DAT_007a0a34	/undefined1		0	0	0		0
+007F1F5C	PTR_DAT_007f1f5c	/pointer	007A0A24	initialized_data_pointer	DAT_007a0a24	/undefined2		0	0	0		0
+007F1F68	PTR_DAT_007f1f68	/pointer	008572C8	initialized_data_pointer	DAT_008572c8	/undefined4		0	0	0		0
+007F2004	PTR_s_R6002_-_floating_point_not_loade_007f2004	/pointer	007A0D50	string_pointer	s_R6002_-_floating_point_not_loade_007a0d50	/string		0	0	0		0
+007F2090	PTR_DAT_007f2090	/pointer	00859180	initialized_data_pointer	DAT_00859180			0	0	0		0
+007F2640	PTR_PTR_007f2640	/pointer	007F2648	initialized_data_pointer	PTR_DAT_007f2648	pointer:/undefined		0	0	0		0
+007F2648	PTR_DAT_007f2648	pointer:/undefined	007A0F78	initialized_data_pointer	DAT_007a0f78		/undefined	0	0	0		0
+007F2664	PTR_s_Sunday_007f2664	pointer:/undefined	007A0F58	string_pointer	s_Sunday_007a0f58	/string	/undefined	0	0	0		0
+007F2680	PTR_DAT_007f2680	pointer:/undefined	007A0F18	initialized_data_pointer	DAT_007a0f18		/undefined	0	0	0		0
+007F26B0	PTR_s_January_007f26b0	pointer:/undefined	007A0EE4	string_pointer	s_January_007a0ee4	/string	/undefined	0	0	0		0
+007F26E0	PTR_DAT_007f26e0	/pointer	007A0E80	initialized_data_pointer	DAT_007a0e80			0	0	0		0
+007F26E4	PTR_DAT_007f26e4	/pointer	007A0E7C	initialized_data_pointer	DAT_007a0e7c			0	0	0		0
+007F26E8	PTR_s_M/d/yy_007f26e8	/pointer	007A0E74	string_pointer	s_M/d/yy_007a0e74	/string		0	0	0		0
+007F26EC	PTR_s_dddd,_MMMM_dd,_yyyy_007f26ec	/pointer	007A0E60	string_pointer	s_dddd,_MMMM_dd,_yyyy_007a0e60	/string		0	0	0		0
+007F26F0	PTR_s_H:mm:ss_007f26f0	/pointer	007A0E58	string_pointer	s_H:mm:ss_007a0e58	/string		0	0	0		0
+007F2700	PTR_DAT_007f2700	/pointer	007F26F8	initialized_data_pointer	DAT_007f26f8			0	0	0		0
+007F2704	PTR_DAT_007f2704	/pointer	00857428	initialized_data_pointer	DAT_00857428			0	0	0		0
+007F2708	PTR_DAT_007f2708	pointer:/undefined	00857428	initialized_data_pointer	DAT_00857428		/undefined	0	0	0		0
+007F2730	PTR_PTR_007f2730	/pointer	007F2700	initialized_data_pointer	PTR_DAT_007f2700	/pointer		0	0	0		0
+007F27CC	PTR_DAT_007f27cc	/pointer	007F274C	initialized_data_pointer	DAT_007f274c	/undefined1		0	0	0		0
+007F27D0	PTR_DAT_007f27d0	/pointer	007F278C	initialized_data_pointer	DAT_007f278c	/undefined1		0	0	0		0
+007FA130	PTR_007fa130	pointer:/SubmarineTitans/Recovered/DArrayTy	00000000	zero_initialized_global			/SubmarineTitans/Recovered/DArrayTy	0	1	3		0
+007FA150	PTR_007fa150	pointer:/SubmarineTitans/Recovered/DArrayTy	00000000	zero_initialized_global			/SubmarineTitans/Recovered/DArrayTy	0	1	5		0
+007FA154	PTR_007fa154	pointer:/SubmarineTitans/Recovered/DArrayTy	00000000	zero_initialized_global			/SubmarineTitans/Recovered/DArrayTy	0	1	4		0
+007FA158	PTR_007fa158	pointer:/SubmarineTitans/Recovered/DArrayTy	00000000	zero_initialized_global			/SubmarineTitans/Recovered/DArrayTy	0	1	4		0
+007FA15C	PTR_007fa15c	pointer:/SubmarineTitans/Recovered/DArrayTy	00000000	zero_initialized_global			/SubmarineTitans/Recovered/DArrayTy	0	1	4		0
+007FA160	PTR_007fa160	pointer:/SubmarineTitans/Recovered/DArrayTy	00000000	zero_initialized_global			/SubmarineTitans/Recovered/DArrayTy	0	1	4		0
+007FA164	PTR_007fa164	pointer:/SubmarineTitans/Recovered/DArrayTy	00000000	zero_initialized_global			/SubmarineTitans/Recovered/DArrayTy	0	1	4		0
+007FA16C	PTR_007fa16c	pointer:/SubmarineTitans/Recovered/DArrayTy	00000000	zero_initialized_global			/SubmarineTitans/Recovered/DArrayTy	0	1	7		0
+007FA170	PTR_007fa170	pointer:/SubmarineTitans/Recovered/DArrayTy	00000000	zero_initialized_global			/SubmarineTitans/Recovered/DArrayTy	0	1	3		0
+007FB270	PTR_007fb270	pointer:/SubmarineTitans/Recovered/DArrayTy	00000000	zero_initialized_global			/SubmarineTitans/Recovered/DArrayTy	0	1	4		0
+007FB2AC	PTR_007fb2ac	pointer:/SubmarineTitans/Recovered/PointerShapes/AnonShape_GLOBAL_007FB2AC_70073F41	00000000	zero_initialized_global			/SubmarineTitans/Recovered/PointerShapes/AnonShape_GLOBAL_007FB2AC_70073F41	1	1	1	pointer:/TLOBldMark	1
+00801690	PTR_00801690	pointer:/SubmarineTitans/Recovered/PointerShapes/AnonShape_GLOBAL_00801690_2AA401C1	00000000	zero_initialized_global			/SubmarineTitans/Recovered/PointerShapes/AnonShape_GLOBAL_00801690_2AA401C1	1	1	1	pointer:/HelpPanelTy	1
+00802A28	PTR_00802a28	pointer:/ccFntTy	00000000	zero_initialized_global			/ccFntTy	0	1	6		0
+00802A30	PTR_00802a30	pointer:/CursorClassTy	00000000	zero_initialized_global			/CursorClassTy	0	1	108		0
+00802A38	PTR_00802a38	pointer:/STPlaySystemC	00000000	zero_initialized_global			/STPlaySystemC	0	1	74		0
+00802A4C	PTR_00802a4c	pointer:/SubmarineTitans/Recovered/PointerShapes/AnonShape_GLOBAL_00802A4C_E3045C67	00000000	zero_initialized_global			/SubmarineTitans/Recovered/PointerShapes/AnonShape_GLOBAL_00802A4C_E3045C67	1	1	3		0
+00802A58	PTR_00802a58	pointer:/cLoadingTy	00000000	zero_initialized_global			/cLoadingTy	0	1	22		0
+00806740	PTR_00806740	pointer:/SubmarineTitans/Recovered/PointerShapes/AnonShape_GLOBAL_00806740_0AFD1484	00000000	zero_initialized_global			/SubmarineTitans/Recovered/PointerShapes/AnonShape_GLOBAL_00806740_0AFD1484	1	1	1	pointer:/SubmarineTitans/Recovered/DArrayTy	0
+00806770	PTR_00806770	pointer:/cMf32	00000000	zero_initialized_global			/cMf32	0	1	2		0
+00807598	PTR_00807598	pointer:/SubmarineTitans/Recovered/PointerShapes/AnonShape_GLOBAL_00807598_0C6808FB	00000000	zero_initialized_global			/SubmarineTitans/Recovered/PointerShapes/AnonShape_GLOBAL_00807598_0C6808FB	1	1	24		0
+008075A0	PTR_008075a0	pointer:/SubmarineTitans/Recovered/PointerShapes/AnonShape_006C3FC0_72DDFA27	00000000	zero_initialized_global			/SubmarineTitans/Recovered/PointerShapes/AnonShape_006C3FC0_72DDFA27	1	1	5		0
+0080765C	PTR_0080765c	pointer:/SubmarineTitans/Recovered/PointerShapes/AnonShape_GLOBAL_0080765C_F1992A46	00000000	zero_initialized_global			/SubmarineTitans/Recovered/PointerShapes/AnonShape_GLOBAL_0080765C_F1992A46	1	1	0		0
+0080C4C7	PTR_0080c4c7	pointer:/SubmarineTitans/Recovered/PointerShapes/AnonShape_GLOBAL_0080C4C7_5A4CB754	00000000	zero_initialized_global			/SubmarineTitans/Recovered/PointerShapes/AnonShape_GLOBAL_0080C4C7_5A4CB754	1	1	15		0
+0080C4CB	PTR_0080c4cb	pointer:/SubmarineTitans/Recovered/PointerShapes/AnonShape_GLOBAL_0080C4CB_D58160AA	00000000	zero_initialized_global			/SubmarineTitans/Recovered/PointerShapes/AnonShape_GLOBAL_0080C4CB_D58160AA	1	1	19		0
+0080C4FE	PTR_0080c4fe	pointer:/SubmarineTitans/Recovered/DArrayTy	00000000	zero_initialized_global			/SubmarineTitans/Recovered/DArrayTy	0	1	5		0
+0080C502	PTR_0080c502	pointer:/SubmarineTitans/Recovered/PointerShapes/AnonShape_GLOBAL_0080C502_B8708D85	00000000	zero_initialized_global			/SubmarineTitans/Recovered/PointerShapes/AnonShape_GLOBAL_0080C502_B8708D85	1	1	0		0
+0081163C	PTR_0081163c	pointer:/SubmarineTitans/Recovered/PointerShapes/AnonShape_00577690_10255A81	00000000	zero_initialized_global			/SubmarineTitans/Recovered/PointerShapes/AnonShape_00577690_10255A81	1	1	7		0
+00811758	PTR_00811758	pointer:/wingdi.h/tagBITMAPINFO	00000000	zero_initialized_global			/wingdi.h/tagBITMAPINFO	0	1	3		0
+0081175C	PTR_0081175c	pointer:/SubmarineTitans/Recovered/PointerShapes/AnonShape_GLOBAL_0081175C_57F682DD	00000000	zero_initialized_global			/SubmarineTitans/Recovered/PointerShapes/AnonShape_GLOBAL_0081175C_57F682DD	1	1	1		0
+0081176C	PTR_0081176c	pointer:/StartSystemTy	00000000	zero_initialized_global			/StartSystemTy	0	1	35		0
+0081194C	PTR_0081194c	pointer:/SubmarineTitans/Recovered/PointerShapes/AnonShape_GLOBAL_0081194C_4D1525E6	00000000	zero_initialized_global			/SubmarineTitans/Recovered/PointerShapes/AnonShape_GLOBAL_0081194C_4D1525E6	1	1	1		0
+008489C4	PTR_008489c4	pointer:/SubmarineTitans/Recovered/PointerShapes/AnonShape_GLOBAL_008489C4_F7BABFAC	00000000	zero_initialized_global			/SubmarineTitans/Recovered/PointerShapes/AnonShape_GLOBAL_008489C4_F7BABFAC	1	1	4		0
+008489CC	PTR_008489cc	pointer:/SubmarineTitans/Recovered/PointerShapes/AnonShape_GLOBAL_008489CC_CDF8C3F4	00000000	zero_initialized_global			/SubmarineTitans/Recovered/PointerShapes/AnonShape_GLOBAL_008489CC_CDF8C3F4	1	1	3		0
+008489D4	PTR_008489d4	pointer:/SubmarineTitans/Recovered/DArrayTy	00000000	zero_initialized_global			/SubmarineTitans/Recovered/DArrayTy	0	1	4		0
+008489D8	PTR_008489d8	pointer:/SubmarineTitans/Recovered/DArrayTy	00000000	zero_initialized_global			/SubmarineTitans/Recovered/DArrayTy	0	1	2		0
+00848A18	PTR_00848a18	pointer:/SubmarineTitans/Recovered/PointerShapes/AnonShape_GLOBAL_00848A18_1B9B27FE	00000000	zero_initialized_global			/SubmarineTitans/Recovered/PointerShapes/AnonShape_GLOBAL_00848A18_1B9B27FE	1	1	4		0
+00848A1C	PTR_00848a1c	pointer:/SubmarineTitans/Recovered/PointerShapes/AnonShape_GLOBAL_00848A1C_B6E50991	00000000	zero_initialized_global			/SubmarineTitans/Recovered/PointerShapes/AnonShape_GLOBAL_00848A1C_B6E50991	1	1	3		0
+00848A28	PTR_00848a28	pointer:/SubmarineTitans/Recovered/PointerShapes/AnonShape_GLOBAL_00848A28_2C89E502	00000000	zero_initialized_global			/SubmarineTitans/Recovered/PointerShapes/AnonShape_GLOBAL_00848A28_2C89E502	1	1	3		0
+00848A2C	PTR_00848a2c	pointer:/SubmarineTitans/Recovered/PointerShapes/AnonShape_GLOBAL_00848A2C_50EB5CD1	00000000	zero_initialized_global			/SubmarineTitans/Recovered/PointerShapes/AnonShape_GLOBAL_00848A2C_50EB5CD1	1	1	3		0
+00848A30	PTR_00848a30	pointer:/SubmarineTitans/Recovered/PointerShapes/AnonShape_GLOBAL_00848A30_5E88A82B	00000000	zero_initialized_global			/SubmarineTitans/Recovered/PointerShapes/AnonShape_GLOBAL_00848A30_5E88A82B	1	1	3		0
+00848A34	PTR_00848a34	pointer:/SubmarineTitans/Recovered/PointerShapes/AnonShape_GLOBAL_00848A34_1A834A18	00000000	zero_initialized_global			/SubmarineTitans/Recovered/PointerShapes/AnonShape_GLOBAL_00848A34_1A834A18	1	1	3		0
+00848A38	PTR_00848a38	pointer:/SubmarineTitans/Recovered/PointerShapes/AnonShape_GLOBAL_00848A38_AD917B6C	00000000	zero_initialized_global			/SubmarineTitans/Recovered/PointerShapes/AnonShape_GLOBAL_00848A38_AD917B6C	1	1	3		0
+00853FF8	PTR_00853ff8	pointer:/cMf32	00000000	zero_initialized_global			/cMf32	0	1	1		0
+00854EE8	PTR_00854ee8	pointer:/SubmarineTitans/Recovered/PointerShapes/AnonShape_GLOBAL_00854EE8_A19F58CE	00000000	zero_initialized_global			/SubmarineTitans/Recovered/PointerShapes/AnonShape_GLOBAL_00854EE8_A19F58CE	1	1	1	pointer:/SubmarineTitans/Recovered/PointerShapes/AnonShape_006CEC40_BB23E716	0
+00857168	PTR_00857168	pointer:/SubmarineTitans/Recovered/PointerShapes/AnonShape_GLOBAL_00857168_D75747E9	00000000	zero_initialized_global			/SubmarineTitans/Recovered/PointerShapes/AnonShape_GLOBAL_00857168_D75747E9	1	1	0		0
+0085B950	PTR_RegDeleteKeyA_0085b950	/pointer	0045CA76	initialized_data_pointer				0	0	0		0
+0085B954	PTR_RegQueryValueExA_0085b954	/pointer	0045CA32	initialized_data_pointer				0	0	0		0
+0085B958	PTR_RegOpenKeyA_0085b958	/pointer	0045CA46	initialized_data_pointer				0	0	0		0
+0085B95C	PTR_RegSetValueExA_0085b95c	/pointer	0045CA54	initialized_data_pointer				0	0	0		0
+0085B960	PTR_RegCreateKeyA_0085b960	/pointer	0045CA66	initialized_data_pointer				0	0	0		0
+0085B964	PTR_RegEnumKeyA_0085b964	/pointer	0045CA86	initialized_data_pointer				0	0	0		0
+0085B968	PTR_RegCloseKey_0085b968	/pointer	0045CA24	initialized_data_pointer				0	0	0		0
+0085B99C	PTR_DirectDrawCreate_0085b99c	/pointer	0045CBFE	initialized_data_pointer				0	0	0		0
+0085B9CC	PTR_DirectInputCreateA_0085b9cc	/pointer	0045CC1C	initialized_data_pointer				0	0	0		0
+0085B9FC	PTR_Ordinal_4_0085b9fc	/pointer	80000004	initialized_data_pointer				0	0	0		0
+0085BA00	PTR_Ordinal_1_0085ba00	/pointer	80000001	initialized_data_pointer				0	0	0		0
+0085BA04	PTR_Ordinal_2_0085ba04	/pointer	80000002	initialized_data_pointer				0	0	0		0
+0085BA34	PTR_Ordinal_1_0085ba34	/pointer	80000001	initialized_data_pointer				0	0	0		0
+0085BA38	PTR_Ordinal_2_0085ba38	/pointer	80000002	initialized_data_pointer				0	0	0		0
+0085BA68	PTR_SetBkMode_0085ba68	/pointer	0045C904	initialized_data_pointer				0	0	0		0
+0085BA6C	PTR_GetTextMetricsA_0085ba6c	/pointer	0045C9A8	initialized_data_pointer				0	0	0		0
+0085BA70	PTR_CreateFontIndirectA_0085ba70	/pointer	0045C9BA	initialized_data_pointer				0	0	0		0
+0085BA74	PTR_CreateSolidBrush_0085ba74	/pointer	0045C7D0	initialized_data_pointer				0	0	0		0
+0085BA78	PTR_DeleteObject_0085ba78	/pointer	0045C7E4	initialized_data_pointer				0	0	0		0
+0085BA7C	PTR_CreatePalette_0085ba7c	/pointer	0045C7F4	initialized_data_pointer				0	0	0		0
+0085BA80	PTR_GetSystemPaletteEntries_0085ba80	/pointer	0045C804	initialized_data_pointer				0	0	0		0
+0085BA84	PTR_SetPaletteEntries_0085ba84	/pointer	0045C81E	initialized_data_pointer				0	0	0		0
+0085BA88	PTR_SetPixel_0085ba88	/pointer	0045C832	initialized_data_pointer				0	0	0		0
+0085BA8C	PTR_GetPixel_0085ba8c	/pointer	0045C83E	initialized_data_pointer				0	0	0		0
+0085BA90	PTR_SelectObject_0085ba90	/pointer	0045C84A	initialized_data_pointer				0	0	0		0
+0085BA94	PTR_SelectPalette_0085ba94	/pointer	0045C85A	initialized_data_pointer				0	0	0		0
+0085BA98	PTR_CreateDIBSection_0085ba98	/pointer	0045C86A	initialized_data_pointer				0	0	0		0
+0085BA9C	PTR_CreateCompatibleDC_0085ba9c	/pointer	0045C87E	initialized_data_pointer				0	0	0		0
+0085BAA0	PTR_GetPaletteEntries_0085baa0	/pointer	0045C894	initialized_data_pointer				0	0	0		0
+0085BAA4	PTR_StretchDIBits_0085baa4	/pointer	0045C8A8	initialized_data_pointer				0	0	0		0
+0085BAA8	PTR_GetNearestPaletteIndex_0085baa8	/pointer	0045C8B8	initialized_data_pointer				0	0	0		0
+0085BAAC	PTR_SelectClipRgn_0085baac	/pointer	0045C8D2	initialized_data_pointer				0	0	0		0
+0085BAB0	PTR_SetViewportOrgEx_0085bab0	/pointer	0045C8E2	initialized_data_pointer				0	0	0		0
+0085BAB4	PTR_SetBkColor_0085bab4	/pointer	0045C8F6	initialized_data_pointer				0	0	0		0
+0085BAB8	PTR_SetTextColor_0085bab8	/pointer	0045C910	initialized_data_pointer				0	0	0		0
+0085BABC	PTR_SetDIBitsToDevice_0085babc	/pointer	0045C920	initialized_data_pointer				0	0	0		0
+0085BAC0	PTR_CreateRectRgn_0085bac0	/pointer	0045C934	initialized_data_pointer				0	0	0		0
+0085BAC4	PTR_GetDIBits_0085bac4	/pointer	0045C944	initialized_data_pointer				0	0	0		0
+0085BAC8	PTR_GetObjectA_0085bac8	/pointer	0045C950	initialized_data_pointer				0	0	0		0
+0085BACC	PTR_BitBlt_0085bacc	/pointer	0045C95E	initialized_data_pointer				0	0	0		0
+0085BAD0	PTR_CreateCompatibleBitmap_0085bad0	/pointer	0045C968	initialized_data_pointer				0	0	0		0
+0085BAD4	PTR_SetTextAlign_0085bad4	/pointer	0045C982	initialized_data_pointer				0	0	0		0
+0085BAD8	PTR_GetTextCharsetInfo_0085bad8	/pointer	0045C992	initialized_data_pointer				0	0	0		0
+0085BADC	PTR_TextOutA_0085badc	/pointer	0045C9D0	initialized_data_pointer				0	0	0		0
+0085BAE0	PTR_GetTextExtentPoint32A_0085bae0	/pointer	0045C9DC	initialized_data_pointer				0	0	0		0
+0085BAE4	PTR_GetCharWidth32A_0085bae4	/pointer	0045C9F4	initialized_data_pointer				0	0	0		0
+0085BAE8	PTR_GetCharABCWidthsA_0085bae8	/pointer	0045CA06	initialized_data_pointer				0	0	0		0
+0085BB30	PTR_OpenFile_0085bb30	/pointer	0045C52C	initialized_data_pointer				0	0	0		0
+0085BB34	PTR_GetFileSize_0085bb34	/pointer	0045C538	initialized_data_pointer				0	0	0		0
+0085BB38	PTR__lclose_0085bb38	/pointer	0045C522	initialized_data_pointer				0	0	0		0
+0085BB3C	PTR_FileTimeToLocalFileTime_0085bb3c	/pointer	0045C4FA	initialized_data_pointer				0	0	0		0
+0085BB40	PTR_GetFileTime_0085bb40	/pointer	0045C514	initialized_data_pointer				0	0	0		0
+0085BB44	PTR_RemoveDirectoryA_0085bb44	/pointer	0045C56E	initialized_data_pointer				0	0	0		0
+0085BB48	PTR_CreateEventA_0085bb48	/pointer	0045C582	initialized_data_pointer				0	0	0		0
+0085BB4C	PTR_UnmapViewOfFile_0085bb4c	/pointer	0045C4E8	initialized_data_pointer				0	0	0		0
+0085BB50	PTR_SetEndOfFile_0085bb50	/pointer	0045C4D8	initialized_data_pointer				0	0	0		0
+0085BB54	PTR_SetLastError_0085bb54	/pointer	0045C4C8	initialized_data_pointer				0	0	0		0
+0085BB58	PTR_CreateFileMappingA_0085bb58	/pointer	0045C4B2	initialized_data_pointer				0	0	0		0
+0085BB5C	PTR_MapViewOfFile_0085bb5c	/pointer	0045C4A2	initialized_data_pointer				0	0	0		0
+0085BB60	PTR_IsBadHugeReadPtr_0085bb60	/pointer	0045C48E	initialized_data_pointer				0	0	0		0
+0085BB64	PTR__llseek_0085bb64	/pointer	0045C484	initialized_data_pointer				0	0	0		0
+0085BB68	PTR_MultiByteToWideChar_0085bb68	/pointer	0045C46E	initialized_data_pointer				0	0	0		0
+0085BB6C	PTR_TerminateThread_0085bb6c	/pointer	0045C45C	initialized_data_pointer				0	0	0		0
+0085BB70	PTR_CreateThread_0085bb70	/pointer	0045C44C	initialized_data_pointer				0	0	0		0
+0085BB74	PTR_SetThreadPriority_0085bb74	/pointer	0045C438	initialized_data_pointer				0	0	0		0
+0085BB78	PTR_ResumeThread_0085bb78	/pointer	0045C428	initialized_data_pointer				0	0	0		0
+0085BB7C	PTR_SuspendThread_0085bb7c	/pointer	0045C418	initialized_data_pointer				0	0	0		0
+0085BB80	PTR_SetEvent_0085bb80	/pointer	0045C40C	initialized_data_pointer				0	0	0		0
+0085BB84	PTR_DeleteCriticalSection_0085bb84	/pointer	0045C3F4	initialized_data_pointer				0	0	0		0
+0085BB88	PTR_InitializeCriticalSection_0085bb88	/pointer	0045C3D8	initialized_data_pointer				0	0	0		0
+0085BB8C	PTR_EnterCriticalSection_0085bb8c	/pointer	0045C3C0	initialized_data_pointer				0	0	0		0
+0085BB90	PTR_LeaveCriticalSection_0085bb90	/pointer	0045C3A8	initialized_data_pointer				0	0	0		0
+0085BB94	PTR_GetModuleFileNameA_0085bb94	/pointer	0045C392	initialized_data_pointer				0	0	0		0
+0085BB98	PTR_GetSystemInfo_0085bb98	/pointer	0045C382	initialized_data_pointer				0	0	0		0
+0085BB9C	PTR_HeapValidate_0085bb9c	/pointer	0045C372	initialized_data_pointer				0	0	0		0
+0085BBA0	PTR_IsBadWritePtr_0085bba0	/pointer	0045C362	initialized_data_pointer				0	0	0		0
+0085BBA4	PTR_IsBadStringPtrA_0085bba4	/pointer	0045C350	initialized_data_pointer				0	0	0		0
+0085BBA8	PTR_GetFullPathNameA_0085bba8	/pointer	0045C33C	initialized_data_pointer				0	0	0		0
+0085BBAC	PTR_GetLocalTime_0085bbac	/pointer	0045C32C	initialized_data_pointer				0	0	0		0
+0085BBB0	PTR_FlushFileBuffers_0085bbb0	/pointer	0045C318	initialized_data_pointer				0	0	0		0
+0085BBB4	PTR_FileTimeToSystemTime_0085bbb4	/pointer	0045C300	initialized_data_pointer				0	0	0		0
+0085BBB8	PTR_IsBadReadPtr_0085bbb8	/pointer	0045C2F0	initialized_data_pointer				0	0	0		0
+0085BBBC	PTR_SetFileAttributesA_0085bbbc	/pointer	0045C558	initialized_data_pointer				0	0	0		0
+0085BBC0	PTR_IsDBCSLeadByte_0085bbc0	/pointer	0045C546	initialized_data_pointer				0	0	0		0
+0085BBC4	PTR_WinExec_0085bbc4	/pointer	0045C2D2	initialized_data_pointer				0	0	0		0
+0085BBC8	PTR_CloseHandle_0085bbc8	/pointer	0045C21C	initialized_data_pointer				0	0	0		0
+0085BBCC	PTR_GetLastError_0085bbcc	/pointer	0045C20C	initialized_data_pointer				0	0	0		0
+0085BBD0	PTR_HeapReAlloc_0085bbd0	/pointer	0045D424	initialized_data_pointer				0	0	0		0
+0085BBD4	PTR_HeapFree_0085bbd4	/pointer	0045D432	initialized_data_pointer				0	0	0		0
+0085BBD8	PTR_HeapDestroy_0085bbd8	/pointer	0045D43E	initialized_data_pointer				0	0	0		0
+0085BBDC	PTR_HeapCreate_0085bbdc	/pointer	0045D44C	initialized_data_pointer				0	0	0		0
+0085BBE0	PTR_VirtualFree_0085bbe0	/pointer	0045D45A	initialized_data_pointer				0	0	0		0
+0085BBE4	PTR_VirtualAlloc_0085bbe4	/pointer	0045D468	initialized_data_pointer				0	0	0		0
+0085BBE8	PTR_GetStartupInfoA_0085bbe8	/pointer	0045D478	initialized_data_pointer				0	0	0		0
+0085BBEC	PTR_GetCommandLineA_0085bbec	/pointer	0045D48A	initialized_data_pointer				0	0	0		0
+0085BBF0	PTR_GetVersion_0085bbf0	/pointer	0045D49C	initialized_data_pointer				0	0	0		0
+0085BBF4	PTR_SetConsoleCtrlHandler_0085bbf4	/pointer	0045D4AA	initialized_data_pointer				0	0	0		0
+0085BBF8	PTR_RaiseException_0085bbf8	/pointer	0045D4C2	initialized_data_pointer				0	0	0		0
+0085BBFC	PTR_GetCPInfo_0085bbfc	/pointer	0045D4D4	initialized_data_pointer				0	0	0		0
+0085BC00	PTR_GetACP_0085bc00	/pointer	0045D4E0	initialized_data_pointer				0	0	0		0
+0085BC04	PTR_GetOEMCP_0085bc04	/pointer	0045D4EA	initialized_data_pointer				0	0	0		0
+0085BC08	PTR_IsValidLocale_0085bc08	/pointer	0045D4F6	initialized_data_pointer				0	0	0		0
+0085BC0C	PTR_IsValidCodePage_0085bc0c	/pointer	0045D506	initialized_data_pointer				0	0	0		0
+0085BC10	PTR_GetLocaleInfoA_0085bc10	/pointer	0045D518	initialized_data_pointer				0	0	0		0
+0085BC14	PTR_EnumSystemLocalesA_0085bc14	/pointer	0045D52A	initialized_data_pointer				0	0	0		0
+0085BC18	PTR_GetUserDefaultLCID_0085bc18	/pointer	0045D540	initialized_data_pointer				0	0	0		0
+0085BC1C	PTR_GetVersionExA_0085bc1c	/pointer	0045D556	initialized_data_pointer				0	0	0		0
+0085BC20	PTR_GetCurrentProcess_0085bc20	/pointer	0045D3AE	initialized_data_pointer				0	0	0		0
+0085BC24	PTR_GetStringTypeW_0085bc24	/pointer	0045D578	initialized_data_pointer				0	0	0		0
+0085BC28	PTR_WideCharToMultiByte_0085bc28	/pointer	0045D58A	initialized_data_pointer				0	0	0		0
+0085BC2C	PTR_LCMapStringA_0085bc2c	/pointer	0045D5A0	initialized_data_pointer				0	0	0		0
+0085BC30	PTR_LCMapStringW_0085bc30	/pointer	0045D5B0	initialized_data_pointer				0	0	0		0
+0085BC34	PTR_UnhandledExceptionFilter_0085bc34	/pointer	0045D5C0	initialized_data_pointer				0	0	0		0
+0085BC38	PTR_FreeEnvironmentStringsA_0085bc38	/pointer	0045D5DC	initialized_data_pointer				0	0	0		0
+0085BC3C	PTR_FreeEnvironmentStringsW_0085bc3c	/pointer	0045D5F6	initialized_data_pointer				0	0	0		0
+0085BC40	PTR_GetEnvironmentStrings_0085bc40	/pointer	0045D610	initialized_data_pointer				0	0	0		0
+0085BC44	PTR_GetEnvironmentStringsW_0085bc44	/pointer	0045D628	initialized_data_pointer				0	0	0		0
+0085BC48	PTR_GetLogicalDrives_0085bc48	/pointer	0045C2BE	initialized_data_pointer				0	0	0		0
+0085BC4C	PTR_GetModuleHandleA_0085bc4c	/pointer	0045C2DC	initialized_data_pointer				0	0	0		0
+0085BC50	PTR_SetHandleCount_0085bc50	/pointer	0045D642	initialized_data_pointer				0	0	0		0
+0085BC54	PTR_GetFileType_0085bc54	/pointer	0045D654	initialized_data_pointer				0	0	0		0
+0085BC58	PTR_SetStdHandle_0085bc58	/pointer	0045D662	initialized_data_pointer				0	0	0		0
+0085BC5C	PTR_GetTimeZoneInformation_0085bc5c	/pointer	0045D672	initialized_data_pointer				0	0	0		0
+0085BC60	PTR_GetLocaleInfoW_0085bc60	/pointer	0045D68C	initialized_data_pointer				0	0	0		0
+0085BC64	PTR_GetDriveTypeA_0085bc64	/pointer	0045C2AE	initialized_data_pointer				0	0	0		0
+0085BC68	PTR_ReadFile_0085bc68	/pointer	0045C2A2	initialized_data_pointer				0	0	0		0
+0085BC6C	PTR_Sleep_0085bc6c	/pointer	0045C29A	initialized_data_pointer				0	0	0		0
+0085BC70	PTR_InterlockedDecrement_0085bc70	/pointer	0045C282	initialized_data_pointer				0	0	0		0
+0085BC74	PTR_SetFilePointer_0085bc74	/pointer	0045C270	initialized_data_pointer				0	0	0		0
+0085BC78	PTR_InterlockedIncrement_0085bc78	/pointer	0045C258	initialized_data_pointer				0	0	0		0
+0085BC7C	PTR_CreateDirectoryA_0085bc7c	/pointer	0045C244	initialized_data_pointer				0	0	0		0
+0085BC80	PTR_CreateFileA_0085bc80	/pointer	0045C236	initialized_data_pointer				0	0	0		0
+0085BC84	PTR_SetEnvironmentVariableA_0085bc84	/pointer	0045D6C2	initialized_data_pointer				0	0	0		0
+0085BC88	PTR_CreateSemaphoreA_0085bc88	/pointer	0045D6DC	initialized_data_pointer				0	0	0		0
+0085BC8C	PTR_MoveFileA_0085bc8c	/pointer	0045D896	initialized_data_pointer				0	0	0		0
+0085BC90	PTR_WriteFile_0085bc90	/pointer	0045C22A	initialized_data_pointer				0	0	0		0
+0085BC94	PTR_ReleaseSemaphore_0085bc94	/pointer	0045D6F0	initialized_data_pointer				0	0	0		0
+0085BC98	PTR_ResetEvent_0085bc98	/pointer	0045D704	initialized_data_pointer				0	0	0		0
+0085BC9C	PTR_TerminateProcess_0085bc9c	/pointer	0045D39A	initialized_data_pointer				0	0	0		0
+0085BCA0	PTR_ExitProcess_0085bca0	/pointer	0045D38C	initialized_data_pointer				0	0	0		0
+0085BCA4	PTR_RtlUnwind_0085bca4	/pointer	0045D380	initialized_data_pointer				0	0	0		0
+0085BCA8	PTR_HeapAlloc_0085bca8	/pointer	0045D3C2	initialized_data_pointer				0	0	0		0
+0085BCAC	PTR_FindCloseChangeNotification_0085bcac	/pointer	0045C14C	initialized_data_pointer				0	0	0		0
+0085BCB0	PTR_DebugBreak_0085bcb0	/pointer	0045D3CE	initialized_data_pointer				0	0	0		0
+0085BCB4	PTR_GetStdHandle_0085bcb4	/pointer	0045D3DC	initialized_data_pointer				0	0	0		0
+0085BCB8	PTR_OutputDebugStringA_0085bcb8	/pointer	0045D3EC	initialized_data_pointer				0	0	0		0
+0085BCBC	PTR_GetProcAddress_0085bcbc	/pointer	0045D402	initialized_data_pointer				0	0	0		0
+0085BCC0	PTR_LoadLibraryA_0085bcc0	/pointer	0045D414	initialized_data_pointer				0	0	0		0
+0085BCC4	PTR_GetStringTypeA_0085bcc4	/pointer	0045D566	initialized_data_pointer				0	0	0		0
+0085BCC8	PTR_CompareStringW_0085bcc8	/pointer	0045D6B0	initialized_data_pointer				0	0	0		0
+0085BCCC	PTR_CompareStringA_0085bccc	/pointer	0045D69E	initialized_data_pointer				0	0	0		0
+0085BCD0	PTR_GetFileAttributesA_0085bcd0	/pointer	0045D7B2	initialized_data_pointer				0	0	0		0
+0085BCD4	PTR_GetCurrentThreadId_0085bcd4	/pointer	0045D72C	initialized_data_pointer				0	0	0		0
+0085BCD8	PTR_CompareFileTime_0085bcd8	/pointer	0045C18A	initialized_data_pointer				0	0	0		0
+0085BCDC	PTR_WaitForMultipleObjects_0085bcdc	/pointer	0045D712	initialized_data_pointer				0	0	0		0
+0085BCE0	PTR_WaitForSingleObject_0085bce0	/pointer	0045C1F6	initialized_data_pointer				0	0	0		0
+0085BCE4	PTR_FindNextChangeNotification_0085bce4	/pointer	0045C1D8	initialized_data_pointer				0	0	0		0
+0085BCE8	PTR_DeleteFileA_0085bce8	/pointer	0045C1CA	initialized_data_pointer				0	0	0		0
+0085BCEC	PTR_FindFirstFileA_0085bcec	/pointer	0045C1B8	initialized_data_pointer				0	0	0		0
+0085BCF0	PTR_FindNextFileA_0085bcf0	/pointer	0045C1A8	initialized_data_pointer				0	0	0		0
+0085BCF4	PTR_FindClose_0085bcf4	/pointer	0045C19C	initialized_data_pointer				0	0	0		0
+0085BCF8	PTR_GetCurrentThread_0085bcf8	/pointer	0045D784	initialized_data_pointer				0	0	0		0
+0085BCFC	PTR_FindFirstChangeNotificationA_0085bcfc	/pointer	0045C16A	initialized_data_pointer				0	0	0		0
+0085BD00	PTR__lread_0085bd00	/pointer	0045D7A8	initialized_data_pointer				0	0	0		0
+0085BD04	PTR_GetTickCount_0085bd04	/pointer	0045D798	initialized_data_pointer				0	0	0		0
+0085BD08	PTR_GetThreadPriority_0085bd08	/pointer	0045D770	initialized_data_pointer				0	0	0		0
+0085BD0C	PTR_InterlockedExchange_0085bd0c	/pointer	0045D75A	initialized_data_pointer				0	0	0		0
+0085BD10	PTR_FreeLibrary_0085bd10	/pointer	0045D74C	initialized_data_pointer				0	0	0		0
+0085BD14	PTR_MulDiv_0085bd14	/pointer	0045D742	initialized_data_pointer				0	0	0		0
+0085BDA4	PTR_ShellExecuteA_0085bda4	/pointer	0045CAA2	initialized_data_pointer				0	0	0		0
+0085BDD4	PTR_GetQueueStatus_0085bdd4	/pointer	0045D7DE	initialized_data_pointer				0	0	0		0
+0085BDD8	PTR_MsgWaitForMultipleObjects_0085bdd8	/pointer	0045D7F0	initialized_data_pointer				0	0	0		0
+0085BDDC	PTR_wvsprintfA_0085bddc	/pointer	0045D80C	initialized_data_pointer				0	0	0		0
+0085BDE0	PTR_PostQuitMessage_0085bde0	/pointer	0045C780	initialized_data_pointer				0	0	0		0
+0085BDE4	PTR_FillRect_0085bde4	/pointer	0045C7A0	initialized_data_pointer				0	0	0		0
+0085BDE8	PTR_wsprintfA_0085bde8	/pointer	0045C5A0	initialized_data_pointer				0	0	0		0
+0085BDEC	PTR_MessageBoxA_0085bdec	/pointer	0045C5AC	initialized_data_pointer				0	0	0		0
+0085BDF0	PTR_GetAsyncKeyState_0085bdf0	/pointer	0045C5BA	initialized_data_pointer				0	0	0		0
+0085BDF4	PTR_TranslateMessage_0085bdf4	/pointer	0045C5CE	initialized_data_pointer				0	0	0		0
+0085BDF8	PTR_DispatchMessageA_0085bdf8	/pointer	0045C5E2	initialized_data_pointer				0	0	0		0
+0085BDFC	PTR_PeekMessageA_0085bdfc	/pointer	0045C5F6	initialized_data_pointer				0	0	0		0
+0085BE00	PTR_UpdateWindow_0085be00	/pointer	0045C606	initialized_data_pointer				0	0	0		0
+0085BE04	PTR_CreateWindowExA_0085be04	/pointer	0045C616	initialized_data_pointer				0	0	0		0
+0085BE08	PTR_RegisterClassA_0085be08	/pointer	0045C628	initialized_data_pointer				0	0	0		0
+0085BE0C	PTR_LoadIconA_0085be0c	/pointer	0045C63A	initialized_data_pointer				0	0	0		0
+0085BE10	PTR_ShowWindow_0085be10	/pointer	0045C646	initialized_data_pointer				0	0	0		0
+0085BE14	PTR_SetForegroundWindow_0085be14	/pointer	0045C654	initialized_data_pointer				0	0	0		0
+0085BE18	PTR_FindWindowA_0085be18	/pointer	0045C66A	initialized_data_pointer				0	0	0		0
+0085BE1C	PTR_UnregisterClassA_0085be1c	/pointer	0045C678	initialized_data_pointer				0	0	0		0
+0085BE20	PTR_DestroyWindow_0085be20	/pointer	0045C68C	initialized_data_pointer				0	0	0		0
+0085BE24	PTR_PostThreadMessageA_0085be24	/pointer	0045D7C8	initialized_data_pointer				0	0	0		0
+0085BE28	PTR_DefWindowProcA_0085be28	/pointer	0045C69C	initialized_data_pointer				0	0	0		0
+0085BE2C	PTR_SetCursor_0085be2c	/pointer	0045C6AE	initialized_data_pointer				0	0	0		0
+0085BE30	PTR_LoadCursorA_0085be30	/pointer	0045C6BA	initialized_data_pointer				0	0	0		0
+0085BE34	PTR_EndPaint_0085be34	/pointer	0045C6C8	initialized_data_pointer				0	0	0		0
+0085BE38	PTR_BeginPaint_0085be38	/pointer	0045C6D4	initialized_data_pointer				0	0	0		0
+0085BE3C	PTR_MoveWindow_0085be3c	/pointer	0045C6E2	initialized_data_pointer				0	0	0		0
+0085BE40	PTR_ShowCursor_0085be40	/pointer	0045C6F0	initialized_data_pointer				0	0	0		0
+0085BE44	PTR_LoadStringA_0085be44	/pointer	0045C6FE	initialized_data_pointer				0	0	0		0
+0085BE48	PTR_ReleaseDC_0085be48	/pointer	0045C70C	initialized_data_pointer				0	0	0		0
+0085BE4C	PTR_GetDC_0085be4c	/pointer	0045C718	initialized_data_pointer				0	0	0		0
+0085BE50	PTR_IntersectRect_0085be50	/pointer	0045C720	initialized_data_pointer				0	0	0		0
+0085BE54	PTR_ClientToScreen_0085be54	/pointer	0045C730	initialized_data_pointer				0	0	0		0
+0085BE58	PTR_GetClientRect_0085be58	/pointer	0045C742	initialized_data_pointer				0	0	0		0
+0085BE5C	PTR_PostMessageA_0085be5c	/pointer	0045C752	initialized_data_pointer				0	0	0		0
+0085BE60	PTR_SetWindowLongA_0085be60	/pointer	0045C762	initialized_data_pointer				0	0	0		0
+0085BE64	PTR_DrawTextA_0085be64	/pointer	0045C774	initialized_data_pointer				0	0	0		0
+0085BE68	PTR_SystemParametersInfoA_0085be68	/pointer	0045C7AC	initialized_data_pointer				0	0	0		0
+0085BE6C	PTR_WaitMessage_0085be6c	/pointer	0045C792	initialized_data_pointer				0	0	0		0
+0085BEB8	PTR_mixerGetNumDevs_0085beb8	/pointer	0045CB66	initialized_data_pointer				0	0	0		0
+0085BEBC	PTR_mciGetErrorStringA_0085bebc	/pointer	0045CBBE	initialized_data_pointer				0	0	0		0
+0085BEC0	PTR_mciSendCommandA_0085bec0	/pointer	0045CBAC	initialized_data_pointer				0	0	0		0
+0085BEC4	PTR_mixerSetControlDetails_0085bec4	/pointer	0045CB92	initialized_data_pointer				0	0	0		0
+0085BEC8	PTR_mixerGetControlDetailsA_0085bec8	/pointer	0045CB78	initialized_data_pointer				0	0	0		0
+0085BECC	PTR_mixerGetDevCapsA_0085becc	/pointer	0045CB52	initialized_data_pointer				0	0	0		0
+0085BED0	PTR_mixerGetLineInfoA_0085bed0	/pointer	0045CB32	initialized_data_pointer				0	0	0		0
+0085BED4	PTR_mixerGetLineControlsA_0085bed4	/pointer	0045CB1A	initialized_data_pointer				0	0	0		0
+0085BED8	PTR_mixerClose_0085bed8	/pointer	0045CB0C	initialized_data_pointer				0	0	0		0
+0085BEDC	PTR_timeGetTime_0085bedc	/pointer	0045CAFE	initialized_data_pointer				0	0	0		0
+0085BEE0	PTR_mixerOpen_0085bee0	/pointer	0045CB46	initialized_data_pointer				0	0	0		0
+0085BEE4	PTR_timeKillEvent_0085bee4	/pointer	0045D864	initialized_data_pointer				0	0	0		0
+0085BEE8	PTR_timeBeginPeriod_0085bee8	/pointer	0045D874	initialized_data_pointer				0	0	0		0
+0085BEEC	PTR_timeEndPeriod_0085beec	/pointer	0045D886	initialized_data_pointer				0	0	0		0
+0085BEF0	PTR_timeSetEvent_0085bef0	/pointer	0045D854	initialized_data_pointer				0	0	0		0
+0085BF2C	PTR_gethostbyname_0085bf2c	/pointer	80000034	initialized_data_pointer				0	0	0		0
+0085BF30	PTR_inet_ntoa_0085bf30	/pointer	8000000B	initialized_data_pointer				0	0	0		0
+0085BF34	PTR_gethostname_0085bf34	/pointer	80000039	initialized_data_pointer				0	0	0		0
+0085BF38	PTR_WSAStartup_0085bf38	/pointer	80000073	initialized_data_pointer				0	0	0		0
+0085BF3C	PTR_WSACleanup_0085bf3c	/pointer	80000074	initialized_data_pointer				0	0	0		0
+0085BF70	PTR__BinkOpenDirectSound@4_0085bf70	/pointer	0045D2F6	initialized_data_pointer				0	0	0		0
+0085BF74	PTR__BinkDoFrame@4_0085bf74	/pointer	0045D354	initialized_data_pointer				0	0	0		0
+0085BF78	PTR__BinkWait@4_0085bf78	/pointer	0045D366	initialized_data_pointer				0	0	0		0
+0085BF7C	PTR__BinkOpen@8_0085bf7c	/pointer	0045D2D0	initialized_data_pointer				0	0	0		0
+0085BF80	PTR__BinkSetSoundSystem@8_0085bf80	/pointer	0045D2DE	initialized_data_pointer				0	0	0		0
+0085BF84	PTR__BinkNextFrame@4_0085bf84	/pointer	0045D328	initialized_data_pointer				0	0	0		0
+0085BF88	PTR__BinkDDSurfaceType@4_0085bf88	/pointer	0045D310	initialized_data_pointer				0	0	0		0
+0085BF8C	PTR__BinkCopyToBuffer@28_0085bf8c	/pointer	0045D33C	initialized_data_pointer				0	0	0		0
+0085BF90	PTR__BinkGetSummary@8_0085bf90	/pointer	0045D2BC	initialized_data_pointer				0	0	0		0
+0085BF94	PTR__BinkClose@4_0085bf94	/pointer	0045D2AC	initialized_data_pointer				0	0	0		0
+0085BFCC	PTR_D3DRMVectorModulus_0085bfcc	/pointer	0045CBDE	initialized_data_pointer				0	0	0		0
+0085BFFC	PTR_CancelConnection_0085bffc	/pointer	0045D0B8	initialized_data_pointer				0	0	0		0
+0085C000	PTR_RequestLadderListByName_0085c000	/pointer	0045D07E	initialized_data_pointer				0	0	0		0
+0085C004	PTR_CreateNewAccount_0085c004	/pointer	0045D04E	initialized_data_pointer				0	0	0		0
+0085C008	PTR_Login_0085c008	/pointer	0045D028	initialized_data_pointer				0	0	0		0
+0085C00C	PTR_RequestChannelList_0085c00c	/pointer	0045D0E4	initialized_data_pointer				0	0	0		0
+0085C010	PTR_GetFastestServer_0085c010	/pointer	0045CE06	initialized_data_pointer				0	0	0		0
+0085C014	PTR_JoinGame_0085c014	/pointer	0045D140	initialized_data_pointer				0	0	0		0
+0085C018	PTR_DownloadFile_0085c018	/pointer	0045CFA4	initialized_data_pointer				0	0	0		0
+0085C01C	PTR_RequestGameList_0085c01c	/pointer	0045CF74	initialized_data_pointer				0	0	0		0
+0085C020	PTR_RequestInfo_0085c020	/pointer	0045CF44	initialized_data_pointer				0	0	0		0
+0085C024	PTR_RequestLadderList_0085c024	/pointer	0045CF12	initialized_data_pointer				0	0	0		0
+0085C028	PTR_UpdateInfo_0085c028	/pointer	0045D166	initialized_data_pointer				0	0	0		0
+0085C02C	PTR_StopBanners_0085c02c	/pointer	0045CEC2	initialized_data_pointer				0	0	0		0
+0085C030	PTR_JoinChannel_0085c030	/pointer	0045CE96	initialized_data_pointer				0	0	0		0
+0085C034	PTR_Initialize_0085c034	/pointer	0045CE60	initialized_data_pointer				0	0	0		0
+0085C038	PTR_InitConnection_0085c038	/pointer	0045CE32	initialized_data_pointer				0	0	0		0
+0085C03C	PTR_CreateGame_0085c03c	/pointer	0045D112	initialized_data_pointer				0	0	0		0
+0085C040	PTR_GetUserIconIndex_0085c040	/pointer	0045CDD6	initialized_data_pointer				0	0	0		0
+0085C044	PTR_GetIconFilename_0085c044	/pointer	0045CDA8	initialized_data_pointer				0	0	0		0
+0085C048	PTR_IsInitialized_0085c048	/pointer	0045CD7E	initialized_data_pointer				0	0	0		0
+0085C04C	PTR_~CFsgsConnection_0085c04c	/pointer	0045CD60	initialized_data_pointer				0	0	0		0
+0085C050	PTR_CFsgsConnection_0085c050	/pointer	0045CD42	initialized_data_pointer				0	0	0		0
+0085C054	PTR_OnStartGameReply_0085c054	/pointer	0045CD14	initialized_data_pointer				0	0	0		0
+0085C058	PTR_OnGameUpdateReceived_0085c058	/pointer	0045CCE0	initialized_data_pointer				0	0	0		0
+0085C05C	PTR_PumpMessages_0085c05c	/pointer	0045CCB8	initialized_data_pointer				0	0	0		0
+0085C060	PTR_GameResult_0085c060	/pointer	0045CC90	initialized_data_pointer				0	0	0		0
+0085C064	PTR_SendChatMessage_0085c064	/pointer	0045CC62	initialized_data_pointer				0	0	0		0
+0085C068	PTR_RequestDatafile_0085c068	/pointer	0045D194	initialized_data_pointer				0	0	0		0
+0085C06C	PTR_StartBanners_0085c06c	/pointer	0045D1C2	initialized_data_pointer				0	0	0		0
+0085C070	PTR_UpdateGame_0085c070	/pointer	0045D1EA	initialized_data_pointer				0	0	0		0
+0085C074	PTR_CloseGame_0085c074	/pointer	0045D214	initialized_data_pointer				0	0	0		0
+0085C078	PTR_StartGame_0085c078	/pointer	0045D23A	initialized_data_pointer				0	0	0		0
+0085C07C	PTR_ChangePassword_0085c07c	/pointer	0045CFF8	initialized_data_pointer				0	0	0		0
+0085C080	PTR_BannerClick_0085c080	/pointer	0045CFD0	initialized_data_pointer				0	0	0		0
+0085C084	PTR_PingPlayer_0085c084	/pointer	0045CEEA	initialized_data_pointer				0	0	0		0
+0085C0D0	PTR_CoInitialize_0085c0d0	/pointer	0045CAD2	initialized_data_pointer				0	0	0		0
+0085C0D4	PTR_CoFreeUnusedLibraries_0085c0d4	/pointer	0045D81A	initialized_data_pointer				0	0	0		0
+0085C0D8	PTR_CoTaskMemAlloc_0085c0d8	/pointer	0045D832	initialized_data_pointer				0	0	0		0
+0085C0DC	PTR_CoTaskMemFree_0085c0dc	/pointer	0045D844	initialized_data_pointer				0	0	0		0
+0085C0E0	PTR_CoUninitialize_0085c0e0	/pointer	0045CAE2	initialized_data_pointer				0	0	0		0
+0085C0E4	PTR_CoCreateInstance_0085c0e4	/pointer	0045CABE	initialized_data_pointer				0	0	0		0
+0085C118	PTR_sizeHelp_0085c118	/pointer	0045D28C	initialized_data_pointer				0	0	0		0
+0085C11C	PTR_structHelp_0085c11c	/pointer	0045D26A	initialized_data_pointer				0	0	0		0

@@ -148,7 +148,7 @@ int __thiscall STLBombC::GetMessage(STLBombC *this,STMessage *message)
         uVar8 = *(uint *)(dVar2 + 0xc);
         if (uVar8 < 2) {
           *(undefined4 *)((int)&this_00->field_023E + 3) = 0;
-          *(undefined4 *)&this_00->field_0x23d = PTR_00802a38->field_00E4;
+          *(uint *)&this_00->field_0x23d = PTR_00802a38->field_00E4;
           puVar11 = (message->arg0).ptr;
           puVar13 = (undefined4 *)&this_00->field_0x258;
           for (iVar6 = 0xc; iVar6 != 0; iVar6 = iVar6 + -1) {

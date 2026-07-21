@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 undefined4 __thiscall FUN_005fd3a0(void *this,int param_1)
 
@@ -60,12 +62,7 @@ LAB_005fd4eb:
       }
       iVar3 = thunk_FUN_006010a0(this,puVar4);
       if (iVar3 != 0) {
-        puVar4 = (undefined4 *)((int)this + 0x1d5);
-        for (iVar3 = 0xb; iVar3 != 0; iVar3 = iVar3 + -1) {
-          *puVar4 = 0;
-          puVar4 = puVar4 + 1;
-        }
-        *(undefined1 *)puVar4 = 0;
+        memset((void *)((int)this + 0x1d5), 0, 0x2d); /* compiler bulk-zero initialization */
         if (*(char *)((int)this + 0x232) != '\0') {
           SubmarineTitans::Recovered::HiddenThis::AnonReceiver_005FDB50::thunk_FUN_005fdb50
                     (this,0,-1);

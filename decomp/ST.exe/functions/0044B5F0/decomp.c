@@ -39,7 +39,7 @@ STAllPlayersC::SelectObjects
   local_8 = (DArrayTy *)0x0;
   local_10 = (DArrayTy *)0x0;
   local_c = (DArrayTy *)0x0;
-  local_8 = (DArrayTy *)Library::DKW::TBL::FUN_006ae290((uint *)0x0,0,2,1);
+  local_8 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,0,2,1);
   switch(param_1) {
   case CASE_0:
     param_3 = 0;

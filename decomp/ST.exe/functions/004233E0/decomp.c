@@ -20,20 +20,20 @@ uint * __thiscall STGroupC::GetGroupContent(STGroupC *this,int param_1)
   uint local_18;
   uint local_14;
   STGroupC *local_10;
-  uint *local_c;
+  DArrayTy *local_c;
   short local_6;
 
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  local_18 = *(uint *)(this->field_0029 + 0xc);
+  local_18 = this->field_0029[3];
   uVar5 = 0;
-  local_c = (uint *)0x0;
+  local_c = (DArrayTy *)0x0;
   local_14 = 0;
   local_5c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_5c;
   local_10 = this;
   errorCode = Library::MSVCRT::__setjmp3(local_5c.jumpBuffer,0);
   if (errorCode == 0) {
-    local_c = Library::DKW::TBL::FUN_006ae290((uint *)0x0,(uint)(ushort)local_10->field_0027,2,1);
+    local_c = Library::DKW::TBL::DArrayCreate
+                        ((DArrayTy *)0x0,(uint)(ushort)local_10->field_0027,2,1);
     uVar2 = local_18;
     if (local_18 != 0) {
       index = 0;
@@ -41,7 +41,7 @@ uint * __thiscall STGroupC::GetGroupContent(STGroupC *this,int param_1)
       do {
         DArrayGetElement((DArrayTy *)local_10->field_0029,index,&local_6);
         if (local_6 != -1) {
-          Library::DKW::TBL::FUN_006ae140(local_c,uVar6 & 0xffff,(undefined4 *)&local_6);
+          Library::DKW::TBL::FUN_006ae140(&local_c->flags,uVar6 & 0xffff,(undefined4 *)&local_6);
           uVar6 = uVar6 + 1;
           local_14 = uVar6;
         }
@@ -50,7 +50,7 @@ uint * __thiscall STGroupC::GetGroupContent(STGroupC *this,int param_1)
       } while (index < uVar2);
     }
     g_currentExceptionFrame = local_5c.previous;
-    return local_c;
+    return &local_c->flags;
   }
   g_currentExceptionFrame = local_5c.previous;
   iVar3 = ReportDebugMessage("E:\\__titans\\wlad\\tc_grp.cpp",0x52,0,errorCode,"%s",
@@ -59,6 +59,6 @@ uint * __thiscall STGroupC::GetGroupContent(STGroupC *this,int param_1)
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   RaiseInternalException(errorCode,0,"E:\\__titans\\wlad\\tc_grp.cpp",0x53);
-  return local_c;
+  return &local_c->flags;
 }
 

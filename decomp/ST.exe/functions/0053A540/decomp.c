@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 void __fastcall FUN_0053a540(PlayPanelTy *param_1)
 
@@ -6,15 +8,10 @@ void __fastcall FUN_0053a540(PlayPanelTy *param_1)
   byte bVar2;
   undefined4 uVar3;
   int iVar4;
-  undefined4 *puVar5;
   int *piVar6;
 
   puVar1 = &param_1->field_0x18;
-  puVar5 = (undefined4 *)puVar1;
-  for (iVar4 = 8; iVar4 != 0; iVar4 = iVar4 + -1) {
-    *puVar5 = 0;
-    puVar5 = puVar5 + 1;
-  }
+  memset((void *)puVar1, 0, 0x20); /* compiler bulk-zero initialization */
   param_1->field_0028 = 0x28;
   if (DAT_00808aaf < 9) {
     iVar4 = 0;

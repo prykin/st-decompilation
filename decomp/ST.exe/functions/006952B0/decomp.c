@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
@@ -69,24 +71,17 @@ int __thiscall FUN_006952b0(void *this,AnonShape_006952B0_7A982E30 *param_1,byte
     local_20 = local_44 / 0x640;
     local_44 = local_44 / 3;
     local_8 = (void *)Library::DKW::LIB::FUN_006aac70(local_28 * 4);
-    puVar5 = (undefined4 *)&stack0xffffff70;
-    for (iVar3 = 8; iVar3 != 0; iVar3 = iVar3 + -1) {
-      *puVar5 = 0;
-      puVar5 = puVar5 + 1;
-    }
-    local_54 = (DArrayTy *)Library::DKW::TBL::FUN_006ae290((uint *)0x0,10,0x40,10);
-    local_78 = (DArrayTy *)Library::DKW::TBL::FUN_006ae290((uint *)0x0,10,0x40,10);
-    local_50 = (DArrayTy *)Library::DKW::TBL::FUN_006ae290((uint *)0x0,local_1c,0xf,10);
-    local_74 = (DArrayTy *)Library::DKW::TBL::FUN_006ae290((uint *)0x0,local_1c,0xf,10);
+    memset(&stack0xffffff70, 0, 0x20); /* compiler bulk-zero initialization */
+    iVar3 = 0;
+    local_54 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,10,0x40,10);
+    local_78 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,10,0x40,10);
+    local_50 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,local_1c,0xf,10);
+    local_74 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,local_1c,0xf,10);
     local_14 = 0x32;
     while ((0 < local_10 || (local_3c < local_14 + local_48))) {
       local_54->count = 0;
       local_50->count = 0;
-      puVar5 = (undefined4 *)local_6c;
-      for (iVar3 = 6; iVar3 != 0; iVar3 = iVar3 + -1) {
-        *puVar5 = 0;
-        puVar5 = puVar5 + 1;
-      }
+      memset((void *)local_6c, 0, 0x18); /* compiler bulk-zero initialization */
       if ((*(int *)((int)this + 8) == 0) && (*(int *)((int)this + 0xc) == 0)) {
         thunk_FUN_006a0150(this);
       }

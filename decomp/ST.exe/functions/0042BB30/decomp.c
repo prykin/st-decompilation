@@ -82,7 +82,7 @@ STAllPlayersC::AddObjToTmp
 LAB_0042bc00:
   pSVar7 = local_10 + param_3;
   if (pSVar7->objectType == 0) {
-    pDVar3 = (DArrayTy *)Library::DKW::TBL::FUN_006ae290((uint *)0x0,0,2,1);
+    pDVar3 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,0,2,1);
     pSVar7->objectIds = pDVar3;
     pSVar7->activityCount = 0;
     pSVar7->playerId = (int)param_4;

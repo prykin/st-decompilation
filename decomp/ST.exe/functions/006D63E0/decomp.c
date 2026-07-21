@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* [STHiddenThisApplier] Anonymous hidden receiver recovered as
    /SubmarineTitans/Recovered/HiddenThis/AnonReceiver_006CEC40.
@@ -20,7 +22,6 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_006CEC40::FUN_006d63e0
   BOOL BVar6;
   int iVar7;
   int iVar8;
-  undefined4 *puVar9;
   int local_d0;
   int local_cc;
   int local_c8;
@@ -117,11 +118,7 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_006CEC40::FUN_006d63e0
           local_cc = local_a4;
           local_c8 = iVar7 + local_a0;
           local_c4 = local_a4 + local_9c;
-          puVar9 = local_98;
-          for (iVar4 = 0x1f; iVar4 != 0; iVar4 = iVar4 + -1) {
-            *puVar9 = 0;
-            puVar9 = puVar9 + 1;
-          }
+          memset(local_98, 0, 0x7c); /* compiler bulk-zero initialization */
           local_98[0] = 0x7c;
           iVar4 = 0;
           local_d0 = iVar7;

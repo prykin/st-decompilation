@@ -32,7 +32,7 @@ STAllPlayersC::DeleteGuardBoat(STAllPlayersC *this,char param_1,short param_2,in
   DArrayTy *local_1c;
   DArrayTy *local_18;
   STAllPlayersC *local_14;
-  undefined4 local_10;
+  uint local_10;
   dword local_c;
   uint local_8;
 

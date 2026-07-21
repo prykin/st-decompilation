@@ -296,10 +296,8 @@ void __thiscall MainMenuTy::SetMode(MainMenuTy *this,char param_1,int param_2)
     this_00->field_06C2 = 0x611f;
     this_00->field_08BD = 0x6122;
     puVar8 = &local_24c;
-    for (iVar10 = 0x7e; iVar10 != 0; iVar10 = iVar10 + -1) {
-      *puVar8 = 0;
-      puVar8 = puVar8 + 1;
-    }
+    memset(puVar8, 0, 0x1f8); /* compiler bulk-zero initialization */
+    puVar8 = (undefined4 *)((byte *)puVar8 + 0x1f8);
     pSVar1 = this_00->field_1A5B;
     *(undefined2 *)puVar8 = 0;
     *(undefined1 *)((int)puVar8 + 2) = 0;
@@ -331,7 +329,7 @@ void __thiscall MainMenuTy::SetMode(MainMenuTy *this,char param_1,int param_2)
     this_00->field_1AD7 = this_00->field_0061;
     goto LAB_005b44f1;
   }
-  FUN_006b5f80(DAT_008075a8,0,0,g_nWidth_00806730,DAT_00806734);
+  FUN_006b5f80((int *)PTR_008075a8,0,0,g_nWidth_00806730,DAT_00806734);
   Library::DKW::DDX::FUN_006ba9e0(DAT_0080759c,0xe9,0x14,0x14c,0x18,0);
   if (this_00->field_1EE3 == '\0') {
     pcVar20 = PTR_0081176c->field_0030;

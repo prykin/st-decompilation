@@ -22,8 +22,9 @@ uint __cdecl FUN_0067fdf0(undefined4 param_1,byte *param_2)
     g_currentExceptionFrame = local_48.previous;
     return uVar1;
   }
-  if (uVar1 < (uint)PTR_00848a38->field_000C) {
-    puVar2 = (undefined4 *)(PTR_00848a38->field_0008 * uVar1 + PTR_00848a38->field_001C);
+  if (uVar1 < PTR_00848a38->count) {
+    /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(PTR_00848a38, uVar1) (runtime stride) */
+    puVar2 = (undefined4 *)(PTR_00848a38->elementSize * uVar1 + (int)PTR_00848a38->data);
   }
   else {
     puVar2 = (undefined4 *)0x0;

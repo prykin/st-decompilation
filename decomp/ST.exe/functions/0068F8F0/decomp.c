@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 undefined4 __thiscall FUN_0068f8f0(void *this,short param_1)
 
@@ -6,7 +8,6 @@ undefined4 __thiscall FUN_0068f8f0(void *this,short param_1)
   short sVar1;
   int iVar2;
   uint uVar3;
-  uint *puVar4;
   bool bVar5;
   uint local_38 [2];
   char local_30;
@@ -34,11 +35,7 @@ undefined4 __thiscall FUN_0068f8f0(void *this,short param_1)
         }
         this_00 = *(AiFltClassTy **)(iVar2 + 4);
         if ((this_00 != (AiFltClassTy *)0x0) && (this_00->field_007B == -0x8000)) {
-          puVar4 = local_38;
-          for (iVar2 = 0xd; iVar2 != 0; iVar2 = iVar2 + -1) {
-            *puVar4 = 0;
-            puVar4 = puVar4 + 1;
-          }
+          memset(local_38, 0, 0x34); /* compiler bulk-zero initialization */
           local_38[1] = *(undefined4 *)((int)this + 300);
           local_38[0] = 0x75;
           AiFltClassTy::GetAiMess(this_00,local_38);

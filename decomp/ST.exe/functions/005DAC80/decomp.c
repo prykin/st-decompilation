@@ -11,7 +11,7 @@ void __thiscall StartSystemTy::GetIP(StartSystemTy *this)
   code *pcVar1;
   StartSystemTy *pSVar2;
   int iVar3;
-  AnonPointee_StartSystemTy_0696 *pAVar4;
+  DArrayTy *pDVar4;
   hostent *phVar5;
   _union_1226 *p_Var6;
   char *text;
@@ -30,8 +30,8 @@ void __thiscall StartSystemTy::GetIP(StartSystemTy *this)
     if ((AnonShape_006B5570_4D68B99C *)local_8->field_0696 != (AnonShape_006B5570_4D68B99C *)0x0) {
       FUN_006b5570((AnonShape_006B5570_4D68B99C *)local_8->field_0696);
     }
-    pAVar4 = (AnonPointee_StartSystemTy_0696 *)Library::DKW::TBL::FUN_006b54f0((uint *)0x0,10,10);
-    pSVar2->field_0696 = pAVar4;
+    pDVar4 = Library::DKW::TBL::SArrayCreate((DArrayTy *)0x0,10,10);
+    pSVar2->field_0696 = &pDVar4->flags;
     iVar3 = WSAStartup(0x101,&local_1dc);
     if (iVar3 == 0) {
       iVar3 = gethostname(local_3dc,0x200);
@@ -43,7 +43,7 @@ void __thiscall StartSystemTy::GetIP(StartSystemTy *this)
           do {
             /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
             text = inet_ntoa((in_addr)p_Var6->S_un_b);
-            Library::DKW::TBL::FUN_006b5aa0((uint *)pSVar2->field_0696,text);
+            Library::DKW::TBL::FUN_006b5aa0(pSVar2->field_0696,text);
             iVar3 = iVar3 + 4;
             p_Var6 = *(_union_1226 **)((int)phVar5->h_addr_list + iVar3);
           } while (p_Var6 != (_union_1226 *)0x0);

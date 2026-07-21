@@ -22,11 +22,11 @@ void __thiscall HoloTy::Done(HoloTy *this)
   pHVar2 = local_8;
   if (errorCode == 0) {
     if (-1 < local_8->field_0003) {
-      FUN_006b3bb0(DAT_008075a8,local_8->field_0003);
+      FUN_006b3bb0((int *)PTR_008075a8,local_8->field_0003);
     }
     pHVar2->field_0003 = -1;
-    if (pHVar2->field_000B != 0) {
-      FreeAndNull((void **)&pHVar2->field_000B);
+    if (pHVar2->field_000B != (void *)0x0) {
+      FreeAndNull(&pHVar2->field_000B);
     }
     if (pHVar2->field_0007 != 0) {
       FreeAndNull((void **)&pHVar2->field_0007);

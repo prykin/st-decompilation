@@ -111,7 +111,8 @@ int __thiscall STOctopusC::GetMessage(STOctopusC *this,STMessage *message)
         return 0;
       }
       thunk_FUN_0058af70(this_00,(short)local_1c,(short)local_24,(short)local_20);
-      sVar6 = (*this_00->vtable->vfunc_10)
+      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+      sVar6 = (**(code **)&this_00->vtable->field_0x10)
                         (*(undefined2 *)&this_00->field_0x41,*(undefined2 *)&this_00->field_0x43,
                          *(undefined2 *)&this_00->field_0x45,local_1c,local_24,local_20);
       *(short *)&this_00->field_0x6c = sVar6 / 0x2d - (short)((int)sVar6 / -0x4c000000);
@@ -370,10 +371,10 @@ int __thiscall STOctopusC::GetMessage(STOctopusC *this,STMessage *message)
   *(undefined4 *)&this_00->field_0x249 = 3;
   local_1c = (undefined4 *)(message->arg0).u32;
   if ((uint)local_1c[3] < 2) {
-    iVar7 = PTR_00802a38->field_00E4;
+    uVar10 = PTR_00802a38->field_00E4;
     *(undefined4 *)&this_00->field_0x24d = 0;
     this_00->field_0231 = 0;
-    *(int *)&this_00->field_0x245 = iVar7 + -3;
+    *(uint *)&this_00->field_0x245 = uVar10 - 3;
     *(undefined4 *)&this_00->field_0x235 = 0;
     *(undefined4 *)&this_00->field_0x271 = 0;
     *(undefined4 *)&this_00->field_0x26d = 0;

@@ -17,7 +17,7 @@ FSGSTy::AddMessage(FSGSTy *this,uint param_1,byte *param_2,char *param_3,uint pa
   short sVar5;
   int iVar6;
   uint *puVar7;
-  AnonShape_006B5570_4D68B99C *pAVar8;
+  DArrayTy *pDVar8;
   AnonShape_006B5570_4D68B99C *pAVar9;
   char *pcVar10;
   int iVar11;
@@ -27,7 +27,7 @@ FSGSTy::AddMessage(FSGSTy *this,uint param_1,byte *param_2,char *param_3,uint pa
   byte *pbVar15;
   bool bVar16;
   InternalExceptionFrame local_5c;
-  AnonShape_006B5570_4D68B99C *local_18;
+  DArrayTy *local_18;
   FSGSTy *local_14;
   uint local_10;
   uint *local_c;
@@ -130,22 +130,21 @@ LAB_005a1fc3:
         puVar7 = Library::MSVCRT::FUN_0072e560(puVar7,'\n')) {
       *(undefined1 *)puVar7 = 0x20;
     }
-    pAVar8 = (AnonShape_006B5570_4D68B99C *)Library::DKW::TBL::FUN_006b54f0((uint *)0x0,1,10);
-    local_18 = pAVar8;
-    if (pAVar8 != (AnonShape_006B5570_4D68B99C *)0x0) {
+    pDVar8 = Library::DKW::TBL::SArrayCreate((DArrayTy *)0x0,1,10);
+    local_18 = pDVar8;
+    if (pDVar8 != (DArrayTy *)0x0) {
       local_10 = 0;
       local_5 = '\0';
-      Library::DKW::TBL::FUN_006b5aa0((uint *)pAVar8,(char *)local_c);
+      Library::DKW::TBL::FUN_006b5aa0(&pDVar8->flags,(char *)local_c);
       this_00 = local_14;
       pAVar9 = (AnonShape_006B5570_4D68B99C *)
-               ccFntTy::FormSarr(local_14->field_1A77,(uint *)pAVar8," ,.;:!?/\\()[]{}",
+               ccFntTy::FormSarr(local_14->field_1A77,&pDVar8->flags," ,.;:!?/\\()[]{}",
                                  0x1a6 - local_14->field_1B4C,0,0xffffffff,1);
       if (this_00->field_1A5F == CASE_6) {
         this_00->field_002D = 0x26;
         FUN_006e6080(this_00,2,this_00->field_1B14,(undefined4 *)&this_00->field_0x1d);
         local_10 = (uint)*(ushort *)&this_00->field_0x33;
-        /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-        if (*(int *)(this_00->field_1E9E + 8) + -0x19 <= (int)local_10) {
+        if ((int)(this_00->field_1E9E[2] - 0x19) <= (int)local_10) {
           local_5 = '\x01';
         }
       }
@@ -167,32 +166,29 @@ LAB_005a1fc3:
           do {
             pcVar10 = *(char **)(pAVar9->field_0014 + iVar6 * 4);
 LAB_005a2188:
-            Library::DKW::TBL::FUN_006b5aa0((uint *)this_00->field_1E9E,pcVar10);
+            Library::DKW::TBL::FUN_006b5aa0(this_00->field_1E9E,pcVar10);
             iVar6 = iVar6 + 1;
           } while (iVar6 < (int)pAVar9->field_0008);
         }
         FUN_006b5570(pAVar9);
-        pAVar8 = local_18;
+        pDVar8 = local_18;
       }
-      FUN_006b5570(pAVar8);
+      FUN_006b5570((AnonShape_006B5570_4D68B99C *)pDVar8);
       if (this_00->field_1A5F == CASE_6) {
         this_00->field_002D = 0x28;
         *(undefined2 *)&this_00->field_0x31 = 1;
-        *(undefined2 *)&this_00->field_0x33 = *(undefined2 *)(this_00->field_1E9E + 8);
+        *(short *)&this_00->field_0x33 = (short)this_00->field_1E9E[2];
         FUN_006e6080(this_00,2,this_00->field_1B14,(undefined4 *)&this_00->field_0x1d);
         this_00->field_002D = 0x22;
         *(undefined2 *)&this_00->field_0x31 = 0;
         if (local_5 == '\0') {
           sVar5 = (short)local_10;
         }
+        else if ((int)this_00->field_1E9E[2] < 0x19) {
+          sVar5 = 0;
+        }
         else {
-          iVar6 = *(int *)(this_00->field_1E9E + 8);
-          if (iVar6 < 0x19) {
-            sVar5 = 0;
-          }
-          else {
-            sVar5 = (short)iVar6 + -0x19;
-          }
+          sVar5 = (short)this_00->field_1E9E[2] + -0x19;
         }
         *(short *)&this_00->field_0x33 = sVar5;
         FUN_006e6080(this_00,2,this_00->field_1B14,(undefined4 *)&this_00->field_0x1d);

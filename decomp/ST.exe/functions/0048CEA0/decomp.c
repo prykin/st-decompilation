@@ -50,7 +50,7 @@ void __thiscall STBoatC::_CheckDefenceShots(STBoatC *this,int param_1)
       if ((short)local_20 != -1) {
         local_1a = local_1a - param_1;
         if (local_1a < 1) {
-          puVar6 = (uint *)pSVar2->field_047B;
+          puVar6 = pSVar2->field_047B;
           /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
           local_20 = CONCAT22(local_20._2_2_,0xffff);
         }
@@ -75,13 +75,13 @@ void __thiscall STBoatC::_CheckDefenceShots(STBoatC *this,int param_1)
                     /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                     local_20 = CONCAT22(local_20._2_2_,0xffff);
                   }
-                  puVar6 = (uint *)pSVar2->field_047B;
+                  puVar6 = pSVar2->field_047B;
                   goto LAB_0048d016;
                 }
               }
             }
           }
-          puVar6 = (uint *)pSVar2->field_047B;
+          puVar6 = pSVar2->field_047B;
           /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
           local_20 = CONCAT22(local_20._2_2_,0xffff);
         }

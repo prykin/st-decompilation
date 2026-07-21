@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* WARNING: Removing unreachable block (ram,0x00751954) */
 
@@ -10,7 +12,6 @@ int FUN_007516f0(int param_1,byte *param_2)
   int iVar4;
   uint uVar5;
   uint uVar6;
-  undefined4 *puVar7;
   byte *pbVar8;
   uint local_4c;
   byte local_48;
@@ -28,11 +29,7 @@ int FUN_007516f0(int param_1,byte *param_2)
   local_8 = 0;
   ExceptionList = &local_14;
   Library::MSVCRT::FUN_0072da40();
-  puVar7 = (undefined4 *)&stack0xffffffa8;
-  for (iVar4 = 0x4000; iVar4 != 0; iVar4 = iVar4 + -1) {
-    *puVar7 = 0;
-    puVar7 = puVar7 + 1;
-  }
+  memset(&stack0xffffffa8, 0, 0x10000); /* compiler bulk-zero initialization */
   if ((undefined4 *)&stack0xffffffa8 == (undefined4 *)0x0) {
     iVar4 = -2;
   }

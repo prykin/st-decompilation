@@ -1,13 +1,13 @@
+#include "../../pseudocode_runtime.h"
+
 
 void __cdecl FUN_005416a0(int param_1,undefined *param_2,BYTE param_3)
 
 {
   char cVar1;
-  int iVar2;
   uint uVar3;
   uint uVar4;
   char *pcVar5;
-  undefined4 *puVar6;
   char *pcVar7;
   undefined4 local_b0 [5];
   undefined1 local_9c;
@@ -22,11 +22,7 @@ void __cdecl FUN_005416a0(int param_1,undefined *param_2,BYTE param_3)
   byte local_74 [88];
   byte local_1c [24];
 
-  puVar6 = local_b0;
-  for (iVar2 = 0xf; iVar2 != 0; iVar2 = iVar2 + -1) {
-    *puVar6 = 0;
-    puVar6 = puVar6 + 1;
-  }
+  memset(local_b0, 0, 0x3c); /* compiler bulk-zero initialization */
   local_99 = param_3;
   uVar3 = 0xffffffff;
   pcVar5 = "Verdana";

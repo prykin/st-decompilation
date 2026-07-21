@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
@@ -68,11 +70,7 @@ undefined4 __thiscall FUN_006d58c0(void *this,int param_1,undefined4 *param_2)
   param_2[0xd] = DAT_007a1360;
   param_2[0xe] = DAT_007a1364;
   param_2[0x10] = 0x58;
-  puVar5 = &DAT_00856900;
-  for (iVar3 = 0x11a; iVar3 != 0; iVar3 = iVar3 + -1) {
-    *puVar5 = 0;
-    puVar5 = puVar5 + 1;
-  }
+  memset(&DAT_00856900, 0, 0x468); /* compiler bulk-zero initialization */
   DAT_00856900 = 0;
   DAT_00856904 = 0;
   _DAT_00856908 = *(undefined4 *)(iVar1 + 0x90);

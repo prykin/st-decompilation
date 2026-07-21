@@ -37,7 +37,7 @@ void __thiscall PrividerTy::PaintPrivider(PrividerTy *this,char param_1)
     RaiseInternalException(errorCode,0,"E:\\__titans\\Start\\prov_obj.cpp",0xec);
     return;
   }
-  FUN_006b5f80(DAT_008075a8,0,0,g_nWidth_00806730,DAT_00806734);
+  FUN_006b5f80((int *)PTR_008075a8,0,0,g_nWidth_00806730,DAT_00806734);
   PutDDX(0,0,'\x01',(BITMAPINFO *)PTR_0081176c->field_002C);
   pPVar2 = local_8;
   if ((local_8->field_1C96 == (HoloTy *)0x0) && (param_1 == '\0')) {

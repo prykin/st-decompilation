@@ -64,8 +64,8 @@ void __thiscall FSGSTy::AddPlayer(FSGSTy *this,undefined4 *param_1)
       *(undefined1 *)puVar8 = *(undefined1 *)param_1;
       local_f = 0;
       Library::DKW::TBL::FUN_006ae1c0(&pDVar2->flags,local_3c);
-      FUN_006b5f80(DAT_008075a8,0x1e9,0x5e,0x124,0xf3);
-      PutDDXClip(0x1e9,0x5e,0,0,0x124,(byte *)0xf3,'\x01',(BITMAPINFO *)this_00->field_1E9A);
+      FUN_006b5f80((int *)PTR_008075a8,0x1e9,0x5e,0x124,0xf3);
+      PutDDXClip(0x1e9,0x5e,0,0,0x124,(byte *)0xf3,'\x01',this_00->field_1E9A);
       this_00->field_002D = 0x28;
       *(dword *)&this_00->field_0x31 = this_00->field_1EA6->count;
       *(undefined2 *)&this_00->field_0x35 = 1;

@@ -42,7 +42,7 @@ void __thiscall FSGSTy::PaintFSGS(FSGSTy *this,char param_1)
     RaiseInternalException(errorCode,0,"E:\\__titans\\Start\\fsgs_obj.cpp",0x1c8);
     return;
   }
-  FUN_006b5f80(DAT_008075a8,0,0,g_nWidth_00806730,DAT_00806734);
+  FUN_006b5f80((int *)PTR_008075a8,0,0,g_nWidth_00806730,DAT_00806734);
   this_00 = local_c;
   PutDDX(0,0,'\x01',(BITMAPINFO *)local_c->field_005D);
   switch(this_00->field_1A5F) {

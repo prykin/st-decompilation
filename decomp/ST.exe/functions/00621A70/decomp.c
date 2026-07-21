@@ -18,7 +18,7 @@ void __fastcall FUN_00621a70(AnonShape_00621A70_2531BB4B *param_1)
          (pcVar3 = (char *)(*(int *)(iVar1 + 8) * uVar2 + *(int *)(iVar1 + 0x1c)),
          pcVar3 != (char *)0x0)) {
         if (((param_1->field_0105 != '\0') && (*pcVar3 == '\0')) &&
-           (9 < (uint)(PTR_00802a38->field_00E4 - param_1->field_0106))) {
+           (9 < PTR_00802a38->field_00E4 - param_1->field_0106)) {
           thunk_FUN_00621780(param_1,uVar2);
         }
         if (*(uint *)(pcVar3 + 1) < 0x5dd) {

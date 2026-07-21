@@ -14,18 +14,13 @@ void __thiscall ProdPanelTy::ShiftControls(ProdPanelTy *this,int param_1)
   undefined4 uVar3;
   int iVar4;
   int iVar5;
-  undefined4 *puVar6;
   int *piVar7;
   InternalExceptionFrame local_4c;
   ProdPanelTy *local_8;
 
   if (param_1 != this->field_005C) {
     this->field_005C = param_1;
-    puVar6 = (undefined4 *)&this->field_0x18;
-    for (iVar5 = 8; iVar5 != 0; iVar5 = iVar5 + -1) {
-      *puVar6 = 0;
-      puVar6 = puVar6 + 1;
-    }
+    memset(&this->field_0x18, 0, 0x20); /* compiler bulk-zero initialization */
     sVar2 = (short)this->field_0174;
     this->field_0028 = 0x24;
     if (param_1 != 0) {

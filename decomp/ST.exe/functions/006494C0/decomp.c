@@ -13,12 +13,10 @@ undefined4 * CreatePlrDataForWS(void)
   code *pcVar2;
   int iVar3;
   int iVar4;
-  undefined4 *puVar5;
   uint uVar6;
   uint uVar7;
   uint *puVar8;
   char *pcVar9;
-  int *piVar10;
   char *pcVar11;
   uint *puVar12;
   char *pcVar13;
@@ -52,16 +50,9 @@ undefined4 * CreatePlrDataForWS(void)
     RaiseInternalException(iVar3,0,"E:\\__titans\\ai\\ai_creat.cpp",0x13a);
     return (undefined4 *)0x0;
   }
-  piVar10 = local_34;
-  for (iVar3 = 6; iVar3 != 0; iVar3 = iVar3 + -1) {
-    *piVar10 = 0;
-    piVar10 = piVar10 + 1;
-  }
-  puVar5 = (undefined4 *)&stack0xfffffb6c;
-  for (iVar3 = 0xc6; iVar3 != 0; iVar3 = iVar3 + -1) {
-    *puVar5 = 0;
-    puVar5 = puVar5 + 1;
-  }
+  memset(local_34, 0, 0x18); /* compiler bulk-zero initialization */
+  iVar3 = 0;
+  memset(&stack0xfffffb6c, 0, 0x318); /* compiler bulk-zero initialization */
   uVar6 = 0xffffffff;
   pcVar9 = &DAT_00807680;
   do {

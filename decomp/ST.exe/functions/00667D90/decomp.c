@@ -93,7 +93,7 @@ int __thiscall AiFltClassTy::GetMessage(AiFltClassTy *this,STMessage *message)
           uVar6 = this_00->field_001C * 0x41c64e6d + 0x3039;
           this_00->field_001C = uVar6;
           this_00->field_0203 = (uVar6 >> 0x10) % 0x1a + 0x19;
-          thunk_FUN_00676c40((AnonShape_00413AF0_B6B4EE9A *)this_00->field_020B,&LAB_004013cf);
+          thunk_FUN_00676c40(this_00->field_020B,&LAB_004013cf);
           this_00->field_0170 = *(short *)&this_00->field_022F->field_0xc;
           uVar1 = *(undefined2 *)&this_00->field_0223->field_0xc;
           /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */

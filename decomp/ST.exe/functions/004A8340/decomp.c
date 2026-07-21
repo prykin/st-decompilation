@@ -22,7 +22,7 @@ STGroupBoatC::GetDepotForAttack
   char cStack_23;
   short sStack_22;
   undefined2 uStack_20;
-  int local_1c;
+  uint local_1c;
   int local_18;
   STGroupBoatC *local_14;
   short local_10;
@@ -40,7 +40,7 @@ STGroupBoatC::GetDepotForAttack
   pSVar5 = local_14;
   if (iVar2 == 0) {
     *param_3 = -1;
-    if ((local_14->field_01E6 != CASE_2) || (local_14->field_020E == 0)) {
+    if ((local_14->field_01E6 != CASE_2) || (local_14->field_020E == (uint *)0x0)) {
       RaiseInternalException
                 (-0x5001fff7,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_grpb.cpp",
                  0x1708);
@@ -48,10 +48,9 @@ STGroupBoatC::GetDepotForAttack
     pSVar3 = STAllPlayersC::GetObjPtr(g_sTAllPlayers_007FA174,pSVar5->field_0024,param_1,CASE_1);
     STFishC::sub_004162B0((STFishC *)pSVar3,&local_10,&local_e,&local_c);
     index = 0;
-    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-    local_1c = *(int *)(pSVar5->field_020E + 0xc);
+    local_1c = pSVar5->field_020E[3];
     iVar2 = local_18;
-    if (0 < local_1c) {
+    if (0 < (int)local_1c) {
       do {
         DArrayGetElement((DArrayTy *)pSVar5->field_020E,index,&local_24);
         if (sStack_22 != -1) {
@@ -81,7 +80,7 @@ STGroupBoatC::GetDepotForAttack
           }
         }
         index = index + 1;
-      } while ((int)index < local_1c);
+      } while ((int)index < (int)local_1c);
     }
     g_currentExceptionFrame = local_68.previous;
     return;

@@ -35,14 +35,14 @@ undefined4 __thiscall STTorpC::ClearDangerous(STTorpC *this,int param_1,uint par
   if (param_2 == 0xffffffff) {
     local_10[0] = param_1;
     local_10[1] = 0;
-    Library::DKW::TBL::FUN_006ae1c0((uint *)local_8->field_0241,local_10);
+    Library::DKW::TBL::FUN_006ae1c0(local_8->field_0241,local_10);
     g_currentExceptionFrame = local_54.previous;
     return 0;
   }
   DArrayGetElement((DArrayTy *)local_8->field_0241,param_2,local_10);
   if (local_10[0] == param_1) {
     local_10[1] = 0;
-    Library::DKW::TBL::FUN_006ae140((uint *)pSVar2->field_0241,param_2,local_10);
+    Library::DKW::TBL::FUN_006ae140(pSVar2->field_0241,param_2,local_10);
     g_currentExceptionFrame = local_54.previous;
     return 0;
   }

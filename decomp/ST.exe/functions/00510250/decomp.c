@@ -42,7 +42,7 @@ void __thiscall FrmPanelTy::DoneFrmPanel(FrmPanelTy *this)
       puVar5 = puVar5 + 1;
       iVar3 = iVar3 + -1;
     } while (iVar3 != 0);
-    DAT_0080168c = 0;
+    g_frmPanel_0080168C = (FrmPanelTy *)0x0;
     g_currentExceptionFrame = local_4c.previous;
     return;
   }

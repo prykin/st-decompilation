@@ -11,7 +11,7 @@ undefined4 * __cdecl FUN_0067cf30(char *source,undefined2 param_2,char *param_3,
 
 {
   int exceptionCode;
-  uint *puVar1;
+  DArrayTy *pDVar1;
   undefined4 *puVar2;
   char *_Source;
   InternalExceptionFrame local_4c;
@@ -39,8 +39,8 @@ undefined4 * __cdecl FUN_0067cf30(char *source,undefined2 param_2,char *param_3,
   Library::MSVCRT::_strncpy(&local_8->field_0x5b,_Source,0xb);
   local_8->field_0019 = param_2;
   local_8->field_006D = 0xff;
-  puVar1 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,5,0x10,5);
-  local_8->field_00C2 = puVar1;
+  pDVar1 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,5,0x10,5);
+  local_8->field_00C2 = &pDVar1->flags;
   puVar2 = thunk_FUN_0065c9e0(source);
   local_8->field_0106 = puVar2;
   local_8->field_010A = param_4;

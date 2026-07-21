@@ -28,8 +28,8 @@ void __thiscall WaitTy::DoneWait(WaitTy *this)
       if (PTR_00802a30->field_00A9 == 0) {
         Library::DKW::DDX::FUN_006b8b10((int *)PTR_00802a30->field_00AD);
       }
-      else if (PTR_00802a30->field_001C != 0xffffffff) {
-        FUN_006b3af0((int *)PTR_00802a30->field_0060,PTR_00802a30->field_001C);
+      else if (PTR_00802a30->field_001C != (cLoadingTy *)0xffffffff) {
+        FUN_006b3af0((int *)PTR_00802a30->field_0060,(uint)PTR_00802a30->field_001C);
       }
     }
     if (*(int *)&pMVar2->field_0x4d == 0x6105) {
@@ -43,7 +43,7 @@ void __thiscall WaitTy::DoneWait(WaitTy *this)
       DarkScreen(DAT_0080759c,10,2);
       thunk_FUN_005dac60();
     }
-    if (PTR_0081176c->field_002C != (ccFntTy *)0x0) {
+    if (PTR_0081176c->field_002C != (ushort *)0x0) {
       cMf32::RecMemFree(g_cMf32_00806780,(uint *)&PTR_0081176c->field_002C);
     }
     if (*(HoloTy **)&pMVar2[0x1e].field_0x5e != (HoloTy *)0x0) {
@@ -55,7 +55,7 @@ void __thiscall WaitTy::DoneWait(WaitTy *this)
     iVar3 = 0x16;
     do {
       if (*puVar5 != 0xffffffff) {
-        FUN_006b3bb0(DAT_008075a8,*puVar5);
+        FUN_006b3bb0((int *)PTR_008075a8,*puVar5);
         *puVar5 = 0xffffffff;
       }
       puVar5 = puVar5 + 1;
@@ -77,7 +77,7 @@ void __thiscall WaitTy::DoneWait(WaitTy *this)
         FUN_006b3af0((int *)PTR_0081176c->field_04F7,PTR_0081176c->field_04B3);
       }
       if (-1 < PTR_0081176c->field_0540) {
-        FUN_006b3af0(DAT_008075a8,PTR_0081176c->field_0540);
+        FUN_006b3af0((int *)PTR_008075a8,PTR_0081176c->field_0540);
       }
     }
     if (*(HoloTy **)&pMVar2[0x1e].field_0x62 != (HoloTy *)0x0) {
@@ -93,10 +93,10 @@ void __thiscall WaitTy::DoneWait(WaitTy *this)
         FUN_006b3af0((int *)PTR_0081176c->field_0635,PTR_0081176c->field_05F1);
       }
       if (-1 < PTR_0081176c->field_0558) {
-        FUN_006b3af0(DAT_008075a8,PTR_0081176c->field_0558);
+        FUN_006b3af0((int *)PTR_008075a8,PTR_0081176c->field_0558);
       }
       if (-1 < PTR_0081176c->field_0554) {
-        FUN_006b3af0(DAT_008075a8,PTR_0081176c->field_0554);
+        FUN_006b3af0((int *)PTR_008075a8,PTR_0081176c->field_0554);
       }
     }
     if (*(AnonShape_006B5570_4D68B99C **)&pMVar2[0x1e].field_0x56 !=

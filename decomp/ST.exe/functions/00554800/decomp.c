@@ -11,7 +11,7 @@ cLoadingTy::InitParam
           int param_6,int param_7,int param_8,int param_9)
 
 {
-  AnonPointee_cLoadingTy_0004 *pAVar1;
+  ushort *puVar1;
   ccFntTy *pcVar2;
   undefined4 uVar3;
   undefined4 uVar4;
@@ -42,16 +42,16 @@ cLoadingTy::InitParam
       param_4 = local_8->field_0000->field_0008;
     }
     local_8->field_0020 = param_4;
-    pAVar1 = local_8->field_0004;
+    puVar1 = local_8->field_0004;
     local_8->field_000C = 0;
     local_8->field_0010 = 0;
     local_8->field_0038 = 0;
-    uVar11 = pAVar1->field_0014;
+    uVar11 = *(uint *)(puVar1 + 10);
     if (uVar11 == 0) {
-      uVar11 = ((uint)(ushort)pAVar1->field_000E * pAVar1->field_0004 + 0x1f >> 3 & 0x1ffffffc) *
-               pAVar1->field_0008;
+      uVar11 = ((uint)puVar1[7] * *(int *)(puVar1 + 2) + 0x1f >> 3 & 0x1ffffffc) *
+               *(int *)(puVar1 + 4);
     }
-    puVar8 = (undefined4 *)FUN_006b4fa0((int)pAVar1);
+    puVar8 = (undefined4 *)FUN_006b4fa0((int)puVar1);
     for (uVar10 = uVar11 >> 2; uVar10 != 0; uVar10 = uVar10 - 1) {
       *puVar8 = 0;
       puVar8 = puVar8 + 1;
@@ -87,7 +87,7 @@ cLoadingTy::InitParam
     }
     pcVar6->field_0058 = param_8;
     pcVar6->field_0054 = param_9;
-    FUN_006b5f80(DAT_008075a8,0,0,g_nWidth_00806730,DAT_00806734);
+    FUN_006b5f80((int *)PTR_008075a8,0,0,g_nWidth_00806730,DAT_00806734);
     FUN_006b4640(DAT_0080759c,0,0,(BITMAPINFO *)pcVar6->field_0000,(uint *)0x0);
     Library::DKW::DDX::FUN_006bb370(DAT_0080759c,0,0);
     g_currentExceptionFrame = local_4c.previous;

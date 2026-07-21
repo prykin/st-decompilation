@@ -70,8 +70,7 @@ VisibleClassTy::SetZoneMin2
           do {
             if ((puVar6 == (undefined *)0x0) || (local_8[iVar7] != '\0')) {
               if ((iVar9 < 0) ||
-                 ((((int)this->field_0020 <= iVar9 || (iVar4 < 0)) || (this->field_0024 <= iVar4))))
-              {
+                 (((this->field_0020 <= iVar9 || (iVar4 < 0)) || (this->field_0024 <= iVar4)))) {
                 bVar3 = false;
               }
               else {

@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 undefined4 FUN_004e51b0(int *param_1,uint *param_2,uint *param_3)
 
@@ -48,11 +50,8 @@ undefined4 FUN_004e51b0(int *param_1,uint *param_2,uint *param_3)
   *(undefined4 *)&g_playerRuntime[(int)param_1].field_0x307 = 0;
   *(undefined4 *)&g_playerRuntime[(int)param_1].field_0x30b = 0;
   *(undefined4 *)&g_playerRuntime[(int)param_1].field_0x30f = 0;
-  puVar10 = &g_playerRuntime[(int)param_1].field522_0x327;
-  for (iVar7 = 0x9b; iVar7 != 0; iVar7 = iVar7 + -1) {
-    *puVar10 = 0;
-    puVar10 = puVar10 + 1;
-  }
+  memset(&g_playerRuntime[(int)param_1].field522_0x327, 0, 0x26c); /* compiler bulk-zero initialization */
+  iVar7 = 0;
   puVar10 = &DAT_00798fd8;
   puVar14 = &g_playerRuntime[(int)param_1].field1554_0x73b;
   for (iVar7 = 0x26; iVar7 != 0; iVar7 = iVar7 + -1) {

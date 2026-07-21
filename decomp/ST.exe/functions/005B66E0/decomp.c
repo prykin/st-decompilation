@@ -1,15 +1,11 @@
+#include "../../pseudocode_runtime.h"
+
 
 void __fastcall FUN_005b66e0(AnonShape_005B66E0_174166E5 *param_1)
 
 {
-  int iVar1;
-  undefined4 *puVar2;
 
-  puVar2 = (undefined4 *)&param_1->field_0x1d;
-  for (iVar1 = 8; iVar1 != 0; iVar1 = iVar1 + -1) {
-    *puVar2 = 0;
-    puVar2 = puVar2 + 1;
-  }
+  memset(&param_1->field_0x1d, 0, 0x20); /* compiler bulk-zero initialization */
   /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   param_1->field_0025 = *(undefined4 *)(param_1->field_000C + 0x14);
   param_1->field_0029 = 0;

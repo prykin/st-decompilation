@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 void __cdecl FUN_00645880(AnonShape_00645880_0D5933D4 *param_1)
 
@@ -50,11 +52,8 @@ void __cdecl FUN_00645880(AnonShape_00645880_0D5933D4 *param_1)
   undefined1 local_6;
 
   iVar3 = *(int *)&param_1->field_0x4;
-  puVar6 = local_5c;
-  for (iVar5 = 0x16; iVar5 != 0; iVar5 = iVar5 + -1) {
-    *puVar6 = 0;
-    puVar6 = puVar6 + 1;
-  }
+  memset(local_5c, 0, 0x58); /* compiler bulk-zero initialization */
+  iVar5 = 0;
   switch(iVar3) {
   case 0x96:
   case 0x97:
@@ -96,15 +95,12 @@ void __cdecl FUN_00645880(AnonShape_00645880_0D5933D4 *param_1)
     local_bc = 1;
     local_a4 = 5;
     local_a0 = 0x32;
-    (*PTR_00802a38->vtable->vfunc_08)(0x10a,0,0,&local_c4,0);
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+    (*(code *)PTR_00802a38->vtable->field_0008)(0x10a,0,0,&local_c4,0);
     return;
   case 0xb0:
   case 0xbb:
-    puVar6 = local_5c;
-    for (iVar5 = 0x16; iVar5 != 0; iVar5 = iVar5 + -1) {
-      *puVar6 = 0;
-      puVar6 = puVar6 + 1;
-    }
+    memset(local_5c, 0, 0x58); /* compiler bulk-zero initialization */
     local_5c[1] = *(undefined4 *)param_1;
     local_48 = *(undefined2 *)&param_1->field_0x8;
     local_46 = param_1->field_000A;
@@ -120,15 +116,14 @@ void __cdecl FUN_00645880(AnonShape_00645880_0D5933D4 *param_1)
     local_5c[0] = 0x15e;
     local_5c[3] = 1;
     local_5c[2] = 1;
-    (*PTR_00802a38->vtable->vfunc_08)(0x147,0,0,local_5c,0);
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+    (*(code *)PTR_00802a38->vtable->field_0008)(0x147,0,0,local_5c,0);
     return;
   case 0xb5:
     uVar1 = *(undefined2 *)&param_1->field_0x20;
     puVar6 = local_98;
-    for (iVar3 = 0xe; iVar3 != 0; iVar3 = iVar3 + -1) {
-      *puVar6 = 0;
-      puVar6 = puVar6 + 1;
-    }
+    memset(puVar6, 0, 0x38); /* compiler bulk-zero initialization */
+    puVar6 = (undefined4 *)((byte *)puVar6 + 0x38);
     uVar4 = *(undefined4 *)&param_1->field_0x1c;
     *(undefined2 *)puVar6 = 0;
     local_98[1] = *(undefined4 *)param_1;
@@ -145,7 +140,8 @@ void __cdecl FUN_00645880(AnonShape_00645880_0D5933D4 *param_1)
     local_6c = 4;
     local_64 = uVar4;
     local_60 = uVar1;
-    (*PTR_00802a38->vtable->vfunc_08)(0x150,0,0,local_98,0);
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+    (*(code *)PTR_00802a38->vtable->field_0008)(0x150,0,0,local_98,0);
     return;
   }
   uVar2 = GetPlayerRaceId(*(char *)param_1);
@@ -210,7 +206,8 @@ LAB_006459df:
   local_29 = param_1->field_0022;
   local_34 = *(uint *)&param_1->field_0x4;
   local_36 = param_1->field_001A;
-  (*PTR_00802a38->vtable->vfunc_08)(0x106,0,0,local_5c,0);
+  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+  (*(code *)PTR_00802a38->vtable->field_0008)(0x106,0,0,local_5c,0);
   return;
 }
 

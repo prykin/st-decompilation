@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* [STSourceProvenanceApplier begin]
@@ -697,7 +699,7 @@ LAB_0066b1fb:
           goto cf_common_exit_00670456;
         case 0x7da:
           local_14 = Library::DKW::LIB::FUN_006aac10(4);
-          *local_14 = (uint)PTR_00802a38->field_00E4 / 0x19;
+          *local_14 = PTR_00802a38->field_00E4 / 0x19;
           break;
         case 0x7dc:
           local_14 = Library::DKW::LIB::FUN_006aac10(4);
@@ -3196,18 +3198,11 @@ LAB_0066fbc1:
     pAVar14 = local_50[0];
     pcVar25 = (char *)0xffffffff;
     if (local_8 != (AiFltClassTy *)0x0) {
-      puVar18 = &local_21c;
-      for (iVar11 = 0x12; iVar11 != 0; iVar11 = iVar11 + -1) {
-        *puVar18 = 0;
-        puVar18 = puVar18 + 1;
-      }
-      *(undefined2 *)puVar18 = 0;
+      memset(&local_21c, 0, 0x4a); /* compiler bulk-zero initialization */
+      iVar11 = 0;
       local_21c = (*this_00->vtable->slot_00)(param_1 + 10);
-      puVar22 = local_1d0;
-      for (iVar11 = 0xd; iVar11 != 0; iVar11 = iVar11 + -1) {
-        *puVar22 = 0;
-        puVar22 = puVar22 + 1;
-      }
+      memset(local_1d0, 0, 0x34); /* compiler bulk-zero initialization */
+      iVar11 = 0;
       local_1c6 = &local_21c;
       local_218 = 0xffff;
       local_214 = 0xfffffff0;

@@ -44,7 +44,7 @@ void __thiscall BldLabPanelTy::PaintUpdBut(BldLabPanelTy *this,AnonShape_004EF32
   local_10 = this;
   if ((param_1->field_0014 == 0) || (local_8 == (Global_sub_00526BA0_param_1Enum *)0x0)) {
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-    local_c = (int)*(short *)(this->field_0188 + 0x23) - 1;
+    local_c = (int)*(short *)((int)this->field_0188 + 0x23) - 1;
   }
   else {
     local_c = thunk_FUN_00526ba0(*local_8,'\x03');
@@ -70,7 +70,8 @@ void __thiscall BldLabPanelTy::PaintUpdBut(BldLabPanelTy *this,AnonShape_004EF32
       DibPut((AnonShape_006B5B10_E0D06CF1 *)pBVar5->field_0068,iVar6,iVar8,'\x06',pbVar7);
     }
     Library::DKW::DDX::FUN_006b3640
-              (DAT_008075a8,pBVar5->field_0060,0xffffffff,pBVar5->field_003C,pBVar5->field_0044);
+              ((int *)PTR_008075a8,pBVar5->field_0060,0xffffffff,pBVar5->field_003C,
+               pBVar5->field_0044);
     g_currentExceptionFrame = local_5c.previous;
     return;
   }

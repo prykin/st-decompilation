@@ -120,7 +120,7 @@ LAB_004b2fd4:
                 if (local_24 < 0) {
                   *(undefined4 *)&this[0x22].field_0x8 = 0;
                 }
-                *(undefined4 *)&this[0x22].field_0xc = PTR_00802a38->field_00E4;
+                *(uint *)&this[0x22].field_0xc = PTR_00802a38->field_00E4;
                 return 1;
               }
             }

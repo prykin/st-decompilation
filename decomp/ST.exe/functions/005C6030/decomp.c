@@ -16,15 +16,16 @@ void __thiscall SettMapTy::CreateCtrls(SettMapTy *this,char param_1)
   bool bVar6;
   undefined4 uVar7;
   undefined4 *puVar8;
-  uint *puVar9;
+  DArrayTy *pDVar9;
   undefined4 uVar10;
   int iVar11;
   int iVar12;
   cMf32 *this_00;
   SettMapTy *this_01;
-  undefined4 uVar13;
-  undefined4 *puVar14;
-  int *piVar15;
+  uint *puVar13;
+  undefined4 uVar14;
+  undefined4 *puVar15;
+  int *piVar16;
   undefined4 local_ef4 [566];
   undefined4 local_61c [17];
   undefined4 local_5d8;
@@ -89,16 +90,9 @@ void __thiscall SettMapTy::CreateCtrls(SettMapTy *this,char param_1)
     *puVar8 = 0;
     puVar8 = puVar8 + 1;
   }
-  puVar8 = local_ef4;
-  for (iVar12 = 0x223; iVar12 != 0; iVar12 = iVar12 + -1) {
-    *puVar8 = 0;
-    puVar8 = puVar8 + 1;
-  }
-  puVar9 = local_5d0;
-  for (iVar12 = 0x5f; iVar12 != 0; iVar12 = iVar12 + -1) {
-    *puVar9 = 0;
-    puVar9 = puVar9 + 1;
-  }
+  memset(local_ef4, 0, 0x88c); /* compiler bulk-zero initialization */
+  iVar12 = 0;
+  memset(local_5d0, 0, 0x17c); /* compiler bulk-zero initialization */
   local_7c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_7c;
   iVar12 = Library::MSVCRT::__setjmp3(local_7c.jumpBuffer,0);
@@ -127,9 +121,8 @@ void __thiscall SettMapTy::CreateCtrls(SettMapTy *this,char param_1)
     local_5a8 = 0x654d;
     local_5bc = local_5d0[4];
     local_4a8 = local_5d0[4];
-    (*local_1c->field_000C->vtable->CreateObject)
-              ((SystemClassTy *)local_1c->field_000C,2,&local_1c->field_215D,(int *)0x0,local_5d0,0)
-    ;
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+    (*(code *)local_1c->field_000C->vtable->field_0008)(2,&local_1c->field_215D,0,local_5d0,0);
     goto LAB_005c69ed;
   }
   if (local_1c->field_1C6F != 0xffffffff) {
@@ -147,17 +140,17 @@ void __thiscall SettMapTy::CreateCtrls(SettMapTy *this,char param_1)
               ((uint *)this_01->field_1DD5,this_01->field_1D91,0xfffffffe,this_01->field_1DA9,
                this_01->field_1DAD);
   }
-  puVar9 = &this_01->field_20CC;
+  puVar13 = &this_01->field_20CC;
   iVar12 = 10;
   do {
-    Library::DKW::DDX::FUN_006b3430(DAT_008075a8,*puVar9);
-    puVar9 = puVar9 + 1;
+    Library::DKW::DDX::FUN_006b3430((int *)PTR_008075a8,*puVar13);
+    puVar13 = puVar13 + 1;
     iVar12 = iVar12 + -1;
   } while (iVar12 != 0);
   local_10 = 0x41;
   local_18 = 0x69ff;
   uVar10 = local_c;
-  uVar13 = local_8;
+  uVar14 = local_8;
   do {
     local_14 = 0;
     while( true ) {
@@ -168,63 +161,63 @@ void __thiscall SettMapTy::CreateCtrls(SettMapTy *this,char param_1)
       if (iVar12 <= local_14) break;
       switch(local_14) {
       case 0:
-        uVar13 = 0x14;
+        uVar14 = 0x14;
         local_c = 0x116;
         uVar10 = local_c;
-        local_8 = uVar13;
+        local_8 = uVar14;
         break;
       case 1:
-        uVar13 = 0x14;
+        uVar14 = 0x14;
         local_c = 300;
         uVar10 = local_c;
-        local_8 = uVar13;
+        local_8 = uVar14;
         break;
       case 2:
-        uVar13 = 0x18;
+        uVar14 = 0x18;
         local_c = 0x141;
         uVar10 = local_c;
-        local_8 = uVar13;
+        local_8 = uVar14;
         break;
       case 3:
-        uVar13 = 0x5f;
+        uVar14 = 0x5f;
         local_c = 0x15b;
         uVar10 = local_c;
-        local_8 = uVar13;
+        local_8 = uVar14;
         break;
       case 4:
         local_c = 0x1bc;
         uVar10 = local_c;
         if (((SVar2 == 6) || (SVar2 == 1)) || (SVar2 == 2)) {
-          uVar13 = 0xed;
-          local_8 = uVar13;
+          uVar14 = 0xed;
+          local_8 = uVar14;
         }
         else {
-          uVar13 = 0xad;
-          local_8 = uVar13;
+          uVar14 = 0xad;
+          local_8 = uVar14;
         }
         break;
       case 5:
         if (((SVar2 == 6) || (SVar2 == 1)) || (local_c = 0x26b, SVar2 == 2)) {
           local_c = 0x2ab;
         }
-        uVar13 = 0x3e;
+        uVar14 = 0x3e;
         uVar10 = local_c;
-        local_8 = uVar13;
+        local_8 = uVar14;
         break;
       case 6:
-        uVar13 = 0x2c;
+        uVar14 = 0x2c;
         local_c = 0x2ab;
         uVar10 = local_c;
-        local_8 = uVar13;
+        local_8 = uVar14;
         break;
       case 7:
-        uVar13 = 0x17;
+        uVar14 = 0x17;
         local_c = 0x2d9;
         uVar10 = local_c;
-        local_8 = uVar13;
+        local_8 = uVar14;
       }
       uVar7 = MMObjTy::CreateSprBut
-                        ((MMObjTy *)this_01,1,0,uVar10,local_10,uVar13,0x14,local_18 + local_14,
+                        ((MMObjTy *)this_01,1,0,uVar10,local_10,uVar14,0x14,local_18 + local_14,
                          local_18 + 0x80 + local_14);
       iVar12 = local_18 + local_14;
       local_14 = local_14 + 1;
@@ -274,8 +267,8 @@ void __thiscall SettMapTy::CreateCtrls(SettMapTy *this,char param_1)
   local_26c = local_3ec;
   local_fc = local_3ec;
   local_ac = local_3ec;
-  (*this_01->field_000C->vtable->CreateObject)
-            ((SystemClassTy *)this_01->field_000C,4,&this_01->field_211D,(int *)0x0,local_454,0);
+  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+  (*(code *)this_01->field_000C->vtable->field_0008)(4,&this_01->field_211D,0,local_454,0);
   SVar2 = this_01->field_1E26;
   if (((SVar2 == 6) || (SVar2 == CASE_7)) || (SVar2 == 0xe)) {
     local_10 = 0xcb;
@@ -297,19 +290,19 @@ void __thiscall SettMapTy::CreateCtrls(SettMapTy *this,char param_1)
     }
     this_01->field_002D = 0x20;
     this_01->field_0031 = 0;
-    piVar15 = &this_01->field_1F60;
+    piVar16 = &this_01->field_1F60;
     iVar12 = 7;
     do {
-      if (*piVar15 != 0) {
-        FUN_006e6080(this_01,2,*piVar15,(undefined4 *)&this_01->field_0x1d);
+      if (*piVar16 != 0) {
+        FUN_006e6080(this_01,2,*piVar16,(undefined4 *)&this_01->field_0x1d);
       }
-      piVar15 = piVar15 + 1;
+      piVar16 = piVar16 + 1;
       iVar12 = iVar12 + -1;
     } while (iVar12 != 0);
   }
   else {
-    if ((cMf32 *)this_01->field_1F3F != (cMf32 *)0x0) {
-      cMf32::delete(this_00,(cMf32 *)this_01->field_1F3F);
+    if (this_01->field_1F3F != (cMf32 *)0x0) {
+      cMf32::delete(this_00,this_01->field_1F3F);
     }
     puVar8 = Library::Ourlib::MF32INT::FUN_006f0ec0(0x345,&DAT_0080ed16,0,0,0);
     this_01->field_1F3F = puVar8;
@@ -318,25 +311,25 @@ void __thiscall SettMapTy::CreateCtrls(SettMapTy *this,char param_1)
           (AnonShape_006B5570_4D68B99C *)0x0) {
         FUN_006b5570((AnonShape_006B5570_4D68B99C *)PTR_0081176c->field_0548);
       }
-      puVar9 = Library::DKW::TBL::FUN_006b54f0((uint *)0x0,10,10);
-      PTR_0081176c->field_0548 = puVar9;
+      pDVar9 = Library::DKW::TBL::SArrayCreate((DArrayTy *)0x0,10,10);
+      PTR_0081176c->field_0548 = &pDVar9->flags;
       SVar2 = this_01->field_1E26;
       local_5d8 = DAT_0080995c;
       puVar8 = &DAT_00809960;
-      puVar14 = local_61c;
+      puVar15 = local_61c;
       for (iVar12 = 8; iVar12 != 0; iVar12 = iVar12 + -1) {
-        *puVar14 = *puVar8;
+        *puVar15 = *puVar8;
         puVar8 = puVar8 + 1;
-        puVar14 = puVar14 + 1;
+        puVar15 = puVar15 + 1;
       }
-      StartSystemTy::LoadMapData(PTR_0081176c,(cMf32 *)this_01->field_1F3F,SVar2);
+      StartSystemTy::LoadMapData(PTR_0081176c,this_01->field_1F3F,SVar2);
       DAT_0080995c = local_5d8;
       puVar8 = local_61c;
-      puVar14 = &DAT_00809960;
+      puVar15 = &DAT_00809960;
       for (iVar12 = 8; iVar12 != 0; iVar12 = iVar12 + -1) {
-        *puVar14 = *puVar8;
+        *puVar15 = *puVar8;
         puVar8 = puVar8 + 1;
-        puVar14 = puVar14 + 1;
+        puVar15 = puVar15 + 1;
       }
     }
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
@@ -406,17 +399,17 @@ LAB_005c665d:
   if ((DAT_0080877e == '\0') || (bVar6)) {
     this_01->field_002D = 0x20;
     this_01->field_0031 = 0;
-    piVar15 = &this_01->field_2125;
+    piVar16 = &this_01->field_2125;
     iVar12 = 0xe;
     do {
-      if (*piVar15 != 0) {
-        FUN_006e6080(this_01,2,*piVar15,(undefined4 *)&this_01->field_0x1d);
+      if (*piVar16 != 0) {
+        FUN_006e6080(this_01,2,*piVar16,(undefined4 *)&this_01->field_0x1d);
       }
-      piVar15 = piVar15 + 1;
+      piVar16 = piVar16 + 1;
       iVar12 = iVar12 + -1;
     } while (iVar12 != 0);
   }
-  Library::DKW::DDX::FUN_006b3430(DAT_008075a8,this_01->field_1E22);
+  Library::DKW::DDX::FUN_006b3430((int *)PTR_008075a8,this_01->field_1E22);
   SVar2 = this_01->field_1E26;
   if (((SVar2 != 6) && (SVar2 != CASE_7)) && (SVar2 != 0xe)) {
     this_01->field_002D = 0x20;
@@ -429,12 +422,7 @@ LAB_005c665d:
 LAB_005c69ed:
   pMVar4 = this_01->field_1A5B;
   if (*(int *)(pMVar4 + 0x2e6) != 0) {
-    puVar8 = &local_38;
-    for (iVar12 = 6; iVar12 != 0; iVar12 = iVar12 + -1) {
-      *puVar8 = 0;
-      puVar8 = puVar8 + 1;
-    }
-    *(undefined2 *)puVar8 = 0;
+    memset(&local_38, 0, 0x1a); /* compiler bulk-zero initialization */
     local_2c = 1;
     local_2e = 1;
     /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */

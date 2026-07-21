@@ -15,7 +15,7 @@ STAllPlayersC::GetGObjFromBox
   code *pcVar2;
   int *piVar3;
   int iVar4;
-  uint *puVar5;
+  DArrayTy *pDVar5;
   int iVar6;
   int iVar7;
   InternalExceptionFrame local_70;
@@ -89,12 +89,12 @@ STAllPlayersC::GetGObjFromBox
     }
   }
   else if (*param_8 == 0) {
-    puVar5 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,7,2,5);
-    *param_8 = (int)puVar5;
+    pDVar5 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,7,2,5);
+    *param_8 = (int)pDVar5;
   }
   if ((param_9 != (int *)0x0) && (*param_9 == 0)) {
-    puVar5 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,7,2,5);
-    *param_9 = (int)puVar5;
+    pDVar5 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,7,2,5);
+    *param_9 = (int)pDVar5;
   }
   if (param_10 != (int *)0x0) {
     *param_10 = 0;

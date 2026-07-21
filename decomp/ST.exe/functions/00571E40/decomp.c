@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* WARNING: Type propagation algorithm not settling */
 /* [STPrototypeApplier] Propagated parameter 1.
@@ -18,7 +20,6 @@ undefined4 __thiscall FUN_00571e40(void *this,LPDWORD lpcbData)
   code *pcVar9;
   byte *pbVar10;
   char *pcVar11;
-  undefined4 *puVar12;
   byte *pbVar13;
   char *pcVar14;
   bool bVar15;
@@ -145,11 +146,7 @@ LAB_005720f0:
       pcVar14 = pcVar14 + 1;
     }
   }
-  puVar12 = (undefined4 *)((int)this + 0x785);
-  for (iVar8 = 0x10; iVar8 != 0; iVar8 = iVar8 + -1) {
-    *puVar12 = 0;
-    puVar12 = puVar12 + 1;
-  }
+  memset((void *)((int)this + 0x785), 0, 0x40); /* compiler bulk-zero initialization */
   local_10[1] = 0x40;
   iVar8 = (*pcVar9)(local_8,"LastPlayer",0,local_10,(undefined4 *)((int)this + 0x785),
                     local_10 + 1);
@@ -160,11 +157,7 @@ LAB_005720f0:
       RegCloseKey(local_8);
       return 0;
     }
-    puVar12 = (undefined4 *)((int)this + 0xdae);
-    for (iVar8 = 0x10; iVar8 != 0; iVar8 = iVar8 + -1) {
-      *puVar12 = 0;
-      puVar12 = puVar12 + 1;
-    }
+    memset((void *)((int)this + 0xdae), 0, 0x40); /* compiler bulk-zero initialization */
     local_10[1] = 0x40;
     iVar8 = (*pcVar9)(local_8,"Server",0,local_10,(undefined4 *)((int)this + 0xdae),
                       local_10 + 1);

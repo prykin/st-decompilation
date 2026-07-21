@@ -10,16 +10,16 @@ void __thiscall FSGSTy::LadderCtrls(FSGSTy *this)
 {
   code *pcVar1;
   FSGSTy *this_00;
-  AnonPointee_FSGSTy_1AE8 *pAVar2;
+  DArrayTy *pDVar2;
   uint uVar3;
   undefined4 uVar4;
   LPBITMAPINFO ptVar5;
   int iVar6;
   int iVar7;
   ccFntTy **ppcVar8;
-  undefined4 *puVar9;
+  ushort *puVar9;
   ccFntTy *local_8e0 [8];
-  AnonPointee_FSGSTy_1AE8 *local_8c0;
+  uint *local_8c0;
   undefined4 local_894;
   undefined4 local_890;
   undefined4 local_88c;
@@ -45,20 +45,19 @@ void __thiscall FSGSTy::LadderCtrls(FSGSTy *this)
     if ((AnonShape_006B5570_4D68B99C *)local_10->field_1AE8 != (AnonShape_006B5570_4D68B99C *)0x0) {
       FUN_006b5570((AnonShape_006B5570_4D68B99C *)local_10->field_1AE8);
     }
-    pAVar2 = (AnonPointee_FSGSTy_1AE8 *)Library::DKW::TBL::FUN_006b54f0((uint *)0x0,1,1);
-    this_00->field_1AE8 = pAVar2;
-    Library::DKW::TBL::FUN_006b5aa0((uint *)pAVar2,&DAT_008016a0);
+    pDVar2 = Library::DKW::TBL::SArrayCreate((DArrayTy *)0x0,1,1);
+    this_00->field_1AE8 = &pDVar2->flags;
+    Library::DKW::TBL::FUN_006b5aa0(&pDVar2->flags,&DAT_008016a0);
     if (this_00->field_1E8E != 0) {
       FreeAndNull((void **)&this_00->field_1E8E);
     }
-    if (this_00->field_1E92 != 0) {
-      FreeAndNull((void **)&this_00->field_1E92);
+    if (this_00->field_1E92 != (tagBITMAPINFO *)0x0) {
+      FreeAndNull(&this_00->field_1E92);
     }
     iVar6 = 1;
-    puVar9 = (undefined4 *)&this_00->field_005D->field_0x28;
+    puVar9 = this_00->field_005D + 0x14;
     uVar3 = FUN_006b4fe0((int)this_00->field_005D);
-    uVar4 = FUN_006b50c0(0x2e1,0x175,(uint)*(ushort *)&this_00->field_005D->field_0xe,uVar3,puVar9,
-                         iVar6);
+    uVar4 = FUN_006b50c0(0x2e1,0x175,(uint)this_00->field_005D[7],uVar3,(undefined4 *)puVar9,iVar6);
     this_00->field_1E8E = uVar4;
     ptVar5 = Library::DKW::DDX::FUN_006c4880(DAT_0080759c,0x22,0x5e,0x2e1,0x175,8);
     this_00->field_1E92 = ptVar5;
@@ -105,8 +104,8 @@ void __thiscall FSGSTy::LadderCtrls(FSGSTy *this)
     local_84c = 0x690a;
     local_88c = 0x6988;
     local_854 = local_894;
-    (*this_00->field_000C->vtable->CreateObject)
-              ((SystemClassTy *)this_00->field_000C,6,&this_00->field_1AC4,(int *)0x0,local_8e0,0);
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+    (*(code *)this_00->field_000C->vtable->field_0008)(6,&this_00->field_1AC4,0,local_8e0,0);
     this_00->field_002D = 0x61;
     *(undefined4 *)&this_00->field_0x35 = 0;
     FUN_006e6080(this_00,0xf,0,(undefined4 *)&this_00->field_0x1d);
