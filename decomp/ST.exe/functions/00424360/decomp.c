@@ -27,12 +27,12 @@ void __thiscall STGroupC::RestoreGrpData(STGroupC *this,int param_1)
   pSVar2 = local_c;
   if (iVar4 != 0) {
     g_currentExceptionFrame = local_50.previous;
-    iVar6 = ReportDebugMessage(s_E____titans_wlad_tc_grp_cpp_007a50a4,0x1d5,0,iVar4,&DAT_007a4ccc,
-                               s_STGroupC__RestoreGrpData_007a5184);
+    iVar6 = ReportDebugMessage("E:\\__titans\\wlad\\tc_grp.cpp",0x1d5,0,iVar4,"%s",
+                               "STGroupC::RestoreGrpData");
     if (iVar6 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    RaiseInternalException(iVar4,0,s_E____titans_wlad_tc_grp_cpp_007a50a4,0x1d6);
+    RaiseInternalException(iVar4,0,"E:\\__titans\\wlad\\tc_grp.cpp",0x1d6);
     return;
   }
   local_c->field_0020 = local_8->field_0014;

@@ -41,9 +41,10 @@ uint __thiscall STGroupC::GetTOBJQty(STGroupC *this,int param_1)
           if (pSVar4 == (STGameObjC *)0x0) {
             RaiseInternalException
                       (-0x5001fffc,g_overwriteContext_007ED77C,
-                       s_E____titans_wlad_tc_grp_cpp_007a50a4,0x66);
+                       "E:\\__titans\\wlad\\tc_grp.cpp",0x66);
           }
-          iVar3 = (*pSVar4->vtable->vfunc_2C)();
+          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+          iVar3 = (**(code **)&pSVar4->vtable->field_0x2c)();
           if (iVar3 == param_1) {
             local_8 = local_8 + 1;
           }
@@ -56,12 +57,12 @@ uint __thiscall STGroupC::GetTOBJQty(STGroupC *this,int param_1)
     return CONCAT22((short)((uint)local_58.previous >> 0x10),(undefined2)local_8);
   }
   g_currentExceptionFrame = local_58.previous;
-  iVar5 = ReportDebugMessage(s_E____titans_wlad_tc_grp_cpp_007a50a4,0x6b,0,iVar3,&DAT_007a4ccc,
-                             s_STGroupC__GetTOBJQty_007a50e8);
+  iVar5 = ReportDebugMessage("E:\\__titans\\wlad\\tc_grp.cpp",0x6b,0,iVar3,"%s",
+                             "STGroupC::GetTOBJQty");
   if (iVar5 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  RaiseInternalException(iVar3,0,s_E____titans_wlad_tc_grp_cpp_007a50a4,0x6c);
+  RaiseInternalException(iVar3,0,"E:\\__titans\\wlad\\tc_grp.cpp",0x6c);
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   return CONCAT22(extraout_var,(undefined2)local_8);
 }

@@ -62,6 +62,13 @@ short excerpts, occurrence count, detector, address/symbol hints, and the
 intended transformation. Line numbers are convenient but not stable across
 decompilation; the program and function entry address are the durable key.
 
+The exporter also recreates `decomp_quality_summary.json` and
+`decomp_quality_issues.jsonl`. Unlike the focused idiom catalogue, this second
+layer inventories all `functions/**/decomp.c` bodies and includes valid-but-poor
+forms such as `field_XXXX`, `DAT_XXXXXXXX`, anonymous shapes, undefined types,
+and residual control-flow labels. It is intended for prioritizing the next
+analyzer/applier family, not for blindly rewriting every match.
+
 The same unresolved forms receive a one-line comment immediately before the
 affected expression in `decomp.c`:
 

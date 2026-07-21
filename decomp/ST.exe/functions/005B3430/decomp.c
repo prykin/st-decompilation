@@ -33,12 +33,12 @@ void __thiscall MainMenuTy::NoneMainMenu(MainMenuTy *this,void *param_1)
   this_00 = local_10;
   if (iVar4 != 0) {
     g_currentExceptionFrame = local_54.previous;
-    iVar7 = ReportDebugMessage(s_E____titans_Start_main_obj_cpp_007cc8e8,0xd2,0,iVar4,&DAT_007a4ccc,
-                               s_MainMenuTy__NoneMainMenu_007cc980);
+    iVar7 = ReportDebugMessage("E:\\__titans\\Start\\main_obj.cpp",0xd2,0,iVar4,"%s",
+                               "MainMenuTy::NoneMainMenu");
     if (iVar7 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    RaiseInternalException(iVar4,0,s_E____titans_Start_main_obj_cpp_007cc8e8,0xd2);
+    RaiseInternalException(iVar4,0,"E:\\__titans\\Start\\main_obj.cpp",0xd2);
     return;
   }
   LightPalette(local_10);
@@ -46,7 +46,7 @@ void __thiscall MainMenuTy::NoneMainMenu(MainMenuTy *this,void *param_1)
   cVar1 = this_00->field_0065;
   if (cVar1 == '\x01') {
     iVar4 = 0;
-    if (this_00->field_009A != '\0') {
+    if (this_00->field_009A != 0) {
       puVar8 = (uint *)&this_00->field_0x221;
       do {
         if ((*(char *)((int)puVar8 + -0x13f) != '\0') &&
@@ -64,12 +64,12 @@ void __thiscall MainMenuTy::NoneMainMenu(MainMenuTy *this,void *param_1)
         }
         iVar4 = iVar4 + 1;
         puVar8 = (uint *)((int)puVar8 + 0x1fb);
-      } while (iVar4 < (int)(uint)(byte)this_00->field_009A);
+      } while (iVar4 < (int)(uint)this_00->field_009A);
     }
   }
   else if (cVar1 == '\x03') {
     iVar4 = 0;
-    uVar5 = (uint)(byte)this_00->field_009A;
+    uVar5 = (uint)this_00->field_009A;
     if (uVar5 != 0) {
       do {
         if (*(int *)((int)&this_00->field_00BC + iVar4 * 0x1fb) != 0) {
@@ -85,7 +85,7 @@ void __thiscall MainMenuTy::NoneMainMenu(MainMenuTy *this,void *param_1)
                 }
                 iVar4 = iVar4 + 1;
                 pDVar6 = (DWORD *)((int)pDVar6 + 0x1fb);
-              } while (iVar4 < (int)(uint)(byte)this_00->field_009A);
+              } while (iVar4 < (int)(uint)this_00->field_009A);
             }
           }
           else {
@@ -148,7 +148,7 @@ void __thiscall MainMenuTy::NoneMainMenu(MainMenuTy *this,void *param_1)
           }
         }
         iVar4 = iVar4 + 1;
-        uVar5 = (uint)(byte)this_00->field_009A;
+        uVar5 = (uint)this_00->field_009A;
       } while (iVar4 < (int)uVar5);
     }
     if (((this_00->field_1EE3 != '\0') && (PTR_0081176c->field_02E6 != (MMsgTy *)0x0)) &&
@@ -156,14 +156,14 @@ void __thiscall MainMenuTy::NoneMainMenu(MainMenuTy *this,void *param_1)
       local_8 = 0;
     }
     if (local_8 != 0) {
-      if (this_00->field_009A != '\0') {
+      if (this_00->field_009A != 0) {
         local_c = (int *)&this_00->field_0x66;
         puVar9 = (undefined4 *)&this_00->field_0xa3;
         iVar4 = 0x68ff;
         do {
           if (*local_c == 0) {
             iVar7 = MMObjTy::CreateSprBut
-                              ((MMObjTy *)this_00,1,(uint)(*(int *)&this_00->field_0x1edf != 0),
+                              ((MMObjTy *)this_00,1,(uint)(this_00->field_1EDF != 0),
                                puVar9[0x17] + puVar9[-2],puVar9[0x18] + puVar9[-1],*puVar9,puVar9[1]
                                ,iVar4,iVar4 + 0x80);
             *local_c = iVar7;
@@ -172,7 +172,7 @@ void __thiscall MainMenuTy::NoneMainMenu(MainMenuTy *this,void *param_1)
           iVar7 = iVar4 + -0x68fe;
           puVar9 = (undefined4 *)((int)puVar9 + 0x1fb);
           iVar4 = iVar4 + 1;
-        } while (iVar7 < (int)(uint)(byte)this_00->field_009A);
+        } while (iVar7 < (int)(uint)this_00->field_009A);
       }
       this_00->field_0065 = 1;
       if (this_00->field_1A6F != 0) {
@@ -185,7 +185,7 @@ void __thiscall MainMenuTy::NoneMainMenu(MainMenuTy *this,void *param_1)
   }
   else if (cVar1 == '\x04') {
     iVar4 = 0;
-    if (this_00->field_009A != '\0') {
+    if (this_00->field_009A != 0) {
       puVar8 = &this_00->field_0178;
       do {
         if (this_00->field_0061 - *(int *)((int)puVar8 + -0x51) < *(uint *)((int)puVar8 + -0x55)) {
@@ -216,7 +216,7 @@ LAB_005b353c:
         }
         iVar4 = iVar4 + 1;
         puVar8 = (uint *)((int)puVar8 + 0x1fb);
-      } while (iVar4 < (int)(uint)(byte)this_00->field_009A);
+      } while (iVar4 < (int)(uint)this_00->field_009A);
     }
     iVar4 = 0;
     if ((PTR_0081176c->field_02E6 != (MMsgTy *)0x0) &&
@@ -225,7 +225,7 @@ LAB_005b353c:
     }
     if (local_8 != 0) {
       this_00->field_0065 = 2;
-      if (this_00->field_009A != '\0') {
+      if (this_00->field_009A != 0) {
         puVar8 = &this_00->field_00E7;
         do {
           if (*puVar8 != 0xffffffff) {
@@ -233,7 +233,7 @@ LAB_005b353c:
           }
           iVar4 = iVar4 + 1;
           puVar8 = (uint *)((int)puVar8 + 0x1fb);
-        } while (iVar4 < (int)(uint)(byte)this_00->field_009A);
+        } while (iVar4 < (int)(uint)this_00->field_009A);
       }
       if (*(int *)((int)&this_00->field_00D1 + (uint)(byte)this_00->field_1A5A * 0x1fb) != 0) {
         AppClassTy::PostNextMessage

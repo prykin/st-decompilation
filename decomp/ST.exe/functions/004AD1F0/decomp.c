@@ -29,10 +29,10 @@ STT3DSprC::Init(STT3DSprC *this,undefined4 param_1,uint param_2,uint param_3,uin
     local_8->field_0008 = param_3;
     local_8->field_0004 = param_2;
     local_8->field_0014 = param_7;
-    FUN_006e8660((void *)local_8->field_003C,&local_8->field_0018,param_7,0,param_5,param_6,param_2,
+    FUN_006e8660(local_8->field_003C,(int *)&local_8->field_0018,param_7,0,param_5,param_6,param_2,
                  param_3,param_4);
     puVar4 = (undefined4 *)Library::DKW::LIB::FUN_006aac70(pSVar2->field_0014 * 0x24);
-    pSVar2->field_0020 = puVar4;
+    pSVar2->field_0020 = (uint)puVar4;
     for (uVar6 = pSVar2->field_0014 * 9 & 0x3fffffff; uVar6 != 0; uVar6 = uVar6 - 1) {
       *puVar4 = 0;
       puVar4 = puVar4 + 1;
@@ -45,8 +45,8 @@ STT3DSprC::Init(STT3DSprC *this,undefined4 param_1,uint param_2,uint param_3,uin
     return 0;
   }
   g_currentExceptionFrame = local_4c.previous;
-  iVar3 = ReportDebugMessage(s_E____titans_wlad_Tspr3d_cpp_007ac638,0x2b1,0,iVar3,&DAT_007a4ccc,
-                             s_STT3DSprC__Init_007ac710);
+  iVar3 = ReportDebugMessage("E:\\__titans\\wlad\\Tspr3d.cpp",0x2b1,0,iVar3,"%s",
+                             "STT3DSprC::Init");
   if (iVar3 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }

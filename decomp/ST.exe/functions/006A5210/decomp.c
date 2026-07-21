@@ -20,31 +20,31 @@ undefined4 FUN_006a5210(void)
   if ((iVar4 != -1) && (iVar4 != -2)) {
     switch(iVar4) {
     case -6:
-      iVar4 = Library::MSVCRT::FUN_00730fa0(0,0,0,0,&DAT_007a4ccc);
+      iVar4 = Library::MSVCRT::FUN_00730fa0(0,0,0,0,"%s");
       if (iVar4 == 1) {
         STDebugBreak(); /* noreturn in standalone pseudocode */
       }
       break;
     case -5:
-      iVar4 = Library::MSVCRT::FUN_00730fa0(0,0,0,0,&DAT_007a4ccc);
+      iVar4 = Library::MSVCRT::FUN_00730fa0(0,0,0,0,"%s");
       if (iVar4 == 1) {
         STDebugBreak(); /* noreturn in standalone pseudocode */
       }
       break;
     case -4:
-      iVar4 = Library::MSVCRT::FUN_00730fa0(0,0,0,0,&DAT_007a4ccc);
+      iVar4 = Library::MSVCRT::FUN_00730fa0(0,0,0,0,"%s");
       if (iVar4 == 1) {
         STDebugBreak(); /* noreturn in standalone pseudocode */
       }
       break;
     case -3:
-      iVar4 = Library::MSVCRT::FUN_00730fa0(0,0,0,0,&DAT_007a4ccc);
+      iVar4 = Library::MSVCRT::FUN_00730fa0(0,0,0,0,"%s");
       if (iVar4 == 1) {
         STDebugBreak(); /* noreturn in standalone pseudocode */
       }
       break;
     default:
-      iVar4 = Library::MSVCRT::FUN_00730fa0(0,0,0,0,&DAT_007a4ccc);
+      iVar4 = Library::MSVCRT::FUN_00730fa0(0,0,0,0,"%s");
       if (iVar4 == 1) {
         STDebugBreak(); /* noreturn in standalone pseudocode */
       }
@@ -59,7 +59,7 @@ undefined4 FUN_006a5210(void)
     iVar4 = FUN_006a5130((char *)(puVar3 + 7),(char)DAT_007ec184,4);
     if (iVar4 == 0) {
       iVar4 = Library::MSVCRT::FUN_00730fa0
-                        (0,0,0,0,(byte *)s_DAMAGE__before__hs_block____d__a_007ec7bc);
+                        (0,0,0,0,(byte *)"DAMAGE: before %hs block (#%d) at 0x%08X.\n");
       if (iVar4 == 1) {
         STDebugBreak(); /* noreturn in standalone pseudocode */
       }
@@ -68,7 +68,7 @@ undefined4 FUN_006a5210(void)
     iVar4 = FUN_006a5130((char *)(puVar3[4] + 0x20 + (int)puVar3),(char)DAT_007ec184,4);
     if (iVar4 == 0) {
       iVar4 = Library::MSVCRT::FUN_00730fa0
-                        (0,0,0,0,(byte *)s_DAMAGE__after__hs_block____d__at_007ec788);
+                        (0,0,0,0,(byte *)"DAMAGE: after %hs block (#%d) at 0x%08X.\n");
       if (iVar4 == 1) {
         STDebugBreak(); /* noreturn in standalone pseudocode */
       }
@@ -78,19 +78,19 @@ undefined4 FUN_006a5210(void)
     if ((puVar3[5] == 0) &&
        (iVar4 = FUN_006a5130((char *)(puVar3 + 8),DAT_007ec184._1_1_,puVar3[4]), iVar4 == 0)) {
       iVar4 = Library::MSVCRT::FUN_00730fa0
-                        (0,0,0,0,(byte *)s_DAMAGE__on_top_of_Free_block_at_0_007ec754);
+                        (0,0,0,0,(byte *)"DAMAGE: on top of Free block at 0x%08X.\n");
       if (iVar4 == 1) {
         STDebugBreak(); /* noreturn in standalone pseudocode */
       }
 LAB_006a541d:
       if ((puVar3[2] != 0) &&
          (iVar4 = Library::MSVCRT::FUN_00730fa0
-                            (0,0,0,0,(byte *)s__hs_allocated_at_file__hs__d___007ec72c), iVar4 == 1)
+                            (0,0,0,0,(byte *)"%hs allocated at file %hs(%d).\n"), iVar4 == 1)
          ) {
         STDebugBreak(); /* noreturn in standalone pseudocode */
       }
       iVar4 = Library::MSVCRT::FUN_00730fa0
-                        (0,0,0,0,(byte *)s__hs_located_at_0x_08X_is__u_byte_007ec6f8);
+                        (0,0,0,0,(byte *)"%hs located at 0x%08X is %u bytes long.\n");
       if (iVar4 == 1) {
         STDebugBreak(); /* noreturn in standalone pseudocode */
       }

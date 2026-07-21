@@ -91,7 +91,7 @@ ProdPanelTy::CreateSlider
     local_42c[3] = 2;
     local_318 = 1;
     local_31c = 1;
-    pCVar3 = thunk_FUN_00571240(s_BUT_SLLT_007c7abc,0);
+    pCVar3 = thunk_FUN_00571240("BUT_SLLT",0);
     pCVar3 = FUN_006f2c00(pCVar3,iVar2,uVar6);
     local_c = cMf32::RecGet(DAT_00806790,1,pCVar3,piVar7,iVar8);
     local_414 = *(undefined4 *)(local_c + 2);
@@ -153,12 +153,12 @@ ProdPanelTy::CreateSlider
     return local_8;
   }
   g_currentExceptionFrame = local_54.previous;
-  iVar8 = ReportDebugMessage(s_E____titans_Andrey_specpan_cpp_007c7870,0x239,0,iVar2,&DAT_007a4ccc,
-                             s_ProdPanelTy__CreateSlider_007c7a9c);
+  iVar8 = ReportDebugMessage("E:\\__titans\\Andrey\\specpan.cpp",0x239,0,iVar2,"%s",
+                             "ProdPanelTy::CreateSlider");
   if (iVar8 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  RaiseInternalException(iVar2,0,s_E____titans_Andrey_specpan_cpp_007c7870,0x239);
+  RaiseInternalException(iVar2,0,"E:\\__titans\\Andrey\\specpan.cpp",0x239);
   return -1;
 }
 

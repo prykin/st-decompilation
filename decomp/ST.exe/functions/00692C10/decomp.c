@@ -60,8 +60,8 @@ FUN_00692c10(Global_sub_00692C10_param_1Enum param_1,int param_2,undefined4 *par
         _DAT_00853cf0 = 0;
         uVar3 = thunk_FUN_006938c0(param_2);
         if (DAT_00853d84 <= uVar3) {
-          iVar7 = ReportDebugMessage(s_E____titans_Maps_DefObj_cpp_007d6218,0x1ba,0,uVar3,
-                                     &DAT_007a4ccc,s_Out_of_Range_Entourage_Group_Ind_007d623c);
+          iVar7 = ReportDebugMessage("E:\\__titans\\Maps\\DefObj.cpp",0x1ba,0,uVar3,
+                                     "%s","Out of Range Entourage Group Index ");
           if (iVar7 != 0) {
             STDebugBreak(); /* noreturn in standalone pseudocode */
           }
@@ -69,8 +69,8 @@ FUN_00692c10(Global_sub_00692C10_param_1Enum param_1,int param_2,undefined4 *par
         }
         iVar7 = uVar3 * 0x218;
         if (*(uint *)(iVar7 + 0x20c + DAT_00853d80) <= param_5) {
-          iVar5 = ReportDebugMessage(s_E____titans_Maps_DefObj_cpp_007d6218,0x1c0,0,param_5,
-                                     &DAT_007a4ccc,s_Out_of_Range_Entourage_Index_007d61f4);
+          iVar5 = ReportDebugMessage("E:\\__titans\\Maps\\DefObj.cpp",0x1c0,0,param_5,
+                                     "%s","Out of Range Entourage Index ");
           if (iVar5 != 0) {
             STDebugBreak(); /* noreturn in standalone pseudocode */
           }
@@ -81,7 +81,7 @@ FUN_00692c10(Global_sub_00692C10_param_1Enum param_1,int param_2,undefined4 *par
         _DAT_00853d76 = *(undefined4 *)(pcVar8 + 0x214);
         if (*(int *)(pcVar8 + 0x210) != 0) {
           _DAT_00853d72 = 0xffffffff;
-          wsprintfA(local_108,&DAT_007d5960,pcVar8,param_5);
+          wsprintfA(local_108,"%s%u",pcVar8,param_5);
           iVar5 = DAT_00853d80;
           uVar3 = 0xffffffff;
           pcVar8 = local_108;
@@ -116,7 +116,7 @@ FUN_00692c10(Global_sub_00692C10_param_1Enum param_1,int param_2,undefined4 *par
             pcVar9 = pcVar9 + 1;
           } while (cVar1 != '\0');
           if (iVar7 != -2) {
-            wsprintfA(local_108,&DAT_007d5960,pcVar8,param_5);
+            wsprintfA(local_108,"%s%u",pcVar8,param_5);
             uVar3 = 0xffffffff;
             pcVar8 = local_108;
             do {

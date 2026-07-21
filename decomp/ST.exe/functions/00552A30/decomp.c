@@ -27,12 +27,12 @@ void __thiscall UpgPanelTy::DoneUpgPanel(UpgPanelTy *this)
     return;
   }
   g_currentExceptionFrame = pIVar2;
-  iVar3 = ReportDebugMessage(s_E____titans_Andrey_upginfo_cpp_007c87b8,0x2a,0,errorCode,
-                             &DAT_007a4ccc,s_UpgPanelTy__DoneUpgPanel_007c8810);
+  iVar3 = ReportDebugMessage("E:\\__titans\\Andrey\\upginfo.cpp",0x2a,0,errorCode,
+                             "%s","UpgPanelTy::DoneUpgPanel");
   if (iVar3 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  RaiseInternalException(errorCode,0,s_E____titans_Andrey_upginfo_cpp_007c87b8,0x2a);
+  RaiseInternalException(errorCode,0,"E:\\__titans\\Andrey\\upginfo.cpp",0x2a);
   return;
 }
 

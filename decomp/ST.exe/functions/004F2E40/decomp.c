@@ -62,13 +62,13 @@ CPanelTy::SetButStruct
       iVar4 = iVar4 + DAT_00806734;
     }
     else {
-      iVar4 = *(int *)(&local_c->field_0x94 + uVar2 * 4);
+      iVar4 = (&local_c->field_0094)[uVar2];
     }
     text = &local_c->field_0x1e1;
     *(int *)&param_1->field_0xc = iVar4 + param_5;
     *(undefined4 *)&param_1[1].field_0x54 = 1;
     *(undefined4 *)&param_1[1].field_0x58 = 1;
-    wsprintfA(text,&DAT_007c181c,param_7);
+    wsprintfA(text,"%s0",param_7);
     local_8 = cMf32::RecGet(DAT_00806790,param_6,text,(int *)0x0,1);
     uVar3 = local_8[3];
     *(ushort *)&param_1->field_0x10 = local_8[2];
@@ -101,12 +101,12 @@ CPanelTy::SetButStruct
     return;
   }
   g_currentExceptionFrame = local_50.previous;
-  iVar6 = ReportDebugMessage(s_E____titans_Andrey_cp_sup_cpp_007c1a4c,0x171,0,iVar4,&DAT_007a4ccc,
-                             s_CPanelTy__SetButStruct_007c1b04);
+  iVar6 = ReportDebugMessage("E:\\__titans\\Andrey\\cp_sup.cpp",0x171,0,iVar4,"%s",
+                             "CPanelTy::SetButStruct");
   if (iVar6 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  RaiseInternalException(iVar4,0,s_E____titans_Andrey_cp_sup_cpp_007c1a4c,0x171);
+  RaiseInternalException(iVar4,0,"E:\\__titans\\Andrey\\cp_sup.cpp",0x171);
   return;
 }
 

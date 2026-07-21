@@ -34,10 +34,10 @@ void __thiscall PopUpTy::ChangeNumStr(PopUpTy *this)
   this_00 = local_18;
   if (iVar4 != 0) {
     g_currentExceptionFrame = local_5c.previous;
-    iVar6 = ReportDebugMessage(s_E____titans_Andrey_mpopup_cpp_007c6f84,0x7e,0,iVar4,&DAT_007a4ccc,
-                               s_PopUpTy__ChangeNumStr_007c6ff4);
+    iVar6 = ReportDebugMessage("E:\\__titans\\Andrey\\mpopup.cpp",0x7e,0,iVar4,"%s",
+                               "PopUpTy::ChangeNumStr");
     if (iVar6 == 0) {
-      RaiseInternalException(iVar4,0,s_E____titans_Andrey_mpopup_cpp_007c6f84,0x7e);
+      RaiseInternalException(iVar4,0,"E:\\__titans\\Andrey\\mpopup.cpp",0x7e);
       return;
     }
     STDebugBreak(); /* noreturn in standalone pseudocode */

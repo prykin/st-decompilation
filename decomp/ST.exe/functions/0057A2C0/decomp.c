@@ -93,8 +93,8 @@ FUN_0057a2c0(AnonShape_0057A2C0_A829D396 *param_1,uint param_2,int *param_3,int 
   iVar9 = Library::DKW::LIB::FUN_006aac70(param_2 * 8);
   *param_3 = iVar9;
   if (((iVar9 == 0) || (param_2 == 0)) || ((param_2 != 5 && (param_2 != 7)))) {
-    iVar9 = ReportDebugMessage(s_E____titans_Igor_to_etorp_cpp_007caf5c,0x4c,0,0,&DAT_007a4ccc,
-                               s_ConusExplosion_Bad_parameters_or_007caf24);
+    iVar9 = ReportDebugMessage("E:\\__titans\\Igor\\to_etorp.cpp",0x4c,0,0,"%s",
+                               "ConusExplosion:Bad parameters or memory error");
     if (iVar9 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }

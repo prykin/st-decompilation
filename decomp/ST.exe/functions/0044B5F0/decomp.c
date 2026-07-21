@@ -69,9 +69,10 @@ STAllPlayersC::SelectObjects
         pSVar7 = GetObjPtr(this,objPtr,
                            CONCAT22((short)((uint)local_8 >> 0x10),
                                     *(undefined2 *)((int)local_8->data + param_3 * 2)),CASE_1);
+        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
         if ((((pSVar7 == (STGameObjC *)0x0) || (pSVar7->field_0020 != 0x14)) ||
-            (iVar8 = (*pSVar7->vtable[1].vfunc_24)(), iVar8 == 0)) ||
-           (iVar8 = (*pSVar7->vtable[1].vfunc_18)(), iVar8 == 0)) {
+            (iVar8 = (**(code **)&pSVar7->vtable[1].field_0x28)(), iVar8 == 0)) ||
+           (iVar8 = (**(code **)&pSVar7->vtable[1].field_0x1c)(), iVar8 == 0)) {
           FUN_006b0c70(local_8,param_3);
           param_2 = param_2 - 1;
           param_3 = param_3 - 1;
@@ -181,9 +182,10 @@ STAllPlayersC::SelectObjects
           pSVar7 = GetObjPtr(this,objPtr,
                              CONCAT22((short)((uint)local_8 >> 0x10),
                                       *(undefined2 *)((int)local_8->data + param_3 * 2)),CASE_1);
+          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
           if ((((pSVar7 == (STGameObjC *)0x0) || (pSVar7->field_0020 != 0x14)) ||
-              (iVar8 = (*pSVar7->vtable[1].vfunc_24)(), iVar8 == 0)) ||
-             (iVar8 = (*pSVar7->vtable[1].vfunc_18)(), iVar8 == 0)) {
+              (iVar8 = (**(code **)&pSVar7->vtable[1].field_0x28)(), iVar8 == 0)) ||
+             (iVar8 = (**(code **)&pSVar7->vtable[1].field_0x1c)(), iVar8 == 0)) {
             FUN_006b0c70(local_8,param_3);
             param_2 = param_2 - 1;
             param_3 = param_3 - 1;
@@ -210,7 +212,8 @@ STAllPlayersC::SelectObjects
         do {
           DArrayGetElement(local_8,index,&local_14);
           pSVar7 = GetObjPtr(this,objPtr,local_14,CASE_1);
-          iVar8 = (*pSVar7->vtable[1].vfunc_18)();
+          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+          iVar8 = (**(code **)&pSVar7->vtable[1].field_0x1c)();
           if (iVar8 == 0) {
             FUN_006b0c70(local_8,index);
             param_2 = param_2 - 1;
@@ -222,8 +225,8 @@ STAllPlayersC::SelectObjects
     }
     break;
   default:
-    iVar8 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0x3123,0,0,&DAT_007a4ccc,
-                               s_STAllPlayersC__SelectObjects_inv_007a8a58);
+    iVar8 = ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0x3123,0,0,"%s",
+                               "STAllPlayersC::SelectObjects invalid type");
     if (iVar8 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
@@ -254,8 +257,8 @@ STAllPlayersC::SelectObjects
       }
       else {
         if (iVar8 != 0x1ae) {
-          iVar8 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0x3152,0,0,
-                                     &DAT_007a4ccc,s_STAllPlayersC__SelectObjects_GAM_007a898c);
+          iVar8 = ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0x3152,0,0,
+                                     "%s","STAllPlayersC::SelectObjects GAMETYPE_BOAT ACT_LEFT");
           if (iVar8 != 0) {
             STDebugBreak(); /* noreturn in standalone pseudocode */
           }
@@ -277,8 +280,8 @@ STAllPlayersC::SelectObjects
   }
   else {
     if (g_playerRuntime[uVar4].field324_0x203 != 1) {
-      iVar8 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0x317d,0,0,&DAT_007a4ccc,
-                                 s_STAllPlayersC__SelectObjects_GAM_007a8a0c);
+      iVar8 = ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0x317d,0,0,"%s",
+                                 "STAllPlayersC::SelectObjects GAMETYPE_BOAT wrong panel number");
       if (iVar8 != 0) {
         STDebugBreak(); /* noreturn in standalone pseudocode */
       }
@@ -304,8 +307,8 @@ STAllPlayersC::SelectObjects
     }
     else {
       if (iVar8 != 0x1ae) {
-        iVar8 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0x3179,0,0,&DAT_007a4ccc
-                                   ,s_STAllPlayersC__SelectObjects_GAM_007a89cc);
+        iVar8 = ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0x3179,0,0,"%s"
+                                   ,"STAllPlayersC::SelectObjects GAMETYPE_BOAT ACT_RIGHT");
         if (iVar8 != 0) {
           STDebugBreak(); /* noreturn in standalone pseudocode */
         }

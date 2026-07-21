@@ -30,7 +30,7 @@ STAllPlayersC::UnRegisterMine
     pSVar2 = GetObjPtr(local_c,(char)param_1,param_2,CASE_3);
     if (pSVar2 != (STGameObjC *)param_3) {
       RaiseInternalException
-                (-0x5001fff9,g_overwriteContext_007ED77C,s_E____titans_wlad_to_allpl_cpp_007a6004,
+                (-0x5001fff9,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_allpl.cpp",
                  0x2f1d);
     }
     DelObjFromTmps(this_00,DAT_0080874d,param_3->field_0020,param_3->field_0024,param_2);
@@ -41,12 +41,12 @@ STAllPlayersC::UnRegisterMine
   else {
     g_currentExceptionFrame = local_50.previous;
     if (errorCode != -0x5001fff7) {
-      iVar3 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0x2f26,0,errorCode,
-                                 &DAT_007a4ccc,s_STAllPlayersC__UnRegisterMine_007a877c);
+      iVar3 = ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0x2f26,0,errorCode,
+                                 "%s","STAllPlayersC::UnRegisterMine");
       if (iVar3 != 0) {
         STDebugBreak(); /* noreturn in standalone pseudocode */
       }
-      RaiseInternalException(errorCode,0,s_E____titans_wlad_to_allpl_cpp_007a6004,0x2f27);
+      RaiseInternalException(errorCode,0,"E:\\__titans\\wlad\\to_allpl.cpp",0x2f27);
       return 0xffffffff;
     }
   }

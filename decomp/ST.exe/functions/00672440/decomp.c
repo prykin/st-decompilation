@@ -60,14 +60,14 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0064A970::FUN_00672440
       puVar3 = (undefined1 *)thunk_FUN_0064a910(param_1,local_8);
       if (puVar3 != (undefined1 *)0x0) break;
       *(undefined4 *)&pAVar1->field_0x84 = 0xffffffff;
-      RaiseInternalException(-4,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
+      RaiseInternalException(-4,g_overwriteContext_007ED77C,".\\ai\\ai_erc.h",0x79);
     }
     switch(*puVar3) {
     case 8:
       if (param_3 != (short *)0x0) {
         if (0x31 < *param_3) {
           *(undefined4 *)&pAVar1->field_0x84 = 0xffffffff;
-          RaiseInternalException(-0x66,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
+          RaiseInternalException(-0x66,g_overwriteContext_007ED77C,".\\ai\\ai_erc.h",0x79);
         }
         *(undefined1 *)(*param_3 + 0xd0 + (int)param_3) = 8;
         uVar4 = (*pAVar1->vtable->slot_00)(puVar3);
@@ -81,7 +81,7 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0064A970::FUN_00672440
       if (param_3 != (short *)0x0) {
         if (0x31 < *param_3) {
           *(undefined4 *)&pAVar1->field_0x84 = 0xffffffff;
-          RaiseInternalException(-0x66,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
+          RaiseInternalException(-0x66,g_overwriteContext_007ED77C,".\\ai\\ai_erc.h",0x79);
         }
         *(undefined1 *)(*param_3 + 0xd0 + (int)param_3) = 9;
         fVar6 = (float10)(*pAVar1->vtable->slot_04)(puVar3);
@@ -95,14 +95,14 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0064A970::FUN_00672440
       if (param_3 != (short *)0x0) {
         if (0x31 < *param_3) {
           *(undefined4 *)&pAVar1->field_0x84 = 0xffffffff;
-          RaiseInternalException(-0x66,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
+          RaiseInternalException(-0x66,g_overwriteContext_007ED77C,".\\ai\\ai_erc.h",0x79);
         }
         *(undefined1 *)(*param_3 + 0xd0 + (int)param_3) = 10;
         uVar4 = (*pAVar1->vtable->slot_08)(puVar3);
         *(undefined4 *)(param_3 + *param_3 * 2 + 4) = uVar4;
         if (*(int *)(param_3 + *param_3 * 2 + 4) == 0) {
           *(undefined4 *)&pAVar1->field_0x84 = 0xffffffff;
-          RaiseInternalException(-0x6b,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
+          RaiseInternalException(-0x6b,g_overwriteContext_007ED77C,".\\ai\\ai_erc.h",0x79);
         }
         *param_3 = *param_3 + 1;
         param_3[1] = param_3[1] + 1;
@@ -118,13 +118,13 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0064A970::FUN_00672440
       if (local_c == (float *)0x0) {
         *(undefined4 *)&pAVar1->field_0x84 = 0xffffffff;
 LAB_0067276f:
-        RaiseInternalException(local_14,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
+        RaiseInternalException(local_14,g_overwriteContext_007ED77C,".\\ai\\ai_erc.h",0x79);
       }
       else if (local_14 == 1) {
         if (param_3 != (short *)0x0) {
           if (0x31 < *param_3) {
             *(undefined4 *)&pAVar1->field_0x84 = 0xffffffff;
-            RaiseInternalException(-0x66,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
+            RaiseInternalException(-0x66,g_overwriteContext_007ED77C,".\\ai\\ai_erc.h",0x79);
           }
           *(undefined1 *)(*param_3 + 0xd0 + (int)param_3) = 8;
           *(float *)(param_3 + *param_3 * 2 + 4) = *local_c;
@@ -136,7 +136,7 @@ LAB_0067276f:
         if (param_3 != (short *)0x0) {
           if (0x31 < *param_3) {
             *(undefined4 *)&pAVar1->field_0x84 = 0xffffffff;
-            RaiseInternalException(-0x66,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
+            RaiseInternalException(-0x66,g_overwriteContext_007ED77C,".\\ai\\ai_erc.h",0x79);
           }
           *(undefined1 *)(*param_3 + 0xd0 + (int)param_3) = 9;
           *(float *)(param_3 + *param_3 * 2 + 4) = *local_c;
@@ -152,7 +152,7 @@ LAB_0067276f:
         if (param_3 != (short *)0x0) {
           if (0x31 < *param_3) {
             *(undefined4 *)&pAVar1->field_0x84 = 0xffffffff;
-            RaiseInternalException(-0x66,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
+            RaiseInternalException(-0x66,g_overwriteContext_007ED77C,".\\ai\\ai_erc.h",0x79);
           }
           *(undefined1 *)(*param_3 + 0xd0 + (int)param_3) = 10;
           *(float *)(param_3 + *param_3 * 2 + 4) = *local_c;

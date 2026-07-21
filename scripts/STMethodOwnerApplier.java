@@ -21,12 +21,14 @@ import ghidra.program.model.data.DataType;
 import ghidra.program.model.data.DataTypeManager;
 import ghidra.program.model.data.Pointer;
 import ghidra.program.model.data.PointerDataType;
+import ghidra.program.model.data.VoidDataType;
 import ghidra.program.model.listing.AutoParameterType;
 import ghidra.program.model.listing.Function;
 import ghidra.program.model.listing.Function.FunctionUpdateType;
 import ghidra.program.model.listing.FunctionTag;
 import ghidra.program.model.listing.GhidraClass;
 import ghidra.program.model.listing.Parameter;
+import ghidra.program.model.listing.ParameterImpl;
 import ghidra.program.model.listing.ReturnParameterImpl;
 import ghidra.program.model.listing.Variable;
 import ghidra.program.model.symbol.Namespace;
@@ -45,7 +47,7 @@ public class STMethodOwnerApplier extends GhidraScript {
         File file = inputFile();
         if (file == null) return;
         Tsv tsv = readTsv(file.toPath());
-        requireColumns(tsv, "owner_apply", "convention_apply", "this_type_apply",
+        requireColumns(tsv, "repair_apply", "owner_apply", "convention_apply", "this_type_apply",
             "parameter_apply",
             "address", "expected_name", "expected_name_source", "expected_signature",
             "expected_signature_source", "expected_calling_convention", "owner",
@@ -67,20 +69,22 @@ public class STMethodOwnerApplier extends GhidraScript {
             .resolve("method_owner_apply_report.tsv");
         writeReport(output);
         println("Method owners: applied=" + count("applied") + ", partial=" +
-            count("partial") + ", unchanged=" + count("unchanged") +
+            count("partial") + ", repaired=" + count("repaired") +
+            ", unchanged=" + count("unchanged") +
             ", preserved=" + count("preserved") + ", conflicts=" + count("conflict") +
             ", disabled=" + count("disabled"));
         println("Apply report: " + output.toAbsolutePath().normalize());
     }
 
     private void applyRow(Map<String, String> row) {
+        boolean repairApply = enabled(row.get("repair_apply"));
         boolean ownerApply = enabled(row.get("owner_apply"));
         boolean conventionApply = enabled(row.get("convention_apply"));
         boolean thisTypeApply = enabled(row.get("this_type_apply"));
         boolean parameterApply = enabled(row.get("parameter_apply"));
         Address address = address(row.get("address"));
         String proposed = unt(row.get("proposed_name"));
-        if (!ownerApply && !conventionApply && !thisTypeApply && !parameterApply) {
+        if (!repairApply && !ownerApply && !conventionApply && !thisTypeApply && !parameterApply) {
             report.add(new ReportRow(addr(address), "disabled", proposed,
                 "all apply flags are 0"));
             return;
@@ -104,6 +108,19 @@ public class STMethodOwnerApplier extends GhidraScript {
                 .equals(expectedSignatureSource);
             boolean manualName = protectedSource(function.getSymbol().getSource());
             boolean manualSignature = protectedSource(function.getSignatureSource());
+            if (repairApply) {
+                if (!scriptOwned || manualName || manualSignature || !nameBaseline ||
+                        !signatureBaseline) {
+                    report.add(new ReportRow(addr(address), "preserved", proposed,
+                        "shared-helper repair preserved stale/manual baseline"));
+                    return;
+                }
+                int downstream = repairSharedHelper(function, proposed);
+                report.add(new ReportRow(addr(address), "repaired", proposed,
+                    "removed weak class owner; reset " + downstream +
+                    " downstream script-owned receiver types"));
+                return;
+            }
             String owner = unt(row.get("owner"));
             String typePath = unt(row.get("owner_type_path"));
             DataType ownerType = dataTypes.getDataType(typePath);
@@ -236,6 +253,64 @@ public class STMethodOwnerApplier extends GhidraScript {
             true, SourceType.ANALYSIS);
         function.setVarArgs(varargs);
         function.setSignatureSource(SourceType.ANALYSIS);
+    }
+
+    private int repairSharedHelper(Function function, String proposedName) throws Exception {
+        DataType oldReceiver = null;
+        Parameter oldThis = thisParameter(function);
+        if (oldThis != null && oldThis.getDataType() instanceof Pointer pointer)
+            oldReceiver = pointer.getDataType();
+        List<Function> callers = new ArrayList<>(function.getCallingFunctions(monitor));
+        List<Variable> parameters = new ArrayList<>();
+        for (Parameter parameter : explicitParameters(function))
+            parameters.add(new ParameterImpl(parameter.getName(), parameter.getFormalDataType(),
+                currentProgram, SourceType.ANALYSIS));
+        DataType returnType = function.getReturnType();
+        boolean varargs = function.hasVarArgs(), noreturn = function.hasNoReturn();
+        function.setParentNamespace(currentProgram.getGlobalNamespace());
+        function.setName(leaf(proposedName), SourceType.ANALYSIS);
+        function.updateFunction("__thiscall",
+            new ReturnParameterImpl(returnType, currentProgram), parameters,
+            FunctionUpdateType.DYNAMIC_STORAGE_FORMAL_PARAMS, true, SourceType.ANALYSIS);
+        function.setVarArgs(varargs);
+        function.setNoReturn(noreturn);
+        function.setSignatureSource(SourceType.ANALYSIS);
+        function.removeTag(TAG);
+        removeOwnedComment(function);
+
+        int reset = 0;
+        for (Function caller : callers) {
+            for (Parameter parameter : caller.getParameters()) {
+                if (parameter.isAutoParameter() || !parameter.isRegisterVariable() ||
+                        parameter.getRegister() == null ||
+                        !"ECX".equalsIgnoreCase(parameter.getRegister().getName()) ||
+                        !(parameter.getDataType() instanceof Pointer pointer) ||
+                        oldReceiver == null || !oldReceiver.isEquivalent(pointer.getDataType()))
+                    continue;
+                String comment = parameter.getComment();
+                if (comment == null || !comment.contains("[STPointerShapeApplier]") ||
+                        !comment.contains("typed-call evidence")) continue;
+                parameter.setDataType(new PointerDataType(VoidDataType.dataType,
+                    currentProgram.getDefaultPointerSize(), dataTypes), SourceType.ANALYSIS);
+                parameter.setComment(comment + "\n[STMethodOwnerApplier] Reset stale receiver " +
+                    "type after shared-helper owner repair.");
+                reset++;
+            }
+        }
+        return reset;
+    }
+
+    private void removeOwnedComment(Function function) {
+        String old = function.getComment();
+        if (old == null || old.isBlank()) return;
+        int marker = old.indexOf(MARKER);
+        if (marker < 0) return;
+        int start = marker >= 2 && old.substring(marker - 2, marker).equals("\n\n") ?
+            marker - 2 : marker;
+        int end = old.indexOf("\n\n", marker + MARKER.length());
+        if (end < 0) end = old.length();
+        String cleaned = (old.substring(0, start) + old.substring(end)).trim();
+        function.setComment(cleaned.isBlank() ? null : cleaned);
     }
 
     private boolean thisTypeMatches(Function function, DataType ownerType) {

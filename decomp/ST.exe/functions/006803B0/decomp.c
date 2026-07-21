@@ -21,7 +21,7 @@ undefined4 * __cdecl FUN_006803b0(byte param_1)
   }
   else if (-1 < DAT_00848a00) {
     Library::MSVCRT::__itoa(DAT_00848a04,local_28,10);
-    wsprintfA(local_a8,s__s_s_s_007c6edc,&DAT_007d5628,local_28,&DAT_007d5630);
+    wsprintfA(local_a8,"%s%s%s","%s%0",local_28,&DAT_007d5630);
     wsprintfA((LPSTR)&DAT_008478ac,local_a8,&DAT_008489e0,DAT_00848a00);
     DAT_00848a00 = DAT_00848a00 + DAT_007d3fa0;
     return &DAT_008478ac;

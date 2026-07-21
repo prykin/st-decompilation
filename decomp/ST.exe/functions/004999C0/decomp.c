@@ -31,12 +31,12 @@ STGroupBoatC::ReMakePVecAndTgtListExt(STGroupBoatC *this,char param_1,short para
   if (iVar2 == 0) {
     if (local_10->field_0212 == 0) {
       RaiseInternalException
-                (-0x5001fff7,g_overwriteContext_007ED77C,s_E____titans_wlad_to_grpb_cpp_007abe3c,
+                (-0x5001fff7,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_grpb.cpp",
                  0x509);
     }
     if (this_00->field_020E == 0) {
       RaiseInternalException
-                (-0x5001fffc,g_overwriteContext_007ED77C,s_E____titans_wlad_to_grpb_cpp_007abe3c,
+                (-0x5001fffc,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_grpb.cpp",
                  0x50b);
     }
     index = 0;
@@ -62,10 +62,10 @@ STGroupBoatC::ReMakePVecAndTgtListExt(STGroupBoatC *this,char param_1,short para
   else {
     g_currentExceptionFrame = local_54.previous;
     if (iVar2 != -0x5001fff7) {
-      iVar3 = ReportDebugMessage(s_E____titans_wlad_to_grpb_cpp_007abe3c,0x51c,0,iVar2,&DAT_007a4ccc
-                                 ,s_STGroupBoatC__ReMakePVecAndTgtLi_007abec8);
+      iVar3 = ReportDebugMessage("E:\\__titans\\wlad\\to_grpb.cpp",0x51c,0,iVar2,"%s"
+                                 ,"STGroupBoatC::ReMakePVecAndTgtListExt");
       if (iVar3 == 0) {
-        RaiseInternalException(iVar2,0,s_E____titans_wlad_to_grpb_cpp_007abe3c,0x51d);
+        RaiseInternalException(iVar2,0,"E:\\__titans\\wlad\\to_grpb.cpp",0x51d);
         return 0xffffffff;
       }
       STDebugBreak(); /* noreturn in standalone pseudocode */

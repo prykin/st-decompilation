@@ -30,30 +30,30 @@ void __thiscall STBoatC::ExpIsOver(STBoatC *this,uint param_1)
   uVar5 = local_c;
   if (errorCode != 0) {
     g_currentExceptionFrame = local_5c.previous;
-    iVar4 = ReportDebugMessage(s_E____titans_wlad_To_boat_cpp_007a9d3c,0x3d7f,0,errorCode,
-                               &DAT_007a4ccc,s_STBoatC__ExpIsOver_007ab918);
+    iVar4 = ReportDebugMessage("E:\\__titans\\wlad\\To_boat.cpp",0x3d7f,0,errorCode,
+                               "%s","STBoatC::ExpIsOver");
     if (iVar4 == 0) {
-      RaiseInternalException(errorCode,0,s_E____titans_wlad_To_boat_cpp_007a9d3c,0x3d80);
+      RaiseInternalException(errorCode,0,"E:\\__titans\\wlad\\To_boat.cpp",0x3d80);
       return;
     }
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   if (((int)local_c < 0) || ((int)((byte)local_8->field_0281 - 1) < (int)local_c)) {
     RaiseInternalException
-              (-0x5001fff5,g_overwriteContext_007ED77C,s_E____titans_wlad_To_boat_cpp_007a9d3c,
+              (-0x5001fff5,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\To_boat.cpp",
                0x3d71);
   }
   array = (DArrayTy *)(&local_8->field_0282)[uVar5];
   if (array == (DArrayTy *)0x0) {
     RaiseInternalException
-              (-0x5001fffc,g_overwriteContext_007ED77C,s_E____titans_wlad_To_boat_cpp_007a9d3c,
+              (-0x5001fffc,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\To_boat.cpp",
                0x3d72);
   }
   uVar5 = local_10;
   DArrayGetElement(array,local_10,local_18);
   if (local_18[0] == 0x7fff) {
     RaiseInternalException
-              (-0x5001fffe,g_overwriteContext_007ED77C,s_E____titans_wlad_To_boat_cpp_007a9d3c,
+              (-0x5001fffe,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\To_boat.cpp",
                0x3d73);
   }
   local_18[0] = 0x7fff;

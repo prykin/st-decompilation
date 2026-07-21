@@ -13,7 +13,7 @@ STBHEShellC * __thiscall STBHEShellC::STBHEShellC(STBHEShellC *this)
   int iVar1;
   undefined4 *puVar2;
 
-  STGroupBoatC::sub_006E60E0((STGroupBoatC *)this);
+  sub_006E60E0(this);
   this->vtable = &STBHEShellCVTable;
   puVar2 = (undefined4 *)&this->field_0x4d;
   for (iVar1 = 0x4a; iVar1 != 0; iVar1 = iVar1 + -1) {

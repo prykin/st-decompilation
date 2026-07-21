@@ -23,10 +23,10 @@ void __thiscall ChooseMapTy::CloseButtons(ChooseMapTy *this)
   if (errorCode == 0) {
     MMObjTy::CloseButtons(local_8);
     if (this_00[0x24].field_0xc9 != '\0') {
-      if (*(uint *)&PTR_0081176c->field_0x2fc != 0xffffffff) {
+      if (PTR_0081176c->field_02FC != 0xffffffff) {
         Library::DKW::DDX::FUN_006b34d0
-                  (*(uint **)&PTR_0081176c->field_0x340,*(uint *)&PTR_0081176c->field_0x2fc,
-                   0xfffffffe,PTR_0081176c->field_0314,PTR_0081176c->field_0318);
+                  ((uint *)PTR_0081176c->field_0340,PTR_0081176c->field_02FC,0xfffffffe,
+                   PTR_0081176c->field_0314,PTR_0081176c->field_0318);
       }
       FUN_006b3af0(DAT_008075a8,PTR_0081176c->field_02EC);
     }
@@ -37,12 +37,12 @@ void __thiscall ChooseMapTy::CloseButtons(ChooseMapTy *this)
     return;
   }
   g_currentExceptionFrame = local_4c.previous;
-  iVar2 = ReportDebugMessage(s_E____titans_Start_load_obj_cpp_007cc728,0x25b,0,errorCode,
-                             &DAT_007a4ccc,s_ChooseMapTy__CloseButtons_007cc810);
+  iVar2 = ReportDebugMessage("E:\\__titans\\Start\\load_obj.cpp",0x25b,0,errorCode,
+                             "%s","ChooseMapTy::CloseButtons");
   if (iVar2 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  RaiseInternalException(errorCode,0,s_E____titans_Start_load_obj_cpp_007cc728,0x25b);
+  RaiseInternalException(errorCode,0,"E:\\__titans\\Start\\load_obj.cpp",0x25b);
   return;
 }
 

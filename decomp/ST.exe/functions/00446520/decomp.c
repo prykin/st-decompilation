@@ -45,18 +45,18 @@ STAllPlayersC::DeleteGuardBoat(STAllPlayersC *this,char param_1,short param_2,in
   if (iVar3 != 0) {
     g_currentExceptionFrame = local_68.previous;
     if (iVar3 != -0x5001fff7) {
-      iVar5 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0x296d,0,0,&DAT_007a4ccc,
-                                 s_STAllPlayersC__DeleteGuardBoat_007a83b8);
+      iVar5 = ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0x296d,0,0,"%s",
+                                 "STAllPlayersC::DeleteGuardBoat");
       if (iVar5 != 0) {
         STDebugBreak(); /* noreturn in standalone pseudocode */
       }
-      RaiseInternalException(iVar3,0,s_E____titans_wlad_to_allpl_cpp_007a6004,0x296e);
+      RaiseInternalException(iVar3,0,"E:\\__titans\\wlad\\to_allpl.cpp",0x296e);
     }
     return;
   }
   if (local_18 == (DArrayTy *)0x0) {
     RaiseInternalException
-              (-0x5001fff7,g_overwriteContext_007ED77C,s_E____titans_wlad_to_allpl_cpp_007a6004,
+              (-0x5001fff7,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_allpl.cpp",
                0x291d);
   }
   local_c = array->count;
@@ -125,8 +125,8 @@ STAllPlayersC::DeleteGuardBoat(STAllPlayersC *this,char param_1,short param_2,in
               DArrayGetElement(local_20,uVar8,&local_8);
               pSVar4 = (STBoatC *)GetObjPtr(local_14,param_1,local_8,CASE_1);
               if (pSVar4 == (STBoatC *)0x0) {
-                iVar3 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0x2955,0,0,
-                                           &DAT_007a4ccc,s_STAllPlayersC__DeleteGuardBoat_N_007a83e0
+                iVar3 = ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0x2955,0,0,
+                                           "%s","STAllPlayersC::DeleteGuardBoat NULL"
                                           );
                 if (iVar3 != 0) {
                   STDebugBreak(); /* noreturn in standalone pseudocode */

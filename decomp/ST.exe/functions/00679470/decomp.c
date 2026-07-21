@@ -28,17 +28,17 @@ int __thiscall AiPlrClassTy::CloseAllTact(AiPlrClassTy *this)
   pAVar4 = local_8;
   if (iVar5 != 0) {
     g_currentExceptionFrame = local_80.previous;
-    iVar7 = ReportDebugMessage(s_E____titans_ai_ai_plr_cpp_007d2e4c,0x10e,0,iVar5,&DAT_007a4ccc,
-                               s_AiPlrClassTy__CloseAllTact_007d2ed4);
+    iVar7 = ReportDebugMessage("E:\\__titans\\ai\\ai_plr.cpp",0x10e,0,iVar5,"%s",
+                               "AiPlrClassTy::CloseAllTact");
     if (iVar7 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    RaiseInternalException(iVar5,0,s_E____titans_ai_ai_plr_cpp_007d2e4c,0x10f);
+    RaiseInternalException(iVar5,0,"E:\\__titans\\ai\\ai_plr.cpp",0x10f);
     return iVar5;
   }
   if (local_8->field_0695 == (DArrayTy *)0x0) {
     RaiseInternalException
-              (-0x34,g_overwriteContext_007ED77C,s_E____titans_ai_ai_plr_cpp_007d2e4c,0xfd);
+              (-0x34,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_plr.cpp",0xfd);
   }
   pAVar8 = local_3c;
   for (iVar5 = 0xd; iVar5 != 0; iVar5 = iVar5 + -1) {

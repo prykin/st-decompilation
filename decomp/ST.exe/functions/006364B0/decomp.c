@@ -9,7 +9,7 @@ uint FUN_006364b0(int param_1)
   local_8 = 0xffffffff;
   if (param_1 == 0) {
     puVar1 = Library::Ourlib::MFRLOAD::mfRLoad
-                       (DAT_00806764,CASE_1D,s_blast_p_007d1c14,0xffffffff,0,0,0,(undefined4 *)0x0);
+                       (DAT_00806764,CASE_1D,"blast_p",0xffffffff,0,0,0,(undefined4 *)0x0);
     if ((puVar1 != (ushort *)0x0) && (PTR_00807598 != (AnonShape_GLOBAL_00807598_0C6808FB *)0x0)) {
       FUN_006e8660(PTR_00807598,(int *)&local_8,1,0,*(uint *)((int)puVar1 + 9),
                    *(uint *)((int)puVar1 + 0xd),(int)*(uint *)((int)puVar1 + 9) / 2,
@@ -20,10 +20,10 @@ uint FUN_006364b0(int param_1)
   }
   else if ((0 < param_1) && (param_1 < 3)) {
     if (param_1 == 1) {
-      text = s_shapeM_007d1c1c;
+      text = "shapeM";
     }
     else {
-      text = s_shapeB_007d1c24;
+      text = "shapeB";
     }
     puVar1 = Library::Ourlib::MFRLOAD::mfRLoad
                        (DAT_00806774,CASE_1D,text,0xffffffff,0,1,0,(undefined4 *)0x0);

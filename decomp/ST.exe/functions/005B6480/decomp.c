@@ -36,12 +36,12 @@ void __thiscall MMObjTy::CloseButtons(MMObjTy *this)
     return;
   }
   g_currentExceptionFrame = local_4c.previous;
-  iVar4 = ReportDebugMessage(s_E____titans_Start_mmenuobj_cpp_007cca38,0x104,0,iVar3,&DAT_007a4ccc,
-                             s_MMObjTy__CloseButtons_007ccae4);
+  iVar4 = ReportDebugMessage("E:\\__titans\\Start\\mmenuobj.cpp",0x104,0,iVar3,"%s",
+                             "MMObjTy::CloseButtons");
   if (iVar4 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  RaiseInternalException(iVar3,0,s_E____titans_Start_mmenuobj_cpp_007cca38,0x104);
+  RaiseInternalException(iVar3,0,"E:\\__titans\\Start\\mmenuobj.cpp",0x104);
   return;
 }
 

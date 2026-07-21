@@ -16,9 +16,9 @@ TLOBaseTy * __thiscall TLOBaseTy::TLOBaseTy(TLOBaseTy *this)
   this->field_05EF = 0;
   this->field_05F3 = 0;
   this->field_05F7 = 0;
-  this->field_05FF = 0;
-  this->field_0603 = 0;
-  this->field_0607 = 0;
+  this->field_05FF = (STT3DSprC *)0x0;
+  this->field_0603 = (STT3DSprC *)0x0;
+  this->field_0607 = (AnonPointee_TLOBaseTy_0607 *)0x0;
   this->field_0251 = 0;
   this->field_061B = 0;
   this->field_061F = 0;

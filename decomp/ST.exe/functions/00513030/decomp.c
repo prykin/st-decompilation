@@ -57,12 +57,12 @@ void __thiscall HelpPanelTy::ChangeTree(HelpPanelTy *this,int *param_1,int param
   this_00 = local_20;
   if (iVar7 != 0) {
     g_currentExceptionFrame = local_80.previous;
-    iVar10 = ReportDebugMessage(s_E____titans_Andrey_helppan_cpp_007c383c,0x26d,0,iVar7,
-                                &DAT_007a4ccc,s_HelpPanelTy__ChangeTree_007c3a2c);
+    iVar10 = ReportDebugMessage("E:\\__titans\\Andrey\\helppan.cpp",0x26d,0,iVar7,
+                                "%s","HelpPanelTy::ChangeTree");
     if (iVar10 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    RaiseInternalException(iVar7,0,s_E____titans_Andrey_helppan_cpp_007c383c,0x26d);
+    RaiseInternalException(iVar7,0,"E:\\__titans\\Andrey\\helppan.cpp",0x26d);
     return;
   }
   /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */

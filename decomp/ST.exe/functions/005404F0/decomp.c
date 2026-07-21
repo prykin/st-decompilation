@@ -33,12 +33,12 @@ void __cdecl TransPutDDX(int param_1,int param_2,char param_3,BITMAPINFO *param_
       return;
     }
     g_currentExceptionFrame = local_48.previous;
-    iVar2 = ReportDebugMessage(s_E____titans_Andrey_support_cpp_007c7b2c,0x26,0,errorCode,
-                               &DAT_007a4ccc,s_TransPutDDX_007c7b5c);
+    iVar2 = ReportDebugMessage("E:\\__titans\\Andrey\\support.cpp",0x26,0,errorCode,
+                               "%s","TransPutDDX");
     if (iVar2 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    RaiseInternalException(errorCode,0,s_E____titans_Andrey_support_cpp_007c7b2c,0x26);
+    RaiseInternalException(errorCode,0,"E:\\__titans\\Andrey\\support.cpp",0x26);
   }
   return;
 }

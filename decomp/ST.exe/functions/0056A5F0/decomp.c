@@ -30,7 +30,7 @@ undefined4 * __thiscall STAppC::STAppC(STAppC *this,undefined4 param_1)
   this->field_0E3B = 0xffffffff;
   this->vtable = &STAppCVTable;
   g_appClass_00806728 = (AppClassTy *)this;
-  this->field_115A = 0;
+  this->field_115A = (AnonPointee_STAppC_115A *)0x0;
   DAT_0080673c = 0;
   this->field_115E = 1;
   this->field_115F = 0;

@@ -25,7 +25,7 @@ void __thiscall STSprGameObjC::LoadLifeFrame(STSprGameObjC *this,int *param_1)
   char local_10 [12];
 
   uVar5 = 0xffffffff;
-  pcVar8 = s_lifelev_007a504c;
+  pcVar8 = "lifelev";
   do {
     pcVar10 = pcVar8;
     if (uVar5 == 0) break;
@@ -289,8 +289,8 @@ void __thiscall STSprGameObjC::LoadLifeFrame(STSprGameObjC *this,int *param_1)
     pcVar8 = &DAT_007a4fb4;
     break;
   default:
-    iVar6 = ReportDebugMessage(s_E____titans_wlad_Tc_gobj_cpp_007a4e0c,0xce5,0,0,&DAT_007a4ccc,
-                               s_STSprGameObjC__LoadLifeFrame_unk_007a5008);
+    iVar6 = ReportDebugMessage("E:\\__titans\\wlad\\Tc_gobj.cpp",0xce5,0,0,"%s",
+                               "STSprGameObjC::LoadLifeFrame unknown object type");
     if (iVar6 == 0) {
       return;
     }

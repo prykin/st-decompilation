@@ -24,8 +24,8 @@ void __thiscall SoundClassTy::CheckFader(SoundClassTy *this)
   pSVar2 = local_8;
   if (iVar3 != 0) {
     g_currentExceptionFrame = local_50.previous;
-    iVar3 = ReportDebugMessage(s_E____titans_sound_cpp_007c97fc,0x205,0,iVar3,&DAT_007a4ccc,
-                               s_SoundClassTy__CheckFader_007c9818);
+    iVar3 = ReportDebugMessage("E:\\__titans\\sound.cpp",0x205,0,iVar3,"%s",
+                               "SoundClassTy::CheckFader");
     if (iVar3 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
@@ -42,7 +42,7 @@ void __thiscall SoundClassTy::CheckFader(SoundClassTy *this)
     if (local_c == 1) {
       DVar4 = timeGetTime();
       uVar5 = DVar4 - pSVar2->field_0DFF;
-      if ((uint)pSVar2->field_0DFB < uVar5) {
+      if (pSVar2->field_0DFB < uVar5) {
         FUN_006c1ba0(pSVar2->field_0E03);
         g_currentExceptionFrame = local_50.previous;
         return;

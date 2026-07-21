@@ -36,12 +36,12 @@ void __thiscall MainMenuTy::LightPalette(MainMenuTy *this)
     return;
   }
   g_currentExceptionFrame = local_4c.previous;
-  iVar5 = ReportDebugMessage(s_E____titans_Start_main_obj_cpp_007cc8e8,0xe8,0,iVar4,&DAT_007a4ccc,
-                             s_MainMenuTy__LightPalette_007cc9a0);
+  iVar5 = ReportDebugMessage("E:\\__titans\\Start\\main_obj.cpp",0xe8,0,iVar4,"%s",
+                             "MainMenuTy::LightPalette");
   if (iVar5 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  RaiseInternalException(iVar4,0,s_E____titans_Start_main_obj_cpp_007cc8e8,0xe8);
+  RaiseInternalException(iVar4,0,"E:\\__titans\\Start\\main_obj.cpp",0xe8);
   return;
 }
 

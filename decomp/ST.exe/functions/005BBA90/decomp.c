@@ -14,8 +14,10 @@ void __thiscall PrividerTy::CreateCtrls(PrividerTy *this,char param_1)
   int iVar3;
   int iVar4;
   uint *puVar5;
-  undefined4 *puVar6;
-  undefined4 local_dd0 [19];
+  ccFntTy **ppcVar6;
+  undefined4 *puVar7;
+  ccFntTy *local_dd0 [8];
+  AnonPointee_PrividerTy_1C92 *local_db0;
   undefined4 local_d84;
   undefined4 local_d80;
   undefined4 local_d7c;
@@ -85,10 +87,10 @@ void __thiscall PrividerTy::CreateCtrls(PrividerTy *this,char param_1)
     *puVar5 = 0;
     puVar5 = puVar5 + 1;
   }
-  puVar6 = local_dd0;
+  ppcVar6 = local_dd0;
   for (iVar4 = 0x223; iVar4 != 0; iVar4 = iVar4 + -1) {
-    *puVar6 = 0;
-    puVar6 = puVar6 + 1;
+    *ppcVar6 = (ccFntTy *)0x0;
+    ppcVar6 = ppcVar6 + 1;
   }
   local_70.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_70;
@@ -96,12 +98,12 @@ void __thiscall PrividerTy::CreateCtrls(PrividerTy *this,char param_1)
   this_00 = local_10;
   if (iVar4 != 0) {
     g_currentExceptionFrame = local_70.previous;
-    iVar3 = ReportDebugMessage(s_E____titans_Start_prov_obj_cpp_007ccd28,0x24d,0,iVar4,&DAT_007a4ccc
-                               ,s_PrividerTy__CreateCtrls_007cce6c);
+    iVar3 = ReportDebugMessage("E:\\__titans\\Start\\prov_obj.cpp",0x24d,0,iVar4,"%s"
+                               ,"PrividerTy::CreateCtrls");
     if (iVar3 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    RaiseInternalException(iVar4,0,s_E____titans_Start_prov_obj_cpp_007ccd28,0x24d);
+    RaiseInternalException(iVar4,0,"E:\\__titans\\Start\\prov_obj.cpp",0x24d);
     return;
   }
   local_5 = local_10->field_1A5F;
@@ -121,15 +123,15 @@ LAB_005bbb22:
   if (param_1 == '\0') {
     if (local_5 == '\0') {
       local_d84 = local_10->field_0008;
-      local_dd0[0] = 0;
-      local_dd0[1] = 9;
+      local_dd0[0] = (ccFntTy *)0x0;
+      local_dd0[1] = (ccFntTy *)0x9;
       local_dd0[2] = PTR_0081176c->field_0030;
-      local_dd0[8] = local_10->field_1C92;
-      local_dd0[3] = 0x7d;
-      local_dd0[4] = 0x1af;
-      local_dd0[5] = 0x226;
-      local_dd0[6] = 0x14;
-      local_dd0[7] = 0x104;
+      local_db0 = local_10->field_1C92;
+      local_dd0[3] = (ccFntTy *)0x7d;
+      local_dd0[4] = (ccFntTy *)0x1af;
+      local_dd0[5] = (ccFntTy *)0x226;
+      local_dd0[6] = (ccFntTy *)0x14;
+      local_dd0[7] = (ccFntTy *)0x104;
       local_d80 = 2;
       local_d7c = 0x631f;
       (*local_10->field_000C->vtable->CreateObject)
@@ -140,12 +142,12 @@ LAB_005bbb22:
       FUN_006e6080(this_00,2,this_00->field_1A73,(undefined4 *)&this_00->field_0x1d);
     }
     if (this_00->field_1A5B->field_02E6 != (MMsgTy *)0x0) {
-      puVar6 = &local_2c;
+      puVar7 = &local_2c;
       for (iVar4 = 6; iVar4 != 0; iVar4 = iVar4 + -1) {
-        *puVar6 = 0;
-        puVar6 = puVar6 + 1;
+        *puVar7 = 0;
+        puVar7 = puVar7 + 1;
       }
-      *(undefined2 *)puVar6 = 0;
+      *(undefined2 *)puVar7 = 0;
       /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
       local_2c._2_2_ = (-(ushort)(local_544[6] != 0) & 2) - 1;
       local_1e = 1;

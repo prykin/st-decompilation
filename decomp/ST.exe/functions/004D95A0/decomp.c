@@ -22,8 +22,8 @@ undefined4 __fastcall FUN_004d95a0(int param_1)
     uVar3 = 1;
     break;
   case 2:
-    iVar2 = ReportDebugMessage(s_E____titans_Artem_TLO_glsat_cpp_007bf5b0,0xb0,0,0,&DAT_007a4ccc,
-                               s_Please_Fill_this_case___007bf5d8);
+    iVar2 = ReportDebugMessage("E:\\__titans\\Artem\\TLO_glsat.cpp",0xb0,0,0,"%s",
+                               "Please Fill this case !");
     if (iVar2 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }

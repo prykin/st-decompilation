@@ -17,8 +17,8 @@ undefined4 __fastcall FUN_004cc370(AnonShape_004CC370_02CE3D17 *param_1)
     return 0;
   }
   if (-1 < *(int *)&param_1->field_0x44c) {
-    iVar2 = ((STT3DSprC *)param_1->field_0603)->field_0020;
-    if (*(int *)(iVar2 + 0x20c) <= *(int *)(iVar2 + 0x210)) {
+    uVar1 = ((STT3DSprC *)param_1->field_0603)->field_0020;
+    if (*(int *)(uVar1 + 0x20c) <= *(int *)(uVar1 + 0x210)) {
       STT3DSprC::StopShow((STT3DSprC *)param_1->field_0603,0xe);
       thunk_FUN_004ad430(param_1->field_0603);
       STT3DSprC::UnLoadSequence((STT3DSprC *)param_1->field_0603,0xe);
@@ -67,7 +67,7 @@ undefined4 __fastcall FUN_004cc370(AnonShape_004CC370_02CE3D17 *param_1)
       iVar4 = 0x381;
 cf_error_exit_004CC50A:
       RaiseInternalException
-                (iVar2,g_overwriteContext_007ED77C,s_E____titans_Artem_TLO_bspr_cpp_007ad4d0,iVar4);
+                (iVar2,g_overwriteContext_007ED77C,"E:\\__titans\\Artem\\TLO_bspr.cpp",iVar4);
     }
   }
   uVar5 = 6;

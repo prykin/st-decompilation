@@ -28,32 +28,32 @@ STPlaySystemC::CreateGameObject
     iVar3 = thunk_FUN_0054cbb0(param_1,&local_8);
     if (iVar3 != 0) {
       RaiseInternalException
-                (-4,g_overwriteContext_007ED77C,s_E____titans_Andrey_tplaysys_cpp_007c8430,0xef);
+                (-4,g_overwriteContext_007ED77C,"E:\\__titans\\Andrey\\tplaysys.cpp",0xef);
     }
     iVar3 = (*pSVar2->vtable->vfunc_08)(local_8,param_2,param_3,param_4,param_5);
     if (iVar3 != 0) {
       RaiseInternalException
-                (iVar3,g_overwriteContext_007ED77C,s_E____titans_Andrey_tplaysys_cpp_007c8430,0xf0);
+                (iVar3,g_overwriteContext_007ED77C,"E:\\__titans\\Andrey\\tplaysys.cpp",0xf0);
     }
     g_currentExceptionFrame = local_50.previous;
     return iVar3;
   }
   g_currentExceptionFrame = local_50.previous;
   if (iVar3 == -4) {
-    iVar4 = ReportDebugMessage(s_E____titans_Andrey_tplaysys_cpp_007c8430,0xf3,0,0,
-                               s_Not_found_system_type_for_game_t_007c8488,param_1);
+    iVar4 = ReportDebugMessage("E:\\__titans\\Andrey\\tplaysys.cpp",0xf3,0,0,
+                               "Not found system type for game type %d",param_1);
     if (iVar4 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
   }
   else {
-    iVar4 = ReportDebugMessage(s_E____titans_Andrey_tplaysys_cpp_007c8430,0xf5,0,0,&DAT_007a4ccc,
-                               s_STPlaySystemC__CreateGameObject_e_007c8458);
+    iVar4 = ReportDebugMessage("E:\\__titans\\Andrey\\tplaysys.cpp",0xf5,0,0,"%s",
+                               "STPlaySystemC::CreateGameObject error !");
     if (iVar4 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
   }
-  RaiseInternalException(iVar3,0,s_E____titans_Andrey_tplaysys_cpp_007c8430,0xf7);
+  RaiseInternalException(iVar3,0,"E:\\__titans\\Andrey\\tplaysys.cpp",0xf7);
   return iVar3;
 }
 

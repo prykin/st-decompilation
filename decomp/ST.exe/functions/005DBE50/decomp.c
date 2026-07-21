@@ -27,12 +27,12 @@ StartSystemTy::OutBmpProc
       return;
     }
     g_currentExceptionFrame = local_48.previous;
-    iVar2 = ReportDebugMessage(s_E____titans_Start_startsys_cpp_007cd718,0x1b7,0,errorCode,
-                               &DAT_007a4ccc,s_StartSystemTy__OutBmpProc_007cd110);
+    iVar2 = ReportDebugMessage("E:\\__titans\\Start\\startsys.cpp",0x1b7,0,errorCode,
+                               "%s","StartSystemTy::OutBmpProc");
     if (iVar2 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    RaiseInternalException(errorCode,0,s_E____titans_Start_startsys_cpp_007cd718,0x1b7);
+    RaiseInternalException(errorCode,0,"E:\\__titans\\Start\\startsys.cpp",0x1b7);
   }
   return;
 }

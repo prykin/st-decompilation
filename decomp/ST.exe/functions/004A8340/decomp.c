@@ -13,7 +13,7 @@ STGroupBoatC::GetDepotForAttack
 {
   code *pcVar1;
   int iVar2;
-  STFishC *pSVar3;
+  STGameObjC *pSVar3;
   int iVar4;
   uint index;
   STGroupBoatC *pSVar5;
@@ -42,12 +42,11 @@ STGroupBoatC::GetDepotForAttack
     *param_3 = -1;
     if ((local_14->field_01E6 != CASE_2) || (local_14->field_020E == 0)) {
       RaiseInternalException
-                (-0x5001fff7,g_overwriteContext_007ED77C,s_E____titans_wlad_to_grpb_cpp_007abe3c,
+                (-0x5001fff7,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_grpb.cpp",
                  0x1708);
     }
-    pSVar3 = (STFishC *)
-             STAllPlayersC::GetObjPtr(g_sTAllPlayers_007FA174,pSVar5->field_0024,param_1,CASE_1);
-    STFishC::sub_004162B0(pSVar3,&local_10,&local_e,&local_c);
+    pSVar3 = STAllPlayersC::GetObjPtr(g_sTAllPlayers_007FA174,pSVar5->field_0024,param_1,CASE_1);
+    STFishC::sub_004162B0((STFishC *)pSVar3,&local_10,&local_e,&local_c);
     index = 0;
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     local_1c = *(int *)(pSVar5->field_020E + 0xc);
@@ -57,14 +56,16 @@ STGroupBoatC::GetDepotForAttack
         DArrayGetElement((DArrayTy *)pSVar5->field_020E,index,&local_24);
         if (sStack_22 != -1) {
           /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-          pSVar3 = (STFishC *)
-                   STAllPlayersC::GetObjPtr
+          pSVar3 = STAllPlayersC::GetObjPtr
                              (g_sTAllPlayers_007FA174,local_24,CONCAT22(uStack_20,sStack_22),
                               (int)cStack_23);
-          iVar4 = (*pSVar3->vtable->vfunc_2C)();
+          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+          iVar4 = (**(code **)&pSVar3->vtable->field_0x2c)();
+          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
           if ((iVar4 == 0x3b) ||
-             (iVar4 = (*pSVar3->vtable->vfunc_2C)(), pSVar5 = local_14, iVar4 == 0x60)) {
-            STFishC::sub_004162B0(pSVar3,&local_8,&local_6,&local_a);
+             (iVar4 = (**(code **)&pSVar3->vtable->field_0x2c)(), pSVar5 = local_14, iVar4 == 0x60))
+          {
+            STFishC::sub_004162B0((STFishC *)pSVar3,&local_8,&local_6,&local_a);
             iVar4 = FUN_006aadd0((int)local_10,(int)local_e,(int)local_c,(int)local_8,(int)local_6,
                                  (int)local_a);
             pSVar5 = local_14;
@@ -87,12 +88,12 @@ STGroupBoatC::GetDepotForAttack
   }
   g_currentExceptionFrame = local_68.previous;
   if (iVar2 != -0x5001fff7) {
-    iVar4 = ReportDebugMessage(s_E____titans_wlad_to_grpb_cpp_007abe3c,0x171b,0,iVar2,&DAT_007a4ccc,
-                               s_STGroupBoatC__GetDepotForAttack_007ac4e4);
+    iVar4 = ReportDebugMessage("E:\\__titans\\wlad\\to_grpb.cpp",0x171b,0,iVar2,"%s",
+                               "STGroupBoatC::GetDepotForAttack");
     if (iVar4 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    RaiseInternalException(iVar2,0,s_E____titans_wlad_to_grpb_cpp_007abe3c,0x171c);
+    RaiseInternalException(iVar2,0,"E:\\__titans\\wlad\\to_grpb.cpp",0x171c);
   }
   return;
 }

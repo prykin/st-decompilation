@@ -37,7 +37,8 @@ undefined4 __fastcall FUN_0045f980(STBoatC *param_1)
       *(int *)&param_1->field_0xd7 = (int)(short)local_8;
       *(int *)&param_1->field_0xdb = (int)(short)local_c;
       *(int *)&param_1->field_0xdf = (int)(short)local_10;
-      thunk_FUN_004167a0((AnonShape_004167A0_C6E28A87 *)param_1);
+      SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00417FF0::sub_004167A0
+                ((AnonReceiver_00417FF0 *)param_1);
       param_1->field_0xfc = param_1->field_0xfc + '\x01';
       return 2;
     }
@@ -72,7 +73,8 @@ undefined4 __fastcall FUN_0045f980(STBoatC *param_1)
       return 0;
     }
     if (iVar2 == 0) {
-      thunk_FUN_004167a0((AnonShape_004167A0_C6E28A87 *)param_1);
+      SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00417FF0::sub_004167A0
+                ((AnonReceiver_00417FF0 *)param_1);
       /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
       this = thunk_FUN_0042b760(param_1->field_0x24,CONCAT22(extraout_var,param_1->field_0030));
       if (this != (STGroupBoatC *)0x0) {

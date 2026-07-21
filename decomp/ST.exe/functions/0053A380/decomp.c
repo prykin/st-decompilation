@@ -85,12 +85,12 @@ void __thiscall PlayPanelTy::DonePlayPanel(PlayPanelTy *this)
     return;
   }
   g_currentExceptionFrame = local_50.previous;
-  iVar4 = ReportDebugMessage(s_E____titans_Andrey_playpan_cpp_007c7574,0x97,0,iVar3,&DAT_007a4ccc,
-                             s_PlayPanelTy__DonePlayPanel_007c7608);
+  iVar4 = ReportDebugMessage("E:\\__titans\\Andrey\\playpan.cpp",0x97,0,iVar3,"%s",
+                             "PlayPanelTy::DonePlayPanel");
   if (iVar4 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  RaiseInternalException(iVar3,0,s_E____titans_Andrey_playpan_cpp_007c7574,0x97);
+  RaiseInternalException(iVar3,0,"E:\\__titans\\Andrey\\playpan.cpp",0x97);
   return;
 }
 

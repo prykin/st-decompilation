@@ -78,11 +78,11 @@ void __thiscall FUN_005734c0(void *this,LPDWORD lpcbData,PHKEY phkResult)
     }
   }
   if (lpcbData == (LPDWORD)0x0) goto LAB_005737e5;
-  LVar3 = RegOpenKeyA((HKEY)0x80000001,s_SOFTWARE_Microsoft_Windows_Curre_007ca544,(PHKEY)&phkResult
+  LVar3 = RegOpenKeyA((HKEY)0x80000001,"SOFTWARE\\Microsoft\\Windows\\CurrentVersion",(PHKEY)&phkResult
                      );
   if (LVar3 == 0) {
     lpcbData = (LPDWORD)0x40;
-    LVar3 = RegQueryValueExA((HKEY)phkResult,s_RegisteredOwner_007ca570,(LPDWORD)0x0,
+    LVar3 = RegQueryValueExA((HKEY)phkResult,"RegisteredOwner",(LPDWORD)0x0,
                              (LPDWORD)&local_8,(LPBYTE)((int)this + 0x785),(LPDWORD)&lpcbData);
     RegCloseKey((HKEY)phkResult);
     if (LVar3 != 0) goto LAB_0057366c;

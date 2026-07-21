@@ -43,12 +43,12 @@ void __thiscall StartSystemTy::LoadMapData(StartSystemTy *this,cMf32 *param_1,ch
   this_01 = local_1c;
   if (iVar4 != 0) {
     g_currentExceptionFrame = local_9c.previous;
-    iVar10 = ReportDebugMessage(s_E____titans_Start_startsys_cpp_007cd718,0x231,0,iVar4,
-                                &DAT_007a4ccc,s_StartSystemTy__LoadMapData_007cd7b0);
+    iVar10 = ReportDebugMessage("E:\\__titans\\Start\\startsys.cpp",0x231,0,iVar4,
+                                "%s","StartSystemTy::LoadMapData");
     if (iVar10 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    RaiseInternalException(iVar4,0,s_E____titans_Start_startsys_cpp_007cd718,0x231);
+    RaiseInternalException(iVar4,0,"E:\\__titans\\Start\\startsys.cpp",0x231);
     return;
   }
   if (param_1 != (cMf32 *)0x0) {
@@ -114,7 +114,7 @@ void __thiscall StartSystemTy::LoadMapData(StartSystemTy *this,cMf32 *param_1,ch
         do {
           pcVar8 = *(char **)(PTR_0080c4cb->field_0014 + iVar4 * 4);
 LAB_005dc22d:
-          thunk_FUN_005411a0((uint *)this_01->field_0548,pcVar8,s_____s_007c72b4);
+          thunk_FUN_005411a0((uint *)this_01->field_0548,pcVar8,"@- %s");
           iVar4 = iVar4 + 1;
         } while (iVar4 < PTR_0080c4cb->field_0008);
       }
@@ -126,7 +126,7 @@ LAB_005dc22d:
       local_14 = (AnonShape_006B5570_4D68B99C *)
                  ccFntTy::FormIndentSarr
                            (this_01->field_0034,(uint *)this_01->field_0548,
-                            s________________007c21d8,(uint *)&DAT_007c21ec,
+                            " ,.;:!?/\\()[]{}",(uint *)&DAT_007c21ec,
                             this_01->field_0544->field_0004 + -0x14,0,0xffffffff,(char *)0x0,1);
       if ((AnonShape_006B5570_4D68B99C *)this_01->field_0548 != (AnonShape_006B5570_4D68B99C *)0x0)
       {
@@ -136,19 +136,19 @@ LAB_005dc22d:
       this_01->field_0548 = puVar7;
       puVar6 = &this_01->field_0x3c;
       pcVar8 = LoadResourceString(0x2347,HINSTANCE_00807618);
-      wsprintfA(puVar6,s__2__s__007cd800,pcVar8);
+      wsprintfA(puVar6,"&2 %s:",pcVar8);
       Library::DKW::TBL::FUN_006b5aa0((uint *)this_01->field_0548,puVar6);
-      wsprintfA(puVar6,s__0__s_007cd7f8,&DAT_0080c3c3);
+      wsprintfA(puVar6,"&0 %s",&DAT_0080c3c3);
       Library::DKW::TBL::FUN_006b5aa0((uint *)this_01->field_0548,puVar6);
       Library::DKW::TBL::FUN_006b5aa0((uint *)this_01->field_0548,&DAT_007c3b5c);
       uVar9 = DAT_008087c4 & 0xffff;
       uVar11 = (uint)DAT_008087c2;
       pcVar8 = LoadResourceString(0x2344,HINSTANCE_00807618);
-      wsprintfA(puVar6,s__2__s___0_d_2x_0_d_007cd7e0,pcVar8,uVar11,uVar9);
+      wsprintfA(puVar6,"&2 %s: &0%d&2x&0%d",pcVar8,uVar11,uVar9);
       Library::DKW::TBL::FUN_006b5aa0((uint *)this_01->field_0548,puVar6);
       uVar9 = DAT_008087c4 >> 0x10 & 0xff;
       pcVar8 = LoadResourceString(0x2345,HINSTANCE_00807618);
-      wsprintfA(puVar6,s__2__s___0_d_007cd7d0,pcVar8,uVar9);
+      wsprintfA(puVar6,"&2 %s: &0%d",pcVar8,uVar9);
       Library::DKW::TBL::FUN_006b5aa0((uint *)this_01->field_0548,puVar6);
       Library::DKW::TBL::FUN_006b5aa0((uint *)this_01->field_0548,&DAT_007c3b5c);
       switch(param_2) {
@@ -166,7 +166,7 @@ LAB_005dc22d:
       case '\x10':
       case '\x13':
         pcVar8 = LoadResourceString(0x2346,HINSTANCE_00807618);
-        wsprintfA(puVar6,s__2__s__007cd800,pcVar8);
+        wsprintfA(puVar6,"&2 %s:",pcVar8);
         Library::DKW::TBL::FUN_006b5aa0((uint *)this_01->field_0548,puVar6);
         Library::DKW::TBL::FUN_006b5aa0((uint *)this_01->field_0548,&DAT_007c3b5c);
       }

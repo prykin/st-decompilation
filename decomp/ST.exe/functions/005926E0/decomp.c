@@ -34,12 +34,12 @@ void __thiscall CampaignTy::AnimationCampaign(CampaignTy *this)
   this_00 = local_8;
   if (iVar3 != 0) {
     g_currentExceptionFrame = local_68.previous;
-    iVar5 = ReportDebugMessage(s_E____titans_Start_camp_obj_cpp_007cbcd4,0x1b3,0,iVar3,&DAT_007a4ccc
-                               ,s_CampaignTy__AnimationCampaign_007cbe7c);
+    iVar5 = ReportDebugMessage("E:\\__titans\\Start\\camp_obj.cpp",0x1b3,0,iVar3,"%s"
+                               ,"CampaignTy::AnimationCampaign");
     if (iVar5 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    RaiseInternalException(iVar3,0,s_E____titans_Start_camp_obj_cpp_007cbcd4,0x1b3);
+    RaiseInternalException(iVar3,0,"E:\\__titans\\Start\\camp_obj.cpp",0x1b3);
     return;
   }
   if (PTR_0081176c->field_0028 == 0) goto LAB_00592b82;

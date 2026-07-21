@@ -48,12 +48,12 @@ void __thiscall CampaignTy::NoneCampaign(CampaignTy *this,void *param_1)
   this_00 = local_c;
   if (iVar6 != 0) {
     g_currentExceptionFrame = local_c4.previous;
-    iVar11 = ReportDebugMessage(s_E____titans_Start_camp_obj_cpp_007cbcd4,0x117,0,iVar6,
-                                &DAT_007a4ccc,s_CampaignTy__NoneCampaign_007cbe1c);
+    iVar11 = ReportDebugMessage("E:\\__titans\\Start\\camp_obj.cpp",0x117,0,iVar6,
+                                "%s","CampaignTy::NoneCampaign");
     if (iVar11 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    RaiseInternalException(iVar6,0,s_E____titans_Start_camp_obj_cpp_007cbcd4,0x117);
+    RaiseInternalException(iVar6,0,"E:\\__titans\\Start\\camp_obj.cpp",0x117);
     return;
   }
   LightPalette(local_c);
@@ -209,7 +209,7 @@ void __thiscall CampaignTy::NoneCampaign(CampaignTy *this,void *param_1)
       local_48 = 0x697f;
       local_50 = local_70;
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-      (**(code **)(**(int **)&this_00->field_0xc + 8))(5,&this_00->field_0x66,0,local_80,0);
+      (**(code **)(*(int *)this_00->field_000C + 8))(5,&this_00->field_0x66,0,local_80,0);
       iVar6 = this_00->field_1A5B;
       if (*(int *)(iVar6 + 0x2e6) != 0) {
         puVar10 = &local_28;

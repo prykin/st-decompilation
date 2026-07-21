@@ -45,10 +45,10 @@ void __thiscall OptPanelTy::SwitchOptPanel(OptPanelTy *this,char param_1)
   this_00 = local_c;
   if (errorCode != 0) {
     g_currentExceptionFrame = local_5c.previous;
-    iVar2 = ReportDebugMessage(s_E____titans_Andrey_optpanel_cpp_007c70a0,0x125,0,errorCode,
-                               &DAT_007a4ccc,s_OptPanelTy__SwitchOptPanel_007c71e0);
+    iVar2 = ReportDebugMessage("E:\\__titans\\Andrey\\optpanel.cpp",0x125,0,errorCode,
+                               "%s","OptPanelTy::SwitchOptPanel");
     if (iVar2 == 0) {
-      RaiseInternalException(errorCode,0,s_E____titans_Andrey_optpanel_cpp_007c70a0,0x125);
+      RaiseInternalException(errorCode,0,"E:\\__titans\\Andrey\\optpanel.cpp",0x125);
       return;
     }
     STDebugBreak(); /* noreturn in standalone pseudocode */
@@ -141,9 +141,9 @@ void __thiscall OptPanelTy::SwitchOptPanel(OptPanelTy *this,char param_1)
       local_8 = ProdPanelTy::SetPanel(g_prodPanel_00801680,'\0');
     }
     bVar12 = local_8 != 0;
-    if (DAT_00801690 != (int *)0x0) {
+    if (PTR_00801690 != (AnonShape_GLOBAL_00801690_2AA401C1 *)0x0) {
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-      local_8 = (**(code **)(*DAT_00801690 + 0x18))(0);
+      local_8 = (**(code **)(*(int *)PTR_00801690 + 0x18))(0);
     }
     bVar13 = local_8 != 0;
     if (g_playPanel_008016E4 != (PlayPanelTy *)0x0) {

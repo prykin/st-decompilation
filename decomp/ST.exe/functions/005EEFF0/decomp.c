@@ -61,9 +61,9 @@ void __thiscall FUN_005eeff0(void *this,int param_1)
          (thunk_FUN_00558c00(g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,iVar4,iVar5
                              ,&local_8,&local_c), param_1 < 0)) ||
         (((4 < param_1 || (local_8 < 0)) ||
-         (((int)pVVar3->field_0030 <= local_8 ||
+         ((pVVar3->field_0030 <= local_8 ||
           ((local_c = (&DAT_0079aed0)[param_1] + local_c, local_c < 0 ||
-           ((int)pVVar3->field_0034 <= local_c)))))))) ||
+           (pVVar3->field_0034 <= local_c)))))))) ||
        ((pVVar3->field_004C == 0 ||
         (*(char *)(local_c * pVVar3->field_0030 + pVVar3->field_004C + local_8) != '\0')))) {
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
@@ -126,9 +126,9 @@ joined_r0x005ef316:
            (thunk_FUN_00558c00(g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,iVar4,
                                iVar5,&local_c,&local_8), param_1 < 0)) ||
           ((4 < param_1 || (local_c < 0)))) ||
-         (((int)pVVar3->field_0030 <= local_c ||
+         ((pVVar3->field_0030 <= local_c ||
           ((local_8 = (&DAT_0079aed0)[param_1] + local_8, local_8 < 0 ||
-           ((int)pVVar3->field_0034 <= local_8)))))) || (pVVar3->field_004C == 0)) ||
+           (pVVar3->field_0034 <= local_8)))))) || (pVVar3->field_004C == 0)) ||
        (*(char *)(local_8 * pVVar3->field_0030 + pVVar3->field_004C + local_c) != '\0')) {
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
       (**(code **)(*(int *)this + 0xd8))();

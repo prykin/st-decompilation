@@ -30,7 +30,7 @@ int __cdecl FUN_0064a830(int *param_1,undefined4 *param_2)
     return iVar1;
   }
   g_currentExceptionFrame = local_48.previous;
-  RaiseInternalException(iVar1,0,s_E____titans_ai_ai_erc_cpp_007d2a04,0x56);
+  RaiseInternalException(iVar1,0,"E:\\__titans\\ai\\ai_erc.cpp",0x56);
   if (iVar1 < 0) {
     return iVar1;
   }

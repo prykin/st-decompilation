@@ -72,12 +72,12 @@ void __thiscall WaitTy::CreateCtrls(WaitTy *this)
     return;
   }
   g_currentExceptionFrame = local_4c.previous;
-  iVar3 = ReportDebugMessage(s_E____titans_Start_wait_obj_cpp_007cdd5c,0x303,0,iVar4,&DAT_007a4ccc,
-                             s_WaitTy__CreateCtrls_007cde24);
+  iVar3 = ReportDebugMessage("E:\\__titans\\Start\\wait_obj.cpp",0x303,0,iVar4,"%s",
+                             "WaitTy::CreateCtrls");
   if (iVar3 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  RaiseInternalException(iVar4,0,s_E____titans_Start_wait_obj_cpp_007cdd5c,0x303);
+  RaiseInternalException(iVar4,0,"E:\\__titans\\Start\\wait_obj.cpp",0x303);
   return;
 }
 

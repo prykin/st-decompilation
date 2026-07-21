@@ -446,8 +446,8 @@ cf_common_exit_0056623F:
   }
   else {
     g_currentExceptionFrame = local_d8.previous;
-    iVar11 = ReportDebugMessage(s_E____titans_scoreai_cpp_007c96b0,0xeff,0,iVar5,&DAT_007a4ccc,
-                                s_AiMinesDistribTgts_007c9700);
+    iVar11 = ReportDebugMessage("E:\\__titans\\scoreai.cpp",0xeff,0,iVar5,"%s",
+                                "AiMinesDistribTgts");
     if (iVar11 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
@@ -460,7 +460,7 @@ cf_common_exit_0056623F:
     return &local_24->flags;
   }
   FreeAndNull(&local_24);
-  RaiseInternalException(iVar5,g_overwriteContext_007ED77C,s_E____titans_scoreai_cpp_007c96b0,0xf0f)
+  RaiseInternalException(iVar5,g_overwriteContext_007ED77C,"E:\\__titans\\scoreai.cpp",0xf0f)
   ;
   return (uint *)0x0;
 }

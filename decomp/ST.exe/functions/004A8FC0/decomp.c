@@ -31,16 +31,16 @@ void __thiscall OpticClassC::InitOptic(OpticClassC *this)
   iVar3 = Library::MSVCRT::__setjmp3(local_5c.jumpBuffer,0);
   if (iVar3 != 0) {
     g_currentExceptionFrame = local_5c.previous;
-    iVar5 = ReportDebugMessage(s_E____titans_wlad_To_optic_cpp_007ac594,0x107,0,iVar3,&DAT_007a4ccc,
-                               s_OpticClassC__InitOptic_007ac5e0);
+    iVar5 = ReportDebugMessage("E:\\__titans\\wlad\\To_optic.cpp",0x107,0,iVar3,"%s",
+                               "OpticClassC::InitOptic");
     if (iVar5 == 0) {
-      RaiseInternalException(iVar3,0,s_E____titans_wlad_To_optic_cpp_007ac594,0x108);
+      RaiseInternalException(iVar3,0,"E:\\__titans\\wlad\\To_optic.cpp",0x108);
       return;
     }
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   if (g_cMf32_00806754 != (cMf32 *)0x0) {
-    local_c = Library::Ourlib::MFAOBJ::mfAObjLoad(g_cMf32_00806754,s_opticsave_007ac5d4,0,0);
+    local_c = Library::Ourlib::MFAOBJ::mfAObjLoad(g_cMf32_00806754,"opticsave",0,0);
   }
   if (local_c == (ushort *)0x0) {
     DAT_00807400 = DAT_00807568;

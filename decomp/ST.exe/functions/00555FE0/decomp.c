@@ -63,12 +63,12 @@ undefined4 * __thiscall TraksClassTy::PrepareToSave(TraksClassTy *this,uint *par
   if (local_c != (undefined4 *)0x0) {
     FreeAndNull(&local_c);
   }
-  iVar2 = ReportDebugMessage(s_E____titans_grig_traks_cpp_007c9104,0xed,0,errorCode,&DAT_007a4ccc,
-                             s_TraksClassTy__PrepareToSave_erro_007c91a8);
+  iVar2 = ReportDebugMessage("E:\\__titans\\grig\\traks.cpp",0xed,0,errorCode,"%s",
+                             "TraksClassTy::PrepareToSave error");
   if (iVar2 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  RaiseInternalException(errorCode,0,s_E____titans_grig_traks_cpp_007c9104,0xee);
+  RaiseInternalException(errorCode,0,"E:\\__titans\\grig\\traks.cpp",0xee);
   return (undefined4 *)0x0;
 }
 

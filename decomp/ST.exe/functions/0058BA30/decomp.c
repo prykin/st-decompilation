@@ -22,7 +22,7 @@ STSatC * __thiscall STSatC::STSatC(STSatC *this)
   this->field_0245 = 0;
   this->field_023D = 0;
   this->field_0235 = 0;
-  puVar2 = (undefined4 *)&this[1].field_0x2c;
+  puVar2 = (undefined4 *)&this->field_0x275;
   for (iVar1 = 9; iVar1 != 0; iVar1 = iVar1 + -1) {
     *puVar2 = 0;
     puVar2 = puVar2 + 1;

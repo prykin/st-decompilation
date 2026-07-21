@@ -24,12 +24,12 @@ undefined4 __thiscall STTorpC::ClearDangerous(STTorpC *this,int param_1,uint par
   pSVar2 = local_8;
   if (errorCode != 0) {
     g_currentExceptionFrame = local_54.previous;
-    iVar3 = ReportDebugMessage(s_E____titans_nick_to_torp_cpp_007d25c0,0x4a1,0,errorCode,
-                               &DAT_007a4ccc,s_STTorpC__ClearDangerous_007d261c);
+    iVar3 = ReportDebugMessage("E:\\__titans\\nick\\to_torp.cpp",0x4a1,0,errorCode,
+                               "%s","STTorpC::ClearDangerous");
     if (iVar3 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    RaiseInternalException(errorCode,0,s_E____titans_nick_to_torp_cpp_007d25c0,0x4a2);
+    RaiseInternalException(errorCode,0,"E:\\__titans\\nick\\to_torp.cpp",0x4a2);
     return 0xffffffff;
   }
   if (param_2 == 0xffffffff) {
@@ -47,7 +47,7 @@ undefined4 __thiscall STTorpC::ClearDangerous(STTorpC *this,int param_1,uint par
     return 0;
   }
   RaiseInternalException
-            (-0x5001fff7,g_overwriteContext_007ED77C,s_E____titans_nick_to_torp_cpp_007d25c0,0x49e);
+            (-0x5001fff7,g_overwriteContext_007ED77C,"E:\\__titans\\nick\\to_torp.cpp",0x49e);
   g_currentExceptionFrame = local_54.previous;
   return 0;
 }

@@ -22,10 +22,10 @@ void __cdecl _AddObjGrpExch(uint param_1,int *param_2)
   iVar4 = Library::MSVCRT::__setjmp3(local_48.jumpBuffer,0);
   if (iVar4 != 0) {
     g_currentExceptionFrame = local_48.previous;
-    iVar5 = ReportDebugMessage(s_E____titans_ai_ai_mdef_cpp_007d2d58,0x101,0,iVar4,&DAT_007a4ccc,
-                               s__AddObjGrpExch_007d2d78);
+    iVar5 = ReportDebugMessage("E:\\__titans\\ai\\ai_mdef.cpp",0x101,0,iVar4,"%s",
+                               "_AddObjGrpExch");
     if (iVar5 == 0) {
-      RaiseInternalException(iVar4,0,s_E____titans_ai_ai_mdef_cpp_007d2d58,0x102);
+      RaiseInternalException(iVar4,0,"E:\\__titans\\ai\\ai_mdef.cpp",0x102);
       return;
     }
     STDebugBreak(); /* noreturn in standalone pseudocode */

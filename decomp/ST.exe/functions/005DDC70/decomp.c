@@ -144,12 +144,12 @@ void __thiscall StartSystemTy::CreateBinDesc(StartSystemTy *this)
     return;
   }
   g_currentExceptionFrame = local_4c.previous;
-  iVar4 = ReportDebugMessage(s_E____titans_Start_startsys_cpp_007cd718,0x3b8,0,iVar5,&DAT_007a4ccc,
-                             s_StartSystemTy__CreateBinDesc_007cd8bc);
+  iVar4 = ReportDebugMessage("E:\\__titans\\Start\\startsys.cpp",0x3b8,0,iVar5,"%s",
+                             "StartSystemTy::CreateBinDesc");
   if (iVar4 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  RaiseInternalException(iVar5,0,s_E____titans_Start_startsys_cpp_007cd718,0x3b8);
+  RaiseInternalException(iVar5,0,"E:\\__titans\\Start\\startsys.cpp",0x3b8);
   return;
 }
 

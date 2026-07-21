@@ -109,7 +109,7 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00660180::FUN_00660180
   }
   if (pSVar3 == (STGroupBoatC *)0x0) {
     RaiseInternalException
-              (-1,g_overwriteContext_007ED77C,s_E____titans_ai_ai_flt_cpp_007d2b80,0x467);
+              (-1,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_flt.cpp",0x467);
   }
   else {
     (*pSVar3->vtable->vfunc_08)(pSVar3,CASE_6,&local_1c);

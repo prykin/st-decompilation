@@ -70,12 +70,12 @@ void __thiscall FSGSTy::PaintLogLogin(FSGSTy *this)
     return;
   }
   g_currentExceptionFrame = local_4c.previous;
-  iVar9 = ReportDebugMessage(s_E____titans_Start_fsgs_obj_cpp_007cbf70,0x3c0,0,iVar4,&DAT_007a4ccc,
-                             s_FSGSTy__PaintLogLogin_007cc1e4);
+  iVar9 = ReportDebugMessage("E:\\__titans\\Start\\fsgs_obj.cpp",0x3c0,0,iVar4,"%s",
+                             "FSGSTy::PaintLogLogin");
   if (iVar9 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  RaiseInternalException(iVar4,0,s_E____titans_Start_fsgs_obj_cpp_007cbf70,0x3c0);
+  RaiseInternalException(iVar4,0,"E:\\__titans\\Start\\fsgs_obj.cpp",0x3c0);
   return;
 }
 

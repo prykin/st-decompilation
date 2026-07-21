@@ -10,7 +10,7 @@ undefined4 * __thiscall AiTactClassTy::AiTactClassTy(AiTactClassTy *this)
   int iVar1;
   undefined4 *puVar2;
 
-  STGroupBoatC::sub_006E60E0((STGroupBoatC *)this);
+  sub_006E60E0(this);
   this->vtable = &AiTactClassTyVTable;
   if (this == (AiTactClassTy *)0x0) {
     puVar2 = (undefined4 *)0x0;
@@ -25,10 +25,10 @@ undefined4 * __thiscall AiTactClassTy::AiTactClassTy(AiTactClassTy *this)
   this->field_0020 = 0x38e;
   this->field_009D = 0xff;
   this->field_0130 = 0;
-  this[1].vtable = (AiTactClassTyVTable *)0x0;
-  *(undefined4 *)&this[1].field_0x4 = 0;
-  *(undefined4 *)&this[1].field_0x8 = 0;
-  *(undefined4 *)&this[1].field_0xc = 0;
+  this->field_0134 = 0;
+  this->field_0138 = 0;
+  this->field_013C = 0;
+  this->field_0140 = 0;
   return &this->vtable;
 }
 

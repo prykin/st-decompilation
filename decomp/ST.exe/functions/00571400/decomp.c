@@ -32,12 +32,12 @@ void __thiscall STAppC::ReadCmdPlay(STAppC *this,int param_1)
   pSVar2 = local_10;
   if (iVar3 != 0) {
     g_currentExceptionFrame = local_70.previous;
-    iVar7 = ReportDebugMessage(s_E____titans_tapp_cpp_007ca0c8,0x914,0,iVar3,&DAT_007a4ccc,
-                               s_STAppC__ReadCmdPlay_007ca25c);
+    iVar7 = ReportDebugMessage("E:\\__titans\\tapp.cpp",0x914,0,iVar3,"%s",
+                               "STAppC::ReadCmdPlay");
     if (iVar7 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    RaiseInternalException(iVar3,0,s_E____titans_tapp_cpp_007ca0c8,0x914);
+    RaiseInternalException(iVar3,0,"E:\\__titans\\tapp.cpp",0x914);
     return;
   }
   hFile = CreateFileA(&local_10->field_0x7b06,0x80000000,1,(LPSECURITY_ATTRIBUTES)0x0,3,0x80,
@@ -103,7 +103,7 @@ void __thiscall STAppC::ReadCmdPlay(STAppC *this,int param_1)
         iVar3 = 2;
       }
       nNumberOfBytesToRead = iVar3 + 0x1b;
-      if ((uint)pSVar2->field_118D < nNumberOfBytesToRead) {
+      if (pSVar2->field_118D < nNumberOfBytesToRead) {
         pSVar2->field_118D = nNumberOfBytesToRead;
         pvVar6 = (LPVOID)Library::DKW::LIB::FUN_006acf50
                                    ((int)pSVar2->field_1189,nNumberOfBytesToRead);
@@ -124,7 +124,7 @@ void __thiscall STAppC::ReadCmdPlay(STAppC *this,int param_1)
     }
     pSVar2->field_1185 = 0;
     if (g_popUp_008016D8 != (PopUpTy *)0x0) {
-      thunk_FUN_0052d320(g_popUp_008016D8,s_Playing_of_commands_has_finished_007ca2bc,8);
+      thunk_FUN_0052d320(g_popUp_008016D8,"Playing of commands has finished!",8);
       CloseHandle(hFile);
       goto cf_common_exit_00571620;
     }
@@ -135,8 +135,8 @@ void __thiscall STAppC::ReadCmdPlay(STAppC *this,int param_1)
   CloseHandle(hFile);
 cf_common_exit_00571620:
   if ((local_8 != 0) && (pSVar2->field_1185 = 0, g_popUp_008016D8 != (PopUpTy *)0x0)) {
-    thunk_FUN_0052d320(g_popUp_008016D8,s_Error_playing_command__007ca2a0,9);
-    thunk_FUN_0052d320(g_popUp_008016D8,s_Playing_of_command_has_turned_of_007ca274,8);
+    thunk_FUN_0052d320(g_popUp_008016D8,"Error playing command!",9);
+    thunk_FUN_0052d320(g_popUp_008016D8,"Playing of command has turned off.",8);
   }
   g_currentExceptionFrame = local_70.previous;
   return;

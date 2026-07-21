@@ -16,14 +16,14 @@ void __thiscall StartSystemTy::sub_005DB2A0(StartSystemTy *this)
 
   thunk_FUN_0055db70();
   this_00 = (ccFntTy *)0x0;
-  if (this->field_002C != 0) {
-    cMf32::RecMemFree(g_cMf32_00806780,&this->field_002C);
+  if (this->field_002C != (ccFntTy *)0x0) {
+    cMf32::RecMemFree(g_cMf32_00806780,(uint *)&this->field_002C);
     /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
     this_00 = extraout_ECX;
   }
-  if ((uint *)this->field_0030 != (uint *)0x0) {
+  if (this->field_0030 != (ccFntTy *)0x0) {
     ccFntTy::operator(this_00,(uint *)this->field_0030);
-    this->field_0030 = 0;
+    this->field_0030 = (ccFntTy *)0x0;
     /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
     this_00 = extraout_ECX_00;
   }
@@ -41,9 +41,9 @@ void __thiscall StartSystemTy::sub_005DB2A0(StartSystemTy *this)
   SpriteClassTy::CloseSprite((SpriteClassTy *)&this->field_038D);
   SpriteClassTy::CloseSprite((SpriteClassTy *)&this->field_041E);
   SpriteClassTy::CloseSprite((SpriteClassTy *)&this->field_04AF);
-  if (-1 < (int)this->field_02EC) {
+  if (-1 < this->field_02EC) {
     FUN_006b3bb0(DAT_008075a8,this->field_02EC);
-    this->field_02EC = 0xffffffff;
+    this->field_02EC = -1;
   }
   if (this->field_02F0 != (AnonPointee_StartSystemTy_02F0 *)0x0) {
     FreeAndNull(&this->field_02F0);
@@ -56,9 +56,9 @@ void __thiscall StartSystemTy::sub_005DB2A0(StartSystemTy *this)
     FUN_006b5570((AnonShape_006B5570_4D68B99C *)this->field_0548);
   }
   this->field_0548 = 0;
-  if (-1 < (int)this->field_0540) {
+  if (-1 < this->field_0540) {
     FUN_006b3bb0(DAT_008075a8,this->field_0540);
-    this->field_0540 = 0xffffffff;
+    this->field_0540 = -1;
   }
   if (this->field_0544 != (AnonPointee_StartSystemTy_0544 *)0x0) {
     FreeAndNull(&this->field_0544);
@@ -68,16 +68,16 @@ void __thiscall StartSystemTy::sub_005DB2A0(StartSystemTy *this)
   }
   SpriteClassTy::CloseSprite((SpriteClassTy *)&this->field_055C);
   SpriteClassTy::CloseSprite((SpriteClassTy *)&this->field_05ED);
-  if (-1 < (int)this->field_0558) {
+  if (-1 < this->field_0558) {
     FUN_006b3bb0(DAT_008075a8,this->field_0558);
-    this->field_0558 = 0xffffffff;
+    this->field_0558 = -1;
   }
   if (this->field_0682 != (AnonPointee_StartSystemTy_0682 *)0x0) {
     FreeAndNull(&this->field_0682);
   }
-  if (-1 < (int)this->field_0554) {
+  if (-1 < this->field_0554) {
     FUN_006b3bb0(DAT_008075a8,this->field_0554);
-    this->field_0554 = 0xffffffff;
+    this->field_0554 = -1;
   }
   if ((AnonShape_006B5570_4D68B99C *)this->field_0686 != (AnonShape_006B5570_4D68B99C *)0x0) {
     FUN_006b5570((AnonShape_006B5570_4D68B99C *)this->field_0686);

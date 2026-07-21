@@ -71,10 +71,10 @@ void __thiscall CPanelTy::SetControlBoatSI(CPanelTy *this)
   iVar8 = Library::MSVCRT::__setjmp3(local_b8.jumpBuffer,0);
   if (iVar8 != 0) {
     g_currentExceptionFrame = local_b8.previous;
-    iVar9 = ReportDebugMessage(s_E____titans_Andrey_cpanel2_cpp_007c2524,0x29d,0,iVar8,&DAT_007a4ccc
-                               ,s_CPanelTy__SetControlBoatSI_007c2640);
+    iVar9 = ReportDebugMessage("E:\\__titans\\Andrey\\cpanel2.cpp",0x29d,0,iVar8,"%s"
+                               ,"CPanelTy::SetControlBoatSI");
     if (iVar9 == 0) {
-      RaiseInternalException(iVar8,0,s_E____titans_Andrey_cpanel2_cpp_007c2524,0x29d);
+      RaiseInternalException(iVar8,0,"E:\\__titans\\Andrey\\cpanel2.cpp",0x29d);
       return;
     }
     STDebugBreak(); /* noreturn in standalone pseudocode */
@@ -214,13 +214,13 @@ LAB_00503776:
     uVar22 = 0;
     uVar19 = 0;
     iVar9 = 0;
-    pcVar5 = s_BUT_SHOWUPDMSK_007c2670;
+    pcVar5 = "BUT_SHOWUPDMSK";
     iVar8 = 0x3b04;
     uVar16 = 0;
     sVar15 = 2;
     uVar14 = 0xb118;
     uVar7 = 0xb117;
-    pCVar6 = thunk_FUN_00571240(s_BUT_SHOWUPD_007c23a4,0);
+    pCVar6 = thunk_FUN_00571240("BUT_SHOWUPD",0);
     uVar7 = CreateBut(this_00,3,0,(uint)(this_00->field_0BA0 != '\0'),0x40,0x2f,6,pCVar6,uVar7,
                       uVar14,sVar15,uVar16,iVar8,pcVar5,iVar9,uVar19,uVar22);
     this_00->field_0970 = uVar7;
@@ -229,13 +229,13 @@ LAB_00503776:
     uVar22 = 0;
     uVar19 = 0;
     iVar9 = 0;
-    pcVar5 = s_BUT_SHOWUPDMSK_007c2670;
+    pcVar5 = "BUT_SHOWUPDMSK";
     iVar8 = 0x3b05;
     uVar16 = 0;
     sVar15 = 2;
     uVar14 = 0xb11a;
     uVar7 = 0xb119;
-    pCVar6 = thunk_FUN_00571240(s_BUT_SHOWFRM_007c2394,0);
+    pCVar6 = thunk_FUN_00571240("BUT_SHOWFRM",0);
     uVar7 = CreateBut(this_00,3,0,(uint)(this_00->field_0BA0 != '\0'),0x40,0x2f,6,pCVar6,uVar7,
                       uVar14,sVar15,uVar16,iVar8,pcVar5,iVar9,uVar19,uVar22);
     this_00->field_0970 = uVar7;
@@ -254,28 +254,28 @@ LAB_00503776:
         iVar8 = 0xf;
         local_18 = 0x6a;
         local_20 = 0xf;
-        pcVar5 = s_BUT_BEHREPAIR0_007c2350;
+        pcVar5 = "BUT_BEHREPAIR0";
         break;
       case 1:
         iVar9 = 0x7a;
         iVar8 = 0x14;
         local_18 = 0x7a;
         local_20 = 0x14;
-        pcVar5 = s_BUT_BEHREPAIR20_007c233c;
+        pcVar5 = "BUT_BEHREPAIR20";
         break;
       case 2:
         iVar9 = 0x98;
         iVar8 = 0x14;
         local_18 = 0x98;
         local_20 = 0x14;
-        pcVar5 = s_BUT_BEHREPAIR50_007c2328;
+        pcVar5 = "BUT_BEHREPAIR50";
         break;
       case 3:
         iVar9 = 0x98;
         iVar8 = 0xf;
         local_18 = 0x98;
         local_20 = 0xf;
-        pcVar5 = s_BUT_BEHREPAIR80_007c2314;
+        pcVar5 = "BUT_BEHREPAIR80";
         break;
       default:
         goto switchD_0050389f_default;
@@ -284,7 +284,7 @@ LAB_00503776:
 switchD_0050389f_default:
       iVar20 = 1;
       iVar10 = local_8;
-      pCVar6 = thunk_FUN_00571240(s_BUT_BEHRMSK_007c2660,0);
+      pCVar6 = thunk_FUN_00571240("BUT_BEHRMSK",0);
       pCVar6 = FUN_006f2c00(pCVar6,iVar20,iVar10);
       if (this_00->field_0BA0 == '\0') {
         uVar13 = 0;

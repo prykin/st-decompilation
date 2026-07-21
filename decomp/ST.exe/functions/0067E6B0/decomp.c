@@ -24,17 +24,17 @@ LPSTR __cdecl GetOpponentNameDB(cMf32 *param_1)
   iVar2 = Library::MSVCRT::__setjmp3(local_48.jumpBuffer,0);
   if (iVar2 != 0) {
     g_currentExceptionFrame = local_48.previous;
-    iVar4 = ReportDebugMessage(s_E____titans_ai_ai_plr_d_cpp_007d2fa4,0x1fd,0,iVar2,&DAT_007a4ccc,
-                               s_GetOpponentNameDB_007d30c8);
+    iVar4 = ReportDebugMessage("E:\\__titans\\ai\\ai_plr_d.cpp",0x1fd,0,iVar2,"%s",
+                               "GetOpponentNameDB");
     if (iVar4 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    RaiseInternalException(iVar2,0,s_E____titans_ai_ai_plr_d_cpp_007d2fa4,0x1fe);
+    RaiseInternalException(iVar2,0,"E:\\__titans\\ai\\ai_plr_d.cpp",0x1fe);
     return (LPSTR)0x0;
   }
   if (param_1 == (cMf32 *)0x0) {
     RaiseInternalException
-              (-0x34,g_overwriteContext_007ED77C,s_E____titans_ai_ai_plr_d_cpp_007d2fa4,0x1fa);
+              (-0x34,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_plr_d.cpp",0x1fa);
   }
   text = PTR_s_OPPONENT_0079d728;
   iVar2 = 0;

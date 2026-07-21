@@ -120,12 +120,12 @@ void __thiscall PrividerTy::SetMode(PrividerTy *this,char param_1,char param_2)
     return;
   }
   g_currentExceptionFrame = local_4c.previous;
-  iVar4 = ReportDebugMessage(s_E____titans_Start_prov_obj_cpp_007ccd28,0x11e,0,iVar3,&DAT_007a4ccc,
-                             s_PrividerTy__SetMode_007cce00);
+  iVar4 = ReportDebugMessage("E:\\__titans\\Start\\prov_obj.cpp",0x11e,0,iVar3,"%s",
+                             "PrividerTy::SetMode");
   if (iVar4 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  RaiseInternalException(iVar3,0,s_E____titans_Start_prov_obj_cpp_007ccd28,0x11e);
+  RaiseInternalException(iVar3,0,"E:\\__titans\\Start\\prov_obj.cpp",0x11e);
   return;
 }
 

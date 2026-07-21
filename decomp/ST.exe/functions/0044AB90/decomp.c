@@ -50,8 +50,8 @@ int STAllPlayersC::CheckTmps
   }
   else {
     if (tempGroup != 1) {
-      iVar2 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0x2fde,0,0,&DAT_007a4ccc,
-                                 s_STAllPlayersC__CheckTmps_invalid_007a88bc);
+      iVar2 = ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0x2fde,0,0,"%s",
+                                 "STAllPlayersC::CheckTmps invalid panel number");
       if (iVar2 == 0) {
         return -1;
       }
@@ -176,8 +176,8 @@ LAB_0044ae50:
   }
   else if (objectType == 0x172) goto LAB_0044ae50;
 LAB_0044ae21:
-  iVar2 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0x3019,0,0,&DAT_007a4ccc,
-                             s_STAllPlayersC__CheckTmps_invalid_007a888c);
+  iVar2 = ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0x3019,0,0,"%s",
+                             "STAllPlayersC::CheckTmps invalid type");
   if (iVar2 == 0) {
     return -1;
   }

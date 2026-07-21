@@ -245,10 +245,10 @@ PlrDataPack(AnonShape_0067D3B0_A3AACF30 *param_1,undefined4 *param_2,int param_3
   if (local_8 != (undefined4 *)0x0) {
     FreeAndNull(&local_8);
   }
-  iVar7 = ReportDebugMessage(s_E____titans_ai_ai_plr_d_cpp_007d2fa4,0xda,0,(int)piVar3,&DAT_007a4ccc
-                             ,s_PlrDataPack_007d2fc8);
+  iVar7 = ReportDebugMessage("E:\\__titans\\ai\\ai_plr_d.cpp",0xda,0,(int)piVar3,"%s"
+                             ,"PlrDataPack");
   if (iVar7 == 0) {
-    RaiseInternalException((int)piVar3,0,s_E____titans_ai_ai_plr_d_cpp_007d2fa4,0xdb);
+    RaiseInternalException((int)piVar3,0,"E:\\__titans\\ai\\ai_plr_d.cpp",0xdb);
     return (undefined4 *)0x0;
   }
   STDebugBreak(); /* noreturn in standalone pseudocode */

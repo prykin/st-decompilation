@@ -41,8 +41,8 @@ uint * __thiscall cLoadingTy::new(cLoadingTy *this,uint param_1,char *text,uint 
   iVar3 = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0);
   if (iVar3 != 0) {
     g_currentExceptionFrame = local_50.previous;
-    iVar6 = ReportDebugMessage(s_E____titans_grig_loading_cpp_007c8f0c,0x3a,0,iVar3,&DAT_007a4ccc,
-                               s_cLoadingTy__new_007c8ed4);
+    iVar6 = ReportDebugMessage("E:\\__titans\\grig\\loading.cpp",0x3a,0,iVar3,"%s",
+                               "cLoadingTy::new");
     if (iVar6 == 0) {
       if (local_8 != (uint *)0x0) {
         cMf32::RecMemFree(g_cMf32_00806780,local_8);
@@ -52,7 +52,7 @@ uint * __thiscall cLoadingTy::new(cLoadingTy *this,uint param_1,char *text,uint 
         }
         FreeAndNull(&local_8);
       }
-      RaiseInternalException(iVar3,0,s_E____titans_grig_loading_cpp_007c8f0c,0x41);
+      RaiseInternalException(iVar3,0,"E:\\__titans\\grig\\loading.cpp",0x41);
       return (uint *)0x0;
     }
     STDebugBreak(); /* noreturn in standalone pseudocode */
@@ -62,7 +62,7 @@ uint * __thiscall cLoadingTy::new(cLoadingTy *this,uint param_1,char *text,uint 
   if (DAT_0080874e == '\x01') {
     local_c = 0;
     uVar4 = 0xffffffff;
-    pcVar10 = s_LOADINGW_007c8ee8;
+    pcVar10 = "LOADINGW";
     do {
       pcVar9 = pcVar10;
       if (uVar4 == 0) break;
@@ -96,18 +96,18 @@ uint * __thiscall cLoadingTy::new(cLoadingTy *this,uint param_1,char *text,uint 
     local_c = uVar4;
     if (uVar4 == 0) {
       RaiseInternalException
-                (-1,g_overwriteContext_007ED77C,s_E____titans_grig_loading_cpp_007c8f0c,0x24);
+                (-1,g_overwriteContext_007ED77C,"E:\\__titans\\grig\\loading.cpp",0x24);
     }
     iVar3 = 1;
     bVar11 = 0;
     uVar8 = Library::MSVCRT::FUN_0072e6c0();
-    text_00 = FUN_006f2c00(s_LOADINGW_007c8ee8,1,uVar8 % uVar4 + 1);
+    text_00 = FUN_006f2c00("LOADINGW",1,uVar8 % uVar4 + 1);
   }
   else {
     if (DAT_0080874e == '\x02') {
       local_c = 0;
       uVar4 = 0xffffffff;
-      pcVar10 = s_LOADINGB_007c8ef4;
+      pcVar10 = "LOADINGB";
       do {
         pcVar9 = pcVar10;
         if (uVar4 == 0) break;
@@ -140,17 +140,17 @@ uint * __thiscall cLoadingTy::new(cLoadingTy *this,uint param_1,char *text,uint 
       bVar11 = 0;
       uVar4 = Library::MSVCRT::FUN_0072e6c0();
       uVar4 = uVar4 % local_c;
-      pcVar10 = s_LOADINGB_007c8ef4;
+      pcVar10 = "LOADINGB";
     }
     else {
       if (DAT_0080874e != '\x03') {
         RaiseInternalException
-                  (-1,g_overwriteContext_007ED77C,s_E____titans_grig_loading_cpp_007c8f0c,0x2f);
+                  (-1,g_overwriteContext_007ED77C,"E:\\__titans\\grig\\loading.cpp",0x2f);
         goto LAB_00554324;
       }
       local_c = 0;
       uVar4 = 0xffffffff;
-      pcVar10 = s_LOADINGS_007c8f00;
+      pcVar10 = "LOADINGS";
       do {
         pcVar9 = pcVar10;
         if (uVar4 == 0) break;
@@ -183,7 +183,7 @@ uint * __thiscall cLoadingTy::new(cLoadingTy *this,uint param_1,char *text,uint 
       bVar11 = 0;
       uVar4 = Library::MSVCRT::FUN_0072e6c0();
       uVar4 = uVar4 % local_c;
-      pcVar10 = s_LOADINGS_007c8f00;
+      pcVar10 = "LOADINGS";
     }
     text_00 = FUN_006f2c00(pcVar10,1,uVar4 + 1);
   }

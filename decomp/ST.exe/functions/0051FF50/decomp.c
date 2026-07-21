@@ -69,15 +69,15 @@ void __thiscall InfocPanelTy::InitInfocPanel(InfocPanelTy *this)
     uVar10 = 3;
     uVar9 = 0x40;
     DAT_00801698 = local_10;
-    pCVar3 = thunk_FUN_00571240(s_BKG_INFOCENTERW_007c3f18,0);
+    pCVar3 = thunk_FUN_00571240("BKG_INFOCENTERW",0);
     SpecPanelTy::InitPanel
               ((SpecPanelTy *)this_00,pCVar3,uVar9,uVar10,iVar6,iVar13,UVar14,uVar15,uVar16);
     puVar4 = Library::Ourlib::MFRLOAD::mfRLoad
-                       (DAT_00806794,CASE_B,s_BUT_CHPLAYER_007c3f08,0xffffffff,0,1,0,
+                       (DAT_00806794,CASE_B,"BUT_CHPLAYER",0xffffffff,0,1,0,
                         (undefined4 *)0x0);
     this_00->field_03C4 = puVar4;
     puVar4 = Library::Ourlib::MFRLOAD::mfRLoad
-                       (DAT_00806794,CASE_B,s_GAME_ALLY_007c3efc,0xffffffff,0,1,0,(undefined4 *)0x0)
+                       (DAT_00806794,CASE_B,"GAME_ALLY",0xffffffff,0,1,0,(undefined4 *)0x0)
     ;
     this_00->field_03C8 = puVar4;
     puVar17 = (undefined4 *)0x0;
@@ -85,11 +85,11 @@ void __thiscall InfocPanelTy::InitInfocPanel(InfocPanelTy *this)
     iVar6 = 1;
     bVar12 = 0;
     uVar11 = 0xffffffff;
-    pCVar3 = thunk_FUN_00571240(s_IND_PNT_007c2078,0);
+    pCVar3 = thunk_FUN_00571240("IND_PNT",0);
     puVar4 = Library::Ourlib::MFRLOAD::mfRLoad
                        (DAT_00806794,CASE_B,pCVar3,uVar11,bVar12,iVar6,iVar13,puVar17);
     this_00->field_03CC = puVar4;
-    pcVar5 = (ccFntTy *)ccFntTy::operator(this_01,0x19d,DAT_00806790,s_MONEY_FONT_007c211c,0);
+    pcVar5 = (ccFntTy *)ccFntTy::operator(this_01,0x19d,DAT_00806790,"MONEY_FONT",0);
     this_00->field_03D5 = pcVar5;
     pcVar5->field_0058 = 1;
     pcVar5->field_005C = 0;
@@ -202,12 +202,12 @@ void __thiscall InfocPanelTy::InitInfocPanel(InfocPanelTy *this)
     return;
   }
   g_currentExceptionFrame = local_b0.previous;
-  iVar13 = ReportDebugMessage(s_E____titans_Andrey_infocen_cpp_007c3eb0,0x3e,0,iVar6,&DAT_007a4ccc,
-                              s_InfocPanelTy__InitInfocPanel_007c3ed8);
+  iVar13 = ReportDebugMessage("E:\\__titans\\Andrey\\infocen.cpp",0x3e,0,iVar6,"%s",
+                              "InfocPanelTy::InitInfocPanel");
   if (iVar13 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  RaiseInternalException(iVar6,0,s_E____titans_Andrey_infocen_cpp_007c3eb0,0x3e);
+  RaiseInternalException(iVar6,0,"E:\\__titans\\Andrey\\infocen.cpp",0x3e);
   return;
 }
 

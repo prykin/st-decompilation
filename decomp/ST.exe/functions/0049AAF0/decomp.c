@@ -51,10 +51,10 @@ undefined4 __thiscall STGroupBoatC::GrpAttack(STGroupBoatC *this,int param_1)
     if (iVar6 == -0x5001fff7) {
       return 0;
     }
-    iVar9 = ReportDebugMessage(s_E____titans_wlad_to_grpb_cpp_007abe3c,0x701,0,iVar6,&DAT_007a4ccc,
-                               s_STGroupBoatC__GrpAttack_007abf58);
+    iVar9 = ReportDebugMessage("E:\\__titans\\wlad\\to_grpb.cpp",0x701,0,iVar6,"%s",
+                               "STGroupBoatC::GrpAttack");
     if (iVar9 == 0) {
-      RaiseInternalException(iVar6,0,s_E____titans_wlad_to_grpb_cpp_007abe3c,0x702);
+      RaiseInternalException(iVar6,0,"E:\\__titans\\wlad\\to_grpb.cpp",0x702);
       return 0xffffffff;
     }
     STDebugBreak(); /* noreturn in standalone pseudocode */
@@ -63,12 +63,12 @@ undefined4 __thiscall STGroupBoatC::GrpAttack(STGroupBoatC *this,int param_1)
     DArrayDestroy((DArrayTy *)local_8->field_020E);
     pSVar12->field_020E = 0;
     pSVar12->field_0212 = 0;
-    FreeAndNull((void **)&pSVar12->field_021E);
+    FreeAndNull(&pSVar12->field_021E);
     param_1 = 0;
   }
   pSVar15 = local_8;
   if (param_1 == 0) {
-    puVar13 = (undefined4 *)&pSVar12->field_0x89;
+    puVar13 = &pSVar12->field_0089;
     for (iVar6 = 0x15; iVar6 != 0; iVar6 = iVar6 + -1) {
       *puVar13 = 0;
       puVar13 = puVar13 + 1;
@@ -79,7 +79,7 @@ undefined4 __thiscall STGroupBoatC::GrpAttack(STGroupBoatC *this,int param_1)
       local_18 = *(int *)(local_8->field_00EF + 0xc);
       if (local_18 == 0) {
         RaiseInternalException
-                  (-0x5001fff7,g_overwriteContext_007ED77C,s_E____titans_wlad_to_grpb_cpp_007abe3c,
+                  (-0x5001fff7,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_grpb.cpp",
                    0x68f);
       }
       if ((DArrayTy *)pSVar15->field_020E != (DArrayTy *)0x0) {
@@ -95,15 +95,16 @@ undefined4 __thiscall STGroupBoatC::GrpAttack(STGroupBoatC *this,int param_1)
         uVar14 = 0;
         do {
           DArrayGetElement((DArrayTy *)pSVar12->field_00EF,uVar14,&local_2c);
-          /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+          /* ST_PSEUDO[raw_indirect_call,packed_or_unaligned_piece]: expected typed vtable/callback call with explicit __thiscall receiver; expected named packed member, bit extract/compose, or unaligned load */
           if ((local_2c < 8) &&
              ((((PTR_00802a38 == (STPlaySystemC *)0x0 ||
                 ((byte)(&DAT_008087e9)[(char)local_2c * 0x51] < 8)) &&
                (pSVar8 = STAllPlayersC::GetObjPtr
                                    (g_sTAllPlayers_007FA174,local_2c,CONCAT22(uStack_28,uStack_2a),
                                     (int)cStack_2b), pSVar12 = local_8, pSVar8 != (STGameObjC *)0x0)
-               ) && ((iVar6 = (*pSVar8->vtable[1].vfunc_24)(), pSVar12 = local_8, iVar6 == 1 &&
-                     (iVar6 = (*pSVar8->vtable[1].vfunc_20)((int)local_8->field_0024),
+               ) && ((iVar6 = (**(code **)&pSVar8->vtable[1].field_0x28)(), pSVar12 = local_8,
+                     iVar6 == 1 &&
+                     (iVar6 = (**(code **)&pSVar8->vtable[1].field_0x24)((int)local_8->field_0024),
                      pSVar12 = local_8, iVar6 == 1)))))) {
             Library::DKW::TBL::FUN_006ae140
                       ((uint *)local_8->field_020E,uVar14,(undefined4 *)&local_2c);
@@ -118,7 +119,7 @@ undefined4 __thiscall STGroupBoatC::GrpAttack(STGroupBoatC *this,int param_1)
       /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
       if (*(int *)(pSVar12->field_020E + 0xc) == 0) {
         RaiseInternalException
-                  (-0x5001fff7,g_overwriteContext_007ED77C,s_E____titans_wlad_to_grpb_cpp_007abe3c,
+                  (-0x5001fff7,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_grpb.cpp",
                    0x69d);
       }
     }
@@ -301,7 +302,7 @@ LAB_0049aec9:
         DArrayDestroy((DArrayTy *)pSVar12->field_020E);
         pSVar12->field_020E = 0;
         RaiseInternalException
-                  (-0x5001fff7,g_overwriteContext_007ED77C,s_E____titans_wlad_to_grpb_cpp_007abe3c,
+                  (-0x5001fff7,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_grpb.cpp",
                    0x6ce);
       }
     }
@@ -330,7 +331,7 @@ LAB_0049aec9:
       /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
       if (*(int *)(local_8->field_020E + 0xc) == 0) {
         RaiseInternalException
-                  (-0x5001fff7,g_overwriteContext_007ED77C,s_E____titans_wlad_to_grpb_cpp_007abe3c,
+                  (-0x5001fff7,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_grpb.cpp",
                    0x6e3);
       }
     }

@@ -37,8 +37,8 @@ VisibleClassTy::SetZoneMin1
       this = local_14;
       if (iVar4 != 0) {
         g_currentExceptionFrame = local_60.previous;
-        iVar4 = ReportDebugMessage(s_E____titans_grig_visible_cpp_007c92cc,0x35f,0,iVar4,
-                                   &DAT_007a4ccc,s_VisibleClassTy__SetZoneMin1_007c941c);
+        iVar4 = ReportDebugMessage("E:\\__titans\\grig\\visible.cpp",0x35f,0,iVar4,
+                                   "%s","VisibleClassTy::SetZoneMin1");
         if (iVar4 == 0) {
           return;
         }
@@ -49,8 +49,9 @@ VisibleClassTy::SetZoneMin1
       g_currentExceptionFrame = local_60.previous;
     }
     if ((param_7 & 0x1000) != 0) {
-      thunk_FUN_0055bb00(this,5,(short)param_1,(short)param_2,param_3,param_4,(char)param_5,param_6)
-      ;
+      SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00558C00::sub_0055BB00
+                ((AnonReceiver_00558C00 *)this,5,(short)param_1,(short)param_2,param_3,param_4,
+                 (char)param_5,param_6);
     }
     if ((param_7 & 0x20) != 0) {
       if (param_5 < 0) {
@@ -69,8 +70,8 @@ VisibleClassTy::SetZoneMin1
           do {
             if ((puVar6 == (undefined *)0x0) || (local_8[iVar7] != '\0')) {
               if ((iVar9 < 0) ||
-                 ((((int)this->field_0020 <= iVar9 || (iVar4 < 0)) ||
-                  ((int)this->field_0024 <= iVar4)))) {
+                 ((((int)this->field_0020 <= iVar9 || (iVar4 < 0)) || (this->field_0024 <= iVar4))))
+              {
                 bVar3 = false;
               }
               else {

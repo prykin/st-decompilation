@@ -65,12 +65,12 @@ HelpPanelTy::DrawObj(HelpPanelTy *this,int *param_1,int param_2,byte param_3,int
     return;
   }
   g_currentExceptionFrame = local_58.previous;
-  iVar6 = ReportDebugMessage(s_E____titans_Andrey_helppan_cpp_007c383c,0x3f3,0,iVar3,&DAT_007a4ccc,
-                             s_HelpPanelTy__DrawObj_007c3b88);
+  iVar6 = ReportDebugMessage("E:\\__titans\\Andrey\\helppan.cpp",0x3f3,0,iVar3,"%s",
+                             "HelpPanelTy::DrawObj");
   if (iVar6 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  RaiseInternalException(iVar3,0,s_E____titans_Andrey_helppan_cpp_007c383c,0x3f3);
+  RaiseInternalException(iVar3,0,"E:\\__titans\\Andrey\\helppan.cpp",0x3f3);
   return;
 }
 

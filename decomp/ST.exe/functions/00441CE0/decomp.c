@@ -64,10 +64,10 @@ void __thiscall STAllPlayersC::_MakeMDPairs(STAllPlayersC *this,char param_1)
   pDVar7 = local_24;
   if (iVar3 != 0) {
     g_currentExceptionFrame = local_e8.previous;
-    iVar8 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0x23c5,0,iVar3,&DAT_007a4ccc
-                               ,s_STAllPlayersC___MakeMDPairs_007a8098);
+    iVar8 = ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0x23c5,0,iVar3,"%s"
+                               ,"STAllPlayersC::_MakeMDPairs");
     if (iVar8 == 0) {
-      RaiseInternalException(iVar3,0,s_E____titans_wlad_to_allpl_cpp_007a6004,0x23c6);
+      RaiseInternalException(iVar3,0,"E:\\__titans\\wlad\\to_allpl.cpp",0x23c6);
       return;
     }
     STDebugBreak(); /* noreturn in standalone pseudocode */

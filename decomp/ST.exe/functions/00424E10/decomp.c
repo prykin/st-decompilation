@@ -1040,7 +1040,7 @@ LAB_004267d5:
   FUN_006a5e90((short *)local_a8);
   iVar22 = local_4c;
   RaiseInternalException
-            (local_4c,g_overwriteContext_007ED77C,s_E____titans_wlad_Td3dshad_cpp_007a5208,0x560);
+            (local_4c,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\Td3dshad.cpp",0x560);
   ExceptionList = local_14;
   return iVar22;
 LAB_00426637:

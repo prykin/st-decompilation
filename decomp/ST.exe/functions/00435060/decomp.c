@@ -93,8 +93,8 @@ void __thiscall STAllPlayersC::SelfCheckObjControl(STAllPlayersC *this)
           }
         }
         else {
-          iVar4 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0x10bb,0,0,
-                                     &DAT_007a4ccc,s_STAllPlayersC__SelfCheckObjContr_007a7334);
+          iVar4 = ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0x10bb,0,0,
+                                     "%s","STAllPlayersC::SelfCheckObjControl ACT_LEFT invalid game type");
           if (iVar4 != 0) {
             STDebugBreak(); /* noreturn in standalone pseudocode */
           }
@@ -208,8 +208,8 @@ LAB_004352f5:
       }
       else {
 LAB_00435287:
-        iVar6 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0x10ec,0,0,&DAT_007a4ccc
-                                   ,s_STAllPlayersC__SelfCheckObjContr_007a72e8);
+        iVar6 = ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0x10ec,0,0,"%s"
+                                   ,"STAllPlayersC::SelfCheckObjControl ACT_RIGHT invalid game type");
         /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
         iVar4 = extraout_EDX_06;
         if (iVar6 != 0) {

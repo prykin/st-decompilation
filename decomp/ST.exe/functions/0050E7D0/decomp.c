@@ -78,12 +78,12 @@ void __thiscall CPanelTy::SetControlObjSI(CPanelTy *this,char param_1)
   iVar5 = Library::MSVCRT::__setjmp3(local_10c.jumpBuffer,0);
   if (iVar5 != 0) {
     g_currentExceptionFrame = local_10c.previous;
-    iVar16 = ReportDebugMessage(s_E____titans_Andrey_cpanel4_cpp_007c2700,0x94e,0,iVar5,
-                                &DAT_007a4ccc,s_CPanelTy__SetControlObjSI_007c2920);
+    iVar16 = ReportDebugMessage("E:\\__titans\\Andrey\\cpanel4.cpp",0x94e,0,iVar5,
+                                "%s","CPanelTy::SetControlObjSI");
     if (iVar16 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    RaiseInternalException(iVar5,0,s_E____titans_Andrey_cpanel4_cpp_007c2700,0x94e);
+    RaiseInternalException(iVar5,0,"E:\\__titans\\Andrey\\cpanel4.cpp",0x94e);
     return;
   }
   if (param_1 != '\0') {
@@ -238,7 +238,7 @@ LAB_0050eb47:
     sVar19 = 0;
     uVar18 = 0xb13f;
     uVar8 = 0xb12f;
-    pCVar7 = thunk_FUN_00571240(s_BUT_SMALL_007c23b4,0);
+    pCVar7 = thunk_FUN_00571240("BUT_SMALL",0);
     uVar13 = (uint)(this_00->field_0BFC != '\0');
   }
   else {
@@ -257,7 +257,7 @@ LAB_0050eb47:
       sVar19 = 0;
       uVar18 = 0xb13f;
       uVar8 = 0xb12f;
-      pCVar7 = thunk_FUN_00571240(s_BUT_SMALL_007c23b4,0);
+      pCVar7 = thunk_FUN_00571240("BUT_SMALL",0);
       uVar13 = (uint)(this_00->field_0BFC != '\0');
       break;
     case CASE_54:
@@ -395,7 +395,7 @@ LAB_0050edc5:
       sVar19 = 0;
       uVar18 = 0xb13f;
       uVar8 = 0xb12f;
-      pCVar7 = thunk_FUN_00571240(s_BUT_SMALL_007c23b4,0);
+      pCVar7 = thunk_FUN_00571240("BUT_SMALL",0);
       uVar13 = (uint)(this_00->field_0BFC != '\0');
       break;
     default:
@@ -407,41 +407,41 @@ LAB_0050edc5:
         uVar13 = 0;
       }
       else {
-        uVar13 = (uint)(byte)this_00->field_0xc0b;
+        uVar13 = (uint)(byte)this_00->field_0C0B;
       }
-      uVar8 = CreateBut(this_00,5,0,uVar13,0x1a,0x5d,1,s_BUT_MINUSSI_007c2300,0xb211,0xb212,0,0,0,
+      uVar8 = CreateBut(this_00,5,0,uVar13,0x1a,0x5d,1,"BUT_MINUSSI",0xb211,0xb212,0,0,0,
                         (char *)0x0,0,0,0);
       this_00->field_0B1F = uVar8;
       if (this_00->field_0BFC == '\0') {
         uVar13 = 0;
       }
       else {
-        uVar13 = (uint)(byte)this_00->field_0xc0c;
+        uVar13 = (uint)(byte)this_00->field_0C0C;
       }
-      uVar8 = CreateBut(this_00,5,0,uVar13,0xba,0x5d,1,s_BUT_PLUSSI_007c22e4,0xb213,0xb214,0,0,0,
+      uVar8 = CreateBut(this_00,5,0,uVar13,0xba,0x5d,1,"BUT_PLUSSI",0xb213,0xb214,0,0,0,
                         (char *)0x0,0,0,0);
-      *(undefined4 *)&this_00->field_0xb23 = uVar8;
+      this_00->field_0B23 = uVar8;
       g_currentExceptionFrame = local_10c.previous;
       return;
     case CASE_6D:
       uVar8 = CreateBut(this_00,5,0,(uint)(this_00->field_0BFC != '\0'),0x2a,0x7b,1,
-                        s_BUT_MINUSSI_007c2300,0xb211,0xb212,0,0,0,(char *)0x0,0,0,0);
+                        "BUT_MINUSSI",0xb211,0xb212,0,0,0,(char *)0x0,0,0,0);
       this_00->field_0B1F = uVar8;
       uVar8 = CreateBut(this_00,5,0,(uint)(this_00->field_0BFC != '\0'),0x45,0x7b,1,
-                        s_BUT_PLUSSI_007c22e4,0xb213,0xb214,0,0,0,(char *)0x0,0,0,0);
-      *(undefined4 *)&this_00->field_0xb23 = uVar8;
+                        "BUT_PLUSSI",0xb213,0xb214,0,0,0,(char *)0x0,0,0,0);
+      this_00->field_0B23 = uVar8;
       uVar8 = CreateBut(this_00,5,0,(uint)(this_00->field_0BFC != '\0'),0x8f,0x7b,1,
-                        s_BUT_MINUSSI_007c2300,0xb215,0xb216,0,0,0,(char *)0x0,0,0,0);
-      *(undefined4 *)&this_00->field_0xb27 = uVar8;
+                        "BUT_MINUSSI",0xb215,0xb216,0,0,0,(char *)0x0,0,0,0);
+      this_00->field_0B27 = uVar8;
       uVar8 = CreateBut(this_00,5,0,(uint)(this_00->field_0BFC != '\0'),0xaa,0x7b,1,
-                        s_BUT_PLUSSI_007c22e4,0xb217,0xb218,0,0,0,(char *)0x0,0,0,0);
-      *(undefined4 *)&this_00->field_0xb2b = uVar8;
+                        "BUT_PLUSSI",0xb217,0xb218,0,0,0,(char *)0x0,0,0,0);
+      this_00->field_0B2B = uVar8;
       uVar8 = CreateBut(this_00,5,0,(uint)(this_00->field_0BFC != '\0'),0x17,100,0,(char *)0x0,
                         0xb219,0xb21a,0,0,0,(char *)0x0,0x11,10,0);
-      *(undefined4 *)&this_00->field_0xb2f = uVar8;
+      this_00->field_0B2F = uVar8;
       uVar8 = CreateBut(this_00,5,0,(uint)(this_00->field_0BFC != '\0'),0xc5,100,0,(char *)0x0,
                         0xb21b,0xb21c,0,0,0,(char *)0x0,0x11,10,0);
-      *(undefined4 *)&this_00->field_0xb33 = uVar8;
+      this_00->field_0B33 = uVar8;
       g_currentExceptionFrame = local_10c.previous;
       return;
     }

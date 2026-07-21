@@ -22,7 +22,7 @@ undefined4 __thiscall CGenerate::CreateMap(CGenerate *this)
   char *pcVar12;
   InternalExceptionFrame local_64;
   int local_20;
-  undefined4 local_1c;
+  uint local_1c;
   undefined4 local_18;
   CGenerate *local_10;
   undefined4 local_c;
@@ -36,8 +36,8 @@ undefined4 __thiscall CGenerate::CreateMap(CGenerate *this)
   pCVar3 = local_10;
   if (iVar4 != 0) {
     g_currentExceptionFrame = local_64.previous;
-    iVar4 = ReportDebugMessage(s_E____titans_Maps_generate_cpp_007d864c,0x72,0,iVar4,&DAT_007a4ccc,
-                               s_CGenerate__CreateMap_007d8670);
+    iVar4 = ReportDebugMessage("E:\\__titans\\Maps\\generate.cpp",0x72,0,iVar4,"%s",
+                               "CGenerate::CreateMap");
     if (iVar4 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
@@ -69,7 +69,7 @@ undefined4 __thiscall CGenerate::CreateMap(CGenerate *this)
     pcVar12 = pcVar12 + 1;
   }
   local_8 = (Global_sub_00693710_param_1Enum *)0x0;
-  cMf32::RecGet(local_10->field_0234,0xc,s_TEXTURE_DSCR_007cd130,(int *)&local_8,1);
+  cMf32::RecGet(local_10->field_0234,0xc,"TEXTURE_DSCR",(int *)&local_8,1);
   thunk_FUN_00693710(*local_8);
   cMf32::RecMemFree(pCVar3->field_0234,(uint *)&local_8);
   pcVar5 = (cMf32 *)Library::Ourlib::MF32INT::FUN_006f0ec0(0x345,&pCVar3->field_0x20,1,0,0);

@@ -36,7 +36,7 @@ void __thiscall OptPanelTy::ShiftControls(OptPanelTy *this,int param_1)
     if (param_1 == 0) {
       sVar2 = -sVar2;
     }
-    this->field_002E = sVar2;
+    *(short *)&this->field_0x2e = sVar2;
     local_4c.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_4c;
     local_8 = this;
@@ -83,12 +83,12 @@ void __thiscall OptPanelTy::ShiftControls(OptPanelTy *this,int param_1)
       return;
     }
     g_currentExceptionFrame = local_4c.previous;
-    iVar4 = ReportDebugMessage(s_E____titans_Andrey_optpanel_cpp_007c70a0,0x156,0,iVar5,
-                               &DAT_007a4ccc,s_OptPanelTy__ShiftControls_007c7224);
+    iVar4 = ReportDebugMessage("E:\\__titans\\Andrey\\optpanel.cpp",0x156,0,iVar5,
+                               "%s","OptPanelTy::ShiftControls");
     if (iVar4 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    RaiseInternalException(iVar5,0,s_E____titans_Andrey_optpanel_cpp_007c70a0,0x156);
+    RaiseInternalException(iVar5,0,"E:\\__titans\\Andrey\\optpanel.cpp",0x156);
   }
   return;
 }

@@ -12,15 +12,15 @@ char * __cdecl FUN_00529590(Global_sub_00529590_param_1Enum param_1,int param_2)
   switch(param_1) {
   case CASE_1:
     if (DAT_0080874e == '\x03') {
-      return s_BUT_SISTOP_007c5200;
+      return "BUT_SISTOP";
     }
     switch(param_2) {
     case 9:
-      return s_BUT_STOPWORM_007c51f0;
+      return "BUT_STOPWORM";
     default:
-      return s_BUT_DEFENCE_007c51bc;
+      return "BUT_DEFENCE";
     case 0x15:
-      return s_BUT_STOPDOLPH_007c51e0;
+      return "BUT_STOPDOLPH";
     case 0x36:
     case 0x3d:
     case 0x3e:
@@ -32,17 +32,17 @@ char * __cdecl FUN_00529590(Global_sub_00529590_param_1Enum param_1,int param_2)
     case 0x4b:
     case 0x4d:
     case 0x51:
-      return s_BUT_STOPCONSTR_007c51cc;
+      return "BUT_STOPCONSTR";
     }
   case CASE_2:
     if (DAT_0080874e == '\x03') {
-      return s_BUT_SIMOVE_007c51ac;
+      return "BUT_SIMOVE";
     }
     switch(param_2) {
     case 9:
-      return s_BUT_MOVEWORM_007c519c;
+      return "BUT_MOVEWORM";
     case 0x15:
-      return s_BUT_MOVEDOLPH_007c518c;
+      return "BUT_MOVEDOLPH";
     case 0x36:
     case 0x3d:
     case 0x3e:
@@ -54,252 +54,252 @@ char * __cdecl FUN_00529590(Global_sub_00529590_param_1Enum param_1,int param_2)
     case 0x4b:
     case 0x4d:
     case 0x51:
-      return s_BUT_MOVECONSTR_007c5178;
+      return "BUT_MOVECONSTR";
     }
   default:
-    pcVar1 = s_BUT_MOVEBOAT_007c4aa4;
+    pcVar1 = "BUT_MOVEBOAT";
     break;
   case CASE_3:
     if (DAT_0080874e == '\x03') {
-      return s_BUT_SIATTACK_007c5168;
+      return "BUT_SIATTACK";
     }
     if (param_2 != 9) {
-      return s_BUT_ATTACK_007c5158;
+      return "BUT_ATTACK";
     }
-    return s_BUT_ATTACKWORM_007c5144;
+    return "BUT_ATTACKWORM";
   case CASE_4:
-    return s_BUT_RETREPAIR_007c5134;
+    return "BUT_RETREPAIR";
   case CASE_5:
-    pcVar1 = s_BUT_SIGUARD_007c5124;
+    pcVar1 = "BUT_SIGUARD";
     if (DAT_0080874e != '\x03') {
-      return s_BUT_GUARD_007c5118;
+      return "BUT_GUARD";
     }
     break;
   case CASE_6:
-    pcVar1 = s_BUT_SIPATROL_007c5108;
+    pcVar1 = "BUT_SIPATROL";
     if (DAT_0080874e != '\x03') {
-      return s_BUT_PATROL_007c50f8;
+      return "BUT_PATROL";
     }
     break;
   case CASE_7:
-    pcVar1 = s_BUT_SICAPTURE_007c50e8;
+    pcVar1 = "BUT_SICAPTURE";
     if (DAT_0080874e != '\x03') {
-      return s_BUT_CAPTURE_007c50d8;
+      return "BUT_CAPTURE";
     }
     break;
   case CASE_8:
     if (param_2 == 5) {
-      return s_BUT_SETMINE_007c5088;
+      return "BUT_SETMINE";
     }
     if (param_2 != 0xb) {
       if (param_2 != 0x11) {
-        return s_BUT_ZAPADLO_007c50b8;
+        return "BUT_ZAPADLO";
       }
-      return s_BUT_SETSNARE_007c50a8;
+      return "BUT_SETSNARE";
     }
-    return s_BUT_SETLIGHT_007c5098;
+    return "BUT_SETLIGHT";
   case CASE_9:
-    return s_BUT_ATTACKDC_007c50c8;
+    return "BUT_ATTACKDC";
   case CASE_A:
-    pcVar1 = s_BUT_SIPARSHELL_007c5074;
+    pcVar1 = "BUT_SIPARSHELL";
     if (DAT_0080874e != '\x03') {
-      return s_BUT_ATTACKRAYS_007c5060;
+      return "BUT_ATTACKRAYS";
     }
     break;
   case CASE_B:
-    return s_BUT_PHANTOMON_007c5050;
+    return "BUT_PHANTOMON";
   case CASE_C:
-    return s_BUT_PHANTOMOFF_007c503c;
+    return "BUT_PHANTOMOFF";
   case CASE_D:
-    return s_BUT_REPSUBM_007c502c;
+    return "BUT_REPSUBM";
   case CASE_E:
-    pcVar1 = s_BUT_SIBUILD_007c501c;
+    pcVar1 = "BUT_SIBUILD";
     if (DAT_0080874e != '\x03') {
-      return s_BUT_BUILD_007c5010;
+      return "BUT_BUILD";
     }
     break;
   case CASE_F:
-    return s_BUT_COMPLETEBUILD_007c4ff8;
+    return "BUT_COMPLETEBUILD";
   case CASE_10:
-    return s_BUT_DISMANTLING_007c4fe4;
+    return "BUT_DISMANTLING";
   case CASE_11:
-    pcVar1 = s_BUT_SIRCLOAD_007c4fd4;
+    pcVar1 = "BUT_SIRCLOAD";
     if (DAT_0080874e != '\x03') {
-      return s_BUT_RCLOAD_007c4fc4;
+      return "BUT_RCLOAD";
     }
     break;
   case CASE_12:
-    pcVar1 = s_BUT_SIRCUNLOAD_007c4fb0;
+    pcVar1 = "BUT_SIRCUNLOAD";
     if (DAT_0080874e != '\x03') {
-      return s_BUT_RCUNLOAD_007c4fa0;
+      return "BUT_RCUNLOAD";
     }
     break;
   case CASE_13:
-    pcVar1 = s_BUT_SIREPLOAD_007c4f90;
+    pcVar1 = "BUT_SIREPLOAD";
     if (DAT_0080874e != '\x03') {
-      return s_BUT_REPLOAD_007c4f80;
+      return "BUT_REPLOAD";
     }
     break;
   case CASE_14:
-    pcVar1 = s_BUT_SIREPUNLOAD_007c4f6c;
+    pcVar1 = "BUT_SIREPUNLOAD";
     if (DAT_0080874e != '\x03') {
-      return s_BUT_REPUNLOAD_007c4f5c;
+      return "BUT_REPUNLOAD";
     }
     break;
   case CASE_15:
-    return s_BUT_RISE_007c4f50;
+    return "BUT_RISE";
   case CASE_16:
-    return s_BUT_FALL_007c4f44;
+    return "BUT_FALL";
   case CASE_17:
-    return s_BUT_TELEOBJ_007c4f34;
+    return "BUT_TELEOBJ";
   case CASE_18:
-    pcVar1 = s_BUT_SITELEPORT_007c4f20;
+    pcVar1 = "BUT_SITELEPORT";
     if (DAT_0080874e != '\x03') goto switchD_005295a5_caseD_4d;
     break;
   case CASE_19:
-    return s_BUT_ATTACKLBOMB_007c4efc;
+    return "BUT_ATTACKLBOMB";
   case CASE_1A:
-    return s_BUT_ATTACKTLS_007c4eec;
+    return "BUT_ATTACKTLS";
   case CASE_1B:
-    return s_BUT_BLDMISSILE_007c4ed8;
+    return "BUT_BLDMISSILE";
   case CASE_1C:
-    return s_BUT_BLDLASBOMB_007c4ec4;
+    return "BUT_BLDLASBOMB";
   case CASE_1D:
-    return s_BUT_BLDBOAT_007c4eb4;
+    return "BUT_BLDBOAT";
   case CASE_1E:
-    return s_BUT_BLDWORM_007c4ea4;
+    return "BUT_BLDWORM";
   case CASE_1F:
-    return s_BUT_BLDDOLPH_007c4e94;
+    return "BUT_BLDDOLPH";
   case CASE_20:
-    return s_BUT_SELFREP_007c4e84;
+    return "BUT_SELFREP";
   case CASE_21:
-    return s_BUT_RESEARCH_007c4e74;
+    return "BUT_RESEARCH";
   case CASE_22:
-    return s_BUT_TRGOLD_007c4e64;
+    return "BUT_TRGOLD";
   case CASE_23:
-    return s_BUT_ACTPSIHO_007c4e54;
+    return "BUT_ACTPSIHO";
   case CASE_24:
-    return s_BUT_ACTISO_007c4e44;
+    return "BUT_ACTISO";
   case CASE_25:
-    return s_BUT_STOPISO_007c4e34;
+    return "BUT_STOPISO";
   case CASE_26:
-    return s_BUT_SETDESTINATION_007c4e1c;
+    return "BUT_SETDESTINATION";
   case CASE_27:
-    pcVar1 = s_BUT_SIDISSASSEMBLE_007c4e04;
+    pcVar1 = "BUT_SIDISSASSEMBLE";
     if (DAT_0080874e != '\x03') {
-      return s_BUT_BREAKBUILD_007c4df0;
+      return "BUT_BREAKBUILD";
     }
     break;
   case CASE_28:
-    return s_BUT_CRACKINFO_007c4de0;
+    return "BUT_CRACKINFO";
   case CASE_29:
-    return s_BUT_GETINFO_007c4dd0;
+    return "BUT_GETINFO";
   case CASE_2A:
-    return s_BUT_VIEWZONE_007c4dc0;
+    return "BUT_VIEWZONE";
   case CASE_2B:
-    pcVar1 = s_BUT_SIATTACKZONE_007c4dac;
+    pcVar1 = "BUT_SIATTACKZONE";
     if (DAT_0080874e != '\x03') {
-      return s_BUT_ATTACKZONE_007c4d98;
+      return "BUT_ATTACKZONE";
     }
     break;
   case CASE_2C:
-    pcVar1 = s_BUT_SIGUARDZONE_007c4d84;
+    pcVar1 = "BUT_SIGUARDZONE";
     if (DAT_0080874e != '\x03') {
-      return s_BUT_GUARDZONE_007c4d74;
+      return "BUT_GUARDZONE";
     }
     break;
   case CASE_2D:
-    pcVar1 = s_BUT_SISCOUT_007c4d64;
+    pcVar1 = "BUT_SISCOUT";
     if (DAT_0080874e != '\x03') {
-      return s_BUT_SCOUT_007c4d58;
+      return "BUT_SCOUT";
     }
     break;
   case CASE_2E:
-    return s_BUT_BREAKAWAY_007c4d48;
+    return "BUT_BREAKAWAY";
   case CASE_2F:
-    pcVar1 = s_BUT_SIAI_007c4d3c;
+    pcVar1 = "BUT_SIAI";
     if (DAT_0080874e != '\x03') {
-      return s_BUT_BEHAVIOUR_007c4d2c;
+      return "BUT_BEHAVIOUR";
     }
     break;
   case CASE_30:
-    return s_BUT_TRADE_007c4d20;
+    return "BUT_TRADE";
   case CASE_31:
-    return s_BUT_CONTAINER_007c4d10;
+    return "BUT_CONTAINER";
   case CASE_32:
 switchD_005295a5_caseD_32:
-    return s_BUT_BREAK_007c4ab4;
+    return "BUT_BREAK";
   case CASE_33:
-    return s_BUT_REPLINISH_007c4d00;
+    return "BUT_REPLINISH";
   case CASE_34:
-    return s_BUT_ATTACKTRG_007c4cf0;
+    return "BUT_ATTACKTRG";
   case CASE_35:
-    return s_BUT_ENGACTIVEMODE_007c4cd8;
+    return "BUT_ENGACTIVEMODE";
   case CASE_36:
-    return s_BUT_SATELLITE_007c4cc8;
+    return "BUT_SATELLITE";
   case CASE_37:
-    return s_BUT_SIDESTINATION_007c4cb0;
+    return "BUT_SIDESTINATION";
   case CASE_38:
-    return s_BUT_IFIELDOFF1_007c4c9c;
+    return "BUT_IFIELDOFF1";
   case CASE_39:
-    return s_BUT_SICRACKINFO_007c4c88;
+    return "BUT_SICRACKINFO";
   case CASE_3A:
-    return s_BUT_TODIMENSION_007c4c74;
+    return "BUT_TODIMENSION";
   case CASE_3B:
-    return s_BUT_GIVEENERGY_007c4c60;
+    return "BUT_GIVEENERGY";
   case CASE_3C:
-    return s_BUT_PRIORESTORATION_007c4c48;
+    return "BUT_PRIORESTORATION";
   case CASE_3D:
-    return s_BUT_SIBUILDSUB_007c4c34;
+    return "BUT_SIBUILDSUB";
   case CASE_3E:
-    return s_BUT_CREATEGATE_007c4c20;
+    return "BUT_CREATEGATE";
   case CASE_3F:
-    return s_BUT_RCTOENERGY_007c4c0c;
+    return "BUT_RCTOENERGY";
   case CASE_40:
-    return s_BUT_SIGIVERC_007c4bfc;
+    return "BUT_SIGIVERC";
   case CASE_41:
-    return s_BUT_SIRESEARCH_007c4be8;
+    return "BUT_SIRESEARCH";
   case CASE_42:
-    return s_BUT_IFIELDON_007c4bd8;
+    return "BUT_IFIELDON";
   case CASE_43:
-    return s_BUT_SIVIEWZONE_007c4bc4;
+    return "BUT_SIVIEWZONE";
   case CASE_44:
-    return s_BUT_BUILDLAB_007c4bb4;
+    return "BUT_BUILDLAB";
   case CASE_45:
-    return s_BUT_IFIELDOFF2_007c4ba0;
+    return "BUT_IFIELDOFF2";
   case CASE_46:
-    return s_BUT_SIGETINFO_007c4b90;
+    return "BUT_SIGETINFO";
   case CASE_47:
-    return s_BUT_FROMDIMENSION_007c4b78;
+    return "BUT_FROMDIMENSION";
   case CASE_48:
-    return s_BUT_SIREPLINISH_007c4b64;
+    return "BUT_SIREPLINISH";
   case CASE_49:
-    return s_BUT_SINENGSHIELD_007c4b50;
+    return "BUT_SINENGSHIELD";
   case CASE_4A:
-    return s_BUT_SIREPLPRIOR_007c4b3c;
+    return "BUT_SIREPLPRIOR";
   case CASE_4B:
-    return s_BUT_SIGHOST_007c4b2c;
+    return "BUT_SIGHOST";
   case CASE_4C:
-    return s_BUT_AMINE_007c4b20;
+    return "BUT_AMINE";
   case CASE_4D:
 switchD_005295a5_caseD_4d:
-    return s_BUT_TELETO_007c4f10;
+    return "BUT_TELETO";
   case CASE_4F:
-    return s_BUT_VQB_007c4b14;
+    return "BUT_VQB";
   case CASE_50:
-    pcVar1 = s_BUT_SIHOLD_007c4b04;
+    pcVar1 = "BUT_SIHOLD";
     if (DAT_0080874e != '\x03') {
-      return s_BUT_HOLDBUILD_007c4af4;
+      return "BUT_HOLDBUILD";
     }
     break;
   case CASE_51:
-    pcVar1 = s_BUT_SIUNHOLD_007c4ae4;
+    pcVar1 = "BUT_SIUNHOLD";
     if (DAT_0080874e != '\x03') {
-      return s_BUT_UNHOLDBUILD_007c4ad0;
+      return "BUT_UNHOLDBUILD";
     }
     break;
   case CASE_52:
-    pcVar1 = s_BUT_SISFIRE_007c4ac0;
+    pcVar1 = "BUT_SISFIRE";
     if (DAT_0080874e != '\x03') goto switchD_005295a5_caseD_32;
   }
   return pcVar1;

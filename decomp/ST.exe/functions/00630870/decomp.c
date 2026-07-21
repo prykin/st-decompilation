@@ -10,7 +10,7 @@ undefined4 * __thiscall STManRuinC::STManRuinC(STManRuinC *this)
   int iVar1;
   undefined4 *puVar2;
 
-  STGroupBoatC::sub_006E60E0((STGroupBoatC *)this);
+  sub_006E60E0(this);
   this->vtable = &STManRuinCVTable;
   if (this == (STManRuinC *)0x0) {
     puVar2 = (undefined4 *)0x0;
@@ -23,7 +23,7 @@ undefined4 * __thiscall STManRuinC::STManRuinC(STManRuinC *this)
     puVar2 = puVar2 + 1;
   }
   *(undefined1 *)puVar2 = 0;
-  *(undefined4 *)&this->field_0x61 = 0xffffffff;
+  this->field_0061 = 0xffffffff;
   return &this->vtable;
 }
 

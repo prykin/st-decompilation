@@ -73,9 +73,9 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0054A9B0::FUN_0054a9b0
       uVar6 = 0xffffffff;
     }
     else {
-      if ((((local_10 < 0) || ((int)pVVar3->field_0028 <= local_10)) ||
+      if ((((local_10 < 0) || (pVVar3->field_0028 <= local_10)) ||
           ((&DAT_0079aed0)[iVar8] + local_14 < 0)) ||
-         ((int)pVVar3->field_002C <= (&DAT_0079aed0)[iVar8] + local_14)) {
+         (pVVar3->field_002C <= (&DAT_0079aed0)[iVar8] + local_14)) {
         bVar2 = false;
       }
       else {
@@ -91,9 +91,9 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0054A9B0::FUN_0054a9b0
       }
       if ((int)uVar6 < 0) goto cf_common_exit_0054ACFD;
       if (uVar6 == 0xf) {
-        if (((local_10 < 0) || ((int)pVVar3->field_0030 <= local_10)) ||
+        if (((local_10 < 0) || (pVVar3->field_0030 <= local_10)) ||
            (((&DAT_0079aed0)[iVar8] + local_14 < 0 ||
-            ((int)pVVar3->field_0034 <= (&DAT_0079aed0)[iVar8] + local_14)))) {
+            (pVVar3->field_0034 <= (&DAT_0079aed0)[iVar8] + local_14)))) {
           bVar2 = false;
         }
         else {
@@ -136,7 +136,7 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0054A9B0::FUN_0054a9b0
     SpriteClassTy::InitSprite(pSVar7,DAT_008075a8,1,'\a',(undefined4 *)0x0,0,0);
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
     (**(code **)(*(int *)pAVar4->field_04EB + 4))
-              (DAT_00806784,7,0,s_CUR_CONFIRM2D_007c7fb4,0xffffffff);
+              (DAT_00806784,7,0,"CUR_CONFIRM2D",0xffffffff);
     *(undefined4 *)(pAVar4->field_04EB + 0x40) = 0x19;
     *(undefined4 *)(pAVar4->field_04EB + 8) = 0;
     pAVar4->field_04EF = param_1;

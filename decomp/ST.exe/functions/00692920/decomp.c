@@ -27,7 +27,7 @@ FUN_00692920(cMf32 *param_1,undefined4 *param_2,undefined4 *param_3,int param_4,
   puVar1 = param_3;
   pAVar2 = (AnonShape_006B4B20_3D4F4412 *)0x0;
   if (param_2 != (undefined4 *)0x0) {
-    local_10 = cMf32::RecGet(param_1,1,s_PAL_APP_007d59d4,(int *)0x0,1);
+    local_10 = cMf32::RecGet(param_1,1,"PAL_APP",(int *)0x0,1);
     pAVar2 = (AnonShape_006B4B20_3D4F4412 *)
              FUN_006b50c0((int)param_3,param_4,8,0x100,(undefined4 *)(local_10 + 0x14),1);
     local_8 = FUN_006b4fa0((int)pAVar2);

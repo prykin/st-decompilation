@@ -11,7 +11,7 @@ void __cdecl FUN_006a5990(undefined4 *param_1)
   undefined4 *puVar5;
 
   puVar5 = (undefined4 *)0x0;
-  iVar3 = Library::MSVCRT::FUN_00730fa0(0,0,0,0,&DAT_007a4ccc);
+  iVar3 = Library::MSVCRT::FUN_00730fa0(0,0,0,0,"%s");
   if (iVar3 == 1) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
@@ -21,7 +21,7 @@ void __cdecl FUN_006a5990(undefined4 *param_1)
   }
   do {
     if ((puVar2 == (undefined4 *)0x0) || (puVar2 == puVar5)) {
-      iVar3 = Library::MSVCRT::FUN_00730fa0(0,0,0,0,&DAT_007a4ccc);
+      iVar3 = Library::MSVCRT::FUN_00730fa0(0,0,0,0,"%s");
       if (iVar3 == 1) {
         STDebugBreak(); /* noreturn in standalone pseudocode */
       }
@@ -32,26 +32,26 @@ void __cdecl FUN_006a5990(undefined4 *param_1)
       if ((void *)puVar2[2] != (void *)0x0) {
         iVar3 = thunk_FUN_006a55d0((void *)puVar2[2],1,0);
         if (iVar3 == 0) {
-          iVar3 = Library::MSVCRT::FUN_00730fa0(0,0,0,0,(byte *)s__File_Error___d____007eca44);
+          iVar3 = Library::MSVCRT::FUN_00730fa0(0,0,0,0,(byte *)"#File Error#(%d) : ");
           if (iVar3 == 1) {
             STDebugBreak(); /* noreturn in standalone pseudocode */
           }
         }
         else {
-          iVar3 = Library::MSVCRT::FUN_00730fa0(0,0,0,0,(byte *)s__hs__d____007eca34);
+          iVar3 = Library::MSVCRT::FUN_00730fa0(0,0,0,0,(byte *)"%hs(%d) : ");
           if (iVar3 == 1) {
             STDebugBreak(); /* noreturn in standalone pseudocode */
           }
         }
       }
-      iVar3 = Library::MSVCRT::FUN_00730fa0(0,0,0,0,(byte *)s___ld__007eca2c);
+      iVar3 = Library::MSVCRT::FUN_00730fa0(0,0,0,0,(byte *)"{%ld} ");
       if (iVar3 == 1) {
         STDebugBreak(); /* noreturn in standalone pseudocode */
       }
       uVar4 = puVar2[5] & 0xffff;
       if (uVar4 == 4) {
         iVar3 = Library::MSVCRT::FUN_00730fa0
-                          (0,0,0,0,(byte *)s_client_block_at_0x_08X__subtype___007ec9ec);
+                          (0,0,0,0,(byte *)"client block at 0x%08X, subtype %x, %u bytes long.\n");
         if (iVar3 == 1) {
           STDebugBreak(); /* noreturn in standalone pseudocode */
         }
@@ -62,7 +62,7 @@ void __cdecl FUN_006a5990(undefined4 *param_1)
       }
       else if (puVar2[5] == 1) {
         iVar3 = Library::MSVCRT::FUN_00730fa0
-                          (0,0,0,0,(byte *)s_normal_block_at_0x_08X___u_bytes_007ec9bc);
+                          (0,0,0,0,(byte *)"normal block at 0x%08X, %u bytes long.\n");
         if (iVar3 == 1) {
           STDebugBreak(); /* noreturn in standalone pseudocode */
         }
@@ -70,7 +70,7 @@ void __cdecl FUN_006a5990(undefined4 *param_1)
       else {
         if (uVar4 != 2) goto cf_continue_loop_006A5B2E;
         iVar3 = Library::MSVCRT::FUN_00730fa0
-                          (0,0,0,0,(byte *)s_crt_block_at_0x_08X__subtype__x__007ec980);
+                          (0,0,0,0,(byte *)"crt block at 0x%08X, subtype %x, %u bytes long.\n");
         if (iVar3 == 1) {
           STDebugBreak(); /* noreturn in standalone pseudocode */
         }

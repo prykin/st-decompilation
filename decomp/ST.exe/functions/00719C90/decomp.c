@@ -15,7 +15,7 @@ void __cdecl FUN_00719c90(MCIERROR mcierr,MCIDEVICEID *param_2)
   if (DAT_007f07c4 != 0) {
     BVar1 = mciGetErrorStringA(mcierr,local_104,0x100);
     if (BVar1 != 0) {
-      MessageBoxA((HWND)0x0,local_104,s_MCI_error_007f07f4,0x2030);
+      MessageBoxA((HWND)0x0,local_104,"MCI error",0x2030);
     }
   }
   return;

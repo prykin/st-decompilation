@@ -22,7 +22,7 @@ int __thiscall STPlaySystemC::Save(STPlaySystemC *this,cMf32 *param_1)
   undefined4 local_20;
   STPlaySystemC *local_10;
   undefined4 local_c;
-  undefined4 local_8;
+  uint local_8;
 
   local_c = this->field_00E4;
   local_8 = this->field_0020;
@@ -45,12 +45,12 @@ int __thiscall STPlaySystemC::Save(STPlaySystemC *this,cMf32 *param_1)
     return 0;
   }
   g_currentExceptionFrame = local_74.previous;
-  iVar4 = ReportDebugMessage(s_E____titans_Andrey_tplaysys_cpp_007c8430,0x1fb,0,iVar3,&DAT_007a4ccc,
-                             s_STPlaySystemC__Save_007c84f8);
+  iVar4 = ReportDebugMessage("E:\\__titans\\Andrey\\tplaysys.cpp",0x1fb,0,iVar3,"%s",
+                             "STPlaySystemC::Save");
   if (iVar4 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  RaiseInternalException(iVar3,0,s_E____titans_Andrey_tplaysys_cpp_007c8430,0x1fb);
+  RaiseInternalException(iVar3,0,"E:\\__titans\\Andrey\\tplaysys.cpp",0x1fb);
   return iVar3;
 }
 

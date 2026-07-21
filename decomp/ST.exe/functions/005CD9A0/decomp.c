@@ -31,12 +31,12 @@ SettMapMTy::ChgPlList
   errorCode = Library::MSVCRT::__setjmp3(local_48.jumpBuffer,0);
   if (errorCode != 0) {
     g_currentExceptionFrame = local_48.previous;
-    iVar3 = ReportDebugMessage(s_E____titans_Start_settmobj_cpp_007cd258,0x1dd,0,errorCode,
-                               &DAT_007a4ccc,s_SettMapMTy__ChgPlList_007cd32c);
+    iVar3 = ReportDebugMessage("E:\\__titans\\Start\\settmobj.cpp",0x1dd,0,errorCode,
+                               "%s","SettMapMTy::ChgPlList");
     if (iVar3 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    RaiseInternalException(errorCode,0,s_E____titans_Start_settmobj_cpp_007cd258,0x1dd);
+    RaiseInternalException(errorCode,0,"E:\\__titans\\Start\\settmobj.cpp",0x1dd);
     return;
   }
   local_15c = param_1;

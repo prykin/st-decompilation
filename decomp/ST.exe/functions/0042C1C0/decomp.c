@@ -27,7 +27,7 @@ STAllPlayersC::AddObjsToTmp
   if (errorCode == 0) {
     if (param_4 == (DArrayTy *)0x0) {
       RaiseInternalException
-                (-0x5001fff7,g_overwriteContext_007ED77C,s_E____titans_wlad_to_allpl_cpp_007a6004,
+                (-0x5001fff7,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_allpl.cpp",
                  0x266);
     }
     local_10 = param_4->count;
@@ -46,10 +46,10 @@ STAllPlayersC::AddObjsToTmp
   else {
     g_currentExceptionFrame = local_54.previous;
     if (errorCode != -0x5001fff7) {
-      iVar2 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0x26e,0,errorCode,
-                                 &DAT_007a4ccc,s_STAllPlayersC__AddObjsToTmp_007a6288);
+      iVar2 = ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0x26e,0,errorCode,
+                                 "%s","STAllPlayersC::AddObjsToTmp");
       if (iVar2 == 0) {
-        RaiseInternalException(errorCode,0,s_E____titans_wlad_to_allpl_cpp_007a6004,0x26f);
+        RaiseInternalException(errorCode,0,"E:\\__titans\\wlad\\to_allpl.cpp",0x26f);
         return 0xffffffff;
       }
       STDebugBreak(); /* noreturn in standalone pseudocode */

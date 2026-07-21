@@ -29,12 +29,12 @@ void __thiscall PrividerTy::DeleteCtrls(PrividerTy *this,char param_1)
   iVar4 = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0);
   if (iVar4 != 0) {
     g_currentExceptionFrame = local_50.previous;
-    iVar8 = ReportDebugMessage(s_E____titans_Start_prov_obj_cpp_007ccd28,0x279,0,iVar4,&DAT_007a4ccc
-                               ,s_PrividerTy__DeleteCtrls_007cce88);
+    iVar8 = ReportDebugMessage("E:\\__titans\\Start\\prov_obj.cpp",0x279,0,iVar4,"%s"
+                               ,"PrividerTy::DeleteCtrls");
     if (iVar8 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    RaiseInternalException(iVar4,0,s_E____titans_Start_prov_obj_cpp_007ccd28,0x279);
+    RaiseInternalException(iVar4,0,"E:\\__titans\\Start\\prov_obj.cpp",0x279);
     return;
   }
   if (PTR_00802a30 != (CursorClassTy *)0x0) {
@@ -65,14 +65,14 @@ void __thiscall PrividerTy::DeleteCtrls(PrividerTy *this,char param_1)
     else {
       pHVar5->field_0002 = 1;
       pHVar5->field_0000 = 0;
-      pHVar5->field_0003 = 0xffffffff;
+      pHVar5->field_0003 = -1;
       pHVar5->field_0001 = CASE_2;
       pHVar5->field_0007 = 0;
       pHVar5->field_000B = 0;
       *(undefined4 *)&pHVar5->field_0xf = 0;
       *(undefined4 *)&pHVar5->field_0x1b = 1;
       pHVar5->field_0013 = 1;
-      pHVar5->field_0017 = 0xffffffff;
+      pHVar5->field_0017 = -1;
       pHVar5->field_0027 = 0;
       pHVar5->field_0023 = 0;
       pHVar5->field_002F = 1;
@@ -89,7 +89,7 @@ void __thiscall PrividerTy::DeleteCtrls(PrividerTy *this,char param_1)
       if (uVar9 != 0) {
         pHVar5 = pPVar3->field_1C96;
         pHVar5->field_0002 = 0;
-        pHVar5->field_0017 = 0xffffffff;
+        pHVar5->field_0017 = -1;
         uVar9 = pPVar3->field_1C96->field_0003;
         if (-1 < (int)uVar9) {
           Library::DKW::DDX::FUN_006b3430(DAT_008075a8,uVar9);
@@ -147,14 +147,14 @@ void __thiscall PrividerTy::DeleteCtrls(PrividerTy *this,char param_1)
     else {
       pHVar5->field_0002 = 1;
       pHVar5->field_0000 = 0;
-      pHVar5->field_0003 = 0xffffffff;
+      pHVar5->field_0003 = -1;
       pHVar5->field_0001 = CASE_2;
       pHVar5->field_0007 = 0;
       pHVar5->field_000B = 0;
       *(undefined4 *)&pHVar5->field_0xf = 0;
       *(undefined4 *)&pHVar5->field_0x1b = 1;
       pHVar5->field_0013 = 1;
-      pHVar5->field_0017 = 0xffffffff;
+      pHVar5->field_0017 = -1;
       pHVar5->field_0027 = 0;
       pHVar5->field_0023 = 0;
       pHVar5->field_002F = 1;
@@ -171,7 +171,7 @@ void __thiscall PrividerTy::DeleteCtrls(PrividerTy *this,char param_1)
       if (uVar9 != 0) {
         pHVar5 = pPVar3->field_1C9A;
         pHVar5->field_0002 = 0;
-        pHVar5->field_0017 = 0xffffffff;
+        pHVar5->field_0017 = -1;
         uVar9 = pPVar3->field_1C9A->field_0003;
         if (-1 < (int)uVar9) {
           Library::DKW::DDX::FUN_006b3430(DAT_008075a8,uVar9);

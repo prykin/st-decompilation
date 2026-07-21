@@ -3,100 +3,102 @@
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\mmsg_obj.cpp
-   MMsgTy::GetMessage */
+   MMsgTy::GetMessage
 
-undefined4 __thiscall MMsgTy::GetMessage(MMsgTy *this,int param_1)
+   [STMessageHandlerApplier] Recovered common GetMessage envelope/signature.
+   Evidence: family_entries=005B9330; family_names=MMsgTy::GetMessage; ret4=2;
+   direct_offsets={10:4,14:0,18:0,1c:0} */
+
+int __thiscall MMsgTy::GetMessage(MMsgTy *this,STMessage *message)
 
 {
-  code *pcVar1;
+  STMessageId SVar1;
+  code *pcVar2;
   MMsgTy *this_00;
-  byte bVar2;
-  DWORD DVar3;
-  int iVar4;
-  undefined4 uVar5;
+  byte bVar3;
+  DWORD DVar4;
+  int iVar5;
   int iVar6;
   uint uVar7;
   InternalExceptionFrame local_4c;
   MMsgTy *local_8;
 
   local_8 = this;
-  DVar3 = FUN_006e51b0(this->field_0010);
-  this->field_0061 = DVar3;
+  DVar4 = FUN_006e51b0(this->field_0010);
+  this->field_0061 = DVar4;
   local_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_4c;
-  iVar4 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
+  iVar5 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
   this_00 = local_8;
-  if (iVar4 != 0) {
+  if (iVar5 != 0) {
     g_currentExceptionFrame = local_4c.previous;
-    iVar6 = ReportDebugMessage(s_E____titans_Start_mmsg_obj_cpp_007ccb74,0x200,0,iVar4,&DAT_007a4ccc
-                               ,s_MMsgTy__GetMessage_007ccd10);
+    iVar6 = ReportDebugMessage("E:\\__titans\\Start\\mmsg_obj.cpp",0x200,0,iVar5,"%s"
+                               ,"MMsgTy::GetMessage");
     if (iVar6 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    RaiseInternalException(iVar4,0,s_E____titans_Start_mmsg_obj_cpp_007ccb74,0x200);
+    RaiseInternalException(iVar5,0,"E:\\__titans\\Start\\mmsg_obj.cpp",0x200);
     return 0xffff;
   }
-  thunk_FUN_005b6450(local_8,param_1);
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  uVar7 = *(uint *)(param_1 + 0x10);
-  if ((0x697e < uVar7) && (uVar7 < 0x69ff)) {
-    switch(uVar7) {
-    case 0x697f:
+  thunk_FUN_005b6450(local_8,(int)message);
+  SVar1 = message->id;
+  if ((0x697e < SVar1) && (SVar1 < MESS_SHARED_69FF)) {
+    switch(SVar1) {
+    case MESS_SHARED_697F:
       iVar6 = -1;
-      iVar4 = 3;
+      iVar5 = 3;
       uVar7 = 0;
       break;
-    case 0x6980:
+    case MESS_SHARED_6980:
       iVar6 = -1;
-      iVar4 = 2;
+      iVar5 = 2;
       uVar7 = 1;
       break;
-    case 0x6981:
+    case MESS_SIDTY_6981:
       iVar6 = -1;
-      iVar4 = 2;
+      iVar5 = 2;
       uVar7 = 2;
       break;
-    case 0x6982:
+    case MESS_SHARED_6980|MESS_ID_CREATE:
       iVar6 = -2;
-      iVar4 = 2;
+      iVar5 = 2;
       uVar7 = 3;
       break;
-    case 0x6983:
+    case MESS_MAINMENUTY_6983:
       iVar6 = 2;
-      iVar4 = 2;
+      iVar5 = 2;
       uVar7 = 4;
       break;
     case 0x6984:
       iVar6 = 1;
-      iVar4 = 2;
+      iVar5 = 2;
       uVar7 = 5;
       break;
-    case 0x6985:
+    case MESS_SHARED_6980|MESS_SHARED_0005:
       iVar6 = 1;
-      iVar4 = 2;
+      iVar5 = 2;
       uVar7 = 6;
       break;
-    case 0x6986:
+    case MESS_MMSGTY_6986:
       iVar6 = 1;
-      iVar4 = 3;
+      iVar5 = 3;
       uVar7 = 7;
       break;
     default:
       goto switchD_005b939a_default;
     }
-    MMObjTy::PaintSprBut((MMObjTy *)this_00,param_1,uVar7,iVar4,iVar6,-1);
+    MMObjTy::PaintSprBut((MMObjTy *)this_00,(int)message,uVar7,iVar5,iVar6,-1);
   }
-/* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
 switchD_005b939a_default:
-  uVar7 = *(uint *)(param_1 + 0x10);
-  if ((0x68fe < uVar7) && (uVar7 < 0x697f)) {
-    bVar2 = (char)uVar7 + 1;
-    this_00->field_1A5A = bVar2;
-    if ((&this_00->field_0xe1)[(uint)bVar2 * 0x1fb] == '\0') {
-      if (*(int *)(&this_00->field_0xd1 + (uint)bVar2 * 0x1fb) != 0) {
+  SVar1 = message->id;
+  if ((0x68fe < SVar1) && (SVar1 < MESS_SHARED_697F)) {
+    bVar3 = (char)SVar1 + 1;
+    this_00->field_1A5A = bVar3;
+    if ((&this_00->field_0xe1)[(uint)bVar3 * 0x1fb] == '\0') {
+      if (*(int *)(&this_00->field_0xd1 + (uint)bVar3 * 0x1fb) != 0) {
         AppClassTy::PostNextMessage
                   ((AppClassTy *)&DAT_00807620,
-                   (undefined4 *)(&this_00->field_0xc1 + (uint)bVar2 * 0x1fb));
+                   (undefined4 *)(&this_00->field_0xc1 + (uint)bVar3 * 0x1fb));
       }
     }
     else {
@@ -104,22 +106,21 @@ switchD_005b939a_default:
       (**(code **)(this_00->field_0000 + 8))();
     }
   }
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  switch(*(undefined4 *)(param_1 + 0x10)) {
-  case 0:
+  switch(message->id) {
+  case MESS_ID_NONE:
     NoneMMsg(this_00);
     break;
-  case 2:
+  case MESS_ID_CREATE:
     InitMMsg(this_00);
     break;
-  case 3:
+  case MESS_SHARED_0003:
     DoneMMsg(this_00);
     break;
-  case 5:
+  case MESS_SHARED_0005:
     PaintMMsg(this_00);
   }
   g_currentExceptionFrame = local_4c.previous;
-  uVar5 = MMObjTy::GetMessage((MMObjTy *)this_00,param_1);
-  return uVar5;
+  iVar5 = MMObjTy::GetMessage((MMObjTy *)this_00,message);
+  return iVar5;
 }
 

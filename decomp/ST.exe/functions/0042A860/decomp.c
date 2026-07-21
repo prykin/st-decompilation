@@ -33,7 +33,7 @@ void FUN_0042a860(void)
     return;
   }
   g_currentExceptionFrame = local_48.previous;
-  RaiseInternalException(iVar1,0,s_E____titans_tload_cpp_007a5fdc,0x536);
+  RaiseInternalException(iVar1,0,"E:\\__titans\\tload.cpp",0x536);
   return;
 }
 

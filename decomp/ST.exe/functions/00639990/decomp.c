@@ -8,7 +8,7 @@ undefined4 __fastcall FUN_00639990(AnonShape_00639990_2135AB0A *param_1)
 
   if (param_1->field_026F < 2) {
     puVar1 = &param_1->field_0x1d5;
-    iVar2 = STT3DSprC::LoadSequence((STT3DSprC *)puVar1,0xd,DAT_00806774,s_trmbomb_007d1d9c,0x1d);
+    iVar2 = STT3DSprC::LoadSequence((STT3DSprC *)puVar1,0xd,DAT_00806774,"trmbomb",0x1d);
     if (iVar2 != 0) {
       return 0xffff;
     }
@@ -34,7 +34,7 @@ undefined4 __fastcall FUN_00639990(AnonShape_00639990_2135AB0A *param_1)
     if (iVar2 != 0) {
       return 0xffff;
     }
-    iVar2 = STT3DSprC::LoadSequence((STT3DSprC *)puVar1,0xe,DAT_00806774,s_expmask2_007d1da4,0x1d);
+    iVar2 = STT3DSprC::LoadSequence((STT3DSprC *)puVar1,0xe,DAT_00806774,"expmask2",0x1d);
     if (iVar2 != 0) {
       return 0xffff;
     }

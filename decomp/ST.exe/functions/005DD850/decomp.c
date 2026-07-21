@@ -47,12 +47,12 @@ void __thiscall StartSystemTy::AddToChat(StartSystemTy *this,int param_1)
       if ((int)(DAT_0080c4fa[2] - 5) <= (int)local_14) {
         local_5 = '\x01';
       }
-      wsprintfA((LPSTR)&DAT_0080f33a,s__0_s__007cd8b4,param_1);
+      wsprintfA((LPSTR)&DAT_0080f33a,"&0%s:",param_1);
       Library::DKW::TBL::FUN_006b5aa0((uint *)pAVar2,(char *)&DAT_0080f33a);
-      wsprintfA((LPSTR)&DAT_0080f33a,&DAT_007cd8ac,param_1 + 0x40);
+      wsprintfA((LPSTR)&DAT_0080f33a,"&2%s",param_1 + 0x40);
       Library::DKW::TBL::FUN_006b5aa0((uint *)pAVar2,(char *)&DAT_0080f33a);
       pAVar3 = (AnonShape_006B5570_4D68B99C *)
-               ccFntTy::FormSarr(this_00->field_0034,(uint *)pAVar2,s________________007c21d8,
+               ccFntTy::FormSarr(this_00->field_0034,(uint *)pAVar2," ,.;:!?/\\()[]{}",
                                  this_00->field_067E->field_0004,0,0xffffffff,1);
       if (pAVar3 != (AnonShape_006B5570_4D68B99C *)0x0) {
         if (pAVar3->field_0008 != 0) {
@@ -100,10 +100,10 @@ LAB_005dd982:
     return;
   }
   g_currentExceptionFrame = local_78.previous;
-  iVar4 = ReportDebugMessage(s_E____titans_Start_startsys_cpp_007cd718,0x372,0,iVar5,&DAT_007a4ccc,
-                             s_StartSystemTy__AddToChat_007cd88c);
+  iVar4 = ReportDebugMessage("E:\\__titans\\Start\\startsys.cpp",0x372,0,iVar5,"%s",
+                             "StartSystemTy::AddToChat");
   if (iVar4 == 0) {
-    RaiseInternalException(iVar5,0,s_E____titans_Start_startsys_cpp_007cd718,0x372);
+    RaiseInternalException(iVar5,0,"E:\\__titans\\Start\\startsys.cpp",0x372);
     return;
   }
   STDebugBreak(); /* noreturn in standalone pseudocode */

@@ -30,12 +30,12 @@ undefined4 __thiscall BaseSystemC::CreateSystemObjects(BaseSystemC *this)
     return 0;
   }
   g_currentExceptionFrame = local_50.previous;
-  iVar3 = ReportDebugMessage(s_E____titans_tsystem_cpp_007cab5c,0x2c,0,errorCode,&DAT_007a4ccc,
-                             s_BaseSystemC__CreateSystemObjects_007cab78);
+  iVar3 = ReportDebugMessage("E:\\__titans\\tsystem.cpp",0x2c,0,errorCode,"%s",
+                             "BaseSystemC::CreateSystemObjects");
   if (iVar3 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  RaiseInternalException(errorCode,0,s_E____titans_tsystem_cpp_007cab5c,0x2d);
+  RaiseInternalException(errorCode,0,"E:\\__titans\\tsystem.cpp",0x2d);
   return 0xffffffff;
 }
 

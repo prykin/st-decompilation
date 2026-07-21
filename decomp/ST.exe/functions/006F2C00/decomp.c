@@ -45,7 +45,7 @@ LPSTR __cdecl FUN_006f2c00(char *text,int param_2,undefined4 param_3)
   }
   else {
     Library::MSVCRT::__itoa(param_2,local_24,10);
-    wsprintfA(local_44,s__s_s_s_007c6edc,&DAT_007d5628,local_24,&DAT_007d5630);
+    wsprintfA(local_44,"%s%s%s","%s%0",local_24,&DAT_007d5630);
     pCVar5 = &DAT_00856e40 + iVar2 * 0x20;
     wsprintfA(pCVar5,local_44,text,param_3);
   }

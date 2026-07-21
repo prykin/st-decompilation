@@ -62,12 +62,12 @@ void __thiscall HelpPanelTy::CheckBkView(HelpPanelTy *this,int param_1,uint para
       return;
     }
     g_currentExceptionFrame = local_50.previous;
-    iVar8 = ReportDebugMessage(s_E____titans_Andrey_helppan_cpp_007c383c,0xdc,0,iVar4,&DAT_007a4ccc,
-                               s_HelpPanelTy__CheckBkView_007c3938);
+    iVar8 = ReportDebugMessage("E:\\__titans\\Andrey\\helppan.cpp",0xdc,0,iVar4,"%s",
+                               "HelpPanelTy::CheckBkView");
     if (iVar8 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    RaiseInternalException(iVar4,0,s_E____titans_Andrey_helppan_cpp_007c383c,0xdc);
+    RaiseInternalException(iVar4,0,"E:\\__titans\\Andrey\\helppan.cpp",0xdc);
   }
   return;
 }

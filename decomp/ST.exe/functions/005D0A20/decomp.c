@@ -66,12 +66,12 @@ void __thiscall SettMapMTy::ChangePlayerState(SettMapMTy *this,uint param_1)
       return;
     }
     g_currentExceptionFrame = local_4c.previous;
-    iVar6 = ReportDebugMessage(s_E____titans_Start_settmobj_cpp_007cd258,0x5ba,0,errorCode,
-                               &DAT_007a4ccc,s_SettMapMTy__ChangePlayerState_007cd458);
+    iVar6 = ReportDebugMessage("E:\\__titans\\Start\\settmobj.cpp",0x5ba,0,errorCode,
+                               "%s","SettMapMTy::ChangePlayerState");
     if (iVar6 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    RaiseInternalException(errorCode,0,s_E____titans_Start_settmobj_cpp_007cd258,0x5ba);
+    RaiseInternalException(errorCode,0,"E:\\__titans\\Start\\settmobj.cpp",0x5ba);
   }
   return;
 }

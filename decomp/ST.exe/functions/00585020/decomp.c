@@ -44,7 +44,7 @@ void __fastcall FUN_00585020(AnonShape_00585020_1C9B1418 *param_1)
   }
   param_1->field_004B = sVar6;
   param_1->field_005F = sVar6;
-  iVar3 = thunk_FUN_0041c710((int)param_1);
+  iVar3 = thunk_FUN_0041c710((AnonShape_0041C710_C4D46939 *)param_1);
   this = &param_1->field_0x1d5;
   if (iVar3 == 0) {
     iVar3 = 0;
@@ -196,7 +196,7 @@ void __fastcall FUN_00585020(AnonShape_00585020_1C9B1418 *param_1)
       }
       iVar3 = thunk_FUN_004acd30(this,'\b');
       if ((uVar4 == iVar3 - 1U) && (param_1->field_0255 == '\0')) {
-        thunk_FUN_00584ad0((STJellyGunC *)param_1);
+        thunk_FUN_00584ad0(param_1);
         return;
       }
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */

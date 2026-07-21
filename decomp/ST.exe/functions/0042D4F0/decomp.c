@@ -22,8 +22,8 @@ STAllPlayersC::ResetActivityFromTmp
   }
   else {
     if (param_2 != 1) {
-      iVar2 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0x44d,0,0,&DAT_007a4ccc,
-                                 s_STAllPlayersC__ResetActivityFrom_007a6418);
+      iVar2 = ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0x44d,0,0,"%s",
+                                 "STAllPlayersC::ResetActivityFromTmp invalid panel number");
       if (iVar2 == 0) {
         return;
       }
@@ -53,8 +53,8 @@ LAB_0042d599:
   else {
     if (((iVar2 != 0x1a4) && (iVar2 != 0x1ae)) && (iVar2 != 0x1b8)) {
 cf_common_exit_0042D5BC:
-      iVar2 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0x45f,0,0,&DAT_007a4ccc,
-                                 s_STAllPlayersC__ResetActivityFrom_007a63dc);
+      iVar2 = ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0x45f,0,0,"%s",
+                                 "STAllPlayersC::ResetActivityFromTmp invalid type");
       if (iVar2 == 0) {
         return;
       }

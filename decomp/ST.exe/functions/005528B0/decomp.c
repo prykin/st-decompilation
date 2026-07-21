@@ -39,7 +39,7 @@ void __thiscall UpgPanelTy::InitUpgPanel(UpgPanelTy *this)
     uVar6 = 2;
     uVar5 = 0x31;
     DAT_00802a48 = local_8;
-    pCVar3 = thunk_FUN_00571240(s_BKG_UPDATESW_007c8800,0);
+    pCVar3 = thunk_FUN_00571240("BKG_UPDATESW",0);
     SpecPanelTy::InitPanel
               ((SpecPanelTy *)this_00,pCVar3,uVar5,uVar6,iVar2,iVar9,UVar10,uVar11,uVar12);
     puVar4 = Library::Ourlib::MFRLOAD::mfRLoad
@@ -53,7 +53,7 @@ void __thiscall UpgPanelTy::InitUpgPanel(UpgPanelTy *this)
     iVar2 = 1;
     bVar8 = 0;
     uVar7 = 0xffffffff;
-    pCVar3 = thunk_FUN_00571240(s_FRAMES_007c205c,0);
+    pCVar3 = thunk_FUN_00571240("FRAMES",0);
     puVar4 = Library::Ourlib::MFRLOAD::mfRLoad
                        (DAT_00806794,CASE_B,pCVar3,uVar7,bVar8,iVar2,iVar9,puVar13);
     this_00->field_03F3 = puVar4;
@@ -61,12 +61,12 @@ void __thiscall UpgPanelTy::InitUpgPanel(UpgPanelTy *this)
     return;
   }
   g_currentExceptionFrame = local_4c.previous;
-  iVar9 = ReportDebugMessage(s_E____titans_Andrey_upginfo_cpp_007c87b8,0x1d,0,iVar2,&DAT_007a4ccc,
-                             s_UpgPanelTy__InitUpgPanel_007c87e0);
+  iVar9 = ReportDebugMessage("E:\\__titans\\Andrey\\upginfo.cpp",0x1d,0,iVar2,"%s",
+                             "UpgPanelTy::InitUpgPanel");
   if (iVar9 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  RaiseInternalException(iVar2,0,s_E____titans_Andrey_upginfo_cpp_007c87b8,0x1d);
+  RaiseInternalException(iVar2,0,"E:\\__titans\\Andrey\\upginfo.cpp",0x1d);
   return;
 }
 

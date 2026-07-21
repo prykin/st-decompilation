@@ -50,11 +50,11 @@ undefined4 __fastcall FUN_005deb90(AnonShape_005DEB90_CA287120 *param_1)
     iVar3 = local_10;
     while (uVar1 != 0) {
       if (iVar3 < 0) {
-        wsprintfA(&DAT_0080ed16,s__s_s_s_s_007cd140,&DAT_00807680,PTR_s_CUSTOM__0079c1bc,
+        wsprintfA(&DAT_0080ed16,"%s%s%s%s",&DAT_00807680,PTR_s_CUSTOM__0079c1bc,
                   abStack_165 + 1);
       }
       else {
-        wsprintfA(&DAT_0080ed16,s__s_s_s_d_s_007cd930,&DAT_00807680,PTR_s_CUSTOM__0079c1bc,
+        wsprintfA(&DAT_0080ed16,"%s%s%s%d%s",&DAT_00807680,PTR_s_CUSTOM__0079c1bc,
                   abStack_165 + 1,iVar3,PTR_DAT_0079c1c0);
       }
       iVar3 = iVar3 + 1;
@@ -71,18 +71,18 @@ undefined4 __fastcall FUN_005deb90(AnonShape_005DEB90_CA287120 *param_1)
     local_c = pvVar4;
     if (pvVar4 == (HANDLE)0xffffffff) {
       RaiseInternalException
-                (-1,g_overwriteContext_007ED77C,s_E____titans_Start_startsys_cpp_007cd718,0x458);
+                (-1,g_overwriteContext_007ED77C,"E:\\__titans\\Start\\startsys.cpp",0x458);
     }
     local_8 = SetFilePointer(pvVar4,0,(PLONG)0x0,0);
     if (local_8 == 0xffffffff) {
       RaiseInternalException
-                (-1,g_overwriteContext_007ED77C,s_E____titans_Start_startsys_cpp_007cd718,0x459);
+                (-1,g_overwriteContext_007ED77C,"E:\\__titans\\Start\\startsys.cpp",0x459);
     }
     BVar5 = WriteFile(pvVar4,(LPCVOID)pAVar2->field_069A,pAVar2->field_06AE,&local_8,
                       (LPOVERLAPPED)0x0);
     if ((BVar5 == 0) || (pAVar2->field_06AE != local_8)) {
       RaiseInternalException
-                (-1,g_overwriteContext_007ED77C,s_E____titans_Start_startsys_cpp_007cd718,0x45a);
+                (-1,g_overwriteContext_007ED77C,"E:\\__titans\\Start\\startsys.cpp",0x45a);
     }
     FlushFileBuffers(pvVar4);
     CloseHandle(pvVar4);
@@ -93,18 +93,18 @@ undefined4 __fastcall FUN_005deb90(AnonShape_005DEB90_CA287120 *param_1)
     local_c = pvVar4;
     if (pvVar4 == (HANDLE)0xffffffff) {
       RaiseInternalException
-                (-1,g_overwriteContext_007ED77C,s_E____titans_Start_startsys_cpp_007cd718,0x45f);
+                (-1,g_overwriteContext_007ED77C,"E:\\__titans\\Start\\startsys.cpp",0x45f);
     }
     local_8 = SetFilePointer(pvVar4,0,(PLONG)0x0,0);
     if (local_8 == 0xffffffff) {
       RaiseInternalException
-                (-1,g_overwriteContext_007ED77C,s_E____titans_Start_startsys_cpp_007cd718,0x460);
+                (-1,g_overwriteContext_007ED77C,"E:\\__titans\\Start\\startsys.cpp",0x460);
     }
     BVar5 = WriteFile(pvVar4,(LPCVOID)(pAVar2->field_06AE + pAVar2->field_069A),pAVar2->field_06B2,
                       &local_8,(LPOVERLAPPED)0x0);
     if ((BVar5 == 0) || (pAVar2->field_06B2 != local_8)) {
       RaiseInternalException
-                (-1,g_overwriteContext_007ED77C,s_E____titans_Start_startsys_cpp_007cd718,0x461);
+                (-1,g_overwriteContext_007ED77C,"E:\\__titans\\Start\\startsys.cpp",0x461);
     }
     FlushFileBuffers(pvVar4);
     CloseHandle(pvVar4);

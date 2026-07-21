@@ -118,7 +118,7 @@ int __thiscall FUN_0040ae40(void *this,uint param_1,char param_2)
   if (iVar9 != 0) {
     g_currentExceptionFrame = local_90.previous;
     FUN_006a5e90(local_2c);
-    RaiseInternalException(iVar9,0,s_E____titans_wlad_Grpway3d_cpp_007a4ca8,0x113);
+    RaiseInternalException(iVar9,0,"E:\\__titans\\wlad\\Grpway3d.cpp",0x113);
     return iVar9;
   }
   local_40 = (short *)0x3;

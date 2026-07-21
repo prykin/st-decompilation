@@ -72,7 +72,8 @@ STAllPlayersC::GetCursorType
         if ((short)local_8 != -1) {
           pSVar6 = GetObjPtr(this,(char)g_playerRuntime[uVar4].tempSlots[1][0].playerId,local_8,
                              CASE_1);
-          sVar3 = (*pSVar6->vtable->vfunc_28)(param_1,param_2,param_3,param_4);
+          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+          sVar3 = (**(code **)&pSVar6->vtable->field_0x28)(param_1,param_2,param_3,param_4);
           return sVar3;
         }
         index = index + 1;
@@ -81,8 +82,8 @@ STAllPlayersC::GetCursorType
     }
   }
   else {
-    iVar5 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0x11ea,0,0,&DAT_007a4ccc,
-                               s_STAllPlayersC__GetCursorType_inv_007a73a4);
+    iVar5 = ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0x11ea,0,0,"%s",
+                               "STAllPlayersC::GetCursorType invalid active panel");
     if (iVar5 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }

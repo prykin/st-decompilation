@@ -13,12 +13,12 @@ void FUN_006827a0(void)
     exceptionCode = thunk_FUN_006736f0();
     if (exceptionCode < 0) {
       RaiseInternalException
-                (exceptionCode,g_overwriteContext_007ED77C,s_E____titans_ai_ai_script_cpp_007d5604,
+                (exceptionCode,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",
                  0x1b5);
     }
     if (DAT_007d2d18 == 0x1c) {
       RaiseInternalException
-                (-0x6f,g_overwriteContext_007ED77C,s_E____titans_ai_ai_script_cpp_007d5604,0x1b6);
+                (-0x6f,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",0x1b6);
     }
   } while (DAT_007d2d18 == 0x1d);
   return;

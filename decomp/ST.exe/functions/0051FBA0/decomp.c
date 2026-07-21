@@ -3,9 +3,13 @@
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\helpstr.cpp
-   HelpStringTy::GetMessage */
+   HelpStringTy::GetMessage
 
-undefined4 __thiscall HelpStringTy::GetMessage(HelpStringTy *this,int param_1)
+   [STMessageHandlerApplier] Recovered common GetMessage envelope/signature.
+   Evidence: family_entries=0051FBA0; family_names=HelpStringTy::GetMessage; ret4=2;
+   direct_offsets={10:2,14:1,18:1,1c:0} */
+
+int __thiscall HelpStringTy::GetMessage(HelpStringTy *this,STMessage *message)
 
 {
   code *pcVar1;
@@ -16,10 +20,9 @@ undefined4 __thiscall HelpStringTy::GetMessage(HelpStringTy *this,int param_1)
   AnonPointee_HelpStringTy_012A *pAVar5;
   undefined4 *puVar6;
   DWORD DVar7;
-  undefined4 uVar8;
-  int iVar9;
+  int iVar8;
   ccFntTy *this_01;
-  uint uVar10;
+  uint uVar9;
   InternalExceptionFrame local_4c;
   HelpStringTy *local_8;
 
@@ -29,12 +32,11 @@ undefined4 __thiscall HelpStringTy::GetMessage(HelpStringTy *this,int param_1)
   iVar2 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
   this_00 = local_8;
   if (iVar2 == 0) {
-    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-    switch(*(undefined4 *)(param_1 + 0x10)) {
-    case 0:
+    switch(message->id) {
+    case MESS_ID_NONE:
       if ((local_8->field_012E != 0) &&
          (DVar7 = FUN_006e51b0(local_8->field_0010),
-         (uint)this_00->field_0126 <= DVar7 - this_00->field_0122)) {
+         this_00->field_0126 <= DVar7 - this_00->field_0122)) {
         puVar6 = (undefined4 *)&this_00->field_0018;
         for (iVar2 = 0x41; iVar2 != 0; iVar2 = iVar2 + -1) {
           *puVar6 = 0;
@@ -45,7 +47,7 @@ undefined4 __thiscall HelpStringTy::GetMessage(HelpStringTy *this,int param_1)
         this_00->field_012E = 0;
       }
       break;
-    case 2:
+    case MESS_ID_CREATE:
       pcVar3 = (ccFntTy *)ccFntTy::operator(PTR_00802a28,0x19d,*(int *)&PTR_00802a28->field_0x30);
       this_00->field_011E = pcVar3;
       pcVar3->field_0058 = 0;
@@ -64,7 +66,7 @@ undefined4 __thiscall HelpStringTy::GetMessage(HelpStringTy *this,int param_1)
                 pAVar5->field_0008;
       }
       puVar6 = (undefined4 *)FUN_006b4fa0((int)pAVar5);
-      for (uVar10 = uVar4 >> 2; uVar10 != 0; uVar10 = uVar10 - 1) {
+      for (uVar9 = uVar4 >> 2; uVar9 != 0; uVar9 = uVar9 - 1) {
         *puVar6 = 0;
         puVar6 = puVar6 + 1;
       }
@@ -74,7 +76,7 @@ undefined4 __thiscall HelpStringTy::GetMessage(HelpStringTy *this,int param_1)
       }
       DAT_00801694 = this_00;
       break;
-    case 3:
+    case MESS_SHARED_0003:
       DAT_00801694 = (HelpStringTy *)0x0;
       if (local_8->field_011E != (ccFntTy *)0x0) {
         ccFntTy::operator(this_01,(uint *)local_8->field_011E);
@@ -84,20 +86,20 @@ undefined4 __thiscall HelpStringTy::GetMessage(HelpStringTy *this,int param_1)
         FreeAndNull(&this_00->field_012A);
       }
       break;
-    case 5:
+    case MESS_SHARED_0005:
       OutStr(local_8);
     }
     g_currentExceptionFrame = local_4c.previous;
-    uVar8 = FUN_006e5fd0();
-    return uVar8;
+    iVar2 = FUN_006e5fd0(this_00,message);
+    return iVar2;
   }
   g_currentExceptionFrame = local_4c.previous;
-  iVar9 = ReportDebugMessage(s_E____titans_Andrey_helpstr_cpp_007c3e4c,0x4d,0,iVar2,&DAT_007a4ccc,
-                             s_HelpStringTy__GetMessage_007c3e90);
-  if (iVar9 != 0) {
+  iVar8 = ReportDebugMessage("E:\\__titans\\Andrey\\helpstr.cpp",0x4d,0,iVar2,"%s",
+                             "HelpStringTy::GetMessage");
+  if (iVar8 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  RaiseInternalException(iVar2,0,s_E____titans_Andrey_helpstr_cpp_007c3e4c,0x4d);
+  RaiseInternalException(iVar2,0,"E:\\__titans\\Andrey\\helpstr.cpp",0x4d);
   return 0xffff;
 }
 

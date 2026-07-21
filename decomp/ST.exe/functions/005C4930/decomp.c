@@ -69,7 +69,7 @@ void __thiscall SettMapTy::DoneSettMap(SettMapTy *this)
       if (PTR_0081176c->field_04B3 != 0xffffffff) {
         FUN_006b3af0((int *)PTR_0081176c->field_04F7,PTR_0081176c->field_04B3);
       }
-      if (-1 < (int)PTR_0081176c->field_0540) {
+      if (-1 < PTR_0081176c->field_0540) {
         FUN_006b3af0(DAT_008075a8,PTR_0081176c->field_0540);
       }
     }
@@ -93,8 +93,8 @@ void __thiscall SettMapTy::DoneSettMap(SettMapTy *this)
       Library::MSVCRT::FUN_0072e2b0(*(HoloTy **)&pMVar2[0x26].field_0x46);
       *(undefined4 *)&pMVar2[0x26].field_0x46 = 0;
     }
-    if (PTR_0081176c->field_002C != 0) {
-      cMf32::RecMemFree(g_cMf32_00806780,&PTR_0081176c->field_002C);
+    if (PTR_0081176c->field_002C != (ccFntTy *)0x0) {
+      cMf32::RecMemFree(g_cMf32_00806780,(uint *)&PTR_0081176c->field_002C);
     }
     if (*(int *)&pMVar2[0x22].field_0x5 != 0) {
       cMf32::RecMemFree(g_cMf32_00806780,(uint *)&pMVar2[0x22].field_0x5);
@@ -165,12 +165,12 @@ void __thiscall SettMapTy::DoneSettMap(SettMapTy *this)
     return;
   }
   g_currentExceptionFrame = local_4c.previous;
-  iVar4 = ReportDebugMessage(s_E____titans_Start_sett_obj_cpp_007cd0e8,0x1ce,0,iVar3,&DAT_007a4ccc,
-                             s_SettMapTy__DoneSettMap_007cd170);
+  iVar4 = ReportDebugMessage("E:\\__titans\\Start\\sett_obj.cpp",0x1ce,0,iVar3,"%s",
+                             "SettMapTy::DoneSettMap");
   if (iVar4 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  RaiseInternalException(iVar3,0,s_E____titans_Start_sett_obj_cpp_007cd0e8,0x1ce);
+  RaiseInternalException(iVar3,0,"E:\\__titans\\Start\\sett_obj.cpp",0x1ce);
   return;
 }
 

@@ -32,10 +32,10 @@ void __thiscall CPanelTy::Update2PanelWB(CPanelTy *this)
   this_00 = local_8;
   if (iVar4 != 0) {
     g_currentExceptionFrame = local_a8.previous;
-    iVar5 = ReportDebugMessage(s_E____titans_Andrey_cpanel2_cpp_007c2524,0x13e,0,iVar4,&DAT_007a4ccc
-                               ,s_CPanelTy__Update2PanelWB_007c25c0);
+    iVar5 = ReportDebugMessage("E:\\__titans\\Andrey\\cpanel2.cpp",0x13e,0,iVar4,"%s"
+                               ,"CPanelTy::Update2PanelWB");
     if (iVar5 == 0) {
-      RaiseInternalException(iVar4,0,s_E____titans_Andrey_cpanel2_cpp_007c2524,0x13e);
+      RaiseInternalException(iVar4,0,"E:\\__titans\\Andrey\\cpanel2.cpp",0x13e);
       return;
     }
     STDebugBreak(); /* noreturn in standalone pseudocode */

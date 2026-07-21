@@ -167,7 +167,7 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0064A970::FUN_0066acc0
   }
   if (iVar11 != param_2) {
     RaiseInternalException
-              (-0x6b,g_overwriteContext_007ED77C,s_E____titans_ai_ai_interp_cpp_007d2cf4,0x152);
+              (-0x6b,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_interp.cpp",0x152);
   }
   iVar11 = (int)*(short *)(param_1 + param_2 * 5 + 1);
   if (iVar11 < 0x7f7) {
@@ -181,7 +181,7 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0064A970::FUN_0066acc0
             Library::MSVCRT::_strncpy(&this_00->field_0x4,pcVar25,0x7f);
           }
           *(undefined4 *)&this_00->field_0x84 = 0xffffffff;
-          RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
+          RaiseInternalException(-0x78,g_overwriteContext_007ED77C,".\\ai\\ai_erc.h",0x79);
         }
         local_8 = (AiFltClassTy *)&local_8->field_0x5;
       } while ((int)local_8 < 0xf);
@@ -191,7 +191,7 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0064A970::FUN_0066acc0
           Library::MSVCRT::_strncpy(&this_00->field_0x4,pcVar25,0x7f);
         }
         *(undefined4 *)&this_00->field_0x84 = 0xffffffff;
-        RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
+        RaiseInternalException(-0x78,g_overwriteContext_007ED77C,".\\ai\\ai_erc.h",0x79);
       }
       local_c = (char *)0x4;
       if (4 < param_2) {
@@ -204,7 +204,7 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0064A970::FUN_0066acc0
               Library::MSVCRT::_strncpy(&this_00->field_0x4,pcVar25,0x7f);
             }
             *(undefined4 *)&this_00->field_0x84 = 0xffffffff;
-            RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
+            RaiseInternalException(-0x78,g_overwriteContext_007ED77C,".\\ai\\ai_erc.h",0x79);
           }
           local_c = local_c + 1;
           local_8 = (AiFltClassTy *)&local_8->field_0x5;
@@ -218,7 +218,7 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0064A970::FUN_0066acc0
           Library::MSVCRT::_strncpy(&this_00->field_0x4,pcVar25,0x7f);
         }
         *(undefined4 *)&this_00->field_0x84 = 0xffffffff;
-        RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
+        RaiseInternalException(-0x78,g_overwriteContext_007ED77C,".\\ai\\ai_erc.h",0x79);
       }
       puVar22 = (uint *)(param_1 + 5);
       uVar12 = (*this_00->vtable->slot_00)(puVar22,local_50);
@@ -274,7 +274,7 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0064A970::FUN_0066acc0
               }
               *(undefined4 *)&this_00->field_0x84 = 0xffffffff;
               RaiseInternalException
-                        (-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
+                        (-0x78,g_overwriteContext_007ED77C,".\\ai\\ai_erc.h",0x79);
             }
             local_c = (char *)((int)local_c + 1);
             local_8 = (AiFltClassTy *)&local_8->field_0x5;
@@ -290,7 +290,7 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0064A970::FUN_0066acc0
             Library::MSVCRT::_strncpy(&this_00->field_0x4,pcVar25,0x7f);
           }
           *(undefined4 *)&this_00->field_0x84 = 0xffffffff;
-          RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
+          RaiseInternalException(-0x78,g_overwriteContext_007ED77C,".\\ai\\ai_erc.h",0x79);
         }
         iVar11 = thunk_FUN_00668f50(this_00,(char *)local_8,0,(uint *)local_50);
         if (iVar11 != 1) {
@@ -299,7 +299,7 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0064A970::FUN_0066acc0
             Library::MSVCRT::_strncpy(&this_00->field_0x4,pcVar25,0x7f);
           }
           *(undefined4 *)&this_00->field_0x84 = 0xffffffff;
-          RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
+          RaiseInternalException(-0x78,g_overwriteContext_007ED77C,".\\ai\\ai_erc.h",0x79);
         }
         local_8 = local_50[0];
         iVar11 = thunk_FUN_00668f50(this_00,local_c,0,(uint *)local_50);
@@ -309,7 +309,7 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0064A970::FUN_0066acc0
             Library::MSVCRT::_strncpy(&this_00->field_0x4,pcVar25,0x7f);
           }
           *(undefined4 *)&this_00->field_0x84 = 0xffffffff;
-          RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
+          RaiseInternalException(-0x78,g_overwriteContext_007ED77C,".\\ai\\ai_erc.h",0x79);
         }
         local_14 = Library::DKW::LIB::FUN_006aac10(4);
         if (DAT_00808a8f != '\0') {
@@ -355,7 +355,7 @@ LAB_0066bdcc:
                 }
                 *(undefined4 *)&this_00->field_0x84 = 0xffffffff;
                 RaiseInternalException
-                          (-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
+                          (-0x78,g_overwriteContext_007ED77C,".\\ai\\ai_erc.h",0x79);
               }
               local_c = (char *)((int)local_c + 1);
               local_10 = local_10 + 5;
@@ -375,7 +375,7 @@ LAB_0066bdcc:
               Library::MSVCRT::_strncpy(&this_00->field_0x4,pcVar25,0x7f);
             }
             *(undefined4 *)&this_00->field_0x84 = 0xffffffff;
-            RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
+            RaiseInternalException(-0x78,g_overwriteContext_007ED77C,".\\ai\\ai_erc.h",0x79);
           }
           puVar22 = (uint *)FUN_006c49b0(local_c);
           if (param_3 == (int *)0x0) {
@@ -399,7 +399,7 @@ LAB_0066bdcc:
                   }
                   *(undefined4 *)&this_00->field_0x84 = 0xffffffff;
                   RaiseInternalException
-                            (-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
+                            (-0x78,g_overwriteContext_007ED77C,".\\ai\\ai_erc.h",0x79);
                 }
                 local_c = (char *)((int)local_c + 1);
                 local_10 = local_10 + 5;
@@ -431,7 +431,7 @@ LAB_0066bdcc:
                       }
                       *(undefined4 *)&this_00->field_0x84 = 0xffffffff;
                       RaiseInternalException
-                                (-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
+                                (-0x78,g_overwriteContext_007ED77C,".\\ai\\ai_erc.h",0x79);
                     }
                     local_c = local_c + 1;
                     local_10 = local_10 + 5;
@@ -445,7 +445,7 @@ LAB_0066bdcc:
                   }
                   *(undefined4 *)&this_00->field_0x84 = 0xffffffff;
                   RaiseInternalException
-                            (-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
+                            (-0x78,g_overwriteContext_007ED77C,".\\ai\\ai_erc.h",0x79);
                 }
                 pAVar14 = (AiFltClassTy *)(*this_00->vtable->slot_28)(local_8);
                 goto LAB_0066d630;
@@ -463,7 +463,7 @@ LAB_0066bdcc:
                   }
                   *(undefined4 *)&this_00->field_0x84 = 0xffffffff;
                   RaiseInternalException
-                            (-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
+                            (-0x78,g_overwriteContext_007ED77C,".\\ai\\ai_erc.h",0x79);
                 }
                 local_c = (char *)((int)local_c + 1);
                 local_10 = local_10 + 5;
@@ -477,7 +477,7 @@ LAB_0066bdcc:
               }
               *(undefined4 *)&this_00->field_0x84 = 0xffffffff;
               RaiseInternalException
-                        (-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
+                        (-0x78,g_overwriteContext_007ED77C,".\\ai\\ai_erc.h",0x79);
             }
             local_14 = Library::DKW::LIB::FUN_006aac10(4);
             uVar12 = (*this_00->vtable->slot_24)(local_8);
@@ -497,7 +497,7 @@ LAB_0066bdcc:
                 }
                 *(undefined4 *)&this_00->field_0x84 = 0xffffffff;
                 RaiseInternalException
-                          (-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
+                          (-0x78,g_overwriteContext_007ED77C,".\\ai\\ai_erc.h",0x79);
               }
               local_c = (char *)((int)local_c + 1);
               local_10 = local_10 + 5;
@@ -510,7 +510,7 @@ LAB_0066bdcc:
               Library::MSVCRT::_strncpy(&this_00->field_0x4,pcVar25,0x7f);
             }
             *(undefined4 *)&this_00->field_0x84 = 0xffffffff;
-            RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
+            RaiseInternalException(-0x78,g_overwriteContext_007ED77C,".\\ai\\ai_erc.h",0x79);
           }
           local_14 = Library::DKW::LIB::FUN_006aac10(4);
           *local_14 = (&DAT_0080e43b)[(int)local_8];
@@ -529,7 +529,7 @@ LAB_0066bdcc:
                   }
                   *(undefined4 *)&this_00->field_0x84 = 0xffffffff;
                   RaiseInternalException
-                            (-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
+                            (-0x78,g_overwriteContext_007ED77C,".\\ai\\ai_erc.h",0x79);
                 }
                 local_c = (char *)((int)local_c + 1);
                 local_10 = local_10 + 5;
@@ -555,7 +555,8 @@ LAB_0066bdcc:
                   pAVar13 = thunk_FUN_004357f0((char)local_50[0]);
                 }
                 if (pAVar13 != (AiPlrClassTy *)0x0) {
-                  iVar11 = (*pAVar13->vtable_at_1c->vfunc_2C)(local_10);
+                  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+                  iVar11 = (*(code *)pAVar13->field_001C->field_002C)(local_10);
                   local_c = (char *)(uint)(iVar11 == 0);
                   local_14 = Library::DKW::LIB::FUN_006aac10(4);
                   *local_14 = (uint)local_c;
@@ -576,7 +577,7 @@ LAB_0066bdcc:
                 *(undefined4 *)&this_00->field_0x84 = 0xffffffff;
               }
               RaiseInternalException
-                        (-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
+                        (-0x78,g_overwriteContext_007ED77C,".\\ai\\ai_erc.h",0x79);
               local_14 = Library::DKW::LIB::FUN_006aac10(4);
               *local_14 = (uint)local_c;
             }
@@ -594,7 +595,7 @@ LAB_0066bdcc:
                   }
                   *(undefined4 *)&this_00->field_0x84 = 0xffffffff;
                   RaiseInternalException
-                            (-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
+                            (-0x78,g_overwriteContext_007ED77C,".\\ai\\ai_erc.h",0x79);
                 }
                 local_c = (char *)((int)local_c + 1);
                 local_10 = local_10 + 5;
@@ -613,7 +614,7 @@ cf_common_exit_00670456:
             Library::MSVCRT::_strncpy(&this_00->field_0x4,pcVar25,0x7f);
           }
           *(undefined4 *)&this_00->field_0x84 = 0xffffffff;
-          RaiseInternalException(-0x77,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
+          RaiseInternalException(-0x77,g_overwriteContext_007ED77C,".\\ai\\ai_erc.h",0x79);
           g_currentExceptionFrame = local_260.previous;
           return local_14;
         }
@@ -628,7 +629,7 @@ cf_common_exit_00670456:
               }
               *(undefined4 *)&this_00->field_0x84 = 0xffffffff;
               RaiseInternalException
-                        (-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
+                        (-0x78,g_overwriteContext_007ED77C,".\\ai\\ai_erc.h",0x79);
             }
             local_c = (char *)((int)local_c + 1);
             local_10 = local_10 + 5;
@@ -642,7 +643,7 @@ cf_common_exit_00670456:
             Library::MSVCRT::_strncpy(&this_00->field_0x4,pcVar25,0x7f);
           }
           *(undefined4 *)&this_00->field_0x84 = 0xffffffff;
-          RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
+          RaiseInternalException(-0x78,g_overwriteContext_007ED77C,".\\ai\\ai_erc.h",0x79);
         }
         local_c = (char *)0x0;
         if ((local_8 == (AiFltClassTy *)0x9) &&
@@ -664,7 +665,8 @@ cf_common_exit_00670456:
           pAVar13 = thunk_FUN_004357f0((char)local_50[0]);
         }
         if (pAVar13 != (AiPlrClassTy *)0x0) {
-          local_c = (char *)(*pAVar13->vtable_at_1c->vfunc_1C)(local_10);
+          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+          local_c = (char *)(*(code *)pAVar13->field_001C->field_001C)(local_10);
           local_14 = Library::DKW::LIB::FUN_006aac10(4);
           *local_14 = (uint)local_c;
           goto cf_common_exit_00670431;
@@ -677,7 +679,7 @@ cf_common_exit_00670456:
 LAB_0066b1ad:
         *(AiFltClassTy **)&this_00->field_0x84 = local_8;
 LAB_0066b1fb:
-        RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
+        RaiseInternalException(-0x78,g_overwriteContext_007ED77C,".\\ai\\ai_erc.h",0x79);
         local_14 = Library::DKW::LIB::FUN_006aac10(4);
         *local_14 = (uint)local_c;
       }
@@ -713,7 +715,7 @@ LAB_0066b1fb:
                 }
                 *(undefined4 *)&this_00->field_0x84 = 0xffffffff;
                 RaiseInternalException
-                          (-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
+                          (-0x78,g_overwriteContext_007ED77C,".\\ai\\ai_erc.h",0x79);
               }
               local_c = (char *)((int)local_c + 1);
               local_10 = local_10 + 5;
@@ -737,7 +739,8 @@ LAB_0066b1fb:
               pAVar13 = thunk_FUN_004357f0((char)local_50[0]);
             }
             if (pAVar13 != (AiPlrClassTy *)0x0) {
-              local_c = (char *)(*pAVar13->vtable_at_1c->vfunc_14)();
+              /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+              local_c = (char *)(*(code *)pAVar13->field_001C->field_0014)();
               local_14 = Library::DKW::LIB::FUN_006aac10(4);
               *local_14 = (uint)local_c;
               break;
@@ -768,7 +771,7 @@ joined_r0x0066b1d2:
                 }
                 *(undefined4 *)&this_00->field_0x84 = 0xffffffff;
                 RaiseInternalException
-                          (-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
+                          (-0x78,g_overwriteContext_007ED77C,".\\ai\\ai_erc.h",0x79);
               }
               local_c = (char *)((int)local_c + 1);
               local_10 = local_10 + 5;
@@ -782,7 +785,7 @@ joined_r0x0066b1d2:
               Library::MSVCRT::_strncpy(&this_00->field_0x4,pcVar25,0x7f);
             }
             *(undefined4 *)&this_00->field_0x84 = 0xffffffff;
-            RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
+            RaiseInternalException(-0x78,g_overwriteContext_007ED77C,".\\ai\\ai_erc.h",0x79);
           }
           iVar11 = thunk_FUN_00668f50(this_00,local_c,0,(uint *)local_50);
           if (iVar11 != 1) {
@@ -791,7 +794,7 @@ joined_r0x0066b1d2:
               Library::MSVCRT::_strncpy(&this_00->field_0x4,pcVar25,0x7f);
             }
             *(undefined4 *)&this_00->field_0x84 = 0xffffffff;
-            RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
+            RaiseInternalException(-0x78,g_overwriteContext_007ED77C,".\\ai\\ai_erc.h",0x79);
           }
           local_1d = '\0';
           local_8 = (AiFltClassTy *)0x0;
@@ -823,7 +826,7 @@ joined_r0x0066b1d2:
                 }
                 *(undefined4 *)&this_00->field_0x84 = 0xffffffff;
                 RaiseInternalException
-                          (-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
+                          (-0x78,g_overwriteContext_007ED77C,".\\ai\\ai_erc.h",0x79);
               }
               local_c = (char *)((int)local_c + 1);
               local_8 = (AiFltClassTy *)&local_8->field_0x5;
@@ -838,7 +841,7 @@ joined_r0x0066b1d2:
               Library::MSVCRT::_strncpy(&this_00->field_0x4,pcVar25,0x7f);
             }
             *(undefined4 *)&this_00->field_0x84 = 0xffffffff;
-            RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
+            RaiseInternalException(-0x78,g_overwriteContext_007ED77C,".\\ai\\ai_erc.h",0x79);
           }
           iVar11 = thunk_FUN_00668f50(this_00,(char *)local_8,0,(uint *)local_50);
           if (iVar11 != 1) {
@@ -847,7 +850,7 @@ joined_r0x0066b1d2:
               Library::MSVCRT::_strncpy(&this_00->field_0x4,pcVar25,0x7f);
             }
             *(undefined4 *)&this_00->field_0x84 = 0xffffffff;
-            RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
+            RaiseInternalException(-0x78,g_overwriteContext_007ED77C,".\\ai\\ai_erc.h",0x79);
           }
           local_14 = Library::DKW::LIB::FUN_006aac10(4);
           if (DAT_00808a8f != '\0') {
@@ -872,7 +875,7 @@ joined_r0x0066b1d2:
               Library::MSVCRT::_strncpy(&this_00->field_0x4,pcVar25,0x7f);
             }
             *(undefined4 *)&this_00->field_0x84 = 0xffffffff;
-            RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
+            RaiseInternalException(-0x78,g_overwriteContext_007ED77C,".\\ai\\ai_erc.h",0x79);
           }
           local_c = (char *)((int)local_c + 1);
           local_8 = (AiFltClassTy *)&local_8->field_0x5;
@@ -886,7 +889,7 @@ joined_r0x0066b1d2:
           Library::MSVCRT::_strncpy(&this_00->field_0x4,pcVar25,0x7f);
         }
         *(undefined4 *)&this_00->field_0x84 = 0xffffffff;
-        RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
+        RaiseInternalException(-0x78,g_overwriteContext_007ED77C,".\\ai\\ai_erc.h",0x79);
       }
       if (local_c == (char *)0x8) {
         local_c = (char *)(uint)DAT_0080874d;
@@ -917,7 +920,7 @@ LAB_0066bb5e:
               Library::MSVCRT::_strncpy(&this_00->field_0x4,pcVar25,0x7f);
             }
             *(undefined4 *)&this_00->field_0x84 = 0xffffffff;
-            RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
+            RaiseInternalException(-0x78,g_overwriteContext_007ED77C,".\\ai\\ai_erc.h",0x79);
           }
           local_c = (char *)((int)local_c + 1);
           local_8 = (AiFltClassTy *)&local_8->field_0x5;
@@ -960,7 +963,7 @@ LAB_0066bff3:
               Library::MSVCRT::_strncpy(&this_00->field_0x4,pcVar25,0x7f);
             }
             *(undefined4 *)&this_00->field_0x84 = 0xffffffff;
-            RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
+            RaiseInternalException(-0x78,g_overwriteContext_007ED77C,".\\ai\\ai_erc.h",0x79);
           }
           local_c = (char *)((int)local_c + 1);
           local_8 = (AiFltClassTy *)&local_8->field_0x5;
@@ -974,7 +977,7 @@ LAB_0066bff3:
           Library::MSVCRT::_strncpy(&this_00->field_0x4,pcVar25,0x7f);
         }
         *(undefined4 *)&this_00->field_0x84 = 0xffffffff;
-        RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
+        RaiseInternalException(-0x78,g_overwriteContext_007ED77C,".\\ai\\ai_erc.h",0x79);
       }
       iVar11 = thunk_FUN_00668f50(this_00,(char *)local_8,0,(uint *)local_50);
       if (iVar11 != 1) {
@@ -983,7 +986,7 @@ LAB_0066bff3:
           Library::MSVCRT::_strncpy(&this_00->field_0x4,pcVar25,0x7f);
         }
         *(undefined4 *)&this_00->field_0x84 = 0xffffffff;
-        RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
+        RaiseInternalException(-0x78,g_overwriteContext_007ED77C,".\\ai\\ai_erc.h",0x79);
       }
       local_14 = Library::DKW::LIB::FUN_006aac10(4);
       *local_14 = (uint)(byte)local_50[0][0x32cd].field_0x268;
@@ -1004,7 +1007,7 @@ LAB_0066bff3:
               Library::MSVCRT::_strncpy(&this_00->field_0x4,pcVar25,0x7f);
             }
             *(undefined4 *)&this_00->field_0x84 = 0xffffffff;
-            RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
+            RaiseInternalException(-0x78,g_overwriteContext_007ED77C,".\\ai\\ai_erc.h",0x79);
           }
           local_c = (char *)((int)local_c + 1);
           local_8 = (AiFltClassTy *)&local_8->field_0x5;
@@ -1018,7 +1021,7 @@ LAB_0066bff3:
           Library::MSVCRT::_strncpy(&this_00->field_0x4,pcVar25,0x7f);
         }
         *(undefined4 *)&this_00->field_0x84 = 0xffffffff;
-        RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
+        RaiseInternalException(-0x78,g_overwriteContext_007ED77C,".\\ai\\ai_erc.h",0x79);
       }
       iVar11 = thunk_FUN_00668f50(this_00,(char *)local_8,0,(uint *)local_50);
       if (iVar11 != 1) {
@@ -1027,7 +1030,7 @@ LAB_0066bff3:
           Library::MSVCRT::_strncpy(&this_00->field_0x4,pcVar25,0x7f);
         }
         *(undefined4 *)&this_00->field_0x84 = 0xffffffff;
-        RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
+        RaiseInternalException(-0x78,g_overwriteContext_007ED77C,".\\ai\\ai_erc.h",0x79);
       }
       local_14 = Library::DKW::LIB::FUN_006aac10(4);
       *local_14 = (uint)(byte)(&DAT_008087e8)[(int)local_50[0] * 0x51];
@@ -1048,7 +1051,7 @@ LAB_0066bff3:
               Library::MSVCRT::_strncpy(&this_00->field_0x4,pcVar25,0x7f);
             }
             *(undefined4 *)&this_00->field_0x84 = 0xffffffff;
-            RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
+            RaiseInternalException(-0x78,g_overwriteContext_007ED77C,".\\ai\\ai_erc.h",0x79);
           }
           local_c = local_c + 1;
           local_8 = (AiFltClassTy *)&local_8->field_0x5;
@@ -1062,7 +1065,7 @@ LAB_0066bff3:
           Library::MSVCRT::_strncpy(&this_00->field_0x4,pcVar25,0x7f);
         }
         *(undefined4 *)&this_00->field_0x84 = 0xffffffff;
-        RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
+        RaiseInternalException(-0x78,g_overwriteContext_007ED77C,".\\ai\\ai_erc.h",0x79);
       }
       puVar22 = (uint *)(param_1 + 5);
       uVar12 = (*this_00->vtable->slot_00)(puVar22,local_50);
@@ -1118,7 +1121,7 @@ LAB_0066bff3:
               Library::MSVCRT::_strncpy(&this_00->field_0x4,pcVar25,0x7f);
             }
             *(undefined4 *)&this_00->field_0x84 = 0xffffffff;
-            RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
+            RaiseInternalException(-0x78,g_overwriteContext_007ED77C,".\\ai\\ai_erc.h",0x79);
           }
           local_c = local_c + 1;
           local_8 = (AiFltClassTy *)&local_8->field_0x5;
@@ -1132,7 +1135,7 @@ LAB_0066bff3:
           Library::MSVCRT::_strncpy(&this_00->field_0x4,pcVar25,0x7f);
         }
         *(undefined4 *)&this_00->field_0x84 = 0xffffffff;
-        RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
+        RaiseInternalException(-0x78,g_overwriteContext_007ED77C,".\\ai\\ai_erc.h",0x79);
       }
       puVar22 = (uint *)(param_1 + 5);
       uVar12 = (*this_00->vtable->slot_00)(puVar22,local_50);
@@ -1185,7 +1188,7 @@ LAB_0066bff3:
             Library::MSVCRT::_strncpy(&this_00->field_0x4,pcVar25,0x7f);
           }
           *(undefined4 *)&this_00->field_0x84 = 0xffffffff;
-          RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
+          RaiseInternalException(-0x78,g_overwriteContext_007ED77C,".\\ai\\ai_erc.h",0x79);
         }
         local_8 = (AiFltClassTy *)&local_8->field_0x5;
       } while ((int)local_8 < 10);
@@ -1195,7 +1198,7 @@ LAB_0066bff3:
           Library::MSVCRT::_strncpy(&this_00->field_0x4,pcVar25,0x7f);
         }
         *(undefined4 *)&this_00->field_0x84 = 0xffffffff;
-        RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
+        RaiseInternalException(-0x78,g_overwriteContext_007ED77C,".\\ai\\ai_erc.h",0x79);
       }
       local_c = (char *)0x3;
       if (3 < param_2) {
@@ -1208,7 +1211,7 @@ LAB_0066bff3:
               Library::MSVCRT::_strncpy(&this_00->field_0x4,pcVar25,0x7f);
             }
             *(undefined4 *)&this_00->field_0x84 = 0xffffffff;
-            RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
+            RaiseInternalException(-0x78,g_overwriteContext_007ED77C,".\\ai\\ai_erc.h",0x79);
           }
           local_c = local_c + 1;
           local_8 = (AiFltClassTy *)&local_8->field_0x5;
@@ -1222,7 +1225,7 @@ LAB_0066bff3:
           Library::MSVCRT::_strncpy(&this_00->field_0x4,pcVar25,0x7f);
         }
         *(undefined4 *)&this_00->field_0x84 = 0xffffffff;
-        RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
+        RaiseInternalException(-0x78,g_overwriteContext_007ED77C,".\\ai\\ai_erc.h",0x79);
       }
       puVar22 = (uint *)(param_1 + 5);
       uVar12 = (*this_00->vtable->slot_00)(puVar22,local_50);
@@ -1280,7 +1283,7 @@ cf_common_exit_0066DF5E:
               Library::MSVCRT::_strncpy(&this_00->field_0x4,pcVar25,0x7f);
             }
             *(undefined4 *)&this_00->field_0x84 = 0xffffffff;
-            RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
+            RaiseInternalException(-0x78,g_overwriteContext_007ED77C,".\\ai\\ai_erc.h",0x79);
           }
           local_c = local_c + 1;
           local_8 = (AiFltClassTy *)&local_8->field_0x5;
@@ -1294,7 +1297,7 @@ cf_common_exit_0066DF5E:
           Library::MSVCRT::_strncpy(&this_00->field_0x4,pcVar25,0x7f);
         }
         *(undefined4 *)&this_00->field_0x84 = 0xffffffff;
-        RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
+        RaiseInternalException(-0x78,g_overwriteContext_007ED77C,".\\ai\\ai_erc.h",0x79);
       }
       puVar22 = (uint *)(param_1 + 5);
       uVar12 = (*this_00->vtable->slot_00)(puVar22,local_50);
@@ -1393,7 +1396,7 @@ cf_continue_loop_0066CACD:
               Library::MSVCRT::_strncpy(&this_00->field_0x4,pcVar25,0x7f);
             }
             *(undefined4 *)&this_00->field_0x84 = 0xffffffff;
-            RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
+            RaiseInternalException(-0x78,g_overwriteContext_007ED77C,".\\ai\\ai_erc.h",0x79);
           }
           local_c = local_c + 1;
           local_8 = (AiFltClassTy *)&local_8->field_0x5;
@@ -1407,7 +1410,7 @@ cf_continue_loop_0066CACD:
           Library::MSVCRT::_strncpy(&this_00->field_0x4,pcVar25,0x7f);
         }
         *(undefined4 *)&this_00->field_0x84 = 0xffffffff;
-        RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
+        RaiseInternalException(-0x78,g_overwriteContext_007ED77C,".\\ai\\ai_erc.h",0x79);
       }
       puVar22 = (uint *)(param_1 + 5);
       uVar12 = (*this_00->vtable->slot_00)(puVar22,local_50);
@@ -1506,7 +1509,7 @@ cf_continue_loop_0066CD4A:
               Library::MSVCRT::_strncpy(&this_00->field_0x4,pcVar25,0x7f);
             }
             *(undefined4 *)&this_00->field_0x84 = 0xffffffff;
-            RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
+            RaiseInternalException(-0x78,g_overwriteContext_007ED77C,".\\ai\\ai_erc.h",0x79);
           }
           local_c = local_c + 1;
           local_8 = (AiFltClassTy *)&local_8->field_0x5;
@@ -1520,7 +1523,7 @@ cf_continue_loop_0066CD4A:
           Library::MSVCRT::_strncpy(&this_00->field_0x4,pcVar25,0x7f);
         }
         *(undefined4 *)&this_00->field_0x84 = 0xffffffff;
-        RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
+        RaiseInternalException(-0x78,g_overwriteContext_007ED77C,".\\ai\\ai_erc.h",0x79);
       }
       puVar22 = (uint *)(param_1 + 5);
       uVar12 = (*this_00->vtable->slot_00)(puVar22,local_50);
@@ -1619,7 +1622,7 @@ cf_continue_loop_0066CFCA:
               Library::MSVCRT::_strncpy(&this_00->field_0x4,pcVar25,0x7f);
             }
             *(undefined4 *)&this_00->field_0x84 = 0xffffffff;
-            RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
+            RaiseInternalException(-0x78,g_overwriteContext_007ED77C,".\\ai\\ai_erc.h",0x79);
           }
           local_c = local_c + 1;
           local_8 = (AiFltClassTy *)&local_8->field_0x5;
@@ -1633,7 +1636,7 @@ cf_continue_loop_0066CFCA:
           Library::MSVCRT::_strncpy(&this_00->field_0x4,pcVar25,0x7f);
         }
         *(undefined4 *)&this_00->field_0x84 = 0xffffffff;
-        RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
+        RaiseInternalException(-0x78,g_overwriteContext_007ED77C,".\\ai\\ai_erc.h",0x79);
       }
       puVar22 = (uint *)(param_1 + 5);
       uVar12 = (*this_00->vtable->slot_00)(puVar22,local_50);
@@ -1665,7 +1668,7 @@ cf_continue_loop_0066CFCA:
               Library::MSVCRT::_strncpy(&this_00->field_0x4,pcVar25,0x7f);
             }
             *(undefined4 *)&this_00->field_0x84 = 0xffffffff;
-            RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
+            RaiseInternalException(-0x78,g_overwriteContext_007ED77C,".\\ai\\ai_erc.h",0x79);
           }
           local_c = (char *)((int)local_c + 1);
           local_8 = (AiFltClassTy *)&local_8->field_0x5;
@@ -1701,7 +1704,7 @@ cf_continue_loop_0066CFCA:
           Library::MSVCRT::_strncpy(&this_00->field_0x4,pcVar25,0x7f);
         }
         *(undefined4 *)&this_00->field_0x84 = 0xffffffff;
-        RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
+        RaiseInternalException(-0x78,g_overwriteContext_007ED77C,".\\ai\\ai_erc.h",0x79);
       }
       local_8 = (AiFltClassTy *)&local_8->field_0x5;
     } while ((int)local_8 < 0xf);
@@ -1711,7 +1714,7 @@ cf_continue_loop_0066CFCA:
         Library::MSVCRT::_strncpy(&this_00->field_0x4,pcVar25,0x7f);
       }
       *(undefined4 *)&this_00->field_0x84 = 0xffffffff;
-      RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
+      RaiseInternalException(-0x78,g_overwriteContext_007ED77C,".\\ai\\ai_erc.h",0x79);
     }
     local_c = (char *)0x4;
     if (4 < param_2) {
@@ -1724,7 +1727,7 @@ cf_continue_loop_0066CFCA:
             Library::MSVCRT::_strncpy(&this_00->field_0x4,pcVar25,0x7f);
           }
           *(undefined4 *)&this_00->field_0x84 = 0xffffffff;
-          RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
+          RaiseInternalException(-0x78,g_overwriteContext_007ED77C,".\\ai\\ai_erc.h",0x79);
         }
         local_c = local_c + 1;
         local_8 = (AiFltClassTy *)&local_8->field_0x5;
@@ -1737,7 +1740,7 @@ cf_continue_loop_0066CFCA:
         Library::MSVCRT::_strncpy(&this_00->field_0x4,pcVar25,0x7f);
       }
       *(undefined4 *)&this_00->field_0x84 = 0xffffffff;
-      RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
+      RaiseInternalException(-0x78,g_overwriteContext_007ED77C,".\\ai\\ai_erc.h",0x79);
     }
     puVar22 = (uint *)(param_1 + 5);
     uVar12 = (*this_00->vtable->slot_00)(puVar22,local_50);
@@ -1785,7 +1788,7 @@ cf_continue_loop_0066CFCA:
         Library::MSVCRT::_strncpy(&this_00->field_0x4,pcVar25,0x7f);
       }
       *(undefined4 *)&this_00->field_0x84 = 0xffffffff;
-      RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
+      RaiseInternalException(-0x78,g_overwriteContext_007ED77C,".\\ai\\ai_erc.h",0x79);
     }
     if ((param_1[5] != '\x06') && (param_1[5] != '\x03')) {
       pcVar25 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
@@ -1793,7 +1796,7 @@ cf_continue_loop_0066CFCA:
         Library::MSVCRT::_strncpy(&this_00->field_0x4,pcVar25,0x7f);
       }
       *(undefined4 *)&this_00->field_0x84 = 0xffffffff;
-      RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
+      RaiseInternalException(-0x78,g_overwriteContext_007ED77C,".\\ai\\ai_erc.h",0x79);
     }
     local_c = (char *)0x2;
     if (2 < param_2) {
@@ -1806,7 +1809,7 @@ cf_continue_loop_0066CFCA:
             Library::MSVCRT::_strncpy(&this_00->field_0x4,pcVar25,0x7f);
           }
           *(undefined4 *)&this_00->field_0x84 = 0xffffffff;
-          RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
+          RaiseInternalException(-0x78,g_overwriteContext_007ED77C,".\\ai\\ai_erc.h",0x79);
         }
         local_c = (char *)((int)local_c + 1);
         local_8 = (AiFltClassTy *)&local_8->field_0x5;
@@ -1834,7 +1837,7 @@ cf_continue_loop_0066CFCA:
         Library::MSVCRT::_strncpy(&this_00->field_0x4,pcVar25,0x7f);
       }
       *(undefined4 *)&this_00->field_0x84 = 0xffffffff;
-      RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
+      RaiseInternalException(-0x78,g_overwriteContext_007ED77C,".\\ai\\ai_erc.h",0x79);
     }
     if ((param_1[5] != '\x06') && (param_1[5] != '\x03')) {
       pcVar25 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
@@ -1842,7 +1845,7 @@ cf_continue_loop_0066CFCA:
         Library::MSVCRT::_strncpy(&this_00->field_0x4,pcVar25,0x7f);
       }
       *(undefined4 *)&this_00->field_0x84 = 0xffffffff;
-      RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
+      RaiseInternalException(-0x78,g_overwriteContext_007ED77C,".\\ai\\ai_erc.h",0x79);
     }
     local_c = (char *)0x2;
     if (2 < param_2) {
@@ -1855,7 +1858,7 @@ cf_continue_loop_0066CFCA:
             Library::MSVCRT::_strncpy(&this_00->field_0x4,pcVar25,0x7f);
           }
           *(undefined4 *)&this_00->field_0x84 = 0xffffffff;
-          RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
+          RaiseInternalException(-0x78,g_overwriteContext_007ED77C,".\\ai\\ai_erc.h",0x79);
         }
         local_c = (char *)((int)local_c + 1);
         local_8 = (AiFltClassTy *)&local_8->field_0x5;
@@ -1887,7 +1890,7 @@ cf_continue_loop_0066CFCA:
           Library::MSVCRT::_strncpy(&this_00->field_0x4,pcVar25,0x7f);
         }
         *(undefined4 *)&this_00->field_0x84 = 0xffffffff;
-        RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
+        RaiseInternalException(-0x78,g_overwriteContext_007ED77C,".\\ai\\ai_erc.h",0x79);
       }
       local_8 = (AiFltClassTy *)&local_8->field_0x5;
     } while ((int)local_8 < 0x14);
@@ -1897,7 +1900,7 @@ cf_continue_loop_0066CFCA:
         Library::MSVCRT::_strncpy(&this_00->field_0x4,pcVar25,0x7f);
       }
       *(undefined4 *)&this_00->field_0x84 = 0xffffffff;
-      RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
+      RaiseInternalException(-0x78,g_overwriteContext_007ED77C,".\\ai\\ai_erc.h",0x79);
     }
     local_c = (char *)0x5;
     if (5 < param_2) {
@@ -1910,7 +1913,7 @@ cf_continue_loop_0066CFCA:
             Library::MSVCRT::_strncpy(&this_00->field_0x4,pcVar25,0x7f);
           }
           *(undefined4 *)&this_00->field_0x84 = 0xffffffff;
-          RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
+          RaiseInternalException(-0x78,g_overwriteContext_007ED77C,".\\ai\\ai_erc.h",0x79);
         }
         local_c = local_c + 1;
         local_8 = (AiFltClassTy *)&local_8->field_0x5;
@@ -1923,7 +1926,7 @@ cf_continue_loop_0066CFCA:
         Library::MSVCRT::_strncpy(&this_00->field_0x4,pcVar25,0x7f);
       }
       *(undefined4 *)&this_00->field_0x84 = 0xffffffff;
-      RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
+      RaiseInternalException(-0x78,g_overwriteContext_007ED77C,".\\ai\\ai_erc.h",0x79);
     }
     puVar22 = (uint *)(param_1 + 5);
     uVar12 = (*this_00->vtable->slot_00)(puVar22,local_50);
@@ -1978,7 +1981,7 @@ cf_continue_loop_0066CFCA:
             Library::MSVCRT::_strncpy(&this_00->field_0x4,pcVar25,0x7f);
           }
           *(undefined4 *)&this_00->field_0x84 = 0xffffffff;
-          RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
+          RaiseInternalException(-0x78,g_overwriteContext_007ED77C,".\\ai\\ai_erc.h",0x79);
         }
         local_c = (char *)((int)local_c + 1);
         local_8 = (AiFltClassTy *)&local_8->field_0x5;
@@ -2012,7 +2015,7 @@ cf_common_exit_0066DCED:
             Library::MSVCRT::_strncpy(&this_00->field_0x4,pcVar25,0x7f);
           }
           *(undefined4 *)&this_00->field_0x84 = 0xffffffff;
-          RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
+          RaiseInternalException(-0x78,g_overwriteContext_007ED77C,".\\ai\\ai_erc.h",0x79);
         }
         local_c = (char *)((int)local_c + 1);
         local_8 = (AiFltClassTy *)&local_8->field_0x5;
@@ -2128,7 +2131,7 @@ cf_common_exit_0066DCED:
         Library::MSVCRT::_strncpy(&this_00->field_0x4,pcVar25,0x7f);
       }
       *(undefined4 *)&this_00->field_0x84 = 0xffffffff;
-      RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
+      RaiseInternalException(-0x78,g_overwriteContext_007ED77C,".\\ai\\ai_erc.h",0x79);
     }
     local_14 = Library::DKW::LIB::FUN_006aac10(4);
     *local_14 = (uint)local_c;
@@ -2142,7 +2145,7 @@ cf_common_exit_0066DCED:
         Library::MSVCRT::_strncpy(&this_00->field_0x4,pcVar25,0x7f);
       }
       *(undefined4 *)&this_00->field_0x84 = 0xffffffff;
-      RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
+      RaiseInternalException(-0x78,g_overwriteContext_007ED77C,".\\ai\\ai_erc.h",0x79);
     }
     if ((param_1[5] != '\x06') && (param_1[5] != '\x03')) {
       pcVar25 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
@@ -2150,7 +2153,7 @@ cf_common_exit_0066DCED:
         Library::MSVCRT::_strncpy(&this_00->field_0x4,pcVar25,0x7f);
       }
       *(undefined4 *)&this_00->field_0x84 = 0xffffffff;
-      RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
+      RaiseInternalException(-0x78,g_overwriteContext_007ED77C,".\\ai\\ai_erc.h",0x79);
     }
     local_c = (char *)0x2;
     if (2 < param_2) {
@@ -2163,7 +2166,7 @@ cf_common_exit_0066DCED:
             Library::MSVCRT::_strncpy(&this_00->field_0x4,pcVar25,0x7f);
           }
           *(undefined4 *)&this_00->field_0x84 = 0xffffffff;
-          RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
+          RaiseInternalException(-0x78,g_overwriteContext_007ED77C,".\\ai\\ai_erc.h",0x79);
         }
         local_c = (char *)((int)local_c + 1);
         local_8 = (AiFltClassTy *)&local_8->field_0x5;
@@ -2176,7 +2179,7 @@ cf_common_exit_0066DCED:
         Library::MSVCRT::_strncpy(&this_00->field_0x4,pcVar25,0x7f);
       }
       *(undefined4 *)&this_00->field_0x84 = 0xffffffff;
-      RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
+      RaiseInternalException(-0x78,g_overwriteContext_007ED77C,".\\ai\\ai_erc.h",0x79);
     }
     local_10 = (char *)0x0;
     iVar11 = thunk_FUN_00668f50(this_00,(char *)local_8,0,(uint *)local_50);
@@ -2221,7 +2224,7 @@ cf_common_exit_0066DCED:
         Library::MSVCRT::_strncpy(&this_00->field_0x4,pcVar25,0x7f);
       }
       *(undefined4 *)&this_00->field_0x84 = 0xffffffff;
-      RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
+      RaiseInternalException(-0x78,g_overwriteContext_007ED77C,".\\ai\\ai_erc.h",0x79);
     }
     local_14 = Library::DKW::LIB::FUN_006aac10(4);
     *local_14 = (uint)local_10;
@@ -2233,7 +2236,7 @@ cf_common_exit_0066DCED:
         Library::MSVCRT::_strncpy(&this_00->field_0x4,pcVar25,0x7f);
       }
       *(undefined4 *)&this_00->field_0x84 = 0xffffffff;
-      RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
+      RaiseInternalException(-0x78,g_overwriteContext_007ED77C,".\\ai\\ai_erc.h",0x79);
     }
     if ((param_1[5] != '\x06') && (param_1[5] != '\x03')) {
       pcVar25 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
@@ -2241,7 +2244,7 @@ cf_common_exit_0066DCED:
         Library::MSVCRT::_strncpy(&this_00->field_0x4,pcVar25,0x7f);
       }
       *(undefined4 *)&this_00->field_0x84 = 0xffffffff;
-      RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
+      RaiseInternalException(-0x78,g_overwriteContext_007ED77C,".\\ai\\ai_erc.h",0x79);
     }
     local_c = (char *)0x2;
     if (2 < param_2) {
@@ -2254,7 +2257,7 @@ cf_common_exit_0066DCED:
             Library::MSVCRT::_strncpy(&this_00->field_0x4,pcVar25,0x7f);
           }
           *(undefined4 *)&this_00->field_0x84 = 0xffffffff;
-          RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
+          RaiseInternalException(-0x78,g_overwriteContext_007ED77C,".\\ai\\ai_erc.h",0x79);
         }
         local_c = (char *)((int)local_c + 1);
         local_8 = (AiFltClassTy *)&local_8->field_0x5;
@@ -2267,7 +2270,7 @@ cf_common_exit_0066DCED:
         Library::MSVCRT::_strncpy(&this_00->field_0x4,pcVar25,0x7f);
       }
       *(undefined4 *)&this_00->field_0x84 = 0xffffffff;
-      RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
+      RaiseInternalException(-0x78,g_overwriteContext_007ED77C,".\\ai\\ai_erc.h",0x79);
     }
     local_10 = (char *)0x0;
     iVar11 = thunk_FUN_00668f50(this_00,(char *)local_8,0,(uint *)local_50);
@@ -2310,7 +2313,7 @@ cf_common_exit_0066DCED:
         Library::MSVCRT::_strncpy(&this_00->field_0x4,pcVar25,0x7f);
       }
       *(undefined4 *)&this_00->field_0x84 = 0xffffffff;
-      RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
+      RaiseInternalException(-0x78,g_overwriteContext_007ED77C,".\\ai\\ai_erc.h",0x79);
     }
     local_14 = Library::DKW::LIB::FUN_006aac10(4);
     *local_14 = (uint)local_10;
@@ -2322,7 +2325,7 @@ cf_common_exit_0066DCED:
         Library::MSVCRT::_strncpy(&this_00->field_0x4,pcVar25,0x7f);
       }
       *(undefined4 *)&this_00->field_0x84 = 0xffffffff;
-      RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
+      RaiseInternalException(-0x78,g_overwriteContext_007ED77C,".\\ai\\ai_erc.h",0x79);
     }
     local_c = (char *)0x1;
     if (1 < param_2) {
@@ -2335,7 +2338,7 @@ cf_common_exit_0066DCED:
             Library::MSVCRT::_strncpy(&this_00->field_0x4,pcVar25,0x7f);
           }
           *(undefined4 *)&this_00->field_0x84 = 0xffffffff;
-          RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
+          RaiseInternalException(-0x78,g_overwriteContext_007ED77C,".\\ai\\ai_erc.h",0x79);
         }
         local_c = (char *)((int)local_c + 1);
         local_8 = (AiFltClassTy *)&local_8->field_0x5;
@@ -2382,7 +2385,7 @@ cf_common_exit_0066DCED:
         Library::MSVCRT::_strncpy(&this_00->field_0x4,pcVar25,0x7f);
       }
       *(undefined4 *)&this_00->field_0x84 = 0xffffffff;
-      RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
+      RaiseInternalException(-0x78,g_overwriteContext_007ED77C,".\\ai\\ai_erc.h",0x79);
     }
     local_c = (char *)0x1;
     if (1 < param_2) {
@@ -2395,7 +2398,7 @@ cf_common_exit_0066DCED:
             Library::MSVCRT::_strncpy(&this_00->field_0x4,pcVar25,0x7f);
           }
           *(undefined4 *)&this_00->field_0x84 = 0xffffffff;
-          RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
+          RaiseInternalException(-0x78,g_overwriteContext_007ED77C,".\\ai\\ai_erc.h",0x79);
         }
         local_c = (char *)((int)local_c + 1);
         local_8 = (AiFltClassTy *)&local_8->field_0x5;
@@ -2446,7 +2449,7 @@ cf_common_exit_0066DCED:
         Library::MSVCRT::_strncpy(&this_00->field_0x4,pcVar25,0x7f);
       }
       *(undefined4 *)&this_00->field_0x84 = 0xffffffff;
-      RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
+      RaiseInternalException(-0x78,g_overwriteContext_007ED77C,".\\ai\\ai_erc.h",0x79);
     }
     if ((param_1[5] != '\x06') && (param_1[5] != '\x03')) {
       pcVar25 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
@@ -2454,7 +2457,7 @@ cf_common_exit_0066DCED:
         Library::MSVCRT::_strncpy(&this_00->field_0x4,pcVar25,0x7f);
       }
       *(undefined4 *)&this_00->field_0x84 = 0xffffffff;
-      RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
+      RaiseInternalException(-0x78,g_overwriteContext_007ED77C,".\\ai\\ai_erc.h",0x79);
     }
     local_c = (char *)0x2;
     if (2 < param_2) {
@@ -2467,7 +2470,7 @@ cf_common_exit_0066DCED:
             Library::MSVCRT::_strncpy(&this_00->field_0x4,pcVar25,0x7f);
           }
           *(undefined4 *)&this_00->field_0x84 = 0xffffffff;
-          RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
+          RaiseInternalException(-0x78,g_overwriteContext_007ED77C,".\\ai\\ai_erc.h",0x79);
         }
         local_c = (char *)((int)local_c + 1);
         local_8 = (AiFltClassTy *)&local_8->field_0x5;
@@ -2480,7 +2483,7 @@ cf_common_exit_0066DCED:
         Library::MSVCRT::_strncpy(&this_00->field_0x4,pcVar25,0x7f);
       }
       *(undefined4 *)&this_00->field_0x84 = 0xffffffff;
-      RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
+      RaiseInternalException(-0x78,g_overwriteContext_007ED77C,".\\ai\\ai_erc.h",0x79);
     }
     local_1c = (byte *)0x0;
     iVar11 = thunk_FUN_00668f50(this_00,(char *)local_8,0,(uint *)local_50);
@@ -2528,7 +2531,7 @@ cf_common_exit_0066DCED:
         Library::MSVCRT::_strncpy(&this_00->field_0x4,pcVar25,0x7f);
       }
       *(undefined4 *)&this_00->field_0x84 = 0xffffffff;
-      RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
+      RaiseInternalException(-0x78,g_overwriteContext_007ED77C,".\\ai\\ai_erc.h",0x79);
     }
     local_14 = Library::DKW::LIB::FUN_006aac10(4);
     *local_14 = (uint)local_1c;
@@ -2546,7 +2549,7 @@ cf_common_exit_0066DCED:
             Library::MSVCRT::_strncpy(&this_00->field_0x4,pcVar25,0x7f);
           }
           *(undefined4 *)&this_00->field_0x84 = 0xffffffff;
-          RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
+          RaiseInternalException(-0x78,g_overwriteContext_007ED77C,".\\ai\\ai_erc.h",0x79);
         }
         local_c = (char *)((int)local_c + 1);
         local_8 = (AiFltClassTy *)&local_8->field_0x5;
@@ -2559,7 +2562,7 @@ cf_common_exit_0066DCED:
         Library::MSVCRT::_strncpy(&this_00->field_0x4,pcVar25,0x7f);
       }
       *(undefined4 *)&this_00->field_0x84 = 0xffffffff;
-      RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
+      RaiseInternalException(-0x78,g_overwriteContext_007ED77C,".\\ai\\ai_erc.h",0x79);
     }
     local_8 = (AiFltClassTy *)0x0;
     iVar11 = thunk_FUN_00668f50(this_00,local_c,0,(uint *)local_50);
@@ -2582,7 +2585,7 @@ cf_common_exit_0066DCED:
         Library::MSVCRT::_strncpy(&this_00->field_0x4,pcVar25,0x7f);
       }
       *(undefined4 *)&this_00->field_0x84 = 0xffffffff;
-      RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
+      RaiseInternalException(-0x78,g_overwriteContext_007ED77C,".\\ai\\ai_erc.h",0x79);
       local_14 = Library::DKW::LIB::FUN_006aac10(4);
       *local_14 = (uint)local_8;
     }
@@ -2599,7 +2602,7 @@ cf_common_exit_0066DCED:
             Library::MSVCRT::_strncpy(&this_00->field_0x4,pcVar25,0x7f);
           }
           *(undefined4 *)&this_00->field_0x84 = 0xffffffff;
-          RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
+          RaiseInternalException(-0x78,g_overwriteContext_007ED77C,".\\ai\\ai_erc.h",0x79);
         }
         local_c = (char *)((int)local_c + 1);
         local_8 = (AiFltClassTy *)&local_8->field_0x5;
@@ -2612,7 +2615,7 @@ cf_common_exit_0066DCED:
         Library::MSVCRT::_strncpy(&this_00->field_0x4,pcVar25,0x7f);
       }
       *(undefined4 *)&this_00->field_0x84 = 0xffffffff;
-      RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
+      RaiseInternalException(-0x78,g_overwriteContext_007ED77C,".\\ai\\ai_erc.h",0x79);
     }
     local_14 = Library::DKW::LIB::FUN_006aac10(4);
     *local_14 = (uint)*(byte *)((int)&local_8[0x3006].field_00A7 + 1);
@@ -2631,7 +2634,7 @@ cf_common_exit_0066DCED:
             Library::MSVCRT::_strncpy(&this_00->field_0x4,pcVar25,0x7f);
           }
           *(undefined4 *)&this_00->field_0x84 = 0xffffffff;
-          RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
+          RaiseInternalException(-0x78,g_overwriteContext_007ED77C,".\\ai\\ai_erc.h",0x79);
         }
         local_c = (char *)((int)local_c + 1);
         local_8 = (AiFltClassTy *)&local_8->field_0x5;
@@ -2646,7 +2649,7 @@ cf_common_exit_0066DCED:
         Library::MSVCRT::_strncpy(&this_00->field_0x4,pcVar25,0x7f);
       }
       *(undefined4 *)&this_00->field_0x84 = 0xffffffff;
-      RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
+      RaiseInternalException(-0x78,g_overwriteContext_007ED77C,".\\ai\\ai_erc.h",0x79);
     }
     if ((local_10 == (char *)0x9) && (iVar11 = (*this_00->vtable->slot_18)(), iVar11 == 8)) {
       pcVar25 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
@@ -2654,7 +2657,7 @@ cf_common_exit_0066DCED:
         Library::MSVCRT::_strncpy(&this_00->field_0x4,pcVar25,0x7f);
       }
       *(undefined4 *)&this_00->field_0x84 = 0xffffffff;
-      RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
+      RaiseInternalException(-0x78,g_overwriteContext_007ED77C,".\\ai\\ai_erc.h",0x79);
     }
     local_18 = (char *)0x0;
     iVar11 = thunk_FUN_00668f50(this_00,local_10,0,(uint *)local_50);
@@ -2695,7 +2698,7 @@ cf_common_exit_0066DCED:
         Library::MSVCRT::_strncpy(&this_00->field_0x4,pcVar25,0x7f);
       }
       *(undefined4 *)&this_00->field_0x84 = 0xffffffff;
-      RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
+      RaiseInternalException(-0x78,g_overwriteContext_007ED77C,".\\ai\\ai_erc.h",0x79);
     }
     uVar12 = (uint)local_18;
     local_14 = Library::DKW::LIB::FUN_006aac10(4);
@@ -2713,7 +2716,7 @@ cf_common_exit_0066DCED:
             Library::MSVCRT::_strncpy(&this_00->field_0x4,pcVar25,0x7f);
           }
           *(undefined4 *)&this_00->field_0x84 = 0xffffffff;
-          RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
+          RaiseInternalException(-0x78,g_overwriteContext_007ED77C,".\\ai\\ai_erc.h",0x79);
         }
         local_c = (char *)((int)local_c + 1);
         local_8 = (AiFltClassTy *)&local_8->field_0x5;
@@ -2727,7 +2730,7 @@ cf_common_exit_0066DCED:
         Library::MSVCRT::_strncpy(&this_00->field_0x4,pcVar25,0x7f);
       }
       *(undefined4 *)&this_00->field_0x84 = 0xffffffff;
-      RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
+      RaiseInternalException(-0x78,g_overwriteContext_007ED77C,".\\ai\\ai_erc.h",0x79);
     }
     if ((local_8 == (AiFltClassTy *)0x9) && (iVar11 = (*this_00->vtable->slot_18)(), iVar11 == 8)) {
       pcVar25 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
@@ -2735,7 +2738,7 @@ cf_common_exit_0066DCED:
         Library::MSVCRT::_strncpy(&this_00->field_0x4,pcVar25,0x7f);
       }
       *(undefined4 *)&this_00->field_0x84 = 0xffffffff;
-      RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
+      RaiseInternalException(-0x78,g_overwriteContext_007ED77C,".\\ai\\ai_erc.h",0x79);
     }
     local_10 = (char *)0x0;
     iVar11 = thunk_FUN_00668f50(this_00,(char *)local_8,0,(uint *)local_50);
@@ -2750,7 +2753,7 @@ cf_common_exit_0066DCED:
         Library::MSVCRT::_strncpy(&this_00->field_0x4,pcVar25,0x7f);
       }
       *(undefined4 *)&this_00->field_0x84 = 0xffffffff;
-      RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
+      RaiseInternalException(-0x78,g_overwriteContext_007ED77C,".\\ai\\ai_erc.h",0x79);
       uVar12 = (uint)local_10;
       local_14 = Library::DKW::LIB::FUN_006aac10(4);
       *local_14 = uVar12;
@@ -2768,7 +2771,7 @@ cf_common_exit_0066DCED:
             Library::MSVCRT::_strncpy(&this_00->field_0x4,pcVar25,0x7f);
           }
           *(undefined4 *)&this_00->field_0x84 = 0xffffffff;
-          RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
+          RaiseInternalException(-0x78,g_overwriteContext_007ED77C,".\\ai\\ai_erc.h",0x79);
         }
         local_c = (char *)((int)local_c + 1);
         local_8 = (AiFltClassTy *)&local_8->field_0x5;
@@ -2783,7 +2786,7 @@ cf_common_exit_0066DCED:
         Library::MSVCRT::_strncpy(&this_00->field_0x4,pcVar25,0x7f);
       }
       *(undefined4 *)&this_00->field_0x84 = 0xffffffff;
-      RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
+      RaiseInternalException(-0x78,g_overwriteContext_007ED77C,".\\ai\\ai_erc.h",0x79);
     }
     if (((int)local_8 < 0) || (3 < (int)local_c)) {
       pcVar25 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
@@ -2791,7 +2794,7 @@ cf_common_exit_0066DCED:
         Library::MSVCRT::_strncpy(&this_00->field_0x4,pcVar25,0x7f);
       }
       *(undefined4 *)&this_00->field_0x84 = 0xffffffff;
-      RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
+      RaiseInternalException(-0x78,g_overwriteContext_007ED77C,".\\ai\\ai_erc.h",0x79);
     }
     local_14 = Library::DKW::LIB::FUN_006aac10(4);
     *local_14 = *(uint *)(&DAT_007e481c + (int)(&local_8->vtable + (int)local_c) * 4);
@@ -2803,7 +2806,7 @@ cf_common_exit_0066DCED:
         Library::MSVCRT::_strncpy(&this_00->field_0x4,pcVar25,0x7f);
       }
       *(undefined4 *)&this_00->field_0x84 = 0xffffffff;
-      RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
+      RaiseInternalException(-0x78,g_overwriteContext_007ED77C,".\\ai\\ai_erc.h",0x79);
     }
     local_c = (char *)0x1;
     if (1 < param_2) {
@@ -2816,7 +2819,7 @@ cf_common_exit_0066DCED:
             Library::MSVCRT::_strncpy(&this_00->field_0x4,pcVar25,0x7f);
           }
           *(undefined4 *)&this_00->field_0x84 = 0xffffffff;
-          RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
+          RaiseInternalException(-0x78,g_overwriteContext_007ED77C,".\\ai\\ai_erc.h",0x79);
         }
         local_c = (char *)((int)local_c + 1);
         local_8 = (AiFltClassTy *)&local_8->field_0x5;
@@ -2830,7 +2833,7 @@ cf_common_exit_0066DCED:
         Library::MSVCRT::_strncpy(&this_00->field_0x4,pcVar25,0x7f);
       }
       *(undefined4 *)&this_00->field_0x84 = 0xffffffff;
-      RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
+      RaiseInternalException(-0x78,g_overwriteContext_007ED77C,".\\ai\\ai_erc.h",0x79);
     }
     iVar11 = thunk_FUN_00668f50(this_00,(char *)local_8,0,(uint *)local_50);
     if (iVar11 != 1) {
@@ -2839,7 +2842,7 @@ cf_common_exit_0066DCED:
         Library::MSVCRT::_strncpy(&this_00->field_0x4,pcVar25,0x7f);
       }
       *(undefined4 *)&this_00->field_0x84 = 0xffffffff;
-      RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
+      RaiseInternalException(-0x78,g_overwriteContext_007ED77C,".\\ai\\ai_erc.h",0x79);
     }
     uVar21 = (*this_00->vtable->slot_08)(param_1 + 10);
     pbVar16 = (byte *)(param_1 + 5);
@@ -2863,7 +2866,7 @@ cf_common_exit_0066DCED:
           Library::MSVCRT::_strncpy(&this_00->field_0x4,pcVar25,0x7f);
         }
         *(undefined4 *)&this_00->field_0x84 = 0xffffffff;
-        RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
+        RaiseInternalException(-0x78,g_overwriteContext_007ED77C,".\\ai\\ai_erc.h",0x79);
       }
       local_8 = (AiFltClassTy *)&local_8->field_0x5;
     } while ((int)local_8 < 0x14);
@@ -2875,7 +2878,7 @@ cf_common_exit_0066DCED:
         Library::MSVCRT::_strncpy(&this_00->field_0x4,pcVar25,0x7f);
       }
       *(undefined4 *)&this_00->field_0x84 = 0xffffffff;
-      RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
+      RaiseInternalException(-0x78,g_overwriteContext_007ED77C,".\\ai\\ai_erc.h",0x79);
     }
     iVar11 = thunk_FUN_00668f50(this_00,(char *)local_8,0,(uint *)local_50);
     if (iVar11 != 1) {
@@ -2884,7 +2887,7 @@ cf_common_exit_0066DCED:
         Library::MSVCRT::_strncpy(&this_00->field_0x4,pcVar25,0x7f);
       }
       *(undefined4 *)&this_00->field_0x84 = 0xffffffff;
-      RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
+      RaiseInternalException(-0x78,g_overwriteContext_007ED77C,".\\ai\\ai_erc.h",0x79);
     }
     local_c = (char *)0xffffffff;
     uVar12 = (*this_00->vtable->slot_00)(param_1 + 5);
@@ -2910,7 +2913,7 @@ cf_common_exit_0066DCED:
           Library::MSVCRT::_strncpy(&this_00->field_0x4,pcVar25,0x7f);
         }
         *(undefined4 *)&this_00->field_0x84 = 0xffffffff;
-        RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
+        RaiseInternalException(-0x78,g_overwriteContext_007ED77C,".\\ai\\ai_erc.h",0x79);
       }
       local_8 = (AiFltClassTy *)&local_8->field_0x5;
     } while ((int)local_8 < 0x14);
@@ -2922,7 +2925,7 @@ cf_common_exit_0066DCED:
         Library::MSVCRT::_strncpy(&this_00->field_0x4,pcVar25,0x7f);
       }
       *(undefined4 *)&this_00->field_0x84 = 0xffffffff;
-      RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
+      RaiseInternalException(-0x78,g_overwriteContext_007ED77C,".\\ai\\ai_erc.h",0x79);
     }
     iVar11 = thunk_FUN_00668f50(this_00,(char *)local_8,0,(uint *)local_50);
     if (iVar11 != 1) {
@@ -2931,7 +2934,7 @@ cf_common_exit_0066DCED:
         Library::MSVCRT::_strncpy(&this_00->field_0x4,pcVar25,0x7f);
       }
       *(undefined4 *)&this_00->field_0x84 = 0xffffffff;
-      RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
+      RaiseInternalException(-0x78,g_overwriteContext_007ED77C,".\\ai\\ai_erc.h",0x79);
     }
     local_c = (char *)0xffffffff;
     uVar12 = (*this_00->vtable->slot_00)(param_1 + 5);
@@ -2958,7 +2961,7 @@ cf_common_exit_0066DCED:
           Library::MSVCRT::_strncpy(&this_00->field_0x4,pcVar25,0x7f);
         }
         *(undefined4 *)&this_00->field_0x84 = 0xffffffff;
-        RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
+        RaiseInternalException(-0x78,g_overwriteContext_007ED77C,".\\ai\\ai_erc.h",0x79);
       }
       local_8 = (AiFltClassTy *)&local_8->field_0x5;
     } while ((int)local_8 < 10);
@@ -2970,7 +2973,7 @@ cf_common_exit_0066DCED:
         Library::MSVCRT::_strncpy(&this_00->field_0x4,pcVar25,0x7f);
       }
       *(undefined4 *)&this_00->field_0x84 = 0xffffffff;
-      RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
+      RaiseInternalException(-0x78,g_overwriteContext_007ED77C,".\\ai\\ai_erc.h",0x79);
     }
     iVar11 = thunk_FUN_00668f50(this_00,(char *)local_8,0,(uint *)local_50);
     if (iVar11 != 1) {
@@ -2979,7 +2982,7 @@ cf_common_exit_0066DCED:
         Library::MSVCRT::_strncpy(&this_00->field_0x4,pcVar25,0x7f);
       }
       *(undefined4 *)&this_00->field_0x84 = 0xffffffff;
-      RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
+      RaiseInternalException(-0x78,g_overwriteContext_007ED77C,".\\ai\\ai_erc.h",0x79);
     }
     uVar12 = (*this_00->vtable->slot_00)(param_1 + 5);
     iVar11 = thunk_FUN_0066ac80(local_50[0],uVar12);
@@ -2998,7 +3001,7 @@ cf_common_exit_0066DCED:
           Library::MSVCRT::_strncpy(&this_00->field_0x4,pcVar25,0x7f);
         }
         *(undefined4 *)&this_00->field_0x84 = 0xffffffff;
-        RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
+        RaiseInternalException(-0x78,g_overwriteContext_007ED77C,".\\ai\\ai_erc.h",0x79);
       }
       local_8 = (AiFltClassTy *)&local_8->field_0x5;
     } while ((int)local_8 < 0x19);
@@ -3008,7 +3011,7 @@ cf_common_exit_0066DCED:
         Library::MSVCRT::_strncpy(&this_00->field_0x4,pcVar25,0x7f);
       }
       *(undefined4 *)&this_00->field_0x84 = 0xffffffff;
-      RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
+      RaiseInternalException(-0x78,g_overwriteContext_007ED77C,".\\ai\\ai_erc.h",0x79);
     }
     local_c = (char *)0x6;
     if (6 < param_2) {
@@ -3021,7 +3024,7 @@ cf_common_exit_0066DCED:
             Library::MSVCRT::_strncpy(&this_00->field_0x4,pcVar25,0x7f);
           }
           *(undefined4 *)&this_00->field_0x84 = 0xffffffff;
-          RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
+          RaiseInternalException(-0x78,g_overwriteContext_007ED77C,".\\ai\\ai_erc.h",0x79);
         }
         local_c = (char *)((int)local_c + 1);
         local_8 = (AiFltClassTy *)&local_8->field_0x5;
@@ -3035,7 +3038,7 @@ cf_common_exit_0066DCED:
         Library::MSVCRT::_strncpy(&this_00->field_0x4,pcVar25,0x7f);
       }
       *(undefined4 *)&this_00->field_0x84 = 0xffffffff;
-      RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
+      RaiseInternalException(-0x78,g_overwriteContext_007ED77C,".\\ai\\ai_erc.h",0x79);
     }
     iVar11 = thunk_FUN_00668f50(this_00,(char *)local_8,0,(uint *)local_50);
     if (iVar11 != 1) {
@@ -3044,7 +3047,7 @@ cf_common_exit_0066DCED:
         Library::MSVCRT::_strncpy(&this_00->field_0x4,pcVar25,0x7f);
       }
       *(undefined4 *)&this_00->field_0x84 = 0xffffffff;
-      RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
+      RaiseInternalException(-0x78,g_overwriteContext_007ED77C,".\\ai\\ai_erc.h",0x79);
     }
     local_c = (char *)0xffffffff;
     uVar12 = (*this_00->vtable->slot_00)(param_1 + 5);
@@ -3084,7 +3087,7 @@ cf_common_exit_0066DCED:
           Library::MSVCRT::_strncpy(&this_00->field_0x4,pcVar25,0x7f);
         }
         *(undefined4 *)&this_00->field_0x84 = 0xffffffff;
-        RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
+        RaiseInternalException(-0x78,g_overwriteContext_007ED77C,".\\ai\\ai_erc.h",0x79);
       }
       local_8 = (AiFltClassTy *)&local_8->field_0x5;
     } while ((int)local_8 < 0x23);
@@ -3094,7 +3097,7 @@ cf_common_exit_0066DCED:
         Library::MSVCRT::_strncpy(&this_00->field_0x4,pcVar25,0x7f);
       }
       *(undefined4 *)&this_00->field_0x84 = 0xffffffff;
-      RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
+      RaiseInternalException(-0x78,g_overwriteContext_007ED77C,".\\ai\\ai_erc.h",0x79);
     }
     local_8 = (AiFltClassTy *)(*this_00->vtable->slot_00)(param_1);
     if (((local_8 == (AiFltClassTy *)0x9) && (iVar11 = (*this_00->vtable->slot_18)(), iVar11 == 8))
@@ -3104,7 +3107,7 @@ cf_common_exit_0066DCED:
         Library::MSVCRT::_strncpy(&this_00->field_0x4,pcVar25,0x7f);
       }
       *(undefined4 *)&this_00->field_0x84 = 0xffffffff;
-      RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
+      RaiseInternalException(-0x78,g_overwriteContext_007ED77C,".\\ai\\ai_erc.h",0x79);
     }
     iVar11 = thunk_FUN_00668f50(this_00,(char *)local_8,0,(uint *)local_50);
     if (iVar11 != 1) {
@@ -3113,7 +3116,7 @@ cf_common_exit_0066DCED:
         Library::MSVCRT::_strncpy(&this_00->field_0x4,pcVar25,0x7f);
       }
       *(undefined4 *)&this_00->field_0x84 = 0xffffffff;
-      RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
+      RaiseInternalException(-0x78,g_overwriteContext_007ED77C,".\\ai\\ai_erc.h",0x79);
     }
     local_8 = (AiFltClassTy *)0x0;
     puVar22 = (uint *)(*this_00->vtable->slot_00)(param_1 + 0xf,local_280);
@@ -3163,7 +3166,7 @@ LAB_0066fbc1:
             Library::MSVCRT::_strncpy(&this_00->field_0x4,pcVar25,0x7f);
           }
           *(undefined4 *)&this_00->field_0x84 = 0xffffffff;
-          RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
+          RaiseInternalException(-0x78,g_overwriteContext_007ED77C,".\\ai\\ai_erc.h",0x79);
         }
         local_c = local_c + 1;
         local_8 = (AiFltClassTy *)&local_8->field_0x5;
@@ -3177,7 +3180,7 @@ LAB_0066fbc1:
         Library::MSVCRT::_strncpy(&this_00->field_0x4,pcVar25,0x7f);
       }
       *(undefined4 *)&this_00->field_0x84 = 0xffffffff;
-      RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
+      RaiseInternalException(-0x78,g_overwriteContext_007ED77C,".\\ai\\ai_erc.h",0x79);
     }
     iVar11 = thunk_FUN_00668f50(this_00,(char *)local_8,0,(uint *)local_50);
     if (iVar11 != 1) {
@@ -3186,7 +3189,7 @@ LAB_0066fbc1:
         Library::MSVCRT::_strncpy(&this_00->field_0x4,pcVar25,0x7f);
       }
       *(undefined4 *)&this_00->field_0x84 = 0xffffffff;
-      RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
+      RaiseInternalException(-0x78,g_overwriteContext_007ED77C,".\\ai\\ai_erc.h",0x79);
     }
     uVar12 = (*this_00->vtable->slot_00)(param_1 + 5);
     local_8 = (AiFltClassTy *)thunk_FUN_0066ac80(local_50[0],uVar12);
@@ -3228,7 +3231,7 @@ LAB_0066fbc1:
             Library::MSVCRT::_strncpy(&this_00->field_0x4,pcVar25,0x7f);
           }
           *(undefined4 *)&this_00->field_0x84 = 0xffffffff;
-          RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
+          RaiseInternalException(-0x78,g_overwriteContext_007ED77C,".\\ai\\ai_erc.h",0x79);
         }
         local_c = (char *)((int)local_c + 1);
         local_8 = (AiFltClassTy *)&local_8->field_0x5;
@@ -3242,7 +3245,7 @@ LAB_0066fbc1:
         Library::MSVCRT::_strncpy(&this_00->field_0x4,pcVar25,0x7f);
       }
       *(undefined4 *)&this_00->field_0x84 = 0xffffffff;
-      RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
+      RaiseInternalException(-0x78,g_overwriteContext_007ED77C,".\\ai\\ai_erc.h",0x79);
     }
     iVar11 = thunk_FUN_00668f50(this_00,(char *)local_8,0,(uint *)local_50);
     if (iVar11 != 1) {
@@ -3251,7 +3254,7 @@ LAB_0066fbc1:
         Library::MSVCRT::_strncpy(&this_00->field_0x4,pcVar25,0x7f);
       }
       *(undefined4 *)&this_00->field_0x84 = 0xffffffff;
-      RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
+      RaiseInternalException(-0x78,g_overwriteContext_007ED77C,".\\ai\\ai_erc.h",0x79);
     }
     local_c = (char *)0xffffffff;
     uVar12 = (*this_00->vtable->slot_00)(param_1 + 5);
@@ -3274,7 +3277,7 @@ joined_r0x006703e6:
       Library::MSVCRT::_strncpy(&this_00->field_0x4,&DAT_008016a0,0x7f);
       *(AiFltClassTy **)&this_00->field_0x84 = pAVar14;
 LAB_0067041b:
-      RaiseInternalException(-0xaa,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
+      RaiseInternalException(-0xaa,g_overwriteContext_007ED77C,".\\ai\\ai_erc.h",0x79);
     }
 cf_common_exit_00670425:
     local_14 = Library::DKW::LIB::FUN_006aac10(4);
@@ -3292,7 +3295,7 @@ cf_common_exit_00670425:
             Library::MSVCRT::_strncpy(&this_00->field_0x4,pcVar25,0x7f);
           }
           *(undefined4 *)&this_00->field_0x84 = 0xffffffff;
-          RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
+          RaiseInternalException(-0x78,g_overwriteContext_007ED77C,".\\ai\\ai_erc.h",0x79);
         }
         local_c = local_c + 1;
         local_8 = (AiFltClassTy *)&local_8->field_0x5;
@@ -3306,7 +3309,7 @@ cf_common_exit_00670425:
         Library::MSVCRT::_strncpy(&this_00->field_0x4,pcVar25,0x7f);
       }
       *(undefined4 *)&this_00->field_0x84 = 0xffffffff;
-      RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
+      RaiseInternalException(-0x78,g_overwriteContext_007ED77C,".\\ai\\ai_erc.h",0x79);
     }
     iVar11 = thunk_FUN_00668f50(this_00,(char *)local_8,0,(uint *)local_50);
     if (iVar11 != 1) {
@@ -3315,7 +3318,7 @@ cf_common_exit_00670425:
         Library::MSVCRT::_strncpy(&this_00->field_0x4,pcVar25,0x7f);
       }
       *(undefined4 *)&this_00->field_0x84 = 0xffffffff;
-      RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
+      RaiseInternalException(-0x78,g_overwriteContext_007ED77C,".\\ai\\ai_erc.h",0x79);
     }
     iVar11 = 0;
     local_10 = (char *)(uint)DAT_00808aaf;
@@ -3338,7 +3341,7 @@ cf_common_exit_00670425:
         Library::MSVCRT::_strncpy(&this_00->field_0x4,pcVar25,0x7f);
       }
       *(undefined4 *)&this_00->field_0x84 = 0xffffffff;
-      RaiseInternalException(-0x78,g_overwriteContext_007ED77C,s___ai_ai_erc_h_007d2a24,0x79);
+      RaiseInternalException(-0x78,g_overwriteContext_007ED77C,".\\ai\\ai_erc.h",0x79);
       pAVar14 = local_8;
     }
 LAB_0066d630:

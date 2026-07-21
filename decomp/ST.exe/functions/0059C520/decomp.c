@@ -70,10 +70,10 @@ void __thiscall FSGSTy::CreateCtrls(FSGSTy *this)
     return;
   }
   g_currentExceptionFrame = local_4c.previous;
-  iVar3 = ReportDebugMessage(s_E____titans_Start_fsgs_obj_cpp_007cbf70,0x582,0,errorCode,
-                             &DAT_007a4ccc,s_FSGSTy__CreateCtrls_007cc2cc);
+  iVar3 = ReportDebugMessage("E:\\__titans\\Start\\fsgs_obj.cpp",0x582,0,errorCode,
+                             "%s","FSGSTy::CreateCtrls");
   if (iVar3 == 0) {
-    RaiseInternalException(errorCode,0,s_E____titans_Start_fsgs_obj_cpp_007cbf70,0x582);
+    RaiseInternalException(errorCode,0,"E:\\__titans\\Start\\fsgs_obj.cpp",0x582);
     return;
   }
   STDebugBreak(); /* noreturn in standalone pseudocode */

@@ -20,7 +20,7 @@ void __thiscall STBoatC::sub_00492390(STBoatC *this)
     iVar1 = FUN_006e62d0(PTR_00802a38,this->field_058E,(int *)&local_8);
     if (iVar1 == -4) {
       RaiseInternalException
-                (-0x5001fffd,g_overwriteContext_007ED77C,s_E____titans_wlad_To_boat_cpp_007a9d3c,
+                (-0x5001fffd,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\To_boat.cpp",
                  0x5100);
     }
     (*local_8->vtable->vfunc_9C)();

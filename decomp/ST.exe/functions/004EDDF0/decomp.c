@@ -43,12 +43,12 @@ void __thiscall BehPanelTy::DoneBehPanel(BehPanelTy *this)
     return;
   }
   g_currentExceptionFrame = local_4c.previous;
-  iVar3 = ReportDebugMessage(s_E____titans_Andrey_behpanel_cpp_007c1694,0x77,0,errorCode,
-                             &DAT_007a4ccc,s_BehPanelTy__DoneBehPanel_007c1718);
+  iVar3 = ReportDebugMessage("E:\\__titans\\Andrey\\behpanel.cpp",0x77,0,errorCode,
+                             "%s","BehPanelTy::DoneBehPanel");
   if (iVar3 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  RaiseInternalException(errorCode,0,s_E____titans_Andrey_behpanel_cpp_007c1694,0x77);
+  RaiseInternalException(errorCode,0,"E:\\__titans\\Andrey\\behpanel.cpp",0x77);
   return;
 }
 

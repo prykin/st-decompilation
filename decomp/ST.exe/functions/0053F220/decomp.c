@@ -70,12 +70,12 @@ void __thiscall ProdPanelTy::DoneProdPanel(ProdPanelTy *this)
     return;
   }
   g_currentExceptionFrame = local_4c.previous;
-  iVar4 = ReportDebugMessage(s_E____titans_Andrey_specpan_cpp_007c7870,0x1a6,0,iVar3,&DAT_007a4ccc,
-                             s_ProdPanelTy__DoneProdPanel_007c7a20);
+  iVar4 = ReportDebugMessage("E:\\__titans\\Andrey\\specpan.cpp",0x1a6,0,iVar3,"%s",
+                             "ProdPanelTy::DoneProdPanel");
   if (iVar4 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  RaiseInternalException(iVar3,0,s_E____titans_Andrey_specpan_cpp_007c7870,0x1a6);
+  RaiseInternalException(iVar3,0,"E:\\__titans\\Andrey\\specpan.cpp",0x1a6);
   return;
 }
 

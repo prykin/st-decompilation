@@ -99,11 +99,11 @@ void __thiscall TradePanelTy::InitTradePanel(TradePanelTy *this)
     iVar15 = 0xbf;
     uVar14 = 3;
     uVar13 = 0x40;
-    pCVar4 = thunk_FUN_00571240(s_BKG_TRADECENTERW_007c8680,0);
+    pCVar4 = thunk_FUN_00571240("BKG_TRADECENTERW",0);
     SpecPanelTy::InitPanel
               ((SpecPanelTy *)this_00,pCVar4,uVar13,uVar14,iVar15,iVar17,UVar18,iVar8,uVar21);
     pcVar5 = (ccFntTy *)
-             ccFntTy::operator(DAT_00806790,0x19d,(cMf32 *)DAT_00806790,s_MONEY_FONT_007c211c,0);
+             ccFntTy::operator(DAT_00806790,0x19d,(cMf32 *)DAT_00806790,"MONEY_FONT",0);
     uVar10 = 1;
     this_00->field_01DD = pcVar5;
     pcVar5->field_0058 = 1;
@@ -118,7 +118,7 @@ void __thiscall TradePanelTy::InitTradePanel(TradePanelTy *this)
     uVar16 = 0xffffffff;
     puVar19 = puVar3;
     puVar22 = puVar3;
-    pCVar4 = thunk_FUN_00571240(s_TRADE_RATE_007c8670,0);
+    pCVar4 = thunk_FUN_00571240("TRADE_RATE",0);
     puVar6 = Library::Ourlib::MFRLOAD::mfRLoad
                        (DAT_00806794,CASE_B,pCVar4,uVar16,(byte)puVar3,iVar8,(int)puVar19,puVar22);
     local_5 = this_00->field_01D0;
@@ -175,7 +175,7 @@ void __thiscall TradePanelTy::InitTradePanel(TradePanelTy *this)
     local_380 = 1;
     local_490[2] = 0;
     local_490[3] = 2;
-    pCVar4 = thunk_FUN_00571240(s_BUT_TBUP_007c22d8,0);
+    pCVar4 = thunk_FUN_00571240("BUT_TBUP",0);
     pCVar4 = FUN_006f2c00(pCVar4,iVar8,uVar13);
     local_18 = cMf32::RecGet((cMf32 *)DAT_00806790,1,pCVar4,piVar20,iVar15);
     local_478 = *(undefined4 *)(local_18 + 2);
@@ -218,7 +218,7 @@ void __thiscall TradePanelTy::InitTradePanel(TradePanelTy *this)
     FUN_006e6080(this_00,2,*puVar3,(undefined4 *)puVar1);
     this_00->field_0028 = 0x22;
     *(uint *)&this_00->field_0x2c =
-         (uint)*(ushort *)(&this_00->field_0x1bc + (uint)(byte)this_00->field_01D0 * 2);
+         (uint)*(ushort *)(&this_00->field_0x1bc + (uint)this_00->field_01D0 * 2);
     FUN_006e6080(this_00,2,*puVar3,(undefined4 *)puVar1);
     this_00->field_0028 = 0x20;
     *(undefined4 *)&this_00->field_0x2c = 1;
@@ -227,12 +227,12 @@ void __thiscall TradePanelTy::InitTradePanel(TradePanelTy *this)
     return;
   }
   g_currentExceptionFrame = local_b8.previous;
-  iVar8 = ReportDebugMessage(s_E____titans_Andrey_tradecen_cpp_007c8624,0x53,0,(int)puVar3,
-                             &DAT_007a4ccc,s_TradePanelTy__InitTradePanel_007c864c);
+  iVar8 = ReportDebugMessage("E:\\__titans\\Andrey\\tradecen.cpp",0x53,0,(int)puVar3,
+                             "%s","TradePanelTy::InitTradePanel");
   if (iVar8 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  RaiseInternalException((int)puVar3,0,s_E____titans_Andrey_tradecen_cpp_007c8624,0x53);
+  RaiseInternalException((int)puVar3,0,"E:\\__titans\\Andrey\\tradecen.cpp",0x53);
   return;
 }
 

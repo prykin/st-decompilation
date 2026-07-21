@@ -29,12 +29,12 @@ void __thiscall PrividerTy::CloseButtons(PrividerTy *this,char param_1)
     return;
   }
   g_currentExceptionFrame = local_4c.previous;
-  iVar2 = ReportDebugMessage(s_E____titans_Start_prov_obj_cpp_007ccd28,0x1c7,0,errorCode,
-                             &DAT_007a4ccc,s_PrividerTy__CloseButtons_007cce4c);
+  iVar2 = ReportDebugMessage("E:\\__titans\\Start\\prov_obj.cpp",0x1c7,0,errorCode,
+                             "%s","PrividerTy::CloseButtons");
   if (iVar2 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  RaiseInternalException(errorCode,0,s_E____titans_Start_prov_obj_cpp_007ccd28,0x1c7);
+  RaiseInternalException(errorCode,0,"E:\\__titans\\Start\\prov_obj.cpp",0x1c7);
   return;
 }
 

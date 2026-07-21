@@ -18,7 +18,7 @@ undefined4 __thiscall STGroupBoatC::sub_004A7E30(STGroupBoatC *this,int param_1)
   int local_e;
   int local_a;
 
-  if ((int)this->field_023E < (int)this->field_023A) {
+  if (this->field_023E < (int)this->field_023A) {
     if (param_1 != 1) {
       return 1;
     }

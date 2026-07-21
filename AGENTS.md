@@ -23,6 +23,10 @@ Original binaries are local under ignored `bin/` and must not be committed.
 - `ST_PSEUDO[...]` comments and `pseudocode_idioms.jsonl` describe presentation
   gaps which Ghidra could not safely fold. They are exporter-owned and
   regenerated; do not treat them as recovered semantic facts.
+- `decomp_quality_summary.json` and `decomp_quality_issues.jsonl` are the broad
+  recursive quality audit. Use the stable function address and issue kind when
+  selecting the next automation cluster; do not infer corpus quality from one
+  large `decomp.c` example.
 
 ## Important technical constraints
 
@@ -31,6 +35,11 @@ Original binaries are local under ignored `bin/` and must not be committed.
   source values do not prove a narrow EAX ABI return.
 - Packed/unaligned fields and overlapping unions are intentional. Never align or
   merge them merely to improve decompiler spelling.
+- A foreign class type appearing in a named method may be contamination from a
+  weak method-owner vote. Audit the callee's full direct-caller coverage before
+  extending the foreign layout; shared helpers must retain neutral receivers.
+- Named `GetMessage` methods share the recovered `STMessage *` envelope. Its
+  three argument slots are ID-dependent unions, not three globally fixed types.
 - A runtime `DArrayTy::elementSize` stride cannot become a static C array type.
 - Typed vtable function pointers retain an explicit receiver in Ghidra C output.
 - Compiler optimization can merge several SSA lifetimes into one Listing local;

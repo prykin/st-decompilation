@@ -8,21 +8,22 @@
 undefined4 __thiscall StartSystemTy::LoadGraph(StartSystemTy *this)
 
 {
-  code *pcVar1;
-  StartSystemTy *pSVar2;
-  int iVar3;
-  char *pcVar4;
-  AnonPointee_StartSystemTy_02F0 *pAVar5;
-  ccFntTy *pcVar6;
-  uint uVar7;
-  AnonPointee_StartSystemTy_0544 *pAVar8;
-  undefined4 *puVar9;
-  AnonPointee_StartSystemTy_0682 *pAVar10;
-  uint *puVar11;
-  AnonPointee_StartSystemTy_067E *pAVar12;
-  int iVar13;
-  undefined4 uVar14;
-  uint uVar15;
+  int *piVar1;
+  code *pcVar2;
+  StartSystemTy *pSVar3;
+  int iVar4;
+  char *pcVar5;
+  AnonPointee_StartSystemTy_02F0 *pAVar6;
+  ccFntTy *pcVar7;
+  uint uVar8;
+  AnonPointee_StartSystemTy_0544 *pAVar9;
+  undefined4 *puVar10;
+  AnonPointee_StartSystemTy_0682 *pAVar11;
+  uint *puVar12;
+  AnonPointee_StartSystemTy_067E *pAVar13;
+  int iVar14;
+  undefined4 uVar15;
+  uint uVar16;
   InternalExceptionFrame local_50;
   StartSystemTy *local_c;
   uint local_8;
@@ -30,223 +31,223 @@ undefined4 __thiscall StartSystemTy::LoadGraph(StartSystemTy *this)
   local_50.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_50;
   local_c = this;
-  iVar3 = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0);
-  pSVar2 = local_c;
-  if (iVar3 == 0) {
+  iVar4 = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0);
+  pSVar3 = local_c;
+  if (iVar4 == 0) {
     sub_005DB2A0(local_c);
-    iVar3 = 0;
+    iVar4 = 0;
     do {
-      wsprintfA(&pSVar2->field_0x3c,s_MM_ACC_02d_007cd7a0,iVar3);
-      pcVar4 = Library::Ourlib::MFIMG::mfImtLoad
-                         (g_cMf32_00806780,&pSVar2->field_0x3c,0,0,(undefined4 *)0x0,1);
-      *(char **)(&pSVar2->field_0x244 + iVar3 * 4) = pcVar4;
-      switch(iVar3) {
+      wsprintfA(&pSVar3->field_0x3c,"MM_ACC%02d",iVar4);
+      pcVar5 = Library::Ourlib::MFIMG::mfImtLoad
+                         (g_cMf32_00806780,&pSVar3->field_0x3c,0,0,(undefined4 *)0x0,1);
+      *(char **)(&pSVar3->field_0x244 + iVar4 * 4) = pcVar5;
+      switch(iVar4) {
       case 0:
-        pSVar2->field_025C = 0xf5;
-        pSVar2->field_0260 = 0x3d;
-        pSVar2->field_0264 = 0xfa;
-        pSVar2->field_0268 = 0;
-        pSVar2->field_0271 = 0;
+        pSVar3->field_025C = 0xf5;
+        pSVar3->field_0260 = 0x3d;
+        pSVar3->field_0264 = 0xfa;
+        pSVar3->field_0268 = 0;
+        pSVar3->field_0271 = 0;
         break;
       case 1:
-        pSVar2->field_0273 = 0x1f6;
-        pSVar2->field_0277 = 0x3d;
-        pSVar2->field_027B = 0x4b;
-        pSVar2->field_027F = 0;
-        pSVar2->field_0288 = 0;
+        pSVar3->field_0273 = 0x1f6;
+        pSVar3->field_0277 = 0x3d;
+        pSVar3->field_027B = 0x4b;
+        pSVar3->field_027F = 0;
+        pSVar3->field_0288 = 0;
         break;
       case 2:
-        pSVar2->field_028A = 0x117;
-        pSVar2->field_028E = 0x1ab;
-        pSVar2->field_0292 = 0x32;
-        pSVar2->field_0296 = 0;
-        pSVar2->field_029F = 0;
+        pSVar3->field_028A = 0x117;
+        pSVar3->field_028E = 0x1ab;
+        pSVar3->field_0292 = 0x32;
+        pSVar3->field_0296 = 0;
+        pSVar3->field_029F = 0;
         break;
       case 3:
-        pSVar2->field_02A1 = 0x1ea;
-        pSVar2->field_02A5 = 0x1b3;
-        pSVar2->field_02A9 = 0x4b;
-        pSVar2->field_02AD = 0;
-        pSVar2->field_02B6 = 0;
+        pSVar3->field_02A1 = 0x1ea;
+        pSVar3->field_02A5 = 0x1b3;
+        pSVar3->field_02A9 = 0x4b;
+        pSVar3->field_02AD = 0;
+        pSVar3->field_02B6 = 0;
         break;
       case 4:
-        pSVar2->field_02B8 = 0x103;
-        pSVar2->field_02BC = 0x1f9;
-        uVar7 = Library::MSVCRT::FUN_0072e6c0();
-        pSVar2->field_02C0 = ((uVar7 & 1) + 1) * 0x19;
-        uVar7 = Library::MSVCRT::FUN_0072e6c0();
-        pSVar2->field_02C4 = (uVar7 % 3 + 1) * 1000;
-        pSVar2->field_02CD = 0;
+        pSVar3->field_02B8 = 0x103;
+        pSVar3->field_02BC = 0x1f9;
+        uVar8 = Library::MSVCRT::FUN_0072e6c0();
+        pSVar3->field_02C0 = ((uVar8 & 1) + 1) * 0x19;
+        uVar8 = Library::MSVCRT::FUN_0072e6c0();
+        pSVar3->field_02C4 = (uVar8 % 3 + 1) * 1000;
+        pSVar3->field_02CD = 0;
         break;
       case 5:
-        pSVar2->field_02CF = 0x205;
-        pSVar2->field_02D3 = 0x1fa;
-        uVar7 = Library::MSVCRT::FUN_0072e6c0();
-        pSVar2->field_02D7 = (uVar7 % 3 + 2) * 0x19;
-        uVar7 = Library::MSVCRT::FUN_0072e6c0();
-        pSVar2->field_02DB = ((uVar7 & 1) + 1) * 1000;
-        pSVar2->field_02E4 = 0;
+        pSVar3->field_02CF = 0x205;
+        pSVar3->field_02D3 = 0x1fa;
+        uVar8 = Library::MSVCRT::FUN_0072e6c0();
+        pSVar3->field_02D7 = (uVar8 % 3 + 2) * 0x19;
+        uVar8 = Library::MSVCRT::FUN_0072e6c0();
+        pSVar3->field_02DB = ((uVar8 & 1) + 1) * 1000;
+        pSVar3->field_02E4 = 0;
       }
-      iVar3 = iVar3 + 1;
-    } while (iVar3 < 6);
+      iVar4 = iVar4 + 1;
+    } while (iVar4 < 6);
     LoadStartPlt(g_cMf32_00806780,0);
-    pAVar5 = (AnonPointee_StartSystemTy_02F0 *)
-             Library::Ourlib::MFIMG::mfImgLoad(g_cMf32_00806780,1,s_MM_MAPB_007cc790,2,1);
-    pSVar2->field_02F0 = pAVar5;
-    iVar3 = thunk_FUN_005da130((ushort *)pAVar5,(undefined *)0x0,DAT_00807dd9);
-    pSVar2->field_0030 = iVar3;
-    *(undefined4 *)(iVar3 + 0x58) = 1;
-    *(undefined4 *)(iVar3 + 0x5c) = 0;
-    pcVar6 = (ccFntTy *)thunk_FUN_005da310((int)pSVar2->field_02F0,(undefined *)0x0,DAT_00807dd9);
-    pSVar2->field_0034 = pcVar6;
-    pAVar5 = pSVar2->field_02F0;
-    puVar9 = &pSVar2->field_02EC;
-    FUN_006b2330((uint)DAT_008075a8,puVar9,0x32,0x4023f6,pAVar5->field_0004,pAVar5->field_0008,
-                 (uint)pAVar5);
-    Library::DKW::DDX::FUN_006b3640(DAT_008075a8,*puVar9,0xffffffff,1,0);
-    FUN_006b3af0(DAT_008075a8,*puVar9);
+    pAVar6 = (AnonPointee_StartSystemTy_02F0 *)
+             Library::Ourlib::MFIMG::mfImgLoad(g_cMf32_00806780,1,"MM_MAPB",2,1);
+    pSVar3->field_02F0 = pAVar6;
+    pcVar7 = (ccFntTy *)thunk_FUN_005da130((ushort *)pAVar6,(undefined *)0x0,DAT_00807dd9);
+    pSVar3->field_0030 = pcVar7;
+    pcVar7->field_0058 = 1;
+    pcVar7->field_005C = 0;
+    pcVar7 = (ccFntTy *)thunk_FUN_005da310((int)pSVar3->field_02F0,(undefined *)0x0,DAT_00807dd9);
+    pSVar3->field_0034 = pcVar7;
+    pAVar6 = pSVar3->field_02F0;
+    piVar1 = &pSVar3->field_02EC;
+    FUN_006b2330((uint)DAT_008075a8,(uint *)piVar1,0x32,0x4023f6,pAVar6->field_0004,
+                 pAVar6->field_0008,(uint)pAVar6);
+    Library::DKW::DDX::FUN_006b3640(DAT_008075a8,*piVar1,0xffffffff,1,0);
+    FUN_006b3af0(DAT_008075a8,*piVar1);
     SpriteClassTy::InitSprite
-              ((SpriteClassTy *)&pSVar2->field_02F8,DAT_008075a8,0x32,'\a',(undefined4 *)0x0,0,0);
+              ((SpriteClassTy *)&pSVar3->field_02F8,DAT_008075a8,0x32,'\a',(undefined4 *)0x0,0,0);
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-    (**(code **)(pSVar2->field_02F8 + 4))(DAT_00806784,7,0,s_MM_MAP_007cd798,0xffffffff);
-    pSVar2->field_0314 = 1;
-    pSVar2->field_0318 = 0;
-    pSVar2->field_0300 = 0;
+    (**(code **)(pSVar3->field_02F8 + 4))(DAT_00806784,7,0,"MM_MAP",0xffffffff);
+    pSVar3->field_0314 = 1;
+    pSVar3->field_0318 = 0;
+    pSVar3->field_0300 = 0;
     SpriteClassTy::InitSprite
-              ((SpriteClassTy *)&pSVar2->field_038D,DAT_008075a8,0x31,'\a',(undefined4 *)0x0,0,0);
+              ((SpriteClassTy *)&pSVar3->field_038D,DAT_008075a8,0x31,'\a',(undefined4 *)0x0,0,0);
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-    (**(code **)(pSVar2->field_038D + 4))(DAT_00806784,7,0,s_MM_SLDUP_007cc04c,0xffffffff);
-    pSVar2->field_03A9 = 0xe5;
-    pSVar2->field_03AD = 0xb8;
-    pSVar2->field_0395 = 0;
-    if (pSVar2->field_0391 != 0xffffffff) {
-      FUN_006b3af0((int *)pSVar2->field_03D5,pSVar2->field_0391);
+    (**(code **)(pSVar3->field_038D + 4))(DAT_00806784,7,0,"MM_SLDUP",0xffffffff);
+    pSVar3->field_03A9 = 0xe5;
+    pSVar3->field_03AD = 0xb8;
+    pSVar3->field_0395 = 0;
+    if (pSVar3->field_0391 != 0xffffffff) {
+      FUN_006b3af0((int *)pSVar3->field_03D5,pSVar3->field_0391);
     }
     SpriteClassTy::InitSprite
-              ((SpriteClassTy *)&pSVar2->field_041E,DAT_008075a8,0x31,'\a',(undefined4 *)0x0,0,0);
+              ((SpriteClassTy *)&pSVar3->field_041E,DAT_008075a8,0x31,'\a',(undefined4 *)0x0,0,0);
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-    (**(code **)(pSVar2->field_041E + 4))(DAT_00806784,7,0,s_MM_SLDDN_007cc040,0xffffffff);
-    pSVar2->field_043A = 0xe5;
-    pSVar2->field_043E = 0x1b8;
-    pSVar2->field_0426 = 0;
-    if (pSVar2->field_0422 != 0xffffffff) {
-      FUN_006b3af0((int *)pSVar2->field_0466,pSVar2->field_0422);
+    (**(code **)(pSVar3->field_041E + 4))(DAT_00806784,7,0,"MM_SLDDN",0xffffffff);
+    pSVar3->field_043A = 0xe5;
+    pSVar3->field_043E = 0x1b8;
+    pSVar3->field_0426 = 0;
+    if (pSVar3->field_0422 != 0xffffffff) {
+      FUN_006b3af0((int *)pSVar3->field_0466,pSVar3->field_0422);
     }
     SpriteClassTy::InitSprite
-              ((SpriteClassTy *)&pSVar2->field_04AF,DAT_008075a8,0x31,'\a',(undefined4 *)0x0,0,0);
+              ((SpriteClassTy *)&pSVar3->field_04AF,DAT_008075a8,0x31,'\a',(undefined4 *)0x0,0,0);
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-    (**(code **)(pSVar2->field_04AF + 4))(DAT_00806784,7,0,s_MM_SLDT_007cc034,0xffffffff);
-    pSVar2->field_04CB = 0xeb;
-    pSVar2->field_04CF = 0xd8;
-    pSVar2->field_04B7 = 0;
-    if (pSVar2->field_04B3 != 0xffffffff) {
-      FUN_006b3af0((int *)pSVar2->field_04F7,pSVar2->field_04B3);
+    (**(code **)(pSVar3->field_04AF + 4))(DAT_00806784,7,0,"MM_SLDT",0xffffffff);
+    pSVar3->field_04CB = 0xeb;
+    pSVar3->field_04CF = 0xd8;
+    pSVar3->field_04B7 = 0;
+    if (pSVar3->field_04B3 != 0xffffffff) {
+      FUN_006b3af0((int *)pSVar3->field_04F7,pSVar3->field_04B3);
     }
-    iVar3 = 1;
-    puVar9 = &pSVar2->field_02F0[2].field_0008;
-    uVar7 = FUN_006b4fe0((int)pSVar2->field_02F0);
-    pAVar8 = (AnonPointee_StartSystemTy_0544 *)
-             FUN_006b50c0(0xd5,0x119,(uint)(ushort)pSVar2->field_02F0->field_000E,uVar7,puVar9,iVar3
-                         );
-    pSVar2->field_0544 = pAVar8;
-    local_8 = pAVar8[1].field_0008;
+    iVar4 = 1;
+    puVar10 = &pSVar3->field_02F0[2].field_0008;
+    uVar8 = FUN_006b4fe0((int)pSVar3->field_02F0);
+    pAVar9 = (AnonPointee_StartSystemTy_0544 *)
+             FUN_006b50c0(0xd5,0x119,(uint)(ushort)pSVar3->field_02F0->field_000E,uVar8,puVar10,
+                          iVar4);
+    pSVar3->field_0544 = pAVar9;
+    local_8 = pAVar9[1].field_0008;
     if (local_8 == 0) {
-      local_8 = ((uint)*(ushort *)&pAVar8[1].field_0x2 * pAVar8->field_0004 + 0x1f >> 3 & 0x1ffffffc
-                ) * pAVar8->field_0008;
+      local_8 = ((uint)*(ushort *)&pAVar9[1].field_0x2 * pAVar9->field_0004 + 0x1f >> 3 & 0x1ffffffc
+                ) * pAVar9->field_0008;
     }
-    puVar9 = (undefined4 *)FUN_006b4fa0((int)pAVar8);
-    for (uVar7 = local_8 >> 2; uVar7 != 0; uVar7 = uVar7 - 1) {
-      *puVar9 = 0xffffffff;
-      puVar9 = puVar9 + 1;
+    puVar10 = (undefined4 *)FUN_006b4fa0((int)pAVar9);
+    for (uVar8 = local_8 >> 2; uVar8 != 0; uVar8 = uVar8 - 1) {
+      *puVar10 = 0xffffffff;
+      puVar10 = puVar10 + 1;
     }
-    for (uVar7 = local_8 & 3; uVar7 != 0; uVar7 = uVar7 - 1) {
-      *(undefined1 *)puVar9 = 0xff;
-      puVar9 = (undefined4 *)((int)puVar9 + 1);
+    for (uVar8 = local_8 & 3; uVar8 != 0; uVar8 = uVar8 - 1) {
+      *(undefined1 *)puVar10 = 0xff;
+      puVar10 = (undefined4 *)((int)puVar10 + 1);
     }
-    pAVar8 = pSVar2->field_0544;
-    puVar9 = &pSVar2->field_0540;
-    FUN_006b2330((uint)DAT_008075a8,puVar9,0x31,0x4023f6,pAVar8->field_0004,pAVar8->field_0008,
-                 (uint)pAVar8);
-    Library::DKW::DDX::FUN_006b3640(DAT_008075a8,*puVar9,0xffffffff,0xd,0xb9);
-    FUN_006b3af0(DAT_008075a8,*puVar9);
-    iVar3 = 1;
-    puVar9 = &pSVar2->field_02F0[2].field_0008;
-    uVar7 = FUN_006b4fe0((int)pSVar2->field_02F0);
-    pAVar10 = (AnonPointee_StartSystemTy_0682 *)
-              FUN_006b50c0(0x186,0x14,(uint)(ushort)pSVar2->field_02F0->field_000E,uVar7,puVar9,
-                           iVar3);
-    pSVar2->field_0682 = pAVar10;
-    local_8 = pAVar10->field_0014;
+    pAVar9 = pSVar3->field_0544;
+    piVar1 = &pSVar3->field_0540;
+    FUN_006b2330((uint)DAT_008075a8,(uint *)piVar1,0x31,0x4023f6,pAVar9->field_0004,
+                 pAVar9->field_0008,(uint)pAVar9);
+    Library::DKW::DDX::FUN_006b3640(DAT_008075a8,*piVar1,0xffffffff,0xd,0xb9);
+    FUN_006b3af0(DAT_008075a8,*piVar1);
+    iVar4 = 1;
+    puVar10 = &pSVar3->field_02F0[2].field_0008;
+    uVar8 = FUN_006b4fe0((int)pSVar3->field_02F0);
+    pAVar11 = (AnonPointee_StartSystemTy_0682 *)
+              FUN_006b50c0(0x186,0x14,(uint)(ushort)pSVar3->field_02F0->field_000E,uVar8,puVar10,
+                           iVar4);
+    pSVar3->field_0682 = pAVar11;
+    local_8 = pAVar11->field_0014;
     if (local_8 == 0) {
-      local_8 = ((uint)(ushort)pAVar10->field_000E * pAVar10->field_0004 + 0x1f >> 3 & 0x1ffffffc) *
-                pAVar10->field_0008;
+      local_8 = ((uint)(ushort)pAVar11->field_000E * pAVar11->field_0004 + 0x1f >> 3 & 0x1ffffffc) *
+                pAVar11->field_0008;
     }
-    puVar9 = (undefined4 *)FUN_006b4fa0((int)pAVar10);
-    for (uVar7 = local_8 >> 2; uVar7 != 0; uVar7 = uVar7 - 1) {
-      *puVar9 = 0xffffffff;
-      puVar9 = puVar9 + 1;
+    puVar10 = (undefined4 *)FUN_006b4fa0((int)pAVar11);
+    for (uVar8 = local_8 >> 2; uVar8 != 0; uVar8 = uVar8 - 1) {
+      *puVar10 = 0xffffffff;
+      puVar10 = puVar10 + 1;
     }
-    for (uVar7 = local_8 & 3; uVar7 != 0; uVar7 = uVar7 - 1) {
-      *(undefined1 *)puVar9 = 0xff;
-      puVar9 = (undefined4 *)((int)puVar9 + 1);
+    for (uVar8 = local_8 & 3; uVar8 != 0; uVar8 = uVar8 - 1) {
+      *(undefined1 *)puVar10 = 0xff;
+      puVar10 = (undefined4 *)((int)puVar10 + 1);
     }
-    pAVar10 = pSVar2->field_0682;
-    puVar9 = &pSVar2->field_0554;
-    FUN_006b2330((uint)DAT_008075a8,puVar9,0x31,0x4023f6,pAVar10->field_0004,pAVar10->field_0008,
-                 (uint)pAVar10);
-    Library::DKW::DDX::FUN_006b3640(DAT_008075a8,*puVar9,0xffffffff,0xcb,0x23f);
-    FUN_006b3af0(DAT_008075a8,*puVar9);
-    puVar11 = Library::DKW::TBL::FUN_006b54f0((uint *)0x0,1,1);
-    pSVar2->field_0686 = puVar11;
-    Library::DKW::TBL::FUN_006b6020(puVar11,0,&DAT_008016a0);
+    pAVar11 = pSVar3->field_0682;
+    piVar1 = &pSVar3->field_0554;
+    FUN_006b2330((uint)DAT_008075a8,(uint *)piVar1,0x31,0x4023f6,pAVar11->field_0004,
+                 pAVar11->field_0008,(uint)pAVar11);
+    Library::DKW::DDX::FUN_006b3640(DAT_008075a8,*piVar1,0xffffffff,0xcb,0x23f);
+    FUN_006b3af0(DAT_008075a8,*piVar1);
+    puVar12 = Library::DKW::TBL::FUN_006b54f0((uint *)0x0,1,1);
+    pSVar3->field_0686 = puVar12;
+    Library::DKW::TBL::FUN_006b6020(puVar12,0,&DAT_008016a0);
     SpriteClassTy::InitSprite
-              ((SpriteClassTy *)&pSVar2->field_055C,DAT_008075a8,0x31,'\a',(undefined4 *)0x0,0,0);
+              ((SpriteClassTy *)&pSVar3->field_055C,DAT_008075a8,0x31,'\a',(undefined4 *)0x0,0,0);
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-    (**(code **)(pSVar2->field_055C + 4))(DAT_00806784,7,0,s_MM_SLDUP_007cc04c,0xffffffff);
-    pSVar2->field_0578 = 0x23a;
-    pSVar2->field_057C = 500;
-    pSVar2->field_0564 = 0;
+    (**(code **)(pSVar3->field_055C + 4))(DAT_00806784,7,0,"MM_SLDUP",0xffffffff);
+    pSVar3->field_0578 = 0x23a;
+    pSVar3->field_057C = 500;
+    pSVar3->field_0564 = 0;
     SpriteClassTy::InitSprite
-              ((SpriteClassTy *)&pSVar2->field_05ED,DAT_008075a8,0x31,'\a',(undefined4 *)0x0,0,0);
+              ((SpriteClassTy *)&pSVar3->field_05ED,DAT_008075a8,0x31,'\a',(undefined4 *)0x0,0,0);
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-    (**(code **)(pSVar2->field_05ED + 4))(DAT_00806784,7,0,s_MM_SLDDN_007cc040,0xffffffff);
-    iVar3 = 1;
-    pSVar2->field_0609 = 0x23a;
-    puVar9 = &pSVar2->field_02F0[2].field_0008;
-    pSVar2->field_060D = 0x23a - pSVar2->field_0615;
-    pSVar2->field_05F5 = 0;
-    uVar7 = FUN_006b4fe0((int)pSVar2->field_02F0);
-    pAVar12 = (AnonPointee_StartSystemTy_067E *)
-              FUN_006b50c0(0x16d,0x49,(uint)(ushort)pSVar2->field_02F0->field_000E,uVar7,puVar9,
-                           iVar3);
-    pSVar2->field_067E = pAVar12;
-    uVar7 = pAVar12->field_0014;
-    if (uVar7 == 0) {
-      uVar7 = ((uint)(ushort)pAVar12->field_000E * pAVar12->field_0004 + 0x1f >> 3 & 0x1ffffffc) *
-              pAVar12->field_0008;
+    (**(code **)(pSVar3->field_05ED + 4))(DAT_00806784,7,0,"MM_SLDDN",0xffffffff);
+    iVar4 = 1;
+    pSVar3->field_0609 = 0x23a;
+    puVar10 = &pSVar3->field_02F0[2].field_0008;
+    pSVar3->field_060D = 0x23a - pSVar3->field_0615;
+    pSVar3->field_05F5 = 0;
+    uVar8 = FUN_006b4fe0((int)pSVar3->field_02F0);
+    pAVar13 = (AnonPointee_StartSystemTy_067E *)
+              FUN_006b50c0(0x16d,0x49,(uint)(ushort)pSVar3->field_02F0->field_000E,uVar8,puVar10,
+                           iVar4);
+    pSVar3->field_067E = pAVar13;
+    uVar8 = pAVar13->field_0014;
+    if (uVar8 == 0) {
+      uVar8 = ((uint)(ushort)pAVar13->field_000E * pAVar13->field_0004 + 0x1f >> 3 & 0x1ffffffc) *
+              pAVar13->field_0008;
     }
-    puVar9 = (undefined4 *)FUN_006b4fa0((int)pAVar12);
-    for (uVar15 = uVar7 >> 2; uVar15 != 0; uVar15 = uVar15 - 1) {
-      *puVar9 = 0xffffffff;
-      puVar9 = puVar9 + 1;
+    puVar10 = (undefined4 *)FUN_006b4fa0((int)pAVar13);
+    for (uVar16 = uVar8 >> 2; uVar16 != 0; uVar16 = uVar16 - 1) {
+      *puVar10 = 0xffffffff;
+      puVar10 = puVar10 + 1;
     }
-    for (uVar7 = uVar7 & 3; uVar7 != 0; uVar7 = uVar7 - 1) {
-      *(undefined1 *)puVar9 = 0xff;
-      puVar9 = (undefined4 *)((int)puVar9 + 1);
+    for (uVar8 = uVar8 & 3; uVar8 != 0; uVar8 = uVar8 - 1) {
+      *(undefined1 *)puVar10 = 0xff;
+      puVar10 = (undefined4 *)((int)puVar10 + 1);
     }
-    pAVar12 = pSVar2->field_067E;
-    FUN_006b2330((uint)DAT_008075a8,&pSVar2->field_0558,0x31,0x4023f6,pAVar12->field_0004,
-                 pAVar12->field_0008,(uint)pAVar12);
-    Library::DKW::DDX::FUN_006b3640(DAT_008075a8,pSVar2->field_0558,0xffffffff,0xcd,499);
+    pAVar13 = pSVar3->field_067E;
+    FUN_006b2330((uint)DAT_008075a8,(uint *)&pSVar3->field_0558,0x31,0x4023f6,pAVar13->field_0004,
+                 pAVar13->field_0008,(uint)pAVar13);
+    Library::DKW::DDX::FUN_006b3640(DAT_008075a8,pSVar3->field_0558,0xffffffff,0xcd,499);
     g_currentExceptionFrame = local_50.previous;
     return 0;
   }
   g_currentExceptionFrame = local_50.previous;
   sub_005DB2A0(local_c);
-  iVar13 = ReportDebugMessage(s_E____titans_Start_startsys_cpp_007cd718,0x1ac,0,iVar3,&DAT_007a4ccc,
-                              s_StartSystemTy__LoadGraph_007cd778);
-  if (iVar13 == 0) {
-    RaiseInternalException(iVar3,0,s_E____titans_Start_startsys_cpp_007cd718,0x1ad);
+  iVar14 = ReportDebugMessage("E:\\__titans\\Start\\startsys.cpp",0x1ac,0,iVar4,"%s",
+                              "StartSystemTy::LoadGraph");
+  if (iVar14 == 0) {
+    RaiseInternalException(iVar4,0,"E:\\__titans\\Start\\startsys.cpp",0x1ad);
     return 0xfffffffc;
   }
   STDebugBreak(); /* noreturn in standalone pseudocode */

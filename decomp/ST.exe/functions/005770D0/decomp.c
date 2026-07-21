@@ -51,12 +51,12 @@ void __thiscall GameSystemC::DoneSystem(GameSystemC *this,int param_1)
     return;
   }
   g_currentExceptionFrame = local_4c.previous;
-  iVar4 = ReportDebugMessage(s_E____titans_tsystem_cpp_007cab5c,0xa7,0,errorCode,&DAT_007a4ccc,
-                             s_GameSystemC__DoneSystem_007cac18);
+  iVar4 = ReportDebugMessage("E:\\__titans\\tsystem.cpp",0xa7,0,errorCode,"%s",
+                             "GameSystemC::DoneSystem");
   if (iVar4 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  RaiseInternalException(errorCode,0,s_E____titans_tsystem_cpp_007cab5c,0xa7);
+  RaiseInternalException(errorCode,0,"E:\\__titans\\tsystem.cpp",0xa7);
   return;
 }
 

@@ -53,13 +53,13 @@ STFishC::sub_0057D700(STFishC *this,uint *param_1,uint *param_2,int *param_3,int
   case CASE_E8:
   case CASE_EA:
   case CASE_EB:
-    if (((((short)this->field_0047 < 1) &&
+    if ((((this->field_0047 < 1) &&
          (((sVar1 = this->field_006C, sVar1 == 0xe1 || (sVar1 == 0xb4)) || (sVar1 == 0x87)))) ||
-        ((iVar6 = (int)(short)this->field_0047, (int)uVar3 <= iVar6 &&
+        ((iVar6 = (int)this->field_0047, (int)uVar3 <= iVar6 &&
          (((sVar1 = this->field_006C, sVar1 == 0x2d || (sVar1 == 0)) || (sVar1 == 0x13b)))))) ||
-       ((((short)this->field_0049 < 1 &&
+       (((this->field_0049 < 1 &&
          (((sVar1 = this->field_006C, sVar1 == 0x87 || (sVar1 == 0x5a)) || (sVar1 == 0x2d)))) ||
-        ((iVar7 = (int)(short)this->field_0049, (int)uVar5 <= iVar7 &&
+        ((iVar7 = (int)this->field_0049, (int)uVar5 <= iVar7 &&
          (((sVar1 = this->field_006C, sVar1 == 0xe1 || (sVar1 == 0x10e)) || (sVar1 == 0x13b))))))))
     {
       iVar6 = (sVar1 + 0x2d) % 0x168;
@@ -77,8 +77,8 @@ STFishC::sub_0057D700(STFishC *this,uint *param_1,uint *param_2,int *param_3,int
   default:
     goto switchD_0057d76c_default;
   }
-  iVar8 = (int)((ulonglong)((longlong)(int)(short)this->field_006C * -0x49f49f49) >> 0x20) +
-          (int)(short)this->field_006C;
+  iVar8 = (int)((ulonglong)((longlong)(int)this->field_006C * -0x49f49f49) >> 0x20) +
+          (int)this->field_006C;
   switch((iVar8 >> 5) - (iVar8 >> 0x1f)) {
   case 0:
     if (iVar6 < 0) {
@@ -90,13 +90,13 @@ STFishC::sub_0057D700(STFishC *this,uint *param_1,uint *param_2,int *param_3,int
     uVar9 = iVar7 * 0x41c64e6d + 0x3039;
     this->field_001C = uVar9;
     uVar10 = (uVar9 >> 0x10) % ((uVar3 - iVar6) + 1) + iVar6;
-    iVar6 = uVar10 - (int)(short)this->field_0047;
+    iVar6 = uVar10 - (int)this->field_0047;
     goto LAB_0057d9ad;
   case 1:
     uVar9 = this->field_001C * 0x41c64e6d + 0x3039;
     this->field_001C = uVar9;
     uVar9 = (uVar9 >> 0x10) % (iVar7 + 1U);
-    iVar6 = (int)(short)this->field_0047;
+    iVar6 = (int)this->field_0047;
     if (iVar6 < 0) {
 LAB_0057db0a:
       uVar10 = this->field_001C * 0x41c64e6d + 0x3039;
@@ -109,7 +109,7 @@ LAB_0057db0a:
     uVar9 = this->field_001C * 0x41c64e6d + 0x3039;
     this->field_001C = uVar9;
     uVar9 = (uVar9 >> 0x10) % (iVar7 + 1U);
-    iVar6 = (int)(short)this->field_0049 - uVar9;
+    iVar6 = (int)this->field_0049 - uVar9;
     goto LAB_0057da88;
   case 3:
     uVar9 = this->field_001C * 0x41c64e6d + 0x3039;
@@ -117,15 +117,15 @@ LAB_0057db0a:
     uVar10 = (uVar9 >> 0x10) % (iVar6 + 1U);
     uVar9 = this->field_001C * 0x41c64e6d + 0x3039;
     this->field_001C = uVar9;
-    uVar9 = (uVar9 >> 0x10) % ((int)(short)this->field_0049 + 1U);
+    uVar9 = (uVar9 >> 0x10) % ((int)this->field_0049 + 1U);
     break;
   case 4:
     uVar9 = this->field_001C * 0x41c64e6d + 0x3039;
     this->field_001C = uVar9;
     uVar10 = (uVar9 >> 0x10) % (iVar6 + 1U);
-    iVar6 = (int)(short)this->field_0047 - uVar10;
+    iVar6 = (int)this->field_0047 - uVar10;
 LAB_0057d9ad:
-    iVar7 = (short)this->field_0049 - iVar6;
+    iVar7 = this->field_0049 - iVar6;
     if (iVar7 < 0) {
       iVar8 = this->field_001C;
     }
@@ -134,7 +134,7 @@ LAB_0057d9ad:
     }
     uVar9 = iVar8 * 0x41c64e6d + 0x3039;
     this->field_001C = uVar9;
-    uVar9 = (uVar9 >> 0x10) % ((((short)this->field_0049 + iVar6) - iVar7) + 1U) + iVar7;
+    uVar9 = (uVar9 >> 0x10) % (((this->field_0049 + iVar6) - iVar7) + 1U) + iVar7;
     break;
   case 5:
     if (iVar7 < 0) {
@@ -148,7 +148,7 @@ LAB_0057d9ad:
     uVar9 = (uVar9 >> 0x10) % ((uVar5 - iVar7) + 1) + iVar7;
     uVar10 = this->field_001C * 0x41c64e6d + 0x3039;
     this->field_001C = uVar10;
-    uVar10 = (uVar10 >> 0x10) % ((int)(short)this->field_0047 + 1U);
+    uVar10 = (uVar10 >> 0x10) % ((int)this->field_0047 + 1U);
     break;
   case 6:
     if (iVar7 < 0) {
@@ -160,10 +160,10 @@ LAB_0057d9ad:
     uVar9 = iVar6 * 0x41c64e6d + 0x3039;
     this->field_001C = uVar9;
     uVar9 = (uVar9 >> 0x10) % ((uVar5 - iVar7) + 1) + iVar7;
-    iVar6 = uVar9 - (int)(short)this->field_0049;
+    iVar6 = uVar9 - (int)this->field_0049;
 LAB_0057da88:
-    uVar2 = (short)this->field_0047 + iVar6;
-    iVar6 = (short)this->field_0047 - iVar6;
+    uVar2 = this->field_0047 + iVar6;
+    iVar6 = this->field_0047 - iVar6;
     if (iVar6 < 0) {
       uVar10 = this->field_001C * 0x41c64e6d + 0x3039;
       this->field_001C = uVar10;
@@ -183,7 +183,7 @@ LAB_0057da88:
     uVar9 = iVar6 * 0x41c64e6d + 0x3039;
     this->field_001C = uVar9;
     uVar9 = (uVar9 >> 0x10) % ((uVar5 - iVar7) + 1) + iVar7;
-    iVar6 = (int)(short)this->field_0047;
+    iVar6 = (int)this->field_0047;
     if (-1 < iVar6) goto LAB_0057db0a;
     uVar10 = this->field_001C * 0x41c64e6d + 0x3039;
 LAB_0057db18:
@@ -209,9 +209,9 @@ switchD_0057d88f_default:
     uVar9 = uVar5;
   }
 switchD_0057d76c_default:
-  if ((uVar10 == (int)(short)this->field_0047) && (uVar9 == (int)(short)this->field_0049)) {
+  if ((uVar10 == (int)this->field_0047) && (uVar9 == (int)this->field_0049)) {
     if ((this->field_0267 == CASE_EB) || (this->field_0267 == CASE_E8)) {
-      iVar6 = ((short)this->field_006C + 0x2d) % 0x168;
+      iVar6 = (this->field_006C + 0x2d) % 0x168;
       *param_4 = iVar6;
       if (-1 < iVar6) {
         return 2;
@@ -255,14 +255,14 @@ cf_continue_loop_0057DBE9:
       *param_3 = local_18;
       return 1;
     }
-    bVar11 = (int)(uVar10 - (int)(short)this->field_0047) < 0;
-    if (uVar10 == (int)(short)this->field_0047 || bVar11) {
+    bVar11 = (int)(uVar10 - (int)this->field_0047) < 0;
+    if (uVar10 == (int)this->field_0047 || bVar11) {
       if (bVar11) {
         uVar10 = uVar10 + 1;
         goto cf_continue_loop_0057DBE9;
       }
-      bVar11 = (int)(uVar9 - (int)(short)this->field_0049) < 0;
-      if (uVar9 == (int)(short)this->field_0049 || bVar11) {
+      bVar11 = (int)(uVar9 - (int)this->field_0049) < 0;
+      if (uVar9 == (int)this->field_0049 || bVar11) {
         if (!bVar11) goto LAB_0057dd0c;
         uVar9 = uVar9 + 1;
         goto cf_continue_loop_0057DBE9;
@@ -276,7 +276,7 @@ cf_continue_loop_0057DBE9:
     }
     if ((int)uVar2 < 0) {
 LAB_0057dd0c:
-      iVar6 = ((short)this->field_006C + 0x2d) % 0x168;
+      iVar6 = (this->field_006C + 0x2d) % 0x168;
       *param_4 = iVar6;
       while (iVar6 < 0) {
         iVar6 = *param_4 + 0x168;

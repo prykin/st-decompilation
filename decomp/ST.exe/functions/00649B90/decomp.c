@@ -44,12 +44,12 @@ undefined4 * CreateBossData(void)
     thunk_FUN_0065d0f0((int *)&local_10);
     thunk_FUN_006484f0((int *)&local_8);
     thunk_FUN_006484f0((int *)&local_c);
-    iVar4 = ReportDebugMessage(s_E____titans_ai_ai_creat_cpp_007d2880,0x1a7,0,iVar3,&DAT_007a4ccc,
-                               s_CreateBossData_007d2940);
+    iVar4 = ReportDebugMessage("E:\\__titans\\ai\\ai_creat.cpp",0x1a7,0,iVar3,"%s",
+                               "CreateBossData");
     if (iVar4 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    RaiseInternalException(iVar3,0,s_E____titans_ai_ai_creat_cpp_007d2880,0x1a8);
+    RaiseInternalException(iVar3,0,"E:\\__titans\\ai\\ai_creat.cpp",0x1a8);
     return (undefined4 *)0x0;
   }
   piVar10 = local_34;
@@ -199,7 +199,7 @@ undefined4 * CreateBossData(void)
     pcVar13 = pcVar13 + 1;
   }
   uVar6 = 0xffffffff;
-  pcVar9 = s_Arbiter_battle_arb_007d2954;
+  pcVar9 = "Arbiter_battle.arb";
   do {
     pcVar13 = pcVar9;
     if (uVar6 == 0) break;
@@ -243,7 +243,7 @@ undefined4 * CreateBossData(void)
     return local_c;
   }
   RaiseInternalException
-            (local_34[0],g_overwriteContext_007ED77C,s_E____titans_ai_ai_creat_cpp_007d2880,0x1a1);
+            (local_34[0],g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_creat.cpp",0x1a1);
   g_currentExceptionFrame = local_78.previous;
   return local_c;
 }

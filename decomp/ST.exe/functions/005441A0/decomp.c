@@ -98,12 +98,12 @@ void __thiscall CursorClassTy::AddSysAcc(CursorClassTy *this)
     return;
   }
   g_currentExceptionFrame = local_b8.previous;
-  iVar3 = ReportDebugMessage(s_E____titans_Andrey_to_cursor_cpp_007c7d60,0x127,0,iVar2,&DAT_007a4ccc
-                             ,s_CursorClassTy__AddSysAcc_007c7e8c);
+  iVar3 = ReportDebugMessage("E:\\__titans\\Andrey\\to_cursor.cpp",0x127,0,iVar2,"%s"
+                             ,"CursorClassTy::AddSysAcc");
   if (iVar3 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  RaiseInternalException(iVar2,0,s_E____titans_Andrey_to_cursor_cpp_007c7d60,0x128);
+  RaiseInternalException(iVar2,0,"E:\\__titans\\Andrey\\to_cursor.cpp",0x128);
   return;
 }
 

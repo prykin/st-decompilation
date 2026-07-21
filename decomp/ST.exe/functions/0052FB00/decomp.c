@@ -210,12 +210,12 @@ void __thiscall OptPanelTy::SetOptControls(OptPanelTy *this)
   iVar7 = Library::MSVCRT::__setjmp3(local_110.jumpBuffer,0);
   if (iVar7 != 0) {
     g_currentExceptionFrame = local_110.previous;
-    iVar17 = ReportDebugMessage(s_E____titans_Andrey_optpanel_cpp_007c70a0,0x350,0,iVar7,
-                                &DAT_007a4ccc);
+    iVar17 = ReportDebugMessage("E:\\__titans\\Andrey\\optpanel.cpp",0x350,0,iVar7,
+                                "%s");
     if (iVar17 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    RaiseInternalException(iVar7,0,s_E____titans_Andrey_optpanel_cpp_007c70a0,0x350);
+    RaiseInternalException(iVar7,0,"E:\\__titans\\Andrey\\optpanel.cpp",0x350);
     return;
   }
   iVar7 = 10;
@@ -693,13 +693,13 @@ LAB_00530554:
     DibPut((AnonShape_006B5B10_E0D06CF1 *)this_00->field_0068,0xaa,0x6f,'\x01',
            (byte *)this_00->field_018C);
     puVar1 = &this_00->field_0x6c;
-    wsprintfA(puVar1,&DAT_007c1890);
+    wsprintfA(puVar1,"%d");
     ccFntTy::SetSurf(this_00->field_017C,this_00->field_0068,0,0xaa,0x6f,
                      *(int *)(this_00->field_018C + 2),*(int *)(this_00->field_018C + 4));
     ccFntTy::WrStr(this_00->field_017C,(uint *)puVar1,-2,-1,0);
     DibPut((AnonShape_006B5B10_E0D06CF1 *)this_00->field_0068,0xaa,0x81,'\x01',
            (byte *)this_00->field_018C);
-    wsprintfA(puVar1,&DAT_007c1890);
+    wsprintfA(puVar1,"%d");
     ccFntTy::SetSurf(this_00->field_017C,this_00->field_0068,0,0xaa,0x81,
                      *(int *)(this_00->field_018C + 2),*(int *)(this_00->field_018C + 4));
     ccFntTy::WrStr(this_00->field_017C,(uint *)puVar1,-2,-1,0);
@@ -736,7 +736,7 @@ cf_switch_join_005305BC:
       iVar17 = uVar19 + 0xc0af;
       sVar29 = 0;
       iVar11 = uVar19 + 0xc09f;
-      pCVar16 = thunk_FUN_00571240(s_BUT_BUTOPT_007c7264,0);
+      pCVar16 = thunk_FUN_00571240("BUT_BUTOPT",0);
       local_4c = 0x530655;
       uVar39 = UPanelTy::CreateBut((UPanelTy *)this_00,1,iVar7,0x1d,uVar19 * 0x12 + 0x13,1,
                                    (int)pCVar16,iVar11,iVar17,sVar29,uVar31,uVar39,pcVar9,uVar28,
@@ -758,7 +758,7 @@ cf_switch_join_005305BC:
       iVar11 = iVar7 + 0x10;
       sVar29 = 0;
       iVar27 = iVar7;
-      pCVar16 = thunk_FUN_00571240(s_BUT_BUTOPT_007c7264,0);
+      pCVar16 = thunk_FUN_00571240("BUT_BUTOPT",0);
       local_4c = 0x530784;
       uVar39 = UPanelTy::CreateBut((UPanelTy *)this_00,1,1,0x1d,iVar17,1,(int)pCVar16,iVar27,iVar11,
                                    sVar29,uVar31,uVar39,pcVar9,puVar37,uVar28);
@@ -920,8 +920,8 @@ cf_switch_join_005305BC:
     local_734 = local_754;
     local_714 = local_754;
     local_6f4 = local_754;
-    local_528 = FUN_0070aa70(DAT_00806790,s_BUT_MSLUP_007c39e0,0,1);
-    local_524 = Library::Ourlib::MFIMG::mfImgGetWidth(DAT_00806790,0x12,s_BUT_MSLUP_007c39e0,1);
+    local_528 = FUN_0070aa70(DAT_00806790,"BUT_MSLUP",0,1);
+    local_524 = Library::Ourlib::MFIMG::mfImgGetWidth(DAT_00806790,0x12,"BUT_MSLUP",1);
     local_5ec = this_00->field_0008;
     local_3c4 = 1;
     local_3c0 = 1;
@@ -942,8 +942,8 @@ cf_switch_join_005305BC:
     local_4c0 = local_4c0 + 0x51;
     local_4bc = 0x11;
     local_4b8 = 0x24;
-    local_3a8 = FUN_0070aa70(DAT_00806790,s_BUT_MSLDN_007c39d4,0,1);
-    local_3a4 = Library::Ourlib::MFIMG::mfImgGetWidth(DAT_00806790,0x12,s_BUT_MSLDN_007c39d4,1);
+    local_3a8 = FUN_0070aa70(DAT_00806790,"BUT_MSLDN",0,1);
+    local_3a4 = Library::Ourlib::MFIMG::mfImgGetWidth(DAT_00806790,0x12,"BUT_MSLDN",1);
     local_46c = this_00->field_0008;
     local_3bc = 500;
     local_3b8 = 0x32;
@@ -1002,7 +1002,7 @@ cf_switch_join_005305BC:
     uVar28 = 0xc0b1;
     uVar39 = 0xc0a1;
     if (this_00->field_01A4 == CASE_E) {
-      pCVar16 = thunk_FUN_00571240(s_BUT_MEDIUM_007c3894,0);
+      pCVar16 = thunk_FUN_00571240("BUT_MEDIUM",0);
       local_4c = 0x5318f5;
       uVar39 = UPanelTy::CreateBut((UPanelTy *)this_00,0,1,0x78,0x7d,1,(int)pCVar16,uVar39,uVar28,
                                    sVar29,uVar31,uVar35,pcVar9,uVar38,uVar41);
@@ -1011,7 +1011,7 @@ cf_switch_join_005305BC:
       PrepAsses(this_00,unaff_EDI);
     }
     else {
-      pCVar16 = thunk_FUN_00571240(s_BUT_MEDIUM_007c3894,0);
+      pCVar16 = thunk_FUN_00571240("BUT_MEDIUM",0);
       local_4c = 0x531882;
       uVar39 = UPanelTy::CreateBut((UPanelTy *)this_00,0,1,0x5d,0x7c,1,(int)pCVar16,uVar39,uVar28,
                                    sVar29,uVar31,uVar35,pcVar9,uVar38,uVar41);
@@ -1024,12 +1024,12 @@ cf_switch_join_005305BC:
       uVar35 = 0xc0b2;
       uVar28 = 0xc0a2;
       this_00->field_01BD = uVar39;
-      pCVar16 = thunk_FUN_00571240(s_BUT_MEDIUM_007c3894,0);
+      pCVar16 = thunk_FUN_00571240("BUT_MEDIUM",0);
       local_4c = 0x5318c2;
       uVar39 = UPanelTy::CreateBut((UPanelTy *)this_00,0,1,0x94,0x7c,1,(int)pCVar16,uVar28,uVar35,
                                    sVar29,uVar31,uVar38,pcVar9,uVar41,uVar42);
       this_00->field_01C1 = uVar39;
-      PrepFiles(this_00,*(uint *)&this_00->field_0x1e1);
+      PrepFiles(this_00,this_00->field_01E1);
     }
     break;
   case CASE_5:
@@ -1041,7 +1041,7 @@ cf_switch_join_005305BC:
     sVar29 = 0;
     uVar28 = 0xc0af;
     uVar39 = 0xc09f;
-    pCVar16 = thunk_FUN_00571240(s_BUT_MEDIUM_007c3894,0);
+    pCVar16 = thunk_FUN_00571240("BUT_MEDIUM",0);
     local_4c = 0x5306a8;
     uVar39 = UPanelTy::CreateBut((UPanelTy *)this_00,0,1,0x5e,0x7d,1,(int)pCVar16,uVar39,uVar28,
                                  sVar29,uVar31,uVar35,pcVar9,uVar38,uVar41);
@@ -1054,7 +1054,7 @@ cf_switch_join_005305BC:
     uVar35 = 0xc0b0;
     uVar28 = 0xc0a0;
     this_00->field_01B5 = uVar39;
-    pCVar16 = thunk_FUN_00571240(s_BUT_MEDIUM_007c3894,0);
+    pCVar16 = thunk_FUN_00571240("BUT_MEDIUM",0);
     local_4c = 0x5306e8;
     uVar39 = UPanelTy::CreateBut((UPanelTy *)this_00,0,1,0x97,0x7d,1,(int)pCVar16,uVar28,uVar35,
                                  sVar29,uVar31,uVar38,pcVar9,uVar41,uVar42);
@@ -1074,7 +1074,7 @@ cf_switch_join_005305BC:
       iVar11 = iVar7 + 0x10;
       pOVar30 = (OptPanelTy *)0x0;
       iVar27 = iVar7;
-      pCVar16 = thunk_FUN_00571240(s_BUT_BUTOPT_007c7264,0);
+      pCVar16 = thunk_FUN_00571240("BUT_BUTOPT",0);
       local_4c = 0x530c65;
       uVar39 = UPanelTy::CreateBut((UPanelTy *)this_00,3,(-(uint)(bVar6 != 0) & 2) + 1,0x1d,iVar17,1
                                    ,(int)pCVar16,iVar27,iVar11,(short)pOVar30,uVar31,uVar19,pcVar9,
@@ -1472,7 +1472,7 @@ switchD_005311ec_caseD_3:
       uVar31 = 0;
       sVar29 = 0;
       iVar11 = iVar7 + 0xc0af;
-      pCVar16 = thunk_FUN_00571240(s_BUT_BUTOPT_007c7264,0);
+      pCVar16 = thunk_FUN_00571240("BUT_BUTOPT",0);
       local_4c = 0x530b3a;
       uVar39 = UPanelTy::CreateBut((UPanelTy *)this_00,3,1,0x1d,iVar17,1,(int)pCVar16,iVar27,iVar11,
                                    sVar29,uVar31,uVar39,pcVar9,puVar37,uVar28);
@@ -1490,7 +1490,7 @@ switchD_005311ec_caseD_3:
     sVar29 = 0;
     uVar28 = 0xc0b0;
     uVar39 = 0xc0a0;
-    pCVar16 = thunk_FUN_00571240(s_BUT_MEDIUM_007c3894,0);
+    pCVar16 = thunk_FUN_00571240("BUT_MEDIUM",0);
     local_4c = 0x53072a;
     uVar39 = UPanelTy::CreateBut((UPanelTy *)this_00,0,1,0x7d,0x7d,1,(int)pCVar16,uVar39,uVar28,
                                  sVar29,uVar31,uVar35,pcVar9,uVar38,uVar41);
@@ -1549,8 +1549,8 @@ switchD_005311ec_caseD_3:
     local_10dc = 2;
     local_10d8 = 0x8165;
     local_10e0 = local_11c4;
-    local_101c = FUN_0070aa70(DAT_00806790,s_BUT_MSLDN_007c39d4,0,1);
-    local_1018 = Library::Ourlib::MFIMG::mfImgGetWidth(DAT_00806790,0x12,s_BUT_MSLDN_007c39d4,1);
+    local_101c = FUN_0070aa70(DAT_00806790,"BUT_MSLDN",0,1);
+    local_1018 = Library::Ourlib::MFIMG::mfImgGetWidth(DAT_00806790,0x12,"BUT_MSLDN",1);
     iVar7 = this_00->field_005C;
     local_1038 = 1;
     local_1034 = 1;
@@ -1573,8 +1573,8 @@ switchD_005311ec_caseD_3:
     local_fb0 = 0x11;
     local_fac = 0x24;
     local_f58 = 0x8164;
-    local_e9c = FUN_0070aa70(DAT_00806790,s_BUT_MSLUP_007c39e0,0,1);
-    local_e98 = Library::Ourlib::MFIMG::mfImgGetWidth(DAT_00806790,0x12,s_BUT_MSLUP_007c39e0,1);
+    local_e9c = FUN_0070aa70(DAT_00806790,"BUT_MSLUP",0,1);
+    local_e98 = Library::Ourlib::MFIMG::mfImgGetWidth(DAT_00806790,0x12,"BUT_MSLUP",1);
     local_990 = 1;
     local_994 = 1;
     (*this_00->field_000C->vtable->CreateObject)
@@ -1672,7 +1672,7 @@ switchD_005311ec_caseD_3:
     sVar29 = 0;
     uVar28 = 0xc0b0;
     uVar39 = 0xc0a0;
-    pCVar16 = thunk_FUN_00571240(s_BUT_BUTOPT_007c7264,0);
+    pCVar16 = thunk_FUN_00571240("BUT_BUTOPT",0);
     local_4c = 0x530992;
     uVar39 = UPanelTy::CreateBut((UPanelTy *)this_00,1,0,0x1d,0x49,1,(int)pCVar16,uVar39,uVar28,
                                  sVar29,uVar31,uVar35,pcVar9,uVar38,uVar41);
@@ -1685,7 +1685,7 @@ switchD_005311ec_caseD_3:
     uVar35 = 0xc0b1;
     uVar28 = 0xc0a1;
     this_00->field_01B9 = uVar39;
-    pCVar16 = thunk_FUN_00571240(s_BUT_BUTOPT_007c7264,0);
+    pCVar16 = thunk_FUN_00571240("BUT_BUTOPT",0);
     local_4c = 0x5309da;
     uVar39 = UPanelTy::CreateBut((UPanelTy *)this_00,3,(-(uint)(DAT_00807342 != 0) & 2) + 1,0x1d,
                                  0x5b,1,(int)pCVar16,uVar28,uVar35,sVar29,uVar31,uVar38,pcVar9,
@@ -1699,7 +1699,7 @@ switchD_005311ec_caseD_3:
     uVar39 = CreateSlider(this_00,0x94,0x82,*(int *)(this_00->field_018C + 2) + 0xaf,0x82,0xc0a3,3,
                           (uint)DAT_00807347,1);
     this_00->field_01C5 = uVar39;
-    *(byte *)&this_00[1].field_0000 = DAT_00807348;
+    this_00->field_0305 = DAT_00807348;
   }
   if ((this_00->field_01A4 == CASE_1) || (this_00->field_01A9 == '\0')) {
     *(undefined4 *)&this_00->field_0x2c = 0;

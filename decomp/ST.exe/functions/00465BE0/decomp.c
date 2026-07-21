@@ -19,8 +19,8 @@ int __thiscall STBoatC::BackPatrol(STBoatC *this,int *param_1)
     iVar2 = thunk_FUN_004620f0(this);
     return iVar2;
   }
-  iVar2 = ReportDebugMessage(s_E____titans_wlad_To_boat_cpp_007a9d3c,0x1c52,0,0,&DAT_007a4ccc,
-                             s_STBoatC__BackPatrol_007aa23c);
+  iVar2 = ReportDebugMessage("E:\\__titans\\wlad\\To_boat.cpp",0x1c52,0,0,"%s",
+                             "STBoatC::BackPatrol");
   if (iVar2 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }

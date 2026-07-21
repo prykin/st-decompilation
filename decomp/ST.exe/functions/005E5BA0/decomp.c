@@ -46,12 +46,12 @@ void __thiscall MTestTy::DoneMTest(MTestTy *this)
     return;
   }
   g_currentExceptionFrame = local_4c.previous;
-  iVar3 = ReportDebugMessage(s_E____titans_Start_test_obj_cpp_007cdcbc,0x4a,0,iVar2,&DAT_007a4ccc,
-                             s_MTestTy__DoneMTest_007cdcfc);
+  iVar3 = ReportDebugMessage("E:\\__titans\\Start\\test_obj.cpp",0x4a,0,iVar2,"%s",
+                             "MTestTy::DoneMTest");
   if (iVar3 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  RaiseInternalException(iVar2,0,s_E____titans_Start_test_obj_cpp_007cdcbc,0x4a);
+  RaiseInternalException(iVar2,0,"E:\\__titans\\Start\\test_obj.cpp",0x4a);
   return;
 }
 

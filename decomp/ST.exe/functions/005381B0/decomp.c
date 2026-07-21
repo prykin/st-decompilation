@@ -63,12 +63,12 @@ void __thiscall PanelTy::InitPanel(PanelTy *this)
     return;
   }
   g_currentExceptionFrame = local_4c.previous;
-  iVar5 = ReportDebugMessage(s_E____titans_Andrey_panel_cpp_007c7390,0x2a,0,iVar2,&DAT_007a4ccc,
-                             s_PanelTy__InitPanel_007c73b4);
+  iVar5 = ReportDebugMessage("E:\\__titans\\Andrey\\panel.cpp",0x2a,0,iVar2,"%s",
+                             "PanelTy::InitPanel");
   if (iVar5 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  RaiseInternalException(iVar2,0,s_E____titans_Andrey_panel_cpp_007c7390,0x2a);
+  RaiseInternalException(iVar2,0,"E:\\__titans\\Andrey\\panel.cpp",0x2a);
   return;
 }
 

@@ -17,7 +17,7 @@ void FUN_0044cdb0(uint param_1,DArrayTy *param_2,int param_3)
       if ((((short)param_1 != -1) &&
           (pSVar3 = STAllPlayersC::GetObjPtr(g_sTAllPlayers_007FA174,(char)uVar2,param_1,CASE_1),
           pSVar3 != (STGameObjC *)0x0)) && (pSVar3->field_0020 == 0x14)) {
-        *(int *)&pSVar3[4].field_0xaa = param_3;
+        pSVar3->field_07EE = param_3;
       }
       uVar4 = uVar4 + 1;
       index = uVar4 & 0xffff;

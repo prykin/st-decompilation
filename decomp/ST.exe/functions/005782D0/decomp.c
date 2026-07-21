@@ -12,7 +12,7 @@ void FUN_005782d0(void)
   else {
     DAT_00811644 = DebugSystemC::DebugSystemC(this,g_appClass_00806728);
   }
-  DAT_00811644[8].vtable = (DebugSystemCVTable *)0x0;
+  DAT_00811644->field_0020 = 0;
   iVar1 = (*DAT_00811644->vtable->InitSystem)((SystemClassTy *)DAT_00811644);
   if (iVar1 != 0) {
     thunk_FUN_00578370();
@@ -20,10 +20,10 @@ void FUN_005782d0(void)
   iVar1 = AppClassTy::AddSystem(g_appClass_00806728,(int *)DAT_00811644,0);
   if (iVar1 != 0) {
     thunk_FUN_00578370();
-    DAT_00811644[8].vtable = (DebugSystemCVTable *)0x1;
+    DAT_00811644->field_0020 = 1;
     return;
   }
-  DAT_00811644[8].vtable = (DebugSystemCVTable *)0x1;
+  DAT_00811644->field_0020 = 1;
   return;
 }
 

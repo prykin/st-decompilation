@@ -45,17 +45,17 @@ _EnumMines(int param_1,short param_2,char param_3,byte *param_4,short param_5,sh
   iVar3 = Library::MSVCRT::__setjmp3(local_6c.jumpBuffer,0);
   if (iVar3 != 0) {
     g_currentExceptionFrame = local_6c.previous;
-    iVar6 = ReportDebugMessage(s_E____titans_ai_ai_mdef_cpp_007d2d58,0x439,0,iVar3,&DAT_007a4ccc,
-                               s__EnumMines_007d2e30);
+    iVar6 = ReportDebugMessage("E:\\__titans\\ai\\ai_mdef.cpp",0x439,0,iVar3,"%s",
+                               "_EnumMines");
     if (iVar6 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    RaiseInternalException(iVar3,0,s_E____titans_ai_ai_mdef_cpp_007d2d58,0x43a);
+    RaiseInternalException(iVar3,0,"E:\\__titans\\ai\\ai_mdef.cpp",0x43a);
     return iVar3;
   }
   if (PTR_007fa158 == (DArrayTy *)0x0) {
     RaiseInternalException
-              (-0x34,g_overwriteContext_007ED77C,s_E____titans_ai_ai_mdef_cpp_007d2d58,0x41f);
+              (-0x34,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_mdef.cpp",0x41f);
   }
   uVar8 = PTR_007fa158->count - 1;
   pDVar7 = PTR_007fa158;

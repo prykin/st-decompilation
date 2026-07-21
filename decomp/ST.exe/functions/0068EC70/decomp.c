@@ -35,8 +35,8 @@ void __thiscall AiTactClassTy::ExecClaim(AiTactClassTy *this,int param_1)
   uint local_c;
   uint local_8;
 
-  if ((this->field_0091 == 0) ||
-     ((uint)(this->field_0095 + this->field_0091) <= (uint)this->field_012C)) {
+  if ((this->field_0091 == 0) || ((uint)(this->field_0095 + this->field_0091) <= this->field_012C))
+  {
     this->field_0095 = this->field_012C;
     local_88.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_88;
@@ -67,7 +67,7 @@ void __thiscall AiTactClassTy::ExecClaim(AiTactClassTy *this,int param_1)
           case 0:
             if ((*(int *)((int)pvVar12 + 0x12) == 0) ||
                ((uint)(*(int *)((int)pvVar12 + 0x3a) + *(int *)((int)pvVar12 + 0x12)) <=
-                (uint)pAVar6->field_012C)) {
+                pAVar6->field_012C)) {
               pDVar9 = pAVar6->field_00A5;
               local_c = 0;
               if (0 < (int)pDVar9->count) {
@@ -99,7 +99,7 @@ void __thiscall AiTactClassTy::ExecClaim(AiTactClassTy *this,int param_1)
                       *(undefined4 *)((int)pvVar12 + 0x2c) = 1;
                       *(uint *)((int)pvVar12 + 0x34) = local_c;
                       *(undefined2 *)((int)pvVar12 + 0x38) = local_36;
-                      *(undefined4 *)((int)pvVar12 + 0x3a) = pAVar6->field_012C;
+                      *(uint *)((int)pvVar12 + 0x3a) = pAVar6->field_012C;
                       cVar7 = cStack_3b;
                       break;
                     }
@@ -118,7 +118,7 @@ void __thiscall AiTactClassTy::ExecClaim(AiTactClassTy *this,int param_1)
           case 1:
             if ((*(int *)((int)pvVar12 + 0xe) == 0) ||
                ((uint)(*(int *)((int)pvVar12 + 0x3a) + *(int *)((int)pvVar12 + 0xe)) <=
-                (uint)pAVar6->field_012C)) {
+                pAVar6->field_012C)) {
               pDVar9 = pAVar6->field_00A5;
               if (*(uint *)((int)pvVar12 + 0x34) < pDVar9->count) {
                 /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(array, index) (runtime elementSize cannot be a static C array) */
@@ -192,12 +192,12 @@ void __thiscall AiTactClassTy::ExecClaim(AiTactClassTy *this,int param_1)
       return;
     }
     g_currentExceptionFrame = local_88.previous;
-    iVar10 = ReportDebugMessage(s_E____titans_ai_ai_tact_cpp_007d56e0,0x1ff,0,iVar8,&DAT_007a4ccc,
-                                s_AiTactClassTy__ExecClaim_007d5798);
+    iVar10 = ReportDebugMessage("E:\\__titans\\ai\\ai_tact.cpp",0x1ff,0,iVar8,"%s",
+                                "AiTactClassTy::ExecClaim");
     if (iVar10 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    RaiseInternalException(iVar8,0,s_E____titans_ai_ai_tact_cpp_007d56e0,0x200);
+    RaiseInternalException(iVar8,0,"E:\\__titans\\ai\\ai_tact.cpp",0x200);
   }
   return;
 }

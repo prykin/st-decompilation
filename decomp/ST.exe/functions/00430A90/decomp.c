@@ -3,21 +3,25 @@
 
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\to_allpl.cpp
-   STAllPlayersC::GetMessage */
+   STAllPlayersC::GetMessage
 
-undefined4 __thiscall STAllPlayersC::GetMessage(STAllPlayersC *this,int param_1)
+   [STMessageHandlerApplier] Recovered common GetMessage envelope/signature.
+   Evidence: family_entries=00405CA4|00430A90; family_names=STAllPlayersC::GetMessage; ret4=7;
+   direct_offsets={10:2,14:0,18:0,1c:0} */
+
+int __thiscall STAllPlayersC::GetMessage(STAllPlayersC *this,STMessage *message)
 
 {
   byte bVar1;
+  STMessageId SVar2;
   DArrayTy *array;
-  dword dVar2;
-  code *pcVar3;
+  dword dVar3;
+  code *pcVar4;
   STAllPlayersC *this_00;
-  int iVar4;
-  byte *pbVar5;
-  DArrayTy *pDVar6;
-  int iVar7;
-  undefined4 uVar8;
+  int iVar5;
+  byte *pbVar6;
+  DArrayTy *pDVar7;
+  int iVar8;
   STPlayerRuntimeRecord *pSVar9;
   uint uVar10;
   uint uVar11;
@@ -41,46 +45,45 @@ undefined4 __thiscall STAllPlayersC::GetMessage(STAllPlayersC *this,int param_1)
   local_6c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_6c;
   local_10 = this;
-  iVar4 = Library::MSVCRT::__setjmp3(local_6c.jumpBuffer,0);
+  iVar5 = Library::MSVCRT::__setjmp3(local_6c.jumpBuffer,0);
   this_00 = local_10;
-  if (iVar4 != 0) {
+  if (iVar5 != 0) {
     g_currentExceptionFrame = local_6c.previous;
-    iVar7 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0xa05,0,iVar4,&DAT_007a4ccc,
-                               s_STAllPlayersC__GetMessage_007a67b8);
-    if (iVar7 == 0) {
-      RaiseInternalException(iVar4,0,s_E____titans_wlad_to_allpl_cpp_007a6004,0xa06);
+    iVar8 = ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0xa05,0,iVar5,"%s",
+                               "STAllPlayersC::GetMessage");
+    if (iVar8 == 0) {
+      RaiseInternalException(iVar5,0,"E:\\__titans\\wlad\\to_allpl.cpp",0xa06);
       return 0xffff;
     }
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  FUN_006e5fd0();
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  uVar11 = *(uint *)(param_1 + 0x10);
-  if (uVar11 < 4) {
-    if (uVar11 == 3) {
+  FUN_006e5fd0(local_10,message);
+  SVar2 = message->id;
+  if (SVar2 < 4) {
+    if (SVar2 == MESS_SHARED_0003) {
       thunk_FUN_00446a70();
       local_20 = 0;
       local_14 = &g_playerRuntime[0].objects;
       do {
         uVar11 = 0;
-        pDVar6 = local_14[-1];
+        pDVar7 = local_14[-1];
         array = *local_14;
-        local_24 = pDVar6->count;
+        local_24 = pDVar7->count;
         local_28 = array;
         if (0 < (int)local_24) {
           do {
-            DArrayGetElement(pDVar6,uVar11,&local_18);
+            DArrayGetElement(pDVar7,uVar11,&local_18);
             if (local_18 != 0) {
               thunk_FUN_0054cf70(PTR_00802a38,*(uint *)(local_18 + 8));
               local_18 = 0;
-              Library::DKW::TBL::FUN_006ae140(&pDVar6->flags,uVar11,&local_18);
+              Library::DKW::TBL::FUN_006ae140(&pDVar7->flags,uVar11,&local_18);
             }
             uVar11 = uVar11 + 1;
           } while ((int)uVar11 < (int)local_24);
         }
-        dVar2 = array->count;
+        dVar3 = array->count;
         uVar11 = 0;
-        if (0 < (int)dVar2) {
+        if (0 < (int)dVar3) {
           do {
             DArrayGetElement(array,uVar11,&local_8);
             if (local_8 != 0) {
@@ -89,19 +92,19 @@ undefined4 __thiscall STAllPlayersC::GetMessage(STAllPlayersC *this,int param_1)
               Library::DKW::TBL::FUN_006ae140(&array->flags,uVar11,&local_8);
             }
             uVar11 = uVar11 + 1;
-          } while ((int)uVar11 < (int)dVar2);
+          } while ((int)uVar11 < (int)dVar3);
         }
-        iVar4 = local_20;
+        iVar5 = local_20;
         cVar16 = (char)local_20;
         thunk_FUN_004d7430(cVar16);
         thunk_FUN_004b7030(cVar16);
-        local_20 = iVar4 + 1;
+        local_20 = iVar5 + 1;
         /* ST_PSEUDO[flattened_global_record_array]: expected g_playerRuntime[player].field[index...] after base/stride proof */
         local_14 = (DArrayTy **)((int)local_14 + 0xa62);
       } while ((int)local_14 < 0x7fa139);
       uVar11 = 0;
-      dVar2 = PTR_007fa154->count;
-      if (0 < (int)dVar2) {
+      dVar3 = PTR_007fa154->count;
+      if (0 < (int)dVar3) {
         do {
           DArrayGetElement(PTR_007fa154,uVar11,&local_8);
           if (local_8 != 0) {
@@ -110,11 +113,11 @@ undefined4 __thiscall STAllPlayersC::GetMessage(STAllPlayersC *this,int param_1)
             Library::DKW::TBL::FUN_006ae140(&array->flags,uVar11,&local_8);
           }
           uVar11 = uVar11 + 1;
-        } while ((int)uVar11 < (int)dVar2);
+        } while ((int)uVar11 < (int)dVar3);
       }
       uVar11 = 0;
-      dVar2 = PTR_007fa158->count;
-      if (0 < (int)dVar2) {
+      dVar3 = PTR_007fa158->count;
+      if (0 < (int)dVar3) {
         do {
           DArrayGetElement(PTR_007fa158,uVar11,&local_8);
           if (local_8 != 0) {
@@ -123,11 +126,11 @@ undefined4 __thiscall STAllPlayersC::GetMessage(STAllPlayersC *this,int param_1)
             Library::DKW::TBL::FUN_006ae140(&array->flags,uVar11,&local_8);
           }
           uVar11 = uVar11 + 1;
-        } while ((int)uVar11 < (int)dVar2);
+        } while ((int)uVar11 < (int)dVar3);
       }
       uVar11 = 0;
-      dVar2 = PTR_007fa15c->count;
-      if (0 < (int)dVar2) {
+      dVar3 = PTR_007fa15c->count;
+      if (0 < (int)dVar3) {
         do {
           DArrayGetElement(PTR_007fa15c,uVar11,&local_8);
           if (local_8 != 0) {
@@ -136,11 +139,11 @@ undefined4 __thiscall STAllPlayersC::GetMessage(STAllPlayersC *this,int param_1)
             Library::DKW::TBL::FUN_006ae140(&array->flags,uVar11,&local_8);
           }
           uVar11 = uVar11 + 1;
-        } while ((int)uVar11 < (int)dVar2);
+        } while ((int)uVar11 < (int)dVar3);
       }
       uVar11 = 0;
-      dVar2 = PTR_007fa160->count;
-      if (0 < (int)dVar2) {
+      dVar3 = PTR_007fa160->count;
+      if (0 < (int)dVar3) {
         do {
           DArrayGetElement(PTR_007fa160,uVar11,&local_8);
           if (local_8 != 0) {
@@ -149,11 +152,11 @@ undefined4 __thiscall STAllPlayersC::GetMessage(STAllPlayersC *this,int param_1)
             Library::DKW::TBL::FUN_006ae140(&array->flags,uVar11,&local_8);
           }
           uVar11 = uVar11 + 1;
-        } while ((int)uVar11 < (int)dVar2);
+        } while ((int)uVar11 < (int)dVar3);
       }
       uVar11 = 0;
-      dVar2 = PTR_007fa164->count;
-      if (0 < (int)dVar2) {
+      dVar3 = PTR_007fa164->count;
+      if (0 < (int)dVar3) {
         do {
           DArrayGetElement(PTR_007fa164,uVar11,&local_8);
           if (local_8 != 0) {
@@ -162,7 +165,7 @@ undefined4 __thiscall STAllPlayersC::GetMessage(STAllPlayersC *this,int param_1)
             Library::DKW::TBL::FUN_006ae140(&array->flags,uVar11,&local_8);
           }
           uVar11 = uVar11 + 1;
-        } while ((int)uVar11 < (int)dVar2);
+        } while ((int)uVar11 < (int)dVar3);
       }
       local_14 = &g_playerRuntime[0].groups;
       do {
@@ -171,14 +174,14 @@ undefined4 __thiscall STAllPlayersC::GetMessage(STAllPlayersC *this,int param_1)
         DArrayDestroy(*ppDVar13);
         DArrayDestroy(*(DArrayTy **)((int)ppDVar13 + 0x2e2));
         puVar14 = (undefined4 *)((int)ppDVar13 + 10);
-        iVar4 = 4;
+        iVar5 = 4;
         do {
           DArrayDestroy((DArrayTy *)*puVar14);
           *puVar14 = 0;
           puVar14 = puVar14 + 1;
-          iVar4 = iVar4 + -1;
-        } while (iVar4 != 0);
-        iVar4 = 5;
+          iVar5 = iVar5 + -1;
+        } while (iVar5 != 0);
+        iVar5 = 5;
         ppDVar13 = local_14 + 0x5a;
         do {
           if (*ppDVar13 != (DArrayTy *)0x0) {
@@ -192,9 +195,9 @@ undefined4 __thiscall STAllPlayersC::GetMessage(STAllPlayersC *this,int param_1)
             *(undefined4 *)((int)ppDVar13 + 0x46) = 0;
           }
           ppDVar13 = ppDVar13 + 4;
-          iVar4 = iVar4 + -1;
-        } while (iVar4 != 0);
-        iVar4 = 10;
+          iVar5 = iVar5 + -1;
+        } while (iVar5 != 0);
+        iVar5 = 10;
         puVar14 = local_14 + 0x83;
         do {
           if ((DArrayTy *)*puVar14 != (DArrayTy *)0x0) {
@@ -203,8 +206,8 @@ undefined4 __thiscall STAllPlayersC::GetMessage(STAllPlayersC *this,int param_1)
             *(undefined4 *)((int)puVar14 + -10) = 0;
           }
           puVar14 = puVar14 + 4;
-          iVar4 = iVar4 + -1;
-        } while (iVar4 != 0);
+          iVar5 = iVar5 + -1;
+        } while (iVar5 != 0);
         /* ST_PSEUDO[flattened_global_record_array]: expected g_playerRuntime[player].field[index...] after base/stride proof */
         local_14 = (DArrayTy **)((int)local_14 + 0xa62);
       } while ((int)local_14 < 0x7fa135);
@@ -231,23 +234,23 @@ undefined4 __thiscall STAllPlayersC::GetMessage(STAllPlayersC *this,int param_1)
       g_currentExceptionFrame = local_6c.previous;
       return 0;
     }
-    if (uVar11 == 0) {
-      iVar4 = 0;
+    if (SVar2 == MESS_ID_NONE) {
+      iVar5 = 0;
       local_14 = (DArrayTy **)&DAT_008087e9;
       piVar15 = &g_playerRuntime[0].field2179_0xa0a;
       do {
-        cVar16 = (char)iVar4;
+        cVar16 = (char)iVar5;
         if (0x18 < (uint)(PTR_00802a38->field_00E4 - *piVar15)) {
           OptimizeGuardBoats(this_00,cVar16);
           DistributeGuardBoats(this_00,cVar16);
         }
         if ((*(char *)local_14 != -1) &&
-           (thunk_FUN_004eb150(this_00,iVar4), (uint)PTR_00802a38->field_00E4 % 10 == 0)) {
+           (thunk_FUN_004eb150(this_00,iVar5), (uint)PTR_00802a38->field_00E4 % 10 == 0)) {
           thunk_FUN_004d78e0(cVar16);
         }
         /* ST_PSEUDO[flattened_global_record_array]: expected g_playerRuntime[player].field[index...] after base/stride proof */
         piVar15 = (int *)((int)piVar15 + 0xa62);
-        iVar4 = iVar4 + 1;
+        iVar5 = iVar5 + 1;
         local_14 = (DArrayTy **)((int)local_14 + 0x51);
       } while ((int)piVar15 < 0x7fab3a);
       thunk_FUN_004da9c0(this_00);
@@ -255,15 +258,15 @@ undefined4 __thiscall STAllPlayersC::GetMessage(STAllPlayersC *this,int param_1)
       g_currentExceptionFrame = local_6c.previous;
       return 0;
     }
-    if (uVar11 == 2) {
+    if (SVar2 == MESS_ID_CREATE) {
       pSVar9 = g_playerRuntime;
-      pbVar5 = &DAT_008087e8;
+      pbVar6 = &DAT_008087e8;
       do {
-        bVar1 = *pbVar5;
-        pbVar5 = pbVar5 + 0x51;
+        bVar1 = *pbVar6;
+        pbVar6 = pbVar6 + 0x51;
         pSVar9->raceId = bVar1;
         pSVar9 = pSVar9 + 1;
-      } while ((int)pbVar5 < 0x808a70);
+      } while ((int)pbVar6 < 0x808a70);
       PTR_007fa154 = (DArrayTy *)Library::DKW::TBL::FUN_006ae310((uint *)0x0,0,4,1,0x40307b);
       PTR_007fa158 = (DArrayTy *)Library::DKW::TBL::FUN_006ae310((uint *)0x0,0,4,1,0x40307b);
       PTR_007fa15c = (DArrayTy *)Library::DKW::TBL::FUN_006ae310((uint *)0x0,0,4,1,0x40307b);
@@ -272,17 +275,17 @@ undefined4 __thiscall STAllPlayersC::GetMessage(STAllPlayersC *this,int param_1)
       PTR_007fa130 = (DArrayTy *)Library::DKW::TBL::FUN_006ae310((uint *)0x0,0,4,1,0x40307b);
       DAT_007fa134 = 0;
       if (g_cMf32_00806754 != (cMf32 *)0x0) {
-        local_c = Library::Ourlib::MFAOBJ::mfAObjLoad(g_cMf32_00806754,s_allplsave_007a67d8,0,0);
+        local_c = Library::Ourlib::MFAOBJ::mfAObjLoad(g_cMf32_00806754,"allplsave",0,0);
       }
       if (local_c == (ushort *)0x0) {
         piVar15 = (int *)0x0;
         pcVar12 = &DAT_008087e9;
         ppDVar13 = &g_playerRuntime[0].groups;
         do {
-          pDVar6 = (DArrayTy *)Library::DKW::TBL::FUN_006ae310((uint *)0x0,0xf,4,5,0x40307b);
-          ppDVar13[1] = pDVar6;
-          pDVar6 = (DArrayTy *)Library::DKW::TBL::FUN_006ae310((uint *)0x0,0xf,4,5,0x40307b);
-          *ppDVar13 = pDVar6;
+          pDVar7 = (DArrayTy *)Library::DKW::TBL::FUN_006ae310((uint *)0x0,0xf,4,5,0x40307b);
+          ppDVar13[1] = pDVar7;
+          pDVar7 = (DArrayTy *)Library::DKW::TBL::FUN_006ae310((uint *)0x0,0xf,4,5,0x40307b);
+          *ppDVar13 = pDVar7;
           if (*pcVar12 != -1) {
             thunk_FUN_004e5140((int)piVar15);
             thunk_FUN_004eb010(local_10,(int)piVar15);
@@ -318,10 +321,10 @@ undefined4 __thiscall STAllPlayersC::GetMessage(STAllPlayersC *this,int param_1)
       cVar16 = '\0';
       ppDVar13 = &g_playerRuntime[0].groups;
       do {
-        pDVar6 = (DArrayTy *)Library::DKW::TBL::FUN_006ae310((uint *)0x0,0xf,4,5,0x40307b);
-        ppDVar13[1] = pDVar6;
-        pDVar6 = (DArrayTy *)Library::DKW::TBL::FUN_006ae310((uint *)0x0,0xf,4,5,0x40307b);
-        *ppDVar13 = pDVar6;
+        pDVar7 = (DArrayTy *)Library::DKW::TBL::FUN_006ae310((uint *)0x0,0xf,4,5,0x40307b);
+        ppDVar13[1] = pDVar7;
+        pDVar7 = (DArrayTy *)Library::DKW::TBL::FUN_006ae310((uint *)0x0,0xf,4,5,0x40307b);
+        *ppDVar13 = pDVar7;
         thunk_FUN_004b6fc0(cVar16);
         /* ST_PSEUDO[flattened_global_record_array]: expected g_playerRuntime[player].field[index...] after base/stride proof */
         ppDVar13 = (DArrayTy **)((int)ppDVar13 + 0xa62);
@@ -333,39 +336,39 @@ undefined4 __thiscall STAllPlayersC::GetMessage(STAllPlayersC *this,int param_1)
       return 0;
     }
   }
-  else if (uVar11 == 0x10f) {
+  else if (SVar2 == MESS_SHARED_010F) {
     local_c = (ushort *)SaveAllPlData(this_00,(int *)&local_1c);
-    STPlaySystemC::SaveObjData(PTR_00802a38,s_allplsave_007a67d8,(byte *)local_c,local_1c,0xc);
+    STPlaySystemC::SaveObjData(PTR_00802a38,"allplsave",(byte *)local_c,local_1c,0xc);
     FreeAndNull(&local_c);
   }
-  else if (uVar11 == 0x111) {
+  else if (SVar2 == MESS_ID_ALLCREATE) {
     if (g_cMf32_00806754 == (cMf32 *)0x0) {
-      iVar4 = 0;
+      iVar5 = 0;
       do {
-        _MakeMDPairs(this_00,(char)iVar4);
-        iVar4 = iVar4 + 1;
-      } while (iVar4 < 8);
+        _MakeMDPairs(this_00,(char)iVar5);
+        iVar5 = iVar5 + 1;
+      } while (iVar5 < 8);
     }
     else {
-      local_c = Library::Ourlib::MFAOBJ::mfAObjLoad(g_cMf32_00806754,s_allplsave_007a67d8,0,0);
+      local_c = Library::Ourlib::MFAOBJ::mfAObjLoad(g_cMf32_00806754,"allplsave",0,0);
       if (local_c == (ushort *)0x0) {
-        iVar4 = 0;
+        iVar5 = 0;
         do {
-          _MakeMDPairs(this_00,(char)iVar4);
-          iVar4 = iVar4 + 1;
-        } while (iVar4 < 8);
+          _MakeMDPairs(this_00,(char)iVar5);
+          iVar5 = iVar5 + 1;
+        } while (iVar5 < 8);
       }
       else {
         cMf32::RecMemFree(g_cMf32_00806754,(uint *)&local_c);
       }
     }
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-    thunk_FUN_004d8b70(*(char *)(*(int *)&this_00->field_0x10 + 0x112d));
-    iVar4 = 0;
+    thunk_FUN_004d8b70(*(char *)(this_00->field_0010 + 0x112d));
+    iVar5 = 0;
     do {
-      thunk_FUN_004b7750(iVar4);
-      iVar4 = iVar4 + 1;
-    } while (iVar4 < 8);
+      thunk_FUN_004b7750(iVar5);
+      iVar5 = iVar5 + 1;
+    } while (iVar5 < 8);
     g_currentExceptionFrame = local_6c.previous;
     return 0;
   }

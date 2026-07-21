@@ -11,7 +11,7 @@ undefined4 __thiscall FUN_004b7d00(void *this,STBoatC *param_1)
   if (((*(int *)((int)this + 0x245) == 0) && (*(int *)((int)this + 0x4d0) == 0)) &&
      (*(int *)((int)this + 0x4d4) == 0)) {
     uVar1 = 1;
-    *(undefined4 *)((int)this + 0x4d4) = param_1->field_0018;
+    *(uint *)((int)this + 0x4d4) = param_1->field_0018;
   }
   return uVar1;
 }

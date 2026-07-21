@@ -351,7 +351,7 @@ LAB_0040c875:
           FUN_006a5e90(psVar11);
           FUN_006a5e90(psVar4);
           RaiseInternalException
-                    (-2,g_overwriteContext_007ED77C,s_E____titans_wlad_Grpway3d_cpp_007a4ca8,0x233);
+                    (-2,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\Grpway3d.cpp",0x233);
           psVar4 = (short *)0x0;
         }
       }

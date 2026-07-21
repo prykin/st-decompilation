@@ -55,8 +55,8 @@ STAllPlayersC::DelObjFromSaveTmps(STAllPlayersC *this,int param_1,char param_2,s
       } while( true );
     }
 LAB_0042cf42:
-    iVar2 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0x3bb,0,0,&DAT_007a4ccc,
-                               s_STAllPlayersC__DelObjFromSaveTmp_007a6328);
+    iVar2 = ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0x3bb,0,0,"%s",
+                               "STAllPlayersC::DelObjFromSaveTmps invalid game type");
     if (iVar2 == 0) {
       return;
     }

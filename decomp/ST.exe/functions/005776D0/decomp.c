@@ -3,10 +3,13 @@
 
 /* Recovered from embedded debug metadata:
    E:\__titans\tsystem.cpp
-   GameSystemC::GetMessage */
+   GameSystemC::GetMessage
 
-undefined4 __thiscall
-GameSystemC::GetMessage(GameSystemC *this,AnonShape_005776D0_202C27C7 *param_1)
+   [STMessageHandlerApplier] Recovered common GetMessage envelope/signature.
+   Evidence: family_entries=0040482C|005776D0; family_names=GameSystemC::GetMessage; ret4=10;
+   direct_offsets={10:1,14:2,18:1,1c:1} */
+
+int __thiscall GameSystemC::GetMessage(GameSystemC *this,STMessage *message)
 
 {
   char cVar1;
@@ -23,29 +26,28 @@ GameSystemC::GetMessage(GameSystemC *this,AnonShape_005776D0_202C27C7 *param_1)
   ushort *puVar10;
   cMf32 *pcVar11;
   DArrayTy *array;
-  undefined4 uVar12;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   SystemClassTy *extraout_ECX;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   cMf32 *extraout_ECX_00;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   cMf32 *extraout_ECX_01;
-  cMf32 *pcVar13;
+  cMf32 *pcVar12;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   cMf32 *extraout_ECX_02;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   cMf32 *extraout_ECX_03;
+  uint uVar13;
   uint uVar14;
-  uint uVar15;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   cMf32 *extraout_ECX_04;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   cMf32 *extraout_ECX_05;
-  int *piVar16;
+  int *piVar15;
+  char *pcVar16;
   char *pcVar17;
-  char *pcVar18;
-  undefined4 *puVar19;
-  bool bVar20;
+  undefined4 *puVar18;
+  bool bVar19;
   undefined1 local_1d90 [8];
   cMf32 *local_1d88;
   _WIN32_FIND_DATAA local_3f4;
@@ -61,8 +63,8 @@ GameSystemC::GetMessage(GameSystemC *this,AnonShape_005776D0_202C27C7 *param_1)
   InternalExceptionFrame local_8c;
   undefined4 local_48;
   SystemClassTy *this_01;
-  undefined *puVar21;
-  undefined1 *puVar22;
+  undefined *puVar20;
+  undefined1 *puVar21;
 
   Library::MSVCRT::FUN_0072da40();
   local_8c.previous = g_currentExceptionFrame;
@@ -72,17 +74,17 @@ GameSystemC::GetMessage(GameSystemC *this,AnonShape_005776D0_202C27C7 *param_1)
   iVar6 = Library::MSVCRT::__setjmp3(local_8c.jumpBuffer,0);
   if (iVar6 != 0) {
     g_currentExceptionFrame = local_8c.previous;
-    iVar8 = ReportDebugMessage(s_E____titans_tsystem_cpp_007cab5c,0x1c6,0,iVar6,&DAT_007a4ccc);
+    iVar8 = ReportDebugMessage("E:\\__titans\\tsystem.cpp",0x1c6,0,iVar6,"%s");
     if (iVar8 == 0) {
-      RaiseInternalException(iVar6,0,s_E____titans_tsystem_cpp_007cab5c,0x1c7);
+      RaiseInternalException(iVar6,0,"E:\\__titans\\tsystem.cpp",0x1c7);
       return 0xffff;
     }
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  SystemClassTy::GetMessage(this_01,(int)param_1);
-  if (param_1->field_0010 == 0x43ff) {
+  SystemClassTy::GetMessage(this_01,message);
+  if (message->id == MESS_GAMESYSTEMC_43FF) {
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-    piVar3 = *(int **)(param_1->field_0014 + 0x17);
+    piVar3 = *(int **)((message->arg0).u32 + 0x17);
     switch(*piVar3) {
     case 1:
       if (DAT_00808783 == '\x03') {
@@ -126,15 +128,15 @@ GameSystemC::GetMessage(GameSystemC *this,AnonShape_005776D0_202C27C7 *param_1)
       }
       break;
     case 4:
-      uVar14 = piVar3[1];
-      if (DAT_0080733b != uVar14) {
-        DAT_0080733b = (byte)uVar14;
+      uVar13 = piVar3[1];
+      if (DAT_0080733b != uVar13) {
+        DAT_0080733b = (byte)uVar13;
         if (DAT_0080877e == '\0') {
-          iVar6 = (uVar14 & 0xff) * 0x18;
+          iVar6 = (uVar13 & 0xff) * 0x18;
           DAT_00807654 = *(undefined4 *)(s_FrmPanelTy__GetMessage_007c2ae0 + iVar6 + 0x14);
         }
         else {
-          iVar6 = (uVar14 & 0xff) * 0x18;
+          iVar6 = (uVar13 & 0xff) * 0x18;
           DAT_00807654 = *(undefined4 *)(s_FrmPanelTy__GetMessage_007c2ae0 + iVar6 + 8);
         }
         if (PTR_00807598 != (AnonShape_GLOBAL_00807598_0C6808FB *)0x0) {
@@ -157,32 +159,32 @@ GameSystemC::GetMessage(GameSystemC *this,AnonShape_005776D0_202C27C7 *param_1)
       this_00 = g_playPanel_008016E4;
       if (g_playPanel_008016E4 != (PlayPanelTy *)0x0) {
         g_playPanel_008016E4->field_0028 = 5;
-        piVar16 = &this_00->field_0181;
-        puVar22 = (undefined1 *)0x8;
+        piVar15 = &this_00->field_0181;
+        puVar21 = (undefined1 *)0x8;
         do {
-          if (*piVar16 != 0) {
-            puVar22 = &this_00->field_0x18;
-            FUN_006e6080(this_00,2,*piVar16,(undefined4 *)puVar22);
+          if (*piVar15 != 0) {
+            puVar21 = &this_00->field_0x18;
+            FUN_006e6080(this_00,2,*piVar15,(undefined4 *)puVar21);
           }
-          piVar16 = piVar16 + 1;
-          puVar22 = puVar22 + -1;
-        } while (puVar22 != (undefined1 *)0x0);
+          piVar15 = piVar15 + 1;
+          puVar21 = puVar21 + -1;
+        } while (puVar21 != (undefined1 *)0x0);
       }
       if ((ushort)((uint)piVar3[1] >> 0x10) != (ushort)DAT_0080874d) {
         if (DAT_00808aaf != 0) {
-          uVar14 = (uint)DAT_00808aaf;
+          uVar13 = (uint)DAT_00808aaf;
           do {
-            uVar14 = uVar14 - 1;
-          } while (uVar14 != 0);
+            uVar13 = uVar13 - 1;
+          } while (uVar13 != 0);
           if (DAT_00808aaf != 0) {
-            uVar14 = (uint)DAT_00808aaf;
+            uVar13 = (uint)DAT_00808aaf;
             do {
-              uVar14 = uVar14 - 1;
-            } while (uVar14 != 0);
+              uVar13 = uVar13 - 1;
+            } while (uVar13 != 0);
           }
         }
-        pcVar17 = LoadResourceString(0x42c2,HINSTANCE_00807618);
-        wsprintfA((LPSTR)&DAT_0080f33a,pcVar17);
+        pcVar16 = LoadResourceString(0x42c2,HINSTANCE_00807618);
+        wsprintfA((LPSTR)&DAT_0080f33a,pcVar16);
         if (g_popUp_008016D8 != (PopUpTy *)0x0) {
           thunk_FUN_0052d320(g_popUp_008016D8,(char *)&DAT_0080f33a,8);
           g_currentExceptionFrame = local_8c.previous;
@@ -195,50 +197,50 @@ GameSystemC::GetMessage(GameSystemC *this,AnonShape_005776D0_202C27C7 *param_1)
       g_currentExceptionFrame = &local_1b0;
       iVar6 = Library::MSVCRT::__setjmp3(local_1b0.jumpBuffer,0);
       if (iVar6 == 0) {
-        wsprintfA((LPSTR)&DAT_0080f33a,s__s_s_s_007c6edc);
+        wsprintfA((LPSTR)&DAT_0080f33a,"%s%s%s");
         pcVar11 = (cMf32 *)Library::Ourlib::MF32INT::FUN_006f0ec0(0x345,(byte *)&DAT_0080f33a,0,0,0)
         ;
         local_48 = 0x577d84;
         array = (DArrayTy *)CreateOpponentList(pcVar11,piVar3[1],DAT_0080995c);
-        pcVar13 = (cMf32 *)array->count;
+        pcVar12 = (cMf32 *)array->count;
         /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
         pcVar9 = extraout_ECX_02;
-        if (pcVar13 != (cMf32 *)0x0) {
-          pcVar9 = (cMf32 *)((int)&pcVar13[-1].field_002E + 1);
-          if (pcVar9 < pcVar13) {
+        if (pcVar12 != (cMf32 *)0x0) {
+          pcVar9 = (cMf32 *)((int)&pcVar12[-1].field_002E + 1);
+          if (pcVar9 < pcVar12) {
             /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(array, index) (runtime elementSize cannot be a static C array) */
-            pcVar17 = (char *)((int)((int)&pcVar13[-1].field_002E + 1) * array->elementSize +
+            pcVar16 = (char *)((int)((int)&pcVar12[-1].field_002E + 1) * array->elementSize +
                               (int)array->data);
           }
           else {
-            pcVar17 = (char *)0x0;
+            pcVar16 = (char *)0x0;
           }
           /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
-          if ((pcVar17 + 0x4c != (char *)0x0) &&
-             (puVar10 = LoadStrategData((int)pcVar11,pcVar17 + 0x4c,(int *)0x0),
+          if ((pcVar16 + 0x4c != (char *)0x0) &&
+             (puVar10 = LoadStrategData((int)pcVar11,pcVar16 + 0x4c,(int *)0x0),
              pcVar9 = extraout_ECX_03, puVar10 != (ushort *)0x0)) {
-            uVar14 = 0xffffffff;
+            uVar13 = 0xffffffff;
             do {
-              pcVar18 = pcVar17;
-              if (uVar14 == 0) break;
-              uVar14 = uVar14 - 1;
-              pcVar18 = pcVar17 + 1;
-              cVar1 = *pcVar17;
-              pcVar17 = pcVar18;
+              pcVar17 = pcVar16;
+              if (uVar13 == 0) break;
+              uVar13 = uVar13 - 1;
+              pcVar17 = pcVar16 + 1;
+              cVar1 = *pcVar16;
+              pcVar16 = pcVar17;
             } while (cVar1 != '\0');
-            uVar14 = ~uVar14;
-            pcVar17 = pcVar18 + -uVar14;
-            pcVar18 = local_16c;
-            for (uVar15 = uVar14 >> 2; uVar15 != 0; uVar15 = uVar15 - 1) {
-              *(undefined4 *)pcVar18 = *(undefined4 *)pcVar17;
+            uVar13 = ~uVar13;
+            pcVar16 = pcVar17 + -uVar13;
+            pcVar17 = local_16c;
+            for (uVar14 = uVar13 >> 2; uVar14 != 0; uVar14 = uVar14 - 1) {
+              *(undefined4 *)pcVar17 = *(undefined4 *)pcVar16;
+              pcVar16 = pcVar16 + 4;
               pcVar17 = pcVar17 + 4;
-              pcVar18 = pcVar18 + 4;
             }
             bVar2 = *(byte *)(piVar3 + 2);
-            for (uVar14 = uVar14 & 3; uVar14 != 0; uVar14 = uVar14 - 1) {
-              *pcVar18 = *pcVar17;
+            for (uVar13 = uVar13 & 3; uVar13 != 0; uVar13 = uVar13 - 1) {
+              *pcVar17 = *pcVar16;
+              pcVar16 = pcVar16 + 1;
               pcVar17 = pcVar17 + 1;
-              pcVar18 = pcVar18 + 1;
             }
             local_12c = DAT_0080877f;
             local_127 = 1;
@@ -247,12 +249,12 @@ GameSystemC::GetMessage(GameSystemC *this,AnonShape_005776D0_202C27C7 *param_1)
             local_128 = bVar2;
             local_124 = timeGetTime();
             if (bVar2 < 8) {
-              pcVar17 = local_16c;
-              puVar19 = &DAT_00808ab0 + (uint)DAT_00808aaf * 0x27;
+              pcVar16 = local_16c;
+              puVar18 = &DAT_00808ab0 + (uint)DAT_00808aaf * 0x27;
               for (iVar6 = 0x27; iVar6 != 0; iVar6 = iVar6 + -1) {
-                *puVar19 = *(undefined4 *)pcVar17;
-                pcVar17 = pcVar17 + 4;
-                puVar19 = puVar19 + 1;
+                *puVar18 = *(undefined4 *)pcVar16;
+                pcVar16 = pcVar16 + 4;
+                puVar18 = puVar18 + 1;
               }
               DAT_00808aaf = DAT_00808aaf + 1;
               if (g_playPanel_008016E4 != (PlayPanelTy *)0x0) {
@@ -280,28 +282,28 @@ GameSystemC::GetMessage(GameSystemC *this,AnonShape_005776D0_202C27C7 *param_1)
       break;
     case 9:
       if (DAT_008117bc != (undefined4 *)0x0) {
-        puVar19 = &local_48;
+        puVar18 = &local_48;
         for (iVar6 = 8; iVar6 != 0; iVar6 = iVar6 + -1) {
-          *puVar19 = 0;
-          puVar19 = puVar19 + 1;
+          *puVar18 = 0;
+          puVar18 = puVar18 + 1;
         }
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
         (**(code **)*DAT_008117bc)();
       }
     }
   }
-  else if (param_1->field_0010 == 0x4400) {
+  else if (message->id == MESS_GAMESYSTEMC_4400) {
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-    pcVar17 = *(char **)(param_1->field_0014 + 0x17);
-    cVar1 = *pcVar17;
-    bVar2 = pcVar17[1];
-    uVar14 = (uint)bVar2;
+    pcVar16 = *(char **)((message->arg0).u32 + 0x17);
+    cVar1 = *pcVar16;
+    bVar2 = pcVar16[1];
+    uVar13 = (uint)bVar2;
     if (cVar1 == '\0') {
       if (bVar2 == 0xff) {
         g_currentExceptionFrame = local_8c.previous;
         return 0;
       }
-      thunk_FUN_00648dd0(uVar14);
+      thunk_FUN_00648dd0(uVar13);
     }
     else {
       if (cVar1 != '\x01') {
@@ -309,22 +311,22 @@ GameSystemC::GetMessage(GameSystemC *this,AnonShape_005776D0_202C27C7 *param_1)
           g_currentExceptionFrame = local_8c.previous;
           return 0;
         }
-        _Count = *(size_t *)(pcVar17 + 1);
-        DAT_00808750 = *(undefined4 *)(pcVar17 + 9);
+        _Count = *(size_t *)(pcVar16 + 1);
+        DAT_00808750 = *(undefined4 *)(pcVar16 + 9);
         iVar6 = -1;
-        Library::MSVCRT::_strncpy((char *)0x88000516,*(char **)(pcVar17 + 5),_Count);
+        Library::MSVCRT::_strncpy((char *)0x88000516,*(char **)(pcVar16 + 5),_Count);
         local_3f4.cAlternateFileName[_Count + 0xf] = '\0';
         do {
           if (iVar6 < 0) {
-            wsprintfA((LPSTR)&DAT_0080f022,s__s_s_s__s_s_s_007cac78);
+            wsprintfA((LPSTR)&DAT_0080f022,"%s%s%s\\%s%s%s");
           }
           else {
-            wsprintfA((LPSTR)&DAT_0080f022,s__s_s_s__s_s_d_s_007cac64);
+            wsprintfA((LPSTR)&DAT_0080f022,"%s%s%s\\%s%s%d%s");
           }
           iVar6 = iVar6 + 1;
           pvVar7 = FindFirstFileA((LPCSTR)&DAT_0080f022,&local_3f4);
-          bVar20 = pvVar7 != (HANDLE)0xffffffff;
-          if (!bVar20) {
+          bVar19 = pvVar7 != (HANDLE)0xffffffff;
+          if (!bVar19) {
             DAT_00808794 = 1;
             g_currentExceptionFrame = local_8c.previous;
             return 0;
@@ -336,36 +338,36 @@ GameSystemC::GetMessage(GameSystemC *this,AnonShape_005776D0_202C27C7 *param_1)
             pcVar9 = (cMf32 *)Library::Ourlib::MF32INT::FUN_006f0ec0
                                         (0x345,(byte *)&DAT_0080f022,0,0,0);
             if (pcVar9 == (cMf32 *)0x0) {
-              bVar20 = false;
+              bVar19 = false;
             }
             else {
               puVar10 = cMf32::RecGet(pcVar9,(byte)local_1d90,PTR_s_DESCRIPTOR_0079b1a4,
                                       (int *)&stack0xffffffe0,0);
               /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
-              pcVar13 = extraout_ECX_00;
+              pcVar12 = extraout_ECX_00;
               if (puVar10 != (ushort *)0x0) {
                 pcVar11 = (cMf32 *)&stack0xffffffe0;
-                puVar21 = PTR_s_SAVE_DESC_0079b1a0;
+                puVar20 = PTR_s_SAVE_DESC_0079b1a0;
                 puVar10 = cMf32::RecGet(pcVar9,(byte)&stack0xfffffff0,PTR_s_SAVE_DESC_0079b1a0,
                                         (int *)pcVar11,0);
                 /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
-                pcVar13 = extraout_ECX_01;
+                pcVar12 = extraout_ECX_01;
                 /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
                 if ((puVar10 != (ushort *)0x0) &&
-                   ((pcVar13 = extraout_ECX_01, puVar21 != (undefined *)0x0 ||
-                    (pcVar13 = pcVar11, local_1d88 != pcVar11)))) {
-                  bVar20 = true;
-                  cMf32::delete(pcVar13,pcVar9);
+                   ((pcVar12 = extraout_ECX_01, puVar20 != (undefined *)0x0 ||
+                    (pcVar12 = pcVar11, local_1d88 != pcVar11)))) {
+                  bVar19 = true;
+                  cMf32::delete(pcVar12,pcVar9);
                   goto LAB_00577956;
                 }
               }
-              bVar20 = false;
-              cMf32::delete(pcVar13,pcVar9);
+              bVar19 = false;
+              cMf32::delete(pcVar12,pcVar9);
             }
           }
 LAB_00577956:
           g_currentExceptionFrame = local_d0.previous;
-          if (!bVar20) {
+          if (!bVar19) {
             DAT_00808794 = 1;
             g_currentExceptionFrame = local_8c.previous;
             return 0;
@@ -376,8 +378,8 @@ LAB_00577956:
         g_currentExceptionFrame = local_8c.previous;
         return 0;
       }
-      thunk_FUN_00648dd0(uVar14);
-      StartStrateg((ushort *)(pcVar17 + 2),uVar14);
+      thunk_FUN_00648dd0(uVar13);
+      StartStrateg((ushort *)(pcVar16 + 2),uVar13);
     }
     if (g_optPanel_008016DC != (OptPanelTy *)0x0) {
       thunk_FUN_00532ce0((AnonShape_00532CE0_361E49BD *)g_optPanel_008016DC);

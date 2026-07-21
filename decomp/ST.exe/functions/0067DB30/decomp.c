@@ -20,19 +20,19 @@ int __cdecl DelPlrEdit(int param_1,char *param_2)
   if (iVar2 == 0) {
     if ((param_1 == 0) || (param_2 == (char *)0x0)) {
       RaiseInternalException
-                (-0x34,g_overwriteContext_007ED77C,s_E____titans_ai_ai_plr_d_cpp_007d2fa4,0x123);
+                (-0x34,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_plr_d.cpp",0x123);
     }
     cMf32::RecDel((cMf32 *)param_1,0xc,param_2);
     g_currentExceptionFrame = local_48.previous;
     return 0;
   }
   g_currentExceptionFrame = local_48.previous;
-  iVar3 = ReportDebugMessage(s_E____titans_ai_ai_plr_d_cpp_007d2fa4,0x126,0,iVar2,&DAT_007a4ccc,
-                             s_DelPlrEdit_007d2ff8);
+  iVar3 = ReportDebugMessage("E:\\__titans\\ai\\ai_plr_d.cpp",0x126,0,iVar2,"%s",
+                             "DelPlrEdit");
   if (iVar3 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  RaiseInternalException(iVar2,0,s_E____titans_ai_ai_plr_d_cpp_007d2fa4,0x127);
+  RaiseInternalException(iVar2,0,"E:\\__titans\\ai\\ai_plr_d.cpp",0x127);
   return iVar2;
 }
 

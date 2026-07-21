@@ -31,7 +31,7 @@ undefined4 __thiscall FUN_004d0a80(void *this,int param_1,int param_2,int param_
                             (short)piVar1[iVar4 * 3 + 2],0,this);
     if (exceptionCode != 0) {
       RaiseInternalException
-                (exceptionCode,g_overwriteContext_007ED77C,s_E____titans_Artem_TLO_dock_cpp_007bf39c
+                (exceptionCode,g_overwriteContext_007ED77C,"E:\\__titans\\Artem\\TLO_dock.cpp"
                  ,0x305);
     }
     if (iVar4 < *(int *)((int)this + 0x245) + -1) {

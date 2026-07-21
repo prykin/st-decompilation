@@ -25,7 +25,7 @@ undefined4 __fastcall FUN_004ec050(int param_1)
     if (exceptionCode != 0) {
       RaiseInternalException
                 (exceptionCode,g_overwriteContext_007ED77C,
-                 s_E____titans_Artem_TLO_trade_cpp_007c1648,0x11b);
+                 "E:\\__titans\\Artem\\TLO_trade.cpp",0x11b);
     }
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     thunk_FUN_004ad5e0(*(int *)(param_1 + 0x5ff));

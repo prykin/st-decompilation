@@ -42,7 +42,8 @@ STAllPlayersC::FramePick
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined4 extraout_EDX_02;
   char playerId;
-  short sVar7;
+  uint uVar7;
+  short sVar8;
   InternalExceptionFrame local_90;
   int local_4c;
   DArrayTy *local_48;
@@ -123,10 +124,10 @@ STAllPlayersC::FramePick
       SelfCheckObjControl(this);
       return;
     }
-    iVar3 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0xdd1,0,iVar2,&DAT_007a4ccc,
-                               s_STAllPlayersC__FramePick_007a67e4);
+    iVar3 = ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0xdd1,0,iVar2,"%s",
+                               "STAllPlayersC::FramePick");
     if (iVar3 == 0) {
-      RaiseInternalException(iVar2,0,s_E____titans_wlad_to_allpl_cpp_007a6004,0xdd2);
+      RaiseInternalException(iVar2,0,"E:\\__titans\\wlad\\to_allpl.cpp",0xdd2);
       return;
     }
     STDebugBreak(); /* noreturn in standalone pseudocode */
@@ -194,8 +195,8 @@ LAB_004318b5:
         }
       }
       else {
-        iVar2 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0xa60,0,0,&DAT_007a4ccc,
-                                   s_STAllPlayersC__FramePick_GAMETYP_007a6f58);
+        iVar2 = ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0xa60,0,0,"%s",
+                                   "STAllPlayersC::FramePick GAMETYPE_BOAT ACT_LEFT");
         if (iVar2 != 0) {
           STDebugBreak(); /* noreturn in standalone pseudocode */
         }
@@ -226,8 +227,8 @@ cf_error_exit_004318A9:
           ActivateTV(this,playerId,0,iVar3);
         }
         else {
-          iVar2 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0xa88,0,0,
-                                     &DAT_007a4ccc,s_STAllPlayersC__FramePick_GAMETYP_007a6f94);
+          iVar2 = ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0xa88,0,0,
+                                     "%s","STAllPlayersC::FramePick GAMETYPE_BOAT ACT_RIGHT");
           if (iVar2 != 0) {
             STDebugBreak(); /* noreturn in standalone pseudocode */
           }
@@ -235,20 +236,20 @@ cf_error_exit_004318A9:
       }
     }
     else {
-      iVar2 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0xa8c,0,0,&DAT_007a4ccc,
-                                 s_STAllPlayersC__FramePick_GAMETYP_007a6fd0);
+      iVar2 = ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0xa8c,0,0,"%s",
+                                 "STAllPlayersC::FramePick GAMETYPE_BOAT wrong panel number");
       if (iVar2 != 0) {
         STDebugBreak(); /* noreturn in standalone pseudocode */
       }
     }
     RaiseInternalException
-              (-0x5001fff7,g_overwriteContext_007ED77C,s_E____titans_wlad_to_allpl_cpp_007a6004,
+              (-0x5001fff7,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_allpl.cpp",
                0xa8e);
   }
   if (local_34->count != 0) {
     if (param_6 == 1) {
       RaiseInternalException
-                (-0x5001fff7,g_overwriteContext_007ED77C,s_E____titans_wlad_to_allpl_cpp_007a6004,
+                (-0x5001fff7,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_allpl.cpp",
                  0xa92);
     }
     DArrayGetElement(local_34,0,&local_8);
@@ -257,7 +258,7 @@ cf_error_exit_004318A9:
     pSVar4 = GetObjPtr(this,'\0',local_8,CASE_3);
     if (pSVar4 == (STGameObjC *)0x0) {
       RaiseInternalException
-                (-0x5001fff7,g_overwriteContext_007ED77C,s_E____titans_wlad_to_allpl_cpp_007a6004,
+                (-0x5001fff7,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_allpl.cpp",
                  0xa95);
     }
     iVar2 = (int)playerId;
@@ -265,10 +266,10 @@ cf_error_exit_004318A9:
     local_4c = iVar2 * 0xa62;
     if (g_playerRuntime[iVar2].field324_0x203 == 0) {
       iVar2 = g_playerRuntime[iVar2].tempSlots[0][0].objectType;
-      sVar7 = (short)local_8;
+      sVar8 = (short)local_8;
       if (iVar2 == 0) {
         iVar2 = CheckTmps(playerId,0,pSVar4->field_0020,*(char *)&pSVar4->field_0024,(DArrayTy *)0x0
-                          ,sVar7);
+                          ,sVar8);
         if (iVar2 < 1) {
 /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
 cf_error_exit_00431A49:
@@ -282,7 +283,7 @@ cf_error_exit_00431A49:
       }
       else if (iVar2 == 0x3c) {
         iVar2 = CheckTmps(playerId,0,pSVar4->field_0020,*(char *)&pSVar4->field_0024,(DArrayTy *)0x0
-                          ,sVar7);
+                          ,sVar8);
         if (iVar2 < 1) {
 LAB_00431c38:
           PushTV(playerId,0);
@@ -293,7 +294,7 @@ LAB_00431c38:
       }
       else if (iVar2 == 0x1ae) {
         iVar2 = CheckTmps(playerId,0,pSVar4->field_0020,*(char *)&pSVar4->field_0024,(DArrayTy *)0x0
-                          ,sVar7);
+                          ,sVar8);
         if (iVar2 < 1) {
           if (iVar2 < 0) goto LAB_00431c38;
         }
@@ -302,8 +303,8 @@ LAB_00431c38:
         }
       }
       else {
-        iVar2 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0xaba,0,0,&DAT_007a4ccc,
-                                   s_STAllPlayersC__FramePick_GAMETYP_007a6e40);
+        iVar2 = ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0xaba,0,0,"%s",
+                                   "STAllPlayersC::FramePick GAMETYPE_MINESET ACT_LEFT");
         if (iVar2 != 0) {
           STDebugBreak(); /* noreturn in standalone pseudocode */
         }
@@ -313,16 +314,16 @@ LAB_00431c38:
       g_playerRuntime[iVar2].field324_0x203 = 0;
       ResetActivityFromTmp(this,playerId,1,0,0);
       iVar2 = *(int *)((int)&g_playerRuntime[0].tempSlots[0][0].objectType + local_4c);
-      sVar7 = (short)local_8;
+      sVar8 = (short)local_8;
       if (iVar2 == 0) {
         iVar2 = CheckTmps(playerId,0,pSVar4->field_0020,*(char *)&pSVar4->field_0024,(DArrayTy *)0x0
-                          ,sVar7);
+                          ,sVar8);
         if (iVar2 < 1) goto cf_error_exit_00431A49;
         ActivateTV(this,playerId,0,iVar2);
       }
       else if (iVar2 == 0x3c) {
         iVar2 = CheckTmps(playerId,0,pSVar4->field_0020,*(char *)&pSVar4->field_0024,(DArrayTy *)0x0
-                          ,sVar7);
+                          ,sVar8);
         if (iVar2 < 1) {
 LAB_00431a3f:
           iVar2 = PushTV(playerId,0);
@@ -332,33 +333,33 @@ LAB_00431a3f:
       }
       else if (iVar2 == 0x1ae) {
         iVar2 = CheckTmps(playerId,0,pSVar4->field_0020,*(char *)&pSVar4->field_0024,(DArrayTy *)0x0
-                          ,sVar7);
+                          ,sVar8);
         if (iVar2 < 0) goto LAB_00431a3f;
         ActivateTV(this,playerId,0,iVar2);
       }
       else {
-        iVar2 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0xade,0,0,&DAT_007a4ccc,
-                                   s_STAllPlayersC__FramePick_GAMETYP_007a6ecc);
+        iVar2 = ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0xade,0,0,"%s",
+                                   "STAllPlayersC::FramePick GAMETYPE_MINESET ACT_RIGHT");
         if (iVar2 != 0) {
           STDebugBreak(); /* noreturn in standalone pseudocode */
         }
       }
     }
     else {
-      iVar2 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0xae2,0,0,&DAT_007a4ccc,
-                                 s_STAllPlayersC__FramePick_GAMETYP_007a6f0c);
+      iVar2 = ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0xae2,0,0,"%s",
+                                 "STAllPlayersC::FramePick GAMETYPE_MINESET wrong panel number");
       if (iVar2 != 0) {
         STDebugBreak(); /* noreturn in standalone pseudocode */
       }
     }
     RaiseInternalException
-              (-0x5001fff7,g_overwriteContext_007ED77C,s_E____titans_wlad_to_allpl_cpp_007a6004,
+              (-0x5001fff7,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_allpl.cpp",
                0xae4);
   }
   if (local_28->count != 0) {
     if (param_6 == 1) {
       RaiseInternalException
-                (-0x5001fff7,g_overwriteContext_007ED77C,s_E____titans_wlad_to_allpl_cpp_007a6004,
+                (-0x5001fff7,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_allpl.cpp",
                  0xae8);
     }
     DArrayGetElement(local_28,0,&local_8);
@@ -367,7 +368,7 @@ LAB_00431a3f:
     pSVar4 = GetObjPtr(this,-1,local_8,CASE_2);
     if (pSVar4 == (STGameObjC *)0x0) {
       RaiseInternalException
-                (-0x5001fff7,g_overwriteContext_007ED77C,s_E____titans_wlad_to_allpl_cpp_007a6004,
+                (-0x5001fff7,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_allpl.cpp",
                  0xaeb);
     }
     iVar2 = (int)playerId;
@@ -377,11 +378,11 @@ LAB_00431a3f:
       g_playerRuntime[iVar2].field324_0x203 = 1;
       ResetActivityFromTmp(this,playerId,0,0,0);
       iVar2 = *(int *)((int)&g_playerRuntime[0].tempSlots[1][0].objectType + local_4c);
-      sVar7 = (short)local_8;
+      sVar8 = (short)local_8;
       if (iVar2 < 0x19b) {
         if (iVar2 == 0x19a) {
           iVar2 = CheckTmps(playerId,1,pSVar4->field_0020,*(char *)&pSVar4->field_0024,
-                            (DArrayTy *)0x0,sVar7);
+                            (DArrayTy *)0x0,sVar8);
           if (iVar2 < 1) goto LAB_00431ec7;
           ActivateTV(this,playerId,1,iVar2);
         }
@@ -391,7 +392,7 @@ LAB_00431a3f:
             goto LAB_00431e77;
           }
           iVar2 = CheckTmps(playerId,1,pSVar4->field_0020,*(char *)&pSVar4->field_0024,
-                            (DArrayTy *)0x0,sVar7);
+                            (DArrayTy *)0x0,sVar8);
           /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
           uVar6 = extraout_ECX;
           if (iVar2 < 1) goto LAB_00431ed1;
@@ -401,7 +402,7 @@ LAB_00431a3f:
       else if ((iVar2 == 0x1a4) || (iVar2 == 0x1b8)) {
 LAB_00431e9e:
         iVar2 = CheckTmps(playerId,1,pSVar4->field_0020,*(char *)&pSVar4->field_0024,(DArrayTy *)0x0
-                          ,sVar7);
+                          ,sVar8);
         if (iVar2 < 0) {
 LAB_00431ec7:
           PushTV(playerId,1);
@@ -410,9 +411,9 @@ LAB_00431ec7:
 /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
 LAB_00431ed1:
           uVar5 = CONCAT31((int3)((uint)uVar6 >> 8),*(undefined1 *)&pSVar4->field_0024);
-          iVar2 = pSVar4->field_0020;
+          uVar7 = pSVar4->field_0020;
 LAB_00431edd:
-          AddObjToTmp2(this,playerId,1,0,iVar2,uVar5,local_8);
+          AddObjToTmp2(this,playerId,1,0,uVar7,uVar5,local_8);
         }
         else {
           ActivateTV(this,playerId,1,iVar2);
@@ -420,8 +421,8 @@ LAB_00431edd:
       }
       else {
 LAB_00431e77:
-        iVar2 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0xb3a,0,0,&DAT_007a4ccc,
-                                   s_STAllPlayersC__FramePick_GAMETYP_007a6dc0);
+        iVar2 = ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0xb3a,0,0,"%s",
+                                   "STAllPlayersC::FramePick GAMETYPE_ARTEFACT ACT_LEFT");
         if (iVar2 != 0) {
           STDebugBreak(); /* noreturn in standalone pseudocode */
         }
@@ -429,11 +430,11 @@ LAB_00431e77:
     }
     else if (g_playerRuntime[iVar2].field324_0x203 == 1) {
       iVar2 = g_playerRuntime[iVar2].tempSlots[1][0].objectType;
-      sVar7 = (short)local_8;
+      sVar8 = (short)local_8;
       if (iVar2 < 0x19b) {
         if (iVar2 == 0x19a) {
           iVar2 = CheckTmps(playerId,1,pSVar4->field_0020,*(char *)&pSVar4->field_0024,
-                            (DArrayTy *)0x0,sVar7);
+                            (DArrayTy *)0x0,sVar8);
           if (iVar2 < 1) {
 LAB_00431da2:
             PushTV(playerId,1);
@@ -443,7 +444,7 @@ LAB_00431da2:
 /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
 LAB_00431dba:
             uVar5 = CONCAT31((int3)((uint)uVar6 >> 8),*(undefined1 *)&pSVar4->field_0024);
-            iVar2 = pSVar4->field_0020;
+            uVar7 = pSVar4->field_0020;
             goto LAB_00431edd;
           }
           ActivateTV(this,playerId,1,iVar2);
@@ -454,7 +455,7 @@ LAB_00431dba:
             goto LAB_00431d42;
           }
           iVar2 = CheckTmps(playerId,1,pSVar4->field_0020,*(char *)&pSVar4->field_0024,
-                            (DArrayTy *)0x0,sVar7);
+                            (DArrayTy *)0x0,sVar8);
           /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
           uVar6 = extraout_EDX;
           if (iVar2 < 1) goto LAB_00431dba;
@@ -464,7 +465,7 @@ LAB_00431dba:
       else if ((iVar2 == 0x1a4) || (iVar2 == 0x1b8)) {
 LAB_00431d70:
         iVar2 = CheckTmps(playerId,1,pSVar4->field_0020,*(char *)&pSVar4->field_0024,(DArrayTy *)0x0
-                          ,sVar7);
+                          ,sVar8);
         if (iVar2 < 1) {
           if (iVar2 < 0) goto LAB_00431da2;
         }
@@ -474,28 +475,28 @@ LAB_00431d70:
       }
       else {
 LAB_00431d42:
-        iVar2 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0xb13,0,0,&DAT_007a4ccc,
-                                   s_STAllPlayersC__FramePick_GAMETYP_007a6e00);
+        iVar2 = ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0xb13,0,0,"%s",
+                                   "STAllPlayersC::FramePick GAMETYPE_ARTEFACT ACT_RIGHT");
         if (iVar2 != 0) {
           STDebugBreak(); /* noreturn in standalone pseudocode */
         }
       }
     }
     else {
-      iVar2 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0xb3e,0,0,&DAT_007a4ccc,
-                                 s_STAllPlayersC__FramePick_GAMETYP_007a6e80);
+      iVar2 = ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0xb3e,0,0,"%s",
+                                 "STAllPlayersC::FramePick GAMETYPE_ARTEFACT wrong panel number");
       if (iVar2 != 0) {
         STDebugBreak(); /* noreturn in standalone pseudocode */
       }
     }
     RaiseInternalException
-              (-0x5001fff7,g_overwriteContext_007ED77C,s_E____titans_wlad_to_allpl_cpp_007a6004,
+              (-0x5001fff7,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_allpl.cpp",
                0xb40);
   }
   if (local_30->count != 0) {
     if (param_6 == 1) {
       RaiseInternalException
-                (-0x5001fff7,g_overwriteContext_007ED77C,s_E____titans_wlad_to_allpl_cpp_007a6004,
+                (-0x5001fff7,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_allpl.cpp",
                  0xb44);
     }
     DArrayGetElement(local_30,0,&local_8);
@@ -504,7 +505,7 @@ LAB_00431d42:
     pSVar4 = GetObjPtr(this,-1,local_8,CASE_5);
     if (pSVar4 == (STGameObjC *)0x0) {
       RaiseInternalException
-                (-0x5001fff7,g_overwriteContext_007ED77C,s_E____titans_wlad_to_allpl_cpp_007a6004,
+                (-0x5001fff7,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_allpl.cpp",
                  0xb47);
     }
     iVar2 = (int)playerId;
@@ -514,11 +515,11 @@ LAB_00431d42:
       g_playerRuntime[iVar2].field324_0x203 = 1;
       ResetActivityFromTmp(this,playerId,0,0,0);
       iVar2 = *(int *)((int)&g_playerRuntime[0].tempSlots[1][0].objectType + local_4c);
-      sVar7 = (short)local_8;
+      sVar8 = (short)local_8;
       if (iVar2 < 0x19b) {
         if (iVar2 == 0x19a) {
           iVar2 = CheckTmps(playerId,1,pSVar4->field_0020,*(char *)&pSVar4->field_0024,
-                            (DArrayTy *)0x0,sVar7);
+                            (DArrayTy *)0x0,sVar8);
           if (iVar2 < 1) goto LAB_004321f3;
           ActivateTV(this,playerId,1,iVar2);
         }
@@ -528,7 +529,7 @@ LAB_00431d42:
             goto LAB_004321a3;
           }
           iVar2 = CheckTmps(playerId,1,pSVar4->field_0020,*(char *)&pSVar4->field_0024,
-                            (DArrayTy *)0x0,sVar7);
+                            (DArrayTy *)0x0,sVar8);
           if (iVar2 < 1) goto LAB_004321fd;
           ActivateTV(this,playerId,1,iVar2);
         }
@@ -536,16 +537,16 @@ LAB_00431d42:
       else if ((iVar2 == 0x1a4) || (iVar2 == 0x1b8)) {
 LAB_004321ca:
         iVar2 = CheckTmps(playerId,1,pSVar4->field_0020,*(char *)&pSVar4->field_0024,(DArrayTy *)0x0
-                          ,sVar7);
+                          ,sVar8);
         if (iVar2 < 0) {
 LAB_004321f3:
           iVar2 = PushTV(playerId,1);
 /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
 LAB_004321fd:
           uVar5 = CONCAT31((int3)((uint)iVar2 >> 8),*(undefined1 *)&pSVar4->field_0024);
-          iVar2 = pSVar4->field_0020;
+          uVar7 = pSVar4->field_0020;
 LAB_00432209:
-          AddObjToTmp2(this,playerId,1,0,iVar2,uVar5,local_8);
+          AddObjToTmp2(this,playerId,1,0,uVar7,uVar5,local_8);
         }
         else {
           ActivateTV(this,playerId,1,iVar2);
@@ -553,8 +554,8 @@ LAB_00432209:
       }
       else {
 LAB_004321a3:
-        iVar2 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0xb96,0,0,&DAT_007a4ccc,
-                                   s_STAllPlayersC__FramePick_GAMETYP_007a6cf4);
+        iVar2 = ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0xb96,0,0,"%s",
+                                   "STAllPlayersC::FramePick GAMETYPE_CONTAINER ACT_LEFT");
         if (iVar2 != 0) {
           STDebugBreak(); /* noreturn in standalone pseudocode */
         }
@@ -562,11 +563,11 @@ LAB_004321a3:
     }
     else if (g_playerRuntime[iVar2].field324_0x203 == 1) {
       iVar2 = g_playerRuntime[iVar2].tempSlots[1][0].objectType;
-      sVar7 = (short)local_8;
+      sVar8 = (short)local_8;
       if (iVar2 < 0x19b) {
         if (iVar2 == 0x19a) {
           iVar2 = CheckTmps(playerId,1,pSVar4->field_0020,*(char *)&pSVar4->field_0024,
-                            (DArrayTy *)0x0,sVar7);
+                            (DArrayTy *)0x0,sVar8);
           if (iVar2 < 1) {
 LAB_004320ce:
             PushTV(playerId,1);
@@ -576,7 +577,7 @@ LAB_004320ce:
 /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
 LAB_004320e6:
             uVar5 = CONCAT31((int3)((uint)uVar6 >> 8),*(undefined1 *)&pSVar4->field_0024);
-            iVar2 = pSVar4->field_0020;
+            uVar7 = pSVar4->field_0020;
             goto LAB_00432209;
           }
           ActivateTV(this,playerId,1,iVar2);
@@ -587,7 +588,7 @@ LAB_004320e6:
             goto LAB_0043206e;
           }
           iVar2 = CheckTmps(playerId,1,pSVar4->field_0020,*(char *)&pSVar4->field_0024,
-                            (DArrayTy *)0x0,sVar7);
+                            (DArrayTy *)0x0,sVar8);
           /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
           uVar6 = extraout_ECX_01;
           if (iVar2 < 1) goto LAB_004320e6;
@@ -597,7 +598,7 @@ LAB_004320e6:
       else if ((iVar2 == 0x1a4) || (iVar2 == 0x1b8)) {
 LAB_0043209c:
         iVar2 = CheckTmps(playerId,1,pSVar4->field_0020,*(char *)&pSVar4->field_0024,(DArrayTy *)0x0
-                          ,sVar7);
+                          ,sVar8);
         if (iVar2 < 1) {
           if (iVar2 < 0) goto LAB_004320ce;
         }
@@ -607,28 +608,28 @@ LAB_0043209c:
       }
       else {
 LAB_0043206e:
-        iVar2 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0xb6f,0,0,&DAT_007a4ccc,
-                                   s_STAllPlayersC__FramePick_GAMETYP_007a6d34);
+        iVar2 = ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0xb6f,0,0,"%s",
+                                   "STAllPlayersC::FramePick GAMETYPE_CONTAINER ACT_RIGHT");
         if (iVar2 != 0) {
           STDebugBreak(); /* noreturn in standalone pseudocode */
         }
       }
     }
     else {
-      iVar2 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0xb9a,0,0,&DAT_007a4ccc,
-                                 s_STAllPlayersC__FramePick_GAMETYP_007a6d74);
+      iVar2 = ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0xb9a,0,0,"%s",
+                                 "STAllPlayersC::FramePick GAMETYPE_CONTAINER wrong panel number");
       if (iVar2 != 0) {
         STDebugBreak(); /* noreturn in standalone pseudocode */
       }
     }
     RaiseInternalException
-              (-0x5001fff7,g_overwriteContext_007ED77C,s_E____titans_wlad_to_allpl_cpp_007a6004,
+              (-0x5001fff7,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_allpl.cpp",
                0xb9c);
   }
   if (local_14->count != 0) {
     if (param_6 == 1) {
       RaiseInternalException
-                (-0x5001fff7,g_overwriteContext_007ED77C,s_E____titans_wlad_to_allpl_cpp_007a6004,
+                (-0x5001fff7,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_allpl.cpp",
                  0xba0);
     }
     DArrayGetElement(local_14,0,&local_8);
@@ -672,8 +673,8 @@ LAB_00432536:
       }
       else {
 LAB_0043250f:
-        iVar2 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0xbfb,0,0,&DAT_007a4ccc,
-                                   s_STAllPlayersC__FramePick_GAMETYP_007a6c30);
+        iVar2 = ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0xbfb,0,0,"%s",
+                                   "STAllPlayersC::FramePick GAMETYPE_OBJECT ACT_LEFT");
         if (iVar2 != 0) {
           STDebugBreak(); /* noreturn in standalone pseudocode */
         }
@@ -714,8 +715,8 @@ LAB_0043250f:
           }
           if ((iVar2 == 0x5a) || (iVar2 == 0x172)) goto LAB_0043240a;
 LAB_004323dc:
-          iVar2 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0xbd1,0,0,
-                                     &DAT_007a4ccc,s_STAllPlayersC__FramePick_GAMETYP_007a6c6c);
+          iVar2 = ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0xbd1,0,0,
+                                     "%s","STAllPlayersC::FramePick GAMETYPE_OBJECT ACT_RIGHT");
           if (iVar2 != 0) {
             STDebugBreak(); /* noreturn in standalone pseudocode */
           }
@@ -734,21 +735,21 @@ LAB_0043240a:
       }
     }
     else {
-      iVar2 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0xbff,0,0,&DAT_007a4ccc,
-                                 s_STAllPlayersC__FramePick_GAMETYP_007a6cac);
+      iVar2 = ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0xbff,0,0,"%s",
+                                 "STAllPlayersC::FramePick GAMETYPE_OBJECT wrong panel number");
       if (iVar2 != 0) {
         STDebugBreak(); /* noreturn in standalone pseudocode */
       }
     }
 LAB_00432582:
     RaiseInternalException
-              (-0x5001fff7,g_overwriteContext_007ED77C,s_E____titans_wlad_to_allpl_cpp_007a6004,
+              (-0x5001fff7,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_allpl.cpp",
                0xc01);
   }
   if (local_20->count != 0) {
     if (param_6 == 1) {
       RaiseInternalException
-                (-0x5001fff7,g_overwriteContext_007ED77C,s_E____titans_wlad_to_allpl_cpp_007a6004,
+                (-0x5001fff7,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_allpl.cpp",
                  0xc05);
     }
     DArrayGetElement(local_20,0,&local_8);
@@ -757,7 +758,7 @@ LAB_00432582:
     pSVar4 = GetObjPtr(this,-1,local_8,CASE_4);
     if (pSVar4 == (STGameObjC *)0x0) {
       RaiseInternalException
-                (-0x5001fff7,g_overwriteContext_007ED77C,s_E____titans_wlad_to_allpl_cpp_007a6004,
+                (-0x5001fff7,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_allpl.cpp",
                  0xc08);
     }
     iVar2 = (int)playerId;
@@ -767,11 +768,11 @@ LAB_00432582:
       g_playerRuntime[iVar2].field324_0x203 = 1;
       ResetActivityFromTmp(this,playerId,0,0,0);
       iVar2 = *(int *)((int)&g_playerRuntime[0].tempSlots[1][0].objectType + local_4c);
-      sVar7 = (short)local_8;
+      sVar8 = (short)local_8;
       if (iVar2 < 0x19b) {
         if (iVar2 == 0x19a) {
           iVar2 = CheckTmps(playerId,1,pSVar4->field_0020,*(char *)&pSVar4->field_0024,
-                            (DArrayTy *)0x0,sVar7);
+                            (DArrayTy *)0x0,sVar8);
           if (iVar2 < 1) goto LAB_0043288b;
           ActivateTV(this,playerId,1,iVar2);
         }
@@ -781,7 +782,7 @@ LAB_00432582:
             goto LAB_0043283b;
           }
           iVar2 = CheckTmps(playerId,1,pSVar4->field_0020,*(char *)&pSVar4->field_0024,
-                            (DArrayTy *)0x0,sVar7);
+                            (DArrayTy *)0x0,sVar8);
           /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
           uVar6 = extraout_ECX_03;
           if (iVar2 < 1) goto LAB_00432895;
@@ -791,7 +792,7 @@ LAB_00432582:
       else if ((iVar2 == 0x1a4) || (iVar2 == 0x1b8)) {
 LAB_00432862:
         iVar2 = CheckTmps(playerId,1,pSVar4->field_0020,*(char *)&pSVar4->field_0024,(DArrayTy *)0x0
-                          ,sVar7);
+                          ,sVar8);
         if (iVar2 < 0) {
 LAB_0043288b:
           PushTV(playerId,1);
@@ -800,9 +801,9 @@ LAB_0043288b:
 /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
 LAB_00432895:
           uVar5 = CONCAT31((int3)((uint)uVar6 >> 8),*(undefined1 *)&pSVar4->field_0024);
-          iVar2 = pSVar4->field_0020;
+          uVar7 = pSVar4->field_0020;
 LAB_004328a1:
-          AddObjToTmp2(this,playerId,1,0,iVar2,uVar5,local_8);
+          AddObjToTmp2(this,playerId,1,0,uVar7,uVar5,local_8);
         }
         else {
           ActivateTV(this,playerId,1,iVar2);
@@ -810,8 +811,8 @@ LAB_004328a1:
       }
       else {
 LAB_0043283b:
-        iVar2 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0xc57,0,0,&DAT_007a4ccc,
-                                   s_STAllPlayersC__FramePick_GAMETYP_007a6b64);
+        iVar2 = ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0xc57,0,0,"%s",
+                                   "STAllPlayersC::FramePick GAMETYPE_RESOURCE ACT_LEFT");
         if (iVar2 != 0) {
           STDebugBreak(); /* noreturn in standalone pseudocode */
         }
@@ -819,11 +820,11 @@ LAB_0043283b:
     }
     else if (g_playerRuntime[iVar2].field324_0x203 == 1) {
       iVar2 = g_playerRuntime[iVar2].tempSlots[1][0].objectType;
-      sVar7 = (short)local_8;
+      sVar8 = (short)local_8;
       if (iVar2 < 0x19b) {
         if (iVar2 == 0x19a) {
           iVar2 = CheckTmps(playerId,1,pSVar4->field_0020,*(char *)&pSVar4->field_0024,
-                            (DArrayTy *)0x0,sVar7);
+                            (DArrayTy *)0x0,sVar8);
           if (iVar2 < 1) {
 LAB_00432766:
             PushTV(playerId,1);
@@ -833,7 +834,7 @@ LAB_00432766:
 /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
 LAB_0043277e:
             uVar5 = CONCAT31((int3)((uint)uVar6 >> 8),*(undefined1 *)&pSVar4->field_0024);
-            iVar2 = pSVar4->field_0020;
+            uVar7 = pSVar4->field_0020;
             goto LAB_004328a1;
           }
           ActivateTV(this,playerId,1,iVar2);
@@ -844,7 +845,7 @@ LAB_0043277e:
             goto LAB_00432706;
           }
           iVar2 = CheckTmps(playerId,1,pSVar4->field_0020,*(char *)&pSVar4->field_0024,
-                            (DArrayTy *)0x0,sVar7);
+                            (DArrayTy *)0x0,sVar8);
           /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
           uVar6 = extraout_EDX_01;
           if (iVar2 < 1) goto LAB_0043277e;
@@ -854,7 +855,7 @@ LAB_0043277e:
       else if ((iVar2 == 0x1a4) || (iVar2 == 0x1b8)) {
 LAB_00432734:
         iVar2 = CheckTmps(playerId,1,pSVar4->field_0020,*(char *)&pSVar4->field_0024,(DArrayTy *)0x0
-                          ,sVar7);
+                          ,sVar8);
         if (iVar2 < 1) {
           if (iVar2 < 0) goto LAB_00432766;
         }
@@ -864,28 +865,28 @@ LAB_00432734:
       }
       else {
 LAB_00432706:
-        iVar2 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0xc30,0,0,&DAT_007a4ccc,
-                                   s_STAllPlayersC__FramePick_GAMETYP_007a6ba4);
+        iVar2 = ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0xc30,0,0,"%s",
+                                   "STAllPlayersC::FramePick GAMETYPE_RESOURCE ACT_RIGHT");
         if (iVar2 != 0) {
           STDebugBreak(); /* noreturn in standalone pseudocode */
         }
       }
     }
     else {
-      iVar2 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0xc5b,0,0,&DAT_007a4ccc,
-                                 s_STAllPlayersC__FramePick_GAMETYP_007a6be4);
+      iVar2 = ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0xc5b,0,0,"%s",
+                                 "STAllPlayersC::FramePick GAMETYPE_RESOURCE wrong panel number");
       if (iVar2 != 0) {
         STDebugBreak(); /* noreturn in standalone pseudocode */
       }
     }
     RaiseInternalException
-              (-0x5001fff7,g_overwriteContext_007ED77C,s_E____titans_wlad_to_allpl_cpp_007a6004,
+              (-0x5001fff7,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_allpl.cpp",
                0xc5d);
   }
   if (local_38->count != 0) {
     if (param_6 == 1) {
       RaiseInternalException
-                (-0x5001fff7,g_overwriteContext_007ED77C,s_E____titans_wlad_to_allpl_cpp_007a6004,
+                (-0x5001fff7,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_allpl.cpp",
                  0xc61);
     }
     DArrayGetElement(local_38,0,&local_8);
@@ -894,7 +895,7 @@ LAB_00432706:
     pSVar4 = GetObjPtr(this,-1,local_8,CASE_6);
     if (pSVar4 == (STGameObjC *)0x0) {
       RaiseInternalException
-                (-0x5001fff7,g_overwriteContext_007ED77C,s_E____titans_wlad_to_allpl_cpp_007a6004,
+                (-0x5001fff7,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_allpl.cpp",
                  0xc64);
     }
     iVar2 = (int)playerId;
@@ -904,11 +905,11 @@ LAB_00432706:
       g_playerRuntime[iVar2].field324_0x203 = 1;
       ResetActivityFromTmp(this,playerId,0,0,0);
       iVar2 = *(int *)((int)&g_playerRuntime[0].tempSlots[1][0].objectType + local_4c);
-      sVar7 = (short)local_8;
+      sVar8 = (short)local_8;
       if (iVar2 < 0x19b) {
         if (iVar2 == 0x19a) {
           iVar2 = CheckTmps(playerId,1,pSVar4->field_0020,*(char *)&pSVar4->field_0024,
-                            (DArrayTy *)0x0,sVar7);
+                            (DArrayTy *)0x0,sVar8);
           if (iVar2 < 1) goto LAB_00432bb7;
           ActivateTV(this,playerId,1,iVar2);
         }
@@ -918,7 +919,7 @@ LAB_00432706:
             goto LAB_00432b67;
           }
           iVar2 = CheckTmps(playerId,1,pSVar4->field_0020,*(char *)&pSVar4->field_0024,
-                            (DArrayTy *)0x0,sVar7);
+                            (DArrayTy *)0x0,sVar8);
           if (iVar2 < 1) goto LAB_00432bc1;
           ActivateTV(this,playerId,1,iVar2);
         }
@@ -926,16 +927,16 @@ LAB_00432706:
       else if ((iVar2 == 0x1a4) || (iVar2 == 0x1b8)) {
 LAB_00432b8e:
         iVar2 = CheckTmps(playerId,1,pSVar4->field_0020,*(char *)&pSVar4->field_0024,(DArrayTy *)0x0
-                          ,sVar7);
+                          ,sVar8);
         if (iVar2 < 0) {
 LAB_00432bb7:
           iVar2 = PushTV(playerId,1);
 /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
 LAB_00432bc1:
           uVar5 = CONCAT31((int3)((uint)iVar2 >> 8),*(undefined1 *)&pSVar4->field_0024);
-          iVar2 = pSVar4->field_0020;
+          uVar7 = pSVar4->field_0020;
 LAB_00432bcd:
-          AddObjToTmp2(this,playerId,1,0,iVar2,uVar5,local_8);
+          AddObjToTmp2(this,playerId,1,0,uVar7,uVar5,local_8);
         }
         else {
           ActivateTV(this,playerId,1,iVar2);
@@ -943,8 +944,8 @@ LAB_00432bcd:
       }
       else {
 LAB_00432b67:
-        iVar2 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0xcb3,0,0,&DAT_007a4ccc,
-                                   s_STAllPlayersC__FramePick_GAMETYP_007a6aa4);
+        iVar2 = ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0xcb3,0,0,"%s",
+                                   "STAllPlayersC::FramePick GAMETYPE_BLOT ACT_LEFT");
         if (iVar2 != 0) {
           STDebugBreak(); /* noreturn in standalone pseudocode */
         }
@@ -952,11 +953,11 @@ LAB_00432b67:
     }
     else if (g_playerRuntime[iVar2].field324_0x203 == 1) {
       iVar2 = g_playerRuntime[iVar2].tempSlots[1][0].objectType;
-      sVar7 = (short)local_8;
+      sVar8 = (short)local_8;
       if (iVar2 < 0x19b) {
         if (iVar2 == 0x19a) {
           iVar2 = CheckTmps(playerId,1,pSVar4->field_0020,*(char *)&pSVar4->field_0024,
-                            (DArrayTy *)0x0,sVar7);
+                            (DArrayTy *)0x0,sVar8);
           if (iVar2 < 1) {
 LAB_00432a92:
             PushTV(playerId,1);
@@ -966,7 +967,7 @@ LAB_00432a92:
 /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
 LAB_00432aaa:
             uVar5 = CONCAT31((int3)((uint)uVar6 >> 8),*(undefined1 *)&pSVar4->field_0024);
-            iVar2 = pSVar4->field_0020;
+            uVar7 = pSVar4->field_0020;
             goto LAB_00432bcd;
           }
           ActivateTV(this,playerId,1,iVar2);
@@ -977,7 +978,7 @@ LAB_00432aaa:
             goto LAB_00432a32;
           }
           iVar2 = CheckTmps(playerId,1,pSVar4->field_0020,*(char *)&pSVar4->field_0024,
-                            (DArrayTy *)0x0,sVar7);
+                            (DArrayTy *)0x0,sVar8);
           /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
           uVar6 = extraout_ECX_05;
           if (iVar2 < 1) goto LAB_00432aaa;
@@ -987,7 +988,7 @@ LAB_00432aaa:
       else if ((iVar2 == 0x1a4) || (iVar2 == 0x1b8)) {
 LAB_00432a60:
         iVar2 = CheckTmps(playerId,1,pSVar4->field_0020,*(char *)&pSVar4->field_0024,(DArrayTy *)0x0
-                          ,sVar7);
+                          ,sVar8);
         if (iVar2 < 1) {
           if (iVar2 < 0) goto LAB_00432a92;
         }
@@ -997,28 +998,28 @@ LAB_00432a60:
       }
       else {
 LAB_00432a32:
-        iVar2 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0xc8c,0,0,&DAT_007a4ccc,
-                                   s_STAllPlayersC__FramePick_GAMETYP_007a6ae0);
+        iVar2 = ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0xc8c,0,0,"%s",
+                                   "STAllPlayersC::FramePick GAMETYPE_BLOT ACT_RIGHT");
         if (iVar2 != 0) {
           STDebugBreak(); /* noreturn in standalone pseudocode */
         }
       }
     }
     else {
-      iVar2 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0xcb7,0,0,&DAT_007a4ccc,
-                                 s_STAllPlayersC__FramePick_GAMETYP_007a6b1c);
+      iVar2 = ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0xcb7,0,0,"%s",
+                                 "STAllPlayersC::FramePick GAMETYPE_BLOT wrong panel number");
       if (iVar2 != 0) {
         STDebugBreak(); /* noreturn in standalone pseudocode */
       }
     }
     RaiseInternalException
-              (-0x5001fff7,g_overwriteContext_007ED77C,s_E____titans_wlad_to_allpl_cpp_007a6004,
+              (-0x5001fff7,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_allpl.cpp",
                0xcb9);
   }
   if (local_18->count != 0) {
     if (param_6 == 1) {
       RaiseInternalException
-                (-0x5001fff7,g_overwriteContext_007ED77C,s_E____titans_wlad_to_allpl_cpp_007a6004,
+                (-0x5001fff7,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_allpl.cpp",
                  0xcbd);
     }
     DArrayGetElement(local_18,0,&local_8);
@@ -1064,8 +1065,8 @@ cf_error_exit_00432EAE:
         ActivateTV(this,playerId,0,iVar2);
       }
       else {
-        iVar2 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0xce7,0,0,&DAT_007a4ccc,
-                                   s_STAllPlayersC__FramePick_GAMETYP_007a69cc);
+        iVar2 = ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0xce7,0,0,"%s",
+                                   "STAllPlayersC::FramePick GAMETYPE_BOAT (enemy) ACT_LEFT");
         if (iVar2 != 0) {
           STDebugBreak(); /* noreturn in standalone pseudocode */
         }
@@ -1093,28 +1094,28 @@ cf_error_exit_00432EAE:
         ActivateTV(this,playerId,0,iVar2);
       }
       else {
-        iVar2 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0xd0e,0,0,&DAT_007a4ccc,
-                                   s_STAllPlayersC__FramePick_GAMETYP_007a6a10);
+        iVar2 = ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0xd0e,0,0,"%s",
+                                   "STAllPlayersC::FramePick GAMETYPE_BOAT (enemy) ACT_RIGHT");
         if (iVar2 != 0) {
           STDebugBreak(); /* noreturn in standalone pseudocode */
         }
       }
     }
     else {
-      iVar2 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0xd12,0,0,&DAT_007a4ccc,
-                                 s_STAllPlayersC__FramePick_GAMETYP_007a6a54);
+      iVar2 = ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0xd12,0,0,"%s",
+                                 "STAllPlayersC::FramePick GAMETYPE_BOAT (enemy) wrong panel number");
       if (iVar2 != 0) {
         STDebugBreak(); /* noreturn in standalone pseudocode */
       }
     }
     RaiseInternalException
-              (-0x5001fff7,g_overwriteContext_007ED77C,s_E____titans_wlad_to_allpl_cpp_007a6004,
+              (-0x5001fff7,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_allpl.cpp",
                0xd14);
   }
   if (local_2c->count != 0) {
     if (param_6 == 1) {
       RaiseInternalException
-                (-0x5001fff7,g_overwriteContext_007ED77C,s_E____titans_wlad_to_allpl_cpp_007a6004,
+                (-0x5001fff7,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_allpl.cpp",
                  0xd18);
     }
     DArrayGetElement(local_2c,0,&local_8);
@@ -1123,7 +1124,7 @@ cf_error_exit_00432EAE:
     pSVar4 = GetObjPtr(this,'\0',local_8,CASE_3);
     if (pSVar4 == (STGameObjC *)0x0) {
       RaiseInternalException
-                (-0x5001fff7,g_overwriteContext_007ED77C,s_E____titans_wlad_to_allpl_cpp_007a6004,
+                (-0x5001fff7,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_allpl.cpp",
                  0xd1b);
     }
     iVar2 = (int)playerId;
@@ -1131,10 +1132,10 @@ cf_error_exit_00432EAE:
     local_4c = iVar2 * 0xa62;
     if (g_playerRuntime[iVar2].field324_0x203 == 0) {
       iVar2 = g_playerRuntime[iVar2].tempSlots[0][0].objectType;
-      sVar7 = (short)local_8;
+      sVar8 = (short)local_8;
       if (iVar2 == 0) {
         iVar2 = CheckTmps(playerId,0,pSVar4->field_0020,*(char *)&pSVar4->field_0024,(DArrayTy *)0x0
-                          ,sVar7);
+                          ,sVar8);
         if (iVar2 < 1) {
 /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
 cf_error_exit_00433050:
@@ -1148,7 +1149,7 @@ cf_error_exit_00433050:
       }
       else if (iVar2 == 0x3c) {
         iVar2 = CheckTmps(playerId,0,pSVar4->field_0020,*(char *)&pSVar4->field_0024,(DArrayTy *)0x0
-                          ,sVar7);
+                          ,sVar8);
         if (iVar2 < 1) {
 LAB_0043322b:
           PushTV(playerId,0);
@@ -1159,7 +1160,7 @@ LAB_0043322b:
       }
       else if (iVar2 == 0x1ae) {
         iVar2 = CheckTmps(playerId,0,pSVar4->field_0020,*(char *)&pSVar4->field_0024,(DArrayTy *)0x0
-                          ,sVar7);
+                          ,sVar8);
         if (iVar2 < 1) {
           if (iVar2 < 0) goto LAB_0043322b;
         }
@@ -1168,8 +1169,8 @@ LAB_0043322b:
         }
       }
       else {
-        iVar2 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0xd40,0,0,&DAT_007a4ccc,
-                                   s_STAllPlayersC__FramePick_GAMETYP_007a6894);
+        iVar2 = ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0xd40,0,0,"%s",
+                                   "STAllPlayersC::FramePick GAMETYPE_MINESET (enemy) ACT_LEFT");
         if (iVar2 != 0) {
           STDebugBreak(); /* noreturn in standalone pseudocode */
         }
@@ -1179,16 +1180,16 @@ LAB_0043322b:
       g_playerRuntime[iVar2].field324_0x203 = 0;
       ResetActivityFromTmp(this,playerId,1,0,0);
       iVar2 = *(int *)((int)&g_playerRuntime[0].tempSlots[0][0].objectType + local_4c);
-      sVar7 = (short)local_8;
+      sVar8 = (short)local_8;
       if (iVar2 == 0) {
         iVar2 = CheckTmps(playerId,0,pSVar4->field_0020,*(char *)&pSVar4->field_0024,(DArrayTy *)0x0
-                          ,sVar7);
+                          ,sVar8);
         if (iVar2 < 1) goto cf_error_exit_00433050;
         ActivateTV(this,playerId,0,iVar2);
       }
       else if (iVar2 == 0x3c) {
         iVar2 = CheckTmps(playerId,0,pSVar4->field_0020,*(char *)&pSVar4->field_0024,(DArrayTy *)0x0
-                          ,sVar7);
+                          ,sVar8);
         if (iVar2 < 1) {
 LAB_00433046:
           iVar2 = PushTV(playerId,0);
@@ -1198,7 +1199,7 @@ LAB_00433046:
       }
       else if (iVar2 == 0x1ae) {
         iVar2 = CheckTmps(playerId,0,pSVar4->field_0020,*(char *)&pSVar4->field_0024,(DArrayTy *)0x0
-                          ,sVar7);
+                          ,sVar8);
         if (iVar2 < 1) {
           if (iVar2 < 0) goto LAB_00433046;
         }
@@ -1207,28 +1208,28 @@ LAB_00433046:
         }
       }
       else {
-        iVar2 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0xd66,0,0,&DAT_007a4ccc,
-                                   s_STAllPlayersC__FramePick_GAMETYP_007a6930);
+        iVar2 = ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0xd66,0,0,"%s",
+                                   "STAllPlayersC::FramePick GAMETYPE_MINESET (enemy) ACT_RIGHT");
         if (iVar2 != 0) {
           STDebugBreak(); /* noreturn in standalone pseudocode */
         }
       }
     }
     else {
-      iVar2 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0xd6a,0,0,&DAT_007a4ccc,
-                                 s_STAllPlayersC__FramePick_GAMETYP_007a6978);
+      iVar2 = ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0xd6a,0,0,"%s",
+                                 "STAllPlayersC::FramePick GAMETYPE_MINESET (enemy) wrong panel number");
       if (iVar2 != 0) {
         STDebugBreak(); /* noreturn in standalone pseudocode */
       }
     }
     RaiseInternalException
-              (-0x5001fff7,g_overwriteContext_007ED77C,s_E____titans_wlad_to_allpl_cpp_007a6004,
+              (-0x5001fff7,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_allpl.cpp",
                0xd6c);
   }
   if (local_1c->count == 0) goto cf_error_exit_004334F5;
   if (param_6 == 1) {
     RaiseInternalException
-              (-0x5001fff7,g_overwriteContext_007ED77C,s_E____titans_wlad_to_allpl_cpp_007a6004,
+              (-0x5001fff7,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_allpl.cpp",
                0xd70);
   }
   DArrayGetElement(local_1c,0,&local_8);
@@ -1239,8 +1240,8 @@ LAB_00433046:
   Library::DKW::TBL::FUN_006ae1c0(&local_40->flags,(undefined4 *)local_c);
   if (g_playerRuntime[playerId].field324_0x203 != 0) {
     if (g_playerRuntime[playerId].field324_0x203 != 1) {
-      iVar2 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0xdcb,0,0,&DAT_007a4ccc,
-                                 s_STAllPlayersC__FramePick_GAMETYP_007a68dc);
+      iVar2 = ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0xdcb,0,0,"%s",
+                                 "STAllPlayersC::FramePick GAMETYPE_OBJECT (enemy) wrong panel number");
       if (iVar2 != 0) {
         STDebugBreak(); /* noreturn in standalone pseudocode */
       }
@@ -1273,8 +1274,8 @@ LAB_00433363:
       ResetActivityFromTmp(this,playerId,1,1,0);
       goto cf_error_exit_004334DF;
     }
-    iVar2 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0xd9d,0,0,&DAT_007a4ccc,
-                               s_STAllPlayersC__FramePick_GAMETYP_007a684c);
+    iVar2 = ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0xd9d,0,0,"%s",
+                               "STAllPlayersC::FramePick GAMETYPE_OBJECT (enemy) ACT_RIGHT");
     if (iVar2 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
@@ -1305,8 +1306,8 @@ LAB_004333f5:
   else {
     if ((iVar2 != 0x1a4) && (iVar2 != 0x1b8)) {
 LAB_0043347c:
-      iVar2 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0xdc7,0,0,&DAT_007a4ccc,
-                                 s_STAllPlayersC__FramePick_GAMETYP_007a6804);
+      iVar2 = ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0xdc7,0,0,"%s",
+                                 "STAllPlayersC::FramePick GAMETYPE_OBJECT (enemy) ACT_LEFT");
       if (iVar2 != 0) {
         STDebugBreak(); /* noreturn in standalone pseudocode */
       }
@@ -1325,7 +1326,7 @@ cf_error_exit_004334DF:
   g_playerRuntime[playerId].tempSlots[1][0].objectType = 0x19a;
 cf_error_exit_004334F5:
   RaiseInternalException
-            (-0x5001fff7,g_overwriteContext_007ED77C,s_E____titans_wlad_to_allpl_cpp_007a6004,0xdce)
+            (-0x5001fff7,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_allpl.cpp",0xdce)
   ;
   g_currentExceptionFrame = local_90.previous;
   return;

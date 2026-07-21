@@ -23,14 +23,14 @@ STJellyGunC * __thiscall STJellyGunC::STJellyGunC(STJellyGunC *this)
     puVar2 = puVar2 + 1;
   }
   *(undefined2 *)puVar2 = 0;
-  *(undefined4 *)&this->field_0x241 = 0xff;
+  this->field_0241 = 0xff;
   this->field_0231 = 0;
   this->field_0235 = 0;
   this->field_0239 = 0;
   this->field_023D = 0;
-  this->field_0247 = 0;
-  this->field_024B = 0;
-  this->field_0252 = 0;
+  *(undefined4 *)&this->field_0x247 = 0;
+  *(undefined4 *)&this->field_0x24b = 0;
+  *(undefined4 *)&this->field_0x252 = 0;
   return this;
 }
 

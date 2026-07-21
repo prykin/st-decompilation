@@ -32,12 +32,12 @@ undefined4 __thiscall FUN_00571e40(void *this,LPDWORD lpcbData)
   DWORD local_10 [2];
   HKEY local_8;
 
-  LVar4 = RegOpenKeyA((HKEY)0x80000001,s_SOFTWARE_Ellipse_Studios_Submari_007ca434,&local_8);
+  LVar4 = RegOpenKeyA((HKEY)0x80000001,"SOFTWARE\\Ellipse Studios\\Submarine Titans\\Directories",&local_8);
   pcVar9 = RegQueryValueExA_exref;
   if (LVar4 != 0) goto cf_common_exit_0057238D;
   pBVar1 = (LPBYTE)((int)this + 0x28);
   local_10[1] = 0x104;
-  LVar4 = RegQueryValueExA(local_8,s_MainPath_007ca4ac,(LPDWORD)0x0,local_10,pBVar1,local_10 + 1);
+  LVar4 = RegQueryValueExA(local_8,"MainPath",(LPDWORD)0x0,local_10,pBVar1,local_10 + 1);
   if (LVar4 != 0) {
     RegCloseKey(local_8);
     return 0;
@@ -53,12 +53,12 @@ undefined4 __thiscall FUN_00571e40(void *this,LPDWORD lpcbData)
   }
   pBVar1 = (LPBYTE)((int)this + 300);
   local_10[1] = 0x104;
-  LVar4 = RegQueryValueExA(local_8,s_VideoPath_007ca4a0,(LPDWORD)0x0,local_10,pBVar1,local_10 + 1);
+  LVar4 = RegQueryValueExA(local_8,"VideoPath",(LPDWORD)0x0,local_10,pBVar1,local_10 + 1);
   if (LVar4 != 0) goto cf_common_exit_0057238D;
   FUN_006b8280((char *)pBVar1,(char *)pBVar1);
   pBVar1 = (LPBYTE)((int)this + 0x438);
   local_10[1] = 0x104;
-  LVar4 = RegQueryValueExA(local_8,s_DataPath_007ca4b8,(LPDWORD)0x0,local_10,pBVar1,local_10 + 1);
+  LVar4 = RegQueryValueExA(local_8,"DataPath",(LPDWORD)0x0,local_10,pBVar1,local_10 + 1);
   if (LVar4 != 0) {
     RegCloseKey(local_8);
     return 0;
@@ -66,7 +66,7 @@ undefined4 __thiscall FUN_00571e40(void *this,LPDWORD lpcbData)
   FUN_006b8280((char *)pBVar1,(char *)pBVar1);
   pBVar1 = (LPBYTE)((int)this + 0x230);
   local_10[1] = 0x104;
-  LVar4 = RegQueryValueExA(local_8,s_SoundPath_007ca4c4,(LPDWORD)0x0,local_10,pBVar1,local_10 + 1);
+  LVar4 = RegQueryValueExA(local_8,"SoundPath",(LPDWORD)0x0,local_10,pBVar1,local_10 + 1);
   if (LVar4 != 0) {
     RegCloseKey(local_8);
     return 0;
@@ -74,28 +74,28 @@ undefined4 __thiscall FUN_00571e40(void *this,LPDWORD lpcbData)
   FUN_006b8280((char *)pBVar1,(char *)pBVar1);
   pBVar1 = (LPBYTE)((int)this + 0x334);
   local_10[1] = 0x104;
-  LVar4 = RegQueryValueExA(local_8,s_MusicPath_007ca4d0,(LPDWORD)0x0,local_10,pBVar1,local_10 + 1);
+  LVar4 = RegQueryValueExA(local_8,"MusicPath",(LPDWORD)0x0,local_10,pBVar1,local_10 + 1);
   if (LVar4 != 0) goto cf_common_exit_0057238D;
   FUN_006b8280((char *)pBVar1,(char *)pBVar1);
   pBVar1 = (LPBYTE)((int)this + 0x53c);
   local_10[1] = 0x104;
-  LVar4 = RegQueryValueExA(local_8,s_InstPath_007ca4e4,(LPDWORD)0x0,local_10,pBVar1,local_10 + 1);
+  LVar4 = RegQueryValueExA(local_8,"InstPath",(LPDWORD)0x0,local_10,pBVar1,local_10 + 1);
   if (LVar4 != 0) {
     RegCloseKey(local_8);
     return 0;
   }
   FUN_006b8280((char *)pBVar1,(char *)pBVar1);
   RegCloseKey(local_8);
-  wsprintfA(local_124,&DAT_007c6ee4,(int)this + 0x28,PTR_s_SAVEGAME__0079b0cc);
+  wsprintfA(local_124,"%s%s",(int)this + 0x28,PTR_s_SAVEGAME__0079b0cc);
   CreateDirectoryA(local_124,(LPSECURITY_ATTRIBUTES)0x0);
-  LVar4 = RegOpenKeyA((HKEY)0x80000001,s_SOFTWARE_Ellipse_Studios_Submari_007ca46c,&local_8);
+  LVar4 = RegOpenKeyA((HKEY)0x80000001,"SOFTWARE\\Ellipse Studios\\Submarine Titans\\Version",&local_8);
   if (LVar4 != 0) {
 LAB_00572086:
     RegCloseKey(local_8);
     return 0;
   }
   local_10[1] = 4;
-  LVar4 = RegQueryValueExA(local_8,s_Version_007ca4f0,(LPDWORD)0x0,local_10,
+  LVar4 = RegQueryValueExA(local_8,"Version",(LPDWORD)0x0,local_10,
                            (LPBYTE)((int)this + 0x77d),local_10 + 1);
   if (LVar4 != 0) goto LAB_00572086;
   lpData = (uint *)((int)this + 0x779);
@@ -111,7 +111,7 @@ LAB_005720f0:
   }
   else if (uVar6 != 0xffff) goto LAB_005720f0;
   local_10[1] = 0x104;
-  LVar4 = RegQueryValueExA(local_8,s_Folder_007ca500,(LPDWORD)0x0,local_10,
+  LVar4 = RegQueryValueExA(local_8,"Folder",(LPDWORD)0x0,local_10,
                            (LPBYTE)((int)this + 0x645),local_10 + 1);
   if (LVar4 != 0) {
     RegCloseKey(local_8);
@@ -151,11 +151,11 @@ LAB_005720f0:
     puVar12 = puVar12 + 1;
   }
   local_10[1] = 0x40;
-  iVar8 = (*pcVar9)(local_8,s_LastPlayer_007ca510,0,local_10,(undefined4 *)((int)this + 0x785),
+  iVar8 = (*pcVar9)(local_8,"LastPlayer",0,local_10,(undefined4 *)((int)this + 0x785),
                     local_10 + 1);
   if (iVar8 == 0) {
     local_10[1] = 4;
-    iVar8 = (*pcVar9)(local_8,s_CharSet_007ca534,0,local_10,(int)this + 0x781,local_10 + 1);
+    iVar8 = (*pcVar9)(local_8,"CharSet",0,local_10,(int)this + 0x781,local_10 + 1);
     if (iVar8 != 0) {
       RegCloseKey(local_8);
       return 0;
@@ -166,12 +166,12 @@ LAB_005720f0:
       puVar12 = puVar12 + 1;
     }
     local_10[1] = 0x40;
-    iVar8 = (*pcVar9)(local_8,s_Server_007ca53c,0,local_10,(undefined4 *)((int)this + 0xdae),
+    iVar8 = (*pcVar9)(local_8,"Server",0,local_10,(undefined4 *)((int)this + 0xdae),
                       local_10 + 1);
     if (iVar8 == 0) {
       if (((uint)lpcbData & 2) != 0) {
         local_20 = 0x100;
-        iVar8 = (*pcVar9)(local_8,s_Editor_007ca51c,0,local_10,&DAT_008071f8,&local_20);
+        iVar8 = (*pcVar9)(local_8,"Editor",0,local_10,&DAT_008071f8,&local_20);
         if (iVar8 != 0) {
           RegCloseKey(local_8);
           return 0;
@@ -179,7 +179,7 @@ LAB_005720f0:
       }
       if (((uint)lpcbData & 1) != 0) {
         lpcbData = (LPDWORD)0x5;
-        iVar8 = (*pcVar9)(local_8,s_CDAudioDrive_007ca524,0,local_10,(int)this + 0x640,&lpcbData);
+        iVar8 = (*pcVar9)(local_8,"CDAudioDrive",0,local_10,(int)this + 0x640,&lpcbData);
         if (iVar8 != 0) {
           RegCloseKey(local_8);
           return 0;

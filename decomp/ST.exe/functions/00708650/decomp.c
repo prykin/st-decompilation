@@ -86,11 +86,11 @@ int __fastcall FUN_00708650(undefined4 *param_1)
           iVar7 = -1;
         }
         else {
-          SubmarineTitans::Recovered::HiddenThis::AnonReceiver_006F31D0::FUN_006f31d0
+          SubmarineTitans::Recovered::HiddenThis::AnonReceiver_006F31D0::sub_006F31D0
                     ((AnonReceiver_006F31D0 *)param_1,uVar8,0,0xffffffff,1);
           iVar7 = 1;
         }
-        SubmarineTitans::Recovered::HiddenThis::AnonReceiver_006F31D0::FUN_006f31d0
+        SubmarineTitans::Recovered::HiddenThis::AnonReceiver_006F31D0::sub_006F31D0
                   ((AnonReceiver_006F31D0 *)param_1,uVar8,iVar7,0xffffffff,1);
         *puVar3 = *puVar3 & 0xffffff7f;
         iVar4 = local_3c;
@@ -150,14 +150,14 @@ int __fastcall FUN_00708650(undefined4 *param_1)
             }
             if (local_78 != 0) {
               if ((uVar5 & 2) == 0) {
-                SubmarineTitans::Recovered::HiddenThis::AnonReceiver_006F31D0::FUN_006f31d0
+                SubmarineTitans::Recovered::HiddenThis::AnonReceiver_006F31D0::sub_006F31D0
                           ((AnonReceiver_006F31D0 *)param_1,local_5c,-1,0xffffffff,0);
                 *puVar3 = **(uint **)(iVar4 + 100 + param_1[0xcc]) & 0xffffff7d | 1;
               }
               else {
-                SubmarineTitans::Recovered::HiddenThis::AnonReceiver_006F31D0::FUN_006f31d0
+                SubmarineTitans::Recovered::HiddenThis::AnonReceiver_006F31D0::sub_006F31D0
                           ((AnonReceiver_006F31D0 *)param_1,local_5c,0,0xffffffff,0);
-                SubmarineTitans::Recovered::HiddenThis::AnonReceiver_006F31D0::FUN_006f31d0
+                SubmarineTitans::Recovered::HiddenThis::AnonReceiver_006F31D0::sub_006F31D0
                           ((AnonReceiver_006F31D0 *)param_1,local_5c,1,0xffffffff,0);
                 *puVar3 = **(uint **)(iVar4 + 100 + param_1[0xcc]) & 0xffffff7d | 1;
               }

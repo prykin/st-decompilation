@@ -42,12 +42,12 @@ AiTactClassTy::PrepareToSave(AiTactClassTy *this,AnonShape_0068EB30_4F4B480A *pa
     return 0;
   }
   g_currentExceptionFrame = local_4c.previous;
-  iVar6 = ReportDebugMessage(s_E____titans_ai_ai_tact_cpp_007d56e0,0x1a2,0,iVar4,&DAT_007a4ccc,
-                             s_AiTactClassTy__PrepareToSave_007d5730);
+  iVar6 = ReportDebugMessage("E:\\__titans\\ai\\ai_tact.cpp",0x1a2,0,iVar4,"%s",
+                             "AiTactClassTy::PrepareToSave");
   if (iVar6 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  RaiseInternalException(iVar4,0,s_E____titans_ai_ai_tact_cpp_007d56e0,0x1a3);
+  RaiseInternalException(iVar4,0,"E:\\__titans\\ai\\ai_tact.cpp",0x1a3);
   return iVar4;
 }
 

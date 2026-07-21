@@ -16,8 +16,6 @@ void __thiscall STBoatC::_CheckDefenceShots(STBoatC *this,int param_1)
   int iVar4;
   int iVar5;
   uint index;
-  /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-  int *unaff_EDI;
   uint *puVar6;
   InternalExceptionFrame local_68;
   undefined4 local_24;
@@ -37,12 +35,12 @@ void __thiscall STBoatC::_CheckDefenceShots(STBoatC *this,int param_1)
   pSVar2 = local_10;
   if (iVar3 != 0) {
     g_currentExceptionFrame = local_68.previous;
-    iVar4 = ReportDebugMessage(s_E____titans_wlad_To_boat_cpp_007a9d3c,0x4bb4,0,iVar3,&DAT_007a4ccc,
-                               s_STBoatC___CheckDefenceShots_007aba00);
+    iVar4 = ReportDebugMessage("E:\\__titans\\wlad\\To_boat.cpp",0x4bb4,0,iVar3,"%s",
+                               "STBoatC::_CheckDefenceShots");
     if (iVar4 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    RaiseInternalException(iVar3,0,s_E____titans_wlad_To_boat_cpp_007a9d3c,0x4bb5);
+    RaiseInternalException(iVar3,0,"E:\\__titans\\wlad\\To_boat.cpp",0x4bb5);
     return;
   }
   array = (DArrayTy *)local_10->field_047B;
@@ -60,14 +58,14 @@ void __thiscall STBoatC::_CheckDefenceShots(STBoatC *this,int param_1)
           this_00 = STAllPlayersC::GetObjPtr(g_sTAllPlayers_007FA174,(char)local_24,local_20,CASE_1)
           ;
           if (this_00 != (STGameObjC *)0x0) {
-            iVar3 = (*this_00->vtable[1].vfunc_24)();
+            /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+            iVar3 = (**(code **)&this_00->vtable[1].field_0x28)();
             if (iVar3 == 1) {
-              /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-              iVar3 = (*this_00->vtable[1].MoveStep)(this_00,unaff_EDI);
+              /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+              iVar3 = (**(code **)&this_00->vtable[1].field_0x20)();
               if (iVar3 == 1) {
-                /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-                unaff_EDI = *(int **)&pSVar2->field_0x24;
-                iVar3 = (*this_00->vtable[1].vfunc_20)();
+                /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+                iVar3 = (**(code **)&this_00->vtable[1].field_0x24)(pSVar2->field_0024);
                 if (iVar3 == 1) {
                   thunk_FUN_00416270(this_00,&local_a,(int *)&local_8,(int *)&local_6);
                   iVar3 = (int)pSVar2->field_0041 - (int)local_a;

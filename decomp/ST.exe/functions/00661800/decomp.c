@@ -29,11 +29,11 @@ int __fastcall FUN_00661800(AnonShape_0065DA10_8B0AA883 *param_1,undefined4 para
         this = STAllPlayersC::GetObjPtr
                          (g_sTAllPlayers_007FA174,param_1->field_0024,
                           CONCAT22((short)((uint)puVar1 >> 0x10),*puVar1),CASE_1);
-        if ((((this != (STGameObjC *)0x0) && (iVar2 = (*this->vtable->vfunc_2C)(), 0x31 < iVar2)) &&
-            (iVar2 < 0x74)) &&
+        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+        if ((((this != (STGameObjC *)0x0) &&
+             (iVar2 = (**(code **)&this->vtable->field_0x2c)(), 0x31 < iVar2)) && (iVar2 < 0x74)) &&
            ((*(short *)&param_1->field_0x39 != 3 &&
-            ((*(int *)((int)&this[1].field_018D + 3) == 5 ||
-             (iVar2 = thunk_FUN_004c93e0(this,5), 0 < iVar2)))))) {
+            ((this->field_0361 == 5 || (iVar2 = thunk_FUN_004c93e0(this,5), 0 < iVar2)))))) {
           local_8 = local_8 + 1;
         }
         uVar3 = uVar3 + 1;

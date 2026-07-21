@@ -29,10 +29,10 @@ void __thiscall HelpPanelTy::LinkAct(HelpPanelTy *this,int param_1,int param_2)
   iVar5 = Library::MSVCRT::__setjmp3(local_54.jumpBuffer,0);
   if (iVar5 != 0) {
     g_currentExceptionFrame = local_54.previous;
-    iVar8 = ReportDebugMessage(s_E____titans_Andrey_helppan_cpp_007c383c,0x350,0,iVar5,&DAT_007a4ccc
-                               ,s_HelpPanelTy__LinkAct_007c3b20);
+    iVar8 = ReportDebugMessage("E:\\__titans\\Andrey\\helppan.cpp",0x350,0,iVar5,"%s"
+                               ,"HelpPanelTy::LinkAct");
     if (iVar8 == 0) {
-      RaiseInternalException(iVar5,0,s_E____titans_Andrey_helppan_cpp_007c383c,0x350);
+      RaiseInternalException(iVar5,0,"E:\\__titans\\Andrey\\helppan.cpp",0x350);
       return;
     }
     STDebugBreak(); /* noreturn in standalone pseudocode */

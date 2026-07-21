@@ -10,7 +10,7 @@
 DumpClassC * __thiscall DumpClassC::DumpClassC(DumpClassC *this)
 
 {
-  STGroupBoatC::sub_006E5FB0((STGroupBoatC *)this);
+  sub_006E5FB0(this);
   this->vtable = &DumpClassCVTable;
   return this;
 }

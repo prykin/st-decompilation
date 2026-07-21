@@ -38,12 +38,12 @@ HelpPanelTy::DrawWeapon
   iVar2 = Library::MSVCRT::__setjmp3(local_6c.jumpBuffer,0);
   if (iVar2 != 0) {
     g_currentExceptionFrame = local_6c.previous;
-    iVar7 = ReportDebugMessage(s_E____titans_Andrey_helppan_cpp_007c383c,0x412,0,iVar2,&DAT_007a4ccc
-                               ,s_HelpPanelTy__DrawWeapon_007c3ba4);
+    iVar7 = ReportDebugMessage("E:\\__titans\\Andrey\\helppan.cpp",0x412,0,iVar2,"%s"
+                               ,"HelpPanelTy::DrawWeapon");
     if (iVar7 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    RaiseInternalException(iVar2,0,s_E____titans_Andrey_helppan_cpp_007c383c,0x412);
+    RaiseInternalException(iVar2,0,"E:\\__titans\\Andrey\\helppan.cpp",0x412);
     return 0;
   }
   if (param_3 != 0) {
@@ -65,13 +65,13 @@ HelpPanelTy::DrawWeapon
         pHVar10 = HINSTANCE_00807618;
         UVar5 = thunk_FUN_00524fe0(GVar9);
         pcVar6 = LoadResourceString(UVar5,pHVar10);
-        wsprintfA((LPSTR)&DAT_0080f33a,&DAT_007a4ccc,pcVar6);
+        wsprintfA((LPSTR)&DAT_0080f33a,"%s",pcVar6);
       }
       else {
         pHVar10 = HINSTANCE_00807618;
         UVar5 = thunk_FUN_00524fe0(GVar9);
         pcVar6 = LoadResourceString(UVar5,pHVar10);
-        wsprintfA((LPSTR)&DAT_0080f33a,s__s___d__007c3bc0,pcVar6,param_4);
+        wsprintfA((LPSTR)&DAT_0080f33a,"%s (%d)",pcVar6,param_4);
       }
       ccFntTy::WrStr(local_8->field_01E0,&DAT_0080f33a,1,-1,(DAT_0080874e != '\x03') - 1 & 5);
       DibPut((AnonShape_006B5B10_E0D06CF1 *)local_8->field_0218,

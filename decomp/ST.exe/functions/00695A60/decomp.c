@@ -51,12 +51,12 @@ CGenerate::CteateField
   }
   else {
     g_currentExceptionFrame = local_50.previous;
-    iVar6 = ReportDebugMessage(s_E____titans_Maps_gen_map_cpp_007d85fc,0x330,0,iVar3,&DAT_007a4ccc,
-                               s_CGenerate__CteateField_007d8620);
+    iVar6 = ReportDebugMessage("E:\\__titans\\Maps\\gen_map.cpp",0x330,0,iVar3,"%s",
+                               "CGenerate::CteateField");
     if (iVar6 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    RaiseInternalException(iVar3,0,s_E____titans_Maps_gen_map_cpp_007d85fc,0x332);
+    RaiseInternalException(iVar3,0,"E:\\__titans\\Maps\\gen_map.cpp",0x332);
     uVar5 = 0xffff;
   }
   return uVar5;

@@ -14,11 +14,11 @@ int FUN_006767d0(void)
   g_currentExceptionFrame = &local_4c;
   iVar1 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
   if (iVar1 == 0) {
-    wsprintfA((LPSTR)local_150,s__s_s_s__s_007ca1ec,&DAT_00807680,PTR_s_SAVEGAME__0079d6c0,
+    wsprintfA((LPSTR)local_150,"%s%s%s\\%s",&DAT_00807680,PTR_s_SAVEGAME__0079d6c0,
               &DAT_00807ddd,PTR_s_PL_LOG_0079d6c4);
     this = (cMf32 *)Library::Ourlib::MF32INT::FUN_006f0ec0(0x345,local_150,2,0,0);
     local_8 = this;
-    wsprintfA((LPSTR)local_150,s__s_d_02d_007d2de8,PTR_DAT_0079d6c8,(uint)DAT_0080874e,DAT_0080c52a)
+    wsprintfA((LPSTR)local_150,"%s%d%02d",PTR_DAT_0079d6c8,(uint)DAT_0080874e,DAT_0080c52a)
     ;
     cMf32::RecPut(this,0xc,(char *)local_150,(byte *)&DAT_0080c522,0x27f0,(undefined4 *)0x0,'\0',
                   (uint *)0x0);

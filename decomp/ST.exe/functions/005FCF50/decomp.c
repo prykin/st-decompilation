@@ -19,10 +19,10 @@ FUN_005fcf50(int param_1,undefined4 param_2,int param_3,undefined4 *param_4,char
   *param_7 = 0;
   if ((param_3 == 0xe) || (param_3 == 0xc)) {
     if (param_1 == 1) {
-      pcVar4 = s_cont1_007ce4e4;
+      pcVar4 = "cont1";
     }
     else if (param_1 == 2) {
-      pcVar4 = s_cont2_007ce4dc;
+      pcVar4 = "cont2";
     }
     else {
       if (param_1 != 3) {

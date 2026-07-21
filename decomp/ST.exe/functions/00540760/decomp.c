@@ -34,12 +34,12 @@ DibPut(AnonShape_006B5B10_E0D06CF1 *param_1,int param_2,int param_3,char param_4
       return;
     }
     g_currentExceptionFrame = local_48.previous;
-    iVar2 = ReportDebugMessage(s_E____titans_Andrey_support_cpp_007c7b2c,0x4f,0,errorCode,
-                               &DAT_007a4ccc,s_DibPut_007c7b7c);
+    iVar2 = ReportDebugMessage("E:\\__titans\\Andrey\\support.cpp",0x4f,0,errorCode,
+                               "%s","DibPut");
     if (iVar2 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    RaiseInternalException(errorCode,0,s_E____titans_Andrey_support_cpp_007c7b2c,0x4f);
+    RaiseInternalException(errorCode,0,"E:\\__titans\\Andrey\\support.cpp",0x4f);
   }
   return;
 }

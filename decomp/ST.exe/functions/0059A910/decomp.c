@@ -174,12 +174,12 @@ void __thiscall FSGSTy::PaintInfo(FSGSTy *this)
     return;
   }
   g_currentExceptionFrame = local_4c.previous;
-  iVar9 = ReportDebugMessage(s_E____titans_Start_fsgs_obj_cpp_007cbf70,0x46c,0,iVar4,&DAT_007a4ccc,
-                             s_FSGSTy__PaintInfo_007cc24c);
+  iVar9 = ReportDebugMessage("E:\\__titans\\Start\\fsgs_obj.cpp",0x46c,0,iVar4,"%s",
+                             "FSGSTy::PaintInfo");
   if (iVar9 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  RaiseInternalException(iVar4,0,s_E____titans_Start_fsgs_obj_cpp_007cbf70,0x46c);
+  RaiseInternalException(iVar4,0,"E:\\__titans\\Start\\fsgs_obj.cpp",0x46c);
   return;
 }
 

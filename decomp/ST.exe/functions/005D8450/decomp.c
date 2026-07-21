@@ -96,12 +96,12 @@ void __thiscall SIDTy::CreateCtrls(SIDTy *this)
   this_00 = local_8;
   if (iVar3 != 0) {
     g_currentExceptionFrame = local_50.previous;
-    iVar6 = ReportDebugMessage(s_E____titans_Start_sid_obj_cpp_007cd5c4,0x104,0,iVar3,&DAT_007a4ccc,
-                               s_SIDTy__CreateCtrls_007cd664);
+    iVar6 = ReportDebugMessage("E:\\__titans\\Start\\sid_obj.cpp",0x104,0,iVar3,"%s",
+                               "SIDTy::CreateCtrls");
     if (iVar6 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    RaiseInternalException(iVar3,0,s_E____titans_Start_sid_obj_cpp_007cd5c4,0x104);
+    RaiseInternalException(iVar3,0,"E:\\__titans\\Start\\sid_obj.cpp",0x104);
     return;
   }
   if (local_8->field_1CC4 != (HANDLE)0x0) {

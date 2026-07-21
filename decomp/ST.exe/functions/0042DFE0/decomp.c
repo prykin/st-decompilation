@@ -79,7 +79,7 @@ uint __thiscall STAllPlayersC::PrepareToCmd(STAllPlayersC *this,undefined4 *para
           DArrayGetElement(array,uVar5,&param_2);
           if (((short)param_2 != -1) &&
              (pSVar6 = GetObjPtr(this,DAT_0080874d,(uint)param_2,CASE_1),
-             ((uint)pSVar6[1].vtable & 4) == 0)) {
+             (*(byte *)&pSVar6->field_01D1 & 4) == 0)) {
             local_c = 1;
             local_10 = param_2;
             break;
@@ -90,8 +90,8 @@ uint __thiscall STAllPlayersC::PrepareToCmd(STAllPlayersC *this,undefined4 *para
     }
   }
   else {
-    iVar4 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0x58f,0,0,&DAT_007a4ccc,
-                               s_STAllPlayersC__PrepareToCmd_inva_007a6550);
+    iVar4 = ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0x58f,0,0,"%s",
+                               "STAllPlayersC::PrepareToCmd invalid panel number");
     if (iVar4 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }

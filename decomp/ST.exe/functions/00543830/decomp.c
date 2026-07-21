@@ -21,12 +21,12 @@ void __thiscall CursorClassTy::DoneCursor(CursorClassTy *this)
   errorCode = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
   pCVar2 = local_8;
   if (errorCode == 0) {
-    if (-1 < (int)local_8->field_04D6) {
+    if (-1 < local_8->field_04D6) {
       FUN_006b3bb0(DAT_008075a8,local_8->field_04D6);
     }
-    pCVar2->field_04D6 = 0xffffffff;
-    if (pCVar2->field_04D2 != 0) {
-      FreeAndNull((void **)&pCVar2->field_04D2);
+    pCVar2->field_04D6 = -1;
+    if (pCVar2->field_04D2 != (AnonPointee_CursorClassTy_04D2 *)0x0) {
+      FreeAndNull(&pCVar2->field_04D2);
     }
     pCVar2->field_04E3 = 0;
     pCVar2->field_04E7 = 0;
@@ -45,12 +45,12 @@ void __thiscall CursorClassTy::DoneCursor(CursorClassTy *this)
     return;
   }
   g_currentExceptionFrame = local_4c.previous;
-  iVar3 = ReportDebugMessage(s_E____titans_Andrey_to_cursor_cpp_007c7d60,0x7d,0,errorCode,
-                             &DAT_007a4ccc,s_CursorClassTy__DoneCursor_007c7de0);
+  iVar3 = ReportDebugMessage("E:\\__titans\\Andrey\\to_cursor.cpp",0x7d,0,errorCode,
+                             "%s","CursorClassTy::DoneCursor");
   if (iVar3 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  RaiseInternalException(errorCode,0,s_E____titans_Andrey_to_cursor_cpp_007c7d60,0x7e);
+  RaiseInternalException(errorCode,0,"E:\\__titans\\Andrey\\to_cursor.cpp",0x7e);
   return;
 }
 

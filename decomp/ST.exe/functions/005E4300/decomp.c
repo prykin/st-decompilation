@@ -95,12 +95,12 @@ MTaskTy::PaintBut(MTaskTy *this,int *param_1,UINT param_2,int param_3,int param_
       return;
     }
     g_currentExceptionFrame = local_5c.previous;
-    iVar10 = ReportDebugMessage(s_E____titans_Start_task_obj_cpp_007cd994,0x4b9,0,iVar4,
-                                &DAT_007a4ccc,s_MTaskTy__PaintBut_007cdc8c);
+    iVar10 = ReportDebugMessage("E:\\__titans\\Start\\task_obj.cpp",0x4b9,0,iVar4,
+                                "%s","MTaskTy::PaintBut");
     if (iVar10 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    RaiseInternalException(iVar4,0,s_E____titans_Start_task_obj_cpp_007cd994,0x4b9);
+    RaiseInternalException(iVar4,0,"E:\\__titans\\Start\\task_obj.cpp",0x4b9);
   }
   return;
 }

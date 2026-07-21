@@ -41,8 +41,8 @@ HoloTy::CalcHologram
   iVar2 = Library::MSVCRT::__setjmp3(local_78.jumpBuffer,0);
   if (iVar2 != 0) {
     g_currentExceptionFrame = local_78.previous;
-    iVar2 = ReportDebugMessage(s_E____titans_Start_hologram_cpp_007cc674,99,0,iVar2,&DAT_007a4ccc,
-                               s_HoloTy__CalcHologram_007cc6b4);
+    iVar2 = ReportDebugMessage("E:\\__titans\\Start\\hologram.cpp",99,0,iVar2,"%s",
+                               "HoloTy::CalcHologram");
     if (iVar2 == 0) {
       return (undefined4 *)0x0;
     }

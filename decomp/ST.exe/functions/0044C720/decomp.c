@@ -47,19 +47,19 @@ STAllPlayersC::GetScrObjList
   if (iVar6 != 0) {
     g_currentExceptionFrame = local_68.previous;
     if (iVar6 != -0x5001fff7) {
-      iVar12 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0x32ad,0,0,&DAT_007a4ccc,
-                                  s_STAllPlayersC__GetScrObjList_007a8ac4);
+      iVar12 = ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0x32ad,0,0,"%s",
+                                  "STAllPlayersC::GetScrObjList");
       if (iVar12 != 0) {
         STDebugBreak(); /* noreturn in standalone pseudocode */
       }
-      RaiseInternalException(iVar6,0,s_E____titans_wlad_to_allpl_cpp_007a6004,0x32ae);
+      RaiseInternalException(iVar6,0,"E:\\__titans\\wlad\\to_allpl.cpp",0x32ae);
     }
     goto LAB_0044cb54;
   }
   if (param_1 < 1) {
 LAB_0044cada:
-    iVar6 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0x32a9,0,0,&DAT_007a4ccc,
-                               s_STAllPlayersC__GetScrObjList_inv_007a8ae8);
+    iVar6 = ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0x32a9,0,0,"%s",
+                               "STAllPlayersC::GetScrObjList invalid mode");
     if (iVar6 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
@@ -71,7 +71,7 @@ LAB_0044cada:
                 (PTR_00807598,param_2,param_3,param_4,param_5,&local_c,&local_8);
       if (local_8 == 0) {
         RaiseInternalException
-                  (-0x5001fff7,g_overwriteContext_007ED77C,s_E____titans_wlad_to_allpl_cpp_007a6004,
+                  (-0x5001fff7,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_allpl.cpp",
                    0x3268);
       }
       pDVar7 = (DArrayTy *)Library::DKW::TBL::FUN_006ae290((uint *)0x0,0,4,1);
@@ -147,7 +147,7 @@ LAB_0044c94c:
       FUN_006a5e90(local_c);
       if (!bVar5) {
         RaiseInternalException
-                  (-0x5001fff7,g_overwriteContext_007ED77C,s_E____titans_wlad_to_allpl_cpp_007a6004,
+                  (-0x5001fff7,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_allpl.cpp",
                    0x327d);
       }
       iVar6 = pDVar7->count * 4 + 3;
@@ -164,7 +164,7 @@ LAB_0044c94c:
                 (PTR_00807598,param_2,param_3,param_4,param_5,&local_c,&local_8);
       if (local_8 == 0) {
         RaiseInternalException
-                  (-0x5001fff7,g_overwriteContext_007ED77C,s_E____titans_wlad_to_allpl_cpp_007a6004,
+                  (-0x5001fff7,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_allpl.cpp",
                    0x3291);
       }
       pDVar7 = (DArrayTy *)Library::DKW::TBL::FUN_006ae290((uint *)0x0,0,2,1);
@@ -187,7 +187,7 @@ LAB_0044c94c:
       FreeAndNull(&local_c);
       if (!bVar5) {
         RaiseInternalException
-                  (-0x5001fff7,g_overwriteContext_007ED77C,s_E____titans_wlad_to_allpl_cpp_007a6004,
+                  (-0x5001fff7,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_allpl.cpp",
                    0x32a1);
       }
       iVar6 = pDVar7->count * 2 + 3;

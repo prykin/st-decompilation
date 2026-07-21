@@ -10,27 +10,27 @@ void __fastcall FUN_0041f3b0(STSprGameObjC *param_1)
   /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
   int *unaff_EDI;
 
-  iVar2 = *(int *)&param_1->field_0x221;
+  iVar2 = param_1->field_0221;
   if (iVar2 == -1) {
     return;
   }
   if (iVar2 == 1) {
-    *(undefined4 *)&param_1->field_0x221 = 0;
+    param_1->field_0221 = 0;
     return;
   }
   if (iVar2 == 2) {
     if ((*(byte *)&PTR_00802a38->field_00E4 & 1) != 0) {
       return;
     }
-    if (*(int *)&param_1->field_0x225 == 0) {
+    if (param_1->field_0225 == 0) {
       /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
       STSprGameObjC::LoadLifeFrame(param_1,unaff_EDI);
       iVar2 = thunk_FUN_004acd30(&param_1->field_01D5,'\x01');
-      *(int *)&param_1->field_0x225 = iVar2 + -1;
+      param_1->field_0225 = iVar2 + -1;
     }
     uVar3 = (*param_1->vtable->vfunc_7C)();
     if (1 < (int)uVar3) {
-      uVar3 = (int)(uVar3 * *(int *)&param_1->field_0x225) / 100;
+      uVar3 = (int)(uVar3 * param_1->field_0225) / 100;
     }
     if (uVar3 == 0) {
       uVar3 = 1;
@@ -43,7 +43,7 @@ void __fastcall FUN_0041f3b0(STSprGameObjC *param_1)
     }
     iVar2 = param_1->field_0020;
     if ((((iVar2 == 0x14) || (iVar2 == 1000)) || (iVar2 == 0x172)) || (iVar2 == 0x1a4)) {
-      SVar5 = (*param_1->vtable->vfunc_2C)();
+      SVar5 = (*param_1->vtable->slot_2C)(param_1);
     }
     else {
       if (iVar2 != 0x3e9) goto LAB_0041f51a;
@@ -53,7 +53,7 @@ void __fastcall FUN_0041f3b0(STSprGameObjC *param_1)
        ((param_1->field_0020 != 0x172 && (param_1->field_0020 != 0x1a4)))) {
       uVar3 = (*param_1->vtable->vfunc_C4)();
       if (1 < (int)uVar3) {
-        uVar3 = (int)(uVar3 * *(int *)&param_1->field_0x225) / 100;
+        uVar3 = (int)(uVar3 * param_1->field_0225) / 100;
       }
       if (uVar3 == 0) {
         uVar3 = 1;
@@ -65,7 +65,7 @@ void __fastcall FUN_0041f3b0(STSprGameObjC *param_1)
       }
     }
 LAB_0041f51a:
-    *(int *)&param_1->field_0x221 = *(int *)&param_1->field_0x221 + -1;
+    param_1->field_0221 = param_1->field_0221 + -1;
     return;
   }
   if (iVar2 != 0) {
@@ -76,7 +76,7 @@ LAB_0041f51a:
   STT3DSprC::ShowCurFase((STT3DSprC *)puVar1,'\x01');
   iVar2 = param_1->field_0020;
   if (((iVar2 == 0x14) || (iVar2 == 1000)) || ((iVar2 == 0x172 || (iVar2 == 0x1a4)))) {
-    SVar5 = (*param_1->vtable->vfunc_2C)();
+    SVar5 = (*param_1->vtable->slot_2C)(param_1);
   }
   else {
     if (iVar2 != 0x3e9) goto LAB_0041f5a0;
@@ -87,7 +87,7 @@ LAB_0041f51a:
     STT3DSprC::ShowCurFase((STT3DSprC *)puVar1,'\x02');
   }
 LAB_0041f5a0:
-  *(int *)&param_1->field_0x221 = *(int *)&param_1->field_0x221 + -1;
+  param_1->field_0221 = param_1->field_0221 + -1;
   return;
 }
 

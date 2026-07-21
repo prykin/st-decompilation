@@ -45,12 +45,12 @@ void __thiscall CPanelTy::PaintNameResSI(CPanelTy *this)
     return;
   }
   g_currentExceptionFrame = local_4c.previous;
-  iVar7 = ReportDebugMessage(s_E____titans_Andrey_cpanel4_cpp_007c2700,0x84,0,iVar3,&DAT_007a4ccc,
-                             s_CPanelTy__PaintNameResSI_007c27b0);
+  iVar7 = ReportDebugMessage("E:\\__titans\\Andrey\\cpanel4.cpp",0x84,0,iVar3,"%s",
+                             "CPanelTy::PaintNameResSI");
   if (iVar7 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  RaiseInternalException(iVar3,0,s_E____titans_Andrey_cpanel4_cpp_007c2700,0x84);
+  RaiseInternalException(iVar3,0,"E:\\__titans\\Andrey\\cpanel4.cpp",0x84);
   return;
 }
 

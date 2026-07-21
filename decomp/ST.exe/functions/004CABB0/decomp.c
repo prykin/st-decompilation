@@ -34,10 +34,10 @@ int __thiscall TLOBaseTy::RotateSpr(TLOBaseTy *this,int param_1)
   this_00 = local_8;
   if (iVar4 != 0) {
     g_currentExceptionFrame = local_50.previous;
-    iVar5 = ReportDebugMessage(s_E____titans_Artem_TLO_bspr_cpp_007ad4d0,0x1a7,0,iVar4,&DAT_007a4ccc
-                               ,s_TLOBaseTy__RotateSpr_error_007ad520);
+    iVar5 = ReportDebugMessage("E:\\__titans\\Artem\\TLO_bspr.cpp",0x1a7,0,iVar4,"%s"
+                               ,"TLOBaseTy::RotateSpr error");
     if (iVar5 == 0) {
-      RaiseInternalException(iVar4,0,s_E____titans_Artem_TLO_bspr_cpp_007ad4d0,0x1a8);
+      RaiseInternalException(iVar4,0,"E:\\__titans\\Artem\\TLO_bspr.cpp",0x1a8);
       return iVar4;
     }
     STDebugBreak(); /* noreturn in standalone pseudocode */
@@ -107,7 +107,7 @@ LAB_004cadb1:
   if (this_00->field_05F7 != 0) {
     thunk_FUN_004ca7b0(this_00,0xc,param_1);
   }
-  if (this_00->field_05FF != 0) {
+  if (this_00->field_05FF != (STT3DSprC *)0x0) {
     thunk_FUN_004cbfb0((int)this_00);
   }
   switch(this_00->field_05AC) {

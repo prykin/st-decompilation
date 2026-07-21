@@ -51,10 +51,10 @@ void __thiscall SIDTy::PrepFiles(SIDTy *this)
   this_02 = local_c;
   if (iVar4 != 0) {
     g_currentExceptionFrame = local_58.previous;
-    iVar11 = ReportDebugMessage(s_E____titans_Start_sid_obj_cpp_007cd5c4,0x167,0,iVar4,&DAT_007a4ccc
-                                ,s_SIDTy__PrepFiles_007cd694);
+    iVar11 = ReportDebugMessage("E:\\__titans\\Start\\sid_obj.cpp",0x167,0,iVar4,"%s"
+                                ,"SIDTy::PrepFiles");
     if (iVar11 == 0) {
-      RaiseInternalException(iVar4,0,s_E____titans_Start_sid_obj_cpp_007cd5c4,0x167);
+      RaiseInternalException(iVar4,0,"E:\\__titans\\Start\\sid_obj.cpp",0x167);
       return;
     }
     STDebugBreak(); /* noreturn in standalone pseudocode */
@@ -73,7 +73,7 @@ void __thiscall SIDTy::PrepFiles(SIDTy *this)
   FUN_006e6080(this_02,2,this_02->field_1AF5,(undefined4 *)&this_02->field_0x1d);
   FUN_006b4170((AnonShape_006B5B10_E0D06CF1 *)this_02->field_1CB8,0,3,0x15,0x142,0x62,0xff);
   FUN_006b35d0(DAT_008075a8,this_02->field_1CB4);
-  wsprintfA(&this_02->field_1CD4,&DAT_007c6ee4,&DAT_00807680,PTR_s_SAVEGAME__0079c19c);
+  wsprintfA(&this_02->field_1CD4,"%s%s",&DAT_00807680,PTR_s_SAVEGAME__0079c19c);
   uVar9 = 0xffffffff;
   pcVar12 = &DAT_007cc8bc;
   do {
@@ -161,7 +161,7 @@ LAB_005d8dbf:
               pCVar13 = pCVar13 + 1;
             } while (cVar1 != '\0');
             if (~uVar9 - 1 < 0x40) {
-              wsprintfA(&this_02->field_1CD4,s__s_s_s__s_007ca1ec,&DAT_00807680,
+              wsprintfA(&this_02->field_1CD4,"%s%s%s\\%s",&DAT_00807680,
                         PTR_s_SAVEGAME__0079c19c,local_21c.cFileName,PTR_s_PL_LOG_0079c1a0);
               local_9c.previous = g_currentExceptionFrame;
               g_currentExceptionFrame = &local_9c;

@@ -33,12 +33,12 @@ undefined4 __thiscall STTorpC::SetDangerous(STTorpC *this,undefined4 param_1,uin
     return 0;
   }
   g_currentExceptionFrame = local_54.previous;
-  iVar3 = ReportDebugMessage(s_E____titans_nick_to_torp_cpp_007d25c0,0x486,0,errorCode,&DAT_007a4ccc
-                             ,s_STTorpC__SetDangerous_007d2600);
+  iVar3 = ReportDebugMessage("E:\\__titans\\nick\\to_torp.cpp",0x486,0,errorCode,"%s"
+                             ,"STTorpC::SetDangerous");
   if (iVar3 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  RaiseInternalException(errorCode,0,s_E____titans_nick_to_torp_cpp_007d25c0,0x487);
+  RaiseInternalException(errorCode,0,"E:\\__titans\\nick\\to_torp.cpp",0x487);
   return 0xffffffff;
 }
 

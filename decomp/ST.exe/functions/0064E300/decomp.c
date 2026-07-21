@@ -33,7 +33,7 @@ uint FUN_0064e300(int param_1,char *param_2,undefined2 param_3,char param_4,unde
     g_currentExceptionFrame = local_64.previous;
     thunk_FUN_006686c0((int *)&local_8);
     thunk_FUN_006686c0((int *)&local_c);
-    RaiseInternalException(uVar1,0,s_E____titans_ai_ai_event_cpp_007d2a34,0x1b8);
+    RaiseInternalException(uVar1,0,"E:\\__titans\\ai\\ai_event.cpp",0x1b8);
     return uVar1;
   }
   if (((int)local_10 < 0) || (bVar3 = local_10 == 8, 8 < (int)local_10)) {
@@ -56,7 +56,7 @@ uint FUN_0064e300(int param_1,char *param_2,undefined2 param_3,char param_4,unde
   thunk_FUN_006686c0((int *)&local_c);
   if (local_14 == (void *)0x0) {
     RaiseInternalException
-              (-0xab,g_overwriteContext_007ED77C,s_E____titans_ai_ai_event_cpp_007d2a34,0x1b4);
+              (-0xab,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_event.cpp",0x1b4);
     uVar1 = local_20[2];
   }
   else {

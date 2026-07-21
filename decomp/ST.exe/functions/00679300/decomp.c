@@ -28,10 +28,10 @@ int __thiscall AiPlrClassTy::CloseTactByTitle(AiPlrClassTy *this,byte *param_1)
   pAVar3 = local_8;
   if (iVar4 != 0) {
     g_currentExceptionFrame = local_80.previous;
-    iVar7 = ReportDebugMessage(s_E____titans_ai_ai_plr_cpp_007d2e4c,0xf1,0,iVar4,&DAT_007a4ccc,
-                               s_AiPlrClassTy__CloseTactByTitle_007d2eac);
+    iVar7 = ReportDebugMessage("E:\\__titans\\ai\\ai_plr.cpp",0xf1,0,iVar4,"%s",
+                               "AiPlrClassTy::CloseTactByTitle");
     if (iVar7 == 0) {
-      RaiseInternalException(iVar4,0,s_E____titans_ai_ai_plr_cpp_007d2e4c,0xf2);
+      RaiseInternalException(iVar4,0,"E:\\__titans\\ai\\ai_plr.cpp",0xf2);
       return iVar4;
     }
     STDebugBreak(); /* noreturn in standalone pseudocode */

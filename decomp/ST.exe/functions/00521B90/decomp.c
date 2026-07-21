@@ -43,26 +43,26 @@ void __thiscall IntercomPanelTy::DoneIntercomPanel(IntercomPanelTy *this)
     }
     pIVar2->field_01A0 = 0;
     g_intercomPanel_0080169C = (IntercomPanelTy *)0x0;
-    if ((uint *)pIVar2->field_0180 != (uint *)0x0) {
+    if (pIVar2->field_0180 != (ccFntTy *)0x0) {
       ccFntTy::operator(this_00,(uint *)pIVar2->field_0180);
-      pIVar2->field_0180 = 0;
+      pIVar2->field_0180 = (ccFntTy *)0x0;
     }
     if (pIVar2->field_0184 != (ushort *)0x0) {
       cMf32::RecMemFree(DAT_00806790,(uint *)&pIVar2->field_0184);
     }
-    if (pIVar2->field_019C != 0) {
-      cMf32::RecMemFree(DAT_00806790,&pIVar2->field_019C);
+    if (pIVar2->field_019C != (AnonPointee_IntercomPanelTy_019C *)0x0) {
+      cMf32::RecMemFree(DAT_00806790,(uint *)&pIVar2->field_019C);
     }
     g_currentExceptionFrame = local_4c.previous;
     return;
   }
   g_currentExceptionFrame = local_4c.previous;
-  iVar3 = ReportDebugMessage(s_E____titans_Andrey_intercom_cpp_007c401c,0x4a,0,errorCode,
-                             &DAT_007a4ccc,s_IntercomPanelTy__DoneIntercomPan_007c40b0);
+  iVar3 = ReportDebugMessage("E:\\__titans\\Andrey\\intercom.cpp",0x4a,0,errorCode,
+                             "%s","IntercomPanelTy::DoneIntercomPanel");
   if (iVar3 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  RaiseInternalException(errorCode,0,s_E____titans_Andrey_intercom_cpp_007c401c,0x4a);
+  RaiseInternalException(errorCode,0,"E:\\__titans\\Andrey\\intercom.cpp",0x4a);
   return;
 }
 

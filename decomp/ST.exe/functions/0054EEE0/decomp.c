@@ -89,7 +89,7 @@ STPlaySystemC::SetCtrlCmd
     puVar4 = Library::DKW::LIB::FUN_006aac10(iVar3 + 0x1b);
     puVar4[1] = *(undefined4 *)&local_8[2].field_0x36;
     *(undefined1 *)(puVar4 + 2) = param_1;
-    *(char *)((int)puVar4 + 9) = (char)*(undefined4 *)&PTR_00802a30->field_0x4ae;
+    *(char *)((int)puVar4 + 9) = (char)PTR_00802a30->field_04AE;
     *(uint *)((int)puVar4 + 10) = param_2;
     *(char *)((int)puVar4 + 0xe) = param_3;
     *(uint *)((int)puVar4 + 0xf) = uVar7;
@@ -141,12 +141,12 @@ STPlaySystemC::SetCtrlCmd
     return;
   }
   g_currentExceptionFrame = local_54.previous;
-  iVar5 = ReportDebugMessage(s_E____titans_Andrey_tplaysys_cpp_007c8430,0x55b,0,iVar3,&DAT_007a4ccc,
-                             s_STPlaySystemC__SetCtrlCmd_007c85bc);
+  iVar5 = ReportDebugMessage("E:\\__titans\\Andrey\\tplaysys.cpp",0x55b,0,iVar3,"%s",
+                             "STPlaySystemC::SetCtrlCmd");
   if (iVar5 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  RaiseInternalException(iVar3,0,s_E____titans_Andrey_tplaysys_cpp_007c8430,0x55d);
+  RaiseInternalException(iVar3,0,"E:\\__titans\\Andrey\\tplaysys.cpp",0x55d);
   return;
 }
 

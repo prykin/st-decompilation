@@ -10,6 +10,6 @@
 dword __thiscall STBoatC::FUN_004952c0(STBoatC *this)
 
 {
-  return (uint)(0 < (int)this->field_073A);
+  return (uint)(0 < this->field_073A);
 }
 

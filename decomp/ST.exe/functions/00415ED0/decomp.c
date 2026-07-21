@@ -27,14 +27,14 @@ undefined4 __thiscall STJellyGunC::sub_00415ED0(STJellyGunC *this,undefined4 *pa
   puStack_10 = &LAB_0072d964;
   local_14 = ExceptionList;
   local_8 = 0;
-  if ((this->field_0068 == this->field_0064) && (0 < (int)this->field_0068)) {
+  if ((this->field_0068 == this->field_0064) && (0 < this->field_0068)) {
     return 0;
   }
-  if (10 < *(int *)&this->field_0x8f) {
+  if (10 < this->field_008F) {
     ExceptionList = &local_14;
     thunk_FUN_0041d8e0((int *)this);
   }
-  *(undefined4 *)&this->field_0x8f = 0xffffffff;
+  this->field_008F = -1;
   if (this->field_007A == 1) {
     *param_1 = 1;
     this->field_007A = 0;
@@ -54,9 +54,9 @@ undefined4 __thiscall STJellyGunC::sub_00415ED0(STJellyGunC *this,undefined4 *pa
   iVar4 = iVar4 + 2;
   iVar5 = this->field_0064;
   sVar6 = this->field_0034 +
-          (short)((((int)(short)this->field_003A - (int)(short)this->field_0034) * iVar4) / iVar5);
+          (short)((((int)this->field_003A - (int)this->field_0034) * iVar4) / iVar5);
   this->field_004E = sVar6;
-  sVar1 = (short)((((int)(short)this->field_003C - (int)(short)this->field_0036) * iVar4) / iVar5) +
+  sVar1 = (short)((((int)this->field_003C - (int)this->field_0036) * iVar4) / iVar5) +
           this->field_0036;
   this->field_0050 = sVar1;
   sVar2 = (short)((((int)this->field_003E - (int)this->field_0038) * iVar4) / iVar5) +
@@ -95,7 +95,7 @@ LAB_004160cd:
     *param_2 = 1;
   }
   if (this->field_0068 == this->field_0064) {
-    *(int *)&this->field_0x8f = *(int *)&this->field_0x8f + 1;
+    this->field_008F = this->field_008F + 1;
     ExceptionList = local_14;
     return 0;
   }

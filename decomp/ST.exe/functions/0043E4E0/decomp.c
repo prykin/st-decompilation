@@ -49,10 +49,10 @@ uint * STAllPlayersC::GetObjsList(char param_1)
     return puVar8;
   }
   g_currentExceptionFrame = local_58.previous;
-  iVar9 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0x1f8c,0,iVar7,&DAT_007a4ccc,
-                             s_STAllPlayersC__GetObjsList_007a7f74);
+  iVar9 = ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0x1f8c,0,iVar7,"%s",
+                             "STAllPlayersC::GetObjsList");
   if (iVar9 == 0) {
-    RaiseInternalException(iVar7,0,s_E____titans_wlad_to_allpl_cpp_007a6004,0x1f8d);
+    RaiseInternalException(iVar7,0,"E:\\__titans\\wlad\\to_allpl.cpp",0x1f8d);
     return (uint *)0x0;
   }
   STDebugBreak(); /* noreturn in standalone pseudocode */

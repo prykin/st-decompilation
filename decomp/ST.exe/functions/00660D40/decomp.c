@@ -61,8 +61,9 @@ void __fastcall FUN_00660d40(AnonShape_00660D40_E58DF1E6 *param_1)
               local_5c._4_2_ = SUB42(uVar5,0);
               if (local_10 != (AiPlrClassTy *)0x0) {
                 /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                local_5c._8_4_ = *(undefined4 *)&local_10->field_0x65c;
-                *(int *)&local_10->field_0x65c = local_5c._8_4_ + 1;
+                local_5c._8_4_ = local_10->field_065C;
+                /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+                local_10->field_065C = local_5c._8_4_ + 1;
               }
               /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
               local_5c._12_2_ = local_8->field_007D;

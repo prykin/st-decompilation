@@ -77,11 +77,10 @@ void __thiscall FSGSTy::LicCtrls(FSGSTy *this)
       FreeAndNull((void **)&this_00->field_1E92);
     }
     iVar7 = 1;
-    puVar10 = (undefined4 *)(this_00->field_005D + 0x28);
-    uVar3 = FUN_006b4fe0(this_00->field_005D);
-    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
+    puVar10 = (undefined4 *)&this_00->field_005D->field_0x28;
+    uVar3 = FUN_006b4fe0((int)this_00->field_005D);
     uVar4 = FUN_006b50c0(0x2c8 - this_00->field_1B4C,0x149,
-                         (uint)*(ushort *)(this_00->field_005D + 0xe),uVar3,puVar10,iVar7);
+                         (uint)*(ushort *)&this_00->field_005D->field_0xe,uVar3,puVar10,iVar7);
     *puVar8 = uVar4;
     ptVar5 = Library::DKW::DDX::FUN_006c4880(DAT_0080759c,0x22,0x72,0x2e1,0x14c,8);
     iVar7 = *puVar8;
@@ -171,12 +170,12 @@ void __thiscall FSGSTy::LicCtrls(FSGSTy *this)
     return;
   }
   g_currentExceptionFrame = local_4c.previous;
-  iVar6 = ReportDebugMessage(s_E____titans_Start_fsgs_obj_cpp_007cbf70,0x666,0,iVar7,&DAT_007a4ccc,
-                             s_FSGSTy__LicCtrls_007cc328);
+  iVar6 = ReportDebugMessage("E:\\__titans\\Start\\fsgs_obj.cpp",0x666,0,iVar7,"%s",
+                             "FSGSTy::LicCtrls");
   if (iVar6 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  RaiseInternalException(iVar7,0,s_E____titans_Start_fsgs_obj_cpp_007cbf70,0x666);
+  RaiseInternalException(iVar7,0,"E:\\__titans\\Start\\fsgs_obj.cpp",0x666);
   return;
 }
 

@@ -39,17 +39,17 @@ _EnumDest(byte *param_1,char param_2,short param_3,short param_4,short param_5,s
   iVar3 = Library::MSVCRT::__setjmp3(local_6c.jumpBuffer,0);
   if (iVar3 != 0) {
     g_currentExceptionFrame = local_6c.previous;
-    iVar6 = ReportDebugMessage(s_E____titans_ai_ai_mdef_cpp_007d2d58,0x470,0,iVar3,&DAT_007a4ccc,
-                               s__EnumDest_007d2e40);
+    iVar6 = ReportDebugMessage("E:\\__titans\\ai\\ai_mdef.cpp",0x470,0,iVar3,"%s",
+                               "_EnumDest");
     if (iVar6 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    RaiseInternalException(iVar3,0,s_E____titans_ai_ai_mdef_cpp_007d2d58,0x471);
+    RaiseInternalException(iVar3,0,"E:\\__titans\\ai\\ai_mdef.cpp",0x471);
     return iVar3;
   }
   if (PTR_007fa164 == (DArrayTy *)0x0) {
     RaiseInternalException
-              (-0x34,g_overwriteContext_007ED77C,s_E____titans_ai_ai_mdef_cpp_007d2d58,0x459);
+              (-0x34,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_mdef.cpp",0x459);
   }
   local_10 = PTR_007fa164->count - 1;
   if ((int)local_10 < 0) {

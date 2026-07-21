@@ -119,12 +119,12 @@ void __thiscall StartSystemTy::CreateChatView(StartSystemTy *this)
     return;
   }
   g_currentExceptionFrame = local_4c.previous;
-  iVar5 = ReportDebugMessage(s_E____titans_Start_startsys_cpp_007cd718,0x3f9,0,iVar6,&DAT_007a4ccc,
-                             s_StartSystemTy__CreateChatView_007cd904);
+  iVar5 = ReportDebugMessage("E:\\__titans\\Start\\startsys.cpp",0x3f9,0,iVar6,"%s",
+                             "StartSystemTy::CreateChatView");
   if (iVar5 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  RaiseInternalException(iVar6,0,s_E____titans_Start_startsys_cpp_007cd718,0x3f9);
+  RaiseInternalException(iVar6,0,"E:\\__titans\\Start\\startsys.cpp",0x3f9);
   return;
 }
 

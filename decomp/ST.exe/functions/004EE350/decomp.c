@@ -49,12 +49,12 @@ BehPanelTy::PaintBBut
     return;
   }
   g_currentExceptionFrame = local_58.previous;
-  iVar4 = ReportDebugMessage(s_E____titans_Andrey_behpanel_cpp_007c1694,0xc5,0,(int)errorCode,
-                             &DAT_007a4ccc,s_BehPanelTy__PaintBBut_007c1770);
+  iVar4 = ReportDebugMessage("E:\\__titans\\Andrey\\behpanel.cpp",0xc5,0,(int)errorCode,
+                             "%s","BehPanelTy::PaintBBut");
   if (iVar4 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  RaiseInternalException((int)errorCode,0,s_E____titans_Andrey_behpanel_cpp_007c1694,0xc5);
+  RaiseInternalException((int)errorCode,0,"E:\\__titans\\Andrey\\behpanel.cpp",0xc5);
   return;
 }
 

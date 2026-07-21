@@ -11,7 +11,7 @@
 void __thiscall CPanelTy::Update1Panel(CPanelTy *this)
 
 {
-  short sVar1;
+  DArrayTy *pDVar1;
   Global_sub_00526BA0_param_1Enum GVar2;
   code *pcVar3;
   CPanelTy *this_00;
@@ -29,7 +29,7 @@ void __thiscall CPanelTy::Update1Panel(CPanelTy *this)
   byte *pbVar15;
   char *pcVar16;
   bool bVar17;
-  undefined4 uVar18;
+  dword dVar18;
   InternalExceptionFrame local_90;
   CPanelTy *local_4c;
   char local_48;
@@ -60,10 +60,10 @@ void __thiscall CPanelTy::Update1Panel(CPanelTy *this)
   this_00 = local_4c;
   if (iVar5 != 0) {
     g_currentExceptionFrame = local_90.previous;
-    iVar10 = ReportDebugMessage(s_E____titans_Andrey_cpanel1_cpp_007c23cc,0x167,0,iVar5,
-                                &DAT_007a4ccc,s_CPanelTy__Update1Panel_007c249c);
+    iVar10 = ReportDebugMessage("E:\\__titans\\Andrey\\cpanel1.cpp",0x167,0,iVar5,
+                                "%s","CPanelTy::Update1Panel");
     if (iVar10 == 0) {
-      RaiseInternalException(iVar5,0,s_E____titans_Andrey_cpanel1_cpp_007c23cc,0x167);
+      RaiseInternalException(iVar5,0,"E:\\__titans\\Andrey\\cpanel1.cpp",0x167);
       return;
     }
     STDebugBreak(); /* noreturn in standalone pseudocode */
@@ -83,8 +83,8 @@ void __thiscall CPanelTy::Update1Panel(CPanelTy *this)
   }
   *(undefined2 *)puVar13 = 0;
   local_16 = (AnonNested_005F5B80_0169_794156D7 *)local_4c->field_0B4B;
-  Library::DKW::TBL::FUN_006afe40((int *)&local_16,(uint *)local_4c->field_0B95);
-  *(undefined4 *)(this_00->field_0B95 + 0xc) = 0;
+  Library::DKW::TBL::FUN_006afe40((int *)&local_16,&local_4c->field_0B95->flags);
+  this_00->field_0B95->count = 0;
   this_00->field_0B4B = (DArrayTy *)local_16;
   STAllPlayersC::GetPanelInfo
             (g_sTAllPlayers_007FA174,1,(AnonShape_0043BEB0_1C00EC12 *)&this_00->field_0B63);
@@ -135,9 +135,7 @@ void __thiscall CPanelTy::Update1Panel(CPanelTy *this)
     }
   }
   if (this_00->field_0B63 == '\x02') {
-    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-    if ((*(int *)(this_00->field_0B95 + 0xc) != local_16->field_000C) ||
-       (local_47 != this_00->field_0B64)) {
+    if ((this_00->field_0B95->count != local_16->field_000C) || (local_47 != this_00->field_0B64)) {
       SwitchTV(this_00,1);
     }
     iVar5 = 5;
@@ -157,11 +155,10 @@ void __thiscall CPanelTy::Update1Panel(CPanelTy *this)
       /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
       local_8 = CONCAT31(local_8._1_3_,bVar4);
       if (bVar4 < 0xb) {
-        uVar6 = (uint)bVar4;
-        if (-1 < (int)(&this_00->field_0148)[uVar6]) {
+        if (-1 < (int)(&this_00->field_0148)[bVar4]) {
           Library::DKW::DDX::FUN_006b3640
-                    (DAT_008075a8,(&this_00->field_0148)[uVar6],0xffffffff,
-                     (&this_00->field_003C)[uVar6],*(uint *)(&this_00->field_0x94 + uVar6 * 4));
+                    (DAT_008075a8,(&this_00->field_0148)[bVar4],0xffffffff,
+                     (&this_00->field_003C)[bVar4],(&this_00->field_0094)[bVar4]);
         }
       }
     }
@@ -171,10 +168,9 @@ void __thiscall CPanelTy::Update1Panel(CPanelTy *this)
       Library::DKW::WGR::FUN_006b55f0
                 ((AnonShape_006B5B10_E0D06CF1 *)this_00->field_0184,0,0,0,
                  (byte *)this_00->field_0958,0,0,0,*(int *)(this_00->field_0958 + 2),0x3c);
-      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-      uVar18 = *(undefined4 *)(this_00->field_0B95 + 0xc);
+      dVar18 = this_00->field_0B95->count;
       pcVar7 = LoadResourceString(0x36b9,HINSTANCE_00807618);
-      wsprintfA(*(LPSTR *)&this_00->field_0x213,s__1_s_0_d_007c245c,pcVar7,uVar18);
+      wsprintfA(*(LPSTR *)&this_00->field_0x213,"&1%s&0%d",pcVar7,dVar18);
       ccFntTy::SetSurf(this_00->field_01B8,this_00->field_0184,0,2,0xf,
                        *(int *)(this_00->field_0958 + 2) + -4,0x2d);
       ccFntTy::WrTxt(this_00->field_01B8,*(uint **)&this_00->field_0x213,-2,-1,0,-1,-1);
@@ -190,8 +186,8 @@ void __thiscall CPanelTy::Update1Panel(CPanelTy *this)
       local_c = 0;
       local_8 = local_16->field_000C;
       if (local_8 != 0) {
-        iVar5 = this_00->field_0B95;
-        uVar6 = *(uint *)(iVar5 + 0xc);
+        pDVar1 = this_00->field_0B95;
+        uVar6 = pDVar1->count;
         do {
           if (local_c < local_8) {
             piVar8 = (int *)(local_16->field_0008 * local_c + local_16->field_001C);
@@ -206,7 +202,8 @@ void __thiscall CPanelTy::Update1Panel(CPanelTy *this)
               goto LAB_004ff6e4;
             }
             do {
-              piVar9 = (int *)(*(int *)(iVar5 + 8) * uVar11 + *(int *)(iVar5 + 0x1c));
+              /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(pDVar1, uVar11) (runtime stride) */
+              piVar9 = (int *)(pDVar1->elementSize * uVar11 + (int)pDVar1->data);
 LAB_004ff6e4:
               if (*piVar9 == *piVar8) {
                 local_10 = 0;
@@ -231,7 +228,7 @@ LAB_004ff723:
     g_currentExceptionFrame = local_90.previous;
     return;
   }
-  if (((local_40 != *(int *)&this_00->field_0xb6b) || (local_47 != this_00->field_0B64)) ||
+  if (((local_40 != this_00->field_0B6B) || (local_47 != this_00->field_0B64)) ||
      (local_46 != this_00->field_0B65)) {
     if (g_prodPanel_00801684 != (ProdPanelTy *)0x0) {
       ProdPanelTy::SetPanel(g_prodPanel_00801684,'\0');
@@ -318,7 +315,7 @@ LAB_004ff87a:
   }
   iVar5 = this_00->field_0B66;
   if (((iVar5 == 7) || (iVar5 == 0x13)) || (iVar5 == 0x1b)) {
-    if (this_00->field_0B81 != local_2a) {
+    if (*(Global_sub_00526BA0_param_1Enum *)&this_00->field_0xb81 != local_2a) {
       Library::DKW::WGR::FUN_006b55f0
                 ((AnonShape_006B5B10_E0D06CF1 *)this_00->field_0184,0,1,0x2f,
                  (byte *)this_00->field_0958,0,1,0x2f,0x4e,0x24);
@@ -328,10 +325,10 @@ LAB_004ff87a:
                    this_00->field_0098);
       }
     }
-    GVar2 = this_00->field_0B81;
+    GVar2 = *(Global_sub_00526BA0_param_1Enum *)&this_00->field_0xb81;
     if (GVar2 == 0) goto cf_common_exit_004FFB91;
     if (GVar2 != local_2a) {
-      uVar6 = thunk_FUN_00526ba0(GVar2,this_00->field_0B85);
+      uVar6 = thunk_FUN_00526ba0(GVar2,this_00->field_0xb85);
       pbVar14 = (byte *)FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_02BE,uVar6
                                     );
       DibPut((AnonShape_006B5B10_E0D06CF1 *)this_00->field_0184,0xb,0x31,'\x01',pbVar14);
@@ -344,7 +341,7 @@ LAB_004ff87a:
       }
     }
     FUN_006b4170((AnonShape_006B5B10_E0D06CF1 *)this_00->field_0184,0,0x3b,0x31,7,0x21,0);
-    bVar4 = this_00->field_0B86;
+    bVar4 = this_00->field_0xb86;
     cVar12 = (char)(((uint)bVar4 * 0x21) / 100);
     /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
     local_8 = CONCAT31(local_8._1_3_,cVar12);
@@ -367,12 +364,10 @@ LAB_004ff87a:
   }
   else {
     /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-    if ((((((short)local_2a == *(short *)&this_00->field_0B81) &&
-          (sVar1._0_1_ = this_00->field_0B85, sVar1._1_1_ = this_00->field_0B86, local_26 == sVar1))
-         && (local_22 == *(short *)&this_00->field_0xb89)) &&
-        ((local_2a._2_2_ == *(short *)((int)&this_00->field_0B81 + 2) &&
-         (local_24 == *(short *)&this_00->field_0xb87)))) &&
-       (local_20 == *(short *)&this_00->field_0xb8b)) goto cf_common_exit_004FFB91;
+    if ((((((short)local_2a == *(short *)&this_00->field_0xb81) &&
+          (local_26 == *(short *)&this_00->field_0xb85)) && (local_22 == this_00->field_0B89)) &&
+        ((local_2a._2_2_ == *(short *)&this_00->field_0xb83 && (local_24 == this_00->field_0B87))))
+       && (local_20 == this_00->field_0B8B)) goto cf_common_exit_004FFB91;
     Library::DKW::WGR::FUN_006b55f0
               ((AnonShape_006B5B10_E0D06CF1 *)this_00->field_0184,0,1,0x2f,
                (byte *)this_00->field_0958,0,1,0x2f,0x4e,0x24);
@@ -401,11 +396,10 @@ cf_common_exit_004FFB91:
     /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
     local_8 = CONCAT31(local_8._1_3_,bVar4);
     if (bVar4 < 0xb) {
-      uVar6 = (uint)bVar4;
-      if (-1 < (int)(&this_00->field_0148)[uVar6]) {
+      if (-1 < (int)(&this_00->field_0148)[bVar4]) {
         Library::DKW::DDX::FUN_006b3640
-                  (DAT_008075a8,(&this_00->field_0148)[uVar6],0xffffffff,
-                   (&this_00->field_003C)[uVar6],*(uint *)(&this_00->field_0x94 + uVar6 * 4));
+                  (DAT_008075a8,(&this_00->field_0148)[bVar4],0xffffffff,
+                   (&this_00->field_003C)[bVar4],(&this_00->field_0094)[bVar4]);
       }
     }
   }

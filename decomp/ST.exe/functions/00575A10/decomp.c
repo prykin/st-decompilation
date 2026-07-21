@@ -17,14 +17,14 @@ undefined4 FUN_00575a10(HINSTANCE param_1,undefined4 param_2,undefined4 param_3,
   local_14 = ExceptionList;
   local_1c = &stack0xffffff8c;
   ExceptionList = &local_14;
-  HINSTANCE_00807618 = GetModuleHandleA(s_st_string_dll_007caafc);
+  HINSTANCE_00807618 = GetModuleHandleA("st_string.dll");
   if (HINSTANCE_00807618 == (HMODULE)0x0) {
     ExceptionList = local_14;
     return 0xffffffff;
   }
   resourceString = LoadResourceString(100,HINSTANCE_00807618);
   Library::MSVCRT::FUN_0072f260(0,resourceString);
-  FUN_006ad190(0x18,s_dbg_msg_rpt_007caaec,0);
+  FUN_006ad190(0x18,"dbg_msg.rpt",0);
   thunk_FUN_004e82b0();
   local_8 = 0;
   local_60.previous = g_currentExceptionFrame;
@@ -46,7 +46,7 @@ undefined4 FUN_00575a10(HINSTANCE param_1,undefined4 param_2,undefined4 param_3,
     if ((iVar1 != -0x5001fff6) &&
        ((iVar1 < -0x5001fff4 || (local_1c = &stack0xffffff8c, -0x5001fff3 < iVar1)))) {
       local_1c = &stack0xffffff8c;
-      MessageBoxA(g_hWnd_00806748,s_Internal_error_007caad8,s_Internal_error_007caad8,0);
+      MessageBoxA(g_hWnd_00806748,"Internal error","Internal error",0);
     }
   }
   local_8 = 0xffffffff;
@@ -55,10 +55,10 @@ undefined4 FUN_00575a10(HINSTANCE param_1,undefined4 param_2,undefined4 param_3,
       ExceptionList = local_14;
       return 0;
     }
-    wsprintfA((LPSTR)&DAT_0080f33a,s__ssteditor_exe_007caac4,&DAT_00807680);
+    wsprintfA((LPSTR)&DAT_0080f33a,"%ssteditor.exe",&DAT_00807680);
   }
   else {
-    wsprintfA((LPSTR)&DAT_0080f33a,s__s_s_s_007c6edc,&DAT_00807680,PTR_s_UPDATES__0079b114,
+    wsprintfA((LPSTR)&DAT_0080f33a,"%s%s%s",&DAT_00807680,PTR_s_UPDATES__0079b114,
               &DAT_0080f126);
   }
   WinExec((LPCSTR)&DAT_0080f33a,1);

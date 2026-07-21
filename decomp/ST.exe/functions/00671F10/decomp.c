@@ -64,7 +64,7 @@ float * FUN_00671f10(int param_1,int *param_2,int *param_3)
       if ((*(char *)((int)psVar7 + -1) == '\a') && (*psVar7 == 0x1d)) {
         if (local_c[1] != 1) {
           RaiseInternalException
-                    (-0x6b,g_overwriteContext_007ED77C,s_E____titans_ai_ai_interp_cpp_007d2cf4,0x570
+                    (-0x6b,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_interp.cpp",0x570
                     );
         }
         if (param_3 != (int *)0x0) {
@@ -96,7 +96,7 @@ float * FUN_00671f10(int param_1,int *param_2,int *param_3)
           fVar6 = (float)(*local_24->vtable->slot_08)(puVar2);
           if (fVar6 == 0.0) {
             RaiseInternalException
-                      (-0x6b,g_overwriteContext_007ED77C,s_E____titans_ai_ai_interp_cpp_007d2cf4,
+                      (-0x6b,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_interp.cpp",
                        0x585);
           }
           local_18 = (float *)Library::DKW::LIB::FUN_006aac10(4);
@@ -107,7 +107,7 @@ float * FUN_00671f10(int param_1,int *param_2,int *param_3)
           break;
         default:
           RaiseInternalException
-                    (-0x6b,g_overwriteContext_007ED77C,s_E____titans_ai_ai_interp_cpp_007d2cf4,0x58b
+                    (-0x6b,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_interp.cpp",0x58b
                     );
         }
         thunk_FUN_0064a800(&local_c);
@@ -123,7 +123,7 @@ cf_continue_loop_006721A4:
     iVar3 = (local_c[1] - (int)psVar7[1]) + -1;
     if (iVar3 < 0) {
       RaiseInternalException
-                (-0x6b,g_overwriteContext_007ED77C,s_E____titans_ai_ai_interp_cpp_007d2cf4,0x53e);
+                (-0x6b,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_interp.cpp",0x53e);
     }
     if ((local_10 == 0) && (local_14 == 0)) {
       iVar4 = thunk_FUN_006686f0((int)*psVar7);
@@ -148,14 +148,14 @@ cf_continue_loop_006721A4:
     }
     if (local_8 == (float *)0x0) {
       RaiseInternalException
-                (local_1c,g_overwriteContext_007ED77C,s_E____titans_ai_ai_interp_cpp_007d2cf4,0x56c)
+                (local_1c,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_interp.cpp",0x56c)
       ;
       goto cf_continue_loop_006721A4;
     }
     iVar3 = thunk_FUN_0064a940((int)local_c,iVar3);
     if (iVar3 == 0) {
       RaiseInternalException
-                (-0x6b,g_overwriteContext_007ED77C,s_E____titans_ai_ai_interp_cpp_007d2cf4,0x54c);
+                (-0x6b,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_interp.cpp",0x54c);
     }
     if (local_1c == 1) {
       local_2c = 1;
@@ -169,7 +169,7 @@ cf_continue_loop_006721A4:
       iVar3 = (*local_24->vtable->slot_0C)(local_8);
       if (iVar3 < 0) {
         RaiseInternalException
-                  (-2,g_overwriteContext_007ED77C,s_E____titans_ai_ai_interp_cpp_007d2cf4,0x559);
+                  (-2,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_interp.cpp",0x559);
       }
       local_2c = 3;
       /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
@@ -177,7 +177,7 @@ cf_continue_loop_006721A4:
     }
     else {
       RaiseInternalException
-                (-0x6b,g_overwriteContext_007ED77C,s_E____titans_ai_ai_interp_cpp_007d2cf4,0x55e);
+                (-0x6b,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_interp.cpp",0x55e);
     }
     thunk_FUN_0064a830(local_c,(undefined4 *)&local_2c);
     FreeAndNull(&local_8);

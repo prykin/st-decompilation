@@ -31,10 +31,10 @@ int __thiscall TLOBaseTy::fireProc(TLOBaseTy *this)
   this_00 = local_18;
   if (iVar3 != 0) {
     g_currentExceptionFrame = local_5c.previous;
-    iVar5 = ReportDebugMessage(s_E____titans_Artem_TLO_bfire_cpp_007ac910,0xb2,0,iVar3,&DAT_007a4ccc
-                               ,s_TLOBaseTy__fireProc_error_007ac938);
+    iVar5 = ReportDebugMessage("E:\\__titans\\Artem\\TLO_bfire.cpp",0xb2,0,iVar3,"%s"
+                               ,"TLOBaseTy::fireProc error");
     if (iVar5 == 0) {
-      RaiseInternalException(iVar3,0,s_E____titans_Artem_TLO_bfire_cpp_007ac910,0xb3);
+      RaiseInternalException(iVar3,0,"E:\\__titans\\Artem\\TLO_bfire.cpp",0xb3);
       return iVar3;
     }
     STDebugBreak(); /* noreturn in standalone pseudocode */
@@ -99,7 +99,7 @@ int __thiscall TLOBaseTy::fireProc(TLOBaseTy *this)
                   this_00->field_001C = uVar4;
                   uVar4 = ((uVar4 >> 0x10) % 0x18) * 0xf;
                   puVar7[0xe] = uVar4;
-                } while (uVar4 == *(uint *)&this_00->field_0x259);
+                } while (uVar4 == this_00->field_0259);
                 if (*(int *)(&DAT_00795afc + this_00->field_0235 * 4) != 0) {
                   (*this_00->vtable->vfunc_90)(3,*(int *)(&DAT_00795afc + this_00->field_0235 * 4));
                 }
@@ -118,7 +118,7 @@ int __thiscall TLOBaseTy::fireProc(TLOBaseTy *this)
           }
         }
         uVar4 = PTR_00802a38->field_00E4;
-        iVar3 = thunk_FUN_004e8230(*(int *)&this_00->field_0x24,this_00->field_0235,(int)local_8);
+        iVar3 = thunk_FUN_004e8230(this_00->field_0024,this_00->field_0235,(int)local_8);
         piVar6 = local_8;
         if (iVar3 + puVar7[-5] <= uVar4) {
           puVar7[-5] = uVar4;
@@ -153,7 +153,7 @@ int __thiscall TLOBaseTy::fireProc(TLOBaseTy *this)
           if (*(int *)(&DAT_00793e28 + iVar3 * 4) == 1) {
             piVar6 = local_8;
             if ((int)puVar7[0x10] < *(int *)(&DAT_00794038 + iVar3 * 4)) {
-              iVar3 = thunk_FUN_004de410(*(void **)&this_00->field_0x24,(&DAT_00792ca0)[iVar3 * 3],
+              iVar3 = thunk_FUN_004de410((void *)this_00->field_0024,(&DAT_00792ca0)[iVar3 * 3],
                                          *(int *)(&DAT_00794038 + iVar3 * 4) - puVar7[0x10]);
               puVar7[0x10] = puVar7[0x10] + iVar3;
               piVar6 = local_8;
@@ -162,7 +162,7 @@ int __thiscall TLOBaseTy::fireProc(TLOBaseTy *this)
           }
           if (*(int *)(&DAT_00793e28 + iVar3 * 4) == 2) {
             if ((int)puVar7[0x10] < *(int *)(&DAT_00794038 + iVar3 * 4)) {
-              iVar3 = thunk_FUN_004dfb90(*(uint *)&this_00->field_0x24,
+              iVar3 = thunk_FUN_004dfb90(this_00->field_0024,
                                          *(int *)(&DAT_00794038 + iVar3 * 4) - puVar7[0x10],
                                          *(int *)(&DAT_00793ff0 +
                                                  (&DAT_00792ca0)[this_00->field_0235 * 6] * 4));
@@ -174,8 +174,8 @@ LAB_004c3985:
         iVar3 = ((int)piVar6 + this_00->field_0235 * 2) * 4;
         if (((*(int *)(&DAT_00793e28 + iVar3) == 2) &&
             ((int)puVar7[0x10] < *(int *)(&DAT_00794038 + iVar3))) &&
-           (iVar3 = thunk_FUN_004e8230(*(int *)&this_00->field_0x24,this_00->field_0235,(int)piVar6)
-           , puVar7[0x11] + iVar3 * 10 <= (uint)PTR_00802a38->field_00E4)) {
+           (iVar3 = thunk_FUN_004e8230(this_00->field_0024,this_00->field_0235,(int)piVar6),
+           puVar7[0x11] + iVar3 * 10 <= (uint)PTR_00802a38->field_00E4)) {
           puVar7[0x10] = puVar7[0x10] + 1;
           puVar7[0x11] = PTR_00802a38->field_00E4;
         }

@@ -26,7 +26,7 @@ int __cdecl SavePlrEdit(int param_1,char *param_2,undefined4 *param_3,char param
   if (iVar2 == 0) {
     if (((param_1 == 0) || (param_2 == (char *)0x0)) || (*(char *)(param_3 + 6) != '\x02')) {
       RaiseInternalException
-                (-0x34,g_overwriteContext_007ED77C,s_E____titans_ai_ai_plr_d_cpp_007d2fa4,0x10b);
+                (-0x34,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_plr_d.cpp",0x10b);
     }
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     local_c = EventDataPack(*(AnonShape_0065CD10_BA40DE58 **)((int)param_3 + 0x106),&local_14);
@@ -39,14 +39,14 @@ int __cdecl SavePlrEdit(int param_1,char *param_2,undefined4 *param_3,char param
     return 0;
   }
   g_currentExceptionFrame = local_58.previous;
-  iVar3 = ReportDebugMessage(s_E____titans_ai_ai_plr_d_cpp_007d2fa4,0x112,0,iVar2,&DAT_007a4ccc,
-                             s_SavePlrEdit_007d2fe8);
+  iVar3 = ReportDebugMessage("E:\\__titans\\ai\\ai_plr_d.cpp",0x112,0,iVar2,"%s",
+                             "SavePlrEdit");
   if (iVar3 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   thunk_FUN_0065d0f0((int *)&local_c);
   thunk_FUN_0067d160((int *)&local_8);
-  RaiseInternalException(iVar2,0,s_E____titans_ai_ai_plr_d_cpp_007d2fa4,0x115);
+  RaiseInternalException(iVar2,0,"E:\\__titans\\ai\\ai_plr_d.cpp",0x115);
   return iVar2;
 }
 

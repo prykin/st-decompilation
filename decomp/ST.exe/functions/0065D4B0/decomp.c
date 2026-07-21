@@ -37,12 +37,12 @@ undefined4 * __thiscall AiFltClassTy::PrepareToSave(AiFltClassTy *this,uint *par
     return puVar4;
   }
   g_currentExceptionFrame = local_4c.previous;
-  iVar5 = ReportDebugMessage(s_E____titans_ai_ai_flt_cpp_007d2b80,0x4f,0,errorCode,&DAT_007a4ccc,
-                             s_AiFltClassTy__PrepareToSave_007d2bbc);
+  iVar5 = ReportDebugMessage("E:\\__titans\\ai\\ai_flt.cpp",0x4f,0,errorCode,"%s",
+                             "AiFltClassTy::PrepareToSave");
   if (iVar5 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  RaiseInternalException(errorCode,0,s_E____titans_ai_ai_flt_cpp_007d2b80,0x50);
+  RaiseInternalException(errorCode,0,"E:\\__titans\\ai\\ai_flt.cpp",0x50);
   return (undefined4 *)0x0;
 }
 

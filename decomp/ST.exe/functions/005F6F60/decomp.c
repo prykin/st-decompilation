@@ -691,7 +691,7 @@ cf_common_exit_005F76D2:
     iVar5 = thunk_FUN_004ac910(this,'\t');
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     if (iVar5 == *(int *)(&DAT_007ce749 + *(int *)((int)param_1 + 0x2cd) * 0x39)) {
-      thunk_FUN_005f66b0((STJellyGunC *)param_1);
+      thunk_FUN_005f66b0(param_1);
     }
   }
   return;

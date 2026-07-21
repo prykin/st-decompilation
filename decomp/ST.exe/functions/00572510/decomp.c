@@ -36,7 +36,7 @@ void __fastcall FUN_00572510(AnonShape_00572510_F06DC155 *param_1)
   param_1->field_0DEE = 0;
   if (param_1->field_0785 != '\0') {
     local_10 = param_1;
-    wsprintfA((LPSTR)local_15c,s__s_s_s_007c6edc,&param_1->field_0x28,PTR_s_SAVEGAME__0079b0cc,
+    wsprintfA((LPSTR)local_15c,"%s%s%s",&param_1->field_0x28,PTR_s_SAVEGAME__0079b0cc,
               local_8);
     hFindFile = FindFirstFileA((LPCSTR)local_15c,&local_29c);
     if (hFindFile != (HANDLE)0xffffffff) {
@@ -52,7 +52,7 @@ void __fastcall FUN_00572510(AnonShape_00572510_F06DC155 *param_1)
       FindClose(hFindFile);
     }
     if (local_c != 0) {
-      wsprintfA((LPSTR)local_15c,s__s_s_s__s_007ca1ec,&param_1->field_0x28,PTR_s_SAVEGAME__0079b0cc,
+      wsprintfA((LPSTR)local_15c,"%s%s%s\\%s",&param_1->field_0x28,PTR_s_SAVEGAME__0079b0cc,
                 local_8,PTR_s_PL_LOG_0079b0d0);
       local_58.previous = g_currentExceptionFrame;
       g_currentExceptionFrame = &local_58;

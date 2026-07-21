@@ -69,9 +69,9 @@ FUN_004c6440(void *this,float param_1,int param_2,int *param_3,int *param_4,int 
                                  local_10,local_8,&local_30,&local_34), (int)piVar8 < 0x79aed0 ||
              (0x79aee3 < (int)piVar8)))))) ||
           ((local_30 < 0 ||
-           ((((int)pVVar4->field_0030 <= local_30 ||
+           (((pVVar4->field_0030 <= local_30 ||
              (iVar9 = *piVar8 + local_34, piVar8 = local_20, iVar9 < 0)) ||
-            ((int)pVVar4->field_0034 <= iVar9)))))) ||
+            (pVVar4->field_0034 <= iVar9)))))) ||
          ((pVVar4->field_004C == 0 ||
           (*(char *)(iVar9 * pVVar4->field_0030 + pVVar4->field_004C + local_30) != '\0')))) &&
         (iVar9 = local_10,
@@ -108,7 +108,7 @@ cf_common_exit_004C6899:
                          [*(byte *)(*(int *)((int)this + 0x10) + 0x112e)],0x1d);
       if (iVar9 != 0) {
         RaiseInternalException
-                  (iVar9,g_overwriteContext_007ED77C,s_E____titans_Artem_TLO_BldMark_cp_007ad2f4,
+                  (iVar9,g_overwriteContext_007ED77C,"E:\\__titans\\Artem\\TLO_BldMark.cpp",
                    0x82);
       }
       uVar10 = 0;
@@ -142,7 +142,7 @@ cf_common_exit_004C6899:
                                  (uint)*(byte *)(*(int *)((int)this + 0x10) + 0x112e) * 4),0x1d);
     if (iVar5 != 0) {
       RaiseInternalException
-                (iVar5,g_overwriteContext_007ED77C,s_E____titans_Artem_TLO_BldMark_cp_007ad2f4,0x77)
+                (iVar5,g_overwriteContext_007ED77C,"E:\\__titans\\Artem\\TLO_BldMark.cpp",0x77)
       ;
     }
     thunk_FUN_004abce0(*(void **)((int)this + 0x2c),0,
@@ -168,8 +168,8 @@ LAB_004c6848:
       fVar3 = (float)(iVar9 + 1) * _DAT_007904f8;
       goto LAB_004c6848;
     }
-    iVar5 = ReportDebugMessage(s_E____titans_Artem_TLO_BldMark_cp_007ad2f4,0x98,0,0,&DAT_007a4ccc,
-                               s_error_007ad33c);
+    iVar5 = ReportDebugMessage("E:\\__titans\\Artem\\TLO_BldMark.cpp",0x98,0,0,"%s",
+                               "error");
     if (iVar5 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }

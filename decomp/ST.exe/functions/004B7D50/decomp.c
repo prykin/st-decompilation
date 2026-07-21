@@ -7,7 +7,7 @@ bool __thiscall FUN_004b7d50(void *this,STBoatC *param_1)
 {
   bool bVar1;
 
-  bVar1 = *(int *)((int)this + 0x4d4) == param_1->field_0018;
+  bVar1 = *(uint *)((int)this + 0x4d4) == param_1->field_0018;
   if (bVar1) {
     *(undefined4 *)((int)this + 0x4d4) = 0;
   }

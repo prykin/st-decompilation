@@ -25,12 +25,12 @@ void __cdecl DarkScreen(undefined4 *param_1,int param_2,int param_3)
     return;
   }
   g_currentExceptionFrame = local_48.previous;
-  iVar2 = ReportDebugMessage(s_E____titans_paltool_cpp_007c95d8,0x1d,0,errorCode,&DAT_007a4ccc,
-                             s_DarkScreen_007c95f4);
+  iVar2 = ReportDebugMessage("E:\\__titans\\paltool.cpp",0x1d,0,errorCode,"%s",
+                             "DarkScreen");
   if (iVar2 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  RaiseInternalException(errorCode,0,s_E____titans_paltool_cpp_007c95d8,0x1f);
+  RaiseInternalException(errorCode,0,"E:\\__titans\\paltool.cpp",0x1f);
   return;
 }
 

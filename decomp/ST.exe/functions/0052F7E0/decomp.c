@@ -36,12 +36,12 @@ void __thiscall OptPanelTy::SwitchOptPanelOff(OptPanelTy *this)
     return;
   }
   g_currentExceptionFrame = local_4c.previous;
-  iVar2 = ReportDebugMessage(s_E____titans_Andrey_optpanel_cpp_007c70a0,0x139,0,errorCode,
-                             &DAT_007a4ccc,s_OptPanelTy__SwitchOptPanelOff_007c7200);
+  iVar2 = ReportDebugMessage("E:\\__titans\\Andrey\\optpanel.cpp",0x139,0,errorCode,
+                             "%s","OptPanelTy::SwitchOptPanelOff");
   if (iVar2 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  RaiseInternalException(errorCode,0,s_E____titans_Andrey_optpanel_cpp_007c70a0,0x139);
+  RaiseInternalException(errorCode,0,"E:\\__titans\\Andrey\\optpanel.cpp",0x139);
   return;
 }
 

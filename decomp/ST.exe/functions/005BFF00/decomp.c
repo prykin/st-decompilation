@@ -35,7 +35,7 @@ MReportTy::PaintObjScore(MReportTy *this,int param_1,uint param_2,int param_3,in
       cVar1 = *(char *)((int)&DAT_0080c83a + (byte)local_c->field_0069 + 3);
       /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
       local_8 = CONCAT31(local_8._1_3_,cVar1);
-      wsprintfA((LPSTR)&DAT_0080f33a,&DAT_007c28fc,param_1);
+      wsprintfA((LPSTR)&DAT_0080f33a,"%6d",param_1);
       ccFntTy::SetSurf(pMVar3->field_008B,(int)pMVar3->field_0073,0,param_3 + 8,param_4 + 5,0x36,
                        0x14);
       if (cVar1 == -1) {
@@ -49,7 +49,7 @@ MReportTy::PaintObjScore(MReportTy *this,int param_1,uint param_2,int param_3,in
     cVar1 = DAT_0080c846;
     /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
     local_8 = CONCAT31(local_8._1_3_,DAT_0080c846);
-    wsprintfA((LPSTR)&DAT_0080f33a,&DAT_007c28fc,param_2);
+    wsprintfA((LPSTR)&DAT_0080f33a,"%6d",param_2);
     ccFntTy::SetSurf(pMVar3->field_008B,(int)pMVar3->field_0073,0,param_3 + 0x4c,param_4 + 5,0x36,
                      0x14);
     if (cVar1 == -1) {
@@ -63,12 +63,12 @@ MReportTy::PaintObjScore(MReportTy *this,int param_1,uint param_2,int param_3,in
     return;
   }
   g_currentExceptionFrame = local_50.previous;
-  iVar5 = ReportDebugMessage(s_E____titans_Start_rpt_obj_cpp_007ccec8,0x21c,0,errorCode,
-                             &DAT_007a4ccc,s_MReportTy__PaintObjScore_007cd008);
+  iVar5 = ReportDebugMessage("E:\\__titans\\Start\\rpt_obj.cpp",0x21c,0,errorCode,
+                             "%s","MReportTy::PaintObjScore");
   if (iVar5 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  RaiseInternalException(errorCode,0,s_E____titans_Start_rpt_obj_cpp_007ccec8,0x21c);
+  RaiseInternalException(errorCode,0,"E:\\__titans\\Start\\rpt_obj.cpp",0x21c);
   return;
 }
 

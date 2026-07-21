@@ -52,12 +52,12 @@ undefined4 __thiscall STFieldC::InitSprSistem(STFieldC *this,int param_1)
     return 1;
   }
   g_currentExceptionFrame = local_4c.previous;
-  iVar5 = ReportDebugMessage(s_E____titans_nick_to_field_cpp_007cf850,0x208,0,errorCode,
-                             &DAT_007a4ccc,s_STFieldC__InitSprSistem_void__007cf874);
+  iVar5 = ReportDebugMessage("E:\\__titans\\nick\\to_field.cpp",0x208,0,errorCode,
+                             "%s","STFieldC::InitSprSistem(void)");
   if (iVar5 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  RaiseInternalException(errorCode,0,s_E____titans_nick_to_field_cpp_007cf850,0x20a);
+  RaiseInternalException(errorCode,0,"E:\\__titans\\nick\\to_field.cpp",0x20a);
   return 0xffff;
 }
 

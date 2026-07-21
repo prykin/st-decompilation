@@ -13,7 +13,7 @@ undefined4 __thiscall FUN_00608e90(void *this,AnonShape_00608E90_523B07BC *param
   byte *local_c;
   AnonShape_0060EA30_DCEB68AD *local_8;
 
-  iVar2 = STGameObjC::GetMessage(this,(AnonShape_0041AF40_F59F8577 *)param_1);
+  iVar2 = STGameObjC::GetMessage(this,(STMessage *)param_1);
   if (iVar2 == 0xffff) {
     return 0xffff;
   }

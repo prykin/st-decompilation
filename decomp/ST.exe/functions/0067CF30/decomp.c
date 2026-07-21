@@ -24,7 +24,7 @@ undefined4 * __cdecl FUN_0067cf30(char *source,undefined2 param_2,char *param_3,
   if (exceptionCode != 0) {
     g_currentExceptionFrame = local_4c.previous;
     thunk_FUN_0067d160((int *)&local_8);
-    RaiseInternalException(exceptionCode,0,s_E____titans_ai_ai_plr_d_cpp_007d2fa4,0x28);
+    RaiseInternalException(exceptionCode,0,"E:\\__titans\\ai\\ai_plr_d.cpp",0x28);
     return (undefined4 *)0x0;
   }
   local_8 = (AnonShape_0067CF30_CDCAC01F *)Library::DKW::LIB::FUN_006aac10(299);

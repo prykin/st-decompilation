@@ -73,12 +73,12 @@ void __thiscall SettMapMTy::ChangePlayerColor(SettMapMTy *this,uint param_1,char
       return;
     }
     g_currentExceptionFrame = local_4c.previous;
-    iVar2 = ReportDebugMessage(s_E____titans_Start_settmobj_cpp_007cd258,0x598,0,errorCode,
-                               &DAT_007a4ccc,s_SettMapMTy__ChangePlayerColor_007cd434);
+    iVar2 = ReportDebugMessage("E:\\__titans\\Start\\settmobj.cpp",0x598,0,errorCode,
+                               "%s","SettMapMTy::ChangePlayerColor");
     if (iVar2 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    RaiseInternalException(errorCode,0,s_E____titans_Start_settmobj_cpp_007cd258,0x598);
+    RaiseInternalException(errorCode,0,"E:\\__titans\\Start\\settmobj.cpp",0x598);
   }
   return;
 }

@@ -35,9 +35,9 @@ int __fastcall FUN_00619c70(STJumpMineC *param_1)
   local_2c = 0;
   switch(param_1->field_0093) {
   case CASE_1:
-    iVar12 = PTR_00802a38->field_00E4 - *(int *)&param_1->field_0x11b;
-    iVar12 = (*(int *)&param_1->field_0x117 * iVar12 * iVar12) / 10000 +
-             *(int *)&param_1->field_0x113 * iVar12 + *(int *)&param_1->field_0xd7;
+    iVar12 = PTR_00802a38->field_00E4 - param_1->field_011B;
+    iVar12 = (param_1->field_0117 * iVar12 * iVar12) / 10000 + param_1->field_0113 * iVar12 +
+             param_1->field_00D7;
     sVar8 = (short)(iVar12 >> 0x1f);
     if (iVar12 < 0) {
       iVar13 = (short)(((short)(iVar12 / 200) + sVar8) -
@@ -52,14 +52,14 @@ int __fastcall FUN_00619c70(STJumpMineC *param_1)
     switch(uVar2) {
     case 0:
       param_1->field_00CD = (short)iVar13;
-      *(int *)&param_1->field_0xe3 = param_1->field_00A7;
+      param_1->field_00E3 = param_1->field_00A7;
       param_1->field_00A7 = iVar12;
       return 1;
     case 1:
-      *(undefined4 *)&param_1->field_0x113 = 0xfffffffd;
-      *(undefined4 *)&param_1->field_0x11b = PTR_00802a38->field_00E4;
-      *(int *)&param_1->field_0xd7 = local_c;
-      *(int *)&param_1->field_0xe3 = param_1->field_00A7;
+      param_1->field_0113 = 0xfffffffd;
+      param_1->field_011B = PTR_00802a38->field_00E4;
+      param_1->field_00D7 = local_c;
+      param_1->field_00E3 = param_1->field_00A7;
       param_1->field_00A7 = local_c;
       return 1;
     case 2:
@@ -68,10 +68,9 @@ int __fastcall FUN_00619c70(STJumpMineC *param_1)
       if ((((-1 < iVar12) && (-1 < iVar13)) && (iVar3 = (int)g_worldGrid.sizeX, iVar12 < iVar3)) &&
          ((iVar13 < g_worldGrid.sizeY && (*(char *)(iVar3 * iVar13 + DAT_007fb26c + iVar12) != '\0')
           ))) {
-        if ((((&DAT_007fb24c)[*(int *)&param_1->field_0x51] == 0) ||
-            (*(char *)(iVar3 * iVar13 + (&DAT_007fb24c)[*(int *)&param_1->field_0x51] + iVar12) ==
-             '\0')) &&
-           (uVar11 = thunk_FUN_00497030(iVar12,iVar13,*(int *)&param_1->field_0x51,1,DAT_007e66ac),
+        if ((((&DAT_007fb24c)[param_1->field_0051] == 0) ||
+            (*(char *)(iVar3 * iVar13 + (&DAT_007fb24c)[param_1->field_0051] + iVar12) == '\0')) &&
+           (uVar11 = thunk_FUN_00497030(iVar12,iVar13,param_1->field_0051,1,DAT_007e66ac),
            -1 < (int)uVar11)) {
           param_1->field_00A7 = local_c;
           param_1->field_00AF = 0;
@@ -81,10 +80,10 @@ int __fastcall FUN_00619c70(STJumpMineC *param_1)
       }
       uVar11 = param_1->field_001C * 0x41c64e6d + 0x3039;
       param_1->field_001C = uVar11;
-      *(uint *)&param_1->field_0x113 = (uVar11 >> 0x10) % 0xb + 10;
-      *(undefined4 *)&param_1->field_0x11b = PTR_00802a38->field_00E4;
-      *(int *)&param_1->field_0xd7 = local_c;
-      *(int *)&param_1->field_0xe3 = param_1->field_00A7;
+      param_1->field_0113 = (uVar11 >> 0x10) % 0xb + 10;
+      param_1->field_011B = PTR_00802a38->field_00E4;
+      param_1->field_00D7 = local_c;
+      param_1->field_00E3 = param_1->field_00A7;
       param_1->field_00A7 = local_c;
       if (((void *)param_1->field_007D != (void *)0x0) &&
          (iVar12 = thunk_FUN_00618240((void *)param_1->field_007D,param_1->field_009F,
@@ -94,8 +93,8 @@ int __fastcall FUN_00619c70(STJumpMineC *param_1)
           thunk_FUN_00618900((void *)param_1->field_007D,param_1->field_0145,0);
         }
         param_1->field_014B = 1;
-        iVar12 = thunk_FUN_0061bdb0(param_1,CASE_2,*(int *)&param_1->field_0x127,
-                                    *(int *)&param_1->field_0x12b,*(uint *)&param_1->field_0x12f);
+        iVar12 = thunk_FUN_0061bdb0(param_1,CASE_2,param_1->field_0127,param_1->field_012B,
+                                    param_1->field_012F);
         if (iVar12 == 0) {
           return 1;
         }
@@ -109,8 +108,8 @@ int __fastcall FUN_00619c70(STJumpMineC *param_1)
         return 1;
       }
       param_1->field_014B = 1;
-      iVar12 = thunk_FUN_0061bdb0(param_1,CASE_2,*(int *)&param_1->field_0x127,
-                                  *(int *)&param_1->field_0x12b,*(uint *)&param_1->field_0x12f);
+      iVar12 = thunk_FUN_0061bdb0(param_1,CASE_2,param_1->field_0127,param_1->field_012B,
+                                  param_1->field_012F);
       if (iVar12 == 0) {
         return 1;
       }
@@ -138,9 +137,9 @@ LAB_00619e5f:
       return 1;
     }
   case CASE_2:
-    iVar12 = PTR_00802a38->field_00E4 - *(int *)&param_1->field_0x11b;
-    local_1c = (*(int *)&param_1->field_0x117 * iVar12 * iVar12) / 10000 +
-               *(int *)&param_1->field_0x113 * iVar12 + *(int *)&param_1->field_0xd7;
+    iVar12 = PTR_00802a38->field_00E4 - param_1->field_011B;
+    local_1c = (param_1->field_0117 * iVar12 * iVar12) / 10000 + param_1->field_0113 * iVar12 +
+               param_1->field_00D7;
     sVar8 = (short)(local_1c >> 0x1f);
     if (local_1c < 0) {
       local_20 = (short)(((short)(local_1c / 200) + sVar8) -
@@ -150,10 +149,10 @@ LAB_00619e5f:
       local_20 = (int)(short)(((short)(local_1c / 200) + sVar8) -
                              (short)((longlong)local_1c * 0x51eb851f >> 0x3f));
     }
-    iVar12 = *(int *)&param_1->field_0x10f * iVar12;
-    *(int *)&param_1->field_0xf3 = *(int *)&param_1->field_0xf3 + *(int *)&param_1->field_0x10f;
-    iVar13 = (*(int *)&param_1->field_0x103 * iVar12) / 10000 + *(int *)&param_1->field_0xcf;
-    iVar12 = (*(int *)&param_1->field_0x107 * iVar12) / 10000 + *(int *)&param_1->field_0xd3;
+    iVar12 = param_1->field_010F * iVar12;
+    param_1->field_00F3 = param_1->field_00F3 + param_1->field_010F;
+    iVar13 = (param_1->field_0103 * iVar12) / 10000 + param_1->field_00CF;
+    iVar12 = (param_1->field_0107 * iVar12) / 10000 + param_1->field_00D3;
     sVar8 = (short)(iVar13 >> 0x1f);
     if (iVar13 < 0) {
       local_28 = (short)(((short)(iVar13 / 0xc9) + sVar8) -
@@ -176,9 +175,9 @@ LAB_00619e5f:
                                local_1c,&local_c);
     switch(iVar3) {
     case 0:
-      *(int *)&param_1->field_0xdb = param_1->field_009F;
-      *(int *)&param_1->field_0xdf = param_1->field_00A3;
-      *(int *)&param_1->field_0xe3 = param_1->field_00A7;
+      param_1->field_00DB = param_1->field_009F;
+      param_1->field_00DF = param_1->field_00A3;
+      param_1->field_00E3 = param_1->field_00A7;
       param_1->field_00C9 = (short)local_28;
       param_1->field_00CB = (short)local_24;
       param_1->field_009F = iVar13;
@@ -187,21 +186,21 @@ LAB_00619e5f:
       param_1->field_00A7 = local_1c;
       break;
     case 1:
-      *(undefined4 *)&param_1->field_0x113 = 0xfffffffd;
-      *(undefined4 *)&param_1->field_0x11b = PTR_00802a38->field_00E4;
-      *(int *)&param_1->field_0xd7 = local_c;
-      *(int *)&param_1->field_0xe3 = param_1->field_00A7;
-      *(int *)&param_1->field_0xcf = iVar13;
-      *(int *)&param_1->field_0xd3 = iVar12;
+      param_1->field_0113 = 0xfffffffd;
+      param_1->field_011B = PTR_00802a38->field_00E4;
+      param_1->field_00D7 = local_c;
+      param_1->field_00E3 = param_1->field_00A7;
+      param_1->field_00CF = iVar13;
+      param_1->field_00D3 = iVar12;
       param_1->field_00A7 = local_c;
       iVar12 = thunk_FUN_0061c5f0(param_1,&local_30);
-      if ((iVar12 < 1) || (299 < *(int *)&param_1->field_0x141)) {
+      if ((iVar12 < 1) || (299 < param_1->field_0141)) {
         if (iVar12 == 0) {
           iVar12 = thunk_FUN_0061bdb0(param_1,CASE_1,param_1->field_009F,param_1->field_00A3,
                                       param_1->field_00A7);
           if (iVar12 == 0) {
 LAB_0061a4f4:
-            thunk_FUN_006192e0((STJellyGunC *)param_1);
+            thunk_FUN_006192e0(param_1);
           }
           else {
             param_1->field_0093 = CASE_1;
@@ -210,14 +209,14 @@ LAB_0061a4f4:
         else {
 LAB_0061a4fd:
           if (local_30 != 0) {
-            thunk_FUN_0061bdb0(param_1,CASE_2,*(int *)&param_1->field_0x127,
-                               *(int *)&param_1->field_0x12b,*(uint *)&param_1->field_0x12f);
+            thunk_FUN_0061bdb0(param_1,CASE_2,param_1->field_0127,param_1->field_012B,
+                               param_1->field_012F);
           }
         }
       }
       else {
-        iVar12 = thunk_FUN_0061bdb0(param_1,CASE_3,*(int *)&param_1->field_0x127,
-                                    *(int *)&param_1->field_0x12b,*(uint *)&param_1->field_0x12f);
+        iVar12 = thunk_FUN_0061bdb0(param_1,CASE_3,param_1->field_0127,param_1->field_012B,
+                                    param_1->field_012F);
         if (iVar12 != 0) {
           param_1->field_0093 = CASE_3;
           thunk_FUN_0061cfb0(param_1,param_1->field_009F,param_1->field_00A3,0x495);
@@ -231,23 +230,23 @@ LAB_0061a4fd:
           (((g_worldGrid.sizeY <= iVar3 ||
             (iVar7 = (int)param_1->field_00C9,
             *(char *)(iVar4 * iVar3 + DAT_007fb26c + iVar7) == '\0')) ||
-           ((local_2c = (&DAT_007fb24c)[*(int *)&param_1->field_0x51], local_2c != 0 &&
+           ((local_2c = (&DAT_007fb24c)[param_1->field_0051], local_2c != 0 &&
             (*(char *)(iVar4 * param_1->field_00CB + local_2c + iVar7) != '\0')))))) ||
-         (uVar11 = thunk_FUN_00497030(iVar7,(int)param_1->field_00CB,*(int *)&param_1->field_0x51,1,
+         (uVar11 = thunk_FUN_00497030(iVar7,(int)param_1->field_00CB,param_1->field_0051,1,
                                       DAT_007e66ac), (int)uVar11 < 0)) {
         param_1->field_001C = param_1->field_001C * 0x41c64e6d + 0x3039;
-        *(undefined4 *)&param_1->field_0x113 = 0xf;
+        param_1->field_0113 = 0xf;
         uVar11 = param_1->field_001C * 0x41c64e6d + 0x3039;
         param_1->field_001C = uVar11;
-        *(uint *)&param_1->field_0x10f = (uVar11 >> 0x10 & 1) + 7;
-        *(undefined4 *)&param_1->field_0x11b = PTR_00802a38->field_00E4;
-        *(int *)&param_1->field_0xd7 = local_c;
-        *(int *)&param_1->field_0xe3 = param_1->field_00A7;
-        *(int *)&param_1->field_0xcf = iVar13;
-        *(int *)&param_1->field_0xd3 = iVar12;
+        param_1->field_010F = (uVar11 >> 0x10 & 1) + 7;
+        param_1->field_011B = PTR_00802a38->field_00E4;
+        param_1->field_00D7 = local_c;
+        param_1->field_00E3 = param_1->field_00A7;
+        param_1->field_00CF = iVar13;
+        param_1->field_00D3 = iVar12;
         param_1->field_00A7 = local_c;
         iVar12 = thunk_FUN_0061c5f0(param_1,&local_30);
-        if ((iVar12 < 1) || (299 < *(int *)&param_1->field_0x141)) {
+        if ((iVar12 < 1) || (299 < param_1->field_0141)) {
           if (iVar12 != 0) goto LAB_0061a4fd;
           iVar12 = thunk_FUN_0061bdb0(param_1,CASE_1,param_1->field_009F,param_1->field_00A3,
                                       param_1->field_00A7);
@@ -255,8 +254,8 @@ LAB_0061a4fd:
           param_1->field_0093 = CASE_1;
         }
         else {
-          iVar12 = thunk_FUN_0061bdb0(param_1,CASE_3,*(int *)&param_1->field_0x127,
-                                      *(int *)&param_1->field_0x12b,*(uint *)&param_1->field_0x12f);
+          iVar12 = thunk_FUN_0061bdb0(param_1,CASE_3,param_1->field_0127,param_1->field_012B,
+                                      param_1->field_012F);
           if (iVar12 != 0) {
             param_1->field_0093 = CASE_3;
             thunk_FUN_0061cfb0(param_1,param_1->field_009F,param_1->field_00A3,0x495);
@@ -280,7 +279,7 @@ LAB_0061a4fd:
     case 4:
       goto cf_common_exit_0061AB3A;
     }
-    if (*(int *)&param_1->field_0xf3 < *(int *)&param_1->field_0xf7) {
+    if ((int)param_1->field_00F3 < param_1->field_00F7) {
       return 1;
     }
     uVar11 = param_1->field_00A7;
@@ -288,10 +287,9 @@ LAB_0061a4fd:
     iVar13 = param_1->field_009F;
     goto cf_common_exit_0061A55D;
   case CASE_3:
-    local_30 = PTR_00802a38->field_00E4 - *(int *)&param_1->field_0x11b;
-    uVar11 = (*(int *)&param_1->field_0x113 * local_30) / 10000 +
-             (*(int *)&param_1->field_0x117 * local_30 * local_30) / 10000 +
-             *(int *)&param_1->field_0xd7;
+    local_30 = PTR_00802a38->field_00E4 - param_1->field_011B;
+    uVar11 = (param_1->field_0113 * local_30) / 10000 +
+             (param_1->field_0117 * local_30 * local_30) / 10000 + param_1->field_00D7;
     sVar8 = (short)((int)uVar11 >> 0x1f);
     if ((int)uVar11 < 0) {
       local_14 = (int)(short)(((short)((int)uVar11 / 200) + sVar8) -
@@ -303,10 +301,10 @@ LAB_0061a4fd:
                              (short)((longlong)(int)uVar11 * 0x51eb851f >> 0x3f));
       local_14 = local_20;
     }
-    iVar12 = (*(int *)&param_1->field_0x10f * local_30) / 100;
-    *(int *)&param_1->field_0xf3 = *(int *)&param_1->field_0xf3 + *(int *)&param_1->field_0x10f;
-    iVar13 = (*(int *)&param_1->field_0x103 * iVar12) / 10000 + *(int *)&param_1->field_0xcf;
-    local_8 = (*(int *)&param_1->field_0x107 * iVar12) / 10000 + *(int *)&param_1->field_0xd3;
+    iVar12 = (param_1->field_010F * local_30) / 100;
+    param_1->field_00F3 = param_1->field_00F3 + param_1->field_010F;
+    iVar13 = (param_1->field_0103 * iVar12) / 10000 + param_1->field_00CF;
+    local_8 = (param_1->field_0107 * iVar12) / 10000 + param_1->field_00D3;
     sVar8 = (short)(iVar13 >> 0x1f);
     if (iVar13 < 0) {
       local_10 = (int)(short)(((short)(iVar13 / 0xc9) + sVar8) -
@@ -332,14 +330,13 @@ LAB_0061a4fd:
     if ((local_30 < 3) ||
        (uVar5 = SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00601500::thunk_FUN_00601500
                           ((AnonReceiver_00601500 *)&param_1->field_0x20,iVar13,local_8,uVar11,
-                           *(int *)&param_1->field_0xdb,*(int *)&param_1->field_0xdf,
-                           *(int *)&param_1->field_0xe3,*(int *)&param_1->field_0x51,DAT_007e66ac,
-                           *(int *)&param_1->field_0x85,*(undefined2 *)&param_1->field_0x89,0xb3,0,0
-                          ), (int)uVar5 < 1)) {
+                           param_1->field_00DB,param_1->field_00DF,param_1->field_00E3,
+                           param_1->field_0051,DAT_007e66ac,param_1->field_0085,param_1->field_0089,
+                           0xb3,0,0), (int)uVar5 < 1)) {
       sVar10 = (short)local_18;
-      *(int *)&param_1->field_0xdb = param_1->field_009F;
-      *(int *)&param_1->field_0xdf = param_1->field_00A3;
-      *(int *)&param_1->field_0xe3 = param_1->field_00A7;
+      param_1->field_00DB = param_1->field_009F;
+      param_1->field_00DF = param_1->field_00A3;
+      param_1->field_00E3 = param_1->field_00A7;
       sVar8 = (short)local_10;
       param_1->field_009F = iVar13;
       param_1->field_00A3 = local_8;
@@ -377,10 +374,10 @@ LAB_0061a4fd:
         param_1->field_00AB = 0;
         return local_2c;
       }
-      *(int *)&param_1->field_0xdb = param_1->field_009F;
-      *(int *)&param_1->field_0xe3 = param_1->field_00A7;
+      param_1->field_00DB = param_1->field_009F;
+      param_1->field_00E3 = param_1->field_00A7;
       param_1->field_009F = iVar13;
-      *(int *)&param_1->field_0xdf = param_1->field_00A3;
+      param_1->field_00DF = param_1->field_00A3;
       param_1->field_00A3 = local_8;
       param_1->field_00A7 = uVar11;
       sVar8 = (short)local_10;
@@ -407,11 +404,10 @@ LAB_0061a4fd:
     }
     break;
   case CASE_4:
-    iVar13 = (PTR_00802a38->field_00E4 - *(int *)&param_1->field_0x11b) *
-             *(int *)&param_1->field_0x10f;
-    iVar12 = (*(int *)&param_1->field_0x103 * iVar13) / 10000 + *(int *)&param_1->field_0xcf;
-    local_8 = (*(int *)&param_1->field_0x107 * iVar13) / 10000 + *(int *)&param_1->field_0xd3;
-    local_1c = (*(int *)&param_1->field_0x10b * iVar13) / 10000 + *(int *)&param_1->field_0xd7;
+    iVar13 = (PTR_00802a38->field_00E4 - param_1->field_011B) * param_1->field_010F;
+    iVar12 = (param_1->field_0103 * iVar13) / 10000 + param_1->field_00CF;
+    local_8 = (param_1->field_0107 * iVar13) / 10000 + param_1->field_00D3;
+    local_1c = (param_1->field_010B * iVar13) / 10000 + param_1->field_00D7;
     sVar8 = (short)(local_1c >> 0x1f);
     if (local_1c < 0) {
       local_14 = (int)(short)(((short)(local_1c / 200) + sVar8) -
@@ -446,9 +442,9 @@ LAB_0061a4fd:
     local_28 = thunk_FUN_0061b340(param_1,sVar9,sVar8,local_30,iVar12,local_8,local_1c,&local_c);
     switch(local_28) {
     case 0:
-      *(int *)&param_1->field_0xdb = param_1->field_009F;
-      *(int *)&param_1->field_0xdf = param_1->field_00A3;
-      *(int *)&param_1->field_0xe3 = param_1->field_00A7;
+      param_1->field_00DB = param_1->field_009F;
+      param_1->field_00DF = param_1->field_00A3;
+      param_1->field_00E3 = param_1->field_00A7;
       sVar8 = (short)local_10;
       param_1->field_009F = iVar12;
       param_1->field_00A3 = local_8;
@@ -488,7 +484,7 @@ LAB_0061a4fd:
     case 4:
       goto cf_common_exit_0061AB3A;
     }
-    if (iVar13 < *(int *)&param_1->field_0xf7) {
+    if (iVar13 < param_1->field_00F7) {
       return 1;
     }
     uVar11 = param_1->field_00A7;
@@ -511,12 +507,12 @@ cf_common_exit_0061A55D:
       param_1->field_0093 = CASE_6;
       return local_2c;
     }
-    if (0x10 < (int)param_1->field_00AB) {
+    if (0x10 < param_1->field_00AB) {
       if (param_1->field_00AB == 0x11) {
         FUN_006e9cb0(PTR_00807598,(uint *)param_1->field_0097,2);
       }
       FUN_006ea270(PTR_00807598,param_1->field_0097,2,param_1->field_00B7);
-      if ((int)param_1->field_00B7 < (int)param_1->field_00B3) {
+      if (param_1->field_00B7 < param_1->field_00B3) {
         param_1->field_00B7 = param_1->field_00B7 + 1;
       }
     }
@@ -531,7 +527,7 @@ cf_common_exit_0061A55D:
       }
     }
     uVar11 = param_1->field_00AB;
-    if ((int)uVar11 < (int)param_1->field_00AF) {
+    if ((int)uVar11 < param_1->field_00AF) {
       FUN_006ea270(PTR_00807598,param_1->field_0097,0,uVar11);
 LAB_0061acc2:
       param_1->field_00AB = param_1->field_00AB + 1;
@@ -559,9 +555,9 @@ LAB_0061acc2:
             (thunk_FUN_00558c00(g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,
                                 (int)param_1->field_00C9,(int)param_1->field_00CB,&local_28,
                                 &local_24), iVar12 < 0)) || ((4 < iVar12 || (local_28 < 0)))) ||
-          ((int)pVVar1->field_0030 <= local_28)) ||
+          (pVVar1->field_0030 <= local_28)) ||
          (((local_24 = (&DAT_0079aed0)[iVar12] + local_24, local_24 < 0 ||
-           ((int)pVVar1->field_0034 <= local_24)) ||
+           (pVVar1->field_0034 <= local_24)) ||
           ((pVVar1->field_004C == 0 ||
            (*(char *)(local_24 * pVVar1->field_0030 + local_28 + pVVar1->field_004C) != '\0')))))) {
         if (param_1->field_00C4 == '\0') {
@@ -582,7 +578,7 @@ LAB_0061acc2:
   default:
     goto switchD_00619c92_default;
   }
-  thunk_FUN_006192e0((STJellyGunC *)param_1);
+  thunk_FUN_006192e0(param_1);
 switchD_00619c92_default:
   return local_2c;
 cf_common_exit_0061AB3A:

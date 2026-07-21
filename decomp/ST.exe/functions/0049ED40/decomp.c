@@ -47,7 +47,7 @@ undefined4 __thiscall STGroupBoatC::DCBomb(STGroupBoatC *this,int param_1)
   pSVar2 = local_28;
   if (iVar3 == 0) {
     if ((param_1 == 0) || (param_1 == 1)) {
-      puVar8 = (undefined4 *)&local_28->field_0x89;
+      puVar8 = &local_28->field_0089;
       for (iVar3 = 0x15; iVar3 != 0; iVar3 = iVar3 + -1) {
         *puVar8 = 0;
         puVar8 = puVar8 + 1;
@@ -59,7 +59,7 @@ undefined4 __thiscall STGroupBoatC::DCBomb(STGroupBoatC *this,int param_1)
       local_30 = *(undefined2 *)&local_28->field_0x2bd;
       local_34 = PTR_00802a38->field_00E4;
       local_2c = local_28->field_02C1;
-      local_2e = local_28->field_02BF;
+      local_2e = *(undefined2 *)&local_28->field_0x2bf;
       array_00 = local_14;
       local_1c = local_34;
       if (0 < local_10) {
@@ -72,9 +72,9 @@ undefined4 __thiscall STGroupBoatC::DCBomb(STGroupBoatC *this,int param_1)
             if (pSVar4 == (STBoatC *)0x0) {
               RaiseInternalException
                         (-0x5001fffc,g_overwriteContext_007ED77C,
-                         s_E____titans_wlad_to_grpb_cpp_007abe3c,0xb6b);
+                         "E:\\__titans\\wlad\\to_grpb.cpp",0xb6b);
             }
-            if ((pSVar4->field_06F7 == CASE_4) && (0 < *(int *)&pSVar4->field_0x7be)) {
+            if ((pSVar4->field_06F7 == CASE_4) && (0 < pSVar4->field_07BE)) {
               if (array_00 == (DArrayTy *)0x0) {
                 array_00 = (DArrayTy *)Library::DKW::TBL::FUN_006ae290((uint *)0x0,1,2,1);
                 local_14 = array_00;
@@ -110,7 +110,7 @@ undefined4 __thiscall STGroupBoatC::DCBomb(STGroupBoatC *this,int param_1)
         DArrayDestroy(array);
       }
       RaiseInternalException
-                (-0x5001fff7,g_overwriteContext_007ED77C,s_E____titans_wlad_to_grpb_cpp_007abe3c,
+                (-0x5001fff7,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_grpb.cpp",
                  0xb84);
     }
     index = 0;
@@ -125,7 +125,7 @@ undefined4 __thiscall STGroupBoatC::DCBomb(STGroupBoatC *this,int param_1)
             if (pSVar4 == (STBoatC *)0x0) {
               RaiseInternalException
                         (-0x5001fffc,g_overwriteContext_007ED77C,
-                         s_E____titans_wlad_to_grpb_cpp_007abe3c,0xb8b);
+                         "E:\\__titans\\wlad\\to_grpb.cpp",0xb8b);
             }
             iVar3 = thunk_FUN_0045ff10((int)pSVar4);
             if ((iVar3 == 10) || (uVar5 = STBoatC::CheckPBoxCmd(pSVar4,CASE_A), uVar5 == 1)) {
@@ -145,10 +145,10 @@ undefined4 __thiscall STGroupBoatC::DCBomb(STGroupBoatC *this,int param_1)
   else {
     g_currentExceptionFrame = local_78.previous;
     if (iVar3 != -0x5001fff7) {
-      iVar6 = ReportDebugMessage(s_E____titans_wlad_to_grpb_cpp_007abe3c,0xb94,0,iVar3,&DAT_007a4ccc
-                                 ,s_STGroupBoatC__DCBomb_007ac0d0);
+      iVar6 = ReportDebugMessage("E:\\__titans\\wlad\\to_grpb.cpp",0xb94,0,iVar3,"%s"
+                                 ,"STGroupBoatC::DCBomb");
       if (iVar6 == 0) {
-        RaiseInternalException(iVar3,0,s_E____titans_wlad_to_grpb_cpp_007abe3c,0xb95);
+        RaiseInternalException(iVar3,0,"E:\\__titans\\wlad\\to_grpb.cpp",0xb95);
         return 0xffffffff;
       }
       STDebugBreak(); /* noreturn in standalone pseudocode */

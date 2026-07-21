@@ -56,10 +56,10 @@ int __thiscall AiTactClassTy::GetMessage(AiTactClassTy *this,STMessage *message)
         }
       }
       else if (SVar1 == MESS_ID_CREATE) {
-        puVar2 = message->data;
+        puVar2 = (message->arg0).ptr;
         if (puVar2 == (undefined4 *)0x0) {
           RaiseInternalException
-                    (-6,g_overwriteContext_007ED77C,s_E____titans_ai_ai_tact_cpp_007d56e0,0x45e);
+                    (-6,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_tact.cpp",0x45e);
         }
         InitData(this_00,puVar2);
         if (puVar2[3] == 0) {
@@ -107,16 +107,16 @@ int __thiscall AiTactClassTy::GetMessage(AiTactClassTy *this,STMessage *message)
     else if (SVar1 == MESS_SHARED_5DD5) {
       HelpOrganize(local_14,(AnonShape_00690650_F810CDF4 *)message);
     }
-    FUN_006e5fd0();
+    FUN_006e5fd0(this_00,message);
     g_currentExceptionFrame = local_58.previous;
     return 0;
   }
   g_currentExceptionFrame = local_58.previous;
-  iVar6 = ReportDebugMessage(s_E____titans_ai_ai_tact_cpp_007d56e0,0x4ad,0,iVar4,
-                             s_AiTactClassTy__GetMessage_error_m_007d58b8,message->id,
+  iVar6 = ReportDebugMessage("E:\\__titans\\ai\\ai_tact.cpp",0x4ad,0,iVar4,
+                             "AiTactClassTy::GetMessage error mess->id == %lX Name=%d",message->id,
                              local_14->field_0018);
   if (iVar6 == 0) {
-    RaiseInternalException(iVar4,0,s_E____titans_ai_ai_tact_cpp_007d56e0,0x4ae);
+    RaiseInternalException(iVar4,0,"E:\\__titans\\ai\\ai_tact.cpp",0x4ae);
     return 0xffff;
   }
   STDebugBreak(); /* noreturn in standalone pseudocode */

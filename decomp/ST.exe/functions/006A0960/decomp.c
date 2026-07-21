@@ -23,8 +23,8 @@ undefined4 __thiscall CGenerate::_saveObj(CGenerate *this)
     return local_8;
   }
   g_currentExceptionFrame = pIVar2;
-  iVar3 = ReportDebugMessage(s_E____titans_Maps_generate_cpp_007d864c,0xe0,0,iVar3,&DAT_007a4ccc,
-                             s_CGenerate___saveObj_007d86a4);
+  iVar3 = ReportDebugMessage("E:\\__titans\\Maps\\generate.cpp",0xe0,0,iVar3,"%s",
+                             "CGenerate::_saveObj");
   if (iVar3 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }

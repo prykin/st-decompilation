@@ -9,7 +9,7 @@
 undefined4 __thiscall STParticleC::InitVisibelFlight(STParticleC *this,int param_1)
 
 {
-  undefined4 *puVar1;
+  int *piVar1;
   int iVar2;
   uint uVar3;
   code *pcVar4;
@@ -35,7 +35,7 @@ undefined4 __thiscall STParticleC::InitVisibelFlight(STParticleC *this,int param
   uint local_c;
   undefined **local_8;
 
-  local_24 = *(uint *)&this->field_0x14 >> 8 & 0xff;
+  local_24 = (uint)this->field_0014 >> 8 & 0xff;
   ppuVar13 = (undefined **)0x0;
   local_8 = (undefined **)0x0;
   switch(local_24) {
@@ -45,24 +45,24 @@ undefined4 __thiscall STParticleC::InitVisibelFlight(STParticleC *this,int param
     if (iVar9 == 4) {
       ppuVar13 = &PTR_s_partdw01_007d0798;
       local_8 = &PTR_s_partdw01_007d0798;
-      iVar9 = (uint)(byte)this->field_0x14 * 8;
+      iVar9 = (uint)*(byte *)&this->field_0014 * 8;
       local_10 = *(int *)(&DAT_007d0af0 + iVar9) / 2;
       local_c = *(int *)(&DAT_007d0af4 + iVar9) / 2 - 0xe;
     }
     else {
       if (local_24 == 0) {
-        iVar11 = (uint)(byte)this->field_0x14 * 8;
+        iVar11 = (uint)*(byte *)&this->field_0014 * 8;
         iVar2 = *(int *)(&DAT_007d0a70 + iVar11);
-        iVar11 = *(int *)(&DAT_007d0a74 + iVar11);
+        iVar11 = *(int *)("%" + iVar11);
       }
       else {
-        iVar11 = (uint)(byte)this->field_0x14 * 8;
+        iVar11 = (uint)*(byte *)&this->field_0014 * 8;
         iVar2 = *(int *)(&DAT_007d0bf0 + iVar11);
         iVar11 = *(int *)(&DAT_007d0bf4 + iVar11);
       }
       local_10 = iVar2 / 2;
       local_c = iVar11 / 2 - 0xe;
-      if ((*(uint *)&this->field_0x14 & 0x100) == 0) {
+      if ((this->field_0014 & 0x100) == 0) {
         if (iVar9 == 2) {
           ppuVar13 = &PTR_s_particle0_007d0718;
           local_8 = &PTR_s_particle0_007d0718;
@@ -91,7 +91,7 @@ undefined4 __thiscall STParticleC::InitVisibelFlight(STParticleC *this,int param
   case 4:
     ppuVar13 = &PTR_s_stoun0_007d09d8;
     local_8 = &PTR_s_stoun0_007d09d8;
-    iVar9 = *(int *)(&DAT_007d0a00 + (uint)(byte)this->field_0x14 * 4);
+    iVar9 = *(int *)(&DAT_007d0a00 + (uint)*(byte *)&this->field_0014 * 4);
     goto LAB_00629242;
   case 8:
     ppuVar13 = &PTR_s_gr1part0_007d0870;
@@ -102,14 +102,14 @@ undefined4 __thiscall STParticleC::InitVisibelFlight(STParticleC *this,int param
   case 0x10:
     ppuVar13 = &PTR_s_partsi01_007d08c4;
     local_8 = &PTR_s_partsi01_007d08c4;
-    iVar9 = (uint)(byte)this->field_0x14 * 8;
+    iVar9 = (uint)*(byte *)&this->field_0014 * 8;
     local_10 = *(int *)(&DAT_007d0af0 + iVar9) / 2;
     local_c = *(int *)(&DAT_007d0af4 + iVar9) / 2 - 0xe;
     break;
   case 0x20:
     ppuVar13 = &PTR_s_part_s0_007d0924;
     local_8 = &PTR_s_part_s0_007d0924;
-    iVar9 = (uint)(byte)this->field_0x14 * 8;
+    iVar9 = (uint)*(byte *)&this->field_0014 * 8;
     local_10 = *(int *)(&DAT_007d0b70 + iVar9) / 2;
     local_c = *(int *)(&DAT_007d0b74 + iVar9) / 2 - 0xe;
     break;
@@ -130,40 +130,40 @@ LAB_00629242:
     return 0xffffffff;
   }
   /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-  local_18 = CONCAT31(local_18._1_3_,this->field_0x14);
+  local_18 = CONCAT31(local_18._1_3_,*(undefined1 *)&this->field_0014);
   local_70.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_70;
   local_1c = this;
   iVar9 = Library::MSVCRT::__setjmp3(local_70.jumpBuffer,0);
   if (iVar9 != 0) {
     g_currentExceptionFrame = local_70.previous;
-    iVar11 = ReportDebugMessage(s_E____titans_nick_to_Part_Cpp_007d1354,0x2ac,0,iVar9,&DAT_007a4ccc,
-                                s_STParticleC__InitVisibelFlight_007d1394);
+    iVar11 = ReportDebugMessage("E:\\__titans\\nick\\to_Part.Cpp",0x2ac,0,iVar9,"%s",
+                                "STParticleC::InitVisibelFlight");
     if (iVar11 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    RaiseInternalException(iVar9,0,s_E____titans_nick_to_Part_Cpp_007d1354,0x2ae);
+    RaiseInternalException(iVar9,0,"E:\\__titans\\nick\\to_Part.Cpp",0x2ae);
     return 0xffff;
   }
   puVar10 = Library::Ourlib::MFRLOAD::mfRLoad
                       (DAT_00806774,CASE_1D,local_8[local_18 & 0xff],0xffffffff,0,1,0,
                        (undefined4 *)0x0);
   pSVar8 = local_1c;
-  local_1c->field_00B6 = *(undefined4 *)puVar10;
+  local_1c->field_00B6 = *(int *)puVar10;
   if (param_1 == 0) {
     return 0;
   }
-  *(ushort **)&local_1c->field_0xca = puVar10;
-  puVar1 = &local_1c->field_00C6;
-  FUN_006e8660(PTR_00807598,puVar1,2,0,*(uint *)((int)puVar10 + 9),*(uint *)((int)puVar10 + 0xd),
+  local_1c->field_00CA = puVar10;
+  piVar1 = &local_1c->field_00C6;
+  FUN_006e8660(PTR_00807598,piVar1,2,0,*(uint *)((int)puVar10 + 9),*(uint *)((int)puVar10 + 0xd),
                local_10,local_c,0);
   if (DAT_00807326 != '\0') {
     SubmarineTitans::Recovered::HiddenThis::AnonReceiver_004248D0::FUN_006e9520
-              ((AnonReceiver_004248D0 *)PTR_00807598,*puVar1,0,0x4049f8,(uint)pSVar8);
+              ((AnonReceiver_004248D0 *)PTR_00807598,*piVar1,0,0x4049f8,(uint)pSVar8);
   }
-  FUN_006e98e0(PTR_00807598,*puVar1,0,*(undefined4 *)puVar10,*(int *)((int)puVar10 + 0x21),1);
-  FUN_006ea270(PTR_00807598,*puVar1,0,0);
-  uVar3 = *puVar1;
+  FUN_006e98e0(PTR_00807598,*piVar1,0,*(undefined4 *)puVar10,*(int *)((int)puVar10 + 0x21),1);
+  FUN_006ea270(PTR_00807598,*piVar1,0,0);
+  uVar3 = *piVar1;
   local_20 = (float)pSVar8->field_0046 * _DAT_007904f8 * _DAT_007904f0;
   pSVar8->field_006A = local_20;
   local_14 = (float)pSVar8->field_004A * _DAT_007904f8 * _DAT_007904f0;
@@ -171,12 +171,12 @@ LAB_00629242:
   fVar6 = (float)pSVar8->field_004E * _DAT_007904f8 * _DAT_007904f0;
   pSVar8->field_0072 = fVar6;
   FUN_006ea960(PTR_00807598,uVar3,local_20,local_14,fVar6 + _DAT_007904fc);
-  FUN_006eaaa0(PTR_00807598,*puVar1,0);
+  FUN_006eaaa0(PTR_00807598,*piVar1,0);
   pSVar8->field_00C1 = 1;
   if (local_24 == 4) {
-    FUN_006ea4e0(PTR_00807598,*puVar1,1,0xffffffff,0xffffffff);
-    if (*(int *)&pSVar8->field_0x18 != 0) {
-      FUN_006ea460(PTR_00807598,*puVar1,*(int *)&pSVar8->field_0x18);
+    FUN_006ea4e0(PTR_00807598,*piVar1,1,0xffffffff,0xffffffff);
+    if (pSVar8->field_0018 != 0) {
+      FUN_006ea460(PTR_00807598,*piVar1,pSVar8->field_0018);
     }
   }
   pVVar7 = g_visibleClass_00802A88;
@@ -217,9 +217,9 @@ LAB_00629242:
       bVar14 = true;
     }
     else {
-      if (((local_28 < 0) || ((int)pVVar7->field_0030 <= local_28)) ||
+      if (((local_28 < 0) || (pVVar7->field_0030 <= local_28)) ||
          (((&DAT_0079aed0)[(int)local_14] + local_2c < 0 ||
-          ((int)pVVar7->field_0034 <= (&DAT_0079aed0)[(int)local_14] + local_2c)))) {
+          (pVVar7->field_0034 <= (&DAT_0079aed0)[(int)local_14] + local_2c)))) {
         bVar14 = false;
       }
       else {

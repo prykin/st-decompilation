@@ -104,12 +104,12 @@ LAB_005d1245:
       return;
     }
     g_currentExceptionFrame = local_4c.previous;
-    iVar9 = ReportDebugMessage(s_E____titans_Start_settmobj_cpp_007cd258,0x62f,0,errorCode,
-                               &DAT_007a4ccc,s_SettMapMTy__AddPlayerList_007cd4c4);
+    iVar9 = ReportDebugMessage("E:\\__titans\\Start\\settmobj.cpp",0x62f,0,errorCode,
+                               "%s","SettMapMTy::AddPlayerList");
     if (iVar9 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    RaiseInternalException(errorCode,0,s_E____titans_Start_settmobj_cpp_007cd258,0x62f);
+    RaiseInternalException(errorCode,0,"E:\\__titans\\Start\\settmobj.cpp",0x62f);
   }
   return;
 }

@@ -53,12 +53,12 @@ UPanelTy::PaintBut(UPanelTy *this,AnonShape_0053D7A0_044B6141 *param_1,byte para
       return;
     }
     g_currentExceptionFrame = local_58.previous;
-    iVar5 = ReportDebugMessage(s_E____titans_Andrey_specpan_cpp_007c7870,0x24,0,(int)errorCode,
-                               &DAT_007a4ccc,s_UPanelTy__PaintBut_007c7898);
+    iVar5 = ReportDebugMessage("E:\\__titans\\Andrey\\specpan.cpp",0x24,0,(int)errorCode,
+                               "%s","UPanelTy::PaintBut");
     if (iVar5 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    RaiseInternalException((int)errorCode,0,s_E____titans_Andrey_specpan_cpp_007c7870,0x24);
+    RaiseInternalException((int)errorCode,0,"E:\\__titans\\Andrey\\specpan.cpp",0x24);
   }
   return;
 }

@@ -9,11 +9,11 @@ FUN_00608b50(void *this,uint param_1,uint *param_2,uint param_3,undefined4 param
   uint *puVar3;
   int iVar4;
   int iVar5;
-  AnonShape_00627EB0_4C14C976 *pAVar6;
-  AnonNested_00627EB0_0014_B8FBF6AA *pAVar7;
+  STMessage *pSVar6;
+  undefined4 *puVar7;
   uint local_cc [20];
-  AnonShape_00627EB0_4C14C976 local_7c;
-  AnonNested_00627EB0_0014_B8FBF6AA local_5c;
+  STMessage local_7c;
+  undefined4 local_5c [5];
   uint local_48;
   int local_44;
   uint local_3c;
@@ -56,12 +56,12 @@ FUN_00608b50(void *this,uint param_1,uint *param_2,uint param_3,undefined4 param
     *(uint *)((int)this + 0x1c) = uVar1;
     iVar5 = (uVar1 >> 0x10) % (iVar5 - 1U) + iVar5;
   }
-  pAVar6 = &local_7c;
+  pSVar6 = &local_7c;
   for (iVar2 = 8; iVar2 != 0; iVar2 = iVar2 + -1) {
-    *(undefined4 *)pAVar6 = 0;
-    pAVar6 = (AnonShape_00627EB0_4C14C976 *)&pAVar6->field_0x4;
+    pSVar6->unknown_00 = 0;
+    pSVar6 = (STMessage *)&pSVar6->unknown_04;
   }
-  local_7c.field_0010 = 2;
+  local_7c.id = MESS_ID_CREATE;
   iVar2 = STExplosionC::CreateGroupPart(this,iVar5);
   if (iVar2 == iVar5) {
     if (0 < local_8) {
@@ -91,19 +91,17 @@ FUN_00608b50(void *this,uint param_1,uint *param_2,uint param_3,undefined4 param
       param_2 = local_cc;
       param_3 = (int)this + 0x219;
       do {
-        pAVar7 = &local_5c;
+        puVar7 = local_5c;
         for (iVar4 = 0x11; iVar4 != 0; iVar4 = iVar4 + -1) {
-          pAVar7->field_0000 = 0;
-          pAVar7 = (AnonNested_00627EB0_0014_B8FBF6AA *)&pAVar7->field_0x4;
+          *puVar7 = 0;
+          puVar7 = puVar7 + 1;
         }
-        *(undefined2 *)&pAVar7->field_0000 = 0;
+        *(undefined2 *)puVar7 = 0;
         local_1c = param_9;
-        local_5c.field_0000 = 100;
-        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-        local_5c._4_4_ = 0xff;
-        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-        local_5c._8_4_ = 0;
-        local_5c.field_000C = 0;
+        local_5c[0] = 100;
+        local_5c[1] = 0xff;
+        local_5c[2] = 0;
+        local_5c[3] = 0;
         if (0 < param_6) {
           local_44 = param_6;
         }
@@ -125,7 +123,7 @@ FUN_00608b50(void *this,uint param_1,uint *param_2,uint param_3,undefined4 param
         uVar1 = *(int *)((int)this + 0x1c) * 0x41c64e6d + 0x3039;
         *(uint *)((int)this + 0x1c) = uVar1;
         local_28 = (uVar1 >> 0x10 & 3) + 9;
-        local_7c.field_0014 = &local_5c;
+        local_7c.arg0.ptr = local_5c;
         local_1a = iVar5;
         STParticleC::GetMessage(*(STParticleC **)param_3,&local_7c);
         iVar5 = iVar5 + 1;

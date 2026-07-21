@@ -34,7 +34,7 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00636260::FUN_00636260
   *(int *)&this->field_0x1c = param_4;
   *(undefined4 *)&this->field_0x30 = PTR_00802a38->field_00E4;
   local_8 = this;
-  iVar1 = thunk_FUN_00636fc0((AnonShape_00636FC0_24F8974B *)this);
+  iVar1 = sub_00636FC0(this);
   *(int *)&this->field_0x28 = iVar1;
   *(int *)&this->field_0x4 = param_7;
   if (param_7 != 0) {

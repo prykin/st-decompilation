@@ -50,7 +50,8 @@ short FUN_00435b90(uint param_1,DArrayTy *param_2,Global_sub_00435B90_param_3Enu
     if (local_c == 1) {
       /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
       pSVar6 = STAllPlayersC::GetObjPtr(in_ECX,objPtr,local_10,CASE_1);
-      sVar5 = (*pSVar6->vtable->vfunc_28)(param_3,piVar4,param_5,param_6);
+      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+      sVar5 = (**(code **)&pSVar6->vtable->field_0x28)(param_3,piVar4,param_5,param_6);
       return sVar5;
     }
   }
@@ -67,7 +68,8 @@ short FUN_00435b90(uint param_1,DArrayTy *param_2,Global_sub_00435B90_param_3Enu
         if ((short)param_1 != -1) {
           /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
           pSVar6 = STAllPlayersC::GetObjPtr(in_ECX,objPtr,param_1,CASE_1);
-          sVar5 = (*pSVar6->vtable->vfunc_28)(0,piVar4,param_5,param_6);
+          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+          sVar5 = (**(code **)&pSVar6->vtable->field_0x28)(0,piVar4,param_5,param_6);
           if (sVar5 == 5) {
             return 5;
           }
@@ -87,7 +89,8 @@ short FUN_00435b90(uint param_1,DArrayTy *param_2,Global_sub_00435B90_param_3Enu
         if ((short)param_1 != -1) {
           /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
           pSVar6 = STAllPlayersC::GetObjPtr(in_ECX,objPtr,param_1,CASE_1);
-          sVar5 = (*pSVar6->vtable->vfunc_28)(0,piVar4,param_5,param_6);
+          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+          sVar5 = (**(code **)&pSVar6->vtable->field_0x28)(0,piVar4,param_5,param_6);
           if (sVar5 == 0x1e) {
             return 0x1e;
           }
@@ -136,7 +139,8 @@ LAB_004366b0:
               if ((short)param_1 != -1) {
                 /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
                 pSVar6 = STAllPlayersC::GetObjPtr(in_ECX,objPtr,param_1,CASE_1);
-                sVar5 = (*pSVar6->vtable->vfunc_28)(0,piVar4,param_5,param_6);
+                /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+                sVar5 = (**(code **)&pSVar6->vtable->field_0x28)(0,piVar4,param_5,param_6);
                 if (sVar5 == 0x18) {
                   return 0x18;
                 }
@@ -154,7 +158,8 @@ LAB_004366b0:
               if ((short)param_1 != -1) {
                 /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
                 pSVar6 = STAllPlayersC::GetObjPtr(in_ECX,objPtr,param_1,CASE_1);
-                sVar5 = (*pSVar6->vtable->vfunc_28)(0,piVar4,param_5,param_6);
+                /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+                sVar5 = (**(code **)&pSVar6->vtable->field_0x28)(0,piVar4,param_5,param_6);
                 if (sVar5 == 0x1d) {
                   return 0x1d;
                 }
@@ -174,7 +179,8 @@ LAB_004366b0:
               if ((short)param_1 != -1) {
                 /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
                 pSVar6 = STAllPlayersC::GetObjPtr(in_ECX,objPtr,param_1,CASE_1);
-                sVar5 = (*pSVar6->vtable->vfunc_28)(0,piVar4,param_5,param_6);
+                /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+                sVar5 = (**(code **)&pSVar6->vtable->field_0x28)(0,piVar4,param_5,param_6);
                 if (sVar5 == 0x12) {
                   return 0x12;
                 }
@@ -197,7 +203,8 @@ LAB_004366b0:
           if ((short)param_1 != -1) {
             /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
             pSVar6 = STAllPlayersC::GetObjPtr(in_ECX,objPtr,param_1,CASE_1);
-            sVar5 = (*pSVar6->vtable->vfunc_28)(0,piVar4,param_5,param_6);
+            /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+            sVar5 = (**(code **)&pSVar6->vtable->field_0x28)(0,piVar4,param_5,param_6);
             if (sVar5 == 0x17) {
               return 0x17;
             }
@@ -222,7 +229,8 @@ LAB_004366b0:
           if ((short)param_1 != -1) {
             /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
             pSVar6 = STAllPlayersC::GetObjPtr(in_ECX,objPtr,param_1,CASE_1);
-            sVar5 = (*pSVar6->vtable->vfunc_28)(0,piVar4,param_5,param_6);
+            /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+            sVar5 = (**(code **)&pSVar6->vtable->field_0x28)(0,piVar4,param_5,param_6);
             if (sVar5 == 7) {
               return 7;
             }
@@ -243,7 +251,8 @@ LAB_004366b0:
         if ((short)param_1 != -1) {
           /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
           pSVar6 = STAllPlayersC::GetObjPtr(in_ECX,objPtr,param_1,CASE_1);
-          sVar5 = (*pSVar6->vtable->vfunc_28)(0,piVar4,param_5,param_6);
+          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+          sVar5 = (**(code **)&pSVar6->vtable->field_0x28)(0,piVar4,param_5,param_6);
           if (sVar5 == 7) {
             return 7;
           }
@@ -263,7 +272,8 @@ switchD_00435c5c_caseD_1:
         if ((short)param_1 != -1) {
           /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
           pSVar6 = STAllPlayersC::GetObjPtr(in_ECX,objPtr,param_1,CASE_1);
-          sVar5 = (*pSVar6->vtable->vfunc_28)(2,piVar4,param_5,param_6);
+          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+          sVar5 = (**(code **)&pSVar6->vtable->field_0x28)(2,piVar4,param_5,param_6);
           if (sVar5 == 6) {
             return 6;
           }
@@ -285,7 +295,8 @@ switchD_00435c5c_caseD_1:
         if ((short)param_1 != -1) {
           /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
           pSVar6 = STAllPlayersC::GetObjPtr(in_ECX,objPtr,param_1,CASE_1);
-          sVar5 = (*pSVar6->vtable->vfunc_28)(param_3,piVar4,param_5,param_6);
+          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+          sVar5 = (**(code **)&pSVar6->vtable->field_0x28)(param_3,piVar4,param_5,param_6);
           if (sVar5 == 7) {
             return 7;
           }
@@ -308,7 +319,8 @@ switchD_00435c5c_caseD_1:
         if ((short)param_1 != -1) {
           /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
           pSVar6 = STAllPlayersC::GetObjPtr(in_ECX,objPtr,param_1,CASE_1);
-          sVar5 = (*pSVar6->vtable->vfunc_28)(4,piVar4,param_5,param_6);
+          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+          sVar5 = (**(code **)&pSVar6->vtable->field_0x28)(4,piVar4,param_5,param_6);
           if (sVar5 == 0x18) {
             return 0x18;
           }
@@ -329,7 +341,8 @@ switchD_00435c5c_caseD_1:
         if ((short)param_1 != -1) {
           /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
           pSVar6 = STAllPlayersC::GetObjPtr(in_ECX,objPtr,param_1,CASE_1);
-          sVar5 = (*pSVar6->vtable->vfunc_28)(5,piVar4,param_5,param_6);
+          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+          sVar5 = (**(code **)&pSVar6->vtable->field_0x28)(5,piVar4,param_5,param_6);
           if (sVar5 == 0xd) {
             return 0xd;
           }
@@ -347,7 +360,8 @@ switchD_00435c5c_caseD_1:
         if ((short)param_1 != -1) {
           /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
           pSVar6 = STAllPlayersC::GetObjPtr(in_ECX,objPtr,param_1,CASE_1);
-          sVar5 = (*pSVar6->vtable->vfunc_28)(6,piVar4,param_5,param_6);
+          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+          sVar5 = (**(code **)&pSVar6->vtable->field_0x28)(6,piVar4,param_5,param_6);
           if (sVar5 == 0xf) {
             return 0xf;
           }
@@ -368,7 +382,8 @@ switchD_00435c5c_caseD_1:
         if ((short)param_1 != -1) {
           /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
           pSVar6 = STAllPlayersC::GetObjPtr(in_ECX,objPtr,param_1,CASE_1);
-          sVar5 = (*pSVar6->vtable->vfunc_28)(7,piVar4,param_5,param_6);
+          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+          sVar5 = (**(code **)&pSVar6->vtable->field_0x28)(7,piVar4,param_5,param_6);
           if (sVar5 == 9) {
             return 9;
           }
@@ -391,7 +406,8 @@ switchD_00435c5c_caseD_1:
         if ((short)param_1 != -1) {
           /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
           pSVar6 = STAllPlayersC::GetObjPtr(in_ECX,objPtr,param_1,CASE_1);
-          sVar5 = (*pSVar6->vtable->vfunc_28)(8,piVar4,param_5,param_6);
+          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+          sVar5 = (**(code **)&pSVar6->vtable->field_0x28)(8,piVar4,param_5,param_6);
           if (sVar5 == 0x11) {
             return 0x11;
           }
@@ -409,7 +425,8 @@ switchD_00435c5c_caseD_1:
         if ((short)param_1 != -1) {
           /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
           pSVar6 = STAllPlayersC::GetObjPtr(in_ECX,objPtr,param_1,CASE_1);
-          sVar5 = (*pSVar6->vtable->vfunc_28)(9,piVar4,param_5,param_6);
+          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+          sVar5 = (**(code **)&pSVar6->vtable->field_0x28)(9,piVar4,param_5,param_6);
           if (sVar5 == 8) {
             return 8;
           }
@@ -430,7 +447,8 @@ switchD_00435c5c_caseD_1:
         if ((short)param_1 != -1) {
           /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
           pSVar6 = STAllPlayersC::GetObjPtr(in_ECX,objPtr,param_1,CASE_1);
-          sVar5 = (*pSVar6->vtable->vfunc_28)(10,piVar4,param_5,param_6);
+          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+          sVar5 = (**(code **)&pSVar6->vtable->field_0x28)(10,piVar4,param_5,param_6);
           if (sVar5 == 0xc) {
             return 0xc;
           }
@@ -450,7 +468,8 @@ switchD_00435c5c_caseD_1:
           if ((STGameObjC *)piVar4 == pSVar6) {
             return 0;
           }
-          sVar5 = (*pSVar6->vtable->vfunc_28)(0xd,piVar4,param_5,param_6);
+          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+          sVar5 = (**(code **)&pSVar6->vtable->field_0x28)(0xd,piVar4,param_5,param_6);
           if (sVar5 == 0x17) {
             return 0x17;
           }
@@ -473,7 +492,8 @@ switchD_00435c5c_caseD_1:
           if ((STGameObjC *)piVar4 == pSVar6) {
             return 0;
           }
-          sVar5 = (*pSVar6->vtable->vfunc_28)(0xe,piVar4,param_5,param_6);
+          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+          sVar5 = (**(code **)&pSVar6->vtable->field_0x28)(0xe,piVar4,param_5,param_6);
           if (sVar5 == 0x14) {
             return 0x14;
           }
@@ -493,7 +513,8 @@ switchD_00435c5c_caseD_1:
         if ((short)param_1 != -1) {
           /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
           pSVar6 = STAllPlayersC::GetObjPtr(in_ECX,objPtr,param_1,CASE_1);
-          sVar5 = (*pSVar6->vtable->vfunc_28)(0x10,piVar4,param_5,param_6);
+          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+          sVar5 = (**(code **)&pSVar6->vtable->field_0x28)(0x10,piVar4,param_5,param_6);
           if (sVar5 == 0x16) {
             return 0x16;
           }
@@ -514,7 +535,8 @@ switchD_00435c5c_caseD_1:
         if ((short)param_1 != -1) {
           /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
           pSVar6 = STAllPlayersC::GetObjPtr(in_ECX,objPtr,param_1,CASE_1);
-          sVar5 = (*pSVar6->vtable->vfunc_28)(0x11,piVar4,param_5,param_6);
+          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+          sVar5 = (**(code **)&pSVar6->vtable->field_0x28)(0x11,piVar4,param_5,param_6);
           if (sVar5 == 0x12) {
             return 0x12;
           }
@@ -535,7 +557,8 @@ switchD_00435c5c_caseD_1:
         if ((short)param_1 != -1) {
           /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
           pSVar6 = STAllPlayersC::GetObjPtr(in_ECX,objPtr,param_1,CASE_1);
-          sVar5 = (*pSVar6->vtable->vfunc_28)(0x12,piVar4,param_5,param_6);
+          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+          sVar5 = (**(code **)&pSVar6->vtable->field_0x28)(0x12,piVar4,param_5,param_6);
           if (sVar5 == 0x13) {
             return 0x13;
           }
@@ -559,7 +582,8 @@ switchD_00435c5c_caseD_1:
           if ((STGameObjC *)piVar4 == pSVar6) {
             return 0;
           }
-          sVar5 = (*pSVar6->vtable->vfunc_28)(0x13,piVar4,param_5,param_6);
+          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+          sVar5 = (**(code **)&pSVar6->vtable->field_0x28)(0x13,piVar4,param_5,param_6);
           if (sVar5 == 0x1a) {
             return 0x1a;
           }
@@ -582,7 +606,8 @@ switchD_00435c5c_caseD_1:
           if ((STGameObjC *)piVar4 == pSVar6) {
             return 0;
           }
-          sVar5 = (*pSVar6->vtable->vfunc_28)(0x18,piVar4,param_5,param_6);
+          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+          sVar5 = (**(code **)&pSVar6->vtable->field_0x28)(0x18,piVar4,param_5,param_6);
           if (sVar5 == 0x1d) {
             return 0x1d;
           }
@@ -602,7 +627,8 @@ switchD_00435c5c_caseD_1:
         if ((short)param_1 != -1) {
           /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
           pSVar6 = STAllPlayersC::GetObjPtr(in_ECX,objPtr,param_1,CASE_1);
-          sVar5 = (*pSVar6->vtable->vfunc_28)(0x2d,piVar4,param_5,param_6);
+          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+          sVar5 = (**(code **)&pSVar6->vtable->field_0x28)(0x2d,piVar4,param_5,param_6);
           if (sVar5 == 0x10) {
             return 0x10;
           }
@@ -623,7 +649,8 @@ switchD_00435c5c_caseD_1:
         if ((short)param_1 != -1) {
           /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
           pSVar6 = STAllPlayersC::GetObjPtr(in_ECX,objPtr,param_1,CASE_1);
-          sVar5 = (*pSVar6->vtable->vfunc_28)(0x4d,piVar4,param_5,param_6);
+          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+          sVar5 = (**(code **)&pSVar6->vtable->field_0x28)(0x4d,piVar4,param_5,param_6);
           if (sVar5 == 0x1d) {
             return 0x1d;
           }

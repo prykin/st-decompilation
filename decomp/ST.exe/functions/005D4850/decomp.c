@@ -42,12 +42,12 @@ void __thiscall SettMapMTy::RunGame(SettMapMTy *this)
     return;
   }
   g_currentExceptionFrame = local_4c.previous;
-  iVar3 = ReportDebugMessage(s_E____titans_Start_settmobj_cpp_007cd258,0x998,0,errorCode,
-                             &DAT_007a4ccc,s_SettMapMTy__RunGame_007cd510);
+  iVar3 = ReportDebugMessage("E:\\__titans\\Start\\settmobj.cpp",0x998,0,errorCode,
+                             "%s","SettMapMTy::RunGame");
   if (iVar3 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  RaiseInternalException(errorCode,0,s_E____titans_Start_settmobj_cpp_007cd258,0x998);
+  RaiseInternalException(errorCode,0,"E:\\__titans\\Start\\settmobj.cpp",0x998);
   return;
 }
 

@@ -42,7 +42,7 @@ ProdPanelTy::PaintTab(ProdPanelTy *this,AnonShape_0053FEE0_A49592EB *param_1,und
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
       uVar5 = (*(code *)param_2)(param_1);
       iVar7 = 2;
-      pCVar6 = thunk_FUN_00571240(s_BUT_MFTABS_007c2374,0);
+      pCVar6 = thunk_FUN_00571240("BUT_MFTABS",0);
       pCVar6 = FUN_006f2c00(pCVar6,iVar7,uVar5);
       local_8 = cMf32::RecGet(DAT_00806790,1,pCVar6,piVar4,iVar8);
       iVar7 = local_c;
@@ -53,7 +53,7 @@ ProdPanelTy::PaintTab(ProdPanelTy *this,AnonShape_0053FEE0_A49592EB *param_1,und
       if (param_1->field_0014->field_0004 == 3) {
         iVar8 = 1;
         piVar4 = (int *)0x0;
-        pCVar6 = thunk_FUN_00571240(s_BUT_MFFRAMES_007c2384,0);
+        pCVar6 = thunk_FUN_00571240("BUT_MFFRAMES",0);
         local_8 = cMf32::RecGet(DAT_00806790,6,pCVar6,piVar4,iVar8);
         DibPut((AnonShape_006B5B10_E0D06CF1 *)pPVar3->field_0068,local_10,iVar7,'\x06',
                (byte *)local_8);
@@ -65,12 +65,12 @@ ProdPanelTy::PaintTab(ProdPanelTy *this,AnonShape_0053FEE0_A49592EB *param_1,und
       return;
     }
     g_currentExceptionFrame = local_58.previous;
-    iVar7 = ReportDebugMessage(s_E____titans_Andrey_specpan_cpp_007c7870,0x270,0,(int)piVar4,
-                               &DAT_007a4ccc,s_ProdPanelTy__PaintTab_007c7ac8);
+    iVar7 = ReportDebugMessage("E:\\__titans\\Andrey\\specpan.cpp",0x270,0,(int)piVar4,
+                               "%s","ProdPanelTy::PaintTab");
     if (iVar7 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    RaiseInternalException((int)piVar4,0,s_E____titans_Andrey_specpan_cpp_007c7870,0x270);
+    RaiseInternalException((int)piVar4,0,"E:\\__titans\\Andrey\\specpan.cpp",0x270);
   }
   return;
 }

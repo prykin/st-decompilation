@@ -31,10 +31,10 @@ void __thiscall PopUpTy::ChangeState(PopUpTy *this)
   pPVar3 = local_18;
   if (iVar4 != 0) {
     g_currentExceptionFrame = local_5c.previous;
-    iVar6 = ReportDebugMessage(s_E____titans_Andrey_mpopup_cpp_007c6f84,0x95,0,iVar4,&DAT_007a4ccc,
-                               s_PopUpTy__ChangeState_007c7010);
+    iVar6 = ReportDebugMessage("E:\\__titans\\Andrey\\mpopup.cpp",0x95,0,iVar4,"%s",
+                               "PopUpTy::ChangeState");
     if (iVar6 == 0) {
-      RaiseInternalException(iVar4,0,s_E____titans_Andrey_mpopup_cpp_007c6f84,0x95);
+      RaiseInternalException(iVar4,0,"E:\\__titans\\Andrey\\mpopup.cpp",0x95);
       return;
     }
     STDebugBreak(); /* noreturn in standalone pseudocode */

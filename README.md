@@ -95,6 +95,11 @@ The exporter also normalizes proven terminal `INT3` artifacts for standalone
 pseudocode and writes `pseudocode_idioms.jsonl` for forms that Ghidra cannot
 reliably spell as structured C (packed/unaligned fields, runtime-stride arrays,
 flat global-record arithmetic, raw indirect calls, and residual ABI artifacts).
+Every referenced immutable NUL-terminated string is emitted as an escaped C
+literal while its original symbol and address remain in metadata. The exporter
+also writes `decomp_quality_summary.json` and `decomp_quality_issues.jsonl`, a
+recursive inventory of residual type, field, global, CFG, and ABI debt across all
+exported `functions/**/decomp.c` bodies.
 The same hints appear as idempotent `ST_PSEUDO[...]` comments immediately above
 the corresponding expressions in each `decomp.c`.
 The normalization contract and examples are documented in
@@ -137,6 +142,7 @@ The current work focuses on recovering what the binary can prove:
 - calling conventions, callsite/thunk evidence, parameters, and selected free-function names;
 - anonymous hidden-`this` receivers proven from ECX flow and stack discipline;
 - message IDs and anonymous state/switch domains;
+- the common `STMessage` envelope and compatible `GetMessage` handler family;
 - physical and owner-resolved vtables (including one-slot and secondary-subobject
   tables), virtual slots, direct-JMP thunks, constructors, and class relationships;
 - non-virtual method ownership, cleanup/destructor shapes, and direct-call prototype propagation;

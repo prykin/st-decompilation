@@ -27,7 +27,7 @@ undefined4 __fastcall FUN_004d9000(AnonShape_004D9000_7AA66E43 *param_1)
     iVar3 = STT3DSprC::Init(this,DAT_008073cc,0x5a,0x45,0,0xb4,0x8c,0x11);
     if (iVar3 != 0) {
       RaiseInternalException
-                (iVar3,g_overwriteContext_007ED77C,s_E____titans_Artem_TLO_glsat_cpp_007bf5b0,0x61);
+                (iVar3,g_overwriteContext_007ED77C,"E:\\__titans\\Artem\\TLO_glsat.cpp",0x61);
     }
   }
   switch(param_1->field_0245) {
@@ -62,7 +62,7 @@ undefined4 __fastcall FUN_004d9000(AnonShape_004D9000_7AA66E43 *param_1)
                       ((STT3DSprC *)param_1->field_05FF,0xe,DAT_00806774,PTR_DAT_00790c24,0x1d);
     if (iVar3 != 0) {
       RaiseInternalException
-                (iVar3,g_overwriteContext_007ED77C,s_E____titans_Artem_TLO_glsat_cpp_007bf5b0,0x79);
+                (iVar3,g_overwriteContext_007ED77C,"E:\\__titans\\Artem\\TLO_glsat.cpp",0x79);
     }
     thunk_FUN_004ad5e0(param_1->field_05FF);
     uVar5 = 10;

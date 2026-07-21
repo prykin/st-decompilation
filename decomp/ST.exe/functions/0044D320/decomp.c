@@ -229,8 +229,9 @@ LAB_0044d710:
          pSVar4 != (STGameObjC *)0x0)) {
         if (GVar2 < 0x1001) {
           if (GVar2 == 0x1000) {
+/* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
 switchD_0044d78f_caseD_28:
-            iVar5 = (*pSVar4->vtable->vfunc_2C)();
+            iVar5 = (**(code **)&pSVar4->vtable->field_0x2c)();
             if ((iVar5 == 0x16) || (iVar5 == 0x25)) {
               local_8 = 1;
               if ((*(char *)(puVar3 + 3) == '\0') &&
@@ -238,15 +239,15 @@ switchD_0044d78f_caseD_28:
                   (g_playerRuntime[*(char *)&pSVar4->field_0024].field317_0x15b != 0)))) {
                 puVar3[3] = 0x401;
               }
-              if ((*(char *)((int)puVar3 + 0xb) == '\v') &&
-                 (*(int *)((int)&pSVar4[3].field_01BD + 2) == 1)) {
+              if ((*(char *)((int)puVar3 + 0xb) == '\v') && (pSVar4->field_0732 == 1)) {
                 puVar3[5] = 0xc01;
               }
             }
           }
           else if (GVar2 < 0x41) {
             if (GVar2 == 0x40) {
-              iVar5 = (*pSVar4->vtable->vfunc_2C)();
+              /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+              iVar5 = (**(code **)&pSVar4->vtable->field_0x2c)();
               if (iVar5 == 4) {
                 local_8 = 1;
                 if (((*(char *)(puVar3 + 3) == '\0') &&
@@ -254,15 +255,16 @@ switchD_0044d78f_caseD_28:
                    (g_playerRuntime[*(char *)&pSVar4->field_0024].field317_0x15b != 0)) {
                   puVar3[3] = 0x401;
                 }
-                if ((*(char *)(puVar3 + 5) == '\0') && (0 < *(int *)&pSVar4[4].field_0x7a)) {
+                if ((*(char *)(puVar3 + 5) == '\0') && (0 < (int)pSVar4->field_07BE)) {
                   puVar3[5] = 0x901;
                 }
               }
             }
             else {
               switch(GVar2) {
+              /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
               case CASE_1:
-                iVar5 = (*pSVar4->vtable->vfunc_2C)();
+                iVar5 = (**(code **)&pSVar4->vtable->field_0x2c)();
                 if ((iVar5 == 6) || (iVar5 == 0x12)) {
                   local_8 = 1;
                   iVar5 = thunk_FUN_00486b40((int)pSVar4);
@@ -276,10 +278,11 @@ joined_r0x0044d9f5:
                   }
                 }
                 break;
+              /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
               case CASE_2:
               case CASE_4:
               case CASE_8:
-                iVar5 = (*pSVar4->vtable->vfunc_2C)();
+                iVar5 = (**(code **)&pSVar4->vtable->field_0x2c)();
                 if (((iVar5 == 5) || (iVar5 == 0xb)) || (iVar5 == 0x11)) {
                   local_8 = 1;
                   if (((*(char *)(puVar3 + 3) == '\0') &&
@@ -288,13 +291,14 @@ joined_r0x0044d9f5:
                     puVar3[3] = 0x401;
                   }
 LAB_0044dc25:
-                  if ((*(char *)(puVar3 + 5) == '\0') && (0 < *(int *)&pSVar4[4].field_0x7a)) {
+                  if ((*(char *)(puVar3 + 5) == '\0') && (0 < (int)pSVar4->field_07BE)) {
                     puVar3[5] = 0x801;
                   }
                 }
                 break;
+              /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
               case CASE_10:
-                iVar5 = (*pSVar4->vtable->vfunc_2C)();
+                iVar5 = (**(code **)&pSVar4->vtable->field_0x2c)();
                 if (iVar5 == 0x17) {
                   local_8 = 1;
                   iVar5 = thunk_FUN_00486b40((int)pSVar4);
@@ -311,7 +315,8 @@ LAB_0044dc25:
           }
           else if (GVar2 < 0x201) {
             if (GVar2 == 0x200) {
-              iVar5 = (*pSVar4->vtable->vfunc_2C)();
+              /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+              iVar5 = (**(code **)&pSVar4->vtable->field_0x2c)();
               if ((iVar5 == 8) || (iVar5 == 0x14)) {
                 local_8 = 1;
                 iVar5 = thunk_FUN_00486b40((int)pSVar4);
@@ -322,7 +327,8 @@ LAB_0044dc25:
               }
             }
             else if ((GVar2 == 0x80) || (GVar2 == 0x100)) {
-              iVar5 = (*pSVar4->vtable->vfunc_2C)();
+              /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+              iVar5 = (**(code **)&pSVar4->vtable->field_0x2c)();
               if (iVar5 == 9) {
                 return puVar3;
               }
@@ -332,7 +338,8 @@ LAB_0044dc25:
             }
           }
           else if (GVar2 == 0x400) {
-            iVar5 = (*pSVar4->vtable->vfunc_2C)();
+            /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+            iVar5 = (**(code **)&pSVar4->vtable->field_0x2c)();
             if ((iVar5 == 7) || (iVar5 == 0x13)) {
               local_8 = 1;
               if ((*(char *)(puVar3 + 3) == '\0') &&
@@ -346,8 +353,10 @@ LAB_0044dc25:
               }
             }
           }
+          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
           else if ((GVar2 == 0x800) &&
-                  ((iVar5 = (*pSVar4->vtable->vfunc_2C)(), iVar5 == 0xc || (iVar5 == 0x18)))) {
+                  ((iVar5 = (**(code **)&pSVar4->vtable->field_0x2c)(), iVar5 == 0xc ||
+                   (iVar5 == 0x18)))) {
 LAB_0044d9c4:
             local_8 = 1;
             iVar5 = thunk_FUN_00486b40((int)pSVar4);
@@ -359,7 +368,8 @@ LAB_0044d9c4:
         }
         else if (GVar2 < 0x100001) {
           if (GVar2 == 0x100000) {
-            iVar5 = (*pSVar4->vtable->vfunc_2C)();
+            /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+            iVar5 = (**(code **)&pSVar4->vtable->field_0x2c)();
             if (iVar5 == 0x1d) {
               local_8 = 1;
               iVar5 = thunk_FUN_004d6df0((int *)pSVar4);
@@ -370,7 +380,7 @@ LAB_0044d9c4:
 LAB_0044dcbe:
               iVar5 = thunk_FUN_004e60d0((uint)DAT_0080874d,0x5f);
               if (0 < iVar5) {
-                iVar5 = *(int *)((int)&pSVar4[3].field_01A9 + 2);
+                iVar5 = pSVar4->field_071E;
 joined_r0x0044ddc7:
                 if (9 < iVar5) {
                   puVar3[5] = 0x1801;
@@ -386,8 +396,9 @@ joined_r0x0044ddc7:
               }
             }
             else if ((GVar2 != 0x40000) && (GVar2 != 0x80000)) goto cf_continue_loop_0044DDCF;
+/* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
 LAB_0044dce3:
-            uVar6 = (*pSVar4->vtable->vfunc_2C)();
+            uVar6 = (**(code **)&pSVar4->vtable->field_0x2c)();
             switch(uVar6) {
             case 0x19:
             case 0x1a:
@@ -408,7 +419,8 @@ switchD_0044dcfe_caseD_19:
         else if (GVar2 < 0x800001) {
           if (GVar2 == 0x800000) goto LAB_0044dce3;
           if (GVar2 == 0x200000) {
-            iVar5 = (*pSVar4->vtable->vfunc_2C)();
+            /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+            iVar5 = (**(code **)&pSVar4->vtable->field_0x2c)();
             if (iVar5 == 0x1b) {
               local_8 = 1;
               iVar5 = thunk_FUN_004d6df0((int *)pSVar4);
@@ -423,7 +435,9 @@ switchD_0044dcfe_caseD_19:
               goto LAB_0044dcbe;
             }
           }
-          else if ((GVar2 == 0x400000) && (iVar5 = (*pSVar4->vtable->vfunc_2C)(), iVar5 == 0x21)) {
+          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+          else if ((GVar2 == 0x400000) &&
+                  (iVar5 = (**(code **)&pSVar4->vtable->field_0x2c)(), iVar5 == 0x21)) {
             local_8 = 1;
             iVar5 = thunk_FUN_004d6df0((int *)pSVar4);
             if ((0 < iVar5) &&
@@ -435,7 +449,8 @@ switchD_0044dcfe_caseD_19:
           }
         }
         else if (GVar2 == 0x1000000) {
-          iVar5 = (*pSVar4->vtable->vfunc_2C)();
+          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+          iVar5 = (**(code **)&pSVar4->vtable->field_0x2c)();
           if (iVar5 == 0x24) {
             local_8 = 1;
             iVar5 = thunk_FUN_004d6df0((int *)pSVar4);
@@ -443,7 +458,7 @@ switchD_0044dcfe_caseD_19:
                (g_playerRuntime[*(char *)&pSVar4->field_0024].field320_0x15f != 0)) {
               puVar3[3] = 0x4801;
             }
-            iVar5 = *(int *)((int)&pSVar4[3].field_01A9 + 2);
+            iVar5 = pSVar4->field_071E;
             goto joined_r0x0044ddc7;
           }
         }

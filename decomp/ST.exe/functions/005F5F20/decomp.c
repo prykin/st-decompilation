@@ -3,32 +3,35 @@
 
 /* Recovered from embedded debug metadata:
    E:\__titans\nick\to_coll3.cpp
-   STColl3C::GetMessage */
+   STColl3C::GetMessage
 
-undefined4 __thiscall STColl3C::GetMessage(STColl3C *this,AnonShape_005F5F20_58E29B9E *param_1)
+   [STMessageHandlerApplier] Recovered common GetMessage envelope/signature.
+   Evidence: family_entries=00404917|005F5F20; family_names=STColl3C::GetMessage; ret4=12;
+   direct_offsets={10:1,14:2,18:4,1c:0} */
+
+int __thiscall STColl3C::GetMessage(STColl3C *this,STMessage *message)
 
 {
-  uint uVar1;
+  STMessageId SVar1;
   int *piVar2;
   code *pcVar3;
   short sVar4;
-  STColl3C *this_00;
+  AnonReceiver_00417FF0 *this_00;
   int iVar5;
   int iVar6;
-  undefined4 uVar7;
+  undefined4 *puVar7;
   undefined4 *puVar8;
-  undefined4 *puVar9;
-  STWorldObject *pSVar10;
+  STWorldObject *pSVar9;
   InternalExceptionFrame local_60;
   byte *local_1c;
   AnonShape_0060EA30_DCEB68AD *local_18;
   short local_14 [2];
   short local_10 [2];
   short local_c [2];
-  STColl3C *local_8;
+  AnonReceiver_00417FF0 *local_8;
 
-  local_8 = this;
-  iVar5 = STSprGameObjC::GetMessage((STSprGameObjC *)this,(AnonShape_0041AF40_F59F8577 *)param_1);
+  local_8 = (AnonReceiver_00417FF0 *)this;
+  iVar5 = STSprGameObjC::GetMessage((STSprGameObjC *)this,message);
   if (iVar5 == 0xffff) {
     return 0xffff;
   }
@@ -38,48 +41,49 @@ undefined4 __thiscall STColl3C::GetMessage(STColl3C *this,AnonShape_005F5F20_58E
   this_00 = local_8;
   if (iVar5 != 0) {
     g_currentExceptionFrame = local_60.previous;
-    iVar6 = ReportDebugMessage(s_E____titans_nick_to_coll3_cpp_007ce868,0xe8,0,iVar5,&DAT_007a4ccc,
-                               s_STColl3C__GetMessage_007ce88c);
+    iVar6 = ReportDebugMessage("E:\\__titans\\nick\\to_coll3.cpp",0xe8,0,iVar5,"%s",
+                               "STColl3C::GetMessage");
     if (iVar6 == 0) {
-      RaiseInternalException(iVar5,0,s_E____titans_nick_to_coll3_cpp_007ce868,0xea);
+      RaiseInternalException(iVar5,0,"E:\\__titans\\nick\\to_coll3.cpp",0xea);
       return 0xffff;
     }
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  uVar1 = param_1->field_0010;
-  if (0x10f < uVar1) {
-    switch(uVar1) {
-    case 0x110:
+  SVar1 = message->id;
+  if (MESS_SHARED_010F < SVar1) {
+    switch(SVar1) {
+    case MESS_TORPHIT:
       goto switchD_005f6301_caseD_110;
     default:
       g_currentExceptionFrame = local_60.previous;
       return 0;
-    case 0x112:
-      thunk_FUN_004ad5e0((int)&local_8->vtable_at_1d5);
+    case MESS_STOCTOPUSC_0112:
+      thunk_FUN_004ad5e0((int)&local_8->field_0x1d5);
       g_currentExceptionFrame = local_60.previous;
       return 0;
-    case 0x113:
-      (*local_8->vtable_at_1d5->vfunc_00)();
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+    case MESS_STSPRGAMEOBJC_0113:
+      (*(code *)**(undefined4 **)&local_8->field_0x1d5)();
       g_currentExceptionFrame = local_60.previous;
       return 0;
-    case 0x128:
-      thunk_FUN_004ad430((int)&local_8->vtable_at_1d5);
-      this_00->field_02BB = 0;
+    case MESS_HITKILL:
+      thunk_FUN_004ad430((int)&local_8->field_0x1d5);
+      this_00->field_0x2bb = 0;
       thunk_FUN_0041c5a0((AnonShape_0041C5A0_167218F4 *)this_00);
-      thunk_FUN_005f66b0((STJellyGunC *)this_00);
+      thunk_FUN_005f66b0(this_00);
       g_currentExceptionFrame = local_60.previous;
       return 0;
     }
   }
-  if (uVar1 == 0x10f) {
+  if (SVar1 == MESS_SHARED_010F) {
     local_1c = thunk_FUN_005f66f0(local_8,(uint *)&local_18);
-    STPlaySystemC::SaveObjData(PTR_00802a38,this_00->field_0018,local_1c,local_18);
+    STPlaySystemC::SaveObjData(PTR_00802a38,*(undefined4 *)&this_00->field_0x18,local_1c,local_18);
     FreeAndNull(&local_1c);
     g_currentExceptionFrame = local_60.previous;
     return 0;
   }
-  if (3 < uVar1) {
-    if (uVar1 != 0x108) {
+  if (MESS_SHARED_0003 < SVar1) {
+    if (SVar1 != MESS_SHARED_0108) {
       g_currentExceptionFrame = local_60.previous;
       return 0;
     }
@@ -87,35 +91,36 @@ undefined4 __thiscall STColl3C::GetMessage(STColl3C *this,AnonShape_005F5F20_58E
     g_currentExceptionFrame = local_60.previous;
     return 0;
   }
-  if (uVar1 == 3) {
+  if (SVar1 == MESS_SHARED_0003) {
     if (DAT_008117a4 != (void *)0x0) {
       thunk_FUN_005f9450((AnonShape_005F9450_64149E40 *)local_8);
-      thunk_FUN_0062e610(DAT_008117a4,this_00->field_0235,(int *)this_00->field_0018);
+      thunk_FUN_0062e610(DAT_008117a4,*(int *)&this_00->field_0x235,*(int **)&this_00->field_0x18);
     }
-    thunk_FUN_005fa070((int *)this_00);
-    thunk_FUN_004ad310((STT3DSprC *)&this_00->vtable_at_1d5);
+    thunk_FUN_005fa070(this_00);
+    thunk_FUN_004ad310((STT3DSprC *)&this_00->field_0x1d5);
     g_currentExceptionFrame = local_60.previous;
     return 0;
   }
-  if (uVar1 == 0) {
+  if (SVar1 == MESS_ID_NONE) {
     thunk_FUN_005f6f60((int *)local_8);
-    (*this_00->vtable->vfunc_D8)();
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+    (**(code **)(*(int *)this_00 + 0xd8))();
     g_currentExceptionFrame = local_60.previous;
     return 0;
   }
-  if (uVar1 != 2) {
+  if (SVar1 != MESS_ID_CREATE) {
     g_currentExceptionFrame = local_60.previous;
     return 0;
   }
-  puVar8 = (undefined4 *)param_1->field_0014;
-  if (puVar8[3] != 2) {
-    puVar9 = (undefined4 *)&local_8->field_0x231;
+  puVar7 = (message->arg0).ptr;
+  if (puVar7[3] != 2) {
+    puVar8 = (undefined4 *)&local_8->field_0x231;
     for (iVar5 = 0xb; iVar5 != 0; iVar5 = iVar5 + -1) {
-      *puVar9 = *puVar8;
+      *puVar8 = *puVar7;
+      puVar7 = puVar7 + 1;
       puVar8 = puVar8 + 1;
-      puVar9 = puVar9 + 1;
     }
-    iVar5 = local_8->field_0245;
+    iVar5 = *(int *)&local_8->field_0x245;
     sVar4 = (short)(iVar5 >> 0x1f);
     if (iVar5 < 0) {
       iVar5 = (short)(((short)(iVar5 / 0xc9) + sVar4) - (short)((longlong)iVar5 * 0x28c1979 >> 0x3f)
@@ -125,8 +130,8 @@ undefined4 __thiscall STColl3C::GetMessage(STColl3C *this,AnonShape_005F5F20_58E
       iVar5 = (int)(short)(((short)(iVar5 / 0xc9) + sVar4) -
                           (short)((longlong)iVar5 * 0x28c1979 >> 0x3f));
     }
-    iVar6 = local_8->field_0249;
-    local_8->field_025D = iVar5;
+    iVar6 = *(int *)&local_8->field_0x249;
+    *(int *)&local_8->field_0x25d = iVar5;
     sVar4 = (short)(iVar6 >> 0x1f);
     if (iVar6 < 0) {
       iVar5 = (short)(((short)(iVar6 / 0xc9) + sVar4) - (short)((longlong)iVar6 * 0x28c1979 >> 0x3f)
@@ -136,8 +141,8 @@ undefined4 __thiscall STColl3C::GetMessage(STColl3C *this,AnonShape_005F5F20_58E
       iVar5 = (int)(short)(((short)(iVar6 / 0xc9) + sVar4) -
                           (short)((longlong)iVar6 * 0x28c1979 >> 0x3f));
     }
-    iVar6 = local_8->field_024D;
-    local_8->field_0261 = iVar5;
+    iVar6 = *(int *)&local_8->field_0x24d;
+    *(int *)&local_8->field_0x261 = iVar5;
     sVar4 = (short)(iVar6 >> 0x1f);
     if (iVar6 < 0) {
       iVar5 = (short)(((short)(iVar6 / 200) + sVar4) - (short)((longlong)iVar6 * 0x51eb851f >> 0x3f)
@@ -147,22 +152,23 @@ undefined4 __thiscall STColl3C::GetMessage(STColl3C *this,AnonShape_005F5F20_58E
       iVar5 = (int)(short)(((short)(iVar6 / 200) + sVar4) -
                           (short)((longlong)iVar6 * 0x51eb851f >> 0x3f));
     }
-    local_8->field_0265 = iVar5;
+    *(int *)&local_8->field_0x265 = iVar5;
     thunk_FUN_005fa8b0(local_8,(int *)&local_8->field_0x27d,(int *)&local_8->field_0x281,
                        (int *)&local_8->field_0x285);
-    this_00->field_0269 = 600;
-    this_00->field_02DD = CASE_1;
-    this_00->field_02E1 = PTR_00802a38->field_00E4 + this_00->field_0259;
+    *(undefined4 *)&this_00->field_0x269 = 600;
+    *(undefined4 *)&this_00->field_0x2dd = 1;
+    *(int *)&this_00->field_0x2e1 = PTR_00802a38->field_00E4 + *(int *)&this_00->field_0x259;
     if (DAT_008117a4 != (void *)0x0) {
-      thunk_FUN_0062e550(DAT_008117a4,this_00->field_0235,this_00->field_0018,this_00->field_0255);
+      thunk_FUN_0062e550(DAT_008117a4,*(int *)&this_00->field_0x235,*(int *)&this_00->field_0x18,
+                         *(int *)&this_00->field_0x255);
     }
-    this_00->field_02E5 = 1;
+    this_00->field_0x2e5 = 1;
     g_currentExceptionFrame = local_60.previous;
     return 0;
   }
-  iVar5 = thunk_FUN_005f68b0(local_8,puVar8);
+  iVar5 = thunk_FUN_005f68b0(local_8,puVar7);
   if (iVar5 == 0) {
-    thunk_FUN_005f66b0((STJellyGunC *)this_00);
+    thunk_FUN_005f66b0(this_00);
     g_currentExceptionFrame = local_60.previous;
     return 0;
   }
@@ -172,21 +178,21 @@ undefined4 __thiscall STColl3C::GetMessage(STColl3C *this,AnonShape_005F5F20_58E
     if (((((local_14[0] < 0) || (g_worldGrid.sizeX <= local_14[0])) || (local_10[0] < 0)) ||
         ((g_worldGrid.sizeY <= local_10[0] || (local_c[0] < 0)))) ||
        (g_worldGrid.sizeZ <= local_c[0])) {
-      pSVar10 = (STWorldObject *)0x0;
+      pSVar9 = (STWorldObject *)0x0;
     }
     else {
-      pSVar10 = g_worldGrid.cells
-                [(int)g_worldGrid.planeStride * (int)local_c[0] +
-                 (int)g_worldGrid.sizeX * (int)local_10[0] + (int)local_14[0]].objects[0];
+      pSVar9 = g_worldGrid.cells
+               [(int)g_worldGrid.planeStride * (int)local_c[0] +
+                (int)g_worldGrid.sizeX * (int)local_10[0] + (int)local_14[0]].objects[0];
     }
-    if ((pSVar10 == (STWorldObject *)0x0) &&
-       ((this_00->field_02DD == CASE_1 ||
+    if ((pSVar9 == (STWorldObject *)0x0) &&
+       ((*(int *)&this_00->field_0x2dd == 1 ||
         (iVar5 = DumpClassC::WritePtr
                            (local_14[0],local_10[0],local_c[0],0,
                             (AnonShape_00495EC0_95A268C6 *)this_00), iVar5 == 0))))
     goto LAB_005f61e2;
   }
-  thunk_FUN_005f66b0((STJellyGunC *)this_00);
+  thunk_FUN_005f66b0(this_00);
 LAB_005f61e2:
   if (this_00->field_0x2b6 == '\0') {
     g_currentExceptionFrame = local_60.previous;
@@ -196,8 +202,9 @@ LAB_005f61e2:
   g_currentExceptionFrame = local_60.previous;
   return 0;
 switchD_005f6301_caseD_110:
-  piVar2 = (int *)param_1->field_0014;
-  iVar5 = (*local_8->vtable->vfunc_78)();
+  piVar2 = (message->arg0).ptr;
+  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+  iVar5 = (**(code **)(*(int *)local_8 + 0x78))();
   if (iVar5 < 1) {
     g_currentExceptionFrame = local_60.previous;
     return 0;
@@ -207,11 +214,11 @@ switchD_005f6301_caseD_110:
     g_currentExceptionFrame = local_60.previous;
     return 0;
   }
-  LoadImagSpr(this_00,0);
-  this_00->field_0275 = (uint)*(byte *)(piVar2 + 2);
-  this_00->field_0279 = (uint)*(ushort *)((int)piVar2 + 0xe);
-  thunk_FUN_005fa070((int *)this_00);
-  this_00->field_02DD = CASE_C|CASE_1;
+  LoadImagSpr((STColl3C *)this_00,0);
+  *(uint *)&this_00->field_0x275 = (uint)*(byte *)(piVar2 + 2);
+  *(uint *)&this_00->field_0x279 = (uint)*(ushort *)((int)piVar2 + 0xe);
+  thunk_FUN_005fa070(this_00);
+  *(undefined4 *)&this_00->field_0x2dd = 0xd;
   g_currentExceptionFrame = local_60.previous;
   return 0;
 }

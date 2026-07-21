@@ -15,7 +15,7 @@ void __thiscall FUN_0052bda0(void *this,char param_1,int param_2)
       param_2 = DAT_00808a97 - param_2;
     }
     *(int *)((int)this + 0x9e) = param_2;
-    wsprintfA((LPSTR)local_c,&DAT_007c6f44,param_2);
+    wsprintfA((LPSTR)local_c,"%5d",param_2);
     if (DAT_00808a97 == -1) {
       bVar3 = 0;
     }

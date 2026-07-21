@@ -120,8 +120,8 @@ STAllPlayersC::GetTOBJImage
     uVar4 = FUN_00709470(PTR_00807598,local_54,0x11,1,10,0xff);
     return uVar4;
   default:
-    iVar5 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0x324e,0,0,&DAT_007a4ccc,
-                               s_STAllPlayersC__GetTOBJImage_unkn_007a8a8c);
+    iVar5 = ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0x324e,0,0,"%s",
+                               "STAllPlayersC::GetTOBJImage unknown TOBJ-type");
     if (iVar5 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }

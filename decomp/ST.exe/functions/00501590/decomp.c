@@ -33,12 +33,12 @@ void __thiscall CPanelTy::PaintCtrlBoat(CPanelTy *this)
   this_00 = local_8;
   if (iVar2 != 0) {
     g_currentExceptionFrame = local_4c.previous;
-    iVar3 = ReportDebugMessage(s_E____titans_Andrey_cpanel2_cpp_007c2524,0x95,0,iVar2,&DAT_007a4ccc,
-                               s_CPanelTy__PaintCtrlBoat_007c25a4);
+    iVar3 = ReportDebugMessage("E:\\__titans\\Andrey\\cpanel2.cpp",0x95,0,iVar2,"%s",
+                               "CPanelTy::PaintCtrlBoat");
     if (iVar3 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    RaiseInternalException(iVar2,0,s_E____titans_Andrey_cpanel2_cpp_007c2524,0x95);
+    RaiseInternalException(iVar2,0,"E:\\__titans\\Andrey\\cpanel2.cpp",0x95);
     return;
   }
   switch(local_8->field_0B9E) {

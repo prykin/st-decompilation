@@ -23,10 +23,10 @@ void __thiscall HelpPanelTy::SwitchOptPanel(HelpPanelTy *this,int param_1)
   this_00 = local_8;
   if (errorCode != 0) {
     g_currentExceptionFrame = local_4c.previous;
-    iVar3 = ReportDebugMessage(s_E____titans_Andrey_helppan_cpp_007c383c,0x10f,0,errorCode,
-                               &DAT_007a4ccc,s_HelpPanelTy__SwitchOptPanel_007c3978);
+    iVar3 = ReportDebugMessage("E:\\__titans\\Andrey\\helppan.cpp",0x10f,0,errorCode,
+                               "%s","HelpPanelTy::SwitchOptPanel");
     if (iVar3 == 0) {
-      RaiseInternalException(errorCode,0,s_E____titans_Andrey_helppan_cpp_007c383c,0x10f);
+      RaiseInternalException(errorCode,0,"E:\\__titans\\Andrey\\helppan.cpp",0x10f);
       return;
     }
     STDebugBreak(); /* noreturn in standalone pseudocode */
@@ -44,7 +44,7 @@ void __thiscall HelpPanelTy::SwitchOptPanel(HelpPanelTy *this,int param_1)
       *(undefined4 *)&local_8->field_0x30 = local_8->field_0178;
       if (PTR_00802a30 != (CursorClassTy *)0x0) {
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-        (*(code *)**(undefined4 **)PTR_00802a30)(&local_8->field_0x18);
+        (**(code **)PTR_00802a30->field_0000)(&local_8->field_0x18);
       }
     }
     ShiftControls(this_00,0);

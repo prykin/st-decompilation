@@ -116,6 +116,7 @@ Different facts are intentionally independent:
 | `signature_apply` | Apply a recovered function signature. |
 | `return_apply` | Apply a recovered return type independently of the rest of a signature. |
 | `parameter_apply` | Replace a proven receiver-only function's formal parameter list. |
+| `repair_apply` | Remove a stale script-owned semantic owner/type when stronger aggregate evidence disproves it. |
 
 For class fields, semantic types can be enabled automatically while names stay
 review-only. Inspect `suggested_name`, `name_confidence`, and `name_evidence` in
@@ -144,9 +145,13 @@ appliers.
 2. Run `STDebugSymbolAnalyzer`.
    - Directory: `<repo>/recovery`
    - Output: `proposals.tsv`, `proposals.jsonl`, `conflicts.jsonl`,
-     `debug_calling_convention_review.tsv`, `summary.txt`
+     `debug_string_proposals.tsv`, `debug_calling_convention_review.tsv`,
+     `summary.txt`
 3. Review `proposals.tsv` and run `STDebugSymbolApplier`.
    - File: `<repo>/recovery/ST.exe/proposals.tsv`
+   - The sibling `debug_string_proposals.tsv` is loaded automatically. It
+     recovers short NUL-terminated printf formats which Ghidra's normal
+     minimum-length discovery misses, such as `%s` at `007A4CCC`.
 4. If present and reviewed, run `STCuratedRecoveryApplier`.
    - File: `<repo>/recovery/ST.exe/curated_recovery.tsv`
 5. Run `STCallsiteConventionAnalyzer` when
@@ -180,15 +185,30 @@ matching applier. Indirect virtual dispatch cannot be attributed to one
 concrete implementation and is reported as a coverage limit rather than
 treated as negative evidence.
 
-### 2. Message IDs
+### 2. Messages and handler signatures
 
 1. Run `STMessageIdAnalyzer`.
    - Directory: `<repo>/recovery`
 2. Run `STMessageIdApplier`.
    - File: `<repo>/recovery/ST.exe/message_id_proposals.tsv`
+3. Run `STMessageHandlerAnalyzer`.
+   - Directory: `<repo>/recovery`
+4. Run `STMessageHandlerApplier`.
+   - File: `<repo>/recovery/ST.exe/message_handler_proposals.tsv`
 
 This creates and maintains the recovered `STMessageId` enum from `MESS_*`
-strings and message dispatch comparisons.
+strings and message dispatch comparisons. `STRecoveredTypesApplier` supplies the
+common 0x20-byte `STMessage` envelope: the ID at `+0x10` and three four-byte
+arguments at `+0x14`, `+0x18`, and `+0x1c`. Each argument is a union because its
+pointer/integer/word interpretation depends on the message ID.
+
+The handler pair then replaces script-generated `AnonShape_*`, `int`, and
+`int *` parameters across the named `GetMessage` family with `STMessage *` and
+normalizes generic non-void returns to `int`. It also recognizes the shared
+`xor eax,eax; ret 4` default handler from its many named callers. Manually
+refined semantic signatures and the proven `void` AI event handler are
+preserved. Run this before vtable recovery so slot definitions inherit the
+common signature.
 
 ### 3. Vtables and virtual methods
 
@@ -286,11 +306,18 @@ structural until independent evidence names it.
    additional `this + offset` accesses even when no new class is created.
 
 The class-layout pass consumes constructor allocation sizes and recovered
-vtable types. It tracks exact `this + constant` accesses, typed call flows,
-sign-extension operations, and x87 memory operations. Pointer/scalar types are
+vtable types. It tracks exact `this + constant` accesses, fields reached through
+any existing typed class pointer, exact field-to-field copies across classes,
+typed call flows, sign-extension operations, signed/unsigned `CMP`/`DIV`
+domains, and x87 memory operations. Pointer/scalar types are
 applied only when width and evidence agree. Generated structures carry a safety
 hash; a manual change causes later automatic updates to be preserved rather
 than overwritten.
+
+Incoming `this` values spilled once to an EBP-relative prologue slot are tracked
+as immutable receiver anchors. This lets mutually exclusive setjmp/SEH branches
+reload `this` into different callee-saved registers without losing later
+unaligned fields in a linear instruction scan.
 
 The same pass now follows a value loaded from `[this + field]` when that value is
 subsequently used as a memory base. Multiple consistent child offsets create a
@@ -371,6 +398,15 @@ sets stay disabled. A `__fastcall` candidate is not converted when its incoming
 incoming `EDX` or stack-argument reads, conversion also removes the old `ECX`
 formal so it does not survive as a bogus stack parameter. The same check repairs
 receiver-only signatures written by earlier versions of the applier.
+
+Owner evidence is also coverage-checked against every non-thunk direct caller.
+The analyzer distinguishes calls which pass the caller's own incoming `ECX`
+from calls on a separately loaded service object. A prior script-owned owner is
+eligible for `repair_apply=1` only when named owners conflict, or at least four
+incoming-receiver callers dominate a fan-out of at least eight. The applier
+returns that shared helper to a neutral global `sub_ADDRESS` `__thiscall` and
+resets only downstream receiver types carrying the pointer-shape script's
+typed-call marker. Manual names and signatures are never eligible.
 
 The destructor pass first discovers known deallocators and only accepts a small
 wrapper when that wrapper forwards its own pointer argument into the real
@@ -477,6 +513,11 @@ final LLM corpus.
    - File: `<repo>/recovery/ST.exe/pointer_shape_target_proposals.tsv`
    - The program directory containing that file is also accepted. The sibling
      type and field proposal TSVs are loaded automatically.
+   - A direct compiler spill `local = (Base *)this` is restored to the named
+     method owner's most-derived type only when the local is still
+     `STPointerShapeApplier`-owned, has stable storage, uses no base adjustment,
+     and the derived layout is at least as large as the current base layout.
+     Manual/imported locals and anonymous owners are never changed by this rule.
 26. Run `STTypeFamilyAnalyzer`.
     - Directory: `<repo>/recovery`
 27. Run `STTypeFamilyApplier`.
@@ -638,7 +679,9 @@ the target TSV first. The ordinary automatic rows already have `apply=1`; do
 not bulk-enable the review/conflict rows merely to increase coverage.
 
 These passes form a bounded feedback loop. After applying them, rerun
-`STClassLayoutAnalyzer`/`STClassLayoutApplier`, then rerun the prototype and
+`STClassLayoutAnalyzer`/`STClassLayoutApplier`; this lets the class pass consume
+the corrected most-derived saved-`this` locals and cross-class field flows.
+Then rerun the prototype and
 global-data pairs. Stop when the summaries report no new enabled rows; do not
 force conflicting rows merely to continue the loop.
 
@@ -718,15 +761,30 @@ indirect call becomes the standalone noreturn `STDebugBreak()` helper defined in
 are grouped by function in `pseudocode_idioms.jsonl`, with line excerpts,
 machine/address hints, and the intended structured form. See
 [`pseudocode-normalization.md`](pseudocode-normalization.md).
+The broader `decomp_quality_summary.json` and `decomp_quality_issues.jsonl`
+inventory recursively scans every exported function body and also tracks generic
+fields/globals, anonymous shapes, undefined types, string labels, and CFG labels.
 Each unresolved expression also receives an idempotent `ST_PSEUDO[...]` comment
 immediately above it in `decomp.c`; reused bodies have old exporter comments
 removed and regenerated before the JSONL line numbers are recorded.
+
+All referenced immutable NUL-terminated strings are rendered as escaped C
+literals in `decomp.c`, including `RaiseInternalException`, resource names, and
+ordinary helper calls. A datum with a machine-code write reference remains
+symbolic. `meta.json` and `strings.jsonl` retain the original address and Ghidra
+symbol in either case. Ghidra itself only emits a quoted pointer when the target
+is character data in read-only memory; ST keeps many immutable diagnostics in a
+writable PE block beside real globals, so changing the entire block to read-only
+is not a safe workaround.
 
 Composite layouts are fingerprinted selectively: a function depends on the
 identity of its referenced structures and on the components it actually
 accesses, not on every field of every structure mentioned by its signature. A
 change to an unused field therefore does not invalidate all methods of that
-class, while a type/name/comment change at an accessed offset still does. Unions
+class, while a type/name/comment change at an accessed offset still does. The
+access walk follows typed registers and EBP stack spills over the complete CFG,
+so fields used only after calls, switch arms, or reloaded saved `this` pointers
+are not incorrectly reused from an older export. Unions
 are the exception: their complete ordered member layout is part of the fingerprint
 because member order can change which expression Ghidra prints for the same byte
 offset. The first export after this fingerprinting revision intentionally
@@ -744,6 +802,7 @@ every edit. Use the smallest affected loop:
 | New method name, receiver type, or class field type | method owners → prototypes → globals → class layouts |
 | Newly proven anonymous ECX receiver | hidden this → prototypes/export audit; anonymous vtable slots may then be refined separately |
 | New high-fanout helper semantics | utility functions → ABI consistency → return semantics → prototypes |
+| New or corrected `GetMessage` signature | message handlers → vtables → virtual methods → indirect calls → prototypes |
 | New named aggregate return type | type families → pointer shapes/prototypes for affected callers |
 | New or corrected vtable slot prototype | indirect calls → type families → affected callers |
 | New prototype or typed global | prototypes → global records → globals → pointer shapes → class layouts, until enabled counts reach zero |
@@ -763,15 +822,16 @@ a new conflict is what requires another iteration.
 | Pair or script | Primary purpose |
 | --- | --- |
 | `STRecoveredTypesApplier` | Install conservative known structures, discriminated payload unions, stack aggregates, enums, and selected signatures. |
-| `STDebugSymbolAnalyzer/Applier` | Recover C++ owners, method names, calling conventions, and source evidence from diagnostics. |
+| `STDebugSymbolAnalyzer/Applier` | Recover C++ owners, method names, calling conventions, source evidence, and short diagnostic printf strings. |
 | `STCallsiteConventionAnalyzer` | Audit uncertain conventions through direct and thunk-mediated callers; never auto-apply. |
 | `STCuratedRecoveryApplier` | Apply reviewed address-specific facts that are not yet generic. |
 | `STMessageIdAnalyzer/Applier` | Recover the `MESS_*`/`STMessageId` domain. |
+| `STMessageHandlerAnalyzer/Applier` | Apply the common `STMessage *` envelope and status return across the named `GetMessage` family, including the shared zero-return handler. |
 | `STVTableAnalyzer/Applier` | Find long and strongly referenced short vtables, resolve direct-JMP thunks, apply physical layouts separately from semantic owners, type safe owner vptrs, and record owner conflicts. |
 | `STVirtualMethodAnalyzer/Applier` | Propagate reviewed virtual slot names, conventions, and compatible signatures. |
 | `STConstructorAnalyzer/Applier` | Recover constructors, allocation sizes, direct hierarchy evidence, and repair proven receiver-only signatures. |
-| `STClassLayoutAnalyzer/Applier` | Build conservative class layouts, nested class-field pointee layouts, and semantic field-type/name proposals. |
-| `STMethodOwnerAnalyzer/Applier` | Assign structural class ownership to non-virtual methods through proven `this` flows. |
+| `STClassLayoutAnalyzer/Applier` | Build conservative class layouts, including fields reached after stable prologue `this` spills, nested class-field pointee layouts, and semantic field-type/name proposals. |
+| `STMethodOwnerAnalyzer/Applier` | Assign structural class ownership to non-virtual methods and repair weak script-owned assignments to high-fanout shared helpers. |
 | `STHiddenThisAnalyzer/Applier` | Recover anonymous `__thiscall` receivers from ECX/RET/call-site evidence with neutral structural owners required by Ghidra. |
 | `STDestructorAnalyzer/Applier` | Recover conservative destructor and scalar-deleting-destructor candidates. |
 | `STSwitchEnumAnalyzer/Applier` | Turn repeated switch/state domains into enums. |
@@ -791,7 +851,7 @@ a new conflict is what requires another iteration.
 | `STSourceProvenanceAnalyzer/Applier` | Attach original source files and strict free-function names. |
 | `STControlFlowLabelAnalyzer/Applier` | Give structural names to real decompiler goto targets. |
 | `STLibraryAnalyzer/Applier` | Classify linked CRT, DKW, and internal Ourlib implementations. |
-| `STDecompExport` | Export the address-stable, dependency-fingerprinted LLM corpus, normalize proven terminal trap artifacts, and catalogue unresolved pseudocode idioms. |
+| `STDecompExport` | Export the address-stable, dependency-fingerprinted LLM corpus, inline proven immutable strings, normalize terminal trap artifacts, and catalogue pseudocode idioms plus corpus-wide residual quality debt. |
 
 ## Git and Ghidra database hygiene
 

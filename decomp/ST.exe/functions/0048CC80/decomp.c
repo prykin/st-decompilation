@@ -33,12 +33,12 @@ void __thiscall STBoatC::_AddDefenceShots(STBoatC *this,char param_1,short param
   if (errorCode != 0) {
     g_currentExceptionFrame = local_64.previous;
     if (errorCode != -0x5001fff7) {
-      iVar5 = ReportDebugMessage(s_E____titans_wlad_To_boat_cpp_007a9d3c,0x4b84,0,errorCode,
-                                 &DAT_007a4ccc,s_STBoatC___AddDefenceShots_007ab9e0);
+      iVar5 = ReportDebugMessage("E:\\__titans\\wlad\\To_boat.cpp",0x4b84,0,errorCode,
+                                 "%s","STBoatC::_AddDefenceShots");
       if (iVar5 != 0) {
         STDebugBreak(); /* noreturn in standalone pseudocode */
       }
-      RaiseInternalException(errorCode,0,s_E____titans_wlad_To_boat_cpp_007a9d3c,0x4b85);
+      RaiseInternalException(errorCode,0,"E:\\__titans\\wlad\\To_boat.cpp",0x4b85);
     }
     return;
   }
@@ -57,7 +57,7 @@ void __thiscall STBoatC::_AddDefenceShots(STBoatC *this,char param_1,short param
         local_16 = local_8;
         Library::DKW::TBL::FUN_006ae140((uint *)pSVar2->field_047B,index,&local_20);
         RaiseInternalException
-                  (-0x5001fff7,g_overwriteContext_007ED77C,s_E____titans_wlad_To_boat_cpp_007a9d3c,
+                  (-0x5001fff7,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\To_boat.cpp",
                    0x4b76);
         uVar3 = local_c;
       }

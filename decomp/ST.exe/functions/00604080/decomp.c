@@ -33,7 +33,7 @@ STExplosion * __thiscall STExplosion::STExplosion(STExplosion *this)
   this->field_02AF = 0;
   this->field_02B3 = 0;
   this->field_02BB = 0;
-  this->field_02B7 = 0xffffffff;
+  this->field_02B7 = -1;
   return this;
 }
 

@@ -34,50 +34,46 @@ LAB_00465581:
       return iVar3;
     }
     if ((param_1 == (int *)0x0) || (param_1 == (int *)0x1)) {
-      if ((this->field_0041 == *(short *)&this->field_0x34) &&
-         ((this->field_0043 == *(short *)&this->field_0x36 &&
-          (this->field_0045 == *(short *)&this->field_0x38)))) {
+      if ((this->field_0041 == this->field_0034) &&
+         ((this->field_0043 == this->field_0036 && (this->field_0045 == this->field_0038)))) {
         iVar3 = (*this->vtable->vfunc_D8)();
         return -(uint)(iVar3 != 0);
       }
-      *(undefined4 *)&this->field_0x832 = 0;
+      this->field_0832 = 0;
     }
-    if (*(int *)&this->field_0x832 == 0) {
+    if (this->field_0832 == 0) {
       /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
       sVar2 = (*this->vtable->vfunc_10)
                         (CONCAT22(uVar8,this->field_0041),this->field_0043,
-                         CONCAT22(uVar8,this->field_0045),*(undefined2 *)&this->field_0x34,
-                         CONCAT22(uVar8,*(undefined2 *)&this->field_0x36),
-                         *(undefined2 *)&this->field_0x38);
+                         CONCAT22(uVar8,this->field_0045),this->field_0034,
+                         CONCAT22(uVar8,this->field_0036),this->field_0038);
       uVar4 = sub_004176C0(this,sVar2);
       uVar4 = sub_00417910(this,(short)uVar4);
       if (uVar4 != 0xffffffff) {
         if (uVar4 == 0) {
-          STJellyGunC::sub_00415B30
-                    ((STJellyGunC *)this,this->field_0041,this->field_0043,this->field_0045,
-                     *(short *)&this->field_0x34,*(short *)&this->field_0x36,
-                     *(short *)&this->field_0x38,this->field_0061);
-          *(undefined4 *)&this->field_0x7a = 0;
-          *(undefined4 *)&this->field_0x832 = 1;
+          sub_00415B30(this,this->field_0041,this->field_0043,this->field_0045,this->field_0034,
+                       this->field_0036,this->field_0038,this->field_0061);
+          this->field_007A = 0;
+          this->field_0832 = 1;
         }
         iVar3 = (*this->vtable->vfunc_D8)();
         return (-(uint)(iVar3 != 0) & 0xfffffffd) + 2;
       }
-      iVar3 = ReportDebugMessage(s_E____titans_wlad_To_boat_cpp_007a9d3c,0x1b8c,0,0,&DAT_007a4ccc,
-                                 s_STBoatC__BackAttack_RotateCheat_W_007aa210);
+      iVar3 = ReportDebugMessage("E:\\__titans\\wlad\\To_boat.cpp",0x1b8c,0,0,"%s",
+                                 "STBoatC::BackAttack RotateCheat WORM");
       if (iVar3 != 0) {
         STDebugBreak(); /* noreturn in standalone pseudocode */
       }
       iVar3 = 0x1b8d;
       goto cf_error_exit_00465763;
     }
-    if (*(int *)&this->field_0x832 != 1) {
+    if (this->field_0832 != 1) {
       return 2;
     }
     iVar3 = STJellyGunC::sub_00415ED0((STJellyGunC *)this,&local_8,(int *)&param_1);
     if (iVar3 == -1) {
-      iVar3 = ReportDebugMessage(s_E____titans_wlad_To_boat_cpp_007a9d3c,0x1b9e,0,0,&DAT_007a4ccc,
-                                 s_STBoatC__BackAttack_LLMoveStep_W_007aa1e4);
+      iVar3 = ReportDebugMessage("E:\\__titans\\wlad\\To_boat.cpp",0x1b9e,0,0,"%s",
+                                 "STBoatC::BackAttack LLMoveStep WORM");
       if (iVar3 != 0) {
         STDebugBreak(); /* noreturn in standalone pseudocode */
       }
@@ -104,9 +100,9 @@ LAB_00465581:
          ((this->field_0043 == (short)(this->field_0049 * 0xc9 + 100) &&
           (pSVar5 = (STBoatC *)(CONCAT22((short)((uint)this >> 0x10),this->field_004B * 200) + 100),
           this->field_0045 == (short)pSVar5)))) goto LAB_004655df;
-      *(undefined4 *)&this->field_0x832 = 0;
+      this->field_0832 = 0;
     }
-    if (*(int *)&this->field_0x832 == 0) {
+    if (this->field_0832 == 0) {
       /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
       iVar3 = CONCAT22((short)((uint)pSVar5 >> 0x10),this->field_004B * 200) + 100;
       /* ST_PSEUDO[unresolved_register_input,packed_or_unaligned_piece]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention; expected named packed member, bit extract/compose, or unaligned load */
@@ -123,34 +119,33 @@ LAB_00465581:
       uVar4 = sub_00417910(this,(short)uVar4);
       if (uVar4 != 0xffffffff) {
         if (uVar4 == 0) {
-          STJellyGunC::sub_00415B30
-                    ((STJellyGunC *)this,this->field_0041,this->field_0043,this->field_0045,
-                     this->field_0047 * 0xc9 + 100,this->field_0049 * 0xc9 + 100,
-                     this->field_004B * 200 + 100,this->field_0061);
-          *(undefined4 *)&this->field_0x7a = 0;
-          *(undefined4 *)&this->field_0x832 = 1;
+          sub_00415B30(this,this->field_0041,this->field_0043,this->field_0045,
+                       this->field_0047 * 0xc9 + 100,this->field_0049 * 0xc9 + 100,
+                       this->field_004B * 200 + 100,this->field_0061);
+          this->field_007A = 0;
+          this->field_0832 = 1;
         }
         iVar3 = (*this->vtable->vfunc_D8)();
         return (-(uint)(iVar3 != 0) & 0xfffffffd) + 2;
       }
-      iVar3 = ReportDebugMessage(s_E____titans_wlad_To_boat_cpp_007a9d3c,0x1bc5,0,0,&DAT_007a4ccc,
-                                 s_STBoatC__BackAttack_RotateCheat_D_007aa1b0);
+      iVar3 = ReportDebugMessage("E:\\__titans\\wlad\\To_boat.cpp",0x1bc5,0,0,"%s",
+                                 "STBoatC::BackAttack RotateCheat DOLPHINE");
       if (iVar3 != 0) {
         STDebugBreak(); /* noreturn in standalone pseudocode */
       }
       iVar3 = 0x1bc6;
 cf_error_exit_00465763:
       RaiseInternalException
-                (0xffff,g_overwriteContext_007ED77C,s_E____titans_wlad_To_boat_cpp_007a9d3c,iVar3);
+                (0xffff,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\To_boat.cpp",iVar3);
       return 0xffff;
     }
-    if (*(int *)&this->field_0x832 != 1) {
+    if (this->field_0832 != 1) {
       return 2;
     }
     iVar3 = STJellyGunC::sub_00415ED0((STJellyGunC *)this,&local_8,(int *)&param_1);
     if (iVar3 == -1) {
-      iVar3 = ReportDebugMessage(s_E____titans_wlad_To_boat_cpp_007a9d3c,0x1bd7,0,0,&DAT_007a4ccc,
-                                 s_STBoatC__BackAttack_LLMoveStep_D_007aa180);
+      iVar3 = ReportDebugMessage("E:\\__titans\\wlad\\To_boat.cpp",0x1bd7,0,0,"%s",
+                                 "STBoatC::BackAttack LLMoveStep DOLPHINE");
       if (iVar3 != 0) {
         STDebugBreak(); /* noreturn in standalone pseudocode */
       }

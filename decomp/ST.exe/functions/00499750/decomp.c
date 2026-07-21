@@ -14,7 +14,7 @@ undefined4 __thiscall STGroupBoatC::ReMakePVecAndTgtList(STGroupBoatC *this,uint
   code *pcVar1;
   STGroupBoatC *pSVar2;
   int iVar3;
-  int iVar4;
+  AnonPointee_STGroupBoatC_021E *pAVar4;
   undefined4 uVar5;
   int iVar6;
   uint index;
@@ -33,7 +33,7 @@ undefined4 __thiscall STGroupBoatC::ReMakePVecAndTgtList(STGroupBoatC *this,uint
   if (iVar3 == 0) {
     if (local_10->field_0212 == 0) {
       RaiseInternalException
-                (-0x5001fff7,g_overwriteContext_007ED77C,s_E____titans_wlad_to_grpb_cpp_007abe3c,
+                (-0x5001fff7,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_grpb.cpp",
                  0x4d7);
     }
     index = 0;
@@ -48,7 +48,7 @@ undefined4 __thiscall STGroupBoatC::ReMakePVecAndTgtList(STGroupBoatC *this,uint
           local_8._2_2_ = -1;
           Library::DKW::TBL::FUN_006ae140((uint *)pSVar2->field_020E,(int)local_a,&local_8);
           pSVar2->field_0212 = pSVar2->field_0212 + -1;
-          *(undefined4 *)(pSVar2->field_021E + local_a * 8) = 0xffffffff;
+          pSVar2->field_021E[local_a].field_0000 = 0xffffffff;
         }
         index = index + 1;
       } while ((int)index < (int)local_14);
@@ -56,43 +56,43 @@ undefined4 __thiscall STGroupBoatC::ReMakePVecAndTgtList(STGroupBoatC *this,uint
     if (pSVar2->field_0212 == 0) {
       DArrayDestroy((DArrayTy *)pSVar2->field_020E);
       pSVar2->field_020E = 0;
-      FreeAndNull((void **)&pSVar2->field_021E);
+      FreeAndNull(&pSVar2->field_021E);
       RaiseInternalException
-                (-0x5001fff7,g_overwriteContext_007ED77C,s_E____titans_wlad_to_grpb_cpp_007abe3c,
+                (-0x5001fff7,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_grpb.cpp",
                  0x4e5);
     }
     iVar6 = -1;
     iVar3 = 0;
-    if (0 < (int)pSVar2->field_021A) {
-      iVar4 = pSVar2->field_021E;
+    if (0 < pSVar2->field_021A) {
+      pAVar4 = pSVar2->field_021E;
       do {
-        if (*(int *)(iVar4 + iVar3 * 8) != -1) {
+        if (pAVar4[iVar3].field_0000 != -1) {
           if (iVar6 == -1) {
-            *(undefined4 *)(iVar4 + iVar3 * 8) = 0;
-            iVar4 = pSVar2->field_021E;
-            pSVar2->field_0216 = *(undefined4 *)(iVar4 + 4 + iVar3 * 8);
+            pAVar4[iVar3].field_0000 = 0;
+            pAVar4 = pSVar2->field_021E;
+            pSVar2->field_0216 = *(undefined4 *)&pAVar4[iVar3].field_0004;
             iVar6 = 0;
           }
           else {
-            *(undefined4 *)(iVar4 + iVar3 * 8) = pSVar2->field_0216;
-            iVar4 = pSVar2->field_021E;
-            pSVar2->field_0216 = pSVar2->field_0216 + *(int *)(iVar4 + 4 + iVar3 * 8);
+            pAVar4[iVar3].field_0000 = pSVar2->field_0216;
+            pAVar4 = pSVar2->field_021E;
+            pSVar2->field_0216 = pSVar2->field_0216 + *(int *)&pAVar4[iVar3].field_0004;
           }
         }
         iVar3 = iVar3 + 1;
-      } while (iVar3 < (int)pSVar2->field_021A);
+      } while (iVar3 < pSVar2->field_021A);
     }
     g_currentExceptionFrame = local_58.previous;
   }
   else {
     g_currentExceptionFrame = local_58.previous;
     if (iVar3 != -0x5001fff7) {
-      iVar6 = ReportDebugMessage(s_E____titans_wlad_to_grpb_cpp_007abe3c,0x4f3,0,iVar3,&DAT_007a4ccc
-                                 ,s_STGroupBoatC__ReMakePVecAndTgtLi_007abe9c);
+      iVar6 = ReportDebugMessage("E:\\__titans\\wlad\\to_grpb.cpp",0x4f3,0,iVar3,"%s"
+                                 ,"STGroupBoatC::ReMakePVecAndTgtList");
       if (iVar6 != 0) {
         STDebugBreak(); /* noreturn in standalone pseudocode */
       }
-      RaiseInternalException(iVar3,0,s_E____titans_wlad_to_grpb_cpp_007abe3c,0x4f4);
+      RaiseInternalException(iVar3,0,"E:\\__titans\\wlad\\to_grpb.cpp",0x4f4);
       return 0xffffffff;
     }
   }

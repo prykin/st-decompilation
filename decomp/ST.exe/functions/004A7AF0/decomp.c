@@ -31,8 +31,8 @@ STGroupBoatC::GetPatrolTask(STGroupBoatC *this,int param_1,uint param_2,uint par
   if (param_1 == 1) {
     local_1e = thunk_FUN_0040bc90(this,param_2 & 0xffff,(short *)(int)local_14,
                                   (short *)(int)local_12,(short *)(int)local_10,'\0');
-    if ((int)this->field_0242 < local_1e) {
-      if ((1 < (ushort)this->field_0027) &&
+    if (this->field_0242 < local_1e) {
+      if ((1 < this->field_0027) &&
          (((this->field_0236 == 1 && (local_1e <= local_a / 2)) ||
           ((this->field_0236 == 0 && (local_1e <= local_e / 2)))))) {
         DArrayGetElement((DArrayTy *)this->field_022E,param_3,&local_2c);
@@ -50,8 +50,8 @@ STGroupBoatC::GetPatrolTask(STGroupBoatC *this,int param_1,uint param_2,uint par
             return 0;
           }
           if (local_1a != 2) {
-            iVar2 = ReportDebugMessage(s_E____titans_wlad_to_grpb_cpp_007abe3c,0x164b,0,0,
-                                       &DAT_007a4ccc,s_STGroupBoatC__GetPatrolTask_inco_007ac488);
+            iVar2 = ReportDebugMessage("E:\\__titans\\wlad\\to_grpb.cpp",0x164b,0,0,
+                                       "%s","STGroupBoatC::GetPatrolTask incorrect data");
             if (iVar2 == 0) {
               return 0;
             }

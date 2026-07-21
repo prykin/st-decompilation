@@ -37,12 +37,12 @@ void __thiscall TradePanelTy::Update(TradePanelTy *this)
     return;
   }
   g_currentExceptionFrame = local_5c.previous;
-  iVar2 = ReportDebugMessage(s_E____titans_Andrey_tradecen_cpp_007c8624,300,0,errorCode,
-                             &DAT_007a4ccc,s_TradePanelTy__Update_007c875c);
+  iVar2 = ReportDebugMessage("E:\\__titans\\Andrey\\tradecen.cpp",300,0,errorCode,
+                             "%s","TradePanelTy::Update");
   if (iVar2 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  RaiseInternalException(errorCode,0,s_E____titans_Andrey_tradecen_cpp_007c8624,300);
+  RaiseInternalException(errorCode,0,"E:\\__titans\\Andrey\\tradecen.cpp",300);
   return;
 }
 

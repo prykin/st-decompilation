@@ -33,12 +33,12 @@ int __thiscall STColl3C::CreateAddSpr(STColl3C *this)
     return local_c + 2;
   }
   g_currentExceptionFrame = local_50.previous;
-  iVar4 = ReportDebugMessage(s_E____titans_nick_to_coll3_cpp_007ce868,0x5d8,0,iVar2,&DAT_007a4ccc,
-                             s_STColl3C__CreateAddSpr_007ce8c4);
+  iVar4 = ReportDebugMessage("E:\\__titans\\nick\\to_coll3.cpp",0x5d8,0,iVar2,"%s",
+                             "STColl3C::CreateAddSpr");
   if (iVar4 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  RaiseInternalException(iVar2,0,s_E____titans_nick_to_coll3_cpp_007ce868,0x5da);
+  RaiseInternalException(iVar2,0,"E:\\__titans\\nick\\to_coll3.cpp",0x5da);
   return 0xffff;
 }
 

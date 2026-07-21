@@ -81,15 +81,14 @@ FUN_0065e450(AnonShape_0065E360_B94C37CB *param_1,undefined4 param_2,
         break;
       case 0xf:
                     /* WARNING: This code block may not be properly labeled as switch case */
-        if (this->field_0024 == *(int *)&this[1].field_0x6c) {
+        if (this->field_0024 == this->field_023D) {
 LAB_0065e58d:
-          if ((*(int *)&this[1].field_0x74 != 0) || (*(int *)((int)&this[2].field_0149 + 1) < 100))
-          goto LAB_0065e5a7;
+          if ((this->field_0245 != 0) || (this->field_04EC < 100)) goto LAB_0065e5a7;
           bVar1 = 1;
         }
         else {
-          uVar6 = GetPlayerRaceId((char)*(int *)&this[1].field_0x6c);
-          iVar3 = *(int *)&this[1].field_0x64;
+          uVar6 = GetPlayerRaceId((char)this->field_023D);
+          iVar3 = this->field_0235;
           uVar7 = GetPlayerRaceId(*(char *)&this->field_0024);
           /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
           uVar8 = extraout_EDX_02;

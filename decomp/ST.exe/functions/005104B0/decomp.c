@@ -26,12 +26,12 @@ void __thiscall FrmPanelTy::Update(FrmPanelTy *this)
   this_00 = local_8;
   if (iVar2 != 0) {
     g_currentExceptionFrame = local_54.previous;
-    iVar3 = ReportDebugMessage(s_E____titans_Andrey_frmpanel_cpp_007c2958,0x70,0,iVar2,&DAT_007a4ccc
-                               ,s_FrmPanelTy__Update_007c2aac);
+    iVar3 = ReportDebugMessage("E:\\__titans\\Andrey\\frmpanel.cpp",0x70,0,iVar2,"%s"
+                               ,"FrmPanelTy::Update");
     if (iVar3 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    RaiseInternalException(iVar2,0,s_E____titans_Andrey_frmpanel_cpp_007c2958,0x70);
+    RaiseInternalException(iVar2,0,"E:\\__titans\\Andrey\\frmpanel.cpp",0x70);
     return;
   }
   piVar4 = &local_8->field_01AB;

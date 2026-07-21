@@ -36,7 +36,7 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00416270::FUN_005faa10
   if (local_10->field_02E6 != 0) {
     if (param_1 == 1) {
       puVar3 = Library::Ourlib::MFRLOAD::mfRLoad
-                         (DAT_00806774,CASE_1D,s_rubb3_007ce700,0xffffffff,0,1,0,(undefined4 *)0x0);
+                         (DAT_00806774,CASE_1D,"rubb3",0xffffffff,0,1,0,(undefined4 *)0x0);
       uVar5 = *(uint *)((int)puVar3 + 0xd);
       uVar4 = *(uint *)((int)puVar3 + 9);
       uVar7 = 8;
@@ -44,7 +44,7 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00416270::FUN_005faa10
     }
     else {
       puVar3 = Library::Ourlib::MFRLOAD::mfRLoad
-                         (DAT_00806774,CASE_1D,s_bulb_tel_007ce708,0xffffffff,0,1,0,
+                         (DAT_00806774,CASE_1D,"bulb_tel",0xffffffff,0,1,0,
                           (undefined4 *)0x0);
       uVar5 = *(uint *)((int)puVar3 + 0xd);
       uVar4 = *(uint *)((int)puVar3 + 9);

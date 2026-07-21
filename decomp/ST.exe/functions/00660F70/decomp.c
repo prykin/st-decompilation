@@ -167,8 +167,9 @@ switchD_0066104e_caseD_9:
           }
           else {
             /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-            local_6c._8_4_ = *(undefined4 *)&local_20->field_0x65c;
-            *(uint *)&local_20->field_0x65c = local_6c._8_4_ + 1;
+            local_6c._8_4_ = local_20->field_065C;
+            /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+            local_20->field_065C = local_6c._8_4_ + 1;
           }
           /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
           local_6c._12_2_ = *(undefined2 *)((int)this + 0x7d);

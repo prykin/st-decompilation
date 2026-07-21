@@ -27,7 +27,7 @@ STAllPlayersC::DelObjsFromTmp
   if (errorCode == 0) {
     if (param_4 == (DArrayTy *)0x0) {
       RaiseInternalException
-                (-0x5001fff7,g_overwriteContext_007ED77C,s_E____titans_wlad_to_allpl_cpp_007a6004,
+                (-0x5001fff7,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_allpl.cpp",
                  0x2b4);
     }
     local_10 = param_4->count;
@@ -46,10 +46,10 @@ STAllPlayersC::DelObjsFromTmp
   else {
     g_currentExceptionFrame = local_54.previous;
     if (errorCode != -0x5001fff7) {
-      iVar2 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,700,0,errorCode,
-                                 &DAT_007a4ccc,s_STAllPlayersC__DelObjsFromTmp_007a62ac);
+      iVar2 = ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",700,0,errorCode,
+                                 "%s","STAllPlayersC::DelObjsFromTmp");
       if (iVar2 == 0) {
-        RaiseInternalException(errorCode,0,s_E____titans_wlad_to_allpl_cpp_007a6004,0x2bd);
+        RaiseInternalException(errorCode,0,"E:\\__titans\\wlad\\to_allpl.cpp",0x2bd);
         return 0xffffffff;
       }
       STDebugBreak(); /* noreturn in standalone pseudocode */

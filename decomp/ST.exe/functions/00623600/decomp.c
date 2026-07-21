@@ -22,9 +22,9 @@ void __fastcall FUN_00623600(AnonShape_00623600_61226D23 *param_1)
                              (int)param_1->field_0047,(int)param_1->field_0049,&local_8,&local_c),
          iVar6 < 0)) ||
         ((((4 < iVar6 || (local_8 < 0)) ||
-          (((int)pVVar5->field_0030 <= local_8 ||
+          ((pVVar5->field_0030 <= local_8 ||
            ((local_c = (&DAT_0079aed0)[iVar6] + local_c, local_c < 0 ||
-            ((int)pVVar5->field_0034 <= local_c)))))) || (pVVar5->field_004C == 0)))) ||
+            (pVVar5->field_0034 <= local_c)))))) || (pVVar5->field_004C == 0)))) ||
        (*(char *)(local_c * pVVar5->field_0030 + pVVar5->field_004C + local_8) != '\0')) {
       bVar4 = false;
       if (param_1->field_02AE == 0) {

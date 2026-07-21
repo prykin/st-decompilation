@@ -33,8 +33,8 @@ void __thiscall MainMenuTy::DoneMainMenu(MainMenuTy *this)
       }
     }
     DarkScreen(DAT_0080759c,10,2);
-    if (PTR_0081176c->field_002C != 0) {
-      cMf32::RecMemFree(g_cMf32_00806780,&PTR_0081176c->field_002C);
+    if (PTR_0081176c->field_002C != (ccFntTy *)0x0) {
+      cMf32::RecMemFree(g_cMf32_00806780,(uint *)&PTR_0081176c->field_002C);
     }
     this_00 = *(MMsgTy **)(*(int *)&pMVar2[0x1d].field_0xa4 + 0x2e6);
     if (this_00 != (MMsgTy *)0x0) {
@@ -61,12 +61,12 @@ void __thiscall MainMenuTy::DoneMainMenu(MainMenuTy *this)
     return;
   }
   g_currentExceptionFrame = local_4c.previous;
-  iVar4 = ReportDebugMessage(s_E____titans_Start_main_obj_cpp_007cc8e8,99,0,iVar3,&DAT_007a4ccc,
-                             s_MainMenuTy__DoneMainMenu_007cc940);
+  iVar4 = ReportDebugMessage("E:\\__titans\\Start\\main_obj.cpp",99,0,iVar3,"%s",
+                             "MainMenuTy::DoneMainMenu");
   if (iVar4 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  RaiseInternalException(iVar3,0,s_E____titans_Start_main_obj_cpp_007cc8e8,99);
+  RaiseInternalException(iVar3,0,"E:\\__titans\\Start\\main_obj.cpp",99);
   return;
 }
 

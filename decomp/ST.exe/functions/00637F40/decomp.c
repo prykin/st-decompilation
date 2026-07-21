@@ -11,10 +11,10 @@ void __cdecl FUN_00637f40(uint param_1,uint param_2,int param_3)
 
   uVar3 = param_2;
   if (param_2 == 0) {
-    text = s_mstarG_007d1c70;
+    text = "mstarG";
   }
   else {
-    text = s_mstarGb_007d1c78;
+    text = "mstarGb";
   }
   puVar1 = Library::Ourlib::MFRLOAD::mfRLoad
                      (DAT_00806774,CASE_1D,text,0xffffffff,0,1,0,(undefined4 *)0x0);

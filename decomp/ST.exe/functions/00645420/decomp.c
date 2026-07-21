@@ -48,7 +48,7 @@ undefined4 * __thiscall STTorpC::SaveTorpData(STTorpC *this,int *param_1)
     puVar3[2] = this_00->field_0028;
     puVar3[3] = 2;
     puVar3[4] = this_00->field_002C;
-    puVar5 = (undefined4 *)&this_00->field_0x245;
+    puVar5 = (undefined4 *)&this_00->field_0245;
     puVar7 = puVar3 + 5;
     for (iVar2 = 0x11; iVar2 != 0; iVar2 = iVar2 + -1) {
       *puVar7 = *puVar5;
@@ -56,8 +56,8 @@ undefined4 * __thiscall STTorpC::SaveTorpData(STTorpC *this,int *param_1)
       puVar7 = puVar7 + 1;
     }
     puVar3[0x16] = *(undefined4 *)&local_20->field_0x231;
-    puVar3[0x17] = local_20->field_0235;
-    puVar3[0x18] = local_20->field_0239;
+    puVar3[0x17] = *(undefined4 *)&local_20->field_0x235;
+    puVar3[0x18] = *(undefined4 *)&local_20->field_0x239;
     puVar3[0x19] = local_20->field_023D;
     local_28 = puVar3;
     local_14 = (undefined4 *)FUN_006b0020((uint *)local_20->field_0241,(int *)&local_8);
@@ -111,12 +111,12 @@ undefined4 * __thiscall STTorpC::SaveTorpData(STTorpC *this,int *param_1)
     return puVar3;
   }
   g_currentExceptionFrame = local_6c.previous;
-  iVar4 = ReportDebugMessage(s_E____titans_nick_to_torp_cpp_007d25c0,0x4d4,0,iVar2,&DAT_007a4ccc,
-                             s_STTorpC__SaveTorpData_007d2638);
+  iVar4 = ReportDebugMessage("E:\\__titans\\nick\\to_torp.cpp",0x4d4,0,iVar2,"%s",
+                             "STTorpC::SaveTorpData");
   if (iVar4 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  RaiseInternalException(iVar2,0,s_E____titans_nick_to_torp_cpp_007d25c0,0x4d5);
+  RaiseInternalException(iVar2,0,"E:\\__titans\\nick\\to_torp.cpp",0x4d5);
   return local_28;
 }
 

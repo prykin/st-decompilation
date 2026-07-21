@@ -43,8 +43,8 @@ int __thiscall STBoatC::BackBring(STBoatC *this,int *param_1)
     iVar5 = UnLoadObj(this,2);
     return iVar5;
   }
-  iVar5 = ReportDebugMessage(s_E____titans_wlad_To_boat_cpp_007a9d3c,0x3870,0,0,&DAT_007a4ccc,
-                             s_STBoatC__BackBring_incorrect_ent_007ab604);
+  iVar5 = ReportDebugMessage("E:\\__titans\\wlad\\To_boat.cpp",0x3870,0,0,"%s",
+                             "STBoatC::BackBring incorrect entry");
   if (iVar5 == 0) {
     return -1;
   }

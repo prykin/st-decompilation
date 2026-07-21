@@ -11,9 +11,9 @@ STRubbishC * __thiscall STRubbishC::STRubbishC(STRubbishC *this)
 
 {
   STGameObjC::STGameObjC((STGameObjC *)this);
-  *(undefined4 *)&this->field_0x1d5 = 0xffffffff;
-  *(undefined4 *)&this->field_0x1d9 = 0xffffffff;
-  *(undefined4 *)&this->field_0x1dd = 0xffffffff;
+  this->field_01D5 = 0xffffffff;
+  this->field_01D9 = 0xffffffff;
+  this->field_01DD = 0xffffffff;
   this->vtable = &STRubbishCVTable;
   this->field_01E1 = 0;
   this->field_01E5 = 0;

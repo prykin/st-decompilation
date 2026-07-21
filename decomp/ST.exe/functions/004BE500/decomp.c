@@ -31,11 +31,11 @@ void __thiscall TLOBaseTy::SetActivity(TLOBaseTy *this,int param_1)
     thunk_FUN_0041dd00(local_8,param_1);
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     if ((((pTVar3->field_021D != 0) && (iVar5 == 0)) &&
-        (uVar6 = GetPlayerRaceId(pTVar3->field_023D),
+        (uVar6 = GetPlayerRaceId(*(char *)&pTVar3->field_023D),
         *(int *)(&DAT_00795c00 + ((uVar6 & 0xff) + pTVar3->field_0235 * 3) * 4) != 0)) &&
-       (*(uint *)&pTVar3->field_0x24 == (uint)*(byte *)(pTVar3->field_0010 + 0x112d))) {
+       (pTVar3->field_0024 == (uint)*(byte *)(pTVar3->field_0010 + 0x112d))) {
       pTVar1 = pTVar3->vtable;
-      uVar6 = GetPlayerRaceId(pTVar3->field_023D);
+      uVar6 = GetPlayerRaceId(*(char *)&pTVar3->field_023D);
       (*pTVar1->vfunc_90)(4,*(undefined4 *)
                              (&DAT_00795c00 + ((uVar6 & 0xff) + pTVar3->field_0235 * 3) * 4));
     }
@@ -46,10 +46,10 @@ void __thiscall TLOBaseTy::SetActivity(TLOBaseTy *this,int param_1)
     return;
   }
   g_currentExceptionFrame = local_4c.previous;
-  iVar7 = ReportDebugMessage(s_E____titans_Artem_TLO_bcomm_cpp_007ac8a8,0x2f,0,iVar5,&DAT_007a4ccc,
-                             s_TLOBaseTy__SetActivity_007ac8d0);
+  iVar7 = ReportDebugMessage("E:\\__titans\\Artem\\TLO_bcomm.cpp",0x2f,0,iVar5,"%s",
+                             "TLOBaseTy::SetActivity");
   if (iVar7 == 0) {
-    RaiseInternalException(iVar5,0,s_E____titans_Artem_TLO_bcomm_cpp_007ac8a8,0x30);
+    RaiseInternalException(iVar5,0,"E:\\__titans\\Artem\\TLO_bcomm.cpp",0x30);
     return;
   }
   STDebugBreak(); /* noreturn in standalone pseudocode */

@@ -31,7 +31,7 @@ undefined4 __fastcall FUN_004cc220(AnonShape_004CC220_7DEF08C7 *param_1)
                        param_1->field_060B,param_1->field_060F,0x11);
   if (exceptionCode != 0) {
     RaiseInternalException
-              (exceptionCode,g_overwriteContext_007ED77C,s_E____titans_Artem_TLO_bspr_cpp_007ad4d0,
+              (exceptionCode,g_overwriteContext_007ED77C,"E:\\__titans\\Artem\\TLO_bspr.cpp",
                0x355);
   }
   param_1->field_0440 = 0;

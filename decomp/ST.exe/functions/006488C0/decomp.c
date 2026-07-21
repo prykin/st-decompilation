@@ -26,7 +26,7 @@ int __cdecl SaveBossEdit(int param_1,char *param_2,undefined4 *param_3,char para
   if (iVar2 == 0) {
     if (((param_1 == 0) || (param_2 == (char *)0x0)) || (*(char *)((int)param_3 + 5) != '\x02')) {
       RaiseInternalException
-                (-0x34,g_overwriteContext_007ED77C,s_E____titans_ai_ai_boss_d_cpp_007d27f4,0x9c);
+                (-0x34,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_boss_d.cpp",0x9c);
     }
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     local_c = EventDataPack(*(AnonShape_0065CD10_BA40DE58 **)((int)param_3 + 0x4e),&local_14);
@@ -38,14 +38,14 @@ int __cdecl SaveBossEdit(int param_1,char *param_2,undefined4 *param_3,char para
     return 0;
   }
   g_currentExceptionFrame = local_58.previous;
-  iVar3 = ReportDebugMessage(s_E____titans_ai_ai_boss_d_cpp_007d27f4,0xa3,0,iVar2,&DAT_007a4ccc,
-                             s_SaveBossEdit_007d2838);
+  iVar3 = ReportDebugMessage("E:\\__titans\\ai\\ai_boss_d.cpp",0xa3,0,iVar2,"%s",
+                             "SaveBossEdit");
   if (iVar3 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   thunk_FUN_0065d0f0((int *)&local_c);
   thunk_FUN_006484f0((int *)&local_8);
-  RaiseInternalException(iVar2,0,s_E____titans_ai_ai_boss_d_cpp_007d27f4,0xa6);
+  RaiseInternalException(iVar2,0,"E:\\__titans\\ai\\ai_boss_d.cpp",0xa6);
   return iVar2;
 }
 

@@ -69,8 +69,8 @@ STAllPlayersC::GetBoatWeaponInfo
     uVar3 = 2;
     break;
   default:
-    iVar2 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0x281a,0,0,&DAT_007a4ccc,
-                               s_STAllPlayersC__GetBoatWeaponInfo_007a832c);
+    iVar2 = ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0x281a,0,0,"%s",
+                               "STAllPlayersC::GetBoatWeaponInfo unknown boat type");
     if (iVar2 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }

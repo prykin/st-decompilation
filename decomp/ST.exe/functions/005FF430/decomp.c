@@ -34,7 +34,8 @@ FUN_005ff430(void *this,Global_sub_005FF430_param_1Enum param_1,int param_2,unde
       return 0;
     }
     thunk_FUN_00416270(this_00,(undefined2 *)&param_3,&param_4,(int *)((int)&param_5 + 2));
-    iVar4 = (*this_00->vtable->vfunc_78)();
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+    iVar4 = (**(code **)&this_00->vtable->field_0x78)();
     if (iVar4 < 1) {
       return 0;
     }

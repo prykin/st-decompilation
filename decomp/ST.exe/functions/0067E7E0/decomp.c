@@ -58,8 +58,8 @@ uint * __cdecl CreateArbList(cMf32 *param_1,int param_2)
   iVar8 = Library::MSVCRT::__setjmp3(local_a0.jumpBuffer,0);
   if (iVar8 != 0) {
     g_currentExceptionFrame = local_a0.previous;
-    iVar11 = ReportDebugMessage(s_E____titans_ai_ai_plr_d_cpp_007d2fa4,0x245,0,iVar8,&DAT_007a4ccc,
-                                s_CreateArbList_007d30e0);
+    iVar11 = ReportDebugMessage("E:\\__titans\\ai\\ai_plr_d.cpp",0x245,0,iVar8,"%s",
+                                "CreateArbList");
     if (iVar11 == 0) {
       if (local_8 != (DArrayTy *)0x0) {
         DArrayDestroy(local_8);
@@ -67,14 +67,14 @@ uint * __cdecl CreateArbList(cMf32 *param_1,int param_2)
       if (local_10 != (DArrayTy *)0x0) {
         DArrayDestroy(local_10);
       }
-      RaiseInternalException(iVar8,0,s_E____titans_ai_ai_plr_d_cpp_007d2fa4,0x248);
+      RaiseInternalException(iVar8,0,"E:\\__titans\\ai\\ai_plr_d.cpp",0x248);
       return (uint *)0x0;
     }
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   if (param_1 == (cMf32 *)0x0) {
     RaiseInternalException
-              (-0x34,g_overwriteContext_007ED77C,s_E____titans_ai_ai_plr_d_cpp_007d2fa4,0x216);
+              (-0x34,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_plr_d.cpp",0x216);
   }
   local_8 = (DArrayTy *)Library::DKW::TBL::FUN_006ae290((uint *)0x0,5,0x98,5);
   if (param_2 != 0) {
@@ -151,7 +151,7 @@ uint * __cdecl CreateArbList(cMf32 *param_1,int param_2)
         pbVar16 = pbVar16 + 1;
       }
       uVar9 = 0xffffffff;
-      pcVar15 = &DAT_007c1890;
+      pcVar15 = "%d";
       do {
         pcVar14 = pcVar15;
         if (uVar9 == 0) break;
@@ -214,7 +214,7 @@ uint * __cdecl CreateArbList(cMf32 *param_1,int param_2)
           pbVar16 = pbVar16 + 1;
         }
         uVar9 = 0xffffffff;
-        pcVar5 = &DAT_007d30f0;
+        pcVar5 = "%03d";
         do {
           pcVar15 = pcVar5;
           if (uVar9 == 0) break;

@@ -46,8 +46,8 @@ void __thiscall FUN_0058c560(void *this,int param_1,int param_2)
       return;
     }
     if (iVar2 == 2) {
-      iVar2 = ReportDebugMessage(s_E____titans_Igor_to_sat_cpp_007cbab8,0x11b,0,0,&DAT_007a4ccc,
-                                 s_For_Artem___already_has_athe_tar_007cbadc);
+      iVar2 = ReportDebugMessage("E:\\__titans\\Igor\\to_sat.cpp",0x11b,0,0,"%s",
+                                 "For Artem : already has athe target");
       if (iVar2 != 0) {
         STDebugBreak(); /* noreturn in standalone pseudocode */
       }

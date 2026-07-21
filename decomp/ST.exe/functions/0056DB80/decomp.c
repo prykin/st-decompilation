@@ -105,7 +105,7 @@ void __thiscall STAppC::StartGame(STAppC *this)
         pcVar11 = extraout_ECX;
       }
     }
-    puVar6 = cLoadingTy::new(pcVar11,0x5c,s_MisLoad_log_007ca1d4,1);
+    puVar6 = cLoadingTy::new(pcVar11,0x5c,"MisLoad.log",1);
     if (puVar6 == (uint *)0x0) {
       PTR_00802a58 = (cLoadingTy *)0x0;
     }
@@ -160,7 +160,7 @@ void __thiscall STAppC::StartGame(STAppC *this)
     else {
       Library::MSVCRT::_strncpy(&pSVar12->field_0x78fe,local_14,0x103);
       pSVar12->field_7A01 = 0;
-      wsprintfA(local_14,&DAT_007c6ee4,&pSVar12->field_0x60,&pSVar12->field_0x78fe);
+      wsprintfA(local_14,"%s%s",&pSVar12->field_0x60,&pSVar12->field_0x78fe);
       local_120.previous = g_currentExceptionFrame;
       g_currentExceptionFrame = &local_120;
       iVar10 = Library::MSVCRT::__setjmp3(local_120.jumpBuffer,0);
@@ -182,7 +182,7 @@ void __thiscall STAppC::StartGame(STAppC *this)
     *puVar13 = puVar7;
     iVar10 = cMf32::RecGetOrigLen(g_cMf32_00806754,0,PTR_s_TEXTURE_0079b07c,(undefined1 *)0x0,1);
     pSVar12->field_7D16 = iVar10;
-    wsprintfA((LPSTR)&local_224,s__s_s_s_007c6edc,&pSVar12->field_0x60,PTR_s_SYSTEM__0079b030,
+    wsprintfA((LPSTR)&local_224,"%s%s%s",&pSVar12->field_0x60,PTR_s_SYSTEM__0079b030,
               *puVar13);
     if (g_cMf32_00806760 != (cMf32 *)0x0) {
       thunk_FUN_0055d910();
@@ -199,17 +199,17 @@ void __thiscall STAppC::StartGame(STAppC *this)
     }
     g_cMf32_00806760 = (cMf32 *)Library::Ourlib::MF32INT::FUN_006f0ec0(0x345,&local_224,0,0,0);
     DAT_00806764 = Library::Ourlib::MFRLOAD::mfRLoadCreate((int)g_cMf32_00806760);
-    DAT_0080679c = FUN_0070a9f0(g_cMf32_00806760,s_PALETTE_007ca1c8,2,1);
+    DAT_0080679c = FUN_0070a9f0(g_cMf32_00806760,"PALETTE",2,1);
     LoadGamePlt(g_cMf32_00806760,0);
     if (pSVar12->field_7D0E == 0) {
       puVar15 = &pSVar12->field_4DA3;
       pcVar8 = LoadResourceString(0x267f,HINSTANCE_00807618);
-      wsprintfA(&pSVar12->field_7D1A,s__s__s_007c411c,pcVar8,puVar15);
+      wsprintfA(&pSVar12->field_7D1A,"%s %s",pcVar8,puVar15);
       if (PTR_00802a58 != (cLoadingTy *)0x0) {
         cLoadingTy::DrawLineCR(PTR_00802a58,(uint *)&pSVar12->field_7D1A);
       }
       if ((pSVar12->field_1180 == '\x03') || (pSVar12->field_1180 == '\b')) {
-        puVar13 = (undefined4 *)&pSVar12->field_0x5012;
+        puVar13 = (undefined4 *)&pSVar12->field_5012;
         for (iVar10 = 0x41; iVar10 != 0; iVar10 = iVar10 + -1) {
           *puVar13 = 0;
           puVar13 = puVar13 + 1;
@@ -269,7 +269,7 @@ void __thiscall STAppC::StartGame(STAppC *this)
         pbVar14 = local_328;
       }
       pcVar8 = LoadResourceString(0x267f,HINSTANCE_00807618);
-      wsprintfA(&pSVar12->field_7D1A,s__s__s_007c411c,pcVar8,pbVar14);
+      wsprintfA(&pSVar12->field_7D1A,"%s %s",pcVar8,pbVar14);
       if (PTR_00802a58 != (cLoadingTy *)0x0) {
         cLoadingTy::DrawLineCR(PTR_00802a58,(uint *)&pSVar12->field_7D1A);
       }
@@ -305,7 +305,7 @@ void __thiscall STAppC::StartGame(STAppC *this)
       }
       if ((pSVar12->field_117C == 0) &&
          ((cVar1 = pSVar12->field_1180, cVar1 == '\b' || (cVar1 == '\x03')))) {
-        puVar13 = (undefined4 *)&pSVar12->field_0x5012;
+        puVar13 = (undefined4 *)&pSVar12->field_5012;
         for (iVar10 = 0x41; iVar10 != 0; iVar10 = iVar10 + -1) {
           *puVar13 = 0;
           puVar13 = puVar13 + 1;
@@ -402,7 +402,7 @@ void __thiscall STAppC::StartGame(STAppC *this)
     local_34[5] = 1;
     (*pSVar12->vtable->GetMessage)(pSVar12,(int)local_34);
     thunk_FUN_0056a500();
-    puVar13 = (undefined4 *)&pSVar12->field_0x5012;
+    puVar13 = (undefined4 *)&pSVar12->field_5012;
     for (iVar10 = 0x41; iVar10 != 0; iVar10 = iVar10 + -1) {
       *puVar13 = 0;
       puVar13 = puVar13 + 1;
@@ -458,8 +458,8 @@ void __thiscall STAppC::StartGame(STAppC *this)
     return;
   }
   g_currentExceptionFrame = local_98.previous;
-  iVar10 = ReportDebugMessage(s_E____titans_tapp_cpp_007ca0c8,0x54d,0,iVar10,&DAT_007a4ccc,
-                              s_STAppC__StartGame_007ca1b0);
+  iVar10 = ReportDebugMessage("E:\\__titans\\tapp.cpp",0x54d,0,iVar10,"%s",
+                              "STAppC::StartGame");
   if (iVar10 == 0) {
     pcVar11 = this_04;
     if (g_cMf32_00806754 != (cMf32 *)0x0) {

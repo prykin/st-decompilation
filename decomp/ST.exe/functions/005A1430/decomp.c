@@ -22,7 +22,7 @@ void __thiscall FSGSTy::Download(FSGSTy *this,undefined4 param_1,undefined4 para
   FSGSTy *local_8;
 
   if (((this->field_1A5F == CASE_1) && (this->field_1AC0 != (AnonPointee_FSGSTy_1AC0 *)0x0)) &&
-     (-1 < (int)this->field_1ABC)) {
+     (-1 < this->field_1ABC)) {
     local_4c.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_4c;
     local_8 = this;
@@ -47,19 +47,19 @@ void __thiscall FSGSTy::Download(FSGSTy *this,undefined4 param_1,undefined4 para
       ccFntTy::SetSurf(pFVar3->field_1A73,(int)pFVar3->field_1AC0,0,0,0x16,0x1b8,0xf0);
       pcVar5 = LoadResourceString(0x25bb,HINSTANCE_00807618);
       pcVar6 = LoadResourceString(0x25ba,HINSTANCE_00807618);
-      wsprintfA((LPSTR)&DAT_0080f33a,s__s__d_____d__s__007cc434,pcVar6,param_1,param_2,pcVar5);
+      wsprintfA((LPSTR)&DAT_0080f33a,"%s %d%%\n(%d %s)",pcVar6,param_1,param_2,pcVar5);
       ccFntTy::WrTxt(pFVar3->field_1A73,&DAT_0080f33a,-2,-1,2,-1,-1);
       FUN_006b35d0(DAT_008075a8,pFVar3->field_1ABC);
       g_currentExceptionFrame = local_4c.previous;
       return;
     }
     g_currentExceptionFrame = local_4c.previous;
-    iVar7 = ReportDebugMessage(s_E____titans_Start_fsgs_obj_cpp_007cbf70,0x941,0,errorCode,
-                               &DAT_007a4ccc,s_FSGSTy__Download_007cc420);
+    iVar7 = ReportDebugMessage("E:\\__titans\\Start\\fsgs_obj.cpp",0x941,0,errorCode,
+                               "%s","FSGSTy::Download");
     if (iVar7 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    RaiseInternalException(errorCode,0,s_E____titans_Start_fsgs_obj_cpp_007cbf70,0x941);
+    RaiseInternalException(errorCode,0,"E:\\__titans\\Start\\fsgs_obj.cpp",0x941);
   }
   return;
 }

@@ -73,20 +73,20 @@ STT3DSprC::LoadSequence(STT3DSprC *this,byte param_1,int *param_2,char *text,byt
   this_00 = local_c;
   if (iVar4 != 0) {
     g_currentExceptionFrame = local_58.previous;
-    iVar4 = ReportDebugMessage(s_E____titans_wlad_Tspr3d_cpp_007ac638,0x3b,0,iVar4,&DAT_007a4ccc,
-                               s_STT3DSprC__LoadSequence_007ac61c);
+    iVar4 = ReportDebugMessage("E:\\__titans\\wlad\\Tspr3d.cpp",0x3b,0,iVar4,"%s",
+                               "STT3DSprC::LoadSequence");
     if (iVar4 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
     return 0xffffffff;
   }
-  if (local_c->field_0018 == -1) {
+  if (local_c->field_0018 == 0xffffffff) {
     RaiseInternalException
-              (-1,g_overwriteContext_007ED77C,s_E____titans_wlad_Tspr3d_cpp_007ac638,0x22);
+              (-1,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\Tspr3d.cpp",0x22);
   }
   if (((char)param_1 < '\0') || (this_00->field_0014 + -1 < (int)(char)param_1)) {
     RaiseInternalException
-              (-1,g_overwriteContext_007ED77C,s_E____titans_wlad_Tspr3d_cpp_007ac638,0x23);
+              (-1,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\Tspr3d.cpp",0x23);
   }
   local_14 = (uint)(char)param_1;
   iVar4 = local_14 * 0x24;
@@ -95,7 +95,7 @@ STT3DSprC::LoadSequence(STT3DSprC *this,byte param_1,int *param_2,char *text,byt
     iVar5 = UnLoadSequence(this_00,param_1);
     if (iVar5 != 0) {
       RaiseInternalException
-                (-1,g_overwriteContext_007ED77C,s_E____titans_wlad_Tspr3d_cpp_007ac638,0x24);
+                (-1,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\Tspr3d.cpp",0x24);
     }
   }
   puVar6 = Library::Ourlib::MFRLOAD::mfRLoad
@@ -152,7 +152,7 @@ STT3DSprC::LoadSequence(STT3DSprC *this,byte param_1,int *param_2,char *text,byt
   puVar13[5] = *(int *)*puVar13 + -1;
   *(undefined4 *)(this_00->field_0020 + 0x20 + local_8) = 0;
   puVar13 = *(undefined4 **)(this_00->field_0020 + local_8);
-  FUN_006e98e0((void *)this_00->field_003C,this_00->field_0018,local_14,*puVar13,
+  FUN_006e98e0(this_00->field_003C,this_00->field_0018,local_14,*puVar13,
                *(int *)((int)puVar13 + 0x21),0);
   puVar6 = (ushort *)(this_00->field_0020 + 0xe + local_8);
   *puVar6 = *puVar6 & 0xfe37;

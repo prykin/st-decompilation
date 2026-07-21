@@ -13,10 +13,9 @@
 void __thiscall STBoatC::_SetSpeedFireLife(STBoatC *this,void *param_1)
 
 {
-  undefined4 uVar1;
-  code *pcVar2;
-  byte bVar3;
-  int iVar4;
+  code *pcVar1;
+  byte bVar2;
+  int iVar3;
 
   switch(this->field_06F7) {
   case CASE_1:
@@ -73,18 +72,18 @@ void __thiscall STBoatC::_SetSpeedFireLife(STBoatC *this,void *param_1)
     this->field_0219 = 0xaa;
     break;
   default:
-    iVar4 = ReportDebugMessage(s_E____titans_wlad_To_boat_cpp_007a9d3c,0x46b8,0,0,&DAT_007a4ccc,
-                               s_STBoatC___SetSpeedFireLife_unkno_007ab9a8);
-    if (iVar4 != 0) {
+    iVar3 = ReportDebugMessage("E:\\__titans\\wlad\\To_boat.cpp",0x46b8,0,0,"%s",
+                               "STBoatC::_SetSpeedFireLife unknown boat type");
+    if (iVar3 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
   }
-  bVar3 = thunk_FUN_00430750(this->field_06F7);
-  thunk_FUN_00417ff0(this,bVar3);
-  thunk_FUN_00418010(this,bVar3 / 2);
-  uVar1 = *(undefined4 *)(&DAT_007dfbac + this->field_06F7 * 4);
-  this->field_0716 = uVar1;
-  this->field_0712 = uVar1;
+  bVar2 = thunk_FUN_00430750(this->field_06F7);
+  thunk_FUN_00417ff0(this,bVar2);
+  thunk_FUN_00418010(this,bVar2 / 2);
+  iVar3 = *(int *)(&DAT_007dfbac + this->field_06F7 * 4);
+  this->field_0716 = iVar3;
+  this->field_0712 = iVar3;
   return;
 }
 

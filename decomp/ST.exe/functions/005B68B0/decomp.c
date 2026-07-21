@@ -36,12 +36,12 @@ MMMObjTy::OutBSlProc
       return;
     }
     g_currentExceptionFrame = local_50.previous;
-    iVar2 = ReportDebugMessage(s_E____titans_Start_mmenuobj_cpp_007cca38,0x147,0,errorCode,
-                               &DAT_007a4ccc,s_MMMObjTy__OutBSlProc_007ccb38);
+    iVar2 = ReportDebugMessage("E:\\__titans\\Start\\mmenuobj.cpp",0x147,0,errorCode,
+                               "%s","MMMObjTy::OutBSlProc");
     if (iVar2 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    RaiseInternalException(errorCode,0,s_E____titans_Start_mmenuobj_cpp_007cca38,0x147);
+    RaiseInternalException(errorCode,0,"E:\\__titans\\Start\\mmenuobj.cpp",0x147);
   }
   return;
 }

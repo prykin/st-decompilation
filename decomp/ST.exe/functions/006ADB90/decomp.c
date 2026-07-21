@@ -19,7 +19,7 @@ int __cdecl FUN_006adb90(char *param_1,int param_2,int param_3,byte *param_4)
      (iVar3 = Library::MSVCRT::FUN_007300e0(local_204,0x200,param_4,(undefined4 *)&stack0x00000014),
      iVar3 < 0)) {
     uVar4 = 0xffffffff;
-    pcVar6 = s_User_message_too_long_007ed7b4;
+    pcVar6 = "User message too long";
     do {
       pcVar8 = pcVar6;
       if (uVar4 == 0) break;
@@ -52,7 +52,7 @@ int __cdecl FUN_006adb90(char *param_1,int param_2,int param_3,byte *param_4)
       pcVar8 = pcVar8 + 1;
     }
   }
-  iVar3 = ReportDebugMessage(param_1,param_2,0,param_3,&DAT_007a4ccc,local_204);
+  iVar3 = ReportDebugMessage(param_1,param_2,0,param_3,"%s",local_204);
   if (iVar3 == 0) {
     return param_3;
   }

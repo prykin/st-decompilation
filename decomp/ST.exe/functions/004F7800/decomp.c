@@ -266,12 +266,12 @@ void __thiscall CPanelTy::DoneCPanel(CPanelTy *this)
       this_01 = extraout_ECX_01;
     }
     this_00->field_0B4B = (DArrayTy *)0x0;
-    if ((DArrayTy *)this_00->field_0B95 != (DArrayTy *)0x0) {
-      DArrayDestroy((DArrayTy *)this_00->field_0B95);
+    if (this_00->field_0B95 != (DArrayTy *)0x0) {
+      DArrayDestroy(this_00->field_0B95);
       /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
       this_01 = extraout_ECX_02;
     }
-    this_00->field_0B95 = 0;
+    this_00->field_0B95 = (DArrayTy *)0x0;
     if (this_00->field_01CC != (ccFntTy *)0x0) {
       ccFntTy::operator(this_01,(uint *)this_00->field_01CC);
       this_00->field_01CC = (ccFntTy *)0x0;
@@ -318,14 +318,14 @@ void __thiscall CPanelTy::DoneCPanel(CPanelTy *this)
       ccFntTy::operator(this_01,(uint *)this_00->field_01B8);
       this_00->field_01B8 = (ccFntTy *)0x0;
     }
-    if (this_00->field_01AC != 0) {
-      FreeAndNull((void **)&this_00->field_01AC);
+    if (this_00->field_01AC != (AnonPointee_CPanelTy_01AC *)0x0) {
+      FreeAndNull(&this_00->field_01AC);
     }
     if (this_00->field_01B0 != (AnonPointee_CPanelTy_01B0 *)0x0) {
       FreeAndNull(&this_00->field_01B0);
     }
-    if (this_00->field_01B4 != 0) {
-      FreeAndNull((void **)&this_00->field_01B4);
+    if (this_00->field_01B4 != (AnonPointee_CPanelTy_01B4 *)0x0) {
+      FreeAndNull(&this_00->field_01B4);
     }
     ppvVar8 = (void **)&this_00->field_0180;
     local_8 = 0xb;
@@ -348,12 +348,12 @@ void __thiscall CPanelTy::DoneCPanel(CPanelTy *this)
     return;
   }
   g_currentExceptionFrame = local_50.previous;
-  iVar4 = ReportDebugMessage(s_E____titans_Andrey_cpanel_cpp_007c1bd8,0x213,0,iVar3,&DAT_007a4ccc,
-                             s_CPanelTy__DoneCPanel_007c2138);
+  iVar4 = ReportDebugMessage("E:\\__titans\\Andrey\\cpanel.cpp",0x213,0,iVar3,"%s",
+                             "CPanelTy::DoneCPanel");
   if (iVar4 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  RaiseInternalException(iVar3,0,s_E____titans_Andrey_cpanel_cpp_007c1bd8,0x213);
+  RaiseInternalException(iVar3,0,"E:\\__titans\\Andrey\\cpanel.cpp",0x213);
   return;
 }
 

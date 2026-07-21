@@ -35,15 +35,15 @@ void __thiscall FSGSTy::CheckUpdate(FSGSTy *this)
   iVar5 = Library::MSVCRT::__setjmp3(local_90.jumpBuffer,0);
   if (iVar5 != 0) {
     g_currentExceptionFrame = local_90.previous;
-    iVar12 = ReportDebugMessage(s_E____titans_Start_fsgs_obj_cpp_007cbf70,0x935,0,iVar5,
-                                &DAT_007a4ccc,s_FSGSTy__CheckUpdate_007cc408);
+    iVar12 = ReportDebugMessage("E:\\__titans\\Start\\fsgs_obj.cpp",0x935,0,iVar5,
+                                "%s","FSGSTy::CheckUpdate");
     if (iVar12 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    RaiseInternalException(iVar5,0,s_E____titans_Start_fsgs_obj_cpp_007cbf70,0x935);
+    RaiseInternalException(iVar5,0,"E:\\__titans\\Start\\fsgs_obj.cpp",0x935);
     return;
   }
-  wsprintfA((LPSTR)&DAT_0080f33a,s__s_s_s_007c6edc,&DAT_00807680,PTR_s_UPDATES__0079c020,
+  wsprintfA((LPSTR)&DAT_0080f33a,"%s%s%s",&DAT_00807680,PTR_s_UPDATES__0079c020,
             PTR_s_ST_INF_0079c024);
   pcVar6 = (char *)thunk_FUN_00649ff0(&DAT_0080f33a,&local_8,(undefined4 *)0x0,(int *)0x0);
   pFVar4 = local_c;

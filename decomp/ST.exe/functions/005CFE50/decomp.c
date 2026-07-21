@@ -24,12 +24,12 @@ void __thiscall SettMapMTy::SendDesc(SettMapMTy *this,int param_1)
     return;
   }
   g_currentExceptionFrame = local_48.previous;
-  iVar2 = ReportDebugMessage(s_E____titans_Start_settmobj_cpp_007cd258,0x4c9,0,errorCode,
-                             &DAT_007a4ccc,s_SettMapMTy__SendDesc_007cd3b8);
+  iVar2 = ReportDebugMessage("E:\\__titans\\Start\\settmobj.cpp",0x4c9,0,errorCode,
+                             "%s","SettMapMTy::SendDesc");
   if (iVar2 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  RaiseInternalException(errorCode,0,s_E____titans_Start_settmobj_cpp_007cd258,0x4c9);
+  RaiseInternalException(errorCode,0,"E:\\__titans\\Start\\settmobj.cpp",0x4c9);
   return;
 }
 

@@ -30,10 +30,10 @@ void __thiscall FSGSTy::DeleteCtrls(FSGSTy *this)
   iVar3 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
   if (iVar3 != 0) {
     g_currentExceptionFrame = local_4c.previous;
-    iVar5 = ReportDebugMessage(s_E____titans_Start_fsgs_obj_cpp_007cbf70,0x89c,0,iVar3,&DAT_007a4ccc
-                               ,s_FSGSTy__DeleteCtrls_007cc3bc);
+    iVar5 = ReportDebugMessage("E:\\__titans\\Start\\fsgs_obj.cpp",0x89c,0,iVar3,"%s"
+                               ,"FSGSTy::DeleteCtrls");
     if (iVar5 == 0) {
-      RaiseInternalException(iVar3,0,s_E____titans_Start_fsgs_obj_cpp_007cbf70,0x89c);
+      RaiseInternalException(iVar3,0,"E:\\__titans\\Start\\fsgs_obj.cpp",0x89c);
       return;
     }
     STDebugBreak(); /* noreturn in standalone pseudocode */
@@ -71,14 +71,14 @@ void __thiscall FSGSTy::DeleteCtrls(FSGSTy *this)
     else {
       pHVar4->field_0002 = 1;
       pHVar4->field_0000 = 0;
-      pHVar4->field_0003 = 0xffffffff;
+      pHVar4->field_0003 = -1;
       pHVar4->field_0001 = CASE_2;
       pHVar4->field_0007 = 0;
       pHVar4->field_000B = 0;
       *(undefined4 *)&pHVar4->field_0xf = 0;
       *(undefined4 *)&pHVar4->field_0x1b = 1;
       pHVar4->field_0013 = 1;
-      pHVar4->field_0017 = 0xffffffff;
+      pHVar4->field_0017 = -1;
       pHVar4->field_0027 = 0;
       pHVar4->field_0023 = 0;
       pHVar4->field_002F = 1;
@@ -95,7 +95,7 @@ void __thiscall FSGSTy::DeleteCtrls(FSGSTy *this)
       if (uVar6 != 0) {
         pHVar4 = pFVar2->field_1F23;
         pHVar4->field_0002 = 0;
-        pHVar4->field_0017 = 0xffffffff;
+        pHVar4->field_0017 = -1;
         uVar6 = pFVar2->field_1F23->field_0003;
         if (-1 < (int)uVar6) {
           Library::DKW::DDX::FUN_006b3430(DAT_008075a8,uVar6);
@@ -122,14 +122,14 @@ void __thiscall FSGSTy::DeleteCtrls(FSGSTy *this)
     else {
       pHVar4->field_0002 = 1;
       pHVar4->field_0000 = 0;
-      pHVar4->field_0003 = 0xffffffff;
+      pHVar4->field_0003 = -1;
       pHVar4->field_0001 = CASE_2;
       pHVar4->field_0007 = 0;
       pHVar4->field_000B = 0;
       *(undefined4 *)&pHVar4->field_0xf = 0;
       *(undefined4 *)&pHVar4->field_0x1b = 1;
       pHVar4->field_0013 = 1;
-      pHVar4->field_0017 = 0xffffffff;
+      pHVar4->field_0017 = -1;
       pHVar4->field_0027 = 0;
       pHVar4->field_0023 = 0;
       pHVar4->field_002F = 1;
@@ -146,7 +146,7 @@ void __thiscall FSGSTy::DeleteCtrls(FSGSTy *this)
     if (uVar6 != 0) {
       pHVar4 = pFVar2->field_1F23;
       pHVar4->field_0002 = 0;
-      pHVar4->field_0017 = 0xffffffff;
+      pHVar4->field_0017 = -1;
       uVar6 = pFVar2->field_1F23->field_0003;
       if (-1 < (int)uVar6) {
         Library::DKW::DDX::FUN_006b3430(DAT_008075a8,uVar6);
@@ -179,14 +179,14 @@ void __thiscall FSGSTy::DeleteCtrls(FSGSTy *this)
     else {
       pHVar4->field_0002 = 1;
       pHVar4->field_0000 = 0;
-      pHVar4->field_0003 = 0xffffffff;
+      pHVar4->field_0003 = -1;
       pHVar4->field_0001 = CASE_2;
       pHVar4->field_0007 = 0;
       pHVar4->field_000B = 0;
       *(undefined4 *)&pHVar4->field_0xf = 0;
       *(undefined4 *)&pHVar4->field_0x1b = 1;
       pHVar4->field_0013 = 1;
-      pHVar4->field_0017 = 0xffffffff;
+      pHVar4->field_0017 = -1;
       pHVar4->field_0027 = 0;
       pHVar4->field_0023 = 0;
       pHVar4->field_002F = 1;
@@ -203,7 +203,7 @@ void __thiscall FSGSTy::DeleteCtrls(FSGSTy *this)
       if (uVar6 != 0) {
         pHVar4 = pFVar2->field_1F27;
         pHVar4->field_0002 = 0;
-        pHVar4->field_0017 = 0xffffffff;
+        pHVar4->field_0017 = -1;
         uVar6 = pFVar2->field_1F27->field_0003;
         if (-1 < (int)uVar6) {
           Library::DKW::DDX::FUN_006b3430(DAT_008075a8,uVar6);
@@ -234,14 +234,14 @@ void __thiscall FSGSTy::DeleteCtrls(FSGSTy *this)
     else {
       pHVar4->field_0002 = 1;
       pHVar4->field_0000 = 0;
-      pHVar4->field_0003 = 0xffffffff;
+      pHVar4->field_0003 = -1;
       pHVar4->field_0001 = CASE_2;
       pHVar4->field_0007 = 0;
       pHVar4->field_000B = 0;
       *(undefined4 *)&pHVar4->field_0xf = 0;
       *(undefined4 *)&pHVar4->field_0x1b = 1;
       pHVar4->field_0013 = 1;
-      pHVar4->field_0017 = 0xffffffff;
+      pHVar4->field_0017 = -1;
       pHVar4->field_0027 = 0;
       pHVar4->field_0023 = 0;
       pHVar4->field_002F = 1;
@@ -258,7 +258,7 @@ void __thiscall FSGSTy::DeleteCtrls(FSGSTy *this)
     if (uVar6 != 0) {
       pHVar4 = pFVar2->field_1F2B;
       pHVar4->field_0002 = 0;
-      pHVar4->field_0017 = 0xffffffff;
+      pHVar4->field_0017 = -1;
       uVar6 = pFVar2->field_1F2B->field_0003;
       if (-1 < (int)uVar6) {
         Library::DKW::DDX::FUN_006b3430(DAT_008075a8,uVar6);
@@ -291,14 +291,14 @@ void __thiscall FSGSTy::DeleteCtrls(FSGSTy *this)
     else {
       pHVar4->field_0002 = 1;
       pHVar4->field_0000 = 0;
-      pHVar4->field_0003 = 0xffffffff;
+      pHVar4->field_0003 = -1;
       pHVar4->field_0001 = CASE_2;
       pHVar4->field_0007 = 0;
       pHVar4->field_000B = 0;
       *(undefined4 *)&pHVar4->field_0xf = 0;
       *(undefined4 *)&pHVar4->field_0x1b = 1;
       pHVar4->field_0013 = 1;
-      pHVar4->field_0017 = 0xffffffff;
+      pHVar4->field_0017 = -1;
       pHVar4->field_0027 = 0;
       pHVar4->field_0023 = 0;
       pHVar4->field_002F = 1;
@@ -315,7 +315,7 @@ void __thiscall FSGSTy::DeleteCtrls(FSGSTy *this)
       if (uVar6 != 0) {
         pHVar4 = pFVar2->field_1F2F;
         pHVar4->field_0002 = 0;
-        pHVar4->field_0017 = 0xffffffff;
+        pHVar4->field_0017 = -1;
         uVar6 = pFVar2->field_1F2F->field_0003;
         if (-1 < (int)uVar6) {
           Library::DKW::DDX::FUN_006b3430(DAT_008075a8,uVar6);
@@ -337,14 +337,14 @@ void __thiscall FSGSTy::DeleteCtrls(FSGSTy *this)
     else {
       pHVar4->field_0002 = 1;
       pHVar4->field_0000 = 0;
-      pHVar4->field_0003 = 0xffffffff;
+      pHVar4->field_0003 = -1;
       pHVar4->field_0001 = CASE_2;
       pHVar4->field_0007 = 0;
       pHVar4->field_000B = 0;
       *(undefined4 *)&pHVar4->field_0xf = 0;
       *(undefined4 *)&pHVar4->field_0x1b = 1;
       pHVar4->field_0013 = 1;
-      pHVar4->field_0017 = 0xffffffff;
+      pHVar4->field_0017 = -1;
       pHVar4->field_0027 = 0;
       pHVar4->field_0023 = 0;
       pHVar4->field_002F = 1;
@@ -361,7 +361,7 @@ void __thiscall FSGSTy::DeleteCtrls(FSGSTy *this)
     if (uVar6 != 0) {
       pHVar4 = pFVar2->field_1F2B;
       pHVar4->field_0002 = 0;
-      pHVar4->field_0017 = 0xffffffff;
+      pHVar4->field_0017 = -1;
       uVar6 = pFVar2->field_1F2B->field_0003;
       if (-1 < (int)uVar6) {
         Library::DKW::DDX::FUN_006b3430(DAT_008075a8,uVar6);
@@ -394,14 +394,14 @@ void __thiscall FSGSTy::DeleteCtrls(FSGSTy *this)
     else {
       pHVar4->field_0002 = 1;
       pHVar4->field_0000 = 0;
-      pHVar4->field_0003 = 0xffffffff;
+      pHVar4->field_0003 = -1;
       pHVar4->field_0001 = CASE_2;
       pHVar4->field_0007 = 0;
       pHVar4->field_000B = 0;
       *(undefined4 *)&pHVar4->field_0xf = 0;
       *(undefined4 *)&pHVar4->field_0x1b = 1;
       pHVar4->field_0013 = 1;
-      pHVar4->field_0017 = 0xffffffff;
+      pHVar4->field_0017 = -1;
       pHVar4->field_0027 = 0;
       pHVar4->field_0023 = 0;
       pHVar4->field_002F = 1;
@@ -418,7 +418,7 @@ void __thiscall FSGSTy::DeleteCtrls(FSGSTy *this)
       if (uVar6 != 0) {
         pHVar4 = pFVar2->field_1F23;
         pHVar4->field_0002 = 0;
-        pHVar4->field_0017 = 0xffffffff;
+        pHVar4->field_0017 = -1;
         uVar6 = pFVar2->field_1F23->field_0003;
         if (-1 < (int)uVar6) {
           Library::DKW::DDX::FUN_006b3430(DAT_008075a8,uVar6);
@@ -445,14 +445,14 @@ void __thiscall FSGSTy::DeleteCtrls(FSGSTy *this)
     else {
       pHVar4->field_0002 = 1;
       pHVar4->field_0000 = 0;
-      pHVar4->field_0003 = 0xffffffff;
+      pHVar4->field_0003 = -1;
       pHVar4->field_0001 = CASE_2;
       pHVar4->field_0007 = 0;
       pHVar4->field_000B = 0;
       *(undefined4 *)&pHVar4->field_0xf = 0;
       *(undefined4 *)&pHVar4->field_0x1b = 1;
       pHVar4->field_0013 = 1;
-      pHVar4->field_0017 = 0xffffffff;
+      pHVar4->field_0017 = -1;
       pHVar4->field_0027 = 0;
       pHVar4->field_0023 = 0;
       pHVar4->field_002F = 1;
@@ -469,7 +469,7 @@ void __thiscall FSGSTy::DeleteCtrls(FSGSTy *this)
       if (uVar6 != 0) {
         pHVar4 = pFVar2->field_1F23;
         pHVar4->field_0002 = 0;
-        pHVar4->field_0017 = 0xffffffff;
+        pHVar4->field_0017 = -1;
         uVar6 = pFVar2->field_1F23->field_0003;
         if (-1 < (int)uVar6) {
           Library::DKW::DDX::FUN_006b3430(DAT_008075a8,uVar6);

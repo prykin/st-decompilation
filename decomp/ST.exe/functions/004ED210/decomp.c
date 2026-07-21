@@ -23,30 +23,29 @@ undefined4 __fastcall FUN_004ed210(TLOBaseTy *param_1)
     if (DAT_0079aab8 < 2) {
       return 0;
     }
-    if (DAT_0079aab8 <= *(int *)&param_1->field_0x4d4) {
+    if (DAT_0079aab8 <= (int)param_1->field_04D4) {
       return 0;
     }
-    if ((uint)PTR_00802a38->field_00E4 <
-        (uint)(*(int *)&param_1->field_0x4dc + *(int *)&param_1->field_0x4d8)) {
+    if ((uint)PTR_00802a38->field_00E4 < (uint)(param_1->field_04DC + param_1->field_04D8)) {
       return 0;
     }
-    iVar4 = *(int *)&param_1->field_0x4d4 + 1;
-    *(undefined4 *)&param_1->field_0x4d8 = PTR_00802a38->field_00E4;
-    *(int *)&param_1->field_0x4d4 = iVar4;
+    iVar4 = param_1->field_04D4 + 1;
+    param_1->field_04D8 = PTR_00802a38->field_00E4;
+    param_1->field_04D4 = iVar4;
     iVar2 = ((_UNK_0079ab34 - _UNK_0079ab28) * iVar4) / DAT_0079aab8 + _UNK_0079ab28;
     iVar3 = ((_UNK_0079ab30 - _UNK_0079ab24) * iVar4) / DAT_0079aab8 + _UNK_0079ab24 +
-            (int)(short)param_1->field_0043;
-    *(int *)&param_1->field_0x4e0 =
-         (int)(short)param_1->field_0041 +
+            (int)param_1->field_0043;
+    param_1->field_04E0 =
+         (int)param_1->field_0041 +
          _UNK_0079ab20 + ((_UNK_0079ab2c - _UNK_0079ab20) * iVar4) / DAT_0079aab8;
-    *(int *)&param_1->field_0x4e4 = iVar3;
-    iVar2 = (short)param_1->field_0045 + iVar2;
-    *(int *)&param_1->field_0x4e8 = iVar2;
-    thunk_FUN_004ad3c0((void *)param_1->field_05FF,
-                       (float)*(int *)&param_1->field_0x4e0 * _DAT_007904f8 * _DAT_007904f0,
+    param_1->field_04E4 = iVar3;
+    iVar2 = param_1->field_0045 + iVar2;
+    param_1->field_04E8 = iVar2;
+    thunk_FUN_004ad3c0(param_1->field_05FF,
+                       (float)param_1->field_04E0 * _DAT_007904f8 * _DAT_007904f0,
                        (float)iVar3 * _DAT_007904f8 * _DAT_007904f0,
                        (float)iVar2 * _DAT_007904f8 * _DAT_007904f0 + _DAT_007904fc);
-    if (*(int *)&param_1->field_0x4d4 < *(int *)(&DAT_0079aaa8 + param_1->field_04D0 * 4)) {
+    if ((int)param_1->field_04D4 < *(int *)(&DAT_0079aaa8 + param_1->field_04D0 * 4)) {
       return 0;
     }
     thunk_FUN_004c4550(param_1,(int *)0x0);

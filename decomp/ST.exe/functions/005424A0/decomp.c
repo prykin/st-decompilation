@@ -95,7 +95,7 @@ undefined4 __thiscall InterSystemC::CreateInterfObjects(InterSystemC *this)
     iVar3 = 1;
     local_184[1] = 1;
     local_184[0] = 1;
-    pCVar4 = thunk_FUN_00571240(s_BUT_FILEOPT_007c7c48,0);
+    pCVar4 = thunk_FUN_00571240("BUT_FILEOPT",0);
     pCVar4 = FUN_006f2c00(pCVar4,iVar3,uVar7);
     puVar5 = Library::Ourlib::MFRLOAD::mfRLoad
                        (DAT_00806794,CASE_1,pCVar4,uVar8,bVar9,iVar10,iVar11,puVar12);
@@ -171,8 +171,8 @@ undefined4 __thiscall InterSystemC::CreateInterfObjects(InterSystemC *this)
     local_174 = 0x28;
     local_170 = 0x12;
     if (DAT_0080874e == '\x03') {
-      local_60 = FUN_0070aa70(DAT_00806790,s_BUT_OHELPMSK_007c7c38,0,1);
-      local_5c = Library::Ourlib::MFIMG::mfImgGetWidth(DAT_00806790,0x12,s_BUT_OHELPMSK_007c7c38,1);
+      local_60 = FUN_0070aa70(DAT_00806790,"BUT_OHELPMSK",0,1);
+      local_5c = Library::Ourlib::MFIMG::mfImgGetWidth(DAT_00806790,0x12,"BUT_OHELPMSK",1);
     }
     local_d0 = 0x2739;
     local_f4 = 0x2739;
@@ -242,8 +242,8 @@ undefined4 __thiscall InterSystemC::CreateInterfObjects(InterSystemC *this)
     thunk_FUN_0056a500();
     (*this_00->vtable->vfunc_10)(0x201,0);
     thunk_FUN_0056a500();
-    if (DAT_00801690 != (HelpPanelTy *)0x0) {
-      thunk_FUN_0051da70(DAT_00801690);
+    if (PTR_00801690 != (AnonShape_GLOBAL_00801690_2AA401C1 *)0x0) {
+      thunk_FUN_0051da70((HelpPanelTy *)PTR_00801690);
     }
     thunk_FUN_0056a500();
     if ((DAT_0080877e == '\0') && (g_popUp_008016D8 != (PopUpTy *)0x0)) {
@@ -255,12 +255,12 @@ undefined4 __thiscall InterSystemC::CreateInterfObjects(InterSystemC *this)
     return 0;
   }
   g_currentExceptionFrame = local_1c8.previous;
-  iVar10 = ReportDebugMessage(s_E____titans_Andrey_tintersys_cpp_007c7be8,0xb3,0,iVar3,&DAT_007a4ccc
-                              ,s_InterSystemC__CreateInterfObject_007c7c10);
+  iVar10 = ReportDebugMessage("E:\\__titans\\Andrey\\tintersys.cpp",0xb3,0,iVar3,"%s"
+                              ,"InterSystemC::CreateInterfObjects");
   if (iVar10 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  RaiseInternalException(iVar3,0,s_E____titans_Andrey_tintersys_cpp_007c7be8,0xb3);
+  RaiseInternalException(iVar3,0,"E:\\__titans\\Andrey\\tintersys.cpp",0xb3);
   return 0xfffffffc;
 }
 

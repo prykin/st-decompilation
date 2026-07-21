@@ -4,7 +4,7 @@ undefined4 __fastcall FUN_00492b20(AnonShape_00492B20_AFE20A9A *param_1)
 {
   /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
   undefined4 in_EAX;
-  STFishC *this;
+  STGameObjC *this;
   int iVar1;
   int iVar2;
   short sVar3;
@@ -22,13 +22,13 @@ undefined4 __fastcall FUN_00492b20(AnonShape_00492B20_AFE20A9A *param_1)
   short local_6;
 
   /* ST_PSEUDO[unresolved_register_input,packed_or_unaligned_piece]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention; expected named packed member, bit extract/compose, or unaligned load */
-  this = (STFishC *)
-         STAllPlayersC::GetObjPtr
+  this = STAllPlayersC::GetObjPtr
                    (g_sTAllPlayers_007FA174,param_1->field_05FC,
                     CONCAT22((short)((uint)in_EAX >> 0x10),param_1->field_05FD),CASE_1);
-  if ((((((this != (STFishC *)0x0) && (this->field_0018 == param_1->field_05FF)) &&
-        (iVar1 = (*this->vtable->vfunc_108)(param_1->field_0024), iVar1 != 0)) &&
-       ((STFishC::sub_004162B0(this,&local_8,&local_6,local_c), -1 < local_8 &&
+  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+  if ((((((this != (STGameObjC *)0x0) && (this->field_0018 == param_1->field_05FF)) &&
+        (iVar1 = (**(code **)&this->vtable[1].field_0x38)(param_1->field_0024), iVar1 != 0)) &&
+       ((STFishC::sub_004162B0((STFishC *)this,&local_8,&local_6,local_c), -1 < local_8 &&
         (local_8 < g_pathingGrid.sizeX)))) && (-1 < local_6)) &&
      (((local_6 < g_pathingGrid.sizeY && (-1 < local_c[0])) &&
       ((int)local_c[0] < g_pathingGrid.sizeZ + -1)))) {
@@ -51,7 +51,7 @@ undefined4 __fastcall FUN_00492b20(AnonShape_00492B20_AFE20A9A *param_1)
     FUN_006ab090((int)g_pathingScratchGrid.cells,(int)g_pathingGrid.sizeX,(int)g_pathingGrid.sizeY,
                  (int)g_pathingGrid.sizeZ,(int)param_1->field_005B,(int)param_1->field_005D,
                  (int)param_1->field_005F,(int)local_8,(int)local_6,local_c[0] + 1);
-    if (*(int *)&this->field_0x2c == 0) {
+    if (this->field_002C == 0) {
       sVar7 = local_c[0] + 1;
       if ((((-1 < local_8) && (local_8 < g_worldGrid.sizeX)) && (-1 < local_6)) &&
          (((local_6 < g_worldGrid.sizeY && (-1 < sVar7)) && (sVar7 < g_worldGrid.sizeZ)))) {
@@ -68,7 +68,7 @@ undefined4 __fastcall FUN_00492b20(AnonShape_00492B20_AFE20A9A *param_1)
         }
       }
     }
-    else if (*(int *)&this->field_0x2c == 1) {
+    else if (this->field_002C == 1) {
       local_10 = 10000000;
       param_1->field_0607 = local_c[0] + 1;
       iVar2 = (int)local_8;

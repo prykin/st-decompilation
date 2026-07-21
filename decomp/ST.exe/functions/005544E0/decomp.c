@@ -30,12 +30,12 @@ void __thiscall cLoadingTy::delete(cLoadingTy *this,uint *param_1)
     return;
   }
   g_currentExceptionFrame = local_48.previous;
-  iVar2 = ReportDebugMessage(s_E____titans_grig_loading_cpp_007c8f0c,0x52,0,errorCode,&DAT_007a4ccc,
-                             s_cLoadingTy__delete_007c8f30);
+  iVar2 = ReportDebugMessage("E:\\__titans\\grig\\loading.cpp",0x52,0,errorCode,"%s",
+                             "cLoadingTy::delete");
   if (iVar2 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  RaiseInternalException(errorCode,0,s_E____titans_grig_loading_cpp_007c8f0c,0x53);
+  RaiseInternalException(errorCode,0,"E:\\__titans\\grig\\loading.cpp",0x53);
   return;
 }
 

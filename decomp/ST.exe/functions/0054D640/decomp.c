@@ -49,12 +49,12 @@ undefined4 __thiscall STPlaySystemC::Life(STPlaySystemC *this)
   this_00 = local_24;
   if (iVar2 != 0) {
     g_currentExceptionFrame = local_a8.previous;
-    iVar5 = ReportDebugMessage(s_E____titans_Andrey_tplaysys_cpp_007c8430,0x411,0,iVar2,
-                               &DAT_007a4ccc,s_STPlaySystemC__Life_007c853c);
+    iVar5 = ReportDebugMessage("E:\\__titans\\Andrey\\tplaysys.cpp",0x411,0,iVar2,
+                               "%s","STPlaySystemC::Life");
     if (iVar5 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    RaiseInternalException(iVar2,0,s_E____titans_Andrey_tplaysys_cpp_007c8430,0x412);
+    RaiseInternalException(iVar2,0,"E:\\__titans\\Andrey\\tplaysys.cpp",0x412);
     return 0xffffffff;
   }
   if ((DAT_00808783 == '\x03') && (499 < local_1c - local_24->field_007F)) {
@@ -98,7 +98,7 @@ undefined4 __thiscall STPlaySystemC::Life(STPlaySystemC *this)
           this_00->field_002C = iVar2;
           if (iVar2 < 1) {
             this_00->field_002C =
-                 *(undefined4 *)(s_FrmPanelTy__GetMessage_007c2ae0 + (uint)DAT_0080733b * 0x18 + 4);
+                 *(int *)(s_FrmPanelTy__GetMessage_007c2ae0 + (uint)DAT_0080733b * 0x18 + 4);
             thunk_FUN_00550190((int)this_00);
             PrepareMail(this_00);
             /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
@@ -275,7 +275,7 @@ undefined4 __thiscall STPlaySystemC::Life(STPlaySystemC *this)
                 do {
                   if ((*(int *)(pcVar4 + -6) == local_18) && (*pcVar4 != '\0')) {
                     pcVar3 = LoadResourceString(0x426f,HINSTANCE_00807618);
-                    wsprintfA((LPSTR)&DAT_0080f33a,s__s__s_007c411c,pcVar4 + -0x46,pcVar3);
+                    wsprintfA((LPSTR)&DAT_0080f33a,"%s %s",pcVar4 + -0x46,pcVar3);
                     if (g_popUp_008016D8 != (PopUpTy *)0x0) {
                       thunk_FUN_0052d320(g_popUp_008016D8,(char *)&DAT_0080f33a,8);
                     }
@@ -331,7 +331,7 @@ undefined4 __thiscall STPlaySystemC::Life(STPlaySystemC *this)
                       do {
                         if ((*(int *)(pcVar4 + -6) == local_18) && (*pcVar4 != '\0')) {
                           pcVar3 = LoadResourceString(0x426e,HINSTANCE_00807618);
-                          wsprintfA((LPSTR)&DAT_0080f33a,s__s__s_007c411c,pcVar4 + -0x46,pcVar3);
+                          wsprintfA((LPSTR)&DAT_0080f33a,"%s %s",pcVar4 + -0x46,pcVar3);
                           if (g_popUp_008016D8 != (PopUpTy *)0x0) {
                             thunk_FUN_0052d320(g_popUp_008016D8,(char *)&DAT_0080f33a,8);
                           }

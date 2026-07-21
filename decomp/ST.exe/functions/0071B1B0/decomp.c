@@ -2,7 +2,7 @@
 undefined4 * __fastcall FUN_0071b1b0(undefined4 *param_1)
 
 {
-  STGroupBoatC::sub_006E5FB0((STGroupBoatC *)param_1);
+  sub_006E5FB0(param_1);
   *param_1 = &VTable_0079E284;
   param_1[6] = 0;
   param_1[8] = 0;

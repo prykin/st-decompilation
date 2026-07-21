@@ -27,8 +27,8 @@ undefined4 __cdecl FUN_0057b350(int *param_1,int param_2,int *param_3)
 
   piVar5 = param_1;
   if ((param_2 < 0x1a) || (0x23 < param_2)) {
-    iVar7 = ReportDebugMessage(s_E____titans_Igor_to_etorp_cpp_007caf5c,0x156,0,0,&DAT_007a4ccc,
-                               s_ConusExplosion_Wrong_number_of_t_007caf80);
+    iVar7 = ReportDebugMessage("E:\\__titans\\Igor\\to_etorp.cpp",0x156,0,0,"%s",
+                               "ConusExplosion:Wrong number of torppedos (min 26, max 35)");
     if (iVar7 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
@@ -124,8 +124,8 @@ undefined4 __cdecl FUN_0057b350(int *param_1,int param_2,int *param_3)
         }
       } while( true );
     }
-    iVar7 = ReportDebugMessage(s_E____titans_Igor_to_etorp_cpp_007caf5c,0x15d,0,0,&DAT_007a4ccc,
-                               s_SphereExplosion_Bad_parameters_007cafc8);
+    iVar7 = ReportDebugMessage("E:\\__titans\\Igor\\to_etorp.cpp",0x15d,0,0,"%s",
+                               "SphereExplosion:Bad parameters");
     if (iVar7 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }

@@ -31,7 +31,7 @@ undefined4 __cdecl FUN_006a5130(char *param_1,char param_2,int param_3)
       param_3 = iVar4;
     } while (cVar1 == param_2);
     iVar4 = Library::MSVCRT::FUN_00730fa0
-                      (0,0,0,0,(byte *)s_memory_check_error_at_0x_08X___0_007ec6b0);
+                      (0,0,0,0,(byte *)"memory check error at 0x%08X = 0x%02X, should be 0x%02X.\n");
     if (iVar4 == 1) break;
     uVar3 = 0;
   }

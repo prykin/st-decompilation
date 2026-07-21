@@ -36,7 +36,7 @@ FUN_006775e0(undefined4 param_1,uint param_2,uint param_3,byte *param_4,char par
     DArrayDestroy(local_8);
   }
   local_8 = (DArrayTy *)0x0;
-  RaiseInternalException(exceptionCode,0,s_E____titans_ai_ai_mdef_cpp_007d2d58,0x308);
+  RaiseInternalException(exceptionCode,0,"E:\\__titans\\ai\\ai_mdef.cpp",0x308);
   return (uint *)0x0;
 }
 

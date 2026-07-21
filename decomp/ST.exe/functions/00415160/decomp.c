@@ -158,8 +158,8 @@ int STGroupBoatC::Way3DGrpDistribTgt
   else {
     g_currentExceptionFrame = local_50.previous;
     local_c = iVar8;
-    iVar6 = ReportDebugMessage(s_E____titans_wlad_Grpway3d_cpp_007a4ca8,0xe66,0,iVar8,&DAT_007a4ccc,
-                               s_STGroupBoatC__Way3DGrpDistribTgt_007a4cd0);
+    iVar6 = ReportDebugMessage("E:\\__titans\\wlad\\Grpway3d.cpp",0xe66,0,iVar8,"%s",
+                               "STGroupBoatC::Way3DGrpDistribTgt");
     if (iVar6 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
@@ -171,7 +171,7 @@ LAB_00415472:
     return 0;
   }
   RaiseInternalException
-            (iVar8,g_overwriteContext_007ED77C,s_E____titans_wlad_Grpway3d_cpp_007a4ca8,0xe6d);
+            (iVar8,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\Grpway3d.cpp",0xe6d);
   return iVar8;
 }
 

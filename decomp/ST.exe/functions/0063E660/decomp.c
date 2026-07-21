@@ -1,33 +1,29 @@
 
-void __fastcall FUN_0063e660(int param_1)
+void __fastcall FUN_0063e660(AnonShape_0063E660_4D42AB87 *param_1)
 
 {
   int iVar1;
-  int iVar2;
-  uint uVar3;
+  AnonNested_0063E660_0336_9C5AD80D *pAVar2;
+  int iVar3;
+  uint uVar4;
 
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  if (*(int *)(param_1 + 0x336) != 0) {
-    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-    iVar1 = *(int *)(*(int *)(param_1 + 0x336) + 0xc);
-    uVar3 = 0;
+  if (param_1->field_0336 != (AnonNested_0063E660_0336_9C5AD80D *)0x0) {
+    iVar1 = param_1->field_0336->field_000C;
+    uVar4 = 0;
     if (0 < iVar1) {
       do {
-        /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-        iVar2 = *(int *)(param_1 + 0x336);
-        if (((uVar3 < *(uint *)(iVar2 + 0xc)) &&
-            (iVar2 = *(int *)(iVar2 + 8) * uVar3 + *(int *)(iVar2 + 0x1c), iVar2 != 0)) &&
-           (-1 < (int)*(uint *)(iVar2 + 0x38))) {
-          /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-          FUN_006e8ba0(*(void **)(param_1 + 0x211),*(uint *)(iVar2 + 0x38));
-          *(undefined4 *)(iVar2 + 0x38) = 0xffffffff;
+        pAVar2 = param_1->field_0336;
+        if (((uVar4 < (uint)pAVar2->field_000C) &&
+            (iVar3 = pAVar2->field_0008 * uVar4 + pAVar2->field_001C, iVar3 != 0)) &&
+           (-1 < (int)*(uint *)(iVar3 + 0x38))) {
+          FUN_006e8ba0(param_1->field_0211,*(uint *)(iVar3 + 0x38));
+          *(undefined4 *)(iVar3 + 0x38) = 0xffffffff;
         }
-        uVar3 = uVar3 + 1;
-      } while ((int)uVar3 < iVar1);
+        uVar4 = uVar4 + 1;
+      } while ((int)uVar4 < iVar1);
     }
-    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-    DArrayDestroy(*(DArrayTy **)(param_1 + 0x336));
-    *(undefined4 *)(param_1 + 0x336) = 0;
+    DArrayDestroy((DArrayTy *)param_1->field_0336);
+    param_1->field_0336 = (AnonNested_0063E660_0336_9C5AD80D *)0x0;
   }
   return;
 }

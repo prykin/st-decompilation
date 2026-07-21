@@ -44,7 +44,7 @@ void __thiscall cLoadingTy::DrawLineCR(cLoadingTy *this,uint *resourceString)
                pcVar2->field_001C,pcVar2->field_0034,0);
     iVar3 = pcVar2->field_0038 + 1;
     pcVar2->field_0038 = iVar3;
-    if (iVar3 < (int)pcVar2->field_0030) {
+    if (iVar3 < pcVar2->field_0030) {
       pcVar2->field_0010 = pcVar2->field_0010 + pcVar2->field_0034;
     }
     else {
@@ -74,12 +74,12 @@ void __thiscall cLoadingTy::DrawLineCR(cLoadingTy *this,uint *resourceString)
     return;
   }
   g_currentExceptionFrame = local_4c.previous;
-  iVar4 = ReportDebugMessage(s_E____titans_grig_loading_cpp_007c8f0c,0xf2,0,iVar3,&DAT_007a4ccc,
-                             s_cLoadingTy__DrawLineCR_007c8f98);
+  iVar4 = ReportDebugMessage("E:\\__titans\\grig\\loading.cpp",0xf2,0,iVar3,"%s",
+                             "cLoadingTy::DrawLineCR");
   if (iVar4 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  RaiseInternalException(iVar3,0,s_E____titans_grig_loading_cpp_007c8f0c,0xf3);
+  RaiseInternalException(iVar3,0,"E:\\__titans\\grig\\loading.cpp",0xf3);
   return;
 }
 

@@ -10,6 +10,6 @@
 dword __thiscall STMineSetC::FUN_00626fa0(STMineSetC *this)
 
 {
-  return (uint)(*(int *)&this->field_0x21d == 0);
+  return (uint)(this->field_021D == 0);
 }
 

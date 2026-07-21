@@ -31,9 +31,9 @@ uint __thiscall FUN_006191a0(void *this,uint param_1,int param_2)
                                 &param_2,(int *)&local_8);
     /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
     if ((((iVar2 < 0) || (4 < iVar2)) || (param_2 < 0)) ||
-       (((((int)pVVar1->field_0030 <= param_2 ||
+       ((((pVVar1->field_0030 <= param_2 ||
           (in_EAX = (&DAT_0079aed0)[iVar2] + (int)local_8, (int)in_EAX < 0)) ||
-         ((int)pVVar1->field_0034 <= (int)in_EAX)) ||
+         (pVVar1->field_0034 <= (int)in_EAX)) ||
         ((pVVar1->field_004C == 0 ||
          (in_EAX = (uint)*(byte *)(in_EAX * pVVar1->field_0030 + pVVar1->field_004C + param_2),
          in_EAX != 0)))))) goto cf_common_exit_00619287;

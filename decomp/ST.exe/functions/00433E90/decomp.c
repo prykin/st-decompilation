@@ -113,8 +113,8 @@ STAllPlayersC::PointPick(STAllPlayersC *this,uint *objectIds,int param_2,int par
             goto cf_common_exit_0043440E;
           }
           if (iVar3 != 0x1ae) {
-            iVar3 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0x1003,0,0,
-                                       &DAT_007a4ccc,s_STAllPlayersC__PointPick_GAMETYP_007a715c);
+            iVar3 = ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0x1003,0,0,
+                                       "%s","STAllPlayersC::PointPick GAMETYPE_MINESET ACT_LEFT");
             if (iVar3 == 0) {
               return;
             }
@@ -157,8 +157,8 @@ LAB_004345b4:
       }
       else {
         if (g_playerRuntime[playerId].field324_0x203 != 1) {
-          iVar3 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0x102e,0,0,
-                                     &DAT_007a4ccc,s_STAllPlayersC__PointPick_GAMETYP_007a71dc);
+          iVar3 = ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0x102e,0,0,
+                                     "%s","STAllPlayersC::PointPick GAMETYPE_MINESET wrong panel number");
           if (iVar3 == 0) {
             return;
           }
@@ -184,8 +184,8 @@ LAB_004345b4:
         }
         else {
           if (iVar3 != 0x1ae) {
-            iVar3 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0x102a,0,0,
-                                       &DAT_007a4ccc,s_STAllPlayersC__PointPick_GAMETYP_007a719c);
+            iVar3 = ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0x102a,0,0,
+                                       "%s","STAllPlayersC::PointPick GAMETYPE_MINESET ACT_RIGHT");
             if (iVar3 == 0) {
               return;
             }
@@ -249,8 +249,8 @@ LAB_004349ac:
       else {
         if ((iVar3 != 0x1a4) && (iVar3 != 0x1b8)) {
 LAB_00434c12:
-          iVar3 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0xfd1,0,0,
-                                     &DAT_007a4ccc,s_STAllPlayersC__PointPick_GAMETYP_007a7018);
+          iVar3 = ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0xfd1,0,0,
+                                     "%s","STAllPlayersC::PointPick GAMETYPE_OBJECT ACT_LEFT");
           if (iVar3 == 0) {
             return;
           }
@@ -275,8 +275,8 @@ LAB_00434c92:
     }
     else {
       if (g_playerRuntime[playerId].field324_0x203 != 1) {
-        iVar3 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0xfd5,0,0,&DAT_007a4ccc,
-                                   s_STAllPlayersC__PointPick_GAMETYP_007a7094);
+        iVar3 = ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0xfd5,0,0,"%s",
+                                   "STAllPlayersC::PointPick GAMETYPE_OBJECT wrong panel number");
         if (iVar3 == 0) {
           return;
         }
@@ -311,8 +311,8 @@ LAB_00434c92:
       else {
         if ((iVar3 != 0x1a4) && (iVar3 != 0x1b8)) {
 LAB_00434ab0:
-          iVar3 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0xf9a,0,0,
-                                     &DAT_007a4ccc,s_STAllPlayersC__PointPick_GAMETYP_007a7054);
+          iVar3 = ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0xf9a,0,0,
+                                     "%s","STAllPlayersC::PointPick GAMETYPE_OBJECT ACT_RIGHT");
           if (iVar3 == 0) {
             return;
           }
@@ -392,8 +392,8 @@ cf_common_exit_00434CB8:
           }
           else {
             if (iVar3 != 0x1ae) {
-              iVar3 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0xf1e,0,0,
-                                         &DAT_007a4ccc,s_STAllPlayersC__PointPick_GAMETYP_007a7228);
+              iVar3 = ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0xf1e,0,0,
+                                         "%s","STAllPlayersC::PointPick GAMETYPE_BOAT ACT_LEFT");
               if (iVar3 == 0) {
                 return;
               }
@@ -428,8 +428,8 @@ LAB_0043429d:
       }
       else {
         if (g_playerRuntime[playerId].field324_0x203 != 1) {
-          iVar3 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0xf56,0,0,
-                                     &DAT_007a4ccc,s_STAllPlayersC__PointPick_GAMETYP_007a72a0);
+          iVar3 = ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0xf56,0,0,
+                                     "%s","STAllPlayersC::PointPick GAMETYPE_BOAT wrong panel number");
           if (iVar3 == 0) {
             return;
           }
@@ -451,8 +451,8 @@ LAB_0043429d:
           goto cf_common_exit_00434CB8;
         }
         if (iVar3 != 0x1ae) {
-          iVar3 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0xf52,0,0,
-                                     &DAT_007a4ccc,s_STAllPlayersC__PointPick_GAMETYP_007a7264);
+          iVar3 = ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0xf52,0,0,
+                                     "%s","STAllPlayersC::PointPick GAMETYPE_BOAT ACT_RIGHT");
           if (iVar3 == 0) {
             return;
           }
@@ -487,8 +487,8 @@ LAB_004345cf:
   }
   if (g_playerRuntime[playerId].field324_0x203 != 0) {
     if (g_playerRuntime[playerId].field324_0x203 != 1) {
-      iVar3 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0x1090,0,0,&DAT_007a4ccc,
-                                 s_STAllPlayersC__PointPick_GAMETYP_007a71dc);
+      iVar3 = ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0x1090,0,0,"%s",
+                                 "STAllPlayersC::PointPick GAMETYPE_MINESET wrong panel number");
       if (iVar3 == 0) {
         return;
       }
@@ -523,8 +523,8 @@ LAB_004345cf:
     else {
       if ((iVar3 != 0x1a4) && (iVar3 != 0x1b8)) {
 LAB_004346e3:
-        iVar3 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0x1062,0,0,&DAT_007a4ccc
-                                   ,s_STAllPlayersC__PointPick_GAMETYP_007a711c);
+        iVar3 = ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0x1062,0,0,"%s"
+                                   ,"STAllPlayersC::PointPick GAMETYPE_RESOURCE ACT_RIGHT");
         if (iVar3 == 0) {
           return;
         }
@@ -588,8 +588,8 @@ LAB_00434768:
   else {
     if ((iVar3 != 0x1a4) && (iVar3 != 0x1b8)) {
 LAB_00434863:
-      iVar3 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0x108c,0,0,&DAT_007a4ccc,
-                                 s_STAllPlayersC__PointPick_GAMETYP_007a70dc);
+      iVar3 = ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0x108c,0,0,"%s",
+                                 "STAllPlayersC::PointPick GAMETYPE_RESOURCE ACT_LEFT");
       if (iVar3 == 0) {
         return;
       }

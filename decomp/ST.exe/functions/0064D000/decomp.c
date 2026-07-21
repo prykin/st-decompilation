@@ -31,17 +31,17 @@ undefined4 * __thiscall AiEventClassTy::PrepareToSave(AiEventClassTy *this,uint 
     }
     puVar4 = EventDataPack(pAVar3,param_1);
     *(undefined1 *)puVar4 = 1;
-    *(undefined4 *)((int)puVar4 + 0x4e) = pAVar2->field_0088;
+    *(uint *)((int)puVar4 + 0x4e) = pAVar2->field_0088;
     g_currentExceptionFrame = local_4c.previous;
     return puVar4;
   }
   g_currentExceptionFrame = local_4c.previous;
-  iVar5 = ReportDebugMessage(s_E____titans_ai_ai_event_cpp_007d2a34,0x66,0,errorCode,&DAT_007a4ccc,
-                             s_AiEventClassTy__PrepareToSave_007d2a78);
+  iVar5 = ReportDebugMessage("E:\\__titans\\ai\\ai_event.cpp",0x66,0,errorCode,"%s",
+                             "AiEventClassTy::PrepareToSave");
   if (iVar5 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  RaiseInternalException(errorCode,0,s_E____titans_ai_ai_event_cpp_007d2a34,0x67);
+  RaiseInternalException(errorCode,0,"E:\\__titans\\ai\\ai_event.cpp",0x67);
   return (undefined4 *)0x0;
 }
 

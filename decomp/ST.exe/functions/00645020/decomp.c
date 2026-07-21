@@ -29,7 +29,7 @@ int __thiscall STTorpC::IsDangerous(STTorpC *this,int param_1,uint *param_2)
   if (errorCode == 0) {
     if (local_c == 0) {
       RaiseInternalException
-                (-0x5001fff7,g_overwriteContext_007ED77C,s_E____titans_nick_to_torp_cpp_007d25c0,
+                (-0x5001fff7,g_overwriteContext_007ED77C,"E:\\__titans\\nick\\to_torp.cpp",
                  0x466);
     }
     index = 0;
@@ -52,10 +52,10 @@ int __thiscall STTorpC::IsDangerous(STTorpC *this,int param_1,uint *param_2)
   }
   g_currentExceptionFrame = local_5c.previous;
   if (errorCode != -0x5001fff7) {
-    iVar2 = ReportDebugMessage(s_E____titans_nick_to_torp_cpp_007d25c0,0x471,0,errorCode,
-                               &DAT_007a4ccc,s_STTorpC__IsDangerous_007d25e4);
+    iVar2 = ReportDebugMessage("E:\\__titans\\nick\\to_torp.cpp",0x471,0,errorCode,
+                               "%s","STTorpC::IsDangerous");
     if (iVar2 == 0) {
-      RaiseInternalException(errorCode,0,s_E____titans_nick_to_torp_cpp_007d25c0,0x472);
+      RaiseInternalException(errorCode,0,"E:\\__titans\\nick\\to_torp.cpp",0x472);
       return -1;
     }
     STDebugBreak(); /* noreturn in standalone pseudocode */

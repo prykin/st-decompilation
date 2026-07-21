@@ -37,8 +37,8 @@ void __thiscall VisibleClassTy::VisHoleExec(VisibleClassTy *this,void *param_1)
         else {
           piVar6 = (int *)0x0;
         }
-        if (((uint)(piVar6[5] + piVar6[6]) <= (uint)this_00->field_0108) &&
-           ((uint)((this_00->field_0108 - piVar6[5]) - piVar6[6]) % 7 == 0)) {
+        if (((uint)(piVar6[5] + piVar6[6]) <= this_00->field_0108) &&
+           (((this_00->field_0108 - piVar6[5]) - piVar6[6]) % 7 == 0)) {
           thunk_FUN_00559110(this_00,*piVar6,(undefined *)piVar6[1],piVar6[2],piVar6[4],piVar6[3],-6
                              ,0xffffffff);
           uVar3 = local_8;
@@ -58,12 +58,12 @@ void __thiscall VisibleClassTy::VisHoleExec(VisibleClassTy *this,void *param_1)
       return;
     }
     g_currentExceptionFrame = local_50.previous;
-    iVar5 = ReportDebugMessage(s_E____titans_grig_visible_cpp_007c92cc,0x40a,0,errorCode,
-                               &DAT_007a4ccc,s_VisibleClassTy__VisHoleExec_erro_007c9490);
+    iVar5 = ReportDebugMessage("E:\\__titans\\grig\\visible.cpp",0x40a,0,errorCode,
+                               "%s","VisibleClassTy::VisHoleExec error");
     if (iVar5 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    RaiseInternalException(errorCode,0,s_E____titans_grig_visible_cpp_007c92cc,0x40b);
+    RaiseInternalException(errorCode,0,"E:\\__titans\\grig\\visible.cpp",0x40b);
   }
   return;
 }

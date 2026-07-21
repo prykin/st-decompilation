@@ -104,12 +104,12 @@ MReportTy::PaintBut(MReportTy *this,AnonShape_005C0B00_CBE14AB4 *param_1,UINT pa
     return;
   }
   g_currentExceptionFrame = local_64.previous;
-  iVar8 = ReportDebugMessage(s_E____titans_Start_rpt_obj_cpp_007ccec8,0x2c1,0,iVar6,&DAT_007a4ccc,
-                             s_MReportTy__PaintBut_007cd044);
+  iVar8 = ReportDebugMessage("E:\\__titans\\Start\\rpt_obj.cpp",0x2c1,0,iVar6,"%s",
+                             "MReportTy::PaintBut");
   if (iVar8 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  RaiseInternalException(iVar6,0,s_E____titans_Start_rpt_obj_cpp_007ccec8,0x2c1);
+  RaiseInternalException(iVar6,0,"E:\\__titans\\Start\\rpt_obj.cpp",0x2c1);
   return;
 }
 

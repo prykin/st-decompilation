@@ -70,12 +70,12 @@ STSprGameObjC::CheckRay
       if (iVar5 == -0x5001fff6) {
         return 1;
       }
-      iVar9 = ReportDebugMessage(s_E____titans_wlad_Tc_gobj_cpp_007a4e0c,0xb9b,0,iVar5,&DAT_007a4ccc
-                                 ,s_STSprGameObjC__CheckRay_007a4f54);
+      iVar9 = ReportDebugMessage("E:\\__titans\\wlad\\Tc_gobj.cpp",0xb9b,0,iVar5,"%s"
+                                 ,"STSprGameObjC::CheckRay");
       if (iVar9 != 0) {
         STDebugBreak(); /* noreturn in standalone pseudocode */
       }
-      RaiseInternalException(iVar5,0,s_E____titans_wlad_Tc_gobj_cpp_007a4e0c,0xb9c);
+      RaiseInternalException(iVar5,0,"E:\\__titans\\wlad\\Tc_gobj.cpp",0xb9c);
     }
     return 0;
   }
@@ -100,7 +100,7 @@ STSprGameObjC::CheckRay
   case CASE_BB:
   case CASE_BC:
     RaiseInternalException
-              (-0x5001fff6,g_overwriteContext_007ED77C,s_E____titans_wlad_Tc_gobj_cpp_007a4e0c,0xb69
+              (-0x5001fff6,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\Tc_gobj.cpp",0xb69
               );
   }
   if (param_8 != (int *)0x0) {
@@ -192,7 +192,7 @@ LAB_0041fe0d:
                 [g_pathingGrid.sizeX * iVar5 + local_c + g_pathingGrid.planeStride * iVar9] < 0) {
               RaiseInternalException
                         (-0x5001fff7,g_overwriteContext_007ED77C,
-                         s_E____titans_wlad_Tc_gobj_cpp_007a4e0c,0xb85);
+                         "E:\\__titans\\wlad\\Tc_gobj.cpp",0xb85);
             }
             sVar7 = (short)local_c;
             if ((((sVar7 < 0) || (g_worldGrid.sizeX <= sVar7)) || (sVar8 < 0)) ||
@@ -215,7 +215,7 @@ LAB_0041fe0d:
                 }
                 RaiseInternalException
                           (-0x5001fff7,g_overwriteContext_007ED77C,
-                           s_E____titans_wlad_Tc_gobj_cpp_007a4e0c,0xb8c);
+                           "E:\\__titans\\wlad\\Tc_gobj.cpp",0xb8c);
               }
               if (param_9 == 0) {
                 if (((STWorldObjectVTable *)0x7 < pSVar10[1].vtable) ||
@@ -223,7 +223,7 @@ LAB_0041fe0d:
                     (7 < (byte)(&DAT_008087e9)[(int)pSVar10[1].vtable * 0x51]))))
                 goto cf_continue_loop_0042004A;
                 bVar4 = *(byte *)&pSVar10[1].vtable;
-                bVar1 = local_1c->field_0024;
+                bVar1 = (byte)local_1c->field_0024;
                 /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                 _local_38 = CONCAT31(uStack_37,bVar4);
                 /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
@@ -259,12 +259,12 @@ LAB_0041fffd:
                 if ((!bVar13) && (pSVar10->value_20 == 0x1ae)) {
                   RaiseInternalException
                             (-0x5001fff7,g_overwriteContext_007ED77C,
-                             s_E____titans_wlad_Tc_gobj_cpp_007a4e0c,0xb91);
+                             "E:\\__titans\\wlad\\Tc_gobj.cpp",0xb91);
                 }
               }
               RaiseInternalException
                         (-0x5001fff6,g_overwriteContext_007ED77C,
-                         s_E____titans_wlad_Tc_gobj_cpp_007a4e0c,0xb93);
+                         "E:\\__titans\\wlad\\Tc_gobj.cpp",0xb93);
             }
           }
           else if (local_1c->field_0018 != *(int *)&pSVar10->field_0x18) {
@@ -274,7 +274,7 @@ LAB_0041fffd:
             if ((pSVar10[0xc].value_20 & 0x1000) != 0) {
               RaiseInternalException
                         (-0x5001fff7,g_overwriteContext_007ED77C,
-                         s_E____titans_wlad_Tc_gobj_cpp_007a4e0c,0xb7e);
+                         "E:\\__titans\\wlad\\Tc_gobj.cpp",0xb7e);
             }
             if (param_9 == 0) {
               if (((STWorldObjectVTable *)0x7 < pSVar10[1].vtable) ||
@@ -282,7 +282,7 @@ LAB_0041fffd:
                   (7 < (byte)(&DAT_008087e9)[(int)pSVar10[1].vtable * 0x51]))))
               goto cf_continue_loop_0042004A;
               bVar4 = *(byte *)&pSVar10[1].vtable;
-              bVar1 = local_1c->field_0024;
+              bVar1 = (byte)local_1c->field_0024;
               /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
               _local_40 = CONCAT31(uStack_3f,bVar4);
               /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
@@ -317,12 +317,12 @@ LAB_0041fdc6:
               if (!bVar13) {
                 RaiseInternalException
                           (-0x5001fff7,g_overwriteContext_007ED77C,
-                           s_E____titans_wlad_Tc_gobj_cpp_007a4e0c,0xb81);
+                           "E:\\__titans\\wlad\\Tc_gobj.cpp",0xb81);
               }
             }
             RaiseInternalException
                       (-0x5001fff6,g_overwriteContext_007ED77C,
-                       s_E____titans_wlad_Tc_gobj_cpp_007a4e0c,0xb83);
+                       "E:\\__titans\\wlad\\Tc_gobj.cpp",0xb83);
             goto LAB_0041fe0d;
           }
 cf_continue_loop_0042004A:

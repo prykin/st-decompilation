@@ -32,10 +32,10 @@ void __thiscall TradePanelTy::PaintIndicators(TradePanelTy *this)
   pTVar4 = local_10;
   if (iVar5 == 0) {
     puVar1 = &local_10->field_0x18d;
-    wsprintfA(puVar1,&DAT_007c28fc,
-              (uint)*(ushort *)(&local_10->field_0x1bc + (uint)(byte)local_10->field_01D0 * 2));
+    wsprintfA(puVar1,"%6d",
+              (uint)*(ushort *)(&local_10->field_0x1bc + (uint)local_10->field_01D0 * 2));
     ccFntTy::SetSurf(pTVar4->field_01DD,pTVar4->field_0068,0,0x67,0x36,0x23,0xc);
-    ccFntTy::WrStr(pTVar4->field_01DD,(uint *)puVar1,-1,-1,-(uint)(pTVar4->field_01D0 != '\0') & 2);
+    ccFntTy::WrStr(pTVar4->field_01DD,(uint *)puVar1,-1,-1,-(uint)(pTVar4->field_01D0 != 0) & 2);
     if (pTVar4->field_01BB == '\0') {
       local_8 = 0;
       iVar5 = 0xb4;
@@ -46,7 +46,7 @@ void __thiscall TradePanelTy::PaintIndicators(TradePanelTy *this)
         iVar9 = 1;
         bVar8 = 0;
         uVar7 = 0xffffffff;
-        text = thunk_FUN_00571240(s_BKG_AMOUNTRC_007c874c,0);
+        text = thunk_FUN_00571240("BKG_AMOUNTRC",0);
         puVar6 = Library::Ourlib::MFRLOAD::mfRLoad
                            (DAT_00806794,CASE_1,text,uVar7,bVar8,iVar9,iVar10,puVar11);
         DibPut((AnonShape_006B5B10_E0D06CF1 *)pTVar4->field_0068,iVar5 + -3,0x45,'\x01',
@@ -63,7 +63,7 @@ void __thiscall TradePanelTy::PaintIndicators(TradePanelTy *this)
           iVar9 = (int)((ulonglong)*(ushort *)(&pTVar4->field_0x1bc + (uint)bVar8 * 2) /
                        (ulonglong)(longlong)(int)(uint)uVar2);
         }
-        wsprintfA(puVar1,&DAT_007c28fc,iVar9);
+        wsprintfA(puVar1,"%6d",iVar9);
         ccFntTy::SetSurf(pTVar4->field_01DD,pTVar4->field_0068,0,iVar5,0x48,0x23,0xc);
         ccFntTy::WrStr(pTVar4->field_01DD,(uint *)puVar1,-1,-1,
                        (-(uint)(DAT_0080874e != '\x03') & 0xfffffffc) + 5);
@@ -76,12 +76,12 @@ void __thiscall TradePanelTy::PaintIndicators(TradePanelTy *this)
     return;
   }
   g_currentExceptionFrame = local_54.previous;
-  iVar9 = ReportDebugMessage(s_E____titans_Andrey_tradecen_cpp_007c8624,0x111,0,iVar5,&DAT_007a4ccc,
-                             s_TradePanelTy__PaintIndicators_007c8728);
+  iVar9 = ReportDebugMessage("E:\\__titans\\Andrey\\tradecen.cpp",0x111,0,iVar5,"%s",
+                             "TradePanelTy::PaintIndicators");
   if (iVar9 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  RaiseInternalException(iVar5,0,s_E____titans_Andrey_tradecen_cpp_007c8624,0x111);
+  RaiseInternalException(iVar5,0,"E:\\__titans\\Andrey\\tradecen.cpp",0x111);
   return;
 }
 

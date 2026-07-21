@@ -81,9 +81,9 @@ int __thiscall FUN_0063c510(void *this,int param_1)
               (thunk_FUN_00558c00(g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,iVar3,
                                   iVar4,&local_c,&local_10), local_8 < 0)) ||
              ((4 < local_8 || (local_c < 0)))) ||
-            (((int)pVVar2->field_0030 <= local_c ||
+            ((pVVar2->field_0030 <= local_c ||
              ((local_10 = (&DAT_0079aed0)[local_8] + local_10, local_10 < 0 ||
-              ((int)pVVar2->field_0034 <= local_10)))))) ||
+              (pVVar2->field_0034 <= local_10)))))) ||
            ((pVVar2->field_004C == 0 ||
             (*(char *)(local_10 * pVVar2->field_0030 + pVVar2->field_004C + local_c) != '\0')))) {
           if (*(char *)((int)this + 0x29f) == '\0') {

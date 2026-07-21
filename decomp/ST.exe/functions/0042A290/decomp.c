@@ -87,7 +87,7 @@ short * __cdecl LoadLand(cMf32 *param_1,char *text)
     }
     this = local_10;
     if (local_10 == (AnonShape_006DDD50_309FA381 *)0x0) {
-      RaiseInternalException(-2,g_overwriteContext_007ED77C,s_E____titans_tload_cpp_007a5fdc,0x48e);
+      RaiseInternalException(-2,g_overwriteContext_007ED77C,"E:\\__titans\\tload.cpp",0x48e);
     }
     Library::MSVCRT::FUN_0072e150(0xc0000000,0x403ccccc);
     lVar15 = Library::MSVCRT::__ftol();
@@ -181,10 +181,10 @@ short * __cdecl LoadLand(cMf32 *param_1,char *text)
     return psVar4;
   }
   g_currentExceptionFrame = local_74.previous;
-  iVar9 = ReportDebugMessage(s_E____titans_tload_cpp_007a5fdc,0x502,0,iVar3,&DAT_007a4ccc,
-                             s_LoadLand_007a5ff8);
+  iVar9 = ReportDebugMessage("E:\\__titans\\tload.cpp",0x502,0,iVar3,"%s",
+                             "LoadLand");
   if (iVar9 == 0) {
-    RaiseInternalException(iVar3,0,s_E____titans_tload_cpp_007a5fdc,0x503);
+    RaiseInternalException(iVar3,0,"E:\\__titans\\tload.cpp",0x503);
     return (short *)0x0;
   }
   STDebugBreak(); /* noreturn in standalone pseudocode */

@@ -65,12 +65,12 @@ int __thiscall TLOBaseTy::AddSprInit(TLOBaseTy *this)
     return 0;
   }
   g_currentExceptionFrame = local_4c.previous;
-  iVar3 = ReportDebugMessage(s_E____titans_Artem_TLO_bspr_cpp_007ad4d0,0x2c5,0,iVar2,&DAT_007a4ccc,
-                             s_TLOBaseTy__AddSprInit_error_007ad540);
+  iVar3 = ReportDebugMessage("E:\\__titans\\Artem\\TLO_bspr.cpp",0x2c5,0,iVar2,"%s",
+                             "TLOBaseTy::AddSprInit error");
   if (iVar3 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  RaiseInternalException(iVar2,0,s_E____titans_Artem_TLO_bspr_cpp_007ad4d0,0x2c6);
+  RaiseInternalException(iVar2,0,"E:\\__titans\\Artem\\TLO_bspr.cpp",0x2c6);
   return iVar2;
 }
 

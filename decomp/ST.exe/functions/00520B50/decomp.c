@@ -24,10 +24,10 @@ InfocPanelTy::PaintInfocObj(InfocPanelTy *this,ushort param_1,uint param_2,int p
   pIVar2 = local_8;
   if (errorCode == 0) {
     if ((local_8->field_03D4 == -1) && (param_1 == 0xffff)) {
-      wsprintfA(&local_8->field_0x18d,s_______d_007c3fc0,param_2 & 0xffff);
+      wsprintfA(&local_8->field_0x18d,"----/%d",param_2 & 0xffff);
     }
     else {
-      wsprintfA(&local_8->field_0x18d,s__d__d_007c3fb8,param_1,param_2 & 0xffff);
+      wsprintfA(&local_8->field_0x18d,"%d/%d",param_1,param_2 & 0xffff);
     }
     if (DAT_0080874e == '\x03') {
       cVar3 = 's';
@@ -44,12 +44,12 @@ InfocPanelTy::PaintInfocObj(InfocPanelTy *this,ushort param_1,uint param_2,int p
     return;
   }
   g_currentExceptionFrame = local_4c.previous;
-  iVar4 = ReportDebugMessage(s_E____titans_Andrey_infocen_cpp_007c3eb0,0xa9,0,errorCode,
-                             &DAT_007a4ccc,s_InfocPanelTy__PaintInfocObj_007c3f94);
+  iVar4 = ReportDebugMessage("E:\\__titans\\Andrey\\infocen.cpp",0xa9,0,errorCode,
+                             "%s","InfocPanelTy::PaintInfocObj");
   if (iVar4 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  RaiseInternalException(errorCode,0,s_E____titans_Andrey_infocen_cpp_007c3eb0,0xa9);
+  RaiseInternalException(errorCode,0,"E:\\__titans\\Andrey\\infocen.cpp",0xa9);
   return;
 }
 

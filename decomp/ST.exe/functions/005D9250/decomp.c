@@ -61,7 +61,7 @@ void __thiscall SIDTy::PaintExplanation(SIDTy *this)
       puVar5 = &DAT_00807ddd;
       puVar7 = (uint *)&pSVar3->field_1CD4;
       pcVar6 = LoadResourceString(0x2520,HINSTANCE_00807618);
-      wsprintfA((LPSTR)puVar7,s__0_s__5_s_0__007cd6c4,pcVar6,puVar5);
+      wsprintfA((LPSTR)puVar7,"&0%s\n&5%s&0?",pcVar6,puVar5);
       this_00 = PTR_0081176c->field_0034;
       iVar12 = -1;
       iVar11 = -1;
@@ -75,12 +75,12 @@ void __thiscall SIDTy::PaintExplanation(SIDTy *this)
     return;
   }
   g_currentExceptionFrame = local_4c.previous;
-  iVar10 = ReportDebugMessage(s_E____titans_Start_sid_obj_cpp_007cd5c4,0x17b,0,iVar4,&DAT_007a4ccc,
-                              s_SIDTy__PaintExplanation_007cd6a8);
+  iVar10 = ReportDebugMessage("E:\\__titans\\Start\\sid_obj.cpp",0x17b,0,iVar4,"%s",
+                              "SIDTy::PaintExplanation");
   if (iVar10 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  RaiseInternalException(iVar4,0,s_E____titans_Start_sid_obj_cpp_007cd5c4,0x17b);
+  RaiseInternalException(iVar4,0,"E:\\__titans\\Start\\sid_obj.cpp",0x17b);
   return;
 }
 

@@ -24,7 +24,7 @@ StartSystemTy::PaintBinDesc(StartSystemTy *this,AnonShape_005DE050_5BD86458 *par
   int local_8;
 
   if ((((this->field_0544 != (AnonPointee_StartSystemTy_0544 *)0x0) && (this->field_0548 != 0)) &&
-      (-1 < (int)this->field_0540)) &&
+      (-1 < this->field_0540)) &&
      ((param_1 != (AnonShape_005DE050_5BD86458 *)0x0 &&
       (local_c = param_1->field_001C, local_c != 0)))) {
     pcVar1 = this->field_0034;
@@ -67,12 +67,12 @@ StartSystemTy::PaintBinDesc(StartSystemTy *this,AnonShape_005DE050_5BD86458 *par
       return;
     }
     g_currentExceptionFrame = local_54.previous;
-    iVar6 = ReportDebugMessage(s_E____titans_Start_startsys_cpp_007cd718,0x3cb,0,errorCode,
-                               &DAT_007a4ccc,s_StartSystemTy__PaintBinDesc_007cd8e0);
+    iVar6 = ReportDebugMessage("E:\\__titans\\Start\\startsys.cpp",0x3cb,0,errorCode,
+                               "%s","StartSystemTy::PaintBinDesc");
     if (iVar6 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    RaiseInternalException(errorCode,0,s_E____titans_Start_startsys_cpp_007cd718,0x3cb);
+    RaiseInternalException(errorCode,0,"E:\\__titans\\Start\\startsys.cpp",0x3cb);
   }
   return;
 }

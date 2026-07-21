@@ -19,7 +19,7 @@ STAllPlayersC::SetActivePanel(STAllPlayersC *this,uint *param_1,int param_2,int 
   byte bVar4;
   int iVar5;
   int iVar6;
-  STFishC *pSVar7;
+  STGameObjC *pSVar7;
   uint uVar8;
   STAllPlayersC_GetObjPtr_param_3Enum SVar9;
   int local_10;
@@ -45,13 +45,12 @@ STAllPlayersC::SetActivePanel(STAllPlayersC *this,uint *param_1,int param_2,int 
       if (iVar6 != 0x3c) {
         if (iVar6 == 0x1ae) {
           if (param_3 == 1) {
-            pSVar7 = (STFishC *)GetObjPtr(this,(char)piVar1[1],(uint)*(ushort *)(piVar1 + 2),CASE_3)
-            ;
+            pSVar7 = GetObjPtr(this,(char)piVar1[1],(uint)*(ushort *)(piVar1 + 2),CASE_3);
             STFishC::sub_004162B0
-                      (pSVar7,(undefined2 *)&local_10,(undefined2 *)&local_c,(undefined2 *)&local_8)
-            ;
-            iVar5 = FUN_006eb230(PTR_00807598,*(uint *)&pSVar7->field_0x1ed,DAT_00807410,
-                                 DAT_00807414,DAT_00807418,DAT_0080741c);
+                      ((STFishC *)pSVar7,(undefined2 *)&local_10,(undefined2 *)&local_c,
+                       (undefined2 *)&local_8);
+            iVar5 = FUN_006eb230(PTR_00807598,pSVar7->field_01ED,DAT_00807410,DAT_00807414,
+                                 DAT_00807418,DAT_0080741c);
             if (iVar5 != 1) {
               thunk_FUN_004a8e00(local_10,local_c,local_8);
               thunk_FUN_004a8f20(1);
@@ -65,8 +64,8 @@ STAllPlayersC::SetActivePanel(STAllPlayersC *this,uint *param_1,int param_2,int 
           ActivateTV(this,DAT_0080874d,0,param_2);
           return;
         }
-        iVar5 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0x1a3b,0,0,&DAT_007a4ccc
-                                   ,s_STAllPlayersC__SetActivePanel_AC_007a7a2c);
+        iVar5 = ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0x1a3b,0,0,"%s"
+                                   ,"STAllPlayersC::SetActivePanel ACT_LEFT ACT_LEFT invalid game type");
         if (iVar5 == 0) {
           return;
         }
@@ -90,8 +89,8 @@ STAllPlayersC::SetActivePanel(STAllPlayersC *this,uint *param_1,int param_2,int 
     }
     else {
       if (g_playerRuntime[DAT_0080874d].field324_0x203 != 1) {
-        iVar5 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0x1a6b,0,0,&DAT_007a4ccc
-                                   ,s_STAllPlayersC__SetActivePanel_007a7b70);
+        iVar5 = ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0x1a6b,0,0,"%s"
+                                   ,"STAllPlayersC::SetActivePanel");
         if (iVar5 != 0) {
           STDebugBreak(); /* noreturn in standalone pseudocode */
         }
@@ -126,20 +125,20 @@ STAllPlayersC::SetActivePanel(STAllPlayersC *this,uint *param_1,int param_2,int 
         return;
       }
       if (iVar2 != 0x1ae) {
-        iVar5 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0x1a67,0,0,&DAT_007a4ccc
-                                   ,s_STAllPlayersC__SetActivePanel_AC_007a7a7c);
+        iVar5 = ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0x1a67,0,0,"%s"
+                                   ,"STAllPlayersC::SetActivePanel ACT_LEFT ACT_RIGHT invalid game type");
         if (iVar5 == 0) {
           return;
         }
         STDebugBreak(); /* noreturn in standalone pseudocode */
       }
       if (param_3 == 1) {
-        pSVar7 = (STFishC *)GetObjPtr(this,*(char *)(iVar6 + 4),(uint)*(ushort *)(iVar6 + 8),CASE_3)
-        ;
+        pSVar7 = GetObjPtr(this,*(char *)(iVar6 + 4),(uint)*(ushort *)(iVar6 + 8),CASE_3);
         STFishC::sub_004162B0
-                  (pSVar7,(undefined2 *)&local_10,(undefined2 *)&local_c,(undefined2 *)&local_8);
-        iVar5 = FUN_006eb230(PTR_00807598,*(uint *)&pSVar7->field_0x1ed,DAT_00807410,DAT_00807414,
-                             DAT_00807418,DAT_0080741c);
+                  ((STFishC *)pSVar7,(undefined2 *)&local_10,(undefined2 *)&local_c,
+                   (undefined2 *)&local_8);
+        iVar5 = FUN_006eb230(PTR_00807598,pSVar7->field_01ED,DAT_00807410,DAT_00807414,DAT_00807418,
+                             DAT_0080741c);
         if (iVar5 != 1) {
           thunk_FUN_004a8e00(local_10,local_c,local_8);
           thunk_FUN_004a8f20(1);
@@ -158,8 +157,8 @@ STAllPlayersC::SetActivePanel(STAllPlayersC *this,uint *param_1,int param_2,int 
     goto cf_common_exit_0043BB49;
   }
   if (param_1 != (uint *)0x1) {
-    iVar5 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0x1b2b,0,0,&DAT_007a4ccc,
-                               s_STAllPlayersC__SetActivePanel_in_007a7b94);
+    iVar5 = ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0x1b2b,0,0,"%s",
+                               "STAllPlayersC::SetActivePanel invalid panel number");
     if (iVar5 == 0) {
       return;
     }
@@ -171,8 +170,8 @@ LAB_0043aee4:
   iVar6 = (uint)DAT_0080874d * 0xa62;
   if (g_playerRuntime[DAT_0080874d].field324_0x203 != 0) {
     if (g_playerRuntime[DAT_0080874d].field324_0x203 != 1) {
-      iVar5 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0x1b27,0,0,&DAT_007a4ccc,
-                                 s_STAllPlayersC__SetActivePanel_007a7b70);
+      iVar5 = ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0x1b27,0,0,"%s",
+                                 "STAllPlayersC::SetActivePanel");
       if (iVar5 == 0) {
         return;
       }
@@ -211,12 +210,12 @@ LAB_0043aee4:
           SVar9 = CASE_4;
 /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
 LAB_0043b0f1:
-          pSVar7 = (STFishC *)
-                   GetObjPtr(this,(char)piVar1[1],
+          pSVar7 = GetObjPtr(this,(char)piVar1[1],
                              CONCAT22((short)((uint)param_3 >> 0x10),(short)piVar1[2]),SVar9);
           STFishC::sub_004162B0
-                    (pSVar7,(undefined2 *)&local_10,(undefined2 *)&local_c,(undefined2 *)&local_8);
-          iVar5 = FUN_006eb230(PTR_00807598,*(uint *)&pSVar7->field_0x1ed,DAT_00807410,DAT_00807414,
+                    ((STFishC *)pSVar7,(undefined2 *)&local_10,(undefined2 *)&local_c,
+                     (undefined2 *)&local_8);
+          iVar5 = FUN_006eb230(PTR_00807598,pSVar7->field_01ED,DAT_00807410,DAT_00807414,
                                DAT_00807418,DAT_0080741c);
           if (iVar5 != 1) {
             thunk_FUN_004a8e00(local_10,local_c,local_8);
@@ -234,8 +233,8 @@ LAB_0043b0f1:
       }
       if (iVar6 != 0x172) {
 LAB_0043b0af:
-        iVar5 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0x1ac4,0,0,&DAT_007a4ccc
-                                   ,s_STAllPlayersC__SetActivePanel_AC_007a7b1c);
+        iVar5 = ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0x1ac4,0,0,"%s"
+                                   ,"STAllPlayersC::SetActivePanel ACT_RIGHT ACT_RIGHT invalid game type");
         if (iVar5 == 0) {
           return;
         }
@@ -256,11 +255,12 @@ LAB_0043b0af:
       if (param_3 != 1) goto cf_common_exit_0043B294;
       SVar9 = CASE_5;
     }
-    pSVar7 = (STFishC *)GetObjPtr(this,(char)piVar1[1],(uint)*(ushort *)(piVar1 + 2),SVar9);
+    pSVar7 = GetObjPtr(this,(char)piVar1[1],(uint)*(ushort *)(piVar1 + 2),SVar9);
     STFishC::sub_004162B0
-              (pSVar7,(undefined2 *)&local_10,(undefined2 *)&local_c,(undefined2 *)&local_8);
-    iVar5 = FUN_006eb230(PTR_00807598,*(uint *)&pSVar7->field_0x1ed,DAT_00807410,DAT_00807414,
-                         DAT_00807418,DAT_0080741c);
+              ((STFishC *)pSVar7,(undefined2 *)&local_10,(undefined2 *)&local_c,
+               (undefined2 *)&local_8);
+    iVar5 = FUN_006eb230(PTR_00807598,pSVar7->field_01ED,DAT_00807410,DAT_00807414,DAT_00807418,
+                         DAT_0080741c);
     if (iVar5 != 1) {
       thunk_FUN_004a8e00(local_10,local_c,local_8);
       thunk_FUN_004a8f20(1);
@@ -305,11 +305,12 @@ cf_common_exit_0043B294:
       if (param_3 == 1) {
         SVar9 = CASE_4;
 LAB_0043b2fe:
-        pSVar7 = (STFishC *)GetObjPtr(this,(char)piVar1[1],(uint)*(ushort *)(piVar1 + 2),SVar9);
+        pSVar7 = GetObjPtr(this,(char)piVar1[1],(uint)*(ushort *)(piVar1 + 2),SVar9);
         STFishC::sub_004162B0
-                  (pSVar7,(undefined2 *)&local_10,(undefined2 *)&local_c,(undefined2 *)&local_8);
-        iVar5 = FUN_006eb230(PTR_00807598,*(uint *)&pSVar7->field_0x1ed,DAT_00807410,DAT_00807414,
-                             DAT_00807418,DAT_0080741c);
+                  ((STFishC *)pSVar7,(undefined2 *)&local_10,(undefined2 *)&local_c,
+                   (undefined2 *)&local_8);
+        iVar5 = FUN_006eb230(PTR_00807598,pSVar7->field_01ED,DAT_00807410,DAT_00807414,DAT_00807418,
+                             DAT_0080741c);
 joined_r0x0043b5ec:
         if (iVar5 != 1) {
           thunk_FUN_004a8e00(local_10,local_c,local_8);
@@ -325,8 +326,8 @@ LAB_0043b630:
     else {
       if (iVar6 != 0x172) {
 LAB_0043b4a2:
-        iVar5 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0x1b23,0,0,&DAT_007a4ccc
-                                   ,s_STAllPlayersC__SetActivePanel_AC_007a7acc);
+        iVar5 = ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0x1b23,0,0,"%s"
+                                   ,"STAllPlayersC::SetActivePanel ACT_RIGHT ACT_LEFT invalid game type");
         if (iVar5 == 0) {
           return;
         }
@@ -340,22 +341,24 @@ LAB_0043b4a2:
   }
   else if (iVar6 == 0x1a4) {
     if (param_3 == 1) {
-      pSVar7 = (STFishC *)GetObjPtr(this,(char)piVar1[1],(uint)*(ushort *)(piVar1 + 2),CASE_5);
+      pSVar7 = GetObjPtr(this,(char)piVar1[1],(uint)*(ushort *)(piVar1 + 2),CASE_5);
       STFishC::sub_004162B0
-                (pSVar7,(undefined2 *)&local_10,(undefined2 *)&local_c,(undefined2 *)&local_8);
-      iVar5 = FUN_006eb230(PTR_00807598,*(uint *)&pSVar7->field_0x1ed,DAT_00807410,DAT_00807414,
-                           DAT_00807418,DAT_0080741c);
+                ((STFishC *)pSVar7,(undefined2 *)&local_10,(undefined2 *)&local_c,
+                 (undefined2 *)&local_8);
+      iVar5 = FUN_006eb230(PTR_00807598,pSVar7->field_01ED,DAT_00807410,DAT_00807414,DAT_00807418,
+                           DAT_0080741c);
       goto joined_r0x0043b5ec;
     }
   }
   else {
     if (iVar6 != 0x1b8) goto LAB_0043b4a2;
     if (param_3 == 1) {
-      pSVar7 = (STFishC *)GetObjPtr(this,(char)piVar1[1],(uint)*(ushort *)(piVar1 + 2),CASE_6);
+      pSVar7 = GetObjPtr(this,(char)piVar1[1],(uint)*(ushort *)(piVar1 + 2),CASE_6);
       STFishC::sub_004162B0
-                (pSVar7,(undefined2 *)&local_10,(undefined2 *)&local_c,(undefined2 *)&local_8);
-      iVar5 = FUN_006eb230(PTR_00807598,*(uint *)&pSVar7->field_0x1ed,DAT_00807410,DAT_00807414,
-                           DAT_00807418,DAT_0080741c);
+                ((STFishC *)pSVar7,(undefined2 *)&local_10,(undefined2 *)&local_c,
+                 (undefined2 *)&local_8);
+      iVar5 = FUN_006eb230(PTR_00807598,pSVar7->field_01ED,DAT_00807410,DAT_00807414,DAT_00807418,
+                           DAT_0080741c);
       if (iVar5 != 1) {
         thunk_FUN_004a8e00(local_10,local_c,local_8);
         thunk_FUN_004a8f20(1);

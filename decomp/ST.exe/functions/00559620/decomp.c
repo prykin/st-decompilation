@@ -25,8 +25,8 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00558C00::FUN_00559620
       ((PTR_00802a38 == (STPlaySystemC *)0x0 || ((byte)(&DAT_008087e9)[(int)param_4 * 0x51] < 8)))))
      ) {
     if ((param_7 & 0x1000) != 0) {
-      thunk_FUN_0055bbc0(this,1,(short)param_1,(short)param_2,param_3,(uint)param_4,(char)param_5,
-                         param_6);
+      sub_0055BBC0(this,1,(short)param_1,(short)param_2,param_3,(uint)param_4,(char)param_5,param_6)
+      ;
     }
     if (((param_4 + 0xfc)[(int)this] != '\0') && ((param_7 & 2) != 0)) {
       iVar1 = param_5 * 2 + 1;

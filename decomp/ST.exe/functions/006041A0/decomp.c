@@ -52,12 +52,12 @@ int __thiscall STExplosionC::CreateGroupPart(STExplosionC *this,int param_1)
       iVar5 = iVar5 + -1;
     } while (iVar5 != 0);
   }
-  iVar5 = ReportDebugMessage(s_E____titans_nick_to_Expl_cpp_007cf630,0x1f6,0,iVar3,&DAT_007a4ccc,
-                             s_STExplosionC__CreateGroupPart_007cf670);
+  iVar5 = ReportDebugMessage("E:\\__titans\\nick\\to_Expl.cpp",0x1f6,0,iVar3,"%s",
+                             "STExplosionC::CreateGroupPart");
   if (iVar5 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  RaiseInternalException(iVar3,0,s_E____titans_nick_to_Expl_cpp_007cf630,0x1f8);
+  RaiseInternalException(iVar3,0,"E:\\__titans\\nick\\to_Expl.cpp",0x1f8);
   return 0xffff;
 }
 

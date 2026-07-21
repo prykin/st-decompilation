@@ -44,7 +44,8 @@ LAB_00660050:
   }
   if ((param_1->field_007D != -2) && (g_sTAllPlayers_007FA174 != (STAllPlayersC *)0x0)) {
     /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
-    this = thunk_FUN_0042b760(param_1->field_0x24,CONCAT22(extraout_var,param_1->field_007D));
+    this = thunk_FUN_0042b760(*(char *)&param_1->field_0024,
+                              CONCAT22(extraout_var,param_1->field_007D));
     if (this != (STGroupBoatC *)0x0) {
       if (param_1->field_0039 == 3) {
         local_14 = 1;

@@ -36,12 +36,12 @@ PutDDXClip(int param_1,int param_2,int param_3,int param_4,uint param_5,byte *pa
       return;
     }
     g_currentExceptionFrame = local_48.previous;
-    iVar2 = ReportDebugMessage(s_E____titans_Andrey_support_cpp_007c7b2c,0x3a,0,errorCode,
-                               &DAT_007a4ccc,s_PutDDXClip_007c7b6c);
+    iVar2 = ReportDebugMessage("E:\\__titans\\Andrey\\support.cpp",0x3a,0,errorCode,
+                               "%s","PutDDXClip");
     if (iVar2 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    RaiseInternalException(errorCode,0,s_E____titans_Andrey_support_cpp_007c7b2c,0x3a);
+    RaiseInternalException(errorCode,0,"E:\\__titans\\Andrey\\support.cpp",0x3a);
   }
   return;
 }

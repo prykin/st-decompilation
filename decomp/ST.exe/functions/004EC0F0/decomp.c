@@ -18,7 +18,7 @@ undefined4 __fastcall FUN_004ec0f0(AnonShape_004EC0F0_C371FA68 *param_1)
                      *(char **)(&DAT_007cde6c + param_1->field_050C * 4),0x1d);
   if (iVar1 != 0) {
     RaiseInternalException
-              (iVar1,g_overwriteContext_007ED77C,s_E____titans_Artem_TLO_trade_cpp_007c1648,0x126);
+              (iVar1,g_overwriteContext_007ED77C,"E:\\__titans\\Artem\\TLO_trade.cpp",0x126);
   }
   uVar4 = 10;
   iVar1 = thunk_FUN_004ad650((int)&param_1->field_0x1d5);

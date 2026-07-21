@@ -111,8 +111,8 @@ STAllPlayersC::GetObjPtr
     }
     break;
   default:
-    iVar2 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0x17a,0,0,
-                               s_STAllPlayersC__GetObjPtr_player__007a609c,(int)objPtr,
+    iVar2 = ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0x17a,0,0,
+                               "STAllPlayersC::GetObjPtr player=%d num=%d",(int)objPtr,
                                param_2 & 0xffff);
     if (iVar2 == 0) {
       return (STGameObjC *)0x0;

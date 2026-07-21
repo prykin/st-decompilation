@@ -26,12 +26,12 @@ void __cdecl _AddAllGrpExch(uint param_1)
   iVar3 = Library::MSVCRT::__setjmp3(local_48.jumpBuffer,0);
   if (iVar3 != 0) {
     g_currentExceptionFrame = local_48.previous;
-    iVar6 = ReportDebugMessage(s_E____titans_ai_ai_mdef_cpp_007d2d58,0x118,0,iVar3,&DAT_007a4ccc,
-                               s__AddAllGrpExch_007d2d8c);
+    iVar6 = ReportDebugMessage("E:\\__titans\\ai\\ai_mdef.cpp",0x118,0,iVar3,"%s",
+                               "_AddAllGrpExch");
     if (iVar6 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    RaiseInternalException(iVar3,0,s_E____titans_ai_ai_mdef_cpp_007d2d58,0x119);
+    RaiseInternalException(iVar3,0,"E:\\__titans\\ai\\ai_mdef.cpp",0x119);
     return;
   }
   if (g_sTAllPlayers_007FA174 != (STAllPlayersC *)0x0) {
@@ -53,11 +53,13 @@ void __cdecl _AddAllGrpExch(uint param_1)
 LAB_00676053:
             pSVar5 = STAllPlayersC::GetObjPtr(g_sTAllPlayers_007FA174,objPtr,(uint)*puVar4,CASE_1);
             if (pSVar5 != (STGameObjC *)0x0) {
-              iVar3 = (*pSVar5->vtable->vfunc_2C)();
+              /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+              iVar3 = (**(code **)&pSVar5->vtable->field_0x2c)();
               if (iVar3 == 0x78) {
-                iVar3 = (*pSVar5->vtable->vfunc_2C)();
+                /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+                iVar3 = (**(code **)&pSVar5->vtable->field_0x2c)();
                 if (iVar3 == 0x78) {
-                  *(undefined4 *)&pSVar5[1].field_0x98 = 0xffffffff;
+                  pSVar5->field_0269 = 0xffffffff;
                 }
               }
             }

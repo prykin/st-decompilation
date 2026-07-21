@@ -111,8 +111,8 @@ uint * STGroupBoatC::Way3DGrpGetDistrPoint
   else {
     g_currentExceptionFrame = local_58.previous;
     local_c = iVar4;
-    iVar5 = ReportDebugMessage(s_E____titans_wlad_Grpway3d_cpp_007a4ca8,0xeae,0,iVar4,&DAT_007a4ccc,
-                               s_STGroupBoatC__Way3DGrpGetDistrPo_007a4cf8);
+    iVar5 = ReportDebugMessage("E:\\__titans\\wlad\\Grpway3d.cpp",0xeae,0,iVar4,"%s",
+                               "STGroupBoatC::Way3DGrpGetDistrPoint");
     if (iVar5 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
@@ -125,7 +125,7 @@ LAB_004157f0:
     DArrayDestroy(array);
     local_8 = (DArrayTy *)0x0;
     RaiseInternalException
-              (iVar4,g_overwriteContext_007ED77C,s_E____titans_wlad_Grpway3d_cpp_007a4ca8,0xeb8);
+              (iVar4,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\Grpway3d.cpp",0xeb8);
     return (uint *)0x0;
   }
   return &array->flags;

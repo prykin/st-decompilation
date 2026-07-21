@@ -31,17 +31,17 @@ _EnumRCField(short param_1,short param_2,short param_3,short param_4,short param
   iVar2 = Library::MSVCRT::__setjmp3(local_5c.jumpBuffer,0);
   if (iVar2 != 0) {
     g_currentExceptionFrame = local_5c.previous;
-    iVar4 = ReportDebugMessage(s_E____titans_ai_ai_mdef_cpp_007d2d58,0x37f,0,iVar2,&DAT_007a4ccc,
-                               s__EnumRCField_007d2e04);
+    iVar4 = ReportDebugMessage("E:\\__titans\\ai\\ai_mdef.cpp",0x37f,0,iVar2,"%s",
+                               "_EnumRCField");
     if (iVar4 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    RaiseInternalException(iVar2,0,s_E____titans_ai_ai_mdef_cpp_007d2d58,0x380);
+    RaiseInternalException(iVar2,0,"E:\\__titans\\ai\\ai_mdef.cpp",0x380);
     return iVar2;
   }
   if (PTR_007fa15c == (DArrayTy *)0x0) {
     RaiseInternalException
-              (-0x34,g_overwriteContext_007ED77C,s_E____titans_ai_ai_mdef_cpp_007d2d58,0x36b);
+              (-0x34,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_mdef.cpp",0x36b);
   }
   uVar5 = PTR_007fa15c->count - 1;
   if (-1 < (int)uVar5) {

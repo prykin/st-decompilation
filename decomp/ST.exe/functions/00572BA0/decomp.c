@@ -12,7 +12,7 @@ undefined4 __fastcall FUN_00572ba0(int param_1)
 
   local_8 = 1;
   local_c = param_1;
-  wsprintfA((LPSTR)local_154,s__s_s_s__s_007ca1ec,param_1 + 0x28,PTR_s_SAVEGAME__0079b0cc,
+  wsprintfA((LPSTR)local_154,"%s%s%s\\%s",param_1 + 0x28,PTR_s_SAVEGAME__0079b0cc,
             param_1 + 0x785,PTR_s_PL_LOG_0079b0d0);
   local_50.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_50;

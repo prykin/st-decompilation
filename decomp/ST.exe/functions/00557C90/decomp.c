@@ -39,11 +39,11 @@ void __thiscall VisibleClassTy::Init(VisibleClassTy *this)
   this_00 = local_10;
   if (iVar4 != 0) {
     g_currentExceptionFrame = local_54.previous;
-    iVar11 = ReportDebugMessage(s_E____titans_grig_visible_cpp_007c92cc,0xaa,0,iVar4,&DAT_007a4ccc,
-                                s_VisibleClassTy__Init_007c9310);
+    iVar11 = ReportDebugMessage("E:\\__titans\\grig\\visible.cpp",0xaa,0,iVar4,"%s",
+                                "VisibleClassTy::Init");
     if (iVar11 == 0) {
       FUN_0070b600((int *)&local_8);
-      RaiseInternalException(iVar4,0,s_E____titans_grig_visible_cpp_007c92cc,0xac);
+      RaiseInternalException(iVar4,0,"E:\\__titans\\grig\\visible.cpp",0xac);
       return;
     }
     STDebugBreak(); /* noreturn in standalone pseudocode */

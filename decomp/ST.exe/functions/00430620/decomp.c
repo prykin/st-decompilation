@@ -23,12 +23,12 @@ undefined4 __thiscall STAllPlayersC::IsTorpLive(STAllPlayersC *this,short param_
   if (iVar2 != 0) {
     g_currentExceptionFrame = local_50.previous;
     if (iVar2 != -0x5001fff7) {
-      iVar3 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0x80b,0,iVar2,
-                                 &DAT_007a4ccc,s_STAllPlayersC__IsTorpLive_007a6740);
+      iVar3 = ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0x80b,0,iVar2,
+                                 "%s","STAllPlayersC::IsTorpLive");
       if (iVar3 != 0) {
         STDebugBreak(); /* noreturn in standalone pseudocode */
       }
-      RaiseInternalException(iVar2,0,s_E____titans_wlad_to_allpl_cpp_007a6004,0x80c);
+      RaiseInternalException(iVar2,0,"E:\\__titans\\wlad\\to_allpl.cpp",0x80c);
     }
     return local_c;
   }
@@ -36,7 +36,7 @@ undefined4 __thiscall STAllPlayersC::IsTorpLive(STAllPlayersC *this,short param_
   if (iVar2 != -4) {
     if (local_8 == 0) {
       RaiseInternalException
-                (-0x5001fff7,g_overwriteContext_007ED77C,s_E____titans_wlad_to_allpl_cpp_007a6004,
+                (-0x5001fff7,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_allpl.cpp",
                  0x806);
     }
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */

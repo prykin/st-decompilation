@@ -40,7 +40,7 @@ FUN_005a39a0(void *this,ccFntTy *param_1,char *text,uint param_3,byte *param_4,i
     } while (bVar1 != 0);
     if (iVar5 != -2) {
       uVar4 = Library::MSVCRT::FUN_0072ff00(pbVar3);
-      wsprintfA((LPSTR)local_10,&DAT_007c28fc,uVar4);
+      wsprintfA((LPSTR)local_10,"%6d",uVar4);
       goto LAB_005a3a15;
     }
   }

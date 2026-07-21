@@ -32,7 +32,7 @@ void __thiscall SIDTy::InitSID(SIDTy *this)
     puVar5 = &local_8->field_1A60;
     SpriteClassTy::InitSprite((SpriteClassTy *)puVar5,DAT_008075a8,0x2f,'\a',(undefined4 *)0x0,0,0);
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-    (**(code **)(*puVar5 + 4))(DAT_00806784,7,0,s_MM_SID_007cd620,0xffffffff);
+    (**(code **)(*puVar5 + 4))(DAT_00806784,7,0,"MM_SID",0xffffffff);
     this_00->field_1A7C = 0x2e;
     this_00->field_1A80 = 0x193;
     this_00->field_1A68 = 0;
@@ -42,12 +42,11 @@ void __thiscall SIDTy::InitSID(SIDTy *this)
                  this_00->field_1A7C,this_00->field_1A80);
     }
     iVar2 = 1;
-    puVar5 = (undefined4 *)(PTR_0081176c->field_002C + 0x28);
-    uVar3 = FUN_006b4fe0(PTR_0081176c->field_002C);
-    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
+    puVar5 = (undefined4 *)&PTR_0081176c->field_002C->field_0x28;
+    uVar3 = FUN_006b4fe0((int)PTR_0081176c->field_002C);
     pAVar4 = (AnonPointee_SIDTy_1CB8 *)
-             FUN_006b50c0(0x15e,0xa5,(uint)*(ushort *)(PTR_0081176c->field_002C + 0xe),uVar3,puVar5,
-                          iVar2);
+             FUN_006b50c0(0x15e,0xa5,(uint)*(ushort *)&PTR_0081176c->field_002C->field_0xe,uVar3,
+                          puVar5,iVar2);
     this_00->field_1CB8 = pAVar4;
     uVar3 = pAVar4[1].field_0004;
     if (uVar3 == 0) {
@@ -64,12 +63,11 @@ void __thiscall SIDTy::InitSID(SIDTy *this)
       *(undefined1 *)puVar5 = 0xff;
       puVar5 = (undefined4 *)((int)puVar5 + 1);
     }
-    puVar5 = (undefined4 *)(PTR_0081176c->field_002C + 0x28);
-    uVar3 = FUN_006b4fe0(PTR_0081176c->field_002C);
-    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
+    puVar5 = (undefined4 *)&PTR_0081176c->field_002C->field_0x28;
+    uVar3 = FUN_006b4fe0((int)PTR_0081176c->field_002C);
     pAVar6 = (AnonPointee_SIDTy_1CBC *)
-             FUN_006b50c0(0x13e,0xe,(uint)*(ushort *)(PTR_0081176c->field_002C + 0xe),uVar3,puVar5,
-                          iVar2);
+             FUN_006b50c0(0x13e,0xe,(uint)*(ushort *)&PTR_0081176c->field_002C->field_0xe,uVar3,
+                          puVar5,iVar2);
     this_00->field_1CBC = pAVar6;
     uVar3 = pAVar6->field_0014;
     if (uVar3 == 0) {
@@ -86,12 +84,11 @@ void __thiscall SIDTy::InitSID(SIDTy *this)
       *(undefined1 *)puVar5 = 0xff;
       puVar5 = (undefined4 *)((int)puVar5 + 1);
     }
-    puVar5 = (undefined4 *)(PTR_0081176c->field_002C + 0x28);
-    uVar3 = FUN_006b4fe0(PTR_0081176c->field_002C);
-    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
+    puVar5 = (undefined4 *)&PTR_0081176c->field_002C->field_0x28;
+    uVar3 = FUN_006b4fe0((int)PTR_0081176c->field_002C);
     pAVar7 = (AnonPointee_SIDTy_1CC0 *)
-             FUN_006b50c0(0x104,0x28,(uint)*(ushort *)(PTR_0081176c->field_002C + 0xe),uVar3,puVar5,
-                          iVar2);
+             FUN_006b50c0(0x104,0x28,(uint)*(ushort *)&PTR_0081176c->field_002C->field_0xe,uVar3,
+                          puVar5,iVar2);
     this_00->field_1CC0 = pAVar7;
     uVar3 = pAVar7->field_0014;
     if (uVar3 == 0) {
@@ -117,7 +114,7 @@ void __thiscall SIDTy::InitSID(SIDTy *this)
     SpriteClassTy::InitSprite
               ((SpriteClassTy *)&this_00->field_1B01,DAT_008075a8,0x2d,'\a',(undefined4 *)0x0,0,0);
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-    (**(code **)(this_00->field_1B01 + 4))(DAT_00806784,7,0,s_SID_SLDUP_007cd614,0xffffffff);
+    (**(code **)(this_00->field_1B01 + 4))(DAT_00806784,7,0,"SID_SLDUP",0xffffffff);
     this_00->field_1B1D = 0x22b;
     this_00->field_1B21 = 0x1be;
     this_00->field_1B09 = 0;
@@ -127,7 +124,7 @@ void __thiscall SIDTy::InitSID(SIDTy *this)
     SpriteClassTy::InitSprite
               ((SpriteClassTy *)&this_00->field_1B92,DAT_008075a8,0x2d,'\a',(undefined4 *)0x0,0,0);
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-    (**(code **)(this_00->field_1B92 + 4))(DAT_00806784,7,0,s_SID_SLDDN_007cd608,0xffffffff);
+    (**(code **)(this_00->field_1B92 + 4))(DAT_00806784,7,0,"SID_SLDDN",0xffffffff);
     this_00->field_1BAE = 0x22b;
     this_00->field_1BB2 = 0x211;
     this_00->field_1B9A = 0;
@@ -137,7 +134,7 @@ void __thiscall SIDTy::InitSID(SIDTy *this)
     SpriteClassTy::InitSprite
               ((SpriteClassTy *)&this_00->field_1C23,DAT_008075a8,0x2d,'\a',(undefined4 *)0x0,0,0);
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-    (**(code **)(this_00->field_1C23 + 4))(DAT_00806784,7,0,s_SID_SLDT_007cd5fc,0xffffffff);
+    (**(code **)(this_00->field_1C23 + 4))(DAT_00806784,7,0,"SID_SLDT",0xffffffff);
     this_00->field_1C3F = 0x22f;
     this_00->field_1C43 = 0x1d3;
     this_00->field_1C2B = 0;
@@ -160,12 +157,12 @@ void __thiscall SIDTy::InitSID(SIDTy *this)
     return;
   }
   g_currentExceptionFrame = local_4c.previous;
-  iVar10 = ReportDebugMessage(s_E____titans_Start_sid_obj_cpp_007cd5c4,0x49,0,iVar2,&DAT_007a4ccc,
-                              s_SIDTy__InitSID_007cd5e8);
+  iVar10 = ReportDebugMessage("E:\\__titans\\Start\\sid_obj.cpp",0x49,0,iVar2,"%s",
+                              "SIDTy::InitSID");
   if (iVar10 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  RaiseInternalException(iVar2,0,s_E____titans_Start_sid_obj_cpp_007cd5c4,0x49);
+  RaiseInternalException(iVar2,0,"E:\\__titans\\Start\\sid_obj.cpp",0x49);
   return;
 }
 

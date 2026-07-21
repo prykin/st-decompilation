@@ -15,7 +15,7 @@ undefined4 __thiscall STAllPlayersC::_AddMDPairs(STAllPlayersC *this,char param_
   STAllPlayersC *pSVar2;
   byte bVar3;
   int iVar4;
-  STFishC *pSVar5;
+  STGameObjC *pSVar5;
   int iVar6;
   undefined4 uVar7;
   uint uVar8;
@@ -36,7 +36,7 @@ undefined4 __thiscall STAllPlayersC::_AddMDPairs(STAllPlayersC *this,char param_
   uint local_50;
   int local_4c;
   dword local_48;
-  STFishC *local_44;
+  STGameObjC *local_44;
   short local_40;
   short local_3e;
   short local_3c;
@@ -61,8 +61,9 @@ undefined4 __thiscall STAllPlayersC::_AddMDPairs(STAllPlayersC *this,char param_
   local_6c[2] = 0x4f;
   local_6c[3] = 0x5e;
   local_5c = this;
-  local_44 = (STFishC *)GetObjPtr(this,param_1,param_2,CASE_1);
-  local_58 = (*local_44->vtable->vfunc_2C)();
+  local_44 = GetObjPtr(this,param_1,param_2,CASE_1);
+  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+  local_58 = (**(code **)&local_44->vtable->field_0x2c)();
   local_10 = 0;
   local_d4.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_d4;
@@ -71,12 +72,12 @@ undefined4 __thiscall STAllPlayersC::_AddMDPairs(STAllPlayersC *this,char param_
   if (iVar4 != 0) {
     g_currentExceptionFrame = local_d4.previous;
     if (iVar4 != -0x5001fff7) {
-      iVar6 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0x2454,0,iVar4,
-                                 &DAT_007a4ccc,s_STAllPlayersC___AddMDPairs_007a80bc);
+      iVar6 = ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0x2454,0,iVar4,
+                                 "%s","STAllPlayersC::_AddMDPairs");
       if (iVar6 != 0) {
         STDebugBreak(); /* noreturn in standalone pseudocode */
       }
-      RaiseInternalException(iVar4,0,s_E____titans_wlad_to_allpl_cpp_007a6004,0x2455);
+      RaiseInternalException(iVar4,0,"E:\\__titans\\wlad\\to_allpl.cpp",0x2455);
     }
     return local_10;
   }
@@ -86,7 +87,7 @@ undefined4 __thiscall STAllPlayersC::_AddMDPairs(STAllPlayersC *this,char param_
     do {
       if (*piVar10 == 0) {
         RaiseInternalException
-                  (-0x5001fff7,g_overwriteContext_007ED77C,s_E____titans_wlad_to_allpl_cpp_007a6004,
+                  (-0x5001fff7,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_allpl.cpp",
                    0x23dd);
       }
       piVar10 = piVar10 + 1;
@@ -96,8 +97,8 @@ undefined4 __thiscall STAllPlayersC::_AddMDPairs(STAllPlayersC *this,char param_
   pSVar5 = local_44;
   pSVar2 = local_5c;
   if ((local_58 == 0x3b) || (local_58 == 0x60)) {
-    STFishC::sub_004162B0(local_44,&local_38,&local_36,&local_34);
-    local_32 = *(undefined2 *)&pSVar5->field_0x32;
+    STFishC::sub_004162B0((STFishC *)local_44,&local_38,&local_36,&local_34);
+    local_32 = pSVar5->field_0032;
     uVar8 = (int)g_pathingGrid.sizeZ * (int)g_pathingGrid.sizeY * (int)g_pathingGrid.sizeX;
     psVar11 = g_pathingGrid.cells;
     psVar12 = g_pathingScratchGrid.cells;
@@ -127,12 +128,13 @@ undefined4 __thiscall STAllPlayersC::_AddMDPairs(STAllPlayersC *this,char param_
           if (0 < (int)local_48) {
             do {
               DArrayGetElement(local_c,local_18,&local_1c);
-              pSVar5 = (STFishC *)GetObjPtr(pSVar2,param_1,local_1c,CASE_1);
+              pSVar5 = GetObjPtr(pSVar2,param_1,local_1c,CASE_1);
               local_44 = pSVar5;
-              iVar6 = (*pSVar5->vtable->vfunc_88)(local_54);
+              /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+              iVar6 = (**(code **)&pSVar5->vtable->field_0x88)(local_54);
               if (0 < iVar6) {
-                STFishC::sub_004162B0(pSVar5,&local_40,&local_3e,&local_3c);
-                local_3a = *(undefined2 *)&pSVar5->field_0x32;
+                STFishC::sub_004162B0((STFishC *)pSVar5,&local_40,&local_3e,&local_3c);
+                local_3a = pSVar5->field_0032;
                 local_30 = (int)g_pathingScratchGrid.cells
                                 [(local_3c + 1) * (int)g_pathingGrid.planeStride +
                                  (int)local_3e * (int)g_pathingGrid.sizeX + (int)local_40];
@@ -193,8 +195,8 @@ undefined4 __thiscall STAllPlayersC::_AddMDPairs(STAllPlayersC *this,char param_
           pSVar5 = local_44;
           local_48 = local_c->count;
           if (local_48 != 0) {
-            STFishC::sub_004162B0(local_44,&local_40,&local_3e,&local_3c);
-            local_3a = *(undefined2 *)&pSVar5->field_0x32;
+            STFishC::sub_004162B0((STFishC *)local_44,&local_40,&local_3e,&local_3c);
+            local_3a = pSVar5->field_0032;
             uVar8 = (int)g_pathingGrid.sizeZ * (int)g_pathingGrid.sizeY * (int)g_pathingGrid.sizeX;
             psVar11 = g_pathingGrid.cells;
             psVar12 = g_pathingScratchGrid.cells;
@@ -219,10 +221,10 @@ undefined4 __thiscall STAllPlayersC::_AddMDPairs(STAllPlayersC *this,char param_
             if (0 < (int)local_48) {
               do {
                 DArrayGetElement(local_c,local_18,&local_1c);
-                pSVar5 = (STFishC *)GetObjPtr(pSVar2,param_1,local_1c,CASE_1);
+                pSVar5 = GetObjPtr(pSVar2,param_1,local_1c,CASE_1);
                 local_44 = pSVar5;
-                STFishC::sub_004162B0(pSVar5,&local_38,&local_36,&local_34);
-                local_32 = *(undefined2 *)&pSVar5->field_0x32;
+                STFishC::sub_004162B0((STFishC *)pSVar5,&local_38,&local_36,&local_34);
+                local_32 = pSVar5->field_0032;
                 local_30 = (int)g_pathingScratchGrid.cells
                                 [(local_34 + 1) * (int)g_pathingGrid.planeStride +
                                  (int)g_pathingGrid.sizeX * (int)local_36 + (int)local_38];

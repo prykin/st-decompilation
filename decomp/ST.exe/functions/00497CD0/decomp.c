@@ -32,7 +32,7 @@ STGroupBoatC::InitWay(STGroupBoatC *this,DArrayTy *param_1,int param_2,int param
         DArrayGetElement(param_1,index,&local_8);
         pSVar3 = STAllPlayersC::GetObjPtr(g_sTAllPlayers_007FA174,pSVar2->field_0024,local_8,CASE_1)
         ;
-        *(undefined4 *)&pSVar3->field_0xfd = 0;
+        pSVar3->field_00FD = 0;
         index = index + 1;
       } while (index < param_1->count);
     }
@@ -41,12 +41,12 @@ STGroupBoatC::InitWay(STGroupBoatC *this,DArrayTy *param_1,int param_2,int param
     return 0;
   }
   g_currentExceptionFrame = local_50.previous;
-  iVar4 = ReportDebugMessage(s_E____titans_wlad_to_grpb_cpp_007abe3c,0x6e,0,errorCode,&DAT_007a4ccc,
-                             s_STGroupBoatC__InitWay_007abe60);
+  iVar4 = ReportDebugMessage("E:\\__titans\\wlad\\to_grpb.cpp",0x6e,0,errorCode,"%s",
+                             "STGroupBoatC::InitWay");
   if (iVar4 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  RaiseInternalException(errorCode,0,s_E____titans_wlad_to_grpb_cpp_007abe3c,0x6f);
+  RaiseInternalException(errorCode,0,"E:\\__titans\\wlad\\to_grpb.cpp",0x6f);
   return 0xffffffff;
 }
 

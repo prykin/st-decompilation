@@ -69,12 +69,12 @@ void __thiscall SettMapMTy::ChangePlayerCiv(SettMapMTy *this,uint param_1,char p
       return;
     }
     g_currentExceptionFrame = local_4c.previous;
-    iVar4 = ReportDebugMessage(s_E____titans_Start_settmobj_cpp_007cd258,0x57d,0,errorCode,
-                               &DAT_007a4ccc,s_SettMapMTy__ChangePlayerCiv_007cd410);
+    iVar4 = ReportDebugMessage("E:\\__titans\\Start\\settmobj.cpp",0x57d,0,errorCode,
+                               "%s","SettMapMTy::ChangePlayerCiv");
     if (iVar4 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    RaiseInternalException(errorCode,0,s_E____titans_Start_settmobj_cpp_007cd258,0x57d);
+    RaiseInternalException(errorCode,0,"E:\\__titans\\Start\\settmobj.cpp",0x57d);
   }
   return;
 }

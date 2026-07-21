@@ -24,7 +24,7 @@ uint * __cdecl CreateStrategList(int param_1,int param_2,uint param_3)
   if (errorCode == 0) {
     if (((param_1 == 0) || (param_2 < 0)) || (7 < param_2)) {
       RaiseInternalException
-                (-0x34,g_overwriteContext_007ED77C,s_E____titans_ai_ai_plr_d_cpp_007d2fa4,0x197);
+                (-0x34,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_plr_d.cpp",0x197);
     }
     pCVar2 = FUN_006f2c00(PTR_s_STRATEG_0079d72c,1,param_2);
     puVar3 = _CreateStgListByRoot((cMf32 *)param_1,0,pCVar2,param_3);
@@ -32,13 +32,13 @@ uint * __cdecl CreateStrategList(int param_1,int param_2,uint param_3)
     return puVar3;
   }
   g_currentExceptionFrame = local_4c.previous;
-  iVar4 = ReportDebugMessage(s_E____titans_ai_ai_plr_d_cpp_007d2fa4,0x19a,0,errorCode,&DAT_007a4ccc,
-                             s_CreateStrategList_007d3054);
+  iVar4 = ReportDebugMessage("E:\\__titans\\ai\\ai_plr_d.cpp",0x19a,0,errorCode,"%s",
+                             "CreateStrategList");
   if (iVar4 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   DArrayDestroy(local_8);
-  RaiseInternalException(errorCode,0,s_E____titans_ai_ai_plr_d_cpp_007d2fa4,0x19c);
+  RaiseInternalException(errorCode,0,"E:\\__titans\\ai\\ai_plr_d.cpp",0x19c);
   return (uint *)0x0;
 }
 

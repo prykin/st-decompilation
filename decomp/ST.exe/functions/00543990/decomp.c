@@ -47,12 +47,12 @@ void __thiscall CursorClassTy::ReInitCursorSpr(CursorClassTy *this,int param_1)
     return;
   }
   g_currentExceptionFrame = local_4c.previous;
-  iVar3 = ReportDebugMessage(s_E____titans_Andrey_to_cursor_cpp_007c7d60,0x8c,0,iVar2,&DAT_007a4ccc,
-                             s_CursorClassTy__ReInitCursorSpr_007c7e00);
+  iVar3 = ReportDebugMessage("E:\\__titans\\Andrey\\to_cursor.cpp",0x8c,0,iVar2,"%s",
+                             "CursorClassTy::ReInitCursorSpr");
   if (iVar3 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  RaiseInternalException(iVar2,0,s_E____titans_Andrey_to_cursor_cpp_007c7d60,0x8d);
+  RaiseInternalException(iVar2,0,"E:\\__titans\\Andrey\\to_cursor.cpp",0x8d);
   return;
 }
 

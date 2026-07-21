@@ -9,10 +9,10 @@ undefined4 * __thiscall OpticClassC::OpticClassC(OpticClassC *this)
 {
   DWORD DVar1;
 
-  STGroupBoatC::sub_006E5FB0((STGroupBoatC *)this);
-  *(OpticClassCVTable **)this = &OpticClassCVTable;
+  sub_006E5FB0(this);
+  this->vtable = &OpticClassCVTable;
   DVar1 = timeGetTime();
-  *(DWORD *)(this + 0x18) = DVar1;
-  return (undefined4 *)this;
+  this->field_0018 = DVar1;
+  return &this->vtable;
 }
 

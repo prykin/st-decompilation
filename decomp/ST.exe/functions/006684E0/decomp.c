@@ -72,12 +72,12 @@ undefined4 * __cdecl FltDataPack(AnonShape_GLOBAL_008489C4_F7BABFAC *param_1,uin
   if (local_8 != (undefined4 *)0x0) {
     FreeAndNull(&local_8);
   }
-  iVar5 = ReportDebugMessage(s_E____titans_ai_ai_flt_d_cpp_007d2cc0,0x75,0,iVar3,&DAT_007a4ccc,
-                             s_FltDataPack_007d2ce4);
+  iVar5 = ReportDebugMessage("E:\\__titans\\ai\\ai_flt_d.cpp",0x75,0,iVar3,"%s",
+                             "FltDataPack");
   if (iVar5 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  RaiseInternalException(iVar3,0,s_E____titans_ai_ai_flt_d_cpp_007d2cc0,0x76);
+  RaiseInternalException(iVar3,0,"E:\\__titans\\ai\\ai_flt_d.cpp",0x76);
   return (undefined4 *)0x0;
 }
 

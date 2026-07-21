@@ -37,10 +37,10 @@ int __thiscall AiFltClassTy::AppendZone(AiFltClassTy *this,short *param_1)
   iVar5 = Library::MSVCRT::__setjmp3(local_74.jumpBuffer,0);
   if (iVar5 != 0) {
     g_currentExceptionFrame = local_74.previous;
-    iVar7 = ReportDebugMessage(s_E____titans_ai_ai_flt_cpp_007d2b80,0x2df,0,iVar5,&DAT_007a4ccc,
-                               s_AiFltClassTy__AppendZone_007d2c00);
+    iVar7 = ReportDebugMessage("E:\\__titans\\ai\\ai_flt.cpp",0x2df,0,iVar5,"%s",
+                               "AiFltClassTy::AppendZone");
     if (iVar7 == 0) {
-      RaiseInternalException(iVar5,0,s_E____titans_ai_ai_flt_cpp_007d2b80,0x2e0);
+      RaiseInternalException(iVar5,0,"E:\\__titans\\ai\\ai_flt.cpp",0x2e0);
       return iVar5;
     }
     STDebugBreak(); /* noreturn in standalone pseudocode */

@@ -1,20 +1,20 @@
 address	function	current_calling_convention	signature_source	evidence	action
 0042ABE0	STAllPlayersC::GetGObjFromZone2	__thiscall	USER_DEFINED	no live incoming ECX use found before clobber/call	review_only; analyzer never reverts an existing signature
 0042B1F0	STAllPlayersC::GetGObjFromBox	__thiscall	USER_DEFINED	no live incoming ECX use found before clobber/call	review_only; analyzer never reverts an existing signature
-0042B620	STAllPlayersC::GetObjPtr	__thiscall	USER_DEFINED	no live incoming ECX use found before clobber/call	review_only; analyzer never reverts an existing signature
+0042B620	STAllPlayersC::GetObjPtr	__thiscall	ANALYSIS	no live incoming ECX use found before clobber/call	review_only; analyzer never reverts an existing signature
 0042D980	STAllPlayersC::GetActiveCenter	__thiscall	USER_DEFINED	no live incoming ECX use found before clobber/call	review_only; analyzer never reverts an existing signature
 0042EFD0	STAllPlayersC::RegisterGroup	__thiscall	USER_DEFINED	no live incoming ECX use found before clobber/call	review_only; analyzer never reverts an existing signature
 0042F140	STAllPlayersC::UnRegisterGroup	__thiscall	USER_DEFINED	no live incoming ECX use found before clobber/call	review_only; analyzer never reverts an existing signature
 00430470	STAllPlayersC::RegisterTorpedo	__thiscall	USER_DEFINED	no live incoming ECX use found before clobber/call	review_only; analyzer never reverts an existing signature
 00430620	STAllPlayersC::IsTorpLive	__thiscall	USER_DEFINED	no live incoming ECX use found before clobber/call	review_only; analyzer never reverts an existing signature
 00430960	STAllPlayersC::UnRegisterTorpedo	__thiscall	USER_DEFINED	no live incoming ECX use found before clobber/call	review_only; analyzer never reverts an existing signature
-004354E0	STAllPlayersC::ReplaceObject	__thiscall	USER_DEFINED	no live incoming ECX use found before clobber/call	review_only; analyzer never reverts an existing signature
+004354E0	STAllPlayersC::ReplaceObject	__thiscall	ANALYSIS	no live incoming ECX use found before clobber/call	review_only; analyzer never reverts an existing signature
 00438E30	STAllPlayersC::SaveTmp	__thiscall	USER_DEFINED	no live incoming ECX use found before clobber/call	review_only; analyzer never reverts an existing signature
 0043E780	STAllPlayersC::GetTOBJList	__thiscall	USER_DEFINED	no live incoming ECX use found before clobber/call	review_only; analyzer never reverts an existing signature
 0043F200	STAllPlayersC::GetTOBJList	__thiscall	USER_DEFINED	no live incoming ECX use found before clobber/call	review_only; analyzer never reverts an existing signature
 00446910	STAllPlayersC::DeletePGPairs	__thiscall	USER_DEFINED	no live incoming ECX use found before clobber/call	review_only; analyzer never reverts an existing signature
 00446AA0	STAllPlayersC::OptimizeGuardBoats	__thiscall	USER_DEFINED	no live incoming ECX use found before clobber/call	review_only; analyzer never reverts an existing signature
-00449B60	STAllPlayersC::DestroyObjectMsg	__thiscall	USER_DEFINED	no live incoming ECX use found before clobber/call	review_only; analyzer never reverts an existing signature
+00449B60	STAllPlayersC::DestroyObjectMsg	__thiscall	ANALYSIS	no live incoming ECX use found before clobber/call	review_only; analyzer never reverts an existing signature
 00449CE0	STAllPlayersC::RegisterArtefact	__thiscall	USER_DEFINED	no live incoming ECX use found before clobber/call	review_only; analyzer never reverts an existing signature
 00449FD0	STAllPlayersC::RegisterMine	__thiscall	USER_DEFINED	no live incoming ECX use found before clobber/call	review_only; analyzer never reverts an existing signature
 0044A2C0	STAllPlayersC::RegisterDeposit	__thiscall	USER_DEFINED	no live incoming ECX use found before clobber/call	review_only; analyzer never reverts an existing signature
@@ -38,7 +38,7 @@ address	function	current_calling_convention	signature_source	evidence	action
 00555720	TraksClassTy::CreateDate	__thiscall	USER_DEFINED	no live incoming ECX use found before clobber/call	review_only; analyzer never reverts an existing signature
 0056CBD0	STAppC::MainWindowProc	__thiscall	USER_DEFINED	no live incoming ECX use found before clobber/call	review_only; analyzer never reverts an existing signature
 0056D580	STAppC::CloseGameDBs	__thiscall	USER_DEFINED	no live incoming ECX use found before clobber/call	review_only; analyzer never reverts an existing signature
-005776D0	GameSystemC::GetMessage	__thiscall	USER_DEFINED	no live incoming ECX use found before clobber/call	review_only; analyzer never reverts an existing signature
+005776D0	GameSystemC::GetMessage	__thiscall	ANALYSIS	no live incoming ECX use found before clobber/call	review_only; analyzer never reverts an existing signature
 00590010	STSharkC::CreateShark	__thiscall	USER_DEFINED	no live incoming ECX use found before clobber/call	review_only; analyzer never reverts an existing signature
 005907D0	MAdvTy::NoneMAdv	__thiscall	USER_DEFINED	no live incoming ECX use found before clobber/call	review_only; analyzer never reverts an existing signature
 005939E0	ComboTy::OutBmpProc	__thiscall	USER_DEFINED	no live incoming ECX use found before clobber/call	review_only; analyzer never reverts an existing signature

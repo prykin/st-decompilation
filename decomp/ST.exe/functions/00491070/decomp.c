@@ -12,8 +12,8 @@ void __thiscall STBoatC::ReleaseLoad(STBoatC *this,undefined4 param_1)
   int iVar2;
   int *piVar3;
 
-  if ((int)this->field_07C2 < 1) {
-    iVar2 = ReportDebugMessage(s_E____titans_wlad_To_boat_cpp_007a9d3c,0x4f96,0,0,&DAT_007a4ccc,
+  if (this->field_07C2 < 1) {
+    iVar2 = ReportDebugMessage("E:\\__titans\\wlad\\To_boat.cpp",0x4f96,0,0,"%s",
                                s_STBoatC__ReleaseLoad_data_lload<_007aba78);
     if (iVar2 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */

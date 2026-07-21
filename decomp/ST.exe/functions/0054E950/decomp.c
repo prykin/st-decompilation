@@ -50,19 +50,19 @@ void __thiscall STPlaySystemC::AddToRep(STPlaySystemC *this,undefined4 *param_1,
           if (local_8 != (int *)0x0) {
             FreeAndNull(&local_8);
           }
-          pSVar2->field_0069 = pSVar2->field_0069 + -1;
+          pSVar2->field_0069 = pSVar2->field_0069 - 1;
         }
       }
       g_currentExceptionFrame = local_50.previous;
       return;
     }
     g_currentExceptionFrame = local_50.previous;
-    iVar5 = ReportDebugMessage(s_E____titans_Andrey_tplaysys_cpp_007c8430,0x482,0,iVar3,
-                               &DAT_007a4ccc,s_STPlaySystemC__AddToRep_007c857c);
+    iVar5 = ReportDebugMessage("E:\\__titans\\Andrey\\tplaysys.cpp",0x482,0,iVar3,
+                               "%s","STPlaySystemC::AddToRep");
     if (iVar5 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    RaiseInternalException(iVar3,0,s_E____titans_Andrey_tplaysys_cpp_007c8430,0x484);
+    RaiseInternalException(iVar3,0,"E:\\__titans\\Andrey\\tplaysys.cpp",0x484);
   }
   return;
 }

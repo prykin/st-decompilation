@@ -53,12 +53,12 @@ void __thiscall HelpStringTy::OutStr(HelpStringTy *this)
     return;
   }
   g_currentExceptionFrame = local_4c.previous;
-  iVar6 = ReportDebugMessage(s_E____titans_Andrey_helpstr_cpp_007c3e4c,0x1b,0,iVar4,&DAT_007a4ccc,
-                             s_HelpStringTy__OutStr_007c3e74);
+  iVar6 = ReportDebugMessage("E:\\__titans\\Andrey\\helpstr.cpp",0x1b,0,iVar4,"%s",
+                             "HelpStringTy::OutStr");
   if (iVar6 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  RaiseInternalException(iVar4,0,s_E____titans_Andrey_helpstr_cpp_007c3e4c,0x1b);
+  RaiseInternalException(iVar4,0,"E:\\__titans\\Andrey\\helpstr.cpp",0x1b);
   return;
 }
 

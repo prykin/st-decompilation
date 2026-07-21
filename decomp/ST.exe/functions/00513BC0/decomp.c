@@ -29,10 +29,10 @@ void __thiscall HelpPanelTy::PrevBut(HelpPanelTy *this)
   this_00 = local_8;
   if (iVar4 != 0) {
     g_currentExceptionFrame = local_50.previous;
-    iVar6 = ReportDebugMessage(s_E____titans_Andrey_helppan_cpp_007c383c,0x2e9,0,iVar4,&DAT_007a4ccc
-                               ,s_HelpPanelTy__PrevBut_007c3ab8);
+    iVar6 = ReportDebugMessage("E:\\__titans\\Andrey\\helppan.cpp",0x2e9,0,iVar4,"%s"
+                               ,"HelpPanelTy::PrevBut");
     if (iVar6 == 0) {
-      RaiseInternalException(iVar4,0,s_E____titans_Andrey_helppan_cpp_007c383c,0x2e9);
+      RaiseInternalException(iVar4,0,"E:\\__titans\\Andrey\\helppan.cpp",0x2e9);
       return;
     }
     STDebugBreak(); /* noreturn in standalone pseudocode */

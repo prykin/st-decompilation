@@ -72,12 +72,11 @@ undefined4 __fastcall FUN_00600750(AnonShape_00600750_A7773F7A *param_1)
               if ((((DAT_0080874d == -1) || (g_visibleClass_00802A88->field_00F8 == 0)) ||
                   (((thunk_FUN_00558c00(g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,
                                         iVar3,iVar4,&local_1c,&local_24), (int)local_10 < 0 ||
-                    ((4 < (int)local_10 || (local_1c < 0)))) ||
-                   ((int)pVVar2->field_0030 <= local_1c)))) ||
-                 ((((iVar3 = local_24 + (&DAT_0079aed0)[local_10], iVar3 < 0 ||
-                    ((int)pVVar2->field_0034 <= iVar3)) || (pVVar2->field_004C == 0)) ||
-                  (*(char *)(iVar3 * pVVar2->field_0030 + local_1c + pVVar2->field_004C) != '\0'))))
-              {
+                    ((4 < (int)local_10 || (local_1c < 0)))) || (pVVar2->field_0030 <= local_1c))))
+                 || ((((iVar3 = local_24 + (&DAT_0079aed0)[local_10], iVar3 < 0 ||
+                       (pVVar2->field_0034 <= iVar3)) || (pVVar2->field_004C == 0)) ||
+                     (*(char *)(iVar3 * pVVar2->field_0030 + local_1c + pVVar2->field_004C) != '\0')
+                     ))) {
                 if (*(char *)(iVar6 + 0x41 + param_1->field_0233) == '\0') {
                   thunk_FUN_004ad460(local_c,0);
                   *(undefined1 *)(iVar6 + 0x41 + param_1->field_0233) = 1;
@@ -244,9 +243,9 @@ LAB_00600928:
                  (thunk_FUN_00558c00(g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,
                                      iVar3,iVar6,&local_20,&local_2c), (int)local_10 < 0)) ||
                 (((4 < (int)local_10 || (local_20 < 0)) ||
-                 (((int)pVVar2->field_0030 <= local_20 ||
+                 ((pVVar2->field_0030 <= local_20 ||
                   ((iVar3 = (&DAT_0079aed0)[local_10] + local_2c, iVar3 < 0 ||
-                   ((int)pVVar2->field_0034 <= iVar3)))))))) ||
+                   (pVVar2->field_0034 <= iVar3)))))))) ||
                ((pVVar2->field_004C == 0 ||
                 (*(char *)(iVar3 * pVVar2->field_0030 + pVVar2->field_004C + local_20) != '\0')))) {
               /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */

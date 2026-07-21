@@ -43,10 +43,10 @@ FSGSTy::AddMessage(FSGSTy *this,uint param_1,byte *param_2,char *param_3,uint pa
   iVar6 = Library::MSVCRT::__setjmp3(local_5c.jumpBuffer,0);
   if (iVar6 != 0) {
     g_currentExceptionFrame = local_5c.previous;
-    iVar11 = ReportDebugMessage(s_E____titans_Start_fsgs_obj_cpp_007cbf70,0x9ec,0,iVar6,
-                                &DAT_007a4ccc,s_FSGSTy__AddMessage_007cc474);
+    iVar11 = ReportDebugMessage("E:\\__titans\\Start\\fsgs_obj.cpp",0x9ec,0,iVar6,
+                                "%s","FSGSTy::AddMessage");
     if (iVar11 == 0) {
-      RaiseInternalException(iVar6,0,s_E____titans_Start_fsgs_obj_cpp_007cbf70,0x9ec);
+      RaiseInternalException(iVar6,0,"E:\\__titans\\Start\\fsgs_obj.cpp",0x9ec);
       return;
     }
     STDebugBreak(); /* noreturn in standalone pseudocode */
@@ -73,7 +73,7 @@ FSGSTy::AddMessage(FSGSTy *this,uint param_1,byte *param_2,char *param_3,uint pa
       g_currentExceptionFrame = local_5c.previous;
       return;
     }
-    wsprintfA((LPSTR)local_c,s__s_1d_s_007c6fe4,&DAT_007c6ff0,param_1 & 0xff,param_3);
+    wsprintfA((LPSTR)local_c,"%s%1d%s",&DAT_007c6ff0,param_1 & 0xff,param_3);
   }
   else {
     uVar12 = 0xffffffff;
@@ -138,12 +138,12 @@ LAB_005a1fc3:
       Library::DKW::TBL::FUN_006b5aa0((uint *)pAVar8,(char *)local_c);
       this_00 = local_14;
       pAVar9 = (AnonShape_006B5570_4D68B99C *)
-               ccFntTy::FormSarr(local_14->field_1A77,(uint *)pAVar8,s________________007c21d8,
+               ccFntTy::FormSarr(local_14->field_1A77,(uint *)pAVar8," ,.;:!?/\\()[]{}",
                                  0x1a6 - local_14->field_1B4C,0,0xffffffff,1);
       if (this_00->field_1A5F == CASE_6) {
         this_00->field_002D = 0x26;
         FUN_006e6080(this_00,2,this_00->field_1B14,(undefined4 *)&this_00->field_0x1d);
-        local_10 = (uint)(ushort)this_00->field_0033;
+        local_10 = (uint)*(ushort *)&this_00->field_0x33;
         /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
         if (*(int *)(this_00->field_1E9E + 8) + -0x19 <= (int)local_10) {
           local_5 = '\x01';
@@ -178,7 +178,7 @@ LAB_005a2188:
       if (this_00->field_1A5F == CASE_6) {
         this_00->field_002D = 0x28;
         *(undefined2 *)&this_00->field_0x31 = 1;
-        this_00->field_0033 = *(undefined2 *)(this_00->field_1E9E + 8);
+        *(undefined2 *)&this_00->field_0x33 = *(undefined2 *)(this_00->field_1E9E + 8);
         FUN_006e6080(this_00,2,this_00->field_1B14,(undefined4 *)&this_00->field_0x1d);
         this_00->field_002D = 0x22;
         *(undefined2 *)&this_00->field_0x31 = 0;
@@ -194,7 +194,7 @@ LAB_005a2188:
             sVar5 = (short)iVar6 + -0x19;
           }
         }
-        this_00->field_0033 = sVar5;
+        *(short *)&this_00->field_0x33 = sVar5;
         FUN_006e6080(this_00,2,this_00->field_1B14,(undefined4 *)&this_00->field_0x1d);
       }
     }

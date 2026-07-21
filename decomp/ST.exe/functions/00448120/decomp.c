@@ -232,9 +232,9 @@ STAllPlayersC::PutOnPlaceGuardBoats
                 DArrayGetElement(param_8,local_8,&param_5);
                 pSVar7 = (STBoatC *)GetObjPtr(local_28,objPtr,param_5,CASE_1);
                 if (pSVar7 == (STBoatC *)0x0) {
-                  iVar5 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0x2d64,0,0,
-                                             &DAT_007a4ccc,
-                                             s_STAllPlayersC__PutOnPlaceGuardBo_007a8574);
+                  iVar5 = ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0x2d64,0,0,
+                                             "%s",
+                                             "STAllPlayersC::PutOnPlaceGuardBoats NULL DIR_135");
                   if (iVar5 == 0) {
                     return;
                   }
@@ -292,9 +292,9 @@ STAllPlayersC::PutOnPlaceGuardBoats
                   DArrayGetElement(param_8,uVar14,&param_5);
                   pSVar7 = (STBoatC *)GetObjPtr(local_28,objPtr,param_5,CASE_1);
                   if (pSVar7 == (STBoatC *)0x0) {
-                    iVar5 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0x2d83,0,0,
-                                               &DAT_007a4ccc,
-                                               s_STAllPlayersC__PutOnPlaceGuardBo_007a8630);
+                    iVar5 = ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0x2d83,0,0,
+                                               "%s",
+                                               "STAllPlayersC::PutOnPlaceGuardBoats NULL DIR_0");
                     if (iVar5 == 0) {
                       return;
                     }
@@ -344,9 +344,9 @@ STAllPlayersC::PutOnPlaceGuardBoats
                   DArrayGetElement(param_8,local_8,&param_5);
                   pSVar7 = (STBoatC *)GetObjPtr(local_28,objPtr,param_5,CASE_1);
                   if (pSVar7 == (STBoatC *)0x0) {
-                    iVar5 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0x2d45,0,0,
-                                               &DAT_007a4ccc,
-                                               s_STAllPlayersC__PutOnPlaceGuardBo_007a8668);
+                    iVar5 = ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0x2d45,0,0,
+                                               "%s",
+                                               "STAllPlayersC::PutOnPlaceGuardBoats NULL DIR_45");
                     if (iVar5 == 0) {
                       return;
                     }
@@ -404,9 +404,9 @@ STAllPlayersC::PutOnPlaceGuardBoats
                   DArrayGetElement(param_8,uVar14,&param_5);
                   pSVar7 = (STBoatC *)GetObjPtr(local_28,objPtr,param_5,CASE_1);
                   if (pSVar7 == (STBoatC *)0x0) {
-                    iVar5 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0x2d2c,0,0,
-                                               &DAT_007a4ccc,
-                                               s_STAllPlayersC__PutOnPlaceGuardBo_007a86a4);
+                    iVar5 = ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0x2d2c,0,0,
+                                               "%s",
+                                               "STAllPlayersC::PutOnPlaceGuardBoats NULL DIR_90");
                     if (iVar5 == 0) {
                       return;
                     }
@@ -461,9 +461,9 @@ STAllPlayersC::PutOnPlaceGuardBoats
                   DArrayGetElement(param_8,uVar14,&param_5);
                   local_24 = (STBoatC *)GetObjPtr(local_28,objPtr,param_5,CASE_1);
                   if (local_24 == (STBoatC *)0x0) {
-                    iVar5 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0x2e0b,0,0,
-                                               &DAT_007a4ccc,
-                                               s_STAllPlayersC__PutOnPlaceGuardBo_007a85b0);
+                    iVar5 = ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0x2e0b,0,0,
+                                               "%s",
+                                               "STAllPlayersC::PutOnPlaceGuardBoats NULL dir==-1");
                     if (iVar5 == 0) {
                       return;
                     }
@@ -505,9 +505,9 @@ LAB_00448aaf:
                         break;
                       default:
 switchD_004489a9_caseD_1:
-                        iVar8 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0x2e63,0
-                                                   ,0,&DAT_007a4ccc,
-                                                   s_STAllPlayersC__PutOnPlaceGuardBo_007a85ec);
+                        iVar8 = ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0x2e63,0
+                                                   ,0,"%s",
+                                                   "STAllPlayersC::PutOnPlaceGuardBoats incorrect direction");
                         if (iVar8 != 0) {
                           STDebugBreak(); /* noreturn in standalone pseudocode */
                         }
@@ -630,9 +630,9 @@ LAB_00448bc0:
                 DArrayGetElement(param_8,uVar14,&param_5);
                 pSVar7 = (STBoatC *)GetObjPtr(local_28,objPtr,param_5,CASE_1);
                 if (pSVar7 == (STBoatC *)0x0) {
-                  iVar5 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0x2d9b,0,0,
-                                             &DAT_007a4ccc,
-                                             s_STAllPlayersC__PutOnPlaceGuardBo_007a8538);
+                  iVar5 = ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0x2d9b,0,0,
+                                             "%s",
+                                             "STAllPlayersC::PutOnPlaceGuardBoats NULL DIR_180");
                   if (iVar5 == 0) {
                     return;
                   }
@@ -681,9 +681,9 @@ LAB_00448bc0:
                 DArrayGetElement(param_8,local_8,&param_5);
                 pSVar7 = (STBoatC *)GetObjPtr(local_28,objPtr,param_5,CASE_1);
                 if (pSVar7 == (STBoatC *)0x0) {
-                  iVar5 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0x2dd2,0,0,
-                                             &DAT_007a4ccc,
-                                             s_STAllPlayersC__PutOnPlaceGuardBo_007a84c0);
+                  iVar5 = ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0x2dd2,0,0,
+                                             "%s",
+                                             "STAllPlayersC::PutOnPlaceGuardBoats NULL DIR_225");
                   if (iVar5 == 0) {
                     return;
                   }
@@ -742,9 +742,9 @@ LAB_00448bc0:
                 DArrayGetElement(param_8,uVar14,&param_5);
                 pSVar7 = (STBoatC *)GetObjPtr(local_28,objPtr,param_5,CASE_1);
                 if (pSVar7 == (STBoatC *)0x0) {
-                  iVar5 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0x2df1,0,0,
-                                             &DAT_007a4ccc,
-                                             s_STAllPlayersC__PutOnPlaceGuardBo_007a8484);
+                  iVar5 = ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0x2df1,0,0,
+                                             "%s",
+                                             "STAllPlayersC::PutOnPlaceGuardBoats NULL DIR_270");
                   if (iVar5 == 0) {
                     return;
                   }
@@ -793,9 +793,9 @@ LAB_00448bc0:
                 DArrayGetElement(param_8,local_8,&param_5);
                 pSVar7 = (STBoatC *)GetObjPtr(local_28,objPtr,param_5,CASE_1);
                 if (pSVar7 == (STBoatC *)0x0) {
-                  iVar5 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0x2db3,0,0,
-                                             &DAT_007a4ccc,
-                                             s_STAllPlayersC__PutOnPlaceGuardBo_007a84fc);
+                  iVar5 = ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0x2db3,0,0,
+                                             "%s",
+                                             "STAllPlayersC::PutOnPlaceGuardBoats NULL DIR_315");
                   if (iVar5 == 0) {
                     return;
                   }

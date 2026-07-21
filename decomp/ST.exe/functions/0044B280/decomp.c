@@ -34,18 +34,18 @@ STAllPlayersC::CalibrateTmp
   if (iVar2 != 0) {
     g_currentExceptionFrame = local_5c.previous;
     if (iVar2 != -0x5001fff7) {
-      iVar4 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0x3095,0,iVar2,
-                                 &DAT_007a4ccc,s_STAllPlayersC__CalibrateTmp_007a892c);
+      iVar4 = ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0x3095,0,iVar2,
+                                 "%s","STAllPlayersC::CalibrateTmp");
       if (iVar4 != 0) {
         STDebugBreak(); /* noreturn in standalone pseudocode */
       }
-      RaiseInternalException(iVar2,0,s_E____titans_wlad_to_allpl_cpp_007a6004,0x3096);
+      RaiseInternalException(iVar2,0,"E:\\__titans\\wlad\\to_allpl.cpp",0x3096);
     }
     return;
   }
   if ((param_4 == (uint *)0x0) || (local_14 = param_4[3], local_14 == 0)) {
     RaiseInternalException
-              (-0x5001fff7,g_overwriteContext_007ED77C,s_E____titans_wlad_to_allpl_cpp_007a6004,
+              (-0x5001fff7,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_allpl.cpp",
                0x3075);
   }
   if (param_2 == 0) {
@@ -57,19 +57,19 @@ STAllPlayersC::CalibrateTmp
     local_18 = *(DArrayTy **)(param_3 * 0x10 + 0x7f4fdd + param_1 * 0xa62);
   }
   else {
-    iVar2 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0x3079,0,0,&DAT_007a4ccc,
-                               s_STAllPlayersC__CalibrateTmp_inva_007a8950);
+    iVar2 = ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0x3079,0,0,"%s",
+                               "STAllPlayersC::CalibrateTmp invalid panel number");
     if (iVar2 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
     RaiseInternalException
-              (-0x5001fff7,g_overwriteContext_007ED77C,s_E____titans_wlad_to_allpl_cpp_007a6004,
+              (-0x5001fff7,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_allpl.cpp",
                0x307a);
   }
   dVar5 = local_18->count;
   if (dVar5 == 0) {
     RaiseInternalException
-              (-0x5001fff7,g_overwriteContext_007ED77C,s_E____titans_wlad_to_allpl_cpp_007a6004,
+              (-0x5001fff7,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_allpl.cpp",
                0x307c);
   }
   if ((param_5 != (int *)0x0) && (*param_5 == 0)) {
@@ -86,7 +86,7 @@ STAllPlayersC::CalibrateTmp
   }
   if (((param_5 == (int *)0x0) && (param_6 == (int *)0x0)) && (param_7 == (int *)0x0)) {
     RaiseInternalException
-              (-0x5001fff7,g_overwriteContext_007ED77C,s_E____titans_wlad_to_allpl_cpp_007a6004,
+              (-0x5001fff7,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_allpl.cpp",
                0x3080);
   }
   Library::DKW::TBL::FUN_006afe40((int *)&local_10,&local_18->flags);

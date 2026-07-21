@@ -36,19 +36,19 @@ int __thiscall AiBossClassTy::InitData(AiBossClassTy *this,undefined4 *param_1)
     *(undefined1 *)puVar5 = *(undefined1 *)puVar4;
     local_8->field_05D8 = 1;
     AiEventClassTy::InitData
-              ((AiEventClassTy *)&local_8->vtable_at_1c,
+              ((AiEventClassTy *)&local_8->field_001C,
                (int *)(local_8->field_0619 + 0x84 + (int)param_1));
     g_currentExceptionFrame = local_4c.previous;
     return 0;
   }
   g_currentExceptionFrame = local_4c.previous;
   thunk_FUN_00647ed0((int)local_8);
-  iVar3 = ReportDebugMessage(s_E____titans_ai_ai_boss_cpp_007d2750,0x29,0,iVar2,&DAT_007a4ccc,
-                             s_AiBossClassTy__InitData_007d2770);
+  iVar3 = ReportDebugMessage("E:\\__titans\\ai\\ai_boss.cpp",0x29,0,iVar2,"%s",
+                             "AiBossClassTy::InitData");
   if (iVar3 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  RaiseInternalException(iVar2,0,s_E____titans_ai_ai_boss_cpp_007d2750,0x2a);
+  RaiseInternalException(iVar2,0,"E:\\__titans\\ai\\ai_boss.cpp",0x2a);
   return iVar2;
 }
 

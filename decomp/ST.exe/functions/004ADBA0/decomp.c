@@ -38,8 +38,8 @@ STT3DSprC::RestoreSpr(STT3DSprC *this,int *param_1,AnonShape_004AD790_77673787 *
   this_00 = local_24;
   if (iVar6 != 0) {
     g_currentExceptionFrame = local_68.previous;
-    iVar6 = ReportDebugMessage(s_E____titans_wlad_Tspr3d_cpp_007ac638,0x43d,0,iVar6,&DAT_007a4ccc,
-                               s_STT3DSprC__RestoreSpr_007ac73c);
+    iVar6 = ReportDebugMessage("E:\\__titans\\wlad\\Tspr3d.cpp",0x43d,0,iVar6,"%s",
+                               "STT3DSprC::RestoreSpr");
     if (iVar6 == 0) {
       return;
     }
@@ -60,8 +60,7 @@ STT3DSprC::RestoreSpr(STT3DSprC *this,int *param_1,AnonShape_004AD790_77673787 *
   local_24->field_0038 = param_1[6];
   thunk_FUN_004ad3c0(local_24,(float)local_24->field_0024,(float)local_24->field_0028,
                      (float)local_24->field_002C);
-  FUN_006e9830((void *)this_00->field_003C,this_00->field_0018,this_00->field_0004,
-               this_00->field_0008);
+  FUN_006e9830(this_00->field_003C,this_00->field_0018,this_00->field_0004,this_00->field_0008);
   if (param_1[1] != 0) {
     thunk_FUN_004ace30(this_00,param_1[1],param_1[2]);
   }
@@ -212,18 +211,18 @@ STT3DSprC::RestoreSpr(STT3DSprC *this,int *param_1,AnonShape_004AD790_77673787 *
       local_1c = local_1c + ~uVar7;
       local_14 = local_14 + local_20;
       local_8 = local_8 + 1;
-    } while (local_8 < (int)this_00->field_0014);
+    } while (local_8 < this_00->field_0014);
   }
-  if ((-1 < (int)this_00->field_000C) && (iVar6 = 0, 0 < (int)this_00->field_0014)) {
+  if ((-1 < this_00->field_000C) && (iVar6 = 0, 0 < this_00->field_0014)) {
     iVar10 = 0;
     do {
       /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
       if ((*(byte *)(this_00->field_0020 + 0xf + iVar10) & 1) != 0) {
-        FUN_006e93c0((void *)this_00->field_003C,this_00->field_0018,iVar6,this_00->field_000C);
+        FUN_006e93c0(this_00->field_003C,this_00->field_0018,iVar6,this_00->field_000C);
       }
       iVar6 = iVar6 + 1;
       iVar10 = iVar10 + 0x24;
-    } while (iVar6 < (int)this_00->field_0014);
+    } while (iVar6 < this_00->field_0014);
   }
   g_currentExceptionFrame = local_68.previous;
   return;

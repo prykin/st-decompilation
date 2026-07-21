@@ -104,12 +104,10 @@ void __thiscall CPanelTy::UpdateStackPanel(CPanelTy *this,uint param_1)
             local_18 = (AnonShape_0043BEB0_1C00EC12 *)CONCAT31(local_18._1_3_,bVar9);
             bVar5 = local_5;
             if (bVar9 < 0xb) {
-              uVar13 = (uint)bVar9;
-              if (-1 < (int)(&this_00->field_0148)[uVar13]) {
+              if (-1 < (int)(&this_00->field_0148)[bVar9]) {
                 Library::DKW::DDX::FUN_006b3640
-                          (DAT_008075a8,(&this_00->field_0148)[uVar13],0xffffffff,
-                           (&this_00->field_003C)[uVar13],
-                           *(uint *)(&this_00->field_0x94 + uVar13 * 4));
+                          (DAT_008075a8,(&this_00->field_0148)[bVar9],0xffffffff,
+                           (&this_00->field_003C)[bVar9],(&this_00->field_0094)[bVar9]);
                 bVar5 = local_5;
               }
             }
@@ -127,12 +125,12 @@ void __thiscall CPanelTy::UpdateStackPanel(CPanelTy *this,uint param_1)
       return;
     }
     g_currentExceptionFrame = local_68.previous;
-    iVar14 = ReportDebugMessage(s_E____titans_Andrey_cpanel3_cpp_007c26a0,0x2a,0,iVar6,&DAT_007a4ccc
-                                ,s_CPanelTy__UpdateStackPanel_007c26e0);
+    iVar14 = ReportDebugMessage("E:\\__titans\\Andrey\\cpanel3.cpp",0x2a,0,iVar6,"%s"
+                                ,"CPanelTy::UpdateStackPanel");
     if (iVar14 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    RaiseInternalException(iVar6,0,s_E____titans_Andrey_cpanel3_cpp_007c26a0,0x2a);
+    RaiseInternalException(iVar6,0,"E:\\__titans\\Andrey\\cpanel3.cpp",0x2a);
   }
   return;
 }

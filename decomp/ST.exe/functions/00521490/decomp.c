@@ -3,23 +3,26 @@
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\infocen.cpp
-   InfocPanelTy::GetMessage */
+   InfocPanelTy::GetMessage
 
-undefined4 __thiscall
-InfocPanelTy::GetMessage(InfocPanelTy *this,AnonShape_00521490_CB9EAEC2 *param_1)
+   [STMessageHandlerApplier] Recovered common GetMessage envelope/signature.
+   Evidence: family_entries=00521490; family_names=InfocPanelTy::GetMessage; ret4=6;
+   direct_offsets={10:2,14:2,18:2,1c:0} */
+
+int __thiscall InfocPanelTy::GetMessage(InfocPanelTy *this,STMessage *message)
 
 {
-  int *piVar1;
-  int iVar2;
-  code *pcVar3;
-  bool bVar4;
-  int iVar5;
+  STMessageId SVar1;
+  int *piVar2;
+  int iVar3;
+  code *pcVar4;
+  bool bVar5;
+  int iVar6;
   SpecPanelTy *this_00;
-  byte bVar6;
-  int iVar7;
-  byte *pbVar8;
-  int iVar9;
-  undefined4 uVar10;
+  byte bVar7;
+  int iVar8;
+  byte *pbVar9;
+  int iVar10;
   uint uVar11;
   InternalExceptionFrame local_58;
   uint local_14;
@@ -30,122 +33,120 @@ InfocPanelTy::GetMessage(InfocPanelTy *this,AnonShape_00521490_CB9EAEC2 *param_1
   local_58.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_58;
   local_10 = (SpecPanelTy *)this;
-  iVar7 = Library::MSVCRT::__setjmp3(local_58.jumpBuffer,0);
+  iVar8 = Library::MSVCRT::__setjmp3(local_58.jumpBuffer,0);
   this_00 = local_10;
-  if (iVar7 != 0) {
+  if (iVar8 != 0) {
     g_currentExceptionFrame = local_58.previous;
-    iVar9 = ReportDebugMessage(s_E____titans_Andrey_infocen_cpp_007c3eb0,0x11e,0,iVar7,&DAT_007a4ccc
-                               ,s_InfocPanelTy__GetMessage_007c3ffc);
-    if (iVar9 != 0) {
+    iVar10 = ReportDebugMessage("E:\\__titans\\Andrey\\infocen.cpp",0x11e,0,iVar8,
+                                "%s","InfocPanelTy::GetMessage");
+    if (iVar10 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    RaiseInternalException(iVar7,0,s_E____titans_Andrey_infocen_cpp_007c3eb0,0x11e);
+    RaiseInternalException(iVar8,0,"E:\\__titans\\Andrey\\infocen.cpp",0x11e);
     return 0xffff;
   }
-  SpecPanelTy::GetMessage(local_10,(int)param_1);
-  uVar11 = param_1->field_0010;
-  if (uVar11 < 0x61) {
-    if (uVar11 == 0x60) {
-      iVar7 = 0;
-      local_14 = (uint)param_1->field_001A;
+  SpecPanelTy::GetMessage(local_10,message);
+  SVar1 = message->id;
+  if (SVar1 < MESS_SHARED_0061) {
+    if (SVar1 == MESS_SHARED_0060) {
+      iVar8 = 0;
+      local_14 = (uint)(message->arg1).words.high;
+      uVar11 = (uint)(message->arg1).words.low;
       local_c = 0;
       if (this_00->field_0172 == 1) {
         local_8 = local_8 & 0xffffff00;
         do {
-          iVar7 = (local_8 & 0xff) * 0x14;
-          if (((((int)(uint)param_1->field_0018 <
-                 *(int *)(&this_00[1].field_0x147 + (local_8 & 0xff) * 0x14)) ||
-               (*(int *)(&this_00[1].field_0x14f + iVar7) +
-                *(int *)(&this_00[1].field_0x147 + (local_8 & 0xff) * 0x14) <=
-                (int)(uint)param_1->field_0018)) ||
-              ((int)local_14 < *(int *)(&this_00[1].field_0x14b + iVar7))) ||
-             (*(int *)(&this_00[1].field_0x153 + iVar7) + *(int *)(&this_00[1].field_0x14b + iVar7)
+          iVar8 = (local_8 & 0xff) * 0x14;
+          if (((((int)uVar11 < *(int *)(&this_00[1].field_0x147 + (local_8 & 0xff) * 0x14)) ||
+               (*(int *)(&this_00[1].field_0x14f + iVar8) +
+                *(int *)(&this_00[1].field_0x147 + (local_8 & 0xff) * 0x14) <= (int)uVar11)) ||
+              ((int)local_14 < *(int *)(&this_00[1].field_0x14b + iVar8))) ||
+             (*(int *)(&this_00[1].field_0x153 + iVar8) + *(int *)(&this_00[1].field_0x14b + iVar8)
               <= (int)local_14)) {
-            bVar4 = false;
+            bVar5 = false;
           }
           else {
-            bVar4 = true;
+            bVar5 = true;
           }
-          iVar7 = 0;
-          if (bVar4) {
-            iVar7 = *(int *)(&this_00[1].field_0x157 + (local_8 & 0xff) * 0x14);
+          iVar8 = 0;
+          if (bVar5) {
+            iVar8 = *(int *)(&this_00[1].field_0x157 + (local_8 & 0xff) * 0x14);
             break;
           }
-          bVar6 = (char)local_8 + 1;
+          bVar7 = (char)local_8 + 1;
           /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-          local_8 = CONCAT31(local_8._1_3_,bVar6);
-        } while (bVar6 < 0xc);
+          local_8 = CONCAT31(local_8._1_3_,bVar7);
+        } while (bVar7 < 0xc);
       }
-      iVar9 = *(int *)&this_00->field_0x178;
-      if (iVar9 != iVar7) {
-        if (iVar9 != 0) {
+      iVar10 = this_00->field_0178;
+      if (iVar10 != iVar8) {
+        if (iVar10 != 0) {
           this_00->field_0028 = 0x4202;
-          *(undefined2 *)&this_00->field_0x2c = 0;
+          this_00->field_002C = 0;
           this_00->field_002E = 2;
-          *(int *)&this_00->field_0x30 = iVar9;
+          this_00->field_0030 = iVar10;
           if (PTR_00802a30 != (CursorClassTy *)0x0) {
             /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-            (*(code *)**(undefined4 **)PTR_00802a30)(&this_00->field_0x18);
+            (**(code **)PTR_00802a30->field_0000)(&this_00->field_0x18);
           }
         }
-        *(int *)&this_00->field_0x178 = iVar7;
-        if (iVar7 != 0) {
+        this_00->field_0178 = iVar8;
+        if (iVar8 != 0) {
           this_00->field_0028 = 0x4201;
-          *(undefined2 *)&this_00->field_0x2c = 0;
+          this_00->field_002C = 0;
           this_00->field_002E = 2;
-          *(int *)&this_00->field_0x30 = iVar7;
+          this_00->field_0030 = iVar8;
           /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-          (*(code *)**(undefined4 **)PTR_00802a30)(&this_00->field_0x18);
+          (**(code **)PTR_00802a30->field_0000)(&this_00->field_0x18);
           g_currentExceptionFrame = local_58.previous;
           return 0;
         }
       }
     }
     else {
-      if (uVar11 == 2) {
+      if (SVar1 == MESS_ID_CREATE) {
         InitInfocPanel((InfocPanelTy *)this_00);
         g_currentExceptionFrame = local_58.previous;
         return 0;
       }
-      if (uVar11 == 3) {
+      if (SVar1 == MESS_SHARED_0003) {
         DoneInfocPanel((InfocPanelTy *)this_00);
         g_currentExceptionFrame = local_58.previous;
         return 0;
       }
     }
   }
-  else if (uVar11 == 0xb208) {
-    this_00[2].field_0xba = *(char *)param_1->field_0014 + -1;
+  else if (SVar1 == MESS_MREPORTTY_B208) {
+    this_00[2].field_0xba = *(char *)(message->arg0).ptr + -1;
     PaintInfoc((InfocPanelTy *)this_00);
   }
-  else if (uVar11 == 0xb209) {
-    piVar1 = (int *)param_1->field_0014;
-    iVar7 = piVar1[3];
-    iVar9 = this_00->field_003C;
-    bVar6 = (&this_00[1].field_0x1e)[*piVar1];
+  else if (SVar1 == MESS_PLAYPANELTY_B209) {
+    piVar2 = (message->arg0).ptr;
+    iVar8 = piVar2[3];
+    iVar10 = this_00->field_003C;
+    bVar7 = (&this_00[1].field_0x1e)[*piVar2];
     uVar11 = (DAT_0080874e != '\x03') - 1 & 0x11;
     /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-    local_c = CONCAT31(local_c._1_3_,bVar6);
-    iVar2 = piVar1[4];
-    iVar5 = DAT_00806734;
+    local_c = CONCAT31(local_c._1_3_,bVar7);
+    iVar3 = piVar2[4];
+    iVar6 = DAT_00806734;
     if (this_00->field_005C != 0) {
-      iVar5 = this_00->field_0044;
+      iVar6 = this_00->field_0044;
     }
-    if (piVar1[1] == 0) {
-      if (bVar6 != 0xff) {
-        uVar11 = bVar6 + 1;
+    if (piVar2[1] == 0) {
+      if (bVar7 != 0xff) {
+        uVar11 = bVar7 + 1;
       }
     }
-    else if ((piVar1[1] == 1) && (bVar6 != 0xff)) {
-      uVar11 = bVar6 + 9;
+    else if ((piVar2[1] == 1) && (bVar7 != 0xff)) {
+      uVar11 = bVar7 + 9;
     }
-    pbVar8 = (byte *)FUN_0070b3a0(*(AnonShape_GLOBAL_0081175C_57F682DD **)&this_00[2].field_0xaa,
+    pbVar9 = (byte *)FUN_0070b3a0(*(AnonShape_GLOBAL_0081175C_57F682DD **)&this_00[2].field_0xaa,
                                   uVar11);
-    DibPut((AnonShape_006B5B10_E0D06CF1 *)this_00->field_0068,iVar7 - iVar9,iVar2 - iVar5,'\x01',
-           pbVar8);
+    DibPut((AnonShape_006B5B10_E0D06CF1 *)this_00->field_0068,iVar8 - iVar10,iVar3 - iVar6,'\x01',
+           pbVar9);
     Library::DKW::DDX::FUN_006b3640
-              (DAT_008075a8,*(uint *)&this_00->field_0x60,0xffffffff,this_00->field_003C,
-               this_00->field_0044);
+              (DAT_008075a8,this_00->field_0060,0xffffffff,this_00->field_003C,this_00->field_0044);
     g_currentExceptionFrame = local_58.previous;
     return 0;
   }

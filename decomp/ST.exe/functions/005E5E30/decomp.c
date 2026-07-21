@@ -34,7 +34,7 @@ void __thiscall MTestTy::NoneMTest(MTestTy *this)
       iVar3 = HoloTy::NextFas(g_holo_00811778);
       if (iVar3 == 0) {
         pMVar2->field_00B3 = 0;
-        if (-1 < (int)g_holo_00811778->field_0003) {
+        if (-1 < g_holo_00811778->field_0003) {
           FUN_006b3af0(DAT_008075a8,g_holo_00811778->field_0003);
         }
       }
@@ -44,12 +44,12 @@ void __thiscall MTestTy::NoneMTest(MTestTy *this)
     return;
   }
   g_currentExceptionFrame = local_4c.previous;
-  iVar4 = ReportDebugMessage(s_E____titans_Start_test_obj_cpp_007cdcbc,0x6c,0,iVar3,&DAT_007a4ccc,
-                             s_MTestTy__NoneMTest_007cdd2c);
+  iVar4 = ReportDebugMessage("E:\\__titans\\Start\\test_obj.cpp",0x6c,0,iVar3,"%s",
+                             "MTestTy::NoneMTest");
   if (iVar4 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  RaiseInternalException(iVar3,0,s_E____titans_Start_test_obj_cpp_007cdcbc,0x6c);
+  RaiseInternalException(iVar3,0,"E:\\__titans\\Start\\test_obj.cpp",0x6c);
   return;
 }
 

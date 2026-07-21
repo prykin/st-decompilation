@@ -122,12 +122,12 @@ switchD_005afd30_caseD_c:
   this_01 = local_28;
   if (iVar7 != 0) {
     g_currentExceptionFrame = local_a4.previous;
-    iVar16 = ReportDebugMessage(s_E____titans_Start_load_obj_cpp_007cc728,0x4f5,0,iVar7,
-                                &DAT_007a4ccc,s_ChooseMapTy__PrepFiles_007cc898);
+    iVar16 = ReportDebugMessage("E:\\__titans\\Start\\load_obj.cpp",0x4f5,0,iVar7,
+                                "%s","ChooseMapTy::PrepFiles");
     if (iVar16 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    RaiseInternalException(iVar7,0,s_E____titans_Start_load_obj_cpp_007cc728,0x4f5);
+    RaiseInternalException(iVar7,0,"E:\\__titans\\Start\\load_obj.cpp",0x4f5);
     return;
   }
   if ((AnonShape_006B5570_4D68B99C *)local_28->field_1C97 != (AnonShape_006B5570_4D68B99C *)0x0) {

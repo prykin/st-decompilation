@@ -99,7 +99,7 @@ void __cdecl FUN_00428e50(short *param_1)
     if (pAVar6 != (AnonShape_006DDD50_309FA381 *)0x0) goto LAB_00428e95;
   }
   pAVar6 = local_30;
-  RaiseInternalException(-2,g_overwriteContext_007ED77C,s_E____titans_tload_cpp_007a5fdc,0x24d);
+  RaiseInternalException(-2,g_overwriteContext_007ED77C,"E:\\__titans\\tload.cpp",0x24d);
 LAB_00428e95:
   dVar1 = ((double)DAT_00807570 * _DAT_00790590) / (double)_DAT_007ac580 + _DAT_007901c0;
   Library::MSVCRT::FUN_0072e150(SUB84(dVar1,0),(uint)((ulonglong)dVar1 >> 0x20));

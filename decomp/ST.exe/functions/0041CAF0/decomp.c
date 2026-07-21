@@ -23,7 +23,7 @@ int __fastcall FUN_0041caf0(AnonShape_0041CAF0_1630B9E0 *param_1)
       if ((DAT_0080874d != -1) && (g_visibleClass_00802A88->field_00F8 != 0)) {
         if (((-1 < iVar4) &&
             (((iVar4 < (int)g_visibleClass_00802A88->field_0020 && (-1 < iVar5)) &&
-             (iVar5 < (int)g_visibleClass_00802A88->field_0024)))) &&
+             (iVar5 < g_visibleClass_00802A88->field_0024)))) &&
            (g_visibleClass_00802A88->field_0038 != 0)) {
           iVar5 = g_visibleClass_00802A88->field_0020 * iVar5;
           iVar1 = g_visibleClass_00802A88->field_0038 + (iVar5 + iVar4) * 2;
@@ -50,7 +50,7 @@ int __fastcall FUN_0041caf0(AnonShape_0041CAF0_1630B9E0 *param_1)
     if ((DAT_0080874d != -1) && (g_visibleClass_00802A88->field_00F8 != 0)) {
       if (((-1 < iVar4) &&
           (((iVar4 < (int)g_visibleClass_00802A88->field_0020 && (-1 < iVar5)) &&
-           (iVar5 < (int)g_visibleClass_00802A88->field_0024)))) &&
+           (iVar5 < g_visibleClass_00802A88->field_0024)))) &&
          (g_visibleClass_00802A88->field_0038 != 0)) {
         iVar2 = g_visibleClass_00802A88->field_0020 * iVar5;
         iVar1 = g_visibleClass_00802A88->field_0038 + (iVar2 + iVar4) * 2;
@@ -70,7 +70,7 @@ int __fastcall FUN_0041caf0(AnonShape_0041CAF0_1630B9E0 *param_1)
       iVar1 = iVar4 + 1;
       if (((-1 < iVar1) && (iVar1 < (int)g_visibleClass_00802A88->field_0020)) &&
          ((-1 < iVar5 &&
-          ((iVar5 < (int)g_visibleClass_00802A88->field_0024 &&
+          ((iVar5 < g_visibleClass_00802A88->field_0024 &&
            (g_visibleClass_00802A88->field_0038 != 0)))))) {
         iVar5 = g_visibleClass_00802A88->field_0020 * iVar5;
         iVar2 = g_visibleClass_00802A88->field_0038 + (iVar5 + iVar1) * 2;
@@ -89,8 +89,8 @@ int __fastcall FUN_0041caf0(AnonShape_0041CAF0_1630B9E0 *param_1)
       }
       iVar5 = param_1->field_005D + 1;
       if ((((-1 < iVar4) && (iVar4 < (int)g_visibleClass_00802A88->field_0020)) && (-1 < iVar5)) &&
-         ((iVar5 < (int)g_visibleClass_00802A88->field_0024 &&
-          (g_visibleClass_00802A88->field_0038 != 0)))) {
+         ((iVar5 < g_visibleClass_00802A88->field_0024 && (g_visibleClass_00802A88->field_0038 != 0)
+          ))) {
         iVar3 = g_visibleClass_00802A88->field_0020 * iVar5;
         iVar2 = g_visibleClass_00802A88->field_0038 + (iVar3 + iVar4) * 2;
         if ((iVar2 != 0) && (*(char *)(iVar2 + 1) != '\0')) {

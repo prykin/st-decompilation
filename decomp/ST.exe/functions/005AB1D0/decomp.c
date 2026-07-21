@@ -26,10 +26,10 @@ ChooseMapTy::OutListProc
   errorCode = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0);
   if (errorCode != 0) {
     g_currentExceptionFrame = local_50.previous;
-    iVar3 = ReportDebugMessage(s_E____titans_Start_load_obj_cpp_007cc728,0x1b,0,errorCode,
-                               &DAT_007a4ccc,s_ChooseMapTy__OutListProc_007cc750);
+    iVar3 = ReportDebugMessage("E:\\__titans\\Start\\load_obj.cpp",0x1b,0,errorCode,
+                               "%s","ChooseMapTy::OutListProc");
     if (iVar3 == 0) {
-      RaiseInternalException(errorCode,0,s_E____titans_Start_load_obj_cpp_007cc728,0x1b);
+      RaiseInternalException(errorCode,0,"E:\\__titans\\Start\\load_obj.cpp",0x1b);
       return;
     }
     STDebugBreak(); /* noreturn in standalone pseudocode */

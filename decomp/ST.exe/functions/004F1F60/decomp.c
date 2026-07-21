@@ -35,7 +35,7 @@ CPanelTy::PaintDamageXY
     iVar3 = 0;
     puVar4 = (uint *)LoadResourceString(param_5,HINSTANCE_00807618);
     ccFntTy::WrTxt(pCVar2->field_01B8,puVar4,iVar3,iVar5,uVar6,iVar7,iVar8);
-    wsprintfA(&pCVar2->field_0x1e1,&DAT_007c1aa4,param_4 & 0xff);
+    wsprintfA(&pCVar2->field_0x1e1,"%3d",param_4 & 0xff);
     ccFntTy::SetSurf(pCVar2->field_01BC,param_1,0,param_2 + 0xc,param_3 + 10,0x14,0xf);
     ccFntTy::WrTxt(pCVar2->field_01BC,(uint *)&pCVar2->field_0x1e1,-3,-1,1,-1,-1);
     ccFntTy::SetSurf(pCVar2->field_01B8,param_1,0,param_2 + 0x22,param_3 + 0xd,10,10);
@@ -50,12 +50,12 @@ CPanelTy::PaintDamageXY
     return;
   }
   g_currentExceptionFrame = local_4c.previous;
-  iVar5 = ReportDebugMessage(s_E____titans_Andrey_cp_sup_cpp_007c1a4c,0xa3,0,iVar3,&DAT_007a4ccc,
-                             s_CPanelTy__PaintDamageXY_007c1a88);
+  iVar5 = ReportDebugMessage("E:\\__titans\\Andrey\\cp_sup.cpp",0xa3,0,iVar3,"%s",
+                             "CPanelTy::PaintDamageXY");
   if (iVar5 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  RaiseInternalException(iVar3,0,s_E____titans_Andrey_cp_sup_cpp_007c1a4c,0xa3);
+  RaiseInternalException(iVar3,0,"E:\\__titans\\Andrey\\cp_sup.cpp",0xa3);
   return;
 }
 

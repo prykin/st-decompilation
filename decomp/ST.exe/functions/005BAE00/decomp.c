@@ -14,21 +14,19 @@ void __thiscall PrividerTy::NonePrivider(PrividerTy *this,undefined4 *param_1)
 {
   byte bVar1;
   uint uVar2;
-  undefined4 uVar3;
-  undefined4 uVar4;
   MMsgTy *this_00;
-  StartSystemTy *pSVar5;
-  code *pcVar6;
-  CursorClassTy *pCVar7;
+  StartSystemTy *pSVar3;
+  code *pcVar4;
+  CursorClassTy *pCVar5;
   PrividerTy *this_01;
-  short *psVar8;
-  DWORD DVar9;
-  int iVar10;
-  int iVar11;
-  uint *puVar12;
-  char *pcVar13;
-  undefined4 *puVar14;
-  UINT UVar15;
+  short *psVar6;
+  DWORD DVar7;
+  int iVar8;
+  int iVar9;
+  uint *puVar10;
+  char *pcVar11;
+  undefined4 *puVar12;
+  UINT UVar13;
   char local_c8 [2];
   undefined1 local_c6;
   InternalExceptionFrame local_a0;
@@ -50,18 +48,18 @@ void __thiscall PrividerTy::NonePrivider(PrividerTy *this,undefined4 *param_1)
 
   local_8 = 1;
   local_20 = this;
-  DVar9 = timeGetTime();
-  this->field_0061 = DVar9;
+  DVar7 = timeGetTime();
+  this->field_0061 = DVar7;
   local_a0.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_a0;
-  iVar10 = Library::MSVCRT::__setjmp3(local_a0.jumpBuffer,0);
+  iVar8 = Library::MSVCRT::__setjmp3(local_a0.jumpBuffer,0);
   this_01 = local_20;
-  if (iVar10 != 0) {
+  if (iVar8 != 0) {
     g_currentExceptionFrame = local_a0.previous;
-    iVar11 = ReportDebugMessage(s_E____titans_Start_prov_obj_cpp_007ccd28,0x1bc,0,iVar10,
-                                &DAT_007a4ccc,s_PrividerTy__NonePrivider_007cce18);
-    if (iVar11 == 0) {
-      RaiseInternalException(iVar10,0,s_E____titans_Start_prov_obj_cpp_007ccd28,0x1bc);
+    iVar9 = ReportDebugMessage("E:\\__titans\\Start\\prov_obj.cpp",0x1bc,0,iVar8,"%s"
+                               ,"PrividerTy::NonePrivider");
+    if (iVar9 == 0) {
+      RaiseInternalException(iVar8,0,"E:\\__titans\\Start\\prov_obj.cpp",0x1bc);
       return;
     }
     STDebugBreak(); /* noreturn in standalone pseudocode */
@@ -74,31 +72,31 @@ void __thiscall PrividerTy::NonePrivider(PrividerTy *this,undefined4 *param_1)
     }
     local_10 = (short *)0x0;
     if (local_20->field_1A6D == 0) {
-      pcVar13 = local_c8;
-      for (iVar10 = 9; iVar10 != 0; iVar10 = iVar10 + -1) {
-        pcVar13[0] = '\0';
-        pcVar13[1] = '\0';
-        pcVar13[2] = '\0';
-        pcVar13[3] = '\0';
-        pcVar13 = pcVar13 + 4;
+      pcVar11 = local_c8;
+      for (iVar8 = 9; iVar8 != 0; iVar8 = iVar8 + -1) {
+        pcVar11[0] = '\0';
+        pcVar11[1] = '\0';
+        pcVar11[2] = '\0';
+        pcVar11[3] = '\0';
+        pcVar11 = pcVar11 + 4;
       }
-      pcVar13[0] = '\0';
-      pcVar13[1] = '\0';
+      pcVar11[0] = '\0';
+      pcVar11[1] = '\0';
       local_c6 = 4;
       FUN_00715360(g_int_00811764,1,'\x1a',local_c8,0x26,1,0xffffffff);
     }
-    iVar10 = this_01->field_1A6D + 1;
-    this_01->field_1A6D = iVar10;
-    if (iVar10 == 0xf) {
+    iVar8 = this_01->field_1A6D + 1;
+    this_01->field_1A6D = iVar8;
+    if (iVar8 == 0xf) {
       this_01->field_1A6D = 0;
     }
-    iVar10 = Library::Ourlib::CONNECT::FUN_00715630
-                       (g_int_00811764,-1,&local_1c,&local_3c,&local_10,(uint *)0x0,-1,0);
-    psVar8 = local_10;
-    pCVar7 = PTR_00802a30;
-    if (iVar10 != -0x4d) {
-      if (iVar10 != 0) {
-        if (iVar10 != 1) {
+    iVar8 = Library::Ourlib::CONNECT::FUN_00715630
+                      (g_int_00811764,-1,&local_1c,&local_3c,&local_10,(uint *)0x0,-1,0);
+    psVar6 = local_10;
+    pCVar5 = PTR_00802a30;
+    if (iVar8 != -0x4d) {
+      if (iVar8 != 0) {
+        if (iVar8 != 1) {
           g_currentExceptionFrame = local_a0.previous;
           return;
         }
@@ -108,8 +106,8 @@ void __thiscall PrividerTy::NonePrivider(PrividerTy *this,undefined4 *param_1)
           if (*local_10 == (short)((uint)DAT_00807dd5 >> 0x10)) {
             local_18 = local_10 + 1;
             if ((char)*local_18 == '\x01') {
-              pcVar13 = (char *)((int)local_10 + 0xb);
-              switch(*pcVar13) {
+              pcVar11 = (char *)((int)local_10 + 0xb);
+              switch(*pcVar11) {
               /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
               case '\x01':
                 local_c = CONCAT31((int3)uVar2,1);
@@ -117,29 +115,29 @@ void __thiscall PrividerTy::NonePrivider(PrividerTy *this,undefined4 *param_1)
                 break;
               case '\x02':
               case '\x03':
-                wsprintfA((LPSTR)&DAT_0080f33a,&DAT_007c6ee4,&DAT_00807680,PTR_s_CUSTOM__0079c0bc);
-                local_2c = *pcVar13;
-                local_2b = *(undefined4 *)((int)psVar8 + 3);
+                wsprintfA((LPSTR)&DAT_0080f33a,"%s%s",&DAT_00807680,PTR_s_CUSTOM__0079c0bc);
+                local_2c = *pcVar11;
+                local_2b = *(undefined4 *)((int)psVar6 + 3);
                 local_27 = 0;
-                iVar10 = FUN_00725910(&DAT_0080f33a,s___DKD_007cce44,0,&LAB_00404e49,&local_2c,0);
+                iVar8 = FUN_00725910(&DAT_0080f33a,"*.DKD",0,&LAB_00404e49,&local_2c,0);
                 /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                local_c = CONCAT31(local_c._1_3_,(iVar10 != -0x70) + '\x01');
-                local_14 = (-(uint)(*pcVar13 != '\x02') & 2) + 0xd;
+                local_c = CONCAT31(local_c._1_3_,(iVar8 != -0x70) + '\x01');
+                local_14 = (-(uint)(*pcVar11 != '\x02') & 2) + 0xd;
                 break;
               case '\x05':
-                wsprintfA((LPSTR)&DAT_0080f33a,s__s_s_s__007cce38,&DAT_00807680,
+                wsprintfA((LPSTR)&DAT_0080f33a,"%s%s%s\\",&DAT_00807680,
                           PTR_s_SAVEGAME__0079c0b8,&DAT_00807ddd);
-                local_38 = *pcVar13;
-                local_37 = *(undefined4 *)((int)psVar8 + 3);
-                local_33 = *(undefined4 *)((int)psVar8 + 7);
-                iVar10 = FUN_00725910(&DAT_0080f33a,s___DKD_007cce44,0,&LAB_00404e49,&local_38,0);
+                local_38 = *pcVar11;
+                local_37 = *(undefined4 *)((int)psVar6 + 3);
+                local_33 = *(undefined4 *)((int)psVar6 + 7);
+                iVar8 = FUN_00725910(&DAT_0080f33a,"*.DKD",0,&LAB_00404e49,&local_38,0);
                 /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                local_c = CONCAT31(local_c._1_3_,iVar10 == -0x70);
+                local_c = CONCAT31(local_c._1_3_,iVar8 == -0x70);
                 local_14 = 0x10;
               }
             }
             else if ((char)*local_18 != '\x03') goto LAB_005bb532;
-            pCVar7 = PTR_00802a30;
+            pCVar5 = PTR_00802a30;
             if ((char)*local_18 == '\x03') {
               /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
               local_c = CONCAT31(local_c._1_3_,2);
@@ -154,21 +152,21 @@ void __thiscall PrividerTy::NonePrivider(PrividerTy *this,undefined4 *param_1)
                 goto joined_r0x005bb4e0;
               }
               /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-              if ((*(char *)((int)psVar8 + 0xd) == '\0') ||
-                 (((char)*local_18 == '\x01' && (*(char *)((int)psVar8 + 0xb) == '\x05')))) {
+              if ((*(char *)((int)psVar6 + 0xd) == '\0') ||
+                 (((char)*local_18 == '\x01' && (*(char *)((int)psVar6 + 0xb) == '\x05')))) {
                 if (PTR_00802a30 != (CursorClassTy *)0x0) {
-                  uVar3 = PTR_00802a30->field_00C9;
-                  uVar4 = PTR_00802a30->field_00C5;
+                  iVar8 = PTR_00802a30->field_00C9;
+                  iVar9 = PTR_00802a30->field_00C5;
                   PTR_00802a30->field_0493 = 1;
-                  pCVar7->field_0494 = 0xffff;
-                  CursorClassTy::SetGCType(pCVar7,CASE_0,uVar4,uVar3);
-                  CursorClassTy::DrawSprite(pCVar7,pCVar7->field_00C5,pCVar7->field_00C9);
-                  pCVar7->field_0xd2 = 0;
-                  *(undefined4 *)&pCVar7->field_0x4df = 0xffffffff;
+                  pCVar5->field_0494 = 0xffff;
+                  CursorClassTy::SetGCType(pCVar5,CASE_0,iVar9,iVar8);
+                  CursorClassTy::DrawSprite(pCVar5,pCVar5->field_00C5,pCVar5->field_00C9);
+                  pCVar5->field_00D2 = 0;
+                  pCVar5->field_04DF = 0xffffffff;
                 }
                 this_01->field_1A71 = 0;
                 thunk_FUN_005dac60();
-                UVar15 = 0x2523;
+                UVar13 = 0x2523;
                 goto LAB_005bb2c6;
               }
               /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
@@ -176,7 +174,7 @@ void __thiscall PrividerTy::NonePrivider(PrividerTy *this,undefined4 *param_1)
             }
             thunk_FUN_005b6350(this_01,0x6121,local_14,0x11);
             DAT_0080877e = 0;
-            if (*(char *)((int)psVar8 + 0xb) == '\x01') {
+            if (*(char *)((int)psVar6 + 0xb) == '\x01') {
               DAT_008087be = 0;
             }
             CloseButtons(this_01,'\x01');
@@ -188,20 +186,20 @@ joined_r0x005bb4e0:
           }
           else {
             if (PTR_00802a30 != (CursorClassTy *)0x0) {
-              uVar3 = PTR_00802a30->field_00C9;
-              uVar4 = PTR_00802a30->field_00C5;
+              iVar8 = PTR_00802a30->field_00C9;
+              iVar9 = PTR_00802a30->field_00C5;
               PTR_00802a30->field_0493 = 1;
-              pCVar7->field_0494 = 0xffff;
-              CursorClassTy::SetGCType(pCVar7,CASE_0,uVar4,uVar3);
-              CursorClassTy::DrawSprite(pCVar7,pCVar7->field_00C5,pCVar7->field_00C9);
-              pCVar7->field_0xd2 = 0;
-              *(undefined4 *)&pCVar7->field_0x4df = 0xffffffff;
+              pCVar5->field_0494 = 0xffff;
+              CursorClassTy::SetGCType(pCVar5,CASE_0,iVar9,iVar8);
+              CursorClassTy::DrawSprite(pCVar5,pCVar5->field_00C5,pCVar5->field_00C9);
+              pCVar5->field_00D2 = 0;
+              pCVar5->field_04DF = 0xffffffff;
             }
             this_01->field_1A71 = 0;
             thunk_FUN_005dac60();
-            UVar15 = 0x2526;
+            UVar13 = 0x2526;
 LAB_005bb2c6:
-            MMsgTy::SetMessage(this_01->field_1A5B->field_02E6,UVar15,'\0',(undefined4 *)0x0,
+            MMsgTy::SetMessage(this_01->field_1A5B->field_02E6,UVar13,'\0',(undefined4 *)0x0,
                                (undefined4 *)0x0,(undefined4 *)0x0,0,0);
           }
         }
@@ -220,26 +218,26 @@ LAB_005bb532:
         return;
       }
     }
-    pSVar5 = this_01->field_1A5B;
-    puVar14 = local_5c;
-    for (iVar10 = 8; iVar10 != 0; iVar10 = iVar10 + -1) {
-      *puVar14 = 0;
-      puVar14 = puVar14 + 1;
+    pSVar3 = this_01->field_1A5B;
+    puVar12 = local_5c;
+    for (iVar8 = 8; iVar8 != 0; iVar8 = iVar8 + -1) {
+      *puVar12 = 0;
+      puVar12 = puVar12 + 1;
     }
     this_01->field_1A71 = 0;
     this_01->field_1A72 = 1;
-    pCVar7 = PTR_00802a30;
+    pCVar5 = PTR_00802a30;
     local_5c[4] = 0x6952;
-    if (pSVar5->field_02E6 != (MMsgTy *)0x0) {
+    if (pSVar3->field_02E6 != (MMsgTy *)0x0) {
       if (PTR_00802a30 != (CursorClassTy *)0x0) {
-        uVar3 = PTR_00802a30->field_00C9;
-        uVar4 = PTR_00802a30->field_00C5;
+        iVar8 = PTR_00802a30->field_00C9;
+        iVar9 = PTR_00802a30->field_00C5;
         PTR_00802a30->field_0493 = 1;
-        pCVar7->field_0494 = 0xffff;
-        CursorClassTy::SetGCType(pCVar7,CASE_0,uVar4,uVar3);
-        CursorClassTy::DrawSprite(pCVar7,pCVar7->field_00C5,pCVar7->field_00C9);
-        pCVar7->field_0xd2 = 0;
-        *(undefined4 *)&pCVar7->field_0x4df = 0xffffffff;
+        pCVar5->field_0494 = 0xffff;
+        CursorClassTy::SetGCType(pCVar5,CASE_0,iVar9,iVar8);
+        CursorClassTy::DrawSprite(pCVar5,pCVar5->field_00C5,pCVar5->field_00C9);
+        pCVar5->field_00D2 = 0;
+        pCVar5->field_04DF = 0xffffffff;
       }
       local_5c[2] = this_01->field_0008;
       local_5c[3] = 2;
@@ -252,11 +250,11 @@ LAB_005bb532:
     break;
   case CASE_3:
     if ((local_20->field_1C96 != (HoloTy *)0x0) &&
-       (iVar10 = HoloTy::NextFas(local_20->field_1C96), iVar10 != 0)) {
+       (iVar8 = HoloTy::NextFas(local_20->field_1C96), iVar8 != 0)) {
       local_8 = 0;
     }
     if ((this_01->field_1C9A != (HoloTy *)0x0) &&
-       (iVar10 = HoloTy::NextFas(this_01->field_1C9A), iVar10 != 0)) {
+       (iVar8 = HoloTy::NextFas(this_01->field_1C9A), iVar8 != 0)) {
       local_8 = 0;
     }
     if ((PTR_0081176c->field_02E6 != (MMsgTy *)0x0) &&
@@ -289,13 +287,13 @@ LAB_005bb532:
                   ((uint *)this_01->field_1BE1,this_01->field_1B9D,0xfffffffe,this_01->field_1BB5,
                    this_01->field_1BB9);
       }
-      puVar12 = &this_01->field_1C2A;
-      iVar10 = 0x16;
+      puVar10 = &this_01->field_1C2A;
+      iVar8 = 0x16;
       do {
-        Library::DKW::DDX::FUN_006b3430(DAT_008075a8,*puVar12);
-        puVar12 = puVar12 + 1;
-        iVar10 = iVar10 + -1;
-      } while (iVar10 != 0);
+        Library::DKW::DDX::FUN_006b3430(DAT_008075a8,*puVar10);
+        puVar10 = puVar10 + 1;
+        iVar8 = iVar8 + -1;
+      } while (iVar8 != 0);
       if (this_01->field_1A5F == '\0') {
         Library::DKW::DDX::FUN_006b3430(DAT_008075a8,this_01->field_1C8A);
       }
@@ -308,8 +306,8 @@ LAB_005bb532:
     break;
   case CASE_4:
     if (local_20->field_1C96 != (HoloTy *)0x0) {
-      iVar10 = HoloTy::NextFas(local_20->field_1C96);
-      if (iVar10 == 0) {
+      iVar8 = HoloTy::NextFas(local_20->field_1C96);
+      if (iVar8 == 0) {
         uVar2 = this_01->field_1C96->field_0003;
         if (-1 < (int)uVar2) {
           FUN_006b3af0(DAT_008075a8,uVar2);
@@ -320,8 +318,8 @@ LAB_005bb532:
       }
     }
     if (this_01->field_1C9A != (HoloTy *)0x0) {
-      iVar10 = HoloTy::NextFas(this_01->field_1C9A);
-      if (iVar10 == 0) {
+      iVar8 = HoloTy::NextFas(this_01->field_1C9A);
+      if (iVar8 == 0) {
         uVar2 = this_01->field_1C9A->field_0003;
         if (-1 < (int)uVar2) {
           FUN_006b3af0(DAT_008075a8,uVar2);
@@ -349,8 +347,8 @@ LAB_005bb532:
     break;
   case CASE_5:
     if (local_20->field_1C9A != (HoloTy *)0x0) {
-      iVar10 = HoloTy::NextFas(local_20->field_1C9A);
-      if (iVar10 == 0) {
+      iVar8 = HoloTy::NextFas(local_20->field_1C9A);
+      if (iVar8 == 0) {
         if ((this_01->field_1A60 == '\x01') &&
            (uVar2 = this_01->field_1C9A->field_0003, -1 < (int)uVar2)) {
           FUN_006b3af0(DAT_008075a8,uVar2);

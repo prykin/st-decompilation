@@ -31,8 +31,8 @@ int __thiscall STBoatC::BackLoadObj(STBoatC *this,int *param_1)
       iVar2 = (*this->vtable->vfunc_D8)();
       return -(uint)(iVar2 != 0);
     }
-    iVar2 = ReportDebugMessage(s_E____titans_wlad_To_boat_cpp_007a9d3c,0x2f2d,0,0,&DAT_007a4ccc,
-                               s_STBoatC__BackLoadObj_LOADOBJ_WAI_007aae70);
+    iVar2 = ReportDebugMessage("E:\\__titans\\wlad\\To_boat.cpp",0x2f2d,0,0,"%s",
+                               "STBoatC::BackLoadObj LOADOBJ_WAITOBJ");
     if (iVar2 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }

@@ -41,7 +41,7 @@ void __cdecl FUN_005412b0(int param_1,undefined *param_2,BYTE param_3)
   /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
   local_cc._23_1_ = param_3;
   uVar3 = 0xffffffff;
-  pcVar5 = s_Small_Fonts_007c1bb4;
+  pcVar5 = "Small Fonts";
   do {
     pcVar7 = pcVar5;
     if (uVar3 == 0) break;

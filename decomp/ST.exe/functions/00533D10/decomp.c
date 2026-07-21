@@ -4,16 +4,20 @@
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\optpanel.cpp
-   OptPanelTy::GetMessage */
+   OptPanelTy::GetMessage
 
-undefined4 __thiscall OptPanelTy::GetMessage(OptPanelTy *this,int param_1)
+   [STMessageHandlerApplier] Recovered common GetMessage envelope/signature.
+   Evidence: family_entries=00533D10; family_names=OptPanelTy::GetMessage; ret4=78;
+   direct_offsets={10:6,14:39,18:17,1c:6} */
+
+int __thiscall OptPanelTy::GetMessage(OptPanelTy *this,STMessage *message)
 
 {
   char cVar1;
   OptPanelTy_field_01A4State OVar2;
   ushort uVar3;
-  DArrayTy *pDVar4;
-  undefined2 uVar5;
+  STMessageId SVar4;
+  DArrayTy *pDVar5;
   InternalExceptionFrame *pIVar6;
   undefined1 uVar7;
   int iVar8;
@@ -71,7 +75,7 @@ undefined4 __thiscall OptPanelTy::GetMessage(OptPanelTy *this,int param_1)
   uint local_24;
   ushort *local_20;
   uint *local_1c;
-  uint local_18;
+  dword local_18;
   undefined4 *local_14;
   OptPanelTy *local_10;
   cMf32 *local_c;
@@ -84,60 +88,55 @@ undefined4 __thiscall OptPanelTy::GetMessage(OptPanelTy *this,int param_1)
   this_00 = local_10;
   if (iVar8 != 0) {
     g_currentExceptionFrame = local_8c.previous;
-    iVar30 = ReportDebugMessage(s_E____titans_Andrey_optpanel_cpp_007c70a0,0x7f4,0,iVar8,
-                                &DAT_007a4ccc,s_OptPanelTy__GetMessage_007c7334);
+    iVar30 = ReportDebugMessage("E:\\__titans\\Andrey\\optpanel.cpp",0x7f4,0,iVar8,
+                                "%s","OptPanelTy::GetMessage");
     if (iVar30 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    RaiseInternalException(iVar8,0,s_E____titans_Andrey_optpanel_cpp_007c70a0,0x7f4);
+    RaiseInternalException(iVar8,0,"E:\\__titans\\Andrey\\optpanel.cpp",0x7f4);
     return 0xffff;
   }
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  if (*(int *)(param_1 + 0x10) == 2) {
+  if (message->id == MESS_ID_CREATE) {
     PreInitOptPanel(local_10);
   }
-  PanelTy::GetMessage((PanelTy *)this_00,param_1);
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  switch(*(undefined4 *)(param_1 + 0x10)) {
-  case 0xc001:
-  case 0xc003:
-  case 0xc09f:
-  case 0xc0a0:
-  case 0xc0a1:
-  case 0xc0a2:
-  case 0xc0a3:
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  case 0xc0a4:
-  case 0xc0a5:
-  case 0xc0a6:
-  case 0xc0a7:
-  case 0xc0a8:
-  case 0xc0a9:
-  case 0xc0aa:
+  PanelTy::GetMessage((PanelTy *)this_00,message);
+  switch(message->id) {
+  case MESS_OPTPANELTY_C001:
+  case MESS_OPTPANELTY_C003:
+  case MESS_SHARED_C09F:
+  case MESS_BEHPANELTY_C0A0:
+  case MESS_FSGSTY_C0A1:
+  case MESS_SHARED_C0A2:
+  case MESS_SHARED_C0A3:
+  case MESS_BLDLABPANELTY_C0A4:
+  case MESS_FRMPANELTY_C0A5:
+  case MESS_BLDLABPANELTY_C0A4|MESS_ID_CREATE:
+  case MESS_BLDLABPANELTY_C0A4|MESS_SHARED_0003:
+  case MESS_BEHPANELTY_C0A0|MESS_SHARED_0008:
+  case MESS_BEHPANELTY_C0A0|MESS_CURSORCLASSTY_0009:
+  case MESS_BEHPANELTY_C0A0|MESS_SYSTEMCLASSTY_000A:
   case 0xc0ab:
   case 0xc0ac:
-  case 0xc0ad:
-  case 0xc0ae:
-    if ((*(int *)(param_1 + 0x1c) != 0) &&
-       /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-       ((uVar10 = *(uint *)(*(int *)(param_1 + 0x1c) + 4), uVar10 == 2 ||
-        ((3 < uVar10 && (uVar10 < 6)))))) {
+  case MESS_BEHPANELTY_C0A0|MESS_SHARED_0008|MESS_SHARED_0005:
+  case MESS_OPTPANELTY_C0AE:
+    if (((message->arg2).u32 != 0) &&
+       ((uVar10 = *(uint *)((message->arg2).u32 + 4), uVar10 == 2 || ((3 < uVar10 && (uVar10 < 6))))
+       )) {
       thunk_FUN_005252c0(0xae);
     }
   }
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  uVar10 = *(uint *)(param_1 + 0x10);
-  if (uVar10 < 0xc007) {
-    if (uVar10 == 0xc006) {
+  SVar4 = message->id;
+  if (SVar4 < 0xc007) {
+    if (SVar4 == MESS_OPTPANELTY_C006) {
       pcVar35 = thunk_FUN_00529fe0;
-      pCVar12 = thunk_FUN_00571240(s_BUT_MINUS_007c718c,0);
+      pCVar12 = thunk_FUN_00571240("BUT_MINUS",0);
       bVar29 = 1;
     }
     else {
-      if (uVar10 < 0x8165) {
-        if (uVar10 != 0x8164) {
-          if (0x8160 < uVar10) {
-            if (uVar10 == 0x8161) {
+      if (SVar4 < MESS_OPTPANELTY_8165) {
+        if (SVar4 != MESS_OPTPANELTY_8164) {
+          if (MESS_SHARED_8160 < SVar4) {
+            if (SVar4 == MESS_SIDTY_8161) {
               iVar8 = this_00->field_01E5;
               uVar10 = *(uint *)(iVar8 + 0x14);
               if (uVar10 == 0) {
@@ -157,38 +156,32 @@ undefined4 __thiscall OptPanelTy::GetMessage(OptPanelTy *this,int param_1)
               }
               ccFntTy::SetSurf(this_00->field_017C,this_00->field_01E5,0,0,0,0,0);
               if (this_00->field_01A4 == CASE_E) {
-                pDVar4 = this_00->field_02FD;
-                /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-                if ((uint)*(ushort *)(param_1 + 0x14) < pDVar4->count) {
-                  /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(array, index) (runtime elementSize cannot be a static C array) */
-                  puVar28 = (uint *)(pDVar4->elementSize * (uint)*(ushort *)(param_1 + 0x14) +
-                                    (int)pDVar4->data);
+                pDVar5 = this_00->field_02FD;
+                uVar10 = (uint)(message->arg0).words.low;
+                if (uVar10 < pDVar5->count) {
+                  /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(pDVar5, uVar10) (runtime stride) */
+                  puVar28 = (uint *)(pDVar5->elementSize * uVar10 + (int)pDVar5->data);
                 }
                 else {
                   puVar28 = (uint *)0x0;
                 }
-                /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-                uVar10 = (uint)(*(short *)(param_1 + 0x16) == 0);
-              }
-              /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-              else if ((int)(uint)*(ushort *)(param_1 + 0x14) < (int)this_00->field_01E9->field_0008
-                      ) {
-                /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-                puVar28 = *(uint **)(this_00->field_01E9->field_0014 +
-                                    (uint)*(ushort *)(param_1 + 0x14) * 4);
-                /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-                uVar10 = (uint)(*(short *)(param_1 + 0x16) == 0);
+                uVar10 = (uint)((message->arg0).words.high == 0);
               }
               else {
-                puVar28 = (uint *)0x0;
-                /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-                uVar10 = (uint)(*(short *)(param_1 + 0x16) == 0);
+                uVar10 = (uint)(message->arg0).words.low;
+                if ((int)uVar10 < (int)this_00->field_01E9->field_0008) {
+                  puVar28 = *(uint **)(this_00->field_01E9->field_0014 + uVar10 * 4);
+                  uVar10 = (uint)((message->arg0).words.high == 0);
+                }
+                else {
+                  puVar28 = (uint *)0x0;
+                  uVar10 = (uint)((message->arg0).words.high == 0);
+                }
               }
               ccFntTy::WrStr(this_00->field_017C,puVar28,2,-1,uVar10);
-              /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
               Library::DKW::WGR::FUN_006b55f0
                         ((AnonShape_006B5B10_E0D06CF1 *)this_00->field_0068,0,
-                         *(ushort *)(param_1 + 0x18) + 0x26,*(ushort *)(param_1 + 0x1a) + 0x31,
+                         (message->arg1).words.low + 0x26,(message->arg1).words.high + 0x31,
                          (byte *)this_00->field_01E5,0,0,0,200,
                          *(int *)((byte *)this_00->field_01E5 + 8));
               Library::DKW::DDX::FUN_006b3640
@@ -197,18 +190,15 @@ undefined4 __thiscall OptPanelTy::GetMessage(OptPanelTy *this,int param_1)
               g_currentExceptionFrame = local_8c.previous;
               return 0;
             }
-            if (uVar10 != 0x8162) {
-              if (uVar10 != 0x8163) {
+            if (SVar4 != MESS_OPTPANELTY_8162) {
+              if (SVar4 != MESS_SIDTY_8163) {
                 g_currentExceptionFrame = local_8c.previous;
                 return 0;
               }
               OVar2 = this_00->field_01A4;
               if (OVar2 == CASE_3) {
-                /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-                if (*(int *)(param_1 + 0x14) < (int)this_00->field_01E9->field_0008) {
-                  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-                  pcVar21 = *(char **)(this_00->field_01E9->field_0014 +
-                                      *(int *)(param_1 + 0x14) * 4);
+                if ((message->arg0).i32 < (int)this_00->field_01E9->field_0008) {
+                  pcVar21 = *(char **)(this_00->field_01E9->field_0014 + (message->arg0).i32 * 4);
                 }
                 else {
                   pcVar21 = (char *)0x0;
@@ -307,18 +297,17 @@ undefined4 __thiscall OptPanelTy::GetMessage(OptPanelTy *this,int param_1)
             }
             goto switchD_00535190_caseD_3;
           }
-          if (uVar10 == 0x8160) {
-            *(undefined4 *)(param_1 + 0x18) = *(undefined4 *)(this_00->field_01E5 + 8);
+          if (SVar4 == MESS_SHARED_8160) {
+            message->arg1 = *(STMessageArg *)(this_00->field_01E5 + 8);
             g_currentExceptionFrame = local_8c.previous;
             return 0;
           }
-          if (3 < uVar10) {
-            if (uVar10 != 0x6332) {
+          if (MESS_SHARED_0003 < SVar4) {
+            if (SVar4 != MESS_SHARED_6332) {
               g_currentExceptionFrame = local_8c.previous;
               return 0;
             }
-            /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-            local_18 = *(uint *)(param_1 + 0x1c);
+            local_18 = (message->arg2).u32;
             pcVar31 = this_00->field_017C;
             if (pcVar31->field_00A0 != 0) {
               FUN_00710790((uint *)pcVar31);
@@ -326,8 +315,7 @@ undefined4 __thiscall OptPanelTy::GetMessage(OptPanelTy *this,int param_1)
             local_8 = *(uint *)&pcVar31->field_0x8a;
             FUN_006b4170((AnonShape_006B5B10_E0D06CF1 *)this_00->field_0068,0,0x26,0x1a,0xca,0x6f,
                          (DAT_0080874e != '\x03') - 1U & 0x73);
-            /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-            uVar16 = (uint)*(ushort *)(param_1 + 0x16);
+            uVar16 = (uint)(message->arg0).words.high;
             uVar10 = uVar16;
             /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
             if ((int)uVar16 < (int)(*(int *)(local_18 + 0x1e0) + uVar16)) {
@@ -343,8 +331,7 @@ undefined4 __thiscall OptPanelTy::GetMessage(OptPanelTy *this,int param_1)
                                    (uVar10 - uVar16) * local_8 + 0x1b,0xca,local_8);
                   ccFntTy::WrStr(this_00->field_017C,local_1c,0,-1,0);
                 }
-                /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-                uVar16 = (uint)*(ushort *)(param_1 + 0x16);
+                uVar16 = (uint)(message->arg0).words.high;
                 uVar10 = uVar10 + 1;
               /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
               } while ((int)uVar10 < (int)(*(int *)(local_18 + 0x1e0) + uVar16));
@@ -355,13 +342,13 @@ undefined4 __thiscall OptPanelTy::GetMessage(OptPanelTy *this,int param_1)
             g_currentExceptionFrame = local_8c.previous;
             return 0;
           }
-          if (uVar10 == 3) {
+          if (SVar4 == MESS_SHARED_0003) {
             DoneOptPanel(this_00);
             g_currentExceptionFrame = local_8c.previous;
             return 0;
           }
-          if (uVar10 != 0) {
-            if (uVar10 != 2) {
+          if (SVar4 != MESS_ID_NONE) {
+            if (SVar4 != MESS_ID_CREATE) {
               g_currentExceptionFrame = local_8c.previous;
               return 0;
             }
@@ -375,7 +362,7 @@ undefined4 __thiscall OptPanelTy::GetMessage(OptPanelTy *this,int param_1)
               (DVar9 = WaitForSingleObject(this_00->field_01DD,0), DVar9 == 0)))) {
             FindNextChangeNotification(this_00->field_01DD);
             if (this_00->field_01A4 != CASE_7) {
-              PrepFiles(this_00,*(uint *)&this_00->field_0x1e1);
+              PrepFiles(this_00,this_00->field_01E1);
             }
             this_00->field_0028 = 5;
             piVar20 = &this_00->field_01B5;
@@ -390,10 +377,10 @@ undefined4 __thiscall OptPanelTy::GetMessage(OptPanelTy *this,int param_1)
           }
           if (this_00->field_0172 == CASE_3) {
             iVar8 = this_00->field_0050;
-            if ((int)this_00->field_0044 < iVar8) {
+            if (this_00->field_0044 < iVar8) {
               this_00->field_0044 = this_00->field_0044 + 0x1e;
             }
-            if (iVar8 <= (int)this_00->field_0044) {
+            if (iVar8 <= this_00->field_0044) {
               this_00->field_0044 = iVar8;
               this_00->field_0172 = CASE_1;
               ShiftControls(this_00,1);
@@ -405,10 +392,10 @@ undefined4 __thiscall OptPanelTy::GetMessage(OptPanelTy *this,int param_1)
           else {
             if (this_00->field_0172 != CASE_4) goto LAB_00534016;
             iVar8 = this_00->field_0050 - this_00->field_0048;
-            if (iVar8 < (int)this_00->field_0044) {
+            if (iVar8 < this_00->field_0044) {
               this_00->field_0044 = this_00->field_0044 + -0x1e;
             }
-            if ((int)this_00->field_0044 <= iVar8) {
+            if (this_00->field_0044 <= iVar8) {
               DAT_0080878c = 0;
               local_38 = 0;
               local_34 = 0;
@@ -424,7 +411,7 @@ undefined4 __thiscall OptPanelTy::GetMessage(OptPanelTy *this,int param_1)
                 this_00->field_01A0 = 0;
               }
               if (this_00->field_019C != 0) {
-                if ((this_00->field_01A4 == CASE_5) && (this_00->field_01AB == '\x02')) {
+                if ((this_00->field_01A4 == CASE_5) && (this_00->field_01AB == 2)) {
                   _DAT_0080f32e = 1;
                   if (DAT_00808783 == '\x01') {
                     /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
@@ -440,13 +427,12 @@ undefined4 __thiscall OptPanelTy::GetMessage(OptPanelTy *this,int param_1)
                   *puVar11 = 0;
                   puVar11 = puVar11 + 1;
                 }
-                *(undefined4 *)&this_00->field_0x24 = 1;
+                this_00->field_0024 = 1;
                 this_00->field_0028 = this_00->field_019C;
                 if (this_00->field_019C == 0x610a) {
                   *(undefined4 *)&this_00->field_0x2c = 6;
                 }
-                AppClassTy::PostNextMessage
-                          (*(AppClassTy **)&this_00->field_0x10,(undefined4 *)&this_00->field_0x18);
+                AppClassTy::PostNextMessage(this_00->field_0010,(undefined4 *)&this_00->field_0x18);
                 this_00->field_019C = 0;
               }
             }
@@ -470,12 +456,12 @@ LAB_00534016:
           g_currentExceptionFrame = local_8c.previous;
           return 0;
         }
-        pcVar21 = s_BUT_SLUP_007c3e40;
+        pcVar21 = "BUT_SLUP";
       }
       else {
-        if (0xc002 < uVar10) {
-          if (uVar10 == 0xc003) {
-            if ((this_00->field_01A4 == CASE_5) && (this_00->field_01AB == '\a')) {
+        if (MESS_OPTPANELTY_C002 < SVar4) {
+          if (SVar4 == MESS_OPTPANELTY_C003) {
+            if ((this_00->field_01A4 == CASE_5) && (this_00->field_01AB == 7)) {
               DAT_00808788 = 0;
             }
             if (this_00->field_01A9 == 0) {
@@ -489,68 +475,68 @@ LAB_00534016:
             g_currentExceptionFrame = local_8c.previous;
             return 0;
           }
-          if (uVar10 != 0xc004) {
-            if (uVar10 != 0xc005) {
+          if (SVar4 != MESS_OPTPANELTY_C004) {
+            if (SVar4 != MESS_SHARED_C005) {
               g_currentExceptionFrame = local_8c.previous;
               return 0;
             }
             pcVar35 = thunk_FUN_00529fe0;
-            pCVar12 = thunk_FUN_00571240(s_BUT_PLUS_007c7360,0);
+            pCVar12 = thunk_FUN_00571240("BUT_PLUS",0);
             bVar29 = 1;
             goto LAB_00534654;
           }
           UVar34 = 0x274f;
           goto cf_common_exit_00536DB5;
         }
-        if (uVar10 == 0xc002) {
+        if (SVar4 == MESS_OPTPANELTY_C002) {
           UVar34 = 0x274e;
           goto cf_common_exit_00536DB5;
         }
-        if (0xa106 < uVar10) {
-          if (uVar10 != 0xc001) {
+        if (MESS_OPTPANELTY_A106 < SVar4) {
+          if (SVar4 != MESS_OPTPANELTY_C001) {
             g_currentExceptionFrame = local_8c.previous;
             return 0;
           }
-          if ((this_00->field_01A4 == CASE_5) && (this_00->field_01AB == '\a')) {
+          if ((this_00->field_01A4 == CASE_5) && (this_00->field_01AB == 7)) {
             DAT_00808788 = 0;
           }
           this_00->field_01A0 = 1;
-          *(undefined4 *)(param_1 + 0x10) = 0xa101;
+          message->id = MESS_CURSORCLASSTY_A101;
           /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-          (*(code *)**(undefined4 **)PTR_00802a30)(param_1);
+          (**(code **)PTR_00802a30->field_0000)(message);
           g_currentExceptionFrame = local_8c.previous;
           return 0;
         }
-        if (0xa104 < uVar10) {
+        if (0xa104 < SVar4) {
           if (this_00->field_01A4 != CASE_5) {
             g_currentExceptionFrame = local_8c.previous;
             return 0;
           }
-          *(undefined4 *)(param_1 + 0x1c) = 0;
-          *(uint *)(param_1 + 0x10) = (uVar10 != 0xa105) + 0xc09f;
+          (message->arg2).u32 = 0;
+          message->id = (SVar4 != MESS_OPTPANELTY_A105) + MESS_SHARED_C09F;
           /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-          (**(code **)this_00->field_0000)(param_1);
+          (**(code **)this_00->field_0000)(message);
           g_currentExceptionFrame = local_8c.previous;
           return 0;
         }
-        if (uVar10 != 0x8165) {
+        if (SVar4 != MESS_OPTPANELTY_8165) {
           g_currentExceptionFrame = local_8c.previous;
           return 0;
         }
-        pcVar21 = s_BUT_SLDN_007c3e34;
+        pcVar21 = "BUT_SLDN";
       }
       pcVar35 = thunk_FUN_00529fe0;
       pCVar12 = thunk_FUN_00571240(pcVar21,0);
       bVar29 = 6;
     }
 LAB_00534654:
-    UPanelTy::PaintBut((UPanelTy *)this_00,(AnonShape_0053D7A0_044B6141 *)param_1,bVar29,pCVar12,
+    UPanelTy::PaintBut((UPanelTy *)this_00,(AnonShape_0053D7A0_044B6141 *)message,bVar29,pCVar12,
                        pcVar35);
     g_currentExceptionFrame = local_8c.previous;
     return 0;
   }
-  switch(uVar10) {
-  case 0xc09f:
+  switch(SVar4) {
+  case MESS_SHARED_C09F:
     OVar2 = this_00->field_01A4;
     switch(OVar2) {
     case CASE_1:
@@ -734,7 +720,7 @@ LAB_00534654:
         g_currentExceptionFrame = local_8c.previous;
         return 0;
       case 3:
-        wsprintfA((LPSTR)&DAT_0080ee1a,&DAT_007c6ee4,&DAT_00807680,&DAT_0080ef1e);
+        wsprintfA((LPSTR)&DAT_0080ee1a,"%s%s",&DAT_00807680,&DAT_0080ef1e);
         SwitchOptPanel(this_00,-1);
         uVar10 = 0xffffffff;
         this_00->field_019C = 0x6100;
@@ -1222,8 +1208,7 @@ LAB_00534654:
       return 0;
     case CASE_7:
       thunk_FUN_005713b0(0x807620);
-      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-      iVar8 = **(int **)(param_1 + 0x14);
+      iVar8 = *(int *)(message->arg0).ptr;
       if (iVar8 == 1) {
         /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
         DAT_00807300._0_1_ = '\x01';
@@ -1322,9 +1307,8 @@ LAB_005350bc:
       thunk_FUN_00571320(&DAT_00807620,HWND_00856d78);
       g_currentExceptionFrame = local_8c.previous;
       return 0;
-    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     case CASE_8:
-      DAT_0080733b = 4 - **(char **)(param_1 + 0x14);
+      DAT_0080733b = 4 - *(char *)(message->arg0).ptr;
       if (DAT_0080877e == '\0') {
         iVar8 = (uint)DAT_0080733b * 0x18;
         DAT_00807654 = *(undefined4 *)(s_FrmPanelTy__GetMessage_007c2ae0 + iVar8 + 0x14);
@@ -1352,16 +1336,15 @@ LAB_005350bc:
       g_currentExceptionFrame = local_8c.previous;
       return 0;
     case CASE_D:
-      uVar33 = this_00->field_01B9;
-      *(char *)&this_00[1].field_0000 = **(char **)(param_1 + 0x14) + -1;
+      this_00->field_0305 = *(char *)(message->arg0).ptr + -1;
       this_00->field_0028 = 0x20;
       *(undefined4 *)&this_00->field_0x2c = 1;
-      FUN_006e6080(this_00,2,uVar33,(undefined4 *)&this_00->field_0x18);
+      FUN_006e6080(this_00,2,this_00->field_01B9,(undefined4 *)&this_00->field_0x18);
       g_currentExceptionFrame = local_8c.previous;
       return 0;
     }
     break;
-  case 0xc0a0:
+  case MESS_BEHPANELTY_C0A0:
     OVar2 = this_00->field_01A4;
     switch(OVar2) {
     case CASE_1:
@@ -1400,7 +1383,7 @@ switchD_00535190_caseD_3:
         this_00->field_01A4 = CASE_1;
         SetOptControls(this_00);
         SwitchOptPanel(this_00,-1);
-        if (this_00->field_01AB != '\a') {
+        if (this_00->field_01AB != 7) {
           g_currentExceptionFrame = local_8c.previous;
           return 0;
         }
@@ -1409,11 +1392,11 @@ switchD_00535190_caseD_3:
         return 0;
       }
       SwitchOptPanel(this_00,-1);
-      if ((byte)this_00->field_01AB < 10) {
+      if (this_00->field_01AB < 10) {
         g_currentExceptionFrame = local_8c.previous;
         return 0;
       }
-      if (0xb < (byte)this_00->field_01AB) {
+      if (0xb < this_00->field_01AB) {
         g_currentExceptionFrame = local_8c.previous;
         return 0;
       }
@@ -1429,9 +1412,8 @@ switchD_00535190_caseD_3:
       thunk_FUN_00568010(&g_sound,CASE_2);
       g_currentExceptionFrame = local_8c.previous;
       return 0;
-    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     case CASE_8:
-      DAT_0080733a = '\x03' - **(char **)(param_1 + 0x14);
+      DAT_0080733a = '\x03' - *(char *)(message->arg0).ptr;
       g_currentExceptionFrame = local_8c.previous;
       return 0;
     case CASE_9:
@@ -1439,7 +1421,7 @@ switchD_00535190_caseD_3:
       g_currentExceptionFrame = local_8c.previous;
       return 0;
     case CASE_D:
-      DAT_00807348 = *(undefined1 *)&this_00[1].field_0000;
+      DAT_00807348 = this_00->field_0305;
       SwitchOptPanel(this_00,-1);
       this_00->field_019C = 0x6107;
       g_currentExceptionFrame = local_8c.previous;
@@ -1452,7 +1434,7 @@ LAB_00535271:
     this_00->field_019C = 0x610a;
     g_currentExceptionFrame = local_8c.previous;
     return 0;
-  case 0xc0a1:
+  case MESS_FSGSTY_C0A1:
     OVar2 = this_00->field_01A4;
     switch(OVar2) {
     case CASE_1:
@@ -1578,12 +1560,9 @@ switchD_00534835_caseD_1:
         pcVar21 = pcVar21 + 1;
         pcVar24 = pcVar24 + 1;
       }
-      uVar5 = this_00->field_002E;
-      uVar7 = this_00->field_01A9;
-      *(undefined2 *)&this_00->field_0x1e1 = *(undefined2 *)&this_00->field_0x2c;
-      *(undefined2 *)&this_00->field_0x1e3 = uVar5;
+      this_00->field_01E1 = *(undefined4 *)&this_00->field_0x2c;
       this_00->field_01A5 = 0x3f48;
-      this_00->field_01AA = uVar7;
+      this_00->field_01AA = this_00->field_01A9;
       this_00->field_01A9 = this_00->field_01A4;
       this_00->field_01AB = 2;
       this_00->field_01A4 = CASE_5;
@@ -1618,10 +1597,10 @@ switchD_00534835_caseD_1:
       local_1c = (uint *)0x0;
       this_00->field_0028 = 0x26;
       FUN_006e6080(this_00,2,this_00->field_01B5,(undefined4 *)&this_00->field_0x18);
-      pDVar4 = this_00->field_02FD;
-      if (*(uint *)&this_00->field_0x2c < pDVar4->count) {
-        /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(pDVar4, *(uint *)&this_00->field_0x2c) (runtime stride) */
-        pvVar17 = (void *)(pDVar4->elementSize * *(uint *)&this_00->field_0x2c + (int)pDVar4->data);
+      pDVar5 = this_00->field_02FD;
+      if (*(uint *)&this_00->field_0x2c < pDVar5->count) {
+        /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(pDVar5, *(uint *)&this_00->field_0x2c) (runtime stride) */
+        pvVar17 = (void *)(pDVar5->elementSize * *(uint *)&this_00->field_0x2c + (int)pDVar5->data);
       }
       else {
         pvVar17 = (void *)0x0;
@@ -1635,7 +1614,7 @@ switchD_00534835_caseD_1:
         case 0xd:
         case 0xe:
         case 0x13:
-          wsprintfA((LPSTR)&DAT_0080f33a,s__s_s_s_007c6edc,&DAT_00807680,PTR_s_SYSTEM__0079acf0,
+          wsprintfA((LPSTR)&DAT_0080f33a,"%s%s%s",&DAT_00807680,PTR_s_SYSTEM__0079acf0,
                     PTR_s_STRATEGS_0079acfc);
           break;
         case 2:
@@ -1643,7 +1622,7 @@ switchD_00534835_caseD_1:
         case 5:
         case 8:
         case 0xf:
-          wsprintfA((LPSTR)&DAT_0080f33a,&DAT_007c6ee4,&DAT_00807680,&DAT_0080ef1e);
+          wsprintfA((LPSTR)&DAT_0080f33a,"%s%s",&DAT_00807680,&DAT_0080ef1e);
         }
         local_19c.previous = g_currentExceptionFrame;
         g_currentExceptionFrame = &local_19c;
@@ -1655,11 +1634,11 @@ switchD_00534835_caseD_1:
         if (iVar8 == 0) {
           pcVar13 = (cMf32 *)Library::Ourlib::MF32INT::FUN_006f0ec0
                                        (0x345,(byte *)&DAT_0080f33a,0,0,0);
-          pDVar4 = this_00->field_02FD;
-          if (*(uint *)&this_00->field_0x2c < pDVar4->count) {
-            /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(pDVar4, *(uint *)&this_00->field_0x2c) (runtime stride) */
-            pvVar17 = (void *)(pDVar4->elementSize * *(uint *)&this_00->field_0x2c +
-                              (int)pDVar4->data);
+          pDVar5 = this_00->field_02FD;
+          if (*(uint *)&this_00->field_0x2c < pDVar5->count) {
+            /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(pDVar5, *(uint *)&this_00->field_0x2c) (runtime stride) */
+            pvVar17 = (void *)(pDVar5->elementSize * *(uint *)&this_00->field_0x2c +
+                              (int)pDVar5->data);
           }
           else {
             pvVar17 = (void *)0x0;
@@ -1724,7 +1703,7 @@ switchD_00534835_caseD_1:
       }
     }
     break;
-  case 0xc0a2:
+  case MESS_SHARED_C0A2:
     OVar2 = this_00->field_01A4;
     switch(OVar2) {
     case CASE_1:
@@ -1781,12 +1760,9 @@ switchD_00534835_caseD_1:
         pcVar21 = pcVar21 + 1;
         pcVar24 = pcVar24 + 1;
       }
-      uVar5 = this_00->field_002E;
-      uVar7 = this_00->field_01A9;
-      *(undefined2 *)&this_00->field_0x1e1 = *(undefined2 *)&this_00->field_0x2c;
-      *(undefined2 *)&this_00->field_0x1e3 = uVar5;
+      this_00->field_01E1 = *(undefined4 *)&this_00->field_0x2c;
       this_00->field_01A5 = 0x3f4a;
-      this_00->field_01AA = uVar7;
+      this_00->field_01AA = this_00->field_01A9;
       this_00->field_01A9 = this_00->field_01A4;
       this_00->field_01AB = 6;
       this_00->field_01A4 = CASE_5;
@@ -1801,20 +1777,18 @@ switchD_00534835_caseD_1:
       return 0;
     case CASE_8:
       g_currentExceptionFrame = local_8c.previous;
-      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-      DAT_00807349 = **(char **)(param_1 + 0x14) + -1;
+      DAT_00807349 = *(char *)(message->arg0).ptr + -1;
       return 0;
     case CASE_9:
       DAT_00807326 = DAT_00807326 == '\0';
       thunk_FUN_00440700((uint)(byte)DAT_00807326);
       g_currentExceptionFrame = local_8c.previous;
       return 0;
-    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     case CASE_D:
-      DAT_00807346 = (*(char *)(param_1 + 0x14) + '\x01') * '\x05';
+      DAT_00807346 = (*(char *)&message->arg0 + '\x01') * '\x05';
       DibPut((AnonShape_006B5B10_E0D06CF1 *)this_00->field_0068,0xaa,0x6f,'\x01',
              (byte *)this_00->field_018C);
-      wsprintfA(&this_00->field_0x6c,&DAT_007c1890,(uint)(byte)DAT_00807346);
+      wsprintfA(&this_00->field_0x6c,"%d",(uint)(byte)DAT_00807346);
       ccFntTy::SetSurf(this_00->field_017C,this_00->field_0068,0,0xaa,0x6f,
                        *(int *)(this_00->field_018C + 2),*(int *)(this_00->field_018C + 4));
       ccFntTy::WrTxt(this_00->field_017C,(uint *)&this_00->field_0x6c,-2,-1,0,-1,-1);
@@ -1825,7 +1799,7 @@ switchD_00534835_caseD_1:
       }
     }
     break;
-  case 0xc0a3:
+  case MESS_SHARED_C0A3:
     OVar2 = this_00->field_01A4;
     switch(OVar2) {
     case CASE_1:
@@ -1844,12 +1818,10 @@ switchD_00534835_caseD_1:
       SetOptControls(this_00);
       g_currentExceptionFrame = local_8c.previous;
       return 0;
-    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     case CASE_6:
-      DAT_0080730e = (uint)(*(int *)(param_1 + 0x14) * 4000) / 0x1e - 4000;
+      DAT_0080730e = ((message->arg0).u32 * 4000) / 0x1e - 4000;
       thunk_FUN_005682c0(&g_sound,DAT_0080730e);
-      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-      PaintVolume(this_00,0,*(byte *)(param_1 + 0x14));
+      PaintVolume(this_00,0,*(byte *)&message->arg0);
       g_currentExceptionFrame = local_8c.previous;
       return 0;
     case CASE_7:
@@ -1873,8 +1845,7 @@ switchD_00534835_caseD_1:
           else {
             iVar8 = (PTR_0080765c->field_0094 - PTR_0080765c->field_0090) + 1;
           }
-          /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-          local_8 = (uint)((iVar8 + -1) * *(int *)(param_1 + 0x14)) / 0x1e;
+          local_8 = ((iVar8 + -1) * (message->arg0).u32) / 0x1e;
           /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
           DAT_00807300._2_2_ = (undefined2)local_8;
           uRam00807304 = (undefined2)(local_8 >> 0x10);
@@ -1897,8 +1868,7 @@ switchD_00534835_caseD_1:
           }
 LAB_00535ef1:
           g_currentExceptionFrame = pIVar6;
-          /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-          PaintVolume(local_10,0,*(byte *)(param_1 + 0x14));
+          PaintVolume(local_10,0,*(byte *)&message->arg0);
           g_currentExceptionFrame = local_8c.previous;
           return 0;
         }
@@ -1923,8 +1893,7 @@ LAB_00535ef1:
           else {
             iVar8 = (PTR_0080765c->field_007C - PTR_0080765c->field_0078) + 1;
           }
-          /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-          _DAT_00807306 = (uint)((iVar8 + -1) * *(int *)(param_1 + 0x14)) / 0x1e;
+          _DAT_00807306 = ((iVar8 + -1) * (message->arg0).u32) / 0x1e;
           local_114.previous = g_currentExceptionFrame;
           g_currentExceptionFrame = &local_114;
           local_8 = _DAT_00807306;
@@ -1947,11 +1916,9 @@ LAB_00535ef1:
         }
       }
       else if ((char)DAT_00807300 == '\b') {
-        /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-        DAT_0080730a = (uint)(*(int *)(param_1 + 0x14) * 4000) / 0x1e - 4000;
+        DAT_0080730a = ((message->arg0).u32 * 4000) / 0x1e - 4000;
         thunk_FUN_005686c0(&g_sound,DAT_0080730a);
-        /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-        PaintVolume(this_00,0,*(byte *)(param_1 + 0x14));
+        PaintVolume(this_00,0,*(byte *)&message->arg0);
         g_currentExceptionFrame = local_8c.previous;
         return 0;
       }
@@ -1966,12 +1933,11 @@ LAB_00535ef1:
       FUN_006ddbb0((int)PTR_00807598);
       g_currentExceptionFrame = local_8c.previous;
       return 0;
-    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     case CASE_D:
-      DAT_00807347 = *(byte *)(param_1 + 0x14);
+      DAT_00807347 = *(byte *)&message->arg0;
       DibPut((AnonShape_006B5B10_E0D06CF1 *)this_00->field_0068,0xaa,0x81,'\x01',
              (byte *)this_00->field_018C);
-      wsprintfA(&this_00->field_0x6c,&DAT_007c1890,DAT_00807347 + 1);
+      wsprintfA(&this_00->field_0x6c,"%d",DAT_00807347 + 1);
       ccFntTy::SetSurf(this_00->field_017C,this_00->field_0068,0,0xaa,0x81,
                        *(int *)(this_00->field_018C + 2),*(int *)(this_00->field_018C + 4));
       ccFntTy::WrTxt(this_00->field_017C,(uint *)&this_00->field_0x6c,-2,-1,0,-1,-1);
@@ -1979,7 +1945,7 @@ LAB_00535ef1:
       return 0;
     }
     break;
-  case 0xc0a4:
+  case MESS_BLDLABPANELTY_C0A4:
     if (this_00->field_01A4 == CASE_1) {
       this_00->field_01A9 = 1;
       this_00->field_01A4 = CASE_C;
@@ -1998,7 +1964,7 @@ LAB_00535ef1:
       }
     }
     break;
-  case 0xc0a5:
+  case MESS_FRMPANELTY_C0A5:
     OVar2 = this_00->field_01A4;
     if (OVar2 == CASE_1) {
       this_00->field_01A9 = 1;
@@ -2027,8 +1993,7 @@ LAB_00535ef1:
         else {
           iVar8 = (PTR_0080765c->field_0064 - PTR_0080765c->field_0060) + 1;
         }
-        /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-        _DAT_00807312 = (uint)((iVar8 + -1) * *(int *)(param_1 + 0x14)) / 0x1e;
+        _DAT_00807312 = ((iVar8 + -1) * (message->arg0).u32) / 0x1e;
         local_1e0.previous = g_currentExceptionFrame;
         g_currentExceptionFrame = &local_1e0;
         local_8 = _DAT_00807312;
@@ -2045,14 +2010,13 @@ LAB_00535ef1:
           }
         }
         g_currentExceptionFrame = local_1e0.previous;
-        /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-        PaintVolume(local_10,2,*(byte *)(param_1 + 0x14));
+        PaintVolume(local_10,2,*(byte *)&message->arg0);
         g_currentExceptionFrame = local_8c.previous;
         return 0;
       }
     }
     break;
-  case 0xc0a6:
+  case MESS_BLDLABPANELTY_C0A4|MESS_ID_CREATE:
     if ((CASE_5 < this_00->field_01A4) && (this_00->field_01A4 < CASE_8)) {
       if (g_sound == 0) {
         uVar10 = 0;
@@ -2073,8 +2037,7 @@ LAB_00535ef1:
         else {
           iVar8 = (PTR_0080765c->field_004C - PTR_0080765c->field_0048) + 1;
         }
-        /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-        _DAT_00807316 = (uint)((iVar8 + -1) * *(int *)(param_1 + 0x14)) / 0x1e;
+        _DAT_00807316 = ((iVar8 + -1) * (message->arg0).u32) / 0x1e;
         local_268.previous = g_currentExceptionFrame;
         g_currentExceptionFrame = &local_268;
         local_8 = _DAT_00807316;
@@ -2091,14 +2054,13 @@ LAB_00535ef1:
           }
         }
         g_currentExceptionFrame = local_268.previous;
-        /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-        PaintVolume(local_10,3,*(byte *)(param_1 + 0x14));
+        PaintVolume(local_10,3,*(byte *)&message->arg0);
         g_currentExceptionFrame = local_8c.previous;
         return 0;
       }
     }
     break;
-  case 0xc0af:
+  case MESS_INTERCOMPANELTY_C0AF:
     switch(this_00->field_01A4) {
     case CASE_1:
       if (DAT_0080874e == '\x03') {
@@ -2150,9 +2112,8 @@ LAB_00535ef1:
         UVar34 = 0x3efc;
       }
       break;
-    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     case CASE_7:
-      iVar8 = **(int **)(param_1 + 0x14);
+      iVar8 = *(int *)(message->arg0).ptr;
       if (iVar8 == 1) {
         if (DAT_0080874e == '\x03') {
           iVar8 = 1;
@@ -2209,9 +2170,8 @@ LAB_00535ef1:
         }
       }
       break;
-    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     case CASE_8:
-      iVar8 = **(int **)(param_1 + 0x14);
+      iVar8 = *(int *)(message->arg0).ptr;
       if (iVar8 == 1) {
         if (DAT_0080874e == '\x03') {
           puVar15 = &LAB_00405c7c;
@@ -2225,8 +2185,8 @@ LAB_00535ef1:
         iVar8 = 1;
         pcVar35 = thunk_FUN_0052a4d0;
         UVar34 = 0x3ef1;
-        pCVar12 = thunk_FUN_00571240(s_BUT_BUTOPT1_007c7350,0);
-        PaintDblBut(this_00,(AnonShape_0052EFB0_CC661192 *)param_1,pCVar12,UVar34,pcVar35,puVar15,
+        pCVar12 = thunk_FUN_00571240("BUT_BUTOPT1",0);
+        PaintDblBut(this_00,(AnonShape_0052EFB0_CC661192 *)message,pCVar12,UVar34,pcVar35,puVar15,
                     iVar8);
         g_currentExceptionFrame = local_8c.previous;
         return 0;
@@ -2248,8 +2208,8 @@ LAB_00535ef1:
         iVar8 = 1;
         pcVar35 = thunk_FUN_0052a4d0;
         UVar34 = 0x3ef2;
-        pCVar12 = thunk_FUN_00571240(s_BUT_BUTOPT1_007c7350,0);
-        PaintDblBut(this_00,(AnonShape_0052EFB0_CC661192 *)param_1,pCVar12,UVar34,pcVar35,puVar15,
+        pCVar12 = thunk_FUN_00571240("BUT_BUTOPT1",0);
+        PaintDblBut(this_00,(AnonShape_0052EFB0_CC661192 *)message,pCVar12,UVar34,pcVar35,puVar15,
                     iVar8);
         g_currentExceptionFrame = local_8c.previous;
         return 0;
@@ -2269,8 +2229,8 @@ LAB_00536434:
 cf_common_exit_00536441:
       iVar8 = 1;
       pcVar35 = thunk_FUN_0052a4d0;
-      pCVar12 = thunk_FUN_00571240(s_BUT_BUTOPT1_007c7350,0);
-      PaintDblBut(this_00,(AnonShape_0052EFB0_CC661192 *)param_1,pCVar12,UVar34,pcVar35,puVar15,
+      pCVar12 = thunk_FUN_00571240("BUT_BUTOPT1",0);
+      PaintDblBut(this_00,(AnonShape_0052EFB0_CC661192 *)message,pCVar12,UVar34,pcVar35,puVar15,
                   iVar8);
       g_currentExceptionFrame = local_8c.previous;
       return 0;
@@ -2291,9 +2251,8 @@ cf_common_exit_00536441:
         UVar34 = 0x3ef4;
       }
       break;
-    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     case CASE_D:
-      iVar8 = **(int **)(param_1 + 0x14);
+      iVar8 = *(int *)(message->arg0).ptr;
       if (iVar8 == 1) {
         if (DAT_0080874e == '\x03') {
           puVar15 = &LAB_00405c7c;
@@ -2307,8 +2266,8 @@ cf_common_exit_00536441:
         iVar8 = 1;
         pcVar35 = thunk_FUN_0052a4d0;
         UVar34 = 0x3e90;
-        pCVar12 = thunk_FUN_00571240(s_BUT_BUTOPT1_007c7350,0);
-        PaintDblBut(this_00,(AnonShape_0052EFB0_CC661192 *)param_1,pCVar12,UVar34,pcVar35,puVar15,
+        pCVar12 = thunk_FUN_00571240("BUT_BUTOPT1",0);
+        PaintDblBut(this_00,(AnonShape_0052EFB0_CC661192 *)message,pCVar12,UVar34,pcVar35,puVar15,
                     iVar8);
         g_currentExceptionFrame = local_8c.previous;
         return 0;
@@ -2326,8 +2285,8 @@ cf_common_exit_00536441:
         iVar8 = 1;
         pcVar35 = thunk_FUN_0052a4d0;
         UVar34 = 0x3e91;
-        pCVar12 = thunk_FUN_00571240(s_BUT_BUTOPT1_007c7350,0);
-        PaintDblBut(this_00,(AnonShape_0052EFB0_CC661192 *)param_1,pCVar12,UVar34,pcVar35,puVar15,
+        pCVar12 = thunk_FUN_00571240("BUT_BUTOPT1",0);
+        PaintDblBut(this_00,(AnonShape_0052EFB0_CC661192 *)message,pCVar12,UVar34,pcVar35,puVar15,
                     iVar8);
         g_currentExceptionFrame = local_8c.previous;
         return 0;
@@ -2345,8 +2304,8 @@ cf_common_exit_00536441:
         iVar8 = 1;
         pcVar35 = thunk_FUN_0052a4d0;
         UVar34 = 0x3e92;
-        pCVar12 = thunk_FUN_00571240(s_BUT_BUTOPT1_007c7350,0);
-        PaintDblBut(this_00,(AnonShape_0052EFB0_CC661192 *)param_1,pCVar12,UVar34,pcVar35,puVar15,
+        pCVar12 = thunk_FUN_00571240("BUT_BUTOPT1",0);
+        PaintDblBut(this_00,(AnonShape_0052EFB0_CC661192 *)message,pCVar12,UVar34,pcVar35,puVar15,
                     iVar8);
         g_currentExceptionFrame = local_8c.previous;
         return 0;
@@ -2356,9 +2315,9 @@ cf_common_exit_00536441:
 cf_common_exit_00536EE8:
     uVar33 = 0;
     iVar30 = 1;
-    pCVar12 = thunk_FUN_00571240(s_BUT_BUTOPT_007c7264,0);
+    pCVar12 = thunk_FUN_00571240("BUT_BUTOPT",0);
     pCVar12 = FUN_006f2c00(pCVar12,iVar30,uVar33);
-    PaintDblBut(this_00,(AnonShape_0052EFB0_CC661192 *)param_1,pCVar12,UVar34,pcVar35,puVar15,iVar8)
+    PaintDblBut(this_00,(AnonShape_0052EFB0_CC661192 *)message,pCVar12,UVar34,pcVar35,puVar15,iVar8)
     ;
     g_currentExceptionFrame = local_8c.previous;
     return 0;
@@ -2411,16 +2370,12 @@ cf_common_exit_00536EE8:
         puVar11 = (undefined4 *)((int)puVar11 + 1);
       }
       ccFntTy::SetSurf(this_00->field_017C,this_00->field_01E5,0,0,0,0,0);
-      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-      ccFntTy::WrStr(this_00->field_017C,(uint *)**(undefined4 **)(param_1 + 0x14),0,-1,0);
-      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-      uVar3 = *(ushort *)(param_1 + 0x18);
-      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-      if ((uVar3 != 0xffff) || (*(short *)(param_1 + 0x1a) != -1)) {
-        /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-        FUN_006b5b10((AnonShape_006B5B10_E0D06CF1 *)this_00->field_01E5,0,(uint)uVar3,
-                     (uint)*(ushort *)(param_1 + 0x1a),(uint)uVar3,*(ushort *)(param_1 + 0x1a) + 10,
-                     0x6c,0xd);
+      ccFntTy::WrStr(this_00->field_017C,*(uint **)(message->arg0).ptr,0,-1,0);
+      uVar3 = (message->arg1).words.low;
+      if ((uVar3 != 0xffff) || ((message->arg1).words.high != 0xffff)) {
+        uVar10 = (uint)(message->arg1).words.high;
+        FUN_006b5b10((AnonShape_006B5B10_E0D06CF1 *)this_00->field_01E5,0,(uint)uVar3,uVar10,
+                     (uint)uVar3,uVar10 + 10,0x6c,0xd);
       }
       pbVar14 = (byte *)this_00->field_01E5;
       Library::DKW::WGR::FUN_006b55f0
@@ -2453,9 +2408,8 @@ cf_common_exit_00536EE8:
         UVar34 = 0x3efd;
       }
       goto cf_common_exit_00536EE8;
-    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     case CASE_8:
-      iVar8 = **(int **)(param_1 + 0x14);
+      iVar8 = *(int *)(message->arg0).ptr;
       if (iVar8 == 1) {
         if (DAT_0080874e == '\x03') {
           puVar15 = &LAB_00405c7c;
@@ -2506,8 +2460,8 @@ cf_common_exit_00536EE8:
 switchD_00536a2b_caseD_3:
       UVar34 = 0x2751;
 cf_common_exit_00536DB5:
-      pCVar12 = thunk_FUN_00571240(s_BUT_MEDIUM_007c3894,0);
-      UPanelTy::PaintIBut((UPanelTy *)this_00,(AnonShape_0053DAF0_3BDC2979 *)param_1,pCVar12,UVar34)
+      pCVar12 = thunk_FUN_00571240("BUT_MEDIUM",0);
+      UPanelTy::PaintIBut((UPanelTy *)this_00,(AnonShape_0053DAF0_3BDC2979 *)message,pCVar12,UVar34)
       ;
       g_currentExceptionFrame = local_8c.previous;
       return 0;
@@ -2527,7 +2481,7 @@ cf_common_exit_00536DB5:
       }
     }
     goto cf_common_exit_00536F92;
-  case 0xc0b1:
+  case MESS_BEHPANELTY_C0B1:
     switch(this_00->field_01A4) {
     case CASE_1:
       if (DAT_0080874e == '\x03') {
@@ -2579,9 +2533,8 @@ cf_common_exit_00536DB5:
         UVar34 = 0x3efe;
       }
       break;
-    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     case CASE_8:
-      if (**(int **)(param_1 + 0x14) == 1) {
+      if (*(int *)(message->arg0).ptr == 1) {
         if (DAT_0080874e == '\x03') {
           puVar15 = &LAB_00405c7c;
           UVar34 = 0x3f02;
@@ -2595,8 +2548,7 @@ cf_common_exit_00536DB5:
         }
       }
       else {
-        /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-        if (**(int **)(param_1 + 0x14) != 2) {
+        if (*(int *)(message->arg0).ptr != 2) {
           g_currentExceptionFrame = local_8c.previous;
           return 0;
         }
@@ -2709,11 +2661,9 @@ cf_common_exit_00536DB5:
         UVar34 = 0x3eff;
       }
       break;
-    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     case CASE_8:
-      if (**(int **)(param_1 + 0x14) != 1) {
-        /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-        if (**(int **)(param_1 + 0x14) != 2) {
+      if (*(int *)(message->arg0).ptr != 1) {
+        if (*(int *)(message->arg0).ptr != 2) {
           g_currentExceptionFrame = local_8c.previous;
           return 0;
         }
@@ -2760,7 +2710,7 @@ LAB_00536d52:
       }
     }
     goto cf_common_exit_00536EE8;
-  case 0xc0b3:
+  case MESS_BLDLABPANELTY_C0B3:
     OVar2 = this_00->field_01A4;
     if (OVar2 != CASE_1) {
       if (OVar2 != CASE_2) {
@@ -2812,7 +2762,7 @@ LAB_00536d52:
       UVar34 = 0x3e85;
     }
     goto cf_common_exit_00536F92;
-  case 0xc0b4:
+  case MESS_RESEARCHPANELTY_C0B4:
     if (this_00->field_01A4 != CASE_1) {
       if (this_00->field_01A4 != CASE_9) {
         g_currentExceptionFrame = local_8c.previous;
@@ -2846,7 +2796,7 @@ LAB_00536d52:
       UVar34 = 0x3e86;
     }
     goto cf_common_exit_00536F92;
-  case 0xc0b5:
+  case MESS_SHARED_C0B5:
     if (this_00->field_01A4 != CASE_1) {
       g_currentExceptionFrame = local_8c.previous;
       return 0;
@@ -2866,10 +2816,10 @@ cf_common_exit_00536F8B:
 cf_common_exit_00536F92:
     uVar33 = 0;
     iVar8 = 1;
-    pCVar12 = thunk_FUN_00571240(s_BUT_BUTOPT_007c7264,0);
+    pCVar12 = thunk_FUN_00571240("BUT_BUTOPT",0);
     pCVar12 = FUN_006f2c00(pCVar12,iVar8,uVar33);
     UPanelTy::PaintTxtBut
-              ((UPanelTy *)this_00,(AnonShape_0053D920_829E6B3B *)param_1,1,pCVar12,pcVar31,UVar34,
+              ((UPanelTy *)this_00,(AnonShape_0053D920_829E6B3B *)message,1,pCVar12,pcVar31,UVar34,
                puVar15);
   }
 cf_common_exit_00536FB7:

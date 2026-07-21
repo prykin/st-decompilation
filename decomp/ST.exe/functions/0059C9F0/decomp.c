@@ -12,13 +12,14 @@ void __thiscall FSGSTy::NewIDCtrls(FSGSTy *this)
   FSGSTy *this_00;
   AnonPointee_FSGSTy_1AE8 *pAVar2;
   AnonPointee_FSGSTy_1AEC *pAVar3;
-  uint *puVar4;
+  AnonPointee_FSGSTy_1AF0 *pAVar4;
   AnonPointee_FSGSTy_1AF8 *pAVar5;
   AnonPointee_FSGSTy_1AFC *pAVar6;
   AnonPointee_FSGSTy_1B00 *pAVar7;
-  int iVar8;
+  uint *puVar8;
   int iVar9;
-  ccFntTy **ppcVar10;
+  int iVar10;
+  ccFntTy **ppcVar11;
   ccFntTy *local_8d8 [8];
   AnonPointee_FSGSTy_1AE8 *local_8b8;
   undefined4 local_8ac;
@@ -33,16 +34,16 @@ void __thiscall FSGSTy::NewIDCtrls(FSGSTy *this)
   InternalExceptionFrame local_4c;
   FSGSTy *local_8;
 
-  ppcVar10 = local_8d8;
+  ppcVar11 = local_8d8;
   local_8 = this;
-  for (iVar9 = 0x223; iVar9 != 0; iVar9 = iVar9 + -1) {
-    *ppcVar10 = (ccFntTy *)0x0;
-    ppcVar10 = ppcVar10 + 1;
+  for (iVar10 = 0x223; iVar10 != 0; iVar10 = iVar10 + -1) {
+    *ppcVar11 = (ccFntTy *)0x0;
+    ppcVar11 = ppcVar11 + 1;
   }
   local_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_4c;
-  iVar9 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
-  if (iVar9 == 0) {
+  iVar10 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
+  if (iVar10 == 0) {
     pAVar2 = (AnonPointee_FSGSTy_1AE8 *)Library::DKW::TBL::FUN_006b54f0((uint *)0x0,1,1);
     this_00 = local_8;
     local_8->field_1AE8 = pAVar2;
@@ -50,9 +51,9 @@ void __thiscall FSGSTy::NewIDCtrls(FSGSTy *this)
     pAVar3 = (AnonPointee_FSGSTy_1AEC *)Library::DKW::TBL::FUN_006b54f0((uint *)0x0,1,1);
     this_00->field_1AEC = pAVar3;
     Library::DKW::TBL::FUN_006b5aa0((uint *)pAVar3,&DAT_008016a0);
-    puVar4 = Library::DKW::TBL::FUN_006b54f0((uint *)0x0,1,1);
-    this_00->field_1AF0 = puVar4;
-    Library::DKW::TBL::FUN_006b5aa0(puVar4,&DAT_008016a0);
+    pAVar4 = (AnonPointee_FSGSTy_1AF0 *)Library::DKW::TBL::FUN_006b54f0((uint *)0x0,1,1);
+    this_00->field_1AF0 = pAVar4;
+    Library::DKW::TBL::FUN_006b5aa0((uint *)pAVar4,&DAT_008016a0);
     pAVar5 = (AnonPointee_FSGSTy_1AF8 *)Library::DKW::TBL::FUN_006b54f0((uint *)0x0,1,1);
     this_00->field_1AF8 = pAVar5;
     Library::DKW::TBL::FUN_006b5aa0((uint *)pAVar5,&DAT_008016a0);
@@ -62,13 +63,13 @@ void __thiscall FSGSTy::NewIDCtrls(FSGSTy *this)
     pAVar7 = (AnonPointee_FSGSTy_1B00 *)Library::DKW::TBL::FUN_006b54f0((uint *)0x0,1,1);
     this_00->field_1B00 = pAVar7;
     Library::DKW::TBL::FUN_006b5aa0((uint *)pAVar7,&DAT_008016a0);
-    puVar4 = Library::DKW::TBL::FUN_006b54f0((uint *)0x0,1,1);
-    this_00->field_1B04 = puVar4;
-    Library::DKW::TBL::FUN_006b5aa0(puVar4,&DAT_008016a0);
-    ppcVar10 = local_8d8;
-    for (iVar9 = 0x223; iVar9 != 0; iVar9 = iVar9 + -1) {
-      *ppcVar10 = (ccFntTy *)0x0;
-      ppcVar10 = ppcVar10 + 1;
+    puVar8 = Library::DKW::TBL::FUN_006b54f0((uint *)0x0,1,1);
+    this_00->field_1B04 = puVar8;
+    Library::DKW::TBL::FUN_006b5aa0(puVar8,&DAT_008016a0);
+    ppcVar11 = local_8d8;
+    for (iVar10 = 0x223; iVar10 != 0; iVar10 = iVar10 + -1) {
+      *ppcVar11 = (ccFntTy *)0x0;
+      ppcVar11 = ppcVar11 + 1;
     }
     local_8d8[2] = this_00->field_1A73;
     local_8b8 = this_00->field_1AE8;
@@ -134,12 +135,12 @@ void __thiscall FSGSTy::NewIDCtrls(FSGSTy *this)
     return;
   }
   g_currentExceptionFrame = local_4c.previous;
-  iVar8 = ReportDebugMessage(s_E____titans_Start_fsgs_obj_cpp_007cbf70,0x5f4,0,iVar9,&DAT_007a4ccc,
-                             s_FSGSTy__NewIDCtrls_007cc2fc);
-  if (iVar8 != 0) {
+  iVar9 = ReportDebugMessage("E:\\__titans\\Start\\fsgs_obj.cpp",0x5f4,0,iVar10,"%s",
+                             "FSGSTy::NewIDCtrls");
+  if (iVar9 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  RaiseInternalException(iVar9,0,s_E____titans_Start_fsgs_obj_cpp_007cbf70,0x5f4);
+  RaiseInternalException(iVar10,0,"E:\\__titans\\Start\\fsgs_obj.cpp",0x5f4);
   return;
 }
 

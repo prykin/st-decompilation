@@ -4,10 +4,10 @@ void __fastcall FUN_00661ca0(AnonShape_00661CA0_93A030EF *param_1,undefined4 par
 {
   undefined4 uVar1;
   AiTactClassTy *pAVar2;
-  STFishC *pSVar3;
+  STGameObjC *pSVar3;
   /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
   undefined4 in_EAX;
-  STFishC *this;
+  STGameObjC *this;
   uint uVar4;
   uint *puVar5;
   int iVar6;
@@ -33,26 +33,26 @@ void __fastcall FUN_00661ca0(AnonShape_00661CA0_93A030EF *param_1,undefined4 par
   short local_1c [2];
   short local_18 [2];
   AnonShape_00661CA0_93A030EF *local_14;
-  STFishC *local_10;
+  STGameObjC *local_10;
   uint local_c;
   undefined2 local_6;
 
   /* ST_PSEUDO[unresolved_register_input,packed_or_unaligned_piece]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention; expected named packed member, bit extract/compose, or unaligned load */
   if ((g_sTAllPlayers_007FA174 != (STAllPlayersC *)0x0) &&
      (local_14 = param_1,
-     this = (STFishC *)
-            STAllPlayersC::GetObjPtr
+     this = STAllPlayersC::GetObjPtr
                       (g_sTAllPlayers_007FA174,param_1->field_0024,
                        CONCAT22((short)((uint)in_EAX >> 0x10),*(undefined2 *)(param_3 + 0x16)),
-                       CASE_1), this != (STFishC *)0x0)) {
+                       CASE_1), this != (STGameObjC *)0x0)) {
     local_10 = this;
     local_20 = thunk_FUN_004357f0(param_1->field_0024);
-    uVar4 = (*this->vtable->vfunc_2C)();
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+    uVar4 = (**(code **)&this->vtable->field_0x2c)();
     pSVar3 = local_10;
     local_c = uVar4;
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     if (*(short *)(param_3 + 0x14) == 0) {
-      STFishC::sub_004162B0(this,local_18,local_1c,&local_6);
+      STFishC::sub_004162B0((STFishC *)this,local_18,local_1c,&local_6);
       if ((0x31 < (int)local_c) && ((int)local_c < 0x74)) {
         uVar4 = 0;
         /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
@@ -91,7 +91,7 @@ void __fastcall FUN_00661ca0(AnonShape_00661CA0_93A030EF *param_1,undefined4 par
         }
       }
       if ((0 < (int)local_c) && ((int)local_c < 0x29)) {
-        if (*(int *)&local_10[3].field_0xdd != 0) {
+        if (local_10->field_081E != 0) {
           iVar10 = param_1->field_020B;
           uVar11 = 0;
           uVar4 = *(uint *)(iVar10 + 0xc);
@@ -104,8 +104,8 @@ void __fastcall FUN_00661ca0(AnonShape_00661CA0_93A030EF *param_1,undefined4 par
               else {
                 iVar6 = 0;
               }
-              if ((*(int *)(iVar6 + 0x28) == 0) &&
-                 (*(int *)(iVar6 + 0x24) == *(int *)&local_10[3].field_0xdd)) {
+              if ((*(int *)(iVar6 + 0x28) == 0) && (*(int *)(iVar6 + 0x24) == local_10->field_081E))
+              {
                 /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
                 uVar1 = *(undefined4 *)(param_3 + 0x18);
                 *(undefined4 *)(iVar6 + 0x24) = 0;
@@ -166,7 +166,8 @@ LAB_00661e5f:
         local_60 = param_1->field_0280;
         local_64 = (AnonShape_0068FD00_A5257008 *)0x6c;
         local_5c = 0;
-        GVar7 = (*local_10->vtable->vfunc_2C)();
+        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+        GVar7 = (**(code **)&local_10->vtable->field_0x2c)();
         iVar10 = thunk_FUN_006753a0(GVar7);
         local_5b = (undefined1)iVar10;
         psStack_5a = &local_30;
@@ -182,16 +183,15 @@ LAB_00661e5f:
         }
         uVar4 = 0;
         if ((void *)param_1->field_0284 != (void *)0x0) {
-          pvVar8 = (void *)thunk_FUN_0068e290((void *)param_1->field_0284,
-                                              *(short *)&local_10[3].field_0xdb);
+          pvVar8 = (void *)thunk_FUN_0068e290((void *)param_1->field_0284,local_10->field_081C);
           if (local_20 != (AiPlrClassTy *)0x0) {
-            uVar4 = *(uint *)&local_20->field_0x65c;
-            *(uint *)&local_20->field_0x65c = uVar4 + 1;
+            uVar4 = local_20->field_065C;
+            local_20->field_065C = uVar4 + 1;
           }
           if (pvVar8 != (void *)0x0) {
             thunk_FUN_006616b0(pvVar8,local_c,uVar4);
           }
-          *(uint *)&local_10[3].field_0xdd = uVar4;
+          local_10->field_081E = uVar4;
         }
       }
     }
@@ -219,10 +219,9 @@ LAB_00661e5f:
       }
       if ((((0 < (int)uVar4) && ((int)uVar4 < 0x29)) && (param_1->field_007B == -0x8000)) &&
          (((void *)param_1->field_0284 != (void *)0x0 &&
-          (pvVar8 = (void *)thunk_FUN_0068e290((void *)param_1->field_0284,
-                                               *(short *)&local_10[3].field_0xdb),
+          (pvVar8 = (void *)thunk_FUN_0068e290((void *)param_1->field_0284,local_10->field_081C),
           pvVar8 != (void *)0x0)))) {
-        thunk_FUN_00661790(pvVar8,uVar4,*(int *)&pSVar3[3].field_0xdd);
+        thunk_FUN_00661790(pvVar8,uVar4,pSVar3->field_081E);
       }
     }
     pIVar9 = thunk_FUN_00674fb0(local_c);

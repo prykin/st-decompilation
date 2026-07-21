@@ -46,12 +46,12 @@ void __thiscall SIDTy::DeleteCtrls(SIDTy *this)
     return;
   }
   g_currentExceptionFrame = local_4c.previous;
-  iVar4 = ReportDebugMessage(s_E____titans_Start_sid_obj_cpp_007cd5c4,0x110,0,iVar3,&DAT_007a4ccc,
-                             s_SIDTy__DeleteCtrls_007cd67c);
+  iVar4 = ReportDebugMessage("E:\\__titans\\Start\\sid_obj.cpp",0x110,0,iVar3,"%s",
+                             "SIDTy::DeleteCtrls");
   if (iVar4 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  RaiseInternalException(iVar3,0,s_E____titans_Start_sid_obj_cpp_007cd5c4,0x110);
+  RaiseInternalException(iVar3,0,"E:\\__titans\\Start\\sid_obj.cpp",0x110);
   return;
 }
 

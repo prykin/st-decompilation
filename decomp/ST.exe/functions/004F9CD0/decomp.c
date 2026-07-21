@@ -62,12 +62,12 @@ void __thiscall CPanelTy::PlayBriefing(CPanelTy *this,char *param_1)
     return;
   }
   g_currentExceptionFrame = local_4c.previous;
-  iVar6 = ReportDebugMessage(s_E____titans_Andrey_cpanel_cpp_007c1bd8,0x3c8,0,errorCode,
-                             &DAT_007a4ccc,s_CPanelTy__PlayBriefing_007c2268);
+  iVar6 = ReportDebugMessage("E:\\__titans\\Andrey\\cpanel.cpp",0x3c8,0,errorCode,
+                             "%s","CPanelTy::PlayBriefing");
   if (iVar6 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  RaiseInternalException(errorCode,0,s_E____titans_Andrey_cpanel_cpp_007c1bd8,0x3c8);
+  RaiseInternalException(errorCode,0,"E:\\__titans\\Andrey\\cpanel.cpp",0x3c8);
   return;
 }
 

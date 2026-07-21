@@ -29,7 +29,7 @@ void __cdecl FUN_005419e0(int param_1,undefined *param_2,BYTE param_3)
   }
   local_8d = param_3;
   uVar3 = 0xffffffff;
-  pcVar5 = s_System_007c1bd0;
+  pcVar5 = "System";
   do {
     pcVar7 = pcVar5;
     if (uVar3 == 0) break;

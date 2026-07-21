@@ -41,10 +41,10 @@ SetAccelerator(int param_1,undefined4 param_2,undefined4 param_3,undefined4 para
   iVar2 = Library::MSVCRT::__setjmp3(local_b4.jumpBuffer,0);
   if (iVar2 != 0) {
     g_currentExceptionFrame = local_b4.previous;
-    iVar4 = ReportDebugMessage(s_E____titans_Andrey_support_cpp_007c7b2c,0xe7,0,iVar2,&DAT_007a4ccc,
-                               s_SetAccelerator_007c7bbc);
+    iVar4 = ReportDebugMessage("E:\\__titans\\Andrey\\support.cpp",0xe7,0,iVar2,"%s",
+                               "SetAccelerator");
     if (iVar4 == 0) {
-      RaiseInternalException(iVar2,0,s_E____titans_Andrey_support_cpp_007c7b2c,0xe7);
+      RaiseInternalException(iVar2,0,"E:\\__titans\\Andrey\\support.cpp",0xe7);
       return;
     }
     STDebugBreak(); /* noreturn in standalone pseudocode */

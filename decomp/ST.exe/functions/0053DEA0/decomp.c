@@ -67,7 +67,7 @@ UPanelTy::CreateBut(UPanelTy *this,undefined4 param_1,int param_2,int param_3,in
     local_1d0[0] = param_2;
     if (param_6 != 0) {
       text = local_10 + 1;
-      wsprintfA((LPSTR)text,&DAT_007c181c,param_6);
+      wsprintfA((LPSTR)text,"%s0",param_6);
       local_8 = cMf32::RecGet(DAT_00806790,param_5,(char *)text,(int *)0x0,1);
     }
     if ((param_5 == 1) || (param_5 == 6)) {
@@ -123,10 +123,10 @@ UPanelTy::CreateBut(UPanelTy *this,undefined4 param_1,int param_2,int param_3,in
     return local_c;
   }
   g_currentExceptionFrame = local_54.previous;
-  iVar4 = ReportDebugMessage(s_E____titans_Andrey_specpan_cpp_007c7870,0xb1,0,iVar3,&DAT_007a4ccc,
-                             s_UPanelTy__CreateBut_007c78fc);
+  iVar4 = ReportDebugMessage("E:\\__titans\\Andrey\\specpan.cpp",0xb1,0,iVar3,"%s",
+                             "UPanelTy::CreateBut");
   if (iVar4 == 0) {
-    RaiseInternalException(iVar3,0,s_E____titans_Andrey_specpan_cpp_007c7870,0xb1);
+    RaiseInternalException(iVar3,0,"E:\\__titans\\Andrey\\specpan.cpp",0xb1);
     return 0;
   }
   STDebugBreak(); /* noreturn in standalone pseudocode */

@@ -31,7 +31,7 @@ TraksClassTy::DrawTrakSprite(TraksClassTy *this,AnonShape_00555910_7455F960 *par
   if (iVar3 == 0) {
     sVar4 = param_1->field_0022;
     local_20 = (int)sVar4;
-    if (((uint)((int)param_1->field_0014 + param_1->field_0024) <= (uint)local_8->field_0020) ||
+    if (((uint)((int)param_1->field_0014 + param_1->field_0024) <= local_8->field_0020) ||
        (param_1->field_003A != 0)) {
       param_1->field_0022 = sVar4 + 1;
       if (param_1->field_0036 <= (short)(sVar4 + 1)) {
@@ -136,12 +136,12 @@ TraksClassTy::DrawTrakSprite(TraksClassTy *this,AnonShape_00555910_7455F960 *par
     return;
   }
   g_currentExceptionFrame = local_64.previous;
-  iVar5 = ReportDebugMessage(s_E____titans_grig_traks_cpp_007c9104,0x96,0,iVar3,&DAT_007a4ccc,
-                             s_TraksClassTy__DrawTrakSprite_err_007c9158);
+  iVar5 = ReportDebugMessage("E:\\__titans\\grig\\traks.cpp",0x96,0,iVar3,"%s",
+                             "TraksClassTy::DrawTrakSprite error");
   if (iVar5 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  RaiseInternalException(iVar3,0,s_E____titans_grig_traks_cpp_007c9104,0x97);
+  RaiseInternalException(iVar3,0,"E:\\__titans\\grig\\traks.cpp",0x97);
   return;
 }
 

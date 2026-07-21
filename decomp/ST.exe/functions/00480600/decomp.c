@@ -30,7 +30,7 @@ undefined4 __fastcall FUN_00480600(void *param_1)
   undefined4 *local_c;
   uint local_8;
 
-  iVar2 = thunk_FUN_0041c710((int)param_1);
+  iVar2 = thunk_FUN_0041c710(param_1);
   this = (STT3DSprC *)((int)param_1 + 0x1d5);
   if (iVar2 == 1) {
     iVar2 = 1;

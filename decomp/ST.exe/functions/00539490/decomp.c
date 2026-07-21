@@ -46,12 +46,12 @@ void __thiscall PausePanelTy::DonePausePanel(PausePanelTy *this)
     return;
   }
   g_currentExceptionFrame = local_4c.previous;
-  iVar3 = ReportDebugMessage(s_E____titans_Andrey_pause_cpp_007c7490,0x3b,0,errorCode,&DAT_007a4ccc,
-                             s_PausePanelTy__DonePausePanel_007c74e4);
+  iVar3 = ReportDebugMessage("E:\\__titans\\Andrey\\pause.cpp",0x3b,0,errorCode,"%s",
+                             "PausePanelTy::DonePausePanel");
   if (iVar3 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  RaiseInternalException(errorCode,0,s_E____titans_Andrey_pause_cpp_007c7490,0x3b);
+  RaiseInternalException(errorCode,0,"E:\\__titans\\Andrey\\pause.cpp",0x3b);
   return;
 }
 

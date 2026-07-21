@@ -39,12 +39,12 @@ void __thiscall InfocPanelTy::Update(InfocPanelTy *this)
   this_00 = local_14;
   if (iVar6 != 0) {
     g_currentExceptionFrame = local_5c.previous;
-    iVar12 = ReportDebugMessage(s_E____titans_Andrey_infocen_cpp_007c3eb0,0x99,0,iVar6,&DAT_007a4ccc
-                                ,s_InfocPanelTy__Update_007c3f74);
+    iVar12 = ReportDebugMessage("E:\\__titans\\Andrey\\infocen.cpp",0x99,0,iVar6,"%s"
+                                ,"InfocPanelTy::Update");
     if (iVar12 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    RaiseInternalException(iVar6,0,s_E____titans_Andrey_infocen_cpp_007c3eb0,0x99);
+    RaiseInternalException(iVar6,0,"E:\\__titans\\Andrey\\infocen.cpp",0x99);
     return;
   }
   puVar1 = &local_14->field_01AB;
@@ -168,7 +168,7 @@ LAB_00520987:
         }
       }
       else {
-        wsprintfA(&this_00->field_0x18d,&DAT_007c3f90,
+        wsprintfA(&this_00->field_0x18d,"%c",
                   (byte)(&DAT_008087ea)[(uint)*local_c * 0x51] + 0x41);
         ccFntTy::SetSurf(this_00->field_0189,this_00->field_0068,0,0x41,uVar8,0x12,0xc);
         ccFntTy::WrStr(this_00->field_0189,(uint *)&this_00->field_0x18d,-1,-1,3);

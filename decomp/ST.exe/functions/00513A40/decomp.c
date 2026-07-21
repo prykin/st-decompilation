@@ -43,7 +43,7 @@ void __thiscall HelpPanelTy::IndexBut(HelpPanelTy *this)
       *(undefined4 *)&this_00->field_0x30 = this_00->field_0178;
       if (PTR_00802a30 != (CursorClassTy *)0x0) {
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-        (*(code *)**(undefined4 **)PTR_00802a30)(&this_00->field_0x18);
+        (**(code **)PTR_00802a30->field_0000)(&this_00->field_0x18);
       }
     }
     CreateList(this_00);
@@ -51,12 +51,12 @@ void __thiscall HelpPanelTy::IndexBut(HelpPanelTy *this)
     return;
   }
   g_currentExceptionFrame = local_4c.previous;
-  iVar3 = ReportDebugMessage(s_E____titans_Andrey_helppan_cpp_007c383c,0x2c0,0,errorCode,
-                             &DAT_007a4ccc,s_HelpPanelTy__IndexBut_007c3a9c);
+  iVar3 = ReportDebugMessage("E:\\__titans\\Andrey\\helppan.cpp",0x2c0,0,errorCode,
+                             "%s","HelpPanelTy::IndexBut");
   if (iVar3 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  RaiseInternalException(errorCode,0,s_E____titans_Andrey_helppan_cpp_007c383c,0x2c0);
+  RaiseInternalException(errorCode,0,"E:\\__titans\\Andrey\\helppan.cpp",0x2c0);
   return;
 }
 

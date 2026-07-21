@@ -8,7 +8,7 @@
 
 undefined4 __thiscall
 SubmarineTitans::Recovered::HiddenThis::AnonReceiver_004603B0::FUN_004838e0
-          (AnonReceiver_004603B0 *this,int param_1)
+          (AnonReceiver_004603B0 *this,AnonShape_004838E0_0C45D4D6 *param_1)
 
 {
   short sVar1;
@@ -42,22 +42,16 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_004603B0::FUN_004838e0
   longlong local_60;
   undefined8 local_48;
 
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  sVar1 = *(short *)(param_1 + 0x3a);
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  uVar16 = (uint)*(short *)(param_1 + 0x34);
+  sVar1 = param_1->field_003A;
+  uVar16 = (uint)param_1->field_0034;
   uVar4 = (int)sVar1 - uVar16;
   uVar17 = (int)uVar4 >> 0x1f;
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  sVar2 = *(short *)(param_1 + 0x3c);
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  uVar18 = (uint)*(short *)(param_1 + 0x36);
+  sVar2 = param_1->field_003C;
+  uVar18 = (uint)param_1->field_0036;
   uVar5 = (int)sVar2 - uVar18;
   uVar19 = (int)uVar5 >> 0x1f;
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  sVar3 = *(short *)(param_1 + 0x3e);
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  uVar20 = (uint)*(short *)(param_1 + 0x38);
+  sVar3 = param_1->field_003E;
+  uVar20 = (uint)param_1->field_0038;
   uVar6 = (int)sVar3 - uVar20;
   uVar21 = (int)uVar6 >> 0x1f;
   uVar7 = (uint)*(short *)&this->field_0x45;
@@ -143,14 +137,13 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_004603B0::FUN_004838e0
   lVar24 = Library::MSVCRT::__allmul(uVar9 - uVar20,iVar14,uVar9 - uVar20,iVar14);
   lVar22 = Library::MSVCRT::__allmul(uVar8 - (uint)local_48,iVar13,uVar8 - (uint)local_48,iVar13);
   lVar23 = Library::MSVCRT::__allmul(uVar4,iVar12,uVar4,iVar12);
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   if ((lVar22 + lVar24 + lVar23 <= (longlong)(iVar10 * iVar10)) &&
-     (lVar22 = (longlong)(int)(uVar8 - (int)*(short *)(param_1 + 0x43)) *
-               (longlong)((int)sVar2 - (int)*(short *)(param_1 + 0x43)) +
-               (longlong)(int)(uVar9 - (int)*(short *)(param_1 + 0x41)) *
-               (longlong)((int)sVar1 - (int)*(short *)(param_1 + 0x41)),
-     lVar24 = (longlong)(int)(uVar7 - (int)*(short *)(param_1 + 0x45)) *
-              (longlong)((int)sVar3 - (int)*(short *)(param_1 + 0x45)),
+     (lVar22 = (longlong)(int)(uVar8 - (int)param_1->field_0043) *
+               (longlong)((int)sVar2 - (int)param_1->field_0043) +
+               (longlong)(int)(uVar9 - (int)param_1->field_0041) *
+               (longlong)((int)sVar1 - (int)param_1->field_0041),
+     lVar24 = (longlong)(int)(uVar7 - (int)param_1->field_0045) *
+              (longlong)((int)sVar3 - (int)param_1->field_0045),
      -1 < (int)((int)((ulonglong)lVar22 >> 0x20) + (int)((ulonglong)lVar24 >> 0x20) +
                (uint)CARRY4((uint)lVar22,(uint)lVar24)))) {
     return 1;

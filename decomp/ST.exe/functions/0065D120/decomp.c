@@ -30,7 +30,7 @@ AnonShape_GLOBAL_008489CC_CDF8C3F4 * FUN_0065d120(void)
   }
   g_currentExceptionFrame = local_4c.previous;
   thunk_FUN_0065d1f0((int *)&local_8);
-  RaiseInternalException(exceptionCode,0,s_E____titans_ai_ai_event_d_cpp_007d2b4c,0xb7);
+  RaiseInternalException(exceptionCode,0,"E:\\__titans\\ai\\ai_event_d.cpp",0xb7);
   return (AnonShape_GLOBAL_008489CC_CDF8C3F4 *)0x0;
 }
 

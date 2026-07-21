@@ -36,7 +36,7 @@ void __fastcall FUN_00491600(int *param_1)
                           );
       if (iVar2 == -4) {
         RaiseInternalException
-                  (-4,g_overwriteContext_007ED77C,s_E____titans_wlad_To_boat_cpp_007a9d3c,0x5008);
+                  (-4,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\To_boat.cpp",0x5008);
       }
     }
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */

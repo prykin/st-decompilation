@@ -44,12 +44,12 @@ undefined4 * CreatePlrDataForBO(void)
     thunk_FUN_0065d0f0((int *)&local_10);
     thunk_FUN_0067d160((int *)&local_8);
     thunk_FUN_0067d160((int *)&local_c);
-    iVar4 = ReportDebugMessage(s_E____titans_ai_ai_creat_cpp_007d2880,0x167,0,iVar3,&DAT_007a4ccc,
-                               s_CreatePlrDataForBO_007d2900);
+    iVar4 = ReportDebugMessage("E:\\__titans\\ai\\ai_creat.cpp",0x167,0,iVar3,"%s",
+                               "CreatePlrDataForBO");
     if (iVar4 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    RaiseInternalException(iVar3,0,s_E____titans_ai_ai_creat_cpp_007d2880,0x168);
+    RaiseInternalException(iVar3,0,"E:\\__titans\\ai\\ai_creat.cpp",0x168);
     return (undefined4 *)0x0;
   }
   piVar10 = local_34;
@@ -175,7 +175,7 @@ undefined4 * CreatePlrDataForBO(void)
     pcVar13 = pcVar13 + 1;
   }
   uVar6 = 0xffffffff;
-  pcVar9 = s_BO_Opponent_00_stg_007d2918;
+  pcVar9 = "BO_Opponent_00.stg";
   do {
     pcVar13 = pcVar9;
     if (uVar6 == 0) break;
@@ -219,7 +219,7 @@ undefined4 * CreatePlrDataForBO(void)
     return local_c;
   }
   RaiseInternalException
-            (local_34[0],g_overwriteContext_007ED77C,s_E____titans_ai_ai_creat_cpp_007d2880,0x161);
+            (local_34[0],g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_creat.cpp",0x161);
   g_currentExceptionFrame = local_78.previous;
   return local_c;
 }

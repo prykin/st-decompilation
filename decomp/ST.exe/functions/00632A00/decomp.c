@@ -116,7 +116,7 @@ void __thiscall STTeamLissagC::InitVisibelSystem(STTeamLissagC *this)
               puVar4 = local_10;
             }
             if ((pSVar6->field_0011 == 4) &&
-               (((int)local_1c < (int)pSVar6->field_001D ||
+               (((int)local_1c < pSVar6->field_001D ||
                 (puVar4 = local_10, local_8 = local_10, pSVar6->field_001D * 2 <= (int)local_1c))))
             {
               puVar4 = local_14;
@@ -149,10 +149,10 @@ void __thiscall STTeamLissagC::InitVisibelSystem(STTeamLissagC *this)
     return;
   }
   g_currentExceptionFrame = local_68.previous;
-  iVar5 = ReportDebugMessage(s_E____titans_nick_to_supp_cpp_007d1d3c,0x1bd,0,iVar3,&DAT_007a4ccc,
-                             s_STTeamLissagC__InitVisibelSystem_007d1d60);
+  iVar5 = ReportDebugMessage("E:\\__titans\\nick\\to_supp.cpp",0x1bd,0,iVar3,"%s",
+                             "STTeamLissagC::InitVisibelSystem");
   if (iVar5 == 0) {
-    RaiseInternalException(iVar3,0,s_E____titans_nick_to_supp_cpp_007d1d3c,0x1bf);
+    RaiseInternalException(iVar3,0,"E:\\__titans\\nick\\to_supp.cpp",0x1bf);
     return;
   }
   STDebugBreak(); /* noreturn in standalone pseudocode */

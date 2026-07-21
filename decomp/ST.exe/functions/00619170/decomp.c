@@ -10,7 +10,7 @@
 STJumpMineC * __thiscall STJumpMineC::STJumpMineC(STJumpMineC *this)
 
 {
-  STGroupBoatC::sub_006E60E0((STGroupBoatC *)this);
+  sub_006E60E0(this);
   this->vtable = &STJumpMineCVTable;
   this->field_0097 = 0xffffffff;
   return this;

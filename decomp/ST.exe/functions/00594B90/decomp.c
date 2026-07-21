@@ -41,12 +41,12 @@ FSGSTy::OutChSlProc(FSGSTy *this,int param_1,undefined4 param_2,undefined4 param
       return;
     }
     g_currentExceptionFrame = local_50.previous;
-    iVar3 = ReportDebugMessage(s_E____titans_Start_fsgs_obj_cpp_007cbf70,0x66,0,errorCode,
-                               &DAT_007a4ccc,s_FSGSTy__OutChSlProc_007cbf98);
+    iVar3 = ReportDebugMessage("E:\\__titans\\Start\\fsgs_obj.cpp",0x66,0,errorCode,
+                               "%s","FSGSTy::OutChSlProc");
     if (iVar3 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    RaiseInternalException(errorCode,0,s_E____titans_Start_fsgs_obj_cpp_007cbf70,0x66);
+    RaiseInternalException(errorCode,0,"E:\\__titans\\Start\\fsgs_obj.cpp",0x66);
   }
   return;
 }

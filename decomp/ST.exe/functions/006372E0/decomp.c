@@ -9,7 +9,8 @@ undefined4 __fastcall FUN_006372e0(int *param_1)
     return 1;
   }
   if (param_1[10] == 0) {
-    iVar1 = thunk_FUN_00636fc0((AnonShape_00636FC0_24F8974B *)param_1);
+    iVar1 = SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00636260::sub_00636FC0
+                      ((AnonReceiver_00636260 *)param_1);
     param_1[10] = iVar1;
     if (iVar1 != 0) {
       thunk_FUN_00636750((AnonShape_00636750_9523C2A1 *)param_1);

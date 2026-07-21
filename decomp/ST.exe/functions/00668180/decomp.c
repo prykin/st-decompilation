@@ -51,7 +51,7 @@ FUN_00668180(char *text,undefined2 param_2,undefined2 param_3,undefined2 param_4
   }
   g_currentExceptionFrame = local_4c.previous;
   thunk_FUN_006686c0((int *)&local_8);
-  RaiseInternalException(exceptionCode,0,s_E____titans_ai_ai_flt_d_cpp_007d2cc0,0x2a);
+  RaiseInternalException(exceptionCode,0,"E:\\__titans\\ai\\ai_flt_d.cpp",0x2a);
   return (AnonShape_GLOBAL_008489C4_F7BABFAC *)0x0;
 }
 

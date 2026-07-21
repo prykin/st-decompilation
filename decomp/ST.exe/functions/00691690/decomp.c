@@ -56,7 +56,7 @@ FUN_00691690(void *this,cMf32 *param_1,cMf32 *param_2,int param_3,undefined *par
   uint local_8;
 
   local_14 = this;
-  local_38 = Library::Ourlib::MFAOBJ::mfAObjLoad(param_1,s_2D_CLT_007d59b8,0,0);
+  local_38 = Library::Ourlib::MFAOBJ::mfAObjLoad(param_1,"2D_CLT",0,0);
   if (local_38 != (ushort *)0x0) {
     puVar10 = local_38;
     puVar4 = (undefined4 *)((int)this + 0x37ac);
@@ -67,7 +67,7 @@ FUN_00691690(void *this,cMf32 *param_1,cMf32 *param_2,int param_3,undefined *par
     }
     cMf32::RecMemFree(param_1,(uint *)&local_38);
   }
-  local_30 = Library::Ourlib::MFAOBJ::mfAObjLoad(param_1,s_CLR_COVER_007d59ac,0,0);
+  local_30 = Library::Ourlib::MFAOBJ::mfAObjLoad(param_1,"CLR_COVER",0,0);
   if (local_30 != (ushort *)0x0) {
     puVar4 = &DAT_007d5934;
     puVar10 = local_30;
@@ -95,7 +95,7 @@ FUN_00691690(void *this,cMf32 *param_1,cMf32 *param_2,int param_3,undefined *par
       this_00 = (AnonShape_006DDD50_309FA381 *)0x0;
 LAB_0069177d:
       RaiseInternalException
-                (-2,g_overwriteContext_007ED77C,s_E____titans_Maps_CntLib_cpp_007d5980,0x4e);
+                (-2,g_overwriteContext_007ED77C,"E:\\__titans\\Maps\\CntLib.cpp",0x4e);
     }
     else {
       this_00 = (AnonShape_006DDD50_309FA381 *)FUN_006dbca0(pAVar6);
@@ -418,8 +418,8 @@ LAB_00691a65:
           pvVar3 = local_14;
           uVar16 = 0;
           uVar14 = 0;
-          puVar8 = thunk_FUN_00691650(s_STONE_007d5978,iVar12);
-          wsprintfA(local_190,s__s_u_u_007d5970,puVar8,uVar14,uVar16);
+          puVar8 = thunk_FUN_00691650("STONE",iVar12);
+          wsprintfA(local_190,"%s%u%u",puVar8,uVar14,uVar16);
           iVar15 = cMf32::RecChk(param_2,7,local_190);
           if (iVar15 == 0) {
             pcVar5 = Library::Ourlib::MFSPR::mfSSprLoad(param_2,local_190,2,1);
@@ -435,7 +435,7 @@ LAB_00691a65:
     if (param_3 != 0) {
       iVar15 = 1;
       bVar13 = 2;
-      pcVar5 = thunk_FUN_00691650(s_CRACK_007d5968,iVar12);
+      pcVar5 = thunk_FUN_00691650("CRACK",iVar12);
       pcVar5 = Library::Ourlib::MFSPR::mfSSprLoad(param_2,pcVar5,bVar13,iVar15);
       *(char **)((int)pvVar3 + iVar12 * 0x248 + 0x1b04) = pcVar5;
       thunk_FUN_00692ba0(pcVar5);

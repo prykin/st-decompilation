@@ -3,9 +3,13 @@
 
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\tc_grp.cpp
-   STGroupC::GetMessage */
+   STGroupC::GetMessage
 
-undefined4 __thiscall STGroupC::GetMessage(STGroupC *this,AnonShape_00423EC0_64CE1121 *param_1)
+   [STMessageHandlerApplier] Recovered common GetMessage envelope/signature.
+   Evidence: family_entries=004034EA|00423EC0; family_names=STGroupC::GetMessage; ret4=4;
+   direct_offsets={10:1,14:2,18:2,1c:1} */
+
+int __thiscall STGroupC::GetMessage(STGroupC *this,STMessage *message)
 
 {
   code *pcVar1;
@@ -15,21 +19,20 @@ undefined4 __thiscall STGroupC::GetMessage(STGroupC *this,AnonShape_00423EC0_64C
   undefined2 extraout_var;
   uint *puVar3;
   int iVar4;
-  undefined4 uVar5;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined2 extraout_var_00;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined2 extraout_var_01;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined2 extraout_var_02;
-  undefined2 uVar6;
-  uint uVar7;
-  undefined4 *puVar8;
+  undefined2 uVar5;
+  uint uVar6;
+  undefined4 *puVar7;
   InternalExceptionFrame local_50;
   int local_c;
   STGroupC *local_8;
 
-  uVar7 = 0;
+  uVar6 = 0;
   local_50.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_50;
   local_8 = this;
@@ -37,17 +40,17 @@ undefined4 __thiscall STGroupC::GetMessage(STGroupC *this,AnonShape_00423EC0_64C
   this_00 = local_8;
   if (iVar2 != 0) {
     g_currentExceptionFrame = local_50.previous;
-    iVar4 = ReportDebugMessage(s_E____titans_wlad_tc_grp_cpp_007a50a4,0x17c,0,iVar2,&DAT_007a4ccc,
-                               s_STGroupC__GetMessage_007a514c);
+    iVar4 = ReportDebugMessage("E:\\__titans\\wlad\\tc_grp.cpp",0x17c,0,iVar2,"%s",
+                               "STGroupC::GetMessage");
     if (iVar4 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    RaiseInternalException(iVar2,0,s_E____titans_wlad_tc_grp_cpp_007a50a4,0x17d);
+    RaiseInternalException(iVar2,0,"E:\\__titans\\wlad\\tc_grp.cpp",0x17d);
     return 0xffff;
   }
-  FUN_006e5fd0();
-  if (param_1->field_0010 == 2) {
-    iVar2 = param_1->field_0014;
+  FUN_006e5fd0(local_8,message);
+  if (message->id == MESS_ID_CREATE) {
+    iVar2 = (message->arg0).i32;
     if (*(uint *)(iVar2 + 0xc) < 2) {
       this_00->field_0020 = *(undefined4 *)(iVar2 + 0x20);
       this_00->field_0024 = *(char *)(iVar2 + 4);
@@ -57,22 +60,22 @@ undefined4 __thiscall STGroupC::GetMessage(STGroupC *this,AnonShape_00423EC0_64C
       this_00->field_0029 = puVar3;
       local_c = *(int *)(iVar2 + 0x1c);
       /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
-      uVar6 = extraout_var_01;
+      uVar5 = extraout_var_01;
       if (0 < local_c) {
-        puVar8 = (undefined4 *)(iVar2 + 0x24);
+        puVar7 = (undefined4 *)(iVar2 + 0x24);
         do {
-          Library::DKW::TBL::FUN_006ae140((uint *)this_00->field_0029,uVar7,puVar8);
-          uVar7 = uVar7 + 1;
-          puVar8 = puVar8 + 1;
+          Library::DKW::TBL::FUN_006ae140((uint *)this_00->field_0029,uVar6,puVar7);
+          uVar6 = uVar6 + 1;
+          puVar7 = puVar7 + 1;
           /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
-          uVar6 = extraout_var_02;
-        } while ((int)uVar7 < local_c);
+          uVar5 = extraout_var_02;
+        } while ((int)uVar6 < local_c);
       }
       /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
       STAllPlayersC::RegisterGroup
-                (g_sTAllPlayers_007FA174,this_00->field_0024,CONCAT22(uVar6,this_00->field_0025),
+                (g_sTAllPlayers_007FA174,this_00->field_0024,CONCAT22(uVar5,this_00->field_0025),
                  (int)this_00);
-      this_00->field_0031 = *(int *)&this_00->field_0x18 * DAT_00808754;
+      this_00->field_0031 = this_00->field_0018 * DAT_00808754;
     }
     else if (*(uint *)(iVar2 + 0xc) == 2) {
       RestoreGrpData(this_00,iVar2);
@@ -84,7 +87,7 @@ undefined4 __thiscall STGroupC::GetMessage(STGroupC *this,AnonShape_00423EC0_64C
       return 0;
     }
   }
-  else if (param_1->field_0010 == 3) {
+  else if (message->id == MESS_SHARED_0003) {
     thunk_FUN_00423e00(this_00);
     DArrayDestroy((DArrayTy *)this_00->field_0029);
     this_00->field_0029 = 0;

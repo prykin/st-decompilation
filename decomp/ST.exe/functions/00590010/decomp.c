@@ -41,8 +41,8 @@ STSharkC::CreateShark
   local_c = param_5;
   if ((((param_1 < 0) || (param_2 < 0)) || (param_3 < 0)) ||
      (((g_worldGrid.sizeX <= param_1 || (g_worldGrid.sizeY <= param_2)) || (4 < param_3)))) {
-    iVar3 = ReportDebugMessage(s_E____titans_Igor_To_shark_cpp_007cbb7c,0x4bb,0,0,&DAT_007a4ccc,
-                               s_STSharkC__CreateShark___Bad_para_007cbbf4);
+    iVar3 = ReportDebugMessage("E:\\__titans\\Igor\\To_shark.cpp",0x4bb,0,0,"%s",
+                               "STSharkC::CreateShark - Bad paramaters");
     if (iVar3 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }

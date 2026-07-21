@@ -65,10 +65,10 @@ void __thiscall HelpPanelTy::TechProc(HelpPanelTy *this,uint param_1,byte param_
   this_00 = local_44;
   if (iVar6 != 0) {
     g_currentExceptionFrame = local_88.previous;
-    iVar17 = ReportDebugMessage(s_E____titans_Andrey_helppan_cpp_007c383c,0x55a,0,iVar6,
-                                &DAT_007a4ccc,s_HelpPanelTy__TechProc_007c3c44);
+    iVar17 = ReportDebugMessage("E:\\__titans\\Andrey\\helppan.cpp",0x55a,0,iVar6,
+                                "%s","HelpPanelTy::TechProc");
     if (iVar17 == 0) {
-      RaiseInternalException(iVar6,0,s_E____titans_Andrey_helppan_cpp_007c383c,0x55a);
+      RaiseInternalException(iVar6,0,"E:\\__titans\\Andrey\\helppan.cpp",0x55a);
       return;
     }
     STDebugBreak(); /* noreturn in standalone pseudocode */
@@ -95,7 +95,7 @@ void __thiscall HelpPanelTy::TechProc(HelpPanelTy *this,uint param_1,byte param_
       *(undefined4 *)&local_44->field_0x30 = local_44->field_0178;
       if (PTR_00802a30 != (CursorClassTy *)0x0) {
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-        (*(code *)**(undefined4 **)PTR_00802a30)(&local_44->field_0x18);
+        (**(code **)PTR_00802a30->field_0000)(&local_44->field_0x18);
       }
     }
   }
@@ -254,7 +254,7 @@ LAB_00516f6b:
   ccFntTy::SetSurf(this_00->field_01E8,(int)this_00->field_0218,0,0x96,local_8 - 3,0x106,0x14);
   local_38 = (uint)param_2;
   iVar6 = (local_38 + param_1 * 4) * 4;
-  wsprintfA((LPSTR)&DAT_0080f33a,&DAT_007c1ae4,*(undefined4 *)(&DAT_007e4818 + iVar6));
+  wsprintfA((LPSTR)&DAT_0080f33a,"%4d",*(undefined4 *)(&DAT_007e4818 + iVar6));
   ccFntTy::WrStr(this_00->field_01E8,&DAT_0080f33a,1,-1,
                  (-(uint)(DAT_0080874e != '\x03') & 0xfffffffe) + 3);
   local_40 = FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_0238,
@@ -279,7 +279,7 @@ LAB_00516f6b:
   ccFntTy::WrStr(this_00->field_01E0,puVar9,iVar17,iVar18,uVar19);
   ccFntTy::SetSurf(this_00->field_01E0,(int)this_00->field_0218,0,0x96,local_8,0x106,0xf);
   iVar6 = (*(int *)(&DAT_007e5474 + iVar6) / 0x19) % 0xe10;
-  wsprintfA((LPSTR)&DAT_0080f33a,s__02d__02d_007c3c60,iVar6 / 0x3c,iVar6 % 0x3c);
+  wsprintfA((LPSTR)&DAT_0080f33a,"%02d:%02d",iVar6 / 0x3c,iVar6 % 0x3c);
   ccFntTy::WrStr(this_00->field_01E0,&DAT_0080f33a,1,-1,2);
   local_8 = local_8 + 0xf;
   ccFntTy::SetSurf(this_00->field_01E0,(int)this_00->field_0218,0,0,local_8,0x91,0xf);

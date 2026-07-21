@@ -27,7 +27,7 @@ void __thiscall CPanelTy::OutText(CPanelTy *this,int *param_1,undefined4 param_2
   pCVar3 = local_c;
   if (errorCode == 0) {
     puVar4 = ccFntTy::FormIndentSarr
-                       (local_c->field_01D0,(uint *)*param_1,s________________007c21d8,
+                       (local_c->field_01D0,(uint *)*param_1," ,.;:!?/\\()[]{}",
                         (uint *)&DAT_007c21ec,local_c->field_0104,0,0xffffffff,(char *)0x0,1);
     if ((AnonShape_006B5570_4D68B99C *)*param_1 != (AnonShape_006B5570_4D68B99C *)0x0) {
       FUN_006b5570((AnonShape_006B5570_4D68B99C *)*param_1);
@@ -63,12 +63,12 @@ void __thiscall CPanelTy::OutText(CPanelTy *this,int *param_1,undefined4 param_2
     return;
   }
   g_currentExceptionFrame = local_50.previous;
-  iVar6 = ReportDebugMessage(s_E____titans_Andrey_cpanel_cpp_007c1bd8,0x32f,0,errorCode,
-                             &DAT_007a4ccc,s_CPanelTy__OutText__str_arr__time_007c21b0);
+  iVar6 = ReportDebugMessage("E:\\__titans\\Andrey\\cpanel.cpp",0x32f,0,errorCode,
+                             "%s","CPanelTy::OutText(*str_arr, time)");
   if (iVar6 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  RaiseInternalException(errorCode,0,s_E____titans_Andrey_cpanel_cpp_007c1bd8,0x32f);
+  RaiseInternalException(errorCode,0,"E:\\__titans\\Andrey\\cpanel.cpp",0x32f);
   return;
 }
 

@@ -85,7 +85,7 @@ void __thiscall MReportTy::DoneMReport(MReportTy *this)
     if (pMVar2->field_0087 != (ccFntTy *)0x0) {
       ccFntTy::operator(this_00,(uint *)pMVar2->field_0087);
       pMVar2->field_0087 = (ccFntTy *)0x0;
-      PTR_0081176c->field_0038 = 0;
+      PTR_0081176c->field_0038 = (ccFntTy *)0x0;
       /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
       this_00 = extraout_ECX_01;
     }
@@ -101,12 +101,12 @@ void __thiscall MReportTy::DoneMReport(MReportTy *this)
     return;
   }
   g_currentExceptionFrame = local_4c.previous;
-  iVar4 = ReportDebugMessage(s_E____titans_Start_rpt_obj_cpp_007ccec8,0xe5,0,iVar3,&DAT_007a4ccc,
-                             s_MReportTy__DoneMReport_007ccf7c);
+  iVar4 = ReportDebugMessage("E:\\__titans\\Start\\rpt_obj.cpp",0xe5,0,iVar3,"%s",
+                             "MReportTy::DoneMReport");
   if (iVar4 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  RaiseInternalException(iVar3,0,s_E____titans_Start_rpt_obj_cpp_007ccec8,0xe5);
+  RaiseInternalException(iVar3,0,"E:\\__titans\\Start\\rpt_obj.cpp",0xe5);
   return;
 }
 

@@ -50,11 +50,11 @@ int __thiscall TLOBaseTy::ReloadLogoPlane(TLOBaseTy *this)
           } while (iVar7 < iVar5);
         }
       }
-      wsprintfA(local_15c,s__s_1i_007ac908,pTVar4->field_05F3,pTVar4->field_05C0);
+      wsprintfA(local_15c,"%s%1i",pTVar4->field_05F3,pTVar4->field_05C0);
       iVar5 = STT3DSprC::LoadSequence((STT3DSprC *)puVar1,0xd,DAT_0080678c,local_15c,0x1d);
       if (iVar5 != 0) {
         RaiseInternalException
-                  (iVar5,g_overwriteContext_007ED77C,s_E____titans_Artem_TLO_bspr_cpp_007ad4d0,0xd3)
+                  (iVar5,g_overwriteContext_007ED77C,"E:\\__titans\\Artem\\TLO_bspr.cpp",0xd3)
         ;
       }
       thunk_FUN_004abce0(puVar1,0xd,local_10,local_14,'\0');
@@ -92,11 +92,11 @@ int __thiscall TLOBaseTy::ReloadLogoPlane(TLOBaseTy *this)
           } while (iVar7 < iVar5);
         }
       }
-      wsprintfA(local_15c,s__s_cover_1i_007ac8ec,pTVar4->field_05F3,pTVar4->field_05C0);
+      wsprintfA(local_15c,"%s_cover%1i",pTVar4->field_05F3,pTVar4->field_05C0);
       iVar5 = STT3DSprC::LoadSequence((STT3DSprC *)puVar1,8,DAT_0080678c,local_15c,0x1d);
       if (iVar5 != 0) {
         RaiseInternalException
-                  (iVar5,g_overwriteContext_007ED77C,s_E____titans_Artem_TLO_bspr_cpp_007ad4d0,0xea)
+                  (iVar5,g_overwriteContext_007ED77C,"E:\\__titans\\Artem\\TLO_bspr.cpp",0xea)
         ;
       }
       thunk_FUN_004abce0(puVar1,8,local_10,local_14,'\0');
@@ -116,12 +116,12 @@ int __thiscall TLOBaseTy::ReloadLogoPlane(TLOBaseTy *this)
     return 0;
   }
   g_currentExceptionFrame = local_5c.previous;
-  iVar7 = ReportDebugMessage(s_E____titans_Artem_TLO_bspr_cpp_007ad4d0,0xf6,0,iVar5,&DAT_007a4ccc,
-                             s_TLOBaseTy__ReloadLogoPlane_error_007ad4f8);
+  iVar7 = ReportDebugMessage("E:\\__titans\\Artem\\TLO_bspr.cpp",0xf6,0,iVar5,"%s",
+                             "TLOBaseTy::ReloadLogoPlane error");
   if (iVar7 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  RaiseInternalException(iVar5,0,s_E____titans_Artem_TLO_bspr_cpp_007ad4d0,0xf7);
+  RaiseInternalException(iVar5,0,"E:\\__titans\\Artem\\TLO_bspr.cpp",0xf7);
   return iVar5;
 }
 

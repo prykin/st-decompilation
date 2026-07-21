@@ -32,7 +32,8 @@ FUN_005fd750(uint param_1,undefined2 param_2,undefined2 param_3,undefined2 param
   local_30[0] = 0x82;
   pSVar1 = STAllPlayersC::GetObjPtr(g_sTAllPlayers_007FA174,(char)param_1,param_5,CASE_1);
   if (pSVar1 != (STGameObjC *)0x0) {
-    iVar2 = (*pSVar1->vtable[1].vfunc_24)();
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+    iVar2 = (**(code **)&pSVar1->vtable[1].field_0x28)();
     if (iVar2 != 0) {
       local_16 = pSVar1->field_0018;
     }

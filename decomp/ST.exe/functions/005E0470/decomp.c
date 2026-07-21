@@ -42,10 +42,10 @@ void __thiscall MTaskTy::DoneMTask(MTaskTy *this)
   iVar2 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
   if (iVar2 != 0) {
     g_currentExceptionFrame = local_4c.previous;
-    iVar5 = ReportDebugMessage(s_E____titans_Start_task_obj_cpp_007cd994,299,0,iVar2,&DAT_007a4ccc,
-                               s_MTaskTy__DoneMTask_007cda70);
+    iVar5 = ReportDebugMessage("E:\\__titans\\Start\\task_obj.cpp",299,0,iVar2,"%s",
+                               "MTaskTy::DoneMTask");
     if (iVar5 == 0) {
-      RaiseInternalException(iVar2,0,s_E____titans_Start_task_obj_cpp_007cd994,299);
+      RaiseInternalException(iVar2,0,"E:\\__titans\\Start\\task_obj.cpp",299);
       return;
     }
     STDebugBreak(); /* noreturn in standalone pseudocode */
@@ -58,9 +58,9 @@ void __thiscall MTaskTy::DoneMTask(MTaskTy *this)
     StartSystemTy::sub_006E56B0(this_00->field_000C,this_00->field_0488);
     this_00->field_0488 = 0;
   }
-  if (-1 < (int)this_00->field_063F) {
+  if (-1 < this_00->field_063F) {
     FUN_006b3bb0(DAT_008075a8,this_00->field_063F);
-    this_00->field_063F = 0xffffffff;
+    this_00->field_063F = -1;
   }
   SpriteClassTy::CloseSprite((SpriteClassTy *)&this_00->field_048C);
   SpriteClassTy::CloseSprite((SpriteClassTy *)&this_00->field_051D);
@@ -68,14 +68,14 @@ void __thiscall MTaskTy::DoneMTask(MTaskTy *this)
   if ((AnonShape_006B5570_4D68B99C *)this_00->field_0643 != (AnonShape_006B5570_4D68B99C *)0x0) {
     FUN_006b5570((AnonShape_006B5570_4D68B99C *)this_00->field_0643);
   }
-  this_00->field_0643 = 0;
+  this_00->field_0643 = (AnonPointee_MTaskTy_0643 *)0x0;
   if (this_00->field_02CD != 0) {
     StartSystemTy::sub_006E56B0(this_00->field_000C,this_00->field_02CD);
     this_00->field_02CD = 0;
   }
-  if (-1 < (int)this_00->field_0484) {
+  if (-1 < this_00->field_0484) {
     FUN_006b3bb0(DAT_008075a8,this_00->field_0484);
-    this_00->field_0484 = 0xffffffff;
+    this_00->field_0484 = -1;
   }
   SpriteClassTy::CloseSprite((SpriteClassTy *)&this_00->field_02D1);
   SpriteClassTy::CloseSprite((SpriteClassTy *)&this_00->field_0362);
@@ -203,13 +203,13 @@ LAB_005e072b:
   }
   this_00->field_0081 = 0;
   pcVar6 = (cMf32 *)0x0;
-  if (this_00->field_005D != 0) {
+  if (this_00->field_005D != (cMf32 *)0x0) {
     pcVar6 = g_cMf32_00806780;
     if ((this_00->field_0080 != '\x01') &&
        (pcVar6 = g_cMf32_00806798, this_00->field_0080 != '\x02')) {
       pcVar6 = this_00->field_0070;
     }
-    cMf32::RecMemFree(pcVar6,&this_00->field_005D);
+    cMf32::RecMemFree(pcVar6,(uint *)&this_00->field_005D);
     /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
     pcVar6 = extraout_ECX_02;
   }

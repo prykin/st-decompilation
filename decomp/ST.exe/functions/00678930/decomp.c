@@ -10,6 +10,6 @@
 dword __thiscall AiPlrClassTy::FUN_00678930(AiPlrClassTy *this)
 
 {
-  return *(dword *)&this->field_0x5bb;
+  return this->field_05BB;
 }
 

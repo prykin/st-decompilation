@@ -14,7 +14,7 @@ undefined4 __thiscall STBoatC::sub_0045FF50(STBoatC *this,int param_1)
   void *unaff_EDI;
 
   if (param_1 == 0) {
-    this_00 = thunk_FUN_0042b760(this->field_0x24,(uint)(ushort)this->field_0030);
+    this_00 = thunk_FUN_0042b760(*(char *)&this->field_0024,(uint)(ushort)this->field_0030);
     if (this_00 != (STGroupBoatC *)0x0) {
       thunk_FUN_0040ae40(this_00,(uint)(ushort)this->field_0032,'\0');
       iVar1 = thunk_FUN_0040d540((AnonShape_0040D540_1BB7A4CF *)this_00,
@@ -48,23 +48,23 @@ switchD_00460024_caseD_1:
         if ((this->field_06F7 != CASE_B) && (this->field_06F7 != CASE_23)) {
           return 2;
         }
-        if (*(int *)&this->field_0x21d != 1) {
+        if (this->field_021D != 1) {
           return 2;
         }
-        if (*(uint *)&this->field_0x24 != (uint)DAT_0080874d) {
+        if (this->field_0024 != (uint)DAT_0080874d) {
           return 2;
         }
         /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
         FUN_006e6780((void *)this->field_0211,
-                     CONCAT22(CONCAT11(2,(char)((uint)this->field_0018 >> 0x10)),
-                              *(undefined2 *)&this->field_0018));
+                     CONCAT22(CONCAT11(2,(char)(this->field_0018 >> 0x10)),(short)this->field_0018))
+        ;
         /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
         FUN_006e6710((void *)this->field_0211,
                      (float)(int)this->field_0041 * _DAT_007904f8 * _DAT_007904f0,
                      (float)(int)this->field_0043 * _DAT_007904f8 * _DAT_007904f0,
-                     (uint)((float)*(int *)&this->field_0x10d * _DAT_007904f8 + _DAT_007904f4),0x28,
-                     CONCAT22(CONCAT11(2,(char)((uint)this->field_0018 >> 0x10)),
-                              *(undefined2 *)&this->field_0018));
+                     (uint)((float)this->field_010D * _DAT_007904f8 + _DAT_007904f4),0x28,
+                     CONCAT22(CONCAT11(2,(char)(this->field_0018 >> 0x10)),(short)this->field_0018))
+        ;
         return 2;
       case 1:
         goto switchD_00460024_caseD_1;

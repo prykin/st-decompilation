@@ -25,12 +25,12 @@ AiEventClassTy::_CreateDest
   iVar3 = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0);
   if (iVar3 != 0) {
     g_currentExceptionFrame = local_50.previous;
-    iVar4 = ReportDebugMessage(s_E____titans_ai_ai_event_cpp_007d2a34,0x13c,0,iVar3,&DAT_007a4ccc,
-                               s_AiEventClassTy___CreateDest_007d2b04);
+    iVar4 = ReportDebugMessage("E:\\__titans\\ai\\ai_event.cpp",0x13c,0,iVar3,"%s",
+                               "AiEventClassTy::_CreateDest");
     if (iVar4 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    RaiseInternalException(iVar3,0,s_E____titans_ai_ai_event_cpp_007d2a34,0x13d);
+    RaiseInternalException(iVar3,0,"E:\\__titans\\ai\\ai_event.cpp",0x13d);
     return iVar3;
   }
   if ((param_1 == 0) || (bVar2 = false, param_1 == 1)) {

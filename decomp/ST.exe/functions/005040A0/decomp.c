@@ -43,12 +43,12 @@ void __thiscall CPanelTy::PaintMap(CPanelTy *this)
     return;
   }
   g_currentExceptionFrame = local_4c.previous;
-  iVar6 = ReportDebugMessage(s_E____titans_Andrey_cpanel3_cpp_007c26a0,0x13,0,iVar3,&DAT_007a4ccc,
-                             s_CPanelTy__PaintMap_007c26c8);
+  iVar6 = ReportDebugMessage("E:\\__titans\\Andrey\\cpanel3.cpp",0x13,0,iVar3,"%s",
+                             "CPanelTy::PaintMap");
   if (iVar6 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  RaiseInternalException(iVar3,0,s_E____titans_Andrey_cpanel3_cpp_007c26a0,0x13);
+  RaiseInternalException(iVar3,0,"E:\\__titans\\Andrey\\cpanel3.cpp",0x13);
   return;
 }
 

@@ -51,12 +51,12 @@ undefined4 __thiscall CPanelTy::ShiftControls(CPanelTy *this,int param_1)
     return 1;
   }
   g_currentExceptionFrame = local_4c.previous;
-  iVar3 = ReportDebugMessage(s_E____titans_Andrey_cpanel_cpp_007c1bd8,0x42b,0,iVar2,&DAT_007a4ccc,
-                             s_CPanelTy__ShiftControls_007c22a0);
+  iVar3 = ReportDebugMessage("E:\\__titans\\Andrey\\cpanel.cpp",0x42b,0,iVar2,"%s",
+                             "CPanelTy::ShiftControls");
   if (iVar3 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  RaiseInternalException(iVar2,0,s_E____titans_Andrey_cpanel_cpp_007c1bd8,0x42b);
+  RaiseInternalException(iVar2,0,"E:\\__titans\\Andrey\\cpanel.cpp",0x42b);
   return 1;
 }
 

@@ -28,7 +28,7 @@ void __thiscall STBoatC::ChangeActivity(STBoatC *this,int param_1)
     iVar2 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
     this_00 = local_8;
     if (iVar2 == 0) {
-      if ((param_1 == 1) && (*(uint *)&local_8->field_0x24 == (uint)DAT_0080874d)) {
+      if ((param_1 == 1) && (local_8->field_0024 == (uint)DAT_0080874d)) {
         switch(local_8->field_06F7) {
         case CASE_1:
           uVar4 = 0xc9;
@@ -163,12 +163,12 @@ void __thiscall STBoatC::ChangeActivity(STBoatC *this,int param_1)
       return;
     }
     g_currentExceptionFrame = local_4c.previous;
-    iVar3 = ReportDebugMessage(s_E____titans_wlad_To_boat_cpp_007a9d3c,0x3dc3,0,-1,&DAT_007a4ccc,
-                               s_STBoatC__ChangeActivity_007ab930);
+    iVar3 = ReportDebugMessage("E:\\__titans\\wlad\\To_boat.cpp",0x3dc3,0,-1,"%s",
+                               "STBoatC::ChangeActivity");
     if (iVar3 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    RaiseInternalException(iVar2,0,s_E____titans_wlad_To_boat_cpp_007a9d3c,0x3dc4);
+    RaiseInternalException(iVar2,0,"E:\\__titans\\wlad\\To_boat.cpp",0x3dc4);
   }
   return;
 }

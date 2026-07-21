@@ -50,11 +50,10 @@ void __fastcall FUN_00602be0(AnonShape_00602BE0_B1CC517D *param_1)
         ((((g_visibleClass_00802A88->field_00F8 != 0 &&
            (thunk_FUN_00558c00(g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,
                                (int)param_1->field_0255,(int)param_1->field_0257,&local_8,&local_c),
-           -1 < iVar2)) && (iVar2 < 5)) && ((-1 < local_8 && (local_8 < (int)pVVar1->field_0030)))))
-        ) && ((local_c = (&DAT_0079aed0)[iVar2] + local_c, -1 < local_c &&
-              (((local_c < (int)pVVar1->field_0034 && (pVVar1->field_004C != 0)) &&
-               (*(char *)(local_c * pVVar1->field_0030 + pVVar1->field_004C + local_8) == '\0'))))))
-    {
+           -1 < iVar2)) && (iVar2 < 5)) && ((-1 < local_8 && (local_8 < pVVar1->field_0030)))))) &&
+       ((local_c = (&DAT_0079aed0)[iVar2] + local_c, -1 < local_c &&
+        (((local_c < pVVar1->field_0034 && (pVVar1->field_004C != 0)) &&
+         (*(char *)(local_c * pVVar1->field_0030 + pVVar1->field_004C + local_8) == '\0')))))) {
       if (param_1->field_037A == '\0') {
         return;
       }

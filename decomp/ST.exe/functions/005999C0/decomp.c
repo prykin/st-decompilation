@@ -40,12 +40,11 @@ void __thiscall FSGSTy::PrepBkgMess(FSGSTy *this,char param_1)
       local_c = (-(uint)(param_1 != '\x01') & 0x129) + 0x1b8;
     }
     iVar3 = 1;
-    puVar7 = (undefined4 *)(pFVar2->field_005D + 0x28);
-    uVar4 = FUN_006b4fe0(pFVar2->field_005D);
-    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
+    puVar7 = (undefined4 *)&pFVar2->field_005D->field_0x28;
+    uVar4 = FUN_006b4fe0((int)pFVar2->field_005D);
     pAVar5 = (AnonPointee_FSGSTy_1AC0 *)
-             FUN_006b50c0(local_c,local_8,(uint)*(ushort *)(pFVar2->field_005D + 0xe),uVar4,puVar7,
-                          iVar3);
+             FUN_006b50c0(local_c,local_8,(uint)*(ushort *)&pFVar2->field_005D->field_0xe,uVar4,
+                          puVar7,iVar3);
     uVar4 = pFVar2->field_1ABC;
     *value = pAVar5;
     FUN_006b2410((int)DAT_008075a8,uVar4,(uint)pAVar5);
@@ -65,10 +64,10 @@ void __thiscall FSGSTy::PrepBkgMess(FSGSTy *this,char param_1)
     return;
   }
   g_currentExceptionFrame = local_54.previous;
-  iVar6 = ReportDebugMessage(s_E____titans_Start_fsgs_obj_cpp_007cbf70,0x3a8,0,iVar3,&DAT_007a4ccc,
-                             s_FSGSTy__PrepBkgMess_007cc1cc);
+  iVar6 = ReportDebugMessage("E:\\__titans\\Start\\fsgs_obj.cpp",0x3a8,0,iVar3,"%s",
+                             "FSGSTy::PrepBkgMess");
   if (iVar6 == 0) {
-    RaiseInternalException(iVar3,0,s_E____titans_Start_fsgs_obj_cpp_007cbf70,0x3a8);
+    RaiseInternalException(iVar3,0,"E:\\__titans\\Start\\fsgs_obj.cpp",0x3a8);
     return;
   }
   STDebugBreak(); /* noreturn in standalone pseudocode */

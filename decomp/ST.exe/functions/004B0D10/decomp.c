@@ -26,10 +26,10 @@ FUN_004b0d10(uint param_1,int param_2,int *param_3,int *param_4,int *param_5,int
   iVar3 = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0);
   if (iVar3 != 0) {
     g_currentExceptionFrame = local_50.previous;
-    iVar5 = ReportDebugMessage(s_E____titans_Artem_TLO_ai_cpp_007ac758,0x313,0,iVar3,&DAT_007a4ccc,
-                               s_TLOAiChkOrFindBuildingPlace_erro_007ac77c);
+    iVar5 = ReportDebugMessage("E:\\__titans\\Artem\\TLO_ai.cpp",0x313,0,iVar3,"%s",
+                               "TLOAiChkOrFindBuildingPlace error !");
     if (iVar5 == 0) {
-      RaiseInternalException(iVar3,0,s_E____titans_Artem_TLO_ai_cpp_007ac758,0x314);
+      RaiseInternalException(iVar3,0,"E:\\__titans\\Artem\\TLO_ai.cpp",0x314);
       return 0;
     }
     STDebugBreak(); /* noreturn in standalone pseudocode */

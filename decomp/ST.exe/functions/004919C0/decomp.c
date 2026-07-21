@@ -116,8 +116,8 @@ LAB_00491b42:
     local_20[4] = 0;
     break;
   default:
-    iVar10 = ReportDebugMessage(s_E____titans_wlad_To_boat_cpp_007a9d3c,0x5071,0,0,&DAT_007a4ccc,
-                                s_STBoatC__GetCellForLoading_zo_007abb04);
+    iVar10 = ReportDebugMessage("E:\\__titans\\wlad\\To_boat.cpp",0x5071,0,0,"%s",
+                                "STBoatC::GetCellForLoading zo");
     if (iVar10 == 0) {
       return 0xfffffffe;
     }

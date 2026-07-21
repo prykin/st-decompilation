@@ -20,29 +20,29 @@ bool __thiscall STCrabC::Bad(STCrabC *this,int param_1)
 
   iVar5 = (int)g_worldGrid.sizeX;
   iVar4 = (int)g_worldGrid.sizeY;
-  if ((((iVar5 + -1 < *(int *)&this->field_0x26d) || (*(int *)&this->field_0x26d < 0)) ||
-      (iVar4 + -1 < *(int *)&this->field_0x271)) || (*(int *)&this->field_0x271 < 0)) {
-    iVar3 = ReportDebugMessage(s_E____titans_Igor_to_crab_cpp_007cad4c,0x202,0,0,&DAT_007a4ccc,
-                               s_STCrabC__Bad_birth_coordinate___a_007cade4);
+  if ((((iVar5 + -1 < this->field_026D) || (this->field_026D < 0)) ||
+      (iVar4 + -1 < this->field_0271)) || (this->field_0271 < 0)) {
+    iVar3 = ReportDebugMessage("E:\\__titans\\Igor\\to_crab.cpp",0x202,0,0,"%s",
+                               "STCrabC::Bad birth coordinate - adjusting");
     if (iVar3 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
       return (bool)uVar2;
     }
-    *(int *)&this->field_0x26d = iVar5 + -1 >> 1;
-    *(int *)&this->field_0x271 = iVar4 + -1 >> 1;
+    this->field_026D = iVar5 + -1 >> 1;
+    this->field_0271 = iVar4 + -1 >> 1;
   }
-  if (((int)this->field_0275 < 0) || (4 < (int)this->field_0275)) {
-    iVar4 = ReportDebugMessage(s_E____titans_Igor_to_crab_cpp_007cad4c,0x207,0,0,&DAT_007a4ccc,
-                               s_STCrabC__Bad_birth_coordinate___a_007cade4);
+  if ((this->field_0275 < 0) || (4 < this->field_0275)) {
+    iVar4 = ReportDebugMessage("E:\\__titans\\Igor\\to_crab.cpp",0x207,0,0,"%s",
+                               "STCrabC::Bad birth coordinate - adjusting");
     if (iVar4 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
       return (bool)uVar2;
     }
     this->field_0275 = 0;
   }
-  if (0x167 < (int)this->field_027D) {
-    iVar4 = ReportDebugMessage(s_E____titans_Igor_to_crab_cpp_007cad4c,0x20c,0,0,&DAT_007a4ccc,
-                               s_STCrabC__Bad_coordinates___adjus_007cadb4);
+  if (0x167 < this->field_027D) {
+    iVar4 = ReportDebugMessage("E:\\__titans\\Igor\\to_crab.cpp",0x20c,0,0,"%s",
+                               "STCrabC::Bad coordinates - adjusting ");
     if (iVar4 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
       return (bool)uVar2;
@@ -51,8 +51,7 @@ bool __thiscall STCrabC::Bad(STCrabC *this,int param_1)
   }
   iVar4 = 0;
   do {
-    iVar5 = thunk_FUN_004961b0(*(short *)&this->field_0x26d,*(short *)&this->field_0x271,
-                               (short)iVar4);
+    iVar5 = thunk_FUN_004961b0((short)this->field_026D,(short)this->field_0271,(short)iVar4);
     if (iVar5 != 0) {
       this->field_0275 = iVar4;
       return SUB41(iVar5,0);

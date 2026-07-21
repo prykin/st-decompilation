@@ -28,19 +28,19 @@ undefined4 __thiscall STBoatC::sub_0045F6C0(STBoatC *this)
   int iVar16;
 
   iVar14 = 0;
-  uVar6 = GetPlayerRaceId(this->field_0x24);
+  uVar6 = GetPlayerRaceId(*(char *)&this->field_0024);
   uVar6 = uVar6 & 0xff;
   if (uVar6 == 1) {
-    iVar14 = *(int *)&this->field_0x24;
+    iVar14 = this->field_0024;
     iVar16 = 5;
   }
   else if (uVar6 == 2) {
-    iVar14 = *(int *)&this->field_0x24;
+    iVar14 = this->field_0024;
     iVar16 = 0x82;
   }
   else {
     if (uVar6 != 3) goto LAB_0045f710;
-    iVar14 = *(int *)&this->field_0x24;
+    iVar14 = this->field_0024;
     iVar16 = 0x6d;
   }
   iVar14 = thunk_FUN_004e60d0(iVar14,iVar16);
@@ -86,14 +86,12 @@ LAB_0045f710:
   {
     bVar4 = bVar4 >> 1;
   }
-  iVar8 = STJellyGunC::sub_00415B30
-                    ((STJellyGunC *)this,this->field_0041,this->field_0043,this->field_0045,sVar13,
-                     sVar5,(short)iVar10,bVar4);
+  iVar8 = sub_00415B30(this,this->field_0041,this->field_0043,this->field_0045,sVar13,sVar5,
+                       (short)iVar10,bVar4);
   if (iVar8 != 0) {
     return 0xffffffff;
   }
-  if ((*(short *)&this->field_0x8c != 1) &&
-     ((this->field_0041 != sVar13 || (this->field_0043 != sVar5)))) {
+  if ((this->field_008C != 1) && ((this->field_0041 != sVar13 || (this->field_0043 != sVar5)))) {
     bVar3 = false;
     bVar2 = false;
     if ((iVar14 != 0) && (0x23a < (iVar7 * 100) / iVar14)) {

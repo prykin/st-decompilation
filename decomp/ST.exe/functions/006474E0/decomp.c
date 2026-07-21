@@ -31,7 +31,7 @@ undefined4 __thiscall STVolcanoC::LoadImagVolcano(STVolcanoC *this,int param_1)
   if (errorCode == 0) {
     if ((param_1 == 0) || (param_1 == 2)) {
       puVar3 = Library::Ourlib::MFRLOAD::mfRLoad
-                         (DAT_00806764,CASE_1D,s_expl_vol_007d26b0,0xffffffff,0,1,0,
+                         (DAT_00806764,CASE_1D,"expl_vol",0xffffffff,0,1,0,
                           (undefined4 *)0x0);
       FUN_006e8660(PTR_00807598,(int *)&local_8,1,0,*(uint *)((int)puVar3 + 9),
                    *(uint *)((int)puVar3 + 0xd),0x5a,0x2f,0);
@@ -45,7 +45,7 @@ undefined4 __thiscall STVolcanoC::LoadImagVolcano(STVolcanoC *this,int param_1)
       pSVar2->field_0061 = puVar3;
       pSVar2->field_005D = local_8;
       puVar3 = Library::Ourlib::MFRLOAD::mfRLoad
-                         (DAT_00806764,CASE_1D,s_expl_vob_007d26c8,0xffffffff,0,1,0,
+                         (DAT_00806764,CASE_1D,"expl_vob",0xffffffff,0,1,0,
                           (undefined4 *)0x0);
       FUN_006e8660(PTR_00807598,(int *)&local_c,1,0,*(uint *)((int)puVar3 + 9),
                    *(uint *)((int)puVar3 + 0xd),0x40,0x6a,0);
@@ -60,7 +60,7 @@ undefined4 __thiscall STVolcanoC::LoadImagVolcano(STVolcanoC *this,int param_1)
     }
     if ((param_1 != 0) && ((int)pSVar2->field_007A < 0)) {
       puVar3 = Library::Ourlib::MFRLOAD::mfRLoad
-                         (DAT_00806764,CASE_1D,s_expl_vop_007d26bc,0xffffffff,0,1,0,
+                         (DAT_00806764,CASE_1D,"expl_vop",0xffffffff,0,1,0,
                           (undefined4 *)0x0);
       FUN_006e8660(PTR_00807598,(int *)&local_10,1,0,*(uint *)((int)puVar3 + 9),
                    *(uint *)((int)puVar3 + 0xd),0x4b,0x7e,0);
@@ -77,12 +77,12 @@ undefined4 __thiscall STVolcanoC::LoadImagVolcano(STVolcanoC *this,int param_1)
     return local_18;
   }
   g_currentExceptionFrame = local_5c.previous;
-  iVar4 = ReportDebugMessage(s_E____titans_nick_to_volc_cpp_007d26e4,0x214,0,errorCode,&DAT_007a4ccc
-                             ,s_STVolcanoC__LoadImagVolcano_007d2724);
+  iVar4 = ReportDebugMessage("E:\\__titans\\nick\\to_volc.cpp",0x214,0,errorCode,"%s"
+                             ,"STVolcanoC::LoadImagVolcano");
   if (iVar4 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  RaiseInternalException(errorCode,0,s_E____titans_nick_to_volc_cpp_007d26e4,0x216);
+  RaiseInternalException(errorCode,0,"E:\\__titans\\nick\\to_volc.cpp",0x216);
   return 0xffff;
 }
 

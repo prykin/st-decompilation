@@ -23,20 +23,20 @@ uint * __cdecl CreateAssistantList(int param_1,int param_2,uint param_3)
   if (errorCode == 0) {
     if (param_1 == 0) {
       RaiseInternalException
-                (-0x34,g_overwriteContext_007ED77C,s_E____titans_ai_ai_plr_d_cpp_007d2fa4,0x16b);
+                (-0x34,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_plr_d.cpp",0x16b);
     }
     puVar2 = _CreateStgListByRoot((cMf32 *)param_1,param_2,PTR_s_ASSISTANT_0079d724,param_3);
     g_currentExceptionFrame = local_4c.previous;
     return puVar2;
   }
   g_currentExceptionFrame = local_4c.previous;
-  iVar3 = ReportDebugMessage(s_E____titans_ai_ai_plr_d_cpp_007d2fa4,0x16e,0,errorCode,&DAT_007a4ccc,
-                             s_CreateAssistantList_007d3024);
+  iVar3 = ReportDebugMessage("E:\\__titans\\ai\\ai_plr_d.cpp",0x16e,0,errorCode,"%s",
+                             "CreateAssistantList");
   if (iVar3 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   DArrayDestroy(local_8);
-  RaiseInternalException(errorCode,0,s_E____titans_ai_ai_plr_d_cpp_007d2fa4,0x170);
+  RaiseInternalException(errorCode,0,"E:\\__titans\\ai\\ai_plr_d.cpp",0x170);
   return (uint *)0x0;
 }
 

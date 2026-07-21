@@ -80,7 +80,7 @@ void __thiscall HelpPanelTy::SubProc(HelpPanelTy *this,int param_1,char param_2)
           *(undefined4 *)&local_40->field_0x30 = local_40->field_0178;
           if (PTR_00802a30 != (CursorClassTy *)0x0) {
             /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-            (*(code *)**(undefined4 **)PTR_00802a30)(&local_40->field_0x18);
+            (**(code **)PTR_00802a30->field_0000)(&local_40->field_0x18);
           }
         }
       }
@@ -169,7 +169,7 @@ void __thiscall HelpPanelTy::SubProc(HelpPanelTy *this,int param_1,char param_2)
       if (local_c != 0) {
         ccFntTy::SetSurf(this_00->field_01E8,(int)this_00->field_0218,0,0x96,local_8 - 3,0x106,0x14)
         ;
-        wsprintfA((LPSTR)&DAT_0080f33a,&DAT_007c1ae4,local_c);
+        wsprintfA((LPSTR)&DAT_0080f33a,"%4d",local_c);
         ccFntTy::WrStr(this_00->field_01E8,&DAT_0080f33a,1,-1,
                        (-(uint)(DAT_0080874e != '\x03') & 0xfffffffb) + 7);
         iVar6 = FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_0238,
@@ -190,7 +190,7 @@ void __thiscall HelpPanelTy::SubProc(HelpPanelTy *this,int param_1,char param_2)
       if (local_c != 0) {
         ccFntTy::SetSurf(this_00->field_01E8,(int)this_00->field_0218,0,0x96,local_8 - 3,0x106,0x14)
         ;
-        wsprintfA((LPSTR)&DAT_0080f33a,&DAT_007c1ae4,local_c);
+        wsprintfA((LPSTR)&DAT_0080f33a,"%4d",local_c);
         ccFntTy::WrStr(this_00->field_01E8,&DAT_0080f33a,1,-1,(DAT_0080874e != '\x03') - 1 & 4);
         local_14 = (AnonShape_00518C20_0B2995D2 *)
                    FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_0238,0);
@@ -210,7 +210,7 @@ void __thiscall HelpPanelTy::SubProc(HelpPanelTy *this,int param_1,char param_2)
       if (local_c != 0) {
         ccFntTy::SetSurf(this_00->field_01E8,(int)this_00->field_0218,0,0x96,local_8 - 3,0x106,0x14)
         ;
-        wsprintfA((LPSTR)&DAT_0080f33a,&DAT_007c1ae4,local_c);
+        wsprintfA((LPSTR)&DAT_0080f33a,"%4d",local_c);
         ccFntTy::WrStr(this_00->field_01E8,&DAT_0080f33a,1,-1,
                        (-(uint)(DAT_0080874e != '\x03') & 0xfffffffb) + 6);
         local_14 = (AnonShape_00518C20_0B2995D2 *)
@@ -284,7 +284,7 @@ void __thiscall HelpPanelTy::SubProc(HelpPanelTy *this,int param_1,char param_2)
       puVar8 = (uint *)LoadResourceString(0x564c,HINSTANCE_00807618);
       ccFntTy::WrStr(this_00->field_01E0,puVar8,iVar6,iVar14,uVar10);
       ccFntTy::SetSurf(this_00->field_01E0,(int)this_00->field_0218,0,0,local_8,0x91,0xf);
-      wsprintfA((LPSTR)&DAT_0080f33a,&DAT_007c1890,*(undefined4 *)(&DAT_007dfbac + param_1 * 4));
+      wsprintfA((LPSTR)&DAT_0080f33a,"%d",*(undefined4 *)(&DAT_007dfbac + param_1 * 4));
       ccFntTy::WrStr(this_00->field_01E0,&DAT_0080f33a,-3,-1,2);
       local_8 = local_8 + 0xf;
       ccFntTy::SetSurf(this_00->field_01E0,(int)this_00->field_0218,0,0x96,local_8,0x106,0xf);
@@ -446,7 +446,7 @@ void __thiscall HelpPanelTy::SubProc(HelpPanelTy *this,int param_1,char param_2)
         puVar8 = (uint *)LoadResourceString(0x5651,HINSTANCE_00807618);
         ccFntTy::WrStr(this_00->field_01E0,puVar8,iVar6,iVar14,uVar10);
         ccFntTy::SetSurf(this_00->field_01E8,(int)this_00->field_0218,0,0x5f,local_8 - 3,0x16,0x14);
-        wsprintfA((LPSTR)&DAT_0080f33a,&DAT_007c1ae4,local_c);
+        wsprintfA((LPSTR)&DAT_0080f33a,"%4d",local_c);
         ccFntTy::WrStr(this_00->field_01E8,&DAT_0080f33a,1,-1,
                        (-(uint)(DAT_0080874e != '\x03') & 0xfffffffb) + 7);
         iVar6 = FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_0238,
@@ -469,12 +469,12 @@ void __thiscall HelpPanelTy::SubProc(HelpPanelTy *this,int param_1,char param_2)
       return;
     }
     g_currentExceptionFrame = local_a4.previous;
-    iVar14 = ReportDebugMessage(s_E____titans_Andrey_helppan_cpp_007c383c,0x6f4,0,iVar6,
-                                &DAT_007a4ccc,s_HelpPanelTy__SubProc_007c3c84);
+    iVar14 = ReportDebugMessage("E:\\__titans\\Andrey\\helppan.cpp",0x6f4,0,iVar6,
+                                "%s","HelpPanelTy::SubProc");
     if (iVar14 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    RaiseInternalException(iVar6,0,s_E____titans_Andrey_helppan_cpp_007c383c,0x6f4);
+    RaiseInternalException(iVar6,0,"E:\\__titans\\Andrey\\helppan.cpp",0x6f4);
   }
   return;
 }

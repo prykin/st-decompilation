@@ -115,7 +115,7 @@ void __thiscall STGroupBoatC::ReMakePatrolPoints(STGroupBoatC *this,int param_1)
         }
         uVar8 = local_c;
         iVar7 = iVar7 / 3;
-        if (iVar7 < (int)this->field_0242) {
+        if (iVar7 < this->field_0242) {
           FUN_006b0c70(array,local_c);
           local_8 = local_8 - 1;
           local_c = uVar8 - 1;
@@ -147,13 +147,13 @@ void __thiscall STGroupBoatC::ReMakePatrolPoints(STGroupBoatC *this,int param_1)
           uVar8 = uVar8 + 1;
         } while ((int)uVar8 < (int)pDVar6->count);
       }
-      iVar7 = ReportDebugMessage(s_E____titans_wlad_to_grpb_cpp_007abe3c,0x15ed,0,0,&DAT_007a4ccc,
-                                 s_STGroupBoatC__ReMakePatrolPoints_007ac450);
+      iVar7 = ReportDebugMessage("E:\\__titans\\wlad\\to_grpb.cpp",0x15ed,0,0,"%s",
+                                 "STGroupBoatC::ReMakePatrolPoints wrong index");
       if (iVar7 != 0) {
         STDebugBreak(); /* noreturn in standalone pseudocode */
       }
 LAB_004a77bb:
-      this->field_0232 = 0xffffffff;
+      this->field_0232 = -1;
       local_8 = local_c;
       if (this->field_0236 == 1) {
         pDVar6 = (DArrayTy *)this->field_0226;
@@ -199,8 +199,8 @@ LAB_004a77bb:
         this->field_0232 = 0;
       }
       if ((this->field_0232 == -1) &&
-         (iVar7 = ReportDebugMessage(s_E____titans_wlad_to_grpb_cpp_007abe3c,0x160e,0,0,
-                                     &DAT_007a4ccc,s_STGroupBoatC__ReMakePatrolPoints_007ac418),
+         (iVar7 = ReportDebugMessage("E:\\__titans\\wlad\\to_grpb.cpp",0x160e,0,0,
+                                     "%s","STGroupBoatC::ReMakePatrolPoints unknown error"),
          iVar7 != 0)) {
         STDebugBreak(); /* noreturn in standalone pseudocode */
       }

@@ -8,7 +8,7 @@
 undefined4 __thiscall STGroupBoatC::DistributeTargets(STGroupBoatC *this,uint *param_1)
 
 {
-  int *piVar1;
+  AnonPointee_STGroupBoatC_021E *pAVar1;
   code *pcVar2;
   STGroupBoatC *this_00;
   int iVar3;
@@ -18,7 +18,7 @@ undefined4 __thiscall STGroupBoatC::DistributeTargets(STGroupBoatC *this,uint *p
   undefined4 uVar7;
   DArrayTy *pDVar8;
   int iVar9;
-  int *piVar10;
+  AnonPointee_STGroupBoatC_021E *pAVar10;
   ushort uVar11;
   uint uVar12;
   uint uVar13;
@@ -71,17 +71,17 @@ undefined4 __thiscall STGroupBoatC::DistributeTargets(STGroupBoatC *this,uint *p
       }
       return 0;
     }
-    iVar9 = ReportDebugMessage(s_E____titans_wlad_to_grpb_cpp_007abe3c,0x5eb,0,iVar3,&DAT_007a4ccc,
-                               s_STGroupBoatC__DistributeTargets_007abf14);
+    iVar9 = ReportDebugMessage("E:\\__titans\\wlad\\to_grpb.cpp",0x5eb,0,iVar3,"%s",
+                               "STGroupBoatC::DistributeTargets");
     if (iVar9 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    RaiseInternalException(iVar3,0,s_E____titans_wlad_to_grpb_cpp_007abe3c,0x5ec);
+    RaiseInternalException(iVar3,0,"E:\\__titans\\wlad\\to_grpb.cpp",0x5ec);
     return 0xffffffff;
   }
   if (local_60->field_020E == 0) {
     RaiseInternalException
-              (-0x5001fff7,g_overwriteContext_007ED77C,s_E____titans_wlad_to_grpb_cpp_007abe3c,0x55a
+              (-0x5001fff7,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_grpb.cpp",0x55a
               );
   }
   Library::DKW::TBL::FUN_006afe40((int *)&local_10,param_1);
@@ -102,7 +102,7 @@ undefined4 __thiscall STGroupBoatC::DistributeTargets(STGroupBoatC *this,uint *p
                            (g_sTAllPlayers_007FA174,this_00->field_0024,local_c,CASE_1);
         if (pSVar4 == (STBoatC *)0x0) {
           RaiseInternalException
-                    (-0x5001fffc,g_overwriteContext_007ED77C,s_E____titans_wlad_to_grpb_cpp_007abe3c
+                    (-0x5001fffc,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_grpb.cpp"
                      ,0x564);
         }
         dVar5 = (*pSVar4->vtable->slot_2C)(pSVar4);
@@ -158,7 +158,7 @@ undefined4 __thiscall STGroupBoatC::DistributeTargets(STGroupBoatC *this,uint *p
     }
     if (this_00->field_0212 == 0) {
       RaiseInternalException
-                (-0x5001fff7,g_overwriteContext_007ED77C,s_E____titans_wlad_to_grpb_cpp_007abe3c,
+                (-0x5001fff7,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_grpb.cpp",
                  0x58f);
     }
     uVar12 = 0;
@@ -197,23 +197,23 @@ undefined4 __thiscall STGroupBoatC::DistributeTargets(STGroupBoatC *this,uint *p
               this_00->field_0031 = uVar12;
               local_54 = (uVar12 >> 0x10) % local_5c;
               iVar3 = 0;
-              if (0 < (int)this_00->field_021A) {
-                piVar1 = (int *)this_00->field_021E;
-                piVar10 = piVar1;
+              if (0 < this_00->field_021A) {
+                pAVar1 = this_00->field_021E;
+                pAVar10 = pAVar1;
                 uVar12 = local_54;
                 do {
-                  if ((*piVar10 != -1) &&
-                     (uVar11 = (short)uVar12 - (short)piVar10[1], uVar12 = (uint)uVar11,
+                  if ((pAVar10->field_0000 != -1) &&
+                     (uVar11 = (short)uVar12 - pAVar10->field_0004, uVar12 = (uint)uVar11,
                      (short)uVar11 < 1)) {
-                    if (local_50 < piVar1[iVar3 * 2 + 1]) {
-                      local_50 = piVar1[(short)iVar3 * 2 + 1];
+                    if (local_50 < *(int *)&pAVar1[iVar3].field_0004) {
+                      local_50 = *(int *)&pAVar1[(short)iVar3].field_0004;
                       local_58 = iVar3;
                     }
                     break;
                   }
                   iVar3 = iVar3 + 1;
-                  piVar10 = piVar10 + 2;
-                } while (iVar3 < (int)this_00->field_021A);
+                  pAVar10 = pAVar10 + 1;
+                } while (iVar3 < this_00->field_021A);
               }
               local_4c = local_4c + -1;
             } while (local_4c != 0);
@@ -252,9 +252,10 @@ undefined4 __thiscall STGroupBoatC::DistributeTargets(STGroupBoatC *this,uint *p
             if (pSVar6 == (STGameObjC *)0x0) {
               RaiseInternalException
                         (-0x5001fffc,g_overwriteContext_007ED77C,
-                         s_E____titans_wlad_to_grpb_cpp_007abe3c,0x5c4);
+                         "E:\\__titans\\wlad\\to_grpb.cpp",0x5c4);
             }
-            uVar7 = (*pSVar6->vtable->vfunc_2C)();
+            /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+            uVar7 = (**(code **)&pSVar6->vtable->field_0x2c)();
             switch(uVar7) {
             case 7:
             case 8:
@@ -268,8 +269,9 @@ undefined4 __thiscall STGroupBoatC::DistributeTargets(STGroupBoatC *this,uint *p
             case 0x24:
             case 0x25:
               break;
+            /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
             default:
-              iVar3 = (*pSVar6->vtable->vfunc_2C)();
+              iVar3 = (**(code **)&pSVar6->vtable->field_0x2c)();
               if (iVar3 == 0x17) {
                 pDVar16 = pDVar8;
                 if (pDVar8 == (DArrayTy *)0x0) {

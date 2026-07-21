@@ -21,12 +21,12 @@ void __thiscall MAdvTy::NoneMAdv(MAdvTy *this)
     return;
   }
   g_currentExceptionFrame = pIVar2;
-  iVar3 = ReportDebugMessage(s_E____titans_Start_adv_obj_cpp_007cbc24,0x57,0,errorCode,&DAT_007a4ccc
-                             ,s_MAdvTy__NoneMAdv_007cbc8c);
+  iVar3 = ReportDebugMessage("E:\\__titans\\Start\\adv_obj.cpp",0x57,0,errorCode,"%s"
+                             ,"MAdvTy::NoneMAdv");
   if (iVar3 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  RaiseInternalException(errorCode,0,s_E____titans_Start_adv_obj_cpp_007cbc24,0x57);
+  RaiseInternalException(errorCode,0,"E:\\__titans\\Start\\adv_obj.cpp",0x57);
   return;
 }
 

@@ -29,7 +29,7 @@ uint __cdecl FUN_0067fdf0(undefined4 param_1,byte *param_2)
     puVar2 = (undefined4 *)0x0;
   }
   if (puVar2 == (undefined4 *)0x0) {
-    RaiseInternalException(-2,g_overwriteContext_007ED77C,s___ai_ai_script_v_inl_007d55d8,0x21a);
+    RaiseInternalException(-2,g_overwriteContext_007ED77C,".\\ai\\ai_script_v.inl",0x21a);
   }
   thunk_FUN_0064a800(puVar2);
   *puVar2 = param_1;

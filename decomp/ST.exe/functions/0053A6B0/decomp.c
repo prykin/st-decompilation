@@ -23,10 +23,10 @@ void __thiscall PlayPanelTy::SwitchOptPanel(PlayPanelTy *this,int param_1)
   pPVar3 = local_8;
   if (errorCode != 0) {
     g_currentExceptionFrame = local_4c.previous;
-    iVar4 = ReportDebugMessage(s_E____titans_Andrey_playpan_cpp_007c7574,0xcb,0,errorCode,
-                               &DAT_007a4ccc,s_PlayPanelTy__SwitchOptPanel_007c7628);
+    iVar4 = ReportDebugMessage("E:\\__titans\\Andrey\\playpan.cpp",0xcb,0,errorCode,
+                               "%s","PlayPanelTy::SwitchOptPanel");
     if (iVar4 == 0) {
-      RaiseInternalException(errorCode,0,s_E____titans_Andrey_playpan_cpp_007c7574,0xcb);
+      RaiseInternalException(errorCode,0,"E:\\__titans\\Andrey\\playpan.cpp",0xcb);
       return;
     }
     STDebugBreak(); /* noreturn in standalone pseudocode */

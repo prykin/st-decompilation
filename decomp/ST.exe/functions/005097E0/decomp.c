@@ -75,12 +75,12 @@ void __thiscall CPanelTy::SetControlObj(CPanelTy *this,char param_1)
   iVar5 = Library::MSVCRT::__setjmp3(local_10c.jumpBuffer,0);
   if (iVar5 != 0) {
     g_currentExceptionFrame = local_10c.previous;
-    iVar11 = ReportDebugMessage(s_E____titans_Andrey_cpanel4_cpp_007c2700,0x53e,0,iVar5,
-                                &DAT_007a4ccc,s_CPanelTy__SetControlObj_007c2898);
+    iVar11 = ReportDebugMessage("E:\\__titans\\Andrey\\cpanel4.cpp",0x53e,0,iVar5,
+                                "%s","CPanelTy::SetControlObj");
     if (iVar11 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    RaiseInternalException(iVar5,0,s_E____titans_Andrey_cpanel4_cpp_007c2700,0x53e);
+    RaiseInternalException(iVar5,0,"E:\\__titans\\Andrey\\cpanel4.cpp",0x53e);
     return;
   }
   if (param_1 != '\0') {
@@ -220,7 +220,7 @@ LAB_00509b60:
       sVar17 = 0;
       uVar16 = 0xb13f;
       uVar15 = 0xb12f;
-      pCVar7 = thunk_FUN_00571240(s_BUT_SMALL_007c23b4,0);
+      pCVar7 = thunk_FUN_00571240("BUT_SMALL",0);
       uVar15 = CreateBut(this_00,5,0,(uint)(this_00->field_0BFC != '\0'),0x92,0x6e,1,pCVar7,uVar15,
                          uVar16,sVar17,uVar18,iVar5,pcVar6,iVar11,uVar21,uVar23);
       *local_18 = uVar15;
@@ -250,7 +250,7 @@ LAB_00509b60:
           sVar17 = 0;
           uVar15 = 0xb13f;
           iVar11 = iVar5;
-          pCVar7 = thunk_FUN_00571240(s_BUT_SMALL_007c23b4,0);
+          pCVar7 = thunk_FUN_00571240("BUT_SMALL",0);
           uVar15 = CreateBut(this_00,5,0,(uint)(this_00->field_0BFC != '\0'),0x92,(int)local_c,1,
                              pCVar7,iVar11,uVar15,sVar17,uVar18,iVar13,pcVar6,iVar20,uVar16,uVar21);
           *puVar8 = uVar15;
@@ -382,7 +382,7 @@ LAB_00509ddd:
         sVar17 = 0;
         uVar16 = 0xb13f;
         uVar15 = 0xb12f;
-        pCVar7 = thunk_FUN_00571240(s_BUT_SMALL_007c23b4,0);
+        pCVar7 = thunk_FUN_00571240("BUT_SMALL",0);
         cVar2 = this_00->field_0BFC;
 LAB_00509c11:
         uVar15 = CreateBut(this_00,5,0,(uint)(cVar2 != '\0'),0x92,0x6e,1,pCVar7,uVar15,uVar16,sVar17
@@ -403,7 +403,7 @@ LAB_00509c11:
         sVar17 = 0;
         uVar16 = 0xb13f;
         uVar15 = 0xb12f;
-        pCVar7 = thunk_FUN_00571240(s_BUT_SMALL_007c23b4,0);
+        pCVar7 = thunk_FUN_00571240("BUT_SMALL",0);
         cVar2 = this_00->field_0BFC;
         goto LAB_00509c11;
       }
@@ -414,7 +414,7 @@ LAB_00509c11:
         iVar5 = 0;
       }
       else {
-        iVar5 = (-(uint)(this_00->field_0C11 != '\0') & 2) + 1;
+        iVar5 = (-(uint)(this_00->field_0C11 != 0) & 2) + 1;
       }
       uVar23 = 0;
       uVar21 = 0;
@@ -425,7 +425,7 @@ LAB_00509c11:
       sVar17 = 0;
       uVar16 = 0xb12e;
       uVar15 = 0xb12d;
-      pCVar7 = thunk_FUN_00571240(s_BUT_AUTO_007c23c0,0);
+      pCVar7 = thunk_FUN_00571240("BUT_AUTO",0);
       uVar15 = CreateBut(this_00,5,3,iVar5,-1,0x58,1,pCVar7,uVar15,uVar16,sVar17,uVar18,iVar11,
                          pcVar6,iVar13,uVar21,uVar23);
       this_00->field_030C = uVar15;

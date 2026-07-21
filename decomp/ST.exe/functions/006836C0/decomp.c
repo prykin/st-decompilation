@@ -17,7 +17,7 @@ int __cdecl FUN_006836c0(int param_1,byte *param_2)
 
   if ((param_1 == 0) || (param_2 == (byte *)0x0)) {
     RaiseInternalException
-              (-0x34,g_overwriteContext_007ED77C,s_E____titans_ai_ai_script_cpp_007d5604,0x38a);
+              (-0x34,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",0x38a);
   }
   iVar2 = *(int *)(param_1 + 8);
   iVar6 = 0;

@@ -31,10 +31,10 @@ void __thiscall SettMapMTy::AddPlList(SettMapMTy *this,int param_1)
   errorCode = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0);
   if (errorCode != 0) {
     g_currentExceptionFrame = local_50.previous;
-    iVar4 = ReportDebugMessage(s_E____titans_Start_settmobj_cpp_007cd258,0x21b,0,errorCode,
-                               &DAT_007a4ccc,s_SettMapMTy__AddPlList_007cd348);
+    iVar4 = ReportDebugMessage("E:\\__titans\\Start\\settmobj.cpp",0x21b,0,errorCode,
+                               "%s","SettMapMTy::AddPlList");
     if (iVar4 == 0) {
-      RaiseInternalException(errorCode,0,s_E____titans_Start_settmobj_cpp_007cd258,0x21b);
+      RaiseInternalException(errorCode,0,"E:\\__titans\\Start\\settmobj.cpp",0x21b);
       return;
     }
     STDebugBreak(); /* noreturn in standalone pseudocode */

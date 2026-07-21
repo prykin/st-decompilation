@@ -25,12 +25,12 @@ MMObjTy::PaintSprBut(MMObjTy *this,int param_1,uint param_2,int param_3,int para
   pMVar3 = local_8;
   if (iVar4 != 0) {
     g_currentExceptionFrame = local_4c.previous;
-    iVar5 = ReportDebugMessage(s_E____titans_Start_mmenuobj_cpp_007cca38,0x8c,0,iVar4,&DAT_007a4ccc,
-                               s_MMObjTy__PaintSprBut_007cca94);
+    iVar5 = ReportDebugMessage("E:\\__titans\\Start\\mmenuobj.cpp",0x8c,0,iVar4,"%s",
+                               "MMObjTy::PaintSprBut");
     if (iVar5 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    RaiseInternalException(iVar4,0,s_E____titans_Start_mmenuobj_cpp_007cca38,0x8c);
+    RaiseInternalException(iVar4,0,"E:\\__titans\\Start\\mmenuobj.cpp",0x8c);
     return;
   }
   /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */

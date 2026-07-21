@@ -58,7 +58,7 @@ int __thiscall FUN_004603b0(void *this,STTorpC *param_1)
           if (iVar3 != 2) {
             if (iVar3 == 0) {
               iVar3 = SubmarineTitans::Recovered::HiddenThis::AnonReceiver_004603B0::
-                      thunk_FUN_004838e0(this,(int)param_1);
+                      thunk_FUN_004838e0(this,(AnonShape_004838E0_0C45D4D6 *)param_1);
               if (iVar3 == 1) {
                 STTorpC::SetDangerous(param_1,*(undefined4 *)((int)this + 0x18),&local_8);
 LAB_004604c9:
@@ -67,7 +67,7 @@ LAB_004604c9:
                   STTorpC::ClearDangerous(param_1,*(int *)((int)this + 0x18),local_8);
                   *(STTorpC **)((int)this + 0x46b) = param_1;
                   *(undefined2 *)((int)this + 0x46f) = param_1->field_026E;
-                  uVar4 = *(undefined4 *)&param_1->field_0x18;
+                  uVar4 = param_1->field_0018;
                   *(undefined4 *)((int)this + 0x471) = uVar4;
                   sVar1 = *(short *)((int)this + 0x4b);
                   /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */

@@ -3,16 +3,20 @@
 
 /* Recovered from embedded debug metadata:
    E:\__titans\nick\to_rab3m.cpp
-   STManRub3C::GetMessage */
+   STManRub3C::GetMessage
 
-undefined4 __thiscall STManRub3C::GetMessage(STManRub3C *this,int param_1)
+   [STMessageHandlerApplier] Recovered common GetMessage envelope/signature.
+   Evidence: family_entries=004040D9|0062CCA0; family_names=STManRub3C::GetMessage; ret4=4;
+   direct_offsets={10:1,14:0,18:0,1c:1} */
+
+int __thiscall STManRub3C::GetMessage(STManRub3C *this,STMessage *message)
 
 {
-  code *pcVar1;
-  STManRub3C *pSVar2;
-  int iVar3;
+  STMessageId SVar1;
+  code *pcVar2;
+  STManRub3C *pSVar3;
   int iVar4;
-  undefined4 uVar5;
+  int iVar5;
   InternalExceptionFrame local_58;
   byte *local_14;
   uint local_10;
@@ -23,21 +27,20 @@ undefined4 __thiscall STManRub3C::GetMessage(STManRub3C *this,int param_1)
   local_58.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_58;
   local_c = this;
-  iVar3 = Library::MSVCRT::__setjmp3(local_58.jumpBuffer,0);
-  pSVar2 = local_c;
-  if (iVar3 != 0) {
+  iVar4 = Library::MSVCRT::__setjmp3(local_58.jumpBuffer,0);
+  pSVar3 = local_c;
+  if (iVar4 != 0) {
     g_currentExceptionFrame = local_58.previous;
-    iVar4 = ReportDebugMessage(s_E____titans_nick_to_rab3m_cpp_007d13ec,0x4e,0,iVar3,&DAT_007a4ccc,
-                               s_STManRub3C__GetMessage_007d1410);
-    if (iVar4 == 0) {
-      RaiseInternalException(iVar3,0,s_E____titans_nick_to_rab3m_cpp_007d13ec,0x50);
+    iVar5 = ReportDebugMessage("E:\\__titans\\nick\\to_rab3m.cpp",0x4e,0,iVar4,"%s",
+                               "STManRub3C::GetMessage");
+    if (iVar5 == 0) {
+      RaiseInternalException(iVar4,0,"E:\\__titans\\nick\\to_rab3m.cpp",0x50);
       return 0xffff;
     }
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  iVar3 = *(int *)(param_1 + 0x10);
-  if (iVar3 == 2) {
+  SVar1 = message->id;
+  if (SVar1 == MESS_ID_CREATE) {
     if (g_cMf32_00806754 != (cMf32 *)0x0) {
       local_8 = Library::Ourlib::MFAOBJ::mfAObjLoad(g_cMf32_00806754,PTR_s_RUBBISH_3_0079d080,0,0);
     }
@@ -56,15 +59,15 @@ undefined4 __thiscall STManRub3C::GetMessage(STManRub3C *this,int param_1)
     }
   }
   else {
-    if (iVar3 == 3) {
+    if (SVar1 == MESS_SHARED_0003) {
       thunk_FUN_0062cf50((int)local_c);
-      thunk_FUN_0062dd40((int)pSVar2);
-      thunk_FUN_0062e130((int)pSVar2);
+      thunk_FUN_0062dd40((int)pSVar3);
+      thunk_FUN_0062e130((int)pSVar3);
       DAT_008117a4 = 0;
       g_currentExceptionFrame = local_58.previous;
       return 0;
     }
-    if (iVar3 == 0x10f) {
+    if (SVar1 == MESS_SHARED_010F) {
       local_14 = thunk_FUN_0062d670(local_c,&local_10);
       STPlaySystemC::SaveObjData(PTR_00802a38,PTR_s_RUBBISH_3_0079d080,local_14,local_10,0xc);
       FreeAndNull(&local_14);

@@ -10,7 +10,7 @@
 STLightC * __thiscall STLightC::STLightC(STLightC *this)
 
 {
-  STGroupBoatC::sub_006E60E0((STGroupBoatC *)this);
+  sub_006E60E0(this);
   this->vtable = &STLightCVTable;
   return this;
 }

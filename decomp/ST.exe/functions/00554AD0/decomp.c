@@ -46,12 +46,12 @@ void __thiscall cLoadingTy::DrawLine(cLoadingTy *this,uint *param_1)
     return;
   }
   g_currentExceptionFrame = local_4c.previous;
-  iVar4 = ReportDebugMessage(s_E____titans_grig_loading_cpp_007c8f0c,0xcc,0,iVar3,&DAT_007a4ccc,
-                             s_cLoadingTy__DrawLine_007c8f7c);
+  iVar4 = ReportDebugMessage("E:\\__titans\\grig\\loading.cpp",0xcc,0,iVar3,"%s",
+                             "cLoadingTy::DrawLine");
   if (iVar4 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  RaiseInternalException(iVar3,0,s_E____titans_grig_loading_cpp_007c8f0c,0xcd);
+  RaiseInternalException(iVar3,0,"E:\\__titans\\grig\\loading.cpp",0xcd);
   return;
 }
 

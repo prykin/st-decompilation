@@ -19,20 +19,20 @@ void __cdecl FUN_006ad2a0(byte *param_1)
 
   DVar2 = GetModuleFileNameA((HMODULE)0x0,local_10c,0x104);
   if (DVar2 == 0) {
-    local_10c[0] = s_Debug_Message_007ed7cc[0];
-    local_10c[1] = s_Debug_Message_007ed7cc[1];
-    local_10c[2] = s_Debug_Message_007ed7cc[2];
-    local_10c[3] = s_Debug_Message_007ed7cc[3];
-    local_108[0] = s_Debug_Message_007ed7cc[4];
-    local_108[1] = s_Debug_Message_007ed7cc[5];
-    local_108[2] = s_Debug_Message_007ed7cc[6];
-    local_108[3] = s_Debug_Message_007ed7cc[7];
-    local_104[0] = s_Debug_Message_007ed7cc[8];
-    local_104[1] = s_Debug_Message_007ed7cc[9];
-    local_104[2] = s_Debug_Message_007ed7cc[10];
-    local_104[3] = s_Debug_Message_007ed7cc[0xb];
-    local_100[0] = s_Debug_Message_007ed7cc[0xc];
-    local_100[1] = s_Debug_Message_007ed7cc[0xd];
+    local_10c[0] = "Debug Message"[0];
+    local_10c[1] = "Debug Message"[1];
+    local_10c[2] = "Debug Message"[2];
+    local_10c[3] = "Debug Message"[3];
+    local_108[0] = "Debug Message"[4];
+    local_108[1] = "Debug Message"[5];
+    local_108[2] = "Debug Message"[6];
+    local_108[3] = "Debug Message"[7];
+    local_104[0] = "Debug Message"[8];
+    local_104[1] = "Debug Message"[9];
+    local_104[2] = "Debug Message"[10];
+    local_104[3] = "Debug Message"[0xb];
+    local_100[0] = "Debug Message"[0xc];
+    local_100[1] = "Debug Message"[0xd];
   }
   else {
     uVar4 = 0xffffffff;
@@ -52,7 +52,7 @@ void __cdecl FUN_006ad2a0(byte *param_1)
      (iVar3 = Library::MSVCRT::FUN_007300e0(local_30c,0x200,param_1,(undefined4 *)&stack0x00000008),
      iVar3 < 0)) {
     uVar4 = 0xffffffff;
-    pcVar6 = s_User_message_too_long_007ed7b4;
+    pcVar6 = "User message too long";
     do {
       pcVar8 = pcVar6;
       if (uVar4 == 0) break;

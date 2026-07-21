@@ -11,9 +11,10 @@ void __thiscall CampaignTy::CloseButtons(CampaignTy *this)
   code *pcVar1;
   int iVar2;
   DWORD DVar3;
-  int *piVar4;
+  int iVar4;
+  uint *puVar5;
   CampaignTy *this_00;
-  int iVar5;
+  uint uVar6;
   InternalExceptionFrame local_4c;
   CampaignTy *local_8;
 
@@ -26,16 +27,16 @@ void __thiscall CampaignTy::CloseButtons(CampaignTy *this)
     MMObjTy::CloseButtons((MMObjTy *)local_8);
     iVar2 = 0;
     if (this_00->field_009A != '\0') {
-      iVar5 = 0x96;
-      piVar4 = &this_00->field_0123;
+      uVar6 = 0x96;
+      puVar5 = &this_00->field_0123;
       do {
         DVar3 = timeGetTime();
-        piVar4[1] = DVar3;
-        *piVar4 = iVar5;
-        *(undefined1 *)(piVar4 + -0x1a) = 1;
+        puVar5[1] = DVar3;
+        *puVar5 = uVar6;
+        *(undefined1 *)(puVar5 + -0x1a) = 1;
         iVar2 = iVar2 + 1;
-        iVar5 = iVar5 + 0x96;
-        piVar4 = (int *)((int)piVar4 + 0x1fb);
+        uVar6 = uVar6 + 0x96;
+        puVar5 = (uint *)((int)puVar5 + 0x1fb);
         this_00 = local_8;
       } while (iVar2 < (int)(uint)(byte)local_8->field_009A);
     }
@@ -45,10 +46,10 @@ void __thiscall CampaignTy::CloseButtons(CampaignTy *this)
     return;
   }
   g_currentExceptionFrame = local_4c.previous;
-  iVar5 = ReportDebugMessage(s_E____titans_Start_camp_obj_cpp_007cbcd4,0x13c,0,iVar2,&DAT_007a4ccc,
-                             s_CampaignTy__CloseButtons_007cbe5c);
-  if (iVar5 == 0) {
-    RaiseInternalException(iVar2,0,s_E____titans_Start_camp_obj_cpp_007cbcd4,0x13c);
+  iVar4 = ReportDebugMessage("E:\\__titans\\Start\\camp_obj.cpp",0x13c,0,iVar2,"%s",
+                             "CampaignTy::CloseButtons");
+  if (iVar4 == 0) {
+    RaiseInternalException(iVar2,0,"E:\\__titans\\Start\\camp_obj.cpp",0x13c);
     return;
   }
   STDebugBreak(); /* noreturn in standalone pseudocode */

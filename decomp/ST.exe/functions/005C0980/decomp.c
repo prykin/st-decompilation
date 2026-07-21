@@ -59,12 +59,12 @@ MReportTy::CreateBut
     return local_8;
   }
   g_currentExceptionFrame = local_50.previous;
-  iVar2 = ReportDebugMessage(s_E____titans_Start_rpt_obj_cpp_007ccec8,0x29f,0,iVar4,&DAT_007a4ccc,
-                             s_MReportTy__CreateBut_007cd028);
+  iVar2 = ReportDebugMessage("E:\\__titans\\Start\\rpt_obj.cpp",0x29f,0,iVar4,"%s",
+                             "MReportTy::CreateBut");
   if (iVar2 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  RaiseInternalException(iVar4,0,s_E____titans_Start_rpt_obj_cpp_007ccec8,0x29f);
+  RaiseInternalException(iVar4,0,"E:\\__titans\\Start\\rpt_obj.cpp",0x29f);
   return 0;
 }
 

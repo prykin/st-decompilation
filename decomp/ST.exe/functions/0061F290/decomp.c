@@ -65,9 +65,9 @@ undefined4 __thiscall FUN_0061f290(void *this,int param_1)
               if ((((((DAT_0080874d == -1) || (this_00->field_00F8 == 0)) ||
                     (thunk_FUN_00558c00(this_00,this_00->field_010C,iVar2,local_8,&local_18,
                                         &local_1c), iVar3 < 0)) || ((4 < iVar3 || (local_18 < 0))))
-                  || (((int)this_00->field_0030 <= local_18 ||
+                  || ((this_00->field_0030 <= local_18 ||
                       ((iVar3 = (&DAT_0079aed0)[iVar3] + local_1c, iVar3 < 0 ||
-                       ((int)this_00->field_0034 <= iVar3)))))) ||
+                       (this_00->field_0034 <= iVar3)))))) ||
                  ((this_00->field_004C == 0 ||
                   (*(char *)(iVar3 * this_00->field_0030 + this_00->field_004C + local_18) != '\0'))
                  )) {

@@ -28,8 +28,8 @@ undefined4 __fastcall FUN_004c6d00(STJellyGunC *param_1)
     /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
     iVar3 = (*param_1->vtable->MoveStep)((STGameObjC *)param_1,unaff_EDI);
     if (iVar3 == -1) {
-      iVar3 = ReportDebugMessage(s_E____titans_Artem_TLO_bmove_cpp_007ad368,0x4f,0,-5,&DAT_007a4ccc,
-                                 s_move_error_007ad390);
+      iVar3 = ReportDebugMessage("E:\\__titans\\Artem\\TLO_bmove.cpp",0x4f,0,-5,"%s",
+                                 "move error");
       if (iVar3 != 0) {
         STDebugBreak(); /* noreturn in standalone pseudocode */
       }
@@ -61,13 +61,13 @@ undefined4 __fastcall FUN_004c6d00(STJellyGunC *param_1)
     if (*(int *)&param_1[1].field_0x16c == 0) {
       iVar3 = (*param_1->vtable->vfunc_20)();
       if (iVar3 == -1) {
-        iVar3 = ReportDebugMessage(s_E____titans_Artem_TLO_bmove_cpp_007ad368,0x35,0,-5,
-                                   &DAT_007a4ccc,s_stop_move_error_007ad3a0);
+        iVar3 = ReportDebugMessage("E:\\__titans\\Artem\\TLO_bmove.cpp",0x35,0,-5,
+                                   "%s","stop move error");
         if (iVar3 != 0) {
           STDebugBreak(); /* noreturn in standalone pseudocode */
         }
         RaiseInternalException
-                  (-5,g_overwriteContext_007ED77C,s_E____titans_Artem_TLO_bmove_cpp_007ad368,0x35);
+                  (-5,g_overwriteContext_007ED77C,"E:\\__titans\\Artem\\TLO_bmove.cpp",0x35);
       }
       else if (iVar3 == 1) {
         *(undefined4 *)&param_1[1].field_0x16c = 1;
@@ -77,13 +77,13 @@ undefined4 __fastcall FUN_004c6d00(STJellyGunC *param_1)
             (local_14[0] == (short)(*(short *)&param_1[2].field_0x8c * 0xc9 + 100))) &&
            (local_18[0] == (short)(*(short *)&param_1[2].field_0x90 * 200 + 100))) {
           *(undefined4 *)&param_1[1].field_0x148 = 0;
-          thunk_FUN_004167a0((AnonShape_004167A0_C6E28A87 *)param_1);
+          SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00417FF0::sub_004167A0
+                    ((AnonReceiver_00417FF0 *)param_1);
         }
         else {
-          STJellyGunC::sub_00415B30
-                    (param_1,local_10[0],local_14[0],local_18[0],sVar2,
-                     *(short *)&param_1[2].field_0x8c * 0xc9 + 100,
-                     *(short *)&param_1[2].field_0x90 * 200 + 100,param_1->field_0x62);
+          sub_00415B30(param_1,local_10[0],local_14[0],local_18[0],sVar2,
+                       *(short *)&param_1[2].field_0x8c * 0xc9 + 100,
+                       *(short *)&param_1[2].field_0x90 * 200 + 100,param_1->field_0x62);
         }
       }
     }
@@ -94,18 +94,19 @@ undefined4 __fastcall FUN_004c6d00(STJellyGunC *param_1)
       if (iVar3 != 0) goto cf_common_exit_004C6F47;
 LAB_004c6e4d:
       *(undefined4 *)&param_1[1].field_0x148 = 0;
-      thunk_FUN_004167a0((AnonShape_004167A0_C6E28A87 *)param_1);
+      SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00417FF0::sub_004167A0
+                ((AnonReceiver_00417FF0 *)param_1);
       goto cf_common_exit_004C6F47;
     }
-    iVar3 = ReportDebugMessage(s_E____titans_Artem_TLO_bmove_cpp_007ad368,0x47,0,-5,&DAT_007a4ccc,
-                               s_move_error_007ad390);
+    iVar3 = ReportDebugMessage("E:\\__titans\\Artem\\TLO_bmove.cpp",0x47,0,-5,"%s",
+                               "move error");
     if (iVar3 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
     iVar3 = 0x47;
   }
   RaiseInternalException
-            (-5,g_overwriteContext_007ED77C,s_E____titans_Artem_TLO_bmove_cpp_007ad368,iVar3);
+            (-5,g_overwriteContext_007ED77C,"E:\\__titans\\Artem\\TLO_bmove.cpp",iVar3);
 cf_common_exit_004C6F47:
   thunk_FUN_004162f0(param_1,&local_6,&local_8,&local_a);
   *(int *)&param_1[2].field_0x88 = (int)local_6;

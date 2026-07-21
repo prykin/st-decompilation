@@ -96,14 +96,14 @@ int __fastcall FUN_0060dd70(AnonShape_0060DD70_701DD710 *param_1)
     if (local_20 < 0) {
       return local_14;
     }
-    if ((int)pVVar2->field_0030 <= local_20) {
+    if (pVVar2->field_0030 <= local_20) {
       return local_14;
     }
     iVar4 = (&DAT_0079aed0)[local_8] + local_24;
     if (iVar4 < 0) {
       return local_14;
     }
-    if ((int)pVVar2->field_0034 <= iVar4) {
+    if (pVVar2->field_0034 <= iVar4) {
       return local_14;
     }
     if (pVVar2->field_004C == 0) {
@@ -124,14 +124,14 @@ int __fastcall FUN_0060dd70(AnonShape_0060DD70_701DD710 *param_1)
     if (local_24 < 0) {
       return local_14;
     }
-    if ((int)pVVar3->field_0030 <= local_24) {
+    if (pVVar3->field_0030 <= local_24) {
       return local_14;
     }
     iVar6 = (&DAT_0079aed0)[iVar6] + local_20;
     if (iVar6 < 0) {
       return local_14;
     }
-    if ((int)pVVar3->field_0034 <= iVar6) {
+    if (pVVar3->field_0034 <= iVar6) {
       return local_14;
     }
     if (pVVar3->field_004C == 0) {
@@ -154,14 +154,14 @@ int __fastcall FUN_0060dd70(AnonShape_0060DD70_701DD710 *param_1)
     if (local_24 < 0) {
       return local_14;
     }
-    if ((int)pVVar2->field_0030 <= local_24) {
+    if (pVVar2->field_0030 <= local_24) {
       return local_14;
     }
     iVar4 = (&DAT_0079aed0)[local_8] + local_20;
     if (iVar4 < 0) {
       return local_14;
     }
-    if ((int)pVVar2->field_0034 <= iVar4) {
+    if (pVVar2->field_0034 <= iVar4) {
       return local_14;
     }
     if (pVVar2->field_004C == 0) {
@@ -181,14 +181,14 @@ int __fastcall FUN_0060dd70(AnonShape_0060DD70_701DD710 *param_1)
     if (local_24 < 0) {
       return local_14;
     }
-    if ((int)pVVar3->field_0030 <= local_24) {
+    if (pVVar3->field_0030 <= local_24) {
       return local_14;
     }
     local_20 = (&DAT_0079aed0)[iVar6] + local_20;
     if (local_20 < 0) {
       return local_14;
     }
-    if ((int)pVVar3->field_0034 <= local_20) {
+    if (pVVar3->field_0034 <= local_20) {
       return local_14;
     }
     if (pVVar3->field_004C == 0) {

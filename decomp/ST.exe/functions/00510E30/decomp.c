@@ -61,15 +61,15 @@ void __thiscall HelpPanelTy::InitHelpPanel(HelpPanelTy *this)
   this_00 = local_10;
   if (iVar4 != 0) {
     g_currentExceptionFrame = local_6c.previous;
-    iVar28 = ReportDebugMessage(s_E____titans_Andrey_helppan_cpp_007c383c,0xac,0,iVar4,&DAT_007a4ccc
-                                ,s_HelpPanelTy__InitHelpPanel_007c3864);
+    iVar28 = ReportDebugMessage("E:\\__titans\\Andrey\\helppan.cpp",0xac,0,iVar4,"%s"
+                                ,"HelpPanelTy::InitHelpPanel");
     if (iVar28 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    RaiseInternalException(iVar4,0,s_E____titans_Andrey_helppan_cpp_007c383c,0xac);
+    RaiseInternalException(iVar4,0,"E:\\__titans\\Andrey\\helppan.cpp",0xac);
     return;
   }
-  DAT_00801690 = local_10;
+  PTR_00801690 = (AnonShape_GLOBAL_00801690_2AA401C1 *)local_10;
   pAVar5 = (AnonPointee_HelpPanelTy_01B3 *)
            Library::DKW::TBL::FUN_006ae290((uint *)0x0,300,0x14,0x32);
   this_00->field_01B3 = pAVar5;
@@ -191,14 +191,14 @@ LAB_00510fa9:
   } while (local_c != (undefined4 *)0x0);
   iVar4 = 1;
   piVar15 = (int *)0x0;
-  pCVar10 = thunk_FUN_00571240(s_BKG_HELPW_007c390c,0);
+  pCVar10 = thunk_FUN_00571240("BKG_HELPW",0);
   puVar11 = cMf32::RecGet((cMf32 *)DAT_00806790,1,pCVar10,piVar15,iVar4);
   this_00->field_01DC = puVar11;
-  puVar11 = cMf32::RecGet((cMf32 *)DAT_00806790,1,s_HLP_OBJ_BKG_007c38fc,(int *)0x0,1);
+  puVar11 = cMf32::RecGet((cMf32 *)DAT_00806790,1,"HLP_OBJ_BKG",(int *)0x0,1);
   iVar4 = 1;
   piVar15 = (int *)0x0;
   this_00->field_021C = puVar11;
-  pCVar10 = thunk_FUN_00571240(s_BUT_HLPLINK_007c38ec,0);
+  pCVar10 = thunk_FUN_00571240("BUT_HLPLINK",0);
   puVar11 = cMf32::RecGet((cMf32 *)DAT_00806790,1,pCVar10,piVar15,iVar4);
   this_00->field_024C = puVar11;
   pcVar12 = (ccFntTy *)
@@ -212,7 +212,7 @@ LAB_00510fa9:
   pcVar12->field_0058 = 1;
   pcVar12->field_005C = 0;
   pcVar12 = (ccFntTy *)
-            ccFntTy::operator(DAT_00806790,0x19d,(cMf32 *)DAT_00806790,s_MONEY_FONT_007c211c,0);
+            ccFntTy::operator(DAT_00806790,0x19d,(cMf32 *)DAT_00806790,"MONEY_FONT",0);
   this_00->field_01E8 = pcVar12;
   pcVar12->field_0058 = 1;
   pcVar12->field_005C = 0;
@@ -221,12 +221,12 @@ LAB_00510fa9:
   iVar4 = 1;
   bVar26 = 0;
   uVar19 = 0xffffffff;
-  pCVar10 = thunk_FUN_00571240(s_HLPTRACK_007c38e0,0);
+  pCVar10 = thunk_FUN_00571240("HLPTRACK",0);
   puVar11 = Library::Ourlib::MFRLOAD::mfRLoad
                       (DAT_00806794,CASE_B,pCVar10,uVar19,bVar26,iVar4,iVar28,puVar16);
   this_00->field_0220 = puVar11;
   puVar11 = Library::Ourlib::MFRLOAD::mfRLoad
-                      (DAT_00806794,CASE_B,s_BKG_HLPTTREE_007c38d0,0xffffffff,0,1,0,
+                      (DAT_00806794,CASE_B,"BKG_HLPTTREE",0xffffffff,0,1,0,
                        (undefined4 *)0x0);
   this_00->field_0224 = puVar11;
   puVar11 = Library::Ourlib::MFRLOAD::mfRLoad
@@ -236,25 +236,25 @@ LAB_00510fa9:
                       (DAT_00806794,CASE_B,&DAT_007c38c8,0xffffffff,0,1,0,(undefined4 *)0x0);
   this_00->field_0234 = puVar11;
   puVar11 = Library::Ourlib::MFRLOAD::mfRLoad
-                      (DAT_00806794,CASE_B,s_HLP_UPG_007c38bc,0xffffffff,0,1,0,(undefined4 *)0x0);
+                      (DAT_00806794,CASE_B,"HLP_UPG",0xffffffff,0,1,0,(undefined4 *)0x0);
   this_00->field_0228 = puVar11;
   puVar11 = Library::Ourlib::MFRLOAD::mfRLoad
-                      (DAT_00806794,CASE_B,s_HLP_UPGD_007c38b0,0xffffffff,0,1,0,(undefined4 *)0x0);
+                      (DAT_00806794,CASE_B,"HLP_UPGD",0xffffffff,0,1,0,(undefined4 *)0x0);
   this_00->field_022C = puVar11;
   puVar11 = Library::Ourlib::MFRLOAD::mfRLoad
                       (DAT_00806794,CASE_B,&DAT_007c2048,0xffffffff,0,1,0,(undefined4 *)0x0);
   this_00->field_0238 = puVar11;
   puVar11 = Library::Ourlib::MFRLOAD::mfRLoad
-                      (DAT_00806794,CASE_B,s_HLP_FRAME_007c38a4,0xffffffff,0,1,0,(undefined4 *)0x0);
+                      (DAT_00806794,CASE_B,"HLP_FRAME",0xffffffff,0,1,0,(undefined4 *)0x0);
   this_00->field_0248 = puVar11;
   puVar11 = Library::Ourlib::MFRLOAD::mfRLoad
-                      (DAT_00806794,CASE_B,s_BOATS_R_007c206c,0xffffffff,0,1,0,(undefined4 *)0x0);
+                      (DAT_00806794,CASE_B,"BOATS_R",0xffffffff,0,1,0,(undefined4 *)0x0);
   this_00->field_023C = puVar11;
   puVar11 = Library::Ourlib::MFRLOAD::mfRLoad
                       (DAT_00806794,CASE_B,&DAT_007c1910,0xffffffff,0,1,0,(undefined4 *)0x0);
   this_00->field_0240 = puVar11;
   puVar11 = Library::Ourlib::MFRLOAD::mfRLoad
-                      (DAT_00806794,CASE_B,s_INF_WEAP_007c20bc,0xffffffff,0,1,0,(undefined4 *)0x0);
+                      (DAT_00806794,CASE_B,"INF_WEAP",0xffffffff,0,1,0,(undefined4 *)0x0);
   pcVar12 = this_00->field_01E4;
   this_00->field_0244 = puVar11;
   if (pcVar12->field_00A0 != 0) {
@@ -303,7 +303,7 @@ LAB_00510fa9:
   sVar24 = 0;
   uVar22 = 0xc000;
   uVar13 = 0xbfff;
-  pCVar10 = thunk_FUN_00571240(s_BUT_MEDIUM_007c3894,0);
+  pCVar10 = thunk_FUN_00571240("BUT_MEDIUM",0);
   uVar13 = UPanelTy::CreateBut((UPanelTy *)this_00,0,1,0x195,0x17b,1,(int)pCVar10,uVar13,uVar22,
                                sVar24,uVar25,uVar27,pcVar9,uVar29,uVar30);
   local_c = &this_00->field_0180;
@@ -327,7 +327,7 @@ LAB_00510fa9:
     uVar25 = 0;
     iVar23 = iVar4 + 0xc0af;
     sVar24 = 2;
-    pCVar10 = thunk_FUN_00571240(s_BUT_HLPHOME_007c3884,0);
+    pCVar10 = thunk_FUN_00571240("BUT_HLPHOME",0);
     uVar13 = UPanelTy::CreateBut((UPanelTy *)this_00,0,1,iVar28,0x151,1,(int)pCVar10,iVar21,iVar23,
                                  sVar24,uVar25,uVar13,pcVar9,uVar22,uVar27);
     iVar4 = iVar4 + 1;

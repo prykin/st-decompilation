@@ -30,12 +30,12 @@ uint * __thiscall STAllPlayersC::GetTOBJList(STAllPlayersC *this,char param_1,by
   iVar4 = Library::MSVCRT::__setjmp3(local_64.jumpBuffer,0);
   if (iVar4 != 0) {
     g_currentExceptionFrame = local_64.previous;
-    iVar6 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0x2075,0,iVar4,&DAT_007a4ccc
-                               ,s_STAllPlayersC__GetTOBJList_007a7f94);
+    iVar6 = ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0x2075,0,iVar4,"%s"
+                               ,"STAllPlayersC::GetTOBJList");
     if (iVar6 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    RaiseInternalException(iVar4,0,s_E____titans_wlad_to_allpl_cpp_007a6004,0x2076);
+    RaiseInternalException(iVar4,0,"E:\\__titans\\wlad\\to_allpl.cpp",0x2076);
     return (uint *)0x0;
   }
   local_c = Library::DKW::TBL::FUN_006ae290((uint *)0x0,0,2,1);

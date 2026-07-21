@@ -27,21 +27,21 @@ undefined4 * __thiscall STFieldC::CreateField(STFieldC *this,int param_1,int par
   pSVar2 = local_c;
   if (iVar3 != 0) {
     g_currentExceptionFrame = local_50.previous;
-    iVar3 = ReportDebugMessage(s_E____titans_Igor_To_gold_cpp_007cb19c,0x414,0,iVar3,&DAT_007a4ccc,
-                               s_STFieldC__CreateField_007cb2c0);
+    iVar3 = ReportDebugMessage("E:\\__titans\\Igor\\To_gold.cpp",0x414,0,iVar3,"%s",
+                               "STFieldC::CreateField");
     if (iVar3 == 0) {
       return local_8;
     }
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   if (local_c->field_0255 == 0xdd) {
-    text = s_ResSmall_007cb100;
+    text = "ResSmall";
   }
   else if (local_c->field_0255 == 0xde) {
-    text = s_ResSmallM_007cb10c;
+    text = "ResSmallM";
   }
   else {
-    text = s_ResSmall_007cb100;
+    text = "ResSmall";
   }
   puVar4 = Library::Ourlib::MFRLOAD::mfRLoad
                      (DAT_00806774,CASE_1D,text,0xffffffff,0,1,0,(undefined4 *)0x0);

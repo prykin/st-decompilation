@@ -26,10 +26,10 @@ PrividerTy::OutListProc
   errorCode = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0);
   if (errorCode != 0) {
     g_currentExceptionFrame = local_50.previous;
-    iVar3 = ReportDebugMessage(s_E____titans_Start_prov_obj_cpp_007ccd28,0x2c,0,errorCode,
-                               &DAT_007a4ccc,s_PrividerTy__OutListProc_007ccd50);
+    iVar3 = ReportDebugMessage("E:\\__titans\\Start\\prov_obj.cpp",0x2c,0,errorCode,
+                               "%s","PrividerTy::OutListProc");
     if (iVar3 == 0) {
-      RaiseInternalException(errorCode,0,s_E____titans_Start_prov_obj_cpp_007ccd28,0x2c);
+      RaiseInternalException(errorCode,0,"E:\\__titans\\Start\\prov_obj.cpp",0x2c);
       return;
     }
     STDebugBreak(); /* noreturn in standalone pseudocode */

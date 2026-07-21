@@ -4,18 +4,18 @@ int __fastcall FUN_00604970(void *param_1)
 {
   int iVar1;
   int iVar2;
-  AnonShape_00627EB0_4C14C976 *pAVar3;
+  STMessage *pSVar3;
   undefined4 *puVar4;
-  AnonShape_00627EB0_4C14C976 local_28;
+  STMessage local_28;
   int local_8;
 
   iVar2 = 0;
-  pAVar3 = &local_28;
+  pSVar3 = &local_28;
   for (iVar1 = 8; iVar1 != 0; iVar1 = iVar1 + -1) {
-    *(undefined4 *)pAVar3 = 0;
-    pAVar3 = (AnonShape_00627EB0_4C14C976 *)&pAVar3->field_0x4;
+    pSVar3->unknown_00 = 0;
+    pSVar3 = (STMessage *)&pSVar3->unknown_04;
   }
-  local_28.field_0010 = 3;
+  local_28.id = MESS_SHARED_0003;
   local_8 = 0;
   iVar1 = 0;
   /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */

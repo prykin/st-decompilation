@@ -17,7 +17,8 @@ FUN_005599d0(void *this,int param_1,int param_2,undefined1 param_3,uint param_4,
   if ((((*(int *)((int)this + 0x114) != 0) && (-1 < (int)param_5)) && (param_4 < 8)) &&
      (((PTR_00802a38 == (STPlaySystemC *)0x0 || ((byte)(&DAT_008087e9)[param_4 * 0x51] < 8)) &&
       (*(int *)((int)this + param_4 * 4 + 0x54) != 0)))) {
-    thunk_FUN_0055bbc0(this,2,(short)param_1,(short)param_2,param_3,param_4,(char)param_5,param_6);
+    SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00558C00::sub_0055BBC0
+              (this,2,(short)param_1,(short)param_2,param_3,param_4,(char)param_5,param_6);
     iVar1 = (int)param_5 * 2 + 1;
     iVar5 = param_1 - (int)param_5;
     iVar8 = param_2 - (int)param_5;

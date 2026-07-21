@@ -30,18 +30,18 @@ void __thiscall CampaignTy::PaintCampaign(CampaignTy *this)
   iVar3 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
   if (iVar3 != 0) {
     g_currentExceptionFrame = local_4c.previous;
-    iVar7 = ReportDebugMessage(s_E____titans_Start_camp_obj_cpp_007cbcd4,0xb5,0,iVar3,&DAT_007a4ccc,
-                               s_CampaignTy__PaintCampaign_007cbdf0);
+    iVar7 = ReportDebugMessage("E:\\__titans\\Start\\camp_obj.cpp",0xb5,0,iVar3,"%s",
+                               "CampaignTy::PaintCampaign");
     if (iVar7 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    RaiseInternalException(iVar3,0,s_E____titans_Start_camp_obj_cpp_007cbcd4,0xb5);
+    RaiseInternalException(iVar3,0,"E:\\__titans\\Start\\camp_obj.cpp",0xb5);
     return;
   }
   FUN_006b5f80(DAT_008075a8,0,0,g_nWidth_00806730,DAT_00806734);
   PutDDX(0,0,'\x01',(BITMAPINFO *)PTR_0081176c->field_002C);
   pCVar2 = local_8;
-  pcVar11 = (ccFntTy *)PTR_0081176c->field_0030;
+  pcVar11 = PTR_0081176c->field_0030;
   uVar9 = 0xffffffff;
   uVar8 = 0xfffffffe;
   puVar4 = (uint *)LoadResourceString((-(uint)(local_8->field_1FFC != 0) & 0xfffffca8) + 0x26b1,
@@ -50,7 +50,7 @@ void __thiscall CampaignTy::PaintCampaign(CampaignTy *this)
   if (PTR_0081176c->field_0028 == 0) {
     iVar3 = 0;
     bVar10 = 0;
-    text = FUN_006f2c00(s_CMPG_BKG_007cbe10,1,(uint)DAT_0080874e);
+    text = FUN_006f2c00("CMPG_BKG",1,(uint)DAT_0080874e);
     pBVar5 = (BITMAPINFO *)FUN_0070a9f0(g_cMf32_00806780,text,bVar10,iVar3);
     PutDDX(0xa5,0x37,'\x01',pBVar5);
   }

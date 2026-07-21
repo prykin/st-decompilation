@@ -29,9 +29,11 @@ LAB_00675dfe:
         pSVar3 = STAllPlayersC::GetObjPtr
                            (g_sTAllPlayers_007FA174,(char)param_1,
                             CONCAT22((short)((uint)puVar2 >> 0x10),*puVar2),CASE_1);
-        if (((pSVar3 != (STGameObjC *)0x0) && (iVar4 = (*pSVar3->vtable->vfunc_2C)(), iVar4 == 0x78)
-            ) && (iVar4 = (*pSVar3->vtable->vfunc_2C)(), iVar4 == 0x78)) {
-          *(undefined4 *)&pSVar3[1].field_0x98 = 0xffffffff;
+        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+        if (((pSVar3 != (STGameObjC *)0x0) &&
+            (iVar4 = (**(code **)&pSVar3->vtable->field_0x2c)(), iVar4 == 0x78)) &&
+           (iVar4 = (**(code **)&pSVar3->vtable->field_0x2c)(), iVar4 == 0x78)) {
+          pSVar3->field_0269 = 0xffffffff;
         }
         uVar6 = uVar6 + 1;
         uVar5 = uVar6 & 0xffff;

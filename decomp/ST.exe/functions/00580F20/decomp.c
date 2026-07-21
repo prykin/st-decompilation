@@ -10,6 +10,6 @@
 dword __thiscall STDcResourcC::FUN_00580f20(STDcResourcC *this)
 
 {
-  return (-(uint)(*(int *)&this->field_0x25d != 1) & 0xfffffffe) + 2;
+  return (-(uint)(this->field_025D != 1) & 0xfffffffe) + 2;
 }
 

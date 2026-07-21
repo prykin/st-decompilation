@@ -12,7 +12,7 @@ undefined4 __thiscall FUN_00495750(void *this,float param_1)
   float local_8;
 
   fVar2 = param_1;
-  FUN_006e5fd0();
+  FUN_006e5fd0(this,(STMessage *)param_1);
   uVar1 = *(uint *)((int)fVar2 + 0x10);
   if (uVar1 < 0x61) {
     if (uVar1 == 0x60) {
@@ -40,9 +40,9 @@ undefined4 __thiscall FUN_00495750(void *this,float param_1)
     lVar6 = Library::MSVCRT::__ftol();
     uVar5 = (undefined4)lVar6;
     lVar6 = Library::MSVCRT::__ftol();
-    wsprintfA(local_6c,s_X____d_Y____d_Xc____d_Yc____d_007abc38,*(undefined4 *)((int)this + 0x1c),
+    wsprintfA(local_6c,"\n X = %d\n Y = %d\n Xc = %d\n Yc = %d",*(undefined4 *)((int)this + 0x1c),
               *(undefined4 *)((int)this + 0x20),(int)lVar6,uVar5);
-    MessageBoxA(g_hWnd_00806748,local_6c,s_Coordinates_of_Mouse_007abc1c,0x40);
+    MessageBoxA(g_hWnd_00806748,local_6c,"Coordinates of Mouse",0x40);
   }
   return 0;
 }
