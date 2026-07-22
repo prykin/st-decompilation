@@ -152,7 +152,7 @@ undefined4 __fastcall FUN_004d2fd0(int param_1)
     } while (iVar2 < 0xc);
   }
   /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  STPlaySystemC::SaveObjData(PTR_00802a38,*(undefined4 *)(param_1 + 0x18),local_8,local_c);
+  STPlaySystemC::SaveObjData(g_playSystem_00802A38,*(undefined4 *)(param_1 + 0x18),local_8,local_c);
   FreeAndNull(&local_8);
   FreeAndNull(&local_20);
   FreeAndNull(&local_10);

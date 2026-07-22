@@ -5,8 +5,8 @@ undefined4 __fastcall FUN_004eccf0(AnonShape_004ECC70_4D35D723 *param_1)
   int iVar1;
   longlong lVar2;
 
-  if ((param_1->field_04D4 + 0x19 <= PTR_00802a38->field_00E4) &&
-     (param_1->field_04D4 = PTR_00802a38->field_00E4, (int)param_1->field_04D0 < 5000)) {
+  if ((param_1->field_04D4 + 0x19 <= g_playSystem_00802A38->field_00E4) &&
+     (param_1->field_04D4 = g_playSystem_00802A38->field_00E4, (int)param_1->field_04D0 < 5000)) {
     lVar2 = FUN_006b12cc(0x19);
     iVar1 = (int)lVar2;
     lVar2 = FUN_006b12cc(0x1194);

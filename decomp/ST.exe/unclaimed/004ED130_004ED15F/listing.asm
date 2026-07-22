@@ -1,0 +1,12 @@
+004ED130  pointer  004ecf23
+004ED134  pointer  004ecf44
+004ED138  pointer  004ecfab
+004ED13C  pointer  004ecfab
+004ED140  pointer  004ecfab
+004ED144  pointer  004ecf59
+004ED148  pointer  004ecf44
+004ED14C  pointer  004ecf6b
+004ED150  pointer  004ecf91
+004ED154  pointer  004ecf77
+004ED158  pointer  004ecf7f
+004ED15C  pointer  004ecf8b

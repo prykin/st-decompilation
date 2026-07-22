@@ -1,13 +1,14 @@
 
-/* [STPrototypeApplier] Propagated parameter 0.
-   Evidence: 004F95B0 -> 005411A0 @ 004F95F6
-
-   [STPrototypeRepairApplier] Propagated parameter 2.
+/* [STPrototypeRepairApplier] Propagated parameter 2.
    Evidence: 004F9480 -> 005411A0 @ 004F94F8 | 004F95B0 -> 005411A0 @ 004F95F6 | 00532A80 ->
    005411A0 @ 00532B02 | 005DC050 -> 005411A0 @ 005DC23A | 005DC730 -> 005411A0 @ 005DC835 |
-   005E1330 -> 005411A0 @ 005E2306 */
+   005E1330 -> 005411A0 @ 005E2306
 
-void __cdecl FUN_005411a0(uint *param_1,char *param_2,char *text)
+   [STPrototypeRepairApplier] Propagated parameter 0.
+   Evidence: 004F9480 -> 005411A0 @ 004F94F8 | 004F95B0 -> 005411A0 @ 004F95F6 | 004F96A0 ->
+   005411A0 @ 004F9803 */
+
+void __cdecl FUN_005411a0(DArrayTy *param_1,char *param_2,char *text)
 
 {
   char cVar1;
@@ -26,7 +27,7 @@ void __cdecl FUN_005411a0(uint *param_1,char *param_2,char *text)
     g_currentExceptionFrame = local_4c.previous;
     return;
   }
-  if (((param_1 != (uint *)0x0) && (param_2 != (char *)0x0)) && (text != (char *)0x0)) {
+  if (((param_1 != (DArrayTy *)0x0) && (param_2 != (char *)0x0)) && (text != (char *)0x0)) {
     uVar4 = 0xffffffff;
     pcVar6 = param_2;
     do {
@@ -50,7 +51,7 @@ void __cdecl FUN_005411a0(uint *param_1,char *param_2,char *text)
           puVar3 = Library::MSVCRT::FUN_0072e560(puVar3,'\n')) {
         *(undefined1 *)puVar3 = 0x20;
       }
-      Library::DKW::TBL::FUN_006b5aa0(param_1,(char *)local_8);
+      Library::DKW::TBL::FUN_006b5aa0(&param_1->flags,(char *)local_8);
       FreeAndNull(&local_8);
     }
   }

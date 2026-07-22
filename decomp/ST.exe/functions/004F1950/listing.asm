@@ -1,4 +1,4 @@
-FUN_004f1950:
+CPanelTy::sub_004F1950:
 004F1950  56                        PUSH ESI
 004F1951  8B F1                     MOV ESI,ECX
 004F1953  33 C0                     XOR EAX,EAX

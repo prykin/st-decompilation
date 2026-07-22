@@ -95,8 +95,7 @@ void __cdecl FUN_00645880(AnonShape_00645880_0D5933D4 *param_1)
     local_bc = 1;
     local_a4 = 5;
     local_a0 = 0x32;
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-    (*(code *)PTR_00802a38->vtable->field_0008)(0x10a,0,0,&local_c4,0);
+    (*g_playSystem_00802A38->vtable->vfunc_08)(0x10a,0,0,&local_c4,0);
     return;
   case 0xb0:
   case 0xbb:
@@ -116,8 +115,7 @@ void __cdecl FUN_00645880(AnonShape_00645880_0D5933D4 *param_1)
     local_5c[0] = 0x15e;
     local_5c[3] = 1;
     local_5c[2] = 1;
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-    (*(code *)PTR_00802a38->vtable->field_0008)(0x147,0,0,local_5c,0);
+    (*g_playSystem_00802A38->vtable->vfunc_08)(0x147,0,0,local_5c,0);
     return;
   case 0xb5:
     uVar1 = *(undefined2 *)&param_1->field_0x20;
@@ -140,8 +138,7 @@ void __cdecl FUN_00645880(AnonShape_00645880_0D5933D4 *param_1)
     local_6c = 4;
     local_64 = uVar4;
     local_60 = uVar1;
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-    (*(code *)PTR_00802a38->vtable->field_0008)(0x150,0,0,local_98,0);
+    (*g_playSystem_00802A38->vtable->vfunc_08)(0x150,0,0,local_98,0);
     return;
   }
   uVar2 = GetPlayerRaceId(*(char *)param_1);
@@ -206,8 +203,7 @@ LAB_006459df:
   local_29 = param_1->field_0022;
   local_34 = *(uint *)&param_1->field_0x4;
   local_36 = param_1->field_001A;
-  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-  (*(code *)PTR_00802a38->vtable->field_0008)(0x106,0,0,local_5c,0);
+  (*g_playSystem_00802A38->vtable->vfunc_08)(0x106,0,0,local_5c,0);
   return;
 }
 

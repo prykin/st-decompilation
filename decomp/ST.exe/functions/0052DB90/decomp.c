@@ -28,9 +28,8 @@ void __thiscall PopUpTy::Clear(PopUpTy *this)
   pPVar3 = local_8;
   if (iVar4 == 0) {
     if (local_8->field_009C != '\0') {
-      if ((AnonShape_006B5570_4D68B99C *)local_8->field_0098 != (AnonShape_006B5570_4D68B99C *)0x0)
-      {
-        FUN_006b5570((AnonShape_006B5570_4D68B99C *)local_8->field_0098);
+      if ((DArrayTy *)local_8->field_0098 != (DArrayTy *)0x0) {
+        FUN_006b5570((DArrayTy *)local_8->field_0098);
       }
       pDVar5 = Library::DKW::TBL::SArrayCreate((DArrayTy *)0x0,10,10);
       pPVar3->field_0098 = &pDVar5->flags;
@@ -53,7 +52,7 @@ void __thiscall PopUpTy::Clear(PopUpTy *this)
       iVar4 = 0xf;
       do {
         puVar10[0xf] = 0;
-        FUN_006b2800((int)PTR_008075a8,*puVar10,0,0x13);
+        FUN_006b2800(PTR_008075a8,*puVar10,0,0x13);
         FUN_006b3af0((int *)PTR_008075a8,*puVar10);
         puVar10 = puVar10 + 1;
         iVar4 = iVar4 + -1;

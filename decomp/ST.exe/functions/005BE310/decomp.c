@@ -34,8 +34,8 @@ void __thiscall MReportTy::DoneMReport(MReportTy *this)
     *(undefined4 *)&local_8->field_0x31 = local_8->field_0008;
     FUN_006e6000(local_8,3,1,(undefined4 *)&local_8->field_0x1d);
     DarkScreen(DAT_0080759c,10,2);
-    if (PTR_00802a30 != (CursorClassTy *)0x0) {
-      thunk_FUN_00544940((AnonShape_00544940_E504B2A8 *)PTR_00802a30);
+    if (g_cursorClass_00802A30 != (CursorClassTy *)0x0) {
+      thunk_FUN_00544940((AnonShape_00544940_E504B2A8 *)g_cursorClass_00802A30);
     }
     ppDVar6 = &pMVar2->field_0347;
     iVar3 = 3;
@@ -80,7 +80,7 @@ void __thiscall MReportTy::DoneMReport(MReportTy *this)
     if (pMVar2->field_0087 != (ccFntTy *)0x0) {
       ccFntTy::operator(this_00,(uint *)pMVar2->field_0087);
       pMVar2->field_0087 = (ccFntTy *)0x0;
-      PTR_0081176c->field_0038 = (ccFntTy *)0x0;
+      g_startSystem_0081176C->field_0038 = (ccFntTy *)0x0;
       /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
       this_00 = extraout_ECX_01;
     }

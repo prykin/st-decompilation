@@ -1,0 +1,6 @@
+005F03A8  pointer  005f0392
+005F03AC  pointer  005f0398
+005F03B0  pointer  005f039e
+005F03B4  pointer  005f0392
+005F03B8  pointer  005f0398
+005F03BC  pointer  005f039e

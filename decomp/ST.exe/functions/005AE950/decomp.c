@@ -1,41 +1,43 @@
 
-void __fastcall FUN_005ae950(AnonShape_005AE840_42F3E2A7 *param_1)
+/* [STMethodOwnerApplier] Structural method owner recovered as ChooseMapTy.
+   Evidence: this_call_owners=[ChooseMapTy]; agreed_this_calls=1; incoming_this_accesses=21;
+   incoming_edx_uses=0; incoming_stack_parameter_uses=0; direct_non_thunk_callers=0;
+   incoming_ecx_receiver_callers=0; attributed_named_callers=1; owner_evidence_coverage=adequate */
+
+void __thiscall ChooseMapTy::sub_005AE950(ChooseMapTy *this)
 
 {
-  param_1->field_1A60 = 0;
-  param_1->field_0029 = 2;
-  param_1->field_002D = 0x20;
-  if (param_1->field_1C83 != 0) {
-    param_1->field_0025 = param_1->field_1C83;
-    param_1->field_0031 = 0;
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-    (**(code **)(*param_1->field_000C + 0x18))(&param_1->field_0x1d);
+  this->field_1A60 = 0;
+  this->field_0029 = 2;
+  this->field_002D = 0x20;
+  if (this->field_1C83 != 0) {
+    this->field_0025 = this->field_1C83;
+    *(undefined4 *)&this->field_0x31 = 0;
+    (*this->field_000C->vtable->vfunc_18)(&this->field_0x1d);
   }
-  if (param_1->field_1A6C != 0) {
-    param_1->field_0025 = param_1->field_1A6C;
-    param_1->field_0031 = 0;
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-    (**(code **)(*param_1->field_000C + 0x18))(&param_1->field_0x1d);
+  if (this->field_1A6C != 0) {
+    this->field_0025 = this->field_1A6C;
+    *(undefined4 *)&this->field_0x31 = 0;
+    (*this->field_000C->vtable->vfunc_18)(&this->field_0x1d);
   }
-  if (PTR_0081176c->field_0389 != 0) {
-    param_1->field_0025 = PTR_0081176c->field_0389;
-    param_1->field_002D = 0x20;
-    param_1->field_0031 = 0;
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-    (**(code **)(*param_1->field_000C + 0x18))(&param_1->field_0x1d);
+  if (g_startSystem_0081176C->field_0389 != 0) {
+    this->field_0025 = g_startSystem_0081176C->field_0389;
+    this->field_002D = 0x20;
+    *(undefined4 *)&this->field_0x31 = 0;
+    (*this->field_000C->vtable->vfunc_18)(&this->field_0x1d);
   }
-  if (PTR_0081176c->field_054C != 0) {
-    param_1->field_002D = 0x20;
-    param_1->field_0031 = 0;
-    FUN_006e6080(param_1,2,PTR_0081176c->field_054C,(undefined4 *)&param_1->field_0x1d);
-    param_1->field_002D = 0x29;
-    param_1->field_0031 = 0x19;
-    FUN_006e6080(param_1,2,PTR_0081176c->field_054C,(undefined4 *)&param_1->field_0x1d);
+  if (g_startSystem_0081176C->field_054C != 0) {
+    this->field_002D = 0x20;
+    *(undefined4 *)&this->field_0x31 = 0;
+    FUN_006e6080(this,2,g_startSystem_0081176C->field_054C,(undefined4 *)&this->field_0x1d);
+    this->field_002D = 0x29;
+    *(undefined4 *)&this->field_0x31 = 0x19;
+    FUN_006e6080(this,2,g_startSystem_0081176C->field_054C,(undefined4 *)&this->field_0x1d);
   }
-  if (PTR_0081176c->field_0550 != 0) {
-    param_1->field_002D = 0x20;
-    param_1->field_0031 = 0;
-    FUN_006e6080(param_1,2,PTR_0081176c->field_0550,(undefined4 *)&param_1->field_0x1d);
+  if (g_startSystem_0081176C->field_0550 != 0) {
+    this->field_002D = 0x20;
+    *(undefined4 *)&this->field_0x31 = 0;
+    FUN_006e6080(this,2,g_startSystem_0081176C->field_0550,(undefined4 *)&this->field_0x1d);
   }
   return;
 }

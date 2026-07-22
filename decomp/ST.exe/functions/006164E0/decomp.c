@@ -26,7 +26,7 @@ undefined4 __thiscall FUN_006164e0(void *this,int *param_1,int *param_2,int *par
     return 0xffffffff;
   }
   iVar5 = *(int *)((int)this + 0x298);
-  uVar7 = PTR_00802a38->field_00E4;
+  uVar7 = g_playSystem_00802A38->field_00E4;
   local_8 = (int)*(short *)((int)this + 0x25a);
   local_c = (int)*(short *)((int)this + 0x25c);
   *(uint *)((int)this + 0x298) = uVar7;
@@ -51,8 +51,9 @@ undefined4 __thiscall FUN_006164e0(void *this,int *param_1,int *param_2,int *par
         *(undefined2 *)((int)this + 0x270) = 0xffff;
         uVar7 = *(int *)((int)this + 0x1c) * 0x41c64e6d + 0x3039;
         *(uint *)((int)this + 0x1c) = uVar7;
-        *(uint *)((int)this + 0x294) = (uVar7 >> 0x10) % 0xb + 10 + PTR_00802a38->field_00E4;
-        *(uint *)((int)this + 0x298) = PTR_00802a38->field_00E4;
+        *(uint *)((int)this + 0x294) =
+             (uVar7 >> 0x10) % 0xb + 10 + g_playSystem_00802A38->field_00E4;
+        *(uint *)((int)this + 0x298) = g_playSystem_00802A38->field_00E4;
       }
     }
     else {

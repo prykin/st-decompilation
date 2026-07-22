@@ -43,7 +43,7 @@ int __thiscall MReportTy::GetMessage(MReportTy *this,STMessage *message)
   int *local_8;
 
   local_10 = this;
-  DVar11 = FUN_006e51b0(this->field_0010);
+  DVar11 = STAppC::sub_006E51B0(this->field_0010);
   piVar20 = (int *)0x0;
   this->field_0061 = DVar11;
   local_5c.previous = g_currentExceptionFrame;
@@ -76,7 +76,7 @@ int __thiscall MReportTy::GetMessage(MReportTy *this,STMessage *message)
           else {
             UVar22 = 0x23f1;
           }
-          pcVar13 = LoadResourceString(UVar22,HINSTANCE_00807618);
+          pcVar13 = LoadResourceString(UVar22,g_module_00807618);
           uVar17 = 0xffffffff;
           do {
             pcVar21 = pcVar13;
@@ -140,9 +140,9 @@ int __thiscall MReportTy::GetMessage(MReportTy *this,STMessage *message)
                 piVar20 = (int *)0x0;
               }
               iVar12 = *piVar20 + 1;
-              pcVar13 = LoadResourceString(0x2445,HINSTANCE_00807618);
+              pcVar13 = LoadResourceString(0x2445,g_module_00807618);
               wsprintfA((LPSTR)&DAT_0080f33a,"%s %d",pcVar13,iVar12);
-              PaintBut(this_00,(AnonShape_005C0B00_CBE14AB4 *)message,0,2,'\x01',&DAT_0080f33a);
+              PaintBut(this_00,message,0,2,'\x01',&DAT_0080f33a);
             }
           }
         }
@@ -158,10 +158,10 @@ int __thiscall MReportTy::GetMessage(MReportTy *this,STMessage *message)
         }
       }
       else if (SVar5 == MESS_PRIVIDERTY_693F) {
-        thunk_FUN_005c00d0((AnonShape_005C00D0_8BBBA4CC *)local_10);
+        sub_005C00D0(local_10);
       }
       else if (SVar5 == MESS_SHARED_6940) {
-        thunk_FUN_005c0190((AnonShape_005C0190_99FBAF43 *)local_10);
+        sub_005C0190(local_10);
       }
       goto cf_common_exit_005C22B1;
     }
@@ -188,7 +188,7 @@ int __thiscall MReportTy::GetMessage(MReportTy *this,STMessage *message)
       if (piVar20 != (int *)0x0) {
         ccFntTy::SetSurf(local_10->field_0087,(message->arg1).i32,0,0,0,0,0);
         iVar12 = *piVar20 + 1;
-        pcVar13 = LoadResourceString(0x2445,HINSTANCE_00807618);
+        pcVar13 = LoadResourceString(0x2445,g_module_00807618);
         wsprintfA((LPSTR)&DAT_0080f33a,"%s %d",pcVar13,iVar12);
         ccFntTy::WrStr(this_00->field_0087,&DAT_0080f33a,-1,-1,
                        (uint)((message->arg0).words.high == 1));
@@ -215,7 +215,7 @@ switchD_005c1b14_caseD_5:
     else {
       UVar22 = 0x23f1;
     }
-    pcVar13 = LoadResourceString(UVar22,HINSTANCE_00807618);
+    pcVar13 = LoadResourceString(UVar22,g_module_00807618);
     uVar17 = 0xffffffff;
     do {
       pcVar21 = pcVar13;
@@ -242,7 +242,7 @@ switchD_005c1b14_caseD_5:
         puVar14 = Library::MSVCRT::FUN_0072e560(puVar14,'\n')) {
       *(undefined1 *)puVar14 = 0x20;
     }
-    PaintBut(this_00,(AnonShape_005C0B00_CBE14AB4 *)message,0,2,'\x01',&DAT_0080f33a);
+    PaintBut(this_00,message,0,2,'\x01',&DAT_0080f33a);
     goto cf_common_exit_005C22B1;
   }
   if (SVar5 < MESS_PLAYPANELTY_6201) {
@@ -299,7 +299,7 @@ switchD_005c1b14_caseD_5:
             *(undefined2 *)&local_10->field_0x33 = 3;
             local_10->field_0035 = piVar19;
             /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-            (**(code **)PTR_00802a30->field_0000)(&local_10->field_0x1d);
+            (**(code **)g_cursorClass_00802A30->field_0000)(&local_10->field_0x1d);
           }
           this_00->field_044F = piVar20;
           if (piVar20 != (int *)0x0) {
@@ -308,7 +308,7 @@ switchD_005c1b14_caseD_5:
             *(undefined2 *)&this_00->field_0x33 = 3;
             this_00->field_0035 = piVar20;
             /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-            (**(code **)PTR_00802a30->field_0000)(&this_00->field_0x1d);
+            (**(code **)g_cursorClass_00802A30->field_0000)(&this_00->field_0x1d);
           }
         }
       }
@@ -317,7 +317,7 @@ switchD_005c1b14_caseD_5:
     local_10->field_0049 = 1;
     if (local_10->field_0066 == '\0') {
       local_10->field_004D = 0x6108;
-      thunk_FUN_005c05f0((AnonShape_005C05F0_AB1ACC3B *)local_10);
+      sub_005C05F0(local_10);
       goto cf_common_exit_005C22B1;
     }
     wsprintfA(&DAT_0080ed16,"%s%s",&DAT_00807680,&DAT_0080c52e);
@@ -368,17 +368,17 @@ switchD_005c1b14_caseD_5:
       pcVar21 = pcVar21 + 1;
     }
     DAT_008087a0 = 8;
-    iVar12 = thunk_FUN_0056e9e0(&DAT_00807620,1);
+    iVar12 = STAppC::sub_0056E9E0((STAppC *)&DAT_00807620,1);
     if (iVar12 != 0) {
       this_00->field_004D = 0x6104;
       this_00->field_0051 = 0;
       this_00->field_0055 = 2;
-      thunk_FUN_005c05f0((AnonShape_005C05F0_AB1ACC3B *)this_00);
+      sub_005C05F0(this_00);
       goto cf_common_exit_005C22B1;
     }
 LAB_005c1d24:
     this_00->field_004D = 0x6102;
-    thunk_FUN_005c05f0((AnonShape_005C05F0_AB1ACC3B *)this_00);
+    sub_005C05F0(this_00);
   }
   else {
     switch(SVar5) {
@@ -394,8 +394,9 @@ LAB_005c1d24:
       local_10->field_032B = 0x50;
       local_10->field_0333 = 200;
       local_10->field_032F = 0x1b3;
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-      (*(code *)local_10->field_000C->vtable->field_0008)(0x100ef,0,0,&local_10->field_0x2c7,0);
+      (*local_10->field_000C->vtable->CreateObject)
+                ((SystemClassTy *)local_10->field_000C,0x100ef,(undefined4 *)0x0,(int *)0x0,
+                 &local_10->field_0x2c7,0);
       break;
     case MESS_SETTMAPTY_6203:
       if ((&local_10->field_0347)[(byte)local_10->field_006A] != (DArrayTy *)0x0) {
@@ -413,21 +414,22 @@ LAB_005c1d24:
         if (600 < iVar12 + iVar16) {
           local_10->field_032F = 600 - iVar16;
         }
-        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-        (*(code *)local_10->field_000C->vtable->field_0008)(0x100ef,0,0,&local_10->field_0x2c7,0);
+        (*local_10->field_000C->vtable->CreateObject)
+                  ((SystemClassTy *)local_10->field_000C,0x100ef,(undefined4 *)0x0,(int *)0x0,
+                   &local_10->field_0x2c7,0);
       }
       break;
     case MESS_MTASKTY_6212:
       if (local_10->field_0066 == '\0') {
-        PaintBut(local_10,(AnonShape_005C0B00_CBE14AB4 *)message,
-                 (-(uint)(DAT_0080c632 != '\0') & 0x2b) + 0x232c,4,'\0',(uint *)0x0);
+        PaintBut(local_10,message,(-(uint)(DAT_0080c632 != '\0') & 0x2b) + 0x232c,4,'\0',(uint *)0x0
+                );
       }
       else {
-        PaintBut(local_10,(AnonShape_005C0B00_CBE14AB4 *)message,0x2358,4,'\0',(uint *)0x0);
+        PaintBut(local_10,message,0x2358,4,'\0',(uint *)0x0);
       }
       break;
     case MESS_MTASKTY_6213:
-      PaintBut(local_10,(AnonShape_005C0B00_CBE14AB4 *)message,0x24bc,4,'\0',(uint *)0x0);
+      PaintBut(local_10,message,0x24bc,4,'\0',(uint *)0x0);
     }
   }
 cf_common_exit_005C22B1:

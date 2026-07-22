@@ -1,4 +1,4 @@
-FUN_004efe20:
+BldLabPanelTy::sub_004EFE20:
 004EFE20  55                        PUSH EBP
 004EFE21  8B EC                     MOV EBP,ESP
 004EFE23  83 EC 10                  SUB ESP,0x10

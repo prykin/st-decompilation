@@ -1,7 +1,13 @@
 #include "../../pseudocode_runtime.h"
 
 
-void __thiscall FUN_005d00b0(void *this,AnonShape_005D00B0_9E7CC102 *param_1,uint param_2)
+/* [STMethodOwnerApplier] Structural method owner recovered as SettMapMTy.
+   Evidence: this_call_owners=[SettMapMTy]; agreed_this_calls=4; incoming_this_accesses=1;
+   incoming_edx_uses=0; incoming_stack_parameter_uses=2; direct_non_thunk_callers=0;
+   incoming_ecx_receiver_callers=0; attributed_named_callers=3; owner_evidence_coverage=adequate */
+
+void __thiscall
+SettMapMTy::sub_005D00B0(SettMapMTy *this,AnonShape_005D00B0_9E7CC102 *param_1,uint param_2)
 
 {
   uint *puVar1;
@@ -29,7 +35,7 @@ void __thiscall FUN_005d00b0(void *this,AnonShape_005D00B0_9E7CC102 *param_1,uin
   local_8 = param_1->field_005C;
   local_19 = 0;
   local_15 = 0;
-  Library::DKW::TBL::FUN_006b11d0(*(uint **)((int)this + 0x1f84),param_2,&local_64);
+  Library::DKW::TBL::FUN_006b11d0(&this->field_1F84->flags,param_2,&local_64);
   return;
 }
 

@@ -1,0 +1,4 @@
+0071B954  pointer  0071b79e
+0071B958  pointer  0071b796
+0071B95C  pointer  0071b78e
+0071B960  pointer  0071b786

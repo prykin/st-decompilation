@@ -1,5 +1,14 @@
 
-undefined4 __thiscall FUN_00427090(void *this,int param_1,int param_2,int param_3)
+/* [STMethodOwnerApplier] Structural method owner recovered as
+   SubmarineTitans::Recovered::HiddenThis::AnonReceiver_004248D0.
+   Evidence: this_call_owners=[SubmarineTitans::Recovered::HiddenThis::AnonReceiver_004248D0];
+   agreed_this_calls=3; incoming_this_accesses=6; incoming_edx_uses=0;
+   incoming_stack_parameter_uses=96; direct_non_thunk_callers=0; incoming_ecx_receiver_callers=0;
+   attributed_named_callers=1; owner_evidence_coverage=adequate */
+
+undefined4 __thiscall
+SubmarineTitans::Recovered::HiddenThis::AnonReceiver_004248D0::sub_00427090
+          (AnonReceiver_004248D0 *this,int param_1,int param_2,int param_3)
 
 {
   int iVar1;
@@ -32,45 +41,44 @@ undefined4 __thiscall FUN_00427090(void *this,int param_1,int param_2,int param_
     iVar3 = param_1 * 0x10;
     *(uint *)(DAT_007f4d6c + DAT_007f4d78 * 0xc) =
          (uint)(*(byte *)((*(int *)(iVar3 + DAT_007f4d74) + DAT_007f4d7c) *
-                          *(int *)((int)this + 0x37c) + *(int *)((int)this + 0x38c) + DAT_007f4d80 +
+                          *(int *)&this->field_0x37c + *(int *)&this->field_0x38c + DAT_007f4d80 +
                          param_1) >> 7);
-    iVar4 = thunk_FUN_004248d0(this,iVar2,0,*(int *)(iVar3 + DAT_007f4d74) + DAT_007f4d7c,
-                               DAT_007f4d80 + param_1,CASE_0,~CASE_0);
+    iVar4 = sub_004248D0(this,iVar2,0,*(int *)(iVar3 + DAT_007f4d74) + DAT_007f4d7c,
+                         DAT_007f4d80 + param_1,CASE_0,~CASE_0);
     iVar6 = *(int *)(iVar3 + DAT_007f4d74);
     iVar8 = iVar3;
     for (iVar7 = param_1; iVar7 <= param_2; iVar7 = iVar7 + 1) {
       if (*(int *)(iVar8 + DAT_007f4d74) < iVar6) {
-        iVar4 = thunk_FUN_004248d0(this,iVar2,iVar4,*(int *)(iVar8 + DAT_007f4d74) + DAT_007f4d7c,
-                                   DAT_007f4d80 + iVar7,CASE_0,~CASE_0);
+        iVar4 = sub_004248D0(this,iVar2,iVar4,*(int *)(iVar8 + DAT_007f4d74) + DAT_007f4d7c,
+                             DAT_007f4d80 + iVar7,CASE_0,~CASE_0);
       }
       if ((iVar7 < param_2) &&
          (iVar6 = *(int *)(iVar8 + DAT_007f4d74) + DAT_007f4d7c,
          iVar6 < *(int *)(iVar8 + 0x10 + DAT_007f4d74) + DAT_007f4d7c)) {
-        iVar4 = thunk_FUN_004248d0(this,iVar2,iVar4,iVar6,DAT_007f4d80 + iVar7,CASE_1,~CASE_0);
+        iVar4 = sub_004248D0(this,iVar2,iVar4,iVar6,DAT_007f4d80 + iVar7,CASE_1,~CASE_0);
       }
       iVar6 = *(int *)(iVar8 + DAT_007f4d74);
       iVar8 = iVar8 + 0x10;
     }
     local_c = param_2 * 0x10;
-    iVar6 = thunk_FUN_004248d0(this,iVar2,iVar4,*(int *)(local_c + DAT_007f4d74) + DAT_007f4d7c,
-                               DAT_007f4d80 + param_2,CASE_1,~CASE_0);
+    iVar6 = sub_004248D0(this,iVar2,iVar4,*(int *)(local_c + DAT_007f4d74) + DAT_007f4d7c,
+                         DAT_007f4d80 + param_2,CASE_1,~CASE_0);
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-    param_3 = thunk_FUN_004248d0(this,iVar2,iVar6,
-                                 *(int *)(local_c + 0xc + DAT_007f4d74) + DAT_007f4d7c,
-                                 DAT_007f4d80 + param_2,CASE_3,~CASE_0);
+    param_3 = sub_004248D0(this,iVar2,iVar6,*(int *)(local_c + 0xc + DAT_007f4d74) + DAT_007f4d7c,
+                           DAT_007f4d80 + param_2,CASE_3,~CASE_0);
     iVar6 = DAT_007f4d74;
     if (param_1 < param_2) {
       do {
         iVar8 = *(int *)(iVar6 + 0xc + local_c);
         if ((iVar8 < *(int *)(iVar6 + -4 + local_c)) && (param_2 != iVar5)) {
-          param_3 = thunk_FUN_004248d0(this,iVar2,param_3,iVar8 + DAT_007f4d7c,
-                                       DAT_007f4d80 + param_2,CASE_3,~CASE_0);
+          param_3 = sub_004248D0(this,iVar2,param_3,iVar8 + DAT_007f4d7c,DAT_007f4d80 + param_2,
+                                 CASE_3,~CASE_0);
           iVar6 = DAT_007f4d74;
         }
         iVar8 = *(int *)(iVar6 + 0xc + local_c);
         if (*(int *)(iVar6 + -4 + local_c) < iVar8) {
-          param_3 = thunk_FUN_004248d0(this,iVar2,param_3,iVar8 + DAT_007f4d7c,
-                                       DAT_007f4d80 + param_2,CASE_2,~CASE_0);
+          param_3 = sub_004248D0(this,iVar2,param_3,iVar8 + DAT_007f4d7c,DAT_007f4d80 + param_2,
+                                 CASE_2,~CASE_0);
           iVar6 = DAT_007f4d74;
         }
         param_2 = param_2 + -1;
@@ -79,8 +87,8 @@ undefined4 __thiscall FUN_00427090(void *this,int param_1,int param_2,int param_
       iVar5 = *(int *)(iVar3 + 0xc + iVar6);
       if (*(int *)(iVar3 + 0x1c + iVar6) < iVar5) {
 LAB_004278f1:
-        param_3 = thunk_FUN_004248d0(this,iVar2,param_3,iVar5 + DAT_007f4d7c,DAT_007f4d80 + param_1,
-                                     CASE_3,~CASE_0);
+        param_3 = sub_004248D0(this,iVar2,param_3,iVar5 + DAT_007f4d7c,DAT_007f4d80 + param_1,CASE_3
+                               ,~CASE_0);
         iVar6 = DAT_007f4d74;
       }
     }
@@ -90,46 +98,45 @@ LAB_004278f1:
       iVar3 = param_1 * 0x10;
       *(uint *)(DAT_007f4d6c + DAT_007f4d78 * 0xc) =
            (uint)(*(byte *)((*(int *)(iVar3 + DAT_007f4d74) + DAT_007f4d7c) *
-                            *(int *)((int)this + 0x37c) + *(int *)((int)this + 0x38c) + DAT_007f4d80
-                           + param_1) >> 7);
-      iVar4 = thunk_FUN_004248d0(this,iVar2,0,*(int *)(iVar3 + DAT_007f4d74) + DAT_007f4d7c,
-                                 DAT_007f4d80 + param_1,CASE_0,~CASE_0);
+                            *(int *)&this->field_0x37c + *(int *)&this->field_0x38c + DAT_007f4d80 +
+                           param_1) >> 7);
+      iVar4 = sub_004248D0(this,iVar2,0,*(int *)(iVar3 + DAT_007f4d74) + DAT_007f4d7c,
+                           DAT_007f4d80 + param_1,CASE_0,~CASE_0);
       iVar6 = *(int *)(iVar3 + DAT_007f4d74);
       iVar8 = iVar3;
       for (iVar7 = param_1; iVar7 <= param_2; iVar7 = iVar7 + 1) {
         if (*(int *)(iVar8 + DAT_007f4d74) < iVar6) {
-          iVar4 = thunk_FUN_004248d0(this,iVar2,iVar4,*(int *)(iVar8 + DAT_007f4d74) + DAT_007f4d7c,
-                                     DAT_007f4d80 + iVar7,CASE_0,~CASE_0);
+          iVar4 = sub_004248D0(this,iVar2,iVar4,*(int *)(iVar8 + DAT_007f4d74) + DAT_007f4d7c,
+                               DAT_007f4d80 + iVar7,CASE_0,~CASE_0);
         }
         if ((iVar7 < param_2) &&
            (iVar6 = *(int *)(iVar8 + DAT_007f4d74) + DAT_007f4d7c,
            iVar6 < *(int *)(iVar8 + 0x10 + DAT_007f4d74) + DAT_007f4d7c)) {
-          iVar4 = thunk_FUN_004248d0(this,iVar2,iVar4,iVar6,DAT_007f4d80 + iVar7,CASE_1,~CASE_0);
+          iVar4 = sub_004248D0(this,iVar2,iVar4,iVar6,DAT_007f4d80 + iVar7,CASE_1,~CASE_0);
         }
         iVar6 = *(int *)(iVar8 + DAT_007f4d74);
         iVar8 = iVar8 + 0x10;
       }
       local_c = param_2 * 0x10;
-      iVar6 = thunk_FUN_004248d0(this,iVar2,iVar4,*(int *)(local_c + DAT_007f4d74) + DAT_007f4d7c,
-                                 DAT_007f4d80 + param_2,CASE_1,~CASE_0);
-      param_3 = thunk_FUN_004248d0(this,iVar2,iVar6,
-                                   *(int *)(local_c + 4 + DAT_007f4d74) + DAT_007f4d7c,
-                                   DAT_007f4d80 + param_2,CASE_3,~CASE_0);
+      iVar6 = sub_004248D0(this,iVar2,iVar4,*(int *)(local_c + DAT_007f4d74) + DAT_007f4d7c,
+                           DAT_007f4d80 + param_2,CASE_1,~CASE_0);
+      param_3 = sub_004248D0(this,iVar2,iVar6,*(int *)(local_c + 4 + DAT_007f4d74) + DAT_007f4d7c,
+                             DAT_007f4d80 + param_2,CASE_3,~CASE_0);
       iVar6 = DAT_007f4d74;
       if (param_1 < param_2) {
         do {
           iVar8 = *(int *)(local_c + 4 + iVar6);
           /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
           if ((iVar8 < *(int *)(local_c + -0xc + iVar6)) && (param_2 != iVar5)) {
-            param_3 = thunk_FUN_004248d0(this,iVar2,param_3,iVar8 + DAT_007f4d7c,
-                                         DAT_007f4d80 + param_2,CASE_3,~CASE_0);
+            param_3 = sub_004248D0(this,iVar2,param_3,iVar8 + DAT_007f4d7c,DAT_007f4d80 + param_2,
+                                   CASE_3,~CASE_0);
             iVar6 = DAT_007f4d74;
           }
           iVar8 = *(int *)(local_c + 4 + iVar6);
           /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
           if (*(int *)(local_c + -0xc + iVar6) < iVar8) {
-            param_3 = thunk_FUN_004248d0(this,iVar2,param_3,iVar8 + DAT_007f4d7c,
-                                         DAT_007f4d80 + param_2,CASE_2,~CASE_0);
+            param_3 = sub_004248D0(this,iVar2,param_3,iVar8 + DAT_007f4d7c,DAT_007f4d80 + param_2,
+                                   CASE_2,~CASE_0);
             iVar6 = DAT_007f4d74;
           }
           param_2 = param_2 + -1;
@@ -137,8 +144,8 @@ LAB_004278f1:
         } while (param_1 < param_2);
         iVar5 = *(int *)(iVar3 + 4 + iVar6);
         if (*(int *)(iVar3 + 0x14 + iVar6) < iVar5) {
-          param_3 = thunk_FUN_004248d0(this,iVar2,param_3,iVar5 + DAT_007f4d7c,
-                                       DAT_007f4d80 + param_1,CASE_3,~CASE_0);
+          param_3 = sub_004248D0(this,iVar2,param_3,iVar5 + DAT_007f4d7c,DAT_007f4d80 + param_1,
+                                 CASE_3,~CASE_0);
           iVar6 = DAT_007f4d74;
         }
       }
@@ -148,48 +155,47 @@ LAB_004278f1:
     iVar3 = param_1 * 0x10;
     *(uint *)(DAT_007f4d6c + DAT_007f4d78 * 0xc) =
          (uint)(*(byte *)((*(int *)(iVar3 + 8 + DAT_007f4d74) + DAT_007f4d7c) *
-                          *(int *)((int)this + 0x37c) + *(int *)((int)this + 0x38c) + DAT_007f4d80 +
+                          *(int *)&this->field_0x37c + *(int *)&this->field_0x38c + DAT_007f4d80 +
                          param_1) >> 7);
-    iVar4 = thunk_FUN_004248d0(this,iVar2,0,*(int *)(iVar3 + 8 + DAT_007f4d74) + DAT_007f4d7c,
-                               DAT_007f4d80 + param_1,CASE_0,~CASE_0);
+    iVar4 = sub_004248D0(this,iVar2,0,*(int *)(iVar3 + 8 + DAT_007f4d74) + DAT_007f4d7c,
+                         DAT_007f4d80 + param_1,CASE_0,~CASE_0);
     iVar6 = *(int *)(iVar3 + 8 + DAT_007f4d74);
     iVar8 = iVar3;
     for (iVar7 = param_1; iVar7 <= param_2; iVar7 = iVar7 + 1) {
       iVar1 = *(int *)(iVar8 + 8 + DAT_007f4d74);
       if (iVar1 < iVar6) {
-        iVar4 = thunk_FUN_004248d0(this,iVar2,iVar4,iVar1 + DAT_007f4d7c,DAT_007f4d80 + iVar7,CASE_0
-                                   ,~CASE_0);
+        iVar4 = sub_004248D0(this,iVar2,iVar4,iVar1 + DAT_007f4d7c,DAT_007f4d80 + iVar7,CASE_0,
+                             ~CASE_0);
       }
       if ((iVar7 < param_2) &&
          (iVar6 = *(int *)(iVar8 + 8 + DAT_007f4d74) + DAT_007f4d7c,
          iVar6 < *(int *)(iVar8 + 0x18 + DAT_007f4d74) + DAT_007f4d7c)) {
-        iVar4 = thunk_FUN_004248d0(this,iVar2,iVar4,iVar6,DAT_007f4d80 + iVar7,CASE_1,~CASE_0);
+        iVar4 = sub_004248D0(this,iVar2,iVar4,iVar6,DAT_007f4d80 + iVar7,CASE_1,~CASE_0);
       }
       iVar6 = *(int *)(iVar8 + 8 + DAT_007f4d74);
       iVar8 = iVar8 + 0x10;
     }
     local_c = param_2 * 0x10;
-    iVar6 = thunk_FUN_004248d0(this,iVar2,iVar4,*(int *)(local_c + 8 + DAT_007f4d74) + DAT_007f4d7c,
-                               DAT_007f4d80 + param_2,CASE_1,~CASE_0);
+    iVar6 = sub_004248D0(this,iVar2,iVar4,*(int *)(local_c + 8 + DAT_007f4d74) + DAT_007f4d7c,
+                         DAT_007f4d80 + param_2,CASE_1,~CASE_0);
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-    param_3 = thunk_FUN_004248d0(this,iVar2,iVar6,
-                                 *(int *)(local_c + 0xc + DAT_007f4d74) + DAT_007f4d7c,
-                                 DAT_007f4d80 + param_2,CASE_3,~CASE_0);
+    param_3 = sub_004248D0(this,iVar2,iVar6,*(int *)(local_c + 0xc + DAT_007f4d74) + DAT_007f4d7c,
+                           DAT_007f4d80 + param_2,CASE_3,~CASE_0);
     iVar6 = DAT_007f4d74;
     if (param_1 < param_2) {
       do {
         /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
         iVar8 = *(int *)(local_c + 0xc + iVar6);
         if ((iVar8 < *(int *)(local_c + -4 + iVar6)) && (param_2 != iVar5)) {
-          param_3 = thunk_FUN_004248d0(this,iVar2,param_3,iVar8 + DAT_007f4d7c,
-                                       DAT_007f4d80 + param_2,CASE_3,~CASE_0);
+          param_3 = sub_004248D0(this,iVar2,param_3,iVar8 + DAT_007f4d7c,DAT_007f4d80 + param_2,
+                                 CASE_3,~CASE_0);
           iVar6 = DAT_007f4d74;
         }
         /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
         iVar8 = *(int *)(local_c + 0xc + iVar6);
         if (*(int *)(local_c + -4 + iVar6) < iVar8) {
-          param_3 = thunk_FUN_004248d0(this,iVar2,param_3,iVar8 + DAT_007f4d7c,
-                                       DAT_007f4d80 + param_2,CASE_2,~CASE_0);
+          param_3 = sub_004248D0(this,iVar2,param_3,iVar8 + DAT_007f4d7c,DAT_007f4d80 + param_2,
+                                 CASE_2,~CASE_0);
           iVar6 = DAT_007f4d74;
         }
         param_2 = param_2 + -1;
@@ -203,8 +209,8 @@ LAB_004278f1:
   /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   iVar5 = *(int *)(local_8 + 0xc + iVar6);
 LAB_00427930:
-  iVar5 = thunk_FUN_004248d0(this,iVar2,param_3,iVar5 + DAT_007f4d7c,DAT_007f4d80 + param_1,CASE_2,
-                             ~CASE_0);
+  iVar5 = sub_004248D0(this,iVar2,param_3,iVar5 + DAT_007f4d7c,DAT_007f4d80 + param_1,CASE_2,~CASE_0
+                      );
   *(int *)(DAT_007f4d6c + 4 + DAT_007f4d78 * 0xc) = iVar5;
   DAT_007f4d78 = DAT_007f4d78 + 1;
   return 0;

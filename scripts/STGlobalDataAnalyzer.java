@@ -276,6 +276,11 @@ public class STGlobalDataAnalyzer extends GhidraScript {
             String currentType = typeSpecification(data.getDataType());
             boolean typeConflict = ev.types.size() > 1;
             int count = proposedType.isBlank() ? 0 : ev.types.get(proposedType);
+            int currentTypeCount = ev.types.getOrDefault(currentType, 0);
+            boolean currentTypeDominates = currentTypeCount >= 3;
+            for (Map.Entry<String, Integer> type : ev.types.entrySet())
+                if (!type.getKey().equals(currentType) &&
+                        currentTypeCount < type.getValue() * 3) currentTypeDominates = false;
             int proposedLength = typeLength(proposedType);
             boolean smallSafeType = proposedLength >= 1 && proposedLength <= 8 &&
                 !(resolveBaseType(proposedType) instanceof Structure &&
@@ -298,10 +303,22 @@ public class STGlobalDataAnalyzer extends GhidraScript {
                 currentReplaceable && extentCompatible && ev.addressEvidence == 0 &&
                 (ev.typedStores >= 1 || ev.strongCount >= 2 || count >= 3);
             String proposedName = unique(ev.names);
-            if (proposedName.isBlank() && proposedType.startsWith("pointer:"))
-                proposedName = structuralName(proposedType.substring("pointer:".length()), address);
+            int proposedNameCount = proposedName.isBlank() ? 0 :
+                ev.names.getOrDefault(proposedName, 0);
+            // A single parameter name is call-site context, not global identity. For example,
+            // AddChildSystem's childSystem parameter must not override dozens of concrete
+            // STPlaySystemC receiver uses of the same global.
+            if (proposedNameCount < 2) proposedName = "";
+            String namingType = proposedType.startsWith("pointer:") ? proposedType :
+                currentTypeDominates && currentType.startsWith("pointer:") ? currentType : "";
+            if (proposedName.isBlank() && !namingType.isBlank())
+                proposedName = structuralName(namingType.substring("pointer:".length()), address);
             else if (!proposedName.isBlank()) proposedName = "g_" + proposedName + "_" + addr(address);
-            boolean nameApply = typeApply && !proposedName.isBlank() &&
+            boolean sameConcreteType = !proposedType.isBlank() && sameType(currentType, proposedType);
+            boolean nameApply = (!typeConflict || currentTypeDominates) && !proposedName.isBlank() &&
+                !symbol.getName().equals(proposedName) && (typeApply || sameConcreteType &&
+                    (ev.typedStores >= 1 || ev.strongCount >= 2 || count >= 3) ||
+                    currentTypeDominates) &&
                 symbol.getSource() != SourceType.USER_DEFINED &&
                 symbol.getSource() != SourceType.IMPORTED;
             if (!typeChange && !nameApply) continue;
@@ -311,13 +328,15 @@ public class STGlobalDataAnalyzer extends GhidraScript {
             reasons.add("strong_evidence=" + ev.strongCount);
             reasons.add("closed_named_pointer_stores=" + ev.typedStores);
             if (typeConflict) reasons.add("type_conflict");
+            if (currentTypeDominates) reasons.add("existing_type_dominates_conflicting_evidence=" +
+                currentTypeCount);
             if (ev.addressEvidence > 0) reasons.add("address_of_global_requires_review");
             if (generatedAnonymous) reasons.add("script_owned_anonymous_pointer_upgrade");
             if (!extentCompatible) reasons.add("named_type_shorter_than_observed_anonymous_extent");
             if (!currentReplaceable) reasons.add("concrete_existing_data_preserved");
             result.add(new Proposal(address, symbol, data, proposedType, proposedName,
-                typeApply, nameApply, typeConflict ? "conflict" :
-                    typeApply ? "high" : "review", String.join("; ", reasons), ev.sites));
+                typeApply, nameApply, typeConflict && !currentTypeDominates ? "conflict" :
+                    typeApply || nameApply ? "high" : "review", String.join("; ", reasons), ev.sites));
         }
         result.sort(Comparator.comparing(row -> row.address));
         return result;
@@ -482,6 +501,7 @@ public class STGlobalDataAnalyzer extends GhidraScript {
     private String structuralName(String typePath, Address address) {
         String leaf = typePath.substring(typePath.lastIndexOf('/') + 1)
             .replaceAll("(?i)Ty$", "").replaceAll("C$", "");
+        if (leaf.matches("ST[A-Z].*")) leaf = leaf.substring(2);
         leaf = cleanName(leaf);
         return leaf.isBlank() ? "" : "g_" + leaf + "_" + addr(address);
     }

@@ -37,7 +37,7 @@ void __thiscall cLoadingTy::SetProcess(cLoadingTy *this,int param_1,char *text,i
       this_00->field_0040 = 1;
     }
     this_00->field_0050 = 0xffffffff;
-    DrawLineCR(this_00,(uint *)text);
+    DrawLineCR(this_00,text);
     g_currentExceptionFrame = local_4c.previous;
     return;
   }

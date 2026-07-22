@@ -1,4 +1,4 @@
-FUN_00646db0:
+STVolcanoC::sub_00646DB0:
 00646DB0  55                        PUSH EBP
 00646DB1  8B EC                     MOV EBP,ESP
 00646DB3  8B C1                     MOV EAX,ECX

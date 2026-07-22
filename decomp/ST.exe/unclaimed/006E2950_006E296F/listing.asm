@@ -1,0 +1,8 @@
+006E2950  pointer  006e2622
+006E2954  pointer  006e2655
+006E2958  pointer  006e2699
+006E295C  pointer  006e26dd
+006E2960  pointer  006e2760
+006E2964  pointer  006e2791
+006E2968  pointer  006e27d1
+006E296C  pointer  006e2816

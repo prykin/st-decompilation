@@ -1,19 +1,24 @@
 
 /* [STSwitchEnumApplier] Switch target param_1 uses
    /SubmarineTitans/Recovered/Enums/Global_sub_005050B0_param_1Enum. Cases:
-   CASE_0=0;CASE_1=1;CASE_2=2;CASE_3=3;CASE_4=4;CASE_5=5 */
+   CASE_0=0;CASE_1=1;CASE_2=2;CASE_3=3;CASE_4=4;CASE_5=5
 
-int __thiscall FUN_005050b0(void *this,Global_sub_005050B0_param_1Enum param_1)
+   [STMethodOwnerApplier] Structural method owner recovered as CPanelTy.
+   Evidence: this_call_owners=[CPanelTy]; agreed_this_calls=1; incoming_this_accesses=2;
+   incoming_edx_uses=5; incoming_stack_parameter_uses=2; direct_non_thunk_callers=0;
+   incoming_ecx_receiver_callers=0; attributed_named_callers=1; owner_evidence_coverage=adequate */
+
+int __thiscall CPanelTy::sub_005050B0(CPanelTy *this,Global_sub_005050B0_param_1Enum param_1)
 
 {
   char cVar1;
   bool bVar2;
 
   if (DAT_0080874e == '\x01') {
-    bVar2 = *(char *)((int)this + 0x9d4) != '\x01';
+    bVar2 = this->field_09D4 != '\x01';
   }
   else {
-    cVar1 = *(char *)((int)this + 0x9d4);
+    cVar1 = this->field_09D4;
     bVar2 = cVar1 == '\x01';
     if (DAT_0080874e == '\x03') {
       if ((param_1 == CASE_3) && (cVar1 == '\x01')) {

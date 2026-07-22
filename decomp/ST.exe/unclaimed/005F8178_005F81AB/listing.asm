@@ -1,0 +1,13 @@
+005F8178  pointer  005f6f89
+005F817C  pointer  005f70ff
+005F8180  pointer  005f7461
+005F8184  pointer  005f74b8
+005F8188  pointer  005f7935
+005F818C  pointer  005f7fa3
+005F8190  pointer  005f7fcd
+005F8194  pointer  005f7c11
+005F8198  pointer  005f7dd8
+005F819C  pointer  005f795a
+005F81A0  pointer  005f79d7
+005F81A4  pointer  005f759e
+005F81A8  pointer  005f8039

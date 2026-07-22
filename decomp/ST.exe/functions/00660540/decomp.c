@@ -35,7 +35,7 @@ FUN_00660540(void *this,undefined4 param_1,undefined2 param_2,undefined2 param_3
     pcVar1 = Library::MSVCRT::_strncpy(local_16,param_7,0xe);
     uVar2 = (undefined2)((uint)pcVar1 >> 0x10);
   }
-  if ((*(short *)((int)this + 0x7d) != -2) && (g_sTAllPlayers_007FA174 != (STAllPlayersC *)0x0)) {
+  if ((*(short *)((int)this + 0x7d) != -2) && (g_allPlayers_007FA174 != (STAllPlayersC *)0x0)) {
     /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
     this_00 = thunk_FUN_0042b760(*(char *)((int)this + 0x24),
                                  CONCAT22(uVar2,*(short *)((int)this + 0x7d)));

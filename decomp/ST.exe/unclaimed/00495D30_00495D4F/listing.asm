@@ -1,0 +1,8 @@
+00495D30  pointer  004959ad
+00495D34  pointer  00495c41
+00495D38  pointer  00495bf1
+00495D3C  pointer  00495bf1
+00495D40  pointer  00495bf1
+00495D44  pointer  00495bf1
+00495D48  pointer  00495bf1
+00495D4C  pointer  00495bf1

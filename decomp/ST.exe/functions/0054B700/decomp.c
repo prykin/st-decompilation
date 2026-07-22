@@ -3,11 +3,14 @@
    /SubmarineTitans/Recovered/HiddenThis/AnonReceiver_0054B700.
    Evidence: incoming_receiver_captures=1; receiver_accesses=9; incoming_edx_uses=0; calls=2;
    ecx_pointer_setup=2; ecx_scalar_setup=0; caller_cleanup_calls=0; callee_ret_pop=[4];
-   expected_stack=4; receiver_family_members=1; adopt_untyped_existing_thiscall */
+   expected_stack=4; receiver_family_members=1; adopt_untyped_existing_thiscall
 
-void __thiscall
-SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0054B700::FUN_0054b700
-          (AnonReceiver_0054B700 *this,int param_1)
+   [STMethodOwnerApplier] Structural method owner recovered as CursorClassTy.
+   Evidence: this_call_owners=[CursorClassTy]; agreed_this_calls=2; incoming_this_accesses=9;
+   incoming_edx_uses=0; incoming_stack_parameter_uses=2; direct_non_thunk_callers=0;
+   incoming_ecx_receiver_callers=0; attributed_named_callers=1; owner_evidence_coverage=adequate */
+
+void __thiscall CursorClassTy::sub_0054B700(CursorClassTy *this,int param_1)
 
 {
   AnonShape_0054B700_B3EE6DE9 *pAVar1;
@@ -19,7 +22,7 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0054B700::FUN_0054b700
   InternalExceptionFrame local_4c;
   AnonShape_0054B700_B3EE6DE9 *local_8;
 
-  if (param_1 == *(int *)&this->field_0x4df) {
+  if (param_1 == this->field_04DF) {
     return;
   }
   local_4c.previous = g_currentExceptionFrame;

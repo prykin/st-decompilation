@@ -65,24 +65,24 @@ MMsgTy::SetPanel(MMsgTy *this,UINT param_1,int param_2,int param_3,UINT param_4)
           cVar16 = CASE_FFFFFFFE;
           iVar9 = 0x39;
           iVar4 = 0x158;
-          puVar8 = (uint *)LoadResourceString(param_1,HINSTANCE_00807618);
+          puVar8 = (uint *)LoadResourceString(param_1,g_module_00807618);
           puVar7 = ccFntTy::CreateTypeSSpr
-                             (PTR_0081176c->field_0030,puVar8,iVar4,iVar9,cVar16,uVar10,iVar14,
-                              iVar15,iVar18);
+                             (g_startSystem_0081176C->field_0030,puVar8,iVar4,iVar9,cVar16,uVar10,
+                              iVar14,iVar15,iVar18);
           /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
           (**(code **)(local_8 + 8))(puVar7,uVar21,uVar22);
           *(undefined4 *)&this_00[0x21].field_0x4d = 0;
         }
         else {
-          pcVar5 = LoadResourceString(param_4,HINSTANCE_00807618);
-          pcVar6 = LoadResourceString(param_1,HINSTANCE_00807618);
+          pcVar5 = LoadResourceString(param_4,g_module_00807618);
+          pcVar6 = LoadResourceString(param_1,g_module_00807618);
           wsprintfA((LPSTR)local_478,"%s\n(%s=%li)",pcVar6,pcVar5,param_3);
           iVar4 = *(int *)&this_00[0x21].field_0x45;
           uVar22 = 0xffffffff;
           uVar21 = 7;
           puVar7 = ccFntTy::CreateTypeSSpr
-                             (PTR_0081176c->field_0030,local_478,0x158,0x39,CASE_FFFFFFFE,0xffffffff
-                              ,1,-1,-1);
+                             (g_startSystem_0081176C->field_0030,local_478,0x158,0x39,CASE_FFFFFFFE,
+                              0xffffffff,1,-1,-1);
           /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
           (**(code **)(iVar4 + 8))(puVar7,uVar21,uVar22);
           *(undefined4 *)&this_00[0x21].field_0x4d = 0;
@@ -111,10 +111,10 @@ MMsgTy::SetPanel(MMsgTy *this,UINT param_1,int param_2,int param_3,UINT param_4)
             iVar14 = 0x7d;
             iVar4 = *(int *)((int)this_00 + uVar10 * 0x1fb + 0x174);
             iVar9 = uVar10 * 0x1fb;
-            puVar8 = (uint *)LoadResourceString(*local_10,HINSTANCE_00807618);
+            puVar8 = (uint *)LoadResourceString(*local_10,g_module_00807618);
             puVar7 = ccFntTy::CreateTypeSSpr
-                               (PTR_0081176c->field_0030,puVar8,iVar14,iVar15,cVar16,uVar17,iVar18,
-                                iVar19,iVar20);
+                               (g_startSystem_0081176C->field_0030,puVar8,iVar14,iVar15,cVar16,
+                                uVar17,iVar18,iVar19,iVar20);
             /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
             (**(code **)(iVar4 + 8))(puVar7,uVar21,uVar22);
             pUVar12 = (UINT *)((int)this_00 + iVar9 + 0xbc);
@@ -178,8 +178,7 @@ MMsgTy::SetPanel(MMsgTy *this,UINT param_1,int param_2,int param_3,UINT param_4)
         local_34[3] = 2;
         local_34[4] = 0x6940;
         local_34[2] = iVar4;
-        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-        (*(code *)pSVar1->vtable->field_0018)(local_34);
+        (*pSVar1->vtable->vfunc_18)(local_34);
       }
       g_currentExceptionFrame = local_78.previous;
       return 1;

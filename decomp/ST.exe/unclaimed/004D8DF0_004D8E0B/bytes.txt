@@ -1,0 +1,2 @@
+004D8DF0  C2 8D 4D 00 DE 8D 4D 00 EC 8D 4D 00 EC 8D 4D 00  |..M...M...M...M.|
+004D8E00  EC 8D 4D 00 C2 8D 4D 00 DE 8D 4D 00              |..M...M...M.|

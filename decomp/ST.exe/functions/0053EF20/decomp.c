@@ -22,14 +22,14 @@ ProdPanelTy::InitProdPanel
   ccFntTy *pcVar3;
   LPSTR pCVar4;
   ushort *puVar5;
-  uint *puVar6;
-  uint uVar7;
-  undefined1 *puVar8;
-  uint uVar9;
-  byte bVar10;
-  int iVar11;
-  undefined4 *puVar12;
-  undefined4 uVar13;
+  uint *resourceString;
+  uint uVar6;
+  undefined1 *puVar7;
+  uint uVar8;
+  byte bVar9;
+  int iVar10;
+  undefined4 *puVar11;
+  undefined4 uVar12;
   InternalExceptionFrame local_58;
   ProdPanelTy *local_14;
   int local_10;
@@ -45,59 +45,59 @@ ProdPanelTy::InitProdPanel
              ccFntTy::operator(*(ccFntTy **)&PTR_00802a28->field_0x28,0x19d,
                                (int)*(ccFntTy **)&PTR_00802a28->field_0x28);
     this_00 = local_14;
-    puVar12 = (undefined4 *)0x0;
-    iVar11 = 0;
+    puVar11 = (undefined4 *)0x0;
+    iVar10 = 0;
     iVar2 = 1;
-    bVar10 = 0;
-    uVar9 = 0xffffffff;
+    bVar9 = 0;
+    uVar8 = 0xffffffff;
     local_14->field_017C = pcVar3;
     pcVar3->field_0058 = 0;
     pcVar3->field_005C = 0;
     pCVar4 = thunk_FUN_00571240("FRAMES",0);
     puVar5 = Library::Ourlib::MFRLOAD::mfRLoad
-                       (DAT_00806794,CASE_B,pCVar4,uVar9,bVar10,iVar2,iVar11,puVar12);
+                       (DAT_00806794,CASE_B,pCVar4,uVar8,bVar9,iVar2,iVar10,puVar11);
     this_00->field_0190 = puVar5;
     puVar5 = this_00->field_0068;
-    uVar9 = *(uint *)(puVar5 + 10);
-    if (uVar9 == 0) {
-      uVar9 = ((uint)puVar5[7] * *(int *)(puVar5 + 2) + 0x1f >> 3 & 0x1ffffffc) *
+    uVar8 = *(uint *)(puVar5 + 10);
+    if (uVar8 == 0) {
+      uVar8 = ((uint)puVar5[7] * *(int *)(puVar5 + 2) + 0x1f >> 3 & 0x1ffffffc) *
               *(int *)(puVar5 + 4);
     }
-    puVar12 = (undefined4 *)FUN_006b4fa0((int)puVar5);
-    for (uVar7 = uVar9 >> 2; uVar7 != 0; uVar7 = uVar7 - 1) {
-      *puVar12 = 0xffffffff;
-      puVar12 = puVar12 + 1;
+    puVar11 = (undefined4 *)FUN_006b4fa0((int)puVar5);
+    for (uVar6 = uVar8 >> 2; uVar6 != 0; uVar6 = uVar6 - 1) {
+      *puVar11 = 0xffffffff;
+      puVar11 = puVar11 + 1;
     }
-    for (uVar9 = uVar9 & 3; uVar9 != 0; uVar9 = uVar9 - 1) {
-      *(undefined1 *)puVar12 = 0xff;
-      puVar12 = (undefined4 *)((int)puVar12 + 1);
+    for (uVar8 = uVar8 & 3; uVar8 != 0; uVar8 = uVar8 - 1) {
+      *(undefined1 *)puVar11 = 0xff;
+      puVar11 = (undefined4 *)((int)puVar11 + 1);
     }
     DibPut((AnonShape_006B5B10_E0D06CF1 *)this_00->field_0068,0,0,'\x01',(byte *)this_00->field_0184
           );
     ccFntTy::SetSurf(this_00->field_017C,(int)this_00->field_0068,0,param_2,param_3,param_4,param_5)
     ;
-    uVar13 = 0;
-    iVar11 = -1;
+    uVar12 = 0;
+    iVar10 = -1;
     iVar2 = -2;
-    puVar6 = (uint *)LoadResourceString(param_1,HINSTANCE_00807618);
-    ccFntTy::WrStr(this_00->field_017C,puVar6,iVar2,iVar11,uVar13);
+    resourceString = (uint *)LoadResourceString(param_1,g_module_00807618);
+    ccFntTy::WrStr(this_00->field_017C,resourceString,iVar2,iVar10,uVar12);
     pCVar4 = thunk_FUN_00571240("BUT_MEDIUM",0);
-    uVar13 = PanelTy::CreateBut((PanelTy *)this_00,0,1,param_6,param_7,0,1,1,pCVar4,0xbfff,0xc000,0,
+    uVar12 = PanelTy::CreateBut((PanelTy *)this_00,0,1,param_6,param_7,0,1,1,pCVar4,0xbfff,0xc000,0,
                                 0,0,(char *)0x0,0);
-    this_00->field_0180 = uVar13;
+    this_00->field_0180 = uVar12;
     iVar2 = CreateSlider(this_00,param_8,param_10,param_9,param_10,0xc0a4,0,0,0);
     local_c = &this_00->field_01A1;
     this_00->field_019D = iVar2;
     iVar2 = 0xc09f;
     local_8 = param_11;
-    puVar8 = &this_00[1].field_0x10;
+    puVar7 = &this_00[1].field_0x10;
     local_10 = 5;
     do {
-      uVar13 = PanelTy::CreateBut((PanelTy *)this_00,1,0,local_8,param_12,0,1,1,text,iVar2,
-                                  iVar2 + 0x10,1,0,puVar8,(char *)0x0,0);
-      puVar8 = puVar8 + 0x27;
+      uVar12 = PanelTy::CreateBut((PanelTy *)this_00,1,0,local_8,param_12,0,1,1,text,iVar2,
+                                  iVar2 + 0x10,1,0,puVar7,(char *)0x0,0);
+      puVar7 = puVar7 + 0x27;
       iVar2 = iVar2 + 1;
-      *local_c = uVar13;
+      *local_c = uVar12;
       local_8 = local_8 + param_13;
       local_c = local_c + 1;
       local_10 = local_10 + -1;
@@ -106,9 +106,9 @@ ProdPanelTy::InitProdPanel
     return;
   }
   g_currentExceptionFrame = local_58.previous;
-  iVar11 = ReportDebugMessage("E:\\__titans\\Andrey\\specpan.cpp",0x193,0,iVar2,"%s",
+  iVar10 = ReportDebugMessage("E:\\__titans\\Andrey\\specpan.cpp",0x193,0,iVar2,"%s",
                               "ProdPanelTy::InitProdPanel");
-  if (iVar11 != 0) {
+  if (iVar10 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   RaiseInternalException(iVar2,0,"E:\\__titans\\Andrey\\specpan.cpp",0x193);

@@ -3,9 +3,12 @@
 /* [STSourceProvenanceApplier begin]
    Recovered source file: E:\__titans\Maps\prepare.cpp
    Diagnostic line evidence: 207 (metadata/report site, not the function definition)
-   [STSourceProvenanceApplier end] */
+   [STSourceProvenanceApplier end]
 
-int __cdecl FUN_006a2ed0(short *param_1)
+   [STPrototypeApplier] Propagated return.
+   Evidence: 006A2ED0 returns used as parameter 3 of cMf32::RecPut @ 006A0893 */
+
+byte * __cdecl FUN_006a2ed0(short *param_1)
 
 {
   int *piVar1;
@@ -15,8 +18,8 @@ int __cdecl FUN_006a2ed0(short *param_1)
   double dVar5;
   AnonShape_006DBCA0_EF06575F *pAVar6;
   ushort *puVar7;
-  undefined4 *puVar8;
-  int iVar9;
+  byte *pbVar8;
+  undefined4 *puVar9;
   int iVar10;
   int iVar11;
   uint uVar12;
@@ -48,7 +51,7 @@ LAB_006a2f2f:
   dVar3 = (double)((float)-(int)param_1[1] * _DAT_0079d84c);
   dVar4 = (double)((float)(int)*param_1 * _DAT_0079d84c);
   dVar5 = (double)((float)-(int)*param_1 * _DAT_0079d84c);
-  FUN_006dc050((AnonShape_006DC050_D52EE3EA *)local_14,0,0,0,0x8c,0x8c,SUB84(dVar5,0),
+  FUN_006dc050((AnonShape_GLOBAL_00807598_0C6808FB *)local_14,0,0,0,0x8c,0x8c,SUB84(dVar5,0),
                (int)((ulonglong)dVar5 >> 0x20),SUB84(dVar4,0),(int)((ulonglong)dVar4 >> 0x20),
                SUB84(dVar3,0),(int)((ulonglong)dVar3 >> 0x20),SUB84(dVar2,0),
                (int)((ulonglong)dVar2 >> 0x20),0x4024000000000000,0x4023ee97865e3540,0);
@@ -61,10 +64,10 @@ LAB_006a2f2f:
   if (0 < *(int *)((int)param_1 + 0x455)) {
     piVar13 = (int *)((int)param_1 + 0x459);
     do {
-      puVar8 = (undefined4 *)*piVar13;
-      if ((puVar8 != (undefined4 *)0x0) && (*(short *)(puVar8 + 2) != 0)) {
-        *puVar8 = *(undefined4 *)((int)&local_14[6].field_000B + 3);
-        *(undefined4 **)((int)&local_14[6].field_000B + 3) = puVar8;
+      puVar9 = (undefined4 *)*piVar13;
+      if ((puVar9 != (undefined4 *)0x0) && (*(short *)(puVar9 + 2) != 0)) {
+        *puVar9 = *(undefined4 *)((int)&local_14[6].field_000B + 3);
+        *(undefined4 **)((int)&local_14[6].field_000B + 3) = puVar9;
         piVar1 = (int *)((int)&local_14[6].field_0007 + 3);
         *piVar1 = *piVar1 + 1;
       }
@@ -77,75 +80,75 @@ LAB_006a2f2f:
                (int)((ulonglong)(double)((float)(int)*param_1 * _DAT_007904f4) >> 0x20),
                SUB84((double)((float)(int)param_1[1] * _DAT_007904f4),0),
                (int)((ulonglong)(double)((float)(int)param_1[1] * _DAT_007904f4) >> 0x20));
-  FUN_006ddbe0((AnonShape_006DDBE0_9835BAB9 *)local_14);
+  FUN_006ddbe0((AnonShape_GLOBAL_00807598_0C6808FB *)local_14);
   FUN_006ddd50((AnonShape_006DDD50_309FA381 *)local_14);
   local_8 = (short *)Library::DKW::LIB::FUN_006aac10(0x4b79);
   iVar14 = 0;
   iVar10 = 0;
   do {
-    puVar8 = (undefined4 *)
+    puVar9 = (undefined4 *)
              (*(int *)((int)&local_14->field_0027 + 1) * iVar14 +
              *(int *)((int)&local_14->field_000B + 1));
     puVar17 = (undefined4 *)((int)local_8 + iVar10);
     for (iVar11 = 0x22; iVar11 != 0; iVar11 = iVar11 + -1) {
-      *puVar17 = *puVar8;
-      puVar8 = puVar8 + 1;
+      *puVar17 = *puVar9;
+      puVar9 = puVar9 + 1;
       puVar17 = puVar17 + 1;
     }
-    *(undefined2 *)puVar17 = *(undefined2 *)puVar8;
+    *(undefined2 *)puVar17 = *(undefined2 *)puVar9;
     iVar10 = iVar10 + 0x8b;
     iVar14 = iVar14 + 1;
-    *(undefined1 *)((int)puVar17 + 2) = *(undefined1 *)((int)puVar8 + 2);
+    *(undefined1 *)((int)puVar17 + 2) = *(undefined1 *)((int)puVar9 + 2);
   } while (iVar10 < 0x4b79);
   /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
   puVar7 = cMf32::RecGet(in_stack_00000008,1,PTR_s_PALETTE_0079d848,(int *)0x0,1);
-  iVar10 = FUN_006b50c0(0x8b,0x8b,8,0x100,(undefined4 *)(puVar7 + 0x14),1);
-  uVar16 = *(uint *)(iVar10 + 0x14);
+  pbVar8 = (byte *)FUN_006b50c0(0x8b,0x8b,8,0x100,(undefined4 *)(puVar7 + 0x14),1);
+  uVar16 = *(uint *)(pbVar8 + 0x14);
   if (uVar16 == 0) {
-    uVar16 = ((uint)*(ushort *)(iVar10 + 0xe) * *(int *)(iVar10 + 4) + 0x1f >> 3 & 0x1ffffffc) *
-             *(int *)(iVar10 + 8);
+    uVar16 = ((uint)*(ushort *)(pbVar8 + 0xe) * *(int *)(pbVar8 + 4) + 0x1f >> 3 & 0x1ffffffc) *
+             *(int *)(pbVar8 + 8);
   }
-  puVar8 = (undefined4 *)FUN_006b4fa0(iVar10);
+  puVar9 = (undefined4 *)FUN_006b4fa0((int)pbVar8);
   for (uVar12 = uVar16 >> 2; uVar12 != 0; uVar12 = uVar12 - 1) {
-    *puVar8 = 0;
-    puVar8 = puVar8 + 1;
+    *puVar9 = 0;
+    puVar9 = puVar9 + 1;
   }
   for (uVar16 = uVar16 & 3; uVar16 != 0; uVar16 = uVar16 - 1) {
-    *(undefined1 *)puVar8 = 0;
-    puVar8 = (undefined4 *)((int)puVar8 + 1);
+    *(undefined1 *)puVar9 = 0;
+    puVar9 = (undefined4 *)((int)puVar9 + 1);
   }
   param_1 = local_8;
   /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
   in_stack_00000008 = (cMf32 *)0x45;
-  iVar9 = FUN_006b4fa0(iVar10);
+  iVar11 = FUN_006b4fa0((int)pbVar8);
   local_18 = 0x46;
-  iVar9 = iVar9 + ((uint)*(ushort *)(iVar10 + 0xe) * *(int *)(iVar10 + 4) + 0x1f >> 3 & 0x1ffffffc)
-                  * (*(int *)(iVar10 + 8) + -1);
-  iVar14 = 0x45;
+  iVar11 = iVar11 + ((uint)*(ushort *)(pbVar8 + 0xe) * *(int *)(pbVar8 + 4) + 0x1f >> 3 & 0x1ffffffc
+                    ) * (*(int *)(pbVar8 + 8) + -1);
+  iVar10 = 0x45;
   /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-  iVar11 = (int)in_stack_00000008;
+  iVar14 = (int)in_stack_00000008;
   do {
     /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-    in_stack_00000008 = (cMf32 *)iVar11;
-    iVar18 = iVar14;
+    in_stack_00000008 = (cMf32 *)iVar14;
+    iVar18 = iVar10;
     /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
     if (iVar18 <= (int)in_stack_00000008) {
       /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-      iVar14 = ((int)in_stack_00000008 - iVar18) + 1;
-      puVar15 = (undefined1 *)(iVar9 + iVar18);
+      iVar10 = ((int)in_stack_00000008 - iVar18) + 1;
+      puVar15 = (undefined1 *)(iVar11 + iVar18);
       do {
-        iVar14 = iVar14 + -1;
-        *puVar15 = (puVar15 + 1)[(int)param_1 + (-1 - iVar9)];
+        iVar10 = iVar10 + -1;
+        *puVar15 = (puVar15 + 1)[(int)param_1 + (-1 - iVar11)];
         puVar15 = puVar15 + 1;
-      } while (iVar14 != 0);
+      } while (iVar10 != 0);
     }
     param_1 = (short *)((int)param_1 + 0x8b);
-    iVar9 = iVar9 - ((uint)*(ushort *)(iVar10 + 0xe) * *(int *)(iVar10 + 4) + 0x1f >> 3 & 0x1ffffffc
-                    );
+    iVar11 = iVar11 - ((uint)*(ushort *)(pbVar8 + 0xe) * *(int *)(pbVar8 + 4) + 0x1f >> 3 &
+                      0x1ffffffc);
     local_18 = local_18 + -1;
-    iVar14 = iVar18 + -1;
+    iVar10 = iVar18 + -1;
     /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-    iVar11 = (int)in_stack_00000008 + 1;
+    iVar14 = (int)in_stack_00000008 + 1;
   } while (local_18 != 0);
   local_18 = 0x45;
   do {
@@ -155,16 +158,16 @@ LAB_006a2f2f:
     /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
     if (iVar18 <= (int)in_stack_00000008) {
       /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-      iVar14 = ((int)in_stack_00000008 - iVar18) + 1;
-      puVar15 = (undefined1 *)(iVar9 + iVar18);
+      iVar10 = ((int)in_stack_00000008 - iVar18) + 1;
+      puVar15 = (undefined1 *)(iVar11 + iVar18);
       do {
-        iVar14 = iVar14 + -1;
-        *puVar15 = puVar15[(int)param_1 - iVar9];
+        iVar10 = iVar10 + -1;
+        *puVar15 = puVar15[(int)param_1 - iVar11];
         puVar15 = puVar15 + 1;
-      } while (iVar14 != 0);
+      } while (iVar10 != 0);
     }
-    iVar9 = iVar9 - ((uint)*(ushort *)(iVar10 + 0xe) * *(int *)(iVar10 + 4) + 0x1f >> 3 & 0x1ffffffc
-                    );
+    iVar11 = iVar11 - ((uint)*(ushort *)(pbVar8 + 0xe) * *(int *)(pbVar8 + 4) + 0x1f >> 3 &
+                      0x1ffffffc);
     param_1 = (short *)((int)param_1 + 0x8b);
     local_18 = local_18 + -1;
   } while (local_18 != 0);
@@ -175,6 +178,6 @@ LAB_006a2f2f:
   if (local_8 != (short *)0x0) {
     FreeAndNull(&local_8);
   }
-  return iVar10;
+  return pbVar8;
 }
 

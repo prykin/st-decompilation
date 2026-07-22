@@ -26,8 +26,7 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0065ED90::FUN_0065ed90
 
   psVar1 = param_2;
   local_10 = this;
-  iVar3 = thunk_FUN_0065e700((AnonShape_0065DA10_8B0AA883 *)this,&local_c,&local_8,&local_c,
-                             &local_1c);
+  iVar3 = thunk_FUN_0065e700(this,&local_c,&local_8,&local_c,&local_1c);
   if (iVar3 != 0) {
     return -4;
   }

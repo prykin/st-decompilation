@@ -78,8 +78,8 @@ void __thiscall OpticClassC::InitOptic(OpticClassC *this)
     _DAT_0080742c = (float)fVar8;
     Library::MSVCRT::FUN_0072e150(0xc0000000,0x403ccccc);
     lVar9 = Library::MSVCRT::__ftol();
-    FUN_006dc050((AnonShape_006DC050_D52EE3EA *)PTR_00807598,DAT_0080759c,DAT_00807568,DAT_0080756c,
-                 DAT_00807570,DAT_00807574,SUB84((double)(_DAT_00807428 * _DAT_00790780),0),
+    FUN_006dc050(PTR_00807598,DAT_0080759c,DAT_00807568,DAT_0080756c,DAT_00807570,DAT_00807574,
+                 SUB84((double)(_DAT_00807428 * _DAT_00790780),0),
                  (int)((ulonglong)(double)(_DAT_00807428 * _DAT_00790780) >> 0x20),
                  SUB84((double)(_DAT_00807428 * _DAT_00790784),0),
                  (int)((ulonglong)(double)(_DAT_00807428 * _DAT_00790784) >> 0x20),
@@ -121,8 +121,8 @@ void __thiscall OpticClassC::InitOptic(OpticClassC *this)
   *(char *)(puVar7 + 1) = (char)puVar6[1];
   Library::MSVCRT::FUN_0072e150(0xc0000000,0x403ccccc);
   lVar9 = Library::MSVCRT::__ftol();
-  FUN_006dc050((AnonShape_006DC050_D52EE3EA *)PTR_00807598,DAT_0080759c,DAT_00807568,DAT_0080756c,
-               DAT_00807570,DAT_00807574,SUB84((double)(DAT_00807420 * _DAT_00790780),0),
+  FUN_006dc050(PTR_00807598,DAT_0080759c,DAT_00807568,DAT_0080756c,DAT_00807570,DAT_00807574,
+               SUB84((double)(DAT_00807420 * _DAT_00790780),0),
                (int)((ulonglong)(double)(DAT_00807420 * _DAT_00790780) >> 0x20),
                SUB84((double)(DAT_00807420 * _DAT_00790784),0),
                (int)((ulonglong)(double)(DAT_00807420 * _DAT_00790784) >> 0x20),

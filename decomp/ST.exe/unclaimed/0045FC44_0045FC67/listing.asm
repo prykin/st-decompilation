@@ -1,0 +1,9 @@
+0045FC44  pointer  0045fba7
+0045FC48  pointer  0045fc39
+0045FC4C  pointer  0045fc39
+0045FC50  pointer  0045fc39
+0045FC54  pointer  0045fc39
+0045FC58  pointer  0045fc39
+0045FC5C  pointer  0045fc06
+0045FC60  pointer  0045fb90
+0045FC64  pointer  0045fba7

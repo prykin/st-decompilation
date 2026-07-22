@@ -1,4 +1,4 @@
-FUN_004f17d0:
+CPanelTy::sub_004F17D0:
 004F17D0  55                        PUSH EBP
 004F17D1  8B EC                     MOV EBP,ESP
 004F17D3  8B 45 0C                  MOV EAX,dword ptr [EBP + 0xc]

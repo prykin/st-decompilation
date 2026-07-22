@@ -37,12 +37,13 @@ void __thiscall PrividerTy::DeleteCtrls(PrividerTy *this,char param_1)
     RaiseInternalException(iVar4,0,"E:\\__titans\\Start\\prov_obj.cpp",0x279);
     return;
   }
-  if (PTR_00802a30 != (CursorClassTy *)0x0) {
-    if (PTR_00802a30->field_00A9 == 0) {
-      Library::DKW::DDX::FUN_006b8b10((int *)PTR_00802a30->field_00AD);
+  if (g_cursorClass_00802A30 != (CursorClassTy *)0x0) {
+    if (g_cursorClass_00802A30->field_00A9 == 0) {
+      Library::DKW::DDX::FUN_006b8b10((int *)g_cursorClass_00802A30->field_00AD);
     }
-    else if (PTR_00802a30->field_001C != (cLoadingTy *)0xffffffff) {
-      FUN_006b3af0((int *)PTR_00802a30->field_0060,(uint)PTR_00802a30->field_001C);
+    else if (g_cursorClass_00802A30->field_001C != (cLoadingTy *)0xffffffff) {
+      FUN_006b3af0((int *)g_cursorClass_00802A30->field_0060,
+                   (uint)g_cursorClass_00802A30->field_001C);
     }
   }
   pPVar3 = local_c;
@@ -97,7 +98,7 @@ void __thiscall PrividerTy::DeleteCtrls(PrividerTy *this,char param_1)
         HoloTy::NextFas(pPVar3->field_1C96);
       }
       PutDDXClip(0x79,0x51,0x79,0x51,0x22e,(byte *)0x145,'\x01',
-                 (BITMAPINFO *)PTR_0081176c->field_002C);
+                 (BITMAPINFO *)g_startSystem_0081176C->field_002C);
     }
     if (pPVar3->field_1A7B != 0xffffffff) {
       FUN_006b3af0((int *)pPVar3->field_1ABF,pPVar3->field_1A7B);
@@ -180,17 +181,17 @@ void __thiscall PrividerTy::DeleteCtrls(PrividerTy *this,char param_1)
       }
     }
     PutDDXClip(0x79,0x197,0x79,0x197,0x22e,(byte *)0x2e,'\x01',
-               (BITMAPINFO *)PTR_0081176c->field_002C);
+               (BITMAPINFO *)g_startSystem_0081176C->field_002C);
     FUN_006b3af0((int *)PTR_008075a8,pPVar3->field_1C8A);
   }
-  if (PTR_00802a30 != (CursorClassTy *)0x0) {
-    if (PTR_00802a30->field_00A9 == 0) {
-      Library::DKW::DDX::FUN_006b8a60((byte *)PTR_00802a30->field_00AD);
+  if (g_cursorClass_00802A30 != (CursorClassTy *)0x0) {
+    if (g_cursorClass_00802A30->field_00A9 == 0) {
+      Library::DKW::DDX::FUN_006b8a60((byte *)g_cursorClass_00802A30->field_00AD);
     }
-    else if (PTR_00802a30->field_001C != (cLoadingTy *)0xffffffff) {
+    else if (g_cursorClass_00802A30->field_001C != (cLoadingTy *)0xffffffff) {
       Library::DKW::DDX::FUN_006b34d0
-                ((uint *)PTR_00802a30->field_0060,(uint)PTR_00802a30->field_001C,0xfffffffe,
-                 PTR_00802a30->field_0034,PTR_00802a30->field_0038);
+                ((uint *)g_cursorClass_00802A30->field_0060,(uint)g_cursorClass_00802A30->field_001C
+                 ,0xfffffffe,g_cursorClass_00802A30->field_0034,g_cursorClass_00802A30->field_0038);
       g_currentExceptionFrame = local_50.previous;
       return;
     }

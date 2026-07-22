@@ -88,7 +88,7 @@ int __thiscall PausePanelTy::GetMessage(PausePanelTy *this,STMessage *message)
   else if (SVar2 == MESS_SHARED_BFFF) {
     this_00->field_0028 = 0xa100;
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-    (**(code **)PTR_00802a30->field_0000)(&this_00->field_0x18);
+    (**(code **)g_cursorClass_00802A30->field_0000)(&this_00->field_0x18);
   }
   else if (SVar2 == MESS_SHARED_C000) {
     pCVar5 = thunk_FUN_00571240("BUT_MEDIUM",0);

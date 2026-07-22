@@ -1,0 +1,8 @@
+004C9650  pointer  004c9505
+004C9654  pointer  004c9524
+004C9658  pointer  004c9543
+004C965C  pointer  004c95c5
+004C9660  pointer  004c955b
+004C9664  pointer  004c95ad
+004C9668  pointer  004c95f5
+004C966C  pointer  004c95dd

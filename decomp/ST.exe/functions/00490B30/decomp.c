@@ -30,9 +30,10 @@ FUN_00490b30(void *this,AnonShape_00490B30_6CCF6294 *param_1,short param_2,uint 
     }
     if ((((param_1 != (AnonShape_00490B30_6CCF6294 *)0x0) &&
          (param_1->field_0018 == *(int *)((int)this + 0x7f4))) ||
-        (iVar4 = FUN_006e62d0(PTR_00802a38,*(int *)((int)this + 0x7f4),(int *)&param_1), iVar4 != -4
-        )) && ((param_1->field_0032 == param_2 && (param_1->field_0024 == (int)objPtr)))) {
-      pSVar5 = STAllPlayersC::GetObjPtr(g_sTAllPlayers_007FA174,objPtr,param_3,CASE_1);
+        (iVar4 = FUN_006e62d0(g_playSystem_00802A38,*(int *)((int)this + 0x7f4),(int *)&param_1),
+        iVar4 != -4)) && ((param_1->field_0032 == param_2 && (param_1->field_0024 == (int)objPtr))))
+    {
+      pSVar5 = STAllPlayersC::GetObjPtr(g_allPlayers_007FA174,objPtr,param_3,CASE_1);
       *(undefined4 *)((int)this + 0x7f4) = pSVar5->field_0018;
     }
   }

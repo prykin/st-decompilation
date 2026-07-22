@@ -112,7 +112,7 @@ int __thiscall STTorpC::GetMessage(STTorpC *this,STMessage *message)
   int local_120;
   int local_11c;
   int local_118 [16];
-  undefined4 local_d8;
+  int local_d8;
   undefined4 local_d4;
   undefined4 local_d0;
   int local_cc;
@@ -174,7 +174,8 @@ int __thiscall STTorpC::GetMessage(STTorpC *this,STMessage *message)
         return 0;
       }
       local_4c = (STGameObjC *)SaveTorpData((STTorpC *)this_00,(int *)&local_90);
-      STPlaySystemC::SaveObjData(PTR_00802a38,this_00->field_0018,(byte *)local_4c,local_90);
+      STPlaySystemC::SaveObjData
+                (g_playSystem_00802A38,this_00->field_0018,(byte *)local_4c,local_90);
       FreeAndNull(&local_4c);
       g_currentExceptionFrame = local_28c.previous;
       return 0;
@@ -250,19 +251,18 @@ int __thiscall STTorpC::GetMessage(STTorpC *this,STMessage *message)
     local_16c = (float)(int)*(short *)&this_00->field_0x253 * _DAT_007904f8 * _DAT_007904f0;
     local_168 = (float)local_14 * _DAT_007904f8 * _DAT_007904f0;
     FUN_006e25d0((void *)this_00->field_0211,&local_1c8);
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-    sVar10 = (**(code **)&this_00->vtable->field_0x14)
+    sVar10 = (*this_00->vtable->vfunc_14)
                        (local_1b8 >> 0x10,local_1b4 >> 0x10,local_1b0 >> 0x10,local_1c8 >> 0x10,
                         local_1c4 >> 0x10,local_1c0 >> 0x10);
     thunk_FUN_004abce0(&this_00->field_01D5,0,*(int *)(&DAT_007d2138 + sVar10 * 4),
                        *(int *)(&DAT_007d2138 + sVar10 * 4),'\0');
-    STT3DSprC::StartShow((STT3DSprC *)&this_00->field_01D5,0,PTR_00802a38->field_00E4);
+    STT3DSprC::StartShow((STT3DSprC *)&this_00->field_01D5,0,g_playSystem_00802A38->field_00E4);
     g_currentExceptionFrame = local_28c.previous;
     return 0;
   }
   if (SVar3 == MESS_SHARED_0003) {
     STAllPlayersC::UnRegisterTorpedo
-              (g_sTAllPlayers_007FA174,*(short *)&this_00->field_0x26e,(int)this_00);
+              (g_allPlayers_007FA174,*(short *)&this_00->field_0x26e,(int)this_00);
     DArrayDestroy(*(DArrayTy **)((int)&this_00->field_023E + 3));
     thunk_FUN_004ad310((STT3DSprC *)&this_00->field_01D5);
     thunk_FUN_0062c2a0((int *)&this_00->field_0x27e);
@@ -301,7 +301,7 @@ int __thiscall STTorpC::GetMessage(STTorpC *this,STMessage *message)
                 ((STAllPlayersC *)this_00,(undefined4 *)(*(int *)(iVar11 + 0x78) + iVar11));
       RestoreTorpData((STTorpC *)this_00,iVar11);
       STAllPlayersC::RegisterTorpedo
-                (g_sTAllPlayers_007FA174,(int)this_00,*(short *)&this_00->field_0x26e);
+                (g_allPlayers_007FA174,(int)this_00,*(short *)&this_00->field_0x26e);
       if (this_00->field_0259 != CASE_9A) {
         g_currentExceptionFrame = local_28c.previous;
         return 0;
@@ -355,7 +355,7 @@ LAB_00642c6e:
     case CASE_9A:
     case CASE_AC:
     case CASE_B4:
-      if (g_sTAllPlayers_007FA174 == (STAllPlayersC *)0x0) {
+      if (g_allPlayers_007FA174 == (STAllPlayersC *)0x0) {
         uVar7 = 1;
       }
       else {
@@ -392,7 +392,7 @@ LAB_00642c6e:
     case CASE_B9:
     case CASE_BA:
     case CASE_BF:
-      if (g_sTAllPlayers_007FA174 == (STAllPlayersC *)0x0) {
+      if (g_allPlayers_007FA174 == (STAllPlayersC *)0x0) {
         uVar7 = 1;
       }
       else {
@@ -413,8 +413,8 @@ LAB_00642c6e:
       uVar9 = extraout_var_00;
     }
     *(int *)&this_00->field_0x68 = *(int *)&this_00->field_0x68 + 1;
-    /* ST_PSEUDO[raw_indirect_call,packed_or_unaligned_piece]: expected typed vtable/callback call with explicit __thiscall receiver; expected named packed member, bit extract/compose, or unaligned load */
-    uVar9 = (**(code **)&this_00->vtable->field_0x10)
+    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+    uVar9 = (*this_00->vtable->vfunc_10)
                       (CONCAT22(uVar9,*(undefined2 *)&this_00->field_0x24b),
                        *(undefined2 *)&this_00->field_0x24d,
                        CONCAT22(uVar9,*(undefined2 *)&this_00->field_0x24f),
@@ -489,12 +489,11 @@ switchD_00640ad9_caseD_a2:
     if (this_00->field_0259 == CASE_97) {
       /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
       local_4c = STAllPlayersC::GetObjPtr
-                           (g_sTAllPlayers_007FA174,(char)this_00->field_0024,
+                           (g_allPlayers_007FA174,(char)this_00->field_0024,
                             CONCAT22((short)((uint)uVar16 >> 0x10),
                                      *(undefined2 *)&this_00->field_0x262),CASE_1);
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
       if ((local_4c != (STGameObjC *)0x0) &&
-         (iVar11 = (**(code **)&local_4c->vtable->field_0x2c)(), iVar11 == 0x3f)) {
+         (iVar11 = (*local_4c->vtable->vfunc_2C)(), iVar11 == 0x3f)) {
         this_00->field_0x288 = 1;
       }
     }
@@ -629,8 +628,7 @@ switchD_00640c2d_caseD_a2:
       local_184 = (float)(int)*(short *)&this_00->field_0x253 * _DAT_007904f8 * _DAT_007904f0;
       local_180 = (float)local_10 * _DAT_007904f8 * _DAT_007904f0;
       FUN_006e25d0((void *)this_00->field_0211,&local_1a8);
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-      sVar10 = (**(code **)&this_00->vtable->field_0x14)
+      sVar10 = (*this_00->vtable->vfunc_14)
                          (local_198 >> 0x10,local_194 >> 0x10,local_190 >> 0x10,local_1a8 >> 0x10,
                           local_1a4 >> 0x10,local_1a0 >> 0x10);
       iVar11 = *(int *)(&DAT_007d2138 + sVar10 * 4);
@@ -641,8 +639,8 @@ switchD_00640c2d_caseD_a2:
       iVar11 = 0;
     }
     thunk_FUN_004abce0(puVar15,0,iVar11,iVar12,'\0');
-    STT3DSprC::StartShow((STT3DSprC *)puVar15,0,PTR_00802a38->field_00E4);
-    uVar16 = STAllPlayersC::RegisterTorpedo(g_sTAllPlayers_007FA174,(int)this_00,-1);
+    STT3DSprC::StartShow((STT3DSprC *)puVar15,0,g_playSystem_00802A38->field_00E4);
+    uVar16 = STAllPlayersC::RegisterTorpedo(g_allPlayers_007FA174,(int)this_00,-1);
     *(short *)&this_00->field_0x26e = (short)uVar16;
     if (this_00->field_0259 != CASE_A3) {
       iVar11 = (int)*(short *)&this_00->field_0x47;
@@ -750,7 +748,7 @@ switchD_00640c2d_caseD_a2:
     this_00->field_0x27c = bVar8;
     if ((this_00->field_0x282 != 0) && ((byte)this_00->field_0x283 <= bVar8)) {
       if (this_00->field_0x283 == bVar8) {
-        STT3DSprC::StartShow((STT3DSprC *)&this_00->field_01D5,2,PTR_00802a38->field_00E4);
+        STT3DSprC::StartShow((STT3DSprC *)&this_00->field_01D5,2,g_playSystem_00802A38->field_00E4);
       }
       else {
         bVar8 = this_00->field_0x284 + 1;
@@ -778,7 +776,7 @@ switchD_00640c2d_caseD_a2:
                            *(undefined2 *)&this_00->field_0x262,this_00->field_0259,local_c4 / 2,1);
       }
       if (*(int *)&this_00->field_0x270 == 1) {
-        iVar11 = FUN_006e62d0(PTR_00802a38,*(int *)&this_00->field_0x274,(int *)&local_30);
+        iVar11 = FUN_006e62d0(g_playSystem_00802A38,*(int *)&this_00->field_0x274,(int *)&local_30);
         if (iVar11 == -4) {
           thunk_FUN_006457e0((int)this_00);
           g_currentExceptionFrame = local_28c.previous;
@@ -844,23 +842,22 @@ switchD_00640c2d_caseD_a2:
           local_200 = *(undefined2 *)&this_00->field_0x34;
           local_1f8 = 1;
           local_1fa = 0;
-          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-          (*(code *)PTR_00802a38->vtable->field_0008)(0x147,0,0,local_220,0);
+          (*g_playSystem_00802A38->vtable->vfunc_08)(0x147,0,0,local_220,0);
         }
         local_22c = &local_c4;
         local_238 = local_30[2];
         local_234 = 2;
         local_230 = 0x110;
-        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-        (*(code *)PTR_00802a38->vtable->field_0018)(local_240);
+        (*g_playSystem_00802A38->vtable->SendMessage)
+                  ((SystemWithNamedObjClassTy *)g_playSystem_00802A38,(int)local_240);
       }
     }
     puVar15 = &this_00->field_01D5;
-    iVar11 = thunk_FUN_004acd30(puVar15,'\0');
+    iVar11 = STT3DSprC::sub_004ACD30((STT3DSprC *)puVar15,'\0');
     if (iVar11 + -1 < (int)(uint)(byte)this_00->field_0x27c) {
       STT3DSprC::StopShow((STT3DSprC *)puVar15,0);
     }
-    iVar11 = thunk_FUN_004acd30(puVar15,'\0');
+    iVar11 = STT3DSprC::sub_004ACD30((STT3DSprC *)puVar15,'\0');
     if ((iVar11 + -1 < (int)(uint)(byte)this_00->field_0x27c) && (this_00->field_0x282 == '\0'))
     goto LAB_00642c6e;
     goto cf_common_exit_00642C8B;
@@ -996,7 +993,7 @@ switchD_00640c2d_caseD_a2:
   if ((byte)this_00->field_0x27d < 9) {
     /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
     local_4c = STAllPlayersC::GetObjPtr
-                         (g_sTAllPlayers_007FA174,(char)this_00->field_0024,
+                         (g_allPlayers_007FA174,(char)this_00->field_0024,
                           CONCAT22(sVar10 >> 0xf,*(undefined2 *)&this_00->field_0x262),CASE_1);
     if ((local_4c == (STGameObjC *)0x0) || (this_00->field_0x27d == '\b')) {
       *(undefined4 *)&this_00->field_0x264 = 0;
@@ -1098,9 +1095,8 @@ LAB_0064190c:
                        (int)*(short *)&this_00->field_0x45);
   }
   if (local_18 != 1) {
-/* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
 cf_common_exit_00642C8B:
-    iVar11 = (**(code **)&this_00->vtable[4].field_0x18)();
+    iVar11 = (*this_00->vtable->vfunc_D8)();
     if (iVar11 == 0) {
       g_currentExceptionFrame = local_28c.previous;
       return 0;
@@ -1116,7 +1112,7 @@ cf_common_exit_00642C8B:
   if (this_00->field_0259 == CASE_99) {
     /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
     pSVar18 = STAllPlayersC::GetObjPtr
-                        (g_sTAllPlayers_007FA174,(char)this_00->field_0024,
+                        (g_allPlayers_007FA174,(char)this_00->field_0024,
                          CONCAT22(extraout_var_01,*(undefined2 *)&this_00->field_0x262),CASE_1);
     if (pSVar18 == (STGameObjC *)0x0) {
       iVar11 = *(int *)&this_00->field_0x1c;
@@ -1126,8 +1122,7 @@ LAB_00641a40:
       uVar25 = 7;
     }
     else {
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-      iVar11 = (**(code **)&pSVar18->vtable->field_0x2c)();
+      iVar11 = (*pSVar18->vtable->vfunc_2C)();
       if (iVar11 != 0x10) {
         iVar11 = *(int *)&this_00->field_0x1c;
         goto LAB_00641a40;
@@ -3123,7 +3118,7 @@ LAB_00642561:
      (iVar11 = STT3DSprC::LoadSequence((STT3DSprC *)puVar15,2,DAT_00806764,local_74,0x1d),
      iVar11 == 0)) {
     thunk_FUN_004ac610(puVar15,'\x02');
-    uVar16 = thunk_FUN_004acd30(puVar15,'\x02');
+    uVar16 = STT3DSprC::sub_004ACD30((STT3DSprC *)puVar15,'\x02');
     this_00->field_0x282 = (char)uVar16;
     this_00->field_0x283 = local_5;
     this_00->field_0x284 = 0;
@@ -3136,28 +3131,27 @@ LAB_00642561:
     }
     thunk_FUN_004ac610(puVar15,'\x01');
   }
-  iVar11 = STT3DSprC::StartShow((STT3DSprC *)puVar15,0,PTR_00802a38->field_00E4);
+  iVar11 = STT3DSprC::StartShow((STT3DSprC *)puVar15,0,g_playSystem_00802A38->field_00E4);
   if (iVar11 != 0) {
     RaiseInternalException
               (-1,g_overwriteContext_007ED77C,"E:\\__titans\\nick\\to_torp.cpp",0x274);
   }
-  iVar11 = thunk_FUN_004acd30(puVar15,'\x01');
+  iVar11 = STT3DSprC::sub_004ACD30((STT3DSprC *)puVar15,'\x01');
   if (0 < iVar11) {
-    iVar11 = STT3DSprC::StartShow((STT3DSprC *)puVar15,1,PTR_00802a38->field_00E4);
+    iVar11 = STT3DSprC::StartShow((STT3DSprC *)puVar15,1,g_playSystem_00802A38->field_00E4);
     if (iVar11 != 0) {
       RaiseInternalException
                 (-1,g_overwriteContext_007ED77C,"E:\\__titans\\nick\\to_torp.cpp",0x277);
     }
-    thunk_FUN_004acf20(puVar15,DAT_008032b8,0x10);
-    thunk_FUN_004acfe0(puVar15,'\x01');
+    STT3DSprC::sub_004ACF20((STT3DSprC *)puVar15,DAT_008032b8,0x10);
+    STT3DSprC::sub_004ACFE0((STT3DSprC *)puVar15,'\x01');
   }
   uVar26 = 0x45;
   uVar16 = 0x5a;
   iVar11 = 1;
   uVar17 = thunk_FUN_004ad650((int)puVar15);
   FUN_006ea4e0((void *)this_00->field_0211,uVar17,iVar11,uVar16,uVar26);
-  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-  iVar11 = (**(code **)&this_00->vtable[4].field_0x18)();
+  iVar11 = (*this_00->vtable->vfunc_D8)();
   if (iVar11 != 0) {
     RaiseInternalException
               (-1,g_overwriteContext_007ED77C,"E:\\__titans\\nick\\to_torp.cpp",0x27d);
@@ -3238,9 +3232,8 @@ LAB_00642561:
   case CASE_BF:
     local_c = 0x488;
   }
-/* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
 switchD_00640fbd_caseD_a2:
-  (**(code **)(this_00->vtable + 3))(2,local_c);
+  (*this_00->vtable->vfunc_90)(2,local_c);
   g_currentExceptionFrame = local_28c.previous;
   return 0;
 }

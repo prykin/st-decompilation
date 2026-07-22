@@ -9,10 +9,9 @@ undefined4 __fastcall FUN_00419a90(STFishC *param_1)
   short local_8;
   short local_6;
 
-  if (*(int *)&param_1->field_0xe8 == 1) {
-    *(undefined4 *)&param_1->field_0xe8 = 0;
-    SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00417FF0::sub_004167A0
-              ((AnonReceiver_00417FF0 *)param_1);
+  if (param_1->field_00E8 == 1) {
+    param_1->field_00E8 = 0;
+    sub_004167A0(param_1);
     return 1;
   }
   STFishC::sub_004162B0(param_1,&local_6,&local_8,&local_a);
@@ -29,11 +28,10 @@ undefined4 __fastcall FUN_00419a90(STFishC *param_1)
                  g_worldGrid.cells
                  [(int)g_worldGrid.planeStride * (int)local_a +
                   (int)g_worldGrid.sizeX * (int)local_8 + (int)local_6].objects
-                 [(byte)param_1->field_0x8e];
+                 [(byte)param_1->field_008E];
       }
       if (pSVar2 == param_1) {
-        SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00417FF0::sub_004167A0
-                  ((AnonReceiver_00417FF0 *)param_1);
+        sub_004167A0(param_1);
         return 1;
       }
     }

@@ -1,0 +1,4 @@
+006A547C  pointer  006a52cf
+006A5480  pointer  006a52a9
+006A5484  pointer  006a5283
+006A5488  pointer  006a5259

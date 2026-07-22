@@ -57,7 +57,7 @@ undefined4 __thiscall FUN_004c6210(void *this,undefined4 param_1,undefined4 para
   STT3DSprC::SetCurFase
             (*(STT3DSprC **)((int)this + 0x2c),'\0',
              *(uint *)(&DAT_00790f84 + *(int *)((int)this + 0x1c) * 4));
-  DVar4 = FUN_006e51b0(*(int *)((int)this + 0x10));
+  DVar4 = STAppC::sub_006E51B0(*(STAppC **)((int)this + 0x10));
   STT3DSprC::StartShow(*(STT3DSprC **)((int)this + 0x2c),0,DVar4);
   thunk_FUN_004ad430(*(int *)((int)this + 0x2c));
   *(undefined4 *)((int)this + 0x24) = 0;

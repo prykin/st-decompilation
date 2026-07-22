@@ -1,11 +1,12 @@
 
-void __fastcall FUN_005f3b00(int param_1)
+/* [STPrototypeApplier] Propagated parameter 0.
+   Evidence: 005F27C0 -> 005F3B00 @ 005F2825 */
+
+void __fastcall FUN_005f3b00(STBHEShellC *param_1)
 
 {
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  if (*(uint *)(param_1 + 0x8f) != 0) {
-    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-    FUN_006e8ba0(PTR_00807598,*(uint *)(param_1 + 0x8f));
+  if (param_1->field_008F != 0) {
+    FUN_006e8ba0(PTR_00807598,param_1->field_008F);
   }
   return;
 }

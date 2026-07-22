@@ -119,8 +119,7 @@ LAB_0042bc00:
   Library::DKW::TBL::FUN_006ae140(&pDVar3->flags,local_14,&param_5);
   pSVar7->activityCount = pSVar7->activityCount + 1;
   pSVar4 = GetObjPtr(local_c,param_4,param_5,CASE_1);
-  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-  (**(code **)&pSVar4->vtable[1].field_0x18)(1);
+  (*pSVar4->vtable[1].vfunc_14)(1);
   g_currentExceptionFrame = local_5c.previous;
   return local_18;
 }

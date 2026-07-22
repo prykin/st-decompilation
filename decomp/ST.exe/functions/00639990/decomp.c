@@ -18,11 +18,11 @@ undefined4 __fastcall FUN_00639990(AnonShape_00639990_2135AB0A *param_1)
       return 0xffff;
     }
     thunk_FUN_004ac700(puVar1,'\x0f');
-    thunk_FUN_00416240(param_1,param_1->field_027A,param_1->field_027E,param_1->field_0282);
-    uVar3 = thunk_FUN_004acd30(puVar1,'\r');
+    sub_00416240(param_1,param_1->field_027A,param_1->field_027E,param_1->field_0282);
+    uVar3 = STT3DSprC::sub_004ACD30((STT3DSprC *)puVar1,'\r');
     param_1->field_0296 = uVar3;
     thunk_FUN_004ac660(puVar1,'\r');
-    STT3DSprC::StartShow((STT3DSprC *)puVar1,0xd,PTR_00802a38->field_00E4);
+    STT3DSprC::StartShow((STT3DSprC *)puVar1,0xd,g_playSystem_00802A38->field_00E4);
     param_1->field_0271 = 1;
   }
   else {
@@ -38,9 +38,9 @@ undefined4 __fastcall FUN_00639990(AnonShape_00639990_2135AB0A *param_1)
     if (iVar2 != 0) {
       return 0xffff;
     }
-    STT3DSprC::StartShow((STT3DSprC *)puVar1,0xe,PTR_00802a38->field_00E4);
+    STT3DSprC::StartShow((STT3DSprC *)puVar1,0xe,g_playSystem_00802A38->field_00E4);
     param_1->field_02A2 = 1;
-    STT3DSprC::StartShow((STT3DSprC *)puVar1,0xd,PTR_00802a38->field_00E4);
+    STT3DSprC::StartShow((STT3DSprC *)puVar1,0xd,g_playSystem_00802A38->field_00E4);
     param_1->field_0271 = 1;
     if (param_1->field_0292 != 0) {
       STT3DSprC::SetCurFase((STT3DSprC *)puVar1,'\r',param_1->field_0292);
@@ -48,15 +48,15 @@ undefined4 __fastcall FUN_00639990(AnonShape_00639990_2135AB0A *param_1)
     if (param_1->field_0292 != 0) {
       STT3DSprC::SetCurFase((STT3DSprC *)puVar1,'\x0e',param_1->field_0292);
     }
-    thunk_FUN_00416240(param_1,param_1->field_027A,param_1->field_027E,param_1->field_0282);
-    thunk_FUN_004acf20(puVar1,DAT_008032b8,0x10);
-    thunk_FUN_004acfe0(puVar1,'\x0e');
-    uVar3 = thunk_FUN_004acd30(puVar1,'\r');
+    sub_00416240(param_1,param_1->field_027A,param_1->field_027E,param_1->field_0282);
+    STT3DSprC::sub_004ACF20((STT3DSprC *)puVar1,DAT_008032b8,0x10);
+    STT3DSprC::sub_004ACFE0((STT3DSprC *)puVar1,'\x0e');
+    uVar3 = STT3DSprC::sub_004ACD30((STT3DSprC *)puVar1,'\r');
     param_1->field_0296 = uVar3;
-    uVar3 = thunk_FUN_004acd30(puVar1,'\x0e');
+    uVar3 = STT3DSprC::sub_004ACD30((STT3DSprC *)puVar1,'\x0e');
     param_1->field_029E = uVar3;
   }
-  param_1->field_02A7 = PTR_00802a38->field_00E4;
+  param_1->field_02A7 = g_playSystem_00802A38->field_00E4;
   return 0;
 }
 

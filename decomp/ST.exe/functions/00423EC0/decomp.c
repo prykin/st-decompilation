@@ -73,7 +73,7 @@ int __thiscall STGroupC::GetMessage(STGroupC *this,STMessage *message)
       }
       /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
       STAllPlayersC::RegisterGroup
-                (g_sTAllPlayers_007FA174,this_00->field_0024,CONCAT22(uVar5,this_00->field_0025),
+                (g_allPlayers_007FA174,this_00->field_0024,CONCAT22(uVar5,this_00->field_0025),
                  (int)this_00);
       this_00->field_0031 = this_00->field_0018 * DAT_00808754;
     }
@@ -81,7 +81,7 @@ int __thiscall STGroupC::GetMessage(STGroupC *this,STMessage *message)
       RestoreGrpData(this_00,iVar2);
       /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
       STAllPlayersC::RegisterGroup
-                (g_sTAllPlayers_007FA174,this_00->field_0024,
+                (g_allPlayers_007FA174,this_00->field_0024,
                  CONCAT22(extraout_var,this_00->field_0025),(int)this_00);
       g_currentExceptionFrame = local_50.previous;
       return 0;
@@ -93,7 +93,7 @@ int __thiscall STGroupC::GetMessage(STGroupC *this,STMessage *message)
     this_00->field_0029 = (uint *)0x0;
     /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
     STAllPlayersC::UnRegisterGroup
-              (g_sTAllPlayers_007FA174,this_00->field_0024,
+              (g_allPlayers_007FA174,this_00->field_0024,
                CONCAT22(extraout_var_00,this_00->field_0025),(int)this_00);
     if ((DArrayTy *)this_00->field_002D != (DArrayTy *)0x0) {
       DArrayDestroy((DArrayTy *)this_00->field_002D);

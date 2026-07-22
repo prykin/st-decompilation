@@ -1,10 +1,15 @@
 
-void __thiscall FUN_0052b760(void *this,AnonShape_0052B760_30F4E0D5 *param_1)
+/* [STMethodOwnerApplier] Structural method owner recovered as MoneyTy.
+   Evidence: this_call_owners=[MoneyTy]; agreed_this_calls=2; incoming_this_accesses=2;
+   incoming_edx_uses=0; incoming_stack_parameter_uses=3; direct_non_thunk_callers=0;
+   incoming_ecx_receiver_callers=0; attributed_named_callers=1; owner_evidence_coverage=adequate */
+
+void __thiscall MoneyTy::sub_0052B760(MoneyTy *this,AnonShape_0052B760_30F4E0D5 *param_1)
 
 {
   ushort uVar1;
 
-  switch(*(undefined1 *)((int)this + 0x68)) {
+  switch(this->field_0068) {
   case 1:
     param_1->field_0014 = 3;
     goto cf_common_exit_0052B7B9;
@@ -20,7 +25,7 @@ void __thiscall FUN_0052b760(void *this,AnonShape_0052B760_30F4E0D5 *param_1)
   param_1->field_0014 = uVar1;
 cf_common_exit_0052B7B9:
   param_1->field_0016 = 2;
-  switch(*(undefined1 *)((int)this + 0x68)) {
+  switch(this->field_0068) {
   case 1:
     param_1->field_0018 = 0x271c;
     return;

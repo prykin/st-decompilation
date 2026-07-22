@@ -1,0 +1,12 @@
+005B5940  pointer  005b56db
+005B5944  pointer  005b56db
+005B5948  pointer  005b5701
+005B594C  pointer  005b56db
+005B5950  pointer  005b579d
+005B5954  pointer  005b579d
+005B5958  pointer  005b57c5
+005B595C  pointer  005b579d
+005B5960  pointer  005b584a
+005B5964  pointer  005b5839
+005B5968  pointer  005b5859
+005B596C  pointer  005b5876

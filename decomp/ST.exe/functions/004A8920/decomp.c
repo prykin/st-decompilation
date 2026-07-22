@@ -20,6 +20,7 @@ int __thiscall OpticClassC::GetMessage(OpticClassC *this,STMessage *message)
   undefined4 uVar5;
   longlong lVar6;
   InternalExceptionFrame local_6c;
+  undefined1 local_28 [12];
   undefined4 local_1c;
   undefined4 local_18;
   undefined4 local_14;
@@ -44,7 +45,7 @@ int __thiscall OpticClassC::GetMessage(OpticClassC *this,STMessage *message)
     if (SVar1 != MESS_OPTICCLASSC_0104) {
       if (SVar1 < 4) {
         if (SVar1 == MESS_SHARED_0003) {
-          CursorClassTy::DelOpticAcc(PTR_00802a30);
+          CursorClassTy::DelOpticAcc(g_cursorClass_00802A30);
           g_currentExceptionFrame = local_6c.previous;
           return 0;
         }
@@ -61,8 +62,8 @@ int __thiscall OpticClassC::GetMessage(OpticClassC *this,STMessage *message)
             return 0;
           }
           if (DAT_0080745d == 0) {
-            FUN_006ddbe0((AnonShape_006DDBE0_9835BAB9 *)PTR_00807598);
-            FUN_006e1050((AnonShape_006E1050_52F5A113 *)PTR_00807598);
+            FUN_006ddbe0(PTR_00807598);
+            FUN_006e1050(PTR_00807598);
           }
           else {
             FUN_006e1460(PTR_00807598,SUB84((double)DAT_008073d0,0),
@@ -86,7 +87,7 @@ int __thiscall OpticClassC::GetMessage(OpticClassC *this,STMessage *message)
           return 0;
         }
         InitOptic(g_opticClass_007FB2A0);
-        CursorClassTy::AddOpticAcc(PTR_00802a30);
+        CursorClassTy::AddOpticAcc(g_cursorClass_00802A30);
         goto LAB_004a8b47;
       }
       if (SVar1 == MESS_OPTICCLASSC_0100) {
@@ -112,8 +113,8 @@ int __thiscall OpticClassC::GetMessage(OpticClassC *this,STMessage *message)
     local_1c = 0xf;
     local_18 = 0x108;
     local_14 = 0;
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-    (*(code *)PTR_00802a38->vtable->field_0018)();
+    (*g_playSystem_00802A38->vtable->SendMessage)
+              ((SystemWithNamedObjClassTy *)g_playSystem_00802A38,(int)local_28);
 LAB_004a8b47:
     uVar4 = DAT_0080743c & 0xff;
   }
@@ -147,7 +148,8 @@ LAB_004a8b47:
     default:
       goto switchD_004a8b81_caseD_108;
     case MESS_SHARED_010F:
-      STPlaySystemC::SaveObjData(PTR_00802a38,"opticsave",(byte *)&DAT_008073d0,399,0xc);
+      STPlaySystemC::SaveObjData
+                (g_playSystem_00802A38,"opticsave",(byte *)&DAT_008073d0,399,0xc);
       g_currentExceptionFrame = local_6c.previous;
       return 0;
     }
@@ -158,8 +160,8 @@ LAB_004a8c23:
     local_1c = 0xf;
     local_18 = 0x108;
     local_14 = uVar5;
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-    (*(code *)PTR_00802a38->vtable->field_0018)();
+    (*g_playSystem_00802A38->vtable->SendMessage)
+              ((SystemWithNamedObjClassTy *)g_playSystem_00802A38,(int)local_28);
 LAB_004a8c49:
     uVar4 = DAT_0080743c & 0xff;
   }

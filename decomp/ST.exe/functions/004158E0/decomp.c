@@ -13,7 +13,7 @@ STGameObjC * __thiscall STGameObjC::STGameObjC(STGameObjC *this)
   undefined4 *puVar2;
 
   sub_006E60E0(this);
-  this->vtable = (AnonPointee_STGameObjC_0000 *)&STGameObjCVTable;
+  this->vtable = &STGameObjCVTable;
   this->field_0020 = 0;
   this->field_0024 = 0xff;
   this->field_0028 = 1;

@@ -53,7 +53,7 @@ void __thiscall CPanelTy::SetCmdBoat(CPanelTy *this,uint param_1)
   pCVar4 = local_10;
   local_10->field_012C = 0;
   if (local_10->field_0B64 == '\0') {
-    thunk_FUN_004f8020(local_10,'\x01',0);
+    sub_004F8020(local_10,'\x01',0);
   }
   pCVar4->field_012C = 1;
   if (g_prodPanel_008016E8 != (ProdPanelTy *)0x0) {
@@ -67,7 +67,7 @@ void __thiscall CPanelTy::SetCmdBoat(CPanelTy *this,uint param_1)
   }
   if (g_infocPanel_00801698 != (InfocPanelTy *)0x0) {
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-    (**(code **)(*(int *)g_infocPanel_00801698 + 0x1c))(0);
+    (*(code *)g_infocPanel_00801698->field_0000->field_001C)(0);
   }
   if (g_tradePanel_00802A44 != (TradePanelTy *)0x0) {
     thunk_FUN_00552160(g_tradePanel_00802A44,'\0','\0');
@@ -85,13 +85,13 @@ void __thiscall CPanelTy::SetCmdBoat(CPanelTy *this,uint param_1)
   }
   if (g_upgPanel_00802A48 != (UpgPanelTy *)0x0) {
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-    (**(code **)(*(int *)g_upgPanel_00802A48 + 0x1c))(0);
+    (*(code *)g_upgPanel_00802A48->field_0000->field_001C)(0);
   }
   if (g_frmPanel_0080168C != (FrmPanelTy *)0x0) {
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
     (*(code *)g_frmPanel_0080168C->field_0000->field_001C)(0);
   }
-  thunk_FUN_0054a8d0(PTR_00802a30);
+  CursorClassTy::sub_0054A8D0(g_cursorClass_00802A30);
   bVar1 = (&pCVar4->field_0BA2)[param_1 & 0xff];
   switch((uint)bVar1) {
   case 1:
@@ -114,7 +114,7 @@ void __thiscall CPanelTy::SetCmdBoat(CPanelTy *this,uint param_1)
   case 0x12:
   case 0x13:
   case 0x18:
-    thunk_FUN_0054b630(PTR_00802a30,(uint)bVar1,0);
+    thunk_FUN_0054b630(g_cursorClass_00802A30,(uint)bVar1,0);
     g_currentExceptionFrame = local_54.previous;
     return;
   case 4:
@@ -157,8 +157,7 @@ void __thiscall CPanelTy::SetCmdBoat(CPanelTy *this,uint param_1)
     g_currentExceptionFrame = local_54.previous;
     return;
   case 0x4c:
-    if ((g_sAMPanel_008016EC != (SAMPanelTy *)0x0) &&
-       (*(short *)&g_sAMPanel_008016EC->field_0x172 == 2)) {
+    if ((g_sAMPanel_008016EC != (SAMPanelTy *)0x0) && (g_sAMPanel_008016EC->field_0172 == 2)) {
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
       (**(code **)&g_sAMPanel_008016EC->field_0000[1].field_0x8)(1);
     }

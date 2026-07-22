@@ -35,7 +35,7 @@ int __thiscall TLOBldMark::GetMessage(TLOBldMark *this,STMessage *message)
   }
   SVar1 = message->id;
   if (SVar1 == MESS_ID_NONE) {
-    thunk_FUN_004c61e0((AnonShape_004C61E0_B3B9F8FF *)local_8);
+    sub_004C61E0(local_8);
   }
   else {
     if (SVar1 == MESS_ID_CREATE) {
@@ -44,7 +44,7 @@ int __thiscall TLOBldMark::GetMessage(TLOBldMark *this,STMessage *message)
       return 0;
     }
     if (SVar1 == MESS_SHARED_0003) {
-      thunk_FUN_004c61a0((AnonShape_004C61A0_0E747D1B *)local_8);
+      sub_004C61A0(local_8);
       g_currentExceptionFrame = local_4c.previous;
       return 0;
     }

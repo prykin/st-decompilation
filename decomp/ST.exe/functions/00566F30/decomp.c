@@ -24,7 +24,7 @@ void __thiscall FUN_00566f30(void *this,HWND param_1)
         iVar2 = FUN_00719bb0(dwParam2);
         if (iVar2 != 0) {
           FUN_00719960(dwParam2);
-          FUN_007199f0(param_1,1,dwParam2);
+          FUN_007199f0((DWORD_PTR)param_1,1,dwParam2);
         }
       }
     }

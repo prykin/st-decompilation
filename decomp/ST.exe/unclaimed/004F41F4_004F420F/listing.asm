@@ -1,0 +1,7 @@
+004F41F4  pointer  004f4023
+004F41F8  pointer  004f4192
+004F41FC  pointer  004f402b
+004F4200  pointer  004f4192
+004F4204  pointer  004f403e
+004F4208  pointer  004f4192
+004F420C  pointer  004f4051

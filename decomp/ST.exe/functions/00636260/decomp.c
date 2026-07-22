@@ -33,7 +33,7 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00636260::FUN_00636260
   *(int *)&this->field_0x14 = param_3;
   *(int *)&this->field_0x18 = param_4;
   *(int *)&this->field_0x1c = param_4;
-  *(uint *)&this->field_0x30 = PTR_00802a38->field_00E4;
+  *(uint *)&this->field_0x30 = g_playSystem_00802A38->field_00E4;
   local_8 = this;
   iVar1 = sub_00636FC0(this);
   *(int *)&this->field_0x28 = iVar1;

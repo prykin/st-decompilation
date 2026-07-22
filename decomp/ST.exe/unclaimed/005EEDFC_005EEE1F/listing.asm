@@ -1,0 +1,9 @@
+005EEDFC  pointer  005ee706
+005EEE00  pointer  005ee7cf
+005EEE04  pointer  005eea1c
+005EEE08  pointer  005ee8d3
+005EEE0C  pointer  005eeb12
+005EEE10  pointer  005eebbd
+005EEE14  pointer  005eeb74
+005EEE18  pointer  005ee795
+005EEE1C  pointer  005eeb3f

@@ -1,24 +1,31 @@
 
-/* [STPrototypeApplier] Propagated parameter 2.
+/* [STMethodOwnerApplier] Structural method owner recovered as AiPlrClassTy.
+   Evidence: this_call_owners=[AiPlrClassTy]; agreed_this_calls=2; incoming_this_accesses=2;
+   incoming_edx_uses=0; incoming_stack_parameter_uses=2; direct_non_thunk_callers=0;
+   incoming_ecx_receiver_callers=0; attributed_named_callers=1; owner_evidence_coverage=adequate
+
+   [STPrototypeRepairApplier] Propagated parameter 2.
    Evidence: 0067C180 -> 0067A240 @ 0067C248 | 0067C180 -> 0067A240 @ 0067C4CC */
 
-void __thiscall FUN_0067a240(void *this,undefined *param_1,uint *param_2)
+void __thiscall AiPlrClassTy::sub_0067A240(AiPlrClassTy *this,undefined *param_1,DArrayTy *param_2)
 
 {
   uint uVar1;
   undefined4 *puVar2;
   int iVar3;
-  uint uVar4;
+  DArrayTy *pDVar4;
+  uint uVar5;
 
-  iVar3 = *(int *)((int)this + 0x695);
-  if (iVar3 != 0) {
-    uVar1 = *(uint *)(iVar3 + 0xc);
-    uVar4 = 0;
+  pDVar4 = this->field_0695;
+  if (pDVar4 != (DArrayTy *)0x0) {
+    uVar1 = pDVar4->count;
+    uVar5 = 0;
     if (0 < (int)uVar1) {
       do {
-        if (((iVar3 != 0) && (-1 < (int)uVar4)) && ((int)uVar4 < (int)uVar1)) {
-          if (uVar4 < uVar1) {
-            puVar2 = (undefined4 *)(*(int *)(iVar3 + 8) * uVar4 + *(int *)(iVar3 + 0x1c));
+        if (((pDVar4 != (DArrayTy *)0x0) && (-1 < (int)uVar5)) && ((int)uVar5 < (int)uVar1)) {
+          if (uVar5 < uVar1) {
+            /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(pDVar4, uVar5) (runtime stride) */
+            puVar2 = (undefined4 *)(pDVar4->elementSize * uVar5 + (int)pDVar4->data);
           }
           else {
             puVar2 = (undefined4 *)0x0;
@@ -28,10 +35,10 @@ void __thiscall FUN_0067a240(void *this,undefined *param_1,uint *param_2)
             return;
           }
         }
-        iVar3 = *(int *)((int)this + 0x695);
-        uVar4 = uVar4 + 1;
-        uVar1 = *(uint *)(iVar3 + 0xc);
-      } while ((int)uVar4 < (int)uVar1);
+        pDVar4 = this->field_0695;
+        uVar5 = uVar5 + 1;
+        uVar1 = pDVar4->count;
+      } while ((int)uVar5 < (int)uVar1);
     }
   }
   return;

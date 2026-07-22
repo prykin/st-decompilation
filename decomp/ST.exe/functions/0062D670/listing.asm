@@ -1,4 +1,4 @@
-FUN_0062d670:
+STManRub3C::sub_0062D670:
 0062D670  55                        PUSH EBP
 0062D671  8B EC                     MOV EBP,ESP
 0062D673  83 EC 10                  SUB ESP,0x10

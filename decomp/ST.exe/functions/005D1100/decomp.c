@@ -48,7 +48,7 @@ SettMapMTy::AddPlayerList(SettMapMTy *this,int param_1,uint param_2,int param_3,
         else {
           if ((bVar1 < 2) || (3 < bVar1)) goto LAB_005d11ad;
           param_2 = param_2 + 1;
-          thunk_FUN_005d00b0(local_8,pAVar6,param_2);
+          sub_005D00B0(local_8,pAVar6,param_2);
         }
         ChangePlayerList(this_00,param_1,param_2,param_3,'\0',param_4);
       }

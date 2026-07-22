@@ -42,12 +42,12 @@ int __thiscall STManBasisC::GetMessage(STManBasisC *this,STMessage *message)
   SVar1 = message->id;
   if (SVar1 < 4) {
     if (SVar1 == MESS_SHARED_0003) {
-      thunk_FUN_005f2330(local_c);
+      sub_005F2330((STManBasisC *)local_c);
       g_currentExceptionFrame = local_58.previous;
       return 0;
     }
     if (SVar1 == MESS_ID_NONE) {
-      thunk_FUN_005f19a0(local_c);
+      sub_005F19A0((STManBasisC *)local_c);
       g_currentExceptionFrame = local_58.previous;
       return 0;
     }
@@ -64,9 +64,9 @@ int __thiscall STManBasisC::GetMessage(STManBasisC *this,STMessage *message)
         *(undefined4 *)&this_00->field_0x2c = 1;
       }
       else if (*(int *)(local_8 + 6) == 2) {
-        thunk_FUN_005f2110(this_00,(undefined4 *)local_8);
+        sub_005F2110((STManBasisC *)this_00,(undefined4 *)local_8);
         *(undefined4 *)&this_00->field_0x1c = *(undefined4 *)&this_00[1].field_0x4;
-        thunk_FUN_005f21d0((AnonShape_005F21D0_FA76322E *)this_00);
+        sub_005F21D0((STManBasisC *)this_00);
       }
       else {
         thunk_FUN_005f1380(this_00);
@@ -79,8 +79,9 @@ int __thiscall STManBasisC::GetMessage(STManBasisC *this,STMessage *message)
     }
   }
   else if (SVar1 == MESS_SHARED_010F) {
-    local_14 = thunk_FUN_005f1fa0(local_c,(int *)&local_10);
-    STPlaySystemC::SaveObjData(PTR_00802a38,PTR_s_BASIS_MAN_0079c57c,local_14,local_10,0xc);
+    local_14 = sub_005F1FA0((STManBasisC *)local_c,(int *)&local_10);
+    STPlaySystemC::SaveObjData(g_playSystem_00802A38,PTR_s_BASIS_MAN_0079c57c,local_14,local_10,0xc)
+    ;
     FreeAndNull(&local_14);
   }
   g_currentExceptionFrame = local_58.previous;

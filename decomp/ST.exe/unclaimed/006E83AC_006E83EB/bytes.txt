@@ -1,0 +1,4 @@
+006E83AC  FB 70 6E 00 15 71 6E 00 55 71 6E 00 7A 71 6E 00  |.pn..qn.Uqn.zqn.|
+006E83BC  B4 74 6E 00 21 75 6E 00 8E 75 6E 00 13 76 6E 00  |.tn.!un..un..vn.|
+006E83CC  3A 78 6E 00 79 78 6E 00 B8 78 6E 00 02 79 6E 00  |:xn.yxn..xn..yn.|
+006E83DC  2C 7E 6E 00 66 7E 6E 00 9A 7E 6E 00 DF 7E 6E 00  |,~n.f~n..~n..~n.|

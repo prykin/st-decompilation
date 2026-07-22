@@ -1,0 +1,10 @@
+005BB6A8  pointer  005bb180
+005BB6AC  pointer  005bb64c
+005BB6B0  pointer  005baf4e
+005BB6B4  pointer  005bae6d
+005BB6B8  pointer  005bb0c2
+005BB6BC  pointer  005bb310
+005BB6C0  pointer  005bb320
+005BB6C4  pointer  005bb320
+005BB6C8  pointer  005bb3ec
+005BB6CC  pointer  005bb38b

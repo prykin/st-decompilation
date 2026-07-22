@@ -59,7 +59,8 @@ FUN_004c5350(void *this,int param_1,int *param_2,undefined4 param_3,undefined4 p
   if (7 < (uint)this_00[9]) {
     return local_c;
   }
-  if ((PTR_00802a38 != (STPlaySystemC *)0x0) && (7 < (byte)(&DAT_008087e9)[this_00[9] * 0x51])) {
+  if ((g_playSystem_00802A38 != (STPlaySystemC *)0x0) &&
+     (7 < (byte)(&DAT_008087e9)[this_00[9] * 0x51])) {
     return local_c;
   }
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */

@@ -1,0 +1,8 @@
+00424CE0  pointer  0042493f
+00424CE4  pointer  0042499b
+00424CE8  pointer  004249ff
+00424CEC  pointer  00424a71
+00424CF0  pointer  00424b4a
+00424CF4  pointer  00424ba6
+00424CF8  pointer  00424bf3
+00424CFC  pointer  00424c65

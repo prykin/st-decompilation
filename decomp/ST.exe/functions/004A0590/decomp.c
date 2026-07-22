@@ -60,11 +60,11 @@ uint * __thiscall STGroupBoatC::Scout(STGroupBoatC *this,int param_1)
       *(undefined2 *)&local_18->field_0x2fa = *(undefined2 *)&local_18->field_0x1c1;
       *(undefined2 *)&local_18->field_0x2fc = local_18->field_01C3;
       *(undefined2 *)&local_18->field_0x2f8 = *(undefined2 *)&local_18->field_0x1bf;
-      thunk_FUN_0049a500(local_18,(undefined2 *)&local_18->field_0x2fe,(undefined2 *)puVar1,
-                         (undefined2 *)puVar2);
+      sub_0049A500(local_18,(undefined2 *)&local_18->field_0x2fe,(undefined2 *)puVar1,
+                   (undefined2 *)puVar2);
       local_10 = (DArrayTy *)
                  Way3DGrpGetDistrPoint
-                           (pSVar4,(AnonShape_00413AF0_B6B4EE9A *)pSVar4->field_0029,
+                           (pSVar4,(DArrayTy *)pSVar4->field_0029,
                             (int)*(short *)&pSVar4->field_0x2fe,(int)*(short *)puVar1,
                             (int)*(short *)puVar2,(int)*(short *)&pSVar4->field_0x2f8,
                             (int)*(short *)&pSVar4->field_0x2fa,(int)*(short *)&pSVar4->field_0x2fc)
@@ -74,17 +74,17 @@ uint * __thiscall STGroupBoatC::Scout(STGroupBoatC *this,int param_1)
       }
       array = (DArrayTy *)
               Way3DGrpGetDistrPoint
-                        (pSVar4,(AnonShape_00413AF0_B6B4EE9A *)pSVar4->field_0029,
-                         (int)*(short *)&pSVar4->field_0x2f8,(int)*(short *)&pSVar4->field_0x2fa,
-                         (int)*(short *)&pSVar4->field_0x2fc,(int)*(short *)&pSVar4->field_0x2fe,
-                         (int)*(short *)puVar1,(int)*(short *)puVar2);
+                        (pSVar4,(DArrayTy *)pSVar4->field_0029,(int)*(short *)&pSVar4->field_0x2f8,
+                         (int)*(short *)&pSVar4->field_0x2fa,(int)*(short *)&pSVar4->field_0x2fc,
+                         (int)*(short *)&pSVar4->field_0x2fe,(int)*(short *)puVar1,
+                         (int)*(short *)puVar2);
       local_1c = array;
       if (array == (DArrayTy *)0x0) {
         DArrayDestroy(local_10);
         return (uint *)0x0;
       }
       uVar11 = 0;
-      local_3c = PTR_00802a38->field_00E4;
+      local_3c = g_playSystem_00802A38->field_00E4;
       if (0 < (int)local_8) {
         do {
           DArrayGetElement(local_10,uVar11,&local_24);
@@ -93,7 +93,7 @@ uint * __thiscall STGroupBoatC::Scout(STGroupBoatC *this,int param_1)
           if ((short)local_c != -1) {
             pSVar6 = (STBoatC *)
                      STAllPlayersC::GetObjPtr
-                               (g_sTAllPlayers_007FA174,pSVar4->field_0024,local_c,CASE_1);
+                               (g_allPlayers_007FA174,pSVar4->field_0024,local_c,CASE_1);
             if (pSVar6 == (STBoatC *)0x0) {
               RaiseInternalException
                         (-0x5001fffc,g_overwriteContext_007ED77C,
@@ -114,7 +114,7 @@ uint * __thiscall STGroupBoatC::Scout(STGroupBoatC *this,int param_1)
       DArrayDestroy(local_10);
       DArrayDestroy(array);
     }
-    if (PTR_00802a38->field_00E4 % 0x19 == 3) {
+    if (g_playSystem_00802A38->field_00E4 % 0x19 == 3) {
       uVar11 = 0;
       if (0 < (int)local_8) {
         do {
@@ -122,13 +122,13 @@ uint * __thiscall STGroupBoatC::Scout(STGroupBoatC *this,int param_1)
           if ((short)local_c != -1) {
             pSVar6 = (STBoatC *)
                      STAllPlayersC::GetObjPtr
-                               (g_sTAllPlayers_007FA174,pSVar4->field_0024,local_c,CASE_1);
+                               (g_allPlayers_007FA174,pSVar4->field_0024,local_c,CASE_1);
             if (pSVar6 == (STBoatC *)0x0) {
               RaiseInternalException
                         (-0x5001fffc,g_overwriteContext_007ED77C,
                          "E:\\__titans\\wlad\\to_grpb.cpp",0xd3d);
             }
-            iVar5 = thunk_FUN_0045ff10((int)pSVar6);
+            iVar5 = thunk_FUN_0045ff10((STGameObjC *)pSVar6);
             if (iVar5 == 8) break;
             uVar7 = STBoatC::CheckPBoxCmd(pSVar6,CASE_8);
             if (uVar7 == 1) break;

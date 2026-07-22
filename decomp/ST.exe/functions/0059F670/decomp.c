@@ -38,12 +38,13 @@ void __thiscall FSGSTy::DeleteCtrls(FSGSTy *this)
     }
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  if (PTR_00802a30 != (CursorClassTy *)0x0) {
-    if (PTR_00802a30->field_00A9 == 0) {
-      Library::DKW::DDX::FUN_006b8b10((int *)PTR_00802a30->field_00AD);
+  if (g_cursorClass_00802A30 != (CursorClassTy *)0x0) {
+    if (g_cursorClass_00802A30->field_00A9 == 0) {
+      Library::DKW::DDX::FUN_006b8b10((int *)g_cursorClass_00802A30->field_00AD);
     }
-    else if (PTR_00802a30->field_001C != (cLoadingTy *)0xffffffff) {
-      FUN_006b3af0((int *)PTR_00802a30->field_0060,(uint)PTR_00802a30->field_001C);
+    else if (g_cursorClass_00802A30->field_001C != (cLoadingTy *)0xffffffff) {
+      FUN_006b3af0((int *)g_cursorClass_00802A30->field_0060,
+                   (uint)g_cursorClass_00802A30->field_001C);
     }
   }
   pFVar2 = local_8;
@@ -53,10 +54,10 @@ void __thiscall FSGSTy::DeleteCtrls(FSGSTy *this)
   case CASE_5:
   case CASE_7:
     if (local_8->field_1A5F == CASE_7) {
-      thunk_FUN_005a0a50((int)local_8);
+      sub_005A0A50(local_8);
     }
     else {
-      thunk_FUN_005a0590((int)local_8);
+      sub_005A0590(local_8);
     }
   case CASE_1:
     if (pFVar2->field_1F23 != (HoloTy *)0x0) {
@@ -109,7 +110,7 @@ void __thiscall FSGSTy::DeleteCtrls(FSGSTy *this)
     pAVar8 = PTR_008075a8;
     break;
   case CASE_3:
-    thunk_FUN_005a0590((int)local_8);
+    sub_005A0590(local_8);
     if (pFVar2->field_1F23 != (HoloTy *)0x0) {
       HoloTy::Done(pFVar2->field_1F23);
       Library::MSVCRT::FUN_0072e2b0(pFVar2->field_1F23);
@@ -166,7 +167,7 @@ void __thiscall FSGSTy::DeleteCtrls(FSGSTy *this)
     pAVar8 = (AnonShape_006B1B10_121F236C *)pFVar2->field_1C92;
     break;
   case CASE_6:
-    thunk_FUN_005a07f0((AnonShape_005A07F0_323FD806 *)local_8);
+    sub_005A07F0(local_8);
     if (pFVar2->field_1F27 != (HoloTy *)0x0) {
       HoloTy::Done(pFVar2->field_1F27);
       Library::MSVCRT::FUN_0072e2b0(pFVar2->field_1F27);
@@ -278,7 +279,7 @@ void __thiscall FSGSTy::DeleteCtrls(FSGSTy *this)
     pAVar8 = (AnonShape_006B1B10_121F236C *)pFVar2->field_1E45;
     break;
   case CASE_8:
-    thunk_FUN_005a0af0((int)local_8);
+    sub_005A0AF0(local_8);
     if (pFVar2->field_1F2F != (HoloTy *)0x0) {
       HoloTy::Done(pFVar2->field_1F2F);
       Library::MSVCRT::FUN_0072e2b0(pFVar2->field_1F2F);
@@ -381,7 +382,7 @@ void __thiscall FSGSTy::DeleteCtrls(FSGSTy *this)
     pAVar8 = (AnonShape_006B1B10_121F236C *)pFVar2->field_1E45;
     break;
   case CASE_9:
-    thunk_FUN_005a0c80((int)local_8);
+    sub_005A0C80(local_8);
     if (pFVar2->field_1F23 != (HoloTy *)0x0) {
       HoloTy::Done(pFVar2->field_1F23);
       Library::MSVCRT::FUN_0072e2b0(pFVar2->field_1F23);
@@ -432,7 +433,7 @@ void __thiscall FSGSTy::DeleteCtrls(FSGSTy *this)
     pAVar8 = PTR_008075a8;
     break;
   case CASE_A:
-    thunk_FUN_005a0590((int)local_8);
+    sub_005A0590(local_8);
     if (pFVar2->field_1F23 != (HoloTy *)0x0) {
       HoloTy::Done(pFVar2->field_1F23);
       Library::MSVCRT::FUN_0072e2b0(pFVar2->field_1F23);
@@ -487,14 +488,14 @@ void __thiscall FSGSTy::DeleteCtrls(FSGSTy *this)
   }
   FUN_006b3af0((int *)pAVar8,uVar6);
 switchD_0059f6f7_default:
-  if (PTR_00802a30 != (CursorClassTy *)0x0) {
-    if (PTR_00802a30->field_00A9 == 0) {
-      Library::DKW::DDX::FUN_006b8a60((byte *)PTR_00802a30->field_00AD);
+  if (g_cursorClass_00802A30 != (CursorClassTy *)0x0) {
+    if (g_cursorClass_00802A30->field_00A9 == 0) {
+      Library::DKW::DDX::FUN_006b8a60((byte *)g_cursorClass_00802A30->field_00AD);
     }
-    else if (PTR_00802a30->field_001C != (cLoadingTy *)0xffffffff) {
+    else if (g_cursorClass_00802A30->field_001C != (cLoadingTy *)0xffffffff) {
       Library::DKW::DDX::FUN_006b34d0
-                ((uint *)PTR_00802a30->field_0060,(uint)PTR_00802a30->field_001C,0xfffffffe,
-                 PTR_00802a30->field_0034,PTR_00802a30->field_0038);
+                ((uint *)g_cursorClass_00802A30->field_0060,(uint)g_cursorClass_00802A30->field_001C
+                 ,0xfffffffe,g_cursorClass_00802A30->field_0034,g_cursorClass_00802A30->field_0038);
       g_currentExceptionFrame = local_4c.previous;
       return;
     }

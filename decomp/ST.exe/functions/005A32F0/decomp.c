@@ -22,7 +22,7 @@ void __thiscall FSGSTy::CreateGame(FSGSTy *this,int param_1)
   g_currentExceptionFrame = &local_4c;
   local_8 = this;
   iVar5 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
-  this_00 = PTR_00802a30;
+  this_00 = g_cursorClass_00802A30;
   if (iVar5 != 0) {
     g_currentExceptionFrame = local_4c.previous;
     iVar6 = ReportDebugMessage("E:\\__titans\\Start\\fsgs_obj.cpp",0xab9,0,iVar5,"%s"
@@ -33,15 +33,15 @@ void __thiscall FSGSTy::CreateGame(FSGSTy *this,int param_1)
     }
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  if (PTR_00802a30 != (CursorClassTy *)0x0) {
-    iVar5 = PTR_00802a30->field_00C9;
-    iVar6 = PTR_00802a30->field_00C5;
-    PTR_00802a30->field_0493 = 1;
+  if (g_cursorClass_00802A30 != (CursorClassTy *)0x0) {
+    iVar5 = g_cursorClass_00802A30->field_00C9;
+    iVar6 = g_cursorClass_00802A30->field_00C5;
+    g_cursorClass_00802A30->field_0493 = 1;
     this_00->field_0494 = 0xffff;
     CursorClassTy::SetGCType(this_00,CASE_0,iVar6,iVar5);
     CursorClassTy::DrawSprite(this_00,this_00->field_00C5,this_00->field_00C9);
     this_00->field_00D2 = 0;
-    this_00->field_04DF = 0xffffffff;
+    this_00->field_04DF = -1;
   }
   pFVar4 = local_8;
   if (param_1 != 0) {

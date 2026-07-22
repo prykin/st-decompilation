@@ -1,4 +1,4 @@
-FUN_0065d6a0:
+AiFltClassTy::sub_0065D6A0:
 0065D6A0  56                        PUSH ESI
 0065D6A1  8B F1                     MOV ESI,ECX
 0065D6A3  66 8B 46 7D               MOV AX,word ptr [ESI + 0x7d]

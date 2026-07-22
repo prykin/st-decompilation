@@ -1,0 +1,4 @@
+00683BC8  pointer  00683ac4
+00683BCC  pointer  00683a62
+00683BD0  pointer  00683a90
+00683BD4  pointer  00683af8

@@ -153,10 +153,9 @@ void __thiscall STBoatC::ChangeActivity(STBoatC *this,int param_1)
         default:
           uVar4 = 0;
         }
-        iVar2 = thunk_FUN_00493cd0((AnonShape_00493CD0_11D91B87 *)local_8);
+        iVar2 = thunk_FUN_00493cd0((STGameObjC *)local_8);
         if (iVar2 == 0) {
-          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-          (*(code *)this_00->vtable->field_0090)(4,uVar4);
+          (*this_00->vtable->vfunc_90)(4,uVar4);
         }
       }
       thunk_FUN_0041dd00(this_00,param_1);

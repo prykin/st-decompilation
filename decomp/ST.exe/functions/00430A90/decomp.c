@@ -74,7 +74,7 @@ int __thiscall STAllPlayersC::GetMessage(STAllPlayersC *this,STMessage *message)
           do {
             DArrayGetElement(pDVar7,uVar11,&local_18);
             if (local_18 != 0) {
-              thunk_FUN_0054cf70(PTR_00802a38,*(uint *)(local_18 + 8));
+              thunk_FUN_0054cf70(g_playSystem_00802A38,*(uint *)(local_18 + 8));
               local_18 = 0;
               Library::DKW::TBL::FUN_006ae140(&pDVar7->flags,uVar11,&local_18);
             }
@@ -87,7 +87,7 @@ int __thiscall STAllPlayersC::GetMessage(STAllPlayersC *this,STMessage *message)
           do {
             DArrayGetElement(array,uVar11,&local_8);
             if (local_8 != 0) {
-              thunk_FUN_0054cf70(PTR_00802a38,*(uint *)(local_8 + 8));
+              thunk_FUN_0054cf70(g_playSystem_00802A38,*(uint *)(local_8 + 8));
               local_8 = 0;
               Library::DKW::TBL::FUN_006ae140(&array->flags,uVar11,&local_8);
             }
@@ -108,7 +108,7 @@ int __thiscall STAllPlayersC::GetMessage(STAllPlayersC *this,STMessage *message)
         do {
           DArrayGetElement(PTR_007fa154,uVar11,&local_8);
           if (local_8 != 0) {
-            thunk_FUN_0054cf70(PTR_00802a38,*(uint *)(local_8 + 8));
+            thunk_FUN_0054cf70(g_playSystem_00802A38,*(uint *)(local_8 + 8));
             local_8 = 0;
             Library::DKW::TBL::FUN_006ae140(&array->flags,uVar11,&local_8);
           }
@@ -121,7 +121,7 @@ int __thiscall STAllPlayersC::GetMessage(STAllPlayersC *this,STMessage *message)
         do {
           DArrayGetElement(PTR_007fa158,uVar11,&local_8);
           if (local_8 != 0) {
-            thunk_FUN_0054cf70(PTR_00802a38,*(uint *)(local_8 + 8));
+            thunk_FUN_0054cf70(g_playSystem_00802A38,*(uint *)(local_8 + 8));
             local_8 = 0;
             Library::DKW::TBL::FUN_006ae140(&array->flags,uVar11,&local_8);
           }
@@ -134,7 +134,7 @@ int __thiscall STAllPlayersC::GetMessage(STAllPlayersC *this,STMessage *message)
         do {
           DArrayGetElement(PTR_007fa15c,uVar11,&local_8);
           if (local_8 != 0) {
-            thunk_FUN_0054cf70(PTR_00802a38,*(uint *)(local_8 + 8));
+            thunk_FUN_0054cf70(g_playSystem_00802A38,*(uint *)(local_8 + 8));
             local_8 = 0;
             Library::DKW::TBL::FUN_006ae140(&array->flags,uVar11,&local_8);
           }
@@ -147,7 +147,7 @@ int __thiscall STAllPlayersC::GetMessage(STAllPlayersC *this,STMessage *message)
         do {
           DArrayGetElement(PTR_007fa160,uVar11,&local_8);
           if (local_8 != 0) {
-            thunk_FUN_0054cf70(PTR_00802a38,*(uint *)(local_8 + 8));
+            thunk_FUN_0054cf70(g_playSystem_00802A38,*(uint *)(local_8 + 8));
             local_8 = 0;
             Library::DKW::TBL::FUN_006ae140(&array->flags,uVar11,&local_8);
           }
@@ -160,7 +160,7 @@ int __thiscall STAllPlayersC::GetMessage(STAllPlayersC *this,STMessage *message)
         do {
           DArrayGetElement(PTR_007fa164,uVar11,&local_8);
           if (local_8 != 0) {
-            thunk_FUN_0054cf70(PTR_00802a38,*(uint *)(local_8 + 8));
+            thunk_FUN_0054cf70(g_playSystem_00802A38,*(uint *)(local_8 + 8));
             local_8 = 0;
             Library::DKW::TBL::FUN_006ae140(&array->flags,uVar11,&local_8);
           }
@@ -223,14 +223,14 @@ int __thiscall STAllPlayersC::GetMessage(STAllPlayersC *this,STMessage *message)
       PTR_007fa160 = (DArrayTy *)0x0;
       DArrayDestroy(PTR_007fa164);
       PTR_007fa164 = (DArrayTy *)0x0;
-      if (PTR_007fa150 != (DArrayTy *)0x0) {
-        DArrayDestroy(PTR_007fa150);
-        PTR_007fa150 = (DArrayTy *)0x0;
+      if (g_dArray_007FA150 != (DArrayTy *)0x0) {
+        DArrayDestroy(g_dArray_007FA150);
+        g_dArray_007FA150 = (DArrayTy *)0x0;
       }
       if (DAT_007fa168 != (undefined4 *)0x0) {
         FreeAndNull(&DAT_007fa168);
       }
-      g_sTAllPlayers_007FA174 = (STAllPlayersC *)0x0;
+      g_allPlayers_007FA174 = (STAllPlayersC *)0x0;
       g_currentExceptionFrame = local_6c.previous;
       return 0;
     }
@@ -240,12 +240,12 @@ int __thiscall STAllPlayersC::GetMessage(STAllPlayersC *this,STMessage *message)
       piVar15 = &g_playerRuntime[0].field2179_0xa0a;
       do {
         cVar16 = (char)iVar5;
-        if (0x18 < PTR_00802a38->field_00E4 - *piVar15) {
+        if (0x18 < g_playSystem_00802A38->field_00E4 - *piVar15) {
           OptimizeGuardBoats(this_00,cVar16);
           DistributeGuardBoats(this_00,cVar16);
         }
         if ((*(char *)local_14 != -1) &&
-           (thunk_FUN_004eb150(this_00,iVar5), PTR_00802a38->field_00E4 % 10 == 0)) {
+           (thunk_FUN_004eb150(this_00,iVar5), g_playSystem_00802A38->field_00E4 % 10 == 0)) {
           thunk_FUN_004d78e0(cVar16);
         }
         /* ST_PSEUDO[flattened_global_record_array]: expected g_playerRuntime[player].field[index...] after base/stride proof */
@@ -288,7 +288,7 @@ int __thiscall STAllPlayersC::GetMessage(STAllPlayersC *this,STMessage *message)
           *ppDVar13 = pDVar7;
           if (*pcVar12 != -1) {
             thunk_FUN_004e5140((int)piVar15);
-            thunk_FUN_004eb010(local_10,(int)piVar15);
+            sub_004EB010(local_10,(int)piVar15);
             cVar16 = (char)piVar15;
             thunk_FUN_004d73b0(cVar16);
             thunk_FUN_004b6fc0(cVar16);
@@ -330,7 +330,7 @@ int __thiscall STAllPlayersC::GetMessage(STAllPlayersC *this,STMessage *message)
         ppDVar13 = (DArrayTy **)((int)ppDVar13 + 0xa62);
         cVar16 = cVar16 + '\x01';
       } while ((int)ppDVar13 < 0x7fa135);
-      thunk_FUN_00444e70(this_00,(undefined4 *)local_c);
+      thunk_FUN_00444e70(this_00,local_c);
       cMf32::RecMemFree(g_cMf32_00806754,(uint *)&local_c);
       g_currentExceptionFrame = local_6c.previous;
       return 0;
@@ -338,7 +338,8 @@ int __thiscall STAllPlayersC::GetMessage(STAllPlayersC *this,STMessage *message)
   }
   else if (SVar2 == MESS_SHARED_010F) {
     local_c = (ushort *)SaveAllPlData(this_00,(int *)&local_1c);
-    STPlaySystemC::SaveObjData(PTR_00802a38,"allplsave",(byte *)local_c,local_1c,0xc);
+    STPlaySystemC::SaveObjData
+              (g_playSystem_00802A38,"allplsave",(byte *)local_c,local_1c,0xc);
     FreeAndNull(&local_c);
   }
   else if (SVar2 == MESS_ID_ALLCREATE) {

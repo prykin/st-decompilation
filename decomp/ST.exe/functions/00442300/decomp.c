@@ -62,8 +62,7 @@ undefined4 __thiscall STAllPlayersC::_AddMDPairs(STAllPlayersC *this,char param_
   local_6c[3] = 0x5e;
   local_5c = this;
   local_44 = GetObjPtr(this,param_1,param_2,CASE_1);
-  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-  local_58 = (**(code **)&local_44->vtable->field_0x2c)();
+  local_58 = (*local_44->vtable->vfunc_2C)();
   local_10 = 0;
   local_d4.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_d4;
@@ -130,8 +129,7 @@ undefined4 __thiscall STAllPlayersC::_AddMDPairs(STAllPlayersC *this,char param_
               DArrayGetElement(local_c,local_18,&local_1c);
               pSVar5 = GetObjPtr(pSVar2,param_1,local_1c,CASE_1);
               local_44 = pSVar5;
-              /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-              iVar6 = (**(code **)&pSVar5->vtable->field_0x88)(local_54);
+              iVar6 = (*pSVar5->vtable->vfunc_88)(local_54);
               if (0 < iVar6) {
                 STFishC::sub_004162B0((STFishC *)pSVar5,&local_40,&local_3e,&local_3c);
                 local_3a = pSVar5->field_0032;

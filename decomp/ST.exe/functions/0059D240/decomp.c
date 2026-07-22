@@ -143,8 +143,9 @@ void __thiscall FSGSTy::LicCtrls(FSGSTy *this)
       local_4b0 = 0x6335;
       local_688[3] = uVar4;
       local_4b8 = local_88c;
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-      (*(code *)this_00->field_000C->vtable->field_0008)(8,&this_00->field_1B14,0,local_8c4,0);
+      (*this_00->field_000C->vtable->CreateObject)
+                ((SystemClassTy *)this_00->field_000C,8,&this_00->field_1B14,(int *)0x0,local_8c4,0)
+      ;
       this_00->field_002D = 5;
       FUN_006e6080(this_00,2,this_00->field_1B14,(undefined4 *)&this_00->field_0x1d);
       if (this_00->field_1B2C != 0xffffffff) {

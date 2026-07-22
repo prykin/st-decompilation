@@ -6,7 +6,6 @@ undefined4 FUN_005ec9f0(int param_1)
 {
   undefined1 *this;
   int iVar1;
-  undefined4 uVar2;
   InternalExceptionFrame local_54;
   undefined **local_10;
   undefined4 local_c;
@@ -31,21 +30,22 @@ undefined4 FUN_005ec9f0(int param_1)
     }
     thunk_FUN_004ac610(this,'\x0e');
     STT3DSprC::SetCurFase((STT3DSprC *)this,'\x0e',local_8->field_02CA);
-    thunk_FUN_004ad3c0(this,(float)local_8->field_02BE * _DAT_007904f8 * _DAT_007904f0,
-                       (float)local_8->field_02C2 * _DAT_007904f8 * _DAT_007904f0,
-                       (float)local_8->field_02C6 * _DAT_007904f8 * _DAT_007904f0 + _DAT_007904fc);
-    STT3DSprC::StartShow((STT3DSprC *)this,0xe,PTR_00802a38->field_00E4);
+    STT3DSprC::sub_004AD3C0
+              ((STT3DSprC *)this,(float)local_8->field_02BE * _DAT_007904f8 * _DAT_007904f0,
+               (float)local_8->field_02C2 * _DAT_007904f8 * _DAT_007904f0,
+               (float)local_8->field_02C6 * _DAT_007904f8 * _DAT_007904f0 + _DAT_007904fc);
+    STT3DSprC::StartShow((STT3DSprC *)this,0xe,g_playSystem_00802A38->field_00E4);
     STT3DSprC::SetCurShad((STT3DSprC *)this,'\x0e',local_8->field_02BA / 0xf);
     thunk_FUN_00417e70(local_8,0x18);
     local_8->field_02B9 = 1;
-    uVar2 = thunk_FUN_004ad650((int)this);
-    local_8->field_02D6 = uVar2;
+    iVar1 = thunk_FUN_004ad650((int)this);
+    local_8->field_02D6 = iVar1;
     if (local_8->field_0235 == '\x01') {
       STT3DSprC::LoadSequence((STT3DSprC *)this,0xb,DAT_00806774,"forcef0",0x1d);
       thunk_FUN_004ad670(this,'\x0e');
       thunk_FUN_004ad150(this,'\v');
       thunk_FUN_004ac700(this,'\v');
-      STT3DSprC::StartShow((STT3DSprC *)this,0xb,PTR_00802a38->field_00E4);
+      STT3DSprC::StartShow((STT3DSprC *)this,0xb,g_playSystem_00802A38->field_00E4);
       g_currentExceptionFrame = local_54.previous;
       return local_c;
     }
@@ -61,12 +61,12 @@ undefined4 FUN_005ec9f0(int param_1)
               ((STT3DSprC *)this,10,DAT_00806774,
                "expmask3" + (uint)local_8->field_02DF * 0x32,0x1d);
     thunk_FUN_004ac700(this,'\n');
-    STT3DSprC::StartShow((STT3DSprC *)this,10,PTR_00802a38->field_00E4);
-    thunk_FUN_004acf20(this,DAT_008032b8,0x10);
-    STT3DSprC::StartShow((STT3DSprC *)this,8,PTR_00802a38->field_00E4);
-    thunk_FUN_004acfe0(this,'\n');
-    uVar2 = thunk_FUN_004ad650((int)this);
-    local_8->field_02D6 = uVar2;
+    STT3DSprC::StartShow((STT3DSprC *)this,10,g_playSystem_00802A38->field_00E4);
+    STT3DSprC::sub_004ACF20((STT3DSprC *)this,DAT_008032b8,0x10);
+    STT3DSprC::StartShow((STT3DSprC *)this,8,g_playSystem_00802A38->field_00E4);
+    STT3DSprC::sub_004ACFE0((STT3DSprC *)this,'\n');
+    iVar1 = thunk_FUN_004ad650((int)this);
+    local_8->field_02D6 = iVar1;
   }
   g_currentExceptionFrame = local_54.previous;
   return local_c;

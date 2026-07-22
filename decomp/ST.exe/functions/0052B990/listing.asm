@@ -1,4 +1,4 @@
-FUN_0052b990:
+MoneyTy::sub_0052B990:
 0052B990  55                        PUSH EBP
 0052B991  8B EC                     MOV EBP,ESP
 0052B993  83 EC 08                  SUB ESP,0x8

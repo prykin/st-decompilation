@@ -16,8 +16,9 @@ undefined4 __thiscall STGroupBoatC::GrpUnLoadRC(STGroupBoatC *this,int param_1)
   DArrayTy *array;
   int iVar6;
   STBoatC *this_00;
+  dword dVar7;
   DArrayTy *array_00;
-  STGameObjC *pSVar7;
+  STGameObjC *objPtr;
   int iVar8;
   undefined4 uVar9;
   uint uVar10;
@@ -68,7 +69,7 @@ undefined4 __thiscall STGroupBoatC::GrpUnLoadRC(STGroupBoatC *this,int param_1)
     *(undefined4 *)&local_2c->field_0x295 = *(undefined4 *)&local_2c->field_0x156;
     local_2c->field_0299 = local_2c->field_015A;
     local_34 = *(undefined2 *)&local_2c->field_0x156;
-    local_38 = PTR_00802a38->field_00E4;
+    local_38 = g_playSystem_00802A38->field_00E4;
     local_30 = local_2c->field_015A;
     local_32 = *(undefined2 *)&local_2c->field_0x158;
     array_00 = local_14;
@@ -79,17 +80,15 @@ undefined4 __thiscall STGroupBoatC::GrpUnLoadRC(STGroupBoatC *this,int param_1)
         if ((short)local_8 != -1) {
           this_00 = (STBoatC *)
                     STAllPlayersC::GetObjPtr
-                              (g_sTAllPlayers_007FA174,pSVar5->field_0024,local_8,CASE_1);
+                              (g_allPlayers_007FA174,pSVar5->field_0024,local_8,CASE_1);
           if (this_00 == (STBoatC *)0x0) {
             RaiseInternalException
                       (-0x5001fffc,g_overwriteContext_007ED77C,
                        "E:\\__titans\\wlad\\to_grpb.cpp",0x960);
           }
-          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-          iVar6 = (*(code *)this_00->vtable->field_002C)();
-          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-          if (((iVar6 == 8) || (iVar6 = (*(code *)this_00->vtable->field_002C)(), iVar6 == 0x14)) ||
-             (iVar6 = (*(code *)this_00->vtable->field_002C)(), iVar6 == 0x1a)) {
+          dVar7 = (*this_00->vtable->slot_2C)(this_00);
+          if (((dVar7 == 8) || (dVar7 = (*this_00->vtable->slot_2C)(this_00), dVar7 == 0x14)) ||
+             (dVar7 = (*this_00->vtable->slot_2C)(this_00), dVar7 == 0x1a)) {
             if (array_00 == (DArrayTy *)0x0) {
               array_00 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,1,2,1);
               local_14 = array_00;
@@ -99,7 +98,7 @@ undefined4 __thiscall STGroupBoatC::GrpUnLoadRC(STGroupBoatC *this,int param_1)
             SVar12 = CASE_D;
           }
           else {
-            iVar6 = thunk_FUN_00490d90((int)this_00);
+            iVar6 = thunk_FUN_00490d90((STGameObjC *)this_00);
             if (iVar6 != 0) {
               if (local_c == (DArrayTy *)0x0) {
                 local_c = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,1,2,1);
@@ -120,7 +119,7 @@ LAB_0049d3ca:
     array = local_c;
     /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
     STAllPlayersC::RegisterPGPair
-              (g_sTAllPlayers_007FA174,CONCAT31((int3)(uVar10 >> 8),pSVar5->field_0024),
+              (g_allPlayers_007FA174,CONCAT31((int3)(uVar10 >> 8),pSVar5->field_0024),
                &array_00->flags,&local_c->flags);
     if (array_00 != (DArrayTy *)0x0) {
       DArrayDestroy(array_00);
@@ -130,7 +129,7 @@ LAB_0049d3ca:
     }
   }
   local_20 = 2;
-  if (PTR_00802a38->field_00E4 % 100 == 0) {
+  if (g_playSystem_00802A38->field_00E4 % 100 == 0) {
     sVar1 = *(short *)&pSVar5->field_0x295;
     sVar2 = pSVar5->field_0299;
     sVar3 = *(short *)&pSVar5->field_0x297;
@@ -160,22 +159,20 @@ LAB_0049d3ca:
         do {
           DArrayGetElement((DArrayTy *)pSVar5->field_0029,index,&local_8);
           if ((short)local_8 != -1) {
-            pSVar7 = STAllPlayersC::GetObjPtr
-                               (g_sTAllPlayers_007FA174,pSVar5->field_0024,local_8,CASE_1);
-            if (pSVar7 == (STGameObjC *)0x0) {
+            objPtr = STAllPlayersC::GetObjPtr
+                               (g_allPlayers_007FA174,pSVar5->field_0024,local_8,CASE_1);
+            if (objPtr == (STGameObjC *)0x0) {
               RaiseInternalException
                         (-0x5001fffc,g_overwriteContext_007ED77C,
                          "E:\\__titans\\wlad\\to_grpb.cpp",0x989);
             }
-            /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-            iVar6 = (**(code **)&pSVar7->vtable->field_0x2c)();
-            /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-            if (((iVar6 == 8) || (iVar6 = (**(code **)&pSVar7->vtable->field_0x2c)(), iVar6 == 0x14)
-                ) || (iVar6 = (**(code **)&pSVar7->vtable->field_0x2c)(), iVar6 == 0x1a)) {
+            iVar6 = (*objPtr->vtable->vfunc_2C)();
+            if (((iVar6 == 8) || (iVar6 = (*objPtr->vtable->vfunc_2C)(), iVar6 == 0x14)) ||
+               (iVar6 = (*objPtr->vtable->vfunc_2C)(), iVar6 == 0x1a)) {
               local_18 = local_18 + 1;
-              local_1c = local_1c + pSVar7->field_07DA + pSVar7->field_07D6 + pSVar7->field_07D2;
+              local_1c = local_1c + objPtr->field_07DA + objPtr->field_07D6 + objPtr->field_07D2;
               if (0 < local_1c) break;
-              iVar6 = thunk_FUN_0045ff10((int)pSVar7);
+              iVar6 = thunk_FUN_0045ff10(objPtr);
               if (iVar6 == 0xd) {
                 local_28 = 1;
                 break;

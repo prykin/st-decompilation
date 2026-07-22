@@ -39,7 +39,7 @@ undefined4 __fastcall FUN_004ddd50(int *param_1)
           if (piVar9[-1] < *(int *)(&DAT_007e6028 + (piVar9[-2] + -0x96) * 0x14)) {
             *piVar9 = 1;
             bVar2 = true;
-            piVar9[2] = PTR_00802a38->field_00E4;
+            piVar9[2] = g_playSystem_00802A38->field_00E4;
           }
         }
         else {
@@ -58,7 +58,7 @@ undefined4 __fastcall FUN_004ddd50(int *param_1)
               }
             }
           }
-          if ((uint)(piVar9[2] + local_c) <= PTR_00802a38->field_00E4) {
+          if ((uint)(piVar9[2] + local_c) <= g_playSystem_00802A38->field_00E4) {
             iVar6 = (&DAT_007e6024)[iVar8 * 5];
             iVar7 = thunk_FUN_004d7b50((char)param_1[9],3);
             if (iVar6 <= iVar7) {
@@ -70,7 +70,7 @@ undefined4 __fastcall FUN_004ddd50(int *param_1)
                 *piVar9 = 0;
                 bVar2 = true;
               }
-              piVar9[2] = PTR_00802a38->field_00E4;
+              piVar9[2] = g_playSystem_00802A38->field_00E4;
             }
           }
         }

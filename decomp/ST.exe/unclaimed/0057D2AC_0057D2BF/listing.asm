@@ -1,0 +1,5 @@
+0057D2AC  pointer  0057d264
+0057D2B0  pointer  0057d1c3
+0057D2B4  pointer  0057d137
+0057D2B8  pointer  0057cffb
+0057D2BC  pointer  0057d096

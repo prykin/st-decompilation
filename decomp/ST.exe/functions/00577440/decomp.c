@@ -18,7 +18,7 @@ void __fastcall FUN_00577440(int param_1)
     if (*(char *)(param_1 + 0x430) == '\x01') {
       puVar8 = (uint *)(param_1 + 0x20);
       /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-      DVar3 = FUN_006e51b0(*(int *)(param_1 + 0x18));
+      DVar3 = STAppC::sub_006E51B0(*(STAppC **)(param_1 + 0x18));
       iVar2 = Library::Ourlib::PALETTE::FUN_00718f40
                         (DAT_0080759c,(undefined4 *)(param_1 + 0x28),0,0x100,10,
                          (int *)(param_1 + 0x24),2,DVar3,puVar8);
@@ -30,7 +30,7 @@ void __fastcall FUN_00577440(int param_1)
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     else if ((*(char *)(param_1 + 0x430) == '\x02') && (*(int *)(param_1 + 0x431) != 0)) {
       /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-      DVar3 = FUN_006e51b0(*(int *)(param_1 + 0x18));
+      DVar3 = STAppC::sub_006E51B0(*(STAppC **)(param_1 + 0x18));
       /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
       piVar5 = *(int **)(param_1 + 0x431);
       bVar1 = false;

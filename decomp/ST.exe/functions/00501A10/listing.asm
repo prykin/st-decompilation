@@ -1,4 +1,4 @@
-FUN_00501a10:
+CPanelTy::sub_00501A10:
 00501A10  53                        PUSH EBX
 00501A11  56                        PUSH ESI
 00501A12  8B F1                     MOV ESI,ECX

@@ -1,0 +1,4 @@
+0052A20C  pointer  0052a1fe
+0052A210  pointer  0052a205
+0052A214  pointer  0052a1f7
+0052A218  pointer  0052a1f7

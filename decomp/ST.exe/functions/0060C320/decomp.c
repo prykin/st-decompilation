@@ -133,7 +133,7 @@ int __fastcall FUN_0060c320(void *param_1)
               if (((pSVar17 != (STWorldObject *)0x0) &&
                   (iVar10 = (*pSVar17->vtable[5].slots_00_28[0])(), iVar16 = local_40, iVar10 != 0))
                  && ((pSVar17[1].vtable < (STWorldObjectVTable *)0x8 &&
-                     ((PTR_00802a38 == (STPlaySystemC *)0x0 ||
+                     ((g_playSystem_00802A38 == (STPlaySystemC *)0x0 ||
                       ((byte)(&DAT_008087e9)[(int)pSVar17[1].vtable * 0x51] < 8)))))) {
                 bVar3 = *(byte *)&pSVar17[1].vtable;
                 /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */

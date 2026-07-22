@@ -1,0 +1,5 @@
+005294C0  pointer  0052949d
+005294C4  pointer  005294a4
+005294C8  pointer  005294ab
+005294CC  pointer  005294b2
+005294D0  pointer  005294b9

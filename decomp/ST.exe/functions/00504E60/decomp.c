@@ -11,12 +11,12 @@ void __thiscall CPanelTy::PaintIDSObj(CPanelTy *this)
   code *pcVar1;
   CPanelTy *pCVar2;
   int iVar3;
-  uint *puVar4;
-  int iVar5;
+  uint *resourceString;
+  int iVar4;
   UINT resourceId;
-  uint uVar6;
+  uint uVar5;
+  int iVar6;
   int iVar7;
-  int iVar8;
   InternalExceptionFrame local_4c;
   CPanelTy *local_8;
 
@@ -27,9 +27,9 @@ void __thiscall CPanelTy::PaintIDSObj(CPanelTy *this)
   pCVar2 = local_8;
   if (iVar3 != 0) {
     g_currentExceptionFrame = local_4c.previous;
-    iVar5 = ReportDebugMessage("E:\\__titans\\Andrey\\cpanel4.cpp",0xa0,0,iVar3,"%s",
+    iVar4 = ReportDebugMessage("E:\\__titans\\Andrey\\cpanel4.cpp",0xa0,0,iVar3,"%s",
                                "CPanelTy::PaintIDSObj");
-    if (iVar5 != 0) {
+    if (iVar4 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
     RaiseInternalException(iVar3,0,"E:\\__titans\\Andrey\\cpanel4.cpp",0xa0);
@@ -50,13 +50,13 @@ void __thiscall CPanelTy::PaintIDSObj(CPanelTy *this)
     ccFntTy::SetSurf(pCVar2->field_01B8,pCVar2->field_0194,0,6,0x8b,200,0xb);
     resourceId = pCVar2->field_0C4D;
   }
-  iVar8 = -1;
   iVar7 = -1;
-  uVar6 = 0;
-  iVar5 = -1;
+  iVar6 = -1;
+  uVar5 = 0;
+  iVar4 = -1;
   iVar3 = -2;
-  puVar4 = (uint *)LoadResourceString(resourceId,HINSTANCE_00807618);
-  ccFntTy::WrTxt(pCVar2->field_01B8,puVar4,iVar3,iVar5,uVar6,iVar7,iVar8);
+  resourceString = (uint *)LoadResourceString(resourceId,g_module_00807618);
+  ccFntTy::WrTxt(pCVar2->field_01B8,resourceString,iVar3,iVar4,uVar5,iVar6,iVar7);
 cf_common_exit_00504F81:
   if (-1 < pCVar2->field_015C) {
     Library::DKW::DDX::FUN_006b3640

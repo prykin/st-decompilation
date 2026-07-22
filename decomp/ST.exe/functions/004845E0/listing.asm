@@ -1,4 +1,4 @@
-FUN_004845e0:
+STGameObjC::FUN_004845e0:
 004845E0  55                        PUSH EBP
 004845E1  8B EC                     MOV EBP,ESP
 004845E3  83 EC 0C                  SUB ESP,0xc
@@ -457,7 +457,7 @@ LAB_00484af8:
 00484B0C  EB 02                     JMP 0x00484b10
 LAB_00484b0e:
 00484B0E  33 C0                     XOR EAX,EAX
-FUN_004845e0::cf_common_exit_00484B10:
+STGameObjC::FUN_004845e0::cf_common_exit_00484B10:
 00484B10  33 C9                     XOR ECX,ECX
 00484B12  5F                        POP EDI
 00484B13  85 C0                     TEST EAX,EAX

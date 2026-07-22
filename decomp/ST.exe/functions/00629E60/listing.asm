@@ -1,4 +1,4 @@
-FUN_00629e60:
+STParticleC::sub_00629E60:
 00629E60  55                        PUSH EBP
 00629E61  8B EC                     MOV EBP,ESP
 00629E63  8B 45 08                  MOV EAX,dword ptr [EBP + 0x8]

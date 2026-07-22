@@ -1,0 +1,4 @@
+004D0824  pointer  004d06fc
+004D0828  pointer  004d0713
+004D082C  pointer  004d072a
+004D0830  pointer  004d0741

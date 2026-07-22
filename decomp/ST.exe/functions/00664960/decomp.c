@@ -2,8 +2,12 @@
 
 
 /* WARNING: Type propagation algorithm not settling */
+/* [STMethodOwnerApplier] Structural method owner recovered as AiFltClassTy.
+   Evidence: this_call_owners=[AiFltClassTy]; agreed_this_calls=1; incoming_this_accesses=718;
+   incoming_edx_uses=0; incoming_stack_parameter_uses=7; direct_non_thunk_callers=0;
+   incoming_ecx_receiver_callers=0; attributed_named_callers=1; owner_evidence_coverage=adequate */
 
-void __fastcall FUN_00664960(AiFltClassTy *param_1)
+void __fastcall AiFltClassTy::sub_00664960(AiFltClassTy *param_1)
 
 {
   int iVar1;
@@ -166,7 +170,7 @@ void __fastcall FUN_00664960(AiFltClassTy *param_1)
       break;
     case 4:
       Library::DKW::TBL::FUN_006ae1c0(&param_1->field_020B->flags,&local_3c);
-      thunk_FUN_00676c40(param_1->field_020B,&LAB_004013cf);
+      thunk_FUN_00676c40(param_1->field_020B,thunk_FUN_00660d10);
       goto cf_common_join_00665024;
     case 5:
       if (param_1->field_020B != (DArrayTy *)0x0) {
@@ -361,7 +365,7 @@ void __fastcall FUN_00664960(AiFltClassTy *param_1)
         puVar19 = puVar19 + 1;
       }
       if (param_1->field_00B3 != 0) {
-        thunk_FUN_0065f980((int)param_1);
+        sub_0065F980(param_1);
       }
       uVar11 = 500;
       goto cf_common_join_00664FF6;
@@ -374,7 +378,7 @@ void __fastcall FUN_00664960(AiFltClassTy *param_1)
         puVar19 = puVar19 + 1;
       }
       if (param_1->field_00B3 != 0) {
-        thunk_FUN_0065f980((int)param_1);
+        sub_0065F980(param_1);
       }
       uVar11 = 0x1fe;
       goto cf_common_join_00664FF6;
@@ -387,7 +391,7 @@ void __fastcall FUN_00664960(AiFltClassTy *param_1)
         puVar19 = puVar19 + 1;
       }
       if (param_1->field_00B3 != 0) {
-        thunk_FUN_0065f980((int)param_1);
+        sub_0065F980(param_1);
       }
       uVar11 = 0x208;
       goto cf_common_join_00664FF6;
@@ -400,7 +404,7 @@ void __fastcall FUN_00664960(AiFltClassTy *param_1)
         puVar19 = puVar19 + 1;
       }
       if (param_1->field_00B3 != 0) {
-        thunk_FUN_0065f980((int)param_1);
+        sub_0065F980(param_1);
       }
       uVar11 = 0x212;
       goto cf_common_join_00664FF6;
@@ -413,7 +417,7 @@ void __fastcall FUN_00664960(AiFltClassTy *param_1)
         puVar19 = puVar19 + 1;
       }
       if (param_1->field_00B3 != 0) {
-        thunk_FUN_0065f980((int)param_1);
+        sub_0065F980(param_1);
       }
       uVar11 = 0x21c;
       goto cf_common_join_00664FF6;
@@ -426,7 +430,7 @@ void __fastcall FUN_00664960(AiFltClassTy *param_1)
         puVar19 = puVar19 + 1;
       }
       if (param_1->field_00B3 != 0) {
-        thunk_FUN_0065f980((int)param_1);
+        sub_0065F980(param_1);
       }
       uVar11 = 0x226;
       goto cf_common_join_00664FF6;
@@ -439,7 +443,7 @@ void __fastcall FUN_00664960(AiFltClassTy *param_1)
         puVar19 = puVar19 + 1;
       }
       if (param_1->field_00B3 != 0) {
-        thunk_FUN_0065f980((int)param_1);
+        sub_0065F980(param_1);
       }
       uVar11 = 0x230;
       goto cf_common_join_00664FF6;
@@ -452,7 +456,7 @@ void __fastcall FUN_00664960(AiFltClassTy *param_1)
         puVar19 = puVar19 + 1;
       }
       if (param_1->field_00B3 != 0) {
-        thunk_FUN_0065f980((int)param_1);
+        sub_0065F980(param_1);
       }
       uVar11 = 0x23a;
       goto cf_common_join_00664FF6;
@@ -465,7 +469,7 @@ void __fastcall FUN_00664960(AiFltClassTy *param_1)
         puVar19 = puVar19 + 1;
       }
       if (param_1->field_00B3 != 0) {
-        thunk_FUN_0065f980((int)param_1);
+        sub_0065F980(param_1);
       }
       uVar11 = 0x244;
       goto cf_common_join_00664FF6;
@@ -478,7 +482,7 @@ void __fastcall FUN_00664960(AiFltClassTy *param_1)
         puVar19 = puVar19 + 1;
       }
       if (param_1->field_00B3 != 0) {
-        thunk_FUN_0065f980((int)param_1);
+        sub_0065F980(param_1);
       }
       uVar11 = 0x24e;
 cf_common_join_00664FF6:
@@ -523,7 +527,7 @@ LAB_00665067:
             param_1->field_00A7 = 0;
           }
 LAB_00666934:
-          uVar6 = AiFltClassTy::sub_0065D9C0(param_1);
+          uVar6 = sub_0065D9C0(param_1);
           /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
           if ((int)*(short *)&param_1->field_0xd3 < CONCAT22(extraout_var_12,uVar6))
           goto cf_common_join_00666DC1;
@@ -579,7 +583,7 @@ LAB_00666901:
                   param_1->field_00A3 = 0;
                   param_1->field_00A7 = 0;
                 }
-                uVar6 = AiFltClassTy::sub_0065D9C0(param_1);
+                uVar6 = sub_0065D9C0(param_1);
                 /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
                 if (((int)param_1->field_018E < CONCAT22(extraout_var_06,uVar6)) &&
                    ((param_1->field_00AB == 0 ||
@@ -608,7 +612,7 @@ LAB_00665eba:
                 param_1->field_00A3 = 0;
                 param_1->field_00A7 = 0;
               }
-              uVar6 = AiFltClassTy::sub_0065D9C0(param_1);
+              uVar6 = sub_0065D9C0(param_1);
               /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
               if (((int)param_1->field_018E < CONCAT22(extraout_var_05,uVar6)) &&
                  ((param_1->field_00AB == 0 ||
@@ -650,7 +654,7 @@ LAB_00665eba:
                 param_1->field_00A3 = 0;
                 param_1->field_00A7 = 0;
               }
-              uVar6 = AiFltClassTy::sub_0065D9C0(param_1);
+              uVar6 = sub_0065D9C0(param_1);
               /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
               if (((int)param_1->field_018E < CONCAT22(extraout_var_04,uVar6)) &&
                  ((param_1->field_00AB == 0 ||
@@ -739,7 +743,7 @@ LAB_00665eba:
             else {
               /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
               if (((param_1->field_00A7 == 0) &&
-                  (uVar6 = AiFltClassTy::sub_0065D9C0(param_1),
+                  (uVar6 = sub_0065D9C0(param_1),
                   (int)param_1->field_0159 < CONCAT22(extraout_var_07,uVar6))) &&
                  ((param_1->field_00AB == 0 ||
                   (param_1->field_0280 <= param_1->field_00AF + param_1->field_00AB))))
@@ -785,7 +789,7 @@ LAB_0066641b:
             param_1->field_00A3 = 0;
             param_1->field_00A7 = 0;
           }
-          uVar6 = AiFltClassTy::sub_0065D9C0(param_1);
+          uVar6 = sub_0065D9C0(param_1);
           /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
           if (CONCAT22(extraout_var_08,uVar6) <= (int)param_1->field_00E4)
           goto cf_common_join_00667047;
@@ -817,14 +821,14 @@ LAB_00666423:
         param_1->field_00EB = 0x40;
         if (param_1->field_00A3 != 0) {
           if (param_1->field_00A7 != 0) {
-            thunk_FUN_0065f980((int)param_1);
+            sub_0065F980(param_1);
             param_1->field_009B = 0;
             param_1->field_009F = 0;
             param_1->field_00A3 = 0;
             param_1->field_00A7 = 0;
           }
 LAB_006664d8:
-          uVar6 = AiFltClassTy::sub_0065D9C0(param_1);
+          uVar6 = sub_0065D9C0(param_1);
           /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
           iVar9 = CONCAT22(extraout_var_09,uVar6);
           sVar7 = param_1->field_00E4;
@@ -839,33 +843,34 @@ LAB_006664d8:
         param_1->field_00EB = 0x40;
         if (param_1->field_00A3 != 0) {
           if (param_1->field_00A7 != 0) {
-            thunk_FUN_0065f980((int)param_1);
+            sub_0065F980(param_1);
             param_1->field_009B = 0;
             param_1->field_009F = 0;
             param_1->field_00A3 = 0;
             param_1->field_00A7 = 0;
           }
-          uVar6 = AiFltClassTy::sub_0065D9C0(param_1);
+          uVar6 = sub_0065D9C0(param_1);
           /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
           if ((int)param_1->field_00E4 < CONCAT22(extraout_var_11,uVar6))
           goto cf_common_join_00666DC1;
           goto cf_common_join_00667047;
         }
         param_1->field_00A3 = 1;
-        param_1->field_023B[3] = 0;
+        param_1->field_023B->count = 0;
         uVar11 = param_1->field_001C * 0x41c64e6d + 0x3039;
         param_1->field_001C = uVar11;
-        uVar6 = AiFltClassTy::sub_0065D9C0(param_1);
+        uVar6 = sub_0065D9C0(param_1);
         /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
         uVar11 = CONCAT22(extraout_var_10,uVar6) / ((uVar11 >> 0x10) % 3 + 5);
         if (uVar11 == 0) {
           uVar11 = 1;
         }
-        iVar9 = thunk_FUN_0065eb70(param_1,*(uint *)&param_1->field_0xc7,uVar11,param_1->field_023B,
-                                   *(uint *)&param_1->field_0xcb,*(uint *)&param_1->field_0xcf,
-                                   &param_1->field_0xd5,(uint)(byte)param_1->field_0xd3);
+        iVar9 = thunk_FUN_0065eb70(param_1,*(uint *)&param_1->field_0xc7,uVar11,
+                                   &param_1->field_023B->flags,*(uint *)&param_1->field_0xcb,
+                                   *(uint *)&param_1->field_0xcf,&param_1->field_0xd5,
+                                   (uint)(byte)param_1->field_0xd3);
         if (iVar9 < 1) {
-          thunk_FUN_0065f980((int)param_1);
+          sub_0065F980(param_1);
           param_1->field_009B = 0;
           param_1->field_009F = 0;
           param_1->field_00A3 = 0;
@@ -964,7 +969,7 @@ LAB_006668f9:
         param_1->field_00A3 = 0;
         param_1->field_00A7 = 0;
       }
-      uVar6 = AiFltClassTy::sub_0065D9C0(param_1);
+      uVar6 = sub_0065D9C0(param_1);
       /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
       if ((int)*(short *)&param_1->field_0xd3 < CONCAT22(extraout_var_13,uVar6))
       goto cf_common_join_00666DC1;
@@ -1007,7 +1012,7 @@ LAB_00666ddf:
         goto joined_r0x00666ceb;
       }
       if (param_1->field_00A7 == 0) {
-        uVar6 = AiFltClassTy::sub_0065D9C0(param_1);
+        uVar6 = sub_0065D9C0(param_1);
         /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
         iVar9 = CONCAT22(extraout_var_14,uVar6);
         sVar7 = *(short *)&param_1->field_0xc5;
@@ -1065,7 +1070,7 @@ cf_common_join_00666DC1:
       }
       /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
       if (((param_1->field_00A7 == 0) &&
-          (uVar6 = AiFltClassTy::sub_0065D9C0(param_1),
+          (uVar6 = sub_0065D9C0(param_1),
           (int)*(short *)&param_1->field_0xc9 < CONCAT22(extraout_var_15,uVar6))) &&
          ((param_1->field_00AB == 0 ||
           (param_1->field_0280 <= param_1->field_00AF + param_1->field_00AB))))
@@ -1141,7 +1146,7 @@ joined_r0x00666ceb:
           iVar9 = 0x72;
         }
         local_10 = (DArrayTy *)
-                   thunk_FUN_0065e360((AnonShape_0065E360_B94C37CB *)param_1,(uint)bVar2,iVar9);
+                   sub_0065E360((AnonShape_0065E360_B94C37CB *)param_1,(uint)bVar2,iVar9);
         if (local_10 != (DArrayTy *)0x0) {
           uVar11 = local_10->count;
           local_c = 0;
@@ -1156,7 +1161,7 @@ joined_r0x00666ceb:
               }
               /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
               this_00 = STAllPlayersC::GetObjPtr
-                                  (g_sTAllPlayers_007FA174,*(char *)&param_1->field_0024,
+                                  (g_allPlayers_007FA174,*(char *)&param_1->field_0024,
                                    CONCAT22((short)(local_c >> 0x10),*puVar14),CASE_1);
               local_48 = this_00;
               switch(*(undefined4 *)&param_1->field_0xc3) {
@@ -1200,7 +1205,7 @@ cf_break_loop_0066703E:
       }
     }
 cf_common_join_00667047:
-    thunk_FUN_0065f980((int)param_1);
+    sub_0065F980(param_1);
     goto cf_common_join_0066704E;
   }
   if (uVar11 == 0x82) {
@@ -1288,7 +1293,7 @@ LAB_006651f3:
     goto cf_common_exit_00667066;
     memset(&param_1->field_01AD, 0, 0x4a); /* compiler bulk-zero initialization */
     if (param_1->field_00B3 != 0) {
-      thunk_FUN_0065f980((int)param_1);
+      sub_0065F980(param_1);
     }
 LAB_00665237:
     param_1->field_009B = 10;
@@ -1350,7 +1355,7 @@ LAB_00665315:
     memset(&param_1->field_01AD, 0, 0x4a); /* compiler bulk-zero initialization */
     iVar9 = 0;
     if (param_1->field_00B3 != 0) {
-      thunk_FUN_0065f980((int)param_1);
+      sub_0065F980(param_1);
     }
     param_1->field_01F7 = 0x19;
     param_1->field_009B = 0x78;
@@ -1377,8 +1382,8 @@ LAB_00665327:
 /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
 LAB_0066534b:
       if ((!bVar21 && !bVar22) &&
-         (uVar6 = AiFltClassTy::sub_0065D9C0(param_1),
-         (int)param_1->field_013E <= CONCAT22(extraout_var,uVar6))) {
+         (uVar6 = sub_0065D9C0(param_1), (int)param_1->field_013E <= CONCAT22(extraout_var,uVar6)))
+      {
 LAB_0066586a:
         param_1->field_009B = 0x6e;
         param_1->field_009F = 0;
@@ -1453,7 +1458,7 @@ LAB_006655ba:
     }
     else {
       if (param_1->field_00A7 == 0) goto cf_common_exit_00667066;
-      uVar6 = AiFltClassTy::sub_0065D9C0(param_1);
+      uVar6 = sub_0065D9C0(param_1);
       /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
       if (CONCAT22(extraout_var_00,uVar6) != 0 && -1 < extraout_var_00) {
         uVar11 = param_1->field_0280;
@@ -1461,7 +1466,7 @@ LAB_006655ba:
         local_9c = 0x72;
         local_94 = 2;
         local_98 = uVar11;
-        local_90 = (DArrayTy *)thunk_FUN_0065da10((AnonShape_0065DA10_8B0AA883 *)param_1,uVar11);
+        local_90 = (DArrayTy *)sub_0065DA10(param_1,uVar11);
         if ((AiTactClassTy *)param_1->field_0284 != (AiTactClassTy *)0x0) {
           AiTactClassTy::GetAiMess
                     ((AiTactClassTy *)param_1->field_0284,
@@ -1518,8 +1523,8 @@ LAB_006655ba:
     /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
     if (((param_1->field_0139 == '\0') ||
         (param_1->field_0280 <= param_1->field_014E + param_1->field_014A)) ||
-       (uVar6 = AiFltClassTy::sub_0065D9C0(param_1),
-       CONCAT22(extraout_var_01,uVar6) < (int)param_1->field_013E)) goto LAB_00665886;
+       (uVar6 = sub_0065D9C0(param_1), CONCAT22(extraout_var_01,uVar6) < (int)param_1->field_013E))
+    goto LAB_00665886;
     goto LAB_0066586a;
   case 100:
     param_1->field_00EB = 0x100;
@@ -1580,7 +1585,7 @@ LAB_006655ba:
         param_1->field_00A7 = 0;
       }
 LAB_00665a76:
-      uVar6 = AiFltClassTy::sub_0065D9C0(param_1);
+      uVar6 = sub_0065D9C0(param_1);
       /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
       if (((int)param_1->field_0140 < CONCAT22(extraout_var_02,uVar6)) &&
          ((param_1->field_00AB == 0 ||
@@ -1607,7 +1612,7 @@ LAB_00665b57:
         param_1->field_00A3 = 0;
         param_1->field_00A7 = 0;
       }
-      uVar6 = AiFltClassTy::sub_0065D9C0(param_1);
+      uVar6 = sub_0065D9C0(param_1);
       /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
       if ((int)param_1->field_0140 < CONCAT22(extraout_var_03,uVar6)) {
         if ((param_1->field_00AB == 0) ||
@@ -1664,7 +1669,7 @@ cf_common_exit_00667066:
   if (((param_1->field_0284 != (ushort *)0x0) && (param_1->field_0176 != '\0')) &&
      ((param_1->field_00EB & param_1->field_017B) != 0)) {
     /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-    AiFltClassTy::GoToRepair(param_1,unaff_ESI);
+    GoToRepair(param_1,unaff_ESI);
   }
   return;
 }

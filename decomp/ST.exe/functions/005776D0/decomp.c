@@ -183,7 +183,7 @@ int __thiscall GameSystemC::GetMessage(GameSystemC *this,STMessage *message)
             } while (uVar13 != 0);
           }
         }
-        pcVar16 = LoadResourceString(0x42c2,HINSTANCE_00807618);
+        pcVar16 = LoadResourceString(0x42c2,g_module_00807618);
         wsprintfA((LPSTR)&DAT_0080f33a,pcVar16);
         if (g_popUp_008016D8 != (PopUpTy *)0x0) {
           thunk_FUN_0052d320(g_popUp_008016D8,(char *)&DAT_0080f33a,8);

@@ -5,7 +5,7 @@ void __thiscall FUN_004ebcb0(void *this,int param_1,int param_2)
   int iVar1;
   int iVar2;
 
-  iVar1 = thunk_FUN_004e1490((int)this);
+  iVar1 = thunk_FUN_004e1490(this);
   if ((iVar1 != 0) && (*(int *)((int)this + 0x5b8) < g_worldGrid.sizeZ + -1)) {
     *(int *)((int)this + 0x508) = param_1;
     *(undefined4 *)((int)this + 0x4d0) = 3;

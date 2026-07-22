@@ -24,8 +24,8 @@ FUN_00631c20(void *this,int param_1,int param_2,byte param_3,undefined4 param_4,
               puVar6 != (uint *)0x0)) &&
              (iVar5 = FUN_006aced8(param_1,param_2,puVar6[3],puVar6[4]), iVar5 < (int)puVar6[6])) &&
             (*puVar6 < 8)) &&
-           ((PTR_00802a38 == (STPlaySystemC *)0x0 || ((byte)(&DAT_008087e9)[*puVar6 * 0x51] < 8))))
-        {
+           ((g_playSystem_00802A38 == (STPlaySystemC *)0x0 ||
+            ((byte)(&DAT_008087e9)[*puVar6 * 0x51] < 8)))) {
           bVar1 = (byte)*puVar6;
           if (DAT_00808a8f == '\0') {
             if (param_3 == bVar1) {

@@ -1,0 +1,16 @@
+006F9A88  pointer  006f961e
+006F9A8C  pointer  006f9641
+006F9A90  pointer  006f964f
+006F9A94  pointer  006f9672
+006F9A98  pointer  006f9709
+006F9A9C  pointer  006f972c
+006F9AA0  pointer  006f973b
+006F9AA4  pointer  006f975e
+006F9AA8  pointer  006f985b
+006F9AAC  pointer  006f987e
+006F9AB0  pointer  006f9892
+006F9AB4  pointer  006f98b6
+006F9AB8  pointer  006f993a
+006F9ABC  pointer  006f998f
+006F9AC0  pointer  006f996b
+006F9AC4  pointer  006f9994

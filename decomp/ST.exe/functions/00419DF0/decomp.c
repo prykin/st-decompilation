@@ -126,8 +126,7 @@ cf_common_exit_00419F6C:
       else if (uVar1 != 0x3e9) goto cf_common_exit_00419F6C;
     }
   }
-  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-  (*(code *)this->vtable->field_0030)(this->field_0121);
+  (*this->vtable->vfunc_30)(this->field_0121);
   puVar16 = (undefined4 *)this->field_0121;
   puVar17 = (undefined4 *)this->field_011D;
   for (iVar4 = 0xd; iVar4 != 0; iVar4 = iVar4 + -1) {
@@ -136,8 +135,7 @@ cf_common_exit_00419F6C:
     puVar17 = puVar17 + 1;
   }
   *(undefined2 *)puVar17 = *(undefined2 *)puVar16;
-  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-  (*(code *)this->vtable->field_0034)(this->field_0129);
+  (*this->vtable->vfunc_34)(this->field_0129);
   puVar16 = (undefined4 *)this->field_0129;
   puVar17 = (undefined4 *)this->field_0125;
   for (iVar4 = 0x17; iVar4 != 0; iVar4 = iVar4 + -1) {
@@ -148,16 +146,14 @@ cf_common_exit_00419F6C:
   uVar1 = this->field_0020;
   if (uVar1 < 0x1af) {
     if (uVar1 == 0x1ae) {
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-      (*(code *)this->vtable->field_0058)(this->field_01B1);
+      (*this->vtable->vfunc_58)(this->field_01B1);
       pAVar8 = this->field_01B1;
       pAVar7 = this->field_01AD;
       pAVar7->field_0000 = pAVar8->field_0000;
       pAVar7->field_0004 = pAVar8->field_0004;
       pAVar7->field_0008 = pAVar8->field_0008;
       pAVar7->field_000A = pAVar8->field_000A;
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-      (**(code **)&this->vtable->field_0x64)(this->field_01C9);
+      (*this->vtable->vfunc_64)(this->field_01C9);
       puVar9 = this->field_01C9;
       puVar2 = this->field_01C5;
       *(undefined4 *)puVar2 = *(undefined4 *)puVar9;
@@ -190,15 +186,13 @@ cf_common_exit_00419F6C:
         this->field_0179 = 0;
         this->field_017D = 0;
         this->field_0181 = 0;
-        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-        (*(code *)this->vtable->field_0040)(puVar16);
+        (*this->vtable->vfunc_40)(puVar16);
         Library::DKW::TBL::FUN_006afe40(&this->field_015D,(uint *)*puVar16);
         Library::DKW::TBL::FUN_006afe40(&this->field_0161,(uint *)this->field_0175);
         Library::DKW::TBL::FUN_006afe40(&this->field_0165,(uint *)this->field_0179);
         Library::DKW::TBL::FUN_006afe40(&this->field_0169,(uint *)this->field_017D);
         Library::DKW::TBL::FUN_006afe40(&this->field_016D,(uint *)this->field_0181);
-        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-        (*(code *)this->vtable->field_004C)(this->field_0199);
+        (*this->vtable->vfunc_4C)(this->field_0199);
         pAVar6 = this->field_0199;
         pAVar5 = this->field_0195;
         pAVar5->field_0000 = pAVar6->field_0000;
@@ -207,16 +201,14 @@ cf_common_exit_00419F6C:
         pAVar5->field_000C = pAVar6->field_000C;
         pAVar5->field_0010 = pAVar6->field_0010;
         pAVar5->field_0012 = pAVar6->field_0012;
-        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-        (*(code *)this->vtable->field_0058)(this->field_01B1);
+        (*this->vtable->vfunc_58)(this->field_01B1);
         pAVar8 = this->field_01B1;
         pAVar7 = this->field_01AD;
         pAVar7->field_0000 = pAVar8->field_0000;
         pAVar7->field_0004 = pAVar8->field_0004;
         pAVar7->field_0008 = pAVar8->field_0008;
         pAVar7->field_000A = pAVar8->field_000A;
-        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-        (*(code *)this->vtable->field_0060)(this->field_01C1);
+        (*this->vtable->vfunc_60)(this->field_01C1);
         puVar16 = (undefined4 *)this->field_01C1;
         puVar17 = (undefined4 *)this->field_01BD;
         for (iVar4 = 0x90; iVar4 != 0; iVar4 = iVar4 + -1) {
@@ -248,8 +240,7 @@ cf_common_exit_00419F6C:
       }
       *puVar16 = 0;
       this->field_0139 = 0;
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-      (**(code **)&this->vtable->field_0x38)(puVar16);
+      (*this->vtable->vfunc_38)(puVar16);
       Library::DKW::TBL::FUN_006afe40(&this->field_012D,(uint *)*puVar16);
       Library::DKW::TBL::FUN_006afe40(&this->field_0131,(uint *)this->field_0139);
       puVar16 = &this->field_014D;
@@ -269,14 +260,12 @@ cf_common_exit_00419F6C:
       this->field_0151 = 0;
       this->field_0155 = 0;
       this->field_0159 = 0;
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-      (**(code **)&this->vtable->field_0x3c)(puVar16);
+      (*this->vtable->vfunc_3C)(puVar16);
       Library::DKW::TBL::FUN_006afe40(&this->field_013D,(uint *)*puVar16);
       Library::DKW::TBL::FUN_006afe40(&this->field_0141,(uint *)this->field_0151);
       Library::DKW::TBL::FUN_006afe40(&this->field_0145,(uint *)this->field_0155);
       Library::DKW::TBL::FUN_006afe40(&this->field_0149,(uint *)this->field_0159);
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-      (**(code **)&this->vtable->field_0x44)(this->field_0189);
+      (*this->vtable->vfunc_44)(this->field_0189);
       puVar16 = (undefined4 *)this->field_0189;
       puVar17 = (undefined4 *)this->field_0185;
       for (iVar4 = 0x4a; iVar4 != 0; iVar4 = iVar4 + -1) {
@@ -285,8 +274,7 @@ cf_common_exit_00419F6C:
         puVar17 = puVar17 + 1;
       }
       *(undefined1 *)puVar17 = *(undefined1 *)puVar16;
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-      (**(code **)&this->vtable->field_0x48)(this->field_0191);
+      (*this->vtable->vfunc_48)(this->field_0191);
       pAVar11 = this->field_0191;
       pAVar10 = this->field_018D;
       puVar16 = &this->field_01A1;
@@ -302,18 +290,15 @@ cf_common_exit_00419F6C:
         DArrayDestroy((DArrayTy *)this->field_019D);
         this->field_019D = 0;
       }
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-      (**(code **)&this->vtable->field_0x50)(puVar16);
+      (*this->vtable->vfunc_50)(puVar16);
       Library::DKW::TBL::FUN_006afe40(&this->field_019D,(uint *)*puVar16);
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-      (**(code **)&this->vtable->field_0x54)(this->field_01A9);
+      (*this->vtable->vfunc_54)(this->field_01A9);
       pAVar13 = this->field_01A9;
       pAVar12 = this->field_01A5;
       pAVar12->field_0000 = pAVar13->field_0000;
       pAVar12->field_0004 = pAVar13->field_0004;
       pAVar12->field_0008 = pAVar13->field_0008;
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-      (**(code **)&this->vtable->field_0x5c)(this->field_01B9);
+      (*this->vtable->vfunc_5C)(this->field_01B9);
       pAVar15 = this->field_01B9;
       pAVar14 = this->field_01B5;
       pAVar14->field_0000 = pAVar15->field_0000;

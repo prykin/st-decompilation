@@ -24,7 +24,7 @@ void __thiscall ResearchPanelTy::Update(ResearchPanelTy *this)
   this_00 = local_8;
   if (errorCode == 0) {
     STAllPlayersC::GetPanelInfo
-              (g_sTAllPlayers_007FA174,6,(AnonShape_0043BEB0_1C00EC12 *)&local_8->field_027A);
+              (g_allPlayers_007FA174,6,(AnonShape_0043BEB0_1C00EC12 *)&local_8->field_027A);
     if ((&this_00->field_027A)[(byte)this_00->field_0279] == 0) {
       uVar4 = 0;
     }
@@ -40,7 +40,7 @@ void __thiscall ResearchPanelTy::Update(ResearchPanelTy *this)
       uVar2 = *(uint *)((&this_00->field_027A)[(byte)this_00->field_0278] + 0xc);
     }
     thunk_FUN_0053f510(this_00,uVar2,uVar4);
-    thunk_FUN_0053c620((AnonShape_004EF140_16642BA0 *)this_00);
+    sub_0053C620(this_00);
     g_currentExceptionFrame = local_4c.previous;
     return;
   }

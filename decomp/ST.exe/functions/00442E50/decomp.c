@@ -21,7 +21,7 @@ STAllPlayersC::_AssignMDPairs
   int iVar5;
   int *piVar6;
   uint *puVar7;
-  STGameObjC *this_00;
+  STGameObjC *objPtr;
   DArrayTy *pDVar8;
   int iVar9;
   STWorldCell *pSVar10;
@@ -267,7 +267,9 @@ LAB_00442f1f:
     do {
       uVar14 = local_24;
       DArrayGetElement(pDVar8,local_24,&local_1c);
-      if ((local_1c != (STGroupC *)0x0) && (iVar5 = (*local_1c->vtable->vfunc_0C)(), iVar5 == 8)) {
+      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+      if ((local_1c != (STGroupC *)0x0) &&
+         (iVar5 = (**(code **)(local_1c->vtable + 0xc))(), iVar5 == 8)) {
         /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
         local_48 = (DArrayTy *)STGroupC::GetGroupContent(local_1c,unaff_EDI);
         local_b8 = local_48->count;
@@ -276,9 +278,9 @@ LAB_0044326c:
           uVar14 = local_38;
           DArrayGetElement(local_48,(uint)local_44,&local_8);
           if ((short)local_8 != -1) {
-            this_00 = GetObjPtr(local_8c,param_1,local_8,CASE_1);
-            local_40 = (STFishC *)this_00;
-            if (this_00 == (STGameObjC *)0x0) {
+            objPtr = GetObjPtr(local_8c,param_1,local_8,CASE_1);
+            local_40 = (STFishC *)objPtr;
+            if (objPtr == (STGameObjC *)0x0) {
               iVar5 = ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0x2539,0,0,
                                          "%s","STAllPlayersC::_AssignMDPairs ptr==NULL");
               if (iVar5 != 0) {
@@ -288,14 +290,10 @@ LAB_0044326c:
                         (-0x5001fffc,g_overwriteContext_007ED77C,
                          "E:\\__titans\\wlad\\to_allpl.cpp",0x253a);
             }
-            /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-            iVar5 = (**(code **)&this_00->vtable->field_0x2c)();
-            /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-            if ((((iVar5 != 8) &&
-                 (iVar5 = (**(code **)&this_00->vtable->field_0x2c)(), iVar5 != 0x14)) &&
-                (iVar5 = (**(code **)&this_00->vtable->field_0x2c)(), iVar5 != 0x1a)) ||
-               (iVar5 = thunk_FUN_0045ff10((int)this_00), iVar5 != 0xc))
-            goto cf_common_join_004435CD;
+            iVar5 = (*objPtr->vtable->vfunc_2C)();
+            if ((((iVar5 != 8) && (iVar5 = (*objPtr->vtable->vfunc_2C)(), iVar5 != 0x14)) &&
+                (iVar5 = (*objPtr->vtable->vfunc_2C)(), iVar5 != 0x1a)) ||
+               (iVar5 = thunk_FUN_0045ff10(objPtr), iVar5 != 0xc)) goto cf_common_join_004435CD;
             uVar13 = 0;
             if (0 < (int)uVar14) {
               do {
@@ -305,7 +303,7 @@ LAB_0044326c:
               } while ((int)uVar13 < (int)uVar14);
             }
             if ((int)uVar13 < (int)uVar14) goto cf_common_join_004435CD;
-            uVar20 = thunk_FUN_0048dc90(this_00,local_19c);
+            uVar20 = thunk_FUN_0048dc90(objPtr,local_19c);
             pSVar10 = (STWorldCell *)((ulonglong)uVar20 >> 0x20);
             psVar15 = (short *)uVar20;
             psVar18 = local_158;

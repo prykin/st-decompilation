@@ -1,4 +1,4 @@
-FUN_0068e610:
+AiTactClassTy::sub_0068E610:
 0068E610  55                        PUSH EBP
 0068E611  8B EC                     MOV EBP,ESP
 0068E613  53                        PUSH EBX

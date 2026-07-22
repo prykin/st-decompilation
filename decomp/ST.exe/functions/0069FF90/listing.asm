@@ -1,4 +1,4 @@
-FUN_0069ff90:
+CGenerate::sub_0069FF90:
 0069FF90  8B 81 4A 02 00 00         MOV EAX,dword ptr [ECX + 0x24a]
 0069FF96  85 C0                     TEST EAX,EAX
 0069FF98  74 04                     JZ 0x0069ff9e

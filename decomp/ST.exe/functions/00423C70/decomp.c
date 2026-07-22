@@ -28,7 +28,7 @@ undefined4 __thiscall FUN_00423c70(void *this,short param_1)
       }
     }
     this_00 = STAllPlayersC::GetObjPtr
-                        (g_sTAllPlayers_007FA174,*(char *)((int)this + 0x24),local_8,CASE_1);
+                        (g_allPlayers_007FA174,*(char *)((int)this + 0x24),local_8,CASE_1);
     thunk_FUN_00419c30(this_00,0xffff);
     local_8 = 0xffff;
     Library::DKW::TBL::FUN_006ae140(*(uint **)((int)this + 0x29),uVar3 & 0xffff,&local_8);

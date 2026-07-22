@@ -1,0 +1,12 @@
+00592E30  pointer  00592b3a
+00592E34  pointer  00592b2c
+00592E38  pointer  00592b33
+00592E3C  byte  0h
+00592E3D  byte  0h
+00592E3E  byte  0h
+00592E3F  byte  1h
+00592E40  byte  1h
+00592E41  byte  1h
+00592E42  byte  2h
+00592E43  byte  2h
+00592E44  byte  2h

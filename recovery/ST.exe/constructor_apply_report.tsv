@@ -1,21 +1,21 @@
 address	status	proposed_name	detail
-004158E0	applied	STGameObjC::STGameObjC	return=applied(STGameObjC *)
-004232A0	applied	STGroupC::STGroupC	return=applied(STGroupC *)
-0042A940	applied	STAllPlayersC::STAllPlayersC	return=applied(STAllPlayersC *)
+004158E0	disabled	STGameObjC::STGameObjC	name_apply=0; convention_apply=0; parameter_apply=0; return_apply=0
+004232A0	disabled	STGroupC::STGroupC	name_apply=0; convention_apply=0; parameter_apply=0; return_apply=0
+0042A940	disabled	STAllPlayersC::STAllPlayersC	name_apply=0; convention_apply=0; parameter_apply=0; return_apply=0
 0044E690	disabled	STBoatC::STBoatC	name_apply=0; convention_apply=0; parameter_apply=0; return_apply=0
 00495920	disabled	DumpClassC::DumpClassC	name_apply=0; convention_apply=0; parameter_apply=0; return_apply=0
 00497AF0	disabled	STGroupBoatC::STGroupBoatC	name_apply=0; convention_apply=0; parameter_apply=0; return_apply=0
-004A88C0	applied	OpticClassC::OpticClassC	return=applied(OpticClassC *)
+004A88C0	disabled	OpticClassC::OpticClassC	name_apply=0; convention_apply=0; parameter_apply=0; return_apply=0
 004B7EF0	disabled	TLOBaseTy::TLOBaseTy	name_apply=0; convention_apply=0; parameter_apply=0; return_apply=0
 004C60A0	disabled	TLOBldMark::TLOBldMark	name_apply=0; convention_apply=0; parameter_apply=0; return_apply=0
 004D0920	disabled	TLOFakeTy::TLOFakeTy	name_apply=0; convention_apply=0; parameter_apply=0; return_apply=0
 00510C80	disabled	HelpPanelTy::HelpPanelTy	name_apply=0; convention_apply=0; parameter_apply=0; return_apply=0
 00542440	disabled	InterSystemC::InterSystemC	name_apply=0; convention_apply=0; parameter_apply=0; return_apply=0
-0054CB40	applied	STPlaySystemC::STPlaySystemC	return=applied(STPlaySystemC *)
+0054CB40	disabled	STPlaySystemC::STPlaySystemC	name_apply=0; convention_apply=0; parameter_apply=0; return_apply=0
 005556D0	disabled	TraksClassTy::TraksClassTy	name_apply=0; convention_apply=0; parameter_apply=0; return_apply=0
-005577C0	applied	VisibleClassTy::VisibleClassTy	return=applied(VisibleClassTy *)
+005577C0	disabled	VisibleClassTy::VisibleClassTy	name_apply=0; convention_apply=0; parameter_apply=0; return_apply=0
 0055BD40	disabled	CFsgsConnection::CFsgsConnection	name_apply=0; convention_apply=0; parameter_apply=0; return_apply=0
-0056A5F0	applied	STAppC::STAppC	return=applied(STAppC *)
+0056A5F0	disabled	STAppC::STAppC	name_apply=0; convention_apply=0; parameter_apply=0; return_apply=0
 00576AA0	disabled	BaseSystemC::BaseSystemC	name_apply=0; convention_apply=0; parameter_apply=0; return_apply=0
 00576DD0	disabled	GameSystemC::GameSystemC	name_apply=0; convention_apply=0; parameter_apply=0; return_apply=0
 005781C0	disabled	DebugSystemC::DebugSystemC	name_apply=0; convention_apply=0; parameter_apply=0; return_apply=0
@@ -43,17 +43,17 @@ address	status	proposed_name	detail
 00619170	disabled	STJumpMineC::STJumpMineC	name_apply=0; convention_apply=0; parameter_apply=0; return_apply=0
 0061D620	disabled	STLightC::STLightC	name_apply=0; convention_apply=0; parameter_apply=0; return_apply=0
 00622600	disabled	STMineSetC::STMineSetC	name_apply=0; convention_apply=0; parameter_apply=0; return_apply=0
-0062CF00	applied	STManRub3C::STManRub3C	return=applied(STManRub3C *)
+0062CF00	disabled	STManRub3C::STManRub3C	name_apply=0; convention_apply=0; parameter_apply=0; return_apply=0
 0062ED10	disabled	STRubbishC::STRubbishC	name_apply=0; convention_apply=0; parameter_apply=0; return_apply=0
-00630870	applied	STManRuinC::STManRuinC	return=applied(STManRuinC *)
+00630870	disabled	STManRuinC::STManRuinC	name_apply=0; convention_apply=0; parameter_apply=0; return_apply=0
 00639480	disabled	STGameObjC::STGameObjC	name_apply=0; convention_apply=0; parameter_apply=0; return_apply=0
 0063BFA0	disabled	STGameObjC::STGameObjC	name_apply=0; convention_apply=0; parameter_apply=0; return_apply=0
-00646C90	applied	STVolcanoC::STVolcanoC	return=applied(STVolcanoC *)
-00647AD0	applied	AiBossClassTy::AiBossClassTy	return=applied(AiBossClassTy *)
-0065D230	applied	AiFltClassTy::AiFltClassTy	return=applied(AiFltClassTy *)
-006788B0	applied	AiPlrClassTy::AiPlrClassTy	return=applied(AiPlrClassTy *)
-0068DC00	applied	AiTactClassTy::AiTactClassTy	return=applied(AiTactClassTy *)
-006E34C0	applied	AppClassTy::AppClassTy	return=applied(AppClassTy *)
-006E51C0	applied	SystemClassTy::SystemClassTy	return=applied(SystemClassTy *)
+00646C90	disabled	STVolcanoC::STVolcanoC	name_apply=0; convention_apply=0; parameter_apply=0; return_apply=0
+00647AD0	disabled	AiBossClassTy::AiBossClassTy	name_apply=0; convention_apply=0; parameter_apply=0; return_apply=0
+0065D230	disabled	AiFltClassTy::AiFltClassTy	name_apply=0; convention_apply=0; parameter_apply=0; return_apply=0
+006788B0	disabled	AiPlrClassTy::AiPlrClassTy	name_apply=0; convention_apply=0; parameter_apply=0; return_apply=0
+0068DC00	disabled	AiTactClassTy::AiTactClassTy	name_apply=0; convention_apply=0; parameter_apply=0; return_apply=0
+006E34C0	disabled	AppClassTy::AppClassTy	name_apply=0; convention_apply=0; parameter_apply=0; return_apply=0
+006E51C0	disabled	SystemClassTy::SystemClassTy	name_apply=0; convention_apply=0; parameter_apply=0; return_apply=0
 006E6100	disabled	SystemWithNamedObjClassTy::SystemWithNamedObjClassTy	name_apply=0; convention_apply=0; parameter_apply=0; return_apply=0
-00715820	applied	SpriteClassTy::SpriteClassTy	return=applied(SpriteClassTy *)
+00715820	disabled	SpriteClassTy::SpriteClassTy	name_apply=0; convention_apply=0; parameter_apply=0; return_apply=0

@@ -31,9 +31,9 @@ void __fastcall FUN_004ccad0(AnonShape_004CCAD0_262475FB *param_1)
       *(undefined4 *)&param_1[1].field_0x17c = 0;
     }
   }
-  thunk_FUN_004b9a40((int *)param_1);
-  thunk_FUN_0041f970((AnonShape_0041F970_0C561B1E *)param_1);
-  thunk_FUN_00419d30(param_1,0xfe);
+  TLOBaseTy::sub_004B9A40((TLOBaseTy *)param_1);
+  STSprGameObjC::sub_0041F970((STSprGameObjC *)param_1);
+  TLOBaseTy::sub_00419D30((TLOBaseTy *)param_1,0xfe);
   return;
 }
 

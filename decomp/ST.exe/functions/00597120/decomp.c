@@ -25,13 +25,13 @@ void __thiscall FSGSTy::NoneFSGS(FSGSTy *this,int param_1)
   undefined4 *puVar7;
   LPSTR pCVar8;
   ushort *puVar9;
-  char *pcVar10;
-  int iVar11;
+  char *resourceString;
+  int iVar10;
+  uint uVar11;
   uint uVar12;
-  uint uVar13;
-  byte bVar14;
-  char *pcVar15;
-  ulong uVar16;
+  byte bVar13;
+  char *pcVar14;
+  ulong uVar15;
   InternalExceptionFrame local_a8;
   char *local_64;
   char *local_60;
@@ -55,7 +55,7 @@ void __thiscall FSGSTy::NoneFSGS(FSGSTy *this,int param_1)
   undefined2 local_18;
   int local_8;
 
-  uVar13 = 1;
+  uVar12 = 1;
   local_8 = 1;
   local_28 = (MMObjTy *)this;
   DVar4 = timeGetTime();
@@ -66,9 +66,9 @@ void __thiscall FSGSTy::NoneFSGS(FSGSTy *this,int param_1)
   this_02 = local_28;
   if (iVar5 != 0) {
     g_currentExceptionFrame = local_a8.previous;
-    iVar11 = ReportDebugMessage("E:\\__titans\\Start\\fsgs_obj.cpp",0x284,0,iVar5,
+    iVar10 = ReportDebugMessage("E:\\__titans\\Start\\fsgs_obj.cpp",0x284,0,iVar5,
                                 "%s","FSGSTy::NoneFSGS");
-    if (iVar11 != 0) {
+    if (iVar10 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
     RaiseInternalException(iVar5,0,"E:\\__titans\\Start\\fsgs_obj.cpp",0x284);
@@ -83,15 +83,15 @@ void __thiscall FSGSTy::NoneFSGS(FSGSTy *this,int param_1)
            (iVar5 = *(int *)&this_02[0x22].field_0x80, iVar5 != 0)) {
           if (1 < *(uint *)(iVar5 + 0xc)) {
             do {
-              iVar5 = *(int *)(iVar5 + 8) * uVar13 + *(int *)(iVar5 + 0x1c);
+              iVar5 = *(int *)(iVar5 + 8) * uVar12 + *(int *)(iVar5 + 0x1c);
               if (iVar5 != 0) {
                 CFsgsConnection::PingPlayer
                           ((CFsgsConnection *)&DAT_00802a90,*(ulong *)&this_02[0x22].field_0x88,
                            *(ulong *)(iVar5 + 0x21));
               }
               iVar5 = *(int *)&this_02[0x22].field_0x80;
-              uVar13 = uVar13 + 1;
-            } while (uVar13 < *(uint *)(iVar5 + 0xc));
+              uVar12 = uVar12 + 1;
+            } while (uVar12 < *(uint *)(iVar5 + 0xc));
           }
           *(int *)&this_02[0x22].field_0x88 = *(int *)&this_02[0x22].field_0x88 + 1;
         }
@@ -103,16 +103,16 @@ void __thiscall FSGSTy::NoneFSGS(FSGSTy *this,int param_1)
       CFsgsConnection::RequestGameList
                 ((CFsgsConnection *)&DAT_00802a90,*(ulong *)&this_02[0x22].field_0x9c,(char *)0x0);
       *(undefined4 *)&this_02[0x1d].field_0xac = *(undefined4 *)&this_02->field_0x61;
-      pCVar3 = PTR_00802a30;
-      if (PTR_00802a30 != (CursorClassTy *)0x0) {
-        iVar5 = PTR_00802a30->field_00C9;
-        iVar11 = PTR_00802a30->field_00C5;
-        PTR_00802a30->field_0493 = 5;
+      pCVar3 = g_cursorClass_00802A30;
+      if (g_cursorClass_00802A30 != (CursorClassTy *)0x0) {
+        iVar5 = g_cursorClass_00802A30->field_00C9;
+        iVar10 = g_cursorClass_00802A30->field_00C5;
+        g_cursorClass_00802A30->field_0493 = 5;
         pCVar3->field_0494 = 0xffff;
-        CursorClassTy::SetGCType(pCVar3,CASE_0,iVar11,iVar5);
+        CursorClassTy::SetGCType(pCVar3,CASE_0,iVar10,iVar5);
         CursorClassTy::DrawSprite(pCVar3,pCVar3->field_00C5,pCVar3->field_00C9);
         pCVar3->field_00D2 = 0;
-        pCVar3->field_04DF = 0xffffffff;
+        pCVar3->field_04DF = -1;
       }
     }
     if (((*(undefined4 **)&this_02[0x1d].field_0xe0 != (undefined4 *)0x0) &&
@@ -151,24 +151,24 @@ void __thiscall FSGSTy::NoneFSGS(FSGSTy *this,int param_1)
       }
       iVar5 = *(int *)&this_02[0x1d].field_0xe0;
       *(int *)&this_02[0x1d].field_0xdc = *(int *)&this_02[0x1d].field_0xdc + -1;
-      uVar13 = *(uint *)(iVar5 + 0x14);
-      if (uVar13 == 0) {
-        uVar13 = ((uint)*(ushort *)(iVar5 + 0xe) * *(int *)(iVar5 + 4) + 0x1f >> 3 & 0x1ffffffc) *
+      uVar12 = *(uint *)(iVar5 + 0x14);
+      if (uVar12 == 0) {
+        uVar12 = ((uint)*(ushort *)(iVar5 + 0xe) * *(int *)(iVar5 + 4) + 0x1f >> 3 & 0x1ffffffc) *
                  *(int *)(iVar5 + 8);
       }
       puVar7 = (undefined4 *)FUN_006b4fa0(iVar5);
-      for (uVar12 = uVar13 >> 2; uVar12 != 0; uVar12 = uVar12 - 1) {
+      for (uVar11 = uVar12 >> 2; uVar11 != 0; uVar11 = uVar11 - 1) {
         *puVar7 = 0xffffffff;
         puVar7 = puVar7 + 1;
       }
       iVar5 = 0;
-      bVar14 = 0;
-      for (uVar13 = uVar13 & 3; uVar13 != 0; uVar13 = uVar13 - 1) {
+      bVar13 = 0;
+      for (uVar12 = uVar12 & 3; uVar12 != 0; uVar12 = uVar12 - 1) {
         *(undefined1 *)puVar7 = 0xff;
         puVar7 = (undefined4 *)((int)puVar7 + 1);
       }
       pCVar8 = FUN_006f2c00("MM_BAN_",2,*(undefined4 *)&this_02[0x1d].field_0xdc);
-      puVar9 = Library::Ourlib::MFIMG::mfImgLoad(g_cMf32_00806780,6,pCVar8,bVar14,iVar5);
+      puVar9 = Library::Ourlib::MFIMG::mfImgLoad(g_cMf32_00806780,6,pCVar8,bVar13,iVar5);
       DibPut(*(AnonShape_006B5B10_E0D06CF1 **)&this_02[0x1d].field_0xe0,0,0,'\x06',(byte *)puVar9);
       FUN_006b35d0((int *)PTR_008075a8,*(uint *)&this_02[0x1d].field_0xd8);
       local_8 = 0;
@@ -189,8 +189,8 @@ void __thiscall FSGSTy::NoneFSGS(FSGSTy *this,int param_1)
        (iVar5 = HoloTy::NextFas(*(HoloTy **)&this_02[0x23].field_0x26), iVar5 != 0)) {
       local_8 = 0;
     }
-    if ((PTR_0081176c->field_02E6 != (MMsgTy *)0x0) &&
-       (PTR_0081176c->field_02E6->field_0065 != '\x01')) {
+    if ((g_startSystem_0081176C->field_02E6 != (MMsgTy *)0x0) &&
+       (g_startSystem_0081176C->field_02E6->field_0065 != '\x01')) {
       local_8 = 0;
     }
     if (local_8 == 0) {
@@ -254,10 +254,10 @@ void __thiscall FSGSTy::NoneFSGS(FSGSTy *this,int param_1)
         thunk_FUN_0055d410((CFsgsConnection *)&DAT_00802a90);
       }
       else {
-        uVar16 = 0;
-        pcVar15 = &DAT_008016a0;
-        pcVar10 = LoadResourceString(0x254d,HINSTANCE_00807618);
-        thunk_FUN_0055d390(&DAT_00802a90,pcVar10,pcVar15,uVar16);
+        uVar15 = 0;
+        pcVar14 = &DAT_008016a0;
+        resourceString = LoadResourceString(0x254d,g_module_00807618);
+        thunk_FUN_0055d390(&DAT_00802a90,resourceString,pcVar14,uVar15);
         this_02[0x1d].field_0xab = 0;
       }
       break;
@@ -266,21 +266,21 @@ void __thiscall FSGSTy::NoneFSGS(FSGSTy *this,int param_1)
                 ((CFsgsConnection *)&DAT_00802a90,*(ulong *)&this_02[0x22].field_0x9c,(char *)0x0);
       DVar4 = timeGetTime();
       *(DWORD *)&this_02[0x1d].field_0xac = DVar4;
-      pCVar3 = PTR_00802a30;
+      pCVar3 = g_cursorClass_00802A30;
       goto joined_r0x00597872;
     case 9:
       CFsgsConnection::RequestLadderList
                 ((CFsgsConnection *)&DAT_00802a90,DAT_00803140,0,DAT_00803148,0xf);
-      pCVar3 = PTR_00802a30;
+      pCVar3 = g_cursorClass_00802A30;
 joined_r0x00597872:
-      PTR_00802a30 = pCVar3;
+      g_cursorClass_00802A30 = pCVar3;
       if (pCVar3 != (CursorClassTy *)0x0) {
         pCVar3->field_0493 = 5;
         pCVar3->field_0494 = 0xffff;
         CursorClassTy::SetGCType(pCVar3,CASE_0,pCVar3->field_00C5,pCVar3->field_00C9);
         CursorClassTy::DrawSprite(pCVar3,pCVar3->field_00C5,pCVar3->field_00C9);
         pCVar3->field_00D2 = 0;
-        pCVar3->field_04DF = 0xffffffff;
+        pCVar3->field_04DF = -1;
       }
       break;
     case 10:
@@ -303,7 +303,7 @@ joined_r0x00597872:
         CFsgsConnection::RequestInfo
                   ((CFsgsConnection *)&DAT_00802a90,*(char **)&this_02[0x1e].field_0x72,0xf,
                    &local_64);
-        pCVar3 = PTR_00802a30;
+        pCVar3 = g_cursorClass_00802A30;
         goto joined_r0x00597872;
       }
     }
@@ -318,9 +318,9 @@ joined_r0x00597872:
     if (*(HoloTy **)&local_28[0x23].field_0x1a != (HoloTy *)0x0) {
       iVar5 = HoloTy::NextFas(*(HoloTy **)&local_28[0x23].field_0x1a);
       if (iVar5 == 0) {
-        uVar13 = *(uint *)(*(int *)&this_02[0x23].field_0x1a + 3);
-        if (-1 < (int)uVar13) {
-          FUN_006b3af0((int *)PTR_008075a8,uVar13);
+        uVar12 = *(uint *)(*(int *)&this_02[0x23].field_0x1a + 3);
+        if (-1 < (int)uVar12) {
+          FUN_006b3af0((int *)PTR_008075a8,uVar12);
         }
       }
       else {
@@ -330,9 +330,9 @@ joined_r0x00597872:
     if (*(HoloTy **)&this_02[0x23].field_0x1e != (HoloTy *)0x0) {
       iVar5 = HoloTy::NextFas(*(HoloTy **)&this_02[0x23].field_0x1e);
       if (iVar5 == 0) {
-        uVar13 = *(uint *)(*(int *)&this_02[0x23].field_0x1e + 3);
-        if (-1 < (int)uVar13) {
-          FUN_006b3af0((int *)PTR_008075a8,uVar13);
+        uVar12 = *(uint *)(*(int *)&this_02[0x23].field_0x1e + 3);
+        if (-1 < (int)uVar12) {
+          FUN_006b3af0((int *)PTR_008075a8,uVar12);
         }
       }
       else {
@@ -342,9 +342,9 @@ joined_r0x00597872:
     if (*(HoloTy **)&this_02[0x23].field_0x22 != (HoloTy *)0x0) {
       iVar5 = HoloTy::NextFas(*(HoloTy **)&this_02[0x23].field_0x22);
       if (iVar5 == 0) {
-        uVar13 = *(uint *)(*(int *)&this_02[0x23].field_0x22 + 3);
-        if (-1 < (int)uVar13) {
-          FUN_006b3af0((int *)PTR_008075a8,uVar13);
+        uVar12 = *(uint *)(*(int *)&this_02[0x23].field_0x22 + 3);
+        if (-1 < (int)uVar12) {
+          FUN_006b3af0((int *)PTR_008075a8,uVar12);
         }
       }
       else {
@@ -354,9 +354,9 @@ joined_r0x00597872:
     if (*(HoloTy **)&this_02[0x23].field_0x26 != (HoloTy *)0x0) {
       iVar5 = HoloTy::NextFas(*(HoloTy **)&this_02[0x23].field_0x26);
       if (iVar5 == 0) {
-        uVar13 = *(uint *)(*(int *)&this_02[0x23].field_0x26 + 3);
-        if (-1 < (int)uVar13) {
-          FUN_006b3af0((int *)PTR_008075a8,uVar13);
+        uVar12 = *(uint *)(*(int *)&this_02[0x23].field_0x26 + 3);
+        if (-1 < (int)uVar12) {
+          FUN_006b3af0((int *)PTR_008075a8,uVar12);
         }
       }
       else {
@@ -371,43 +371,43 @@ joined_r0x00597872:
       }
       iVar5 = *(int *)&this_02[0x1d].field_0xe0;
       *(int *)&this_02[0x1d].field_0xdc = *(int *)&this_02[0x1d].field_0xdc + 1;
-      uVar13 = *(uint *)(iVar5 + 0x14);
-      if (uVar13 == 0) {
-        uVar13 = ((uint)*(ushort *)(iVar5 + 0xe) * *(int *)(iVar5 + 4) + 0x1f >> 3 & 0x1ffffffc) *
+      uVar12 = *(uint *)(iVar5 + 0x14);
+      if (uVar12 == 0) {
+        uVar12 = ((uint)*(ushort *)(iVar5 + 0xe) * *(int *)(iVar5 + 4) + 0x1f >> 3 & 0x1ffffffc) *
                  *(int *)(iVar5 + 8);
       }
       puVar7 = (undefined4 *)FUN_006b4fa0(iVar5);
-      for (uVar12 = uVar13 >> 2; uVar12 != 0; uVar12 = uVar12 - 1) {
+      for (uVar11 = uVar12 >> 2; uVar11 != 0; uVar11 = uVar11 - 1) {
         *puVar7 = 0xffffffff;
         puVar7 = puVar7 + 1;
       }
       iVar5 = 0;
-      bVar14 = 0;
-      for (uVar13 = uVar13 & 3; uVar13 != 0; uVar13 = uVar13 - 1) {
+      bVar13 = 0;
+      for (uVar12 = uVar12 & 3; uVar12 != 0; uVar12 = uVar12 - 1) {
         *(undefined1 *)puVar7 = 0xff;
         puVar7 = (undefined4 *)((int)puVar7 + 1);
       }
       pCVar8 = FUN_006f2c00("MM_BAN_",2,*(undefined4 *)&this_02[0x1d].field_0xdc);
-      puVar9 = Library::Ourlib::MFIMG::mfImgLoad(g_cMf32_00806780,6,pCVar8,bVar14,iVar5);
+      puVar9 = Library::Ourlib::MFIMG::mfImgLoad(g_cMf32_00806780,6,pCVar8,bVar13,iVar5);
       DibPut(*(AnonShape_006B5B10_E0D06CF1 **)&this_02[0x1d].field_0xe0,0,0,'\x06',(byte *)puVar9);
       FUN_006b35d0((int *)PTR_008075a8,*(uint *)&this_02[0x1d].field_0xd8);
       local_8 = 0;
     }
-    pCVar3 = PTR_00802a30;
-    if ((PTR_0081176c->field_02E6 != (MMsgTy *)0x0) &&
-       (PTR_0081176c->field_02E6->field_0065 != '\x02')) {
+    pCVar3 = g_cursorClass_00802A30;
+    if ((g_startSystem_0081176C->field_02E6 != (MMsgTy *)0x0) &&
+       (g_startSystem_0081176C->field_02E6->field_0065 != '\x02')) {
       local_8 = 0;
     }
     if (local_8 != 0) {
-      if (PTR_00802a30 != (CursorClassTy *)0x0) {
-        iVar5 = PTR_00802a30->field_00C9;
-        iVar11 = PTR_00802a30->field_00C5;
-        PTR_00802a30->field_0493 = 1;
+      if (g_cursorClass_00802A30 != (CursorClassTy *)0x0) {
+        iVar5 = g_cursorClass_00802A30->field_00C9;
+        iVar10 = g_cursorClass_00802A30->field_00C5;
+        g_cursorClass_00802A30->field_0493 = 1;
         pCVar3->field_0494 = 0xffff;
-        CursorClassTy::SetGCType(pCVar3,CASE_0,iVar11,iVar5);
+        CursorClassTy::SetGCType(pCVar3,CASE_0,iVar10,iVar5);
         CursorClassTy::DrawSprite(pCVar3,pCVar3->field_00C5,pCVar3->field_00C9);
         pCVar3->field_00D2 = 0;
-        pCVar3->field_04DF = 0xffffffff;
+        pCVar3->field_04DF = -1;
       }
       cVar1 = this_02[0x1d].field_0xaa;
       if (cVar1 != '\0') {
@@ -438,12 +438,12 @@ joined_r0x00597872:
         g_currentExceptionFrame = local_a8.previous;
         return;
       }
-      bVar14 = this_02[0x1d].field_0xa3;
+      bVar13 = this_02[0x1d].field_0xa3;
       this_02->field_0x65 = 2;
-      if ((bVar14 != 0xff) && (*(int *)((int)this_02 + (uint)bVar14 * 0x1fb + 0xd1) != 0)) {
+      if ((bVar13 != 0xff) && (*(int *)((int)this_02 + (uint)bVar13 * 0x1fb + 0xd1) != 0)) {
         AppClassTy::PostNextMessage
                   ((AppClassTy *)&DAT_00807620,
-                   (undefined4 *)((int)this_02 + (uint)bVar14 * 0x1fb + 0xc1));
+                   (undefined4 *)((int)this_02 + (uint)bVar13 * 0x1fb + 0xc1));
         g_currentExceptionFrame = local_a8.previous;
         return;
       }

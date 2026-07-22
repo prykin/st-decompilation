@@ -1,4 +1,4 @@
-FUN_005d4b40:
+CreateSettMapM:
 005D4B40  55                        PUSH EBP
 005D4B41  8B EC                     MOV EBP,ESP
 005D4B43  51                        PUSH ECX

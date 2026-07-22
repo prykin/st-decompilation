@@ -16,7 +16,7 @@ void __fastcall FUN_005fb100(AnonShape_005FB100_42251CC8 *param_1)
   iVar5 = 0;
   uVar2 = thunk_FUN_004ad650((int)&param_1->field_0x1d5);
   thunk_FUN_006377b0(uVar2,iVar5,iVar4,iVar3,iVar1,uVar6);
-  uVar2 = PTR_00802a38->field_00E4;
+  uVar2 = g_playSystem_00802A38->field_00E4;
   param_1->field_02DD = 7;
   param_1->field_02E1 = uVar2 + 0x15;
   return;

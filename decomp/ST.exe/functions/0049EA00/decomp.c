@@ -49,7 +49,7 @@ undefined4 __thiscall STGroupBoatC::SetMine(STGroupBoatC *this,int param_1)
       *(undefined2 *)&local_1c->field_0x2bb = local_1c->field_018A;
       local_24 = *(undefined2 *)&local_1c->field_0x2b3;
       local_22 = *(undefined2 *)&local_1c->field_0x2b5;
-      local_28 = PTR_00802a38->field_00E4;
+      local_28 = g_playSystem_00802A38->field_00E4;
       local_10 = local_28;
       if (0 < local_c) {
         do {
@@ -57,7 +57,7 @@ undefined4 __thiscall STGroupBoatC::SetMine(STGroupBoatC *this,int param_1)
           if ((short)local_8 != -1) {
             pSVar4 = (STBoatC *)
                      STAllPlayersC::GetObjPtr
-                               (g_sTAllPlayers_007FA174,pSVar2->field_0024,local_8,CASE_1);
+                               (g_allPlayers_007FA174,pSVar2->field_0024,local_8,CASE_1);
             if (pSVar4 == (STBoatC *)0x0) {
               RaiseInternalException
                         (-0x5001fffc,g_overwriteContext_007ED77C,
@@ -86,7 +86,7 @@ LAB_0049eb44:
                 (-0x5001fff7,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_grpb.cpp",
                  0xb3c);
     }
-    if (PTR_00802a38->field_00E4 % 0x1e == 5) {
+    if (g_playSystem_00802A38->field_00E4 % 0x1e == 5) {
       uVar9 = 0;
       if (0 < local_c) {
         do {
@@ -94,13 +94,13 @@ LAB_0049eb44:
           if ((short)local_8 != -1) {
             pSVar4 = (STBoatC *)
                      STAllPlayersC::GetObjPtr
-                               (g_sTAllPlayers_007FA174,pSVar2->field_0024,local_8,CASE_1);
+                               (g_allPlayers_007FA174,pSVar2->field_0024,local_8,CASE_1);
             if (pSVar4 == (STBoatC *)0x0) {
               RaiseInternalException
                         (-0x5001fffc,g_overwriteContext_007ED77C,
                          "E:\\__titans\\wlad\\to_grpb.cpp",0xb43);
             }
-            iVar3 = thunk_FUN_0045ff10((int)pSVar4);
+            iVar3 = thunk_FUN_0045ff10((STGameObjC *)pSVar4);
             if ((iVar3 == 7) || (uVar5 = STBoatC::CheckPBoxCmd(pSVar4,CASE_7), uVar5 == 1)) {
               local_14 = local_14 + 1;
               break;

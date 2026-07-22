@@ -1,0 +1,15 @@
+005FB1B4  pointer  005fb18e
+005FB1B8  pointer  005fb197
+005FB1BC  pointer  005fb1b1
+005FB1C0  byte  0h
+005FB1C1  byte  1h
+005FB1C2  byte  1h
+005FB1C3  byte  1h
+005FB1C4  byte  1h
+005FB1C5  byte  1h
+005FB1C6  byte  2h
+005FB1C7  byte  1h
+005FB1C8  byte  1h
+005FB1C9  byte  1h
+005FB1CA  byte  1h
+005FB1CB  byte  1h

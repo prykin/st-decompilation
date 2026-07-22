@@ -27,10 +27,10 @@ void FUN_0067fb40(void)
     DArrayDestroy(array);
     PTR_00848a38 = (DArrayTy *)0x0;
   }
-  if (DAT_00848a3c != (AnonShape_006B5570_4D68B99C *)0x0) {
+  if (DAT_00848a3c != (DArrayTy *)0x0) {
     FUN_006b5570(DAT_00848a3c);
   }
-  DAT_00848a3c = (AnonShape_006B5570_4D68B99C *)0x0;
+  DAT_00848a3c = (DArrayTy *)0x0;
   return;
 }
 

@@ -1,4 +1,4 @@
-FUN_00619350:
+STJumpMineC::sub_00619350:
 00619350  55                        PUSH EBP
 00619351  8B EC                     MOV EBP,ESP
 00619353  56                        PUSH ESI

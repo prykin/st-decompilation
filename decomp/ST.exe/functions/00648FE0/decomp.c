@@ -51,7 +51,7 @@ void CreateAi(void)
     RaiseInternalException(iVar3,0,"E:\\__titans\\ai\\ai_creat.cpp",0x10c);
     return;
   }
-  if (PTR_00802a38 == (STPlaySystemC *)0x0) {
+  if (g_playSystem_00802A38 == (STPlaySystemC *)0x0) {
     RaiseInternalException
               (-0x34,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_creat.cpp",0x9d);
   }

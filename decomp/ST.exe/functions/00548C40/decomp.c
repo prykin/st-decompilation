@@ -185,7 +185,7 @@ void __thiscall CursorClassTy::TakeCmdToRun(CursorClassTy *this,int param_1)
     this_00->field_00E3 = local_214 >> 0x10;
     this_00->field_00EB = (this_00->field_00C9 - this_00->field_04B6) - (local_214 >> 0x10);
   }
-  if (PTR_00802a38 == (STPlaySystemC *)0x0) {
+  if (g_playSystem_00802A38 == (STPlaySystemC *)0x0) {
     g_currentExceptionFrame = local_2c8.previous;
     return;
   }
@@ -211,9 +211,9 @@ void __thiscall CursorClassTy::TakeCmdToRun(CursorClassTy *this,int param_1)
     case 0x2b:
       if (param_1 != 0) {
         local_4c = (ushort *)0x0;
-        if (g_sTAllPlayers_007FA174 != (STAllPlayersC *)0x0) {
+        if (g_allPlayers_007FA174 != (STAllPlayersC *)0x0) {
           local_4c = STAllPlayersC::GetScrObjList
-                               (g_sTAllPlayers_007FA174,(this_00->field_04A2 == 10) + 1,
+                               (g_allPlayers_007FA174,(this_00->field_04A2 == 10) + 1,
                                 this_00->field_00DF,this_00->field_00E3,this_00->field_00E7,
                                 this_00->field_00EB,(int *)&local_9c);
         }
@@ -244,9 +244,9 @@ void __thiscall CursorClassTy::TakeCmdToRun(CursorClassTy *this,int param_1)
     case 5:
       if (param_1 != 0) {
         local_1c = (ushort *)0x0;
-        if (g_sTAllPlayers_007FA174 != (STAllPlayersC *)0x0) {
+        if (g_allPlayers_007FA174 != (STAllPlayersC *)0x0) {
           local_1c = STAllPlayersC::GetScrObjList
-                               (g_sTAllPlayers_007FA174,3,this_00->field_00DF,this_00->field_00E3,
+                               (g_allPlayers_007FA174,3,this_00->field_00DF,this_00->field_00E3,
                                 this_00->field_00E7,this_00->field_00EB,(int *)&local_a8);
         }
         if (local_1c != (ushort *)0x0) {
@@ -326,7 +326,7 @@ void __thiscall CursorClassTy::TakeCmdToRun(CursorClassTy *this,int param_1)
     case 0x2c:
       if (param_1 != 0) {
         local_54 = (undefined4 *)0x0;
-        if (g_sTAllPlayers_007FA174 != (STAllPlayersC *)0x0) {
+        if (g_allPlayers_007FA174 != (STAllPlayersC *)0x0) {
           local_54 = (undefined4 *)thunk_FUN_0044e220();
         }
         if (local_54 != (undefined4 *)0x0) {
@@ -388,9 +388,9 @@ void __thiscall CursorClassTy::TakeCmdToRun(CursorClassTy *this,int param_1)
   case 0xc:
     if (param_1 != 0) {
       local_3c = (ushort *)0x0;
-      if (g_sTAllPlayers_007FA174 != (STAllPlayersC *)0x0) {
+      if (g_allPlayers_007FA174 != (STAllPlayersC *)0x0) {
         local_3c = STAllPlayersC::GetScrObjList
-                             (g_sTAllPlayers_007FA174,(sVar1 == 0xc) + 1,this_00->field_00DF,
+                             (g_allPlayers_007FA174,(sVar1 == 0xc) + 1,this_00->field_00DF,
                               this_00->field_00E3,this_00->field_00E7,this_00->field_00EB,
                               (int *)&local_98);
       }
@@ -541,9 +541,9 @@ void __thiscall CursorClassTy::TakeCmdToRun(CursorClassTy *this,int param_1)
     if (param_1 != 0) {
       if (sVar1 == 0xd) {
         local_44 = (ushort *)0x0;
-        if (g_sTAllPlayers_007FA174 != (STAllPlayersC *)0x0) {
+        if (g_allPlayers_007FA174 != (STAllPlayersC *)0x0) {
           local_44 = STAllPlayersC::GetScrObjList
-                               (g_sTAllPlayers_007FA174,3,this_00->field_00DF,this_00->field_00E3,
+                               (g_allPlayers_007FA174,3,this_00->field_00DF,this_00->field_00E3,
                                 this_00->field_00E7,this_00->field_00EB,(int *)&local_a0);
         }
         if (local_44 != (ushort *)0x0) {

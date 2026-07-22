@@ -84,9 +84,7 @@ STAllPlayersC::RegisterPGPair(STAllPlayersC *this,uint param_1,uint *param_2,uin
       DArrayGetElement(local_18,uVar7,&local_8);
       this_01 = local_34;
       pSVar3 = GetObjPtr(local_34,objPtr,local_8,CASE_1);
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-      if ((pSVar3 == (STGameObjC *)0x0) ||
-         (iVar2 = (**(code **)&pSVar3->vtable[1].field_0x28)(), iVar2 == 0)) {
+      if ((pSVar3 == (STGameObjC *)0x0) || (iVar2 = (*pSVar3->vtable[1].vfunc_24)(), iVar2 == 0)) {
         FUN_006b0c70(local_18,uVar7);
         uVar6 = uVar6 - 1;
         uVar7 = uVar7 - 1;
@@ -105,10 +103,8 @@ STAllPlayersC::RegisterPGPair(STAllPlayersC *this,uint param_1,uint *param_2,uin
     do {
       DArrayGetElement(local_14,uVar6,&local_8);
       pSVar3 = GetObjPtr(this_01,objPtr,local_8,CASE_1);
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-      if (((pSVar3 == (STGameObjC *)0x0) || (iVar2 = thunk_FUN_00490d90((int)pSVar3), iVar2 == 0))
-         || ((iVar2 = (**(code **)&pSVar3->vtable[1].field_0x28)(), iVar2 == 0 ||
-             (pSVar3->field_0030 == -1)))) {
+      if (((pSVar3 == (STGameObjC *)0x0) || (iVar2 = thunk_FUN_00490d90(pSVar3), iVar2 == 0)) ||
+         ((iVar2 = (*pSVar3->vtable[1].vfunc_24)(), iVar2 == 0 || (pSVar3->field_0030 == -1)))) {
         FUN_006b0c70(local_14,uVar6);
         local_c = local_c - 1;
         uVar6 = uVar6 - 1;
@@ -162,7 +158,7 @@ STAllPlayersC::RegisterPGPair(STAllPlayersC *this,uint param_1,uint *param_2,uin
       do {
         DArrayGetElement(pDVar4,local_20,&local_8);
         this_00 = (STBoatC *)GetObjPtr(this_01,objPtr,local_8,CASE_1);
-        local_2c = PTR_00802a38->field_00E4;
+        local_2c = g_playSystem_00802A38->field_00E4;
         STBoatC::CmdToObj(this_00,CASE_21,&local_2c);
         if ((*local_24 != (DArrayTy *)0x0) &&
            (iVar2 = _DeleteGuardBoat(this_01,objPtr,(short)local_8,1), iVar2 == -1)) {

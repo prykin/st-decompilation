@@ -10,7 +10,7 @@ FUN_006778c0(int param_1,int param_2,int param_3,undefined4 param_4,int param_5,
   int iVar5;
 
   iVar3 = 0;
-  if (g_sTAllPlayers_007FA174 == (STAllPlayersC *)0x0) {
+  if (g_allPlayers_007FA174 == (STAllPlayersC *)0x0) {
     return 0;
   }
   iVar5 = param_2;

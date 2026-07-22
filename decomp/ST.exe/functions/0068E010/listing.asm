@@ -1,4 +1,4 @@
-FUN_0068e010:
+AiTactClassTy::sub_0068E010:
 0068E010  56                        PUSH ESI
 0068E011  8B F1                     MOV ESI,ECX
 0068E013  85 F6                     TEST ESI,ESI

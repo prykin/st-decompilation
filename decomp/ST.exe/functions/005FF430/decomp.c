@@ -28,14 +28,13 @@ FUN_005ff430(void *this,Global_sub_005FF430_param_1Enum param_1,int param_2,unde
                                 *(int *)(*(int *)((int)this + 0x23f) + param_2 * 4) * 0x18));
     /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
     this_00 = STAllPlayersC::GetObjPtr
-                        (g_sTAllPlayers_007FA174,*(char *)(puVar1 + 4),
+                        (g_allPlayers_007FA174,*(char *)(puVar1 + 4),
                          CONCAT22((short)(SVar3 >> 0x10),*puVar1),SVar3);
     if (this_00 == (STGameObjC *)0x0) {
       return 0;
     }
     thunk_FUN_00416270(this_00,(undefined2 *)&param_3,&param_4,(int *)((int)&param_5 + 2));
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-    iVar4 = (**(code **)&this_00->vtable->field_0x78)();
+    iVar4 = (*this_00->vtable->vfunc_78)();
     if (iVar4 < 1) {
       return 0;
     }

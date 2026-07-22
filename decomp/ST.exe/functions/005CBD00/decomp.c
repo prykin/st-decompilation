@@ -32,7 +32,7 @@ void __thiscall SettMapMTy::InitSettMap(SettMapMTy *this,char param_1)
   iVar4 = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0);
   if (iVar4 == 0) {
     DAT_00808783 = 3;
-    DAT_00808754 = FUN_006e51b0(0x807620);
+    DAT_00808754 = STAppC::sub_006E51B0((STAppC *)&DAT_00807620);
     this_00 = local_c;
     if (DAT_0080877e == '\0') {
       DAT_00809958 = 0xffffffff;
@@ -51,7 +51,7 @@ void __thiscall SettMapMTy::InitSettMap(SettMapMTy *this,char param_1)
     pDVar5 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,0x20,0xc,10);
     this_00->field_2237 = pDVar5;
     iVar4 = 1;
-    puVar2 = PTR_0081176c->field_02F0;
+    puVar2 = g_startSystem_0081176C->field_02F0;
     this_00->field_005D = puVar2;
     puVar13 = puVar2 + 0x14;
     uVar6 = FUN_006b4fe0((int)puVar2);
@@ -76,26 +76,27 @@ void __thiscall SettMapMTy::InitSettMap(SettMapMTy *this,char param_1)
     }
     pAVar7 = this_00->field_2204;
     piVar1 = &this_00->field_2200;
-    FUN_006b2330((uint)PTR_008075a8,(uint *)piVar1,0x31,0x404acf,pAVar7->field_0004,
-                 pAVar7->field_0008,(uint)pAVar7);
+    FUN_006b2330(PTR_008075a8,(uint *)piVar1,0x31,0x404acf,pAVar7->field_0004,pAVar7->field_0008,
+                 (uint)pAVar7);
     Library::DKW::DDX::FUN_006b3640((int *)PTR_008075a8,*piVar1,0xffffffff,200,0x1dc);
     FUN_006b3af0((int *)PTR_008075a8,*piVar1);
-    SubmarineTitans::Recovered::HiddenThis::AnonReceiver_005B6730::thunk_FUN_005c29b0
-              ((AnonReceiver_005B6730 *)this_00,param_1);
+    sub_005C29B0(this_00,param_1);
     if (((((param_1 == '\r') || (param_1 == '\x0e')) || (param_1 == '\x0f')) || (param_1 == '\x10'))
        && (this_00->field_1E27 == 0x11)) {
-      FUN_006b2330((uint)PTR_008075a8,&local_8,0x32,0x403b61,400,0x62,
+      FUN_006b2330(PTR_008075a8,&local_8,0x32,0x403b61,400,0x62,
                    (uint)&this_00->field_1A5B->field_0140);
       Library::DKW::DDX::FUN_006b3640((int *)PTR_008075a8,local_8,0xffffffff,200,0x1f1);
-      if (PTR_0081176c->field_0560 != 0xffffffff) {
+      if (g_startSystem_0081176C->field_0560 != 0xffffffff) {
         Library::DKW::DDX::FUN_006b34d0
-                  ((uint *)PTR_0081176c->field_05A4,PTR_0081176c->field_0560,0xfffffffe,
-                   PTR_0081176c->field_0578,PTR_0081176c->field_057C);
+                  ((uint *)g_startSystem_0081176C->field_05A4,g_startSystem_0081176C->field_0560,
+                   0xfffffffe,g_startSystem_0081176C->field_0578,g_startSystem_0081176C->field_057C)
+        ;
       }
-      if (PTR_0081176c->field_05F1 != 0xffffffff) {
+      if (g_startSystem_0081176C->field_05F1 != 0xffffffff) {
         Library::DKW::DDX::FUN_006b34d0
-                  ((uint *)PTR_0081176c->field_0635,PTR_0081176c->field_05F1,0xfffffffe,
-                   PTR_0081176c->field_0609,PTR_0081176c->field_060D);
+                  ((uint *)g_startSystem_0081176C->field_0635,g_startSystem_0081176C->field_05F1,
+                   0xfffffffe,g_startSystem_0081176C->field_0609,g_startSystem_0081176C->field_060D)
+        ;
       }
       pHVar9 = (HoloTy *)Library::MSVCRT::FUN_0072e530(0x33);
       if (pHVar9 == (HoloTy *)0x0) {
@@ -133,14 +134,16 @@ void __thiscall SettMapMTy::InitSettMap(SettMapMTy *this,char param_1)
           if (-1 < (int)uVar6) {
             Library::DKW::DDX::FUN_006b3430((int *)PTR_008075a8,uVar6);
           }
-          if (PTR_0081176c->field_0560 != 0xffffffff) {
-            FUN_006b3af0((int *)PTR_0081176c->field_05A4,PTR_0081176c->field_0560);
+          if (g_startSystem_0081176C->field_0560 != 0xffffffff) {
+            FUN_006b3af0((int *)g_startSystem_0081176C->field_05A4,
+                         g_startSystem_0081176C->field_0560);
           }
-          if (PTR_0081176c->field_05F1 != 0xffffffff) {
-            FUN_006b3af0((int *)PTR_0081176c->field_0635,PTR_0081176c->field_05F1);
+          if (g_startSystem_0081176C->field_05F1 != 0xffffffff) {
+            FUN_006b3af0((int *)g_startSystem_0081176C->field_0635,
+                         g_startSystem_0081176C->field_05F1);
           }
-          FUN_006b3af0((int *)PTR_008075a8,PTR_0081176c->field_0558);
-          FUN_006b3af0((int *)PTR_008075a8,PTR_0081176c->field_0554);
+          FUN_006b3af0((int *)PTR_008075a8,g_startSystem_0081176C->field_0558);
+          FUN_006b3af0((int *)PTR_008075a8,g_startSystem_0081176C->field_0554);
         }
       }
       if (local_8 != 0xffffffff) {
@@ -149,18 +152,20 @@ void __thiscall SettMapMTy::InitSettMap(SettMapMTy *this,char param_1)
       }
     }
     else {
-      if (PTR_0081176c->field_0560 != 0xffffffff) {
+      if (g_startSystem_0081176C->field_0560 != 0xffffffff) {
         Library::DKW::DDX::FUN_006b34d0
-                  ((uint *)PTR_0081176c->field_05A4,PTR_0081176c->field_0560,0xfffffffe,
-                   PTR_0081176c->field_0578,PTR_0081176c->field_057C);
+                  ((uint *)g_startSystem_0081176C->field_05A4,g_startSystem_0081176C->field_0560,
+                   0xfffffffe,g_startSystem_0081176C->field_0578,g_startSystem_0081176C->field_057C)
+        ;
       }
-      if (PTR_0081176c->field_05F1 != 0xffffffff) {
+      if (g_startSystem_0081176C->field_05F1 != 0xffffffff) {
         Library::DKW::DDX::FUN_006b34d0
-                  ((uint *)PTR_0081176c->field_0635,PTR_0081176c->field_05F1,0xfffffffe,
-                   PTR_0081176c->field_0609,PTR_0081176c->field_060D);
+                  ((uint *)g_startSystem_0081176C->field_0635,g_startSystem_0081176C->field_05F1,
+                   0xfffffffe,g_startSystem_0081176C->field_0609,g_startSystem_0081176C->field_060D)
+        ;
       }
-      Library::DKW::DDX::FUN_006b3430((int *)PTR_008075a8,PTR_0081176c->field_0558);
-      Library::DKW::DDX::FUN_006b3430((int *)PTR_008075a8,PTR_0081176c->field_0554);
+      Library::DKW::DDX::FUN_006b3430((int *)PTR_008075a8,g_startSystem_0081176C->field_0558);
+      Library::DKW::DDX::FUN_006b3430((int *)PTR_008075a8,g_startSystem_0081176C->field_0554);
     }
     FUN_006b6500(g_int_00811764,DAT_0080733c);
     g_currentExceptionFrame = local_50.previous;

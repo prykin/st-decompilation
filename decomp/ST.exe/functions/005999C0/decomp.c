@@ -46,8 +46,8 @@ void __thiscall FSGSTy::PrepBkgMess(FSGSTy *this,char param_1)
                           iVar3);
     uVar4 = pFVar2->field_1ABC;
     *value = puVar5;
-    FUN_006b2410((int)PTR_008075a8,uVar4,(uint)puVar5);
-    FUN_006b2800((int)PTR_008075a8,pFVar2->field_1ABC,*(uint *)(*value + 2),*(uint *)(*value + 4));
+    FUN_006b2410(PTR_008075a8,uVar4,(uint)puVar5);
+    FUN_006b2800(PTR_008075a8,pFVar2->field_1ABC,*(uint *)(*value + 2),*(uint *)(*value + 4));
     if (param_1 == '\0') {
       uVar4 = 0xb4;
     }

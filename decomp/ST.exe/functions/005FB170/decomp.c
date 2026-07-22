@@ -9,7 +9,7 @@ void __fastcall FUN_005fb170(STColl3C *param_1)
 {
   switch(param_1->field_02DD) {
   case CASE_1:
-    thunk_FUN_005f66b0(param_1);
+    STColl3C::sub_005F66B0(param_1);
     return;
   case CASE_2:
   case CASE_3:
@@ -22,7 +22,7 @@ void __fastcall FUN_005fb170(STColl3C *param_1)
   case CASE_B:
   case CASE_C:
     STColl3C::LoadImagSpr(param_1,0);
-    thunk_FUN_005fa070((AnonReceiver_00417FF0 *)param_1);
+    STColl3C::sub_005FA070(param_1);
     param_1->field_02DD = CASE_C|CASE_1;
   }
   return;

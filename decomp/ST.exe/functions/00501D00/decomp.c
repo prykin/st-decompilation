@@ -62,16 +62,16 @@ FUN_00501d00(void *this,AnonShape_00501D00_3942B646 *param_1,AnonShape_00501D00_
       pcVar4 = &param_1->field_0x9;
       do {
         if (*pcVar4 != '\0') {
-          thunk_FUN_004f17d0(this,1,bVar1);
+          CPanelTy::sub_004F17D0(this,1,bVar1);
         }
         bVar1 = bVar1 + 1;
         pcVar4 = pcVar4 + 1;
       } while (bVar1 < 6);
-      thunk_FUN_004f1610(this,'\x01');
-      thunk_FUN_0054a8d0(PTR_00802a30);
+      CPanelTy::sub_004F1610(this,'\x01');
+      CursorClassTy::sub_0054A8D0(g_cursorClass_00802A30);
     }
     if (param_1->field_0x8 != param_2->field_0x8) {
-      thunk_FUN_004f1610(this,'\x01');
+      CPanelTy::sub_004F1610(this,'\x01');
     }
   }
   else {
@@ -81,13 +81,13 @@ FUN_00501d00(void *this,AnonShape_00501D00_3942B646 *param_1,AnonShape_00501D00_
     pcVar4 = &param_1->field_0x9;
     do {
       if (*pcVar4 != '\0') {
-        thunk_FUN_004f17d0(this,1,bVar1);
+        CPanelTy::sub_004F17D0(this,1,bVar1);
       }
       bVar1 = bVar1 + 1;
       pcVar4 = pcVar4 + 1;
     } while (bVar1 < 6);
-    thunk_FUN_004f1610(this,'\x01');
-    thunk_FUN_0054a8d0(PTR_00802a30);
+    CPanelTy::sub_004F1610(this,'\x01');
+    CursorClassTy::sub_0054A8D0(g_cursorClass_00802A30);
   }
   iVar7 = 3;
   bVar10 = true;
@@ -101,7 +101,7 @@ FUN_00501d00(void *this,AnonShape_00501D00_3942B646 *param_1,AnonShape_00501D00_
     psVar8 = psVar8 + 1;
   } while (bVar10);
   if ((!bVar10) || (param_1->field_0007 != param_2->field_0007)) {
-    thunk_FUN_004f4570(this,'\x01',(int)param_1,(int)param_2);
+    CPanelTy::sub_004F4570(this,'\x01',(int)param_1,(int)param_2);
   }
   if (((param_1->field_0015 != param_2->field_0015) || (param_1->field_0007 != param_2->field_0007))
      && (*(int *)((int)this + 0x9c0) != 0)) {

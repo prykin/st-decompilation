@@ -39,7 +39,7 @@ int __thiscall TraksClassTy::GetMessage(TraksClassTy *this,STMessage *message)
     RaiseInternalException(iVar3,0,"E:\\__titans\\grig\\traks.cpp",0x152);
     return 0xffff;
   }
-  local_14->field_0020 = PTR_00802a38->field_00E4;
+  local_14->field_0020 = g_playSystem_00802A38->field_00E4;
   FUN_006e5fd0(local_14,message);
   SVar1 = message->id;
   if (SVar1 < 4) {
@@ -78,7 +78,7 @@ int __thiscall TraksClassTy::GetMessage(TraksClassTy *this,STMessage *message)
   else if (SVar1 == MESS_SHARED_010F) {
     local_c = 0;
     local_10 = (byte *)PrepareToSave(this_00,&local_c);
-    STPlaySystemC::SaveObjData(PTR_00802a38,PTR_s_TRACKS_0079aebc,local_10,local_c,0xc);
+    STPlaySystemC::SaveObjData(g_playSystem_00802A38,PTR_s_TRACKS_0079aebc,local_10,local_c,0xc);
     if (local_10 != (byte *)0x0) {
       FreeAndNull(&local_10);
     }

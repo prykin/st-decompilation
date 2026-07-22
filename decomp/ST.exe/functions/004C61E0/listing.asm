@@ -1,4 +1,4 @@
-FUN_004c61e0:
+TLOBldMark::sub_004C61E0:
 004C61E0  56                        PUSH ESI
 004C61E1  8B F1                     MOV ESI,ECX
 004C61E3  8B 46 18                  MOV EAX,dword ptr [ESI + 0x18]

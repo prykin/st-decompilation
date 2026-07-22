@@ -1,8 +1,12 @@
 
 /* [STPrototypeRepairApplier] Propagated parameter 0.
-   Evidence: 006C7610 -> 006B4170 @ 006C769F */
+   Evidence: 006C7610 -> 006B4170 @ 006C769F
 
-void FUN_006b4170(AnonShape_006B5B10_E0D06CF1 *param_1,int param_2,int param_3,int param_4,
+   [STPrototypeApplier] Propagated parameter 2.
+   Evidence: 00520B50 -> 006B4170 @ 00520C11 | 005A39A0 -> 006B4170 @ 005A3A33 | 006B4170 ->
+   EXTERNAL:0000009A @ 006B420C | 006C7610 -> 006B4170 @ 006C769F */
+
+void FUN_006b4170(AnonShape_006B5B10_E0D06CF1 *param_1,int param_2,int lprcSrc2,int param_4,
                  int param_5,int param_6,undefined1 param_7)
 
 {
@@ -38,9 +42,9 @@ void FUN_006b4170(AnonShape_006B5B10_E0D06CF1 *param_1,int param_2,int param_3,i
     }
     local_1c = puVar1;
     local_2c.top = param_4;
-    local_2c.left = param_3;
+    local_2c.left = lprcSrc2;
     local_2c.bottom = param_4 + param_6;
-    local_2c.right = param_3 + param_5;
+    local_2c.right = lprcSrc2 + param_5;
     local_3c.left = 0;
     local_3c.top = 0;
     local_3c.right = param_1->field_0004;

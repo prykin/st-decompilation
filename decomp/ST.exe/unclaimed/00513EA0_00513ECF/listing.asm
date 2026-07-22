@@ -1,0 +1,12 @@
+00513EA0  pointer  00513ccc
+00513EA4  pointer  00513d52
+00513EA8  pointer  00513d31
+00513EAC  pointer  00513d74
+00513EB0  pointer  00513d0f
+00513EB4  pointer  00513cee
+00513EB8  pointer  00513cae
+00513EBC  pointer  00513dd9
+00513EC0  pointer  00513de4
+00513EC4  pointer  00513c90
+00513EC8  pointer  00513d96
+00513ECC  pointer  00513db8

@@ -34,7 +34,7 @@ AiEventClassTy::_CreateMine
   g_currentExceptionFrame = &local_6c;
   iVar3 = Library::MSVCRT::__setjmp3(local_6c.jumpBuffer,0);
   if (iVar3 == 0) {
-    if (g_sTAllPlayers_007FA174 != (STAllPlayersC *)0x0) {
+    if (g_allPlayers_007FA174 != (STAllPlayersC *)0x0) {
       if ((((param_2 == 0xa6) || (param_2 == 0xa7)) || (param_2 == 0xbd)) || (param_2 == 0xaf)) {
         bVar2 = true;
       }

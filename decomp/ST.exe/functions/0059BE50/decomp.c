@@ -1,197 +1,202 @@
 
-void __fastcall FUN_0059be50(AnonShape_0059BE50_7219C6AE *param_1)
+/* [STMethodOwnerApplier] Structural method owner recovered as FSGSTy.
+   Evidence: this_call_owners=[FSGSTy]; agreed_this_calls=1; incoming_this_accesses=55;
+   incoming_edx_uses=0; incoming_stack_parameter_uses=0; direct_non_thunk_callers=0;
+   incoming_ecx_receiver_callers=0; attributed_named_callers=1; owner_evidence_coverage=adequate */
+
+void __thiscall FSGSTy::sub_0059BE50(FSGSTy *this)
 
 {
   int iVar1;
 
-  param_1->field_1A6B = 0;
-  param_1->field_0029 = 2;
-  switch(param_1->field_1A5F) {
-  case 2:
-  case 3:
-  case 4:
-  case 5:
-  case 7:
-    param_1->field_002D = 0x20;
-    param_1->field_0031 = 0;
-    if (param_1->field_1AC4 != 0) {
-      FUN_006e6080(param_1,2,param_1->field_1AC4,(undefined4 *)&param_1->field_0x1d);
+  this->field_1A6B = 0;
+  this->field_0029 = 2;
+  switch(this->field_1A5F) {
+  case CASE_2:
+  case CASE_3:
+  case CASE_4:
+  case CASE_5:
+  case CASE_7:
+    this->field_002D = 0x20;
+    *(undefined4 *)&this->field_0x31 = 0;
+    if (this->field_1AC4 != 0) {
+      FUN_006e6080(this,2,this->field_1AC4,(undefined4 *)&this->field_0x1d);
     }
-    if (param_1->field_1AC8 != 0) {
-      FUN_006e6080(param_1,2,param_1->field_1AC8,(undefined4 *)&param_1->field_0x1d);
+    if (this->field_1AC8 != 0) {
+      FUN_006e6080(this,2,this->field_1AC8,(undefined4 *)&this->field_0x1d);
     }
-    if (param_1->field_1ACC != 0) {
-      FUN_006e6080(param_1,2,param_1->field_1ACC,(undefined4 *)&param_1->field_0x1d);
+    if (this->field_1ACC != 0) {
+      FUN_006e6080(this,2,this->field_1ACC,(undefined4 *)&this->field_0x1d);
     }
-    if (param_1->field_1AD4 != 0) {
-      FUN_006e6080(param_1,2,param_1->field_1AD4,(undefined4 *)&param_1->field_0x1d);
+    if (this->field_1AD4 != 0) {
+      FUN_006e6080(this,2,this->field_1AD4,(undefined4 *)&this->field_0x1d);
     }
-    if (param_1->field_1AD8 != 0) {
-      FUN_006e6080(param_1,2,param_1->field_1AD8,(undefined4 *)&param_1->field_0x1d);
+    if (this->field_1AD8 != 0) {
+      FUN_006e6080(this,2,this->field_1AD8,(undefined4 *)&this->field_0x1d);
     }
-    if (param_1->field_1ADC != 0) {
-      FUN_006e6080(param_1,2,param_1->field_1ADC,(undefined4 *)&param_1->field_0x1d);
+    if (this->field_1ADC != 0) {
+      FUN_006e6080(this,2,this->field_1ADC,(undefined4 *)&this->field_0x1d);
     }
-    if (param_1->field_1AE0 != 0) {
-      FUN_006e6080(param_1,2,param_1->field_1AE0,(undefined4 *)&param_1->field_0x1d);
+    if (this->field_1AE0 != 0) {
+      FUN_006e6080(this,2,this->field_1AE0,(undefined4 *)&this->field_0x1d);
     }
-    if (param_1->field_1AE4 != 0) {
-      FUN_006e6080(param_1,2,param_1->field_1AE4,(undefined4 *)&param_1->field_0x1d);
+    if (this->field_1AE4 != (LPCSTR)0x0) {
+      FUN_006e6080(this,2,this->field_1AE4,(undefined4 *)&this->field_0x1d);
     }
-    param_1->field_002D = 0x29;
-    param_1->field_0031 = 0x99;
-    if (param_1->field_1AC4 != 0) {
-      FUN_006e6080(param_1,2,param_1->field_1AC4,(undefined4 *)&param_1->field_0x1d);
+    this->field_002D = 0x29;
+    *(undefined4 *)&this->field_0x31 = 0x99;
+    if (this->field_1AC4 != 0) {
+      FUN_006e6080(this,2,this->field_1AC4,(undefined4 *)&this->field_0x1d);
     }
-    if (param_1->field_1AD8 != 0) {
-      FUN_006e6080(param_1,2,param_1->field_1AD8,(undefined4 *)&param_1->field_0x1d);
+    if (this->field_1AD8 != 0) {
+      FUN_006e6080(this,2,this->field_1AD8,(undefined4 *)&this->field_0x1d);
     }
-    if (param_1->field_1ADC != 0) {
-      FUN_006e6080(param_1,2,param_1->field_1ADC,(undefined4 *)&param_1->field_0x1d);
+    if (this->field_1ADC != 0) {
+      FUN_006e6080(this,2,this->field_1ADC,(undefined4 *)&this->field_0x1d);
     }
-    if (param_1->field_1AE0 != 0) {
-      FUN_006e6080(param_1,2,param_1->field_1AE0,(undefined4 *)&param_1->field_0x1d);
+    if (this->field_1AE0 != 0) {
+      FUN_006e6080(this,2,this->field_1AE0,(undefined4 *)&this->field_0x1d);
     }
-    param_1->field_0031 = 0x39;
-    if (param_1->field_1AC8 != 0) {
-      FUN_006e6080(param_1,2,param_1->field_1AC8,(undefined4 *)&param_1->field_0x1d);
+    *(undefined4 *)&this->field_0x31 = 0x39;
+    if (this->field_1AC8 != 0) {
+      FUN_006e6080(this,2,this->field_1AC8,(undefined4 *)&this->field_0x1d);
     }
-    if (param_1->field_1ACC != 0) {
-      FUN_006e6080(param_1,2,param_1->field_1ACC,(undefined4 *)&param_1->field_0x1d);
+    if (this->field_1ACC != 0) {
+      FUN_006e6080(this,2,this->field_1ACC,(undefined4 *)&this->field_0x1d);
     }
-    if (param_1->field_1AD4 != 0) {
-      FUN_006e6080(param_1,2,param_1->field_1AD4,(undefined4 *)&param_1->field_0x1d);
+    if (this->field_1AD4 != 0) {
+      FUN_006e6080(this,2,this->field_1AD4,(undefined4 *)&this->field_0x1d);
     }
-    param_1->field_0031 = 0xd8;
-    if (param_1->field_1AE4 != 0) {
-      FUN_006e6080(param_1,2,param_1->field_1AE4,(undefined4 *)&param_1->field_0x1d);
+    *(undefined4 *)&this->field_0x31 = 0xd8;
+    if (this->field_1AE4 != (LPCSTR)0x0) {
+      FUN_006e6080(this,2,this->field_1AE4,(undefined4 *)&this->field_0x1d);
     }
-    param_1->field_002D = 0x20;
-    param_1->field_0031 = 0;
-    if (param_1->field_1B14 != 0) {
-      FUN_006e6080(param_1,2,param_1->field_1B14,(undefined4 *)&param_1->field_0x1d);
+    this->field_002D = 0x20;
+    *(undefined4 *)&this->field_0x31 = 0;
+    if (this->field_1B14 != 0) {
+      FUN_006e6080(this,2,this->field_1B14,(undefined4 *)&this->field_0x1d);
     }
-    param_1->field_0031 = 0;
-    if (param_1->field_1AD0 != 0) {
-      FUN_006e6080(param_1,2,param_1->field_1AD0,(undefined4 *)&param_1->field_0x1d);
+    *(undefined4 *)&this->field_0x31 = 0;
+    if (this->field_1AD0 != 0) {
+      FUN_006e6080(this,2,this->field_1AD0,(undefined4 *)&this->field_0x1d);
     }
-    iVar1 = param_1->field_1EB6;
+    iVar1 = this->field_1EB6;
     goto LAB_0059c1ca;
-  case 6:
-    param_1->field_002D = 0x29;
-    param_1->field_0031 = 0x19;
-    if (param_1->field_1B10 != 0) {
-      FUN_006e6080(param_1,2,param_1->field_1B10,(undefined4 *)&param_1->field_0x1d);
+  case CASE_6:
+    this->field_002D = 0x29;
+    *(undefined4 *)&this->field_0x31 = 0x19;
+    if (this->field_1B10 != 0) {
+      FUN_006e6080(this,2,this->field_1B10,(undefined4 *)&this->field_0x1d);
     }
-    param_1->field_0031 = 0x99;
-    if (param_1->field_1AC4 != 0) {
-      FUN_006e6080(param_1,2,param_1->field_1AC4,(undefined4 *)&param_1->field_0x1d);
+    *(undefined4 *)&this->field_0x31 = 0x99;
+    if (this->field_1AC4 != 0) {
+      FUN_006e6080(this,2,this->field_1AC4,(undefined4 *)&this->field_0x1d);
     }
-    if (param_1->field_1AC8 != 0) {
-      FUN_006e6080(param_1,2,param_1->field_1AC8,(undefined4 *)&param_1->field_0x1d);
+    if (this->field_1AC8 != 0) {
+      FUN_006e6080(this,2,this->field_1AC8,(undefined4 *)&this->field_0x1d);
     }
-    param_1->field_002D = 0x20;
-    param_1->field_0031 = 0;
-    if (param_1->field_1B14 != 0) {
-      FUN_006e6080(param_1,2,param_1->field_1B14,(undefined4 *)&param_1->field_0x1d);
+    this->field_002D = 0x20;
+    *(undefined4 *)&this->field_0x31 = 0;
+    if (this->field_1B14 != 0) {
+      FUN_006e6080(this,2,this->field_1B14,(undefined4 *)&this->field_0x1d);
     }
-    param_1->field_0031 = 0;
-    if (param_1->field_1B18 != 0) {
-      FUN_006e6080(param_1,2,param_1->field_1B18,(undefined4 *)&param_1->field_0x1d);
+    *(undefined4 *)&this->field_0x31 = 0;
+    if (this->field_1B18 != 0) {
+      FUN_006e6080(this,2,this->field_1B18,(undefined4 *)&this->field_0x1d);
     }
-    if (param_1->field_1B24 != 0) {
-      FUN_006e6080(param_1,2,param_1->field_1B24,(undefined4 *)&param_1->field_0x1d);
+    if (this->field_1B24 != 0) {
+      FUN_006e6080(this,2,this->field_1B24,(undefined4 *)&this->field_0x1d);
     }
-    iVar1 = param_1->field_1B1C;
+    iVar1 = this->field_1B1C;
     goto joined_r0x0059c1b1;
-  case 8:
-    param_1->field_002D = 0x29;
-    param_1->field_0031 = 0x99;
-    if (param_1->field_1AC4 != 0) {
-      FUN_006e6080(param_1,2,param_1->field_1AC4,(undefined4 *)&param_1->field_0x1d);
+  case CASE_8:
+    this->field_002D = 0x29;
+    *(undefined4 *)&this->field_0x31 = 0x99;
+    if (this->field_1AC4 != 0) {
+      FUN_006e6080(this,2,this->field_1AC4,(undefined4 *)&this->field_0x1d);
     }
-    if (param_1->field_1AC8 != 0) {
-      FUN_006e6080(param_1,2,param_1->field_1AC8,(undefined4 *)&param_1->field_0x1d);
+    if (this->field_1AC8 != 0) {
+      FUN_006e6080(this,2,this->field_1AC8,(undefined4 *)&this->field_0x1d);
     }
-    param_1->field_002D = 0x20;
-    param_1->field_0031 = 0;
-    if (param_1->field_1EB6 != 0) {
-      FUN_006e6080(param_1,2,param_1->field_1EB6,(undefined4 *)&param_1->field_0x1d);
+    this->field_002D = 0x20;
+    *(undefined4 *)&this->field_0x31 = 0;
+    if (this->field_1EB6 != 0) {
+      FUN_006e6080(this,2,this->field_1EB6,(undefined4 *)&this->field_0x1d);
     }
-    if (param_1->field_1EBA != 0) {
-      FUN_006e6080(param_1,2,param_1->field_1EBA,(undefined4 *)&param_1->field_0x1d);
+    if (this->field_1EBA != 0) {
+      FUN_006e6080(this,2,this->field_1EBA,(undefined4 *)&this->field_0x1d);
     }
-    iVar1 = param_1->field_1B24;
+    iVar1 = this->field_1B24;
 joined_r0x0059c1b1:
     if (iVar1 != 0) {
-      FUN_006e6080(param_1,2,iVar1,(undefined4 *)&param_1->field_0x1d);
+      FUN_006e6080(this,2,iVar1,(undefined4 *)&this->field_0x1d);
     }
-    iVar1 = param_1->field_1B20;
-    param_1->field_0031 = 0;
+    iVar1 = this->field_1B20;
+    *(undefined4 *)&this->field_0x31 = 0;
 LAB_0059c1ca:
     if (iVar1 != 0) {
-      FUN_006e6080(param_1,2,iVar1,(undefined4 *)&param_1->field_0x1d);
+      FUN_006e6080(this,2,iVar1,(undefined4 *)&this->field_0x1d);
       return;
     }
     break;
-  case 9:
-    param_1->field_002D = 0x20;
-    param_1->field_0031 = 0;
-    if (param_1->field_1ED3 != 0) {
-      FUN_006e6080(param_1,2,param_1->field_1ED3,(undefined4 *)&param_1->field_0x1d);
+  case CASE_9:
+    this->field_002D = 0x20;
+    *(undefined4 *)&this->field_0x31 = 0;
+    if (this->field_1ED3 != 0) {
+      FUN_006e6080(this,2,this->field_1ED3,(undefined4 *)&this->field_0x1d);
     }
-    if (param_1->field_1ED7 != 0) {
-      FUN_006e6080(param_1,2,param_1->field_1ED7,(undefined4 *)&param_1->field_0x1d);
+    if (this->field_1ED7 != 0) {
+      FUN_006e6080(this,2,this->field_1ED7,(undefined4 *)&this->field_0x1d);
     }
-    if (param_1->field_1EB6 != 0) {
-      FUN_006e6080(param_1,2,param_1->field_1EB6,(undefined4 *)&param_1->field_0x1d);
+    if (this->field_1EB6 != 0) {
+      FUN_006e6080(this,2,this->field_1EB6,(undefined4 *)&this->field_0x1d);
     }
-    if (param_1->field_1EBA != 0) {
-      FUN_006e6080(param_1,2,param_1->field_1EBA,(undefined4 *)&param_1->field_0x1d);
+    if (this->field_1EBA != 0) {
+      FUN_006e6080(this,2,this->field_1EBA,(undefined4 *)&this->field_0x1d);
     }
-    if (param_1->field_1B24 != 0) {
-      FUN_006e6080(param_1,2,param_1->field_1B24,(undefined4 *)&param_1->field_0x1d);
+    if (this->field_1B24 != 0) {
+      FUN_006e6080(this,2,this->field_1B24,(undefined4 *)&this->field_0x1d);
     }
-    param_1->field_002D = 0x20;
-    param_1->field_0031 = 0;
-    if (param_1->field_1AC4 != 0) {
-      FUN_006e6080(param_1,2,param_1->field_1AC4,(undefined4 *)&param_1->field_0x1d);
+    this->field_002D = 0x20;
+    *(undefined4 *)&this->field_0x31 = 0;
+    if (this->field_1AC4 != 0) {
+      FUN_006e6080(this,2,this->field_1AC4,(undefined4 *)&this->field_0x1d);
     }
-    param_1->field_002D = 0x29;
-    param_1->field_0031 = 0x99;
-    if (param_1->field_1AC4 != 0) {
-      FUN_006e6080(param_1,2,param_1->field_1AC4,(undefined4 *)&param_1->field_0x1d);
+    this->field_002D = 0x29;
+    *(undefined4 *)&this->field_0x31 = 0x99;
+    if (this->field_1AC4 != 0) {
+      FUN_006e6080(this,2,this->field_1AC4,(undefined4 *)&this->field_0x1d);
     }
     break;
-  case 10:
-    param_1->field_002D = 0x20;
-    param_1->field_0031 = 0;
-    if (param_1->field_1AD8 != 0) {
-      FUN_006e6080(param_1,2,param_1->field_1AD8,(undefined4 *)&param_1->field_0x1d);
+  case CASE_A:
+    this->field_002D = 0x20;
+    *(undefined4 *)&this->field_0x31 = 0;
+    if (this->field_1AD8 != 0) {
+      FUN_006e6080(this,2,this->field_1AD8,(undefined4 *)&this->field_0x1d);
     }
-    if (param_1->field_1ADC != 0) {
-      FUN_006e6080(param_1,2,param_1->field_1ADC,(undefined4 *)&param_1->field_0x1d);
+    if (this->field_1ADC != 0) {
+      FUN_006e6080(this,2,this->field_1ADC,(undefined4 *)&this->field_0x1d);
     }
-    if (param_1->field_1AE0 != 0) {
-      FUN_006e6080(param_1,2,param_1->field_1AE0,(undefined4 *)&param_1->field_0x1d);
+    if (this->field_1AE0 != 0) {
+      FUN_006e6080(this,2,this->field_1AE0,(undefined4 *)&this->field_0x1d);
     }
-    if (param_1->field_1AE4 != 0) {
-      FUN_006e6080(param_1,2,param_1->field_1AE4,(undefined4 *)&param_1->field_0x1d);
+    if (this->field_1AE4 != (LPCSTR)0x0) {
+      FUN_006e6080(this,2,this->field_1AE4,(undefined4 *)&this->field_0x1d);
     }
-    param_1->field_002D = 0x29;
-    param_1->field_0031 = 0x99;
-    if (param_1->field_1AD8 != 0) {
-      FUN_006e6080(param_1,2,param_1->field_1AD8,(undefined4 *)&param_1->field_0x1d);
+    this->field_002D = 0x29;
+    *(undefined4 *)&this->field_0x31 = 0x99;
+    if (this->field_1AD8 != 0) {
+      FUN_006e6080(this,2,this->field_1AD8,(undefined4 *)&this->field_0x1d);
     }
-    if (param_1->field_1ADC != 0) {
-      FUN_006e6080(param_1,2,param_1->field_1ADC,(undefined4 *)&param_1->field_0x1d);
+    if (this->field_1ADC != 0) {
+      FUN_006e6080(this,2,this->field_1ADC,(undefined4 *)&this->field_0x1d);
     }
-    if (param_1->field_1AE0 != 0) {
-      FUN_006e6080(param_1,2,param_1->field_1AE0,(undefined4 *)&param_1->field_0x1d);
+    if (this->field_1AE0 != 0) {
+      FUN_006e6080(this,2,this->field_1AE0,(undefined4 *)&this->field_0x1d);
     }
-    param_1->field_0031 = 0xd8;
-    if (param_1->field_1AE4 != 0) {
-      FUN_006e6080(param_1,2,param_1->field_1AE4,(undefined4 *)&param_1->field_0x1d);
+    *(undefined4 *)&this->field_0x31 = 0xd8;
+    if (this->field_1AE4 != (LPCSTR)0x0) {
+      FUN_006e6080(this,2,this->field_1AE4,(undefined4 *)&this->field_0x1d);
       return;
     }
   }

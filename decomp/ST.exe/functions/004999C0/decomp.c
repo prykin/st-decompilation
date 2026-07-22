@@ -9,7 +9,7 @@ undefined4 __thiscall
 STGroupBoatC::ReMakePVecAndTgtListExt(STGroupBoatC *this,char param_1,short param_2)
 
 {
-  uint uVar1;
+  dword dVar1;
   code *pcVar2;
   STGroupBoatC *this_00;
   int errorCode;
@@ -35,27 +35,27 @@ STGroupBoatC::ReMakePVecAndTgtListExt(STGroupBoatC *this,char param_1,short para
                 (-0x5001fff7,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_grpb.cpp",
                  0x509);
     }
-    if (this_00->field_020E == (uint *)0x0) {
+    if (this_00->field_020E == (DArrayTy *)0x0) {
       RaiseInternalException
                 (-0x5001fffc,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_grpb.cpp",
                  0x50b);
     }
     index = 0;
-    uVar1 = this_00->field_020E[3];
-    if (0 < (int)uVar1) {
+    dVar1 = this_00->field_020E->count;
+    if (0 < (int)dVar1) {
       do {
-        DArrayGetElement((DArrayTy *)this_00->field_020E,index,local_8);
+        DArrayGetElement(this_00->field_020E,index,local_8);
         if (((local_6 != -1) && (local_8[0] == param_1)) && (local_6 == param_2)) {
           array = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,1,4,1);
           local_c = 0xffff;
           local_a = (undefined2)index;
           Library::DKW::TBL::FUN_006ae1c0(&array->flags,(undefined4 *)&local_c);
-          ReMakePVecAndTgtList(this_00,&array->flags);
+          ReMakePVecAndTgtList(this_00,array);
           DArrayDestroy(array);
           break;
         }
         index = index + 1;
-      } while ((int)index < (int)uVar1);
+      } while ((int)index < (int)dVar1);
     }
     g_currentExceptionFrame = local_54.previous;
   }

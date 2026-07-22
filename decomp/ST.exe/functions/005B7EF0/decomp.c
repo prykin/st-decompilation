@@ -50,8 +50,7 @@ MMsgTy::SetMessage(MMsgTy *this,UINT param_1,char param_2,undefined4 *param_3,un
         local_34[3] = 2;
         local_34[4] = 0x6940;
         local_34[2] = iVar3;
-        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-        (*(code *)this_00->field_000C->vtable->field_0018)(local_34);
+        (*this_00->field_000C->vtable->vfunc_18)(local_34);
       }
       this_00->field_1CA9 = 1;
       puVar6 = &this_00->field_1CD0;
@@ -103,23 +102,23 @@ MMsgTy::SetMessage(MMsgTy *this,UINT param_1,char param_2,undefined4 *param_3,un
         cVar13 = CASE_FFFFFFFE;
         iVar8 = 0x39;
         iVar3 = 0x158;
-        puVar7 = (uint *)LoadResourceString(param_1,HINSTANCE_00807618);
+        puVar7 = (uint *)LoadResourceString(param_1,g_module_00807618);
         puVar6 = ccFntTy::CreateTypeSSpr
-                           (PTR_0081176c->field_0030,puVar7,iVar3,iVar8,cVar13,uVar10,iVar12,iVar14,
-                            iVar15);
+                           (g_startSystem_0081176C->field_0030,puVar7,iVar3,iVar8,cVar13,uVar10,
+                            iVar12,iVar14,iVar15);
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
         (**(code **)(local_10 + 8))(puVar6,uVar17,uVar18);
       }
       else {
-        pcVar4 = LoadResourceString(param_7,HINSTANCE_00807618);
-        pcVar5 = LoadResourceString(param_1,HINSTANCE_00807618);
+        pcVar4 = LoadResourceString(param_7,g_module_00807618);
+        pcVar5 = LoadResourceString(param_1,g_module_00807618);
         wsprintfA((LPSTR)local_478,"%s\n(%s=%li)",pcVar5,pcVar4,param_6);
         iVar3 = this_00->field_1D88;
         uVar18 = 0xffffffff;
         uVar17 = 7;
         puVar6 = ccFntTy::CreateTypeSSpr
-                           (PTR_0081176c->field_0030,local_478,0x158,0x39,CASE_FFFFFFFE,0xffffffff,1
-                            ,-1,-1);
+                           (g_startSystem_0081176C->field_0030,local_478,0x158,0x39,CASE_FFFFFFFE,
+                            0xffffffff,1,-1,-1);
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
         (**(code **)(iVar3 + 8))(puVar6,uVar17,uVar18);
       }
@@ -165,10 +164,10 @@ MMsgTy::SetMessage(MMsgTy *this,UINT param_1,char param_2,undefined4 *param_3,un
         cVar13 = CASE_FFFFFFFE;
         iVar12 = 0x1e;
         iVar8 = 0x7d;
-        puVar7 = (uint *)LoadResourceString(this_00->field_04B2,HINSTANCE_00807618);
+        puVar7 = (uint *)LoadResourceString(this_00->field_04B2,g_module_00807618);
         puVar6 = ccFntTy::CreateTypeSSpr
-                           (PTR_0081176c->field_0030,puVar7,iVar8,iVar12,cVar13,uVar10,iVar14,iVar15
-                            ,iVar16);
+                           (g_startSystem_0081176C->field_0030,puVar7,iVar8,iVar12,cVar13,uVar10,
+                            iVar14,iVar15,iVar16);
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
         (**(code **)(iVar3 + 8))(puVar6,uVar17,uVar18);
         this_00->field_0572 = 0;
@@ -203,10 +202,10 @@ MMsgTy::SetMessage(MMsgTy *this,UINT param_1,char param_2,undefined4 *param_3,un
           cVar13 = CASE_FFFFFFFE;
           iVar12 = 0x1e;
           iVar8 = 0x7d;
-          puVar7 = (uint *)LoadResourceString(this_00->field_04B2,HINSTANCE_00807618);
+          puVar7 = (uint *)LoadResourceString(this_00->field_04B2,g_module_00807618);
           puVar6 = ccFntTy::CreateTypeSSpr
-                             (PTR_0081176c->field_0030,puVar7,iVar8,iVar12,cVar13,uVar10,iVar14,
-                              iVar15,iVar16);
+                             (g_startSystem_0081176C->field_0030,puVar7,iVar8,iVar12,cVar13,uVar10,
+                              iVar14,iVar15,iVar16);
           /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
           (**(code **)(iVar3 + 8))(puVar6,uVar17,uVar18);
           this_00->field_0572 = 0;
@@ -244,10 +243,10 @@ MMsgTy::SetMessage(MMsgTy *this,UINT param_1,char param_2,undefined4 *param_3,un
           cVar13 = CASE_FFFFFFFE;
           iVar12 = 0x1e;
           iVar8 = 0x7d;
-          puVar7 = (uint *)LoadResourceString(this_00->field_06AD,HINSTANCE_00807618);
+          puVar7 = (uint *)LoadResourceString(this_00->field_06AD,g_module_00807618);
           puVar6 = ccFntTy::CreateTypeSSpr
-                             (PTR_0081176c->field_0030,puVar7,iVar8,iVar12,cVar13,uVar10,iVar14,
-                              iVar15,iVar16);
+                             (g_startSystem_0081176C->field_0030,puVar7,iVar8,iVar12,cVar13,uVar10,
+                              iVar14,iVar15,iVar16);
           /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
           (**(code **)(iVar3 + 8))(puVar6,uVar17,uVar18);
           this_00->field_076D = 0;
@@ -279,10 +278,10 @@ MMsgTy::SetMessage(MMsgTy *this,UINT param_1,char param_2,undefined4 *param_3,un
           cVar13 = CASE_FFFFFFFE;
           iVar12 = 0x1e;
           iVar8 = 0x7d;
-          puVar7 = (uint *)LoadResourceString(this_00->field_04B2,HINSTANCE_00807618);
+          puVar7 = (uint *)LoadResourceString(this_00->field_04B2,g_module_00807618);
           puVar6 = ccFntTy::CreateTypeSSpr
-                             (PTR_0081176c->field_0030,puVar7,iVar8,iVar12,cVar13,uVar10,iVar14,
-                              iVar15,iVar16);
+                             (g_startSystem_0081176C->field_0030,puVar7,iVar8,iVar12,cVar13,uVar10,
+                              iVar14,iVar15,iVar16);
           /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
           (**(code **)(iVar3 + 8))(puVar6,uVar17,uVar18);
           this_00->field_0572 = 0;
@@ -315,10 +314,10 @@ MMsgTy::SetMessage(MMsgTy *this,UINT param_1,char param_2,undefined4 *param_3,un
         cVar13 = CASE_FFFFFFFE;
         iVar12 = 0x1e;
         iVar8 = 0x7d;
-        puVar7 = (uint *)LoadResourceString(this_00->field_02B7,HINSTANCE_00807618);
+        puVar7 = (uint *)LoadResourceString(this_00->field_02B7,g_module_00807618);
         puVar6 = ccFntTy::CreateTypeSSpr
-                           (PTR_0081176c->field_0030,puVar7,iVar8,iVar12,cVar13,uVar10,iVar14,iVar15
-                            ,iVar16);
+                           (g_startSystem_0081176C->field_0030,puVar7,iVar8,iVar12,cVar13,uVar10,
+                            iVar14,iVar15,iVar16);
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
         (**(code **)(iVar3 + 8))(puVar6,uVar17,uVar18);
         this_00->field_0377 = 0;

@@ -39,7 +39,7 @@ void __cdecl FUN_00676930(uint param_1)
   int local_14;
   uint *local_8;
 
-  if (g_sTAllPlayers_007FA174 != (STAllPlayersC *)0x0) {
+  if (g_allPlayers_007FA174 != (STAllPlayersC *)0x0) {
     puVar5 = &DAT_0080c947;
     puVar6 = local_160;
     for (iVar3 = 8; iVar3 != 0; iVar3 = iVar3 + -1) {
@@ -47,7 +47,7 @@ void __cdecl FUN_00676930(uint param_1)
       puVar5 = puVar5 + 1;
       puVar6 = puVar6 + 1;
     }
-    thunk_FUN_004da390(g_sTAllPlayers_007FA174,param_1,&DAT_0080c83e,0);
+    thunk_FUN_004da390(g_allPlayers_007FA174,param_1,&DAT_0080c83e,0);
     param_1 = 0;
     local_8 = &DAT_0080c947;
     puVar4 = &DAT_0080c8cd;

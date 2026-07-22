@@ -1,0 +1,16 @@
+004A8CD4  pointer  004a8bb8
+004A8CD8  pointer  004a8bd3
+004A8CDC  pointer  004a8bfc
+004A8CE0  pointer  004a8b88
+004A8CE4  pointer  004a8c74
+004A8CE8  byte  0h
+004A8CE9  byte  1h
+004A8CEA  byte  2h
+004A8CEB  byte  4h
+004A8CEC  byte  4h
+004A8CED  byte  4h
+004A8CEE  byte  4h
+004A8CEF  byte  4h
+004A8CF0  byte  4h
+004A8CF1  byte  4h
+004A8CF2  byte  3h

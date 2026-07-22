@@ -17,7 +17,7 @@ undefined4 __fastcall FUN_004cc220(AnonShape_004CC220_7DEF08C7 *param_1)
   param_1->field_044C = 0xffffffff;
   uVar1 = param_1->field_001C * 0x41c64e6d + 0x3039;
   param_1->field_001C = uVar1;
-  param_1->field_0450 = (uVar1 >> 0x10) % 0x33 + PTR_00802a38->field_00E4;
+  param_1->field_0450 = (uVar1 >> 0x10) % 0x33 + g_playSystem_00802A38->field_00E4;
   pAVar2 = (AnonShape_004AB810_8E5693D5 *)Library::MSVCRT::FUN_0072e530(0x40);
   if (pAVar2 == (AnonShape_004AB810_8E5693D5 *)0x0) {
     this = (STT3DSprC *)0x0;

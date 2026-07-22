@@ -21,14 +21,14 @@ VisibleClassTy * __thiscall VisibleClassTy::VisibleClassTy(VisibleClassTy *this)
   this->field_0034 = 0;
   this->field_0030 = 0;
   this->field_0104 = 1;
-  this->field_0038 = (void *)0x0;
+  this->field_0038 = (byte *)0x0;
   this->field_004C = (byte *)0x0;
-  this->field_0050 = (void *)0x0;
-  memset(&this->field_0x54, 0, 0x20); /* compiler bulk-zero initialization */
+  this->field_0050 = (ushort *)0x0;
+  memset(&this->field_0054, 0, 0x20); /* compiler bulk-zero initialization */
   iVar1 = 0;
-  memset(&this->field_0x74, 0, 0x20); /* compiler bulk-zero initialization */
+  memset(&this->field_0074, 0, 0x20); /* compiler bulk-zero initialization */
   iVar1 = 0;
-  memset(&this->field_0x94, 0, 0x20); /* compiler bulk-zero initialization */
+  memset(&this->field_0094, 0, 0x20); /* compiler bulk-zero initialization */
   iVar1 = 0;
   this->field_003C = 0;
   this->field_0040 = 0;

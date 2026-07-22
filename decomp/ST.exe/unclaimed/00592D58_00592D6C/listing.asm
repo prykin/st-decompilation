@@ -1,0 +1,12 @@
+00592D58  pointer  00592886
+00592D5C  pointer  00592878
+00592D60  pointer  0059287f
+00592D64  byte  0h
+00592D65  byte  0h
+00592D66  byte  0h
+00592D67  byte  1h
+00592D68  byte  1h
+00592D69  byte  1h
+00592D6A  byte  2h
+00592D6B  byte  2h
+00592D6C  byte  2h

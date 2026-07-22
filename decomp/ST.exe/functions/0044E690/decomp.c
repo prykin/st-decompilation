@@ -20,7 +20,7 @@ STBoatC * __thiscall STBoatC::STBoatC(STBoatC *this)
   STGameObjC::STGameObjC((STGameObjC *)this);
   thunk_FUN_004ab810((AnonShape_004AB810_8E5693D5 *)&this->field_01D5);
   this->field_01D5 = &VTable_00790700;
-  this->vtable = (AnonPointee_STBoatC_0000 *)&STBoatCVTable;
+  this->vtable = &STBoatCVTable;
   puVar2 = (undefined4 *)&this->field_0x231;
   memset(puVar2, 0, 0x8e); /* compiler bulk-zero initialization */
   puVar2 = (undefined4 *)((byte *)puVar2 + 0x8c);

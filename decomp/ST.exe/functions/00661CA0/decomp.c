@@ -1,5 +1,11 @@
 
-void __fastcall FUN_00661ca0(AnonShape_00661CA0_93A030EF *param_1,undefined4 param_2,int param_3)
+/* [STMethodOwnerApplier] Structural method owner recovered as AiFltClassTy.
+   Evidence: this_call_owners=[AiFltClassTy]; agreed_this_calls=1; incoming_this_accesses=29;
+   incoming_edx_uses=0; incoming_stack_parameter_uses=6; direct_non_thunk_callers=0;
+   incoming_ecx_receiver_callers=0; attributed_named_callers=1; owner_evidence_coverage=adequate */
+
+void __fastcall
+AiFltClassTy::sub_00661CA0(AnonShape_00661CA0_93A030EF *param_1,undefined4 param_2,int param_3)
 
 {
   undefined4 uVar1;
@@ -38,16 +44,15 @@ void __fastcall FUN_00661ca0(AnonShape_00661CA0_93A030EF *param_1,undefined4 par
   undefined2 local_6;
 
   /* ST_PSEUDO[unresolved_register_input,packed_or_unaligned_piece]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention; expected named packed member, bit extract/compose, or unaligned load */
-  if ((g_sTAllPlayers_007FA174 != (STAllPlayersC *)0x0) &&
+  if ((g_allPlayers_007FA174 != (STAllPlayersC *)0x0) &&
      (local_14 = param_1,
      this = STAllPlayersC::GetObjPtr
-                      (g_sTAllPlayers_007FA174,param_1->field_0024,
+                      (g_allPlayers_007FA174,param_1->field_0024,
                        CONCAT22((short)((uint)in_EAX >> 0x10),*(undefined2 *)(param_3 + 0x16)),
                        CASE_1), this != (STGameObjC *)0x0)) {
     local_10 = this;
     local_20 = thunk_FUN_004357f0(param_1->field_0024);
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-    uVar4 = (**(code **)&this->vtable->field_0x2c)();
+    uVar4 = (*this->vtable->vfunc_2C)();
     pSVar3 = local_10;
     local_c = uVar4;
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
@@ -166,8 +171,7 @@ LAB_00661e5f:
         local_60 = param_1->field_0280;
         local_64 = (AnonShape_0068FD00_A5257008 *)0x6c;
         local_5c = 0;
-        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-        GVar7 = (**(code **)&local_10->vtable->field_0x2c)();
+        GVar7 = (*local_10->vtable->vfunc_2C)();
         iVar10 = thunk_FUN_006753a0(GVar7);
         local_5b = (undefined1)iVar10;
         psStack_5a = &local_30;
@@ -182,8 +186,9 @@ LAB_00661e5f:
           param_1->field_00A7 = 0;
         }
         uVar4 = 0;
-        if ((void *)param_1->field_0284 != (void *)0x0) {
-          pvVar8 = (void *)thunk_FUN_0068e290((void *)param_1->field_0284,local_10->field_081C);
+        if ((AiTactClassTy *)param_1->field_0284 != (AiTactClassTy *)0x0) {
+          pvVar8 = (void *)AiTactClassTy::sub_0068E290
+                                     ((AiTactClassTy *)param_1->field_0284,local_10->field_081C);
           if (local_20 != (AiPlrClassTy *)0x0) {
             uVar4 = local_20->field_065C;
             local_20->field_065C = uVar4 + 1;
@@ -218,8 +223,9 @@ LAB_00661e5f:
         } while ((int)uVar12 < (int)uVar11);
       }
       if ((((0 < (int)uVar4) && ((int)uVar4 < 0x29)) && (param_1->field_007B == -0x8000)) &&
-         (((void *)param_1->field_0284 != (void *)0x0 &&
-          (pvVar8 = (void *)thunk_FUN_0068e290((void *)param_1->field_0284,local_10->field_081C),
+         (((AiTactClassTy *)param_1->field_0284 != (AiTactClassTy *)0x0 &&
+          (pvVar8 = (void *)AiTactClassTy::sub_0068E290
+                                      ((AiTactClassTy *)param_1->field_0284,local_10->field_081C),
           pvVar8 != (void *)0x0)))) {
         thunk_FUN_00661790(pvVar8,uVar4,pSVar3->field_081E);
       }

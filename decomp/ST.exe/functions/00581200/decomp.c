@@ -97,7 +97,7 @@ void __fastcall FUN_00581200(int param_1)
            (((((pSVar4->value_20 == 1000 || (pSVar4->value_20 == 0x14)) &&
               (iVar12 = (*pSVar4->vtable[5].slots_00_28[0])(), pAVar8 = local_c, iVar12 != 0)) &&
              (pSVar4[1].vtable < (STWorldObjectVTable *)0x8)) &&
-            ((PTR_00802a38 == (STPlaySystemC *)0x0 ||
+            ((g_playSystem_00802A38 == (STPlaySystemC *)0x0 ||
              ((byte)(&DAT_008087e9)[(int)pSVar4[1].vtable * 0x51] < 8)))))))))) {
         this = (void *)local_c->field_0010;
         if (*(char *)((int)this + 0x146f) == '\0') {
@@ -179,7 +179,7 @@ LAB_00581545:
          ((((pSVar4->value_20 != 1000 && (pSVar4->value_20 != 0x14)) ||
            ((iVar12 = (*pSVar4->vtable[5].slots_00_28[0])(), iVar12 == 0 ||
             ((STWorldObjectVTable *)0x7 < pSVar4[1].vtable)))) ||
-          ((PTR_00802a38 != (STPlaySystemC *)0x0 &&
+          ((g_playSystem_00802A38 != (STPlaySystemC *)0x0 &&
            (7 < (byte)(&DAT_008087e9)[(int)pSVar4[1].vtable * 0x51]))))))
       goto cf_continue_loop_005814A2;
       bVar1 = *(byte *)&pSVar4[1].vtable;

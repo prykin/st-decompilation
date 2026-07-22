@@ -13,7 +13,7 @@ int __fastcall FUN_0065dc00(int param_1,undefined4 param_2,uint param_3,char par
   int local_8;
 
   local_8 = 0;
-  array = (DArrayTy *)thunk_FUN_0065da10((AnonShape_0065DA10_8B0AA883 *)param_1,param_2);
+  array = (DArrayTy *)AiFltClassTy::sub_0065DA10((AiFltClassTy *)param_1,param_2);
   if (array != (DArrayTy *)0x0) {
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     cVar1 = *(char *)(param_1 + 0x81);
@@ -39,15 +39,11 @@ int __fastcall FUN_0065dc00(int param_1,undefined4 param_2,uint param_3,char par
         }
         /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
         pSVar4 = STAllPlayersC::GetObjPtr
-                           (g_sTAllPlayers_007FA174,*(char *)(param_1 + 0x24),
+                           (g_allPlayers_007FA174,*(char *)(param_1 + 0x24),
                             CONCAT22((short)((uint)puVar3 >> 0x10),*puVar3),CASE_1);
-        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-        if (((pSVar4 != (STGameObjC *)0x0) &&
-            (iVar5 = (**(code **)&pSVar4->vtable[1].field_0x28)(), iVar5 != 0)) &&
-           ((param_4 < '\0' ||
-            (iVar5 = (**(code **)&pSVar4->vtable->field_0x6c)(), param_4 == iVar5)))) {
-          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-          iVar5 = (**(code **)&pSVar4->vtable->field_0x2c)();
+        if (((pSVar4 != (STGameObjC *)0x0) && (iVar5 = (*pSVar4->vtable[1].vfunc_24)(), iVar5 != 0))
+           && ((param_4 < '\0' || (iVar5 = (*pSVar4->vtable->vfunc_6C)(), param_4 == iVar5)))) {
+          iVar5 = (*pSVar4->vtable->vfunc_2C)();
           pIVar6 = thunk_FUN_00674fb0(iVar5);
           if ((param_3 & (uint)pIVar6) != 0) {
             local_8 = local_8 + 1;

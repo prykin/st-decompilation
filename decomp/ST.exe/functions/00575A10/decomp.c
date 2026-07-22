@@ -17,12 +17,12 @@ undefined4 FUN_00575a10(HINSTANCE param_1,undefined4 param_2,undefined4 param_3,
   local_14 = ExceptionList;
   local_1c = &stack0xffffff8c;
   ExceptionList = &local_14;
-  HINSTANCE_00807618 = GetModuleHandleA("st_string.dll");
-  if (HINSTANCE_00807618 == (HMODULE)0x0) {
+  g_module_00807618 = GetModuleHandleA("st_string.dll");
+  if (g_module_00807618 == (HMODULE)0x0) {
     ExceptionList = local_14;
     return 0xffffffff;
   }
-  resourceString = LoadResourceString(100,HINSTANCE_00807618);
+  resourceString = LoadResourceString(100,g_module_00807618);
   Library::MSVCRT::FUN_0072f260(0,resourceString);
   FUN_006ad190(0x18,"dbg_msg.rpt",0);
   thunk_FUN_004e82b0();

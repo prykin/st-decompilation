@@ -99,7 +99,8 @@ int __thiscall STParticleC::GetMessage(STParticleC *this,STMessage *message)
         pAVar13 = (AnonShape_00629F90_C3CBACCB *)&pAVar13->field_0x4;
       }
       *(undefined2 *)pAVar13 = *(undefined2 *)puVar12;
-      thunk_FUN_00629f90(local_10,local_10,PTR_00802a38->field_00E4);
+      sub_00629F90((STParticleC *)local_10,(STParticleC *)local_10,g_playSystem_00802A38->field_00E4
+                  );
       InitVisibelFlight((STParticleC *)this_00,(uint)(byte)this_00[2].field_0x46);
       iVar9 = *(int *)&this_00->field_0x3c;
       if (iVar9 != 0) {
@@ -125,11 +126,11 @@ int __thiscall STParticleC::GetMessage(STParticleC *this,STMessage *message)
       g_currentExceptionFrame = local_7c.previous;
       return 0;
     }
-    thunk_FUN_0062aef0(local_10,puVar12);
+    sub_0062AEF0((STParticleC *)local_10,puVar12);
     memset(&this_00[2].field_0x47, 0, 0x2d); /* compiler bulk-zero initialization */
     iVar9 = *(int *)((int)&this_00[2].field_0030 + 2);
     if (iVar9 == 3) {
-      thunk_FUN_0062a860((int)this_00);
+      sub_0062A860((STParticleC *)this_00);
       *(undefined4 *)((int)&this_00[2].field_0030 + 2) = 0;
       g_currentExceptionFrame = local_7c.previous;
       return 0;
@@ -147,10 +148,10 @@ int __thiscall STParticleC::GetMessage(STParticleC *this,STMessage *message)
     return 0;
   }
   if ((local_10[2].field_0x46 == '\0') && (local_10->field_0x40 != '\0')) {
-    uVar10 = thunk_FUN_0062b4a0((int)local_10);
+    uVar10 = sub_0062B4A0((STParticleC *)local_10);
     this_00[2].field_0x46 = (char)uVar10;
     if ((char)uVar10 != '\0') {
-      thunk_FUN_00629e60(this_00,0);
+      sub_00629E60((STParticleC *)this_00,0);
     }
   }
   switch(*(undefined4 *)((int)&this_00[2].field_0030 + 2)) {
@@ -245,10 +246,10 @@ LAB_00628286:
     }
     break;
   case 2:
-    iVar9 = thunk_FUN_0062a370(this_00,PTR_00802a38->field_00E4);
+    iVar9 = sub_0062A370((STParticleC *)this_00,g_playSystem_00802A38->field_00E4);
     if (iVar9 < 1) {
-      thunk_FUN_00629830((AnonShape_00629830_F056CE49 *)this_00);
-      uVar10 = thunk_FUN_0062b4a0((int)this_00);
+      sub_00629830((STParticleC *)this_00);
+      uVar10 = sub_0062B4A0((STParticleC *)this_00);
       this_00[2].field_0x46 = (char)uVar10;
       if ((char)uVar10 == '\0') {
         InitVisibelDeton((STParticleC *)this_00,0);
@@ -270,8 +271,8 @@ LAB_00628286:
       g_currentExceptionFrame = local_7c.previous;
       return 0;
     }
-    uVar10 = PTR_00802a38->field_00E4 - *(int *)&this_00[2].field_0x1a;
-    if ((this_00[2].field_0x46 != '\0') && ((PTR_00802a38->field_00E4 & 1) == 0)) {
+    uVar10 = g_playSystem_00802A38->field_00E4 - *(int *)&this_00[2].field_0x1a;
+    if ((this_00[2].field_0x46 != '\0') && ((g_playSystem_00802A38->field_00E4 & 1) == 0)) {
       if ((*(uint *)&this_00->field_0014 & 0xff00) == 0x400) {
         iVar9 = *(int *)&this_00[1].field_0x6;
         if (*(int *)&this_00[1].field_0x12 + 5 <= iVar9) goto LAB_0062838a;
@@ -290,9 +291,9 @@ LAB_006283bd:
       *piVar1 = *piVar1 + 1;
     }
     else if (uVar10 < 0x2d) {
-      if ((PTR_00802a38->field_00E4 & 1) == 0) goto LAB_006283bd;
+      if ((g_playSystem_00802A38->field_00E4 & 1) == 0) goto LAB_006283bd;
     }
-    else if (PTR_00802a38->field_00E4 % 3 == 0) goto LAB_006283bd;
+    else if (g_playSystem_00802A38->field_00E4 % 3 == 0) goto LAB_006283bd;
     if (*(int *)((int)&this_00[2].field_0024 + 2) <= *(int *)((int)&this_00[2].field_0020 + 2)) {
       *(undefined4 *)((int)&this_00[2].field_0020 + 2) = 0;
     }
@@ -373,7 +374,7 @@ LAB_006282e0:
     }
     uVar10 = *(uint *)((int)&this_00[2].field_0020 + 2);
     if (*(int *)((int)&this_00[2].field_0028 + 2) <= (int)uVar10) {
-      thunk_FUN_0062a860((int)this_00);
+      sub_0062A860((STParticleC *)this_00);
       *(undefined4 *)((int)&this_00[2].field_0030 + 2) = 0;
       g_currentExceptionFrame = local_7c.previous;
       return 0;

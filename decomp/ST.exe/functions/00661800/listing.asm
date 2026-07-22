@@ -1,4 +1,4 @@
-FUN_00661800:
+AiFltClassTy::sub_00661800:
 00661800  55                        PUSH EBP
 00661801  8B EC                     MOV EBP,ESP
 00661803  83 EC 08                  SUB ESP,0x8

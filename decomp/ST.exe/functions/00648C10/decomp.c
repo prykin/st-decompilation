@@ -26,8 +26,8 @@ void __cdecl StartStrateg(ushort *strategData,uint param_2)
   g_currentExceptionFrame = &local_50;
   errorCode = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0);
   if (errorCode == 0) {
-    if ((((PTR_00802a38 == (STPlaySystemC *)0x0) || (strategData == (ushort *)0x0)) || (7 < param_2)
-        ) || (7 < (byte)(&DAT_008087e9)[param_2 * 0x51])) {
+    if ((((g_playSystem_00802A38 == (STPlaySystemC *)0x0) || (strategData == (ushort *)0x0)) ||
+        (7 < param_2)) || (7 < (byte)(&DAT_008087e9)[param_2 * 0x51])) {
       RaiseInternalException
                 (-0x34,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_creat.cpp",0x49);
     }
@@ -41,8 +41,8 @@ void __cdecl StartStrateg(ushort *strategData,uint param_2)
     *(undefined2 *)((int)strategData + 0x69) = *(undefined2 *)((int)&DAT_008087ef + param_2 * 0x51);
     *(undefined2 *)((int)strategData + 0x6b) = *(undefined2 *)((int)&DAT_008087f3 + param_2 * 0x51);
     Library::Ourlib::SAPP::FUN_006e6200
-              (PTR_00802a38,0x402,(undefined4 *)(param_2 + 0x29),(undefined4 *)0x0,(int *)0x0,
-               strategData,0);
+              (g_playSystem_00802A38,0x402,(undefined4 *)(param_2 + 0x29),(undefined4 *)0x0,
+               (int *)0x0,strategData,0);
     if (local_c != 0) {
       thunk_FUN_0067d160((int *)&local_8);
     }

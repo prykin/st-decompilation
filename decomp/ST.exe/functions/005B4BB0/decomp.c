@@ -36,7 +36,7 @@ int __thiscall MainMenuTy::GetMessage(MainMenuTy *this,STMessage *message)
   MainMenuTy *local_8;
 
   local_8 = this;
-  DVar4 = FUN_006e51b0(this->field_0010);
+  DVar4 = STAppC::sub_006E51B0(this->field_0010);
   this->field_0061 = DVar4;
   local_8c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_8c;
@@ -52,7 +52,7 @@ int __thiscall MainMenuTy::GetMessage(MainMenuTy *this,STMessage *message)
     RaiseInternalException(iVar5,0,"E:\\__titans\\Start\\main_obj.cpp",0x241);
     return 0xffff;
   }
-  thunk_FUN_005b6450(local_8,(int)message);
+  thunk_FUN_005b6450(local_8,message);
   SVar1 = message->id;
   if ((SVar1 < MESS_SHARED_697F) || (0x69fe < SVar1)) goto switchD_005b4c27_default;
   uVar8 = (undefined3)(SVar1 - MESS_SHARED_697F >> 8);
@@ -94,7 +94,7 @@ switchD_005b4c27_default:
   if (SVar1 < MESS_FSGSTY_6903) {
     if (SVar1 == MESS_MAINMENUTY_6902) {
       if (this_00->field_1EE3 == '\0') {
-        thunk_FUN_005b4860((AnonShape_005B47E0_F4E5CF5A *)this_00);
+        sub_005B4860(this_00);
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
         (**(code **)(*(int *)this_00->field_000C + 0x10))(0x309,0);
         goto cf_common_exit_005B4EEC;
@@ -128,8 +128,8 @@ switchD_005b4c27_default:
       }
       else if (SVar1 == MESS_SHARED_6900) {
         if ((this_00->field_1EE3 == '\0') &&
-           ((PTR_0081176c == (StartSystemTy *)0x0 || (PTR_0081176c->field_068A == 0))))
-        goto cf_common_exit_005B4EEC;
+           ((g_startSystem_0081176C == (StartSystemTy *)0x0 ||
+            (g_startSystem_0081176C->field_068A == 0)))) goto cf_common_exit_005B4EEC;
         this_00->field_1A5A = 1;
       }
       else {
@@ -177,14 +177,14 @@ LAB_005b4df8:
                                (undefined4 *)0x0,0,0);
     if (iVar5 == 0) break;
   case MESS_SHARED_6940:
-    thunk_FUN_005b4860((AnonShape_005B47E0_F4E5CF5A *)this_00);
+    sub_005B4860(this_00);
     break;
   case MESS_PRIVIDERTY_693F:
-    thunk_FUN_005b47e0((AnonShape_005B47E0_F4E5CF5A *)this_00);
+    sub_005B47E0(this_00);
     break;
   case MESS_FSGSTY_6941:
     if (this_00->field_1EE3 == '\0') {
-      thunk_FUN_005b47e0((AnonShape_005B47E0_F4E5CF5A *)this_00);
+      sub_005B47E0(this_00);
       this_00->field_1A5A = 4;
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
       (**(code **)(this_00->field_0000 + 8))();

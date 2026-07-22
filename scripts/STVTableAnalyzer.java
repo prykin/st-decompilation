@@ -684,7 +684,7 @@ public class STVTableAnalyzer extends GhidraScript {
         String normalized = value.toUpperCase(Locale.ROOT)
             .replace("DWORD PTR ", "").replace("QWORD PTR ", "")
             .replace("WORD PTR ", "").replace("BYTE PTR ", "")
-            .replace(" ", "");
+            .replace(" ", "").replace("+-", "-").replace("-+", "-");
         Matcher matcher = MEMORY_OPERAND.matcher(normalized);
         if (!matcher.matches()) return null;
         long displacement = 0;
@@ -731,15 +731,15 @@ public class STVTableAnalyzer extends GhidraScript {
 
     private void writeProposalsTsv(Path path, List<Candidate> candidates) throws Exception {
         try (BufferedWriter out = Files.newBufferedWriter(path, StandardCharsets.UTF_8)) {
-            out.write("apply\tlayout_apply\tlayout_name\ttable_address\tproposed_name\towner\t" +
+            out.write("apply\tlayout_apply\tlayout_name\tproposed_name\towner\t" +
                 "slot_count\tnamed_slot_count\t" +
                 "confidence\treason\tstrong_vptr_refs\tall_code_refs\tslot_owners\t" +
                 "constructor_owners\tvptr_writer_owners\tprimary_vptr_store\t" +
-                "this_vptr_offsets\trelated_tables\n");
+                "this_vptr_offsets\trelated_tables\ttable_address\n");
             for (Candidate candidate : candidates) {
                 out.write((candidate.apply ? "1" : "0") + "\t" +
                     (candidate.layoutApply() ? "1" : "0") + "\t" +
-                    "VTable_" + addr(candidate.address) + "\t" + addr(candidate.address) + "\t" +
+                    "VTable_" + addr(candidate.address) + "\t" +
                     tsv(candidate.proposedName) + "\t" + tsv(candidate.owner) + "\t" +
                     candidate.slots.size() + "\t" + candidate.namedSlotCount() + "\t" +
                     candidate.confidence + "\t" + candidate.reason + "\t" +
@@ -750,7 +750,8 @@ public class STVTableAnalyzer extends GhidraScript {
                     tsv(String.join(" | ", candidate.vptrWriterOwners)) + "\t" +
                     (candidate.hasPrimaryVptrStore() ? "1" : "0") + "\t" +
                     tsv(candidate.thisVptrOffsets()) + "\t" +
-                    tsv(String.join(" | ", candidate.relatedTables)) + "\n");
+                    tsv(String.join(" | ", candidate.relatedTables)) + "\t" +
+                    addr(candidate.address) + "\n");
             }
         }
     }

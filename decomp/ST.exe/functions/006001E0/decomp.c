@@ -22,7 +22,7 @@ uint __thiscall FUN_006001e0(void *this,int param_1)
        *(undefined2 *)(iVar5 + 8 + *(int *)((int)this + 0x233));
   *(undefined2 *)(iVar5 + *(int *)((int)this + 0x233) + 0x16) =
        *(undefined2 *)(iVar5 + 10 + *(int *)((int)this + 0x233));
-  if (((PTR_00802a38->field_00E4 & 1) == 0) &&
+  if (((g_playSystem_00802A38->field_00E4 & 1) == 0) &&
      (iVar3 = *(int *)((int)this + 0x233) + iVar5,
      0x31 < (int)*(short *)(iVar3 + 4) - (int)*(short *)(iVar3 + 10))) {
     TraksClassTy::TraksCreate
@@ -42,8 +42,8 @@ uint __thiscall FUN_006001e0(void *this,int param_1)
          *(undefined2 *)(*(int *)(iVar5 + 0x4e + iVar3) + 4 + *(int *)(iVar5 + 0x4a + iVar3) * 6);
   }
   else {
-    iVar3 = thunk_FUN_005fe280(psVar1,PTR_00802a38->field_00E4,(int *)local_c,(int *)local_10,
-                               (int *)local_14);
+    iVar3 = thunk_FUN_005fe280(psVar1,g_playSystem_00802A38->field_00E4,(int *)local_c,
+                               (int *)local_10,(int *)local_14);
     if (iVar3 == 0) goto LAB_0060033c;
     *(undefined2 *)(iVar5 + 6 + *(int *)((int)this + 0x233)) = local_c[0];
     *(undefined2 *)(iVar5 + 8 + *(int *)((int)this + 0x233)) = local_10[0];

@@ -39,7 +39,7 @@ AiEventClassTy::_CreateRCCont
     RaiseInternalException(iVar3,0,"E:\\__titans\\ai\\ai_event.cpp",0xef);
     return iVar3;
   }
-  if (g_sTAllPlayers_007FA174 != (STAllPlayersC *)0x0) {
+  if (g_allPlayers_007FA174 != (STAllPlayersC *)0x0) {
     if ((((param_2 == 0xdd) || (param_2 == 0xde)) || (param_2 == 0xe2)) || (param_2 == 0xdc)) {
       bVar2 = true;
     }

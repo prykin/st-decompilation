@@ -1,5 +1,10 @@
 
-undefined4 __thiscall FUN_004eb010(void *this,int param_1)
+/* [STMethodOwnerApplier] Structural method owner recovered as STAllPlayersC.
+   Evidence: this_call_owners=[STAllPlayersC]; agreed_this_calls=1; incoming_this_accesses=2;
+   incoming_edx_uses=0; incoming_stack_parameter_uses=3; direct_non_thunk_callers=0;
+   incoming_ecx_receiver_callers=0; attributed_named_callers=1; owner_evidence_coverage=adequate */
+
+undefined4 __thiscall STAllPlayersC::sub_004EB010(STAllPlayersC *this,int param_1)
 
 {
   undefined4 uVar1;
@@ -33,8 +38,8 @@ undefined4 __thiscall FUN_004eb010(void *this,int param_1)
         iVar2 = *(int *)(&DAT_007c15c0 +
                         (local_10 + (local_8 + g_playerRuntime[param_1].field2159_0x9c6 * 2) * 2) *
                         8);
-        uVar3 = *(int *)((int)this + 0x1c) * 0x41c64e6d + 0x3039;
-        *(uint *)((int)this + 0x1c) = uVar3;
+        uVar3 = this->field_001C * 0x41c64e6d + 0x3039;
+        this->field_001C = uVar3;
         iVar2 = iVar2 + (uVar3 >> 0x10) % ((iVar5 - iVar2) + 1U);
         *(int *)(iVar4 + 0x7f57c6 + iVar6) = iVar2;
         *(int *)(iVar4 + 0x7f57c2 + iVar6) = iVar2;
@@ -47,7 +52,7 @@ undefined4 __thiscall FUN_004eb010(void *this,int param_1)
     local_10 = 0;
     local_8 = iVar5;
   }
-  g_playerRuntime[param_1].field2158_0x9c2 = PTR_00802a38->field_00E4;
+  g_playerRuntime[param_1].field2158_0x9c2 = g_playSystem_00802A38->field_00E4;
   return 0;
 }
 

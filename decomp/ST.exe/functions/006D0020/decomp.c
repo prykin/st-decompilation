@@ -1,9 +1,12 @@
 
 /* [STPrototypeApplier] Propagated parameter 0.
    Evidence: 006D0020 -> 006CE8C0 @ 006D00B5 | 006D0020 -> EXTERNAL:0000009F @ 006D00AA | 006D0020
-   -> EXTERNAL:000000A2 @ 006D005D | 006D0020 -> EXTERNAL:000000B5 @ 006D006A */
+   -> EXTERNAL:000000A2 @ 006D005D | 006D0020 -> EXTERNAL:000000B5 @ 006D006A
 
-void FUN_006d0020(HDC hdc,undefined4 param_2,undefined4 param_3,int param_4,int param_5,int param_6,
+   [STPrototypeApplier] Propagated parameter 3.
+   Evidence: 006D0020 -> EXTERNAL:0000009F @ 006D00AA */
+
+void FUN_006d0020(HDC hdc,undefined4 param_2,undefined4 param_3,LPRECT lprc,int param_5,int param_6,
                  int param_7,int param_8)
 
 {
@@ -30,8 +33,8 @@ void FUN_006d0020(HDC hdc,undefined4 param_2,undefined4 param_3,int param_4,int 
     else {
       SetBkColor(hdc,color);
     }
-    local_14.left = param_4;
-    local_14.right = param_4 + param_6;
+    local_14.left = (LONG)lprc;
+    local_14.right = (int)&lprc->left + param_6;
     local_14.top = param_5;
     local_14.bottom = param_5 + param_7;
     lpchText = (LPCSTR)(iVar3 + 0x18);

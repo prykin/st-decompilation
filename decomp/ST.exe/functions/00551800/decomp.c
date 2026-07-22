@@ -31,7 +31,7 @@ void __fastcall FUN_00551800(AnonShape_00551800_EBA95FA4 *param_1)
     param_1->field_002C = 0;
     goto LAB_00551a54;
   }
-  if ((iVar1 == 0) || (g_sTAllPlayers_007FA174 == (STAllPlayersC *)0x0)) goto LAB_005519bc;
+  if ((iVar1 == 0) || (g_allPlayers_007FA174 == (STAllPlayersC *)0x0)) goto LAB_005519bc;
   param_1->field_0028 = 0x21;
   FUN_006e6080(param_1,2,iVar1,(undefined4 *)&param_1->field_0x18);
   iVar1 = param_1->field_002C;
@@ -84,7 +84,7 @@ LAB_005519bc:
   if (param_1->field_01CC == 0) {
     return;
   }
-  if (g_sTAllPlayers_007FA174 == (STAllPlayersC *)0x0) {
+  if (g_allPlayers_007FA174 == (STAllPlayersC *)0x0) {
     return;
   }
   param_1->field_0028 = 0x21;

@@ -1,0 +1,4 @@
+00558D4C  pointer  00558c18
+00558D50  pointer  00558c69
+00558D54  pointer  00558c94
+00558D58  pointer  00558cef

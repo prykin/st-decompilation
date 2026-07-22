@@ -1,15 +1,19 @@
 
-void __fastcall FUN_005bb9f0(AnonShape_005BB9F0_E38C41BB *param_1)
+/* [STMethodOwnerApplier] Structural method owner recovered as PrividerTy.
+   Evidence: this_call_owners=[PrividerTy]; agreed_this_calls=1; incoming_this_accesses=7;
+   incoming_edx_uses=0; incoming_stack_parameter_uses=0; direct_non_thunk_callers=0;
+   incoming_ecx_receiver_callers=0; attributed_named_callers=1; owner_evidence_coverage=adequate */
+
+void __thiscall PrividerTy::sub_005BB9F0(PrividerTy *this)
 
 {
-  param_1->field_1A65 = 1;
-  param_1->field_0029 = 2;
-  param_1->field_002D = 0x20;
-  if (param_1->field_1A73 != 0) {
-    param_1->field_0025 = param_1->field_1A73;
-    param_1->field_0031 = 1;
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-    (**(code **)(*param_1->field_000C + 0x18))(&param_1->field_0x1d);
+  *(undefined4 *)&this->field_0x1a65 = 1;
+  *(undefined4 *)&this->field_0x29 = 2;
+  this->field_002D = 0x20;
+  if (this->field_1A73 != 0) {
+    *(undefined4 *)&this->field_0x25 = this->field_1A73;
+    this->field_0031 = 1;
+    (*this->field_000C->vtable->vfunc_18)(&this->field_0x1d);
   }
   return;
 }

@@ -27,10 +27,10 @@ HelpPanelTy::DrawObj(HelpPanelTy *this,int *param_1,int param_2,byte param_3,int
   iVar3 = Library::MSVCRT::__setjmp3(local_58.jumpBuffer,0);
   pHVar2 = local_10;
   if (iVar3 == 0) {
-    if (g_sTAllPlayers_007FA174 != (STAllPlayersC *)0x0) {
+    if (g_allPlayers_007FA174 != (STAllPlayersC *)0x0) {
       *param_1 = *param_1 + 2;
       local_8 = (AnonShape_00515650_BBDC7053 *)
-                STAllPlayersC::GetTOBJImage(g_sTAllPlayers_007FA174,(uint)param_3,param_2);
+                STAllPlayersC::GetTOBJImage(g_allPlayers_007FA174,(uint)param_3,param_2);
       if (local_8 != (AnonShape_00515650_BBDC7053 *)0x0) {
         local_14 = local_8->field_0004;
         local_c = local_8->field_0008;
@@ -39,7 +39,7 @@ HelpPanelTy::DrawObj(HelpPanelTy *this,int *param_1,int param_2,byte param_3,int
                   ((AnonShape_006B5B10_E0D06CF1 *)pHVar2->field_0218,0,iVar3,*param_1,
                    (byte *)pHVar2->field_021C,0,(*(int *)(pHVar2->field_021C + 2) - local_14) / 2,
                    (*(int *)(pHVar2->field_021C + 4) - local_c) / 2,local_14,local_c);
-        FUN_006b5440((int)pHVar2->field_0218,0,iVar3,*param_1,(int)local_8,0,0xff);
+        FUN_006b5440((int)pHVar2->field_0218,0,iVar3,*param_1,(uint)local_8,0,0xff);
         FUN_006b5ee0((AnonShape_006B5B10_E0D06CF1 *)pHVar2->field_0218,0,iVar3 + -2,*param_1 + -2,
                      local_14 + 4,local_c + 4,0x6f,0xd);
         *param_1 = *param_1 + local_c + 10;

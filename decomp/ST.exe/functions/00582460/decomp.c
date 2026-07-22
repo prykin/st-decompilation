@@ -36,8 +36,7 @@ FUN_00582460(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4
   local_44[3] = 1;
   local_10 = 0;
   local_8 = param_12;
-  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-  (*(code *)PTR_00802a38->vtable->field_0008)(0x137,0,&param_9,local_44,0);
+  (*g_playSystem_00802A38->vtable->vfunc_08)(0x137,0,&param_9,local_44,0);
   return param_9;
 }
 

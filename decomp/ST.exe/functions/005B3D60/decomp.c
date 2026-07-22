@@ -86,10 +86,10 @@ void __thiscall MainMenuTy::SetMode(MainMenuTy *this,char param_1,int param_2)
     cVar13 = CASE_FFFFFFFE;
     iVar12 = 0x28;
     iVar6 = 0x8c;
-    puVar3 = (uint *)LoadResourceString(0x2334,HINSTANCE_00807618);
+    puVar3 = (uint *)LoadResourceString(0x2334,g_module_00807618);
     puVar8 = ccFntTy::CreateTypeSSpr
-                       (PTR_0081176c->field_0030,puVar3,iVar6,iVar12,cVar13,uVar14,iVar15,iVar16,
-                        iVar17);
+                       (g_startSystem_0081176C->field_0030,puVar3,iVar6,iVar12,cVar13,uVar14,iVar15,
+                        iVar16,iVar17);
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
     (**(code **)(iVar10 + 8))(puVar8,uVar19,uVar21);
     uVar21 = 0xffffffff;
@@ -103,10 +103,10 @@ void __thiscall MainMenuTy::SetMode(MainMenuTy *this,char param_1,int param_2)
     cVar13 = CASE_FFFFFFFE;
     iVar12 = 0x28;
     iVar6 = 0x8c;
-    puVar3 = (uint *)LoadResourceString(0x2335,HINSTANCE_00807618);
+    puVar3 = (uint *)LoadResourceString(0x2335,g_module_00807618);
     puVar8 = ccFntTy::CreateTypeSSpr
-                       (PTR_0081176c->field_0030,puVar3,iVar6,iVar12,cVar13,uVar14,iVar15,iVar16,
-                        iVar17);
+                       (g_startSystem_0081176C->field_0030,puVar3,iVar6,iVar12,cVar13,uVar14,iVar15,
+                        iVar16,iVar17);
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
     (**(code **)(iVar10 + 8))(puVar8,uVar19,uVar21);
     uVar21 = 0xffffffff;
@@ -120,10 +120,10 @@ void __thiscall MainMenuTy::SetMode(MainMenuTy *this,char param_1,int param_2)
     cVar13 = CASE_FFFFFFFE;
     iVar12 = 0x28;
     iVar6 = 0x8c;
-    puVar3 = (uint *)LoadResourceString(0x2332,HINSTANCE_00807618);
+    puVar3 = (uint *)LoadResourceString(0x2332,g_module_00807618);
     puVar8 = ccFntTy::CreateTypeSSpr
-                       (PTR_0081176c->field_0030,puVar3,iVar6,iVar12,cVar13,uVar14,iVar15,iVar16,
-                        iVar17);
+                       (g_startSystem_0081176C->field_0030,puVar3,iVar6,iVar12,cVar13,uVar14,iVar15,
+                        iVar16,iVar17);
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
     (**(code **)(iVar10 + 8))(puVar8,uVar19,uVar21);
     iVar10 = this_00->field_0765;
@@ -137,10 +137,10 @@ void __thiscall MainMenuTy::SetMode(MainMenuTy *this,char param_1,int param_2)
     this_00->field_06AD = 0x2333;
     iVar12 = 0x28;
     iVar6 = 0x8c;
-    puVar3 = (uint *)LoadResourceString(0x2333,HINSTANCE_00807618);
+    puVar3 = (uint *)LoadResourceString(0x2333,g_module_00807618);
     puVar8 = ccFntTy::CreateTypeSSpr
-                       (PTR_0081176c->field_0030,puVar3,iVar6,iVar12,cVar13,uVar14,iVar15,iVar16,
-                        iVar17);
+                       (g_startSystem_0081176C->field_0030,puVar3,iVar6,iVar12,cVar13,uVar14,iVar15,
+                        iVar16,iVar17);
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
     (**(code **)(iVar10 + 8))(puVar8,uVar19,uVar21);
     uVar21 = 0xffffffff;
@@ -154,10 +154,10 @@ void __thiscall MainMenuTy::SetMode(MainMenuTy *this,char param_1,int param_2)
     cVar13 = CASE_FFFFFFFE;
     iVar12 = 0x28;
     iVar6 = 0x8c;
-    puVar3 = (uint *)LoadResourceString(0x2336,HINSTANCE_00807618);
+    puVar3 = (uint *)LoadResourceString(0x2336,g_module_00807618);
     puVar8 = ccFntTy::CreateTypeSSpr
-                       (PTR_0081176c->field_0030,puVar3,iVar6,iVar12,cVar13,uVar14,iVar15,iVar16,
-                        iVar17);
+                       (g_startSystem_0081176C->field_0030,puVar3,iVar6,iVar12,cVar13,uVar14,iVar15,
+                        iVar16,iVar17);
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
     (**(code **)(iVar10 + 8))(puVar8,uVar19,uVar21);
     this_00->field_00C9 = this_00->field_0008;
@@ -177,19 +177,19 @@ void __thiscall MainMenuTy::SetMode(MainMenuTy *this,char param_1,int param_2)
     this_00->field_08BD = 0x7102;
     Library::DKW::DDX::FUN_006ba9e0(DAT_0080759c,0xe9,0x14,0x14c,0x18,0);
     uVar19 = 0;
-    pcVar20 = PTR_0081176c->field_0030;
+    pcVar20 = g_startSystem_0081176C->field_0030;
     uVar18 = 0xffffffff;
     uVar14 = 0xfffffffe;
-    puVar3 = (uint *)LoadResourceString(0x26ac,HINSTANCE_00807618);
+    puVar3 = (uint *)LoadResourceString(0x26ac,g_module_00807618);
     StartServTy::WrTextDDX(this_02,0,0xe9,0x14,0x14c,0x18,puVar3,uVar14,uVar18,pcVar20,uVar19);
     uVar9 = DAT_00807dd5 >> 0x10 & 0xff;
     uVar18 = DAT_00807dd5 & 0xffff;
     uVar14 = DAT_00807dd5 >> 0x18;
-    pcVar4 = LoadResourceString(0x2329,HINSTANCE_00807618);
+    pcVar4 = LoadResourceString(0x2329,g_module_00807618);
     wsprintfA((LPSTR)(this_00->field_1A5B + 0x3c),pcVar4,uVar14,uVar9,uVar18);
     StartServTy::WrTextDDX
               (this_00->field_1A5B + 0x3c,0,0,0x240,800,0x18,(uint *)(this_00->field_1A5B + 0x3c),
-               0xfffffffe,0xffffffff,PTR_0081176c->field_0034,0);
+               0xfffffffe,0xffffffff,g_startSystem_0081176C->field_0034,0);
   }
   else if (param_1 == '\x01') {
     uVar21 = 0xffffffff;
@@ -204,10 +204,10 @@ void __thiscall MainMenuTy::SetMode(MainMenuTy *this,char param_1,int param_2)
     cVar13 = CASE_FFFFFFFE;
     iVar12 = 0x28;
     iVar6 = 0x8c;
-    puVar3 = (uint *)LoadResourceString(0x233c,HINSTANCE_00807618);
+    puVar3 = (uint *)LoadResourceString(0x233c,g_module_00807618);
     puVar8 = ccFntTy::CreateTypeSSpr
-                       (PTR_0081176c->field_0030,puVar3,iVar6,iVar12,cVar13,uVar14,iVar15,iVar16,
-                        iVar17);
+                       (g_startSystem_0081176C->field_0030,puVar3,iVar6,iVar12,cVar13,uVar14,iVar15,
+                        iVar16,iVar17);
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
     (**(code **)(iVar10 + 8))(puVar8,uVar19,uVar21);
     uVar21 = 0xffffffff;
@@ -221,10 +221,10 @@ void __thiscall MainMenuTy::SetMode(MainMenuTy *this,char param_1,int param_2)
     cVar13 = CASE_FFFFFFFE;
     iVar12 = 0x28;
     iVar6 = 0x8c;
-    puVar3 = (uint *)LoadResourceString(0x233d,HINSTANCE_00807618);
+    puVar3 = (uint *)LoadResourceString(0x233d,g_module_00807618);
     puVar8 = ccFntTy::CreateTypeSSpr
-                       (PTR_0081176c->field_0030,puVar3,iVar6,iVar12,cVar13,uVar14,iVar15,iVar16,
-                        iVar17);
+                       (g_startSystem_0081176C->field_0030,puVar3,iVar6,iVar12,cVar13,uVar14,iVar15,
+                        iVar16,iVar17);
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
     (**(code **)(iVar10 + 8))(puVar8,uVar19,uVar21);
     uVar21 = 0xffffffff;
@@ -238,10 +238,10 @@ void __thiscall MainMenuTy::SetMode(MainMenuTy *this,char param_1,int param_2)
     cVar13 = CASE_FFFFFFFE;
     iVar12 = 0x28;
     iVar6 = 0x8c;
-    puVar3 = (uint *)LoadResourceString(0x233e,HINSTANCE_00807618);
+    puVar3 = (uint *)LoadResourceString(0x233e,g_module_00807618);
     puVar8 = ccFntTy::CreateTypeSSpr
-                       (PTR_0081176c->field_0030,puVar3,iVar6,iVar12,cVar13,uVar14,iVar15,iVar16,
-                        iVar17);
+                       (g_startSystem_0081176C->field_0030,puVar3,iVar6,iVar12,cVar13,uVar14,iVar15,
+                        iVar16,iVar17);
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
     (**(code **)(iVar10 + 8))(puVar8,uVar19,uVar21);
     iVar10 = this_00->field_0765;
@@ -255,10 +255,10 @@ void __thiscall MainMenuTy::SetMode(MainMenuTy *this,char param_1,int param_2)
     this_00->field_06AD = 0x233f;
     iVar12 = 0x28;
     iVar6 = 0x8c;
-    puVar3 = (uint *)LoadResourceString(0x233f,HINSTANCE_00807618);
+    puVar3 = (uint *)LoadResourceString(0x233f,g_module_00807618);
     puVar8 = ccFntTy::CreateTypeSSpr
-                       (PTR_0081176c->field_0030,puVar3,iVar6,iVar12,cVar13,uVar14,iVar15,iVar16,
-                        iVar17);
+                       (g_startSystem_0081176C->field_0030,puVar3,iVar6,iVar12,cVar13,uVar14,iVar15,
+                        iVar16,iVar17);
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
     (**(code **)(iVar10 + 8))(puVar8,uVar19,uVar21);
     uVar21 = 0xffffffff;
@@ -272,10 +272,10 @@ void __thiscall MainMenuTy::SetMode(MainMenuTy *this,char param_1,int param_2)
     cVar13 = CASE_FFFFFFFE;
     iVar12 = 0x28;
     iVar6 = 0x8c;
-    puVar3 = (uint *)LoadResourceString(0x2359,HINSTANCE_00807618);
+    puVar3 = (uint *)LoadResourceString(0x2359,g_module_00807618);
     puVar8 = ccFntTy::CreateTypeSSpr
-                       (PTR_0081176c->field_0030,puVar3,iVar6,iVar12,cVar13,uVar14,iVar15,iVar16,
-                        iVar17);
+                       (g_startSystem_0081176C->field_0030,puVar3,iVar6,iVar12,cVar13,uVar14,iVar15,
+                        iVar16,iVar17);
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
     (**(code **)(iVar10 + 8))(puVar8,uVar19,uVar21);
     bVar7 = 0;
@@ -316,10 +316,10 @@ void __thiscall MainMenuTy::SetMode(MainMenuTy *this,char param_1,int param_2)
     }
     Library::DKW::DDX::FUN_006ba9e0(DAT_0080759c,0xe9,0x14,0x14c,0x18,0);
     uVar19 = 0;
-    pcVar20 = PTR_0081176c->field_0030;
+    pcVar20 = g_startSystem_0081176C->field_0030;
     uVar18 = 0xffffffff;
     uVar14 = 0xfffffffe;
-    puVar3 = (uint *)LoadResourceString(0x26b0,HINSTANCE_00807618);
+    puVar3 = (uint *)LoadResourceString(0x26b0,g_module_00807618);
     StartServTy::WrTextDDX(this_01,0,0xe9,0x14,0x14c,0x18,puVar3,uVar14,uVar18,pcVar20,uVar19);
   }
   if (param_2 != 0) {
@@ -332,28 +332,28 @@ void __thiscall MainMenuTy::SetMode(MainMenuTy *this,char param_1,int param_2)
   FUN_006b5f80((int *)PTR_008075a8,0,0,g_nWidth_00806730,DAT_00806734);
   Library::DKW::DDX::FUN_006ba9e0(DAT_0080759c,0xe9,0x14,0x14c,0x18,0);
   if (this_00->field_1EE3 == '\0') {
-    pcVar20 = PTR_0081176c->field_0030;
+    pcVar20 = g_startSystem_0081176C->field_0030;
     resourceId = 0x26ac;
 LAB_005b4465:
     uVar19 = 0;
     uVar18 = 0xffffffff;
     uVar14 = 0xfffffffe;
-    puVar3 = (uint *)LoadResourceString(resourceId,HINSTANCE_00807618);
+    puVar3 = (uint *)LoadResourceString(resourceId,g_module_00807618);
     StartServTy::WrTextDDX(this_03,0,0xe9,0x14,0x14c,0x18,puVar3,uVar14,uVar18,pcVar20,uVar19);
   }
   else if (this_00->field_1EE3 == '\x01') {
-    pcVar20 = PTR_0081176c->field_0030;
+    pcVar20 = g_startSystem_0081176C->field_0030;
     resourceId = 0x26b0;
     goto LAB_005b4465;
   }
   uVar9 = DAT_00807dd5 >> 0x10 & 0xff;
   uVar18 = DAT_00807dd5 & 0xffff;
   uVar14 = DAT_00807dd5 >> 0x18;
-  pcVar4 = LoadResourceString(0x2329,HINSTANCE_00807618);
+  pcVar4 = LoadResourceString(0x2329,g_module_00807618);
   wsprintfA((LPSTR)(this_00->field_1A5B + 0x3c),pcVar4,uVar14,uVar9,uVar18);
   StartServTy::WrTextDDX
             (this_00->field_1A5B + 0x3c,0,0,0x240,800,0x18,(uint *)(this_00->field_1A5B + 0x3c),
-             0xfffffffe,0xffffffff,PTR_0081176c->field_0034,0);
+             0xfffffffe,0xffffffff,g_startSystem_0081176C->field_0034,0);
 LAB_005b44f1:
   local_8 = local_8 & 0xffffff00;
   if (this_00->field_009A != 0) {

@@ -15,7 +15,7 @@ undefined4 __thiscall FUN_004e96c0(void *this,int *param_1)
   thunk_FUN_004d0a80(DAT_00800bcc,*(int *)((int)this + 0x4e4),*(int *)((int)this + 0x4e8),
                      *(int *)((int)this + 0x4ec));
   *(undefined4 *)((int)this + 0x4e0) = 0;
-  iVar1 = FUN_006e62d0(PTR_00802a38,*(int *)((int)this + 0x4d8),(int *)&param_1);
+  iVar1 = FUN_006e62d0(g_playSystem_00802A38,*(int *)((int)this + 0x4d8),(int *)&param_1);
   if (iVar1 == 0) {
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
     iVar1 = (**(code **)(*param_1 + 0x2c))();

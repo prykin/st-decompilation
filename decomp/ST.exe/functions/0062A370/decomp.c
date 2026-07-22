@@ -1,13 +1,17 @@
 
-int __thiscall FUN_0062a370(void *this,int param_1)
+/* [STMethodOwnerApplier] Structural method owner recovered as STParticleC.
+   Evidence: this_call_owners=[STParticleC]; agreed_this_calls=1; incoming_this_accesses=33;
+   incoming_edx_uses=9; incoming_stack_parameter_uses=5; direct_non_thunk_callers=0;
+   incoming_ecx_receiver_callers=0; attributed_named_callers=1; owner_evidence_coverage=adequate */
+
+int __thiscall STParticleC::sub_0062A370(STParticleC *this,int param_1)
 
 {
   int iVar1;
-  undefined4 uVar2;
-  uint uVar3;
+  uint uVar2;
+  int iVar3;
   int iVar4;
   int iVar5;
-  int iVar6;
   int local_2c;
   undefined4 local_24;
   int local_20;
@@ -20,105 +24,103 @@ int __thiscall FUN_0062a370(void *this,int param_1)
   short local_6;
 
   local_2c = 0;
-  iVar4 = param_1 - *(int *)((int)this + 0xae);
-  iVar5 = *(int *)((int)this + 0x8e) * *(int *)((int)this + 0x9a) * iVar4;
+  iVar3 = param_1 - this->field_00AE;
+  iVar4 = this->field_008E * this->field_009A * iVar3;
   local_14 = 1;
-  param_1 = *(int *)((int)this + 0xa6) * 20000;
-  iVar6 = *(int *)((int)this + 0x8a) * *(int *)((int)this + 0x9a) * iVar4;
-  local_c = iVar5 / 10000 - (iVar5 * iVar4) / param_1;
-  iVar5 = iVar6 / 10000 +
-          ((iVar6 * iVar4) / param_1 - (iVar4 * iVar4) / (*(int *)((int)this + 0xa2) << 1)) +
-          *(int *)((int)this + 0x82);
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  iVar4 = (*(int *)((int)this + 0x92) * local_c) / 10000 + *(int *)((int)this + 0x7e);
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  local_10 = (*(int *)((int)this + 0x96) * local_c) / 10000 + *(int *)((int)this + 0x7a);
-  if ((*(uint *)((int)this + 0x14) & 0xff00) == 0x400) {
+  param_1 = this->field_00A6 * 20000;
+  iVar5 = this->field_008A * this->field_009A * iVar3;
+  local_c = iVar4 / 10000 - (iVar4 * iVar3) / param_1;
+  iVar4 = iVar5 / 10000 +
+          ((iVar5 * iVar3) / param_1 - (iVar3 * iVar3) / (int)(this->field_00A2 << 1)) +
+          this->field_0082;
+  iVar3 = (this->field_0092 * local_c) / 10000 + this->field_007E;
+  local_10 = (this->field_0096 * local_c) / 10000 + this->field_007A;
+  if ((this->field_0014 & 0xff00) == 0x400) {
     if (local_10 < 0) {
-      iVar6 = (short)(local_10 / 0xc9) + -1;
+      iVar5 = (short)(local_10 / 0xc9) + -1;
     }
     else {
-      iVar6 = (int)(short)(local_10 / 0xc9);
+      iVar5 = (int)(short)(local_10 / 0xc9);
     }
-    if (iVar6 == *(int *)((int)this + 0x5e)) {
-      if (iVar4 < 0) {
-        iVar6 = (short)(iVar4 / 0xc9) + -1;
+    if (iVar5 == this->field_005E) {
+      if (iVar3 < 0) {
+        iVar5 = (short)(iVar3 / 0xc9) + -1;
       }
       else {
-        iVar6 = (int)(short)(iVar4 / 0xc9);
+        iVar5 = (int)(short)(iVar3 / 0xc9);
       }
-      if (iVar6 == *(int *)((int)this + 0x5e)) {
-        if (iVar4 < 0) {
-          iVar6 = (short)(iVar4 / 200) + -1;
+      if (iVar5 == this->field_005E) {
+        if (iVar3 < 0) {
+          iVar5 = (short)(iVar3 / 200) + -1;
         }
         else {
-          iVar6 = (int)(short)(iVar4 / 200);
+          iVar5 = (int)(short)(iVar3 / 200);
         }
-        if (iVar6 == *(int *)((int)this + 0x66)) {
+        if (iVar5 == this->field_0066) {
           local_14 = 0;
         }
       }
     }
   }
-  uVar3 = SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00601500::thunk_FUN_00601500
-                    ((AnonReceiver_00601500 *)((int)this + 0xd7),local_10,iVar4,iVar5,
-                     *(int *)((int)this + 0x46),*(int *)((int)this + 0x4a),
-                     *(int *)((int)this + 0x4e),0xff,
-                     *(int *)(&DAT_007d0a1c + (uint)*(byte *)((int)this + 0x14) * 4),0,0xffff,0x14e,
-                     0,0);
-  if ((uVar3 == 0) || (local_14 == 0)) {
-    uVar2 = *(undefined4 *)((int)this + 0x4e);
-    *(int *)((int)this + 0x86) = *(int *)((int)this + 0x86) + local_c;
-    *(int *)((int)this + 0x4e) = iVar5;
-    *(undefined4 *)((int)this + 0x52) = *(undefined4 *)((int)this + 0x46);
-    *(undefined4 *)((int)this + 0x56) = *(undefined4 *)((int)this + 0x4a);
-    *(undefined4 *)((int)this + 0x5a) = uVar2;
-    *(int *)((int)this + 0x46) = local_10;
-    *(int *)((int)this + 0x4a) = iVar4;
+  uVar2 = SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00601500::thunk_FUN_00601500
+                    ((AnonReceiver_00601500 *)&this->field_0xd7,local_10,iVar3,iVar4,
+                     this->field_0046,this->field_004A,this->field_004E,0xff,
+                     *(int *)(&DAT_007d0a1c + (uint)*(byte *)&this->field_0014 * 4),0,0xffff,0x14e,0
+                     ,0);
+  if ((uVar2 == 0) || (local_14 == 0)) {
+    iVar5 = this->field_004E;
+    this->field_0086 = this->field_0086 + local_c;
+    this->field_004E = iVar4;
+    this->field_0052 = this->field_0046;
+    this->field_0056 = this->field_004A;
+    this->field_005A = iVar5;
+    this->field_0046 = local_10;
+    this->field_004A = iVar3;
     return 1;
   }
-  if (uVar3 == 2) {
+  if (uVar2 == 2) {
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-    if ((*(int **)((int)this + 0xeb) != (int *)0x0) &&
-       (iVar4 = (**(code **)(**(int **)((int)this + 0xeb) + 0xe0))
-                          (*(undefined4 *)((int)this + 0xef),(int)&param_1 + 2,&local_6,&local_8,
-                           &local_24), iVar4 == 0)) {
-      *(undefined4 *)((int)this + 0x52) = *(undefined4 *)((int)this + 0x46);
-      *(undefined4 *)((int)this + 0x56) = *(undefined4 *)((int)this + 0x4a);
-      *(undefined4 *)((int)this + 0x5a) = *(undefined4 *)((int)this + 0x4e);
-      *(int *)((int)this + 0x46) = (int)param_1._2_2_;
-      *(int *)((int)this + 0x4a) = (int)local_6;
-      *(int *)((int)this + 0x4e) = (int)local_8;
-      *(undefined4 *)((int)this + 0x76) = 2;
-      *(undefined4 *)((int)this + 0xf3) = local_24;
+    if ((this->field_00EB != (AnonPointee_STParticleC_00EB *)0x0) &&
+       (iVar3 = (**(code **)(this->field_00EB->field_0000 + 0xe0))
+                          (this->field_00EF,(int)&param_1 + 2,&local_6,&local_8,&local_24),
+       iVar3 == 0)) {
+      this->field_0052 = this->field_0046;
+      this->field_0056 = this->field_004A;
+      this->field_005A = this->field_004E;
+      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+      this->field_0046 = (int)param_1._2_2_;
+      this->field_004A = (int)local_6;
+      this->field_004E = (int)local_8;
+      this->field_0076 = 2;
+      this->field_00F3 = local_24;
       return 0;
     }
   }
-  else if (uVar3 == 1) {
-    iVar6 = *(int *)((int)this + 0x46);
-    *(int *)((int)this + 0x46) = local_10;
-    iVar6 = local_10 - iVar6;
-    iVar1 = *(int *)((int)this + 0x4a);
-    local_14 = iVar5 - *(int *)((int)this + 0x4e);
-    *(int *)((int)this + 0x4e) = iVar5;
-    *(int *)((int)this + 0x4a) = iVar4;
-    if (*(char *)((int)this + 0xc0) == '\0') {
+  else if (uVar2 == 1) {
+    iVar5 = this->field_0046;
+    this->field_0046 = local_10;
+    iVar5 = local_10 - iVar5;
+    iVar1 = this->field_004A;
+    local_14 = iVar4 - this->field_004E;
+    this->field_004E = iVar4;
+    this->field_004A = iVar3;
+    if (this->field_00C0 == '\0') {
       return -1;
     }
-    local_2c = thunk_FUN_0062a8b0(&local_20,&local_1c,&local_18,local_10,iVar4,
-                                  iVar5 - (uint)*(byte *)((int)this + 0xbe));
+    local_2c = thunk_FUN_0062a8b0(&local_20,&local_1c,&local_18,local_10,iVar3,
+                                  iVar4 - (uint)(byte)this->field_00BE);
     if ((local_2c < 1) && (local_14 < 1)) {
       if (-1 < local_2c) {
         return 0;
       }
-      uVar2 = *(undefined4 *)((int)this + 0x4e);
-      *(int *)((int)this + 0x86) = *(int *)((int)this + 0x86) + local_c;
-      *(undefined4 *)((int)this + 0x52) = *(undefined4 *)((int)this + 0x46);
-      *(int *)((int)this + 0x4e) = iVar5;
-      *(undefined4 *)((int)this + 0x56) = *(undefined4 *)((int)this + 0x4a);
-      *(undefined4 *)((int)this + 0x5a) = uVar2;
-      *(int *)((int)this + 0x46) = local_10;
-      *(int *)((int)this + 0x4a) = iVar4;
+      iVar5 = this->field_004E;
+      this->field_0086 = this->field_0086 + local_c;
+      this->field_0052 = this->field_0046;
+      this->field_004E = iVar4;
+      this->field_0056 = this->field_004A;
+      this->field_005A = iVar5;
+      this->field_0046 = local_10;
+      this->field_004A = iVar3;
       return 1;
     }
     if (-1 < local_2c) {
@@ -127,16 +129,16 @@ int __thiscall FUN_0062a370(void *this,int param_1)
         local_1c = 0;
         local_18 = -10000;
       }
-      local_2c = thunk_FUN_0062ab10(this,local_20,local_1c,local_18,iVar6,iVar4 - iVar1,local_14);
+      local_2c = thunk_FUN_0062ab10(this,local_20,local_1c,local_18,iVar5,iVar3 - iVar1,local_14);
       if (0 < local_2c) {
-        *(int *)((int)this + 0x86) = *(int *)((int)this + 0x86) + local_c;
-        *(undefined4 *)((int)this + 0x52) = *(undefined4 *)((int)this + 0x46);
-        uVar2 = *(undefined4 *)((int)this + 0x4e);
-        *(undefined4 *)((int)this + 0x56) = *(undefined4 *)((int)this + 0x4a);
-        *(int *)((int)this + 0x4e) = iVar5;
-        *(undefined4 *)((int)this + 0x5a) = uVar2;
-        *(int *)((int)this + 0x46) = local_10;
-        *(int *)((int)this + 0x4a) = iVar4;
+        this->field_0086 = this->field_0086 + local_c;
+        this->field_0052 = this->field_0046;
+        iVar5 = this->field_004E;
+        this->field_0056 = this->field_004A;
+        this->field_004E = iVar4;
+        this->field_005A = iVar5;
+        this->field_0046 = local_10;
+        this->field_004A = iVar3;
         return 1;
       }
     }

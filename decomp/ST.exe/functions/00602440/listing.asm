@@ -1,4 +1,4 @@
-FUN_00602440:
+STDestC::sub_00602440:
 00602440  55                        PUSH EBP
 00602441  8B EC                     MOV EBP,ESP
 00602443  83 EC 20                  SUB ESP,0x20

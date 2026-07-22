@@ -4,12 +4,11 @@ undefined4 __fastcall FUN_004d0670(int param_1)
 {
   char cVar1;
   int iVar2;
-  undefined4 uVar3;
+  uint uVar3;
   uint uVar4;
-  uint uVar5;
-  char *pcVar6;
+  char *pcVar5;
 
-  uVar5 = 0;
+  uVar4 = 0;
   /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   if ((*(int *)(param_1 + 0x4d0) == 3) || (*(int *)(param_1 + 0x4d0) == 2)) {
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
@@ -27,57 +26,57 @@ undefined4 __fastcall FUN_004d0670(int param_1)
         return 0;
       }
     }
-    uVar3 = thunk_FUN_004ab050();
-    uVar4 = 0;
-    switch(uVar3) {
+    iVar2 = thunk_FUN_004ab050();
+    uVar3 = 0;
+    switch(iVar2) {
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     case 0:
-      uVar5 = *(uint *)(&DAT_007a90b8 + *(int *)(param_1 + 0x369) * 0x10);
-      uVar4 = DAT_007a9438;
+      uVar4 = *(uint *)(&DAT_007a90b8 + *(int *)(param_1 + 0x369) * 0x10);
+      uVar3 = DAT_007a9438;
       break;
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     case 1:
-      uVar5 = *(uint *)(&DAT_007a90bc + *(int *)(param_1 + 0x369) * 0x10);
-      uVar4 = DAT_007a943c;
+      uVar4 = *(uint *)(&DAT_007a90bc + *(int *)(param_1 + 0x369) * 0x10);
+      uVar3 = DAT_007a943c;
       break;
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     case 2:
-      uVar5 = *(uint *)(&DAT_007a90c0 + *(int *)(param_1 + 0x369) * 0x10);
-      uVar4 = DAT_007a9440;
+      uVar4 = *(uint *)(&DAT_007a90c0 + *(int *)(param_1 + 0x369) * 0x10);
+      uVar3 = DAT_007a9440;
       break;
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     case 3:
-      uVar5 = *(uint *)(&DAT_007a90c4 + *(int *)(param_1 + 0x369) * 0x10);
-      uVar4 = DAT_007a9444;
+      uVar4 = *(uint *)(&DAT_007a90c4 + *(int *)(param_1 + 0x369) * 0x10);
+      uVar3 = DAT_007a9444;
     }
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-    thunk_FUN_004abce0(*(void **)(param_1 + 0x5ff),0xe,uVar5,uVar5,'\0');
+    thunk_FUN_004abce0(*(void **)(param_1 + 0x5ff),0xe,uVar4,uVar4,'\0');
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-    thunk_FUN_004abce0(*(void **)(param_1 + 0x5ff),0xc,uVar5,uVar5,'\0');
+    thunk_FUN_004abce0(*(void **)(param_1 + 0x5ff),0xc,uVar4,uVar4,'\0');
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-    STT3DSprC::SetCurFase(*(STT3DSprC **)(param_1 + 0x5ff),'\x0e',uVar5);
+    STT3DSprC::SetCurFase(*(STT3DSprC **)(param_1 + 0x5ff),'\x0e',uVar4);
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-    STT3DSprC::SetCurFase(*(STT3DSprC **)(param_1 + 0x5ff),'\f',uVar5);
+    STT3DSprC::SetCurFase(*(STT3DSprC **)(param_1 + 0x5ff),'\f',uVar4);
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-    STT3DSprC::StartShow(*(STT3DSprC **)(param_1 + 0x5ff),0xe,PTR_00802a38->field_00E4);
+    STT3DSprC::StartShow(*(STT3DSprC **)(param_1 + 0x5ff),0xe,g_playSystem_00802A38->field_00E4);
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-    STT3DSprC::StartShow(*(STT3DSprC **)(param_1 + 0x5ff),0xc,PTR_00802a38->field_00E4);
+    STT3DSprC::StartShow(*(STT3DSprC **)(param_1 + 0x5ff),0xc,g_playSystem_00802A38->field_00E4);
     iVar2 = -1;
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-    pcVar6 = (char *)((int)&DAT_007a9440 + *(int *)(param_1 + 0x369) * 6 + 2);
+    pcVar5 = (char *)((int)&DAT_007a9440 + *(int *)(param_1 + 0x369) * 6 + 2);
     do {
       if (iVar2 == 0) break;
       iVar2 = iVar2 + -1;
-      cVar1 = *pcVar6;
-      pcVar6 = pcVar6 + 1;
+      cVar1 = *pcVar5;
+      pcVar5 = pcVar5 + 1;
     } while (cVar1 != '\0');
     if (iVar2 != -2) {
       /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-      thunk_FUN_004abce0(*(void **)(param_1 + 0x5ff),0xd,uVar4,uVar4,'\0');
+      thunk_FUN_004abce0(*(void **)(param_1 + 0x5ff),0xd,uVar3,uVar3,'\0');
       /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-      STT3DSprC::SetCurFase(*(STT3DSprC **)(param_1 + 0x5ff),'\r',uVar4);
+      STT3DSprC::SetCurFase(*(STT3DSprC **)(param_1 + 0x5ff),'\r',uVar3);
       /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-      STT3DSprC::StartShow(*(STT3DSprC **)(param_1 + 0x5ff),0xd,PTR_00802a38->field_00E4);
+      STT3DSprC::StartShow(*(STT3DSprC **)(param_1 + 0x5ff),0xd,g_playSystem_00802A38->field_00E4);
     }
   }
   return 0;

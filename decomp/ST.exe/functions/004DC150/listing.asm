@@ -1,4 +1,4 @@
-FUN_004dc150:
+TLOBaseTy::sub_004DC150:
 004DC150  55                        PUSH EBP
 004DC151  8B EC                     MOV EBP,ESP
 004DC153  51                        PUSH ECX

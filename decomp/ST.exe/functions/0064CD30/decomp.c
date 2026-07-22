@@ -12,9 +12,9 @@ void __fastcall FUN_0064cd30(int param_1)
   }
   thunk_FUN_0065d030(pAVar1);
   /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  if (*(AnonShape_006B5570_4D68B99C **)(param_1 + 0x5b3) != (AnonShape_006B5570_4D68B99C *)0x0) {
+  if (*(DArrayTy **)(param_1 + 0x5b3) != (DArrayTy *)0x0) {
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-    FUN_006b5570(*(AnonShape_006B5570_4D68B99C **)(param_1 + 0x5b3));
+    FUN_006b5570(*(DArrayTy **)(param_1 + 0x5b3));
     *(undefined4 *)(param_1 + 0x5b3) = 0;
   }
   return;

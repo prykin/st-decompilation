@@ -38,7 +38,8 @@ undefined4 __thiscall FUN_005fada0(void *this,int param_1,uint param_2,int param
           param_2 = uVar1;
           uVar1 = thunk_FUN_004ad650((int)this + 0x1d5);
         }
-        FUN_006ea460(*(void **)((int)this + 0x211),uVar1,param_2);
+        SubmarineTitans::Recovered::HiddenThis::AnonReceiver_006EA050::sub_006EA460
+                  (*(AnonReceiver_006EA050 **)((int)this + 0x211),uVar1,param_2);
       }
     }
   }

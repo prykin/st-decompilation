@@ -1,0 +1,9 @@
+00577F60  pointer  00577a08
+00577F64  pointer  00577efa
+00577F68  pointer  00577efa
+00577F6C  pointer  00577b2b
+00577F70  pointer  00577efa
+00577F74  pointer  00577bb4
+00577F78  pointer  00577bb4
+00577F7C  pointer  00577d04
+00577F80  pointer  00577ecd

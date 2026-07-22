@@ -1,0 +1,14 @@
+00502E5C  pointer  00502b73
+00502E60  pointer  00502c40
+00502E64  pointer  00502d0f
+00502E68  byte  0h
+00502E69  byte  1h
+00502E6A  byte  2h
+00502E6B  byte  1h
+00502E6C  byte  2h
+00502E6D  byte  2h
+00502E6E  byte  2h
+00502E6F  byte  2h
+00502E70  byte  2h
+00502E71  byte  1h
+00502E72  byte  1h

@@ -5,7 +5,7 @@ void __fastcall FUN_0067be20(int param_1,undefined4 param_2,DArrayTy *param_3)
   uint uVar1;
   /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
   undefined4 in_EAX;
-  STFishC *objPtr;
+  STGameObjC *objPtr;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined2 extraout_var;
   undefined2 *puVar2;
@@ -25,16 +25,15 @@ void __fastcall FUN_0067be20(int param_1,undefined4 param_2,DArrayTy *param_3)
        (puVar2 = (undefined2 *)(param_3->elementSize * uVar1 + (int)param_3->data),
        puVar2 != (undefined2 *)0x0)) {
       /* ST_PSEUDO[unresolved_register_input,packed_or_unaligned_piece]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention; expected named packed member, bit extract/compose, or unaligned load */
-      objPtr = (STFishC *)
-               STAllPlayersC::GetObjPtr
-                         (g_sTAllPlayers_007FA174,*(char *)(local_8 + 0x640),
+      objPtr = STAllPlayersC::GetObjPtr
+                         (g_allPlayers_007FA174,*(char *)(local_8 + 0x640),
                           CONCAT22((short)((uint)in_EAX >> 0x10),*puVar2),CASE_1);
-      if (objPtr == (STFishC *)0x0) {
+      if (objPtr == (STGameObjC *)0x0) {
         /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
         in_EAX = FUN_006b0c70(param_3,uVar1);
       }
       else {
-        thunk_FUN_0067bda0(&local_14,objPtr);
+        thunk_FUN_0067bda0(&local_14,(STFishC *)objPtr);
         puVar2[2] = local_14;
         puVar2[3] = local_12;
         puVar2[4] = local_10;

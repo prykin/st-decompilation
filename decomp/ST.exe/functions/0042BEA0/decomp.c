@@ -123,8 +123,7 @@ LAB_0042bf8b:
   ;
 cf_common_exit_0042C072:
   pSVar4 = GetObjPtr(local_c,objPtr,param_6,local_8);
-  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-  (**(code **)&pSVar4->vtable[1].field_0x18)(1);
+  (*pSVar4->vtable[1].vfunc_14)(1);
   g_currentExceptionFrame = local_58.previous;
   return local_10;
 }

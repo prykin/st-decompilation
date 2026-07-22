@@ -10,8 +10,7 @@ undefined4 __fastcall FUN_004ec0f0(AnonShape_004EC0F0_C371FA68 *param_1)
 {
   int iVar1;
   uint uVar2;
-  undefined4 uVar3;
-  uint uVar4;
+  uint uVar3;
 
   iVar1 = STT3DSprC::LoadSequence
                     ((STT3DSprC *)param_1->field_05FF,0xe,DAT_00806774,
@@ -20,17 +19,18 @@ undefined4 __fastcall FUN_004ec0f0(AnonShape_004EC0F0_C371FA68 *param_1)
     RaiseInternalException
               (iVar1,g_overwriteContext_007ED77C,"E:\\__titans\\Artem\\TLO_trade.cpp",0x126);
   }
-  uVar4 = 10;
+  uVar3 = 10;
   iVar1 = thunk_FUN_004ad650((int)&param_1->field_0x1d5);
   uVar2 = thunk_FUN_004ad650(param_1->field_05FF);
-  FUN_006ea340(param_1->field_0211,uVar2,iVar1,uVar4);
-  thunk_FUN_004ad3c0((void *)param_1->field_05FF,
-                     (float)param_1->field_04FC * _DAT_007904f8 * _DAT_007904f0,
-                     (float)param_1->field_0500 * _DAT_007904f8 * _DAT_007904f0,
-                     (float)param_1->field_0504 * _DAT_007904f8 * _DAT_007904f0 + _DAT_007904fc);
-  uVar3 = thunk_FUN_004ab050();
+  FUN_006ea340(param_1->field_0211,uVar2,iVar1,uVar3);
+  STT3DSprC::sub_004AD3C0
+            ((STT3DSprC *)param_1->field_05FF,
+             (float)param_1->field_04FC * _DAT_007904f8 * _DAT_007904f0,
+             (float)param_1->field_0500 * _DAT_007904f8 * _DAT_007904f0,
+             (float)param_1->field_0504 * _DAT_007904f8 * _DAT_007904f0 + _DAT_007904fc);
+  iVar1 = thunk_FUN_004ab050();
   uVar2 = 0;
-  switch(uVar3) {
+  switch(iVar1) {
   case 0:
     uVar2 = DAT_0079aa90;
     break;
@@ -46,7 +46,7 @@ undefined4 __fastcall FUN_004ec0f0(AnonShape_004EC0F0_C371FA68 *param_1)
   thunk_FUN_004ad460((void *)param_1->field_05FF,1);
   thunk_FUN_004abce0((void *)param_1->field_05FF,0xe,uVar2,uVar2,'\0');
   STT3DSprC::SetCurFase((STT3DSprC *)param_1->field_05FF,'\x0e',uVar2);
-  STT3DSprC::StartShow((STT3DSprC *)param_1->field_05FF,0xe,PTR_00802a38->field_00E4);
+  STT3DSprC::StartShow((STT3DSprC *)param_1->field_05FF,0xe,g_playSystem_00802A38->field_00E4);
   return 0;
 }
 

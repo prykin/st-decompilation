@@ -17,12 +17,12 @@ uint FUN_0064e300(int param_1,char *param_2,undefined2 param_3,char param_4,unde
   uint local_20 [3];
   void *local_14;
   uint local_10;
-  undefined4 *local_c;
+  byte *local_c;
   AnonShape_GLOBAL_008489C4_F7BABFAC *local_8;
 
   local_10 = param_7;
   local_8 = (AnonShape_GLOBAL_008489C4_F7BABFAC *)0x0;
-  local_c = (undefined4 *)0x0;
+  local_c = (byte *)0x0;
   local_20[2] = 0xffffffff;
   local_20[1] = 0;
   local_14 = (void *)0x0;
@@ -52,7 +52,7 @@ uint FUN_0064e300(int param_1,char *param_2,undefined2 param_3,char param_4,unde
   *(uint *)&local_8->field_0x77 = uVar1;
   local_c = FltDataPack(local_8,local_20);
   thunk_FUN_006686c0((int *)&local_8);
-  STPlaySystemC::CreateGameObject(PTR_00802a38,900,local_20 + 1,&local_14,local_c,0);
+  STPlaySystemC::CreateGameObject(g_playSystem_00802A38,900,local_20 + 1,&local_14,local_c,0);
   thunk_FUN_006686c0((int *)&local_c);
   if (local_14 == (void *)0x0) {
     RaiseInternalException
@@ -65,7 +65,7 @@ uint FUN_0064e300(int param_1,char *param_2,undefined2 param_3,char param_4,unde
     local_20[2] = uVar1;
     array = (DArrayTy *)_GetStaffGrpExch(param_1);
     if (array != (DArrayTy *)0x0) {
-      thunk_FUN_0065d940(local_14,(uint *)array,0);
+      thunk_FUN_0065d940(local_14,array,0);
       DArrayDestroy(array);
       g_currentExceptionFrame = local_64.previous;
       return uVar1;

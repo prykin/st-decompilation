@@ -2,15 +2,17 @@
 
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+/* [STPrototypeRepairApplier] Propagated parameter 1.
+   Evidence: 006952B0 -> 006F13F0 @ 0069582E */
 
-int __thiscall FUN_006952b0(void *this,AnonShape_006952B0_7A982E30 *param_1,byte *param_2)
+int __thiscall FUN_006952b0(void *this,byte *param_1,byte *param_2)
 
 {
   int iVar1;
-  void *pvVar2;
-  int iVar3;
-  AnonShape_006952B0_7A982E30 *pAVar4;
-  undefined4 *puVar5;
+  CGenerate *this_00;
+  int iVar2;
+  byte *pbVar3;
+  undefined4 *puVar4;
   InternalExceptionFrame local_d4;
   DArrayTy *local_78;
   DArrayTy *local_74;
@@ -18,7 +20,7 @@ int __thiscall FUN_006952b0(void *this,AnonShape_006952B0_7A982E30 *param_1,byte
   undefined1 local_6c [24];
   DArrayTy *local_54;
   DArrayTy *local_50;
-  void *local_4c;
+  CGenerate *local_4c;
   DWORD local_48;
   int local_44;
   int local_40;
@@ -40,39 +42,45 @@ int __thiscall FUN_006952b0(void *this,AnonShape_006952B0_7A982E30 *param_1,byte
   local_c = 0;
   local_4c = this;
   Library::MSVCRT::FUN_0072e6b0(*(DWORD *)param_1);
-  pAVar4 = param_1;
-  puVar5 = (undefined4 *)((int)this + 0x1c);
-  for (iVar3 = 0x8c; iVar3 != 0; iVar3 = iVar3 + -1) {
-    *puVar5 = *(undefined4 *)pAVar4;
-    pAVar4 = (AnonShape_006952B0_7A982E30 *)&pAVar4->field_0x4;
-    puVar5 = puVar5 + 1;
+  pbVar3 = param_1;
+  puVar4 = (undefined4 *)((int)this + 0x1c);
+  for (iVar2 = 0x8c; iVar2 != 0; iVar2 = iVar2 + -1) {
+    *puVar4 = *(undefined4 *)pbVar3;
+    pbVar3 = pbVar3 + 4;
+    puVar4 = puVar4 + 1;
   }
-  *(undefined2 *)puVar5 = *(undefined2 *)pAVar4;
-  iVar3 = CGenerate::CreateMap(this);
-  thunk_FUN_0069ff90((int)this);
-  if (iVar3 != 0) {
+  *(undefined2 *)puVar4 = *(undefined2 *)pbVar3;
+  iVar2 = CGenerate::CreateMap(this);
+  CGenerate::sub_0069FF90(this);
+  if (iVar2 != 0) {
     local_10 = 1;
     local_48 = timeGetTime();
     local_3c = 0;
     local_70 = timeGetTime();
-    local_28 = param_1->field_0214;
-    iVar3 = thunk_FUN_00698f90(param_1->field_020C,param_1->field_0210,local_28,
-                               (uint)(byte)param_1->field_0x22d,(int *)&local_1c,&local_18);
-    if (iVar3 == 0) {
+    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
+    local_28 = *(uint *)(param_1 + 0x214);
+    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
+    iVar2 = thunk_FUN_00698f90(*(int *)(param_1 + 0x20c),*(int *)(param_1 + 0x210),local_28,
+                               (uint)param_1[0x22d],(int *)&local_1c,&local_18);
+    if (iVar2 == 0) {
       local_1c = local_28 * 3;
       local_18 = 1;
     }
-    local_30 = param_1->field_0225;
-    local_34 = param_1->field_0221;
-    local_44 = param_1->field_0210 * param_1->field_020C;
-    local_38 = param_1->field_0229;
+    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
+    local_30 = *(undefined4 *)(param_1 + 0x225);
+    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
+    local_34 = *(int *)(param_1 + 0x221);
+    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
+    local_44 = *(int *)(param_1 + 0x210) * *(int *)(param_1 + 0x20c);
+    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
+    local_38 = *(undefined4 *)(param_1 + 0x229);
     local_24 = local_44 / 500;
     local_2c = 5;
     local_20 = local_44 / 0x640;
     local_44 = local_44 / 3;
     local_8 = (void *)Library::DKW::LIB::FUN_006aac70(local_28 * 4);
     memset(&stack0xffffff70, 0, 0x20); /* compiler bulk-zero initialization */
-    iVar3 = 0;
+    iVar2 = 0;
     local_54 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,10,0x40,10);
     local_78 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,10,0x40,10);
     local_50 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,local_1c,0xf,10);
@@ -88,74 +96,74 @@ int __thiscall FUN_006952b0(void *this,AnonShape_006952B0_7A982E30 *param_1,byte
       CGenerate::CteateField
                 (this,**(int **)((int)this + 8) + -2,(*(int **)((int)this + 8))[1] + -2,local_34,
                  local_30,local_38,0);
-      thunk_FUN_0069ff90((int)this);
+      CGenerate::sub_0069FF90(this);
       thunk_FUN_00696790((int)this);
-      thunk_FUN_0069ff90((int)this);
+      CGenerate::sub_0069FF90(this);
       thunk_FUN_00696810(this);
-      thunk_FUN_0069ff90((int)this);
+      CGenerate::sub_0069FF90(this);
       thunk_FUN_00696740(this,0);
-      thunk_FUN_0069ff90((int)this);
-      iVar3 = thunk_FUN_006971b0((int)this);
-      *(int *)((int)this + 0x583f) = iVar3;
-      thunk_FUN_0069ff90((int)this);
+      CGenerate::sub_0069FF90(this);
+      iVar2 = thunk_FUN_006971b0((int)this);
+      *(int *)((int)this + 0x583f) = iVar2;
+      CGenerate::sub_0069FF90(this);
       thunk_FUN_00696dc0(this,*(int *)((int)this + 0x583f),local_2c);
-      thunk_FUN_0069ff90((int)this);
+      CGenerate::sub_0069FF90(this);
       thunk_FUN_00696940(this,*(int *)((int)this + 0x583f));
-      thunk_FUN_0069ff90((int)this);
+      CGenerate::sub_0069FF90(this);
       thunk_FUN_00695eb0(this);
-      thunk_FUN_0069ff90((int)this);
+      CGenerate::sub_0069FF90(this);
       CGenerate::CteateField
                 (this,**(int **)((int)this + 8),(*(int **)((int)this + 8))[1],local_34,local_30,
                  local_38,1);
-      thunk_FUN_0069ff90((int)this);
+      CGenerate::sub_0069FF90(this);
       thunk_FUN_00697390(this);
-      thunk_FUN_0069ff90((int)this);
+      CGenerate::sub_0069FF90(this);
       thunk_FUN_006975f0(this);
-      thunk_FUN_0069ff90((int)this);
+      CGenerate::sub_0069FF90(this);
       thunk_FUN_00695f20(this);
-      thunk_FUN_0069ff90((int)this);
+      CGenerate::sub_0069FF90(this);
       thunk_FUN_00697390(this);
-      thunk_FUN_0069ff90((int)this);
+      CGenerate::sub_0069FF90(this);
       thunk_FUN_00696740(this,1);
-      thunk_FUN_0069ff90((int)this);
+      CGenerate::sub_0069FF90(this);
       thunk_FUN_006978c0((int)this);
-      thunk_FUN_0069ff90((int)this);
+      CGenerate::sub_0069FF90(this);
       thunk_FUN_00695f20(this);
-      thunk_FUN_0069ff90((int)this);
+      CGenerate::sub_0069FF90(this);
       thunk_FUN_00697390(this);
-      thunk_FUN_0069ff90((int)this);
+      CGenerate::sub_0069FF90(this);
       thunk_FUN_00696740(this,1);
-      thunk_FUN_0069ff90((int)this);
+      CGenerate::sub_0069FF90(this);
       thunk_FUN_006988c0(this);
-      thunk_FUN_0069ff90((int)this);
+      CGenerate::sub_0069FF90(this);
       thunk_FUN_00697cf0(this,local_24,local_20);
-      thunk_FUN_0069ff90((int)this);
+      CGenerate::sub_0069FF90(this);
       Library::Ourlib::MFSTMAP::AuxTMapRefreshAll
                 (*(short **)((int)this + 0xc),*(int **)((int)this + 8));
-      thunk_FUN_0069ff90((int)this);
+      CGenerate::sub_0069FF90(this);
       thunk_FUN_0069b190(this,**(int **)((int)this + 8) << 1,(*(int **)((int)this + 8))[1] << 1,
                          local_34 + -1);
-      thunk_FUN_0069ff90((int)this);
+      CGenerate::sub_0069FF90(this);
       _DAT_00853dd0 = Library::MSVCRT::FUN_0072e6c0();
       /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
       local_6c._12_4_ =
            thunk_FUN_0069bdc0(this,local_28,10,10,4,0x23,(int)local_8,
                               (AnonShape_0069BDC0_B656F442 *)local_6c);
-      thunk_FUN_0069ff90((int)this);
+      CGenerate::sub_0069FF90(this);
       _DAT_00853dd0 = Library::MSVCRT::FUN_0072e6c0();
       /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
       local_6c._8_4_ =
            thunk_FUN_006991c0(this,**(int **)((int)this + 8) << 1,(*(int **)((int)this + 8))[1] << 1
                               ,local_1c,local_18,local_28,(int)local_8,local_34 + -1,
                               (AnonShape_006991C0_D95B9E4A *)local_6c);
-      thunk_FUN_0069ff90((int)this);
+      CGenerate::sub_0069FF90(this);
       _DAT_00853dd0 = Library::MSVCRT::FUN_0072e6c0();
       thunk_FUN_00695eb0(this);
-      thunk_FUN_0069ff90((int)this);
-      iVar3 = thunk_FUN_00695180((AnonShape_0052EFB0_8161B92D *)local_6c,
+      CGenerate::sub_0069FF90(this);
+      iVar2 = thunk_FUN_00695180((AnonShape_0052EFB0_8161B92D *)local_6c,
                                  (AnonShape_00695180_3C0E4B54 *)&stack0xffffff70,(int)&local_38,
                                  local_c);
-      if (iVar3 == 0) {
+      if (iVar2 == 0) {
         thunk_FUN_00694b90(this);
       }
       else {
@@ -176,30 +184,29 @@ int __thiscall FUN_006952b0(void *this,AnonShape_006952B0_7A982E30 *param_1,byte
       thunk_FUN_00694cd0(this,(AnonShape_00694CD0_AC50FDB9 *)&stack0xffffff70);
       _DAT_00853dd0 = Library::MSVCRT::FUN_0072e6c0();
       thunk_FUN_006a0470(this);
-      thunk_FUN_0069ff90((int)this);
+      CGenerate::sub_0069FF90(this);
       _DAT_00853dd0 = Library::MSVCRT::FUN_0072e6c0();
       thunk_FUN_0069cb50(this);
       _DAT_00853dd0 = Library::MSVCRT::FUN_0072e6c0();
-      iVar3 = **(int **)((int)this + 8);
+      iVar2 = **(int **)((int)this + 8);
       iVar1 = (*(int **)((int)this + 8))[1];
-      thunk_FUN_0069f160(this,iVar3 * 2,iVar1 * 2,local_34,(iVar3 * iVar1 * 4) / 100);
+      thunk_FUN_0069f160(this,iVar2 * 2,iVar1 * 2,local_34,(iVar2 * iVar1 * 4) / 100);
       local_40 = CGenerate::SaveMap(this);
-      thunk_FUN_0069ff90((int)this);
+      CGenerate::sub_0069FF90(this);
       if (DAT_00853dd4 != (undefined4 *)0x0) {
         FreeAndNull(&DAT_00853dd4);
       }
       local_d4.previous = g_currentExceptionFrame;
       g_currentExceptionFrame = &local_d4;
-      iVar3 = Library::MSVCRT::__setjmp3(local_d4.jumpBuffer,0);
-      pvVar2 = local_4c;
-      if (iVar3 == 0) {
+      iVar2 = Library::MSVCRT::__setjmp3(local_d4.jumpBuffer,0);
+      this_00 = local_4c;
+      if (iVar2 == 0) {
         if (param_2 != (byte *)0x0) {
-          /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-          cMf32::RecPut(*(cMf32 **)((int)local_4c + 0x18),0xc,PTR_s_GENERATE_RND_0079d774,
-                        (byte *)param_1,0x232,(undefined4 *)0x0,'\0',(uint *)0x0);
-          cMf32::RecPut(*(cMf32 **)((int)pvVar2 + 0x18),0xc,PTR_s_INTERFACE_RND_0079d778,param_2,0xd
-                        ,(undefined4 *)0x0,'\0',(uint *)0x0);
-          thunk_FUN_0069ff90((int)pvVar2);
+          cMf32::RecPut(local_4c->field_0018,0xc,PTR_s_GENERATE_RND_0079d774,param_1,0x232,
+                        (undefined4 *)0x0,'\0',(uint *)0x0);
+          cMf32::RecPut(this_00->field_0018,0xc,PTR_s_INTERFACE_RND_0079d778,param_2,0xd,
+                        (undefined4 *)0x0,'\0',(uint *)0x0);
+          CGenerate::sub_0069FF90(this_00);
         }
         g_currentExceptionFrame = local_d4.previous;
       }

@@ -1,4 +1,4 @@
-FUN_006479e0:
+STVolcanoC::sub_006479E0:
 006479E0  56                        PUSH ESI
 006479E1  8B F1                     MOV ESI,ECX
 006479E3  8B 46 5D                  MOV EAX,dword ptr [ESI + 0x5d]

@@ -1,4 +1,4 @@
-FUN_0052bda0:
+MoneyTy::sub_0052BDA0:
 0052BDA0  55                        PUSH EBP
 0052BDA1  8B EC                     MOV EBP,ESP
 0052BDA3  83 EC 08                  SUB ESP,0x8

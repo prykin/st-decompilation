@@ -1,4 +1,4 @@
-FUN_00555d90:
+TraksClassTy::sub_00555D90:
 00555D90  55                        PUSH EBP
 00555D91  8B EC                     MOV EBP,ESP
 00555D93  8B 91 28 08 00 00         MOV EDX,dword ptr [ECX + 0x828]

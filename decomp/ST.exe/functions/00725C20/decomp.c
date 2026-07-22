@@ -1,15 +1,18 @@
 
-undefined4 __cdecl FUN_00725c20(LPCSTR param_1,undefined4 param_2,char param_3)
+/* [STPrototypeApplier] Propagated parameter 0.
+   Evidence: 00725C20 -> EXTERNAL:00000006 @ 00725C39 */
+
+undefined4 __cdecl FUN_00725c20(LPCSTR lpPathName,undefined4 param_2,char param_3)
 
 {
   if (param_3 != '\0') {
     if (param_3 == '\x02') {
-      RemoveDirectoryA(param_1);
+      RemoveDirectoryA(lpPathName);
     }
     return 0;
   }
-  SetFileAttributesA(param_1,0);
-  DeleteFileA(param_1);
+  SetFileAttributesA(lpPathName,0);
+  DeleteFileA(lpPathName);
   return 0;
 }
 

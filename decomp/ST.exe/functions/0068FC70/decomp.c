@@ -1,8 +1,11 @@
 
 /* [STPrototypeRepairApplier] Propagated parameter 1.
-   Evidence: 00679F00 -> 0068FC70 @ 00679F51 | 00679F90 -> 0068FC70 @ 00679FBC */
+   Evidence: 00679F00 -> 0068FC70 @ 00679F51 | 00679F90 -> 0068FC70 @ 00679FBC
 
-undefined4 __thiscall FUN_0068fc70(void *this,int aiMess,short param_2)
+   [STPrototypeApplier] Propagated return.
+   Evidence: 0068FC70 returns forwarded through return of FUN_00679f00 @ 00679F57 */
+
+int __thiscall FUN_0068fc70(void *this,int aiMess,short param_2)
 
 {
   AiFltClassTy *this_00;

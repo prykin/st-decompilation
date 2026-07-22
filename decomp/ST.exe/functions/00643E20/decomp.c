@@ -89,7 +89,7 @@ undefined4 __fastcall FUN_00643e20(AnonShape_00643E20_B7FEAA75 *param_1,undefine
     if ((byte)param_1->field_027D < 8) {
       /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
       local_c = STAllPlayersC::GetObjPtr
-                          (g_sTAllPlayers_007FA174,param_1->field_0024,
+                          (g_allPlayers_007FA174,param_1->field_0024,
                            CONCAT22(uVar10,param_1->field_0262),CASE_1);
     }
     pSVar4 = local_c;
@@ -123,7 +123,7 @@ undefined4 __fastcall FUN_00643e20(AnonShape_00643E20_B7FEAA75 *param_1,undefine
         return 0xffffffff;
       }
       bVar8 = param_1->field_027C;
-      iVar11 = thunk_FUN_004acd30(puVar1,'\x01');
+      iVar11 = STT3DSprC::sub_004ACD30((STT3DSprC *)puVar1,'\x01');
       if ((int)(uint)bVar8 < iVar11) {
         iVar11 = STT3DSprC::SetCurFase((STT3DSprC *)puVar1,'\x01',(uint)bVar8);
         if (iVar11 != 0) {
@@ -134,13 +134,13 @@ undefined4 __fastcall FUN_00643e20(AnonShape_00643E20_B7FEAA75 *param_1,undefine
           return 0xffffffff;
         }
       }
-      iVar11 = thunk_FUN_004acd30(puVar1,'\x01');
+      iVar11 = STT3DSprC::sub_004ACD30((STT3DSprC *)puVar1,'\x01');
       if (iVar11 != (byte)param_1->field_027C - 1) goto cf_common_exit_0064428F;
     }
     else {
       bVar8 = param_1->field_027C;
       if (bVar8 < 0xf) {
-        iVar11 = FUN_006e62d0(PTR_00802a38,param_1->field_0274,(int *)&local_8);
+        iVar11 = FUN_006e62d0(g_playSystem_00802A38,param_1->field_0274,(int *)&local_8);
         if (iVar11 == -4) {
           param_1->field_027C = 0xfa;
           return 0;
@@ -156,7 +156,8 @@ undefined4 __fastcall FUN_00643e20(AnonShape_00643E20_B7FEAA75 *param_1,undefine
         param_1->field_0043 = (undefined2)local_14;
         if (local_24 == 0) {
           /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-          FUN_006ea460(param_1->field_0211,param_1->field_01ED,*(int *)((int)local_8 + 0x1ed));
+          SubmarineTitans::Recovered::HiddenThis::AnonReceiver_006EA050::sub_006EA460
+                    (param_1->field_0211,param_1->field_01ED,*(int *)((int)local_8 + 0x1ed));
         }
         else {
           /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
@@ -165,7 +166,7 @@ undefined4 __fastcall FUN_00643e20(AnonShape_00643E20_B7FEAA75 *param_1,undefine
         bVar8 = param_1->field_027C;
       }
       if (bVar8 == 0xf) {
-        iVar11 = FUN_006e62d0(PTR_00802a38,param_1->field_0274,(int *)&local_8);
+        iVar11 = FUN_006e62d0(g_playSystem_00802A38,param_1->field_0274,(int *)&local_8);
         if (iVar11 == -4) {
           param_1->field_027C = 0xfa;
           return 0;
@@ -183,7 +184,7 @@ undefined4 __fastcall FUN_00643e20(AnonShape_00643E20_B7FEAA75 *param_1,undefine
         return 0xffffffff;
       }
       bVar8 = param_1->field_027C;
-      iVar11 = thunk_FUN_004acd30(puVar1,'\x01');
+      iVar11 = STT3DSprC::sub_004ACD30((STT3DSprC *)puVar1,'\x01');
       if ((int)(uint)bVar8 < iVar11) {
         iVar11 = STT3DSprC::SetCurFase((STT3DSprC *)puVar1,'\x01',(uint)bVar8);
         if (iVar11 != 0) {
@@ -194,7 +195,7 @@ undefined4 __fastcall FUN_00643e20(AnonShape_00643E20_B7FEAA75 *param_1,undefine
           return 0xffffffff;
         }
       }
-      iVar11 = thunk_FUN_004acd30(puVar1,'\x01');
+      iVar11 = STT3DSprC::sub_004ACD30((STT3DSprC *)puVar1,'\x01');
       if (iVar11 != (byte)param_1->field_027C - 1) goto cf_common_exit_0064428F;
     }
     STT3DSprC::StopShow((STT3DSprC *)&param_1->field_0x1d5,1);

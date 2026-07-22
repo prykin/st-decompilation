@@ -1,0 +1,8 @@
+005C6A80  pointer  005c6239
+005C6A84  pointer  005c624b
+005C6A88  pointer  005c625a
+005C6A8C  pointer  005c6269
+005C6A90  pointer  005c6278
+005C6A94  pointer  005c629a
+005C6A98  pointer  005c62ba
+005C6A9C  pointer  005c62c9

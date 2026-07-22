@@ -1,14 +1,16 @@
 
-void __fastcall FUN_00605780(int param_1)
+/* [STMethodOwnerApplier] Structural method owner recovered as STExplosion.
+   Evidence: this_call_owners=[STExplosion]; agreed_this_calls=1; incoming_this_accesses=3;
+   incoming_edx_uses=0; incoming_stack_parameter_uses=0; direct_non_thunk_callers=0;
+   incoming_ecx_receiver_callers=0; attributed_named_callers=1; owner_evidence_coverage=adequate */
+
+void __thiscall STExplosion::sub_00605780(STExplosion *this)
 
 {
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  if (*(STT3DSprC **)(param_1 + 0x2af) != (STT3DSprC *)0x0) {
-    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-    thunk_FUN_004ad310(*(STT3DSprC **)(param_1 + 0x2af));
-    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-    Library::MSVCRT::FUN_0072e2b0(*(HoloTy **)(param_1 + 0x2af));
-    *(undefined4 *)(param_1 + 0x2af) = 0;
+  if ((STT3DSprC *)this->field_02AF != (STT3DSprC *)0x0) {
+    thunk_FUN_004ad310((STT3DSprC *)this->field_02AF);
+    Library::MSVCRT::FUN_0072e2b0((HoloTy *)this->field_02AF);
+    this->field_02AF = 0;
   }
   return;
 }

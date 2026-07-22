@@ -1,4 +1,4 @@
-FUN_004ef140:
+BldBoatPanelTy::sub_004EF140:
 004EF140  55                        PUSH EBP
 004EF141  8B EC                     MOV EBP,ESP
 004EF143  83 EC 10                  SUB ESP,0x10

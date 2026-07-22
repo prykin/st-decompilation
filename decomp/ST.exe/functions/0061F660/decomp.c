@@ -44,7 +44,7 @@ int __thiscall SndUnderAttMenegC::GetMessage(SndUnderAttMenegC *this,STMessage *
     do {
       if (*(char *)((int)piVar6 + -0x11) != '\0') {
         FUN_006e6780(PTR_00807598,iVar4);
-        iVar5 = PTR_00802a38->field_00E4 - piVar6[2];
+        iVar5 = g_playSystem_00802A38->field_00E4 - piVar6[2];
         fVar3 = (float)iVar5;
         local_c = fVar3 * (float)piVar6[1] * fVar3 * _DAT_00790784 +
                   ((float)(piVar6[-1] - iVar5 * *piVar6) * _DAT_007904f8 + _DAT_007904f4) *
@@ -64,14 +64,14 @@ int __thiscall SndUnderAttMenegC::GetMessage(SndUnderAttMenegC *this,STMessage *
     } while (iVar4 < 0xffffff0);
   }
   else if (SVar1 == MESS_ID_CREATE) {
-    if (DAT_007fb284 != 0) {
+    if (g_dumpClass_007FB284 != (DumpClassC *)0x0) {
       *(int *)&local_8->field_0x1c = (int)g_worldGrid.sizeX / 2;
       g_currentExceptionFrame = local_50.previous;
       return 0;
     }
   }
   else if (SVar1 == MESS_SHARED_0003) {
-    thunk_FUN_0061fcc0(local_8);
+    sub_0061FCC0((SndUnderAttMenegC *)local_8);
     g_currentExceptionFrame = local_50.previous;
     return 0;
   }

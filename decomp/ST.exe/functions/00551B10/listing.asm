@@ -1,4 +1,4 @@
-FUN_00551b10:
+TradePanelTy::sub_00551B10:
 00551B10  56                        PUSH ESI
 00551B11  8B F1                     MOV ESI,ECX
 00551B13  8B 86 C0 01 00 00         MOV EAX,dword ptr [ESI + 0x1c0]

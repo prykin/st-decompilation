@@ -107,7 +107,7 @@ int __thiscall SettMapMTy::GetMessage(SettMapMTy *this,STMessage *message)
   char local_5;
 
   local_48 = (SettMapTy *)this;
-  DVar13 = FUN_006e51b0(this->field_0010);
+  DVar13 = STAppC::sub_006E51B0(this->field_0010);
   uVar27 = 0;
   this->field_0061 = DVar13;
   local_f4.previous = g_currentExceptionFrame;
@@ -125,8 +125,8 @@ int __thiscall SettMapMTy::GetMessage(SettMapMTy *this,STMessage *message)
     return 0xffff;
   }
   SettMapTy::GetMessage(local_48,message);
-  StartSystemTy::ChatMessage(PTR_0081176c,(AnonShape_005DE050_5BD86458 *)message);
-  pCVar11 = PTR_00802a30;
+  StartSystemTy::ChatMessage(g_startSystem_0081176C,message);
+  pCVar11 = g_cursorClass_00802A30;
   SVar5 = message->id;
   if (SVar5 < MESS_SETTMAPSTY_6505) {
     if (SVar5 == MESS_SHARED_6504) {
@@ -194,18 +194,19 @@ int __thiscall SettMapMTy::GetMessage(SettMapMTy *this,STMessage *message)
       }
       else if (SVar5 == MESS_CHOOSEMAPTY_6327) {
         piVar9 = (message->arg0).ptr;
-        thunk_FUN_005b5f00(this_01,(AnonShape_006B5B10_E0D06CF1 *)this_01[1].field_0008,piVar9);
+        sub_005B5F00((SettMapMTy *)this_01,(AnonShape_006B5B10_E0D06CF1 *)this_01[1].field_0008,
+                     piVar9);
         iVar14 = *piVar9;
         local_10 = (char *)piVar9[5];
-        ccFntTy::SetSurf(PTR_0081176c->field_0034,this_01[1].field_0008,0,
+        ccFntTy::SetSurf(g_startSystem_0081176C->field_0034,this_01[1].field_0008,0,
                          (iVar14 + -1) * (int)local_10,0,(int)local_10,
                          *(int *)(this_01[1].field_0008 + 8) -
                          ((-(uint)(piVar9[1] != 1) & 0xfffffffd) + 3));
         uVar38 = 2;
         iVar37 = -1;
         iVar36 = -1;
-        puVar15 = (uint *)LoadResourceString((iVar14 != 1) + 0x2422,HINSTANCE_00807618);
-        ccFntTy::WrStr(PTR_0081176c->field_0034,puVar15,iVar36,iVar37,uVar38);
+        puVar15 = (uint *)LoadResourceString((iVar14 != 1) + 0x2422,g_module_00807618);
+        ccFntTy::WrStr(g_startSystem_0081176C->field_0034,puVar15,iVar36,iVar37,uVar38);
         FUN_006b35d0((int *)PTR_008075a8,*(uint *)&this_01[1].field_0x4);
       }
     }
@@ -278,15 +279,15 @@ int __thiscall SettMapMTy::GetMessage(SettMapMTy *this,STMessage *message)
         if (pDVar18 != (DArrayTy *)0x0) {
           if (DAT_0080877e == '\0') {
 LAB_005d1b5a:
-            if (PTR_00802a30 != (CursorClassTy *)0x0) {
-              iVar14 = PTR_00802a30->field_00C9;
-              iVar36 = PTR_00802a30->field_00C5;
-              PTR_00802a30->field_0493 = 5;
+            if (g_cursorClass_00802A30 != (CursorClassTy *)0x0) {
+              iVar14 = g_cursorClass_00802A30->field_00C9;
+              iVar36 = g_cursorClass_00802A30->field_00C5;
+              g_cursorClass_00802A30->field_0493 = 5;
               pCVar11->field_0494 = 0xffff;
               CursorClassTy::SetGCType(pCVar11,CASE_0,iVar36,iVar14);
               CursorClassTy::DrawSprite(pCVar11,pCVar11->field_00C5,pCVar11->field_00C9);
               pCVar11->field_00D2 = 0;
-              pCVar11->field_04DF = 0xffffffff;
+              pCVar11->field_04DF = -1;
             }
             /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
             DAT_008087c4._2_1_ = '\0';
@@ -488,7 +489,7 @@ LAB_005d1b5a:
               } while ((int)local_18 < (int)pDVar18->count);
             }
             thunk_FUN_0056ee90((AnonShape_0056EE90_04DD57E6 *)&DAT_00807620);
-            pCVar11 = PTR_00802a30;
+            pCVar11 = g_cursorClass_00802A30;
             if ((this_01->field_1E26 == CASE_7) || (this_01->field_1E26 == 0xe)) {
               if ((this_01->field_1F47 != 0) || ((message->arg0).u32 != 0)) {
                 uVar27 = 0xffffffff;
@@ -518,15 +519,15 @@ LAB_005d1b5a:
               }
               /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
               if ((DAT_0080877e != '\0') && (*(int *)(this_01->field_1A5B + 0x2e6) != 0)) {
-                if (PTR_00802a30 != (CursorClassTy *)0x0) {
-                  iVar14 = PTR_00802a30->field_00C9;
-                  iVar36 = PTR_00802a30->field_00C5;
-                  PTR_00802a30->field_0493 = 1;
+                if (g_cursorClass_00802A30 != (CursorClassTy *)0x0) {
+                  iVar14 = g_cursorClass_00802A30->field_00C9;
+                  iVar36 = g_cursorClass_00802A30->field_00C5;
+                  g_cursorClass_00802A30->field_0493 = 1;
                   pCVar11->field_0494 = 0xffff;
                   CursorClassTy::SetGCType(pCVar11,CASE_0,iVar36,iVar14);
                   CursorClassTy::DrawSprite(pCVar11,pCVar11->field_00C5,pCVar11->field_00C9);
                   pCVar11->field_00D2 = 0;
-                  pCVar11->field_04DF = 0xffffffff;
+                  pCVar11->field_04DF = -1;
                 }
                 pMVar6 = this_01->field_1A5B;
                 memset(local_90, 0, 0x20); /* compiler bulk-zero initialization */
@@ -763,10 +764,10 @@ LAB_005d24b8:
                 *(undefined1 *)((int)&this_01[1].field_0031 + 1) = 1;
                 pDVar18 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,0x28,4,10);
                 *(DArrayTy **)((int)&this_01[1].field_0031 + 2) = pDVar18;
-                if (PTR_0080c4fe != (DArrayTy *)0x0) {
-                  DArrayDestroy(PTR_0080c4fe);
+                if (g_dArray_0080C4FE != (DArrayTy *)0x0) {
+                  DArrayDestroy(g_dArray_0080C4FE);
                 }
-                PTR_0080c4fe = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,0x28,4,10);
+                g_dArray_0080C4FE = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,0x28,4,10);
                 memset(&DAT_00808ab0, 0, 0xea0); /* compiler bulk-zero initialization */
                 DAT_00808aaf = 0;
                 pDVar18 = this_01->field_1F84;
@@ -789,7 +790,8 @@ LAB_005d24b8:
                         Library::DKW::TBL::FUN_006ae1c0
                                   (*(uint **)((int)&this_01[1].field_0031 + 2),&pAVar30->field_0006)
                         ;
-                        Library::DKW::TBL::FUN_006ae1c0(&PTR_0080c4fe->flags,&pAVar30->field_0006);
+                        Library::DKW::TBL::FUN_006ae1c0
+                                  (&g_dArray_0080C4FE->flags,&pAVar30->field_0006);
                       }
                       cVar2 = pAVar30->field_0x4;
                       local_5 = cVar2;
@@ -1000,7 +1002,7 @@ LAB_005d1b17:
         if (DAT_0080877e != '\0') {
           /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
           CheckPlList((SettMapMTy *)this_01,unaff_EDI);
-          thunk_FUN_005d1380((AnonShape_005D1380_CEECF2C3 *)this_01);
+          sub_005D1380((SettMapMTy *)this_01);
           /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
           (*(code *)this_01->field_0000->field_002C)();
           SettMapTy::PaintSC(this_01);
@@ -1073,12 +1075,12 @@ LAB_005d1b17:
           pcVar26 = pcVar26 + 1;
           pcVar23 = pcVar23 + 1;
         }
-        puVar15 = this_00->field_0686;
-        if ((int)puVar15[2] < 1) {
+        pDVar18 = this_00->field_0686;
+        if ((int)pDVar18->elementSize < 1) {
           pcVar26 = (char *)0x0;
         }
         else {
-          pcVar26 = *(char **)puVar15[5];
+          pcVar26 = *(char **)pDVar18->growCapacity;
         }
         uVar27 = 0xffffffff;
         do {
@@ -1346,9 +1348,10 @@ switchD_005d1877_caseD_6507:
           this_01->field_21CD = 0x1e;
           this_01->field_21A5 = 0x12;
           this_01->field_21C9 = local_2c * 0x19 + 0x41;
-/* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
 LAB_005d3188:
-          (*(code *)this_01->field_000C->vtable->field_0008)(0x100ef,0,0,&this_01->field_0x2161,0);
+          (*this_01->field_000C->vtable->CreateObject)
+                    ((SystemClassTy *)this_01->field_000C,0x100ef,(undefined4 *)0x0,(int *)0x0,
+                     &this_01->field_0x2161,0);
         }
         break;
       case MESS_ID_CREATE:
@@ -1358,7 +1361,7 @@ LAB_005d3188:
           this_01->field_2191 = 0x6500;
           this_01->field_1E2F->count = 0;
           local_10 = (char *)0x1;
-          pcVar26 = LoadResourceString(0x23f1,HINSTANCE_00807618);
+          pcVar26 = LoadResourceString(0x23f1,g_module_00807618);
           uVar27 = 0xffffffff;
           do {
             pcVar23 = pcVar26;
@@ -1388,7 +1391,7 @@ LAB_005d3188:
           this_01->field_1F37 = 1;
           Library::DKW::TBL::FUN_006ae1c0
                     (&this_01->field_1E2F->flags,(undefined4 *)&this_01->field_0x1e33);
-          pcVar26 = LoadResourceString(0x23f0,HINSTANCE_00807618);
+          pcVar26 = LoadResourceString(0x23f0,g_module_00807618);
           uVar27 = 0xffffffff;
           do {
             pcVar23 = pcVar26;
@@ -1423,7 +1426,7 @@ LAB_005d3188:
             pcVar26 = (char *)(uint)(local_18->field_0x4 != '\x02');
           }
           if (pcVar26 != (char *)0x0) {
-            pcVar26 = LoadResourceString(0x23f2,HINSTANCE_00807618);
+            pcVar26 = LoadResourceString(0x23f2,g_module_00807618);
             uVar27 = 0xffffffff;
             do {
               pcVar23 = pcVar26;
@@ -1460,7 +1463,7 @@ LAB_005d3188:
           this_01->field_21CD = 0x78;
           this_01->field_21A1 = bVar21 - 1;
           this_01->field_21C9 = local_2c * 0x19 + 0x41;
-          pcVar8 = PTR_0081176c->field_0034;
+          pcVar8 = g_startSystem_0081176C->field_0034;
           if (pcVar8->field_00A0 != 0) {
             FUN_00710790((uint *)pcVar8);
           }
@@ -1497,7 +1500,7 @@ LAB_005d3188:
             } while (-1 < (int)uVar27);
           }
           if (local_5 != '\0') {
-            pcVar26 = LoadResourceString(0x1f42,HINSTANCE_00807618);
+            pcVar26 = LoadResourceString(0x1f42,g_module_00807618);
             uVar27 = 0xffffffff;
             do {
               pcVar23 = pcVar26;
@@ -1524,7 +1527,7 @@ LAB_005d3188:
             Library::DKW::TBL::FUN_006ae1c0
                       (&this_01->field_1E2F->flags,(undefined4 *)&this_01->field_0x1e33);
             if (DAT_00808aaa != '\0') {
-              pcVar26 = LoadResourceString(0x1f46,HINSTANCE_00807618);
+              pcVar26 = LoadResourceString(0x1f46,g_module_00807618);
               uVar27 = 0xffffffff;
               do {
                 pcVar23 = pcVar26;
@@ -1552,7 +1555,7 @@ LAB_005d3188:
                         (&this_01->field_1E2F->flags,(undefined4 *)&this_01->field_0x1e33);
             }
           }
-          pcVar26 = LoadResourceString(0x1f41,HINSTANCE_00807618);
+          pcVar26 = LoadResourceString(0x1f41,g_module_00807618);
           uVar27 = 0xffffffff;
           do {
             pcVar23 = pcVar26;
@@ -1582,7 +1585,7 @@ LAB_005d3188:
         else {
           if ((this_01->field_1E26 != CASE_5) || (pAVar24->field_0x4 != '\x04')) {
             if ((DAT_0080877e != '\0') && (this_01->field_1E26 != CASE_5)) {
-              pcVar26 = LoadResourceString(8000,HINSTANCE_00807618);
+              pcVar26 = LoadResourceString(8000,g_module_00807618);
               uVar27 = 0xffffffff;
               do {
                 pcVar23 = pcVar26;
@@ -1614,7 +1617,7 @@ LAB_005d3188:
               bVar34 = local_18->field_0x3 != '\x03';
             }
             if (bVar34) {
-              pcVar26 = LoadResourceString(0x1f42,HINSTANCE_00807618);
+              pcVar26 = LoadResourceString(0x1f42,g_module_00807618);
               uVar27 = 0xffffffff;
               do {
                 pcVar23 = pcVar26;
@@ -1641,7 +1644,7 @@ LAB_005d3188:
               Library::DKW::TBL::FUN_006ae1c0
                         (&this_01->field_1E2F->flags,(undefined4 *)&this_01->field_0x1e33);
             }
-            pcVar26 = LoadResourceString(0x1f41,HINSTANCE_00807618);
+            pcVar26 = LoadResourceString(0x1f41,g_module_00807618);
             uVar27 = 0xffffffff;
             do {
               pcVar23 = pcVar26;
@@ -1743,7 +1746,7 @@ LAB_005d3188:
         this_01->field_21A9 = dVar7;
         this_01->field_21CD = 0x5f;
         this_01->field_21C9 = local_2c * 0x19 + 0x41;
-        pcVar8 = PTR_0081176c->field_0034;
+        pcVar8 = g_startSystem_0081176C->field_0034;
         if (pcVar8->field_00A0 != 0) {
           FUN_00710790((uint *)pcVar8);
         }
@@ -1869,7 +1872,7 @@ LAB_005d32d3:
             do {
               iVar14 = uVar27 + 0x41;
               if (puVar17[uVar27 + 0x41] != '\0') {
-                pcVar26 = LoadResourceString(0x1f4a,HINSTANCE_00807618);
+                pcVar26 = LoadResourceString(0x1f4a,g_module_00807618);
                 wsprintfA(&this_01->field_0x1e33,"%s%c",pcVar26,iVar14);
                 this_01->field_1F37 = uVar27;
                 Library::DKW::TBL::FUN_006ae1c0
@@ -1892,14 +1895,14 @@ LAB_005d32d3:
             this_01->field_21C5 = uVar38;
             this_01->field_21CD = 0x46;
             this_01->field_21C9 = local_2c * 0x19 + 0x41;
-            pcVar8 = PTR_0081176c->field_0034;
+            pcVar8 = g_startSystem_0081176C->field_0034;
             if (pcVar8->field_00A0 != 0) {
               FUN_00710790((uint *)pcVar8);
             }
             this_01->field_21A5 = *(undefined4 *)&pcVar8->field_0x8a;
-            /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-            (*(code *)this_01->field_000C->vtable->field_0008)(0x100ef,0,0,&this_01->field_0x2161,0)
-            ;
+            (*this_01->field_000C->vtable->CreateObject)
+                      ((SystemClassTy *)this_01->field_000C,0x100ef,(undefined4 *)0x0,(int *)0x0,
+                       &this_01->field_0x2161,0);
           }
         }
         break;
@@ -2007,8 +2010,8 @@ LAB_005d34ee:
     MMObjTy::PaintButDib
               ((MMObjTy *)this_01,(&this_01->field_20F4)[(int)pcVar26],&local_28,2,
                (-((message->arg0).words.low != 0) & 0xfcU) + 0x23,0x67);
-    ccFntTy::SetSurf(PTR_0081176c->field_0034,(&this_01->field_20F4)[(int)pcVar26],0,local_28,
-                     local_24,local_20,local_1c);
+    ccFntTy::SetSurf(g_startSystem_0081176C->field_0034,(&this_01->field_20F4)[(int)pcVar26],0,
+                     local_28,local_24,local_20,local_1c);
     if (pAVar32->field_0x3 == '\x01') {
       pcVar26 = &DAT_007ca250;
 LAB_005d3780:
@@ -2059,15 +2062,15 @@ LAB_005d3780:
       pcVar26 = pcVar26 + 1;
       pcVar23 = pcVar23 + 1;
     }
-    ccFntTy::WrStr(PTR_0081176c->field_0034,&DAT_0080f33a,-1,-1,2);
+    ccFntTy::WrStr(g_startSystem_0081176C->field_0034,&DAT_0080f33a,-1,-1,2);
     pcVar26 = local_10;
     break;
   case (undefined1 *)0x3:
     MMObjTy::PaintButDib
               ((MMObjTy *)this_01,(&this_01->field_20F4)[(int)pcVar26],&local_28,2,
                (-((message->arg0).words.low != 0) & 0xfcU) + 0x23,0x67);
-    ccFntTy::SetSurf(PTR_0081176c->field_0034,(&this_01->field_20F4)[(int)pcVar26],0,local_28,
-                     local_24,local_20,local_1c);
+    ccFntTy::SetSurf(g_startSystem_0081176C->field_0034,(&this_01->field_20F4)[(int)pcVar26],0,
+                     local_28,local_24,local_20,local_1c);
     uVar38 = 2;
     iVar37 = -1;
     iVar36 = -1;
@@ -2081,14 +2084,14 @@ LAB_005d3780:
     bVar21 = pAVar32->field_0x4;
     if (bVar21 < 2) break;
     if (bVar21 < 4) {
-      ccFntTy::SetSurf(PTR_0081176c->field_0034,(&this_01->field_20F4)[(int)pcVar26],0,local_28,
-                       local_24,local_20,local_1c);
+      ccFntTy::SetSurf(g_startSystem_0081176C->field_0034,(&this_01->field_20F4)[(int)pcVar26],0,
+                       local_28,local_24,local_20,local_1c);
       uVar38 = 2;
       iVar36 = -1;
       iVar14 = -1;
-      puVar15 = thunk_FUN_00540c40(PTR_0081176c->field_0034,(uint *)&pAVar32->field_0xa,
+      puVar15 = thunk_FUN_00540c40(g_startSystem_0081176C->field_0034,(uint *)&pAVar32->field_0xa,
                                    (uint *)&DAT_007c7274,local_20);
-      ccFntTy::WrStr(PTR_0081176c->field_0034,puVar15,iVar14,iVar36,uVar38);
+      ccFntTy::WrStr(g_startSystem_0081176C->field_0034,puVar15,iVar14,iVar36,uVar38);
       break;
     }
     if (bVar21 != 4) break;
@@ -2102,16 +2105,16 @@ LAB_005d3780:
       puVar15 = (uint *)0x0;
     }
     if (puVar15 == (uint *)0x0) break;
-    ccFntTy::SetSurf(PTR_0081176c->field_0034,(&this_01->field_20F4)[(int)pcVar26],0,local_28,
-                     local_24,local_20,local_1c);
+    ccFntTy::SetSurf(g_startSystem_0081176C->field_0034,(&this_01->field_20F4)[(int)pcVar26],0,
+                     local_28,local_24,local_20,local_1c);
     uVar38 = 2;
     iVar37 = -1;
     iVar36 = -1;
     puVar35 = (uint *)&DAT_007c7274;
     iVar14 = local_20;
 LAB_005d38bd:
-    puVar15 = thunk_FUN_00540c40(PTR_0081176c->field_0034,puVar15,puVar35,iVar14);
-    ccFntTy::WrStr(PTR_0081176c->field_0034,puVar15,iVar36,iVar37,uVar38);
+    puVar15 = thunk_FUN_00540c40(g_startSystem_0081176C->field_0034,puVar15,puVar35,iVar14);
+    ccFntTy::WrStr(g_startSystem_0081176C->field_0034,puVar15,iVar36,iVar37,uVar38);
     break;
   case (undefined1 *)0x5:
     if ((*(char *)pAVar32 == '\0') ||
@@ -2121,11 +2124,11 @@ LAB_005d38bd:
        pAVar32->field_0x4 == '\0')) break;
     if (DAT_00808a8f != '\0') {
       iVar14 = (byte)pAVar32->field_0x4a + 0x41;
-      pcVar23 = LoadResourceString(0x1f4a,HINSTANCE_00807618);
+      pcVar23 = LoadResourceString(0x1f4a,g_module_00807618);
       wsprintfA((LPSTR)&DAT_0080f33a,"%s%c",pcVar23,iVar14);
-      ccFntTy::SetSurf(PTR_0081176c->field_0034,(&this_01->field_20F4)[(int)pcVar26],0,local_28,
-                       local_24,local_20,local_1c);
-      ccFntTy::WrStr(PTR_0081176c->field_0034,&DAT_0080f33a,-1,-1,2);
+      ccFntTy::SetSurf(g_startSystem_0081176C->field_0034,(&this_01->field_20F4)[(int)pcVar26],0,
+                       local_28,local_24,local_20,local_1c);
+      ccFntTy::WrStr(g_startSystem_0081176C->field_0034,&DAT_0080f33a,-1,-1,2);
       break;
     }
     if (((DAT_0080874d == 0xff) || (bVar21 = pAVar32->field_0x2, bVar21 == 0xff)) ||
@@ -2176,8 +2179,8 @@ LAB_005d38bd:
     if (((pAVar32->field_0x4 == '\x02') || (pAVar32->field_0x4 == '\x03')) &&
        (((DAT_0080877e != '\0' && (*(int *)&pAVar32->field_0x6 != DAT_0080877f)) ||
         ((DAT_0080877e == '\0' && (*(int *)&pAVar32->field_0x6 == DAT_0080877f)))))) {
-      ccFntTy::SetSurf(PTR_0081176c->field_0034,(&this_01->field_20F4)[(int)pcVar26],0,local_28,
-                       local_24,local_20,local_1c);
+      ccFntTy::SetSurf(g_startSystem_0081176C->field_0034,(&this_01->field_20F4)[(int)pcVar26],0,
+                       local_28,local_24,local_20,local_1c);
       wsprintfA((LPSTR)&DAT_0080f33a,"%4d",*(undefined4 *)&pAVar32->field_0x4b);
       uVar27 = 0xffffffff;
       pcVar23 = (char *)&DAT_0080f33a;
@@ -2212,7 +2215,7 @@ LAB_005d38bd:
           pcVar29 = pcVar29 + 1;
         }
       }
-      ccFntTy::WrStr(PTR_0081176c->field_0034,&DAT_0080f33a,-1,-1,2);
+      ccFntTy::WrStr(g_startSystem_0081176C->field_0034,&DAT_0080f33a,-1,-1,2);
     }
     break;
   case (undefined1 *)0x7:

@@ -15,8 +15,8 @@ FUN_005599d0(void *this,int param_1,int param_2,undefined1 param_3,uint param_4,
 
   /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   if ((((*(int *)((int)this + 0x114) != 0) && (-1 < (int)param_5)) && (param_4 < 8)) &&
-     (((PTR_00802a38 == (STPlaySystemC *)0x0 || ((byte)(&DAT_008087e9)[param_4 * 0x51] < 8)) &&
-      (*(int *)((int)this + param_4 * 4 + 0x54) != 0)))) {
+     (((g_playSystem_00802A38 == (STPlaySystemC *)0x0 || ((byte)(&DAT_008087e9)[param_4 * 0x51] < 8)
+       ) && (*(int *)((int)this + param_4 * 4 + 0x54) != 0)))) {
     SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00558C00::sub_0055BBC0
               (this,2,(short)param_1,(short)param_2,param_3,param_4,(char)param_5,param_6);
     iVar1 = (int)param_5 * 2 + 1;

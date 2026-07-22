@@ -124,8 +124,8 @@ void __thiscall InfocPanelTy::InitInfocPanel(InfocPanelTy *this)
     local_1c = 1;
     local_18 = 1;
     local_3c = local_5c;
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-    (*(code *)this_00->field_000C->vtable->field_0008)(5,&this_00->field_03D0,0,local_6c,0);
+    (*this_00->field_000C->vtable->CreateObject)
+              ((SystemClassTy *)this_00->field_000C,5,&this_00->field_03D0,(int *)0x0,local_6c,0);
     this_00->field_02D4 = 0x56;
     this_00->field_02D8 = 0x17;
     this_00->field_02DC = 0x31;

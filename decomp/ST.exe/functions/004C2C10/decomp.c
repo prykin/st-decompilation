@@ -39,7 +39,7 @@ undefined4 __fastcall FUN_004c2c10(AnonShape_004C2C10_59B6D93C *param_1)
     else if (param_1->field_05AC == 0x73) {
       local_24 = param_1->field_04D0;
     }
-    STPlaySystemC::CreateGameObject(PTR_00802a38,0xdc,0,&local_8,local_58,0);
+    STPlaySystemC::CreateGameObject(g_playSystem_00802A38,0xdc,0,&local_8,local_58,0);
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     uVar1 = *(undefined4 *)(local_8 + 0x18);
     param_1->field_0408 = 1;

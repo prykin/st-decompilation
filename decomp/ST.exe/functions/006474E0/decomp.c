@@ -55,7 +55,8 @@ undefined4 __thiscall STVolcanoC::LoadImagVolcano(STVolcanoC *this,int param_1)
                    (float)pSVar2->field_0069 * _DAT_007904f8 * _DAT_007904f0,
                    (float)pSVar2->field_006D * _DAT_007904f8 * _DAT_007904f0 + _DAT_007904fc);
       FUN_006eaaa0(PTR_00807598,local_c,0);
-      FUN_006ea460(PTR_00807598,local_c,local_8);
+      SubmarineTitans::Recovered::HiddenThis::AnonReceiver_006EA050::sub_006EA460
+                ((AnonReceiver_006EA050 *)PTR_00807598,local_c,local_8);
       pSVar2->field_0086 = local_c;
     }
     if ((param_1 != 0) && (pSVar2->field_007A < 0)) {
@@ -70,7 +71,8 @@ undefined4 __thiscall STVolcanoC::LoadImagVolcano(STVolcanoC *this,int param_1)
                    (float)pSVar2->field_0069 * _DAT_007904f8 * _DAT_007904f0,
                    (float)pSVar2->field_006D * _DAT_007904f8 * _DAT_007904f0 + _DAT_007904fc);
       FUN_006eaaa0(PTR_00807598,local_10,0);
-      FUN_006ea460(PTR_00807598,local_10,pSVar2->field_005D);
+      SubmarineTitans::Recovered::HiddenThis::AnonReceiver_006EA050::sub_006EA460
+                ((AnonReceiver_006EA050 *)PTR_00807598,local_10,pSVar2->field_005D);
       pSVar2->field_007A = local_10;
     }
     g_currentExceptionFrame = local_5c.previous;

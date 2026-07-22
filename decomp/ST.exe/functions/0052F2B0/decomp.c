@@ -110,7 +110,7 @@ void __thiscall OptPanelTy::SwitchOptPanel(OptPanelTy *this,char param_1)
     bVar5 = local_8 != 0;
     if (g_infocPanel_00801698 != (InfocPanelTy *)0x0) {
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-      local_8 = (**(code **)(*(int *)g_infocPanel_00801698 + 0x1c))(0);
+      local_8 = (*(code *)g_infocPanel_00801698->field_0000->field_001C)(0);
     }
     bVar6 = local_8 != 0;
     if (g_tradePanel_00802A44 != (TradePanelTy *)0x0) {
@@ -129,7 +129,7 @@ void __thiscall OptPanelTy::SwitchOptPanel(OptPanelTy *this,char param_1)
     bVar9 = local_8 != 0;
     if (g_upgPanel_00802A48 != (UpgPanelTy *)0x0) {
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-      local_8 = (**(code **)(*(int *)g_upgPanel_00802A48 + 0x1c))(0);
+      local_8 = (*(code *)g_upgPanel_00802A48->field_0000->field_001C)(0);
     }
     bVar10 = local_8 != 0;
     if (g_frmPanel_0080168C != (FrmPanelTy *)0x0) {

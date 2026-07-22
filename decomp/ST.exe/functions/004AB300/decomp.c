@@ -15,7 +15,7 @@ void FUN_004ab300(int param_1)
   if (*(int *)(&DAT_0080747a + param_1 * 0x19) == 0) {
     return;
   }
-  thunk_FUN_0054b540(PTR_00802a30);
+  thunk_FUN_0054b540(g_cursorClass_00802A30);
   DAT_008073d0 = *(undefined4 *)(&DAT_00807465 + param_1 * 0x19);
   _DAT_008073d4 = *(undefined4 *)(&DAT_00807469 + param_1 * 0x19);
   DAT_008073d8 = *(int *)(&DAT_0080746d + param_1 * 0x19);

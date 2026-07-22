@@ -21,7 +21,7 @@ void __thiscall IntercomPanelTy::PreInitIntercomPanel(IntercomPanelTy *this)
   iVar3 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
   pIVar2 = local_8;
   if (iVar3 == 0) {
-    FUN_006b1a50((int)PTR_008075a8,3,(undefined4 *)0x0,(undefined4 *)&local_8->field_0x188);
+    FUN_006b1a50(PTR_008075a8,3,(undefined4 *)0x0,(undefined4 *)&local_8->field_0x188);
     iVar3 = pIVar2->field_018C - pIVar2->field_0048;
     pIVar2->field_0044 = iVar3;
     pIVar2->field_0174 = iVar3 + pIVar2->field_0048;

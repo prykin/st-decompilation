@@ -1,0 +1,4 @@
+00566A50  pointer  005669ad
+00566A54  pointer  005669ad
+00566A58  pointer  005669d0
+00566A5C  pointer  005669ef

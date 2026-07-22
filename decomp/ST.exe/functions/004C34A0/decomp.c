@@ -1,10 +1,15 @@
 
-undefined4 __thiscall FUN_004c34a0(void *this,int param_1)
+/* [STMethodOwnerApplier] Structural method owner recovered as TLOBaseTy.
+   Evidence: this_call_owners=[TLOBaseTy]; agreed_this_calls=2; incoming_this_accesses=1;
+   incoming_edx_uses=9; incoming_stack_parameter_uses=1; direct_non_thunk_callers=0;
+   incoming_ecx_receiver_callers=0; attributed_named_callers=1; owner_evidence_coverage=adequate */
+
+undefined4 __thiscall TLOBaseTy::sub_004C34A0(TLOBaseTy *this,int param_1)
 
 {
   int iVar1;
 
-  iVar1 = *(int *)((int)this + 0x259) / 0xf;
+  iVar1 = (int)this->field_0259 / 0xf;
   if (*(int *)(&DAT_007be8c8 + (param_1 / 0xf + iVar1 * 0x18) * 4) == 0) {
     return 0;
   }

@@ -22,7 +22,7 @@ int __thiscall PanelTy::GetMessage(PanelTy *this,STMessage *message)
   PanelTy *local_8;
 
   local_8 = this;
-  DVar3 = FUN_006e51b0(this->field_0010);
+  DVar3 = STAppC::sub_006E51B0(this->field_0010);
   this->field_0038 = DVar3;
   local_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_4c;

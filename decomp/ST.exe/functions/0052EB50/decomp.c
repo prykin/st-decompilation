@@ -105,8 +105,8 @@ OptPanelTy::CreateSlider
     }
     local_2a4[3] = iVar3 + param_2;
     local_23c = 0xc006;
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-    (*(code *)pOVar2->field_000C->vtable->field_0008)(4,&local_8,0,local_42c,0);
+    (*pOVar2->field_000C->vtable->CreateObject)
+              ((SystemClassTy *)pOVar2->field_000C,4,&local_8,(int *)0x0,local_42c,0);
     g_currentExceptionFrame = local_54.previous;
     return local_8;
   }

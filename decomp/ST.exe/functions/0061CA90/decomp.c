@@ -124,7 +124,7 @@ undefined4 __thiscall FUN_0061ca90(void *this,int param_1,int param_2,int param_
                    this_00 != (STWorldObject *)0x0 &&
                    (iVar16 = (*this_00->vtable[5].slots_00_28[0])(), iVar16 != 0)) &&
                   ((this_00[1].vtable < (STWorldObjectVTable *)0x8 &&
-                   ((PTR_00802a38 == (STPlaySystemC *)0x0 ||
+                   ((g_playSystem_00802A38 == (STPlaySystemC *)0x0 ||
                     ((byte)(&DAT_008087e9)[(int)this_00[1].vtable * 0x51] < 8)))))))) {
                 bVar1 = *(byte *)&this_00[1].vtable;
                 /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */

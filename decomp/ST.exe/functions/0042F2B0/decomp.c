@@ -16,7 +16,7 @@ STAllPlayersC::UnRegisterObject
 
 {
   code *pcVar1;
-  void *pvVar2;
+  MoneyTy *pMVar2;
   STAllPlayersC *this_00;
   STGroupBoatC *pSVar3;
   short sVar4;
@@ -137,12 +137,12 @@ LAB_0042f42f:
          *(int *)(&g_playerRuntime[0].field_0x47 + iVar9) + 1;
   }
 LAB_0042f547:
-  pvVar2 = DAT_008016d4;
+  pMVar2 = g_money_008016D4;
   if (param_4[8] == 0x14) {
     iVar9 = (int)param_1;
     *(short *)&g_playerRuntime[iVar9].field_0xd = *(short *)&g_playerRuntime[iVar9].field_0xd + -1;
-    if (pvVar2 != (void *)0x0) {
-      thunk_FUN_0052bda0(pvVar2,param_1,(uint)*(ushort *)&g_playerRuntime[iVar9].field_0xd);
+    if (pMVar2 != (MoneyTy *)0x0) {
+      MoneyTy::sub_0052BDA0(pMVar2,param_1,(uint)*(ushort *)&g_playerRuntime[iVar9].field_0xd);
     }
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
     iVar5 = (**(code **)(*param_4 + 0x2c))();
@@ -271,12 +271,12 @@ LAB_0042f547:
       }
     }
   }
-  pvVar2 = DAT_008016d4;
+  pMVar2 = g_money_008016D4;
   if (param_4[8] == 1000) {
     iVar9 = (int)param_1;
     *(short *)&g_playerRuntime[iVar9].field_0xd = *(short *)&g_playerRuntime[iVar9].field_0xd + -1;
-    if (pvVar2 != (void *)0x0) {
-      thunk_FUN_0052bda0(pvVar2,param_1,(uint)*(ushort *)&g_playerRuntime[iVar9].field_0xd);
+    if (pMVar2 != (MoneyTy *)0x0) {
+      MoneyTy::sub_0052BDA0(pMVar2,param_1,(uint)*(ushort *)&g_playerRuntime[iVar9].field_0xd);
     }
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
     iVar5 = (**(code **)(*param_4 + 0x2c))();
@@ -456,7 +456,7 @@ LAB_0042f547:
     Library::DKW::TBL::FUN_006ae140(&local_14->flags,param_3 & 0xffff,&local_c);
     sVar4 = thunk_FUN_004233c0((int)pSVar3);
     if ((sVar4 != 0) || (iVar9 = thunk_FUN_004233a0((int)pSVar3), iVar9 != 0)) goto LAB_00430018;
-    thunk_FUN_0054cf70(PTR_00802a38,pSVar3->field_0008);
+    thunk_FUN_0054cf70(g_playSystem_00802A38,pSVar3->field_0008);
     pDVar8 = local_1c;
     uVar10 = param_2;
   }

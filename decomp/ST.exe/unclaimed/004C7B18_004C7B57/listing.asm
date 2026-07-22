@@ -1,0 +1,16 @@
+004C7B18  pointer  004c7886
+004C7B1C  pointer  004c78c1
+004C7B20  pointer  004c78b7
+004C7B24  pointer  004c794e
+004C7B28  pointer  004c78b7
+004C7B2C  pointer  004c7938
+004C7B30  pointer  004c78b7
+004C7B34  pointer  004c7956
+004C7B38  pointer  004c7b08
+004C7B3C  pointer  004c79f3
+004C7B40  pointer  004c7a58
+004C7B44  pointer  004c7a58
+004C7B48  pointer  004c7a76
+004C7B4C  pointer  004c7a86
+004C7B50  pointer  004c7aa0
+004C7B54  pointer  004c7afe

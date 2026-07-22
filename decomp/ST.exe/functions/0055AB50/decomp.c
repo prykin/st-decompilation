@@ -39,8 +39,8 @@ void __thiscall VisibleClassTy::VisHoleExec(VisibleClassTy *this,void *param_1)
         }
         if (((uint)(piVar6[5] + piVar6[6]) <= this_00->field_0108) &&
            (((this_00->field_0108 - piVar6[5]) - piVar6[6]) % 7 == 0)) {
-          thunk_FUN_00559110(this_00,*piVar6,(undefined *)piVar6[1],piVar6[2],piVar6[4],piVar6[3],-6
-                             ,0xffffffff);
+          sub_00559110(this_00,*piVar6,(undefined *)piVar6[1],piVar6[2],piVar6[4],piVar6[3],-6,
+                       0xffffffff);
           uVar3 = local_8;
           uVar4 = piVar6[3] - 1;
           piVar6[3] = uVar4;
@@ -49,8 +49,8 @@ void __thiscall VisibleClassTy::VisHoleExec(VisibleClassTy *this,void *param_1)
             local_8 = uVar3;
           }
           else {
-            thunk_FUN_00558dc0(this_00,*piVar6,piVar6[1],(undefined *)piVar6[2],(int *)piVar6[4],
-                               uVar4,(int *)0xfffffffa,0xffffffff);
+            sub_00558DC0(this_00,*piVar6,piVar6[1],(undefined *)piVar6[2],(int *)piVar6[4],uVar4,
+                         (int *)0xfffffffa,0xffffffff);
           }
         }
       }

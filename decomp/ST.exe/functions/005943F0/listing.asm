@@ -1,4 +1,4 @@
-FUN_005943f0:
+ComboTy::sub_005943F0:
 005943F0  8B D1                     MOV EDX,ECX
 005943F2  56                        PUSH ESI
 005943F3  57                        PUSH EDI

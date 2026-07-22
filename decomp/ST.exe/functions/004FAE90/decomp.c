@@ -26,7 +26,7 @@ void __thiscall FUN_004fae90(void *this,uint param_1,uint param_2)
         local_10 = local_8;
         local_14 = param_1;
         iVar3 = STAllPlayersC::GetActiveCenter
-                          (g_sTAllPlayers_007FA174,(undefined2 *)0x0,(undefined2 *)0x0,
+                          (g_allPlayers_007FA174,(undefined2 *)0x0,(undefined2 *)0x0,
                            (undefined2 *)((int)&param_2 + 2));
         if (-1 < iVar3) {
           /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */

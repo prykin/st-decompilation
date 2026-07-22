@@ -1,0 +1,12 @@
+004F306C  pointer  004f2ec1
+004F3070  pointer  004f2ec9
+004F3074  pointer  004f2ecf
+004F3078  byte  0h
+004F3079  byte  0h
+004F307A  byte  0h
+004F307B  byte  0h
+004F307C  byte  2h
+004F307D  byte  1h
+004F307E  byte  1h
+004F307F  byte  1h
+004F3080  byte  1h

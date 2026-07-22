@@ -16,7 +16,7 @@ STSprGameObjC * __thiscall STSprGameObjC::STSprGameObjC(STSprGameObjC *this)
   STGameObjC::STGameObjC((STGameObjC *)this);
   thunk_FUN_004ab810((AnonShape_004AB810_8E5693D5 *)&this->field_01D5);
   this->field_01D5 = &VTable_0079C578;
-  this->vtable = (AnonPointee_STSprGameObjC_0000 *)&STSprGameObjCVTable;
+  this->vtable = &STSprGameObjCVTable;
   memset(&this->field_0231, 0, 0xf5); /* compiler bulk-zero initialization */
   this->field_030E = 0xff;
   this->field_0308 = 0xffffffff;

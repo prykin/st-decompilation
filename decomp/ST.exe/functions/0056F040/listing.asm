@@ -1,4 +1,4 @@
-FUN_0056f040:
+STAppC::sub_0056F040:
 0056F040  55                        PUSH EBP
 0056F041  8B EC                     MOV EBP,ESP
 0056F043  83 EC 08                  SUB ESP,0x8

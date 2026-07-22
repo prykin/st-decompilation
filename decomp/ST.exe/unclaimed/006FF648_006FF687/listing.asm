@@ -1,0 +1,16 @@
+006FF648  pointer  006feec8
+006FF64C  pointer  006fef10
+006FF650  pointer  006fef1e
+006FF654  pointer  006fef67
+006FF658  pointer  006ff058
+006FF65C  pointer  006ff0b2
+006FF660  pointer  006ff0c9
+006FF664  pointer  006ff126
+006FF668  pointer  006ff2c5
+006FF66C  pointer  006ff30d
+006FF670  pointer  006ff31e
+006FF674  pointer  006ff365
+006FF678  pointer  006ff4b2
+006FF67C  pointer  006ff506
+006FF680  pointer  006ff515
+006FF684  pointer  006ff56b

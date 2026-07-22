@@ -13,13 +13,14 @@ undefined4 * __thiscall AiBossClassTy::PrepareToSave(AiBossClassTy *this,uint *p
   int errorCode;
   int iVar3;
   undefined4 *puVar4;
+  uint *puVar5;
   InternalExceptionFrame local_58;
   AiBossClassTy *local_14;
   uint local_10;
-  undefined4 *local_c;
+  byte *local_c;
   undefined4 *local_8;
 
-  local_c = (undefined4 *)0x0;
+  local_c = (byte *)0x0;
   local_8 = (undefined4 *)0x0;
   local_58.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_58;
@@ -27,26 +28,26 @@ undefined4 * __thiscall AiBossClassTy::PrepareToSave(AiBossClassTy *this,uint *p
   errorCode = Library::MSVCRT::__setjmp3(local_58.jumpBuffer,0);
   pAVar2 = local_14;
   if (errorCode == 0) {
-    local_8 = AiEventClassTy::PrepareToSave((AiEventClassTy *)&local_14->field_001C,&local_10);
+    local_8 = AiEventClassTy::PrepareToSave((AiEventClassTy *)&local_14->vtable_at_1c,&local_10);
     if (pAVar2 == (AiBossClassTy *)0x0) {
-      puVar4 = (undefined4 *)0x0;
+      puVar5 = (uint *)0x0;
     }
     else {
-      puVar4 = (undefined4 *)&pAVar2->field_0x5d3;
+      puVar5 = (uint *)&pAVar2->field_0x5d3;
     }
-    local_c = BossDataPack(puVar4,local_8,local_10,param_1);
-    *(undefined1 *)local_c = 1;
+    local_c = BossDataPack(puVar5,local_8,local_10,param_1);
+    *local_c = 1;
     if (local_8 != (undefined4 *)0x0) {
       FreeAndNull(&local_8);
     }
     g_currentExceptionFrame = local_58.previous;
-    return local_c;
+    return (undefined4 *)local_c;
   }
   g_currentExceptionFrame = local_58.previous;
   if (local_8 != (undefined4 *)0x0) {
     FreeAndNull(&local_8);
   }
-  if (local_c != (undefined4 *)0x0) {
+  if (local_c != (byte *)0x0) {
     FreeAndNull(&local_c);
   }
   iVar3 = ReportDebugMessage("E:\\__titans\\ai\\ai_boss.cpp",0x4c,0,errorCode,"%s",

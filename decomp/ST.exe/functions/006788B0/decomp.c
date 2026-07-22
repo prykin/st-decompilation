@@ -12,9 +12,9 @@ AiPlrClassTy * __thiscall AiPlrClassTy::AiPlrClassTy(AiPlrClassTy *this)
   undefined4 *puVar2;
 
   sub_006E60E0(this);
-  thunk_FUN_0064cc90(&this->field_001C);
+  thunk_FUN_0064cc90(&this->vtable_at_1c);
   this->vtable = (AiPlrClassTyVTable_at_1C *)&AiPlrClassTyVTable;
-  this->field_001C = (AnonPointee_AiPlrClassTy_001C *)&AiPlrClassTyVTable_at_1C;
+  this->vtable_at_1c = &AiPlrClassTyVTable_at_1C;
   if (this == (AiPlrClassTy *)0x0) {
     puVar2 = (undefined4 *)0x0;
   }

@@ -95,7 +95,7 @@ void __fastcall FUN_00585020(AnonShape_00585020_1C9B1418 *param_1)
   iVar7 = param_1->field_0231;
   sVar6 = (short)local_14;
   if (iVar7 == 0) {
-    iVar5 = PTR_00802a38->field_00E4 - param_1->field_023D;
+    iVar5 = g_playSystem_00802A38->field_00E4 - param_1->field_023D;
     iVar3 = (param_1->field_024D * iVar5 * iVar5) / 22000;
     if ((local_14 < 5) && (iVar7 = thunk_FUN_004961b0(local_10,local_8,sVar6), iVar7 == 0)) {
       if ((((-1 < local_10) &&
@@ -121,21 +121,22 @@ void __fastcall FUN_00585020(AnonShape_00585020_1C9B1418 *param_1)
         iVar7 = 0;
       }
       if (*(short *)(DAT_00806724 + 0x23) <= iVar7) {
-        thunk_FUN_004ace30(this,0,0);
+        STT3DSprC::sub_004ACE30((STT3DSprC *)this,0,0);
         iVar7 = iVar1;
       }
       param_1->field_0241 = iVar7;
-      thunk_FUN_004ace30(this,*(uint *)(DAT_00806724 + 0x30 + iVar7 * 4),
-                         (int)*(short *)(DAT_00806724 + 0x2c));
+      STT3DSprC::sub_004ACE30
+                ((STT3DSprC *)this,*(uint *)(DAT_00806724 + 0x30 + iVar7 * 4),
+                 (int)*(short *)(DAT_00806724 + 0x2c));
     }
     sVar6 = (short)iVar3;
     if (iVar3 + 0x28 < 0) {
-      thunk_FUN_00416240(param_1,*(undefined2 *)&param_1->field_0x278,
-                         *(undefined2 *)&param_1->field_0x27c,sVar6 + param_1->field_0045 + 0x28);
+      sub_00416240(param_1,*(undefined2 *)&param_1->field_0x278,*(undefined2 *)&param_1->field_0x27c
+                   ,sVar6 + param_1->field_0045 + 0x28);
       param_1->field_0251 = 0x168;
       param_1->field_0235 = (int)param_1->field_0045;
       *(int *)&param_1->field_0x274 = *(int *)&param_1->field_0x274 + 1;
-      param_1->field_023D = PTR_00802a38->field_00E4;
+      param_1->field_023D = g_playSystem_00802A38->field_00E4;
       iVar3 = (int)((ulonglong)((longlong)param_1->field_024D * -0x2aaaaaab) >> 0x20);
       param_1->field_024D = iVar3 - (iVar3 >> 0x1f);
       if (g_visibleClass_00802A88 != (VisibleClassTy *)0x0) {
@@ -175,26 +176,26 @@ void __fastcall FUN_00585020(AnonShape_00585020_1C9B1418 *param_1)
       }
       uVar4 = thunk_FUN_004ac910(this,'\b');
       if ((param_1->field_0255 != '\0') && (uVar4 == param_1->field_0256)) {
-        STT3DSprC::StartShow((STT3DSprC *)this,9,PTR_00802a38->field_00E4);
+        STT3DSprC::StartShow((STT3DSprC *)this,9,g_playSystem_00802A38->field_00E4);
         thunk_FUN_004ad0e0(this,9);
       }
-      iVar3 = thunk_FUN_004acd30(this,'\b');
+      iVar3 = STT3DSprC::sub_004ACD30((STT3DSprC *)this,'\b');
       if (uVar4 == iVar3 - 1U) {
         STT3DSprC::StopShow((STT3DSprC *)this,8);
       }
-      iVar3 = thunk_FUN_004acd30(this,'\n');
+      iVar3 = STT3DSprC::sub_004ACD30((STT3DSprC *)this,'\n');
       if (uVar4 == iVar3 - 1U) {
         STT3DSprC::StopShow((STT3DSprC *)this,10);
       }
       if (param_1->field_0255 != '\0') {
-        iVar3 = thunk_FUN_004acd30(this,'\t');
+        iVar3 = STT3DSprC::sub_004ACD30((STT3DSprC *)this,'\t');
         iVar5 = thunk_FUN_004ac910(this,'\t');
         if (iVar5 == iVar3 + -1) {
           STT3DSprC::StopShow((STT3DSprC *)this,9);
           param_1->field_0255 = 0;
         }
       }
-      iVar3 = thunk_FUN_004acd30(this,'\b');
+      iVar3 = STT3DSprC::sub_004ACD30((STT3DSprC *)this,'\b');
       if ((uVar4 == iVar3 - 1U) && (param_1->field_0255 == '\0')) {
         thunk_FUN_00584ad0(param_1);
         return;
@@ -203,7 +204,7 @@ void __fastcall FUN_00585020(AnonShape_00585020_1C9B1418 *param_1)
       (**(code **)(*(int *)param_1 + 0xd8))();
       return;
     }
-    iVar7 = PTR_00802a38->field_00E4 - param_1->field_023D;
+    iVar7 = g_playSystem_00802A38->field_00E4 - param_1->field_023D;
     if (iVar7 == 1) {
       thunk_FUN_00585890(param_1,iVar3,iVar5,param_1->field_0286);
     }
@@ -211,13 +212,14 @@ void __fastcall FUN_00585020(AnonShape_00585020_1C9B1418 *param_1)
     iVar3 = iVar3 - (iVar3 * iVar7) / (DAT_007cb8e4 >> 1);
     if (iVar3 < 1) {
       param_1->field_0241 = 0;
-      thunk_FUN_004ace30(this,0,0);
+      STT3DSprC::sub_004ACE30((STT3DSprC *)this,0,0);
       thunk_FUN_004aceb0(this,'\x0e');
     }
     else {
       param_1->field_0241 = iVar3;
-      thunk_FUN_004ace30(this,*(uint *)(DAT_00806724 + 0x30 + iVar3 * 4),
-                         (int)*(short *)(DAT_00806724 + 0x2c));
+      STT3DSprC::sub_004ACE30
+                ((STT3DSprC *)this,*(uint *)(DAT_00806724 + 0x30 + iVar3 * 4),
+                 (int)*(short *)(DAT_00806724 + 0x2c));
     }
     uVar4 = (int)param_1->field_0045 - 5;
     if ((param_1->field_0045 < 0x44c) && (0x1b < (int)(param_1->field_0235 - uVar4))) {
@@ -238,7 +240,7 @@ void __fastcall FUN_00585020(AnonShape_00585020_1C9B1418 *param_1)
       thunk_FUN_00584b10((AnonShape_00584B10_33997544 *)param_1);
     }
   }
-  thunk_FUN_00416240(param_1,param_1->field_0041,param_1->field_0043,(short)uVar4);
+  sub_00416240(param_1,param_1->field_0041,param_1->field_0043,(short)uVar4);
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
   (**(code **)(*(int *)param_1 + 0xd8))();
   return;

@@ -1,0 +1,15 @@
+0046EA10  pointer  0046d499
+0046EA14  pointer  0046d4e6
+0046EA18  pointer  0046d687
+0046EA1C  pointer  0046e811
+0046EA20  pointer  0046d669
+0046EA24  pointer  0046d767
+0046EA28  pointer  0046d7b4
+0046EA2C  pointer  0046d898
+0046EA30  pointer  0046e811
+0046EA34  pointer  0046d833
+0046EA38  pointer  0046db76
+0046EA3C  pointer  0046dba5
+0046EA40  pointer  0046dd4a
+0046EA44  pointer  0046e9f3
+0046EA48  pointer  0046dcc4

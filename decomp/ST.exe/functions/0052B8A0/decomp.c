@@ -1,12 +1,15 @@
 
-void __fastcall FUN_0052b8a0(int param_1)
+/* [STMethodOwnerApplier] Structural method owner recovered as MoneyTy.
+   Evidence: this_call_owners=[MoneyTy]; agreed_this_calls=2; incoming_this_accesses=7;
+   incoming_edx_uses=0; incoming_stack_parameter_uses=0; direct_non_thunk_callers=0;
+   incoming_ecx_receiver_callers=0; attributed_named_callers=1; owner_evidence_coverage=adequate */
+
+void __thiscall MoneyTy::sub_0052B8A0(MoneyTy *this)
 
 {
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  FUN_006b5f80((int *)PTR_008075a8,*(int *)(param_1 + 0x18),*(int *)(param_1 + 0x1c),
-               *(int *)(param_1 + 0x40),*(int *)(param_1 + 0x44));
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  PutDDX(*(int *)(param_1 + 0x18),*(int *)(param_1 + 0x1c),'\x01',*(BITMAPINFO **)(param_1 + 0x72));
+  FUN_006b5f80((int *)PTR_008075a8,this->field_0018,this->field_001C,this->field_0040,
+               this->field_0044);
+  PutDDX(this->field_0018,this->field_001C,'\x01',(BITMAPINFO *)this->field_0072);
   return;
 }
 

@@ -145,7 +145,7 @@ cf_common_exit_0067989B:
     local_48[0]._8_4_ = uVar4;
     SubmarineTitans::Recovered::HiddenThis::AnonReceiver_006799B0::thunk_FUN_0067a020
               ((AnonReceiver_006799B0 *)param_1,local_48,-1);
-    thunk_FUN_0067c110((AnonReceiver_006799B0 *)param_1);
+    AiPlrClassTy::sub_0067C110((AiPlrClassTy *)param_1);
   }
   return;
 }

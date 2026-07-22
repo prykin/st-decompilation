@@ -38,18 +38,18 @@ void __thiscall MAdvTy::PaintMAdv(MAdvTy *this)
     FUN_006b5f80((int *)PTR_008075a8,0,0,g_nWidth_00806730,DAT_00806734);
     pMVar2 = local_8;
     PutDDX(0,0,'\x01',(BITMAPINFO *)local_8->field_005E);
-    pcVar10 = PTR_0081176c->field_0030;
+    pcVar10 = g_startSystem_0081176C->field_0030;
     uVar11 = 1;
     uVar9 = 0xffffffff;
     if (pMVar2->field_005D == '\0') {
       uVar8 = 0xfffffffe;
-      puVar4 = (uint *)LoadResourceString(0x25e4,HINSTANCE_00807618);
+      puVar4 = (uint *)LoadResourceString(0x25e4,g_module_00807618);
       StartServTy::WrTextDDX(this_02,0,0,0x1b8,800,0x14,puVar4,uVar8,uVar9,pcVar10,uVar11);
-      pcVar10 = PTR_0081176c->field_0030;
+      pcVar10 = g_startSystem_0081176C->field_0030;
       uVar11 = 1;
       uVar8 = 0xffffffff;
       uVar9 = 0xffffffff;
-      puVar4 = (uint *)LoadResourceString(0x25e8,HINSTANCE_00807618);
+      puVar4 = (uint *)LoadResourceString(0x25e8,g_module_00807618);
       iVar7 = 0x8c;
       iVar6 = 800;
       iVar5 = 0x1cc;
@@ -59,19 +59,19 @@ void __thiscall MAdvTy::PaintMAdv(MAdvTy *this)
     }
     else {
       uVar8 = 0xffffffff;
-      puVar4 = (uint *)LoadResourceString(0x25e5,HINSTANCE_00807618);
+      puVar4 = (uint *)LoadResourceString(0x25e5,g_module_00807618);
       StartServTy::WrTextDDX(this_00,0,10,10,0x30c,0x32,puVar4,uVar8,uVar9,pcVar10,uVar11);
-      pcVar10 = PTR_0081176c->field_0030;
+      pcVar10 = g_startSystem_0081176C->field_0030;
       uVar11 = 1;
       uVar8 = 0xffffffff;
       uVar9 = 0;
-      puVar4 = (uint *)LoadResourceString(0x25e6,HINSTANCE_00807618);
+      puVar4 = (uint *)LoadResourceString(0x25e6,g_module_00807618);
       StartServTy::WrTextDDX(this_01,0,0x10e,0x3c,0x20d,0xfa,puVar4,uVar9,uVar8,pcVar10,uVar11);
-      pcVar10 = PTR_0081176c->field_0030;
+      pcVar10 = g_startSystem_0081176C->field_0030;
       uVar11 = 1;
       uVar8 = 0xffffffff;
       uVar9 = 0;
-      puVar4 = (uint *)LoadResourceString(0x25e7,HINSTANCE_00807618);
+      puVar4 = (uint *)LoadResourceString(0x25e7,g_module_00807618);
       iVar7 = 0xe6;
       iVar6 = 0x302;
       iVar5 = 0x172;

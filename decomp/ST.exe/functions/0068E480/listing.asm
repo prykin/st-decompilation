@@ -1,4 +1,4 @@
-FUN_0068e480:
+AiTactClassTy::sub_0068E480:
 0068E480  55                        PUSH EBP
 0068E481  8B EC                     MOV EBP,ESP
 0068E483  56                        PUSH ESI

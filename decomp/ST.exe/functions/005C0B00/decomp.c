@@ -3,16 +3,19 @@
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\rpt_obj.cpp
-   MReportTy::PaintBut */
+   MReportTy::PaintBut
+
+   [STPrototypeApplier] Propagated parameter 1.
+   Evidence: 005C1A90 -> 005C0B00 @ 005C1F2B */
 
 void __thiscall
-MReportTy::PaintBut(MReportTy *this,AnonShape_005C0B00_CBE14AB4 *param_1,UINT param_2,int param_3,
-                   char param_4,uint *param_5)
+MReportTy::PaintBut(MReportTy *this,STMessage *param_1,UINT param_2,int param_3,char param_4,
+                   uint *param_5)
 
 {
-  short sVar1;
+  word wVar1;
   code *pcVar2;
-  int *piVar3;
+  STMessageArg SVar3;
   byte *pbVar4;
   AnonPointee_MReportTy_0077 *pAVar5;
   int iVar6;
@@ -22,7 +25,7 @@ MReportTy::PaintBut(MReportTy *this,AnonShape_005C0B00_CBE14AB4 *param_1,UINT pa
   uint uVar10;
   uint uVar11;
   InternalExceptionFrame local_64;
-  int *local_20;
+  STMessageArg local_20;
   byte *local_1c;
   uint *local_18;
   AnonPointee_MReportTy_0077 *local_14;
@@ -31,13 +34,13 @@ MReportTy::PaintBut(MReportTy *this,AnonShape_005C0B00_CBE14AB4 *param_1,UINT pa
   MReportTy *local_c;
   undefined4 *local_8;
 
-  if (param_1->field_0014 == 3) {
+  if ((param_1->arg0).words.low == 3) {
     cVar9 = (-(param_4 != '\0') & 0xedU) + 0x2a;
   }
   else {
     cVar9 = (-(param_4 != '\0') & 0xecU) + 0x2c;
   }
-  local_20 = param_1->field_0018;
+  local_20 = param_1->arg1;
   /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
   _local_10 = CONCAT31(uStack_f,cVar9);
   if (param_4 == '\0') {
@@ -77,15 +80,15 @@ MReportTy::PaintBut(MReportTy *this,AnonShape_005C0B00_CBE14AB4 *param_1,UINT pa
                  (byte)_local_10);
     if (((param_4 == '\0') && (param_2 != 0)) || ((param_4 != '\0' && (param_5 != (uint *)0x0)))) {
       if (param_4 == '\0') {
-        param_5 = (uint *)LoadResourceString(param_2,HINSTANCE_00807618);
+        param_5 = (uint *)LoadResourceString(param_2,g_module_00807618);
       }
       local_18 = param_5;
       ccFntTy::SetSurf(local_c->field_0083,(int)pAVar5,0,0,0,0,0);
-      sVar1 = param_1->field_0014;
-      if ((sVar1 == 1) || (sVar1 == 2)) {
+      wVar1 = (param_1->arg0).words.low;
+      if ((wVar1 == 1) || (wVar1 == 2)) {
         iVar6 = (-(uint)(param_4 != '\0') & 0xfffffffe) + 2;
       }
-      else if (sVar1 == 3) {
+      else if (wVar1 == 3) {
         iVar6 = (-(uint)(param_4 != '\0') & 0xfffffffe) + 3;
       }
       else {
@@ -93,13 +96,17 @@ MReportTy::PaintBut(MReportTy *this,AnonShape_005C0B00_CBE14AB4 *param_1,UINT pa
       }
       ccFntTy::WrStr(local_c->field_0083,local_18,-1,-1,iVar6);
     }
-    piVar3 = local_20;
-    FUN_006b5f80((int *)PTR_008075a8,*local_20,local_20[1],(int)local_8,(int)pbVar4);
-    PutDDXClip(*piVar3,piVar3[1],*piVar3,piVar3[1],(uint)local_8,pbVar4,'\x01',
-               (BITMAPINFO *)local_c->field_005D);
+    SVar3 = local_20;
+                    /* WARNING: Load size is inaccurate */
+    FUN_006b5f80((int *)PTR_008075a8,*local_20.i32,*(int *)(local_20.u32 + 4),(int)local_8,
+                 (int)pbVar4);
+                    /* WARNING: Load size is inaccurate */
+    PutDDXClip(*SVar3.i32,*(int *)(SVar3.u32 + 4),*SVar3.i32,*(int *)(SVar3.u32 + 4),(uint)local_8,
+               pbVar4,'\x01',(BITMAPINFO *)local_c->field_005D);
+                    /* WARNING: Load size is inaccurate */
     Library::DKW::DDX::FUN_006b48e0
-              (DAT_0080759c,*piVar3,piVar3[1],(int)pAVar5,0,0,0,(uint)local_8,(int)pbVar4,
-               (int)&local_c->field_0xa3,0x4c,0x10000ff);
+              (DAT_0080759c,*SVar3.i32,*(int *)(SVar3.u32 + 4),(int)pAVar5,0,0,0,(uint)local_8,
+               (int)pbVar4,(int)&local_c->field_0xa3,0x4c,0x10000ff);
     g_currentExceptionFrame = local_64.previous;
     return;
   }

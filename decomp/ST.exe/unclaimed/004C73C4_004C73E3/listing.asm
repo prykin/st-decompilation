@@ -1,0 +1,8 @@
+004C73C4  pointer  004c72ba
+004C73C8  pointer  004c72ed
+004C73CC  pointer  004c73b9
+004C73D0  pointer  004c7315
+004C73D4  pointer  004c7337
+004C73D8  pointer  004c7326
+004C73DC  pointer  004c73b9
+004C73E0  pointer  004c73b1

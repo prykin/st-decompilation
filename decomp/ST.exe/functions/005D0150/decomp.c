@@ -25,8 +25,7 @@ void __thiscall SettMapMTy::CheckPlList(SettMapMTy *this,void *param_1)
   DArrayTy *pDVar12;
   uint uVar13;
   uint uVar14;
-  dword dVar15;
-  char *pcVar16;
+  char *pcVar15;
   InternalExceptionFrame local_5c;
   AnonShape_00413AF0_B6B4EE9A *local_18;
   uint local_14;
@@ -149,7 +148,7 @@ LAB_005d02c3:
                  ((*pcVar8 != '\0' &&
                   (((*(char *)pAVar9 == '\0' && (pAVar9->field_0x4 != '\x01')) && (uVar13 < 0x18))))
                  )) {
-                thunk_FUN_005d00b0(local_c,pAVar9,uVar14);
+                sub_005D00B0(local_c,pAVar9,uVar14);
                 local_5 = '\x01';
                 break;
               }
@@ -172,7 +171,7 @@ LAB_005d02c3:
           }
           if (((pAVar9 != (AnonShape_005D00B0_9E7CC102 *)0x0) && (*(char *)pAVar9 == '\0')) &&
              ((pAVar9->field_0x4 != '\x01' && (uVar13 < 0x18)))) {
-            thunk_FUN_005d00b0(local_c,pAVar9,uVar13);
+            sub_005D00B0(local_c,pAVar9,uVar13);
           }
         }
       }
@@ -213,10 +212,10 @@ LAB_005d0391:
       local_5 = '\0';
       local_10 = 0;
       local_18 = (AnonShape_00413AF0_B6B4EE9A *)local_c->field_1F84;
-      dVar15 = ((DArrayTy *)local_18)->count;
-      if (dVar15 != 0) {
+      uVar13 = ((DArrayTy *)local_18)->count;
+      if (uVar13 != 0) {
         do {
-          if (local_10 < dVar15) {
+          if (local_10 < uVar13) {
             /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(array, index) (runtime elementSize cannot be a static C array) */
             pcVar8 = (char *)(((DArrayTy *)local_18)->elementSize * local_10 +
                              (int)((DArrayTy *)local_18)->data);
@@ -227,7 +226,7 @@ LAB_005d0391:
           if (((pcVar8 != (char *)0x0) && (*pcVar8 != '\0')) && (pcVar8[4] == '\x01')) {
             local_6 = '\0';
             local_14 = local_10 + 1;
-            if (local_14 < dVar15) {
+            if (local_14 < uVar13) {
 /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(array, index) (runtime elementSize cannot be a static C array) */
 LAB_005d045a:
               pcVar10 = (char *)(((DArrayTy *)local_18)->elementSize * local_14 +
@@ -241,11 +240,11 @@ LAB_005d045a:
                 if (*(DArrayTy **)(pcVar8 + 0x50) != (DArrayTy *)0x0) {
                   DArrayDestroy(*(DArrayTy **)(pcVar8 + 0x50));
                 }
-                pcVar16 = pcVar8;
+                pcVar15 = pcVar8;
                 for (iVar6 = 0x18; iVar6 != 0; iVar6 = iVar6 + -1) {
-                  *(undefined4 *)pcVar16 = *(undefined4 *)pcVar10;
+                  *(undefined4 *)pcVar15 = *(undefined4 *)pcVar10;
                   pcVar10 = pcVar10 + 4;
-                  pcVar16 = pcVar16 + 4;
+                  pcVar15 = pcVar15 + 4;
                 }
                 pcVar8[1] = '\0';
                 *pcVar8 = '\x01';
@@ -275,8 +274,8 @@ LAB_005d048e:
           }
           local_10 = local_10 + 1;
           local_18 = (AnonShape_00413AF0_B6B4EE9A *)local_c->field_1F84;
-          dVar15 = ((DArrayTy *)local_18)->count;
-        } while (local_10 < dVar15);
+          uVar13 = ((DArrayTy *)local_18)->count;
+        } while (local_10 < uVar13);
       }
       g_currentExceptionFrame = local_5c.previous;
       return;
@@ -292,7 +291,7 @@ LAB_005d048e:
   return;
 cf_continue_loop_005D0486:
   local_14 = local_14 + 1;
-  if (dVar15 <= local_14) goto LAB_005d048e;
+  if (uVar13 <= local_14) goto LAB_005d048e;
   goto LAB_005d045a;
 }
 

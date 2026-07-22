@@ -73,7 +73,7 @@ undefined4 __thiscall STPlaySystemC::Life(STPlaySystemC *this)
       if (((this_00->field_0038 != '\0') && (g_popUp_008016D8 != (PopUpTy *)0x0)) &&
          (g_popUp_008016D8->field_009C == '\0')) {
         uVar13 = 8;
-        pcVar4 = LoadResourceString(0x4275,HINSTANCE_00807618);
+        pcVar4 = LoadResourceString(0x4275,g_module_00807618);
         thunk_FUN_0052d320(g_popUp_008016D8,pcVar4,uVar13);
       }
       if (this_00->field_0028 != 0) {
@@ -98,7 +98,7 @@ undefined4 __thiscall STPlaySystemC::Life(STPlaySystemC *this)
           if (iVar2 < 1) {
             this_00->field_002C =
                  *(int *)(s_FrmPanelTy__GetMessage_007c2ae0 + (uint)DAT_0080733b * 0x18 + 4);
-            thunk_FUN_00550190((int)this_00);
+            sub_00550190(this_00);
             PrepareMail(this_00);
             /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
             SendMail(this_00,unaff_EDI);
@@ -119,7 +119,7 @@ undefined4 __thiscall STPlaySystemC::Life(STPlaySystemC *this)
           if (this_00->field_003D != (AnonPointee_STPlaySystemC_003D *)0x0) {
             this_00->field_003D->field_0004 = this_00->field_004D;
             this_00->field_003D->field_0005 = 0;
-            iVar2 = thunk_FUN_0054ebb0(this_00,(char *)this_00->field_003D,7);
+            iVar2 = sub_0054EBB0(this_00,(char *)this_00->field_003D,7);
             if (iVar2 != 0) {
               thunk_FUN_00550380(1);
               goto LAB_0054e052;
@@ -199,8 +199,7 @@ undefined4 __thiscall STPlaySystemC::Life(STPlaySystemC *this)
           do {
             iVar5 = Library::Ourlib::CONNECT::FUN_00715630
                               (g_int_00811764,0x36,&local_14,&local_10,&local_8,(uint *)0x0,-1,0);
-            if ((iVar5 == 1) &&
-               (thunk_FUN_005505d0(this_00,local_10,local_8), local_8 != (int *)0x0)) {
+            if ((iVar5 == 1) && (sub_005505D0(this_00,local_10,local_8), local_8 != (int *)0x0)) {
               FreeAndNull(&local_8);
             }
             iVar2 = iVar2 + 1;
@@ -269,7 +268,7 @@ undefined4 __thiscall STPlaySystemC::Life(STPlaySystemC *this)
                 pcVar4 = &DAT_00808af6;
                 do {
                   if ((*(int *)(pcVar4 + -6) == local_18) && (*pcVar4 != '\0')) {
-                    pcVar3 = LoadResourceString(0x426f,HINSTANCE_00807618);
+                    pcVar3 = LoadResourceString(0x426f,g_module_00807618);
                     wsprintfA((LPSTR)&DAT_0080f33a,"%s %s",pcVar4 + -0x46,pcVar3);
                     if (g_popUp_008016D8 != (PopUpTy *)0x0) {
                       thunk_FUN_0052d320(g_popUp_008016D8,(char *)&DAT_0080f33a,8);
@@ -282,19 +281,20 @@ undefined4 __thiscall STPlaySystemC::Life(STPlaySystemC *this)
                 } while (iVar2 < (int)(uint)DAT_00808aaf);
               }
               uVar8 = 0;
-              uVar13 = PTR_0080c4fe->count;
+              uVar13 = g_dArray_0080C4FE->count;
               if (0 < (int)uVar13) {
                 bVar12 = uVar13 != 0;
                 do {
                   if (bVar12) {
-                    /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(PTR_0080c4fe, uVar8) (runtime stride) */
-                    piVar10 = (int *)(PTR_0080c4fe->elementSize * uVar8 + (int)PTR_0080c4fe->data);
+                    /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(g_dArray_0080C4FE, uVar8) (runtime stride) */
+                    piVar10 = (int *)(g_dArray_0080C4FE->elementSize * uVar8 +
+                                     (int)g_dArray_0080C4FE->data);
                   }
                   else {
                     piVar10 = (int *)0x0;
                   }
                   if ((piVar10 != (int *)0x0) && (*piVar10 == local_18)) {
-                    FUN_006b0c70(PTR_0080c4fe,uVar8);
+                    FUN_006b0c70(g_dArray_0080C4FE,uVar8);
                     break;
                   }
                   uVar8 = uVar8 + 1;
@@ -307,25 +307,26 @@ undefined4 __thiscall STPlaySystemC::Life(STPlaySystemC *this)
               break;
             case 0x35:
               uVar8 = 0;
-              uVar13 = PTR_0080c4fe->count;
+              uVar13 = g_dArray_0080C4FE->count;
               if (0 < (int)uVar13) {
                 bVar12 = uVar13 != 0;
                 do {
                   if (bVar12) {
-                    /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(PTR_0080c4fe, uVar8) (runtime stride) */
-                    piVar10 = (int *)(PTR_0080c4fe->elementSize * uVar8 + (int)PTR_0080c4fe->data);
+                    /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(g_dArray_0080C4FE, uVar8) (runtime stride) */
+                    piVar10 = (int *)(g_dArray_0080C4FE->elementSize * uVar8 +
+                                     (int)g_dArray_0080C4FE->data);
                   }
                   else {
                     piVar10 = (int *)0x0;
                   }
                   if ((piVar10 != (int *)0x0) && (*piVar10 == local_18)) {
-                    FUN_006b0c70(PTR_0080c4fe,uVar8);
+                    FUN_006b0c70(g_dArray_0080C4FE,uVar8);
                     iVar2 = 0;
                     if (DAT_00808aaf != 0) {
                       pcVar4 = &DAT_00808af6;
                       do {
                         if ((*(int *)(pcVar4 + -6) == local_18) && (*pcVar4 != '\0')) {
-                          pcVar3 = LoadResourceString(0x426e,HINSTANCE_00807618);
+                          pcVar3 = LoadResourceString(0x426e,g_module_00807618);
                           wsprintfA((LPSTR)&DAT_0080f33a,"%s %s",pcVar4 + -0x46,pcVar3);
                           if (g_popUp_008016D8 != (PopUpTy *)0x0) {
                             thunk_FUN_0052d320(g_popUp_008016D8,(char *)&DAT_0080f33a,8);
@@ -364,13 +365,13 @@ undefined4 __thiscall STPlaySystemC::Life(STPlaySystemC *this)
       }
       if ((g_popUp_008016D8 != (PopUpTy *)0x0) && (g_popUp_008016D8->field_009C == '\0')) {
         uVar13 = 8;
-        pcVar4 = LoadResourceString(0x426a,HINSTANCE_00807618);
+        pcVar4 = LoadResourceString(0x426a,g_module_00807618);
         thunk_FUN_0052d320(g_popUp_008016D8,pcVar4,uVar13);
       }
-      if ((PTR_0080c4fe->count == 0) || (59999 < (int)(DVar6 - this_00->field_00BC))) {
+      if ((g_dArray_0080C4FE->count == 0) || (59999 < (int)(DVar6 - this_00->field_00BC))) {
         if (g_popUp_008016D8 != (PopUpTy *)0x0) {
           uVar13 = 8;
-          pcVar4 = LoadResourceString(0x4269,HINSTANCE_00807618);
+          pcVar4 = LoadResourceString(0x4269,g_module_00807618);
           thunk_FUN_0052d320(g_popUp_008016D8,pcVar4,uVar13);
         }
         this_00->field_0038 = 0;
@@ -394,7 +395,8 @@ undefined4 __thiscall STPlaySystemC::Life(STPlaySystemC *this)
            ((*piVar10 != DAT_0080877f &&
             (((*(char *)((int)piVar10 + 6) != '\0' &&
               ((&DAT_00809950)[*(byte *)(piVar10 + 1)] == '\0')) &&
-             (DVar6 = FUN_006e51b0(0x807620), 30000 < (int)(DVar6 - piVar10[2]))))))) {
+             (DVar6 = STAppC::sub_006E51B0((STAppC *)&DAT_00807620),
+             30000 < (int)(DVar6 - piVar10[2]))))))) {
           if (*piVar10 != this_00->field_00F4) {
             thunk_FUN_005503c0(this_00,*piVar10);
           }

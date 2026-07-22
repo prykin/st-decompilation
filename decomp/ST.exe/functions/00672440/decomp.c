@@ -12,7 +12,7 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0064A970::FUN_00672440
 {
   AnonReceiver_0064A970 *pAVar1;
   int iVar2;
-  undefined1 *puVar3;
+  char *pcVar3;
   undefined4 uVar4;
   short *psVar5;
   float10 fVar6;
@@ -57,48 +57,48 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0064A970::FUN_00672440
         g_currentExceptionFrame = local_64.previous;
         return local_18;
       }
-      puVar3 = (undefined1 *)thunk_FUN_0064a910(param_1,local_8);
-      if (puVar3 != (undefined1 *)0x0) break;
+      pcVar3 = thunk_FUN_0064a910(param_1,local_8);
+      if (pcVar3 != (char *)0x0) break;
       *(undefined4 *)&pAVar1->field_0x84 = 0xffffffff;
       RaiseInternalException(-4,g_overwriteContext_007ED77C,".\\ai\\ai_erc.h",0x79);
     }
-    switch(*puVar3) {
-    case 8:
+    switch(*pcVar3) {
+    case '\b':
       if (param_3 != (short *)0x0) {
         if (0x31 < *param_3) {
           *(undefined4 *)&pAVar1->field_0x84 = 0xffffffff;
           RaiseInternalException(-0x66,g_overwriteContext_007ED77C,".\\ai\\ai_erc.h",0x79);
         }
         *(undefined1 *)(*param_3 + 0xd0 + (int)param_3) = 8;
-        uVar4 = (*pAVar1->vtable->slot_00)(puVar3);
+        uVar4 = (*pAVar1->vtable->slot_00)(pcVar3);
         *(undefined4 *)(param_3 + *param_3 * 2 + 4) = uVar4;
         *param_3 = *param_3 + 1;
         param_3[2] = param_3[2] + 1;
       }
       local_8 = local_8 + 1;
       break;
-    case 9:
+    case '\t':
       if (param_3 != (short *)0x0) {
         if (0x31 < *param_3) {
           *(undefined4 *)&pAVar1->field_0x84 = 0xffffffff;
           RaiseInternalException(-0x66,g_overwriteContext_007ED77C,".\\ai\\ai_erc.h",0x79);
         }
         *(undefined1 *)(*param_3 + 0xd0 + (int)param_3) = 9;
-        fVar6 = (float10)(*pAVar1->vtable->slot_04)(puVar3);
+        fVar6 = (float10)(*pAVar1->vtable->slot_04)(pcVar3);
         *(float *)(param_3 + *param_3 * 2 + 4) = (float)fVar6;
         *param_3 = *param_3 + 1;
         param_3[3] = param_3[3] + 1;
       }
       local_8 = local_8 + 1;
       break;
-    case 10:
+    case '\n':
       if (param_3 != (short *)0x0) {
         if (0x31 < *param_3) {
           *(undefined4 *)&pAVar1->field_0x84 = 0xffffffff;
           RaiseInternalException(-0x66,g_overwriteContext_007ED77C,".\\ai\\ai_erc.h",0x79);
         }
         *(undefined1 *)(*param_3 + 0xd0 + (int)param_3) = 10;
-        uVar4 = (*pAVar1->vtable->slot_08)(puVar3);
+        uVar4 = (*pAVar1->vtable->slot_08)(pcVar3);
         *(undefined4 *)(param_3 + *param_3 * 2 + 4) = uVar4;
         if (*(int *)(param_3 + *param_3 * 2 + 4) == 0) {
           *(undefined4 *)&pAVar1->field_0x84 = 0xffffffff;
@@ -109,12 +109,12 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0064A970::FUN_00672440
       }
       local_8 = local_8 + 1;
       break;
-    case 0xb:
-      local_18 = (int)*(short *)(puVar3 + 1);
+    case '\v':
+      local_18 = (int)*(short *)(pcVar3 + 1);
       local_10 = 1;
       break;
     default:
-      local_c = thunk_FUN_00671f10((int)puVar3,&local_14,&local_20);
+      local_c = thunk_FUN_00671f10((int)pcVar3,&local_14,&local_20);
       if (local_c == (float *)0x0) {
         *(undefined4 *)&pAVar1->field_0x84 = 0xffffffff;
 LAB_0067276f:

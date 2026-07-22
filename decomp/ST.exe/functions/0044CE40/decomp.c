@@ -24,8 +24,7 @@ uint __fastcall FUN_0044ce40(STAllPlayersC *param_1)
       if (((short)local_c != -1) &&
          (pSVar2 = STAllPlayersC::GetObjPtr(local_8,DAT_0080874d,local_c,CASE_1),
          pSVar2 != (STGameObjC *)0x0)) {
-        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-        uVar3 = (**(code **)&pSVar2->vtable->field_0x2c)();
+        uVar3 = (*pSVar2->vtable->vfunc_2C)();
         switch(uVar3) {
         case 1:
         case 2:

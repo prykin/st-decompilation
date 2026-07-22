@@ -1,8 +1,13 @@
 
 /* [STPrototypeApplier] Propagated return.
-   Evidence: 0062D670 returns used as parameter 2 of STPlaySystemC::SaveObjData @ 0062CD19 */
+   Evidence: 0062D670 returns used as parameter 2 of STPlaySystemC::SaveObjData @ 0062CD19
 
-byte * __thiscall FUN_0062d670(void *this,uint *param_1)
+   [STMethodOwnerApplier] Structural method owner recovered as STManRub3C.
+   Evidence: this_call_owners=[STManRub3C]; agreed_this_calls=1; incoming_this_accesses=3;
+   incoming_edx_uses=0; incoming_stack_parameter_uses=4; direct_non_thunk_callers=0;
+   incoming_ecx_receiver_callers=0; attributed_named_callers=1; owner_evidence_coverage=adequate */
+
+byte * __thiscall STManRub3C::sub_0062D670(STManRub3C *this,uint *param_1)
 
 {
   uint *puVar1;
@@ -16,19 +21,19 @@ byte * __thiscall FUN_0062d670(void *this,uint *param_1)
   uint *local_14;
   byte *local_10;
   uint local_c;
-  void *local_8;
+  STManRub3C *local_8;
 
   puVar1 = param_1;
   local_c = 0;
-  *(undefined4 *)((int)this + 0xb0) = *(undefined4 *)((int)this + 0xb4);
+  this->field_00B0 = this->field_00B4;
   local_8 = this;
   local_10 = (byte *)Library::DKW::LIB::FUN_006aac70(0x98);
-  *(undefined4 *)((int)this + 0x28) = 2;
-  if (this == (void *)0x0) {
+  this->field_0028 = 2;
+  if (this == (STManRub3C *)0x0) {
     puVar5 = (undefined4 *)0x0;
   }
   else {
-    puVar5 = (undefined4 *)((int)this + 0x1c);
+    puVar5 = &this->field_001C;
   }
   pbVar7 = local_10;
   for (iVar3 = 0x26; iVar3 != 0; iVar3 = iVar3 + -1) {
@@ -41,16 +46,16 @@ byte * __thiscall FUN_0062d670(void *this,uint *param_1)
   do {
     switch(param_1) {
     case (uint *)0x0:
-      piVar2 = (int *)((int)local_8 + 0x30);
+      piVar2 = &local_8->field_0030;
       break;
     case (uint *)0x1:
-      piVar2 = (int *)((int)local_8 + 0x50);
+      piVar2 = &local_8->field_0050;
       break;
     case (uint *)0x2:
-      piVar2 = (int *)((int)local_8 + 0x70);
+      piVar2 = &local_8->field_0070;
       break;
     case (uint *)0x3:
-      piVar2 = (int *)((int)local_8 + 0x90);
+      piVar2 = (int *)&local_8->field_0x90;
       break;
     default:
       goto switchD_0062d6cc_default;

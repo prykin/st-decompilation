@@ -1,0 +1,4 @@
+00717FAC  pointer  007179ce
+00717FB0  pointer  00717a1a
+00717FB4  pointer  00717a64
+00717FB8  pointer  00717ac4

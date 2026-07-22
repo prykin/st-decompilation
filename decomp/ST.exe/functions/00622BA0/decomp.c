@@ -1,5 +1,10 @@
 
-undefined4 __fastcall FUN_00622ba0(void *param_1)
+/* [STMethodOwnerApplier] Structural method owner recovered as STMineSetC.
+   Evidence: this_call_owners=[STMineSetC]; agreed_this_calls=1; incoming_this_accesses=71;
+   incoming_edx_uses=0; incoming_stack_parameter_uses=0; direct_non_thunk_callers=0;
+   incoming_ecx_receiver_callers=0; attributed_named_callers=1; owner_evidence_coverage=adequate */
+
+undefined4 __thiscall STMineSetC::sub_00622BA0(STMineSetC *this)
 
 {
   byte bVar1;
@@ -12,19 +17,18 @@ undefined4 __fastcall FUN_00622ba0(void *param_1)
   undefined4 local_8;
 
   local_8 = 0;
-  *(undefined4 *)((int)param_1 + 0x2c2) = *(undefined4 *)((int)param_1 + 0x276);
-  *(undefined4 *)((int)param_1 + 0x2c6) = *(undefined4 *)((int)param_1 + 0x27a);
-  *(undefined4 *)((int)param_1 + 0x2ca) = *(undefined4 *)((int)param_1 + 0x27e);
-  *(undefined2 *)((int)param_1 + 0x41) = *(undefined2 *)((int)param_1 + 0x2c2);
-  *(undefined2 *)((int)param_1 + 0x43) = *(undefined2 *)((int)param_1 + 0x2c6);
-  *(undefined2 *)((int)param_1 + 0x45) = *(undefined2 *)((int)param_1 + 0x2ca);
+  this->field_02C2 = this->field_0276;
+  this->field_02C6 = this->field_027A;
+  this->field_02CA = this->field_027E;
+  this->field_0041 = (short)this->field_02C2;
+  this->field_0043 = (short)this->field_02C6;
+  this->field_0045 = (short)this->field_02CA;
   GVar2 = thunk_FUN_004ab050();
-  thunk_FUN_00626b50(param_1,GVar2);
-  *(undefined2 *)((int)param_1 + 0x56) = *(undefined2 *)((int)param_1 + 0x2c6);
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  iVar4 = *(int *)((int)param_1 + 0x2c2);
-  *(undefined2 *)((int)param_1 + 0x54) = *(undefined2 *)((int)param_1 + 0x2c2);
-  *(undefined2 *)((int)param_1 + 0x58) = *(undefined2 *)((int)param_1 + 0x2ca);
+  sub_00626B50(this,GVar2);
+  this->field_0056 = (short)this->field_02C6;
+  iVar4 = this->field_02C2;
+  this->field_0054 = (short)this->field_02C2;
+  this->field_0058 = (short)this->field_02CA;
   sVar5 = (short)(iVar4 >> 0x1f);
   if (iVar4 < 0) {
     sVar5 = (((short)(iVar4 / 0xc9) + sVar5) - (short)((longlong)iVar4 * 0x28c1979 >> 0x3f)) + -1;
@@ -32,9 +36,8 @@ undefined4 __fastcall FUN_00622ba0(void *param_1)
   else {
     sVar5 = ((short)(iVar4 / 0xc9) + sVar5) - (short)((longlong)iVar4 * 0x28c1979 >> 0x3f);
   }
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  iVar4 = *(int *)((int)param_1 + 0x2c6);
-  *(short *)((int)param_1 + 0x47) = sVar5;
+  iVar4 = this->field_02C6;
+  this->field_0047 = sVar5;
   sVar6 = (short)(iVar4 >> 0x1f);
   if (iVar4 < 0) {
     sVar6 = (((short)(iVar4 / 0xc9) + sVar6) - (short)((longlong)iVar4 * 0x28c1979 >> 0x3f)) + -1;
@@ -42,9 +45,8 @@ undefined4 __fastcall FUN_00622ba0(void *param_1)
   else {
     sVar6 = ((short)(iVar4 / 0xc9) + sVar6) - (short)((longlong)iVar4 * 0x28c1979 >> 0x3f);
   }
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  iVar4 = *(int *)((int)param_1 + 0x2ca);
-  *(short *)((int)param_1 + 0x49) = sVar6;
+  iVar4 = this->field_02CA;
+  this->field_0049 = sVar6;
   sVar7 = (short)(iVar4 >> 0x1f);
   if (iVar4 < 0) {
     sVar7 = (((short)(iVar4 / 200) + sVar7) - (short)((longlong)iVar4 * 0x51eb851f >> 0x3f)) + -1;
@@ -52,86 +54,73 @@ undefined4 __fastcall FUN_00622ba0(void *param_1)
   else {
     sVar7 = ((short)(iVar4 / 200) + sVar7) - (short)((longlong)iVar4 * 0x51eb851f >> 0x3f);
   }
-  *(short *)((int)param_1 + 0x5d) = sVar6;
-  *(short *)((int)param_1 + 0x4b) = sVar7;
-  *(short *)((int)param_1 + 0x5b) = sVar5;
-  *(short *)((int)param_1 + 0x5f) = sVar7;
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  uVar3 = thunk_FUN_00626f10(*(Global_sub_00626F10_param_1Enum *)((int)param_1 + 0x272));
-  *(char *)((int)param_1 + 0x2ad) = (char)uVar3;
-  *(uint *)((int)param_1 + 0x35f) = PTR_00802a38->field_00E4;
+  this->field_005D = sVar6;
+  this->field_004B = sVar7;
+  this->field_005B = sVar5;
+  this->field_005F = sVar7;
+  uVar3 = thunk_FUN_00626f10(this->field_0272);
+  this->field_02AD = (char)uVar3;
+  this->field_035F = g_playSystem_00802A38->field_00E4;
   if ((char)uVar3 == '\x02') {
-    *(undefined4 *)((int)param_1 + 0x342) = 0xffffffff;
+    this->field_0342 = 0xffffffff;
   }
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  sVar5 = *(short *)((int)param_1 + 0x47) * 0xc9 + 100;
-  *(short *)((int)param_1 + 0x3c) = *(short *)((int)param_1 + 0x49) * 0xc9 + 100;
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  sVar7 = *(short *)((int)param_1 + 0x4b) * 200;
-  *(short *)((int)param_1 + 0x3a) = sVar5;
-  *(undefined1 *)((int)param_1 + 0x313) = 1;
+  sVar5 = this->field_0047 * 0xc9 + 100;
+  this->field_003C = this->field_0049 * 0xc9 + 100;
+  sVar7 = this->field_004B * 200;
+  this->field_003A = sVar5;
+  this->field_0313 = 1;
   sVar6 = sVar7 + 0x32;
-  *(short *)((int)param_1 + 0x3e) = sVar6;
-  *(int *)((int)param_1 + 0x28a) = (short)(sVar7 + 100) + -0x32;
-  *(undefined1 *)((int)param_1 + 0x8e) = 1;
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  uVar3 = FUN_006acf0d(*(int *)((int)param_1 + 0x2c2),*(int *)((int)param_1 + 0x2c6),
-                       *(int *)((int)param_1 + 0x2ca),(int)sVar5,(int)sVar5,(int)sVar6);
-  *(undefined4 *)((int)param_1 + 0x2f6) = uVar3;
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  bVar1 = *(byte *)((int)param_1 + 0x2ad);
+  this->field_003E = sVar6;
+  this->field_028A = (short)(sVar7 + 100) + -0x32;
+  this->field_008E = 1;
+  uVar3 = FUN_006acf0d(this->field_02C2,this->field_02C6,this->field_02CA,(int)sVar5,(int)sVar5,
+                       (int)sVar6);
+  this->field_02F6 = uVar3;
+  bVar1 = this->field_02AD;
   if (bVar1 == 3) {
-    *(undefined1 *)((int)param_1 + 0x352) = 0;
+    this->field_0352 = 0;
   }
   else {
-    *(undefined1 *)((int)param_1 + 0x352) = 1;
+    this->field_0352 = 1;
   }
   if (bVar1 < 3) {
     if (g_visibleClass_00802A88 != (VisibleClassTy *)0x0) {
-      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-      thunk_FUN_00558dc0(g_visibleClass_00802A88,(int)*(short *)((int)param_1 + 0x47),
-                         (int)*(short *)((int)param_1 + 0x49),
-                         (undefined *)(int)*(short *)((int)param_1 + 0x4b),
-                         *(int **)((int)param_1 + 0x24),*(uint *)(&DAT_007d02b4 + (uint)bVar1 * 4),
-                         *(int **)((int)param_1 + 0x18),0xffffffff);
+      VisibleClassTy::sub_00558DC0
+                (g_visibleClass_00802A88,(int)this->field_0047,(int)this->field_0049,
+                 (undefined *)(int)this->field_004B,(int *)this->field_0024,
+                 *(uint *)(&DAT_007d02b4 + (uint)bVar1 * 4),(int *)this->field_0018,0xffffffff);
     }
   }
   else if ((bVar1 == 3) && (g_visibleClass_00802A88 != (VisibleClassTy *)0x0)) {
-    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-    thunk_FUN_00558dc0(g_visibleClass_00802A88,(int)*(short *)((int)param_1 + 0x47),
-                       (int)*(short *)((int)param_1 + 0x49),
-                       (undefined *)(int)*(short *)((int)param_1 + 0x4b),
-                       *(int **)((int)param_1 + 0x24),DAT_007d02c0,*(int **)((int)param_1 + 0x18),
-                       0xffffffff);
-    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-    thunk_FUN_0041d1a0(param_1,*(int *)(&DAT_007d02b4 + (uint)*(byte *)((int)param_1 + 0x2ad) * 4));
+    VisibleClassTy::sub_00558DC0
+              (g_visibleClass_00802A88,(int)this->field_0047,(int)this->field_0049,
+               (undefined *)(int)this->field_004B,(int *)this->field_0024,DAT_007d02c0,
+               (int *)this->field_0018,0xffffffff);
+    thunk_FUN_0041d1a0(this,*(int *)(&DAT_007d02b4 + (uint)(byte)this->field_02AD * 4));
   }
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  sVar5 = *(short *)((int)param_1 + 0x47);
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  if ((((-1 < sVar5) && (sVar6 = *(short *)((int)param_1 + 0x49), -1 < sVar6)) &&
-      (sVar7 = *(short *)((int)param_1 + 0x4b), -1 < sVar7)) &&
+  sVar5 = this->field_0047;
+  if ((((-1 < sVar5) && (sVar6 = this->field_0049, -1 < sVar6)) &&
+      (sVar7 = this->field_004B, -1 < sVar7)) &&
      (((sVar5 < g_worldGrid.sizeX && (sVar6 < g_worldGrid.sizeY)) && (sVar7 < 5)))) {
-    *(undefined2 *)((int)param_1 + 0x3a) = *(undefined2 *)((int)param_1 + 0x282);
-    *(undefined2 *)((int)param_1 + 0x3c) = *(undefined2 *)((int)param_1 + 0x286);
-    *(undefined2 *)((int)param_1 + 0x3e) = *(undefined2 *)((int)param_1 + 0x28a);
-    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-    if (*(char *)((int)param_1 + 0x313) != '\0') {
-      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
+    this->field_003A = *(short *)&this->field_0282;
+    this->field_003C = *(short *)&this->field_0286;
+    this->field_003E = *(short *)&this->field_028A;
+    if (this->field_0313 != '\0') {
       if (((-1 < sVar5) && (sVar5 < g_worldGrid.sizeX)) &&
          (((-1 < sVar6 &&
            (((sVar6 < g_worldGrid.sizeY && (-1 < sVar7)) && (sVar7 < g_worldGrid.sizeZ)))) &&
           (g_worldGrid.cells
            [(int)g_worldGrid.planeStride * (int)sVar7 + (int)g_worldGrid.sizeX * (int)sVar6 +
-            (int)sVar5].objects[*(byte *)((int)param_1 + 0x8e)] != (STWorldObject *)0x0)))) {
+            (int)sVar5].objects[(byte)this->field_008E] != (STWorldObject *)0x0)))) {
         return 0;
       }
-      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-      iVar4 = DumpClassC::WritePtr(sVar5,sVar6,sVar7,(uint)*(byte *)((int)param_1 + 0x8e),param_1);
+      iVar4 = DumpClassC::WritePtr
+                        (sVar5,sVar6,sVar7,(uint)(byte)this->field_008E,
+                         (AnonShape_00495EC0_95A268C6 *)this);
       if (iVar4 != 0) {
         return 0;
       }
-      *(char *)((int)param_1 + 0x314) = *(char *)((int)param_1 + 0x314) + '\x01';
+      this->field_0314 = this->field_0314 + '\x01';
     }
     local_8 = 1;
   }

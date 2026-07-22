@@ -1,0 +1,8 @@
+00682C18  pointer  00682a24
+00682C1C  pointer  00682a50
+00682C20  pointer  00682a7a
+00682C24  pointer  00682aa5
+00682C28  pointer  00682aff
+00682C2C  pointer  00682b4d
+00682C30  pointer  00682b87
+00682C34  pointer  00682bc0

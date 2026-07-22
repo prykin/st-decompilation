@@ -1,0 +1,16 @@
+006FA23C  pointer  006f9c33
+006FA240  pointer  006f9c6b
+006FA244  pointer  006f9c79
+006FA248  pointer  006f9cb2
+006FA24C  pointer  006f9d80
+006FA250  pointer  006f9db8
+006FA254  pointer  006f9dc7
+006FA258  pointer  006f9e00
+006FA25C  pointer  006f9f4a
+006FA260  pointer  006f9f83
+006FA264  pointer  006f9f92
+006FA268  pointer  006f9fcc
+006FA26C  pointer  006fa084
+006FA270  pointer  006fa0de
+006FA274  pointer  006fa0cb
+006FA278  pointer  006fa10e

@@ -69,9 +69,9 @@ void __thiscall HelpPanelTy::TipProc(HelpPanelTy *this,void *param_1,int param_2
     *(undefined2 *)&local_10->field_0x2c = 0;
     local_10->field_002E = 2;
     *(undefined4 *)&local_10->field_0x30 = local_10->field_0178;
-    if (PTR_00802a30 != (CursorClassTy *)0x0) {
+    if (g_cursorClass_00802A30 != (CursorClassTy *)0x0) {
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-      (**(code **)PTR_00802a30->field_0000)(&local_10->field_0x18);
+      (**(code **)g_cursorClass_00802A30->field_0000)(&local_10->field_0x18);
     }
   }
   bVar8 = (byte)param_1;
@@ -91,7 +91,7 @@ LAB_0051d689:
   DrawTitle(this_00,0x55f2,0,0);
   uVar10 = local_c;
   if (local_14 != 10000) {
-    pcVar4 = LoadResourceString(local_14,HINSTANCE_00807618);
+    pcVar4 = LoadResourceString(local_14,g_module_00807618);
     uVar10 = 0xffffffff;
     do {
       pcVar12 = pcVar4;
@@ -139,7 +139,7 @@ LAB_0051d689:
   uVar6 = (DAT_0080874e != '\x03') - 1 & 5;
   iVar14 = -1;
   iVar9 = 1;
-  puVar7 = (uint *)LoadResourceString(0x5c93,HINSTANCE_00807618);
+  puVar7 = (uint *)LoadResourceString(0x5c93,g_module_00807618);
   ccFntTy::WrStr(this_00->field_01E0,puVar7,iVar9,iVar14,uVar6);
   local_34[0] = 0x50;
   local_34[2] = local_18;

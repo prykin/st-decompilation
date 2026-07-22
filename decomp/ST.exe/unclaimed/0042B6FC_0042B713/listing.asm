@@ -1,0 +1,6 @@
+0042B6FC  pointer  0042b637
+0042B700  pointer  0042b65a
+0042B704  pointer  0042b66a
+0042B708  pointer  0042b67a
+0042B70C  pointer  0042b68a
+0042B710  pointer  0042b69a

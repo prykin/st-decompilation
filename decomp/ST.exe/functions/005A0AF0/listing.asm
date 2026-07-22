@@ -1,4 +1,4 @@
-FUN_005a0af0:
+FSGSTy::sub_005A0AF0:
 005A0AF0  56                        PUSH ESI
 005A0AF1  8B F1                     MOV ESI,ECX
 005A0AF3  57                        PUSH EDI

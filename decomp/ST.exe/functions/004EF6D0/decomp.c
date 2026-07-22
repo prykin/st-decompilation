@@ -51,7 +51,7 @@ int __thiscall BldBoatPanelTy::GetMessage(BldBoatPanelTy *this,STMessage *messag
   SVar1 = message->id;
   if (SVar1 < 0xb203) {
     if (SVar1 == MESS_SHARED_B202) {
-      ProdPanelTy::PaintTab(this_00,(AnonShape_0053FCD0_D10A885A *)message,&LAB_00402e7d);
+      ProdPanelTy::PaintTab(this_00,(AnonShape_0053FCD0_D10A885A *)message,thunk_FUN_004ef5f0);
       g_currentExceptionFrame = local_58.previous;
       return 0;
     }
@@ -118,7 +118,7 @@ int __thiscall BldBoatPanelTy::GetMessage(BldBoatPanelTy *this,STMessage *messag
       break;
     case MESS_BLDLABPANELTY_C0A4:
       *(STMessageArg *)&this_00->field_0x199 = message->arg0;
-      thunk_FUN_004ef140((AnonShape_004EF140_16642BA0 *)this_00);
+      sub_004EF140((BldBoatPanelTy *)this_00);
       thunk_FUN_005252c0(0xae);
       g_currentExceptionFrame = local_58.previous;
       return 0;

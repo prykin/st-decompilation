@@ -1,0 +1,4 @@
+0052A168  pointer  0052a15a
+0052A16C  pointer  0052a15a
+0052A170  pointer  0052a15e
+0052A174  pointer  0052a15a

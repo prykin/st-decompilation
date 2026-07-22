@@ -1,4 +1,4 @@
-FUN_005ead30:
+CreateWait:
 005EAD30  55                        PUSH EBP
 005EAD31  8B EC                     MOV EBP,ESP
 005EAD33  51                        PUSH ECX

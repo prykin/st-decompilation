@@ -25,9 +25,10 @@ LAB_004e9090:
     uVar2 = 0;
   }
   if (((int)param_1->field_04D0 < 100) &&
-     ((uint)(&DAT_0079a9fc)[uVar2] / 100 + param_1->field_04D4 <= PTR_00802a38->field_00E4)) {
+     ((uint)(&DAT_0079a9fc)[uVar2] / 100 + param_1->field_04D4 <= g_playSystem_00802A38->field_00E4)
+     ) {
     TVar1 = param_1->field_04D0 + CASE_1;
-    param_1->field_04D4 = PTR_00802a38->field_00E4;
+    param_1->field_04D4 = g_playSystem_00802A38->field_00E4;
     param_1->field_04D0 = TVar1;
     if ((99 < (int)TVar1) && (param_1->field_04F4 == 0)) {
       param_1->field_04F4 = 1;
@@ -43,7 +44,7 @@ LAB_004e9090:
   }
 LAB_004e914a:
   if (((param_1->field_05AC == 0x6c) && (param_1->field_061B != 0)) && (param_1->field_04FC == 0)) {
-    iVar3 = FUN_006e62d0(PTR_00802a38,param_1->field_04F8,(int *)0x0);
+    iVar3 = FUN_006e62d0(g_playSystem_00802A38,param_1->field_04F8,(int *)0x0);
     if (iVar3 != 0) {
       param_1->field_04F8 = 0;
       param_1->field_061B = 0;

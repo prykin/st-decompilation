@@ -6,8 +6,11 @@
 void __thiscall STBoatC::sub_004602B0(STBoatC *this)
 
 {
-  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-  (*(code *)this->vtable->field_0020)();
+  /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
+  void *unaff_ESI;
+
+  /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
+  (*this->vtable->StopMove)(this,unaff_ESI);
   this->field_00F4 = 0;
   return;
 }

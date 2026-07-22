@@ -38,7 +38,7 @@ AiEventClassTy::_CreateArt
     RaiseInternalException(iVar3,0,"E:\\__titans\\ai\\ai_event.cpp",0x118);
     return iVar3;
   }
-  if (g_sTAllPlayers_007FA174 != (STAllPlayersC *)0x0) {
+  if (g_allPlayers_007FA174 != (STAllPlayersC *)0x0) {
     if ((param_1 < 1) && (0x15 < param_1)) {
       bVar2 = false;
     }

@@ -96,9 +96,7 @@ void __thiscall STAllPlayersC::CmdToPlsObj(STAllPlayersC *this,STControlCommand 
   STPosition16 orderPosition13;
   STPosition16 orderPosition12;
   STGroupBoatOrderData11 orderData11;
-  undefined1 local_8c [16];
-  undefined4 local_7c;
-  undefined4 local_78;
+  AnonShape_0041AF40_F59F8577 local_8c;
   DArrayTy *local_74;
   DArrayTy *local_6c;
   STControlCommandPayload *local_68;
@@ -144,7 +142,7 @@ void __thiscall STAllPlayersC::CmdToPlsObj(STAllPlayersC *this,STControlCommand 
       if (sVar17 == -1) {
         return;
       }
-      pSVar7 = GetObjPtr(g_sTAllPlayers_007FA174,bVar21,local_38,CASE_3);
+      pSVar7 = GetObjPtr(g_allPlayers_007FA174,bVar21,local_38,CASE_3);
       if (pSVar7 == (STGameObjC *)0x0) {
         return;
       }
@@ -163,11 +161,11 @@ void __thiscall STAllPlayersC::CmdToPlsObj(STAllPlayersC *this,STControlCommand 
     if (sVar17 == -1) {
       return;
     }
-    local_8 = GetObjPtr(g_sTAllPlayers_007FA174,bVar21,local_38,CASE_1);
+    local_8 = GetObjPtr(g_allPlayers_007FA174,bVar21,local_38,CASE_1);
     if (local_8 == (STGameObjC *)0x0) {
       return;
     }
-    local_7c = 0x4401;
+    local_8c.field_0010 = 0x4401;
     switch(command->commandType) {
     case 8:
     case 9:
@@ -224,9 +222,8 @@ void __thiscall STAllPlayersC::CmdToPlsObj(STAllPlayersC *this,STControlCommand 
         *(int *)((int)&(local_68->packed).value_05 + 3) = (int)sVar16;
       }
 cf_common_exit_00437191:
-      local_78 = command;
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-      (**(code **)local_8->vtable)(local_8c);
+      local_8c.field_0014 = &command->unknown_00;
+      (*local_8->vtable->GetMessage)(local_8,&local_8c);
       return;
     /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
     case 0x29:
@@ -237,7 +234,7 @@ cf_common_exit_00437191:
         pDVar8 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,1,2,1);
         Library::DKW::TBL::FUN_006ae1c0(&pDVar8->flags,&local_38);
         /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-        local_78 = (STControlCommand *)((uint)local_78._2_2_ << 0x10);
+        local_8c.field_0014 = (undefined4 *)((uint)local_8c.field_0014._2_2_ << 0x10);
       }
       else {
         if (pAVar19 == (AiPlrClassTy *)0x0) {
@@ -246,11 +243,11 @@ cf_common_exit_00437191:
         pDVar8 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,1,2,1);
         Library::DKW::TBL::FUN_006ae1c0(&pDVar8->flags,&local_38);
         /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-        local_78 = (STControlCommand *)CONCAT22(local_78._2_2_,1);
+        local_8c.field_0014 = (undefined4 *)CONCAT22(local_8c.field_0014._2_2_,1);
       }
-      local_7c = 0x5d98;
+      local_8c.field_0010 = 0x5d98;
       local_74 = pDVar8;
-      (*pAVar19->vtable->vfunc_00)(local_8c);
+      (*pAVar19->vtable->vfunc_00)(&local_8c);
       DArrayDestroy(pDVar8);
       return;
     }
@@ -441,7 +438,7 @@ cf_common_exit_00437191:
       targetPosition.x = *(short *)command->payload;
       /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
       targetPosition.y = *(short *)((int)&(command->payload->packed).value_01.words.high + 1);
-      thunk_FUN_0049a500(pSVar9,(undefined2 *)0x0,(undefined2 *)0x0,&targetPosition.z);
+      STGroupBoatC::sub_0049A500(pSVar9,(undefined2 *)0x0,(undefined2 *)0x0,&targetPosition.z);
       Library::DKW::TBL::FUN_006ae1c0(&pDVar8->flags,(undefined4 *)&targetPosition);
       orderData6.mode = 1;
       orderData6.positions = pDVar8;
@@ -452,7 +449,7 @@ cf_common_exit_00437191:
     orderData.position.x = *(short *)command->payload;
     /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
     orderData.position.y = *(short *)((int)&(command->payload->packed).value_01.words.high + 1);
-    thunk_FUN_0049a500(pSVar9,(undefined2 *)0x0,(undefined2 *)0x0,&orderData.position.z);
+    STGroupBoatC::sub_0049A500(pSVar9,(undefined2 *)0x0,(undefined2 *)0x0,&orderData.position.z);
     (*pSVar9->vtable->vfunc_08)(pSVar9,CASE_1,&orderData);
     return;
   /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
@@ -466,7 +463,7 @@ cf_common_exit_00437191:
     switch((pSVar4->packed).variant) {
     case 0:
     case 5:
-      FUN_006e62d0(PTR_00802a38,(pSVar4->position32).x,(int *)&local_8);
+      FUN_006e62d0(g_playSystem_00802A38,(pSVar4->position32).x,(int *)&local_8);
       if (local_8 == (STGameObjC *)0x0) {
         return;
       }
@@ -502,7 +499,7 @@ LAB_00437842:
       DArrayDestroy(pDVar8);
       return;
     case 1:
-      FUN_006e62d0(PTR_00802a38,(pSVar4->position32).x,(int *)&local_8);
+      FUN_006e62d0(g_playSystem_00802A38,(pSVar4->position32).x,(int *)&local_8);
       if (local_8 != (STGameObjC *)0x0) {
         orderDataF.value_00 = *(byte *)&local_8->field_0024;
         orderDataF.value_01 = local_8->field_0032;
@@ -528,7 +525,7 @@ LAB_00437842:
     switch((pSVar4->packed).variant) {
     /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
     case 1:
-      FUN_006e62d0(PTR_00802a38,(pSVar4->packed).value_1d,(int *)&local_8);
+      FUN_006e62d0(g_playSystem_00802A38,(pSVar4->packed).value_1d,(int *)&local_8);
       if (local_8 != (STGameObjC *)0x0) {
         pDVar8 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,1,2,1);
         Library::DKW::TBL::FUN_006ae1c0(&pDVar8->flags,(undefined4 *)&local_8->field_0032);
@@ -543,9 +540,9 @@ LAB_00437842:
       pDVar8 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,1,6,1);
       targetPosition.x = (command->payload->position16).x;
       targetPosition.y = (command->payload->position16).y;
-      thunk_FUN_0049a500(pSVar9,(undefined2 *)0x0,(undefined2 *)0x0,&targetPosition.z);
+      STGroupBoatC::sub_0049A500(pSVar9,(undefined2 *)0x0,(undefined2 *)0x0,&targetPosition.z);
       Library::DKW::TBL::FUN_006ae1c0(&pDVar8->flags,(undefined4 *)&targetPosition);
-      thunk_FUN_0049a500(pSVar9,&targetPosition.x,&targetPosition.y,(undefined2 *)0x0);
+      STGroupBoatC::sub_0049A500(pSVar9,&targetPosition.x,&targetPosition.y,(undefined2 *)0x0);
       Library::DKW::TBL::FUN_006ae1c0(&pDVar8->flags,(undefined4 *)&targetPosition);
       orderData6.mode = 0;
       orderData6.positions = pDVar8;
@@ -720,7 +717,7 @@ switchD_004384bc_default:
     case 5:
       orderData.position.x = (pSVar4->position16).x;
       orderData.position.y = (pSVar4->position16).y;
-      thunk_FUN_0049a500(pSVar9,(undefined2 *)0x0,(undefined2 *)0x0,&orderData.position.z);
+      STGroupBoatC::sub_0049A500(pSVar9,(undefined2 *)0x0,(undefined2 *)0x0,&orderData.position.z);
       (*pSVar9->vtable->vfunc_08)(pSVar9,CASE_1,&orderData);
       return;
     case 8:
@@ -731,8 +728,8 @@ cf_common_exit_0043824D:
     case 10:
     case 0xb:
     case 0xc:
-      thunk_FUN_0049a500(pSVar9,(undefined2 *)&orderData,&orderData.position.y,&orderData.position.z
-                        );
+      STGroupBoatC::sub_0049A500
+                (pSVar9,(undefined2 *)&orderData,&orderData.position.y,&orderData.position.z);
       (*pSVar9->vtable->vfunc_08)(pSVar9,CASE_1,&orderData);
       return;
     }
@@ -890,13 +887,11 @@ cf_common_exit_00437E03:
       uVar6 = 0;
       do {
         DArrayGetElement(pDVar8,uVar6,local_118);
-        pSVar7 = GetObjPtr(g_sTAllPlayers_007FA174,pSVar9->field_0024,local_118[0],CASE_1);
-        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-        iVar15 = (**(code **)&pSVar7->vtable->field_0x2c)();
-        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-        if ((((iVar15 == 8) || (iVar15 = (**(code **)&pSVar7->vtable->field_0x2c)(), iVar15 == 0x14)
-             ) || (iVar15 = (**(code **)&pSVar7->vtable->field_0x2c)(), iVar15 == 0x1a)) &&
-           (iVar15 = thunk_FUN_0045ff10((int)pSVar7), iVar15 == 0xc)) {
+        pSVar7 = GetObjPtr(g_allPlayers_007FA174,pSVar9->field_0024,local_118[0],CASE_1);
+        iVar15 = (*pSVar7->vtable->vfunc_2C)();
+        if ((((iVar15 == 8) || (iVar15 = (*pSVar7->vtable->vfunc_2C)(), iVar15 == 0x14)) ||
+            (iVar15 = (*pSVar7->vtable->vfunc_2C)(), iVar15 == 0x1a)) &&
+           (iVar15 = thunk_FUN_0045ff10(pSVar7), iVar15 == 0xc)) {
           puVar10 = (undefined4 *)thunk_FUN_0048dc90(pSVar7,local_1b8);
           puVar18 = &local_1fc;
           for (iVar15 = 0x10; iVar15 != 0; iVar15 = iVar15 + -1) {
@@ -905,7 +900,7 @@ cf_common_exit_00437E03:
             puVar18 = puVar18 + 1;
           }
           *(undefined2 *)puVar18 = *(undefined2 *)puVar10;
-          iVar15 = FUN_006e62d0(PTR_00802a38,local_1f6,(int *)&local_40);
+          iVar15 = FUN_006e62d0(g_playSystem_00802A38,local_1f6,(int *)&local_40);
           /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
           if ((iVar15 == 0) && (iVar15 = (**(code **)(*local_40 + 0x88))(&local_e8), 0 < iVar15)) {
             if (local_e8 == 0xdc) {
@@ -1058,11 +1053,11 @@ LAB_00437cb5:
       if (pAVar19 == (AiPlrClassTy *)0x0) {
         return;
       }
-      local_7c = 0x5d98;
+      local_8c.field_0010 = 0x5d98;
       /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-      local_78 = (STControlCommand *)CONCAT22(local_78._2_2_,1);
+      local_8c.field_0014 = (undefined4 *)CONCAT22(local_8c.field_0014._2_2_,1);
       local_74 = (DArrayTy *)pSVar9->field_0029;
-      (*pAVar19->vtable->vfunc_00)(local_8c);
+      (*pAVar19->vtable->vfunc_00)(&local_8c);
       return;
     }
     goto cf_common_exit_0043824D;

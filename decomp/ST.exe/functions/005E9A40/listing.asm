@@ -1,4 +1,4 @@
-FUN_005e9a40:
+WaitTy::sub_005E9A40:
 005E9A40  53                        PUSH EBX
 005E9A41  56                        PUSH ESI
 005E9A42  57                        PUSH EDI

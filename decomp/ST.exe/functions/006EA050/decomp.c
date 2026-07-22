@@ -56,7 +56,7 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_006EA050::FUN_006ea050
       }
       if ((param_3 < *(uint *)&this->field_0x310) &&
          ((*(byte *)(*(int *)&this->field_0x31c + 1 + param_3 * 0x114) & 0x80) != 0)) {
-        FUN_006ea460(this,param_1,param_3);
+        sub_006EA460(this,param_1,param_3);
         puVar1[1] = puVar1[1] | 0x100;
         return;
       }

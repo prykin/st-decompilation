@@ -4,18 +4,26 @@
 /* [STSourceProvenanceApplier begin]
    Recovered source file: E:\__titans\ai\ai_boss_d.cpp
    Diagnostic line evidence: 107 | 108 (metadata/report site, not the function definition)
-   [STSourceProvenanceApplier end] */
+   [STSourceProvenanceApplier end]
 
-undefined4 * __cdecl BossDataPack(undefined4 *param_1,undefined4 *param_2,int param_3,uint *param_4)
+   [STPrototypeApplier] Propagated parameter 0.
+   Evidence: 00649B90 -> 00648620 @ 00649D4A
+
+   [STPrototypeApplier] Propagated return.
+   Evidence: 00648620 returns used as parameter 0 of FUN_006809b0 @ 00685CD5 | 00648620 returns used
+   as parameter 2 of Library::Ourlib::MFAOBJ::mfAObjSave @ 00648960 */
+
+byte * __cdecl BossDataPack(uint *param_1,undefined4 *param_2,int param_3,uint *param_4)
 
 {
   code *pcVar1;
   int iVar2;
-  undefined4 *puVar3;
+  uint *puVar3;
   int iVar4;
-  undefined4 *puVar5;
+  byte *pbVar5;
   uint uVar6;
   uint uVar7;
+  uint *puVar8;
   InternalExceptionFrame local_4c;
   void *local_8;
 
@@ -26,32 +34,31 @@ undefined4 * __cdecl BossDataPack(undefined4 *param_1,undefined4 *param_2,int pa
   if (iVar2 == 0) {
     *param_4 = param_3 + 0x85U;
     puVar3 = Library::DKW::LIB::FUN_006aac10(param_3 + 0x85U);
-    puVar5 = puVar3;
+    puVar8 = puVar3;
     for (iVar2 = 0x21; iVar2 != 0; iVar2 = iVar2 + -1) {
-      *puVar5 = *param_1;
+      *puVar8 = *param_1;
       param_1 = param_1 + 1;
-      puVar5 = puVar5 + 1;
+      puVar8 = puVar8 + 1;
     }
-    *(undefined1 *)puVar5 = *(undefined1 *)param_1;
+    *(byte *)puVar8 = (byte)*param_1;
     *(uint *)((int)puVar3 + 1) = *param_4;
     *(int *)((int)puVar3 + 0x4a) = param_3;
-    *(undefined1 *)((int)puVar3 + 5) = 0;
+    *(byte *)((int)puVar3 + 5) = 0;
     uVar7 = *(uint *)((int)puVar3 + 0x4a);
-    puVar5 = puVar3 + 0x21;
+    puVar8 = puVar3 + 0x21;
     for (uVar6 = uVar7 >> 2; uVar6 != 0; uVar6 = uVar6 - 1) {
-      *puVar5 = *param_2;
+      *puVar8 = *param_2;
       param_2 = param_2 + 1;
-      puVar5 = puVar5 + 1;
+      puVar8 = puVar8 + 1;
     }
     for (uVar7 = uVar7 & 3; uVar7 != 0; uVar7 = uVar7 - 1) {
-      *(undefined1 *)puVar5 = *(undefined1 *)param_2;
-      param_2 = (undefined4 *)((int)param_2 + 1);
-      puVar5 = (undefined4 *)((int)puVar5 + 1);
+      *(byte *)puVar8 = (byte)*param_2;
+      param_2 = (uint *)((int)param_2 + 1);
+      puVar8 = (uint *)((int)puVar8 + 1);
     }
-    *(undefined1 **)((int)puVar3 + 0x46) =
-         (undefined1 *)((int)(puVar3 + 0x21) + (-0x84 - (int)puVar3));
+    *(byte **)((int)puVar3 + 0x46) = (byte *)((int)(puVar3 + 0x21) + (-0x84 - (int)puVar3));
     g_currentExceptionFrame = local_4c.previous;
-    return puVar3;
+    return (byte *)puVar3;
   }
   g_currentExceptionFrame = local_4c.previous;
   if (local_8 != (void *)0x0) {
@@ -63,6 +70,6 @@ undefined4 * __cdecl BossDataPack(undefined4 *param_1,undefined4 *param_2,int pa
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   RaiseInternalException(iVar2,0,"E:\\__titans\\ai\\ai_boss_d.cpp",0x6c);
-  return (undefined4 *)0x0;
+  return (byte *)0x0;
 }
 

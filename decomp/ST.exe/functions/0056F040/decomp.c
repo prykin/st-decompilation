@@ -1,7 +1,12 @@
 #include "../../pseudocode_runtime.h"
 
 
-void __fastcall FUN_0056f040(AnonShape_0056F040_86F75ABE *param_1)
+/* [STMethodOwnerApplier] Structural method owner recovered as STAppC.
+   Evidence: this_call_owners=[STAppC]; agreed_this_calls=2; incoming_this_accesses=21;
+   incoming_edx_uses=0; incoming_stack_parameter_uses=0; direct_non_thunk_callers=0;
+   incoming_ecx_receiver_callers=0; attributed_named_callers=2; owner_evidence_coverage=adequate */
+
+void __thiscall STAppC::sub_0056F040(STAppC *this)
 
 {
   char cVar1;
@@ -14,30 +19,30 @@ void __fastcall FUN_0056f040(AnonShape_0056F040_86F75ABE *param_1)
   int local_c;
 
   iVar5 = 8;
-  pcVar2 = &param_1->field_0x11a7;
+  pcVar2 = &this->field_11A7;
   do {
-    if (((pcVar2[0x22] != param_1->field_112D) || (pcVar2[0x21] != param_1->field_112E)) &&
+    if (((pcVar2[0x22] != this->field_112D) || (pcVar2[0x21] != this->field_112E)) &&
        (*pcVar2 == '\0')) {
       *pcVar2 = '\x01';
     }
     pcVar2 = pcVar2 + 0x51;
     iVar5 = iVar5 + -1;
   } while (iVar5 != 0);
-  switch(param_1->field_1180) {
+  switch(this->field_1180) {
   case 1:
   case 2:
   case 3:
   case 6:
   case 8:
-    pcVar2 = &param_1->field_0x11c9;
-    param_1->field_148F = 0;
+    pcVar2 = &this->field_11C9;
+    this->field_148F = 0;
     local_c = 8;
     do {
       if (*pcVar2 != -1) {
-        memset((void *)(&param_1[1].field_0x0 + (uint)(byte)param_1->field_148F * 0x9c), 0, 0x9c); /* compiler bulk-zero initialization */
-        if (*pcVar2 == param_1->field_112D) {
+        memset((void *)(&this->field_0x1490 + (uint)(byte)this->field_148F * 0x9c), 0, 0x9c); /* compiler bulk-zero initialization */
+        if (*pcVar2 == this->field_112D) {
           uVar3 = 0xffffffff;
-          pcVar6 = &param_1->field_0x7bd;
+          pcVar6 = &this->field_0x7bd;
           do {
             pcVar8 = pcVar6;
             if (uVar3 == 0) break;
@@ -48,7 +53,7 @@ void __fastcall FUN_0056f040(AnonShape_0056F040_86F75ABE *param_1)
           } while (cVar1 != '\0');
           uVar3 = ~uVar3;
           pcVar6 = pcVar8 + -uVar3;
-          pcVar8 = &param_1[1].field_0x0 + (uint)(byte)param_1->field_148F * 0x9c;
+          pcVar8 = &this->field_0x1490 + (uint)(byte)this->field_148F * 0x9c;
           for (uVar4 = uVar3 >> 2; uVar4 != 0; uVar4 = uVar4 - 1) {
             *(undefined4 *)pcVar8 = *(undefined4 *)pcVar6;
             pcVar6 = pcVar6 + 4;
@@ -60,11 +65,11 @@ void __fastcall FUN_0056f040(AnonShape_0056F040_86F75ABE *param_1)
             pcVar8 = pcVar8 + 1;
           }
         }
-        (&param_1[1].field_0x44)[(uint)(byte)param_1->field_148F * 0x9c] = *pcVar2;
-        (&param_1[1].field_0x45)[(uint)(byte)param_1->field_148F * 0x9c] = 1;
-        (&param_1[1].field_0x46)[(uint)(byte)param_1->field_148F * 0x9c] = pcVar2[-0x22] == '\0';
-        (&param_1[1].field_0x47)[(uint)(byte)param_1->field_148F * 0x9c] = 1;
-        param_1->field_148F = param_1->field_148F + '\x01';
+        (&this->field_0x14d4)[(uint)(byte)this->field_148F * 0x9c] = *pcVar2;
+        (&this->field_0x14d5)[(uint)(byte)this->field_148F * 0x9c] = 1;
+        (&this->field_0x14d6)[(uint)(byte)this->field_148F * 0x9c] = pcVar2[-0x22] == '\0';
+        (&this->field_0x14d7)[(uint)(byte)this->field_148F * 0x9c] = 1;
+        this->field_148F = this->field_148F + '\x01';
       }
       pcVar2 = pcVar2 + 0x51;
       local_c = local_c + -1;

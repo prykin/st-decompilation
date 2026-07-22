@@ -1,4 +1,4 @@
-FUN_004c4550:
+TLOBaseTy::sub_004C4550:
 004C4550  55                        PUSH EBP
 004C4551  8B EC                     MOV EBP,ESP
 004C4553  81 EC BC 00 00 00         SUB ESP,0xbc

@@ -37,10 +37,10 @@ void __thiscall AiTactClassTy::BackFromRepair(AiTactClassTy *this,short param_1)
     local_33 = param_1;
     local_31 = 0;
     local_2b = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,10,2,10);
-    thunk_FUN_006902b0(this_00,-0x8000,local_3c);
-    this_01 = (void *)thunk_FUN_0068e290(this_00,param_1);
+    sub_006902B0(this_00,-0x8000,local_3c);
+    this_01 = (void *)sub_0068E290(this_00,param_1);
     if (this_01 != (void *)0x0) {
-      thunk_FUN_0065d940(this_01,&local_2b->flags,0);
+      thunk_FUN_0065d940(this_01,local_2b,0);
     }
     g_currentExceptionFrame = local_80.previous;
     return;

@@ -1,0 +1,4 @@
+0052A00C  pointer  0052a002
+0052A010  pointer  00529ff7
+0052A014  pointer  00529ffb
+0052A018  pointer  00529ff7

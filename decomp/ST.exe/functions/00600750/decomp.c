@@ -22,7 +22,7 @@ undefined4 __fastcall FUN_00600750(AnonShape_00600750_A7773F7A *param_1)
   int local_18;
   uint local_14;
   uint local_10;
-  void *local_c;
+  STT3DSprC *local_c;
   int local_8;
 
   local_18 = 0;
@@ -32,14 +32,14 @@ undefined4 __fastcall FUN_00600750(AnonShape_00600750_A7773F7A *param_1)
       iVar4 = local_8;
       iVar6 = local_8 * 0x52;
       iVar3 = iVar6 + param_1->field_0233;
-      local_c = (void *)iVar6;
+      local_c = (STT3DSprC *)iVar6;
       switch(*(undefined4 *)(iVar6 + 0x39 + param_1->field_0233)) {
       case 1:
         uVar7 = thunk_FUN_006001e0(param_1,local_8);
         pVVar2 = g_visibleClass_00802A88;
         if (uVar7 == 0) {
           if (param_1->field_0232 != '\0') {
-            local_c = *(void **)(iVar6 + 0x42 + param_1->field_0233);
+            local_c = *(STT3DSprC **)(iVar6 + 0x42 + param_1->field_0233);
             iVar3 = iVar6 + param_1->field_0233;
             if (g_visibleClass_00802A88 != (VisibleClassTy *)0x0) {
               sVar1 = *(short *)(iVar3 + 10);
@@ -88,10 +88,11 @@ undefined4 __fastcall FUN_00600750(AnonShape_00600750_A7773F7A *param_1)
             }
             iVar6 = param_1->field_0233 + iVar6;
             local_14 = (uint)*(short *)(iVar6 + 6);
-            thunk_FUN_004ad3c0(local_c,(float)(int)local_14 * _DAT_007904f8 * _DAT_007904f0,
-                               (float)(int)*(short *)(iVar6 + 8) * _DAT_007904f8 * _DAT_007904f0,
-                               (float)(int)*(short *)(iVar6 + 10) * _DAT_007904f8 * _DAT_007904f0 +
-                               _DAT_007904fc);
+            STT3DSprC::sub_004AD3C0
+                      (local_c,(float)(int)local_14 * _DAT_007904f8 * _DAT_007904f0,
+                       (float)(int)*(short *)(iVar6 + 8) * _DAT_007904f8 * _DAT_007904f0,
+                       (float)(int)*(short *)(iVar6 + 10) * _DAT_007904f8 * _DAT_007904f0 +
+                       _DAT_007904fc);
           }
         }
         else {
@@ -127,7 +128,9 @@ LAB_00600928:
             iVar6 = param_1->field_01E9;
             if (iVar6 != 0) {
               if (param_1->field_01F1 == 0) {
-                FUN_006ea460(PTR_00807598,*(uint *)(iVar3 + 0x18),*(int *)(iVar6 + 0x1ed));
+                SubmarineTitans::Recovered::HiddenThis::AnonReceiver_006EA050::sub_006EA460
+                          ((AnonReceiver_006EA050 *)PTR_00807598,*(uint *)(iVar3 + 0x18),
+                           *(int *)(iVar6 + 0x1ed));
               }
               else {
                 FUN_006ea3e0(PTR_00807598,*(uint *)(iVar3 + 0x18),*(int *)(iVar6 + 0x1ed));
@@ -142,7 +145,7 @@ LAB_00600928:
         }
         break;
       case 2:
-        if (((*(uint *)(iVar3 + 0x3d) <= PTR_00802a38->field_00E4) &&
+        if (((*(uint *)(iVar3 + 0x3d) <= g_playSystem_00802A38->field_00E4) &&
             (iVar3 = thunk_FUN_005ff1f0(param_1,local_8,3,param_1->field_022E), -1 < iVar3)) &&
            (iVar3 = thunk_FUN_005fff60(param_1,local_8,iVar3), iVar4 = local_8, iVar3 != 0)) {
           iVar3 = SubmarineTitans::Recovered::HiddenThis::AnonReceiver_005FDB50::thunk_FUN_005fdb50
@@ -161,39 +164,39 @@ LAB_00600928:
           local_28 = thunk_FUN_004ac910(this,'\x0e');
           if (0x15 < (int)local_14) {
             if (local_14 == 0x16) {
-              STT3DSprC::StartShow(this,0xf,PTR_00802a38->field_00E4);
+              STT3DSprC::StartShow(this,0xf,g_playSystem_00802A38->field_00E4);
             }
             local_10 = thunk_FUN_004ac910(this,'\x0f');
             STT3DSprC::ShowCurFase(this,'\x0f');
-            iVar3 = thunk_FUN_004acd30(this,'\x0f');
+            iVar3 = STT3DSprC::sub_004ACD30(this,'\x0f');
             if ((int)local_10 < iVar3) {
               local_10 = local_10 + 1;
             }
             STT3DSprC::SetCurFase(this,'\x0f',local_10);
           }
           if (*(char *)(iVar6 + 0x28 + param_1->field_0233) != '\0') {
-            iVar3 = thunk_FUN_004acd30(this,'\x0e');
+            iVar3 = STT3DSprC::sub_004ACD30(this,'\x0e');
             iVar6 = thunk_FUN_004ac910(this,'\x0e');
             if (iVar3 + -1 == iVar6) {
               STT3DSprC::StopShow(this,0xe);
             }
           }
-          iVar3 = thunk_FUN_004acd30(this,'\r');
+          iVar3 = STT3DSprC::sub_004ACD30(this,'\r');
           iVar6 = thunk_FUN_004ac910(this,'\r');
           if (iVar3 + -1 == iVar6) {
             STT3DSprC::StopShow(this,0xd);
           }
-          iVar3 = thunk_FUN_004acd30(this,'\x0f');
+          iVar3 = STT3DSprC::sub_004ACD30(this,'\x0f');
           iVar6 = thunk_FUN_004ac910(this,'\x0f');
           if (iVar3 + -1 == iVar6) {
             *(undefined4 *)((int)local_c + 0x39 + param_1->field_0233) = 4;
           }
-          iVar3 = thunk_FUN_004acd30(this,'\r');
+          iVar3 = STT3DSprC::sub_004ACD30(this,'\r');
           uVar7 = local_14;
           if ((int)local_14 < iVar3) {
             uVar7 = local_14 + 1;
           }
-          iVar3 = thunk_FUN_004acd30(this,'\x0e');
+          iVar3 = STT3DSprC::sub_004ACD30(this,'\x0e');
           uVar5 = local_28;
           if ((int)local_28 < iVar3) {
             uVar5 = local_28 + 1;
@@ -204,10 +207,11 @@ LAB_00600928:
           STT3DSprC::ShowCurFase(this,'\r');
           iVar3 = (int)local_c + param_1->field_0233;
           local_28 = (uint)*(short *)(iVar3 + 6);
-          thunk_FUN_004ad3c0(this,(float)(int)local_28 * _DAT_007904f8 * _DAT_007904f0,
-                             (float)(int)*(short *)(iVar3 + 8) * _DAT_007904f8 * _DAT_007904f0,
-                             (float)(int)*(short *)((int)local_c + 10 + param_1->field_0233) *
-                             _DAT_007904f8 * _DAT_007904f0 + _DAT_007904fc);
+          STT3DSprC::sub_004AD3C0
+                    (this,(float)(int)local_28 * _DAT_007904f8 * _DAT_007904f0,
+                     (float)(int)*(short *)(iVar3 + 8) * _DAT_007904f8 * _DAT_007904f0,
+                     (float)(int)*(short *)((int)local_c + 10 + param_1->field_0233) * _DAT_007904f8
+                     * _DAT_007904f0 + _DAT_007904fc);
           pVVar2 = g_visibleClass_00802A88;
           if (g_visibleClass_00802A88 != (VisibleClassTy *)0x0) {
             sVar1 = *(short *)((int)local_c + 10 + param_1->field_0233);

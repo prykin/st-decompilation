@@ -1,0 +1,4 @@
+006392AC  pointer  00638de6
+006392B0  pointer  00638d81
+006392B4  pointer  0063902d
+006392B8  pointer  00639241

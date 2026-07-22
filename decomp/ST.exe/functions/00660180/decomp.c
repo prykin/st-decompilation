@@ -55,8 +55,7 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00660180::FUN_00660180
       local_22 = param_1[3];
       local_20 = param_1[4];
       local_1e = param_1[5];
-      if ((*(short *)&this->field_0x7d == -2) || (g_sTAllPlayers_007FA174 == (STAllPlayersC *)0x0))
-      {
+      if ((*(short *)&this->field_0x7d == -2) || (g_allPlayers_007FA174 == (STAllPlayersC *)0x0)) {
         pSVar3 = (STGroupBoatC *)0x0;
       }
       else {
@@ -96,7 +95,7 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00660180::FUN_00660180
   uVar1 = Library::DKW::TBL::FUN_006ae1c0(&array->flags,(undefined4 *)&local_14);
   local_18 = 1;
   local_1c = array;
-  if ((local_c->field_007D == -2) || (g_sTAllPlayers_007FA174 == (STAllPlayersC *)0x0)) {
+  if ((local_c->field_007D == -2) || (g_allPlayers_007FA174 == (STAllPlayersC *)0x0)) {
     pSVar3 = (STGroupBoatC *)0x0;
   }
   else {

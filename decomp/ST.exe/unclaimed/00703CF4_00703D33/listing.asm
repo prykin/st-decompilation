@@ -1,0 +1,16 @@
+00703CF4  pointer  007037a2
+00703CF8  pointer  007037d4
+00703CFC  pointer  007037e2
+00703D00  pointer  00703814
+00703D04  pointer  007038d0
+00703D08  pointer  007038fd
+00703D0C  pointer  0070390c
+00703D10  pointer  00703939
+00703D14  pointer  00703a59
+00703D18  pointer  00703a8b
+00703D1C  pointer  00703a9a
+00703D20  pointer  00703acd
+00703D24  pointer  00703b77
+00703D28  pointer  00703be4
+00703D2C  pointer  00703bb2
+00703D30  pointer  00703be9

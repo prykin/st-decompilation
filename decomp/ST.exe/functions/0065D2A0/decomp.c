@@ -57,9 +57,9 @@ int __thiscall AiFltClassTy::InitData(AiFltClassTy *this,undefined4 *param_1)
       pDVar5 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,10,0x2c,10);
       *ppDVar1 = pDVar5;
     }
-    if (pAVar3->field_0217 == (uint *)0x0) {
+    if (pAVar3->field_0217 == (DArrayTy *)0x0) {
       pDVar5 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,0x14,0x34,10);
-      pAVar3->field_0217 = &pDVar5->flags;
+      pAVar3->field_0217 = pDVar5;
     }
     if (pAVar3->field_0223 == (AnonPointee_AiFltClassTy_0223 *)0x0) {
       pDVar5 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,10,0x14,10);
@@ -69,15 +69,15 @@ int __thiscall AiFltClassTy::InitData(AiFltClassTy *this,undefined4 *param_1)
       pDVar5 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,10,0xc,10);
       pAVar3->field_022F = (AnonPointee_AiFltClassTy_022F *)pDVar5;
     }
-    if (pAVar3->field_023B == (uint *)0x0) {
+    if (pAVar3->field_023B == (DArrayTy *)0x0) {
       pDVar5 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,10,4,10);
-      pAVar3->field_023B = &pDVar5->flags;
+      pAVar3->field_023B = pDVar5;
     }
     g_currentExceptionFrame = local_50.previous;
     return 0;
   }
   g_currentExceptionFrame = local_50.previous;
-  thunk_FUN_0065d480((int)local_c);
+  thunk_FUN_0065d480(local_c);
   iVar6 = ReportDebugMessage("E:\\__titans\\ai\\ai_flt.cpp",0x31,0,iVar4,"%s",
                              "AiFltClassTy::InitData");
   if (iVar6 != 0) {

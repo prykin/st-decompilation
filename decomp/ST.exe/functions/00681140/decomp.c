@@ -3,7 +3,7 @@ undefined4 FUN_00681140(void)
 
 {
   int iVar1;
-  undefined4 uVar2;
+  char *pcVar2;
   int iVar3;
 
   iVar1 = DAT_008488b0;
@@ -33,8 +33,8 @@ undefined4 FUN_00681140(void)
     *(undefined4 *)(&DAT_00811c9c + iVar3) = 0xffffffff;
   }
   if (*(int *)(&DAT_00811ae8 + iVar3) < 1) {
-    uVar2 = thunk_FUN_0067eea0(PTR_s___EMPTY___0079d734);
-    (&DAT_00811aec)[iVar1 * 0xac5] = uVar2;
+    pcVar2 = thunk_FUN_0067eea0(PTR_s___EMPTY___0079d734);
+    (&DAT_00811aec)[iVar1 * 0xac5] = pcVar2;
   }
   if ((int)(&DAT_00811c8c)[iVar1 * 0xac5] < 0) {
     (&DAT_00811c8c)[iVar1 * 0xac5] = 0;

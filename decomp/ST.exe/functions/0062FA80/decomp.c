@@ -81,7 +81,7 @@ int __thiscall FUN_0062fa80(void *this,AnonShape_0062FA80_0B91B2B9 *param_1)
       return local_8;
     }
   }
-  thunk_FUN_0062f900(this);
+  STRubbishC::sub_0062F900(this);
   return 0;
 }
 

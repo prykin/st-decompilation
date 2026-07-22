@@ -51,10 +51,10 @@ void __thiscall AiTactClassTy::GiveObjByFltType(AiTactClassTy *this,uint *param_
     g_currentExceptionFrame = local_5c.previous;
     return;
   }
-  local_c = thunk_FUN_0068e480(local_8,1);
-  local_10 = thunk_FUN_0068e480(pAVar6,2);
-  local_14 = thunk_FUN_0068e480(pAVar6,4);
-  local_18 = thunk_FUN_0068e480(pAVar6,0x10);
+  local_c = sub_0068E480(local_8,1);
+  local_10 = sub_0068E480(pAVar6,2);
+  local_14 = sub_0068E480(pAVar6,4);
+  local_18 = sub_0068E480(pAVar6,0x10);
   uVar3 = param_1[3];
 joined_r0x0068f3e2:
   do {
@@ -71,19 +71,18 @@ joined_r0x0068f3e2:
         else {
           puVar8 = (undefined2 *)0x0;
         }
-        if (g_sTAllPlayers_007FA174 == (STAllPlayersC *)0x0) {
+        if (g_allPlayers_007FA174 == (STAllPlayersC *)0x0) {
           objPtr = (STGameObjC *)0x0;
         }
         else {
           /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
           objPtr = STAllPlayersC::GetObjPtr
-                             (g_sTAllPlayers_007FA174,*(char *)&pAVar6->field_0024,
+                             (g_allPlayers_007FA174,*(char *)&pAVar6->field_0024,
                               CONCAT22((short)((uint)puVar8 >> 0x10),*puVar8),CASE_1);
         }
         pAVar6 = local_8;
       } while (objPtr == (STGameObjC *)0x0);
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-      iVar7 = (**(code **)&objPtr->vtable->field_0x2c)();
+      iVar7 = (*objPtr->vtable->vfunc_2C)();
       if ((iVar7 != 0x78) || ((int)local_c < 0)) break;
       pDVar11 = local_8->field_00A5;
       if ((pDVar11 == (DArrayTy *)0x0) || ((int)pDVar11->count <= (int)local_c)) {
@@ -97,8 +96,7 @@ joined_r0x0068f3e2:
         }
       }
       uVar1 = pAVar9->field_007D;
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-      iVar7 = (**(code **)&objPtr->vtable->field_0x2c)();
+      iVar7 = (*objPtr->vtable->vfunc_2C)();
       if (iVar7 == 0x78) {
         objPtr->field_0269 = (uint)uVar1;
       }

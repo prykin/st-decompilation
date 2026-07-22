@@ -10,8 +10,7 @@
 undefined4 __thiscall StartSystemTy::CreateSystemObjects(StartSystemTy *this)
 
 {
-  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-  (*(code *)this->vtable->field_0010)(0x303,0);
+  (*this->vtable->vfunc_10)(0x303,0);
   return 0;
 }
 

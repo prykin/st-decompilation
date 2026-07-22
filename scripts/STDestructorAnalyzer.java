@@ -527,7 +527,8 @@ public class STDestructorAnalyzer extends GhidraScript {
         int open = operand.indexOf('['), close = operand.lastIndexOf(']');
         if (open < 0 || close <= open) return null;
         String value = operand.substring(open, close + 1)
-            .replace(" ", "").toUpperCase(Locale.ROOT);
+            .replace(" ", "").replace("+-", "-").replace("-+", "-")
+            .toUpperCase(Locale.ROOT);
         Matcher matcher = MEMORY.matcher(value);
         if (!matcher.matches()) return null;
         long displacement = 0;

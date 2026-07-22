@@ -26,7 +26,7 @@ uint FUN_00747704(AnonShape_00747822_A1E67AF6 *param_1,uint param_2,int *param_3
       *param_4 = 0;
     }
     local_8 = 0;
-    iVar4 = FUN_00747e4e((AnonShape_00747E4E_3F64CF30 *)param_1);
+    iVar4 = FUN_00747e4e(param_1);
     if (iVar4 == 1) {
       FUN_0074784f(param_1);
     }

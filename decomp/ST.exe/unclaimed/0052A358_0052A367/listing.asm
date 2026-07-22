@@ -1,0 +1,4 @@
+0052A358  pointer  0052a344
+0052A35C  pointer  0052a348
+0052A360  pointer  0052a34f
+0052A364  pointer  0052a33d

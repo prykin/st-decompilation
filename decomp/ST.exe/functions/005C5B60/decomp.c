@@ -24,12 +24,13 @@ void __thiscall SettMapTy::CloseButtons(SettMapTy *this)
     MMObjTy::CloseButtons(local_8);
     (*this_00->vtable[2].DoneMMObj)(this_00);
     if (this_00[0x26].field_0x32 != '\0') {
-      if (PTR_0081176c->field_02FC != 0xffffffff) {
+      if (g_startSystem_0081176C->field_02FC != 0xffffffff) {
         Library::DKW::DDX::FUN_006b34d0
-                  ((uint *)PTR_0081176c->field_0340,PTR_0081176c->field_02FC,0xfffffffe,
-                   PTR_0081176c->field_0314,PTR_0081176c->field_0318);
+                  ((uint *)g_startSystem_0081176C->field_0340,g_startSystem_0081176C->field_02FC,
+                   0xfffffffe,g_startSystem_0081176C->field_0314,g_startSystem_0081176C->field_0318)
+        ;
       }
-      FUN_006b3af0((int *)PTR_008075a8,PTR_0081176c->field_02EC);
+      FUN_006b3af0((int *)PTR_008075a8,g_startSystem_0081176C->field_02EC);
     }
     this_00->field_0x65 = 4;
     thunk_FUN_005b6730(this_00,0xc,'\x01',-1);

@@ -16,7 +16,7 @@ void __thiscall FSGSTy::NewGameCtrls(FSGSTy *this)
   int iVar5;
   ccFntTy **ppcVar6;
   ccFntTy *local_8d8 [8];
-  uint *local_8b8;
+  DArrayTy *local_8b8;
   undefined4 local_8ac;
   undefined4 local_8a8;
   undefined4 local_8a4;
@@ -44,10 +44,10 @@ void __thiscall FSGSTy::NewGameCtrls(FSGSTy *this)
   if (iVar5 == 0) {
     pDVar2 = Library::DKW::TBL::SArrayCreate((DArrayTy *)0x0,1,1);
     this_00 = local_8;
-    local_8->field_1AE8 = &pDVar2->flags;
+    local_8->field_1AE8 = pDVar2;
     Library::DKW::TBL::FUN_006b5aa0(&pDVar2->flags,&DAT_00807e1d);
     pDVar2 = Library::DKW::TBL::SArrayCreate((DArrayTy *)0x0,1,1);
-    this_00->field_1AEC = &pDVar2->flags;
+    this_00->field_1AEC = pDVar2;
     Library::DKW::TBL::FUN_006b5aa0(&pDVar2->flags,&DAT_008016a0);
     ppcVar6 = local_8d8;
     for (iVar5 = 0x223; iVar5 != 0; iVar5 = iVar5 + -1) {
@@ -75,15 +75,15 @@ void __thiscall FSGSTy::NewGameCtrls(FSGSTy *this)
     local_88c = local_8ac;
     local_84c = local_8ac;
     local_68 = local_8ac;
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-    (*(code *)this_00->field_000C->vtable->field_0008)(6,&this_00->field_1AC4,0,local_8d8,0);
+    (*this_00->field_000C->vtable->CreateObject)
+              ((SystemClassTy *)this_00->field_000C,6,&this_00->field_1AC4,(int *)0x0,local_8d8,0);
     local_8b8 = this_00->field_1AEC;
     local_8d8[4] = (ccFntTy *)0x13d;
     local_8d8[5] = (ccFntTy *)0xaa;
     local_8d8[6] = (ccFntTy *)0x14;
     local_8d8[7] = (ccFntTy *)0x10;
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-    (*(code *)this_00->field_000C->vtable->field_0008)(6,&this_00->field_1AC8,0,local_8d8,0);
+    (*this_00->field_000C->vtable->CreateObject)
+              ((SystemClassTy *)this_00->field_000C,6,&this_00->field_1AC8,(int *)0x0,local_8d8,0);
     this_00->field_1EC2 = 0x100;
     this_00->field_1EC6 = 0xffffffff;
     this_00->field_1ECA = 0;

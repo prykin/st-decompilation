@@ -1,5 +1,10 @@
 
-void __fastcall FUN_005d1380(AnonShape_005D1380_CEECF2C3 *param_1)
+/* [STMethodOwnerApplier] Structural method owner recovered as SettMapMTy.
+   Evidence: this_call_owners=[SettMapMTy]; agreed_this_calls=3; incoming_this_accesses=1;
+   incoming_edx_uses=0; incoming_stack_parameter_uses=0; direct_non_thunk_callers=0;
+   incoming_ecx_receiver_callers=0; attributed_named_callers=3; owner_evidence_coverage=adequate */
+
+void __thiscall SettMapMTy::sub_005D1380(SettMapMTy *this)
 
 {
   DArrayTy *pDVar1;
@@ -9,7 +14,7 @@ void __fastcall FUN_005d1380(AnonShape_005D1380_CEECF2C3 *param_1)
   bool bVar5;
 
   DAT_0080874d = 0xff;
-  pDVar1 = param_1->field_1F84;
+  pDVar1 = this->field_1F84;
   if (pDVar1 != (DArrayTy *)0x0) {
     uVar2 = pDVar1->count;
     uVar4 = 0;

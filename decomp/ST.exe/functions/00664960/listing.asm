@@ -1,4 +1,4 @@
-FUN_00664960:
+AiFltClassTy::sub_00664960:
 00664960  55                        PUSH EBP
 00664961  8B EC                     MOV EBP,ESP
 00664963  81 EC 98 00 00 00         SUB ESP,0x98
@@ -515,7 +515,7 @@ switchD_006649d9::caseD_3b:
 00664FEF  33 C0                     XOR EAX,EAX
 LAB_00664ff1:
 00664FF1  B9 4E 02 00 00            MOV ECX,0x24e
-FUN_00664960::cf_common_join_00664FF6:
+AiFltClassTy::sub_00664960::cf_common_join_00664FF6:
 00664FF6  89 8B 9B 00 00 00         MOV dword ptr [EBX + 0x9b],ECX
 00664FFC  89 83 9F 00 00 00         MOV dword ptr [EBX + 0x9f],EAX
 00665002  89 83 A3 00 00 00         MOV dword ptr [EBX + 0xa3],EAX
@@ -529,7 +529,7 @@ switchD_006649d9::caseD_11:
 0066501B  E8 66 F3 D9 FF            CALL 0x00404386
 00665020  85 C0                     TEST EAX,EAX
 00665022  7F 23                     JG 0x00665047
-FUN_00664960::cf_common_join_00665024:
+AiFltClassTy::sub_00664960::cf_common_join_00665024:
 00665024  8B 45 C0                  MOV EAX,dword ptr [EBP + -0x40]
 00665027  83 F8 32                  CMP EAX,0x32
 0066502A  72 0E                     JC 0x0066503a
@@ -2323,7 +2323,7 @@ switchD_00666965::caseD_23a:
 00666CE2  8B CB                     MOV ECX,EBX
 00666CE4  E8 20 B3 D9 FF            CALL 0x00402009
 00666CE9  85 C0                     TEST EAX,EAX
-FUN_00664960::cf_common_join_00666CEB:
+AiFltClassTy::sub_00664960::cf_common_join_00666CEB:
 00666CEB  0F 84 75 03 00 00         JZ 0x00667066
 00666CF1  E9 51 03 00 00            JMP 0x00667047
 LAB_00666cf6:
@@ -2371,7 +2371,7 @@ LAB_00666da8:
 LAB_00666db5:
 00666DB5  39 B3 A7 00 00 00         CMP dword ptr [EBX + 0xa7],ESI
 00666DBB  0F 85 86 02 00 00         JNZ 0x00667047
-FUN_00664960::cf_common_join_00666DC1:
+AiFltClassTy::sub_00664960::cf_common_join_00666DC1:
 00666DC1  8B 83 AB 00 00 00         MOV EAX,dword ptr [EBX + 0xab]
 00666DC7  3B C6                     CMP EAX,ESI
 00666DC9  0F 84 97 02 00 00         JZ 0x00667066
@@ -2563,21 +2563,21 @@ switchD_00666f20::caseD_a4:
 00667033  89 45 F8                  MOV dword ptr [EBP + -0x8],EAX
 00667036  3B C1                     CMP EAX,ECX
 00667038  0F 8C 95 FE FF FF         JL 0x00666ed3
-FUN_00664960::cf_break_loop_0066703E:
+AiFltClassTy::sub_00664960::cf_break_loop_0066703E:
 0066703E  8B 55 F4                  MOV EDX,dword ptr [EBP + -0xc]
 00667041  52                        PUSH EDX
 00667042  E8 C9 70 04 00            CALL 0x006ae110
-FUN_00664960::cf_common_join_00667047:
+AiFltClassTy::sub_00664960::cf_common_join_00667047:
 00667047  8B CB                     MOV ECX,EBX
 00667049  E8 71 A4 D9 FF            CALL 0x004014bf
-FUN_00664960::cf_common_join_0066704E:
+AiFltClassTy::sub_00664960::cf_common_join_0066704E:
 0066704E  89 B3 9B 00 00 00         MOV dword ptr [EBX + 0x9b],ESI
-FUN_00664960::cf_common_join_00667054:
+AiFltClassTy::sub_00664960::cf_common_join_00667054:
 00667054  89 B3 9F 00 00 00         MOV dword ptr [EBX + 0x9f],ESI
 LAB_0066705a:
 0066705A  89 B3 A3 00 00 00         MOV dword ptr [EBX + 0xa3],ESI
 00667060  89 B3 A7 00 00 00         MOV dword ptr [EBX + 0xa7],ESI
-FUN_00664960::cf_common_exit_00667066:
+AiFltClassTy::sub_00664960::cf_common_exit_00667066:
 00667066  8B 83 84 02 00 00         MOV EAX,dword ptr [EBX + 0x284]
 0066706C  5F                        POP EDI
 0066706D  3B C6                     CMP EAX,ESI

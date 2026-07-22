@@ -45,9 +45,9 @@ void __thiscall PanelTy::InitPanel(PanelTy *this)
       *(undefined1 *)puVar5 = 0xff;
       puVar5 = (undefined4 *)((int)puVar5 + 1);
     }
-    FUN_006b1a50((int)PTR_008075a8,3,(undefined4 *)0x0,(undefined4 *)&this_00->field_0x4c);
+    FUN_006b1a50(PTR_008075a8,3,(undefined4 *)0x0,(undefined4 *)&this_00->field_0x4c);
     piVar1 = &this_00->field_0060;
-    FUN_006b2330((uint)PTR_008075a8,(uint *)piVar1,this_00->field_0064,0x4057ea,this_00->field_0040,
+    FUN_006b2330(PTR_008075a8,(uint *)piVar1,this_00->field_0064,0x4057ea,this_00->field_0040,
                  this_00->field_0048,this_00->field_0068);
     FUN_006b1b10(PTR_008075a8,*piVar1,3);
     Library::DKW::DDX::FUN_006b3640

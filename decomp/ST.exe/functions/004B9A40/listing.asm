@@ -1,4 +1,4 @@
-FUN_004b9a40:
+TLOBaseTy::sub_004B9A40:
 004B9A40  56                        PUSH ESI
 004B9A41  8B F1                     MOV ESI,ECX
 004B9A43  E8 04 AC F4 FF            CALL 0x0040464c

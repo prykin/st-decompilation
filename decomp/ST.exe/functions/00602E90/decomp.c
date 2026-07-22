@@ -4,11 +4,14 @@
    /SubmarineTitans/Recovered/HiddenThis/AnonReceiver_00602E90.
    Evidence: incoming_receiver_captures=1; receiver_accesses=13; incoming_edx_uses=0; calls=2;
    ecx_pointer_setup=2; ecx_scalar_setup=0; caller_cleanup_calls=0; callee_ret_pop=[0];
-   expected_stack=0; receiver_family_members=1 */
+   expected_stack=0; receiver_family_members=1
 
-undefined4 * __thiscall
-SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00602E90::FUN_00602e90
-          (AnonReceiver_00602E90 *this)
+   [STMethodOwnerApplier] Structural method owner recovered as STDestC.
+   Evidence: this_call_owners=[STDestC]; agreed_this_calls=1; incoming_this_accesses=13;
+   incoming_edx_uses=0; incoming_stack_parameter_uses=0; direct_non_thunk_callers=0;
+   incoming_ecx_receiver_callers=0; attributed_named_callers=1; owner_evidence_coverage=adequate */
+
+undefined4 * __thiscall STDestC::sub_00602E90(STDestC *this)
 
 {
   AnonShape_00602E90_7075769A *pAVar1;

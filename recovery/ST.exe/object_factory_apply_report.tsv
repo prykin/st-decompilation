@@ -1,0 +1,99 @@
+kind	address	status	name	detail
+enum	/SubmarineTitans/Recovered/Enums/STObjectTypeId	applied	STObjectTypeId	updated generated registry values
+factory	0071E000	applied	CreateButton	signature=applied(ButtonClassTy * __cdecl(void)); name=applied(CreateButton)
+factory	00725520	applied	CreateTrackbar	signature=applied(TrackbarClassTy * __cdecl(void)); name=applied(CreateTrackbar)
+factory	00724D00	applied	CreateSlider	signature=applied(SliderClassTy * __cdecl(void)); name=applied(CreateSlider)
+factory	007242D0	unchanged	CreateObjectType_0005	signature=unchanged
+factory	007233B0	applied	CreateEditor	signature=applied(EditorClassTy * __cdecl(void)); name=applied(CreateEditor)
+factory	00720960	applied	CreateList	signature=applied(ListClassTy * __cdecl(void)); name=applied(CreateList)
+factory	0071F210	applied	CreateViewer	signature=applied(ViewerClassTy * __cdecl(void)); name=applied(CreateViewer)
+factory	0071E6D0	applied	CreateRadio	signature=applied(RadioClassTy * __cdecl(void)); name=applied(CreateRadio)
+factory	0071B190	unchanged	CreateObjectType_0001	signature=unchanged
+factory	00495720	unchanged	CreateObjectType_8100	signature=unchanged
+factory	004A88F0	unchanged	CreateObjectType_0100	signature=unchanged
+factory	00543450	unchanged	CreateObjectType_0101	signature=unchanged
+factory	00495950	unchanged	CreateObjectType_0102	signature=unchanged
+factory	00576A60	unchanged	CreateSTAlga	signature=unchanged
+factory	0048A640	unchanged	CreateObjectType_0104	signature=unchanged
+factory	00645830	unchanged	CreateSTTorp	signature=unchanged
+factory	0057CC60	unchanged	CreateSTFish	signature=unchanged
+factory	005FD6E0	unchanged	CreateObjectType_010A	signature=unchanged
+factory	0057F1A0	unchanged	CreateSTDcResourc	signature=unchanged
+factory	00639450	unchanged	CreateObjectType_010C	signature=unchanged
+factory	0063BF70	unchanged	CreateObjectType_010D	signature=unchanged
+factory	00604050	unchanged	CreateSTExplosion	signature=unchanged
+factory	0062ECE0	unchanged	CreateSTRubbish	signature=unchanged
+factory	004BE350	unchanged	CreateObjectType_01FF	signature=unchanged
+factory	004D6DC0	unchanged	CreateTLOEmbryo	signature=unchanged
+factory	004C6B20	unchanged	CreateTLOBldMark	signature=unchanged
+factory	004D0ED0	unchanged	CreateTLOFake	signature=unchanged
+factory	004A8890	unchanged	CreateObjectType_10FF	signature=unchanged
+factory	0044E660	unchanged	CreateObjectType_1100	signature=unchanged
+factory	00556730	unchanged	CreateTraks	signature=unchanged
+factory	0052B670	unchanged	CreateMoney	signature=unchanged
+factory	004F4F60	unchanged	CreateObjectType_0120	signature=unchanged
+factory	00558BA0	unchanged	CreateObjectType_0121	signature=unchanged
+factory	0052E3A0	unchanged	CreateOptPanel	signature=unchanged
+factory	0051FE40	unchanged	CreateInfocPanel	signature=unchanged
+factory	00550C90	unchanged	CreateObjectType_0149	signature=unchanged
+factory	004ED540	unchanged	CreateBehPanel	signature=unchanged
+factory	0051F860	unchanged	CreateHelpString	signature=unchanged
+factory	005391E0	unchanged	CreatePausePanel	signature=unchanged
+factory	005B50E0	unchanged	CreateMainMenu	signature=unchanged
+factory	005E5720	unchanged	CreateMTask	signature=unchanged
+factory	00593860	unchanged	CreateCampaign	signature=unchanged
+factory	005B2790	unchanged	CreateChooseMap	signature=unchanged
+factory	005D77A0	unchanged	CreateSettMap	signature=unchanged
+factory	005D4B40	unchanged	CreateSettMapM	signature=unchanged
+factory	005B95B0	unchanged	CreateObjectType_0303	signature=unchanged
+factory	00590AD0	unchanged	CreateMAdv	signature=unchanged
+factory	005D9F80	unchanged	CreateObjectType_0309	signature=unchanged
+factory	005BD2E0	unchanged	CreatePrivider	signature=unchanged
+factory	005E6570	unchanged	CreateObjectType_030C	signature=unchanged
+factory	005EAD30	unchanged	CreateWait	signature=unchanged
+factory	005AA2C0	unchanged	CreateFSGS	signature=unchanged
+factory	005C2620	unchanged	CreateMReport	signature=unchanged
+factory	0052D020	unchanged	CreatePopUp	signature=unchanged
+factory	0053BFF0	unchanged	CreateResearchPanel	signature=unchanged
+factory	004EE8E0	unchanged	CreateObjectType_0128	signature=unchanged
+factory	0058E410	unchanged	CreateSTShark	signature=unchanged
+factory	004F0460	unchanged	CreateObjectType_012A	signature=unchanged
+factory	004EFA40	unchanged	CreateBldLabPanel	signature=unchanged
+factory	00521840	unchanged	CreateObjectType_012B	signature=unchanged
+factory	005527D0	unchanged	CreateUpgPanel	signature=unchanged
+factory	00539AA0	unchanged	CreateObjectType_0154	signature=unchanged
+factory	00510C50	unchanged	CreateHelpPanel	signature=unchanged
+factory	0050FC70	unchanged	CreateFrmPanel	signature=unchanged
+factory	00566590	unchanged	CreateSoundManager	signature=unchanged
+factory	005861A0	unchanged	CreateObjectType_0130	signature=unchanged
+factory	00589940	unchanged	CreateObjectType_0131	signature=unchanged
+factory	00609920	unchanged	CreateObjectType_0134	signature=unchanged
+factory	00646C60	unchanged	CreateSTVolcano	signature=unchanged
+factory	00619140	unchanged	CreateSTJumpMine	signature=unchanged
+factory	00583E00	unchanged	CreateObjectType_0137	signature=unchanged
+factory	00582280	unchanged	CreateSTJellyMan	signature=unchanged
+factory	00579320	unchanged	CreateSTCrab	signature=unchanged
+factory	0058A9B0	unchanged	CreateSTOctopus	signature=unchanged
+factory	0058A9B0	disabled	CreateSTOctopus	all apply flags are 0
+factory	0058CF60	unchanged	CreateObjectType_014D	signature=unchanged
+factory	0061FE30	unchanged	CreateSndUnderAttMeneg	signature=unchanged
+factory	005F65D0	unchanged	CreateSTColl3	signature=unchanged
+factory	0062CEC0	unchanged	CreateSTManRub3	signature=unchanged
+factory	00630840	unchanged	CreateSTManRuin	signature=unchanged
+factory	00579320	disabled	CreateSTCrab	all apply flags are 0
+factory	0060EC40	unchanged	CreateObjectType_0147	signature=unchanged
+factory	00668150	unchanged	CreateObjectType_0400	signature=unchanged
+factory	00690E60	unchanged	CreateAiTact	signature=unchanged
+factory	0067CF00	unchanged	CreateObjectType_0402	signature=unchanged
+factory	006483D0	unchanged	CreateAiBoss	signature=unchanged
+factory	005947D0	unchanged	CreateObjectType_100EF	signature=unchanged
+factory	0061D5F0	unchanged	CreateObjectType_014C	signature=unchanged
+factory	005EBC70	unchanged	CreateSTArtiafact	signature=unchanged
+factory	005F3410	unchanged	CreateSTBHEShell	signature=unchanged
+factory	00617810	unchanged	CreateObjectType_0152	signature=unchanged
+factory	005FC3A0	unchanged	CreateSTContainer	signature=unchanged
+factory	006225D0	unchanged	CreateSTMineSet	signature=unchanged
+factory	0053CE10	unchanged	CreateSAMPanel	signature=unchanged
+factory	006023C0	unchanged	CreateSTDest	signature=unchanged
+factory	005F1320	unchanged	CreateSTManBasis	signature=unchanged
+registry	007CA720	unchanged	g_objectFactoryRegistry	97 typed records including sentinel

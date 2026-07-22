@@ -1,0 +1,15 @@
+005AF16C  pointer  005aeb8d
+005AF170  pointer  005aebb4
+005AF174  pointer  005aeb4b
+005AF178  pointer  005aebd9
+005AF17C  byte  0h
+005AF17D  byte  0h
+005AF17E  byte  3h
+005AF17F  byte  1h
+005AF180  byte  1h
+005AF181  byte  3h
+005AF182  byte  3h
+005AF183  byte  3h
+005AF184  byte  2h
+005AF185  byte  2h
+005AF186  byte  2h

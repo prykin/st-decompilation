@@ -24,7 +24,7 @@ int __thiscall MMsgTy::GetMessage(MMsgTy *this,STMessage *message)
   MMsgTy *local_8;
 
   local_8 = this;
-  DVar4 = FUN_006e51b0(this->field_0010);
+  DVar4 = STAppC::sub_006E51B0(this->field_0010);
   this->field_0061 = DVar4;
   local_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_4c;
@@ -40,7 +40,7 @@ int __thiscall MMsgTy::GetMessage(MMsgTy *this,STMessage *message)
     RaiseInternalException(iVar5,0,"E:\\__titans\\Start\\mmsg_obj.cpp",0x200);
     return 0xffff;
   }
-  thunk_FUN_005b6450(local_8,(int)message);
+  thunk_FUN_005b6450(local_8,message);
   SVar1 = message->id;
   if ((0x697e < SVar1) && (SVar1 < MESS_SHARED_69FF)) {
     switch(SVar1) {

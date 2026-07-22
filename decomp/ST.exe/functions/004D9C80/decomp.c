@@ -77,18 +77,19 @@ undefined4 __fastcall FUN_004d9c80(AnonShape_004D9C80_80F657D3 *param_1)
     iVar2 = thunk_FUN_004ad650((int)&param_1->field_0x1d5);
     uVar3 = thunk_FUN_004ad650(param_1->field_05FF);
     FUN_006ea340(param_1->field_0211,uVar3,iVar2,uVar4);
-    STT3DSprC::StartShow((STT3DSprC *)param_1->field_05FF,0xe,PTR_00802a38->field_00E4);
+    STT3DSprC::StartShow((STT3DSprC *)param_1->field_05FF,0xe,g_playSystem_00802A38->field_00E4);
     *(undefined4 *)&param_1->field_0x4d4 = 0;
-    uVar3 = PTR_00802a38->field_00E4;
+    uVar3 = g_playSystem_00802A38->field_00E4;
     *(undefined4 *)&param_1->field_0x4dc = 1;
     iVar2 = *(int *)&param_1->field_0x4d0 * 0x18;
     *(uint *)&param_1->field_0x4d8 = uVar3;
     local_8 = *(int *)(&DAT_00798eb8 + iVar2) + (int)param_1->field_0041;
-    thunk_FUN_004ad3c0((void *)param_1->field_05FF,(float)local_8 * _DAT_007904f8 * _DAT_007904f0,
-                       (float)(*(int *)(&DAT_00798ebc + iVar2) + (int)param_1->field_0043) *
-                       _DAT_007904f8 * _DAT_007904f0,
-                       (float)(*(int *)(&DAT_00798ec0 + iVar2) + (int)param_1->field_0045) *
-                       _DAT_007904f8 * _DAT_007904f0 + _DAT_007904fc);
+    STT3DSprC::sub_004AD3C0
+              ((STT3DSprC *)param_1->field_05FF,(float)local_8 * _DAT_007904f8 * _DAT_007904f0,
+               (float)(*(int *)(&DAT_00798ebc + iVar2) + (int)param_1->field_0043) * _DAT_007904f8 *
+               _DAT_007904f0,
+               (float)(*(int *)(&DAT_00798ec0 + iVar2) + (int)param_1->field_0045) * _DAT_007904f8 *
+               _DAT_007904f0 + _DAT_007904fc);
     thunk_FUN_004ad460((void *)param_1->field_05FF,1);
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
     (**(code **)(*(int *)param_1 + 0x90))(3,0x347);

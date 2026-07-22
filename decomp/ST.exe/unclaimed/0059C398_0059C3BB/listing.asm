@@ -1,0 +1,9 @@
+0059C398  pointer  0059be7e
+0059C39C  pointer  0059be7e
+0059C3A0  pointer  0059be7e
+0059C3A4  pointer  0059be7e
+0059C3A8  pointer  0059c06c
+0059C3AC  pointer  0059be7e
+0059C3B0  pointer  0059c131
+0059C3B4  pointer  0059c2c9
+0059C3B8  pointer  0059c1e3

@@ -1,4 +1,4 @@
-FUN_00506040:
+CPanelTy::sub_00506040:
 00506040  56                        PUSH ESI
 00506041  8B F1                     MOV ESI,ECX
 00506043  57                        PUSH EDI

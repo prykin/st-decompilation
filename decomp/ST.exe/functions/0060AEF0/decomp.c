@@ -195,7 +195,7 @@ int __fastcall FUN_0060aef0(void *param_1)
               /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
               if (*(int *)((int)param_1 + 0x1f5) == 0x43) {
                 if ((uVar15 < 8) &&
-                   ((PTR_00802a38 == (STPlaySystemC *)0x0 ||
+                   ((g_playSystem_00802A38 == (STPlaySystemC *)0x0 ||
                     ((byte)(&DAT_008087e9)[uVar15 * 0x51] < 8)))) {
                   bVar3 = *(byte *)&pSVar19->field_0024;
                   /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
@@ -271,7 +271,7 @@ LAB_0060b2ce:
               }
               else {
                 if ((uVar15 < 8) &&
-                   ((PTR_00802a38 == (STPlaySystemC *)0x0 ||
+                   ((g_playSystem_00802A38 == (STPlaySystemC *)0x0 ||
                     ((byte)(&DAT_008087e9)[uVar15 * 0x51] < 8)))) {
                   bVar3 = *(byte *)&pSVar19->field_0024;
                   /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */

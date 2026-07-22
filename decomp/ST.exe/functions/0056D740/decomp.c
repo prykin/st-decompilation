@@ -99,11 +99,11 @@ void __thiscall STAppC::ChangeResolution(STAppC *this,int param_1)
       Library::DKW::DDX::FUN_006b1680((int *)PTR_008075a8,(int)DAT_0080759c);
       FUN_006b1980((int *)PTR_008075a8,2,-1,(&DAT_00807568)[iVar3 * 4],(&DAT_0080756c)[iVar3 * 4],
                    (&DAT_00807570)[iVar3 * 4],(&DAT_00807574)[iVar3 * 4]);
-      FUN_006b1cc0((int)PTR_008075a8,2,(&DAT_00807568)[iVar3 * 4],(&DAT_0080756c)[iVar3 * 4],
+      FUN_006b1cc0(PTR_008075a8,2,(&DAT_00807568)[iVar3 * 4],(&DAT_0080756c)[iVar3 * 4],
                    (undefined4 *)0x0);
       FUN_006b1980((int *)PTR_008075a8,3,-1,(&DAT_00807568)[iVar3 * 4],(&DAT_0080756c)[iVar3 * 4],
                    (&DAT_00807570)[iVar3 * 4],(&DAT_00807574)[iVar3 * 4]);
-      FUN_006b1cc0((int)PTR_008075a8,3,0,0,(undefined4 *)0x0);
+      FUN_006b1cc0(PTR_008075a8,3,0,0,(undefined4 *)0x0);
       g_currentExceptionFrame = local_58.previous;
       return;
     }

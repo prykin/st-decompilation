@@ -18,6 +18,7 @@ void __thiscall CPanelTy::PaintInfoBoat(CPanelTy *this)
   int iVar7;
   char cVar8;
   AnonShape_006B5B10_E0D06CF1 *pAVar9;
+  dword dVar10;
   InternalExceptionFrame local_50;
   CPanelTy *local_c;
   uint local_8;
@@ -64,9 +65,9 @@ void __thiscall CPanelTy::PaintInfoBoat(CPanelTy *this)
 LAB_004fea77:
   PaintDeep(this_00,1);
   if (this_00->field_0B63 == '\x02') {
-    uVar5 = this_00->field_0B95[3];
-    pcVar4 = LoadResourceString(0x36b9,HINSTANCE_00807618);
-    wsprintfA((LPSTR)&DAT_0080f33a,"&1%s&0%d",pcVar4,uVar5);
+    dVar10 = this_00->field_0B95->count;
+    pcVar4 = LoadResourceString(0x36b9,g_module_00807618);
+    wsprintfA((LPSTR)&DAT_0080f33a,"&1%s&0%d",pcVar4,dVar10);
     ccFntTy::SetSurf(this_00->field_01B8,this_00->field_0184,0,2,0xf,
                      *(int *)(this_00->field_0958 + 2) + -4,0x2d);
     ccFntTy::WrTxt(this_00->field_01B8,&DAT_0080f33a,-2,-1,0,-1,-1);

@@ -45,9 +45,7 @@ FUN_0065fe10(AiFltClassTy *param_1,undefined4 param_2,int param_3,short *param_4
   else {
     uVar3 = 0;
   }
-  array = (DArrayTy *)
-          SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0065FA60::thunk_FUN_0065fa60
-                    ((AnonReceiver_0065FA60 *)param_1,uVar3,1,param_4);
+  array = (DArrayTy *)AiFltClassTy::sub_0065FA60(param_1,uVar3,1,param_4);
   if (array != (DArrayTy *)0x0) {
     sVar1 = param_1->field_0039;
     if (sVar1 < 1) {
@@ -61,9 +59,7 @@ LAB_0065fec9:
       if (sVar1 != 3) goto LAB_0065fec9;
       iVar4 = 0x60;
     }
-    local_c = (DArrayTy *)
-              SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0065FA60::thunk_FUN_0065fa60
-                        ((AnonReceiver_0065FA60 *)param_1,iVar4,1,(short *)0x0);
+    local_c = (DArrayTy *)AiFltClassTy::sub_0065FA60(param_1,iVar4,1,(short *)0x0);
     if (local_c != (DArrayTy *)0x0) {
       sVar1 = param_1->field_0039;
       local_38[0] = (DArrayTy *)0x0;
@@ -83,7 +79,7 @@ LAB_0065fec9:
       local_38[1] = array;
       local_1c = local_c;
       /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-      if (((param_1->field_007D != -2) && (g_sTAllPlayers_007FA174 != (STAllPlayersC *)0x0)) &&
+      if (((param_1->field_007D != -2) && (g_allPlayers_007FA174 != (STAllPlayersC *)0x0)) &&
          (this = thunk_FUN_0042b760(*(char *)&param_1->field_0024,
                                     CONCAT22((short)((uint)local_c >> 0x10),param_1->field_007D)),
          this != (STGroupBoatC *)0x0)) {

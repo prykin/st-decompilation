@@ -1,0 +1,16 @@
+006FB454  pointer  006faf18
+006FB458  pointer  006faf49
+006FB45C  pointer  006faf5f
+006FB460  pointer  006faf93
+006FB464  pointer  006fb032
+006FB468  pointer  006fb068
+006FB46C  pointer  006fb07c
+006FB470  pointer  006fb0b6
+006FB474  pointer  006fb1fd
+006FB478  pointer  006fb229
+006FB47C  pointer  006fb23a
+006FB480  pointer  006fb26a
+006FB484  pointer  006fb2f4
+006FB488  pointer  006fb323
+006FB48C  pointer  006fb32d
+006FB490  pointer  006fb358

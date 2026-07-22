@@ -4,7 +4,7 @@
 void __thiscall FUN_00494160(void *this,int param_1)
 
 {
-  void *pvVar1;
+  STT3DSprC *pSVar1;
   byte bVar2;
   byte bVar3;
   uint uVar4;
@@ -107,34 +107,34 @@ LAB_004943a0:
       bVar7 = (&DAT_008087ea)[(uint)DAT_0080874d * 0x51] != (&DAT_008087ea)[(uint)bVar2 * 0x51];
     }
     if (!bVar7) {
-      pvVar1 = (void *)((int)this + 0x1d5);
-      thunk_FUN_004ace60(pvVar1,'\x0e');
-      thunk_FUN_004ace60(pvVar1,'\r');
-      thunk_FUN_004ace60(pvVar1,'\f');
-      thunk_FUN_004aceb0(pvVar1,'\x01');
-      thunk_FUN_004aceb0(pvVar1,'\x02');
-      thunk_FUN_004aceb0(pvVar1,'\0');
-      thunk_FUN_004aceb0(pvVar1,'\x0f');
-      thunk_FUN_004aceb0(pvVar1,'\v');
-      thunk_FUN_004aceb0(pvVar1,'\n');
-      thunk_FUN_004aceb0(pvVar1,'\t');
-      thunk_FUN_004aceb0(pvVar1,'\b');
+      pSVar1 = (STT3DSprC *)((int)this + 0x1d5);
+      STT3DSprC::sub_004ACE60(pSVar1,'\x0e');
+      STT3DSprC::sub_004ACE60(pSVar1,'\r');
+      STT3DSprC::sub_004ACE60(pSVar1,'\f');
+      thunk_FUN_004aceb0(pSVar1,'\x01');
+      thunk_FUN_004aceb0(pSVar1,'\x02');
+      thunk_FUN_004aceb0(pSVar1,'\0');
+      thunk_FUN_004aceb0(pSVar1,'\x0f');
+      thunk_FUN_004aceb0(pSVar1,'\v');
+      thunk_FUN_004aceb0(pSVar1,'\n');
+      thunk_FUN_004aceb0(pSVar1,'\t');
+      thunk_FUN_004aceb0(pSVar1,'\b');
       *(undefined4 *)((int)this + 0x746) = 0;
       goto LAB_00494498;
     }
   }
-  pvVar1 = (void *)((int)this + 0x1d5);
-  thunk_FUN_004ace60(pvVar1,'\x0e');
-  thunk_FUN_004ace60(pvVar1,'\r');
-  thunk_FUN_004ace60(pvVar1,'\f');
-  thunk_FUN_004ace60(pvVar1,'\x01');
-  thunk_FUN_004ace60(pvVar1,'\x02');
-  thunk_FUN_004ace60(pvVar1,'\0');
-  thunk_FUN_004ace60(pvVar1,'\x0f');
-  thunk_FUN_004ace60(pvVar1,'\v');
-  thunk_FUN_004ace60(pvVar1,'\n');
-  thunk_FUN_004ace60(pvVar1,'\t');
-  thunk_FUN_004ace60(pvVar1,'\b');
+  pSVar1 = (STT3DSprC *)((int)this + 0x1d5);
+  STT3DSprC::sub_004ACE60(pSVar1,'\x0e');
+  STT3DSprC::sub_004ACE60(pSVar1,'\r');
+  STT3DSprC::sub_004ACE60(pSVar1,'\f');
+  STT3DSprC::sub_004ACE60(pSVar1,'\x01');
+  STT3DSprC::sub_004ACE60(pSVar1,'\x02');
+  STT3DSprC::sub_004ACE60(pSVar1,'\0');
+  STT3DSprC::sub_004ACE60(pSVar1,'\x0f');
+  STT3DSprC::sub_004ACE60(pSVar1,'\v');
+  STT3DSprC::sub_004ACE60(pSVar1,'\n');
+  STT3DSprC::sub_004ACE60(pSVar1,'\t');
+  STT3DSprC::sub_004ACE60(pSVar1,'\b');
   *(undefined4 *)((int)this + 0x746) = 1;
 /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
 LAB_00494498:

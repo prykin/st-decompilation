@@ -25,8 +25,8 @@ void __fastcall FUN_0062fe00(STJellyGunC *param_1)
       iVar3 = thunk_FUN_0062f080(param_1,iVar4,*(undefined4 *)(*piVar5 + 0xc),
                                  *(undefined4 *)(*piVar5 + 4));
       if (iVar3 == 0) {
-        if (*(int *)&param_1->field_0x1e1 == 1) {
-          thunk_FUN_0062f900(param_1);
+        if (param_1->field_01E1 == 1) {
+          STRubbishC::sub_0062F900((STRubbishC *)param_1);
         }
         else {
           thunk_FUN_0062f6c0(param_1,iVar4);

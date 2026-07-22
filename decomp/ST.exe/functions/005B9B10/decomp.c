@@ -45,17 +45,18 @@ void __thiscall PrividerTy::InitPrivider(PrividerTy *this,char param_1,char para
     this_02 = local_10;
     local_10->field_1C92 = &pDVar3->flags;
     Library::DKW::TBL::FUN_006b5aa0(&pDVar3->flags,(char *)&DAT_00807ddd);
-    if (PTR_00802a30 != (CursorClassTy *)0x0) {
-      if (PTR_00802a30->field_00A9 == 0) {
-        Library::DKW::DDX::FUN_006b8b10((int *)PTR_00802a30->field_00AD);
+    if (g_cursorClass_00802A30 != (CursorClassTy *)0x0) {
+      if (g_cursorClass_00802A30->field_00A9 == 0) {
+        Library::DKW::DDX::FUN_006b8b10((int *)g_cursorClass_00802A30->field_00AD);
       }
-      else if (PTR_00802a30->field_001C != (cLoadingTy *)0xffffffff) {
-        FUN_006b3af0((int *)PTR_00802a30->field_0060,(uint)PTR_00802a30->field_001C);
+      else if (g_cursorClass_00802A30->field_001C != (cLoadingTy *)0xffffffff) {
+        FUN_006b3af0((int *)g_cursorClass_00802A30->field_0060,
+                     (uint)g_cursorClass_00802A30->field_001C);
       }
     }
     puVar4 = (ushort *)FUN_0070a9f0(g_cMf32_00806780,"LOADSINGLE",0,1);
-    PTR_0081176c->field_002C = puVar4;
-    puVar4 = PTR_0081176c->field_002C;
+    g_startSystem_0081176C->field_002C = puVar4;
+    puVar4 = g_startSystem_0081176C->field_002C;
     this_02->field_005D = puVar4;
     FUN_006bc360(puVar4,local_454,(int *)0x0);
     this_02->field_1A5B->field_0140 = 0x1f;
@@ -124,7 +125,7 @@ void __thiscall PrividerTy::InitPrivider(PrividerTy *this,char param_1,char para
     }
     uVar5 = 0x67;
     do {
-      FUN_006b2330((uint)PTR_008075a8,puVar8,0x31,0x40597f,*(uint *)(this_02->field_1C82 + 2),0x13,
+      FUN_006b2330(PTR_008075a8,puVar8,0x31,0x40597f,*(uint *)(this_02->field_1C82 + 2),0x13,
                    (uint)this_02);
       Library::DKW::DDX::FUN_006b3640((int *)PTR_008075a8,*puVar8,0xffffffff,0x7a,uVar5);
       uVar5 = uVar5 + 0x13;
@@ -150,19 +151,19 @@ void __thiscall PrividerTy::InitPrivider(PrividerTy *this,char param_1,char para
       *(undefined1 *)puVar6 = 0xff;
       puVar6 = (undefined4 *)((int)puVar6 + 1);
     }
-    ccFntTy::SetSurf(PTR_0081176c->field_0034,(int)this_02->field_1C8E,0,3,1,0x22c,0x14);
+    ccFntTy::SetSurf(g_startSystem_0081176C->field_0034,(int)this_02->field_1C8E,0,3,1,0x22c,0x14);
     uVar13 = 2;
     iVar12 = -1;
     iVar2 = -2;
-    puVar8 = (uint *)LoadResourceString(0x26b5,HINSTANCE_00807618);
-    ccFntTy::WrStr(PTR_0081176c->field_0034,puVar8,iVar2,iVar12,uVar13);
+    puVar8 = (uint *)LoadResourceString(0x26b5,g_module_00807618);
+    ccFntTy::WrStr(g_startSystem_0081176C->field_0034,puVar8,iVar2,iVar12,uVar13);
     pAVar7 = this_02->field_1C8E;
     puVar6 = &this_02->field_1C8A;
-    FUN_006b2330((uint)PTR_008075a8,puVar6,0x31,0x4023f6,pAVar7->field_0004,pAVar7->field_0008,
+    FUN_006b2330(PTR_008075a8,puVar6,0x31,0x4023f6,pAVar7->field_0004,pAVar7->field_0008,
                  (uint)pAVar7);
     Library::DKW::DDX::FUN_006b3640((int *)PTR_008075a8,*puVar6,0xffffffff,0x79,0x197);
     CreateCtrls(this_02,'\x01');
-    FUN_006b2330((uint)PTR_008075a8,&local_8,0x32,0x403c74,0x22e,0x145,(uint)this_02);
+    FUN_006b2330(PTR_008075a8,&local_8,0x32,0x403c74,0x22e,0x145,(uint)this_02);
     Library::DKW::DDX::FUN_006b3640((int *)PTR_008075a8,local_8,0xffffffff,0x79,0x51);
     pHVar9 = (HoloTy *)Library::MSVCRT::FUN_0072e530(0x33);
     if (pHVar9 == (HoloTy *)0x0) {
@@ -224,7 +225,7 @@ void __thiscall PrividerTy::InitPrivider(PrividerTy *this,char param_1,char para
       local_8 = 0xffffffff;
     }
     if (this_02->field_1A5F == '\0') {
-      FUN_006b2330((uint)PTR_008075a8,&local_8,0x32,0x402f13,0x22e,0x2e,
+      FUN_006b2330(PTR_008075a8,&local_8,0x32,0x402f13,0x22e,0x2e,
                    (uint)&this_02->field_1A5B->field_0140);
       Library::DKW::DDX::FUN_006b3640((int *)PTR_008075a8,local_8,0xffffffff,0x79,0x197);
       pHVar9 = (HoloTy *)Library::MSVCRT::FUN_0072e530(0x33);
@@ -275,16 +276,16 @@ void __thiscall PrividerTy::InitPrivider(PrividerTy *this,char param_1,char para
     else {
       FUN_006b3af0((int *)PTR_008075a8,*puVar6);
     }
-    this_01 = PTR_00802a30;
-    if (PTR_00802a30 != (CursorClassTy *)0x0) {
-      iVar2 = PTR_00802a30->field_00C9;
-      iVar12 = PTR_00802a30->field_00C5;
-      PTR_00802a30->field_0493 = 1;
+    this_01 = g_cursorClass_00802A30;
+    if (g_cursorClass_00802A30 != (CursorClassTy *)0x0) {
+      iVar2 = g_cursorClass_00802A30->field_00C9;
+      iVar12 = g_cursorClass_00802A30->field_00C5;
+      g_cursorClass_00802A30->field_0493 = 1;
       this_01->field_0494 = 0xffff;
       CursorClassTy::SetGCType(this_01,CASE_0,iVar12,iVar2);
       CursorClassTy::DrawSprite(this_01,this_01->field_00C5,this_01->field_00C9);
       this_01->field_00D2 = 0;
-      this_01->field_04DF = 0xffffffff;
+      this_01->field_04DF = -1;
     }
     if (param_2 != '\0') {
       thunk_FUN_0055ddf0(DAT_0080759c,(int *)PTR_008075a8,(int)this_02->field_005D,10,2);

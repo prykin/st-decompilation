@@ -77,12 +77,11 @@ undefined4 __thiscall STGroupBoatC::GrpRepare(STGroupBoatC *this,int param_1)
       if (0 < (int)uVar9) {
         do {
           DArrayGetElement((DArrayTy *)this_00->field_0160,uVar11,&local_8);
-          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
           if ((((short)local_8 != -1) &&
               (pSVar4 = STAllPlayersC::GetObjPtr
-                                  (g_sTAllPlayers_007FA174,this_00->field_0024,local_8,CASE_1),
+                                  (g_allPlayers_007FA174,this_00->field_0024,local_8,CASE_1),
               pSVar4 != (STGameObjC *)0x0)) &&
-             (iVar2 = (**(code **)&pSVar4->vtable->field_0x2c)(), iVar2 == 0x33)) {
+             (iVar2 = (*pSVar4->vtable->vfunc_2C)(), iVar2 == 0x33)) {
             Library::DKW::TBL::FUN_006ae1c0(*(uint **)&this_00->field_0x29f,&local_8);
           }
           uVar11 = uVar11 + 1;
@@ -98,7 +97,7 @@ undefined4 __thiscall STGroupBoatC::GrpRepare(STGroupBoatC *this,int param_1)
       }
     }
     if (this_00->field_029B == 1) {
-      puVar5 = STAllPlayersC::GetTOBJList(g_sTAllPlayers_007FA174,this_00->field_0024,0x33,0,-1);
+      puVar5 = STAllPlayersC::GetTOBJList(g_allPlayers_007FA174,this_00->field_0024,0x33,0,-1);
       *(uint **)&this_00->field_0x29f = puVar5;
       if (puVar5[3] == 0) {
         RaiseInternalException
@@ -110,7 +109,7 @@ undefined4 __thiscall STGroupBoatC::GrpRepare(STGroupBoatC *this,int param_1)
   }
   uVar9 = 0;
   local_10 = 2;
-  if (PTR_00802a38->field_00E4 % 0x19 == 0) {
+  if (g_playSystem_00802A38->field_00E4 % 0x19 == 0) {
     if ((*(int *)&this_00->field_0x29f == 0) || (this_00->field_0027 == 0)) {
       local_10 = 0;
     }
@@ -124,8 +123,8 @@ undefined4 __thiscall STGroupBoatC::GrpRepare(STGroupBoatC *this,int param_1)
           if ((short)local_8 != -1) {
             this_01 = (STBoatC *)
                       STAllPlayersC::GetObjPtr
-                                (g_sTAllPlayers_007FA174,this_00->field_0024,local_8,CASE_1);
-            iVar2 = thunk_FUN_0045ff10((int)this_01);
+                                (g_allPlayers_007FA174,this_00->field_0024,local_8,CASE_1);
+            iVar2 = thunk_FUN_0045ff10((STGameObjC *)this_01);
             uVar11 = local_c;
             if ((iVar2 == 4) ||
                (uVar6 = STBoatC::CheckPBoxCmd(this_01,CASE_4), uVar11 = local_c, uVar6 == 1)) break;

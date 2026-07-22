@@ -1,29 +1,32 @@
 
-void __fastcall FUN_005c0190(AnonShape_005C0190_99FBAF43 *param_1)
+/* [STMethodOwnerApplier] Structural method owner recovered as MReportTy.
+   Evidence: this_call_owners=[MReportTy]; agreed_this_calls=1; incoming_this_accesses=10;
+   incoming_edx_uses=0; incoming_stack_parameter_uses=0; direct_non_thunk_callers=0;
+   incoming_ecx_receiver_callers=0; attributed_named_callers=1; owner_evidence_coverage=adequate */
+
+void __thiscall MReportTy::sub_005C0190(MReportTy *this)
 
 {
   int *piVar1;
   int local_8;
 
   local_8 = 4;
-  param_1->field_0029 = 2;
-  param_1->field_002D = 0x20;
-  piVar1 = (int *)&param_1->field_0x8f;
+  this->field_0029 = 2;
+  this->field_002D = 0x20;
+  piVar1 = &this->field_008F;
   do {
     if (*piVar1 != 0) {
-      param_1->field_0025 = *piVar1;
-      param_1->field_0031 = 0;
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-      (**(code **)(*param_1->field_000C + 0x18))(&param_1->field_0x1d);
+      this->field_0025 = *piVar1;
+      *(undefined4 *)&this->field_0x31 = 0;
+      (*this->field_000C->vtable->vfunc_18)(&this->field_0x1d);
     }
     piVar1 = piVar1 + 1;
     local_8 = local_8 + -1;
   } while (local_8 != 0);
-  if (param_1->field_009F != 0) {
-    param_1->field_0025 = param_1->field_009F;
-    param_1->field_0031 = 0;
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-    (**(code **)(*param_1->field_000C + 0x18))(&param_1->field_0x1d);
+  if (this->field_009F != 0) {
+    this->field_0025 = this->field_009F;
+    *(undefined4 *)&this->field_0x31 = 0;
+    (*this->field_000C->vtable->vfunc_18)(&this->field_0x1d);
   }
   return;
 }

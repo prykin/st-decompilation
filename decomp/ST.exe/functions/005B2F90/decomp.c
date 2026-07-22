@@ -24,17 +24,18 @@ void __thiscall MainMenuTy::DoneMainMenu(MainMenuTy *this)
   pMVar2 = local_8;
   if (iVar3 == 0) {
     MMObjTy::DoneMMObj(local_8);
-    if (PTR_00802a30 != (CursorClassTy *)0x0) {
-      if (PTR_00802a30->field_00A9 == 0) {
-        Library::DKW::DDX::FUN_006b8b10((int *)PTR_00802a30->field_00AD);
+    if (g_cursorClass_00802A30 != (CursorClassTy *)0x0) {
+      if (g_cursorClass_00802A30->field_00A9 == 0) {
+        Library::DKW::DDX::FUN_006b8b10((int *)g_cursorClass_00802A30->field_00AD);
       }
-      else if (PTR_00802a30->field_001C != (cLoadingTy *)0xffffffff) {
-        FUN_006b3af0((int *)PTR_00802a30->field_0060,(uint)PTR_00802a30->field_001C);
+      else if (g_cursorClass_00802A30->field_001C != (cLoadingTy *)0xffffffff) {
+        FUN_006b3af0((int *)g_cursorClass_00802A30->field_0060,
+                     (uint)g_cursorClass_00802A30->field_001C);
       }
     }
     DarkScreen(DAT_0080759c,10,2);
-    if (PTR_0081176c->field_002C != (ushort *)0x0) {
-      cMf32::RecMemFree(g_cMf32_00806780,(uint *)&PTR_0081176c->field_002C);
+    if (g_startSystem_0081176C->field_002C != (ushort *)0x0) {
+      cMf32::RecMemFree(g_cMf32_00806780,(uint *)&g_startSystem_0081176C->field_002C);
     }
     this_00 = *(MMsgTy **)(*(int *)&pMVar2[0x1d].field_0xa4 + 0x2e6);
     if (this_00 != (MMsgTy *)0x0) {

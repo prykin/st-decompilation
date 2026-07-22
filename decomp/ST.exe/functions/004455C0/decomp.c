@@ -108,7 +108,7 @@ uint __thiscall STAllPlayersC::CreateBoat(STAllPlayersC *this,undefined4 *param_
                  0x27d8);
     }
   }
-  STPlaySystemC::CreateGameObject(PTR_00802a38,0x14,0,&local_c,param_1,0);
+  STPlaySystemC::CreateGameObject(g_playSystem_00802A38,0x14,0,&local_c,param_1,0);
   iVar2 = local_c;
   if (local_c == 0) {
     RaiseInternalException

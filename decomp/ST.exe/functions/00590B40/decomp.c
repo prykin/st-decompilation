@@ -64,15 +64,16 @@ void __thiscall CampaignTy::InitCampaign(CampaignTy *this,undefined4 param_1)
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   local_10->field_1FFC = param_1;
-  if (PTR_00802a30 != (CursorClassTy *)0x0) {
-    if (PTR_00802a30->field_00A9 == 0) {
-      Library::DKW::DDX::FUN_006b8b10((int *)PTR_00802a30->field_00AD);
+  if (g_cursorClass_00802A30 != (CursorClassTy *)0x0) {
+    if (g_cursorClass_00802A30->field_00A9 == 0) {
+      Library::DKW::DDX::FUN_006b8b10((int *)g_cursorClass_00802A30->field_00AD);
     }
-    else if (PTR_00802a30->field_001C != (cLoadingTy *)0xffffffff) {
-      FUN_006b3af0((int *)PTR_00802a30->field_0060,(uint)PTR_00802a30->field_001C);
+    else if (g_cursorClass_00802A30->field_001C != (cLoadingTy *)0xffffffff) {
+      FUN_006b3af0((int *)g_cursorClass_00802A30->field_0060,
+                   (uint)g_cursorClass_00802A30->field_001C);
     }
   }
-  if (PTR_0081176c->field_0028 != 0) {
+  if (g_startSystem_0081176C->field_0028 != 0) {
     local_8 = 100;
     puVar5 = &this_02->field_1A5F;
     do {
@@ -281,7 +282,7 @@ switchD_00590d73_default:
           }
           this_02->field_1BE8 = (uint)DAT_0080874e * 3 - CASE_3;
           puVar4 = (ushort *)FUN_0070a9f0(g_cMf32_00806780,"CMPGN_BKG",0,1);
-          PTR_0081176c->field_002C = puVar4;
+          g_startSystem_0081176C->field_002C = puVar4;
           DarkScreen(DAT_0080759c,1,0);
           /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
           this_00 = *(MMsgTy **)(this_02->field_1A5B + 0x2e6);
@@ -291,17 +292,18 @@ switchD_00590d73_default:
             MMsgTy::ShowSprites(*(MMsgTy **)(this_02->field_1A5B + 0x2e6));
             *(undefined4 *)(*(int *)(this_02->field_1A5B + 0x2e6) + 0x1cab) = this_02->field_0008;
           }
-          FUN_006bc360(PTR_0081176c->field_002C,(undefined4 *)&this_02->field_0x1bf8,(int *)0x0);
-          this_01 = PTR_00802a30;
-          if (PTR_00802a30 != (CursorClassTy *)0x0) {
-            iVar2 = PTR_00802a30->field_00C9;
-            iVar16 = PTR_00802a30->field_00C5;
-            PTR_00802a30->field_0493 = 1;
+          FUN_006bc360(g_startSystem_0081176C->field_002C,(undefined4 *)&this_02->field_0x1bf8,
+                       (int *)0x0);
+          this_01 = g_cursorClass_00802A30;
+          if (g_cursorClass_00802A30 != (CursorClassTy *)0x0) {
+            iVar2 = g_cursorClass_00802A30->field_00C9;
+            iVar16 = g_cursorClass_00802A30->field_00C5;
+            g_cursorClass_00802A30->field_0493 = 1;
             this_01->field_0494 = 0xffff;
             CursorClassTy::SetGCType(this_01,CASE_0,iVar16,iVar2);
             CursorClassTy::DrawSprite(this_01,this_01->field_00C5,this_01->field_00C9);
             this_01->field_00D2 = 0;
-            this_01->field_04DF = 0xffffffff;
+            this_01->field_04DF = -1;
           }
           uVar17 = 0xffffffff;
           uVar15 = 7;
@@ -315,10 +317,10 @@ switchD_00590d73_default:
           cVar9 = CASE_FFFFFFFE;
           iVar8 = 0x28;
           iVar16 = 0x8c;
-          puVar6 = (uint *)LoadResourceString(0x23f1,HINSTANCE_00807618);
+          puVar6 = (uint *)LoadResourceString(0x23f1,g_module_00807618);
           puVar5 = ccFntTy::CreateTypeSSpr
-                             (PTR_0081176c->field_0030,puVar6,iVar16,iVar8,cVar9,uVar10,iVar11,
-                              iVar12,iVar13);
+                             (g_startSystem_0081176C->field_0030,puVar6,iVar16,iVar8,cVar9,uVar10,
+                              iVar11,iVar12,iVar13);
           /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
           (**(code **)(iVar2 + 8))(puVar5,uVar15,uVar17);
           uVar17 = 0xffffffff;
@@ -332,10 +334,10 @@ switchD_00590d73_default:
           cVar9 = CASE_FFFFFFFE;
           iVar8 = 0x28;
           iVar16 = 0x8c;
-          puVar6 = (uint *)LoadResourceString(0x23f0,HINSTANCE_00807618);
+          puVar6 = (uint *)LoadResourceString(0x23f0,g_module_00807618);
           puVar5 = ccFntTy::CreateTypeSSpr
-                             (PTR_0081176c->field_0030,puVar6,iVar16,iVar8,cVar9,uVar10,iVar11,
-                              iVar12,iVar13);
+                             (g_startSystem_0081176C->field_0030,puVar6,iVar16,iVar8,cVar9,uVar10,
+                              iVar11,iVar12,iVar13);
           /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
           (**(code **)(iVar2 + 8))(puVar5,uVar15,uVar17);
           uVar17 = 0xffffffff;
@@ -349,10 +351,10 @@ switchD_00590d73_default:
           cVar9 = CASE_FFFFFFFE;
           iVar8 = 0x28;
           iVar16 = 0x8c;
-          puVar6 = (uint *)LoadResourceString(0x23f2,HINSTANCE_00807618);
+          puVar6 = (uint *)LoadResourceString(0x23f2,g_module_00807618);
           puVar5 = ccFntTy::CreateTypeSSpr
-                             (PTR_0081176c->field_0030,puVar6,iVar16,iVar8,cVar9,uVar10,iVar11,
-                              iVar12,iVar13);
+                             (g_startSystem_0081176C->field_0030,puVar6,iVar16,iVar8,cVar9,uVar10,
+                              iVar11,iVar12,iVar13);
           /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
           (**(code **)(iVar2 + 8))(puVar5,uVar15,uVar17);
           PaintCampaign(this_02);

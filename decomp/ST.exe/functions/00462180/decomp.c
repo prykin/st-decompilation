@@ -73,14 +73,13 @@ int __thiscall FUN_00462180(void *this,int param_1)
     *(short *)((int)this + 0xf8) = (short)((ulonglong)(uVar10 >> 0x10) % 0x1f) + 0x1e;
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     this_00 = STAllPlayersC::GetObjPtr
-                        (g_sTAllPlayers_007FA174,*(char *)((int)this + 0x33a),
+                        (g_allPlayers_007FA174,*(char *)((int)this + 0x33a),
                          (uint)*(ushort *)((int)this + 0x33f),
                          *(STAllPlayersC_GetObjPtr_param_3Enum *)((int)this + 0x33b));
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
     if (((this_00 != (STGameObjC *)0x0) && (this_00 != this)) &&
        ((*(int *)((int)this + 0x6f7) != 9 ||
-        ((iVar15 = (**(code **)&this_00->vtable->field_0x2c)(), iVar15 == 0x3b ||
-         (iVar15 = (**(code **)&this_00->vtable->field_0x2c)(), iVar15 == 0x60)))))) {
+        ((iVar15 = (*this_00->vtable->vfunc_2C)(), iVar15 == 0x3b ||
+         (iVar15 = (*this_00->vtable->vfunc_2C)(), iVar15 == 0x60)))))) {
       *(undefined4 *)((int)this + 0x7f4) = this_00->field_0018;
       *(undefined4 *)((int)this + 0x7f8) = this_00->field_002C;
       *(undefined4 *)((int)this + 0x7fc) = *(undefined4 *)((int)this + 0x33b);
@@ -99,8 +98,7 @@ int __thiscall FUN_00462180(void *this,int param_1)
       *(undefined2 *)((int)this + 0x80a) = 0xffff;
       *(undefined2 *)((int)this + 0x808) = 0xffff;
       *(undefined2 *)((int)this + 0x806) = 0xffff;
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-      iVar15 = (**(code **)&this_00->vtable->field_0x2c)();
+      iVar15 = (*this_00->vtable->vfunc_2C)();
       if (iVar15 == 0x4d) {
         *(undefined2 *)((int)this + 0x816) = 9;
       }
@@ -492,7 +490,7 @@ LAB_0046461c:
                    (int)sVar7].objects[0];
       }
       if ((local_c == (STFishC *)0x0) || (local_c->field_0018 != *(int *)((int)this + 0x7f4))) {
-        iVar15 = FUN_006e62d0(PTR_00802a38,*(int *)((int)this + 0x7f4),(int *)&local_c);
+        iVar15 = FUN_006e62d0(g_playSystem_00802A38,*(int *)((int)this + 0x7f4),(int *)&local_c);
         pSVar14 = this;
         if (((iVar15 == -4) || (iVar15 = (*local_c->vtable->vfunc_F8)(), iVar15 == 0)) ||
            ((*(int *)&local_c->field_0x20 == 0x1ae &&
@@ -625,7 +623,7 @@ LAB_00463d56:
                     + (int)sVar7].objects[0];
       }
       if ((local_14 == (STFishC *)0x0) || (local_14->field_0018 != *(int *)((int)this + 0x7f4))) {
-        iVar15 = FUN_006e62d0(PTR_00802a38,*(int *)((int)this + 0x7f4),(int *)&local_14);
+        iVar15 = FUN_006e62d0(g_playSystem_00802A38,*(int *)((int)this + 0x7f4),(int *)&local_14);
         if (((iVar15 != -4) && (iVar15 = (*local_14->vtable->vfunc_F8)(), iVar15 != 0)) &&
            ((*(int *)&local_14->field_0x20 != 0x1ae ||
             (iVar15 = (*local_14->vtable->vfunc_F4)(*(undefined4 *)((int)this + 0x24)), iVar15 != 0)
@@ -726,7 +724,7 @@ LAB_00463b9d:
         return 0;
       }
       STBoatC::sub_004602B0(this);
-      iVar15 = FUN_006e62d0(PTR_00802a38,*(int *)((int)this + 0x7f4),(int *)&local_c);
+      iVar15 = FUN_006e62d0(g_playSystem_00802A38,*(int *)((int)this + 0x7f4),(int *)&local_c);
       if ((iVar15 != -4) && (iVar15 = (*local_c->vtable->vfunc_F8)(), iVar15 != 0)) {
         if (*(int *)&local_c->field_0x20 == 0x1ae) {
           iVar15 = (*local_c->vtable->vfunc_F4)(*(undefined4 *)((int)this + 0x24));
@@ -776,7 +774,7 @@ LAB_004639e6:
                    (int)sVar7].objects[0];
       }
       if ((local_c == (STFishC *)0x0) || (local_c->field_0018 != *(int *)((int)this + 0x7f4))) {
-        iVar15 = FUN_006e62d0(PTR_00802a38,*(int *)((int)this + 0x7f4),(int *)&local_c);
+        iVar15 = FUN_006e62d0(g_playSystem_00802A38,*(int *)((int)this + 0x7f4),(int *)&local_c);
         if ((iVar15 != -4) && (iVar15 = (*local_c->vtable->vfunc_F8)(), iVar15 != 0)) {
           if (*(int *)&local_c->field_0x20 == 0x1ae) {
             iVar15 = (*local_c->vtable->vfunc_F4)(*(undefined4 *)((int)this + 0x24));
@@ -948,7 +946,7 @@ LAB_00463844:
         local_14 = pSVar14;
         if (((pSVar14 != (STFishC *)0x0) &&
             (uVar19 = pSVar14->field_0024, uVar10 = uVar19, uVar19 < 8)) &&
-           ((PTR_00802a38 == (STPlaySystemC *)0x0 ||
+           ((g_playSystem_00802A38 == (STPlaySystemC *)0x0 ||
             (uVar10 = uVar19 * 9, (byte)(&DAT_008087e9)[uVar19 * 0x51] < 8)))) {
           bVar3 = *(byte *)&pSVar14->field_0024;
           bVar4 = *(byte *)((int)this + 0x24);
@@ -1079,7 +1077,7 @@ LAB_00462fde:
                      [(int)sVar9 * (int)g_worldGrid.planeStride +
                       (int)sVar6 * (int)g_worldGrid.sizeX + (int)sVar7].objects[0],
          pSVar14 = local_14, local_14 != (STFishC *)0x0 && ((uint)local_14->field_0024 < 8)) &&
-        ((PTR_00802a38 == (STPlaySystemC *)0x0 ||
+        ((g_playSystem_00802A38 == (STPlaySystemC *)0x0 ||
          ((byte)(&DAT_008087e9)[local_14->field_0024 * 0x51] < 8)))))) {
       bVar3 = *(byte *)&local_14->field_0024;
       bVar4 = *(byte *)((int)this + 0x24);
@@ -1167,7 +1165,7 @@ cf_common_exit_00462E32:
                       [(int)sVar6 * (int)g_worldGrid.planeStride +
                        (int)sVar7 * (int)g_worldGrid.sizeX + (int)sVar9].objects[0],
            pSVar23 != (STWorldObject *)0x0 && (pSVar23[1].vtable < (STWorldObjectVTable *)0x8))))))
-        && ((PTR_00802a38 == (STPlaySystemC *)0x0 ||
+        && ((g_playSystem_00802A38 == (STPlaySystemC *)0x0 ||
             ((byte)(&DAT_008087e9)[(int)pSVar23[1].vtable * 0x51] < 8)))))) {
       bVar3 = *(byte *)&pSVar23[1].vtable;
       bVar4 = *(byte *)((int)this + 0x24);
@@ -1253,7 +1251,7 @@ switchD_00462e6c_caseD_2:
                   [(int)sVar6 * (int)g_worldGrid.planeStride + (int)sVar7 * (int)g_worldGrid.sizeX +
                    (int)sVar9].objects[0], pSVar23 != (STWorldObject *)0x0 &&
        (pSVar23[1].vtable < (STWorldObjectVTable *)0x8)))) &&
-     ((PTR_00802a38 == (STPlaySystemC *)0x0 ||
+     ((g_playSystem_00802A38 == (STPlaySystemC *)0x0 ||
       ((byte)(&DAT_008087e9)[(int)pSVar23[1].vtable * 0x51] < 8)))) {
     bVar3 = *(byte *)&pSVar23[1].vtable;
     bVar4 = *(byte *)((int)this + 0x24);

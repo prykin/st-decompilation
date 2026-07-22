@@ -19,7 +19,8 @@ FUN_0055ad00(void *this,int param_1,int param_2,undefined4 param_3,uint param_4,
   int *local_8;
 
   if (((*(int *)((int)this + 0x114) != 0) && (param_4 < 8)) &&
-     ((PTR_00802a38 == (STPlaySystemC *)0x0 || ((byte)(&DAT_008087e9)[param_4 * 0x51] < 8)))) {
+     ((g_playSystem_00802A38 == (STPlaySystemC *)0x0 || ((byte)(&DAT_008087e9)[param_4 * 0x51] < 8))
+     )) {
     local_8 = (int *)((int)this + 0x54);
     local_1c = 0;
     local_10 = &DAT_008087e9;

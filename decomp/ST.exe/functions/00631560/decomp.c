@@ -1,27 +1,25 @@
 
-void __fastcall FUN_00631560(int param_1)
+/* [STMethodOwnerApplier] Structural method owner recovered as STManRuinC.
+   Evidence: this_call_owners=[STManRuinC]; agreed_this_calls=1; incoming_this_accesses=6;
+   incoming_edx_uses=0; incoming_stack_parameter_uses=0; direct_non_thunk_callers=0;
+   incoming_ecx_receiver_callers=0; attributed_named_callers=1; owner_evidence_coverage=adequate */
+
+void __thiscall STManRuinC::sub_00631560(STManRuinC *this)
 
 {
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  if (*(int *)(param_1 + 0x34) != 0) {
-    FreeAndNull((void **)(param_1 + 0x34));
+  if (this->field_0034 != 0) {
+    FreeAndNull((void **)&this->field_0034);
   }
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  if (*(DArrayTy **)(param_1 + 0x38) != (DArrayTy *)0x0) {
-    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-    DArrayDestroy(*(DArrayTy **)(param_1 + 0x38));
-    *(undefined4 *)(param_1 + 0x38) = 0;
+  if (this->field_0038 != (DArrayTy *)0x0) {
+    DArrayDestroy(this->field_0038);
+    this->field_0038 = (DArrayTy *)0x0;
   }
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  if (-1 < (int)*(uint *)(param_1 + 0x61)) {
-    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-    FUN_006e8ba0(PTR_00807598,*(uint *)(param_1 + 0x61));
+  if (-1 < this->field_0061) {
+    FUN_006e8ba0(PTR_00807598,this->field_0061);
   }
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  if (*(DArrayTy **)(param_1 + 0x3c) != (DArrayTy *)0x0) {
-    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-    DArrayDestroy(*(DArrayTy **)(param_1 + 0x3c));
-    *(undefined4 *)(param_1 + 0x3c) = 0;
+  if (this->field_003C != (DArrayTy *)0x0) {
+    DArrayDestroy(this->field_003C);
+    this->field_003C = (DArrayTy *)0x0;
   }
   return;
 }

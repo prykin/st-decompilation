@@ -21,7 +21,7 @@ int __thiscall STBoatC::Capture(STBoatC *this,int param_1)
   uint uVar11;
   undefined4 *puVar12;
   uint uVar13;
-  AnonPointee_STBoatC_0000 *pAVar14;
+  STBoatCVTable *pSVar14;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined2 extraout_var;
   uint uVar15;
@@ -43,9 +43,7 @@ int __thiscall STBoatC::Capture(STBoatC *this,int param_1)
   short sVar23;
   byte bVar24;
   undefined4 uVar25;
-  undefined1 local_64 [16];
-  undefined4 local_54;
-  undefined4 *local_50;
+  STMessage local_64;
   undefined1 local_44 [4];
   undefined4 local_40;
   undefined4 local_3c;
@@ -102,11 +100,10 @@ cf_common_exit_00476DBA:
     /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
     case 1:
       pSVar8 = STAllPlayersC::GetObjPtr
-                         (g_sTAllPlayers_007FA174,this->field_05FC,
+                         (g_allPlayers_007FA174,this->field_05FC,
                           CONCAT22(extraout_var,this->field_05FD),CASE_1);
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
       if (((pSVar8 != (STGameObjC *)0x0) && (pSVar8->field_0018 == this->field_05FF)) &&
-         (iVar7 = (**(code **)&pSVar8->vtable[1].field_0x38)(this->field_0024), iVar7 != 0)) {
+         (iVar7 = (*pSVar8->vtable[1].vfunc_34)(this->field_0024), iVar7 != 0)) {
         return 2;
       }
       sub_004602B0(this);
@@ -133,42 +130,37 @@ cf_common_exit_00476DBA:
     return 0;
   }
   if (SVar1 == CASE_1) {
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-    iVar7 = (*(code *)this->vtable->field_00D8)();
+    iVar7 = (*this->vtable->vfunc_D8)();
     if (iVar7 != 0) {
       return -1;
     }
     pSVar8 = STAllPlayersC::GetObjPtr
-                       (g_sTAllPlayers_007FA174,this->field_05FC,(uint)(ushort)this->field_05FD,
-                        CASE_1);
+                       (g_allPlayers_007FA174,this->field_05FC,(uint)(ushort)this->field_05FD,CASE_1
+                       );
     if (pSVar8 == (STGameObjC *)0x0) {
       return 0;
     }
     if (pSVar8->field_0018 != this->field_05FF) {
       return 0;
     }
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-    iVar7 = (**(code **)&pSVar8->vtable[1].field_0x38)(this->field_0024);
+    iVar7 = (*pSVar8->vtable[1].vfunc_34)(this->field_0024);
     if (iVar7 != 0) {
       if (pSVar8->field_002C == 0) {
         thunk_FUN_004cd3e0(pSVar8,this->field_0018,this->field_0024);
         SVar3 = this->field_06F7;
         this->field_0611 = CASE_3;
         if (SVar3 == CASE_6) {
-          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-          (*(code *)this->vtable->field_0090)(3,0xed);
+          (*this->vtable->vfunc_90)(3,0xed);
           return 2;
         }
         if (SVar3 != CASE_12) {
           if (SVar3 != CASE_22) {
             return 2;
           }
-          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-          (*(code *)this->vtable->field_0090)(3,0x1d2);
+          (*this->vtable->vfunc_90)(3,0x1d2);
           return 2;
         }
-        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-        (*(code *)this->vtable->field_0090)(3,0x151);
+        (*this->vtable->vfunc_90)(3,0x151);
         return 2;
       }
       if (pSVar8->field_002C != 1) {
@@ -224,8 +216,8 @@ cf_common_exit_00476DBA:
       iVar10 = CONCAT22((short)((uint)iVar16 >> 0x10),this->field_0609 + 1);
       iVar7 = iVar10 * 0xc9;
       uVar6 = (undefined2)((uint)(iVar10 * 0x19) >> 0x10);
-      /* ST_PSEUDO[raw_indirect_call,packed_or_unaligned_piece]: expected typed vtable/callback call with explicit __thiscall receiver; expected named packed member, bit extract/compose, or unaligned load */
-      uVar6 = (*(code *)this->vtable->field_0010)
+      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+      uVar6 = (*this->vtable->vfunc_10)
                         (CONCAT22(uVar6,this->field_0041),
                          CONCAT22((short)((uint)iVar7 >> 0x10),this->field_0043),
                          CONCAT22(uVar6,this->field_0045),iVar7,iVar16,iVar9);
@@ -329,11 +321,10 @@ cf_common_exit_00476DBA:
       if (local_8 == 0) {
         /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
         pSVar8 = STAllPlayersC::GetObjPtr
-                           (g_sTAllPlayers_007FA174,this->field_05FC,
+                           (g_allPlayers_007FA174,this->field_05FC,
                             CONCAT22((short)((uint)iVar7 >> 0x10),this->field_05FD),CASE_1);
-        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
         if (((pSVar8 == (STGameObjC *)0x0) || (pSVar8->field_0018 != this->field_05FF)) ||
-           (iVar7 = (**(code **)&pSVar8->vtable[1].field_0x38)(this->field_0024), iVar7 == 0)) {
+           (iVar7 = (*pSVar8->vtable[1].vfunc_34)(this->field_0024), iVar7 == 0)) {
           this->field_0611 = CASE_4;
           this->field_0615 = 0;
         }
@@ -342,21 +333,19 @@ cf_common_exit_00476DBA:
           SVar3 = this->field_06F7;
           this->field_0611 = CASE_3;
           if (SVar3 == CASE_6) {
-            pAVar14 = this->vtable;
+            pSVar14 = this->vtable;
             uVar25 = 0xed;
           }
           else {
             if (SVar3 == CASE_12) {
-              /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-              (*(code *)this->vtable->field_0090)(3,0x151);
+              (*this->vtable->vfunc_90)(3,0x151);
               goto cf_common_exit_0047746B;
             }
             if (SVar3 != CASE_22) goto cf_common_exit_0047746B;
-            pAVar14 = this->vtable;
+            pSVar14 = this->vtable;
             uVar25 = 0x1d2;
           }
-          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-          (*(code *)pAVar14->field_0090)(3,uVar25);
+          (*pSVar14->vfunc_90)(3,uVar25);
         }
       }
     }
@@ -382,8 +371,7 @@ cf_common_exit_00476DBA:
           return -1;
         }
         if (iVar7 == 0) {
-          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-          iVar7 = (*(code *)this->vtable->field_00D8)();
+          iVar7 = (*this->vtable->vfunc_D8)();
           return -(uint)(iVar7 != 0);
         }
         if (iVar7 == 3) {
@@ -392,9 +380,8 @@ cf_common_exit_00476DBA:
           sub_00481520(this,(int)this->field_0609,(int)this->field_060B,(int)this->field_060D);
           sub_0045FF50(this,0);
         }
-/* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
 cf_common_exit_00477B2E:
-        iVar7 = (*(code *)this->vtable->field_00D8)();
+        iVar7 = (*this->vtable->vfunc_D8)();
         return (-(uint)(iVar7 != 0) & 0xfffffffd) + 2;
       }
       if (this->field_0615 == 0) {
@@ -404,8 +391,8 @@ cf_common_exit_00477B2E:
         /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
         iVar16 = CONCAT22((short)((uint)iVar7 >> 0x10),this->field_0603 * 0xc9) + 100;
         uVar6 = (undefined2)((uint)iVar9 >> 0x10);
-        /* ST_PSEUDO[raw_indirect_call,packed_or_unaligned_piece]: expected typed vtable/callback call with explicit __thiscall receiver; expected named packed member, bit extract/compose, or unaligned load */
-        uVar6 = (*(code *)this->vtable->field_0010)
+        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+        uVar6 = (*this->vtable->vfunc_10)
                           (CONCAT22(uVar6,this->field_0041),
                            CONCAT22((short)((uint)iVar16 >> 0x10),this->field_0043),
                            CONCAT22(uVar6,this->field_0045),iVar16,iVar9,iVar7);
@@ -521,26 +508,22 @@ cf_common_exit_00477B2E:
           }
         }
       }
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-      iVar7 = (*(code *)this->vtable->field_00D8)();
+      iVar7 = (*this->vtable->vfunc_D8)();
       return (-(uint)(iVar7 != 0) & 0xfffffffd) + 2;
     }
     pSVar8 = STAllPlayersC::GetObjPtr
-                       (g_sTAllPlayers_007FA174,this->field_05FC,(uint)(ushort)this->field_05FD,
-                        CASE_1);
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+                       (g_allPlayers_007FA174,this->field_05FC,(uint)(ushort)this->field_05FD,CASE_1
+                       );
     if (((pSVar8 == (STGameObjC *)0x0) || (pSVar8->field_0018 != this->field_05FF)) ||
-       (iVar7 = (**(code **)&pSVar8->vtable[1].field_0x38)(this->field_0024), iVar7 == 0)) {
+       (iVar7 = (*pSVar8->vtable[1].vfunc_34)(this->field_0024), iVar7 == 0)) {
       if (((int)this->field_0041 == (this->field_0609 + 1) * 0xc9) &&
          ((int)this->field_0043 == (this->field_060B + 1) * 0xc9)) {
         this->field_0611 = CASE_4;
         this->field_0615 = 0;
-        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-        iVar7 = (*(code *)this->vtable->field_00D8)();
+        iVar7 = (*this->vtable->vfunc_D8)();
         return (-(uint)(iVar7 != 0) & 0xfffffffd) + 2;
       }
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-      iVar7 = (*(code *)this->vtable->field_00D8)();
+      iVar7 = (*this->vtable->vfunc_D8)();
       return -(uint)(iVar7 != 0);
     }
     iVar7 = thunk_FUN_004cd480((AnonShape_004CC900_31EE9CAA *)pSVar8);
@@ -554,23 +537,19 @@ cf_common_exit_00477B2E:
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
         (**(code **)*DAT_008117bc)(local_44);
       }
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-      (**(code **)&pSVar8->vtable[1].field_0x3c)();
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-      (*(code *)pSVar8->vtable[1].field_0040)(this->field_0024,this->field_06F3);
+      (*pSVar8->vtable[1].vfunc_38)();
+      (*pSVar8->vtable[1].vfunc_3C)(this->field_0024,this->field_06F3);
     }
     else if (iVar7 != 2) goto cf_common_exit_0047746B;
     uVar11 = GetPlayerRaceId(*(char *)&pSVar8->field_0024);
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-    iVar7 = (**(code **)&pSVar8->vtable->field_0x2c)();
-    local_50 = &local_40;
+    iVar7 = (*pSVar8->vtable->vfunc_2C)();
+    local_64.arg0.ptr = &local_40;
     local_40 = *(undefined4 *)(&DAT_007e1374 + ((uVar11 & 0xff) + iVar7 * 3) * 4);
     local_38 = 0xff;
     local_3c = 0;
     local_2c = 1;
-    local_54 = 0x110;
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-    (**(code **)this->vtable)(local_64);
+    local_64.id = MESS_TORPHIT;
+    (*this->vtable->GetMessage)(this,&local_64);
     iVar7 = (this->field_0609 + 1) * 0xc9;
     if ((this->field_0041 == iVar7) &&
        (iVar7 = (this->field_060B + 1) * 0xc9, this->field_0043 == iVar7)) {
@@ -587,9 +566,8 @@ cf_common_exit_00477B2E:
       }
     }
   }
-/* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
 cf_common_exit_0047746B:
-  iVar7 = (*(code *)this->vtable->field_00D8)();
+  iVar7 = (*this->vtable->vfunc_D8)();
   return (-(uint)(iVar7 != 0) & 0xfffffffd) + 2;
 }
 

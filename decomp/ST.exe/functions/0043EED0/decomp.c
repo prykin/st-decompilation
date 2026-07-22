@@ -64,21 +64,16 @@ switchD_0043efb1_caseD_3a:
           bVar3 = false;
         }
         else {
-          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-          SVar6 = (**(code **)&pSVar5->vtable->field_0x2c)();
-          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-          if ((SVar6 != param_3) ||
-             (iVar7 = (**(code **)&pSVar5->vtable[1].field_0x28)(), iVar7 == 0))
+          SVar6 = (*pSVar5->vtable->vfunc_2C)();
+          if ((SVar6 != param_3) || (iVar7 = (*pSVar5->vtable[1].vfunc_24)(), iVar7 == 0))
           goto switchD_0043efb1_caseD_3a;
           if (param_4 != 0) {
             switch(param_3) {
-            /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
             case CASE_38:
             case CASE_39:
             case CASE_4F:
             case CASE_5E:
-              if ((param_4 == 1) &&
-                 (iVar7 = (**(code **)&pSVar5->vtable->field_0x88)(local_18), 0 < iVar7)) {
+              if ((param_4 == 1) && (iVar7 = (*pSVar5->vtable->vfunc_88)(local_18), 0 < iVar7)) {
                 bVar3 = true;
                 goto LAB_0043efd8;
               }
@@ -87,11 +82,9 @@ switchD_0043efb1_caseD_3a:
           }
           bVar3 = true;
         }
-/* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
 LAB_0043efd8:
         if ((bVar3) &&
-           ((param_5 == -1 || (iVar7 = (**(code **)&pSVar5->vtable->field_0x6c)(), iVar7 == param_5)
-            ))) {
+           ((param_5 == -1 || (iVar7 = (*pSVar5->vtable->vfunc_6C)(), iVar7 == param_5)))) {
           Library::DKW::TBL::FUN_006ae1c0(&local_c->flags,&local_8);
         }
       }

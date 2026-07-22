@@ -9,8 +9,8 @@ void __fastcall FUN_005713b0(int param_1)
     thunk_FUN_00566ff0((void *)(param_1 + 0x38));
     return;
   }
-  if (((uVar1 == 4) || (uVar1 == 8)) && (DAT_008033f0 != (AnonShape_00566900_A2478973 *)0x0)) {
-    thunk_FUN_00566900(DAT_008033f0);
+  if (((uVar1 == 4) || (uVar1 == 8)) && (DAT_008033f0 != (SoundManagerTy *)0x0)) {
+    SoundManagerTy::sub_00566900(DAT_008033f0);
     return;
   }
   return;

@@ -10,7 +10,7 @@ undefined4 __fastcall FUN_004dd850(int param_1)
     *puVar2 = 0xffffffff;
     puVar2 = puVar2 + 1;
   }
-  thunk_FUN_004dd880(param_1);
+  thunk_FUN_004dd880((int *)param_1);
   return 0;
 }
 

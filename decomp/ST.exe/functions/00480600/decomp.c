@@ -48,7 +48,7 @@ undefined4 __fastcall FUN_00480600(void *param_1)
     iVar2 = thunk_FUN_004e60d0(*(int *)((int)param_1 + 0x24),0x24);
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     if ((iVar2 < 1) ||
-       ((*(int *)((int)param_1 + 0x77a) + PTR_00802a38->field_00E4) %
+       ((*(int *)((int)param_1 + 0x77a) + g_playSystem_00802A38->field_00E4) %
         (*(uint *)((int)param_1 + 0x77e) * 2) <= *(uint *)((int)param_1 + 0x77e))) {
       iVar2 = thunk_FUN_0041caf0(param_1);
     }
@@ -65,7 +65,7 @@ undefined4 __fastcall FUN_00480600(void *param_1)
   case 9:
     puVar5 = (undefined4 *)(((8 - (int)*(short *)((int)param_1 + 0x6c) / 0x2d) * 0xf) % 0x78);
     iVar2 = ((4 - DAT_008073fc) * 0x1e) % 0x78;
-    if ((PTR_00802a38->field_00E4 & 1) == 0) {
+    if ((g_playSystem_00802A38->field_00E4 & 1) == 0) {
       *(int *)((int)param_1 + 0x822) = *(int *)((int)param_1 + 0x822) + 1;
     }
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
@@ -237,12 +237,12 @@ LAB_00480b80:
               if (*(int *)((int)param_1 + 0x74a) == (int)*(short *)(DAT_00806724 + 0x23) / 2 + 1) {
                 /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                 STAllPlayersC::DelObjFromTmps
-                          (g_sTAllPlayers_007FA174,DAT_0080874d,*(int *)((int)param_1 + 0x20),bVar20
-                           ,CONCAT22((short)((uint)*(int *)((int)param_1 + 0x74a) >> 0x10),
-                                     *(undefined2 *)((int)param_1 + 0x32)));
+                          (g_allPlayers_007FA174,DAT_0080874d,*(int *)((int)param_1 + 0x20),bVar20,
+                           CONCAT22((short)((uint)*(int *)((int)param_1 + 0x74a) >> 0x10),
+                                    *(undefined2 *)((int)param_1 + 0x32)));
                 /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
                 STAllPlayersC::DelObjFromSaveTmps
-                          (g_sTAllPlayers_007FA174,*(int *)((int)param_1 + 0x20),
+                          (g_allPlayers_007FA174,*(int *)((int)param_1 + 0x20),
                            *(char *)((int)param_1 + 0x24),*(short *)((int)param_1 + 0x32));
                 thunk_FUN_004ad5e0((int)this);
               }
@@ -303,7 +303,7 @@ LAB_00480b30:
       }
       /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
       if (*(int *)((int)param_1 + 0x74a) == -1) {
-        thunk_FUN_004ace30(this,0,0);
+        STT3DSprC::sub_004ACE30(this,0,0);
       }
       /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
       if (*(int *)((int)param_1 + 0x74a) == (int)*(short *)(DAT_00806724 + 0x23) / 2 + 1) {
@@ -323,8 +323,9 @@ LAB_00480c6a:
 LAB_00480c7f:
     if (-1 < *(int *)((int)param_1 + 0x74a)) {
       /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-      thunk_FUN_004ace30(this,*(uint *)(DAT_00806724 + 0x30 + *(int *)((int)param_1 + 0x74a) * 4),
-                         (int)*(short *)(DAT_00806724 + 0x2c));
+      STT3DSprC::sub_004ACE30
+                (this,*(uint *)(DAT_00806724 + 0x30 + *(int *)((int)param_1 + 0x74a) * 4),
+                 (int)*(short *)(DAT_00806724 + 0x2c));
       /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
       bVar20 = *(byte *)((int)param_1 + 0x24);
       /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
@@ -390,9 +391,9 @@ LAB_00480e0f:
         if (!bVar11) {
           /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
           if (*(int *)((int)param_1 + 0x746) == 1) {
-            thunk_FUN_004ace60(this,'\x0e');
-            thunk_FUN_004ace60(this,'\r');
-            thunk_FUN_004ace60(this,'\f');
+            STT3DSprC::sub_004ACE60(this,'\x0e');
+            STT3DSprC::sub_004ACE60(this,'\r');
+            STT3DSprC::sub_004ACE60(this,'\f');
             thunk_FUN_004aceb0(this,'\x01');
             thunk_FUN_004aceb0(this,'\x02');
             thunk_FUN_004aceb0(this,'\0');
@@ -410,17 +411,17 @@ LAB_00480e0f:
       local_10 = CONCAT31(local_10._1_3_,bVar20);
       /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
       if (*(int *)((int)param_1 + 0x746) == 0) {
-        thunk_FUN_004ace60(this,'\x0e');
-        thunk_FUN_004ace60(this,'\r');
-        thunk_FUN_004ace60(this,'\f');
-        thunk_FUN_004ace60(this,'\x01');
-        thunk_FUN_004ace60(this,'\x02');
-        thunk_FUN_004ace60(this,'\0');
-        thunk_FUN_004ace60(this,'\x0f');
-        thunk_FUN_004ace60(this,'\v');
-        thunk_FUN_004ace60(this,'\n');
-        thunk_FUN_004ace60(this,'\t');
-        thunk_FUN_004ace60(this,'\b');
+        STT3DSprC::sub_004ACE60(this,'\x0e');
+        STT3DSprC::sub_004ACE60(this,'\r');
+        STT3DSprC::sub_004ACE60(this,'\f');
+        STT3DSprC::sub_004ACE60(this,'\x01');
+        STT3DSprC::sub_004ACE60(this,'\x02');
+        STT3DSprC::sub_004ACE60(this,'\0');
+        STT3DSprC::sub_004ACE60(this,'\x0f');
+        STT3DSprC::sub_004ACE60(this,'\v');
+        STT3DSprC::sub_004ACE60(this,'\n');
+        STT3DSprC::sub_004ACE60(this,'\t');
+        STT3DSprC::sub_004ACE60(this,'\b');
         *(undefined4 *)((int)param_1 + 0x746) = 1;
       }
     }

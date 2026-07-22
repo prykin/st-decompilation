@@ -39,15 +39,15 @@ void __thiscall CampaignTy::PaintCampaign(CampaignTy *this)
     return;
   }
   FUN_006b5f80((int *)PTR_008075a8,0,0,g_nWidth_00806730,DAT_00806734);
-  PutDDX(0,0,'\x01',(BITMAPINFO *)PTR_0081176c->field_002C);
+  PutDDX(0,0,'\x01',(BITMAPINFO *)g_startSystem_0081176C->field_002C);
   pCVar2 = local_8;
-  pcVar11 = PTR_0081176c->field_0030;
+  pcVar11 = g_startSystem_0081176C->field_0030;
   uVar9 = 0xffffffff;
   uVar8 = 0xfffffffe;
   puVar4 = (uint *)LoadResourceString((-(uint)(local_8->field_1FFC != 0) & 0xfffffca8) + 0x26b1,
-                                      HINSTANCE_00807618);
+                                      g_module_00807618);
   StartServTy::WrTextDDX(this_00,0,0xe9,0x14,0x14c,0x18,puVar4,uVar8,uVar9,pcVar11,iVar3);
-  if (PTR_0081176c->field_0028 == 0) {
+  if (g_startSystem_0081176C->field_0028 == 0) {
     iVar3 = 0;
     bVar10 = 0;
     text = FUN_006f2c00("CMPG_BKG",1,(uint)DAT_0080874e);

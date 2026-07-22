@@ -1,0 +1,6 @@
+0058F394  pointer  0058f359
+0058F398  pointer  0058f359
+0058F39C  pointer  0058f359
+0058F3A0  pointer  0058f389
+0058F3A4  pointer  0058f389
+0058F3A8  pointer  0058f36f

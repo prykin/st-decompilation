@@ -1,0 +1,15 @@
+ST object factory registry recovery
+
+table: 007CA720
+sentinel: 007CAA20
+entries: 96
+allocator: 006B04D0
+ABI dispatch: 006E3810@006E386C
+factory signature_apply: 94
+factory name_apply: 7
+concrete result owners: 62
+missing function create_apply: 0
+object-type consumers: 0
+consumer apply: 0
+
+Every unique target receives only one signature/name proposal even when several type IDs share a factory.  The no-argument cdecl ABI is exact from the registry consumer; concrete class results require independent layout or named-constructor evidence.

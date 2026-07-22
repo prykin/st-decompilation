@@ -103,7 +103,7 @@ int __thiscall STGroupBoatC::GetMessage(STGroupBoatC *this,STMessage *message)
     *(uint *)(local_8 + 0x38) = local_c;
     *(uint *)(local_8 + 0x3c) = local_10;
     STPlaySystemC::SaveObjData
-              (PTR_00802a38,this_00->field_0018,local_8,
+              (g_playSystem_00802A38,this_00->field_0018,local_8,
                (AnonShape_0060EA30_DCEB68AD *)(local_10 + local_c));
     FreeAndNull(&local_1c);
     FreeAndNull(&local_18);
@@ -209,11 +209,12 @@ int __thiscall STGroupBoatC::GetMessage(STGroupBoatC *this,STMessage *message)
       DArrayDestroy(*(DArrayTy **)&this_00[10].field_0x4);
       *(undefined4 *)&this_00[10].field_0x4 = 0;
     }
-    if (this_00[0xb].vtable != (STGroupCVTable *)0x0) {
+    if ((DArrayTy *)this_00[0xb].vtable != (DArrayTy *)0x0) {
       DArrayDestroy((DArrayTy *)this_00[0xb].vtable);
-      this_00[0xb].vtable = (STGroupCVTable *)0x0;
+      this_00[0xb].vtable = 0;
     }
-    (*this_00->vtable->vfunc_18)(this_00,0,0,0);
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+    (**(code **)(this_00->vtable + 0x18))(this_00,0,0,0);
     STGroupC::GetMessage(this_00,message);
     g_currentExceptionFrame = local_84.previous;
     return 0;
@@ -242,8 +243,8 @@ int __thiscall STGroupBoatC::GetMessage(STGroupBoatC *this,STMessage *message)
     local_2c = *(undefined4 *)&this_00->field_0x8;
     local_30 = 10;
     local_34 = 0;
-    local_38 = PTR_00802a38->field_0014;
-    SystemClassTy::PostMessage((SystemClassTy *)PTR_00802a38,local_40);
+    local_38 = g_playSystem_00802A38->field_0014;
+    SystemClassTy::PostMessage((SystemClassTy *)g_playSystem_00802A38,local_40);
     g_currentExceptionFrame = local_84.previous;
     return 0;
   }
@@ -257,7 +258,8 @@ int __thiscall STGroupBoatC::GetMessage(STGroupBoatC *this,STMessage *message)
       if (0 < (int)pDVar7->count) {
         do {
           DArrayGetElement(pDVar7,uVar8,&local_14);
-          (*this_00->vtable->vfunc_04)(local_14);
+          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+          (**(code **)(this_00->vtable + 4))(local_14);
           pDVar7 = *(DArrayTy **)((int)&this_00[7].field_002D + 2);
           uVar8 = uVar8 + 1;
         } while ((int)uVar8 < (int)pDVar7->count);
@@ -288,9 +290,9 @@ int __thiscall STGroupBoatC::GetMessage(STGroupBoatC *this,STMessage *message)
       *(undefined4 *)((int)&this_00[7].field_001C + 3) = 0;
     }
     if (*(int *)((int)&this_00[1].field_0035 + 3) == 1) {
-      puVar5 = *(uint **)((int)&this_00[7].field_0020 + 3);
+      pDVar7 = *(DArrayTy **)((int)&this_00[7].field_0020 + 3);
       *(undefined4 *)((int)&this_00[1].field_0035 + 3) = 0;
-      ReMakePVecAndTgtList((STGroupBoatC *)this_00,puVar5);
+      ReMakePVecAndTgtList((STGroupBoatC *)this_00,pDVar7);
       DistributeTargets((STGroupBoatC *)this_00,*(uint **)((int)&this_00[7].field_0020 + 3));
       DArrayDestroy(*(DArrayTy **)((int)&this_00[7].field_0020 + 3));
       *(undefined4 *)((int)&this_00[7].field_0020 + 3) = 0;

@@ -92,7 +92,7 @@ void __thiscall PrividerTy::NonePrivider(PrividerTy *this,undefined4 *param_1)
     iVar8 = Library::Ourlib::CONNECT::FUN_00715630
                       (g_int_00811764,-1,&local_1c,&local_3c,&local_10,(uint *)0x0,-1,0);
     psVar6 = local_10;
-    pCVar5 = PTR_00802a30;
+    pCVar5 = g_cursorClass_00802A30;
     if (iVar8 != -0x4d) {
       if (iVar8 != 0) {
         if (iVar8 != 1) {
@@ -118,7 +118,8 @@ void __thiscall PrividerTy::NonePrivider(PrividerTy *this,undefined4 *param_1)
                 local_2c = *pcVar11;
                 local_2b = *(undefined4 *)((int)psVar6 + 3);
                 local_27 = 0;
-                iVar8 = FUN_00725910(&DAT_0080f33a,"*.DKD",0,&LAB_00404e49,&local_2c,0);
+                iVar8 = FUN_00725910(&DAT_0080f33a,"*.DKD",0,thunk_FUN_005db030,&local_2c,0
+                                    );
                 /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                 local_c = CONCAT31(local_c._1_3_,(iVar8 != -0x70) + '\x01');
                 local_14 = (-(uint)(*pcVar11 != '\x02') & 2) + 0xd;
@@ -129,14 +130,15 @@ void __thiscall PrividerTy::NonePrivider(PrividerTy *this,undefined4 *param_1)
                 local_38 = *pcVar11;
                 local_37 = *(undefined4 *)((int)psVar6 + 3);
                 local_33 = *(undefined4 *)((int)psVar6 + 7);
-                iVar8 = FUN_00725910(&DAT_0080f33a,"*.DKD",0,&LAB_00404e49,&local_38,0);
+                iVar8 = FUN_00725910(&DAT_0080f33a,"*.DKD",0,thunk_FUN_005db030,&local_38,0
+                                    );
                 /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                 local_c = CONCAT31(local_c._1_3_,iVar8 == -0x70);
                 local_14 = 0x10;
               }
             }
             else if ((char)*local_18 != '\x03') goto LAB_005bb532;
-            pCVar5 = PTR_00802a30;
+            pCVar5 = g_cursorClass_00802A30;
             if ((char)*local_18 == '\x03') {
               /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
               local_c = CONCAT31(local_c._1_3_,2);
@@ -153,15 +155,15 @@ void __thiscall PrividerTy::NonePrivider(PrividerTy *this,undefined4 *param_1)
               /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
               if ((*(char *)((int)psVar6 + 0xd) == '\0') ||
                  (((char)*local_18 == '\x01' && (*(char *)((int)psVar6 + 0xb) == '\x05')))) {
-                if (PTR_00802a30 != (CursorClassTy *)0x0) {
-                  iVar8 = PTR_00802a30->field_00C9;
-                  iVar9 = PTR_00802a30->field_00C5;
-                  PTR_00802a30->field_0493 = 1;
+                if (g_cursorClass_00802A30 != (CursorClassTy *)0x0) {
+                  iVar8 = g_cursorClass_00802A30->field_00C9;
+                  iVar9 = g_cursorClass_00802A30->field_00C5;
+                  g_cursorClass_00802A30->field_0493 = 1;
                   pCVar5->field_0494 = 0xffff;
                   CursorClassTy::SetGCType(pCVar5,CASE_0,iVar9,iVar8);
                   CursorClassTy::DrawSprite(pCVar5,pCVar5->field_00C5,pCVar5->field_00C9);
                   pCVar5->field_00D2 = 0;
-                  pCVar5->field_04DF = 0xffffffff;
+                  pCVar5->field_04DF = -1;
                 }
                 this_01->field_1A71 = 0;
                 thunk_FUN_005dac60();
@@ -184,15 +186,15 @@ joined_r0x005bb4e0:
             }
           }
           else {
-            if (PTR_00802a30 != (CursorClassTy *)0x0) {
-              iVar8 = PTR_00802a30->field_00C9;
-              iVar9 = PTR_00802a30->field_00C5;
-              PTR_00802a30->field_0493 = 1;
+            if (g_cursorClass_00802A30 != (CursorClassTy *)0x0) {
+              iVar8 = g_cursorClass_00802A30->field_00C9;
+              iVar9 = g_cursorClass_00802A30->field_00C5;
+              g_cursorClass_00802A30->field_0493 = 1;
               pCVar5->field_0494 = 0xffff;
               CursorClassTy::SetGCType(pCVar5,CASE_0,iVar9,iVar8);
               CursorClassTy::DrawSprite(pCVar5,pCVar5->field_00C5,pCVar5->field_00C9);
               pCVar5->field_00D2 = 0;
-              pCVar5->field_04DF = 0xffffffff;
+              pCVar5->field_04DF = -1;
             }
             this_01->field_1A71 = 0;
             thunk_FUN_005dac60();
@@ -221,18 +223,18 @@ LAB_005bb532:
     memset(local_5c, 0, 0x20); /* compiler bulk-zero initialization */
     this_01->field_1A71 = 0;
     this_01->field_1A72 = 1;
-    pCVar5 = PTR_00802a30;
+    pCVar5 = g_cursorClass_00802A30;
     local_5c[4] = 0x6952;
     if (pSVar3->field_02E6 != (MMsgTy *)0x0) {
-      if (PTR_00802a30 != (CursorClassTy *)0x0) {
-        iVar8 = PTR_00802a30->field_00C9;
-        iVar9 = PTR_00802a30->field_00C5;
-        PTR_00802a30->field_0493 = 1;
+      if (g_cursorClass_00802A30 != (CursorClassTy *)0x0) {
+        iVar8 = g_cursorClass_00802A30->field_00C9;
+        iVar9 = g_cursorClass_00802A30->field_00C5;
+        g_cursorClass_00802A30->field_0493 = 1;
         pCVar5->field_0494 = 0xffff;
         CursorClassTy::SetGCType(pCVar5,CASE_0,iVar9,iVar8);
         CursorClassTy::DrawSprite(pCVar5,pCVar5->field_00C5,pCVar5->field_00C9);
         pCVar5->field_00D2 = 0;
-        pCVar5->field_04DF = 0xffffffff;
+        pCVar5->field_04DF = -1;
       }
       local_5c[2] = this_01->field_0008;
       local_5c[3] = 2;
@@ -252,8 +254,8 @@ LAB_005bb532:
        (iVar8 = HoloTy::NextFas(this_01->field_1C9A), iVar8 != 0)) {
       local_8 = 0;
     }
-    if ((PTR_0081176c->field_02E6 != (MMsgTy *)0x0) &&
-       (PTR_0081176c->field_02E6->field_0065 != '\x01')) {
+    if ((g_startSystem_0081176C->field_02E6 != (MMsgTy *)0x0) &&
+       (g_startSystem_0081176C->field_02E6->field_0065 != '\x01')) {
       local_8 = 0;
     }
     if (local_8 != 0) {
@@ -324,8 +326,8 @@ LAB_005bb532:
         local_8 = 0;
       }
     }
-    if ((PTR_0081176c->field_02E6 != (MMsgTy *)0x0) &&
-       (PTR_0081176c->field_02E6->field_0065 != '\x02')) {
+    if ((g_startSystem_0081176C->field_02E6 != (MMsgTy *)0x0) &&
+       (g_startSystem_0081176C->field_02E6->field_0065 != '\x02')) {
       local_8 = 0;
     }
     if (local_8 != 0) {
@@ -353,8 +355,8 @@ LAB_005bb532:
         local_8 = 0;
       }
     }
-    if ((PTR_0081176c->field_02E6 != (MMsgTy *)0x0) &&
-       (PTR_0081176c->field_02E6->field_0065 != '\x02')) {
+    if ((g_startSystem_0081176C->field_02E6 != (MMsgTy *)0x0) &&
+       (g_startSystem_0081176C->field_02E6->field_0065 != '\x02')) {
       local_8 = 0;
     }
     if (local_8 != 0) {

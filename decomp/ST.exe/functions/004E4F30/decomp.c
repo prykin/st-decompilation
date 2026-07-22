@@ -1,5 +1,8 @@
 
-undefined4 __fastcall FUN_004e4f30(AnonShape_004E4F30_490004C0 *param_1)
+/* [STPrototypeApplier] Propagated parameter 0.
+   Evidence: 004E51B0 -> 004E4F30 @ 004E5728 */
+
+undefined4 __fastcall FUN_004e4f30(int *param_1)
 
 {
   int iVar1;
@@ -7,54 +10,59 @@ undefined4 __fastcall FUN_004e4f30(AnonShape_004E4F30_490004C0 *param_1)
   uint uVar3;
   int iVar4;
 
-  if ((*(int *)&param_1[2].field_0x124 != 0x5d) && (*(int *)&param_1[2].field_0x124 != 0x3d)) {
+  if ((param_1[0x16b] != 0x5d) && (param_1[0x16b] != 0x3d)) {
     return 0;
   }
-  if (*(int *)&param_1[2].field_0x58 != 0) {
+  if (param_1[0x138] != 0) {
     thunk_FUN_0041d100((AnonShape_0041D100_A90F7B7E *)param_1);
-    *(undefined4 *)&param_1[2].field_0x58 = 0;
+    param_1[0x138] = 0;
   }
-  if (*(int *)&param_1->field_0x24 != param_1->field_023D) {
-    uVar2 = GetPlayerRaceId((char)param_1->field_023D);
-    iVar4 = param_1->field_0235;
-    uVar3 = GetPlayerRaceId(param_1->field_0x24);
+  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
+  if (param_1[9] != *(int *)((int)param_1 + 0x23d)) {
+    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
+    uVar2 = GetPlayerRaceId((char)*(int *)((int)param_1 + 0x23d));
+    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
+    iVar4 = *(int *)((int)param_1 + 0x235);
+    uVar3 = GetPlayerRaceId((char)param_1[9]);
     if ((&DAT_007e1984)[(uVar3 & 0xff) + ((uVar2 & 0xff) + iVar4 * 3) * 3] == '\0')
     goto LAB_004e4ffe;
   }
-  if ((*(int *)&param_1[2].field_0x124 != 0x5d) ||
-     (iVar4 = thunk_FUN_004e60d0(*(int *)&param_1->field_0x24,0x46), iVar4 != 0)) {
-    thunk_FUN_0041cff0(param_1,*(int *)(&DAT_00798fbc + param_1->field_0239 * 4));
-    *(undefined4 *)&param_1[2].field_0x58 = 1;
+  if ((param_1[0x16b] != 0x5d) || (iVar4 = thunk_FUN_004e60d0(param_1[9],0x46), iVar4 != 0)) {
+    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
+    thunk_FUN_0041cff0(param_1,*(int *)(&DAT_00798fbc + *(int *)((int)param_1 + 0x239) * 4));
+    param_1[0x138] = 1;
   }
 LAB_004e4ffe:
-  if (*(int *)&param_1[2].field_0x124 == 0x5d) {
+  if (param_1[0x16b] == 0x5d) {
     iVar4 = 0x4a;
   }
-  else if ((*(int *)&param_1[2].field_0x124 == 0x3d) &&
-          (iVar4 = GetPlayerRaceId(param_1->field_0x24), (char)iVar4 == '\x01')) {
+  else if ((param_1[0x16b] == 0x3d) &&
+          (iVar4 = GetPlayerRaceId((char)param_1[9]), (char)iVar4 == '\x01')) {
     iVar4 = 0x12;
   }
   else {
     iVar4 = 0;
   }
-  if (*(int *)&param_1[2].field_0x5c != 0) {
+  if (param_1[0x139] != 0) {
     thunk_FUN_0041d2b0((AnonShape_0041D2B0_CE8C6BD3 *)param_1);
-    *(undefined4 *)&param_1[2].field_0x5c = 0;
+    param_1[0x139] = 0;
   }
-  if (*(int *)&param_1->field_0x24 != param_1->field_023D) {
-    uVar2 = GetPlayerRaceId((char)param_1->field_023D);
-    iVar1 = param_1->field_0235;
-    uVar3 = GetPlayerRaceId(param_1->field_0x24);
+  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
+  if (param_1[9] != *(int *)((int)param_1 + 0x23d)) {
+    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
+    uVar2 = GetPlayerRaceId((char)*(int *)((int)param_1 + 0x23d));
+    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
+    iVar1 = *(int *)((int)param_1 + 0x235);
+    uVar3 = GetPlayerRaceId((char)param_1[9]);
     if ((&DAT_007e1984)[(uVar3 & 0xff) + ((uVar2 & 0xff) + iVar1 * 3) * 3] == '\0') {
       return 0;
     }
   }
-  if ((iVar4 != 0) && (iVar4 = thunk_FUN_004e60d0(*(int *)&param_1->field_0x24,iVar4), iVar4 == 0))
-  {
+  if ((iVar4 != 0) && (iVar4 = thunk_FUN_004e60d0(param_1[9],iVar4), iVar4 == 0)) {
     return 0;
   }
   thunk_FUN_0041d1a0(param_1,10);
-  *(undefined4 *)&param_1[2].field_0x5c = 1;
+  param_1[0x139] = 1;
   return 0;
 }
 

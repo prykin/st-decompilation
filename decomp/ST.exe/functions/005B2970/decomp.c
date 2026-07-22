@@ -38,7 +38,7 @@ void __thiscall MainMenuTy::InitMainMenu(MainMenuTy *this,char param_1)
     }
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  StartSystemTy::sub_005DAF20(PTR_0081176c);
+  StartSystemTy::sub_005DAF20(g_startSystem_0081176C);
   DAT_0080877e = 1;
   DAT_0080877f = 0;
   if (DAT_008067a0 != '\0') {
@@ -47,16 +47,17 @@ void __thiscall MainMenuTy::InitMainMenu(MainMenuTy *this,char param_1)
     DAT_00802a99 = 0;
     DAT_008067a0 = '\0';
   }
-  if (PTR_00802a30 != (CursorClassTy *)0x0) {
-    if (PTR_00802a30->field_00A9 == 0) {
-      Library::DKW::DDX::FUN_006b8b10((int *)PTR_00802a30->field_00AD);
+  if (g_cursorClass_00802A30 != (CursorClassTy *)0x0) {
+    if (g_cursorClass_00802A30->field_00A9 == 0) {
+      Library::DKW::DDX::FUN_006b8b10((int *)g_cursorClass_00802A30->field_00AD);
     }
-    else if (PTR_00802a30->field_001C != (cLoadingTy *)0xffffffff) {
-      FUN_006b3af0((int *)PTR_00802a30->field_0060,(uint)PTR_00802a30->field_001C);
+    else if (g_cursorClass_00802A30->field_001C != (cLoadingTy *)0xffffffff) {
+      FUN_006b3af0((int *)g_cursorClass_00802A30->field_0060,
+                   (uint)g_cursorClass_00802A30->field_001C);
     }
   }
   this_01 = local_8;
-  if (PTR_0081176c->field_0028 != 0) {
+  if (g_startSystem_0081176C->field_0028 != 0) {
     puVar6 = &local_8->field_1A7F;
     do {
       iVar2 = 0;
@@ -141,7 +142,7 @@ switchD_005b2a8d_default:
                           "MM_MBUT04",0x143,0x1ac,7,8,0,0,0x9d,0x38,0x33,
                           "MM_MABUT04",8,9,9,6,0x32,0,(ccFntTy *)0x0,0,0,0,-1,-1);
       puVar4 = (ushort *)FUN_0070a9f0(g_cMf32_00806780,"MM_BKG",0,1);
-      PTR_0081176c->field_002C = puVar4;
+      g_startSystem_0081176C->field_002C = puVar4;
       DarkScreen(DAT_0080759c,1,0);
       /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
       if (*(MMsgTy **)(this_01->field_1A5B + 0x2e6) != (MMsgTy *)0x0) {
@@ -151,17 +152,18 @@ switchD_005b2a8d_default:
         MMsgTy::ShowSprites(*(MMsgTy **)(this_01->field_1A5B + 0x2e6));
         *(undefined4 *)(*(int *)(this_01->field_1A5B + 0x2e6) + 0x1cab) = this_01->field_0008;
       }
-      FUN_006bc360(PTR_0081176c->field_002C,(undefined4 *)&this_01->field_0x1adf,(int *)0x0);
-      this_00 = PTR_00802a30;
-      if (PTR_00802a30 != (CursorClassTy *)0x0) {
-        iVar2 = PTR_00802a30->field_00C9;
-        iVar7 = PTR_00802a30->field_00C5;
-        PTR_00802a30->field_0493 = 1;
+      FUN_006bc360(g_startSystem_0081176C->field_002C,(undefined4 *)&this_01->field_0x1adf,
+                   (int *)0x0);
+      this_00 = g_cursorClass_00802A30;
+      if (g_cursorClass_00802A30 != (CursorClassTy *)0x0) {
+        iVar2 = g_cursorClass_00802A30->field_00C9;
+        iVar7 = g_cursorClass_00802A30->field_00C5;
+        g_cursorClass_00802A30->field_0493 = 1;
         this_00->field_0494 = 0xffff;
         CursorClassTy::SetGCType(this_00,CASE_0,iVar7,iVar2);
         CursorClassTy::DrawSprite(this_00,this_00->field_00C5,this_00->field_00C9);
         this_00->field_00D2 = 0;
-        this_00->field_04DF = 0xffffffff;
+        this_00->field_04DF = -1;
       }
       SetMode(this_01,param_1,1);
       thunk_FUN_00568bc0(&g_sound,0);

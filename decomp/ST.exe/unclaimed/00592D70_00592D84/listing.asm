@@ -1,0 +1,12 @@
+00592D70  pointer  005928aa
+00592D74  pointer  0059289c
+00592D78  pointer  005928a3
+00592D7C  byte  0h
+00592D7D  byte  0h
+00592D7E  byte  0h
+00592D7F  byte  1h
+00592D80  byte  1h
+00592D81  byte  1h
+00592D82  byte  2h
+00592D83  byte  2h
+00592D84  byte  2h

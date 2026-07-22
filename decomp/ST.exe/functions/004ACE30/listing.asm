@@ -1,4 +1,4 @@
-FUN_004ace30:
+STT3DSprC::sub_004ACE30:
 004ACE30  55                        PUSH EBP
 004ACE31  8B EC                     MOV EBP,ESP
 004ACE33  8B 45 0C                  MOV EAX,dword ptr [EBP + 0xc]

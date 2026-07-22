@@ -11,8 +11,8 @@ void __thiscall WaitTy::PaintWait(WaitTy *this,char param_1)
   code *pcVar1;
   WaitTy *pWVar2;
   int errorCode;
-  uint *puVar3;
-  int iVar4;
+  uint *resourceString;
+  int iVar3;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   ChatGlassTy *extraout_ECX;
   undefined4 *this_00;
@@ -22,10 +22,10 @@ void __thiscall WaitTy::PaintWait(WaitTy *this,char param_1)
   ChatGlassTy *extraout_ECX_01;
   ChatGlassTy *this_01;
   StartServTy *this_02;
+  uint uVar4;
   uint uVar5;
-  uint uVar6;
-  ccFntTy *pcVar7;
-  undefined4 uVar8;
+  ccFntTy *pcVar6;
+  undefined4 uVar7;
   InternalExceptionFrame local_4c;
   WaitTy *local_8;
 
@@ -59,19 +59,19 @@ void __thiscall WaitTy::PaintWait(WaitTy *this,char param_1)
       ChatGlassTy::OutChGlProc
                 (this_01,(int)DAT_0080759c,0,0,200,0x1f1,400,0x62,&pWVar2->field_1A5B->field_0140);
     }
-    uVar8 = 0;
-    pcVar7 = PTR_0081176c->field_0030;
-    uVar6 = 0xffffffff;
-    uVar5 = 0xfffffffe;
-    puVar3 = (uint *)LoadResourceString(0x26ae,HINSTANCE_00807618);
-    StartServTy::WrTextDDX(this_02,0,0xe9,0x14,0x14c,0x18,puVar3,uVar5,uVar6,pcVar7,uVar8);
+    uVar7 = 0;
+    pcVar6 = g_startSystem_0081176C->field_0030;
+    uVar5 = 0xffffffff;
+    uVar4 = 0xfffffffe;
+    resourceString = (uint *)LoadResourceString(0x26ae,g_module_00807618);
+    StartServTy::WrTextDDX(this_02,0,0xe9,0x14,0x14c,0x18,resourceString,uVar4,uVar5,pcVar6,uVar7);
     g_currentExceptionFrame = local_4c.previous;
     return;
   }
   g_currentExceptionFrame = local_4c.previous;
-  iVar4 = ReportDebugMessage("E:\\__titans\\Start\\wait_obj.cpp",0xeb,0,errorCode,
+  iVar3 = ReportDebugMessage("E:\\__titans\\Start\\wait_obj.cpp",0xeb,0,errorCode,
                              "%s","WaitTy::PaintWait");
-  if (iVar4 != 0) {
+  if (iVar3 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   RaiseInternalException(errorCode,0,"E:\\__titans\\Start\\wait_obj.cpp",0xeb);

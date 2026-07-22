@@ -1,11 +1,16 @@
 
-void __fastcall FUN_0067c110(AnonReceiver_006799B0 *param_1)
+/* [STMethodOwnerApplier] Structural method owner recovered as AiPlrClassTy.
+   Evidence: this_call_owners=[AiPlrClassTy]; agreed_this_calls=2; incoming_this_accesses=2;
+   incoming_edx_uses=0; incoming_stack_parameter_uses=0; direct_non_thunk_callers=0;
+   incoming_ecx_receiver_callers=0; attributed_named_callers=1; owner_evidence_coverage=adequate */
+
+void __thiscall AiPlrClassTy::sub_0067C110(AiPlrClassTy *this)
 
 {
   int iVar1;
   AnonShape_0068FD00_A5257008 **ppAVar2;
   AnonShape_0068FD00_A5257008 *local_38;
-  undefined4 local_34;
+  uint local_34;
   undefined1 local_30;
 
   ppAVar2 = &local_38;
@@ -13,12 +18,12 @@ void __fastcall FUN_0067c110(AnonReceiver_006799B0 *param_1)
     *ppAVar2 = (AnonShape_0068FD00_A5257008 *)0x0;
     ppAVar2 = ppAVar2 + 1;
   }
-  local_34 = *(undefined4 *)&param_1->field_0x6fe;
-  *(undefined4 *)&param_1->field_0x689 = 0;
+  local_34 = this->field_06FE;
+  this->field_0689 = 0;
   local_38 = (AnonShape_0068FD00_A5257008 *)0x67;
   local_30 = 1;
   SubmarineTitans::Recovered::HiddenThis::AnonReceiver_006799B0::thunk_FUN_0067a020
-            (param_1,(AnonShape_0068FD00_A5257008 *)&local_38,-1);
+            ((AnonReceiver_006799B0 *)this,(AnonShape_0068FD00_A5257008 *)&local_38,-1);
   return;
 }
 

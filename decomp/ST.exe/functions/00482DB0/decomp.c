@@ -89,7 +89,7 @@ LAB_00482f52:
       goto LAB_00482f52;
     }
   }
-  iVar12 = FUN_006e62d0(PTR_00802a38,param_1[0x1fd],(int *)&local_14);
+  iVar12 = FUN_006e62d0(g_playSystem_00802A38,param_1[0x1fd],(int *)&local_14);
   if (iVar12 == -4) {
     return 4;
   }

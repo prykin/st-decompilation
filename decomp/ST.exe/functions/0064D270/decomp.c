@@ -81,7 +81,7 @@ AiEventClassTy::__CreateObjPl
     bVar2 = true;
   }
   uVar5 = param_7;
-  if ((bVar2) && (g_sTAllPlayers_007FA174 != (STAllPlayersC *)0x0)) {
+  if ((bVar2) && (g_allPlayers_007FA174 != (STAllPlayersC *)0x0)) {
     if (((short)param_3 < 0) || (((short)param_4 < 0 || ((short)param_5 < 0)))) {
       uVar5 = param_1 & 0xffff;
       local_28[0] = 7;
@@ -165,7 +165,7 @@ AiEventClassTy::__CreateObjPl
         local_76 = 0;
       }
       local_5b = 1;
-      STAllPlayersC::CreateBoat(g_sTAllPlayers_007FA174,local_a4);
+      STAllPlayersC::CreateBoat(g_allPlayers_007FA174,local_a4);
       local_14 = 0;
     }
   }
@@ -175,7 +175,7 @@ AiEventClassTy::__CreateObjPl
   else {
     bVar2 = true;
   }
-  if ((bVar2) && (g_sTAllPlayers_007FA174 != (STAllPlayersC *)0x0)) {
+  if ((bVar2) && (g_allPlayers_007FA174 != (STAllPlayersC *)0x0)) {
     local_8 = (int)(short)param_3;
     local_c = (int)(short)param_4;
     local_10 = (int)(short)param_5;

@@ -1,0 +1,4 @@
+00626B90  pointer  00626b62
+00626B94  pointer  00626b6d
+00626B98  pointer  00626b78
+00626B9C  pointer  00626b83

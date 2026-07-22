@@ -10,13 +10,13 @@ undefined4 FUN_00496f00(int param_1)
 
   uVar2 = 0;
   uVar4 = 0;
-  uVar1 = PTR_007fb270->count;
+  uVar1 = g_dArray_007FB270->count;
   if (0 < (int)uVar1) {
     bVar5 = uVar1 != 0;
     while( true ) {
       if (bVar5) {
-        /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(PTR_007fb270, uVar4) (runtime stride) */
-        pvVar3 = (void *)(PTR_007fb270->elementSize * uVar4 + (int)PTR_007fb270->data);
+        /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(g_dArray_007FB270, uVar4) (runtime stride) */
+        pvVar3 = (void *)(g_dArray_007FB270->elementSize * uVar4 + (int)g_dArray_007FB270->data);
       }
       else {
         pvVar3 = (void *)0x0;

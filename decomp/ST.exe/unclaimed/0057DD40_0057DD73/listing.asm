@@ -1,0 +1,13 @@
+0057DD40  pointer  0057d773
+0057DD44  pointer  0057d7b6
+0057DD48  pointer  0057d773
+0057DD4C  pointer  0057d7b6
+0057DD50  pointer  0057d7b6
+0057DD54  pointer  0057d896
+0057DD58  pointer  0057d8e1
+0057DD5C  pointer  0057d91d
+0057DD60  pointer  0057d943
+0057DD64  pointer  0057d989
+0057DD68  pointer  0057d9ed
+0057DD6C  pointer  0057da49
+0057DD70  pointer  0057daba

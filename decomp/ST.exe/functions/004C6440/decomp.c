@@ -130,7 +130,7 @@ cf_common_exit_004C6899:
       }
       thunk_FUN_004abce0(*(void **)((int)this + 0x2c),0,uVar10,uVar10,'\0');
       STT3DSprC::SetCurFase(*(STT3DSprC **)((int)this + 0x2c),'\0',uVar10);
-      DVar6 = FUN_006e51b0(*(int *)((int)this + 0x10));
+      DVar6 = STAppC::sub_006E51B0(*(STAppC **)((int)this + 0x10));
       STT3DSprC::StartShow(*(STT3DSprC **)((int)this + 0x2c),0,DVar6);
       iVar9 = local_10;
     }
@@ -151,7 +151,7 @@ cf_common_exit_004C6899:
     STT3DSprC::SetCurFase
               (*(STT3DSprC **)((int)this + 0x2c),'\0',
                *(uint *)(&DAT_00790f84 + *(int *)((int)this + 0x1c) * 4));
-    DVar6 = FUN_006e51b0(*(int *)((int)this + 0x10));
+    DVar6 = STAppC::sub_006E51B0(*(STAppC **)((int)this + 0x10));
     STT3DSprC::StartShow(*(STT3DSprC **)((int)this + 0x2c),0,DVar6);
   }
   thunk_FUN_004ad460(*(void **)((int)this + 0x2c),0);
@@ -159,8 +159,9 @@ cf_common_exit_004C6899:
     fVar12 = (float)local_8 * _DAT_007904f8 + _DAT_007904f4;
     fVar3 = (float)local_10 * _DAT_007904f8 + _DAT_007904f4;
 LAB_004c6848:
-    thunk_FUN_004ad3c0(*(void **)((int)this + 0x2c),fVar3,fVar12,
-                       (float)local_c * _DAT_00790504 + _DAT_00790500 + _DAT_007904fc);
+    STT3DSprC::sub_004AD3C0
+              (*(STT3DSprC **)((int)this + 0x2c),fVar3,fVar12,
+               (float)local_c * _DAT_00790504 + _DAT_00790500 + _DAT_007904fc);
   }
   else {
     if (*(int *)(&DAT_00791d68 + *(int *)((int)this + 0x1c) * 4) == 1) {

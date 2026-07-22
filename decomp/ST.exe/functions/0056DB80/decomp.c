@@ -52,7 +52,7 @@ void __thiscall STAppC::StartGame(STAppC *this)
   LPSTR local_14;
   undefined4 *local_10;
   STAppC *local_c;
-  int *local_8;
+  char *local_8;
 
   local_224 = DAT_008016a0;
   puVar14 = &local_223;
@@ -84,7 +84,7 @@ void __thiscall STAppC::StartGame(STAppC *this)
     pSVar13->field_4ED7 = 2;
     pSVar13->field_4EB3 = 2;
     pSVar13->field_4EAF = 0;
-    MMsgTy::HidePanel(PTR_0081176c->field_02E6,0,0,1);
+    MMsgTy::HidePanel(g_startSystem_0081176C->field_02E6,0,0,1);
     DAT_00807327 = DAT_00807327 | 1;
     if ((DAT_0080733b == 0) || (3 < DAT_0080733b)) {
       DAT_0080733b = 2;
@@ -94,52 +94,52 @@ void __thiscall STAppC::StartGame(STAppC *this)
     pSVar13->field_0034 = uVar2;
     pSVar13->field_1164 = 0;
     DarkScreen((undefined4 *)DAT_0080759c,10,2);
-    if (PTR_00802a30->field_00A9 == 0) {
-      Library::DKW::DDX::FUN_006b8b10((int *)PTR_00802a30->field_00AD);
+    if (g_cursorClass_00802A30->field_00A9 == 0) {
+      Library::DKW::DDX::FUN_006b8b10((int *)g_cursorClass_00802A30->field_00AD);
       /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
       pcVar12 = extraout_ECX_00;
     }
     else {
-      pcVar12 = PTR_00802a30->field_001C;
+      pcVar12 = g_cursorClass_00802A30->field_001C;
       if (pcVar12 != (cLoadingTy *)0xffffffff) {
-        FUN_006b3af0((int *)PTR_00802a30->field_0060,(uint)pcVar12);
+        FUN_006b3af0((int *)g_cursorClass_00802A30->field_0060,(uint)pcVar12);
         /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
         pcVar12 = extraout_ECX;
       }
     }
     puVar6 = cLoadingTy::new(pcVar12,0x5c,"MisLoad.log",1);
     if (puVar6 == (uint *)0x0) {
-      PTR_00802a58 = (cLoadingTy *)0x0;
+      g_cLoading_00802A58 = (cLoadingTy *)0x0;
     }
     else {
-      PTR_00802a58 = (cLoadingTy *)thunk_FUN_005545c0((int *)puVar6);
+      g_cLoading_00802A58 = (cLoadingTy *)thunk_FUN_005545c0((int *)puVar6);
     }
-    if ((PTR_00802a58 != (cLoadingTy *)0x0) &&
-       (cLoadingTy::ShowScr(PTR_00802a58,10,1), PTR_00802a58 != (cLoadingTy *)0x0)) {
-      cLoadingTy::InitParam(PTR_00802a58,0x14,10,0x316,0x244,0,1,2,0x4021c6,0);
+    if ((g_cLoading_00802A58 != (cLoadingTy *)0x0) &&
+       (cLoadingTy::ShowScr(g_cLoading_00802A58,10,1), g_cLoading_00802A58 != (cLoadingTy *)0x0)) {
+      cLoadingTy::InitParam(g_cLoading_00802A58,0x14,10,0x316,0x244,0,1,2,0x4021c6,0);
     }
     DAT_00806720 = timeGetTime();
     g_cMf32_00806754 =
          (cMf32 *)Library::Ourlib::MF32INT::FUN_006f0ec0(0x345,&pSVar13->field_0x76f6,0,0,0);
-    local_8 = &pSVar13->field_4EAF;
+    local_8 = (char *)&pSVar13->field_4EAF;
     cMf32::RecGet(g_cMf32_00806754,0xc,PTR_s_AUTOSAVETIME_GAME_0079b068,(int *)&local_8,0);
-    local_8 = &pSVar13->field_4EB3;
+    local_8 = (char *)&pSVar13->field_4EB3;
     cMf32::RecGet(g_cMf32_00806754,0xc,PTR_s_STATETIMER_GAME_0079b064,(int *)&local_8,0);
-    local_8 = (int *)&pSVar13->field_0x4eb7;
+    local_8 = &pSVar13->field_0x4eb7;
     puVar7 = cMf32::RecGet(g_cMf32_00806754,0xc,PTR_s_BRIEFING_GAME_0079b06c,(int *)&local_8,0);
-    local_8 = (int *)&pSVar13->field_1180;
+    local_8 = &pSVar13->field_1180;
     pSVar13->field_4ED9 = puVar7 != (ushort *)0x0;
-    if ((*(char *)local_8 != '\f') && (*(char *)local_8 != '\x10')) {
+    if ((*local_8 != '\f') && (*local_8 != '\x10')) {
       cMf32::RecGet(g_cMf32_00806754,0xc,PTR_s_TYPE_START_0079b08c,(int *)&local_8,0);
     }
-    local_8 = (int *)&pSVar13->field_0x2b2f;
+    local_8 = &pSVar13->field_0x2b2f;
     cMf32::RecGet(g_cMf32_00806754,0,PTR_s_RESTART_GAME_0079b060,(int *)&local_8,0);
     if (g_cMf32_00806758 != (cMf32 *)0x0) {
       cMf32::delete(this_00,g_cMf32_00806758);
     }
-    local_8 = (int *)&pSVar13->field_7D1A;
+    local_8 = &pSVar13->field_7D1A;
     g_cMf32_00806758 = (cMf32 *)0x0;
-    memset(local_8, 0, 0x834); /* compiler bulk-zero initialization */
+    memset((void *)local_8, 0, 0x834); /* compiler bulk-zero initialization */
     puVar7 = cMf32::RecGet(g_cMf32_00806754,0,PTR_s_ORIG_DB_0079b088,(int *)&local_8,0);
     if ((puVar7 == (ushort *)0x0) || (local_14 = &pSVar13->field_7D1A, pSVar13->field_7D1A == '\0'))
     {
@@ -198,13 +198,13 @@ void __thiscall STAppC::StartGame(STAppC *this)
     g_cMf32_00806760 = (cMf32 *)Library::Ourlib::MF32INT::FUN_006f0ec0(0x345,&local_224,0,0,0);
     DAT_00806764 = Library::Ourlib::MFRLOAD::mfRLoadCreate((int)g_cMf32_00806760);
     DAT_0080679c = FUN_0070a9f0(g_cMf32_00806760,"PALETTE",2,1);
-    LoadGamePlt(g_cMf32_00806760,0);
+    LoadGamePlt((int)g_cMf32_00806760,0);
     if (pSVar13->field_7D0E == 0) {
       puVar16 = &pSVar13->field_4DA3;
-      pcVar8 = LoadResourceString(0x267f,HINSTANCE_00807618);
+      pcVar8 = LoadResourceString(0x267f,g_module_00807618);
       wsprintfA(&pSVar13->field_7D1A,"%s %s",pcVar8,puVar16);
-      if (PTR_00802a58 != (cLoadingTy *)0x0) {
-        cLoadingTy::DrawLineCR(PTR_00802a58,(uint *)&pSVar13->field_7D1A);
+      if (g_cLoading_00802A58 != (cLoadingTy *)0x0) {
+        cLoadingTy::DrawLineCR(g_cLoading_00802A58,&pSVar13->field_7D1A);
       }
       if ((pSVar13->field_1180 == '\x03') || (pSVar13->field_1180 == '\b')) {
         memset(&pSVar13->field_5012, 0, 0x104); /* compiler bulk-zero initialization */
@@ -230,8 +230,8 @@ void __thiscall STAppC::StartGame(STAppC *this)
       }
     }
     else {
-      local_8 = (int *)&pSVar13->field_4DA3;
-      memset(local_8, 0, 0x104); /* compiler bulk-zero initialization */
+      local_8 = &pSVar13->field_4DA3;
+      memset((void *)local_8, 0, 0x104); /* compiler bulk-zero initialization */
       iVar11 = 0;
       puVar7 = cMf32::RecGet(g_cMf32_00806754,0xc,PTR_s_TITLE_MISSION_0079b070,(int *)&local_8,0);
       if ((puVar7 == (ushort *)0x0) || (pbVar15 = &pSVar13->field_4DA3, pSVar13->field_4DA3 == '\0')
@@ -240,24 +240,23 @@ void __thiscall STAppC::StartGame(STAppC *this)
                   (&pSVar13->field_0x76f6,(byte *)0x0,(byte *)0x0,local_328,(byte *)0x0);
         pbVar15 = local_328;
       }
-      pcVar8 = LoadResourceString(0x267f,HINSTANCE_00807618);
+      pcVar8 = LoadResourceString(0x267f,g_module_00807618);
       wsprintfA(&pSVar13->field_7D1A,"%s %s",pcVar8,pbVar15);
-      if (PTR_00802a58 != (cLoadingTy *)0x0) {
-        cLoadingTy::DrawLineCR(PTR_00802a58,(uint *)&pSVar13->field_7D1A);
+      if (g_cLoading_00802A58 != (cLoadingTy *)0x0) {
+        cLoadingTy::DrawLineCR(g_cLoading_00802A58,&pSVar13->field_7D1A);
       }
       if ((pSVar13->field_1180 == '\f') || (pSVar13->field_1180 == '\x10')) {
-        local_8 = (int *)&pSVar13->field_1180;
+        local_8 = &pSVar13->field_1180;
         cMf32::RecGet(g_cMf32_00806754,0xc,PTR_s_TYPE_START_0079b08c,(int *)&local_8,0);
       }
       else {
         local_10 = (undefined4 *)&pSVar13->field_0x1196;
         cMf32::RecGet(g_cMf32_00806754,0,PTR_s_DESCRIPTOR_0079b080,(int *)&local_10,0);
-        thunk_FUN_0056ef50((AnonShape_0056EF50_CAB83E9D *)pSVar13);
-        thunk_FUN_0056f040((AnonShape_0056F040_86F75ABE *)pSVar13);
+        sub_0056EF50(pSVar13);
+        sub_0056F040(pSVar13);
       }
-      if ((AnonShape_006B5570_4D68B99C *)pSVar13->field_4EA7 != (AnonShape_006B5570_4D68B99C *)0x0)
-      {
-        FUN_006b5570((AnonShape_006B5570_4D68B99C *)pSVar13->field_4EA7);
+      if ((DArrayTy *)pSVar13->field_4EA7 != (DArrayTy *)0x0) {
+        FUN_006b5570((DArrayTy *)pSVar13->field_4EA7);
       }
       puVar6 = Library::Ourlib::MFSARR::mfSarLoad(g_cMf32_00806754,PTR_s_DESCRIPTION_0079b074,0);
       pSVar13->field_4EA7 = puVar6;
@@ -265,9 +264,8 @@ void __thiscall STAppC::StartGame(STAppC *this)
         pDVar9 = Library::DKW::TBL::SArrayCreate((DArrayTy *)0x0,10,10);
         pSVar13->field_4EA7 = &pDVar9->flags;
       }
-      if ((AnonShape_006B5570_4D68B99C *)pSVar13->field_4EAB != (AnonShape_006B5570_4D68B99C *)0x0)
-      {
-        FUN_006b5570((AnonShape_006B5570_4D68B99C *)pSVar13->field_4EAB);
+      if ((DArrayTy *)pSVar13->field_4EAB != (DArrayTy *)0x0) {
+        FUN_006b5570((DArrayTy *)pSVar13->field_4EAB);
       }
       puVar6 = Library::Ourlib::MFSARR::mfSarLoad(g_cMf32_00806754,PTR_s_OBJECTIVES_0079b078,0);
       pSVar13->field_4EAB = puVar6;
@@ -308,10 +306,10 @@ void __thiscall STAppC::StartGame(STAppC *this)
     pSVar13->field_4F02 = 0;
     if (((pSVar13->field_1185 == 0) && (pSVar13->field_1181 == 0)) &&
        (pSVar13->field_1163 != '\x03')) {
-      DVar10 = FUN_006e51b0((int)pSVar13);
+      DVar10 = sub_006E51B0(pSVar13);
       pSVar13->field_1134 = DVar10;
     }
-    local_8 = &pSVar13->field_1134;
+    local_8 = (char *)&pSVar13->field_1134;
     cMf32::RecGet(g_cMf32_00806754,0xc,PTR_s_RND_INIT_0079b05c,(int *)&local_8,0);
     CreateGameSystem();
     FUN_006e8640(PTR_00807598,
@@ -320,7 +318,7 @@ void __thiscall STAppC::StartGame(STAppC *this)
     FUN_006dda90(PTR_00807598,0.7,0.95);
     FUN_006ddae0(PTR_00807598,0x10,4,4,DAT_008032c8);
     if (DAT_00807328 == 0) {
-      FUN_006ddbb0((int)PTR_00807598);
+      FUN_006ddbb0(PTR_00807598);
     }
     pAVar4 = PTR_00807598;
     uVar2 = DAT_008032c0;
@@ -331,23 +329,22 @@ void __thiscall STAppC::StartGame(STAppC *this)
     CreatePlaySystem();
     cMf32::delete(this_02,g_cMf32_00806754);
     g_cMf32_00806754 = (cMf32 *)0x0;
-    if (PTR_00802a58 != (cLoadingTy *)0x0) {
-      puVar6 = (uint *)LoadResourceString(0x2680,HINSTANCE_00807618);
-      cLoadingTy::DrawLineCR(PTR_00802a58,puVar6);
+    if (g_cLoading_00802A58 != (cLoadingTy *)0x0) {
+      pcVar8 = LoadResourceString(0x2680,g_module_00807618);
+      cLoadingTy::DrawLineCR(g_cLoading_00802A58,pcVar8);
       if ((pSVar13->field_115E != '\0') && (pSVar13->field_1163 == '\x03')) {
         Sleep(2000);
       }
       thunk_FUN_005547d0(10,1);
-      cLoadingTy::delete(this_03,(uint *)PTR_00802a58);
-      PTR_00802a58 = (cLoadingTy *)0x0;
+      cLoadingTy::delete(this_03,(uint *)g_cLoading_00802A58);
+      g_cLoading_00802A58 = (cLoadingTy *)0x0;
     }
     thunk_FUN_0056a500();
     memset(local_34, 0, 0x20); /* compiler bulk-zero initialization */
     iVar11 = 0;
     local_34[4] = 0x6107;
     local_34[5] = 1;
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-    (*(code *)pSVar13->vtable->field_0018)(local_34);
+    (*pSVar13->vtable->GetMessage)(pSVar13,(int)local_34);
     thunk_FUN_0056a500();
     memset(&pSVar13->field_5012, 0, 0x104); /* compiler bulk-zero initialization */
     iVar11 = 0;
@@ -362,13 +359,13 @@ void __thiscall STAppC::StartGame(STAppC *this)
     iVar11 = 0;
     pSVar13->field_6CE1 = 0;
     pSVar13->field_6CE0 = 0;
-    if (PTR_00802a30->field_00A9 == 0) {
-      Library::DKW::DDX::FUN_006b8a60((byte *)PTR_00802a30->field_00AD);
+    if (g_cursorClass_00802A30->field_00A9 == 0) {
+      Library::DKW::DDX::FUN_006b8a60((byte *)g_cursorClass_00802A30->field_00AD);
     }
-    else if (PTR_00802a30->field_001C != (cLoadingTy *)0xffffffff) {
+    else if (g_cursorClass_00802A30->field_001C != (cLoadingTy *)0xffffffff) {
       Library::DKW::DDX::FUN_006b34d0
-                ((uint *)PTR_00802a30->field_0060,(uint)PTR_00802a30->field_001C,0xfffffffe,
-                 PTR_00802a30->field_0034,PTR_00802a30->field_0038);
+                ((uint *)g_cursorClass_00802A30->field_0060,(uint)g_cursorClass_00802A30->field_001C
+                 ,0xfffffffe,g_cursorClass_00802A30->field_0034,g_cursorClass_00802A30->field_0038);
     }
     thunk_FUN_00440700((uint)DAT_00807326);
     thunk_FUN_0056a500();
@@ -401,15 +398,14 @@ void __thiscall STAppC::StartGame(STAppC *this)
       pcVar12 = extraout_ECX_03;
     }
     g_cMf32_00806754 = (cMf32 *)0x0;
-    if (PTR_00802a58 != (cLoadingTy *)0x0) {
-      cLoadingTy::delete(pcVar12,(uint *)PTR_00802a58);
+    if (g_cLoading_00802A58 != (cLoadingTy *)0x0) {
+      cLoadingTy::delete(pcVar12,(uint *)g_cLoading_00802A58);
     }
     pSVar13 = local_c;
     memset(local_54, 0, 0x20); /* compiler bulk-zero initialization */
-    PTR_00802a58 = (cLoadingTy *)0x0;
+    g_cLoading_00802A58 = (cLoadingTy *)0x0;
     local_44 = 0x6102;
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-    (*(code *)pSVar13->vtable->field_0018)(local_54);
+    (*pSVar13->vtable->GetMessage)(pSVar13,(int)local_54);
     pSVar13->field_1195 = 0;
     return;
   }

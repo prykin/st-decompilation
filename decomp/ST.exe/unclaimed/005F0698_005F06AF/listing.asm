@@ -1,0 +1,6 @@
+005F0698  pointer  005f0662
+005F069C  pointer  005f0662
+005F06A0  pointer  005f0662
+005F06A4  pointer  005f0653
+005F06A8  pointer  005f0653
+005F06AC  pointer  005f0653

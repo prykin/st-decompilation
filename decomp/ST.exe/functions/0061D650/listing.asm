@@ -1,4 +1,4 @@
-FUN_0061d650:
+STLightC::sub_0061D650:
 0061D650  56                        PUSH ESI
 0061D651  8B F1                     MOV ESI,ECX
 0061D653  8B 4E 57                  MOV ECX,dword ptr [ESI + 0x57]

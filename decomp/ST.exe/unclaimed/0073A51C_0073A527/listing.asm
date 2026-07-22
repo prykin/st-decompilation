@@ -1,0 +1,3 @@
+0073A51C  pointer  0073a528
+0073A520  pointer  0073a548
+0073A524  pointer  0073a570

@@ -72,8 +72,7 @@ STAllPlayersC::GetCursorType
         if ((short)local_8 != -1) {
           pSVar6 = GetObjPtr(this,(char)g_playerRuntime[uVar4].tempSlots[1][0].playerId,local_8,
                              CASE_1);
-          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-          sVar3 = (**(code **)&pSVar6->vtable->field_0x28)(param_1,param_2,param_3,param_4);
+          sVar3 = (*pSVar6->vtable->vfunc_28)(param_1,param_2,param_3,param_4);
           return sVar3;
         }
         index = index + 1;

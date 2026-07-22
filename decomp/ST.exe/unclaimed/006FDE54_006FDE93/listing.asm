@@ -1,0 +1,16 @@
+006FDE54  pointer  006fd5ba
+006FDE58  pointer  006fd613
+006FDE5C  pointer  006fd626
+006FDE60  pointer  006fd681
+006FDE64  pointer  006fd77b
+006FDE68  pointer  006fd7e0
+006FDE6C  pointer  006fd7f7
+006FDE70  pointer  006fd85f
+006FDE74  pointer  006fda12
+006FDE78  pointer  006fda6a
+006FDE7C  pointer  006fda7e
+006FDE80  pointer  006fdad8
+006FDE84  pointer  006fdc66
+006FDE88  pointer  006fdcc8
+006FDE8C  pointer  006fdcdd
+006FDE90  pointer  006fdd46

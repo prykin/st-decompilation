@@ -74,16 +74,6 @@ target_address	status	proposed_name	detail
 004231C0	disabled		all apply flags are 0
 004231E0	disabled		all apply flags are 0
 00423200	disabled		all apply flags are 0
-00423C70	disabled	STGroupC::vfunc_4	all apply flags are 0
-00423EA0	disabled	STGroupC::vfunc_8	all apply flags are 0
-00423EC0	disabled	STGroupC::GetMessage	all apply flags are 0
-004244D0	disabled	STGroupC::vfunc_C	all apply flags are 0
-004244F0	disabled	STGroupC::vfunc_10	all apply flags are 0
-00424510	disabled	STGroupC::vfunc_14	all apply flags are 0
-00424710	disabled	STGroupC::vfunc_18	all apply flags are 0
-00424730	disabled	STGroupC::vfunc_1C	all apply flags are 0
-00424750	disabled	STGroupC::vfunc_20	all apply flags are 0
-00424770	disabled	STGroupC::vfunc_24	all apply flags are 0
 00430A90	disabled	STAllPlayersC::GetMessage	all apply flags are 0
 0044E960	disabled	STBoatC::vfunc_4	all apply flags are 0
 0044EDC0	disabled	STBoatC::vfunc_C4	all apply flags are 0
@@ -325,6 +315,7 @@ target_address	status	proposed_name	detail
 00617640	disabled	JumpManagC::GetMessage	all apply flags are 0
 00618C00	disabled	STJumpMineC::GetMessage	all apply flags are 0
 0061D190	disabled	STLightC::GetMessage	all apply flags are 0
+0061F660	disabled	SndUnderAttMenegC::GetMessage	all apply flags are 0
 00621B50	disabled	STMineSetC::GetMessage	all apply flags are 0
 00626BC0	disabled	STMineSetC::vfunc_74	all apply flags are 0
 00626C00	disabled	STMineSetC::vfunc_70	all apply flags are 0
@@ -366,7 +357,7 @@ target_address	status	proposed_name	detail
 0067C7E0	disabled	AiPlrClassTy::GetMessage	all apply flags are 0
 00690B90	disabled	AiTactClassTy::GetMessage	all apply flags are 0
 006E4FA0	disabled		all apply flags are 0
-006E5150	disabled	AppClassTy::vfunc_18	all apply flags are 0
+006E5150	disabled	STAppC::sub_006E5150	all apply flags are 0
 006E52D0	disabled		all apply flags are 0
 006E5670	disabled		all apply flags are 0
 006E5690	disabled		all apply flags are 0

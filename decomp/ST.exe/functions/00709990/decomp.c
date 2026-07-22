@@ -9,13 +9,13 @@ int __cdecl FUN_00709990(AnonShape_00709990_0FAEF1E0 *param_1,int param_2,uint *
 
   *param_3 = 0xffffffff;
   param_1->field_0004->iteratorIndex = 0;
-  uVar2 = FUN_006b1190((AnonShape_006B1190_EDB2B5FD *)param_1->field_0004,local_34);
+  uVar2 = FUN_006b1190(param_1->field_0004,local_34);
   while( true ) {
     if ((int)uVar2 < 0) {
       return 0;
     }
     if (local_b == param_2) break;
-    uVar2 = FUN_006b1190((AnonShape_006B1190_EDB2B5FD *)param_1->field_0004,local_34);
+    uVar2 = FUN_006b1190(param_1->field_0004,local_34);
   }
   *param_3 = uVar2;
   pDVar1 = param_1->field_0004;

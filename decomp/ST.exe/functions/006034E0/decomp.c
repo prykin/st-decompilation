@@ -109,8 +109,7 @@ FUN_006034e0(undefined2 param_1,undefined2 param_2,undefined2 param_3,int param_
     Library::MSVCRT::_strncpy(local_10b,param_7,0x103);
     local_8 = 0;
   }
-  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-  (*(code *)PTR_00802a38->vtable->field_0008)(0x15a,0,0,local_144,0);
+  (*g_playSystem_00802A38->vtable->vfunc_08)(0x15a,0,0,local_144,0);
   return;
 }
 

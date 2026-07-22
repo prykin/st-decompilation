@@ -17,7 +17,7 @@ void __fastcall FUN_005fceb0(AnonShape_005FCEB0_FA1F7938 *param_1)
     local_12 = param_1->field_0032;
     local_10 = param_1->field_032A;
     local_18 = 0x5dd6;
-    iVar1 = FUN_006e62d0(PTR_00802a38,param_1->field_0358,&local_8);
+    iVar1 = FUN_006e62d0(g_playSystem_00802A38,param_1->field_0358,&local_8);
     if (iVar1 != -4) {
       /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
       local_e = *(undefined2 *)(local_8 + 0x32);

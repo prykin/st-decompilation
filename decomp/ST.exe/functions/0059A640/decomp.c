@@ -46,21 +46,21 @@ void __thiscall FSGSTy::PaintGameNew(FSGSTy *this)
     uVar10 = 2;
     iVar9 = -1;
     iVar4 = 0;
-    puVar6 = (uint *)LoadResourceString(0x256b,HINSTANCE_00807618);
+    puVar6 = (uint *)LoadResourceString(0x256b,g_module_00807618);
     ccFntTy::WrStr(pFVar3->field_1A73,puVar6,iVar4,iVar9,uVar10);
     FUN_006b5ee0((AnonShape_006B5B10_E0D06CF1 *)pFVar3->field_1AC0,0,0x18,0x5b,0x188,0x1b,0xf,0xd);
     ccFntTy::SetSurf(pFVar3->field_1A73,(int)pFVar3->field_1AC0,0,0x19,0x7f,0xb4,0x14);
     uVar10 = 2;
     iVar9 = -1;
     iVar4 = 0;
-    puVar6 = (uint *)LoadResourceString(0x2550,HINSTANCE_00807618);
+    puVar6 = (uint *)LoadResourceString(0x2550,g_module_00807618);
     ccFntTy::WrStr(pFVar3->field_1A73,puVar6,iVar4,iVar9,uVar10);
     FUN_006b5ee0((AnonShape_006B5B10_E0D06CF1 *)pFVar3->field_1AC0,0,0x18,0x92,0xb6,0x16,0xf,0xd);
     ccFntTy::SetSurf(pFVar3->field_1A73,(int)pFVar3->field_1AC0,0,0x19,0xb1,0xb4,0x14);
     uVar10 = 2;
     iVar9 = -1;
     iVar4 = 0;
-    puVar6 = (uint *)LoadResourceString(0x256d,HINSTANCE_00807618);
+    puVar6 = (uint *)LoadResourceString(0x256d,g_module_00807618);
     ccFntTy::WrStr(pFVar3->field_1A73,puVar6,iVar4,iVar9,uVar10);
     FUN_006c7570((AnonShape_006B5B10_E0D06CF1 *)pFVar3->field_1AC0,0,0x19,0xc5,(undefined4 *)0x186,
                  0x19,4,0xf);

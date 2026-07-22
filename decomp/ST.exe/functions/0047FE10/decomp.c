@@ -16,6 +16,8 @@ int __thiscall STBoatC::Scout(STBoatC *this,int param_1)
   STGroupBoatC *pSVar6;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined2 extraout_var;
+  /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
+  void *unaff_EDI;
 
   if ((param_1 == 0) || (param_1 == 1)) {
     memset(&this->field_02CC, 0, 0x5c); /* compiler bulk-zero initialization */
@@ -36,8 +38,8 @@ int __thiscall STBoatC::Scout(STBoatC *this,int param_1)
   iVar5 = this->field_06E7;
   if (iVar5 != 0) {
     if (iVar5 == 1) {
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-      iVar5 = (*(code *)this->vtable->field_0020)();
+      /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
+      iVar5 = (*this->vtable->StopMove)(this,unaff_EDI);
       if (iVar5 == -1) {
         return -1;
       }
@@ -50,8 +52,7 @@ int __thiscall STBoatC::Scout(STBoatC *this,int param_1)
           return -1;
         }
       }
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-      iVar5 = (*(code *)this->vtable->field_00D8)();
+      iVar5 = (*this->vtable->vfunc_D8)();
       return (-(uint)(iVar5 != 0) & 0xfffffffd) + 2;
     }
     if (iVar5 != 2) {

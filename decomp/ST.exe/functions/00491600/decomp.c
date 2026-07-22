@@ -32,8 +32,8 @@ void __fastcall FUN_00491600(int *param_1)
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     if (*(int *)((int)param_1 + 0x5a6) == 0) {
       /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-      iVar2 = FUN_006e62d0(PTR_00802a38,*(int *)((int)param_1 + 0x5a2),(int *)((int)param_1 + 0x5a6)
-                          );
+      iVar2 = FUN_006e62d0(g_playSystem_00802A38,*(int *)((int)param_1 + 0x5a2),
+                           (int *)((int)param_1 + 0x5a6));
       if (iVar2 == -4) {
         RaiseInternalException
                   (-4,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\To_boat.cpp",0x5008);

@@ -6,12 +6,11 @@ undefined4 __fastcall FUN_005ee6e0(AnonShape_005EE6E0_AB6798ED *param_1)
   uint uVar1;
   int iVar2;
   int iVar3;
-  undefined4 uVar4;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined2 extraout_var;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined2 extraout_var_00;
-  undefined4 uVar5;
+  undefined4 uVar4;
   undefined4 local_38 [2];
   undefined4 local_30;
   undefined4 local_2c;
@@ -25,8 +24,8 @@ undefined4 __fastcall FUN_005ee6e0(AnonShape_005EE6E0_AB6798ED *param_1)
   local_8 = 0;
   switch(param_1->field_023A) {
   case 0:
-    if ((uint)param_1->field_028F <= PTR_00802a38->field_00E4) {
-      param_1->field_028F = PTR_00802a38->field_00E4;
+    if ((uint)param_1->field_028F <= g_playSystem_00802A38->field_00E4) {
+      param_1->field_028F = g_playSystem_00802A38->field_00E4;
       uVar1 = *(int *)&param_1->field_0x1c * 0x41c64e6d + 0x3039;
       *(uint *)&param_1->field_0x1c = uVar1;
       thunk_FUN_005ecd70(param_1,param_1->field_0277,param_1->field_027B,param_1->field_027F + -0x1e
@@ -43,7 +42,7 @@ undefined4 __fastcall FUN_005ee6e0(AnonShape_005EE6E0_AB6798ED *param_1)
       param_1->field_027F = local_14;
       param_1->field_0277 = local_c;
       param_1->field_027B = local_10;
-      if ((((param_1->field_0317 != '\0') && ((PTR_00802a38->field_00E4 & 3) == 0)) &&
+      if ((((param_1->field_0317 != '\0') && ((g_playSystem_00802A38->field_00E4 & 3) == 0)) &&
           (param_1->field_0x250 == '\0')) && (param_1->field_024F == '\0')) {
         iVar2 = thunk_FUN_005eda50((AnonShape_005EDA50_4BDBD797 *)param_1);
         if (iVar2 == 0) {
@@ -52,14 +51,14 @@ undefined4 __fastcall FUN_005ee6e0(AnonShape_005EE6E0_AB6798ED *param_1)
             param_1->field_0x250 = 1;
             param_1->field_024F = 1;
             param_1->field_023A = 3;
-            param_1->field_028F = PTR_00802a38->field_00E4 + 10;
+            param_1->field_028F = g_playSystem_00802A38->field_00E4 + 10;
           }
         }
         else {
           param_1->field_0x250 = 1;
           param_1->field_024F = 1;
           param_1->field_023A = 3;
-          param_1->field_028F = PTR_00802a38->field_00E4 + 10;
+          param_1->field_028F = g_playSystem_00802A38->field_00E4 + 10;
         }
       }
       local_8 = 1;
@@ -70,8 +69,8 @@ undefined4 __fastcall FUN_005ee6e0(AnonShape_005EE6E0_AB6798ED *param_1)
     }
     break;
   case 2:
-    if (PTR_00802a38->field_00E4 < (uint)param_1->field_028F) {
-      if (((PTR_00802a38->field_00E4 == param_1->field_028F + 1) &&
+    if (g_playSystem_00802A38->field_00E4 < (uint)param_1->field_028F) {
+      if (((g_playSystem_00802A38->field_00E4 == param_1->field_028F + 1) &&
           (param_1->field_0211 != (void *)0x0)) && (-1 < (int)param_1->field_01ED)) {
         FUN_006ea2f0(param_1->field_0211,param_1->field_01ED);
         return local_8;
@@ -90,7 +89,7 @@ undefined4 __fastcall FUN_005ee6e0(AnonShape_005EE6E0_AB6798ED *param_1)
             param_1->field_023A = 7;
             return 1;
           }
-          uVar1 = PTR_00802a38->field_00E4;
+          uVar1 = g_playSystem_00802A38->field_00E4;
           param_1->field_023A = 0;
           param_1->field_028F = uVar1 + 10;
         }
@@ -99,7 +98,7 @@ undefined4 __fastcall FUN_005ee6e0(AnonShape_005EE6E0_AB6798ED *param_1)
     }
     break;
   case 3:
-    if ((uint)param_1->field_028F <= PTR_00802a38->field_00E4) {
+    if ((uint)param_1->field_028F <= g_playSystem_00802A38->field_00E4) {
       if (param_1->field_0x250 == '\x02') {
         iVar2 = thunk_FUN_005edc20((AnonShape_005EDC20_3D37DB9E *)param_1);
         if (iVar2 < 0) {
@@ -114,7 +113,7 @@ LAB_005ee9db:
           }
           else {
             param_1->field_023A = 8;
-            param_1->field_028F = PTR_00802a38->field_00E4 + 0x15;
+            param_1->field_028F = g_playSystem_00802A38->field_00E4 + 0x15;
           }
         }
       }
@@ -151,11 +150,11 @@ LAB_005ee9db:
     local_30 = *(undefined4 *)&param_1->field_0x8;
     local_28 = 0x129;
     local_2c = 2;
-    SystemClassTy::PostMessage((SystemClassTy *)PTR_00802a38,local_38);
+    SystemClassTy::PostMessage((SystemClassTy *)g_playSystem_00802A38,local_38);
     return local_8;
   case 5:
     if (param_1->field_0315 == '\x03') {
-      if (PTR_00802a38->field_00E4 == *(uint *)&param_1->field_0x2e0) {
+      if (g_playSystem_00802A38->field_00E4 == *(uint *)&param_1->field_0x2e0) {
 cf_common_exit_005EEDDF:
         param_1->field_023A = 6;
       }
@@ -179,28 +178,27 @@ cf_common_exit_005EEDDF:
         }
         STT3DSprC::StopShow((STT3DSprC *)this,0xe);
         if ((param_1->field_0315 == '\x04') || (param_1->field_0315 == '\x02')) {
-          uVar5 = 0xffffffff;
-          uVar4 = thunk_FUN_004ad650((int)this);
+          uVar4 = 0xffffffff;
+          iVar3 = thunk_FUN_004ad650((int)this);
           thunk_FUN_0062b770((int)param_1->field_0041,(int)param_1->field_0043,
                              (int)param_1->field_0045,param_1->field_0231,(int)param_1,
-                             (int)*(short *)&param_1->field_0x6c,uVar4,uVar5);
+                             (int)*(short *)&param_1->field_0x6c,iVar3,uVar4);
         }
         if (param_1->field_0231 == 0xfd) {
-          if (g_sTAllPlayers_007FA174 != (STAllPlayersC *)0x0) {
-            thunk_FUN_005f0d00((AnonShape_005F0D00_68DA5B8B *)param_1);
+          if (g_allPlayers_007FA174 != (STAllPlayersC *)0x0) {
+            STArtiafactC::sub_005F0D00((STArtiafactC *)param_1);
             /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
             iVar3 = STAllPlayersC::UnRegisterArtefact
-                              (g_sTAllPlayers_007FA174,CONCAT22(extraout_var_00,param_1->field_0032)
-                               ,(AnonShape_00449E60_F2069C78 *)param_1);
+                              (g_allPlayers_007FA174,CONCAT22(extraout_var_00,param_1->field_0032),
+                               (AnonShape_00449E60_F2069C78 *)param_1);
             goto joined_r0x005eed0b;
           }
         }
-        else if ((param_1->field_0231 == 0xfe) && (g_sTAllPlayers_007FA174 != (STAllPlayersC *)0x0))
-        {
-          thunk_FUN_005f0d90((AnonShape_005F0D00_68DA5B8B *)param_1);
+        else if ((param_1->field_0231 == 0xfe) && (g_allPlayers_007FA174 != (STAllPlayersC *)0x0)) {
+          STContainerC::sub_005F0D90((STContainerC *)param_1);
           /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
           iVar3 = STAllPlayersC::UnRegisterContainer
-                            (g_sTAllPlayers_007FA174,CONCAT22(extraout_var,param_1->field_0032),
+                            (g_allPlayers_007FA174,CONCAT22(extraout_var,param_1->field_0032),
                              (AnonShape_0044A730_DBE673B2 *)param_1);
 joined_r0x005eed0b:
           if (iVar3 != 0) {
@@ -215,7 +213,7 @@ joined_r0x005eed0b:
         thunk_FUN_004ad5e0((int)this);
       }
       if (iVar2 == *(int *)(&DAT_007cdf5a + (uint)param_1->field_02DF * 0x32)) {
-        STT3DSprC::StartShow((STT3DSprC *)this,9,PTR_00802a38->field_00E4);
+        STT3DSprC::StartShow((STT3DSprC *)this,9,g_playSystem_00802A38->field_00E4);
       }
       iVar3 = (uint)param_1->field_02DF * 0x32;
       if ((*(int *)(&DAT_007cdf5a + iVar3) < iVar2) &&
@@ -239,14 +237,14 @@ joined_r0x005eed0b:
   case 7:
     local_8 = 1;
     if (param_1->field_024F == '\0') {
-      uVar1 = PTR_00802a38->field_00E4;
+      uVar1 = g_playSystem_00802A38->field_00E4;
       param_1->field_023A = 0;
       param_1->field_028F = uVar1 + 10;
       return 1;
     }
     break;
   case 8:
-    if ((uint)param_1->field_028F <= PTR_00802a38->field_00E4) {
+    if ((uint)param_1->field_028F <= g_playSystem_00802A38->field_00E4) {
       thunk_FUN_005f0a30((STBoatC *)param_1);
       param_1->field_023A = 6;
       return local_8;

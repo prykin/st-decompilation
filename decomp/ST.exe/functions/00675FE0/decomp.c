@@ -34,7 +34,7 @@ void __cdecl _AddAllGrpExch(uint param_1)
     RaiseInternalException(iVar3,0,"E:\\__titans\\ai\\ai_mdef.cpp",0x119);
     return;
   }
-  if (g_sTAllPlayers_007FA174 != (STAllPlayersC *)0x0) {
+  if (g_allPlayers_007FA174 != (STAllPlayersC *)0x0) {
     objPtr = (char)param_1;
     array = (DArrayTy *)STAllPlayersC::GetObjsList(objPtr);
     if (array != (DArrayTy *)0x0) {
@@ -51,13 +51,11 @@ void __cdecl _AddAllGrpExch(uint param_1)
             /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(array, uVar7) (runtime stride) */
             puVar4 = (ushort *)(array->elementSize * uVar7 + (int)array->data);
 LAB_00676053:
-            pSVar5 = STAllPlayersC::GetObjPtr(g_sTAllPlayers_007FA174,objPtr,(uint)*puVar4,CASE_1);
+            pSVar5 = STAllPlayersC::GetObjPtr(g_allPlayers_007FA174,objPtr,(uint)*puVar4,CASE_1);
             if (pSVar5 != (STGameObjC *)0x0) {
-              /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-              iVar3 = (**(code **)&pSVar5->vtable->field_0x2c)();
+              iVar3 = (*pSVar5->vtable->vfunc_2C)();
               if (iVar3 == 0x78) {
-                /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-                iVar3 = (**(code **)&pSVar5->vtable->field_0x2c)();
+                iVar3 = (*pSVar5->vtable->vfunc_2C)();
                 if (iVar3 == 0x78) {
                   pSVar5->field_0269 = 0xffffffff;
                 }
@@ -68,7 +66,7 @@ LAB_00676053:
           } while (uVar7 < array->count);
         }
         STAllPlayersC::AddObjsToGroup
-                  (g_sTAllPlayers_007FA174,objPtr,0,(uint *)array,(undefined2 *)0x0);
+                  (g_allPlayers_007FA174,objPtr,0,(uint *)array,(undefined2 *)0x0);
       }
       if (array != (DArrayTy *)0x0) {
         DArrayDestroy(array);

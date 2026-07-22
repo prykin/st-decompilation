@@ -1,4 +1,4 @@
-FUN_0062a860:
+STParticleC::sub_0062A860:
 0062A860  55                        PUSH EBP
 0062A861  8B EC                     MOV EBP,ESP
 0062A863  83 EC 20                  SUB ESP,0x20

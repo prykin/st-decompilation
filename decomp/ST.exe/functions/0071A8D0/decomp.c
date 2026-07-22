@@ -38,8 +38,8 @@ void __cdecl FUN_0071a8d0(int *param_1)
       }
       FreeAndNull((void **)(puVar1 + 3));
     }
-    if ((AnonShape_006B5570_4D68B99C *)puVar1[1] != (AnonShape_006B5570_4D68B99C *)0x0) {
-      FUN_006b5570((AnonShape_006B5570_4D68B99C *)puVar1[1]);
+    if ((DArrayTy *)puVar1[1] != (DArrayTy *)0x0) {
+      FUN_006b5570((DArrayTy *)puVar1[1]);
     }
     FreeAndNull((void **)param_1);
   }

@@ -48,7 +48,7 @@ cf_common_exit_004E02E4:
     else {
       /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
       STAllPlayersC::_ChangeMD
-                (g_sTAllPlayers_007FA174,1,(int *)param_1->field_0024,
+                (g_allPlayers_007FA174,1,(int *)param_1->field_0024,
                  CONCAT22(extraout_var,param_1->field_0032));
     }
   }

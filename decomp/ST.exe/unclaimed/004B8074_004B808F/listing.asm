@@ -1,0 +1,7 @@
+004B8074  pointer  004b8053
+004B8078  pointer  004b7fad
+004B807C  pointer  004b8003
+004B8080  pointer  004b8003
+004B8084  pointer  004b8003
+004B8088  pointer  004b7fd0
+004B808C  pointer  004b7ff2

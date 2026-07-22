@@ -1,4 +1,4 @@
-FUN_00605780:
+STExplosion::sub_00605780:
 00605780  56                        PUSH ESI
 00605781  8B F1                     MOV ESI,ECX
 00605783  8B 8E AF 02 00 00         MOV ECX,dword ptr [ESI + 0x2af]

@@ -83,7 +83,7 @@ void __thiscall MReportTy::PaintMReport(MReportTy *this,char param_1)
     uVar22 = 0;
     iVar12 = -1;
     iVar5 = -1;
-    puVar8 = (uint *)LoadResourceString(0x2440,HINSTANCE_00807618);
+    puVar8 = (uint *)LoadResourceString(0x2440,g_module_00807618);
     ccFntTy::WrStr(this_00->field_0083,puVar8,iVar5,iVar12,uVar22);
     goto LAB_005bf406;
   }
@@ -94,7 +94,7 @@ void __thiscall MReportTy::PaintMReport(MReportTy *this,char param_1)
     uVar22 = 0;
     iVar12 = -1;
     iVar5 = -1;
-    puVar8 = (uint *)LoadResourceString(0x2440,HINSTANCE_00807618);
+    puVar8 = (uint *)LoadResourceString(0x2440,g_module_00807618);
     ccFntTy::WrStr(this_00->field_0083,puVar8,iVar5,iVar12,uVar22);
     local_18 = (AnonShape_006B5B10_E0D06CF1 *)
                ccFntTy::CreateSurf(this_00->field_0083,(int)this_00->field_0073,0,0,0,0x136,0x22,0);
@@ -436,7 +436,7 @@ LAB_005bf156:
       else if (uVar10 == 3) {
         local_8 = 0x23f2;
       }
-      pcVar7 = LoadResourceString(local_8,HINSTANCE_00807618);
+      pcVar7 = LoadResourceString(local_8,g_module_00807618);
       uVar10 = 0xffffffff;
       do {
         pcVar18 = pcVar7;
@@ -518,7 +518,7 @@ LAB_005bef6c:
     uVar22 = 2;
     iVar12 = -1;
     iVar5 = -3;
-    puVar8 = (uint *)LoadResourceString(UVar20,HINSTANCE_00807618);
+    puVar8 = (uint *)LoadResourceString(UVar20,g_module_00807618);
     ccFntTy::WrStr(this_00->field_0083,puVar8,iVar5,iVar12,uVar22);
   }
   iVar5 = 1;
@@ -548,7 +548,7 @@ LAB_005bef6c:
   uVar22 = 0;
   iVar12 = -1;
   iVar5 = -1;
-  puVar8 = (uint *)LoadResourceString(0x2444,HINSTANCE_00807618);
+  puVar8 = (uint *)LoadResourceString(0x2444,g_module_00807618);
   ccFntTy::WrStr(this_00->field_0083,puVar8,iVar5,iVar12,uVar22);
   FUN_006b4170((AnonShape_006B5B10_E0D06CF1 *)local_c,0,local_c->field_0004 + -0x69,
                (local_c->field_0008 + -0x1c) / 2,0x50,0x1c,0);

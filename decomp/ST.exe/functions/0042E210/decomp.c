@@ -16,7 +16,7 @@ STAllPlayersC::RegisterObject
 {
   code *pcVar1;
   uint uVar2;
-  void *pvVar3;
+  MoneyTy *pMVar3;
   DArrayTy *pDVar4;
   int *piVar5;
   int iVar6;
@@ -139,12 +139,12 @@ LAB_0042e3eb:
   }
 LAB_0042e4fd:
   iVar9 = param_5;
-  pvVar3 = DAT_008016d4;
+  pMVar3 = g_money_008016D4;
   if (param_4[8] == 0x14) {
     iVar6 = (int)param_1;
     *(short *)&g_playerRuntime[iVar6].field_0xd = *(short *)&g_playerRuntime[iVar6].field_0xd + 1;
-    if (pvVar3 != (void *)0x0) {
-      thunk_FUN_0052bda0(pvVar3,param_1,(uint)*(ushort *)&g_playerRuntime[iVar6].field_0xd);
+    if (pMVar3 != (MoneyTy *)0x0) {
+      MoneyTy::sub_0052BDA0(pMVar3,param_1,(uint)*(ushort *)&g_playerRuntime[iVar6].field_0xd);
     }
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
     iVar7 = (**(code **)(*param_4 + 0x2c))();
@@ -256,12 +256,12 @@ LAB_0042e4fd:
       }
     }
   }
-  pvVar3 = DAT_008016d4;
+  pMVar3 = g_money_008016D4;
   if (param_4[8] == 1000) {
     iVar6 = (int)param_1;
     *(short *)&g_playerRuntime[iVar6].field_0xd = *(short *)&g_playerRuntime[iVar6].field_0xd + 1;
-    if (pvVar3 != (void *)0x0) {
-      thunk_FUN_0052bda0(pvVar3,param_1,(uint)*(ushort *)&g_playerRuntime[iVar6].field_0xd);
+    if (pMVar3 != (MoneyTy *)0x0) {
+      MoneyTy::sub_0052BDA0(pMVar3,param_1,(uint)*(ushort *)&g_playerRuntime[iVar6].field_0xd);
     }
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
     iVar7 = (**(code **)(*param_4 + 0x2c))();
@@ -409,8 +409,7 @@ LAB_0042eb3e:
     local_30 = 0;
     local_44 = 1;
     local_3c = uVar13;
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-    (*(code *)PTR_00802a38->vtable->field_0008)(0x10ff,local_10,&local_c,local_50,0);
+    (*g_playSystem_00802A38->vtable->vfunc_08)(0x10ff,local_10,&local_c,local_50,0);
     Library::DKW::TBL::FUN_006ae140(&local_1c->flags,uVar13,&local_c);
     iVar9 = param_5;
   }

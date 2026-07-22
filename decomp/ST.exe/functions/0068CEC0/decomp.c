@@ -78,7 +78,8 @@ FUN_0068cec0(LPCSTR lpFileName,AnonShape_00683C70_22193481 *param_2,int *param_3
       RaiseInternalException
                 (-6,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",0xa39);
     }
-    thunk_FUN_00672b60(lpFileName,(AnonShape_GLOBAL_0081194C_4D1525E6 *)&PTR_LAB_007d3fa8);
+    thunk_FUN_00672b60(lpFileName,
+                       (AnonShape_GLOBAL_0081194C_4D1525E6 *)&PTR_thunk_FUN_00680270_007d3fa8);
     g_currentExceptionFrame = (InternalExceptionFrame *)&local_74;
     local_74 = local_b8.previous;
     iVar3 = Library::MSVCRT::__setjmp3(local_70,0);

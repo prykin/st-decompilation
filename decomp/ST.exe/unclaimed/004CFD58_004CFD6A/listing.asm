@@ -1,0 +1,10 @@
+004CFD58  pointer  004cfc85
+004CFD5C  pointer  004cfc24
+004CFD60  pointer  004cfd4e
+004CFD64  byte  0h
+004CFD65  byte  0h
+004CFD66  byte  2h
+004CFD67  byte  2h
+004CFD68  byte  2h
+004CFD69  byte  1h
+004CFD6A  byte  1h

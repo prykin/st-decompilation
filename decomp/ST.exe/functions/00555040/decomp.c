@@ -53,7 +53,7 @@ cLoadingTy::SetState
   }
   switch(param_1) {
   case CASE_0:
-    pcVar5 = LoadResourceString(0x267a,HINSTANCE_00807618);
+    pcVar5 = LoadResourceString(0x267a,g_module_00807618);
     uVar8 = 0xffffffff;
     do {
       pcVar13 = pcVar5;
@@ -76,7 +76,7 @@ cLoadingTy::SetState
       puVar11 = (uint *)((int)puVar11 + 1);
       puVar12 = (uint *)((int)puVar12 + 1);
     }
-    pcVar5 = LoadResourceString(0x267e,HINSTANCE_00807618);
+    pcVar5 = LoadResourceString(0x267e,g_module_00807618);
     uVar8 = 0xffffffff;
     do {
       pcVar13 = pcVar5;
@@ -113,7 +113,7 @@ cLoadingTy::SetState
     g_currentExceptionFrame = local_50.previous;
     return;
   case CASE_1:
-    pcVar5 = LoadResourceString(0x267a,HINSTANCE_00807618);
+    pcVar5 = LoadResourceString(0x267a,g_module_00807618);
     uVar8 = 0xffffffff;
     do {
       pcVar13 = pcVar5;
@@ -136,7 +136,7 @@ cLoadingTy::SetState
       puVar11 = (uint *)((int)puVar11 + 1);
       puVar12 = (uint *)((int)puVar12 + 1);
     }
-    pcVar5 = LoadResourceString(0x267b,HINSTANCE_00807618);
+    pcVar5 = LoadResourceString(0x267b,g_module_00807618);
     uVar8 = 0xffffffff;
     do {
       pcVar13 = pcVar5;
@@ -243,7 +243,7 @@ cLoadingTy::SetState
     break;
   case CASE_2:
     local_8->field_003C = -1;
-    pcVar5 = LoadResourceString(0x267a,HINSTANCE_00807618);
+    pcVar5 = LoadResourceString(0x267a,g_module_00807618);
     uVar8 = 0xffffffff;
     do {
       pcVar13 = pcVar5;
@@ -266,7 +266,7 @@ cLoadingTy::SetState
       puVar11 = (uint *)((int)puVar11 + 1);
       puVar12 = (uint *)((int)puVar12 + 1);
     }
-    pcVar5 = LoadResourceString(0x267c,HINSTANCE_00807618);
+    pcVar5 = LoadResourceString(0x267c,g_module_00807618);
     uVar8 = 0xffffffff;
     do {
       pcVar13 = pcVar5;
@@ -302,7 +302,7 @@ cLoadingTy::SetState
     goto joined_r0x00555393;
   case CASE_3:
     local_8->field_003C = -1;
-    pcVar5 = LoadResourceString(0x267a,HINSTANCE_00807618);
+    pcVar5 = LoadResourceString(0x267a,g_module_00807618);
     uVar8 = 0xffffffff;
     do {
       pcVar13 = pcVar5;
@@ -325,7 +325,7 @@ cLoadingTy::SetState
       puVar11 = (uint *)((int)puVar11 + 1);
       puVar12 = (uint *)((int)puVar12 + 1);
     }
-    pcVar5 = LoadResourceString(0x267d,HINSTANCE_00807618);
+    pcVar5 = LoadResourceString(0x267d,g_module_00807618);
     uVar8 = 0xffffffff;
     do {
       pcVar13 = pcVar5;
@@ -393,7 +393,7 @@ joined_r0x00555393:
         pcVar13 = pcVar13 + 1;
       }
     }
-    DrawLineCR(pcVar10,local_450);
+    DrawLineCR(pcVar10,(char *)local_450);
     g_currentExceptionFrame = local_50.previous;
     return;
   default:

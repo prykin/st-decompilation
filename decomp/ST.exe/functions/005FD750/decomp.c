@@ -27,10 +27,9 @@ FUN_005fd750(uint param_1,undefined2 param_2,undefined2 param_3,undefined2 param
   local_30[2] = 1;
   local_30[1] = param_1;
   local_30[0] = 0x82;
-  pSVar1 = STAllPlayersC::GetObjPtr(g_sTAllPlayers_007FA174,(char)param_1,param_5,CASE_1);
+  pSVar1 = STAllPlayersC::GetObjPtr(g_allPlayers_007FA174,(char)param_1,param_5,CASE_1);
   if (pSVar1 != (STGameObjC *)0x0) {
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-    iVar2 = (**(code **)&pSVar1->vtable[1].field_0x28)();
+    iVar2 = (*pSVar1->vtable[1].vfunc_24)();
     if (iVar2 != 0) {
       local_16 = pSVar1->field_0018;
     }
@@ -38,8 +37,7 @@ FUN_005fd750(uint param_1,undefined2 param_2,undefined2 param_3,undefined2 param
   local_10 = param_6;
   local_c = 0xb4;
   local_8 = 5;
-  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-  (*(code *)PTR_00802a38->vtable->field_0008)(0x10a,0,0,local_30,0);
+  (*g_playSystem_00802A38->vtable->vfunc_08)(0x10a,0,0,local_30,0);
   return;
 }
 

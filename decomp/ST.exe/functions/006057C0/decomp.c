@@ -72,11 +72,10 @@ void __fastcall FUN_006057c0(STExplosionC *param_1)
       if ((int)uVar2 < (int)(&DAT_007cee44)[param_1->field_0282]) {
         STT3DSprC::SetCurFase(param_1->field_02AF,'\r',uVar2);
         STT3DSprC::ShowCurFase(param_1->field_02AF,'\r');
-        thunk_FUN_004ad3c0(param_1->field_02AF,
-                           (float)param_1->field_028A * _DAT_007904f8 * _DAT_007904f0,
-                           (float)param_1->field_028E * _DAT_007904f8 * _DAT_007904f0,
-                           (float)param_1->field_0292 * _DAT_007904f8 * _DAT_007904f0 +
-                           _DAT_007904fc);
+        STT3DSprC::sub_004AD3C0
+                  (param_1->field_02AF,(float)param_1->field_028A * _DAT_007904f8 * _DAT_007904f0,
+                   (float)param_1->field_028E * _DAT_007904f8 * _DAT_007904f0,
+                   (float)param_1->field_0292 * _DAT_007904f8 * _DAT_007904f0 + _DAT_007904fc);
       }
       else if (uVar2 == (&DAT_007cee44)[param_1->field_0282]) {
         STT3DSprC::StopShow(param_1->field_02AF,0xd);
@@ -91,7 +90,7 @@ void __fastcall FUN_006057c0(STExplosionC *param_1)
         if (param_1->field_029E != '\0') {
           STT3DSprC::SetCurFase(param_1->field_02AF,'\x0f',param_1->field_029F);
           STT3DSprC::ShowCurFase(param_1->field_02AF,'\x0f');
-          if ((PTR_00802a38->field_00E4 & 1) != 0) {
+          if ((g_playSystem_00802A38->field_00E4 & 1) != 0) {
             param_1->field_029F = param_1->field_029F + 1;
           }
           if (param_1->field_02A3 <= param_1->field_029F) {
@@ -102,7 +101,7 @@ void __fastcall FUN_006057c0(STExplosionC *param_1)
         }
       }
       if (*(int *)(&DAT_007cee1c + *puVar1 * 4) <= param_1->field_0296) {
-        thunk_FUN_00605780((int)param_1);
+        STExplosion::sub_00605780((STExplosion *)param_1);
       }
     }
     return;

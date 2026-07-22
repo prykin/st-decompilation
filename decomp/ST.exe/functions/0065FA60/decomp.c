@@ -3,21 +3,25 @@
    /SubmarineTitans/Recovered/HiddenThis/AnonReceiver_0065FA60.
    Evidence: incoming_receiver_captures=1; receiver_accesses=4; incoming_edx_uses=0; calls=4;
    ecx_pointer_setup=4; ecx_scalar_setup=0; caller_cleanup_calls=0; callee_ret_pop=[12];
-   expected_stack=12; receiver_family_members=1 */
+   expected_stack=12; receiver_family_members=1
+
+   [STMethodOwnerApplier] Structural method owner recovered as AiFltClassTy.
+   Evidence: this_call_owners=[AiFltClassTy]; agreed_this_calls=1; incoming_this_accesses=4;
+   incoming_edx_uses=0; incoming_stack_parameter_uses=5; direct_non_thunk_callers=0;
+   incoming_ecx_receiver_callers=0; attributed_named_callers=1; owner_evidence_coverage=adequate */
 
 uint * __thiscall
-SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0065FA60::FUN_0065fa60
-          (AnonReceiver_0065FA60 *this,int param_1,int param_2,short *param_3)
+AiFltClassTy::sub_0065FA60(AiFltClassTy *this,int param_1,int param_2,short *param_3)
 
 {
-  AnonReceiver_0065FA60 *pAVar1;
+  AiFltClassTy *pAVar1;
   int iVar2;
   undefined4 *puVar3;
   uint uVar4;
   DArrayTy *groupContent;
   InternalExceptionFrame local_5c;
   uint local_18;
-  AnonReceiver_0065FA60 *local_14;
+  AiFltClassTy *local_14;
   DArrayTy *local_10;
   short local_a;
   short local_8;
@@ -31,24 +35,24 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0065FA60::FUN_0065fa60
   pAVar1 = local_14;
   if (iVar2 == 0) {
     if (param_2 == 0) {
-      if (*(void **)&local_14->field_0x284 != (void *)0x0) {
-        local_10 = (DArrayTy *)thunk_FUN_0068e4f0(*(void **)&local_14->field_0x284,param_1);
+      if (local_14->field_0284 != (ushort *)0x0) {
+        local_10 = (DArrayTy *)thunk_FUN_0068e4f0(local_14->field_0284,param_1);
       }
     }
     else if (param_2 == 1) {
-      if (*(void **)&local_14->field_0x284 != (void *)0x0) {
-        local_10 = (DArrayTy *)thunk_FUN_0068e4f0(*(void **)&local_14->field_0x284,param_1);
+      if (local_14->field_0284 != (ushort *)0x0) {
+        local_10 = (DArrayTy *)thunk_FUN_0068e4f0(local_14->field_0284,param_1);
       }
-      if ((local_10 == (DArrayTy *)0x0) && (g_sTAllPlayers_007FA174 != (STAllPlayersC *)0x0)) {
+      if ((local_10 == (DArrayTy *)0x0) && (g_allPlayers_007FA174 != (STAllPlayersC *)0x0)) {
         local_10 = (DArrayTy *)
                    STAllPlayersC::GetTOBJList
-                             (g_sTAllPlayers_007FA174,pAVar1->field_0x24,param_1,0,-1);
+                             (g_allPlayers_007FA174,*(char *)&pAVar1->field_0024,param_1,0,-1);
       }
     }
-    else if ((param_2 == 2) && (g_sTAllPlayers_007FA174 != (STAllPlayersC *)0x0)) {
+    else if ((param_2 == 2) && (g_allPlayers_007FA174 != (STAllPlayersC *)0x0)) {
       local_10 = (DArrayTy *)
                  STAllPlayersC::GetTOBJList
-                           (g_sTAllPlayers_007FA174,local_14->field_0x24,param_1,0,-1);
+                           (g_allPlayers_007FA174,*(char *)&local_14->field_0024,param_1,0,-1);
     }
   }
   groupContent = local_10;

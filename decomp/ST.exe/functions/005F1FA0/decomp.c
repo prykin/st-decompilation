@@ -1,8 +1,13 @@
 
 /* [STPrototypeApplier] Propagated return.
-   Evidence: 005F1FA0 returns used as parameter 2 of STPlaySystemC::SaveObjData @ 005F1236 */
+   Evidence: 005F1FA0 returns used as parameter 2 of STPlaySystemC::SaveObjData @ 005F1236
 
-byte * __thiscall FUN_005f1fa0(void *this,int *param_1)
+   [STMethodOwnerApplier] Structural method owner recovered as STManBasisC.
+   Evidence: this_call_owners=[STManBasisC]; agreed_this_calls=1; incoming_this_accesses=8;
+   incoming_edx_uses=0; incoming_stack_parameter_uses=2; direct_non_thunk_callers=0;
+   incoming_ecx_receiver_callers=0; attributed_named_callers=1; owner_evidence_coverage=adequate */
+
+byte * __thiscall STManBasisC::sub_005F1FA0(STManBasisC *this,int *param_1)
 
 {
   int iVar1;
@@ -11,7 +16,7 @@ byte * __thiscall FUN_005f1fa0(void *this,int *param_1)
   int iVar4;
   uint uVar5;
   uint *puVar6;
-  undefined4 *puVar7;
+  ushort **ppuVar7;
   byte *pbVar8;
   uint *puVar9;
   byte *pbVar10;
@@ -24,30 +29,30 @@ byte * __thiscall FUN_005f1fa0(void *this,int *param_1)
   local_14 = (uint *)0x0;
   local_8 = 0;
   local_c = 0;
-  if (*(uint **)((int)this + 0x38) != (uint *)0x0) {
-    local_10 = (byte *)FUN_006b0020(*(uint **)((int)this + 0x38),(int *)&local_8);
+  if (this->field_0038 != (DArrayTy *)0x0) {
+    local_10 = (byte *)FUN_006b0020(&this->field_0038->flags,(int *)&local_8);
     if (local_8 == 0) {
-      DArrayDestroy(*(DArrayTy **)((int)this + 0x38));
-      *(undefined4 *)((int)this + 0x38) = 0;
+      DArrayDestroy(this->field_0038);
+      this->field_0038 = (DArrayTy *)0x0;
     }
   }
-  if (*(uint **)((int)this + 0x3c) != (uint *)0x0) {
-    local_14 = (uint *)FUN_006b0020(*(uint **)((int)this + 0x3c),(int *)&local_c);
+  if (this->field_003C != (DArrayTy *)0x0) {
+    local_14 = (uint *)FUN_006b0020(&this->field_003C->flags,(int *)&local_c);
     if (local_c == 0) {
-      DArrayDestroy(*(DArrayTy **)((int)this + 0x3c));
-      *(undefined4 *)((int)this + 0x3c) = 0;
+      DArrayDestroy(this->field_003C);
+      this->field_003C = (DArrayTy *)0x0;
     }
   }
   iVar1 = local_c + 0x30 + local_8;
   pbVar3 = (byte *)Library::DKW::LIB::FUN_006aac70(iVar1);
   uVar2 = DAT_00811788;
-  *(undefined4 *)((int)this + 0x2c) = 2;
-  *(undefined4 *)((int)this + 0x34) = uVar2;
-  puVar7 = (undefined4 *)((int)this + 0x20);
+  this->field_002C = 2;
+  this->field_0034 = uVar2;
+  ppuVar7 = &this->field_0020;
   pbVar8 = pbVar3;
   for (iVar4 = 10; iVar4 != 0; iVar4 = iVar4 + -1) {
-    *(undefined4 *)pbVar8 = *puVar7;
-    puVar7 = puVar7 + 1;
+    *(ushort **)pbVar8 = *ppuVar7;
+    ppuVar7 = ppuVar7 + 1;
     pbVar8 = pbVar8 + 4;
   }
   puVar6 = (uint *)(pbVar3 + 0x28);

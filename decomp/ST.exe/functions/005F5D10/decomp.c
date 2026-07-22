@@ -1,5 +1,10 @@
 
-void __thiscall FUN_005f5d10(void *this,int param_1)
+/* [STMethodOwnerApplier] Structural method owner recovered as STBHEShellC.
+   Evidence: this_call_owners=[STBHEShellC]; agreed_this_calls=1; incoming_this_accesses=11;
+   incoming_edx_uses=0; incoming_stack_parameter_uses=3; direct_non_thunk_callers=0;
+   incoming_ecx_receiver_callers=0; attributed_named_callers=1; owner_evidence_coverage=adequate */
+
+void __thiscall STBHEShellC::sub_005F5D10(STBHEShellC *this,int param_1)
 
 {
   int iVar1;
@@ -9,37 +14,37 @@ void __thiscall FUN_005f5d10(void *this,int param_1)
 
   if (param_1 != 0) {
     if (param_1 == 1) {
-      *(undefined4 *)((int)this + 0x93) = *(undefined4 *)((int)this + 0x40);
-      *(undefined4 *)((int)this + 0x97) = *(undefined4 *)((int)this + 0x44);
-      *(undefined4 *)((int)this + 0x9b) = *(undefined4 *)((int)this + 0x48);
-      *(undefined4 *)((int)this + 0x34) = 0;
+      this->field_0093 = this->field_0040;
+      this->field_0097 = this->field_0044;
+      this->field_009B = this->field_0048;
+      this->field_0034 = 0;
 LAB_005f5d4b:
-      thunk_FUN_005f5e30(this,*(undefined4 *)((int)this + 0x40),*(undefined4 *)((int)this + 0x44),
-                         *(undefined4 *)((int)this + 0x48));
-      *(undefined4 *)((int)this + 0x104) = 3;
+      sub_005F5E30(this,this->field_0040,this->field_0044,this->field_0048);
+      this->field_0104 = CASE_3;
       return;
     }
     if (param_1 == 2) {
-      if (*(int **)((int)this + 0x34) != (int *)0x0) {
+      if ((int *)this->field_0034 != (int *)0x0) {
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-        iVar1 = (**(code **)(**(int **)((int)this + 0x34) + 0xe0))
-                          (*(undefined4 *)((int)this + 0x38),(int)&param_1 + 2,&local_6,&local_8,
-                           &local_c);
+        iVar1 = (**(code **)(*(int *)this->field_0034 + 0xe0))
+                          (this->field_0038,(int)&param_1 + 2,&local_6,&local_8,&local_c);
         if (iVar1 == 0) {
-          *(int *)((int)this + 0x40) = (int)param_1._2_2_;
-          *(int *)((int)this + 0x93) = (int)param_1._2_2_;
-          *(int *)((int)this + 0x44) = (int)local_6;
-          *(int *)((int)this + 0x48) = (int)local_8;
-          *(int *)((int)this + 0x97) = (int)local_6;
-          *(int *)((int)this + 0x9b) = (int)local_8;
-          *(undefined4 *)((int)this + 0x3c) = local_c;
+          /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+          this->field_0040 = (int)param_1._2_2_;
+          /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+          this->field_0093 = (int)param_1._2_2_;
+          this->field_0044 = (int)local_6;
+          this->field_0048 = (int)local_8;
+          this->field_0097 = (int)local_6;
+          this->field_009B = (int)local_8;
+          this->field_003C = local_c;
           goto LAB_005f5d4b;
         }
       }
-      *(undefined4 *)((int)this + 0x104) = 5;
+      this->field_0104 = CASE_5;
     }
   }
-  *(undefined4 *)((int)this + 0x104) = 5;
+  this->field_0104 = CASE_5;
   return;
 }
 

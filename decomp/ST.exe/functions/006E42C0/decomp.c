@@ -11,7 +11,7 @@ undefined4 __thiscall FUN_006e42c0(void *this,int *param_1)
 
   if (*(int *)((int)this + 0x14) != 0) {
     *(undefined4 *)(*(int *)((int)this + 0x14) + 4) = 0;
-    uVar1 = FUN_006b1190(*(AnonShape_006B1190_EDB2B5FD **)((int)this + 0x14),local_14);
+    uVar1 = FUN_006b1190(*(DArrayTy **)((int)this + 0x14),local_14);
     while (-1 < (int)uVar1) {
       iVar2 = 4;
       bVar5 = true;
@@ -27,7 +27,7 @@ undefined4 __thiscall FUN_006e42c0(void *this,int *param_1)
       if (bVar5) {
         FUN_006b0c70(*(DArrayTy **)((int)this + 0x14),uVar1);
       }
-      uVar1 = FUN_006b1190(*(AnonShape_006B1190_EDB2B5FD **)((int)this + 0x14),local_14);
+      uVar1 = FUN_006b1190(*(DArrayTy **)((int)this + 0x14),local_14);
     }
     if ((*(DArrayTy **)((int)this + 0x14))->count == 0) {
       DArrayDestroy(*(DArrayTy **)((int)this + 0x14));

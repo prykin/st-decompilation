@@ -1,4 +1,4 @@
-FUN_0058ff70:
+STSharkC::sub_0058FF70:
 0058FF70  A1 38 2A 80 00            MOV EAX,[0x00802a38]
 0058FF75  56                        PUSH ESI
 0058FF76  8B B0 E4 00 00 00         MOV ESI,dword ptr [EAX + 0xe4]

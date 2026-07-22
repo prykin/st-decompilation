@@ -58,7 +58,7 @@ void __thiscall AiTactClassTy::GiveObjByClaim(AiTactClassTy *this,uint *param_1)
           bVar10 = uVar9 < pDVar8->count;
         } while ((int)uVar9 < (int)pDVar8->count);
       }
-      thunk_FUN_00676c40(this_00->field_00BD,&LAB_0040242d);
+      thunk_FUN_00676c40(this_00->field_00BD,thunk_FUN_0068e7d0);
       local_c = param_1[3];
       while (local_c = local_c - 1, -1 < (int)local_c) {
         if (local_c < param_1[3]) {
@@ -67,21 +67,19 @@ void __thiscall AiTactClassTy::GiveObjByClaim(AiTactClassTy *this,uint *param_1)
         else {
           puVar6 = (undefined2 *)0x0;
         }
-        if (g_sTAllPlayers_007FA174 == (STAllPlayersC *)0x0) {
+        if (g_allPlayers_007FA174 == (STAllPlayersC *)0x0) {
           objPtr = (STGameObjC *)0x0;
         }
         else {
           /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
           objPtr = STAllPlayersC::GetObjPtr
-                             (g_sTAllPlayers_007FA174,*(char *)&this_00->field_0024,
+                             (g_allPlayers_007FA174,*(char *)&this_00->field_0024,
                               CONCAT22((short)((uint)puVar6 >> 0x10),*puVar6),CASE_1);
         }
         if (objPtr != (STGameObjC *)0x0) {
-          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-          iVar4 = (**(code **)&objPtr->vtable->field_0x2c)();
+          iVar4 = (*objPtr->vtable->vfunc_2C)();
           if (iVar4 == 0x78) {
-            /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-            iVar4 = (**(code **)&objPtr->vtable->field_0x2c)();
+            iVar4 = (*objPtr->vtable->vfunc_2C)();
             if (iVar4 == 0x78) {
               iVar4 = objPtr->field_0259;
             }
@@ -100,8 +98,7 @@ void __thiscall AiTactClassTy::GiveObjByClaim(AiTactClassTy *this,uint *param_1)
               }
               if ((pvVar5 != (void *)0x0) && (-1 < *(int *)((int)pvVar5 + 0x30))) {
                 uVar1 = *(ushort *)((int)pvVar5 + 0xc);
-                /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-                iVar4 = (**(code **)&objPtr->vtable->field_0x2c)();
+                iVar4 = (*objPtr->vtable->vfunc_2C)();
                 if (iVar4 == 0x78) {
                   objPtr->field_0269 = (uint)uVar1;
                 }

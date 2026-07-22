@@ -42,28 +42,28 @@ int __thiscall AiFltClassTy::GetMessage(AiFltClassTy *this,STMessage *message)
     RaiseInternalException(iVar5,0,"E:\\__titans\\ai\\ai_flt.cpp",0xecb);
     return 0xffff;
   }
-  local_10->field_0280 = PTR_00802a38->field_00E4;
+  local_10->field_0280 = g_playSystem_00802A38->field_00E4;
   SVar2 = message->id;
   if (SVar2 < MESS_STOCTOPUSC_0112) {
     if (SVar2 == MESS_ID_ALLCREATE) {
-      thunk_FUN_0065d6a0((AnonShape_0065D6A0_A68E55B5 *)local_10);
+      sub_0065D6A0(local_10);
     }
     else if (SVar2 < 4) {
       if (SVar2 == MESS_SHARED_0003) {
         /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
-        thunk_FUN_0065d6e0((AnonShape_0065D6E0_0F9074F6 *)local_10,extraout_EDX);
+        sub_0065D6E0((AnonShape_0065D6E0_0F9074F6 *)local_10,extraout_EDX);
         /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
-        thunk_FUN_0065d720((AnonShape_0065D720_52DE2AAB *)this_00,extraout_EDX_00);
-        thunk_FUN_0065d480((int)this_00);
+        sub_0065D720((AnonShape_0065D720_52DE2AAB *)this_00,extraout_EDX_00);
+        thunk_FUN_0065d480(this_00);
       }
       else if (SVar2 == MESS_ID_NONE) {
         if (local_10->field_0093 == 0) {
           local_10->field_0093 = 1;
-          thunk_FUN_00664760(local_10);
+          sub_00664760(local_10);
         }
         else {
-          thunk_FUN_00664960(local_10);
-          thunk_FUN_00661580((AnonShape_00661580_92A3F5B0 *)this_00);
+          sub_00664960(local_10);
+          sub_00661580(this_00);
         }
       }
       else if (SVar2 == MESS_ID_CREATE) {
@@ -83,7 +83,7 @@ int __thiscall AiFltClassTy::GetMessage(AiFltClassTy *this,STMessage *message)
         if (iVar5 == 0) {
           uVar6 = thunk_FUN_00435850(*(char *)&this_00->field_0024,1,(int *)0x0);
           this_00->field_007D = (short)uVar6;
-          thunk_FUN_0065d6a0((AnonShape_0065D6A0_A68E55B5 *)this_00);
+          sub_0065D6A0(this_00);
           uVar6 = this_00->field_001C * 0x41c64e6d + 0x3039;
           this_00->field_001C = uVar6;
           this_00->field_008B = (uVar6 >> 0x10 & 7) + 8;
@@ -93,14 +93,14 @@ int __thiscall AiFltClassTy::GetMessage(AiFltClassTy *this,STMessage *message)
           uVar6 = this_00->field_001C * 0x41c64e6d + 0x3039;
           this_00->field_001C = uVar6;
           this_00->field_0203 = (uVar6 >> 0x10) % 0x1a + 0x19;
-          thunk_FUN_00676c40(this_00->field_020B,&LAB_004013cf);
+          thunk_FUN_00676c40(this_00->field_020B,thunk_FUN_00660d10);
           this_00->field_0170 = *(short *)&this_00->field_022F->field_0xc;
           uVar1 = *(undefined2 *)&this_00->field_0223->field_0xc;
           /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
           iVar5 = CONCAT22((short)((uint)this_00->field_022F >> 0x10),uVar1);
           this_00->field_0127 = uVar1;
         }
-        if ((this_00->field_007D == -2) || (g_sTAllPlayers_007FA174 == (STAllPlayersC *)0x0)) {
+        if ((this_00->field_007D == -2) || (g_allPlayers_007FA174 == (STAllPlayersC *)0x0)) {
           this_01 = (STGroupBoatC *)0x0;
         }
         else {
@@ -116,7 +116,7 @@ int __thiscall AiFltClassTy::GetMessage(AiFltClassTy *this,STMessage *message)
     else if (SVar2 == MESS_SHARED_010F) {
       local_8 = (AnonShape_0060EA30_DCEB68AD *)0x0;
       local_c = (byte *)PrepareToSave(local_10,(uint *)&local_8);
-      STPlaySystemC::SaveObjData(PTR_00802a38,this_00->field_0018,local_c,local_8);
+      STPlaySystemC::SaveObjData(g_playSystem_00802A38,this_00->field_0018,local_c,local_8);
       if (local_c != (byte *)0x0) {
         FreeAndNull(&local_c);
       }
@@ -131,7 +131,7 @@ int __thiscall AiFltClassTy::GetMessage(AiFltClassTy *this,STMessage *message)
       (message->arg0).words.low = 1;
     }
     /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
-    thunk_FUN_00661ca0((AnonShape_00661CA0_93A030EF *)local_10,extraout_EDX,(int)message);
+    sub_00661CA0((AnonShape_00661CA0_93A030EF *)local_10,extraout_EDX,(int)message);
   }
 LAB_00668010:
   FUN_006e5fd0(this_00,message);

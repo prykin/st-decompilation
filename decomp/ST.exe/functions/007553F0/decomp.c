@@ -39,7 +39,7 @@ FUN_007553f0(AnonShape_007553F0_ACB112C2 *param_1,int *param_2,undefined4 *param
   }
 /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
 LAB_00755464:
-  FUN_00757450((AnonShape_00753C80_4C8E695D *)param_1,
+  FUN_00757450((AnonShape_00755E10_BD685653 *)param_1,
                *(int *)(param_1->field_000C + 0x44 + *(int *)(param_1->field_000C + 0x1c) * 8));
   iVar4 = param_1->field_000C;
   iVar2 = *(int *)(iVar4 + 0x1c);
@@ -56,7 +56,7 @@ LAB_00755464:
       iVar3 = FUN_00753b80((AnonShape_00750F20_F8C16F98 *)param_1,
                            *(undefined4 *)(param_1->field_000C + 0x40 + iVar4 * 8),iVar4);
       /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-      FUN_00757450((AnonShape_00753C80_4C8E695D *)param_1,
+      FUN_00757450((AnonShape_00755E10_BD685653 *)param_1,
                    *(int *)(param_1->field_000C + 0x44 + *(int *)(param_1->field_000C + 0x1c) * 8));
       iVar4 = param_1->field_000C;
       iVar2 = *(int *)(iVar4 + 0x1c);

@@ -13,7 +13,7 @@ void __thiscall STSprGameObjC::LoadActFrame(STSprGameObjC *this,int *param_1)
   code *pcVar2;
   byte bVar3;
   STSprGameObjC_field_0259State SVar4;
-  undefined4 uVar5;
+  dword dVar5;
   uint uVar6;
   int iVar7;
   uint uVar8;
@@ -99,8 +99,7 @@ void __thiscall STSprGameObjC::LoadActFrame(STSprGameObjC *this,int *param_1)
   if ((((iVar7 != 0x1ae) && (iVar7 != 0x172)) && (iVar7 != 0x5a)) &&
      ((iVar7 != 0x1a4 && (iVar7 != 0x1b8)))) {
     if ((iVar7 == 0x14) || (iVar7 == 1000)) {
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-      SVar4 = (*(code *)this->vtable->field_002C)();
+      SVar4 = (*this->vtable->slot_2C)(this);
     }
     else {
       if (iVar7 != 0x3e9) {
@@ -482,21 +481,20 @@ LAB_00420678:
       STT3DSprC::StopShow((STT3DSprC *)this_00,0);
       thunk_FUN_004abce0(this_00,0,0,0,'\0');
       thunk_FUN_004abce0(this_00,0xf,0x14,0x14,'\0');
-      STT3DSprC::StartShow((STT3DSprC *)this_00,0,PTR_00802a38->field_00E4);
-      STT3DSprC::StartShow((STT3DSprC *)this_00,0xf,PTR_00802a38->field_00E4);
+      STT3DSprC::StartShow((STT3DSprC *)this_00,0,g_playSystem_00802A38->field_00E4);
+      STT3DSprC::StartShow((STT3DSprC *)this_00,0xf,g_playSystem_00802A38->field_00E4);
       return;
     }
     thunk_FUN_004abce0(this_00,0,0,0x13,'\0');
     thunk_FUN_004abce0(this_00,0xf,0x14,0x27,'\0');
-    thunk_FUN_004acd60(this_00,'\0',PTR_00802a38->field_00E4 & 1);
-    thunk_FUN_004acd60(this_00,'\x0f',PTR_00802a38->field_00E4 & 1);
-    STT3DSprC::StartShow((STT3DSprC *)this_00,0,PTR_00802a38->field_00E4);
-    STT3DSprC::StartShow((STT3DSprC *)this_00,0xf,PTR_00802a38->field_00E4);
+    thunk_FUN_004acd60(this_00,'\0',g_playSystem_00802A38->field_00E4 & 1);
+    thunk_FUN_004acd60(this_00,'\x0f',g_playSystem_00802A38->field_00E4 & 1);
+    STT3DSprC::StartShow((STT3DSprC *)this_00,0,g_playSystem_00802A38->field_00E4);
+    STT3DSprC::StartShow((STT3DSprC *)this_00,0xf,g_playSystem_00802A38->field_00E4);
     return;
   }
-  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-  uVar5 = (*(code *)this->vtable->field_002C)();
-  switch(uVar5) {
+  dVar5 = (*this->vtable->slot_2C)(this);
+  switch(dVar5) {
   case 0xa6:
   case 0xa7:
   case 0xaf:

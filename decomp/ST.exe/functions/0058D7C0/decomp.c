@@ -76,7 +76,7 @@ int __thiscall STSharkC::GetMessage(STSharkC *this,STMessage *message)
       STT3DSprC::StopShow((STT3DSprC *)puVar10,0xe);
       thunk_FUN_004ad5e0((int)puVar10);
       STT3DSprC::LoadSequence((STT3DSprC *)puVar10,8,DAT_00806764,"expshark",0x1d);
-      STT3DSprC::StartShow((STT3DSprC *)puVar10,8,PTR_00802a38->field_00E4);
+      STT3DSprC::StartShow((STT3DSprC *)puVar10,8,g_playSystem_00802A38->field_00E4);
       *(undefined4 *)&this_00->field_0x257 = 4;
       g_currentExceptionFrame = local_80.previous;
       return 0;
@@ -152,7 +152,7 @@ int __thiscall STSharkC::GetMessage(STSharkC *this,STMessage *message)
         pbVar13 = pbVar13 + 1;
       }
       STPlaySystemC::SaveObjData
-                (PTR_00802a38,this_00->field_0018,(byte *)local_c,
+                (g_playSystem_00802A38,this_00->field_0018,(byte *)local_c,
                  (AnonShape_0060EA30_DCEB68AD *)(local_10 + 0x66 + local_8));
       FreeAndNull(&local_18);
       FreeAndNull(&local_14);
@@ -161,8 +161,7 @@ int __thiscall STSharkC::GetMessage(STSharkC *this,STMessage *message)
       return 0;
     }
     if (SVar2 == MESS_SHARED_0003) {
-      uVar6 = SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00417FF0::sub_004167A0
-                        ((AnonReceiver_00417FF0 *)this_00);
+      uVar6 = sub_004167A0(this_00);
       /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
       thunk_FUN_00495ff0(*(short *)&this_00->field_0x5b,*(short *)&this_00->field_0x5d,
                          *(short *)&this_00->field_0x5f,
@@ -191,7 +190,7 @@ int __thiscall STSharkC::GetMessage(STSharkC *this,STMessage *message)
       *(undefined4 *)&this_00->field_0x24f = 0;
       *(undefined4 *)&this_00->field_0x253 = 0;
       *(undefined4 *)&this_00->field_0x249 = 0xff;
-      iVar5 = thunk_FUN_0058ff70((AnonShape_0058FF70_CCAF0F72 *)this_00);
+      iVar5 = sub_0058FF70((STSharkC *)this_00);
       *(int *)&this_00->field_0x24f = iVar5;
       puVar10 = (message->arg0).ptr;
       pbVar11 = (byte *)((int)&this_00->field_0259 + 2);
@@ -219,13 +218,13 @@ int __thiscall STSharkC::GetMessage(STSharkC *this,STMessage *message)
             ;
           }
           thunk_FUN_004ac610(puVar10,'\x0e');
-          STT3DSprC::StartShow((STT3DSprC *)puVar10,0xe,PTR_00802a38->field_00E4);
+          STT3DSprC::StartShow((STT3DSprC *)puVar10,0xe,g_playSystem_00802A38->field_00E4);
           if (local_1c[3] == 0) {
-            thunk_FUN_004ad3c0(puVar10,(float)*(int *)&this_00->field_0x26f * _DAT_007904f8 +
-                                       _DAT_007904f4,
-                               (float)*(int *)&this_00->field_0x273 * _DAT_007904f8 + _DAT_007904f4,
-                               (float)*(int *)&this_00->field_0x277 * _DAT_00790504 + _DAT_00790500)
-            ;
+            STT3DSprC::sub_004AD3C0
+                      ((STT3DSprC *)puVar10,
+                       (float)*(int *)&this_00->field_0x26f * _DAT_007904f8 + _DAT_007904f4,
+                       (float)*(int *)&this_00->field_0x273 * _DAT_007904f8 + _DAT_007904f4,
+                       (float)*(int *)&this_00->field_0x277 * _DAT_00790504 + _DAT_00790500);
             iVar5 = thunk_FUN_00417ee0(this_00,*(short *)&this_00->field_0x27b);
             if (iVar5 == 0) {
 LAB_0058dc72:
@@ -243,7 +242,7 @@ LAB_0058dc72:
               if (iVar5 != 0) {
                 STDebugBreak(); /* noreturn in standalone pseudocode */
               }
-              thunk_FUN_0058efe0(this_00);
+              sub_0058EFE0((STSharkC *)this_00);
             }
           }
           else {
@@ -261,10 +260,10 @@ LAB_0058dc72:
             else if (*(int *)&this_00->field_0x273 == g_worldGrid.sizeY + -1) {
               *(undefined4 *)&this_00->field_0x27b = 0x5a;
             }
-            thunk_FUN_004ad3c0(puVar10,(float)(int)local_1c * _DAT_007904f8 + _DAT_007904f4,
-                               (float)*(int *)&this_00->field_0x273 * _DAT_007904f8 + _DAT_007904f4,
-                               (float)*(int *)&this_00->field_0x277 * _DAT_00790504 + _DAT_00790500)
-            ;
+            STT3DSprC::sub_004AD3C0
+                      ((STT3DSprC *)puVar10,(float)(int)local_1c * _DAT_007904f8 + _DAT_007904f4,
+                       (float)*(int *)&this_00->field_0x273 * _DAT_007904f8 + _DAT_007904f4,
+                       (float)*(int *)&this_00->field_0x277 * _DAT_00790504 + _DAT_00790500);
             iVar5 = thunk_FUN_00417ee0(this_00,*(short *)&this_00->field_0x27b);
             if (iVar5 == 0) goto LAB_0058dc72;
             iVar5 = ReportDebugMessage("E:\\__titans\\Igor\\To_shark.cpp",200,0,0,
@@ -272,7 +271,7 @@ LAB_0058dc72:
             if (iVar5 != 0) {
               STDebugBreak(); /* noreturn in standalone pseudocode */
             }
-            thunk_FUN_0058efe0(this_00);
+            sub_0058EFE0((STSharkC *)this_00);
           }
         }
         else {
@@ -281,11 +280,11 @@ LAB_0058dc72:
           if (iVar5 != 0) {
             STDebugBreak(); /* noreturn in standalone pseudocode */
           }
-          thunk_FUN_0058efe0(this_00);
+          sub_0058EFE0((STSharkC *)this_00);
         }
       }
       else {
-        thunk_FUN_0058efe0(this_00);
+        sub_0058EFE0((STSharkC *)this_00);
       }
     }
     else if (local_1c[3] == 2) {
@@ -351,7 +350,7 @@ LAB_0058dc72:
       return 0;
     }
 LAB_0058e0f9:
-    thunk_FUN_0058efe0(this_00);
+    sub_0058EFE0((STSharkC *)this_00);
   }
   else {
     switch(SVar2) {

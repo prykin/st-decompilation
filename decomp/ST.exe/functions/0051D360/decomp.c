@@ -45,9 +45,9 @@ void __thiscall HelpPanelTy::NatProc(HelpPanelTy *this,int param_1,char param_2)
         *(undefined2 *)&local_c->field_0x2c = 0;
         local_c->field_002E = 2;
         *(undefined4 *)&local_c->field_0x30 = local_c->field_0178;
-        if (PTR_00802a30 != (CursorClassTy *)0x0) {
+        if (g_cursorClass_00802A30 != (CursorClassTy *)0x0) {
           /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-          (**(code **)PTR_00802a30->field_0000)(&local_c->field_0x18);
+          (**(code **)g_cursorClass_00802A30->field_0000)(&local_c->field_0x18);
         }
       }
     }

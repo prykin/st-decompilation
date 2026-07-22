@@ -1,0 +1,16 @@
+00705E90  pointer  00705ae2
+00705E94  pointer  00705af7
+00705E98  pointer  00705b06
+00705E9C  pointer  00705b1e
+00705EA0  pointer  00705b8a
+00705EA4  pointer  00705baa
+00705EA8  pointer  00705bb9
+00705EAC  pointer  00705bd5
+00705EB0  pointer  00705cc6
+00705EB4  pointer  00705cd6
+00705EB8  pointer  00705ce3
+00705EBC  pointer  00705cf4
+00705EC0  pointer  00705db8
+00705EC4  pointer  00705dd8
+00705EC8  pointer  00705ded
+00705ECC  pointer  00705e12

@@ -1,5 +1,8 @@
 
-undefined * FUN_0067eca0(void)
+/* [STPrototypeApplier] Propagated return.
+   Evidence: 0067ECA0 returns used as parameter 0 of FUN_0067f180 @ 00682514 */
+
+byte * FUN_0067eca0(void)
 
 {
   DAT_00848a20 = DAT_00848a20 + 1;

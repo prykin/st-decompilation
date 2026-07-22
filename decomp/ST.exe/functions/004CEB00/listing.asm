@@ -1,4 +1,4 @@
-TLOBaseTy::FUN_004ceb00:
+TLOBaseTy::sub_004CEB00:
 004CEB00  55                        PUSH EBP
 004CEB01  8B EC                     MOV EBP,ESP
 004CEB03  83 EC 68                  SUB ESP,0x68
@@ -420,7 +420,7 @@ LAB_004cf01f:
 004CF01F  6A 06                     PUSH 0x6
 004CF021  8B CB                     MOV ECX,EBX
 004CF023  FF 92 90 00 00 00         CALL dword ptr [EDX + 0x90]
-TLOBaseTy::FUN_004ceb00::cf_common_exit_004CF029:
+TLOBaseTy::sub_004CEB00::cf_common_exit_004CF029:
 004CF029  6A 01                     PUSH 0x1
 004CF02B  8B CB                     MOV ECX,EBX
 004CF02D  C7 83 D0 04 00 00 04 00 00 00  MOV dword ptr [EBX + 0x4d0],0x4

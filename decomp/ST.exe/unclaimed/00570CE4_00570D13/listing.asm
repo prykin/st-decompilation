@@ -1,0 +1,12 @@
+00570CE4  pointer  0056fad9
+00570CE8  pointer  0056fe79
+00570CEC  pointer  00570c7d
+00570CF0  pointer  005701a7
+00570CF4  pointer  005701a7
+00570CF8  pointer  005701a7
+00570CFC  pointer  005702bf
+00570D00  pointer  0056ff7f
+00570D04  pointer  00570056
+00570D08  pointer  0056fc82
+00570D0C  pointer  00570c7d
+00570D10  pointer  005701a7

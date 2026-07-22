@@ -23,7 +23,7 @@ void __thiscall STGroupC::SetAVPar(STGroupC *this,uint param_1)
     do {
       DArrayGetElement((DArrayTy *)this->field_0029,index,&param_1);
       if ((short)param_1 != -1) {
-        this_00 = STAllPlayersC::GetObjPtr(g_sTAllPlayers_007FA174,this->field_0024,param_1,CASE_1);
+        this_00 = STAllPlayersC::GetObjPtr(g_allPlayers_007FA174,this->field_0024,param_1,CASE_1);
         if (this_00 == (STGameObjC *)0x0) {
           iVar3 = ReportDebugMessage("E:\\__titans\\wlad\\tc_grp.cpp",0x256,0,0,"%s",
                                      "STGroupC::SetAVPar");

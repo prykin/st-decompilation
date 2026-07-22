@@ -1,4 +1,4 @@
-FUN_0068e290:
+AiTactClassTy::sub_0068E290:
 0068E290  55                        PUSH EBP
 0068E291  8B EC                     MOV EBP,ESP
 0068E293  8B 89 A5 00 00 00         MOV ECX,dword ptr [ECX + 0xa5]

@@ -38,6 +38,7 @@ STAppC::InitApp(STAppC *this,HINSTANCE param_1,undefined4 param_2,undefined4 par
   char *pcVar22;
   undefined4 *puVar23;
   UINT UVar24;
+  undefined1 local_560 [792];
   InternalExceptionFrame local_248;
   InternalExceptionFrame local_204;
   InternalExceptionFrame local_1c0;
@@ -73,8 +74,8 @@ STAppC::InitApp(STAppC *this,HINSTANCE param_1,undefined4 param_2,undefined4 par
       break;
     case -0x5001fff6:
       UVar24 = 0;
-      pcVar13 = LoadResourceString(0x2648,HINSTANCE_00807618);
-      pcVar15 = LoadResourceString(0x264b,HINSTANCE_00807618);
+      pcVar13 = LoadResourceString(0x2648,g_module_00807618);
+      pcVar15 = LoadResourceString(0x264b,g_module_00807618);
       MessageBoxA((HWND)0x0,pcVar15,pcVar13,UVar24);
       break;
     default:
@@ -86,8 +87,8 @@ STAppC::InitApp(STAppC *this,HINSTANCE param_1,undefined4 param_2,undefined4 par
       break;
     case -0x5001fff3:
       UVar24 = 0;
-      pcVar13 = LoadResourceString(0x2648,HINSTANCE_00807618);
-      pcVar15 = LoadResourceString(0x264c,HINSTANCE_00807618);
+      pcVar13 = LoadResourceString(0x2648,g_module_00807618);
+      pcVar15 = LoadResourceString(0x264c,g_module_00807618);
       MessageBoxA((HWND)0x0,pcVar15,pcVar13,UVar24);
     }
     RaiseInternalException(iVar8,0,"E:\\__titans\\tapp.cpp",0x2cc);
@@ -114,7 +115,7 @@ STAppC::InitApp(STAppC *this,HINSTANCE param_1,undefined4 param_2,undefined4 par
   g_nWidth_00806730 = 800;
   DAT_00806734 = 600;
   DAT_00806738 = 8;
-  local_6c.lpfnWndProc = (WNDPROC)&LAB_0040251d;
+  local_6c.lpfnWndProc = MainWindowProc;
   local_6c.hInstance = param_1;
   local_6c.hbrBackground = CreateSolidBrush(0);
   local_6c.hIcon = LoadIconA(param_1,(LPCSTR)0x65);
@@ -203,7 +204,8 @@ STAppC::InitApp(STAppC *this,HINSTANCE param_1,undefined4 param_2,undefined4 par
   Library::DKW::DDX::FUN_006b1300((int *)&PTR_008075a8,(int)DAT_0080759c);
   FUN_006bbb20(DAT_0080759c,1);
   FUN_006ba780((int)DAT_0080759c,1);
-  Library::DKW::DV::FUN_006c3800(&PTR_008075a0,DAT_0080759c,HWND_00856d78,0x2660);
+  Library::DKW::DV::FUN_006c3800
+            (&g_anonShape_006C3FC0_72DDFA27_008075A0,DAT_0080759c,HWND_00856d78,0x2660);
   local_1c0.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_1c0;
   iVar8 = Library::MSVCRT::__setjmp3(local_1c0.jumpBuffer,0);
@@ -212,9 +214,9 @@ STAppC::InitApp(STAppC *this,HINSTANCE param_1,undefined4 param_2,undefined4 par
   }
   g_currentExceptionFrame = local_1c0.previous;
   FUN_006b1980((int *)PTR_008075a8,2,-1,DAT_00807568,DAT_0080756c,DAT_00807570,DAT_00807574);
-  FUN_006b1cc0((int)PTR_008075a8,2,DAT_00807568,DAT_0080756c,(undefined4 *)0x0);
+  FUN_006b1cc0(PTR_008075a8,2,DAT_00807568,DAT_0080756c,(undefined4 *)0x0);
   FUN_006b1980((int *)PTR_008075a8,3,-1,DAT_00807568,DAT_0080756c,DAT_00807570,DAT_00807574);
-  FUN_006b1cc0((int)PTR_008075a8,3,0,0,(undefined4 *)0x0);
+  FUN_006b1cc0(PTR_008075a8,3,0,0,(undefined4 *)0x0);
   FUN_006ad270(DAT_0080759c);
   DVar10 = timeGetTime();
   Library::MSVCRT::FUN_0072e6b0(DVar10);
@@ -287,13 +289,12 @@ STAppC::InitApp(STAppC *this,HINSTANCE param_1,undefined4 param_2,undefined4 par
   pcVar13 = (char *)PTR_00857168->field_0004;
   if (pcVar13 == (char *)0x0) {
     if ((DAT_00807330 & 1) != 0) {
-      memset(&stack0xfffffaa0, 0, 0x318); /* compiler bulk-zero initialization */
+      memset((void *)local_560, 0, 0x318); /* compiler bulk-zero initialization */
       wsprintfA(&pAVar20[1].field_0x2e1c,"%s%s",&pAVar20->field_0x164,
                 PTR_s_STARTUP_VPS_0079b040);
       pDVar11 = (DArrayTy *)
-                thunk_FUN_00683c70((uint *)&pAVar20[1].field_0x2e1c,
-                                   (AnonShape_00683C70_22193481 *)&stack0xfffffaa0,&local_38,
-                                   (int *)0x0,(undefined *)0x0);
+                thunk_FUN_00683c70(&pAVar20[1].field_0x2e1c,(AnonShape_00683C70_22193481 *)local_560
+                                   ,&local_38,(int *)0x0,(undefined *)0x0);
       if ((local_38 == 0x40) && (pDVar11 != (DArrayTy *)0x0)) {
         local_1c = 0x7101;
         local_18 = 1;
@@ -702,9 +703,8 @@ STAppC::InitApp(STAppC *this,HINSTANCE param_1,undefined4 param_2,undefined4 par
           if (pSVar14 != (StartSystemTy *)0x0) {
             StartSystemTy::StartSystemTy(pSVar14,pAVar20);
           }
-          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-          (**(code **)PTR_0081176c->vtable)();
-          AppClassTy::AddSystem(pAVar20,(int *)PTR_0081176c,0);
+          (*g_startSystem_0081176C->vtable->InitSystem)(g_startSystem_0081176C);
+          AppClassTy::AddSystem(pAVar20,(int *)g_startSystem_0081176C,0);
           local_1c = 0x60ff;
           *(undefined4 *)&pAVar20[1].field_0x2e10 = 1;
           *(undefined4 *)&pAVar20->field_0x117c = 1;
@@ -803,7 +803,7 @@ switchD_0056b4ce_caseD_47:
       cVar3 = *(char *)(PTR_00857168->field_0004 + 4);
       pAVar20->field_0x1180 = 8;
       pAVar20->field_0x112d = cVar3 + -0x30;
-      iVar8 = thunk_FUN_0056e9e0(pAVar20,1);
+      iVar8 = sub_0056E9E0((STAppC *)pAVar20,1);
       if (iVar8 == 0) {
         RaiseInternalException
                   (local_30,g_overwriteContext_007ED77C,"E:\\__titans\\tapp.cpp",600);
@@ -835,9 +835,9 @@ switchD_0056b4ce_caseD_47:
             g_currentExceptionFrame = local_204.previous;
             RaiseInternalException(iVar8,0,"E:\\__titans\\tapp.cpp",0x23e);
           }
-          thunk_FUN_0056ef50((AnonShape_0056EF50_CAB83E9D *)pAVar20);
-          thunk_FUN_0056f040((AnonShape_0056F040_86F75ABE *)pAVar20);
-          thunk_FUN_0056ebe0((int)pAVar20);
+          sub_0056EF50((STAppC *)pAVar20);
+          sub_0056F040((STAppC *)pAVar20);
+          sub_0056EBE0((STAppC *)pAVar20);
           *(undefined4 *)&pAVar20[1].field_0x2e10 = 0;
           break;
         default:
@@ -861,9 +861,8 @@ switchD_0056b4ce_caseD_47:
           if (pSVar14 != (StartSystemTy *)0x0) {
             StartSystemTy::StartSystemTy(pSVar14,pAVar20);
           }
-          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-          (**(code **)PTR_0081176c->vtable)();
-          AppClassTy::AddSystem(pAVar20,(int *)PTR_0081176c,0);
+          (*g_startSystem_0081176C->vtable->InitSystem)(g_startSystem_0081176C);
+          AppClassTy::AddSystem(pAVar20,(int *)g_startSystem_0081176C,0);
           local_1c = 0x60ff;
         }
         else {
@@ -1213,7 +1212,11 @@ switchD_0056b4ce_caseD_57:
   if ((pAVar20->field_0xe26 == '\0') && (local_1c != 0x6104)) {
     local_1c = 0x6123;
   }
+/* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
 cf_common_exit_0056C034:
+  local_560._4_4_ = local_2c;
+  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+  local_560._0_4_ = 0x56c03f;
   (*pAVar20->vtable->vfunc_18)();
   g_currentExceptionFrame = local_b0.previous;
   return 1;

@@ -21,7 +21,7 @@ void __thiscall FSGSTy::JoinGameCtrls(FSGSTy *this)
   ccFntTy **ppcVar11;
   ushort *puVar12;
   ccFntTy *local_dac [8];
-  uint *local_d8c;
+  DArrayTy *local_d8c;
   undefined4 local_d80;
   undefined4 local_d7c;
   undefined4 local_d78;
@@ -108,10 +108,10 @@ void __thiscall FSGSTy::JoinGameCtrls(FSGSTy *this)
     ptVar4 = Library::DKW::DDX::FUN_006c4880(DAT_0080759c,0x13,0x5e,0x174,0x175,8);
     this_00->field_1E9A = ptVar4;
     pDVar5 = Library::DKW::TBL::SArrayCreate((DArrayTy *)0x0,1,1);
-    this_00->field_1AE8 = &pDVar5->flags;
+    this_00->field_1AE8 = pDVar5;
     Library::DKW::TBL::FUN_006b5aa0(&pDVar5->flags,&DAT_008016a0);
     pDVar5 = Library::DKW::TBL::SArrayCreate((DArrayTy *)0x0,1,1);
-    this_00->field_1AEC = &pDVar5->flags;
+    this_00->field_1AEC = pDVar5;
     Library::DKW::TBL::FUN_006b5aa0(&pDVar5->flags,&DAT_008016a0);
     pDVar5 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,0x14,0x25c,10);
     this_00->field_1EBE = pDVar5;
@@ -173,8 +173,8 @@ void __thiscall FSGSTy::JoinGameCtrls(FSGSTy *this)
     local_4b8 = local_4f8;
     local_498 = local_4f8;
     local_a0 = local_4f8;
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-    (*(code *)this_00->field_000C->vtable->field_0008)(7,&this_00->field_1B20,0,local_520,0);
+    (*this_00->field_000C->vtable->CreateObject)
+              ((SystemClassTy *)this_00->field_000C,7,&this_00->field_1B20,(int *)0x0,local_520,0);
     if (this_00->field_1CDF != 0xffffffff) {
       Library::DKW::DDX::FUN_006b34d0
                 ((uint *)this_00->field_1D23,this_00->field_1CDF,0xfffffffe,this_00->field_1CF7,
@@ -216,14 +216,14 @@ void __thiscall FSGSTy::JoinGameCtrls(FSGSTy *this)
     local_d60 = local_d80;
     local_d20 = local_d80;
     local_53c = local_d80;
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-    (*(code *)this_00->field_000C->vtable->field_0008)(6,&this_00->field_1AC4,0,local_dac,0);
+    (*this_00->field_000C->vtable->CreateObject)
+              ((SystemClassTy *)this_00->field_000C,6,&this_00->field_1AC4,(int *)0x0,local_dac,0);
     local_d8c = this_00->field_1AEC;
     local_dac[1] = (ccFntTy *)0x89;
     local_dac[4] = (ccFntTy *)0x154;
     local_dac[7] = (ccFntTy *)0x10;
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-    (*(code *)this_00->field_000C->vtable->field_0008)(6,&this_00->field_1AC8,0,local_dac,0);
+    (*this_00->field_000C->vtable->CreateObject)
+              ((SystemClassTy *)this_00->field_000C,6,&this_00->field_1AC8,(int *)0x0,local_dac,0);
     this_00->field_1EC2 = 0;
     this_00->field_1EC6 = 0xffffffff;
     this_00->field_1ECA = 0;

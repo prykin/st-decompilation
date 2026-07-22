@@ -1,5 +1,10 @@
 
-uint __fastcall FUN_0062b4a0(int param_1)
+/* [STMethodOwnerApplier] Structural method owner recovered as STParticleC.
+   Evidence: this_call_owners=[STParticleC]; agreed_this_calls=2; incoming_this_accesses=3;
+   incoming_edx_uses=0; incoming_stack_parameter_uses=0; direct_non_thunk_callers=0;
+   incoming_ecx_receiver_callers=0; attributed_named_callers=1; owner_evidence_coverage=adequate */
+
+uint __thiscall STParticleC::sub_0062B4A0(STParticleC *this)
 
 {
   int iVar1;
@@ -14,8 +19,7 @@ uint __fastcall FUN_0062b4a0(int param_1)
   uint local_c;
   int local_8;
 
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  local_14 = *(int *)(param_1 + 0x46);
+  local_14 = this->field_0046;
   sVar3 = (short)(local_14 >> 0x1f);
   if (local_14 < 0) {
     uVar6 = (uint)(short)(((short)(local_14 / 0xc9) + sVar3) -
@@ -27,8 +31,7 @@ uint __fastcall FUN_0062b4a0(int param_1)
                          (short)((longlong)local_14 * 0x28c1979 >> 0x3f));
     local_c = uVar6;
   }
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  iVar1 = *(int *)(param_1 + 0x4a);
+  iVar1 = this->field_004A;
   sVar3 = (short)(iVar1 >> 0x1f);
   if (iVar1 < 0) {
     iVar7 = (int)(short)(((short)(iVar1 / 0xc9) + sVar3) -
@@ -40,8 +43,7 @@ uint __fastcall FUN_0062b4a0(int param_1)
                         (short)((longlong)iVar1 * 0x28c1979 >> 0x3f));
     local_8 = iVar7;
   }
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  iVar2 = *(int *)(param_1 + 0x4e);
+  iVar2 = this->field_004E;
   sVar3 = (short)(iVar2 >> 0x1f);
   if (iVar2 < 0) {
     local_10 = (int)(short)(((short)(iVar2 / 200) + sVar3) -

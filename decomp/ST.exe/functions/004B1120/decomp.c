@@ -10,11 +10,12 @@ FUN_004b1120(int param_1,Global_sub_004B1120_param_2Enum param_2,int *param_3,in
 {
   short sVar1;
   int iVar2;
-  int iVar3;
-  int *piVar4;
-  int iVar5;
+  dword dVar3;
+  int iVar4;
+  int *piVar5;
   int iVar6;
   int iVar7;
+  int iVar8;
   STFishC *local_18;
   int local_14;
   int local_10;
@@ -24,29 +25,29 @@ FUN_004b1120(int param_1,Global_sub_004B1120_param_2Enum param_2,int *param_3,in
 
   local_14 = -1;
   if (param_6 == 0) {
-    piVar4 = (int *)0x0;
+    piVar5 = (int *)0x0;
   }
   else {
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-    piVar4 = *(int **)(param_6 + 0x18);
+    piVar5 = *(int **)(param_6 + 0x18);
   }
   local_10 = thunk_FUN_004ae0b0((short)*param_3,*param_4,*param_5,param_2,param_1,(undefined4 *)0x0,
-                                (int *)0x0,(int *)0x0,0,piVar4);
+                                (int *)0x0,(int *)0x0,0,piVar5);
   if (local_10 == 0) {
     if ((&STGroupBoatCVTable.vfunc_04)[param_2] == (void *)0x1) {
       param_7 = 0;
       param_1 = 0;
       param_6 = 0;
-      if (PTR_007fa150 != (DArrayTy *)0x0) {
-        PTR_007fa150->iteratorIndex = 0;
-        iVar2 = FUN_006b1190((AnonShape_006B1190_EDB2B5FD *)PTR_007fa150,&local_18);
+      if (g_dArray_007FA150 != (DArrayTy *)0x0) {
+        g_dArray_007FA150->iteratorIndex = 0;
+        iVar2 = FUN_006b1190(g_dArray_007FA150,&local_18);
         if (-1 < iVar2) {
           do {
             if (local_18 != (STFishC *)0x0) {
               switch(param_2) {
               case CASE_38:
-                iVar2 = (*local_18->vtable->vfunc_2C)();
-                if (iVar2 == 0xdc) {
+                dVar3 = (*local_18->vtable->slot_2C)(local_18);
+                if (dVar3 == 0xdc) {
 LAB_004b1226:
                   STFishC::sub_004162B0(local_18,&local_6,&local_8,&local_a);
                   if (((g_worldGrid.cells
@@ -65,19 +66,19 @@ LAB_004b1226:
                 break;
               case CASE_39:
               case CASE_5E:
-                iVar2 = (*local_18->vtable->vfunc_2C)();
-                if (iVar2 == 0xdd) goto LAB_004b1226;
+                dVar3 = (*local_18->vtable->slot_2C)(local_18);
+                if (dVar3 == 0xdd) goto LAB_004b1226;
                 break;
               case CASE_4F:
-                iVar2 = (*local_18->vtable->vfunc_2C)();
-                if (iVar2 == 0xde) goto LAB_004b1226;
+                dVar3 = (*local_18->vtable->slot_2C)(local_18);
+                if (dVar3 == 0xde) goto LAB_004b1226;
                 break;
               case CASE_61:
-                iVar2 = (*local_18->vtable->vfunc_2C)();
-                if (iVar2 == 0xe0) goto LAB_004b1226;
+                dVar3 = (*local_18->vtable->slot_2C)(local_18);
+                if (dVar3 == 0xe0) goto LAB_004b1226;
               }
             }
-            iVar2 = FUN_006b1190((AnonShape_006B1190_EDB2B5FD *)PTR_007fa150,&local_18);
+            iVar2 = FUN_006b1190(g_dArray_007FA150,&local_18);
           } while (-1 < iVar2);
           if (local_10 != 0) {
             *param_3 = param_6;
@@ -98,98 +99,98 @@ LAB_004b1226:
       if (1 < sVar1) {
         do {
           local_10 = iVar2;
-          iVar5 = 0;
+          iVar6 = 0;
           iVar2 = local_14;
           if ((param_7 < local_14) && (g_worldGrid.sizeZ != 1 && -1 < g_worldGrid.sizeZ + -1)) {
             do {
-              iVar6 = *param_3 - iVar2;
-              if (iVar6 <= *param_3 + iVar2) {
+              iVar7 = *param_3 - iVar2;
+              if (iVar7 <= *param_3 + iVar2) {
                 do {
-                  if ((-1 < iVar6) && (iVar6 < g_worldGrid.sizeX)) {
-                    iVar7 = *param_4 - iVar2;
-                    if ((-1 < iVar7) && (iVar7 < g_worldGrid.sizeY)) {
+                  if ((-1 < iVar7) && (iVar7 < g_worldGrid.sizeX)) {
+                    iVar8 = *param_4 - iVar2;
+                    if ((-1 < iVar8) && (iVar8 < g_worldGrid.sizeY)) {
                       if (param_6 == 0) {
-                        piVar4 = (int *)0x0;
+                        piVar5 = (int *)0x0;
                       }
                       else {
                         /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-                        piVar4 = *(int **)(param_6 + 0x18);
+                        piVar5 = *(int **)(param_6 + 0x18);
                       }
-                      iVar3 = thunk_FUN_004ae0b0((short)iVar6,iVar7,iVar5,param_2,param_1,
-                                                 (undefined4 *)0x0,(int *)0x0,(int *)0x0,0,piVar4);
+                      iVar4 = thunk_FUN_004ae0b0((short)iVar7,iVar8,iVar6,param_2,param_1,
+                                                 (undefined4 *)0x0,(int *)0x0,(int *)0x0,0,piVar5);
                       iVar2 = local_14;
-                      if (iVar3 == 0) goto LAB_004b13a9;
+                      if (iVar4 == 0) goto LAB_004b13a9;
 LAB_004b14f8:
-                      *param_3 = iVar6;
-                      *param_4 = iVar7;
+                      *param_3 = iVar7;
+                      *param_4 = iVar8;
                       goto LAB_004b150e;
                     }
 LAB_004b13a9:
-                    iVar7 = *param_4 + iVar2;
-                    if ((-1 < iVar7) && (iVar7 < g_worldGrid.sizeY)) {
+                    iVar8 = *param_4 + iVar2;
+                    if ((-1 < iVar8) && (iVar8 < g_worldGrid.sizeY)) {
                       if (param_6 == 0) {
-                        piVar4 = (int *)0x0;
+                        piVar5 = (int *)0x0;
                       }
                       else {
                         /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-                        piVar4 = *(int **)(param_6 + 0x18);
+                        piVar5 = *(int **)(param_6 + 0x18);
                       }
-                      iVar3 = thunk_FUN_004ae0b0((short)iVar6,iVar7,iVar5,param_2,param_1,
-                                                 (undefined4 *)0x0,(int *)0x0,(int *)0x0,0,piVar4);
+                      iVar4 = thunk_FUN_004ae0b0((short)iVar7,iVar8,iVar6,param_2,param_1,
+                                                 (undefined4 *)0x0,(int *)0x0,(int *)0x0,0,piVar5);
                       iVar2 = local_14;
-                      if (iVar3 != 0) goto LAB_004b14f8;
+                      if (iVar4 != 0) goto LAB_004b14f8;
                     }
                   }
-                  iVar6 = iVar6 + 1;
-                } while (iVar6 <= *param_3 + iVar2);
+                  iVar7 = iVar7 + 1;
+                } while (iVar7 <= *param_3 + iVar2);
               }
-              iVar6 = *param_4;
-              iVar7 = (iVar6 - iVar2) + 1;
-              if (iVar7 <= iVar6 + -1 + iVar2) {
+              iVar7 = *param_4;
+              iVar8 = (iVar7 - iVar2) + 1;
+              if (iVar8 <= iVar7 + -1 + iVar2) {
                 do {
-                  if ((-1 < iVar7) && (iVar7 < g_worldGrid.sizeY)) {
-                    iVar6 = iVar6 - iVar2;
-                    if ((-1 < iVar6) && (iVar6 < g_worldGrid.sizeX)) {
+                  if ((-1 < iVar8) && (iVar8 < g_worldGrid.sizeY)) {
+                    iVar7 = iVar7 - iVar2;
+                    if ((-1 < iVar7) && (iVar7 < g_worldGrid.sizeX)) {
                       if (param_6 == 0) {
-                        piVar4 = (int *)0x0;
+                        piVar5 = (int *)0x0;
                       }
                       else {
                         /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-                        piVar4 = *(int **)(param_6 + 0x18);
+                        piVar5 = *(int **)(param_6 + 0x18);
                       }
-                      iVar3 = thunk_FUN_004ae0b0((short)iVar6,iVar7,iVar5,param_2,param_1,
-                                                 (undefined4 *)0x0,(int *)0x0,(int *)0x0,0,piVar4);
+                      iVar4 = thunk_FUN_004ae0b0((short)iVar7,iVar8,iVar6,param_2,param_1,
+                                                 (undefined4 *)0x0,(int *)0x0,(int *)0x0,0,piVar5);
                       iVar2 = local_14;
-                      if (iVar3 != 0) goto LAB_004b1504;
+                      if (iVar4 != 0) goto LAB_004b1504;
                     }
-                    iVar6 = *param_3 + iVar2;
-                    if ((-1 < iVar6) && (iVar6 < g_worldGrid.sizeX)) {
+                    iVar7 = *param_3 + iVar2;
+                    if ((-1 < iVar7) && (iVar7 < g_worldGrid.sizeX)) {
                       if (param_6 == 0) {
-                        piVar4 = (int *)0x0;
+                        piVar5 = (int *)0x0;
                       }
                       else {
                         /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-                        piVar4 = *(int **)(param_6 + 0x18);
+                        piVar5 = *(int **)(param_6 + 0x18);
                       }
-                      iVar3 = thunk_FUN_004ae0b0((short)iVar6,iVar7,iVar5,param_2,param_1,
-                                                 (undefined4 *)0x0,(int *)0x0,(int *)0x0,0,piVar4);
+                      iVar4 = thunk_FUN_004ae0b0((short)iVar7,iVar8,iVar6,param_2,param_1,
+                                                 (undefined4 *)0x0,(int *)0x0,(int *)0x0,0,piVar5);
                       iVar2 = local_14;
-                      if (iVar3 != 0) {
+                      if (iVar4 != 0) {
 LAB_004b1504:
-                        *param_3 = iVar6;
-                        *param_4 = iVar7;
+                        *param_3 = iVar7;
+                        *param_4 = iVar8;
 LAB_004b150e:
-                        *param_5 = iVar5;
+                        *param_5 = iVar6;
                         return 1;
                       }
                     }
                   }
-                  iVar7 = iVar7 + 1;
-                  iVar6 = *param_4;
-                } while (iVar7 <= iVar6 + -1 + iVar2);
+                  iVar8 = iVar8 + 1;
+                  iVar7 = *param_4;
+                } while (iVar8 <= iVar7 + -1 + iVar2);
               }
-              iVar5 = iVar5 + 1;
-            } while (iVar5 < g_worldGrid.sizeZ + -1);
+              iVar6 = iVar6 + 1;
+            } while (iVar6 < g_worldGrid.sizeZ + -1);
           }
           local_14 = iVar2 + 1;
           iVar2 = local_10;

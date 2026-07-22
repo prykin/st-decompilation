@@ -1,0 +1,5 @@
+0046C478  pointer  0046b28e
+0046C47C  pointer  0046b2d9
+0046C480  pointer  0046c3c5
+0046C484  pointer  0046b3a7
+0046C488  pointer  0046b37b

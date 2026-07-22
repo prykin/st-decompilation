@@ -111,8 +111,7 @@ LAB_0057b6ff:
         }
         local_38 = param_1;
         local_3a = *(undefined2 *)((int)local_8 + uVar4 * 8 + 6);
-        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-        (*(code *)PTR_00802a38->vtable->field_0008)(0x106,0,0,local_60,0);
+        (*g_playSystem_00802A38->vtable->vfunc_08)(0x106,0,0,local_60,0);
         uVar4 = uVar4 + 1;
       } while ((int)uVar4 < (int)(uVar2 + 1));
     }

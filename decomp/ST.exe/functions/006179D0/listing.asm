@@ -1,4 +1,4 @@
-FUN_006179d0:
+JumpManagC::sub_006179D0:
 006179D0  8B 51 5E                  MOV EDX,dword ptr [ECX + 0x5e]
 006179D3  56                        PUSH ESI
 006179D4  85 D2                     TEST EDX,EDX

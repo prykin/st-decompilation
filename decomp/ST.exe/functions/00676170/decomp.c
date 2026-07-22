@@ -33,7 +33,7 @@ uint * __cdecl _GetStaffGrpExch(undefined4 param_1)
     RaiseInternalException(errorCode,0,"E:\\__titans\\ai\\ai_mdef.cpp",0x126);
     return (uint *)0x0;
   }
-  if (g_sTAllPlayers_007FA174 == (STAllPlayersC *)0x0) {
+  if (g_allPlayers_007FA174 == (STAllPlayersC *)0x0) {
     this = (STGroupBoatC *)0x0;
   }
   else {

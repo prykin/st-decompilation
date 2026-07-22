@@ -6,7 +6,7 @@ undefined4 FUN_00672930(int param_1)
 
   uVar1 = DAT_00811944;
   DAT_00811944 = param_1;
-  PTR_thunk_FUN_00673160_007d2d1c = &LAB_00402928;
+  PTR_thunk_FUN_00673160_007d2d1c = thunk_FUN_00673110;
   if (param_1 == 0) {
     PTR_thunk_FUN_00673160_007d2d1c = thunk_FUN_00673160;
   }

@@ -138,8 +138,8 @@ LAB_0053c30d:
     local_34 = 2;
     local_30 = 0xc0b4;
     local_38 = local_58;
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-    (*(code *)this_00->field_000C->vtable->field_0008)(5,&this_00->field_0282,0,local_68,0);
+    (*this_00->field_000C->vtable->CreateObject)
+              ((SystemClassTy *)this_00->field_000C,5,&this_00->field_0282,(int *)0x0,local_68,0);
   }
   g_currentExceptionFrame = local_ac.previous;
   return;

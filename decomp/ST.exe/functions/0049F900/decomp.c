@@ -48,7 +48,7 @@ undefined4 __thiscall STGroupBoatC::Teleport(STGroupBoatC *this,int param_1)
       *(undefined4 *)&local_14->field_0x2e0 = local_14->field_01AB;
       *(undefined4 *)&local_14->field_0x2e4 = local_14->field_01AF;
       local_24 = local_14->field_02D8;
-      local_28 = PTR_00802a38->field_00E4;
+      local_28 = g_playSystem_00802A38->field_00E4;
       local_20 = *(undefined2 *)&local_14->field_0x2dc;
       local_1c = *(undefined2 *)&local_14->field_0x2e0;
       local_16 = *(undefined2 *)&local_14->field_0x2e6;
@@ -61,7 +61,7 @@ undefined4 __thiscall STGroupBoatC::Teleport(STGroupBoatC *this,int param_1)
           if ((short)local_c != -1) {
             pSVar4 = (STBoatC *)
                      STAllPlayersC::GetObjPtr
-                               (g_sTAllPlayers_007FA174,pSVar2->field_0024,local_c,CASE_1);
+                               (g_allPlayers_007FA174,pSVar2->field_0024,local_c,CASE_1);
             if (pSVar4 == (STBoatC *)0x0) {
               RaiseInternalException
                         (-0x5001fffc,g_overwriteContext_007ED77C,
@@ -73,7 +73,7 @@ undefined4 __thiscall STGroupBoatC::Teleport(STGroupBoatC *this,int param_1)
         } while ((int)uVar8 < (int)local_8);
       }
     }
-    if (PTR_00802a38->field_00E4 % 0x19 == 1) {
+    if (g_playSystem_00802A38->field_00E4 % 0x19 == 1) {
       uVar8 = 0;
       if (0 < (int)local_8) {
         do {
@@ -81,13 +81,13 @@ undefined4 __thiscall STGroupBoatC::Teleport(STGroupBoatC *this,int param_1)
           if ((short)local_c != -1) {
             pSVar4 = (STBoatC *)
                      STAllPlayersC::GetObjPtr
-                               (g_sTAllPlayers_007FA174,pSVar2->field_0024,local_c,CASE_1);
+                               (g_allPlayers_007FA174,pSVar2->field_0024,local_c,CASE_1);
             if (pSVar4 == (STBoatC *)0x0) {
               RaiseInternalException
                         (-0x5001fffc,g_overwriteContext_007ED77C,
                          "E:\\__titans\\wlad\\to_grpb.cpp",0xc51);
             }
-            iVar3 = thunk_FUN_0045ff10((int)pSVar4);
+            iVar3 = thunk_FUN_0045ff10((STGameObjC *)pSVar4);
             if (iVar3 == 0x15) break;
             uVar5 = STBoatC::CheckPBoxCmd(pSVar4,CASE_15);
             if (uVar5 == 1) break;

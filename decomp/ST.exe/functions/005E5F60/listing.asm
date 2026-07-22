@@ -1,4 +1,4 @@
-FUN_005e5f60:
+MTestTy::sub_005E5F60:
 005E5F60  8B D1                     MOV EDX,ECX
 005E5F62  56                        PUSH ESI
 005E5F63  57                        PUSH EDI

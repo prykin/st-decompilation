@@ -13,19 +13,19 @@ void __thiscall PopUpTy::AddStr(PopUpTy *this,char *param_1,uint param_2)
   code *pcVar2;
   PopUpTy *this_00;
   int iVar3;
-  AnonShape_006B5570_4D68B99C *pAVar4;
-  AnonShape_006B5570_4D68B99C *pAVar5;
+  DArrayTy *pDVar4;
+  DArrayTy *pDVar5;
   int iVar6;
   char *pcVar7;
   uint uVar8;
   InternalExceptionFrame local_58;
   PopUpTy *local_14;
-  AnonShape_006B5570_4D68B99C *local_10;
-  AnonShape_006B5570_4D68B99C *local_c;
+  DArrayTy *local_10;
+  DArrayTy *local_c;
   uint *local_8;
 
-  local_c = (AnonShape_006B5570_4D68B99C *)0x0;
-  local_10 = (AnonShape_006B5570_4D68B99C *)0x0;
+  local_c = (DArrayTy *)0x0;
+  local_10 = (DArrayTy *)0x0;
   local_8 = (uint *)0x0;
   if (param_1 != (char *)0x0) {
     local_58.previous = g_currentExceptionFrame;
@@ -43,31 +43,31 @@ void __thiscall PopUpTy::AddStr(PopUpTy *this,char *param_1,uint param_2)
       } while (cVar1 != '\0');
       local_8 = Library::DKW::LIB::FUN_006aac10(~uVar8 + 4);
       this_00 = local_14;
-      pAVar4 = local_c;
+      pDVar4 = local_c;
       if (local_8 != (uint *)0x0) {
         wsprintfA((LPSTR)local_8,"%s%1d%s",&DAT_007c6ff0,param_2 & 0xff,param_1);
-        pAVar4 = (AnonShape_006B5570_4D68B99C *)ccFntTy::_TxtToSarr(this_00->field_0094,local_8);
-        local_c = pAVar4;
+        pDVar4 = (DArrayTy *)ccFntTy::_TxtToSarr(this_00->field_0094,local_8);
+        local_c = pDVar4;
         FreeAndNull(&local_8);
       }
-      pAVar5 = local_10;
-      if (pAVar4 != (AnonShape_006B5570_4D68B99C *)0x0) {
-        pAVar5 = (AnonShape_006B5570_4D68B99C *)
-                 ccFntTy::FormSarr(this_00->field_0094,(uint *)pAVar4," ,.;:!?/\\()[]{}",
+      pDVar5 = local_10;
+      if (pDVar4 != (DArrayTy *)0x0) {
+        pDVar5 = (DArrayTy *)
+                 ccFntTy::FormSarr(this_00->field_0094,&pDVar4->flags," ,.;:!?/\\()[]{}",
                                    (&DAT_00807570)[(_DAT_00807348 & 0xff) * 4],0,0xffffffff,1);
-        local_10 = pAVar5;
-        ccFntTy::SepColorStrInSarr(this_00->field_0094,(uint *)pAVar5,(uint *)pAVar5);
-        FUN_006b5570(pAVar4);
+        local_10 = pDVar5;
+        ccFntTy::SepColorStrInSarr(this_00->field_0094,(uint *)pDVar5,(uint *)pDVar5);
+        FUN_006b5570(pDVar4);
       }
-      if (pAVar5 != (AnonShape_006B5570_4D68B99C *)0x0) {
+      if (pDVar5 != (DArrayTy *)0x0) {
         iVar3 = 0;
-        if (0 < (int)pAVar5->field_0008) {
-          if ((int)pAVar5->field_0008 < 1) {
+        if (0 < (int)pDVar5->elementSize) {
+          if ((int)pDVar5->elementSize < 1) {
             pcVar7 = (char *)0x0;
             goto LAB_0052d48d;
           }
           do {
-            pcVar7 = *(char **)(pAVar5->field_0014 + iVar3 * 4);
+            pcVar7 = *(char **)(pDVar5->growCapacity + iVar3 * 4);
 LAB_0052d48d:
             iVar6 = Library::DKW::TBL::FUN_006b5aa0(this_00->field_0098,pcVar7);
             if ((byte)this_00->field_009C < DAT_00807346) {
@@ -89,7 +89,7 @@ LAB_0052d48d:
                 uVar8 = *(uint *)(this_00->field_0090 + 2);
               }
               *(uint *)(&this_00->field_0x50 + (uint)(byte)this_00->field_009C * 4) = uVar8;
-              FUN_006b2800((int)PTR_008075a8,
+              FUN_006b2800(PTR_008075a8,
                            *(uint *)(&this_00->field_0x14 + (uint)(byte)this_00->field_009C * 4),
                            uVar8,0x13);
               /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
@@ -102,9 +102,9 @@ LAB_0052d48d:
                          *(uint *)(&this_00->field_0x14 + (uint)(byte)this_00->field_009C * 4));
             }
             iVar3 = iVar3 + 1;
-          } while (iVar3 < (int)pAVar5->field_0008);
+          } while (iVar3 < (int)pDVar5->elementSize);
         }
-        FUN_006b5570(pAVar5);
+        FUN_006b5570(pDVar5);
       }
       g_currentExceptionFrame = local_58.previous;
       return;

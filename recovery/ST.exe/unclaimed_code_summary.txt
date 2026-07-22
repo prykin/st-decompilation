@@ -1,0 +1,14 @@
+Program: ST.exe
+Candidates: 169
+create_apply: 0
+review_only: 169
+orphan_direct_jump_entries_seen: 0
+raw_nonexec_executable_pointer_values: 1120
+raw_nonexec_direct_jump_pointer_values: 0
+data_referenced_code: 11
+seh_filter: 158
+
+Safety boundary:
+  create_apply=1 requires an exact referenced direct-JMP chain.
+  Raw direct targets, MSVC EH filters/funclets, jump-only tails, and
+  merely plausible instruction bytes remain review-only.

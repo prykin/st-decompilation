@@ -26,7 +26,7 @@ void __thiscall STBoatC::NotReadyForLoading(STBoatC *this,int param_1)
     }
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  iVar2 = FUN_006e62d0(PTR_00802a38,this->field_058E,(int *)&local_14);
+  iVar2 = FUN_006e62d0(g_playSystem_00802A38,this->field_058E,(int *)&local_14);
   if (iVar2 != -4) {
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
     (**(code **)(*local_14 + 0xac))(this->field_0018);

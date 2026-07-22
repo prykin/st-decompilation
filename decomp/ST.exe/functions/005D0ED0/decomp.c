@@ -104,7 +104,7 @@ SettMapMTy::ChangePlayerList
         /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
         CheckPlList(local_8,unaff_EDI);
         if ((pSVar4->field_1E26 != CASE_C) && (pSVar4->field_1E26 != CASE_10)) {
-          thunk_FUN_005d1380((AnonShape_005D1380_CEECF2C3 *)pSVar4);
+          sub_005D1380(pSVar4);
         }
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
         (*(code *)pSVar4->field_0000->field_002C)();

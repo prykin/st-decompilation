@@ -51,14 +51,14 @@ int __thiscall STManRuinC::GetMessage(STManRuinC *this,STMessage *message)
       g_currentExceptionFrame = local_58.previous;
       return 0;
     }
-    local_14 = (byte *)thunk_FUN_00631220(local_c,(int *)&local_10);
-    STPlaySystemC::SaveObjData(PTR_00802a38,PTR_DAT_0079d198,local_14,local_10,0xc);
+    local_14 = (byte *)sub_00631220(local_c,(int *)&local_10);
+    STPlaySystemC::SaveObjData(g_playSystem_00802A38,PTR_DAT_0079d198,local_14,local_10,0xc);
     FreeAndNull(&local_14);
     g_currentExceptionFrame = local_58.previous;
     return 0;
   }
   if (SVar1 == MESS_SHARED_0003) {
-    thunk_FUN_00631560((int)local_c);
+    sub_00631560(local_c);
     g_currentExceptionFrame = local_58.previous;
     return 0;
   }
@@ -79,8 +79,7 @@ int __thiscall STManRuinC::GetMessage(STManRuinC *this,STMessage *message)
             iVar5 = thunk_FUN_00630ff0();
             puVar6[2] = iVar5;
             if (iVar5 != 0) {
-              puVar7 = SubmarineTitans::Recovered::HiddenThis::AnonReceiver_006308F0::
-                       thunk_FUN_00630c50((AnonReceiver_006308F0 *)this_00,*puVar6,puVar6[3],1,1,0);
+              puVar7 = sub_00630C50(this_00,*puVar6,puVar6[3],1,1,0);
               if (puVar7 == (ushort *)0x0) {
                 puVar6[2] = 0;
               }
@@ -96,7 +95,7 @@ int __thiscall STManRuinC::GetMessage(STManRuinC *this,STMessage *message)
                            *(uint *)(DAT_00806724 + 0x30 + (uint)*(byte *)(puVar6 + 8) * 4),
                            (int)*(short *)(DAT_00806724 + 0x2c));
             }
-            if (PTR_00802a38->field_00E4 % 6 == 0) {
+            if (g_playSystem_00802A38->field_00E4 % 6 == 0) {
               *(char *)(puVar6 + 8) = *(char *)(puVar6 + 8) + '\x01';
             }
             if (*(short *)(DAT_00806724 + 0x23) <= (short)(ushort)*(byte *)(puVar6 + 8)) {
@@ -107,7 +106,7 @@ int __thiscall STManRuinC::GetMessage(STManRuinC *this,STMessage *message)
         }
       }
     }
-    thunk_FUN_00631010((AnonShape_00631010_DBA5BE90 *)this_00);
+    sub_00631010(this_00);
     g_currentExceptionFrame = local_58.previous;
     return 0;
   }
@@ -128,9 +127,9 @@ LAB_006304e7:
   }
   else {
     if (*(int *)(local_8 + 6) == 2) {
-      thunk_FUN_00631390(this_00,(undefined4 *)local_8);
+      sub_00631390(this_00,(undefined4 *)local_8);
       this_00->field_0071 = this_00->field_0065;
-      thunk_FUN_00631450((AnonShape_00631450_C4E92303 *)this_00);
+      sub_00631450(this_00);
       goto LAB_00630558;
     }
     if (local_8 == (ushort *)0x0) goto LAB_006304e7;

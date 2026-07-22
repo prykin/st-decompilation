@@ -12,7 +12,8 @@ undefined4 * __thiscall AiTactClassTy::PrepareToSave(AiTactClassTy *this,uint *p
   AiTactClassTy *pAVar2;
   int errorCode;
   undefined4 *puVar3;
-  int iVar4;
+  byte *pbVar4;
+  int iVar5;
   InternalExceptionFrame local_4c;
   AiTactClassTy *local_8;
 
@@ -28,18 +29,25 @@ undefined4 * __thiscall AiTactClassTy::PrepareToSave(AiTactClassTy *this,uint *p
     else {
       puVar3 = &local_8->field_0020;
     }
-    puVar3 = TactDataPack(puVar3,param_1);
-    *puVar3 = 0x38e;
-    puVar3[3] = 1;
-    *(undefined4 *)((int)puVar3 + 0x5e) = pAVar2->field_001C;
-    *(undefined2 *)((int)puVar3 + 0x105) = 0;
+    pbVar4 = TactDataPack(puVar3,param_1);
+    pbVar4[0] = 0x8e;
+    pbVar4[1] = 3;
+    pbVar4[2] = 0;
+    pbVar4[3] = 0;
+    pbVar4[0xc] = 1;
+    pbVar4[0xd] = 0;
+    pbVar4[0xe] = 0;
+    pbVar4[0xf] = 0;
+    *(undefined4 *)(pbVar4 + 0x5e) = pAVar2->field_001C;
+    pbVar4[0x105] = 0;
+    pbVar4[0x106] = 0;
     g_currentExceptionFrame = local_4c.previous;
-    return puVar3;
+    return (undefined4 *)pbVar4;
   }
   g_currentExceptionFrame = local_4c.previous;
-  iVar4 = ReportDebugMessage("E:\\__titans\\ai\\ai_tact.cpp",0x81,0,errorCode,"%s",
+  iVar5 = ReportDebugMessage("E:\\__titans\\ai\\ai_tact.cpp",0x81,0,errorCode,"%s",
                              "AiTactClassTy::PrepareToSave");
-  if (iVar4 != 0) {
+  if (iVar5 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   RaiseInternalException(errorCode,0,"E:\\__titans\\ai\\ai_tact.cpp",0x82);

@@ -1,0 +1,14 @@
+005B20F0  pointer  005b0e31
+005B20F4  pointer  005b0e14
+005B20F8  pointer  005b0e40
+005B20FC  byte  0h
+005B20FD  byte  0h
+005B20FE  byte  2h
+005B20FF  byte  0h
+005B2100  byte  0h
+005B2101  byte  2h
+005B2102  byte  2h
+005B2103  byte  2h
+005B2104  byte  1h
+005B2105  byte  1h
+005B2106  byte  1h

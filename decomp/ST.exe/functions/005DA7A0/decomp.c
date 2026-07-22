@@ -30,7 +30,7 @@ undefined4 FUN_005da7a0(void)
         }
       }
       if (bVar2) {
-        pcVar5 = LoadResourceString(0x254b,HINSTANCE_00807618);
+        pcVar5 = LoadResourceString(0x254b,g_module_00807618);
         pcVar5 = FUN_006c8170(pcVar5);
         if (pcVar5 != (char *)0x0) {
           iVar3 = *puVar1;

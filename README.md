@@ -90,6 +90,33 @@ decomp/ST.exe/functions/005B3C30/
 callees, strings, globals, tags, source evidence, and other context. Library and
 thunk implementations are represented without duplicating unnecessary bodies.
 Per-function fingerprints allow unchanged bodies to be reused on later exports.
+`call_relations.jsonl` records each call's direct entry address, complete thunk
+chain, resolved implementation, and final prototype, so overloaded methods are
+never joined merely because their names match.
+
+The exporter also audits every initialized executable section. Bytes not owned
+by any Ghidra function are inventoried in `coverage_summary.json` and
+`unclaimed_ranges.jsonl`; non-padding ranges receive text-only byte/listing
+directories under `decomp/ST.exe/unclaimed/`. This exposes missed code, embedded
+tables, import-thunk runs, and other meaningful leftovers without checking in
+another binary copy. Raw ranges with conservative x86 call/return evidence are
+marked `probable_code`; this is a review hint, not an automatic function boundary.
+The audit also scans aligned words in non-executable blocks for otherwise
+undefined code pointers. MSVC exception-filter/funclet clusters are separated
+from ordinary data-referenced code instead of being reported as unreferenced
+standalone functions. A raw table pointer which lands on a `JMP` thunk is carried
+through to its target and reported as `table_callback_target`.
+The matching `STUnclaimedCodeAnalyzer/Applier` pair can promote the exact,
+live-anchored callback entries and complete direct-`JMP` chains into real Ghidra
+functions. Direct raw targets, EH funclets, shared jump tails, and merely
+probable bytes stay review-only.
+
+`STObjectFactoryAnalyzer/Applier` separately recovers the game's central
+zero-terminated `{objectTypeId, factory}` registry. It installs the exact
+no-argument `__cdecl` factory ABI, creates `STObjectTypeId` and a typed registry
+record, and uses allocation-size/matched-constructor evidence to recover concrete
+`CreateOwner` functions without guessing from code similarity. Shared factory
+targets are applied once, and manual names or prototypes are never replaced.
 
 The exporter also normalizes proven terminal `INT3` artifacts and compiler
 bulk-zero loops (`REP STOS*`) into standalone `STDebugBreak`/`memset` source, and
@@ -146,9 +173,12 @@ The current work focuses on recovering what the binary can prove:
 - the common `STMessage` envelope and compatible `GetMessage` handler family;
 - physical and owner-resolved vtables (including one-slot and secondary-subobject
   tables), virtual slots, direct-JMP thunks, constructors, and class relationships;
+- exact table/CALL-referenced function boundaries recovered from previously
+  unclaimed executable bytes, without promoting EH funclets or probable code;
 - non-virtual method ownership, cleanup/destructor shapes, and direct-call prototype propagation;
 - reverse return-type recovery from typed arguments, class receivers, and field/global stores;
 - one-shot audited repair of stale automatically propagated prototypes;
+- read-only contradiction auditing for stale manual/protected types;
 - verified semantics for high-fanout utility functions and conservative `void`/boolean/noreturn returns;
 - conservative class layouts and field types;
 - packed global record arrays recovered from x86 stride, range, and field-access evidence;

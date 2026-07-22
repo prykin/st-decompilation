@@ -1,0 +1,5 @@
+00477C34  pointer  00476d29
+00477C38  pointer  00476d5c
+00477C3C  pointer  00476ddc
+00477C40  pointer  0047707e
+00477C44  pointer  00476e30

@@ -61,7 +61,7 @@ void __thiscall HelpPanelTy::DrawTitle(HelpPanelTy *this,UINT param_1,int param_
   }
   iVar13 = -1;
   iVar12 = -1;
-  puVar6 = (uint *)LoadResourceString(param_1,HINSTANCE_00807618);
+  puVar6 = (uint *)LoadResourceString(param_1,g_module_00807618);
   ccFntTy::WrStr(pHVar4->field_01E4,puVar6,iVar12,iVar13,iVar5);
   local_8 = uVar9 + 0x14;
   if (param_2 != 0) {
@@ -78,13 +78,13 @@ void __thiscall HelpPanelTy::DrawTitle(HelpPanelTy *this,UINT param_1,int param_
     uVar14 = 3;
     iVar12 = -1;
     iVar5 = -1;
-    puVar6 = (uint *)LoadResourceString(resourceId,HINSTANCE_00807618);
+    puVar6 = (uint *)LoadResourceString(resourceId,g_module_00807618);
     ccFntTy::WrStr(pHVar4->field_01E0,puVar6,iVar5,iVar12,uVar14);
     local_8 = uVar9 + 0x23;
   }
   if (param_3 != 0) {
     ccFntTy::SetSurf(pHVar4->field_01E0,(int)pHVar4->field_0068,0,0x21,local_8,0x19c,0xf);
-    pcVar7 = LoadResourceString(param_3,HINSTANCE_00807618);
+    pcVar7 = LoadResourceString(param_3,g_module_00807618);
     uVar9 = 0xffffffff;
     do {
       pcVar11 = pcVar7;

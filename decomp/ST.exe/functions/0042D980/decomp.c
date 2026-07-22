@@ -15,7 +15,7 @@ STAllPlayersC::GetActiveCenter
   code *pcVar3;
   int iVar4;
   undefined4 uVar5;
-  STFishC *pSVar6;
+  STGameObjC *pSVar6;
   uint uVar7;
   int iVar8;
   int iVar9;
@@ -56,13 +56,12 @@ STAllPlayersC::GetActiveCenter
           DArrayGetElement(pDVar1,local_18,&local_14);
           if ((short)local_14 != -1) {
             local_1c = local_1c + 1;
-            pSVar6 = (STFishC *)
-                     GetObjPtr(g_sTAllPlayers_007FA174,
+            pSVar6 = GetObjPtr(g_allPlayers_007FA174,
                                (char)g_playerRuntime[DAT_0080874d].tempSlots[0][0].playerId,local_14
                                ,CASE_1);
             STFishC::sub_004162B0
-                      (pSVar6,(undefined2 *)&local_8,(undefined2 *)&local_c,(undefined2 *)&local_10)
-            ;
+                      ((STFishC *)pSVar6,(undefined2 *)&local_8,(undefined2 *)&local_c,
+                       (undefined2 *)&local_10);
             iVar8 = iVar8 + local_8;
             iVar9 = iVar9 + local_c;
             iVar4 = iVar4 + local_10;
@@ -97,12 +96,11 @@ joined_r0x0042de37:
       return 0;
     }
     if (iVar4 == 0x1ae) {
-      pSVar6 = (STFishC *)
-               GetObjPtr(g_sTAllPlayers_007FA174,
-                         (char)g_playerRuntime[uVar7].tempSlots[0][0].playerId,
-                         (uint)(ushort)g_playerRuntime[uVar7].tempSlots[0][0].objectId,CASE_3);
+      pSVar6 = GetObjPtr(g_allPlayers_007FA174,(char)g_playerRuntime[uVar7].tempSlots[0][0].playerId
+                         ,(uint)(ushort)g_playerRuntime[uVar7].tempSlots[0][0].objectId,CASE_3);
       STFishC::sub_004162B0
-                (pSVar6,(undefined2 *)&local_8,(undefined2 *)&local_c,(undefined2 *)&local_10);
+                ((STFishC *)pSVar6,(undefined2 *)&local_8,(undefined2 *)&local_c,
+                 (undefined2 *)&local_10);
       if (param_1 != (undefined2 *)0x0) {
         *param_1 = (undefined2)local_8;
       }
@@ -130,12 +128,12 @@ joined_r0x0042de37:
       if (iVar4 == 0x1a4) {
         SVar10 = CASE_5;
 LAB_0042da27:
-        pSVar6 = (STFishC *)
-                 GetObjPtr(g_sTAllPlayers_007FA174,
+        pSVar6 = GetObjPtr(g_allPlayers_007FA174,
                            (char)g_playerRuntime[uVar7].tempSlots[1][0].playerId,
                            (uint)(ushort)g_playerRuntime[uVar7].tempSlots[1][0].objectId,SVar10);
         STFishC::sub_004162B0
-                  (pSVar6,(undefined2 *)&local_8,(undefined2 *)&local_c,(undefined2 *)&local_10);
+                  ((STFishC *)pSVar6,(undefined2 *)&local_8,(undefined2 *)&local_c,
+                   (undefined2 *)&local_10);
       }
       else {
         if (iVar4 != 0x1b8) {
@@ -147,12 +145,12 @@ LAB_0042dbdf:
           }
           goto joined_r0x0042dc09;
         }
-        pSVar6 = (STFishC *)
-                 GetObjPtr(g_sTAllPlayers_007FA174,
+        pSVar6 = GetObjPtr(g_allPlayers_007FA174,
                            (char)g_playerRuntime[uVar7].tempSlots[1][0].playerId,
                            (uint)(ushort)g_playerRuntime[uVar7].tempSlots[1][0].objectId,CASE_6);
         STFishC::sub_004162B0
-                  (pSVar6,(undefined2 *)&local_8,(undefined2 *)&local_c,(undefined2 *)&local_10);
+                  ((STFishC *)pSVar6,(undefined2 *)&local_8,(undefined2 *)&local_c,
+                   (undefined2 *)&local_10);
       }
       if (param_1 != (undefined2 *)0x0) {
         *param_1 = (undefined2)local_8;
@@ -180,13 +178,12 @@ joined_r0x0042dc56:
           DArrayGetElement(pDVar1,local_18,&local_14);
           if ((short)local_14 != -1) {
             local_1c = local_1c + 1;
-            pSVar6 = (STFishC *)
-                     GetObjPtr(g_sTAllPlayers_007FA174,
+            pSVar6 = GetObjPtr(g_allPlayers_007FA174,
                                (char)g_playerRuntime[DAT_0080874d].tempSlots[1][0].playerId,local_14
                                ,CASE_1);
             STFishC::sub_004162B0
-                      (pSVar6,(undefined2 *)&local_8,(undefined2 *)&local_c,(undefined2 *)&local_10)
-            ;
+                      ((STFishC *)pSVar6,(undefined2 *)&local_8,(undefined2 *)&local_c,
+                       (undefined2 *)&local_10);
             iVar8 = iVar8 + local_8;
             iVar9 = iVar9 + local_c;
             iVar4 = iVar4 + local_10;
@@ -214,12 +211,12 @@ joined_r0x0042dc56:
     }
     if (iVar4 != 0) {
       if (iVar4 == 0x5a) {
-        pSVar6 = (STFishC *)
-                 GetObjPtr(g_sTAllPlayers_007FA174,
+        pSVar6 = GetObjPtr(g_allPlayers_007FA174,
                            (char)g_playerRuntime[uVar7].tempSlots[1][0].playerId,
                            (uint)(ushort)g_playerRuntime[uVar7].tempSlots[1][0].objectId,CASE_4);
         STFishC::sub_004162B0
-                  (pSVar6,(undefined2 *)&local_8,(undefined2 *)&local_c,(undefined2 *)&local_10);
+                  ((STFishC *)pSVar6,(undefined2 *)&local_8,(undefined2 *)&local_c,
+                   (undefined2 *)&local_10);
         if (param_1 != (undefined2 *)0x0) {
           *param_1 = (undefined2)local_8;
         }

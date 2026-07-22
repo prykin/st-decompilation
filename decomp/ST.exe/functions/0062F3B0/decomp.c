@@ -79,9 +79,10 @@ LAB_0062f450:
     if (iVar2 == 0) {
       STT3DSprC::SetCurFase(this_00,'\x0e',param_2[6]);
       thunk_FUN_004ad380(this_00,local_10 / 2,local_c / 2 - 0xe);
-      thunk_FUN_004ad3c0(this_00,(float)param_2[3] * _DAT_007904f8 * _DAT_007904f0,
-                         (float)param_2[4] * _DAT_007904f8 * _DAT_007904f0,
-                         (float)param_2[5] * _DAT_007904f8 * _DAT_007904f0 + _DAT_007904fc);
+      STT3DSprC::sub_004AD3C0
+                (this_00,(float)param_2[3] * _DAT_007904f8 * _DAT_007904f0,
+                 (float)param_2[4] * _DAT_007904f8 * _DAT_007904f0,
+                 (float)param_2[5] * _DAT_007904f8 * _DAT_007904f0 + _DAT_007904fc);
       g_currentExceptionFrame = local_5c.previous;
       return local_18;
     }

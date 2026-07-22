@@ -1,4 +1,4 @@
-FUN_0061f530:
+STLightC::sub_0061F530:
 0061F530  53                        PUSH EBX
 0061F531  8B D9                     MOV EBX,ECX
 0061F533  8B 83 A3 00 00 00         MOV EAX,dword ptr [EBX + 0xa3]

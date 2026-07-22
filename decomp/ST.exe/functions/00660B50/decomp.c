@@ -16,7 +16,7 @@ FUN_00660b50(AnonShape_00660620_6BCED4D7 *param_1,undefined4 param_2,short param
     local_8 = (short)param_5;
     /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
     local_c = (AnonShape_00660620_6BCED4D7 *)CONCAT22(param_4,param_3);
-    if ((param_1->field_007D != -2) && (g_sTAllPlayers_007FA174 != (STAllPlayersC *)0x0)) {
+    if ((param_1->field_007D != -2) && (g_allPlayers_007FA174 != (STAllPlayersC *)0x0)) {
       /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
       pSVar1 = thunk_FUN_0042b760(param_1->field_0024,
                                   CONCAT22((short)((uint)param_2 >> 0x10),param_1->field_007D));
@@ -35,7 +35,7 @@ FUN_00660b50(AnonShape_00660620_6BCED4D7 *param_1,undefined4 param_2,short param
       {
         /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
         _local_14 = CONCAT22(param_4,param_3);
-        if ((param_1->field_007D != -2) && (g_sTAllPlayers_007FA174 != (STAllPlayersC *)0x0)) {
+        if ((param_1->field_007D != -2) && (g_allPlayers_007FA174 != (STAllPlayersC *)0x0)) {
           local_10 = (short)param_5;
           local_c = param_1;
           /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */

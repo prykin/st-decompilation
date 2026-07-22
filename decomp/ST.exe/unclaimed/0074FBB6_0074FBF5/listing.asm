@@ -1,0 +1,16 @@
+0074FBB6  pointer  0074fb1d
+0074FBBA  pointer  0074fb82
+0074FBBE  pointer  0074fb82
+0074FBC2  pointer  0074fb33
+0074FBC6  pointer  0074fb26
+0074FBCA  pointer  0074fb33
+0074FBCE  pointer  0074fb3a
+0074FBD2  pointer  0074fb89
+0074FBD6  pointer  0074fb82
+0074FBDA  pointer  0074fb1d
+0074FBDE  pointer  0074fb94
+0074FBE2  pointer  0074fb89
+0074FBE6  pointer  0074fb94
+0074FBEA  pointer  0074fb94
+0074FBEE  pointer  0074fb94
+0074FBF2  pointer  0074fb16

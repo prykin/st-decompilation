@@ -75,19 +75,18 @@ LAB_00475068:
         STDebugBreak(); /* noreturn in standalone pseudocode */
       }
       if ((this->field_05A6 == (ushort *)0x0) &&
-         (iVar10 = FUN_006e62d0(PTR_00802a38,this->field_05A2,(int *)&this->field_05A6),
+         (iVar10 = FUN_006e62d0(g_playSystem_00802A38,this->field_05A2,(int *)&this->field_05A6),
          iVar10 == -4)) {
         RaiseInternalException
                   (0xffff,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\To_boat.cpp",0x2fea
                   );
       }
       if ((*(int *)(this->field_05A6 + 999) != 0) && (this->field_0716 < this->field_0712)) {
-        uVar3 = (ulonglong)PTR_00802a38->field_00E4 % 0x19;
+        uVar3 = (ulonglong)g_playSystem_00802A38->field_00E4 % 0x19;
         if ((int)uVar3 == 0) {
           iVar10 = this->field_06F7 - CASE_1;
-          if ((int)((uVar3 << 0x20 | (ulonglong)PTR_00802a38->field_00E4) % 100) == 0) {
-            /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-            (*(code *)this->vtable->field_0090)(3,0x363);
+          if ((int)((uVar3 << 0x20 | (ulonglong)g_playSystem_00802A38->field_00E4) % 100) == 0) {
+            (*this->vtable->vfunc_90)(3,0x363);
             thunk_FUN_00637930(this->field_01ED,1,-100,-100,-100,0,0);
           }
           iVar6 = this->field_0712;
@@ -115,7 +114,7 @@ LAB_00475068:
       local_44 = this->field_0008;
       local_3c = 0x129;
       local_40 = 2;
-      SystemClassTy::PostMessage((SystemClassTy *)PTR_00802a38,local_4c);
+      SystemClassTy::PostMessage((SystemClassTy *)g_playSystem_00802A38,local_4c);
 switchD_00474a47_caseD_2:
       return 2;
     }
@@ -139,8 +138,8 @@ switchD_00474a47_caseD_2:
           return 2;
         }
         if ((this->field_0041 == (short)(this->field_05AA * 0xc9 + 100)) &&
-           (this->field_0043 == (short)(this->field_05AC * 0xc9 + 100))) {
-          if (this->field_0045 != (short)(this->field_05AE * 200 + 100)) {
+           (this->field_0043 == (short)(*(short *)&this->field_0x5ac * 0xc9 + 100))) {
+          if (this->field_0045 != (short)(*(short *)&this->field_0x5ae * 200 + 100)) {
             this->field_05C4 = 3;
             return 2;
           }
@@ -153,7 +152,7 @@ switchD_00474a47_caseD_2:
         goto switchD_00474a47_caseD_2;
       case 3:
         this->field_05C0 = 0;
-        iVar10 = FUN_006e62d0(PTR_00802a38,this->field_05A2,(int *)&param_1);
+        iVar10 = FUN_006e62d0(g_playSystem_00802A38,this->field_05A2,(int *)&param_1);
         if (iVar10 != -4) {
           NotReadyForLoading(param_1,this->field_0018);
           return 2;
@@ -176,14 +175,14 @@ switchD_00474a47_caseD_2:
       }
     }
     if (this->field_05C4 == 1) {
-      iVar10 = (ushort)(this->field_05AE * 200) + 100;
+      iVar10 = (ushort)(*(short *)&this->field_0x5ae * 200) + 100;
       /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-      iVar12 = CONCAT22((short)((uint)pSVar11 >> 0x10),this->field_05AC * 0xc9) + 100;
+      iVar12 = CONCAT22((short)((uint)pSVar11 >> 0x10),*(short *)&this->field_0x5ac * 0xc9) + 100;
       /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
       iVar6 = CONCAT22((short)((uint)iVar10 >> 0x10),this->field_05AA * 0xc9) + 100;
       uVar5 = (undefined2)((uint)iVar12 >> 0x10);
-      /* ST_PSEUDO[raw_indirect_call,packed_or_unaligned_piece]: expected typed vtable/callback call with explicit __thiscall receiver; expected named packed member, bit extract/compose, or unaligned load */
-      uVar5 = (*(code *)this->vtable->field_0010)
+      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+      uVar5 = (*this->vtable->vfunc_10)
                         (CONCAT22(uVar5,this->field_0041),
                          CONCAT22((short)((uint)iVar6 >> 0x10),this->field_0043),
                          CONCAT22(uVar5,this->field_0045),iVar6,iVar12,iVar10);
@@ -197,8 +196,7 @@ switchD_00474a47_caseD_2:
         if (uVar7 == 0) {
           this->field_05C4 = 3;
         }
-        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-        iVar10 = (*(code *)this->vtable->field_00D8)();
+        iVar10 = (*this->vtable->vfunc_D8)();
         return (-(uint)(iVar10 != 0) & 0xfffffffd) + 2;
       }
       iVar10 = ReportDebugMessage("E:\\__titans\\wlad\\To_boat.cpp",0x2f8f,0,0,"%s",
@@ -210,8 +208,8 @@ switchD_00474a47_caseD_2:
     }
     if (this->field_05C4 == 3) {
       sub_00415B30(this,this->field_0041,this->field_0043,this->field_0045,
-                   this->field_05AA * 0xc9 + 100,this->field_05AC * 0xc9 + 100,
-                   this->field_05AE * 200 + 100,this->field_0061);
+                   this->field_05AA * 0xc9 + 100,*(short *)&this->field_0x5ac * 0xc9 + 100,
+                   *(short *)&this->field_0x5ae * 200 + 100,this->field_0061);
       this->field_05C4 = 4;
     }
     iVar10 = this->field_05C4;
@@ -287,8 +285,7 @@ switchD_00474a47_caseD_2:
       if (local_1c == 0) {
         this->field_05C4 = 6 - (uint)(this->field_006C != this->field_05B0);
       }
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-      iVar10 = (*(code *)this->vtable->field_00D8)();
+      iVar10 = (*this->vtable->vfunc_D8)();
       return (-(uint)(iVar10 != 0) & 0xfffffffd) + 2;
     }
     if (iVar10 == 5) {
@@ -310,7 +307,7 @@ switchD_00474a47_caseD_2:
       if (iVar10 == 6) {
         if (this->field_006E == 0x2f) {
           this->field_0076 = 0;
-          iVar10 = FUN_006e62d0(PTR_00802a38,this->field_05A2,(int *)&param_1);
+          iVar10 = FUN_006e62d0(g_playSystem_00802A38,this->field_05A2,(int *)&param_1);
           if (iVar10 == -4) {
             iVar10 = ReportDebugMessage("E:\\__titans\\wlad\\To_boat.cpp",0x2fd1,0,0,
                                         "%s","STBoatC::WaitLoad WAITLOAD_PREPARE ptr=NULL 2");
@@ -322,15 +319,13 @@ switchD_00474a47_caseD_2:
           ReadyForLoading(param_1,(void *)this->field_0018);
           this->field_05C4 = 7;
         }
-        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-        iVar10 = (*(code *)this->vtable->field_00D8)();
+        iVar10 = (*this->vtable->vfunc_D8)();
         return (-(uint)(iVar10 != 0) & 0xfffffffd) + 2;
       }
       if (iVar10 != 7) goto LAB_00475068;
     }
   }
-  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-  iVar10 = (*(code *)this->vtable->field_00D8)();
+  iVar10 = (*this->vtable->vfunc_D8)();
   return (-(uint)(iVar10 != 0) & 0xfffffffd) + 2;
 }
 

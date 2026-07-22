@@ -1,4 +1,4 @@
-FUN_00631560:
+STManRuinC::sub_00631560:
 00631560  56                        PUSH ESI
 00631561  8B F1                     MOV ESI,ECX
 00631563  8B 4E 34                  MOV ECX,dword ptr [ESI + 0x34]

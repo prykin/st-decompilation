@@ -1,4 +1,4 @@
-FUN_0065e360:
+AiFltClassTy::sub_0065E360:
 0065E360  55                        PUSH EBP
 0065E361  8B EC                     MOV EBP,ESP
 0065E363  8B C1                     MOV EAX,ECX

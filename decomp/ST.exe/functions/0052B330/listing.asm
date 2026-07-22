@@ -1,4 +1,4 @@
-FUN_0052b330:
+CPanelTy::sub_0052B330:
 0052B330  56                        PUSH ESI
 0052B331  8B F1                     MOV ESI,ECX
 0052B333  33 C0                     XOR EAX,EAX
@@ -162,7 +162,7 @@ LAB_0052b512:
 0052B57E  5F                        POP EDI
 0052B57F  5E                        POP ESI
 0052B580  C3                        RET
-FUN_0052b330::cf_common_exit_0052B581:
+CPanelTy::sub_0052B330::cf_common_exit_0052B581:
 0052B581  8B 86 B3 0D 00 00         MOV EAX,dword ptr [ESI + 0xdb3]
 0052B587  85 C0                     TEST EAX,EAX
 0052B589  0F 84 CC FD FF FF         JZ 0x0052b35b

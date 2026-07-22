@@ -1,0 +1,5 @@
+004D9678  pointer  004d966e
+004D967C  pointer  004d966e
+004D9680  pointer  004d9635
+004D9684  pointer  004d9673
+004D9688  pointer  004d965e

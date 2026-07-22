@@ -14,14 +14,14 @@ void __thiscall FUN_005ef6c0(void *this,int param_1)
     /* ST_PSEUDO[unresolved_register_input,packed_or_unaligned_piece]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention; expected named packed member, bit extract/compose, or unaligned load */
     this_00 = (STBoatC *)
               STAllPlayersC::GetObjPtr
-                        (g_sTAllPlayers_007FA174,*(char *)((int)this + 0x2a3),
+                        (g_allPlayers_007FA174,*(char *)((int)this + 0x2a3),
                          CONCAT22((short)((uint)in_EAX >> 0x10),*(short *)((int)this + 0x2ab)),
                          CASE_1);
     if ((this_00 != (STBoatC *)0x0) && (this_00->field_0018 == *(uint *)((int)this + 0x2a7)))
     goto LAB_005ef720;
   }
   if (*(int *)((int)this + 0x2a7) != 0) {
-    iVar1 = FUN_006e62d0(PTR_00802a38,*(int *)((int)this + 0x2a7),(int *)&local_8);
+    iVar1 = FUN_006e62d0(g_playSystem_00802A38,*(int *)((int)this + 0x2a7),(int *)&local_8);
     if (iVar1 != -4) {
       this_00 = local_8;
     }

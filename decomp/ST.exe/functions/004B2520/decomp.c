@@ -87,7 +87,7 @@ LAB_004b266b:
               }
               /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
               if (((this != (STWorldObject *)0x0) && (this[1].vtable < (STWorldObjectVTable *)0x8))
-                 && (((PTR_00802a38 == (STPlaySystemC *)0x0 ||
+                 && (((g_playSystem_00802A38 == (STPlaySystemC *)0x0 ||
                       ((byte)(&DAT_008087e9)[(int)this[1].vtable * 0x51] < 8)) &&
                      (iVar8 = (*this->vtable->GetObjectTypeId)(this), uVar11 = g_worldGrid._0_4_,
                      iVar8 == 0x6f)))) {
@@ -146,7 +146,7 @@ LAB_004b288e:
     if (*(int *)puVar1 < 0) {
       *(undefined4 *)&local_30[0x22].field_0x8 = 0;
     }
-    *(uint *)&local_30[0x22].field_0xc = PTR_00802a38->field_00E4;
+    *(uint *)&local_30[0x22].field_0xc = g_playSystem_00802A38->field_00E4;
     /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
     uVar11 = g_worldGrid._0_4_;
   }

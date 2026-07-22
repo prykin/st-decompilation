@@ -1,4 +1,4 @@
-FUN_005a39a0:
+FSGSTy::sub_005A39A0:
 005A39A0  55                        PUSH EBP
 005A39A1  8B EC                     MOV EBP,ESP
 005A39A3  83 EC 0C                  SUB ESP,0xc

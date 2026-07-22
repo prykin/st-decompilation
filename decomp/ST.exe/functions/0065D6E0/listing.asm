@@ -1,4 +1,4 @@
-FUN_0065d6e0:
+AiFltClassTy::sub_0065D6E0:
 0065D6E0  8B C1                     MOV EAX,ECX
 0065D6E2  66 8B 50 7D               MOV DX,word ptr [EAX + 0x7d]
 0065D6E6  66 81 FA FE FF            CMP DX,0xfffe

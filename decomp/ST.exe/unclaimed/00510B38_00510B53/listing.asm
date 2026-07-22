@@ -1,0 +1,7 @@
+00510B38  pointer  005109c8
+00510B3C  pointer  005109e0
+00510B40  pointer  005109ce
+00510B44  pointer  005109e0
+00510B48  pointer  005109d4
+00510B4C  pointer  005109e0
+00510B50  pointer  005109da

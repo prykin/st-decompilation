@@ -35,7 +35,7 @@ int __thiscall HelpStringTy::GetMessage(HelpStringTy *this,STMessage *message)
     switch(message->id) {
     case MESS_ID_NONE:
       if ((local_8->field_012E != 0) &&
-         (DVar7 = FUN_006e51b0(local_8->field_0010),
+         (DVar7 = STAppC::sub_006E51B0(local_8->field_0010),
          this_00->field_0126 <= DVar7 - this_00->field_0122)) {
         memset(&this_00->field_0018, 0, 0x104); /* compiler bulk-zero initialization */
         OutStr(this_00);

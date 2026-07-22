@@ -44,17 +44,17 @@ int __thiscall STJumpMineC::GetMessage(STJumpMineC *this,STMessage *message)
   SVar1 = message->id;
   if (SVar1 < MESS_TORPHIT) {
     if (SVar1 == MESS_SHARED_010F) {
-      local_10 = (byte *)thunk_FUN_00619350(local_8,&local_c);
-      STPlaySystemC::SaveObjData(PTR_00802a38,this_00->field_0018,local_10,local_c);
+      local_10 = (byte *)sub_00619350(local_8,&local_c);
+      STPlaySystemC::SaveObjData(g_playSystem_00802A38,this_00->field_0018,local_10,local_c);
       FreeAndNull(&local_10);
       g_currentExceptionFrame = local_58.previous;
       return 0;
     }
     if (SVar1 == MESS_ID_NONE) {
-      iVar3 = thunk_FUN_00619c70(local_8);
+      iVar3 = sub_00619C70(local_8);
       if (iVar3 != 0) {
         if (this_00->field_0150 == '\0') {
-          uVar4 = thunk_FUN_006191a0(this_00,(int)this_00->field_00C9,(int)this_00->field_00CB);
+          uVar4 = sub_006191A0(this_00,(int)this_00->field_00C9,(int)this_00->field_00CB);
           this_00->field_0150 = (char)uVar4;
           if ((char)uVar4 != '\0') {
             LoadImagJMine(this_00,1);
@@ -64,7 +64,7 @@ int __thiscall STJumpMineC::GetMessage(STJumpMineC *this,STMessage *message)
             return 0;
           }
         }
-        thunk_FUN_00619a20(this_00);
+        sub_00619A20(this_00);
         g_currentExceptionFrame = local_58.previous;
         return 0;
       }
@@ -82,7 +82,7 @@ int __thiscall STJumpMineC::GetMessage(STJumpMineC *this,STMessage *message)
           LoadImagJMine(this_00,1);
         }
         if ((this_00->field_0093 == CASE_5) || (this_00->field_0093 == CASE_0)) {
-          thunk_FUN_006192e0(this_00);
+          sub_006192E0(this_00);
           this_00->field_0093 = CASE_6;
           g_currentExceptionFrame = local_58.previous;
           return 0;
@@ -97,10 +97,10 @@ int __thiscall STJumpMineC::GetMessage(STJumpMineC *this,STMessage *message)
         }
         *(undefined2 *)puVar7 = *(undefined2 *)puVar6;
         local_8->field_001C = DAT_00808754;
-        iVar3 = thunk_FUN_006193e0((AnonShape_006193E0_B2745ECE *)local_8);
+        iVar3 = sub_006193E0(local_8);
         if (iVar3 == 0) {
 LAB_00618ce0:
-          thunk_FUN_006192e0(this_00);
+          sub_006192E0(this_00);
           g_currentExceptionFrame = local_58.previous;
           return 0;
         }
@@ -115,7 +115,7 @@ LAB_00618ce0:
         else {
           this_00->field_0093 = CASE_4;
         }
-        uVar4 = thunk_FUN_006191a0(this_00,(int)this_00->field_00C9,(int)this_00->field_00CB);
+        uVar4 = sub_006191A0(this_00,(int)this_00->field_00C9,(int)this_00->field_00CB);
         this_00->field_0150 = (char)uVar4;
         if ((void *)this_00->field_007D != (void *)0x0) {
           thunk_FUN_00617a20((void *)this_00->field_007D,this_00->field_008B,this_00->field_0018,
@@ -143,8 +143,8 @@ LAB_00618ce0:
   }
   else if (SVar1 == MESS_ID_ALLCREATE) {
     if (((local_8->field_007D != 0) &&
-        (iVar3 = FUN_006e62d0(PTR_00802a38,local_8->field_0079,(int *)&local_14), iVar3 != -4)) &&
-       (this_00->field_007D = local_14, local_14 != (void *)0x0)) {
+        (iVar3 = FUN_006e62d0(g_playSystem_00802A38,local_8->field_0079,(int *)&local_14),
+        iVar3 != -4)) && (this_00->field_007D = local_14, local_14 != (void *)0x0)) {
       thunk_FUN_00617a20(local_14,this_00->field_008B,this_00->field_0018,this_00);
     }
   }

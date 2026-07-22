@@ -65,13 +65,14 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_004EEFB0::FUN_005c8200
             PTR_s_RANDOM_0079c0f4);
   puVar3 = Library::Ourlib::MF32INT::FUN_006f0ec0(0x345,&DAT_00853de4,0,0,0);
   this_00->field_1F3F = puVar3;
-  if (PTR_0081176c->field_02F4 != (ushort *)0x0) {
-    FreeAndNull(&PTR_0081176c->field_02F4);
+  if (g_startSystem_0081176C->field_02F4 != (ushort *)0x0) {
+    FreeAndNull(&g_startSystem_0081176C->field_02F4);
   }
   puVar4 = Library::Ourlib::MFIMG::mfImgLoad(this_00->field_1F3F,0xc,PTR_s_SMALL_MAP_0079c114,2,0);
-  PTR_0081176c->field_02F4 = puVar4;
-  if (PTR_0081176c->field_02F4 != (ushort *)0x0) {
-    FUN_006c7f90(PTR_0081176c->field_02F4,(byte *)0x0,*(HPALETTE *)(DAT_0080759c + 0x4b4),0);
+  g_startSystem_0081176C->field_02F4 = puVar4;
+  if (g_startSystem_0081176C->field_02F4 != (ushort *)0x0) {
+    FUN_006c7f90(g_startSystem_0081176C->field_02F4,(byte *)0x0,*(HPALETTE *)(DAT_0080759c + 0x4b4),
+                 0);
   }
   local_84 = DAT_0080995c;
   puVar3 = &DAT_00809960;
@@ -105,25 +106,23 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_004EEFB0::FUN_005c8200
     puVar3 = puVar3 + 1;
     puVar10 = puVar10 + 1;
   }
-  if (PTR_0080c4c7 != (AnonShape_GLOBAL_0080C4C7_5A4CB754 *)0x0) {
-    FUN_006b5570((AnonShape_006B5570_4D68B99C *)PTR_0080c4c7);
+  if (g_dArray_0080C4C7 != (DArrayTy *)0x0) {
+    FUN_006b5570(g_dArray_0080C4C7);
   }
-  PTR_0080c4c7 = (AnonShape_GLOBAL_0080C4C7_5A4CB754 *)
-                 Library::Ourlib::MFSARR::mfSarLoad
-                           (this_00->field_1F3F,PTR_s_DESCRIPTION_0079c108,0);
-  if (PTR_0080c4c7 == (AnonShape_GLOBAL_0080C4C7_5A4CB754 *)0x0) {
-    PTR_0080c4c7 = (AnonShape_GLOBAL_0080C4C7_5A4CB754 *)
-                   Library::DKW::TBL::SArrayCreate((DArrayTy *)0x0,10,10);
+  g_dArray_0080C4C7 =
+       (DArrayTy *)
+       Library::Ourlib::MFSARR::mfSarLoad(this_00->field_1F3F,PTR_s_DESCRIPTION_0079c108,0);
+  if (g_dArray_0080C4C7 == (DArrayTy *)0x0) {
+    g_dArray_0080C4C7 = Library::DKW::TBL::SArrayCreate((DArrayTy *)0x0,10,10);
   }
-  if (PTR_0080c4cb != (AnonShape_GLOBAL_0080C4CB_D58160AA *)0x0) {
-    FUN_006b5570((AnonShape_006B5570_4D68B99C *)PTR_0080c4cb);
+  if (g_dArray_0080C4CB != (DArrayTy *)0x0) {
+    FUN_006b5570(g_dArray_0080C4CB);
   }
-  PTR_0080c4cb = (AnonShape_GLOBAL_0080C4CB_D58160AA *)
-                 Library::Ourlib::MFSARR::mfSarLoad(this_00->field_1F3F,PTR_s_OBJECTIVES_0079c10c,0)
-  ;
-  if (PTR_0080c4cb == (AnonShape_GLOBAL_0080C4CB_D58160AA *)0x0) {
-    PTR_0080c4cb = (AnonShape_GLOBAL_0080C4CB_D58160AA *)
-                   Library::DKW::TBL::SArrayCreate((DArrayTy *)0x0,10,10);
+  g_dArray_0080C4CB =
+       (DArrayTy *)
+       Library::Ourlib::MFSARR::mfSarLoad(this_00->field_1F3F,PTR_s_OBJECTIVES_0079c10c,0);
+  if (g_dArray_0080C4CB == (DArrayTy *)0x0) {
+    g_dArray_0080C4CB = Library::DKW::TBL::SArrayCreate((DArrayTy *)0x0,10,10);
   }
   memset(&DAT_0080c3c3, 0, 0x104); /* compiler bulk-zero initialization */
   iVar2 = 0;

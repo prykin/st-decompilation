@@ -79,7 +79,7 @@ SetAccelerator(int param_1,undefined4 param_2,undefined4 param_3,undefined4 para
   }
   if (g_dArray_008026F0 != (DArrayTy *)0x0) {
     g_dArray_008026F0->iteratorIndex = 0;
-    uVar3 = FUN_006b1190((AnonShape_006B1190_EDB2B5FD *)g_dArray_008026F0,local_100);
+    uVar3 = FUN_006b1190(g_dArray_008026F0,local_100);
     if (-1 < (int)uVar3) {
       do {
         iVar2 = 0x13;
@@ -104,7 +104,7 @@ SetAccelerator(int param_1,undefined4 param_2,undefined4 param_3,undefined4 para
           g_currentExceptionFrame = local_b4.previous;
           return;
         }
-        uVar3 = FUN_006b1190((AnonShape_006B1190_EDB2B5FD *)g_dArray_008026F0,local_100);
+        uVar3 = FUN_006b1190(g_dArray_008026F0,local_100);
         if ((int)uVar3 < 0) {
           g_currentExceptionFrame = local_b4.previous;
           return;

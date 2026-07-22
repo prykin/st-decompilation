@@ -1,15 +1,7 @@
 function_address	target	status	detail
-0046AA50	parameter:1	unchanged	type=unchanged
-0046EFD0	parameter:1	unchanged	type=unchanged
-004B7D00	parameter:1	unchanged	type=unchanged
+0040C080	parameter:2	disabled	apply flags are 0
+00423D80	parameter:1	disabled	apply flags are 0
+0044CD20	parameter:1	disabled	apply flags are 0
 0068FC70	parameter:1	disabled	apply flags are 0
-006B0C70	parameter:0	unchanged	type=unchanged
-006B4170	parameter:0	unchanged	type=unchanged
-006B55F0	parameter:0	unchanged	type=unchanged
 006BBE40	parameter:1	disabled	apply flags are 0
-006BFE70	parameter:2	unchanged	type=unchanged
-006D2820	parameter:1	unchanged	type=unchanged
-00711110	parameter:1	unchanged	type=unchanged
-007111C0	parameter:1	unchanged	type=unchanged
-0072F260	parameter:1	unchanged	type=unchanged
-0075FB30	parameter:0	unchanged	type=unchanged
+007474F4	parameter:0	disabled	apply flags are 0

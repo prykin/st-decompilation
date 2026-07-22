@@ -42,7 +42,7 @@ void __thiscall CampaignTy::AnimationCampaign(CampaignTy *this)
     RaiseInternalException(iVar3,0,"E:\\__titans\\Start\\camp_obj.cpp",0x1b3);
     return;
   }
-  if (PTR_0081176c->field_0028 == 0) goto LAB_00592b82;
+  if (g_startSystem_0081176C->field_0028 == 0) goto LAB_00592b82;
   if (local_8->field_1BE7 != '\0') goto LAB_00592b7c;
   local_24[5] = local_8->field_1BE8;
   puVar7 = &local_8->field_1BD7;
@@ -313,10 +313,11 @@ LAB_00592b82:
   local_24[5] = 0x2e;
   local_24[6] = 0x24c;
   do {
-    pAVar1 = *(AnonShape_GLOBAL_0081175C_57F682DD **)((int)&PTR_0081176c->vtable + local_24[6]);
+    pAVar1 = *(AnonShape_GLOBAL_0081175C_57F682DD **)
+              ((int)&g_startSystem_0081176C->vtable + local_24[6]);
     if (pAVar1 != (AnonShape_GLOBAL_0081175C_57F682DD *)0x0) {
-      piVar8 = (int *)((int)&PTR_0081176c->field_025C + local_24[5]);
-      if ((&PTR_0081176c->field_0x270)[local_24[5]] == '\0') {
+      piVar8 = (int *)((int)&g_startSystem_0081176C->field_025C + local_24[5]);
+      if ((&g_startSystem_0081176C->field_0x270)[local_24[5]] == '\0') {
         uVar9 = piVar8[2];
       }
       else {

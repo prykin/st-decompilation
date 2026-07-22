@@ -1,0 +1,13 @@
+005AC574  pointer  005ab672
+005AC578  pointer  005ab654
+005AC57C  byte  0h
+005AC57D  byte  0h
+005AC57E  byte  0h
+005AC57F  byte  1h
+005AC580  byte  1h
+005AC581  byte  1h
+005AC582  byte  1h
+005AC583  byte  1h
+005AC584  byte  0h
+005AC585  byte  0h
+005AC586  byte  0h

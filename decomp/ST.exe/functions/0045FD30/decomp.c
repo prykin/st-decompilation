@@ -34,8 +34,7 @@ undefined4 __thiscall STBoatC::StopMove(STBoatC *this,void *param_1)
       }
     }
     this->field_00E8 = 0;
-    SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00417FF0::sub_004167A0
-              ((AnonReceiver_00417FF0 *)this);
+    sub_004167A0(this);
     this->field_00FD = 1;
     thunk_FUN_0040cdb0(this_00,(uint)(ushort)this->field_0032);
     return 1;
@@ -56,8 +55,7 @@ undefined4 __thiscall STBoatC::StopMove(STBoatC *this,void *param_1)
                 (int)sVar1].objects[(byte)this->field_008E];
     }
     if (pSVar7 == this) {
-      SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00417FF0::sub_004167A0
-                ((AnonReceiver_00417FF0 *)this);
+      sub_004167A0(this);
       this->field_00FD = 1;
       thunk_FUN_0040cdb0(this_00,(uint)(ushort)this->field_0032);
       return 1;

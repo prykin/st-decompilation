@@ -1,5 +1,10 @@
 
-void __fastcall FUN_00602be0(AnonShape_00602BE0_B1CC517D *param_1)
+/* [STMethodOwnerApplier] Structural method owner recovered as STDestC.
+   Evidence: this_call_owners=[STDestC]; agreed_this_calls=2; incoming_this_accesses=27;
+   incoming_edx_uses=0; incoming_stack_parameter_uses=0; direct_non_thunk_callers=0;
+   incoming_ecx_receiver_callers=0; attributed_named_callers=1; owner_evidence_coverage=adequate */
+
+void __thiscall STDestC::sub_00602BE0(STDestC *this)
 
 {
   VisibleClassTy *pVVar1;
@@ -8,64 +13,62 @@ void __fastcall FUN_00602be0(AnonShape_00602BE0_B1CC517D *param_1)
   int local_c;
   int local_8;
 
-  if (((int)param_1->field_039B < 0) && (iVar2 = thunk_FUN_006029c0(), iVar2 == 0)) {
+  if ((this->field_039B < 0) && (iVar2 = thunk_FUN_006029c0(), iVar2 == 0)) {
     return;
   }
-  if (param_1->field_036E == 2) {
-    if (param_1->field_037A == '\x01') {
+  if (this->field_036E == 2) {
+    if (this->field_037A == '\x01') {
       /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-      FUN_006e9350(param_1->field_0211,param_1->field_01ED,
-                   *(uint *)(DAT_00806724 + 0x30 + param_1->field_0397 * 4),
+      FUN_006e9350((void *)this->field_0211,this->field_01ED,
+                   *(uint *)(DAT_00806724 + 0x30 + this->field_0397 * 4),
                    (int)*(short *)(DAT_00806724 + 0x2c));
     }
-    if ((PTR_00802a38->field_00E4 & 3) == 0) {
-      param_1->field_0397 = param_1->field_0397 + (int)param_1->field_039F;
+    if ((g_playSystem_00802A38->field_00E4 & 3) == 0) {
+      this->field_0397 = this->field_0397 + (int)this->field_039F;
     }
-    if (param_1->field_039F < '\x01') {
-      if (param_1->field_0397 < 0) {
-        FUN_006e9350(param_1->field_0211,param_1->field_01ED,0,0);
-        param_1->field_036E = 1;
+    if (this->field_039F < '\x01') {
+      if (this->field_0397 < 0) {
+        FUN_006e9350((void *)this->field_0211,this->field_01ED,0,0);
+        this->field_036E = 1;
       }
     }
-    else if (((int)*(short *)(DAT_00806724 + 0x23) <= param_1->field_0397) &&
-            (param_1->field_036E = 0, param_1->field_037A == '\x01')) {
-      thunk_FUN_004ad430((int)&param_1->field_0x1d5);
-      param_1->field_037A = 0;
+    else if (((int)*(short *)(DAT_00806724 + 0x23) <= this->field_0397) &&
+            (this->field_036E = 0, this->field_037A == '\x01')) {
+      thunk_FUN_004ad430((int)&this->field_01D5);
+      this->field_037A = 0;
     }
   }
-  else if (param_1->field_036E != 4) {
-    puVar3 = SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00602E90::thunk_FUN_00602e90
-                       ((AnonReceiver_00602E90 *)param_1);
-    param_1->field_03AB = puVar3;
+  else if (this->field_036E != 4) {
+    puVar3 = sub_00602E90(this);
+    this->field_03AB = puVar3;
     if (puVar3 != (undefined4 *)0x0) {
-      thunk_FUN_004ad310((STT3DSprC *)&param_1->field_0x1d5);
-      param_1->field_039B = 0xffffffff;
-      param_1->field_036E = 4;
+      thunk_FUN_004ad310((STT3DSprC *)&this->field_01D5);
+      this->field_039B = -1;
+      this->field_036E = 4;
     }
   }
   pVVar1 = g_visibleClass_00802A88;
-  if ((g_visibleClass_00802A88 != (VisibleClassTy *)0x0) && (-1 < (int)param_1->field_039B)) {
-    iVar2 = (int)param_1->field_0259;
+  if ((g_visibleClass_00802A88 != (VisibleClassTy *)0x0) && (-1 < this->field_039B)) {
+    iVar2 = (int)this->field_0259;
     if (((DAT_0080874d != -1) &&
         ((((g_visibleClass_00802A88->field_00F8 != 0 &&
            (thunk_FUN_00558c00(g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,
-                               (int)param_1->field_0255,(int)param_1->field_0257,&local_8,&local_c),
+                               (int)this->field_0255,(int)this->field_0257,&local_8,&local_c),
            -1 < iVar2)) && (iVar2 < 5)) && ((-1 < local_8 && (local_8 < pVVar1->field_0030)))))) &&
        ((local_c = g_centeredOffsets5[iVar2] + local_c, -1 < local_c &&
         (((local_c < pVVar1->field_0034 && (pVVar1->field_004C != (byte *)0x0)) &&
          (pVVar1->field_004C[local_8 + local_c * pVVar1->field_0030] == 0)))))) {
-      if (param_1->field_037A == '\0') {
+      if (this->field_037A == '\0') {
         return;
       }
-      thunk_FUN_004ad430((int)&param_1->field_0x1d5);
-      param_1->field_037A = 0;
+      thunk_FUN_004ad430((int)&this->field_01D5);
+      this->field_037A = 0;
       return;
     }
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-    (**(code **)(*(int *)param_1 + 0xd8))();
-    if (param_1->field_037A == '\0') {
-      thunk_FUN_004ad460(&param_1->field_0x1d5,0);
-      param_1->field_037A = 1;
+    (*this->vtable->vfunc_D8)();
+    if (this->field_037A == '\0') {
+      thunk_FUN_004ad460(&this->field_01D5,0);
+      this->field_037A = 1;
       return;
     }
   }

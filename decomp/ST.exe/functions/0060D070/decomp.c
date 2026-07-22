@@ -18,7 +18,7 @@ undefined4 __fastcall FUN_0060d070(AnonShape_0060D070_1487100A *param_1)
       iVar1 = param_1->field_0244;
       iVar5 = local_8 * 0x44;
       if (*(int *)(iVar5 + iVar1) != 0) {
-        iVar6 = (PTR_00802a38->field_00E4 - *(int *)(iVar5 + 0x3c + iVar1)) *
+        iVar6 = (g_playSystem_00802A38->field_00E4 - *(int *)(iVar5 + 0x3c + iVar1)) *
                 *(int *)(iVar5 + 0x38 + iVar1);
         if (iVar6 < *(int *)(iVar5 + 4 + iVar1)) {
           if (((param_1->field_022F == '\0') && (local_8 == 0)) &&

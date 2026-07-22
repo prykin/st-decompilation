@@ -1,0 +1,16 @@
+006FD3E4  pointer  006fcca0
+006FD3E8  pointer  006fcce8
+006FD3EC  pointer  006fccf6
+006FD3F0  pointer  006fcd3f
+006FD3F4  pointer  006fce30
+006FD3F8  pointer  006fce88
+006FD3FC  pointer  006fcea2
+006FD400  pointer  006fcef2
+006FD404  pointer  006fd067
+006FD408  pointer  006fd0b0
+006FD40C  pointer  006fd0c1
+006FD410  pointer  006fd10e
+006FD414  pointer  006fd1ea
+006FD418  pointer  006fd236
+006FD41C  pointer  006fd245
+006FD420  pointer  006fd293

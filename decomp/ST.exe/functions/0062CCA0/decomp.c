@@ -14,9 +14,9 @@ int __thiscall STManRub3C::GetMessage(STManRub3C *this,STMessage *message)
 {
   STMessageId SVar1;
   code *pcVar2;
-  STManRub3C *pSVar3;
+  STManRub3C *this_00;
+  int iVar3;
   int iVar4;
-  int iVar5;
   InternalExceptionFrame local_58;
   byte *local_14;
   uint local_10;
@@ -27,14 +27,14 @@ int __thiscall STManRub3C::GetMessage(STManRub3C *this,STMessage *message)
   local_58.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_58;
   local_c = this;
-  iVar4 = Library::MSVCRT::__setjmp3(local_58.jumpBuffer,0);
-  pSVar3 = local_c;
-  if (iVar4 != 0) {
+  iVar3 = Library::MSVCRT::__setjmp3(local_58.jumpBuffer,0);
+  this_00 = local_c;
+  if (iVar3 != 0) {
     g_currentExceptionFrame = local_58.previous;
-    iVar5 = ReportDebugMessage("E:\\__titans\\nick\\to_rab3m.cpp",0x4e,0,iVar4,"%s",
+    iVar4 = ReportDebugMessage("E:\\__titans\\nick\\to_rab3m.cpp",0x4e,0,iVar3,"%s",
                                "STManRub3C::GetMessage");
-    if (iVar5 == 0) {
-      RaiseInternalException(iVar4,0,"E:\\__titans\\nick\\to_rab3m.cpp",0x50);
+    if (iVar4 == 0) {
+      RaiseInternalException(iVar3,0,"E:\\__titans\\nick\\to_rab3m.cpp",0x50);
       return 0xffff;
     }
     STDebugBreak(); /* noreturn in standalone pseudocode */
@@ -52,7 +52,7 @@ int __thiscall STManRub3C::GetMessage(STManRub3C *this,STMessage *message)
       local_c->field_00B4 = DAT_00808754;
     }
     else {
-      thunk_FUN_0062d840(local_c,(undefined4 *)local_8);
+      sub_0062D840(local_c,(undefined4 *)local_8);
     }
     if ((local_8 != (ushort *)0x0) && (g_cMf32_00806754 != (cMf32 *)0x0)) {
       cMf32::RecMemFree(g_cMf32_00806754,(uint *)&local_8);
@@ -60,16 +60,17 @@ int __thiscall STManRub3C::GetMessage(STManRub3C *this,STMessage *message)
   }
   else {
     if (SVar1 == MESS_SHARED_0003) {
-      thunk_FUN_0062cf50((int)local_c);
-      thunk_FUN_0062dd40((int)pSVar3);
-      thunk_FUN_0062e130((int)pSVar3);
-      DAT_008117a4 = 0;
+      sub_0062CF50(local_c);
+      sub_0062DD40(this_00);
+      sub_0062E130(this_00);
+      g_manRub3_008117A4 = (STManRub3C *)0x0;
       g_currentExceptionFrame = local_58.previous;
       return 0;
     }
     if (SVar1 == MESS_SHARED_010F) {
-      local_14 = thunk_FUN_0062d670(local_c,&local_10);
-      STPlaySystemC::SaveObjData(PTR_00802a38,PTR_s_RUBBISH_3_0079d080,local_14,local_10,0xc);
+      local_14 = sub_0062D670(local_c,&local_10);
+      STPlaySystemC::SaveObjData
+                (g_playSystem_00802A38,PTR_s_RUBBISH_3_0079d080,local_14,local_10,0xc);
       FreeAndNull(&local_14);
       g_currentExceptionFrame = local_58.previous;
       return 0;

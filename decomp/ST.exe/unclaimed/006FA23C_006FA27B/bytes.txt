@@ -1,0 +1,4 @@
+006FA23C  33 9C 6F 00 6B 9C 6F 00 79 9C 6F 00 B2 9C 6F 00  |3.o.k.o.y.o...o.|
+006FA24C  80 9D 6F 00 B8 9D 6F 00 C7 9D 6F 00 00 9E 6F 00  |..o...o...o...o.|
+006FA25C  4A 9F 6F 00 83 9F 6F 00 92 9F 6F 00 CC 9F 6F 00  |J.o...o...o...o.|
+006FA26C  84 A0 6F 00 DE A0 6F 00 CB A0 6F 00 0E A1 6F 00  |..o...o...o...o.|

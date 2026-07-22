@@ -30,8 +30,8 @@ void __thiscall GameSystemC::DoneSystem(GameSystemC *this,int param_1)
     if (PTR_00802a28 != (ccFntTy *)0x0) {
       thunk_FUN_005711d0(&DAT_00807620,(int *)&PTR_00802a28);
     }
-    if (PTR_00802a38 != (STPlaySystemC *)0x0) {
-      thunk_FUN_005711d0(&DAT_00807620,(int *)&PTR_00802a38);
+    if (g_playSystem_00802A38 != (STPlaySystemC *)0x0) {
+      thunk_FUN_005711d0(&DAT_00807620,(int *)&g_playSystem_00802A38);
     }
     thunk_FUN_0058d720();
     pAVar2 = PTR_00807598;

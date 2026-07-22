@@ -31,29 +31,30 @@ void __thiscall MainMenuTy::PaintMainMenu(MainMenuTy *this)
   iVar3 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
   if (iVar3 == 0) {
     FUN_006b5f80((int *)PTR_008075a8,0,0,g_nWidth_00806730,DAT_00806734);
-    PutDDX(0,0,'\x01',(BITMAPINFO *)PTR_0081176c->field_002C);
+    PutDDX(0,0,'\x01',(BITMAPINFO *)g_startSystem_0081176C->field_002C);
     pMVar2 = local_8;
     if (local_8->field_1EE3 == '\0') {
       uVar11 = 0;
-      pcVar10 = PTR_0081176c->field_0030;
+      pcVar10 = g_startSystem_0081176C->field_0030;
       uVar9 = 0xffffffff;
       uVar8 = 0xfffffffe;
-      puVar4 = (uint *)LoadResourceString(0x26ac,HINSTANCE_00807618);
+      puVar4 = (uint *)LoadResourceString(0x26ac,g_module_00807618);
       StartServTy::WrTextDDX(this_01,0,0xe9,0x14,0x14c,0x18,puVar4,uVar8,uVar9,pcVar10,uVar11);
       uVar9 = DAT_00807dd5 >> 0x10 & 0xff;
       uVar6 = DAT_00807dd5 & 0xffff;
       uVar8 = DAT_00807dd5 >> 0x18;
-      text = LoadResourceString(0x2329,HINSTANCE_00807618);
+      text = LoadResourceString(0x2329,g_module_00807618);
       wsprintfA((LPSTR)(pMVar2->field_1A5B + 0x3c),text,uVar8,uVar9,uVar6);
       StartServTy::WrTextDDX
-                ((StartServTy *)PTR_0081176c,0,0,0x240,800,0x18,(uint *)(pMVar2->field_1A5B + 0x3c),
-                 0xfffffffe,0xffffffff,PTR_0081176c->field_0034,0);
+                ((StartServTy *)g_startSystem_0081176C,0,0,0x240,800,0x18,
+                 (uint *)(pMVar2->field_1A5B + 0x3c),0xfffffffe,0xffffffff,
+                 g_startSystem_0081176C->field_0034,0);
     }
     else if (local_8->field_1EE3 == '\x01') {
-      pcVar10 = PTR_0081176c->field_0030;
+      pcVar10 = g_startSystem_0081176C->field_0030;
       uVar9 = 0xffffffff;
       uVar8 = 0xfffffffe;
-      puVar4 = (uint *)LoadResourceString(0x26b0,HINSTANCE_00807618);
+      puVar4 = (uint *)LoadResourceString(0x26b0,g_module_00807618);
       StartServTy::WrTextDDX(this_00,0,0xe9,0x14,0x14c,0x18,puVar4,uVar8,uVar9,pcVar10,iVar3);
     }
     ppAVar7 = &pMVar2->field_1AA7;

@@ -66,8 +66,8 @@ void __thiscall MTaskTy::DoneMTask(MTaskTy *this)
   SpriteClassTy::CloseSprite((SpriteClassTy *)&this_00->field_048C);
   SpriteClassTy::CloseSprite((SpriteClassTy *)&this_00->field_051D);
   SpriteClassTy::CloseSprite((SpriteClassTy *)&this_00->field_05AE);
-  if ((AnonShape_006B5570_4D68B99C *)this_00->field_0643 != (AnonShape_006B5570_4D68B99C *)0x0) {
-    FUN_006b5570((AnonShape_006B5570_4D68B99C *)this_00->field_0643);
+  if ((DArrayTy *)this_00->field_0643 != (DArrayTy *)0x0) {
+    FUN_006b5570((DArrayTy *)this_00->field_0643);
   }
   this_00->field_0643 = (AnonPointee_MTaskTy_0643 *)0x0;
   if (this_00->field_02CD != 0) {
@@ -222,12 +222,12 @@ LAB_005e072b:
       puVar10 = puVar10 + 1;
     }
   }
-  if ((DArrayTy *)this_00->field_0074 != (DArrayTy *)0x0) {
-    DArrayDestroy((DArrayTy *)this_00->field_0074);
+  if (this_00->field_0074 != (DArrayTy *)0x0) {
+    DArrayDestroy(this_00->field_0074);
     /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
     pcVar6 = extraout_ECX_03;
   }
-  this_00->field_0074 = (uint *)0x0;
+  this_00->field_0074 = (DArrayTy *)0x0;
   if ((DArrayTy *)this_00->field_0078 != (DArrayTy *)0x0) {
     DArrayDestroy((DArrayTy *)this_00->field_0078);
     /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */

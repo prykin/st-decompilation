@@ -176,7 +176,7 @@ undefined4 * __fastcall FUN_004f4f90(AnonShape_004F4F90_2D6E0DDA *param_1)
   *(undefined4 *)&param_1->field_0x994 = 0;
   *(undefined4 *)&param_1->field_0x99c = 0;
   *(undefined4 *)&param_1->field_0x998 = 0;
-  *(uint *)&param_1->field_0x9a0 = PTR_00802a38->field_00E4 / 0x19;
+  *(uint *)&param_1->field_0x9a0 = g_playSystem_00802A38->field_00E4 / 0x19;
   memset(&param_1->field_0x9a4, 0, 0x1c); /* compiler bulk-zero initialization */
   iVar3 = 0;
   *(undefined4 *)&param_1->field_0x9c0 = 0;

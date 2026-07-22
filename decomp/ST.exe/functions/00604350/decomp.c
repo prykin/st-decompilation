@@ -1,5 +1,10 @@
 
-int __fastcall FUN_00604350(AnonShape_00604350_448AE2F1 *param_1)
+/* [STMethodOwnerApplier] Structural method owner recovered as STExplosion.
+   Evidence: this_call_owners=[STExplosion]; agreed_this_calls=1; incoming_this_accesses=3;
+   incoming_edx_uses=0; incoming_stack_parameter_uses=0; direct_non_thunk_callers=0;
+   incoming_ecx_receiver_callers=0; attributed_named_callers=1; owner_evidence_coverage=adequate */
+
+int __thiscall STExplosion::sub_00604350(STExplosion *this)
 
 {
   int iVar1;
@@ -16,7 +21,7 @@ int __fastcall FUN_00604350(AnonShape_00604350_448AE2F1 *param_1)
   int local_c;
   int local_8;
 
-  local_14 = param_1->field_01F1;
+  local_14 = this->field_01F1;
   sVar2 = (short)(local_14 >> 0x1f);
   if (local_14 < 0) {
     iVar5 = (int)(short)(((short)(local_14 / 0xc9) + sVar2) -
@@ -28,7 +33,7 @@ int __fastcall FUN_00604350(AnonShape_00604350_448AE2F1 *param_1)
                         (short)((longlong)local_14 * 0x28c1979 >> 0x3f));
     local_c = iVar5;
   }
-  iVar1 = param_1->field_01F5;
+  iVar1 = this->field_01F5;
   sVar2 = (short)(iVar1 >> 0x1f);
   if (iVar1 < 0) {
     iVar6 = (int)(short)(((short)(iVar1 / 0xc9) + sVar2) -
@@ -40,7 +45,7 @@ int __fastcall FUN_00604350(AnonShape_00604350_448AE2F1 *param_1)
                         (short)((longlong)iVar1 * 0x28c1979 >> 0x3f));
     local_10 = iVar6;
   }
-  iVar7 = param_1->field_01F9;
+  iVar7 = this->field_01F9;
   sVar2 = (short)(iVar7 >> 0x1f);
   if (iVar7 < 0) {
     local_8 = (short)(((short)(iVar7 / 200) + sVar2) - (short)((longlong)iVar7 * 0x51eb851f >> 0x3f)

@@ -52,7 +52,7 @@ undefined4 __thiscall STGroupBoatC::DCBomb(STGroupBoatC *this,int param_1)
       *(undefined4 *)&local_28->field_0x2bd = local_28->field_018C;
       local_28->field_02C1 = local_28->field_0190;
       local_30 = *(undefined2 *)&local_28->field_0x2bd;
-      local_34 = PTR_00802a38->field_00E4;
+      local_34 = g_playSystem_00802A38->field_00E4;
       local_2c = local_28->field_02C1;
       local_2e = *(undefined2 *)&local_28->field_0x2bf;
       array_00 = local_14;
@@ -63,7 +63,7 @@ undefined4 __thiscall STGroupBoatC::DCBomb(STGroupBoatC *this,int param_1)
           if ((short)local_8 != -1) {
             pSVar4 = (STBoatC *)
                      STAllPlayersC::GetObjPtr
-                               (g_sTAllPlayers_007FA174,pSVar2->field_0024,local_8,CASE_1);
+                               (g_allPlayers_007FA174,pSVar2->field_0024,local_8,CASE_1);
             if (pSVar4 == (STBoatC *)0x0) {
               RaiseInternalException
                         (-0x5001fffc,g_overwriteContext_007ED77C,
@@ -78,7 +78,7 @@ undefined4 __thiscall STGroupBoatC::DCBomb(STGroupBoatC *this,int param_1)
               STBoatC::CmdToObj(pSVar4,CASE_A,&local_34);
             }
             else {
-              iVar3 = thunk_FUN_00490d90((int)pSVar4);
+              iVar3 = thunk_FUN_00490d90((STGameObjC *)pSVar4);
               if (iVar3 == 0) {
                 STBoatC::CmdToObj(pSVar4,CASE_3,&local_1c);
               }
@@ -96,7 +96,7 @@ undefined4 __thiscall STGroupBoatC::DCBomb(STGroupBoatC *this,int param_1)
       array = local_c;
       /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
       STAllPlayersC::RegisterPGPair
-                (g_sTAllPlayers_007FA174,CONCAT31((int3)((uint)local_10 >> 8),pSVar2->field_0024),
+                (g_allPlayers_007FA174,CONCAT31((int3)((uint)local_10 >> 8),pSVar2->field_0024),
                  &array_00->flags,&local_c->flags);
       if (array_00 != (DArrayTy *)0x0) {
         DArrayDestroy(array_00);
@@ -109,20 +109,20 @@ undefined4 __thiscall STGroupBoatC::DCBomb(STGroupBoatC *this,int param_1)
                  0xb84);
     }
     index = 0;
-    if (PTR_00802a38->field_00E4 % 0x1e == 10) {
+    if (g_playSystem_00802A38->field_00E4 % 0x1e == 10) {
       if (0 < local_10) {
         do {
           DArrayGetElement((DArrayTy *)pSVar2->field_0029,index,&local_8);
           if ((short)local_8 != -1) {
             pSVar4 = (STBoatC *)
                      STAllPlayersC::GetObjPtr
-                               (g_sTAllPlayers_007FA174,pSVar2->field_0024,local_8,CASE_1);
+                               (g_allPlayers_007FA174,pSVar2->field_0024,local_8,CASE_1);
             if (pSVar4 == (STBoatC *)0x0) {
               RaiseInternalException
                         (-0x5001fffc,g_overwriteContext_007ED77C,
                          "E:\\__titans\\wlad\\to_grpb.cpp",0xb8b);
             }
-            iVar3 = thunk_FUN_0045ff10((int)pSVar4);
+            iVar3 = thunk_FUN_0045ff10((STGameObjC *)pSVar4);
             if ((iVar3 == 10) || (uVar5 = STBoatC::CheckPBoxCmd(pSVar4,CASE_A), uVar5 == 1)) {
               local_18 = local_18 + 1;
               break;

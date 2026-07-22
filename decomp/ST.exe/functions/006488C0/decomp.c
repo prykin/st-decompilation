@@ -15,11 +15,11 @@ int __cdecl SaveBossEdit(int param_1,char *param_2,undefined4 *param_3,char para
   InternalExceptionFrame local_58;
   uint local_14;
   uint local_10;
-  undefined4 *local_c;
+  byte *local_c;
   byte *local_8;
 
   local_8 = (byte *)0x0;
-  local_c = (undefined4 *)0x0;
+  local_c = (byte *)0x0;
   local_58.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_58;
   iVar2 = Library::MSVCRT::__setjmp3(local_58.jumpBuffer,0);
@@ -30,7 +30,7 @@ int __cdecl SaveBossEdit(int param_1,char *param_2,undefined4 *param_3,char para
     }
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     local_c = EventDataPack(*(AnonShape_0065CD10_BA40DE58 **)((int)param_3 + 0x4e),&local_14);
-    local_8 = (byte *)BossDataPack(param_3,local_c,local_14,&local_10);
+    local_8 = BossDataPack(param_3,(undefined4 *)local_c,local_14,&local_10);
     thunk_FUN_0065d0f0((int *)&local_c);
     Library::Ourlib::MFAOBJ::mfAObjSave(param_1,param_2,local_8,local_10,param_4);
     thunk_FUN_006484f0((int *)&local_8);

@@ -62,7 +62,7 @@ void __thiscall CPanelTy::SwitchCPanel(CPanelTy *this)
           }
           if (g_infocPanel_00801698 != (InfocPanelTy *)0x0) {
             /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-            (**(code **)(*(int *)g_infocPanel_00801698 + 0x1c))(0);
+            (*(code *)g_infocPanel_00801698->field_0000->field_001C)(0);
           }
           if (g_tradePanel_00802A44 != (TradePanelTy *)0x0) {
             thunk_FUN_00552160(g_tradePanel_00802A44,'\0','\0');
@@ -77,7 +77,7 @@ void __thiscall CPanelTy::SwitchCPanel(CPanelTy *this)
           }
           if (g_upgPanel_00802A48 != (UpgPanelTy *)0x0) {
             /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-            (**(code **)(*(int *)g_upgPanel_00802A48 + 0x1c))(0);
+            (*(code *)g_upgPanel_00802A48->field_0000->field_001C)(0);
           }
           if (g_frmPanel_0080168C != (FrmPanelTy *)0x0) {
             /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
@@ -162,7 +162,7 @@ switchD_004f9f52_caseD_3:
           }
           if (g_infocPanel_00801698 != (InfocPanelTy *)0x0) {
             /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-            (**(code **)(*(int *)g_infocPanel_00801698 + 0x1c))(0);
+            (*(code *)g_infocPanel_00801698->field_0000->field_001C)(0);
           }
           if (g_tradePanel_00802A44 != (TradePanelTy *)0x0) {
             thunk_FUN_00552160(g_tradePanel_00802A44,'\0','\0');
@@ -177,7 +177,7 @@ switchD_004f9f52_caseD_3:
           }
           if (g_upgPanel_00802A48 != (UpgPanelTy *)0x0) {
             /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-            (**(code **)(*(int *)g_upgPanel_00802A48 + 0x1c))(0);
+            (*(code *)g_upgPanel_00802A48->field_0000->field_001C)(0);
           }
           if (g_frmPanel_0080168C != (FrmPanelTy *)0x0) {
             /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */

@@ -1,4 +1,4 @@
-FUN_0061fcc0:
+SndUnderAttMenegC::sub_0061FCC0:
 0061FCC0  56                        PUSH ESI
 0061FCC1  8B F1                     MOV ESI,ECX
 0061FCC3  57                        PUSH EDI

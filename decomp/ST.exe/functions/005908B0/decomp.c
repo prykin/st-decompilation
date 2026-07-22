@@ -21,7 +21,7 @@ int __thiscall MAdvTy::GetMessage(MAdvTy *this,STMessage *message)
   MAdvTy *local_8;
 
   local_8 = this;
-  DVar2 = FUN_006e51b0(this->field_0010);
+  DVar2 = STAppC::sub_006E51B0(this->field_0010);
   this->field_0058 = DVar2;
   local_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_4c;
@@ -45,7 +45,7 @@ int __thiscall MAdvTy::GetMessage(MAdvTy *this,STMessage *message)
       break;
     case MESS_TRACKBARCLASSTY_0062:
     case MESS_SHARED_0064:
-      thunk_FUN_00590860((AnonShape_00590860_47A09D44 *)local_8);
+      sub_00590860(local_8);
       if (this_00->field_005D == '\0') {
         this_00->field_0040 = 0x200;
         this_00->field_0044 = 0;

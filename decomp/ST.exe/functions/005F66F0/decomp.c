@@ -1,8 +1,13 @@
 
 /* [STPrototypeRepairApplier] Propagated return.
-   Evidence: 005F66F0 returns used as parameter 2 of STPlaySystemC::SaveObjData @ 005F62C9 */
+   Evidence: 005F66F0 returns used as parameter 2 of STPlaySystemC::SaveObjData @ 005F62C9
 
-byte * __thiscall FUN_005f66f0(void *this,uint *param_1)
+   [STMethodOwnerApplier] Structural method owner recovered as STColl3C.
+   Evidence: this_call_owners=[STColl3C]; agreed_this_calls=1; incoming_this_accesses=3;
+   incoming_edx_uses=0; incoming_stack_parameter_uses=2; direct_non_thunk_callers=0;
+   incoming_ecx_receiver_callers=0; attributed_named_callers=1; owner_evidence_coverage=adequate */
+
+byte * __thiscall STColl3C::sub_005F66F0(STColl3C *this,uint *param_1)
 
 {
   uint uVar1;
@@ -25,14 +30,14 @@ byte * __thiscall FUN_005f66f0(void *this,uint *param_1)
   uint local_c;
   uint local_8;
 
-  local_14 = this;
+  local_14 = (STAllPlayersC *)this;
   puVar3 = (undefined4 *)Library::DKW::LIB::FUN_006aac70(0xc2);
   pSVar2 = local_14;
-  if (this == (void *)0x0) {
+  if (this == (STColl3C *)0x0) {
     puVar10 = (undefined4 *)0x0;
   }
   else {
-    puVar10 = (undefined4 *)((int)this + 0x231);
+    puVar10 = (undefined4 *)&this->field_0x231;
   }
   puVar13 = puVar3;
   for (iVar6 = 0x30; iVar6 != 0; iVar6 = iVar6 + -1) {
@@ -74,7 +79,7 @@ byte * __thiscall FUN_005f66f0(void *this,uint *param_1)
   }
   FreeAndNull(&local_1c);
   pSVar2 = local_14;
-  iVar6 = *(int *)&local_14[1].field_0xb9;
+  iVar6 = *(int *)&local_14->field_0x2e6;
   if (iVar6 != 0) {
     if (*(int *)(iVar6 + 0x58) == 0) {
       uVar7 = 0;
@@ -85,7 +90,7 @@ byte * __thiscall FUN_005f66f0(void *this,uint *param_1)
     uVar1 = local_8 + 0x6c + uVar7;
     local_8 = uVar1;
     pbVar5 = (byte *)Library::DKW::LIB::FUN_006acf50((int)pbVar4,uVar1);
-    puVar3 = *(undefined4 **)&pSVar2[1].field_0xb9;
+    puVar3 = *(undefined4 **)&pSVar2->field_0x2e6;
     pbVar12 = pbVar5 + (uVar1 - uVar7) + -0x6c;
     for (iVar6 = 0x1b; iVar6 != 0; iVar6 = iVar6 + -1) {
       *(undefined4 *)pbVar12 = *puVar3;
@@ -94,7 +99,7 @@ byte * __thiscall FUN_005f66f0(void *this,uint *param_1)
     }
     if (uVar7 != 0) {
       /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-      pbVar12 = *(byte **)(*(int *)&local_14[1].field_0xb9 + 0x58);
+      pbVar12 = *(byte **)(*(int *)&local_14->field_0x2e6 + 0x58);
       pbVar4 = pbVar5 + (uVar1 - uVar7) + -0x6c + 0x6c;
       for (uVar8 = uVar7 >> 2; uVar8 != 0; uVar8 = uVar8 - 1) {
         *(undefined4 *)pbVar4 = *(undefined4 *)pbVar12;

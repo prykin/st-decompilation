@@ -39,7 +39,7 @@ void __thiscall UpgPanelTy::Update(UpgPanelTy *this)
       puVar7 = puVar7 + 1;
       puVar9 = puVar9 + 1;
     }
-    STAllPlayersC::GetPanelInfo(g_sTAllPlayers_007FA174,0x10,(AnonShape_0043BEB0_1C00EC12 *)puVar8);
+    STAllPlayersC::GetPanelInfo(g_allPlayers_007FA174,0x10,(AnonShape_0043BEB0_1C00EC12 *)puVar8);
     iVar3 = 0x19;
     puVar8 = &pUVar2->field_01AB;
     local_8 = 3;

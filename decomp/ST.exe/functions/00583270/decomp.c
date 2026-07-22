@@ -94,8 +94,7 @@ int __thiscall STJellyGunC::GetMessage(STJellyGunC *this,STMessage *message)
     }
     else if (SVar2 < 4) {
       if (SVar2 == MESS_SHARED_0003) {
-        uVar6 = SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00417FF0::sub_004167A0
-                          ((AnonReceiver_00417FF0 *)this_00);
+        uVar6 = sub_004167A0(this_00);
         /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
         thunk_FUN_00495ff0(*(short *)&this_00->field_0x5b,*(short *)&this_00->field_0x5d,
                            *(short *)&this_00->field_0x5f,
@@ -205,18 +204,17 @@ int __thiscall STJellyGunC::GetMessage(STJellyGunC *this,STMessage *message)
                              ,0x204);
                 }
                 thunk_FUN_004ac610(puVar11,'\f');
-                STT3DSprC::StartShow((STT3DSprC *)puVar11,0xc,PTR_00802a38->field_00E4);
+                STT3DSprC::StartShow((STT3DSprC *)puVar11,0xc,g_playSystem_00802A38->field_00E4);
                 thunk_FUN_004ac610(puVar11,'\x0e');
-                STT3DSprC::StartShow((STT3DSprC *)puVar11,0xe,PTR_00802a38->field_00E4);
-                thunk_FUN_00416240(this_00,*(undefined2 *)&this_00->field_0x26a,
-                                   *(undefined2 *)&this_00->field_0x26e,
-                                   *(undefined2 *)&this_00->field_0x272);
-                thunk_FUN_004ad3c0(puVar11,(float)*(int *)&this_00->field_0x26a * _DAT_007904f8 *
-                                           _DAT_007904f0,
-                                   (float)*(int *)&this_00->field_0x26e * _DAT_007904f8 *
-                                   _DAT_007904f0,
-                                   (float)*(int *)&this_00->field_0x272 * _DAT_007904f8 *
-                                   _DAT_007904f0);
+                STT3DSprC::StartShow((STT3DSprC *)puVar11,0xe,g_playSystem_00802A38->field_00E4);
+                sub_00416240(this_00,*(undefined2 *)&this_00->field_0x26a,
+                             *(undefined2 *)&this_00->field_0x26e,
+                             *(undefined2 *)&this_00->field_0x272);
+                STT3DSprC::sub_004AD3C0
+                          ((STT3DSprC *)puVar11,
+                           (float)*(int *)&this_00->field_0x26a * _DAT_007904f8 * _DAT_007904f0,
+                           (float)*(int *)&this_00->field_0x26e * _DAT_007904f8 * _DAT_007904f0,
+                           (float)*(int *)&this_00->field_0x272 * _DAT_007904f8 * _DAT_007904f0);
                 *(undefined4 *)&this_00->field_0x235 = 0;
                 sub_005844E0((STJellyGunC *)this_00,*(int *)&this_00->field_0x26a,
                              *(int *)&this_00->field_0x26e,0x497);
@@ -370,7 +368,7 @@ int __thiscall STJellyGunC::GetMessage(STJellyGunC *this,STMessage *message)
           pbVar17 = pbVar17 + 1;
         }
         STPlaySystemC::SaveObjData
-                  (PTR_00802a38,this_00->field_0018,(byte *)local_c,
+                  (g_playSystem_00802A38,this_00->field_0018,(byte *)local_c,
                    (AnonShape_0060EA30_DCEB68AD *)(local_10 + 0x6f + local_8));
         FreeAndNull(&local_14);
         FreeAndNull(&local_18);

@@ -141,7 +141,7 @@ LAB_004c7d8c:
         if (*(int *)((int)this + 0x361) == 0) {
           *(int *)((int)this + 0x361) = param_1;
           *(uint *)((int)this + 0x369) = param_2;
-          *(uint *)((int)this + 0x38c) = PTR_00802a38->field_00E4;
+          *(uint *)((int)this + 0x38c) = g_playSystem_00802A38->field_00E4;
           uVar7 = thunk_FUN_004c7730(this,param_1,param_2);
           *(uint *)((int)this + 0x390) = uVar7;
           *(undefined4 *)((int)this + 0x394) = 0;

@@ -81,7 +81,7 @@ void __thiscall SIDTy::NoneSID(SIDTy *this,void *param_1)
       this_00->field_0045 = 0x200;
       this_00->field_0049 = 0;
       this_00->field_004D = 0x693f;
-      thunk_FUN_005b66e0((AnonShape_005B66E0_174166E5 *)this_00);
+      thunk_FUN_005b66e0((MTaskTy *)this_00);
       g_currentExceptionFrame = local_50.previous;
       return;
     }

@@ -59,7 +59,8 @@ undefined4 __fastcall FUN_004da9c0(undefined4 param_1)
       }
       iVar5 = thunk_FUN_004e60d0(uVar6,iVar4);
       iVar4 = DAT_00798f74;
-      if ((uint)(*(int *)(&DAT_00798f6c + iVar5 * 4) + piVar10[3]) <= PTR_00802a38->field_00E4) {
+      if ((uint)(*(int *)(&DAT_00798f6c + iVar5 * 4) + piVar10[3]) <=
+          g_playSystem_00802A38->field_00E4) {
         if ((uint)piVar10[1] % 3 == 1) {
           *piVar10 = 0;
           piVar10[2] = 1;
@@ -143,7 +144,7 @@ LAB_004dabff:
           if (bVar11) {
             iVar4 = thunk_FUN_004e60d0((int)local_8,iVar4);
             uVar3 = (&DAT_00798f74)[iVar4];
-            if ((PTR_00802a38->field_00E4 < piVar10[3] + uVar3) &&
+            if ((g_playSystem_00802A38->field_00E4 < piVar10[3] + uVar3) &&
                (local_10 = (int *)0x1, local_28 < uVar3)) {
               local_28 = uVar3;
             }
@@ -156,13 +157,13 @@ LAB_004dabff:
         *piVar10 = 0;
       }
       else {
-        piVar10[4] = (piVar10[3] - PTR_00802a38->field_00E4) + local_28;
+        piVar10[4] = (piVar10[3] - g_playSystem_00802A38->field_00E4) + local_28;
       }
     }
     local_8 = piVar10 + 0xd;
     local_c = (byte *)0x0;
     do {
-      if (((local_c != (byte *)uVar6) && (PTR_00802a38->field_00E4 == local_8[-8])) &&
+      if (((local_c != (byte *)uVar6) && (g_playSystem_00802A38->field_00E4 == local_8[-8])) &&
          (*local_8 == 0)) {
         if (uVar6 == DAT_0080874d) {
           *local_8 = 1;
@@ -200,8 +201,8 @@ LAB_004dad15:
             do {
               if (((local_c != (byte *)uVar6) && (local_14 != uVar6)) &&
                  (((int)pbVar8 < 0x808a71 &&
-                  (((PTR_00802a38 == (STPlaySystemC *)0x0 || (*pbVar8 < 8)) &&
-                   (PTR_00802a38->field_00E4 <= *local_20)))))) {
+                  (((g_playSystem_00802A38 == (STPlaySystemC *)0x0 || (*pbVar8 < 8)) &&
+                   (g_playSystem_00802A38->field_00E4 <= *local_20)))))) {
                 local_30 = thunk_FUN_004e60d0(local_14,iVar4);
                 local_30 = local_30 + 1;
                 iVar5 = thunk_FUN_004e60d0(uVar6,iVar4);

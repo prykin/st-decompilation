@@ -5,11 +5,10 @@
    E:\__titans\grig\loading.cpp
    cLoadingTy::DrawLineCR
 
-   [STPrototypeApplier] Propagated parameter 1.
-   Evidence: 00554C80 -> 00555680 @ 00554CC3 | 00554C80 -> 007119C0 @ 00554CFF | 0056DB80 ->
-   00554C80 @ 0056E4C4 */
+   [STPrototypeRepairApplier] Propagated parameter 1.
+   Evidence: 00554C80 -> 00555680 @ 00554CC3 | 0056DB80 -> 00554C80 @ 0056E4C4 */
 
-void __thiscall cLoadingTy::DrawLineCR(cLoadingTy *this,uint *resourceString)
+void __thiscall cLoadingTy::DrawLineCR(cLoadingTy *this,char *resourceString)
 
 {
   code *pcVar1;
@@ -26,11 +25,11 @@ void __thiscall cLoadingTy::DrawLineCR(cLoadingTy *this,uint *resourceString)
   iVar3 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
   pcVar2 = local_8;
   if (iVar3 == 0) {
-    thunk_FUN_00555680(local_8,(char *)resourceString);
+    sub_00555680(local_8,resourceString);
     FUN_006b4170((AnonShape_006B5B10_E0D06CF1 *)pcVar2->field_0004,0,
                  pcVar2->field_0014 + pcVar2->field_000C,pcVar2->field_0010 + pcVar2->field_0018,
                  pcVar2->field_001C,pcVar2->field_0034,0);
-    ccFntTy::WrStr(pcVar2->field_0008,resourceString,pcVar2->field_000C,pcVar2->field_0010,
+    ccFntTy::WrStr(pcVar2->field_0008,(uint *)resourceString,pcVar2->field_000C,pcVar2->field_0010,
                    pcVar2->field_0024);
     iVar3 = pcVar2->field_0018 + pcVar2->field_0010;
     iVar4 = pcVar2->field_0014 + pcVar2->field_000C;

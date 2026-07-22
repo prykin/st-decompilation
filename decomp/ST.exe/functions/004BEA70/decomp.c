@@ -1198,7 +1198,7 @@ cf_common_join_004C01F3:
       }
       *(undefined1 *)((int)param_1 + 0x47) = 1;
       iVar6 = thunk_FUN_004e60d0(*(int *)((int)this + 0x24),iVar6);
-      uVar10 = (PTR_00802a38->field_00E4 * 100 +
+      uVar10 = (g_playSystem_00802A38->field_00E4 * 100 +
                g_playerRuntime[*(int *)((int)this + 0x24)].field2183_0xa1a * -100) /
                *(uint *)(&DAT_00798f6c + iVar6 * 4);
       param_1[0x12] = uVar10;

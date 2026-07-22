@@ -29,7 +29,7 @@ int __thiscall IntercomPanelTy::GetMessage(IntercomPanelTy *this,STMessage *mess
   int local_8c8;
   int local_8c4;
   undefined4 local_8c0;
-  uint *local_8bc;
+  DArrayTy *local_8bc;
   undefined4 local_8b0;
   undefined4 local_8ac;
   undefined4 local_8a8;
@@ -105,9 +105,9 @@ int __thiscall IntercomPanelTy::GetMessage(IntercomPanelTy *this,STMessage *mess
             local_848 = 0xc09f;
             local_890 = local_8b0;
             local_850 = local_8b0;
-            /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-            (*(code *)this_00->field_000C->vtable->field_0008)(6,&this_00->field_01A0,0,local_8dc,1)
-            ;
+            (*this_00->field_000C->vtable->CreateObject)
+                      ((SystemClassTy *)this_00->field_000C,6,&this_00->field_01A0,(int *)0x0,
+                       local_8dc,1);
           }
           Library::DKW::DDX::FUN_006b3640
                     ((int *)PTR_008075a8,this_00->field_0060,0xffffffff,this_00->field_003C,
@@ -148,7 +148,7 @@ int __thiscall IntercomPanelTy::GetMessage(IntercomPanelTy *this,STMessage *mess
       return 0;
     }
     thunk_FUN_00521cf0((AnonShape_00521CF0_154649D2 *)this_00);
-    Library::DKW::TBL::FUN_006b6020(this_00->field_0198,0,&DAT_008016a0);
+    Library::DKW::TBL::FUN_006b6020(&this_00->field_0198->flags,0,&DAT_008016a0);
     this_00->field_0028 = 0x33;
     this_00->field_002C = this_00->field_0198;
     FUN_006e6080(this_00,2,this_00->field_01A0,(undefined4 *)&this_00->field_0x18);
@@ -178,10 +178,10 @@ int __thiscall IntercomPanelTy::GetMessage(IntercomPanelTy *this,STMessage *mess
     uVar1 = (message->arg1).words.low;
     if ((uVar1 != 0xffff) || ((message->arg1).words.high != 0xffff)) {
       uVar9 = (uint)(message->arg1).words.high;
-      FUN_006b5b10((AnonShape_006B5B10_E0D06CF1 *)this_00->field_019C,0,(uint)uVar1,uVar9 + 1,
+      FUN_006b5b10((AnonShape_006E6FB0_BC494FEA *)this_00->field_019C,0,(uint)uVar1,uVar9 + 1,
                    (uint)uVar1,
-                   ((AnonShape_006B5B10_E0D06CF1 *)this_00->field_019C)->field_0008 + -3 + uVar9,
-                   0x6c,0xd);
+                   (int)((AnonShape_006E6FB0_BC494FEA *)this_00->field_019C)->field_0008 +
+                   (uVar9 - 3),0x6c,0xd);
     }
     puVar4 = this_00->field_019C;
     Library::DKW::WGR::FUN_006b55f0

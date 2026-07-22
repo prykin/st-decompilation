@@ -40,9 +40,9 @@ void __thiscall STJellyGunC::LifeGun(STJellyGunC *this,int *param_1)
   undefined2 extraout_var_02;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined2 extraout_var_03;
-  undefined4 **ppuVar17;
+  AnonShape_0041AF40_F59F8577 *pAVar17;
   bool bVar18;
-  undefined4 *local_4c [8];
+  AnonShape_0041AF40_F59F8577 local_4c;
   int local_2c;
   int local_28;
   undefined4 local_24;
@@ -59,7 +59,7 @@ void __thiscall STJellyGunC::LifeGun(STJellyGunC *this,int *param_1)
   if (iVar10 == 0) {
     iVar10 = 0;
     uVar11 = thunk_FUN_004ad650((int)puVar1);
-    FUN_006eabf0((void *)this->field_0211,uVar11,iVar10);
+    FUN_006eabf0(this->field_0211,uVar11,iVar10);
     iVar10 = thunk_FUN_0041caf0((AnonShape_0041CAF0_1630B9E0 *)this);
     if (iVar10 == 1) {
       iVar10 = 1;
@@ -71,11 +71,11 @@ void __thiscall STJellyGunC::LifeGun(STJellyGunC *this,int *param_1)
   else {
     iVar10 = 1;
     uVar11 = thunk_FUN_004ad650((int)puVar1);
-    FUN_006eabf0((void *)this->field_0211,uVar11,iVar10);
+    FUN_006eabf0(this->field_0211,uVar11,iVar10);
     iVar10 = 1;
   }
   iVar12 = thunk_FUN_004ad650((int)puVar1);
-  FUN_006e6870((void *)this->field_0211,iVar12,iVar10);
+  FUN_006e6870(this->field_0211,iVar12,iVar10);
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   local_14 = CONCAT22(extraout_var,this->field_0041);
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
@@ -102,7 +102,7 @@ void __thiscall STJellyGunC::LifeGun(STJellyGunC *this,int *param_1)
        iVar10 = extraout_ECX, (int)uVar11 < 0)) {
       if (local_2c == 0) {
 LAB_005829e6:
-        if ((PTR_00802a38->field_00E4 & 0x3f) == 0) goto LAB_005829f4;
+        if ((g_playSystem_00802A38->field_00E4 & 0x3f) == 0) goto LAB_005829f4;
       }
       else {
         if (local_2c != 1) {
@@ -116,14 +116,14 @@ LAB_005829e6:
           }
           goto LAB_005829e6;
         }
-        /* ST_PSEUDO[raw_indirect_call,packed_or_unaligned_piece]: expected typed vtable/callback call with explicit __thiscall receiver; expected named packed member, bit extract/compose, or unaligned load */
+        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
         if ((this->field_023D != 0) &&
            ((pSVar13 = STAllPlayersC::GetObjPtr
-                                 (g_sTAllPlayers_007FA174,*(char *)&this->field_0241,
+                                 (g_allPlayers_007FA174,*(char *)&this->field_0241,
                                   CONCAT22((short)((uint)iVar10 >> 0x10),
                                            *(undefined2 *)&this->field_0x245),CASE_1),
-            pSVar13 == (STGameObjC *)0x0 ||
-            (iVar10 = (**(code **)&pSVar13->vtable[1].field_0x28)(), iVar10 == 0)))) {
+            pSVar13 == (STGameObjC *)0x0 || (iVar10 = (*pSVar13->vtable[1].vfunc_24)(), iVar10 == 0)
+            ))) {
           this->field_023D = 0;
         }
 LAB_005829f4:
@@ -143,7 +143,7 @@ LAB_005829f4:
           ((pSVar7->value_20 == 1000 || (pSVar7->value_20 == 0x14)))) &&
          ((iVar10 = (*pSVar7->vtable[5].slots_00_28[0])(), iVar10 != 0 &&
           ((pSVar7[1].vtable < (STWorldObjectVTable *)0x8 &&
-           ((PTR_00802a38 == (STPlaySystemC *)0x0 ||
+           ((g_playSystem_00802A38 == (STPlaySystemC *)0x0 ||
             ((byte)(&DAT_008087e9)[(int)pSVar7[1].vtable * 0x51] < 8)))))))) {
         iVar10 = this->field_0010;
         bVar2 = *(byte *)&pSVar7[1].vtable;
@@ -211,7 +211,8 @@ LAB_00582bb0:
             }
             iVar10 = *(int *)&pSVar7[0xd].field_0x19;
 LAB_00582c9f:
-            FUN_006ea460((void *)this->field_0211,this->field_01ED,iVar10);
+            SubmarineTitans::Recovered::HiddenThis::AnonReceiver_006EA050::sub_006EA460
+                      (this->field_0211,this->field_01ED,iVar10);
           }
         }
       }
@@ -234,7 +235,7 @@ LAB_00582958:
     local_1c = uVar11;
     if (((uVar11 == 1) && (this->field_0241 != 0xff)) &&
        (pSVar13 = STAllPlayersC::GetObjPtr
-                            (g_sTAllPlayers_007FA174,*(char *)&this->field_0241,
+                            (g_allPlayers_007FA174,*(char *)&this->field_0241,
                              (uint)*(ushort *)&this->field_0x245,CASE_1),
        pSVar13 != (STGameObjC *)0x0)) {
       memset(&DAT_008116c8, 0, 0x1c); /* compiler bulk-zero initialization */
@@ -244,33 +245,34 @@ LAB_00582958:
       _DAT_008116d6 = this->field_028E;
       _DAT_008116d0 = *(undefined4 *)&this->field_0x25a;
       DAT_008116cc = 0xbc;
-      ppuVar17 = local_4c;
+      pAVar17 = &local_4c;
       for (iVar10 = 8; iVar10 != 0; iVar10 = iVar10 + -1) {
-        *ppuVar17 = (undefined4 *)0x0;
-        ppuVar17 = ppuVar17 + 1;
+        *(undefined4 *)pAVar17 = 0;
+        pAVar17 = (AnonShape_0041AF40_F59F8577 *)&pAVar17->field_0x4;
       }
-      local_4c[2] = (undefined4 *)pSVar13->field_0008;
-      local_4c[3] = (undefined4 *)0x2;
-      local_4c[4] = (undefined4 *)0x110;
-      local_4c[5] = &DAT_008116c8;
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-      (**(code **)pSVar13->vtable)(local_4c);
+      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+      local_4c._8_4_ = pSVar13->field_0008;
+      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+      local_4c._12_4_ = 2;
+      local_4c.field_0010 = 0x110;
+      local_4c.field_0014 = &DAT_008116c8;
+      (*pSVar13->vtable->GetMessage)(pSVar13,&local_4c);
       uVar11 = local_1c;
     }
     if ((this->field_0x24f != '\0') && (uVar11 == (byte)this->field_0x250)) {
-      STT3DSprC::StartShow((STT3DSprC *)puVar1,9,PTR_00802a38->field_00E4);
+      STT3DSprC::StartShow((STT3DSprC *)puVar1,9,g_playSystem_00802A38->field_00E4);
       thunk_FUN_004ad0e0(puVar1,9);
     }
-    iVar10 = thunk_FUN_004acd30(puVar1,'\b');
+    iVar10 = STT3DSprC::sub_004ACD30((STT3DSprC *)puVar1,'\b');
     if (uVar11 == iVar10 - 1U) {
       STT3DSprC::StopShow((STT3DSprC *)puVar1,8);
     }
-    iVar10 = thunk_FUN_004acd30(puVar1,'\n');
+    iVar10 = STT3DSprC::sub_004ACD30((STT3DSprC *)puVar1,'\n');
     if (uVar11 == iVar10 - 1U) {
       STT3DSprC::StopShow((STT3DSprC *)puVar1,10);
     }
     if (this->field_0x24f != '\0') {
-      iVar10 = thunk_FUN_004acd30(puVar1,'\t');
+      iVar10 = STT3DSprC::sub_004ACD30((STT3DSprC *)puVar1,'\t');
       iVar12 = thunk_FUN_004ac910(puVar1,'\t');
       uVar11 = local_1c;
       if (iVar12 == iVar10 + -1) {
@@ -279,19 +281,18 @@ LAB_00582958:
         uVar11 = local_1c;
       }
     }
-    iVar10 = thunk_FUN_004acd30(puVar1,'\b');
+    iVar10 = STT3DSprC::sub_004ACD30((STT3DSprC *)puVar1,'\b');
     if ((uVar11 != iVar10 - 1U) || (this->field_0x24f != '\0')) {
       /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
       if (((int)uVar11 < 10) &&
          ((0 < *(int *)&this->field_0x252 &&
           (pSVar13 = STAllPlayersC::GetObjPtr
-                               (g_sTAllPlayers_007FA174,*(char *)&this->field_0241,
+                               (g_allPlayers_007FA174,*(char *)&this->field_0241,
                                 CONCAT22(extraout_var_03,*(undefined2 *)&this->field_0x245),CASE_1),
           pSVar13 != (STGameObjC *)0x0)))) {
-        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-        (**(code **)&pSVar13->vtable[1].field_0x10)
+        (*pSVar13->vtable[1].vfunc_0C)
                   (*(undefined4 *)&this->field_0x252,&local_14,&local_10,&local_c,&local_18);
-        thunk_FUN_00416240(this,(short)local_14,(short)local_10,(short)local_c);
+        sub_00416240(this,(short)local_14,(short)local_10,(short)local_c);
       }
       (*this->vtable->vfunc_D8)();
       return;
@@ -303,23 +304,22 @@ LAB_00582958:
     iVar10 = sub_00415ED0(this,&local_24,&local_20);
     if (iVar10 == -1) goto switchD_00582651_default;
     if ((-1 < iVar10) && (iVar10 < 2)) {
-      /* ST_PSEUDO[return_width_artifact,raw_indirect_call]: candidate call-output artifact: verify return width, clobbers, or x87 state; expected typed vtable/callback call with explicit __thiscall receiver */
+      /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
       if ((this->field_0241 == 0xff) ||
          ((pSVar13 = STAllPlayersC::GetObjPtr
-                               (g_sTAllPlayers_007FA174,(char)this->field_0241,
+                               (g_allPlayers_007FA174,(char)this->field_0241,
                                 CONCAT22(extraout_var_02,*(undefined2 *)&this->field_0x245),CASE_1),
-          pSVar13 == (STGameObjC *)0x0 ||
-          (iVar12 = (**(code **)&pSVar13->vtable[1].field_0x28)(), iVar12 == 0)))) {
+          pSVar13 == (STGameObjC *)0x0 || (iVar12 = (*pSVar13->vtable[1].vfunc_24)(), iVar12 == 0)))
+         ) {
         this->field_023D = 0;
         goto switchD_00582651_default;
       }
-      if (((byte)PTR_00802a38->field_00E4 & 7) != 1) {
+      if (((byte)g_playSystem_00802A38->field_00E4 & 7) != 1) {
 LAB_005827b7:
         if (iVar10 == 0) goto switchD_00582651_default;
         break;
       }
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-      iVar12 = (**(code **)&pSVar13->vtable[1].field_0xc)
+      iVar12 = (*pSVar13->vtable[1].vfunc_08)
                          (this->field_0041,this->field_0043,this->field_0045,local_14,local_10,
                           local_c);
       *(int *)&this->field_0x252 = iVar12;
@@ -335,8 +335,7 @@ LAB_005827b7:
       thunk_FUN_004ad5e0((int)puVar1);
       iVar10 = sub_00584380(this);
       if (iVar10 != 0) goto LAB_00582958;
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-      (**(code **)&pSVar13->vtable[1].field_0x10)
+      (*pSVar13->vtable[1].vfunc_0C)
                 (*(undefined4 *)&this->field_0x252,&local_14,&local_10,&local_c,&local_18);
       if (local_18 == 0) {
         iVar10 = pSVar13->field_01ED;
@@ -344,7 +343,7 @@ LAB_005827b7:
       }
       iVar10 = pSVar13->field_01ED;
 LAB_00582cbd:
-      FUN_006ea3e0((void *)this->field_0211,this->field_01ED,iVar10);
+      FUN_006ea3e0(this->field_0211,this->field_01ED,iVar10);
     }
     break;
   default:
@@ -364,13 +363,13 @@ LAB_00582f27:
     }
     else if (this->field_0231 == 0) {
       if ((int)this->field_003E - (int)this->field_0038 < -10) {
-        if (((PTR_00802a38->field_00E4 & 3) == 0) &&
+        if (((g_playSystem_00802A38->field_00E4 & 3) == 0) &&
            (iVar10 = *(int *)&this->field_0x247 + 1, *(int *)&this->field_0x247 = iVar10,
            10 < iVar10)) {
           *(undefined4 *)&this->field_0x247 = 10;
         }
       }
-      else if ((PTR_00802a38->field_00E4 & 1) != 0) goto LAB_00582edf;
+      else if ((g_playSystem_00802A38->field_00E4 & 1) != 0) goto LAB_00582edf;
     }
     else {
 LAB_00582edf:

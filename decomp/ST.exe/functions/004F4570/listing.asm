@@ -1,4 +1,4 @@
-FUN_004f4570:
+CPanelTy::sub_004F4570:
 004F4570  55                        PUSH EBP
 004F4571  8B EC                     MOV EBP,ESP
 004F4573  83 EC 08                  SUB ESP,0x8

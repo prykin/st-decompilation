@@ -110,7 +110,7 @@ Different facts are intentionally independent:
 | `name_apply` | Apply a proposed function, constructor, or field name. |
 | `type_apply` | Apply a proposed field type. |
 | `repair` | The prototype target was changed by an older propagation pass and is eligible for evidence-backed correction. |
-| `create_apply` | Create a missing function boundary for a vtable target. |
+| `create_apply` | Create an exact missing function boundary proven by a vtable or referenced direct-JMP chain. |
 | `rename_apply` | Rename a reviewed vtable slot target. Never implied by creation. |
 | `convention_apply` | Apply a recovered calling convention. |
 | `signature_apply` | Apply a recovered function signature. |
@@ -212,17 +212,64 @@ common signature.
 
 ### 3. Vtables and virtual methods
 
-1. Run `STVTableAnalyzer`.
+1. Run `STUnclaimedCodeAnalyzer`.
    - Directory: `<repo>/recovery`
-2. Review and run `STVTableApplier`.
+2. Run `STUnclaimedCodeApplier`.
+   - File: `<repo>/recovery/ST.exe/unclaimed_code_proposals.tsv`
+   - Rerun the pair until `created` and `converted` are zero.
+3. Run `STObjectFactoryAnalyzer`.
+   - Directory: `<repo>/recovery`
+   - Outputs: `object_factory_registry.tsv`,
+     `object_factory_proposals.tsv/jsonl`,
+     `object_type_consumer_proposals.tsv`, and `object_factory_summary.txt`.
+4. Run `STObjectFactoryApplier`.
+   - File: `<repo>/recovery/ST.exe/object_factory_proposals.tsv`
+   - The registry and consumer TSV files are loaded from the same directory.
+   - If exact missing factory entries were created, rerun this pair once.
+5. Run `STVTableAnalyzer`.
+   - Directory: `<repo>/recovery`
+6. Review and run `STVTableApplier`.
    - File: `<repo>/recovery/ST.exe/vtable_proposals.tsv`
-3. Rerun the analyzer and applier if the first apply pass created missing
+7. Rerun the analyzer and applier if the first apply pass created missing
    function boundaries. Stop once the report says the reviewed tables are
    already present and no new boundaries are proposed.
-4. Run `STVirtualMethodAnalyzer`.
+8. Run `STVirtualMethodAnalyzer`.
    - File: `<repo>/recovery/ST.exe/vtable_proposals.tsv`
-5. Run `STVirtualMethodApplier`.
+9. Run `STVirtualMethodApplier`.
    - File: `<repo>/recovery/ST.exe/virtual_method_proposals.tsv`
+
+The unclaimed-code pair consumes the same conservative evidence exposed by the
+exporter's coverage audit directly from the live program. An aligned pointer in
+non-executable data which selects a direct `JMP` entry proves both that thunk's
+entry and the terminal target of its complete direct-jump chain. A direct
+`CALL` or a defined data reference to an orphan `JMP` is equivalent evidence.
+The analyzer enables only those exact boundaries; it does not give them
+semantic names or infer prototypes. Existing manual functions and overlapping
+bodies are preserved, while every enabled row is revalidated against its bytes
+and live pointer/reference anchor at apply time.
+
+The object-factory pair finds the longest zero-terminated run of eight-byte
+`{typeId, executable factory}` records rather than hard-coding its address. The
+registry consumer proves an exact `void * __cdecl factory(void)` ABI even when
+the factory body currently decompiles as `void`. A concrete `Owner *` result and
+`CreateOwner` name require independent evidence from a unique class allocation
+size, an allocation-size-matched named constructor, or an already typed class
+return. Shared factories
+receive one prototype proposal even when several IDs select them. The applier
+also creates `STObjectTypeId`, types the registry as
+`STObjectFactoryEntry[]`, and propagates that enum only to non-manual
+`CreateObject`/`GetObjectTypeId` consumers. Exact raw table targets may become
+functions; MSVC EH continuation shapes and overlapping bodies are preserved.
+
+Raw pointers which land directly on plausible code, MSVC exception
+filters/funclets, jump-only shared tails, and merely probable instruction bytes
+remain `create_apply=0`. They are useful coverage/review records, but creating a
+source-level function for each would conflate callback functions with compiler
+exception machinery or shared basic blocks. Newly created callback targets are
+not dead merely because the direct call graph has no edge to them: their data
+table entry is the inbound edge. Run vtable, constructor, prototype, global, and
+indirect-call passes afterwards so those new functions acquire the recovered
+types and ownership available elsewhere in the database.
 
 For a uniquely owned `__thiscall` slot, signature application may move a
 synthetically named global function into the proven class namespace while
@@ -307,6 +354,9 @@ structural until independent evidence names it.
      `class_nested_{type,field}_proposals.tsv` files are loaded automatically.
 8. Rerun the class-layout pair once. New constructor ownership can expose
    additional `this + offset` accesses even when no new class is created.
+9. Rerun `STObjectFactoryAnalyzer` and `STObjectFactoryApplier`. The completed
+   class layouts can turn additional generic `void *` factories into exact
+   `Owner *` results and stable `CreateOwner` names.
 
 The class-layout pass consumes constructor allocation sizes and recovered
 vtable types. It tracks exact `this + constant` accesses, fields reached through
@@ -405,8 +455,10 @@ then archives the v1 proposal as `hidden_this_legacy_v1.tsv` and emits version-2
 proposals. Version-2 application is atomic per row, so a failed type or
 namespace check cannot retain a partial signature change.
 
-The method-owner pass follows only direct calls where a named caller's incoming
-`this` value still reaches `ECX`. It assigns structural names such as
+The method-owner pass follows only address-resolved calls where a named caller's
+incoming `this` value still reaches `ECX`. It follows stable EBP-local spills,
+register reloads, and the complete direct-JMP thunk chain before attributing the
+target. It assigns structural names such as
 `STBoatC::sub_006EA2F0`; it does not invent semantic method names. Automatic
 ownership also requires a compatible existing class data type. Ambiguous owner
 sets stay disabled. A `__fastcall` candidate is not converted when its incoming
@@ -415,7 +467,8 @@ incoming `EDX` or stack-argument reads, conversion also removes the old `ECX`
 formal so it does not survive as a bogus stack parameter. The same check repairs
 receiver-only signatures written by earlier versions of the applier.
 
-Owner evidence is also coverage-checked against every non-thunk direct caller.
+Owner evidence is also coverage-checked against every logical non-thunk caller,
+including callers which reach the implementation through one or more thunks.
 The analyzer distinguishes calls which pass the caller's own incoming `ECX`
 from calls on a separately loaded service object. A prior script-owned owner is
 eligible for `repair_apply=1` only when named owners conflict, or at least four
@@ -553,6 +606,14 @@ final LLM corpus.
       `apply=0`; anonymous-to-anonymous geometry is never merged automatically.
 27. Run `STTypeFamilyApplier`.
     - File: `<repo>/recovery/ST.exe/type_family_proposals.tsv`
+28. Run `STManualTypeAuditAnalyzer`.
+    - Directory: `<repo>/recovery`
+    - Output: `manual_type_conflicts.tsv` and
+      `manual_type_conflicts_summary.txt`.
+    - This is deliberately read-only. It consolidates strong contradictory
+      evidence for protected prototype, class-field, pointer-shape, and
+      type-family types; it never silently replaces a `USER_DEFINED` or
+      `IMPORTED` decision.
 
 The utility pass is intentionally small and strict. It verifies body shapes before
 assigning the semantics and prototypes of `FreeAndNull`, `DArrayDestroy`,
@@ -629,11 +690,23 @@ the known recovered type. Overlapping child observations are kept as evidence;
 only a strongest non-overlapping ordinary-structure view is eligible for
 automatic application.
 
-Prototype propagation uses direct calls with an exact explicit argument count.
+Prototype propagation resolves each direct entry address through its thunk chain
+before selecting a target. Overloads are therefore selected by address, never by
+their shared qualified name. Stack parameters still require an exact argument
+count; explicit `__fastcall` ECX/EDX parameters are matched from their actual
+register storage. Stable EBP-local spills preserve trusted incoming parameters
+and `this` across compiler-generated save/reload sequences.
 Types and names are independent per parameter; conflicting evidence for one
 parameter does not block another. Trusted `this` receivers, user/imported
-prototypes, semantic pointer/enum types, and short one-call wrappers provide the
-strongest evidence. `USER_DEFINED` and `IMPORTED` parameters and returns are preserved.
+prototypes, concrete parameters of named library functions, semantic pointer/enum
+types, and short one-call wrappers provide the strongest evidence. `USER_DEFINED`
+and `IMPORTED` parameters and returns are preserved. Every observed call is
+written to `prototype_callsite_audit.tsv` with its direct address, thunk chain,
+resolved implementation, stack count, per-parameter stack-value mapping, and
+register evidence. `exact_address_match` is the only stack form used for automatic
+propagation. `address_match_with_prefix_pushes` separates callee-saved/temporary
+prefix pushes from a true `stack_argument_underflow`; varargs have their own
+status. This is the primary check for same-name overload propagation.
 
 The analyzer also follows the producer of `EAX` until its first local use. A
 returned value used as a typed call argument, as the receiver of a known
@@ -681,7 +754,10 @@ Global-data propagation recognizes generic `DAT_*`, `UNK_*`, and `PTR_*`
 symbols when the stored value is repeatedly used as a typed receiver or trusted
 argument. Automatic replacement is limited to small undefined or script-owned
 data. Address-of evidence, overlapping concrete data, and manual symbols remain
-review-only. Generated names are structural and retain the address suffix.
+review-only. A synthetic `PTR_*` whose existing concrete pointer type already
+matches closed receiver evidence can still receive a structural name without
+rewriting its type; for example, the `STPlaySystemC *` singleton becomes an
+address-stable `g_playSystem_*` symbol. Generated names retain the address suffix.
 
 Pointer-shape propagation handles the corresponding local/parameter layer. It
 collects expressions such as `*(uint *)(local_24 + 0xc)`, combines them with
@@ -785,9 +861,30 @@ Run `STDecompExport`.
 - Output: `<repo>/decomp/ST.exe`
 
 The exporter writes program metadata, types, globals, strings, symbols,
-callgraph indexes, and per-function directories. It reuses an existing function
+callgraph indexes, address-resolved `call_relations.jsonl`, and per-function directories. It reuses an existing function
 body when its dependency-scoped fingerprint is unchanged. If a function becomes
 a library or thunk, stale `decomp.c` and `listing.asm` files are deleted.
+
+The same run performs executable-section coverage auditing. Known function
+bodies are subtracted from every initialized executable memory block. Long
+`00`/`90`/`CC` runs are classified as padding; remaining ranges are classified as
+orphan instructions, defined data, address tables, import-thunk tables, probable
+x86 code, text, or unknown non-padding bytes. Probable-code evidence includes
+validated relative calls, return opcodes, and conservative entry-byte patterns;
+it is an audit classification and does not create functions in Ghidra.
+Aligned raw pointers from non-executable memory are audited even when Ghidra has
+not defined the containing data. Matching ranges become `data_referenced_code`;
+the characteristic MSVC `mov eax,1; ret` filter followed by an EH funclet is
+reported as `seh_funclet_cluster`. These are runtime control-flow records, not
+evidence that the whole containing range is one source-level function.
+If the raw pointer selects an unclaimed `JMP` entry, the audit follows that one
+control-flow edge and classifies the destination as `table_callback_target`.
+This covers object/factory registries without treating arbitrary byte patterns
+as calls.
+`coverage_summary.json` and `unclaimed_ranges.jsonl` contain the complete
+inventory. Meaningful ranges are exported as text under
+`unclaimed/<START>_<END>/` with `meta.json`, `bytes.txt`, and `listing.asm`; no
+original binary blob is copied into the repository.
 
 Reused bodies still pass through the cheap text-normalization/catalog stage; no
 decompilation is needed. Terminal x86 `INT3` plus Ghidra's synthetic `swi(3)`
@@ -853,6 +950,8 @@ every edit. Use the smallest affected loop:
 | New bounded indexed global array | global aggregates → globals → pointer shapes |
 | New class field suitable for a switch domain | switch enums, then class layouts once more |
 | New source/debug name | source provenance; vtable too if the function writes a vptr |
+| New exact function boundary from coverage evidence | unclaimed code → vtables → constructors → prototypes → globals/indirect calls |
+| New class layout or constructor allocation size | object factories → vtables/prototypes for newly typed factory callers |
 | Final library classification | no recovery loop; export the corpus |
 
 An analyzer may continue to emit enabled rows whose desired state is already
@@ -870,6 +969,8 @@ a new conflict is what requires another iteration.
 | `STCuratedRecoveryApplier` | Apply reviewed address-specific facts that are not yet generic. |
 | `STMessageIdAnalyzer/Applier` | Recover the `MESS_*`/`STMessageId` domain. |
 | `STMessageHandlerAnalyzer/Applier` | Apply the common `STMessage *` envelope and status return across the named `GetMessage` family, including the shared zero-return handler. |
+| `STUnclaimedCodeAnalyzer/Applier` | Create only callback/entry targets and complete direct-JMP thunk chains with live pointer/CALL/data anchors; retain EH funclets, direct raw targets, and probable code as review-only coverage. |
+| `STObjectFactoryAnalyzer/Applier` | Recover the terminated object-type/factory registry, exact no-argument cdecl factory ABI, concrete class results/names, missing table-selected entries, `STObjectTypeId`, and typed registry consumers. |
 | `STVTableAnalyzer/Applier` | Find long and strongly referenced short vtables, resolve direct-JMP thunks, apply physical layouts separately from semantic owners, type safe owner vptrs, and record owner conflicts. |
 | `STVirtualMethodAnalyzer/Applier` | Propagate reviewed virtual slot names, conventions, and compatible signatures. |
 | `STConstructorAnalyzer/Applier` | Recover constructors, allocation sizes, direct hierarchy evidence, receiver-only signatures, and ABI `Owner *` returns when EAX is proven to return `this`. |
@@ -883,6 +984,7 @@ a new conflict is what requires another iteration.
 | `STReturnSemanticsAnalyzer/Applier` | Recover conservative `void`, boolean, and terminal `noreturn` behavior. |
 | `STPrototypeAnalyzer/Applier` | Propagate compatible parameter/return types and reviewed parameter names across direct calls. |
 | `STPrototypeRepairAnalyzer/Applier` | Isolate and safely correct stale types/names previously written by prototype propagation. |
+| `STManualTypeAuditAnalyzer` | Consolidate strong evidence that a protected/manual prototype or field type is stale; read-only by design. |
 | `STGlobalRecordAnalyzer/Applier` | Recover packed arrays of repeated global records and their proven fields, including nested temporary-object slot arrays, from stride/range evidence. |
 | `STSpatialGridAnalyzer/Applier` | Collapse the shared world/pathing x-y-z-stride globals into typed runtime grid descriptors. |
 | `STGlobalAggregateAnalyzer/Applier` | Audit indexed global ranges and install only bounded arrays/matrices with a proven extent and indexing formula. |
@@ -894,7 +996,7 @@ a new conflict is what requires another iteration.
 | `STSourceProvenanceAnalyzer/Applier` | Attach original source files and strict free-function names. |
 | `STControlFlowLabelAnalyzer/Applier` | Give structural names to real decompiler goto targets. |
 | `STLibraryAnalyzer/Applier` | Classify linked CRT, DKW, and internal Ourlib implementations. |
-| `STDecompExport` | Export the address-stable, dependency-fingerprinted LLM corpus with a bounded CFG worklist for cache-hit fingerprints, inline proven immutable strings, normalize terminal traps and compiler bulk-zero loops, and catalogue pseudocode idioms plus corpus-wide residual quality debt. |
+| `STDecompExport` | Export the address-stable, dependency-fingerprinted LLM corpus, resolved thunk/call relations, and executable coverage gaps; inline proven immutable strings, normalize terminal traps and compiler bulk-zero loops, and catalogue pseudocode idioms plus corpus-wide residual quality debt. |
 
 ## Git and Ghidra database hygiene
 

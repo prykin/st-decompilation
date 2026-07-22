@@ -11,9 +11,9 @@ AiBossClassTy * __thiscall AiBossClassTy::AiBossClassTy(AiBossClassTy *this)
 {
 
   sub_006E60E0(this);
-  thunk_FUN_0064cc90(&this->field_001C);
+  thunk_FUN_0064cc90(&this->vtable_at_1c);
   this->vtable = (AiBossClassTyVTable_at_1C *)&AiBossClassTyVTable;
-  this->field_001C = &AiBossClassTyVTable_at_1C;
+  this->vtable_at_1c = &AiBossClassTyVTable_at_1C;
   if (this != (AiBossClassTy *)0x0) {
     memset(&this->field_0x5d3, 0, 0x85); /* compiler bulk-zero initialization */
     return this;

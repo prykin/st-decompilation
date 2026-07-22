@@ -1,4 +1,4 @@
-FUN_00622880:
+STMineSetC::sub_00622880:
 00622880  56                        PUSH ESI
 00622881  8B F1                     MOV ESI,ECX
 00622883  8D 8E D5 01 00 00         LEA ECX,[ESI + 0x1d5]

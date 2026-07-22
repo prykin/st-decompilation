@@ -13,7 +13,7 @@ int __thiscall STPlaySystemC::GetMessage(STPlaySystemC *this,STMessage *message)
 
 {
   char cVar1;
-  AnonPointee_STPlaySystemC_0000 *pAVar2;
+  STPlaySystemCVTable *pSVar2;
   code *pcVar3;
   cMf32 *this_00;
   int *piVar4;
@@ -48,7 +48,7 @@ int __thiscall STPlaySystemC::GetMessage(STPlaySystemC *this,STMessage *message)
         iVar5 = Library::MSVCRT::__setjmp3(local_b4.jumpBuffer,0);
         this_00 = g_cMf32_00806754;
         if (iVar5 == 0) {
-          if (PTR_00802a58 != (cLoadingTy *)0x0) {
+          if (g_cLoading_00802A58 != (cLoadingTy *)0x0) {
             uVar9 = 0xffffffff;
             pcVar11 = PTR_DAT_007c83b0;
             do {
@@ -83,17 +83,17 @@ int __thiscall STPlaySystemC::GetMessage(STPlaySystemC *this,STMessage *message)
               iVar5 = local_8;
             }
             local_8 = iVar5;
-            pcVar11 = LoadResourceString(19000,HINSTANCE_00807618);
-            cLoadingTy::SetProcess(PTR_00802a58,0,pcVar11,iVar5);
+            pcVar11 = LoadResourceString(19000,g_module_00807618);
+            cLoadingTy::SetProcess(g_cLoading_00802A58,0,pcVar11,iVar5);
           }
           pSVar10 = local_c;
           DAT_00802a3c = 0;
           Library::Ourlib::MFAOBJ::mfAObjEnum
-                    (g_cMf32_00806754,PTR_DAT_007c83b0,&LAB_00403535,local_c,0);
-          pcVar11 = LoadResourceString(0x4a39,HINSTANCE_00807618);
+                    (g_cMf32_00806754,PTR_DAT_007c83b0,thunk_FUN_0054ca10,local_c,0);
+          pcVar11 = LoadResourceString(0x4a39,g_module_00807618);
           wsprintfA((LPSTR)&DAT_0080f33a,"%d %s",DAT_00802a3c,pcVar11);
-          if (PTR_00802a58 != (cLoadingTy *)0x0) {
-            cLoadingTy::SetState(PTR_00802a58,CASE_2,0,(char *)&DAT_0080f33a);
+          if (g_cLoading_00802A58 != (cLoadingTy *)0x0) {
+            cLoadingTy::SetState(g_cLoading_00802A58,CASE_2,0,(char *)&DAT_0080f33a);
           }
           g_currentExceptionFrame = local_b4.previous;
         }
@@ -103,12 +103,11 @@ int __thiscall STPlaySystemC::GetMessage(STPlaySystemC *this,STMessage *message)
           pSVar10 = local_c;
         }
         uVar9 = 0;
-        pAVar2 = pSVar10->vtable;
+        pSVar2 = pSVar10->vtable;
         memset(local_2c, 0, 0x20); /* compiler bulk-zero initialization */
         local_2c[3] = 0xf;
         local_2c[4] = 0x111;
-        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-        (*(code *)pAVar2->field_0018)(local_2c);
+        (*pSVar2->SendMessage)((SystemWithNamedObjClassTy *)pSVar10,(int)local_2c);
         if (DAT_00808783 == '\x03') {
           pSVar10->field_0038 = 1;
           if (g_int_00811764 != (int *)0x0) {
@@ -120,7 +119,7 @@ int __thiscall STPlaySystemC::GetMessage(STPlaySystemC *this,STMessage *message)
           else if (DAT_00808aaf != 0) {
             pDVar13 = &DAT_00808af8;
             do {
-              DVar7 = FUN_006e51b0(0x807620);
+              DVar7 = STAppC::sub_006E51B0((STAppC *)&DAT_00807620);
               *pDVar13 = DVar7;
               uVar9 = uVar9 + 1;
               pDVar13 = pDVar13 + 0x27;

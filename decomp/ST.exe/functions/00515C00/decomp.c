@@ -12,13 +12,13 @@ void __thiscall HelpPanelTy::DrawDescription(HelpPanelTy *this,int *param_1,UINT
   code *pcVar2;
   HelpPanelTy *this_00;
   int iVar3;
-  uint *puVar4;
-  char *pcVar5;
+  uint *resourceString;
+  char *pcVar4;
+  uint uVar5;
   uint uVar6;
-  uint uVar7;
-  char *pcVar8;
-  int iVar9;
-  undefined4 uVar10;
+  char *pcVar7;
+  int iVar8;
+  undefined4 uVar9;
   InternalExceptionFrame local_4c;
   HelpPanelTy *local_8;
 
@@ -29,9 +29,9 @@ void __thiscall HelpPanelTy::DrawDescription(HelpPanelTy *this,int *param_1,UINT
   this_00 = local_8;
   if (iVar3 != 0) {
     g_currentExceptionFrame = local_4c.previous;
-    iVar9 = ReportDebugMessage("E:\\__titans\\Andrey\\helppan.cpp",0x425,0,iVar3,"%s"
+    iVar8 = ReportDebugMessage("E:\\__titans\\Andrey\\helppan.cpp",0x425,0,iVar3,"%s"
                                ,"HelpPanelTy::DrawDescription");
-    if (iVar9 != 0) {
+    if (iVar8 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
     RaiseInternalException(iVar3,0,"E:\\__titans\\Andrey\\helppan.cpp",0x425);
@@ -39,43 +39,43 @@ void __thiscall HelpPanelTy::DrawDescription(HelpPanelTy *this,int *param_1,UINT
   }
   if (param_2 != 10000) {
     ccFntTy::SetSurf(local_8->field_01E0,(int)local_8->field_0218,0,0,*param_1,0x19c,0xf);
-    uVar10 = 3;
-    iVar9 = -1;
+    uVar9 = 3;
+    iVar8 = -1;
     iVar3 = -1;
-    puVar4 = (uint *)LoadResourceString(0x55f5,HINSTANCE_00807618);
-    ccFntTy::WrStr(this_00->field_01E0,puVar4,iVar3,iVar9,uVar10);
+    resourceString = (uint *)LoadResourceString(0x55f5,g_module_00807618);
+    ccFntTy::WrStr(this_00->field_01E0,resourceString,iVar3,iVar8,uVar9);
     *param_1 = *param_1 + 0xf;
-    pcVar5 = LoadResourceString(param_2,HINSTANCE_00807618);
-    uVar6 = 0xffffffff;
+    pcVar4 = LoadResourceString(param_2,g_module_00807618);
+    uVar5 = 0xffffffff;
     do {
-      pcVar8 = pcVar5;
-      if (uVar6 == 0) break;
-      uVar6 = uVar6 - 1;
-      pcVar8 = pcVar5 + 1;
-      cVar1 = *pcVar5;
-      pcVar5 = pcVar8;
+      pcVar7 = pcVar4;
+      if (uVar5 == 0) break;
+      uVar5 = uVar5 - 1;
+      pcVar7 = pcVar4 + 1;
+      cVar1 = *pcVar4;
+      pcVar4 = pcVar7;
     } while (cVar1 != '\0');
-    uVar6 = ~uVar6;
-    pcVar5 = pcVar8 + -uVar6;
-    pcVar8 = (char *)&DAT_0080f33a;
-    for (uVar7 = uVar6 >> 2; uVar7 != 0; uVar7 = uVar7 - 1) {
-      *(undefined4 *)pcVar8 = *(undefined4 *)pcVar5;
-      pcVar5 = pcVar5 + 4;
-      pcVar8 = pcVar8 + 4;
+    uVar5 = ~uVar5;
+    pcVar4 = pcVar7 + -uVar5;
+    pcVar7 = (char *)&DAT_0080f33a;
+    for (uVar6 = uVar5 >> 2; uVar6 != 0; uVar6 = uVar6 - 1) {
+      *(undefined4 *)pcVar7 = *(undefined4 *)pcVar4;
+      pcVar4 = pcVar4 + 4;
+      pcVar7 = pcVar7 + 4;
     }
-    for (uVar6 = uVar6 & 3; uVar6 != 0; uVar6 = uVar6 - 1) {
-      *pcVar8 = *pcVar5;
-      pcVar5 = pcVar5 + 1;
-      pcVar8 = pcVar8 + 1;
+    for (uVar5 = uVar5 & 3; uVar5 != 0; uVar5 = uVar5 - 1) {
+      *pcVar7 = *pcVar4;
+      pcVar4 = pcVar4 + 1;
+      pcVar7 = pcVar7 + 1;
     }
     ccFntTy::FormIndentText
               (this_00->field_01E0,(char *)&DAT_0080f33a,&DAT_0080f33a," ,.;:!?/\\()[]{}",
                (uint *)&DAT_007c21ec,0x19c,&DAT_007c2198,1);
-    uVar6 = FUN_007113e0(this_00->field_01E0,&DAT_0080f33a);
-    CheckBkView(this_00,*param_1,uVar6);
-    ccFntTy::SetSurf(this_00->field_01E0,(int)this_00->field_0218,0,0,*param_1,0x19c,uVar6 + 2);
+    uVar5 = FUN_007113e0(this_00->field_01E0,&DAT_0080f33a);
+    CheckBkView(this_00,*param_1,uVar5);
+    ccFntTy::SetSurf(this_00->field_01E0,(int)this_00->field_0218,0,0,*param_1,0x19c,uVar5 + 2);
     ccFntTy::WrTxt(this_00->field_01E0,&DAT_0080f33a,1,-1,(DAT_0080874e != '\x03') - 1 & 5,-1,-1);
-    *param_1 = *param_1 + uVar6;
+    *param_1 = *param_1 + uVar5;
   }
   g_currentExceptionFrame = local_4c.previous;
   return;

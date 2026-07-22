@@ -1,4 +1,4 @@
-SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0048DFD0::FUN_0048dfd0:
+STBoatC::sub_0048DFD0:
 0048DFD0  55                        PUSH EBP
 0048DFD1  8B EC                     MOV EBP,ESP
 0048DFD3  81 EC F8 03 00 00         SUB ESP,0x3f8

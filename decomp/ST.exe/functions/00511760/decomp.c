@@ -98,8 +98,8 @@ void __thiscall HelpPanelTy::DoneHelpPanel(HelpPanelTy *this)
       this_00 = extraout_ECX_06;
     }
     pHVar2->field_01D7 = 0;
-    if ((AnonShape_006B5570_4D68B99C *)pHVar2->field_01D3 != (AnonShape_006B5570_4D68B99C *)0x0) {
-      FUN_006b5570((AnonShape_006B5570_4D68B99C *)pHVar2->field_01D3);
+    if ((DArrayTy *)pHVar2->field_01D3 != (DArrayTy *)0x0) {
+      FUN_006b5570((DArrayTy *)pHVar2->field_01D3);
       /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
       this_00 = extraout_ECX_07;
     }

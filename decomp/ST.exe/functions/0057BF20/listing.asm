@@ -1,4 +1,4 @@
-FUN_0057bf20:
+STFishC::sub_0057BF20:
 0057BF20  55                        PUSH EBP
 0057BF21  8B EC                     MOV EBP,ESP
 0057BF23  83 EC 20                  SUB ESP,0x20

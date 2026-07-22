@@ -1,4 +1,4 @@
-FUN_0049a500:
+STGroupBoatC::sub_0049A500:
 0049A500  55                        PUSH EBP
 0049A501  8B EC                     MOV EBP,ESP
 0049A503  83 EC 1C                  SUB ESP,0x1c

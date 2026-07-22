@@ -1,4 +1,4 @@
-FUN_0041c3f0:
+TLOEmbryoTy::sub_0041C3F0:
 0041C3F0  55                        PUSH EBP
 0041C3F1  8B EC                     MOV EBP,ESP
 0041C3F3  8B 45 08                  MOV EAX,dword ptr [EBP + 0x8]

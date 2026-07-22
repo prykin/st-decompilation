@@ -12,13 +12,13 @@ undefined4 __fastcall FUN_005f07a0(STBoatC *param_1)
   short local_8;
   short local_6;
 
-  if ((param_1->field_0x24f == '\0') && (0 < *(short *)&param_1->field_0x246)) {
-    iVar4 = thunk_FUN_004961b0(*(short *)&param_1->field_0x242,*(short *)&param_1->field_0x244,
-                               *(short *)&param_1->field_0x246 + -1);
+  if ((param_1->field_024F == '\0') && (0 < (short)param_1->field_0246)) {
+    iVar4 = thunk_FUN_004961b0(param_1->field_0242,*(short *)&param_1->field_0x244,
+                               param_1->field_0246 + -1);
     if (iVar4 == 0) {
-      sVar1 = *(short *)&param_1->field_0x242;
+      sVar1 = param_1->field_0242;
       sVar2 = *(short *)&param_1->field_0x244;
-      sVar3 = *(short *)&param_1->field_0x246 + -1;
+      sVar3 = param_1->field_0246 + -1;
       if ((((-1 < sVar1) && (sVar1 < g_worldGrid.sizeX)) && (-1 < sVar2)) &&
          (((sVar2 < g_worldGrid.sizeY && (-1 < sVar3)) &&
           ((sVar3 < g_worldGrid.sizeZ &&
@@ -36,8 +36,7 @@ undefined4 __fastcall FUN_005f07a0(STBoatC *param_1)
               if (iVar4 != 0) {
                 STFishC::sub_004162B0(this,&local_6,&local_8,&local_a);
                 iVar4 = thunk_FUN_005ecd70(param_1,(local_6 + 1) * 0xc9,(local_8 + 1) * 0xc9,
-                                           local_a * 0xc9 + 0x96,*(int *)&param_1->field_0x2ba,
-                                           '\x01',0x3c);
+                                           local_a * 0xc9 + 0x96,param_1->field_02BA,'\x01',0x3c);
                 if (iVar4 != 0) {
                   return 1;
                 }

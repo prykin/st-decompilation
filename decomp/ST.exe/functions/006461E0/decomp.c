@@ -50,15 +50,15 @@ int __thiscall STVolcanoC::GetMessage(STVolcanoC *this,STMessage *message)
   SVar2 = message->id;
   if (SVar2 < 4) {
     if (SVar2 == MESS_SHARED_0003) {
-      thunk_FUN_006479e0((int)local_8);
+      sub_006479E0(local_8);
       g_currentExceptionFrame = local_54.previous;
       return 0;
     }
     if (SVar2 == MESS_ID_NONE) {
       switch(local_8->field_00A9) {
       case CASE_1:
-        if (local_8->field_00A4 < PTR_00802a38->field_00E4) {
-          local_8->field_009C = PTR_00802a38->field_00E4;
+        if (local_8->field_00A4 < g_playSystem_00802A38->field_00E4) {
+          local_8->field_009C = g_playSystem_00802A38->field_00E4;
           thunk_FUN_00647370((AnonShape_00647370_C4EFCC30 *)local_8);
           iVar5 = thunk_FUN_00646e00(this_00->field_0065,this_00->field_0069,this_00->field_006D);
           if (iVar5 != 0) {
@@ -78,7 +78,7 @@ int __thiscall STVolcanoC::GetMessage(STVolcanoC *this,STMessage *message)
         }
         break;
       case CASE_2:
-        if ((((local_8->field_0058 & 1) != 0) && (PTR_00802a38->field_00E4 % 3 == 0)) &&
+        if ((((local_8->field_0058 & 1) != 0) && (g_playSystem_00802A38->field_00E4 % 3 == 0)) &&
            (iVar5 = local_8->field_0071 + 1, local_8->field_0071 = iVar5,
            local_8->field_0075 <= iVar5)) {
           local_8->field_0071 = 0;
@@ -86,7 +86,8 @@ int __thiscall STVolcanoC::GetMessage(STVolcanoC *this,STMessage *message)
           local_8->field_00A9 = CASE_1;
           uVar1 = local_8->field_00B1 * 0x41c64e6d + 0x3039;
           local_8->field_00B1 = uVar1;
-          local_8->field_00A4 = (uVar1 >> 0x10) % 0x2711 + 20000 + PTR_00802a38->field_00E4;
+          local_8->field_00A4 = (uVar1 >> 0x10) % 0x2711 + 20000 + g_playSystem_00802A38->field_00E4
+          ;
           if (local_8->field_005C == '\0') {
             if (local_8->field_0061 != (ushort *)0x0) {
               /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
@@ -97,7 +98,7 @@ int __thiscall STVolcanoC::GetMessage(STVolcanoC *this,STMessage *message)
                            (float)local_8->field_006D * _DAT_007904f8 * _DAT_007904f0 +
                            _DAT_007904fc,0);
               this_00->field_005C = 1;
-              thunk_FUN_006479e0((int)this_00);
+              sub_006479E0(this_00);
               g_currentExceptionFrame = local_54.previous;
               return 0;
             }
@@ -115,11 +116,11 @@ int __thiscall STVolcanoC::GetMessage(STVolcanoC *this,STMessage *message)
               this_00->field_0061 = (ushort *)0x0;
             }
           }
-          thunk_FUN_006479e0((int)this_00);
+          sub_006479E0(this_00);
           g_currentExceptionFrame = local_54.previous;
           return 0;
         }
-        if (((local_8->field_0058 & 2) != 0) && (PTR_00802a38->field_00E4 % 3 == 0)) {
+        if (((local_8->field_0058 & 2) != 0) && (g_playSystem_00802A38->field_00E4 % 3 == 0)) {
           iVar5 = local_8->field_007E + 1;
           local_8->field_007E = iVar5;
           if (local_8->field_0082 <= iVar5) {
@@ -133,7 +134,7 @@ int __thiscall STVolcanoC::GetMessage(STVolcanoC *this,STMessage *message)
             FUN_006eab60(PTR_00807598,this_00->field_0086);
           }
         }
-        if ((((PTR_00802a38->field_00E4 & 1) == 0) && (2 < this_00->field_0071)) &&
+        if ((((g_playSystem_00802A38->field_00E4 & 1) == 0) && (2 < this_00->field_0071)) &&
            ((this_00->field_0071 < (this_00->field_0075 << 1) / 3 &&
             (uVar1 = this_00->field_00B1 * 0x41c64e6d + 0x3039, this_00->field_00B1 = uVar1,
             (uVar1 & 0x70000) == 0x10000)))) {
@@ -155,11 +156,12 @@ int __thiscall STVolcanoC::GetMessage(STVolcanoC *this,STMessage *message)
         }
         break;
       case CASE_3:
-        if (((*(byte *)&local_8->field_0058 & 1) != 0) && (PTR_00802a38->field_00E4 % 3 == 0)) {
+        if (((*(byte *)&local_8->field_0058 & 1) != 0) &&
+           (g_playSystem_00802A38->field_00E4 % 3 == 0)) {
           iVar5 = local_8->field_0071 + 1;
           local_8->field_0071 = iVar5;
           if ((local_8->field_0075 <= iVar5) &&
-             (local_8->field_0071 = 0, local_8->field_00A4 < PTR_00802a38->field_00E4)) {
+             (local_8->field_0071 = 0, local_8->field_00A4 < g_playSystem_00802A38->field_00E4)) {
             local_8->field_00A9 = CASE_2;
             thunk_FUN_00647a60(local_8,0x4b6);
             if (this_00->field_00A8 != '\0') {
@@ -196,13 +198,13 @@ int __thiscall STVolcanoC::GetMessage(STVolcanoC *this,STMessage *message)
         }
         break;
       case CASE_4:
-        if (PTR_00802a38->field_00E4 % 5 == 0) {
+        if (g_playSystem_00802A38->field_00E4 % 5 == 0) {
           iVar5 = local_8->field_0071 + 1;
           local_8->field_0071 = iVar5;
           if (local_8->field_0075 <= iVar5) {
             uVar1 = local_8->field_00B1 * 0x41c64e6d + 0x3039;
             local_8->field_00B1 = uVar1;
-            uVar3 = PTR_00802a38->field_00E4;
+            uVar3 = g_playSystem_00802A38->field_00E4;
             local_8->field_00A9 = CASE_3;
             local_8->field_0058 = local_8->field_0058 | 1;
             local_8->field_0071 = 0;
@@ -243,7 +245,7 @@ int __thiscall STVolcanoC::GetMessage(STVolcanoC *this,STMessage *message)
     else if (SVar2 == MESS_ID_CREATE) {
       puVar8 = (message->arg0).ptr;
       if (puVar8[3] == 2) {
-        thunk_FUN_00646db0(local_8,puVar8);
+        sub_00646DB0(local_8,puVar8);
         this_00->field_00B1 = this_00->field_00AD;
         this_00->field_00A8 = 0;
         g_currentExceptionFrame = local_54.previous;
@@ -256,7 +258,7 @@ int __thiscall STVolcanoC::GetMessage(STVolcanoC *this,STMessage *message)
         puVar9 = puVar9 + 1;
       }
       local_8->field_00B1 = DAT_00808754;
-      iVar5 = thunk_FUN_006472b0((AnonShape_006472B0_8CB9F6B2 *)local_8);
+      iVar5 = sub_006472B0(local_8);
       if (iVar5 != 0) {
         uVar1 = this_00->field_00B1 * 0x41c64e6d + 0x3039;
         this_00->field_00B1 = uVar1;
@@ -271,8 +273,8 @@ int __thiscall STVolcanoC::GetMessage(STVolcanoC *this,STMessage *message)
     }
   }
   else if (SVar2 == MESS_SHARED_010F) {
-    local_10 = (byte *)thunk_FUN_00646d40(local_8,&local_c);
-    STPlaySystemC::SaveObjData(PTR_00802a38,this_00->field_0018,local_10,local_c);
+    local_10 = (byte *)sub_00646D40(local_8,&local_c);
+    STPlaySystemC::SaveObjData(g_playSystem_00802A38,this_00->field_0018,local_10,local_c);
     FreeAndNull(&local_10);
   }
   g_currentExceptionFrame = local_54.previous;

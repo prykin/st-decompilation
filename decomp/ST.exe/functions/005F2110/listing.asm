@@ -1,4 +1,4 @@
-FUN_005f2110:
+STManBasisC::sub_005F2110:
 005F2110  55                        PUSH EBP
 005F2111  8B EC                     MOV EBP,ESP
 005F2113  8B 45 08                  MOV EAX,dword ptr [EBP + 0x8]

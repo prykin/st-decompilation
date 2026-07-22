@@ -6,8 +6,8 @@
    STGroupBoatC::Way3DGrpGetDistrPoint */
 
 uint * STGroupBoatC::Way3DGrpGetDistrPoint
-                 (void *param_1,AnonShape_00413AF0_B6B4EE9A *param_2,int param_3,int param_4,
-                 undefined4 param_5,int param_6,int param_7,int param_8)
+                 (void *param_1,DArrayTy *param_2,int param_3,int param_4,undefined4 param_5,
+                 int param_6,int param_7,int param_8)
 
 {
   code *pcVar1;
@@ -23,7 +23,7 @@ uint * STGroupBoatC::Way3DGrpGetDistrPoint
   int local_c;
   DArrayTy *local_8;
 
-  uVar2 = (ushort)param_2->field_000C;
+  uVar2 = (ushort)param_2->count;
   iVar4 = 0;
   local_c = 0;
   *(ushort *)((int)param_1 + 0x27) = uVar2;
@@ -57,7 +57,7 @@ uint * STGroupBoatC::Way3DGrpGetDistrPoint
       }
       *(uint *)((int)param_1 + 0x49) = *(uint *)((int)param_1 + 0x49) | 1;
     }
-    iVar4 = thunk_FUN_00413af0(param_1,(DArrayTy *)param_2,param_6,param_7,param_8);
+    iVar4 = thunk_FUN_00413af0(param_1,param_2,param_6,param_7,param_8);
     if (iVar4 == 0) {
       iVar4 = 0;
       if (0 < DAT_007f4d40) {

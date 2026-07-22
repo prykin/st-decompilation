@@ -125,7 +125,7 @@ FUN_0061b340(void *this,short param_1,short param_2,int param_3,int param_4,int 
           return 2;
         }
         if ((((pSVar4[1].vtable < (STWorldObjectVTable *)0x8) &&
-             ((PTR_00802a38 == (STPlaySystemC *)0x0 ||
+             ((g_playSystem_00802A38 == (STPlaySystemC *)0x0 ||
               ((byte)(&DAT_008087e9)[(int)pSVar4[1].vtable * 0x51] < 8)))) &&
             (pSVar4->value_20 == 1000)) &&
            ((iVar6 = (*pSVar4->vtable[5].slots_00_28[0])(), iVar6 != 0 &&
@@ -206,7 +206,7 @@ LAB_0061b627:
       if ((STWorldObjectVTable *)0x7 < pSVar4[1].vtable) {
         return local_8;
       }
-      if ((PTR_00802a38 != (STPlaySystemC *)0x0) &&
+      if ((g_playSystem_00802A38 != (STPlaySystemC *)0x0) &&
          (7 < (byte)(&DAT_008087e9)[(int)pSVar4[1].vtable * 0x51])) {
         return local_8;
       }

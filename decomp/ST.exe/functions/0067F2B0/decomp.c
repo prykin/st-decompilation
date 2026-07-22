@@ -15,7 +15,7 @@ void FUN_0067f2b0(LPCSTR lpFileName,int param_2)
       DAT_00848a24 = DAT_00848a24 + -1;
       puVar4 = (uint *)0x0;
       pbVar2 = thunk_FUN_0067ece0(DAT_00848a24);
-      pcVar3 = (char *)thunk_FUN_0067eea0(pbVar2);
+      pcVar3 = thunk_FUN_0067eea0(pbVar2);
       iVar1 = thunk_FUN_0067f030("_curr_path",pcVar3,puVar4);
       if (iVar1 == 0) {
         RaiseInternalException(-2,g_overwriteContext_007ED77C,".\\ai\\ai_script_v.inl",0xbb);

@@ -84,7 +84,8 @@ void __thiscall TraksClassTy::PrepareAfterSave(TraksClassTy *this,ushort *param_
             FUN_006ea3e0(PTR_00807598,*(uint *)(psVar6 + 0x19),iVar3);
           }
           else if (psVar6[0xd] == 1) {
-            FUN_006ea460(PTR_00807598,*(uint *)(psVar6 + 0x19),iVar3);
+            SubmarineTitans::Recovered::HiddenThis::AnonReceiver_006EA050::sub_006EA460
+                      ((AnonReceiver_006EA050 *)PTR_00807598,*(uint *)(psVar6 + 0x19),iVar3);
           }
         }
         FUN_006ea4e0(PTR_00807598,*(uint *)(psVar6 + 0x19),1,

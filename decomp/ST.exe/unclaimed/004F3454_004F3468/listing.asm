@@ -1,0 +1,12 @@
+004F3454  pointer  004f3263
+004F3458  pointer  004f326b
+004F345C  pointer  004f3271
+004F3460  byte  0h
+004F3461  byte  0h
+004F3462  byte  0h
+004F3463  byte  0h
+004F3464  byte  2h
+004F3465  byte  1h
+004F3466  byte  1h
+004F3467  byte  1h
+004F3468  byte  1h

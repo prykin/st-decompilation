@@ -10,7 +10,7 @@ undefined4 __thiscall FUN_0071c7c0(void *this,int *param_1)
 
   if (*(int *)((int)this + 0x24) != 0) {
     *(undefined4 *)(*(int *)((int)this + 0x24) + 4) = 0;
-    iVar1 = FUN_006b1190(*(AnonShape_006B1190_EDB2B5FD **)((int)this + 0x24),local_68);
+    iVar1 = FUN_006b1190(*(DArrayTy **)((int)this + 0x24),local_68);
     if (-1 < iVar1) {
       do {
         iVar1 = 0x13;
@@ -27,7 +27,7 @@ undefined4 __thiscall FUN_0071c7c0(void *this,int *param_1)
         if (bVar4) {
           return 1;
         }
-        iVar1 = FUN_006b1190(*(AnonShape_006B1190_EDB2B5FD **)((int)this + 0x24),local_68);
+        iVar1 = FUN_006b1190(*(DArrayTy **)((int)this + 0x24),local_68);
         if (iVar1 < 0) {
           return 0;
         }

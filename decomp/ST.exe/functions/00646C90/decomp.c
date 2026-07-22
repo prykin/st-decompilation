@@ -13,9 +13,9 @@ STVolcanoC * __thiscall STVolcanoC::STVolcanoC(STVolcanoC *this)
   sub_006E60E0(this);
   this->vtable = &STVolcanoCVTable;
   memset(&this->field_0x1c, 0, 0x95); /* compiler bulk-zero initialization */
-  this->field_005D = 0xffffffff;
+  this->field_005D = -1;
   this->field_007A = -1;
-  this->field_0086 = 0xffffffff;
+  this->field_0086 = -1;
   return this;
 }
 

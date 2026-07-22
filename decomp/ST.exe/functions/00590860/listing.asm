@@ -1,4 +1,4 @@
-FUN_00590860:
+MAdvTy::sub_00590860:
 00590860  8B D1                     MOV EDX,ECX
 00590862  56                        PUSH ESI
 00590863  57                        PUSH EDI

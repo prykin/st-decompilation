@@ -1,7 +1,7 @@
 program=ST.exe
 source=/Users/nekto/st/recovery/ST.exe/prototype_proposals.tsv
-repair_proposals=14
-type_auto_apply=12
+repair_proposals=6
+type_auto_apply=0
 name_auto_apply=0
 note=Rows are emitted only for targets carrying an earlier STPrototypeApplier marker.
 note_order=Apply this file, rerun STPrototypeAnalyzer, then apply ordinary new proposals.

@@ -374,8 +374,8 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00644410::FUN_00644410
                           *param_2 = (int)local_6;
                           *param_3 = (int)local_8;
                           *param_4 = (int)local_a;
-                          thunk_FUN_00645f10(pAVar1,this_00,(short)*param_2,(short)*param_3,local_a)
-                          ;
+                          sub_00645F10((AnonReceiver_00644410 *)pAVar1,this_00,(short)*param_2,
+                                       (short)*param_3,local_a);
                           pAVar1->field_0285 = '\x02';
                         }
                         pAVar1->field_0270 = 1;

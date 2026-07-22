@@ -24,7 +24,8 @@ undefined4 __thiscall FUN_00608e90(void *this,AnonShape_00608E90_523B07BC *param
       if (local_c == (byte *)0x0) {
         return 0;
       }
-      STPlaySystemC::SaveObjData(PTR_00802a38,*(undefined4 *)((int)this + 0x18),local_c,local_8);
+      STPlaySystemC::SaveObjData
+                (g_playSystem_00802A38,*(undefined4 *)((int)this + 0x18),local_c,local_8);
       FreeAndNull(&local_c);
       return 0;
     }
@@ -81,7 +82,7 @@ undefined4 __thiscall FUN_00608e90(void *this,AnonShape_00608E90_523B07BC *param
       return 0;
     }
     if (*(int *)((int)this + 0x248) == 1) {
-      if (*(uint *)((int)this + 0x250) <= PTR_00802a38->field_00E4) {
+      if (*(uint *)((int)this + 0x250) <= g_playSystem_00802A38->field_00E4) {
         if ((*(int *)((int)this + 0x20d) == 5) && (iVar2 = thunk_FUN_0060cef0(this), iVar2 == 0)) {
           thunk_FUN_006099a0(this);
         }
@@ -113,7 +114,7 @@ undefined4 __thiscall FUN_00608e90(void *this,AnonShape_00608E90_523B07BC *param
         iVar2 = thunk_FUN_0060d070(this);
         if ((0 < iVar2) && (iVar2 == 2)) {
           thunk_FUN_0060d220((int)this);
-          uVar3 = PTR_00802a38->field_00E4;
+          uVar3 = g_playSystem_00802A38->field_00E4;
           *(undefined4 *)((int)this + 0x248) = 1;
           *(uint *)((int)this + 0x250) = uVar3 + 200;
         }
@@ -335,7 +336,7 @@ switchD_006092d2_default:
   if (*(char *)((int)this + 0x225) == '\0') {
     return 0;
   }
-  thunk_FUN_00609cd0(this);
+  STFieldC::sub_00609CD0(this);
   return 0;
 }
 

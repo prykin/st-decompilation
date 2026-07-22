@@ -206,7 +206,7 @@ LAB_00632f7e:
         } while ((int)uVar10 < iVar6);
       }
     }
-    uVar10 = PTR_00802a38->field_00E4;
+    uVar10 = g_playSystem_00802A38->field_00E4;
     param_1->field_002D = 0;
     param_1->field_0005 = uVar10;
     break;
@@ -271,7 +271,7 @@ LAB_00632f7e:
           *(undefined4 *)(iVar11 + 0x19) = 0;
           *(float *)(iVar11 + 0x25) =
                ((fVar1 - fVar2) * (float)((int)uVar9 % (iVar6 + 1))) / (float)iVar6 + fVar3;
-          uVar9 = PTR_00802a38->field_00E4;
+          uVar9 = g_playSystem_00802A38->field_00E4;
           *(undefined4 *)(iVar11 + 8) = 1;
           *(uint *)(iVar11 + 0x35) = uVar9;
         }

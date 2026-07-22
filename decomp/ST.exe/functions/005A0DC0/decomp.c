@@ -48,11 +48,11 @@ void __thiscall FSGSTy::ConnectProc(FSGSTy *this,int param_1,int param_2)
       ccFntTy::SetSurf(pFVar4->field_1A73,(int)pFVar4->field_1AC0,0,0,0x16,0x1b8,0xf0);
       if (param_1 < param_2) {
         iVar5 = (param_1 * 100) / param_2;
-        pcVar7 = LoadResourceString(0x2571,HINSTANCE_00807618);
+        pcVar7 = LoadResourceString(0x2571,g_module_00807618);
         wsprintfA((LPSTR)&DAT_0080f33a,"%s%d%%",pcVar7,iVar5);
       }
       else {
-        pcVar7 = LoadResourceString(0x2570,HINSTANCE_00807618);
+        pcVar7 = LoadResourceString(0x2570,g_module_00807618);
         uVar10 = 0xffffffff;
         do {
           pcVar11 = pcVar7;

@@ -1,5 +1,11 @@
 
-uint __thiscall FUN_005f4370(void *this,int *param_1,int *param_2,int *param_3,int param_4)
+/* [STMethodOwnerApplier] Structural method owner recovered as STBHEShellC.
+   Evidence: this_call_owners=[STBHEShellC]; agreed_this_calls=3; incoming_this_accesses=22;
+   incoming_edx_uses=0; incoming_stack_parameter_uses=12; direct_non_thunk_callers=0;
+   incoming_ecx_receiver_callers=0; attributed_named_callers=1; owner_evidence_coverage=adequate */
+
+uint __thiscall
+STBHEShellC::sub_005F4370(STBHEShellC *this,int *param_1,int *param_2,int *param_3,int param_4)
 
 {
   uint uVar1;
@@ -9,35 +15,33 @@ uint __thiscall FUN_005f4370(void *this,int *param_1,int *param_2,int *param_3,i
 
   uVar1 = 0xffffffff;
   if (param_4 == 0) {
-    *param_1 = (int)*(short *)((int)this + 0xd1);
-    *param_2 = (int)*(short *)((int)this + 0xd3);
-    iVar2 = (PTR_00802a38->field_00E4 - *(int *)((int)this + 0xfb)) * *(int *)((int)this + 0xdf);
-    *param_3 = *(short *)((int)this + 0xd5) + iVar2;
-    uVar1 = (uint)(*(int *)((int)this + 0xef) <= iVar2);
+    *param_1 = (int)this->field_00D1;
+    *param_2 = (int)this->field_00D3;
+    iVar2 = (g_playSystem_00802A38->field_00E4 - this->field_00FB) * this->field_00DF;
+    *param_3 = this->field_00D5 + iVar2;
+    uVar1 = (uint)(this->field_00EF <= iVar2);
   }
   else {
     if (param_4 == 1) {
-      iVar4 = PTR_00802a38->field_00E4 - *(int *)((int)this + 0xfb);
-      iVar2 = *(int *)((int)this + 0xe7);
+      iVar4 = g_playSystem_00802A38->field_00E4 - this->field_00FB;
+      iVar2 = this->field_00E7;
       iVar3 = iVar4 * iVar4;
-      *param_3 = (*(int *)((int)this + 0xdf) * iVar3) / 20000 +
-                 (*(int *)((int)this + 0xeb) * iVar3 * iVar4) / 30000 +
-                 *(int *)((int)this + 0xe3) * iVar4 + (int)*(short *)((int)this + 0xd5);
-      *param_1 = (*(int *)((int)this + 0xd7) * iVar3) / 20000 + (int)*(short *)((int)this + 0xd1);
-      *param_2 = (*(int *)((int)this + 0xdb) * iVar3) / 20000 + (int)*(short *)((int)this + 0xd3);
-      if (0x1f6 < *(int *)((int)this + 0xef)) {
-        return (uint)(*(int *)((int)this + 0xf3) + -3 <= (iVar2 * iVar3) / 20000);
+      *param_3 = (this->field_00DF * iVar3) / 20000 + (this->field_00EB * iVar3 * iVar4) / 30000 +
+                 this->field_00E3 * iVar4 + (int)this->field_00D5;
+      *param_1 = (this->field_00D7 * iVar3) / 20000 + (int)this->field_00D1;
+      *param_2 = (this->field_00DB * iVar3) / 20000 + (int)this->field_00D3;
+      if (0x1f6 < this->field_00EF) {
+        return (uint)((int)((int)&this->field_00F3[-1].field_00FB + 2) <= (iVar2 * iVar3) / 20000);
       }
-      return (uint)(iVar4 == *(int *)((int)this + 0xe7));
+      return (uint)(iVar4 == this->field_00E7);
     }
     if (param_4 == 2) {
-      iVar2 = PTR_00802a38->field_00E4 - *(int *)((int)this + 0xfb);
-      *param_1 = (*(int *)((int)this + 0xd7) * iVar2) / 10000 + (int)*(short *)((int)this + 0xd1);
-      *param_2 = (*(int *)((int)this + 0xdb) * iVar2) / 10000 + (int)*(short *)((int)this + 0xd3);
-      *param_3 = ((*(int *)((int)this + 0xdf) * iVar2) / 10000 -
-                 (*(int *)((int)this + 0xf7) * iVar2 * iVar2) / 20000) +
-                 (int)*(short *)((int)this + 0xd5);
-      return (uint)(*(int *)((int)this + 0xef) <= (*(int *)((int)this + 0xe3) * iVar2) / 10000);
+      iVar2 = g_playSystem_00802A38->field_00E4 - this->field_00FB;
+      *param_1 = (this->field_00D7 * iVar2) / 10000 + (int)this->field_00D1;
+      *param_2 = (this->field_00DB * iVar2) / 10000 + (int)this->field_00D3;
+      *param_3 = ((this->field_00DF * iVar2) / 10000 - (this->field_00F7 * iVar2 * iVar2) / 20000) +
+                 (int)this->field_00D5;
+      return (uint)(this->field_00EF <= (this->field_00E3 * iVar2) / 10000);
     }
   }
   return uVar1;

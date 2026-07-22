@@ -63,17 +63,18 @@ void __thiscall MReportTy::InitMReport(MReportTy *this,undefined1 param_1)
     RaiseInternalException(iVar3,0,"E:\\__titans\\Start\\rpt_obj.cpp",0xc6);
     return;
   }
-  if (PTR_00802a30 != (CursorClassTy *)0x0) {
-    if (PTR_00802a30->field_00A9 == 0) {
-      Library::DKW::DDX::FUN_006b8b10((int *)PTR_00802a30->field_00AD);
+  if (g_cursorClass_00802A30 != (CursorClassTy *)0x0) {
+    if (g_cursorClass_00802A30->field_00A9 == 0) {
+      Library::DKW::DDX::FUN_006b8b10((int *)g_cursorClass_00802A30->field_00AD);
     }
-    else if (PTR_00802a30->field_001C != (cLoadingTy *)0xffffffff) {
-      FUN_006b3af0((int *)PTR_00802a30->field_0060,(uint)PTR_00802a30->field_001C);
+    else if (g_cursorClass_00802A30->field_001C != (cLoadingTy *)0xffffffff) {
+      FUN_006b3af0((int *)g_cursorClass_00802A30->field_0060,
+                   (uint)g_cursorClass_00802A30->field_001C);
     }
-    thunk_FUN_00544940((AnonShape_00544940_E504B2A8 *)PTR_00802a30);
+    thunk_FUN_00544940((AnonShape_00544940_E504B2A8 *)g_cursorClass_00802A30);
   }
   DarkScreen(DAT_0080759c,1,0);
-  StartSystemTy::sub_005DAF20(PTR_0081176c);
+  StartSystemTy::sub_005DAF20(g_startSystem_0081176C);
   this_03 = local_18;
   DAT_0080877e = 1;
   DAT_0080877f = 0;
@@ -92,9 +93,9 @@ void __thiscall MReportTy::InitMReport(MReportTy *this,undefined1 param_1)
   puVar5 = (ushort *)FUN_0070a9f0(g_cMf32_00806780,(char *)&DAT_0080f33a,0,1);
   this_03->field_005D = puVar5;
   FUN_006bc360(puVar5,local_6a4,(int *)0x0);
-  PTR_0081176c->field_0140 = 0x18;
+  g_startSystem_0081176C->field_0140 = 0x18;
   Library::Ourlib::PALETTE::FUN_00718780
-            ((int)local_6a4,0,0x100,0x1a,0x10,(undefined4 *)&PTR_0081176c->field_0x144);
+            ((int)local_6a4,0,0x100,0x1a,0x10,(undefined4 *)&g_startSystem_0081176C->field_0x144);
   puVar5 = Library::Ourlib::MFRLOAD::mfRLoad
                      (DAT_00806784,CASE_B,"STATS",0xffffffff,0,1,0,(undefined4 *)0x0);
   this_03->field_007F = puVar5;
@@ -106,7 +107,7 @@ void __thiscall MReportTy::InitMReport(MReportTy *this,undefined1 param_1)
   pcVar7->field_005C = 0;
   pcVar7 = (ccFntTy *)thunk_FUN_005df290(this_03->field_005D,(undefined *)0x0,DAT_00807dd9);
   this_03->field_0087 = pcVar7;
-  PTR_0081176c->field_0038 = pcVar7;
+  g_startSystem_0081176C->field_0038 = pcVar7;
   pcVar7 = (ccFntTy *)ccFntTy::operator(this_02,0x19d,g_cMf32_00806780,"RPT_FNTN",0);
   this_03->field_008B = pcVar7;
   pcVar7->field_0058 = 1;
@@ -272,14 +273,14 @@ void __thiscall MReportTy::InitMReport(MReportTy *this,undefined1 param_1)
     }
     this_03->field_0067 = 1;
   }
-  if (PTR_0081176c->field_02E6 != (MMsgTy *)0x0) {
-    MMsgTy::HidePanel(PTR_0081176c->field_02E6,0,0,1);
+  if (g_startSystem_0081176C->field_02E6 != (MMsgTy *)0x0) {
+    MMsgTy::HidePanel(g_startSystem_0081176C->field_02E6,0,0,1);
   }
   SetCtrl(this_03,0);
   PutDDX(0,0,'\x01',(BITMAPINFO *)this_03->field_005D);
   local_8 = 0xffffffff;
-  FUN_006b2330((uint)PTR_008075a8,&local_8,0x32,0x403099,0x2bd,0x15e,(uint)&PTR_0081176c->field_0140
-              );
+  FUN_006b2330(PTR_008075a8,&local_8,0x32,0x403099,0x2bd,0x15e,
+               (uint)&g_startSystem_0081176C->field_0140);
   Library::DKW::DDX::FUN_006b3640((int *)PTR_008075a8,local_8,0xffffffff,0x47,0x46);
   pHVar13 = (HoloTy *)Library::MSVCRT::FUN_0072e530(0x33);
   if (pHVar13 == (HoloTy *)0x0) {
@@ -323,7 +324,7 @@ void __thiscall MReportTy::InitMReport(MReportTy *this,undefined1 param_1)
     FUN_006b3bb0((int *)PTR_008075a8,local_8);
     local_8 = 0xffffffff;
   }
-  FUN_006b2330((uint)PTR_008075a8,&local_8,0x32,0x401217,0x2e9,0x32,(uint)this_03);
+  FUN_006b2330(PTR_008075a8,&local_8,0x32,0x401217,0x2e9,0x32,(uint)this_03);
   Library::DKW::DDX::FUN_006b3640((int *)PTR_008075a8,local_8,0xffffffff,0x1a,10);
   pHVar13 = (HoloTy *)Library::MSVCRT::FUN_0072e530(0x33);
   if (pHVar13 == (HoloTy *)0x0) {
@@ -376,16 +377,16 @@ void __thiscall MReportTy::InitMReport(MReportTy *this,undefined1 param_1)
   if (((pHVar13 != (HoloTy *)0x0) && (pHVar13->field_0000 != '\0')) && (-1 < pHVar13->field_0003)) {
     Library::DKW::DDX::FUN_006b3430((int *)PTR_008075a8,pHVar13->field_0003);
   }
-  this_00 = PTR_00802a30;
-  if (PTR_00802a30 != (CursorClassTy *)0x0) {
-    iVar3 = PTR_00802a30->field_00C9;
-    iVar21 = PTR_00802a30->field_00C5;
-    PTR_00802a30->field_0493 = 3;
+  this_00 = g_cursorClass_00802A30;
+  if (g_cursorClass_00802A30 != (CursorClassTy *)0x0) {
+    iVar3 = g_cursorClass_00802A30->field_00C9;
+    iVar21 = g_cursorClass_00802A30->field_00C5;
+    g_cursorClass_00802A30->field_0493 = 3;
     this_00->field_0494 = 0xffff;
     CursorClassTy::SetGCType(this_00,CASE_0,iVar21,iVar3);
     CursorClassTy::DrawSprite(this_00,this_00->field_00C5,this_00->field_00C9);
     this_00->field_00D2 = 0;
-    this_00->field_04DF = 0xffffffff;
+    this_00->field_04DF = -1;
   }
   thunk_FUN_00568bc0(&g_sound,0);
   /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */

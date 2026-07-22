@@ -23,7 +23,7 @@ int __thiscall VisibleClassTy::GetMessage(VisibleClassTy *this,STMessage *messag
   DArrayTy *pDVar8;
   /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
   void *unaff_EDI;
-  undefined4 *puVar9;
+  ushort *puVar9;
   byte *pbVar10;
   bool bVar11;
   InternalExceptionFrame local_58;
@@ -38,7 +38,7 @@ int __thiscall VisibleClassTy::GetMessage(VisibleClassTy *this,STMessage *messag
   iVar3 = Library::MSVCRT::__setjmp3(local_58.jumpBuffer,0);
   this_00 = local_14;
   if (iVar3 == 0) {
-    local_14->field_0108 = PTR_00802a38->field_00E4;
+    local_14->field_0108 = g_playSystem_00802A38->field_00E4;
     SVar1 = message->id;
     if (SVar1 < MESS_STSPRGAMEOBJC_0109) {
       if (SVar1 == MESS_SHARED_0108) {
@@ -48,12 +48,13 @@ int __thiscall VisibleClassTy::GetMessage(VisibleClassTy *this,STMessage *messag
           this_00->field_010C = iVar3;
           puVar9 = this_00->field_0050;
           for (uVar7 = (uVar6 & 0x7fffffff) >> 1; uVar7 != 0; uVar7 = uVar7 - 1) {
-            *puVar9 = 0;
-            puVar9 = puVar9 + 1;
+            puVar9[0] = 0;
+            puVar9[1] = 0;
+            puVar9 = puVar9 + 2;
           }
           for (uVar6 = uVar6 * 2 & 3; uVar6 != 0; uVar6 = uVar6 - 1) {
             *(undefined1 *)puVar9 = 0;
-            puVar9 = (undefined4 *)((int)puVar9 + 1);
+            puVar9 = (ushort *)((int)puVar9 + 1);
           }
           uVar7 = this_00->field_0030 * this_00->field_0034;
           pbVar10 = this_00->field_004C;
@@ -81,9 +82,9 @@ int __thiscall VisibleClassTy::GetMessage(VisibleClassTy *this,STMessage *messag
                 pcVar4 = (char *)0x0;
               }
               if (*pcVar4 == '\0') {
-                thunk_FUN_00558dc0(this_00,(int)*(short *)(pcVar4 + 2),(int)*(short *)(pcVar4 + 4),
-                                   (undefined *)(int)pcVar4[6],(int *)(uint)(byte)pcVar4[1],
-                                   (uint)(byte)pcVar4[7],*(int **)(pcVar4 + 8),0x4000);
+                sub_00558DC0(this_00,(int)*(short *)(pcVar4 + 2),(int)*(short *)(pcVar4 + 4),
+                             (undefined *)(int)pcVar4[6],(int *)(uint)(byte)pcVar4[1],
+                             (uint)(byte)pcVar4[7],*(int **)(pcVar4 + 8),0x4000);
               }
               pDVar8 = this_00->field_0110;
               uVar6 = uVar6 + 1;
@@ -116,9 +117,9 @@ int __thiscall VisibleClassTy::GetMessage(VisibleClassTy *this,STMessage *messag
         }
       }
       else if (SVar1 == MESS_SHARED_0003) {
-        thunk_FUN_00558140((AnonShape_00558140_7CF35A3F *)local_14);
+        sub_00558140(local_14);
         if (this_00->field_0114 != 0) {
-          FUN_00717870((AnonShape_00717870_6CEBD31A *)PTR_00807598);
+          FUN_00717870(PTR_00807598);
         }
         thunk_FUN_00553270();
         g_visibleClass_00802A88 = (VisibleClassTy *)0x0;
@@ -127,7 +128,8 @@ int __thiscall VisibleClassTy::GetMessage(VisibleClassTy *this,STMessage *messag
     else if (SVar1 == MESS_SHARED_010F) {
       local_c = 0;
       local_10 = (byte *)PrepareToSave(local_14,&local_c);
-      STPlaySystemC::SaveObjData(PTR_00802a38,PTR_s_VISIBILITY_0079aec4,local_10,local_c,0xc);
+      STPlaySystemC::SaveObjData
+                (g_playSystem_00802A38,PTR_s_VISIBILITY_0079aec4,local_10,local_c,0xc);
       if (local_10 != (byte *)0x0) {
         FreeAndNull(&local_10);
       }

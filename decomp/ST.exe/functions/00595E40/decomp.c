@@ -55,12 +55,13 @@ void __thiscall FSGSTy::InitFSGS(FSGSTy *this,byte param_1)
   DAT_008067a0 = 0;
   StartSystemTy::GetIP(this_01->field_1A5B);
   DAT_00802a99 = 0;
-  if (PTR_00802a30 != (CursorClassTy *)0x0) {
-    if (PTR_00802a30->field_00A9 == 0) {
-      Library::DKW::DDX::FUN_006b8b10((int *)PTR_00802a30->field_00AD);
+  if (g_cursorClass_00802A30 != (CursorClassTy *)0x0) {
+    if (g_cursorClass_00802A30->field_00A9 == 0) {
+      Library::DKW::DDX::FUN_006b8b10((int *)g_cursorClass_00802A30->field_00AD);
     }
-    else if (PTR_00802a30->field_001C != (cLoadingTy *)0xffffffff) {
-      FUN_006b3af0((int *)PTR_00802a30->field_0060,(uint)PTR_00802a30->field_001C);
+    else if (g_cursorClass_00802A30->field_001C != (cLoadingTy *)0xffffffff) {
+      FUN_006b3af0((int *)g_cursorClass_00802A30->field_0060,
+                   (uint)g_cursorClass_00802A30->field_001C);
     }
   }
   pMVar2 = this_01->field_1A5B->field_02E6;
@@ -69,8 +70,8 @@ void __thiscall FSGSTy::InitFSGS(FSGSTy *this,byte param_1)
     this_01->field_1A5B->field_02E6->field_1CAB = 0;
   }
   puVar5 = (ushort *)FUN_0070a9f0(g_cMf32_00806780,"FSGS_BKG",0,1);
-  PTR_0081176c->field_002C = puVar5;
-  this_01->field_005D = PTR_0081176c->field_002C;
+  g_startSystem_0081176C->field_002C = puVar5;
+  this_01->field_005D = g_startSystem_0081176C->field_002C;
   puVar5 = Library::Ourlib::MFRLOAD::mfRLoad
                      (DAT_00806784,CASE_B,"SET_ACC",0xffffffff,0,1,0,(undefined4 *)0x0);
   this_01->field_1A83 = puVar5;
@@ -141,7 +142,7 @@ void __thiscall FSGSTy::InitFSGS(FSGSTy *this,byte param_1)
   puVar5 = Library::Ourlib::MFIMG::mfImgLoad(g_cMf32_00806780,6,text,bVar15,iVar4);
   DibPut((AnonShape_006B5B10_E0D06CF1 *)this_01->field_1A97,0,0,'\x06',(byte *)puVar5);
   pAVar12 = this_01->field_1A97;
-  FUN_006b2330((uint)PTR_008075a8,(uint *)&this_01->field_1A8F,0x31,0x4023f6,pAVar12->field_0004,
+  FUN_006b2330(PTR_008075a8,(uint *)&this_01->field_1A8F,0x31,0x4023f6,pAVar12->field_0004,
                pAVar12->field_0008,(uint)pAVar12);
   Library::DKW::DDX::FUN_006b3640
             ((int *)PTR_008075a8,this_01->field_1A8F,0xffffffff,g_nWidth_00806730 - 0x24d,0);
@@ -153,8 +154,8 @@ void __thiscall FSGSTy::InitFSGS(FSGSTy *this,byte param_1)
   this_01->field_1AC0 = puVar5;
   this_01->field_1ABB = 0;
   piVar1 = &this_01->field_1ABC;
-  FUN_006b2330((uint)PTR_008075a8,(uint *)piVar1,0x31,0x4023f6,*(uint *)(puVar5 + 2),
-               *(uint *)(puVar5 + 4),(uint)puVar5);
+  FUN_006b2330(PTR_008075a8,(uint *)piVar1,0x31,0x4023f6,*(uint *)(puVar5 + 2),*(uint *)(puVar5 + 4)
+               ,(uint)puVar5);
   Library::DKW::DDX::FUN_006b3640((int *)PTR_008075a8,*piVar1,0xffffffff,0xb4,0xaa);
   FUN_006b3af0((int *)PTR_008075a8,*piVar1);
   SpriteClassTy::InitSprite
@@ -224,9 +225,9 @@ void __thiscall FSGSTy::InitFSGS(FSGSTy *this,byte param_1)
   this_01->field_1C6A = 0;
   this_01->field_1C66 = 0;
   pDVar7 = Library::DKW::TBL::SArrayCreate((DArrayTy *)0x0,10,10);
-  this_01->field_1B08 = &pDVar7->flags;
+  this_01->field_1B08 = pDVar7;
   Library::DKW::TBL::FUN_006b5aa0(&pDVar7->flags,"License agreement");
-  Library::DKW::TBL::FUN_006b5aa0(this_01->field_1B08,"Nothing to do");
+  Library::DKW::TBL::FUN_006b5aa0(&this_01->field_1B08->flags,"Nothing to do");
   PaintFSGS(this_01,'\x01');
   thunk_FUN_0055ddf0(DAT_0080759c,(int *)PTR_008075a8,(int)this_01->field_005D,10,2);
   if ((5 < param_1) && (param_1 < 9)) {
@@ -253,16 +254,16 @@ void __thiscall FSGSTy::InitFSGS(FSGSTy *this,byte param_1)
   }
   SetState(this_01,uVar14);
 LAB_00596510:
-  this_00 = PTR_00802a30;
-  if (PTR_00802a30 != (CursorClassTy *)0x0) {
-    iVar4 = PTR_00802a30->field_00C9;
-    iVar13 = PTR_00802a30->field_00C5;
-    PTR_00802a30->field_0493 = 1;
+  this_00 = g_cursorClass_00802A30;
+  if (g_cursorClass_00802A30 != (CursorClassTy *)0x0) {
+    iVar4 = g_cursorClass_00802A30->field_00C9;
+    iVar13 = g_cursorClass_00802A30->field_00C5;
+    g_cursorClass_00802A30->field_0493 = 1;
     this_00->field_0494 = 0xffff;
     CursorClassTy::SetGCType(this_00,CASE_0,iVar13,iVar4);
     CursorClassTy::DrawSprite(this_00,this_00->field_00C5,this_00->field_00C9);
     this_00->field_00D2 = 0;
-    this_00->field_04DF = 0xffffffff;
+    this_00->field_04DF = -1;
   }
   pMVar2 = this_01->field_1A5B->field_02E6;
   if (pMVar2 != (MMsgTy *)0x0) {

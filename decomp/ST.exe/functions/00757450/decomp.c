@@ -1,8 +1,11 @@
 
 /* [STTypeFamilyApplier] EXACT_ANONYMOUS_LAYOUT.
-   Evidence: exact anonymous structure fingerprint shared across functions */
+   Evidence: exact anonymous structure fingerprint shared across functions
 
-int FUN_00757450(AnonShape_00753C80_4C8E695D *param_1,int param_2)
+   [STPrototypeApplier] Propagated parameter 0.
+   Evidence: 00755E10 -> 00757450 @ 00755E66 */
+
+int FUN_00757450(AnonShape_00755E10_BD685653 *param_1,int param_2)
 
 {
   short sVar1;

@@ -37,15 +37,15 @@ void CreateGameSystem(void)
     (*(code *)**(undefined4 **)PTR_0081163c)();
     AppClassTy::AddSystem((AppClassTy *)&DAT_00807620,(int *)PTR_0081163c,0);
     *(undefined4 *)&PTR_0081163c->field_0x428 = 1;
-    this = PTR_00802a30;
-    iVar2 = PTR_00802a30->field_00C9;
-    iVar3 = PTR_00802a30->field_00C5;
-    PTR_00802a30->field_0493 = 2;
+    this = g_cursorClass_00802A30;
+    iVar2 = g_cursorClass_00802A30->field_00C9;
+    iVar3 = g_cursorClass_00802A30->field_00C5;
+    g_cursorClass_00802A30->field_0493 = 2;
     this->field_0494 = 0xffff;
     CursorClassTy::SetGCType(this,CASE_0,iVar3,iVar2);
     CursorClassTy::DrawSprite(this,this->field_00C5,this->field_00C9);
     this->field_00D2 = 0;
-    this->field_04DF = 0xffffffff;
+    this->field_04DF = -1;
     g_currentExceptionFrame = local_48.previous;
     return;
   }

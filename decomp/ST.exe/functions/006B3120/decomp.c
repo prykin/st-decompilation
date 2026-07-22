@@ -12,7 +12,7 @@ int FUN_006b3120(uint *param_1,uint *param_2)
   int local_24 [3];
   uint local_18;
   undefined4 local_14;
-  AnonShape_006B5B10_E0D06CF1 *local_10;
+  int local_10;
   uint *local_c;
   int local_8;
 
@@ -20,7 +20,7 @@ int FUN_006b3120(uint *param_1,uint *param_2)
   puVar3 = param_1;
   iVar7 = 0;
   local_c = (uint *)0x0;
-  local_10 = (AnonShape_006B5B10_E0D06CF1 *)0x0;
+  local_10 = 0;
   local_8 = 0;
   if (param_2[0x33] != 0) {
     param_1[0x6d] = 1;
@@ -52,7 +52,8 @@ int FUN_006b3120(uint *param_1,uint *param_2)
             if (local_8 != 0) {
               return local_8;
             }
-            iVar6 = FUN_006b33f0((int)param_1,*(uint *)(param_2[0x34] + iVar7 * 4));
+            iVar6 = FUN_006b33f0((AnonShape_006B1B10_121F236C *)param_1,
+                                 *(uint *)(param_2[0x34] + iVar7 * 4));
             if ((iVar6 == 0) &&
                (local_8 = Library::DKW::DDX::FUN_006b3430
                                     ((int *)param_1,*(uint *)(param_2[0x34] + iVar7 * 4)),
@@ -95,7 +96,7 @@ int FUN_006b3120(uint *param_1,uint *param_2)
         local_c = (uint *)0x0;
         if ((*puVar4 & 0xa0001000) == 0) {
           do {
-            local_8 = FUN_006bbe40(*(int **)(*puVar3 + 0x44),(uint *)&local_c,(int *)&local_10,0);
+            local_8 = FUN_006bbe40(*(int **)(*puVar3 + 0x44),(uint *)&local_c,&local_10,0);
             if (local_8 == 0) goto LAB_006b3351;
             if (local_8 != -0x7789fe3e) goto LAB_006b334d;
             FUN_006cec40((AnonShape_006CEC40_BB23E716 *)*puVar3);
@@ -108,10 +109,9 @@ LAB_006b334d:
           if (local_8 == 0) {
 LAB_006b3351:
             iVar7 = FUN_006cee10((int)puVar3,(int)puVar4);
-            local_8 = FUN_006cef60((int *)puVar3,local_c,local_10,(int)puVar4,
-                                   (AnonShape_006D86E0_768BB816 *)param_1,(char *)param_2,puVar4[10]
-                                   ,puVar4[0xb],local_24,0,iVar7,*puVar4 & 0xff000000,
-                                   (undefined1 *)0x0);
+            local_8 = FUN_006cef60((int *)puVar3,local_c,local_10,(int)puVar4,param_1,
+                                   (char *)param_2,puVar4[10],puVar4[0xb],local_24,0,iVar7,
+                                   *puVar4 & 0xff000000,(undefined1 *)0x0);
             if (local_c != (uint *)0x0) {
               /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
               (**(code **)(**(int **)(*puVar3 + 0x44) + 0x80))(*(int **)(*puVar3 + 0x44),0);

@@ -90,7 +90,7 @@ LAB_0044cada:
                 local_f = 3;
 LAB_0044c950:
                 if (((uint)piVar3[9] < 8) &&
-                   ((PTR_00802a38 == (STPlaySystemC *)0x0 ||
+                   ((g_playSystem_00802A38 == (STPlaySystemC *)0x0 ||
                     ((byte)(&DAT_008087e9)[piVar3[9] * 0x51] < 8)))) {
                   bVar1 = *(byte *)(piVar3 + 9);
                   /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */

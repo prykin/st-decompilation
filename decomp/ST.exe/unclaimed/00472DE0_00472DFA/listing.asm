@@ -1,0 +1,15 @@
+00472DE0  pointer  00472a7b
+00472DE4  pointer  00472a1f
+00472DE8  pointer  00472a2e
+00472DEC  pointer  00472cb0
+00472DF0  byte  0h
+00472DF1  byte  1h
+00472DF2  byte  3h
+00472DF3  byte  3h
+00472DF4  byte  3h
+00472DF5  byte  1h
+00472DF6  byte  1h
+00472DF7  byte  1h
+00472DF8  byte  1h
+00472DF9  byte  2h
+00472DFA  byte  0h

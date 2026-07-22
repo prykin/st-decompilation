@@ -57,8 +57,8 @@ STExplosionC::LoadImagSpr(STExplosionC *this,undefined4 param_1,undefined4 param
     }
     STT3DSprC::SetCurFase(pSVar4->field_02AF,'\x0f',pSVar4->field_029F);
     thunk_FUN_004ac610(pSVar4->field_02AF,'\x0f');
-    STT3DSprC::StartShow(pSVar4->field_02AF,0xf,PTR_00802a38->field_00E4);
-    iVar5 = thunk_FUN_004acd30(pSVar4->field_02AF,'\x0f');
+    STT3DSprC::StartShow(pSVar4->field_02AF,0xf,g_playSystem_00802A38->field_00E4);
+    iVar5 = STT3DSprC::sub_004ACD30(pSVar4->field_02AF,'\x0f');
     pSVar4->field_02A3 = iVar5;
     g_currentExceptionFrame = local_68.previous;
     return local_24;
@@ -97,11 +97,12 @@ STExplosionC::LoadImagSpr(STExplosionC *this,undefined4 param_1,undefined4 param
       return 0xffff;
     }
     STT3DSprC::SetCurFase(pSVar4->field_02AF,'\r',pSVar4->field_0296);
-    thunk_FUN_004ad3c0(pSVar4->field_02AF,(float)pSVar4->field_028A * _DAT_007904f8 * _DAT_007904f0,
-                       (float)pSVar4->field_028E * _DAT_007904f8 * _DAT_007904f0,
-                       (float)pSVar4->field_0292 * _DAT_007904f8 * _DAT_007904f0 + _DAT_007904fc);
+    STT3DSprC::sub_004AD3C0
+              (pSVar4->field_02AF,(float)pSVar4->field_028A * _DAT_007904f8 * _DAT_007904f0,
+               (float)pSVar4->field_028E * _DAT_007904f8 * _DAT_007904f0,
+               (float)pSVar4->field_0292 * _DAT_007904f8 * _DAT_007904f0 + _DAT_007904fc);
     thunk_FUN_004ac610(pSVar4->field_02AF,'\r');
-    STT3DSprC::StartShow(pSVar4->field_02AF,0xd,PTR_00802a38->field_00E4);
+    STT3DSprC::StartShow(pSVar4->field_02AF,0xd,g_playSystem_00802A38->field_00E4);
     pSVar4->field_0286 = 1;
     pVVar3 = g_visibleClass_00802A88;
     if (g_visibleClass_00802A88 != (VisibleClassTy *)0x0) {

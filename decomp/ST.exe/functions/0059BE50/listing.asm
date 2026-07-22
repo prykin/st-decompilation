@@ -1,4 +1,4 @@
-FUN_0059be50:
+FSGSTy::sub_0059BE50:
 0059BE50  56                        PUSH ESI
 0059BE51  8B F1                     MOV ESI,ECX
 0059BE53  33 C0                     XOR EAX,EAX

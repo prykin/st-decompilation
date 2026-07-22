@@ -55,14 +55,14 @@ void __thiscall CPanelTy::PaintMineInf(CPanelTy *this,int param_1)
     }
     _Count = 0x32;
     _Dest = &pCVar2->field_0x1e1;
-    pcVar5 = LoadResourceString(0x2721,HINSTANCE_00807618);
+    pcVar5 = LoadResourceString(0x2721,g_module_00807618);
     Library::MSVCRT::_strncpy(_Dest,pcVar5,_Count);
     pCVar2->field_0x212 = 0;
     for (puVar6 = Library::MSVCRT::FUN_0072e560((uint *)_Dest,'\n'); puVar6 != (uint *)0x0;
         puVar6 = Library::MSVCRT::FUN_0072e560(puVar6,'\n')) {
       *(undefined1 *)puVar6 = 0x20;
     }
-    pcVar5 = LoadResourceString(local_8,HINSTANCE_00807618);
+    pcVar5 = LoadResourceString(local_8,g_module_00807618);
     wsprintfA((LPSTR)&DAT_0080f33a,"&%s%s\n&1%s",local_c,pcVar5,_Dest);
     iVar3 = param_1 + 0x40;
     ccFntTy::SetSurf(pCVar2->field_01B8,pCVar2->field_0194,0,iVar3,0x57,0x75,0x16);

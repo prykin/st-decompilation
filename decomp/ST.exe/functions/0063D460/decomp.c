@@ -34,7 +34,7 @@ FUN_0063d460(void *this,undefined4 param_1,undefined4 param_2,int param_3,int pa
       *(undefined4 *)((int)this + 0x2b0) = 0x3ed;
       *(undefined1 *)((int)this + 0x328) = 4;
       *(undefined4 *)((int)this + 0x2c0) = 0;
-      uVar1 = PTR_00802a38->field_00E4;
+      uVar1 = g_playSystem_00802A38->field_00E4;
       *(undefined4 *)((int)this + 0x33e) = 0;
       *(uint *)((int)this + 0x32e) = uVar1;
       return;
@@ -50,7 +50,7 @@ FUN_0063d460(void *this,undefined4 param_1,undefined4 param_2,int param_3,int pa
       *(undefined1 *)((int)this + 0x328) = 4;
       *(undefined4 *)((int)this + 700) = 0x24;
       *(int *)((int)this + 0x32a) = (iVar2 * 0x23) / 5;
-      *(uint *)((int)this + 0x32e) = PTR_00802a38->field_00E4;
+      *(uint *)((int)this + 0x32e) = g_playSystem_00802A38->field_00E4;
       return;
     }
   }

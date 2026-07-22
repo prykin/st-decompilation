@@ -97,7 +97,7 @@ int __thiscall STJellyManC::GetMessage(STJellyManC *this,STMessage *message)
           g_currentExceptionFrame = local_54.previous;
           return 0;
         }
-        iVar10 = FUN_006e5380(PTR_00802a38,(message->arg0).i32,&local_c);
+        iVar10 = FUN_006e5380(g_playSystem_00802A38,(message->arg0).i32,&local_c);
         if (iVar10 != 0) {
           g_currentExceptionFrame = local_54.previous;
           return 0;
@@ -171,7 +171,8 @@ int __thiscall STJellyManC::GetMessage(STJellyManC *this,STMessage *message)
     local_8[0x38] = 0;
     local_8[0x39] = 0;
     STPlaySystemC::SaveObjData
-              (PTR_00802a38,pSVar7->field_0018,local_8,(AnonShape_0060EA30_DCEB68AD *)0x3a);
+              (g_playSystem_00802A38,pSVar7->field_0018,local_8,(AnonShape_0060EA30_DCEB68AD *)0x3a)
+    ;
     FreeAndNull(&local_8);
     g_currentExceptionFrame = local_54.previous;
     return 0;

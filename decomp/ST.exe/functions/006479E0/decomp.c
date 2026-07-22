@@ -1,24 +1,23 @@
 
-void __fastcall FUN_006479e0(int param_1)
+/* [STMethodOwnerApplier] Structural method owner recovered as STVolcanoC.
+   Evidence: this_call_owners=[STVolcanoC]; agreed_this_calls=1; incoming_this_accesses=6;
+   incoming_edx_uses=0; incoming_stack_parameter_uses=0; direct_non_thunk_callers=0;
+   incoming_ecx_receiver_callers=0; attributed_named_callers=1; owner_evidence_coverage=adequate */
+
+void __thiscall STVolcanoC::sub_006479E0(STVolcanoC *this)
 
 {
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  if (-1 < (int)*(uint *)(param_1 + 0x5d)) {
-    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-    FUN_006e8ba0(PTR_00807598,*(uint *)(param_1 + 0x5d));
-    *(undefined4 *)(param_1 + 0x5d) = 0xffffffff;
+  if (-1 < this->field_005D) {
+    FUN_006e8ba0(PTR_00807598,this->field_005D);
+    this->field_005D = -1;
   }
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  if (-1 < (int)*(uint *)(param_1 + 0x7a)) {
-    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-    FUN_006e8ba0(PTR_00807598,*(uint *)(param_1 + 0x7a));
-    *(undefined4 *)(param_1 + 0x7a) = 0xffffffff;
+  if (-1 < this->field_007A) {
+    FUN_006e8ba0(PTR_00807598,this->field_007A);
+    this->field_007A = -1;
   }
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  if (-1 < (int)*(uint *)(param_1 + 0x86)) {
-    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-    FUN_006e8ba0(PTR_00807598,*(uint *)(param_1 + 0x86));
-    *(undefined4 *)(param_1 + 0x86) = 0xffffffff;
+  if (-1 < this->field_0086) {
+    FUN_006e8ba0(PTR_00807598,this->field_0086);
+    this->field_0086 = -1;
   }
   return;
 }

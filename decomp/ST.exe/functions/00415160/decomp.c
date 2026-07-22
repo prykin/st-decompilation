@@ -6,8 +6,7 @@
    STGroupBoatC::Way3DGrpDistribTgt */
 
 int STGroupBoatC::Way3DGrpDistribTgt
-              (void *param_1,AnonShape_00413AF0_B6B4EE9A *param_2,int param_3,int param_4,
-              int param_5)
+              (void *param_1,DArrayTy *param_2,int param_3,int param_4,int param_5)
 
 {
   short sVar1;
@@ -26,7 +25,7 @@ int STGroupBoatC::Way3DGrpDistribTgt
 
   iVar8 = 0;
   local_c = 0;
-  sVar1 = (short)param_2->field_000C;
+  sVar1 = (short)param_2->count;
   *(short *)((int)param_1 + 0x27) = sVar1;
   if (sVar1 == 0) {
     return 0;
@@ -35,11 +34,11 @@ int STGroupBoatC::Way3DGrpDistribTgt
   DAT_007f4d4c = (uint)uVar4;
   /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   if ((DAT_007f4d4c < 2) && (*(short *)((int)param_1 + 0x27) == 1)) {
-    if (param_2->field_000C == 0) {
+    if (param_2->count == 0) {
       puVar5 = (undefined2 *)0x0;
     }
     else {
-      puVar5 = (undefined2 *)param_2->field_001C;
+      puVar5 = param_2->data;
     }
     /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
     iVar6 = thunk_FUN_00423e70(param_1,CONCAT22((short)((uint)puVar5 >> 0x10),*puVar5));
@@ -58,7 +57,7 @@ int STGroupBoatC::Way3DGrpDistribTgt
   g_currentExceptionFrame = &local_50;
   iVar8 = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0);
   if (iVar8 == 0) {
-    uVar10 = thunk_FUN_00413af0(param_1,(DArrayTy *)param_2,param_3,param_4,param_5);
+    uVar10 = thunk_FUN_00413af0(param_1,param_2,param_3,param_4,param_5);
     uVar7 = (undefined4)((ulonglong)uVar10 >> 0x20);
     uVar9 = 0;
     if ((int)uVar10 == 0) {
@@ -66,8 +65,9 @@ int STGroupBoatC::Way3DGrpDistribTgt
       if (0 < DAT_007f4d40) {
         do {
           uVar2 = *(uint *)(uVar9 + 0x18 + (int)DAT_007f4d04);
-          if (uVar2 < param_2->field_000C) {
-            puVar5 = (undefined2 *)(param_2->field_0008 * uVar2 + param_2->field_001C);
+          if (uVar2 < param_2->count) {
+            /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(param_2, uVar2) (runtime stride) */
+            puVar5 = (undefined2 *)(param_2->elementSize * uVar2 + (int)param_2->data);
           }
           else {
             puVar5 = (undefined2 *)0x0;
@@ -95,8 +95,9 @@ int STGroupBoatC::Way3DGrpDistribTgt
           /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
           uVar9 = *(uint *)(DAT_007f4d04 +
                            ((uint)*(ushort *)((int)param_1 + 0x27) - iVar8) * 0xe + -2);
-          if (uVar9 < param_2->field_000C) {
-            puVar5 = (undefined2 *)(param_2->field_0008 * uVar9 + param_2->field_001C);
+          if (uVar9 < param_2->count) {
+            /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(param_2, uVar9) (runtime stride) */
+            puVar5 = (undefined2 *)(param_2->elementSize * uVar9 + (int)param_2->data);
           }
           else {
             puVar5 = (undefined2 *)0x0;
@@ -130,8 +131,9 @@ int STGroupBoatC::Way3DGrpDistribTgt
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     else if (*(short *)((int)param_1 + 0x27) != 0) {
       do {
-        if (uVar9 < param_2->field_000C) {
-          puVar5 = (undefined2 *)(param_2->field_0008 * uVar9 + param_2->field_001C);
+        if (uVar9 < param_2->count) {
+          /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(param_2, uVar9) (runtime stride) */
+          puVar5 = (undefined2 *)(param_2->elementSize * uVar9 + (int)param_2->data);
         }
         else {
           puVar5 = (undefined2 *)0x0;

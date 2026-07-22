@@ -31,7 +31,7 @@ undefined4 __thiscall TLOBaseTy::procResult(TLOBaseTy *this)
   if (errorCode == 0) {
     switch(local_c->field_0361) {
     case CASE_1:
-      uVar5 = thunk_FUN_004ceb00(local_c,local_c->field_0369);
+      uVar5 = sub_004CEB00(local_c,local_c->field_0369);
       g_currentExceptionFrame = local_50.previous;
       return uVar5;
     case CASE_2:

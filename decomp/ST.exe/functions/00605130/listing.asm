@@ -1,4 +1,4 @@
-FUN_00605130:
+STExplosion::sub_00605130:
 00605130  8B 91 F1 01 00 00         MOV EDX,dword ptr [ECX + 0x1f1]
 00605136  33 C0                     XOR EAX,EAX
 00605138  89 91 8A 02 00 00         MOV dword ptr [ECX + 0x28a],EDX

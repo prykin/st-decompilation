@@ -102,8 +102,8 @@ LAB_0045f710:
     }
     if ((!bVar2) || (!bVar3)) {
       uVar9 = (undefined2)((uint)iVar10 >> 0x10);
-      /* ST_PSEUDO[raw_indirect_call,packed_or_unaligned_piece]: expected typed vtable/callback call with explicit __thiscall receiver; expected named packed member, bit extract/compose, or unaligned load */
-      sVar5 = (*(code *)this->vtable->field_0010)
+      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+      sVar5 = (*this->vtable->vfunc_10)
                         (CONCAT22(uVar9,this->field_0041),CONCAT22(uVar9,this->field_0043),
                          CONCAT22((short)((uint)iVar16 >> 0x10),this->field_0045),iVar15,iVar12,
                          iVar10);

@@ -47,7 +47,7 @@ int __thiscall AiPlrClassTy::InitData(AiPlrClassTy *this,undefined4 *param_1)
     local_c->field_05D3 = 0x398;
     local_c->field_05EB = 1;
     AiEventClassTy::InitData
-              ((AiEventClassTy *)&local_c->field_001C,
+              ((AiEventClassTy *)&local_c->vtable_at_1c,
                (int *)(local_c->field_06D1 + 0x12a + (int)param_1));
     ppDVar10 = &pAVar2->field_0695;
     iVar3 = 5;
@@ -65,9 +65,9 @@ int __thiscall AiPlrClassTy::InitData(AiPlrClassTy *this,undefined4 *param_1)
       pDVar4 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,10,0x12,5);
       pAVar2->field_06A1 = pDVar4;
     }
-    if (pAVar2->field_06AD == (uint *)0x0) {
+    if (pAVar2->field_06AD == (DArrayTy *)0x0) {
       pDVar4 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,10,0x1c,5);
-      pAVar2->field_06AD = &pDVar4->flags;
+      pAVar2->field_06AD = pDVar4;
     }
     uVar9 = 0;
     pDVar4 = *local_8;
@@ -107,7 +107,7 @@ int __thiscall AiPlrClassTy::InitData(AiPlrClassTy *this,undefined4 *param_1)
     return 0;
   }
   g_currentExceptionFrame = local_50.previous;
-  thunk_FUN_00678ba0((int)local_c);
+  thunk_FUN_00678ba0(local_c);
   iVar6 = ReportDebugMessage("E:\\__titans\\ai\\ai_plr.cpp",0x3c,0,iVar3,"%s",
                              "AiPlrClassTy::InitData");
   if (iVar6 != 0) {

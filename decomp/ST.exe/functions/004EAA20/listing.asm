@@ -1,4 +1,4 @@
-FUN_004eaa20:
+TLOBaseTy::sub_004EAA20:
 004EAA20  55                        PUSH EBP
 004EAA21  8B EC                     MOV EBP,ESP
 004EAA23  81 EC 04 01 00 00         SUB ESP,0x104

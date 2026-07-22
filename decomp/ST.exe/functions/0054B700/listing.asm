@@ -1,4 +1,4 @@
-SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0054B700::FUN_0054b700:
+CursorClassTy::sub_0054B700:
 0054B700  55                        PUSH EBP
 0054B701  8B EC                     MOV EBP,ESP
 0054B703  83 EC 48                  SUB ESP,0x48

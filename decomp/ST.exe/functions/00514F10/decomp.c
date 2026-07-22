@@ -34,29 +34,29 @@ void __thiscall HelpPanelTy::PrepMissObj(HelpPanelTy *this)
     RaiseInternalException(iVar3,0,"E:\\__titans\\Andrey\\helppan.cpp",0x39b);
     return;
   }
-  if ((AnonShape_006B5570_4D68B99C *)local_8->field_01D3 != (AnonShape_006B5570_4D68B99C *)0x0) {
-    FUN_006b5570((AnonShape_006B5570_4D68B99C *)local_8->field_01D3);
+  if ((DArrayTy *)local_8->field_01D3 != (DArrayTy *)0x0) {
+    FUN_006b5570((DArrayTy *)local_8->field_01D3);
   }
   pDVar4 = Library::DKW::TBL::SArrayCreate((DArrayTy *)0x0,10,10);
   this_00->field_01D3 = &pDVar4->flags;
   iVar3 = 0;
-  if (0 < PTR_0080c4cb->field_0008) {
-    if (PTR_0080c4cb->field_0008 < 1) {
+  if (0 < (int)g_dArray_0080C4CB->elementSize) {
+    if ((int)g_dArray_0080C4CB->elementSize < 1) {
       pcVar5 = (char *)0x0;
       goto LAB_00514f85;
     }
     do {
-      pcVar5 = *(char **)(PTR_0080c4cb->field_0014 + iVar3 * 4);
+      pcVar5 = *(char **)(g_dArray_0080C4CB->growCapacity + iVar3 * 4);
 LAB_00514f85:
-      thunk_FUN_005411a0(this_00->field_01D3,pcVar5,"@- %s@ ");
+      thunk_FUN_005411a0((DArrayTy *)this_00->field_01D3,pcVar5,"@- %s@ ");
       iVar3 = iVar3 + 1;
-    } while (iVar3 < PTR_0080c4cb->field_0008);
+    } while (iVar3 < (int)g_dArray_0080C4CB->elementSize);
   }
   puVar6 = ccFntTy::FormIndentSarr
-                     (this_00->field_01E4,this_00->field_01D3," ,.;:!?/\\()[]{}",
+                     (this_00->field_01E4,(DArrayTy *)this_00->field_01D3," ,.;:!?/\\()[]{}",
                       (uint *)&DAT_007c21ec,0x19c,0,0xffffffff,(char *)0x0,1);
-  if ((AnonShape_006B5570_4D68B99C *)this_00->field_01D3 != (AnonShape_006B5570_4D68B99C *)0x0) {
-    FUN_006b5570((AnonShape_006B5570_4D68B99C *)this_00->field_01D3);
+  if ((DArrayTy *)this_00->field_01D3 != (DArrayTy *)0x0) {
+    FUN_006b5570((DArrayTy *)this_00->field_01D3);
   }
   this_00->field_01D3 = puVar6;
   if (puVar6 == (uint *)0x0) {

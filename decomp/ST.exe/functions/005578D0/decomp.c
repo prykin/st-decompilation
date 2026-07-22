@@ -13,14 +13,15 @@ void __thiscall VisibleClassTy::InitData(VisibleClassTy *this)
   VisibleClassTy *pVVar3;
   int iVar4;
   int iVar5;
-  undefined4 *puVar6;
-  byte *pbVar7;
+  byte *pbVar6;
+  ushort *puVar7;
   undefined4 *puVar8;
   DArrayTy *pDVar9;
   uint uVar10;
   uint uVar11;
   uint uVar12;
-  bool bVar13;
+  undefined4 *puVar13;
+  bool bVar14;
   InternalExceptionFrame local_50;
   VisibleClassTy *local_c;
   byte *local_8;
@@ -37,7 +38,7 @@ void __thiscall VisibleClassTy::InitData(VisibleClassTy *this)
     if (iVar5 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    thunk_FUN_00558140((AnonShape_00558140_7CF35A3F *)local_c);
+    sub_00558140(local_c);
     RaiseInternalException(iVar4,0,"E:\\__titans\\grig\\visible.cpp",0x79);
     return;
   }
@@ -55,18 +56,18 @@ void __thiscall VisibleClassTy::InitData(VisibleClassTy *this)
   }
   else {
     local_c->field_0114 = 1;
-    puVar6 = Library::DKW::LIB::FUN_006aac10(local_c->field_0024 * iVar4 * 2);
-    pVVar3->field_0038 = puVar6;
-    pbVar7 = (byte *)Library::DKW::LIB::FUN_006aac10(pVVar3->field_0030 * pVVar3->field_0034);
-    pVVar3->field_004C = pbVar7;
-    puVar6 = Library::DKW::LIB::FUN_006aac10(pVVar3->field_0030 * pVVar3->field_0034 * 2);
-    pVVar3->field_0050 = puVar6;
-    puVar6 = &pVVar3->field_003C;
+    pbVar6 = (byte *)Library::DKW::LIB::FUN_006aac10(local_c->field_0024 * iVar4 * 2);
+    pVVar3->field_0038 = pbVar6;
+    pbVar6 = (byte *)Library::DKW::LIB::FUN_006aac10(pVVar3->field_0030 * pVVar3->field_0034);
+    pVVar3->field_004C = pbVar6;
+    puVar7 = (ushort *)Library::DKW::LIB::FUN_006aac10(pVVar3->field_0030 * pVVar3->field_0034 * 2);
+    pVVar3->field_0050 = puVar7;
+    puVar13 = &pVVar3->field_003C;
     iVar4 = 4;
     do {
       puVar8 = Library::DKW::LIB::FUN_006aac10(pVVar3->field_0028 * pVVar3->field_002C);
-      *puVar6 = puVar8;
-      puVar6 = puVar6 + 1;
+      *puVar13 = puVar8;
+      puVar13 = puVar13 + 1;
       iVar4 = iVar4 + -1;
     } while (iVar4 != 0);
     pDVar9 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,10,0x1c,10);
@@ -79,7 +80,7 @@ void __thiscall VisibleClassTy::InitData(VisibleClassTy *this)
       uVar12 = 0;
       local_8 = &DAT_008087e9;
       do {
-        if ((PTR_00802a38 == (STPlaySystemC *)0x0) || (*local_8 < 8)) {
+        if ((g_playSystem_00802A38 == (STPlaySystemC *)0x0) || (*local_8 < 8)) {
           uVar10 = (uint)DAT_0080874d;
           if (uVar12 != uVar10) {
             if (DAT_00808a8f == '\0') {
@@ -105,12 +106,12 @@ LAB_00557b2d:
                   iVar4 = 2;
                 }
               }
-              bVar13 = iVar4 < 0;
+              bVar14 = iVar4 < 0;
             }
             else {
-              bVar13 = (&DAT_008087ea)[(uVar12 & 0xff) * 0x51] != (&DAT_008087ea)[uVar10 * 0x51];
+              bVar14 = (&DAT_008087ea)[(uVar12 & 0xff) * 0x51] != (&DAT_008087ea)[uVar10 * 0x51];
             }
-            if (bVar13) goto LAB_00557b44;
+            if (bVar14) goto LAB_00557b44;
           }
           *(undefined1 *)((int)&pVVar3->field_00FC + uVar12) = 1;
         }

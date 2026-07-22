@@ -35,15 +35,14 @@ uint __thiscall STGroupC::GetTOBJQty(STGroupC *this,int param_1)
       do {
         DArrayGetElement((DArrayTy *)pSVar2->field_0029,uVar6,&local_c);
         if ((short)local_c != -1) {
-          pSVar4 = STAllPlayersC::GetObjPtr
-                             (g_sTAllPlayers_007FA174,pSVar2->field_0024,local_c,CASE_1);
+          pSVar4 = STAllPlayersC::GetObjPtr(g_allPlayers_007FA174,pSVar2->field_0024,local_c,CASE_1)
+          ;
           if (pSVar4 == (STGameObjC *)0x0) {
             RaiseInternalException
                       (-0x5001fffc,g_overwriteContext_007ED77C,
                        "E:\\__titans\\wlad\\tc_grp.cpp",0x66);
           }
-          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-          iVar3 = (**(code **)&pSVar4->vtable->field_0x2c)();
+          iVar3 = (*pSVar4->vtable->vfunc_2C)();
           if (iVar3 == param_1) {
             local_8 = local_8 + 1;
           }

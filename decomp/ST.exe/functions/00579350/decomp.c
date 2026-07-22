@@ -113,8 +113,8 @@ LAB_00579591:
     param_1->field_023D = 0;
   }
 LAB_005795a9:
-  if (2 < PTR_00802a38->field_00E4 - param_1->field_0235) {
-    param_1->field_0235 = PTR_00802a38->field_00E4;
+  if (2 < g_playSystem_00802A38->field_00E4 - param_1->field_0235) {
+    param_1->field_0235 = g_playSystem_00802A38->field_00E4;
     if ((*(short *)&param_1->field_0x6c == 7) || (*(short *)&param_1->field_0x6c < 3)) {
       param_1->field_0231 = (param_1->field_0231 + 1) % 6;
     }

@@ -27,6 +27,13 @@ Original binaries are local under ignored `bin/` and must not be committed.
   recursive quality audit. Use the stable function address and issue kind when
   selecting the next automation cluster; do not infer corpus quality from one
   large `decomp.c` example.
+- `call_relations.jsonl` is the address-authoritative call identity: keep the
+  direct entry, thunk chain, and resolved target together, especially for
+  overloads. `coverage_summary.json`/`unclaimed_ranges.jsonl` are the source of
+  truth for executable bytes which Ghidra has not assigned to any function.
+- Treat `manual_type_conflicts.tsv` as a review queue, not an apply list. Strong
+  contradictory evidence makes a protected type suspicious, but never licenses
+  silently replacing `USER_DEFINED`/`IMPORTED` work.
 
 ## Important technical constraints
 

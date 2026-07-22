@@ -48,8 +48,8 @@ void __thiscall FUN_0063d100(void *this,undefined4 *param_1)
   local_c = 0x10;
   local_8 = 0;
   STT3DSprC::RestoreSpr((STT3DSprC *)((int)this + 0x1d5),(int *)&local_20,pAVar4);
-  thunk_FUN_00416240(this,*(undefined2 *)((int)this + 0x266),*(undefined2 *)((int)this + 0x26a),
-                     *(undefined2 *)((int)this + 0x26e));
+  sub_00416240(this,*(undefined2 *)((int)this + 0x266),*(undefined2 *)((int)this + 0x26a),
+               *(undefined2 *)((int)this + 0x26e));
   FreeAndNull(&local_20);
   if (-1 < *(int *)((int)this + 0x33a)) {
     *(undefined4 *)((int)this + 0x33a) = 0xffffffff;

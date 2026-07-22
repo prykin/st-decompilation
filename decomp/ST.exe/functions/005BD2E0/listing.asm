@@ -1,4 +1,4 @@
-FUN_005bd2e0:
+CreatePrivider:
 005BD2E0  55                        PUSH EBP
 005BD2E1  8B EC                     MOV EBP,ESP
 005BD2E3  51                        PUSH ECX

@@ -42,20 +42,20 @@ int __thiscall AiBossClassTy::GetMessage(AiBossClassTy *this,STMessage *message)
     }
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  uVar6 = PTR_00802a38->field_00E4;
+  uVar6 = g_playSystem_00802A38->field_00E4;
   local_10->field_0658 = uVar6;
   SVar1 = message->id;
   if (SVar1 < MESS_TORPHIT) {
     if (SVar1 == MESS_SHARED_010F) {
       local_8 = 0;
       local_c = (byte *)PrepareToSave(local_10,&local_8);
-      STPlaySystemC::SaveObjData(PTR_00802a38,PTR_s_AIBOSS_0079d614,local_c,local_8,0xc);
+      STPlaySystemC::SaveObjData(g_playSystem_00802A38,PTR_s_AIBOSS_0079d614,local_c,local_8,0xc);
       if (local_c != (byte *)0x0) {
         FreeAndNull(&local_c);
       }
     }
     else if (SVar1 == MESS_ID_NONE) {
-      AiEventClassTy::GetMessage((AiEventClassTy *)&local_10->field_001C,message);
+      AiEventClassTy::GetMessage((AiEventClassTy *)&local_10->vtable_at_1c,message);
     }
     else if (SVar1 == MESS_ID_CREATE) {
       puVar9 = (message->arg0).ptr;
@@ -69,7 +69,7 @@ int __thiscall AiBossClassTy::GetMessage(AiBossClassTy *this,STMessage *message)
     }
     else if (SVar1 == MESS_SHARED_0003) {
       thunk_FUN_0064a580();
-      thunk_FUN_00647ed0((int)this_00);
+      thunk_FUN_00647ed0(this_00);
       DAT_008117bc = (AiBossClassTy *)0x0;
     }
   }
@@ -79,8 +79,8 @@ int __thiscall AiBossClassTy::GetMessage(AiBossClassTy *this,STMessage *message)
         if (uVar6 < local_10->field_0629 + 5) goto LAB_00648291;
         local_10->field_0629 = uVar6;
       }
-      AiEventClassTy::GetMessage((AiEventClassTy *)&local_10->field_001C,message);
-      if (g_sTAllPlayers_007FA174 != (STAllPlayersC *)0x0) {
+      AiEventClassTy::GetMessage((AiEventClassTy *)&local_10->vtable_at_1c,message);
+      if (g_allPlayers_007FA174 != (STAllPlayersC *)0x0) {
         cVar10 = '\0';
         pcVar8 = &DAT_008087e9;
         do {
@@ -96,11 +96,11 @@ int __thiscall AiBossClassTy::GetMessage(AiBossClassTy *this,STMessage *message)
   }
   else if (SVar1 == MESS_AIBOSSCLASSTY_7106) {
     thunk_FUN_00676930((uint)DAT_0080874d);
-    if (PTR_00802a38 == (STPlaySystemC *)0x0) {
+    if (g_playSystem_00802A38 == (STPlaySystemC *)0x0) {
       DAT_0080c83a = 0;
     }
     else {
-      DAT_0080c83a = PTR_00802a38->field_00E4 / 0x19;
+      DAT_0080c83a = g_playSystem_00802A38->field_00E4 / 0x19;
     }
     puVar9 = &DAT_008087b6;
     puVar11 = &DAT_0080c967;

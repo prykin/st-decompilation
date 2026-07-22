@@ -1,4 +1,4 @@
-FUN_005bb9f0:
+PrividerTy::sub_005BB9F0:
 005BB9F0  8B C1                     MOV EAX,ECX
 005BB9F2  BA 01 00 00 00            MOV EDX,0x1
 005BB9F7  8B 88 73 1A 00 00         MOV ECX,dword ptr [EAX + 0x1a73]

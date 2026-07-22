@@ -76,10 +76,11 @@ void __fastcall FUN_00521cf0(AnonShape_00521CF0_154649D2 *param_1)
         FUN_006b7780(_Str1,_Str1);
         iVar6 = Library::MSVCRT::_strncmp(_Str1,"/WAITING",8);
         uVar10 = local_10;
-        if ((iVar6 == 0) && (uVar10 = 0, PTR_00802a38 != (STPlaySystemC *)0x0)) {
-          PTR_00802a38->field_00F0 = (uint)(PTR_00802a38->field_00F0 == 0);
-          pcVar7 = LoadResourceString(0x2747 - (PTR_00802a38->field_00F0 != 0),HINSTANCE_00807618);
-          pcVar8 = LoadResourceString(0x42c3,HINSTANCE_00807618);
+        if ((iVar6 == 0) && (uVar10 = 0, g_playSystem_00802A38 != (STPlaySystemC *)0x0)) {
+          g_playSystem_00802A38->field_00F0 = (uint)(g_playSystem_00802A38->field_00F0 == 0);
+          pcVar7 = LoadResourceString(0x2747 - (g_playSystem_00802A38->field_00F0 != 0),
+                                      g_module_00807618);
+          pcVar8 = LoadResourceString(0x42c3,g_module_00807618);
           wsprintfA((LPSTR)&DAT_0080f33a,"%s %s",pcVar8,pcVar7);
           if (g_popUp_008016D8 != (PopUpTy *)0x0) {
             if (DAT_0080874d == 0xff) {
@@ -94,8 +95,8 @@ void __fastcall FUN_00521cf0(AnonShape_00521CF0_154649D2 *param_1)
         if (iVar6 == 0) {
           DAT_0080735e = DAT_0080735e == '\0';
           uVar10 = 0;
-          pcVar7 = LoadResourceString(0x2747 - (byte)DAT_0080735e,HINSTANCE_00807618);
-          pcVar8 = LoadResourceString(0x42c5,HINSTANCE_00807618);
+          pcVar7 = LoadResourceString(0x2747 - (byte)DAT_0080735e,g_module_00807618);
+          pcVar8 = LoadResourceString(0x42c5,g_module_00807618);
           wsprintfA((LPSTR)&DAT_0080f33a,"%s %s",pcVar8,pcVar7);
           if (g_popUp_008016D8 != (PopUpTy *)0x0) {
             if (DAT_0080874d == 0xff) {
@@ -114,8 +115,8 @@ void __fastcall FUN_00521cf0(AnonShape_00521CF0_154649D2 *param_1)
           if (g_int_00811764 != (int *)0x0) {
             FUN_006b6500(g_int_00811764,DAT_0080733c);
           }
-          pcVar7 = LoadResourceString(0x2747 - (DAT_0080733c != 0),HINSTANCE_00807618);
-          pcVar8 = LoadResourceString(0x42c4,HINSTANCE_00807618);
+          pcVar7 = LoadResourceString(0x2747 - (DAT_0080733c != 0),g_module_00807618);
+          pcVar8 = LoadResourceString(0x42c4,g_module_00807618);
           wsprintfA((LPSTR)&DAT_0080f33a,"%s %s",pcVar8,pcVar7);
           if (g_popUp_008016D8 != (PopUpTy *)0x0) {
             if (DAT_0080874d == 0xff) {

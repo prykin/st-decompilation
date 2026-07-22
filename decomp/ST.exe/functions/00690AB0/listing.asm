@@ -1,4 +1,4 @@
-FUN_00690ab0:
+AiTactClassTy::sub_00690AB0:
 00690AB0  56                        PUSH ESI
 00690AB1  8B F1                     MOV ESI,ECX
 00690AB3  8B 86 89 00 00 00         MOV EAX,dword ptr [ESI + 0x89]

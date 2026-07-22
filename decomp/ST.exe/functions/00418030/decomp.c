@@ -17,7 +17,7 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00417FF0::FUN_00418030
   int iVar4;
   uint uVar5;
   STWorldObject *pSVar6;
-  AnonPointee_STBoatC_0097 *pAVar7;
+  ushort *puVar7;
   undefined4 uVar8;
   short *psVar9;
   int iVar10;
@@ -87,14 +87,14 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00417FF0::FUN_00418030
     }
     if (pSVar6 == (STWorldObject *)0x0) {
       *(undefined4 *)&local_58->field_0x9b = 2;
-      pAVar7 = (AnonPointee_STBoatC_0097 *)Library::DKW::LIB::FUN_006aac10(0x10);
-      this_00->field_0097 = pAVar7;
-      pAVar7->field_0008 = param_1;
-      this_00->field_0097->field_000A = param_2;
-      this_00->field_0097->field_000C = param_3;
+      puVar7 = (ushort *)Library::DKW::LIB::FUN_006aac10(0x10);
+      this_00->field_0097 = puVar7;
+      puVar7[4] = param_1;
+      this_00->field_0097[5] = param_2;
+      this_00->field_0097[6] = param_3;
       uVar8 = FUN_006a5eb0((int)this_00->field_005B,(int)this_00->field_005D,
                            (int)this_00->field_005F,(int)local_2c,(int)psVar16,(int)psVar15);
-      *(short *)&this_00->field_0097->field_0xe = (short)uVar8;
+      this_00->field_0097[7] = (ushort)uVar8;
       goto LAB_0041862b;
     }
   }
@@ -220,15 +220,15 @@ LAB_004183b8:
   local_50 = (short *)(int)param_2;
   psVar9 = local_44;
   local_44 = (short *)(int)param_3;
-  pAVar7 = (AnonPointee_STBoatC_0097 *)
+  puVar7 = (ushort *)
            Library::DKW::WAY::FUN_006ae7d0
                      ((int)g_pathingGrid.cells,(int)g_pathingGrid.sizeX,
                       (short *)(int)g_pathingGrid.sizeY,(short *)(int)g_pathingGrid.sizeZ,
                       (short *)(int)this_00->field_0047,(short *)(int)this_00->field_0049,
                       (short *)(int)this_00->field_004B,local_2c,local_50,(short *)(int)param_3,
                       (int *)&this_00->field_0x9b,(undefined4 *)local_14,psVar9);
-  this_00->field_0097 = pAVar7;
-  if (pAVar7 == (AnonPointee_STBoatC_0097 *)0x0) {
+  this_00->field_0097 = puVar7;
+  if (puVar7 == (ushort *)0x0) {
     iVar4 = (int)g_pathingGrid.planeStride;
     iVar17 = (int)g_pathingGrid.sizeZ;
     psVar15 = g_pathingGrid.cells;
@@ -278,34 +278,33 @@ LAB_004183b8:
         local_c = psVar16;
       } while ((int)psVar15 <= (int)local_24);
     }
-    pAVar7 = (AnonPointee_STBoatC_0097 *)
+    puVar7 = (ushort *)
              Library::DKW::WAY::FUN_006afba0
                        ((int)g_pathingScratchGrid.cells,(int)g_pathingScratchGrid.sizeX,
                         (short *)(int)g_pathingScratchGrid.sizeY,
                         (short *)(int)g_pathingScratchGrid.sizeZ,(short *)(int)this_00->field_0047,
                         (short *)(int)this_00->field_0049,(short *)(int)this_00->field_004B,local_2c
                         ,local_50,local_44,(int *)&this_00->field_0x9b,0);
-    this_00->field_0097 = pAVar7;
+    this_00->field_0097 = puVar7;
   }
   FreeAndNull(&local_14);
 LAB_0041862b:
   g_currentExceptionFrame = local_9c.previous;
-  pAVar7 = this_00->field_0097;
-  if (pAVar7 == (AnonPointee_STBoatC_0097 *)0x0) {
+  puVar7 = this_00->field_0097;
+  if (puVar7 == (ushort *)0x0) {
     return 2;
   }
   this_00->field_00E3 = 1;
   this_00->field_00D3 = 1;
   /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-  iVar4 = CONCAT22((short)((uint)psVar15 >> 0x10),pAVar7->field_0008 * 0xc9) + 100;
+  iVar4 = CONCAT22((short)((uint)psVar15 >> 0x10),puVar7[4] * 0xc9) + 100;
   sVar3 = (short)iVar4;
   uVar5 = (int)sVar3 - (int)this_00->field_0041;
   /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-  iVar17 = CONCAT22((short)((uint)psVar16 >> 0x10),pAVar7->field_000A * 0xc9) + 100;
+  iVar17 = CONCAT22((short)((uint)psVar16 >> 0x10),puVar7[5] * 0xc9) + 100;
   uVar13 = (int)uVar5 >> 0x1f;
   /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-  local_c = (short *)(CONCAT22((short)((uint)local_9c.previous >> 0x10),pAVar7->field_000C * 200) +
-                     100);
+  local_c = (short *)(CONCAT22((short)((uint)local_9c.previous >> 0x10),puVar7[6] * 200) + 100);
   local_54 = (short *)((uVar5 ^ uVar13) - uVar13);
   local_15 = 0;
   sVar12 = (short)iVar17;

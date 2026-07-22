@@ -15,16 +15,16 @@ int __thiscall SoundManagerTy::GetMessage(SoundManagerTy *this,STMessage *messag
   char cVar1;
   STMessageId SVar2;
   code *pcVar3;
-  AnonShape_00566AA0_2703DA85 *this_00;
+  SoundManagerTy *this_00;
   DWORD DVar4;
   int iVar5;
   int iVar6;
   uint uVar7;
   InternalExceptionFrame local_4c;
-  AnonShape_00566AA0_2703DA85 *local_8;
+  SoundManagerTy *local_8;
 
-  local_8 = (AnonShape_00566AA0_2703DA85 *)this;
-  DVar4 = FUN_006e51b0(this->field_0010);
+  local_8 = this;
+  DVar4 = STAppC::sub_006E51B0(this->field_0010);
   this->field_001C = DVar4;
   local_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_4c;
@@ -44,11 +44,11 @@ int __thiscall SoundManagerTy::GetMessage(SoundManagerTy *this,STMessage *messag
   if (SVar2 != MESS_ID_NONE) {
     if (SVar2 == MESS_ID_CREATE) {
       DAT_008033f0 = local_8;
-      local_8->field_0028 = (int)message->arg0;
+      local_8->field_0028 = message->arg0;
     }
     else if (SVar2 == MESS_SHARED_0003) {
-      DAT_008033f0 = (AnonShape_00566AA0_2703DA85 *)0x0;
-      thunk_FUN_00566900((AnonShape_00566900_A2478973 *)local_8);
+      DAT_008033f0 = (SoundManagerTy *)0x0;
+      sub_00566900(local_8);
     }
     goto LAB_00566d75;
   }
@@ -57,50 +57,50 @@ int __thiscall SoundManagerTy::GetMessage(SoundManagerTy *this,STMessage *messag
   case '\0':
     if (cVar1 != '\x01') {
       local_8->field_0038 = 1;
-      local_8->field_0039 = 0xffffffff;
+      local_8->field_0039 = -1;
     }
-    *(undefined4 *)&local_8->field_0x24 = *(undefined4 *)&local_8->field_0x1c;
-    *(undefined4 *)&local_8->field_0x20 = *(undefined4 *)&local_8->field_0x1c;
+    local_8->field_0024 = local_8->field_001C;
+    local_8->field_0020 = local_8->field_001C;
     break;
   case '\x01':
-    iVar5 = *(int *)&local_8->field_0x1c;
-    if ((4999 < (uint)(iVar5 - *(int *)&local_8->field_0x20)) &&
-       ((uint)(iVar5 - *(int *)&local_8->field_0x24) < 0x3e9)) {
-      *(int *)&local_8->field_0x24 = iVar5;
-      *(int *)&local_8->field_0x20 = iVar5;
+    iVar5 = local_8->field_001C;
+    if ((4999 < (uint)(iVar5 - local_8->field_0020)) &&
+       ((uint)(iVar5 - local_8->field_0024) < 0x3e9)) {
+      local_8->field_0024 = iVar5;
+      local_8->field_0020 = iVar5;
 joined_r0x00566d57:
       if (cVar1 != '\x03') {
         local_8->field_0038 = 3;
 LAB_00566d5d:
-        local_8->field_0039 = 0xffffffff;
+        local_8->field_0039 = -1;
       }
     }
     break;
   case '\x02':
-    iVar5 = *(int *)&local_8->field_0x1c;
-    if (4999 < (uint)(iVar5 - *(int *)&local_8->field_0x20)) {
-      uVar7 = iVar5 - *(int *)&local_8->field_0x24;
+    iVar5 = local_8->field_001C;
+    if (4999 < (uint)(iVar5 - local_8->field_0020)) {
+      uVar7 = iVar5 - local_8->field_0024;
       if (19999 < uVar7) goto LAB_00566d35;
       if (uVar7 < 0x3e9) {
-        *(int *)&local_8->field_0x24 = iVar5;
-        *(int *)&local_8->field_0x20 = iVar5;
+        local_8->field_0024 = iVar5;
+        local_8->field_0020 = iVar5;
         goto joined_r0x00566d57;
       }
     }
     break;
   case '\x03':
-    iVar5 = *(int *)&local_8->field_0x1c;
-    if (14999 < (uint)(iVar5 - *(int *)&local_8->field_0x24)) {
+    iVar5 = local_8->field_001C;
+    if (14999 < (uint)(iVar5 - local_8->field_0024)) {
 LAB_00566d35:
-      *(int *)&local_8->field_0x24 = iVar5;
-      *(int *)&local_8->field_0x20 = iVar5;
+      local_8->field_0024 = iVar5;
+      local_8->field_0020 = iVar5;
       if (cVar1 != '\x01') {
         local_8->field_0038 = 1;
         goto LAB_00566d5d;
       }
     }
   }
-  thunk_FUN_00566aa0(local_8);
+  sub_00566AA0(local_8);
   SoundClassTy::CheckFader((SoundClassTy *)&g_sound);
 LAB_00566d75:
   g_currentExceptionFrame = local_4c.previous;

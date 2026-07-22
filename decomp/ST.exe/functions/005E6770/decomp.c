@@ -49,45 +49,46 @@ void __thiscall WaitTy::InitWait(WaitTy *this,undefined4 param_1,undefined4 para
     local_c->field_1A64 = param_1;
     local_c->field_1A68 = param_2;
     pDVar5 = Library::DKW::TBL::SArrayCreate((DArrayTy *)0x0,10,10);
-    this_01->field_1AF0 = &pDVar5->flags;
+    this_01->field_1AF0 = pDVar5;
     if ((DAT_00811768 == '\x01') || (DAT_008067a0 != '\0')) {
       DarkScreen(DAT_0080759c,1,0);
     }
-    if (PTR_00802a30 != (CursorClassTy *)0x0) {
-      if (PTR_00802a30->field_00A9 == 0) {
-        Library::DKW::DDX::FUN_006b8b10((int *)PTR_00802a30->field_00AD);
+    if (g_cursorClass_00802A30 != (CursorClassTy *)0x0) {
+      if (g_cursorClass_00802A30->field_00A9 == 0) {
+        Library::DKW::DDX::FUN_006b8b10((int *)g_cursorClass_00802A30->field_00AD);
       }
-      else if (PTR_00802a30->field_001C != (cLoadingTy *)0xffffffff) {
-        FUN_006b3af0((int *)PTR_00802a30->field_0060,(uint)PTR_00802a30->field_001C);
+      else if (g_cursorClass_00802A30->field_001C != (cLoadingTy *)0xffffffff) {
+        FUN_006b3af0((int *)g_cursorClass_00802A30->field_0060,
+                     (uint)g_cursorClass_00802A30->field_001C);
       }
     }
     puVar6 = (ushort *)FUN_0070a9f0(g_cMf32_00806780,"LOADSINGLE",0,1);
-    PTR_0081176c->field_002C = puVar6;
-    puVar6 = PTR_0081176c->field_002C;
+    g_startSystem_0081176C->field_002C = puVar6;
+    puVar6 = g_startSystem_0081176C->field_002C;
     this_01->field_005D = puVar6;
     FUN_006bc360(puVar6,local_668,(int *)0x0);
     this_01->field_1A5B->field_0140 = 0x1f;
     Library::Ourlib::PALETTE::FUN_00718780
               ((int)local_668,0,0x100,0x8b,0x15,(undefined4 *)&this_01->field_1A5B->field_0x144);
     puVar6 = Library::Ourlib::MFIMG::mfImgLoad(g_cMf32_00806780,1,"MM_MAPB",0,1);
-    DibPut((AnonShape_006B5B10_E0D06CF1 *)PTR_0081176c->field_02F0,0,0,'\x01',(byte *)puVar6);
-    pAVar1 = (AnonShape_006B5B10_E0D06CF1 *)PTR_0081176c->field_0544;
+    DibPut((AnonShape_006B5B10_E0D06CF1 *)g_startSystem_0081176C->field_02F0,0,0,'\x01',
+           (byte *)puVar6);
+    pAVar1 = (AnonShape_006B5B10_E0D06CF1 *)g_startSystem_0081176C->field_0544;
     FUN_006b4170(pAVar1,0,0,0,pAVar1->field_0004,pAVar1->field_0008,0xff);
-    if ((AnonShape_006B5570_4D68B99C *)PTR_0081176c->field_0548 !=
-        (AnonShape_006B5570_4D68B99C *)0x0) {
-      FUN_006b5570((AnonShape_006B5570_4D68B99C *)PTR_0081176c->field_0548);
+    if ((DArrayTy *)g_startSystem_0081176C->field_0548 != (DArrayTy *)0x0) {
+      FUN_006b5570((DArrayTy *)g_startSystem_0081176C->field_0548);
     }
     pDVar5 = Library::DKW::TBL::SArrayCreate((DArrayTy *)0x0,10,10);
-    PTR_0081176c->field_0548 = &pDVar5->flags;
-    if (PTR_0081176c->field_0389 != 0) {
+    g_startSystem_0081176C->field_0548 = &pDVar5->flags;
+    if (g_startSystem_0081176C->field_0389 != 0) {
       this_01->field_002D = 0x28;
       *(undefined2 *)&this_01->field_0x31 = 1;
-      *(short *)&this_01->field_0x33 = (short)PTR_0081176c->field_0548[2];
-      FUN_006e6080(this_01,2,PTR_0081176c->field_0389,(undefined4 *)&this_01->field_0x1d);
+      *(short *)&this_01->field_0x33 = (short)g_startSystem_0081176C->field_0548[2];
+      FUN_006e6080(this_01,2,g_startSystem_0081176C->field_0389,(undefined4 *)&this_01->field_0x1d);
       this_01->field_002D = 0x22;
       *(undefined2 *)&this_01->field_0x33 = 0;
       *(undefined2 *)&this_01->field_0x31 = 0;
-      FUN_006e6080(this_01,2,PTR_0081176c->field_0389,(undefined4 *)&this_01->field_0x1d);
+      FUN_006e6080(this_01,2,g_startSystem_0081176C->field_0389,(undefined4 *)&this_01->field_0x1d);
     }
     PaintWait(this_01,'\x01');
     iVar4 = 1;
@@ -113,7 +114,7 @@ void __thiscall WaitTy::InitWait(WaitTy *this,undefined4 param_1,undefined4 para
     }
     puVar11 = &this_01->field_1A94;
     do {
-      FUN_006b2330((uint)PTR_008075a8,puVar11,0x31,0x402211,*(uint *)(this_01->field_1AEC + 2),0x13,
+      FUN_006b2330(PTR_008075a8,puVar11,0x31,0x402211,*(uint *)(this_01->field_1AEC + 2),0x13,
                    (uint)this_01);
       Library::DKW::DDX::FUN_006b3640((int *)PTR_008075a8,*puVar11,0xffffffff,0x114,uVar10);
       FUN_006b3af0((int *)PTR_008075a8,*puVar11);
@@ -121,7 +122,7 @@ void __thiscall WaitTy::InitWait(WaitTy *this,undefined4 param_1,undefined4 para
       puVar11 = puVar11 + 1;
     } while ((int)uVar10 < 0x1e1);
     CreateCtrls(this_01);
-    FUN_006b2330((uint)PTR_008075a8,&local_8,0x32,0x403099,0x204,0x19d,
+    FUN_006b2330(PTR_008075a8,&local_8,0x32,0x403099,0x204,0x19d,
                  (uint)&this_01->field_1A5B->field_0140);
     Library::DKW::DDX::FUN_006b3640((int *)PTR_008075a8,local_8,0xffffffff,0x112,0x38);
     pHVar9 = (HoloTy *)Library::MSVCRT::FUN_0072e530(0x33);
@@ -167,7 +168,7 @@ void __thiscall WaitTy::InitWait(WaitTy *this,undefined4 param_1,undefined4 para
       local_8 = 0xffffffff;
     }
     if ((this_01->field_1A64 == 0) || (this_01->field_1A68 != 0)) {
-      FUN_006b2330((uint)PTR_008075a8,&local_8,0x32,0x4042d2,0xf9,0x121,
+      FUN_006b2330(PTR_008075a8,&local_8,0x32,0x4042d2,0xf9,0x121,
                    (uint)&this_01->field_1A5B->field_0140);
       Library::DKW::DDX::FUN_006b3640((int *)PTR_008075a8,local_8,0xffffffff,10,0xb4);
       pHVar9 = (HoloTy *)Library::MSVCRT::FUN_0072e530(0x33);
@@ -206,16 +207,19 @@ void __thiscall WaitTy::InitWait(WaitTy *this,undefined4 param_1,undefined4 para
           if (-1 < (int)uVar7) {
             FUN_006b3af0((int *)PTR_008075a8,uVar7);
           }
-          if (PTR_0081176c->field_0391 != 0xffffffff) {
-            FUN_006b3af0((int *)PTR_0081176c->field_03D5,PTR_0081176c->field_0391);
+          if (g_startSystem_0081176C->field_0391 != 0xffffffff) {
+            FUN_006b3af0((int *)g_startSystem_0081176C->field_03D5,
+                         g_startSystem_0081176C->field_0391);
           }
-          if (PTR_0081176c->field_0422 != 0xffffffff) {
-            FUN_006b3af0((int *)PTR_0081176c->field_0466,PTR_0081176c->field_0422);
+          if (g_startSystem_0081176C->field_0422 != 0xffffffff) {
+            FUN_006b3af0((int *)g_startSystem_0081176C->field_0466,
+                         g_startSystem_0081176C->field_0422);
           }
-          if (PTR_0081176c->field_04B3 != 0xffffffff) {
-            FUN_006b3af0((int *)PTR_0081176c->field_04F7,PTR_0081176c->field_04B3);
+          if (g_startSystem_0081176C->field_04B3 != 0xffffffff) {
+            FUN_006b3af0((int *)g_startSystem_0081176C->field_04F7,
+                         g_startSystem_0081176C->field_04B3);
           }
-          FUN_006b3af0((int *)PTR_008075a8,PTR_0081176c->field_0540);
+          FUN_006b3af0((int *)PTR_008075a8,g_startSystem_0081176C->field_0540);
         }
       }
       if (local_8 != 0xffffffff) {
@@ -224,36 +228,41 @@ void __thiscall WaitTy::InitWait(WaitTy *this,undefined4 param_1,undefined4 para
       }
     }
     else {
-      if (PTR_0081176c->field_0391 != 0xffffffff) {
+      if (g_startSystem_0081176C->field_0391 != 0xffffffff) {
         Library::DKW::DDX::FUN_006b34d0
-                  ((uint *)PTR_0081176c->field_03D5,PTR_0081176c->field_0391,0xfffffffe,
-                   PTR_0081176c->field_03A9,PTR_0081176c->field_03AD);
+                  ((uint *)g_startSystem_0081176C->field_03D5,g_startSystem_0081176C->field_0391,
+                   0xfffffffe,g_startSystem_0081176C->field_03A9,g_startSystem_0081176C->field_03AD)
+        ;
       }
-      if (PTR_0081176c->field_0422 != 0xffffffff) {
+      if (g_startSystem_0081176C->field_0422 != 0xffffffff) {
         Library::DKW::DDX::FUN_006b34d0
-                  ((uint *)PTR_0081176c->field_0466,PTR_0081176c->field_0422,0xfffffffe,
-                   PTR_0081176c->field_043A,PTR_0081176c->field_043E);
+                  ((uint *)g_startSystem_0081176C->field_0466,g_startSystem_0081176C->field_0422,
+                   0xfffffffe,g_startSystem_0081176C->field_043A,g_startSystem_0081176C->field_043E)
+        ;
       }
-      if (PTR_0081176c->field_04B3 != 0xffffffff) {
+      if (g_startSystem_0081176C->field_04B3 != 0xffffffff) {
         Library::DKW::DDX::FUN_006b34d0
-                  ((uint *)PTR_0081176c->field_04F7,PTR_0081176c->field_04B3,0xfffffffe,
-                   PTR_0081176c->field_04CB,PTR_0081176c->field_04CF);
+                  ((uint *)g_startSystem_0081176C->field_04F7,g_startSystem_0081176C->field_04B3,
+                   0xfffffffe,g_startSystem_0081176C->field_04CB,g_startSystem_0081176C->field_04CF)
+        ;
       }
-      Library::DKW::DDX::FUN_006b3430((int *)PTR_008075a8,PTR_0081176c->field_0540);
+      Library::DKW::DDX::FUN_006b3430((int *)PTR_008075a8,g_startSystem_0081176C->field_0540);
     }
     if (this_01->field_1A64 == 0) {
-      FUN_006b2330((uint)PTR_008075a8,&local_8,0x32,0x403b61,400,0x62,
+      FUN_006b2330(PTR_008075a8,&local_8,0x32,0x403b61,400,0x62,
                    (uint)&this_01->field_1A5B->field_0140);
       Library::DKW::DDX::FUN_006b3640((int *)PTR_008075a8,local_8,0xffffffff,200,0x1f1);
-      if (PTR_0081176c->field_0560 != 0xffffffff) {
+      if (g_startSystem_0081176C->field_0560 != 0xffffffff) {
         Library::DKW::DDX::FUN_006b34d0
-                  ((uint *)PTR_0081176c->field_05A4,PTR_0081176c->field_0560,0xfffffffe,
-                   PTR_0081176c->field_0578,PTR_0081176c->field_057C);
+                  ((uint *)g_startSystem_0081176C->field_05A4,g_startSystem_0081176C->field_0560,
+                   0xfffffffe,g_startSystem_0081176C->field_0578,g_startSystem_0081176C->field_057C)
+        ;
       }
-      if (PTR_0081176c->field_05F1 != 0xffffffff) {
+      if (g_startSystem_0081176C->field_05F1 != 0xffffffff) {
         Library::DKW::DDX::FUN_006b34d0
-                  ((uint *)PTR_0081176c->field_0635,PTR_0081176c->field_05F1,0xfffffffe,
-                   PTR_0081176c->field_0609,PTR_0081176c->field_060D);
+                  ((uint *)g_startSystem_0081176C->field_0635,g_startSystem_0081176C->field_05F1,
+                   0xfffffffe,g_startSystem_0081176C->field_0609,g_startSystem_0081176C->field_060D)
+        ;
       }
       pHVar9 = (HoloTy *)Library::MSVCRT::FUN_0072e530(0x33);
       if (pHVar9 == (HoloTy *)0x0) {
@@ -291,14 +300,16 @@ void __thiscall WaitTy::InitWait(WaitTy *this,undefined4 param_1,undefined4 para
           if (-1 < (int)uVar7) {
             FUN_006b3af0((int *)PTR_008075a8,uVar7);
           }
-          if (PTR_0081176c->field_0560 != 0xffffffff) {
-            FUN_006b3af0((int *)PTR_0081176c->field_05A4,PTR_0081176c->field_0560);
+          if (g_startSystem_0081176C->field_0560 != 0xffffffff) {
+            FUN_006b3af0((int *)g_startSystem_0081176C->field_05A4,
+                         g_startSystem_0081176C->field_0560);
           }
-          if (PTR_0081176c->field_05F1 != 0xffffffff) {
-            FUN_006b3af0((int *)PTR_0081176c->field_0635,PTR_0081176c->field_05F1);
+          if (g_startSystem_0081176C->field_05F1 != 0xffffffff) {
+            FUN_006b3af0((int *)g_startSystem_0081176C->field_0635,
+                         g_startSystem_0081176C->field_05F1);
           }
-          FUN_006b3af0((int *)PTR_008075a8,PTR_0081176c->field_0558);
-          FUN_006b3af0((int *)PTR_008075a8,PTR_0081176c->field_0554);
+          FUN_006b3af0((int *)PTR_008075a8,g_startSystem_0081176C->field_0558);
+          FUN_006b3af0((int *)PTR_008075a8,g_startSystem_0081176C->field_0554);
         }
       }
       if (local_8 != 0xffffffff) {
@@ -307,18 +318,20 @@ void __thiscall WaitTy::InitWait(WaitTy *this,undefined4 param_1,undefined4 para
       }
     }
     else {
-      if (PTR_0081176c->field_0560 != 0xffffffff) {
+      if (g_startSystem_0081176C->field_0560 != 0xffffffff) {
         Library::DKW::DDX::FUN_006b34d0
-                  ((uint *)PTR_0081176c->field_05A4,PTR_0081176c->field_0560,0xfffffffe,
-                   PTR_0081176c->field_0578,PTR_0081176c->field_057C);
+                  ((uint *)g_startSystem_0081176C->field_05A4,g_startSystem_0081176C->field_0560,
+                   0xfffffffe,g_startSystem_0081176C->field_0578,g_startSystem_0081176C->field_057C)
+        ;
       }
-      if (PTR_0081176c->field_05F1 != 0xffffffff) {
+      if (g_startSystem_0081176C->field_05F1 != 0xffffffff) {
         Library::DKW::DDX::FUN_006b34d0
-                  ((uint *)PTR_0081176c->field_0635,PTR_0081176c->field_05F1,0xfffffffe,
-                   PTR_0081176c->field_0609,PTR_0081176c->field_060D);
+                  ((uint *)g_startSystem_0081176C->field_0635,g_startSystem_0081176C->field_05F1,
+                   0xfffffffe,g_startSystem_0081176C->field_0609,g_startSystem_0081176C->field_060D)
+        ;
       }
-      Library::DKW::DDX::FUN_006b3430((int *)PTR_008075a8,PTR_0081176c->field_0558);
-      Library::DKW::DDX::FUN_006b3430((int *)PTR_008075a8,PTR_0081176c->field_0554);
+      Library::DKW::DDX::FUN_006b3430((int *)PTR_008075a8,g_startSystem_0081176C->field_0558);
+      Library::DKW::DDX::FUN_006b3430((int *)PTR_008075a8,g_startSystem_0081176C->field_0554);
     }
     if ((DAT_00811768 != '\0') || (DAT_008067a0 != '\0')) {
       thunk_FUN_0055ddf0(DAT_0080759c,(int *)PTR_008075a8,(int)this_01->field_005D,10,2);
@@ -335,17 +348,17 @@ void __thiscall WaitTy::InitWait(WaitTy *this,undefined4 param_1,undefined4 para
     if (((pHVar9 != (HoloTy *)0x0) && (pHVar9->field_0000 != '\0')) && (-1 < pHVar9->field_0003)) {
       Library::DKW::DDX::FUN_006b3430((int *)PTR_008075a8,pHVar9->field_0003);
     }
-    thunk_FUN_005e9a40((AnonShape_005E9970_7C1AA6F1 *)this_01);
-    this_00 = PTR_00802a30;
-    if (PTR_00802a30 != (CursorClassTy *)0x0) {
-      iVar4 = PTR_00802a30->field_00C9;
-      iVar12 = PTR_00802a30->field_00C5;
-      PTR_00802a30->field_0493 = 1;
+    sub_005E9A40(this_01);
+    this_00 = g_cursorClass_00802A30;
+    if (g_cursorClass_00802A30 != (CursorClassTy *)0x0) {
+      iVar4 = g_cursorClass_00802A30->field_00C9;
+      iVar12 = g_cursorClass_00802A30->field_00C5;
+      g_cursorClass_00802A30->field_0493 = 1;
       this_00->field_0494 = 0xffff;
       CursorClassTy::SetGCType(this_00,CASE_0,iVar12,iVar4);
       CursorClassTy::DrawSprite(this_00,this_00->field_00C5,this_00->field_00C9);
       this_00->field_00D2 = 0;
-      this_00->field_04DF = 0xffffffff;
+      this_00->field_04DF = -1;
     }
     this_01->field_0065 = 3;
     puVar8 = &local_268;

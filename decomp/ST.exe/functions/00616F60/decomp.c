@@ -22,7 +22,8 @@ int __thiscall FUN_00616f60(void *this,int *param_1,int *param_2,int *param_3)
     return 0;
   }
   iVar5 = 1;
-  iVar6 = (PTR_00802a38->field_00E4 - *(int *)((int)this + 0x298)) * *(int *)((int)this + 0x288);
+  iVar6 = (g_playSystem_00802A38->field_00E4 - *(int *)((int)this + 0x298)) *
+          *(int *)((int)this + 0x288);
   local_8 = (float)iVar6 / (float)local_14;
   if ((local_8 <= _DAT_0079ceb8) && (*(char *)((int)this + 0x29c) == '\0'))
   goto cf_common_exit_00617221;
@@ -61,8 +62,8 @@ int __thiscall FUN_00616f60(void *this,int *param_1,int *param_2,int *param_3)
       if (0 < iVar5) {
         *(undefined4 *)((int)this + 0x256) = 2;
         *(undefined4 *)((int)this + 0x20c) = 3;
-        *(uint *)((int)this + 0x294) = PTR_00802a38->field_00E4;
-        *(uint *)((int)this + 0x298) = PTR_00802a38->field_00E4;
+        *(uint *)((int)this + 0x294) = g_playSystem_00802A38->field_00E4;
+        *(uint *)((int)this + 0x298) = g_playSystem_00802A38->field_00E4;
         goto cf_common_exit_00617221;
       }
     }
@@ -77,8 +78,8 @@ int __thiscall FUN_00616f60(void *this,int *param_1,int *param_2,int *param_3)
 LAB_006171d9:
       uVar2 = iVar6 * 0x41c64e6d + 0x3039;
       *(uint *)((int)this + 0x1c) = uVar2;
-      *(uint *)((int)this + 0x294) = (uVar2 >> 0x10) % 0xb + 10 + PTR_00802a38->field_00E4;
-      *(uint *)((int)this + 0x298) = PTR_00802a38->field_00E4;
+      *(uint *)((int)this + 0x294) = (uVar2 >> 0x10) % 0xb + 10 + g_playSystem_00802A38->field_00E4;
+      *(uint *)((int)this + 0x298) = g_playSystem_00802A38->field_00E4;
       goto cf_common_exit_00617221;
     }
   }

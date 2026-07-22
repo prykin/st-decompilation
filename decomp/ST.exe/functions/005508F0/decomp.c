@@ -62,7 +62,7 @@ void __thiscall FUN_005508f0(void *this,int param_1)
     if (uVar3 != 0) {
       pcVar5 = &DAT_00808af6;
       do {
-        module = HINSTANCE_00807618;
+        module = g_module_00807618;
         if ((*(int *)(pcVar5 + -6) == param_1) && (*pcVar5 == '\x01')) {
           pcVar11 = pcVar5 + -0x46;
           *pcVar5 = '\0';

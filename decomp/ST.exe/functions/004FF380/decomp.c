@@ -11,7 +11,7 @@
 void __thiscall CPanelTy::Update1Panel(CPanelTy *this)
 
 {
-  uint *puVar1;
+  DArrayTy *pDVar1;
   Global_sub_00526BA0_param_1Enum GVar2;
   code *pcVar3;
   CPanelTy *this_00;
@@ -29,6 +29,7 @@ void __thiscall CPanelTy::Update1Panel(CPanelTy *this)
   byte *pbVar15;
   char *pcVar16;
   bool bVar17;
+  dword dVar18;
   InternalExceptionFrame local_90;
   CPanelTy *local_4c;
   char local_48;
@@ -77,11 +78,11 @@ void __thiscall CPanelTy::Update1Panel(CPanelTy *this)
   *(undefined2 *)pcVar7 = *(undefined2 *)puVar13;
   memset(&local_4c->field_0B63, 0, 0x32); /* compiler bulk-zero initialization */
   local_16 = local_4c->field_0B4B;
-  Library::DKW::TBL::FUN_006afe40((int *)&local_16,local_4c->field_0B95);
-  this_00->field_0B95[3] = 0;
+  Library::DKW::TBL::FUN_006afe40((int *)&local_16,&local_4c->field_0B95->flags);
+  this_00->field_0B95->count = 0;
   this_00->field_0B4B = local_16;
   STAllPlayersC::GetPanelInfo
-            (g_sTAllPlayers_007FA174,1,(AnonShape_0043BEB0_1C00EC12 *)&this_00->field_0B63);
+            (g_allPlayers_007FA174,1,(AnonShape_0043BEB0_1C00EC12 *)&this_00->field_0B63);
   if (local_48 != this_00->field_0B63) {
     if (g_prodPanel_00801684 != (ProdPanelTy *)0x0) {
       ProdPanelTy::SetPanel(g_prodPanel_00801684,'\0');
@@ -96,7 +97,7 @@ void __thiscall CPanelTy::Update1Panel(CPanelTy *this)
     }
     if (g_upgPanel_00802A48 != (UpgPanelTy *)0x0) {
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-      (**(code **)(*(int *)g_upgPanel_00802A48 + 0x1c))(0);
+      (*(code *)g_upgPanel_00802A48->field_0000->field_001C)(0);
     }
     if (g_frmPanel_0080168C != (FrmPanelTy *)0x0) {
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
@@ -121,7 +122,7 @@ void __thiscall CPanelTy::Update1Panel(CPanelTy *this)
     }
     if (g_upgPanel_00802A48 != (UpgPanelTy *)0x0) {
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-      (**(code **)(*(int *)g_upgPanel_00802A48 + 0x1c))(0);
+      (*(code *)g_upgPanel_00802A48->field_0000->field_001C)(0);
     }
     if (g_frmPanel_0080168C != (FrmPanelTy *)0x0) {
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
@@ -129,7 +130,7 @@ void __thiscall CPanelTy::Update1Panel(CPanelTy *this)
     }
   }
   if (this_00->field_0B63 == '\x02') {
-    if ((this_00->field_0B95[3] != local_16->count) || (local_47 != this_00->field_0B64)) {
+    if ((this_00->field_0B95->count != local_16->count) || (local_47 != this_00->field_0B64)) {
       SwitchTV(this_00,1);
     }
     iVar5 = 5;
@@ -162,9 +163,9 @@ void __thiscall CPanelTy::Update1Panel(CPanelTy *this)
       Library::DKW::WGR::FUN_006b55f0
                 ((AnonShape_006B5B10_E0D06CF1 *)this_00->field_0184,0,0,0,
                  (byte *)this_00->field_0958,0,0,0,*(int *)(this_00->field_0958 + 2),0x3c);
-      uVar6 = this_00->field_0B95[3];
-      pcVar7 = LoadResourceString(0x36b9,HINSTANCE_00807618);
-      wsprintfA(*(LPSTR *)&this_00->field_0x213,"&1%s&0%d",pcVar7,uVar6);
+      dVar18 = this_00->field_0B95->count;
+      pcVar7 = LoadResourceString(0x36b9,g_module_00807618);
+      wsprintfA(*(LPSTR *)&this_00->field_0x213,"&1%s&0%d",pcVar7,dVar18);
       ccFntTy::SetSurf(this_00->field_01B8,this_00->field_0184,0,2,0xf,
                        *(int *)(this_00->field_0958 + 2) + -4,0x2d);
       ccFntTy::WrTxt(this_00->field_01B8,*(uint **)&this_00->field_0x213,-2,-1,0,-1,-1);
@@ -180,8 +181,8 @@ void __thiscall CPanelTy::Update1Panel(CPanelTy *this)
       local_c = 0;
       local_8 = local_16->count;
       if (local_8 != 0) {
-        puVar1 = this_00->field_0B95;
-        uVar6 = puVar1[3];
+        pDVar1 = this_00->field_0B95;
+        uVar6 = pDVar1->count;
         do {
           if (local_c < local_8) {
             /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(local_16, local_c) (runtime stride) */
@@ -197,7 +198,8 @@ void __thiscall CPanelTy::Update1Panel(CPanelTy *this)
               goto LAB_004ff6e4;
             }
             do {
-              piVar9 = (int *)(puVar1[2] * uVar11 + puVar1[7]);
+              /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(pDVar1, uVar11) (runtime stride) */
+              piVar9 = (int *)(pDVar1->elementSize * uVar11 + (int)pDVar1->data);
 LAB_004ff6e4:
               if (*piVar9 == *piVar8) {
                 local_10 = 0;
@@ -237,7 +239,7 @@ LAB_004ff723:
     }
     if (g_upgPanel_00802A48 != (UpgPanelTy *)0x0) {
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-      (**(code **)(*(int *)g_upgPanel_00802A48 + 0x1c))(0);
+      (*(code *)g_upgPanel_00802A48->field_0000->field_001C)(0);
     }
     if (g_frmPanel_0080168C != (FrmPanelTy *)0x0) {
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */

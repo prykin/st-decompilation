@@ -48,7 +48,7 @@ undefined4 * __thiscall STT3DSprC::SaveSpr(STT3DSprC *this,uint *param_1)
   if (0 < local_18->field_0014) {
     local_c = (char *)0x0;
     do {
-      iVar4 = thunk_FUN_004acd30(this_00,(char)iVar3);
+      iVar4 = sub_004ACD30(this_00,(char)iVar3);
       uVar9 = *param_1 + iVar4 * 4;
       *param_1 = uVar9;
       pcVar10 = *(char **)((int)local_c + 8 + this_00->field_0020);
@@ -99,7 +99,7 @@ undefined4 * __thiscall STT3DSprC::SaveSpr(STT3DSprC *this,uint *param_1)
     pcVar11 = pcVar10;
     local_c = pcVar10;
     do {
-      uVar5 = thunk_FUN_004acd30(this_00,(char)local_8);
+      uVar5 = sub_004ACD30(this_00,(char)local_8);
       *(undefined4 *)pcVar11 = uVar5;
       pcVar10 = pcVar11 + 0x24;
       pcVar11[4] = *(char *)(iVar3 + 0xc + this_00->field_0020);
@@ -177,7 +177,7 @@ undefined4 * __thiscall STT3DSprC::SaveSpr(STT3DSprC *this,uint *param_1)
     local_10 = 0;
     do {
       pcVar10 = local_c;
-      uVar9 = thunk_FUN_004acd30(this_00,(char)local_8);
+      uVar9 = sub_004ACD30(this_00,(char)local_8);
       pcVar11 = *(char **)(this_00->field_0020 + 4 + local_10);
       for (uVar7 = uVar9 & 0x3fffffff; uVar7 != 0; uVar7 = uVar7 - 1) {
         *(undefined4 *)pcVar10 = *(undefined4 *)pcVar11;

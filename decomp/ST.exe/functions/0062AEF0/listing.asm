@@ -1,4 +1,4 @@
-FUN_0062aef0:
+STParticleC::sub_0062AEF0:
 0062AEF0  55                        PUSH EBP
 0062AEF1  8B EC                     MOV EBP,ESP
 0062AEF3  56                        PUSH ESI

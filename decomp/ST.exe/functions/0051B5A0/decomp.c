@@ -56,7 +56,7 @@ void __thiscall HelpPanelTy::ArmProc(HelpPanelTy *this,int param_1,int param_2,c
   local_8 = 0;
   local_44 = this;
   local_38 = (byte *)FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this->field_0248,4);
-  if (g_sTAllPlayers_007FA174 != (STAllPlayersC *)0x0) {
+  if (g_allPlayers_007FA174 != (STAllPlayersC *)0x0) {
     local_a4.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_a4;
     iVar4 = Library::MSVCRT::__setjmp3(local_a4.jumpBuffer,0);
@@ -82,9 +82,9 @@ void __thiscall HelpPanelTy::ArmProc(HelpPanelTy *this,int param_1,int param_2,c
           *(undefined2 *)&local_44->field_0x2c = 0;
           local_44->field_002E = 2;
           *(undefined4 *)&local_44->field_0x30 = local_44->field_0178;
-          if (PTR_00802a30 != (CursorClassTy *)0x0) {
+          if (g_cursorClass_00802A30 != (CursorClassTy *)0x0) {
             /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-            (**(code **)PTR_00802a30->field_0000)(&local_44->field_0x18);
+            (**(code **)g_cursorClass_00802A30->field_0000)(&local_44->field_0x18);
           }
         }
       }
@@ -102,7 +102,7 @@ void __thiscall HelpPanelTy::ArmProc(HelpPanelTy *this,int param_1,int param_2,c
       uVar19 = 3;
       iVar16 = -1;
       iVar4 = -3;
-      puVar8 = (uint *)LoadResourceString(0x55f8,HINSTANCE_00807618);
+      puVar8 = (uint *)LoadResourceString(0x55f8,g_module_00807618);
       ccFntTy::WrStr(this_00->field_01E0,puVar8,iVar4,iVar16,uVar19);
       iVar16 = 0;
       iVar4 = thunk_FUN_006460c0(param_1);
@@ -113,33 +113,33 @@ void __thiscall HelpPanelTy::ArmProc(HelpPanelTy *this,int param_1,int param_2,c
             ccFntTy::SetSurf(this_00->field_01E0,(int)this_00->field_0218,0,0x96,local_8,0x106,0xf);
             if ((local_14 == (int *)0x0) || (local_18 == 0)) {
               if (iVar16 == 0) {
-                pcVar9 = LoadResourceString(0x565c,HINSTANCE_00807618);
+                pcVar9 = LoadResourceString(0x565c,g_module_00807618);
                 uVar19 = 2;
-                pcVar10 = LoadResourceString(0x564c,HINSTANCE_00807618);
+                pcVar10 = LoadResourceString(0x564c,g_module_00807618);
                 wsprintfA((LPSTR)&DAT_0080f33a,"&%d%d &%d%s &%d(%s)",2,local_c,
                           (DAT_0080874e != '\x03') - 1 & 5,pcVar10,uVar19,pcVar9);
               }
               else {
-                pcVar9 = LoadResourceString(0x565d,HINSTANCE_00807618);
+                pcVar9 = LoadResourceString(0x565d,g_module_00807618);
                 uVar19 = 2;
                 iVar4 = iVar16;
-                pcVar10 = LoadResourceString(0x564c,HINSTANCE_00807618);
+                pcVar10 = LoadResourceString(0x564c,g_module_00807618);
                 wsprintfA((LPSTR)&DAT_0080f33a,"&%d%d &%d%s &%d(%d %s)",2,local_c,
                           (DAT_0080874e != '\x03') - 1 & 5,pcVar10,uVar19,iVar4,pcVar9);
               }
             }
             else if (iVar16 == 0) {
-              pcVar9 = LoadResourceString(0x565c,HINSTANCE_00807618);
+              pcVar9 = LoadResourceString(0x565c,g_module_00807618);
               uVar19 = 2;
-              pcVar10 = LoadResourceString(0x564c,HINSTANCE_00807618);
+              pcVar10 = LoadResourceString(0x564c,g_module_00807618);
               wsprintfA((LPSTR)&DAT_0080f33a,"&%d%d/%d*%d &%d%s &%d(%s)",2,local_c,local_14
                         ,local_18,(DAT_0080874e != '\x03') - 1 & 5,pcVar10,uVar19,pcVar9);
             }
             else {
-              pcVar9 = LoadResourceString(0x565d,HINSTANCE_00807618);
+              pcVar9 = LoadResourceString(0x565d,g_module_00807618);
               uVar19 = 2;
               iVar4 = iVar16;
-              pcVar10 = LoadResourceString(0x564c,HINSTANCE_00807618);
+              pcVar10 = LoadResourceString(0x564c,g_module_00807618);
               wsprintfA((LPSTR)&DAT_0080f33a,"&%d%d/%d*%d &%d%s &%d(%d %s)",2,local_c,
                         local_14,local_18,(DAT_0080874e != '\x03') - 1 & 5,pcVar10,uVar19,iVar4,
                         pcVar9);
@@ -158,14 +158,14 @@ void __thiscall HelpPanelTy::ArmProc(HelpPanelTy *this,int param_1,int param_2,c
         uVar19 = 3;
         iVar16 = -1;
         iVar4 = -3;
-        puVar8 = (uint *)LoadResourceString(0x5657,HINSTANCE_00807618);
+        puVar8 = (uint *)LoadResourceString(0x5657,g_module_00807618);
         ccFntTy::WrStr(this_00->field_01E0,puVar8,iVar4,iVar16,uVar19);
         ccFntTy::SetSurf(this_00->field_01E0,(int)this_00->field_0218,0,0x96,local_8,0x106,0xf);
         piVar13 = local_14;
         uVar6 = (DAT_0080874e != '\x03') - 1 & 5;
         iVar16 = -1;
         iVar4 = 1;
-        pHVar14 = HINSTANCE_00807618;
+        pHVar14 = g_module_00807618;
         UVar5 = thunk_FUN_00528060(*(Global_sub_00528060_param_1Enum *)
                                     ((int)&DAT_007bf67c + (int)local_14),'\0');
         puVar8 = (uint *)LoadResourceString(UVar5,pHVar14);
@@ -192,18 +192,18 @@ void __thiscall HelpPanelTy::ArmProc(HelpPanelTy *this,int param_1,int param_2,c
         uVar19 = 3;
         iVar17 = -1;
         iVar16 = -3;
-        puVar8 = (uint *)LoadResourceString(0x55f7,HINSTANCE_00807618);
+        puVar8 = (uint *)LoadResourceString(0x55f7,g_module_00807618);
         ccFntTy::WrStr(this_00->field_01E0,puVar8,iVar16,iVar17,uVar19);
         ccFntTy::SetSurf(this_00->field_01E8,(int)this_00->field_0218,0,0x96,local_8 - 3,0x106,0x14)
         ;
         wsprintfA((LPSTR)&DAT_0080f33a,"%4d",iVar4);
         ccFntTy::WrStr(this_00->field_01E8,&DAT_0080f33a,1,-1,(DAT_0080874e != '\x03') - 1 & 4);
-        iVar4 = FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_0238,0);
-        FUN_006b5440((int)this_00->field_0218,0,0xb4,local_8,iVar4,0,0x3a);
+        uVar6 = FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_0238,0);
+        FUN_006b5440((int)this_00->field_0218,0,0xb4,local_8,uVar6,0,0x3a);
         local_34 = 0xb4;
-        local_2c = *(undefined4 *)(iVar4 + 4);
+        local_2c = *(undefined4 *)(uVar6 + 4);
         local_30 = local_8;
-        local_28 = *(undefined4 *)(iVar4 + 8);
+        local_28 = *(undefined4 *)(uVar6 + 8);
         local_24 = 1;
         local_23 = 0xdd;
         local_1f = param_2;
@@ -211,7 +211,7 @@ void __thiscall HelpPanelTy::ArmProc(HelpPanelTy *this,int param_1,int param_2,c
         local_8 = local_8 + 0x14;
       }
       ccFntTy::SetSurf(this_00->field_01E0,(int)this_00->field_0218,0,0,local_8,0x91,0xf);
-      pcVar9 = LoadResourceString(0x5658,HINSTANCE_00807618);
+      pcVar9 = LoadResourceString(0x5658,g_module_00807618);
       wsprintfA((LPSTR)&DAT_0080f33a,"%s:",pcVar9);
       ccFntTy::WrStr(this_00->field_01E0,&DAT_0080f33a,-3,-1,3);
       iVar4 = *(int *)(&DAT_007d1fdc + param_1 * 4);
@@ -255,21 +255,21 @@ void __thiscall HelpPanelTy::ArmProc(HelpPanelTy *this,int param_1,int param_2,c
       uVar6 = (DAT_0080874e != '\x03') - 1 & 5;
       iVar16 = -1;
       iVar4 = 1;
-      puVar8 = (uint *)LoadResourceString(UVar5,HINSTANCE_00807618);
+      puVar8 = (uint *)LoadResourceString(UVar5,g_module_00807618);
       ccFntTy::WrStr(this_00->field_01E0,puVar8,iVar4,iVar16,uVar6);
       local_8 = local_8 + 0xf;
       ccFntTy::SetSurf(this_00->field_01E0,(int)this_00->field_0218,0,0,local_8,0x91,0xf);
       uVar19 = 3;
       iVar16 = -1;
       iVar4 = -3;
-      puVar8 = (uint *)LoadResourceString(0x565e,HINSTANCE_00807618);
+      puVar8 = (uint *)LoadResourceString(0x565e,g_module_00807618);
       ccFntTy::WrStr(this_00->field_01E0,puVar8,iVar4,iVar16,uVar19);
       ccFntTy::SetSurf(this_00->field_01E0,(int)this_00->field_0218,0,0x96,local_8,0x106,0xf);
       uVar6 = (DAT_0080874e != '\x03') - 1 & 5;
       iVar16 = -1;
       iVar4 = 1;
       puVar8 = (uint *)LoadResourceString(0x273f - (*(int *)("blast_p" + param_1 * 4) != 0)
-                                          ,HINSTANCE_00807618);
+                                          ,g_module_00807618);
       ccFntTy::WrStr(this_00->field_01E0,puVar8,iVar4,iVar16,uVar6);
       piVar13 = local_14;
       local_8 = local_8 + 0xf;
@@ -280,7 +280,7 @@ void __thiscall HelpPanelTy::ArmProc(HelpPanelTy *this,int param_1,int param_2,c
         uVar19 = 3;
         iVar16 = -1;
         iVar4 = -3;
-        puVar8 = (uint *)LoadResourceString(0x565f,HINSTANCE_00807618);
+        puVar8 = (uint *)LoadResourceString(0x565f,g_module_00807618);
         ccFntTy::WrStr(this_00->field_01E0,puVar8,iVar4,iVar16,uVar19);
         ccFntTy::SetSurf(this_00->field_01E0,(int)this_00->field_0218,0,0x96,local_8,0x106,0xf);
         switch(*(undefined4 *)((int)&DAT_007bf678 + (int)piVar13)) {
@@ -296,7 +296,7 @@ void __thiscall HelpPanelTy::ArmProc(HelpPanelTy *this,int param_1,int param_2,c
         case 4:
           local_c = CASE_4E;
         }
-        pHVar14 = HINSTANCE_00807618;
+        pHVar14 = g_module_00807618;
         UVar5 = thunk_FUN_00523410(local_c,cVar15,0);
         pcVar9 = LoadResourceString(UVar5,pHVar14);
         uVar6 = 0xffffffff;
@@ -349,7 +349,7 @@ void __thiscall HelpPanelTy::ArmProc(HelpPanelTy *this,int param_1,int param_2,c
       uVar19 = 3;
       iVar16 = -1;
       iVar4 = -3;
-      puVar8 = (uint *)LoadResourceString(0x5660,HINSTANCE_00807618);
+      puVar8 = (uint *)LoadResourceString(0x5660,g_module_00807618);
       ccFntTy::WrStr(this_00->field_01E0,puVar8,iVar4,iVar16,uVar19);
       local_14 = &DAT_007a8b1c;
       local_c = CASE_1;
@@ -357,7 +357,7 @@ void __thiscall HelpPanelTy::ArmProc(HelpPanelTy *this,int param_1,int param_2,c
         GVar12 = local_c;
         if ((*local_14 == param_1) && (iVar4 = thunk_FUN_004e8030(local_c), iVar4 == param_2)) {
           ccFntTy::SetSurf(this_00->field_01E0,(int)this_00->field_0218,0,0x96,local_8,0x106,0xf);
-          pHVar14 = HINSTANCE_00807618;
+          pHVar14 = g_module_00807618;
           UVar5 = thunk_FUN_00523410(local_c,cVar15,0);
           pcVar9 = LoadResourceString(UVar5,pHVar14);
           uVar6 = 0xffffffff;
@@ -416,7 +416,7 @@ void __thiscall HelpPanelTy::ArmProc(HelpPanelTy *this,int param_1,int param_2,c
         GVar12 = local_c;
         if ((*local_14 == param_1) && (iVar4 = thunk_FUN_004e8030(local_c), iVar4 == param_2)) {
           ccFntTy::SetSurf(this_00->field_01E0,(int)this_00->field_0218,0,0x96,local_8,0x106,0xf);
-          pHVar14 = HINSTANCE_00807618;
+          pHVar14 = g_module_00807618;
           UVar5 = thunk_FUN_00523410(local_c,cVar15,0);
           pcVar9 = LoadResourceString(UVar5,pHVar14);
           uVar6 = 0xffffffff;
@@ -479,7 +479,7 @@ void __thiscall HelpPanelTy::ArmProc(HelpPanelTy *this,int param_1,int param_2,c
                  (local_14 = piVar13, iVar4 = thunk_FUN_004e8030(GVar12), iVar4 == param_2)) {
                 ccFntTy::SetSurf(this_00->field_01E0,(int)this_00->field_0218,0,0x96,local_8,0x106,
                                  0xf);
-                pHVar14 = HINSTANCE_00807618;
+                pHVar14 = g_module_00807618;
                 UVar5 = thunk_FUN_00523410(local_c,cVar15,0);
                 pcVar9 = LoadResourceString(UVar5,pHVar14);
                 uVar6 = 0xffffffff;

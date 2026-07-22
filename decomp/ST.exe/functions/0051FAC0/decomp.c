@@ -41,7 +41,7 @@ void __thiscall FUN_0051fac0(void *this,char *param_1,byte param_2,char param_3,
         *(undefined1 *)((int)this + 0x11d) = 0;
       }
       *(undefined4 *)((int)this + 0x126) = param_4;
-      DVar2 = FUN_006e51b0(*(int *)((int)this + 0x10));
+      DVar2 = STAppC::sub_006E51B0(*(STAppC **)((int)this + 0x10));
       *(DWORD *)((int)this + 0x122) = DVar2;
       *(undefined4 *)((int)this + 0x12e) = 1;
       HelpStringTy::OutStr(this);

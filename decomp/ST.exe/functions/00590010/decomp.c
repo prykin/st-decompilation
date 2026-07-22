@@ -48,8 +48,7 @@ STSharkC::CreateShark
   local_24 = param_1;
   local_20 = param_2;
   local_1c = param_3;
-  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-  (*(code *)PTR_00802a38->vtable->field_0008)(0x129,0,&param_9,local_38,0);
+  (*g_playSystem_00802A38->vtable->vfunc_08)(0x129,0,&param_9,local_38,0);
   return param_9;
 }
 

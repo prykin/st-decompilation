@@ -1,4 +1,4 @@
-FUN_0052b760:
+MoneyTy::sub_0052B760:
 0052B760  55                        PUSH EBP
 0052B761  8B EC                     MOV EBP,ESP
 0052B763  33 C0                     XOR EAX,EAX
@@ -36,7 +36,7 @@ switchD_0052b773::caseD_4:
 LAB_0052b7b2:
 0052B7B2  8B 45 08                  MOV EAX,dword ptr [EBP + 0x8]
 0052B7B5  66 89 58 14               MOV word ptr [EAX + 0x14],BX
-FUN_0052b760::cf_common_exit_0052B7B9:
+MoneyTy::sub_0052B760::cf_common_exit_0052B7B9:
 0052B7B9  33 DB                     XOR EBX,EBX
 0052B7BB  66 C7 40 16 02 00         MOV word ptr [EAX + 0x16],0x2
 0052B7C1  8A 59 68                  MOV BL,byte ptr [ECX + 0x68]

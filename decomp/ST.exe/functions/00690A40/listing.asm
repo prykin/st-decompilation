@@ -1,4 +1,4 @@
-FUN_00690a40:
+AiTactClassTy::sub_00690A40:
 00690A40  8B 41 1C                  MOV EAX,dword ptr [ECX + 0x1c]
 00690A43  69 C0 6D 4E C6 41         IMUL EAX,EAX,0x41c64e6d
 00690A49  05 39 30 00 00            ADD EAX,0x3039

@@ -1,0 +1,5 @@
+FUN_005759f0:
+005759F0  68 20 A7 7C 00            PUSH 0x7ca720
+005759F5  B9 20 76 80 00            MOV ECX,0x807620
+005759FA  E8 1D B8 E8 FF            CALL 0x0040121c
+005759FF  C3                        RET

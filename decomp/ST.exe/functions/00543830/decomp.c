@@ -40,7 +40,7 @@ void __thiscall CursorClassTy::DoneCursor(CursorClassTy *this)
     }
     pCVar2->field_00AD = 0;
     SpriteClassTy::CloseSprite((SpriteClassTy *)&pCVar2->field_0018);
-    PTR_00802a30 = (CursorClassTy *)0x0;
+    g_cursorClass_00802A30 = (CursorClassTy *)0x0;
     g_currentExceptionFrame = local_4c.previous;
     return;
   }

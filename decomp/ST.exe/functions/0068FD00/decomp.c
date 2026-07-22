@@ -44,7 +44,7 @@ int __thiscall AiTactClassTy::GetAiMess(AiTactClassTy *this,AnonShape_0068FD00_A
     switch(*(uint *)param_1) {
     case 0x6a:
       local_8->field_009D = *(undefined4 *)&param_1->field_0x8;
-      thunk_FUN_00690230(local_8,(uint *)param_1);
+      sub_00690230(local_8,(uint *)param_1);
       g_currentExceptionFrame = local_80.previous;
       return 0;
     case 0x6c:
@@ -56,21 +56,21 @@ int __thiscall AiTactClassTy::GetAiMess(AiTactClassTy *this,AnonShape_0068FD00_A
         uStack_2f = param_1->field_0009;
         uStack_2e = (undefined2)param_1->field_000A;
         uStack_2c = (undefined2)((uint)param_1->field_000A >> 0x10);
-        thunk_FUN_00690230(local_8,local_3c);
+        sub_00690230(local_8,local_3c);
         g_currentExceptionFrame = local_80.previous;
         return 0;
       }
       break;
     case 0x6e:
     case 0x74:
-      thunk_FUN_00690230(local_8,(uint *)param_1);
+      sub_00690230(local_8,(uint *)param_1);
       g_currentExceptionFrame = local_80.previous;
       return 0;
     case 0x6f:
       iVar6 = thunk_FUN_0068e850(local_8,*(int *)((int)&param_1->field_000A + 2));
       iVar3 = *(int *)((int)&param_1->field_000A + 2);
       *(int *)&param_1->field_0x8 = *(int *)&param_1->field_0x8 + iVar6;
-      iVar3 = thunk_FUN_0068e610(this_00,iVar3);
+      iVar3 = sub_0068E610(this_00,iVar3);
       *(int *)&param_1->field_0x8 = *(int *)&param_1->field_0x8 + iVar3;
       g_currentExceptionFrame = local_80.previous;
       return 0;
@@ -127,7 +127,7 @@ int __thiscall AiTactClassTy::GetAiMess(AiTactClassTy *this,AnonShape_0068FD00_A
           if ((pvVar5 != (void *)0x0) &&
              (*(AiFltClassTy **)((int)pvVar5 + 4) != (AiFltClassTy *)0x0)) {
             AiFltClassTy::GetAiMess(*(AiFltClassTy **)((int)pvVar5 + 4),(uint *)param_1);
-            thunk_FUN_0054cf70(PTR_00802a38,*(uint *)(*(int *)((int)pvVar5 + 4) + 8));
+            thunk_FUN_0054cf70(g_playSystem_00802A38,*(uint *)(*(int *)((int)pvVar5 + 4) + 8));
             FUN_006b0c70(this_00->field_00A5,uVar7);
           }
           uVar7 = uVar7 - 1;

@@ -9,8 +9,9 @@ void __thiscall FUN_0055b7f0(void *this,int param_1,undefined *param_2)
   bool bVar5;
 
   if ((((*(int *)((int)this + 0x114) != 0) && (param_2 < (undefined *)0x8)) &&
-      ((PTR_00802a38 == (STPlaySystemC *)0x0 || ((byte)(&DAT_008087e9)[(int)param_2 * 0x51] < 8))))
-     && (param_2 != (undefined *)(uint)DAT_0080874d)) {
+      ((g_playSystem_00802A38 == (STPlaySystemC *)0x0 ||
+       ((byte)(&DAT_008087e9)[(int)param_2 * 0x51] < 8)))) &&
+     (param_2 != (undefined *)(uint)DAT_0080874d)) {
     if (param_1 == 0) {
       if ((param_2 + 0xfc)[(int)this] == '\0') {
         return;
@@ -37,14 +38,16 @@ void __thiscall FUN_0055b7f0(void *this,int param_1,undefined *param_2)
         if (piVar3 == (int *)param_2) {
           if (*pcVar1 == '\0') {
             if (param_1 == 0) {
-              thunk_FUN_00559110(this,(int)*(short *)(pcVar1 + 2),
-                                 (undefined *)(int)*(short *)(pcVar1 + 4),(int)pcVar1[6],
-                                 (uint)piVar3,(uint)(byte)pcVar1[7],*(int *)(pcVar1 + 8),0x4001);
+              VisibleClassTy::sub_00559110
+                        (this,(int)*(short *)(pcVar1 + 2),(undefined *)(int)*(short *)(pcVar1 + 4),
+                         (int)pcVar1[6],(uint)piVar3,(uint)(byte)pcVar1[7],*(int *)(pcVar1 + 8),
+                         0x4001);
             }
             else {
-              thunk_FUN_00558dc0(this,(int)*(short *)(pcVar1 + 2),(int)*(short *)(pcVar1 + 4),
-                                 (undefined *)(int)pcVar1[6],piVar3,(uint)(byte)pcVar1[7],
-                                 *(int **)(pcVar1 + 8),0x6009);
+              VisibleClassTy::sub_00558DC0
+                        (this,(int)*(short *)(pcVar1 + 2),(int)*(short *)(pcVar1 + 4),
+                         (undefined *)(int)pcVar1[6],piVar3,(uint)(byte)pcVar1[7],
+                         *(int **)(pcVar1 + 8),0x6009);
             }
           }
           else if (*pcVar1 == '\x01') {
@@ -54,7 +57,7 @@ void __thiscall FUN_0055b7f0(void *this,int param_1,undefined *param_2)
                          (undefined *)piVar3,(uint)(byte)pcVar1[7],*(undefined4 *)(pcVar1 + 8),2);
             }
             else {
-              SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00558C00::thunk_FUN_005594a0
+              VisibleClassTy::sub_005594A0
                         (this,(int)*(short *)(pcVar1 + 2),(int)*(short *)(pcVar1 + 4),pcVar1[6],
                          (undefined *)piVar3,(uint)(byte)pcVar1[7],*(undefined4 *)(pcVar1 + 8),2);
             }

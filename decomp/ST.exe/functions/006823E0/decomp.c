@@ -21,10 +21,10 @@ void __cdecl FUN_006823e0(int param_1,float *param_2)
   short *local_8;
 
   pfVar8 = param_2;
-  if (DAT_00848a14 != 0) {
+  if (g_int_00848A14 != (int *)0x0) {
     thunk_FUN_006823a0((short)param_1,(short)param_2);
-    iVar7 = (*(int *)(DAT_00848a14 + 4) - (int)pfVar8) + -1;
-    pcVar2 = (char *)thunk_FUN_0064a910(DAT_00848a14,iVar7);
+    iVar7 = (g_int_00848A14[1] - (int)pfVar8) + -1;
+    pcVar2 = thunk_FUN_0064a910((int)g_int_00848A14,iVar7);
     if (pcVar2 == (char *)0x0) {
       RaiseInternalException
                 (-0x6b,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",0x19c);
@@ -48,7 +48,7 @@ void __cdecl FUN_006823e0(int param_1,float *param_2)
             return;
           }
           if (param_1 == 1) {
-            iVar7 = thunk_FUN_0064a940(DAT_00848a14,iVar7);
+            iVar7 = thunk_FUN_0064a940(g_int_00848A14,iVar7);
             if (iVar7 == 0) {
               RaiseInternalException
                         (-0x6b,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",
@@ -58,7 +58,7 @@ void __cdecl FUN_006823e0(int param_1,float *param_2)
             local_f = *param_2;
           }
           else if (param_1 == 2) {
-            iVar7 = thunk_FUN_0064a940(DAT_00848a14,iVar7);
+            iVar7 = thunk_FUN_0064a940(g_int_00848A14,iVar7);
             if (iVar7 == 0) {
               RaiseInternalException
                         (-0x6b,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",
@@ -76,7 +76,7 @@ void __cdecl FUN_006823e0(int param_1,float *param_2)
               FreeAndNull(&param_2);
               return;
             }
-            iVar7 = thunk_FUN_0064a940(DAT_00848a14,iVar7);
+            iVar7 = thunk_FUN_0064a940(g_int_00848A14,iVar7);
             if (iVar7 == 0) {
               RaiseInternalException
                         (-0x6b,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",

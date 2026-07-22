@@ -14,11 +14,11 @@ void __thiscall CPanelTy::PaintNameRes(CPanelTy *this,int param_1)
   uint uVar4;
   byte *pbVar5;
   UINT resourceId;
-  uint *puVar6;
+  uint *resourceString;
   HINSTANCE module;
+  int iVar6;
   int iVar7;
   int iVar8;
-  int iVar9;
   InternalExceptionFrame local_4c;
   CPanelTy *local_8;
 
@@ -32,22 +32,22 @@ void __thiscall CPanelTy::PaintNameRes(CPanelTy *this,int param_1)
     pbVar5 = (byte *)FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)pCVar2->field_029A,uVar4);
     DibPut((AnonShape_006B5B10_E0D06CF1 *)pCVar2->field_0194,param_1 + 5,0x65,'\x01',pbVar5);
     ccFntTy::SetSurf(pCVar2->field_01B8,pCVar2->field_0194,0,param_1 + 2,0x52,0xb2,10);
-    iVar9 = -1;
     iVar8 = -1;
-    uVar4 = 0;
     iVar7 = -1;
+    uVar4 = 0;
+    iVar6 = -1;
     iVar3 = -2;
-    module = HINSTANCE_00807618;
+    module = g_module_00807618;
     resourceId = thunk_FUN_00528060(pCVar2->field_0C31,pCVar2->field_0C32);
-    puVar6 = (uint *)LoadResourceString(resourceId,module);
-    ccFntTy::WrTxt(pCVar2->field_01B8,puVar6,iVar3,iVar7,uVar4,iVar8,iVar9);
+    resourceString = (uint *)LoadResourceString(resourceId,module);
+    ccFntTy::WrTxt(pCVar2->field_01B8,resourceString,iVar3,iVar6,uVar4,iVar7,iVar8);
     g_currentExceptionFrame = local_4c.previous;
     return;
   }
   g_currentExceptionFrame = local_4c.previous;
-  iVar7 = ReportDebugMessage("E:\\__titans\\Andrey\\cpanel4.cpp",0x76,0,iVar3,"%s",
+  iVar6 = ReportDebugMessage("E:\\__titans\\Andrey\\cpanel4.cpp",0x76,0,iVar3,"%s",
                              "CPanelTy::PaintNameRes");
-  if (iVar7 != 0) {
+  if (iVar6 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   RaiseInternalException(iVar3,0,"E:\\__titans\\Andrey\\cpanel4.cpp",0x76);

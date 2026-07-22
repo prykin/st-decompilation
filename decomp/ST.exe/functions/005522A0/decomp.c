@@ -139,7 +139,7 @@ LAB_00552481:
     }
     if (SVar1 == MESS_TRADEPANELTY_B20A) {
       this_00[1].field_0x43 = *(char *)(message->arg0).ptr + -1;
-      thunk_FUN_00551b10((AnonShape_00551B10_03263458 *)this_00);
+      sub_00551B10((TradePanelTy *)this_00);
       PaintPanel((TradePanelTy *)this_00);
       g_currentExceptionFrame = local_68.previous;
       return 0;

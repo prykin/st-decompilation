@@ -84,7 +84,7 @@ FUN_00660700(void *this,short param_1,short param_2,short param_3,int param_4,in
     }
   }
   /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-  if (((*(short *)((int)this + 0x7d) != -2) && (g_sTAllPlayers_007FA174 != (STAllPlayersC *)0x0)) &&
+  if (((*(short *)((int)this + 0x7d) != -2) && (g_allPlayers_007FA174 != (STAllPlayersC *)0x0)) &&
      (this_01 = thunk_FUN_0042b760(*(char *)((int)this + 0x24),
                                    CONCAT22((short)((uint)pSVar4 >> 0x10),
                                             *(short *)((int)this + 0x7d))),

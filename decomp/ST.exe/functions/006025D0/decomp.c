@@ -1,8 +1,13 @@
 
 /* [STPrototypeRepairApplier] Propagated return.
-   Evidence: 006025D0 returns used as parameter 2 of STPlaySystemC::SaveObjData @ 006021E2 */
+   Evidence: 006025D0 returns used as parameter 2 of STPlaySystemC::SaveObjData @ 006021E2
 
-byte * __thiscall FUN_006025d0(void *this,undefined4 *param_1)
+   [STMethodOwnerApplier] Structural method owner recovered as STDestC.
+   Evidence: this_call_owners=[STDestC]; agreed_this_calls=1; incoming_this_accesses=5;
+   incoming_edx_uses=0; incoming_stack_parameter_uses=2; direct_non_thunk_callers=0;
+   incoming_ecx_receiver_callers=0; attributed_named_callers=1; owner_evidence_coverage=adequate */
+
+byte * __thiscall STDestC::sub_006025D0(STDestC *this,undefined4 *param_1)
 
 {
   byte *pbVar1;
@@ -10,13 +15,13 @@ byte * __thiscall FUN_006025d0(void *this,undefined4 *param_1)
   undefined4 *puVar3;
   byte *pbVar4;
 
-  if (*(int *)((int)this + 0x36e) != 3) {
+  if (this->field_036E != 3) {
     pbVar1 = (byte *)Library::DKW::LIB::FUN_006aac70(0x17e);
-    if (*(int *)((int)this + 0x36e) == 2) {
-      *(uint *)((int)this + 0x36e) = (uint)(*(char *)((int)this + 0x39f) < '\x01');
+    if (this->field_036E == 2) {
+      this->field_036E = (uint)(this->field_039F < '\x01');
     }
-    *(undefined4 *)((int)this + 0x23d) = 2;
-    puVar3 = (undefined4 *)((int)this + 0x231);
+    this->field_023D = 2;
+    puVar3 = (undefined4 *)&this->field_0x231;
     pbVar4 = pbVar1;
     for (iVar2 = 0x5f; iVar2 != 0; iVar2 = iVar2 + -1) {
       *(undefined4 *)pbVar4 = *puVar3;

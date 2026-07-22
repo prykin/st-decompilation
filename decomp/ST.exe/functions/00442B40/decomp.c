@@ -43,8 +43,7 @@ undefined4 STAllPlayersC::_SubMDObject(undefined4 *param_1,uint param_2)
   /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
   this = GetObjPtr(in_ECX,objPtr,param_2,CASE_1);
   local_14 = this;
-  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-  uVar4 = (**(code **)&this->vtable->field_0x2c)();
+  uVar4 = (*this->vtable->vfunc_2C)();
   local_c = 0;
   local_18 = uVar4;
   if (this == (STGameObjC *)0x0) {

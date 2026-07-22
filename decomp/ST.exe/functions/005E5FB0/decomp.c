@@ -29,7 +29,7 @@ int __thiscall MTestTy::GetMessage(MTestTy *this,STMessage *message)
 
   local_8 = 0xffffffff;
   local_c = this;
-  DVar4 = FUN_006e51b0(this->field_0010);
+  DVar4 = STAppC::sub_006E51B0(this->field_0010);
   this->field_00A1 = DVar4;
   local_50.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_50;
@@ -51,15 +51,15 @@ int __thiscall MTestTy::GetMessage(MTestTy *this,STMessage *message)
       break;
     case MESS_TRACKBARCLASSTY_0062:
       if (local_c->field_00B3 == '\0') {
-        _DAT_00811774 = FUN_006e51b0(local_c->field_0010);
+        _DAT_00811774 = STAppC::sub_006E51B0(local_c->field_0010);
         this_00->field_00B3 = 1;
         if (g_holo_00811778 != (HoloTy *)0x0) {
           HoloTy::Done(g_holo_00811778);
           Library::MSVCRT::FUN_0072e2b0(g_holo_00811778);
           g_holo_00811778 = (HoloTy *)0x0;
         }
-        FUN_006b2330((uint)PTR_008075a8,&local_8,0x32,0x403099,0xf9,0x123,
-                     (uint)&PTR_0081176c->field_0140);
+        FUN_006b2330(PTR_008075a8,&local_8,0x32,0x403099,0xf9,0x123,
+                     (uint)&g_startSystem_0081176C->field_0140);
         Library::DKW::DDX::FUN_006b3640((int *)PTR_008075a8,local_8,0xffffffff,10,0xb4);
         g_holo_00811778 = (HoloTy *)Library::MSVCRT::FUN_0072e530(0x33);
         if (g_holo_00811778 == (HoloTy *)0x0) {
@@ -102,7 +102,7 @@ int __thiscall MTestTy::GetMessage(MTestTy *this,STMessage *message)
         }
       }
       else if (local_c->field_00B3 == '\x04') {
-        _DAT_00811774 = FUN_006e51b0(local_c->field_0010);
+        _DAT_00811774 = STAppC::sub_006E51B0(local_c->field_0010);
         this_00->field_00B3 = 5;
         if (g_holo_00811778 != (HoloTy *)0x0) {
           HoloTy::Done(g_holo_00811778);
@@ -132,8 +132,8 @@ int __thiscall MTestTy::GetMessage(MTestTy *this,STMessage *message)
         if (g_holo_00811778 != (HoloTy *)0x0) {
           FUN_006b5f80((int *)PTR_008075a8,10,0xb4,0xf9,0x121);
           MMMObjTy::OutRGlProc
-                    ((MMMObjTy *)&PTR_0081176c->field_0140,DAT_0080759c,0,0,10,0xb4,0xf9,0x123,
-                     &PTR_0081176c->field_0140);
+                    ((MMMObjTy *)&g_startSystem_0081176C->field_0140,DAT_0080759c,0,0,10,0xb4,0xf9,
+                     0x123,&g_startSystem_0081176C->field_0140);
           uVar9 = 0;
           cVar8 = '\x01';
           uVar7 = 0x10;
@@ -152,7 +152,7 @@ int __thiscall MTestTy::GetMessage(MTestTy *this,STMessage *message)
       }
       break;
     case MESS_SHARED_0064:
-      thunk_FUN_005e5f60((AnonShape_005E5F60_843B3FDC *)local_c);
+      sub_005E5F60(local_c);
       this_00->field_008D = 1;
       this_00->field_0091 = 0x7102;
     }

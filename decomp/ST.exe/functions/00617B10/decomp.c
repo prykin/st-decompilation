@@ -37,7 +37,7 @@ FUN_00617b10(void *this,undefined4 param_1,undefined4 param_2,undefined4 param_3
   local_28._0_2_ = (undefined2)param_1;
   /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
   local_28._2_2_ = (undefined2)param_2;
-  local_22 = PTR_00802a38->field_00E4;
+  local_22 = g_playSystem_00802A38->field_00E4;
   local_1e = (undefined2)local_28;
   /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
   local_1c = local_28._2_2_;

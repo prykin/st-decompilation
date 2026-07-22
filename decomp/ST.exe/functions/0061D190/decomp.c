@@ -16,22 +16,22 @@ int __thiscall STLightC::GetMessage(STLightC *this,STMessage *message)
   short sVar2;
   STMessageId SVar3;
   code *pcVar4;
-  AnonShape_0061E7F0_1BC555A1 *this_00;
+  STLightC *this_00;
   int iVar5;
   undefined4 uVar6;
   int iVar7;
   undefined4 *puVar8;
   undefined4 *puVar9;
-  AnonShape_0061E7F0_1BC555A1 *pAVar10;
+  STLightC *pSVar10;
   InternalExceptionFrame local_60;
   SoundPosition local_1c;
   byte *local_10;
   AnonShape_0060EA30_DCEB68AD *local_c;
-  AnonShape_0061E7F0_1BC555A1 *local_8;
+  STLightC *local_8;
 
   local_60.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_60;
-  local_8 = (AnonShape_0061E7F0_1BC555A1 *)this;
+  local_8 = this;
   iVar5 = Library::MSVCRT::__setjmp3(local_60.jumpBuffer,0);
   this_00 = local_8;
   if (iVar5 != 0) {
@@ -47,15 +47,15 @@ int __thiscall STLightC::GetMessage(STLightC *this,STMessage *message)
   SVar3 = message->id;
   if (SVar3 < 4) {
     if (SVar3 == MESS_SHARED_0003) {
-      thunk_FUN_0061f530((AnonShape_0061F530_4582158C *)local_8);
-      thunk_FUN_0061d650((AnonShape_0061D650_84237B09 *)this_00);
+      sub_0061F530(local_8);
+      sub_0061D650(this_00);
       g_currentExceptionFrame = local_60.previous;
       return 0;
     }
     if (SVar3 == MESS_ID_NONE) {
       thunk_FUN_0061e7f0(local_8);
-      if (*(int *)&this_00->field_0x4f == 5) {
-        sVar2 = *(short *)&this_00->field_0x30;
+      if (this_00->field_004F == 5) {
+        sVar2 = this_00->field_0030;
         if (sVar2 < 0) {
           local_1c.x = (short)((sVar2 / 0xc9 + (sVar2 >> 0xf)) -
                               (short)((longlong)(int)sVar2 * 0x28c1979 >> 0x3f)) + -1;
@@ -64,7 +64,7 @@ int __thiscall STLightC::GetMessage(STLightC *this,STMessage *message)
           local_1c.x = (int)(short)((sVar2 / 0xc9 + (sVar2 >> 0xf)) -
                                    (short)((longlong)(int)sVar2 * 0x28c1979 >> 0x3f));
         }
-        sVar2 = *(short *)&this_00->field_0x32;
+        sVar2 = this_00->field_0032;
         if (sVar2 < 0) {
           local_1c.y = (short)((sVar2 / 0xc9 + (sVar2 >> 0xf)) -
                               (short)((longlong)(int)sVar2 * 0x28c1979 >> 0x3f)) + -1;
@@ -73,11 +73,11 @@ int __thiscall STLightC::GetMessage(STLightC *this,STMessage *message)
           local_1c.y = (int)(short)((sVar2 / 0xc9 + (sVar2 >> 0xf)) -
                                    (short)((longlong)(int)sVar2 * 0x28c1979 >> 0x3f));
         }
-        local_1c.unknown = *(int *)&this_00->field_0x18;
+        local_1c.unknown = this_00->field_0018;
         iVar5 = 0x476;
       }
       else {
-        sVar2 = *(short *)&this_00->field_0x30;
+        sVar2 = this_00->field_0030;
         if (sVar2 < 0) {
           local_1c.x = (short)((sVar2 / 0xc9 + (sVar2 >> 0xf)) -
                               (short)((longlong)(int)sVar2 * 0x28c1979 >> 0x3f)) + -1;
@@ -86,7 +86,7 @@ int __thiscall STLightC::GetMessage(STLightC *this,STMessage *message)
           local_1c.x = (int)(short)((sVar2 / 0xc9 + (sVar2 >> 0xf)) -
                                    (short)((longlong)(int)sVar2 * 0x28c1979 >> 0x3f));
         }
-        sVar2 = *(short *)&this_00->field_0x32;
+        sVar2 = this_00->field_0032;
         if (sVar2 < 0) {
           local_1c.y = (short)((sVar2 / 0xc9 + (sVar2 >> 0xf)) -
                               (short)((longlong)(int)sVar2 * 0x28c1979 >> 0x3f)) + -1;
@@ -95,37 +95,37 @@ int __thiscall STLightC::GetMessage(STLightC *this,STMessage *message)
           local_1c.y = (int)(short)((sVar2 / 0xc9 + (sVar2 >> 0xf)) -
                                    (short)((longlong)(int)sVar2 * 0x28c1979 >> 0x3f));
         }
-        local_1c.unknown = *(int *)&this_00->field_0x18;
+        local_1c.unknown = this_00->field_0018;
         iVar5 = 0x475;
       }
       SoundClassTy::PlaySound_thunk
                 ((SoundClassTy *)&g_sound,SOUND_MODE_2,(char *)0x0,iVar5,&local_1c,0);
-      iVar5 = *(int *)&this_00->field_0x4f + 1;
-      *(int *)&this_00->field_0x4f = iVar5;
-      if (*(int *)&this_00->field_0x5f * 4 <= iVar5) {
-        thunk_FUN_0061d6d0(this_00);
+      iVar5 = this_00->field_004F + 1;
+      this_00->field_004F = iVar5;
+      if (this_00->field_005F * 4 <= iVar5) {
+        sub_0061D6D0(this_00);
       }
       this_00->field_005B = this_00->field_005B + 0x8fc;
-      thunk_FUN_0061e4f0((AnonShape_0061E4F0_131B61D9 *)this_00);
+      sub_0061E4F0(this_00);
       if (this_00->field_00A7 == '\0') {
-        uVar6 = thunk_FUN_0061e110((AnonShape_0061E110_A0361859 *)this_00);
+        uVar6 = thunk_FUN_0061e110(this_00);
         this_00->field_00A7 = (char)uVar6;
       }
-      iVar5 = thunk_FUN_0061f290(this_00,(uint)(byte)this_00->field_00A7);
+      iVar5 = sub_0061F290(this_00,(uint)(byte)this_00->field_00A7);
       if (iVar5 == 0) goto LAB_0061d434;
     }
     else if (SVar3 == MESS_ID_CREATE) {
       puVar8 = (message->arg0).ptr;
       if (puVar8[3] == 2) {
-        thunk_FUN_0061d8f0(local_8,puVar8);
-        pAVar10 = this_00 + 1;
+        sub_0061D8F0(local_8,puVar8);
+        pSVar10 = this_00 + 1;
         for (iVar5 = 0xb; iVar5 != 0; iVar5 = iVar5 + -1) {
-          *(undefined4 *)pAVar10 = 0;
-          pAVar10 = (AnonShape_0061E7F0_1BC555A1 *)&pAVar10->field_0x4;
+          pSVar10->vtable = (STLightCVTable *)0x0;
+          pSVar10 = (STLightC *)&pSVar10->field_0x4;
         }
-        *(undefined1 *)pAVar10 = 0;
-        this_00->field_00AC = *(undefined4 *)&this_00->field_0xa8;
-        thunk_FUN_0061dfe0((int)this_00);
+        *(undefined1 *)&pSVar10->vtable = 0;
+        this_00->field_00AC = this_00->field_00A8;
+        thunk_FUN_0061dfe0(this_00);
         g_currentExceptionFrame = local_60.previous;
         return 0;
       }
@@ -140,24 +140,24 @@ int __thiscall STLightC::GetMessage(STLightC *this,STMessage *message)
       local_8->field_00AC = DAT_00808754;
       uVar1 = iVar5 * 0x41c64e6d + 0x3039;
       local_8->field_00AC = uVar1;
-      *(uint *)&local_8->field_0x3c = uVar1 >> 0x10 & 3;
-      uVar6 = thunk_FUN_0061e110((AnonShape_0061E110_A0361859 *)local_8);
+      local_8->field_003C = uVar1 >> 0x10 & 3;
+      uVar6 = thunk_FUN_0061e110(local_8);
       this_00->field_00A7 = (char)uVar6;
-      iVar5 = LoadNextLight((STLightC *)this_00);
+      iVar5 = LoadNextLight(this_00);
       if (iVar5 != 0) {
         thunk_FUN_0061dd40((AnonShape_0061DD40_21C2820F *)this_00);
         g_currentExceptionFrame = local_60.previous;
         return 0;
       }
 LAB_0061d434:
-      thunk_FUN_0061d6d0(this_00);
+      sub_0061D6D0(this_00);
       g_currentExceptionFrame = local_60.previous;
       return 0;
     }
   }
   else if (SVar3 == MESS_SHARED_010F) {
-    local_10 = thunk_FUN_0061d710(local_8,(int *)&local_c);
-    STPlaySystemC::SaveObjData(PTR_00802a38,*(undefined4 *)&this_00->field_0x18,local_10,local_c);
+    local_10 = sub_0061D710(local_8,(int *)&local_c);
+    STPlaySystemC::SaveObjData(g_playSystem_00802A38,this_00->field_0018,local_10,local_c);
     FreeAndNull(&local_10);
   }
   g_currentExceptionFrame = local_60.previous;

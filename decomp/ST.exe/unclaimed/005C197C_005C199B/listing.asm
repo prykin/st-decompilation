@@ -1,0 +1,8 @@
+005C197C  pointer  005c1851
+005C1980  pointer  005c1858
+005C1984  pointer  005c185f
+005C1988  pointer  005c1866
+005C198C  pointer  005c186d
+005C1990  pointer  005c1874
+005C1994  pointer  005c187b
+005C1998  pointer  005c1882
