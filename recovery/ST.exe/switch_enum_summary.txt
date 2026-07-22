@@ -1,11 +1,11 @@
 program=ST.exe
-candidate_functions=555
-switches_seen=889
-decompile_retries=1
+candidate_functions=556
+switches_seen=890
+decompile_retries=2
 decompile_failures=0
-proposals=584
-auto_apply=161
-target_kinds={class_field=83, global=4, local=378, parameter=119}
+proposals=527
+auto_apply=169
+target_kinds={class_field=82, global=4, local=323, parameter=118}
 note=At least three numeric case values are required.
 note_grouping=Switches over the same generated class field are merged across functions.
 note_aliases=Typed pointer aliases from decompiled declarations are resolved before field grouping.

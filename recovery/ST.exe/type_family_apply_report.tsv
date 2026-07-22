@@ -1,4 +1,3 @@
 function_address	target	status	detail
 004028BA	return:EAX:4	disabled	apply=0
 0042B620	return:EAX:4	disabled	apply=0
-004B33D0	local:Stack[-0xa4]:4	applied	pointer:/SubmarineTitans/Recovered/DArrayTy

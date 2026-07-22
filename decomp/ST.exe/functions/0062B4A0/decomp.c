@@ -67,8 +67,9 @@ uint __thiscall STParticleC::sub_0062B4A0(STParticleC *this)
     if (((uVar5 == 0) || (g_visibleClass_00802A88 == (VisibleClassTy *)0x0)) ||
        ((DAT_0080874d == -1 || (uVar6 = 0, g_visibleClass_00802A88->field_00F8 == 0))))
     goto cf_common_exit_0062B616;
-    thunk_FUN_00558c00(g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,local_c,local_8,
-                       &local_14,(int *)&local_c);
+    VisibleClassTy::sub_00558C00
+              (g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,local_c,local_8,&local_14
+               ,(int *)&local_c);
     uVar6 = local_10;
     if ((((int)local_10 < 0) || (4 < (int)local_10)) ||
        ((local_14 < 0 ||

@@ -51,7 +51,7 @@ undefined4 * __thiscall STT3DSprC::SaveSpr(STT3DSprC *this,uint *param_1)
       iVar4 = sub_004ACD30(this_00,(char)iVar3);
       uVar9 = *param_1 + iVar4 * 4;
       *param_1 = uVar9;
-      pcVar10 = *(char **)((int)local_c + 8 + this_00->field_0020);
+      pcVar10 = *(char **)(&this_00->field_0020->field_0x8 + (int)local_c);
       if (pcVar10 == (char *)0x0) {
         *param_1 = uVar9 + 1;
       }
@@ -102,24 +102,25 @@ undefined4 * __thiscall STT3DSprC::SaveSpr(STT3DSprC *this,uint *param_1)
       uVar5 = sub_004ACD30(this_00,(char)local_8);
       *(undefined4 *)pcVar11 = uVar5;
       pcVar10 = pcVar11 + 0x24;
-      pcVar11[4] = *(char *)(iVar3 + 0xc + this_00->field_0020);
+      pcVar11[4] = (&this_00->field_0020->field_0xc)[iVar3];
       pcVar11[5] = (byte)(this_00->field_001C >> ((byte)local_8 & 0x1f)) & 1;
-      pcVar11[6] = *(byte *)(iVar3 + 0xe + this_00->field_0020) & 1;
-      pcVar11[7] = *(char *)(iVar3 + 0xd + this_00->field_0020);
-      pcVar11[8] = *(byte *)(iVar3 + 0xe + this_00->field_0020) >> 1 & 1;
-      pcVar11[9] = (byte)((ushort)*(undefined2 *)(iVar3 + 0xe + this_00->field_0020) >> 9) & 1;
-      pcVar11[10] = *(byte *)(iVar3 + 0xe + this_00->field_0020) >> 2 & 1;
-      *(undefined4 *)(pcVar11 + 0xb) = *(undefined4 *)(iVar3 + 0x10 + this_00->field_0020);
-      *(undefined4 *)(pcVar11 + 0xf) = *(undefined4 *)(iVar3 + 0x14 + this_00->field_0020);
-      *(undefined4 *)(pcVar11 + 0x13) = *(undefined4 *)(iVar3 + 0x18 + this_00->field_0020);
-      *(undefined4 *)(pcVar11 + 0x17) = *(undefined4 *)(iVar3 + 0x1c + this_00->field_0020);
-      *(undefined4 *)(pcVar11 + 0x1b) = *(undefined4 *)(iVar3 + 0x20 + this_00->field_0020);
-      pcVar11[0x1f] = *(byte *)(iVar3 + 0xe + this_00->field_0020) >> 5 & 1;
-      pcVar11[0x20] = *(byte *)(iVar3 + 0xe + this_00->field_0020) >> 6 & 1;
-      pcVar11[0x21] = *(byte *)(iVar3 + 0xe + this_00->field_0020) >> 7;
-      pcVar11[0x22] = *(byte *)(iVar3 + 0xe + this_00->field_0020) >> 3 & 1;
+      pcVar11[6] = (&this_00->field_0020->field_0xe)[iVar3] & 1;
+      pcVar11[7] = (&this_00->field_0020->field_0xd)[iVar3];
+      pcVar11[8] = (byte)(&this_00->field_0020->field_0xe)[iVar3] >> 1 & 1;
+      pcVar11[9] = (byte)((ushort)*(undefined2 *)(&this_00->field_0020->field_0xe + iVar3) >> 9) & 1
+      ;
+      pcVar11[10] = (byte)(&this_00->field_0020->field_0xe)[iVar3] >> 2 & 1;
+      *(undefined4 *)(pcVar11 + 0xb) = *(undefined4 *)(&this_00->field_0020->field_0x10 + iVar3);
+      *(undefined4 *)(pcVar11 + 0xf) = *(undefined4 *)(&this_00->field_0020->field_0x14 + iVar3);
+      *(undefined4 *)(pcVar11 + 0x13) = *(undefined4 *)(&this_00->field_0020->field_0x18 + iVar3);
+      *(undefined4 *)(pcVar11 + 0x17) = *(undefined4 *)(&this_00->field_0020->field_0x1c + iVar3);
+      *(undefined4 *)(pcVar11 + 0x1b) = *(undefined4 *)(&this_00->field_0020->field_0x20 + iVar3);
+      pcVar11[0x1f] = (byte)(&this_00->field_0020->field_0xe)[iVar3] >> 5 & 1;
+      pcVar11[0x20] = (byte)(&this_00->field_0020->field_0xe)[iVar3] >> 6 & 1;
+      pcVar11[0x21] = (byte)(&this_00->field_0020->field_0xe)[iVar3] >> 7;
+      pcVar11[0x22] = (byte)(&this_00->field_0020->field_0xe)[iVar3] >> 3 & 1;
       local_8 = local_8 + 1;
-      pcVar11[0x23] = *(byte *)(iVar3 + 0xf + this_00->field_0020) & 1;
+      pcVar11[0x23] = (&this_00->field_0020->field_0xf)[iVar3] & 1;
       iVar3 = iVar3 + 0x24;
       pcVar11 = pcVar10;
     } while (local_8 < this_00->field_0014);
@@ -129,7 +130,7 @@ undefined4 * __thiscall STT3DSprC::SaveSpr(STT3DSprC *this,uint *param_1)
   if (0 < this_00->field_0014) {
     local_10 = 0;
     do {
-      local_1c = *(char **)(this_00->field_0020 + 8 + local_10);
+      local_1c = *(char **)(&this_00->field_0020->field_0x8 + local_10);
       if (local_1c == (char *)0x0) {
         uVar9 = 1;
       }
@@ -178,7 +179,7 @@ undefined4 * __thiscall STT3DSprC::SaveSpr(STT3DSprC *this,uint *param_1)
     do {
       pcVar10 = local_c;
       uVar9 = sub_004ACD30(this_00,(char)local_8);
-      pcVar11 = *(char **)(this_00->field_0020 + 4 + local_10);
+      pcVar11 = *(char **)(&this_00->field_0020->field_0x4 + local_10);
       for (uVar7 = uVar9 & 0x3fffffff; uVar7 != 0; uVar7 = uVar7 - 1) {
         *(undefined4 *)pcVar10 = *(undefined4 *)pcVar11;
         pcVar11 = pcVar11 + 4;

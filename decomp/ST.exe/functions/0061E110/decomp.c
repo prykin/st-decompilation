@@ -84,9 +84,10 @@ undefined4 __fastcall FUN_0061e110(STLightC *param_1)
       (((((pVVar2 = g_visibleClass_00802A88, local_c = 1,
           g_visibleClass_00802A88 != (VisibleClassTy *)0x0 && (DAT_0080874d != -1)) &&
          (g_visibleClass_00802A88->field_00F8 != 0)) &&
-        (((thunk_FUN_00558c00(g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,local_8,
-                              iVar5,&local_8,&local_1c), pVVar3 = g_visibleClass_00802A88,
-          -1 < local_10 && (local_10 < 5)) &&
+        (((VisibleClassTy::sub_00558C00
+                     (g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,local_8,iVar5,
+                      &local_8,&local_1c), pVVar3 = g_visibleClass_00802A88, -1 < local_10 &&
+          (local_10 < 5)) &&
          ((-1 < local_8 &&
           ((local_8 < pVVar2->field_0030 &&
            (iVar5 = g_centeredOffsets5[local_10] + local_1c, -1 < iVar5)))))))) &&
@@ -94,8 +95,9 @@ undefined4 __fastcall FUN_0061e110(STLightC *param_1)
      (((((((pVVar2->field_004C != (byte *)0x0 &&
            (pVVar2->field_004C[local_8 + iVar5 * pVVar2->field_0030] == 0)) && (DAT_0080874d != -1))
          && ((g_visibleClass_00802A88->field_00F8 != 0 &&
-             (thunk_FUN_00558c00(g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,
-                                 local_14,iVar7,&local_1c,&local_14), -1 < local_18)))) &&
+             (VisibleClassTy::sub_00558C00
+                        (g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,local_14,iVar7,
+                         &local_1c,&local_14), -1 < local_18)))) &&
         ((local_18 < 5 && ((-1 < local_1c && (local_1c < pVVar3->field_0030)))))) &&
        (local_14 = g_centeredOffsets5[local_18] + local_14, -1 < local_14)) &&
       (((local_14 < pVVar3->field_0034 && (pVVar3->field_004C != (byte *)0x0)) &&

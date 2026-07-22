@@ -7,8 +7,8 @@
 undefined4 __thiscall STMineSetC::sub_00622BA0(STMineSetC *this)
 
 {
-  byte bVar1;
-  Global_sub_00626B50_param_1Enum GVar2;
+  STMineSetC_field_02ADState SVar1;
+  STMineSetC_sub_00626B50_param_1Enum SVar2;
   undefined4 uVar3;
   int iVar4;
   short sVar5;
@@ -23,8 +23,8 @@ undefined4 __thiscall STMineSetC::sub_00622BA0(STMineSetC *this)
   this->field_0041 = (short)this->field_02C2;
   this->field_0043 = (short)this->field_02C6;
   this->field_0045 = (short)this->field_02CA;
-  GVar2 = thunk_FUN_004ab050();
-  sub_00626B50(this,GVar2);
+  SVar2 = thunk_FUN_004ab050();
+  sub_00626B50(this,SVar2);
   this->field_0056 = (short)this->field_02C6;
   iVar4 = this->field_02C2;
   this->field_0054 = (short)this->field_02C2;
@@ -59,9 +59,9 @@ undefined4 __thiscall STMineSetC::sub_00622BA0(STMineSetC *this)
   this->field_005B = sVar5;
   this->field_005F = sVar7;
   uVar3 = thunk_FUN_00626f10(this->field_0272);
-  this->field_02AD = (char)uVar3;
+  this->field_02AD = (STMineSetC_field_02ADState)uVar3;
   this->field_035F = g_playSystem_00802A38->field_00E4;
-  if ((char)uVar3 == '\x02') {
+  if ((STMineSetC_field_02ADState)uVar3 == CASE_2) {
     this->field_0342 = 0xffffffff;
   }
   sVar5 = this->field_0047 * 0xc9 + 100;
@@ -73,30 +73,30 @@ undefined4 __thiscall STMineSetC::sub_00622BA0(STMineSetC *this)
   this->field_003E = sVar6;
   this->field_028A = (short)(sVar7 + 100) + -0x32;
   this->field_008E = 1;
-  uVar3 = FUN_006acf0d(this->field_02C2,this->field_02C6,this->field_02CA,(int)sVar5,(int)sVar5,
+  iVar4 = FUN_006acf0d(this->field_02C2,this->field_02C6,this->field_02CA,(int)sVar5,(int)sVar5,
                        (int)sVar6);
-  this->field_02F6 = uVar3;
-  bVar1 = this->field_02AD;
-  if (bVar1 == 3) {
+  this->field_02F6 = iVar4;
+  SVar1 = this->field_02AD;
+  if (SVar1 == CASE_3) {
     this->field_0352 = 0;
   }
   else {
     this->field_0352 = 1;
   }
-  if (bVar1 < 3) {
+  if (SVar1 < CASE_3) {
     if (g_visibleClass_00802A88 != (VisibleClassTy *)0x0) {
       VisibleClassTy::sub_00558DC0
                 (g_visibleClass_00802A88,(int)this->field_0047,(int)this->field_0049,
                  (undefined *)(int)this->field_004B,(int *)this->field_0024,
-                 *(uint *)(&DAT_007d02b4 + (uint)bVar1 * 4),(int *)this->field_0018,0xffffffff);
+                 *(uint *)(&DAT_007d02b4 + (uint)SVar1 * 4),(int *)this->field_0018,0xffffffff);
     }
   }
-  else if ((bVar1 == 3) && (g_visibleClass_00802A88 != (VisibleClassTy *)0x0)) {
+  else if ((SVar1 == CASE_3) && (g_visibleClass_00802A88 != (VisibleClassTy *)0x0)) {
     VisibleClassTy::sub_00558DC0
               (g_visibleClass_00802A88,(int)this->field_0047,(int)this->field_0049,
                (undefined *)(int)this->field_004B,(int *)this->field_0024,DAT_007d02c0,
                (int *)this->field_0018,0xffffffff);
-    thunk_FUN_0041d1a0(this,*(int *)(&DAT_007d02b4 + (uint)(byte)this->field_02AD * 4));
+    sub_0041D1A0(this,*(int *)(&DAT_007d02b4 + (uint)this->field_02AD * 4));
   }
   sVar5 = this->field_0047;
   if ((((-1 < sVar5) && (sVar6 = this->field_0049, -1 < sVar6)) &&

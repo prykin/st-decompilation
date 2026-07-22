@@ -39,9 +39,9 @@ int __thiscall STBoatC::SetMine(STBoatC *this,int *param_1,undefined4 param_2,in
            (g_pathingGrid.cells
             [(int)g_pathingGrid.sizeX * (int)sVar2 + (int)g_pathingGrid.planeStride * (int)sVar3 +
              (int)sVar1] != 0)))))) ||
-        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
         (((-1 < sVar1 && (sVar1 < g_worldGrid.sizeX)) &&
          ((-1 < sVar2 &&
+          /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
           (((((sVar2 < g_worldGrid.sizeY && (-1 < sVar3)) && (sVar3 < g_worldGrid.sizeZ)) &&
             (g_worldGrid.cells
              [(int)g_worldGrid.planeStride * (int)sVar3 + (int)g_worldGrid.sizeX * (int)sVar2 +
@@ -50,11 +50,12 @@ int __thiscall STBoatC::SetMine(STBoatC *this,int *param_1,undefined4 param_2,in
                      [(int)g_worldGrid.planeStride * (int)sVar3 +
                       (int)g_worldGrid.sizeX * (int)sVar2 + (int)sVar1].objects[1]->value_20,
             iVar6 == 0x5a || (iVar6 == 0x1ae)))))))))) &&
-       (iVar6 = sub_0048DFD0(this,sVar1,sVar2,sVar3,this->field_0047,this->field_0049,
-                             (int *)CONCAT22((short)((uint)&this->field_0x5e2 >> 0x10),
-                                             this->field_004B),1,(short *)&this->field_0x5e2,
-                             (short *)&this->field_0x5e4,(short *)&this->field_0x5e6), iVar6 == 0))
-    {
+       (iVar6 = SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0048DFD0::sub_0048DFD0
+                          ((AnonReceiver_0048DFD0 *)this,sVar1,sVar2,sVar3,this->field_0047,
+                           this->field_0049,
+                           (int *)CONCAT22((short)((uint)&this->field_0x5e2 >> 0x10),
+                                           this->field_004B),1,(short *)&this->field_0x5e2,
+                           (short *)&this->field_0x5e4,(short *)&this->field_0x5e6), iVar6 == 0)) {
       return 0;
     }
     this->field_05E8 = 0;
@@ -81,9 +82,9 @@ int __thiscall STBoatC::SetMine(STBoatC *this,int *param_1,undefined4 param_2,in
            (g_pathingGrid.cells
             [(int)g_pathingGrid.sizeX * (int)sVar2 + (int)g_pathingGrid.planeStride * (int)sVar3 +
              (int)sVar1] != 0)) ||
-          /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
           ((((-1 < sVar1 && (sVar1 < g_worldGrid.sizeX)) &&
             ((-1 < sVar2 &&
+             /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
              (((sVar2 < g_worldGrid.sizeY && (-1 < sVar3)) && (sVar3 < g_worldGrid.sizeZ)))))) &&
            ((g_worldGrid.cells
              [(int)g_worldGrid.planeStride * (int)sVar3 + (int)g_worldGrid.sizeX * (int)sVar2 +
@@ -92,11 +93,13 @@ int __thiscall STBoatC::SetMine(STBoatC *this,int *param_1,undefined4 param_2,in
                       [(int)g_worldGrid.planeStride * (int)sVar3 +
                        (int)g_worldGrid.sizeX * (int)sVar2 + (int)sVar1].objects[1]->value_20,
              iVar6 == 0x5a || (iVar6 == 0x1ae)))))))) &&
-         (iVar6 = sub_0048DFD0(this,sVar1,sVar2,sVar3,this->field_0047,this->field_0049,
-                               (int *)CONCAT22((short)((uint)&this->field_0x5e2 >> 0x10),
-                                               this->field_004B),1,(short *)&this->field_0x5e2,
-                               (short *)&this->field_0x5e4,(short *)&this->field_0x5e6), iVar6 == 0)
-         ) {
+         (iVar6 = SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0048DFD0::sub_0048DFD0
+                            ((AnonReceiver_0048DFD0 *)this,sVar1,sVar2,sVar3,this->field_0047,
+                             this->field_0049,
+                             (int *)CONCAT22((short)((uint)&this->field_0x5e2 >> 0x10),
+                                             this->field_004B),1,(short *)&this->field_0x5e2,
+                             (short *)&this->field_0x5e4,(short *)&this->field_0x5e6), iVar6 == 0))
+      {
         return 0;
       }
       sub_004602B0(this);
@@ -122,9 +125,9 @@ int __thiscall STBoatC::SetMine(STBoatC *this,int *param_1,undefined4 param_2,in
              (g_pathingGrid.cells
               [(int)g_pathingGrid.sizeX * (int)sVar2 + (int)g_pathingGrid.planeStride * (int)sVar3 +
                (int)sVar1] != 0)))) ||
-           /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
            (((((-1 < sVar1 && (sVar1 < g_worldGrid.sizeX)) && (-1 < sVar2)) &&
              (((sVar2 < g_worldGrid.sizeY && (-1 < sVar3)) &&
+              /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
               ((sVar3 < g_worldGrid.sizeZ &&
                (g_worldGrid.cells
                 [(int)g_worldGrid.planeStride * (int)sVar3 + (int)g_worldGrid.sizeX * (int)sVar2 +
@@ -133,11 +136,13 @@ int __thiscall STBoatC::SetMine(STBoatC *this,int *param_1,undefined4 param_2,in
                       [(int)g_worldGrid.planeStride * (int)sVar3 +
                        (int)g_worldGrid.sizeX * (int)sVar2 + (int)sVar1].objects[1]->value_20,
              iVar6 == 0x5a || (iVar6 == 0x1ae)))))))) &&
-         (iVar6 = sub_0048DFD0(this,sVar1,sVar2,sVar3,this->field_0047,this->field_0049,
-                               (int *)CONCAT22((short)((uint)&this->field_0x5e2 >> 0x10),
-                                               this->field_004B),1,(short *)&this->field_0x5e2,
-                               (short *)&this->field_0x5e4,(short *)&this->field_0x5e6), iVar6 == 0)
-         ) {
+         (iVar6 = SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0048DFD0::sub_0048DFD0
+                            ((AnonReceiver_0048DFD0 *)this,sVar1,sVar2,sVar3,this->field_0047,
+                             this->field_0049,
+                             (int *)CONCAT22((short)((uint)&this->field_0x5e2 >> 0x10),
+                                             this->field_004B),1,(short *)&this->field_0x5e2,
+                             (short *)&this->field_0x5e4,(short *)&this->field_0x5e6), iVar6 == 0))
+      {
         return 0;
       }
       break;

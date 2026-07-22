@@ -331,10 +331,10 @@ LAB_0060b48b:
                   if (g_visibleClass_00802A88 != (VisibleClassTy *)0x0) {
                     iVar18 = (int)local_34[0];
                     if ((((DAT_0080874d == -1) || (g_visibleClass_00802A88->field_00F8 == 0)) ||
-                        (thunk_FUN_00558c00(g_visibleClass_00802A88,
-                                            g_visibleClass_00802A88->field_010C,(int)local_70[0],
-                                            (int)local_a0[0],local_d4,&local_d8), iVar18 < 0)) ||
-                       (4 < iVar18)) {
+                        (VisibleClassTy::sub_00558C00
+                                   (g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,
+                                    (int)local_70[0],(int)local_a0[0],local_d4,&local_d8),
+                        iVar18 < 0)) || (4 < iVar18)) {
                       bVar21 = true;
                     }
                     else {

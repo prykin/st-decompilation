@@ -15,8 +15,9 @@ void __fastcall FUN_0062f150(AnonShape_0062F150_AF81DB77 *param_1)
   if ((param_1->field_01F9 != '\0') && (g_visibleClass_00802A88 != (VisibleClassTy *)0x0)) {
     iVar1 = param_1->field_01DD;
     if ((DAT_0080874d != -1) && (g_visibleClass_00802A88->field_00F8 != 0)) {
-      thunk_FUN_00558c00(g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,
-                         param_1->field_01D5,param_1->field_01D9,&local_8,&local_10);
+      VisibleClassTy::sub_00558C00
+                (g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,param_1->field_01D5,
+                 param_1->field_01D9,&local_8,&local_10);
       if (((((-1 < iVar1) && (iVar1 < 5)) && (-1 < local_8)) &&
           (((local_8 < pVVar2->field_0030 &&
             (local_10 = g_centeredOffsets5[iVar1] + local_10, -1 < local_10)) &&

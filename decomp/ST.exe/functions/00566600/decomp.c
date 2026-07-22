@@ -27,7 +27,7 @@ int FUN_00566600(int param_1)
   int local_1c;
   char *local_18;
   cMf32 *local_14;
-  AnonShape_00566600_1A7DDCB2 *local_10;
+  SoundManagerTy *local_10;
   uint local_c;
   ushort *local_8;
 
@@ -37,7 +37,7 @@ int FUN_00566600(int param_1)
   iVar2 = Library::MSVCRT::__setjmp3(local_60.jumpBuffer,0);
   if (iVar2 != 0) {
     g_currentExceptionFrame = local_60.previous;
-    SoundManagerTy::sub_00566900((SoundManagerTy *)local_10);
+    SoundManagerTy::sub_00566900(local_10);
     return iVar2;
   }
   if (local_10->field_0018 != 0) {
@@ -169,9 +169,9 @@ int FUN_00566600(int param_1)
       goto LAB_0056681c;
     }
   }
-  local_10->field_002C = *(undefined4 *)local_8;
-  local_10->field_0030 = *(undefined4 *)(local_8 + 2);
-  local_10->field_0034 = *(undefined4 *)(local_8 + 4);
+  local_10->field_002C = *(int *)local_8;
+  local_10->field_0030 = *(int *)(local_8 + 2);
+  local_10->field_0034 = *(int *)(local_8 + 4);
 LAB_0056681c:
   if (local_8 != (ushort *)0x0) {
     cMf32::RecMemFree((cMf32 *)local_10->field_0018,(uint *)&local_8);

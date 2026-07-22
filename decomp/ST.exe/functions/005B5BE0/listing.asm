@@ -1,4 +1,4 @@
-ChooseMapTy::sub_005B5BE0:
+SubmarineTitans::Recovered::HiddenThis::AnonReceiver_005B5BE0::sub_005B5BE0:
 005B5BE0  55                        PUSH EBP
 005B5BE1  8B EC                     MOV EBP,ESP
 005B5BE3  51                        PUSH ECX

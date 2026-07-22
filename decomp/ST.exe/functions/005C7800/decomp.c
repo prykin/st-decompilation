@@ -182,7 +182,9 @@ LAB_005c7ae0:
       local_8c.jumpBuffer[0xf] = 0x5c7c09;
       FUN_00715360(g_int_00811764,0,' ',(char *)&this->field_1F53,0xd,1,0xffffffff);
     }
-    thunk_FUN_006952b0(&local_5a80,(byte *)&DAT_00853de0,(byte *)&this->field_1F53);
+    CGenerate::thunk_FUN_006952b0
+              ((CGenerate *)&local_5a80,(AnonShape_006952B0_7A982E30 *)&DAT_00853de0,
+               (byte *)&this->field_1F53);
     thunk_FUN_006a00b0((AnonShape_006A00B0_8C09D559 *)&local_5a80);
     cMf32::delete(this_01,PTR_00853ff8);
     thunk_FUN_006a0070((int)&local_5a80);

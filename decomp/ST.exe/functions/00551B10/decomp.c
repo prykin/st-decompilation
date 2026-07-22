@@ -10,14 +10,12 @@ void __thiscall TradePanelTy::sub_00551B10(TradePanelTy *this)
   if (this->field_01C0 != 0) {
     this->field_0028 = 0x26;
     FUN_006e6080(this,2,this->field_01C0,(undefined4 *)&this->field_0x18);
-    if (*(uint *)&this->field_0x2c !=
-        (uint)*(ushort *)(&this->field_0x1bc + (uint)(byte)this->field_01D0 * 2)) {
+    if (*(uint *)&this->field_0x2c != (uint)(ushort)(&this->field_01BC)[(byte)this->field_01D0]) {
       this->field_0028 = 0x22;
-      *(uint *)&this->field_0x2c =
-           (uint)*(ushort *)(&this->field_0x1bc + (uint)(byte)this->field_01D0 * 2);
+      *(uint *)&this->field_0x2c = (uint)(ushort)(&this->field_01BC)[(byte)this->field_01D0];
       FUN_006e6080(this,2,this->field_01C0,(undefined4 *)&this->field_0x18);
     }
-    thunk_FUN_00551800((AnonShape_00551800_EBA95FA4 *)this);
+    sub_00551800(this);
   }
   return;
 }

@@ -1,5 +1,10 @@
 
-int __thiscall FUN_005f5700(void *this,int param_1,int param_2)
+/* [STMethodOwnerApplier] Structural method owner recovered as STBHEShellC.
+   Evidence: this_call_owners=[STBHEShellC]; agreed_this_calls=1; incoming_this_accesses=14;
+   incoming_edx_uses=18; incoming_stack_parameter_uses=12; direct_non_thunk_callers=0;
+   incoming_ecx_receiver_callers=0; attributed_named_callers=1; owner_evidence_coverage=adequate */
+
+int __thiscall STBHEShellC::sub_005F5700(STBHEShellC *this,int param_1,int param_2)
 
 {
   int iVar1;
@@ -19,7 +24,7 @@ int __thiscall FUN_005f5700(void *this,int param_1,int param_2)
 
   iVar3 = param_1;
   local_c = 0;
-  iVar1 = *(int *)((int)this + 0x111);
+  iVar1 = this->field_0111;
   sVar2 = (short)(iVar1 >> 0x1f);
   if (iVar1 < 0) {
     local_14 = (short)(((short)(iVar1 / 0xc9) + sVar2) -
@@ -29,7 +34,7 @@ int __thiscall FUN_005f5700(void *this,int param_1,int param_2)
     local_14 = (int)(short)(((short)(iVar1 / 0xc9) + sVar2) -
                            (short)((longlong)iVar1 * 0x28c1979 >> 0x3f));
   }
-  iVar1 = *(int *)((int)this + 0x115);
+  iVar1 = this->field_0115;
   sVar2 = (short)(iVar1 >> 0x1f);
   if (iVar1 < 0) {
     local_1c = (short)(((short)(iVar1 / 0xc9) + sVar2) -
@@ -76,20 +81,20 @@ int __thiscall FUN_005f5700(void *this,int param_1,int param_2)
                            &local_8);
         if (*(int *)&this_00[1].field_0x8 == 1) {
           /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-          iVar5 = FUN_006aced8((int)local_8._2_2_,(int)param_1._2_2_,*(int *)((int)this + 0x111),
-                               *(int *)((int)this + 0x115));
+          iVar5 = FUN_006aced8((int)local_8._2_2_,(int)param_1._2_2_,this->field_0111,
+                               this->field_0115);
           if (param_2 <= iVar5) {
             /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-            iVar5 = FUN_006aced8(local_8._2_2_ + 100,(int)param_1._2_2_,*(int *)((int)this + 0x111),
-                                 *(int *)((int)this + 0x115));
+            iVar5 = FUN_006aced8(local_8._2_2_ + 100,(int)param_1._2_2_,this->field_0111,
+                                 this->field_0115);
             if (param_2 <= iVar5) {
               /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-              iVar5 = FUN_006aced8((int)local_8._2_2_,param_1._2_2_ + 100,
-                                   *(int *)((int)this + 0x111),*(int *)((int)this + 0x115));
+              iVar5 = FUN_006aced8((int)local_8._2_2_,param_1._2_2_ + 100,this->field_0111,
+                                   this->field_0115);
               if (param_2 <= iVar5) {
                 /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                iVar5 = FUN_006aced8(local_8._2_2_ + 100,param_1._2_2_ + 100,
-                                     *(int *)((int)this + 0x111),*(int *)((int)this + 0x115));
+                iVar5 = FUN_006aced8(local_8._2_2_ + 100,param_1._2_2_ + 100,this->field_0111,
+                                     this->field_0115);
                 if (param_2 <= iVar5) goto cf_continue_loop_005F5985;
               }
             }
@@ -97,15 +102,13 @@ int __thiscall FUN_005f5700(void *this,int param_1,int param_2)
         }
         else {
           /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-          iVar5 = FUN_006aced8((int)local_8._2_2_,(int)param_1._2_2_,*(int *)((int)this + 0x111),
-                               *(int *)((int)this + 0x115));
+          iVar5 = FUN_006aced8((int)local_8._2_2_,(int)param_1._2_2_,this->field_0111,
+                               this->field_0115);
           if (param_2 <= iVar5) goto cf_continue_loop_005F5985;
         }
         local_c = local_c + 1;
-        thunk_FUN_00601d10(*(undefined4 *)((int)this + 0x51),
-                           (*(int *)((int)this + 0x7d) << 2) / (8 - iVar3),(int)this_00,
-                           (short)*(undefined4 *)((int)this + 0x81),
-                           *(undefined2 *)((int)this + 0x85),0xb5,0x110);
+        thunk_FUN_00601d10(this->field_0051,(int)(this->field_007D << 2) / (8 - iVar3),(int)this_00,
+                           (short)this->field_0081,this->field_0085,0xb5,0x110);
       }
 cf_continue_loop_005F5985:
       sVar2 = g_worldGrid.sizeX;

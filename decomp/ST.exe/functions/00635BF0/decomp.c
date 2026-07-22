@@ -46,8 +46,9 @@ undefined4 FUN_00635bf0(int param_1,int param_2,int param_3)
   if (((char)uVar3 != '\0') && (g_visibleClass_00802A88 != (VisibleClassTy *)0x0)) {
     if ((((DAT_0080874d != -1) &&
          ((uVar3 = 0, g_visibleClass_00802A88->field_00F8 != 0 &&
-          (thunk_FUN_00558c00(g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,iVar4,
-                              iVar5,&param_2,&param_3), uVar3 = param_1, -1 < param_1)))) &&
+          (VisibleClassTy::sub_00558C00
+                     (g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,iVar4,iVar5,
+                      &param_2,&param_3), uVar3 = param_1, -1 < param_1)))) &&
         ((param_1 < 5 &&
          ((((-1 < param_2 && (param_2 < pVVar2->field_0030)) &&
            (uVar3 = g_centeredOffsets5[param_1] + param_3, -1 < (int)uVar3)) &&

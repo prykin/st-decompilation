@@ -136,7 +136,7 @@ int __thiscall STBoatC::GetMessage(STBoatC *this,STMessage *message)
   ushort *puVar32;
   undefined8 uVar33;
   STBoatC_field_06F7State SVar34;
-  Global_sub_00498D20_param_1Enum orderType;
+  STGroupBoatOrderType orderType;
   short sVar35;
   CHAR local_284;
   undefined4 local_283 [63];
@@ -402,7 +402,7 @@ int __thiscall STBoatC::GetMessage(STBoatC *this,STMessage *message)
                                      CONCAT22(extraout_var_14,this_00->field_0030));
         pSVar15 = local_1c;
         if (this_01 != (STGroupBoatC *)0x0) {
-          (*this_01->vtable->vfunc_08)(this_01,CASE_6A,&this_00->field_0032);
+          (*this_01->vtable->SetOrderData)(this_01,GROUP_BOAT_ORDER_6A,&this_00->field_0032);
           pSVar15 = local_1c;
         }
       }
@@ -1023,7 +1023,7 @@ LAB_00459f59:
     return 0;
   }
   if (SVar7 == MESS_SHARED_0003) {
-    STColl3C::sub_0041C5A0((STColl3C *)this_00);
+    sub_0041C5A0(this_00);
     TLOBaseTy::sub_0041D590((TLOBaseTy *)this_00);
     sub_004167A0(this_00);
     /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
@@ -1095,7 +1095,7 @@ LAB_00450551:
           puVar16 = local_b4;
           local_b4[0] = 1;
           pSVar21 = pSVar15->vtable;
-          orderType = CASE_11;
+          orderType = GROUP_BOAT_ORDER_11;
           goto LAB_00450695;
         }
       }
@@ -1114,9 +1114,9 @@ LAB_00450551:
         local_a8 = 1;
         local_a4 = 0;
         pSVar21 = pSVar15->vtable;
-        orderType = CASE_4;
+        orderType = GROUP_BOAT_ORDER_04;
 LAB_00450695:
-        (*pSVar21->vfunc_08)(pSVar15,orderType,puVar16);
+        (*pSVar21->SetOrderData)(pSVar15,orderType,puVar16);
         /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
         uVar19 = extraout_var_13;
       }
@@ -1481,7 +1481,7 @@ LAB_00450e28:
       }
       if ((local_c == *(uint *)(&DAT_007a8f21 + this_00->field_082A * 0x45)) &&
          (local_1c != (STGroupBoatC *)0x0)) {
-        (*local_1c->vtable->vfunc_08)(local_1c,CASE_6A,&this_00->field_0032);
+        (*local_1c->vtable->SetOrderData)(local_1c,GROUP_BOAT_ORDER_6A,&this_00->field_0032);
       }
       if ((this_00->field_06F7 == CASE_9) || (this_00->field_06F7 == CASE_15)) {
         if (local_c != 0x27) {
@@ -6554,12 +6554,12 @@ LAB_0045910d:
           return 0;
         }
         if (iVar9 == 4) {
-          (*local_1c->vtable->vfunc_08)(local_1c,CASE_66,&this_00->field_0032);
+          (*local_1c->vtable->SetOrderData)(local_1c,GROUP_BOAT_ORDER_66,&this_00->field_0032);
           g_currentExceptionFrame = local_184.previous;
           return 0;
         }
         if (iVar9 == 6) {
-          (*local_1c->vtable->vfunc_08)(local_1c,CASE_68,&this_00->field_0032);
+          (*local_1c->vtable->SetOrderData)(local_1c,GROUP_BOAT_ORDER_68,&this_00->field_0032);
           g_currentExceptionFrame = local_184.previous;
           return 0;
         }
@@ -6567,14 +6567,14 @@ LAB_0045910d:
           g_currentExceptionFrame = local_184.previous;
           return 0;
         }
-        (*local_1c->vtable->vfunc_08)(local_1c,CASE_69,&this_00->field_0032);
+        (*local_1c->vtable->SetOrderData)(local_1c,GROUP_BOAT_ORDER_69,&this_00->field_0032);
         g_currentExceptionFrame = local_184.previous;
         return 0;
       }
       local_46 = this_00->field_07F2;
       local_48 = this_00->field_0032;
       this_00->field_0816 = 5;
-      (*local_1c->vtable->vfunc_08)(local_1c,CASE_67,&local_48);
+      (*local_1c->vtable->SetOrderData)(local_1c,GROUP_BOAT_ORDER_67,&local_48);
       this_00->field_07F2 = 0xffff;
       this_00->field_045D = CASE_3;
       iVar9 = Defence(this_00,0);

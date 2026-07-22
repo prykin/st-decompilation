@@ -326,14 +326,14 @@ joined_r0x004f861b:
   switch(this_00->field_0260) {
   case CASE_1:
     if ((DAT_0080731a == 0) || ((uint)(this_00->field_0038 - this_00->field_0261) < 0x42))
-    goto cf_switch_join_004F88ED;
+    goto cf_common_join_004F88ED;
     this_00->field_0261 = this_00->field_0038;
     bVar11 = this_00->field_025F + 1;
     this_00->field_025F = bVar11;
     if ((short)(ushort)bVar11 < *this_00->field_025B) goto LAB_004f88e6;
     break;
   default:
-    goto cf_switch_join_004F88ED;
+    goto cf_common_join_004F88ED;
   case CASE_3:
     if (0x31 < (uint)(this_00->field_0038 - this_00->field_0261)) {
       this_00->field_0261 = this_00->field_0038;
@@ -358,9 +358,9 @@ joined_r0x004f861b:
         thunk_FUN_005252c0(0xb1);
       }
     }
-    goto cf_switch_join_004F88ED;
+    goto cf_common_join_004F88ED;
   case CASE_4:
-    if ((uint)(this_00->field_0038 - this_00->field_0261) < 0x32) goto cf_switch_join_004F88ED;
+    if ((uint)(this_00->field_0038 - this_00->field_0261) < 0x32) goto cf_common_join_004F88ED;
     this_00->field_0261 = this_00->field_0038;
     cVar12 = this_00->field_025F + '\x01';
     this_00->field_025F = cVar12;
@@ -373,7 +373,7 @@ joined_r0x004f861b:
     }
     goto LAB_004f88e6;
   case CASE_5:
-    if ((uint)(this_00->field_0038 - this_00->field_0261) < 0x42) goto cf_switch_join_004F88ED;
+    if ((uint)(this_00->field_0038 - this_00->field_0261) < 0x42) goto cf_common_join_004F88ED;
     ppsVar1 = &this_00->field_025B;
     bVar11 = this_00->field_025F + 1;
     this_00->field_0261 = this_00->field_0038;
@@ -408,7 +408,7 @@ LAB_004f8860:
   this_00->field_025F = 0;
 LAB_004f88e6:
   sub_004F1950(this_00);
-cf_switch_join_004F88ED:
+cf_common_join_004F88ED:
   if (((this_00->field_01D8 != 0) && ((g_playSystem_00802A38->field_00E4 & 1) != 0)) &&
      (iVar5 = *(int *)(this_00->field_01D8 + 4), iVar5 < this_00->field_01DC + -2)) {
     FUN_006b4170((AnonShape_006B5B10_E0D06CF1 *)this_00->field_01B4,0,100,5,0x226,0x55,0);

@@ -1,4 +1,4 @@
-VisibleClassTy::sub_005594A0:
+SubmarineTitans::Recovered::HiddenThis::AnonReceiver_005594A0::sub_005594A0:
 005594A0  55                        PUSH EBP
 005594A1  8B EC                     MOV EBP,ESP
 005594A3  51                        PUSH ECX

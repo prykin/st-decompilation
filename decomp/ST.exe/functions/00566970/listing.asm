@@ -1,4 +1,4 @@
-FUN_00566970:
+SoundManagerTy::sub_00566970:
 00566970  55                        PUSH EBP
 00566971  8B EC                     MOV EBP,ESP
 00566973  56                        PUSH ESI

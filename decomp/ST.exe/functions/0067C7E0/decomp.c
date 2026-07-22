@@ -260,11 +260,9 @@ int __thiscall AiPlrClassTy::GetMessage(AiPlrClassTy *this,STMessage *message)
           local_6c = (AnonShape_0068FD00_A5257008 *)0x72;
           local_64 = 0;
           local_60 = pDVar8;
-          SubmarineTitans::Recovered::HiddenThis::AnonReceiver_006799B0::thunk_FUN_0067a020
-                    ((AnonReceiver_006799B0 *)this_00,(AnonShape_0068FD00_A5257008 *)&local_6c,-1);
+          sub_0067A020(this_00,(AnonShape_0068FD00_A5257008 *)&local_6c,-1);
           local_64 = 1;
-          SubmarineTitans::Recovered::HiddenThis::AnonReceiver_006799B0::thunk_FUN_0067a020
-                    ((AnonReceiver_006799B0 *)this_00,(AnonShape_0068FD00_A5257008 *)&local_6c,-1);
+          sub_0067A020(this_00,(AnonShape_0068FD00_A5257008 *)&local_6c,-1);
           DArrayDestroy(local_8);
         }
       }

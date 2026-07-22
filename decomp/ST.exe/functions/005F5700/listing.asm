@@ -1,4 +1,4 @@
-FUN_005f5700:
+STBHEShellC::sub_005F5700:
 005F5700  55                        PUSH EBP
 005F5701  8B EC                     MOV EBP,ESP
 005F5703  83 EC 1C                  SUB ESP,0x1c
@@ -219,7 +219,7 @@ LAB_005f5947:
 005F597E  50                        PUSH EAX
 005F597F  52                        PUSH EDX
 005F5980  E8 9D E4 E0 FF            CALL 0x00403e22
-FUN_005f5700::cf_continue_loop_005F5985:
+STBHEShellC::sub_005F5700::cf_continue_loop_005F5985:
 005F5985  8B 45 E4                  MOV EAX,dword ptr [EBP + -0x1c]
 005F5988  8B 4D F0                  MOV ECX,dword ptr [EBP + -0x10]
 005F598B  8B 55 EC                  MOV EDX,dword ptr [EBP + -0x14]

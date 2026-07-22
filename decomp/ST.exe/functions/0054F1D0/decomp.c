@@ -336,7 +336,7 @@ LAB_0054f6c6:
   Library::DKW::DDX::FUN_006b7510(g_int_00811764,-1,&local_20,-1,0);
   pSVar21 = local_c;
   if (local_c->field_006D == 0) {
-    puVar18 = (undefined4 *)thunk_FUN_00550110((int)local_c);
+    puVar18 = (undefined4 *)thunk_FUN_00550110(local_c);
     if (puVar18 != (undefined4 *)0x0) {
       g_currentExceptionFrame = local_78.previous;
       return puVar18;
@@ -380,7 +380,7 @@ LAB_0054f6c6:
     goto cf_common_join_0054FAD8;
   }
   if (local_c->field_0071 != 0) {
-    puVar18 = (undefined4 *)thunk_FUN_00550110((int)local_c);
+    puVar18 = (undefined4 *)thunk_FUN_00550110(local_c);
     if (puVar18 != (undefined4 *)0x0) {
       g_currentExceptionFrame = local_78.previous;
       return puVar18;
@@ -547,7 +547,7 @@ LAB_0054fbb7:
           pSVar21->field_0049 = *(undefined4 *)pSVar21->field_003D;
           pSVar21->field_004D = pSVar21->field_003D->field_0004;
           pSVar21->field_004E = 0;
-          thunk_FUN_00550110((int)pSVar21);
+          thunk_FUN_00550110(pSVar21);
         }
       }
       break;

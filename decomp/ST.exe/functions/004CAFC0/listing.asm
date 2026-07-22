@@ -1,4 +1,4 @@
-FUN_004cafc0:
+TLOBaseTy::sub_004CAFC0:
 004CAFC0  55                        PUSH EBP
 004CAFC1  8B EC                     MOV EBP,ESP
 004CAFC3  53                        PUSH EBX
@@ -486,7 +486,7 @@ switchD_004cb42b::caseD_34:
 004CB483  89 10                     MOV dword ptr [EAX],EDX
 004CB485  5D                        POP EBP
 004CB486  C2 10 00                  RET 0x10
-FUN_004cafc0::cf_common_exit_004CB489:
+TLOBaseTy::sub_004CAFC0::cf_common_exit_004CB489:
 004CB489  8B B6 35 02 00 00         MOV ESI,dword ptr [ESI + 0x235]
 004CB48F  8B 55 0C                  MOV EDX,dword ptr [EBP + 0xc]
 004CB492  8D 0C 73                  LEA ECX,[EBX + ESI*0x2]
@@ -529,7 +529,7 @@ switchD_004cb42b::caseD_35:
 004CB4FE  89 01                     MOV dword ptr [ECX],EAX
 004CB500  5D                        POP EBP
 004CB501  C2 10 00                  RET 0x10
-FUN_004cafc0::cf_common_exit_004CB504:
+TLOBaseTy::sub_004CAFC0::cf_common_exit_004CB504:
 004CB504  8B B6 35 02 00 00         MOV ESI,dword ptr [ESI + 0x235]
 004CB50A  8B 45 0C                  MOV EAX,dword ptr [EBP + 0xc]
 004CB50D  8D 14 73                  LEA EDX,[EBX + ESI*0x2]
@@ -679,7 +679,7 @@ switchD_004cb6ac::caseD_1:
 switchD_004cb6ac::caseD_0:
 004CB6C6  C7 00 00 00 00 00         MOV dword ptr [EAX],0x0
 004CB6CC  C7 01 00 00 00 00         MOV dword ptr [ECX],0x0
-FUN_004cafc0::cf_common_exit_004CB6D2:
+TLOBaseTy::sub_004CAFC0::cf_common_exit_004CB6D2:
 004CB6D2  5F                        POP EDI
 004CB6D3  5E                        POP ESI
 004CB6D4  5B                        POP EBX

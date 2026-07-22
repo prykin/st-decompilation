@@ -85,8 +85,8 @@ int __thiscall STBHEShellC::GetMessage(STBHEShellC *this,STMessage *message)
       }
       pcVar11 = thunk_FUN_005f3530;
     }
-    SubmarineTitans::Recovered::HiddenThis::AnonReceiver_004248D0::FUN_006e9520
-              ((AnonReceiver_004248D0 *)PTR_00807598,uVar8,0,(uint)pcVar11,(uint)local_14);
+    SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00424E10::FUN_006e9520
+              ((AnonReceiver_00424E10 *)PTR_00807598,uVar8,0,(uint)pcVar11,(uint)local_14);
     g_currentExceptionFrame = local_6c.previous;
     return 0;
   }
@@ -147,12 +147,14 @@ int __thiscall STBHEShellC::GetMessage(STBHEShellC *this,STMessage *message)
       *(undefined4 *)&this_00->field_0x104 = 0;
       sub_005F3BF0((STBHEShellC *)this_00,*(int *)&this_00->field_0x6d,*(int *)&this_00->field_0x71,
                    *(undefined4 *)&this_00->field_0x75,'\0');
-      thunk_FUN_005f5c40(this_00,*(int *)&this_00->field_0x61,*(int *)&this_00->field_0x65,0x489);
+      sub_005F5C40((STBHEShellC *)this_00,*(int *)&this_00->field_0x61,*(int *)&this_00->field_0x65,
+                   0x489);
       iVar4 = thunk_FUN_005f3940(*(int *)&this_00->field_0x61,*(int *)&this_00->field_0x65,
                                  *(int *)&this_00->field_0x69);
       this_00->field_0103 = (char)iVar4;
       if ((char)iVar4 != '\0') {
-        sub_005F35F0((STBHEShellC *)this_00,*(int *)&this_00->field_0x87);
+        SubmarineTitans::Recovered::HiddenThis::AnonReceiver_005F35F0::sub_005F35F0
+                  ((AnonReceiver_005F35F0 *)this_00,*(int *)&this_00->field_0x87);
       }
       *(undefined4 *)&this_00->field_0x7d = DAT_007e66d4;
       g_currentExceptionFrame = local_6c.previous;
@@ -165,7 +167,8 @@ int __thiscall STBHEShellC::GetMessage(STBHEShellC *this,STMessage *message)
       g_currentExceptionFrame = local_6c.previous;
       return 0;
     }
-    sub_005F35F0((STBHEShellC *)this_00,*(int *)&this_00->field_0x87);
+    SubmarineTitans::Recovered::HiddenThis::AnonReceiver_005F35F0::sub_005F35F0
+              ((AnonReceiver_005F35F0 *)this_00,*(int *)&this_00->field_0x87);
     g_currentExceptionFrame = local_6c.previous;
     return 0;
   }
@@ -332,8 +335,9 @@ LAB_005f2d8b:
                             (short)((longlong)iVar5 * 0x28c1979 >> 0x3f));
       }
       if ((((DAT_0080874d == -1) || (g_visibleClass_00802A88->field_00F8 == 0)) ||
-          (thunk_FUN_00558c00(g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,iVar5,
-                              iVar4,&local_24,&local_28), local_18 < 0)) || (4 < local_18)) {
+          (VisibleClassTy::sub_00558C00
+                     (g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,iVar5,iVar4,
+                      &local_24,&local_28), local_18 < 0)) || (4 < local_18)) {
         bVar10 = true;
       }
       else {

@@ -30,8 +30,9 @@ int __thiscall STRubbishC::sub_0062FEA0(STRubbishC *this,int param_1,int param_2
     if (g_visibleClass_00802A88->field_00F8 == 0) {
       return iVar2;
     }
-    thunk_FUN_00558c00(g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,this->field_01D5,
-                       this->field_01D9,&param_2,(int *)&local_8);
+    VisibleClassTy::sub_00558C00
+              (g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,this->field_01D5,
+               this->field_01D9,&param_2,(int *)&local_8);
     if (iVar3 < 0) {
       return iVar2;
     }

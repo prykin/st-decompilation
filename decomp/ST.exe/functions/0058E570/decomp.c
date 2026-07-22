@@ -178,8 +178,8 @@ LAB_0058ea68:
                               (g_allPlayers_007FA174,*(char *)&this->field_0249,
                                CONCAT22((short)(SVar9 >> 0x10),this->field_024D),CASE_1),
           local_8 != pSVar7)))) {
-        iVar5 = SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00417FF0::thunk_FUN_00418030
-                          ((AnonReceiver_00417FF0 *)this,this->field_0231,this->field_0233,
+        iVar5 = SubmarineTitans::Recovered::HiddenThis::AnonReceiver_004167A0::thunk_FUN_00418030
+                          ((AnonReceiver_004167A0 *)this,this->field_0231,this->field_0233,
                            this->field_0235);
         thunk_FUN_00417ff0(this,8);
         thunk_FUN_00418010(this,6);
@@ -238,8 +238,8 @@ LAB_0058e87e:
     else if (iVar5 == 1) {
       thunk_FUN_00417ff0(this,10);
       thunk_FUN_00418010(this,8);
-      SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00417FF0::thunk_FUN_00418030
-                ((AnonReceiver_00417FF0 *)this,this->field_0231,this->field_0233,this->field_0235);
+      SubmarineTitans::Recovered::HiddenThis::AnonReceiver_004167A0::thunk_FUN_00418030
+                ((AnonReceiver_004167A0 *)this,this->field_0231,this->field_0233,this->field_0235);
       this->field_0257 = CASE_2;
     }
     break;

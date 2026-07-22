@@ -41,7 +41,7 @@ undefined4 __fastcall FUN_0045f980(STBoatC *param_1)
       param_1->field_00FC = param_1->field_00FC + '\x01';
       return 2;
     }
-    uVar3 = STColl3C::sub_0041C5A0((STColl3C *)param_1);
+    uVar3 = sub_0041C5A0(param_1);
     param_1->field_00FA = 0;
     param_1->field_00FC = 0;
     /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */

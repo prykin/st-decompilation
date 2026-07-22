@@ -9415,7 +9415,7 @@ LAB_00659a3b:
 LAB_00659a67:
 00659A67  8B 8D A0 FE FF FF         MOV ECX,dword ptr [EBP + 0xfffffea0]
 00659A6D  89 0D 1E C5 80 00         MOV dword ptr [0x0080c51e],ECX
-AiEventClassTy::GetMessage::cf_switch_join_00659A73:
+AiEventClassTy::GetMessage::cf_common_join_00659A73:
 00659A73  8B 85 94 FE FF FF         MOV EAX,dword ptr [EBP + 0xfffffe94]
 00659A79  40                        INC EAX
 LAB_00659a7a:

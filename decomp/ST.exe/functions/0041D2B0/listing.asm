@@ -1,4 +1,4 @@
-FUN_0041d2b0:
+STMineSetC::sub_0041D2B0:
 0041D2B0  56                        PUSH ESI
 0041D2B1  8B F1                     MOV ESI,ECX
 0041D2B3  8B 0D 88 2A 80 00         MOV ECX,dword ptr [0x00802a88]

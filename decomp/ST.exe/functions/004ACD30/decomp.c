@@ -9,7 +9,7 @@ undefined4 __thiscall STT3DSprC::sub_004ACD30(STT3DSprC *this,char param_1)
 {
   undefined4 *puVar1;
 
-  puVar1 = *(undefined4 **)(this->field_0020 + param_1 * 0x24);
+  puVar1 = *(undefined4 **)(&this->field_0020->field_0x0 + param_1 * 0x24);
   if (puVar1 == (undefined4 *)0x0) {
     return 0;
   }

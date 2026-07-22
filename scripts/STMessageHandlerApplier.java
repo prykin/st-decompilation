@@ -36,6 +36,8 @@ public class STMessageHandlerApplier extends GhidraScript {
 
     @Override
     protected void run() throws Exception {
+        // Each handler owns an independent top-level transaction.
+        end(true);
         if (currentProgram == null) { printerr("Open the analyzed ST program first."); return; }
         File file = inputFile();
         if (file == null) return;

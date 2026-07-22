@@ -512,7 +512,7 @@ LAB_005d5ff8:
           bVar37 = local_c < pDVar20->count;
         } while ((int)local_c < (int)pDVar20->count);
       }
-      thunk_FUN_0056ee90((AnonShape_0056EE90_04DD57E6 *)&DAT_00807620);
+      STAppC::sub_0056EE90((STAppC *)&DAT_00807620);
       memset(&DAT_00808ab0, 0, 0xea0); /* compiler bulk-zero initialization */
       DAT_00808aaf = 0;
       pDVar20 = this_00->field_1F84;
@@ -996,7 +996,7 @@ LAB_005d619b:
         this_00->field_21C9 = local_c * 0x19 + 0x41;
         pcVar7 = g_startSystem_0081176C->field_0034;
         if (pcVar7->field_00A0 != 0) {
-          FUN_00710790((uint *)pcVar7);
+          FUN_00710790((AnonShape_00710790_4CBB90D4 *)pcVar7);
         }
         this_00->field_21A5 = *(undefined4 *)&pcVar7->field_0x8a;
 LAB_005d6676:
@@ -1168,7 +1168,7 @@ LAB_005d6676:
         this_00->field_21C9 = local_c * 0x19 + 0x41;
         pcVar7 = g_startSystem_0081176C->field_0034;
         if (pcVar7->field_00A0 != 0) {
-          FUN_00710790((uint *)pcVar7);
+          FUN_00710790((AnonShape_00710790_4CBB90D4 *)pcVar7);
         }
         this_00->field_21A5 = *(undefined4 *)&pcVar7->field_0x8a;
         if (1 < (int)this_00->field_21A9) goto LAB_005d6676;
@@ -1296,7 +1296,7 @@ LAB_005d6784:
           this_00->field_21C9 = local_c * 0x19 + 0x41;
           pcVar7 = g_startSystem_0081176C->field_0034;
           if (pcVar7->field_00A0 != 0) {
-            FUN_00710790((uint *)pcVar7);
+            FUN_00710790((AnonShape_00710790_4CBB90D4 *)pcVar7);
           }
           this_00->field_21A5 = *(undefined4 *)&pcVar7->field_0x8a;
           goto LAB_005d619b;

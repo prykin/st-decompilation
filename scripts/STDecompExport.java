@@ -172,6 +172,8 @@ public class STDecompExport extends GhidraScript {
 
     @Override
     protected void run() throws Exception {
+        // Read-only script: do not leave GhidraScript's implicit transaction around runScript().
+        end(true);
         if (currentProgram == null) {
             printerr("Open a program before running STDecompExport.");
             return;

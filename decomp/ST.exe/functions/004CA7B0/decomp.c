@@ -32,7 +32,7 @@ undefined4 __thiscall TLOBaseTy::sub_004CA7B0(TLOBaseTy *this,uint param_1,int p
   puVar7 = &local_10;
   puVar5 = &param_1;
   uVar3 = thunk_FUN_004ab050();
-  thunk_FUN_004cafc0(this,uVar8,uVar3,puVar5,puVar7);
+  sub_004CAFC0(this,uVar8,uVar3,puVar5,puVar7);
   if (((int)param_1 < 0) || ((int)local_10 < 0)) {
     STT3DSprC::StopShow((STT3DSprC *)this_00,bVar6);
     return 0;
@@ -42,7 +42,7 @@ undefined4 __thiscall TLOBaseTy::sub_004CA7B0(TLOBaseTy *this,uint param_1,int p
 cf_common_exit_004CA871:
     iVar2 = STT3DSprC::sub_004ACD30((STT3DSprC *)this_00,bVar6);
     if (iVar2 != 1) {
-      iVar4 = ((0x18 - (int)this->field_0259 / 0xf) % 0x18 + (4 - DAT_008073fc) * 6) % 0x18;
+      iVar4 = ((0x18 - this->field_0259 / 0xf) % 0x18 + (4 - DAT_008073fc) * 6) % 0x18;
       iVar2 = param_1 * iVar4;
       thunk_FUN_004abce0(this_00,bVar6,iVar2,iVar2,'\0');
       uVar8 = param_1 * iVar4;
@@ -90,11 +90,10 @@ LAB_004ca835:
     iVar2 = STT3DSprC::sub_004ACD30((STT3DSprC *)this_00,bVar6);
     if (iVar2 != 1) {
       if (this->field_027D == 0x18) {
-        local_c = ((0x18 - (int)this->field_0259 / 0xf) % 0x18 + (4 - DAT_008073fc) * 6) % 0x18;
+        local_c = ((0x18 - this->field_0259 / 0xf) % 0x18 + (4 - DAT_008073fc) * 6) % 0x18;
       }
       else if (this->field_027D == 8) {
-        local_c = (((0x18 - (int)this->field_0259 / 0xf) % 0x18 + (4 - DAT_008073fc) * 6) % 0x18) /
-                  3;
+        local_c = (((0x18 - this->field_0259 / 0xf) % 0x18 + (4 - DAT_008073fc) * 6) % 0x18) / 3;
       }
       pAVar1 = this->field_01F5;
       iVar2 = *(int *)(&pAVar1->field_0x10 + uVar8 * 0x24);

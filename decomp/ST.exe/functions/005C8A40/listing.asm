@@ -2316,7 +2316,7 @@ LAB_005ca964:
 005CA968  6A 09                     PUSH 0x9
 005CA96A  8B CB                     MOV ECX,EBX
 005CA96C  E8 80 A2 E3 FF            CALL 0x00404bf1
-SettMapTy::GetMessage::cf_switch_join_005CA971:
+SettMapTy::GetMessage::cf_common_join_005CA971:
 005CA971  8B 46 10                  MOV EAX,dword ptr [ESI + 0x10]
 005CA974  3D 7F 65 00 00            CMP EAX,0x657f
 005CA979  0F 82 BF 04 00 00         JC 0x005cae3e

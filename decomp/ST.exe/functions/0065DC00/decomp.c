@@ -1,5 +1,5 @@
 
-int __fastcall FUN_0065dc00(int param_1,undefined4 param_2,uint param_3,char param_4)
+int __fastcall FUN_0065dc00(AiFltClassTy *param_1,undefined4 param_2,uint param_3,char param_4)
 
 {
   char cVar1;
@@ -13,13 +13,11 @@ int __fastcall FUN_0065dc00(int param_1,undefined4 param_2,uint param_3,char par
   int local_8;
 
   local_8 = 0;
-  array = (DArrayTy *)AiFltClassTy::sub_0065DA10((AiFltClassTy *)param_1,param_2);
+  array = (DArrayTy *)AiFltClassTy::sub_0065DA10(param_1,param_2);
   if (array != (DArrayTy *)0x0) {
-    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-    cVar1 = *(char *)(param_1 + 0x81);
+    cVar1 = param_1->field_0081;
     if ((cVar1 < '\0') || ('\a' < cVar1)) {
-      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-      cVar1 = (char)*(undefined4 *)(param_1 + 0x24);
+      cVar1 = (char)param_1->field_0024;
     }
     if ((param_4 != '\b') && ((param_4 < '\0' || (cVar1 = param_4, '\b' < param_4)))) {
       param_4 = -1;
@@ -39,7 +37,7 @@ int __fastcall FUN_0065dc00(int param_1,undefined4 param_2,uint param_3,char par
         }
         /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
         pSVar4 = STAllPlayersC::GetObjPtr
-                           (g_allPlayers_007FA174,*(char *)(param_1 + 0x24),
+                           (g_allPlayers_007FA174,*(char *)&param_1->field_0024,
                             CONCAT22((short)((uint)puVar3 >> 0x10),*puVar3),CASE_1);
         if (((pSVar4 != (STGameObjC *)0x0) && (iVar5 = (*pSVar4->vtable[1].vfunc_24)(), iVar5 != 0))
            && ((param_4 < '\0' || (iVar5 = (*pSVar4->vtable->vfunc_6C)(), param_4 == iVar5)))) {

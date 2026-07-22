@@ -11,10 +11,10 @@ undefined4 __thiscall TLOBaseTy::sub_004C56B0(TLOBaseTy *this,void *param_1)
   void *pvVar2;
   int iVar3;
   uint uVar4;
-  short sVar5;
+  int iVar5;
   short sVar6;
   short sVar7;
-  int iVar8;
+  short sVar8;
   int local_1c;
   undefined4 local_18;
   int local_14;
@@ -23,18 +23,18 @@ undefined4 __thiscall TLOBaseTy::sub_004C56B0(TLOBaseTy *this,void *param_1)
   uint local_8;
 
   pvVar2 = param_1;
-  sVar5 = 0;
   sVar6 = 0;
+  sVar7 = 0;
   local_8 = 0;
   if (&stack0x00000000 != (undefined1 *)0x8) {
     local_8 = (uint)(ushort)this->field_0041;
   }
   if (&stack0x00000000 != (undefined1 *)0xfffffffc) {
-    sVar6 = this->field_0043;
-    sVar5 = this->field_0045;
+    sVar7 = this->field_0043;
+    sVar6 = this->field_0045;
   }
-  if (*(int *)(&this->field_0x2cd + (int)param_1 * 0x80) <
-      *(int *)(&this->field_0x2d1 + (int)param_1 * 0x80)) {
+  iVar5 = (int)param_1 * 0x80;
+  if (*(int *)((int)&this->field_02CC + iVar5 + 1) < *(int *)((int)&this->field_02D0 + iVar5 + 1)) {
     pvVar1 = (void *)((int)param_1 + this->field_0235 * 2);
     if ((&DAT_00792ca0)[(int)pvVar1 * 3] == 0xb3) {
       param_1 = (void *)0x0;
@@ -46,37 +46,28 @@ undefined4 __thiscall TLOBaseTy::sub_004C56B0(TLOBaseTy *this,void *param_1)
         iVar3 = thunk_FUN_00617ca0(param_1,(int *)&local_8,&local_10,&local_18,&local_c,&local_14,
                                    &local_1c,uVar4 >> 0x10);
         if (iVar3 != 0) {
-          (&this->field_02A5)[(int)pvVar2 * 0x20] = local_8;
+          *(uint *)(&this->field_0x2a5 + iVar5) = local_8;
           this->field_04F4 = local_c;
           (&this->field_02A9)[(int)pvVar2 * 0x20] = local_10;
           this->field_04F8 = local_14;
-          (&this->field_02AD)[(int)pvVar2 * 0x20] = local_18;
+          *(undefined4 *)(&this->field_0x2ad + iVar5) = local_18;
           this->field_04FC = local_1c;
           return 1;
         }
       }
     }
     else {
-      iVar3 = (int)pvVar1 * 0x16;
-      iVar8 = (int)sVar5 + (int)*(short *)(&DAT_007932d8 + iVar3);
-      sVar5 = (short)(iVar8 >> 0x1f);
-      if (iVar8 < 0) {
-        sVar5 = (((short)(iVar8 / 200) + sVar5) - (short)((longlong)iVar8 * 0x51eb851f >> 0x3f)) +
+      iVar5 = (int)pvVar1 * 0x16;
+      iVar3 = (int)sVar6 + (int)*(short *)(&DAT_007932d8 + iVar5);
+      sVar6 = (short)(iVar3 >> 0x1f);
+      if (iVar3 < 0) {
+        sVar6 = (((short)(iVar3 / 200) + sVar6) - (short)((longlong)iVar3 * 0x51eb851f >> 0x3f)) +
                 -1;
       }
       else {
-        sVar5 = ((short)(iVar8 / 200) + sVar5) - (short)((longlong)iVar8 * 0x51eb851f >> 0x3f);
+        sVar6 = ((short)(iVar3 / 200) + sVar6) - (short)((longlong)iVar3 * 0x51eb851f >> 0x3f);
       }
-      iVar8 = (int)*(short *)(&DAT_007932d6 + iVar3) + (int)sVar6;
-      sVar6 = (short)(iVar8 >> 0x1f);
-      if (iVar8 < 0) {
-        sVar6 = (((short)(iVar8 / 0xc9) + sVar6) - (short)((longlong)iVar8 * 0x28c1979 >> 0x3f)) +
-                -1;
-      }
-      else {
-        sVar6 = ((short)(iVar8 / 0xc9) + sVar6) - (short)((longlong)iVar8 * 0x28c1979 >> 0x3f);
-      }
-      iVar3 = (int)*(short *)(&DAT_007932d4 + iVar3) + (int)(short)local_8;
+      iVar3 = (int)*(short *)(&DAT_007932d6 + iVar5) + (int)sVar7;
       sVar7 = (short)(iVar3 >> 0x1f);
       if (iVar3 < 0) {
         sVar7 = (((short)(iVar3 / 0xc9) + sVar7) - (short)((longlong)iVar3 * 0x28c1979 >> 0x3f)) +
@@ -85,12 +76,21 @@ undefined4 __thiscall TLOBaseTy::sub_004C56B0(TLOBaseTy *this,void *param_1)
       else {
         sVar7 = ((short)(iVar3 / 0xc9) + sVar7) - (short)((longlong)iVar3 * 0x28c1979 >> 0x3f);
       }
-      if (((((sVar7 < 0) || (g_worldGrid.sizeX <= sVar7)) || (sVar6 < 0)) ||
-          ((g_worldGrid.sizeY <= sVar6 || (sVar5 < 0)))) ||
-         ((g_worldGrid.sizeZ <= sVar5 ||
+      iVar5 = (int)*(short *)(&DAT_007932d4 + iVar5) + (int)(short)local_8;
+      sVar8 = (short)(iVar5 >> 0x1f);
+      if (iVar5 < 0) {
+        sVar8 = (((short)(iVar5 / 0xc9) + sVar8) - (short)((longlong)iVar5 * 0x28c1979 >> 0x3f)) +
+                -1;
+      }
+      else {
+        sVar8 = ((short)(iVar5 / 0xc9) + sVar8) - (short)((longlong)iVar5 * 0x28c1979 >> 0x3f);
+      }
+      if (((((sVar8 < 0) || (g_worldGrid.sizeX <= sVar8)) || (sVar7 < 0)) ||
+          ((g_worldGrid.sizeY <= sVar7 || (sVar6 < 0)))) ||
+         ((g_worldGrid.sizeZ <= sVar6 ||
           (g_worldGrid.cells
-           [(int)sVar6 * (int)g_worldGrid.sizeX + (int)sVar5 * (int)g_worldGrid.planeStride +
-            (int)sVar7].objects[1] == (STWorldObject *)0x0)))) {
+           [(int)sVar7 * (int)g_worldGrid.sizeX + (int)sVar6 * (int)g_worldGrid.planeStride +
+            (int)sVar8].objects[1] == (STWorldObject *)0x0)))) {
         return 1;
       }
     }

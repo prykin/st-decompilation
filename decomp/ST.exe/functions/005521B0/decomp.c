@@ -25,12 +25,12 @@ void __thiscall TradePanelTy::Update(TradePanelTy *this)
   errorCode = Library::MSVCRT::__setjmp3(local_5c.jumpBuffer,0);
   this_00 = local_8;
   if (errorCode == 0) {
-    local_18 = local_8->field_01AB;
+    local_18 = *(undefined4 *)&local_8->field_0x1ab;
     local_14 = local_8->field_01AF;
     local_10 = local_8->field_01B3;
     local_c = local_8->field_01B7;
     STAllPlayersC::GetPanelInfo
-              (g_allPlayers_007FA174,10,(AnonShape_0043BEB0_1C00EC12 *)&local_8->field_01AB);
+              (g_allPlayers_007FA174,10,(AnonShape_0043BEB0_1C00EC12 *)&local_8->field_0x1ab);
     sub_00551B10(this_00);
     PaintPanel(this_00);
     g_currentExceptionFrame = local_5c.previous;

@@ -22,9 +22,10 @@ STBHEShellC::sub_005F5E30(STBHEShellC *this,int param_1,int param_2,undefined4 p
   this->field_00C0 = 0;
   this->field_00AB = 0;
   if (this->field_0103 != '\0') {
-    sub_005F35F0(this,3);
+    SubmarineTitans::Recovered::HiddenThis::AnonReceiver_005F35F0::sub_005F35F0
+              ((AnonReceiver_005F35F0 *)this,3);
   }
-  thunk_FUN_005f5c40(this,this->field_0093,this->field_0097,0x48a);
+  sub_005F5C40(this,this->field_0093,this->field_0097,0x48a);
   return;
 }
 

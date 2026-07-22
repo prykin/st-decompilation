@@ -6,16 +6,17 @@
    Evidence: registry[89] at 007CA9E8 stores type 0x0150 and executable pointer 00402C89; allocation
    size 373 uniquely matches /STBHEShellC */
 
-STBHEShellC * __cdecl CreateSTBHEShell(void)
+AnonReceiver_005F35F0 * __cdecl CreateSTBHEShell(void)
 
 {
-  STBHEShellC *pSVar1;
+  STBHEShellC *this;
+  AnonReceiver_005F35F0 *pAVar1;
 
-  pSVar1 = (STBHEShellC *)FUN_006b04d0(0x175);
-  if (pSVar1 != (STBHEShellC *)0x0) {
-    pSVar1 = STBHEShellC::STBHEShellC(pSVar1);
-    return pSVar1;
+  this = (STBHEShellC *)FUN_006b04d0(0x175);
+  if (this != (STBHEShellC *)0x0) {
+    pAVar1 = (AnonReceiver_005F35F0 *)STBHEShellC::STBHEShellC(this);
+    return pAVar1;
   }
-  return (STBHEShellC *)0x0;
+  return (AnonReceiver_005F35F0 *)0x0;
 }
 

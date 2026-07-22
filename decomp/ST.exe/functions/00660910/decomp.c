@@ -30,7 +30,7 @@ undefined4 __thiscall FUN_00660910(void *this,short param_1,short param_2,short 
                                      CONCAT22((short)((uint)uVar2 >> 0x10),
                                               *(short *)((int)this + 0x7d)));
         if (this_00 != (STGroupBoatC *)0x0) {
-          (*this_00->vtable->vfunc_08)(this_00,CASE_F,&local_c);
+          (*this_00->vtable->SetOrderData)(this_00,GROUP_BOAT_ORDER_0F,&local_c);
           return 0;
         }
       }

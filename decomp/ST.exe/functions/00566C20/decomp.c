@@ -12,7 +12,7 @@
 int __thiscall SoundManagerTy::GetMessage(SoundManagerTy *this,STMessage *message)
 
 {
-  char cVar1;
+  SoundManagerTy_field_0038State SVar1;
   STMessageId SVar2;
   code *pcVar3;
   SoundManagerTy *this_00;
@@ -52,31 +52,31 @@ int __thiscall SoundManagerTy::GetMessage(SoundManagerTy *this,STMessage *messag
     }
     goto LAB_00566d75;
   }
-  cVar1 = local_8->field_0038;
-  switch(cVar1) {
-  case '\0':
-    if (cVar1 != '\x01') {
-      local_8->field_0038 = 1;
+  SVar1 = local_8->field_0038;
+  switch(SVar1) {
+  case CASE_0:
+    if (SVar1 != CASE_1) {
+      local_8->field_0038 = CASE_1;
       local_8->field_0039 = -1;
     }
     local_8->field_0024 = local_8->field_001C;
     local_8->field_0020 = local_8->field_001C;
     break;
-  case '\x01':
+  case CASE_1:
     iVar5 = local_8->field_001C;
     if ((4999 < (uint)(iVar5 - local_8->field_0020)) &&
        ((uint)(iVar5 - local_8->field_0024) < 0x3e9)) {
       local_8->field_0024 = iVar5;
       local_8->field_0020 = iVar5;
 joined_r0x00566d57:
-      if (cVar1 != '\x03') {
-        local_8->field_0038 = 3;
+      if (SVar1 != CASE_3) {
+        local_8->field_0038 = CASE_3;
 LAB_00566d5d:
         local_8->field_0039 = -1;
       }
     }
     break;
-  case '\x02':
+  case CASE_2:
     iVar5 = local_8->field_001C;
     if (4999 < (uint)(iVar5 - local_8->field_0020)) {
       uVar7 = iVar5 - local_8->field_0024;
@@ -88,14 +88,14 @@ LAB_00566d5d:
       }
     }
     break;
-  case '\x03':
+  case CASE_3:
     iVar5 = local_8->field_001C;
     if (14999 < (uint)(iVar5 - local_8->field_0024)) {
 LAB_00566d35:
       local_8->field_0024 = iVar5;
       local_8->field_0020 = iVar5;
-      if (cVar1 != '\x01') {
-        local_8->field_0038 = 1;
+      if (SVar1 != CASE_1) {
+        local_8->field_0038 = CASE_1;
         goto LAB_00566d5d;
       }
     }

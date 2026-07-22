@@ -64,13 +64,13 @@ undefined4 __thiscall STGroupBoatC::GrpLoadRC(STGroupBoatC *this,int param_1)
   if (iVar2 != 0) {
     g_currentExceptionFrame = local_bc.previous;
     if (iVar2 == -0x5001fff7) {
-      if ((DArrayTy *)local_20->field_010F != (DArrayTy *)0x0) {
-        DArrayDestroy((DArrayTy *)local_20->field_010F);
-        this_00->field_010F = 0;
+      if (local_20->field_010F != (DArrayTy *)0x0) {
+        DArrayDestroy(local_20->field_010F);
+        this_00->field_010F = (DArrayTy *)0x0;
       }
-      if ((DArrayTy *)this_00->field_0127 != (DArrayTy *)0x0) {
-        DArrayDestroy((DArrayTy *)this_00->field_0127);
-        this_00->field_0127 = 0;
+      if (this_00->field_0127 != (DArrayTy *)0x0) {
+        DArrayDestroy(this_00->field_0127);
+        this_00->field_0127 = (DArrayTy *)0x0;
       }
       if (this_00->field_024E != (DArrayTy *)0x0) {
         DArrayDestroy(this_00->field_024E);
@@ -110,9 +110,8 @@ undefined4 __thiscall STGroupBoatC::GrpLoadRC(STGroupBoatC *this,int param_1)
     this_00->field_024E = (DArrayTy *)0x0;
     this_00->field_0266 = (DArrayTy *)0x0;
     if (this_00->field_010B == 0) {
-      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-      if ((this_00->field_010F == 0) ||
-         (local_c = *(dword *)(this_00->field_010F + 0xc), local_c == 0)) {
+      if ((this_00->field_010F == (DArrayTy *)0x0) ||
+         (local_c = this_00->field_010F->count, local_c == 0)) {
         RaiseInternalException
                   (-0x5001fff7,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_grpb.cpp",
                    0x81d);
@@ -122,7 +121,7 @@ undefined4 __thiscall STGroupBoatC::GrpLoadRC(STGroupBoatC *this,int param_1)
       uVar13 = 0;
       if (0 < (int)local_c) {
         do {
-          DArrayGetElement((DArrayTy *)this_00->field_010F,uVar13,&local_8);
+          DArrayGetElement(this_00->field_010F,uVar13,&local_8);
           if (((short)local_8 != -1) &&
              (pSVar4 = STAllPlayersC::GetObjPtr
                                  (g_allPlayers_007FA174,this_00->field_0024,local_8,CASE_1),
@@ -145,8 +144,8 @@ undefined4 __thiscall STGroupBoatC::GrpLoadRC(STGroupBoatC *this,int param_1)
           uVar13 = uVar13 + 1;
         } while ((int)uVar13 < (int)local_c);
       }
-      DArrayDestroy((DArrayTy *)this_00->field_010F);
-      this_00->field_010F = 0;
+      DArrayDestroy(this_00->field_010F);
+      this_00->field_010F = (DArrayTy *)0x0;
       if (this_00->field_024E->count == 0) {
         RaiseInternalException
                   (-0x5001fff7,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_grpb.cpp",
@@ -189,9 +188,8 @@ undefined4 __thiscall STGroupBoatC::GrpLoadRC(STGroupBoatC *this,int param_1)
       }
     }
     if (this_00->field_0262 == 0) {
-      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-      if ((this_00->field_0127 == 0) ||
-         (dVar14 = *(dword *)(this_00->field_0127 + 0xc), local_c = dVar14, dVar14 == 0)) {
+      if ((this_00->field_0127 == (DArrayTy *)0x0) ||
+         (dVar14 = this_00->field_0127->count, local_c = dVar14, dVar14 == 0)) {
         dVar14 = local_c;
         RaiseInternalException
                   (-0x5001fff7,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_grpb.cpp",
@@ -202,7 +200,7 @@ undefined4 __thiscall STGroupBoatC::GrpLoadRC(STGroupBoatC *this,int param_1)
       this_00->field_0266 = pDVar3;
       if (0 < (int)dVar14) {
         do {
-          DArrayGetElement((DArrayTy *)this_00->field_0127,uVar13,&local_8);
+          DArrayGetElement(this_00->field_0127,uVar13,&local_8);
           if ((((short)local_8 != -1) &&
               (pSVar4 = STAllPlayersC::GetObjPtr
                                   (g_allPlayers_007FA174,this_00->field_0024,local_8,CASE_1),
@@ -213,8 +211,8 @@ undefined4 __thiscall STGroupBoatC::GrpLoadRC(STGroupBoatC *this,int param_1)
           uVar13 = uVar13 + 1;
         } while ((int)uVar13 < (int)dVar14);
       }
-      DArrayDestroy((DArrayTy *)this_00->field_0127);
-      this_00->field_0127 = 0;
+      DArrayDestroy(this_00->field_0127);
+      this_00->field_0127 = (DArrayTy *)0x0;
       if (this_00->field_0266->count == 0) {
         RaiseInternalException
                   (-0x5001fff7,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_grpb.cpp",

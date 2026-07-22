@@ -1,107 +1,107 @@
 function_address	status	detail
-0041AF40	applied	int __thiscall GetMessage(STGameObjC * this, STMessage * message)
-0041E530	applied	int __thiscall GetMessage(STSprGameObjC * this, STMessage * message)
-00423EC0	applied	int __thiscall GetMessage(STGroupC * this, STMessage * message)
-00430A90	applied	int __thiscall GetMessage(STAllPlayersC * this, STMessage * message)
+0041AF40	disabled	already_typed
+0041E530	disabled	already_typed
+00423EC0	disabled	already_typed
+00430A90	disabled	already_typed
 0044EE30	disabled	already_typed
-00495980	applied	int __thiscall GetMessage(DumpClassC * this, STMessage * message)
-00497E00	applied	int __thiscall GetMessage(STGroupBoatC * this, STMessage * message)
-004A8920	applied	int __thiscall GetMessage(OpticClassC * this, STMessage * message)
-004B9FA0	applied	int __thiscall GetMessage(TLOBaseTy * this, STMessage * message)
-004C6A00	applied	int __thiscall GetMessage(TLOBldMark * this, STMessage * message)
-004D0B90	applied	int __thiscall GetMessage(TLOFakeTy * this, STMessage * message)
-004D55B0	applied	int __thiscall GetMessage(TLOEmbryoTy * this, STMessage * message)
-004EE4D0	applied	int __thiscall GetMessage(BehPanelTy * this, STMessage * message)
-004EF6D0	applied	int __thiscall GetMessage(BldBoatPanelTy * this, STMessage * message)
-004F0210	applied	int __thiscall GetMessage(BldLabPanelTy * this, STMessage * message)
-004F1080	applied	int __thiscall GetMessage(BldObjPanelTy * this, STMessage * message)
-004FB060	applied	int __thiscall GetMessage(CPanelTy * this, STMessage * message)
-005107C0	applied	int __thiscall GetMessage(FrmPanelTy * this, STMessage * message)
-0051DDD0	applied	int __thiscall GetMessage(HelpPanelTy * this, STMessage * message)
-0051FBA0	applied	int __thiscall GetMessage(HelpStringTy * this, STMessage * message)
-00521490	applied	int __thiscall GetMessage(InfocPanelTy * this, STMessage * message)
-00522E80	applied	int __thiscall GetMessage(IntercomPanelTy * this, STMessage * message)
-0052BF00	applied	int __thiscall GetMessage(MoneyTy * this, STMessage * message)
-0052DD20	applied	int __thiscall GetMessage(PopUpTy * this, STMessage * message)
-00533D10	applied	int __thiscall GetMessage(OptPanelTy * this, STMessage * message)
-005384A0	applied	int __thiscall GetMessage(PanelTy * this, STMessage * message)
-005397F0	applied	int __thiscall GetMessage(PausePanelTy * this, STMessage * message)
-0053AFB0	applied	int __thiscall GetMessage(PlayPanelTy * this, STMessage * message)
-0053CA80	applied	int __thiscall GetMessage(ResearchPanelTy * this, STMessage * message)
-0053D4D0	applied	int __thiscall GetMessage(SAMPanelTy * this, STMessage * message)
-0053EB70	applied	int __thiscall GetMessage(SpecPanelTy * this, STMessage * message)
-005400F0	applied	int __thiscall GetMessage(ProdPanelTy * this, STMessage * message)
-00542F40	applied	int __thiscall GetMessage(InterSystemC * this, STMessage * message)
-005449B0	applied	int __thiscall GetMessage(CursorClassTy * this, STMessage * message)
-0054E4F0	applied	int __thiscall GetMessage(STPlaySystemC * this, STMessage * message)
-005522A0	applied	int __thiscall GetMessage(TradePanelTy * this, STMessage * message)
-00552E40	applied	int __thiscall GetMessage(UpgPanelTy * this, STMessage * message)
-005564C0	applied	int __thiscall GetMessage(TraksClassTy * this, STMessage * message)
-00558840	applied	int __thiscall GetMessage(VisibleClassTy * this, STMessage * message)
-00566C20	applied	int __thiscall GetMessage(SoundManagerTy * this, STMessage * message)
-0056FA60	applied	int __thiscall GetMessage(STAppC * this, STMessage * message)
-00575CB0	applied	int __thiscall GetMessage(STAlgaC * this, STMessage * message)
-005776D0	applied	int __thiscall GetMessage(GameSystemC * this, STMessage * message)
-00578630	applied	int __thiscall GetMessage(STCrabC * this, STMessage * message)
-0057BF60	applied	int __thiscall GetMessage(STFishC * this, STMessage * message)
-0057E0A0	applied	int __thiscall GetMessage(STDcResourcC * this, STMessage * message)
-00581BF0	applied	int __thiscall GetMessage(STJellyManC * this, STMessage * message)
-00583270	applied	int __thiscall GetMessage(STJellyGunC * this, STMessage * message)
-005859A0	applied	int __thiscall GetMessage(STLBombC * this, STMessage * message)
-00588BC0	applied	int __thiscall GetMessage(STMBombC * this, STMessage * message)
-00589C10	applied	int __thiscall GetMessage(STOctopusC * this, STMessage * message)
-0058C760	applied	int __thiscall GetMessage(STSatC * this, STMessage * message)
-0058D7C0	applied	int __thiscall GetMessage(STSharkC * this, STMessage * message)
-005908B0	applied	int __thiscall GetMessage(MAdvTy * this, STMessage * message)
-00593040	applied	int __thiscall GetMessage(CampaignTy * this, STMessage * message)
-00594440	applied	int __thiscall GetMessage(ComboTy * this, STMessage * message)
-005A4350	applied	int __thiscall GetMessage(FSGSTy * this, STMessage * message)
-005B0BA0	applied	int __thiscall GetMessage(ChooseMapTy * this, STMessage * message)
-005B4BB0	applied	int __thiscall GetMessage(MainMenuTy * this, STMessage * message)
-005B6430	applied	int __thiscall GetMessage(MMObjTy * this, STMessage * message)
-005B9330	applied	int __thiscall GetMessage(MMsgTy * this, STMessage * message)
-005BC5E0	applied	int __thiscall GetMessage(PrividerTy * this, STMessage * message)
-005C1A90	applied	int __thiscall GetMessage(MReportTy * this, STMessage * message)
-005C8A40	applied	int __thiscall GetMessage(SettMapTy * this, STMessage * message)
-005D1400	applied	int __thiscall GetMessage(SettMapMTy * this, STMessage * message)
-005D5560	applied	int __thiscall GetMessage(SettMapSTy * this, STMessage * message)
-005D9470	applied	int __thiscall GetMessage(SIDTy * this, STMessage * message)
-005DCE90	applied	int __thiscall GetMessage(StartSystemTy * this, STMessage * message)
-005E4570	applied	int __thiscall GetMessage(MTaskTy * this, STMessage * message)
-005E5FB0	applied	int __thiscall GetMessage(MTestTy * this, STMessage * message)
-005EA680	applied	int __thiscall GetMessage(WaitTy * this, STMessage * message)
-005EAF10	applied	int __thiscall GetMessage(STArtiafactC * this, STMessage * message)
-005F10D0	applied	int __thiscall GetMessage(STManBasisC * this, STMessage * message)
-005F27C0	applied	int __thiscall GetMessage(STBHEShellC * this, STMessage * message)
-005F5F20	applied	int __thiscall GetMessage(STColl3C * this, STMessage * message)
-005FB640	applied	int __thiscall GetMessage(STContainerC * this, STMessage * message)
-00601F80	applied	int __thiscall GetMessage(STDestC * this, STMessage * message)
-00603740	applied	int __thiscall GetMessage(STExplosion * this, STMessage * message)
-00617640	applied	int __thiscall GetMessage(JumpManagC * this, STMessage * message)
-00618C00	applied	int __thiscall GetMessage(STJumpMineC * this, STMessage * message)
-0061D190	applied	int __thiscall GetMessage(STLightC * this, STMessage * message)
-0061F660	applied	int __thiscall GetMessage(SndUnderAttMenegC * this, STMessage * message)
-00621B50	applied	int __thiscall GetMessage(STMineSetC * this, STMessage * message)
-00627EB0	applied	int __thiscall GetMessage(STParticleC * this, STMessage * message)
-0062CCA0	applied	int __thiscall GetMessage(STManRub3C * this, STMessage * message)
-0062E740	applied	int __thiscall GetMessage(STRubbishC * this, STMessage * message)
-00630430	applied	int __thiscall GetMessage(STManRuinC * this, STMessage * message)
-006406D0	applied	int __thiscall GetMessage(STTorpC * this, STMessage * message)
-006461E0	applied	int __thiscall GetMessage(STVolcanoC * this, STMessage * message)
+00495980	disabled	already_typed
+00497E00	disabled	already_typed
+004A8920	disabled	already_typed
+004B9FA0	disabled	already_typed
+004C6A00	disabled	already_typed
+004D0B90	disabled	already_typed
+004D55B0	disabled	already_typed
+004EE4D0	disabled	already_typed
+004EF6D0	disabled	already_typed
+004F0210	disabled	already_typed
+004F1080	disabled	already_typed
+004FB060	disabled	already_typed
+005107C0	disabled	already_typed
+0051DDD0	disabled	already_typed
+0051FBA0	disabled	already_typed
+00521490	disabled	already_typed
+00522E80	disabled	already_typed
+0052BF00	disabled	already_typed
+0052DD20	disabled	already_typed
+00533D10	disabled	already_typed
+005384A0	disabled	already_typed
+005397F0	disabled	already_typed
+0053AFB0	disabled	already_typed
+0053CA80	disabled	already_typed
+0053D4D0	disabled	already_typed
+0053EB70	disabled	already_typed
+005400F0	disabled	already_typed
+00542F40	disabled	already_typed
+005449B0	disabled	already_typed
+0054E4F0	disabled	already_typed
+005522A0	disabled	already_typed
+00552E40	disabled	already_typed
+005564C0	disabled	already_typed
+00558840	disabled	already_typed
+00566C20	disabled	already_typed
+0056FA60	disabled	already_typed
+00575CB0	disabled	already_typed
+005776D0	disabled	already_typed
+00578630	disabled	already_typed
+0057BF60	disabled	already_typed
+0057E0A0	disabled	already_typed
+00581BF0	disabled	already_typed
+00583270	disabled	already_typed
+005859A0	disabled	already_typed
+00588BC0	disabled	already_typed
+00589C10	disabled	already_typed
+0058C760	disabled	already_typed
+0058D7C0	disabled	already_typed
+005908B0	disabled	already_typed
+00593040	disabled	already_typed
+00594440	disabled	already_typed
+005A4350	disabled	already_typed
+005B0BA0	disabled	already_typed
+005B4BB0	disabled	already_typed
+005B6430	disabled	already_typed
+005B9330	disabled	already_typed
+005BC5E0	disabled	already_typed
+005C1A90	disabled	already_typed
+005C8A40	disabled	already_typed
+005D1400	disabled	already_typed
+005D5560	disabled	already_typed
+005D9470	disabled	already_typed
+005DCE90	disabled	already_typed
+005E4570	disabled	already_typed
+005E5FB0	disabled	already_typed
+005EA680	disabled	already_typed
+005EAF10	disabled	already_typed
+005F10D0	disabled	already_typed
+005F27C0	disabled	already_typed
+005F5F20	disabled	already_typed
+005FB640	disabled	already_typed
+00601F80	disabled	already_typed
+00603740	disabled	already_typed
+00617640	disabled	already_typed
+00618C00	disabled	already_typed
+0061D190	disabled	already_typed
+0061F660	disabled	already_typed
+00621B50	disabled	already_typed
+00627EB0	disabled	already_typed
+0062CCA0	disabled	already_typed
+0062E740	disabled	already_typed
+00630430	disabled	already_typed
+006406D0	disabled	already_typed
+006461E0	disabled	already_typed
 00648030	disabled	already_typed
 00652810	disabled	already_typed
 00667D90	disabled	already_typed
 0067C7E0	disabled	already_typed
 00690B90	disabled	already_typed
-006E5F00	applied	int __thiscall GetMessage(SystemClassTy * this, STMessage * message)
-006E5FD0	applied	int __thiscall FUN_006e5fd0(void * this, STMessage * message)
-0071CA50	applied	int __thiscall GetMessage(InputClassTy * this, STMessage * message)
-0071CFD0	applied	int __thiscall GetMessage(ButtonClassTy * this, STMessage * message)
-0071E0E0	applied	int __thiscall GetMessage(RadioClassTy * this, STMessage * message)
-0071E8B0	applied	int __thiscall GetMessage(ViewerClassTy * this, STMessage * message)
-0071F3A0	applied	int __thiscall GetMessage(ListClassTy * this, STMessage * message)
-00722410	applied	int __thiscall GetMessage(EditorClassTy * this, STMessage * message)
-00723420	applied	int __thiscall GetMessage(TabClassTy * this, STMessage * message)
-007244B0	applied	int __thiscall GetMessage(SliderClassTy * this, STMessage * message)
-00725020	applied	int __thiscall GetMessage(TrackbarClassTy * this, STMessage * message)
-0072B780	applied	int __thiscall GetMessage(ControlClassTy * this, STMessage * message)
+006E5F00	disabled	already_typed
+006E5FD0	disabled	already_typed
+0071CA50	disabled	already_typed
+0071CFD0	disabled	already_typed
+0071E0E0	disabled	already_typed
+0071E8B0	disabled	already_typed
+0071F3A0	disabled	already_typed
+00722410	disabled	already_typed
+00723420	disabled	already_typed
+007244B0	disabled	already_typed
+00725020	disabled	already_typed
+0072B780	disabled	already_typed

@@ -21,7 +21,7 @@ VisibleClassTy * __thiscall VisibleClassTy::VisibleClassTy(VisibleClassTy *this)
   this->field_0034 = 0;
   this->field_0030 = 0;
   this->field_0104 = 1;
-  this->field_0038 = (byte *)0x0;
+  this->field_0038 = (void *)0x0;
   this->field_004C = (byte *)0x0;
   this->field_0050 = (ushort *)0x0;
   memset(&this->field_0054, 0, 0x20); /* compiler bulk-zero initialization */

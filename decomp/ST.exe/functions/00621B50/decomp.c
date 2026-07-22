@@ -12,7 +12,7 @@
 int __thiscall STMineSetC::GetMessage(STMineSetC *this,STMessage *message)
 
 {
-  char cVar1;
+  STMineSetC_field_02ADState SVar1;
   short sVar2;
   short sVar3;
   short sVar4;
@@ -24,7 +24,7 @@ int __thiscall STMineSetC::GetMessage(STMineSetC *this,STMessage *message)
   int iVar9;
   STMineSetC_field_02AEState SVar10;
   uint uVar11;
-  Global_sub_00626B50_param_1Enum GVar12;
+  STMineSetC_sub_00626B50_param_1Enum SVar12;
   int iVar13;
   undefined4 *puVar14;
   STWorldObject *pSVar15;
@@ -105,8 +105,8 @@ int __thiscall STMineSetC::GetMessage(STMineSetC *this,STMessage *message)
   }
   if (MESS_SHARED_0003 < SVar5) {
     if (SVar5 == MESS_SHARED_0108) {
-      GVar12 = thunk_FUN_004ab050();
-      sub_00626B50(local_8,GVar12);
+      SVar12 = thunk_FUN_004ab050();
+      sub_00626B50(local_8,SVar12);
       g_currentExceptionFrame = local_60.previous;
       return 0;
     }
@@ -133,7 +133,7 @@ int __thiscall STMineSetC::GetMessage(STMineSetC *this,STMessage *message)
     return 0;
   }
   if (SVar5 == MESS_ID_NONE) {
-    if ((local_8->field_02AD == '\x03') &&
+    if ((local_8->field_02AD == CASE_3) &&
        (0x1194 < g_playSystem_00802A38->field_00E4 - local_8->field_035F)) {
       thunk_FUN_00627390(local_8);
     }
@@ -179,15 +179,15 @@ int __thiscall STMineSetC::GetMessage(STMineSetC *this,STMessage *message)
         if (this_00->field_0353 != '\0') {
           thunk_FUN_00623600((AnonShape_00623600_61226D23 *)this_00);
         }
-        cVar1 = this_00->field_02AD;
-        if ((((cVar1 == '\0') || (cVar1 == '\x01')) || (cVar1 == '\x02')) &&
+        SVar1 = this_00->field_02AD;
+        if ((((SVar1 == CASE_0) || (SVar1 == CASE_1)) || (SVar1 == CASE_2)) &&
            ((((g_playSystem_00802A38->field_00E4 % 5 == 0 &&
               (0x19 < g_playSystem_00802A38->field_00E4 - this_00->field_0346)) &&
              ((this_00->field_02AE == CASE_0 || (this_00->field_02AE == CASE_1)))) &&
             (iVar9 = sub_00625730(this_00), iVar9 != 0)))) {
           this_00->field_02AE = CASE_2;
           this_00->field_030F =
-               *(int *)(&DAT_007d02a4 + (uint)(byte)this_00->field_02AD * 4) +
+               *(int *)(&DAT_007d02a4 + (uint)this_00->field_02AD * 4) +
                g_playSystem_00802A38->field_00E4;
         }
       }

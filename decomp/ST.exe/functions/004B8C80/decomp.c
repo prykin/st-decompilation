@@ -15,7 +15,7 @@ undefined4 __fastcall FUN_004b8c80(TLOBaseTy *param_1)
   void *pvVar9;
   undefined4 uVar10;
   undefined4 local_2c [2];
-  undefined4 local_24;
+  int local_24;
   undefined4 local_20;
   undefined4 local_1c;
   undefined4 local_18;
@@ -32,8 +32,7 @@ undefined4 __fastcall FUN_004b8c80(TLOBaseTy *param_1)
         param_1->field_04C8 = iVar3;
         if (*(short *)(DAT_00806724 + 0x23) + -1 <= iVar3) {
           local_18 = param_1->field_0008;
-          /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-          local_24 = *(undefined4 *)(param_1->field_000C + 0x14);
+          local_24 = param_1->field_000C->systemId;
           local_20 = 0;
           local_1c = 10;
           sub_006E60A0(param_1,local_2c);
@@ -52,8 +51,7 @@ undefined4 __fastcall FUN_004b8c80(TLOBaseTy *param_1)
          (iVar3 = thunk_FUN_004ac910(puVar1,'\x05'),
          *(int *)&param_1->field_01F5->field_0xc8 <= iVar3)) {
         local_18 = param_1->field_0008;
-        /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-        local_24 = *(undefined4 *)(param_1->field_000C + 0x14);
+        local_24 = param_1->field_000C->systemId;
         local_20 = 0;
         local_1c = 10;
         sub_006E60A0(param_1,local_2c);
@@ -97,8 +95,8 @@ undefined4 __fastcall FUN_004b8c80(TLOBaseTy *param_1)
   if (TVar6 == (CASE_4|CASE_1)) {
     if (((param_1->field_0299 != 0) &&
         (iVar3 = thunk_FUN_004ac910(&param_1->field_01D5,'\x0e'),
-        (int)(param_1->field_01F5->field_0208 + param_1->field_02A1) <= iVar3)) &&
-       (param_1->field_029D == 0)) {
+        param_1->field_01F5->field_0208 + *(int *)&param_1->field_0x2a1 <= iVar3)) &&
+       (*(int *)&param_1->field_0x29d == 0)) {
       TLOBaseTy::sub_004C4550(param_1,(int *)0x0);
     }
   }
@@ -228,8 +226,7 @@ cf_common_exit_004B8F5A:
     param_1->field_05DF = 1;
     TLOBaseTy::SetState(param_1,1,0);
     local_18 = param_1->field_0008;
-    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-    local_24 = *(undefined4 *)(param_1->field_000C + 0x14);
+    local_24 = param_1->field_000C->systemId;
     local_20 = 0;
     local_1c = 10;
     sub_006E60A0(param_1,local_2c);
@@ -260,17 +257,17 @@ cf_common_exit_004B8F5A:
         *(int *)(&DAT_00792040 + param_1->field_0235 * 4) + param_1->field_0285)
     goto cf_common_join_004B92EE;
     param_1->field_0285 = g_playSystem_00802A38->field_00E4;
-    iVar3 = (int)param_1->field_0259 / 0xf;
+    iVar3 = param_1->field_0259 / 0xf;
     if (*(int *)(&DAT_007be8c8 + iVar3 * 0x60) != 0) {
       iVar3 = (((*(int *)(&DAT_007be8c8 + iVar3 * 0x60) < 1) - 1 & 2) - 1) + iVar3;
       if (iVar3 < 0x18) {
         if (iVar3 < 0) {
           iVar3 = 0x17;
         }
-        thunk_FUN_004b98e0(param_1,iVar3 * 0xf);
+        TLOBaseTy::sub_004B98E0(param_1,iVar3 * 0xf);
       }
       else {
-        thunk_FUN_004b98e0(param_1,0);
+        TLOBaseTy::sub_004B98E0(param_1,0);
       }
       goto cf_common_join_004B92EE;
     }

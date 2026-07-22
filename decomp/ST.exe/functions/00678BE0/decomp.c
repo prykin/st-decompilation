@@ -13,7 +13,7 @@ undefined4 * __thiscall AiPlrClassTy::PrepareToSave(AiPlrClassTy *this,uint *par
   int errorCode;
   int iVar3;
   undefined4 *puVar4;
-  uint *puVar5;
+  AnonShape_0067D3B0_B421D52F *pAVar5;
   InternalExceptionFrame local_58;
   AiPlrClassTy *local_14;
   uint local_10;
@@ -30,12 +30,12 @@ undefined4 * __thiscall AiPlrClassTy::PrepareToSave(AiPlrClassTy *this,uint *par
   if (errorCode == 0) {
     local_8 = AiEventClassTy::PrepareToSave((AiEventClassTy *)&local_14->vtable_at_1c,&local_10);
     if (pAVar2 == (AiPlrClassTy *)0x0) {
-      puVar5 = (uint *)0x0;
+      pAVar5 = (AnonShape_0067D3B0_B421D52F *)0x0;
     }
     else {
-      puVar5 = &pAVar2->field_05D3;
+      pAVar5 = (AnonShape_0067D3B0_B421D52F *)&pAVar2->field_05D3;
     }
-    local_c = PlrDataPack(puVar5,local_8,local_10,param_1);
+    local_c = PlrDataPack(pAVar5,local_8,local_10,param_1);
     local_c[0xc] = 1;
     local_c[0xd] = 0;
     local_c[0xe] = 0;

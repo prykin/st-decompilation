@@ -17,8 +17,8 @@ undefined4 __thiscall STGroupBoatC::GrpAttack(STGroupBoatC *this,int param_1)
   DArrayTy *pDVar7;
   STGameObjC *pSVar8;
   int iVar9;
-  undefined4 uVar10;
-  dword dVar11;
+  dword dVar10;
+  undefined4 uVar11;
   STWorldObject *pSVar12;
   STGroupBoatC *pSVar13;
   uint uVar15;
@@ -34,7 +34,7 @@ undefined4 __thiscall STGroupBoatC::GrpAttack(STGroupBoatC *this,int param_1)
   undefined3 uStack_1f;
   byte local_1c;
   undefined3 uStack_1b;
-  int local_18;
+  dword local_18;
   int local_14;
   int local_10;
   int local_c;
@@ -72,8 +72,7 @@ undefined4 __thiscall STGroupBoatC::GrpAttack(STGroupBoatC *this,int param_1)
     iVar6 = 0;
     pSVar13->field_0065 = 0;
     if (pSVar13->field_00E7 == 0) {
-      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-      local_18 = *(int *)(local_8->field_00EF + 0xc);
+      local_18 = local_8->field_00EF->count;
       if (local_18 == 0) {
         RaiseInternalException
                   (-0x5001fff7,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_grpb.cpp",
@@ -88,10 +87,10 @@ undefined4 __thiscall STGroupBoatC::GrpAttack(STGroupBoatC *this,int param_1)
       sVar5 = 0;
       local_8->field_020E = pDVar7;
       pSVar13 = local_8;
-      if (0 < local_18) {
+      if (0 < (int)local_18) {
         uVar15 = 0;
         do {
-          DArrayGetElement((DArrayTy *)pSVar13->field_00EF,uVar15,&local_2c);
+          DArrayGetElement(pSVar13->field_00EF,uVar15,&local_2c);
           /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
           if ((local_2c < 8) &&
              ((((g_playSystem_00802A38 == (STPlaySystemC *)0x0 ||
@@ -108,10 +107,10 @@ undefined4 __thiscall STGroupBoatC::GrpAttack(STGroupBoatC *this,int param_1)
           }
           sVar5 = sVar5 + 1;
           uVar15 = (uint)sVar5;
-        } while ((int)uVar15 < local_18);
+        } while ((int)uVar15 < (int)local_18);
       }
-      DArrayDestroy((DArrayTy *)pSVar13->field_00EF);
-      pSVar13->field_00EF = 0;
+      DArrayDestroy(pSVar13->field_00EF);
+      pSVar13->field_00EF = (DArrayTy *)0x0;
       if (pSVar13->field_020E->count == 0) {
         RaiseInternalException
                   (-0x5001fff7,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_grpb.cpp",
@@ -215,9 +214,9 @@ LAB_0049b073:
                         cStack_2b = '\x03';
                         iVar6 = (*pSVar12->vtable[5].slots_00_28[2])();
                         if ((iVar6 == 1) &&
-                           (iVar6 = (*pSVar12->vtable[5].slots_00_28[1])((int)pSVar13->field_0024),
-                           iVar6 == 1)) {
-                          local_18 = iVar6;
+                           (dVar10 = (*pSVar12->vtable[5].slots_00_28[1])((int)pSVar13->field_0024),
+                           dVar10 == 1)) {
+                          local_18 = dVar10;
                           Library::DKW::TBL::FUN_006ae1c0
                                     (&pSVar13->field_020E->flags,(undefined4 *)&local_2c);
                         }
@@ -269,9 +268,9 @@ LAB_0049aec9:
                         iVar9 = (*pSVar12->vtable[5].slots_00_28[2])();
                         pSVar13 = local_8;
                         if ((iVar9 == 1) &&
-                           (iVar9 = (*pSVar12->vtable[5].slots_00_28[1])((int)local_8->field_0024),
-                           iVar9 == 1)) {
-                          local_18 = iVar9;
+                           (dVar10 = (*pSVar12->vtable[5].slots_00_28[1])((int)local_8->field_0024),
+                           dVar10 == 1)) {
+                          local_18 = dVar10;
                           Library::DKW::TBL::FUN_006ae1c0
                                     (&pSVar13->field_020E->flags,(undefined4 *)&local_2c);
                         }
@@ -305,8 +304,8 @@ LAB_0049aec9:
     pSVar16 = local_8;
     if (pSVar13->field_00EB == 1) {
       sVar5 = 0;
-      dVar11 = local_8->field_020E->count;
-      if (0 < (int)dVar11) {
+      dVar10 = local_8->field_020E->count;
+      if (0 < (int)dVar10) {
         do {
           DArrayGetElement(local_8->field_020E,(int)sVar5,&local_2c);
           /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
@@ -315,11 +314,11 @@ LAB_0049aec9:
                                  (g_allPlayers_007FA174,local_2c,CONCAT22(uStack_28,uStack_2a),
                                   CASE_1), pSVar8->field_0020 != 0x14)) {
             FUN_006b0c70(local_8->field_020E,(int)sVar5);
-            dVar11 = dVar11 - 1;
+            dVar10 = dVar10 - 1;
             sVar5 = sVar5 + -1;
           }
           sVar5 = sVar5 + 1;
-        } while ((int)sVar5 < (int)dVar11);
+        } while ((int)sVar5 < (int)dVar10);
       }
       pSVar16 = local_8;
       if (local_8->field_020E->count == 0) {

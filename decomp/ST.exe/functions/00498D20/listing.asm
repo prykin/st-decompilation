@@ -1,4 +1,4 @@
-FUN_00498d20:
+STGroupBoatC::SetOrderData:
 00498D20  55                        PUSH EBP
 00498D21  8B EC                     MOV EBP,ESP
 00498D23  83 EC 0C                  SUB ESP,0xc

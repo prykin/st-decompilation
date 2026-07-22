@@ -537,9 +537,8 @@ LAB_004d1f0b:
                  g_playSystem_00802A38->field_00E4);
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
       (*(code *)this_00->field_0000->field_0090)(3,0x362);
-      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
       thunk_FUN_004abce0(this_00->field_035C,0xe,0,
-                         **(int **)(this_00->field_035C->field_0020 + 0x1f8) + -1,'\0');
+                         *(int *)this_00->field_035C->field_0020->field_01F8 + -1,'\0');
       STT3DSprC::SetCurFase(this_00->field_035C,'\x0e',0);
       STT3DSprC::StartShow(this_00->field_035C,0xe,g_playSystem_00802A38->field_00E4);
       thunk_FUN_004ad460(this_00->field_035C,0);

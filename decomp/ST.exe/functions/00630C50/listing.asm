@@ -1,4 +1,4 @@
-STManRuinC::sub_00630C50:
+SubmarineTitans::Recovered::HiddenThis::AnonReceiver_006308F0::sub_00630C50:
 00630C50  55                        PUSH EBP
 00630C51  8B EC                     MOV EBP,ESP
 00630C53  83 EC 54                  SUB ESP,0x54

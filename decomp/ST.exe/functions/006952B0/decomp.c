@@ -5,13 +5,14 @@
 /* [STPrototypeRepairApplier] Propagated parameter 1.
    Evidence: 006952B0 -> 006F13F0 @ 0069582E */
 
-int __thiscall FUN_006952b0(void *this,byte *param_1,byte *param_2)
+int __thiscall
+CGenerate::FUN_006952b0(CGenerate *this,AnonShape_006952B0_7A982E30 *param_1,byte *param_2)
 
 {
   int iVar1;
   CGenerate *this_00;
   int iVar2;
-  byte *pbVar3;
+  AnonShape_006952B0_7A982E30 *pAVar3;
   undefined4 *puVar4;
   InternalExceptionFrame local_d4;
   DArrayTy *local_78;
@@ -42,38 +43,32 @@ int __thiscall FUN_006952b0(void *this,byte *param_1,byte *param_2)
   local_c = 0;
   local_4c = this;
   Library::MSVCRT::FUN_0072e6b0(*(DWORD *)param_1);
-  pbVar3 = param_1;
-  puVar4 = (undefined4 *)((int)this + 0x1c);
+  pAVar3 = param_1;
+  puVar4 = (undefined4 *)&this->field_0x1c;
   for (iVar2 = 0x8c; iVar2 != 0; iVar2 = iVar2 + -1) {
-    *puVar4 = *(undefined4 *)pbVar3;
-    pbVar3 = pbVar3 + 4;
+    *puVar4 = *(undefined4 *)pAVar3;
+    pAVar3 = (AnonShape_006952B0_7A982E30 *)&pAVar3->field_0x4;
     puVar4 = puVar4 + 1;
   }
-  *(undefined2 *)puVar4 = *(undefined2 *)pbVar3;
-  iVar2 = CGenerate::CreateMap(this);
-  CGenerate::sub_0069FF90(this);
+  *(undefined2 *)puVar4 = *(undefined2 *)pAVar3;
+  iVar2 = CreateMap(this);
+  sub_0069FF90(this);
   if (iVar2 != 0) {
     local_10 = 1;
     local_48 = timeGetTime();
     local_3c = 0;
     local_70 = timeGetTime();
-    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-    local_28 = *(uint *)(param_1 + 0x214);
-    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-    iVar2 = thunk_FUN_00698f90(*(int *)(param_1 + 0x20c),*(int *)(param_1 + 0x210),local_28,
-                               (uint)param_1[0x22d],(int *)&local_1c,&local_18);
+    local_28 = param_1->field_0214;
+    iVar2 = thunk_FUN_00698f90(param_1->field_020C,param_1->field_0210,local_28,
+                               (uint)(byte)param_1->field_0x22d,(int *)&local_1c,&local_18);
     if (iVar2 == 0) {
       local_1c = local_28 * 3;
       local_18 = 1;
     }
-    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-    local_30 = *(undefined4 *)(param_1 + 0x225);
-    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-    local_34 = *(int *)(param_1 + 0x221);
-    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-    local_44 = *(int *)(param_1 + 0x210) * *(int *)(param_1 + 0x20c);
-    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-    local_38 = *(undefined4 *)(param_1 + 0x229);
+    local_30 = param_1->field_0225;
+    local_34 = param_1->field_0221;
+    local_44 = param_1->field_0210 * param_1->field_020C;
+    local_38 = param_1->field_0229;
     local_24 = local_44 / 500;
     local_2c = 5;
     local_20 = local_44 / 0x640;
@@ -90,109 +85,104 @@ int __thiscall FUN_006952b0(void *this,byte *param_1,byte *param_2)
       local_54->count = 0;
       local_50->count = 0;
       memset((void *)local_6c, 0, 0x18); /* compiler bulk-zero initialization */
-      if ((*(int *)((int)this + 8) == 0) && (*(int *)((int)this + 0xc) == 0)) {
-        thunk_FUN_006a0150(this);
+      if ((this->field_0008 == (int *)0x0) && (this->field_000C == (byte *)0x0)) {
+        thunk_FUN_006a0150((AnonShape_006A0150_D0561BCC *)this);
       }
-      CGenerate::CteateField
-                (this,**(int **)((int)this + 8) + -2,(*(int **)((int)this + 8))[1] + -2,local_34,
-                 local_30,local_38,0);
-      CGenerate::sub_0069FF90(this);
+      CteateField(this,*this->field_0008 + -2,this->field_0008[1] + -2,local_34,local_30,local_38,0)
+      ;
+      sub_0069FF90(this);
       thunk_FUN_00696790((int)this);
-      CGenerate::sub_0069FF90(this);
+      sub_0069FF90(this);
       thunk_FUN_00696810(this);
-      CGenerate::sub_0069FF90(this);
+      sub_0069FF90(this);
       thunk_FUN_00696740(this,0);
-      CGenerate::sub_0069FF90(this);
+      sub_0069FF90(this);
       iVar2 = thunk_FUN_006971b0((int)this);
-      *(int *)((int)this + 0x583f) = iVar2;
-      CGenerate::sub_0069FF90(this);
-      thunk_FUN_00696dc0(this,*(int *)((int)this + 0x583f),local_2c);
-      CGenerate::sub_0069FF90(this);
-      thunk_FUN_00696940(this,*(int *)((int)this + 0x583f));
-      CGenerate::sub_0069FF90(this);
+      this->field_583F = iVar2;
+      sub_0069FF90(this);
+      thunk_FUN_00696dc0(this,this->field_583F,local_2c);
+      sub_0069FF90(this);
+      thunk_FUN_00696940(this,this->field_583F);
+      sub_0069FF90(this);
       thunk_FUN_00695eb0(this);
-      CGenerate::sub_0069FF90(this);
-      CGenerate::CteateField
-                (this,**(int **)((int)this + 8),(*(int **)((int)this + 8))[1],local_34,local_30,
-                 local_38,1);
-      CGenerate::sub_0069FF90(this);
+      sub_0069FF90(this);
+      CteateField(this,*this->field_0008,this->field_0008[1],local_34,local_30,local_38,1);
+      sub_0069FF90(this);
       thunk_FUN_00697390(this);
-      CGenerate::sub_0069FF90(this);
+      sub_0069FF90(this);
       thunk_FUN_006975f0(this);
-      CGenerate::sub_0069FF90(this);
+      sub_0069FF90(this);
       thunk_FUN_00695f20(this);
-      CGenerate::sub_0069FF90(this);
+      sub_0069FF90(this);
       thunk_FUN_00697390(this);
-      CGenerate::sub_0069FF90(this);
+      sub_0069FF90(this);
       thunk_FUN_00696740(this,1);
-      CGenerate::sub_0069FF90(this);
+      sub_0069FF90(this);
       thunk_FUN_006978c0((int)this);
-      CGenerate::sub_0069FF90(this);
+      sub_0069FF90(this);
       thunk_FUN_00695f20(this);
-      CGenerate::sub_0069FF90(this);
+      sub_0069FF90(this);
       thunk_FUN_00697390(this);
-      CGenerate::sub_0069FF90(this);
+      sub_0069FF90(this);
       thunk_FUN_00696740(this,1);
-      CGenerate::sub_0069FF90(this);
+      sub_0069FF90(this);
       thunk_FUN_006988c0(this);
-      CGenerate::sub_0069FF90(this);
+      sub_0069FF90(this);
       thunk_FUN_00697cf0(this,local_24,local_20);
-      CGenerate::sub_0069FF90(this);
-      Library::Ourlib::MFSTMAP::AuxTMapRefreshAll
-                (*(short **)((int)this + 0xc),*(int **)((int)this + 8));
-      CGenerate::sub_0069FF90(this);
-      thunk_FUN_0069b190(this,**(int **)((int)this + 8) << 1,(*(int **)((int)this + 8))[1] << 1,
-                         local_34 + -1);
-      CGenerate::sub_0069FF90(this);
+      sub_0069FF90(this);
+      Library::Ourlib::MFSTMAP::AuxTMapRefreshAll((short *)this->field_000C,this->field_0008);
+      sub_0069FF90(this);
+      thunk_FUN_0069b190(this,*this->field_0008 << 1,this->field_0008[1] << 1,local_34 + -1);
+      sub_0069FF90(this);
       _DAT_00853dd0 = Library::MSVCRT::FUN_0072e6c0();
       /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
       local_6c._12_4_ =
            thunk_FUN_0069bdc0(this,local_28,10,10,4,0x23,(int)local_8,
                               (AnonShape_0069BDC0_B656F442 *)local_6c);
-      CGenerate::sub_0069FF90(this);
+      sub_0069FF90(this);
       _DAT_00853dd0 = Library::MSVCRT::FUN_0072e6c0();
       /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
       local_6c._8_4_ =
-           thunk_FUN_006991c0(this,**(int **)((int)this + 8) << 1,(*(int **)((int)this + 8))[1] << 1
-                              ,local_1c,local_18,local_28,(int)local_8,local_34 + -1,
+           thunk_FUN_006991c0(this,*this->field_0008 << 1,this->field_0008[1] << 1,local_1c,local_18
+                              ,local_28,(int)local_8,local_34 + -1,
                               (AnonShape_006991C0_D95B9E4A *)local_6c);
-      CGenerate::sub_0069FF90(this);
+      sub_0069FF90(this);
       _DAT_00853dd0 = Library::MSVCRT::FUN_0072e6c0();
       thunk_FUN_00695eb0(this);
-      CGenerate::sub_0069FF90(this);
+      sub_0069FF90(this);
       iVar2 = thunk_FUN_00695180((AnonShape_0052EFB0_8161B92D *)local_6c,
                                  (AnonShape_00695180_3C0E4B54 *)&stack0xffffff70,(int)&local_38,
                                  local_c);
       if (iVar2 == 0) {
-        thunk_FUN_00694b90(this);
+        thunk_FUN_00694b90((AnonShape_00694B90_ACA70D4F *)this);
       }
       else {
         local_c = 1;
         thunk_FUN_00695140((undefined4 *)local_6c,(undefined4 *)&stack0xffffff70);
-        thunk_FUN_00694c30(this);
+        thunk_FUN_00694c30((AnonNested_0075DA80_01B6_323D7698 *)this);
       }
       local_3c = timeGetTime();
       local_10 = local_10 + -1;
     }
     if (local_c == 1) {
-      thunk_FUN_00694c80(this);
+      thunk_FUN_00694c80((AnonNested_0075DA80_01B6_323D7698 *)this);
       DAT_00853dd4 = (undefined4 *)
-                     Library::DKW::LIB::FUN_006aac70
-                               ((*(int **)((int)this + 8))[1] * **(int **)((int)this + 8) * 0x28);
-      thunk_FUN_00575640(*(short **)((int)this + 0xc),DAT_00853dd4,(short *)0x1);
+                     Library::DKW::LIB::FUN_006aac70(this->field_0008[1] * *this->field_0008 * 0x28)
+      ;
+      thunk_FUN_00575640((short *)this->field_000C,DAT_00853dd4,(short *)0x1);
       _DAT_00853dd0 = Library::MSVCRT::FUN_0072e6c0();
       thunk_FUN_00694cd0(this,(AnonShape_00694CD0_AC50FDB9 *)&stack0xffffff70);
       _DAT_00853dd0 = Library::MSVCRT::FUN_0072e6c0();
-      thunk_FUN_006a0470(this);
-      CGenerate::sub_0069FF90(this);
+      thunk_FUN_006a0470((AnonShape_006A0470_E995C390 *)this);
+      sub_0069FF90(this);
       _DAT_00853dd0 = Library::MSVCRT::FUN_0072e6c0();
-      thunk_FUN_0069cb50(this);
+      thunk_FUN_0069cb50((int *)this);
       _DAT_00853dd0 = Library::MSVCRT::FUN_0072e6c0();
-      iVar2 = **(int **)((int)this + 8);
-      iVar1 = (*(int **)((int)this + 8))[1];
+      iVar2 = *this->field_0008;
+      iVar1 = this->field_0008[1];
       thunk_FUN_0069f160(this,iVar2 * 2,iVar1 * 2,local_34,(iVar2 * iVar1 * 4) / 100);
-      local_40 = CGenerate::SaveMap(this);
-      CGenerate::sub_0069FF90(this);
+      local_40 = SaveMap(this);
+      sub_0069FF90(this);
       if (DAT_00853dd4 != (undefined4 *)0x0) {
         FreeAndNull(&DAT_00853dd4);
       }
@@ -202,11 +192,11 @@ int __thiscall FUN_006952b0(void *this,byte *param_1,byte *param_2)
       this_00 = local_4c;
       if (iVar2 == 0) {
         if (param_2 != (byte *)0x0) {
-          cMf32::RecPut(local_4c->field_0018,0xc,PTR_s_GENERATE_RND_0079d774,param_1,0x232,
+          cMf32::RecPut(local_4c->field_0018,0xc,PTR_s_GENERATE_RND_0079d774,(byte *)param_1,0x232,
                         (undefined4 *)0x0,'\0',(uint *)0x0);
           cMf32::RecPut(this_00->field_0018,0xc,PTR_s_INTERFACE_RND_0079d778,param_2,0xd,
                         (undefined4 *)0x0,'\0',(uint *)0x0);
-          CGenerate::sub_0069FF90(this_00);
+          sub_0069FF90(this_00);
         }
         g_currentExceptionFrame = local_d4.previous;
       }

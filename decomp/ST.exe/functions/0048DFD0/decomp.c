@@ -15,9 +15,9 @@
    incoming_ecx_receiver_callers=0; attributed_named_callers=2; owner_evidence_coverage=adequate */
 
 undefined4 __thiscall
-STBoatC::sub_0048DFD0
-          (STBoatC *this,short param_1,short param_2,short param_3,short param_4,short param_5,
-          int *param_6,int param_7,short *param_8,short *param_9,short *param_10)
+SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0048DFD0::sub_0048DFD0
+          (AnonReceiver_0048DFD0 *this,short param_1,short param_2,short param_3,short param_4,
+          short param_5,int *param_6,int param_7,short *param_8,short *param_9,short *param_10)
 
 {
   short sVar1;
@@ -137,7 +137,7 @@ STBoatC::sub_0048DFD0
   short local_34;
   short local_32;
   undefined4 *local_30;
-  STBoatC *local_2c;
+  AnonReceiver_0048DFD0 *local_2c;
   int local_28;
   undefined4 *local_24;
   int local_20;
@@ -523,12 +523,13 @@ STBoatC::sub_0048DFD0
     local_24 = local_8;
   }
   if ((param_1 == param_4) && (param_2 == param_5)) {
-    uVar6 = local_2c->field_001C * 0x41c64e6d + 0x3039;
-    local_2c->field_001C = uVar6;
+    uVar6 = *(int *)&local_2c->field_0x1c * 0x41c64e6d + 0x3039;
+    *(uint *)&local_2c->field_0x1c = uVar6;
     _param_3 = uVar6 >> 0x10 & 7;
   }
   else {
-    sVar3 = (*local_2c->vtable->vfunc_10)
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+    sVar3 = (**(code **)(*(int *)local_2c + 0x10))
                       (_param_1 * 0xc9 + 100,_param_2 * 0xc9 + 100,_param_3 * 200 + 100,
                        _param_4 * 0xc9 + 100,_param_5 * 0xc9 + 100,(int)param_6 * 200 + 100);
     iVar4 = (int)sVar3;
@@ -690,7 +691,7 @@ STBoatC::sub_0048DFD0
       }
       local_14 = 0;
       do {
-        local_2c = (STBoatC *)0x0;
+        local_2c = (AnonReceiver_0048DFD0 *)0x0;
         param_6 = local_3fc + _param_3 * 0x15;
         do {
           local_f4 = *param_6;
@@ -811,7 +812,7 @@ joined_r0x0048f3a9:
               }
             }
           }
-          local_2c = (STBoatC *)((int)&local_2c->vtable + 1);
+          local_2c = (AnonReceiver_0048DFD0 *)&local_2c->field_0x1;
           param_6 = param_6 + 1;
         } while ((int)local_2c < 0x15);
         local_14 = local_14 + 1;

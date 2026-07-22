@@ -155,7 +155,9 @@ int __thiscall ChooseMapTy::GetMessage(ChooseMapTy *this,STMessage *message)
     if (SVar5 == MESS_CHOOSEMAPTY_6327) {
       piVar6 = (message->arg0).ptr;
       resourceId = 0x2342;
-      sub_005B5BE0(this_01,(AnonShape_006B5B10_E0D06CF1 *)this_01->field_1C8B,piVar6);
+      SubmarineTitans::Recovered::HiddenThis::AnonReceiver_005B5BE0::sub_005B5BE0
+                ((AnonReceiver_005B5BE0 *)this_01,(AnonShape_006B5B10_E0D06CF1 *)this_01->field_1C8B
+                 ,piVar6);
       switch(this_01->field_1A5F) {
       case CASE_1:
       case CASE_2:

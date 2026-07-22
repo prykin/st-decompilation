@@ -14,7 +14,7 @@ int __thiscall IntercomPanelTy::GetMessage(IntercomPanelTy *this,STMessage *mess
 {
   ushort uVar1;
   STMessageId SVar2;
-  uint *puVar3;
+  AnonShape_00710790_4CBB90D4 *pAVar3;
   ushort *puVar4;
   code *pcVar5;
   IntercomPanelTy *this_00;
@@ -22,8 +22,8 @@ int __thiscall IntercomPanelTy::GetMessage(IntercomPanelTy *this,STMessage *mess
   undefined4 *puVar7;
   int iVar8;
   uint uVar9;
-  uint **ppuVar10;
-  uint *local_8dc [3];
+  AnonShape_00710790_4CBB90D4 **ppAVar10;
+  AnonShape_00710790_4CBB90D4 *local_8dc [3];
   int local_8d0;
   int local_8cc;
   int local_8c8;
@@ -74,21 +74,21 @@ int __thiscall IntercomPanelTy::GetMessage(IntercomPanelTy *this,STMessage *mess
             this_00->field_0044 = this_00->field_0044 + 5;
           }
           if (iVar6 <= this_00->field_0044) {
-            ppuVar10 = local_8dc;
+            ppAVar10 = local_8dc;
             for (iVar8 = 0x223; iVar8 != 0; iVar8 = iVar8 + -1) {
-              *ppuVar10 = (uint *)0x0;
-              ppuVar10 = ppuVar10 + 1;
+              *ppAVar10 = (AnonShape_00710790_4CBB90D4 *)0x0;
+              ppAVar10 = ppAVar10 + 1;
             }
-            puVar3 = this_00->field_0180;
+            pAVar3 = this_00->field_0180;
             this_00->field_0044 = iVar6;
             this_00->field_0172 = 1;
-            local_8dc[0] = (uint *)0x1;
-            local_8dc[1] = (uint *)0x9;
-            local_8dc[2] = puVar3;
-            if (puVar3[0x28] != 0) {
-              FUN_00710790(puVar3);
+            local_8dc[0] = (AnonShape_00710790_4CBB90D4 *)0x1;
+            local_8dc[1] = (AnonShape_00710790_4CBB90D4 *)0x9;
+            local_8dc[2] = pAVar3;
+            if (*(int *)(pAVar3 + 1) != 0) {
+              FUN_00710790(pAVar3);
             }
-            local_8c4 = *(int *)((int)puVar3 + 0x8a) + 1;
+            local_8c4 = pAVar3->field_008A + 1;
             local_8d0 = (-(uint)(DAT_0080874e != '\x03') & 0xffffffe7) + 0x1e + this_00->field_003C;
             local_7c = 1;
             local_80 = 1;

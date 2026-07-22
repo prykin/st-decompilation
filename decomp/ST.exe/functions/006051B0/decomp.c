@@ -137,8 +137,9 @@ STExplosionC::LoadImagSpr(STExplosionC *this,undefined4 param_1,undefined4 param
                             (short)((longlong)iVar8 * 0x28c1979 >> 0x3f));
       }
       if ((((DAT_0080874d == -1) || (g_visibleClass_00802A88->field_00F8 == 0)) ||
-          (thunk_FUN_00558c00(g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,iVar8,
-                              iVar5,&local_1c,&local_20), local_14 < 0)) || (4 < local_14)) {
+          (VisibleClassTy::sub_00558C00
+                     (g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,iVar8,iVar5,
+                      &local_1c,&local_20), local_14 < 0)) || (4 < local_14)) {
         bVar10 = true;
       }
       else {

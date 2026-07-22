@@ -27,8 +27,9 @@ int __thiscall FUN_006028a0(void *this,int param_1,int param_2,int param_3)
     if (g_visibleClass_00802A88->field_00F8 == 0) {
       return iVar2;
     }
-    thunk_FUN_00558c00(g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,param_1,iVar3,
-                       &param_2,(int *)&local_8);
+    VisibleClassTy::sub_00558C00
+              (g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,param_1,iVar3,&param_2,
+               (int *)&local_8);
     if (param_3 < 0) {
       return iVar2;
     }

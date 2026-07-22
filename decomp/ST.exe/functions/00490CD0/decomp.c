@@ -11,7 +11,9 @@
    incoming_ecx_receiver_callers=0; attributed_named_callers=1; owner_evidence_coverage=adequate */
 
 void __thiscall
-STBoatC::sub_00490CD0(STBoatC *this,undefined4 param_1,undefined4 param_2,int param_3,int param_4)
+SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00490CD0::sub_00490CD0
+          (AnonReceiver_00490CD0 *this,undefined4 param_1,undefined4 param_2,int param_3,int param_4
+          )
 
 {
   short sVar1;
@@ -41,11 +43,9 @@ STBoatC::sub_00490CD0(STBoatC *this,undefined4 param_1,undefined4 param_2,int pa
     /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
     param_4._2_2_ = g_worldGrid.sizeZ + -1;
   }
-  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-  this->field_0475 = param_3._2_2_;
-  this->field_0477 = sVar1;
-  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-  this->field_0479 = param_4._2_2_;
+  *(short *)&this->field_0x475 = param_3._2_2_;
+  *(short *)&this->field_0x477 = sVar1;
+  *(short *)&this->field_0x479 = param_4._2_2_;
   return;
 }
 

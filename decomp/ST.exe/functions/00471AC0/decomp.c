@@ -64,7 +64,9 @@ int __thiscall STBoatC::Guard(STBoatC *this,int param_1)
   if ((param_1 == 0) || (param_1 == 1)) {
     memset(&this->field_02CC, 0, 0x5c); /* compiler bulk-zero initialization */
     this->field_02C4 = 0;
-    sub_00490CD0(this,this->field_03A6,this->field_03AA,this->field_03AE,this->field_03B2);
+    SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00490CD0::sub_00490CD0
+              ((AnonReceiver_00490CD0 *)this,this->field_03A6,this->field_03AA,this->field_03AE,
+               this->field_03B2);
     this->field_047B = (DArrayTy *)0x0;
     this->field_0487 = 0xffffffff;
     this->field_048B = 0xffff;

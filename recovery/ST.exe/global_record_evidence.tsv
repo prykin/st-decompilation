@@ -1,5 +1,5 @@
 kind	site
-stride_function	0042A940 FUN_0042a940
+stride_function	0042A940 STAllPlayersC::STAllPlayersC
 stride_function	00430A90 STAllPlayersC::GetMessage
 stride_function	004354E0 STAllPlayersC::ReplaceObject
 stride_function	00443F30 STAllPlayersC::SaveAllPlData
@@ -9,14 +9,14 @@ stride_function	004B9FA0 TLOBaseTy::GetMessage
 stride_function	004DA9C0 FUN_004da9c0
 stride_function	004EB150 FUN_004eb150
 total_size	00444E70 FUN_00444e70 @ 00445347
-end_boundary	0042A940 FUN_0042a940 @ 0042A96A
+end_boundary	0042A940 STAllPlayersC::STAllPlayersC @ 0042A96A
 end_boundary	00430A90 STAllPlayersC::GetMessage @ 00430B9D
 end_boundary	00430A90 STAllPlayersC::GetMessage @ 004310FA
 end_boundary	00430A90 STAllPlayersC::GetMessage @ 0043110C
-base_reference	0042A940 FUN_0042a940 @ 0042A950
-base_reference	0042A940 FUN_0042a940 @ 0042A95B
-base_reference	0042A940 FUN_0042a940 @ 0042A95D
-base_reference	0042A940 FUN_0042a940 @ 0042A962
+base_reference	0042A940 STAllPlayersC::STAllPlayersC @ 0042A950
+base_reference	0042A940 STAllPlayersC::STAllPlayersC @ 0042A95B
+base_reference	0042A940 STAllPlayersC::STAllPlayersC @ 0042A95D
+base_reference	0042A940 STAllPlayersC::STAllPlayersC @ 0042A962
 base_reference	00430A90 STAllPlayersC::GetMessage @ 00430AFA
 base_reference	00430A90 STAllPlayersC::GetMessage @ 00430B09
 count_constant	00430A90 STAllPlayersC::GetMessage @ 00430ABE

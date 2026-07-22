@@ -18,7 +18,8 @@ void __thiscall STBHEShellC::sub_005F4680(STBHEShellC *this)
   int local_8;
 
   if (this->field_008F < 0) {
-    sub_005F35F0(this,this->field_0087);
+    SubmarineTitans::Recovered::HiddenThis::AnonReceiver_005F35F0::sub_005F35F0
+              ((AnonReceiver_005F35F0 *)this,this->field_0087);
   }
   pVVar2 = g_visibleClass_00802A88;
   if (g_visibleClass_00802A88 != (VisibleClassTy *)0x0) {
@@ -53,9 +54,9 @@ void __thiscall STBHEShellC::sub_005F4680(STBHEShellC *this)
                           (short)((longlong)iVar3 * 0x28c1979 >> 0x3f));
     }
     if ((((((DAT_0080874d != -1) && (g_visibleClass_00802A88->field_00F8 != 0)) &&
-          (thunk_FUN_00558c00(g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,iVar3,
-                              iVar5,&local_c,&local_10), -1 < local_8)) &&
-         ((local_8 < 5 && (-1 < local_c)))) &&
+          (VisibleClassTy::sub_00558C00
+                     (g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,iVar3,iVar5,
+                      &local_c,&local_10), -1 < local_8)) && ((local_8 < 5 && (-1 < local_c)))) &&
         ((local_c < pVVar2->field_0030 &&
          ((local_10 = g_centeredOffsets5[local_8] + local_10, -1 < local_10 &&
           (local_10 < pVVar2->field_0034)))))) &&

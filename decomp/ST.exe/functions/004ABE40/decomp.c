@@ -29,14 +29,14 @@ undefined4 __thiscall STT3DSprC::SetCurFase(STT3DSprC *this,char param_1,uint pa
     }
     else {
       iVar4 = param_1 * 0x24;
-      piVar6 = (int *)(this->field_0020 + iVar4);
+      piVar6 = (int *)(&this->field_0020->field_0x0 + iVar4);
       piVar1 = (int *)*piVar6;
       if (piVar1 != (int *)0x0) {
         iVar2 = piVar6[6];
         if ((-1 < iVar2) && (iVar2 < *piVar1)) {
           *(undefined4 *)(piVar6[1] + iVar2 * 4) = *(undefined4 *)((int)piVar1 + iVar2 * 4 + 0x31);
         }
-        *(uint *)(iVar4 + 0x18 + this->field_0020) = param_2;
+        *(uint *)(&this->field_0020->field_0x18 + iVar4) = param_2;
         return 0;
       }
     }

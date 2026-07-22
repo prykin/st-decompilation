@@ -17,10 +17,12 @@
    incoming_edx_uses=0; incoming_stack_parameter_uses=54; direct_non_thunk_callers=0;
    incoming_ecx_receiver_callers=0; attributed_named_callers=1; owner_evidence_coverage=adequate */
 
-void __thiscall HelpPanelTy::sub_00512BE0(HelpPanelTy *this,int param_1)
+void __thiscall
+SubmarineTitans::Recovered::HiddenThis::AnonReceiver_004EEFB0::sub_00512BE0
+          (AnonReceiver_004EEFB0 *this,int param_1)
 
 {
-  uint *puVar1;
+  AnonShape_00710790_4CBB90D4 *pAVar1;
   code *pcVar2;
   AnonShape_00512BE0_C9F23DAB *this_00;
   int iVar3;
@@ -94,15 +96,15 @@ void __thiscall HelpPanelTy::sub_00512BE0(HelpPanelTy *this,int param_1)
     else {
       local_8a0 = local_8->field_0044;
     }
-    puVar1 = local_8->field_01E4;
+    pAVar1 = (AnonShape_00710790_4CBB90D4 *)local_8->field_01E4;
     local_8a0 = local_8a0 + 0x16;
     local_8c4[2] = 1;
     local_8c4[3] = *(undefined4 *)(param_1 + 8);
     local_8b4 = 0x19c;
-    if (puVar1[0x28] != 0) {
-      FUN_00710790(puVar1);
+    if (*(int *)(pAVar1 + 1) != 0) {
+      FUN_00710790(pAVar1);
     }
-    local_8b0 = *(int *)((int)puVar1 + 0x8a);
+    local_8b0 = pAVar1->field_008A;
     local_8a8 = (undefined4)(0x118 / (longlong)local_8b0);
     local_808[2] = this_00->field_003C + 0x1c3;
     local_8ac = 1;

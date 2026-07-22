@@ -1,1 +1,4 @@
 function_address	function	decompiler_label	goto_count	reason
+006CEF60	FUN_006cef60	LAB_006cf695	1	could_not_resolve_decompiler_label
+006CEF60	FUN_006cef60	LAB_006cf8ee	1	could_not_resolve_decompiler_label
+006CEF60	FUN_006cef60	LAB_006cf911	8	could_not_resolve_decompiler_label

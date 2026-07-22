@@ -289,10 +289,11 @@ LAB_00478b7a:
         if (iVar9 != 3) {
           return 2;
         }
-        sub_0048DFD0(this,this->field_061D,this->field_061F,this->field_0621,this->field_061D,
-                     this->field_061F,(int *)(uint)(ushort)this->field_0621,3,
-                     (short *)&this->field_0x627,(short *)&this->field_0x629,
-                     (short *)&this->field_0x62b);
+        SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0048DFD0::sub_0048DFD0
+                  ((AnonReceiver_0048DFD0 *)this,this->field_061D,this->field_061F,this->field_0621,
+                   this->field_061D,this->field_061F,(int *)(uint)(ushort)this->field_0621,3,
+                   (short *)&this->field_0x627,(short *)&this->field_0x629,
+                   (short *)&this->field_0x62b);
 LAB_00478b1a:
         iVar8 = (int)*(short *)&this->field_0x62b;
         iVar10 = (int)*(short *)&this->field_0x629;
@@ -331,9 +332,10 @@ LAB_00478b1a:
       puVar1 = &this->field_0x62b;
       if (*(int *)&pSVar5[0x1d].field_0x18 == 0) {
 LAB_00478f91:
-        sub_0048DFD0(this,this->field_061D,this->field_061F,this->field_0621,this->field_061D,
-                     this->field_061F,(int *)(uint)(ushort)this->field_0621,3,
-                     (short *)&this->field_0x627,(short *)&this->field_0x629,(short *)puVar1);
+        SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0048DFD0::sub_0048DFD0
+                  ((AnonReceiver_0048DFD0 *)this,this->field_061D,this->field_061F,this->field_0621,
+                   this->field_061D,this->field_061F,(int *)(uint)(ushort)this->field_0621,3,
+                   (short *)&this->field_0x627,(short *)&this->field_0x629,(short *)puVar1);
       }
       else {
         if (&this->field_0x627 != (undefined1 *)0x0) {

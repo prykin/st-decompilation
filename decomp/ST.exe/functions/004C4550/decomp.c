@@ -72,7 +72,7 @@ undefined4 __thiscall TLOBaseTy::sub_004C4550(TLOBaseTy *this,int *param_1)
         puVar5 = local_b0;
         memset(puVar5, 0, 0x28); /* compiler bulk-zero initialization */
         puVar5 = (undefined4 *)((byte *)puVar5 + 0x28);
-        (&this->field_029D)[(int)param_1 * 0x20] = 1;
+        *(undefined4 *)(&this->field_0x29d + iVar10) = 1;
         *(undefined2 *)puVar5 = 0;
         local_b0[1] = this->field_0024;
         local_b0[3] = 1;
@@ -91,15 +91,15 @@ undefined4 __thiscall TLOBaseTy::sub_004C4550(TLOBaseTy *this,int *param_1)
           local_10 = CONCAT22(local_10._2_2_,this->field_0045);
         }
         local_9c = (short)local_c;
-        local_96 = *(undefined2 *)(&this->field_02A5 + (int)param_1 * 0x20);
+        local_96 = *(undefined2 *)(&this->field_0x2a5 + iVar10);
         local_9a = (short)local_8;
         local_94 = *(undefined2 *)(&this->field_02A9 + (int)param_1 * 0x20);
         local_98 = (undefined2)local_10;
-        local_92 = *(undefined2 *)(&this->field_02AD + (int)param_1 * 0x20);
+        local_92 = *(undefined2 *)(&this->field_0x2ad + iVar10);
         STPlaySystemC::CreateGameObject(g_playSystem_00802A38,0x168,0,0,local_b0,0);
         return 0;
       }
-      (&this->field_029D)[(int)param_1 * 0x20] = 1;
+      *(undefined4 *)(&this->field_0x29d + iVar10) = 1;
       memset(local_84, 0, 0x58); /* compiler bulk-zero initialization */
       local_18 = *(int *)(&DAT_007932d0 + ((int)param_1 + this->field_0235 * 2) * 0x16);
       if (local_18 == 0) {
@@ -128,11 +128,11 @@ undefined4 __thiscall TLOBaseTy::sub_004C4550(TLOBaseTy *this,int *param_1)
           local_10 = CONCAT22(local_10._2_2_,this->field_0045);
         }
       }
-      local_64 = *(short *)(&this->field_02A5 + (int)param_1 * 0x20);
+      local_64 = *(short *)(&this->field_0x2a5 + iVar10);
       local_58 = 0;
       local_62 = *(short *)(&this->field_02A9 + (int)param_1 * 0x20);
-      local_60 = *(short *)(&this->field_02AD + (int)param_1 * 0x20);
-      local_5e = *(undefined2 *)&this->field_0259;
+      local_60 = *(short *)(&this->field_0x2ad + iVar10);
+      local_5e = (undefined2)this->field_0259;
       local_57 = this->field_0018;
       local_53 = this->field_0032;
       local_41 = (&this->field_028D)[(int)param_1 * 0x20];
@@ -152,7 +152,7 @@ undefined4 __thiscall TLOBaseTy::sub_004C4550(TLOBaseTy *this,int *param_1)
                        thunk_FUN_0041dc40(local_b8,(short)*(undefined4 *)
                                                            (&DAT_007932d4 + iVar3 + iVar11),
                                           *(undefined2 *)((int)(&DAT_007932d4 + iVar3 + iVar11) + 4)
-                                          ,-*(short *)&this->field_0259);
+                                          ,-(short)this->field_0259);
               local_2c = (short)*puVar5;
               sStack_2a = (short)((uint)*puVar5 >> 0x10);
               local_28 = *(short *)(puVar5 + 1);
@@ -163,17 +163,16 @@ undefined4 __thiscall TLOBaseTy::sub_004C4550(TLOBaseTy *this,int *param_1)
               local_20 = *(undefined2 *)(&DAT_007932d8 + iVar11 + iVar3 * 0x16);
               local_24 = (STJellyManC *)
                          (*(uint *)(&DAT_007932d4 + iVar3 * 0x16 + iVar11) & 0xffff0000);
-              puVar5 = (undefined4 *)thunk_FUN_0041dc40(local_c0,0,0,-*(short *)&this->field_0259);
+              puVar5 = (undefined4 *)thunk_FUN_0041dc40(local_c0,0,0,-(short)this->field_0259);
               local_2c = (short)*puVar5;
               sStack_2a = (short)((uint)*puVar5 >> 0x10);
-              local_64 = local_2c + *(short *)(&this->field_02A5 + (int)piVar2 * 0x20);
+              local_64 = local_2c + *(short *)(&this->field_0x2a5 + iVar10);
               local_62 = *(short *)(&this->field_02A9 + (int)piVar2 * 0x20) + sStack_2a;
-              local_60 = *(short *)(&this->field_02AD + (int)piVar2 * 0x20) + *(short *)(puVar5 + 1)
-              ;
+              local_60 = *(short *)(&this->field_0x2ad + iVar10) + *(short *)(puVar5 + 1);
             }
             iVar1 = (int)param_1 + this->field_0235 * 2;
             if ((*(int *)(&DAT_00793e28 + iVar1 * 4) == 0) ||
-               (iVar3 = local_18, piVar9 = param_1, (&this->field_02C5)[(int)piVar2 * 0x20] != 0)) {
+               (iVar3 = local_18, piVar9 = param_1, *(int *)(&this->field_0x2c5 + iVar10) != 0)) {
               iVar3 = (&DAT_00792ca0)[local_14 + iVar1 * 3];
               if (iVar3 == 0xab) {
                 thunk_FUN_00586240((int)local_6a,(int)local_68,(int)local_66,
@@ -190,7 +189,7 @@ undefined4 __thiscall TLOBaseTy::sub_004C4550(TLOBaseTy *this,int *param_1)
                 local_5c = iVar3;
                 if (iVar3 == 0xb0) {
                   local_84[0] = 0x15e;
-                  if (this->field_05AC == 0x68) {
+                  if (this->field_05AC == CASE_68) {
                     local_5c = 1;
                     this->field_04D4 = this->field_04D4 + -10;
                   }
@@ -204,9 +203,8 @@ undefined4 __thiscall TLOBaseTy::sub_004C4550(TLOBaseTy *this,int *param_1)
                 }
                 STPlaySystemC::CreateGameObject(g_playSystem_00802A38,iVar3,0,0,local_84,0);
               }
-              (&this->field_02C5)[(int)piVar2 * 0x20] = (&this->field_02C5)[(int)piVar2 * 0x20] + -1
-              ;
-              (&this->field_02C9)[(int)piVar2 * 0x20] = g_playSystem_00802A38->field_00E4;
+              *(int *)(&this->field_0x2c5 + iVar10) = *(int *)(&this->field_0x2c5 + iVar10) + -1;
+              *(uint *)(&this->field_0x2c9 + iVar10) = g_playSystem_00802A38->field_00E4;
               iVar3 = local_18;
               piVar9 = param_1;
             }
@@ -223,17 +221,17 @@ undefined4 __thiscall TLOBaseTy::sub_004C4550(TLOBaseTy *this,int *param_1)
     }
   }
   else if (iVar10 == 2) {
-    (&this->field_029D)[(int)param_1 * 0x20] = 1;
+    *(undefined4 *)(&this->field_0x29d + (int)param_1 * 0x80) = 1;
     switch((&DAT_00792ca0)[((int)param_1 + this->field_0235 * 2) * 3]) {
     case 0xa3:
       iVar3 = (int)param_1 * 0x20;
-      iVar10 = (int)param_1 * 0x20;
-      iVar11 = (int)param_1 * 0x20;
-      param_1 = &this->field_02A5 + iVar10;
+      iVar11 = (int)param_1 * 0x80;
+      iVar10 = (int)param_1 * 0x80;
+      param_1 = (int *)(&this->field_0x2a5 + iVar11);
       SubmarineTitans::Recovered::HiddenThis::AnonReceiver_004DB160::thunk_FUN_004db160
                 ((AnonReceiver_004DB160 *)g_allPlayers_007FA174,this->field_0024,0xa8,
-                 &this->field_02A5 + iVar10,&this->field_02A9 + iVar3,&this->field_02AD + iVar11,
-                 &local_1c);
+                 (int *)(&this->field_0x2a5 + iVar11),&this->field_02A9 + iVar3,
+                 (int *)(&this->field_0x2ad + iVar10),&local_1c);
       thunk_FUN_00584a30(this->field_04E0,this->field_04E4,this->field_04E8,*param_1 * 0xc9 + 100,
                          (&this->field_02A9)[iVar3] * 0xc9 + 100,this->field_0024,local_1c,
                          this->field_0018,this->field_0032);
@@ -254,13 +252,13 @@ undefined4 __thiscall TLOBaseTy::sub_004C4550(TLOBaseTy *this,int *param_1)
       break;
     case 0xa8:
       iVar3 = (int)param_1 * 0x20;
-      iVar10 = (int)param_1 * 0x20;
-      iVar11 = (int)param_1 * 0x20;
-      param_1 = &this->field_02A5 + iVar10;
+      iVar10 = (int)param_1 * 0x80;
+      iVar11 = (int)param_1 * 0x80;
+      param_1 = (int *)(&this->field_0x2a5 + iVar10);
       SubmarineTitans::Recovered::HiddenThis::AnonReceiver_004DB160::thunk_FUN_004db160
                 ((AnonReceiver_004DB160 *)g_allPlayers_007FA174,this->field_0024,0xa8,
-                 &this->field_02A5 + iVar10,&this->field_02A9 + iVar3,&this->field_02AD + iVar11,
-                 &local_1c);
+                 (int *)(&this->field_0x2a5 + iVar10),&this->field_02A9 + iVar3,
+                 (int *)(&this->field_0x2ad + iVar11),&local_1c);
       thunk_FUN_006405f0(0xa8,this->field_0024,this->field_0018,this->field_0032,
                          (short)this->field_04E0,(short)this->field_04E4,(short)this->field_04E8,
                          (short)*param_1 * 0xc9 + 100,(short)(&this->field_02A9)[iVar3] * 0xc9 + 100
@@ -285,9 +283,9 @@ undefined4 __thiscall TLOBaseTy::sub_004C4550(TLOBaseTy *this,int *param_1)
         this_00 = (void *)thunk_FUN_0058bab0(this->field_04E0,this->field_04E4,this->field_04E8,
                                              this->field_0024,this->field_0018,this->field_0032);
         this->field_04F0 = *(undefined4 *)((int)this_00 + 0x18);
-        if ((-1 < (int)(&this->field_02A5)[(int)piVar2 * 0x20]) &&
+        if ((-1 < *(int *)(&this->field_0x2a5 + (int)piVar2 * 0x80)) &&
            (-1 < (int)(&this->field_02A9)[(int)piVar2 * 0x20])) {
-          thunk_FUN_0058c560(this_00,(&this->field_02A5)[(int)piVar2 * 0x20],
+          thunk_FUN_0058c560(this_00,*(int *)(&this->field_0x2a5 + (int)piVar2 * 0x80),
                              (&this->field_02A9)[(int)piVar2 * 0x20]);
           return 0;
         }
@@ -295,13 +293,13 @@ undefined4 __thiscall TLOBaseTy::sub_004C4550(TLOBaseTy *this,int *param_1)
       break;
     case 0xbe:
       iVar3 = (int)param_1 * 0x20;
-      iVar10 = (int)param_1 * 0x20;
-      iVar11 = (int)param_1 * 0x20;
-      param_1 = &this->field_02A5 + iVar10;
+      iVar11 = (int)param_1 * 0x80;
+      iVar10 = (int)param_1 * 0x80;
+      param_1 = (int *)(&this->field_0x2a5 + iVar11);
       SubmarineTitans::Recovered::HiddenThis::AnonReceiver_004DB160::thunk_FUN_004db160
                 ((AnonReceiver_004DB160 *)g_allPlayers_007FA174,this->field_0024,0xa8,
-                 &this->field_02A5 + iVar10,&this->field_02A9 + iVar3,&this->field_02AD + iVar11,
-                 &local_1c);
+                 (int *)(&this->field_0x2a5 + iVar11),&this->field_02A9 + iVar3,
+                 (int *)(&this->field_0x2ad + iVar10),&local_1c);
       thunk_FUN_006405f0(0xbe,this->field_0024,this->field_0018,this->field_0032,
                          (short)this->field_04E0,(short)this->field_04E4,(short)this->field_04E8,
                          (short)*param_1 * 0xc9 + 100,(short)(&this->field_02A9)[iVar3] * 0xc9 + 100
@@ -337,7 +335,7 @@ undefined4 __thiscall TLOBaseTy::sub_004C4550(TLOBaseTy *this,int *param_1)
         iVar3 = FUN_006e62d0(g_playSystem_00802A38,this->field_04D0,(int *)&local_24);
         if (iVar3 != 0) {
           this->field_04D0 = CASE_0;
-          (&this->field_029D)[(int)piVar2 * 0x20] = 1;
+          *(undefined4 *)(&this->field_0x29d + (int)piVar2 * 0x80) = 1;
           return 0;
         }
         iVar3 = ((int)piVar2 + this->field_0235 * 2) * 0x16;
@@ -378,8 +376,9 @@ undefined4 __thiscall TLOBaseTy::sub_004C4550(TLOBaseTy *this,int *param_1)
               [(int)sVar6 * (int)g_worldGrid.sizeX + (int)sVar8 * (int)g_worldGrid.planeStride +
                (int)sVar7].objects[1] == (STWorldObject *)0x0)))))) {
           STJellyManC::Error(local_24,local_18,param_1,local_10);
-          (&this->field_029D)[(int)piVar2 * 0x20] = 1;
-          (&this->field_02C5)[(int)piVar2 * 0x20] = (&this->field_02C5)[(int)piVar2 * 0x20] + -1;
+          *(undefined4 *)(&this->field_0x29d + (int)piVar2 * 0x80) = 1;
+          *(int *)(&this->field_0x2c5 + (int)piVar2 * 0x80) =
+               *(int *)(&this->field_0x2c5 + (int)piVar2 * 0x80) + -1;
           return 0;
         }
       }
@@ -389,12 +388,13 @@ undefined4 __thiscall TLOBaseTy::sub_004C4550(TLOBaseTy *this,int *param_1)
       if ((this->field_04EC != 0) &&
          (iVar3 = FUN_006e62d0(g_playSystem_00802A38,this->field_04EC,(int *)&param_1), iVar3 == 0))
       {
-        thunk_FUN_00617b10(param_1,(&this->field_02A5)[(int)piVar2 * 0x20],
+        thunk_FUN_00617b10(param_1,*(undefined4 *)(&this->field_0x2a5 + (int)piVar2 * 0x80),
                            (&this->field_02A9)[(int)piVar2 * 0x20],
-                           (&this->field_02AD)[(int)piVar2 * 0x20],this->field_04F4,this->field_04F8
-                           ,this->field_04FC);
-        (&this->field_029D)[(int)piVar2 * 0x20] = 1;
-        (&this->field_02C5)[(int)piVar2 * 0x20] = (&this->field_02C5)[(int)piVar2 * 0x20] + -1;
+                           *(undefined4 *)(&this->field_0x2ad + (int)piVar2 * 0x80),this->field_04F4
+                           ,this->field_04F8,this->field_04FC);
+        *(undefined4 *)(&this->field_0x29d + (int)piVar2 * 0x80) = 1;
+        *(int *)(&this->field_0x2c5 + (int)piVar2 * 0x80) =
+             *(int *)(&this->field_0x2c5 + (int)piVar2 * 0x80) + -1;
         return 0;
       }
     }

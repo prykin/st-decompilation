@@ -96,7 +96,7 @@ void __thiscall FSGSTy::LicCtrls(FSGSTy *this)
       local_8a0 = 0x73;
       local_8c4[2] = 1;
       if (pcVar1->field_00A0 != 0) {
-        FUN_00710790((uint *)pcVar1);
+        FUN_00710790((AnonShape_00710790_4CBB90D4 *)pcVar1);
       }
       local_8b0 = *(int *)&pcVar1->field_0x8a;
       local_8a8 = (undefined4)(0x149 / (longlong)local_8b0);

@@ -297,7 +297,7 @@ LAB_004d600f:
       g_currentExceptionFrame = local_70.previous;
       return 0;
     }
-    thunk_FUN_004d32c0(this_00);
+    thunk_FUN_004d32c0((TLOBaseTy *)this_00);
     g_currentExceptionFrame = local_70.previous;
     return 0;
   }

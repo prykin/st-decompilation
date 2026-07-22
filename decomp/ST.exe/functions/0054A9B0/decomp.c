@@ -67,8 +67,9 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0054A9B0::FUN_0054a9b0
     uVar6 = 0;
   }
   else {
-    thunk_FUN_00558c00(g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,local_8,iVar5,
-                       &local_10,&local_14);
+    VisibleClassTy::sub_00558C00
+              (g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,local_8,iVar5,&local_10,
+               &local_14);
     if ((iVar8 < 0) || (4 < iVar8)) {
       uVar6 = 0xffffffff;
     }

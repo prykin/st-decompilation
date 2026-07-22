@@ -1,5 +1,10 @@
 
-void __fastcall FUN_00551800(AnonShape_00551800_EBA95FA4 *param_1)
+/* [STMethodOwnerApplier] Structural method owner recovered as TradePanelTy.
+   Evidence: this_call_owners=[TradePanelTy]; agreed_this_calls=1; incoming_this_accesses=33;
+   incoming_edx_uses=0; incoming_stack_parameter_uses=0; direct_non_thunk_callers=0;
+   incoming_ecx_receiver_callers=0; attributed_named_callers=1; owner_evidence_coverage=adequate */
+
+void __thiscall TradePanelTy::sub_00551800(TradePanelTy *this)
 
 {
   int iVar1;
@@ -8,37 +13,37 @@ void __fastcall FUN_00551800(AnonShape_00551800_EBA95FA4 *param_1)
   uint uVar4;
   undefined4 uVar5;
 
-  iVar1 = param_1->field_01C8;
-  if ((&param_1->field_01BC)[(byte)param_1->field_01D0] == 0) {
+  iVar1 = this->field_01C8;
+  if ((&this->field_01BC)[(byte)this->field_01D0] == 0) {
     if (iVar1 != 0) {
-      param_1->field_0028 = 0x21;
-      FUN_006e6080(param_1,2,iVar1,(undefined4 *)&param_1->field_0x18);
-      if (param_1->field_002C != 0) {
-        param_1->field_0028 = 0x20;
-        param_1->field_002C = 0;
-        FUN_006e6080(param_1,2,param_1->field_01C8,(undefined4 *)&param_1->field_0x18);
+      this->field_0028 = 0x21;
+      FUN_006e6080(this,2,iVar1,(undefined4 *)&this->field_0x18);
+      if (*(int *)&this->field_0x2c != 0) {
+        this->field_0028 = 0x20;
+        *(undefined4 *)&this->field_0x2c = 0;
+        FUN_006e6080(this,2,this->field_01C8,(undefined4 *)&this->field_0x18);
       }
     }
-    if (param_1->field_01CC == 0) {
+    if (this->field_01CC == 0) {
       return;
     }
-    param_1->field_0028 = 0x21;
-    FUN_006e6080(param_1,2,param_1->field_01CC,(undefined4 *)&param_1->field_0x18);
-    if (param_1->field_002C == 0) {
+    this->field_0028 = 0x21;
+    FUN_006e6080(this,2,this->field_01CC,(undefined4 *)&this->field_0x18);
+    if (*(int *)&this->field_0x2c == 0) {
       return;
     }
-    param_1->field_0028 = 0x20;
-    param_1->field_002C = 0;
+    this->field_0028 = 0x20;
+    *(undefined4 *)&this->field_0x2c = 0;
     goto LAB_00551a54;
   }
   if ((iVar1 == 0) || (g_allPlayers_007FA174 == (STAllPlayersC *)0x0)) goto LAB_005519bc;
-  param_1->field_0028 = 0x21;
-  FUN_006e6080(param_1,2,iVar1,(undefined4 *)&param_1->field_0x18);
-  iVar1 = param_1->field_002C;
-  if (param_1->field_01BB == '\0') {
-    if ((DAT_0080874e == '\x03') && (param_1->field_01D0 == '\0')) {
-      if (param_1->field_01AD == 0) goto LAB_0055198e;
-      iVar3 = (uint)param_1->field_01BC * (uint)param_1->field_01AD;
+  this->field_0028 = 0x21;
+  FUN_006e6080(this,2,iVar1,(undefined4 *)&this->field_0x18);
+  iVar1 = *(int *)&this->field_0x2c;
+  if (this->field_01BB == '\0') {
+    if ((DAT_0080874e == '\x03') && (this->field_01D0 == '\0')) {
+      if (*(ushort *)&this->field_0x1ad == 0) goto LAB_0055198e;
+      iVar3 = (uint)(ushort)this->field_01BC * (uint)*(ushort *)&this->field_0x1ad;
 LAB_0055194f:
       if (iVar3 < 1) goto LAB_0055198e;
       if (DAT_0080874e == '\x03') {
@@ -51,22 +56,22 @@ LAB_0055194f:
       iVar3 = 1;
     }
     else {
-      if ((&param_1->field_01AD)[(uint)(byte)param_1->field_01D0 * 4] != 0) {
-        iVar3 = (int)((ulonglong)(&param_1->field_01BC)[(byte)param_1->field_01D0] /
+      if (*(ushort *)(&this->field_0x1ad + (uint)(byte)this->field_01D0 * 8) != 0) {
+        iVar3 = (int)((ulonglong)(ushort)(&this->field_01BC)[(byte)this->field_01D0] /
                      (ulonglong)
                      (longlong)
-                     (int)(uint)(&param_1->field_01AD)[(uint)(byte)param_1->field_01D0 * 4]);
+                     (int)(uint)*(ushort *)(&this->field_0x1ad + (uint)(byte)this->field_01D0 * 8));
         goto LAB_0055194f;
       }
 LAB_0055198e:
       iVar3 = 0;
     }
-    param_1->field_002C = iVar3;
+    *(int *)&this->field_0x2c = iVar3;
     if (iVar3 == 0) {
       if (iVar1 != 0) {
 LAB_005519a4:
-        uVar5 = param_1->field_01C8;
-        param_1->field_0028 = 0x20;
+        uVar5 = this->field_01C8;
+        this->field_0028 = 0x20;
         goto LAB_005519b3;
       }
     }
@@ -74,30 +79,30 @@ LAB_005519a4:
   }
   else {
     if (iVar1 != 0) goto LAB_005519bc;
-    uVar5 = param_1->field_01C8;
-    param_1->field_0028 = 0x20;
-    param_1->field_002C = 1;
+    uVar5 = this->field_01C8;
+    this->field_0028 = 0x20;
+    *(undefined4 *)&this->field_0x2c = 1;
 LAB_005519b3:
-    FUN_006e6080(param_1,2,uVar5,(undefined4 *)&param_1->field_0x18);
+    FUN_006e6080(this,2,uVar5,(undefined4 *)&this->field_0x18);
   }
 LAB_005519bc:
-  if (param_1->field_01CC == 0) {
+  if (this->field_01CC == 0) {
     return;
   }
   if (g_allPlayers_007FA174 == (STAllPlayersC *)0x0) {
     return;
   }
-  param_1->field_0028 = 0x21;
-  FUN_006e6080(param_1,2,param_1->field_01CC,(undefined4 *)&param_1->field_0x18);
-  iVar1 = param_1->field_002C;
-  if (param_1->field_01D0 == '\0') {
+  this->field_0028 = 0x21;
+  FUN_006e6080(this,2,this->field_01CC,(undefined4 *)&this->field_0x18);
+  iVar1 = *(int *)&this->field_0x2c;
+  if (this->field_01D0 == '\0') {
     iVar3 = thunk_FUN_004d89b0(DAT_0080874d);
   }
   else {
     iVar3 = thunk_FUN_004d8af0(DAT_0080874d);
   }
-  uVar4 = (uint)((int)(uint)(&param_1->field_01BC)[(byte)param_1->field_01D0] <= iVar3);
-  param_1->field_002C = uVar4;
+  uVar4 = (uint)((int)(uint)(ushort)(&this->field_01BC)[(byte)this->field_01D0] <= iVar3);
+  *(uint *)&this->field_0x2c = uVar4;
   if (uVar4 == 0) {
     if (iVar1 == 0) {
       return;
@@ -106,9 +111,9 @@ LAB_005519bc:
   else if (iVar1 != 0) {
     return;
   }
-  param_1->field_0028 = 0x20;
+  this->field_0028 = 0x20;
 LAB_00551a54:
-  FUN_006e6080(param_1,2,param_1->field_01CC,(undefined4 *)&param_1->field_0x18);
+  FUN_006e6080(this,2,this->field_01CC,(undefined4 *)&this->field_0x18);
   return;
 }
 

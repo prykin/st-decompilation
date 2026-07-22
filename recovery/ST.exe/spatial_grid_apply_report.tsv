@@ -1,4 +1,4 @@
 address	status	proposed_name	detail
-007FB230	applied	g_pathingScratchGrid	type=/SubmarineTitans/Recovered/GlobalRecords/STPathingGrid16; name=g_pathingScratchGrid
-007FB240	applied	g_worldGrid	type=/SubmarineTitans/Recovered/GlobalRecords/STWorldGrid; name=g_worldGrid
-007FB278	applied	g_pathingGrid	type=/SubmarineTitans/Recovered/GlobalRecords/STPathingGrid16; name=g_pathingGrid
+007FB230	disabled	g_pathingScratchGrid	apply is 0
+007FB240	disabled	g_worldGrid	apply is 0
+007FB278	disabled	g_pathingGrid	apply is 0

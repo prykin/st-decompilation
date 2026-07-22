@@ -10,7 +10,7 @@ void __thiscall VisibleClassTy::sub_00558140(VisibleClassTy *this)
   int iVar1;
   void **ppvVar2;
 
-  if (this->field_0038 != (byte *)0x0) {
+  if (this->field_0038 != (void *)0x0) {
     FreeAndNull(&this->field_0038);
   }
   if (this->field_004C != (byte *)0x0) {

@@ -11,13 +11,13 @@
    incoming_ecx_receiver_callers=0; attributed_named_callers=1; owner_evidence_coverage=adequate */
 
 void __thiscall
-VisibleClassTy::sub_005594A0
-          (VisibleClassTy *this,int param_1,int param_2,undefined1 param_3,undefined *param_4,
-          int param_5,undefined4 param_6,uint param_7)
+SubmarineTitans::Recovered::HiddenThis::AnonReceiver_005594A0::sub_005594A0
+          (AnonReceiver_005594A0 *this,int param_1,int param_2,undefined1 param_3,undefined *param_4
+          ,int param_5,undefined4 param_6,uint param_7)
 
 {
   int iVar1;
-  byte bVar2;
+  char cVar2;
   undefined *puVar3;
   int iVar4;
   int iVar5;
@@ -25,7 +25,7 @@ VisibleClassTy::sub_005594A0
   int iVar7;
   int iVar8;
 
-  if ((((this->field_0114 != 0) && (this->field_0038 != (byte *)0x0)) && (-1 < param_5)) &&
+  if ((((*(int *)&this->field_0x114 != 0) && (*(int *)&this->field_0x38 != 0)) && (-1 < param_5)) &&
      ((param_4 < (undefined *)0x8 &&
       ((g_playSystem_00802A38 == (STPlaySystemC *)0x0 ||
        ((byte)(&DAT_008087e9)[(int)param_4 * 0x51] < 8)))))) {
@@ -46,11 +46,12 @@ VisibleClassTy::sub_005594A0
           iVar7 = iVar5;
           do {
             if (((((puVar3 == (undefined *)0x0) || (param_4[iVar4] != '\0')) && (-1 < iVar7)) &&
-                ((iVar7 < this->field_0020 && (-1 < iVar8)))) && (iVar8 < this->field_0024)) {
-              iVar6 = iVar8 * this->field_0020 + iVar7;
-              bVar2 = this->field_0038[iVar6 * 2 + 1];
-              if (bVar2 != 0xff) {
-                this->field_0038[iVar6 * 2 + 1] = bVar2 + 1;
+                ((iVar7 < *(int *)&this->field_0x20 && (-1 < iVar8)))) &&
+               (iVar8 < *(int *)&this->field_0x24)) {
+              iVar6 = iVar8 * *(int *)&this->field_0x20 + iVar7;
+              cVar2 = *(char *)(*(int *)&this->field_0x38 + 1 + iVar6 * 2);
+              if (cVar2 != -1) {
+                *(char *)(*(int *)&this->field_0x38 + iVar6 * 2 + 1) = cVar2 + '\x01';
               }
             }
             iVar4 = iVar4 + 1;

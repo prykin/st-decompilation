@@ -1,11 +1,11 @@
 Program: ST.exe
-Candidates: 169
+Candidates: 166
 create_apply: 0
-review_only: 169
+review_only: 166
 orphan_direct_jump_entries_seen: 0
-raw_nonexec_executable_pointer_values: 1120
+raw_nonexec_executable_pointer_values: 1111
 raw_nonexec_direct_jump_pointer_values: 0
-data_referenced_code: 11
+data_referenced_code: 8
 seh_filter: 158
 
 Safety boundary:

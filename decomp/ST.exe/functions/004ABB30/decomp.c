@@ -38,20 +38,20 @@ undefined4 __thiscall STT3DSprC::UnLoadSequence(STT3DSprC *this,byte param_1)
     RaiseInternalException
               (-1,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\Tspr3d.cpp",0x4a);
   }
-  if (pSVar2->field_0020 != 0) {
+  if (pSVar2->field_0020 != (AnonPointee_STT3DSprC_0020 *)0x0) {
     iVar3 = (char)param_1 * 0x24;
-    if (*(int *)(iVar3 + pSVar2->field_0020) != 0) {
+    if (*(int *)(&pSVar2->field_0020->field_0x0 + iVar3) != 0) {
       FUN_006e98e0(pSVar2->field_003C,pSVar2->field_0018,(int)(char)param_1,0,0,1);
-      value = (void **)(pSVar2->field_0020 + 4 + iVar3);
+      value = (void **)(&pSVar2->field_0020->field_0x4 + iVar3);
       pSVar2->field_001C = pSVar2->field_001C & ~(1 << (param_1 & 0x1f));
       if (*value != (void *)0x0) {
         FreeAndNull(value);
       }
-      if (*(int *)(pSVar2->field_0020 + 8 + iVar3) != 0) {
-        FreeAndNull((void **)(pSVar2->field_0020 + 8 + iVar3));
+      if (*(int *)(&pSVar2->field_0020->field_0x8 + iVar3) != 0) {
+        FreeAndNull((void **)(&pSVar2->field_0020->field_0x8 + iVar3));
       }
-      *(undefined4 *)(pSVar2->field_0020 + iVar3) = 0;
-      *(undefined1 *)(pSVar2->field_0020 + 0xc + iVar3) = 0;
+      *(undefined4 *)(&pSVar2->field_0020->field_0x0 + iVar3) = 0;
+      (&pSVar2->field_0020->field_0xc)[iVar3] = 0;
       g_currentExceptionFrame = local_4c.previous;
       return 0;
     }

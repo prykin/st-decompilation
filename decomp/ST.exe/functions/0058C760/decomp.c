@@ -183,7 +183,7 @@ int __thiscall STSatC::GetMessage(STSatC *this,STMessage *message)
                        *(undefined2 *)&this_00->field_0x28d,*(undefined2 *)&this_00->field_0x291);
           sVar12 = *(short *)&this_00->field_0x41;
           *(int *)&this_00->field_0x245 = (int)*(short *)(DAT_00806724 + 0x2c);
-          this_00->field_0231 = 0;
+          this_00->field_0231 = CASE_0;
           if (sVar12 < 0) {
             iVar9 = (short)((sVar12 / 0xc9 + (sVar12 >> 0xf)) -
                            (short)((longlong)(int)sVar12 * 0x28c1979 >> 0x3f)) + -1;

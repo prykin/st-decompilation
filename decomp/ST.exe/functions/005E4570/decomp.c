@@ -470,7 +470,7 @@ LAB_005e496b:
          (local_8 = (message->arg2).ptr, local_8 != (AnonShape_005E4570_F1672769 *)0x0)) {
         pcVar4 = local_18->field_008D;
         if (pcVar4->field_00A0 != 0) {
-          FUN_00710790((uint *)pcVar4);
+          FUN_00710790((AnonShape_00710790_4CBB90D4 *)pcVar4);
         }
         local_20 = *(int *)&pcVar4->field_0x8a;
         pAVar5 = this_00->field_06BF;
@@ -546,7 +546,7 @@ LAB_005e496b:
       pcVar4 = local_18->field_008D;
       local_10 = pAVar3->field_0008;
       if (pcVar4->field_00A0 != 0) {
-        FUN_00710790((uint *)pcVar4);
+        FUN_00710790((AnonShape_00710790_4CBB90D4 *)pcVar4);
       }
       local_14 = (uint *)pAVar3[1].field_0004;
       local_20 = *(int *)&pcVar4->field_0x8a;

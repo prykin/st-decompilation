@@ -18,13 +18,13 @@ void __fastcall FUN_00623600(AnonShape_00623600_61226D23 *param_1)
   else {
     iVar6 = (int)param_1->field_004B;
     if (((((DAT_0080874d == -1) || (g_visibleClass_00802A88->field_00F8 == 0)) ||
-         (thunk_FUN_00558c00(g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,
-                             (int)param_1->field_0047,(int)param_1->field_0049,&local_8,&local_c),
-         iVar6 < 0)) ||
-        ((((4 < iVar6 || (local_8 < 0)) ||
-          ((pVVar5->field_0030 <= local_8 ||
-           ((local_c = g_centeredOffsets5[iVar6] + local_c, local_c < 0 ||
-            (pVVar5->field_0034 <= local_c)))))) || (pVVar5->field_004C == (byte *)0x0)))) ||
+         (VisibleClassTy::sub_00558C00
+                    (g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,
+                     (int)param_1->field_0047,(int)param_1->field_0049,&local_8,&local_c), iVar6 < 0
+         )) || ((((4 < iVar6 || (local_8 < 0)) ||
+                 ((pVVar5->field_0030 <= local_8 ||
+                  ((local_c = g_centeredOffsets5[iVar6] + local_c, local_c < 0 ||
+                   (pVVar5->field_0034 <= local_c)))))) || (pVVar5->field_004C == (byte *)0x0)))) ||
        (pVVar5->field_004C[local_8 + local_c * pVVar5->field_0030] != 0)) {
       bVar4 = false;
       if (param_1->field_02AE == 0) {

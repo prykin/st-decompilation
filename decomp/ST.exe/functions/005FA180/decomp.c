@@ -51,7 +51,7 @@ int __fastcall FUN_005fa180(AnonShape_005FA180_2D8671A3 *param_1)
                        (short)param_1->field_0265,0,(AnonShape_00495FF0_59081BDD *)param_1);
     thunk_FUN_004ad430((int)puVar1);
     param_1->field_02BB = 0;
-    STColl3C::sub_0041C5A0((STColl3C *)param_1);
+    sub_0041C5A0(param_1);
     return iVar6;
   }
   if (iVar6 == (int)*(short *)(DAT_00806724 + 0x23) / 2) {

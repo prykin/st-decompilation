@@ -158,8 +158,8 @@ LAB_00629242:
   FUN_006e8660(PTR_00807598,piVar1,2,0,*(uint *)((int)puVar10 + 9),*(uint *)((int)puVar10 + 0xd),
                local_10,local_c,0);
   if (DAT_00807326 != '\0') {
-    SubmarineTitans::Recovered::HiddenThis::AnonReceiver_004248D0::FUN_006e9520
-              ((AnonReceiver_004248D0 *)PTR_00807598,*piVar1,0,0x4049f8,(uint)pSVar8);
+    SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00424E10::FUN_006e9520
+              ((AnonReceiver_00424E10 *)PTR_00807598,*piVar1,0,0x4049f8,(uint)pSVar8);
   }
   FUN_006e98e0(PTR_00807598,*piVar1,0,*(undefined4 *)puVar10,*(int *)((int)puVar10 + 0x21),1);
   FUN_006ea270(PTR_00807598,*piVar1,0,0);
@@ -213,8 +213,9 @@ LAB_00629242:
                            (short)((longlong)iVar11 * 0x28c1979 >> 0x3f));
     }
     if ((((DAT_0080874d == -1) || (g_visibleClass_00802A88->field_00F8 == 0)) ||
-        (thunk_FUN_00558c00(g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,iVar11,iVar9
-                            ,&local_28,&local_2c), (int)local_14 < 0)) || (4 < (int)local_14)) {
+        (VisibleClassTy::sub_00558C00
+                   (g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,iVar11,iVar9,
+                    &local_28,&local_2c), (int)local_14 < 0)) || (4 < (int)local_14)) {
       bVar14 = true;
     }
     else {

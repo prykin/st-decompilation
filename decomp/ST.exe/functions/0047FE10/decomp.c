@@ -3,7 +3,11 @@
 
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\To_boat.cpp
-   STBoatC::Scout */
+   STBoatC::Scout
+
+   [STSwitchEnumApplier] Switch target field_06E3 uses
+   /SubmarineTitans/Recovered/Enums/STBoatC_field_06E3State. Cases:
+   CASE_0=0;CASE_1=1;CASE_2=2;CASE_3=3 */
 
 int __thiscall STBoatC::Scout(STBoatC *this,int param_1)
 
@@ -26,7 +30,7 @@ int __thiscall STBoatC::Scout(STBoatC *this,int param_1)
     this->field_06D1 = *(short *)&this->field_0x441;
     this->field_06D3 = *(short *)&this->field_0x443;
     this->field_02C4 = 0;
-    this->field_06E3 = 0;
+    this->field_06E3 = CASE_0;
     this->field_06CB = *(short *)&this->field_0x43b;
     this->field_06D5 = *(short *)&this->field_0x445;
     this->field_06E7 = 0;
@@ -45,7 +49,7 @@ int __thiscall STBoatC::Scout(STBoatC *this,int param_1)
       }
       if (iVar5 == 1) {
         this->field_06E7 = 2;
-        this->field_06E3 = 0;
+        this->field_06E3 = CASE_0;
         sub_00481520(this,(int)this->field_06D1,(int)this->field_06D3,(int)this->field_06D5);
         iVar5 = sub_0045FF50(this,0);
         if (iVar5 == -1) {
@@ -86,23 +90,23 @@ int __thiscall STBoatC::Scout(STBoatC *this,int param_1)
     iVar5 = thunk_FUN_0040bc90(pSVar6,(uint)(ushort)this->field_0032,(short *)(int)this->field_06D1,
                                (short *)(int)this->field_06D3,(short *)(int)this->field_06D5,'\0');
     switch(this->field_06E3) {
-    case 0:
+    case CASE_0:
       break;
-    case 1:
+    case CASE_1:
       if (this->field_06D7 <= iVar5) {
         this->field_06DB = iVar5;
-        this->field_06E3 = 2;
+        this->field_06E3 = CASE_2;
         goto cf_common_exit_004800EC;
       }
       break;
-    case 2:
+    case CASE_2:
       if (this->field_06DB <= iVar5) {
         this->field_06DF = iVar5;
-        this->field_06E3 = 3;
+        this->field_06E3 = CASE_3;
         goto cf_common_exit_004800EC;
       }
       break;
-    case 3:
+    case CASE_3:
       if (this->field_06DF <= iVar5) {
         return 0;
       }
@@ -116,7 +120,7 @@ int __thiscall STBoatC::Scout(STBoatC *this,int param_1)
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
     this->field_06D7 = iVar5;
-    this->field_06E3 = 1;
+    this->field_06E3 = CASE_1;
 cf_common_exit_004800EC:
     sub_00481520(this,(int)this->field_06D1,(int)this->field_06D3,(int)this->field_06D5);
     iVar5 = sub_0045FF50(this,0);
@@ -152,23 +156,23 @@ LAB_0047ff46:
   iVar5 = thunk_FUN_0040bc90(pSVar6,(uint)(ushort)this->field_0032,(short *)(int)this->field_06CB,
                              (short *)(int)this->field_06CD,(short *)(int)this->field_06CF,'\0');
   switch(this->field_06E3) {
-  case 0:
+  case CASE_0:
     break;
-  case 1:
+  case CASE_1:
     if (iVar5 < this->field_06D7) break;
     this->field_06DB = iVar5;
-    this->field_06E3 = 2;
+    this->field_06E3 = CASE_2;
     goto cf_common_exit_0047FEEB;
-  case 2:
+  case CASE_2:
     if (this->field_06DB <= iVar5) {
       this->field_06DF = iVar5;
-      this->field_06E3 = 3;
+      this->field_06E3 = CASE_3;
       goto cf_common_exit_0047FEEB;
     }
     break;
-  case 3:
+  case CASE_3:
     if (this->field_06DF <= iVar5) {
-      this->field_06E3 = 0;
+      this->field_06E3 = CASE_0;
       goto LAB_0047ff46;
     }
     break;
@@ -181,7 +185,7 @@ LAB_0047ff46:
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   this->field_06D7 = iVar5;
-  this->field_06E3 = 1;
+  this->field_06E3 = CASE_1;
 cf_common_exit_0047FEEB:
   sVar1 = this->field_06CF;
   sVar2 = this->field_06CD;

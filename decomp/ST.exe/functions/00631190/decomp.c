@@ -15,8 +15,9 @@ FUN_00631190(void *this,uint param_1,short param_2,short param_3,short param_4,i
   else {
     iVar2 = 0;
   }
-  thunk_FUN_00630bb0(this,param_2,param_3,param_4,param_6,param_5,param_7);
-  puVar1 = STManRuinC::sub_00630C50(this,param_6,param_5,0,1,param_7);
+  STManRuinC::sub_00630BB0(this,param_2,param_3,param_4,param_6,param_5,param_7);
+  puVar1 = SubmarineTitans::Recovered::HiddenThis::AnonReceiver_006308F0::sub_00630C50
+                     (this,param_6,param_5,0,1,param_7);
   *(ushort **)(iVar2 + 0x10) = puVar1;
   if (puVar1 != (ushort *)0x0) {
     return 1;

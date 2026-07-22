@@ -9,20 +9,20 @@ undefined4 __thiscall TLOBaseTy::sub_004C34A0(TLOBaseTy *this,int param_1)
 {
   int iVar1;
 
-  iVar1 = (int)this->field_0259 / 0xf;
+  iVar1 = this->field_0259 / 0xf;
   if (*(int *)(&DAT_007be8c8 + (param_1 / 0xf + iVar1 * 0x18) * 4) == 0) {
     return 0;
   }
   iVar1 = (((*(int *)(&DAT_007be8c8 + (param_1 / 0xf + iVar1 * 0x18) * 4) < 1) - 1 & 2) - 1) + iVar1
   ;
   if (0x17 < iVar1) {
-    thunk_FUN_004b98e0(this,0);
+    sub_004B98E0(this,0);
     return 1;
   }
   if (iVar1 < 0) {
     iVar1 = 0x17;
   }
-  thunk_FUN_004b98e0(this,iVar1 * 0xf);
+  sub_004B98E0(this,iVar1 * 0xf);
   return 1;
 }
 

@@ -219,8 +219,9 @@ LAB_00639dab:
                           (short)((longlong)iVar9 * 0x28c1979 >> 0x3f));
     }
     if ((((DAT_0080874d != -1) && (g_visibleClass_00802A88->field_00F8 != 0)) &&
-        (thunk_FUN_00558c00(g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,iVar9,iVar8,
-                            &local_18,&local_1c), -1 < (int)local_c)) &&
+        (VisibleClassTy::sub_00558C00
+                   (g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,iVar9,iVar8,
+                    &local_18,&local_1c), -1 < (int)local_c)) &&
        (((((int)local_c < 5 && (-1 < local_18)) &&
          ((local_18 < pVVar12->field_0030 &&
           ((local_1c = local_1c + g_centeredOffsets5[local_c], -1 < local_1c &&
@@ -321,8 +322,9 @@ LAB_0063a27d:
                             (short)((longlong)iVar9 * 0x28c1979 >> 0x3f));
       }
       if (((((DAT_0080874d == -1) || (g_visibleClass_00802A88->field_00F8 == 0)) ||
-           (thunk_FUN_00558c00(g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,iVar9,
-                               iVar8,&local_1c,&local_18), (int)local_c < 0)) ||
+           (VisibleClassTy::sub_00558C00
+                      (g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,iVar9,iVar8,
+                       &local_1c,&local_18), (int)local_c < 0)) ||
           (((4 < (int)local_c || (local_1c < 0)) ||
            ((pVVar12->field_0030 <= local_1c ||
             ((local_18 = local_18 + g_centeredOffsets5[local_c], local_18 < 0 ||
@@ -436,8 +438,9 @@ LAB_0063a27d:
                           (short)((longlong)iVar9 * 0x28c1979 >> 0x3f));
     }
     if (((((DAT_0080874d != -1) && (g_visibleClass_00802A88->field_00F8 != 0)) &&
-         (thunk_FUN_00558c00(g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,iVar9,iVar8
-                             ,&local_1c,&local_18), -1 < (int)local_c)) &&
+         (VisibleClassTy::sub_00558C00
+                    (g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,iVar9,iVar8,
+                     &local_1c,&local_18), -1 < (int)local_c)) &&
         (((int)local_c < 5 && (-1 < local_1c)))) && (iVar8 = pVVar12->field_0030, local_1c < iVar8))
     {
       iVar9 = g_centeredOffsets5[local_c];
@@ -506,8 +509,9 @@ LAB_0063a728:
                           (short)((longlong)iVar9 * 0x28c1979 >> 0x3f));
     }
     if ((((DAT_0080874d != -1) && (g_visibleClass_00802A88->field_00F8 != 0)) &&
-        (thunk_FUN_00558c00(g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,iVar9,iVar8,
-                            &local_1c,&local_18), -1 < (int)local_c)) &&
+        (VisibleClassTy::sub_00558C00
+                   (g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,iVar9,iVar8,
+                    &local_1c,&local_18), -1 < (int)local_c)) &&
        ((((int)local_c < 5 && (-1 < local_1c)) && (iVar8 = pVVar12->field_0030, local_1c < iVar8))))
     {
       iVar9 = g_centeredOffsets5[local_c];
@@ -554,8 +558,9 @@ LAB_0063a728:
                               (short)((longlong)iVar9 * 0x28c1979 >> 0x3f));
         }
         if ((((DAT_0080874d == -1) || (g_visibleClass_00802A88->field_00F8 == 0)) ||
-            ((thunk_FUN_00558c00(g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,iVar9,
-                                 iVar8,&local_1c,&local_18), (int)local_c < 0 ||
+            ((VisibleClassTy::sub_00558C00
+                        (g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,iVar9,iVar8,
+                         &local_1c,&local_18), (int)local_c < 0 ||
              (((4 < (int)local_c || (local_1c < 0)) || (pVVar12->field_0030 <= local_1c)))))) ||
            (((local_18 = g_centeredOffsets5[local_c] + local_18, local_18 < 0 ||
              (pVVar12->field_0034 <= local_18)) ||
@@ -679,8 +684,9 @@ LAB_0063a728:
                           (short)((longlong)iVar9 * 0x28c1979 >> 0x3f));
     }
     if (((((DAT_0080874d != -1) && (g_visibleClass_00802A88->field_00F8 != 0)) &&
-         (thunk_FUN_00558c00(g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,iVar9,iVar8
-                             ,&local_1c,&local_18), -1 < (int)local_c)) &&
+         (VisibleClassTy::sub_00558C00
+                    (g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,iVar9,iVar8,
+                     &local_1c,&local_18), -1 < (int)local_c)) &&
         (((int)local_c < 5 && (-1 < local_1c)))) && (iVar8 = pVVar12->field_0030, local_1c < iVar8))
     {
       iVar9 = g_centeredOffsets5[local_c];

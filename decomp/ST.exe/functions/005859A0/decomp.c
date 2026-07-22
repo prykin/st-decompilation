@@ -172,7 +172,7 @@ int __thiscall STLBombC::GetMessage(STLBombC *this,STMessage *message)
           sub_00416240(this_00,*(undefined2 *)&this_00->field_0x26c,
                        *(undefined2 *)&this_00->field_0x270,*(undefined2 *)&this_00->field_0x274);
           *(int *)&this_00->field_0x245 = (int)*(short *)(DAT_00806724 + 0x2c);
-          this_00->field_0231 = 0;
+          this_00->field_0231 = CASE_0;
           thunk_FUN_005860d0(this_00,*(int *)&this_00->field_0x26c,*(int *)&this_00->field_0x270,
                              0x463);
         }

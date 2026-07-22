@@ -105,14 +105,13 @@ STT3DSprC::RestoreSpr(STT3DSprC *this,int *param_1,AnonShape_004AD790_77673787 *
         pcVar8 = pcVar8 + 1;
       } while (cVar3 != '\0');
       if (iVar6 != -2) {
-        *(undefined1 *)(local_18 + 0xc + this_00->field_0020) = local_10->field_0x4;
-        /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
+        (&this_00->field_0020->field_0xc)[local_18] = local_10->field_0x4;
         LoadSequence(this_00,(byte)local_8,*(int **)(*param_1 + local_8 * 4),local_1c,
-                     *(byte *)(local_18 + 0xc + this_00->field_0020));
+                     (&this_00->field_0020->field_0xc)[local_18]);
         pAVar5 = local_10;
         local_20 = *(uint *)local_10 << 2;
         pcVar8 = local_14;
-        pcVar9 = *(char **)(local_18 + 4 + this_00->field_0020);
+        pcVar9 = *(char **)(&this_00->field_0020->field_0x4 + local_18);
         for (uVar7 = *(uint *)local_10 & 0x3fffffff; uVar7 != 0; uVar7 = uVar7 - 1) {
           *(undefined4 *)pcVar9 = *(undefined4 *)pcVar8;
           pcVar8 = pcVar8 + 4;
@@ -123,10 +122,10 @@ STT3DSprC::RestoreSpr(STT3DSprC *this,int *param_1,AnonShape_004AD790_77673787 *
           pcVar8 = pcVar8 + 1;
           pcVar9 = pcVar9 + 1;
         }
-        *(undefined4 *)(local_18 + 0x10 + this_00->field_0020) = local_10->field_000B;
-        *(undefined4 *)(local_18 + 0x14 + this_00->field_0020) = local_10->field_000F;
-        *(undefined4 *)(local_18 + 0x18 + this_00->field_0020) = local_10->field_0013;
-        *(undefined4 *)(local_18 + 0x20 + this_00->field_0020) = local_10->field_001B;
+        *(undefined4 *)(&this_00->field_0020->field_0x10 + local_18) = local_10->field_000B;
+        *(undefined4 *)(&this_00->field_0020->field_0x14 + local_18) = local_10->field_000F;
+        *(undefined4 *)(&this_00->field_0020->field_0x18 + local_18) = local_10->field_0013;
+        *(undefined4 *)(&this_00->field_0020->field_0x20 + local_18) = local_10->field_001B;
         StartShow(this_00,(byte)local_8,local_10->field_0017);
         if (pAVar5->field_0x5 == '\0') {
           StopShow(this_00,(byte)local_8);
@@ -134,36 +133,36 @@ STT3DSprC::RestoreSpr(STT3DSprC *this,int *param_1,AnonShape_004AD790_77673787 *
       }
       iVar6 = local_18;
       if (local_10->field_0006 == '\0') {
-        puVar2 = (ushort *)(local_18 + 0xe + this_00->field_0020);
+        puVar2 = (ushort *)(&this_00->field_0020->field_0xe + local_18);
         *puVar2 = *puVar2 & 0xfffe;
       }
       else {
-        pbVar1 = (byte *)(local_18 + 0xe + this_00->field_0020);
+        pbVar1 = &this_00->field_0020->field_0xe + local_18;
         *pbVar1 = *pbVar1 | 1;
       }
-      *(undefined1 *)(local_18 + 0xd + this_00->field_0020) = local_10->field_0007;
+      (&this_00->field_0020->field_0xd)[local_18] = local_10->field_0007;
       if (local_10->field_0x8 == '\0') {
-        puVar2 = (ushort *)(local_18 + 0xe + this_00->field_0020);
+        puVar2 = (ushort *)(&this_00->field_0020->field_0xe + local_18);
         *puVar2 = *puVar2 & 0xfffd;
       }
       else {
-        pbVar1 = (byte *)(local_18 + 0xe + this_00->field_0020);
+        pbVar1 = &this_00->field_0020->field_0xe + local_18;
         *pbVar1 = *pbVar1 | 2;
       }
       if (local_10->field_0009 == '\0') {
-        puVar2 = (ushort *)(local_18 + 0xe + this_00->field_0020);
+        puVar2 = (ushort *)(&this_00->field_0020->field_0xe + local_18);
         *puVar2 = *puVar2 & 0xfdff;
       }
       else {
-        pbVar1 = (byte *)(local_18 + 0xf + this_00->field_0020);
+        pbVar1 = &this_00->field_0020->field_0xf + local_18;
         *pbVar1 = *pbVar1 | 2;
       }
       if (local_10->field_000A == '\0') {
-        puVar2 = (ushort *)(local_18 + 0xe + this_00->field_0020);
+        puVar2 = (ushort *)(&this_00->field_0020->field_0xe + local_18);
         *puVar2 = *puVar2 & 0xfffb;
       }
       else {
-        pbVar1 = (byte *)(local_18 + 0xe + this_00->field_0020);
+        pbVar1 = &this_00->field_0020->field_0xe + local_18;
         *pbVar1 = *pbVar1 | 4;
       }
       /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
@@ -191,11 +190,11 @@ STT3DSprC::RestoreSpr(STT3DSprC *this,int *param_1,AnonShape_004AD790_77673787 *
         sub_004AD070(this_00,(byte)_local_c);
       }
       if (pAVar5[1].field_0x3 == '\0') {
-        puVar2 = (ushort *)(iVar6 + 0xe + this_00->field_0020);
+        puVar2 = (ushort *)(&this_00->field_0020->field_0xe + iVar6);
         *puVar2 = *puVar2 & 0xfeff;
       }
       else {
-        pbVar1 = (byte *)(iVar6 + 0xf + this_00->field_0020);
+        pbVar1 = &this_00->field_0020->field_0xf + iVar6;
         *pbVar1 = *pbVar1 | 1;
       }
       local_10 = (AnonShape_004ADBA0_0D812343 *)&pAVar5[1].field_0x4;
@@ -216,8 +215,7 @@ STT3DSprC::RestoreSpr(STT3DSprC *this,int *param_1,AnonShape_004AD790_77673787 *
   if ((-1 < this_00->field_000C) && (iVar6 = 0, 0 < this_00->field_0014)) {
     iVar10 = 0;
     do {
-      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-      if ((*(byte *)(this_00->field_0020 + 0xf + iVar10) & 1) != 0) {
+      if (((&this_00->field_0020->field_0xf)[iVar10] & 1) != 0) {
         FUN_006e93c0(this_00->field_003C,this_00->field_0018,iVar6,this_00->field_000C);
       }
       iVar6 = iVar6 + 1;

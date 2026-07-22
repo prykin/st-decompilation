@@ -84,7 +84,7 @@ undefined4 __thiscall STGroupBoatC::GrpBuild(STGroupBoatC *this,int param_1)
     local_3e = local_24->field_013D;
     local_27 = local_24->field_0154;
     local_40 = local_24->field_013B;
-    local_3a = local_24->field_0141;
+    local_3a = *(undefined4 *)&local_24->field_0x141;
     Library::MSVCRT::_strncpy(local_36,&local_24->field_0x145,0xe);
     uVar11 = 0;
     local_28 = 0;

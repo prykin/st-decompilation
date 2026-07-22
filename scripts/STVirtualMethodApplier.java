@@ -45,6 +45,8 @@ public class STVirtualMethodApplier extends GhidraScript {
 
     @Override
     protected void run() throws Exception {
+        // Each virtual method owns an independent top-level transaction.
+        end(true);
         if (currentProgram == null) {
             printerr("Open the same ST program that was analyzed.");
             return;

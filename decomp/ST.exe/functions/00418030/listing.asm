@@ -1,4 +1,4 @@
-SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00417FF0::FUN_00418030:
+SubmarineTitans::Recovered::HiddenThis::AnonReceiver_004167A0::FUN_00418030:
 00418030  55                        PUSH EBP
 00418031  8B EC                     MOV EBP,ESP
 00418033  81 EC 98 00 00 00         SUB ESP,0x98

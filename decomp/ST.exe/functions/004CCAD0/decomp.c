@@ -27,7 +27,7 @@ void __fastcall FUN_004ccad0(AnonShape_004CCAD0_262475FB *param_1)
       *(undefined4 *)&param_1[1].field_0x178 = 0;
     }
     if (*(int *)&param_1[1].field_0x17c != 0) {
-      thunk_FUN_0041d2b0((AnonShape_0041D2B0_CE8C6BD3 *)param_1);
+      STMineSetC::sub_0041D2B0((STMineSetC *)param_1);
       *(undefined4 *)&param_1[1].field_0x17c = 0;
     }
   }

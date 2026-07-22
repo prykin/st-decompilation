@@ -1,7 +1,7 @@
 program=ST.exe
 ptr_symbols=708
-code_pointer=99
-control_flow_table_entry=4
+code_pointer=100
+control_flow_table_entry=3
 initialized_data_pointer=352
 string_pointer=222
 zero_initialized_global=31

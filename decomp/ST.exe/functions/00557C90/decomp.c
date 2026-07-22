@@ -111,9 +111,10 @@ void __thiscall VisibleClassTy::Init(VisibleClassTy *this)
                        (uint)(byte)puVar8[7],*(int **)(puVar8 + 8),0x4001);
           break;
         case 1:
-          sub_005594A0(this_00,(int)*(short *)(puVar8 + 2),(int)*(short *)(puVar8 + 4),puVar8[6],
-                       (undefined *)(uint)(byte)puVar8[1],(uint)(byte)puVar8[7],
-                       *(undefined4 *)(puVar8 + 8),2);
+          SubmarineTitans::Recovered::HiddenThis::AnonReceiver_005594A0::sub_005594A0
+                    ((AnonReceiver_005594A0 *)this_00,(int)*(short *)(puVar8 + 2),
+                     (int)*(short *)(puVar8 + 4),puVar8[6],(undefined *)(uint)(byte)puVar8[1],
+                     (uint)(byte)puVar8[7],*(undefined4 *)(puVar8 + 8),2);
           break;
         case 2:
           SetZoneDes(this_00,(int)*(short *)(puVar8 + 2),(int)*(short *)(puVar8 + 4),puVar8[6],

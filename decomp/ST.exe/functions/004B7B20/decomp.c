@@ -1,15 +1,15 @@
 
-/* [STPrototypeApplier] Propagated parameter 1.
-   Evidence: 004CAFC0 -> 004B7B20 @ 004CB1A3
-
-   [STPrototypeApplier] Propagated parameter 3.
+/* [STPrototypeApplier] Propagated parameter 3.
    Evidence: 004CAFC0 -> 004B7B20 @ 004CB1A3
 
    [STPrototypeApplier] Propagated parameter 4.
+   Evidence: 004CAFC0 -> 004B7B20 @ 004CB1A3
+
+   [STPrototypeRepairApplier] Propagated parameter 1.
    Evidence: 004CAFC0 -> 004B7B20 @ 004CB1A3 */
 
 void __thiscall
-FUN_004b7b20(void *this,Global_sub_004CAFC0_param_1Enum param_1,int param_2,uint *param_3,
+FUN_004b7b20(void *this,TLOBaseTy_sub_004CAFC0_param_1Enum param_1,int param_2,uint *param_3,
             uint *param_4)
 
 {

@@ -2,7 +2,11 @@
 /* [STMethodOwnerApplier] Structural method owner recovered as STMineSetC.
    Evidence: this_call_owners=[STMineSetC]; agreed_this_calls=3; incoming_this_accesses=3;
    incoming_edx_uses=0; incoming_stack_parameter_uses=7; direct_non_thunk_callers=0;
-   incoming_ecx_receiver_callers=0; attributed_named_callers=1; owner_evidence_coverage=adequate */
+   incoming_ecx_receiver_callers=0; attributed_named_callers=1; owner_evidence_coverage=adequate
+
+   [STSwitchEnumApplier] Switch target field_02AD uses
+   /SubmarineTitans/Recovered/Enums/STMineSetC_field_02ADState. Cases:
+   CASE_0=0;CASE_1=1;CASE_2=2;CASE_3=3;CASE_A6=166;CASE_A7=167;CASE_AF=175;CASE_BD=189 */
 
 uint __thiscall STMineSetC::sub_006226C0(STMineSetC *this,uint param_1,int param_2)
 
@@ -18,20 +22,20 @@ uint __thiscall STMineSetC::sub_006226C0(STMineSetC *this,uint param_1,int param
   if (((SVar3 == CASE_0) || (SVar3 == CASE_1)) &&
      (SVar3 = (STMineSetC_field_02AEState)DAT_0080874d, this->field_0024 != SVar3)) {
     switch(this->field_02AD) {
-    case 0:
-    case 2:
-      SVar3 = thunk_FUN_0041d6c0(this,SVar3);
+    case CASE_0:
+    case CASE_2:
+      SVar3 = sub_0041D6C0(this,SVar3);
       if (SVar3 == CASE_0) {
         return 0;
       }
       break;
-    case 1:
+    case CASE_1:
       SVar3 = thunk_FUN_0041d620(this,SVar3);
       if (SVar3 == CASE_0) {
         return 0;
       }
       break;
-    case 3:
+    case CASE_3:
       return 0;
     }
   }
@@ -49,9 +53,10 @@ uint __thiscall STMineSetC::sub_006226C0(STMineSetC *this,uint param_1,int param
     iVar4 = (int)this->field_004B;
     if ((DAT_0080874d == 0xff) ||
        ((((((SVar3 = CASE_0, g_visibleClass_00802A88->field_00F8 == 0 ||
-            (SVar3 = thunk_FUN_00558c00(g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,
-                                        (int)this->field_0047,(int)this->field_0049,&param_2,
-                                        (int *)&local_8), iVar4 < 0)) || (4 < iVar4)) ||
+            (SVar3 = VisibleClassTy::sub_00558C00
+                               (g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,
+                                (int)this->field_0047,(int)this->field_0049,&param_2,(int *)&local_8
+                               ), iVar4 < 0)) || (4 < iVar4)) ||
           ((param_2 < 0 || (pVVar2->field_0030 <= param_2)))) ||
          ((SVar3 = (int)&local_8->vtable + g_centeredOffsets5[iVar4], (int)SVar3 < 0 ||
           ((pVVar2->field_0034 <= (int)SVar3 || (pVVar2->field_004C == (byte *)0x0)))))) ||

@@ -52,8 +52,9 @@ int FUN_005f3940(int param_1,int param_2,int param_3)
     if (g_visibleClass_00802A88->field_00F8 == 0) {
       return iVar3;
     }
-    thunk_FUN_00558c00(g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,iVar4,iVar5,
-                       &param_3,&local_8);
+    VisibleClassTy::sub_00558C00
+              (g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,iVar4,iVar5,&param_3,
+               &local_8);
     if (param_2 < 0) {
       return iVar3;
     }

@@ -148,8 +148,9 @@ undefined4 __thiscall FUN_00638ca0(void *this,STMessage *param_1)
                           (short)((longlong)iVar7 * 0x28c1979 >> 0x3f));
     }
     if (((((DAT_0080874d != -1) && (g_visibleClass_00802A88->field_00F8 != 0)) &&
-         (thunk_FUN_00558c00(g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,iVar7,iVar5
-                             ,&local_c,&local_10), -1 < (int)param_1)) &&
+         (VisibleClassTy::sub_00558C00
+                    (g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,iVar7,iVar5,
+                     &local_c,&local_10), -1 < (int)param_1)) &&
         ((((int)param_1 < 5 && (-1 < local_c)) &&
          ((local_c < pVVar4->field_0030 &&
           ((local_10 = local_10 + g_centeredOffsets5[(int)param_1], -1 < local_10 &&
@@ -246,8 +247,9 @@ joined_r0x00639236:
                           (short)((longlong)iVar7 * 0x28c1979 >> 0x3f));
     }
     if ((((((DAT_0080874d != -1) && (g_visibleClass_00802A88->field_00F8 != 0)) &&
-          (thunk_FUN_00558c00(g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,iVar7,
-                              iVar5,&local_10,&local_c), -1 < (int)param_1)) &&
+          (VisibleClassTy::sub_00558C00
+                     (g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,iVar7,iVar5,
+                      &local_10,&local_c), -1 < (int)param_1)) &&
          (((int)param_1 < 5 && (-1 < local_10)))) &&
         ((local_10 < pVVar4->field_0030 &&
          ((local_c = local_c + g_centeredOffsets5[(int)param_1], -1 < local_c &&

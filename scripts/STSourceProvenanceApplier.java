@@ -28,6 +28,8 @@ public class STSourceProvenanceApplier extends GhidraScript {
 
     @Override
     protected void run() throws Exception {
+        // Explicit per-script transactions must not be nested in GhidraScript's wrapper.
+        end(true);
         if (currentProgram == null) {
             printerr("Open the same program that was analyzed.");
             return;

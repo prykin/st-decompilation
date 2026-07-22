@@ -42,9 +42,9 @@ void __thiscall STManRuinC::sub_00631010(STManRuinC *this)
           psVar7 = psVar7 + 2;
         }
         FUN_006e91d0(PTR_00807598,piVar2);
-        iVar6 = thunk_FUN_00630ac0(this,local_8);
+        iVar6 = sub_00630AC0(this,local_8);
         if (iVar6 != 0) {
-          thunk_FUN_00630bb0(this,local_20,local_1e,local_1c,local_18,(int)local_1a,local_c);
+          sub_00630BB0(this,local_20,local_1e,local_1c,local_18,(int)local_1a,local_c);
           this->field_0044 = 1;
           iVar6 = thunk_FUN_00630ff0();
           this->field_0048 = iVar6;
@@ -52,12 +52,14 @@ void __thiscall STManRuinC::sub_00631010(STManRuinC *this)
             this->field_0044 = 1;
           }
           else {
-            puVar4 = sub_00630C50(this,this->field_0040,this->field_004C,1,1,this->field_0050);
+            puVar4 = SubmarineTitans::Recovered::HiddenThis::AnonReceiver_006308F0::sub_00630C50
+                               ((AnonReceiver_006308F0 *)this,this->field_0040,this->field_004C,1,1,
+                                this->field_0050);
             if (puVar4 != (ushort *)0x0) {
               this->field_0044 = 2;
             }
           }
-          uVar5 = thunk_FUN_00631880(this,&this->field_0040,this->field_0061);
+          uVar5 = sub_00631880(this,&this->field_0040,this->field_0061);
           if (((uVar5 == 0) && (this->field_0048 != 0)) && (this->field_0061 != 0)) {
             FUN_006e8ba0(PTR_00807598,this->field_0061);
           }

@@ -38,7 +38,7 @@ void __thiscall STAppC::sub_0056EF50(STAppC *this)
     pcVar1 = pcVar1 + 0x51;
     iVar3 = iVar3 + -1;
   } while (iVar3 != 0);
-  thunk_FUN_0056ee90((AnonShape_0056EE90_04DD57E6 *)this);
+  sub_0056EE90(this);
   return;
 }
 

@@ -31,9 +31,9 @@ uint __thiscall STJumpMineC::sub_006191A0(STJumpMineC *this,uint param_1,int par
     if ((DAT_0080874d == -1) || (in_EAX = 0, g_visibleClass_00802A88->field_00F8 == 0))
     goto cf_common_exit_00619287;
     /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-    in_EAX = thunk_FUN_00558c00(g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,
-                                (int)this->field_00C9,(int)this->field_00CB,&param_2,(int *)&local_8
-                               );
+    in_EAX = VisibleClassTy::sub_00558C00
+                       (g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,
+                        (int)this->field_00C9,(int)this->field_00CB,&param_2,(int *)&local_8);
     /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
     if ((((iVar2 < 0) || (4 < iVar2)) || (param_2 < 0)) ||
        ((((pVVar1->field_0030 <= param_2 ||

@@ -927,7 +927,7 @@ LAB_005305a9:
 LAB_005305b4:
 005305B4  E8 70 2C ED FF            CALL 0x00403229
 005305B9  83 C4 14                  ADD ESP,0x14
-OptPanelTy::SetOptControls::cf_switch_join_005305BC:
+OptPanelTy::SetOptControls::cf_common_join_005305BC:
 005305BC  8A 83 A4 01 00 00         MOV AL,byte ptr [EBX + 0x1a4]
 005305C2  8B C8                     MOV ECX,EAX
 005305C4  81 E1 FF 00 00 00         AND ECX,0xff

@@ -310,7 +310,7 @@ int __thiscall OptPanelTy::GetMessage(OptPanelTy *this,STMessage *message)
             local_18 = (message->arg2).u32;
             pcVar32 = this_00->field_017C;
             if (pcVar32->field_00A0 != 0) {
-              FUN_00710790((uint *)pcVar32);
+              FUN_00710790((AnonShape_00710790_4CBB90D4 *)pcVar32);
             }
             local_8 = *(uint *)&pcVar32->field_0x8a;
             FUN_006b4170((AnonShape_006B5B10_E0D06CF1 *)this_00->field_0068,0,0x26,0x1a,0xca,0x6f,

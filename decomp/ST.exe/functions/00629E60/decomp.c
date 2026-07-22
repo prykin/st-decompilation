@@ -2,7 +2,11 @@
 /* [STMethodOwnerApplier] Structural method owner recovered as STParticleC.
    Evidence: this_call_owners=[STParticleC]; agreed_this_calls=1; incoming_this_accesses=6;
    incoming_edx_uses=0; incoming_stack_parameter_uses=1; direct_non_thunk_callers=0;
-   incoming_ecx_receiver_callers=0; attributed_named_callers=1; owner_evidence_coverage=adequate */
+   incoming_ecx_receiver_callers=0; attributed_named_callers=1; owner_evidence_coverage=adequate
+
+   [STSwitchEnumApplier] Switch target field_00C2 uses
+   /SubmarineTitans/Recovered/Enums/STParticleC_field_00C2State. Cases:
+   CASE_1=1;CASE_2=2;CASE_3=3;CASE_4=4 */
 
 int __thiscall STParticleC::sub_00629E60(STParticleC *this,int param_1)
 
@@ -25,7 +29,7 @@ int __thiscall STParticleC::sub_00629E60(STParticleC *this,int param_1)
     case CASE_3:
     case CASE_4:
       if (this->field_00EB != (AnonPointee_STParticleC_00EB *)0x0) {
-        thunk_FUN_00629f20((int)this);
+        sub_00629F20(this);
       }
       iVar2 = InitVisibelDeton(this,1);
       break;

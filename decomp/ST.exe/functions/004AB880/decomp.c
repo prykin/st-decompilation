@@ -91,7 +91,7 @@ STT3DSprC::LoadSequence(STT3DSprC *this,byte param_1,int *param_2,char *text,byt
   local_14 = (uint)(char)param_1;
   iVar4 = local_14 * 0x24;
   local_8 = iVar4;
-  if (*(int *)(this_00->field_0020 + iVar4) != 0) {
+  if (*(int *)(&this_00->field_0020->field_0x0 + iVar4) != 0) {
     iVar5 = UnLoadSequence(this_00,param_1);
     if (iVar5 != 0) {
       RaiseInternalException
@@ -100,14 +100,14 @@ STT3DSprC::LoadSequence(STT3DSprC *this,byte param_1,int *param_2,char *text,byt
   }
   puVar6 = Library::Ourlib::MFRLOAD::mfRLoad
                      (param_2,param_4,text,0xffffffff,0,1,0,(undefined4 *)0x0);
-  *(ushort **)(this_00->field_0020 + iVar4) = puVar6;
-  iVar5 = **(int **)(this_00->field_0020 + iVar4);
+  *(ushort **)(&this_00->field_0020->field_0x0 + iVar4) = puVar6;
+  iVar5 = **(int **)(&this_00->field_0020->field_0x0 + iVar4);
   iVar7 = Library::DKW::LIB::FUN_006aac70(iVar5 * 4);
-  *(int *)(this_00->field_0020 + 4 + iVar4) = iVar7;
+  *(int *)(&this_00->field_0020->field_0x4 + iVar4) = iVar7;
   iVar7 = 0;
   if (0 < iVar5) {
     do {
-      piVar9 = (int *)(this_00->field_0020 + iVar4);
+      piVar9 = (int *)(&this_00->field_0020->field_0x0 + iVar4);
       iVar7 = iVar7 + 1;
       *(undefined4 *)(piVar9[1] + -4 + iVar7 * 4) = *(undefined4 *)(*piVar9 + 0x2d + iVar7 * 4);
     } while (iVar7 < iVar5);
@@ -122,7 +122,7 @@ STT3DSprC::LoadSequence(STT3DSprC *this,byte param_1,int *param_2,char *text,byt
   } while (cVar2 != '\0');
   iVar5 = Library::DKW::LIB::FUN_006aac70(~uVar10);
   uVar10 = local_14;
-  *(int *)(this_00->field_0020 + 8 + iVar4) = iVar5;
+  *(int *)(&this_00->field_0020->field_0x8 + iVar4) = iVar5;
   uVar11 = 0xffffffff;
   do {
     pcVar14 = text;
@@ -134,7 +134,7 @@ STT3DSprC::LoadSequence(STT3DSprC *this,byte param_1,int *param_2,char *text,byt
   } while (cVar2 != '\0');
   uVar11 = ~uVar11;
   pcVar14 = pcVar14 + -uVar11;
-  pcVar15 = *(char **)(this_00->field_0020 + 8 + local_8);
+  pcVar15 = *(char **)(&this_00->field_0020->field_0x8 + local_8);
   for (uVar12 = uVar11 >> 2; uVar12 != 0; uVar12 = uVar12 - 1) {
     *(undefined4 *)pcVar15 = *(undefined4 *)pcVar14;
     pcVar14 = pcVar14 + 4;
@@ -145,18 +145,18 @@ STT3DSprC::LoadSequence(STT3DSprC *this,byte param_1,int *param_2,char *text,byt
     pcVar14 = pcVar14 + 1;
     pcVar15 = pcVar15 + 1;
   }
-  *(byte *)(this_00->field_0020 + 0xc + local_8) = param_4;
-  *(undefined4 *)(this_00->field_0020 + 0x18 + local_8) = 0;
-  *(undefined4 *)(this_00->field_0020 + 0x10 + local_8) = 0;
-  puVar13 = (undefined4 *)(this_00->field_0020 + local_8);
+  (&this_00->field_0020->field_0xc)[local_8] = param_4;
+  *(undefined4 *)(&this_00->field_0020->field_0x18 + local_8) = 0;
+  *(undefined4 *)(&this_00->field_0020->field_0x10 + local_8) = 0;
+  puVar13 = (undefined4 *)(&this_00->field_0020->field_0x0 + local_8);
   puVar13[5] = *(int *)*puVar13 + -1;
-  *(undefined4 *)(this_00->field_0020 + 0x20 + local_8) = 0;
-  puVar13 = *(undefined4 **)(this_00->field_0020 + local_8);
+  *(undefined4 *)(&this_00->field_0020->field_0x20 + local_8) = 0;
+  puVar13 = *(undefined4 **)(&this_00->field_0020->field_0x0 + local_8);
   FUN_006e98e0(this_00->field_003C,this_00->field_0018,local_14,*puVar13,
                *(int *)((int)puVar13 + 0x21),0);
-  puVar6 = (ushort *)(this_00->field_0020 + 0xe + local_8);
+  puVar6 = (ushort *)(&this_00->field_0020->field_0xe + local_8);
   *puVar6 = *puVar6 & 0xfe37;
-  pbVar1 = (byte *)(this_00->field_0020 + 0xe + local_8);
+  pbVar1 = &this_00->field_0020->field_0xe + local_8;
   *pbVar1 = *pbVar1 | 0x20;
   this_00->field_001C = this_00->field_001C & ~(1 << ((byte)uVar10 & 0x1f));
   g_currentExceptionFrame = local_58.previous;

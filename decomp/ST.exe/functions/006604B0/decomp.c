@@ -21,7 +21,7 @@ undefined4 __fastcall FUN_006604b0(AiFltClassTy *param_1,undefined4 param_2,unde
       this = thunk_FUN_0042b760(*(char *)&param_1->field_0024,
                                 CONCAT22(extraout_var,param_1->field_007D));
       if (this != (STGroupBoatC *)0x0) {
-        (*this->vtable->vfunc_08)(this,CASE_6,&local_c);
+        (*this->vtable->SetOrderData)(this,GROUP_BOAT_ORDER_06,&local_c);
         return 0;
       }
     }

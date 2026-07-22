@@ -40,7 +40,7 @@ int __thiscall STBHEShellC::sub_005F4FA0(STBHEShellC *this)
         (&this->field_0149)[local_8] = iVar5;
         if ((local_8 == 0) && (iVar5 = iVar5 / 200, iVar5 != this->field_0129)) {
           this->field_0129 = iVar5;
-          thunk_FUN_005f5700(this,iVar5,this->field_0139);
+          sub_005F5700(this,iVar5,this->field_0139);
         }
         local_20 = 0;
         if (0 < this->field_0109) {

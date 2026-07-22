@@ -6,8 +6,8 @@
    expected_stack=12; receiver_family_members=5; adopt_untyped_existing_thiscall */
 
 undefined4 __thiscall
-SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00417FF0::FUN_00418030
-          (AnonReceiver_00417FF0 *this,short param_1,short param_2,short param_3)
+SubmarineTitans::Recovered::HiddenThis::AnonReceiver_004167A0::FUN_00418030
+          (AnonReceiver_004167A0 *this,short param_1,short param_2,short param_3)
 
 {
   bool bVar1;

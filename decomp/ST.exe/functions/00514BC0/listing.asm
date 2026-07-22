@@ -98,7 +98,7 @@ switchD_00514c61::default:
 00514CEB  75 09                     JNZ 0x00514cf6
 00514CED  C7 45 FC 01 00 00 00      MOV dword ptr [EBP + -0x4],0x1
 00514CF4  EB 0E                     JMP 0x00514d04
-FUN_00514bc0::cf_switch_join_00514CF6:
+FUN_00514bc0::cf_common_join_00514CF6:
 00514CF6  8B 5D F8                  MOV EBX,dword ptr [EBP + -0x8]
 switchD_00514c13::default:
 00514CF9  8B 4D FC                  MOV ECX,dword ptr [EBP + -0x4]

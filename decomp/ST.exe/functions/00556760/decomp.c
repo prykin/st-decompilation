@@ -113,8 +113,9 @@ LAB_00556926:
     bVar9 = true;
   }
   else {
-    thunk_FUN_00558c00(g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,
-                       (int)(short)local_10,(int)sVar5,&local_5c,&local_8);
+    VisibleClassTy::sub_00558C00
+              (g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,(int)(short)local_10,
+               (int)sVar5,&local_5c,&local_8);
     if ((iVar7 < 0) || (4 < iVar7)) goto LAB_00556926;
     if (((local_5c < 0) || (pVVar2->field_0030 <= local_5c)) ||
        ((g_centeredOffsets5[iVar7] + local_8 < 0 ||

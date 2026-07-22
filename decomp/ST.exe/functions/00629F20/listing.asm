@@ -1,4 +1,4 @@
-FUN_00629f20:
+STParticleC::sub_00629F20:
 00629F20  55                        PUSH EBP
 00629F21  8B EC                     MOV EBP,ESP
 00629F23  51                        PUSH ECX

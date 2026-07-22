@@ -6,9 +6,13 @@
    [STMethodOwnerApplier] Structural method owner recovered as CPanelTy.
    Evidence: this_call_owners=[CPanelTy]; agreed_this_calls=1; incoming_this_accesses=2;
    incoming_edx_uses=5; incoming_stack_parameter_uses=2; direct_non_thunk_callers=0;
-   incoming_ecx_receiver_callers=0; attributed_named_callers=1; owner_evidence_coverage=adequate */
+   incoming_ecx_receiver_callers=0; attributed_named_callers=1; owner_evidence_coverage=adequate
 
-int __thiscall CPanelTy::sub_005050B0(CPanelTy *this,Global_sub_005050B0_param_1Enum param_1)
+   [STSwitchEnumApplier] Switch target param_1 uses
+   /SubmarineTitans/Recovered/Enums/CPanelTy_sub_005050B0_param_1Enum. Cases:
+   CASE_0=0;CASE_1=1;CASE_2=2;CASE_3=3;CASE_4=4;CASE_5=5 */
+
+int __thiscall CPanelTy::sub_005050B0(CPanelTy *this,CPanelTy_sub_005050B0_param_1Enum param_1)
 
 {
   char cVar1;

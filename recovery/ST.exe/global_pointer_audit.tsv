@@ -1,6 +1,6 @@
 address	name	current_type	raw_target	classification	target_name	target_data_type	pointee	anonymous_pointee	script_owned	evidence_sites	proposed_type	type_apply
-0042690C	PTR_caseD_10_0042690c	/pointer	00425B0C	code_pointer	SubmarineTitans::Recovered::HiddenThis::AnonReceiver_004248D0::FUN_00424e10			0	0	0		0
-00426910	PTR_caseD_20_00426910	/pointer	00425C0E	code_pointer	SubmarineTitans::Recovered::HiddenThis::AnonReceiver_004248D0::FUN_00424e10			0	0	0		0
+0042690C	PTR_caseD_10_0042690c	/pointer	00425B0C	code_pointer	SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00424E10::FUN_00424e10			0	0	0		0
+00426910	PTR_caseD_20_00426910	/pointer	00425C0E	code_pointer	SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00424E10::FUN_00424e10			0	0	0		0
 00438688	PTR_caseD_29_00438688	/pointer	004371A8	code_pointer	STAllPlayersC::CmdToPlsObj			0	0	0		0
 004493D8	PTR_caseD_1_004493d8	/pointer	004493BF	code_pointer	STAllPlayersC::PutOnPlaceGuardBoats			0	0	0		0
 004BD358	PTR_caseD_2a_004bd358	/pointer	004BCF6D	code_pointer	TLOBaseTy::GetMessage			0	0	0		0
@@ -341,7 +341,7 @@ address	name	current_type	raw_target	classification	target_name	target_data_type
 007D1BD0	PTR_s_starF_007d1bd0	/pointer	007CF848	string_pointer	s_starF_007cf848	/string		0	0	0		0
 007D1F68	PTR_s_blast_p_007d1f68	pointer:/undefined	007D2090	string_pointer	s_blast_p_007d2090	/string	/undefined	0	0	0		0
 007D2D1C	PTR_thunk_FUN_00673160_007d2d1c	/pointer	00402F2C	code_pointer	thunk_FUN_00673160			0	0	0		0
-007D3FA8	PTR_LAB_007d3fa8	pointer:/undefined	00405DA8	control_flow_table_entry	LAB_00405da8		/undefined	0	0	0		0
+007D3FA8	PTR_thunk_FUN_00680270_007d3fa8	pointer:/undefined	00405DA8	code_pointer	thunk_FUN_00680270		/undefined	0	0	0		0
 007D7F70	PTR_DAT_007d7f70	pointer:/undefined	007D62F0	initialized_data_pointer	DAT_007d62f0		/undefined	0	0	0		0
 007EC188	PTR_DAT_007ec188	/pointer	007EC1C0	initialized_data_pointer	DAT_007ec1c0			0	0	0		0
 007EC18C	PTR_s_Normal_007ec18c	pointer:/undefined	007EC1B8	string_pointer	s_Normal_007ec1b8	/string	/undefined	0	0	0		0

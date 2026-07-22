@@ -567,9 +567,10 @@ LAB_0047edd5:
               if (local_10 == 0) {
                 uVar7 = this->field_06AD + 1;
                 this->field_06C3 = CASE_6;
-                sub_0048DFD0(this,this->field_06A9,this->field_06AB,uVar7,this->field_06A9,
-                             this->field_06AB,(int *)(uint)uVar7,1,&this->field_06B3,
-                             &this->field_06B5,&this->field_06B7);
+                SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0048DFD0::sub_0048DFD0
+                          ((AnonReceiver_0048DFD0 *)this,this->field_06A9,this->field_06AB,uVar7,
+                           this->field_06A9,this->field_06AB,(int *)(uint)uVar7,1,&this->field_06B3,
+                           &this->field_06B5,&this->field_06B7);
                 sub_00481520(this,(int)this->field_06B3,(int)this->field_06B5,(int)this->field_06B7)
                 ;
                 iVar9 = sub_0045FF50(this,0);
@@ -605,9 +606,10 @@ LAB_0047edd5:
           }
           if (iVar9 == 3) {
             uVar7 = this->field_06AD + 1;
-            sub_0048DFD0(this,this->field_06A9,this->field_06AB,uVar7,this->field_06A9,
-                         this->field_06AB,(int *)(uint)uVar7,1,&this->field_06B3,&this->field_06B5,
-                         &this->field_06B7);
+            SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0048DFD0::sub_0048DFD0
+                      ((AnonReceiver_0048DFD0 *)this,this->field_06A9,this->field_06AB,uVar7,
+                       this->field_06A9,this->field_06AB,(int *)(uint)uVar7,1,&this->field_06B3,
+                       &this->field_06B5,&this->field_06B7);
             sub_00481520(this,(int)this->field_06B3,(int)this->field_06B5,(int)this->field_06B7);
             sub_0045FF50(this,0);
           }
@@ -649,9 +651,11 @@ LAB_0047edd5:
           sVar6 = this->field_06AD + 1;
           this->field_06C3 = CASE_6;
           /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-          sub_0048DFD0(this,this->field_06A9,this->field_06AB,sVar6,this->field_06A9,
-                       this->field_06AB,(int *)CONCAT22((short)((uint)param_1 >> 0x10),sVar6),1,
-                       &this->field_06B3,&this->field_06B5,&this->field_06B7);
+          SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0048DFD0::sub_0048DFD0
+                    ((AnonReceiver_0048DFD0 *)this,this->field_06A9,this->field_06AB,sVar6,
+                     this->field_06A9,this->field_06AB,
+                     (int *)CONCAT22((short)((uint)param_1 >> 0x10),sVar6),1,&this->field_06B3,
+                     &this->field_06B5,&this->field_06B7);
           sub_00481520(this,(int)this->field_06B3,(int)this->field_06B5,(int)this->field_06B7);
           iVar9 = sub_0045FF50(this,0);
           if (iVar9 == -1) {

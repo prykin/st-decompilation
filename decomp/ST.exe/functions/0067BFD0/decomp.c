@@ -51,16 +51,14 @@ void __thiscall AiPlrClassTy::sub_0067BFD0(AiPlrClassTy *this,DArrayTy *param_1,
         local_40 = (AnonShape_0068FD00_A5257008 *)0x67;
         local_38 = 0;
         local_3c = local_c->field_06FE;
-        local_37 = thunk_FUN_0067bf30(local_c);
+        local_37 = sub_0067BF30(local_c);
         local_33 = *(undefined4 *)(puVar3 + 6);
-        iVar2 = thunk_FUN_0067bef0(this_00);
+        iVar2 = sub_0067BEF0(this_00);
         local_2f = (undefined2)iVar2;
         local_2d = *(undefined4 *)(puVar1 + 2);
         local_29 = *(undefined4 *)(puVar1 + 4);
         local_25 = *(undefined4 *)(puVar1 + 6);
-        SubmarineTitans::Recovered::HiddenThis::AnonReceiver_006799B0::thunk_FUN_0067a020
-                  ((AnonReceiver_006799B0 *)this_00,(AnonShape_0068FD00_A5257008 *)&local_40,
-                   (uint)*puVar3);
+        sub_0067A020(this_00,(AnonShape_0068FD00_A5257008 *)&local_40,(uint)*puVar3);
         uVar5 = local_8;
       }
       local_8 = uVar5 + 1;

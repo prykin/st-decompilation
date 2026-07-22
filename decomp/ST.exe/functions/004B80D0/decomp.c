@@ -12,6 +12,10 @@
    [STSwitchEnumApplier] Switch target field_05AC uses
    /SubmarineTitans/Recovered/Enums/TLOBaseTy_field_05ACState. Cases:
    CASE_32=50;CASE_33=51;CASE_34=52;CASE_36=54;CASE_37=55;CASE_38=56;CASE_39=57;CASE_3A=58;CASE_3B=59;CASE_3D=61;CASE_40=64;CASE_41=65;CASE_43=67;CASE_45=69;CASE_48=72;CASE_49=73;CASE_4C=76;CASE_4D=77;CASE_4E=78;CASE_4F=79;CASE_52=82;CASE_5B=91;CASE_5C=92;CASE_5D=93;CASE_5E=94;CASE_5F=95;CASE_60=96;CASE_61=97;CASE_63=99;CASE_64=100;CASE_68=104;CASE_69=105;CASE_6A=106;CASE_6C=108;CASE_6E=110;CASE_6F=111;CASE_70=112;CASE_72=114;CASE_73=115
+
+   [STSwitchEnumApplier] Switch target field_05AC uses
+   /SubmarineTitans/Recovered/Enums/TLOBaseTy_field_05ACState. Cases:
+   CASE_32=50;CASE_36=54;CASE_39=57;CASE_3B=59;CASE_3D=61;CASE_40=64;CASE_45=69;CASE_49=73;CASE_4E=78;CASE_4F=79;CASE_52=82;CASE_5C=92;CASE_5D=93;CASE_5E=94;CASE_5F=95;CASE_60=96;CASE_68=104;CASE_69=105;CASE_6A=106;CASE_70=112;CASE_72=114
     */
 
 int __thiscall TLOBaseTy::SetState(TLOBaseTy *this,int param_1,int param_2)
@@ -89,8 +93,8 @@ int __thiscall TLOBaseTy::SetState(TLOBaseTy *this,int param_1,int param_2)
     case CASE_0:
       if (*(int *)(&DAT_00792778 + this_01->field_0235 * 4) != 0) {
         this_01->field_0275 = 1;
-        this_01->field_02B5 = g_playSystem_00802A38->field_00E4;
-        if (this_01->field_0361 == 0) {
+        *(uint *)&this_01->field_0x2b5 = g_playSystem_00802A38->field_00E4;
+        if (*(int *)&this_01->field_0x361 == 0) {
           this_01->field_0261 = 1;
         }
       }
@@ -231,13 +235,13 @@ int __thiscall TLOBaseTy::SetState(TLOBaseTy *this,int param_1,int param_2)
         case 100:
           thunk_FUN_004e48d0();
           break;
-        case 0x68:
+        case CASE_68:
           thunk_FUN_004dc220();
           break;
         case CASE_69:
           thunk_FUN_004dcc80((int)this_01);
           break;
-        case 0x6a:
+        case CASE_6A:
           thunk_FUN_004c5e60((int)this_01);
           break;
         case 0x6d:
@@ -300,9 +304,9 @@ int __thiscall TLOBaseTy::SetState(TLOBaseTy *this,int param_1,int param_2)
       this_01->field_0458 = 0xfe;
     }
     switch(this_01->field_05AC) {
-    case 0x36:
-    case 0x3d:
-    case 0x5d:
+    case CASE_36:
+    case CASE_3D:
+    case CASE_5D:
       thunk_FUN_004e4b60((AnonShape_004E4B60_EABE8E44 *)this_01);
       break;
     case CASE_45:
@@ -311,10 +315,10 @@ int __thiscall TLOBaseTy::SetState(TLOBaseTy *this,int param_1,int param_2)
     case CASE_4E:
       thunk_FUN_004d9bd0((AnonShape_004D9BD0_B3B50583 *)this_01);
       break;
-    case 0x68:
+    case CASE_68:
       thunk_FUN_004dc470((AnonShape_004DC470_71C75079 *)this_01);
       break;
-    case 0x6a:
+    case CASE_6A:
       thunk_FUN_004c6070((int *)this_01);
       break;
     case CASE_70:

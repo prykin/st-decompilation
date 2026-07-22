@@ -64,9 +64,10 @@ FUN_004c6440(void *this,float param_1,int param_2,int *param_3,int *param_4,int 
         (local_8 < g_worldGrid.sizeY)) &&
        ((((((g_visibleClass_00802A88 == (VisibleClassTy *)0x0 || (DAT_0080874d == 0xff)) ||
            ((g_visibleClass_00802A88->field_00F8 == 0 ||
-            ((thunk_FUN_00558c00(g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,
-                                 /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-                                 local_10,local_8,&local_30,&local_34), (int)piVar8 < 0x79aed0 ||
+            ((VisibleClassTy::sub_00558C00
+                        (g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,local_10,
+                         /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
+                         local_8,&local_30,&local_34), (int)piVar8 < 0x79aed0 ||
              (0x79aee3 < (int)piVar8)))))) ||
           ((local_30 < 0 ||
            (((pVVar4->field_0030 <= local_30 ||

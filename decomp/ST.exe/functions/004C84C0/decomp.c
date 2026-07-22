@@ -9,6 +9,10 @@
    [STSwitchEnumApplier] Switch target field_05AC uses
    /SubmarineTitans/Recovered/Enums/TLOBaseTy_field_05ACState. Cases:
    CASE_32=50;CASE_39=57;CASE_3B=59;CASE_40=64;CASE_45=69;CASE_49=73;CASE_4E=78;CASE_4F=79;CASE_52=82;CASE_5C=92;CASE_5E=94;CASE_5F=95;CASE_60=96;CASE_69=105;CASE_70=112;CASE_72=114
+
+   [STSwitchEnumApplier] Switch target field_05AC uses
+   /SubmarineTitans/Recovered/Enums/TLOBaseTy_field_05ACState. Cases:
+   CASE_32=50;CASE_36=54;CASE_39=57;CASE_3B=59;CASE_3D=61;CASE_40=64;CASE_45=69;CASE_49=73;CASE_4E=78;CASE_4F=79;CASE_52=82;CASE_5C=92;CASE_5D=93;CASE_5E=94;CASE_5F=95;CASE_60=96;CASE_68=104;CASE_69=105;CASE_6A=106;CASE_70=112;CASE_72=114
     */
 
 undefined4 __fastcall FUN_004c84c0(TLOBaseTy *param_1)
@@ -31,7 +35,7 @@ undefined4 __fastcall FUN_004c84c0(TLOBaseTy *param_1)
   int local_c;
   int local_8;
 
-  if (param_1->field_0361 == 0) {
+  if (*(int *)&param_1->field_0x361 == 0) {
     if (param_1->field_03D4 == 0) {
       return 0;
     }
@@ -70,30 +74,31 @@ undefined4 __fastcall FUN_004c84c0(TLOBaseTy *param_1)
     param_1->field_03D4 = param_1->field_03D4 + -1;
     return 0;
   }
-  if (((param_1->field_0361 == CASE_5) && (iVar5 = (*param_1->vtable->vfunc_7C)(), iVar5 == 100)) ||
-     (99 < param_1->field_0394)) {
+  if (((*(int *)&param_1->field_0x361 == 5) &&
+      (iVar5 = (*param_1->vtable->vfunc_7C)(), iVar5 == 100)) || (99 < param_1->field_0394)) {
     iVar5 = TLOBaseTy::procResult(param_1);
     if (iVar5 == 0) {
       return 0;
     }
-    iVar5 = param_1->field_036D + -1;
-    param_1->field_036D = iVar5;
+    iVar5 = *(int *)&param_1->field_0x36d + -1;
+    *(int *)&param_1->field_0x36d = iVar5;
     if (iVar5 < 1) {
-      param_1->field_0365 = param_1->field_0361;
+      *(undefined4 *)&param_1->field_0x365 = *(undefined4 *)&param_1->field_0x361;
       iVar5 = thunk_FUN_004c90c0(param_1);
       if ((iVar5 == 0) &&
          (iVar5 = ReportDebugMessage("E:\\__titans\\Artem\\TLO_bproc.cpp",0x19f,0,0,
                                      "%s","What's that ?"), iVar5 != 0)) {
         STDebugBreak(); /* noreturn in standalone pseudocode */
       }
-      param_1->field_036D = 0;
+      *(undefined4 *)&param_1->field_0x36d = 0;
       thunk_FUN_004c7460((AnonShape_004C7460_AC9F4C4C *)param_1);
       return 0;
     }
     param_1->field_038C = g_playSystem_00802A38->field_00E4;
     param_1->field_0394 = 0;
-    thunk_FUN_004c7260(param_1,param_1->field_0361,param_1->field_0369,&param_1->field_0398,
-                       &param_1->field_039C,&param_1->field_03A0,&param_1->field_03A4);
+    thunk_FUN_004c7260(param_1,*(Global_sub_004C7260_param_1Enum *)&param_1->field_0x361,
+                       *(int *)&param_1->field_0x369,&param_1->field_0398,&param_1->field_039C,
+                       &param_1->field_03A0,&param_1->field_03A4);
     param_1->field_03A8 = 0;
     param_1->field_03AC = 0;
     param_1->field_03B0 = 0;
@@ -109,7 +114,7 @@ undefined4 __fastcall FUN_004c84c0(TLOBaseTy *param_1)
     thunk_FUN_004c7460((AnonShape_004C7460_AC9F4C4C *)param_1);
     return 0;
   }
-  if (param_1->field_0361 == CASE_5) {
+  if (*(int *)&param_1->field_0x361 == 5) {
     uVar10 = (uint)param_1->field_0390 / 100;
     if (uVar10 == 0) {
       uVar10 = 1;
@@ -134,8 +139,8 @@ undefined4 __fastcall FUN_004c84c0(TLOBaseTy *param_1)
         goto LAB_004c8806;
       }
       thunk_FUN_004d7e50(*(char *)&param_1->field_0024,
-                         *(int *)(&DAT_00794d70 + param_1->field_0361 * 4),param_1->field_0018,iVar5
-                        );
+                         *(int *)(&DAT_00794d70 + *(int *)&param_1->field_0x361 * 4),
+                         param_1->field_0018,iVar5);
     }
     if (param_1->field_0024 == (uint)(byte)param_1->field_0010->field_112D) {
       thunk_FUN_004d8b70((char)param_1->field_0024);
@@ -156,8 +161,9 @@ undefined4 __fastcall FUN_004c84c0(TLOBaseTy *param_1)
            *(int *)(&DAT_007e4178 + ((uVar10 & 0xff) + param_1->field_0235 * 3) * 4);
     }
 LAB_004c8806:
-    thunk_FUN_004c7260(param_1,param_1->field_0361,param_1->field_0369,&param_1->field_0398,
-                       &param_1->field_039C,&param_1->field_03A0,&param_1->field_03A4);
+    thunk_FUN_004c7260(param_1,*(Global_sub_004C7260_param_1Enum *)&param_1->field_0x361,
+                       *(int *)&param_1->field_0x369,&param_1->field_0398,&param_1->field_039C,
+                       &param_1->field_03A0,&param_1->field_03A4);
     thunk_FUN_004c7460((AnonShape_004C7460_AC9F4C4C *)param_1);
     return 0;
   }
@@ -192,10 +198,10 @@ LAB_004c8806:
   local_10 = 0;
   local_14 = 0;
   iVar5 = 0;
-  if (*(int *)(&DAT_00794d70 + param_1->field_0361 * 4) == -1) {
+  if (*(int *)(&DAT_00794d70 + *(int *)&param_1->field_0x361 * 4) == -1) {
 LAB_004c8bf2:
     param_1->field_0394 = param_1->field_0394 + 1;
-    if (*(int *)(&DAT_00794d70 + param_1->field_0361 * 4) != -1) {
+    if (*(int *)(&DAT_00794d70 + *(int *)&param_1->field_0x361 * 4) != -1) {
       param_1->field_03A8 = param_1->field_03A8 + iVar5;
       param_1->field_03B0 = param_1->field_03B0 + local_8;
       param_1->field_03AC = param_1->field_03AC + local_10;
@@ -208,23 +214,23 @@ LAB_004c8bf2:
       }
       else if (iVar5 != 0) {
         thunk_FUN_004d7c10(*(char *)&param_1->field_0024,
-                           *(int *)(&DAT_00794d70 + param_1->field_0361 * 4),param_1->field_0018,
-                           iVar5);
+                           *(int *)(&DAT_00794d70 + *(int *)&param_1->field_0x361 * 4),
+                           param_1->field_0018,iVar5);
       }
       if (local_10 != 0) {
         thunk_FUN_004d7d30(*(char *)&param_1->field_0024,
-                           *(int *)(&DAT_00794d70 + param_1->field_0361 * 4),param_1->field_0018,
-                           local_10);
+                           *(int *)(&DAT_00794d70 + *(int *)&param_1->field_0x361 * 4),
+                           param_1->field_0018,local_10);
       }
       if (local_8 != 0) {
         thunk_FUN_004d7e50(*(char *)&param_1->field_0024,
-                           *(int *)(&DAT_00794d70 + param_1->field_0361 * 4),param_1->field_0018,
-                           local_8);
+                           *(int *)(&DAT_00794d70 + *(int *)&param_1->field_0x361 * 4),
+                           param_1->field_0018,local_8);
       }
       if (local_c != 0) {
         thunk_FUN_004d7f70(*(char *)&param_1->field_0024,
-                           *(int *)(&DAT_00794d70 + param_1->field_0361 * 4),param_1->field_0018,
-                           local_c);
+                           *(int *)(&DAT_00794d70 + *(int *)&param_1->field_0x361 * 4),
+                           param_1->field_0018,local_c);
       }
     }
     if (100 < param_1->field_0394) {
@@ -285,28 +291,28 @@ LAB_004c8bf2:
     }
     else if ((local_14 != 0) &&
             (iVar5 = thunk_FUN_004d7b10(*(char *)&param_1->field_0024,
-                                        *(int *)(&DAT_00794d70 + param_1->field_0361 * 4)),
-            iVar5 < local_14)) {
+                                        *(int *)(&DAT_00794d70 + *(int *)&param_1->field_0x361 * 4))
+            , iVar5 < local_14)) {
       bVar4 = false;
       param_1->field_03C8 = 1;
     }
     if ((local_10 != 0) &&
        (iVar5 = thunk_FUN_004d7b50(*(char *)&param_1->field_0024,
-                                   *(int *)(&DAT_00794d70 + param_1->field_0361 * 4)),
+                                   *(int *)(&DAT_00794d70 + *(int *)&param_1->field_0x361 * 4)),
        iVar5 < local_10)) {
       bVar4 = false;
       param_1->field_03C4 = 1;
     }
     if ((local_8 != 0) &&
        (iVar5 = thunk_FUN_004d7b90(*(char *)&param_1->field_0024,
-                                   *(int *)(&DAT_00794d70 + param_1->field_0361 * 4)),
+                                   *(int *)(&DAT_00794d70 + *(int *)&param_1->field_0x361 * 4)),
        iVar5 < local_8)) {
       bVar4 = false;
       param_1->field_03BC = 1;
     }
     if ((local_c == 0) ||
        (iVar5 = thunk_FUN_004d7bd0(*(char *)&param_1->field_0024,
-                                   *(int *)(&DAT_00794d70 + param_1->field_0361 * 4)),
+                                   *(int *)(&DAT_00794d70 + *(int *)&param_1->field_0x361 * 4)),
        local_c <= iVar5)) {
       iVar5 = local_14;
       if (bVar4) goto LAB_004c8bf2;

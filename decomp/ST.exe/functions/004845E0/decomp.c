@@ -2,10 +2,14 @@
 /* [STSwitchEnumApplier] Switch target param_1 uses
    /SubmarineTitans/Recovered/Enums/Global_sub_004845E0_param_1Enum. Cases:
    CASE_0=0;CASE_2=2;CASE_3=3;CASE_4=4;CASE_5=5;CASE_6=6;CASE_7=7;CASE_8=8;CASE_9=9;CASE_A=10;CASE_D=13;CASE_E=14;CASE_10=16;CASE_11=17;CASE_12=18;CASE_13=19;CASE_18=24;CASE_2B=43;CASE_2C=44;CASE_2D=45;CASE_48=72;CASE_4D=77
+
+   [STSwitchEnumApplier] Switch target param_1 uses
+   /SubmarineTitans/Recovered/Enums/STGameObjC_sub_004845E0_param_1Enum. Cases:
+   CASE_0=0;CASE_2=2;CASE_3=3;CASE_4=4;CASE_5=5;CASE_6=6;CASE_7=7;CASE_8=8;CASE_9=9;CASE_A=10;CASE_D=13;CASE_E=14;CASE_10=16;CASE_11=17;CASE_12=18;CASE_13=19;CASE_18=24;CASE_2B=43;CASE_2C=44;CASE_2D=45;CASE_48=72;CASE_4D=77
     */
 
 ushort __thiscall
-STGameObjC::FUN_004845e0(STGameObjC *this,Global_sub_004845E0_param_1Enum param_1,int *param_2)
+STGameObjC::FUN_004845e0(STGameObjC *this,STGameObjC_sub_004845E0_param_1Enum param_1,int *param_2)
 
 {
   byte bVar1;
@@ -640,7 +644,7 @@ LAB_00485b29:
       if (((iVar4 != 0x16) && (iVar4 = (**(code **)(*this_00 + 0x2c))(), iVar4 != 0x25)) ||
          (*(int *)((int)this_00 + 0x732) != 1)) {
         param_2 = (int *)(uint)*(byte *)(this_00 + 9);
-        param_1 = (Global_sub_004845E0_param_1Enum)*(byte *)&this->field_0024;
+        param_1 = (STGameObjC_sub_004845E0_param_1Enum)*(byte *)&this->field_0024;
         if (DAT_00808a8f != '\0') {
           bVar8 = (&DAT_008087ea)[param_1 * 0x51] != (&DAT_008087ea)[(int)param_2 * 0x51];
           return (((ushort)bVar8 - (ushort)bVar8) - (ushort)bVar8 & 5) + 2;
@@ -916,7 +920,7 @@ LAB_004847df:
     }
     bVar7 = *(byte *)(this_00 + 9);
     bVar1 = *(byte *)&this->field_0024;
-    param_1 = (Global_sub_004845E0_param_1Enum)bVar7;
+    param_1 = (STGameObjC_sub_004845E0_param_1Enum)bVar7;
     local_8 = (uint)bVar1;
     if (DAT_00808a8f != '\0') {
       bVar8 = (&DAT_008087ea)[local_8 * 0x51] != (&DAT_008087ea)[param_1 * 0x51];
@@ -945,7 +949,7 @@ LAB_004853c7:
     bVar8 = iVar4 < 0;
 LAB_004853d2:
     if (!bVar8) {
-      param_1 = (Global_sub_004845E0_param_1Enum)bVar7;
+      param_1 = (STGameObjC_sub_004845E0_param_1Enum)bVar7;
       if (DAT_00808a8f != '\0') {
         return 0xc;
       }

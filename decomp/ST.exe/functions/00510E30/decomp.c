@@ -256,7 +256,7 @@ LAB_00510fa9:
   pcVar10 = this_00->field_01E4;
   this_00->field_0244 = puVar9;
   if (pcVar10->field_00A0 != 0) {
-    FUN_00710790((uint *)pcVar10);
+    FUN_00710790((AnonShape_00710790_4CBB90D4 *)pcVar10);
   }
   iVar4 = *(int *)&pcVar10->field_0x8a;
   iVar26 = 1;

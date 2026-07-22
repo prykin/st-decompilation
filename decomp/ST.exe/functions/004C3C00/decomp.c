@@ -161,13 +161,13 @@ int __thiscall TLOBaseTy::fireFindCheckTarget(TLOBaseTy *this,int param_1,int pa
                                              local_30);
                           iVar8 = ((sVar6 + 0xb4) % 0x168) / 0xf;
                           uVar10 = (int)*(uint *)(&DAT_007be8c8 +
-                                                 ((int)this_00->field_0259 / 0xf + iVar8 * 0x18) * 4
-                                                 ) >> 0x1f;
+                                                 (this_00->field_0259 / 0xf + iVar8 * 0x18) * 4) >>
+                                   0x1f;
                           iVar7 = local_18;
                           iVar16 = local_28;
                           /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
                           if ((int)((*(uint *)(&DAT_007be8c8 +
-                                              ((int)this_00->field_0259 / 0xf + iVar8 * 0x18) * 4) ^
+                                              (this_00->field_0259 / 0xf + iVar8 * 0x18) * 4) ^
                                     uVar10) - uVar10) <= *(int *)((int)local_10 + 0x279)) {
                             iVar12 = param_1 + this_00->field_0235 * 2;
                             if ((&DAT_00792ca0)[iVar12 * 3] == 0xb0) {
@@ -280,7 +280,7 @@ LAB_004c41a5:
                                                                *(undefined2 *)
                                                                 ((int)(&DAT_007932d4 +
                                                                       iVar7 + iVar12) + 4),
-                                                               -*(short *)&this_00->field_0259);
+                                                               -(short)this_00->field_0259);
                                   local_68 = (short)*puVar11;
                                   sStack_66 = (short)((uint)*puVar11 >> 0x10);
                                   local_64 = *(short *)(puVar11 + 1);

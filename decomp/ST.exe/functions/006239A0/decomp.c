@@ -35,7 +35,7 @@ undefined4 __thiscall STMineSetC::sub_006239A0(STMineSetC *this)
   case CASE_0:
     return 1;
   case CASE_1:
-    iVar2 = thunk_FUN_00624920(this,this->field_02EE,&local_c,&local_10,&local_14);
+    iVar2 = sub_00624920(this,this->field_02EE,&local_c,&local_10,&local_14);
     if (0 < iVar2) {
       this->field_0054 = (short)this->field_02C2;
       this->field_0056 = (short)this->field_02C6;
@@ -85,7 +85,7 @@ undefined4 __thiscall STMineSetC::sub_006239A0(STMineSetC *this)
               (g_allPlayers_007FA174,
                CONCAT31((int3)((uint)uVar3 >> 8),*(undefined1 *)&this->field_0262),
                CONCAT22(extraout_var,this->field_0032),(AnonShape_0044A150_E4FE1661 *)this);
-    thunk_FUN_0041d2b0((AnonShape_0041D2B0_CE8C6BD3 *)this);
+    sub_0041D2B0(this);
     iVar2 = thunk_FUN_00495ff0(this->field_0047,this->field_0049,this->field_004B,
                                (uint)(byte)this->field_008E,(AnonShape_00495FF0_59081BDD *)this);
     if (iVar2 == 0) {
@@ -109,9 +109,9 @@ switchD_006239c1_caseD_4:
   default:
     goto switchD_006239c1_default;
   }
-  if (*(int *)(&DAT_007d04c0 + (uint)(byte)this->field_02AD * 4) <= this->field_02CE) {
+  if (*(int *)(&DAT_007d04c0 + (uint)this->field_02AD * 4) <= this->field_02CE) {
     if (this->field_02DF != '\0') {
-      if (this->field_02CE == *(int *)(&DAT_007d04c0 + (uint)(byte)this->field_02AD * 4)) {
+      if (this->field_02CE == *(int *)(&DAT_007d04c0 + (uint)this->field_02AD * 4)) {
         thunk_FUN_004ad0e0(&this->field_01D5,9);
       }
       STT3DSprC::SetCurFase((STT3DSprC *)&this->field_01D5,'\t',this->field_02DB);
@@ -163,7 +163,7 @@ LAB_00623d08:
       lVar5 = Library::MSVCRT::__ftol();
       iVar4 = (int)lVar5;
       lVar5 = Library::MSVCRT::__ftol();
-      thunk_FUN_00558c00(this_00,this_00->field_010C,(int)lVar5,iVar4,piVar6,piVar7);
+      VisibleClassTy::sub_00558C00(this_00,this_00->field_010C,(int)lVar5,iVar4,piVar6,piVar7);
       if ((((-1 < iVar2) && (((iVar2 < 5 && (-1 < local_18)) && (local_18 < this_00->field_0030))))
           && (((local_1c = g_centeredOffsets5[iVar2] + local_1c, -1 < local_1c &&
                (local_1c < this_00->field_0034)) && (this_00->field_004C != (byte *)0x0)))) &&

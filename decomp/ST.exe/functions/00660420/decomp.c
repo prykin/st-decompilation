@@ -17,7 +17,7 @@ undefined4 __thiscall FUN_00660420(void *this,undefined4 param_1)
                                  CONCAT22((short)((uint)param_1 >> 0x10),
                                           *(short *)((int)this + 0x7d)));
     if (this_00 != (STGroupBoatC *)0x0) {
-      (*this_00->vtable->vfunc_08)(this_00,CASE_2,local_1c);
+      (*this_00->vtable->SetOrderData)(this_00,GROUP_BOAT_ORDER_02,local_1c);
       return 0;
     }
   }

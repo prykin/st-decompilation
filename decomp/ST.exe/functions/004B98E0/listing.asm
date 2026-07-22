@@ -1,4 +1,4 @@
-FUN_004b98e0:
+TLOBaseTy::sub_004B98E0:
 004B98E0  55                        PUSH EBP
 004B98E1  8B EC                     MOV EBP,ESP
 004B98E3  8B 81 55 02 00 00         MOV EAX,dword ptr [ECX + 0x255]

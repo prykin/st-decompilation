@@ -231,7 +231,7 @@ LAB_004e5655:
           iVar9 = FUN_006b1190(*(DArrayTy **)((int)&g_playerRuntime[0].field2164_0x9ce + local_10),
                                &param_1);
           while (-1 < iVar9) {
-            thunk_FUN_004dd880(param_1);
+            thunk_FUN_004dd880((AnonShape_004DDCC0_33DEB43E *)param_1);
             iVar9 = FUN_006b1190(*(DArrayTy **)((int)&g_playerRuntime[0].field2164_0x9ce + iVar7),
                                  &param_1);
           }
@@ -260,7 +260,7 @@ LAB_004e5655:
                    (((iVar9 = (**(code **)(*param_1 + 0x2c))(), iVar9 == 5 ||
                      (iVar9 = (**(code **)(*param_1 + 0x2c))(), iVar9 == 0x21)) ||
                     (iVar9 = (**(code **)(*param_1 + 0x2c))(), iVar9 == 0x11)))) {
-                  thunk_FUN_00494ae0(param_1);
+                  thunk_FUN_00494ae0((AnonShape_00494AE0_7F188308 *)param_1);
                 }
               }
             }

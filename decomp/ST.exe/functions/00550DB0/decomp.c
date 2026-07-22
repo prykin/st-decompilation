@@ -210,8 +210,7 @@ void __thiscall TradePanelTy::InitTradePanel(TradePanelTy *this)
     *(undefined4 *)&this_00->field_0x2c = 0x186a1;
     FUN_006e6080(this_00,2,*puVar3,(undefined4 *)puVar1);
     this_00->field_0028 = 0x22;
-    *(uint *)&this_00->field_0x2c =
-         (uint)*(ushort *)(&this_00->field_0x1bc + (uint)(byte)this_00->field_01D0 * 2);
+    *(uint *)&this_00->field_0x2c = (uint)(ushort)(&this_00->field_01BC)[(byte)this_00->field_01D0];
     FUN_006e6080(this_00,2,*puVar3,(undefined4 *)puVar1);
     this_00->field_0028 = 0x20;
     *(undefined4 *)&this_00->field_0x2c = 1;

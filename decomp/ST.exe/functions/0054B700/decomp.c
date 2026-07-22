@@ -10,7 +10,9 @@
    incoming_edx_uses=0; incoming_stack_parameter_uses=2; direct_non_thunk_callers=0;
    incoming_ecx_receiver_callers=0; attributed_named_callers=1; owner_evidence_coverage=adequate */
 
-void __thiscall CursorClassTy::sub_0054B700(CursorClassTy *this,int param_1)
+void __thiscall
+SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0054B700::sub_0054B700
+          (AnonReceiver_0054B700 *this,int param_1)
 
 {
   AnonShape_0054B700_B3EE6DE9 *pAVar1;
@@ -22,7 +24,7 @@ void __thiscall CursorClassTy::sub_0054B700(CursorClassTy *this,int param_1)
   InternalExceptionFrame local_4c;
   AnonShape_0054B700_B3EE6DE9 *local_8;
 
-  if (param_1 == this->field_04DF) {
+  if (param_1 == *(int *)&this->field_0x4df) {
     return;
   }
   local_4c.previous = g_currentExceptionFrame;
