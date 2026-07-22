@@ -263,12 +263,12 @@ void __thiscall CPanelTy::DoneCPanel(CPanelTy *this)
       this_01 = extraout_ECX_01;
     }
     this_00->field_0B4B = (DArrayTy *)0x0;
-    if ((DArrayTy *)this_00->field_0B95 != (DArrayTy *)0x0) {
-      DArrayDestroy((DArrayTy *)this_00->field_0B95);
+    if (this_00->field_0B95 != (DArrayTy *)0x0) {
+      DArrayDestroy(this_00->field_0B95);
       /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
       this_01 = extraout_ECX_02;
     }
-    this_00->field_0B95 = (uint *)0x0;
+    this_00->field_0B95 = (DArrayTy *)0x0;
     if (this_00->field_01CC != (ccFntTy *)0x0) {
       ccFntTy::operator(this_01,(uint *)this_00->field_01CC);
       this_00->field_01CC = (ccFntTy *)0x0;

@@ -1,4 +1,4 @@
-FUN_0062cf50:
+STManRub3C::sub_0062CF50:
 0062CF50  56                        PUSH ESI
 0062CF51  57                        PUSH EDI
 0062CF52  8D 71 30                  LEA ESI,[ECX + 0x30]

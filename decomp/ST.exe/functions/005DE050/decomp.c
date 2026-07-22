@@ -16,8 +16,8 @@ StartSystemTy::PaintBinDesc(StartSystemTy *this,AnonShape_005DE050_5BD86458 *par
   int errorCode;
   uint uVar5;
   int iVar6;
-  uint *puVar7;
-  uint uVar8;
+  uint *resourceString;
+  uint uVar7;
   InternalExceptionFrame local_54;
   StartSystemTy *local_10;
   int local_c;
@@ -41,25 +41,25 @@ StartSystemTy::PaintBinDesc(StartSystemTy *this,AnonShape_005DE050_5BD86458 *par
       pAVar2 = (AnonShape_006B5B10_E0D06CF1 *)local_10->field_0544;
       FUN_006b4170(pAVar2,0,0,0,pAVar2->field_0004,pAVar2->field_0008,0xff);
       uVar5 = (uint)param_1->field_0016;
-      uVar8 = uVar5;
+      uVar7 = uVar5;
       /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
       if ((int)uVar5 < (int)(*(int *)(local_c + 0x1e0) + uVar5)) {
         do {
-          if ((int)uVar8 < (int)pSVar4->field_0548[2]) {
-            puVar7 = *(uint **)(pSVar4->field_0548[5] + uVar8 * 4);
+          if ((int)uVar7 < (int)pSVar4->field_0548[2]) {
+            resourceString = *(uint **)(pSVar4->field_0548[5] + uVar7 * 4);
           }
           else {
-            puVar7 = (uint *)0x0;
+            resourceString = (uint *)0x0;
           }
-          if (puVar7 != (uint *)0x0) {
+          if (resourceString != (uint *)0x0) {
             ccFntTy::SetSurf(pSVar4->field_0034,(int)pSVar4->field_0544,0,0,
-                             (uVar8 - uVar5) * local_8,pSVar4->field_0544->field_0004,local_8);
-            ccFntTy::WrStr(pSVar4->field_0034,puVar7,0,-1,0);
+                             (uVar7 - uVar5) * local_8,pSVar4->field_0544->field_0004,local_8);
+            ccFntTy::WrStr(pSVar4->field_0034,resourceString,0,-1,0);
           }
-          uVar8 = uVar8 + 1;
+          uVar7 = uVar7 + 1;
           uVar5 = (uint)param_1->field_0016;
         /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-        } while ((int)uVar8 < (int)(*(int *)(local_c + 0x1e0) + uVar5));
+        } while ((int)uVar7 < (int)(*(int *)(local_c + 0x1e0) + uVar5));
       }
       FUN_006b35d0((int *)PTR_008075a8,pSVar4->field_0540);
       g_currentExceptionFrame = local_54.previous;

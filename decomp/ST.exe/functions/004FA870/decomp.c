@@ -35,7 +35,7 @@ void __thiscall FUN_004fa870(void *this,Global_sub_004FA870_param_1Enum param_1)
     else if (param_1 == 9) {
       if (g_infocPanel_00801698 != (InfocPanelTy *)0x0) {
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-        (**(code **)(*(int *)g_infocPanel_00801698 + 0x20))();
+        (*(code *)g_infocPanel_00801698->field_0000->field_0020)();
         return;
       }
     }
@@ -63,7 +63,7 @@ void __thiscall FUN_004fa870(void *this,Global_sub_004FA870_param_1Enum param_1)
     else if (param_1 == 0x10) {
       if (g_upgPanel_00802A48 != (UpgPanelTy *)0x0) {
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-        (**(code **)(*(int *)g_upgPanel_00802A48 + 0x20))();
+        (*(code *)g_upgPanel_00802A48->field_0000->field_0020)();
         return;
       }
     }

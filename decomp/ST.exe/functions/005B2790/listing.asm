@@ -1,4 +1,4 @@
-FUN_005b2790:
+CreateChooseMap:
 005B2790  55                        PUSH EBP
 005B2791  8B EC                     MOV EBP,ESP
 005B2793  51                        PUSH ECX

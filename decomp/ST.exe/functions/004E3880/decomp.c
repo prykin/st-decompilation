@@ -15,7 +15,7 @@ undefined4 __fastcall FUN_004e3880(AnonShape_004E3880_642C8E1A *param_1)
   param_1->field_04DC = 0;
   param_1->field_04E0 = 0;
   param_1->field_04E4 = 5;
-  param_1->field_04E8 = PTR_00802a38->field_00E4 + 0x271;
+  param_1->field_04E8 = g_playSystem_00802A38->field_00E4 + 0x271;
   exceptionCode =
        STT3DSprC::LoadSequence
                  ((STT3DSprC *)&param_1->field_0x1d5,0xb,DAT_0080678c,"sha_ani1",0x1d);

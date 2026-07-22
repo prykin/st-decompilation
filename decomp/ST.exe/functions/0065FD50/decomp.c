@@ -18,7 +18,7 @@ FUN_0065fd50(void *this,int param_1,int param_2,short param_3,undefined4 param_4
   *(undefined4 *)((int)this + 0xa7) = 0;
   iVar1 = thunk_FUN_00675950(param_1,param_2,param_3,local_10,local_10 + 1,local_10 + 2,0);
   if (iVar1 != 0) {
-    if ((*(short *)((int)this + 0x7d) != -2) && (g_sTAllPlayers_007FA174 != (STAllPlayersC *)0x0)) {
+    if ((*(short *)((int)this + 0x7d) != -2) && (g_allPlayers_007FA174 != (STAllPlayersC *)0x0)) {
       uStack_a = param_4;
       /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
       this_00 = thunk_FUN_0042b760(*(char *)((int)this + 0x24),

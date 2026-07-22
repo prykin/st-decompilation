@@ -1,4 +1,4 @@
-FUN_005d1380:
+SettMapMTy::sub_005D1380:
 005D1380  C6 05 4D 87 80 00 FF      MOV byte ptr [0x0080874d],0xff
 005D1387  8B 91 84 1F 00 00         MOV EDX,dword ptr [ECX + 0x1f84]
 005D138D  56                        PUSH ESI

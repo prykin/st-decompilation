@@ -9,9 +9,9 @@ FUN_00497850(int param_1,int param_2,int param_3,int param_4,int param_5,int par
   void *pvVar3;
 
   if (-1 < (int)param_7) {
-    /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(PTR_007fb270, param_7) (runtime stride) */
-    if ((((int)param_7 < (int)PTR_007fb270->count) && (param_7 < PTR_007fb270->count)) &&
-       (pvVar3 = (void *)(PTR_007fb270->elementSize * param_7 + (int)PTR_007fb270->data),
+    /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(g_dArray_007FB270, param_7) (runtime stride) */
+    if ((((int)param_7 < (int)g_dArray_007FB270->count) && (param_7 < g_dArray_007FB270->count)) &&
+       (pvVar3 = (void *)(g_dArray_007FB270->elementSize * param_7 + (int)g_dArray_007FB270->data),
        pvVar3 != (void *)0x0)) {
       iVar1 = *(int *)((int)pvVar3 + 0x14);
       uVar2 = thunk_FUN_0060e470(param_1,param_2,param_3,param_4,param_5,param_6,

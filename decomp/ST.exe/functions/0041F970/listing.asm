@@ -1,4 +1,4 @@
-FUN_0041f970:
+STSprGameObjC::sub_0041F970:
 0041F970  56                        PUSH ESI
 0041F971  8B F1                     MOV ESI,ECX
 0041F973  8B 8E 11 02 00 00         MOV ECX,dword ptr [ESI + 0x211]

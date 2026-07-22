@@ -63,8 +63,8 @@ void __thiscall CPanelTy::UpdateStackPanel(CPanelTy *this,uint param_1)
       pcVar7[1] = uVar2;
       /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
       STAllPlayersC::GetPanelInfo
-                (g_sTAllPlayers_007FA174,CONCAT31((int3)(param_1 >> 8),(char)param_1 + '\x0e'),
-                 pAVar11);
+                (g_allPlayers_007FA174,CONCAT31((int3)(param_1 >> 8),(char)param_1 + '\x0e'),pAVar11
+                );
       pAVar11 = local_c;
       local_1c = local_1c & 0xffffff00;
       bVar5 = ((g_nWidth_00806730 != 0x400) - 1U & 0xfc) + 6;

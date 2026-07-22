@@ -1,4 +1,4 @@
-FUN_00550190:
+STPlaySystemC::sub_00550190:
 00550190  8B 81 E4 00 00 00         MOV EAX,dword ptr [ECX + 0xe4]
 00550196  8B 51 34                  MOV EDX,dword ptr [ECX + 0x34]
 00550199  40                        INC EAX

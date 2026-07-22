@@ -1,14 +1,16 @@
 
-void __fastcall FUN_004cbf30(int param_1)
+/* [STMethodOwnerApplier] Structural method owner recovered as TLOBaseTy.
+   Evidence: this_call_owners=[TLOBaseTy]; agreed_this_calls=1; incoming_this_accesses=3;
+   incoming_edx_uses=0; incoming_stack_parameter_uses=0; direct_non_thunk_callers=0;
+   incoming_ecx_receiver_callers=0; attributed_named_callers=1; owner_evidence_coverage=adequate */
+
+void __thiscall TLOBaseTy::sub_004CBF30(TLOBaseTy *this)
 
 {
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  if (*(STT3DSprC **)(param_1 + 0x5ff) != (STT3DSprC *)0x0) {
-    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-    thunk_FUN_004ad310(*(STT3DSprC **)(param_1 + 0x5ff));
-    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-    Library::MSVCRT::FUN_0072e2b0(*(HoloTy **)(param_1 + 0x5ff));
-    *(undefined4 *)(param_1 + 0x5ff) = 0;
+  if (this->field_05FF != (STT3DSprC *)0x0) {
+    thunk_FUN_004ad310(this->field_05FF);
+    Library::MSVCRT::FUN_0072e2b0((HoloTy *)this->field_05FF);
+    this->field_05FF = (STT3DSprC *)0x0;
   }
   return;
 }

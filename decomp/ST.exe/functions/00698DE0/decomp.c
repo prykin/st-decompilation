@@ -15,7 +15,7 @@ int FUN_00698de0(undefined1 *param_1,uint param_2,int param_3,undefined4 param_4
 
   puVar2 = param_1;
   local_8 = 0;
-  Library::MSVCRT::FUN_00730810(param_1,param_2,10,&LAB_00404a93);
+  Library::MSVCRT::FUN_00730810(param_1,param_2,10,thunk_FUN_00698db0);
   iVar5 = *(int *)(param_1 + param_2 * 10 + -4);
   uVar4 = 0;
   uVar3 = param_2;

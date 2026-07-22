@@ -16,8 +16,8 @@ STBoatC::PrepareForLoading
 
   if (param_1 == this->field_05A2) {
     sVar1 = this->field_005F;
-    this->field_05AC = param_3;
-    this->field_05AE = param_4;
+    *(short *)&this->field_0x5ac = param_3;
+    *(short *)&this->field_0x5ae = param_4;
     this->field_05B0 = param_5;
     this->field_05C0 = 1;
     this->field_05AA = param_2;
@@ -87,8 +87,8 @@ STBoatC::PrepareForLoading
       return;
     }
     if ((this->field_0041 == (short)(this->field_05AA * 0xc9 + 100)) &&
-       (this->field_0043 == (short)(this->field_05AC * 0xc9 + 100))) {
-      if (this->field_0045 != (short)(this->field_05AE * 200 + 100)) {
+       (this->field_0043 == (short)(*(short *)&this->field_0x5ac * 0xc9 + 100))) {
+      if (this->field_0045 != (short)(*(short *)&this->field_0x5ae * 200 + 100)) {
         this->field_05C4 = 3;
         return;
       }

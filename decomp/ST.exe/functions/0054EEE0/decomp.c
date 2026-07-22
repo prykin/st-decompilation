@@ -89,7 +89,7 @@ STPlaySystemC::SetCtrlCmd
     puVar4 = Library::DKW::LIB::FUN_006aac10(iVar3 + 0x1b);
     puVar4[1] = *(undefined4 *)&local_8[2].field_0x36;
     *(undefined1 *)(puVar4 + 2) = param_1;
-    *(char *)((int)puVar4 + 9) = (char)PTR_00802a30->field_04AE;
+    *(char *)((int)puVar4 + 9) = (char)g_cursorClass_00802A30->field_04AE;
     *(uint *)((int)puVar4 + 10) = param_2;
     *(char *)((int)puVar4 + 0xe) = param_3;
     *(uint *)((int)puVar4 + 0xf) = uVar7;

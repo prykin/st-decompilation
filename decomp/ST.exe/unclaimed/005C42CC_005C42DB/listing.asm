@@ -1,0 +1,4 @@
+005C42CC  pointer  005c3173
+005C42D0  pointer  005c317a
+005C42D4  pointer  005c3181
+005C42D8  pointer  005c3188

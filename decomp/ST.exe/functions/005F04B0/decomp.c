@@ -7,7 +7,7 @@ void __thiscall FUN_005f04b0(void *this,int *param_1)
   int iVar3;
 
   piVar1 = param_1;
-  iVar3 = FUN_006e62d0(PTR_00802a38,(int)param_1,(int *)&param_1);
+  iVar3 = FUN_006e62d0(g_playSystem_00802A38,(int)param_1,(int *)&param_1);
   piVar2 = param_1;
   if (iVar3 != -4) {
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */

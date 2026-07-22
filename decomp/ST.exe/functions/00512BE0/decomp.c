@@ -10,11 +10,14 @@
    /SubmarineTitans/Recovered/HiddenThis/AnonReceiver_004EEFB0.
    Evidence: incoming_receiver_captures=1; receiver_accesses=22; incoming_edx_uses=0; calls=1;
    ecx_pointer_setup=1; ecx_scalar_setup=0; caller_cleanup_calls=0; callee_ret_pop=[4];
-   expected_stack=4; receiver_family_members=12; single_call_corroborated_by_receiver_family */
+   expected_stack=4; receiver_family_members=12; single_call_corroborated_by_receiver_family
 
-void __thiscall
-SubmarineTitans::Recovered::HiddenThis::AnonReceiver_004EEFB0::FUN_00512be0
-          (AnonReceiver_004EEFB0 *this,int param_1)
+   [STMethodOwnerApplier] Structural method owner recovered as HelpPanelTy.
+   Evidence: this_call_owners=[HelpPanelTy]; agreed_this_calls=1; incoming_this_accesses=22;
+   incoming_edx_uses=0; incoming_stack_parameter_uses=54; direct_non_thunk_callers=0;
+   incoming_ecx_receiver_callers=0; attributed_named_callers=1; owner_evidence_coverage=adequate */
+
+void __thiscall HelpPanelTy::sub_00512BE0(HelpPanelTy *this,int param_1)
 
 {
   uint *puVar1;

@@ -18,7 +18,7 @@ undefined4 __fastcall FUN_004c3020(AnonShape_004C3020_45D93566 *param_1)
   param_1->field_026D = 0;
   iVar2 = param_1->field_0235;
   if ((*(int *)(&DAT_00792778 + iVar2 * 4) == 0) || (*(int *)(&DAT_00792880 + iVar2 * 8) == 0)) {
-    uVar4 = PTR_00802a38->field_00E4;
+    uVar4 = g_playSystem_00802A38->field_00E4;
   }
   else {
     iVar2 = thunk_FUN_004e8230(param_1->field_0024,iVar2,0);
@@ -31,11 +31,11 @@ undefined4 __fastcall FUN_004c3020(AnonShape_004C3020_45D93566 *param_1)
   iVar2 = *(int *)(&DAT_00792040 + param_1->field_0235 * 4);
   uVar4 = param_1->field_001C * 0x41c64e6d + 0x3039;
   param_1->field_001C = uVar4;
-  uVar1 = PTR_00802a38->field_00E4;
+  uVar1 = g_playSystem_00802A38->field_00E4;
   param_1->field_028D = 0;
   param_1->field_0291 = 0;
   param_1->field_0289 = (uVar4 >> 0x10) % (iVar2 * 10 + 1U) + uVar1;
-  uVar4 = PTR_00802a38->field_00E4;
+  uVar4 = g_playSystem_00802A38->field_00E4;
   param_1->field_02B1 = 0;
   param_1->field_0295 = uVar4;
   param_1->field_02B5 = 0;
@@ -74,11 +74,11 @@ undefined4 __fastcall FUN_004c3020(AnonShape_004C3020_45D93566 *param_1)
     iVar2 = *(int *)(&DAT_00792040 + param_1->field_0235 * 4);
     uVar4 = param_1->field_001C * 0x41c64e6d + 0x3039;
     param_1->field_001C = uVar4;
-    uVar1 = PTR_00802a38->field_00E4;
+    uVar1 = g_playSystem_00802A38->field_00E4;
     param_1->field_030D = 0;
     param_1->field_0311 = 0;
     param_1->field_0309 = (uVar4 >> 0x10) % (iVar2 * 10 + 1U) + uVar1;
-    uVar4 = PTR_00802a38->field_00E4;
+    uVar4 = g_playSystem_00802A38->field_00E4;
     param_1->field_0331 = 0;
     param_1->field_0315 = uVar4;
     param_1->field_0335 = 0;

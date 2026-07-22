@@ -172,7 +172,7 @@ LAB_0055693a:
   local_50 = param_7;
   local_4e = param_8;
   local_36 = 0xffff;
-  local_30 = PTR_00802a38->field_00E4;
+  local_30 = g_playSystem_00802A38->field_00E4;
   if (((((param_7 == 0) && (param_8 == 0)) && (param_9 == 0)) &&
       ((param_10 == 0 && (param_11 == 0)))) && (param_12 == 0)) {
     local_1c = 0;
@@ -210,7 +210,8 @@ LAB_0055693a:
       FUN_006ea3e0(PTR_00807598,local_26,local_42);
     }
     else if (local_3e == 1) {
-      FUN_006ea460(PTR_00807598,local_26,local_42);
+      SubmarineTitans::Recovered::HiddenThis::AnonReceiver_006EA050::sub_006EA460
+                ((AnonReceiver_006EA050 *)PTR_00807598,local_26,local_42);
     }
   }
   FUN_006ea4e0(PTR_00807598,local_26,1,*(int *)(&DAT_007c9000 + local_58 * 0x18) / 2,
@@ -223,7 +224,7 @@ LAB_0055693a:
   local_36 = (undefined2)param_3;
   local_34 = local_60->field_0020;
   if (iVar7 != 0) {
-    uVar10 = thunk_FUN_00555d90(local_60,(undefined4 *)&local_58);
+    uVar10 = sub_00555D90(local_60,(undefined4 *)&local_58);
     g_currentExceptionFrame = local_a8.previous;
     return uVar10;
   }

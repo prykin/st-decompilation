@@ -7,7 +7,7 @@ int __fastcall FUN_0063f790(AnonShape_0063F790_F83B8A8C *param_1)
   float fVar1;
   short sVar2;
   int iVar3;
-  AnonShape_006E3210_FE49985F *pAVar4;
+  AnonShape_GLOBAL_00807598_0C6808FB *pAVar4;
   int iVar5;
   int iVar6;
   int iVar7;
@@ -63,7 +63,7 @@ int __fastcall FUN_0063f790(AnonShape_0063F790_F83B8A8C *param_1)
       fVar1 = (float)iVar5 * _DAT_007904f8;
       *(int *)(iVar11 + 0xc) = iVar7;
       *(float *)(iVar11 + 0x10) = fVar1 * _DAT_007904f0;
-      pAVar4 = (AnonShape_006E3210_FE49985F *)param_1->field_0211;
+      pAVar4 = (AnonShape_GLOBAL_00807598_0C6808FB *)param_1->field_0211;
       fVar13 = FUN_006e3210(pAVar4,(iVar8 * pAVar4->field_0380) / 0xc9,
                             (iVar7 * pAVar4->field_0380) / 0xc9);
       fVar1 = (float)fVar13;
@@ -106,7 +106,7 @@ int __fastcall FUN_0063f790(AnonShape_0063F790_F83B8A8C *param_1)
       fVar1 = (float)iVar5 * _DAT_007904f8;
       *(int *)(iVar11 + 0xc) = iVar7;
       *(float *)(iVar11 + 0x10) = fVar1 * _DAT_007904f0;
-      pAVar4 = (AnonShape_006E3210_FE49985F *)param_1->field_0211;
+      pAVar4 = (AnonShape_GLOBAL_00807598_0C6808FB *)param_1->field_0211;
       fVar13 = FUN_006e3210(pAVar4,(iVar8 * pAVar4->field_0380) / 0xc9,
                             (iVar7 * pAVar4->field_0380) / 0xc9);
       fVar1 = (float)fVar13;
@@ -133,7 +133,8 @@ int __fastcall FUN_0063f790(AnonShape_0063F790_F83B8A8C *param_1)
   else if (param_1->field_037F != 0) {
     *(int *)(param_1->field_037F + 0xc) = iVar6;
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-    if ((*(char *)(param_1->field_037F + 0x15) == '\0') && ((PTR_00802a38->field_00E4 & 1) == 0)) {
+    if ((*(char *)(param_1->field_037F + 0x15) == '\0') &&
+       ((g_playSystem_00802A38->field_00E4 & 1) == 0)) {
       *(undefined1 *)(param_1->field_037F + 0x15) = 1;
       uVar9 = *(uint *)param_1->field_037F;
       if (-1 < (int)uVar9) {
@@ -187,7 +188,7 @@ int __fastcall FUN_0063f790(AnonShape_0063F790_F83B8A8C *param_1)
                            ) * _DAT_007904f8;
             *(int *)(iVar11 + 0xc) = iVar7;
             *(float *)(iVar11 + 0x10) = fVar1 * _DAT_007904f0;
-            pAVar4 = (AnonShape_006E3210_FE49985F *)param_1->field_0211;
+            pAVar4 = (AnonShape_GLOBAL_00807598_0C6808FB *)param_1->field_0211;
             fVar13 = FUN_006e3210(pAVar4,(iVar8 * pAVar4->field_0380) / 0xc9,
                                   (iVar7 * pAVar4->field_0380) / 0xc9);
             fVar1 = (float)fVar13;
@@ -205,7 +206,7 @@ int __fastcall FUN_0063f790(AnonShape_0063F790_F83B8A8C *param_1)
                 *(float *)(iVar11 + 0x10) = fVar1 - _DAT_0079d4a8;
               }
             }
-            uVar10 = PTR_00802a38->field_00E4;
+            uVar10 = g_playSystem_00802A38->field_00E4;
             *(undefined4 *)(iVar11 + 0x20) = 10;
             *(uint *)(iVar11 + 0x30) = uVar10;
           }

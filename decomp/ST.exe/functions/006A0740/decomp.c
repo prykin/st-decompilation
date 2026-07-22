@@ -45,7 +45,7 @@ int __thiscall CGenerate::SaveMap(CGenerate *this)
   if (iVar2 == 0) {
     local_8 = 0;
   }
-  pcVar3 = LoadResourceString(0x232b,HINSTANCE_00807618);
+  pcVar3 = LoadResourceString(0x232b,g_module_00807618);
   uVar4 = 0xffffffff;
   do {
     pcVar6 = pcVar3;

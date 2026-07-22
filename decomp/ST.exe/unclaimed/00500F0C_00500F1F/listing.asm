@@ -1,0 +1,5 @@
+00500F0C  pointer  00500c76
+00500F10  pointer  00500cab
+00500F14  pointer  00500c76
+00500F18  pointer  00500cab
+00500F1C  pointer  00500c76

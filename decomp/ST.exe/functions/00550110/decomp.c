@@ -14,7 +14,7 @@ int __fastcall FUN_00550110(int param_1)
   if (*(byte *)(param_1 + 0x4e) < *(byte *)(param_1 + 0x4d)) {
     *(undefined2 *)(*(int *)(param_1 + 0x3d) + 5) = 0;
     *(char *)(param_1 + 0x4e) = *(char *)(param_1 + 0x4e) + '\x01';
-    thunk_FUN_00550190(param_1);
+    STPlaySystemC::sub_00550190((STPlaySystemC *)param_1);
     return 1;
   }
   /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
@@ -23,7 +23,7 @@ int __fastcall FUN_00550110(int param_1)
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     bVar2 = *(short *)(param_1 + 0x57) != 0;
     if (bVar2) {
-      thunk_FUN_00550190(param_1);
+      STPlaySystemC::sub_00550190((STPlaySystemC *)param_1);
     }
     uVar1 = (uint)bVar2;
     *(undefined2 *)(param_1 + 0x57) = 0;

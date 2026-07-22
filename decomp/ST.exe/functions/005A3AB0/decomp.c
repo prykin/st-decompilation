@@ -27,15 +27,15 @@ void __thiscall FSGSTy::SetInfo(FSGSTy *this,byte *param_1,uint param_2,byte *pa
   uint *local_10;
   FILETIME local_c;
 
-  this_00 = PTR_00802a30;
+  this_00 = g_cursorClass_00802A30;
   local_14 = this;
-  if (PTR_00802a30 != (CursorClassTy *)0x0) {
-    PTR_00802a30->field_0493 = 1;
+  if (g_cursorClass_00802A30 != (CursorClassTy *)0x0) {
+    g_cursorClass_00802A30->field_0493 = 1;
     this_00->field_0494 = 0xffff;
     CursorClassTy::SetGCType(this_00,CASE_0,this_00->field_00C5,this_00->field_00C9);
     CursorClassTy::DrawSprite(this_00,this_00->field_00C5,this_00->field_00C9);
     this_00->field_00D2 = 0;
-    this_00->field_04DF = 0xffffffff;
+    this_00->field_04DF = -1;
   }
   if ((this->field_1A5F == CASE_A) && (pbVar3 = this->field_1B0C, pbVar3 != (byte *)0x0)) {
     do {
@@ -63,30 +63,29 @@ LAB_005a3b63:
         pbVar3 = thunk_FUN_0055d590("Profile\\Age",param_2,param_3);
         this_01 = local_14;
         if (pbVar3 != (byte *)0x0) {
-          Library::DKW::TBL::FUN_006b6020(local_14->field_1AF8,0,(char *)pbVar3);
-          *(uint **)&this_01->field_0x31 = this_01->field_1AF8;
+          Library::DKW::TBL::FUN_006b6020(&local_14->field_1AF8->flags,0,(char *)pbVar3);
+          *(DArrayTy **)&this_01->field_0x31 = this_01->field_1AF8;
           this_01->field_002D = 0x33;
           FUN_006e6080(this_01,2,this_01->field_1AD8,(undefined4 *)&this_01->field_0x1d);
         }
         pbVar3 = thunk_FUN_0055d590("Profile\\Sex",param_2,param_3);
         if (pbVar3 != (byte *)0x0) {
-          Library::DKW::TBL::FUN_006b6020(this_01->field_1AFC,0,(char *)pbVar3);
+          Library::DKW::TBL::FUN_006b6020(&this_01->field_1AFC->flags,0,(char *)pbVar3);
           this_01->field_002D = 0x33;
-          *(uint **)&this_01->field_0x31 = this_01->field_1AFC;
+          *(DArrayTy **)&this_01->field_0x31 = this_01->field_1AFC;
           FUN_006e6080(this_01,2,this_01->field_1ADC,(undefined4 *)&this_01->field_0x1d);
         }
         pbVar3 = thunk_FUN_0055d590("Profile\\Location",param_2,param_3);
         if (pbVar3 != (byte *)0x0) {
-          Library::DKW::TBL::FUN_006b6020(this_01->field_1B00,0,(char *)pbVar3);
+          Library::DKW::TBL::FUN_006b6020(&this_01->field_1B00->flags,0,(char *)pbVar3);
           this_01->field_002D = 0x33;
-          *(uint **)&this_01->field_0x31 = this_01->field_1B00;
+          *(DArrayTy **)&this_01->field_0x31 = this_01->field_1B00;
           FUN_006e6080(this_01,2,this_01->field_1AE0,(undefined4 *)&this_01->field_0x1d);
         }
         local_10 = (uint *)thunk_FUN_0055d590("Profile\\Description",param_2,param_3);
         if (local_10 != (uint *)0x0) {
-          if ((AnonShape_006B5570_4D68B99C *)this_01->field_1B04 !=
-              (AnonShape_006B5570_4D68B99C *)0x0) {
-            FUN_006b5570((AnonShape_006B5570_4D68B99C *)this_01->field_1B04);
+          if ((DArrayTy *)this_01->field_1B04 != (DArrayTy *)0x0) {
+            FUN_006b5570((DArrayTy *)this_01->field_1B04);
           }
           puVar5 = ccFntTy::_TxtToSarr(this_01->field_1A73,local_10);
           this_01->field_1B04 = puVar5;
@@ -99,18 +98,18 @@ LAB_005a3b63:
           *(uint **)&this_01->field_0x31 = this_01->field_1B04;
           FUN_006e6080(this_01,2,this_01->field_1AE4,(undefined4 *)&this_01->field_0x1d);
         }
-        thunk_FUN_005a39a0(this_01,(ccFntTy *)this_01->field_1A7F,"1\\Wins",param_2,param_3,
-                           0x1a,0xf3,0x4e,0x12);
-        thunk_FUN_005a39a0(this_01,(ccFntTy *)this_01->field_1A7F,"1\\Losses",param_2,
-                           param_3,0x7e,0xf3,0x4e,0x12);
-        thunk_FUN_005a39a0(this_01,(ccFntTy *)this_01->field_1A7F,"1\\Draws",param_2,param_3
-                           ,0xe2,0xf3,0x4e,0x12);
-        thunk_FUN_005a39a0(this_01,(ccFntTy *)this_01->field_1A7F,"1\\Disconnects",param_2,
-                           param_3,0x146,0xf3,0x4e,0x12);
-        thunk_FUN_005a39a0(this_01,this_01->field_1A7B,"1\\Rating",param_2,param_3,0x1a,
-                           0x11b,0x4e,0x17);
-        thunk_FUN_005a39a0(this_01,this_01->field_1A7B,"1\\Rank",param_2,param_3,0x7e,0x11b,
-                           0x4e,0x17);
+        sub_005A39A0(this_01,(ccFntTy *)this_01->field_1A7F,"1\\Wins",param_2,param_3,0x1a,
+                     0xf3,0x4e,0x12);
+        sub_005A39A0(this_01,(ccFntTy *)this_01->field_1A7F,"1\\Losses",param_2,param_3,0x7e
+                     ,0xf3,0x4e,0x12);
+        sub_005A39A0(this_01,(ccFntTy *)this_01->field_1A7F,"1\\Draws",param_2,param_3,0xe2,
+                     0xf3,0x4e,0x12);
+        sub_005A39A0(this_01,(ccFntTy *)this_01->field_1A7F,"1\\Disconnects",param_2,param_3
+                     ,0x146,0xf3,0x4e,0x12);
+        sub_005A39A0(this_01,this_01->field_1A7B,"1\\Rating",param_2,param_3,0x1a,0x11b,0x4e
+                     ,0x17);
+        sub_005A39A0(this_01,this_01->field_1A7B,"1\\Rank",param_2,param_3,0x7e,0x11b,0x4e,
+                     0x17);
         pbVar3 = thunk_FUN_0055d590("1\\Last Game",param_2,param_3);
         if (pbVar3 != (byte *)0x0) {
           iVar4 = -1;
@@ -139,14 +138,14 @@ LAB_005a3b63:
             }
           }
         }
-        thunk_FUN_005a39a0(this_01,(ccFntTy *)this_01->field_1A7F,"0\\Wins",param_2,param_3,
-                           0x1a,0x161,0x4e,0x12);
-        thunk_FUN_005a39a0(this_01,(ccFntTy *)this_01->field_1A7F,"0\\Losses",param_2,
-                           param_3,0x7e,0x161,0x4e,0x12);
-        thunk_FUN_005a39a0(this_01,(ccFntTy *)this_01->field_1A7F,"0\\Draws",param_2,param_3
-                           ,0xe2,0x161,0x4e,0x12);
-        thunk_FUN_005a39a0(this_01,(ccFntTy *)this_01->field_1A7F,"0\\Disconnects",param_2,
-                           param_3,0x146,0x161,0x4e,0x12);
+        sub_005A39A0(this_01,(ccFntTy *)this_01->field_1A7F,"0\\Wins",param_2,param_3,0x1a,
+                     0x161,0x4e,0x12);
+        sub_005A39A0(this_01,(ccFntTy *)this_01->field_1A7F,"0\\Losses",param_2,param_3,0x7e
+                     ,0x161,0x4e,0x12);
+        sub_005A39A0(this_01,(ccFntTy *)this_01->field_1A7F,"0\\Draws",param_2,param_3,0xe2,
+                     0x161,0x4e,0x12);
+        sub_005A39A0(this_01,(ccFntTy *)this_01->field_1A7F,"0\\Disconnects",param_2,param_3
+                     ,0x146,0x161,0x4e,0x12);
         FUN_006b35d0((int *)PTR_008075a8,this_01->field_1ABC);
         g_currentExceptionFrame = local_68.previous;
         return;

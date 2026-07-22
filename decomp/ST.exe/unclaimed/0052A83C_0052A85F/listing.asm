@@ -1,0 +1,9 @@
+0052A83C  pointer  0052a7d2
+0052A840  pointer  0052a7d6
+0052A844  pointer  0052a7dd
+0052A848  pointer  0052a7e4
+0052A84C  pointer  0052a7eb
+0052A850  pointer  0052a7ff
+0052A854  pointer  0052a811
+0052A858  pointer  0052a7ff
+0052A85C  pointer  0052a823

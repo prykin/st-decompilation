@@ -1,0 +1,8 @@
+0040E950  pointer  0040e8ef
+0040E954  pointer  0040e8f2
+0040E958  pointer  0040e8f7
+0040E95C  pointer  0040e8fc
+0040E960  pointer  0040e901
+0040E964  pointer  0040e906
+0040E968  pointer  0040e90b
+0040E96C  pointer  0040e910

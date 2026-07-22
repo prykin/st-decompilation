@@ -13,7 +13,7 @@ STManRuinC * __thiscall STManRuinC::STManRuinC(STManRuinC *this)
   sub_006E60E0(this);
   this->vtable = &STManRuinCVTable;
   memset(&this->field_001C, 0, 0x55); /* compiler bulk-zero initialization */
-  this->field_0061 = 0xffffffff;
+  this->field_0061 = -1;
   return this;
 }
 

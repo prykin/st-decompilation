@@ -1,0 +1,13 @@
+0063B834  pointer  00639e44
+0063B838  pointer  0063a19c
+0063B83C  pointer  0063a453
+0063B840  pointer  0063b1fe
+0063B844  pointer  0063a75f
+0063B848  pointer  0063b3dc
+0063B84C  pointer  0063b5ba
+0063B850  pointer  0063b69a
+0063B854  pointer  0063aacd
+0063B858  pointer  0063adde
+0063B85C  pointer  0063b022
+0063B860  pointer  0063b828
+0063B864  pointer  0063b795

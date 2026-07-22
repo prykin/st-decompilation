@@ -140,7 +140,7 @@ int __thiscall TLOFakeTy::GetMessage(TLOFakeTy *this,STMessage *message)
       }
     }
     STPlaySystemC::SaveObjData
-              (PTR_00802a38,pSVar4->field_0018,local_8,
+              (g_playSystem_00802A38,pSVar4->field_0018,local_8,
                (AnonShape_0060EA30_DCEB68AD *)(*(int *)&pSVar4->field_0x245 * 0xc + 0x1c));
     FreeAndNull(&local_8);
     g_currentExceptionFrame = local_50.previous;

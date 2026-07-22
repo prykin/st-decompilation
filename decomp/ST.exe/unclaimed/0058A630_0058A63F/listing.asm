@@ -1,0 +1,4 @@
+0058A630  pointer  00589f73
+0058A634  pointer  00589f47
+0058A638  pointer  00589fd6
+0058A63C  pointer  00589fa4

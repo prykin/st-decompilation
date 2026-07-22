@@ -57,10 +57,10 @@ int __thiscall PopUpTy::GetMessage(PopUpTy *this,STMessage *message)
   switch(message->id) {
   case MESS_ID_NONE:
     uVar12 = (uint)DAT_00807347;
-    DVar9 = FUN_006e51b0(0x807620);
+    DVar9 = STAppC::sub_006E51B0((STAppC *)&DAT_00807620);
     if (((uVar12 * -1000 + 3000) * (3 - uVar12) < DVar9 - this_00->field_009D) ||
        ((int)(uint)DAT_00807346 < (int)this_00->field_0098[2])) {
-      DVar9 = FUN_006e51b0(0x807620);
+      DVar9 = STAppC::sub_006E51B0((STAppC *)&DAT_00807620);
       this_00->field_009D = DVar9;
       if (this_00->field_009C != '\0') {
         FUN_006b7830((AnonShape_006B7830_769CA2DF *)this_00->field_0098,0);
@@ -89,7 +89,7 @@ int __thiscall PopUpTy::GetMessage(PopUpTy *this,STMessage *message)
           if ((DAT_00807342 == 0) || ((byte)this_00->field_009C <= local_5)) {
 LAB_0052e184:
             puVar13[0xf] = 0;
-            FUN_006b2800((int)PTR_008075a8,*puVar13,0,0x13);
+            FUN_006b2800(PTR_008075a8,*puVar13,0,0x13);
             FUN_006b3af0((int *)PTR_008075a8,*puVar13);
           }
           else {
@@ -112,7 +112,7 @@ LAB_0052e184:
               uVar12 = *(uint *)(this_00->field_0090 + 2);
             }
             puVar13[0xf] = uVar12;
-            FUN_006b2800((int)PTR_008075a8,*puVar13,uVar12,0x13);
+            FUN_006b2800(PTR_008075a8,*puVar13,uVar12,0x13);
             Library::DKW::DDX::FUN_006b3640((int *)PTR_008075a8,*puVar13,0xffffffff,0xd,local_10);
             Library::DKW::DDX::FUN_006b3430((int *)PTR_008075a8,*puVar13);
           }
@@ -155,7 +155,7 @@ LAB_0052e184:
     }
     puVar13 = &this_00->field_0018;
     do {
-      FUN_006b2330((uint)PTR_008075a8,puVar13,8,0x405c22,puVar13[0xf],0x13,(uint)this_00);
+      FUN_006b2330(PTR_008075a8,puVar13,8,0x405c22,puVar13[0xf],0x13,(uint)this_00);
       FUN_006b1bd0((AnonShape_006B1BD0_7C890E99 *)PTR_008075a8,*puVar13);
       Library::DKW::DDX::FUN_006b3640((int *)PTR_008075a8,*puVar13,0xffffffff,0xd,uVar11);
       FUN_006b3af0((int *)PTR_008075a8,*puVar13);
@@ -165,7 +165,7 @@ LAB_0052e184:
     } while (local_10 != 0);
     pDVar8 = Library::DKW::TBL::SArrayCreate((DArrayTy *)0x0,10,10);
     this_00->field_0098 = &pDVar8->flags;
-    DVar9 = FUN_006e51b0(0x807620);
+    DVar9 = STAppC::sub_006E51B0((STAppC *)&DAT_00807620);
     this_00->field_009D = DVar9;
     g_popUp_008016D8 = this_00;
     break;
@@ -191,8 +191,8 @@ LAB_0052e184:
       ccFntTy::operator(pcVar5,(uint *)this_00->field_0094);
       this_00->field_0094 = (ccFntTy *)0x0;
     }
-    if ((AnonShape_006B5570_4D68B99C *)this_00->field_0098 != (AnonShape_006B5570_4D68B99C *)0x0) {
-      FUN_006b5570((AnonShape_006B5570_4D68B99C *)this_00->field_0098);
+    if ((DArrayTy *)this_00->field_0098 != (DArrayTy *)0x0) {
+      FUN_006b5570((DArrayTy *)this_00->field_0098);
       this_00->field_0098 = (uint *)0x0;
     }
     break;

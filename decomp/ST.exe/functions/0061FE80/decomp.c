@@ -8,7 +8,7 @@ FUN_0061fe80(void *this,int param_1,int param_2,uint param_3,undefined4 param_4,
   int soundId;
   SoundPosition local_10;
 
-  uVar1 = PTR_00802a38->field_00E4;
+  uVar1 = g_playSystem_00802A38->field_00E4;
   if (DAT_0080874d == param_3) {
     return;
   }

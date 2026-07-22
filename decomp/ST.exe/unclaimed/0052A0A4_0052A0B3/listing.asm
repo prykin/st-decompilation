@@ -1,0 +1,4 @@
+0052A0A4  pointer  0052a09e
+0052A0A8  pointer  0052a09e
+0052A0AC  pointer  0052a097
+0052A0B0  pointer  0052a097

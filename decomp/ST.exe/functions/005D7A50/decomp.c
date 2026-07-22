@@ -40,11 +40,11 @@ void __thiscall SIDTy::InitSID(SIDTy *this)
                  this_00->field_1A7C,this_00->field_1A80);
     }
     iVar2 = 1;
-    puVar4 = PTR_0081176c->field_002C + 0x14;
-    uVar3 = FUN_006b4fe0((int)PTR_0081176c->field_002C);
+    puVar4 = g_startSystem_0081176C->field_002C + 0x14;
+    uVar3 = FUN_006b4fe0((int)g_startSystem_0081176C->field_002C);
     puVar4 = (ushort *)
-             FUN_006b50c0(0x15e,0xa5,(uint)PTR_0081176c->field_002C[7],uVar3,(undefined4 *)puVar4,
-                          iVar2);
+             FUN_006b50c0(0x15e,0xa5,(uint)g_startSystem_0081176C->field_002C[7],uVar3,
+                          (undefined4 *)puVar4,iVar2);
     this_00->field_1CB8 = puVar4;
     uVar3 = *(uint *)(puVar4 + 10);
     if (uVar3 == 0) {
@@ -61,11 +61,11 @@ void __thiscall SIDTy::InitSID(SIDTy *this)
       *(undefined1 *)puVar5 = 0xff;
       puVar5 = (undefined4 *)((int)puVar5 + 1);
     }
-    puVar4 = PTR_0081176c->field_002C + 0x14;
-    uVar3 = FUN_006b4fe0((int)PTR_0081176c->field_002C);
+    puVar4 = g_startSystem_0081176C->field_002C + 0x14;
+    uVar3 = FUN_006b4fe0((int)g_startSystem_0081176C->field_002C);
     puVar4 = (ushort *)
-             FUN_006b50c0(0x13e,0xe,(uint)PTR_0081176c->field_002C[7],uVar3,(undefined4 *)puVar4,
-                          iVar2);
+             FUN_006b50c0(0x13e,0xe,(uint)g_startSystem_0081176C->field_002C[7],uVar3,
+                          (undefined4 *)puVar4,iVar2);
     this_00->field_1CBC = puVar4;
     uVar3 = *(uint *)(puVar4 + 10);
     if (uVar3 == 0) {
@@ -82,11 +82,11 @@ void __thiscall SIDTy::InitSID(SIDTy *this)
       *(undefined1 *)puVar5 = 0xff;
       puVar5 = (undefined4 *)((int)puVar5 + 1);
     }
-    puVar4 = PTR_0081176c->field_002C + 0x14;
-    uVar3 = FUN_006b4fe0((int)PTR_0081176c->field_002C);
+    puVar4 = g_startSystem_0081176C->field_002C + 0x14;
+    uVar3 = FUN_006b4fe0((int)g_startSystem_0081176C->field_002C);
     puVar4 = (ushort *)
-             FUN_006b50c0(0x104,0x28,(uint)PTR_0081176c->field_002C[7],uVar3,(undefined4 *)puVar4,
-                          iVar2);
+             FUN_006b50c0(0x104,0x28,(uint)g_startSystem_0081176C->field_002C[7],uVar3,
+                          (undefined4 *)puVar4,iVar2);
     this_00->field_1CC0 = puVar4;
     uVar3 = *(uint *)(puVar4 + 10);
     if (uVar3 == 0) {
@@ -105,8 +105,8 @@ void __thiscall SIDTy::InitSID(SIDTy *this)
     PaintExplanation(this_00);
     puVar4 = this_00->field_1CB8;
     puVar5 = &this_00->field_1CB4;
-    FUN_006b2330((uint)PTR_008075a8,puVar5,0x2e,0x4023f6,*(uint *)(puVar4 + 2),*(uint *)(puVar4 + 4)
-                 ,(uint)puVar4);
+    FUN_006b2330(PTR_008075a8,puVar5,0x2e,0x4023f6,*(uint *)(puVar4 + 2),*(uint *)(puVar4 + 4),
+                 (uint)puVar4);
     Library::DKW::DDX::FUN_006b3640((int *)PTR_008075a8,*puVar5,0xffffffff,0xe1,0x1a9);
     FUN_006b3af0((int *)PTR_008075a8,*puVar5);
     SpriteClassTy::InitSprite
@@ -143,7 +143,7 @@ void __thiscall SIDTy::InitSID(SIDTy *this)
       FUN_006b3af0((int *)this_00->field_1C6B,this_00->field_1C27);
     }
     pDVar6 = Library::DKW::TBL::SArrayCreate((DArrayTy *)0x0,1,1);
-    this_00->field_1CD0 = &pDVar6->flags;
+    this_00->field_1CD0 = pDVar6;
     Library::DKW::TBL::FUN_006b6020(&pDVar6->flags,0,&DAT_008016a0);
     iVar2 = 1;
     puVar4 = this_00->field_1CB8 + 0x14;

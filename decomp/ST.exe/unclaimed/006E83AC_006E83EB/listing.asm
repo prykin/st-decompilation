@@ -1,0 +1,16 @@
+006E83AC  pointer  006e70fb
+006E83B0  pointer  006e7115
+006E83B4  pointer  006e7155
+006E83B8  pointer  006e717a
+006E83BC  pointer  006e74b4
+006E83C0  pointer  006e7521
+006E83C4  pointer  006e758e
+006E83C8  pointer  006e7613
+006E83CC  pointer  006e783a
+006E83D0  pointer  006e7879
+006E83D4  pointer  006e78b8
+006E83D8  pointer  006e7902
+006E83DC  pointer  006e7e2c
+006E83E0  pointer  006e7e66
+006E83E4  pointer  006e7e9a
+006E83E8  pointer  006e7edf

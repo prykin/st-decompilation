@@ -1,0 +1,4 @@
+0052A494  pointer  0052a44e
+0052A498  pointer  0052a463
+0052A49C  pointer  0052a44e
+0052A4A0  pointer  0052a479

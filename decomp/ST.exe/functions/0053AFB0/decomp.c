@@ -60,7 +60,7 @@ int __thiscall PlayPanelTy::GetMessage(PlayPanelTy *this,STMessage *message)
   }
   if (message->id == MESS_ID_CREATE) {
     puVar1 = &local_14->field_004C;
-    FUN_006b1a50((int)PTR_008075a8,3,(undefined4 *)0x0,puVar1);
+    FUN_006b1a50(PTR_008075a8,3,(undefined4 *)0x0,puVar1);
     this_00->field_003C = *puVar1;
     this_00->field_0044 = this_00->field_0050 - this_00->field_0048;
     this_00->field_0174 = this_00->field_0048 + this_00->field_0050;
@@ -428,7 +428,7 @@ LAB_0053b2ea:
             local_1c = uVar9 << 0x10 | uVar6;
             local_20 = 7;
           }
-          if (PTR_00802a38 != (STPlaySystemC *)0x0) {
+          if (g_playSystem_00802A38 != (STPlaySystemC *)0x0) {
             thunk_FUN_0054edf0((undefined4 *)0x5,&local_20,1,0xffffffff);
             g_currentExceptionFrame = local_64.previous;
             return 0;

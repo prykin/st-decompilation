@@ -1,0 +1,8 @@
+0058B7B8  pointer  0058b41b
+0058B7BC  pointer  0058b426
+0058B7C0  pointer  0058b432
+0058B7C4  pointer  0058b43d
+0058B7C8  pointer  0058b449
+0058B7CC  pointer  0058b454
+0058B7D0  pointer  0058b45b
+0058B7D4  pointer  0058b461

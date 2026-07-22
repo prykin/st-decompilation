@@ -41,8 +41,8 @@ uint __thiscall STBoatC::CreateGame(STBoatC *this,int *param_1,undefined4 param_
     /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
     iVar7 = CONCAT22((short)((uint)iVar6 >> 0x10),this->field_0510 * 0xc9) + 100;
     uVar5 = (undefined2)((uint)iVar8 >> 0x10);
-    /* ST_PSEUDO[raw_indirect_call,packed_or_unaligned_piece]: expected typed vtable/callback call with explicit __thiscall receiver; expected named packed member, bit extract/compose, or unaligned load */
-    uVar5 = (*(code *)this->vtable->field_0010)
+    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+    uVar5 = (*this->vtable->vfunc_10)
                       (CONCAT22(uVar5,this->field_0041),
                        CONCAT22((short)((uint)iVar7 >> 0x10),this->field_0043),
                        CONCAT22(uVar5,this->field_0045),iVar7,iVar8,iVar6);
@@ -56,8 +56,7 @@ uint __thiscall STBoatC::CreateGame(STBoatC *this,int *param_1,undefined4 param_
       if (uVar10 == 0) {
         this->field_0528 = 2;
       }
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-      iVar6 = (*(code *)this->vtable->field_00D8)();
+      iVar6 = (*this->vtable->vfunc_D8)();
       return (-(uint)(iVar6 != 0) & 0xfffffffd) + 2;
     }
     iVar6 = ReportDebugMessage("E:\\__titans\\wlad\\To_boat.cpp",0x25a8,0,0,"%s",
@@ -91,21 +90,21 @@ LAB_0046d1e2:
     if (iVar6 == 0) {
       uVar10 = 0;
       if ((this->field_0524 != 0) &&
-         (iVar6 = FUN_006e62d0(PTR_00802a38,this->field_0524,(int *)&local_8), iVar6 != -4)) {
+         (iVar6 = FUN_006e62d0(g_playSystem_00802A38,this->field_0524,(int *)&local_8), iVar6 != -4)
+         ) {
         thunk_FUN_004cf3e0(local_8,this->field_0018);
-        FUN_006ea2f0((void *)this->field_0211,this->field_01ED);
+        FUN_006ea2f0(this->field_0211,this->field_01ED);
       }
       iVar6 = thunk_FUN_0048fa80((int)this);
       if (iVar6 == 1) {
         if ((((this->field_051C < 0) || (this->field_051E < 0)) ||
             (sVar2 = this->field_051C, sVar3 = this->field_051E, sVar4 = this->field_0520,
             this->field_0520 < 0)) &&
-           (iVar6 = SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0048DFD0::
-                    thunk_FUN_0048dfd0((AnonReceiver_0048DFD0 *)this,this->field_0510,
-                                       this->field_0512,this->field_0514,this->field_0510,
-                                       this->field_0512,(int *)(uint)(ushort)this->field_0514,2,
-                                       &local_18,&local_16,local_14), sVar2 = local_18,
-           sVar3 = local_16, sVar4 = local_14[0], iVar6 == 0)) {
+           (iVar6 = sub_0048DFD0(this,this->field_0510,this->field_0512,this->field_0514,
+                                 this->field_0510,this->field_0512,
+                                 (int *)(uint)(ushort)this->field_0514,2,&local_18,&local_16,
+                                 local_14), sVar2 = local_18, sVar3 = local_16, sVar4 = local_14[0],
+           iVar6 == 0)) {
           sVar2 = this->field_0510;
           sVar3 = this->field_0512;
           sVar4 = this->field_0514;
@@ -119,8 +118,7 @@ LAB_0046d1e2:
           return 0xffffffff;
         }
         this->field_0528 = 4;
-        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-        iVar6 = (*(code *)this->vtable->field_00D8)();
+        iVar6 = (*this->vtable->vfunc_D8)();
         return (-(uint)(iVar6 != 0) & 0xfffffffd) + 2;
       }
     }
@@ -142,10 +140,10 @@ LAB_0046d1e2:
         uVar10 = this->field_00C3 - iVar6;
         uVar9 = (int)uVar10 >> 0x1f;
         iVar7 = (uVar10 ^ uVar9) - uVar9;
-        /* ST_PSEUDO[return_width_artifact,raw_indirect_call]: candidate call-output artifact: verify return width, clobbers, or x87 state; expected typed vtable/callback call with explicit __thiscall receiver */
+        /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
         if ((iVar7 < 2) &&
            (uVar5 = (undefined2)((uint)iVar7 >> 0x10),
-           iVar7 = (**(code **)&this->vtable->field_0x18)
+           iVar7 = (*this->vtable->vfunc_18)
                              (CONCAT22(uVar5,*(undefined2 *)&this->field_00BB),
                               CONCAT22(this->field_005F >> 0xf,*(undefined2 *)&this->field_00BF),
                               CONCAT22(uVar5,*(undefined2 *)&this->field_00C3)),
@@ -161,9 +159,8 @@ LAB_0046d1e2:
       uVar10 = -(uint)(iVar6 != -4) & 2;
     }
   }
-/* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
 LAB_0046d2d1:
-  iVar6 = (*(code *)this->vtable->field_00D8)();
+  iVar6 = (*this->vtable->vfunc_D8)();
   if (iVar6 != 0) {
     return 0xffffffff;
   }

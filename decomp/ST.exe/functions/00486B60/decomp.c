@@ -51,7 +51,7 @@ void __thiscall FUN_00486b60(void *this,undefined1 *param_1)
   case 0x1b:
     if (*(int *)((int)this + 0x7ca) != 0) {
       local_c = (int *)0x0;
-      FUN_006e62d0(PTR_00802a38,*(int *)((int)this + 0x7ca),(int *)&local_c);
+      FUN_006e62d0(g_playSystem_00802A38,*(int *)((int)this + 0x7ca),(int *)&local_c);
       if (local_c != (int *)0x0) {
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
         uVar5 = (**(code **)(*local_c + 0x2c))();

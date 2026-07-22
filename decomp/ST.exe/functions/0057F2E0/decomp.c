@@ -1,5 +1,10 @@
 
-undefined4 * __thiscall FUN_0057f2e0(void *this,int param_1,int param_2)
+/* [STMethodOwnerApplier] Structural method owner recovered as STDcResourcC.
+   Evidence: this_call_owners=[STDcResourcC]; agreed_this_calls=2; incoming_this_accesses=1;
+   incoming_edx_uses=0; incoming_stack_parameter_uses=2; direct_non_thunk_callers=0;
+   incoming_ecx_receiver_callers=0; attributed_named_callers=1; owner_evidence_coverage=adequate */
+
+undefined4 * __thiscall STDcResourcC::sub_0057F2E0(STDcResourcC *this,int param_1,int param_2)
 
 {
   char cVar1;
@@ -15,7 +20,7 @@ undefined4 * __thiscall FUN_0057f2e0(void *this,int param_1,int param_2)
 
   pcVar6 = PTR_s_rc276__d_007cb090;
   if (param_1 == -1) {
-    uVar2 = thunk_FUN_0057f240(0xdd,*(int *)((int)this + 0x259));
+    uVar2 = thunk_FUN_0057f240(0xdd,this->field_0259);
     /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
     param_1 = CONCAT31(extraout_var,uVar2);
     pcVar6 = PTR_s_rc276_c_d_007cb08c;

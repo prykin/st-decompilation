@@ -1,0 +1,2 @@
+apply	table_address	sentinel_address	record_count	record_size	enum_name	record_type	array_name	allocator_address	evidence
+1	007CA720	007CAA20	96	8	STObjectTypeId	STObjectFactoryEntry	g_objectFactoryRegistry	006B04D0	terminated dense {uint32 typeId, executable factory} registry; argument-free +4 slot dispatch at 006E386C in 006E3810

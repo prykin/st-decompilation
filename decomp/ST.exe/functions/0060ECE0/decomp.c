@@ -46,8 +46,8 @@ FUN_0060ece0(void *this,int param_1,int param_2,int param_3,int param_4,int para
     }
   }
   *(undefined4 *)((int)this + 0x288) = 0x21;
-  *(uint *)((int)this + 0x294) = PTR_00802a38->field_00E4;
-  *(uint *)((int)this + 0x298) = PTR_00802a38->field_00E4;
+  *(uint *)((int)this + 0x294) = g_playSystem_00802A38->field_00E4;
+  *(uint *)((int)this + 0x298) = g_playSystem_00802A38->field_00E4;
   return;
 }
 

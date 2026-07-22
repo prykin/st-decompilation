@@ -24,7 +24,7 @@ void __thiscall STGroupBoatC::StartReceiveOrderSound(STGroupBoatC *this,int para
     do {
       DArrayGetElement((DArrayTy *)this->field_0029,index,&local_8);
       if ((short)local_8 != -1) {
-        pSVar3 = STAllPlayersC::GetObjPtr(g_sTAllPlayers_007FA174,this->field_0024,local_8,CASE_1);
+        pSVar3 = STAllPlayersC::GetObjPtr(g_allPlayers_007FA174,this->field_0024,local_8,CASE_1);
         if (pSVar3 == (STGameObjC *)0x0) {
           iVar4 = ReportDebugMessage("E:\\__titans\\wlad\\to_grpb.cpp",0x172d,0,0,
                                      "%s","STGroupBoatC::StartReceiveOrderSound NULL");

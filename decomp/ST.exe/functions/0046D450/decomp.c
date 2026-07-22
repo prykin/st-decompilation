@@ -10,34 +10,35 @@ int __thiscall STBoatC::UnLoadRC(STBoatC *this,int param_1)
 {
   STBoatC_field_054CState SVar1;
   STFishC *pSVar2;
-  STBoatC_field_06F7State SVar3;
-  code *pcVar4;
-  undefined2 uVar5;
-  int iVar6;
-  dword dVar7;
-  int iVar8;
+  STWorldObject *pSVar3;
+  STBoatC_field_06F7State SVar4;
+  code *pcVar5;
+  undefined2 uVar6;
+  int iVar7;
+  dword dVar8;
   int iVar9;
-  uint uVar10;
-  undefined4 *puVar11;
-  uint uVar12;
-  int *piVar13;
+  int iVar10;
+  uint uVar11;
+  undefined4 *puVar12;
+  uint uVar13;
+  int *piVar14;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined2 extraout_var;
-  uint uVar14;
-  int iVar15;
-  AnonPointee_STBoatC_0000 *pAVar16;
-  STWorldObject *pSVar17;
-  longlong lVar18;
-  short sVar19;
+  uint uVar15;
+  int iVar16;
+  STBoatCVTable *pSVar17;
+  STBoatC *pSVar18;
+  longlong lVar19;
   short sVar20;
-  ushort uVar21;
-  short sVar22;
+  short sVar21;
+  ushort uVar22;
   short sVar23;
   short sVar24;
   short sVar25;
   short sVar26;
-  byte bVar27;
-  undefined4 uVar28;
+  short sVar27;
+  byte bVar28;
+  undefined4 uVar29;
   undefined4 local_28 [2];
   undefined4 local_20;
   short local_1c;
@@ -53,38 +54,38 @@ int __thiscall STBoatC::UnLoadRC(STBoatC *this,int param_1)
     if (this->field_07DA + this->field_07D6 + this->field_07D2 == 0) {
       return 0;
     }
-    sVar20 = this->field_0396;
-    sVar19 = this->field_039A;
-    sVar23 = this->field_0398;
+    sVar21 = this->field_0396;
+    sVar20 = this->field_039A;
+    sVar24 = this->field_0398;
+    if (sVar21 < 0) {
+      return 0;
+    }
+    if (g_worldGrid.sizeX <= sVar21) {
+      return 0;
+    }
+    if (sVar24 < 0) {
+      return 0;
+    }
+    if (g_worldGrid.sizeY <= sVar24) {
+      return 0;
+    }
     if (sVar20 < 0) {
       return 0;
     }
-    if (g_worldGrid.sizeX <= sVar20) {
+    if (g_worldGrid.sizeZ <= sVar20) {
       return 0;
     }
-    if (sVar23 < 0) {
+    pSVar3 = g_worldGrid.cells
+             [(int)g_worldGrid.planeStride * (int)sVar20 + (int)g_worldGrid.sizeX * (int)sVar24 +
+              (int)sVar21].objects[0];
+    if (pSVar3 == (STWorldObject *)0x0) {
       return 0;
     }
-    if (g_worldGrid.sizeY <= sVar23) {
+    if (pSVar3[1].vtable != (STWorldObjectVTable *)this->field_0024) {
       return 0;
     }
-    if (sVar19 < 0) {
-      return 0;
-    }
-    if (g_worldGrid.sizeZ <= sVar19) {
-      return 0;
-    }
-    pSVar17 = g_worldGrid.cells
-              [(int)g_worldGrid.planeStride * (int)sVar19 + (int)g_worldGrid.sizeX * (int)sVar23 +
-               (int)sVar20].objects[0];
-    if (pSVar17 == (STWorldObject *)0x0) {
-      return 0;
-    }
-    if (pSVar17[1].vtable != (STWorldObjectVTable *)this->field_0024) {
-      return 0;
-    }
-    iVar6 = (*pSVar17->vtable->GetObjectTypeId)(pSVar17);
-    if ((iVar6 != 0x3b) && (iVar6 = (*pSVar17->vtable->GetObjectTypeId)(pSVar17), iVar6 != 0x60)) {
+    iVar7 = (*pSVar3->vtable->GetObjectTypeId)(pSVar3);
+    if ((iVar7 != 0x3b) && (iVar7 = (*pSVar3->vtable->GetObjectTypeId)(pSVar3), iVar7 != 0x60)) {
       return 0;
     }
     this->field_0530 = this->field_039A;
@@ -100,43 +101,42 @@ int __thiscall STBoatC::UnLoadRC(STBoatC *this,int param_1)
   else {
     SVar1 = this->field_054C;
     if (SVar1 == CASE_0) {
-      iVar6 = sub_00460260(this,2);
-      switch(iVar6) {
+      iVar7 = sub_00460260(this,2);
+      switch(iVar7) {
       case 0:
         goto switchD_0046d492_caseD_0;
       case 1:
-        sVar20 = this->field_052C;
-        sVar19 = this->field_0530;
-        sVar23 = this->field_052E;
-        if (((((-1 < sVar20) && (sVar20 < g_worldGrid.sizeX)) && (-1 < sVar23)) &&
-            (((sVar23 < g_worldGrid.sizeY && (-1 < sVar19)) &&
-             ((sVar19 < g_worldGrid.sizeZ &&
-              ((pSVar17 = g_worldGrid.cells
-                          [(int)sVar23 * (int)g_worldGrid.sizeX +
-                           (int)g_worldGrid.planeStride * (int)sVar19 + (int)sVar20].objects[0],
-               pSVar17 != (STWorldObject *)0x0 &&
-               (pSVar17[1].vtable == (STWorldObjectVTable *)this->field_0024)))))))) &&
-           ((iVar6 = (*pSVar17->vtable->GetObjectTypeId)(pSVar17), iVar6 == 0x3b ||
-            (iVar6 = (*pSVar17->vtable->GetObjectTypeId)(pSVar17), iVar6 == 0x60))))
+        sVar21 = this->field_052C;
+        sVar20 = this->field_0530;
+        sVar24 = this->field_052E;
+        if (((((-1 < sVar21) && (sVar21 < g_worldGrid.sizeX)) && (-1 < sVar24)) &&
+            (((sVar24 < g_worldGrid.sizeY && (-1 < sVar20)) &&
+             ((sVar20 < g_worldGrid.sizeZ &&
+              ((pSVar3 = g_worldGrid.cells
+                         [(int)sVar24 * (int)g_worldGrid.sizeX +
+                          (int)g_worldGrid.planeStride * (int)sVar20 + (int)sVar21].objects[0],
+               pSVar3 != (STWorldObject *)0x0 &&
+               (pSVar3[1].vtable == (STWorldObjectVTable *)this->field_0024)))))))) &&
+           ((iVar7 = (*pSVar3->vtable->GetObjectTypeId)(pSVar3), iVar7 == 0x3b ||
+            (iVar7 = (*pSVar3->vtable->GetObjectTypeId)(pSVar3), iVar7 == 0x60))))
         goto cf_common_exit_0046E811;
 LAB_0046d71d:
         sub_004602B0(this);
         this->field_00B7 = 0;
-/* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
 LAB_0046d72e:
-        iVar6 = (*(code *)this->vtable->field_00D8)();
-        return -(uint)(iVar6 != 0);
+        iVar7 = (*this->vtable->vfunc_D8)();
+        return -(uint)(iVar7 != 0);
       default:
         goto cf_common_exit_0046E811;
       case 3:
-        iVar8 = (int)this->field_052E;
-        iVar15 = (int)this->field_052C;
-        iVar6 = this->field_0530 + 1;
+        iVar9 = (int)this->field_052E;
+        iVar16 = (int)this->field_052C;
+        iVar7 = this->field_0530 + 1;
         goto cf_common_exit_0046E801;
       case -1:
-        iVar6 = ReportDebugMessage("E:\\__titans\\wlad\\To_boat.cpp",0x2638,0,0,"%s",
+        iVar7 = ReportDebugMessage("E:\\__titans\\wlad\\To_boat.cpp",0x2638,0,0,"%s",
                                    "STBoatC::UnLoadRC, move to depot error");
-        if (iVar6 != 0) {
+        if (iVar7 != 0) {
           STDebugBreak(); /* noreturn in standalone pseudocode */
         }
         RaiseInternalException
@@ -146,79 +146,76 @@ LAB_0046d72e:
       }
     }
     if (SVar1 == CASE_1) {
-      iVar6 = sub_00460260(this,2);
-      switch(iVar6) {
+      iVar7 = sub_00460260(this,2);
+      switch(iVar7) {
       case 0:
-        iVar6 = sub_00490570(this);
-        if (iVar6 != 1) {
+        iVar7 = sub_00490570(this);
+        if (iVar7 != 1) {
           this->field_054C = CASE_2;
           this->field_00B7 = 3;
           goto LAB_0046d818;
         }
-        sVar23 = this->field_052E;
-        sVar22 = this->field_052C;
+        sVar24 = this->field_052E;
+        sVar23 = this->field_052C;
         /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
-        piVar13 = (int *)CONCAT22(extraout_var,this->field_0530 + 1);
-        iVar6 = 1;
-        uVar21 = this->field_004B;
-        sVar20 = this->field_0049;
-        sVar19 = this->field_0047;
+        piVar14 = (int *)CONCAT22(extraout_var,this->field_0530 + 1);
+        iVar7 = 1;
+        uVar22 = this->field_004B;
+        sVar21 = this->field_0049;
+        sVar20 = this->field_0047;
 LAB_0046e7ea:
-        SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0048DFD0::thunk_FUN_0048dfd0
-                  ((AnonReceiver_0048DFD0 *)this,sVar19,sVar20,uVar21,sVar22,sVar23,piVar13,iVar6,
-                   &this->field_0536,&this->field_0538,&this->field_053A);
-        sVar20 = this->field_053A;
-        sVar19 = this->field_0538;
+        sub_0048DFD0(this,sVar20,sVar21,uVar22,sVar23,sVar24,piVar14,iVar7,&this->field_0536,
+                     &this->field_0538,&this->field_053A);
+        sVar21 = this->field_053A;
+        sVar20 = this->field_0538;
         break;
       case 1:
-        sVar20 = this->field_052C;
-        sVar19 = this->field_0530;
-        sVar23 = this->field_052E;
-        if ((((((sVar20 < 0) || (g_worldGrid.sizeX <= sVar20)) || (sVar23 < 0)) ||
-             ((g_worldGrid.sizeY <= sVar23 || (sVar19 < 0)))) || (g_worldGrid.sizeZ <= sVar19)) ||
-           (((pSVar2 = (STFishC *)
-                       g_worldGrid.cells
-                       [(int)sVar19 * (int)g_worldGrid.planeStride +
-                        (int)sVar23 * (int)g_worldGrid.sizeX + (int)sVar20].objects[0],
-             pSVar2 == (STFishC *)0x0 || (pSVar2->field_0024 != this->field_0024)) ||
-            ((dVar7 = (*pSVar2->vtable->slot_2C)(pSVar2), dVar7 != 0x3b &&
-             (dVar7 = (*pSVar2->vtable->slot_2C)(pSVar2), dVar7 != 0x60)))))) {
+        sVar21 = this->field_052C;
+        sVar20 = this->field_0530;
+        sVar24 = this->field_052E;
+        if ((((((sVar21 < 0) || (g_worldGrid.sizeX <= sVar21)) || (sVar24 < 0)) ||
+             ((g_worldGrid.sizeY <= sVar24 || (sVar20 < 0)))) || (g_worldGrid.sizeZ <= sVar20)) ||
+           (((pSVar18 = (STBoatC *)
+                        g_worldGrid.cells
+                        [(int)sVar20 * (int)g_worldGrid.planeStride +
+                         (int)sVar24 * (int)g_worldGrid.sizeX + (int)sVar21].objects[0],
+             pSVar18 == (STBoatC *)0x0 || (pSVar18->field_0024 != this->field_0024)) ||
+            ((dVar8 = (*pSVar18->vtable->slot_2C)(pSVar18), dVar8 != 0x3b &&
+             (dVar8 = (*pSVar18->vtable->slot_2C)(pSVar18), dVar8 != 0x60)))))) {
           sub_004602B0(this);
-          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-          iVar6 = (*(code *)this->vtable->field_00D8)();
-          return -(uint)(iVar6 != 0);
+          iVar7 = (*this->vtable->vfunc_D8)();
+          return -(uint)(iVar7 != 0);
         }
-        iVar6 = thunk_FUN_004e1490((int)pSVar2);
-        if ((iVar6 != 1) || (iVar6 = thunk_FUN_0048d7c0(this,pSVar2), iVar6 != 1))
+        iVar7 = thunk_FUN_004e1490(pSVar18);
+        if ((iVar7 != 1) || (iVar7 = thunk_FUN_0048d7c0(this,(STFishC *)pSVar18), iVar7 != 1))
         goto cf_common_exit_0046E811;
         sub_004602B0(this);
-        this->field_0532 = pSVar2->field_0018;
-        thunk_FUN_004e15f0(pSVar2,this->field_0018);
-        iVar6 = (int)this->field_0540;
-        iVar8 = (int)this->field_053E;
-        iVar15 = (int)this->field_053C;
+        this->field_0532 = pSVar18->field_0018;
+        thunk_FUN_004e15f0(pSVar18,this->field_0018);
+        iVar7 = (int)this->field_0540;
+        iVar9 = (int)this->field_053E;
+        iVar16 = (int)this->field_053C;
         this->field_0544 = 0;
         this->field_054C = CASE_3;
         goto cf_common_exit_0046E801;
       default:
         goto cf_common_exit_0046E811;
       case 3:
-        iVar6 = sub_00490570(this);
-        if (iVar6 == 1) {
+        iVar7 = sub_00490570(this);
+        if (iVar7 == 1) {
           /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-          SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0048DFD0::thunk_FUN_0048dfd0
-                    ((AnonReceiver_0048DFD0 *)this,this->field_0047,this->field_0049,
-                     this->field_004B,this->field_052C,this->field_052E,
-                     (int *)CONCAT22((short)((uint)&this->field_053A >> 0x10),this->field_0530 + 1),
-                     1,&this->field_0536,&this->field_0538,&this->field_053A);
+          sub_0048DFD0(this,this->field_0047,this->field_0049,this->field_004B,this->field_052C,
+                       this->field_052E,
+                       (int *)CONCAT22((short)((uint)&this->field_053A >> 0x10),this->field_0530 + 1
+                                      ),1,&this->field_0536,&this->field_0538,&this->field_053A);
         }
-        sVar20 = this->field_053A;
-        sVar19 = this->field_0538;
+        sVar21 = this->field_053A;
+        sVar20 = this->field_0538;
         break;
       case -1:
-        iVar6 = ReportDebugMessage("E:\\__titans\\wlad\\To_boat.cpp",0x2678,0,0,"%s",
+        iVar7 = ReportDebugMessage("E:\\__titans\\wlad\\To_boat.cpp",0x2678,0,0,"%s",
                                    "STBoatC::UnLoadRC, correct move to depot error");
-        if (iVar6 != 0) {
+        if (iVar7 != 0) {
           STDebugBreak(); /* noreturn in standalone pseudocode */
         }
         RaiseInternalException
@@ -226,49 +223,48 @@ LAB_0046e7ea:
                   );
         return 0xffff;
       }
-      iVar6 = (int)sVar20;
-      iVar8 = (int)sVar19;
-      iVar15 = (int)this->field_0536;
+      iVar7 = (int)sVar21;
+      iVar9 = (int)sVar20;
+      iVar16 = (int)this->field_0536;
 cf_common_exit_0046E801:
-      sub_00481520(this,iVar15,iVar8,iVar6);
+      sub_00481520(this,iVar16,iVar9,iVar7);
       sub_00460260(this,0);
-/* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
 cf_common_exit_0046E811:
-      iVar6 = (*(code *)this->vtable->field_00D8)();
-      return (-(uint)(iVar6 != 0) & 0xfffffffd) + 2;
+      iVar7 = (*this->vtable->vfunc_D8)();
+      return (-(uint)(iVar7 != 0) & 0xfffffffd) + 2;
     }
     if (SVar1 == CASE_2) {
       this->field_0544 = this->field_0544 + 1;
-      iVar6 = Defence(this,2);
-      if (iVar6 == -1) {
+      iVar7 = Defence(this,2);
+      if (iVar7 == -1) {
         return -1;
       }
       if ((this->field_082E != 0) || (this->field_0544 % 0x32 != 1)) {
         return 2;
       }
-      sVar20 = this->field_052C;
-      sVar19 = this->field_0530;
-      sVar23 = this->field_052E;
-      if ((((-1 < sVar20) && (sVar20 < g_worldGrid.sizeX)) && (-1 < sVar23)) &&
-         ((((sVar23 < g_worldGrid.sizeY && (-1 < sVar19)) &&
-           ((sVar19 < g_worldGrid.sizeZ &&
-            ((pSVar2 = (STFishC *)
-                       g_worldGrid.cells
-                       [(int)sVar19 * (int)g_worldGrid.planeStride +
-                        (int)sVar23 * (int)g_worldGrid.sizeX + (int)sVar20].objects[0],
-             pSVar2 != (STFishC *)0x0 && (pSVar2->field_0024 == this->field_0024)))))) &&
-          ((dVar7 = (*pSVar2->vtable->slot_2C)(pSVar2), dVar7 == 0x3b ||
-           (dVar7 = (*pSVar2->vtable->slot_2C)(pSVar2), dVar7 == 0x60)))))) {
-        iVar6 = thunk_FUN_004e1490((int)pSVar2);
-        if (iVar6 != 1) {
+      sVar21 = this->field_052C;
+      sVar20 = this->field_0530;
+      sVar24 = this->field_052E;
+      if ((((-1 < sVar21) && (sVar21 < g_worldGrid.sizeX)) && (-1 < sVar24)) &&
+         ((((sVar24 < g_worldGrid.sizeY && (-1 < sVar20)) &&
+           ((sVar20 < g_worldGrid.sizeZ &&
+            ((pSVar18 = (STBoatC *)
+                        g_worldGrid.cells
+                        [(int)sVar20 * (int)g_worldGrid.planeStride +
+                         (int)sVar24 * (int)g_worldGrid.sizeX + (int)sVar21].objects[0],
+             pSVar18 != (STBoatC *)0x0 && (pSVar18->field_0024 == this->field_0024)))))) &&
+          ((dVar8 = (*pSVar18->vtable->slot_2C)(pSVar18), dVar8 == 0x3b ||
+           (dVar8 = (*pSVar18->vtable->slot_2C)(pSVar18), dVar8 == 0x60)))))) {
+        iVar7 = thunk_FUN_004e1490(pSVar18);
+        if (iVar7 != 1) {
           return 2;
         }
-        iVar6 = thunk_FUN_0048d7c0(this,pSVar2);
-        if (iVar6 != 1) {
+        iVar7 = thunk_FUN_0048d7c0(this,(STFishC *)pSVar18);
+        if (iVar7 != 1) {
           return 2;
         }
-        this->field_0532 = pSVar2->field_0018;
-        thunk_FUN_004e15f0(pSVar2,this->field_0018);
+        this->field_0532 = pSVar18->field_0018;
+        thunk_FUN_004e15f0(pSVar18,this->field_0018);
         this->field_0544 = 0;
         this->field_054C = CASE_3;
         this->field_00B7 = 0;
@@ -281,38 +277,37 @@ cf_common_exit_0046E811:
     if (SVar1 != CASE_3) {
       if (SVar1 == CASE_4) {
         if (this->field_0550 == 0) {
-          iVar8 = (ushort)(this->field_0530 * 200) + 300;
+          iVar9 = (ushort)(this->field_0530 * 200) + 300;
           /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-          iVar15 = CONCAT22((short)((uint)iVar8 >> 0x10),this->field_052E + 1) * 0xc9;
+          iVar16 = CONCAT22((short)((uint)iVar9 >> 0x10),this->field_052E + 1) * 0xc9;
           /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-          iVar9 = CONCAT22((short)((uint)iVar15 >> 0x10),this->field_052C + 1);
-          iVar6 = iVar9 * 0xc9;
-          uVar5 = (undefined2)((uint)(iVar9 * 0x19) >> 0x10);
-          /* ST_PSEUDO[raw_indirect_call,packed_or_unaligned_piece]: expected typed vtable/callback call with explicit __thiscall receiver; expected named packed member, bit extract/compose, or unaligned load */
-          uVar5 = (*(code *)this->vtable->field_0010)
-                            (CONCAT22(uVar5,this->field_0041),
-                             CONCAT22((short)((uint)iVar6 >> 0x10),this->field_0043),
-                             CONCAT22(uVar5,this->field_0045),iVar6,iVar15,iVar8);
-          this->field_0542 = uVar5;
+          iVar10 = CONCAT22((short)((uint)iVar16 >> 0x10),this->field_052C + 1);
+          iVar7 = iVar10 * 0xc9;
+          uVar6 = (undefined2)((uint)(iVar10 * 0x19) >> 0x10);
+          /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+          uVar6 = (*this->vtable->vfunc_10)
+                            (CONCAT22(uVar6,this->field_0041),
+                             CONCAT22((short)((uint)iVar7 >> 0x10),this->field_0043),
+                             CONCAT22(uVar6,this->field_0045),iVar7,iVar16,iVar9);
+          this->field_0542 = uVar6;
           this->field_0550 = 1;
         }
         if (this->field_0550 == 1) {
-          uVar10 = sub_004176C0(this,this->field_0542);
-          uVar10 = sub_00417910(this,(short)uVar10);
-          if (uVar10 == 0xffffffff) {
-            iVar6 = ReportDebugMessage("E:\\__titans\\wlad\\To_boat.cpp",0x2712,0,0,
+          uVar11 = sub_004176C0(this,this->field_0542);
+          uVar11 = sub_00417910(this,(short)uVar11);
+          if (uVar11 == 0xffffffff) {
+            iVar7 = ReportDebugMessage("E:\\__titans\\wlad\\To_boat.cpp",0x2712,0,0,
                                        "%s","STBoatC::UnLoadRC, UNLOADRC_PDEPOT");
-            if (iVar6 != 0) {
+            if (iVar7 != 0) {
               STDebugBreak(); /* noreturn in standalone pseudocode */
             }
-            iVar6 = 0x2713;
+            iVar7 = 0x2713;
             goto cf_error_exit_0046E857;
           }
-          if (uVar10 == 0) {
+          if (uVar11 == 0) {
             this->field_0550 = 2;
-            /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-            iVar6 = (*(code *)this->vtable->field_00D8)();
-            return (-(uint)(iVar6 != 0) & 0xfffffffd) + 2;
+            iVar7 = (*this->vtable->vfunc_D8)();
+            return (-(uint)(iVar7 != 0) & 0xfffffffd) + 2;
           }
         }
         if (this->field_0550 == 2) {
@@ -327,69 +322,69 @@ cf_common_exit_0046E811:
           if (this->field_02BF != '\0') {
             local_8 = (undefined4 *)&this->field_0x2b3;
             do {
-              puVar11 = (undefined4 *)
+              puVar12 = (undefined4 *)
                         thunk_FUN_0041dc40(local_28,(short)*local_8,*(undefined2 *)(local_8 + 1),
                                            this->field_006C);
-              local_20 = *puVar11;
-              local_1c = *(short *)(puVar11 + 1);
+              local_20 = *puVar12;
+              local_1c = *(short *)(puVar12 + 1);
               if (DAT_0080732c == 1) {
-                bVar27 = 0;
+                bVar28 = 0;
+                sVar27 = 0;
+                uVar11 = this->field_001C * 0x41c64e6d + 0x3039;
+                iVar9 = -1;
+                this->field_001C = uVar11;
                 sVar26 = 0;
-                uVar10 = this->field_001C * 0x41c64e6d + 0x3039;
-                iVar8 = -1;
-                this->field_001C = uVar10;
                 sVar25 = 0;
-                sVar24 = 0;
-                uVar12 = uVar10 * 0x41c64e6d + 0x3039;
-                sVar22 = 0;
-                this->field_001C = uVar12;
+                uVar13 = uVar11 * 0x41c64e6d + 0x3039;
                 sVar23 = 0;
-                sVar19 = 0;
-                local_18 = uVar12 * 0x41c64e6d + 0x3039;
+                this->field_001C = uVar13;
+                sVar24 = 0;
                 sVar20 = 0;
+                local_18 = uVar13 * 0x41c64e6d + 0x3039;
+                sVar21 = 0;
                 this->field_001C = local_18;
-                lVar18 = Library::MSVCRT::__ftol();
-                iVar6 = (int)(short)lVar18 + (uVar10 >> 0x10) % 7 + (int)this->field_0045 + -3 +
+                lVar19 = Library::MSVCRT::__ftol();
+                iVar7 = (int)(short)lVar19 + (uVar11 >> 0x10) % 7 + (int)this->field_0045 + -3 +
                         (int)local_1c;
                 /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                iVar15 = ((uVar12 >> 0x10) % 7 + (int)this->field_0043) - (int)local_20._2_2_;
-                uVar10 = local_18;
+                iVar16 = ((uVar13 >> 0x10) % 7 + (int)this->field_0043) - (int)local_20._2_2_;
+                uVar11 = local_18;
               }
               else {
-                uVar12 = this->field_001C * 0x41c64e6d + 0x3039;
-                this->field_001C = uVar12;
-                uVar14 = uVar12 * 0x41c64e6d + 0x3039;
-                bVar27 = 0;
-                this->field_001C = uVar14;
-                uVar10 = uVar14 * 0x41c64e6d + 0x3039;
-                this->field_001C = uVar10;
+                uVar13 = this->field_001C * 0x41c64e6d + 0x3039;
+                this->field_001C = uVar13;
+                uVar15 = uVar13 * 0x41c64e6d + 0x3039;
+                bVar28 = 0;
+                this->field_001C = uVar15;
+                uVar11 = uVar15 * 0x41c64e6d + 0x3039;
+                this->field_001C = uVar11;
+                sVar27 = 0;
+                iVar9 = -1;
                 sVar26 = 0;
-                iVar8 = -1;
                 sVar25 = 0;
-                sVar24 = 0;
-                sVar22 = 0;
                 sVar23 = 0;
-                sVar19 = 0;
+                sVar24 = 0;
                 sVar20 = 0;
-                iVar6 = (uVar12 >> 0x10) % 7 + (int)this->field_0045 + -3 + (int)local_1c;
+                sVar21 = 0;
+                iVar7 = (uVar13 >> 0x10) % 7 + (int)this->field_0045 + -3 + (int)local_1c;
                 /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                 local_20._2_2_ = (short)((uint)local_20 >> 0x10);
                 /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                iVar15 = ((uVar14 >> 0x10) % 7 + (int)this->field_0043) - (int)local_20._2_2_;
+                iVar16 = ((uVar15 >> 0x10) % 7 + (int)this->field_0043) - (int)local_20._2_2_;
               }
               TraksClassTy::TraksCreate
                         (g_traksClass_00802A7C,1,2,7,
-                         (uVar10 >> 0x10) % 7 + (int)this->field_0041 + -3 + (int)(short)local_20,
-                         iVar15 + -3,iVar6,sVar20,sVar19,sVar23,sVar22,sVar24,sVar25,iVar8,sVar26,
-                         bVar27);
+                         (uVar11 >> 0x10) % 7 + (int)this->field_0041 + -3 + (int)(short)local_20,
+                         iVar16 + -3,iVar7,sVar21,sVar20,sVar24,sVar23,sVar25,sVar26,iVar9,sVar27,
+                         bVar28);
               param_1 = param_1 + 1;
               local_8 = (undefined4 *)((int)local_8 + 6);
             } while (param_1 < (int)(uint)(byte)this->field_02BF);
           }
           if (local_c == -1) {
-            iVar6 = ReportDebugMessage("E:\\__titans\\wlad\\To_boat.cpp",0x2738,0,0,
+            iVar7 = ReportDebugMessage("E:\\__titans\\wlad\\To_boat.cpp",0x2738,0,0,
                                        "%s","STBoatC::UnLoadRC, UNLOADRC_PDEPOT 2");
-            if (iVar6 != 0) {
+            if (iVar7 != 0) {
               STDebugBreak(); /* noreturn in standalone pseudocode */
             }
             RaiseInternalException
@@ -400,47 +395,46 @@ cf_common_exit_0046E811:
           if (local_c == 0) {
             this->field_0550 = 0;
             this->field_054C = CASE_5;
-            /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-            iVar6 = (*(code *)this->vtable->field_00D8)();
-            return (-(uint)(iVar6 != 0) & 0xfffffffd) + 2;
+            iVar7 = (*this->vtable->vfunc_D8)();
+            return (-(uint)(iVar7 != 0) & 0xfffffffd) + 2;
           }
         }
         goto cf_common_exit_0046E9F3;
       }
       if (SVar1 != CASE_5) {
         if (SVar1 == CASE_6) {
-          iVar6 = this->field_0548 + 1;
-          this->field_0548 = iVar6;
-          if (0x45 < iVar6) {
+          iVar7 = this->field_0548 + 1;
+          this->field_0548 = iVar7;
+          if (0x45 < iVar7) {
             if (this->field_0550 == 0) {
-              iVar15 = (ushort)(this->field_0540 * 200) + 100;
+              iVar16 = (ushort)(this->field_0540 * 200) + 100;
               /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-              iVar8 = CONCAT22((short)((uint)iVar6 >> 0x10),this->field_053E * 0xc9) + 100;
+              iVar9 = CONCAT22((short)((uint)iVar7 >> 0x10),this->field_053E * 0xc9) + 100;
               /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-              iVar6 = CONCAT22((short)((uint)iVar15 >> 0x10),this->field_053C * 0xc9) + 100;
-              uVar5 = (undefined2)((uint)iVar8 >> 0x10);
-              /* ST_PSEUDO[raw_indirect_call,packed_or_unaligned_piece]: expected typed vtable/callback call with explicit __thiscall receiver; expected named packed member, bit extract/compose, or unaligned load */
-              uVar5 = (*(code *)this->vtable->field_0010)
-                                (CONCAT22(uVar5,this->field_0041),
-                                 CONCAT22((short)((uint)iVar6 >> 0x10),this->field_0043),
-                                 CONCAT22(uVar5,this->field_0045),iVar6,iVar8,iVar15);
-              this->field_0542 = uVar5;
+              iVar7 = CONCAT22((short)((uint)iVar16 >> 0x10),this->field_053C * 0xc9) + 100;
+              uVar6 = (undefined2)((uint)iVar9 >> 0x10);
+              /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+              uVar6 = (*this->vtable->vfunc_10)
+                                (CONCAT22(uVar6,this->field_0041),
+                                 CONCAT22((short)((uint)iVar7 >> 0x10),this->field_0043),
+                                 CONCAT22(uVar6,this->field_0045),iVar7,iVar9,iVar16);
+              this->field_0542 = uVar6;
               this->field_0550 = 1;
             }
             if (this->field_0550 == 1) {
-              uVar10 = sub_004176C0(this,this->field_0542);
-              uVar10 = sub_00417910(this,(short)uVar10);
-              if (uVar10 == 0xffffffff) {
-                iVar6 = ReportDebugMessage("E:\\__titans\\wlad\\To_boat.cpp",0x2798,0,0,
+              uVar11 = sub_004176C0(this,this->field_0542);
+              uVar11 = sub_00417910(this,(short)uVar11);
+              if (uVar11 == 0xffffffff) {
+                iVar7 = ReportDebugMessage("E:\\__titans\\wlad\\To_boat.cpp",0x2798,0,0,
                                            "%s","STBoatC::UnLoadRC, UNLOADRC_ODEPOT"
                                           );
-                if (iVar6 != 0) {
+                if (iVar7 != 0) {
                   STDebugBreak(); /* noreturn in standalone pseudocode */
                 }
-                iVar6 = 0x2799;
+                iVar7 = 0x2799;
                 goto cf_error_exit_0046E857;
               }
-              if (uVar10 == 0) {
+              if (uVar11 == 0) {
                 this->field_0550 = 2;
               }
             }
@@ -457,70 +451,70 @@ cf_common_exit_0046E811:
                 if (this->field_02BF != '\0') {
                   local_8 = (undefined4 *)&this->field_0x2b3;
                   do {
-                    puVar11 = (undefined4 *)
+                    puVar12 = (undefined4 *)
                               thunk_FUN_0041dc40(local_28,(short)*local_8,
                                                  *(undefined2 *)(local_8 + 1),this->field_006C);
-                    local_20 = *puVar11;
-                    local_1c = *(short *)(puVar11 + 1);
+                    local_20 = *puVar12;
+                    local_1c = *(short *)(puVar12 + 1);
                     if (DAT_0080732c == 1) {
-                      bVar27 = 0;
+                      bVar28 = 0;
+                      sVar27 = 0;
+                      uVar11 = this->field_001C * 0x41c64e6d + 0x3039;
+                      iVar9 = -1;
+                      this->field_001C = uVar11;
                       sVar26 = 0;
-                      uVar10 = this->field_001C * 0x41c64e6d + 0x3039;
-                      iVar8 = -1;
-                      this->field_001C = uVar10;
                       sVar25 = 0;
-                      sVar24 = 0;
-                      uVar12 = uVar10 * 0x41c64e6d + 0x3039;
-                      sVar22 = 0;
-                      this->field_001C = uVar12;
+                      uVar13 = uVar11 * 0x41c64e6d + 0x3039;
                       sVar23 = 0;
-                      sVar19 = 0;
-                      local_18 = uVar12 * 0x41c64e6d + 0x3039;
+                      this->field_001C = uVar13;
+                      sVar24 = 0;
                       sVar20 = 0;
+                      local_18 = uVar13 * 0x41c64e6d + 0x3039;
+                      sVar21 = 0;
                       this->field_001C = local_18;
-                      lVar18 = Library::MSVCRT::__ftol();
-                      iVar6 = (int)(short)lVar18 + (uVar10 >> 0x10) % 7 + (int)this->field_0045 + -3
+                      lVar19 = Library::MSVCRT::__ftol();
+                      iVar7 = (int)(short)lVar19 + (uVar11 >> 0x10) % 7 + (int)this->field_0045 + -3
                               + (int)local_1c;
                       /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                      iVar15 = ((uVar12 >> 0x10) % 7 + (int)this->field_0043) - (int)local_20._2_2_;
-                      uVar10 = local_18;
+                      iVar16 = ((uVar13 >> 0x10) % 7 + (int)this->field_0043) - (int)local_20._2_2_;
+                      uVar11 = local_18;
                     }
                     else {
-                      uVar12 = this->field_001C * 0x41c64e6d + 0x3039;
-                      this->field_001C = uVar12;
-                      uVar14 = uVar12 * 0x41c64e6d + 0x3039;
-                      bVar27 = 0;
-                      this->field_001C = uVar14;
-                      uVar10 = uVar14 * 0x41c64e6d + 0x3039;
-                      this->field_001C = uVar10;
+                      uVar13 = this->field_001C * 0x41c64e6d + 0x3039;
+                      this->field_001C = uVar13;
+                      uVar15 = uVar13 * 0x41c64e6d + 0x3039;
+                      bVar28 = 0;
+                      this->field_001C = uVar15;
+                      uVar11 = uVar15 * 0x41c64e6d + 0x3039;
+                      this->field_001C = uVar11;
+                      sVar27 = 0;
+                      iVar9 = -1;
                       sVar26 = 0;
-                      iVar8 = -1;
                       sVar25 = 0;
-                      sVar24 = 0;
-                      sVar22 = 0;
                       sVar23 = 0;
-                      sVar19 = 0;
+                      sVar24 = 0;
                       sVar20 = 0;
-                      iVar6 = (uVar12 >> 0x10) % 7 + (int)this->field_0045 + -3 + (int)local_1c;
+                      sVar21 = 0;
+                      iVar7 = (uVar13 >> 0x10) % 7 + (int)this->field_0045 + -3 + (int)local_1c;
                       /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                       local_20._2_2_ = (short)((uint)local_20 >> 0x10);
                       /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                      iVar15 = ((uVar14 >> 0x10) % 7 + (int)this->field_0043) - (int)local_20._2_2_;
+                      iVar16 = ((uVar15 >> 0x10) % 7 + (int)this->field_0043) - (int)local_20._2_2_;
                     }
                     TraksClassTy::TraksCreate
                               (g_traksClass_00802A7C,1,2,7,
-                               (uVar10 >> 0x10) % 7 + (int)this->field_0041 + -3 +
-                               (int)(short)local_20,iVar15 + -3,iVar6,sVar20,sVar19,sVar23,sVar22,
-                               sVar24,sVar25,iVar8,sVar26,bVar27);
+                               (uVar11 >> 0x10) % 7 + (int)this->field_0041 + -3 +
+                               (int)(short)local_20,iVar16 + -3,iVar7,sVar21,sVar20,sVar24,sVar23,
+                               sVar25,sVar26,iVar9,sVar27,bVar28);
                     param_1 = param_1 + 1;
                     local_8 = (undefined4 *)((int)local_8 + 6);
                   } while (param_1 < (int)(uint)(byte)this->field_02BF);
                 }
                 if (local_c == -1) {
-                  iVar6 = ReportDebugMessage("E:\\__titans\\wlad\\To_boat.cpp",0x27bd,0,0,
+                  iVar7 = ReportDebugMessage("E:\\__titans\\wlad\\To_boat.cpp",0x27bd,0,0,
                                              "%s",
                                              "STBoatC::UnLoadRC, UNLOADRC_ODEPOT 2");
-                  if (iVar6 != 0) {
+                  if (iVar7 != 0) {
                     STDebugBreak(); /* noreturn in standalone pseudocode */
                   }
                   RaiseInternalException
@@ -530,11 +524,10 @@ cf_common_exit_0046E811:
                 }
                 if (local_c == 0) {
                   this->field_054C = CASE_7;
-                  SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0048DFD0::thunk_FUN_0048dfd0
-                            ((AnonReceiver_0048DFD0 *)this,this->field_0047,this->field_0049,
-                             this->field_004B,this->field_0047,this->field_0049,
-                             (int *)(uint)(ushort)this->field_004B,2,&this->field_0536,
-                             &this->field_0538,&this->field_053A);
+                  sub_0048DFD0(this,this->field_0047,this->field_0049,this->field_004B,
+                               this->field_0047,this->field_0049,
+                               (int *)(uint)(ushort)this->field_004B,2,&this->field_0536,
+                               &this->field_0538,&this->field_053A);
                   sub_00481520(this,(int)this->field_0536,(int)this->field_0538,
                                (int)this->field_053A);
                   sub_00460260(this,0);
@@ -542,104 +535,101 @@ cf_common_exit_0046E811:
               }
             }
           }
-          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-          iVar6 = (*(code *)this->vtable->field_00D8)();
-          return (-(uint)(iVar6 != 0) & 0xfffffffd) + 2;
+          iVar7 = (*this->vtable->vfunc_D8)();
+          return (-(uint)(iVar7 != 0) & 0xfffffffd) + 2;
         }
         if (SVar1 != CASE_7) {
-          iVar6 = ReportDebugMessage("E:\\__titans\\wlad\\To_boat.cpp",0x27e8,0,0,
+          iVar7 = ReportDebugMessage("E:\\__titans\\wlad\\To_boat.cpp",0x27e8,0,0,
                                      "%s","STBoatC::UnLoadRC - incorrect entry");
-          if (iVar6 != 0) {
+          if (iVar7 != 0) {
             STDebugBreak(); /* noreturn in standalone pseudocode */
           }
           return -1;
         }
-        iVar6 = sub_00460260(this,2);
-        if (iVar6 == -1) {
-          iVar6 = ReportDebugMessage("E:\\__titans\\wlad\\To_boat.cpp",0x27d5,0,0,
+        iVar7 = sub_00460260(this,2);
+        if (iVar7 == -1) {
+          iVar7 = ReportDebugMessage("E:\\__titans\\wlad\\To_boat.cpp",0x27d5,0,0,
                                      "%s","STBoatC::UnLoadRC, UNLOADRC_MOVEWAITUNLOAD error");
-          if (iVar6 != 0) {
+          if (iVar7 != 0) {
             STDebugBreak(); /* noreturn in standalone pseudocode */
           }
-          iVar6 = 0x27d5;
+          iVar7 = 0x27d5;
           goto cf_error_exit_0046E857;
         }
-        if (iVar6 == 0) goto LAB_0046d72e;
-        if (iVar6 != 3) goto cf_common_exit_0046E811;
-        uVar21 = this->field_004B;
-        piVar13 = (int *)(uint)uVar21;
-        sVar23 = this->field_0049;
-        sVar22 = this->field_0047;
-        iVar6 = 2;
+        if (iVar7 == 0) goto LAB_0046d72e;
+        if (iVar7 != 3) goto cf_common_exit_0046E811;
+        uVar22 = this->field_004B;
+        piVar14 = (int *)(uint)uVar22;
+        sVar24 = this->field_0049;
+        sVar23 = this->field_0047;
+        iVar7 = 2;
+        sVar21 = sVar24;
         sVar20 = sVar23;
-        sVar19 = sVar22;
         goto LAB_0046e7ea;
       }
-      iVar6 = this->field_0544 + 1;
-      this->field_0544 = iVar6;
-      if (iVar6 % 10 != 1) goto cf_common_exit_0046E811;
-      sVar20 = this->field_052C;
-      sVar19 = this->field_0530;
-      sVar23 = this->field_052E;
-      if (((((-1 < sVar20) && (sVar20 < g_worldGrid.sizeX)) && (-1 < sVar23)) &&
-          (((sVar23 < g_worldGrid.sizeY && (-1 < sVar19)) &&
-           (((sVar19 < g_worldGrid.sizeZ &&
-             ((pSVar17 = g_worldGrid.cells
-                         [(int)sVar19 * (int)g_worldGrid.planeStride +
-                          (int)sVar23 * (int)g_worldGrid.sizeX + (int)sVar20].objects[0],
-              pSVar17 != (STWorldObject *)0x0 && (*(int *)&pSVar17->field_0x18 == this->field_0532))
-             )) && (*(int *)&pSVar17[0x21].field_0x10 == 0)))))) &&
-         (*(int *)&pSVar17[0x10].field_0x5 != 6)) {
-        if (this->field_04CD % 0x78 == 1) {
-          SVar3 = this->field_06F7;
-          if (SVar3 == CASE_8) {
-            pAVar16 = this->vtable;
-            uVar28 = 0xfb;
-/* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+      iVar7 = this->field_0544 + 1;
+      this->field_0544 = iVar7;
+      if (iVar7 % 10 != 1) goto cf_common_exit_0046E811;
+      sVar21 = this->field_052C;
+      sVar20 = this->field_0530;
+      sVar24 = this->field_052E;
+      if (((((-1 < sVar21) && (sVar21 < g_worldGrid.sizeX)) && (-1 < sVar24)) &&
+          (((sVar24 < g_worldGrid.sizeY && (-1 < sVar20)) &&
+           (((sVar20 < g_worldGrid.sizeZ &&
+             ((pSVar3 = g_worldGrid.cells
+                        [(int)sVar20 * (int)g_worldGrid.planeStride +
+                         (int)sVar24 * (int)g_worldGrid.sizeX + (int)sVar21].objects[0],
+              pSVar3 != (STWorldObject *)0x0 && (*(int *)&pSVar3->field_0x18 == this->field_0532))))
+            && (*(int *)&pSVar3[0x21].field_0x10 == 0)))))) &&
+         (*(int *)&pSVar3[0x10].field_0x5 != 6)) {
+        if (*(int *)&this->field_0x4cd % 0x78 == 1) {
+          SVar4 = this->field_06F7;
+          if (SVar4 == CASE_8) {
+            pSVar17 = this->vtable;
+            uVar29 = 0xfb;
 LAB_0046e2c8:
-            (*(code *)pAVar16->field_0090)(3,uVar28);
+            (*pSVar17->vfunc_90)(3,uVar29);
           }
-          else if (SVar3 == CASE_14) {
-            /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-            (*(code *)this->vtable->field_0090)(3,0x15f);
+          else if (SVar4 == CASE_14) {
+            (*this->vtable->vfunc_90)(3,0x15f);
           }
-          else if (SVar3 == CASE_1A) {
-            pAVar16 = this->vtable;
-            uVar28 = 0x19e;
+          else if (SVar4 == CASE_1A) {
+            pSVar17 = this->vtable;
+            uVar29 = 0x19e;
             goto LAB_0046e2c8;
           }
         }
-        iVar6 = this->field_07D2;
-        iVar15 = 1;
-        if (iVar6 < 1) {
-          iVar6 = this->field_07D6;
-          if (iVar6 < 1) {
-            iVar6 = this->field_07DA;
-            if (0 < iVar6) {
-              if (iVar6 < 1) {
-                iVar15 = iVar6;
+        iVar7 = this->field_07D2;
+        iVar16 = 1;
+        if (iVar7 < 1) {
+          iVar7 = this->field_07D6;
+          if (iVar7 < 1) {
+            iVar7 = this->field_07DA;
+            if (0 < iVar7) {
+              if (iVar7 < 1) {
+                iVar16 = iVar7;
               }
-              thunk_FUN_004e1d70(pSVar17,0xde,iVar15 * 0x14);
-              thunk_FUN_004e16d0(pSVar17,this->field_0018);
-              this->field_07DA = this->field_07DA - iVar15;
+              thunk_FUN_004e1d70(pSVar3,0xde,iVar16 * 0x14);
+              thunk_FUN_004e16d0(pSVar3,this->field_0018);
+              this->field_07DA = this->field_07DA - iVar16;
             }
           }
           else {
-            if (iVar6 < 1) {
-              iVar15 = iVar6;
+            if (iVar7 < 1) {
+              iVar16 = iVar7;
             }
-            thunk_FUN_004e1d70(pSVar17,0xdd,iVar15 * 3);
-            thunk_FUN_004e16d0(pSVar17,this->field_0018);
-            this->field_07D6 = this->field_07D6 - iVar15;
+            thunk_FUN_004e1d70(pSVar3,0xdd,iVar16 * 3);
+            thunk_FUN_004e16d0(pSVar3,this->field_0018);
+            this->field_07D6 = this->field_07D6 - iVar16;
           }
         }
         else {
-          if (iVar6 < 1) {
-            iVar15 = iVar6;
+          if (iVar7 < 1) {
+            iVar16 = iVar7;
           }
-          thunk_FUN_004e1d70(pSVar17,0xdc,iVar15 * 5);
-          thunk_FUN_004e16d0(pSVar17,this->field_0018);
-          this->field_07D2 = this->field_07D2 - iVar15;
+          thunk_FUN_004e1d70(pSVar3,0xdc,iVar16 * 5);
+          thunk_FUN_004e16d0(pSVar3,this->field_0018);
+          this->field_07D2 = this->field_07D2 - iVar16;
         }
         if (this->field_07DA + this->field_07D6 + this->field_07D2 != 0)
         goto cf_common_exit_0046E811;
@@ -649,46 +639,45 @@ LAB_0046e2c8:
       this->field_054C = CASE_6;
       goto cf_common_exit_0046E811;
     }
-    iVar6 = sub_00460260(this,2);
-    switch(iVar6) {
+    iVar7 = sub_00460260(this,2);
+    switch(iVar7) {
     case 0:
-      sVar20 = this->field_052C;
-      sVar19 = this->field_0530;
-      sVar23 = this->field_052E;
-      if (((-1 < sVar20) && (sVar20 < g_worldGrid.sizeX)) &&
-         (((-1 < sVar23 && ((sVar23 < g_worldGrid.sizeY && (-1 < sVar19)))) &&
-          ((sVar19 < g_worldGrid.sizeZ &&
-           (((pSVar17 = g_worldGrid.cells
-                        [(int)sVar19 * (int)g_worldGrid.planeStride +
-                         (int)sVar23 * (int)g_worldGrid.sizeX + (int)sVar20].objects[0],
-             pSVar17 != (STWorldObject *)0x0 &&
-             (pSVar17[1].vtable == (STWorldObjectVTable *)this->field_0024)) &&
-            ((iVar6 = (*pSVar17->vtable->GetObjectTypeId)(pSVar17), iVar6 == 0x3b ||
-             (iVar6 = (*pSVar17->vtable->GetObjectTypeId)(pSVar17), iVar6 == 0x60)))))))))) {
+      sVar21 = this->field_052C;
+      sVar20 = this->field_0530;
+      sVar24 = this->field_052E;
+      if (((-1 < sVar21) && (sVar21 < g_worldGrid.sizeX)) &&
+         (((-1 < sVar24 && ((sVar24 < g_worldGrid.sizeY && (-1 < sVar20)))) &&
+          ((sVar20 < g_worldGrid.sizeZ &&
+           (((pSVar3 = g_worldGrid.cells
+                       [(int)sVar20 * (int)g_worldGrid.planeStride +
+                        (int)sVar24 * (int)g_worldGrid.sizeX + (int)sVar21].objects[0],
+             pSVar3 != (STWorldObject *)0x0 &&
+             (pSVar3[1].vtable == (STWorldObjectVTable *)this->field_0024)) &&
+            ((iVar7 = (*pSVar3->vtable->GetObjectTypeId)(pSVar3), iVar7 == 0x3b ||
+             (iVar7 = (*pSVar3->vtable->GetObjectTypeId)(pSVar3), iVar7 == 0x60)))))))))) {
         if (((this->field_0047 == this->field_053C) && (this->field_0049 == this->field_053E)) &&
            (this->field_004B == this->field_0540)) {
           this->field_054C = CASE_4;
           this->field_0550 = 0;
-          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-          iVar6 = (*(code *)this->vtable->field_00D8)();
-          return (-(uint)(iVar6 != 0) & 0xfffffffd) + 2;
+          iVar7 = (*this->vtable->vfunc_D8)();
+          return (-(uint)(iVar7 != 0) & 0xfffffffd) + 2;
         }
-        thunk_FUN_004e1690(pSVar17,this->field_0018);
+        thunk_FUN_004e1690(pSVar3,this->field_0018);
         return 0;
       }
       goto LAB_0046d652;
     case 1:
       sub_004602B0(this);
-      sVar20 = this->field_052C;
-      sVar19 = this->field_0530;
-      sVar23 = this->field_052E;
-      if (((-1 < sVar20) && (sVar20 < g_worldGrid.sizeX)) &&
-         ((-1 < sVar23 &&
-          (((sVar23 < g_worldGrid.sizeY && (-1 < sVar19)) && (sVar19 < g_worldGrid.sizeZ)))))) {
+      sVar21 = this->field_052C;
+      sVar20 = this->field_0530;
+      sVar24 = this->field_052E;
+      if (((-1 < sVar21) && (sVar21 < g_worldGrid.sizeX)) &&
+         ((-1 < sVar24 &&
+          (((sVar24 < g_worldGrid.sizeY && (-1 < sVar20)) && (sVar20 < g_worldGrid.sizeZ)))))) {
         pSVar2 = (STFishC *)
                  g_worldGrid.cells
-                 [(int)sVar19 * (int)g_worldGrid.planeStride + (int)sVar23 * (int)g_worldGrid.sizeX
-                  + (int)sVar20].objects[0];
+                 [(int)sVar20 * (int)g_worldGrid.planeStride + (int)sVar24 * (int)g_worldGrid.sizeX
+                  + (int)sVar21].objects[0];
 joined_r0x0046dd46:
         if (pSVar2 != (STFishC *)0x0) {
           thunk_FUN_0048d7c0(this,pSVar2);
@@ -698,66 +687,65 @@ joined_r0x0046dd46:
     default:
       goto cf_common_exit_0046E9F3;
     case 3:
-      sVar20 = this->field_052C;
-      sVar19 = this->field_0530;
-      sVar23 = this->field_052E;
-      if (((((-1 < sVar20) && (sVar20 < g_worldGrid.sizeX)) && (-1 < sVar23)) &&
-          ((sVar23 < g_worldGrid.sizeY && (-1 < sVar19)))) && (sVar19 < g_worldGrid.sizeZ)) {
+      sVar21 = this->field_052C;
+      sVar20 = this->field_0530;
+      sVar24 = this->field_052E;
+      if (((((-1 < sVar21) && (sVar21 < g_worldGrid.sizeX)) && (-1 < sVar24)) &&
+          ((sVar24 < g_worldGrid.sizeY && (-1 < sVar20)))) && (sVar20 < g_worldGrid.sizeZ)) {
         pSVar2 = (STFishC *)
                  g_worldGrid.cells
-                 [(int)sVar19 * (int)g_worldGrid.planeStride + (int)sVar23 * (int)g_worldGrid.sizeX
-                  + (int)sVar20].objects[0];
+                 [(int)sVar20 * (int)g_worldGrid.planeStride + (int)sVar24 * (int)g_worldGrid.sizeX
+                  + (int)sVar21].objects[0];
         goto joined_r0x0046dd46;
       }
       break;
     case -1:
-      iVar6 = ReportDebugMessage("E:\\__titans\\wlad\\To_boat.cpp",0x26d9,0,0,"%s",
+      iVar7 = ReportDebugMessage("E:\\__titans\\wlad\\To_boat.cpp",0x26d9,0,0,"%s",
                                  "STBoatC::UnLoadRC, move to depot 2 error");
-      if (iVar6 != 0) {
+      if (iVar7 != 0) {
         STDebugBreak(); /* noreturn in standalone pseudocode */
       }
-      iVar6 = 0x26d9;
+      iVar7 = 0x26d9;
 cf_error_exit_0046E857:
       RaiseInternalException
-                (0xffff,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\To_boat.cpp",iVar6);
+                (0xffff,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\To_boat.cpp",iVar7);
       return 0xffff;
     }
     sub_00481520(this,(int)this->field_053C,(int)this->field_053E,(int)this->field_0540);
   }
   sub_00460260(this,0);
-/* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
 cf_common_exit_0046E9F3:
-  iVar6 = (*(code *)this->vtable->field_00D8)();
-  return (-(uint)(iVar6 != 0) & 0xfffffffd) + 2;
+  iVar7 = (*this->vtable->vfunc_D8)();
+  return (-(uint)(iVar7 != 0) & 0xfffffffd) + 2;
 switchD_0046d492_caseD_0:
-  sVar20 = this->field_052C;
-  sVar19 = this->field_0530;
-  sVar23 = this->field_052E;
-  if (((((sVar20 < 0) || (g_worldGrid.sizeX <= sVar20)) || (sVar23 < 0)) ||
-      ((g_worldGrid.sizeY <= sVar23 || (sVar19 < 0)))) || (g_worldGrid.sizeZ <= sVar19)) {
-    pSVar17 = (STWorldObject *)0x0;
+  sVar21 = this->field_052C;
+  sVar20 = this->field_0530;
+  sVar24 = this->field_052E;
+  if (((((sVar21 < 0) || (g_worldGrid.sizeX <= sVar21)) || (sVar24 < 0)) ||
+      ((g_worldGrid.sizeY <= sVar24 || (sVar20 < 0)))) || (g_worldGrid.sizeZ <= sVar20)) {
+    pSVar18 = (STBoatC *)0x0;
   }
   else {
-    pSVar17 = g_worldGrid.cells
-              [(int)g_worldGrid.planeStride * (int)sVar19 + (int)g_worldGrid.sizeX * (int)sVar23 +
-               (int)sVar20].objects[0];
+    pSVar18 = (STBoatC *)
+              g_worldGrid.cells
+              [(int)g_worldGrid.planeStride * (int)sVar20 + (int)g_worldGrid.sizeX * (int)sVar24 +
+               (int)sVar21].objects[0];
   }
-  iVar6 = sub_00490570(this);
-  if (iVar6 == 1) {
-    if (pSVar17 != (STWorldObject *)0x0) {
-      if (((pSVar17[1].vtable == (STWorldObjectVTable *)this->field_0024) &&
-          ((iVar6 = (*pSVar17->vtable->GetObjectTypeId)(pSVar17), iVar6 == 0x3b ||
-           (iVar6 = (*pSVar17->vtable->GetObjectTypeId)(pSVar17), iVar6 == 0x60)))) &&
-         (iVar6 = thunk_FUN_004e1490((int)pSVar17), iVar6 != 1)) {
+  iVar7 = sub_00490570(this);
+  if (iVar7 == 1) {
+    if (pSVar18 != (STBoatC *)0x0) {
+      if (((pSVar18->field_0024 == this->field_0024) &&
+          ((dVar8 = (*pSVar18->vtable->slot_2C)(pSVar18), dVar8 == 0x3b ||
+           (dVar8 = (*pSVar18->vtable->slot_2C)(pSVar18), dVar8 == 0x60)))) &&
+         (iVar7 = thunk_FUN_004e1490(pSVar18), iVar7 != 1)) {
         /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-        SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0048DFD0::thunk_FUN_0048dfd0
-                  ((AnonReceiver_0048DFD0 *)this,this->field_0047,this->field_0049,this->field_004B,
-                   this->field_052C,this->field_052E,
-                   (int *)CONCAT22((short)((uint)&this->field_0536 >> 0x10),this->field_0530 + 1),1,
-                   &this->field_0536,&this->field_0538,&this->field_053A);
-        iVar6 = (int)this->field_053A;
-        iVar8 = (int)this->field_0538;
-        iVar15 = (int)this->field_0536;
+        sub_0048DFD0(this,this->field_0047,this->field_0049,this->field_004B,this->field_052C,
+                     this->field_052E,
+                     (int *)CONCAT22((short)((uint)&this->field_0536 >> 0x10),this->field_0530 + 1),
+                     1,&this->field_0536,&this->field_0538,&this->field_053A);
+        iVar7 = (int)this->field_053A;
+        iVar9 = (int)this->field_0538;
+        iVar16 = (int)this->field_0536;
         this->field_054C = CASE_1;
         this->field_00B7 = 0;
         goto cf_common_exit_0046E801;
@@ -767,21 +755,19 @@ switchD_0046d492_caseD_0:
   }
   else {
 LAB_0046d60c:
-    if (((pSVar17 != (STWorldObject *)0x0) &&
-        (pSVar17[1].vtable == (STWorldObjectVTable *)this->field_0024)) &&
-       ((iVar6 = (*pSVar17->vtable->GetObjectTypeId)(pSVar17), iVar6 == 0x3b ||
-        (iVar6 = (*pSVar17->vtable->GetObjectTypeId)(pSVar17), iVar6 == 0x60)))) {
+    if (((pSVar18 != (STBoatC *)0x0) && (pSVar18->field_0024 == this->field_0024)) &&
+       ((dVar8 = (*pSVar18->vtable->slot_2C)(pSVar18), dVar8 == 0x3b ||
+        (dVar8 = (*pSVar18->vtable->slot_2C)(pSVar18), dVar8 == 0x60)))) {
       this->field_054C = CASE_2;
 LAB_0046d818:
-      iVar6 = Defence(this,0);
-      return (-(uint)(iVar6 != -1) & 3) - 1;
+      iVar7 = Defence(this,0);
+      return (-(uint)(iVar7 != -1) & 3) - 1;
     }
   }
   sub_004602B0(this);
   this->field_00B7 = 0;
-/* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
 LAB_0046d652:
-  iVar6 = (*(code *)this->vtable->field_00D8)();
-  return -(uint)(iVar6 != 0);
+  iVar7 = (*this->vtable->vfunc_D8)();
+  return -(uint)(iVar7 != 0);
 }
 

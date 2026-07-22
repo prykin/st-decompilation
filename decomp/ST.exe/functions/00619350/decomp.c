@@ -1,5 +1,10 @@
 
-void __thiscall FUN_00619350(void *this,undefined4 *param_1)
+/* [STMethodOwnerApplier] Structural method owner recovered as STJumpMineC.
+   Evidence: this_call_owners=[STJumpMineC]; agreed_this_calls=1; incoming_this_accesses=2;
+   incoming_edx_uses=0; incoming_stack_parameter_uses=1; direct_non_thunk_callers=0;
+   incoming_ecx_receiver_callers=0; attributed_named_callers=1; owner_evidence_coverage=adequate */
+
+void __thiscall STJumpMineC::sub_00619350(STJumpMineC *this,undefined4 *param_1)
 
 {
   undefined4 *puVar1;
@@ -8,8 +13,8 @@ void __thiscall FUN_00619350(void *this,undefined4 *param_1)
   undefined4 *puVar4;
 
   puVar1 = (undefined4 *)Library::DKW::LIB::FUN_006aac70(0x104);
-  *(undefined4 *)((int)this + 0x14c) = *(undefined4 *)((int)this + 0x1c);
-  puVar3 = (undefined4 *)((int)this + 0x4d);
+  this->field_014C = this->field_001C;
+  puVar3 = (undefined4 *)&this->field_0x4d;
   puVar4 = puVar1;
   for (iVar2 = 0x41; iVar2 != 0; iVar2 = iVar2 + -1) {
     *puVar4 = *puVar3;

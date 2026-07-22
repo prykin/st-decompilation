@@ -1,4 +1,4 @@
-FUN_006ea460:
+SubmarineTitans::Recovered::HiddenThis::AnonReceiver_006EA050::sub_006EA460:
 006EA460  55                        PUSH EBP
 006EA461  8B EC                     MOV EBP,ESP
 006EA463  8B 55 08                  MOV EDX,dword ptr [EBP + 0x8]

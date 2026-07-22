@@ -123,7 +123,7 @@ int __thiscall STDcResourcC::GetMessage(STDcResourcC *this,STMessage *message)
         pbVar20 = pbVar20 + 1;
       }
       STPlaySystemC::SaveObjData
-                (PTR_00802a38,this_00->field_0018,local_c,
+                (g_playSystem_00802A38,this_00->field_0018,local_c,
                  (AnonShape_0060EA30_DCEB68AD *)(local_8 + 0x46));
       FreeAndNull(&local_10);
       FreeAndNull(&local_c);
@@ -181,12 +181,13 @@ int __thiscall STDcResourcC::GetMessage(STDcResourcC *this,STMessage *message)
         iVar12 = local_14;
       }
       local_20 = *(int *)((int)&DAT_007cb0b8 + iVar12) + *(int *)&this_00->field_0x245;
-      thunk_FUN_004ad3c0(*(void **)(*(int *)&this_00->field_0x26d + (int)local_18 * 4),
-                         (float)local_20 * _DAT_007904f8 + _DAT_007904f4,
-                         (float)(*(int *)((int)&DAT_007cb0dc + iVar12) +
-                                *(int *)&this_00->field_0x249) * _DAT_007904f8 + _DAT_007904f4,
-                         (float)*(int *)&this_00->field_0x24d * _DAT_00790504 + _DAT_00790500 +
-                         _DAT_007904fc);
+      STT3DSprC::sub_004AD3C0
+                (*(STT3DSprC **)(*(int *)&this_00->field_0x26d + (int)local_18 * 4),
+                 (float)local_20 * _DAT_007904f8 + _DAT_007904f4,
+                 (float)(*(int *)((int)&DAT_007cb0dc + iVar12) + *(int *)&this_00->field_0x249) *
+                 _DAT_007904f8 + _DAT_007904f4,
+                 (float)*(int *)&this_00->field_0x24d * _DAT_00790504 + _DAT_00790500 +
+                 _DAT_007904fc);
       iVar19 = iVar9 + 4;
       iVar16 = iVar13 + 1;
       iVar12 = local_14 + 4;
@@ -230,7 +231,7 @@ int __thiscall STDcResourcC::GetMessage(STDcResourcC *this,STMessage *message)
       if (*(short *)&this_00->field_0x32 != -1) {
         /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
         STAllPlayersC::UnRegisterDeposit
-                  (g_sTAllPlayers_007FA174,CONCAT22(uVar14,*(short *)&this_00->field_0x32),
+                  (g_allPlayers_007FA174,CONCAT22(uVar14,*(short *)&this_00->field_0x32),
                    (STResourceC *)this_00);
       }
       thunk_FUN_004ad310((STT3DSprC *)&this_00->field_01D5);
@@ -302,7 +303,7 @@ int __thiscall STDcResourcC::GetMessage(STDcResourcC *this,STMessage *message)
             (iVar9 = (*pSVar15->vtable->GetObjectTypeId)(pSVar15), iVar9 != 0x61)))))))) {
         thunk_FUN_00580380(this_00);
       }
-      iVar9 = STAllPlayersC::RegisterDeposit(g_sTAllPlayers_007FA174,0xffff,this_00);
+      iVar9 = STAllPlayersC::RegisterDeposit(g_allPlayers_007FA174,0xffff,this_00);
       if (iVar9 != 0) {
         thunk_FUN_00580380(this_00);
       }
@@ -364,7 +365,7 @@ int __thiscall STDcResourcC::GetMessage(STDcResourcC *this,STMessage *message)
         thunk_FUN_00580380(this_00);
       }
       iVar9 = STAllPlayersC::RegisterDeposit
-                        (g_sTAllPlayers_007FA174,*(ushort *)&this_00->field_0x32,this_00);
+                        (g_allPlayers_007FA174,*(ushort *)&this_00->field_0x32,this_00);
       if (iVar9 != 0) {
         thunk_FUN_00580380(this_00);
       }
@@ -549,30 +550,32 @@ LAB_0057e6f0:
   }
   FUN_006e6580((void *)this_00->field_0211,piVar21);
   *(undefined4 *)&this_00->field_0x273 = 0;
-/* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
 cf_common_join_0057E9C2:
-  (**(code **)&this_00->vtable[4].field_0x18)();
+  (*this_00->vtable->vfunc_D8)();
   if ((*(int *)&this_00->field_0x255 != 0xe0) && (iVar9 = 0, 0 < *(int *)&this_00->field_0x265)) {
     do {
       thunk_FUN_004ac9e0(*(void **)(*(int *)&this_00->field_0x26d + iVar9 * 4),
-                         PTR_00802a38->field_00E4);
+                         g_playSystem_00802A38->field_00E4);
       iVar9 = iVar9 + 1;
     } while (iVar9 < *(int *)&this_00->field_0x265);
   }
   if (*(int *)&this_00->field_0x25d == 2) {
-    if ((this_00->field_0211 != 0) && (PTR_00802a38->field_00E4 % 0xf == 0)) {
+    if ((this_00->field_0211 != 0) && (g_playSystem_00802A38->field_00E4 % 0xf == 0)) {
       bVar7 = this_00->field_0x272 + 1;
       this_00->field_0x272 = bVar7;
       if ((short)(ushort)bVar7 < *(short *)(DAT_00806724 + 0x23)) {
-        thunk_FUN_004ace30(&this_00->field_01D5,*(uint *)(DAT_00806724 + 0x30 + (uint)bVar7 * 4),
-                           (int)*(short *)(DAT_00806724 + 0x2c));
+        STT3DSprC::sub_004ACE30
+                  ((STT3DSprC *)&this_00->field_01D5,
+                   *(uint *)(DAT_00806724 + 0x30 + (uint)bVar7 * 4),
+                   (int)*(short *)(DAT_00806724 + 0x2c));
         if ((*(int *)&this_00->field_0x255 != 0xe0) &&
            (iVar9 = 0, 0 < *(int *)&this_00->field_0x265)) {
           do {
             /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-            thunk_FUN_004ace30(*(void **)(*(int *)&this_00->field_0x26d + iVar9 * 4),
-                               *(uint *)(DAT_00806724 + 0x30 + (uint)(byte)this_00->field_0x272 * 4)
-                               ,(int)*(short *)(DAT_00806724 + 0x2c));
+            STT3DSprC::sub_004ACE30
+                      (*(STT3DSprC **)(*(int *)&this_00->field_0x26d + iVar9 * 4),
+                       *(uint *)(DAT_00806724 + 0x30 + (uint)(byte)this_00->field_0x272 * 4),
+                       (int)*(short *)(DAT_00806724 + 0x2c));
             iVar9 = iVar9 + 1;
           } while (iVar9 < *(int *)&this_00->field_0x265);
         }
@@ -583,12 +586,14 @@ cf_common_join_0057E9C2:
     }
     if ((((this_00->field_0259 != 0) &&
          (iVar9 = thunk_FUN_00580dc0((STJellyGunC *)this_00), iVar9 != 0)) &&
-        (thunk_FUN_004ace30(&this_00->field_01D5,0,(int)*(short *)(DAT_00806724 + 0x2c)),
+        (STT3DSprC::sub_004ACE30
+                   ((STT3DSprC *)&this_00->field_01D5,0,(int)*(short *)(DAT_00806724 + 0x2c)),
         *(int *)&this_00->field_0x255 != 0xe0)) && (iVar9 = 0, 0 < *(int *)&this_00->field_0x265)) {
       do {
         /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-        thunk_FUN_004ace30(*(void **)(*(int *)&this_00->field_0x26d + iVar9 * 4),0,
-                           (int)*(short *)(DAT_00806724 + 0x2c));
+        STT3DSprC::sub_004ACE30
+                  (*(STT3DSprC **)(*(int *)&this_00->field_0x26d + iVar9 * 4),0,
+                   (int)*(short *)(DAT_00806724 + 0x2c));
         iVar9 = iVar9 + 1;
       } while (iVar9 < *(int *)&this_00->field_0x265);
       g_currentExceptionFrame = local_68.previous;

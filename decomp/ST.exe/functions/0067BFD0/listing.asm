@@ -1,4 +1,4 @@
-FUN_0067bfd0:
+AiPlrClassTy::sub_0067BFD0:
 0067BFD0  55                        PUSH EBP
 0067BFD1  8B EC                     MOV EBP,ESP
 0067BFD3  83 EC 3C                  SUB ESP,0x3c

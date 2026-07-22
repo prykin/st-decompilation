@@ -47,19 +47,19 @@ void __thiscall WaitTy::ShowDescription(WaitTy *this)
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   puVar6 = Library::Ourlib::MFIMG::mfImgLoad(g_cMf32_00806780,1,"MM_MAPB",0,1);
-  DibPut((AnonShape_006B5B10_E0D06CF1 *)PTR_0081176c->field_02F0,0,0,'\x01',(byte *)puVar6);
-  pAVar2 = (AnonShape_006B5B10_E0D06CF1 *)PTR_0081176c->field_0544;
+  DibPut((AnonShape_006B5B10_E0D06CF1 *)g_startSystem_0081176C->field_02F0,0,0,'\x01',(byte *)puVar6
+        );
+  pAVar2 = (AnonShape_006B5B10_E0D06CF1 *)g_startSystem_0081176C->field_0544;
   FUN_006b4170(pAVar2,0,0,0,pAVar2->field_0004,pAVar2->field_0008,0xff);
-  if ((AnonShape_006B5570_4D68B99C *)PTR_0081176c->field_0548 != (AnonShape_006B5570_4D68B99C *)0x0)
-  {
-    FUN_006b5570((AnonShape_006B5570_4D68B99C *)PTR_0081176c->field_0548);
+  if ((DArrayTy *)g_startSystem_0081176C->field_0548 != (DArrayTy *)0x0) {
+    FUN_006b5570((DArrayTy *)g_startSystem_0081176C->field_0548);
   }
   pDVar7 = Library::DKW::TBL::SArrayCreate((DArrayTy *)0x0,10,10);
   this_01 = local_8;
-  PTR_0081176c->field_0548 = &pDVar7->flags;
+  g_startSystem_0081176C->field_0548 = &pDVar7->flags;
   if (local_8->field_1A8F == -1) {
-    pcVar8 = LoadResourceString(0x252c,HINSTANCE_00807618);
-    pcVar9 = LoadResourceString(0x252a,HINSTANCE_00807618);
+    pcVar8 = LoadResourceString(0x252c,g_module_00807618);
+    pcVar9 = LoadResourceString(0x252a,g_module_00807618);
     wsprintfA((LPSTR)&DAT_0080f33a,"%s (%s)",pcVar9,pcVar8);
     iVar5 = 0;
     puVar11 = &DAT_0080f33a;
@@ -69,7 +69,7 @@ void __thiscall WaitTy::ShowDescription(WaitTy *this)
     wsprintfA((LPSTR)&DAT_0080f33a,"%s%s",&DAT_00807680,PTR_s_CUSTOM__0079c244);
     local_1c = this_01->field_1A93;
     local_1b = this_01->field_1A8F;
-    iVar5 = FUN_00725910(&DAT_0080f33a,"*.DKD",0,&LAB_00404e49,&local_1c,0);
+    iVar5 = FUN_00725910(&DAT_0080f33a,"*.DKD",0,thunk_FUN_005db030,&local_1c,0);
     if (iVar5 == -0x70) {
       local_a4.previous = g_currentExceptionFrame;
       g_currentExceptionFrame = &local_a4;
@@ -81,23 +81,24 @@ void __thiscall WaitTy::ShowDescription(WaitTy *this)
       pcVar4 = local_10;
       g_currentExceptionFrame = local_a4.previous;
       if (local_10 != (cMf32 *)0x0) {
-        StartSystemTy::LoadMapData(PTR_0081176c,local_10,(local_8->field_1A93 != '\x02') + '\x04');
+        StartSystemTy::LoadMapData
+                  (g_startSystem_0081176C,local_10,(local_8->field_1A93 != '\x02') + '\x04');
         local_c = 1;
         Library::MSVCRT::FUN_0072e730(&DAT_0080ed16,(byte *)0x0,(byte *)0x0,local_1a8,(byte *)0x0);
         pbVar12 = local_1a8;
-        pcVar8 = LoadResourceString(0x252a,HINSTANCE_00807618);
+        pcVar8 = LoadResourceString(0x252a,g_module_00807618);
         wsprintfA((LPSTR)&DAT_0080f33a,"%s (%s)",pcVar8,pbVar12);
         AddStr(this_01,&DAT_0080f33a,0);
         cMf32::delete(this_00,pcVar4);
       }
       goto LAB_005e829d;
     }
-    pcVar8 = LoadResourceString(0x252b,HINSTANCE_00807618);
-    pcVar9 = LoadResourceString(0x252a,HINSTANCE_00807618);
+    pcVar8 = LoadResourceString(0x252b,g_module_00807618);
+    pcVar9 = LoadResourceString(0x252a,g_module_00807618);
     wsprintfA((LPSTR)&DAT_0080f33a,"%s (%s)",pcVar9,pcVar8);
     AddStr(this_01,&DAT_0080f33a,0);
     iVar5 = 0;
-    puVar11 = (uint *)LoadResourceString(0x252d,HINSTANCE_00807618);
+    puVar11 = (uint *)LoadResourceString(0x252d,g_module_00807618);
   }
   AddStr(this_01,puVar11,iVar5);
 LAB_005e829d:
@@ -106,21 +107,21 @@ LAB_005e829d:
     this_01->field_002D = 0x28;
     *(undefined2 *)&this_01->field_0x31 = 1;
     puVar1 = &this_01->field_0x1d;
-    *(short *)&this_01->field_0x33 = (short)PTR_0081176c->field_0548[2];
-    FUN_006e6080(this_01,2,PTR_0081176c->field_0389,(undefined4 *)puVar1);
+    *(short *)&this_01->field_0x33 = (short)g_startSystem_0081176C->field_0548[2];
+    FUN_006e6080(this_01,2,g_startSystem_0081176C->field_0389,(undefined4 *)puVar1);
     this_01->field_002D = 0x22;
     *(undefined2 *)&this_01->field_0x33 = 0;
     *(undefined2 *)&this_01->field_0x31 = 0;
-    FUN_006e6080(this_01,2,PTR_0081176c->field_0389,(undefined4 *)puVar1);
+    FUN_006e6080(this_01,2,g_startSystem_0081176C->field_0389,(undefined4 *)puVar1);
     this_01->field_002D = 0x20;
     *(undefined4 *)&this_01->field_0x31 = 0;
-    FUN_006e6080(this_01,2,PTR_0081176c->field_0389,(undefined4 *)puVar1);
+    FUN_006e6080(this_01,2,g_startSystem_0081176C->field_0389,(undefined4 *)puVar1);
   }
-  if (-1 < PTR_0081176c->field_02EC) {
-    FUN_006b35d0((int *)PTR_008075a8,PTR_0081176c->field_02EC);
+  if (-1 < g_startSystem_0081176C->field_02EC) {
+    FUN_006b35d0((int *)PTR_008075a8,g_startSystem_0081176C->field_02EC);
   }
-  if (-1 < PTR_0081176c->field_0540) {
-    FUN_006b35d0((int *)PTR_008075a8,PTR_0081176c->field_0540);
+  if (-1 < g_startSystem_0081176C->field_0540) {
+    FUN_006b35d0((int *)PTR_008075a8,g_startSystem_0081176C->field_0540);
   }
   g_currentExceptionFrame = local_60.previous;
   return;

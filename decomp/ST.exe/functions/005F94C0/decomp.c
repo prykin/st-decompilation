@@ -10,7 +10,7 @@ int __thiscall STColl3C::CreateAddSpr(STColl3C *this)
 {
   code *pcVar1;
   int iVar2;
-  undefined4 *puVar3;
+  ushort *puVar3;
   int iVar4;
   InternalExceptionFrame local_50;
   int local_c;
@@ -22,13 +22,16 @@ int __thiscall STColl3C::CreateAddSpr(STColl3C *this)
   local_8 = this;
   iVar2 = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0);
   if (iVar2 == 0) {
-    puVar3 = (undefined4 *)Library::DKW::LIB::FUN_006aac70(0x6c);
+    puVar3 = (ushort *)Library::DKW::LIB::FUN_006aac70(0x6c);
     local_8->field_02E6 = puVar3;
     for (iVar2 = 0x1b; iVar2 != 0; iVar2 = iVar2 + -1) {
-      *puVar3 = 0;
-      puVar3 = puVar3 + 1;
+      puVar3[0] = 0;
+      puVar3[1] = 0;
+      puVar3 = puVar3 + 2;
     }
-    *(undefined4 *)(local_8->field_02E6 + 4) = 0xffffffff;
+    puVar3 = local_8->field_02E6;
+    puVar3[2] = 0xffff;
+    puVar3[3] = 0xffff;
     g_currentExceptionFrame = local_50.previous;
     return local_c + 2;
   }

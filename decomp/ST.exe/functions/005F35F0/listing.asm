@@ -1,4 +1,4 @@
-SubmarineTitans::Recovered::HiddenThis::AnonReceiver_005F35F0::FUN_005f35f0:
+STBHEShellC::sub_005F35F0:
 005F35F0  55                        PUSH EBP
 005F35F1  8B EC                     MOV EBP,ESP
 005F35F3  83 EC 50                  SUB ESP,0x50

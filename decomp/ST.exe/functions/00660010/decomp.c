@@ -30,9 +30,7 @@ undefined4 __fastcall FUN_00660010(AiFltClassTy *param_1)
   }
   iVar4 = 0;
 LAB_00660050:
-  array = (DArrayTy *)
-          SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0065FA60::thunk_FUN_0065fa60
-                    ((AnonReceiver_0065FA60 *)param_1,iVar4,(sVar1 != 3) - 1 & 2,(short *)0x0);
+  array = (DArrayTy *)AiFltClassTy::sub_0065FA60(param_1,iVar4,(sVar1 != 3) - 1 & 2,(short *)0x0);
   if (array == (DArrayTy *)0x0) {
     return 0xfffffffe;
   }
@@ -42,7 +40,7 @@ LAB_00660050:
     DArrayDestroy(array);
     return 0xffffffff;
   }
-  if ((param_1->field_007D != -2) && (g_sTAllPlayers_007FA174 != (STAllPlayersC *)0x0)) {
+  if ((param_1->field_007D != -2) && (g_allPlayers_007FA174 != (STAllPlayersC *)0x0)) {
     /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
     this = thunk_FUN_0042b760(*(char *)&param_1->field_0024,
                               CONCAT22(extraout_var,param_1->field_007D));

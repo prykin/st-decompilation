@@ -85,9 +85,9 @@ int __thiscall InfocPanelTy::GetMessage(InfocPanelTy *this,STMessage *message)
           this_00->field_002C = 0;
           this_00->field_002E = 2;
           this_00->field_0030 = iVar10;
-          if (PTR_00802a30 != (CursorClassTy *)0x0) {
+          if (g_cursorClass_00802A30 != (CursorClassTy *)0x0) {
             /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-            (**(code **)PTR_00802a30->field_0000)(&this_00->field_0x18);
+            (**(code **)g_cursorClass_00802A30->field_0000)(&this_00->field_0x18);
           }
         }
         this_00->field_0178 = iVar8;
@@ -97,7 +97,7 @@ int __thiscall InfocPanelTy::GetMessage(InfocPanelTy *this,STMessage *message)
           this_00->field_002E = 2;
           this_00->field_0030 = iVar8;
           /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-          (**(code **)PTR_00802a30->field_0000)(&this_00->field_0x18);
+          (**(code **)g_cursorClass_00802A30->field_0000)(&this_00->field_0x18);
           g_currentExceptionFrame = local_58.previous;
           return 0;
         }

@@ -20,7 +20,7 @@ void __fastcall FUN_004945c0(AnonShape_004945C0_2B3B394D *param_1)
   local_18 = &DAT_008087e9;
   piVar6 = (int *)&param_1[0x23].field_0032;
   do {
-    if ((PTR_00802a38 == (STPlaySystemC *)0x0) || (*local_18 < 8)) {
+    if ((g_playSystem_00802A38 == (STPlaySystemC *)0x0) || (*local_18 < 8)) {
       bVar1 = param_1->field_0024;
       bVar5 = (byte)local_c;
       if (DAT_00808a8f == '\0') {

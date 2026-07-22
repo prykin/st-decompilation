@@ -17,7 +17,7 @@ void __thiscall STBoatC::sub_00492390(STBoatC *this)
   if (((this->field_045D == CASE_F) || (this->field_045D == CASE_E)) && (this->field_07C6 == 0)) {
     this->field_07C6 = 1;
     local_8 = this;
-    iVar1 = FUN_006e62d0(PTR_00802a38,this->field_058E,(int *)&local_8);
+    iVar1 = FUN_006e62d0(g_playSystem_00802A38,this->field_058E,(int *)&local_8);
     if (iVar1 == -4) {
       RaiseInternalException
                 (-0x5001fffd,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\To_boat.cpp",

@@ -1,4 +1,4 @@
-FUN_004c6c70:
+TLOBaseTy::sub_004C6C70:
 004C6C70  55                        PUSH EBP
 004C6C71  8B EC                     MOV EBP,ESP
 004C6C73  56                        PUSH ESI

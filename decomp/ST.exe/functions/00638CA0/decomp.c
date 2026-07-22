@@ -33,7 +33,7 @@ undefined4 __thiscall FUN_00638ca0(void *this,STMessage *param_1)
     local_8 = (byte *)Library::DKW::LIB::FUN_006aac70(0x7a);
     thunk_FUN_00639bf0(this,(undefined4 *)local_8);
     STPlaySystemC::SaveObjData
-              (PTR_00802a38,*(undefined4 *)((int)this + 0x18),local_8,
+              (g_playSystem_00802A38,*(undefined4 *)((int)this + 0x18),local_8,
                (AnonShape_0060EA30_DCEB68AD *)0x7a);
     FreeAndNull(&local_8);
     return 0;
@@ -65,7 +65,7 @@ undefined4 __thiscall FUN_00638ca0(void *this,STMessage *param_1)
         puVar10 = puVar10 + 1;
       }
       *(undefined2 *)puVar10 = *(undefined2 *)puVar9;
-      thunk_FUN_00639500(this,PTR_00802a38->field_00E4);
+      thunk_FUN_00639500(this,g_playSystem_00802A38->field_00E4);
     }
     if (*(char *)((int)this + 0x270) == '\0') {
       return 0;
@@ -81,13 +81,14 @@ undefined4 __thiscall FUN_00638ca0(void *this,STMessage *param_1)
     if (*(char *)((int)this + 0x270) == '\0') {
       thunk_FUN_00639990(this);
     }
-    uVar6 = thunk_FUN_00639670(this,PTR_00802a38->field_00E4);
+    uVar6 = thunk_FUN_00639670(this,g_playSystem_00802A38->field_00E4);
     if (0 < (int)uVar6) {
       iVar5 = *(int *)((int)this + 0x2bf);
       if (iVar5 != 0) {
         if (*(int *)((int)this + 0x2c7) == 0) {
-          FUN_006ea460(*(void **)((int)this + 0x211),*(uint *)((int)this + 0x1ed),
-                       *(int *)(iVar5 + 0x1ed));
+          SubmarineTitans::Recovered::HiddenThis::AnonReceiver_006EA050::sub_006EA460
+                    (*(AnonReceiver_006EA050 **)((int)this + 0x211),*(uint *)((int)this + 0x1ed),
+                     *(int *)(iVar5 + 0x1ed));
         }
         else {
           FUN_006ea3e0(*(void **)((int)this + 0x211),*(uint *)((int)this + 0x1ed),
@@ -106,8 +107,8 @@ undefined4 __thiscall FUN_00638ca0(void *this,STMessage *param_1)
     if (*(char *)((int)this + 0x270) == '\0') {
       return 0;
     }
-    thunk_FUN_00416240(this,*(undefined2 *)((int)this + 0x27a),*(undefined2 *)((int)this + 0x27e),
-                       *(undefined2 *)((int)this + 0x282));
+    sub_00416240(this,*(undefined2 *)((int)this + 0x27a),*(undefined2 *)((int)this + 0x27e),
+                 *(undefined2 *)((int)this + 0x282));
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
     (**(code **)(*(int *)this + 0xd8))();
     pVVar4 = g_visibleClass_00802A88;
@@ -166,11 +167,12 @@ joined_r0x00639236:
     }
     break;
   case 1:
-    if (PTR_00802a38->field_00E4 - *(int *)((int)this + 0x2a3) < *(uint *)((int)this + 0x251)) {
+    if (g_playSystem_00802A38->field_00E4 - *(int *)((int)this + 0x2a3) <
+        *(uint *)((int)this + 0x251)) {
       return 0;
     }
     *(undefined1 *)((int)this + 0x26f) = 0;
-    uVar6 = PTR_00802a38->field_00E4;
+    uVar6 = g_playSystem_00802A38->field_00E4;
     *(undefined4 *)((int)this + 0x251) = 0;
     *(uint *)((int)this + 0x2a3) = uVar6;
     if (*(char *)((int)this + 0x270) == '\0') {
@@ -186,21 +188,21 @@ joined_r0x00639236:
     this_00 = (STT3DSprC *)((int)this + 0x1d5);
     iVar5 = thunk_FUN_004ac910(this_00,'\r');
     if (*(char *)((int)this + 0x2a2) != '\0') {
-      iVar7 = thunk_FUN_004acd30(this_00,'\x0e');
+      iVar7 = STT3DSprC::sub_004ACD30(this_00,'\x0e');
       iVar8 = thunk_FUN_004ac910(this_00,'\x0e');
       if ((iVar7 + -1 <= iVar8) && (*(char *)((int)this + 0x270) != '\0')) {
         STT3DSprC::StopShow(this_00,0xe);
       }
     }
     if ((iVar5 == 0x17) && (*(char *)((int)this + 0x270) != '\0')) {
-      STT3DSprC::StartShow(this_00,0xf,PTR_00802a38->field_00E4);
+      STT3DSprC::StartShow(this_00,0xf,g_playSystem_00802A38->field_00E4);
     }
-    iVar5 = thunk_FUN_004acd30(this_00,'\r');
+    iVar5 = STT3DSprC::sub_004ACD30(this_00,'\r');
     iVar7 = thunk_FUN_004ac910(this_00,'\r');
     if (iVar5 + -1 == iVar7) {
       STT3DSprC::StopShow(this_00,0xd);
     }
-    iVar5 = thunk_FUN_004acd30(this_00,'\x0f');
+    iVar5 = STT3DSprC::sub_004ACD30(this_00,'\x0f');
     iVar7 = thunk_FUN_004ac910(this_00,'\x0f');
     if (iVar5 + -1 == iVar7) {
       *(undefined1 *)((int)this + 0x26f) = 3;

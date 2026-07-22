@@ -20,10 +20,10 @@ void __thiscall FUN_00630000(void *this,int param_1)
         STT3DSprC::SetCurFase(this_00,'\x0e',*(uint *)(*piVar2 + 0x2c));
         STT3DSprC::ShowCurFase(this_00,'\x0e');
         iVar1 = *piVar2;
-        thunk_FUN_004ad3c0(this_00,(float)*(int *)(iVar1 + 0x20) * _DAT_007904f8 * _DAT_007904f0,
-                           (float)*(int *)(iVar1 + 0x24) * _DAT_007904f8 * _DAT_007904f0,
-                           (float)*(int *)(iVar1 + 0x28) * _DAT_007904f8 * _DAT_007904f0 +
-                           _DAT_007904fc);
+        STT3DSprC::sub_004AD3C0
+                  (this_00,(float)*(int *)(iVar1 + 0x20) * _DAT_007904f8 * _DAT_007904f0,
+                   (float)*(int *)(iVar1 + 0x24) * _DAT_007904f8 * _DAT_007904f0,
+                   (float)*(int *)(iVar1 + 0x28) * _DAT_007904f8 * _DAT_007904f0 + _DAT_007904fc);
       }
     }
     piVar2 = piVar2 + 1;

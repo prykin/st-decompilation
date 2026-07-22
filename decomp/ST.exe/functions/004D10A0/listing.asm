@@ -1,4 +1,4 @@
-FUN_004d10a0:
+TLOEmbryoTy::sub_004D10A0:
 004D10A0  55                        PUSH EBP
 004D10A1  8B EC                     MOV EBP,ESP
 004D10A3  53                        PUSH EBX

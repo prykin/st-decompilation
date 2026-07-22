@@ -1,0 +1,14 @@
+005B94EC  pointer  005b93a1
+005B94F0  pointer  005b93ab
+005B94F4  pointer  005b93b5
+005B94F8  pointer  005b93bf
+005B94FC  pointer  005b93c9
+005B9500  pointer  005b93d3
+005B9504  pointer  005b93dd
+005B9508  pointer  005b93e7
+005B950C  pointer  005b9480
+005B9510  pointer  005b9487
+005B9514  pointer  005b9465
+005B9518  pointer  005b946e
+005B951C  pointer  005b9487
+005B9520  pointer  005b9477

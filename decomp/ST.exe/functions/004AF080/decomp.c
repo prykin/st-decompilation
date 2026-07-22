@@ -93,7 +93,7 @@ LAB_004af1d5:
             }
             else {
               if (((uint)local_10->field_0024 < 8) &&
-                 ((PTR_00802a38 == (STPlaySystemC *)0x0 ||
+                 ((g_playSystem_00802A38 == (STPlaySystemC *)0x0 ||
                   ((byte)(&DAT_008087e9)[local_10->field_0024 * 0x51] < 8)))) {
                 bVar2 = *(byte *)&local_10->field_0024;
                 if (g_appClass_00806728->field_146F == '\0') {
@@ -147,9 +147,9 @@ LAB_004af325:
     }
     local_14 = local_14 + 1;
   } while (local_14 < 4);
-  if (PTR_007fa150 != (DArrayTy *)0x0) {
-    PTR_007fa150->iteratorIndex = 0;
-    iVar9 = FUN_006b1190((AnonShape_006B1190_EDB2B5FD *)PTR_007fa150,&local_10);
+  if (g_dArray_007FA150 != (DArrayTy *)0x0) {
+    g_dArray_007FA150->iteratorIndex = 0;
+    iVar9 = FUN_006b1190(g_dArray_007FA150,&local_10);
     while (-1 < iVar9) {
       if (local_10 != (STFishC *)0x0) {
         STFishC::sub_004162B0(local_10,&local_6,&local_8,&local_a);
@@ -158,7 +158,7 @@ LAB_004af325:
          (int)local_6 +
          (int)local_a * (int)g_worldGrid.planeStride + (int)local_8 * (int)g_worldGrid.sizeX) = 2;
       }
-      iVar9 = FUN_006b1190((AnonShape_006B1190_EDB2B5FD *)PTR_007fa150,&local_10);
+      iVar9 = FUN_006b1190(g_dArray_007FA150,&local_10);
     }
   }
   local_14 = 0;
@@ -318,10 +318,10 @@ LAB_004af325:
                 goto cf_common_join_004AFA95;
               }
               if (((param_2 < 0x54) || (0x5a < param_2)) || (param_9 == 0)) {
-                if (((param_2 == 0x3a) && (PTR_007fa16c != (DArrayTy *)0x0)) &&
-                   (uVar20 = 0, 0 < (int)PTR_007fa16c->count)) {
+                if (((param_2 == 0x3a) && (g_dArray_007FA16C != (DArrayTy *)0x0)) &&
+                   (uVar20 = 0, 0 < (int)g_dArray_007FA16C->count)) {
                   do {
-                    DArrayGetElement(PTR_007fa16c,uVar20,&local_10);
+                    DArrayGetElement(g_dArray_007FA16C,uVar20,&local_10);
                     STFishC::sub_004162B0(local_10,&local_6,&local_8,&local_a);
                     uVar17 = local_6 - local_18 >> 0x1f;
                     if (((int)((local_6 - local_18 ^ uVar17) - uVar17) < 0xe) &&
@@ -329,7 +329,7 @@ LAB_004af325:
                        (int)((local_8 - local_1c ^ uVar17) - uVar17) < 0xe))
                     goto cf_common_join_004AFC34;
                     uVar20 = uVar20 + 1;
-                  } while ((int)uVar20 < (int)PTR_007fa16c->count);
+                  } while ((int)uVar20 < (int)g_dArray_007FA16C->count);
                 }
                 goto cf_common_join_004AFA95;
               }

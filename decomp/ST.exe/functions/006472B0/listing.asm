@@ -1,4 +1,4 @@
-FUN_006472b0:
+STVolcanoC::sub_006472B0:
 006472B0  8B 51 50                  MOV EDX,dword ptr [ECX + 0x50]
 006472B3  33 C0                     XOR EAX,EAX
 006472B5  42                        INC EDX

@@ -20,13 +20,13 @@ void __thiscall CursorClassTy::DrawSprite(CursorClassTy *this,int param_1,int pa
   int local_8;
 
   local_c = this;
-  local_10 = FUN_006e51b0((int)this->field_0010);
+  local_10 = STAppC::sub_006E51B0((STAppC *)this->field_0010);
   local_8 = 0;
   if (this->field_001C == (cLoadingTy *)0xffffffff) {
     iVar5 = 0;
   }
   else {
-    iVar5 = FUN_006b33f0(this->field_0060,(uint)this->field_001C);
+    iVar5 = FUN_006b33f0((AnonShape_006B1B10_121F236C *)this->field_0060,(uint)this->field_001C);
   }
   if (iVar5 != 0) {
     local_54.previous = g_currentExceptionFrame;

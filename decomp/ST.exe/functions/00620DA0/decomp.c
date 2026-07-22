@@ -19,7 +19,7 @@ undefined4 __thiscall FUN_00620da0(void *this,int param_1,undefined4 param_2,und
       *(undefined4 *)((int)this + iVar1 * 0x1d + 0x25) = param_2;
       *(undefined4 *)((int)this + iVar1 * 0x1d + 0x29) = param_3;
       *(int *)((int)this + iVar1 * 0x1d + 0x2d) = *(int *)((int)this + 0x1c) * 10;
-      *(uint *)((int)this + iVar1 * 0x1d + 0x39) = PTR_00802a38->field_00E4;
+      *(uint *)((int)this + iVar1 * 0x1d + 0x39) = g_playSystem_00802A38->field_00E4;
       *(undefined4 *)((int)this + iVar1 * 0x1d + 0x31) = 0xf;
       *(float *)((int)this + iVar1 * 0x1d + 0x35) =
            (float)_DAT_0079cee0 / ((float)*(int *)((int)this + 0x1c) * (float)_DAT_0079cef0);

@@ -1,4 +1,4 @@
-FUN_0058b190:
+STOctopusC::sub_0058B190:
 0058B190  55                        PUSH EBP
 0058B191  8B EC                     MOV EBP,ESP
 0058B193  83 EC 14                  SUB ESP,0x14

@@ -1,0 +1,5 @@
+00520A50  pointer  00520998
+00520A54  pointer  005209a3
+00520A58  pointer  005209af
+00520A5C  pointer  005209aa
+00520A60  pointer  0052099c

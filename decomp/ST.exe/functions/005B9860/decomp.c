@@ -16,13 +16,13 @@ MMMObjTy::OutLstProc
 {
   code *pcVar1;
   int errorCode;
-  uint *puVar2;
-  int iVar3;
+  uint *resourceString;
+  int iVar2;
   StartServTy *this_00;
+  uint uVar3;
   uint uVar4;
-  uint uVar5;
-  ccFntTy *pcVar6;
-  undefined4 uVar7;
+  ccFntTy *pcVar5;
+  undefined4 uVar6;
   InternalExceptionFrame local_4c;
   int local_8;
 
@@ -33,26 +33,27 @@ MMMObjTy::OutLstProc
     errorCode = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
     if (errorCode == 0) {
       OutBSlProc(param_2,param_1,param_2,param_3,param_4,param_5 + 0x16,param_6,param_7 + -0x16,
-                 &PTR_0081176c->field_0140);
+                 &g_startSystem_0081176C->field_0140);
       Library::DKW::DDX::FUN_006c68f0
-                (param_1,param_4,param_5,param_6,0x15,(int)&PTR_0081176c->field_0x144);
-      FUN_006c6850(param_1,param_4,param_5,param_6,0x15,PTR_0081176c->field_0140);
-      uVar7 = 0;
-      pcVar6 = PTR_0081176c->field_0034;
-      uVar5 = 0xffffffff;
-      uVar4 = 0xfffffffe;
+                (param_1,param_4,param_5,param_6,0x15,(int)&g_startSystem_0081176C->field_0x144);
+      FUN_006c6850(param_1,param_4,param_5,param_6,0x15,g_startSystem_0081176C->field_0140);
+      uVar6 = 0;
+      pcVar5 = g_startSystem_0081176C->field_0034;
+      uVar4 = 0xffffffff;
+      uVar3 = 0xfffffffe;
       /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-      puVar2 = (uint *)LoadResourceString(0x26b4 - (*(char *)(local_8 + 0x1a5f) != '\x01'),
-                                          HINSTANCE_00807618);
-      StartServTy::WrTextDDX(this_00,0,param_4,param_5,param_6,0x15,puVar2,uVar4,uVar5,pcVar6,uVar7)
-      ;
+      resourceString =
+           (uint *)LoadResourceString(0x26b4 - (*(char *)(local_8 + 0x1a5f) != '\x01'),
+                                      g_module_00807618);
+      StartServTy::WrTextDDX
+                (this_00,0,param_4,param_5,param_6,0x15,resourceString,uVar3,uVar4,pcVar5,uVar6);
       g_currentExceptionFrame = local_4c.previous;
       return;
     }
     g_currentExceptionFrame = local_4c.previous;
-    iVar3 = ReportDebugMessage("E:\\__titans\\Start\\prov_obj.cpp",0x3b,0,errorCode,
+    iVar2 = ReportDebugMessage("E:\\__titans\\Start\\prov_obj.cpp",0x3b,0,errorCode,
                                "%s","MMMObjTy::OutLstProc");
-    if (iVar3 != 0) {
+    if (iVar2 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
     RaiseInternalException(errorCode,0,"E:\\__titans\\Start\\prov_obj.cpp",0x3b);

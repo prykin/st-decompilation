@@ -99,7 +99,7 @@ LAB_004b03a2:
             }
             else {
               if (((uint)local_c->field_0024 < 8) &&
-                 ((PTR_00802a38 == (STPlaySystemC *)0x0 ||
+                 ((g_playSystem_00802A38 == (STPlaySystemC *)0x0 ||
                   ((byte)(&DAT_008087e9)[local_c->field_0024 * 0x51] < 8)))) {
                 bVar1 = *(byte *)&local_c->field_0024;
                 /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
@@ -177,9 +177,9 @@ LAB_004b057d:
     }
     local_18 = local_18 + 1;
   } while (local_18 < 4);
-  if (PTR_007fa150 != (DArrayTy *)0x0) {
-    PTR_007fa150->iteratorIndex = 0;
-    iVar15 = FUN_006b1190((AnonShape_006B1190_EDB2B5FD *)PTR_007fa150,&local_c);
+  if (g_dArray_007FA150 != (DArrayTy *)0x0) {
+    g_dArray_007FA150->iteratorIndex = 0;
+    iVar15 = FUN_006b1190(g_dArray_007FA150,&local_c);
     while (-1 < iVar15) {
       if (local_c != (STFishC *)0x0) {
         STFishC::sub_004162B0(local_c,&local_22,(undefined2 *)((int)&param_2 + 2),&local_2e);
@@ -190,7 +190,7 @@ LAB_004b057d:
          (int)local_2e * (int)g_worldGrid.planeStride + (int)param_2._2_2_ * (int)g_worldGrid.sizeX)
              = 2;
       }
-      iVar15 = FUN_006b1190((AnonShape_006B1190_EDB2B5FD *)PTR_007fa150,&local_c);
+      iVar15 = FUN_006b1190(g_dArray_007FA150,&local_c);
     }
   }
   local_18 = 0;
@@ -319,7 +319,7 @@ LAB_004b057d:
                 iVar9 = -1;
                 local_54 = -1;
                 local_2c->iteratorIndex = 0;
-                iVar6 = FUN_006b1190((AnonShape_006B1190_EDB2B5FD *)local_2c,&local_c);
+                iVar6 = FUN_006b1190(local_2c,&local_c);
                 iVar12 = local_54;
                 if (-1 < iVar6) {
                   iVar6 = local_40 / 2;
@@ -331,7 +331,7 @@ LAB_004b057d:
                     if ((iVar12 <= iVar6) && ((iVar9 < 0 || (iVar12 < iVar9)))) {
                       iVar9 = iVar12;
                     }
-                    iVar7 = FUN_006b1190((AnonShape_006B1190_EDB2B5FD *)local_2c,&local_c);
+                    iVar7 = FUN_006b1190(local_2c,&local_c);
                     iVar12 = iVar9;
                   } while (-1 < iVar7);
                 }

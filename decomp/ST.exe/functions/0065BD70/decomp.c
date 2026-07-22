@@ -20,7 +20,7 @@ int __thiscall AiEventClassTy::sub_0065BD70(AiEventClassTy *this,STMessage *mess
   word wVar8;
   undefined2 uVar10;
   char *pcVar9;
-  uint *puVar11;
+  DArrayTy *pDVar11;
   uint uVar12;
   char local_1c [16];
   int local_c;
@@ -157,7 +157,7 @@ int __thiscall AiEventClassTy::sub_0065BD70(AiEventClassTy *this,STMessage *mess
     goto cf_common_exit_0065C65B;
   case MESS_AIBOSSCLASSTY_5DC6:
     pcVar9 = (message->arg0).ptr;
-    puVar11 = this->field_05B3;
+    pDVar11 = this->field_05B3;
     uVar12 = 0;
     break;
   default:
@@ -177,15 +177,13 @@ int __thiscall AiEventClassTy::sub_0065BD70(AiEventClassTy *this,STMessage *mess
         this->field_0537 = (uint)(byte)(&DAT_008087ea)[iVar7 * 0x51];
         /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
         pSVar4 = STAllPlayersC::GetObjPtr
-                           (g_sTAllPlayers_007FA174,(char)wVar8,
+                           (g_allPlayers_007FA174,(char)wVar8,
                             CONCAT22((short)((uint)(iVar7 * 9) >> 0x10),(message->arg0).words.high),
                             CASE_1);
         if (pSVar4 != (STGameObjC *)0x0) {
-          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-          uVar5 = (**(code **)&pSVar4->vtable->field_0x2c)();
+          uVar5 = (*pSVar4->vtable->vfunc_2C)();
           this->field_053B = uVar5;
-          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-          uVar5 = (**(code **)&pSVar4->vtable->field_0x6c)();
+          uVar5 = (*pSVar4->vtable->vfunc_6C)();
           this->field_053F = uVar5;
           STFishC::sub_004162B0
                     ((STFishC *)pSVar4,(undefined2 *)((int)&message + 2),
@@ -202,10 +200,9 @@ int __thiscall AiEventClassTy::sub_0065BD70(AiEventClassTy *this,STMessage *mess
             uVar12 = (uint)(ushort)pSVar4->field_0030;
           }
           this->field_054F = uVar12;
-/* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
 LAB_0065c021:
-          (**(code **)&pSVar4->vtable->field_0x74)(local_1c);
-          Library::DKW::TBL::FUN_006b6020(this->field_05B3,0,local_1c);
+          (*pSVar4->vtable->vfunc_74)(local_1c);
+          Library::DKW::TBL::FUN_006b6020(&this->field_05B3->flags,0,local_1c);
         }
       }
     }
@@ -217,18 +214,15 @@ LAB_0065c021:
   case MESS_AIBOSSCLASSTY_5DD0|MESS_CURSORCLASSTY_0009:
   case MESS_AIBOSSCLASSTY_5DD0|MESS_SYSTEMCLASSTY_000A:
     pSVar4 = STAllPlayersC::GetObjPtr
-                       (g_sTAllPlayers_007FA174,'\0',CONCAT22(uVar6,(message->arg0).words.high),
-                        CASE_5);
+                       (g_allPlayers_007FA174,'\0',CONCAT22(uVar6,(message->arg0).words.high),CASE_5
+                       );
     if (pSVar4 != (STGameObjC *)0x0) {
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-      uVar5 = (**(code **)&pSVar4->vtable[1].field_0x5c)();
+      uVar5 = (*pSVar4->vtable[1].vfunc_58)();
       this->field_052F = uVar5;
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-      uVar5 = (**(code **)&pSVar4->vtable->field_0xc)();
+      uVar5 = (*pSVar4->vtable->vfunc_0C)();
       this->field_0533 = uVar5;
       this->field_0537 = (uint)(byte)(&DAT_008087ea)[this->field_052F * 0x51];
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-      uVar5 = (*(code *)pSVar4->vtable[1].field_0060)();
+      uVar5 = (*pSVar4->vtable[1].vfunc_5C)();
       this->field_053B = uVar5;
       this->field_053F = 0;
       thunk_FUN_004162f0(pSVar4,(undefined2 *)((int)&message + 2),(undefined2 *)((int)&param_2 + 2),
@@ -238,12 +232,10 @@ LAB_0065c021:
       /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
       this->field_0547 = (int)param_2._2_2_;
       this->field_054B = (int)local_6;
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-      uVar5 = (**(code **)&pSVar4->vtable[1].field_0x68)();
+      uVar5 = (*pSVar4->vtable[1].vfunc_64)();
       this->field_054F = uVar5;
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-      (**(code **)&pSVar4->vtable->field_0x74)(local_1c);
-      Library::DKW::TBL::FUN_006b6020(this->field_05B3,0,local_1c);
+      (*pSVar4->vtable->vfunc_74)(local_1c);
+      Library::DKW::TBL::FUN_006b6020(&this->field_05B3->flags,0,local_1c);
     }
     wVar8 = (pSVar2->arg1).words.low;
     if (((-1 < (short)wVar8) && ((short)wVar8 < 8)) &&
@@ -262,12 +254,11 @@ LAB_0065c021:
   case MESS_AIBOSSCLASSTY_5DD0|MESS_SHARED_0008|MESS_SHARED_0005:
   case 0x5dde:
     pSVar4 = STAllPlayersC::GetObjPtr
-                       (g_sTAllPlayers_007FA174,'\0',CONCAT22(uVar6,(message->arg0).words.high),
-                        CASE_2);
+                       (g_allPlayers_007FA174,'\0',CONCAT22(uVar6,(message->arg0).words.high),CASE_2
+                       );
     if (pSVar4 != (STGameObjC *)0x0) {
       this->field_052F = 0;
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-      uVar5 = (**(code **)&pSVar4->vtable->field_0xc)();
+      uVar5 = (*pSVar4->vtable->vfunc_0C)();
       this->field_0533 = uVar5;
       this->field_0537 = 0;
       uVar5 = pSVar4->field_0342;
@@ -280,9 +271,8 @@ LAB_0065c021:
       /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
       this->field_0543 = (int)message._2_2_;
       this->field_054B = (int)local_6;
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-      (**(code **)&pSVar4->vtable->field_0x74)(local_1c);
-      Library::DKW::TBL::FUN_006b6020(this->field_05B3,0,local_1c);
+      (*pSVar4->vtable->vfunc_74)(local_1c);
+      Library::DKW::TBL::FUN_006b6020(&this->field_05B3->flags,0,local_1c);
     }
     wVar8 = (pSVar2->arg1).words.low;
     if ((((short)wVar8 < 0) || (7 < (short)wVar8)) ||
@@ -329,15 +319,13 @@ LAB_0065c021:
         this->field_0537 = (uint)(byte)(&DAT_008087ea)[iVar7 * 0x51];
         /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
         pSVar4 = STAllPlayersC::GetObjPtr
-                           (g_sTAllPlayers_007FA174,'\0',
+                           (g_allPlayers_007FA174,'\0',
                             CONCAT22((short)((uint)(iVar7 * 9) >> 0x10),(message->arg0).words.high),
                             CASE_3);
         if (pSVar4 != (STGameObjC *)0x0) {
-          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-          uVar5 = (**(code **)&pSVar4->vtable->field_0x2c)();
+          uVar5 = (*pSVar4->vtable->vfunc_2C)();
           this->field_053B = uVar5;
-          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-          uVar5 = (**(code **)&pSVar4->vtable->field_0x6c)();
+          uVar5 = (*pSVar4->vtable->vfunc_6C)();
           this->field_053F = uVar5;
           STFishC::sub_004162B0
                     ((STFishC *)pSVar4,(undefined2 *)((int)&message + 2),
@@ -377,7 +365,7 @@ cf_common_exit_0065C570:
     this->field_053B = (uint)(message->arg0).words.high;
     this->field_053F = (uint)(message->arg2).words.low;
     if ((message->arg1).u32 == 0) goto cf_common_exit_0065C65B;
-    puVar11 = this->field_05B3;
+    pDVar11 = this->field_05B3;
     pcVar9 = (char *)((message->arg1).u32 + 0x3b);
     uVar12 = 0;
     break;
@@ -408,16 +396,14 @@ cf_common_exit_0065C570:
     uVar12 = CONCAT22(uVar10,(message->arg0).words.high);
 LAB_0065c4bb:
     if (((short)uVar12 == -1) ||
-       (pSVar4 = STAllPlayersC::GetObjPtr(g_sTAllPlayers_007FA174,(char)wVar8,uVar12,CASE_1),
+       (pSVar4 = STAllPlayersC::GetObjPtr(g_allPlayers_007FA174,(char)wVar8,uVar12,CASE_1),
        pSVar4 == (STGameObjC *)0x0)) {
       this->field_0563 = 0;
       goto cf_common_exit_0065C65B;
     }
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-    uVar5 = (**(code **)&pSVar4->vtable->field_0x2c)();
+    uVar5 = (*pSVar4->vtable->vfunc_2C)();
     this->field_0563 = uVar5;
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-    uVar5 = (**(code **)&pSVar4->vtable->field_0x6c)();
+    uVar5 = (*pSVar4->vtable->vfunc_6C)();
     this->field_0567 = uVar5;
     STFishC::sub_004162B0
               ((STFishC *)pSVar4,(undefined2 *)((int)&message + 2),(undefined2 *)((int)&param_2 + 2)
@@ -434,9 +420,8 @@ LAB_0065c4bb:
       uVar12 = (uint)(ushort)pSVar4->field_0030;
     }
     this->field_0577 = uVar12;
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-    (**(code **)&pSVar4->vtable->field_0x74)(local_1c);
-    puVar11 = this->field_05B3;
+    (*pSVar4->vtable->vfunc_74)(local_1c);
+    pDVar11 = this->field_05B3;
     pcVar9 = local_1c;
     uVar12 = 1;
     break;
@@ -450,14 +435,14 @@ LAB_0065c4bb:
     this->field_0533 = (uint)(byte)(&DAT_008087e8)[iVar7 * 0x51];
     this->field_0537 = (uint)(byte)(&DAT_008087ea)[iVar7 * 0x51];
     if ((message->arg1).u32 == 0) goto cf_common_exit_0065C65B;
-    puVar11 = this->field_05B3;
+    pDVar11 = this->field_05B3;
     pcVar9 = (char *)((message->arg1).u32 + 0x92);
     uVar12 = 0;
   }
-  Library::DKW::TBL::FUN_006b6020(puVar11,uVar12,pcVar9);
+  Library::DKW::TBL::FUN_006b6020(&pDVar11->flags,uVar12,pcVar9);
 cf_common_exit_0065C65B:
-  this->field_05A7 = PTR_00802a38->field_00E4 / 0x19;
-  this->field_05AB = PTR_00802a38->field_00E4;
+  this->field_05A7 = g_playSystem_00802A38->field_00E4 / 0x19;
+  this->field_05AB = g_playSystem_00802A38->field_00E4;
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
   uVar5 = (*(code *)this->field_0000->field_0014)();
   this->field_05AF = uVar5;

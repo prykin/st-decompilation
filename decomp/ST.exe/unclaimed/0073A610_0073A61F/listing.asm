@@ -1,0 +1,4 @@
+0073A610  pointer  0073a620
+0073A614  pointer  0073a628
+0073A618  pointer  0073a638
+0073A61C  pointer  0073a64c

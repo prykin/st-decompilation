@@ -1,4 +1,4 @@
-FUN_004c2f70:
+TLOBaseTy::sub_004C2F70:
 004C2F70  55                        PUSH EBP
 004C2F71  8B EC                     MOV EBP,ESP
 004C2F73  51                        PUSH ECX

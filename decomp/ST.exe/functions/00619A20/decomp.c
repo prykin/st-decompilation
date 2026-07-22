@@ -1,7 +1,11 @@
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+/* [STMethodOwnerApplier] Structural method owner recovered as STJumpMineC.
+   Evidence: this_call_owners=[STJumpMineC]; agreed_this_calls=1; incoming_this_accesses=19;
+   incoming_edx_uses=0; incoming_stack_parameter_uses=0; direct_non_thunk_callers=0;
+   incoming_ecx_receiver_callers=0; attributed_named_callers=1; owner_evidence_coverage=adequate */
 
-void __fastcall FUN_00619a20(STJumpMineC *param_1)
+void __thiscall STJumpMineC::sub_00619A20(STJumpMineC *this)
 
 {
   VisibleClassTy *pVVar1;
@@ -10,52 +14,52 @@ void __fastcall FUN_00619a20(STJumpMineC *param_1)
   int local_c;
   int local_8;
 
-  if (param_1->field_0097 < 0) {
-    STJumpMineC::LoadImagJMine(param_1,param_1->field_008F);
+  if (this->field_0097 < 0) {
+    LoadImagJMine(this,this->field_008F);
   }
   pVVar1 = g_visibleClass_00802A88;
   if (g_visibleClass_00802A88 == (VisibleClassTy *)0x0) {
-    if (param_1->field_00C4 == '\0') {
+    if (this->field_00C4 == '\0') {
       return;
     }
-    uVar3 = param_1->field_0097;
+    uVar3 = this->field_0097;
   }
   else {
-    iVar2 = (int)param_1->field_00CD;
+    iVar2 = (int)this->field_00CD;
     if ((((((DAT_0080874d == -1) || (g_visibleClass_00802A88->field_00F8 == 0)) ||
           (thunk_FUN_00558c00(g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,
-                              (int)param_1->field_00C9,(int)param_1->field_00CB,&local_8,&local_c),
+                              (int)this->field_00C9,(int)this->field_00CB,&local_8,&local_c),
           iVar2 < 0)) || ((4 < iVar2 || (local_8 < 0)))) ||
         ((pVVar1->field_0030 <= local_8 ||
          ((local_c = g_centeredOffsets5[iVar2] + local_c, local_c < 0 ||
           (pVVar1->field_0034 <= local_c)))))) ||
        ((pVVar1->field_004C == (byte *)0x0 ||
         (pVVar1->field_004C[local_8 + local_c * pVVar1->field_0030] != 0)))) {
-      iVar2 = param_1->field_00AB + 1;
-      param_1->field_00AB = iVar2;
-      if (param_1->field_00AF <= iVar2) {
-        param_1->field_00AB = 0;
+      iVar2 = this->field_00AB + 1;
+      this->field_00AB = iVar2;
+      if (this->field_00AF <= iVar2) {
+        this->field_00AB = 0;
       }
-      FUN_006ea960(PTR_00807598,param_1->field_0097,
-                   (float)param_1->field_009F * _DAT_007904f8 * _DAT_007904f0,
-                   (float)param_1->field_00A3 * _DAT_007904f8 * _DAT_007904f0,
-                   (float)param_1->field_00A7 * _DAT_007904f8 * _DAT_007904f0 + _DAT_007904fc);
-      FUN_006ea270(PTR_00807598,param_1->field_0097,0,param_1->field_00AB);
-      FUN_006e96d0(PTR_00807598,param_1->field_0097);
-      if (param_1->field_00C4 != '\0') {
+      FUN_006ea960(PTR_00807598,this->field_0097,
+                   (float)this->field_009F * _DAT_007904f8 * _DAT_007904f0,
+                   (float)this->field_00A3 * _DAT_007904f8 * _DAT_007904f0,
+                   (float)this->field_00A7 * _DAT_007904f8 * _DAT_007904f0 + _DAT_007904fc);
+      FUN_006ea270(PTR_00807598,this->field_0097,0,this->field_00AB);
+      FUN_006e96d0(PTR_00807598,this->field_0097);
+      if (this->field_00C4 != '\0') {
         return;
       }
-      FUN_006eaaa0(PTR_00807598,param_1->field_0097,0);
-      param_1->field_00C4 = 1;
+      FUN_006eaaa0(PTR_00807598,this->field_0097,0);
+      this->field_00C4 = 1;
       return;
     }
-    if (param_1->field_00C4 == '\0') {
+    if (this->field_00C4 == '\0') {
       return;
     }
-    uVar3 = param_1->field_0097;
+    uVar3 = this->field_0097;
   }
   FUN_006eab60(PTR_00807598,uVar3);
-  param_1->field_00C4 = 0;
+  this->field_00C4 = 0;
   return;
 }
 

@@ -1,4 +1,4 @@
-FUN_004f0c80:
+BldObjPanelTy::sub_004F0C80:
 004F0C80  55                        PUSH EBP
 004F0C81  8B EC                     MOV EBP,ESP
 004F0C83  83 EC 10                  SUB ESP,0x10

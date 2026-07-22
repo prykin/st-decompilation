@@ -24,8 +24,7 @@ void __thiscall STPlaySystemC::DoneSystem(STPlaySystemC *this)
     memset(&local_8->field_0xc0, 0, 0x20); /* compiler bulk-zero initialization */
     local_8->field_00CC = 0xf;
     local_8->field_00D0 = 0x7106;
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-    (*(code *)local_8->vtable->field_0018)(&local_8->field_0xc0);
+    (*local_8->vtable->SendMessage)((SystemWithNamedObjClassTy *)local_8,(int)&local_8->field_0xc0);
     if (pSVar2->field_0039 != (AnonPointee_STPlaySystemC_0039 *)0x0) {
       FUN_006b9890((int *)&pSVar2->field_0039);
     }

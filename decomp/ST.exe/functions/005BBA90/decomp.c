@@ -107,13 +107,13 @@ void __thiscall PrividerTy::CreateCtrls(PrividerTy *this,char param_1)
   }
   local_5 = local_10->field_1A5F;
   if (local_5 == '\0') {
-    if (PTR_0081176c->field_068A != 0) {
-      local_c = *(uint *)(PTR_0081176c->field_068A + 4);
+    if (g_startSystem_0081176C->field_068A != 0) {
+      local_c = *(uint *)(g_startSystem_0081176C->field_068A + 4);
       goto LAB_005bbb22;
     }
   }
-  else if (PTR_0081176c->field_068E != 0) {
-    local_c = *(uint *)(PTR_0081176c->field_068E + 4);
+  else if (g_startSystem_0081176C->field_068E != 0) {
+    local_c = *(uint *)(g_startSystem_0081176C->field_068E + 4);
     goto LAB_005bbb22;
   }
   local_c = 0;
@@ -124,7 +124,7 @@ LAB_005bbb22:
       local_d84 = local_10->field_0008;
       local_dd0[0] = (ccFntTy *)0x0;
       local_dd0[1] = (ccFntTy *)0x9;
-      local_dd0[2] = PTR_0081176c->field_0030;
+      local_dd0[2] = g_startSystem_0081176C->field_0030;
       local_db0 = local_10->field_1C92;
       local_dd0[3] = (ccFntTy *)0x7d;
       local_dd0[4] = (ccFntTy *)0x1af;
@@ -133,8 +133,9 @@ LAB_005bbb22:
       local_dd0[7] = (ccFntTy *)0x104;
       local_d80 = 2;
       local_d7c = 0x631f;
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-      (*(code *)local_10->field_000C->vtable->field_0008)(6,&local_10->field_1C86,0,local_dd0,0);
+      (*local_10->field_000C->vtable->CreateObject)
+                ((SystemClassTy *)local_10->field_000C,6,&local_10->field_1C86,(int *)0x0,local_dd0,
+                 0);
       this_00->field_002D = 0x20;
       this_00->field_0031 = 1;
       FUN_006e6080(this_00,2,this_00->field_1A73,(undefined4 *)&this_00->field_0x1d);
@@ -209,8 +210,9 @@ LAB_005bbb22:
     local_3b4 = local_51c;
     local_234 = local_51c;
     local_c4 = local_51c;
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-    (*(code *)local_10->field_000C->vtable->field_0008)(7,&local_10->field_1A73,0,local_544,0);
+    (*local_10->field_000C->vtable->CreateObject)
+              ((SystemClassTy *)local_10->field_000C,7,&local_10->field_1A73,(int *)0x0,local_544,0)
+    ;
   }
   this_00->field_0031 = 0;
   puVar1 = &this_00->field_0x1d;

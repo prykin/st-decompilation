@@ -11,7 +11,7 @@ STPlaySystemC * __thiscall STPlaySystemC::STPlaySystemC(STPlaySystemC *this,AppC
 
 {
   SystemWithNamedObjClassTy::SystemWithNamedObjClassTy((SystemWithNamedObjClassTy *)this,param_1,4);
-  this->vtable = (AnonPointee_STPlaySystemC_0000 *)&STPlaySystemCVTable;
+  this->vtable = &STPlaySystemCVTable;
   this->field_0034 = 0;
   this->field_00E4 = 0;
   this->field_0028 = 0;

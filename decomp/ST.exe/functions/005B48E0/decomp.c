@@ -47,10 +47,11 @@ void __thiscall MainMenuTy::AnimationMainMenu(MainMenuTy *this)
     local_10 = 0;
     local_c = 0x244;
     do {
-      pAVar3 = *(AnonShape_GLOBAL_0081175C_57F682DD **)((int)&PTR_0081176c->vtable + local_c);
+      pAVar3 = *(AnonShape_GLOBAL_0081175C_57F682DD **)
+                ((int)&g_startSystem_0081176C->vtable + local_c);
       if (pAVar3 != (AnonShape_GLOBAL_0081175C_57F682DD *)0x0) {
-        piVar1 = (int *)((int)&PTR_0081176c->field_025C + local_10);
-        if ((&PTR_0081176c->field_0x270)[local_10] == '\0') {
+        piVar1 = (int *)((int)&g_startSystem_0081176C->field_025C + local_10);
+        if ((&g_startSystem_0081176C->field_0x270)[local_10] == '\0') {
           uVar6 = piVar1[2];
         }
         else {

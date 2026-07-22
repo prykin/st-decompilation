@@ -1,0 +1,5 @@
+00603E64  pointer  00603883
+00603E68  pointer  00603940
+00603E6C  pointer  006039fd
+00603E70  pointer  00603aba
+00603E74  pointer  00603b77

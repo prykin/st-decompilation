@@ -72,7 +72,7 @@ void __thiscall CPanelTy::SetCmdObj(CPanelTy *this,uint param_1)
   pCVar4 = local_44;
   local_44->field_012C = 0;
   if (local_44->field_0C52 == '\0') {
-    thunk_FUN_004f8020(local_44,'\0',0);
+    sub_004F8020(local_44,'\0',0);
   }
   pCVar4->field_012C = 1;
   if (g_prodPanel_008016E8 != (ProdPanelTy *)0x0) {
@@ -86,7 +86,7 @@ void __thiscall CPanelTy::SetCmdObj(CPanelTy *this,uint param_1)
   }
   if (g_infocPanel_00801698 != (InfocPanelTy *)0x0) {
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-    (**(code **)(*(int *)g_infocPanel_00801698 + 0x1c))(0);
+    (*(code *)g_infocPanel_00801698->field_0000->field_001C)(0);
   }
   if (g_tradePanel_00802A44 != (TradePanelTy *)0x0) {
     thunk_FUN_00552160(g_tradePanel_00802A44,'\0','\0');
@@ -104,13 +104,13 @@ void __thiscall CPanelTy::SetCmdObj(CPanelTy *this,uint param_1)
   }
   if (g_upgPanel_00802A48 != (UpgPanelTy *)0x0) {
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-    (**(code **)(*(int *)g_upgPanel_00802A48 + 0x1c))(0);
+    (*(code *)g_upgPanel_00802A48->field_0000->field_001C)(0);
   }
   if (g_frmPanel_0080168C != (FrmPanelTy *)0x0) {
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
     (*(code *)g_frmPanel_0080168C->field_0000->field_001C)(0);
   }
-  thunk_FUN_0054a8d0(PTR_00802a30);
+  CursorClassTy::sub_0054A8D0(g_cursorClass_00802A30);
   bVar1 = (&pCVar4->field_0BFE)[param_1 & 0xff];
   switch((uint)bVar1) {
   case 1:
@@ -130,7 +130,7 @@ void __thiscall CPanelTy::SetCmdObj(CPanelTy *this,uint param_1)
   case 0x37:
   case 0x42:
   case 0x43:
-    thunk_FUN_0054b630(PTR_00802a30,(uint)bVar1,0);
+    thunk_FUN_0054b630(g_cursorClass_00802A30,(uint)bVar1,0);
     g_currentExceptionFrame = local_e8.previous;
     return;
   default:
@@ -271,16 +271,16 @@ void __thiscall CPanelTy::SetCmdObj(CPanelTy *this,uint param_1)
     break;
   case 0x30:
   case 0x3f:
-    if ((g_tradePanel_00802A44 != (TradePanelTy *)0x0) &&
-       (*(short *)&g_tradePanel_00802A44->field_0x172 == 2)) {
+    if ((g_tradePanel_00802A44 != (TradePanelTy *)0x0) && (g_tradePanel_00802A44->field_0172 == 2))
+    {
       thunk_FUN_00552160(g_tradePanel_00802A44,'\x01','\0');
     }
     thunk_FUN_004fad20(pCVar4);
     g_currentExceptionFrame = local_e8.previous;
     return;
   case 0x31:
-    if ((g_tradePanel_00802A44 != (TradePanelTy *)0x0) &&
-       (*(short *)&g_tradePanel_00802A44->field_0x172 == 2)) {
+    if ((g_tradePanel_00802A44 != (TradePanelTy *)0x0) && (g_tradePanel_00802A44->field_0172 == 2))
+    {
       thunk_FUN_00552160(g_tradePanel_00802A44,'\x01','\x01');
     }
     thunk_FUN_004fad20(pCVar4);
@@ -332,7 +332,7 @@ void __thiscall CPanelTy::SetCmdObj(CPanelTy *this,uint param_1)
     local_19c[0] = (bVar1 != 0x39) + '\f';
     break;
   case 0x3e:
-    thunk_FUN_0054b630(PTR_00802a30,0xe,0x6c);
+    thunk_FUN_0054b630(g_cursorClass_00802A30,0xe,0x6c);
     g_currentExceptionFrame = local_e8.previous;
     return;
   case 0x44:

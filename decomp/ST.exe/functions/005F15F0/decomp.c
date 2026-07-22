@@ -36,7 +36,7 @@ FUN_005f15f0(void *this,undefined2 param_1,undefined2 param_2,undefined2 param_3
   local_20 = param_3;
   local_1e = param_4;
   local_1d = param_5;
-  local_1b = PTR_00802a38->field_00E4;
+  local_1b = g_playSystem_00802A38->field_00E4;
   local_12 = 0;
   local_16 = 0;
   local_d = param_6;

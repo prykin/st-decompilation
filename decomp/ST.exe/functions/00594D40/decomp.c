@@ -18,13 +18,13 @@ FSGSTy::OutTRGlProc(FSGSTy *this,int param_1,MMMObjTy *param_2,MMMObjTy *param_3
 {
   code *pcVar1;
   int errorCode;
-  uint *puVar2;
-  int iVar3;
+  uint *resourceString;
+  int iVar2;
   StartServTy *this_00;
+  uint uVar3;
   uint uVar4;
-  uint uVar5;
-  ccFntTy *pcVar6;
-  undefined4 uVar7;
+  ccFntTy *pcVar5;
+  undefined4 uVar6;
   InternalExceptionFrame local_48;
 
   if (param_8 != 0) {
@@ -34,24 +34,24 @@ FSGSTy::OutTRGlProc(FSGSTy *this,int param_1,MMMObjTy *param_2,MMMObjTy *param_3
     if (errorCode == 0) {
       MMMObjTy::OutRGlProc
                 (param_2,param_1,param_2,param_3,param_4,param_5 + 0x16,param_6,param_7 + -0x16,
-                 &PTR_0081176c->field_0140);
+                 &g_startSystem_0081176C->field_0140);
       MMMObjTy::OutRGlProc
                 (param_3,param_1,param_2,param_3,param_4,param_5,param_6,0x15,
-                 &PTR_0081176c->field_0140);
-      uVar7 = 0;
-      pcVar6 = PTR_0081176c->field_0034;
-      uVar5 = 0xffffffff;
-      uVar4 = 0xfffffffe;
-      puVar2 = (uint *)LoadResourceString(param_8,HINSTANCE_00807618);
-      StartServTy::WrTextDDX(this_00,0,param_4,param_5,param_6,0x15,puVar2,uVar4,uVar5,pcVar6,uVar7)
-      ;
+                 &g_startSystem_0081176C->field_0140);
+      uVar6 = 0;
+      pcVar5 = g_startSystem_0081176C->field_0034;
+      uVar4 = 0xffffffff;
+      uVar3 = 0xfffffffe;
+      resourceString = (uint *)LoadResourceString(param_8,g_module_00807618);
+      StartServTy::WrTextDDX
+                (this_00,0,param_4,param_5,param_6,0x15,resourceString,uVar3,uVar4,pcVar5,uVar6);
       g_currentExceptionFrame = local_48.previous;
       return;
     }
     g_currentExceptionFrame = local_48.previous;
-    iVar3 = ReportDebugMessage("E:\\__titans\\Start\\fsgs_obj.cpp",0x73,0,errorCode,
+    iVar2 = ReportDebugMessage("E:\\__titans\\Start\\fsgs_obj.cpp",0x73,0,errorCode,
                                "%s","FSGSTy::OutTRGlProc");
-    if (iVar3 != 0) {
+    if (iVar2 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
     RaiseInternalException(errorCode,0,"E:\\__titans\\Start\\fsgs_obj.cpp",0x73);

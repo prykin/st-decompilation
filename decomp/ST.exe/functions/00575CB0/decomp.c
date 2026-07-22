@@ -337,7 +337,7 @@ LAB_00576308:
     }
     if (0 < pSVar17->field_003C) {
       FUN_006accd0((undefined4 *)pSVar17->field_0040,(undefined4 *)pSVar17->field_003C,0x2c,
-                   &LAB_00403ac6);
+                   thunk_FUN_00575c80);
       pAVar7 = PTR_00807598;
       iVar9 = pSVar17->field_003C;
       PTR_00807598->field_0290 = pSVar17->field_0040;
@@ -535,7 +535,7 @@ LAB_00576308:
         local_10 = (AnonShape_00575CB0_065D0A66 *)&pAVar6->field_0002;
       } while (local_18 < pSVar17->field_003C);
     }
-    STPlaySystemC::SaveObjData(PTR_00802a38,pSVar17->field_0018,local_1c,local_20);
+    STPlaySystemC::SaveObjData(g_playSystem_00802A38,pSVar17->field_0018,local_1c,local_20);
     FreeAndNull(&local_1c);
     g_currentExceptionFrame = local_a4.previous;
     return 0;

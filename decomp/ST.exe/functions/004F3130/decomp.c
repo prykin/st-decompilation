@@ -157,8 +157,8 @@ CPanelTy::CreateBut(CPanelTy *this,byte param_1,undefined4 param_2,int param_3,i
       local_68 = FUN_0070aa70(DAT_00806790,param_13,0,1);
       local_64 = Library::Ourlib::MFIMG::mfImgGetWidth(DAT_00806790,0x12,param_13,1);
     }
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-    (*(code *)pCVar3->field_000C->vtable->field_0008)(2,&local_c,0,local_18c,0);
+    (*pCVar3->field_000C->vtable->CreateObject)
+              ((SystemClassTy *)pCVar3->field_000C,2,&local_c,(int *)0x0,local_18c,0);
     g_currentExceptionFrame = local_1d0.previous;
     return local_c;
   }

@@ -28,7 +28,7 @@ FUN_00624920(void *this,Global_sub_00624920_param_1Enum param_1,int *param_2,int
     *param_2 = *(int *)((int)this + 0x2c2);
     *param_3 = *(int *)((int)this + 0x2c6);
     *param_4 = *(int *)((int)this + 0x2ca);
-    if (PTR_00802a38->field_00E4 < *(uint *)((int)this + 0x30f)) {
+    if (g_playSystem_00802A38->field_00E4 < *(uint *)((int)this + 0x30f)) {
       return 1;
     }
     bVar1 = *(byte *)((int)this + 0x2ad);
@@ -61,7 +61,7 @@ FUN_00624920(void *this,Global_sub_00624920_param_1Enum param_1,int *param_2,int
     }
     else {
       iVar9 = *(int *)((int)this + 0x2f2);
-      iVar6 = (PTR_00802a38->field_00E4 - *(int *)((int)this + 0x30f)) *
+      iVar6 = (g_playSystem_00802A38->field_00E4 - *(int *)((int)this + 0x30f)) *
               (uint)*(byte *)((int)this + 0x62) * *(int *)((int)this + 0x302);
       iVar6 = ((int)(iVar6 + (iVar6 >> 0x1f & 0xfU)) >> 4) + (int)*(short *)((int)this + 0x38);
       if (*(int *)((int)this + 0x302) < 1) {
@@ -96,7 +96,7 @@ FUN_00624920(void *this,Global_sub_00624920_param_1Enum param_1,int *param_2,int
     *param_4 = iVar6;
     return 1;
   case CASE_2:
-    iVar8 = PTR_00802a38->field_00E4 - *(int *)((int)this + 0x30f);
+    iVar8 = g_playSystem_00802A38->field_00E4 - *(int *)((int)this + 0x30f);
     iVar10 = *(int *)((int)this + 0x306) * iVar8;
     iVar9 = (*(int *)((int)this + 0x2fa) * iVar10) / 10000 + (int)*(short *)((int)this + 0x34);
     iVar5 = (*(int *)((int)this + 0x2fe) * iVar10) / 10000 + (int)*(short *)((int)this + 0x36);
@@ -110,7 +110,7 @@ FUN_00624920(void *this,Global_sub_00624920_param_1Enum param_1,int *param_2,int
                            *(int *)((int)this + 0x18),0xffff,
                            *(int *)(&DAT_007d04d0 + (uint)*(byte *)((int)this + 0x2ad) * 4),0,1),
        0 < (int)uVar4)) {
-      thunk_FUN_00627390((int)this);
+      thunk_FUN_00627390(this);
       return 0;
     }
     *param_2 = iVar9;
@@ -128,13 +128,14 @@ FUN_00624920(void *this,Global_sub_00624920_param_1Enum param_1,int *param_2,int
       if (iVar6 != 0) {
         *(undefined4 *)((int)this + 0x2ee) = 0;
         *(undefined4 *)((int)this + 0x2ae) = 1;
-        *(uint *)((int)this + 0x30f) = PTR_00802a38->field_00E4;
+        *(uint *)((int)this + 0x30f) = g_playSystem_00802A38->field_00E4;
         return 1;
       }
     }
     break;
   case CASE_3:
-    iVar6 = (PTR_00802a38->field_00E4 - *(int *)((int)this + 0x30f)) * *(int *)((int)this + 0x306);
+    iVar6 = (g_playSystem_00802A38->field_00E4 - *(int *)((int)this + 0x30f)) *
+            *(int *)((int)this + 0x306);
     iVar9 = *(int *)((int)this + 0x302) * iVar6 + (int)*(short *)((int)this + 0x38);
     sVar12 = (short)(iVar9 >> 0x1f);
     if (iVar9 < 0) {
@@ -179,34 +180,36 @@ FUN_00624920(void *this,Global_sub_00624920_param_1Enum param_1,int *param_2,int
             *(char *)((int)this + 0x314) = *(char *)((int)this + 0x314) + '\x01';
             if (bVar1 < 3) {
               if (g_visibleClass_00802A88 != (VisibleClassTy *)0x0) {
-                thunk_FUN_00559110(g_visibleClass_00802A88,(int)*(short *)((int)this + 0x47),
-                                   (undefined *)(int)*(short *)((int)this + 0x49),
-                                   (int)*(short *)((int)this + 0x4b),*(uint *)((int)this + 0x24),
-                                   *(int *)(&DAT_007d02b4 + (uint)bVar1 * 4),
-                                   *(int *)((int)this + 0x18),0xffffffff);
-                thunk_FUN_00558dc0(g_visibleClass_00802A88,(int)*(short *)((int)this + 0x47),
-                                   (int)*(short *)((int)this + 0x49),puVar11,
-                                   *(int **)((int)this + 0x24),
-                                   *(uint *)(&DAT_007d02b4 + (uint)*(byte *)((int)this + 0x2ad) * 4)
-                                   ,*(int **)((int)this + 0x18),0xffffffff);
+                VisibleClassTy::sub_00559110
+                          (g_visibleClass_00802A88,(int)*(short *)((int)this + 0x47),
+                           (undefined *)(int)*(short *)((int)this + 0x49),
+                           (int)*(short *)((int)this + 0x4b),*(uint *)((int)this + 0x24),
+                           *(int *)(&DAT_007d02b4 + (uint)bVar1 * 4),*(int *)((int)this + 0x18),
+                           0xffffffff);
+                VisibleClassTy::sub_00558DC0
+                          (g_visibleClass_00802A88,(int)*(short *)((int)this + 0x47),
+                           (int)*(short *)((int)this + 0x49),puVar11,*(int **)((int)this + 0x24),
+                           *(uint *)(&DAT_007d02b4 + (uint)*(byte *)((int)this + 0x2ad) * 4),
+                           *(int **)((int)this + 0x18),0xffffffff);
               }
             }
             else if ((bVar1 == 3) && (g_visibleClass_00802A88 != (VisibleClassTy *)0x0)) {
-              thunk_FUN_00559110(g_visibleClass_00802A88,(int)*(short *)((int)this + 0x47),
-                                 (undefined *)(int)*(short *)((int)this + 0x49),
-                                 (int)*(short *)((int)this + 0x4b),*(uint *)((int)this + 0x24),
-                                 DAT_007d02c0,*(int *)((int)this + 0x18),0xffffffff);
+              VisibleClassTy::sub_00559110
+                        (g_visibleClass_00802A88,(int)*(short *)((int)this + 0x47),
+                         (undefined *)(int)*(short *)((int)this + 0x49),
+                         (int)*(short *)((int)this + 0x4b),*(uint *)((int)this + 0x24),DAT_007d02c0,
+                         *(int *)((int)this + 0x18),0xffffffff);
               SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00558C00::thunk_FUN_00559d60
                         ((AnonReceiver_00558C00 *)g_visibleClass_00802A88,
                          (int)*(short *)((int)this + 0x47),(int)*(short *)((int)this + 0x49),
                          (char)*(undefined2 *)((int)this + 0x4b),*(uint *)((int)this + 0x24),
                          *(undefined **)(&DAT_007d02b4 + (uint)*(byte *)((int)this + 0x2ad) * 4),
                          *(undefined4 *)((int)this + 0x18));
-              thunk_FUN_00558dc0(g_visibleClass_00802A88,(int)*(short *)((int)this + 0x47),
-                                 (int)*(short *)((int)this + 0x49),puVar11,
-                                 *(int **)((int)this + 0x24),
-                                 *(uint *)(&DAT_007d02b4 + (uint)*(byte *)((int)this + 0x2ad) * 4),
-                                 *(int **)((int)this + 0x18),0xffffffff);
+              VisibleClassTy::sub_00558DC0
+                        (g_visibleClass_00802A88,(int)*(short *)((int)this + 0x47),
+                         (int)*(short *)((int)this + 0x49),puVar11,*(int **)((int)this + 0x24),
+                         *(uint *)(&DAT_007d02b4 + (uint)*(byte *)((int)this + 0x2ad) * 4),
+                         *(int **)((int)this + 0x18),0xffffffff);
               VisibleClassTy::SetZoneAst
                         (g_visibleClass_00802A88,(int)*(short *)((int)this + 0x47),
                          (int)*(short *)((int)this + 0x49),(char)puVar11,*(uint *)((int)this + 0x24)
@@ -224,7 +227,7 @@ FUN_00624920(void *this,Global_sub_00624920_param_1Enum param_1,int *param_2,int
       if (iVar5 != 0) {
         *(undefined4 *)((int)this + 0x2ee) = 2;
         *(undefined4 *)((int)this + 0x2ae) = 1;
-        *(uint *)((int)this + 0x30f) = PTR_00802a38->field_00E4;
+        *(uint *)((int)this + 0x30f) = g_playSystem_00802A38->field_00E4;
         *param_2 = (int)*(short *)((int)this + 0x3a);
         *param_3 = (int)*(short *)((int)this + 0x3c);
         *param_4 = iVar9;
@@ -241,7 +244,7 @@ LAB_00625067:
                                    (int)*(short *)((int)this + 0x3c),iVar9), iVar6 != 0)) {
       *(undefined4 *)((int)this + 0x2ee) = 0;
       *(undefined4 *)((int)this + 0x2ae) = 1;
-      *(uint *)((int)this + 0x30f) = PTR_00802a38->field_00E4;
+      *(uint *)((int)this + 0x30f) = g_playSystem_00802A38->field_00E4;
     }
   }
   return local_8;

@@ -4,7 +4,8 @@
    CASE_0=0;CASE_2=2;CASE_3=3;CASE_4=4;CASE_5=5;CASE_6=6;CASE_7=7;CASE_8=8;CASE_9=9;CASE_A=10;CASE_D=13;CASE_E=14;CASE_10=16;CASE_11=17;CASE_12=18;CASE_13=19;CASE_18=24;CASE_2B=43;CASE_2C=44;CASE_2D=45;CASE_48=72;CASE_4D=77
     */
 
-ushort __thiscall FUN_004845e0(void *this,Global_sub_004845E0_param_1Enum param_1,int *param_2)
+ushort __thiscall
+STGameObjC::FUN_004845e0(STGameObjC *this,Global_sub_004845E0_param_1Enum param_1,int *param_2)
 
 {
   byte bVar1;
@@ -37,10 +38,10 @@ ushort __thiscall FUN_004845e0(void *this,Global_sub_004845E0_param_1Enum param_
       if (this_00 == (int *)0x0) {
         return 0;
       }
-      if (this_00 == this) {
+      if ((STGameObjC *)this_00 == this) {
         return 3;
       }
-      if (*(int *)((int)this + 0x24) != this_00[9]) {
+      if (this->field_0024 != this_00[9]) {
         return 0;
       }
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
@@ -60,7 +61,7 @@ ushort __thiscall FUN_004845e0(void *this,Global_sub_004845E0_param_1Enum param_
       }
       return 0;
     }
-    if (this_00 == this) {
+    if ((STGameObjC *)this_00 == this) {
       return 3;
     }
     if (this_00 == (int *)0x0) {
@@ -70,27 +71,27 @@ ushort __thiscall FUN_004845e0(void *this,Global_sub_004845E0_param_1Enum param_
     if ((((iVar4 != 0x14) && (iVar4 != 1000)) && (iVar4 != 0x3e9)) && (iVar4 != 0x1ae)) {
       return 5;
     }
-    iVar4 = *(int *)((int)this + 0x6f7);
+    iVar4 = this->field_06F7;
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
     if ((((iVar4 != 9) && (iVar4 != 0x15)) &&
-        ((*(int *)((int)this + 0x716) < *(int *)((int)this + 0x712) &&
+        ((this->field_0716 < this->field_0712 &&
          ((iVar4 = thunk_FUN_004e8030(iVar4), iVar4 != 3 &&
           (iVar4 = (**(code **)(*this_00 + 0x2c))(), iVar4 == 0x33)))))) &&
-       (*(int *)((int)this + 0x24) == this_00[9])) {
+       (this->field_0024 == this_00[9])) {
       return 0x18;
     }
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
     iVar4 = (**(code **)(*this_00 + 0x2c))();
-    if ((((iVar4 == 0x62) && (*(int *)((int)this + 0x24) == this_00[9])) &&
-        (iVar4 = thunk_FUN_004d6df0(this), 0 < iVar4)) &&
-       (iVar4 = thunk_FUN_004e8030(*(int *)((int)this + 0x6f7)), iVar4 == 3)) {
+    if ((((iVar4 == 0x62) && (this->field_0024 == this_00[9])) &&
+        (iVar4 = thunk_FUN_004d6df0((int *)this), 0 < iVar4)) &&
+       (iVar4 = thunk_FUN_004e8030(this->field_06F7), iVar4 == 3)) {
       return 0x1b;
     }
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
     iVar4 = (**(code **)(*this_00 + 0x2c))();
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
     if (((iVar4 == 0x37) || (iVar4 = (**(code **)(*this_00 + 0x2c))(), iVar4 == 0x6c)) &&
-       (iVar4 = thunk_FUN_004e8b10(this_00,*(uint *)((int)this + 0x24)), iVar4 == 1)) {
+       (iVar4 = thunk_FUN_004e8b10(this_00,this->field_0024), iVar4 == 1)) {
       return 0x1d;
     }
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
@@ -99,7 +100,7 @@ ushort __thiscall FUN_004845e0(void *this,Global_sub_004845E0_param_1Enum param_
     if (((iVar4 == 0x16) || (iVar4 = (**(code **)(*this_00 + 0x2c))(), iVar4 == 0x25)) &&
        (*(int *)((int)this_00 + 0x732) == 1)) {
       bVar7 = *(byte *)(this_00 + 9);
-      bVar1 = *(byte *)((int)this + 0x24);
+      bVar1 = *(byte *)&this->field_0024;
       /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
       param_2 = (int *)CONCAT13(bVar1,param_2._0_3_);
       /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
@@ -169,10 +170,10 @@ LAB_0048586d:
 /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
 LAB_0048589a:
       param_1 = CONCAT31(param_1._1_3_,bVar7);
-      iVar4 = thunk_FUN_0041d350(this_00,*(uint *)((int)this + 0x24));
+      iVar4 = thunk_FUN_0041d350(this_00,this->field_0024);
       return (-(ushort)(iVar4 != 1) & 0xfff9) + 7;
     }
-    iVar4 = *(int *)((int)this + 0x6f7);
+    iVar4 = this->field_06F7;
     if (((iVar4 == 8) || (iVar4 == 0x14)) || (iVar4 == 0x1a)) {
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
       iVar4 = (**(code **)(*this_00 + 0x2c))();
@@ -184,13 +185,12 @@ LAB_0048589a:
         iVar4 = (**(code **)(*this_00 + 0x2c))();
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
         if (((iVar4 == 0x3b) || (iVar4 = (**(code **)(*this_00 + 0x2c))(), iVar4 == 0x60)) &&
-           ((*(int *)((int)this + 0x24) == this_00[9] &&
-            (0 < *(int *)((int)this + 0x7da) + *(int *)((int)this + 0x7d6) +
-                 *(int *)((int)this + 0x7d2))))) {
+           ((this->field_0024 == this_00[9] &&
+            (0 < this->field_07DA + this->field_07D6 + this->field_07D2)))) {
           return 0x13;
         }
         bVar7 = *(byte *)(this_00 + 9);
-        bVar1 = *(byte *)((int)this + 0x24);
+        bVar1 = *(byte *)&this->field_0024;
         /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
         param_2 = (int *)CONCAT31(param_2._1_3_,bVar7);
         /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
@@ -238,7 +238,7 @@ LAB_00485d68:
         }
         goto LAB_00485caa;
       }
-      if (*(int *)((int)this + 0x24) != this_00[9]) {
+      if (this->field_0024 != this_00[9]) {
         return 0;
       }
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
@@ -252,11 +252,11 @@ LAB_00485f6a:
     }
     else {
       if (((iVar4 == 7) || (iVar4 == 0x13)) || (iVar4 == 0x1b)) {
-        if (*(int *)((int)this + 0x7ca) != 0) {
+        if (this->field_07CA != 0) {
           /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
           iVar4 = (**(code **)(*this_00 + 0x2c))();
           if ((iVar4 == 0x52) || (iVar4 == 0x5f)) {
-            FUN_006e62d0(PTR_00802a38,*(int *)((int)this + 0x7ca),&local_c);
+            FUN_006e62d0(g_playSystem_00802A38,this->field_07CA,&local_c);
             /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
             if ((local_c != 0) && (*(int *)(local_c + 0x20) == 0x1a4)) {
               return 0x1e;
@@ -266,7 +266,7 @@ LAB_00485f6a:
             return 0x1e;
           }
           bVar7 = *(byte *)(this_00 + 9);
-          bVar1 = *(byte *)((int)this + 0x24);
+          bVar1 = *(byte *)&this->field_0024;
           /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
           param_2 = (int *)CONCAT31(param_2._1_3_,bVar7);
           /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
@@ -310,7 +310,7 @@ LAB_00485f1f:
           goto LAB_00485f6a;
         }
         bVar7 = *(byte *)(this_00 + 9);
-        bVar1 = *(byte *)((int)this + 0x24);
+        bVar1 = *(byte *)&this->field_0024;
         /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
         param_2 = (int *)CONCAT31(param_2._1_3_,bVar7);
         /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
@@ -371,7 +371,7 @@ LAB_00485caa:
       else {
         if (((iVar4 == 0xc) || (iVar4 == 0x18)) || (iVar4 == 0x19)) {
           bVar7 = *(byte *)(this_00 + 9);
-          bVar1 = *(byte *)((int)this + 0x24);
+          bVar1 = *(byte *)&this->field_0024;
           /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
           param_2 = (int *)CONCAT31(param_2._1_3_,bVar7);
           /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
@@ -401,7 +401,7 @@ LAB_00486163:
         }
         if (iVar4 == 9) {
           bVar7 = *(byte *)(this_00 + 9);
-          bVar1 = *(byte *)((int)this + 0x24);
+          bVar1 = *(byte *)&this->field_0024;
           /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
           param_2 = (int *)CONCAT31(param_2._1_3_,bVar7);
           /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
@@ -459,7 +459,7 @@ LAB_004859d8:
         if (iVar4 != 0x1d) {
           if ((iVar4 != 0x24) && (iVar4 != 0x25)) {
             bVar7 = *(byte *)(this_00 + 9);
-            bVar1 = *(byte *)((int)this + 0x24);
+            bVar1 = *(byte *)&this->field_0024;
             /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
             param_2 = (int *)CONCAT31(param_2._1_3_,bVar7);
             /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
@@ -495,7 +495,7 @@ LAB_00485c58:
               if (iVar4 == 0x15) {
                 return 7;
               }
-              if (0 < *(int *)((int)this + 0x7a2)) {
+              if (0 < this->field_07A2) {
                 return 7;
               }
               return 0;
@@ -507,7 +507,7 @@ LAB_00485c58:
             goto LAB_00485caa;
           }
           bVar7 = *(byte *)(this_00 + 9);
-          bVar1 = *(byte *)((int)this + 0x24);
+          bVar1 = *(byte *)&this->field_0024;
           /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
           param_2 = (int *)CONCAT31(param_2._1_3_,bVar7);
           /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
@@ -530,7 +530,7 @@ LAB_00485c58:
           goto LAB_00486163;
         }
         bVar7 = *(byte *)(this_00 + 9);
-        bVar1 = *(byte *)((int)this + 0x24);
+        bVar1 = *(byte *)&this->field_0024;
         /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
         param_2 = (int *)CONCAT31(param_2._1_3_,bVar7);
         /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
@@ -596,10 +596,10 @@ LAB_00485b29:
     if (((iVar4 != 0x14) && (iVar4 != 1000)) && ((iVar4 != 0x3e9 && (iVar4 != 0x1ae)))) {
       return 1;
     }
-    if (this_00 == this) {
+    if ((STGameObjC *)this_00 == this) {
       return 0;
     }
-    iVar3 = *(int *)((int)this + 0x6f7);
+    iVar3 = this->field_06F7;
     if (iVar3 == 7) {
       return 1;
     }
@@ -631,7 +631,7 @@ LAB_00485b29:
       return 1;
     }
     if (iVar3 != 9) {
-      if ((iVar3 != 0x15) && (*(int *)((int)this + 0x7a2) < 1)) {
+      if ((iVar3 != 0x15) && (this->field_07A2 < 1)) {
         return 1;
       }
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
@@ -640,12 +640,12 @@ LAB_00485b29:
       if (((iVar4 != 0x16) && (iVar4 = (**(code **)(*this_00 + 0x2c))(), iVar4 != 0x25)) ||
          (*(int *)((int)this_00 + 0x732) != 1)) {
         param_2 = (int *)(uint)*(byte *)(this_00 + 9);
-        param_1 = (Global_sub_004845E0_param_1Enum)*(byte *)((int)this + 0x24);
+        param_1 = (Global_sub_004845E0_param_1Enum)*(byte *)&this->field_0024;
         if (DAT_00808a8f != '\0') {
           bVar8 = (&DAT_008087ea)[param_1 * 0x51] != (&DAT_008087ea)[(int)param_2 * 0x51];
           return (((ushort)bVar8 - (ushort)bVar8) - (ushort)bVar8 & 5) + 2;
         }
-        if (*(byte *)(this_00 + 9) != *(byte *)((int)this + 0x24)) {
+        if (*(byte *)(this_00 + 9) != *(byte *)&this->field_0024) {
           bVar7 = g_playerRelationMatrix[(int)param_2][param_1];
           if ((bVar7 == 0) &&
              (*(char *)((int)param_2 + (int)(g_playerRelationMatrix + param_1)) == '\0')) {
@@ -674,7 +674,7 @@ cf_common_exit_00484B10:
         return (((ushort)bVar8 - (ushort)bVar8) - (ushort)bVar8 & 5) + 2;
       }
       bVar7 = *(byte *)(this_00 + 9);
-      bVar1 = *(byte *)((int)this + 0x24);
+      bVar1 = *(byte *)&this->field_0024;
       /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
       param_2 = (int *)CONCAT13(bVar1,param_2._0_3_);
       /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
@@ -740,11 +740,11 @@ LAB_00484a0b:
 /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
 LAB_00484a28:
       param_1 = CONCAT31(param_1._1_3_,bVar7);
-      iVar4 = thunk_FUN_0041d350(this_00,*(uint *)((int)this + 0x24));
+      iVar4 = thunk_FUN_0041d350(this_00,this->field_0024);
       return (-(ushort)(iVar4 != 1) & 0xfffa) + 7;
     }
     bVar7 = *(byte *)(this_00 + 9);
-    bVar1 = *(byte *)((int)this + 0x24);
+    bVar1 = *(byte *)&this->field_0024;
     /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
     param_2 = (int *)CONCAT31(param_2._1_3_,bVar7);
     /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
@@ -802,14 +802,14 @@ LAB_004847df:
       if (this_00 == (int *)0x0) {
         return 1;
       }
-      if (this_00 != this) {
-        if (*(int *)((int)this + 0x6f7) == 9) {
+      if ((STGameObjC *)this_00 != this) {
+        if (this->field_06F7 == 9) {
           return 1;
         }
-        if (*(int *)((int)this + 0x6f7) == 0x15) {
+        if (this->field_06F7 == 0x15) {
           return 1;
         }
-        if (*(int *)((int)this + 0x712) <= *(int *)((int)this + 0x716)) {
+        if (this->field_0712 <= this->field_0716) {
           return 1;
         }
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
@@ -817,7 +817,7 @@ LAB_004847df:
         if (iVar4 != 0x33) {
           return 1;
         }
-        if (*(int *)((int)this + 0x24) != this_00[9]) {
+        if (this->field_0024 != this_00[9]) {
           return 1;
         }
         return 0x18;
@@ -830,15 +830,15 @@ LAB_004847df:
       if (this_00 == (int *)0x0) {
         return 1;
       }
-      if (this_00 != this) {
+      if ((STGameObjC *)this_00 != this) {
         iVar4 = this_00[8];
         if (((iVar4 != 0x14) && (iVar4 != 1000)) && (iVar4 != 0x3e9)) {
           return 1;
         }
-        if (*(int *)((int)this + 0x24) != this_00[9]) {
+        if (this->field_0024 != this_00[9]) {
           return 1;
         }
-        iVar4 = thunk_FUN_00490d90((int)this);
+        iVar4 = thunk_FUN_00490d90(this);
         if (iVar4 != 1) {
           return 1;
         }
@@ -855,17 +855,17 @@ LAB_004847df:
       if (this_00 == (int *)0x0) {
         return 1;
       }
-      if (this_00 != this) {
-        iVar4 = *(int *)((int)this + 0x6f7);
+      if ((STGameObjC *)this_00 != this) {
+        iVar4 = this->field_06F7;
         if (((iVar4 != 6) && (iVar4 != 0x12)) && (iVar4 != 0x22)) {
           return 1;
         }
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-        iVar4 = (**(code **)(*this_00 + 0x108))(*(undefined4 *)((int)this + 0x24));
+        iVar4 = (**(code **)(*this_00 + 0x108))(this->field_0024);
         if (iVar4 != 1) {
           return 1;
         }
-        iVar4 = thunk_FUN_004cca00(this_00,*(int *)((int)this + 0x24));
+        iVar4 = thunk_FUN_004cca00(this_00,this->field_0024);
         if (iVar4 != 1) {
           if (iVar4 == 2) {
             return 10;
@@ -893,16 +893,16 @@ LAB_004847df:
     if (this_00 == (int *)0x0) {
       return 1;
     }
-    if (*(int *)((int)this + 0x6f7) != 0x17) {
+    if (this->field_06F7 != 0x17) {
       return 1;
     }
     if (this_00[8] != 0x14) {
       return 1;
     }
-    if (this_00 == this) {
+    if ((STGameObjC *)this_00 == this) {
       return 0;
     }
-    if (*(int *)((int)this + 0x72a) < 1) {
+    if (this->field_072A < 1) {
       return 1;
     }
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
@@ -915,7 +915,7 @@ LAB_004847df:
       return 0xc;
     }
     bVar7 = *(byte *)(this_00 + 9);
-    bVar1 = *(byte *)((int)this + 0x24);
+    bVar1 = *(byte *)&this->field_0024;
     param_1 = (Global_sub_004845E0_param_1Enum)bVar7;
     local_8 = (uint)bVar1;
     if (DAT_00808a8f != '\0') {
@@ -971,13 +971,13 @@ LAB_004853d2:
     if (iVar4 != 0) {
       return 0;
     }
-    if (*(int *)((int)this + 0x7ca) != 0) {
+    if (this->field_07CA != 0) {
       return 0;
     }
     if (this_00 == (int *)0x0) {
       return 1;
     }
-    if (this_00 == this) {
+    if ((STGameObjC *)this_00 == this) {
       return 0;
     }
     if (this_00[8] != 0x14) {
@@ -989,7 +989,7 @@ LAB_004853d2:
       return 1;
     }
     bVar7 = *(byte *)(this_00 + 9);
-    bVar1 = *(byte *)((int)this + 0x24);
+    bVar1 = *(byte *)&this->field_0024;
     /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
     param_2 = (int *)CONCAT31(param_2._1_3_,bVar7);
     /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
@@ -1044,7 +1044,7 @@ LAB_00485002:
     if (iVar4 != 0) {
       return 0;
     }
-    if (this_00 == this) {
+    if ((STGameObjC *)this_00 == this) {
       return 0;
     }
     if (this_00 == (int *)0x0) {
@@ -1053,7 +1053,7 @@ LAB_00485002:
     if (this_00[8] != 1000) {
       return 1;
     }
-    if (this_00[9] != *(int *)((int)this + 0x24)) {
+    if (this_00[9] != this->field_0024) {
       return 1;
     }
     iVar4 = thunk_FUN_004b9d90((AnonShape_004B9D90_4F3151F9 *)this_00);
@@ -1070,8 +1070,8 @@ LAB_00485002:
       if (this_00 == (int *)0x0) {
         return 1;
       }
-      if (this_00 != this) {
-        iVar4 = *(int *)((int)this + 0x6f7);
+      if ((STGameObjC *)this_00 != this) {
+        iVar4 = this->field_06F7;
         if (((iVar4 != 8) && (iVar4 != 0x14)) && (iVar4 != 0x1a)) {
           return 1;
         }
@@ -1083,7 +1083,7 @@ LAB_00485002:
            (iVar4 = (**(code **)(*this_00 + 0x2c))(), iVar4 != 0x5e)) {
           return 1;
         }
-        if (*(int *)((int)this + 0x24) == this_00[9]) {
+        if (this->field_0024 == this_00[9]) {
           /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
           iVar4 = (**(code **)(*this_00 + 0x88))(local_10);
           return ((0 < iVar4) - 1 & 0xffef) + 0x12;
@@ -1098,8 +1098,8 @@ LAB_00485002:
       if (this_00 == (int *)0x0) {
         return 1;
       }
-      if (this_00 != this) {
-        iVar4 = *(int *)((int)this + 0x6f7);
+      if ((STGameObjC *)this_00 != this) {
+        iVar4 = this->field_06F7;
         if (((iVar4 != 8) && (iVar4 != 0x14)) && (iVar4 != 0x1a)) {
           return 1;
         }
@@ -1109,11 +1109,10 @@ LAB_00485002:
         if ((iVar4 != 0x3b) && (iVar4 = (**(code **)(*this_00 + 0x2c))(), iVar4 != 0x60)) {
           return 1;
         }
-        if (*(int *)((int)this + 0x24) != this_00[9]) {
+        if (this->field_0024 != this_00[9]) {
           return 1;
         }
-        if (*(int *)((int)this + 0x7da) + *(int *)((int)this + 0x7d6) + *(int *)((int)this + 0x7d2)
-            < 1) {
+        if (this->field_07DA + this->field_07D6 + this->field_07D2 < 1) {
           return 1;
         }
         return 0x13;
@@ -1125,18 +1124,18 @@ LAB_00485002:
     if (iVar4 != 0) {
       return 0;
     }
-    if (*(int *)((int)this + 0x7ca) != 0) {
+    if (this->field_07CA != 0) {
       return 0;
     }
     if (this_00 == (int *)0x0) {
       return 1;
     }
-    if (this_00 == this) {
+    if ((STGameObjC *)this_00 == this) {
       return 0;
     }
     if (this_00[8] == 0x14) {
       bVar7 = *(byte *)(this_00 + 9);
-      bVar1 = *(byte *)((int)this + 0x24);
+      bVar1 = *(byte *)&this->field_0024;
       /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
       param_2 = (int *)CONCAT31(param_2._1_3_,bVar7);
       /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
@@ -1183,7 +1182,7 @@ LAB_00484ed2:
   case CASE_18:
     iVar4 = thunk_FUN_00493cd0(this);
     if (iVar4 == 0) {
-      return -(ushort)(this_00 != this) & 0x1d;
+      return -(ushort)((STGameObjC *)this_00 != this) & 0x1d;
     }
     break;
   case CASE_2C:
@@ -1198,20 +1197,20 @@ LAB_00484ed2:
       if (this_00 == (int *)0x0) {
         return 1;
       }
-      if (this_00 != this) {
+      if ((STGameObjC *)this_00 != this) {
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
         iVar4 = (**(code **)(*this_00 + 0x2c))();
         if (iVar4 != 0x62) {
           return 1;
         }
-        if (*(int *)((int)this + 0x24) != this_00[9]) {
+        if (this->field_0024 != this_00[9]) {
           return 1;
         }
-        iVar4 = thunk_FUN_004d6df0(this);
+        iVar4 = thunk_FUN_004d6df0((int *)this);
         if (iVar4 < 1) {
           return 1;
         }
-        iVar4 = thunk_FUN_004e8030(*(int *)((int)this + 0x6f7));
+        iVar4 = thunk_FUN_004e8030(this->field_06F7);
         if (iVar4 != 3) {
           return 1;
         }
@@ -1225,14 +1224,14 @@ LAB_00484ed2:
       if (this_00 == (int *)0x0) {
         return 1;
       }
-      if (this_00 != this) {
+      if ((STGameObjC *)this_00 != this) {
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
         iVar4 = (**(code **)(*this_00 + 0x2c))();
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
         if ((iVar4 != 0x37) && (iVar4 = (**(code **)(*this_00 + 0x2c))(), iVar4 != 0x6c)) {
           return 1;
         }
-        iVar4 = thunk_FUN_004e8b10(this_00,*(uint *)((int)this + 0x24));
+        iVar4 = thunk_FUN_004e8b10(this_00,this->field_0024);
         if (iVar4 != 1) {
           return 1;
         }

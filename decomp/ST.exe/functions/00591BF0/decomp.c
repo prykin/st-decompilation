@@ -166,8 +166,8 @@ void __thiscall CampaignTy::NoneCampaign(CampaignTy *this,void *param_1)
         uVar7 = (uint)(byte)this_00->field_009A;
       } while (iVar6 < (int)uVar7);
     }
-    if ((PTR_0081176c->field_02E6 != (MMsgTy *)0x0) &&
-       (PTR_0081176c->field_02E6->field_0065 != '\x01')) {
+    if ((g_startSystem_0081176C->field_02E6 != (MMsgTy *)0x0) &&
+       (g_startSystem_0081176C->field_02E6->field_0065 != '\x01')) {
       local_8 = 0;
     }
     if (local_8 != 0) {
@@ -202,7 +202,7 @@ void __thiscall CampaignTy::NoneCampaign(CampaignTy *this,void *param_1)
       local_48 = 0x697f;
       local_50 = local_70;
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-      (**(code **)(*(int *)this_00->field_000C + 8))(5,&this_00->field_0x66,0,local_80,0);
+      (**(code **)(*(int *)this_00->field_000C + 8))(5,&this_00->field_0066,0,local_80,0);
       iVar6 = this_00->field_1A5B;
       if (*(int *)(iVar6 + 0x2e6) != 0) {
         memset(&local_28, 0, 0x1a); /* compiler bulk-zero initialization */
@@ -254,8 +254,8 @@ LAB_00591d08:
       } while (iVar6 < (int)(uint)(byte)this_00->field_009A);
     }
     iVar6 = 0;
-    if ((PTR_0081176c->field_02E6 != (MMsgTy *)0x0) &&
-       (PTR_0081176c->field_02E6->field_0065 != '\x02')) {
+    if ((g_startSystem_0081176C->field_02E6 != (MMsgTy *)0x0) &&
+       (g_startSystem_0081176C->field_02E6->field_0065 != '\x02')) {
       local_8 = 0;
     }
     if (local_8 != 0) {

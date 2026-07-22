@@ -1,0 +1,7 @@
+0058C3B0  pointer  0058bef6
+0058C3B4  pointer  0058c391
+0058C3B8  pointer  0058c168
+0058C3BC  pointer  0058bef6
+0058C3C0  pointer  0058c121
+0058C3C4  pointer  0058c391
+0058C3C8  pointer  0058bed0

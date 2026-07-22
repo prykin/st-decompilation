@@ -56,7 +56,7 @@ int __thiscall STRubbishC::GetMessage(STRubbishC *this,STMessage *message)
     }
     else if (SVar4 == MESS_SHARED_010F) {
       local_10 = (byte *)thunk_FUN_0062f940(this_00,(uint *)&local_c);
-      STPlaySystemC::SaveObjData(PTR_00802a38,this_00->field_0018,local_10,local_c);
+      STPlaySystemC::SaveObjData(g_playSystem_00802A38,this_00->field_0018,local_10,local_c);
       FreeAndNull(&local_10);
       g_currentExceptionFrame = local_58.previous;
       return 0;
@@ -72,8 +72,8 @@ int __thiscall STRubbishC::GetMessage(STRubbishC *this,STMessage *message)
   if (SVar4 == MESS_ID_NONE) {
     if (*(int *)&this_00->field_0x1fa == 1) {
       if ((this_00->field_0x1f9 == '\0') &&
-         (iVar6 = thunk_FUN_0062fea0(this_00,*(int *)&this_00->field_0x1d5,
-                                     *(int *)&this_00->field_0x1d9), iVar6 != 0)) {
+         (iVar6 = sub_0062FEA0((STRubbishC *)this_00,*(int *)&this_00->field_0x1d5,
+                               *(int *)&this_00->field_0x1d9), iVar6 != 0)) {
         thunk_FUN_0062fe00((STJellyGunC *)this_00);
         this_00->field_0x1f9 = 1;
       }
@@ -85,7 +85,7 @@ int __thiscall STRubbishC::GetMessage(STRubbishC *this,STMessage *message)
       g_currentExceptionFrame = local_58.previous;
       return 0;
     }
-    thunk_FUN_0062f900(this_00);
+    sub_0062F900((STRubbishC *)this_00);
     g_currentExceptionFrame = local_58.previous;
     return 0;
   }
@@ -194,15 +194,15 @@ int __thiscall STRubbishC::GetMessage(STRubbishC *this,STMessage *message)
                               (short)((longlong)iVar8 * 0x51eb851f >> 0x3f));
         }
         *(int *)&this_00->field_0x1dd = iVar8;
-        iVar6 = thunk_FUN_0062fea0(this_00,iVar6,iVar9);
+        iVar6 = sub_0062FEA0((STRubbishC *)this_00,iVar6,iVar9);
         this_00->field_0x1f9 = (char)iVar6;
         goto LAB_0062ea02;
       }
     }
-    thunk_FUN_0062f900(this_00);
+    sub_0062F900((STRubbishC *)this_00);
   }
 LAB_0062ea02:
-  iVar6 = thunk_FUN_0062fca0((STRubbishC *)this_00,(AnonShape_0062FCA0_22A9EE35 *)pAVar10);
+  iVar6 = sub_0062FCA0((STRubbishC *)this_00,(AnonShape_0062FCA0_22A9EE35 *)pAVar10);
   if (iVar6 == 0xffff) {
     return 0xffff;
   }

@@ -72,8 +72,8 @@ int __thiscall STOctopusC::GetMessage(STOctopusC *this,STMessage *message)
       }
       puVar11 = &this_00->field_01D5;
       if (DAT_0080732c == 0) {
-        thunk_FUN_004ad070(puVar11,0xe);
-        thunk_FUN_004ad070(puVar11,8);
+        STT3DSprC::sub_004AD070((STT3DSprC *)puVar11,0xe);
+        STT3DSprC::sub_004AD070((STT3DSprC *)puVar11,8);
         g_currentExceptionFrame = local_88.previous;
         return 0;
       }
@@ -111,8 +111,7 @@ int __thiscall STOctopusC::GetMessage(STOctopusC *this,STMessage *message)
         return 0;
       }
       thunk_FUN_0058af70(this_00,(short)local_1c,(short)local_24,(short)local_20);
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-      sVar6 = (**(code **)&this_00->vtable->field_0x10)
+      sVar6 = (*this_00->vtable->vfunc_10)
                         (*(undefined2 *)&this_00->field_0x41,*(undefined2 *)&this_00->field_0x43,
                          *(undefined2 *)&this_00->field_0x45,local_1c,local_24,local_20);
       *(short *)&this_00->field_0x6c = sVar6 / 0x2d - (short)((int)sVar6 / -0x4c000000);
@@ -341,7 +340,7 @@ int __thiscall STOctopusC::GetMessage(STOctopusC *this,STMessage *message)
       pbVar14 = pbVar14 + 1;
     }
     STPlaySystemC::SaveObjData
-              (PTR_00802a38,this_00->field_0018,local_c,
+              (g_playSystem_00802A38,this_00->field_0018,local_c,
                (AnonShape_0060EA30_DCEB68AD *)(local_10 + 0x96 + local_8));
     FreeAndNull(&local_14);
     FreeAndNull(&local_18);
@@ -371,7 +370,7 @@ int __thiscall STOctopusC::GetMessage(STOctopusC *this,STMessage *message)
   *(undefined4 *)&this_00->field_0x249 = 3;
   local_1c = (undefined4 *)(message->arg0).u32;
   if ((uint)local_1c[3] < 2) {
-    uVar10 = PTR_00802a38->field_00E4;
+    uVar10 = g_playSystem_00802A38->field_00E4;
     *(undefined4 *)&this_00->field_0x24d = 0;
     this_00->field_0231 = 0;
     *(uint *)&this_00->field_0x245 = uVar10 - 3;
@@ -438,7 +437,7 @@ cf_error_exit_0058A005:
       }
     }
     thunk_FUN_004ac610(&this_00->field_01D5,'\x0e');
-    STT3DSprC::StartShow((STT3DSprC *)&this_00->field_01D5,0xe,PTR_00802a38->field_00E4);
+    STT3DSprC::StartShow((STT3DSprC *)&this_00->field_01D5,0xe,g_playSystem_00802A38->field_00E4);
     *(short *)&this_00->field_0x41 = *(short *)&this_00->field_0x299 * 0xc9 + 100;
     *(short *)&this_00->field_0x43 = *(short *)&this_00->field_0x29d * 0xc9 + 100;
     *(short *)&this_00->field_0x45 = *(short *)&this_00->field_0x2a1 * 200 + 100;
@@ -446,8 +445,9 @@ cf_error_exit_0058A005:
     *(undefined4 *)&this_00->field_0x251 = 1;
     *(undefined4 *)&this_00->field_0x255 = 1;
     this_00->field_0259 = 1;
-    uVar8 = thunk_FUN_0058b190(this_00,(short *)&this_00->field_0x4e,(short *)&this_00->field_0x50,
-                               (short *)&this_00->field_0x52,(short *)&this_00->field_0x6c);
+    uVar8 = sub_0058B190((STOctopusC *)this_00,(short *)&this_00->field_0x4e,
+                         (short *)&this_00->field_0x50,(short *)&this_00->field_0x52,
+                         (short *)&this_00->field_0x6c);
     *(undefined4 *)&this_00->field_0x249 = uVar8;
     this_00->field_0231 = 0;
   }

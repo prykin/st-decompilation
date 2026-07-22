@@ -78,7 +78,7 @@ void __fastcall FUN_005c5ca0(AnonShape_005C5CA0_A6776207 *param_1)
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
     (**(code **)(**(int **)&param_1->field_0xc + 0x18))(puVar1);
   }
-  iVar6 = PTR_0081176c->field_0389;
+  iVar6 = g_startSystem_0081176C->field_0389;
   if (iVar6 != 0) {
     param_1->field_0031 = 1;
     param_1->field_0025 = iVar6;

@@ -2,9 +2,9 @@
 void __cdecl FUN_005745e0(AnonShape_005745E0_AF52CC75 *param_1,undefined4 *param_2)
 
 {
-  undefined4 *puVar1;
+  undefined1 *puVar1;
   ushort uVar2;
-  AnonShape_006DDD50_309FA381 *pAVar3;
+  AnonShape_GLOBAL_00807598_0C6808FB *pAVar3;
   byte bVar4;
   int *piVar5;
   int iVar6;
@@ -44,18 +44,18 @@ cf_break_loop_00574651:
       *(undefined2 *)((int)param_2 + 6) = 0;
       *(undefined2 *)(param_2 + 2) = 0;
       pAVar3 = DAT_0080760c;
-      puVar1 = &DAT_0080760c->field_0140;
-      *param_2 = DAT_0080760c->field_0140;
-      *puVar1 = param_2;
-      pAVar3->field_013C = pAVar3->field_013C + 1;
-      FUN_006ddbe0((AnonShape_006DDBE0_9835BAB9 *)DAT_0080760c);
-      DAT_0080760c->field_0124 = 3;
-      FUN_006ddd50(DAT_0080760c);
-      DAT_0080760c->field_0124 = 4;
-      FUN_006ddd50(DAT_0080760c);
+      puVar1 = &DAT_0080760c->field_0x140;
+      *param_2 = *(undefined4 *)&DAT_0080760c->field_0x140;
+      *(undefined4 **)puVar1 = param_2;
+      *(int *)&pAVar3->field_0x13c = *(int *)&pAVar3->field_0x13c + 1;
+      FUN_006ddbe0(DAT_0080760c);
+      *(undefined4 *)&DAT_0080760c->field_0x124 = 3;
+      FUN_006ddd50((AnonShape_006DDD50_309FA381 *)DAT_0080760c);
+      *(undefined4 *)&DAT_0080760c->field_0x124 = 4;
+      FUN_006ddd50((AnonShape_006DDD50_309FA381 *)DAT_0080760c);
       pAVar3 = DAT_0080760c;
-      DAT_0080760c->field_0140 = 0;
-      pAVar3->field_013C = 0;
+      *(undefined4 *)&DAT_0080760c->field_0x140 = 0;
+      *(undefined4 *)&pAVar3->field_0x13c = 0;
       *(undefined2 *)(param_2 + 1) = local_18._0_2_;
       *(undefined2 *)((int)param_2 + 6) = (undefined2)local_14;
       *(undefined2 *)(param_2 + 2) = (undefined2)local_10;
@@ -75,8 +75,8 @@ cf_break_loop_00574651:
               local_20 = uVar7 * local_c;
               uVar9 = 0;
               if (uVar7 != 0) {
-                pcVar10 = (char *)(DAT_0080760c->field_0028 * iVar6 + DAT_0080760c->field_000C +
-                                  local_20);
+                pcVar10 = (char *)(*(int *)&DAT_0080760c->field_0x28 * iVar6 +
+                                   *(int *)&DAT_0080760c->field_0xc + local_20);
                 do {
                   if (*pcVar10 != '\0') {
                     if (*pcVar10 == -1) {

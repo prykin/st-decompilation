@@ -49,8 +49,8 @@ int __thiscall InterSystemC::GetMessage(InterSystemC *this,STMessage *message)
   SVar1 = message->id;
   if (SVar1 < MESS_INTERSYSTEMC_B904) {
     if (SVar1 == MESS_INTERSYSTEMC_B903) {
-      if (PTR_00802a30 != (CursorClassTy *)0x0) {
-        thunk_FUN_0054b540(PTR_00802a30);
+      if (g_cursorClass_00802A30 != (CursorClassTy *)0x0) {
+        thunk_FUN_0054b540(g_cursorClass_00802A30);
       }
       if (g_helpPanel_00801690 == (AnonShape_GLOBAL_00801690_2AA401C1 *)0x0) {
         g_currentExceptionFrame = local_50.previous;
@@ -64,7 +64,7 @@ int __thiscall InterSystemC::GetMessage(InterSystemC *this,STMessage *message)
     if (SVar1 < MESS_INTERSYSTEMC_B901) {
       if (SVar1 != MESS_INTERSYSTEMC_B900) {
         if (SVar1 == MESS_SHARED_0005) {
-          if (PTR_00802a58 != (cLoadingTy *)0x0) {
+          if (g_cLoading_00802A58 != (cLoadingTy *)0x0) {
             g_currentExceptionFrame = local_50.previous;
             return 0;
           }
@@ -84,8 +84,8 @@ int __thiscall InterSystemC::GetMessage(InterSystemC *this,STMessage *message)
           g_currentExceptionFrame = local_50.previous;
           return 0;
         }
-        if (PTR_00802a30 != (CursorClassTy *)0x0) {
-          thunk_FUN_0054b540(PTR_00802a30);
+        if (g_cursorClass_00802A30 != (CursorClassTy *)0x0) {
+          thunk_FUN_0054b540(g_cursorClass_00802A30);
         }
         if (g_optPanel_008016DC == (OptPanelTy *)0x0) {
           g_currentExceptionFrame = local_50.previous;
@@ -98,8 +98,8 @@ int __thiscall InterSystemC::GetMessage(InterSystemC *this,STMessage *message)
     }
     else {
       if (SVar1 == MESS_INTERSYSTEMC_B901) {
-        if (PTR_00802a30 != (CursorClassTy *)0x0) {
-          thunk_FUN_0054b540(PTR_00802a30);
+        if (g_cursorClass_00802A30 != (CursorClassTy *)0x0) {
+          thunk_FUN_0054b540(g_cursorClass_00802A30);
         }
         if (g_playPanel_008016E4 == (PlayPanelTy *)0x0) {
           g_currentExceptionFrame = local_50.previous;
@@ -115,7 +115,7 @@ int __thiscall InterSystemC::GetMessage(InterSystemC *this,STMessage *message)
       }
     }
 switchD_00543107_caseD_b904:
-    if (PTR_00802a58 != (cLoadingTy *)0x0) {
+    if (g_cLoading_00802A58 != (cLoadingTy *)0x0) {
       g_currentExceptionFrame = local_50.previous;
       return 0;
     }
@@ -158,8 +158,8 @@ LAB_00543291:
     case MESS_INTERSYSTEMC_B904|MESS_ID_CREATE:
       goto switchD_00543107_caseD_b904;
     case 0xb905:
-      if (PTR_00802a30 != (CursorClassTy *)0x0) {
-        thunk_FUN_0054b540(PTR_00802a30);
+      if (g_cursorClass_00802A30 != (CursorClassTy *)0x0) {
+        thunk_FUN_0054b540(g_cursorClass_00802A30);
       }
       if (g_optPanel_008016DC != (OptPanelTy *)0x0) {
         OptPanelTy::SwitchOptPanel(g_optPanel_008016DC,'\x0e');
@@ -168,16 +168,16 @@ LAB_00543291:
       }
       break;
     case MESS_INTERSYSTEMC_B904|MESS_SHARED_0003:
-      if (PTR_00802a30 != (CursorClassTy *)0x0) {
-        thunk_FUN_0054b540(PTR_00802a30);
-        PTR_00802a30->field_04DE = 1;
+      if (g_cursorClass_00802A30 != (CursorClassTy *)0x0) {
+        thunk_FUN_0054b540(g_cursorClass_00802A30);
+        g_cursorClass_00802A30->field_04DE = 1;
         thunk_FUN_005252c0(0xae);
         g_currentExceptionFrame = local_50.previous;
         return 0;
       }
       break;
     case MESS_INTERSYSTEMC_B908:
-      if (PTR_00802a58 != (cLoadingTy *)0x0) {
+      if (g_cLoading_00802A58 != (cLoadingTy *)0x0) {
         g_currentExceptionFrame = local_50.previous;
         return 0;
       }

@@ -16,7 +16,7 @@ STSharkC * __thiscall STSharkC::STSharkC(STSharkC *this)
   STGameObjC::STGameObjC((STGameObjC *)this);
   thunk_FUN_004ab810((AnonShape_004AB810_8E5693D5 *)&this->field_01D5);
   this->field_01D5 = &VTable_0079BFE0;
-  this->vtable = (AnonPointee_STSharkC_0000 *)&STSharkCVTable;
+  this->vtable = &STSharkCVTable;
   this->field_0257 = CASE_0;
   memset(&this->field_0x25b, 0, 0x34); /* compiler bulk-zero initialization */
   this->field_023D = 0;

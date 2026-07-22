@@ -76,7 +76,7 @@ int __thiscall BldLabPanelTy::GetMessage(BldLabPanelTy *this,STMessage *message)
       g_currentExceptionFrame = local_4c.previous;
       return 0;
     }
-    thunk_FUN_0054b630(PTR_00802a30,0xe,*puVar5);
+    thunk_FUN_0054b630(g_cursorClass_00802A30,0xe,*puVar5);
     ProdPanelTy::SetPanel(this_00,'\0');
   }
   else {
@@ -94,7 +94,7 @@ int __thiscall BldLabPanelTy::GetMessage(BldLabPanelTy *this,STMessage *message)
       return 0;
     }
     *(STMessageArg *)&this_00->field_0x199 = message->arg0;
-    thunk_FUN_004efe20((AnonShape_004EFE20_20805E12 *)this_00);
+    sub_004EFE20((BldLabPanelTy *)this_00);
   }
   thunk_FUN_005252c0(0xae);
   g_currentExceptionFrame = local_4c.previous;

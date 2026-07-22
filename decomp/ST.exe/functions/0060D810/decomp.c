@@ -26,7 +26,7 @@ void __thiscall FUN_0060d810(void *this,undefined4 param_1,undefined4 param_2)
     *(undefined4 *)(*(int *)((int)this + 0x244) + 0x14) = *(undefined4 *)((int)this + 0x1fd);
     *(undefined4 *)(*(int *)((int)this + 0x244) + 0x18) = 0x1e;
     *(undefined4 *)(*(int *)((int)this + 0x244) + 0x1c) = 0x7d;
-    *(uint *)(*(int *)((int)this + 0x244) + 0x28) = PTR_00802a38->field_00E4;
+    *(uint *)(*(int *)((int)this + 0x244) + 0x28) = g_playSystem_00802A38->field_00E4;
     **(undefined4 **)((int)this + 0x244) = 1;
     *(undefined4 *)(*(int *)((int)this + 0x244) + 0x24) = 0x14;
     *(undefined4 *)(*(int *)((int)this + 0x244) + 0x20) = 0;

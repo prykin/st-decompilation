@@ -1,4 +1,4 @@
-FUN_00416240:
+sub_00416240:
 00416240  55                        PUSH EBP
 00416241  8B EC                     MOV EBP,ESP
 00416243  66 8B 45 08               MOV AX,word ptr [EBP + 0x8]

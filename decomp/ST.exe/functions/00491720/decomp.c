@@ -34,7 +34,8 @@ void __fastcall FUN_00491720(STBoatC *param_1,undefined4 param_2)
     ppuVar1 = &param_1->field_05A6;
     local_1c = 0x5dd3;
     if ((*ppuVar1 == (ushort *)0x0) &&
-       (iVar3 = FUN_006e62d0(PTR_00802a38,param_1->field_05A2,(int *)ppuVar1), iVar3 == -4)) {
+       (iVar3 = FUN_006e62d0(g_playSystem_00802A38,param_1->field_05A2,(int *)ppuVar1), iVar3 == -4)
+       ) {
       RaiseInternalException
                 (-4,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\To_boat.cpp",0x501f);
     }
@@ -100,14 +101,12 @@ void __fastcall FUN_00491720(STBoatC *param_1,undefined4 param_2)
     uVar8 = uVar8 | 0x10;
   }
   if (uVar7 != 0) {
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-    (*(code *)param_1->vtable->field_0100)(uVar7);
+    (*param_1->vtable->vfunc_100)(uVar7);
   }
   if (uVar8 != 0) {
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-    (**(code **)(param_1->vtable + 1))(uVar8);
+    (*param_1->vtable->vfunc_104)(uVar8);
   }
-  local_c = PTR_00802a38->field_00E4;
+  local_c = g_playSystem_00802A38->field_00E4;
   STBoatC::CmdToObj(param_1,CASE_3,&local_c);
   return;
 }

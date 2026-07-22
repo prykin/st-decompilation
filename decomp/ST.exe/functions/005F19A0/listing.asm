@@ -1,4 +1,4 @@
-FUN_005f19a0:
+STManBasisC::sub_005F19A0:
 005F19A0  55                        PUSH EBP
 005F19A1  8B EC                     MOV EBP,ESP
 005F19A3  83 EC 3C                  SUB ESP,0x3c

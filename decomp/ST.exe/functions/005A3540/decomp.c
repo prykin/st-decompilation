@@ -37,17 +37,17 @@ void __thiscall FSGSTy::SetGameList(FSGSTy *this,int param_1,int *param_2)
     g_currentExceptionFrame = &local_60;
     local_10 = this;
     iVar3 = Library::MSVCRT::__setjmp3(local_60.jumpBuffer,0);
-    this_00 = PTR_00802a30;
+    this_00 = g_cursorClass_00802A30;
     if (iVar3 == 0) {
-      if (PTR_00802a30 != (CursorClassTy *)0x0) {
-        iVar3 = PTR_00802a30->field_00C9;
-        iVar6 = PTR_00802a30->field_00C5;
-        PTR_00802a30->field_0493 = 1;
+      if (g_cursorClass_00802A30 != (CursorClassTy *)0x0) {
+        iVar3 = g_cursorClass_00802A30->field_00C9;
+        iVar6 = g_cursorClass_00802A30->field_00C5;
+        g_cursorClass_00802A30->field_0493 = 1;
         this_00->field_0494 = 0xffff;
         CursorClassTy::SetGCType(this_00,CASE_0,iVar6,iVar3);
         CursorClassTy::DrawSprite(this_00,this_00->field_00C5,this_00->field_00C9);
         this_00->field_00D2 = 0;
-        this_00->field_04DF = 0xffffffff;
+        this_00->field_04DF = -1;
       }
       this_01 = local_10;
       local_10->field_002D = 0x26;

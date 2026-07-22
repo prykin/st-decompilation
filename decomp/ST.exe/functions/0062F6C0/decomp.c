@@ -15,7 +15,7 @@ undefined4 __thiscall FUN_0062f6c0(void *this,int param_1)
     if (iVar1 != 0) {
       iVar1 = *(int *)(iVar1 + 4);
       if ((iVar1 == 3) || (iVar1 == 6)) {
-        thunk_FUN_00630260(this,param_1,0);
+        STRubbishC::sub_00630260(this,param_1,0);
       }
       pSVar2 = *(STT3DSprC **)((int)*value + 0x10);
       if (pSVar2 != (STT3DSprC *)0x0) {

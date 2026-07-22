@@ -64,17 +64,17 @@ uint __thiscall STGroupBoatC::GrpPatrol(STGroupBoatC *this,int param_1)
   }
   memset(&this->field_0089, 0, 0x54); /* compiler bulk-zero initialization */
   this->field_0065 = 0;
-  if ((DArrayTy *)this->field_0226 != (DArrayTy *)0x0) {
-    DArrayDestroy((DArrayTy *)this->field_0226);
-    this->field_0226 = (uint *)0x0;
+  if (this->field_0226 != (DArrayTy *)0x0) {
+    DArrayDestroy(this->field_0226);
+    this->field_0226 = (DArrayTy *)0x0;
   }
-  if ((DArrayTy *)this->field_022A != (DArrayTy *)0x0) {
-    DArrayDestroy((DArrayTy *)this->field_022A);
-    this->field_022A = (uint *)0x0;
+  if (this->field_022A != (DArrayTy *)0x0) {
+    DArrayDestroy(this->field_022A);
+    this->field_022A = (DArrayTy *)0x0;
   }
-  if ((DArrayTy *)this->field_022E != (DArrayTy *)0x0) {
-    DArrayDestroy((DArrayTy *)this->field_022E);
-    this->field_022E = (uint *)0x0;
+  if (this->field_022E != (DArrayTy *)0x0) {
+    DArrayDestroy(this->field_022E);
+    this->field_022E = (DArrayTy *)0x0;
   }
   this->field_0232 = -1;
   this->field_0236 = 1;
@@ -124,7 +124,7 @@ uint __thiscall STGroupBoatC::GrpPatrol(STGroupBoatC *this,int param_1)
     do {
       DArrayGetElement((DArrayTy *)this->field_0029,local_20,&local_18);
       if ((short)local_18 != -1) {
-        pSVar5 = STAllPlayersC::GetObjPtr(g_sTAllPlayers_007FA174,this->field_0024,local_18,CASE_1);
+        pSVar5 = STAllPlayersC::GetObjPtr(g_allPlayers_007FA174,this->field_0024,local_18,CASE_1);
         if (pSVar5 == (STGameObjC *)0x0) {
           RaiseInternalException
                     (-0x5001fffc,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_grpb.cpp"
@@ -237,7 +237,7 @@ uint __thiscall STGroupBoatC::GrpPatrol(STGroupBoatC *this,int param_1)
       GVar13 = local_20;
       DArrayGetElement((DArrayTy *)this->field_0029,local_20,&local_18);
       if ((short)local_18 != -1) {
-        pSVar5 = STAllPlayersC::GetObjPtr(g_sTAllPlayers_007FA174,this->field_0024,local_18,CASE_1);
+        pSVar5 = STAllPlayersC::GetObjPtr(g_allPlayers_007FA174,this->field_0024,local_18,CASE_1);
         if (pSVar5 == (STGameObjC *)0x0) {
           RaiseInternalException
                     (-0x5001fffc,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_grpb.cpp"
@@ -281,7 +281,7 @@ joined_r0x0049bc58:
           DArrayGetElement((DArrayTy *)this->field_0029,uVar11,&local_18);
           if ((short)local_18 != -1) {
             pSVar5 = STAllPlayersC::GetObjPtr
-                               (g_sTAllPlayers_007FA174,this->field_0024,local_18,CASE_1);
+                               (g_allPlayers_007FA174,this->field_0024,local_18,CASE_1);
             if (pSVar5 == (STGameObjC *)0x0) {
               RaiseInternalException
                         (-0x5001fffc,g_overwriteContext_007ED77C,
@@ -310,12 +310,12 @@ joined_r0x0049bc58:
   }
   pDVar6 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,this->field_0103->count,6,1);
   pDVar7 = this->field_0103;
-  this->field_0226 = &pDVar6->flags;
+  this->field_0226 = pDVar6;
   uVar11 = 0;
   if (0 < (int)pDVar7->count) {
     do {
       DArrayGetElement(pDVar7,uVar11,&local_3c);
-      Library::DKW::TBL::FUN_006ae140(this->field_0226,uVar11,(undefined4 *)&local_3c);
+      Library::DKW::TBL::FUN_006ae140(&this->field_0226->flags,uVar11,(undefined4 *)&local_3c);
       pDVar7 = this->field_0103;
       uVar11 = uVar11 + 1;
     } while ((int)uVar11 < (int)pDVar7->count);
@@ -325,7 +325,7 @@ joined_r0x0049bc58:
   /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
   ReMakePatrolPoints(this,unaff_EDI);
   pDVar7 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,(uint)this->field_0027,0x16,1);
-  this->field_022E = &pDVar7->flags;
+  this->field_022E = pDVar7;
   uVar11 = 0;
   local_6c = 0;
   local_5a = 0;
@@ -335,7 +335,7 @@ joined_r0x0049bc58:
       if ((short)local_18 != -1) {
         /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
         local_68[0] = CONCAT22(local_68[0]._2_2_,(short)local_18);
-        Library::DKW::TBL::FUN_006ae1c0(this->field_022E,&local_6c);
+        Library::DKW::TBL::FUN_006ae1c0(&this->field_022E->flags,&local_6c);
       }
       uVar11 = uVar11 + 1;
     } while ((int)uVar11 < local_1c);
@@ -344,15 +344,15 @@ joined_r0x0049bc58:
   this->field_023A = ((this->field_0242 * 0xc9) / (int)(uint)bVar2) / 3;
   local_30 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,0,2,1);
   uVar11 = 0;
-  local_44 = PTR_00802a38->field_00E4;
-  pDVar7 = (DArrayTy *)this->field_022E;
+  local_44 = g_playSystem_00802A38->field_00E4;
+  pDVar7 = this->field_022E;
   if (0 < (int)pDVar7->count) {
     do {
       DArrayGetElement(pDVar7,uVar11,&local_6c);
       if ((short)local_68[0] != -1) {
         this_00 = (STBoatC *)
                   STAllPlayersC::GetObjPtr
-                            (g_sTAllPlayers_007FA174,this->field_0024,local_68[0],CASE_1);
+                            (g_allPlayers_007FA174,this->field_0024,local_68[0],CASE_1);
         if (this_00 == (STBoatC *)0x0) {
           iVar3 = ReportDebugMessage("E:\\__titans\\wlad\\to_grpb.cpp",0x7ed,0,0,"%s"
                                      ,"STGroupBoatC::GrpPatrol NULL value");
@@ -367,12 +367,12 @@ joined_r0x0049bc58:
         local_40 = uVar11;
         STBoatC::CmdToObj(this_00,CASE_6,&local_44);
       }
-      pDVar7 = (DArrayTy *)this->field_022E;
+      pDVar7 = this->field_022E;
       uVar11 = uVar11 + 1;
     } while ((int)uVar11 < (int)pDVar7->count);
   }
   pDVar7 = local_30;
-  DArrayGetElement((DArrayTy *)this->field_022A,this->field_0232,&local_54);
+  DArrayGetElement(this->field_022A,this->field_0232,&local_54);
   InitWay(this,pDVar7,(int)local_54,(int)local_52,(int)local_50);
   DArrayDestroy(pDVar7);
   return 2;

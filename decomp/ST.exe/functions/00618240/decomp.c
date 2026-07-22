@@ -139,7 +139,7 @@ FUN_00618240(void *this,int param_1,int param_2,int param_3,undefined4 *param_4)
                     (local_80 = iVar12, iVar11 = (*this_00->vtable[5].slots_00_28[0])(),
                     iVar4 = local_38, iVar9 = local_34, iVar11 != 0)) &&
                    ((this_00[1].vtable < (STWorldObjectVTable *)0x8 &&
-                    ((PTR_00802a38 == (STPlaySystemC *)0x0 ||
+                    ((g_playSystem_00802A38 == (STPlaySystemC *)0x0 ||
                      ((byte)(&DAT_008087e9)[(int)this_00[1].vtable * 0x51] < 8)))))) {
                   bVar1 = *(byte *)&this_00[1].vtable;
                   bVar2 = *(byte *)((int)this + 0x20);

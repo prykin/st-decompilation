@@ -1,25 +1,33 @@
 
-void __thiscall FUN_00690230(void *this,uint *param_1)
+/* [STMethodOwnerApplier] Structural method owner recovered as AiTactClassTy.
+   Evidence: this_call_owners=[AiTactClassTy]; agreed_this_calls=3; incoming_this_accesses=2;
+   incoming_edx_uses=0; incoming_stack_parameter_uses=1; direct_non_thunk_callers=0;
+   incoming_ecx_receiver_callers=0; attributed_named_callers=1; owner_evidence_coverage=adequate */
+
+void __thiscall AiTactClassTy::sub_00690230(AiTactClassTy *this,uint *param_1)
 
 {
   AiFltClassTy *this_00;
-  int iVar1;
-  uint uVar2;
-  bool bVar3;
+  void *pvVar1;
+  DArrayTy *pDVar2;
+  uint uVar3;
+  bool bVar4;
 
-  uVar2 = 0;
-  iVar1 = *(int *)((int)this + 0xa5);
-  if (0 < *(int *)(iVar1 + 0xc)) {
-    bVar3 = *(int *)(iVar1 + 0xc) != 0;
+  uVar3 = 0;
+  pDVar2 = this->field_00A5;
+  if (0 < (int)pDVar2->count) {
+    bVar4 = pDVar2->count != 0;
     do {
-      if (((bVar3) && (iVar1 = *(int *)(iVar1 + 8) * uVar2 + *(int *)(iVar1 + 0x1c), iVar1 != 0)) &&
-         (this_00 = *(AiFltClassTy **)(iVar1 + 4), this_00 != (AiFltClassTy *)0x0)) {
+      /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(pDVar2, uVar3) (runtime stride) */
+      if (((bVar4) &&
+          (pvVar1 = (void *)(pDVar2->elementSize * uVar3 + (int)pDVar2->data), pvVar1 != (void *)0x0
+          )) && (this_00 = *(AiFltClassTy **)((int)pvVar1 + 4), this_00 != (AiFltClassTy *)0x0)) {
         AiFltClassTy::GetAiMess(this_00,param_1);
       }
-      iVar1 = *(int *)((int)this + 0xa5);
-      uVar2 = uVar2 + 1;
-      bVar3 = uVar2 < *(uint *)(iVar1 + 0xc);
-    } while ((int)uVar2 < (int)*(uint *)(iVar1 + 0xc));
+      pDVar2 = this->field_00A5;
+      uVar3 = uVar3 + 1;
+      bVar4 = uVar3 < pDVar2->count;
+    } while ((int)uVar3 < (int)pDVar2->count);
   }
   return;
 }

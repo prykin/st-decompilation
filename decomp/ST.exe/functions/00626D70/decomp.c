@@ -26,7 +26,7 @@ void __thiscall FUN_00626d70(void *this,AnonShape_00626D70_1F4C15C4 *param_1)
   }
   if (*(char *)((int)this + 0x2ad) == '\x03') {
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-    iVar3 = ((*(int *)((int)this + 0x35f) - PTR_00802a38->field_00E4) + 0x1194) * 0x28;
+    iVar3 = ((*(int *)((int)this + 0x35f) - g_playSystem_00802A38->field_00E4) + 0x1194) * 0x28;
     param_1[3].field_0x4 =
          ((char)(iVar3 / 0x1194) + (char)(iVar3 >> 0x1f)) -
          (char)((longlong)iVar3 * 0x7482296b >> 0x3f);

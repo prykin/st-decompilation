@@ -31,12 +31,12 @@ void __thiscall CPanelTy::SetControlObj(CPanelTy *this,char param_1)
   undefined4 uVar15;
   undefined4 uVar16;
   short sVar17;
-  int iVar18;
-  undefined4 uVar19;
-  undefined4 uVar20;
-  undefined2 uVar21;
-  undefined2 uVar22;
-  char *pcVar23;
+  undefined2 uVar18;
+  undefined2 uVar19;
+  int iVar20;
+  undefined4 uVar21;
+  char *pcVar22;
+  undefined4 uVar23;
   AnonShape_004F2E40_DC76A8C6 local_b44;
   undefined4 auStack_a34 [502];
   undefined4 local_25c [84];
@@ -84,7 +84,7 @@ void __thiscall CPanelTy::SetControlObj(CPanelTy *this,char param_1)
     return;
   }
   if (param_1 != '\0') {
-    thunk_FUN_0054a8d0(PTR_00802a30);
+    CursorClassTy::sub_0054A8D0(g_cursorClass_00802A30);
   }
   this_00 = local_20;
   if (local_20->field_0302 != 0) {
@@ -155,22 +155,22 @@ void __thiscall CPanelTy::SetControlObj(CPanelTy *this,char param_1)
 switchD_00509942_caseD_2:
         iVar11 = 0x37;
       }
-      thunk_FUN_004f17d0(this_00,0,(byte)local_10);
+      sub_004F17D0(this_00,0,(byte)local_10);
       if (this_00->field_0BFC == '\0') {
         local_8 = (undefined4 *)0x0;
       }
       else {
         local_8 = (undefined4 *)(uint)local_1c[6];
       }
-      pcVar23 = (char *)0x0;
-      uVar22 = 0;
-      uVar21 = 1;
+      pcVar22 = (char *)0x0;
+      uVar19 = 0;
+      uVar18 = 1;
       iVar5 = 0;
       puVar14 = local_c;
       pcVar6 = thunk_FUN_00529590(*local_1c,this_00->field_0BF5);
       pCVar7 = thunk_FUN_00571240(pcVar6,iVar5);
       SetButStruct(this_00,(AnonShape_004F2E40_DC76A8C6 *)((int)&local_b44 + local_28 * 0x17c),5,
-                   local_8,iVar13,iVar11,1,pCVar7,uVar21,uVar22,puVar14,pcVar23);
+                   local_8,iVar13,iVar11,1,pCVar7,uVar18,uVar19,puVar14,pcVar22);
       iVar5 = local_28 * 0x5f;
       local_28 = local_28 + 1;
       auStack_a34[iVar5] = 1;
@@ -191,9 +191,9 @@ LAB_00509a02:
     local_3c = 2;
     local_38 = 0xb204;
     local_40 = local_60;
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-    (*(code *)this_00->field_000C->vtable->field_0008)(9,&this_00->field_0302,0,local_70,0);
-    thunk_FUN_004f1610(this_00,'\0');
+    (*this_00->field_000C->vtable->CreateObject)
+              ((SystemClassTy *)this_00->field_000C,9,&this_00->field_0302,(int *)0x0,local_70,0);
+    sub_004F1610(this_00,'\0');
     if (this_00->field_09C4 != 0) {
       this_00->field_0028 = 0x20;
       if (this_00->field_0BFC == '\0') {
@@ -207,18 +207,18 @@ LAB_00509a02:
     }
     if (this_00->field_0BFB == '\x02') {
 LAB_00509b60:
-      uVar20 = 0;
-      uVar19 = 0;
+      uVar23 = 0;
+      uVar21 = 0;
       iVar11 = 0;
       pcVar6 = (char *)0x0;
       iVar5 = 0;
-      uVar21 = 0;
+      uVar18 = 0;
       sVar17 = 0;
       uVar16 = 0xb13f;
       uVar15 = 0xb12f;
       pCVar7 = thunk_FUN_00571240("BUT_SMALL",0);
       uVar15 = CreateBut(this_00,5,0,(uint)(this_00->field_0BFC != '\0'),0x92,0x6e,1,pCVar7,uVar15,
-                         uVar16,sVar17,uVar21,iVar5,pcVar6,iVar11,uVar19,uVar20);
+                         uVar16,sVar17,uVar18,iVar5,pcVar6,iVar11,uVar21,uVar23);
       *local_18 = uVar15;
       g_currentExceptionFrame = local_10c.previous;
       return;
@@ -237,18 +237,18 @@ LAB_00509b60:
       puVar8 = local_18;
       do {
         if (*(int *)((int)puVar8 + 0x8fe) != 0) {
-          uVar19 = 0;
+          uVar21 = 0;
           uVar16 = 0;
-          iVar18 = 0;
+          iVar20 = 0;
           pcVar6 = (char *)0x0;
           iVar13 = 0;
-          uVar21 = 0;
+          uVar18 = 0;
           sVar17 = 0;
           uVar15 = 0xb13f;
           iVar11 = iVar5;
           pCVar7 = thunk_FUN_00571240("BUT_SMALL",0);
           uVar15 = CreateBut(this_00,5,0,(uint)(this_00->field_0BFC != '\0'),0x92,(int)local_c,1,
-                             pCVar7,iVar11,uVar15,sVar17,uVar21,iVar13,pcVar6,iVar18,uVar16,uVar19);
+                             pCVar7,iVar11,uVar15,sVar17,uVar18,iVar13,pcVar6,iVar20,uVar16,uVar21);
           *puVar8 = uVar15;
         }
         puVar8 = puVar8 + 1;
@@ -273,11 +273,11 @@ LAB_00509b60:
         *puVar8 = 0;
         puVar8[2] = iVar11;
         puVar8[4] = 0x2e;
-        iVar18 = DAT_00806734;
+        iVar20 = DAT_00806734;
         if (iVar13 != 0) {
-          iVar18 = this_00->field_00A8;
+          iVar20 = this_00->field_00A8;
         }
-        puVar8[3] = iVar18 + 0x22;
+        puVar8[3] = iVar20 + 0x22;
         puVar8[5] = 0x10;
         puVar8[0x11] = 0;
         puVar8[0x15] = 0x101;
@@ -317,8 +317,9 @@ LAB_00509ddd:
           local_94 = 2;
           local_90 = 0xb206;
           local_98 = local_b8;
-          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-          (*(code *)this_00->field_000C->vtable->field_0008)(5,&this_00->field_09D0,0,local_c8,0);
+          (*this_00->field_000C->vtable->CreateObject)
+                    ((SystemClassTy *)this_00->field_000C,5,&this_00->field_09D0,(int *)0x0,local_c8
+                     ,0);
           local_c = (undefined1 *)((uint)local_c & 0xffffff00);
           local_10 = 0x3b;
           iVar5 = *(int *)(this_00->field_0194 + 4);
@@ -356,12 +357,12 @@ LAB_00509ddd:
       } while( true );
     case CASE_35:
       if (this_00->field_0C31 != '\0') {
-        uVar20 = 0;
-        uVar19 = 0;
+        uVar23 = 0;
+        uVar21 = 0;
         iVar11 = 0;
         pcVar6 = (char *)0x0;
         iVar5 = 0;
-        uVar21 = 0;
+        uVar18 = 0;
         sVar17 = 0;
         uVar16 = 0xb13f;
         uVar15 = 0xb12f;
@@ -369,7 +370,7 @@ LAB_00509ddd:
         cVar2 = this_00->field_0BFC;
 LAB_00509c11:
         uVar15 = CreateBut(this_00,5,0,(uint)(cVar2 != '\0'),0x92,0x6e,1,pCVar7,uVar15,uVar16,sVar17
-                           ,uVar21,iVar5,pcVar6,iVar11,uVar19,uVar20);
+                           ,uVar18,iVar5,pcVar6,iVar11,uVar21,uVar23);
         *local_18 = uVar15;
         g_currentExceptionFrame = local_10c.previous;
         return;
@@ -377,12 +378,12 @@ LAB_00509c11:
       break;
     case CASE_3C:
       if (this_00->field_0C3C == '\x01') {
-        uVar20 = 0;
-        uVar19 = 0;
+        uVar23 = 0;
+        uVar21 = 0;
         iVar11 = 0;
         pcVar6 = (char *)0x0;
         iVar5 = 0;
-        uVar21 = 0;
+        uVar18 = 0;
         sVar17 = 0;
         uVar16 = 0xb13f;
         uVar15 = 0xb12f;
@@ -399,18 +400,18 @@ LAB_00509c11:
       else {
         iVar5 = (-(uint)(this_00->field_0C11 != 0) & 2) + 1;
       }
-      uVar20 = 0;
-      uVar19 = 0;
+      uVar23 = 0;
+      uVar21 = 0;
       iVar13 = 0;
       pcVar6 = (char *)0x0;
       iVar11 = 0;
-      uVar21 = 0;
+      uVar18 = 0;
       sVar17 = 0;
       uVar16 = 0xb12e;
       uVar15 = 0xb12d;
       pCVar7 = thunk_FUN_00571240("BUT_AUTO",0);
-      uVar15 = CreateBut(this_00,5,3,iVar5,-1,0x58,1,pCVar7,uVar15,uVar16,sVar17,uVar21,iVar11,
-                         pcVar6,iVar13,uVar19,uVar20);
+      uVar15 = CreateBut(this_00,5,3,iVar5,-1,0x58,1,pCVar7,uVar15,uVar16,sVar17,uVar18,iVar11,
+                         pcVar6,iVar13,uVar21,uVar23);
       this_00->field_030C = uVar15;
       g_currentExceptionFrame = local_10c.previous;
       return;

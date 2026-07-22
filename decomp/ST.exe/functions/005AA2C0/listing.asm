@@ -1,4 +1,4 @@
-FUN_005aa2c0:
+CreateFSGS:
 005AA2C0  55                        PUSH EBP
 005AA2C1  8B EC                     MOV EBP,ESP
 005AA2C3  51                        PUSH ECX

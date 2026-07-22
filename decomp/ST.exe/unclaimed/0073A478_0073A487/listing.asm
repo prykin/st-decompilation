@@ -1,0 +1,4 @@
+0073A478  pointer  0073a488
+0073A47C  pointer  0073a490
+0073A480  pointer  0073a49c
+0073A484  pointer  0073a4b0

@@ -135,7 +135,7 @@ joined_r0x0054f526:
             thunk_FUN_00550830((int)local_8);
             goto joined_r0x0054f3c5;
           case 0x36:
-            thunk_FUN_005505d0(local_c,local_30,(int *)local_8);
+            sub_005505D0(local_c,local_30,(int *)local_8);
 joined_r0x0054f3c5:
             if (local_8 != (uint *)0x0) {
 LAB_0054f52c:
@@ -171,7 +171,7 @@ LAB_0054f52c:
             }
             goto LAB_0054f52c;
           case 0x42:
-            pcVar13 = LoadResourceString(0x426a,HINSTANCE_00807618);
+            pcVar13 = LoadResourceString(0x426a,g_module_00807618);
             uVar9 = 0xffffffff;
             do {
               pcVar24 = pcVar13;
@@ -303,7 +303,7 @@ LAB_0054f531:
       if (DAT_00808783 == '\x03') {
         pAVar11->field_0004 = bVar7;
         local_c->field_003D->field_0005 = 0;
-        iVar8 = thunk_FUN_0054ebb0(local_c,(char *)local_c->field_003D,7);
+        iVar8 = sub_0054EBB0(local_c,(char *)local_c->field_003D,7);
         puVar18 = (undefined4 *)0x0;
         if (iVar8 != 0) {
           uVar27 = 7;
@@ -319,7 +319,7 @@ LAB_0054f6c6:
         pAVar11->field_0004 = cVar3;
       }
       if (DAT_00808783 == '\x03') {
-        iVar8 = thunk_FUN_0054ebb0(local_c,(char *)local_c->field_003D,local_28);
+        iVar8 = sub_0054EBB0(local_c,(char *)local_c->field_003D,local_28);
         puVar18 = (undefined4 *)0x0;
         if (iVar8 != 0) {
           uVar27 = 8;
@@ -393,7 +393,7 @@ LAB_0054f6c6:
     local_14 = 0x31;
     goto LAB_0054fbb7;
   }
-  DVar12 = FUN_006e51b0(0x807620);
+  DVar12 = STAppC::sub_006E51B0((STAppC *)&DAT_00807620);
   if (30000 < (int)(DVar12 - pSVar21->field_0079)) {
     uVar27 = 10;
 cf_common_exit_0054F76E:
@@ -401,7 +401,7 @@ cf_common_exit_0054F76E:
     g_currentExceptionFrame = local_78.previous;
     return puVar18;
   }
-  DVar12 = FUN_006e51b0(0x807620);
+  DVar12 = STAppC::sub_006E51B0((STAppC *)&DAT_00807620);
   if (pSVar21->field_007D * 4000 < (int)(DVar12 - pSVar21->field_0079)) {
     FUN_006b6500(g_int_00811764,1);
     FUN_00715360(g_int_00811764,1,'6',(char *)&pSVar21->field_0041,4,0,0xffffffff);
@@ -422,7 +422,7 @@ cf_common_exit_0054F76E:
       if (iVar8 == 0) {
         FUN_006b6500(g_int_00811764,DAT_0080733c);
         if (pSVar21->field_00BB < 5) {
-          DVar12 = FUN_006e51b0(0x807620);
+          DVar12 = STAppC::sub_006E51B0((STAppC *)&DAT_00807620);
           (&pSVar21->field_00A7)[pSVar21->field_00BB] = DVar12;
           bVar7 = pSVar21->field_00BB + 1;
           pSVar21->field_00BB = bVar7;
@@ -434,7 +434,7 @@ cf_common_exit_0054F76E:
         pSVar21->field_00AB = pSVar21->field_00AF;
         pSVar21->field_00AF = pSVar21->field_00B3;
         pSVar21->field_00B3 = pSVar21->field_00B7;
-        DVar12 = FUN_006e51b0(0x807620);
+        DVar12 = STAppC::sub_006E51B0((STAppC *)&DAT_00807620);
         pSVar21->field_00B7 = DVar12;
         if (DAT_0080735e == '\0') {
           g_currentExceptionFrame = local_78.previous;
@@ -449,7 +449,7 @@ cf_common_exit_0054F76E:
         puVar18 = (undefined4 *)0x0;
         if (g_popUp_008016D8 != (PopUpTy *)0x0) {
           uVar9 = 9;
-          pcVar13 = LoadResourceString(17000,HINSTANCE_00807618);
+          pcVar13 = LoadResourceString(17000,g_module_00807618);
           puVar18 = (undefined4 *)thunk_FUN_0052d320(g_popUp_008016D8,pcVar13,uVar9);
         }
         pSVar21->field_00BB = 0;
@@ -462,7 +462,7 @@ cf_common_exit_0054F76E:
   }
   if ((DAT_0080735e != '\0') && (g_popUp_008016D8 != (PopUpTy *)0x0)) {
     uVar9 = 8;
-    pcVar13 = LoadResourceString(0x426c,HINSTANCE_00807618);
+    pcVar13 = LoadResourceString(0x426c,g_module_00807618);
     thunk_FUN_0052d320(g_popUp_008016D8,pcVar13,uVar9);
   }
 LAB_0054f98b:
@@ -528,7 +528,7 @@ LAB_0054fbb7:
           pSVar21->field_006D = 1;
           pSVar21->field_0071 = 0;
           pSVar21->field_0075 = 1;
-          DVar12 = FUN_006e51b0(0x807620);
+          DVar12 = STAppC::sub_006E51B0((STAppC *)&DAT_00807620);
           pSVar21->field_0079 = DVar12;
           pSVar21->field_007D = 1;
         }

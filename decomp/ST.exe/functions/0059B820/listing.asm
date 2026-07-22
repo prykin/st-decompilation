@@ -1,4 +1,4 @@
-FUN_0059b820:
+FSGSTy::sub_0059B820:
 0059B820  53                        PUSH EBX
 0059B821  56                        PUSH ESI
 0059B822  8B F1                     MOV ESI,ECX

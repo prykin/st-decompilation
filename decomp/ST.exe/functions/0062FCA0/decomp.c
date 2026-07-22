@@ -1,5 +1,10 @@
 
-int __thiscall STRubbishC::FUN_0062fca0(STRubbishC *this,AnonShape_0062FCA0_22A9EE35 *param_1)
+/* [STMethodOwnerApplier] Structural method owner recovered as STRubbishC.
+   Evidence: this_call_owners=[STRubbishC]; agreed_this_calls=1; incoming_this_accesses=4;
+   incoming_edx_uses=0; incoming_stack_parameter_uses=2; direct_non_thunk_callers=0;
+   incoming_ecx_receiver_callers=0; attributed_named_callers=1; owner_evidence_coverage=adequate */
+
+int __thiscall STRubbishC::sub_0062FCA0(STRubbishC *this,AnonShape_0062FCA0_22A9EE35 *param_1)
 
 {
   int *piVar1;
@@ -12,7 +17,7 @@ int __thiscall STRubbishC::FUN_0062fca0(STRubbishC *this,AnonShape_0062FCA0_22A9
   iVar4 = this->field_01E1;
   if (iVar3 < 0) {
     if (iVar4 == 0) {
-      thunk_FUN_0062f900(this);
+      sub_0062F900(this);
       return 0xffff;
     }
   }
@@ -35,7 +40,7 @@ int __thiscall STRubbishC::FUN_0062fca0(STRubbishC *this,AnonShape_0062FCA0_22A9
       return this->field_01E1;
     }
     this->field_01E1 = iVar4 + 1;
-    thunk_FUN_0062ef00(this,iVar3,param_1);
+    sub_0062EF00(this,iVar3,param_1);
     if (this->field_01F9 != '\0') {
       /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
       iVar4 = thunk_FUN_0062f080(this,iVar3,*(undefined4 *)((&this->field_01E5)[iVar3] + 0xc),
@@ -45,7 +50,7 @@ int __thiscall STRubbishC::FUN_0062fca0(STRubbishC *this,AnonShape_0062FCA0_22A9
         return iVar3;
       }
       if (this->field_01E1 == 0) {
-        thunk_FUN_0062f900(this);
+        sub_0062F900(this);
         return 0xffff;
       }
       thunk_FUN_0062f6c0(this,iVar3);

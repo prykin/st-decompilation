@@ -12,8 +12,8 @@ undefined4 __thiscall STColl3C::LoadImagSpr(STColl3C *this,int param_1)
   code *pcVar1;
   STColl3C *this_01;
   int iVar2;
-  undefined4 uVar3;
-  int iVar4;
+  int iVar3;
+  undefined4 uVar4;
   InternalExceptionFrame local_50;
   undefined4 local_c;
   STColl3C *local_8;
@@ -37,19 +37,19 @@ undefined4 __thiscall STColl3C::LoadImagSpr(STColl3C *this,int param_1)
                 ((STT3DSprC *)this_00,10,DAT_00806774,
                  "expmask3" + this_01->field_02CD * 0x39,0x1d);
       thunk_FUN_004ac700(this_00,'\n');
-      STT3DSprC::StartShow((STT3DSprC *)this_00,10,PTR_00802a38->field_00E4);
-      thunk_FUN_004acf20(this_00,DAT_008032b8,0x10);
-      STT3DSprC::StartShow((STT3DSprC *)this_00,8,PTR_00802a38->field_00E4);
-      thunk_FUN_004acfe0(this_00,'\n');
-      uVar3 = thunk_FUN_004ad650((int)this_00);
-      this_01->field_02B7 = uVar3;
+      STT3DSprC::StartShow((STT3DSprC *)this_00,10,g_playSystem_00802A38->field_00E4);
+      STT3DSprC::sub_004ACF20((STT3DSprC *)this_00,DAT_008032b8,0x10);
+      STT3DSprC::StartShow((STT3DSprC *)this_00,8,g_playSystem_00802A38->field_00E4);
+      STT3DSprC::sub_004ACFE0((STT3DSprC *)this_00,'\n');
+      iVar2 = thunk_FUN_004ad650((int)this_00);
+      this_01->field_02B7 = iVar2;
       g_currentExceptionFrame = local_50.previous;
       return local_c;
     }
     iVar2 = STT3DSprC::LoadSequence((STT3DSprC *)this_00,0xe,DAT_00806774,"coll3",0x1d);
     if (iVar2 == 0) {
       thunk_FUN_004ad380(this_00,DAT_007ce78c,DAT_007ce790);
-      STT3DSprC::StartShow((STT3DSprC *)this_00,0xe,PTR_00802a38->field_00E4);
+      STT3DSprC::StartShow((STT3DSprC *)this_00,0xe,g_playSystem_00802A38->field_00E4);
       thunk_FUN_00417e70(this_01,0x18);
       iVar2 = STT3DSprC::LoadSequence
                         ((STT3DSprC *)this_00,0xc,DAT_00806774,
@@ -58,13 +58,13 @@ undefined4 __thiscall STColl3C::LoadImagSpr(STColl3C *this,int param_1)
         return local_c;
       }
       thunk_FUN_004ac610(this_00,'\f');
-      STT3DSprC::StartShow((STT3DSprC *)this_00,0xc,PTR_00802a38->field_00E4);
-      thunk_FUN_005fa0b0((int)this_01);
-      uVar3 = thunk_FUN_004ad650((int)this_00);
-      this_01->field_02B7 = uVar3;
+      STT3DSprC::StartShow((STT3DSprC *)this_00,0xc,g_playSystem_00802A38->field_00E4);
+      thunk_FUN_005fa0b0(this_01);
+      iVar2 = thunk_FUN_004ad650((int)this_00);
+      this_01->field_02B7 = iVar2;
       thunk_FUN_004ad430((int)this_00);
       if (this_01->field_02BB != '\0') {
-        thunk_FUN_0041c5a0((AnonShape_0041C5A0_167218F4 *)this_01);
+        sub_0041C5A0(this_01);
       }
       this_01->field_02BB = 0;
       g_currentExceptionFrame = local_50.previous;
@@ -73,9 +73,9 @@ undefined4 __thiscall STColl3C::LoadImagSpr(STColl3C *this,int param_1)
   }
   else {
     g_currentExceptionFrame = local_50.previous;
-    iVar4 = ReportDebugMessage("E:\\__titans\\nick\\to_coll3.cpp",0x1af,0,iVar2,"%s",
+    iVar3 = ReportDebugMessage("E:\\__titans\\nick\\to_coll3.cpp",0x1af,0,iVar2,"%s",
                                "STColl3C::LoadImagSpr");
-    if (iVar4 != 0) {
+    if (iVar3 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
     RaiseInternalException(iVar2,0,"E:\\__titans\\nick\\to_coll3.cpp",0x1b1);

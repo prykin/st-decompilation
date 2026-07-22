@@ -66,14 +66,11 @@ FUN_0065e070(int param_1,undefined4 param_2,uint param_3,uint param_4,uint param
           }
           /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
           this = STAllPlayersC::GetObjPtr
-                           (g_sTAllPlayers_007FA174,(char)local_c,
+                           (g_allPlayers_007FA174,(char)local_c,
                             CONCAT22((short)((uint)puVar4 >> 0x10),*puVar4),CASE_1);
-          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-          if ((this == (STGameObjC *)0x0) ||
-             (iVar9 = (**(code **)&this->vtable[1].field_0x28)(), iVar9 == 0))
+          if ((this == (STGameObjC *)0x0) || (iVar9 = (*this->vtable[1].vfunc_24)(), iVar9 == 0))
           goto cf_continue_loop_0065E27E;
-          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-          uVar5 = (**(code **)&this->vtable->field_0x2c)();
+          uVar5 = (*this->vtable->vfunc_2C)();
           STFishC::sub_004162B0((STFishC *)this,&local_8,&local_6,(undefined2 *)((int)&param_3 + 2))
           ;
           if (param_5 != 0) {
@@ -81,8 +78,7 @@ FUN_0065e070(int param_1,undefined4 param_2,uint param_3,uint param_4,uint param
               if ((param_5 & 0x80000000) == 0) {
                 uVar10 = param_5 & 0x3fffffff;
                 if (uVar10 != 0) {
-                  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-                  iVar9 = (**(code **)&this->vtable->field_0x2c)();
+                  iVar9 = (*this->vtable->vfunc_2C)();
                   if (iVar9 == 0x78) {
                     uVar6 = this->field_0259;
                   }
@@ -105,8 +101,7 @@ LAB_0065e1b6:
 LAB_0065e218:
             pbVar8 = param_7;
             if ((param_7 != (byte *)0x0) && (*param_7 != 0)) {
-              /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-              (**(code **)&this->vtable->field_0x74)(local_2c);
+              (*this->vtable->vfunc_74)(local_2c);
               pbVar11 = local_2c;
               do {
                 bVar1 = *pbVar8;
@@ -128,16 +123,13 @@ LAB_0065e261:
               if (iVar9 != 0) goto cf_continue_loop_0065E27E;
             }
             cVar3 = param_6;
-            /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-            if ((param_6 == -1) ||
-               (iVar9 = (**(code **)&this->vtable->field_0x6c)(), cVar3 == iVar9)) {
+            if ((param_6 == -1) || (iVar9 = (*this->vtable->vfunc_6C)(), cVar3 == iVar9)) {
               local_14 = local_14 + 1;
             }
           }
           else if (uVar5 == 0x78) {
             if ((param_4 & 0x80000000) == 0) {
-              /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-              iVar9 = (**(code **)&this->vtable->field_0x2c)();
+              iVar9 = (*this->vtable->vfunc_2C)();
               if (iVar9 == 0x78) {
                 iVar9 = this->field_0259;
               }

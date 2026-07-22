@@ -74,8 +74,8 @@ STAppC::MainWindowProc
         DAT_0080674c = 2;
         DAT_0080745d = 0;
       }
-      if (PTR_00802a58 != (cLoadingTy *)0x0) {
-        thunk_FUN_00554a50(&PTR_00802a58->field_0000);
+      if (g_cLoading_00802A58 != (cLoadingTy *)0x0) {
+        thunk_FUN_00554a50(&g_cLoading_00802A58->field_0000);
       }
       EndPaint(hWnd,&local_ac);
       g_currentExceptionFrame = local_4c.previous;
@@ -95,8 +95,8 @@ STAppC::MainWindowProc
         if (uVar4 != 0) {
           thunk_FUN_005713b0(0x807620);
         }
-        if (PTR_00802a30 != (CursorClassTy *)0x0) {
-          thunk_FUN_0054b540(PTR_00802a30);
+        if (g_cursorClass_00802A30 != (CursorClassTy *)0x0) {
+          thunk_FUN_0054b540(g_cursorClass_00802A30);
         }
         pHVar5 = LoadCursorA(g_hInstance_00856D70,(LPCSTR)0x7f00);
         SetCursor(pHVar5);
@@ -134,13 +134,13 @@ STAppC::MainWindowProc
     }
     if (param_2 == 0x100) {
       if (param_3 == 0x13) {
-        if (PTR_00802a30 == (CursorClassTy *)0x0) {
+        if (g_cursorClass_00802A30 == (CursorClassTy *)0x0) {
           g_currentExceptionFrame = local_4c.previous;
           return local_8;
         }
         local_bc = 0xa100;
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-        (**(code **)PTR_00802a30->field_0000)(local_cc);
+        (**(code **)g_cursorClass_00802A30->field_0000)(local_cc);
         g_currentExceptionFrame = local_4c.previous;
         return local_8;
       }
@@ -157,9 +157,9 @@ STAppC::MainWindowProc
     }
   }
   else if (param_2 == 0x2660) {
-    Library::DKW::DV::FUN_006c4110(PTR_008075a0);
-    if ((PTR_008075a0->field_0004 & 0x40000000) != 0) {
-      FUN_006c3f00((int)PTR_008075a0);
+    Library::DKW::DV::FUN_006c4110(g_anonShape_006C3FC0_72DDFA27_008075A0);
+    if ((g_anonShape_006C3FC0_72DDFA27_008075A0->field_0004 & 0x40000000) != 0) {
+      FUN_006c3f00((int)g_anonShape_006C3FC0_72DDFA27_008075A0);
     }
     if (DAT_00806738 != 8) {
       DAT_00806738 = 8;

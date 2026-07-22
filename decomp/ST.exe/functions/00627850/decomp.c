@@ -120,8 +120,7 @@ FUN_00627850(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4
   local_38 = (int)(short)(sVar7 * 0xc9 + 100);
   local_34 = (int)(short)(sVar6 * 0xc9 + 100);
   local_30 = (int)(short)((short)local_c * 200 + 100);
-  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-  (*(code *)PTR_00802a38->vtable->field_0008)(0x158,0,0,&local_5c,0);
+  (*g_playSystem_00802A38->vtable->vfunc_08)(0x158,0,0,&local_5c,0);
   return;
 }
 

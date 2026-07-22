@@ -16,7 +16,8 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00558C00::sub_0055BBC0
   AnonShape_0055B9F0_A6E61FFF local_10;
 
   if ((((*(int *)&this->field_0x114 != 0) && (*(int *)&this->field_0x110 != 0)) && (param_5 < 8)) &&
-     ((PTR_00802a38 == (STPlaySystemC *)0x0 || ((byte)(&DAT_008087e9)[param_5 * 0x51] < 8)))) {
+     ((g_playSystem_00802A38 == (STPlaySystemC *)0x0 || ((byte)(&DAT_008087e9)[param_5 * 0x51] < 8))
+     )) {
     /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
     local_10._6_1_ = param_4;
     local_10.field_0004 = param_3;

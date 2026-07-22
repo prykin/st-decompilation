@@ -1,4 +1,4 @@
-FUN_005f0d90:
+STContainerC::sub_005F0D90:
 005F0D90  55                        PUSH EBP
 005F0D91  8B EC                     MOV EBP,ESP
 005F0D93  83 EC 20                  SUB ESP,0x20

@@ -1,0 +1,4 @@
+00592E48  pointer  00592c36
+00592E4C  pointer  00592c72
+00592E50  pointer  00592c50
+00592E54  pointer  00592c8d

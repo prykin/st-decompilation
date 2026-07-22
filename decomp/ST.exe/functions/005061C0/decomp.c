@@ -205,7 +205,7 @@ switchD_00506214_caseD_2:
           iVar10 = thunk_FUN_00529500(local_8);
           iVar20 = -1;
           iVar19 = -1;
-          puVar8 = (uint *)LoadResourceString(local_8,HINSTANCE_00807618);
+          puVar8 = (uint *)LoadResourceString(local_8,g_module_00807618);
           ccFntTy::WrStr(this_00->field_01B8,puVar8,iVar19,iVar20,iVar10);
           DibPut((AnonShape_006B5B10_E0D06CF1 *)this_00->field_0194,iVar3 + 0x49,0x57,'\x01',pbVar5)
           ;
@@ -259,7 +259,7 @@ switchD_00506214_caseD_2:
           uVar4 = 0;
           iVar19 = -1;
           iVar10 = -2;
-          pHVar17 = HINSTANCE_00807618;
+          pHVar17 = g_module_00807618;
           /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
           UVar6 = thunk_FUN_00525290(CONCAT31((int3)((uint)extraout_ECX >> 8),this_00->field_0C11));
           puVar8 = (uint *)LoadResourceString(UVar6,pHVar17);
@@ -318,7 +318,7 @@ switchD_00506214_caseD_2:
       pbVar5 = (byte *)FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_02CA,1);
       DibPut((AnonShape_006B5B10_E0D06CF1 *)this_00->field_0194,GVar14 + 5,0x5c,'\x06',pbVar5);
       ccFntTy::SetSurf(this_00->field_01B8,this_00->field_0194,0,GVar14 + 2,0x52,0xb2,10);
-      pHVar17 = HINSTANCE_00807618;
+      pHVar17 = g_module_00807618;
       UVar6 = thunk_FUN_00523410(*(Global_sub_00523410_param_1Enum *)&this_00->field_0xc12,
                                  this_00->field_0C1A,0);
       pcVar7 = LoadResourceString(UVar6,pHVar17);
@@ -402,7 +402,7 @@ LAB_005070be:
     pbVar5 = (byte *)FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_02CA,1);
     DibPut((AnonShape_006B5B10_E0D06CF1 *)this_00->field_0194,GVar14 + 5,0x5c,'\x06',pbVar5);
     ccFntTy::SetSurf(this_00->field_01B8,this_00->field_0194,0,GVar14 + 2,0x52,0xb2,10);
-    pHVar17 = HINSTANCE_00807618;
+    pHVar17 = g_module_00807618;
     UVar6 = thunk_FUN_00523410(*(Global_sub_00523410_param_1Enum *)&this_00->field_0xc12,
                                this_00->field_0C1A,0);
     pcVar7 = LoadResourceString(UVar6,pHVar17);
@@ -452,7 +452,7 @@ LAB_005070be:
         uVar4 = 0;
         iVar20 = -1;
         iVar19 = -2;
-        puVar8 = (uint *)LoadResourceString(0x2713,HINSTANCE_00807618);
+        puVar8 = (uint *)LoadResourceString(0x2713,g_module_00807618);
         ccFntTy::WrTxt(this_00->field_01B8,puVar8,iVar19,iVar20,uVar4,iVar21,iVar22);
       }
       else {
@@ -517,7 +517,7 @@ LAB_005070be:
     }
     ccFntTy::SetSurf(this_00->field_01B8,this_00->field_0194,0,iVar3 + 2,0x52,0xb2,0x2f);
     if (this_00->field_0C2F == 0) goto LAB_005070be;
-    pcVar7 = LoadResourceString(0x273c,HINSTANCE_00807618);
+    pcVar7 = LoadResourceString(0x273c,g_module_00807618);
     wsprintfA((LPSTR)&DAT_0080f33a,"%d %s",(uint)(ushort)this_00->field_0C2F,pcVar7);
     iVar20 = -1;
     iVar19 = -1;
@@ -545,7 +545,7 @@ LAB_005070be:
     uVar4 = 0;
     iVar19 = -1;
     iVar10 = -2;
-    pHVar17 = HINSTANCE_00807618;
+    pHVar17 = g_module_00807618;
     UVar6 = thunk_FUN_00525890(this_00->field_0BF5);
     puVar8 = (uint *)LoadResourceString(UVar6,pHVar17);
     ccFntTy::WrTxt(this_00->field_01B8,puVar8,iVar10,iVar19,uVar4,iVar20,iVar21);
@@ -599,7 +599,7 @@ LAB_005070be:
     uVar4 = 1;
     iVar20 = -1;
     iVar19 = -3;
-    puVar8 = (uint *)LoadResourceString(0x36b7,HINSTANCE_00807618);
+    puVar8 = (uint *)LoadResourceString(0x36b7,g_module_00807618);
     ccFntTy::WrTxt(this_00->field_01B8,puVar8,iVar19,iVar20,uVar4,iVar21,iVar22);
     ccFntTy::SetSurf(this_00->field_01B8,this_00->field_0194,0,iVar3,0x5d,0x69,0xc);
     iVar22 = -1;
@@ -607,7 +607,7 @@ LAB_005070be:
     uVar4 = 1;
     iVar20 = -1;
     iVar19 = -3;
-    puVar8 = (uint *)LoadResourceString(0x36b8,HINSTANCE_00807618);
+    puVar8 = (uint *)LoadResourceString(0x36b8,g_module_00807618);
     ccFntTy::WrTxt(this_00->field_01B8,puVar8,iVar19,iVar20,uVar4,iVar21,iVar22);
     ccFntTy::SetSurf(this_00->field_01B8,this_00->field_0194,0,iVar3,0x69,0xb2,0xc);
     iVar21 = -1;
@@ -615,7 +615,7 @@ LAB_005070be:
     uVar4 = 1;
     iVar19 = -1;
     iVar3 = -2;
-    puVar8 = (uint *)LoadResourceString(0x36b6,HINSTANCE_00807618);
+    puVar8 = (uint *)LoadResourceString(0x36b6,g_module_00807618);
     ccFntTy::WrTxt(this_00->field_01B8,puVar8,iVar3,iVar19,uVar4,iVar20,iVar21);
     local_8 = local_8 & 0xffffff00;
     if (this_00->field_0C3A != '\0') {
@@ -705,7 +705,7 @@ LAB_005070be:
       uVar4 = 0;
       iVar19 = -1;
       iVar10 = -2;
-      puVar8 = (uint *)LoadResourceString(0x36bd,HINSTANCE_00807618);
+      puVar8 = (uint *)LoadResourceString(0x36bd,g_module_00807618);
       ccFntTy::WrTxt(this_00->field_01B8,puVar8,iVar10,iVar19,uVar4,iVar20,iVar21);
       /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
       PaintDamageXY(this_00,this_00->field_0194,iVar3 + 0x39,0x65,
@@ -746,7 +746,7 @@ LAB_005070be:
       uVar4 = 1;
       iVar19 = -1;
       iVar10 = -2;
-      puVar8 = (uint *)LoadResourceString(0x36bc,HINSTANCE_00807618);
+      puVar8 = (uint *)LoadResourceString(0x36bc,g_module_00807618);
       ccFntTy::WrTxt(this_00->field_01B8,puVar8,iVar10,iVar19,uVar4,iVar20,iVar21);
       wsprintfA(&this_00->field_0x1e1,"%4d",this_00->field_0C3D);
       /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
@@ -764,7 +764,7 @@ LAB_0050777e:
       iVar19 = -1;
       iVar10 = -1;
       iVar3 = -2;
-      puVar8 = (uint *)LoadResourceString(UVar6,HINSTANCE_00807618);
+      puVar8 = (uint *)LoadResourceString(UVar6,g_module_00807618);
 LAB_00507784:
       ccFntTy::WrTxt(this_00->field_01B8,puVar8,iVar3,iVar10,uVar4,iVar19,iVar20);
     }
@@ -779,7 +779,7 @@ LAB_00507784:
     DibPut((AnonShape_006B5B10_E0D06CF1 *)this_00->field_0194,GVar14,0x50,'\x01',
            (byte *)this_00->field_09ED);
     uVar4 = (uint)(ushort)this_00->field_0C34;
-    pcVar7 = LoadResourceString(0x2725,HINSTANCE_00807618);
+    pcVar7 = LoadResourceString(0x2725,g_module_00807618);
     wsprintfA((LPSTR)&DAT_0080f33a,"&1%s &0%d",pcVar7,uVar4);
     ccFntTy::SetSurf(this_00->field_01B8,this_00->field_0194,0,0x56,0x39,0x6d,0x15);
     ccFntTy::WrTxt(this_00->field_01B8,&DAT_0080f33a,-2,-1,0,-1,-1);
@@ -810,7 +810,7 @@ LAB_00507784:
     pbVar5 = (byte *)FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_02CA,1);
     DibPut((AnonShape_006B5B10_E0D06CF1 *)this_00->field_0194,GVar14 + 5,0x5c,'\x06',pbVar5);
     ccFntTy::SetSurf(this_00->field_01B8,this_00->field_0194,0,GVar14 + 2,0x52,0xb2,10);
-    pcVar7 = LoadResourceString(0x2b2c,HINSTANCE_00807618);
+    pcVar7 = LoadResourceString(0x2b2c,g_module_00807618);
     uVar4 = 0xffffffff;
     do {
       pcVar16 = pcVar7;

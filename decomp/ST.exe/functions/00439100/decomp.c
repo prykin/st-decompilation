@@ -908,7 +908,7 @@ cf_common_exit_0043A47C:
     thunk_FUN_004a8e00(local_18,local_14,local_10);
     thunk_FUN_004a8f20(1);
     thunk_FUN_00567510(&g_sound,DAT_008073d8,DAT_008073dc,DAT_008073fc,DAT_0080743c & 0xff);
-    thunk_FUN_0054b540(PTR_00802a30);
+    thunk_FUN_0054b540(g_cursorClass_00802A30);
     DAT_0080674c = 2;
     DAT_0080745d = 0;
   }

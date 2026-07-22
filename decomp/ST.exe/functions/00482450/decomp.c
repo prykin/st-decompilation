@@ -78,7 +78,7 @@ STBoatC::GetExplosionInfo
   *param_3 = pSVar2->field_0043 - local_34._2_2_;
   *param_4 = pSVar2->field_0045 + local_30;
   local_34 = uVar9;
-  FUN_006dd530((void *)pSVar2->field_0211,local_14,&local_c,&local_8);
+  FUN_006dd530(pSVar2->field_0211,local_14,&local_c,&local_8);
   lVar11 = Library::MSVCRT::__ftol();
   local_3c = (uint)(short)lVar11;
   local_38 = (int)local_3c >> 0x1f;

@@ -22,7 +22,8 @@ FUN_00637930(uint param_1,int param_2,int param_3,int param_4,int param_5,uint p
     FUN_006ea960(PTR_00807598,local_8,(float)param_3 * _DAT_007904f8 * _DAT_007904f0,
                  (float)param_4 * _DAT_007904f8 * _DAT_007904f0,
                  (float)param_5 * _DAT_007904f8 * _DAT_007904f0 + _DAT_007904fc);
-    FUN_006ea460(PTR_00807598,local_8,param_1);
+    SubmarineTitans::Recovered::HiddenThis::AnonReceiver_006EA050::sub_006EA460
+              ((AnonReceiver_006EA050 *)PTR_00807598,local_8,param_1);
     if (param_2 == 0) {
       param_1 = 0xffffffff;
     }

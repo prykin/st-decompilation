@@ -99,7 +99,7 @@ undefined4 __thiscall StartSystemTy::LoadGraph(StartSystemTy *this)
     pSVar3->field_0034 = pcVar7;
     puVar6 = pSVar3->field_02F0;
     piVar1 = &pSVar3->field_02EC;
-    FUN_006b2330((uint)PTR_008075a8,(uint *)piVar1,0x32,0x4023f6,*(uint *)(puVar6 + 2),
+    FUN_006b2330(PTR_008075a8,(uint *)piVar1,0x32,0x4023f6,*(uint *)(puVar6 + 2),
                  *(uint *)(puVar6 + 4),(uint)puVar6);
     Library::DKW::DDX::FUN_006b3640((int *)PTR_008075a8,*piVar1,0xffffffff,1,0);
     FUN_006b3af0((int *)PTR_008075a8,*piVar1);
@@ -166,8 +166,8 @@ undefined4 __thiscall StartSystemTy::LoadGraph(StartSystemTy *this)
     }
     pAVar9 = pSVar3->field_0544;
     piVar1 = &pSVar3->field_0540;
-    FUN_006b2330((uint)PTR_008075a8,(uint *)piVar1,0x31,0x4023f6,pAVar9->field_0004,
-                 pAVar9->field_0008,(uint)pAVar9);
+    FUN_006b2330(PTR_008075a8,(uint *)piVar1,0x31,0x4023f6,pAVar9->field_0004,pAVar9->field_0008,
+                 (uint)pAVar9);
     Library::DKW::DDX::FUN_006b3640((int *)PTR_008075a8,*piVar1,0xffffffff,0xd,0xb9);
     FUN_006b3af0((int *)PTR_008075a8,*piVar1);
     iVar4 = 1;
@@ -192,12 +192,12 @@ undefined4 __thiscall StartSystemTy::LoadGraph(StartSystemTy *this)
     }
     puVar6 = pSVar3->field_0682;
     piVar1 = &pSVar3->field_0554;
-    FUN_006b2330((uint)PTR_008075a8,(uint *)piVar1,0x31,0x4023f6,*(uint *)(puVar6 + 2),
+    FUN_006b2330(PTR_008075a8,(uint *)piVar1,0x31,0x4023f6,*(uint *)(puVar6 + 2),
                  *(uint *)(puVar6 + 4),(uint)puVar6);
     Library::DKW::DDX::FUN_006b3640((int *)PTR_008075a8,*piVar1,0xffffffff,0xcb,0x23f);
     FUN_006b3af0((int *)PTR_008075a8,*piVar1);
     pDVar11 = Library::DKW::TBL::SArrayCreate((DArrayTy *)0x0,1,1);
-    pSVar3->field_0686 = &pDVar11->flags;
+    pSVar3->field_0686 = pDVar11;
     Library::DKW::TBL::FUN_006b6020(&pDVar11->flags,0,&DAT_008016a0);
     SpriteClassTy::InitSprite
               ((SpriteClassTy *)&pSVar3->field_055C,(int *)PTR_008075a8,0x31,'\a',(undefined4 *)0x0,
@@ -236,7 +236,7 @@ undefined4 __thiscall StartSystemTy::LoadGraph(StartSystemTy *this)
       puVar10 = (undefined4 *)((int)puVar10 + 1);
     }
     puVar6 = pSVar3->field_067E;
-    FUN_006b2330((uint)PTR_008075a8,(uint *)&pSVar3->field_0558,0x31,0x4023f6,*(uint *)(puVar6 + 2),
+    FUN_006b2330(PTR_008075a8,(uint *)&pSVar3->field_0558,0x31,0x4023f6,*(uint *)(puVar6 + 2),
                  *(uint *)(puVar6 + 4),(uint)puVar6);
     Library::DKW::DDX::FUN_006b3640((int *)PTR_008075a8,pSVar3->field_0558,0xffffffff,0xcd,499);
     g_currentExceptionFrame = local_50.previous;

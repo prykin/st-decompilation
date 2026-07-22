@@ -1,4 +1,4 @@
-FUN_0062fea0:
+STRubbishC::sub_0062FEA0:
 0062FEA0  55                        PUSH EBP
 0062FEA1  8B EC                     MOV EBP,ESP
 0062FEA3  51                        PUSH ECX

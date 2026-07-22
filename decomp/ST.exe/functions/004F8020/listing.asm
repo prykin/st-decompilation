@@ -1,4 +1,4 @@
-FUN_004f8020:
+CPanelTy::sub_004F8020:
 004F8020  55                        PUSH EBP
 004F8021  8B EC                     MOV EBP,ESP
 004F8023  8A 55 08                  MOV DL,byte ptr [EBP + 0x8]

@@ -151,13 +151,13 @@ void __thiscall MainMenuTy::NoneMainMenu(MainMenuTy *this,void *param_1)
         uVar5 = (uint)this_00->field_009A;
       } while (iVar4 < (int)uVar5);
     }
-    if (((this_00->field_1EE3 != '\0') && (PTR_0081176c->field_02E6 != (MMsgTy *)0x0)) &&
-       (PTR_0081176c->field_02E6->field_0065 != '\x01')) {
+    if (((this_00->field_1EE3 != '\0') && (g_startSystem_0081176C->field_02E6 != (MMsgTy *)0x0)) &&
+       (g_startSystem_0081176C->field_02E6->field_0065 != '\x01')) {
       local_8 = 0;
     }
     if (local_8 != 0) {
       if (this_00->field_009A != 0) {
-        local_c = (int *)&this_00->field_0x66;
+        local_c = &this_00->field_0066;
         puVar9 = (undefined4 *)&this_00->field_0xa3;
         iVar4 = 0x68ff;
         do {
@@ -219,8 +219,8 @@ LAB_005b353c:
       } while (iVar4 < (int)(uint)this_00->field_009A);
     }
     iVar4 = 0;
-    if ((PTR_0081176c->field_02E6 != (MMsgTy *)0x0) &&
-       (PTR_0081176c->field_02E6->field_0065 != '\x02')) {
+    if ((g_startSystem_0081176C->field_02E6 != (MMsgTy *)0x0) &&
+       (g_startSystem_0081176C->field_02E6->field_0065 != '\x02')) {
       local_8 = 0;
     }
     if (local_8 != 0) {

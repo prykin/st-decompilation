@@ -26,7 +26,7 @@ uint FUN_00755830(AnonShape_00753C80_4C8E695D *param_1,uint *param_2,int param_3
       puVar8 = puVar8 + 1;
       puVar10 = puVar10 + 1;
     }
-    uVar3 = FUN_00753b40((AnonShape_00753B40_7E7955C3 *)param_1);
+    uVar3 = FUN_00753b40(param_1);
     if ((int)uVar3 < 0) {
       return uVar3;
     }
@@ -91,8 +91,7 @@ uint FUN_00755830(AnonShape_00753C80_4C8E695D *param_1,uint *param_2,int param_3
   }
   else {
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-    FUN_007574c0((AnonShape_007574C0_ED6B02E3 *)param_1,
-                 *(int *)(param_1->field_0008 + 0x34) + param_1->field_0010,param_2,
+    FUN_007574c0(param_1,*(int *)(param_1->field_0008 + 0x34) + param_1->field_0010,param_2,
                  *(int *)(param_1->field_000C + 0x44 + param_3 * 8));
     uVar4 = 0;
   }

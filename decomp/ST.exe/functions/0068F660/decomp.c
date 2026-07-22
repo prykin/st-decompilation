@@ -33,18 +33,17 @@ void __thiscall AiTactClassTy::GiveObjByGrpNum(AiTactClassTy *this,DArrayTy *par
         else {
           puVar5 = (undefined2 *)0x0;
         }
-        if (g_sTAllPlayers_007FA174 == (STAllPlayersC *)0x0) {
+        if (g_allPlayers_007FA174 == (STAllPlayersC *)0x0) {
           objPtr = (STGameObjC *)0x0;
         }
         else {
           /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
           objPtr = STAllPlayersC::GetObjPtr
-                             (g_sTAllPlayers_007FA174,*(char *)&local_8->field_0024,
+                             (g_allPlayers_007FA174,*(char *)&local_8->field_0024,
                               CONCAT22((short)((uint)puVar5 >> 0x10),*puVar5),CASE_1);
         }
         if (objPtr != (STGameObjC *)0x0) {
-          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-          iVar4 = (**(code **)&objPtr->vtable->field_0x2c)();
+          iVar4 = (*objPtr->vtable->vfunc_2C)();
           if ((iVar4 < 1) || (0x28 < iVar4)) {
             bVar3 = false;
           }
@@ -52,7 +51,7 @@ void __thiscall AiTactClassTy::GiveObjByGrpNum(AiTactClassTy *this,DArrayTy *par
             bVar3 = true;
           }
           if ((bVar3) &&
-             (this_00 = (AiFltClassTy *)thunk_FUN_0068e290(local_8,objPtr->field_081C),
+             (this_00 = (AiFltClassTy *)sub_0068E290(local_8,objPtr->field_081C),
              this_00 != (AiFltClassTy *)0x0)) {
             AiFltClassTy::_AddObjFlt(this_00,(uint)objPtr,0);
             FUN_006b0c70(param_1,uVar1);

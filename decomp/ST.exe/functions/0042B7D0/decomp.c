@@ -66,7 +66,8 @@ STAllPlayersC::AddObjsToGroup
         iVar3 = thunk_FUN_00423d80(local_c,groupContent);
         if (iVar3 == 1) {
           local_5 = 0;
-          (*local_c->vtable->slot_08)(local_c,0x65,&local_5);
+          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+          (**(code **)(local_c->vtable + 8))(0x65,&local_5);
         }
         if (uVar6 == param_2) {
           local_20 = 1;
@@ -95,12 +96,12 @@ STAllPlayersC::AddObjsToGroup
       local_2c = 0;
       local_40 = 1;
       local_38 = uVar6 & 0xffff;
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-      (*(code *)PTR_00802a38->vtable->field_0008)(0x10ff,local_1c,&local_10,local_4c,0);
+      (*g_playSystem_00802A38->vtable->vfunc_08)(0x10ff,local_1c,&local_10,local_4c,0);
       Library::DKW::TBL::FUN_006ae140(&array->flags,uVar6 & 0xffff,&local_10);
       STGroupC::AddObjs(local_10,(DArrayTy *)groupContent,0);
       local_5 = 2;
-      (*local_10->vtable->slot_08)(local_10,0x65,&local_5);
+      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+      (**(code **)(local_10->vtable + 8))(0x65,&local_5);
       if (param_4 != (undefined2 *)0x0) {
         *param_4 = (short)uVar6;
       }
@@ -109,7 +110,8 @@ STAllPlayersC::AddObjsToGroup
       DArrayGetElement(local_14,(uint)param_2,&local_c);
       STGroupC::AddObjs(local_c,(DArrayTy *)groupContent,1);
       local_5 = 1;
-      (*local_c->vtable->slot_08)(local_c,0x65,&local_5);
+      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+      (**(code **)(local_c->vtable + 8))(0x65,&local_5);
     }
     dVar1 = array->count;
     uVar7 = 0;
@@ -119,7 +121,7 @@ STAllPlayersC::AddObjsToGroup
         DArrayGetElement(array,uVar7,&local_c);
         if (((local_c != (STGroupC *)0x0) && (local_c->field_0027 == 0)) &&
            (iVar3 = thunk_FUN_004233a0((int)local_c), iVar3 == 0)) {
-          thunk_FUN_0054cf70(PTR_00802a38,*(uint *)&local_c->field_0x8);
+          thunk_FUN_0054cf70(g_playSystem_00802A38,*(uint *)&local_c->field_0x8);
           local_c = (STGroupC *)0x0;
           Library::DKW::TBL::FUN_006ae140(&array->flags,uVar7,&local_c);
         }

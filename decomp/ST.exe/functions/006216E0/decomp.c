@@ -11,9 +11,9 @@ uint __thiscall FUN_006216e0(void *this,undefined4 param_1)
 
   local_14 = 0;
   local_8 = (undefined1)((uint)param_1 >> 0x18);
-  local_10 = PTR_00802a38->field_00E4 << 8;
+  local_10 = g_playSystem_00802A38->field_00E4 << 8;
   /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-  local_c._0_1_ = (undefined1)(PTR_00802a38->field_00E4 >> 0x18);
+  local_c._0_1_ = (undefined1)(g_playSystem_00802A38->field_00E4 >> 0x18);
   /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
   local_c = CONCAT31((int3)param_1,(undefined1)local_c);
   if (*(int *)((int)this + 0x10a) == 0) {

@@ -33,13 +33,13 @@ int __thiscall AiTactClassTy::GetMessage(AiTactClassTy *this,STMessage *message)
   iVar4 = Library::MSVCRT::__setjmp3(local_58.jumpBuffer,0);
   this_00 = local_14;
   if (iVar4 == 0) {
-    local_14->field_012C = PTR_00802a38->field_00E4;
+    local_14->field_012C = g_playSystem_00802A38->field_00E4;
     SVar1 = message->id;
     if (SVar1 < MESS_TORPHIT) {
       if (SVar1 == MESS_SHARED_010F) {
         local_c = (AnonShape_0060EA30_DCEB68AD *)0x0;
         local_10 = (byte *)PrepareToSave(local_14,(uint *)&local_c);
-        STPlaySystemC::SaveObjData(PTR_00802a38,this_00->field_0018,local_10,local_c);
+        STPlaySystemC::SaveObjData(g_playSystem_00802A38,this_00->field_0018,local_10,local_c);
         if (local_10 != (byte *)0x0) {
           FreeAndNull(&local_10);
         }
@@ -47,10 +47,10 @@ int __thiscall AiTactClassTy::GetMessage(AiTactClassTy *this,STMessage *message)
       else if (SVar1 == MESS_ID_NONE) {
         if (local_14->field_0099 == 0) {
           local_14->field_0099 = 1;
-          thunk_FUN_00690a40((AnonShape_00690A40_CA73153C *)local_14);
+          sub_00690A40(local_14);
         }
         else {
-          thunk_FUN_00690ab0((AnonShape_00690AB0_91AAAD49 *)local_14);
+          sub_00690AB0(local_14);
           /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
           ExecClaim(this_00,unaff_EDI);
         }
@@ -73,7 +73,7 @@ int __thiscall AiTactClassTy::GetMessage(AiTactClassTy *this,STMessage *message)
         }
       }
       else if (SVar1 == MESS_SHARED_0003) {
-        thunk_FUN_0068e010((int)local_14);
+        sub_0068E010(local_14);
       }
     }
     else if (SVar1 == MESS_ID_ALLCREATE) {
@@ -89,8 +89,9 @@ int __thiscall AiTactClassTy::GetMessage(AiTactClassTy *this,STMessage *message)
             piVar8 = (int *)0x0;
           }
           local_8 = 0;
-          if (((*piVar8 == 0) || (iVar4 = FUN_006e62d0(PTR_00802a38,*piVar8,&local_8), iVar4 != 0))
-             || (local_8 == 0)) {
+          if (((*piVar8 == 0) ||
+              (iVar4 = FUN_006e62d0(g_playSystem_00802A38,*piVar8,&local_8), iVar4 != 0)) ||
+             (local_8 == 0)) {
             piVar8[1] = 0;
             *piVar8 = 0;
           }

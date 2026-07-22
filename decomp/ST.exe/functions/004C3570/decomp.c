@@ -48,21 +48,21 @@ int __thiscall TLOBaseTy::fireProc(TLOBaseTy *this)
         if (this_00->field_0255 != 0) {
           if ((puVar8[-4] != 0) &&
              (*(int *)(&DAT_00792040 + this_00->field_0235 * 4) + *puVar8 <=
-              PTR_00802a38->field_00E4)) {
-            *puVar8 = PTR_00802a38->field_00E4;
-            uVar5 = PTR_00802a38->field_00E4;
+              g_playSystem_00802A38->field_00E4)) {
+            *puVar8 = g_playSystem_00802A38->field_00E4;
+            uVar5 = g_playSystem_00802A38->field_00E4;
             bVar9 = uVar5 < puVar8[1] + *(int *)(&DAT_00792040 + this_00->field_0235 * 4) * 10;
             if (!bVar9) {
               puVar8[1] = uVar5;
               fireFindCheckTarget(this_00,(int)local_8,0);
             }
             if (puVar8[2] != 0) {
-              puVar8[0xc] = PTR_00802a38->field_00E4;
+              puVar8[0xc] = g_playSystem_00802A38->field_00E4;
               puVar8[0xd] = 100;
               if ((bVar9) ||
                  ((AnonPointee_TLOBaseTy_0291 *)puVar8[3] == (AnonPointee_TLOBaseTy_0291 *)0x0)) {
                 puVar8[3] = 0;
-                FUN_006e62d0(PTR_00802a38,puVar8[2],(int *)(puVar8 + 3));
+                FUN_006e62d0(g_playSystem_00802A38,puVar8[2],(int *)(puVar8 + 3));
               }
               pAVar1 = (AnonPointee_TLOBaseTy_0291 *)puVar8[3];
               if (pAVar1 != (AnonPointee_TLOBaseTy_0291 *)0x0) {
@@ -78,22 +78,22 @@ int __thiscall TLOBaseTy::fireProc(TLOBaseTy *this)
                   /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                   local_c = CONCAT22(local_c._2_2_,this_00->field_0045);
                 }
-                /* ST_PSEUDO[raw_indirect_call,packed_or_unaligned_piece]: expected typed vtable/callback call with explicit __thiscall receiver; expected named packed member, bit extract/compose, or unaligned load */
-                sVar3 = (*(code *)this_00->vtable->field_0010)
+                /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+                sVar3 = (*this_00->vtable->vfunc_10)
                                   (CONCAT22((short)((uint)pAVar1 >> 0x10),pAVar1->field_0041),
                                    pAVar1->field_0043,pAVar1->field_0045,local_14,local_10,local_c);
                 iVar4 = (sVar3 + 0xb4) % 0x168;
                 if (puVar8[-2] == 8) {
                   iVar4 = (iVar4 / 0x2d) * 0x2d;
                 }
-                thunk_FUN_004c34a0(this_00,iVar4);
+                sub_004C34A0(this_00,iVar4);
               }
             }
           }
           if (((this_00->field_0255 != 0) && (puVar8[-4] != 0)) && (puVar8[2] == 0)) {
             if (puVar8[0xb] == 0) {
-              if (puVar8[0xd] + puVar8[0xc] <= PTR_00802a38->field_00E4) {
-                puVar8[0xc] = PTR_00802a38->field_00E4;
+              if (puVar8[0xd] + puVar8[0xc] <= g_playSystem_00802A38->field_00E4) {
+                puVar8[0xc] = g_playSystem_00802A38->field_00E4;
                 puVar8[0xb] = 1;
                 do {
                   uVar5 = this_00->field_001C * 0x41c64e6d + 0x3039;
@@ -102,17 +102,15 @@ int __thiscall TLOBaseTy::fireProc(TLOBaseTy *this)
                   puVar8[0xe] = uVar5;
                 } while (uVar5 == this_00->field_0259);
                 if (*(int *)(&DAT_00795afc + this_00->field_0235 * 4) != 0) {
-                  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-                  (*(code *)this_00->vtable->field_0090)
-                            (3,*(int *)(&DAT_00795afc + this_00->field_0235 * 4));
+                  (*this_00->vtable->vfunc_90)(3,*(int *)(&DAT_00795afc + this_00->field_0235 * 4));
                 }
               }
             }
             else {
-              uVar5 = thunk_FUN_004c34a0(this_00,puVar8[0xe]);
+              uVar5 = sub_004C34A0(this_00,puVar8[0xe]);
               puVar8[0xb] = uVar5;
               if (uVar5 == 0) {
-                puVar8[0xc] = PTR_00802a38->field_00E4;
+                puVar8[0xc] = g_playSystem_00802A38->field_00E4;
                 uVar5 = this_00->field_001C * 0x41c64e6d + 0x3039;
                 this_00->field_001C = uVar5;
                 puVar8[0xd] = (uVar5 >> 0x10) % 0x4c + 0x19;
@@ -120,7 +118,7 @@ int __thiscall TLOBaseTy::fireProc(TLOBaseTy *this)
             }
           }
         }
-        uVar5 = PTR_00802a38->field_00E4;
+        uVar5 = g_playSystem_00802A38->field_00E4;
         iVar4 = thunk_FUN_004e8230(this_00->field_0024,this_00->field_0235,(int)local_8);
         piVar7 = local_8;
         if (iVar4 + puVar8[-5] <= uVar5) {
@@ -132,12 +130,12 @@ int __thiscall TLOBaseTy::fireProc(TLOBaseTy *this)
             fireFindCheckTarget(this_00,(int)local_8,1);
             if (((*(int *)(&DAT_00792a90 + ((int)piVar7 + this_00->field_0235 * 2) * 4) == 2) ||
                 ((*(int *)(&DAT_00792a90 + ((int)piVar7 + this_00->field_0235 * 2) * 4) == 3 &&
-                 (iVar4 = thunk_FUN_004c56b0(this_00,piVar7), iVar4 != 0)))) || (puVar8[2] != 0)) {
-              puVar8[0xc] = PTR_00802a38->field_00E4;
+                 (iVar4 = sub_004C56B0(this_00,piVar7), iVar4 != 0)))) || (puVar8[2] != 0)) {
+              puVar8[0xc] = g_playSystem_00802A38->field_00E4;
               puVar8[0xd] = 100;
               if (puVar8[2] != 0) {
                 if ((AnonPointee_TLOBaseTy_0291 *)puVar8[3] == (AnonPointee_TLOBaseTy_0291 *)0x0) {
-                  FUN_006e62d0(PTR_00802a38,puVar8[2],(int *)(puVar8 + 3));
+                  FUN_006e62d0(g_playSystem_00802A38,puVar8[2],(int *)(puVar8 + 3));
                 }
                 puVar8[8] = (int)(short)((AnonPointee_TLOBaseTy_0291 *)puVar8[3])->field_0041;
                 puVar8[9] = (int)(short)((AnonPointee_TLOBaseTy_0291 *)puVar8[3])->field_0043;
@@ -145,7 +143,7 @@ int __thiscall TLOBaseTy::fireProc(TLOBaseTy *this)
               }
               puVar8[6] = 0;
               if (*(int *)(&DAT_007915f0 + ((int)piVar7 + this_00->field_0235 * 2) * 4) == 0) {
-                thunk_FUN_004c4550(this_00,piVar7);
+                sub_004C4550(this_00,piVar7);
               }
               else {
                 SetState(this_00,5,1);
@@ -178,9 +176,9 @@ LAB_004c3985:
         if (((*(int *)(&DAT_00793e28 + iVar4) == 2) &&
             ((int)puVar8[0x10] < *(int *)(&DAT_00794038 + iVar4))) &&
            (iVar4 = thunk_FUN_004e8230(this_00->field_0024,this_00->field_0235,(int)piVar7),
-           puVar8[0x11] + iVar4 * 10 <= PTR_00802a38->field_00E4)) {
+           puVar8[0x11] + iVar4 * 10 <= g_playSystem_00802A38->field_00E4)) {
           puVar8[0x10] = puVar8[0x10] + 1;
-          puVar8[0x11] = PTR_00802a38->field_00E4;
+          puVar8[0x11] = g_playSystem_00802A38->field_00E4;
         }
       }
       local_8 = (int *)((int)local_8 + 1);

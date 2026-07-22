@@ -1,0 +1,15 @@
+005CD85C  pointer  005cd5a5
+005CD860  pointer  005cd5bc
+005CD864  pointer  005cd5d3
+005CD868  byte  0h
+005CD869  byte  2h
+005CD86A  byte  2h
+005CD86B  byte  2h
+005CD86C  byte  2h
+005CD86D  byte  2h
+005CD86E  byte  2h
+005CD86F  byte  1h
+005CD870  byte  2h
+005CD871  byte  2h
+005CD872  byte  0h
+005CD873  byte  1h

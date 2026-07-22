@@ -1,0 +1,10 @@
+0047CBF4  pointer  0047c097
+0047CBF8  pointer  0047c0e2
+0047CBFC  pointer  0047c22c
+0047CC00  pointer  0047ca0e
+0047CC04  pointer  0047c1f6
+0047CC08  pointer  0047c47f
+0047CC0C  pointer  0047c4cb
+0047CC10  pointer  0047c6bd
+0047CC14  pointer  0047ca0e
+0047CC18  pointer  0047c5ac

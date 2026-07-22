@@ -1,49 +1,53 @@
 
-undefined4 __thiscall FUN_004b7f90(void *this,int param_1)
+/* [STMethodOwnerApplier] Structural method owner recovered as TLOBaseTy.
+   Evidence: this_call_owners=[TLOBaseTy]; agreed_this_calls=2; incoming_this_accesses=3;
+   incoming_edx_uses=0; incoming_stack_parameter_uses=3; direct_non_thunk_callers=0;
+   incoming_ecx_receiver_callers=0; attributed_named_callers=1; owner_evidence_coverage=adequate */
+
+undefined4 __thiscall TLOBaseTy::sub_004B7F90(TLOBaseTy *this,int param_1)
 
 {
-  int iVar1;
-  undefined4 uVar2;
+  uint uVar1;
+  int iVar2;
+  undefined4 uVar3;
 
-  uVar2 = 0;
-  switch(*(undefined4 *)((int)this + 0x245)) {
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  case 0:
-    if (((*(int *)((int)this + 0x255) != 0) && (param_1 == 2)) && (*(int *)((int)this + 0x259) != 0)
-       ) {
+  uVar3 = 0;
+  switch(this->field_0245) {
+  case CASE_0:
+    if (((this->field_0255 != 0) && (param_1 == 2)) && (this->field_0259 != 0)) {
       return 0;
     }
     break;
-  case 4:
-    if ((*(int *)((int)this + 0x3dc) != 0) ||
-       (((iVar1 = *(int *)((int)this + 0x46c), iVar1 != 0 && (iVar1 != 1)) && (iVar1 != 2)))) {
-      uVar2 = 0;
+  case CASE_4:
+    if ((this->field_03DC != 0) ||
+       (((uVar1 = this->field_046C, uVar1 != 0 && (uVar1 != 1)) && (uVar1 != 2)))) {
+      uVar3 = 0;
       goto cf_common_exit_004B8058;
     }
     break;
-  case 5:
+  case CASE_4|CASE_1:
     if (((param_1 != 0) && (param_1 != 1)) && (param_1 != 6)) goto cf_common_exit_004B8058;
     break;
-  case 0xffffffff:
+  case ~CASE_0:
     goto switchD_004b7fa6_caseD_ffffffff;
   }
-  iVar1 = thunk_FUN_004ac910((void *)((int)this + 0x1d5),'\x0e');
-  if ((iVar1 == *(int *)(*(int *)((int)this + 0x1f5) + 0x208)) ||
-     (iVar1 = thunk_FUN_004ac910((void *)((int)this + 0x1d5),'\x0e'),
-     iVar1 == *(int *)(*(int *)((int)this + 0x1f5) + 0x20c))) {
-    if (*(int *)(&DAT_00791a10 + *(int *)((int)this + 0x235) * 4) == 0) {
+  iVar2 = thunk_FUN_004ac910(&this->field_01D5,'\x0e');
+  if ((iVar2 == this->field_01F5->field_0208) ||
+     (iVar2 = thunk_FUN_004ac910(&this->field_01D5,'\x0e'), iVar2 == this->field_01F5->field_020C))
+  {
+    if (*(int *)(&DAT_00791a10 + this->field_0235 * 4) == 0) {
 switchD_004b7fa6_caseD_ffffffff:
-      uVar2 = 1;
+      uVar3 = 1;
     }
     else {
-      uVar2 = thunk_FUN_004cc040((int)this);
+      uVar3 = thunk_FUN_004cc040((int)this);
     }
   }
 cf_common_exit_004B8058:
   if (param_1 != 3) {
-    return uVar2;
+    return uVar3;
   }
-  uVar2 = thunk_FUN_004c7070(this,1);
-  return uVar2;
+  uVar3 = thunk_FUN_004c7070(this,1);
+  return uVar3;
 }
 

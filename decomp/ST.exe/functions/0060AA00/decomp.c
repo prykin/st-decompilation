@@ -82,8 +82,7 @@ void __fastcall FUN_0060aa00(AnonShape_0060AA00_19A5DB50 *param_1)
               lVar8 = Library::MSVCRT::__ftol();
               iVar4 = (int)lVar8 + *(int *)(iVar6 + 0x1c);
               *(int *)(iVar6 + 0x10) = iVar4;
-              FUN_006e3210((AnonShape_006E3210_FE49985F *)PTR_00807598,
-                           (iVar1 * PTR_00807598->field_0380) / 0xc9,
+              FUN_006e3210(PTR_00807598,(iVar1 * PTR_00807598->field_0380) / 0xc9,
                            (iVar4 * PTR_00807598->field_0380) / 0xc9);
               lVar8 = Library::MSVCRT::__ftol();
               *(int *)(iVar6 + 0x14) = (short)lVar8 + 0x2d;
@@ -135,7 +134,7 @@ void __fastcall FUN_0060aa00(AnonShape_0060AA00_19A5DB50 *param_1)
     }
     else {
       param_1->field_0226 = param_1->field_01FD;
-      uVar3 = PTR_00802a38->field_00E4;
+      uVar3 = g_playSystem_00802A38->field_00E4;
       param_1->field_0248 = 1;
       param_1->field_0250 = uVar3 + 0x1e;
     }

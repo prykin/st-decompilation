@@ -172,8 +172,7 @@ LAB_005b7ad9:
         memset(local_58, 0, 0x20); /* compiler bulk-zero initialization */
         local_58[3] = 2;
         local_58[4] = 0x693f;
-        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-        (*(code *)pSVar4->vtable->field_0018)(local_58);
+        (*pSVar4->vtable->vfunc_18)(local_58);
         g_currentExceptionFrame = local_bc.previous;
         return;
       }
@@ -243,8 +242,7 @@ LAB_005b7655:
           local_78[3] = 2;
           local_78[4] = 0x693f;
           local_78[2] = iVar6;
-          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-          (*(code *)this_00->field_000C->vtable->field_0018)(local_78);
+          (*this_00->field_000C->vtable->vfunc_18)(local_78);
         }
         if (this_00->field_1A5F != '\0') {
           local_14 = 0;
@@ -281,10 +279,10 @@ LAB_005b7655:
                 cVar16 = CASE_FFFFFFFE;
                 iVar9 = 0x1e;
                 iVar6 = 0x7d;
-                puVar12 = (uint *)LoadResourceString(*local_8,HINSTANCE_00807618);
+                puVar12 = (uint *)LoadResourceString(*local_8,g_module_00807618);
                 puVar8 = ccFntTy::CreateTypeSSpr
-                                   (PTR_0081176c->field_0030,puVar12,iVar6,iVar9,cVar16,uVar7,iVar17
-                                    ,iVar18,iVar19);
+                                   (g_startSystem_0081176C->field_0030,puVar12,iVar6,iVar9,cVar16,
+                                    uVar7,iVar17,iVar18,iVar19);
                 /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
                 (**(code **)(UVar3 + 8))(puVar8,uVar20,uVar21);
                 local_8[0x30] = 0;
@@ -313,8 +311,7 @@ LAB_005b7655:
         local_38[3] = 2;
         local_38[4] = 0x693f;
         local_38[2] = iVar6;
-        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-        (*(code *)this_00->field_000C->vtable->field_0018)(local_38);
+        (*this_00->field_000C->vtable->vfunc_18)(local_38);
       }
       bVar2 = this_00->field_1A5A;
       if ((bVar2 != 0xff) && (*(int *)(&this_00->field_0xd1 + (uint)bVar2 * 0x1fb) != 0)) {

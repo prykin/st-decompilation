@@ -57,7 +57,7 @@ int __thiscall STExplosion::GetMessage(STExplosion *this,STMessage *message)
     if (SVar3 != MESS_SHARED_010F) {
       if (SVar3 == MESS_ID_NONE) {
         if (0 < *(int *)&this_00->field_0x2b7) {
-          iVar7 = (PTR_00802a38->field_00E4 - *(int *)&this_00->field_0x26e) +
+          iVar7 = (g_playSystem_00802A38->field_00E4 - *(int *)&this_00->field_0x26e) +
                   *(int *)&this_00->field_0x2b7;
           if ((iVar7 == 0xf) && (this_00->field_0x26d != '\0')) {
             if (*(int *)&this_00->field_0x2bb == 0) {
@@ -80,7 +80,7 @@ int __thiscall STExplosion::GetMessage(STExplosion *this,STMessage *message)
           }
         }
         if (this_00->field_0x26d == '\0') {
-          iVar7 = thunk_FUN_00604350((AnonShape_00604350_448AE2F1 *)this_00);
+          iVar7 = sub_00604350((STExplosion *)this_00);
           if (iVar7 != 0) {
             thunk_FUN_00604820((int)this_00);
             this_00->field_0x26d = 1;
@@ -112,9 +112,9 @@ int __thiscall STExplosion::GetMessage(STExplosion *this,STMessage *message)
             pAVar9 = (AnonShape_00604A90_035626E6 *)&pAVar9->field_0x4;
             puVar10 = puVar10 + 1;
           }
-          thunk_FUN_00605130((AnonShape_00605130_C97429EC *)local_10);
+          sub_00605130((STExplosion *)local_10);
           puVar2 = &this_01->field_0x272;
-          iVar7 = thunk_FUN_00604350((AnonShape_00604350_448AE2F1 *)this_01);
+          iVar7 = sub_00604350((STExplosion *)this_01);
           if (iVar7 != 0) {
             this_01->field_0x26d = 1;
           }
@@ -141,12 +141,11 @@ int __thiscall STExplosion::GetMessage(STExplosion *this,STMessage *message)
             }
             *(int *)&this_01->field_0x276 = iVar7 + -2;
             *(undefined4 *)&this_01->field_0x27e = 5;
-            iVar7 = thunk_FUN_00606050(this_01,*(int *)&pAVar4->field_0x1c,
-                                       *(int *)&pAVar4->field_0x20,*(int *)&pAVar4->field_0x24,
-                                       *(int *)&pAVar4->field_0x28,*(uint **)&pAVar4->field_0x34,
-                                       *(undefined4 *)&pAVar4->field_0x38,
-                                       *(int *)&pAVar4->field_0x3c,
-                                       *(undefined4 *)&pAVar4->field_0x30,this_01->field_0x26d);
+            iVar7 = sub_00606050((STExplosion *)this_01,*(int *)&pAVar4->field_0x1c,
+                                 *(int *)&pAVar4->field_0x20,*(int *)&pAVar4->field_0x24,
+                                 *(int *)&pAVar4->field_0x28,*(uint **)&pAVar4->field_0x34,
+                                 *(undefined4 *)&pAVar4->field_0x38,*(int *)&pAVar4->field_0x3c,
+                                 *(undefined4 *)&pAVar4->field_0x30,this_01->field_0x26d);
             this_01->field_0269 = iVar7;
             g_currentExceptionFrame = local_54.previous;
             return 0;
@@ -278,9 +277,9 @@ int __thiscall STExplosion::GetMessage(STExplosion *this,STMessage *message)
         g_currentExceptionFrame = local_54.previous;
         return 0;
       }
-      thunk_FUN_00604970(this_00);
+      sub_00604970((STExplosion *)this_00);
       if (this_00->field_0x26d != '\0') {
-        thunk_FUN_00605780((int)this_00);
+        sub_00605780((STExplosion *)this_00);
       }
       if (*(AnonShape_006366D0_80B1100F **)&this_00->field_0x2bb !=
           (AnonShape_006366D0_80B1100F *)0x0) {
@@ -288,7 +287,7 @@ int __thiscall STExplosion::GetMessage(STExplosion *this,STMessage *message)
         Library::MSVCRT::FUN_0072e2b0(*(HoloTy **)&this_00->field_0x2bb);
         *(undefined4 *)&this_00->field_0x2bb = 0;
       }
-      thunk_FUN_00604120((int)this_00);
+      sub_00604120((STExplosion *)this_00);
       g_currentExceptionFrame = local_54.previous;
       return 0;
     }
@@ -297,7 +296,7 @@ int __thiscall STExplosion::GetMessage(STExplosion *this,STMessage *message)
       g_currentExceptionFrame = local_54.previous;
       return 0;
     }
-    STPlaySystemC::SaveObjData(PTR_00802a38,this_00->field_0018,local_c,local_8);
+    STPlaySystemC::SaveObjData(g_playSystem_00802A38,this_00->field_0018,local_c,local_8);
     value = &local_c;
   }
   else {

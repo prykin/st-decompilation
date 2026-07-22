@@ -1,0 +1,3 @@
+006D19CE  B8 01 00 00 00 C3 8B 65 E8 6A 5D 68 E4 E1 7E 00  |.......e.j]h..~.|
+006D19DE  8B 15 7C D7 7E 00 52 6A FB E8 54 44 FD FF C7 45  |..|.~.Rj..TD...E|
+006D19EE  FC FF FF FF FF                                   |.....|

@@ -35,7 +35,7 @@ void __thiscall FUN_0063fe70(void *this,char param_1)
           }
           else if (iVar4 != 2) {
             if ((int)local_8 < 0x3c) {
-              *(uint *)(iVar5 + 0x30) = PTR_00802a38->field_00E4;
+              *(uint *)(iVar5 + 0x30) = g_playSystem_00802A38->field_00E4;
               iVar4 = *(int *)(iVar5 + 0x24) + -1;
               if (*(int *)(iVar5 + 0x20) < iVar4) {
                 *(int *)(iVar5 + 0x20) = *(int *)(iVar5 + 0x20) + 1;
@@ -50,7 +50,7 @@ void __thiscall FUN_0063fe70(void *this,char param_1)
                            *(float *)(iVar5 + 0x10) + _DAT_007904fc);
             }
             else {
-              uVar3 = PTR_00802a38->field_00E4;
+              uVar3 = g_playSystem_00802A38->field_00E4;
               if ((1 < uVar3 - *(uint *)(iVar5 + 0x30)) || (uVar3 == *(uint *)(iVar5 + 0x30))) {
                 *(uint *)(iVar5 + 0x30) = uVar3;
                 iVar4 = *(int *)(iVar5 + 0x24) + -1;

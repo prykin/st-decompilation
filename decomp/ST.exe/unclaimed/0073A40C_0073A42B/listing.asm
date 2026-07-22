@@ -1,0 +1,8 @@
+0073A40C  pointer  0073a46f
+0073A410  pointer  0073a45c
+0073A414  pointer  0073a454
+0073A418  pointer  0073a44c
+0073A41C  pointer  0073a444
+0073A420  pointer  0073a43c
+0073A424  pointer  0073a434
+0073A428  pointer  0073a42c

@@ -1,0 +1,5 @@
+0060A338  pointer  0060a03d
+0060A33C  pointer  0060a0d6
+0060A340  pointer  0060a0c1
+0060A344  pointer  0060a03d
+0060A348  pointer  0060a0c1

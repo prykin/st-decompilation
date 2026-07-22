@@ -1,0 +1,8 @@
+0056F1B8  pointer  0056f096
+0056F1BC  pointer  0056f096
+0056F1C0  pointer  0056f096
+0056F1C4  pointer  0056f1b0
+0056F1C8  pointer  0056f1b0
+0056F1CC  pointer  0056f096
+0056F1D0  pointer  0056f1b0
+0056F1D4  pointer  0056f096

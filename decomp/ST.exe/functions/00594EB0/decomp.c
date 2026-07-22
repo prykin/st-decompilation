@@ -40,65 +40,65 @@ FSGSTy::OutTRGlProc(FSGSTy *this,int param_1,MMMObjTy *param_2,MMMObjTy *param_3
     if (errorCode == 0) {
       MMMObjTy::OutRGlProc
                 (param_3,param_1,param_2,param_3,(int)param_4,param_5,param_6,param_7 + -0x5f,
-                 &PTR_0081176c->field_0140);
+                 &g_startSystem_0081176C->field_0140);
       local_8 = param_4 + param_6 + -0x15;
       Library::DKW::DDX::FUN_006c6660(param_1,(int)local_8,param_5 + 0x26,7,param_7 - 0xab,3,0);
       Library::DKW::DDX::FUN_006c6470
                 (param_1,(int)local_8,param_5 + 0x26,(undefined4 *)0x7,param_7 + -0xab,3,
-                 PTR_0081176c->field_0140);
+                 g_startSystem_0081176C->field_0140);
       uVar7 = 2;
-      pcVar6 = PTR_0081176c->field_0034;
+      pcVar6 = g_startSystem_0081176C->field_0034;
       uVar5 = 0xffffffff;
       uVar4 = 0xffffffff;
-      puVar2 = (uint *)LoadResourceString(0x2616,HINSTANCE_00807618);
+      puVar2 = (uint *)LoadResourceString(0x2616,g_module_00807618);
       StartServTy::WrTextDDX
                 (this_01,0,(int)(param_4 + 10),param_5 + 0xf8,0xe6,0x19,puVar2,uVar4,uVar5,pcVar6,
                  uVar7);
       Library::DKW::DDX::FUN_006c6470
                 (param_1,(int)(param_4 + 10),param_5 + 0xf8,(undefined4 *)0xe6,0x19,4,
-                 PTR_0081176c->field_0140);
+                 g_startSystem_0081176C->field_0140);
       Library::DKW::DDX::FUN_006c6470
                 (param_1,(int)(param_4 + 0xc),param_5 + 0xfa,(undefined4 *)0xe2,0x15,4,
-                 PTR_0081176c->field_0140);
+                 g_startSystem_0081176C->field_0140);
       MMMObjTy::OutRGlProc
                 (param_2,param_1,param_2,param_3,(int)param_4,param_5 + -0x5c + param_7,param_6,0x5c
-                 ,&PTR_0081176c->field_0140);
+                 ,&g_startSystem_0081176C->field_0140);
       local_8 = (StartServTy *)(param_6 + -0x14);
       uVar7 = 2;
-      pcVar6 = PTR_0081176c->field_0034;
+      pcVar6 = g_startSystem_0081176C->field_0034;
       uVar5 = 0xffffffff;
       uVar4 = 0;
-      puVar2 = (uint *)LoadResourceString(0x2569,HINSTANCE_00807618);
+      puVar2 = (uint *)LoadResourceString(0x2569,g_module_00807618);
       this_00 = (StartServTy *)(param_5 + -0x57 + param_7);
       StartServTy::WrTextDDX
                 (this_00,0,(int)(param_4 + 10),(int)this_00,(int)local_8,0xf,puVar2,uVar4,uVar5,
                  pcVar6,uVar7);
       FUN_006c6850(param_1,(int)(param_4 + 10),param_5 + -0x46 + param_7,(int)local_8,0x16,
-                   PTR_0081176c->field_0140);
+                   g_startSystem_0081176C->field_0140);
       uVar7 = 2;
-      pcVar6 = PTR_0081176c->field_0034;
+      pcVar6 = g_startSystem_0081176C->field_0034;
       uVar5 = 0xffffffff;
       uVar4 = 0;
-      puVar2 = (uint *)LoadResourceString(0x2550,HINSTANCE_00807618);
+      puVar2 = (uint *)LoadResourceString(0x2550,g_module_00807618);
       StartServTy::WrTextDDX
                 (param_4,0,(int)(param_4 + 10),param_5 + -0x2f + param_7,(int)local_8,0xf,puVar2,
                  uVar4,uVar5,pcVar6,uVar7);
       FUN_006c6850(param_1,(int)(param_4 + 10),param_5 + -0x1e + param_7,100,0x16,
-                   PTR_0081176c->field_0140);
+                   g_startSystem_0081176C->field_0140);
       uVar7 = 2;
-      pcVar6 = PTR_0081176c->field_0034;
+      pcVar6 = g_startSystem_0081176C->field_0034;
       uVar5 = 0xffffffff;
       uVar4 = 0xffffffff;
-      puVar2 = (uint *)LoadResourceString(0x2566,HINSTANCE_00807618);
+      puVar2 = (uint *)LoadResourceString(0x2566,g_module_00807618);
       StartServTy::WrTextDDX
                 (this_02,0,(int)(param_4 + 0x78),param_5 + 0x155,0xa0,0x19,puVar2,uVar4,uVar5,pcVar6
                  ,uVar7);
       Library::DKW::DDX::FUN_006c6470
                 (param_1,(int)(param_4 + 0x78),param_5 + 0x155,(undefined4 *)0xa0,0x19,4,
-                 PTR_0081176c->field_0140);
+                 g_startSystem_0081176C->field_0140);
       Library::DKW::DDX::FUN_006c6470
                 (param_1,(int)(param_4 + 0x7a),param_5 + 0x157,(undefined4 *)0x9c,0x15,4,
-                 PTR_0081176c->field_0140);
+                 g_startSystem_0081176C->field_0140);
       g_currentExceptionFrame = local_4c.previous;
       return;
     }

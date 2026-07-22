@@ -1,27 +1,33 @@
 
-uint __thiscall FUN_006226c0(void *this,uint param_1,int param_2)
+/* [STMethodOwnerApplier] Structural method owner recovered as STMineSetC.
+   Evidence: this_call_owners=[STMineSetC]; agreed_this_calls=3; incoming_this_accesses=3;
+   incoming_edx_uses=0; incoming_stack_parameter_uses=7; direct_non_thunk_callers=0;
+   incoming_ecx_receiver_callers=0; attributed_named_callers=1; owner_evidence_coverage=adequate */
+
+uint __thiscall STMineSetC::sub_006226C0(STMineSetC *this,uint param_1,int param_2)
 
 {
-  VisibleClassTy *pVVar1;
-  uint uVar2;
-  int iVar3;
-  void *local_8;
+  AnonPointee_STMineSetC_0211 *pAVar1;
+  VisibleClassTy *pVVar2;
+  STMineSetC_field_02AEState SVar3;
+  int iVar4;
+  STMineSetC *local_8;
 
-  uVar2 = *(uint *)((int)this + 0x2ae);
+  SVar3 = this->field_02AE;
   local_8 = this;
-  if (((uVar2 == 0) || (uVar2 == 1)) &&
-     (uVar2 = (uint)DAT_0080874d, *(uint *)((int)this + 0x24) != uVar2)) {
-    switch(*(undefined1 *)((int)this + 0x2ad)) {
+  if (((SVar3 == CASE_0) || (SVar3 == CASE_1)) &&
+     (SVar3 = (STMineSetC_field_02AEState)DAT_0080874d, this->field_0024 != SVar3)) {
+    switch(this->field_02AD) {
     case 0:
     case 2:
-      uVar2 = thunk_FUN_0041d6c0(this,uVar2);
-      if (uVar2 == 0) {
+      SVar3 = thunk_FUN_0041d6c0(this,SVar3);
+      if (SVar3 == CASE_0) {
         return 0;
       }
       break;
     case 1:
-      uVar2 = thunk_FUN_0041d620(this,uVar2);
-      if (uVar2 == 0) {
+      SVar3 = thunk_FUN_0041d620(this,SVar3);
+      if (SVar3 == CASE_0) {
         return 0;
       }
       break;
@@ -29,33 +35,33 @@ uint __thiscall FUN_006226c0(void *this,uint param_1,int param_2)
       return 0;
     }
   }
-  iVar3 = *(int *)((int)this + 0x211);
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  if (((*(int *)(iVar3 + 0x48) <= (int)param_1) && ((int)param_1 <= *(int *)(iVar3 + 0x58))) &&
-     ((uVar2 = param_2, *(int *)(iVar3 + 0x44) <= param_2 && (param_2 <= *(int *)(iVar3 + 0x54)))))
-  {
+  pAVar1 = this->field_0211;
+  if ((((int)pAVar1->field_0048 <= (int)param_1) && ((int)param_1 <= (int)pAVar1->field_0058)) &&
+     ((SVar3 = param_2, (int)pAVar1->field_0044 <= param_2 && (param_2 <= (int)pAVar1->field_0054)))
+     ) {
     param_1 = FUN_006ddbd0();
-    pVVar1 = g_visibleClass_00802A88;
-    uVar2 = param_1;
-    if ((param_1 == 0) || (g_visibleClass_00802A88 == (VisibleClassTy *)0x0))
+    pVVar2 = g_visibleClass_00802A88;
+    SVar3 = param_1;
+    if ((param_1 == CASE_0) || (g_visibleClass_00802A88 == (VisibleClassTy *)0x0))
     goto cf_common_exit_006227F9;
     /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-    uVar2 = CONCAT31((int3)(param_1 >> 8),DAT_0080874d);
-    iVar3 = (int)*(short *)((int)this + 0x4b);
+    SVar3 = CONCAT31((int3)(param_1 >> 8),DAT_0080874d);
+    iVar4 = (int)this->field_004B;
     if ((DAT_0080874d == 0xff) ||
-       ((((((uVar2 = 0, g_visibleClass_00802A88->field_00F8 == 0 ||
-            (uVar2 = thunk_FUN_00558c00(g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,
-                                        (int)*(short *)((int)this + 0x47),
-                                        (int)*(short *)((int)this + 0x49),&param_2,(int *)&local_8),
-            iVar3 < 0)) || (4 < iVar3)) || ((param_2 < 0 || (pVVar1->field_0030 <= param_2)))) ||
-         ((uVar2 = g_centeredOffsets5[iVar3] + (int)local_8, (int)uVar2 < 0 ||
-          ((pVVar1->field_0034 <= (int)uVar2 || (pVVar1->field_004C == (byte *)0x0)))))) ||
-        (uVar2 = (uint)pVVar1->field_004C[param_2 + uVar2 * pVVar1->field_0030], uVar2 != 0))))
+       ((((((SVar3 = CASE_0, g_visibleClass_00802A88->field_00F8 == 0 ||
+            (SVar3 = thunk_FUN_00558c00(g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,
+                                        (int)this->field_0047,(int)this->field_0049,&param_2,
+                                        (int *)&local_8), iVar4 < 0)) || (4 < iVar4)) ||
+          ((param_2 < 0 || (pVVar2->field_0030 <= param_2)))) ||
+         ((SVar3 = (int)&local_8->vtable + g_centeredOffsets5[iVar4], (int)SVar3 < 0 ||
+          ((pVVar2->field_0034 <= (int)SVar3 || (pVVar2->field_004C == (byte *)0x0)))))) ||
+        (SVar3 = (STMineSetC_field_02AEState)
+                 pVVar2->field_004C[param_2 + SVar3 * pVVar2->field_0030], SVar3 != CASE_0))))
     goto cf_common_exit_006227F9;
   }
   param_1 = 0;
 /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
 cf_common_exit_006227F9:
-  return CONCAT31((int3)(uVar2 >> 8),(undefined1)param_1);
+  return CONCAT31((int3)(SVar3 >> 8),(undefined1)param_1);
 }
 

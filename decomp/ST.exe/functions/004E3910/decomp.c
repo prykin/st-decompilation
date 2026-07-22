@@ -23,12 +23,12 @@ undefined4 __fastcall FUN_004e3910(int *param_1)
   int local_c;
   DArrayTy *local_8;
 
-  if ((uint)param_1[0x13a] <= PTR_00802a38->field_00E4) {
+  if ((uint)param_1[0x13a] <= g_playSystem_00802A38->field_00E4) {
     uVar5 = param_1[7] * 0x41c64e6d + 0x3039;
     param_1[7] = uVar5;
     local_10 = 0;
     local_c = 0;
-    param_1[0x13a] = (uVar5 >> 0x10) % 0x9e + 0x1d4 + PTR_00802a38->field_00E4;
+    param_1[0x13a] = (uVar5 >> 0x10) % 0x9e + 0x1d4 + g_playSystem_00802A38->field_00E4;
     local_14 = param_1;
     if (0 < param_1[0x139]) {
       do {
@@ -186,11 +186,11 @@ undefined4 __fastcall FUN_004e3910(int *param_1)
               this = (STT3DSprC *)((int)param_1 + 0x1d5);
               param_1[local_c + 0x134] = *(int *)(iVar9 + 0x18);
               cVar11 = '\0';
-              iVar9 = thunk_FUN_004acd30(this,'\v');
+              iVar9 = STT3DSprC::sub_004ACD30(this,'\v');
               thunk_FUN_004abce0(this,0xb,0,iVar9,cVar11);
               STT3DSprC::SetCurFase(this,'\v',0);
               thunk_FUN_004ac700(this,'\v');
-              STT3DSprC::StartShow(this,0xb,PTR_00802a38->field_00E4);
+              STT3DSprC::StartShow(this,0xb,g_playSystem_00802A38->field_00E4);
               /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
               (**(code **)(*param_1 + 0x90))(3,0x25d);
             }
@@ -198,7 +198,7 @@ undefined4 __fastcall FUN_004e3910(int *param_1)
           }
         }
         else {
-          iVar3 = FUN_006e62d0(PTR_00802a38,param_1[local_c + 0x134],(int *)0x0);
+          iVar3 = FUN_006e62d0(g_playSystem_00802A38,param_1[local_c + 0x134],(int *)0x0);
           local_c = iVar9;
           if (iVar3 != 0) {
             param_1[iVar9 + 0x134] = 0;

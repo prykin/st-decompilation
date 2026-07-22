@@ -1,26 +1,31 @@
 
-undefined4 __thiscall FUN_00602660(void *this,undefined4 *param_1)
+/* [STMethodOwnerApplier] Structural method owner recovered as STDestC.
+   Evidence: this_call_owners=[STDestC]; agreed_this_calls=1; incoming_this_accesses=14;
+   incoming_edx_uses=0; incoming_stack_parameter_uses=1; direct_non_thunk_callers=0;
+   incoming_ecx_receiver_callers=0; attributed_named_callers=1; owner_evidence_coverage=adequate */
+
+undefined4 __thiscall STDestC::sub_00602660(STDestC *this,undefined4 *param_1)
 
 {
   int iVar1;
   undefined4 *puVar2;
 
-  puVar2 = (undefined4 *)((int)this + 0x231);
+  puVar2 = (undefined4 *)&this->field_0x231;
   for (iVar1 = 0x5f; iVar1 != 0; iVar1 = iVar1 + -1) {
     *puVar2 = *param_1;
     param_1 = param_1 + 1;
     puVar2 = puVar2 + 1;
   }
   *(undefined2 *)puVar2 = *(undefined2 *)param_1;
-  *(undefined4 *)((int)this + 0x39b) = 0xffffffff;
-  if (*(int *)((int)this + 0x241) == 1) {
-    *(undefined2 *)((int)this + 0x47) = *(undefined2 *)((int)this + 0x255);
-    *(undefined2 *)((int)this + 0x49) = *(undefined2 *)((int)this + 599);
-    *(undefined2 *)((int)this + 0x4b) = *(undefined2 *)((int)this + 0x259);
+  this->field_039B = -1;
+  if (this->field_0241 == 1) {
+    this->field_0047 = this->field_0255;
+    this->field_0049 = this->field_0257;
+    this->field_004B = this->field_0259;
   }
-  *(undefined2 *)((int)this + 0x41) = *(undefined2 *)((int)this + 0x37b);
-  *(undefined2 *)((int)this + 0x43) = *(undefined2 *)((int)this + 0x37f);
-  *(undefined2 *)((int)this + 0x45) = *(undefined2 *)((int)this + 899);
+  this->field_0041 = (short)this->field_037B;
+  this->field_0043 = (short)this->field_037F;
+  this->field_0045 = (short)this->field_0383;
   return 0x17e;
 }
 

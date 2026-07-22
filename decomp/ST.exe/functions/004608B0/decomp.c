@@ -67,7 +67,7 @@ int __thiscall STBoatC::Defence(STBoatC *this,int param_1)
     this->field_0475 = this->field_0047;
     this->field_0477 = this->field_0049;
     this->field_0479 = this->field_004B;
-    this->field_047B = (uint *)0x0;
+    this->field_047B = (DArrayTy *)0x0;
     this->field_0487 = 0xffffffff;
     this->field_048B = 0xffff;
     this->field_082E = 0xffffffff;
@@ -84,8 +84,7 @@ int __thiscall STBoatC::Defence(STBoatC *this,int param_1)
     iVar9 = this->field_0836 + -1;
     this->field_0836 = iVar9;
     if (1 < iVar9) {
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-      iVar9 = (*(code *)this->vtable->field_00D8)();
+      iVar9 = (*this->vtable->vfunc_D8)();
       return (-(uint)(iVar9 != 0) & 0xfffffffd) + 2;
     }
     this->field_082E = 0;
@@ -119,7 +118,7 @@ int __thiscall STBoatC::Defence(STBoatC *this,int param_1)
       }
       /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
       pSVar7 = STAllPlayersC::GetObjPtr
-                         (g_sTAllPlayers_007FA174,*(char *)&this->field_0487,
+                         (g_allPlayers_007FA174,*(char *)&this->field_0487,
                           CONCAT22(extraout_var_01,*(undefined2 *)&this->field_048B),
                           this->field_0483);
       /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
@@ -199,8 +198,7 @@ int __thiscall STBoatC::Defence(STBoatC *this,int param_1)
         return 2;
       case 9:
         thunk_FUN_00416270(pSVar7,(undefined2 *)&local_14,&local_18,&local_1c);
-        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-        sVar5 = (*(code *)this->vtable->field_0010)
+        sVar5 = (*this->vtable->vfunc_10)
                           (this->field_0041,this->field_0043,this->field_0045,local_14,local_18,
                            local_1c);
         uVar10 = sub_004176C0(this,sVar5);
@@ -213,8 +211,8 @@ int __thiscall STBoatC::Defence(STBoatC *this,int param_1)
       if (iVar9 == 1) {
         sVar5 = this->field_0469;
         this->field_0469 = -sVar5;
-        /* ST_PSEUDO[return_width_artifact,raw_indirect_call]: candidate call-output artifact: verify return width, clobbers, or x87 state; expected typed vtable/callback call with explicit __thiscall receiver */
-        iVar9 = (**(code **)&this->vtable->field_0x18)
+        /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+        iVar9 = (*this->vtable->vfunc_18)
                           (CONCAT22(extraout_var_02,this->field_0047),this->field_0049,
                            -sVar5 + this->field_004B);
         if (iVar9 == 1) {
@@ -240,7 +238,7 @@ int __thiscall STBoatC::Defence(STBoatC *this,int param_1)
       if ((this->field_082E == 2) && (iVar9 = GetDefenceTarget(this,CASE_2), iVar9 == 0)) {
         /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
         pSVar7 = STAllPlayersC::GetObjPtr
-                           (g_sTAllPlayers_007FA174,*(char *)&this->field_0487,
+                           (g_allPlayers_007FA174,*(char *)&this->field_0487,
                             CONCAT22(extraout_var_04,*(undefined2 *)&this->field_048B),
                             this->field_0483);
         /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
@@ -316,8 +314,7 @@ int __thiscall STBoatC::Defence(STBoatC *this,int param_1)
           break;
         case 9:
           thunk_FUN_00416270(pSVar7,(undefined2 *)&local_14,&local_18,&local_1c);
-          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-          sVar5 = (*(code *)this->vtable->field_0010)
+          sVar5 = (*this->vtable->vfunc_10)
                             (this->field_0041,this->field_0043,this->field_0045,local_14,local_18,
                              local_1c);
           uVar10 = sub_004176C0(this,sVar5);
@@ -341,7 +338,7 @@ int __thiscall STBoatC::Defence(STBoatC *this,int param_1)
         if ((this->field_082E == 3) && (iVar9 = GetDefenceTarget(this,CASE_3), iVar9 == 0)) {
           /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
           pSVar7 = STAllPlayersC::GetObjPtr
-                             (g_sTAllPlayers_007FA174,*(char *)&this->field_0487,
+                             (g_allPlayers_007FA174,*(char *)&this->field_0487,
                               CONCAT22(extraout_var_05,*(undefined2 *)&this->field_048B),
                               this->field_0483);
           /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
@@ -420,8 +417,7 @@ switchD_00461334_caseD_1:
             return 2;
           case 9:
             thunk_FUN_00416270(pSVar7,(undefined2 *)&local_14,&local_18,&local_1c);
-            /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-            sVar5 = (*(code *)this->vtable->field_0010)
+            sVar5 = (*this->vtable->vfunc_10)
                               (this->field_0041,this->field_0043,this->field_0045,local_14,local_18,
                                local_1c);
             uVar10 = sub_004176C0(this,sVar5);
@@ -451,9 +447,8 @@ switchD_00461334_caseD_1:
         this->field_082E = 0;
       }
     }
-/* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
 switchD_0046166b_caseD_2:
-    iVar9 = (*(code *)this->vtable->field_00D8)();
+    iVar9 = (*this->vtable->vfunc_D8)();
     return (-(uint)(iVar9 != 0) & 0xfffffffd) + 2;
   }
   if (0 < this->field_073A) goto switchD_0046166b_caseD_2;
@@ -496,8 +491,8 @@ LAB_00460adb:
                   this->field_0471 = uVar3;
                   if (this->field_004B == 0) {
                     this->field_0469 = 1;
-                    /* ST_PSEUDO[return_width_artifact,raw_indirect_call]: candidate call-output artifact: verify return width, clobbers, or x87 state; expected typed vtable/callback call with explicit __thiscall receiver */
-                    iVar9 = (**(code **)&this->vtable->field_0x18)
+                    /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+                    iVar9 = (*this->vtable->vfunc_18)
                                       (CONCAT22(extraout_var,this->field_0047),
                                        CONCAT22((short)((uint)uVar3 >> 0x10),this->field_0049),1);
                     if (iVar9 != 1) {
@@ -525,8 +520,8 @@ LAB_00460d94:
                   }
                   else if (this->field_004B == 4) {
                     this->field_0469 = -1;
-                    /* ST_PSEUDO[return_width_artifact,raw_indirect_call]: candidate call-output artifact: verify return width, clobbers, or x87 state; expected typed vtable/callback call with explicit __thiscall receiver */
-                    iVar9 = (**(code **)&this->vtable->field_0x18)
+                    /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+                    iVar9 = (*this->vtable->vfunc_18)
                                       (CONCAT22(extraout_var_03,this->field_0047),
                                        CONCAT22(extraout_var,this->field_0049),3);
                     if (iVar9 != 1) goto LAB_00460d94;
@@ -556,8 +551,8 @@ LAB_00460d94:
                     if ((uVar10 & 0x10000) == 0) {
                       this->field_0469 = -1;
                     }
-                    /* ST_PSEUDO[raw_indirect_call,packed_or_unaligned_piece]: expected typed vtable/callback call with explicit __thiscall receiver; expected named packed member, bit extract/compose, or unaligned load */
-                    iVar9 = (**(code **)&this->vtable->field_0x18)
+                    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+                    iVar9 = (*this->vtable->vfunc_18)
                                       (this->field_0047,
                                        CONCAT22((short)((uint)iVar9 >> 0x10),this->field_0049),
                                        this->field_0469 + this->field_004B);
@@ -573,8 +568,8 @@ LAB_00460d94:
                     else {
                       sVar5 = this->field_0469;
                       this->field_0469 = -sVar5;
-                      /* ST_PSEUDO[return_width_artifact,raw_indirect_call]: candidate call-output artifact: verify return width, clobbers, or x87 state; expected typed vtable/callback call with explicit __thiscall receiver */
-                      iVar9 = (**(code **)&this->vtable->field_0x18)
+                      /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+                      iVar9 = (*this->vtable->vfunc_18)
                                         (CONCAT22(extraout_var_00,this->field_0047),this->field_0049
                                          ,-sVar5 + this->field_004B);
                       if (iVar9 != 1) goto LAB_00460d94;
@@ -625,7 +620,7 @@ LAB_00460d94:
   if (iVar9 == 0) {
     /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
     pSVar7 = STAllPlayersC::GetObjPtr
-                       (g_sTAllPlayers_007FA174,*(char *)&this->field_0487,
+                       (g_allPlayers_007FA174,*(char *)&this->field_0487,
                         CONCAT22((short)(uVar10 >> 0x10),*(undefined2 *)&this->field_048B),
                         this->field_0483);
     /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
@@ -735,8 +730,7 @@ LAB_00460fac:
       break;
     case 9:
       thunk_FUN_00416270(pSVar7,(undefined2 *)&local_14,&local_18,&local_1c);
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-      sVar5 = (*(code *)this->vtable->field_0010)
+      sVar5 = (*this->vtable->vfunc_10)
                         (this->field_0041,this->field_0043,this->field_0045,local_14,local_18,
                          local_1c);
       uVar10 = sub_004176C0(this,sVar5);
@@ -758,8 +752,7 @@ LAB_00460fac:
           return -1;
         }
         this->field_00B7 = uVar3;
-        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-        iVar9 = (*(code *)this->vtable->field_00D8)();
+        iVar9 = (*this->vtable->vfunc_D8)();
         return (-(uint)(iVar9 != 0) & 0xfffffffd) + 2;
       }
       this->field_0475 = this->field_005B;
@@ -767,9 +760,8 @@ LAB_00460fac:
       this->field_0479 = this->field_005F;
     }
   }
-/* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
 LAB_00461264:
-  iVar9 = (*(code *)this->vtable->field_00D8)();
+  iVar9 = (*this->vtable->vfunc_D8)();
   return (-(uint)(iVar9 != 0) & 0xfffffffd) + 2;
 }
 

@@ -1,4 +1,4 @@
-FUN_005050b0:
+CPanelTy::sub_005050B0:
 005050B0  55                        PUSH EBP
 005050B1  8B EC                     MOV EBP,ESP
 005050B3  A0 4E 87 80 00            MOV AL,[0x0080874e]

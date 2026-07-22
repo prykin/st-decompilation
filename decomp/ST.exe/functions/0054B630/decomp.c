@@ -2,7 +2,7 @@
 void __thiscall FUN_0054b630(void *this,undefined4 param_1,undefined4 param_2)
 
 {
-  thunk_FUN_0054a8d0(this);
+  CursorClassTy::sub_0054A8D0(this);
   thunk_FUN_0054b540(this);
   *(undefined4 *)((int)this + 0x4a2) = param_1;
   *(undefined4 *)((int)this + 0x4aa) = param_2;

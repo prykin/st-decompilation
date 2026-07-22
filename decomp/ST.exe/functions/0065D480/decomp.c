@@ -1,9 +1,12 @@
 
-void __fastcall FUN_0065d480(int param_1)
+/* [STPrototypeApplier] Propagated parameter 0.
+   Evidence: 0065D2A0 -> 0065D480 @ 0065D3D6 */
+
+void __fastcall FUN_0065d480(AiFltClassTy *param_1)
 
 {
-  if (param_1 != 0) {
-    thunk_FUN_00668670(param_1 + 0x20);
+  if (param_1 != (AiFltClassTy *)0x0) {
+    thunk_FUN_00668670((int)&param_1->field_0020);
     return;
   }
   thunk_FUN_00668670(0);

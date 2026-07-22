@@ -1,4 +1,4 @@
-FUN_0062f900:
+STRubbishC::sub_0062F900:
 0062F900  55                        PUSH EBP
 0062F901  8B EC                     MOV EBP,ESP
 0062F903  83 EC 20                  SUB ESP,0x20

@@ -47,12 +47,12 @@ void __thiscall STGroupC::RestoreGrpData(STGroupC *this,int param_1)
   }
   else {
     puVar5 = FUN_006b00c0((uint *)0x0,(uint *)(&local_8->field_0x0 + local_8->field_001C),
-                          &LAB_004045c5);
+                          thunk_FUN_00423e30);
     pSVar2->field_0029 = puVar5;
   }
   iVar4 = *(int *)&pAVar3->field_0x24;
   if (iVar4 != -1) {
-    puVar5 = FUN_006b00c0((uint *)0x0,(uint *)(&pAVar3->field_0x0 + iVar4),&LAB_004045c5);
+    puVar5 = FUN_006b00c0((uint *)0x0,(uint *)(&pAVar3->field_0x0 + iVar4),thunk_FUN_00423e30);
     pSVar2->field_002D = puVar5;
     g_currentExceptionFrame = local_50.previous;
     return;

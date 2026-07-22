@@ -1,27 +1,32 @@
 
-void __fastcall FUN_005f6f60(int *param_1)
+/* [STMethodOwnerApplier] Structural method owner recovered as STColl3C.
+   Evidence: this_call_owners=[STColl3C]; agreed_this_calls=1; incoming_this_accesses=15;
+   incoming_edx_uses=0; incoming_stack_parameter_uses=0; direct_non_thunk_callers=0;
+   incoming_ecx_receiver_callers=0; attributed_named_callers=1; owner_evidence_coverage=adequate */
+
+void __thiscall STColl3C::sub_005F6F60(STColl3C *this)
 
 {
-  STT3DSprC *this;
+  STColl3CVTable_at_1D5 **this_00;
   short sVar1;
   undefined1 uVar2;
   bool bVar3;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined3 extraout_var;
+  STColl3C_field_02DDState SVar4;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined3 extraout_var_00;
-  uint uVar4;
-  int iVar5;
-  undefined4 uVar6;
+  uint uVar5;
+  int iVar6;
   int iVar7;
-  undefined4 *puVar8;
+  ushort *puVar8;
   uint uVar9;
   uint uVar10;
   undefined4 uVar11;
   undefined2 uVar12;
   undefined4 local_2c;
   undefined4 local_28;
-  undefined4 *local_24;
+  ushort *local_24;
   uint local_20;
   undefined1 local_1c [4];
   int local_18;
@@ -31,667 +36,587 @@ void __fastcall FUN_005f6f60(int *param_1)
   short local_8;
   short local_6;
 
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  switch(*(undefined4 *)((int)param_1 + 0x2dd)) {
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  case 1:
-    if ((*(uint *)((int)param_1 + 0x2e1) <= PTR_00802a38->field_00E4) &&
-       (*(int *)((int)param_1 + 0x2ea) == 0)) {
-      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-      if (*(int *)((int)param_1 + 0x2b7) < 0) {
-        /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-        iVar5 = thunk_FUN_005f8650(param_1,*(int *)((int)param_1 + 0x245),
-                                   *(int *)((int)param_1 + 0x249),*(int *)((int)param_1 + 0x24d));
-        if (iVar5 != 0) {
-          uVar6 = thunk_FUN_005f6ad0();
-          *(char *)((int)param_1 + 0x2b6) = (char)uVar6;
-          if ((char)uVar6 != '\0') {
-            STColl3C::LoadImagSpr((STColl3C *)param_1,1);
+  switch(this->field_02DD) {
+  case CASE_1:
+    if ((this->field_02E1 <= g_playSystem_00802A38->field_00E4) && (this->field_02EA == 0)) {
+      if (this->field_02B7 < 0) {
+        iVar6 = thunk_FUN_005f8650(this,this->field_0245,this->field_0249,this->field_024D);
+        if (iVar6 != 0) {
+          uVar11 = thunk_FUN_005f6ad0();
+          this->field_02B6 = (char)uVar11;
+          if ((char)uVar11 != '\0') {
+            LoadImagSpr(this,1);
           }
-          *(undefined1 *)((int)param_1 + 699) = 1;
-          *(undefined1 *)((int)param_1 + 0x29d) = 1;
-          *(undefined4 *)((int)param_1 + 0x2dd) = 2;
-          *(undefined1 *)((int)param_1 + 0x2e5) = 0;
+          this->field_02BB = 1;
+          this->field_029D = 1;
+          this->field_02DD = CASE_2;
+          this->field_02E5 = 0;
           return;
         }
       }
       else {
-        iVar5 = thunk_FUN_005fa8b0(param_1,(int *)((int)param_1 + 0x27d),
-                                   (int *)((int)param_1 + 0x281),(int *)((int)param_1 + 0x285));
-        /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-        if (((iVar5 != 0) && (iVar5 = thunk_FUN_005f89f0(param_1,2), iVar5 != 0)) &&
-           (iVar5 = thunk_FUN_00417a20(param_1,*(short *)((int)param_1 + 0x291),
-                                       *(short *)((int)param_1 + 0x295),
-                                       *(short *)((int)param_1 + 0x299),1), iVar5 == 0)) {
-          *(undefined4 *)((int)param_1 + 0x2dd) = 3;
-          thunk_FUN_004ad5e0((int)param_1 + 0x1d5);
-          *(undefined1 *)((int)param_1 + 699) = 2;
-          iVar5 = *(short *)(DAT_00806724 + 0x23) + -1;
-          *(int *)((int)param_1 + 0x2d1) = iVar5;
-          thunk_FUN_004ace30((void *)((int)param_1 + 0x1d5),
-                             *(uint *)(DAT_00806724 + 0x30 + iVar5 * 4),
-                             (int)*(short *)(DAT_00806724 + 0x2c));
-          thunk_FUN_005fada0(param_1,0,0,2);
-          if (param_1[0xa8] == 0) {
-            *(undefined1 *)((int)param_1 + 0x29f) = 0;
+        iVar6 = sub_005FA8B0(this,&this->field_027D,&this->field_0281,&this->field_0285);
+        if (((iVar6 != 0) && (iVar6 = thunk_FUN_005f89f0(this,2), iVar6 != 0)) &&
+           (iVar6 = thunk_FUN_00417a20(this,*(short *)&this->field_0291,*(short *)&this->field_0295,
+                                       *(short *)&this->field_0299,1), iVar6 == 0)) {
+          this->field_02DD = CASE_3;
+          thunk_FUN_004ad5e0((int)&this->vtable_at_1d5);
+          this->field_02BB = 2;
+          iVar6 = *(short *)(DAT_00806724 + 0x23) + -1;
+          this->field_02D1 = iVar6;
+          STT3DSprC::sub_004ACE30
+                    ((STT3DSprC *)&this->vtable_at_1d5,*(uint *)(DAT_00806724 + 0x30 + iVar6 * 4),
+                     (int)*(short *)(DAT_00806724 + 0x2c));
+          thunk_FUN_005fada0(this,0,0,2);
+          if (this->field_02A0 == 0) {
+            this->field_029F = 0;
             return;
           }
         }
       }
     }
     break;
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  case 2:
-    if (*(char *)((int)param_1 + 0x2e5) != '\0') {
-      *(undefined4 *)((int)param_1 + 0x2dd) = 1;
+  case CASE_2:
+    if (this->field_02E5 != '\0') {
+      this->field_02DD = CASE_1;
       return;
     }
-    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-    if (*(int *)((int)param_1 + 0x2ea) != 0) {
-      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-      if (*(char *)((int)param_1 + 0x29e) != '\0') {
-        thunk_FUN_005f9450((AnonShape_005F9450_64149E40 *)param_1);
+    if (this->field_02EA != 0) {
+      if (this->field_029E != '\0') {
+        sub_005F9450(this);
       }
-      if (param_1[0xa8] < 1) goto cf_common_exit_005F7A68;
-      *(undefined1 *)((int)param_1 + 0x29f) = 1;
+      if (this->field_02A0 < 1) goto cf_common_exit_005F7A68;
+      this->field_029F = 1;
     }
-    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-    if (*(char *)((int)param_1 + 0x29f) == '\0') {
-      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-      if (*(char *)((int)param_1 + 0x29e) == '\0') {
-        if ((PTR_00802a38->field_00E4 + param_1[6] & 3) != 0) {
+    if (this->field_029F == '\0') {
+      if (this->field_029E == '\0') {
+        if ((g_playSystem_00802A38->field_00E4 + this->field_0018 & 3) != 0) {
           return;
         }
-        uVar2 = thunk_FUN_005f9310(param_1,0);
+        uVar2 = thunk_FUN_005f9310(this,0);
         /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
         if (CONCAT31(extraout_var,uVar2) != 0) {
-          *(undefined4 *)((int)param_1 + 0x28d) = 0;
+          this->field_028D = 0;
           return;
         }
-        /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-        iVar5 = *(int *)((int)param_1 + 0x28d) + 1;
-        *(int *)((int)param_1 + 0x28d) = iVar5;
-        if (iVar5 < 6) {
-          if (iVar5 < 0xb) {
+        iVar6 = this->field_028D + 1;
+        this->field_028D = iVar6;
+        if (iVar6 < 6) {
+          if (iVar6 < 0xb) {
             return;
           }
           goto LAB_005f744e;
         }
-        iVar5 = thunk_FUN_005f89f0(param_1,2);
-        if (iVar5 == 0) {
+        iVar6 = thunk_FUN_005f89f0(this,2);
+        if (iVar6 == 0) {
           return;
         }
-        /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-        iVar5 = thunk_FUN_00417a20(param_1,*(short *)((int)param_1 + 0x291),
-                                   *(short *)((int)param_1 + 0x295),*(short *)((int)param_1 + 0x299)
-                                   ,1);
-        if (iVar5 != 0) {
+        iVar6 = thunk_FUN_00417a20(this,*(short *)&this->field_0291,*(short *)&this->field_0295,
+                                   *(short *)&this->field_0299,1);
+        if (iVar6 != 0) {
           return;
         }
-        *(undefined4 *)((int)param_1 + 0x2dd) = 3;
-        thunk_FUN_004ad5e0((int)param_1 + 0x1d5);
-        *(undefined1 *)((int)param_1 + 699) = 2;
+        this->field_02DD = CASE_3;
+        thunk_FUN_004ad5e0((int)&this->vtable_at_1d5);
+        this->field_02BB = 2;
         sVar1 = *(short *)(DAT_00806724 + 0x23);
         goto LAB_005f7400;
       }
-      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-      iVar5 = thunk_FUN_005f88d0(param_1,*(int *)((int)param_1 + 0x289),0,(int *)0x0,
-                                 (undefined4 *)0x0,(undefined4 *)0x0);
-      if (iVar5 == 0) {
-        thunk_FUN_005f9450((AnonShape_005F9450_64149E40 *)param_1);
+      iVar6 = thunk_FUN_005f88d0(this,this->field_0289,0,(int *)0x0,(undefined4 *)0x0,
+                                 (undefined4 *)0x0);
+      if (iVar6 == 0) {
+        sub_005F9450(this);
         return;
       }
-      iVar5 = thunk_FUN_005f89f0(param_1,2);
-      if (iVar5 == 0) {
+      iVar6 = thunk_FUN_005f89f0(this,2);
+      if (iVar6 == 0) {
         return;
       }
-      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-      iVar5 = thunk_FUN_00417a20(param_1,*(short *)((int)param_1 + 0x291),
-                                 *(short *)((int)param_1 + 0x295),*(short *)((int)param_1 + 0x299),1
-                                );
-      if (iVar5 != 0) {
+      iVar6 = thunk_FUN_00417a20(this,*(short *)&this->field_0291,*(short *)&this->field_0295,
+                                 *(short *)&this->field_0299,1);
+      if (iVar6 != 0) {
         return;
       }
-      *(undefined4 *)((int)param_1 + 0x2dd) = 3;
-      thunk_FUN_004ad5e0((int)param_1 + 0x1d5);
-      *(undefined1 *)((int)param_1 + 699) = 2;
-      iVar5 = *(short *)(DAT_00806724 + 0x23) + -1;
-      *(int *)((int)param_1 + 0x2d1) = iVar5;
-      thunk_FUN_004ace30((void *)((int)param_1 + 0x1d5),*(uint *)(DAT_00806724 + 0x30 + iVar5 * 4),
-                         (int)*(short *)(DAT_00806724 + 0x2c));
-      thunk_FUN_005fada0(param_1,0,0,2);
-      *(undefined1 *)((int)param_1 + 699) = 1;
-      *(undefined1 *)((int)param_1 + 0x29d) = 0;
+      this->field_02DD = CASE_3;
+      thunk_FUN_004ad5e0((int)&this->vtable_at_1d5);
+      this->field_02BB = 2;
+      iVar6 = *(short *)(DAT_00806724 + 0x23) + -1;
+      this->field_02D1 = iVar6;
+      STT3DSprC::sub_004ACE30
+                ((STT3DSprC *)&this->vtable_at_1d5,*(uint *)(DAT_00806724 + 0x30 + iVar6 * 4),
+                 (int)*(short *)(DAT_00806724 + 0x2c));
+      thunk_FUN_005fada0(this,0,0,2);
+      this->field_02BB = 1;
+      this->field_029D = 0;
     }
     else {
-      iVar5 = thunk_FUN_005fa8b0(param_1,(int *)((int)param_1 + 0x27d),(int *)((int)param_1 + 0x281)
-                                 ,(int *)((int)param_1 + 0x285));
-      if (iVar5 == 0) {
+      iVar6 = sub_005FA8B0(this,&this->field_027D,&this->field_0281,&this->field_0285);
+      if (iVar6 == 0) {
 LAB_005f744e:
-        thunk_FUN_005faff0(param_1,200);
+        thunk_FUN_005faff0(this,200);
         return;
       }
-      iVar5 = thunk_FUN_005f89f0(param_1,2);
-      if (iVar5 == 0) {
+      iVar6 = thunk_FUN_005f89f0(this,2);
+      if (iVar6 == 0) {
         return;
       }
-      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-      iVar5 = thunk_FUN_00417a20(param_1,*(short *)((int)param_1 + 0x291),
-                                 *(short *)((int)param_1 + 0x295),*(short *)((int)param_1 + 0x299),1
-                                );
-      if (iVar5 != 0) {
+      iVar6 = thunk_FUN_00417a20(this,*(short *)&this->field_0291,*(short *)&this->field_0295,
+                                 *(short *)&this->field_0299,1);
+      if (iVar6 != 0) {
         return;
       }
-      *(undefined4 *)((int)param_1 + 0x2dd) = 3;
-      thunk_FUN_004ad5e0((int)param_1 + 0x1d5);
-      *(undefined1 *)((int)param_1 + 699) = 2;
+      this->field_02DD = CASE_3;
+      thunk_FUN_004ad5e0((int)&this->vtable_at_1d5);
+      this->field_02BB = 2;
       sVar1 = *(short *)(DAT_00806724 + 0x23);
-/* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
 LAB_005f7400:
-      *(int *)((int)param_1 + 0x2d1) = sVar1 + -1;
-      thunk_FUN_004ace30((void *)((int)param_1 + 0x1d5),
-                         *(uint *)(DAT_00806724 + 0x30 + (sVar1 + -1) * 4),
-                         (int)*(short *)(DAT_00806724 + 0x2c));
-      thunk_FUN_005fada0(param_1,0,0,2);
-      if (param_1[0xa8] == 0) {
-        *(undefined1 *)((int)param_1 + 0x29f) = 0;
+      this->field_02D1 = sVar1 + -1;
+      STT3DSprC::sub_004ACE30
+                ((STT3DSprC *)&this->vtable_at_1d5,*(uint *)(DAT_00806724 + 0x30 + (sVar1 + -1) * 4)
+                 ,(int)*(short *)(DAT_00806724 + 0x2c));
+      thunk_FUN_005fada0(this,0,0,2);
+      if (this->field_02A0 == 0) {
+        this->field_029F = 0;
       }
     }
-    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-    iVar5 = thunk_FUN_005f8650(param_1,(int)(short)(*(short *)((int)param_1 + 0x291) * 0xc9 + 100),
-                               (int)(short)(*(short *)((int)param_1 + 0x295) * 0xc9 + 100),
-                               (int)(short)(*(short *)((int)param_1 + 0x299) * 200 + 100));
-    if (iVar5 != 0) {
-      thunk_FUN_005f6df0(param_1);
-      thunk_FUN_004ad460((void *)((int)param_1 + 0x1d5),0);
-      thunk_FUN_0041c3f0(param_1,(undefined *)0x2);
-      *(undefined1 *)((int)param_1 + 699) = 2;
-      iVar5 = *(short *)(DAT_00806724 + 0x23) + -1;
-      *(int *)((int)param_1 + 0x2d1) = iVar5;
-      thunk_FUN_004ace30((void *)((int)param_1 + 0x1d5),*(uint *)(DAT_00806724 + 0x30 + iVar5 * 4),
-                         (int)*(short *)(DAT_00806724 + 0x2c));
+    iVar6 = thunk_FUN_005f8650(this,(int)(short)(*(short *)&this->field_0291 * 0xc9 + 100),
+                               (int)(short)(*(short *)&this->field_0295 * 0xc9 + 100),
+                               (int)(short)(*(short *)&this->field_0299 * 200 + 100));
+    if (iVar6 != 0) {
+      thunk_FUN_005f6df0((STAllPlayersC *)this);
+      thunk_FUN_004ad460(&this->vtable_at_1d5,0);
+      TLOEmbryoTy::sub_0041C3F0((TLOEmbryoTy *)this,(undefined *)0x2);
+      this->field_02BB = 2;
+      iVar6 = *(short *)(DAT_00806724 + 0x23) + -1;
+      this->field_02D1 = iVar6;
+      STT3DSprC::sub_004ACE30
+                ((STT3DSprC *)&this->vtable_at_1d5,*(uint *)(DAT_00806724 + 0x30 + iVar6 * 4),
+                 (int)*(short *)(DAT_00806724 + 0x2c));
       return;
     }
     break;
   /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  case 3:
-    *(int *)(*(int *)((int)param_1 + 0x2e6) + 0x20) =
-         *(int *)(*(int *)((int)param_1 + 0x2e6) + 0x20) + 1;
+  case CASE_3:
+    *(int *)(this->field_02E6 + 0x10) = *(int *)(this->field_02E6 + 0x10) + 1;
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-    if (*(int *)(*(int *)((int)param_1 + 0x2e6) + 0x20) < 0x23) {
-      thunk_FUN_005f9e40((AnonShape_005F9E40_7E333F34 *)param_1);
+    if (*(int *)(this->field_02E6 + 0x10) < 0x23) {
+      thunk_FUN_005f9e40((AnonShape_005F9E40_7E333F34 *)this);
     }
     else {
-      *(undefined4 *)((int)param_1 + 0x2dd) = 4;
-      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-      uVar4 = *(uint *)(*(int *)((int)param_1 + 0x2e6) + 4);
-      if (-1 < (int)uVar4) {
-        /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
+      this->field_02DD = CASE_4;
+      uVar5 = *(uint *)(this->field_02E6 + 2);
+      if (-1 < (int)uVar5) {
         SubmarineTitans::Recovered::HiddenThis::AnonReceiver_006EA050::FUN_006ea050
-                  (*(AnonReceiver_006EA050 **)((int)param_1 + 0x211),uVar4,1,0xffffffff,0);
-        *(undefined4 *)(*(int *)((int)param_1 + 0x2e6) + 4) = 0xffffffff;
-        thunk_FUN_005fa030((AnonShape_005F9F70_43CA4DAC *)param_1);
+                  (this->field_0211,uVar5,1,0xffffffff,0);
+        puVar8 = this->field_02E6;
+        puVar8[2] = 0xffff;
+        puVar8[3] = 0xffff;
+        thunk_FUN_005fa030((AnonShape_005F9F70_43CA4DAC *)this);
       }
     }
-  case 4:
-    iVar5 = thunk_FUN_005fa180((AnonShape_005FA180_2D8671A3 *)param_1);
-    if (iVar5 < 0) {
-      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-      if (*(int *)((int)param_1 + 0x2ea) != 0) {
-        /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-        if (*(char *)((int)param_1 + 0x29e) != '\0') {
-          thunk_FUN_005f9450((AnonShape_005F9450_64149E40 *)param_1);
+  case CASE_4:
+    iVar6 = thunk_FUN_005fa180((AnonShape_005FA180_2D8671A3 *)this);
+    if (iVar6 < 0) {
+      if (this->field_02EA != 0) {
+        if (this->field_029E != '\0') {
+          sub_005F9450(this);
         }
-        if (param_1[0xa8] < 1) {
+        if (this->field_02A0 < 1) {
 cf_common_exit_005F7A68:
-          thunk_FUN_005fb100((AnonShape_005FB100_42251CC8 *)param_1);
+          thunk_FUN_005fb100((AnonShape_005FB100_42251CC8 *)this);
           return;
         }
-        *(undefined1 *)((int)param_1 + 0x29f) = 1;
+        this->field_029F = 1;
       }
-      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-      if (*(char *)((int)param_1 + 0x29e) == '\0') {
-        *(undefined4 *)((int)param_1 + 0x2dd) = 0xc;
-        *(undefined4 *)((int)param_1 + 0x2ef) = 0;
-        *(undefined4 *)((int)param_1 + 0x76) = 1;
-        *(uint *)((int)param_1 + 0x2d5) = PTR_00802a38->field_00E4;
-        *(uint *)((int)param_1 + 0x2d9) = PTR_00802a38->field_00E4 + 0x32;
+      if (this->field_029E == '\0') {
+        this->field_02DD = CASE_C;
+        this->field_02EF = 0;
+        this->field_0076 = 1;
+        this->field_02D5 = g_playSystem_00802A38->field_00E4;
+        this->field_02D9 = g_playSystem_00802A38->field_00E4 + 0x32;
         return;
       }
-      iVar5 = thunk_FUN_005f8cc0(param_1);
-      if (-1 < iVar5) {
-        if (iVar5 == 2) {
-          *(uint *)((int)param_1 + 0x2dd) =
-               /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-               (-(uint)(*(char *)((int)param_1 + 0x29f) != '\0') & 2) + 8;
+      iVar6 = thunk_FUN_005f8cc0(this);
+      if (-1 < iVar6) {
+        if (iVar6 == 2) {
+          this->field_02DD = (-(uint)(this->field_029F != '\0') & 2) + CASE_8;
           return;
         }
-        *(undefined4 *)((int)param_1 + 0x2dd) = 5;
-        *(undefined1 *)((int)param_1 + 0x29d) = 0;
+        this->field_02DD = CASE_5;
+        this->field_029D = 0;
         return;
       }
-      *(undefined4 *)((int)param_1 + 0x2dd) = 0xc;
-      *(undefined4 *)((int)param_1 + 0x2ef) = 0;
-      *(undefined4 *)((int)param_1 + 0x76) = 1;
-/* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
+      this->field_02DD = CASE_C;
+      this->field_02EF = 0;
+      this->field_0076 = 1;
 LAB_005f79aa:
-      *(uint *)((int)param_1 + 0x2d5) = PTR_00802a38->field_00E4;
-      *(uint *)((int)param_1 + 0x2d9) = PTR_00802a38->field_00E4 + 0x32;
+      this->field_02D5 = g_playSystem_00802A38->field_00E4;
+      this->field_02D9 = g_playSystem_00802A38->field_00E4 + 0x32;
       return;
     }
     break;
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  case 5:
-    if (*(int *)((int)param_1 + 0x2ea) != 0) {
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-      (**(code **)(*param_1 + 0x20))();
+  case CASE_5:
+    if (this->field_02EA != 0) {
+      (*this->vtable[8].vfunc_00)();
     }
-    uVar6 = thunk_FUN_005f8d10(param_1);
-    *(undefined4 *)((int)param_1 + 0x2dd) = uVar6;
+    SVar4 = thunk_FUN_005f8d10((int *)this);
+    this->field_02DD = SVar4;
     return;
-  case 6:
-    iVar5 = thunk_FUN_005fa180((AnonShape_005FA180_2D8671A3 *)param_1);
-    if (*(short *)(DAT_00806724 + 0x23) <= iVar5) {
-      *(undefined4 *)((int)param_1 + 0x2dd) = 2;
+  case CASE_6:
+    iVar6 = thunk_FUN_005fa180((AnonShape_005FA180_2D8671A3 *)this);
+    if (*(short *)(DAT_00806724 + 0x23) <= iVar6) {
+      this->field_02DD = CASE_2;
       return;
     }
     break;
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  case 7:
-    if (*(uint *)((int)param_1 + 0x2e1) <= PTR_00802a38->field_00E4) {
-      *(undefined1 *)((int)param_1 + 0x2ee) = 0;
-      *(undefined4 *)((int)param_1 + 0x2dd) = 1;
-      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-      thunk_FUN_00495ff0(*(short *)((int)param_1 + 0x5b),*(short *)((int)param_1 + 0x5d),
-                         *(short *)((int)param_1 + 0x5f),0,(AnonShape_00495FF0_59081BDD *)param_1);
-      thunk_FUN_004ad430((int)param_1 + 0x1d5);
-      *(undefined1 *)((int)param_1 + 699) = 0;
-      thunk_FUN_0041c5a0((AnonShape_0041C5A0_167218F4 *)param_1);
+  case CASE_6|CASE_1:
+    if (this->field_02E1 <= g_playSystem_00802A38->field_00E4) {
+      this->field_02EE = 0;
+      this->field_02DD = CASE_1;
+      thunk_FUN_00495ff0(this->field_005B,this->field_005D,this->field_005F,0,
+                         (AnonShape_00495FF0_59081BDD *)this);
+      thunk_FUN_004ad430((int)&this->vtable_at_1d5);
+      this->field_02BB = 0;
+      sub_0041C5A0(this);
       return;
     }
     break;
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  case 8:
-    if (*(int *)((int)param_1 + 0x2ea) == 0) {
-      STFishC::sub_004162B0((STFishC *)param_1,&local_8,&local_6,&local_a);
-      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-      if ((int)local_8 != *(int *)((int)param_1 + 0x291)) {
+  case CASE_8:
+    if (this->field_02EA == 0) {
+      STFishC::sub_004162B0((STFishC *)this,&local_8,&local_6,&local_a);
+      if ((int)local_8 != this->field_0291) {
         return;
       }
-      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-      if ((int)local_6 != *(int *)((int)param_1 + 0x295)) {
+      if ((int)local_6 != this->field_0295) {
         return;
       }
-      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-      iVar5 = thunk_FUN_005f88d0(param_1,*(int *)((int)param_1 + 0x289),1,(int *)&local_24,&local_2c
-                                 ,&local_28);
-      if (iVar5 != 0) {
-        iVar5 = STColl3C::CreateAddSpr((STColl3C *)param_1);
-        if (iVar5 < 1) {
+      iVar6 = thunk_FUN_005f88d0(this,this->field_0289,1,(int *)&local_24,&local_2c,&local_28);
+      if (iVar6 != 0) {
+        iVar6 = CreateAddSpr(this);
+        if (iVar6 < 1) {
           return;
         }
-        /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-        puVar8 = (undefined4 *)(*(int *)((int)param_1 + 0x2e6) + 8);
+        puVar8 = this->field_02E6 + 4;
         for (iVar7 = 10; iVar7 != 0; iVar7 = iVar7 + -1) {
-          *puVar8 = *local_24;
-          local_24 = local_24 + 1;
-          puVar8 = puVar8 + 1;
+          *(undefined4 *)puVar8 = *(undefined4 *)local_24;
+          local_24 = local_24 + 2;
+          puVar8 = puVar8 + 2;
         }
-        *(undefined2 *)puVar8 = *(undefined2 *)local_24;
-        *(undefined1 *)((int)param_1 + param_1[0xa8] * 6 + 0x2a4) = 1;
-        *(undefined4 *)((int)param_1 + (param_1[0xa8] + 0x71) * 6) = local_28;
-        *(char *)((int)param_1 + param_1[0xa8] * 6 + 0x2a5) = (char)param_1[9];
-        if (iVar5 == 2) {
-          **(undefined4 **)((int)param_1 + 0x2e6) = local_2c;
+        *puVar8 = *local_24;
+        (&this->field_0x2a4)[this->field_02A0 * 6] = 1;
+        *(undefined4 *)(&this->field_0x2a6 + this->field_02A0 * 6) = local_28;
+        (&this->field_0x2a5)[this->field_02A0 * 6] = *(undefined1 *)&this->field_0024;
+        if (iVar6 == 2) {
+          *(undefined4 *)this->field_02E6 = local_2c;
         }
-        /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-        if (**(int **)((int)param_1 + 0x2e6) != 0) {
+        if (*(int *)this->field_02E6 != 0) {
           uVar12 = 30000;
           uVar10 = 0;
           iVar7 = 0;
-          iVar5 = 1;
+          iVar6 = 1;
           uVar9 = 0xe;
-          /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-          uVar4 = thunk_FUN_004ad650(**(int **)((int)param_1 + 0x2e6));
-          /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-          FUN_006e9ef0(*(void **)((int)param_1 + 0x211),uVar4,uVar9,iVar5,iVar7,uVar10,uVar12);
+          uVar5 = thunk_FUN_004ad650(*(int *)this->field_02E6);
+          FUN_006e9ef0(this->field_0211,uVar5,uVar9,iVar6,iVar7,uVar10,uVar12);
         }
-        /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-        thunk_FUN_005f8810(param_1,*(int *)((int)param_1 + 0x289));
-        iVar5 = thunk_FUN_005f95b0((AnonShape_005F95B0_F363C582 *)param_1);
-        if (iVar5 == 0) {
+        thunk_FUN_005f8810(this,this->field_0289);
+        iVar6 = thunk_FUN_005f95b0((AnonShape_005F95B0_F363C582 *)this);
+        if (iVar6 == 0) {
           return;
         }
-        *(uint *)(*(int *)((int)param_1 + 0x2e6) + 0x68) = PTR_00802a38->field_00E4;
-        *(undefined4 *)((int)param_1 + 0x2dd) = 9;
-        *(undefined4 *)(*(int *)((int)param_1 + 0x2e6) + 100) = 1;
-        *(undefined2 *)(*(int *)((int)param_1 + 0x2e6) + 0x32) = 0xffff;
-        *(int *)(*(int *)((int)param_1 + 0x2e6) + 0x60) =
-             *(int *)(*(int *)((int)param_1 + 0x2e6) + 0x5c) + -1;
+        *(uint *)(this->field_02E6 + 0x34) = g_playSystem_00802A38->field_00E4;
+        puVar8 = this->field_02E6;
+        this->field_02DD = CASE_9;
+        puVar8[0x32] = 1;
+        puVar8[0x33] = 0;
+        this->field_02E6[0x19] = 0xffff;
+        *(int *)(this->field_02E6 + 0x30) = *(int *)(this->field_02E6 + 0x2e) + -1;
         return;
       }
     }
-    thunk_FUN_005f9450((AnonShape_005F9450_64149E40 *)param_1);
-    *(undefined4 *)((int)param_1 + 0x2dd) = 0xc;
-    *(uint *)((int)param_1 + 0x2d5) = PTR_00802a38->field_00E4;
-    uVar4 = PTR_00802a38->field_00E4;
-    *(undefined1 *)((int)param_1 + 699) = 1;
-    *(undefined4 *)((int)param_1 + 0x2ef) = 0;
-    *(uint *)((int)param_1 + 0x2d9) = uVar4 + 0x32;
-    *(undefined4 *)((int)param_1 + 0x76) = 1;
-    if (0 < param_1[0xa8]) {
-      *(undefined1 *)((int)param_1 + 0x29f) = 1;
+    sub_005F9450(this);
+    this->field_02DD = CASE_C;
+    this->field_02D5 = g_playSystem_00802A38->field_00E4;
+    uVar5 = g_playSystem_00802A38->field_00E4;
+    this->field_02BB = 1;
+    this->field_02EF = 0;
+    this->field_02D9 = uVar5 + 0x32;
+    this->field_0076 = 1;
+    if (0 < this->field_02A0) {
+      this->field_029F = 1;
       return;
     }
-/* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
 LAB_005f7efc:
-    *(undefined1 *)((int)param_1 + 0x29f) = 0;
+    this->field_029F = 0;
     return;
-  case 9:
-    iVar5 = thunk_FUN_005f9cb0(param_1,PTR_00802a38->field_00E4,&local_14,&local_18,&local_10);
-    if (iVar5 == 1) {
-      *(int *)(*(int *)((int)param_1 + 0x2e6) + 0x14) = local_14;
-      *(int *)(*(int *)((int)param_1 + 0x2e6) + 0x18) = local_18;
-      *(int *)(*(int *)((int)param_1 + 0x2e6) + 0x1c) = local_10;
-      *(int *)(*(int *)((int)param_1 + 0x2e6) + 0x20) =
-           *(int *)(*(int *)((int)param_1 + 0x2e6) + 0x20) + 1;
-      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-      iVar5 = *(int *)((int)param_1 + 0x2e6);
-      if (*(int *)(iVar5 + 0x24) <= *(int *)(iVar5 + 0x20)) {
-        *(undefined4 *)(iVar5 + 0x20) = 0;
+  case CASE_9:
+    iVar6 = thunk_FUN_005f9cb0(this,g_playSystem_00802A38->field_00E4,&local_14,&local_18,&local_10)
+    ;
+    if (iVar6 == 1) {
+      *(int *)(this->field_02E6 + 10) = local_14;
+      *(int *)(this->field_02E6 + 0xc) = local_18;
+      *(int *)(this->field_02E6 + 0xe) = local_10;
+      *(int *)(this->field_02E6 + 0x10) = *(int *)(this->field_02E6 + 0x10) + 1;
+      puVar8 = this->field_02E6;
+      if (*(int *)(puVar8 + 0x12) <= *(int *)(puVar8 + 0x10)) {
+        puVar8[0x10] = 0;
+        puVar8[0x11] = 0;
       }
-      thunk_FUN_005f9e40((AnonShape_005F9E40_7E333F34 *)param_1);
+      thunk_FUN_005f9e40((AnonShape_005F9E40_7E333F34 *)this);
       return;
     }
-    if (iVar5 == 3) {
-      thunk_FUN_005fa030((AnonShape_005F9F70_43CA4DAC *)param_1);
-      iVar5 = thunk_FUN_005fa8b0(param_1,(int *)((int)param_1 + 0x27d),(int *)((int)param_1 + 0x281)
-                                 ,(int *)((int)param_1 + 0x285));
-      if (iVar5 == 0) {
-        *(int *)((int)param_1 + 0x281) = *(int *)((int)param_1 + 0x261);
-        *(undefined4 *)((int)param_1 + 0x27d) = *(undefined4 *)((int)param_1 + 0x25d);
-        *(int *)((int)param_1 + 0x285) = *(int *)((int)param_1 + 0x265);
-        thunk_FUN_005f9450((AnonShape_005F9450_64149E40 *)param_1);
+    if (iVar6 == 3) {
+      thunk_FUN_005fa030((AnonShape_005F9F70_43CA4DAC *)this);
+      iVar6 = sub_005FA8B0(this,&this->field_027D,&this->field_0281,&this->field_0285);
+      if (iVar6 == 0) {
+        this->field_0281 = this->field_0261;
+        this->field_027D = this->field_025D;
+        this->field_0285 = this->field_0265;
+        sub_005F9450(this);
       }
       else {
-        *(undefined1 *)((int)param_1 + 0x29e) = 1;
+        this->field_029E = 1;
       }
-      STFishC::sub_004162B0((STFishC *)param_1,&local_8,&local_6,&local_a);
-      iVar5 = thunk_FUN_005fa360(param_1,(undefined4 *)local_1c,(int)local_8,(int)local_6,
-                                 (int)local_a,&local_14,&local_18,&local_10);
-      if (iVar5 != 0) {
-        param_1[0xa8] = param_1[0xa8] + 1;
-        iVar5 = thunk_FUN_005fb600(param_1);
-        if (iVar5 == 0) {
-          iVar5 = thunk_FUN_005fa7f0(param_1,local_14,local_18,local_10);
-          if (iVar5 == 0) {
+      STFishC::sub_004162B0((STFishC *)this,&local_8,&local_6,&local_a);
+      iVar6 = thunk_FUN_005fa360(this,(undefined4 *)local_1c,(int)local_8,(int)local_6,(int)local_a,
+                                 &local_14,&local_18,&local_10);
+      if (iVar6 != 0) {
+        this->field_02A0 = this->field_02A0 + 1;
+        iVar6 = thunk_FUN_005fb600(this);
+        if (iVar6 == 0) {
+          iVar6 = thunk_FUN_005fa7f0(this,local_14,local_18,local_10);
+          if (iVar6 == 0) {
             return;
           }
-          *(undefined4 *)((int)param_1 + 0x2dd) = 5;
-          *(undefined1 *)((int)param_1 + 699) = 1;
-          *(undefined1 *)((int)param_1 + 0x29d) = local_1c[0];
-          *(undefined1 *)((int)param_1 + 0x29f) = 1;
+          this->field_02DD = CASE_5;
+          this->field_02BB = 1;
+          this->field_029D = local_1c[0];
+          this->field_029F = 1;
           return;
         }
-        *(undefined4 *)((int)param_1 + 0x2dd) = 0xc;
-        *(uint *)((int)param_1 + 0x2d5) = PTR_00802a38->field_00E4;
-        uVar4 = PTR_00802a38->field_00E4;
-        *(undefined4 *)((int)param_1 + 0x2ef) = 0;
-        *(undefined1 *)((int)param_1 + 699) = 1;
-        *(uint *)((int)param_1 + 0x2d9) = uVar4 + 0x32;
-        *(undefined4 *)((int)param_1 + 0x76) = 1;
+        this->field_02DD = CASE_C;
+        this->field_02D5 = g_playSystem_00802A38->field_00E4;
+        uVar5 = g_playSystem_00802A38->field_00E4;
+        this->field_02EF = 0;
+        this->field_02BB = 1;
+        this->field_02D9 = uVar5 + 0x32;
+        this->field_0076 = 1;
         goto LAB_005f7efc;
       }
     }
     break;
-  case 10:
-    iVar5 = thunk_FUN_005f9050(param_1,&local_10,&local_20);
-    if (iVar5 != 0) {
-      *(undefined4 *)((int)param_1 + 0x2dd) = 0xb;
-      thunk_FUN_005fada0(param_1,local_10,local_20,1);
+  case CASE_A:
+    iVar6 = thunk_FUN_005f9050(this,&local_10,&local_20);
+    if (iVar6 != 0) {
+      this->field_02DD = CASE_B;
+      thunk_FUN_005fada0(this,local_10,local_20,1);
       return;
     }
-    *(undefined4 *)((int)param_1 + 0x2dd) = 0xc;
-    *(undefined4 *)((int)param_1 + 0x76) = 1;
-    *(undefined4 *)((int)param_1 + 0x2ef) = 0;
+    this->field_02DD = CASE_C;
+    this->field_0076 = 1;
+    this->field_02EF = 0;
     goto LAB_005f79aa;
-  case 0xb:
-    bVar3 = thunk_FUN_005faee0((AnonShape_005FAEE0_B5D482C5 *)param_1);
+  case CASE_B:
+    bVar3 = thunk_FUN_005faee0((AnonShape_005FAEE0_B5D482C5 *)this);
     /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
     if (CONCAT31(extraout_var_00,bVar3) != 0) {
-      iVar5 = param_1[0xa8];
-      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-      if (*(char *)((int)param_1 + iVar5 * 6 + 0x29e) != '\0') {
-        /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-        thunk_FUN_005f91e0(param_1,*(int *)((int)param_1 + (iVar5 * 3 + 0x150) * 2),iVar5 + -1);
-        *(undefined1 *)((int)param_1 + param_1[0xa8] * 6 + 0x29e) = 0;
-        iVar5 = param_1[0xa8];
-        param_1[0xa8] = iVar5 + -1;
-        if (0 < iVar5 + -1) {
-          thunk_FUN_005fac40(param_1,1,1,0,0,0,0);
+      iVar6 = this->field_02A0;
+      if ((&this->field_029E)[iVar6 * 6] != '\0') {
+        thunk_FUN_005f91e0(this,*(int *)((int)&this->field_02A0 + iVar6 * 6),iVar6 + -1);
+        (&this->field_029E)[this->field_02A0 * 6] = 0;
+        iVar6 = this->field_02A0 + -1;
+        this->field_02A0 = iVar6;
+        if (0 < iVar6) {
+          thunk_FUN_005fac40(this,1,1,0,0,0,0);
           return;
         }
       }
-      thunk_FUN_005fa030((AnonShape_005F9F70_43CA4DAC *)param_1);
-      *(undefined1 *)((int)param_1 + 0x29f) = 0;
-      param_1[0xa8] = 0;
-      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-      if (*(int *)((int)param_1 + 0x2ea) != 0) goto cf_common_exit_005F7A68;
-      thunk_FUN_005f9310(param_1,0);
-      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-      if (*(char *)((int)param_1 + 0x29e) == '\0') {
-        iVar5 = thunk_FUN_005f89f0(param_1,2);
-        if (iVar5 != 0) {
-          /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-          local_20 = thunk_FUN_005fa7f0(param_1,*(undefined4 *)((int)param_1 + 0x291),
-                                        *(undefined4 *)((int)param_1 + 0x295),
-                                        *(undefined4 *)((int)param_1 + 0x299));
+      thunk_FUN_005fa030((AnonShape_005F9F70_43CA4DAC *)this);
+      this->field_029F = 0;
+      this->field_02A0 = 0;
+      if (this->field_02EA != 0) goto cf_common_exit_005F7A68;
+      thunk_FUN_005f9310(this,0);
+      if (this->field_029E == '\0') {
+        iVar6 = thunk_FUN_005f89f0(this,2);
+        if (iVar6 != 0) {
+          local_20 = thunk_FUN_005fa7f0(this,this->field_0291,this->field_0295,this->field_0299);
           if (-1 < (int)local_20) {
-            *(undefined4 *)((int)param_1 + 0x2dd) = 5;
-            *(undefined1 *)((int)param_1 + 0x29d) = 3;
-            thunk_FUN_005f9e40((AnonShape_005F9E40_7E333F34 *)param_1);
+            this->field_02DD = CASE_5;
+            this->field_029D = 3;
+            thunk_FUN_005f9e40((AnonShape_005F9E40_7E333F34 *)this);
             return;
           }
-          *(undefined4 *)((int)param_1 + 0x2dd) = 0xc;
-          *(undefined4 *)((int)param_1 + 0x2ef) = 0;
-          *(undefined4 *)((int)param_1 + 0x76) = 1;
-          *(uint *)((int)param_1 + 0x2d5) = PTR_00802a38->field_00E4;
-          *(uint *)((int)param_1 + 0x2d9) = PTR_00802a38->field_00E4 + 0x32;
-          thunk_FUN_005f9e40((AnonShape_005F9E40_7E333F34 *)param_1);
+          this->field_02DD = CASE_C;
+          this->field_02EF = 0;
+          this->field_0076 = 1;
+          this->field_02D5 = g_playSystem_00802A38->field_00E4;
+          this->field_02D9 = g_playSystem_00802A38->field_00E4 + 0x32;
+          thunk_FUN_005f9e40((AnonShape_005F9E40_7E333F34 *)this);
           return;
         }
-        *(undefined4 *)((int)param_1 + 0x2dd) = 0xc;
-        *(undefined4 *)((int)param_1 + 0x2ef) = 0;
-        *(undefined4 *)((int)param_1 + 0x76) = 1;
-        *(uint *)((int)param_1 + 0x2d5) = PTR_00802a38->field_00E4;
-        *(uint *)((int)param_1 + 0x2d9) = PTR_00802a38->field_00E4 + 0x32;
+        this->field_02DD = CASE_C;
+        this->field_02EF = 0;
+        this->field_0076 = 1;
+        this->field_02D5 = g_playSystem_00802A38->field_00E4;
+        this->field_02D9 = g_playSystem_00802A38->field_00E4 + 0x32;
       }
       else {
-        iVar5 = thunk_FUN_005f89f0(param_1,2);
-        if (iVar5 != 0) {
-          STFishC::sub_004162B0((STFishC *)param_1,&local_8,&local_6,&local_a);
-          iVar5 = thunk_FUN_005fa360(param_1,(undefined4 *)local_1c,(int)local_8,(int)local_6,
+        iVar6 = thunk_FUN_005f89f0(this,2);
+        if (iVar6 != 0) {
+          STFishC::sub_004162B0((STFishC *)this,&local_8,&local_6,&local_a);
+          iVar6 = thunk_FUN_005fa360(this,(undefined4 *)local_1c,(int)local_8,(int)local_6,
                                      (int)local_a,&local_14,&local_18,&local_10);
-          if ((iVar5 != 0) &&
-             (iVar5 = thunk_FUN_005fa7f0(param_1,local_14,local_18,local_10), iVar5 != 0)) {
-            *(undefined4 *)((int)param_1 + 0x2dd) = 5;
-            *(undefined1 *)((int)param_1 + 699) = 1;
-            *(undefined1 *)((int)param_1 + 0x29d) = local_1c[0];
-            *(undefined1 *)((int)param_1 + 0x29f) = 0;
-            *(undefined4 *)((int)param_1 + 0x76) = 0;
-            thunk_FUN_005f9e40((AnonShape_005F9E40_7E333F34 *)param_1);
+          if ((iVar6 != 0) &&
+             (iVar6 = thunk_FUN_005fa7f0(this,local_14,local_18,local_10), iVar6 != 0)) {
+            this->field_02DD = CASE_5;
+            this->field_02BB = 1;
+            this->field_029D = local_1c[0];
+            this->field_029F = 0;
+            this->field_0076 = 0;
+            thunk_FUN_005f9e40((AnonShape_005F9E40_7E333F34 *)this);
             return;
           }
         }
       }
     }
-    thunk_FUN_005f9e40((AnonShape_005F9E40_7E333F34 *)param_1);
+    thunk_FUN_005f9e40((AnonShape_005F9E40_7E333F34 *)this);
     return;
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  case 0xc:
-    if ((*(int *)((int)param_1 + 0x76) == 1) ||
-       ((*(int *)((int)param_1 + 0x76) == 0 && (*(short *)((int)param_1 + 0x6e) != 0x2f)))) {
-      thunk_FUN_00416390((AnonShape_00416390_86C8F938 *)param_1);
+  case CASE_C:
+    if ((this->field_0076 == 1) || ((this->field_0076 == 0 && (this->field_006E != 0x2f)))) {
+      thunk_FUN_00416390((AnonShape_00416390_86C8F938 *)this);
     }
-    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-    if (*(int *)((int)param_1 + 0x2ea) != 0) {
-      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-      if (*(char *)((int)param_1 + 0x29e) != '\0') {
-        thunk_FUN_005f9450((AnonShape_005F9450_64149E40 *)param_1);
+    if (this->field_02EA != 0) {
+      if (this->field_029E != '\0') {
+        sub_005F9450(this);
       }
-      if (param_1[0xa8] < 1) goto cf_common_exit_005F7A68;
-      *(undefined1 *)((int)param_1 + 0x29f) = 1;
+      if (this->field_02A0 < 1) goto cf_common_exit_005F7A68;
+      this->field_029F = 1;
     }
-    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-    if (*(char *)((int)param_1 + 0x29f) == '\0') {
-      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-      if (*(char *)((int)param_1 + 0x29e) == '\0') {
-        if ((param_1[6] + PTR_00802a38->field_00E4 & 3) == 0) {
-          thunk_FUN_005f9310(param_1,0);
+    if (this->field_029F == '\0') {
+      if (this->field_029E == '\0') {
+        if ((this->field_0018 + g_playSystem_00802A38->field_00E4 & 3) == 0) {
+          thunk_FUN_005f9310(this,0);
           return;
         }
-        /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-        if ((*(uint *)((int)param_1 + 0x2d9) < PTR_00802a38->field_00E4) &&
-           (iVar5 = FUN_006acfd0(*(int *)((int)param_1 + 0x25d),*(int *)((int)param_1 + 0x261),
-                                 (int)*(short *)((int)param_1 + 0x5b),
-                                 (int)*(short *)((int)param_1 + 0x5d)), 3 < iVar5)) {
-          /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-          iVar5 = *(int *)((int)param_1 + 0x2ef);
-          if (iVar5 != 0) goto LAB_005f7927;
-          iVar5 = thunk_FUN_005fa8b0(param_1,(int *)((int)param_1 + 0x27d),
-                                     (int *)((int)param_1 + 0x281),(int *)((int)param_1 + 0x285));
-          if (iVar5 == 0) goto cf_common_exit_005F76D2;
-          STFishC::sub_004162B0((STFishC *)param_1,&local_8,&local_6,&local_a);
-          iVar5 = thunk_FUN_005fa360(param_1,(undefined4 *)local_1c,(int)local_8,(int)local_6,
+        if ((this->field_02D9 < g_playSystem_00802A38->field_00E4) &&
+           (iVar6 = FUN_006acfd0(this->field_025D,this->field_0261,(int)this->field_005B,
+                                 (int)this->field_005D), 3 < iVar6)) {
+          iVar6 = this->field_02EF;
+          if (iVar6 != 0) goto LAB_005f7927;
+          iVar6 = sub_005FA8B0(this,&this->field_027D,&this->field_0281,&this->field_0285);
+          if (iVar6 == 0) goto cf_common_exit_005F76D2;
+          STFishC::sub_004162B0((STFishC *)this,&local_8,&local_6,&local_a);
+          iVar6 = thunk_FUN_005fa360(this,(undefined4 *)local_1c,(int)local_8,(int)local_6,
                                      (int)local_a,&local_14,&local_18,&local_10);
-          if ((iVar5 != 0) &&
-             (iVar5 = thunk_FUN_005fa7f0(param_1,local_14,local_18,local_10), iVar5 != 0)) {
-            *(undefined4 *)((int)param_1 + 0x2dd) = 5;
-            *(undefined1 *)((int)param_1 + 699) = 1;
-            *(undefined4 *)((int)param_1 + 0x76) = 0;
-            *(undefined1 *)((int)param_1 + 0x29d) = local_1c[0];
-            *(undefined1 *)((int)param_1 + 0x29f) = 0;
+          if ((iVar6 != 0) &&
+             (iVar6 = thunk_FUN_005fa7f0(this,local_14,local_18,local_10), iVar6 != 0)) {
+            this->field_02DD = CASE_5;
+            this->field_02BB = 1;
+            this->field_0076 = 0;
+            this->field_029D = local_1c[0];
+            this->field_029F = 0;
             return;
           }
         }
       }
       else {
-        /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-        iVar5 = thunk_FUN_005f88d0(param_1,*(int *)((int)param_1 + 0x289),0,(int *)0x0,
-                                   (undefined4 *)0x0,(undefined4 *)0x0);
-        if ((iVar5 != 0) && (iVar5 = thunk_FUN_005f89f0(param_1,2), iVar5 != 0)) {
-          STFishC::sub_004162B0((STFishC *)param_1,&local_8,&local_6,&local_a);
-          iVar5 = thunk_FUN_005fa360(param_1,(undefined4 *)local_1c,(int)local_8,(int)local_6,
+        iVar6 = thunk_FUN_005f88d0(this,this->field_0289,0,(int *)0x0,(undefined4 *)0x0,
+                                   (undefined4 *)0x0);
+        if ((iVar6 != 0) && (iVar6 = thunk_FUN_005f89f0(this,2), iVar6 != 0)) {
+          STFishC::sub_004162B0((STFishC *)this,&local_8,&local_6,&local_a);
+          iVar6 = thunk_FUN_005fa360(this,(undefined4 *)local_1c,(int)local_8,(int)local_6,
                                      (int)local_a,&local_14,&local_18,&local_10);
-          if ((iVar5 != 0) &&
-             (iVar5 = thunk_FUN_005fa7f0(param_1,local_14,local_18,local_10), iVar5 != 0)) {
-            *(undefined4 *)((int)param_1 + 0x2dd) = 5;
-            *(undefined1 *)((int)param_1 + 699) = 1;
-            *(undefined4 *)((int)param_1 + 0x76) = 0;
-            *(undefined1 *)((int)param_1 + 0x29d) = local_1c[0];
-            *(undefined1 *)((int)param_1 + 0x29f) = 0;
+          if ((iVar6 != 0) &&
+             (iVar6 = thunk_FUN_005fa7f0(this,local_14,local_18,local_10), iVar6 != 0)) {
+            this->field_02DD = CASE_5;
+            this->field_02BB = 1;
+            this->field_0076 = 0;
+            this->field_029D = local_1c[0];
+            this->field_029F = 0;
             return;
           }
         }
       }
     }
-    else if (param_1[0xa8] != 0) {
-      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-      iVar5 = *(int *)((int)param_1 + 0x2ef);
-      if (iVar5 != 0) {
-/* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
+    else if (this->field_02A0 != 0) {
+      iVar6 = this->field_02EF;
+      if (iVar6 != 0) {
 LAB_005f7927:
-        *(int *)((int)param_1 + 0x2ef) = iVar5 + -1;
+        this->field_02EF = iVar6 + -1;
         return;
       }
-      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-      iVar5 = FUN_006acfd0(*(int *)((int)param_1 + 0x25d),*(int *)((int)param_1 + 0x261),
-                           (int)*(short *)((int)param_1 + 0x5b),(int)*(short *)((int)param_1 + 0x5d)
-                          );
-      if (iVar5 < 4) {
-        iVar5 = thunk_FUN_005fa8b0(param_1,(int *)((int)param_1 + 0x27d),
-                                   (int *)((int)param_1 + 0x281),(int *)((int)param_1 + 0x285));
-        if (iVar5 == 0) goto cf_common_exit_005F76D2;
-        iVar5 = thunk_FUN_005f8cc0(param_1);
-        if (-1 < iVar5) {
-          /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-          if ((iVar5 == 2) && (*(char *)((int)param_1 + 0x29f) != '\0')) {
-            *(undefined4 *)((int)param_1 + 0x76) = 0;
-            *(undefined4 *)((int)param_1 + 0x2dd) = 10;
+      iVar6 = FUN_006acfd0(this->field_025D,this->field_0261,(int)this->field_005B,
+                           (int)this->field_005D);
+      if (iVar6 < 4) {
+        iVar6 = sub_005FA8B0(this,&this->field_027D,&this->field_0281,&this->field_0285);
+        if (iVar6 == 0) goto cf_common_exit_005F76D2;
+        iVar6 = thunk_FUN_005f8cc0(this);
+        if (-1 < iVar6) {
+          if ((iVar6 == 2) && (this->field_029F != '\0')) {
+            this->field_0076 = 0;
+            this->field_02DD = CASE_A;
             return;
           }
-          *(undefined1 *)((int)param_1 + 699) = 1;
-          *(undefined4 *)((int)param_1 + 0x76) = 0;
-          *(undefined1 *)((int)param_1 + 0x29d) = 0;
-          *(undefined4 *)((int)param_1 + 0x2dd) = 5;
+          this->field_02BB = 1;
+          this->field_0076 = 0;
+          this->field_029D = 0;
+          this->field_02DD = CASE_5;
           return;
         }
       }
       else {
-        iVar5 = thunk_FUN_005fa8b0(param_1,(int *)((int)param_1 + 0x27d),
-                                   (int *)((int)param_1 + 0x281),(int *)((int)param_1 + 0x285));
-        if (iVar5 != 0) {
-          STFishC::sub_004162B0((STFishC *)param_1,&local_8,&local_6,&local_a);
-          iVar5 = thunk_FUN_005fa360(param_1,(undefined4 *)local_1c,(int)local_8,(int)local_6,
+        iVar6 = sub_005FA8B0(this,&this->field_027D,&this->field_0281,&this->field_0285);
+        if (iVar6 != 0) {
+          STFishC::sub_004162B0((STFishC *)this,&local_8,&local_6,&local_a);
+          iVar6 = thunk_FUN_005fa360(this,(undefined4 *)local_1c,(int)local_8,(int)local_6,
                                      (int)local_a,&local_14,&local_18,&local_10);
-          if ((iVar5 != 0) &&
-             (iVar5 = thunk_FUN_005fa7f0(param_1,local_14,local_18,local_10), iVar5 != 0)) {
-            *(undefined4 *)((int)param_1 + 0x2dd) = 5;
-            *(undefined1 *)((int)param_1 + 699) = 1;
-            *(undefined1 *)((int)param_1 + 0x29d) = local_1c[0];
-            *(undefined4 *)((int)param_1 + 0x76) = 0;
+          if ((iVar6 != 0) &&
+             (iVar6 = thunk_FUN_005fa7f0(this,local_14,local_18,local_10), iVar6 != 0)) {
+            this->field_02DD = CASE_5;
+            this->field_02BB = 1;
+            this->field_029D = local_1c[0];
+            this->field_0076 = 0;
           }
         }
-        /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-        if (*(int *)((int)param_1 + 0x2dd) != 5) {
-/* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
+        if (this->field_02DD != CASE_5) {
 cf_common_exit_005F76D2:
-          *(undefined4 *)((int)param_1 + 0x2ef) = 0x10;
+          this->field_02EF = 0x10;
           return;
         }
       }
     }
     break;
-  case 0xd:
-    this = (STT3DSprC *)((int)param_1 + 0x1d5);
-    iVar5 = thunk_FUN_004ac910(this,'\b');
-    if (iVar5 == 1) {
-      if (*(char *)((int)param_1 + 699) != '\0') {
-        thunk_FUN_0041c5a0((AnonShape_0041C5A0_167218F4 *)param_1);
-        thunk_FUN_0041d590((AnonShape_0041D590_1DB01C7A *)param_1);
+  case CASE_C|CASE_1:
+    this_00 = &this->vtable_at_1d5;
+    iVar6 = thunk_FUN_004ac910(this_00,'\b');
+    if (iVar6 == 1) {
+      if (this->field_02BB != '\0') {
+        sub_0041C5A0(this);
+        TLOBaseTy::sub_0041D590((TLOBaseTy *)this);
       }
-      STT3DSprC::StopShow(this,0xf);
+      STT3DSprC::StopShow((STT3DSprC *)this_00,0xf);
     }
-    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-    if (iVar5 == *(int *)(&DAT_007ce73d + *(int *)((int)param_1 + 0x2cd) * 0x39)) {
-      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-      thunk_FUN_00495ff0(*(short *)((int)param_1 + 0x5b),*(short *)((int)param_1 + 0x5d),
-                         *(short *)((int)param_1 + 0x5f),0,(AnonShape_00495FF0_59081BDD *)param_1);
-      STT3DSprC::StopShow(this,0xe);
-      STT3DSprC::StopShow(this,0xc);
+    if (iVar6 == *(int *)(&DAT_007ce73d + this->field_02CD * 0x39)) {
+      thunk_FUN_00495ff0(this->field_005B,this->field_005D,this->field_005F,0,
+                         (AnonShape_00495FF0_59081BDD *)this);
+      STT3DSprC::StopShow((STT3DSprC *)this_00,0xe);
+      STT3DSprC::StopShow((STT3DSprC *)this_00,0xc);
       uVar11 = 0xffffffff;
-      uVar6 = thunk_FUN_004ad650((int)this);
-      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-      thunk_FUN_0062b770((int)*(short *)((int)param_1 + 0x41),(int)*(short *)((int)param_1 + 0x43),
-                         (int)*(short *)((int)param_1 + 0x45),0x2b,(int)param_1,
-                         (int)(short)param_1[0x1b],uVar6,uVar11);
+      iVar7 = thunk_FUN_004ad650((int)this_00);
+      thunk_FUN_0062b770((int)this->field_0041,(int)this->field_0043,(int)this->field_0045,0x2b,
+                         (int)this,(int)this->field_006C,iVar7,uVar11);
     }
-    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-    if (iVar5 == *(int *)(&DAT_007ce741 + *(int *)((int)param_1 + 0x2cd) * 0x39)) {
-      thunk_FUN_004ad5e0((int)this);
+    if (iVar6 == *(int *)(&DAT_007ce741 + this->field_02CD * 0x39)) {
+      thunk_FUN_004ad5e0((int)this_00);
     }
-    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-    if (iVar5 == *(int *)(&DAT_007ce745 + *(int *)((int)param_1 + 0x2cd) * 0x39)) {
-      STT3DSprC::StartShow(this,9,PTR_00802a38->field_00E4);
+    if (iVar6 == *(int *)(&DAT_007ce745 + this->field_02CD * 0x39)) {
+      STT3DSprC::StartShow((STT3DSprC *)this_00,9,g_playSystem_00802A38->field_00E4);
     }
-    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-    if (iVar5 == *(int *)(&DAT_007ce739 + *(int *)((int)param_1 + 0x2cd) * 0x39) + -1) {
-      STT3DSprC::StopShow(this,8);
+    if (iVar6 == *(int *)(&DAT_007ce739 + this->field_02CD * 0x39) + -1) {
+      STT3DSprC::StopShow((STT3DSprC *)this_00,8);
     }
-    iVar5 = thunk_FUN_004ac910(this,'\t');
-    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-    if (iVar5 == *(int *)(&DAT_007ce749 + *(int *)((int)param_1 + 0x2cd) * 0x39)) {
-      thunk_FUN_005f66b0(param_1);
+    iVar6 = thunk_FUN_004ac910(this_00,'\t');
+    if (iVar6 == *(int *)(&DAT_007ce749 + this->field_02CD * 0x39)) {
+      sub_005F66B0(this);
     }
   }
   return;

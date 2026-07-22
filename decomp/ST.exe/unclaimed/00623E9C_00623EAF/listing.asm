@@ -1,0 +1,5 @@
+00623E9C  pointer  00623a26
+00623EA0  pointer  006239c8
+00623EA4  pointer  00623a37
+00623EA8  pointer  00623b08
+00623EAC  pointer  00623be3

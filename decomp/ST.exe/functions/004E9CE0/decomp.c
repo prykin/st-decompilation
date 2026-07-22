@@ -58,16 +58,16 @@ int __thiscall TLOBaseTy::teleNone(TLOBaseTy *this)
         g_currentExceptionFrame = local_64.previous;
         return 0;
       }
-      thunk_FUN_004c6c70(local_20,*(int *)&local_20->field_0x474,
-                         *(undefined4 *)&local_20->field_0x478,*(int *)&local_20->field_0x47c + 1);
+      sub_004C6C70((TLOBaseTy *)local_20,*(int *)&local_20->field_0x474,
+                   *(undefined4 *)&local_20->field_0x478,*(int *)&local_20->field_0x47c + 1);
       g_currentExceptionFrame = local_64.previous;
       return 0;
     }
     break;
   case 2:
-    iVar3 = FUN_006e62d0(PTR_00802a38,*(int *)&local_20->field_0x470,(int *)&local_8);
+    iVar3 = FUN_006e62d0(g_playSystem_00802A38,*(int *)&local_20->field_0x470,(int *)&local_8);
     if (iVar3 != 0) {
-      thunk_FUN_004ea620((AnonShape_004EA620_716C262B *)this_00);
+      sub_004EA620((TLOBaseTy *)this_00);
       g_currentExceptionFrame = local_64.previous;
       return 0;
     }
@@ -110,7 +110,7 @@ int __thiscall TLOBaseTy::teleNone(TLOBaseTy *this)
       iVar7 = (int)this_00->field_0045;
       *(undefined4 *)&this_00->field_0x46c = 4;
       uVar9 = 0;
-      uVar4 = PTR_00802a38->field_00E4;
+      uVar4 = g_playSystem_00802A38->field_00E4;
       *(undefined4 *)&this_00->field_0x490 = 0;
       iVar3 = (int)this_00->field_0043;
       *(uint *)&this_00->field_0x49c = uVar4;
@@ -125,11 +125,11 @@ int __thiscall TLOBaseTy::teleNone(TLOBaseTy *this)
     break;
   case 4:
     iVar3 = *(int *)&local_20->field_0x49c;
-    uVar4 = PTR_00802a38->field_00E4;
+    uVar4 = g_playSystem_00802A38->field_00E4;
     if ((iVar3 + 0x15U <= uVar4) && (*(int *)&local_20->field_0x490 == 0)) {
       iVar3 = 0;
       uVar4 = thunk_FUN_004ad650((int)&local_20->field_01D5);
-      FUN_006eabf0((void *)this_00->field_0211,uVar4,iVar3);
+      FUN_006eabf0(this_00->field_0211,uVar4,iVar3);
       /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
       iVar3._0_2_ = this_00[1].field_0043;
       /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
@@ -137,7 +137,7 @@ int __thiscall TLOBaseTy::teleNone(TLOBaseTy *this)
       if (iVar3 != 0) {
         iVar6 = 0;
         uVar4 = thunk_FUN_004ad650(iVar3);
-        FUN_006eabf0((void *)this_00->field_0211,uVar4,iVar6);
+        FUN_006eabf0(this_00->field_0211,uVar4,iVar6);
       }
       /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
       iVar6._0_2_ = this_00[1].field_0047;
@@ -146,7 +146,7 @@ int __thiscall TLOBaseTy::teleNone(TLOBaseTy *this)
       if (iVar6 != 0) {
         iVar3 = 0;
         uVar4 = thunk_FUN_004ad650(iVar6);
-        FUN_006eabf0((void *)this_00->field_0211,uVar4,iVar3);
+        FUN_006eabf0(this_00->field_0211,uVar4,iVar3);
       }
       *(undefined4 *)&this_00->field_0x490 = 1;
       g_currentExceptionFrame = local_64.previous;
@@ -170,7 +170,7 @@ int __thiscall TLOBaseTy::teleNone(TLOBaseTy *this)
                            *(int *)&local_20->field_0x484,*(int *)&local_20->field_0x488);
         *(undefined4 *)&this_00->field_0x494 = 0;
       }
-      thunk_FUN_0041c5a0((AnonShape_0041C5A0_167218F4 *)this_00);
+      STColl3C::sub_0041C5A0((STColl3C *)this_00);
       this_00->field_05B0 = *(undefined4 *)&this_00->field_0x480;
       this_00->field_05B8 = *(undefined4 *)&this_00->field_0x488;
       this_00->field_05B4 = *(undefined4 *)&this_00->field_0x484;
@@ -185,7 +185,7 @@ int __thiscall TLOBaseTy::teleNone(TLOBaseTy *this)
                          *(short *)&this_00->field_05B8);
       iVar3 = 1;
       uVar4 = thunk_FUN_004ad650((int)&this_00->field_01D5);
-      FUN_006eabf0((void *)this_00->field_0211,uVar4,iVar3);
+      FUN_006eabf0(this_00->field_0211,uVar4,iVar3);
       /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
       iVar7._0_2_ = this_00[1].field_0043;
       /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
@@ -193,7 +193,7 @@ int __thiscall TLOBaseTy::teleNone(TLOBaseTy *this)
       if (iVar7 != 0) {
         iVar3 = 1;
         uVar4 = thunk_FUN_004ad650(iVar7);
-        FUN_006eabf0((void *)this_00->field_0211,uVar4,iVar3);
+        FUN_006eabf0(this_00->field_0211,uVar4,iVar3);
       }
       /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
       iVar8._0_2_ = this_00[1].field_0047;
@@ -202,7 +202,7 @@ int __thiscall TLOBaseTy::teleNone(TLOBaseTy *this)
       if (iVar8 != 0) {
         iVar3 = 1;
         uVar4 = thunk_FUN_004ad650(iVar8);
-        FUN_006eabf0((void *)this_00->field_0211,uVar4,iVar3);
+        FUN_006eabf0(this_00->field_0211,uVar4,iVar3);
       }
       if ((*(int *)(&DAT_00792778 + this_00->field_0235 * 4) == 0) ||
          (iVar3 = thunk_FUN_004e81b0(this_00->field_0024,this_00->field_0235,0), iVar3 == 0)) {
@@ -211,9 +211,9 @@ int __thiscall TLOBaseTy::teleNone(TLOBaseTy *this)
       else {
         puVar5 = (undefined *)thunk_FUN_004e81b0(this_00->field_0024,this_00->field_0235,0);
       }
-      thunk_FUN_0041c3f0(this_00,puVar5);
+      TLOEmbryoTy::sub_0041C3F0((TLOEmbryoTy *)this_00,puVar5);
       *(undefined4 *)&this_00->field_0x46c = 5;
-      uVar4 = PTR_00802a38->field_00E4;
+      uVar4 = g_playSystem_00802A38->field_00E4;
       *(undefined4 *)&this_00->field_0x490 = 0;
       *(uint *)&this_00->field_0x49c = uVar4;
       g_currentExceptionFrame = local_64.previous;
@@ -222,7 +222,7 @@ int __thiscall TLOBaseTy::teleNone(TLOBaseTy *this)
     break;
   case 5:
     if ((*(int *)&local_20->field_0x48c != 0) &&
-       (iVar3 = FUN_006e62d0(PTR_00802a38,*(int *)&local_20->field_0x470,(int *)&local_8),
+       (iVar3 = FUN_006e62d0(g_playSystem_00802A38,*(int *)&local_20->field_0x470,(int *)&local_8),
        iVar3 == 0)) {
       thunk_FUN_004e95c0(local_8,(int)this_00);
     }

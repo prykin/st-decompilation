@@ -31,7 +31,7 @@ undefined4 __thiscall STGroupBoatC::MakePVec(STGroupBoatC *this)
   iVar4 = Library::MSVCRT::__setjmp3(local_58.jumpBuffer,0);
   pSVar3 = local_8;
   if (iVar4 == 0) {
-    if (local_8->field_020E == (uint *)0x0) {
+    if (local_8->field_020E == (DArrayTy *)0x0) {
       RaiseInternalException
                 (-0x5001fff7,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_grpb.cpp",
                  0x52e);
@@ -39,7 +39,7 @@ undefined4 __thiscall STGroupBoatC::MakePVec(STGroupBoatC *this)
     if (pSVar3->field_021E != (ushort *)0x0) {
       FreeAndNull(&pSVar3->field_021E);
     }
-    uVar9 = pSVar3->field_020E[3];
+    uVar9 = pSVar3->field_020E->count;
     pSVar3->field_021A = uVar9;
     local_c = uVar9;
     puVar5 = (ushort *)Library::DKW::LIB::FUN_006aac70(uVar9 * 8);
@@ -58,14 +58,14 @@ undefined4 __thiscall STGroupBoatC::MakePVec(STGroupBoatC *this)
     pSVar3->field_0216 = 0;
     if (0 < (int)local_c) {
       do {
-        DArrayGetElement((DArrayTy *)pSVar3->field_020E,uVar9,&local_14);
+        DArrayGetElement(pSVar3->field_020E,uVar9,&local_14);
         /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
         pSVar6 = STAllPlayersC::GetObjPtr
-                           (g_sTAllPlayers_007FA174,local_14,CONCAT22(uStack_10,uStack_12),
+                           (g_allPlayers_007FA174,local_14,CONCAT22(uStack_10,uStack_12),
                             (int)cStack_13);
         if (pSVar6 == (STGameObjC *)0x0) {
           uStack_12 = 0xffff;
-          Library::DKW::TBL::FUN_006ae140(pSVar3->field_020E,uVar9,(undefined4 *)&local_14);
+          Library::DKW::TBL::FUN_006ae140(&pSVar3->field_020E->flags,uVar9,(undefined4 *)&local_14);
           puVar5 = pSVar3->field_021E;
           (puVar5 + uVar9 * 4)[0] = 0xffff;
           (puVar5 + uVar9 * 4)[1] = 0xffff;

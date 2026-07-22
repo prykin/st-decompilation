@@ -1,0 +1,12 @@
+005FB094  pointer  005fb04a
+005FB098  pointer  005fb066
+005FB09C  pointer  005fb05c
+005FB0A0  pointer  005fb066
+005FB0A4  pointer  005fb078
+005FB0A8  pointer  005fb05c
+005FB0AC  pointer  005fb090
+005FB0B0  pointer  005fb084
+005FB0B4  pointer  005fb084
+005FB0B8  pointer  005fb084
+005FB0BC  pointer  005fb084
+005FB0C0  pointer  005fb05c

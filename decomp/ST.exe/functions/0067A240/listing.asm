@@ -1,4 +1,4 @@
-FUN_0067a240:
+AiPlrClassTy::sub_0067A240:
 0067A240  55                        PUSH EBP
 0067A241  8B EC                     MOV EBP,ESP
 0067A243  53                        PUSH EBX

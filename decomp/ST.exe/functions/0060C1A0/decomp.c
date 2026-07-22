@@ -54,7 +54,7 @@ int __thiscall STFieldC::FUN_0060c1a0(STFieldC *this,undefined4 *param_1)
           } while ((int)uVar6 < (int)pDVar2->count);
         }
         if (this->field_0225 != '\0') {
-          thunk_FUN_00609cd0(this);
+          sub_00609CD0(this);
         }
       }
       iVar1 = 0x10a;
@@ -62,7 +62,7 @@ int __thiscall STFieldC::FUN_0060c1a0(STFieldC *this,undefined4 *param_1)
       piVar4 = (int *)((int)param_1 + *(int *)((int)param_1 + 0x83) + 0x8b);
     }
     if ((this->field_023C != 0) && (this->field_0244 != 0)) {
-      iVar5 = thunk_FUN_0060d660(this,piVar4);
+      iVar5 = sub_0060D660(this,piVar4);
       iVar1 = iVar1 + iVar5;
     }
   }

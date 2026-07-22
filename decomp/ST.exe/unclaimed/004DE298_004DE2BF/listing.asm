@@ -1,0 +1,10 @@
+004DE298  pointer  004de1f8
+004DE29C  pointer  004de1ff
+004DE2A0  pointer  004de206
+004DE2A4  pointer  004de20d
+004DE2A8  pointer  004de214
+004DE2AC  pointer  004de21b
+004DE2B0  pointer  004de222
+004DE2B4  pointer  004de229
+004DE2B8  pointer  004de230
+004DE2BC  pointer  004de237

@@ -24,12 +24,13 @@ void __thiscall WaitTy::DoneWait(WaitTy *this)
   pMVar2 = local_8;
   if (iVar3 == 0) {
     MMObjTy::DoneMMObj(local_8);
-    if (PTR_00802a30 != (CursorClassTy *)0x0) {
-      if (PTR_00802a30->field_00A9 == 0) {
-        Library::DKW::DDX::FUN_006b8b10((int *)PTR_00802a30->field_00AD);
+    if (g_cursorClass_00802A30 != (CursorClassTy *)0x0) {
+      if (g_cursorClass_00802A30->field_00A9 == 0) {
+        Library::DKW::DDX::FUN_006b8b10((int *)g_cursorClass_00802A30->field_00AD);
       }
-      else if (PTR_00802a30->field_001C != (cLoadingTy *)0xffffffff) {
-        FUN_006b3af0((int *)PTR_00802a30->field_0060,(uint)PTR_00802a30->field_001C);
+      else if (g_cursorClass_00802A30->field_001C != (cLoadingTy *)0xffffffff) {
+        FUN_006b3af0((int *)g_cursorClass_00802A30->field_0060,
+                     (uint)g_cursorClass_00802A30->field_001C);
       }
     }
     if (*(int *)&pMVar2->field_0x4d == 0x6105) {
@@ -43,8 +44,8 @@ void __thiscall WaitTy::DoneWait(WaitTy *this)
       DarkScreen(DAT_0080759c,10,2);
       thunk_FUN_005dac60();
     }
-    if (PTR_0081176c->field_002C != (ushort *)0x0) {
-      cMf32::RecMemFree(g_cMf32_00806780,(uint *)&PTR_0081176c->field_002C);
+    if (g_startSystem_0081176C->field_002C != (ushort *)0x0) {
+      cMf32::RecMemFree(g_cMf32_00806780,(uint *)&g_startSystem_0081176C->field_002C);
     }
     if (*(HoloTy **)&pMVar2[0x1e].field_0x5e != (HoloTy *)0x0) {
       HoloTy::Done(*(HoloTy **)&pMVar2[0x1e].field_0x5e);
@@ -67,17 +68,17 @@ void __thiscall WaitTy::DoneWait(WaitTy *this)
       pMVar2[0x1e].field_0066 = 0;
     }
     if (*(int *)&pMVar2[0x1d].field_0xad == 0) {
-      if (PTR_0081176c->field_0391 != 0xffffffff) {
-        FUN_006b3af0((int *)PTR_0081176c->field_03D5,PTR_0081176c->field_0391);
+      if (g_startSystem_0081176C->field_0391 != 0xffffffff) {
+        FUN_006b3af0((int *)g_startSystem_0081176C->field_03D5,g_startSystem_0081176C->field_0391);
       }
-      if (PTR_0081176c->field_0422 != 0xffffffff) {
-        FUN_006b3af0((int *)PTR_0081176c->field_0466,PTR_0081176c->field_0422);
+      if (g_startSystem_0081176C->field_0422 != 0xffffffff) {
+        FUN_006b3af0((int *)g_startSystem_0081176C->field_0466,g_startSystem_0081176C->field_0422);
       }
-      if (PTR_0081176c->field_04B3 != 0xffffffff) {
-        FUN_006b3af0((int *)PTR_0081176c->field_04F7,PTR_0081176c->field_04B3);
+      if (g_startSystem_0081176C->field_04B3 != 0xffffffff) {
+        FUN_006b3af0((int *)g_startSystem_0081176C->field_04F7,g_startSystem_0081176C->field_04B3);
       }
-      if (-1 < PTR_0081176c->field_0540) {
-        FUN_006b3af0((int *)PTR_008075a8,PTR_0081176c->field_0540);
+      if (-1 < g_startSystem_0081176C->field_0540) {
+        FUN_006b3af0((int *)PTR_008075a8,g_startSystem_0081176C->field_0540);
       }
     }
     if (*(HoloTy **)&pMVar2[0x1e].field_0x62 != (HoloTy *)0x0) {
@@ -86,22 +87,21 @@ void __thiscall WaitTy::DoneWait(WaitTy *this)
       *(undefined4 *)&pMVar2[0x1e].field_0x62 = 0;
     }
     if (*(int *)&pMVar2[0x1d].field_0xad == 0) {
-      if (PTR_0081176c->field_0560 != 0xffffffff) {
-        FUN_006b3af0((int *)PTR_0081176c->field_05A4,PTR_0081176c->field_0560);
+      if (g_startSystem_0081176C->field_0560 != 0xffffffff) {
+        FUN_006b3af0((int *)g_startSystem_0081176C->field_05A4,g_startSystem_0081176C->field_0560);
       }
-      if (PTR_0081176c->field_05F1 != 0xffffffff) {
-        FUN_006b3af0((int *)PTR_0081176c->field_0635,PTR_0081176c->field_05F1);
+      if (g_startSystem_0081176C->field_05F1 != 0xffffffff) {
+        FUN_006b3af0((int *)g_startSystem_0081176C->field_0635,g_startSystem_0081176C->field_05F1);
       }
-      if (-1 < PTR_0081176c->field_0558) {
-        FUN_006b3af0((int *)PTR_008075a8,PTR_0081176c->field_0558);
+      if (-1 < g_startSystem_0081176C->field_0558) {
+        FUN_006b3af0((int *)PTR_008075a8,g_startSystem_0081176C->field_0558);
       }
-      if (-1 < PTR_0081176c->field_0554) {
-        FUN_006b3af0((int *)PTR_008075a8,PTR_0081176c->field_0554);
+      if (-1 < g_startSystem_0081176C->field_0554) {
+        FUN_006b3af0((int *)PTR_008075a8,g_startSystem_0081176C->field_0554);
       }
     }
-    if (*(AnonShape_006B5570_4D68B99C **)&pMVar2[0x1e].field_0x56 !=
-        (AnonShape_006B5570_4D68B99C *)0x0) {
-      FUN_006b5570(*(AnonShape_006B5570_4D68B99C **)&pMVar2[0x1e].field_0x56);
+    if (*(DArrayTy **)&pMVar2[0x1e].field_0x56 != (DArrayTy *)0x0) {
+      FUN_006b5570(*(DArrayTy **)&pMVar2[0x1e].field_0x56);
     }
     *(undefined4 *)&pMVar2[0x1e].field_0x56 = 0;
     if (*(int *)&pMVar2[0x1e].field_0x52 != 0) {

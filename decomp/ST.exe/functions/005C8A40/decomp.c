@@ -68,7 +68,7 @@ int __thiscall SettMapTy::GetMessage(SettMapTy *this,STMessage *message)
   DArrayTy *local_8;
 
   local_38 = this;
-  DVar10 = FUN_006e51b0(this->field_0010);
+  DVar10 = STAppC::sub_006E51B0(this->field_0010);
   this->field_0061 = DVar10;
   local_dc.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_dc;
@@ -84,7 +84,7 @@ int __thiscall SettMapTy::GetMessage(SettMapTy *this,STMessage *message)
     RaiseInternalException(iVar11,0,"E:\\__titans\\Start\\sett_obj.cpp",0x758);
     return 0xffff;
   }
-  thunk_FUN_005b6450(local_38,(int)message);
+  thunk_FUN_005b6450(local_38,message);
   SVar4 = message->id;
   if (SVar4 < MESS_SETTMAPMTY_6549) {
     if (SVar4 == MESS_SETTMAPTY_6548) {
@@ -97,7 +97,7 @@ int __thiscall SettMapTy::GetMessage(SettMapTy *this,STMessage *message)
     }
     if (SVar4 < MESS_WAITTY_6333) {
       if (SVar4 == MESS_SHARED_6332) {
-        StartSystemTy::PaintBinDesc(PTR_0081176c,(AnonShape_005DE050_5BD86458 *)message);
+        StartSystemTy::PaintBinDesc(g_startSystem_0081176C,(AnonShape_005DE050_5BD86458 *)message);
       }
       else if (SVar4 < 0x610b) {
         if (SVar4 == MESS_SHARED_610A) {
@@ -105,7 +105,7 @@ int __thiscall SettMapTy::GetMessage(SettMapTy *this,STMessage *message)
           this_00->field_0049 = 0;
           this_00->field_004D = message->id;
           this_00->field_0051 = 6;
-          thunk_FUN_005b66e0((AnonShape_005B66E0_174166E5 *)this_00);
+          thunk_FUN_005b66e0((MTaskTy *)this_00);
         }
         else if (SVar4 < 6) {
           if (SVar4 == MESS_SHARED_0005) {
@@ -135,7 +135,7 @@ int __thiscall SettMapTy::GetMessage(SettMapTy *this,STMessage *message)
           this_00->field_004D = message->id;
           this_00->field_0051 = message->arg0;
           this_00->field_0055 = message->arg1;
-          thunk_FUN_005b66e0((AnonShape_005B66E0_174166E5 *)this_00);
+          thunk_FUN_005b66e0((MTaskTy *)this_00);
         }
         else if (SVar4 == MESS_SHARED_6109) goto switchD_005c8bd0_caseD_611f;
       }
@@ -148,7 +148,7 @@ switchD_005c8bd0_caseD_611f:
           this_00->field_004D = message->id;
           this_00->field_0051 = message->arg0;
           this_00->field_0055 = message->arg1;
-          thunk_FUN_005b66e0((AnonShape_005B66E0_174166E5 *)this_00);
+          thunk_FUN_005b66e0((MTaskTy *)this_00);
           break;
         case MESS_SHARED_6200:
           this_00->field_1F88 = message->arg0;
@@ -230,23 +230,26 @@ switchD_005c8bd0_caseD_611f:
       }
       else if (SVar4 < (MESS_SHARED_6334|MESS_ID_CREATE)) {
         if (SVar4 == MESS_WAITTY_6335) {
-          PTR_0081176c->field_04CF =
+          g_startSystem_0081176C->field_04CF =
                *(int *)((message->arg1).u32 + 4) + (uint)(message->arg0).words.high;
-          if (PTR_0081176c->field_04B3 != 0xffffffff) {
+          if (g_startSystem_0081176C->field_04B3 != 0xffffffff) {
             Library::DKW::DDX::FUN_006b3730
-                      ((uint *)PTR_0081176c->field_04F7,PTR_0081176c->field_04B3,
-                       PTR_0081176c->field_04B7,PTR_0081176c->field_04CB,PTR_0081176c->field_04CF);
+                      ((uint *)g_startSystem_0081176C->field_04F7,g_startSystem_0081176C->field_04B3
+                       ,g_startSystem_0081176C->field_04B7,g_startSystem_0081176C->field_04CB,
+                       g_startSystem_0081176C->field_04CF);
           }
         }
         else if (SVar4 == MESS_WAITTY_6333) {
           MMMObjTy::PaintSlBut
-                    ((MMMObjTy *)this_00,(AnonShape_005B6560_61F462DF *)&PTR_0081176c->field_038D,
-                     (int)message,0);
+                    ((MMMObjTy *)this_00,
+                     (AnonShape_005B6560_61F462DF *)&g_startSystem_0081176C->field_038D,(int)message
+                     ,0);
         }
         else if (SVar4 == MESS_SHARED_6334) {
           MMMObjTy::PaintSlBut
-                    ((MMMObjTy *)this_00,(AnonShape_005B6560_61F462DF *)&PTR_0081176c->field_041E,
-                     (int)message,0);
+                    ((MMMObjTy *)this_00,
+                     (AnonShape_005B6560_61F462DF *)&g_startSystem_0081176C->field_041E,(int)message
+                     ,0);
         }
       }
       else if (SVar4 == MESS_SHARED_64FF) {
@@ -309,7 +312,7 @@ cf_common_join_005C8ECC:
         FUN_006b35d0((int *)PTR_008075a8,this_00->field_1F80);
       }
       else if (SVar4 == MESS_SETTMAPTY_6500) {
-        ccFntTy::SetSurf(PTR_0081176c->field_0034,(message->arg1).i32,0,0,0,0,0);
+        ccFntTy::SetSurf(g_startSystem_0081176C->field_0034,(message->arg1).i32,0,0,0,0,0);
         pDVar21 = this_00->field_1E2F;
         uVar19 = (uint)(message->arg0).words.low;
         if (uVar19 < pDVar21->count) {
@@ -319,7 +322,7 @@ cf_common_join_005C8ECC:
         else {
           puVar18 = (uint *)0x0;
         }
-        ccFntTy::WrStr(PTR_0081176c->field_0034,puVar18,-1,-1,
+        ccFntTy::WrStr(g_startSystem_0081176C->field_0034,puVar18,-1,-1,
                        3 - (uint)((message->arg0).words.high != 1));
         if ((message->arg0).words.high == 1) {
           pAVar25 = (message->arg1).ptr;
@@ -357,7 +360,7 @@ cf_common_join_005C8ECC:
             DAT_0080995c = 1;
             memset(&DAT_00809960, 0, 0x20); /* compiler bulk-zero initialization */
             StartSystemTy::SetObjectives
-                      (PTR_0081176c,this_00->field_1F43,(char *)0x0,this_00->field_1C63);
+                      (g_startSystem_0081176C,this_00->field_1F43,(char *)0x0,this_00->field_1C63);
           }
           else {
             this_00->field_1C5F = uVar19;
@@ -386,7 +389,7 @@ cf_common_join_005C8ECC:
               pcVar23 = pcVar23 + 1;
             }
             StartSystemTy::SetObjectives
-                      (PTR_0081176c,this_00->field_1F43,(char *)((int)pvVar12 + 0x70),
+                      (g_startSystem_0081176C,this_00->field_1F43,(char *)((int)pvVar12 + 0x70),
                        this_00->field_1C63);
           }
           this_00->field_002D = 5;
@@ -533,7 +536,7 @@ cf_common_join_005C8ECC:
       this_00->field_2179 = message->id - 0x653f;
       this_00->field_2191 = 0x6500;
       this_00->field_1E2F->count = 0;
-      pcVar14 = LoadResourceString(0x234e,HINSTANCE_00807618);
+      pcVar14 = LoadResourceString(0x234e,g_module_00807618);
       uVar19 = 0xffffffff;
       do {
         pcVar23 = pcVar14;
@@ -559,7 +562,7 @@ cf_common_join_005C8ECC:
       this_00->field_1F37 = 0;
       Library::DKW::TBL::FUN_006ae1c0
                 (&this_00->field_1E2F->flags,(undefined4 *)&this_00->field_0x1e33);
-      pcVar14 = LoadResourceString(0x234c,HINSTANCE_00807618);
+      pcVar14 = LoadResourceString(0x234c,g_module_00807618);
       uVar19 = 0xffffffff;
       do {
         pcVar23 = pcVar14;
@@ -585,7 +588,7 @@ cf_common_join_005C8ECC:
       this_00->field_1F37 = 1;
       Library::DKW::TBL::FUN_006ae1c0
                 (&this_00->field_1E2F->flags,(undefined4 *)&this_00->field_0x1e33);
-      pcVar14 = LoadResourceString(0x234f,HINSTANCE_00807618);
+      pcVar14 = LoadResourceString(0x234f,g_module_00807618);
       uVar19 = 0xffffffff;
       do {
         pcVar23 = pcVar14;
@@ -648,15 +651,16 @@ LAB_005c95d4:
       case 6:
         this_00->field_21C9 = 0x17a;
       }
-      pcVar5 = PTR_0081176c->field_0034;
+      pcVar5 = g_startSystem_0081176C->field_0034;
       iVar11 = pcVar5->field_00A0;
 joined_r0x005c964b:
       if (iVar11 != 0) {
         FUN_00710790((uint *)pcVar5);
       }
       this_00->field_21A5 = *(undefined4 *)&pcVar5->field_0x8a;
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-      (*(code *)this_00->field_000C->vtable->field_0008)(0x100ef,0,0,&this_00->field_0x2161,0);
+      (*this_00->field_000C->vtable->CreateObject)
+                ((SystemClassTy *)this_00->field_000C,0x100ef,(undefined4 *)0x0,(int *)0x0,
+                 &this_00->field_0x2161,0);
       break;
     case 0x6546:
       if (this_00->field_0065 == '\x01') {
@@ -676,7 +680,7 @@ joined_r0x005c964b:
         wsprintfA(puVar1,"%d",200);
         Library::DKW::TBL::FUN_006ae1c0(&this_00->field_1E2F->flags,(undefined4 *)puVar1);
         this_00->field_1F37 = 0xffffffff;
-        pcVar14 = LoadResourceString(0x1f55,HINSTANCE_00807618);
+        pcVar14 = LoadResourceString(0x1f55,g_module_00807618);
         uVar19 = 0xffffffff;
         do {
           pcVar23 = pcVar14;
@@ -714,13 +718,14 @@ joined_r0x005c964b:
         this_00->field_21C5 = 0x1c5;
         this_00->field_21CD = 0x5a;
         this_00->field_21C9 = 400;
-        pcVar5 = PTR_0081176c->field_0034;
+        pcVar5 = g_startSystem_0081176C->field_0034;
         if (pcVar5->field_00A0 != 0) {
           FUN_00710790((uint *)pcVar5);
         }
         this_00->field_21A5 = *(undefined4 *)&pcVar5->field_0x8a;
-        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-        (*(code *)this_00->field_000C->vtable->field_0008)(0x100ef,0,0,&this_00->field_0x2161,0);
+        (*this_00->field_000C->vtable->CreateObject)
+                  ((SystemClassTy *)this_00->field_000C,0x100ef,(undefined4 *)0x0,(int *)0x0,
+                   &this_00->field_0x2161,0);
       }
       break;
     case MESS_SETTMAPTY_6547:
@@ -733,17 +738,17 @@ joined_r0x005c964b:
         puVar1 = &this_00->field_0x1e33;
         this_00->field_1E2F->count = 0;
         this_00->field_1F37 = 0;
-        pcVar14 = LoadResourceString(0x1f57,HINSTANCE_00807618);
+        pcVar14 = LoadResourceString(0x1f57,g_module_00807618);
         wsprintfA(puVar1,"%s %d",pcVar14,uVar27);
         Library::DKW::TBL::FUN_006ae1c0(&this_00->field_1E2F->flags,(undefined4 *)puVar1);
         this_00->field_1F37 = 1;
         uVar27 = 2;
-        pcVar14 = LoadResourceString(0x1f57,HINSTANCE_00807618);
+        pcVar14 = LoadResourceString(0x1f57,g_module_00807618);
         wsprintfA(puVar1,"%s %d",pcVar14,uVar27);
         Library::DKW::TBL::FUN_006ae1c0(&this_00->field_1E2F->flags,(undefined4 *)puVar1);
         this_00->field_1F37 = 2;
         uVar27 = 3;
-        pcVar14 = LoadResourceString(0x1f57,HINSTANCE_00807618);
+        pcVar14 = LoadResourceString(0x1f57,g_module_00807618);
         wsprintfA(puVar1,"%s %d",pcVar14,uVar27);
         Library::DKW::TBL::FUN_006ae1c0(&this_00->field_1E2F->flags,(undefined4 *)puVar1);
         this_00->field_21A9 = this_00->field_1E2F->count;
@@ -751,7 +756,7 @@ joined_r0x005c964b:
         this_00->field_21C5 = 0x2bf;
         this_00->field_21CD = 0x5a;
         this_00->field_21C9 = 400;
-        pcVar5 = PTR_0081176c->field_0034;
+        pcVar5 = g_startSystem_0081176C->field_0034;
         iVar11 = pcVar5->field_00A0;
         goto joined_r0x005c996c;
       }
@@ -765,7 +770,7 @@ joined_r0x005c964b:
         this_00->field_2179 = message->id - MESS_MMSGTY_68FF;
         this_00->field_2191 = 0x6500;
         this_00->field_1E2F->count = 0;
-        pcVar14 = LoadResourceString(0x234b,HINSTANCE_00807618);
+        pcVar14 = LoadResourceString(0x234b,g_module_00807618);
         uVar19 = 0xffffffff;
         do {
           pcVar23 = pcVar14;
@@ -791,7 +796,7 @@ joined_r0x005c964b:
         this_00->field_1F37 = 0;
         Library::DKW::TBL::FUN_006ae1c0
                   (&this_00->field_1E2F->flags,(undefined4 *)&this_00->field_0x1e33);
-        pcVar14 = LoadResourceString(0x234c,HINSTANCE_00807618);
+        pcVar14 = LoadResourceString(0x234c,g_module_00807618);
         uVar19 = 0xffffffff;
         do {
           pcVar23 = pcVar14;
@@ -818,7 +823,7 @@ joined_r0x005c964b:
         Library::DKW::TBL::FUN_006ae1c0
                   (&this_00->field_1E2F->flags,(undefined4 *)&this_00->field_0x1e33);
         if ((DAT_00807dd1 & 0xffff0000) != 0xd0dd0000) {
-          pcVar14 = LoadResourceString(0x234d,HINSTANCE_00807618);
+          pcVar14 = LoadResourceString(0x234d,g_module_00807618);
           uVar19 = 0xffffffff;
           do {
             pcVar23 = pcVar14;
@@ -917,7 +922,7 @@ joined_r0x005c964b:
       if (local_8 != (DArrayTy *)0x0) {
         iVar11 = 2;
         do {
-          pcVar14 = LoadResourceString(0x2354,HINSTANCE_00807618);
+          pcVar14 = LoadResourceString(0x2354,g_module_00807618);
           wsprintfA(&this_00->field_0x1e33,"%d %s",iVar11,pcVar14);
           this_00->field_1F37 = iVar11;
           Library::DKW::TBL::FUN_006ae1c0
@@ -932,15 +937,16 @@ joined_r0x005c964b:
       this_00->field_21CD = 0xe0;
       this_00->field_21C9 = 0xe2;
 LAB_005c9fef:
-      pcVar5 = PTR_0081176c->field_0034;
+      pcVar5 = g_startSystem_0081176C->field_0034;
       iVar11 = pcVar5->field_00A0;
 joined_r0x005c996c:
       if (iVar11 != 0) {
         FUN_00710790((uint *)pcVar5);
       }
       this_00->field_21A5 = *(undefined4 *)&pcVar5->field_0x8a;
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-      (*(code *)this_00->field_000C->vtable->field_0008)(0x100ef,0,0,&this_00->field_0x2161,0);
+      (*this_00->field_000C->vtable->CreateObject)
+                ((SystemClassTy *)this_00->field_000C,0x100ef,(undefined4 *)0x0,(int *)0x0,
+                 &this_00->field_0x2161,0);
     }
     break;
   case MESS_FSGSTY_6901:
@@ -1003,13 +1009,14 @@ joined_r0x005c996c:
       if ((DAT_00807dd1 & 0xffff0000) == 0xd0dd0000) {
         this_00->field_21C9 = 0x118;
       }
-      pcVar5 = PTR_0081176c->field_0034;
+      pcVar5 = g_startSystem_0081176C->field_0034;
       if (pcVar5->field_00A0 != 0) {
         FUN_00710790((uint *)pcVar5);
       }
       this_00->field_21A5 = *(undefined4 *)&pcVar5->field_0x8a;
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-      (*(code *)this_00->field_000C->vtable->field_0008)(0x100ef,0,0,&this_00->field_0x2161,0);
+      (*this_00->field_000C->vtable->CreateObject)
+                ((SystemClassTy *)this_00->field_000C,0x100ef,(undefined4 *)0x0,(int *)0x0,
+                 &this_00->field_0x2161,0);
     }
     break;
   case MESS_MAINMENUTY_6902:
@@ -1018,7 +1025,7 @@ joined_r0x005c996c:
     this_00->field_2179 = message->id - MESS_MMSGTY_68FF;
     this_00->field_2191 = 0x6500;
     this_00->field_1E2F->count = 0;
-    pcVar14 = LoadResourceString(0x2355,HINSTANCE_00807618);
+    pcVar14 = LoadResourceString(0x2355,g_module_00807618);
     uVar19 = 0xffffffff;
     do {
       pcVar23 = pcVar14;
@@ -1044,7 +1051,7 @@ joined_r0x005c996c:
     this_00->field_1F37 = 0;
     Library::DKW::TBL::FUN_006ae1c0
               (&this_00->field_1E2F->flags,(undefined4 *)&this_00->field_0x1e33);
-    pcVar14 = LoadResourceString(0x234c,HINSTANCE_00807618);
+    pcVar14 = LoadResourceString(0x234c,g_module_00807618);
     uVar19 = 0xffffffff;
     do {
       pcVar23 = pcVar14;
@@ -1070,7 +1077,7 @@ joined_r0x005c996c:
     this_00->field_1F37 = 1;
     Library::DKW::TBL::FUN_006ae1c0
               (&this_00->field_1E2F->flags,(undefined4 *)&this_00->field_0x1e33);
-    pcVar14 = LoadResourceString(0x2356,HINSTANCE_00807618);
+    pcVar14 = LoadResourceString(0x2356,g_module_00807618);
     uVar19 = 0xffffffff;
     do {
       pcVar23 = pcVar14;
@@ -1102,7 +1109,7 @@ joined_r0x005c996c:
     this_00->field_21CD = 0xe0;
     this_00->field_21C9 = 0x132;
 LAB_005c9c8a:
-    pcVar5 = PTR_0081176c->field_0034;
+    pcVar5 = g_startSystem_0081176C->field_0034;
     iVar11 = pcVar5->field_00A0;
     goto joined_r0x005c964b;
   case MESS_FSGSTY_6903:
@@ -1111,7 +1118,7 @@ LAB_005c9c8a:
       this_00->field_2179 = message->id - MESS_MMSGTY_68FF;
       this_00->field_2191 = 0x6500;
       this_00->field_1E2F->count = 0;
-      pcVar14 = LoadResourceString(0x234e,HINSTANCE_00807618);
+      pcVar14 = LoadResourceString(0x234e,g_module_00807618);
       uVar19 = 0xffffffff;
       do {
         pcVar23 = pcVar14;
@@ -1137,7 +1144,7 @@ LAB_005c9c8a:
       this_00->field_1F37 = 0;
       Library::DKW::TBL::FUN_006ae1c0
                 (&this_00->field_1E2F->flags,(undefined4 *)&this_00->field_0x1e33);
-      pcVar14 = LoadResourceString(0x234c,HINSTANCE_00807618);
+      pcVar14 = LoadResourceString(0x234c,g_module_00807618);
       uVar19 = 0xffffffff;
       do {
         pcVar23 = pcVar14;
@@ -1163,7 +1170,7 @@ LAB_005c9c8a:
       this_00->field_1F37 = 1;
       Library::DKW::TBL::FUN_006ae1c0
                 (&this_00->field_1E2F->flags,(undefined4 *)&this_00->field_0x1e33);
-      pcVar14 = LoadResourceString(0x234f,HINSTANCE_00807618);
+      pcVar14 = LoadResourceString(0x234f,g_module_00807618);
       uVar19 = 0xffffffff;
       do {
         pcVar23 = pcVar14;
@@ -1203,7 +1210,7 @@ LAB_005c9c8a:
       this_00->field_2179 = message->id - MESS_MMSGTY_68FF;
       this_00->field_2191 = 0x6500;
       this_00->field_1E2F->count = 0;
-      pcVar14 = LoadResourceString(0x234e,HINSTANCE_00807618);
+      pcVar14 = LoadResourceString(0x234e,g_module_00807618);
       uVar19 = 0xffffffff;
       do {
         pcVar23 = pcVar14;
@@ -1229,7 +1236,7 @@ LAB_005c9c8a:
       this_00->field_1F37 = 0;
       Library::DKW::TBL::FUN_006ae1c0
                 (&this_00->field_1E2F->flags,(undefined4 *)&this_00->field_0x1e33);
-      pcVar14 = LoadResourceString(0x234c,HINSTANCE_00807618);
+      pcVar14 = LoadResourceString(0x234c,g_module_00807618);
       uVar19 = 0xffffffff;
       do {
         pcVar23 = pcVar14;
@@ -1255,7 +1262,7 @@ LAB_005c9c8a:
       this_00->field_1F37 = 1;
       Library::DKW::TBL::FUN_006ae1c0
                 (&this_00->field_1E2F->flags,(undefined4 *)&this_00->field_0x1e33);
-      pcVar14 = LoadResourceString(0x234f,HINSTANCE_00807618);
+      pcVar14 = LoadResourceString(0x234f,g_module_00807618);
       uVar19 = 0xffffffff;
       do {
         pcVar23 = pcVar14;
@@ -1309,7 +1316,7 @@ LAB_005c9c8a:
     this_00->field_0049 = 0;
     this_00->field_004D = 0x6102;
     this_00->field_0051 = 0;
-    thunk_FUN_005b66e0((AnonShape_005B66E0_174166E5 *)this_00);
+    thunk_FUN_005b66e0((MTaskTy *)this_00);
     break;
   case MESS_WAITTY_6943:
     thunk_FUN_005b6350(this_00,0x6942,0,0);
@@ -1368,7 +1375,7 @@ LAB_005c9c8a:
     }
     this_00->field_0049 = 1;
     this_00->field_004D = 0x60ff;
-    thunk_FUN_005b66e0((AnonShape_005B66E0_174166E5 *)this_00);
+    thunk_FUN_005b66e0((MTaskTy *)this_00);
     break;
   case MESS_WAITTY_694D:
     thunk_FUN_005b6350(this_00,0x6105,1,0);
@@ -1429,7 +1436,7 @@ LAB_005c9e75:
       }
       goto LAB_005ca619;
     case MESS_SHARED_6980:
-      pcVar14 = LoadResourceString(0x2354,HINSTANCE_00807618);
+      pcVar14 = LoadResourceString(0x2354,g_module_00807618);
       wsprintfA((LPSTR)local_98,"%d %s",(uint)this_00->field_1F5C,pcVar14);
       goto LAB_005ca73b;
     case MESS_SIDTY_6981:
@@ -1468,7 +1475,7 @@ LAB_005ca619:
       resourceId = 0x234f;
     }
 LAB_005ca70e:
-    pcVar14 = LoadResourceString(resourceId,HINSTANCE_00807618);
+    pcVar14 = LoadResourceString(resourceId,g_module_00807618);
 LAB_005ca71b:
     uVar19 = 0xffffffff;
     do {
@@ -1504,7 +1511,7 @@ LAB_005ca73b:
     DibPut((AnonShape_006B5B10_E0D06CF1 *)this_00->field_1C67,
            (local_28 - (int)local_c) + -8 + local_30,(int)(local_24 - local_34) / 2 + local_2c,
            '\x06',(byte *)this_00->field_1E2B);
-    ccFntTy::SetSurf(PTR_0081176c->field_0034,this_00->field_1C67,0,pDVar21->flags - 10,
+    ccFntTy::SetSurf(g_startSystem_0081176C->field_0034,this_00->field_1C67,0,pDVar21->flags - 10,
                      pDVar21->iteratorIndex - 0xb4,(pDVar21->elementSize - (int)local_c) + -8,
                      pDVar21->count);
     wVar3 = (message->arg0).words.low;
@@ -1514,7 +1521,7 @@ LAB_005ca73b:
     else {
       iVar11 = (-(uint)(wVar3 != 0) & 2) + 1;
     }
-    ccFntTy::WrStr(PTR_0081176c->field_0034,local_98,-1,-1,iVar11);
+    ccFntTy::WrStr(g_startSystem_0081176C->field_0034,local_98,-1,-1,iVar11);
     FUN_006b35d0((int *)PTR_008075a8,this_00->field_1F80);
     if ((message->arg0).words.low == 3) goto LAB_005ca964;
     break;
@@ -1528,13 +1535,13 @@ LAB_005ca73b:
     FUN_006c7570((AnonShape_006B5B10_E0D06CF1 *)this_00->field_1C67,0,*piVar6 + -10,
                  piVar6[1] + -0xb4,(undefined4 *)piVar6[2],piVar6[3],piVar6[3] / 2,
                  (-((message->arg0).words.low != 0) & 0xfcU) + 0x23);
-    ccFntTy::SetSurf(PTR_0081176c->field_0030,this_00->field_1C67,0,*piVar6 + -10,piVar6[1] - 0xb4,
-                     piVar6[2],piVar6[3]);
+    ccFntTy::SetSurf(g_startSystem_0081176C->field_0030,this_00->field_1C67,0,*piVar6 + -10,
+                     piVar6[1] - 0xb4,piVar6[2],piVar6[3]);
     iVar11 = ((message->arg0).words.low != 1) + 5;
     iVar26 = -1;
     iVar16 = -1;
-    puVar18 = (uint *)LoadResourceString(0x234a,HINSTANCE_00807618);
-    ccFntTy::WrStr(PTR_0081176c->field_0030,puVar18,iVar16,iVar26,iVar11);
+    puVar18 = (uint *)LoadResourceString(0x234a,g_module_00807618);
+    ccFntTy::WrStr(g_startSystem_0081176C->field_0030,puVar18,iVar16,iVar26,iVar11);
     if ((message->arg0).words.low != 3) break;
 LAB_005ca964:
     thunk_FUN_005b6730(this_00,9,'\x01',-1);
@@ -1594,8 +1601,8 @@ cf_switch_join_005CA971:
       pcVar14 = pcVar14 + 1;
       pcVar23 = pcVar23 + 1;
     }
-    ccFntTy::SetSurf(PTR_0081176c->field_0034,this_00->field_1E1E,0,local_1c,local_18,local_14,
-                     local_10);
+    ccFntTy::SetSurf(g_startSystem_0081176C->field_0034,this_00->field_1E1E,0,local_1c,local_18,
+                     local_14,local_10);
     wVar3 = (message->arg0).words.low;
     if (wVar3 == 1) {
       iVar11 = 2;
@@ -1603,7 +1610,7 @@ cf_switch_join_005CA971:
     else {
       iVar11 = (-(uint)(wVar3 != 0) & 2) + 1;
     }
-    ccFntTy::WrStr(PTR_0081176c->field_0034,&DAT_0080f33a,-1,-1,iVar11);
+    ccFntTy::WrStr(g_startSystem_0081176C->field_0034,&DAT_0080f33a,-1,-1,iVar11);
     break;
   case 0x6582:
   case 0x6583:
@@ -1641,8 +1648,8 @@ LAB_005cab38:
       if (DAT_00808a90._3_1_ != '\0') goto LAB_005cab38;
       local_20 = 0x234e;
     }
-    ccFntTy::SetSurf(PTR_0081176c->field_0034,this_00->field_1E1E,0,local_1c,local_18,local_14,
-                     local_10);
+    ccFntTy::SetSurf(g_startSystem_0081176C->field_0034,this_00->field_1E1E,0,local_1c,local_18,
+                     local_14,local_10);
     wVar3 = (message->arg0).words.low;
     if (wVar3 == 1) {
       iVar11 = 2;
@@ -1652,12 +1659,12 @@ LAB_005cab38:
     }
     iVar26 = -1;
     iVar16 = -1;
-    puVar18 = (uint *)LoadResourceString(local_20,HINSTANCE_00807618);
-    ccFntTy::WrStr(PTR_0081176c->field_0034,puVar18,iVar16,iVar26,iVar11);
+    puVar18 = (uint *)LoadResourceString(local_20,g_module_00807618);
+    ccFntTy::WrStr(g_startSystem_0081176C->field_0034,puVar18,iVar16,iVar26,iVar11);
     break;
   case 0x6586:
     if (DAT_00808a97 == -1) {
-      pcVar14 = LoadResourceString(0x1f55,HINSTANCE_00807618);
+      pcVar14 = LoadResourceString(0x1f55,g_module_00807618);
       uVar19 = 0xffffffff;
       do {
         pcVar23 = pcVar14;
@@ -1684,8 +1691,8 @@ LAB_005cab38:
     else {
       wsprintfA((LPSTR)&DAT_0080f33a,"%d",DAT_00808a97);
     }
-    ccFntTy::SetSurf(PTR_0081176c->field_0034,this_00->field_1E1E,0,local_1c,local_18,local_14,
-                     local_10);
+    ccFntTy::SetSurf(g_startSystem_0081176C->field_0034,this_00->field_1E1E,0,local_1c,local_18,
+                     local_14,local_10);
     wVar3 = (message->arg0).words.low;
     if (wVar3 == 1) {
       iVar11 = 2;
@@ -1693,20 +1700,20 @@ LAB_005cab38:
     else {
       iVar11 = (-(uint)(wVar3 != 0) & 2) + 1;
     }
-    ccFntTy::WrStr(PTR_0081176c->field_0034,&DAT_0080f33a,-1,-1,iVar11);
+    ccFntTy::WrStr(g_startSystem_0081176C->field_0034,&DAT_0080f33a,-1,-1,iVar11);
     break;
   case 0x6587:
     if (DAT_00808a9b == 0xff) {
-      pcVar14 = LoadResourceString(0x1f59,HINSTANCE_00807618);
+      pcVar14 = LoadResourceString(0x1f59,g_module_00807618);
       wsprintfA((LPSTR)&DAT_0080f33a,"%s",pcVar14);
     }
     else {
       iVar11 = DAT_00808a9b + 1;
-      pcVar14 = LoadResourceString(0x1f57,HINSTANCE_00807618);
+      pcVar14 = LoadResourceString(0x1f57,g_module_00807618);
       wsprintfA((LPSTR)&DAT_0080f33a,"%s %d",pcVar14,iVar11);
     }
-    ccFntTy::SetSurf(PTR_0081176c->field_0034,this_00->field_1E1E,0,local_1c,local_18,local_14,
-                     local_10);
+    ccFntTy::SetSurf(g_startSystem_0081176C->field_0034,this_00->field_1E1E,0,local_1c,local_18,
+                     local_14,local_10);
     wVar3 = (message->arg0).words.low;
     if (wVar3 == 1) {
       iVar11 = 2;
@@ -1714,7 +1721,7 @@ LAB_005cab38:
     else {
       iVar11 = (-(uint)(wVar3 != 0) & 2) + 1;
     }
-    ccFntTy::WrStr(PTR_0081176c->field_0034,&DAT_0080f33a,-1,-1,iVar11);
+    ccFntTy::WrStr(g_startSystem_0081176C->field_0034,&DAT_0080f33a,-1,-1,iVar11);
     break;
   case 0x6588:
     cVar9 = DAT_00808a95;

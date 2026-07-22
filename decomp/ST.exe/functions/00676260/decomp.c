@@ -31,7 +31,7 @@ int __cdecl _GetEmbrTobjGrpExch(uint param_1,int param_2)
   g_currentExceptionFrame = &local_50;
   iVar2 = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0);
   if (iVar2 == 0) {
-    if (g_sTAllPlayers_007FA174 == (STAllPlayersC *)0x0) {
+    if (g_allPlayers_007FA174 == (STAllPlayersC *)0x0) {
       this = (STGroupBoatC *)0x0;
     }
     else {
@@ -52,11 +52,9 @@ int __cdecl _GetEmbrTobjGrpExch(uint param_1,int param_2)
         /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(array, uVar6) (runtime stride) */
         puVar3 = (ushort *)(array->elementSize * uVar6 + (int)array->data);
 LAB_006762e0:
-        pSVar4 = STAllPlayersC::GetObjPtr
-                           (g_sTAllPlayers_007FA174,(char)param_1,(uint)*puVar3,CASE_1);
+        pSVar4 = STAllPlayersC::GetObjPtr(g_allPlayers_007FA174,(char)param_1,(uint)*puVar3,CASE_1);
         if (pSVar4 != (STGameObjC *)0x0) {
-          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-          iVar2 = (**(code **)&pSVar4->vtable->field_0x2c)();
+          iVar2 = (*pSVar4->vtable->vfunc_2C)();
           if (iVar2 == 0x78) {
             iVar2 = pSVar4->field_0259;
           }

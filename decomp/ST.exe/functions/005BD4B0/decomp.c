@@ -58,12 +58,12 @@ MReportTy::OutTGlProc
       ccFntTy::SetSurf(*(ccFntTy **)(iVar7 + 0x83),(int)local_8,0,5,5,local_8->field_0004 + -10,0xf)
       ;
       if (*(char *)(iVar7 + 0x67) == '\0') {
-        pcVar5 = LoadResourceString(0x2711,HINSTANCE_00807618);
+        pcVar5 = LoadResourceString(0x2711,g_module_00807618);
       }
       else {
         pcVar5 = (char *)&DAT_0080c736;
       }
-      pcVar6 = LoadResourceString(0x2445,HINSTANCE_00807618);
+      pcVar6 = LoadResourceString(0x2445,g_module_00807618);
       wsprintfA((LPSTR)&DAT_0080f33a,"&0%s: &2%s",pcVar6,pcVar5);
       ccFntTy::WrStr(*(ccFntTy **)(iVar7 + 0x83),&DAT_0080f33a,10,-1,0);
       ccFntTy::SetSurf(*(ccFntTy **)(iVar7 + 0x83),(int)local_8,0,5,0x19,local_8->field_0004 + -10,
@@ -74,8 +74,8 @@ MReportTy::OutTGlProc
       else {
         resourceId = 0x2339 - (DAT_0080c522 != 0);
       }
-      pcVar5 = LoadResourceString(resourceId,HINSTANCE_00807618);
-      pcVar6 = LoadResourceString(0x2337,HINSTANCE_00807618);
+      pcVar5 = LoadResourceString(resourceId,g_module_00807618);
+      pcVar6 = LoadResourceString(0x2337,g_module_00807618);
       wsprintfA((LPSTR)&DAT_0080f33a,"&0%s &2%s",pcVar6,pcVar5);
       ccFntTy::WrStr(*(ccFntTy **)(iVar7 + 0x83),&DAT_0080f33a,10,-1,0);
       Library::DKW::DDX::FUN_006c5000

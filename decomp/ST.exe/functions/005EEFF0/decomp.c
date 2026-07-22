@@ -68,11 +68,12 @@ void __thiscall FUN_005eeff0(void *this,int param_1)
         (pVVar3->field_004C[local_8 + local_c * pVVar3->field_0030] != 0)))) {
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
       (**(code **)(*(int *)this + 0xd8))();
-      thunk_FUN_004ad3c0((void *)((int)this + 0x1d5),
-                         (float)*(int *)((int)this + 0x2be) * _DAT_007904f8 * _DAT_007904f0,
-                         (float)*(int *)((int)this + 0x2c2) * _DAT_007904f8 * _DAT_007904f0,
-                         (float)*(int *)((int)this + 0x2c6) * _DAT_007904f8 * _DAT_007904f0 +
-                         _DAT_007904fc);
+      STT3DSprC::sub_004AD3C0
+                ((STT3DSprC *)((int)this + 0x1d5),
+                 (float)*(int *)((int)this + 0x2be) * _DAT_007904f8 * _DAT_007904f0,
+                 (float)*(int *)((int)this + 0x2c2) * _DAT_007904f8 * _DAT_007904f0,
+                 (float)*(int *)((int)this + 0x2c6) * _DAT_007904f8 * _DAT_007904f0 + _DAT_007904fc)
+      ;
       cVar1 = *(char *)((int)this + 0x2b9);
 joined_r0x005ef316:
       if (cVar1 != '\0') {

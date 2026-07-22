@@ -1,0 +1,3 @@
+0055BDA0  C7 05 90 2A 80 00 FC AE 79 00  MOV dword ptr [0x00802a90],0x79aefc
+0055BDAA  B9 90 2A 80 00            MOV ECX,0x802a90
+0055BDAF  FF 25 4C C0 85 00         JMP dword ptr [0x0085c04c]

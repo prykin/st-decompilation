@@ -3,10 +3,13 @@
 
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\To_boat.cpp
-   STBoatC::Dismant */
+   STBoatC::Dismant
 
-int __thiscall
-STBoatC::Dismant(STBoatC *this,AnonShape_004B9D90_4F3151F9 *param_1,undefined4 param_2,int *param_3)
+   [STPrototypeApplier] Propagated parameter 1.
+   Evidence: 0047DF00 -> 006E62D0 @ 0047E48C | 0047DF00 -> 006E62D0 @ 0047E5E1 | 0047DF00 ->
+   006E62D0 @ 0047E6BB | 0047DF00 -> 006E62D0 @ 0047EB16 | 0047DF00 -> 006E62D0 @ 0047EC6A */
+
+int __thiscall STBoatC::Dismant(STBoatC *this,int *param_1,undefined4 param_2,int *param_3)
 
 {
   STBoatC_field_06C3State SVar1;
@@ -46,8 +49,7 @@ STBoatC::Dismant(STBoatC *this,AnonShape_004B9D90_4F3151F9 *param_1,undefined4 p
   undefined4 *local_c;
   int local_8;
 
-  if ((param_1 == (AnonShape_004B9D90_4F3151F9 *)0x0) ||
-     (param_1 == (AnonShape_004B9D90_4F3151F9 *)0x1)) {
+  if ((param_1 == (int *)0x0) || (param_1 == (int *)0x1)) {
     memset(&this->field_02CC, 0, 0x5c); /* compiler bulk-zero initialization */
     this->field_02C4 = 0;
     SVar3 = this->field_06F7;
@@ -68,32 +70,31 @@ STBoatC::Dismant(STBoatC *this,AnonShape_004B9D90_4F3151F9 *param_1,undefined4 p
     if ((((sVar6 < 0) || (g_worldGrid.sizeX <= sVar6)) ||
         ((sVar18 < 0 || ((g_worldGrid.sizeY <= sVar18 || (sVar15 < 0)))))) ||
        (g_worldGrid.sizeZ <= sVar15)) {
-      param_1 = (AnonShape_004B9D90_4F3151F9 *)0x0;
+      param_1 = (int *)0x0;
     }
     else {
-      param_1 = (AnonShape_004B9D90_4F3151F9 *)
-                g_worldGrid.cells
-                [(int)g_worldGrid.planeStride * (int)sVar15 + (int)g_worldGrid.sizeX * (int)sVar18 +
-                 (int)sVar6].objects[0];
+      param_1 = (int *)g_worldGrid.cells
+                       [(int)g_worldGrid.planeStride * (int)sVar15 +
+                        (int)g_worldGrid.sizeX * (int)sVar18 + (int)sVar6].objects[0];
     }
-    if (param_1 == (AnonShape_004B9D90_4F3151F9 *)0x0) {
+    if ((AnonShape_004B9D90_4F3151F9 *)param_1 == (AnonShape_004B9D90_4F3151F9 *)0x0) {
       return 0;
     }
-    if (*(int *)&param_1->field_0x18 != local_1c) {
+    if (*(int *)&((AnonShape_004B9D90_4F3151F9 *)param_1)->field_0x18 != local_1c) {
       return 0;
     }
-    if (*(int *)&param_1->field_0x20 != 1000) {
+    if (*(int *)&((AnonShape_004B9D90_4F3151F9 *)param_1)->field_0x20 != 1000) {
       return 0;
     }
-    if (*(int *)&param_1->field_0x24 != this->field_0024) {
+    if (*(int *)&((AnonShape_004B9D90_4F3151F9 *)param_1)->field_0x24 != this->field_0024) {
       return 0;
     }
-    iVar9 = thunk_FUN_004b9d90(param_1);
+    iVar9 = thunk_FUN_004b9d90((AnonShape_004B9D90_4F3151F9 *)param_1);
     if (iVar9 == 0) {
       return 0;
     }
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-    iVar9 = (**(code **)(*(int *)param_1 + 0x2c))();
+    iVar9 = (**(code **)(*param_1 + 0x2c))();
     iVar9 = *(int *)(&DAT_00791d68 + iVar9 * 4);
     this->field_06B9 = iVar9;
     if (iVar9 == 1) {
@@ -176,25 +177,22 @@ LAB_0047f4cd:
       if (((sVar6 < 0) || (g_worldGrid.sizeX <= sVar6)) ||
          ((sVar15 < 0 ||
           (((g_worldGrid.sizeY <= sVar15 || (sVar18 < 0)) || (g_worldGrid.sizeZ <= sVar18)))))) {
-        param_1 = (AnonShape_004B9D90_4F3151F9 *)0x0;
+        param_1 = (int *)0x0;
       }
       else {
-        param_1 = (AnonShape_004B9D90_4F3151F9 *)
-                  g_worldGrid.cells
-                  [(int)sVar18 * (int)g_worldGrid.planeStride + (int)sVar15 * (int)g_worldGrid.sizeX
-                   + (int)sVar6].objects[0];
+        param_1 = (int *)g_worldGrid.cells
+                         [(int)sVar18 * (int)g_worldGrid.planeStride +
+                          (int)sVar15 * (int)g_worldGrid.sizeX + (int)sVar6].objects[0];
       }
-      if (((param_1 == (AnonShape_004B9D90_4F3151F9 *)0x0) ||
-          (*(int *)&param_1->field_0x18 != this->field_06AF)) ||
-         ((*(int *)&param_1->field_0x24 != this->field_0024 ||
-          (iVar9 = thunk_FUN_004b9d90(param_1), iVar9 == 0)))) {
+      if ((((AnonShape_004B9D90_4F3151F9 *)param_1 == (AnonShape_004B9D90_4F3151F9 *)0x0) ||
+          (*(int *)&((AnonShape_004B9D90_4F3151F9 *)param_1)->field_0x18 != this->field_06AF)) ||
+         ((*(int *)&((AnonShape_004B9D90_4F3151F9 *)param_1)->field_0x24 != this->field_0024 ||
+          (iVar9 = thunk_FUN_004b9d90((AnonShape_004B9D90_4F3151F9 *)param_1), iVar9 == 0)))) {
         return 0;
       }
       iVar9 = thunk_FUN_00495420(this,&this->field_06B3,&this->field_06B5,&this->field_06B7);
-      if ((iVar9 == 1) &&
-         ((*(uint *)&param_1->field_0x4b0 == 0 ||
-          (*(uint *)&param_1->field_0x4b0 == this->field_0018)))) {
-        *(uint *)&param_1->field_0x4b0 = this->field_0018;
+      if ((iVar9 == 1) && ((param_1[300] == 0 || (param_1[300] == this->field_0018)))) {
+        param_1[300] = this->field_0018;
         this->field_06C3 = CASE_2;
 LAB_0047e4df:
         iVar9 = (int)this->field_06B7;
@@ -220,18 +218,17 @@ LAB_0047e0a4:
       if (((sVar6 < 0) || (g_worldGrid.sizeX <= sVar6)) ||
          ((sVar15 < 0 ||
           (((g_worldGrid.sizeY <= sVar15 || (sVar18 < 0)) || (g_worldGrid.sizeZ <= sVar18)))))) {
-        param_1 = (AnonShape_004B9D90_4F3151F9 *)0x0;
+        param_1 = (int *)0x0;
       }
       else {
-        param_1 = (AnonShape_004B9D90_4F3151F9 *)
-                  g_worldGrid.cells
-                  [(int)sVar18 * (int)g_worldGrid.planeStride + (int)sVar15 * (int)g_worldGrid.sizeX
-                   + (int)sVar6].objects[0];
+        param_1 = (int *)g_worldGrid.cells
+                         [(int)sVar18 * (int)g_worldGrid.planeStride +
+                          (int)sVar15 * (int)g_worldGrid.sizeX + (int)sVar6].objects[0];
       }
-      if (((param_1 == (AnonShape_004B9D90_4F3151F9 *)0x0) ||
-          (*(int *)&param_1->field_0x18 != this->field_06AF)) ||
-         ((*(int *)&param_1->field_0x24 != this->field_0024 ||
-          (iVar9 = thunk_FUN_004b9d90(param_1), iVar9 == 0)))) {
+      if ((((AnonShape_004B9D90_4F3151F9 *)param_1 == (AnonShape_004B9D90_4F3151F9 *)0x0) ||
+          (*(int *)&((AnonShape_004B9D90_4F3151F9 *)param_1)->field_0x18 != this->field_06AF)) ||
+         ((*(int *)&((AnonShape_004B9D90_4F3151F9 *)param_1)->field_0x24 != this->field_0024 ||
+          (iVar9 = thunk_FUN_004b9d90((AnonShape_004B9D90_4F3151F9 *)param_1), iVar9 == 0)))) {
         sub_004602B0(this);
         this->field_00B7 = 0;
         return 0;
@@ -268,32 +265,29 @@ LAB_0047e0a4:
         if ((((sVar6 < 0) || (g_worldGrid.sizeX <= sVar6)) ||
             ((sVar15 < 0 || ((g_worldGrid.sizeY <= sVar15 || (sVar18 < 0)))))) ||
            (g_worldGrid.sizeZ <= sVar18)) {
-          param_1 = (AnonShape_004B9D90_4F3151F9 *)0x0;
+          param_1 = (int *)0x0;
         }
         else {
-          param_1 = (AnonShape_004B9D90_4F3151F9 *)
-                    g_worldGrid.cells
-                    [(int)sVar18 * (int)g_worldGrid.planeStride +
-                     (int)sVar15 * (int)g_worldGrid.sizeX + (int)sVar6].objects[0];
+          param_1 = (int *)g_worldGrid.cells
+                           [(int)sVar18 * (int)g_worldGrid.planeStride +
+                            (int)sVar15 * (int)g_worldGrid.sizeX + (int)sVar6].objects[0];
         }
-        if (param_1 == (AnonShape_004B9D90_4F3151F9 *)0x0) {
+        if ((AnonShape_004B9D90_4F3151F9 *)param_1 == (AnonShape_004B9D90_4F3151F9 *)0x0) {
           return 0;
         }
-        if (*(int *)&param_1->field_0x18 != this->field_06AF) {
+        if (*(int *)&((AnonShape_004B9D90_4F3151F9 *)param_1)->field_0x18 != this->field_06AF) {
           return 0;
         }
-        if (*(int *)&param_1->field_0x24 != this->field_0024) {
+        if (*(int *)&((AnonShape_004B9D90_4F3151F9 *)param_1)->field_0x24 != this->field_0024) {
           return 0;
         }
-        iVar9 = thunk_FUN_004b9d90(param_1);
+        iVar9 = thunk_FUN_004b9d90((AnonShape_004B9D90_4F3151F9 *)param_1);
         if (iVar9 == 0) {
           return 0;
         }
         iVar9 = thunk_FUN_00495420(this,&this->field_06B3,&this->field_06B5,&this->field_06B7);
-        if ((iVar9 == 1) &&
-           ((*(uint *)&param_1->field_0x4b0 == 0 ||
-            (*(uint *)&param_1->field_0x4b0 == this->field_0018)))) {
-          *(uint *)&param_1->field_0x4b0 = this->field_0018;
+        if ((iVar9 == 1) && ((param_1[300] == 0 || (param_1[300] == this->field_0018)))) {
+          param_1[300] = this->field_0018;
           this->field_06C3 = CASE_2;
           sub_00481520(this,(int)this->field_06B3,(int)this->field_06B5,(int)this->field_06B7);
           sub_00460260(this,0);
@@ -312,8 +306,8 @@ LAB_0047e0a4:
           iVar11 = CONCAT22((short)((uint)iVar17 >> 0x10),this->field_06A9 + 1);
           iVar9 = iVar11 * 0xc9;
           uVar5 = (undefined2)((uint)(iVar11 * 0x19) >> 0x10);
-          /* ST_PSEUDO[raw_indirect_call,packed_or_unaligned_piece]: expected typed vtable/callback call with explicit __thiscall receiver; expected named packed member, bit extract/compose, or unaligned load */
-          uVar5 = (*(code *)this->vtable->field_0010)
+          /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+          uVar5 = (*this->vtable->vfunc_10)
                             (CONCAT22(uVar5,this->field_0041),
                              CONCAT22((short)((uint)iVar9 >> 0x10),this->field_0043),
                              CONCAT22(uVar5,this->field_0045),iVar9,iVar17,iVar10);
@@ -338,8 +332,7 @@ LAB_0047f1f7:
           }
           if (uVar12 == 0) {
             this->field_06C7 = 2;
-            /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-            iVar9 = (*(code *)this->vtable->field_00D8)();
+            iVar9 = (*this->vtable->vfunc_D8)();
             return (-(uint)(iVar9 != 0) & 0xfffffffd) + 2;
           }
         }
@@ -431,26 +424,24 @@ LAB_0047edd5:
         sVar15 = this->field_06AB;
         if ((((sVar6 < 0) || (g_worldGrid.sizeX <= sVar6)) || (sVar15 < 0)) ||
            (((g_worldGrid.sizeY <= sVar15 || (sVar18 < 0)) || (g_worldGrid.sizeZ <= sVar18)))) {
-          param_1 = (AnonShape_004B9D90_4F3151F9 *)0x0;
+          param_1 = (int *)0x0;
         }
         else {
-          param_1 = (AnonShape_004B9D90_4F3151F9 *)
-                    g_worldGrid.cells
-                    [(int)sVar18 * (int)g_worldGrid.planeStride +
-                     (int)sVar15 * (int)g_worldGrid.sizeX + (int)sVar6].objects[0];
+          param_1 = (int *)g_worldGrid.cells
+                           [(int)sVar18 * (int)g_worldGrid.planeStride +
+                            (int)sVar15 * (int)g_worldGrid.sizeX + (int)sVar6].objects[0];
         }
-        if (((param_1 != (AnonShape_004B9D90_4F3151F9 *)0x0) &&
-            (*(int *)&param_1->field_0x18 == this->field_06AF)) &&
-           ((*(int *)&param_1->field_0x24 == this->field_0024 &&
-            (iVar9 = thunk_FUN_004b9d90(param_1), iVar9 != 0)))) {
-          thunk_FUN_004b9cf0(param_1);
+        if ((((AnonShape_004B9D90_4F3151F9 *)param_1 != (AnonShape_004B9D90_4F3151F9 *)0x0) &&
+            (*(int *)&((AnonShape_004B9D90_4F3151F9 *)param_1)->field_0x18 == this->field_06AF)) &&
+           ((*(int *)&((AnonShape_004B9D90_4F3151F9 *)param_1)->field_0x24 == this->field_0024 &&
+            (iVar9 = thunk_FUN_004b9d90((AnonShape_004B9D90_4F3151F9 *)param_1), iVar9 != 0)))) {
+          thunk_FUN_004b9cf0((AnonShape_004B9D90_4F3151F9 *)param_1);
           this->field_06C3 = CASE_4;
           goto cf_common_exit_0047F19A;
         }
-        FUN_006e62d0(PTR_00802a38,this->field_06AF,(int *)&param_1);
-        if ((param_1 != (AnonShape_004B9D90_4F3151F9 *)0x0) &&
-           (*(uint *)&param_1->field_0x4b0 == this->field_0018)) {
-          *(undefined4 *)&param_1->field_0x4b0 = 0;
+        FUN_006e62d0(g_playSystem_00802A38,this->field_06AF,(int *)&param_1);
+        if ((param_1 != (int *)0x0) && (param_1[300] == this->field_0018)) {
+          param_1[300] = 0;
         }
       }
       else {
@@ -464,8 +455,8 @@ LAB_0047edd5:
               /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
               iVar17 = CONCAT22((short)((uint)iVar9 >> 0x10),this->field_06B3 * 0xc9) + 100;
               uVar5 = (undefined2)((uint)iVar10 >> 0x10);
-              /* ST_PSEUDO[raw_indirect_call,packed_or_unaligned_piece]: expected typed vtable/callback call with explicit __thiscall receiver; expected named packed member, bit extract/compose, or unaligned load */
-              uVar5 = (*(code *)this->vtable->field_0010)
+              /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+              uVar5 = (*this->vtable->vfunc_10)
                                 (CONCAT22(uVar5,this->field_0041),
                                  CONCAT22((short)((uint)iVar17 >> 0x10),this->field_0043),
                                  CONCAT22(uVar5,this->field_0045),iVar17,iVar10,iVar9);
@@ -576,10 +567,9 @@ LAB_0047edd5:
               if (local_10 == 0) {
                 uVar7 = this->field_06AD + 1;
                 this->field_06C3 = CASE_6;
-                SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0048DFD0::thunk_FUN_0048dfd0
-                          ((AnonReceiver_0048DFD0 *)this,this->field_06A9,this->field_06AB,uVar7,
-                           this->field_06A9,this->field_06AB,(int *)(uint)uVar7,1,&this->field_06B3,
-                           &this->field_06B5,&this->field_06B7);
+                sub_0048DFD0(this,this->field_06A9,this->field_06AB,uVar7,this->field_06A9,
+                             this->field_06AB,(int *)(uint)uVar7,1,&this->field_06B3,
+                             &this->field_06B5,&this->field_06B7);
                 sub_00481520(this,(int)this->field_06B3,(int)this->field_06B5,(int)this->field_06B7)
                 ;
                 iVar9 = sub_0045FF50(this,0);
@@ -588,8 +578,7 @@ LAB_0047edd5:
                 }
               }
             }
-            /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-            iVar9 = (*(code *)this->vtable->field_00D8)();
+            iVar9 = (*this->vtable->vfunc_D8)();
             return (-(uint)(iVar9 != 0) & 0xfffffffd) + 2;
           }
           if (SVar1 != CASE_6) {
@@ -611,16 +600,14 @@ LAB_0047edd5:
             goto LAB_0047f1f7;
           }
           if (iVar9 == 0) {
-            /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-            iVar9 = (*(code *)this->vtable->field_00D8)();
+            iVar9 = (*this->vtable->vfunc_D8)();
             return -(uint)(iVar9 != 0);
           }
           if (iVar9 == 3) {
             uVar7 = this->field_06AD + 1;
-            SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0048DFD0::thunk_FUN_0048dfd0
-                      ((AnonReceiver_0048DFD0 *)this,this->field_06A9,this->field_06AB,uVar7,
-                       this->field_06A9,this->field_06AB,(int *)(uint)uVar7,1,&this->field_06B3,
-                       &this->field_06B5,&this->field_06B7);
+            sub_0048DFD0(this,this->field_06A9,this->field_06AB,uVar7,this->field_06A9,
+                         this->field_06AB,(int *)(uint)uVar7,1,&this->field_06B3,&this->field_06B5,
+                         &this->field_06B7);
             sub_00481520(this,(int)this->field_06B3,(int)this->field_06B5,(int)this->field_06B7);
             sub_0045FF50(this,0);
           }
@@ -631,19 +618,19 @@ LAB_0047edd5:
         sVar15 = this->field_06AB;
         if (((((sVar6 < 0) || (g_worldGrid.sizeX <= sVar6)) || (sVar15 < 0)) ||
             ((g_worldGrid.sizeY <= sVar15 || (sVar18 < 0)))) || (g_worldGrid.sizeZ <= sVar18)) {
-          param_1 = (AnonShape_004B9D90_4F3151F9 *)0x0;
+          param_1 = (int *)0x0;
         }
         else {
-          param_1 = (AnonShape_004B9D90_4F3151F9 *)
-                    g_worldGrid.cells
-                    [(int)sVar18 * (int)g_worldGrid.planeStride +
-                     (int)sVar15 * (int)g_worldGrid.sizeX + (int)sVar6].objects[0];
+          param_1 = (int *)g_worldGrid.cells
+                           [(int)sVar18 * (int)g_worldGrid.planeStride +
+                            (int)sVar15 * (int)g_worldGrid.sizeX + (int)sVar6].objects[0];
         }
-        if (((param_1 != (AnonShape_004B9D90_4F3151F9 *)0x0) &&
-            (*(int *)&param_1->field_0x18 == this->field_06AF)) &&
-           ((*(int *)&param_1->field_0x24 == this->field_0024 &&
-            (iVar9 = thunk_FUN_004b9d90(param_1), iVar9 != 0)))) {
-          if (param_1->field_0245 == 6) {
+        if ((((AnonShape_004B9D90_4F3151F9 *)param_1 != (AnonShape_004B9D90_4F3151F9 *)0x0) &&
+            (*(int *)&((AnonShape_004B9D90_4F3151F9 *)param_1)->field_0x18 == this->field_06AF)) &&
+           ((*(int *)&((AnonShape_004B9D90_4F3151F9 *)param_1)->field_0x24 == this->field_0024 &&
+            (iVar9 = thunk_FUN_004b9d90((AnonShape_004B9D90_4F3151F9 *)param_1), iVar9 != 0)))) {
+          /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
+          if (*(int *)((int)param_1 + 0x245) == 6) {
             if (this->field_06B9 == 1) {
               this->field_06C3 = CASE_5;
               this->field_06C7 = 0;
@@ -654,20 +641,17 @@ LAB_0047edd5:
           }
           goto cf_common_exit_0047F19A;
         }
-        FUN_006e62d0(PTR_00802a38,this->field_06AF,(int *)&param_1);
-        if ((param_1 != (AnonShape_004B9D90_4F3151F9 *)0x0) &&
-           (*(uint *)&param_1->field_0x4b0 == this->field_0018)) {
-          *(undefined4 *)&param_1->field_0x4b0 = 0;
+        FUN_006e62d0(g_playSystem_00802A38,this->field_06AF,(int *)&param_1);
+        if ((param_1 != (int *)0x0) && (param_1[300] == this->field_0018)) {
+          param_1[300] = 0;
         }
         if (this->field_06B9 != 1) {
           sVar6 = this->field_06AD + 1;
           this->field_06C3 = CASE_6;
           /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-          SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0048DFD0::thunk_FUN_0048dfd0
-                    ((AnonReceiver_0048DFD0 *)this,this->field_06A9,this->field_06AB,sVar6,
-                     this->field_06A9,this->field_06AB,
-                     (int *)CONCAT22((short)((uint)param_1 >> 0x10),sVar6),1,&this->field_06B3,
-                     &this->field_06B5,&this->field_06B7);
+          sub_0048DFD0(this,this->field_06A9,this->field_06AB,sVar6,this->field_06A9,
+                       this->field_06AB,(int *)CONCAT22((short)((uint)param_1 >> 0x10),sVar6),1,
+                       &this->field_06B3,&this->field_06B5,&this->field_06B7);
           sub_00481520(this,(int)this->field_06B3,(int)this->field_06B5,(int)this->field_06B7);
           iVar9 = sub_0045FF50(this,0);
           if (iVar9 == -1) {
@@ -678,9 +662,8 @@ LAB_0047edd5:
       }
       this->field_06C3 = CASE_5;
       this->field_06C7 = 0;
-/* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
 cf_common_exit_0047F19A:
-      iVar9 = (*(code *)this->vtable->field_00D8)();
+      iVar9 = (*this->vtable->vfunc_D8)();
       return (-(uint)(iVar9 != 0) & 0xfffffffd) + 2;
     }
     iVar9 = sub_00460260(this,2);
@@ -691,26 +674,25 @@ cf_common_exit_0047F19A:
       sVar15 = this->field_06AB;
       if ((((sVar6 < 0) || (g_worldGrid.sizeX <= sVar6)) || (sVar15 < 0)) ||
          (((g_worldGrid.sizeY <= sVar15 || (sVar18 < 0)) || (g_worldGrid.sizeZ <= sVar18)))) {
-        param_1 = (AnonShape_004B9D90_4F3151F9 *)0x0;
+        param_1 = (int *)0x0;
       }
       else {
-        param_1 = (AnonShape_004B9D90_4F3151F9 *)
-                  g_worldGrid.cells
-                  [(int)sVar18 * (int)g_worldGrid.planeStride + (int)sVar15 * (int)g_worldGrid.sizeX
-                   + (int)sVar6].objects[0];
+        param_1 = (int *)g_worldGrid.cells
+                         [(int)sVar18 * (int)g_worldGrid.planeStride +
+                          (int)sVar15 * (int)g_worldGrid.sizeX + (int)sVar6].objects[0];
       }
-      if (((param_1 == (AnonShape_004B9D90_4F3151F9 *)0x0) ||
-          (*(int *)&param_1->field_0x18 != this->field_06AF)) ||
-         ((*(int *)&param_1->field_0x24 != this->field_0024 ||
-          (iVar9 = thunk_FUN_004b9d90(param_1), iVar9 == 0)))) {
-        FUN_006e62d0(PTR_00802a38,this->field_06AF,(int *)&param_1);
-        if (param_1 == (AnonShape_004B9D90_4F3151F9 *)0x0) {
+      if ((((AnonShape_004B9D90_4F3151F9 *)param_1 == (AnonShape_004B9D90_4F3151F9 *)0x0) ||
+          (*(int *)&((AnonShape_004B9D90_4F3151F9 *)param_1)->field_0x18 != this->field_06AF)) ||
+         ((*(int *)&((AnonShape_004B9D90_4F3151F9 *)param_1)->field_0x24 != this->field_0024 ||
+          (iVar9 = thunk_FUN_004b9d90((AnonShape_004B9D90_4F3151F9 *)param_1), iVar9 == 0)))) {
+        FUN_006e62d0(g_playSystem_00802A38,this->field_06AF,(int *)&param_1);
+        if (param_1 == (int *)0x0) {
           return 0;
         }
       }
       else {
         if (this->field_06B9 != 1) {
-          thunk_FUN_004b9cf0(param_1);
+          thunk_FUN_004b9cf0((AnonShape_004B9D90_4F3151F9 *)param_1);
           this->field_06C3 = CASE_4;
           return 2;
         }
@@ -721,10 +703,10 @@ cf_common_exit_0047F19A:
           return 2;
         }
       }
-      if (*(uint *)&param_1->field_0x4b0 != this->field_0018) {
+      if (param_1[300] != this->field_0018) {
         return 0;
       }
-      *(undefined4 *)&param_1->field_0x4b0 = 0;
+      param_1[300] = 0;
       return 0;
     case 1:
       sVar6 = this->field_06A9;
@@ -732,22 +714,20 @@ cf_common_exit_0047F19A:
       sVar15 = this->field_06AB;
       if (((((sVar6 < 0) || (g_worldGrid.sizeX <= sVar6)) || (sVar15 < 0)) ||
           ((g_worldGrid.sizeY <= sVar15 || (sVar18 < 0)))) || (g_worldGrid.sizeZ <= sVar18)) {
-        param_1 = (AnonShape_004B9D90_4F3151F9 *)0x0;
+        param_1 = (int *)0x0;
       }
       else {
-        param_1 = (AnonShape_004B9D90_4F3151F9 *)
-                  g_worldGrid.cells
-                  [(int)sVar18 * (int)g_worldGrid.planeStride + (int)sVar15 * (int)g_worldGrid.sizeX
-                   + (int)sVar6].objects[0];
+        param_1 = (int *)g_worldGrid.cells
+                         [(int)sVar18 * (int)g_worldGrid.planeStride +
+                          (int)sVar15 * (int)g_worldGrid.sizeX + (int)sVar6].objects[0];
       }
-      if (((param_1 == (AnonShape_004B9D90_4F3151F9 *)0x0) ||
-          (*(int *)&param_1->field_0x18 != this->field_06AF)) ||
-         ((*(int *)&param_1->field_0x24 != this->field_0024 ||
-          (iVar9 = thunk_FUN_004b9d90(param_1), iVar9 == 0)))) {
-        FUN_006e62d0(PTR_00802a38,this->field_06AF,(int *)&param_1);
-        if ((param_1 != (AnonShape_004B9D90_4F3151F9 *)0x0) &&
-           (*(uint *)&param_1->field_0x4b0 == this->field_0018)) {
-          *(undefined4 *)&param_1->field_0x4b0 = 0;
+      if ((((AnonShape_004B9D90_4F3151F9 *)param_1 == (AnonShape_004B9D90_4F3151F9 *)0x0) ||
+          (*(int *)&((AnonShape_004B9D90_4F3151F9 *)param_1)->field_0x18 != this->field_06AF)) ||
+         ((*(int *)&((AnonShape_004B9D90_4F3151F9 *)param_1)->field_0x24 != this->field_0024 ||
+          (iVar9 = thunk_FUN_004b9d90((AnonShape_004B9D90_4F3151F9 *)param_1), iVar9 == 0)))) {
+        FUN_006e62d0(g_playSystem_00802A38,this->field_06AF,(int *)&param_1);
+        if ((param_1 != (int *)0x0) && (param_1[300] == this->field_0018)) {
+          param_1[300] = 0;
         }
         sub_004602B0(this);
         return 0;
@@ -761,30 +741,29 @@ cf_common_exit_0047F19A:
       sVar15 = this->field_06AB;
       if ((((sVar6 < 0) || (g_worldGrid.sizeX <= sVar6)) || (sVar15 < 0)) ||
          (((g_worldGrid.sizeY <= sVar15 || (sVar18 < 0)) || (g_worldGrid.sizeZ <= sVar18)))) {
-        param_1 = (AnonShape_004B9D90_4F3151F9 *)0x0;
+        param_1 = (int *)0x0;
       }
       else {
-        param_1 = (AnonShape_004B9D90_4F3151F9 *)
-                  g_worldGrid.cells
-                  [(int)sVar18 * (int)g_worldGrid.planeStride + (int)sVar15 * (int)g_worldGrid.sizeX
-                   + (int)sVar6].objects[0];
+        param_1 = (int *)g_worldGrid.cells
+                         [(int)sVar18 * (int)g_worldGrid.planeStride +
+                          (int)sVar15 * (int)g_worldGrid.sizeX + (int)sVar6].objects[0];
       }
-      if (((param_1 == (AnonShape_004B9D90_4F3151F9 *)0x0) ||
-          (*(int *)&param_1->field_0x18 != this->field_06AF)) ||
-         ((*(int *)&param_1->field_0x24 != this->field_0024 ||
-          (iVar9 = thunk_FUN_004b9d90(param_1), iVar9 == 0)))) {
-        FUN_006e62d0(PTR_00802a38,this->field_06AF,(int *)&param_1);
-        if (param_1 == (AnonShape_004B9D90_4F3151F9 *)0x0) {
+      if ((((AnonShape_004B9D90_4F3151F9 *)param_1 == (AnonShape_004B9D90_4F3151F9 *)0x0) ||
+          (*(int *)&((AnonShape_004B9D90_4F3151F9 *)param_1)->field_0x18 != this->field_06AF)) ||
+         ((*(int *)&((AnonShape_004B9D90_4F3151F9 *)param_1)->field_0x24 != this->field_0024 ||
+          (iVar9 = thunk_FUN_004b9d90((AnonShape_004B9D90_4F3151F9 *)param_1), iVar9 == 0)))) {
+        FUN_006e62d0(g_playSystem_00802A38,this->field_06AF,(int *)&param_1);
+        if (param_1 == (int *)0x0) {
           return 0;
         }
-        if (*(uint *)&param_1->field_0x4b0 != this->field_0018) {
+        if (param_1[300] != this->field_0018) {
           return 0;
         }
-        *(undefined4 *)&param_1->field_0x4b0 = 0;
+        param_1[300] = 0;
         return 0;
       }
-      if (*(uint *)&param_1->field_0x4b0 == this->field_0018) {
-        *(undefined4 *)&param_1->field_0x4b0 = 0;
+      if (param_1[300] == this->field_0018) {
+        param_1[300] = 0;
       }
       this->field_06C3 = CASE_1;
       this->field_06BF = 0;

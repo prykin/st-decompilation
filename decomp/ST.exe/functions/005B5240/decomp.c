@@ -94,7 +94,7 @@ MMObjTy::InitSprBut(MMObjTy *this,AnonShape_005B5240_B2C8755B *param_1,char *tex
       iVar2 = *(int *)&param_1->field_0xd9;
       uVar7 = 0xffffffff;
       cVar6 = CASE_FFFFFFFE;
-      puVar3 = (uint *)LoadResourceString(param_18,HINSTANCE_00807618);
+      puVar3 = (uint *)LoadResourceString(param_18,g_module_00807618);
       puVar4 = ccFntTy::CreateTypeSSpr
                          (param_19,puVar3,param_20,param_21,cVar6,uVar7,param_22,param_23,param_24);
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */

@@ -25,7 +25,7 @@ undefined4 __fastcall FUN_004cc370(AnonShape_004CC370_02CE3D17 *param_1)
       uVar1 = thunk_FUN_004ad650(param_1->field_0603);
       FUN_006ea2f0(param_1->field_0211,uVar1);
       *(undefined4 *)&param_1->field_0x44c = 0xffffffff;
-      *(uint *)&param_1->field_0x450 = PTR_00802a38->field_00E4;
+      *(uint *)&param_1->field_0x450 = g_playSystem_00802A38->field_00E4;
     }
     goto cf_common_exit_004CC6D2;
   }
@@ -38,7 +38,7 @@ undefined4 __fastcall FUN_004cc370(AnonShape_004CC370_02CE3D17 *param_1)
   STT3DSprC::UnLoadSequence((STT3DSprC *)&param_1->field_0x1d5,6);
   iVar2 = *(int *)&param_1->field_0x440;
   *(int *)&param_1->field_0x43c = iVar2;
-  if (PTR_00802a38->field_00E4 <
+  if (g_playSystem_00802A38->field_00E4 <
       *(int *)&param_1->field_0x450 + (~-(uint)(iVar2 != 1) & DAT_00790c14))
   goto cf_common_exit_004CC6D2;
   if (iVar2 == 2) {
@@ -74,8 +74,9 @@ cf_error_exit_004CC50A:
   iVar2 = thunk_FUN_004ad650((int)&param_1->field_0x1d5);
   uVar1 = thunk_FUN_004ad650(param_1->field_0603);
   FUN_006ea340(param_1->field_0211,uVar1,iVar2,uVar5);
-  thunk_FUN_004ad3c0((void *)param_1->field_0603,param_1->field_01F9,param_1->field_01FD,
-                     param_1->field_0201);
+  STT3DSprC::sub_004AD3C0
+            ((STT3DSprC *)param_1->field_0603,param_1->field_01F9,param_1->field_01FD,
+             param_1->field_0201);
   uVar1 = *(int *)&param_1->field_0x1c * 0x41c64e6d + 0x3039;
   *(uint *)&param_1->field_0x1c = uVar1;
   iVar4 = param_1->field_0235 * 0x44;
@@ -98,7 +99,7 @@ cf_error_exit_004CC50A:
   }
   thunk_FUN_004ad380((void *)param_1->field_0603,uVar5,uVar1);
   STT3DSprC::SetCurFase((STT3DSprC *)param_1->field_0603,'\x0e',0);
-  STT3DSprC::StartShow((STT3DSprC *)param_1->field_0603,0xe,PTR_00802a38->field_00E4);
+  STT3DSprC::StartShow((STT3DSprC *)param_1->field_0603,0xe,g_playSystem_00802A38->field_00E4);
   thunk_FUN_004ad460((void *)param_1->field_0603,1);
   if ((*(int *)&param_1->field_0x43c == 3) || (*(int *)&param_1->field_0x43c == 4)) {
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
@@ -115,7 +116,7 @@ cf_error_exit_004CC50A:
     }
   }
 cf_common_exit_004CC6D2:
-  thunk_FUN_004ac9e0((void *)param_1->field_0603,PTR_00802a38->field_00E4);
+  thunk_FUN_004ac9e0((void *)param_1->field_0603,g_playSystem_00802A38->field_00E4);
   return 0;
 }
 

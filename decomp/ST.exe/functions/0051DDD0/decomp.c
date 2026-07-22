@@ -78,7 +78,7 @@ int __thiscall HelpPanelTy::GetMessage(HelpPanelTy *this,STMessage *message)
   }
   if (message->id == MESS_ID_CREATE) {
     puVar10 = &local_20->field_004C;
-    FUN_006b1a50((int)PTR_008075a8,3,(undefined4 *)0x0,puVar10);
+    FUN_006b1a50(PTR_008075a8,3,(undefined4 *)0x0,puVar10);
     this_00->field_003C = *puVar10;
     this_00->field_0044 = this_00->field_0050 - this_00->field_0048;
     this_00->field_0174 = this_00->field_0048 + this_00->field_0050;
@@ -577,7 +577,7 @@ int __thiscall HelpPanelTy::GetMessage(HelpPanelTy *this,STMessage *message)
           puVar10 = (undefined4 *)((int)puVar10 + 1);
         }
         ccFntTy::SetSurf(this_00->field_01E4,this_00->field_01EC,0,0,0,0,0);
-        pcVar12 = LoadResourceString(local_18,HINSTANCE_00807618);
+        pcVar12 = LoadResourceString(local_18,g_module_00807618);
         uVar16 = 0xffffffff;
         do {
           pcVar21 = pcVar12;
@@ -620,8 +620,8 @@ int __thiscall HelpPanelTy::GetMessage(HelpPanelTy *this,STMessage *message)
           }
           iVar15 = (uint)*(byte *)((int)pUVar7 + 0x11) * 0x14;
           local_10 = (undefined4 *)((uint)local_1c & 0xff);
-          iVar8 = ((AnonShape_006B5B10_E0D06CF1 *)this_00->field_01EC)->field_0008 / 2;
-          FUN_006b5b10((AnonShape_006B5B10_E0D06CF1 *)this_00->field_01EC,0,iVar15,iVar8,iVar15 + 8,
+          iVar8 = (int)((AnonShape_006E6FB0_BC494FEA *)this_00->field_01EC)->field_0008 / 2;
+          FUN_006b5b10((AnonShape_006E6FB0_BC494FEA *)this_00->field_01EC,0,iVar15,iVar8,iVar15 + 8,
                        iVar8,(byte)local_1c,0xd);
           /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
           if (*(char *)((int)local_8 + 0x13) == '\0') {
@@ -629,7 +629,7 @@ int __thiscall HelpPanelTy::GetMessage(HelpPanelTy *this,STMessage *message)
           }
           /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
           iVar15 = (uint)*(byte *)((int)local_8 + 0x11) * 0x14;
-          FUN_006b5b10((AnonShape_006B5B10_E0D06CF1 *)this_00->field_01EC,0,iVar15,0,iVar15,iVar8,
+          FUN_006b5b10((AnonShape_006E6FB0_BC494FEA *)this_00->field_01EC,0,iVar15,0,iVar15,iVar8,
                        (byte)local_10,0xd);
           local_14 = (undefined4 *)0x0;
           local_c = (uint)(message->arg0).words.low;
@@ -672,8 +672,8 @@ LAB_0051ef61:
           iVar8 = 0;
           do {
             if (((uint)local_14 & 1 << (bVar20 & 0x1f)) != 0) {
-              FUN_006b5b10((AnonShape_006B5B10_E0D06CF1 *)this_00->field_01EC,0,iVar8,0,iVar8,
-                           ((AnonShape_006B5B10_E0D06CF1 *)this_00->field_01EC)->field_0008,
+              FUN_006b5b10((AnonShape_006E6FB0_BC494FEA *)this_00->field_01EC,0,iVar8,0,iVar8,
+                           (int)((AnonShape_006E6FB0_BC494FEA *)this_00->field_01EC)->field_0008,
                            (byte)local_10,0xd);
             }
             iVar8 = iVar8 + 0x14;
@@ -930,9 +930,9 @@ switchD_0051dfcc_caseD_7:
     *(undefined2 *)&this_00->field_0x2c = 0;
     this_00->field_002E = 2;
     *(UINT *)&this_00->field_0x30 = UVar24;
-    if (PTR_00802a30 != (CursorClassTy *)0x0) {
+    if (g_cursorClass_00802A30 != (CursorClassTy *)0x0) {
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-      (**(code **)PTR_00802a30->field_0000)(&this_00->field_0x18);
+      (**(code **)g_cursorClass_00802A30->field_0000)(&this_00->field_0x18);
     }
   }
   this_00->field_0178 = local_10;
@@ -945,7 +945,7 @@ switchD_0051dfcc_caseD_7:
   this_00->field_002E = 2;
   *(undefined4 **)&this_00->field_0x30 = local_10;
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-  (**(code **)PTR_00802a30->field_0000)(&this_00->field_0x18);
+  (**(code **)g_cursorClass_00802A30->field_0000)(&this_00->field_0x18);
   g_currentExceptionFrame = local_84.previous;
   return 0;
 }

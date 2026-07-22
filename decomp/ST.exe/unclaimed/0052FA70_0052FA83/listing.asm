@@ -1,0 +1,14 @@
+0052FA70  pointer  0052f9d7
+0052FA74  pointer  0052fa17
+0052FA78  byte  0h
+0052FA79  byte  0h
+0052FA7A  byte  1h
+0052FA7B  byte  1h
+0052FA7C  byte  1h
+0052FA7D  byte  1h
+0052FA7E  byte  1h
+0052FA7F  byte  1h
+0052FA80  byte  1h
+0052FA81  byte  0h
+0052FA82  byte  1h
+0052FA83  byte  0h

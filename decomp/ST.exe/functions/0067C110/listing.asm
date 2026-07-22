@@ -1,4 +1,4 @@
-FUN_0067c110:
+AiPlrClassTy::sub_0067C110:
 0067C110  55                        PUSH EBP
 0067C111  8B EC                     MOV EBP,ESP
 0067C113  83 EC 34                  SUB ESP,0x34

@@ -1,4 +1,4 @@
-FUN_00419d30:
+TLOBaseTy::sub_00419D30:
 00419D30  55                        PUSH EBP
 00419D31  8B EC                     MOV EBP,ESP
 00419D33  56                        PUSH ESI

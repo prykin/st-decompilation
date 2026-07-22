@@ -176,7 +176,8 @@ LAB_00629242:
   if (local_24 == 4) {
     FUN_006ea4e0(PTR_00807598,*piVar1,1,0xffffffff,0xffffffff);
     if (pSVar8->field_0018 != 0) {
-      FUN_006ea460(PTR_00807598,*piVar1,pSVar8->field_0018);
+      SubmarineTitans::Recovered::HiddenThis::AnonReceiver_006EA050::sub_006EA460
+                ((AnonReceiver_006EA050 *)PTR_00807598,*piVar1,pSVar8->field_0018);
     }
   }
   pVVar7 = g_visibleClass_00802A88;

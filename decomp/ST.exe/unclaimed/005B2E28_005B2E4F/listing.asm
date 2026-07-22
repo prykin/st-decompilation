@@ -1,0 +1,10 @@
+005B2E28  pointer  005b2a94
+005B2E2C  pointer  005b2aa1
+005B2E30  pointer  005b2aaa
+005B2E34  pointer  005b2aba
+005B2E38  pointer  005b2ac6
+005B2E3C  pointer  005b2ad6
+005B2E40  pointer  005b2adf
+005B2E44  pointer  005b2af2
+005B2E48  pointer  005b2af8
+005B2E4C  pointer  005b2b08

@@ -1,5 +1,14 @@
 
-int __thiscall FUN_00668f50(void *this,char *param_1,uint param_2,uint *param_3)
+/* [STMethodOwnerApplier] Structural method owner recovered as
+   SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0064A970.
+   Evidence: this_call_owners=[SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0064A970];
+   agreed_this_calls=2; incoming_this_accesses=1; incoming_edx_uses=0;
+   incoming_stack_parameter_uses=124; direct_non_thunk_callers=0; incoming_ecx_receiver_callers=0;
+   attributed_named_callers=1; owner_evidence_coverage=adequate */
+
+int __thiscall
+SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0064A970::sub_00668F50
+          (AnonReceiver_0064A970 *this,char *param_1,uint param_2,uint *param_3)
 
 {
   byte bVar1;
@@ -17,8 +26,7 @@ int __thiscall FUN_00668f50(void *this,char *param_1,uint param_2,uint *param_3)
   local_8 = 0;
   if (param_2 == 0) {
     if (param_1 == (char *)0x9) {
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-      uVar2 = (**(code **)(*(int *)this + 0x18))();
+      uVar2 = (*this->vtable->slot_18)();
       if (((-1 < (int)uVar2) && ((int)uVar2 < 8)) && ((&DAT_008087e9)[uVar2 * 0x51] != -1)) {
         *param_3 = uVar2;
         return 1;
@@ -55,8 +63,7 @@ int __thiscall FUN_00668f50(void *this,char *param_1,uint param_2,uint *param_3)
     bVar5 = (byte)param_1;
     if (param_2 == 0xffffffff) {
       if (param_1 == (char *)0x9) {
-        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-        uVar2 = (**(code **)(*(int *)this + 0x18))();
+        uVar2 = (*this->vtable->slot_18)();
         if (((-1 < (int)uVar2) && ((int)uVar2 < 8)) && ((&DAT_008087e9)[uVar2 * 0x51] != -1)) {
           uVar7 = 0;
           pcVar3 = &DAT_008087e9;
@@ -135,8 +142,7 @@ int __thiscall FUN_00668f50(void *this,char *param_1,uint param_2,uint *param_3)
     }
     else if (param_2 == 1) {
       if (param_1 == (char *)0x9) {
-        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-        uVar2 = (**(code **)(*(int *)this + 0x18))();
+        uVar2 = (*this->vtable->slot_18)();
         if (((-1 < (int)uVar2) && ((int)uVar2 < 8)) && ((&DAT_008087e9)[uVar2 * 0x51] != -1)) {
           uVar7 = 0;
           pcVar3 = &DAT_008087e9;
@@ -215,8 +221,7 @@ int __thiscall FUN_00668f50(void *this,char *param_1,uint param_2,uint *param_3)
     }
     else if (param_2 == 2) {
       if (param_1 == (char *)0x9) {
-        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-        uVar2 = (**(code **)(*(int *)this + 0x18))();
+        uVar2 = (*this->vtable->slot_18)();
         if (((-1 < (int)uVar2) && ((int)uVar2 < 8)) && ((&DAT_008087e9)[uVar2 * 0x51] != -1)) {
           uVar7 = 0;
           pcVar3 = &DAT_008087e9;
@@ -317,8 +322,7 @@ int __thiscall FUN_00668f50(void *this,char *param_1,uint param_2,uint *param_3)
     }
     else if (param_2 == 3) {
       if (param_1 == (char *)0x9) {
-        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-        uVar2 = (**(code **)(*(int *)this + 0x18))();
+        uVar2 = (*this->vtable->slot_18)();
         if (((-1 < (int)uVar2) && ((int)uVar2 < 8)) && ((&DAT_008087e9)[uVar2 * 0x51] != -1)) {
           param_2 = 0;
           pcVar3 = &DAT_008087e9;
@@ -523,8 +527,7 @@ LAB_00669a2a:
     }
     else if (param_2 == 4) {
       if (param_1 == (char *)0x9) {
-        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-        uVar2 = (**(code **)(*(int *)this + 0x18))();
+        uVar2 = (*this->vtable->slot_18)();
         if (((-1 < (int)uVar2) && ((int)uVar2 < 8)) && ((&DAT_008087e9)[uVar2 * 0x51] != -1)) {
           param_2 = 0;
           pcVar3 = &DAT_008087e9;
@@ -727,8 +730,7 @@ LAB_00669f03:
     }
     else if (param_2 == 0xfffffffe) {
       if (param_1 == (char *)0x9) {
-        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-        uVar2 = (**(code **)(*(int *)this + 0x18))();
+        uVar2 = (*this->vtable->slot_18)();
         if (((-1 < (int)uVar2) && ((int)uVar2 < 8)) && ((&DAT_008087e9)[uVar2 * 0x51] != -1)) {
           param_2 = 0;
           pcVar3 = &DAT_008087e9;

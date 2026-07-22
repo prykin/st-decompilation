@@ -1,4 +1,4 @@
-FUN_005f0d00:
+STArtiafactC::sub_005F0D00:
 005F0D00  55                        PUSH EBP
 005F0D01  8B EC                     MOV EBP,ESP
 005F0D03  83 EC 20                  SUB ESP,0x20

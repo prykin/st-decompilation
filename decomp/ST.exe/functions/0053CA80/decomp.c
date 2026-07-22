@@ -114,7 +114,7 @@ int __thiscall ResearchPanelTy::GetMessage(ResearchPanelTy *this,STMessage *mess
     switch(SVar1) {
     case MESS_BLDLABPANELTY_C0A4:
       *(STMessageArg *)&this_00->field_0x199 = message->arg0;
-      thunk_FUN_0053c620((AnonShape_004EF140_16642BA0 *)this_00);
+      sub_0053C620((ResearchPanelTy *)this_00);
       thunk_FUN_005252c0(0xae);
       g_currentExceptionFrame = local_58.previous;
       return 0;

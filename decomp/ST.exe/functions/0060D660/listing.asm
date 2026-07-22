@@ -1,4 +1,4 @@
-FUN_0060d660:
+STFieldC::sub_0060D660:
 0060D660  55                        PUSH EBP
 0060D661  8B EC                     MOV EBP,ESP
 0060D663  83 EC 14                  SUB ESP,0x14

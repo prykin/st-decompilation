@@ -1,4 +1,4 @@
-FUN_005c0190:
+MReportTy::sub_005C0190:
 005C0190  55                        PUSH EBP
 005C0191  8B EC                     MOV EBP,ESP
 005C0193  51                        PUSH ECX

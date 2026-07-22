@@ -14,7 +14,7 @@ int __thiscall STBoatC::SetMine(STBoatC *this,int *param_1,undefined4 param_2,in
   STBoatC_field_06F7State SVar4;
   code *pcVar5;
   int iVar6;
-  AnonPointee_STBoatC_0000 *pAVar7;
+  STBoatCVTable *pSVar7;
   undefined4 uVar9;
 
   if ((param_1 == (int *)0x0) || (param_1 == (int *)0x1)) {
@@ -39,9 +39,9 @@ int __thiscall STBoatC::SetMine(STBoatC *this,int *param_1,undefined4 param_2,in
            (g_pathingGrid.cells
             [(int)g_pathingGrid.sizeX * (int)sVar2 + (int)g_pathingGrid.planeStride * (int)sVar3 +
              (int)sVar1] != 0)))))) ||
+        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
         (((-1 < sVar1 && (sVar1 < g_worldGrid.sizeX)) &&
          ((-1 < sVar2 &&
-          /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
           (((((sVar2 < g_worldGrid.sizeY && (-1 < sVar3)) && (sVar3 < g_worldGrid.sizeZ)) &&
             (g_worldGrid.cells
              [(int)g_worldGrid.planeStride * (int)sVar3 + (int)g_worldGrid.sizeX * (int)sVar2 +
@@ -50,12 +50,11 @@ int __thiscall STBoatC::SetMine(STBoatC *this,int *param_1,undefined4 param_2,in
                      [(int)g_worldGrid.planeStride * (int)sVar3 +
                       (int)g_worldGrid.sizeX * (int)sVar2 + (int)sVar1].objects[1]->value_20,
             iVar6 == 0x5a || (iVar6 == 0x1ae)))))))))) &&
-       (iVar6 = SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0048DFD0::thunk_FUN_0048dfd0
-                          ((AnonReceiver_0048DFD0 *)this,sVar1,sVar2,sVar3,this->field_0047,
-                           this->field_0049,
-                           (int *)CONCAT22((short)((uint)&this->field_0x5e2 >> 0x10),
-                                           this->field_004B),1,(short *)&this->field_0x5e2,
-                           (short *)&this->field_0x5e4,(short *)&this->field_0x5e6), iVar6 == 0)) {
+       (iVar6 = sub_0048DFD0(this,sVar1,sVar2,sVar3,this->field_0047,this->field_0049,
+                             (int *)CONCAT22((short)((uint)&this->field_0x5e2 >> 0x10),
+                                             this->field_004B),1,(short *)&this->field_0x5e2,
+                             (short *)&this->field_0x5e4,(short *)&this->field_0x5e6), iVar6 == 0))
+    {
       return 0;
     }
     this->field_05E8 = 0;
@@ -82,9 +81,9 @@ int __thiscall STBoatC::SetMine(STBoatC *this,int *param_1,undefined4 param_2,in
            (g_pathingGrid.cells
             [(int)g_pathingGrid.sizeX * (int)sVar2 + (int)g_pathingGrid.planeStride * (int)sVar3 +
              (int)sVar1] != 0)) ||
+          /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
           ((((-1 < sVar1 && (sVar1 < g_worldGrid.sizeX)) &&
             ((-1 < sVar2 &&
-             /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
              (((sVar2 < g_worldGrid.sizeY && (-1 < sVar3)) && (sVar3 < g_worldGrid.sizeZ)))))) &&
            ((g_worldGrid.cells
              [(int)g_worldGrid.planeStride * (int)sVar3 + (int)g_worldGrid.sizeX * (int)sVar2 +
@@ -93,13 +92,11 @@ int __thiscall STBoatC::SetMine(STBoatC *this,int *param_1,undefined4 param_2,in
                       [(int)g_worldGrid.planeStride * (int)sVar3 +
                        (int)g_worldGrid.sizeX * (int)sVar2 + (int)sVar1].objects[1]->value_20,
              iVar6 == 0x5a || (iVar6 == 0x1ae)))))))) &&
-         (iVar6 = SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0048DFD0::thunk_FUN_0048dfd0
-                            ((AnonReceiver_0048DFD0 *)this,sVar1,sVar2,sVar3,this->field_0047,
-                             this->field_0049,
-                             (int *)CONCAT22((short)((uint)&this->field_0x5e2 >> 0x10),
-                                             this->field_004B),1,(short *)&this->field_0x5e2,
-                             (short *)&this->field_0x5e4,(short *)&this->field_0x5e6), iVar6 == 0))
-      {
+         (iVar6 = sub_0048DFD0(this,sVar1,sVar2,sVar3,this->field_0047,this->field_0049,
+                               (int *)CONCAT22((short)((uint)&this->field_0x5e2 >> 0x10),
+                                               this->field_004B),1,(short *)&this->field_0x5e2,
+                               (short *)&this->field_0x5e4,(short *)&this->field_0x5e6), iVar6 == 0)
+         ) {
         return 0;
       }
       sub_004602B0(this);
@@ -125,9 +122,9 @@ int __thiscall STBoatC::SetMine(STBoatC *this,int *param_1,undefined4 param_2,in
              (g_pathingGrid.cells
               [(int)g_pathingGrid.sizeX * (int)sVar2 + (int)g_pathingGrid.planeStride * (int)sVar3 +
                (int)sVar1] != 0)))) ||
+           /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
            (((((-1 < sVar1 && (sVar1 < g_worldGrid.sizeX)) && (-1 < sVar2)) &&
              (((sVar2 < g_worldGrid.sizeY && (-1 < sVar3)) &&
-              /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
               ((sVar3 < g_worldGrid.sizeZ &&
                (g_worldGrid.cells
                 [(int)g_worldGrid.planeStride * (int)sVar3 + (int)g_worldGrid.sizeX * (int)sVar2 +
@@ -136,13 +133,11 @@ int __thiscall STBoatC::SetMine(STBoatC *this,int *param_1,undefined4 param_2,in
                       [(int)g_worldGrid.planeStride * (int)sVar3 +
                        (int)g_worldGrid.sizeX * (int)sVar2 + (int)sVar1].objects[1]->value_20,
              iVar6 == 0x5a || (iVar6 == 0x1ae)))))))) &&
-         (iVar6 = SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0048DFD0::thunk_FUN_0048dfd0
-                            ((AnonReceiver_0048DFD0 *)this,sVar1,sVar2,sVar3,this->field_0047,
-                             this->field_0049,
-                             (int *)CONCAT22((short)((uint)&this->field_0x5e2 >> 0x10),
-                                             this->field_004B),1,(short *)&this->field_0x5e2,
-                             (short *)&this->field_0x5e4,(short *)&this->field_0x5e6), iVar6 == 0))
-      {
+         (iVar6 = sub_0048DFD0(this,sVar1,sVar2,sVar3,this->field_0047,this->field_0049,
+                               (int *)CONCAT22((short)((uint)&this->field_0x5e2 >> 0x10),
+                                               this->field_004B),1,(short *)&this->field_0x5e2,
+                               (short *)&this->field_0x5e4,(short *)&this->field_0x5e6), iVar6 == 0)
+         ) {
         return 0;
       }
       break;
@@ -163,18 +158,16 @@ switchD_004761eb_caseD_3:
   if (this->field_05E8 != 1) goto LAB_00476633;
   SVar4 = this->field_06F7;
   if (SVar4 == CASE_5) {
-    pAVar7 = this->vtable;
+    pSVar7 = this->vtable;
     uVar9 = 0xe6;
-/* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
 LAB_004765df:
-    (*(code *)pAVar7->field_0090)(3,uVar9);
+    (*pSVar7->vfunc_90)(3,uVar9);
   }
   else if (SVar4 == CASE_11) {
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-    (*(code *)this->vtable->field_0090)(3,0x14a);
+    (*this->vtable->vfunc_90)(3,0x14a);
   }
   else if (SVar4 == CASE_21) {
-    pAVar7 = this->vtable;
+    pSVar7 = this->vtable;
     uVar9 = 0x1cb;
     goto LAB_004765df;
   }
@@ -182,9 +175,8 @@ LAB_004765df:
                      (uint)(ushort)this->field_0032,(int)this->field_0041,(int)this->field_0043,
                      this->field_0045 + -10,this->field_06F3,(char *)0x0,0xffffffff);
   this->field_07BE = this->field_07BE + -1;
-/* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
 LAB_00476633:
-  iVar6 = (*(code *)this->vtable->field_00D8)();
+  iVar6 = (*this->vtable->vfunc_D8)();
   return -(uint)(iVar6 != 0);
 }
 

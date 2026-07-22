@@ -1,4 +1,4 @@
-FUN_00606050:
+STExplosion::sub_00606050:
 00606050  55                        PUSH EBP
 00606051  8B EC                     MOV EBP,ESP
 00606053  81 EC FC 00 00 00         SUB ESP,0xfc

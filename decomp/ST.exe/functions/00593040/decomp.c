@@ -39,7 +39,7 @@ int __thiscall CampaignTy::GetMessage(CampaignTy *this,STMessage *message)
   CampaignTy *local_8;
 
   local_8 = this;
-  DVar6 = FUN_006e51b0(this->field_0010);
+  DVar6 = STAppC::sub_006E51B0(this->field_0010);
   this->field_0061 = DVar6;
   local_54.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_54;
@@ -55,11 +55,11 @@ int __thiscall CampaignTy::GetMessage(CampaignTy *this,STMessage *message)
     RaiseInternalException(iVar7,0,"E:\\__titans\\Start\\camp_obj.cpp",0x24f);
     return 0xffff;
   }
-  thunk_FUN_005b6450(local_8,(int)message);
+  thunk_FUN_005b6450(local_8,message);
   SVar2 = message->id;
   if (SVar2 < MESS_FSGSTY_6941) {
     if (SVar2 == MESS_SHARED_6940) {
-      thunk_FUN_00592620((AnonShape_005925A0_ACA54D35 *)this_00);
+      sub_00592620(this_00);
     }
     else if (SVar2 < 6) {
       if (SVar2 == MESS_SHARED_0005) {
@@ -79,7 +79,7 @@ int __thiscall CampaignTy::GetMessage(CampaignTy *this,STMessage *message)
     }
     else if (SVar2 == MESS_MMSGTY_68FF) {
       DAT_0080874e = *(byte *)(message->arg0).ptr;
-      if (PTR_0081176c->field_0028 == 0) {
+      if (g_startSystem_0081176C->field_0028 == 0) {
         FUN_006b5f80((int *)PTR_008075a8,0,0,g_nWidth_00806730,DAT_00806734);
         iVar7 = 0;
         bVar18 = 0;
@@ -90,7 +90,7 @@ int __thiscall CampaignTy::GetMessage(CampaignTy *this,STMessage *message)
       thunk_FUN_005b6730(this_00,4,'\x01',-1);
     }
     else if (SVar2 == MESS_PRIVIDERTY_693F) {
-      thunk_FUN_005925a0((AnonShape_005925A0_ACA54D35 *)this_00);
+      sub_005925A0(this_00);
     }
     goto switchD_005931ad_caseD_6944;
   }
@@ -100,7 +100,7 @@ int __thiscall CampaignTy::GetMessage(CampaignTy *this,STMessage *message)
     this_00->field_0049 = 0;
     this_00->field_004D = 0x6102;
     this_00->field_0051 = message->arg0;
-    thunk_FUN_005b66e0((AnonShape_005B66E0_174166E5 *)this_00);
+    thunk_FUN_005b66e0((MTaskTy *)this_00);
     break;
   case MESS_WAITTY_6943:
     thunk_FUN_005b6350(this_00,0x6942,message->arg0,0);
@@ -118,7 +118,7 @@ int __thiscall CampaignTy::GetMessage(CampaignTy *this,STMessage *message)
     this_00->field_004D = 0x7101;
     this_00->field_0051 = 3;
     this_00->field_0055 = 1;
-    thunk_FUN_005b66e0((AnonShape_005B66E0_174166E5 *)this_00);
+    thunk_FUN_005b66e0((MTaskTy *)this_00);
     break;
   /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   case MESS_FSGSTY_694A:
@@ -164,7 +164,7 @@ int __thiscall CampaignTy::GetMessage(CampaignTy *this,STMessage *message)
         pcVar16 = pcVar16 + 1;
       }
       DAT_008087a0 = 8;
-      iVar7 = thunk_FUN_0056e9e0(&DAT_00807620,1);
+      iVar7 = STAppC::sub_0056E9E0((STAppC *)&DAT_00807620,1);
       if (iVar7 != 0) {
         memset(&DAT_0080c522, 0, 0x27f0); /* compiler bulk-zero initialization */
         thunk_FUN_005b6350(this_00,(-(uint)(this_00->field_1FFC != 0) & 8) + 0x6948,0,0);
@@ -183,7 +183,7 @@ int __thiscall CampaignTy::GetMessage(CampaignTy *this,STMessage *message)
     this_00->field_004D = 0x6104;
     this_00->field_0051 = 0;
     this_00->field_0055 = 1;
-    thunk_FUN_005b66e0((AnonShape_005B66E0_174166E5 *)this_00);
+    thunk_FUN_005b66e0((MTaskTy *)this_00);
     break;
   case MESS_SHARED_697F:
     piVar3 = (message->arg0).ptr;

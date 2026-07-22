@@ -64,13 +64,13 @@ int __thiscall ComboTy::GetMessage(ComboTy *this,STMessage *message)
           ((int)uVar9 < local_c->field_00F4 + local_c->field_00EC)) &&
          (local_c->field_00F0 <= (int)uVar8)) {
         if (local_c->field_00F8 + local_c->field_00F0 <= (int)uVar8) {
-          thunk_FUN_005943f0((AnonShape_005943F0_068A3707 *)local_c);
+          sub_005943F0(local_c);
         }
         break;
       }
     case MESS_SHARED_0064:
 switchD_005944a8_caseD_64:
-      thunk_FUN_005943f0((AnonShape_005943F0_068A3707 *)local_c);
+      sub_005943F0(local_c);
     }
 cf_common_exit_00594615:
     g_currentExceptionFrame = local_50.previous;

@@ -1,4 +1,4 @@
-FUN_006193e0:
+STJumpMineC::sub_006193E0:
 006193E0  8B 51 61                  MOV EDX,dword ptr [ECX + 0x61]
 006193E3  53                        PUSH EBX
 006193E4  56                        PUSH ESI

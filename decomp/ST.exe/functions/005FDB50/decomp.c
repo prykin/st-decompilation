@@ -68,11 +68,12 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_005FDB50::FUN_005fdb50
           thunk_FUN_004ad380(this_00,0x5a,0x45);
           iVar5 = iVar8 + *(int *)&this->field_0x233;
           local_18 = (int)*(short *)(iVar5 + 6);
-          thunk_FUN_004ad3c0(this_00,(float)local_18 * _DAT_007904f8 * _DAT_007904f0,
-                             (float)(int)*(short *)(iVar5 + 8) * _DAT_007904f8 * _DAT_007904f0,
-                             (float)(int)*(short *)(iVar8 + 10 + *(int *)&this->field_0x233) *
-                             _DAT_007904f8 * _DAT_007904f0 + _DAT_007904fc);
-          STT3DSprC::StartShow(this_00,0xd,PTR_00802a38->field_00E4);
+          STT3DSprC::sub_004AD3C0
+                    (this_00,(float)local_18 * _DAT_007904f8 * _DAT_007904f0,
+                     (float)(int)*(short *)(iVar5 + 8) * _DAT_007904f8 * _DAT_007904f0,
+                     (float)(int)*(short *)(iVar8 + 10 + *(int *)&this->field_0x233) * _DAT_007904f8
+                     * _DAT_007904f0 + _DAT_007904fc);
+          STT3DSprC::StartShow(this_00,0xd,g_playSystem_00802A38->field_00E4);
           *(undefined1 *)(iVar8 + 0x41 + *(int *)&this->field_0x233) = 1;
           pVVar3 = g_visibleClass_00802A88;
           if (g_visibleClass_00802A88 != (VisibleClassTy *)0x0) {
@@ -152,18 +153,19 @@ joined_r0x005fe09b:
             if (iVar5 != 0) {
               return 0xffff;
             }
-            STT3DSprC::StartShow(this_00,0xe,PTR_00802a38->field_00E4);
+            STT3DSprC::StartShow(this_00,0xe,g_playSystem_00802A38->field_00E4);
             *(undefined1 *)(iVar8 + 0x28 + *(int *)&this->field_0x233) = 1;
             thunk_FUN_004ac700(this_00,'\x0f');
-            STT3DSprC::StartShow(this_00,0xd,PTR_00802a38->field_00E4);
-            thunk_FUN_004acf20(this_00,DAT_008032b8,0x10);
-            thunk_FUN_004acfe0(this_00,'\x0e');
+            STT3DSprC::StartShow(this_00,0xd,g_playSystem_00802A38->field_00E4);
+            STT3DSprC::sub_004ACF20(this_00,DAT_008032b8,0x10);
+            STT3DSprC::sub_004ACFE0(this_00,'\x0e');
             iVar5 = iVar8 + *(int *)&this->field_0x233;
             local_18 = (int)*(short *)(iVar5 + 6);
-            thunk_FUN_004ad3c0(this_00,(float)local_18 * _DAT_007904f8 * _DAT_007904f0,
-                               (float)(int)*(short *)(iVar5 + 8) * _DAT_007904f8 * _DAT_007904f0,
-                               (float)(int)*(short *)(iVar8 + 10 + *(int *)&this->field_0x233) *
-                               _DAT_007904f8 * _DAT_007904f0 + _DAT_007904fc);
+            STT3DSprC::sub_004AD3C0
+                      (this_00,(float)local_18 * _DAT_007904f8 * _DAT_007904f0,
+                       (float)(int)*(short *)(iVar5 + 8) * _DAT_007904f8 * _DAT_007904f0,
+                       (float)(int)*(short *)(iVar8 + 10 + *(int *)&this->field_0x233) *
+                       _DAT_007904f8 * _DAT_007904f0 + _DAT_007904fc);
             *(undefined1 *)(iVar8 + 0x41 + *(int *)&this->field_0x233) = 1;
             pVVar3 = g_visibleClass_00802A88;
             if (g_visibleClass_00802A88 != (VisibleClassTy *)0x0) {

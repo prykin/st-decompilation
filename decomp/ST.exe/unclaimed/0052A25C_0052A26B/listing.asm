@@ -1,0 +1,4 @@
+0052A25C  pointer  0052a24e
+0052A260  pointer  0052a255
+0052A264  pointer  0052a247
+0052A268  pointer  0052a247

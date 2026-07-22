@@ -1,0 +1,13 @@
+0052534C  pointer  00525315
+00525350  pointer  0052531c
+00525354  byte  0h
+00525355  byte  0h
+00525356  byte  1h
+00525357  byte  1h
+00525358  byte  1h
+00525359  byte  1h
+0052535A  byte  1h
+0052535B  byte  0h
+0052535C  byte  0h
+0052535D  byte  0h
+0052535E  byte  0h

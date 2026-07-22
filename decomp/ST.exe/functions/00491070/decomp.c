@@ -32,15 +32,14 @@ void __thiscall STBoatC::ReleaseLoad(STBoatC *this,uint param_1)
         piVar3 = piVar3 + 1;
       } while (iVar2 < 0x17);
       if ((this->field_045D == CASE_14) && (iVar2 == 0x17)) {
-        param_1 = PTR_00802a38->field_00E4;
+        param_1 = g_playSystem_00802A38->field_00E4;
         CmdToObj(this,CASE_3,&param_1);
       }
       this->field_0314 = 0;
       this->field_0076 = 1;
       return;
     }
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-    iVar2 = (**(code **)&this->vtable->field_0xac)(param_1);
+    iVar2 = (*this->vtable->vfunc_AC)(param_1);
     if (iVar2 == 1) {
       this->field_05C0 = 2;
     }

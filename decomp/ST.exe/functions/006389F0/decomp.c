@@ -33,8 +33,8 @@ undefined4 __cdecl FUN_006389f0(short param_1,short param_2,short param_3)
         local_28[2] = *(undefined4 *)&pSVar1->field_0x8;
         local_28[3] = 2;
         local_28[4] = 0x128;
-        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-        (*(code *)PTR_00802a38->vtable->field_0018)(local_28);
+        (*g_playSystem_00802A38->vtable->SendMessage)
+                  ((SystemWithNamedObjClassTy *)g_playSystem_00802A38,(int)local_28);
         return 1;
       }
     }

@@ -18,8 +18,8 @@ undefined4 __fastcall FUN_004d2760(AnonShape_004D2760_CB2BA53E *param_1)
 
   local_8 = (AnonShape_004D2760_CB2BA53E *)0x0;
   if (*(int *)&param_1[1].field_0x38 != 0) {
-    thunk_FUN_0041c5a0((AnonShape_0041C5A0_167218F4 *)param_1);
-    thunk_FUN_00417d30((int)param_1);
+    STColl3C::sub_0041C5A0((STColl3C *)param_1);
+    TLOBaseTy::sub_00417D30((TLOBaseTy *)param_1);
     if (*(int *)&param_1->field_0x2c == 0) {
       local_8 = (AnonShape_004D2760_CB2BA53E *)0x1;
     }
@@ -51,29 +51,29 @@ undefined4 __fastcall FUN_004d2760(AnonShape_004D2760_CB2BA53E *param_1)
       /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
       thunk_FUN_004b7710(CONCAT31((int3)((uint)extraout_ECX >> 8),param_1->field_0x24),iVar4);
     }
-    thunk_FUN_0041d590((AnonShape_0041D590_1DB01C7A *)param_1);
+    TLOBaseTy::sub_0041D590((TLOBaseTy *)param_1);
   }
   if (99 < *(int *)&param_1[1].field_0x40) {
     *(undefined4 *)&param_1[1].field_0xe4 = 0xfe;
   }
-  thunk_FUN_00419d30(param_1,*(int *)&param_1[1].field_0xe4);
-  if (PTR_007fa170 != (DArrayTy *)0x0) {
-    dVar1 = PTR_007fa170->count;
+  TLOBaseTy::sub_00419D30((TLOBaseTy *)param_1,*(int *)&param_1[1].field_0xe4);
+  if (g_dArray_007FA170 != (DArrayTy *)0x0) {
+    dVar1 = g_dArray_007FA170->count;
     uVar5 = 0;
     if (0 < (int)dVar1) {
       do {
-        DArrayGetElement(PTR_007fa170,uVar5,&local_c);
+        DArrayGetElement(g_dArray_007FA170,uVar5,&local_c);
         if (local_c == param_1) {
-          FUN_006b0c70(PTR_007fa170,uVar5);
+          FUN_006b0c70(g_dArray_007FA170,uVar5);
           break;
         }
         uVar5 = uVar5 + 1;
-      } while ((int)uVar5 < (int)PTR_007fa170->count);
-      dVar1 = PTR_007fa170->count;
+      } while ((int)uVar5 < (int)g_dArray_007FA170->count);
+      dVar1 = g_dArray_007FA170->count;
     }
     if (dVar1 == 0) {
-      DArrayDestroy(PTR_007fa170);
-      PTR_007fa170 = (DArrayTy *)0x0;
+      DArrayDestroy(g_dArray_007FA170);
+      g_dArray_007FA170 = (DArrayTy *)0x0;
     }
   }
   iVar4 = param_1->field_0259;
@@ -162,23 +162,23 @@ undefined4 __fastcall FUN_004d2760(AnonShape_004D2760_CB2BA53E *param_1)
     }
   }
   else if (iVar4 == 0x3a) {
-    if (PTR_007fa16c != (DArrayTy *)0x0) {
-      dVar1 = PTR_007fa16c->count;
+    if (g_dArray_007FA16C != (DArrayTy *)0x0) {
+      dVar1 = g_dArray_007FA16C->count;
       uVar5 = 0;
       if (0 < (int)dVar1) {
         do {
-          DArrayGetElement(PTR_007fa16c,uVar5,&local_8);
+          DArrayGetElement(g_dArray_007FA16C,uVar5,&local_8);
           if (local_8 == param_1) {
-            FUN_006b0c70(PTR_007fa16c,uVar5);
+            FUN_006b0c70(g_dArray_007FA16C,uVar5);
             break;
           }
           uVar5 = uVar5 + 1;
-        } while ((int)uVar5 < (int)PTR_007fa16c->count);
-        dVar1 = PTR_007fa16c->count;
+        } while ((int)uVar5 < (int)g_dArray_007FA16C->count);
+        dVar1 = g_dArray_007FA16C->count;
       }
       if (dVar1 == 0) {
-        DArrayDestroy(PTR_007fa16c);
-        PTR_007fa16c = (DArrayTy *)0x0;
+        DArrayDestroy(g_dArray_007FA16C);
+        g_dArray_007FA16C = (DArrayTy *)0x0;
       }
     }
   }

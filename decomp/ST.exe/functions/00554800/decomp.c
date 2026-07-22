@@ -75,7 +75,7 @@ cLoadingTy::InitParam
     pcVar6->field_002C = param_7;
     pcVar2->field_0058 = param_6;
     pcVar2->field_005C = param_7;
-    resourceString = LoadResourceString(0x267a,HINSTANCE_00807618);
+    resourceString = LoadResourceString(0x267a,g_module_00807618);
     iVar7 = FUN_007111c0(pcVar6->field_0008,resourceString);
     iVar7 = pcVar6->field_002C + iVar7;
     iVar9 = pcVar6->field_0020 / iVar7;

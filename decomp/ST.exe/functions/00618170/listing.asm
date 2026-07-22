@@ -1,4 +1,4 @@
-FUN_00618170:
+JumpManagC::sub_00618170:
 00618170  55                        PUSH EBP
 00618171  8B EC                     MOV EBP,ESP
 00618173  51                        PUSH ECX

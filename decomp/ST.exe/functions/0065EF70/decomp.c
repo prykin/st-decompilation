@@ -17,7 +17,7 @@ undefined4 __fastcall FUN_0065ef70(AnonShape_0065EF70_E78A8204 *param_1)
   undefined3 uStack_b;
   AnonShape_0065EF70_EB9B857D *local_8;
 
-  if (g_sTAllPlayers_007FA174 != (STAllPlayersC *)0x0) {
+  if (g_allPlayers_007FA174 != (STAllPlayersC *)0x0) {
     pDVar3 = param_1->field_022F;
     local_1c = 0;
     if (0 < (int)pDVar3->count) {
@@ -36,8 +36,8 @@ undefined4 __fastcall FUN_0065ef70(AnonShape_0065EF70_E78A8204 *param_1)
           pbVar7 = &DAT_008087e9;
         }
         do {
-          if (((int)pbVar7 < 0x808a71) && ((PTR_00802a38 == (STPlaySystemC *)0x0 || (*pbVar7 < 8))))
-          {
+          if (((int)pbVar7 < 0x808a71) &&
+             ((g_playSystem_00802A38 == (STPlaySystemC *)0x0 || (*pbVar7 < 8)))) {
             bVar1 = local_8->field_0024;
             /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
             _local_c = CONCAT31(uStack_b,bVar1);
@@ -72,8 +72,8 @@ LAB_0065f095:
               local_10 = 0;
               local_14 = 0;
               STAllPlayersC::GetGObjFromBox
-                        (g_sTAllPlayers_007FA174,bVar5,*psVar6,psVar6[1],psVar6[2],psVar6[3],
-                         psVar6[4],psVar6[5],(int *)0x0,(int *)0x0,&local_10,&local_14);
+                        (g_allPlayers_007FA174,bVar5,*psVar6,psVar6[1],psVar6[2],psVar6[3],psVar6[4]
+                         ,psVar6[5],(int *)0x0,(int *)0x0,&local_10,&local_14);
               if ((0 < local_10) || (0 < local_14)) {
                 local_8->field_0195 = *(undefined4 *)psVar6;
                 local_8->field_0199 = *(undefined4 *)(psVar6 + 2);

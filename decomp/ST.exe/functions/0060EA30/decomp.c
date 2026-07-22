@@ -57,7 +57,8 @@ undefined4 __thiscall FUN_0060ea30(void *this,AnonShape_0060EA30_DCEB68AD *param
   }
   else if ((uVar1 == 0x10f) &&
           (local_8 = (byte *)thunk_FUN_00614950(this,(int *)&param_1), local_8 != (byte *)0x0)) {
-    STPlaySystemC::SaveObjData(PTR_00802a38,*(undefined4 *)((int)this + 0x18),local_8,param_1);
+    STPlaySystemC::SaveObjData
+              (g_playSystem_00802A38,*(undefined4 *)((int)this + 0x18),local_8,param_1);
     FreeAndNull(&local_8);
   }
   return 0;

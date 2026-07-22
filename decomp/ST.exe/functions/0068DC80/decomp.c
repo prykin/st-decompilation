@@ -24,12 +24,12 @@ int __thiscall AiTactClassTy::InitData(AiTactClassTy *this,undefined4 *param_1)
   uint local_14;
   AnonShape_GLOBAL_008489C4_F7BABFAC *local_10;
   AnonShape_0068DC80_4419198B *local_c;
-  undefined4 *local_8;
+  byte *local_8;
 
   puVar9 = (undefined4 *)0x0;
   local_c = (AnonShape_0068DC80_4419198B *)0x0;
   local_10 = (AnonShape_GLOBAL_008489C4_F7BABFAC *)0x0;
-  local_8 = (undefined4 *)0x0;
+  local_8 = (byte *)0x0;
   local_64.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_64;
   local_18 = this;
@@ -62,17 +62,17 @@ int __thiscall AiTactClassTy::InitData(AiTactClassTy *this,undefined4 *param_1)
       pDVar4 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,10,8,10);
       pAVar2->field_00A5 = pDVar4;
     }
-    if (pAVar2->field_00B1 == (uint *)0x0) {
+    if (pAVar2->field_00B1 == (DArrayTy *)0x0) {
       pDVar4 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,10,0x34,10);
-      pAVar2->field_00B1 = &pDVar4->flags;
+      pAVar2->field_00B1 = pDVar4;
     }
     if (pAVar2->field_00BD == (DArrayTy *)0x0) {
       pDVar4 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,10,0x4a,10);
       pAVar2->field_00BD = pDVar4;
     }
-    if (pAVar2->field_00C9 == (uint *)0x0) {
+    if (pAVar2->field_00C9 == (DArrayTy *)0x0) {
       pDVar4 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,10,8,10);
-      pAVar2->field_00C9 = &pDVar4->flags;
+      pAVar2->field_00C9 = pDVar4;
     }
     iVar3 = 0;
     if (0 < pAVar2->field_0125) {
@@ -84,7 +84,7 @@ int __thiscall AiTactClassTy::InitData(AiTactClassTy *this,undefined4 *param_1)
           *(undefined4 *)(iVar8 + 4) = pAVar2->field_0024;
           *(undefined4 *)(iVar8 + 0x77) = pAVar2->field_009D;
           *(undefined1 *)(iVar8 + 0x6a) = pAVar2->field_0088;
-          STPlaySystemC::CreateGameObject(PTR_00802a38,900,&local_14,&local_c,iVar8,0);
+          STPlaySystemC::CreateGameObject(g_playSystem_00802A38,900,&local_14,&local_c,iVar8,0);
           local_1c = local_c;
           local_20 = local_c->field_0018;
           Library::DKW::TBL::FUN_006ae1c0(&pAVar2->field_00A5->flags,&local_20);
@@ -97,10 +97,10 @@ int __thiscall AiTactClassTy::InitData(AiTactClassTy *this,undefined4 *param_1)
                                     *(undefined1 *)&pAVar2->field_0024);
       local_8 = FltDataPack(local_10,&local_14);
       thunk_FUN_006686c0((int *)&local_10);
-      local_8[1] = pAVar2->field_0024;
-      *(undefined4 *)((int)local_8 + 0x77) = pAVar2->field_009D;
-      *(undefined1 *)((int)local_8 + 0x6a) = pAVar2->field_0088;
-      STPlaySystemC::CreateGameObject(PTR_00802a38,900,&local_14,&local_c,local_8,0);
+      *(undefined4 *)(local_8 + 4) = pAVar2->field_0024;
+      *(undefined4 *)(local_8 + 0x77) = pAVar2->field_009D;
+      local_8[0x6a] = pAVar2->field_0088;
+      STPlaySystemC::CreateGameObject(g_playSystem_00802A38,900,&local_14,&local_c,local_8,0);
       thunk_FUN_006686c0((int *)&local_8);
       local_1c = local_c;
       local_20 = local_c->field_0018;
@@ -112,7 +112,7 @@ int __thiscall AiTactClassTy::InitData(AiTactClassTy *this,undefined4 *param_1)
     return 0;
   }
   g_currentExceptionFrame = local_64.previous;
-  thunk_FUN_0068e010((int)local_18);
+  sub_0068E010(local_18);
   thunk_FUN_006686c0((int *)&local_8);
   thunk_FUN_006686c0((int *)&local_10);
   iVar8 = ReportDebugMessage("E:\\__titans\\ai\\ai_tact.cpp",0x61,0,iVar3,"%s",

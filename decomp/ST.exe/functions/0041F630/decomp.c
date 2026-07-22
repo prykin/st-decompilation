@@ -15,7 +15,7 @@ void __fastcall FUN_0041f630(AnonShape_0041F630_B1BEE81C *param_1)
   if (7 < *(uint *)&param_1->field_0x24) {
     return;
   }
-  if ((PTR_00802a38 != (STPlaySystemC *)0x0) &&
+  if ((g_playSystem_00802A38 != (STPlaySystemC *)0x0) &&
      (7 < (byte)(&DAT_008087e9)[*(uint *)&param_1->field_0x24 * 0x51])) {
     return;
   }

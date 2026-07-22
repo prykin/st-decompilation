@@ -113,7 +113,7 @@ uint FUN_00755560(AnonShape_00755560_6DE97093 *param_1,ushort *param_2,undefined
                  ((int)*(short *)(iVar13 + 8) - (int)param_1) - iVar6);
       *(short *)(iVar13 + 8) = *(short *)(iVar13 + 8) - (short)param_1;
     }
-    uVar11 = FUN_00753b40((AnonShape_00753B40_7E7955C3 *)pAVar4);
+    uVar11 = FUN_00753b40((AnonShape_00753C80_4C8E695D *)pAVar4);
     if ((int)uVar11 < 0) {
       return uVar11;
     }
@@ -135,10 +135,10 @@ uint FUN_00755560(AnonShape_00755560_6DE97093 *param_1,ushort *param_2,undefined
     *(short *)(iVar14 + 8) = (short)iVar6;
     **(uint **)&pAVar4->field_0x18 = *puVar8;
     if (iVar5 < iVar6) {
-      FUN_007574c0((AnonShape_007574C0_ED6B02E3 *)pAVar4,iVar14,(uint *)pAVar4->field_001C,iVar5);
+      FUN_007574c0((AnonShape_00753C80_4C8E695D *)pAVar4,iVar14,(uint *)pAVar4->field_001C,iVar5);
     }
     else if (iVar6 < iVar5) {
-      FUN_007574c0((AnonShape_007574C0_ED6B02E3 *)pAVar4,(int)puVar8,(uint *)pAVar4->field_001C,
+      FUN_007574c0((AnonShape_00753C80_4C8E695D *)pAVar4,(int)puVar8,(uint *)pAVar4->field_001C,
                    (iVar5 - (int)param_1) - iVar6);
       *(undefined4 *)(pAVar4->field_000C + 0x40 + *(int *)(pAVar4->field_000C + 0x1c) * 8) =
            **(undefined4 **)&pAVar4->field_0x18;

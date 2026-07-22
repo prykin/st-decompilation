@@ -1,4 +1,4 @@
-FUN_0053c620:
+ResearchPanelTy::sub_0053C620:
 0053C620  55                        PUSH EBP
 0053C621  8B EC                     MOV EBP,ESP
 0053C623  83 EC 10                  SUB ESP,0x10

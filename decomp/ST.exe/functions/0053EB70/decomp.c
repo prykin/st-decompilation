@@ -41,7 +41,7 @@ int __thiscall SpecPanelTy::GetMessage(SpecPanelTy *this,STMessage *message)
     return 0xffff;
   }
   if (message->id == MESS_ID_CREATE) {
-    FUN_006b1a50((int)PTR_008075a8,3,(undefined4 *)0x0,(undefined4 *)&local_8->field_0x4c);
+    FUN_006b1a50(PTR_008075a8,3,(undefined4 *)0x0,(undefined4 *)&local_8->field_0x4c);
     iVar4 = this_00->field_0050 + this_00->field_0058;
     this_00->field_0044 = iVar4;
     this_00->field_0174 = (this_00->field_0048 - iVar4) + DAT_00806734;

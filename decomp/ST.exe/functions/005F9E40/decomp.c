@@ -15,10 +15,10 @@ void __fastcall FUN_005f9e40(AnonShape_005F9E40_7E333F34 *param_1)
       STT3DSprC::SetCurFase(this,'\x0e',puVar1[8]);
       STT3DSprC::ShowCurFase(this,'\x0e');
       iVar2 = param_1->field_02E6;
-      thunk_FUN_004ad3c0(this,(float)*(int *)(iVar2 + 0x14) * _DAT_007904f8 * _DAT_007904f0,
-                         (float)*(int *)(iVar2 + 0x18) * _DAT_007904f8 * _DAT_007904f0,
-                         (float)*(int *)(iVar2 + 0x1c) * _DAT_007904f8 * _DAT_007904f0 +
-                         _DAT_007904fc);
+      STT3DSprC::sub_004AD3C0
+                (this,(float)*(int *)(iVar2 + 0x14) * _DAT_007904f8 * _DAT_007904f0,
+                 (float)*(int *)(iVar2 + 0x18) * _DAT_007904f8 * _DAT_007904f0,
+                 (float)*(int *)(iVar2 + 0x1c) * _DAT_007904f8 * _DAT_007904f0 + _DAT_007904fc);
       return;
     }
     if (-1 < (int)puVar1[1]) {

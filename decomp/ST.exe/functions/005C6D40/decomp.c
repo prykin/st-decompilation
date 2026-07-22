@@ -39,12 +39,13 @@ void __thiscall SettMapTy::DeleteCtrls(SettMapTy *this)
     RaiseInternalException(iVar4,0,"E:\\__titans\\Start\\sett_obj.cpp",0x3a4);
     return;
   }
-  if (PTR_00802a30 != (CursorClassTy *)0x0) {
-    if (PTR_00802a30->field_00A9 == 0) {
-      Library::DKW::DDX::FUN_006b8b10((int *)PTR_00802a30->field_00AD);
+  if (g_cursorClass_00802A30 != (CursorClassTy *)0x0) {
+    if (g_cursorClass_00802A30->field_00A9 == 0) {
+      Library::DKW::DDX::FUN_006b8b10((int *)g_cursorClass_00802A30->field_00AD);
     }
-    else if (PTR_00802a30->field_001C != (cLoadingTy *)0xffffffff) {
-      FUN_006b3af0((int *)PTR_00802a30->field_0060,(uint)PTR_00802a30->field_001C);
+    else if (g_cursorClass_00802A30->field_001C != (cLoadingTy *)0xffffffff) {
+      FUN_006b3af0((int *)g_cursorClass_00802A30->field_0060,
+                   (uint)g_cursorClass_00802A30->field_001C);
     }
   }
   this_00 = local_10;
@@ -115,7 +116,7 @@ void __thiscall SettMapTy::DeleteCtrls(SettMapTy *this)
     }
     FUN_006b5f80((int *)PTR_008075a8,0x112,0x38,0x205,0x104);
     PutDDXClip(0x112,0x38,0x112,0x38,0x205,(byte *)0x104,'\x01',
-               (BITMAPINFO *)PTR_0081176c->field_002C);
+               (BITMAPINFO *)g_startSystem_0081176C->field_002C);
   }
   if (this_00->field_1C6F != 0xffffffff) {
     FUN_006b3af0((int *)this_00->field_1CB3,this_00->field_1C6F);
@@ -188,28 +189,27 @@ void __thiscall SettMapTy::DeleteCtrls(SettMapTy *this)
     }
     FUN_006b5f80((int *)PTR_008075a8,0x112,0x149,0x205,0x8c);
     PutDDXClip(0x112,0x149,0x112,0x149,0x205,(byte *)0x8c,'\x01',
-               (BITMAPINFO *)PTR_0081176c->field_002C);
+               (BITMAPINFO *)g_startSystem_0081176C->field_002C);
   }
   FUN_006b3af0((int *)PTR_008075a8,this_00->field_1E22);
   if ((((this_00->field_0x21e2 == '\0') || (SVar1 = this_00->field_1E26, SVar1 == 6)) ||
       (SVar1 == CASE_7)) || (SVar1 == 0xe)) {
     this_00->field_002D = 0x20;
     this_00->field_0031 = 0;
-    FUN_006e6080(this_00,2,PTR_0081176c->field_0389,(undefined4 *)&this_00->field_0x1d);
+    FUN_006e6080(this_00,2,g_startSystem_0081176C->field_0389,(undefined4 *)&this_00->field_0x1d);
   }
   else {
-    if (PTR_0081176c->field_0389 != 0) {
-      StartSystemTy::sub_006E56B0(this_00->field_000C,PTR_0081176c->field_0389);
+    if (g_startSystem_0081176C->field_0389 != 0) {
+      StartSystemTy::sub_006E56B0(this_00->field_000C,g_startSystem_0081176C->field_0389);
     }
-    PTR_0081176c->field_0389 = 0;
-    pAVar2 = (AnonShape_006B5B10_E0D06CF1 *)PTR_0081176c->field_0544;
+    g_startSystem_0081176C->field_0389 = 0;
+    pAVar2 = (AnonShape_006B5B10_E0D06CF1 *)g_startSystem_0081176C->field_0544;
     FUN_006b4170(pAVar2,0,0,0,pAVar2->field_0004,pAVar2->field_0008,0xff);
-    if ((AnonShape_006B5570_4D68B99C *)PTR_0081176c->field_0548 !=
-        (AnonShape_006B5570_4D68B99C *)0x0) {
-      FUN_006b5570((AnonShape_006B5570_4D68B99C *)PTR_0081176c->field_0548);
+    if ((DArrayTy *)g_startSystem_0081176C->field_0548 != (DArrayTy *)0x0) {
+      FUN_006b5570((DArrayTy *)g_startSystem_0081176C->field_0548);
     }
     pDVar6 = Library::DKW::TBL::SArrayCreate((DArrayTy *)0x0,10,10);
-    PTR_0081176c->field_0548 = &pDVar6->flags;
+    g_startSystem_0081176C->field_0548 = &pDVar6->flags;
     if (this_00->field_21EC != (HoloTy *)0x0) {
       HoloTy::Done(this_00->field_21EC);
       Library::MSVCRT::FUN_0072e2b0(this_00->field_21EC);
@@ -254,18 +254,19 @@ void __thiscall SettMapTy::DeleteCtrls(SettMapTy *this)
         HoloTy::NextFas(this_00->field_21EC);
       }
       FUN_006b5f80((int *)PTR_008075a8,10,0xb4,0xf9,0x121);
-      PutDDXClip(10,0xb4,10,0xb4,0xf9,(byte *)0x121,'\x01',(BITMAPINFO *)PTR_0081176c->field_002C);
+      PutDDXClip(10,0xb4,10,0xb4,0xf9,(byte *)0x121,'\x01',
+                 (BITMAPINFO *)g_startSystem_0081176C->field_002C);
     }
-    if (PTR_0081176c->field_0391 != 0xffffffff) {
-      FUN_006b3af0((int *)PTR_0081176c->field_03D5,PTR_0081176c->field_0391);
+    if (g_startSystem_0081176C->field_0391 != 0xffffffff) {
+      FUN_006b3af0((int *)g_startSystem_0081176C->field_03D5,g_startSystem_0081176C->field_0391);
     }
-    if (PTR_0081176c->field_0422 != 0xffffffff) {
-      FUN_006b3af0((int *)PTR_0081176c->field_0466,PTR_0081176c->field_0422);
+    if (g_startSystem_0081176C->field_0422 != 0xffffffff) {
+      FUN_006b3af0((int *)g_startSystem_0081176C->field_0466,g_startSystem_0081176C->field_0422);
     }
-    if (PTR_0081176c->field_04B3 != 0xffffffff) {
-      FUN_006b3af0((int *)PTR_0081176c->field_04F7,PTR_0081176c->field_04B3);
+    if (g_startSystem_0081176C->field_04B3 != 0xffffffff) {
+      FUN_006b3af0((int *)g_startSystem_0081176C->field_04F7,g_startSystem_0081176C->field_04B3);
     }
-    FUN_006b3af0((int *)PTR_008075a8,PTR_0081176c->field_0540);
+    FUN_006b3af0((int *)PTR_008075a8,g_startSystem_0081176C->field_0540);
   }
   if ((this_00->field_0x21e3 != '\0') &&
      (((SVar1 = this_00->field_1E26, SVar1 == 6 || (SVar1 == CASE_7)) || (SVar1 == 0xe)))) {
@@ -323,18 +324,19 @@ void __thiscall SettMapTy::DeleteCtrls(SettMapTy *this)
         HoloTy::NextFas(this_00->field_21F0);
       }
       FUN_006b5f80((int *)PTR_008075a8,10,0xb4,0xf9,0x121);
-      PutDDXClip(10,0xb4,10,0xb4,0xf9,(byte *)0x123,'\x01',(BITMAPINFO *)PTR_0081176c->field_002C);
+      PutDDXClip(10,0xb4,10,0xb4,0xf9,(byte *)0x123,'\x01',
+                 (BITMAPINFO *)g_startSystem_0081176C->field_002C);
     }
     FUN_006b3af0((int *)PTR_008075a8,this_00->field_1F80);
   }
-  if (PTR_00802a30 != (CursorClassTy *)0x0) {
-    if (PTR_00802a30->field_00A9 == 0) {
-      Library::DKW::DDX::FUN_006b8a60((byte *)PTR_00802a30->field_00AD);
+  if (g_cursorClass_00802A30 != (CursorClassTy *)0x0) {
+    if (g_cursorClass_00802A30->field_00A9 == 0) {
+      Library::DKW::DDX::FUN_006b8a60((byte *)g_cursorClass_00802A30->field_00AD);
     }
-    else if (PTR_00802a30->field_001C != (cLoadingTy *)0xffffffff) {
+    else if (g_cursorClass_00802A30->field_001C != (cLoadingTy *)0xffffffff) {
       Library::DKW::DDX::FUN_006b34d0
-                ((uint *)PTR_00802a30->field_0060,(uint)PTR_00802a30->field_001C,0xfffffffe,
-                 PTR_00802a30->field_0034,PTR_00802a30->field_0038);
+                ((uint *)g_cursorClass_00802A30->field_0060,(uint)g_cursorClass_00802A30->field_001C
+                 ,0xfffffffe,g_cursorClass_00802A30->field_0034,g_cursorClass_00802A30->field_0038);
       g_currentExceptionFrame = local_54.previous;
       return;
     }

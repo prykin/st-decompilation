@@ -1,5 +1,10 @@
 
-undefined4 * __thiscall FUN_0057f3a0(void *this,int param_1,int param_2)
+/* [STMethodOwnerApplier] Structural method owner recovered as STDcResourcC.
+   Evidence: this_call_owners=[STDcResourcC]; agreed_this_calls=2; incoming_this_accesses=1;
+   incoming_edx_uses=6; incoming_stack_parameter_uses=2; direct_non_thunk_callers=0;
+   incoming_ecx_receiver_callers=0; attributed_named_callers=1; owner_evidence_coverage=adequate */
+
+undefined4 * __thiscall STDcResourcC::sub_0057F3A0(STDcResourcC *this,int param_1,int param_2)
 
 {
   char cVar1;
@@ -12,7 +17,7 @@ undefined4 * __thiscall FUN_0057f3a0(void *this,int param_1,int param_2)
 
   pcVar5 = PTR_s_rgold__d_007cb098;
   if (param_1 == -1) {
-    iVar4 = *(int *)((int)this + 0x259) / 999999;
+    iVar4 = this->field_0259 / 999999;
     if (0 < iVar4) {
       iVar4 = 0;
     }

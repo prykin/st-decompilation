@@ -1,0 +1,15 @@
+00461BF0  pointer  0046195d
+00461BF4  pointer  0046133b
+00461BF8  pointer  00461907
+00461BFC  pointer  00461b7b
+00461C00  byte  0h
+00461C01  byte  1h
+00461C02  byte  3h
+00461C03  byte  3h
+00461C04  byte  3h
+00461C05  byte  1h
+00461C06  byte  1h
+00461C07  byte  1h
+00461C08  byte  1h
+00461C09  byte  2h
+00461C0A  byte  0h

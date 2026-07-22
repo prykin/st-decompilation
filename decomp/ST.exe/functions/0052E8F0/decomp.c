@@ -38,17 +38,17 @@ void __thiscall OptPanelTy::DoneOptPanel(OptPanelTy *this)
   iVar3 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
   pOVar2 = local_8;
   if (iVar3 == 0) {
-    if ((AnonShape_006B5570_4D68B99C *)local_8->field_01E9 != (AnonShape_006B5570_4D68B99C *)0x0) {
-      FUN_006b5570((AnonShape_006B5570_4D68B99C *)local_8->field_01E9);
-      pOVar2->field_01E9 = (uint *)0x0;
+    if (local_8->field_01E9 != (DArrayTy *)0x0) {
+      FUN_006b5570(local_8->field_01E9);
+      pOVar2->field_01E9 = (DArrayTy *)0x0;
     }
-    if ((DArrayTy *)pOVar2->field_01ED != (DArrayTy *)0x0) {
-      DArrayDestroy((DArrayTy *)pOVar2->field_01ED);
-      pOVar2->field_01ED = (uint *)0x0;
+    if (pOVar2->field_01ED != (DArrayTy *)0x0) {
+      DArrayDestroy(pOVar2->field_01ED);
+      pOVar2->field_01ED = (DArrayTy *)0x0;
     }
-    if ((AnonShape_006B5570_4D68B99C *)pOVar2->field_01F1 != (AnonShape_006B5570_4D68B99C *)0x0) {
-      FUN_006b5570((AnonShape_006B5570_4D68B99C *)pOVar2->field_01F1);
-      pOVar2->field_01F1 = (uint *)0x0;
+    if (pOVar2->field_01F1 != (DArrayTy *)0x0) {
+      FUN_006b5570(pOVar2->field_01F1);
+      pOVar2->field_01F1 = (DArrayTy *)0x0;
     }
     this_00 = (ccFntTy *)0x0;
     if (pOVar2->field_01E5 != (ushort *)0x0) {
@@ -56,8 +56,8 @@ void __thiscall OptPanelTy::DoneOptPanel(OptPanelTy *this)
       /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
       this_00 = extraout_ECX;
     }
-    if ((AnonShape_006B5570_4D68B99C *)pOVar2->field_02F9 != (AnonShape_006B5570_4D68B99C *)0x0) {
-      FUN_006b5570((AnonShape_006B5570_4D68B99C *)pOVar2->field_02F9);
+    if ((DArrayTy *)pOVar2->field_02F9 != (DArrayTy *)0x0) {
+      FUN_006b5570((DArrayTy *)pOVar2->field_02F9);
       /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
       this_00 = extraout_ECX_00;
     }

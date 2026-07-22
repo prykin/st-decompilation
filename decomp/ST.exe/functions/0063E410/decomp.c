@@ -46,7 +46,7 @@ void __fastcall FUN_0063e410(AnonShape_0063E410_6FBC68F2 *param_1)
             }
           }
           else {
-            uVar3 = PTR_00802a38->field_00E4;
+            uVar3 = g_playSystem_00802A38->field_00E4;
             if ((1 < uVar3 - *(uint *)(iVar5 + 0x30)) || (uVar3 == *(uint *)(iVar5 + 0x30))) {
               *(uint *)(iVar5 + 0x30) = uVar3;
               iVar4 = *(int *)(iVar5 + 0x24) + -1;

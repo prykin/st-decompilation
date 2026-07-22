@@ -1,4 +1,4 @@
-FUN_00646d40:
+STVolcanoC::sub_00646D40:
 00646D40  55                        PUSH EBP
 00646D41  8B EC                     MOV EBP,ESP
 00646D43  56                        PUSH ESI

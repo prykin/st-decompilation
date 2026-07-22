@@ -69,7 +69,7 @@ void __thiscall FUN_00633770(void *this,int param_1,int param_2)
     uVar13 = 0;
     if (*(int *)this != 0) {
       iVar14 = *(int *)(*(int *)this + 0xc);
-      fVar23 = (float10)(PTR_00802a38->field_00E4 - *(int *)((int)this + 5));
+      fVar23 = (float10)(g_playSystem_00802A38->field_00E4 - *(int *)((int)this + 5));
       fVar19 = (float10)fsin(fVar23 * (float10)*(float *)((int)this + 0x5d));
       fVar24 = (float10)_DAT_0079cd88;
       fVar7 = (float10)_DAT_007901c0;
@@ -308,7 +308,7 @@ void __thiscall FUN_00633770(void *this,int param_1,int param_2)
       iVar14 = *(int *)this;
       if (iVar14 != 0) {
         uVar13 = *(uint *)(iVar14 + 0xc);
-        fVar1 = (float)(PTR_00802a38->field_00E4 - *(int *)((int)this + 5)) *
+        fVar1 = (float)(g_playSystem_00802A38->field_00E4 - *(int *)((int)this + 5)) *
                 *(float *)((int)this + 0x81);
         if (fVar1 < *(float *)((int)this + 0x71)) {
           if (_DAT_0079034c < fVar1) {
@@ -499,7 +499,7 @@ void __thiscall FUN_00633770(void *this,int param_1,int param_2)
         }
         if (bVar9) {
           *(undefined4 *)((int)this + 0x2d) = 1;
-          uVar13 = PTR_00802a38->field_00E4;
+          uVar13 = g_playSystem_00802A38->field_00E4;
           *(undefined4 *)((int)this + 9) = 0xf;
           *(uint *)((int)this + 5) = uVar13;
           return;
@@ -509,7 +509,7 @@ void __thiscall FUN_00633770(void *this,int param_1,int param_2)
     case 1:
       if (*(int *)this != 0) {
         iVar14 = *(int *)(*(int *)this + 0xc);
-        uVar13 = PTR_00802a38->field_00E4 - *(int *)((int)this + 5);
+        uVar13 = g_playSystem_00802A38->field_00E4 - *(int *)((int)this + 5);
         fVar1 = (float)uVar13 * *(float *)((int)this + 0x61) + *(float *)((int)this + 0x79);
         if (*(uint *)((int)this + 9) <= uVar13) {
           iVar18 = *(int *)((int)this + 0x1d);
@@ -575,7 +575,7 @@ void __thiscall FUN_00633770(void *this,int param_1,int param_2)
           *(undefined4 *)((int)this + 0x2d) = 2;
           *(float *)((int)this + 0x81) = (float)(extraout_ST0_02 / (float10)(int)lVar25);
           fVar6 = _DAT_0079c5a4;
-          *(uint *)((int)this + 5) = PTR_00802a38->field_00E4;
+          *(uint *)((int)this + 5) = g_playSystem_00802A38->field_00E4;
           if (fVar1 <= fVar6) {
             *(float *)((int)this + 0x79) = fVar1;
           }
@@ -613,7 +613,7 @@ void __thiscall FUN_00633770(void *this,int param_1,int param_2)
     case 2:
       if (*(int *)this != 0) {
         iVar14 = *(int *)(*(int *)this + 0xc);
-        fVar6 = (float)(PTR_00802a38->field_00E4 - *(int *)((int)this + 5));
+        fVar6 = (float)(g_playSystem_00802A38->field_00E4 - *(int *)((int)this + 5));
         fVar1 = fVar6 * *(float *)((int)this + 0x61) + *(float *)((int)this + 0x79);
         fVar6 = fVar6 * *(float *)((int)this + 0x81);
         if ((*(float *)((int)this + 0x7d) <= fVar6) ||
@@ -756,7 +756,7 @@ void __thiscall FUN_00633770(void *this,int param_1,int param_2)
             }
             *(float *)((int)this + 0x59) = (float)((float10)*(float *)((int)this + 0x49) / fVar24);
             *(float *)((int)this + 0x5d) = (float)((float10)*(float *)((int)this + 0x4d) / fVar24);
-            *(uint *)((int)this + 5) = PTR_00802a38->field_00E4;
+            *(uint *)((int)this + 5) = g_playSystem_00802A38->field_00E4;
             return;
           }
         }
@@ -765,7 +765,7 @@ void __thiscall FUN_00633770(void *this,int param_1,int param_2)
     case 3:
       if (*(int *)this != 0) {
         iVar14 = *(int *)(*(int *)this + 0xc);
-        fVar2 = (float)(PTR_00802a38->field_00E4 - *(int *)((int)this + 5));
+        fVar2 = (float)(g_playSystem_00802A38->field_00E4 - *(int *)((int)this + 5));
         fVar6 = fVar2 * *(float *)((int)this + 0x61) + *(float *)((int)this + 0x79);
         fVar3 = fVar2 * *(float *)((int)this + 0x51);
         fVar1 = *(float *)((int)this + 0x55);
@@ -943,7 +943,7 @@ void __thiscall FUN_00633770(void *this,int param_1,int param_2)
             *(float *)((int)this + 0x79) = fVar6 - (float)((int)lVar25 << 1) * _DAT_0079d1a4;
           }
           *(undefined4 *)((int)this + 0x2d) = 4;
-          uVar13 = PTR_00802a38->field_00E4;
+          uVar13 = g_playSystem_00802A38->field_00E4;
           *(undefined4 *)((int)this + 9) = 0x14;
           *(uint *)((int)this + 5) = uVar13;
           return;
@@ -953,7 +953,7 @@ void __thiscall FUN_00633770(void *this,int param_1,int param_2)
     case 4:
       if (*(int *)this != 0) {
         uVar10 = 0;
-        uVar13 = PTR_00802a38->field_00E4 - *(int *)((int)this + 5);
+        uVar13 = g_playSystem_00802A38->field_00E4 - *(int *)((int)this + 5);
         iVar14 = *(int *)(*(int *)this + 0xc);
         fVar24 = (float10)uVar13 * (float10)*(float *)((int)this + 0x61) +
                  (float10)*(float *)((int)this + 0x79);
@@ -989,7 +989,7 @@ void __thiscall FUN_00633770(void *this,int param_1,int param_2)
           *(float *)((int)this + 0x55) = (float)-(extraout_ST0_06 / (float10)iVar14);
           *(float *)((int)this + 0x5d) = -(*(float *)((int)this + 0x89) / (float)iVar14);
           fVar24 = (float10)_DAT_0079c5a4;
-          uVar13 = PTR_00802a38->field_00E4;
+          uVar13 = g_playSystem_00802A38->field_00E4;
           *(int *)((int)this + 9) = iVar14;
           *(uint *)((int)this + 5) = uVar13;
           /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
@@ -1007,7 +1007,7 @@ void __thiscall FUN_00633770(void *this,int param_1,int param_2)
     case 5:
       if (*(int *)this != 0) {
         iVar14 = *(int *)(*(int *)this + 0xc);
-        uVar10 = PTR_00802a38->field_00E4 - *(int *)((int)this + 5);
+        uVar10 = g_playSystem_00802A38->field_00E4 - *(int *)((int)this + 5);
         fVar23 = (float10)uVar10;
         iVar18 = *(int *)((int)this + 0x1d);
         fVar1 = *(float *)((int)this + 0x55);
@@ -1113,7 +1113,7 @@ void __thiscall FUN_00633770(void *this,int param_1,int param_2)
                  (float)(extraout_ST0_09 - (float10)((int)lVar25 << 1) * (float10)_DAT_0079d1a4);
           }
           *(undefined4 *)((int)this + 0x2d) = 6;
-          uVar13 = PTR_00802a38->field_00E4;
+          uVar13 = g_playSystem_00802A38->field_00E4;
           *(undefined4 *)((int)this + 9) = 0x14f;
           *(uint *)((int)this + 5) = uVar13;
           return;
@@ -1123,7 +1123,7 @@ void __thiscall FUN_00633770(void *this,int param_1,int param_2)
     case 6:
       if (*(int *)this != 0) {
         uVar10 = 0;
-        uVar13 = PTR_00802a38->field_00E4 - *(int *)((int)this + 5);
+        uVar13 = g_playSystem_00802A38->field_00E4 - *(int *)((int)this + 5);
         iVar14 = *(int *)(*(int *)this + 0xc);
         fVar1 = *(float *)((int)this + 0x61);
         fVar6 = *(float *)((int)this + 0x79);
@@ -1196,7 +1196,7 @@ void __thiscall FUN_00633770(void *this,int param_1,int param_2)
         iVar18 = *(int *)this;
         if ((uVar13 < *(uint *)(iVar18 + 0xc)) &&
            (iVar18 = *(int *)(iVar18 + 8) * uVar13 + *(int *)(iVar18 + 0x1c), iVar18 != 0)) {
-          uVar10 = PTR_00802a38->field_00E4 - *(int *)(iVar18 + 0x35);
+          uVar10 = g_playSystem_00802A38->field_00E4 - *(int *)(iVar18 + 0x35);
           fVar24 = (float10)*(float *)(iVar18 + 0x21) + (float10)*(float *)((int)this + 0x8d);
           fVar1 = (float)uVar10 * *(float *)((int)this + 0x85) +
                   (float)(uVar10 * uVar10) * *(float *)((int)this + 0x89) * _DAT_0079d1ac +
@@ -1209,7 +1209,7 @@ void __thiscall FUN_00633770(void *this,int param_1,int param_2)
           }
           if (*(float *)((int)this + 0x79) < fVar1) {
             *(undefined4 *)(iVar18 + 0x25) = *(undefined4 *)((int)this + 0x65);
-            *(uint *)(iVar18 + 0x35) = PTR_00802a38->field_00E4;
+            *(uint *)(iVar18 + 0x35) = g_playSystem_00802A38->field_00E4;
           }
           fsin((float10)fVar1);
           fcos(fVar24);

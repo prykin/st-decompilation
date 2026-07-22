@@ -20,7 +20,7 @@ uint FUN_00754fd0(AnonShape_00754FD0_6B521B56 *param_1,undefined4 param_2,undefi
   *(undefined4 *)(param_1->field_000C + 0x40) = 0;
   *(undefined4 *)(param_1->field_000C + 0x44) = 0xffffffff;
   Library::MSVCRT::FUN_00730c40((undefined1 *)(param_1->field_000C + 0x36),0x7f2ce8);
-  iVar2 = FUN_00753b40((AnonShape_00753B40_7E7955C3 *)param_1);
+  iVar2 = FUN_00753b40((AnonShape_00753C80_4C8E695D *)param_1);
   *(int *)(param_1->field_000C + 0x24) = iVar2;
   /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   uVar3 = *(uint *)(param_1->field_000C + 0x24);

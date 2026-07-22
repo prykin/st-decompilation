@@ -54,8 +54,8 @@ void __thiscall STGroupBoatC::ReMakePatrolPoints(STGroupBoatC *this,int param_1)
     this->field_0242 = 10;
   }
   local_10 = this;
-  array = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,this->field_0226[3],0xe,1);
-  pDVar4 = (DArrayTy *)this->field_0226;
+  array = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,this->field_0226->count,0xe,1);
+  pDVar4 = this->field_0226;
   uVar7 = 0;
   if (0 < (int)pDVar4->count) {
     do {
@@ -66,7 +66,7 @@ void __thiscall STGroupBoatC::ReMakePatrolPoints(STGroupBoatC *this,int param_1)
       local_26 = 0;
       local_28 = local_18;
       Library::DKW::TBL::FUN_006ae140(&array->flags,uVar7,(undefined4 *)&local_2c);
-      pDVar4 = (DArrayTy *)this->field_0226;
+      pDVar4 = this->field_0226;
       uVar7 = uVar7 + 1;
     } while ((int)uVar7 < (int)pDVar4->count);
   }
@@ -128,8 +128,8 @@ void __thiscall STGroupBoatC::ReMakePatrolPoints(STGroupBoatC *this,int param_1)
       } while ((int)local_8 < (int)(array->count - 1));
     }
     if (this->field_0232 != 0xffffffff) {
-      DArrayGetElement((DArrayTy *)this->field_022A,this->field_0232,&local_4c);
-      pDVar4 = (DArrayTy *)this->field_0226;
+      DArrayGetElement(this->field_022A,this->field_0232,&local_4c);
+      pDVar4 = this->field_0226;
       uVar7 = 0;
       local_c = 0xffffffff;
       if (0 < (int)pDVar4->count) {
@@ -140,7 +140,7 @@ void __thiscall STGroupBoatC::ReMakePatrolPoints(STGroupBoatC *this,int param_1)
             if (uVar7 != 0xffffffff) goto LAB_004a77bb;
             break;
           }
-          pDVar4 = (DArrayTy *)this->field_0226;
+          pDVar4 = this->field_0226;
           uVar7 = uVar7 + 1;
         } while ((int)uVar7 < (int)pDVar4->count);
       }
@@ -153,7 +153,7 @@ LAB_004a77bb:
       this->field_0232 = -1;
       local_8 = local_c;
       if (this->field_0236 == 1) {
-        pDVar4 = (DArrayTy *)this->field_0226;
+        pDVar4 = this->field_0226;
         if ((int)local_c < (int)pDVar4->count) {
           do {
             DArrayGetElement(pDVar4,local_8,&local_1c);
@@ -169,7 +169,7 @@ LAB_004a77bb:
               } while ((int)uVar7 < (int)array->count);
             }
             if (this->field_0232 != -1) break;
-            pDVar4 = (DArrayTy *)this->field_0226;
+            pDVar4 = this->field_0226;
             local_8 = local_8 + 1;
           } while ((int)local_8 < (int)pDVar4->count);
         }
@@ -178,7 +178,7 @@ LAB_004a77bb:
       }
       else {
         for (; -1 < (int)local_8; local_8 = local_8 - 1) {
-          DArrayGetElement((DArrayTy *)this->field_0226,local_8,&local_1c);
+          DArrayGetElement(this->field_0226,local_8,&local_1c);
           uVar7 = 0;
           if (0 < (int)array->count) {
             do {
@@ -206,17 +206,17 @@ LAB_004a77bb:
   }
   this->field_0232 = 0;
 LAB_004a792e:
-  if ((DArrayTy *)this->field_022A != (DArrayTy *)0x0) {
-    DArrayDestroy((DArrayTy *)this->field_022A);
-    this->field_022A = (uint *)0x0;
+  if (this->field_022A != (DArrayTy *)0x0) {
+    DArrayDestroy(this->field_022A);
+    this->field_022A = (DArrayTy *)0x0;
   }
   pDVar4 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,array->count,0xe,1);
-  this->field_022A = &pDVar4->flags;
+  this->field_022A = pDVar4;
   uVar7 = 0;
   if (0 < (int)array->count) {
     do {
       DArrayGetElement(array,uVar7,&local_2c);
-      Library::DKW::TBL::FUN_006ae140(this->field_022A,uVar7,(undefined4 *)&local_2c);
+      Library::DKW::TBL::FUN_006ae140(&this->field_022A->flags,uVar7,(undefined4 *)&local_2c);
       uVar7 = uVar7 + 1;
     } while ((int)uVar7 < (int)array->count);
   }

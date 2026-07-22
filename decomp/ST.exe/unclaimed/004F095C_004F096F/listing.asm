@@ -1,0 +1,5 @@
+004F095C  pointer  004f0857
+004F0960  pointer  004f085e
+004F0964  pointer  004f0865
+004F0968  pointer  004f086c
+004F096C  pointer  004f0873

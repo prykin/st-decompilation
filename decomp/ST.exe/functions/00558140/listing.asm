@@ -1,4 +1,4 @@
-FUN_00558140:
+VisibleClassTy::sub_00558140:
 00558140  57                        PUSH EDI
 00558141  8B F9                     MOV EDI,ECX
 00558143  8B 4F 38                  MOV ECX,dword ptr [EDI + 0x38]

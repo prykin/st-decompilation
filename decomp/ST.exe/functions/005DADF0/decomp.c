@@ -24,7 +24,7 @@ void __thiscall StartSystemTy::InitChat(StartSystemTy *this)
   errorCode = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
   if (errorCode == 0) {
     if (DAT_0080c4fa != (DArrayTy *)0x0) {
-      FUN_006b5570((AnonShape_006B5570_4D68B99C *)DAT_0080c4fa);
+      FUN_006b5570(DAT_0080c4fa);
     }
     DAT_0080c4fa = Library::DKW::TBL::SArrayCreate((DArrayTy *)0x0,100,0x14);
     puVar1 = local_8->field_067E;

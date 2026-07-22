@@ -1,8 +1,11 @@
 
 /* [STPrototypeApplier] Propagated parameter 2.
+   Evidence: 00755830 -> 007574C0 @ 00755958
+
+   [STPrototypeApplier] Propagated parameter 0.
    Evidence: 00755830 -> 007574C0 @ 00755958 */
 
-void FUN_007574c0(AnonShape_007574C0_ED6B02E3 *param_1,int param_2,uint *param_3,int param_4)
+void FUN_007574c0(AnonShape_00753C80_4C8E695D *param_1,int param_2,uint *param_3,int param_4)
 
 {
   uint uVar1;
@@ -11,10 +14,11 @@ void FUN_007574c0(AnonShape_007574C0_ED6B02E3 *param_1,int param_2,uint *param_3
   uint uVar4;
   uint *puVar5;
 
-  sVar2 = param_1->field_000C->field_0034;
+  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
+  sVar2 = *(short *)(param_1->field_000C + 0x34);
   if (sVar2 == 0) {
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-    iVar3 = (*(code *)param_1->field_000C->field_0008)(param_3 + 2);
+    iVar3 = (**(code **)(param_1->field_000C + 8))(param_3 + 2);
   }
   else {
     iVar3 = (int)sVar2;

@@ -127,7 +127,7 @@ int __thiscall STLBombC::GetMessage(STLBombC *this,STMessage *message)
           pbVar15 = pbVar15 + 1;
         }
         STPlaySystemC::SaveObjData
-                  (PTR_00802a38,this_00->field_0018,(byte *)local_c,
+                  (g_playSystem_00802A38,this_00->field_0018,(byte *)local_c,
                    (AnonShape_0060EA30_DCEB68AD *)(local_10 + 0x67 + local_8));
         FreeAndNull(&local_18);
         FreeAndNull(&local_14);
@@ -148,7 +148,7 @@ int __thiscall STLBombC::GetMessage(STLBombC *this,STMessage *message)
         uVar8 = *(uint *)(dVar2 + 0xc);
         if (uVar8 < 2) {
           *(undefined4 *)((int)&this_00->field_023E + 3) = 0;
-          *(uint *)&this_00->field_0x23d = PTR_00802a38->field_00E4;
+          *(uint *)&this_00->field_0x23d = g_playSystem_00802A38->field_00E4;
           puVar11 = (message->arg0).ptr;
           puVar13 = (undefined4 *)&this_00->field_0x258;
           for (iVar6 = 0xc; iVar6 != 0; iVar6 = iVar6 + -1) {
@@ -167,10 +167,10 @@ int __thiscall STLBombC::GetMessage(STLBombC *this,STMessage *message)
                       (-1,g_overwriteContext_007ED77C,"E:\\__titans\\Igor\\to_lbomb.cpp",0x19f
                       );
           }
-          STT3DSprC::StartShow((STT3DSprC *)&this_00->field_01D5,0xe,PTR_00802a38->field_00E4);
-          thunk_FUN_00416240(this_00,*(undefined2 *)&this_00->field_0x26c,
-                             *(undefined2 *)&this_00->field_0x270,
-                             *(undefined2 *)&this_00->field_0x274);
+          STT3DSprC::StartShow
+                    ((STT3DSprC *)&this_00->field_01D5,0xe,g_playSystem_00802A38->field_00E4);
+          sub_00416240(this_00,*(undefined2 *)&this_00->field_0x26c,
+                       *(undefined2 *)&this_00->field_0x270,*(undefined2 *)&this_00->field_0x274);
           *(int *)&this_00->field_0x245 = (int)*(short *)(DAT_00806724 + 0x2c);
           this_00->field_0231 = 0;
           thunk_FUN_005860d0(this_00,*(int *)&this_00->field_0x26c,*(int *)&this_00->field_0x270,

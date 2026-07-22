@@ -1,0 +1,9 @@
+006C4FD0  pointer  006c4db2
+006C4FD4  pointer  006c4f3c
+006C4FD8  pointer  006c4f3c
+006C4FDC  pointer  006c4f3c
+006C4FE0  pointer  006c4f3c
+006C4FE4  pointer  006c4ce6
+006C4FE8  pointer  006c4bf6
+006C4FEC  pointer  006c4f3c
+006C4FF0  pointer  006c4c41

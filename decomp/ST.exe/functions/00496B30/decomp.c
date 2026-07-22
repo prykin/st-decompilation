@@ -12,9 +12,9 @@ void FUN_00496b30(uint param_1,int param_2,int param_3)
   int local_c;
   int local_8;
 
-  /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(PTR_007fb270, param_1) (runtime stride) */
-  if ((param_1 < PTR_007fb270->count) &&
-     (piVar2 = (int *)(PTR_007fb270->elementSize * param_1 + (int)PTR_007fb270->data),
+  /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(g_dArray_007FB270, param_1) (runtime stride) */
+  if ((param_1 < g_dArray_007FB270->count) &&
+     (piVar2 = (int *)(g_dArray_007FB270->elementSize * param_1 + (int)g_dArray_007FB270->data),
      piVar2 != (int *)0x0)) {
     iVar3 = piVar2[1] + -7;
     if (iVar3 < 0) {

@@ -4,12 +4,16 @@
    /SubmarineTitans/Recovered/HiddenThis/AnonReceiver_006308F0.
    Evidence: incoming_receiver_captures=1; receiver_accesses=12; incoming_edx_uses=0; calls=5;
    ecx_pointer_setup=5; ecx_scalar_setup=0; caller_cleanup_calls=0; callee_ret_pop=[20];
-   expected_stack=20; receiver_family_members=8 */
+   expected_stack=20; receiver_family_members=8
+
+   [STMethodOwnerApplier] Structural method owner recovered as STManRuinC.
+   Evidence: this_call_owners=[STManRuinC]; agreed_this_calls=1; incoming_this_accesses=12;
+   incoming_edx_uses=0; incoming_stack_parameter_uses=7; direct_non_thunk_callers=0;
+   incoming_ecx_receiver_callers=0; attributed_named_callers=1; owner_evidence_coverage=adequate */
 
 ushort * __thiscall
-SubmarineTitans::Recovered::HiddenThis::AnonReceiver_006308F0::FUN_00630c50
-          (AnonReceiver_006308F0 *this,undefined4 param_1,int param_2,int param_3,int param_4,
-          int param_5)
+STManRuinC::sub_00630C50
+          (STManRuinC *this,undefined4 param_1,int param_2,int param_3,int param_4,int param_5)
 
 {
   undefined1 *puVar1;

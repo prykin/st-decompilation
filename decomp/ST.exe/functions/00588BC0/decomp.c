@@ -166,7 +166,7 @@ int __thiscall STMBombC::GetMessage(STMBombC *this,STMessage *message)
       pbVar14 = pbVar14 + 1;
     }
     STPlaySystemC::SaveObjData
-              (PTR_00802a38,this_00->field_0018,(byte *)local_14,
+              (g_playSystem_00802A38,this_00->field_0018,(byte *)local_14,
                (AnonShape_0060EA30_DCEB68AD *)(local_18 + 0x87 + local_10));
     FreeAndNull(&local_20);
     FreeAndNull(&local_1c);
@@ -186,7 +186,7 @@ int __thiscall STMBombC::GetMessage(STMBombC *this,STMessage *message)
     uVar8 = *(uint *)(dVar3 + 0xc);
     if (uVar8 < 2) {
       *(undefined4 *)&this_00->field_0x257 = 0;
-      *(uint *)&this_00->field_0x253 = PTR_00802a38->field_00E4;
+      *(uint *)&this_00->field_0x253 = g_playSystem_00802A38->field_00E4;
       *(undefined4 *)&this_00->field_0x26f = 0xff;
       puVar10 = (message->arg0).ptr;
       puVar12 = (undefined4 *)&this_00->field_0x27c;
@@ -210,8 +210,8 @@ int __thiscall STMBombC::GetMessage(STMBombC *this,STMessage *message)
            (((-1 < *(int *)&this_00->field_0x294 &&
              (iVar6 = *(int *)&this_00->field_0x298, iVar6 < (short)(g_worldGrid._4_4_ * 200 + 100))
              ) && (-1 < iVar6)))) {
-          thunk_FUN_00416240(this_00,*(undefined2 *)&this_00->field_0x290,
-                             *(undefined2 *)&this_00->field_0x294,(short)iVar6);
+          sub_00416240(this_00,*(undefined2 *)&this_00->field_0x290,
+                       *(undefined2 *)&this_00->field_0x294,(short)iVar6);
           iVar6 = *(int *)&this_00->field_0x290;
           sVar9 = (short)(iVar6 >> 0x1f);
           if (iVar6 < 0) {
@@ -250,10 +250,11 @@ int __thiscall STMBombC::GetMessage(STMBombC *this,STMessage *message)
                       (-1,g_overwriteContext_007ED77C,"E:\\__titans\\Igor\\to_mbomb.cpp",0x2c3
                       );
           }
-          STT3DSprC::StartShow((STT3DSprC *)&this_00->field_01D5,0xe,PTR_00802a38->field_00E4);
+          STT3DSprC::StartShow
+                    ((STT3DSprC *)&this_00->field_01D5,0xe,g_playSystem_00802A38->field_00E4);
           if ((*(int *)&this_00->field_0x29c == 0) ||
-             (iVar6 = FUN_006e62d0(PTR_00802a38,*(int *)&this_00->field_0x29c,(int *)&local_24),
-             iVar6 != 0)) {
+             (iVar6 = FUN_006e62d0(g_playSystem_00802A38,*(int *)&this_00->field_0x29c,
+                                   (int *)&local_24), iVar6 != 0)) {
             this_00->field_0231 = 1;
             *(undefined4 *)&this_00->field_0x235 = 0;
             *(undefined4 *)&this_00->field_0x239 = 0;

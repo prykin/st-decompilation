@@ -53,7 +53,7 @@ void __thiscall MReportTy::SetCtrl(MReportTy *this,int param_1)
     *puVar8 = puVar5;
     FUN_006bc360(puVar5,local_470,(int *)0x0);
     Library::Ourlib::PALETTE::FUN_00718780
-              ((int)local_470,0,0x100,0x1a,0x10,(undefined4 *)&PTR_0081176c->field_0x144);
+              ((int)local_470,0,0x100,0x1a,0x10,(undefined4 *)&g_startSystem_0081176C->field_0x144);
     Library::Ourlib::PALETTE::FUN_00718780
               ((int)local_470,0,0x100,0x1a,0x10,(undefined4 *)&pMVar2->field_0xa3);
     Library::Ourlib::PALETTE::FUN_00718780
@@ -71,7 +71,7 @@ void __thiscall MReportTy::SetCtrl(MReportTy *this,int param_1)
     }
     pcVar6 = (ccFntTy *)thunk_FUN_005df290(*puVar8,(undefined *)0x0,DAT_00807dd9);
     pMVar2->field_0087 = pcVar6;
-    PTR_0081176c->field_0038 = pcVar6;
+    g_startSystem_0081176C->field_0038 = pcVar6;
     if (param_1 != 0) {
       local_2c[2] = pMVar2->field_0008;
       memset(local_2c, 0, 0x20); /* compiler bulk-zero initialization */

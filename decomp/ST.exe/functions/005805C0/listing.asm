@@ -1,4 +1,4 @@
-FUN_005805c0:
+STDcResourcC::sub_005805C0:
 005805C0  56                        PUSH ESI
 005805C1  8B F1                     MOV ESI,ECX
 005805C3  57                        PUSH EDI

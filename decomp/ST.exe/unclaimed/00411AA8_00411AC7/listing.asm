@@ -1,0 +1,8 @@
+00411AA8  pointer  00411a3f
+00411AAC  pointer  00411a42
+00411AB0  pointer  00411a47
+00411AB4  pointer  00411a4c
+00411AB8  pointer  00411a51
+00411ABC  pointer  00411a56
+00411AC0  pointer  00411a5b
+00411AC4  pointer  00411a60

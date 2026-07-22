@@ -16,7 +16,7 @@ undefined4 __thiscall FUN_0068f8f0(void *this,short param_1)
     if (*(short *)((int)this + 0x39) != 3) {
       return 1;
     }
-    if ((g_sTAllPlayers_007FA174 != (STAllPlayersC *)0x0) &&
+    if ((g_allPlayers_007FA174 != (STAllPlayersC *)0x0) &&
        (sVar1 = thunk_FUN_0043e640(*(char *)((int)this + 0x24),0x62,0,-1), sVar1 != 0)) {
       return 1;
     }

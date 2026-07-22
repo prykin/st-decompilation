@@ -1,4 +1,4 @@
-FUN_0041d590:
+TLOBaseTy::sub_0041D590:
 0041D590  8B C1                     MOV EAX,ECX
 0041D592  8B 0D 88 2A 80 00         MOV ECX,dword ptr [0x00802a88]
 0041D598  85 C9                     TEST ECX,ECX

@@ -49,10 +49,9 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0064A970::FUN_0066acc0
   AiFltClassTy **ppAVar27;
   undefined4 *puVar28;
   undefined8 uVar29;
-  undefined *puVar30;
+  code *pcVar30;
   undefined *puVar31;
   undefined4 uVar32;
-  undefined1 *puVar33;
   undefined4 local_628 [78];
   undefined4 local_4f0 [78];
   undefined4 local_3b8 [78];
@@ -224,7 +223,7 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0064A970::FUN_0066acc0
       }
       puVar22 = (uint *)(param_1 + 5);
       uVar12 = (*this_00->vtable->slot_00)(puVar22,local_50);
-      iVar11 = thunk_FUN_00668f50(this_00,(char *)local_8,uVar12,puVar22);
+      iVar11 = sub_00668F50(this_00,(char *)local_8,uVar12,puVar22);
       DAT_00811980 = 0;
       if (0 < iVar11) {
         local_10 = param_1 + 0x2d;
@@ -238,7 +237,7 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0064A970::FUN_0066acc0
         ppAVar27 = local_50;
         do {
           uVar32 = 0;
-          puVar30 = &LAB_00405628;
+          pcVar30 = thunk_FUN_00677ed0;
           pcVar25 = local_10;
           sVar4 = (*this_00->vtable->slot_00)();
           sVar8 = (short)pcVar25;
@@ -254,7 +253,7 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0064A970::FUN_0066acc0
           uVar21 = (*this_00->vtable->slot_00)(local_30,uVar21);
           uVar21 = (*this_00->vtable->slot_08)(local_28,uVar21);
           sVar7 = (*this_00->vtable->slot_00)(local_c,uVar21);
-          _EnumRCCont(*(short *)ppAVar27,sVar7,pbVar17,sVar6,sVar9,sVar5,sVar10,sVar4,sVar8,puVar30,
+          _EnumRCCont(*(short *)ppAVar27,sVar7,pbVar17,sVar6,sVar9,sVar5,sVar10,sVar4,sVar8,pcVar30,
                       uVar32);
           ppAVar27 = ppAVar27 + 1;
           iVar11 = iVar11 + -1;
@@ -294,7 +293,7 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0064A970::FUN_0066acc0
           *(undefined4 *)&this_00->field_0x84 = 0xffffffff;
           RaiseInternalException(-0x78,g_overwriteContext_007ED77C,".\\ai\\ai_erc.h",0x79);
         }
-        iVar11 = thunk_FUN_00668f50(this_00,(char *)local_8,0,(uint *)local_50);
+        iVar11 = sub_00668F50(this_00,(char *)local_8,0,(uint *)local_50);
         if (iVar11 != 1) {
           pcVar25 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
           if (pcVar25 != (char *)0x0) {
@@ -304,7 +303,7 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0064A970::FUN_0066acc0
           RaiseInternalException(-0x78,g_overwriteContext_007ED77C,".\\ai\\ai_erc.h",0x79);
         }
         local_8 = local_50[0];
-        iVar11 = thunk_FUN_00668f50(this_00,local_c,0,(uint *)local_50);
+        iVar11 = sub_00668F50(this_00,local_c,0,(uint *)local_50);
         if (iVar11 != 1) {
           pcVar25 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
           if (pcVar25 != (char *)0x0) {
@@ -364,12 +363,12 @@ LAB_0066bdcc:
             } while ((int)local_c < param_2);
           }
           iVar11 = (*this_00->vtable->slot_00)(param_1);
-          if ((PTR_0080c4c7 == (AnonShape_GLOBAL_0080C4C7_5A4CB754 *)0x0) ||
-             ((int)PTR_0080c4c7->field_0008 <= iVar11)) {
+          if ((g_dArray_0080C4C7 == (DArrayTy *)0x0) ||
+             ((int)g_dArray_0080C4C7->elementSize <= iVar11)) {
             local_c = (char *)0x0;
           }
           else {
-            local_c = *(char **)(PTR_0080c4c7->field_0014 + iVar11 * 4);
+            local_c = *(char **)(g_dArray_0080C4C7->growCapacity + iVar11 * 4);
           }
           if (local_c == (char *)0x0) {
             pcVar25 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
@@ -548,17 +547,16 @@ LAB_0066bdcc:
               *local_14 = (uint)local_c;
             }
             else {
-              iVar11 = thunk_FUN_00668f50(this_00,(char *)local_8,0,(uint *)local_50);
+              iVar11 = sub_00668F50(this_00,(char *)local_8,0,(uint *)local_50);
               if (iVar11 == 1) {
-                if (g_sTAllPlayers_007FA174 == (STAllPlayersC *)0x0) {
+                if (g_allPlayers_007FA174 == (STAllPlayersC *)0x0) {
                   pAVar13 = (AiPlrClassTy *)0x0;
                 }
                 else {
                   pAVar13 = thunk_FUN_004357f0((char)local_50[0]);
                 }
                 if (pAVar13 != (AiPlrClassTy *)0x0) {
-                  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-                  iVar11 = (*(code *)pAVar13->field_001C->field_002C)(local_10);
+                  iVar11 = (*pAVar13->vtable_at_1c->vfunc_2C)(local_10);
                   local_c = (char *)(uint)(iVar11 == 0);
                   local_14 = Library::DKW::LIB::FUN_006aac10(4);
                   *local_14 = (uint)local_c;
@@ -655,20 +653,19 @@ cf_common_exit_00670456:
           *local_14 = (uint)local_c;
           goto cf_common_exit_00670431;
         }
-        iVar11 = thunk_FUN_00668f50(this_00,(char *)local_8,0,(uint *)local_50);
+        iVar11 = sub_00668F50(this_00,(char *)local_8,0,(uint *)local_50);
         if (iVar11 != 1) {
           pcVar25 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
           goto joined_r0x0066b1d2;
         }
-        if (g_sTAllPlayers_007FA174 == (STAllPlayersC *)0x0) {
+        if (g_allPlayers_007FA174 == (STAllPlayersC *)0x0) {
           pAVar13 = (AiPlrClassTy *)0x0;
         }
         else {
           pAVar13 = thunk_FUN_004357f0((char)local_50[0]);
         }
         if (pAVar13 != (AiPlrClassTy *)0x0) {
-          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-          local_c = (char *)(*(code *)pAVar13->field_001C->field_001C)(local_10);
+          local_c = (char *)(*pAVar13->vtable_at_1c->vfunc_1C)(local_10);
           local_14 = Library::DKW::LIB::FUN_006aac10(4);
           *local_14 = (uint)local_c;
           goto cf_common_exit_00670431;
@@ -699,11 +696,11 @@ LAB_0066b1fb:
           goto cf_common_exit_00670456;
         case 0x7da:
           local_14 = Library::DKW::LIB::FUN_006aac10(4);
-          *local_14 = PTR_00802a38->field_00E4 / 0x19;
+          *local_14 = g_playSystem_00802A38->field_00E4 / 0x19;
           break;
         case 0x7dc:
           local_14 = Library::DKW::LIB::FUN_006aac10(4);
-          *local_14 = PTR_00802a38->field_00E4;
+          *local_14 = g_playSystem_00802A38->field_00E4;
           break;
         case 0x7dd:
           local_c = (char *)0x0;
@@ -732,17 +729,16 @@ LAB_0066b1fb:
             *local_14 = (uint)local_c;
             break;
           }
-          iVar11 = thunk_FUN_00668f50(this_00,(char *)local_8,0,(uint *)local_50);
+          iVar11 = sub_00668F50(this_00,(char *)local_8,0,(uint *)local_50);
           if (iVar11 == 1) {
-            if (g_sTAllPlayers_007FA174 == (STAllPlayersC *)0x0) {
+            if (g_allPlayers_007FA174 == (STAllPlayersC *)0x0) {
               pAVar13 = (AiPlrClassTy *)0x0;
             }
             else {
               pAVar13 = thunk_FUN_004357f0((char)local_50[0]);
             }
             if (pAVar13 != (AiPlrClassTy *)0x0) {
-              /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-              local_c = (char *)(*(code *)pAVar13->field_001C->field_0014)();
+              local_c = (char *)(*pAVar13->vtable_at_1c->vfunc_14)();
               local_14 = Library::DKW::LIB::FUN_006aac10(4);
               *local_14 = (uint)local_c;
               break;
@@ -789,7 +785,7 @@ joined_r0x0066b1d2:
             *(undefined4 *)&this_00->field_0x84 = 0xffffffff;
             RaiseInternalException(-0x78,g_overwriteContext_007ED77C,".\\ai\\ai_erc.h",0x79);
           }
-          iVar11 = thunk_FUN_00668f50(this_00,local_c,0,(uint *)local_50);
+          iVar11 = sub_00668F50(this_00,local_c,0,(uint *)local_50);
           if (iVar11 != 1) {
             pcVar25 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
             if (pcVar25 != (char *)0x0) {
@@ -845,7 +841,7 @@ joined_r0x0066b1d2:
             *(undefined4 *)&this_00->field_0x84 = 0xffffffff;
             RaiseInternalException(-0x78,g_overwriteContext_007ED77C,".\\ai\\ai_erc.h",0x79);
           }
-          iVar11 = thunk_FUN_00668f50(this_00,(char *)local_8,0,(uint *)local_50);
+          iVar11 = sub_00668F50(this_00,(char *)local_8,0,(uint *)local_50);
           if (iVar11 != 1) {
             pcVar25 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
             if (pcVar25 != (char *)0x0) {
@@ -902,8 +898,8 @@ joined_r0x0066b1d2:
       }
       local_14 = Library::DKW::LIB::FUN_006aac10(4);
       if ((pcVar25 < 8) &&
-         ((PTR_00802a38 == (STPlaySystemC *)0x0 || ((byte)(&DAT_008087e9)[(int)pcVar25 * 0x51] < 8))
-         )) {
+         ((g_playSystem_00802A38 == (STPlaySystemC *)0x0 ||
+          ((byte)(&DAT_008087e9)[(int)pcVar25 * 0x51] < 8)))) {
         *local_14 = 1;
         break;
       }
@@ -938,8 +934,8 @@ LAB_0066bff3:
       else {
         pbVar17 = &DAT_008087ea;
         do {
-          if (((PTR_00802a38 == (STPlaySystemC *)0x0) || (pbVar17[-1] < 8)) && (*pbVar17 == uVar12))
-          {
+          if (((g_playSystem_00802A38 == (STPlaySystemC *)0x0) || (pbVar17[-1] < 8)) &&
+             (*pbVar17 == uVar12)) {
             uVar26 = 1;
             goto LAB_0066bff3;
           }
@@ -981,7 +977,7 @@ LAB_0066bff3:
         *(undefined4 *)&this_00->field_0x84 = 0xffffffff;
         RaiseInternalException(-0x78,g_overwriteContext_007ED77C,".\\ai\\ai_erc.h",0x79);
       }
-      iVar11 = thunk_FUN_00668f50(this_00,(char *)local_8,0,(uint *)local_50);
+      iVar11 = sub_00668F50(this_00,(char *)local_8,0,(uint *)local_50);
       if (iVar11 != 1) {
         pcVar25 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
         if (pcVar25 != (char *)0x0) {
@@ -1025,7 +1021,7 @@ LAB_0066bff3:
         *(undefined4 *)&this_00->field_0x84 = 0xffffffff;
         RaiseInternalException(-0x78,g_overwriteContext_007ED77C,".\\ai\\ai_erc.h",0x79);
       }
-      iVar11 = thunk_FUN_00668f50(this_00,(char *)local_8,0,(uint *)local_50);
+      iVar11 = sub_00668F50(this_00,(char *)local_8,0,(uint *)local_50);
       if (iVar11 != 1) {
         pcVar25 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
         if (pcVar25 != (char *)0x0) {
@@ -1071,7 +1067,7 @@ LAB_0066bff3:
       }
       puVar22 = (uint *)(param_1 + 5);
       uVar12 = (*this_00->vtable->slot_00)(puVar22,local_50);
-      iVar11 = thunk_FUN_00668f50(this_00,(char *)local_8,uVar12,puVar22);
+      iVar11 = sub_00668F50(this_00,(char *)local_8,uVar12,puVar22);
       DAT_00811980 = 0;
       if (0 < iVar11) {
         local_10 = param_1 + 0x2d;
@@ -1086,7 +1082,7 @@ LAB_0066bff3:
         do {
           puVar31 = (undefined *)0x0;
           puVar22 = (uint *)0x0;
-          puVar30 = &LAB_00401e8d;
+          pcVar30 = thunk_FUN_006771e0;
           pcVar25 = local_10;
           sVar4 = (*this_00->vtable->slot_00)();
           sVar10 = (short)pcVar25;
@@ -1105,7 +1101,7 @@ LAB_0066bff3:
           uVar21 = (*this_00->vtable->slot_00)(local_28,uVar21);
           uVar12 = (*this_00->vtable->slot_00)(local_c,0x3fffffff,0,uVar21);
           _EnumPlObj(*ppAVar27,uVar12,(uint)pcVar25,pbVar16,cVar3,sVar6,sVar7,sVar5,sVar9,sVar4,
-                     sVar10,puVar30,puVar22,puVar31);
+                     sVar10,pcVar30,puVar22,puVar31);
           ppAVar27 = ppAVar27 + 1;
           iVar11 = iVar11 + -1;
         } while (iVar11 != 0);
@@ -1141,7 +1137,7 @@ LAB_0066bff3:
       }
       puVar22 = (uint *)(param_1 + 5);
       uVar12 = (*this_00->vtable->slot_00)(puVar22,local_50);
-      iVar11 = thunk_FUN_00668f50(this_00,(char *)local_8,uVar12,puVar22);
+      iVar11 = sub_00668F50(this_00,(char *)local_8,uVar12,puVar22);
       DAT_00811980 = 0;
       if (0 < iVar11) {
         local_10 = param_1 + 0x2d;
@@ -1156,7 +1152,7 @@ LAB_0066bff3:
         do {
           puVar31 = (undefined *)0x0;
           puVar22 = (uint *)0x0;
-          puVar30 = &LAB_00401e8d;
+          pcVar30 = thunk_FUN_006771e0;
           pcVar25 = local_10;
           sVar4 = (*this_00->vtable->slot_00)();
           sVar10 = (short)pcVar25;
@@ -1173,7 +1169,7 @@ LAB_0066bff3:
           uVar21 = (*this_00->vtable->slot_00)(local_30,uVar21);
           uVar21 = (*this_00->vtable->slot_00)(local_28,uVar21);
           uVar12 = (*this_00->vtable->slot_00)(local_c,0,uVar21);
-          _EnumPlObj(*ppAVar27,0,uVar12,pbVar16,cVar3,sVar6,sVar7,sVar5,sVar9,sVar4,sVar10,puVar30,
+          _EnumPlObj(*ppAVar27,0,uVar12,pbVar16,cVar3,sVar6,sVar7,sVar5,sVar9,sVar4,sVar10,pcVar30,
                      puVar22,puVar31);
           ppAVar27 = ppAVar27 + 1;
           iVar11 = iVar11 + -1;
@@ -1231,7 +1227,7 @@ LAB_0066bff3:
       }
       puVar22 = (uint *)(param_1 + 5);
       uVar12 = (*this_00->vtable->slot_00)(puVar22,local_50);
-      iVar11 = thunk_FUN_00668f50(this_00,(char *)local_8,uVar12,puVar22);
+      iVar11 = sub_00668F50(this_00,(char *)local_8,uVar12,puVar22);
       DAT_00811980 = 0;
       if (0 < iVar11) {
         local_10 = param_1 + 0x2d;
@@ -1246,7 +1242,7 @@ LAB_0066bff3:
         do {
           puVar31 = (undefined *)0x0;
           puVar22 = (uint *)0x0;
-          puVar30 = &LAB_00401e8d;
+          pcVar30 = thunk_FUN_006771e0;
           pcVar25 = local_10;
           sVar4 = (*this_00->vtable->slot_00)();
           sVar10 = (short)pcVar25;
@@ -1264,7 +1260,7 @@ LAB_0066bff3:
           uVar21 = (*this_00->vtable->slot_00)(local_28,uVar21);
           pbVar17 = (byte *)(*this_00->vtable->slot_08)(local_c,uVar21);
           _EnumPlObj(*ppAVar27,0,0x3fffffff,pbVar17,cVar3,sVar6,sVar7,sVar5,sVar9,sVar4,sVar10,
-                     puVar30,puVar22,puVar31);
+                     pcVar30,puVar22,puVar31);
           ppAVar27 = ppAVar27 + 1;
           iVar11 = iVar11 + -1;
         } while (iVar11 != 0);
@@ -1303,7 +1299,7 @@ cf_common_exit_0066DF5E:
       }
       puVar22 = (uint *)(param_1 + 5);
       uVar12 = (*this_00->vtable->slot_00)(puVar22,local_50);
-      pcVar25 = (char *)thunk_FUN_00668f50(this_00,(char *)local_8,uVar12,puVar22);
+      pcVar25 = (char *)sub_00668F50(this_00,(char *)local_8,uVar12,puVar22);
       local_10 = (char *)0x0;
       if (0 < (int)pcVar25) {
         local_c = param_1 + 10;
@@ -1416,7 +1412,7 @@ cf_continue_loop_0066CACD:
       }
       puVar22 = (uint *)(param_1 + 5);
       uVar12 = (*this_00->vtable->slot_00)(puVar22,local_50);
-      pcVar25 = (char *)thunk_FUN_00668f50(this_00,(char *)local_8,uVar12,puVar22);
+      pcVar25 = (char *)sub_00668F50(this_00,(char *)local_8,uVar12,puVar22);
       local_10 = (char *)0x0;
       if (0 < (int)pcVar25) {
         local_c = param_1 + 10;
@@ -1529,7 +1525,7 @@ cf_continue_loop_0066CD4A:
       }
       puVar22 = (uint *)(param_1 + 5);
       uVar12 = (*this_00->vtable->slot_00)(puVar22,local_50);
-      pcVar25 = (char *)thunk_FUN_00668f50(this_00,(char *)local_8,uVar12,puVar22);
+      pcVar25 = (char *)sub_00668F50(this_00,(char *)local_8,uVar12,puVar22);
       local_10 = (char *)0x0;
       if (0 < (int)pcVar25) {
         local_c = param_1 + 10;
@@ -1642,7 +1638,7 @@ cf_continue_loop_0066CFCA:
       }
       puVar22 = (uint *)(param_1 + 5);
       uVar12 = (*this_00->vtable->slot_00)(puVar22,local_50);
-      pAVar14 = (AiFltClassTy *)thunk_FUN_00668f50(this_00,(char *)local_8,uVar12,puVar22);
+      pAVar14 = (AiFltClassTy *)sub_00668F50(this_00,(char *)local_8,uVar12,puVar22);
       pcVar25 = (char *)0x0;
       if (0 < (int)pAVar14) {
         local_c = param_1 + 10;
@@ -1746,7 +1742,7 @@ cf_continue_loop_0066CFCA:
     }
     puVar22 = (uint *)(param_1 + 5);
     uVar12 = (*this_00->vtable->slot_00)(puVar22,local_50);
-    iVar11 = thunk_FUN_00668f50(this_00,(char *)local_8,uVar12,puVar22);
+    iVar11 = sub_00668F50(this_00,(char *)local_8,uVar12,puVar22);
     DAT_00811980 = 0;
     if (0 < iVar11) {
       local_10 = param_1 + 0x2d;
@@ -1760,7 +1756,7 @@ cf_continue_loop_0066CFCA:
       ppAVar27 = local_50;
       do {
         uVar32 = 0;
-        puVar30 = &LAB_004050fb;
+        pcVar30 = thunk_FUN_00677ef0;
         pcVar25 = local_10;
         sVar4 = (*this_00->vtable->slot_00)();
         sVar8 = (short)pcVar25;
@@ -1776,7 +1772,7 @@ cf_continue_loop_0066CFCA:
         uVar21 = (*this_00->vtable->slot_00)(local_30,uVar21);
         uVar21 = (*this_00->vtable->slot_08)(local_28,uVar21);
         sVar7 = (*this_00->vtable->slot_00)(local_c,uVar21);
-        _EnumRCCont(*(short *)ppAVar27,sVar7,pbVar17,sVar6,sVar9,sVar5,sVar10,sVar4,sVar8,puVar30,
+        _EnumRCCont(*(short *)ppAVar27,sVar7,pbVar17,sVar6,sVar9,sVar5,sVar10,sVar4,sVar8,pcVar30,
                     uVar32);
         ppAVar27 = ppAVar27 + 1;
         iVar11 = iVar11 + -1;
@@ -1818,7 +1814,7 @@ cf_continue_loop_0066CFCA:
       } while ((int)local_c < param_2);
     }
     DAT_00811980 = 0;
-    uVar21 = (*this_00->vtable->slot_00)(param_1 + 0x23,&LAB_00402bcb,0);
+    uVar21 = (*this_00->vtable->slot_00)(param_1 + 0x23,thunk_FUN_00678200,0);
     uVar21 = (*this_00->vtable->slot_00)(param_1 + 0x1e,uVar21);
     uVar21 = (*this_00->vtable->slot_00)(param_1 + 0x19,uVar21);
     pcVar25 = param_1 + 0x14;
@@ -1867,7 +1863,7 @@ cf_continue_loop_0066CFCA:
       } while ((int)local_c < param_2);
     }
     DAT_00811980 = 0;
-    uVar21 = (*this_00->vtable->slot_00)(param_1 + 0x23,&LAB_00403d50,0);
+    uVar21 = (*this_00->vtable->slot_00)(param_1 + 0x23,thunk_FUN_00678870,0);
     uVar21 = (*this_00->vtable->slot_00)(param_1 + 0x1e,uVar21);
     uVar21 = (*this_00->vtable->slot_00)(param_1 + 0x19,uVar21);
     pcVar25 = param_1 + 0x14;
@@ -1932,7 +1928,7 @@ cf_continue_loop_0066CFCA:
     }
     puVar22 = (uint *)(param_1 + 5);
     uVar12 = (*this_00->vtable->slot_00)(puVar22,local_50);
-    iVar11 = thunk_FUN_00668f50(this_00,(char *)local_8,uVar12,puVar22);
+    iVar11 = sub_00668F50(this_00,(char *)local_8,uVar12,puVar22);
     DAT_00811980 = 0;
     if (0 < iVar11) {
       local_8 = (AiFltClassTy *)(param_1 + 0x32);
@@ -1947,7 +1943,7 @@ cf_continue_loop_0066CFCA:
       ppAVar27 = local_50;
       do {
         uVar32 = 0;
-        puVar30 = &LAB_004027a7;
+        pcVar30 = thunk_FUN_00678560;
         pAVar14 = local_8;
         sVar4 = (*this_00->vtable->slot_00)();
         sVar8 = (short)pAVar14;
@@ -1964,7 +1960,7 @@ cf_continue_loop_0066CFCA:
         uVar21 = (*this_00->vtable->slot_08)(local_30,uVar21);
         uVar21 = (*this_00->vtable->slot_00)(local_28,uVar21);
         sVar7 = (*this_00->vtable->slot_00)(local_c,uVar21);
-        _EnumMines((int)*ppAVar27,sVar7,cVar3,pbVar17,sVar6,sVar9,sVar5,sVar10,sVar4,sVar8,puVar30,
+        _EnumMines((int)*ppAVar27,sVar7,cVar3,pbVar17,sVar6,sVar9,sVar5,sVar10,sVar4,sVar8,pcVar30,
                    uVar32);
         ppAVar27 = ppAVar27 + 1;
         iVar11 = iVar11 + -1;
@@ -1990,7 +1986,7 @@ cf_continue_loop_0066CFCA:
       } while ((int)local_c < param_2);
     }
     DAT_00811980 = 0;
-    uVar21 = (*this_00->vtable->slot_00)(param_1 + 0x1e,&LAB_00401f7d,0);
+    uVar21 = (*this_00->vtable->slot_00)(param_1 + 0x1e,thunk_FUN_00677bc0,0);
     uVar21 = (*this_00->vtable->slot_00)(param_1 + 0x19,uVar21);
     uVar21 = (*this_00->vtable->slot_00)(param_1 + 0x14,uVar21);
     pcVar25 = param_1 + 0xf;
@@ -2184,11 +2180,11 @@ cf_common_exit_0066DCED:
       RaiseInternalException(-0x78,g_overwriteContext_007ED77C,".\\ai\\ai_erc.h",0x79);
     }
     local_10 = (char *)0x0;
-    iVar11 = thunk_FUN_00668f50(this_00,(char *)local_8,0,(uint *)local_50);
+    iVar11 = sub_00668F50(this_00,(char *)local_8,0,(uint *)local_50);
     if (iVar11 == 1) {
       puVar31 = (undefined *)0x0;
       puVar22 = (uint *)0x0;
-      puVar30 = &LAB_00402ba3;
+      pcVar30 = thunk_FUN_00677200;
       sVar10 = -1;
       sVar9 = -1;
       sVar7 = -1;
@@ -2198,21 +2194,21 @@ cf_common_exit_0066DCED:
       cVar3 = -1;
       pbVar17 = (byte *)(*this_00->vtable->slot_08)(param_1 + 5);
       iVar11 = _EnumPlObj(local_50[0],0,0x3fffffff,pbVar17,cVar3,sVar4,sVar5,sVar6,sVar7,sVar9,
-                          sVar10,puVar30,puVar22,puVar31);
-      if ((iVar11 == -1) && (g_sTFish_00811984 != (STFishC *)0x0)) {
+                          sVar10,pcVar30,puVar22,puVar31);
+      if ((iVar11 == -1) && (g_fish_00811984 != (STFishC *)0x0)) {
         local_10 = (char *)0x1;
         iVar11 = (*this_00->vtable->slot_00)(param_1 + 10);
         local_8 = (AiFltClassTy *)(*this_00->vtable->slot_00)(param_1 + 0xf);
         local_c = (char *)(*this_00->vtable->slot_00)(param_1 + 0x14);
         iVar15 = (*this_00->vtable->slot_00)(param_1 + 0x19);
         if ((-1 < iVar11) || ((-1 < (int)local_8 || (-1 < (int)local_c)))) {
-          STFishC::sub_004162B0(g_sTFish_00811984,&local_5a,&local_52,&local_58);
+          STFishC::sub_004162B0(g_fish_00811984,&local_5a,&local_52,&local_58);
           (*this_00->vtable->slot_20)(iVar11,(int)local_5a);
           (*this_00->vtable->slot_20)(local_8,(int)local_52);
           (*this_00->vtable->slot_20)(local_c,(int)local_58);
         }
         if (-1 < iVar15) {
-          uVar21 = (*g_sTFish_00811984->vtable->vfunc_11C)();
+          uVar21 = (*g_fish_00811984->vtable->vfunc_11C)();
           (*this_00->vtable->slot_20)(iVar15,uVar21);
           local_14 = Library::DKW::LIB::FUN_006aac10(4);
           *local_14 = (uint)local_10;
@@ -2275,10 +2271,10 @@ cf_common_exit_0066DCED:
       RaiseInternalException(-0x78,g_overwriteContext_007ED77C,".\\ai\\ai_erc.h",0x79);
     }
     local_10 = (char *)0x0;
-    iVar11 = thunk_FUN_00668f50(this_00,(char *)local_8,0,(uint *)local_50);
+    iVar11 = sub_00668F50(this_00,(char *)local_8,0,(uint *)local_50);
     if (iVar11 == 1) {
       uVar21 = 0;
-      puVar30 = &LAB_00402ca2;
+      pcVar30 = thunk_FUN_00677f20;
       sVar10 = -1;
       sVar9 = -1;
       sVar7 = -1;
@@ -2286,22 +2282,22 @@ cf_common_exit_0066DCED:
       sVar5 = 0;
       sVar4 = 0;
       pbVar17 = (byte *)(*this_00->vtable->slot_08)(param_1 + 5);
-      iVar11 = _EnumRCCont((short)local_50[0],0,pbVar17,sVar4,sVar5,sVar6,sVar7,sVar9,sVar10,puVar30
+      iVar11 = _EnumRCCont((short)local_50[0],0,pbVar17,sVar4,sVar5,sVar6,sVar7,sVar9,sVar10,pcVar30
                            ,uVar21);
-      if ((iVar11 == -1) && (g_sTFish_00811984 != (STFishC *)0x0)) {
+      if ((iVar11 == -1) && (g_fish_00811984 != (STFishC *)0x0)) {
         local_10 = (char *)0x1;
         iVar11 = (*this_00->vtable->slot_00)(param_1 + 10);
         local_8 = (AiFltClassTy *)(*this_00->vtable->slot_00)(param_1 + 0xf);
         local_c = (char *)(*this_00->vtable->slot_00)(param_1 + 0x14);
         iVar15 = (*this_00->vtable->slot_00)(param_1 + 0x19);
         if ((-1 < iVar11) || ((-1 < (int)local_8 || (-1 < (int)local_c)))) {
-          thunk_FUN_004162f0(g_sTFish_00811984,&local_5c,&local_56,&local_54);
+          thunk_FUN_004162f0(g_fish_00811984,&local_5c,&local_56,&local_54);
           (*this_00->vtable->slot_20)(iVar11,(int)local_5c);
           (*this_00->vtable->slot_20)(local_8,(int)local_56);
           (*this_00->vtable->slot_20)(local_c,(int)local_54);
         }
         if (-1 < iVar15) {
-          uVar21 = (*g_sTFish_00811984->vtable->vfunc_11C)();
+          uVar21 = (*g_fish_00811984->vtable->vfunc_11C)();
           (*this_00->vtable->slot_20)(iVar15,uVar21);
           local_14 = Library::DKW::LIB::FUN_006aac10(4);
           *local_14 = (uint)local_10;
@@ -2347,8 +2343,8 @@ cf_common_exit_0066DCED:
       } while ((int)local_c < param_2);
     }
     uVar21 = 0;
-    puVar33 = &LAB_0040188e;
-    puVar30 = (undefined *)0xffffffff;
+    pcVar30 = thunk_FUN_00678220;
+    puVar31 = (undefined *)0xffffffff;
     sVar9 = -1;
     sVar7 = -1;
     sVar6 = 0;
@@ -2357,23 +2353,22 @@ cf_common_exit_0066DCED:
     sVar4 = 0;
     pcVar25 = param_1;
     pbVar17 = (byte *)(*this_00->vtable->slot_08)();
-    iVar11 = _EnumArt(0,pbVar17,(short)pcVar25,sVar4,sVar5,sVar6,sVar7,sVar9,puVar30,puVar33);
-    if ((iVar11 == -1) && (g_sTFish_00811984 != (STFishC *)0x0)) {
+    iVar11 = _EnumArt(0,pbVar17,(short)pcVar25,sVar4,sVar5,sVar6,sVar7,sVar9,puVar31,pcVar30);
+    if ((iVar11 == -1) && (g_fish_00811984 != (STFishC *)0x0)) {
       local_10 = (char *)0x1;
       iVar11 = (*this_00->vtable->slot_00)(param_1 + 5,uVar21);
       local_8 = (AiFltClassTy *)(*this_00->vtable->slot_00)(param_1 + 10);
       local_c = (char *)(*this_00->vtable->slot_00)(param_1 + 0xf);
       iVar15 = (*this_00->vtable->slot_00)(param_1 + 0x14);
       if ((-1 < iVar11) || ((-1 < (int)local_8 || (-1 < (int)local_c)))) {
-        thunk_FUN_004162f0(g_sTFish_00811984,&local_60,&local_5e,(undefined2 *)((int)&local_28 + 2))
-        ;
+        thunk_FUN_004162f0(g_fish_00811984,&local_60,&local_5e,(undefined2 *)((int)&local_28 + 2));
         (*this_00->vtable->slot_20)(iVar11,(int)local_60);
         (*this_00->vtable->slot_20)(local_8,(int)local_5e);
         /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
         (*this_00->vtable->slot_20)(local_c,(int)local_28._2_2_);
       }
       if (-1 < iVar15) {
-        uVar21 = (*g_sTFish_00811984->vtable->vfunc_11C)();
+        uVar21 = (*g_fish_00811984->vtable->vfunc_11C)();
         (*this_00->vtable->slot_20)(iVar15,uVar21);
       }
     }
@@ -2407,8 +2402,8 @@ cf_common_exit_0066DCED:
       } while ((int)local_c < param_2);
     }
     uVar21 = 0;
-    puVar33 = &LAB_00404c73;
-    puVar30 = (undefined *)0xffffffff;
+    pcVar30 = thunk_FUN_00678890;
+    puVar31 = (undefined *)0xffffffff;
     sVar10 = -1;
     sVar9 = -1;
     sVar7 = 0;
@@ -2418,8 +2413,8 @@ cf_common_exit_0066DCED:
     sVar4 = -1;
     pcVar25 = param_1;
     pbVar17 = (byte *)(*this_00->vtable->slot_08)();
-    iVar11 = _EnumDest(pbVar17,(char)pcVar25,sVar4,sVar5,sVar6,sVar7,sVar9,sVar10,puVar30,puVar33);
-    if ((iVar11 == -1) && (g_sTFish_00811984 != (STFishC *)0x0)) {
+    iVar11 = _EnumDest(pbVar17,(char)pcVar25,sVar4,sVar5,sVar6,sVar7,sVar9,sVar10,puVar31,pcVar30);
+    if ((iVar11 == -1) && (g_fish_00811984 != (STFishC *)0x0)) {
       local_10 = (char *)0x1;
       iVar11 = (*this_00->vtable->slot_00)(param_1 + 5,uVar21);
       local_8 = (AiFltClassTy *)(*this_00->vtable->slot_00)(param_1 + 10);
@@ -2427,7 +2422,7 @@ cf_common_exit_0066DCED:
       iVar15 = (*this_00->vtable->slot_00)(param_1 + 0x14);
       if ((-1 < iVar11) || ((-1 < (int)local_8 || (-1 < (int)local_c)))) {
         STFishC::sub_004162B0
-                  (g_sTFish_00811984,(undefined2 *)((int)&local_30 + 2),
+                  (g_fish_00811984,(undefined2 *)((int)&local_30 + 2),
                    (undefined2 *)((int)&local_24 + 2),(undefined2 *)((int)&local_1c + 2));
         /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
         (*this_00->vtable->slot_20)(iVar11,(int)local_30._2_2_);
@@ -2437,7 +2432,7 @@ cf_common_exit_0066DCED:
         (*this_00->vtable->slot_20)(local_c,(int)local_1c._2_2_);
       }
       if (-1 < iVar15) {
-        uVar21 = (*g_sTFish_00811984->vtable->vfunc_11C)();
+        uVar21 = (*g_fish_00811984->vtable->vfunc_11C)();
         (*this_00->vtable->slot_20)(iVar15,uVar21);
       }
     }
@@ -2488,10 +2483,10 @@ cf_common_exit_0066DCED:
       RaiseInternalException(-0x78,g_overwriteContext_007ED77C,".\\ai\\ai_erc.h",0x79);
     }
     local_1c = (byte *)0x0;
-    iVar11 = thunk_FUN_00668f50(this_00,(char *)local_8,0,(uint *)local_50);
+    iVar11 = sub_00668F50(this_00,(char *)local_8,0,(uint *)local_50);
     if (iVar11 == 1) {
       uVar21 = 0;
-      puVar30 = &LAB_0040446c;
+      pcVar30 = thunk_FUN_00678580;
       sVar10 = -1;
       sVar9 = -1;
       sVar7 = -1;
@@ -2499,9 +2494,9 @@ cf_common_exit_0066DCED:
       sVar5 = 0;
       sVar4 = 0;
       pbVar17 = (byte *)(*this_00->vtable->slot_08)(param_1 + 5);
-      iVar11 = _EnumMines((int)local_50[0],0,-1,pbVar17,sVar4,sVar5,sVar6,sVar7,sVar9,sVar10,puVar30
+      iVar11 = _EnumMines((int)local_50[0],0,-1,pbVar17,sVar4,sVar5,sVar6,sVar7,sVar9,sVar10,pcVar30
                           ,uVar21);
-      if ((iVar11 == -1) && (g_sTFish_00811984 != (STFishC *)0x0)) {
+      if ((iVar11 == -1) && (g_fish_00811984 != (STFishC *)0x0)) {
         local_1c = (byte *)0x1;
         iVar11 = (*this_00->vtable->slot_00)(param_1 + 10);
         local_8 = (AiFltClassTy *)(*this_00->vtable->slot_00)(param_1 + 0xf);
@@ -2509,7 +2504,7 @@ cf_common_exit_0066DCED:
         iVar15 = (*this_00->vtable->slot_00)(param_1 + 0x19);
         if ((-1 < iVar11) || ((-1 < (int)local_8 || (-1 < (int)local_c)))) {
           STFishC::sub_004162B0
-                    (g_sTFish_00811984,(undefined2 *)((int)&local_2c + 2),
+                    (g_fish_00811984,(undefined2 *)((int)&local_2c + 2),
                      (undefined2 *)((int)&local_18 + 2),(undefined2 *)((int)&local_10 + 2));
           /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
           (*this_00->vtable->slot_20)(iVar11,(int)local_2c._2_2_);
@@ -2519,7 +2514,7 @@ cf_common_exit_0066DCED:
           (*this_00->vtable->slot_20)(local_c,(int)local_10._2_2_);
         }
         if (-1 < iVar15) {
-          uVar21 = (*g_sTFish_00811984->vtable->vfunc_11C)();
+          uVar21 = (*g_fish_00811984->vtable->vfunc_11C)();
           (*this_00->vtable->slot_20)(iVar15,uVar21);
           local_14 = Library::DKW::LIB::FUN_006aac10(4);
           *local_14 = (uint)local_1c;
@@ -2567,7 +2562,7 @@ cf_common_exit_0066DCED:
       RaiseInternalException(-0x78,g_overwriteContext_007ED77C,".\\ai\\ai_erc.h",0x79);
     }
     local_8 = (AiFltClassTy *)0x0;
-    iVar11 = thunk_FUN_00668f50(this_00,local_c,0,(uint *)local_50);
+    iVar11 = sub_00668F50(this_00,local_c,0,(uint *)local_50);
     if (iVar11 == 1) {
       if (*(short *)(param_1 + param_2 * 5 + 1) == 0x816) {
         thunk_FUN_004e6f00((int)local_50[0]);
@@ -2662,7 +2657,7 @@ cf_common_exit_0066DCED:
       RaiseInternalException(-0x78,g_overwriteContext_007ED77C,".\\ai\\ai_erc.h",0x79);
     }
     local_18 = (char *)0x0;
-    iVar11 = thunk_FUN_00668f50(this_00,local_10,0,(uint *)local_50);
+    iVar11 = sub_00668F50(this_00,local_10,0,(uint *)local_50);
     pAVar14 = local_8;
     pcVar25 = local_c;
     if (iVar11 == 1) {
@@ -2743,7 +2738,7 @@ cf_common_exit_0066DCED:
       RaiseInternalException(-0x78,g_overwriteContext_007ED77C,".\\ai\\ai_erc.h",0x79);
     }
     local_10 = (char *)0x0;
-    iVar11 = thunk_FUN_00668f50(this_00,(char *)local_8,0,(uint *)local_50);
+    iVar11 = sub_00668F50(this_00,(char *)local_8,0,(uint *)local_50);
     if (iVar11 == 1) {
       iVar11 = thunk_FUN_004e5f90((int)local_50[0],(uint)local_c);
       local_14 = Library::DKW::LIB::FUN_006aac10(4);
@@ -2837,7 +2832,7 @@ cf_common_exit_0066DCED:
       *(undefined4 *)&this_00->field_0x84 = 0xffffffff;
       RaiseInternalException(-0x78,g_overwriteContext_007ED77C,".\\ai\\ai_erc.h",0x79);
     }
-    iVar11 = thunk_FUN_00668f50(this_00,(char *)local_8,0,(uint *)local_50);
+    iVar11 = sub_00668F50(this_00,(char *)local_8,0,(uint *)local_50);
     if (iVar11 != 1) {
       pcVar25 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
       if (pcVar25 != (char *)0x0) {
@@ -2882,7 +2877,7 @@ cf_common_exit_0066DCED:
       *(undefined4 *)&this_00->field_0x84 = 0xffffffff;
       RaiseInternalException(-0x78,g_overwriteContext_007ED77C,".\\ai\\ai_erc.h",0x79);
     }
-    iVar11 = thunk_FUN_00668f50(this_00,(char *)local_8,0,(uint *)local_50);
+    iVar11 = sub_00668F50(this_00,(char *)local_8,0,(uint *)local_50);
     if (iVar11 != 1) {
       pcVar25 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
       if (pcVar25 != (char *)0x0) {
@@ -2929,7 +2924,7 @@ cf_common_exit_0066DCED:
       *(undefined4 *)&this_00->field_0x84 = 0xffffffff;
       RaiseInternalException(-0x78,g_overwriteContext_007ED77C,".\\ai\\ai_erc.h",0x79);
     }
-    iVar11 = thunk_FUN_00668f50(this_00,(char *)local_8,0,(uint *)local_50);
+    iVar11 = sub_00668F50(this_00,(char *)local_8,0,(uint *)local_50);
     if (iVar11 != 1) {
       pcVar25 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
       if (pcVar25 != (char *)0x0) {
@@ -2977,7 +2972,7 @@ cf_common_exit_0066DCED:
       *(undefined4 *)&this_00->field_0x84 = 0xffffffff;
       RaiseInternalException(-0x78,g_overwriteContext_007ED77C,".\\ai\\ai_erc.h",0x79);
     }
-    iVar11 = thunk_FUN_00668f50(this_00,(char *)local_8,0,(uint *)local_50);
+    iVar11 = sub_00668F50(this_00,(char *)local_8,0,(uint *)local_50);
     if (iVar11 != 1) {
       pcVar25 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
       if (pcVar25 != (char *)0x0) {
@@ -3042,7 +3037,7 @@ cf_common_exit_0066DCED:
       *(undefined4 *)&this_00->field_0x84 = 0xffffffff;
       RaiseInternalException(-0x78,g_overwriteContext_007ED77C,".\\ai\\ai_erc.h",0x79);
     }
-    iVar11 = thunk_FUN_00668f50(this_00,(char *)local_8,0,(uint *)local_50);
+    iVar11 = sub_00668F50(this_00,(char *)local_8,0,(uint *)local_50);
     if (iVar11 != 1) {
       pcVar25 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
       if (pcVar25 != (char *)0x0) {
@@ -3111,7 +3106,7 @@ cf_common_exit_0066DCED:
       *(undefined4 *)&this_00->field_0x84 = 0xffffffff;
       RaiseInternalException(-0x78,g_overwriteContext_007ED77C,".\\ai\\ai_erc.h",0x79);
     }
-    iVar11 = thunk_FUN_00668f50(this_00,(char *)local_8,0,(uint *)local_50);
+    iVar11 = sub_00668F50(this_00,(char *)local_8,0,(uint *)local_50);
     if (iVar11 != 1) {
       pcVar25 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
       if (pcVar25 != (char *)0x0) {
@@ -3124,7 +3119,7 @@ cf_common_exit_0066DCED:
     puVar22 = (uint *)(*this_00->vtable->slot_00)(param_1 + 0xf,local_280);
     pcVar25 = param_1 + 10;
     pcVar23 = (char *)(*this_00->vtable->slot_00)();
-    iVar11 = thunk_FUN_00668f50(this_00,pcVar23,(uint)pcVar25,puVar22);
+    iVar11 = sub_00668F50(this_00,pcVar23,(uint)pcVar25,puVar22);
     if (0 < iVar11) {
       puVar18 = local_280;
       do {
@@ -3184,7 +3179,7 @@ LAB_0066fbc1:
       *(undefined4 *)&this_00->field_0x84 = 0xffffffff;
       RaiseInternalException(-0x78,g_overwriteContext_007ED77C,".\\ai\\ai_erc.h",0x79);
     }
-    iVar11 = thunk_FUN_00668f50(this_00,(char *)local_8,0,(uint *)local_50);
+    iVar11 = sub_00668F50(this_00,(char *)local_8,0,(uint *)local_50);
     if (iVar11 != 1) {
       pcVar25 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
       if (pcVar25 != (char *)0x0) {
@@ -3242,7 +3237,7 @@ LAB_0066fbc1:
       *(undefined4 *)&this_00->field_0x84 = 0xffffffff;
       RaiseInternalException(-0x78,g_overwriteContext_007ED77C,".\\ai\\ai_erc.h",0x79);
     }
-    iVar11 = thunk_FUN_00668f50(this_00,(char *)local_8,0,(uint *)local_50);
+    iVar11 = sub_00668F50(this_00,(char *)local_8,0,(uint *)local_50);
     if (iVar11 != 1) {
       pcVar25 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
       if (pcVar25 != (char *)0x0) {
@@ -3306,7 +3301,7 @@ cf_common_exit_00670425:
       *(undefined4 *)&this_00->field_0x84 = 0xffffffff;
       RaiseInternalException(-0x78,g_overwriteContext_007ED77C,".\\ai\\ai_erc.h",0x79);
     }
-    iVar11 = thunk_FUN_00668f50(this_00,(char *)local_8,0,(uint *)local_50);
+    iVar11 = sub_00668F50(this_00,(char *)local_8,0,(uint *)local_50);
     if (iVar11 != 1) {
       pcVar25 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
       if (pcVar25 != (char *)0x0) {

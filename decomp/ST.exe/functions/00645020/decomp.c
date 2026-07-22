@@ -9,7 +9,7 @@ int __thiscall STTorpC::IsDangerous(STTorpC *this,int param_1,uint *param_2)
 
 {
   code *pcVar1;
-  uint uVar2;
+  dword dVar2;
   int iVar3;
   int iVar4;
   uint index;
@@ -17,15 +17,15 @@ int __thiscall STTorpC::IsDangerous(STTorpC *this,int param_1,uint *param_2)
   int local_18;
   int local_14;
   STTorpC *local_10;
-  uint local_c;
+  dword local_c;
   int local_8;
 
-  local_c = this->field_0241[3];
+  local_c = this->field_0241->count;
   local_5c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_5c;
   local_10 = this;
   iVar3 = Library::MSVCRT::__setjmp3(local_5c.jumpBuffer,0);
-  uVar2 = local_c;
+  dVar2 = local_c;
   if (iVar3 == 0) {
     if (local_c == 0) {
       RaiseInternalException
@@ -35,11 +35,10 @@ int __thiscall STTorpC::IsDangerous(STTorpC *this,int param_1,uint *param_2)
     index = 0;
     local_8 = 0;
     *param_2 = 0xffffffff;
-    if (0 < (int)uVar2) {
-      while (DArrayGetElement((DArrayTy *)local_10->field_0241,index,&local_18), local_18 != param_1
-            ) {
+    if (0 < (int)dVar2) {
+      while (DArrayGetElement(local_10->field_0241,index,&local_18), local_18 != param_1) {
         index = index + 1;
-        if ((int)uVar2 <= (int)index) {
+        if ((int)dVar2 <= (int)index) {
           g_currentExceptionFrame = local_5c.previous;
           return local_8;
         }

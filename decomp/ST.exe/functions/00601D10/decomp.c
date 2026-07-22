@@ -25,8 +25,8 @@ void FUN_00601d10(undefined4 param_1,undefined4 param_2,int param_3,undefined2 p
     local_2c = local_20;
     local_40[3] = 2;
     local_40[4] = param_7;
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-    (*(code *)PTR_00802a38->vtable->field_0018)(local_40);
+    (*g_playSystem_00802A38->vtable->SendMessage)
+              ((SystemWithNamedObjClassTy *)g_playSystem_00802A38,(int)local_40);
   }
   return;
 }

@@ -36,8 +36,8 @@ void __thiscall AiPlrClassTy::ExecTech(AiPlrClassTy *this,void *param_1)
   uint local_c;
   STGameObjC *local_8;
 
-  if (((this->field_0695 != (DArrayTy *)0x0) && (g_sTAllPlayers_007FA174 != (STAllPlayersC *)0x0))
-     && ((this->field_066E == 0 || (this->field_0672 + this->field_066E <= this->field_06FE)))) {
+  if (((this->field_0695 != (DArrayTy *)0x0) && (g_allPlayers_007FA174 != (STAllPlayersC *)0x0)) &&
+     ((this->field_066E == 0 || (this->field_0672 + this->field_066E <= this->field_06FE)))) {
     this->field_0672 = this->field_06FE;
     local_90.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_90;
@@ -148,13 +148,13 @@ LAB_0067b724:
             }
             break;
           case 1:
-            if (g_sTAllPlayers_007FA174 == (STAllPlayersC *)0x0) {
+            if (g_allPlayers_007FA174 == (STAllPlayersC *)0x0) {
               local_8 = (STGameObjC *)0x0;
             }
             else {
               /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
               local_8 = STAllPlayersC::GetObjPtr
-                                  (g_sTAllPlayers_007FA174,*(char *)&this_00->field_05D7,
+                                  (g_allPlayers_007FA174,*(char *)&this_00->field_05D7,
                                    CONCAT22((short)((uint)pDVar5 >> 0x10),
                                             *(undefined2 *)((int)pvVar10 + 8)),CASE_1);
             }
@@ -188,7 +188,7 @@ LAB_0067b724:
           bVar13 = local_10 < pDVar5->count;
         } while ((int)local_10 < (int)pDVar5->count);
       }
-      if (((g_sTAllPlayers_007FA174 != (STAllPlayersC *)0x0) && (this_00->field_0662 == '\x01')) &&
+      if (((g_allPlayers_007FA174 != (STAllPlayersC *)0x0) && (this_00->field_0662 == '\x01')) &&
          (iVar4 = thunk_FUN_0067b1a0(this_00,(int)this_00->field_0660),
          iVar4 < (int)((-(uint)(this_00->field_05EC != 3) & 0xfffffffc) + 5))) {
         thunk_FUN_004e7230(this_00->field_05D7,(int)this_00->field_0660,local_c8,local_ac);

@@ -1,4 +1,4 @@
-FUN_006192e0:
+STJumpMineC::sub_006192E0:
 006192E0  55                        PUSH EBP
 006192E1  8B EC                     MOV EBP,ESP
 006192E3  83 EC 20                  SUB ESP,0x20

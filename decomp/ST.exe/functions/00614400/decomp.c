@@ -98,7 +98,7 @@ void __thiscall FUN_00614400(void *this,AnonShape_00614400_1B90EA7E *param_1)
          pSVar6 != (STWorldObject *)0x0 && (*(int *)&pSVar6->field_0x18 == iVar7)))))) &&
       (iVar7 = (*pSVar6->vtable[5].slots_00_28[0])(), iVar7 != 0)) &&
      ((pSVar6[1].vtable < (STWorldObjectVTable *)0x8 &&
-      ((PTR_00802a38 == (STPlaySystemC *)0x0 ||
+      ((g_playSystem_00802A38 == (STPlaySystemC *)0x0 ||
        ((byte)(&DAT_008087e9)[(int)pSVar6[1].vtable * 0x51] < 8)))))) {
     bVar1 = *(byte *)&pSVar6[1].vtable;
     bVar2 = *(byte *)((int)this + 0x1d9);
@@ -137,7 +137,7 @@ LAB_0061478b:
       goto LAB_006147e6;
     }
   }
-  iVar7 = FUN_006e62d0(PTR_00802a38,*(int *)((int)this + 0x2d1),&local_10);
+  iVar7 = FUN_006e62d0(g_playSystem_00802A38,*(int *)((int)this + 0x2d1),&local_10);
   if (iVar7 == -4) {
     *(undefined4 *)((int)this + 0x2d1) = 0;
   }

@@ -1,0 +1,6 @@
+00713ADC  pointer  00713938
+00713AE0  pointer  0071393e
+00713AE4  pointer  0071393e
+00713AE8  pointer  007138ec
+00713AEC  pointer  007138b8
+00713AF0  pointer  0071386c

@@ -113,7 +113,7 @@ switchD_005052d8_default:
     }
 LAB_0050530c:
     local_24 = pbVar6;
-    if (g_sTAllPlayers_007FA174 != (STAllPlayersC *)0x0) {
+    if (g_allPlayers_007FA174 != (STAllPlayersC *)0x0) {
       switch(local_28) {
       case 0:
         local_10 = 0xf;

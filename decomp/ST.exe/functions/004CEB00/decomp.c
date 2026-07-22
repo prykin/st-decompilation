@@ -1,5 +1,10 @@
 
-undefined4 __thiscall TLOBaseTy::FUN_004ceb00(TLOBaseTy *this,undefined4 param_1)
+/* [STMethodOwnerApplier] Structural method owner recovered as TLOBaseTy.
+   Evidence: this_call_owners=[TLOBaseTy]; agreed_this_calls=1; incoming_this_accesses=8;
+   incoming_edx_uses=2; incoming_stack_parameter_uses=3; direct_non_thunk_callers=0;
+   incoming_ecx_receiver_callers=0; attributed_named_callers=1; owner_evidence_coverage=adequate */
+
+undefined4 __thiscall TLOBaseTy::sub_004CEB00(TLOBaseTy *this,undefined4 param_1)
 
 {
   char cVar1;
@@ -11,7 +16,7 @@ undefined4 __thiscall TLOBaseTy::FUN_004ceb00(TLOBaseTy *this,undefined4 param_1
   uint uVar7;
   uint uVar8;
   short sVar9;
-  AnonPointee_TLOBaseTy_0000 *pAVar10;
+  TLOBaseTyVTable *pTVar10;
   char *pcVar11;
   int *piVar12;
   char *pcVar13;
@@ -42,10 +47,10 @@ undefined4 __thiscall TLOBaseTy::FUN_004ceb00(TLOBaseTy *this,undefined4 param_1
   int local_8;
 
   local_10 = 0;
-  if (PTR_00802a38->field_00E4 < this->field_03CC + this->field_03D0) {
+  if (g_playSystem_00802A38->field_00E4 < this->field_03CC + this->field_03D0) {
     return 0;
   }
-  this->field_03CC = PTR_00802a38->field_00E4;
+  this->field_03CC = g_playSystem_00802A38->field_00E4;
   switch(this->field_04D0) {
   case CASE_1:
     switch(this->field_05AC) {
@@ -109,31 +114,26 @@ switchD_004ceb68_caseD_32:
             RotateSpr(this,0);
             TVar2 = this->field_05AC;
             if (TVar2 == CASE_5C) {
-              /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-              (*(code *)this->vtable->field_0090)(3,0x39b);
+              (*this->vtable->vfunc_90)(3,0x39b);
               return local_10;
             }
             if (TVar2 == CASE_32) {
               iVar5 = GetPlayerRaceId(*(char *)&this->field_023D);
               if ((char)iVar5 != '\x02') {
-                /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-                (*(code *)this->vtable->field_0090)(3,0x1f9);
+                (*this->vtable->vfunc_90)(3,0x1f9);
                 return local_10;
               }
-              /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-              (*(code *)this->vtable->field_0090)(3,0x2c1);
+              (*this->vtable->vfunc_90)(3,0x2c1);
               return local_10;
             }
             if (TVar2 != CASE_40) {
               if (TVar2 != CASE_49) {
                 return local_10;
               }
-              /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-              (*(code *)this->vtable->field_0090)(3,800);
+              (*this->vtable->vfunc_90)(3,800);
               return local_10;
             }
-            /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-            (*(code *)this->vtable->field_0090)(3,0x254);
+            (*this->vtable->vfunc_90)(3,0x254);
             return local_10;
           }
           local_8 = local_8 + 1;
@@ -223,32 +223,28 @@ switchD_004ceb68_caseD_32:
       pcVar13 = pcVar13 + 1;
     }
     local_2b = this->field_0375;
-    STPlaySystemC::CreateGameObject(PTR_00802a38,0x14,0,&local_24,local_6c,0);
+    STPlaySystemC::CreateGameObject(g_playSystem_00802A38,0x14,0,&local_24,local_6c,0);
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     this->field_04D4 = *(int *)(local_24 + 0x18);
     this->field_04D8 = 0;
-    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-    if (this->field_0024 != (uint)*(byte *)(this->field_0010 + 0x112d))
-    goto cf_common_exit_004CF029;
+    if (this->field_0024 != (uint)(byte)this->field_0010->field_112D) goto cf_common_exit_004CF029;
     thunk_FUN_0052af50(0,(float)this->field_01F9,(float)this->field_01FD);
     uVar7 = GetPlayerRaceId(*(char *)&this->field_0024);
     uVar7 = uVar7 & 0xff;
     if (uVar7 == 1) {
-      pAVar10 = this->vtable;
+      pTVar10 = this->vtable;
       uVar14 = 0x65;
     }
     else {
       if (uVar7 == 2) {
-        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-        (*(code *)this->vtable->field_0090)(6,0x66);
+        (*this->vtable->vfunc_90)(6,0x66);
         goto cf_common_exit_004CF029;
       }
       if (uVar7 != 3) goto cf_common_exit_004CF029;
-      pAVar10 = this->vtable;
+      pTVar10 = this->vtable;
       uVar14 = 0x67;
     }
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-    (*(code *)pAVar10->field_0090)(6,uVar14);
+    (*pTVar10->vfunc_90)(6,uVar14);
 cf_common_exit_004CF029:
     this->field_04D0 = CASE_4;
     this->field_03D0 = 5;
@@ -266,27 +262,22 @@ cf_common_exit_004CF029:
       this->field_04D0 = CASE_5;
       this->field_03D0 = 1;
       if (TVar2 == CASE_5C) {
-        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-        (*(code *)this->vtable->field_0090)(3,0x39c);
+        (*this->vtable->vfunc_90)(3,0x39c);
       }
       else if (TVar2 == CASE_32) {
         iVar5 = GetPlayerRaceId(*(char *)&this->field_023D);
         if ((char)iVar5 == '\x02') {
-          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-          (*(code *)this->vtable->field_0090)(3,0x2c2);
+          (*this->vtable->vfunc_90)(3,0x2c2);
         }
         else {
-          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-          (*(code *)this->vtable->field_0090)(3,0x1fa);
+          (*this->vtable->vfunc_90)(3,0x1fa);
         }
       }
       else if (TVar2 == CASE_40) {
-        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-        (*(code *)this->vtable->field_0090)(3,0x255);
+        (*this->vtable->vfunc_90)(3,0x255);
       }
       else if (TVar2 == CASE_49) {
-        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-        (*(code *)this->vtable->field_0090)(3,0x321);
+        (*this->vtable->vfunc_90)(3,0x321);
       }
       break;
     case CASE_40:

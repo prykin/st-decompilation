@@ -1,4 +1,4 @@
-FUN_00660f70:
+AiFltClassTy::sub_00660F70:
 00660F70  55                        PUSH EBP
 00660F71  8B EC                     MOV EBP,ESP
 00660F73  83 EC 68                  SUB ESP,0x68
@@ -352,7 +352,7 @@ LAB_0066134c:
 00661376  74 3C                     JZ 0x006613b4
 LAB_00661378:
 00661378  8B 3D 74 A1 7F 00         MOV EDI,dword ptr [0x007fa174]
-FUN_00660f70::cf_continue_loop_0066137E:
+AiFltClassTy::sub_00660F70::cf_continue_loop_0066137E:
 0066137E  8B 55 FC                  MOV EDX,dword ptr [EBP + -0x4]
 00661381  8B 45 F8                  MOV EAX,dword ptr [EBP + -0x8]
 00661384  83 C2 04                  ADD EDX,0x4

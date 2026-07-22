@@ -1,5 +1,10 @@
 
-void __fastcall FUN_005ebcb0(void *param_1)
+/* [STMethodOwnerApplier] Structural method owner recovered as STArtiafactC.
+   Evidence: this_call_owners=[STArtiafactC]; agreed_this_calls=3; incoming_this_accesses=2;
+   incoming_edx_uses=0; incoming_stack_parameter_uses=0; direct_non_thunk_callers=0;
+   incoming_ecx_receiver_callers=0; attributed_named_callers=1; owner_evidence_coverage=adequate */
+
+void __thiscall STArtiafactC::sub_005EBCB0(STArtiafactC *this)
 
 {
   undefined4 local_24 [3];
@@ -8,10 +13,10 @@ void __fastcall FUN_005ebcb0(void *param_1)
   undefined4 local_10;
 
   local_18 = 0;
-  local_10 = *(undefined4 *)((int)param_1 + 8);
+  local_10 = this->field_0008;
   local_14 = 10;
-  sub_006E60A0(param_1,local_24);
-  *(undefined4 *)((int)param_1 + 0x23a) = 6;
+  sub_006E60A0(this,local_24);
+  this->field_023A = 6;
   return;
 }
 

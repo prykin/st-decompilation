@@ -1,4 +1,4 @@
-FUN_00592620:
+CampaignTy::sub_00592620:
 00592620  55                        PUSH EBP
 00592621  8B EC                     MOV EBP,ESP
 00592623  51                        PUSH ECX

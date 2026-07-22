@@ -1,4 +1,4 @@
-FUN_0062b4a0:
+STParticleC::sub_0062B4A0:
 0062B4A0  55                        PUSH EBP
 0062B4A1  8B EC                     MOV EBP,ESP
 0062B4A3  83 EC 10                  SUB ESP,0x10
@@ -148,7 +148,7 @@ LAB_0062b556:
 0062B612  75 02                     JNZ 0x0062b616
 LAB_0062b614:
 0062B614  33 DB                     XOR EBX,EBX
-FUN_0062b4a0::cf_common_exit_0062B616:
+STParticleC::sub_0062B4A0::cf_common_exit_0062B616:
 0062B616  5F                        POP EDI
 0062B617  8A C3                     MOV AL,BL
 0062B619  5E                        POP ESI

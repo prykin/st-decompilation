@@ -1,5 +1,5 @@
 
-void __thiscall FUN_00566e70(void *this,undefined4 param_1)
+void __thiscall FUN_00566e70(void *this,DWORD_PTR param_1)
 
 {
   MCIDEVICEID *dwParam2;

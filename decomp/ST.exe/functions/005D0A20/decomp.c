@@ -56,7 +56,7 @@ void __thiscall SettMapMTy::ChangePlayerState(SettMapMTy *this,uint param_1)
         }
         else if (pDVar2->count < 0x18) {
           pAVar7->field_0x1 = 0;
-          thunk_FUN_005d00b0(local_8,pAVar7,param_1 + 1);
+          sub_005D00B0(local_8,pAVar7,param_1 + 1);
         }
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
         (*(code *)pSVar4->field_0000->field_002C)();

@@ -34,7 +34,7 @@ undefined4 __thiscall STGroupBoatC::GrpMove(STGroupBoatC *this,int param_1)
       memset(&local_14->field_0089, 0, 0x54); /* compiler bulk-zero initialization */
       uVar7 = 0;
       local_14->field_0065 = 0;
-      local_8 = PTR_00802a38->field_00E4;
+      local_8 = g_playSystem_00802A38->field_00E4;
       if (local_10 != 0) {
         index = 0;
         do {
@@ -42,7 +42,7 @@ undefined4 __thiscall STGroupBoatC::GrpMove(STGroupBoatC *this,int param_1)
           if ((short)local_c != -1) {
             this_00 = (STBoatC *)
                       STAllPlayersC::GetObjPtr
-                                (g_sTAllPlayers_007FA174,pSVar2->field_0024,local_c,CASE_1);
+                                (g_allPlayers_007FA174,pSVar2->field_0024,local_c,CASE_1);
             if (this_00 == (STBoatC *)0x0) {
               RaiseInternalException
                         (-0x5001fffc,g_overwriteContext_007ED77C,

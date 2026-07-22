@@ -20,7 +20,7 @@ int FUN_00755e10(AnonShape_00755E10_BD685653 *param_1,int param_2,undefined4 par
   iVar1 = FUN_00753b80((AnonShape_00750F20_F8C16F98 *)param_1,
                        *(undefined4 *)(iVar3 + 0x40 + iVar1 * 8),iVar1);
   *(uint *)(param_1->field_0008 + 8) = *(uint *)(param_1->field_0008 + 8) | 0x10;
-  iVar2 = FUN_00757450((AnonShape_00753C80_4C8E695D *)param_1,iVar5);
+  iVar2 = FUN_00757450(param_1,iVar5);
   iVar3 = param_1->field_000C;
   if (iVar2 < *(short *)(iVar1 + 8)) {
     if (*(short *)(iVar3 + 0x34) == 0) {
@@ -51,7 +51,7 @@ int FUN_00755e10(AnonShape_00755E10_BD685653 *param_1,int param_2,undefined4 par
         return 0;
       }
       *(undefined4 *)param_1->field_001C = *(undefined4 *)(iVar1 + 4);
-      FUN_007574c0((AnonShape_007574C0_ED6B02E3 *)param_1,iVar5,(uint *)param_1->field_001C,
+      FUN_007574c0((AnonShape_00753C80_4C8E695D *)param_1,iVar5,(uint *)param_1->field_001C,
                    (int)*(short *)(iVar5 + 8));
       if ((int)*(short *)(iVar1 + 8) + (int)*(short *)(iVar5 + 8) < iVar6) {
         Library::MSVCRT::FUN_0072da70
@@ -120,7 +120,7 @@ int FUN_00755e10(AnonShape_00755E10_BD685653 *param_1,int param_2,undefined4 par
       }
       *(undefined4 *)(param_1->field_000C + 0x44 + *(int *)(param_1->field_000C + 0x1c) * 8) = 0;
       *(undefined4 *)param_1->field_001C = *(undefined4 *)(iVar2 + 4);
-      FUN_007574c0((AnonShape_007574C0_ED6B02E3 *)param_1,iVar2,(uint *)param_1->field_001C,0);
+      FUN_007574c0((AnonShape_00753C80_4C8E695D *)param_1,iVar2,(uint *)param_1->field_001C,0);
       if ((int)*(short *)(iVar2 + 8) + (int)*(short *)(iVar3 + 8) < iVar6) {
         Library::MSVCRT::FUN_0072da70
                   ((undefined4 *)(*(short *)(iVar3 + 8) + 0x10 + iVar3),(undefined4 *)(iVar2 + 0x10)

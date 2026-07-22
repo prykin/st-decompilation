@@ -79,8 +79,8 @@ int __thiscall STCrabC::GetMessage(STCrabC *this,STMessage *message)
         g_currentExceptionFrame = local_80.previous;
         return 0;
       }
-      thunk_FUN_004ad070(puVar1,0xe);
-      thunk_FUN_004ad070(puVar1,0xd);
+      STT3DSprC::sub_004AD070((STT3DSprC *)puVar1,0xe);
+      STT3DSprC::sub_004AD070((STT3DSprC *)puVar1,0xd);
       g_currentExceptionFrame = local_80.previous;
       return 0;
     }
@@ -159,7 +159,7 @@ int __thiscall STCrabC::GetMessage(STCrabC *this,STMessage *message)
       pbVar15 = pbVar15 + 1;
     }
     STPlaySystemC::SaveObjData
-              (PTR_00802a38,this_00->field_0018,(byte *)local_c,
+              (g_playSystem_00802A38,this_00->field_0018,(byte *)local_c,
                (AnonShape_0060EA30_DCEB68AD *)(local_10 + 0x68 + local_8));
     FreeAndNull(&local_14);
     FreeAndNull(&local_18);
@@ -189,7 +189,7 @@ int __thiscall STCrabC::GetMessage(STCrabC *this,STMessage *message)
   local_20 = (STSprGameObjC_field_0259State *)(message->arg0).u32;
   if (local_20[3] < 2) {
     *(undefined4 *)&this_00->field_0x239 = 3;
-    uVar10 = PTR_00802a38->field_00E4;
+    uVar10 = g_playSystem_00802A38->field_00E4;
     *(undefined4 *)&this_00->field_0x23d = 0;
     this_00->field_0231 = 0;
     *(uint *)&this_00->field_0x235 = uVar10 - 3;
@@ -314,11 +314,11 @@ cf_error_exit_00578B5D:
         }
       }
       puVar1 = &this_00->field_01D5;
-      thunk_FUN_004acf50(puVar1,'\r');
+      STT3DSprC::sub_004ACF50((STT3DSprC *)puVar1,'\r');
       thunk_FUN_004ac610(puVar1,'\x0e');
       thunk_FUN_004ac610(puVar1,'\r');
-      STT3DSprC::StartShow((STT3DSprC *)puVar1,0xe,PTR_00802a38->field_00E4);
-      STT3DSprC::StartShow((STT3DSprC *)puVar1,0xd,PTR_00802a38->field_00E4);
+      STT3DSprC::StartShow((STT3DSprC *)puVar1,0xe,g_playSystem_00802A38->field_00E4);
+      STT3DSprC::StartShow((STT3DSprC *)puVar1,0xd,g_playSystem_00802A38->field_00E4);
       sVar6 = *(short *)&this_00->field_0x275 * 200;
       *(short *)&this_00->field_0x41 = *(short *)&this_00->field_0x26d * 0xc9 + 100;
       *(short *)&this_00->field_0x43 = *(short *)&this_00->field_0x271 * 0xc9 + 100;

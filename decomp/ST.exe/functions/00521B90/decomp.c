@@ -30,9 +30,9 @@ void __thiscall IntercomPanelTy::DoneIntercomPanel(IntercomPanelTy *this)
   if (errorCode == 0) {
     /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
     this_00 = extraout_ECX;
-    if ((AnonShape_006B5570_4D68B99C *)local_8->field_0198 != (AnonShape_006B5570_4D68B99C *)0x0) {
-      FUN_006b5570((AnonShape_006B5570_4D68B99C *)local_8->field_0198);
-      pIVar2->field_0198 = (uint *)0x0;
+    if (local_8->field_0198 != (DArrayTy *)0x0) {
+      FUN_006b5570(local_8->field_0198);
+      pIVar2->field_0198 = (DArrayTy *)0x0;
       /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
       this_00 = extraout_ECX_00;
     }

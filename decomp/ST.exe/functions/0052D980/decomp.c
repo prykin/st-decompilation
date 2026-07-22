@@ -48,7 +48,7 @@ void __thiscall PopUpTy::ChangeState(PopUpTy *this)
     if ((DAT_00807342 == 0) || ((byte)pPVar3->field_009C <= local_5)) {
 LAB_0052da81:
       puVar7[0xf] = 0;
-      FUN_006b2800((int)PTR_008075a8,*puVar7,0,0x13);
+      FUN_006b2800(PTR_008075a8,*puVar7,0,0x13);
       FUN_006b3af0((int *)PTR_008075a8,*puVar7);
     }
     else {
@@ -71,7 +71,7 @@ LAB_0052da81:
         uVar5 = *(uint *)(pPVar3->field_0090 + 2);
       }
       puVar7[0xf] = uVar5;
-      FUN_006b2800((int)PTR_008075a8,*puVar7,uVar5,0x13);
+      FUN_006b2800(PTR_008075a8,*puVar7,uVar5,0x13);
       Library::DKW::DDX::FUN_006b3640((int *)PTR_008075a8,*puVar7,0xffffffff,0xd,local_c);
       Library::DKW::DDX::FUN_006b3430((int *)PTR_008075a8,*puVar7);
     }

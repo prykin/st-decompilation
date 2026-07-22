@@ -161,7 +161,7 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0060EF40::FUN_0060ef40
             if (((pSVar8 == (STWorldObject *)0x0) ||
                 (iVar1 = (*pSVar8->vtable[5].slots_00_28[2])(), iVar1 == 0)) ||
                (((STWorldObjectVTable *)0x7 < pSVar8[1].vtable ||
-                ((PTR_00802a38 != (STPlaySystemC *)0x0 &&
+                ((g_playSystem_00802A38 != (STPlaySystemC *)0x0 &&
                  (7 < (byte)(&DAT_008087e9)[(int)pSVar8[1].vtable * 0x51])))))) {
               iVar1 = thunk_FUN_004961b0(sVar9,(short)local_50,(short)local_4c);
               if (iVar1 == 0) goto LAB_0060f230;

@@ -46,7 +46,7 @@ FUN_0065e450(AnonShape_0065E360_B94C37CB *param_1,undefined4 param_2,
   case CASE_BE:
     iVar3 = 0x72;
   }
-  array = (DArrayTy *)thunk_FUN_0065e360(param_1,param_2,iVar3);
+  array = (DArrayTy *)AiFltClassTy::sub_0065E360(param_1,param_2,iVar3);
   if (array == (DArrayTy *)0x0) {
     return 0;
   }
@@ -65,7 +65,7 @@ FUN_0065e450(AnonShape_0065E360_B94C37CB *param_1,undefined4 param_2,
       }
       /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
       this = STAllPlayersC::GetObjPtr
-                       (g_sTAllPlayers_007FA174,param_1->field_0024,
+                       (g_allPlayers_007FA174,param_1->field_0024,
                         CONCAT22((short)((uint)uVar8 >> 0x10),*puVar5),CASE_1);
       /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
       uVar8 = extraout_EDX_00;

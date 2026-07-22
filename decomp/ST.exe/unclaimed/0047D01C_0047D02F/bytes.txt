@@ -1,0 +1,2 @@
+0047D01C  CD CF 47 00 CD CF 47 00 CD CF 47 00 DE CF 47 00  |..G...G...G...G.|
+0047D02C  CD CF 47 00                                      |..G.|

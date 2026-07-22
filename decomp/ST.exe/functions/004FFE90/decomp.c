@@ -68,7 +68,7 @@ void __thiscall CPanelTy::Update5Panel(CPanelTy *this)
   }
   *(undefined2 *)pcVar9 = *(undefined2 *)puVar7;
   memset((void *)puVar1, 0, 0x32); /* compiler bulk-zero initialization */
-  STAllPlayersC::GetPanelInfo(g_sTAllPlayers_007FA174,5,(AnonShape_0043BEB0_1C00EC12 *)puVar1);
+  STAllPlayersC::GetPanelInfo(g_allPlayers_007FA174,5,(AnonShape_0043BEB0_1C00EC12 *)puVar1);
   if (local_44 != this_00->field_0C51) {
     if (g_prodPanel_008016E8 != (ProdPanelTy *)0x0) {
       ProdPanelTy::SetPanel(g_prodPanel_008016E8,'\0');
@@ -78,7 +78,7 @@ void __thiscall CPanelTy::Update5Panel(CPanelTy *this)
     }
     if (g_infocPanel_00801698 != (InfocPanelTy *)0x0) {
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-      (**(code **)(*(int *)g_infocPanel_00801698 + 0x1c))(0);
+      (*(code *)g_infocPanel_00801698->field_0000->field_001C)(0);
     }
     if (g_tradePanel_00802A44 != (TradePanelTy *)0x0) {
       thunk_FUN_00552160(g_tradePanel_00802A44,'\0','\0');
@@ -100,7 +100,7 @@ void __thiscall CPanelTy::Update5Panel(CPanelTy *this)
     }
     if (g_infocPanel_00801698 != (InfocPanelTy *)0x0) {
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-      (**(code **)(*(int *)g_infocPanel_00801698 + 0x1c))(0);
+      (*(code *)g_infocPanel_00801698->field_0000->field_001C)(0);
     }
     if (g_tradePanel_00802A44 != (TradePanelTy *)0x0) {
       thunk_FUN_00552160(g_tradePanel_00802A44,'\0','\0');
@@ -121,7 +121,7 @@ void __thiscall CPanelTy::Update5Panel(CPanelTy *this)
       }
       if (g_infocPanel_00801698 != (InfocPanelTy *)0x0) {
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-        (**(code **)(*(int *)g_infocPanel_00801698 + 0x1c))(0);
+        (*(code *)g_infocPanel_00801698->field_0000->field_001C)(0);
       }
       if (g_tradePanel_00802A44 != (TradePanelTy *)0x0) {
         thunk_FUN_00552160(g_tradePanel_00802A44,'\0','\0');

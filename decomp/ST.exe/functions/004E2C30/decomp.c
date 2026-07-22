@@ -13,7 +13,7 @@ undefined4 __thiscall TLOBaseTy::FUN_004e2c30(TLOBaseTy *this,uint param_1)
   undefined3 extraout_var_00;
   uint uVar4;
   int iVar5;
-  AnonPointee_TLOBaseTy_0000 *pAVar6;
+  TLOBaseTyVTable *pTVar6;
   undefined4 *puVar7;
   undefined4 *puVar8;
   byte *pbVar9;
@@ -99,8 +99,7 @@ undefined4 __thiscall TLOBaseTy::FUN_004e2c30(TLOBaseTy *this,uint param_1)
       local_10 = uVar4 + 1;
     } while ((int)local_10 < 0x9b);
   }
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  if (this->field_0024 != (uint)*(byte *)(this->field_0010 + 0x112d)) goto cf_common_exit_004E2FE4;
+  if (this->field_0024 != (uint)(byte)this->field_0010->field_112D) goto cf_common_exit_004E2FE4;
   thunk_FUN_0052af50(0,(float)this->field_01F9,(float)this->field_01FD);
   piVar11 = &local_c;
   piVar10 = &local_8;
@@ -112,18 +111,16 @@ undefined4 __thiscall TLOBaseTy::FUN_004e2c30(TLOBaseTy *this,uint param_1)
     uVar4 = GetPlayerRaceId(*(char *)&this->field_0024);
     uVar4 = uVar4 & 0xff;
     if (uVar4 == 1) {
-      pAVar6 = this->vtable;
+      pTVar6 = this->vtable;
       uVar3 = 0x5f;
-/* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
 LAB_004e2efc:
-      (*(code *)pAVar6->field_0090)(6,uVar3);
+      (*pTVar6->vfunc_90)(6,uVar3);
     }
     else if (uVar4 == 2) {
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-      (*(code *)this->vtable->field_0090)(6,0x60);
+      (*this->vtable->vfunc_90)(6,0x60);
     }
     else if (uVar4 == 3) {
-      pAVar6 = this->vtable;
+      pTVar6 = this->vtable;
       uVar3 = 0x61;
       goto LAB_004e2efc;
     }
@@ -132,18 +129,16 @@ LAB_004e2efc:
     uVar4 = GetPlayerRaceId(*(char *)&this->field_0024);
     uVar4 = uVar4 & 0xff;
     if (uVar4 == 1) {
-      pAVar6 = this->vtable;
+      pTVar6 = this->vtable;
       uVar3 = 0x5c;
-/* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
 LAB_004e2f42:
-      (*(code *)pAVar6->field_0090)(6,uVar3);
+      (*pTVar6->vfunc_90)(6,uVar3);
     }
     else if (uVar4 == 2) {
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-      (*(code *)this->vtable->field_0090)(6,0x5d);
+      (*this->vtable->vfunc_90)(6,0x5d);
     }
     else if (uVar4 == 3) {
-      pAVar6 = this->vtable;
+      pTVar6 = this->vtable;
       uVar3 = 0x5e;
       goto LAB_004e2f42;
     }
@@ -152,18 +147,16 @@ LAB_004e2f42:
     uVar4 = GetPlayerRaceId(*(char *)&this->field_0024);
     uVar4 = uVar4 & 0xff;
     if (uVar4 == 1) {
-      pAVar6 = this->vtable;
+      pTVar6 = this->vtable;
       uVar3 = 0x59;
-/* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
 LAB_004e2f8d:
-      (*(code *)pAVar6->field_0090)(6,uVar3);
+      (*pTVar6->vfunc_90)(6,uVar3);
     }
     else if (uVar4 == 2) {
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-      (*(code *)this->vtable->field_0090)(6,0x5a);
+      (*this->vtable->vfunc_90)(6,0x5a);
     }
     else if (uVar4 == 3) {
-      pAVar6 = this->vtable;
+      pTVar6 = this->vtable;
       uVar3 = 0x5b;
       goto LAB_004e2f8d;
     }
@@ -171,21 +164,19 @@ LAB_004e2f8d:
   uVar4 = GetPlayerRaceId(*(char *)&this->field_023D);
   uVar4 = uVar4 & 0xff;
   if (uVar4 == 1) {
-    pAVar6 = this->vtable;
+    pTVar6 = this->vtable;
     uVar3 = 0x20d;
   }
   else {
     if (uVar4 == 2) {
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-      (*(code *)this->vtable->field_0090)(4,0x2d5);
+      (*this->vtable->vfunc_90)(4,0x2d5);
       goto cf_common_exit_004E2FE4;
     }
     if (uVar4 != 3) goto cf_common_exit_004E2FE4;
-    pAVar6 = this->vtable;
+    pTVar6 = this->vtable;
     uVar3 = 0x390;
   }
-  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-  (*(code *)pAVar6->field_0090)(4,uVar3);
+  (*pTVar6->vfunc_90)(4,uVar3);
 cf_common_exit_004E2FE4:
   this->field_04D0 = CASE_0;
   RotateSpr(this,1);

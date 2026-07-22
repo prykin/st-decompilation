@@ -55,7 +55,7 @@ int __thiscall MTaskTy::GetMessage(MTaskTy *this,STMessage *message)
   AnonShape_005E4570_F1672769 *local_8;
 
   local_18 = this;
-  DVar8 = FUN_006e51b0(this->field_0010);
+  DVar8 = STAppC::sub_006E51B0(this->field_0010);
   this->field_0065 = DVar8;
   local_68.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_68;
@@ -84,7 +84,7 @@ int __thiscall MTaskTy::GetMessage(MTaskTy *this,STMessage *message)
       if (SVar2 == MESS_SHARED_6200) {
         thunk_FUN_005b6730(local_18,4,'\x01',-1);
         if (DAT_0080fb6e == 0) {
-          thunk_FUN_005b66e0((AnonShape_005B66E0_174166E5 *)this_00);
+          thunk_FUN_005b66e0(this_00);
           this_00->field_0045 = 0x200;
           this_00->field_0049 = 0;
           this_00->field_004D = 0x6102;
@@ -114,7 +114,7 @@ int __thiscall MTaskTy::GetMessage(MTaskTy *this,STMessage *message)
       case MESS_TRACKBARCLASSTY_0062:
         if (DAT_0080fb6e == 0) {
           if (local_18->field_006D == '\x01') {
-            thunk_FUN_005b66e0((AnonShape_005B66E0_174166E5 *)local_18);
+            thunk_FUN_005b66e0(local_18);
             uVar18 = 0xffffffff;
             pcVar21 = &DAT_0080ed16;
             do {
@@ -167,7 +167,7 @@ int __thiscall MTaskTy::GetMessage(MTaskTy *this,STMessage *message)
           FUN_006e6020(local_18,(undefined4 *)&local_18->field_0x3d);
           break;
         }
-        thunk_FUN_005b66e0((AnonShape_005B66E0_174166E5 *)local_18);
+        thunk_FUN_005b66e0(local_18);
         this_00->field_0045 = 0x200;
         this_00->field_0049 = 0;
         this_00->field_004D = (-(uint)(this_00->field_006F != '\x02') & 0x1f) + 0x6103;
@@ -189,7 +189,7 @@ int __thiscall MTaskTy::GetMessage(MTaskTy *this,STMessage *message)
           FUN_006e6020(this_00,(undefined4 *)&this_00->field_0x3d);
           break;
         }
-        thunk_FUN_005b66e0((AnonShape_005B66E0_174166E5 *)this_00);
+        thunk_FUN_005b66e0(this_00);
         this_00->field_0045 = 0x200;
         this_00->field_0049 = 0;
         this_00->field_004D = (-(uint)(this_00->field_006F != '\x02') & 0x1f) + 0x6103;
@@ -207,7 +207,7 @@ LAB_005e470e:
           this_00->field_0049 = 1;
           if (this_00->field_006E == '\x01') {
             this_00->field_004D = 0x6108;
-            thunk_FUN_005b66e0((AnonShape_005B66E0_174166E5 *)this_00);
+            thunk_FUN_005b66e0(this_00);
           }
           else {
             uVar18 = 0xffffffff;
@@ -234,7 +234,7 @@ LAB_005e470e:
               pcVar23 = pcVar23 + 1;
             }
             this_00->field_004D = 0x60ff;
-            thunk_FUN_005b66e0((AnonShape_005B66E0_174166E5 *)this_00);
+            thunk_FUN_005b66e0(this_00);
           }
         }
         else {
@@ -442,7 +442,7 @@ LAB_005e496b:
         uVar18 = (uint)local_14 & 0xff;
         iVar25 = -1;
         iVar9 = 0;
-        puVar13 = (uint *)LoadResourceString((UINT)puVar11,HINSTANCE_00807618);
+        puVar13 = (uint *)LoadResourceString((UINT)puVar11,g_module_00807618);
         ccFntTy::WrStr(this_00->field_008D,puVar13,iVar9,iVar25,uVar18);
         FUN_006b35d0((int *)PTR_008075a8,(&this_00->field_02B9)[*local_c]);
       }
@@ -499,8 +499,8 @@ LAB_005e496b:
           uVar18 = uVar15;
           if ((int)uVar15 < (int)(uVar15 + local_8->field_01E0)) {
             do {
-              if ((int)uVar18 < (int)PTR_0081176c->field_0548[2]) {
-                local_14 = *(uint **)(PTR_0081176c->field_0548[5] + uVar18 * 4);
+              if ((int)uVar18 < (int)g_startSystem_0081176C->field_0548[2]) {
+                local_14 = *(uint **)(g_startSystem_0081176C->field_0548[5] + uVar18 * 4);
               }
               else {
                 local_14 = (uint *)0x0;

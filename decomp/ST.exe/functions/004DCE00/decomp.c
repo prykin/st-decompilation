@@ -58,21 +58,22 @@ undefined4 __fastcall FUN_004dce00(int *param_1)
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     FUN_006ea340(*(void **)((int)param_1 + 0x211),uVar4,iVar3,uVar5);
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-    STT3DSprC::StartShow(*(STT3DSprC **)((int)param_1 + 0x5ff),0xe,PTR_00802a38->field_00E4);
+    STT3DSprC::StartShow
+              (*(STT3DSprC **)((int)param_1 + 0x5ff),0xe,g_playSystem_00802A38->field_00E4);
     param_1[0x135] = 0;
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     fVar1 = (float)(int)*(short *)((int)param_1 + 0x45) * _DAT_007904f8;
-    uVar4 = PTR_00802a38->field_00E4;
+    uVar4 = g_playSystem_00802A38->field_00E4;
     param_1[0x137] = 1;
     fVar1 = fVar1 * _DAT_007904f0;
     param_1[0x136] = uVar4;
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     local_8 = (int)*(short *)((int)param_1 + 0x41);
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-    thunk_FUN_004ad3c0(*(void **)((int)param_1 + 0x5ff),
-                       (float)local_8 * _DAT_007904f8 * _DAT_007904f0,
-                       (float)(int)*(short *)((int)param_1 + 0x43) * _DAT_007904f8 * _DAT_007904f0,
-                       fVar1 + _DAT_007904fc);
+    STT3DSprC::sub_004AD3C0
+              (*(STT3DSprC **)((int)param_1 + 0x5ff),(float)local_8 * _DAT_007904f8 * _DAT_007904f0,
+               (float)(int)*(short *)((int)param_1 + 0x43) * _DAT_007904f8 * _DAT_007904f0,
+               fVar1 + _DAT_007904fc);
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     thunk_FUN_004ad460(*(void **)((int)param_1 + 0x5ff),1);
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */

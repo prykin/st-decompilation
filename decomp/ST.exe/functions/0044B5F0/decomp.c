@@ -69,10 +69,9 @@ STAllPlayersC::SelectObjects
         pSVar7 = GetObjPtr(this,objPtr,
                            CONCAT22((short)((uint)local_8 >> 0x10),
                                     *(undefined2 *)((int)local_8->data + param_3 * 2)),CASE_1);
-        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
         if ((((pSVar7 == (STGameObjC *)0x0) || (pSVar7->field_0020 != 0x14)) ||
-            (iVar8 = (**(code **)&pSVar7->vtable[1].field_0x28)(), iVar8 == 0)) ||
-           (iVar8 = (**(code **)&pSVar7->vtable[1].field_0x1c)(), iVar8 == 0)) {
+            (iVar8 = (*pSVar7->vtable[1].vfunc_24)(), iVar8 == 0)) ||
+           (iVar8 = (*pSVar7->vtable[1].vfunc_18)(), iVar8 == 0)) {
           FUN_006b0c70(local_8,param_3);
           param_2 = param_2 - 1;
           param_3 = param_3 - 1;
@@ -182,10 +181,9 @@ STAllPlayersC::SelectObjects
           pSVar7 = GetObjPtr(this,objPtr,
                              CONCAT22((short)((uint)local_8 >> 0x10),
                                       *(undefined2 *)((int)local_8->data + param_3 * 2)),CASE_1);
-          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
           if ((((pSVar7 == (STGameObjC *)0x0) || (pSVar7->field_0020 != 0x14)) ||
-              (iVar8 = (**(code **)&pSVar7->vtable[1].field_0x28)(), iVar8 == 0)) ||
-             (iVar8 = (**(code **)&pSVar7->vtable[1].field_0x1c)(), iVar8 == 0)) {
+              (iVar8 = (*pSVar7->vtable[1].vfunc_24)(), iVar8 == 0)) ||
+             (iVar8 = (*pSVar7->vtable[1].vfunc_18)(), iVar8 == 0)) {
             FUN_006b0c70(local_8,param_3);
             param_2 = param_2 - 1;
             param_3 = param_3 - 1;
@@ -212,8 +210,7 @@ STAllPlayersC::SelectObjects
         do {
           DArrayGetElement(local_8,index,&local_14);
           pSVar7 = GetObjPtr(this,objPtr,local_14,CASE_1);
-          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-          iVar8 = (**(code **)&pSVar7->vtable[1].field_0x1c)();
+          iVar8 = (*pSVar7->vtable[1].vfunc_18)();
           if (iVar8 == 0) {
             FUN_006b0c70(local_8,index);
             param_2 = param_2 - 1;

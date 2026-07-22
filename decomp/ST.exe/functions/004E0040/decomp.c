@@ -42,7 +42,7 @@ LAB_004e0119:
     param_1->field_0518 = 0;
     param_1->field_0520 = param_1->field_04E0;
     param_1->field_051C = 0;
-    param_1->field_0524 = PTR_00802a38->field_00E4;
+    param_1->field_0524 = g_playSystem_00802A38->field_00E4;
     if (param_1->field_04E0 != 0) {
       param_1->field_0528 = 6;
     }

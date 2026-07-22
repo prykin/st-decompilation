@@ -21,7 +21,7 @@ void __thiscall ProdPanelTy::PreInitProdPanel(ProdPanelTy *this)
   iVar3 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
   pPVar2 = local_8;
   if (iVar3 == 0) {
-    FUN_006b1a50((int)PTR_008075a8,3,(undefined4 *)0x0,(undefined4 *)&local_8->field_0x4c);
+    FUN_006b1a50(PTR_008075a8,3,(undefined4 *)0x0,(undefined4 *)&local_8->field_0x4c);
     iVar3 = pPVar2->field_0050 + pPVar2->field_0058;
     pPVar2->field_0044 = iVar3;
     pPVar2->field_0174 = (pPVar2->field_0048 - iVar3) + DAT_00806734;

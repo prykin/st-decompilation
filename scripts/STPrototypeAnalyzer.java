@@ -55,6 +55,7 @@ public class STPrototypeAnalyzer extends GhidraScript {
     private static final String TAG = "RECOVERED_PROTOTYPE";
 
     private final Map<TargetKey, Evidence> evidence = new TreeMap<>();
+    private final List<CallSiteAudit> callSiteAudits = new ArrayList<>();
     private DataTypeManager dataTypes;
     private int reverseReturnEvidence;
 
@@ -77,6 +78,7 @@ public class STPrototypeAnalyzer extends GhidraScript {
         List<Proposal> proposals = makeProposals();
         writeTsv(directory.resolve("prototype_proposals.tsv"), proposals);
         writeJson(directory.resolve("prototype_proposals.jsonl"), proposals);
+        writeCallSiteAudit(directory.resolve("prototype_callsite_audit.tsv"));
         writeSummary(directory.resolve("prototype_summary.txt"), proposals,
             functionsSeen, callSites);
         println("Prototype analysis complete: " + directory.toAbsolutePath().normalize());
@@ -90,9 +92,11 @@ public class STPrototypeAnalyzer extends GhidraScript {
     private int analyze(Function caller) {
         Map<String, Value> registers = new HashMap<>();
         Map<Long, Value> stackParameters = seedParameters(caller);
+        Map<String, Value> stackSpills = new HashMap<>();
         seedThis(caller, registers);
         List<Value> pushes = new ArrayList<>();
         Set<Address> blockStarts = basicBlockStarts(caller);
+        boolean stackStateComplete = true;
         boolean wrapper = caller.getBody().getNumAddresses() <= 64 && directCalls(caller).size() == 1;
         int calls = 0;
         InstructionIterator instructions = currentProgram.getListing()
@@ -105,20 +109,40 @@ public class STPrototypeAnalyzer extends GhidraScript {
                 // A missing proposal is preferable to carrying an EAX/ECX value through an
                 // unrelated branch and manufacturing a false prototype.
                 registers.clear();
+                stackSpills.entrySet().removeIf(entry -> !entry.getValue().trusted);
                 pushes.clear();
+                stackStateComplete = false;
             }
             String mnemonic = instruction.getMnemonicString().toUpperCase(Locale.ROOT);
             String[] operands = splitOperands(instruction.toString().toUpperCase(Locale.ROOT));
             if ("PUSH".equals(mnemonic)) {
                 pushes.add(sourceValue(instruction, 0, operands.length == 0 ? "" : operands[0],
-                    registers, stackParameters, false));
+                    registers, stackParameters, stackSpills, false));
                 continue;
             }
+            if ("POP".equals(mnemonic)) {
+                if (!pushes.isEmpty()) pushes.remove(pushes.size() - 1);
+                updateRegisters(instruction, mnemonic, operands, registers, stackParameters,
+                    stackSpills);
+                continue;
+            }
+            if ("ADD".equals(mnemonic) && operands.length >= 2 &&
+                    "ESP".equals(cleanRegister(operands[0]))) {
+                Long bytes = immediate(operands[1]);
+                if (bytes != null && bytes > 0 &&
+                        bytes % currentProgram.getDefaultPointerSize() == 0) {
+                    long values = bytes / currentProgram.getDefaultPointerSize();
+                    while (values-- > 0 && !pushes.isEmpty()) pushes.remove(pushes.size() - 1);
+                }
+            }
             if ("CALL".equals(mnemonic)) {
-                Function called = calledFunction(instruction);
+                Function direct = directCalledFunction(instruction);
+                Function called = resolveThunk(direct);
                 if (called != null) {
                     calls++;
-                    propagateCall(caller, called, registers.get("ECX"), pushes,
+                    auditCallSite(caller, instruction, direct, called, pushes, registers,
+                        stackStateComplete);
+                    propagateCall(caller, called, registers.get("ECX"), pushes, registers,
                         instruction.getAddress(), wrapper);
                     String returnedType = scriptAppliedTarget(called, "return", -1) ? "" :
                         meaningfulType(called.getReturnType());
@@ -127,7 +151,14 @@ public class STPrototypeAnalyzer extends GhidraScript {
                         trustedReturn(called), "return of " + called.getName(true), called));
                 }
                 else registers.remove("EAX");
-                registers.remove("ECX"); registers.remove("EDX"); pushes.clear();
+                registers.remove("ECX"); registers.remove("EDX");
+                if (called == null) {
+                    // An unresolved indirect call can use either caller or callee cleanup.
+                    // Retaining anything across it would manufacture later arguments.
+                    pushes.clear();
+                    stackStateComplete = false;
+                }
+                else consumeCalleePurge(called, pushes);
                 continue;
             }
             if ("RET".equals(mnemonic)) {
@@ -151,44 +182,35 @@ public class STPrototypeAnalyzer extends GhidraScript {
             if (instruction.getFlowType().isJump()) pushes.clear();
             if ("MOV".equals(mnemonic) && operands.length >= 2)
                 observeProducedStore(instruction, operands, registers);
-            updateRegisters(instruction, mnemonic, operands, registers, stackParameters);
+            updateRegisters(instruction, mnemonic, operands, registers, stackParameters,
+                stackSpills);
             if ("MOV".equals(mnemonic) && operands.length >= 2 &&
                     "EBP".equals(cleanRegister(operands[0])) &&
-                    "ESP".equals(cleanRegister(operands[1]))) pushes.clear();
+                    "ESP".equals(cleanRegister(operands[1]))) {
+                pushes.clear();
+                stackStateComplete = true;
+            }
         }
         return calls;
     }
 
     private void propagateCall(Function caller, Function called, Value receiver,
-            List<Value> pushes, Address site, boolean wrapper) {
-        List<Parameter> calledParameters = explicitParameters(called);
-        if (calledParameters.size() == pushes.size()) {
-            for (int index = 0; index < calledParameters.size(); index++) {
-                Parameter target = calledParameters.get(index);
+            List<Value> pushes, Map<String, Value> registers, Address site, boolean wrapper) {
+        List<Parameter> stackTargets = stackParameters(called);
+        // Propagation remains stricter than the audit: a suffix behind saved-register or
+        // temporary prefix pushes is useful diagnostic evidence, but is not safe enough to
+        // mutate prototypes automatically.
+        if (stackTargets.size() == pushes.size()) {
+            for (int index = 0; index < stackTargets.size(); index++) {
+                Parameter target = stackTargets.get(index);
                 Value value = pushes.get(pushes.size() - 1 - index);
-                if (value == null) continue;
-                String siteText = addr(caller.getEntryPoint()) + " -> " +
-                    addr(called.getEntryPoint()) + " @ " + addr(site);
-                if (!value.type.isBlank()) addParameterEvidence(called, target,
-                    value.type, value.name, value.trusted, siteText);
-                if (value.producer != null && trustedProducerTarget(called, target)) {
-                    addProducedReturnEvidence(value.producer,
-                        meaningfulType(target.getDataType()), true, site,
-                        "used as parameter " + target.getOrdinal() + " of " +
-                        called.getName(true));
-                }
-                if (value.parameterOrdinal >= 0) {
-                    Parameter source = explicitParameter(caller, value.parameterOrdinal);
-                    if (source != null) {
-                        String type = trustedParameter(called, target) ?
-                            meaningfulType(target.getDataType()) : "";
-                        String name = trustedParameterName(target) ? target.getName() : "";
-                        if (!type.isBlank() || !name.isBlank()) addParameterEvidence(caller,
-                            source, type, name, wrapper || target.getSource() == SourceType.USER_DEFINED ||
-                            target.getSource() == SourceType.IMPORTED, siteText);
-                    }
-                }
+                propagateArgument(caller, called, target, value, site, wrapper);
             }
+        }
+        for (Parameter target : registerParameters(called)) {
+            if (target.getRegister() == null) continue;
+            Value value = registers.get(canonicalRegister(target.getRegister().getName()));
+            propagateArgument(caller, called, target, value, site, wrapper);
         }
         if ("__thiscall".equals(called.getCallingConventionName()) && receiver != null) {
             String ownerType = ownerTypePath(called);
@@ -203,6 +225,29 @@ public class STPrototypeAnalyzer extends GhidraScript {
                 addProducedReturnEvidence(receiver.producer, "pointer:" + ownerType, true,
                     site, "used as this of " + called.getName(true));
         }
+    }
+
+    private void propagateArgument(Function caller, Function called, Parameter target,
+            Value value, Address site, boolean wrapper) {
+        if (value == null) return;
+        String siteText = addr(caller.getEntryPoint()) + " -> " +
+            addr(called.getEntryPoint()) + " @ " + addr(site);
+        if (!value.type.isBlank()) addParameterEvidence(called, target,
+            value.type, value.name, value.trusted, siteText);
+        if (value.producer != null && trustedProducerTarget(called, target)) {
+            addProducedReturnEvidence(value.producer,
+                meaningfulType(target.getDataType()), true, site,
+                "used as parameter " + target.getOrdinal() + " of " + called.getName(true));
+        }
+        if (value.parameterOrdinal < 0) return;
+        Parameter source = explicitParameter(caller, value.parameterOrdinal);
+        if (source == null) return;
+        String type = trustedParameter(called, target) ?
+            meaningfulType(target.getDataType()) : "";
+        String name = trustedParameterName(target) ? target.getName() : "";
+        if (!type.isBlank() || !name.isBlank()) addParameterEvidence(caller,
+            source, type, name, wrapper || protectedSource(target.getSource()) ||
+                trustedNamedLibraryParameter(called, target), siteText);
     }
 
     private void addParameterEvidence(Function function, Parameter parameter, String type,
@@ -296,7 +341,7 @@ public class STPrototypeAnalyzer extends GhidraScript {
             boolean compatible = !proposedType.isBlank() && typeLength(proposedType) ==
                 effectiveLength(target.getDataType());
             boolean typeChange = compatible && !sameType(currentType, proposedType) &&
-                (safeToRefine(target.getDataType(), proposedType) || scriptOwned);
+                (safeToRefine(target, proposedType) || scriptOwned);
             boolean enoughTypeEvidence = "return".equals(key.kind) ? ev.strongCount > 0 :
                 ev.strongCount > 0 || typeCount >= 2;
             boolean typeApply = !manual && !typeConflict && typeChange &&
@@ -336,24 +381,36 @@ public class STPrototypeAnalyzer extends GhidraScript {
     }
 
     private void updateRegisters(Instruction instruction, String mnemonic, String[] operands,
-            Map<String, Value> registers, Map<Long, Value> stackParameters) {
+            Map<String, Value> registers, Map<Long, Value> stackParameters,
+            Map<String, Value> stackSpills) {
         if (operands.length == 0) return;
         String destination = cleanRegister(operands[0]);
         boolean fullDestination = isFullRegister(operands[0]);
+        MemoryExpr destinationMemory = memoryExpr(operands[0]);
+        if ("MOV".equals(mnemonic) && destinationMemory != null && operands.length >= 2 &&
+                isStackSpill(destinationMemory)) {
+            String key = stackKey(destinationMemory);
+            String source = cleanRegister(operands[1]);
+            Value value = source != null && isFullRegister(operands[1]) ?
+                registers.get(source) : null;
+            if (value == null) stackSpills.remove(key);
+            else stackSpills.put(key, value);
+            return;
+        }
         if ("MOV".equals(mnemonic) && destination != null && operands.length >= 2) {
             if (!fullDestination) {
                 registers.put(destination, partialScalarValue(operands[0], instruction));
                 return;
             }
             Value value = sourceValue(instruction, 1, operands[1], registers,
-                stackParameters, false);
+                stackParameters, stackSpills, false);
             if (value == null) registers.remove(destination); else registers.put(destination, value);
             return;
         }
         if ("LEA".equals(mnemonic) && destination != null && operands.length >= 2) {
             if (!fullDestination) { registers.remove(destination); return; }
             Value value = sourceValue(instruction, 1, operands[1], registers,
-                stackParameters, true);
+                stackParameters, stackSpills, true);
             if (value == null) registers.remove(destination); else registers.put(destination, value);
             return;
         }
@@ -362,12 +419,14 @@ public class STPrototypeAnalyzer extends GhidraScript {
     }
 
     private Value sourceValue(Instruction instruction, int operandIndex, String operand,
-            Map<String, Value> registers, Map<Long, Value> stackParameters, boolean addressOf) {
+            Map<String, Value> registers, Map<Long, Value> stackParameters,
+            Map<String, Value> stackSpills, boolean addressOf) {
         String register = cleanRegister(operand);
         if (register != null) return isFullRegister(operand) ? registers.get(register) : null;
         MemoryExpr memory = memoryExpr(operand);
         if (memory != null && "EBP".equals(memory.register)) {
-            Value parameter = stackParameters.get(memory.displacement);
+            Value parameter = stackSpills.get(stackKey(memory));
+            if (parameter == null) parameter = stackParameters.get(memory.displacement);
             if (parameter == null) return null;
             if (!addressOf) return parameter;
             String pointed = parameter.type.isBlank() || parameter.type.startsWith("pointer:") ?
@@ -452,19 +511,56 @@ public class STPrototypeAnalyzer extends GhidraScript {
         return result;
     }
 
-    private Function calledFunction(Instruction instruction) {
+    private Function directCalledFunction(Instruction instruction) {
         for (Address flow : instruction.getFlows()) {
             Function function = currentProgram.getFunctionManager().getFunctionAt(flow);
-            if (function == null) continue;
-            Set<Address> seen = new HashSet<>();
-            while (function.isThunk() && seen.add(function.getEntryPoint())) {
-                Function target = function.getThunkedFunction(false);
-                if (target == null || target.equals(function)) break;
-                function = target;
-            }
-            return function;
+            if (function != null) return function;
         }
         return null;
+    }
+
+    private Function calledFunction(Instruction instruction) {
+        return resolveThunk(directCalledFunction(instruction));
+    }
+
+    private Function resolveThunk(Function function) {
+        if (function == null) return null;
+        Set<Address> seen = new HashSet<>();
+        while (function.isThunk() && seen.add(function.getEntryPoint())) {
+            Function target = function.getThunkedFunction(false);
+            if (target == null || target.equals(function)) break;
+            function = target;
+        }
+        return function;
+    }
+
+    private String thunkChain(Function direct) {
+        if (direct == null) return "";
+        List<String> chain = new ArrayList<>();
+        Set<Address> seen = new HashSet<>();
+        Function function = direct;
+        while (function != null && seen.add(function.getEntryPoint())) {
+            chain.add(addr(function.getEntryPoint()) + " " + function.getName(true));
+            if (!function.isThunk()) break;
+            Function target = function.getThunkedFunction(false);
+            if (target == null || target.equals(function)) break;
+            function = target;
+        }
+        return String.join(" -> ", chain);
+    }
+
+    private List<Parameter> stackParameters(Function function) {
+        List<Parameter> result = new ArrayList<>();
+        for (Parameter parameter : explicitParameters(function))
+            if (parameter.isStackVariable()) result.add(parameter);
+        return result;
+    }
+
+    private List<Parameter> registerParameters(Function function) {
+        List<Parameter> result = new ArrayList<>();
+        for (Parameter parameter : explicitParameters(function))
+            if (parameter.isRegisterVariable()) result.add(parameter);
+        return result;
     }
 
     private List<Parameter> explicitParameters(Function function) {
@@ -483,7 +579,15 @@ public class STPrototypeAnalyzer extends GhidraScript {
         if (scriptAppliedTarget(function, "parameter", parameter.getOrdinal())) return false;
         return parameter.getSource() == SourceType.USER_DEFINED ||
             parameter.getSource() == SourceType.IMPORTED || semanticType(parameter.getDataType()) ||
-            hasTag(function, TAG);
+            hasTag(function, TAG) || trustedNamedLibraryParameter(function, parameter);
+    }
+
+    private boolean trustedNamedLibraryParameter(Function function, Parameter parameter) {
+        if (!isLibrary(function) || function.getSymbol() == null ||
+                !protectedSource(function.getSymbol().getSource())) return false;
+        String name = function.getName();
+        if (name == null || name.matches("(?i)(?:FUN|SUB|THUNK|LAB)_[0-9A-F]+")) return false;
+        return !meaningfulType(parameter.getDataType()).isBlank();
     }
     private boolean trustedParameterName(Parameter parameter) {
         return (parameter.getSource() == SourceType.USER_DEFINED ||
@@ -582,14 +686,86 @@ public class STPrototypeAnalyzer extends GhidraScript {
         return true;
     }
 
-    private boolean safeToRefine(DataType current, String proposed) {
+    private boolean safeToRefine(Parameter target, String proposed) {
+        DataType current = target.getDataType();
         if (Undefined.isUndefined(current)) return true;
         if (current instanceof Pointer pointer) {
             DataType pointed = pointer.getDataType();
-            return proposed.startsWith("pointer:") && (pointed == null ||
-                Undefined.isUndefined(pointed) || "/void".equals(pointed.getPathName()));
+            if (!proposed.startsWith("pointer:")) return false;
+            if (pointed == null || Undefined.isUndefined(pointed) ||
+                    "/void".equals(pointed.getPathName())) return true;
+            String path = pointed.getPathName();
+            return !protectedSource(target.getSource()) &&
+                (path.contains("/Recovered/PointerShapes/") ||
+                 path.contains("/Recovered/ClassPointees/") ||
+                 path.contains("/Recovered/HiddenThis/"));
         }
         return current instanceof AbstractIntegerDataType && semanticSpecification(proposed);
+    }
+
+    private void auditCallSite(Function caller, Instruction instruction, Function direct,
+            Function resolved, List<Value> pushes, Map<String, Value> registers,
+            boolean stackStateComplete) {
+        List<Parameter> expectedStack = stackParameters(resolved);
+        List<String> stackArguments = new ArrayList<>();
+        for (int index = 0; index < expectedStack.size(); index++) {
+            Parameter parameter = expectedStack.get(index);
+            int pushIndex = pushes.size() - 1 - index;
+            stackArguments.add("p" + parameter.getOrdinal() + "=" +
+                (pushIndex < 0 ? "untracked" : describeValue(pushes.get(pushIndex))));
+        }
+        List<String> registerArguments = new ArrayList<>();
+        for (Parameter parameter : registerParameters(resolved)) {
+            String register = parameter.getRegister() == null ? "?" :
+                canonicalRegister(parameter.getRegister().getName());
+            Value value = registers.get(register);
+            registerArguments.add(register + "=" + describeValue(value));
+        }
+        String status;
+        if (pushes.size() < expectedStack.size()) status = stackStateComplete ?
+            "stack_argument_underflow" : "cfg_stack_state_incomplete";
+        else if (pushes.size() == expectedStack.size()) status = "exact_address_match";
+        else if (resolved.hasVarArgs()) status = "varargs_address_match";
+        else status = "address_match_with_prefix_pushes";
+        callSiteAudits.add(new CallSiteAudit(caller, instruction.getAddress(), direct,
+            resolved, thunkChain(direct), pushes.size(), expectedStack.size(),
+            stackArguments, registerArguments, status));
+    }
+
+    private void consumeCalleePurge(Function called, List<Value> pushes) {
+        int purgeBytes = -1;
+        if (called.isStackPurgeSizeValid()) purgeBytes = called.getStackPurgeSize();
+        if (purgeBytes < 0) {
+            String convention = called.getCallingConventionName();
+            if ("__cdecl".equals(convention)) purgeBytes = 0;
+            else if (Set.of("__stdcall", "__thiscall", "__fastcall").contains(convention))
+                purgeBytes = stackParameters(called).size() *
+                    currentProgram.getDefaultPointerSize();
+        }
+        if (purgeBytes < 0) {
+            pushes.clear();
+            return;
+        }
+        int pointerSize = currentProgram.getDefaultPointerSize();
+        int words = (purgeBytes + pointerSize - 1) / pointerSize;
+        while (words-- > 0 && !pushes.isEmpty()) pushes.remove(pushes.size() - 1);
+    }
+
+    private String describeValue(Value value) {
+        if (value == null) return "unknown";
+        if (value.type.isBlank()) return value.evidence.isBlank() ? "unknown" : value.evidence;
+        return value.evidence.isBlank() ? value.type : value.type + " (" + value.evidence + ")";
+    }
+
+    private boolean isStackSpill(MemoryExpr memory) {
+        // ESP-relative slots move under PUSH/POP.  EBP-relative locals are stable and cover
+        // the common optimized pattern: save incoming this, reload it into another register,
+        // then pass it through a thunk.
+        return memory != null && "EBP".equals(memory.register) && memory.displacement < 0;
+    }
+
+    private String stackKey(MemoryExpr memory) {
+        return memory.register + ":" + memory.displacement;
     }
     private boolean semanticSpecification(String specification) {
         if (specification.startsWith("pointer:")) return true;
@@ -653,7 +829,8 @@ public class STPrototypeAnalyzer extends GhidraScript {
         int open = operand.indexOf('['), close = operand.lastIndexOf(']');
         if (open < 0 || close <= open) return null;
         String value = operand.substring(open, close + 1)
-            .replace(" ", "").toUpperCase(Locale.ROOT);
+            .replace(" ", "").replace("+-", "-").replace("-+", "-")
+            .toUpperCase(Locale.ROOT);
         Matcher matcher = MEMORY.matcher(value); if (!matcher.matches()) return null;
         long displacement = 0;
         if (matcher.group(3) != null) {
@@ -757,6 +934,25 @@ public class STPrototypeAnalyzer extends GhidraScript {
             ",\"confidence\":" + q(p.confidence) + ",\"reason\":" + q(p.reason) + "}");
         Files.write(path, lines, StandardCharsets.UTF_8);
     }
+
+    private void writeCallSiteAudit(Path path) throws Exception {
+        callSiteAudits.sort(Comparator.comparing((CallSiteAudit row) -> row.callerAddress)
+            .thenComparing(row -> row.site));
+        try (BufferedWriter out = Files.newBufferedWriter(path, StandardCharsets.UTF_8)) {
+            out.write("caller_address\tcaller\tcall_site\tdirect_address\tdirect_function\t" +
+                "resolved_address\tresolved_function\tthunk_chain\tobserved_stack_args\t" +
+                "expected_stack_args\tstack_arguments\tregister_arguments\tstatus\n");
+            for (CallSiteAudit row : callSiteAudits) {
+                out.write(addr(row.callerAddress) + "\t" + tsv(row.caller) + "\t" +
+                    addr(row.site) + "\t" + addr(row.directAddress) + "\t" +
+                    tsv(row.directFunction) + "\t" + addr(row.resolvedAddress) + "\t" +
+                    tsv(row.resolvedFunction) + "\t" + tsv(row.thunkChain) + "\t" +
+                    row.observedStackArguments + "\t" + row.expectedStackArguments + "\t" +
+                    tsv(String.join(" | ", row.stackArguments)) + "\t" +
+                    tsv(String.join(" | ", row.registerArguments)) + "\t" + row.status + "\n");
+            }
+        }
+    }
     private void writeSummary(Path path, List<Proposal> rows, int functions, int calls)
             throws Exception {
         Files.write(path, List.of("program=" + currentProgram.getName(),
@@ -773,7 +969,9 @@ public class STPrototypeAnalyzer extends GhidraScript {
             "repair_review_only=" + rows.stream().filter(r -> r.repair &&
                 !r.typeApply && !r.nameApply).count(),
             "conflicts=" + rows.stream().filter(r -> r.confidence.equals("conflict")).count(),
-            "note=Direct calls with an exact explicit argument count propagate parameters.",
+            "note=Only exact explicit argument counts propagate types. The audit preserves " +
+                "deferred caller-cleanup words across calls, consumes actual callee purge bytes, " +
+                "and separates incomplete CFG stack state from proven underflow.",
             "note_returns=Unknown EAX producers are traced into trusted arguments, this receivers, typed stores, and return-forwarding wrappers.",
             "note_manual=USER_DEFINED targets are never auto-applied.",
             "note_iteration=Rerun after applying method owners, globals, or class fields to reach a conservative fixed point."),
@@ -813,6 +1011,28 @@ public class STPrototypeAnalyzer extends GhidraScript {
         final String type, evidence; final boolean strong;
         StoreType(String type, boolean strong, String evidence) {
             this.type = type; this.strong = strong; this.evidence = evidence;
+        }
+    }
+    private static class CallSiteAudit {
+        final Address callerAddress, site, directAddress, resolvedAddress;
+        final String caller, directFunction, resolvedFunction, thunkChain, status;
+        final int observedStackArguments, expectedStackArguments;
+        final List<String> stackArguments, registerArguments;
+        CallSiteAudit(Function caller, Address site, Function direct, Function resolved,
+                String thunkChain, int observedStackArguments, int expectedStackArguments,
+                List<String> stackArguments, List<String> registerArguments, String status) {
+            callerAddress = caller.getEntryPoint(); this.caller = caller.getName(true);
+            this.site = site;
+            directAddress = direct == null ? null : direct.getEntryPoint();
+            directFunction = direct == null ? "" : direct.getName(true);
+            resolvedAddress = resolved == null ? null : resolved.getEntryPoint();
+            resolvedFunction = resolved == null ? "" : resolved.getName(true);
+            this.thunkChain = thunkChain;
+            this.observedStackArguments = observedStackArguments;
+            this.expectedStackArguments = expectedStackArguments;
+            this.stackArguments = new ArrayList<>(stackArguments);
+            this.registerArguments = new ArrayList<>(registerArguments);
+            this.status = status;
         }
     }
     private static class MemoryExpr {

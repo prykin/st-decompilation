@@ -1,9 +1,12 @@
 
+/* [STPrototypeApplier] Propagated parameter 1.
+   Evidence: 006E4340 -> 006E42C0 @ 006E4362 */
+
 void __thiscall
-FUN_006e4340(void *this,int param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4)
+FUN_006e4340(void *this,int *param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4)
 
 {
-  int local_14;
+  int *local_14;
   undefined4 local_10;
   undefined4 local_c;
   undefined4 local_8;
@@ -12,7 +15,7 @@ FUN_006e4340(void *this,int param_1,undefined4 param_2,undefined4 param_3,undefi
   local_c = param_3;
   local_10 = param_2;
   local_8 = param_4;
-  FUN_006e42c0(this,&local_14);
+  FUN_006e42c0(this,(int *)&local_14);
   return;
 }
 

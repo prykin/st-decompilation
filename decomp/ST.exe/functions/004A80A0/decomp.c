@@ -13,29 +13,29 @@ void __thiscall STGroupBoatC::SetPatrolCmdToBoat(STGroupBoatC *this,int param_1)
   STGameObjC *pSVar2;
   int iVar3;
   uint index;
-  uint uVar4;
+  dword dVar4;
   undefined4 local_34;
   uint local_30 [3];
   undefined4 local_22;
   short local_1c;
   short local_1a;
   short local_18;
-  uint local_c;
+  dword local_c;
   DArrayTy *local_8;
 
-  uVar4 = this->field_022E[3];
-  local_c = uVar4;
+  dVar4 = this->field_022E->count;
+  local_c = dVar4;
   local_8 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,0,2,1);
   index = 0;
-  if (0 < (int)uVar4) {
+  if (0 < (int)dVar4) {
     do {
-      DArrayGetElement((DArrayTy *)this->field_022E,index,&local_34);
+      DArrayGetElement(this->field_022E,index,&local_34);
       if ((short)local_30[0] != -1) {
         local_34 = 0;
         local_22 = 0;
-        Library::DKW::TBL::FUN_006ae140(this->field_022E,index,&local_34);
-        pSVar2 = STAllPlayersC::GetObjPtr
-                           (g_sTAllPlayers_007FA174,this->field_0024,local_30[0],CASE_1);
+        Library::DKW::TBL::FUN_006ae140(&this->field_022E->flags,index,&local_34);
+        pSVar2 = STAllPlayersC::GetObjPtr(g_allPlayers_007FA174,this->field_0024,local_30[0],CASE_1)
+        ;
         if (pSVar2 == (STGameObjC *)0x0) {
           iVar3 = ReportDebugMessage("E:\\__titans\\wlad\\to_grpb.cpp",0x16c9,0,0,
                                      "%s","STGroupBoatC::SetPatrolCmdToBoat");
@@ -48,12 +48,12 @@ void __thiscall STGroupBoatC::SetPatrolCmdToBoat(STGroupBoatC *this,int param_1)
         }
         Library::DKW::TBL::FUN_006ae1c0(&local_8->flags,local_30);
         pSVar2->field_0493 = 1;
-        uVar4 = local_c;
+        dVar4 = local_c;
       }
       index = index + 1;
-    } while ((int)index < (int)uVar4);
+    } while ((int)index < (int)dVar4);
   }
-  DArrayGetElement((DArrayTy *)this->field_022A,this->field_0232,&local_1c);
+  DArrayGetElement(this->field_022A,this->field_0232,&local_1c);
   array = local_8;
   if (local_8->count != 0) {
     InitWay(this,local_8,(int)local_1c,(int)local_1a,(int)local_18);

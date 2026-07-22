@@ -9,8 +9,8 @@ void __thiscall FUN_0041ce40(void *this,int param_1)
   *(int *)((int)this + 0x105) = param_1;
   if (g_visibleClass_00802A88 != (VisibleClassTy *)0x0) {
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-    SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00558C00::thunk_FUN_005594a0
-              ((AnonReceiver_00558C00 *)g_visibleClass_00802A88,(int)*(short *)((int)this + 0x5b),
+    VisibleClassTy::sub_005594A0
+              (g_visibleClass_00802A88,(int)*(short *)((int)this + 0x5b),
                (int)*(short *)((int)this + 0x5d),(char)*(undefined2 *)((int)this + 0x5f),
                *(undefined **)((int)this + 0x24),param_1,*(undefined4 *)((int)this + 0x18),
                0xffffffff);

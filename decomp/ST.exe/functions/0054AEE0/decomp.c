@@ -62,12 +62,11 @@ void __thiscall CursorClassTy::GCGameState(CursorClassTy *this,int param_1)
     }
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  iVar5 = thunk_FUN_00544990((int)local_18);
+  iVar5 = thunk_FUN_00544990(local_18);
   if ((iVar5 != 0) &&
      ((((this_00->field_00DE == CASE_2 || (this_00->field_00DE == 4)) &&
        (iVar5 = FUN_00405687((int)this_00), iVar5 == 0)) || (this_00->field_0496 == 0)))) {
-    SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0054B700::thunk_FUN_0054b700
-              ((AnonReceiver_0054B700 *)this_00,-1);
+    sub_0054B700(this_00,-1);
     if ((g_helpPanel_00801690 == (AnonShape_GLOBAL_00801690_2AA401C1 *)0x0) ||
        (g_helpPanel_00801690->field_0172 == 2)) goto LAB_0054b372;
 LAB_0054b019:
@@ -77,7 +76,7 @@ LAB_0054b019:
     goto cf_common_exit_0054B368;
   }
   memset(local_f8, 0, 0x20); /* compiler bulk-zero initialization */
-  if ((g_sTAllPlayers_007FA174 == (STAllPlayersC *)0x0) || (DAT_00808784 != 0)) {
+  if ((g_allPlayers_007FA174 == (STAllPlayersC *)0x0) || (DAT_00808784 != 0)) {
 LAB_0054b335:
     if ((g_helpPanel_00801690 == (AnonShape_GLOBAL_00801690_2AA401C1 *)0x0) ||
        (g_helpPanel_00801690->field_0172 == 2)) {
@@ -127,8 +126,7 @@ LAB_0054b366:
     if (4 < (short)local_c) {
       local_c = 4;
     }
-    SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0054B700::thunk_FUN_0054b700
-              ((AnonReceiver_0054B700 *)this_00,(int)(short)local_c);
+    sub_0054B700(this_00,(int)(short)local_c);
     if (this_00->field_049A == (STFishC *)0x0) {
       if ((this_00->field_049E != 0) && (this_00->field_049E = 0, DAT_00801694 != (void *)0x0)) {
         thunk_FUN_0051fac0(DAT_00801694,(char *)0x0,0,'\x01',0xfffffc18);
@@ -142,7 +140,7 @@ LAB_0054b366:
       (*this_00->field_049A->vtable->vfunc_68)(&local_30);
       if (this_00->field_049E != local_30) {
         this_00->field_049E = local_30;
-        module = HINSTANCE_00807618;
+        module = g_module_00807618;
         resourceId = thunk_FUN_00523410(local_2c,(char)local_28,0);
         pcVar7 = LoadResourceString(resourceId,module);
         uVar11 = 0xffffffff;
@@ -187,14 +185,14 @@ LAB_0054b366:
 /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
 LAB_0054b2a9:
         CVar4 = STAllPlayersC::GetCursorType
-                          (g_sTAllPlayers_007FA174,this_00->field_04A2,this_00->field_049A,
+                          (g_allPlayers_007FA174,this_00->field_04A2,this_00->field_049A,
                            this_00->field_00C5 - this_00->field_04B2,
                            (int *)(this_00->field_00C9 - this_00->field_04B6),unaff_EDI,unaff_ESI);
         while (CVar4 == (CASE_40|CASE_18)) {
-          thunk_FUN_0054a8d0(this_00);
+          sub_0054A8D0(this_00);
           /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
           CVar4 = STAllPlayersC::GetCursorType
-                            (g_sTAllPlayers_007FA174,this_00->field_04A2,this_00->field_049A,
+                            (g_allPlayers_007FA174,this_00->field_04A2,this_00->field_049A,
                              this_00->field_00C5 - this_00->field_04B2,
                              (int *)(this_00->field_00C9 - this_00->field_04B6),unaff_EDI,unaff_ESI)
           ;

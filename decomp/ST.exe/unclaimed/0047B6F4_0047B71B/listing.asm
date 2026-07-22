@@ -1,0 +1,10 @@
+0047B6F4  pointer  0047964e
+0047B6F8  pointer  0047967d
+0047B6FC  pointer  00479826
+0047B700  pointer  0047b2fc
+0047B704  pointer  00479809
+0047B708  pointer  00479b7c
+0047B70C  pointer  00479bc9
+0047B710  pointer  00479e6b
+0047B714  pointer  0047b2fc
+0047B718  pointer  00479d62

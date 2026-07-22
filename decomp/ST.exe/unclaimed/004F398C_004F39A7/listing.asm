@@ -1,0 +1,7 @@
+004F398C  pointer  004f3855
+004F3990  pointer  004f3927
+004F3994  pointer  004f386b
+004F3998  pointer  004f3927
+004F399C  pointer  004f3881
+004F39A0  pointer  004f3927
+004F39A4  pointer  004f3897

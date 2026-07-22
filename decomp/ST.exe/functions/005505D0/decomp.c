@@ -1,5 +1,10 @@
 
-void __thiscall FUN_005505d0(void *this,int param_1,int *param_2)
+/* [STMethodOwnerApplier] Structural method owner recovered as STPlaySystemC.
+   Evidence: this_call_owners=[STPlaySystemC]; agreed_this_calls=2; incoming_this_accesses=15;
+   incoming_edx_uses=0; incoming_stack_parameter_uses=9; direct_non_thunk_callers=0;
+   incoming_ecx_receiver_callers=0; attributed_named_callers=2; owner_evidence_coverage=adequate */
+
+void __thiscall STPlaySystemC::sub_005505D0(STPlaySystemC *this,int param_1,int *param_2)
 
 {
   char *pcVar1;
@@ -18,28 +23,28 @@ void __thiscall FUN_005505d0(void *this,int param_1,int *param_2)
     }
     else {
       FUN_00715360(g_int_00811764,param_1,'1',pcVar1,local_8,1,*(undefined4 *)pcVar1);
-      if (*(byte *)((int)this + 0xbb) < 5) {
-        DVar2 = FUN_006e51b0(0x807620);
-        *(DWORD *)((int)this + (uint)*(byte *)((int)this + 0xbb) * 4 + 0xa7) = DVar2;
-        *(char *)((int)this + 0xbb) = *(char *)((int)this + 0xbb) + '\x01';
+      if (this->field_00BB < 5) {
+        DVar2 = STAppC::sub_006E51B0((STAppC *)&DAT_00807620);
+        (&this->field_00A7)[this->field_00BB] = DVar2;
+        this->field_00BB = this->field_00BB + 1;
       }
       else {
-        *(int *)((int)this + 0xa7) = *(int *)((int)this + 0xab);
-        *(undefined4 *)((int)this + 0xab) = *(undefined4 *)((int)this + 0xaf);
-        *(undefined4 *)((int)this + 0xaf) = *(undefined4 *)((int)this + 0xb3);
-        *(undefined4 *)((int)this + 0xb3) = *(undefined4 *)((int)this + 0xb7);
-        DVar2 = FUN_006e51b0(0x807620);
-        *(DWORD *)((int)this + 0xb7) = DVar2;
+        this->field_00A7 = this->field_00AB;
+        this->field_00AB = this->field_00AF;
+        this->field_00AF = this->field_00B3;
+        this->field_00B3 = this->field_00B7;
+        DVar2 = STAppC::sub_006E51B0((STAppC *)&DAT_00807620);
+        this->field_00B7 = DVar2;
         if (DAT_0080735e == '\0') {
           return;
         }
-        if ((DVar2 - *(int *)((int)this + 0xa7)) / 5 < 0x7d1) {
+        if ((DVar2 - this->field_00A7) / 5 < 0x7d1) {
           if (g_popUp_008016D8 != (PopUpTy *)0x0) {
             uVar4 = 9;
-            pcVar1 = LoadResourceString(17000,HINSTANCE_00807618);
+            pcVar1 = LoadResourceString(17000,g_module_00807618);
             thunk_FUN_0052d320(g_popUp_008016D8,pcVar1,uVar4);
           }
-          *(undefined1 *)((int)this + 0xbb) = 0;
+          this->field_00BB = 0;
         }
       }
       if (DAT_0080735e != '\0') {
@@ -50,7 +55,7 @@ void __thiscall FUN_005505d0(void *this,int param_1,int *param_2)
             puVar5 = &DAT_00808ab0 + (int)param_2 * 0x27;
             if (((&DAT_00808af0)[(int)param_2 * 0x27] == param_1) &&
                ((&DAT_00808af6)[(int)param_2 * 0x9c] != '\0')) {
-              pcVar1 = LoadResourceString(0x426d,HINSTANCE_00807618);
+              pcVar1 = LoadResourceString(0x426d,g_module_00807618);
               wsprintfA(local_10c,"%s %s",pcVar1,puVar5);
               if (g_popUp_008016D8 != (PopUpTy *)0x0) {
                 thunk_FUN_0052d320(g_popUp_008016D8,local_10c,8);

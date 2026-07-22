@@ -1,4 +1,4 @@
-FUN_005a07f0:
+FSGSTy::sub_005A07F0:
 005A07F0  56                        PUSH ESI
 005A07F1  57                        PUSH EDI
 005A07F2  33 FF                     XOR EDI,EDI

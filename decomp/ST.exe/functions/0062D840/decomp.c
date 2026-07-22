@@ -1,5 +1,10 @@
 
-int __thiscall FUN_0062d840(void *this,undefined4 *param_1)
+/* [STMethodOwnerApplier] Structural method owner recovered as STManRub3C.
+   Evidence: this_call_owners=[STManRub3C]; agreed_this_calls=1; incoming_this_accesses=2;
+   incoming_edx_uses=0; incoming_stack_parameter_uses=4; direct_non_thunk_callers=0;
+   incoming_ecx_receiver_callers=0; attributed_named_callers=1; owner_evidence_coverage=adequate */
+
+int __thiscall STManRub3C::sub_0062D840(STManRub3C *this,undefined4 *param_1)
 
 {
   undefined4 *puVar1;
@@ -11,11 +16,11 @@ int __thiscall FUN_0062d840(void *this,undefined4 *param_1)
   int *piVar7;
 
   puVar1 = param_1;
-  if (this == (void *)0x0) {
+  if (this == (STManRub3C *)0x0) {
     puVar6 = (undefined4 *)0x0;
   }
   else {
-    puVar6 = (undefined4 *)((int)this + 0x1c);
+    puVar6 = &this->field_001C;
   }
   param_1 = (undefined4 *)0x98;
   puVar4 = puVar1;
@@ -25,22 +30,22 @@ int __thiscall FUN_0062d840(void *this,undefined4 *param_1)
     puVar6 = puVar6 + 1;
   }
   piVar5 = puVar1 + 0x26;
-  *(undefined4 *)((int)this + 0xb4) = *(undefined4 *)((int)this + 0xb0);
+  this->field_00B4 = this->field_00B0;
   iVar3 = 0;
   do {
     iVar2 = 0;
     switch(iVar3) {
     case 0:
-      piVar7 = (int *)((int)this + 0x30);
+      piVar7 = &this->field_0030;
       break;
     case 1:
-      piVar7 = (int *)((int)this + 0x50);
+      piVar7 = &this->field_0050;
       break;
     case 2:
-      piVar7 = (int *)((int)this + 0x70);
+      piVar7 = &this->field_0070;
       break;
     case 3:
-      piVar7 = (int *)((int)this + 0x90);
+      piVar7 = (int *)&this->field_0x90;
       break;
     default:
       goto switchD_0062d881_default;

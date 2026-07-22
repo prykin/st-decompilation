@@ -1,0 +1,28 @@
+00531CB0  pointer  005305db
+00531CB4  pointer  00530735
+00531CB8  pointer  005313ef
+00531CBC  pointer  005313ef
+00531CC0  pointer  00530671
+00531CC4  pointer  00530bf4
+00531CC8  pointer  00530f16
+00531CCC  pointer  00530b61
+00531CD0  pointer  00530a75
+00531CD4  pointer  00531b8a
+00531CD8  pointer  005306f3
+00531CDC  pointer  00531907
+00531CE0  pointer  005307a1
+00531CE4  pointer  005313ef
+00531CE8  undefined *  00530aa9
+00531CEC  undefined *  00530ac7
+00531CF0  undefined *  00530ad2
+00531CF4  undefined *  00530add
+00531CF8  undefined *  00530ae8
+00531CFC  undefined *  00530af3
+00531D00  pointer  005311cb
+00531D04  pointer  005311f3
+00531D08  pointer  005313dc
+00531D0C  pointer  005312b1
+00531D10  pointer  005313dc
+00531D14  pointer  005313dc
+00531D18  pointer  005313dc
+00531D1C  pointer  00531364

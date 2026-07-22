@@ -74,7 +74,7 @@ int __thiscall AiFltClassTy::AppendPoint(AiFltClassTy *this,short *param_1,int p
       iVar6 = thunk_FUN_00675950((uVar8 >> 0x10) % (uint)(int)sVar3 + (int)sVar4,
                                  (uVar7 >> 0x10) % (uint)(int)sVar2 + (int)sVar1,2,local_20,
                                  local_20 + 1,local_20 + 2,0);
-      if ((iVar6 != 0) && (iVar6 = thunk_FUN_0065f5c0(this_00,local_20), iVar6 != 0)) {
+      if ((iVar6 != 0) && (iVar6 = sub_0065F5C0(this_00,local_20), iVar6 != 0)) {
         g_currentExceptionFrame = local_64.previous;
         return 0;
       }

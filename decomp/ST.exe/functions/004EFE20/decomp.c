@@ -1,70 +1,75 @@
 
-void __fastcall FUN_004efe20(AnonShape_004EFE20_20805E12 *param_1)
+/* [STMethodOwnerApplier] Structural method owner recovered as BldLabPanelTy.
+   Evidence: this_call_owners=[BldLabPanelTy]; agreed_this_calls=1; incoming_this_accesses=18;
+   incoming_edx_uses=0; incoming_stack_parameter_uses=0; direct_non_thunk_callers=0;
+   incoming_ecx_receiver_callers=0; attributed_named_callers=1; owner_evidence_coverage=adequate */
+
+void __thiscall BldLabPanelTy::sub_004EFE20(BldLabPanelTy *this)
 
 {
-  UINT UVar1;
-  uint uVar2;
-  int iVar3;
-  Global_sub_00523410_param_1Enum *pGVar4;
-  byte *pbVar5;
-  undefined4 *puVar6;
+  DArrayTy *pDVar1;
+  UINT UVar2;
+  uint uVar3;
+  int iVar4;
+  Global_sub_00523410_param_1Enum *pGVar5;
+  byte *pbVar6;
   undefined4 *puVar7;
-  undefined4 uVar8;
+  undefined4 *puVar8;
+  undefined4 uVar9;
   int local_14;
   undefined4 *local_c;
   int local_8;
 
-  if (param_1->field_027A != 0) {
-    local_c = (undefined4 *)&param_1->field_0x1be;
-    puVar6 = (undefined4 *)&param_1->field_0x1a1;
+  if (this->field_027A != (DArrayTy *)0x0) {
+    local_c = &this->field_01BE;
+    puVar7 = &this->field_01A1;
     local_8 = 0;
     local_14 = 5;
     do {
-      param_1->field_0028 = 0x21;
-      FUN_006e6080(param_1,2,*puVar6,(undefined4 *)&param_1->field_0x18);
-      iVar3 = param_1->field_002C;
-      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-      uVar2 = (uint)((uint)(local_8 + param_1->field_0199) < *(uint *)(param_1->field_027A + 0xc));
-      param_1->field_002C = uVar2;
-      if (uVar2 == 0) {
-        if (iVar3 != 0) goto LAB_004eff2c;
+      this->field_0028 = 0x21;
+      FUN_006e6080(this,2,*puVar7,(undefined4 *)&this->field_0x18);
+      iVar4 = this->field_002C;
+      uVar3 = (uint)((uint)(local_8 + this->field_0199) < this->field_027A->count);
+      this->field_002C = uVar3;
+      if (uVar3 == 0) {
+        if (iVar4 != 0) goto LAB_004eff2c;
 LAB_004efe9c:
-        param_1->field_0028 = 5;
-        uVar8 = *puVar6;
+        this->field_0028 = 5;
+        uVar9 = *puVar7;
       }
       else {
-        if (iVar3 != 0) goto LAB_004efe9c;
+        if (iVar4 != 0) goto LAB_004efe9c;
 LAB_004eff2c:
-        param_1->field_0028 = 0x20;
-        uVar8 = *puVar6;
+        this->field_0028 = 0x20;
+        uVar9 = *puVar7;
       }
-      FUN_006e6080(param_1,2,uVar8,(undefined4 *)&param_1->field_0x18);
-      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-      if ((((param_1->field_002C != 0) && (iVar3 = param_1->field_027A, iVar3 != 0)) &&
-          (uVar2 = param_1->field_0199 + local_8, uVar2 < *(uint *)(iVar3 + 0xc))) &&
-         (pGVar4 = (Global_sub_00523410_param_1Enum *)
-                   (*(int *)(iVar3 + 8) * uVar2 + *(int *)(iVar3 + 0x1c)),
-         pGVar4 != (Global_sub_00523410_param_1Enum *)0x0)) {
-        *(char *)((int)local_c + -9) = ((char)pGVar4[2] == 0) + '\x03';
-        UVar1 = thunk_FUN_00523410(*pGVar4,'\x03',0);
-        local_c[-2] = UVar1;
-        if ((char)pGVar4[2] == 0) {
-          pbVar5 = (byte *)((int)pGVar4 + 0x12);
-          puVar7 = local_c;
-          for (iVar3 = 7; iVar3 != 0; iVar3 = iVar3 + -1) {
-            *puVar7 = *(undefined4 *)pbVar5;
-            pbVar5 = pbVar5 + 4;
-            puVar7 = puVar7 + 1;
+      FUN_006e6080(this,2,uVar9,(undefined4 *)&this->field_0x18);
+      /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(pDVar1, uVar3) (runtime stride) */
+      if ((((this->field_002C != 0) && (pDVar1 = this->field_027A, pDVar1 != (DArrayTy *)0x0)) &&
+          (uVar3 = this->field_0199 + local_8, uVar3 < pDVar1->count)) &&
+         (pGVar5 = (Global_sub_00523410_param_1Enum *)
+                   (pDVar1->elementSize * uVar3 + (int)pDVar1->data),
+         pGVar5 != (Global_sub_00523410_param_1Enum *)0x0)) {
+        *(char *)((int)local_c + -9) = ((char)pGVar5[2] == 0) + '\x03';
+        UVar2 = thunk_FUN_00523410(*pGVar5,'\x03',0);
+        local_c[-2] = UVar2;
+        if ((char)pGVar5[2] == 0) {
+          pbVar6 = (byte *)((int)pGVar5 + 0x12);
+          puVar8 = local_c;
+          for (iVar4 = 7; iVar4 != 0; iVar4 = iVar4 + -1) {
+            *puVar8 = *(undefined4 *)pbVar6;
+            pbVar6 = pbVar6 + 4;
+            puVar8 = puVar8 + 1;
           }
-          *(undefined2 *)puVar7 = *(undefined2 *)pbVar5;
+          *(undefined2 *)puVar8 = *(undefined2 *)pbVar6;
         }
         else {
-          *local_c = *(undefined4 *)((int)pGVar4 + 10);
-          local_c[1] = *(undefined4 *)((int)pGVar4 + 0xe);
+          *local_c = *(undefined4 *)((int)pGVar5 + 10);
+          local_c[1] = *(undefined4 *)((int)pGVar5 + 0xe);
         }
       }
       local_8 = local_8 + 1;
-      puVar6 = puVar6 + 1;
+      puVar7 = puVar7 + 1;
       local_c = (undefined4 *)((int)local_c + 0x27);
       local_14 = local_14 + -1;
     } while (local_14 != 0);

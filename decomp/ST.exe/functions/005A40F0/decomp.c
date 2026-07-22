@@ -25,15 +25,15 @@ FSGSTy::SetLadder(FSGSTy *this,undefined4 param_1,uint param_2,int param_3,undef
   undefined4 local_14;
   FSGSTy *local_8;
 
-  this_00 = PTR_00802a30;
+  this_00 = g_cursorClass_00802A30;
   local_8 = this;
-  if (PTR_00802a30 != (CursorClassTy *)0x0) {
-    PTR_00802a30->field_0493 = 1;
+  if (g_cursorClass_00802A30 != (CursorClassTy *)0x0) {
+    g_cursorClass_00802A30->field_0493 = 1;
     this_00->field_0494 = 0xffff;
     CursorClassTy::SetGCType(this_00,CASE_0,this_00->field_00C5,this_00->field_00C9);
     CursorClassTy::DrawSprite(this_00,this_00->field_00C5,this_00->field_00C9);
     this_00->field_00D2 = 0;
-    this_00->field_04DF = 0xffffffff;
+    this_00->field_04DF = -1;
   }
   if (this->field_1A5F == CASE_9) {
     local_6c.previous = g_currentExceptionFrame;

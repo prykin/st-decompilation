@@ -56,7 +56,8 @@ AiTactClassTy::HelpOrganize(AiTactClassTy *this,AnonShape_00690650_F810CDF4 *par
   if (7 < bVar1) {
     return;
   }
-  if ((PTR_00802a38 != (STPlaySystemC *)0x0) && (7 < (byte)(&DAT_008087e9)[(char)bVar1 * 0x51])) {
+  if ((g_playSystem_00802A38 != (STPlaySystemC *)0x0) &&
+     (7 < (byte)(&DAT_008087e9)[(char)bVar1 * 0x51])) {
     return;
   }
   if ((int)(char)bVar1 == this->field_0024) {
@@ -98,15 +99,15 @@ LAB_00690763:
     iVar6 = Library::MSVCRT::__setjmp3(local_98.jumpBuffer,0);
     this_01 = local_c;
     if (iVar6 == 0) {
-      if (g_sTAllPlayers_007FA174 == (STAllPlayersC *)0x0) {
+      if (g_allPlayers_007FA174 == (STAllPlayersC *)0x0) {
         pSVar7 = (STGameObjC *)0x0;
       }
       else {
         pSVar7 = STAllPlayersC::GetObjPtr
-                           (g_sTAllPlayers_007FA174,*(char *)&local_c->field_0024,local_10,CASE_1);
+                           (g_allPlayers_007FA174,*(char *)&local_c->field_0024,local_10,CASE_1);
       }
       if ((pSVar7 != (STGameObjC *)0x0) &&
-         (iVar6 = thunk_FUN_0068e290(this_01,pSVar7->field_0030), iVar6 != 0)) {
+         (iVar6 = sub_0068E290(this_01,pSVar7->field_0030), iVar6 != 0)) {
         if (*(short *)(iVar6 + 0x7b) == 1) {
           sVar5 = (short)local_10;
         }
@@ -145,7 +146,8 @@ LAB_00690763:
                                        *(undefined2 *)(*(int *)((int)pvVar11 + 4) + 0x7d));
                   /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                   local_18 = CONCAT22(*(undefined2 *)(iVar6 + 0x7b),(short)local_10);
-                  Library::DKW::TBL::FUN_006ae1c0(local_c->field_00C9,(undefined4 *)&local_1c);
+                  Library::DKW::TBL::FUN_006ae1c0
+                            (&local_c->field_00C9->flags,(undefined4 *)&local_1c);
                   g_currentExceptionFrame = local_98.previous;
                   return;
                 }

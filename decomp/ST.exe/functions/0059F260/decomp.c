@@ -19,7 +19,7 @@ void __thiscall FSGSTy::LadderCtrls(FSGSTy *this)
   ccFntTy **ppcVar8;
   ushort *puVar9;
   ccFntTy *local_8e0 [8];
-  uint *local_8c0;
+  DArrayTy *local_8c0;
   undefined4 local_894;
   undefined4 local_890;
   undefined4 local_88c;
@@ -42,11 +42,11 @@ void __thiscall FSGSTy::LadderCtrls(FSGSTy *this)
   iVar6 = Library::MSVCRT::__setjmp3(local_54.jumpBuffer,0);
   this_00 = local_10;
   if (iVar6 == 0) {
-    if ((AnonShape_006B5570_4D68B99C *)local_10->field_1AE8 != (AnonShape_006B5570_4D68B99C *)0x0) {
-      FUN_006b5570((AnonShape_006B5570_4D68B99C *)local_10->field_1AE8);
+    if (local_10->field_1AE8 != (DArrayTy *)0x0) {
+      FUN_006b5570(local_10->field_1AE8);
     }
     pDVar2 = Library::DKW::TBL::SArrayCreate((DArrayTy *)0x0,1,1);
-    this_00->field_1AE8 = &pDVar2->flags;
+    this_00->field_1AE8 = pDVar2;
     Library::DKW::TBL::FUN_006b5aa0(&pDVar2->flags,&DAT_008016a0);
     if (this_00->field_1E8E != 0) {
       FreeAndNull((void **)&this_00->field_1E8E);
@@ -104,8 +104,8 @@ void __thiscall FSGSTy::LadderCtrls(FSGSTy *this)
     local_84c = 0x690a;
     local_88c = 0x6988;
     local_854 = local_894;
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-    (*(code *)this_00->field_000C->vtable->field_0008)(6,&this_00->field_1AC4,0,local_8e0,0);
+    (*this_00->field_000C->vtable->CreateObject)
+              ((SystemClassTy *)this_00->field_000C,6,&this_00->field_1AC4,(int *)0x0,local_8e0,0);
     this_00->field_002D = 0x61;
     *(undefined4 *)&this_00->field_0x35 = 0;
     FUN_006e6080(this_00,0xf,0,(undefined4 *)&this_00->field_0x1d);

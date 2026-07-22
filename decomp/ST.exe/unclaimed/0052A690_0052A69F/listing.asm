@@ -1,0 +1,4 @@
+0052A690  pointer  0052a65e
+0052A694  pointer  0052a67d
+0052A698  pointer  0052a66d
+0052A69C  pointer  0052a67d

@@ -24,8 +24,7 @@ STAllPlayersC::SetActivityToObjs
       if (pSVar2 == (STGameObjC *)0x0) {
         return;
       }
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-      (**(code **)&pSVar2->vtable[1].field_0x18)(1);
+      (*pSVar2->vtable[1].vfunc_14)(1);
       return;
     }
     if (param_2 == 0x1ae) {
@@ -48,8 +47,7 @@ LAB_0042d3b2:
       DArrayGetElement(param_3,index,&param_1);
       if (((short)param_1 != -1) &&
          (pSVar2 = GetObjPtr(this,objPtr,param_1,CASE_1), pSVar2 != (STGameObjC *)0x0)) {
-        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-        (**(code **)&pSVar2->vtable[1].field_0x18)(1);
+        (*pSVar2->vtable[1].vfunc_14)(1);
       }
       index = index + 1;
     } while ((int)index < (int)param_4);
@@ -63,8 +61,7 @@ cf_common_exit_0042D44C:
       if (pSVar2 == (STGameObjC *)0x0) {
         return;
       }
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-      (**(code **)&pSVar2->vtable[1].field_0x18)(1);
+      (*pSVar2->vtable[1].vfunc_14)(1);
       return;
     }
     if (param_2 == 0) {

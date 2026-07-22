@@ -398,7 +398,8 @@ LAB_0044738a:
         } while ((int)local_8 < (int)local_3c);
       }
       pDVar3 = local_7c;
-      *(uint *)((int)&g_playerRuntime[0].field2179_0xa0a + local_5c) = PTR_00802a38->field_00E4;
+      *(uint *)((int)&g_playerRuntime[0].field2179_0xa0a + local_5c) =
+           g_playSystem_00802A38->field_00E4;
       if (local_7c != (DArrayTy *)0x0) {
         dVar8 = local_7c->count;
         local_8 = 0;

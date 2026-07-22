@@ -1,0 +1,9 @@
+0059BCE4  pointer  0059b852
+0059BCE8  pointer  0059b852
+0059BCEC  pointer  0059b852
+0059BCF0  pointer  0059b852
+0059BCF4  pointer  0059b97b
+0059BCF8  pointer  0059b852
+0059BCFC  pointer  0059ba6f
+0059BD00  pointer  0059bbf6
+0059BD04  pointer  0059bb34

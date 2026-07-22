@@ -13,11 +13,11 @@ CPanelTy::PaintCostsXYSI
   code *pcVar1;
   CPanelTy *pCVar2;
   int iVar3;
-  uint *puVar4;
-  int iVar5;
-  uint uVar6;
+  uint *resourceString;
+  int iVar4;
+  uint uVar5;
+  int iVar6;
   int iVar7;
-  int iVar8;
   InternalExceptionFrame local_4c;
   CPanelTy *local_8;
 
@@ -29,13 +29,13 @@ CPanelTy::PaintCostsXYSI
   if (iVar3 == 0) {
     if ((param_2 != 0xffff) || (param_3 != 0xffff)) {
       ccFntTy::SetSurf(local_8->field_01B8,param_1,0,0x5c,0x50,0x3c,10);
-      iVar8 = -1;
       iVar7 = -1;
-      uVar6 = 5;
-      iVar5 = -1;
+      iVar6 = -1;
+      uVar5 = 5;
+      iVar4 = -1;
       iVar3 = -1;
-      puVar4 = (uint *)LoadResourceString(0x36b3,HINSTANCE_00807618);
-      ccFntTy::WrTxt(pCVar2->field_01B8,puVar4,iVar3,iVar5,uVar6,iVar7,iVar8);
+      resourceString = (uint *)LoadResourceString(0x36b3,g_module_00807618);
+      ccFntTy::WrTxt(pCVar2->field_01B8,resourceString,iVar3,iVar4,uVar5,iVar6,iVar7);
     }
     if (param_2 != 0xffff) {
       wsprintfA(&pCVar2->field_0x1e1,"%4d",param_2);
@@ -51,9 +51,9 @@ CPanelTy::PaintCostsXYSI
     return;
   }
   g_currentExceptionFrame = local_4c.previous;
-  iVar5 = ReportDebugMessage("E:\\__titans\\Andrey\\cp_sup.cpp",0xd9,0,iVar3,"%s",
+  iVar4 = ReportDebugMessage("E:\\__titans\\Andrey\\cp_sup.cpp",0xd9,0,iVar3,"%s",
                              "CPanelTy::PaintCostsXYSI");
-  if (iVar5 != 0) {
+  if (iVar4 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   RaiseInternalException(iVar3,0,"E:\\__titans\\Andrey\\cp_sup.cpp",0xd9);

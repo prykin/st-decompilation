@@ -120,8 +120,8 @@ switchD_005326e6_caseD_9:
   g_currentExceptionFrame = local_94.previous;
 LAB_00532758:
   if ((&stack0x00000000 != (undefined1 *)0x12c) &&
-     (pcVar8 = LoadResourceString(0x2711,HINSTANCE_00807618), pcVar8 != (char *)0x0)) {
-    pcVar8 = LoadResourceString(0x2711,HINSTANCE_00807618);
+     (pcVar8 = LoadResourceString(0x2711,g_module_00807618), pcVar8 != (char *)0x0)) {
+    pcVar8 = LoadResourceString(0x2711,g_module_00807618);
     uVar10 = 0xffffffff;
     do {
       pcVar14 = pcVar8;

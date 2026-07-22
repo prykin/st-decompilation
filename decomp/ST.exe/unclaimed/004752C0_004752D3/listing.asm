@@ -1,0 +1,5 @@
+004752C0  pointer  00474a4e
+004752C4  pointer  00474aef
+004752C8  pointer  00474aef
+004752CC  pointer  00475282
+004752D0  pointer  00474a81

@@ -1,0 +1,8 @@
+00579EB4  pointer  00579892
+00579EB8  pointer  005798fc
+00579EBC  pointer  00579956
+00579EC0  pointer  005799be
+00579EC4  pointer  00579a17
+00579EC8  pointer  00579a90
+00579ECC  pointer  00579b05
+00579ED0  pointer  00579b6a

@@ -110,7 +110,7 @@ LAB_004ccd43:
   thunk_FUN_004b9920(this);
   iVar5 = 0;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
-  thunk_FUN_00419c70(this,extraout_EDX,0);
+  TLOEmbryoTy::sub_00419C70(this,extraout_EDX,0);
   thunk_FUN_0041f630(this);
   if ((*(int *)(&DAT_00792778 + *(int *)((int)this + 0x235) * 4) == 0) ||
      (iVar2 = thunk_FUN_004e81b0(*(int *)((int)this + 0x24),*(int *)((int)this + 0x235),0),
@@ -121,11 +121,11 @@ LAB_004ccd43:
     puVar3 = (undefined *)
              thunk_FUN_004e81b0(*(int *)((int)this + 0x24),*(int *)((int)this + 0x235),0);
   }
-  thunk_FUN_0041c3f0(this,puVar3);
+  TLOEmbryoTy::sub_0041C3F0(this,puVar3);
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   uVar9 = extraout_EDX_00;
   if (*(int *)((int)this + 0x5ac) == 0x34) {
-    thunk_FUN_004dd880((int)this);
+    thunk_FUN_004dd880(this);
     /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
     uVar9 = extraout_EDX_01;
   }
@@ -175,7 +175,7 @@ LAB_004ccedc:
         goto LAB_004cd038;
       }
     }
-    iVar2 = FUN_006e62d0(PTR_00802a38,*(int *)((int)this + 0x40c),(int *)&param_2);
+    iVar2 = FUN_006e62d0(g_playSystem_00802A38,*(int *)((int)this + 0x40c),(int *)&param_2);
     if ((iVar2 == 0) && (param_2 != (int *)0x0)) {
       thunk_FUN_0060bc80(param_2,*(undefined4 *)((int)this + 0x24),
                          (uint)*(ushort *)((int)this + 0x32));
@@ -184,15 +184,16 @@ LAB_004ccedc:
 /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
 LAB_004cd038:
   if (((*(int *)((int)this + 0x5ac) == 0x6a) &&
-      (*(uint *)((int)this + 0x4d4) <= PTR_00802a38->field_00E4)) &&
-     (iVar2 = FUN_006e62d0(PTR_00802a38,*(int *)((int)this + 0x4d0),(int *)&param_2), iVar2 == 0)) {
+      (*(uint *)((int)this + 0x4d4) <= g_playSystem_00802A38->field_00E4)) &&
+     (iVar2 = FUN_006e62d0(g_playSystem_00802A38,*(int *)((int)this + 0x4d0),(int *)&param_2),
+     iVar2 == 0)) {
     thunk_FUN_005822b0(param_2,*(undefined4 *)((int)this + 0x24),*(undefined2 *)((int)this + 0x32));
   }
   if ((*(int *)((int)this + 0x5ac) == 0x41) && (0 < *(int *)((int)this + 0x4e4))) {
     piVar8 = (int *)((int)this + 0x4d0);
     do {
-      if ((*piVar8 != 0) && (iVar2 = FUN_006e62d0(PTR_00802a38,*piVar8,(int *)&param_2), iVar2 == 0)
-         ) {
+      if ((*piVar8 != 0) &&
+         (iVar2 = FUN_006e62d0(g_playSystem_00802A38,*piVar8,(int *)&param_2), iVar2 == 0)) {
         thunk_FUN_00590130(param_2,*(undefined4 *)((int)this + 0x24));
       }
       iVar5 = iVar5 + 1;
@@ -200,11 +201,13 @@ LAB_004cd038:
     } while (iVar5 < *(int *)((int)this + 0x4e4));
   }
   if ((*(int *)((int)this + 0x5ac) == 0x69) &&
-     (iVar5 = FUN_006e62d0(PTR_00802a38,*(int *)((int)this + 0x4ec),(int *)&param_2), iVar5 == 0)) {
+     (iVar5 = FUN_006e62d0(g_playSystem_00802A38,*(int *)((int)this + 0x4ec),(int *)&param_2),
+     iVar5 == 0)) {
     thunk_FUN_00618b40(param_2,*(undefined4 *)((int)this + 0x24),*(undefined2 *)((int)this + 0x32));
   }
   if (((*(int *)((int)this + 0x5ac) == 0x70) && (*(int *)((int)this + 0x4f0) != 0)) &&
-     (iVar5 = FUN_006e62d0(PTR_00802a38,*(int *)((int)this + 0x4f0),(int *)&param_2), iVar5 == 0)) {
+     (iVar5 = FUN_006e62d0(g_playSystem_00802A38,*(int *)((int)this + 0x4f0),(int *)&param_2),
+     iVar5 == 0)) {
     thunk_FUN_0058cf90(param_2,*(undefined4 *)((int)this + 0x24),*(undefined2 *)((int)this + 0x32));
   }
   if (*(int *)((int)this + 0x24) != *(int *)((int)this + 0x23d)) {

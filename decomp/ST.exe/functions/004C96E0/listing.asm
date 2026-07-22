@@ -1,4 +1,4 @@
-FUN_004c96e0:
+TLOBaseTy::sub_004C96E0:
 004C96E0  56                        PUSH ESI
 004C96E1  8B F1                     MOV ESI,ECX
 004C96E3  8B 0D 74 A1 7F 00         MOV ECX,dword ptr [0x007fa174]

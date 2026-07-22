@@ -1,0 +1,4 @@
+00582FCC  pointer  0058284d
+00582FD0  pointer  00582cd5
+00582FD4  pointer  00582658
+00582FD8  pointer  00582e4a

@@ -29,7 +29,7 @@ undefined4 __thiscall STLightC::LoadNextLight(STLightC *this)
     puVar3 = Library::Ourlib::MFRLOAD::mfRLoad
                        (DAT_00806774,CASE_0,(&PTR_s_light01_007d0164)[local_c->field_003C],
                         0xffffffff,0,1,0,(undefined4 *)0x0);
-    thunk_FUN_0061d9c0(this_00,puVar3,(int *)&local_8,0);
+    sub_0061D9C0(this_00,puVar3,(int *)&local_8,0);
     puVar4 = (undefined4 *)Library::DKW::LIB::FUN_006aac70(this_00->field_0093 << 4);
     this_00->field_0057 = puVar4;
     for (iVar2 = (this_00->field_0093 & 0xfffffffU) << 2; iVar2 != 0; iVar2 = iVar2 + -1) {
@@ -52,7 +52,7 @@ undefined4 __thiscall STLightC::LoadNextLight(STLightC *this)
     *(undefined4 *)this_00->field_0057 = 0;
     *(undefined4 *)(this_00->field_0057 + this_00->field_0093 * 0xc) = 0;
     pDVar5 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,local_8,0x30,10);
-    this_00->field_00A3 = &pDVar5->flags;
+    this_00->field_00A3 = pDVar5;
     g_currentExceptionFrame = local_50.previous;
     return 1;
   }

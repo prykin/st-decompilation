@@ -13,18 +13,17 @@ bool __fastcall FUN_005f0a30(STBoatC *param_1)
   uint uVar5;
   int iVar6;
   int iVar7;
-  int iVar8;
+  dword dVar8;
 
-  uVar5 = (uint)(byte)param_1->field_0x24f;
-  if ((param_1->field_0x24f != 0) &&
-     (uVar5 = (uint)*(ushort *)&param_1->field_0x246, 0 < (short)*(ushort *)&param_1->field_0x246))
-  {
-    uVar5 = thunk_FUN_004961b0(*(short *)&param_1->field_0x242,*(short *)&param_1->field_0x244,
+  uVar5 = (uint)(byte)param_1->field_024F;
+  if ((param_1->field_024F != 0) &&
+     (uVar5 = (uint)(ushort)param_1->field_0246, 0 < (short)param_1->field_0246)) {
+    uVar5 = thunk_FUN_004961b0(param_1->field_0242,*(short *)&param_1->field_0x244,
                                (short)(uVar5 - 1));
     if (uVar5 == 0) {
-      sVar1 = *(short *)&param_1->field_0x242;
+      sVar1 = param_1->field_0242;
       sVar2 = *(short *)&param_1->field_0x244;
-      uVar4 = *(short *)&param_1->field_0x246 - 1;
+      uVar4 = param_1->field_0246 - 1;
       uVar5 = (uint)uVar4;
       if ((((-1 < sVar1) && (sVar1 < g_worldGrid.sizeX)) && (-1 < sVar2)) &&
          (((sVar2 < g_worldGrid.sizeY && (-1 < (short)uVar4)) && ((short)uVar4 < g_worldGrid.sizeZ))
@@ -38,8 +37,8 @@ bool __fastcall FUN_005f0a30(STBoatC *param_1)
           if (uVar5 == 99) {
             iVar6 = (*param_1->vtable[1].vfunc_14)();
             iVar7 = (*param_1->vtable[1].vfunc_0C)();
-            iVar8 = (*param_1->vtable->vfunc_2C)();
-            thunk_FUN_004b7e30(this,iVar8,iVar7,iVar6);
+            dVar8 = (*param_1->vtable->slot_2C)(param_1);
+            thunk_FUN_004b7e30(this,dVar8,iVar7,iVar6);
             iVar6 = (*param_1->vtable->vfunc_AC)(*(undefined4 *)&this->field_0x18);
             uVar5 = 0;
             if (iVar6 != 0) {

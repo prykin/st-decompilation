@@ -18,15 +18,15 @@ void __thiscall ChooseMapTy::PaintChooseMap(ChooseMapTy *this,char param_1)
   ChooseMapTy *pCVar3;
   int errorCode;
   UINT resourceId;
-  uint *puVar4;
-  int iVar5;
+  uint *resourceString;
+  int iVar4;
   MMMObjTy *this_00;
   undefined4 *this_01;
   StartServTy *this_02;
+  uint uVar5;
   uint uVar6;
-  uint uVar7;
-  ccFntTy *pcVar8;
-  undefined4 uVar9;
+  ccFntTy *pcVar7;
+  undefined4 uVar8;
   InternalExceptionFrame local_4c;
   ChooseMapTy *local_8;
 
@@ -36,16 +36,16 @@ void __thiscall ChooseMapTy::PaintChooseMap(ChooseMapTy *this,char param_1)
   errorCode = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
   if (errorCode != 0) {
     g_currentExceptionFrame = local_4c.previous;
-    iVar5 = ReportDebugMessage("E:\\__titans\\Start\\load_obj.cpp",0x1bb,0,errorCode,
+    iVar4 = ReportDebugMessage("E:\\__titans\\Start\\load_obj.cpp",0x1bb,0,errorCode,
                                "%s","ChooseMapTy::PaintChooseMap");
-    if (iVar5 != 0) {
+    if (iVar4 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
     RaiseInternalException(errorCode,0,"E:\\__titans\\Start\\load_obj.cpp",0x1bb);
     return;
   }
   FUN_006b5f80((int *)PTR_008075a8,0,0,g_nWidth_00806730,DAT_00806734);
-  PutDDX(0,0,'\x01',(BITMAPINFO *)PTR_0081176c->field_002C);
+  PutDDX(0,0,'\x01',(BITMAPINFO *)g_startSystem_0081176C->field_002C);
   pCVar3 = local_8;
   if ((local_8->field_20B8 == (HoloTy *)0x0) && (param_1 == '\0')) {
     MMMObjTy::OutBSlProc
@@ -71,11 +71,11 @@ void __thiscall ChooseMapTy::PaintChooseMap(ChooseMapTy *this,char param_1)
   case CASE_2:
   case CASE_4:
   case CASE_5:
-    pcVar8 = PTR_0081176c->field_0030;
+    pcVar7 = g_startSystem_0081176C->field_0030;
     resourceId = 0x26ae;
     break;
   case CASE_3:
-    pcVar8 = PTR_0081176c->field_0030;
+    pcVar7 = g_startSystem_0081176C->field_0030;
     resourceId = 0x26af;
     break;
   default:
@@ -84,18 +84,18 @@ void __thiscall ChooseMapTy::PaintChooseMap(ChooseMapTy *this,char param_1)
   case CASE_A:
   case CASE_B:
   case CASE_C:
-    pcVar8 = PTR_0081176c->field_0030;
+    pcVar7 = g_startSystem_0081176C->field_0030;
     resourceId = 0x26ad;
     break;
   case CASE_13:
-    pcVar8 = PTR_0081176c->field_0030;
+    pcVar7 = g_startSystem_0081176C->field_0030;
     resourceId = (DAT_00803400 != '\f') + 0x26ad;
   }
-  uVar9 = 0;
-  uVar7 = 0xffffffff;
-  uVar6 = 0xfffffffe;
-  puVar4 = (uint *)LoadResourceString(resourceId,HINSTANCE_00807618);
-  StartServTy::WrTextDDX(this_02,0,0xe9,0x14,0x14c,0x18,puVar4,uVar6,uVar7,pcVar8,uVar9);
+  uVar8 = 0;
+  uVar6 = 0xffffffff;
+  uVar5 = 0xfffffffe;
+  resourceString = (uint *)LoadResourceString(resourceId,g_module_00807618);
+  StartServTy::WrTextDDX(this_02,0,0xe9,0x14,0x14c,0x18,resourceString,uVar5,uVar6,pcVar7,uVar8);
 switchD_005ad1b8_caseD_6:
   g_currentExceptionFrame = local_4c.previous;
   return;

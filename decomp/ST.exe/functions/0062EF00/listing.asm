@@ -1,4 +1,4 @@
-FUN_0062ef00:
+STRubbishC::sub_0062EF00:
 0062EF00  55                        PUSH EBP
 0062EF01  8B EC                     MOV EBP,ESP
 0062EF03  56                        PUSH ESI

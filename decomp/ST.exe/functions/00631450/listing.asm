@@ -1,4 +1,4 @@
-FUN_00631450:
+STManRuinC::sub_00631450:
 00631450  53                        PUSH EBX
 00631451  57                        PUSH EDI
 00631452  8B F9                     MOV EDI,ECX

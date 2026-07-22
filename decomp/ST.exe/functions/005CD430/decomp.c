@@ -71,7 +71,7 @@ void __thiscall SettMapMTy::PrepPlList(SettMapMTy *this,int *param_1)
     local_8 = (cMf32 *)local_10->field_1F3F;
   }
   else {
-    local_8 = (cMf32 *)local_10->field_1F43;
+    local_8 = local_10->field_1F43;
   }
   pDVar7 = local_10->field_1F84;
   if (pDVar7 != (DArrayTy *)0x0) {

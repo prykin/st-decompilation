@@ -119,7 +119,7 @@ LAB_004c796d:
     }
     break;
   case 6:
-    iVar3 = thunk_FUN_004e1490((int)this);
+    iVar3 = thunk_FUN_004e1490(this);
     if (iVar3 != 0) {
       if (param_2 == 0xdd) {
         iVar3 = thunk_FUN_004d89b0(*(char *)((int)this + 0x24));

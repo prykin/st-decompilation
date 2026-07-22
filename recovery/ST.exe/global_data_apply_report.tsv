@@ -2,18 +2,18 @@ address	status	proposed_name	detail
 00792CA0	disabled		apply flags are 0
 00798FC8	disabled	g_anonShape_0041D2B0_CE8C6BD3_00798FC8	apply flags are 0
 007C2B14	disabled	g_char_007C2B14	apply flags are 0
-007C2B20	disabled	g_text_007C2B20	apply flags are 0
+007C2B20	disabled	g_char_007C2B20	apply flags are 0
 007C3B5C	disabled	g_text_007C3B5C	apply flags are 0
-007C3B60	disabled	g_text_007C3B60	apply flags are 0
+007C3B60	disabled		apply flags are 0
 007C7078	disabled		apply flags are 0
 007C7080	disabled		apply flags are 0
 007C7274	disabled	g__Source_007C7274	apply flags are 0
 007C8FF4	disabled		apply flags are 0
-007CC8BC	disabled	g_text_007CC8BC	apply flags are 0
+007CC8BC	disabled		apply flags are 0
 007D03B8	disabled		apply flags are 0
 007D03BA	disabled		apply flags are 0
 007D03BC	disabled		apply flags are 0
-007D1DB8	disabled	g_text_007D1DB8	apply flags are 0
+007D1DB8	disabled		apply flags are 0
 007D8010	disabled		apply flags are 0
 007D8012	disabled		apply flags are 0
 007DF9E8	disabled		apply flags are 0
@@ -24,23 +24,17 @@ address	status	proposed_name	detail
 007EE1AC	disabled		apply flags are 0
 007EE1B0	disabled		apply flags are 0
 007F4D04	disabled	g_short_007F4D04	apply flags are 0
-007F4D18	disabled	g_value_007F4D18	apply flags are 0
-007FA168	disabled	g_value_007FA168	apply flags are 0
+007F4D18	disabled		apply flags are 0
+007FA168	disabled		apply flags are 0
 007FB230	disabled		apply flags are 0
 007FB240	disabled		apply flags are 0
 007FB24C	disabled	g_value_007FB24C	apply flags are 0
 007FB278	disabled		apply flags are 0
-007FB2AC	partial	g_tLOBldMark_007FB2AC	type=preserved(stale/concrete data); name=applied(g_tLOBldMark_007FB2AC)
-00801678	applied	g_behPanel_00801678	type=applied(/BehPanelTy *32); name=applied(g_behPanel_00801678)
-0080168C	applied	g_frmPanel_0080168C	type=applied(/FrmPanelTy *32); name=applied(g_frmPanel_0080168C)
-00801690	partial	g_helpPanel_00801690	type=preserved(stale/concrete data); name=applied(g_helpPanel_00801690)
-00801698	applied	g_infocPanel_00801698	type=applied(/InfocPanelTy *32); name=applied(g_infocPanel_00801698)
-008016EC	applied	g_sAMPanel_008016EC	type=applied(/SAMPanelTy *32); name=applied(g_sAMPanel_008016EC)
-008026F0	applied	g_dArray_008026F0	type=applied(/SubmarineTitans/Recovered/DArrayTy *32); name=applied(g_dArray_008026F0)
-00802A44	applied	g_tradePanel_00802A44	type=applied(/TradePanelTy *32); name=applied(g_tradePanel_00802A44)
-00802A48	applied	g_upgPanel_00802A48	type=applied(/UpgPanelTy *32); name=applied(g_upgPanel_00802A48)
-00802AD0	disabled	g_value_00802AD0	apply flags are 0
-008030D4	disabled	g_value_008030D4	apply flags are 0
+007FB284	applied	g_dumpClass_007FB284	type=applied(/DumpClassC *32); name=applied(g_dumpClass_007FB284)
+007FB2AC	preserved	g_tLOBldMark_007FB2AC	type=preserved(stale/concrete data)
+00801690	preserved	g_helpPanel_00801690	type=preserved(stale/concrete data)
+00802AD0	disabled		apply flags are 0
+008030D4	disabled		apply flags are 0
 00803144	disabled		apply flags are 0
 008032A4	disabled		apply flags are 0
 008032A8	disabled		apply flags are 0
@@ -59,7 +53,6 @@ address	status	proposed_name	detail
 008033B4	disabled	g_value_008033B4	apply flags are 0
 00803408	disabled	g__Path_00803408	apply flags are 0
 00806724	disabled		apply flags are 0
-00806740	disabled	g_array_00806740	apply flags are 0
 00806768	disabled	g_cMf32_00806768	apply flags are 0
 00806778	disabled	g_cMf32_00806778	apply flags are 0
 00806788	disabled	g_cMf32_00806788	apply flags are 0
@@ -77,32 +70,32 @@ address	status	proposed_name	detail
 00809960	disabled		apply flags are 0
 0080C3C3	disabled	g__Source_0080C3C3	apply flags are 0
 0080C522	disabled		apply flags are 0
-0080C632	disabled	g__Path_0080C632	apply flags are 0
-0080E303	disabled	g__Dest_0080E303	apply flags are 0
+0080C632	disabled		apply flags are 0
+0080E303	disabled		apply flags are 0
 0080ED12	disabled	g_value_0080ED12	apply flags are 0
 0080ED16	disabled		apply flags are 0
 0080EF1E	disabled		apply flags are 0
 0080F22A	disabled		apply flags are 0
 00811718	disabled	g_value_00811718	apply flags are 0
-0081171C	disabled	g_value_0081171C	apply flags are 0
-008117A4	disabled	g_sTManRub3_008117A4	apply flags are 0
-008117C0	disabled	g__Str1_008117C0	apply flags are 0
+0081171C	disabled		apply flags are 0
+00811784	applied	g_manBasis_00811784	type=applied(/STManBasisC *32); name=applied(g_manBasis_00811784)
+008117A4	applied	g_manRub3_008117A4	type=applied(/STManRub3C *32); name=applied(g_manRub3_008117A4)
+008117B0	applied	g_manRuin_008117B0	type=applied(/STManRuinC *32); name=applied(g_manRuin_008117B0)
+008117C0	disabled		apply flags are 0
 00811908	disabled		apply flags are 0
 00811914	disabled		apply flags are 0
 00811970	disabled	g_int_00811970	apply flags are 0
 00811978	disabled	g_int_00811978	apply flags are 0
 00811990	disabled		apply flags are 0
 00811AA0	disabled		apply flags are 0
-00811AF0	disabled	g__Source_00811AF0	apply flags are 0
+00811AF0	disabled	g_char_00811AF0	apply flags are 0
 00811C80	disabled		apply flags are 0
 00847D0C	disabled	g__Dest_00847D0C	apply flags are 0
-008489B4	disabled		apply flags are 0
 008489C8	disabled		apply flags are 0
 008489D0	disabled	g_cMf32_008489D0	apply flags are 0
-008489E0	disabled	g_text_008489E0	apply flags are 0
-00848A04	disabled	g__Value_00848A04	apply flags are 0
-00848A14	disabled	g_int_00848A14	apply flags are 0
-00853DD4	disabled	g_value_00853DD4	apply flags are 0
+008489E0	disabled		apply flags are 0
+00848A04	disabled		apply flags are 0
+00853DD4	disabled		apply flags are 0
 00853DE4	disabled		apply flags are 0
 00854EE8	disabled	g_anonShape_006CEC40_BB23E716_00854EE8	apply flags are 0
 00854EF0	disabled		apply flags are 0
@@ -110,19 +103,17 @@ address	status	proposed_name	detail
 00854F08	disabled		apply flags are 0
 00854F3C	disabled		apply flags are 0
 00854F58	disabled	g_char_00854F58	apply flags are 0
-00854F68	disabled	g_anonShape_006D86E0_768BB816_00854F68	apply flags are 0
-00854F74	applied	g_tagBITMAPINFO_00854F74	type=applied(/wingdi.h/tagBITMAPINFO *32); name=applied(g_tagBITMAPINFO_00854F74)
+00854F68	disabled	g_uint_00854F68	apply flags are 0
 00854F90	disabled	g_int_00854F90	apply flags are 0
 00854FD0	disabled	g_uint_00854FD0	apply flags are 0
 00854FD8	disabled	g_int_00854FD8	apply flags are 0
 00854FDC	disabled	g_int_00854FDC	apply flags are 0
-00854FE0	disabled	g_anonShape_006B5B10_E0D06CF1_00854FE0	apply flags are 0
 008568D0	disabled		apply flags are 0
 00856FE4	disabled	g_byte_00856FE4	apply flags are 0
 00857004	disabled	g_byte_00857004	apply flags are 0
 00857028	disabled	g_byte_00857028	apply flags are 0
 00857118	disabled	g_uint_00857118	apply flags are 0
-0085712C	disabled	g_dwMilliseconds_0085712C	apply flags are 0
-0085713C	disabled	g_hThread_0085713C	apply flags are 0
-0085A5C4	disabled	g_hHeap_0085A5C4	apply flags are 0
+0085712C	disabled		apply flags are 0
+0085713C	disabled		apply flags are 0
+0085A5C4	disabled		apply flags are 0
 0085E000	disabled	g_lpAddend_0085E000	apply flags are 0

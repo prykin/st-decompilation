@@ -90,16 +90,14 @@ int __thiscall STGameObjC::GetMessage(STGameObjC *this,STMessage *message)
     uVar14 = iVar13 * 0x41c64e6d + 0x3039;
     pSVar12->field_001C = uVar14;
     pSVar12->field_00F8 = (short)((ulonglong)(uVar14 >> 0x10) % 0x1f) + 0x1e;
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-    (*(code *)pSVar12->vtable->field_00CC)();
+    (*pSVar12->vtable->vfunc_CC)();
     g_currentExceptionFrame = local_58.previous;
     return 0;
   }
   if (-1 < pSVar12->field_008F) {
     pSVar12->field_008F = pSVar12->field_008F + 1;
   }
-  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-  (**(code **)(pSVar12->vtable + 1))();
+  (*pSVar12->vtable->vfunc_D0)();
   if (pSVar12->field_01CD != 1) {
     g_currentExceptionFrame = local_58.previous;
     return 0;
@@ -113,8 +111,7 @@ int __thiscall STGameObjC::GetMessage(STGameObjC *this,STMessage *message)
       }
       iVar13 = thunk_FUN_004fab10(g_cPanel_00801688,CASE_1);
       if (iVar13 != 0) {
-        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-        (*(code *)pSVar12->vtable->field_0030)(pSVar12->field_0121);
+        (*pSVar12->vtable->vfunc_30)(pSVar12->field_0121);
         iVar13 = 0x1b;
         bVar36 = true;
         psVar21 = (short *)pSVar12->field_0121;
@@ -144,8 +141,7 @@ int __thiscall STGameObjC::GetMessage(STGameObjC *this,STMessage *message)
       }
       iVar13 = thunk_FUN_004fab10(g_cPanel_00801688,CASE_2);
       if (iVar13 != 0) {
-        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-        (*(code *)pSVar12->vtable->field_0034)(pSVar12->field_0129);
+        (*pSVar12->vtable->vfunc_34)(pSVar12->field_0129);
         iVar13 = 0x17;
         bVar36 = true;
         piVar19 = (int *)pSVar12->field_0129;
@@ -174,8 +170,7 @@ int __thiscall STGameObjC::GetMessage(STGameObjC *this,STMessage *message)
       }
       iVar13 = thunk_FUN_004fab10(g_cPanel_00801688,CASE_E);
       if (iVar13 != 0) {
-        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-        (*(code *)pSVar12->vtable->field_0058)(pSVar12->field_01B1);
+        (*pSVar12->vtable->vfunc_58)(pSVar12->field_01B1);
         pAVar4 = pSVar12->field_01AD;
         local_8 = (AnonShape_0041AF40_EF4C5356 *)pSVar12->field_01B1;
         iVar13 = 0xb;
@@ -206,8 +201,7 @@ int __thiscall STGameObjC::GetMessage(STGameObjC *this,STMessage *message)
         g_currentExceptionFrame = local_58.previous;
         return 0;
       }
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-      (**(code **)&pSVar12->vtable->field_0x64)(pSVar12->field_01C9);
+      (*pSVar12->vtable->vfunc_64)(pSVar12->field_01C9);
       puVar5 = pSVar12->field_01C5;
       puVar6 = pSVar12->field_01C9;
       iVar13 = 3;
@@ -235,8 +229,7 @@ int __thiscall STGameObjC::GetMessage(STGameObjC *this,STMessage *message)
         if (uVar14 == 0x14) {
           if ((g_cPanel_00801688 != (CPanelTy *)0x0) &&
              (iVar13 = thunk_FUN_004fab10(g_cPanel_00801688,CASE_1), iVar13 != 0)) {
-            /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-            (*(code *)pSVar12->vtable->field_0030)(pSVar12->field_0121);
+            (*pSVar12->vtable->vfunc_30)(pSVar12->field_0121);
             iVar13 = 0x1b;
             bVar36 = true;
             psVar21 = (short *)pSVar12->field_0121;
@@ -284,8 +277,7 @@ int __thiscall STGameObjC::GetMessage(STGameObjC *this,STMessage *message)
 LAB_0041b128:
           if ((g_cPanel_00801688 != (CPanelTy *)0x0) &&
              (iVar13 = thunk_FUN_004fab10(g_cPanel_00801688,CASE_2), iVar13 != 0)) {
-            /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-            (*(code *)pSVar12->vtable->field_0034)(pSVar12->field_0129);
+            (*pSVar12->vtable->vfunc_34)(pSVar12->field_0129);
             iVar13 = 0x17;
             bVar36 = true;
             piVar19 = (int *)pSVar12->field_0129;
@@ -331,8 +323,7 @@ LAB_0041b128:
             pSVar12->field_0179 = 0;
             pSVar12->field_017D = 0;
             pSVar12->field_0181 = 0;
-            /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-            (*(code *)pSVar12->vtable->field_0040)(puVar16);
+            (*pSVar12->vtable->vfunc_40)(puVar16);
             local_c = (DArrayTy *)pSVar12->field_015D;
             bVar36 = false;
             dVar2 = *(dword *)(*puVar16 + 0xc);
@@ -483,8 +474,7 @@ LAB_0041b308:
           }
           if ((g_cPanel_00801688 != (CPanelTy *)0x0) &&
              (iVar13 = thunk_FUN_004fab10(g_cPanel_00801688,CASE_B), iVar13 != 0)) {
-            /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-            (*(code *)pSVar12->vtable->field_004C)(pSVar12->field_0199);
+            (*pSVar12->vtable->vfunc_4C)(pSVar12->field_0199);
             pAVar3 = pSVar12->field_0195;
             local_c = (DArrayTy *)pSVar12->field_0199;
             iVar13 = 0x13;
@@ -510,8 +500,7 @@ LAB_0041b308:
           }
           if ((g_cPanel_00801688 != (CPanelTy *)0x0) &&
              (iVar13 = thunk_FUN_004fab10(g_cPanel_00801688,CASE_E), iVar13 != 0)) {
-            /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-            (*(code *)pSVar12->vtable->field_0058)(pSVar12->field_01B1);
+            (*pSVar12->vtable->vfunc_58)(pSVar12->field_01B1);
             pAVar4 = pSVar12->field_01AD;
             local_8 = (AnonShape_0041AF40_EF4C5356 *)pSVar12->field_01B1;
             iVar13 = 0xb;
@@ -542,8 +531,7 @@ LAB_0041b308:
             g_currentExceptionFrame = local_58.previous;
             return 0;
           }
-          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-          (*(code *)pSVar12->vtable->field_0060)(pSVar12->field_01C1);
+          (*pSVar12->vtable->vfunc_60)(pSVar12->field_01C1);
           iVar13 = 0x90;
           bVar36 = true;
           piVar19 = (int *)pSVar12->field_01C1;
@@ -589,8 +577,7 @@ LAB_0041bdb3:
     }
     iVar13 = thunk_FUN_004fab10(g_cPanel_00801688,CASE_5);
     if (iVar13 != 0) {
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-      (*(code *)pSVar12->vtable->field_0030)(pSVar12->field_0121);
+      (*pSVar12->vtable->vfunc_30)(pSVar12->field_0121);
       iVar13 = 0x1b;
       bVar36 = true;
       psVar21 = (short *)pSVar12->field_0121;
@@ -623,8 +610,7 @@ LAB_0041bdb3:
       g_currentExceptionFrame = local_58.previous;
       return 0;
     }
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-    (*(code *)pSVar12->vtable->field_0034)(pSVar12->field_0129);
+    (*pSVar12->vtable->vfunc_34)(pSVar12->field_0129);
     iVar13 = 0x17;
     bVar36 = true;
     piVar19 = (int *)pSVar12->field_0129;
@@ -659,8 +645,7 @@ LAB_0041bdb3:
     }
     iVar13 = thunk_FUN_004fab10(g_cPanel_00801688,CASE_4);
     if (iVar13 != 0) {
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-      (*(code *)pSVar12->vtable->field_0034)(pSVar12->field_0129);
+      (*pSVar12->vtable->vfunc_34)(pSVar12->field_0129);
       iVar13 = 0x17;
       bVar36 = true;
       piVar19 = (int *)pSVar12->field_0129;
@@ -692,8 +677,7 @@ LAB_0041bdb3:
       g_currentExceptionFrame = local_58.previous;
       return 0;
     }
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-    (*(code *)pSVar12->vtable->field_0030)(pSVar12->field_0121);
+    (*pSVar12->vtable->vfunc_30)(pSVar12->field_0121);
     iVar13 = 0x1b;
     bVar36 = true;
     psVar21 = (short *)pSVar12->field_0121;
@@ -726,8 +710,7 @@ LAB_0041bdb3:
   }
   iVar13 = thunk_FUN_004fab10(g_cPanel_00801688,CASE_4);
   if (iVar13 != 0) {
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-    (*(code *)pSVar12->vtable->field_0034)(pSVar12->field_0129);
+    (*pSVar12->vtable->vfunc_34)(pSVar12->field_0129);
     iVar13 = 0x17;
     bVar36 = true;
     piVar19 = (int *)pSVar12->field_0129;
@@ -756,8 +739,7 @@ LAB_0041bdb3:
   }
   iVar13 = thunk_FUN_004fab10(g_cPanel_00801688,CASE_5);
   if (iVar13 != 0) {
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-    (*(code *)pSVar12->vtable->field_0030)(pSVar12->field_0121);
+    (*pSVar12->vtable->vfunc_30)(pSVar12->field_0121);
     iVar13 = 0x1b;
     bVar36 = true;
     psVar21 = (short *)pSVar12->field_0121;
@@ -796,8 +778,7 @@ LAB_0041bdb3:
     }
     *puVar16 = 0;
     pSVar12->field_0139 = 0;
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-    (**(code **)&pSVar12->vtable->field_0x38)(puVar16);
+    (*pSVar12->vtable->vfunc_38)(puVar16);
     bVar36 = false;
     iVar13 = *(int *)(*puVar16 + 0xc);
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
@@ -881,8 +862,7 @@ LAB_0041b92c:
     pSVar12->field_0151 = 0;
     pSVar12->field_0155 = 0;
     pSVar12->field_0159 = 0;
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-    (**(code **)&pSVar12->vtable->field_0x3c)(puVar16);
+    (*pSVar12->vtable->vfunc_3C)(puVar16);
     local_c = (DArrayTy *)pSVar12->field_013D;
     bVar36 = false;
     dVar2 = *(dword *)(*puVar16 + 0xc);
@@ -1008,8 +988,7 @@ LAB_0041bac6:
   }
   iVar13 = thunk_FUN_004fab10(g_cPanel_00801688,CASE_9);
   if (iVar13 != 0) {
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-    (**(code **)&pSVar12->vtable->field_0x44)(pSVar12->field_0189);
+    (*pSVar12->vtable->vfunc_44)(pSVar12->field_0189);
     iVar13 = 0x129;
     bVar36 = true;
     pcVar17 = (char *)pSVar12->field_0189;
@@ -1039,8 +1018,7 @@ LAB_0041bac6:
   }
   iVar13 = thunk_FUN_004fab10(g_cPanel_00801688,CASE_A);
   if (iVar13 != 0) {
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-    (**(code **)&pSVar12->vtable->field_0x48)(pSVar12->field_0191);
+    (*pSVar12->vtable->vfunc_48)(pSVar12->field_0191);
     pAVar7 = pSVar12->field_018D;
     local_c = (DArrayTy *)pSVar12->field_0191;
     iVar13 = 4;
@@ -1074,8 +1052,7 @@ LAB_0041bac6:
       DArrayDestroy((DArrayTy *)pSVar12->field_01A1);
       *puVar16 = 0;
     }
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-    (**(code **)&pSVar12->vtable->field_0x50)(puVar16);
+    (*pSVar12->vtable->vfunc_50)(puVar16);
     pDVar22 = (DArrayTy *)pSVar12->field_019D;
     local_c = (DArrayTy *)&pSVar12->field_019D;
     local_8 = (AnonShape_0041AF40_EF4C5356 *)0x0;
@@ -1114,8 +1091,7 @@ LAB_0041bcad:
   }
   iVar13 = thunk_FUN_004fab10(g_cPanel_00801688,CASE_C|CASE_1);
   if (iVar13 != 0) {
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-    (**(code **)&pSVar12->vtable->field_0x54)(pSVar12->field_01A9);
+    (*pSVar12->vtable->vfunc_54)(pSVar12->field_01A9);
     pAVar8 = pSVar12->field_01A5;
     local_14 = pSVar12->field_01A9;
     iVar13 = 3;
@@ -1146,8 +1122,7 @@ LAB_0041bcad:
     g_currentExceptionFrame = local_58.previous;
     return 0;
   }
-  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-  (**(code **)&pSVar12->vtable->field_0x5c)(pSVar12->field_01B9);
+  (*pSVar12->vtable->vfunc_5C)(pSVar12->field_01B9);
   pAVar9 = pSVar12->field_01B5;
   pAVar10 = pSVar12->field_01B9;
   iVar13 = 0xb;

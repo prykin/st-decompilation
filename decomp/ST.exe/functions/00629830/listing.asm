@@ -1,4 +1,4 @@
-FUN_00629830:
+STParticleC::sub_00629830:
 00629830  8A 41 14                  MOV AL,byte ptr [ECX + 0x14]
 00629833  C7 81 B2 00 00 00 00 00 00 00  MOV dword ptr [ECX + 0xb2],0x0
 0062983D  3C 04                     CMP AL,0x4

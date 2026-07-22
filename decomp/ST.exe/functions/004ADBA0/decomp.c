@@ -58,17 +58,17 @@ STT3DSprC::RestoreSpr(STT3DSprC *this,int *param_1,AnonShape_004AD790_77673787 *
   local_24->field_0013 = param_2->field_001F;
   local_24->field_0030 = *(undefined4 *)(param_2 + 1);
   local_24->field_0038 = param_1[6];
-  thunk_FUN_004ad3c0(local_24,(float)local_24->field_0024,(float)local_24->field_0028,
-                     (float)local_24->field_002C);
+  sub_004AD3C0(local_24,(float)local_24->field_0024,(float)local_24->field_0028,
+               (float)local_24->field_002C);
   FUN_006e9830(this_00->field_003C,this_00->field_0018,this_00->field_0004,this_00->field_0008);
   if (param_1[1] != 0) {
-    thunk_FUN_004ace30(this_00,param_1[1],param_1[2]);
+    sub_004ACE30(this_00,param_1[1],param_1[2]);
   }
   if (param_1[3] != 0) {
-    thunk_FUN_004acef0(this_00,param_1[3]);
+    sub_004ACEF0(this_00,param_1[3]);
   }
   if (param_1[4] != 0) {
-    thunk_FUN_004acf20(this_00,param_1[4],param_1[5]);
+    sub_004ACF20(this_00,param_1[4],param_1[5]);
   }
   local_10 = (AnonShape_004ADBA0_0D812343 *)&param_2[1].field_0x4;
   iVar6 = this_00->field_0014;
@@ -169,26 +169,26 @@ STT3DSprC::RestoreSpr(STT3DSprC *this,int *param_1,AnonShape_004AD790_77673787 *
       /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
       _local_c = CONCAT31(uStack_b,(char)local_8);
       if (local_10->field_001F == '\0') {
-        thunk_FUN_004ace60(this_00,(char)local_8);
+        sub_004ACE60(this_00,(char)local_8);
       }
       else {
         thunk_FUN_004aceb0(this_00,(char)local_8);
       }
       pAVar5 = local_10;
       if (*(char *)(local_10 + 1) == '\x01') {
-        thunk_FUN_004acf50(this_00,(char)_local_c);
+        sub_004ACF50(this_00,(char)_local_c);
       }
       else {
-        thunk_FUN_004acf90(this_00,(char)_local_c);
+        sub_004ACF90(this_00,(char)_local_c);
       }
       if (pAVar5[1].field_0x1 == '\x01') {
-        thunk_FUN_004acfe0(this_00,(char)_local_c);
+        sub_004ACFE0(this_00,(char)_local_c);
       }
       else {
-        thunk_FUN_004ad020(this_00,(char)_local_c);
+        sub_004AD020(this_00,(char)_local_c);
       }
       if (pAVar5[1].field_0x2 == '\x01') {
-        thunk_FUN_004ad070(this_00,(byte)_local_c);
+        sub_004AD070(this_00,(byte)_local_c);
       }
       if (pAVar5[1].field_0x3 == '\0') {
         puVar2 = (ushort *)(iVar6 + 0xe + this_00->field_0020);

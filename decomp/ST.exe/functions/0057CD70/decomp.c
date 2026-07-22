@@ -110,11 +110,11 @@ void __thiscall STFishC::LifeFish(STFishC *this,int *param_1)
     }
   }
   else if (iVar2 == 5) {
-    iVar2 = thunk_FUN_004acd30(this_00,'\b');
+    iVar2 = STT3DSprC::sub_004ACD30((STT3DSprC *)this_00,'\b');
     iVar4 = thunk_FUN_004ac910(this_00,'\b');
     if (iVar4 == iVar2 + -1) {
       STT3DSprC::StopShow((STT3DSprC *)this_00,8);
-      thunk_FUN_0057bf20(this);
+      sub_0057BF20(this);
       this->field_023B = 3;
       return;
     }
@@ -127,17 +127,18 @@ void __thiscall STFishC::LifeFish(STFishC *this,int *param_1)
 LAB_0057cfe0:
   switch(this->field_0267) {
   case CASE_E7:
-    STT3DSprC::SetCurFase((STT3DSprC *)this_00,'\x0e',PTR_00802a38->field_00E4 % 0x78 >> 1);
+    STT3DSprC::SetCurFase((STT3DSprC *)this_00,'\x0e',g_playSystem_00802A38->field_00E4 % 0x78 >> 1)
+    ;
     break;
   case CASE_E8:
     iVar2 = (0x18 - (int)this->field_006C / 0xf) % 0x18;
-    uVar3 = PTR_00802a38->field_00E4 % 0x30 >> 2;
+    uVar3 = g_playSystem_00802A38->field_00E4 % 0x30 >> 2;
     local_8 = uVar3 + (iVar2 / 3) * 0xc;
     uVar3 = uVar3 + (((iVar2 + (4 - DAT_008073fc) * 6) % 0x18) / 3) * 0xc;
     goto LAB_0057d24b;
   case CASE_E9:
     iVar2 = (0x18 - (int)this->field_006C / 0xf) % 0x18;
-    uVar3 = PTR_00802a38->field_00E4 % 0xc >> 1;
+    uVar3 = g_playSystem_00802A38->field_00E4 % 0xc >> 1;
     local_8 = uVar3 + (iVar2 / 3) * 6;
     uVar3 = uVar3 + (((iVar2 + (4 - DAT_008073fc) * 6) % 0x18) / 3) * 6;
 LAB_0057d24b:
@@ -149,12 +150,12 @@ LAB_0057d24b:
     STT3DSprC::SetCurFase
               ((STT3DSprC *)this_00,'\x0e',
                (((iVar2 + (4 - DAT_008073fc) * 6) % 0x18) / 3) * 0xf +
-               PTR_00802a38->field_00E4 % 0xf);
+               g_playSystem_00802A38->field_00E4 % 0xf);
     STT3DSprC::SetCurShad((STT3DSprC *)this_00,'\x0e',iVar2 / 3);
     break;
   case CASE_EB:
     iVar2 = (0x18 - (int)this->field_006C / 0xf) % 0x18;
-    uVar3 = PTR_00802a38->field_00E4 % 0x14;
+    uVar3 = g_playSystem_00802A38->field_00E4 % 0x14;
     STT3DSprC::SetCurFase
               ((STT3DSprC *)this_00,'\x0e',
                uVar3 + (((iVar2 + (4 - DAT_008073fc) * 6) % 0x18) / 3) * 0x14);

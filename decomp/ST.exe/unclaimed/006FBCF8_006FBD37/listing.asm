@@ -1,0 +1,16 @@
+006FBCF8  pointer  006fb606
+006FBCFC  pointer  006fb64b
+006FBD00  pointer  006fb65e
+006FBD04  pointer  006fb6a4
+006FBD08  pointer  006fb781
+006FBD0C  pointer  006fb7d1
+006FBD10  pointer  006fb7e8
+006FBD14  pointer  006fb83d
+006FBD18  pointer  006fb9be
+006FBD1C  pointer  006fb9fc
+006FBD20  pointer  006fba0d
+006FBD24  pointer  006fba4a
+006FBD28  pointer  006fbaf9
+006FBD2C  pointer  006fbb40
+006FBD30  pointer  006fbb50
+006FBD34  pointer  006fbb97

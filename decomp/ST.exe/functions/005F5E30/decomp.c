@@ -1,24 +1,30 @@
 
-void __thiscall FUN_005f5e30(void *this,undefined4 param_1,undefined4 param_2,undefined4 param_3)
+/* [STMethodOwnerApplier] Structural method owner recovered as STBHEShellC.
+   Evidence: this_call_owners=[STBHEShellC]; agreed_this_calls=1; incoming_this_accesses=19;
+   incoming_edx_uses=0; incoming_stack_parameter_uses=3; direct_non_thunk_callers=0;
+   incoming_ecx_receiver_callers=0; attributed_named_callers=1; owner_evidence_coverage=adequate */
+
+void __thiscall
+STBHEShellC::sub_005F5E30(STBHEShellC *this,int param_1,int param_2,undefined4 param_3)
 
 {
-  *(undefined4 *)((int)this + 0x9f) = *(undefined4 *)((int)this + 0x93);
-  *(undefined4 *)((int)this + 0xa3) = *(undefined4 *)((int)this + 0x97);
-  *(undefined4 *)((int)this + 0x93) = param_1;
-  *(undefined4 *)((int)this + 0x97) = param_2;
-  *(undefined4 *)((int)this + 0xa7) = *(undefined4 *)((int)this + 0x9b);
-  *(undefined4 *)((int)this + 0x87) = 3;
-  *(undefined4 *)((int)this + 0x9b) = param_3;
-  *(undefined4 *)((int)this + 0xaf) = 0x1e;
-  *(undefined4 *)((int)this + 0xb3) = 0xb;
-  *(undefined4 *)((int)this + 0xbc) = 0x14;
-  *(undefined4 *)((int)this + 0xb7) = 0;
-  *(undefined4 *)((int)this + 0xc0) = 0;
-  *(undefined4 *)((int)this + 0xab) = 0;
-  if (*(char *)((int)this + 0x103) != '\0') {
-    SubmarineTitans::Recovered::HiddenThis::AnonReceiver_005F35F0::thunk_FUN_005f35f0(this,3);
+  this->field_009F = this->field_0093;
+  this->field_00A3 = this->field_0097;
+  this->field_0093 = param_1;
+  this->field_0097 = param_2;
+  this->field_00A7 = this->field_009B;
+  this->field_0087 = 3;
+  this->field_009B = param_3;
+  this->field_00AF = 0x1e;
+  this->field_00B3 = 0xb;
+  this->field_00BC = 0x14;
+  this->field_00B7 = 0;
+  this->field_00C0 = 0;
+  this->field_00AB = 0;
+  if (this->field_0103 != '\0') {
+    sub_005F35F0(this,3);
   }
-  thunk_FUN_005f5c40(this,*(int *)((int)this + 0x93),*(int *)((int)this + 0x97),0x48a);
+  thunk_FUN_005f5c40(this,this->field_0093,this->field_0097,0x48a);
   return;
 }
 

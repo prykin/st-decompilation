@@ -5,10 +5,10 @@
    E:\__titans\wlad\to_grpb.cpp
    STGroupBoatC::ReMakePVecAndTgtList
 
-   [STPrototypeApplier] Propagated parameter 1.
+   [STPrototypeRepairApplier] Propagated parameter 1.
    Evidence: 004999C0 -> 00499750 @ 00499AA8 */
 
-undefined4 __thiscall STGroupBoatC::ReMakePVecAndTgtList(STGroupBoatC *this,uint *param_1)
+undefined4 __thiscall STGroupBoatC::ReMakePVecAndTgtList(STGroupBoatC *this,DArrayTy *param_1)
 
 {
   code *pcVar1;
@@ -19,7 +19,7 @@ undefined4 __thiscall STGroupBoatC::ReMakePVecAndTgtList(STGroupBoatC *this,uint
   int iVar6;
   uint index;
   InternalExceptionFrame local_58;
-  uint local_14;
+  dword local_14;
   STGroupBoatC *local_10;
   undefined1 local_c [2];
   short local_a;
@@ -37,16 +37,16 @@ undefined4 __thiscall STGroupBoatC::ReMakePVecAndTgtList(STGroupBoatC *this,uint
                  0x4d7);
     }
     index = 0;
-    local_14 = param_1[3];
+    local_14 = param_1->count;
     if (0 < (int)local_14) {
       do {
-        DArrayGetElement((DArrayTy *)param_1,index,local_c);
-        DArrayGetElement((DArrayTy *)pSVar2->field_020E,(int)local_a,&local_8);
+        DArrayGetElement(param_1,index,local_c);
+        DArrayGetElement(pSVar2->field_020E,(int)local_a,&local_8);
         /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
         if (local_8._2_2_ != -1) {
           /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
           local_8._2_2_ = -1;
-          Library::DKW::TBL::FUN_006ae140(pSVar2->field_020E,(int)local_a,&local_8);
+          Library::DKW::TBL::FUN_006ae140(&pSVar2->field_020E->flags,(int)local_a,&local_8);
           puVar4 = pSVar2->field_021E;
           pSVar2->field_0212 = pSVar2->field_0212 + -1;
           (puVar4 + local_a * 4)[0] = 0xffff;
@@ -56,8 +56,8 @@ undefined4 __thiscall STGroupBoatC::ReMakePVecAndTgtList(STGroupBoatC *this,uint
       } while ((int)index < (int)local_14);
     }
     if (pSVar2->field_0212 == 0) {
-      DArrayDestroy((DArrayTy *)pSVar2->field_020E);
-      pSVar2->field_020E = (uint *)0x0;
+      DArrayDestroy(pSVar2->field_020E);
+      pSVar2->field_020E = (DArrayTy *)0x0;
       FreeAndNull(&pSVar2->field_021E);
       RaiseInternalException
                 (-0x5001fff7,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_grpb.cpp",

@@ -66,9 +66,9 @@ void __thiscall HelpPanelTy::TTreeProc(HelpPanelTy *this,uint param_1,char param
       *(undefined2 *)&local_14->field_0x2c = 0;
       local_14->field_002E = 2;
       *(undefined4 *)&local_14->field_0x30 = local_14->field_0178;
-      if (PTR_00802a30 != (CursorClassTy *)0x0) {
+      if (g_cursorClass_00802A30 != (CursorClassTy *)0x0) {
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-        (**(code **)PTR_00802a30->field_0000)(&local_14->field_0x18);
+        (**(code **)g_cursorClass_00802A30->field_0000)(&local_14->field_0x18);
       }
     }
   }
@@ -108,13 +108,13 @@ void __thiscall HelpPanelTy::TTreeProc(HelpPanelTy *this,uint param_1,char param
   }
   iVar14 = -1;
   iVar13 = -1;
-  puVar6 = (uint *)LoadResourceString(0x55f4,HINSTANCE_00807618);
+  puVar6 = (uint *)LoadResourceString(0x55f4,g_module_00807618);
   ccFntTy::WrStr(this_00->field_01E4,puVar6,iVar13,iVar14,iVar5);
   ccFntTy::SetSurf(this_00->field_01E0,(int)this_00->field_0068,0,0x21,0x2a,0x19c,0xf);
   uVar7 = (DAT_0080874e != 3) - 1 & 5;
   iVar13 = -1;
   iVar5 = -1;
-  puVar6 = (uint *)LoadResourceString(resourceId,HINSTANCE_00807618);
+  puVar6 = (uint *)LoadResourceString(resourceId,g_module_00807618);
   ccFntTy::WrStr(this_00->field_01E0,puVar6,iVar5,iVar13,uVar7);
   pAVar2 = this_00->field_0218;
   uVar7 = pAVar2->field_0014;

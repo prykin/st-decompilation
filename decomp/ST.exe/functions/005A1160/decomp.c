@@ -16,13 +16,13 @@ void __thiscall FSGSTy::CheckUpdate(FSGSTy *this)
   int iVar5;
   char *pcVar6;
   undefined4 *puVar7;
-  uint *puVar8;
+  uint *resourceString;
+  uint uVar8;
   uint uVar9;
-  uint uVar10;
-  char *pcVar11;
+  char *pcVar10;
+  int iVar11;
   int iVar12;
   int iVar13;
-  int iVar14;
   InternalExceptionFrame local_90;
   undefined4 local_4c [8];
   undefined4 local_2c [8];
@@ -35,9 +35,9 @@ void __thiscall FSGSTy::CheckUpdate(FSGSTy *this)
   iVar5 = Library::MSVCRT::__setjmp3(local_90.jumpBuffer,0);
   if (iVar5 != 0) {
     g_currentExceptionFrame = local_90.previous;
-    iVar12 = ReportDebugMessage("E:\\__titans\\Start\\fsgs_obj.cpp",0x935,0,iVar5,
+    iVar11 = ReportDebugMessage("E:\\__titans\\Start\\fsgs_obj.cpp",0x935,0,iVar5,
                                 "%s","FSGSTy::CheckUpdate");
-    if (iVar12 != 0) {
+    if (iVar11 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
     RaiseInternalException(iVar5,0,"E:\\__titans\\Start\\fsgs_obj.cpp",0x935);
@@ -52,51 +52,51 @@ void __thiscall FSGSTy::CheckUpdate(FSGSTy *this)
     g_currentExceptionFrame = local_90.previous;
     return;
   }
-  uVar9 = 0xffffffff;
+  uVar8 = 0xffffffff;
   do {
-    pcVar11 = pcVar6;
-    if (uVar9 == 0) break;
-    uVar9 = uVar9 - 1;
-    pcVar11 = pcVar6 + 1;
+    pcVar10 = pcVar6;
+    if (uVar8 == 0) break;
+    uVar8 = uVar8 - 1;
+    pcVar10 = pcVar6 + 1;
     cVar1 = *pcVar6;
-    pcVar6 = pcVar11;
+    pcVar6 = pcVar10;
   } while (cVar1 != '\0');
-  uVar9 = ~uVar9;
-  pcVar6 = pcVar11 + -uVar9;
-  pcVar11 = (char *)&DAT_0080f126;
-  for (uVar10 = uVar9 >> 2; uVar10 != 0; uVar10 = uVar10 - 1) {
-    *(undefined4 *)pcVar11 = *(undefined4 *)pcVar6;
+  uVar8 = ~uVar8;
+  pcVar6 = pcVar10 + -uVar8;
+  pcVar10 = (char *)&DAT_0080f126;
+  for (uVar9 = uVar8 >> 2; uVar9 != 0; uVar9 = uVar9 - 1) {
+    *(undefined4 *)pcVar10 = *(undefined4 *)pcVar6;
     pcVar6 = pcVar6 + 4;
-    pcVar11 = pcVar11 + 4;
+    pcVar10 = pcVar10 + 4;
   }
-  for (uVar9 = uVar9 & 3; uVar9 != 0; uVar9 = uVar9 - 1) {
-    *pcVar11 = *pcVar6;
+  for (uVar8 = uVar8 & 3; uVar8 != 0; uVar8 = uVar8 - 1) {
+    *pcVar10 = *pcVar6;
     pcVar6 = pcVar6 + 1;
-    pcVar11 = pcVar11 + 1;
+    pcVar10 = pcVar10 + 1;
   }
   puVar2 = local_c->field_1AC0;
-  uVar9 = *(uint *)(puVar2 + 10);
-  if (uVar9 == 0) {
-    uVar9 = ((uint)puVar2[7] * *(int *)(puVar2 + 2) + 0x1f >> 3 & 0x1ffffffc) * *(int *)(puVar2 + 4)
+  uVar8 = *(uint *)(puVar2 + 10);
+  if (uVar8 == 0) {
+    uVar8 = ((uint)puVar2[7] * *(int *)(puVar2 + 2) + 0x1f >> 3 & 0x1ffffffc) * *(int *)(puVar2 + 4)
     ;
   }
   puVar7 = (undefined4 *)FUN_006b4fa0((int)puVar2);
-  for (uVar10 = uVar9 >> 2; uVar10 != 0; uVar10 = uVar10 - 1) {
+  for (uVar9 = uVar8 >> 2; uVar9 != 0; uVar9 = uVar9 - 1) {
     *puVar7 = 0xffffffff;
     puVar7 = puVar7 + 1;
   }
-  for (uVar9 = uVar9 & 3; uVar9 != 0; uVar9 = uVar9 - 1) {
+  for (uVar8 = uVar8 & 3; uVar8 != 0; uVar8 = uVar8 - 1) {
     *(undefined1 *)puVar7 = 0xff;
     puVar7 = (undefined4 *)((int)puVar7 + 1);
   }
   ccFntTy::SetSurf(pFVar4->field_1A73,(int)pFVar4->field_1AC0,0,0,0x16,0x1b8,0xf0);
-  iVar14 = -1;
   iVar13 = -1;
-  uVar9 = 2;
   iVar12 = -1;
+  uVar8 = 2;
+  iVar11 = -1;
   iVar5 = -2;
-  puVar8 = (uint *)LoadResourceString(0x25bd,HINSTANCE_00807618);
-  ccFntTy::WrTxt(pFVar4->field_1A73,puVar8,iVar5,iVar12,uVar9,iVar13,iVar14);
+  resourceString = (uint *)LoadResourceString(0x25bd,g_module_00807618);
+  ccFntTy::WrTxt(pFVar4->field_1A73,resourceString,iVar5,iVar11,uVar8,iVar12,iVar13);
   FUN_006b35d0((int *)PTR_008075a8,pFVar4->field_1ABC);
   memset(local_2c, 0, 0x20); /* compiler bulk-zero initialization */
   iVar5 = 0;

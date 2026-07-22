@@ -74,7 +74,7 @@ LAB_00679519:
       if (&stack0x00000000 != (undefined1 *)0x3c) {
         AiTactClassTy::GetAiMess(this_00,local_3c);
       }
-      thunk_FUN_0054cf70(PTR_00802a38,*(uint *)&this_00->field_0x8);
+      thunk_FUN_0054cf70(g_playSystem_00802A38,*(uint *)&this_00->field_0x8);
       FUN_006b0c70(pAVar4->field_0695,uVar1);
     }
   } while( true );

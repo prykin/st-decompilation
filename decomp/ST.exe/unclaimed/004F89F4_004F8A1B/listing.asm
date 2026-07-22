@@ -1,0 +1,10 @@
+004F89F4  pointer  004f839f
+004F89F8  pointer  004f8438
+004F89FC  pointer  004f81dc
+004F8A00  pointer  004f810c
+004F8A04  pointer  004f82f2
+004F8A08  pointer  004f889e
+004F8A0C  pointer  004f88ed
+004F8A10  pointer  004f8722
+004F8A14  pointer  004f86b7
+004F8A18  pointer  004f87c4

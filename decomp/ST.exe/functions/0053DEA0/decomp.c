@@ -3,11 +3,20 @@
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\specpan.cpp
-   UPanelTy::CreateBut */
+   UPanelTy::CreateBut
+
+   [STPrototypeApplier] Propagated parameter 6.
+   Evidence: 00510E30 -> 0053DEA0 @ 00511440 | 00510E30 -> 0053DEA0 @ 005114D9 | 0052E5E0 ->
+   0053DEA0 @ 0052E7B7 | 0052E5E0 -> 0053DEA0 @ 0052E7F1 | 0052FB00 -> 0053DEA0 @ 00530650 |
+   0052FB00 -> 0053DEA0 @ 005306A3 | 0052FB00 -> 0053DEA0 @ 005306E3 | 0052FB00 -> 0053DEA0 @
+   00530725 | 0052FB00 -> 0053DEA0 @ 0053077F | 0052FB00 -> 0053DEA0 @ 0053098D | 0052FB00 ->
+   0053DEA0 @ 005309D5 | 0052FB00 -> 0053DEA0 @ 00530B35 | 0052FB00 -> 0053DEA0 @ 00530C60 |
+   0052FB00 -> 0053DEA0 @ 005318BD | 00539B90 -> 0053DEA0 @ 00539E01 | 00539B90 -> 0053DEA0 @
+   0053A020 */
 
 undefined4 __thiscall
 UPanelTy::CreateBut(UPanelTy *this,undefined4 param_1,int param_2,int param_3,int param_4,
-                   byte param_5,int param_6,undefined4 param_7,undefined4 param_8,short param_9,
+                   byte param_5,LPSTR param_6,undefined4 param_7,undefined4 param_8,short param_9,
                    undefined2 param_10,undefined4 param_11,char *param_12,undefined4 param_13,
                    undefined4 param_14)
 
@@ -65,7 +74,7 @@ UPanelTy::CreateBut(UPanelTy *this,undefined4 param_1,int param_2,int param_3,in
     }
     local_1d0[1] = param_1;
     local_1d0[0] = param_2;
-    if (param_6 != 0) {
+    if (param_6 != (LPSTR)0x0) {
       text = local_10 + 1;
       wsprintfA((LPSTR)text,"%s0",param_6);
       local_8 = cMf32::RecGet(DAT_00806790,param_5,(char *)text,(int *)0x0,1);

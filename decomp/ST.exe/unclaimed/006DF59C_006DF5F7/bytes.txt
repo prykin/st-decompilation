@@ -1,0 +1,6 @@
+006DF59C  B8 01 00 00 00 C3 8B 65 E8 68 FC 06 00 00 68 58  |.......e.h....hX|
+006DF5AC  E7 7E 00 8B 0D 7C D7 7E 00 51 6A FE E8 83 68 FC  |.~...|.~.Qj...h.|
+006DF5BC  FF 9B C7 45 FC FF FF FF FF E9 40 1A 00 00 B8 01  |...E......@.....|
+006DF5CC  00 00 00 C3 8B 65 E8 68 09 07 00 00 68 58 E7 7E  |.....e.h....hX.~|
+006DF5DC  00 8B 0D 7C D7 7E 00 51 6A FE E8 55 68 FC FF 9B  |...|.~.Qj..Uh...|
+006DF5EC  C7 45 FC FF FF FF FF E9 12 1A 00 00              |.E..........|

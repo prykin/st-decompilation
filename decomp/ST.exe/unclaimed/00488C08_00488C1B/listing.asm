@@ -1,0 +1,5 @@
+00488C08  pointer  004888d8
+00488C0C  pointer  004888e1
+00488C10  pointer  004888ea
+00488C14  pointer  004888f3
+00488C18  pointer  004888fc

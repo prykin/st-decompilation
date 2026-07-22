@@ -18,7 +18,7 @@ void FUN_007550c0(AnonShape_007550C0_25940DF4 *param_1,undefined4 *param_2)
       param_1->field_0034 = 4;
       return;
     case 7:
-      param_1->field_0004 = &LAB_00402928;
+      param_1->field_0004 = thunk_FUN_00673110;
       param_1->field_0008 = FUN_00757430;
       param_1->field_0034 = 0;
       return;

@@ -27,11 +27,11 @@ void __thiscall ChooseMapTy::CreateCtrls(ChooseMapTy *this,char param_1)
   ccFntTy *local_fe4 [6];
   undefined4 local_fcc;
   undefined4 local_fc8;
-  uint *local_fc4;
-  undefined4 local_f98;
+  DArrayTy *local_fc4;
+  int local_f98;
   undefined4 local_f94;
   undefined4 local_f90;
-  undefined4 local_f58;
+  int local_f58;
   undefined4 local_f54;
   undefined4 local_f50;
   undefined4 local_780;
@@ -134,22 +134,22 @@ void __thiscall ChooseMapTy::CreateCtrls(ChooseMapTy *this,char param_1)
   switch(local_c->field_1A5F) {
   case CASE_1:
   case CASE_2:
-    local_34 = (uint)PTR_0081176c->field_02EB;
+    local_34 = (uint)g_startSystem_0081176C->field_02EB;
     uVar7 = 2;
     local_c->field_1A5F = (local_34 != 1) + CASE_1;
     goto LAB_005aebde;
   case CASE_4:
   case CASE_5:
     uVar7 = 2;
-    local_34 = (uint)PTR_0081176c->field_02EB;
+    local_34 = (uint)g_startSystem_0081176C->field_02EB;
     local_c->field_1A5F = (local_34 != 1) + CASE_4;
     break;
   case CASE_9:
   case CASE_A:
   case CASE_B:
     uVar7 = 3;
-    local_34 = (uint)(byte)PTR_0081176c->field_02EA;
-    cVar8 = PTR_0081176c->field_02EA;
+    local_34 = (uint)(byte)g_startSystem_0081176C->field_02EA;
+    cVar8 = g_startSystem_0081176C->field_02EA;
     if (cVar8 == '\x01') {
       local_c->field_1A5F = CASE_9;
     }
@@ -191,8 +191,8 @@ LAB_005aecc2:
     local_4c = 2;
     local_48 = 0x6327;
     local_50 = local_70;
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-    (*(code *)this_00->field_000C->vtable->field_0008)(5,&this_00->field_1C83,0,local_80,0);
+    (*this_00->field_000C->vtable->CreateObject)
+              ((SystemClassTy *)this_00->field_000C,5,&this_00->field_1C83,(int *)0x0,local_80,0);
     Library::DKW::DDX::FUN_006b3430((int *)PTR_008075a8,this_00->field_1C87);
     goto LAB_005aecc2;
   }
@@ -253,8 +253,8 @@ LAB_005aecc2:
   local_408 = local_570;
   local_288 = local_570;
   local_118 = local_570;
-  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-  (*(code *)this_00->field_000C->vtable->field_0008)(7,&this_00->field_1A6C,0,local_598,0);
+  (*this_00->field_000C->vtable->CreateObject)
+            ((SystemClassTy *)this_00->field_000C,7,&this_00->field_1A6C,(int *)0x0,local_598,0);
   if (this_00->field_1A74 != 0xffffffff) {
     Library::DKW::DDX::FUN_006b34d0
               ((uint *)this_00->field_1AB8,this_00->field_1A74,0xfffffffe,this_00->field_1A8C,
@@ -272,17 +272,17 @@ LAB_005aecc2:
   }
 LAB_005aef44:
   if ((this_00->field_0x20b4 == '\0') || (param_1 != '\0')) {
-    if (PTR_0081176c->field_0389 != 0) {
+    if (g_startSystem_0081176C->field_0389 != 0) {
       this_00->field_002D = 0x20;
       *(undefined4 *)&this_00->field_0x31 = 0;
-      FUN_006e6080(this_00,2,PTR_0081176c->field_0389,(undefined4 *)&this_00->field_0x1d);
+      FUN_006e6080(this_00,2,g_startSystem_0081176C->field_0389,(undefined4 *)&this_00->field_0x1d);
     }
   }
   else {
-    StartSystemTy::CreateBinDesc(PTR_0081176c);
+    StartSystemTy::CreateBinDesc(g_startSystem_0081176C);
   }
   if ((this_00->field_20B7 != '\0') && (param_1 == '\0')) {
-    StartSystemTy::CreateChatView(PTR_0081176c);
+    StartSystemTy::CreateChatView(g_startSystem_0081176C);
     ppcVar10 = local_fe4;
     for (iVar4 = 0x223; iVar4 != 0; iVar4 = iVar4 + -1) {
       *ppcVar10 = (ccFntTy *)0x0;
@@ -290,13 +290,13 @@ LAB_005aef44:
     }
     local_fe4[0] = (ccFntTy *)0x1;
     local_fe4[1] = (ccFntTy *)0x9;
-    local_fe4[2] = PTR_0081176c->field_0034;
+    local_fe4[2] = g_startSystem_0081176C->field_0034;
     local_fe4[3] = (ccFntTy *)0xcb;
     local_fe4[4] = (ccFntTy *)0x23f;
-    local_fe4[5] = *(ccFntTy **)(PTR_0081176c->field_0682 + 2);
-    local_fcc = *(undefined4 *)(PTR_0081176c->field_0682 + 4);
+    local_fe4[5] = *(ccFntTy **)(g_startSystem_0081176C->field_0682 + 2);
+    local_fcc = *(undefined4 *)(g_startSystem_0081176C->field_0682 + 4);
     local_fc8 = 0x104;
-    local_fc4 = PTR_0081176c->field_0686;
+    local_fc4 = g_startSystem_0081176C->field_0686;
     pSVar1 = this_00->field_000C;
     local_780 = 0x100;
     local_f98 = pSVar1->field_0014;
@@ -305,9 +305,10 @@ LAB_005aef44:
     local_f58 = pSVar1->field_0014;
     local_f54 = 0;
     local_f50 = 0xc0a2;
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-    (*(code *)pSVar1->vtable->field_0008)(6,&PTR_0081176c->field_054C,0,local_fe4,0);
-    Library::DKW::DDX::FUN_006b3430((int *)PTR_008075a8,PTR_0081176c->field_0554);
+    (*pSVar1->vtable->CreateObject)
+              ((SystemClassTy *)pSVar1,6,&g_startSystem_0081176C->field_054C,(int *)0x0,local_fe4,0)
+    ;
+    Library::DKW::DDX::FUN_006b3430((int *)PTR_008075a8,g_startSystem_0081176C->field_0554);
   }
   pSVar1 = this_00->field_1A5B;
   if (pSVar1->field_02E6 != (MMsgTy *)0x0) {

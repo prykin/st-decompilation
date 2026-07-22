@@ -75,7 +75,7 @@ void __thiscall CPanelTy::SetControlBoatSI(CPanelTy *this)
     }
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  thunk_FUN_0054a8d0(PTR_00802a30);
+  CursorClassTy::sub_0054A8D0(g_cursorClass_00802A30);
   this_00 = local_24;
   if (local_24->field_02FE != 0) {
     StartSystemTy::sub_006E56B0(local_24->field_000C,local_24->field_02FE);
@@ -137,7 +137,7 @@ LAB_005035b5:
         local_8 = 0x66;
         local_10 = iVar8;
       }
-      thunk_FUN_004f17d0(this_00,1,(byte)local_c);
+      sub_004F17D0(this_00,1,(byte)local_c);
       if (this_00->field_0BA0 == '\0') {
         local_14 = (undefined4 *)0x0;
       }
@@ -184,9 +184,9 @@ LAB_005036ae:
     local_40 = 2;
     local_3c = 0xb20e;
     local_44 = local_64;
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-    (*(code *)this_00->field_000C->vtable->field_0008)(9,&this_00->field_02FE,0,local_74,0);
-    thunk_FUN_004f1610(this_00,'\x01');
+    (*this_00->field_000C->vtable->CreateObject)
+              ((SystemClassTy *)this_00->field_000C,9,&this_00->field_02FE,(int *)0x0,local_74,0);
+    sub_004F1610(this_00,'\x01');
     iVar8 = this_00->field_09C0;
     if (iVar8 == 0) goto LAB_00503776;
     this_00->field_0028 = 0x20;

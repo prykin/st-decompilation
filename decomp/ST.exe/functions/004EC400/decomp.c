@@ -9,19 +9,20 @@ undefined4 __fastcall FUN_004ec400(AnonShape_004EC400_367D4575 *param_1)
   int iVar3;
 
   if (param_1->field_04D0 == 4) {
-    if (param_1->field_0514 + 1 <= PTR_00802a38->field_00E4) {
+    if (param_1->field_0514 + 1 <= g_playSystem_00802A38->field_00E4) {
       iVar3 = param_1->field_0504 + 3;
-      param_1->field_0514 = PTR_00802a38->field_00E4;
+      param_1->field_0514 = g_playSystem_00802A38->field_00E4;
       param_1->field_0510 = param_1->field_0510 + 1;
       param_1->field_0504 = iVar3;
-      thunk_FUN_004ad3c0(param_1->field_05FF,
-                         (float)param_1->field_04FC * _DAT_007904f8 * _DAT_007904f0,
-                         (float)param_1->field_0500 * _DAT_007904f8 * _DAT_007904f0,
-                         (float)iVar3 * _DAT_007904f8 * _DAT_007904f0 + _DAT_007904fc);
+      STT3DSprC::sub_004AD3C0
+                (param_1->field_05FF,(float)param_1->field_04FC * _DAT_007904f8 * _DAT_007904f0,
+                 (float)param_1->field_0500 * _DAT_007904f8 * _DAT_007904f0,
+                 (float)iVar3 * _DAT_007904f8 * _DAT_007904f0 + _DAT_007904fc);
     }
   }
-  if ((param_1->field_04D0 == 6) && (param_1->field_0514 + 1 <= PTR_00802a38->field_00E4)) {
-    param_1->field_0514 = PTR_00802a38->field_00E4;
+  if ((param_1->field_04D0 == 6) && (param_1->field_0514 + 1 <= g_playSystem_00802A38->field_00E4))
+  {
+    param_1->field_0514 = g_playSystem_00802A38->field_00E4;
     param_1->field_0510 = param_1->field_0510 + 1;
     iVar1 = param_1->field_04FC;
     iVar2 = param_1->field_05B0 * 0xc9;
@@ -53,10 +54,10 @@ undefined4 __fastcall FUN_004ec400(AnonShape_004EC400_367D4575 *param_1)
       }
       param_1->field_0504 = iVar1 + iVar2;
     }
-    thunk_FUN_004ad3c0(param_1->field_05FF,
-                       (float)param_1->field_04FC * _DAT_007904f8 * _DAT_007904f0,
-                       (float)param_1->field_0500 * _DAT_007904f8 * _DAT_007904f0,
-                       (float)param_1->field_0504 * _DAT_007904f8 * _DAT_007904f0 + _DAT_007904fc);
+    STT3DSprC::sub_004AD3C0
+              (param_1->field_05FF,(float)param_1->field_04FC * _DAT_007904f8 * _DAT_007904f0,
+               (float)param_1->field_0500 * _DAT_007904f8 * _DAT_007904f0,
+               (float)param_1->field_0504 * _DAT_007904f8 * _DAT_007904f0 + _DAT_007904fc);
   }
   return 0;
 }

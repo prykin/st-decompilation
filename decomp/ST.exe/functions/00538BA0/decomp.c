@@ -20,8 +20,8 @@ PanelTy::PaintTxtBut
   uint uVar3;
   int iVar4;
   undefined4 uVar5;
-  uint *puVar6;
-  int iVar7;
+  uint *resourceString;
+  int iVar6;
   InternalExceptionFrame local_5c;
   AnonNested_00538BA0_0018_DBC85CBF *local_18;
   PanelTy *local_14;
@@ -68,10 +68,10 @@ LAB_00538bd9:
                        local_18->field_000C);
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
       uVar5 = (*(code *)param_6)(param_1);
-      iVar7 = -1;
+      iVar6 = -1;
       iVar4 = -2;
-      puVar6 = (uint *)LoadResourceString(param_5,HINSTANCE_00807618);
-      ccFntTy::WrStr(param_4,puVar6,iVar4,iVar7,uVar5);
+      resourceString = (uint *)LoadResourceString(param_5,g_module_00807618);
+      ccFntTy::WrStr(param_4,resourceString,iVar4,iVar6,uVar5);
       Library::DKW::DDX::FUN_006b3640
                 ((int *)PTR_008075a8,pPVar2->field_0060,0xffffffff,pPVar2->field_003C,
                  pPVar2->field_0044);
@@ -79,9 +79,9 @@ LAB_00538bd9:
       return;
     }
     g_currentExceptionFrame = local_5c.previous;
-    iVar7 = ReportDebugMessage("E:\\__titans\\Andrey\\panel.cpp",0xcc,0,iVar4,"%s",
+    iVar6 = ReportDebugMessage("E:\\__titans\\Andrey\\panel.cpp",0xcc,0,iVar4,"%s",
                                "PanelTy::PaintTxtBut");
-    if (iVar7 != 0) {
+    if (iVar6 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
     RaiseInternalException(iVar4,0,"E:\\__titans\\Andrey\\panel.cpp",0xcc);

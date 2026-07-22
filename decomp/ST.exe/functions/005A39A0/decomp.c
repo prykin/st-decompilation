@@ -7,11 +7,17 @@
 
    [STPrototypeApplier] Propagated parameter 1.
    Evidence: 005A39A0 parameter used as this of ccFntTy::SetSurf @ 005A3A50 | 005A39A0 parameter
-   used as this of ccFntTy::WrStr @ 005A3A61 */
+   used as this of ccFntTy::WrStr @ 005A3A61
+
+   [STMethodOwnerApplier] Structural method owner recovered as FSGSTy.
+   Evidence: this_call_owners=[FSGSTy]; agreed_this_calls=10; incoming_this_accesses=2;
+   incoming_edx_uses=0; incoming_stack_parameter_uses=10; direct_non_thunk_callers=0;
+   incoming_ecx_receiver_callers=0; attributed_named_callers=1; owner_evidence_coverage=adequate */
 
 void __thiscall
-FUN_005a39a0(void *this,ccFntTy *param_1,char *text,uint param_3,byte *param_4,int param_5,
-            int param_6,int param_7,int param_8)
+FSGSTy::sub_005A39A0
+          (FSGSTy *this,ccFntTy *param_1,char *text,uint param_3,byte *param_4,int param_5,
+          int param_6,int param_7,int param_8)
 
 {
   byte bVar1;
@@ -68,9 +74,9 @@ FUN_005a39a0(void *this,ccFntTy *param_1,char *text,uint param_3,byte *param_4,i
     puVar12 = (uint *)((int)puVar12 + 1);
   }
 LAB_005a3a15:
-  FUN_006b4170(*(AnonShape_006B5B10_E0D06CF1 **)((int)this + 0x1ac0),0,param_5,param_6,param_7,
-               param_8,0xff);
-  ccFntTy::SetSurf(param_1,*(int *)((int)this + 0x1ac0),0,param_5,param_6,param_7,param_8);
+  FUN_006b4170((AnonShape_006B5B10_E0D06CF1 *)this->field_1AC0,0,param_5,param_6,param_7,param_8,
+               0xff);
+  ccFntTy::SetSurf(param_1,(int)this->field_1AC0,0,param_5,param_6,param_7,param_8);
   ccFntTy::WrStr(param_1,local_10,-1,-1,0);
   return;
 }

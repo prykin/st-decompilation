@@ -38,7 +38,7 @@ void __thiscall HelpPanelTy::TechProc(HelpPanelTy *this,uint param_1,byte param_
   undefined4 uVar19;
   InternalExceptionFrame local_88;
   HelpPanelTy *local_44;
-  int local_40;
+  uint local_40;
   byte *local_3c;
   uint local_38;
   undefined4 local_34;
@@ -93,9 +93,9 @@ void __thiscall HelpPanelTy::TechProc(HelpPanelTy *this,uint param_1,byte param_
       *(undefined2 *)&local_44->field_0x2c = 0;
       local_44->field_002E = 2;
       *(undefined4 *)&local_44->field_0x30 = local_44->field_0178;
-      if (PTR_00802a30 != (CursorClassTy *)0x0) {
+      if (g_cursorClass_00802A30 != (CursorClassTy *)0x0) {
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-        (**(code **)PTR_00802a30->field_0000)(&local_44->field_0x18);
+        (**(code **)g_cursorClass_00802A30->field_0000)(&local_44->field_0x18);
       }
     }
   }
@@ -120,7 +120,7 @@ void __thiscall HelpPanelTy::TechProc(HelpPanelTy *this,uint param_1,byte param_
   uVar19 = 3;
   iVar17 = -1;
   iVar6 = -3;
-  puVar9 = (uint *)LoadResourceString(0x5622,HINSTANCE_00807618);
+  puVar9 = (uint *)LoadResourceString(0x5622,g_module_00807618);
   ccFntTy::WrStr(this_00->field_01E0,puVar9,iVar6,iVar17,uVar19);
   ccFntTy::SetSurf(this_00->field_01E0,(int)this_00->field_0218,0,0x96,local_8,0x106,0xf);
   if ((char)local_c == DAT_0080874e) {
@@ -137,7 +137,7 @@ void __thiscall HelpPanelTy::TechProc(HelpPanelTy *this,uint param_1,byte param_
           uVar12 = (DAT_0080874e != '\x03') - 1 & 5;
           iVar17 = -1;
           iVar6 = 1;
-          puVar9 = (uint *)LoadResourceString(0x5d56,HINSTANCE_00807618);
+          puVar9 = (uint *)LoadResourceString(0x5d56,g_module_00807618);
           ccFntTy::WrStr(this_00->field_01E0,puVar9,iVar6,iVar17,uVar12);
           iVar6 = 2;
           goto LAB_00516f08;
@@ -149,7 +149,7 @@ void __thiscall HelpPanelTy::TechProc(HelpPanelTy *this,uint param_1,byte param_
             uVar12 = (DAT_0080874e != '\x03') - 1 & 5;
             iVar17 = -1;
             iVar6 = 1;
-            puVar9 = (uint *)LoadResourceString(0x5d55,HINSTANCE_00807618);
+            puVar9 = (uint *)LoadResourceString(0x5d55,g_module_00807618);
             ccFntTy::WrStr(this_00->field_01E0,puVar9,iVar6,iVar17,uVar12);
             iVar6 = 1;
             goto LAB_00516eb8;
@@ -162,7 +162,7 @@ void __thiscall HelpPanelTy::TechProc(HelpPanelTy *this,uint param_1,byte param_
         uVar12 = (DAT_0080874e != '\x03') - 1 & 5;
         iVar17 = -1;
         iVar6 = 1;
-        puVar9 = (uint *)LoadResourceString(UVar7,HINSTANCE_00807618);
+        puVar9 = (uint *)LoadResourceString(UVar7,g_module_00807618);
         ccFntTy::WrStr(this_00->field_01E0,puVar9,iVar6,iVar17,uVar12);
         iVar6 = 3;
         goto LAB_00516f54;
@@ -171,7 +171,7 @@ void __thiscall HelpPanelTy::TechProc(HelpPanelTy *this,uint param_1,byte param_
     uVar12 = (DAT_0080874e != '\x03') - 1 & 5;
     iVar17 = -1;
     iVar6 = 1;
-    puVar9 = (uint *)LoadResourceString(0x5d52,HINSTANCE_00807618);
+    puVar9 = (uint *)LoadResourceString(0x5d52,g_module_00807618);
     ccFntTy::WrStr(this_00->field_01E0,puVar9,iVar6,iVar17,uVar12);
     iVar6 = 1;
   }
@@ -185,7 +185,7 @@ void __thiscall HelpPanelTy::TechProc(HelpPanelTy *this,uint param_1,byte param_
         uVar12 = (DAT_0080874e != '\x03') - 1 & 5;
         iVar17 = -1;
         iVar6 = 1;
-        puVar9 = (uint *)LoadResourceString(0x5d52,HINSTANCE_00807618);
+        puVar9 = (uint *)LoadResourceString(0x5d52,g_module_00807618);
         ccFntTy::WrStr(this_00->field_01E0,puVar9,iVar6,iVar17,uVar12);
         iVar6 = 1;
       }
@@ -195,7 +195,7 @@ void __thiscall HelpPanelTy::TechProc(HelpPanelTy *this,uint param_1,byte param_
           uVar12 = (DAT_0080874e != '\x03') - 1 & 5;
           iVar17 = -1;
           iVar6 = 1;
-          puVar9 = (uint *)LoadResourceString(0x5d54,HINSTANCE_00807618);
+          puVar9 = (uint *)LoadResourceString(0x5d54,g_module_00807618);
           ccFntTy::WrStr(this_00->field_01E0,puVar9,iVar6,iVar17,uVar12);
           iVar6 = 3;
 LAB_00516eb8:
@@ -207,7 +207,7 @@ LAB_00516eb8:
         uVar12 = (DAT_0080874e != '\x03') - 1 & 5;
         iVar17 = -1;
         iVar6 = 1;
-        puVar9 = (uint *)LoadResourceString(0x5d53,HINSTANCE_00807618);
+        puVar9 = (uint *)LoadResourceString(0x5d53,g_module_00807618);
         ccFntTy::WrStr(this_00->field_01E0,puVar9,iVar6,iVar17,uVar12);
         iVar6 = 3;
       }
@@ -220,7 +220,7 @@ LAB_00516f08:
     uVar12 = (DAT_0080874e != '\x03') - 1 & 5;
     iVar17 = -1;
     iVar6 = 1;
-    puVar9 = (uint *)LoadResourceString(0x5d56,HINSTANCE_00807618);
+    puVar9 = (uint *)LoadResourceString(0x5d56,g_module_00807618);
     ccFntTy::WrStr(this_00->field_01E0,puVar9,iVar6,iVar17,uVar12);
     iVar6 = 2;
   }
@@ -234,13 +234,13 @@ LAB_00516f6b:
   uVar19 = 3;
   iVar17 = -1;
   iVar6 = -3;
-  puVar9 = (uint *)LoadResourceString(0x5623,HINSTANCE_00807618);
+  puVar9 = (uint *)LoadResourceString(0x5623,g_module_00807618);
   ccFntTy::WrStr(this_00->field_01E0,puVar9,iVar6,iVar17,uVar19);
   ccFntTy::SetSurf(this_00->field_01E0,(int)this_00->field_0218,0,0x96,local_8,0x106,0xf);
   uVar12 = (DAT_0080874e != '\x03') - 1 & 5;
   iVar17 = -1;
   iVar6 = 1;
-  pHVar15 = HINSTANCE_00807618;
+  pHVar15 = g_module_00807618;
   UVar7 = thunk_FUN_005293c0(param_1);
   puVar9 = (uint *)LoadResourceString(UVar7,pHVar15);
   ccFntTy::WrStr(this_00->field_01E0,puVar9,iVar6,iVar17,uVar12);
@@ -249,7 +249,7 @@ LAB_00516f6b:
   uVar19 = 3;
   iVar17 = -1;
   iVar6 = -3;
-  puVar9 = (uint *)LoadResourceString(0x55f7,HINSTANCE_00807618);
+  puVar9 = (uint *)LoadResourceString(0x55f7,g_module_00807618);
   ccFntTy::WrStr(this_00->field_01E0,puVar9,iVar6,iVar17,uVar19);
   ccFntTy::SetSurf(this_00->field_01E8,(int)this_00->field_0218,0,0x96,local_8 - 3,0x106,0x14);
   local_38 = (uint)param_2;
@@ -275,7 +275,7 @@ LAB_00516f6b:
   uVar19 = 3;
   iVar18 = -1;
   iVar17 = -3;
-  puVar9 = (uint *)LoadResourceString(0x5624,HINSTANCE_00807618);
+  puVar9 = (uint *)LoadResourceString(0x5624,g_module_00807618);
   ccFntTy::WrStr(this_00->field_01E0,puVar9,iVar17,iVar18,uVar19);
   ccFntTy::SetSurf(this_00->field_01E0,(int)this_00->field_0218,0,0x96,local_8,0x106,0xf);
   iVar6 = (*(int *)(&DAT_007e5474 + iVar6) / 0x19) % 0xe10;
@@ -286,7 +286,7 @@ LAB_00516f6b:
   uVar19 = 3;
   iVar17 = -1;
   iVar6 = -3;
-  puVar9 = (uint *)LoadResourceString(0x5625,HINSTANCE_00807618);
+  puVar9 = (uint *)LoadResourceString(0x5625,g_module_00807618);
   ccFntTy::WrStr(this_00->field_01E0,puVar9,iVar6,iVar17,uVar19);
   ccFntTy::SetSurf(this_00->field_01E0,(int)this_00->field_0218,0,0x96,local_8,0x106,0xf);
   UVar7 = 0x5d57;
@@ -301,21 +301,21 @@ LAB_00516f6b:
   uVar12 = (DAT_0080874e != '\x03') - 1 & 5;
   iVar17 = -1;
   iVar6 = 1;
-  puVar9 = (uint *)LoadResourceString(UVar7,HINSTANCE_00807618);
+  puVar9 = (uint *)LoadResourceString(UVar7,g_module_00807618);
   ccFntTy::WrStr(this_00->field_01E0,puVar9,iVar6,iVar17,uVar12);
   local_8 = local_8 + 0xf;
-  if ((g_sTAllPlayers_007FA174 != (STAllPlayersC *)0x0) &&
+  if ((g_allPlayers_007FA174 != (STAllPlayersC *)0x0) &&
      ((thunk_FUN_004e6e10(local_18,param_1,&local_10,&local_14), local_10 != 0 || (local_14 != 0))))
   {
     ccFntTy::SetSurf(this_00->field_01E0,(int)this_00->field_0218,0,0,local_8,0x91,0xf);
     uVar19 = 3;
     iVar17 = -1;
     iVar6 = -3;
-    puVar9 = (uint *)LoadResourceString(0x5626,HINSTANCE_00807618);
+    puVar9 = (uint *)LoadResourceString(0x5626,g_module_00807618);
     ccFntTy::WrStr(this_00->field_01E0,puVar9,iVar6,iVar17,uVar19);
     if (local_10 != 0) {
       ccFntTy::SetSurf(this_00->field_01E0,(int)this_00->field_0218,0,0x96,local_8,0x106,0xf);
-      pHVar15 = HINSTANCE_00807618;
+      pHVar15 = g_module_00807618;
       UVar7 = thunk_FUN_00523410(local_10,(char)local_c,0);
       pcVar10 = LoadResourceString(UVar7,pHVar15);
       uVar12 = 0xffffffff;
@@ -364,7 +364,7 @@ LAB_00516f6b:
     }
     if (local_14 != 0) {
       ccFntTy::SetSurf(this_00->field_01E0,(int)this_00->field_0218,0,0x96,local_8,0x106,0xf);
-      pHVar15 = HINSTANCE_00807618;
+      pHVar15 = g_module_00807618;
       UVar7 = thunk_FUN_00523410(local_14,(char)local_c,0);
       pcVar10 = LoadResourceString(UVar7,pHVar15);
       uVar12 = 0xffffffff;

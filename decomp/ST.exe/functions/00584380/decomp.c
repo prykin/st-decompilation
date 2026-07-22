@@ -13,16 +13,16 @@ undefined4 __thiscall STJellyGunC::sub_00584380(STJellyGunC *this)
   this_00 = &this->field_01D5;
   iVar1 = STT3DSprC::LoadSequence((STT3DSprC *)this_00,8,DAT_00806774,"Expb11",0x1d);
   if (iVar1 == 0) {
-    STT3DSprC::StartShow((STT3DSprC *)this_00,8,PTR_00802a38->field_00E4);
+    STT3DSprC::StartShow((STT3DSprC *)this_00,8,g_playSystem_00802A38->field_00E4);
     STT3DSprC::LoadSequence((STT3DSprC *)this_00,10,DAT_00806774,"expmask3",0x1d);
-    thunk_FUN_004acfe0(this_00,'\n');
-    thunk_FUN_004acf20(this_00,DAT_008032b8,0x10);
-    STT3DSprC::StartShow((STT3DSprC *)this_00,10,PTR_00802a38->field_00E4);
+    STT3DSprC::sub_004ACFE0((STT3DSprC *)this_00,'\n');
+    STT3DSprC::sub_004ACF20((STT3DSprC *)this_00,DAT_008032b8,0x10);
+    STT3DSprC::StartShow((STT3DSprC *)this_00,10,g_playSystem_00802A38->field_00E4);
     (*this->vtable->vfunc_D8)();
     iVar1 = STT3DSprC::LoadSequence((STT3DSprC *)this_00,9,DAT_00806764,"bulb_n5",0x1d);
     if (iVar1 == 0) {
-      thunk_FUN_004ad070(this_00,9);
-      uVar2 = thunk_FUN_004acd30(this_00,'\t');
+      STT3DSprC::sub_004AD070((STT3DSprC *)this_00,9);
+      uVar2 = STT3DSprC::sub_004ACD30((STT3DSprC *)this_00,'\t');
       this->field_0x24f = (char)uVar2;
       this->field_0x250 = DAT_007cb414;
       this->field_0251 = 0;

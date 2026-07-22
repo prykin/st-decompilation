@@ -1,4 +1,4 @@
-FUN_005ae950:
+ChooseMapTy::sub_005AE950:
 005AE950  53                        PUSH EBX
 005AE951  56                        PUSH ESI
 005AE952  8B F1                     MOV ESI,ECX

@@ -12,8 +12,9 @@ undefined4 * __thiscall AiEventClassTy::PrepareToSave(AiEventClassTy *this,uint 
   AiEventClassTy *pAVar2;
   int errorCode;
   AnonShape_0065CD10_BA40DE58 *pAVar3;
-  undefined4 *puVar4;
+  byte *pbVar4;
   int iVar5;
+  undefined4 *puVar6;
   InternalExceptionFrame local_4c;
   AiEventClassTy *local_8;
 
@@ -29,11 +30,11 @@ undefined4 * __thiscall AiEventClassTy::PrepareToSave(AiEventClassTy *this,uint 
     else {
       pAVar3 = (AnonShape_0065CD10_BA40DE58 *)&local_8->field_008C;
     }
-    puVar4 = EventDataPack(pAVar3,param_1);
-    *(undefined1 *)puVar4 = 1;
-    *(uint *)((int)puVar4 + 0x4e) = pAVar2->field_0088;
+    pbVar4 = EventDataPack(pAVar3,param_1);
+    *pbVar4 = 1;
+    *(uint *)(pbVar4 + 0x4e) = pAVar2->field_0088;
     g_currentExceptionFrame = local_4c.previous;
-    return puVar4;
+    return (undefined4 *)pbVar4;
   }
   g_currentExceptionFrame = local_4c.previous;
   iVar5 = ReportDebugMessage("E:\\__titans\\ai\\ai_event.cpp",0x66,0,errorCode,"%s",

@@ -1,18 +1,23 @@
 
-void __fastcall FUN_0061d650(AnonShape_0061D650_84237B09 *param_1)
+/* [STMethodOwnerApplier] Structural method owner recovered as STLightC.
+   Evidence: this_call_owners=[STLightC]; agreed_this_calls=1; incoming_this_accesses=5;
+   incoming_edx_uses=0; incoming_stack_parameter_uses=0; direct_non_thunk_callers=0;
+   incoming_ecx_receiver_callers=0; attributed_named_callers=1; owner_evidence_coverage=adequate */
+
+void __thiscall STLightC::sub_0061D650(STLightC *this)
 
 {
-  if (param_1->field_0057 != 0) {
-    FreeAndNull((void **)&param_1->field_0057);
+  if (this->field_0057 != 0) {
+    FreeAndNull((void **)&this->field_0057);
   }
-  if (param_1->field_009B != 0) {
-    FreeAndNull((void **)&param_1->field_009B);
+  if (this->field_009B != 0) {
+    FreeAndNull((void **)&this->field_009B);
   }
-  if (param_1->field_009F != 0) {
-    FreeAndNull((void **)&param_1->field_009F);
+  if (this->field_009F != 0) {
+    FreeAndNull((void **)&this->field_009F);
   }
-  param_1->field_0093 = 0;
-  param_1->field_0097 = 0;
+  this->field_0093 = 0;
+  this->field_0097 = 0;
   return;
 }
 

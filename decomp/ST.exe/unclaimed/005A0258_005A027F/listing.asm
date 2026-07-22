@@ -1,0 +1,10 @@
+005A0258  pointer  0059f711
+005A025C  pointer  0059f6fe
+005A0260  pointer  0059fadd
+005A0264  pointer  0059f6fe
+005A0268  pointer  0059f6fe
+005A026C  pointer  0059fc4e
+005A0270  pointer  0059f6fe
+005A0274  pointer  0059ff2a
+005A0278  pointer  0059f9a5
+005A027C  pointer  0059f85f

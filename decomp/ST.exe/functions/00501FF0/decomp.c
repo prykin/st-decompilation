@@ -49,13 +49,13 @@ void __thiscall CPanelTy::Update2PanelWB(CPanelTy *this)
     pAVar7 = (AnonShape_00501D00_04A7E309 *)&pAVar7->field_0x4;
   }
   memset(pCVar1, 0, 0x5c); /* compiler bulk-zero initialization */
-  STAllPlayersC::GetPanelInfo(g_sTAllPlayers_007FA174,2,(AnonShape_0043BEB0_1C00EC12 *)pCVar1);
+  STAllPlayersC::GetPanelInfo(g_allPlayers_007FA174,2,(AnonShape_0043BEB0_1C00EC12 *)pCVar1);
   /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
   if (local_64._5_1_ != this_00->field_0B9E) {
 cf_common_exit_00502155:
     PaintCtrlBoat(this_00);
     SetControlBoat(this_00);
-    thunk_FUN_00501a10((AnonShape_00501A10_7BD31715 *)this_00);
+    sub_00501A10(this_00);
     g_currentExceptionFrame = local_a8.previous;
     return;
   }

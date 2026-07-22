@@ -14,7 +14,7 @@ int __thiscall STBoatC::Recharge(STBoatC *this,int param_1)
   short sVar4;
   STWorldObject *pSVar5;
   code *pcVar6;
-  AnonPointee_STBoatC_0000 *pAVar7;
+  STBoatCVTable *pSVar7;
   int iVar8;
   int iVar9;
   int iVar10;
@@ -89,20 +89,18 @@ int __thiscall STBoatC::Recharge(STBoatC *this,int param_1)
     this->field_00B7 = 3;
     sub_00481520(this,(int)this->field_061D,(int)this->field_061F,(int)this->field_0621);
     sub_00460260(this,0);
-    pAVar7 = this->vtable;
-/* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+    pSVar7 = this->vtable;
 LAB_0047926a:
-    iVar9 = (*(code *)pAVar7->field_00D8)();
+    iVar9 = (*pSVar7->vfunc_D8)();
     return (-(uint)(iVar9 != 0) & 0xfffffffd) + 2;
   }
   iVar9 = this->field_0631;
   if (iVar9 == 0) {
     iVar9 = *(int *)&this->field_0x62d + 1;
     *(int *)&this->field_0x62d = iVar9;
-    pAVar7 = this->vtable;
+    pSVar7 = this->vtable;
     if (iVar9 != 2) goto LAB_0047926a;
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-    iVar9 = (*(code *)pAVar7->field_00D8)();
+    iVar9 = (*pSVar7->vfunc_D8)();
     if (iVar9 != 0) {
       return -1;
     }
@@ -213,9 +211,8 @@ LAB_0047885b:
     }
     sub_004602B0(this);
     this->field_00B7 = 0;
-/* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
 cf_common_exit_00478E51:
-    (*(code *)this->vtable->field_0090)(3,0x1b2);
+    (*this->vtable->vfunc_90)(3,0x1b2);
     return 0;
   }
   if (iVar9 == 2) {
@@ -292,11 +289,10 @@ LAB_00478b7a:
         if (iVar9 != 3) {
           return 2;
         }
-        SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0048DFD0::thunk_FUN_0048dfd0
-                  ((AnonReceiver_0048DFD0 *)this,this->field_061D,this->field_061F,this->field_0621,
-                   this->field_061D,this->field_061F,(int *)(uint)(ushort)this->field_0621,3,
-                   (short *)&this->field_0x627,(short *)&this->field_0x629,
-                   (short *)&this->field_0x62b);
+        sub_0048DFD0(this,this->field_061D,this->field_061F,this->field_0621,this->field_061D,
+                     this->field_061F,(int *)(uint)(ushort)this->field_0621,3,
+                     (short *)&this->field_0x627,(short *)&this->field_0x629,
+                     (short *)&this->field_0x62b);
 LAB_00478b1a:
         iVar8 = (int)*(short *)&this->field_0x62b;
         iVar10 = (int)*(short *)&this->field_0x629;
@@ -331,15 +327,13 @@ LAB_00478b1a:
       }
       iVar9 = thunk_FUN_004d6f70((int *)this);
       if (iVar9 != 1) goto LAB_00478ff2;
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-      (*(code *)this->vtable->field_0090)(3,0x1b2);
+      (*this->vtable->vfunc_90)(3,0x1b2);
       puVar1 = &this->field_0x62b;
       if (*(int *)&pSVar5[0x1d].field_0x18 == 0) {
 LAB_00478f91:
-        SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0048DFD0::thunk_FUN_0048dfd0
-                  ((AnonReceiver_0048DFD0 *)this,this->field_061D,this->field_061F,this->field_0621,
-                   this->field_061D,this->field_061F,(int *)(uint)(ushort)this->field_0621,3,
-                   (short *)&this->field_0x627,(short *)&this->field_0x629,(short *)puVar1);
+        sub_0048DFD0(this,this->field_061D,this->field_061F,this->field_0621,this->field_061D,
+                     this->field_061F,(int *)(uint)(ushort)this->field_0621,3,
+                     (short *)&this->field_0x627,(short *)&this->field_0x629,(short *)puVar1);
       }
       else {
         if (&this->field_0x627 != (undefined1 *)0x0) {
@@ -357,9 +351,8 @@ LAB_00478f91:
       sub_00481520(this,(int)*(short *)&this->field_0x627,(int)*(short *)&this->field_0x629,
                    (int)*(short *)puVar1);
       sub_00460260(this,0);
-/* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
 LAB_00478ff2:
-      iVar9 = (*(code *)this->vtable->field_00D8)();
+      iVar9 = (*this->vtable->vfunc_D8)();
       return (-(uint)(iVar9 != 0) & 0xfffffffd) + 2;
     }
     iVar9 = sub_00460260(this,2);

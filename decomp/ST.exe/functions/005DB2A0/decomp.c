@@ -52,8 +52,8 @@ void __thiscall StartSystemTy::sub_005DB2A0(StartSystemTy *this)
     FreeAndNull(&this->field_02F4);
   }
   SpriteClassTy::CloseSprite((SpriteClassTy *)&this->field_02F8);
-  if ((AnonShape_006B5570_4D68B99C *)this->field_0548 != (AnonShape_006B5570_4D68B99C *)0x0) {
-    FUN_006b5570((AnonShape_006B5570_4D68B99C *)this->field_0548);
+  if ((DArrayTy *)this->field_0548 != (DArrayTy *)0x0) {
+    FUN_006b5570((DArrayTy *)this->field_0548);
   }
   this->field_0548 = (uint *)0x0;
   if (-1 < this->field_0540) {
@@ -79,10 +79,10 @@ void __thiscall StartSystemTy::sub_005DB2A0(StartSystemTy *this)
     FUN_006b3bb0((int *)PTR_008075a8,this->field_0554);
     this->field_0554 = -1;
   }
-  if ((AnonShape_006B5570_4D68B99C *)this->field_0686 != (AnonShape_006B5570_4D68B99C *)0x0) {
-    FUN_006b5570((AnonShape_006B5570_4D68B99C *)this->field_0686);
+  if (this->field_0686 != (DArrayTy *)0x0) {
+    FUN_006b5570(this->field_0686);
   }
-  this->field_0686 = (uint *)0x0;
+  this->field_0686 = (DArrayTy *)0x0;
   return;
 }
 

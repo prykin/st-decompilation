@@ -3,13 +3,17 @@
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\cp_sup.cpp
-   CPanelTy::SetButStruct */
+   CPanelTy::SetButStruct
+
+   [STPrototypeApplier] Propagated parameter 7.
+   Evidence: 00502360 -> 004F2E40 @ 00502527 | 00503450 -> 004F2E40 @ 00503643 | 005097E0 ->
+   004F2E40 @ 005099DD | 0050E7D0 -> 004F2E40 @ 0050EA07 */
 
 void __thiscall
 CPanelTy::SetButStruct
           (CPanelTy *this,AnonShape_004F2E40_DC76A8C6 *param_1,byte param_2,undefined4 param_3,
-          int param_4,int param_5,byte param_6,undefined4 param_7,undefined2 param_8,
-          undefined2 param_9,undefined4 param_10,char *param_11)
+          int param_4,int param_5,byte param_6,LPSTR param_7,undefined2 param_8,undefined2 param_9,
+          undefined4 param_10,char *param_11)
 
 {
   undefined1 *text;

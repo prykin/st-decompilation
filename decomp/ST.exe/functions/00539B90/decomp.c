@@ -152,7 +152,7 @@ void __thiscall PlayPanelTy::InitPlayPanel(PlayPanelTy *this)
     uVar17 = (DAT_0080874e != '\x03') - 1 & 5;
     iVar21 = -1;
     iVar8 = -2;
-    puVar6 = (uint *)LoadResourceString(0x2733,HINSTANCE_00807618);
+    puVar6 = (uint *)LoadResourceString(0x2733,g_module_00807618);
     ccFntTy::WrStr(this_00->field_01DD,puVar6,iVar8,iVar21,uVar17);
     PaintPlayPanel(this_00);
     uVar25 = 0;
@@ -164,8 +164,8 @@ void __thiscall PlayPanelTy::InitPlayPanel(PlayPanelTy *this)
     uVar14 = 0xc000;
     uVar13 = 0xbfff;
     pCVar5 = thunk_FUN_00571240("BUT_MEDIUM",0);
-    uVar13 = UPanelTy::CreateBut((UPanelTy *)this_00,0,1,0x171,199,1,(int)pCVar5,uVar13,uVar14,
-                                 sVar15,uVar16,uVar19,pcVar20,uVar23,uVar25);
+    uVar13 = UPanelTy::CreateBut((UPanelTy *)this_00,0,1,0x171,199,1,pCVar5,uVar13,uVar14,sVar15,
+                                 uVar16,uVar19,pcVar20,uVar23,uVar25);
     this_00->field_017C = uVar13;
     local_488[0] = 0;
     if (DAT_00808aaf < 9) {
@@ -215,8 +215,8 @@ void __thiscall PlayPanelTy::InitPlayPanel(PlayPanelTy *this)
     }
     local_300[3] = local_300[3] + 0x1a;
     local_298 = 0x6201;
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-    (*(code *)this_00->field_000C->vtable->field_0008)(4,&this_00->field_01C5,0,local_488,0);
+    (*this_00->field_000C->vtable->CreateObject)
+              ((SystemClassTy *)this_00->field_000C,4,&this_00->field_01C5,(int *)0x0,local_488,0);
     if (8 < DAT_00808aaf) {
       this_00->field_0028 = 0x20;
       *(undefined4 *)&this_00->field_0x2c = 1;
@@ -233,7 +233,7 @@ void __thiscall PlayPanelTy::InitPlayPanel(PlayPanelTy *this)
       else {
         iVar7 = 0;
       }
-      uVar13 = UPanelTy::CreateBut((UPanelTy *)this_00,0,iVar7,0x4d,iVar8 + -2,0,0,iVar21,
+      uVar13 = UPanelTy::CreateBut((UPanelTy *)this_00,0,iVar7,0x4d,iVar8 + -2,0,(LPSTR)0x0,iVar21,
                                    iVar21 + 0x10,0,0,0,(char *)0x0,0x16,0xe);
       local_10[-8] = uVar13;
       if ((DAT_00808aaf <= local_5) || (local_c = 1, DAT_00808783 != '\x03')) {
@@ -251,8 +251,8 @@ void __thiscall PlayPanelTy::InitPlayPanel(PlayPanelTy *this)
       iVar12 = 1;
       pCVar5 = thunk_FUN_00571240("BUT_PRODWEAP",0);
       pCVar5 = FUN_006f2c00(pCVar5,iVar12,uVar13);
-      uVar13 = UPanelTy::CreateBut((UPanelTy *)this_00,0,local_c,0x183,iVar8,1,(int)pCVar5,iVar10,
-                                   iVar7,sVar15,uVar16,uVar14,pcVar20,uVar19,uVar23);
+      uVar13 = UPanelTy::CreateBut((UPanelTy *)this_00,0,local_c,0x183,iVar8,1,pCVar5,iVar10,iVar7,
+                                   sVar15,uVar16,uVar14,pcVar20,uVar19,uVar23);
       iVar8 = iVar8 + 0xf;
       *local_10 = uVar13;
       local_5 = local_5 + 1;
@@ -297,8 +297,8 @@ void __thiscall PlayPanelTy::InitPlayPanel(PlayPanelTy *this)
       local_38 = 2;
       local_34 = 0xb209;
       local_3c = local_5c;
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-      (*(code *)this_00->field_000C->vtable->field_0008)(5,&this_00->field_01C1,0,local_6c,0);
+      (*this_00->field_000C->vtable->CreateObject)
+                ((SystemClassTy *)this_00->field_000C,5,&this_00->field_01C1,(int *)0x0,local_6c,0);
       resourceId = 0x42b8;
       iVar8 = 0x3c;
       local_c = 4;
@@ -307,7 +307,7 @@ void __thiscall PlayPanelTy::InitPlayPanel(PlayPanelTy *this)
         uVar17 = (DAT_0080874e != '\x03') - 1 & 5;
         iVar7 = -1;
         iVar21 = 0;
-        puVar6 = (uint *)LoadResourceString(resourceId,HINSTANCE_00807618);
+        puVar6 = (uint *)LoadResourceString(resourceId,g_module_00807618);
         ccFntTy::WrStr(this_00->field_01DD,puVar6,iVar21,iVar7,uVar17);
         iVar8 = iVar8 + 0x5c;
         resourceId = resourceId + 1;

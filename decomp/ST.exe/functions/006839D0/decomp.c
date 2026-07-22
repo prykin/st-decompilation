@@ -51,8 +51,7 @@ int __cdecl FUN_006839d0(int param_1,int *param_2,undefined2 param_3,int param_4
         break;
       case '\x04':
         iVar6 = iVar3;
-        pAVar4 = (AnonShape_00683780_11EA4E23 *)
-                 thunk_FUN_0067fca0((&DAT_00811c80)[DAT_008488b0 * 0xac5 + iVar5]);
+        pAVar4 = thunk_FUN_0067fca0((&DAT_00811c80)[DAT_008488b0 * 0xac5 + iVar5]);
         thunk_FUN_00683780(param_2,pAVar4,iVar6);
         iVar5 = iVar5 + 1;
         break;

@@ -21,7 +21,7 @@ void __thiscall MMsgTy::InitMMsg(MMsgTy *this)
   errorCode = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
   this_00 = local_8;
   if (errorCode == 0) {
-    PTR_0081176c->field_02E6 = (MMsgTy *)local_8;
+    g_startSystem_0081176C->field_02E6 = (MMsgTy *)local_8;
     local_8->field_0x9a = 8;
     MMObjTy::InitSprBut(local_8,(AnonShape_005B5240_B2C8755B *)&local_8->field_0x9b,
                         "MM_MBUT12",0x194,0x213,0x24,0x12,0x12,7,0xa0,0x31,0x14,(char *)0x0

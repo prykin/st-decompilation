@@ -55,7 +55,7 @@ STAllPlayersC::GetCamPoint
           DArrayGetElement(param_3,local_c,&local_10);
           if ((short)local_10 != -1) {
             uVar6 = uVar6 + 1;
-            pSVar5 = GetObjPtr(g_sTAllPlayers_007FA174,(char)param_2,local_10,CASE_1);
+            pSVar5 = GetObjPtr(g_allPlayers_007FA174,(char)param_2,local_10,CASE_1);
             STFishC::sub_004162B0
                       ((STFishC *)pSVar5,&param_1,(undefined2 *)&local_8,
                        (undefined2 *)((int)&param_4 + 2));
@@ -69,7 +69,7 @@ STAllPlayersC::GetCamPoint
           do {
             DArrayGetElement(param_3,local_c,&local_10);
             if ((short)local_10 != -1) {
-              pSVar5 = GetObjPtr(g_sTAllPlayers_007FA174,(char)param_2,local_10,CASE_1);
+              pSVar5 = GetObjPtr(g_allPlayers_007FA174,(char)param_2,local_10,CASE_1);
               STFishC::sub_004162B0
                         ((STFishC *)pSVar5,&param_1,(undefined2 *)&local_8,
                          (undefined2 *)((int)&param_4 + 2));
@@ -126,7 +126,7 @@ LAB_0043acdb:
     if (_param_1 != 0x1b8) goto LAB_0043acdb;
     SVar10 = CASE_6;
   }
-  pSVar5 = GetObjPtr(g_sTAllPlayers_007FA174,(char)param_2,param_4,SVar10);
+  pSVar5 = GetObjPtr(g_allPlayers_007FA174,(char)param_2,param_4,SVar10);
   STFishC::sub_004162B0
             ((STFishC *)pSVar5,&param_1,(undefined2 *)&local_8,(undefined2 *)((int)&param_4 + 2));
   if (param_5 != (int *)0x0) {

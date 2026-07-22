@@ -1,10 +1,10 @@
 program=ST.exe
-ptr_symbols=722
+ptr_symbols=708
 code_pointer=99
 control_flow_table_entry=4
 initialized_data_pointer=352
 string_pointer=222
-zero_initialized_global=45
-zero_global_anonymous_pointees=24
-named_upgrade_auto_apply=2
+zero_initialized_global=31
+zero_global_anonymous_pointees=14
+named_upgrade_auto_apply=0
 note=Control-flow, code and string table entries retain PTR_* labels; they are not class instances.

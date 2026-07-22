@@ -1,10 +1,15 @@
 
-undefined4 __fastcall FUN_004c61a0(AnonShape_004C61A0_0E747D1B *param_1)
+/* [STMethodOwnerApplier] Structural method owner recovered as TLOBldMark.
+   Evidence: this_call_owners=[TLOBldMark]; agreed_this_calls=1; incoming_this_accesses=3;
+   incoming_edx_uses=0; incoming_stack_parameter_uses=0; direct_non_thunk_callers=0;
+   incoming_ecx_receiver_callers=0; attributed_named_callers=1; owner_evidence_coverage=adequate */
+
+undefined4 __thiscall TLOBldMark::sub_004C61A0(TLOBldMark *this)
 
 {
-  if (param_1->field_0018 == 0) {
-    thunk_FUN_004ad310((STT3DSprC *)param_1->field_002C);
-    Library::MSVCRT::FUN_0072e2b0((HoloTy *)param_1->field_002C);
+  if (this->field_0018 == 0) {
+    thunk_FUN_004ad310((STT3DSprC *)this->field_002C);
+    Library::MSVCRT::FUN_0072e2b0((HoloTy *)this->field_002C);
   }
   g_tLOBldMark_007FB2AC = (AnonShape_GLOBAL_007FB2AC_70073F41 *)0x0;
   return 0;

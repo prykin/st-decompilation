@@ -24,12 +24,10 @@ STJellyGunC::sub_00584060(STJellyGunC *this,int *param_1,int *param_2,int *param
   if (this->field_023D != 0) {
     /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
     this_00 = STAllPlayersC::GetObjPtr
-                        (g_sTAllPlayers_007FA174,*(char *)&this->field_0241,
+                        (g_allPlayers_007FA174,*(char *)&this->field_0241,
                          CONCAT22((short)((uint)this->field_023D >> 0x10),
                                   *(undefined2 *)&this->field_0x245),CASE_1);
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-    if ((this_00 != (STGameObjC *)0x0) &&
-       (iVar1 = (**(code **)&this_00->vtable[1].field_0x28)(), iVar1 != 0)) {
+    if ((this_00 != (STGameObjC *)0x0) && (iVar1 = (*this_00->vtable[1].vfunc_24)(), iVar1 != 0)) {
       thunk_FUN_004162f0(this_00,&local_6,&local_8,&local_a);
       *param_1 = (int)local_6;
       *param_2 = (int)local_8;

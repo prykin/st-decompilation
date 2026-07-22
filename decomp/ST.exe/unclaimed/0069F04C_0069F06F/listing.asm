@@ -1,0 +1,9 @@
+0069F04C  pointer  0069efb4
+0069F050  pointer  0069efc0
+0069F054  pointer  0069efcc
+0069F058  pointer  0069efd5
+0069F05C  pointer  0069efe1
+0069F060  pointer  0069efed
+0069F064  pointer  0069eff6
+0069F068  pointer  0069f002
+0069F06C  pointer  0069f00b

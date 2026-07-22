@@ -53,7 +53,7 @@ void __thiscall CPanelTy::Update2PanelSI(CPanelTy *this)
     pAVar9 = (AnonShape_00501D00_04A7E309 *)&pAVar9->field_0x4;
   }
   memset(pCVar1, 0, 0x5c); /* compiler bulk-zero initialization */
-  STAllPlayersC::GetPanelInfo(g_sTAllPlayers_007FA174,2,(AnonShape_0043BEB0_1C00EC12 *)pCVar1);
+  STAllPlayersC::GetPanelInfo(g_allPlayers_007FA174,2,(AnonShape_0043BEB0_1C00EC12 *)pCVar1);
   /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
   if (local_68._5_1_ == this_00->field_0B9E) {
     switch(this_00->field_0B9E) {
@@ -134,7 +134,7 @@ void __thiscall CPanelTy::Update2PanelSI(CPanelTy *this)
   }
   PaintCtrlBoatSI(this_00);
   SetControlBoatSI(this_00);
-  thunk_FUN_00501a10((AnonShape_00501A10_7BD31715 *)this_00);
+  sub_00501A10(this_00);
 switchD_00503051_default:
   g_currentExceptionFrame = local_ac.previous;
   return;

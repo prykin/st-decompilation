@@ -38,11 +38,11 @@ int __thiscall FUN_0063c510(void *this,int param_1)
     if ((*(char *)((int)this + 0x29e) == '\x04') || (*(char *)((int)this + 0x29e) == '\x01')) {
       this_00 = (STT3DSprC *)((int)this + 0x1d5);
       thunk_FUN_004abce0(this_00,0xd,0,0x13,'\0');
-      STT3DSprC::StartShow(this_00,0xd,PTR_00802a38->field_00E4);
+      STT3DSprC::StartShow(this_00,0xd,g_playSystem_00802A38->field_00E4);
       *(undefined1 *)((int)this + 0x29f) = 1;
       thunk_FUN_004ac6b0(this_00,'\r');
-      thunk_FUN_00416240(this,*(undefined2 *)((int)this + 0x266),*(undefined2 *)((int)this + 0x26a),
-                         *(undefined2 *)((int)this + 0x26e));
+      sub_00416240(this,*(undefined2 *)((int)this + 0x266),*(undefined2 *)((int)this + 0x26a),
+                   *(undefined2 *)((int)this + 0x26e));
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
       (**(code **)(*(int *)this + 0xd8))();
       pVVar2 = g_visibleClass_00802A88;

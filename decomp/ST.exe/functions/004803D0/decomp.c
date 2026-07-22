@@ -35,13 +35,12 @@ int __thiscall STBoatC::FUN_004803d0(STBoatC *this,int param_1)
     this->field_07CE = 1;
   }
   else if (iVar1 == 1) {
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-    iVar1 = (*(code *)this->vtable->field_00D8)();
+    iVar1 = (*this->vtable->vfunc_D8)();
     if (iVar1 != 0) {
       return -1;
     }
-    if (PTR_00802a38->field_00E4 % 0x25 == 0) {
-      iVar1 = FUN_006e62d0(PTR_00802a38,this->field_07CA,&param_1);
+    if (g_playSystem_00802A38->field_00E4 % 0x25 == 0) {
+      iVar1 = FUN_006e62d0(g_playSystem_00802A38,this->field_07CA,&param_1);
       if (iVar1 == -4) {
         return 0;
       }

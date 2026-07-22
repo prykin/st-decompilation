@@ -19,8 +19,8 @@ int __thiscall FUN_00679e70(void *this,short param_1)
         else {
           puVar2 = (undefined4 *)0x0;
         }
-        if (((puVar2[1] != 0) && ((void *)*puVar2 != (void *)0x0)) &&
-           (iVar3 = thunk_FUN_0068e290((void *)*puVar2,param_1), iVar3 != 0)) {
+        if (((puVar2[1] != 0) && ((AiTactClassTy *)*puVar2 != (AiTactClassTy *)0x0)) &&
+           (iVar3 = AiTactClassTy::sub_0068E290((AiTactClassTy *)*puVar2,param_1), iVar3 != 0)) {
           return iVar3;
         }
       }

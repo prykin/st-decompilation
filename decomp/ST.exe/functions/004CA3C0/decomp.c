@@ -35,18 +35,18 @@ int __thiscall TLOBaseTy::ReloadLogoPlane(TLOBaseTy *this)
       local_10 = pAVar2->field_01E4;
       local_14 = pAVar2->field_01E8;
       local_c = pAVar2->field_01EC;
-      iVar5 = thunk_FUN_004acd30(puVar1,'\r');
+      iVar5 = STT3DSprC::sub_004ACD30((STT3DSprC *)puVar1,'\r');
       if (iVar5 != 0) {
-        iVar5 = thunk_FUN_004acd30(puVar1,'\r');
+        iVar5 = STT3DSprC::sub_004ACD30((STT3DSprC *)puVar1,'\r');
         local_8 = Library::DKW::LIB::FUN_006aac10(iVar5 << 2);
         iVar7 = 0;
-        iVar5 = thunk_FUN_004acd30(puVar1,'\r');
+        iVar5 = STT3DSprC::sub_004ACD30((STT3DSprC *)puVar1,'\r');
         if (0 < iVar5) {
           do {
             uVar6 = thunk_FUN_004acdd0(puVar1,'\r',iVar7);
             local_8[iVar7] = uVar6;
             iVar7 = iVar7 + 1;
-            iVar5 = thunk_FUN_004acd30(puVar1,'\r');
+            iVar5 = STT3DSprC::sub_004ACD30((STT3DSprC *)puVar1,'\r');
           } while (iVar7 < iVar5);
         }
       }
@@ -60,12 +60,12 @@ int __thiscall TLOBaseTy::ReloadLogoPlane(TLOBaseTy *this)
       thunk_FUN_004abce0(puVar1,0xd,local_10,local_14,'\0');
       STT3DSprC::SetCurFase((STT3DSprC *)puVar1,'\r',local_c);
       iVar7 = 0;
-      iVar5 = thunk_FUN_004acd30(puVar1,'\r');
+      iVar5 = STT3DSprC::sub_004ACD30((STT3DSprC *)puVar1,'\r');
       if (0 < iVar5) {
         do {
           thunk_FUN_004ace00(puVar1,'\r',iVar7,local_8[iVar7]);
           iVar7 = iVar7 + 1;
-          iVar5 = thunk_FUN_004acd30(puVar1,'\r');
+          iVar5 = STT3DSprC::sub_004ACD30((STT3DSprC *)puVar1,'\r');
         } while (iVar7 < iVar5);
       }
       FreeAndNull(&local_8);
@@ -77,18 +77,18 @@ int __thiscall TLOBaseTy::ReloadLogoPlane(TLOBaseTy *this)
       local_10 = pAVar2->field_0130;
       local_14 = pAVar2->field_0134;
       local_c = pAVar2->field_0138;
-      iVar5 = thunk_FUN_004acd30(puVar1,'\b');
+      iVar5 = STT3DSprC::sub_004ACD30((STT3DSprC *)puVar1,'\b');
       if (iVar5 != 0) {
-        iVar5 = thunk_FUN_004acd30(puVar1,'\b');
+        iVar5 = STT3DSprC::sub_004ACD30((STT3DSprC *)puVar1,'\b');
         local_8 = Library::DKW::LIB::FUN_006aac10(iVar5 << 2);
         iVar7 = 0;
-        iVar5 = thunk_FUN_004acd30(puVar1,'\b');
+        iVar5 = STT3DSprC::sub_004ACD30((STT3DSprC *)puVar1,'\b');
         if (0 < iVar5) {
           do {
             uVar6 = thunk_FUN_004acdd0(puVar1,'\b',iVar7);
             local_8[iVar7] = uVar6;
             iVar7 = iVar7 + 1;
-            iVar5 = thunk_FUN_004acd30(puVar1,'\b');
+            iVar5 = STT3DSprC::sub_004ACD30((STT3DSprC *)puVar1,'\b');
           } while (iVar7 < iVar5);
         }
       }
@@ -102,12 +102,12 @@ int __thiscall TLOBaseTy::ReloadLogoPlane(TLOBaseTy *this)
       thunk_FUN_004abce0(puVar1,8,local_10,local_14,'\0');
       STT3DSprC::SetCurFase((STT3DSprC *)puVar1,'\b',local_c);
       iVar7 = 0;
-      iVar5 = thunk_FUN_004acd30(puVar1,'\b');
+      iVar5 = STT3DSprC::sub_004ACD30((STT3DSprC *)puVar1,'\b');
       if (0 < iVar5) {
         do {
           thunk_FUN_004ace00(puVar1,'\b',iVar7,local_8[iVar7]);
           iVar7 = iVar7 + 1;
-          iVar5 = thunk_FUN_004acd30(puVar1,'\b');
+          iVar5 = STT3DSprC::sub_004ACD30((STT3DSprC *)puVar1,'\b');
         } while (iVar7 < iVar5);
       }
       FreeAndNull(&local_8);

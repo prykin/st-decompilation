@@ -33,7 +33,7 @@ CPanelTy::PaintDamageXY
     uVar6 = 1;
     iVar5 = -1;
     iVar3 = 0;
-    puVar4 = (uint *)LoadResourceString(param_5,HINSTANCE_00807618);
+    puVar4 = (uint *)LoadResourceString(param_5,g_module_00807618);
     ccFntTy::WrTxt(pCVar2->field_01B8,puVar4,iVar3,iVar5,uVar6,iVar7,iVar8);
     wsprintfA(&pCVar2->field_0x1e1,"%d",param_4 & 0xff);
     ccFntTy::SetSurf(pCVar2->field_01B8,param_1,0,param_2 + 0x30,param_3,0x11,10);
@@ -44,7 +44,7 @@ CPanelTy::PaintDamageXY
     uVar6 = 1;
     iVar5 = -1;
     iVar3 = -1;
-    puVar4 = (uint *)LoadResourceString(0x36b2,HINSTANCE_00807618);
+    puVar4 = (uint *)LoadResourceString(0x36b2,g_module_00807618);
     ccFntTy::WrTxt(pCVar2->field_01B8,puVar4,iVar3,iVar5,uVar6,iVar7,iVar8);
     g_currentExceptionFrame = local_4c.previous;
     return;

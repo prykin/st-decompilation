@@ -1,0 +1,5 @@
+00600EAC  pointer  0060080c
+00600EB0  pointer  0060079d
+00600EB4  pointer  00600b25
+00600EB8  pointer  00600e65
+00600EBC  pointer  00600e72

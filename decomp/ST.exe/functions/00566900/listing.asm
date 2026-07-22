@@ -1,4 +1,4 @@
-FUN_00566900:
+SoundManagerTy::sub_00566900:
 00566900  56                        PUSH ESI
 00566901  8B F1                     MOV ESI,ECX
 00566903  6A 0B                     PUSH 0xb

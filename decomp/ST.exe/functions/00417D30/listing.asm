@@ -1,4 +1,4 @@
-FUN_00417d30:
+TLOBaseTy::sub_00417D30:
 00417D30  56                        PUSH ESI
 00417D31  8B F1                     MOV ESI,ECX
 00417D33  8B 46 2C                  MOV EAX,dword ptr [ESI + 0x2c]

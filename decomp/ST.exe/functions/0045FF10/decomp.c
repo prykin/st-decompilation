@@ -1,8 +1,10 @@
 
-undefined4 __fastcall FUN_0045ff10(int param_1)
+/* [STPrototypeApplier] Propagated parameter 0.
+   Evidence: 0049D750 -> 0045FF10 @ 0049D988 */
+
+undefined4 __fastcall FUN_0045ff10(STGameObjC *objPtr)
 
 {
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  return *(undefined4 *)(param_1 + 0x45d);
+  return objPtr->field_045D;
 }
 

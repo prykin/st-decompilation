@@ -121,8 +121,9 @@ void __thiscall SettMapTy::CreateCtrls(SettMapTy *this,char param_1)
     local_5a8 = 0x654d;
     local_5bc = local_5d0[4];
     local_4a8 = local_5d0[4];
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-    (*(code *)local_1c->field_000C->vtable->field_0008)(2,&local_1c->field_215D,0,local_5d0,0);
+    (*local_1c->field_000C->vtable->CreateObject)
+              ((SystemClassTy *)local_1c->field_000C,2,&local_1c->field_215D,(int *)0x0,local_5d0,0)
+    ;
     goto LAB_005c69ed;
   }
   if (local_1c->field_1C6F != 0xffffffff) {
@@ -267,8 +268,8 @@ void __thiscall SettMapTy::CreateCtrls(SettMapTy *this,char param_1)
   local_26c = local_3ec;
   local_fc = local_3ec;
   local_ac = local_3ec;
-  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-  (*(code *)this_01->field_000C->vtable->field_0008)(4,&this_01->field_211D,0,local_454,0);
+  (*this_01->field_000C->vtable->CreateObject)
+            ((SystemClassTy *)this_01->field_000C,4,&this_01->field_211D,(int *)0x0,local_454,0);
   SVar2 = this_01->field_1E26;
   if (((SVar2 == 6) || (SVar2 == CASE_7)) || (SVar2 == 0xe)) {
     local_10 = 0xcb;
@@ -307,12 +308,11 @@ void __thiscall SettMapTy::CreateCtrls(SettMapTy *this,char param_1)
     puVar8 = Library::Ourlib::MF32INT::FUN_006f0ec0(0x345,&DAT_0080ed16,0,0,0);
     this_01->field_1F3F = puVar8;
     if (DAT_0080877e == '\0') {
-      if ((AnonShape_006B5570_4D68B99C *)PTR_0081176c->field_0548 !=
-          (AnonShape_006B5570_4D68B99C *)0x0) {
-        FUN_006b5570((AnonShape_006B5570_4D68B99C *)PTR_0081176c->field_0548);
+      if ((DArrayTy *)g_startSystem_0081176C->field_0548 != (DArrayTy *)0x0) {
+        FUN_006b5570((DArrayTy *)g_startSystem_0081176C->field_0548);
       }
       pDVar9 = Library::DKW::TBL::SArrayCreate((DArrayTy *)0x0,10,10);
-      PTR_0081176c->field_0548 = &pDVar9->flags;
+      g_startSystem_0081176C->field_0548 = &pDVar9->flags;
       SVar2 = this_01->field_1E26;
       local_5d8 = DAT_0080995c;
       puVar8 = &DAT_00809960;
@@ -322,7 +322,7 @@ void __thiscall SettMapTy::CreateCtrls(SettMapTy *this,char param_1)
         puVar8 = puVar8 + 1;
         puVar15 = puVar15 + 1;
       }
-      StartSystemTy::LoadMapData(PTR_0081176c,this_01->field_1F3F,SVar2);
+      StartSystemTy::LoadMapData(g_startSystem_0081176C,this_01->field_1F3F,SVar2);
       DAT_0080995c = local_5d8;
       puVar8 = local_61c;
       puVar15 = &DAT_00809960;
@@ -414,10 +414,10 @@ LAB_005c665d:
   if (((SVar2 != 6) && (SVar2 != CASE_7)) && (SVar2 != 0xe)) {
     this_01->field_002D = 0x20;
     this_01->field_0031 = 1;
-    FUN_006e6080(this_01,2,PTR_0081176c->field_0389,(undefined4 *)&this_01->field_0x1d);
+    FUN_006e6080(this_01,2,g_startSystem_0081176C->field_0389,(undefined4 *)&this_01->field_0x1d);
   }
   if (this_01->field_0x21e2 != '\0') {
-    StartSystemTy::CreateBinDesc(PTR_0081176c);
+    StartSystemTy::CreateBinDesc(g_startSystem_0081176C);
   }
 LAB_005c69ed:
   pMVar4 = this_01->field_1A5B;

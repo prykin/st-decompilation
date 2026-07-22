@@ -17,13 +17,13 @@ int FUN_0066ab60(char playerId,byte *param_2,byte *param_3)
   bool bVar9;
 
   if (((param_2 != (byte *)0x0) && (param_3 != (byte *)0x0)) &&
-     (g_sTAllPlayers_007FA174 != (STAllPlayersC *)0x0)) {
+     (g_allPlayers_007FA174 != (STAllPlayersC *)0x0)) {
     this = thunk_FUN_004357f0(playerId);
     if ((this != (AiPlrClassTy *)0x0) &&
        (iVar3 = thunk_FUN_00679d60(this,param_2,param_3), iVar3 != 0)) {
       return iVar3;
     }
-    if ((g_sTAllPlayers_007FA174 != (STAllPlayersC *)0x0) &&
+    if ((g_allPlayers_007FA174 != (STAllPlayersC *)0x0) &&
        (iVar3 = thunk_FUN_0042a9c0(playerId), iVar3 != 0)) {
       uVar2 = *(uint *)(iVar3 + 0xc);
       while (uVar2 = uVar2 - 1, -1 < (int)uVar2) {

@@ -1,4 +1,4 @@
-FUN_005e9970:
+WaitTy::sub_005E9970:
 005E9970  56                        PUSH ESI
 005E9971  8B F1                     MOV ESI,ECX
 005E9973  C7 86 60 1A 00 00 01 00 00 00  MOV dword ptr [ESI + 0x1a60],0x1

@@ -1,4 +1,4 @@
-FUN_00555680:
+cLoadingTy::sub_00555680:
 00555680  55                        PUSH EBP
 00555681  8B EC                     MOV EBP,ESP
 00555683  56                        PUSH ESI

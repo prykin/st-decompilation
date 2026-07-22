@@ -1,78 +1,60 @@
 
-void __fastcall FUN_005a0af0(int param_1)
+/* [STMethodOwnerApplier] Structural method owner recovered as FSGSTy.
+   Evidence: this_call_owners=[FSGSTy]; agreed_this_calls=2; incoming_this_accesses=29;
+   incoming_edx_uses=0; incoming_stack_parameter_uses=0; direct_non_thunk_callers=0;
+   incoming_ecx_receiver_callers=0; attributed_named_callers=2; owner_evidence_coverage=adequate */
+
+void __thiscall FSGSTy::sub_005A0AF0(FSGSTy *this)
 
 {
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  if (*(uint *)(param_1 + 0x1ac4) != 0) {
-    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-    StartSystemTy::sub_006E56B0(*(StartSystemTy **)(param_1 + 0xc),*(uint *)(param_1 + 0x1ac4));
+  if (this->field_1AC4 != 0) {
+    StartSystemTy::sub_006E56B0(this->field_000C,this->field_1AC4);
   }
-  *(undefined4 *)(param_1 + 0x1ac4) = 0;
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  if (*(uint *)(param_1 + 0x1ac8) != 0) {
-    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-    StartSystemTy::sub_006E56B0(*(StartSystemTy **)(param_1 + 0xc),*(uint *)(param_1 + 0x1ac8));
+  this->field_1AC4 = 0;
+  if (this->field_1AC8 != 0) {
+    StartSystemTy::sub_006E56B0(this->field_000C,this->field_1AC8);
   }
-  *(undefined4 *)(param_1 + 0x1ac8) = 0;
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  if (*(uint *)(param_1 + 0x1b20) != 0) {
-    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-    StartSystemTy::sub_006E56B0(*(StartSystemTy **)(param_1 + 0xc),*(uint *)(param_1 + 0x1b20));
+  this->field_1AC8 = 0;
+  if (this->field_1B20 != 0) {
+    StartSystemTy::sub_006E56B0(this->field_000C,this->field_1B20);
   }
-  *(undefined4 *)(param_1 + 0x1b20) = 0;
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  if (*(uint *)(param_1 + 0x1eb6) != 0) {
-    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-    StartSystemTy::sub_006E56B0(*(StartSystemTy **)(param_1 + 0xc),*(uint *)(param_1 + 0x1eb6));
+  this->field_1B20 = 0;
+  if (this->field_1EB6 != 0) {
+    StartSystemTy::sub_006E56B0(this->field_000C,this->field_1EB6);
   }
-  *(undefined4 *)(param_1 + 0x1eb6) = 0;
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  if (*(uint *)(param_1 + 0x1eba) != 0) {
-    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-    StartSystemTy::sub_006E56B0(*(StartSystemTy **)(param_1 + 0xc),*(uint *)(param_1 + 0x1eba));
+  this->field_1EB6 = 0;
+  if (this->field_1EBA != 0) {
+    StartSystemTy::sub_006E56B0(this->field_000C,this->field_1EBA);
   }
-  *(undefined4 *)(param_1 + 0x1eba) = 0;
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  if (*(uint *)(param_1 + 0x1b24) != 0) {
-    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-    StartSystemTy::sub_006E56B0(*(StartSystemTy **)(param_1 + 0xc),*(uint *)(param_1 + 0x1b24));
+  this->field_1EBA = 0;
+  if (this->field_1B24 != 0) {
+    StartSystemTy::sub_006E56B0(this->field_000C,this->field_1B24);
   }
-  *(undefined4 *)(param_1 + 0x1b24) = 0;
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  if (*(AnonShape_006B5570_4D68B99C **)(param_1 + 0x1ae8) != (AnonShape_006B5570_4D68B99C *)0x0) {
-    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-    FUN_006b5570(*(AnonShape_006B5570_4D68B99C **)(param_1 + 0x1ae8));
+  this->field_1B24 = 0;
+  if (this->field_1AE8 != (DArrayTy *)0x0) {
+    FUN_006b5570(this->field_1AE8);
   }
-  *(undefined4 *)(param_1 + 0x1ae8) = 0;
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  if (*(AnonShape_006B5570_4D68B99C **)(param_1 + 0x1aec) != (AnonShape_006B5570_4D68B99C *)0x0) {
-    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-    FUN_006b5570(*(AnonShape_006B5570_4D68B99C **)(param_1 + 0x1aec));
+  this->field_1AE8 = (DArrayTy *)0x0;
+  if (this->field_1AEC != (DArrayTy *)0x0) {
+    FUN_006b5570(this->field_1AEC);
   }
-  *(undefined4 *)(param_1 + 0x1aec) = 0;
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  if (*(AnonShape_006B5570_4D68B99C **)(param_1 + 0x1b04) != (AnonShape_006B5570_4D68B99C *)0x0) {
-    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-    FUN_006b5570(*(AnonShape_006B5570_4D68B99C **)(param_1 + 0x1b04));
+  this->field_1AEC = (DArrayTy *)0x0;
+  if ((DArrayTy *)this->field_1B04 != (DArrayTy *)0x0) {
+    FUN_006b5570((DArrayTy *)this->field_1B04);
   }
-  *(undefined4 *)(param_1 + 0x1b04) = 0;
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  if (*(DArrayTy **)(param_1 + 0x1ebe) != (DArrayTy *)0x0) {
-    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-    DArrayDestroy(*(DArrayTy **)(param_1 + 0x1ebe));
+  this->field_1B04 = (uint *)0x0;
+  if (this->field_1EBE != (DArrayTy *)0x0) {
+    DArrayDestroy(this->field_1EBE);
   }
-  *(undefined4 *)(param_1 + 0x1ebe) = 0;
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  if (*(int *)(param_1 + 0x1e8e) != 0) {
-    FreeAndNull((void **)(param_1 + 0x1e8e));
+  this->field_1EBE = (DArrayTy *)0x0;
+  if (this->field_1E8E != 0) {
+    FreeAndNull((void **)&this->field_1E8E);
   }
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  if (*(int *)(param_1 + 0x1e92) != 0) {
-    FreeAndNull((void **)(param_1 + 0x1e92));
+  if (this->field_1E92 != (tagBITMAPINFO *)0x0) {
+    FreeAndNull(&this->field_1E92);
   }
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  if (*(int *)(param_1 + 0x1e9a) != 0) {
-    FreeAndNull((void **)(param_1 + 0x1e9a));
+  if (this->field_1E9A != (tagBITMAPINFO *)0x0) {
+    FreeAndNull(&this->field_1E9A);
   }
   return;
 }

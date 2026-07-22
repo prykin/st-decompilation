@@ -1,0 +1,12 @@
+004EDC2C  pointer  004ed736
+004EDC30  pointer  004ed749
+004EDC34  pointer  004ed75c
+004EDC38  pointer  004ed76f
+004EDC3C  pointer  004ed782
+004EDC40  pointer  004ed792
+004EDC44  pointer  004ed7b4
+004EDC48  pointer  004ed7c4
+004EDC4C  pointer  004ed7d4
+004EDC50  pointer  004ed7e4
+004EDC54  pointer  004ed7ed
+004EDC58  pointer  004ed7f6

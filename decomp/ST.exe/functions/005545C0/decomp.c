@@ -17,7 +17,7 @@ int * __fastcall FUN_005545c0(int *param_1)
   param_1[10] = 1;
   *(undefined4 *)(iVar1 + 0x58) = 1;
   *(undefined4 *)(iVar1 + 0x5c) = 1;
-  resourceString = LoadResourceString(0x267a,HINSTANCE_00807618);
+  resourceString = LoadResourceString(0x267a,g_module_00807618);
   iVar1 = FUN_007111c0((void *)param_1[2],resourceString);
   param_1[0xe] = 0;
   param_1[0xd] = param_1[0xb] + iVar1;

@@ -1,0 +1,9 @@
+004ECA48  pointer  004ec944
+004ECA4C  pointer  004eca00
+004ECA50  byte  0h
+004ECA51  byte  0h
+004ECA52  byte  1h
+004ECA53  byte  1h
+004ECA54  byte  1h
+004ECA55  byte  0h
+004ECA56  byte  0h

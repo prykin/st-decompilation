@@ -352,7 +352,7 @@ LAB_0057ac02:
                   if (((this != (STWorldObject *)0x0) &&
                       (iVar14 = (*this->vtable[5].slots_00_28[0])(), iVar14 != 0)) &&
                      ((this[1].vtable < (STWorldObjectVTable *)0x8 &&
-                      ((PTR_00802a38 == (STPlaySystemC *)0x0 ||
+                      ((g_playSystem_00802A38 == (STPlaySystemC *)0x0 ||
                        ((byte)(&DAT_008087e9)[(int)this[1].vtable * 0x51] < 8)))))) {
                     bVar2 = *(byte *)&this[1].vtable;
                     bVar3 = param_1->field_0x24;

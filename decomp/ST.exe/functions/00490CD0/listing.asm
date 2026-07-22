@@ -1,4 +1,4 @@
-SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00490CD0::FUN_00490cd0:
+STBoatC::sub_00490CD0:
 00490CD0  55                        PUSH EBP
 00490CD1  8B EC                     MOV EBP,ESP
 00490CD3  51                        PUSH ECX

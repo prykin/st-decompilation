@@ -42,8 +42,7 @@ void __thiscall AiFltClassTy::GoToRepair(AiFltClassTy *this,int param_1)
     iVar5 = CONCAT22(extraout_var,uVar4);
     /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
     if ((0 < iVar5) &&
-       (local_20 = iVar5,
-       local_c = thunk_FUN_00661800((AnonShape_0065DA10_8B0AA883 *)this,extraout_EDX),
+       (local_20 = iVar5, local_c = sub_00661800((AnonShape_0065DA10_8B0AA883 *)this,extraout_EDX),
        (int)this->field_0179 < iVar5 - local_c)) {
       local_18 = thunk_FUN_0068f8f0(this->field_0284,this->field_007B);
       local_8 = (DArrayTy *)0x0;
@@ -54,8 +53,7 @@ void __thiscall AiFltClassTy::GoToRepair(AiFltClassTy *this,int param_1)
       pAVar3 = local_1c;
       if (iVar5 == 0) {
         /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
-        local_8 = (DArrayTy *)
-                  thunk_FUN_0065da10((AnonShape_0065DA10_8B0AA883 *)local_1c,extraout_EDX_00);
+        local_8 = (DArrayTy *)sub_0065DA10(local_1c,extraout_EDX_00);
         if (local_8 != (DArrayTy *)0x0) {
           local_14 = 0;
           array = local_10;
@@ -71,25 +69,21 @@ void __thiscall AiFltClassTy::GoToRepair(AiFltClassTy *this,int param_1)
               /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
               local_24 = CONCAT22((short)((uint)puVar6 >> 0x10),*puVar6);
               this_00 = STAllPlayersC::GetObjPtr
-                                  (g_sTAllPlayers_007FA174,*(char *)&pAVar3->field_0024,local_24,
+                                  (g_allPlayers_007FA174,*(char *)&pAVar3->field_0024,local_24,
                                    CASE_1);
               if ((this_00 != (STGameObjC *)0x0) && ((int)pAVar3->field_0179 < local_20 - local_c))
               {
-                /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-                iVar5 = (**(code **)&this_00->vtable->field_0x2c)();
+                iVar5 = (*this_00->vtable->vfunc_2C)();
                 pIVar7 = thunk_FUN_00674fb0(iVar5);
                 if ((pAVar3->field_017F & (uint)pIVar7) != 0) {
                   if (pAVar3->field_0039 == 3) {
-                    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-                    iVar5 = (**(code **)&this_00->vtable->field_0xc4)();
+                    iVar5 = (*this_00->vtable->vfunc_C4)();
                   }
                   else {
-                    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-                    iVar5 = (**(code **)&this_00->vtable->field_0x7c)();
+                    iVar5 = (*this_00->vtable->vfunc_7C)();
                   }
                   if (iVar5 < pAVar3->field_0177) {
-                    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-                    iVar5 = (**(code **)&this_00->vtable->field_0x2c)();
+                    iVar5 = (*this_00->vtable->vfunc_2C)();
                     if ((iVar5 < 0x32) || (0x73 < iVar5)) {
                       bVar2 = false;
                     }
@@ -121,8 +115,7 @@ LAB_00661a96:
                         local_c = local_c + 1;
                       }
                     }
-                    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-                    iVar5 = (**(code **)&this_00->vtable->field_0x2c)();
+                    iVar5 = (*this_00->vtable->vfunc_2C)();
                     if ((iVar5 < 1) || (0x28 < iVar5)) {
                       bVar2 = false;
                     }

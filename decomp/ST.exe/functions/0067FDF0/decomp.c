@@ -1,5 +1,8 @@
 
-uint __cdecl FUN_0067fdf0(undefined4 param_1,byte *param_2)
+/* [STPrototypeApplier] Propagated parameter 0.
+   Evidence: 00683C70 -> 0067FDF0 @ 00689D7E */
+
+uint __cdecl FUN_0067fdf0(int *param_1,byte *param_2)
 
 {
   uint uVar1;

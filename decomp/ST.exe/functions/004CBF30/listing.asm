@@ -1,4 +1,4 @@
-FUN_004cbf30:
+TLOBaseTy::sub_004CBF30:
 004CBF30  56                        PUSH ESI
 004CBF31  8B F1                     MOV ESI,ECX
 004CBF33  8B 8E FF 05 00 00         MOV ECX,dword ptr [ESI + 0x5ff]

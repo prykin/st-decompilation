@@ -1,4 +1,4 @@
-FUN_005d00b0:
+SettMapMTy::sub_005D00B0:
 005D00B0  55                        PUSH EBP
 005D00B1  8B EC                     MOV EBP,ESP
 005D00B3  83 EC 60                  SUB ESP,0x60

@@ -25,17 +25,17 @@ void __thiscall FSGSTy::DoLogon(FSGSTy *this)
   g_currentExceptionFrame = &local_5c;
   local_8 = this;
   iVar4 = Library::MSVCRT::__setjmp3(local_5c.jumpBuffer,0);
-  this_00 = PTR_00802a30;
+  this_00 = g_cursorClass_00802A30;
   if (iVar4 == 0) {
-    if (PTR_00802a30 != (CursorClassTy *)0x0) {
-      iVar4 = PTR_00802a30->field_00C9;
-      iVar5 = PTR_00802a30->field_00C5;
-      PTR_00802a30->field_0493 = 1;
+    if (g_cursorClass_00802A30 != (CursorClassTy *)0x0) {
+      iVar4 = g_cursorClass_00802A30->field_00C9;
+      iVar5 = g_cursorClass_00802A30->field_00C5;
+      g_cursorClass_00802A30->field_0493 = 1;
       this_00->field_0494 = 0xffff;
       CursorClassTy::SetGCType(this_00,CASE_0,iVar5,iVar4);
       CursorClassTy::DrawSprite(this_00,this_00->field_00C5,this_00->field_00C9);
       this_00->field_00D2 = 0;
-      this_00->field_04DF = 0xffffffff;
+      this_00->field_04DF = -1;
     }
     pFVar3 = local_8;
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */

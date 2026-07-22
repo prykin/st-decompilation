@@ -13,7 +13,7 @@ undefined4 __fastcall FUN_004cc900(AnonShape_004CC900_31EE9CAA *param_1)
     FUN_006ea2f0(param_1->field_0211,uVar1);
     STT3DSprC::UnLoadSequence((STT3DSprC *)param_1->field_0603,0xe);
     param_1->field_044C = 0xffffffff;
-    uVar1 = PTR_00802a38->field_00E4;
+    uVar1 = g_playSystem_00802A38->field_00E4;
     param_1->field_043C = 0;
     param_1->field_0450 = uVar1;
   }

@@ -11,7 +11,7 @@ FUN_00677290(undefined4 param_1,uint param_2,char param_3,short param_4,short pa
 {
   int exceptionCode;
   DArrayTy *pDVar1;
-  undefined *puVar2;
+  code *pcVar2;
   InternalExceptionFrame local_4c;
   DArrayTy *local_8;
 
@@ -21,13 +21,13 @@ FUN_00677290(undefined4 param_1,uint param_2,char param_3,short param_4,short pa
   exceptionCode = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
   if (exceptionCode == 0) {
     pDVar1 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,10,2,10);
-    puVar2 = &LAB_00401852;
+    pcVar2 = thunk_FUN_00677250;
     if (param_10 == 0) {
-      puVar2 = &LAB_00403490;
+      pcVar2 = thunk_FUN_00677220;
     }
     local_8 = pDVar1;
     _EnumPlObj(param_1,param_2,0x3fffffff,(byte *)0x0,param_3,param_4,param_5,param_6,param_7,
-               param_8,param_9,puVar2,&pDVar1->flags,(undefined *)0x0);
+               param_8,param_9,pcVar2,&pDVar1->flags,(undefined *)0x0);
     g_currentExceptionFrame = local_4c.previous;
     return &pDVar1->flags;
   }

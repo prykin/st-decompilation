@@ -114,7 +114,7 @@ int __thiscall FUN_005feb60(void *this,int param_1,int param_2,int param_3)
             if (((this_00 != (STWorldObject *)0x0) &&
                 (iVar7 = (*this_00->vtable[5].slots_00_28[0])(), iVar7 != 0)) &&
                ((this_00[1].vtable < (STWorldObjectVTable *)0x8 &&
-                ((PTR_00802a38 == (STPlaySystemC *)0x0 ||
+                ((g_playSystem_00802A38 == (STPlaySystemC *)0x0 ||
                  ((byte)(&DAT_008087e9)[(int)this_00[1].vtable * 0x51] < 8)))))) {
               bVar1 = *(byte *)&this_00[1].vtable;
               bVar2 = *(byte *)((int)this + 0x24);

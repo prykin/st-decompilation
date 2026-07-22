@@ -21,8 +21,8 @@ StartSystemTy * __thiscall StartSystemTy::StartSystemTy(StartSystemTy *this,unde
   SpriteClassTy::SpriteClassTy((SpriteClassTy *)&this->field_04AF);
   SpriteClassTy::SpriteClassTy((SpriteClassTy *)&this->field_055C);
   SpriteClassTy::SpriteClassTy((SpriteClassTy *)&this->field_05ED);
-  this->vtable = (AnonPointee_StartSystemTy_0000 *)&StartSystemTyVTable;
-  PTR_0081176c = this;
+  this->vtable = &StartSystemTyVTable;
+  g_startSystem_0081176C = this;
   this->field_0028 = DAT_00807332;
   this->field_02EA = 1;
   this->field_02EB = 1;
@@ -45,14 +45,14 @@ StartSystemTy * __thiscall StartSystemTy::StartSystemTy(StartSystemTy *this,unde
   this->field_0554 = -1;
   this->field_0682 = (ushort *)0x0;
   this->field_067E = (ushort *)0x0;
-  this->field_0686 = (uint *)0x0;
+  this->field_0686 = (DArrayTy *)0x0;
   memset(&this->field_0x244, 0, 0x18); /* compiler bulk-zero initialization */
   iVar1 = 0;
   memset(&this->field_025C, 0, 0x8a); /* compiler bulk-zero initialization */
   this->field_068A = 0;
   this->field_068E = 0;
   this->field_0692 = 0xffffffff;
-  this->field_0696 = (uint *)0x0;
+  this->field_0696 = (DArrayTy *)0x0;
   this->field_069A = 0;
   this->field_06B2 = 0;
   this->field_06AE = 0;

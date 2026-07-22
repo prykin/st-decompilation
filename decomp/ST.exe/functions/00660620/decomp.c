@@ -30,7 +30,7 @@ FUN_00660620(AnonShape_00660620_6BCED4D7 *param_1,undefined4 param_2,uint param_
     if ((array != (DArrayTy *)0x0) || (pDVar2 = _DAT_0000000c, _DAT_0000000c != (DArrayTy *)0x0)) {
       local_18 = 0;
       local_14 = array;
-      if ((param_1->field_007D != -2) && (g_sTAllPlayers_007FA174 != (STAllPlayersC *)0x0)) {
+      if ((param_1->field_007D != -2) && (g_allPlayers_007FA174 != (STAllPlayersC *)0x0)) {
         /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
         pSVar1 = thunk_FUN_0042b760(param_1->field_0024,
                                     CONCAT22((short)((uint)pDVar2 >> 0x10),param_1->field_007D));

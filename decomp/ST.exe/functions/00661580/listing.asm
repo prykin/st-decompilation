@@ -1,4 +1,4 @@
-FUN_00661580:
+AiFltClassTy::sub_00661580:
 00661580  53                        PUSH EBX
 00661581  56                        PUSH ESI
 00661582  57                        PUSH EDI

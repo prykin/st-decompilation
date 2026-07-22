@@ -76,7 +76,7 @@ undefined4 __cdecl FUN_004b2d10(byte param_1,int param_2,int param_3,int param_4
                    [g_worldGrid.sizeX * param_2 + iVar6 + g_worldGrid.planeStride * local_2c].
                    objects[0];
             if ((((this != (STWorldObject *)0x0) && (this[1].vtable < (STWorldObjectVTable *)0x8))
-                && ((PTR_00802a38 == (STPlaySystemC *)0x0 ||
+                && ((g_playSystem_00802A38 == (STPlaySystemC *)0x0 ||
                     ((byte)(&DAT_008087e9)[(int)this[1].vtable * 0x51] < 8)))) &&
                (iVar5 = (*this->vtable->GetObjectTypeId)(this), iVar5 == 0x73)) {
               bVar1 = *(byte *)&this[1].vtable;
@@ -120,7 +120,7 @@ LAB_004b2fd4:
                 if (local_24 < 0) {
                   *(undefined4 *)&this[0x22].field_0x8 = 0;
                 }
-                *(uint *)&this[0x22].field_0xc = PTR_00802a38->field_00E4;
+                *(uint *)&this[0x22].field_0xc = g_playSystem_00802A38->field_00E4;
                 return 1;
               }
             }

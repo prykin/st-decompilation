@@ -63,7 +63,7 @@ void __thiscall SettMapMTy::SetListCtrls(SettMapMTy *this)
     local_c = (cMf32 *)pSVar5->field_1F3F;
   }
   else {
-    local_c = (cMf32 *)pSVar5->field_1F43;
+    local_c = pSVar5->field_1F43;
   }
   g_currentExceptionFrame = local_c4.previous;
   pSVar5->field_0029 = 2;
@@ -178,8 +178,7 @@ joined_r0x005cd0bb:
             }
           }
         }
-        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-        (*(code *)pSVar5->field_000C->vtable->field_0018)(&pSVar5->field_0x1d);
+        (*pSVar5->field_000C->vtable->vfunc_18)(&pSVar5->field_0x1d);
         uVar10 = local_8;
       }
       local_18 = local_18 + 1;

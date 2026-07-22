@@ -31,10 +31,9 @@ LAB_0042d1f8:
       }
       do {
         DArrayGetElement(param_3,index,&param_4);
-        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
         if ((((short)param_4 != -1) &&
             (pSVar3 = GetObjPtr(this,objPtr,param_4,CASE_1), pSVar3 != (STGameObjC *)0x0)) &&
-           ((**(code **)&pSVar3->vtable[1].field_0x18)(0), param_5 != 0)) {
+           ((*pSVar3->vtable[1].vfunc_14)(0), param_5 != 0)) {
           /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
           STGameObjC::ResetSelfCheckFlag(pSVar3,unaff_EDI);
         }
@@ -51,8 +50,7 @@ LAB_0042d1c3:
           return;
         }
         iVar4 = 0;
-        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-        (**(code **)&pSVar3->vtable[1].field_0x18)();
+        (*pSVar3->vtable[1].vfunc_14)();
         goto LAB_0042d2c3;
       }
       if (param_2 == 0) {
@@ -78,8 +76,7 @@ LAB_0042d270:
         return;
       }
       iVar4 = 0;
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-      (**(code **)&pSVar3->vtable[1].field_0x18)();
+      (*pSVar3->vtable[1].vfunc_14)();
       if (param_5 == 0) {
         return;
       }
@@ -98,8 +95,7 @@ LAB_0042d270:
       return;
     }
     iVar4 = 0;
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-    (**(code **)&pSVar3->vtable[1].field_0x18)();
+    (*pSVar3->vtable[1].vfunc_14)();
 LAB_0042d2c3:
     if (param_5 != 0) {
       STGameObjC::ResetSelfCheckFlag(pSVar3,iVar4);

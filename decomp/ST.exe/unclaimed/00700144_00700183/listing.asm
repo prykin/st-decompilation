@@ -1,0 +1,16 @@
+00700144  pointer  006ff827
+00700148  pointer  006ff88e
+0070014C  pointer  006ff8a1
+00700150  pointer  006ff904
+00700154  pointer  006ffa1b
+00700158  pointer  006ffa8b
+0070015C  pointer  006ffaa2
+00700160  pointer  006ffb12
+00700164  pointer  006ffcdf
+00700168  pointer  006ffd42
+0070016C  pointer  006ffd59
+00700170  pointer  006ffdb6
+00700174  pointer  006ffeaf
+00700178  pointer  006fff16
+0070017C  pointer  006fff2b
+00700180  pointer  006fff99

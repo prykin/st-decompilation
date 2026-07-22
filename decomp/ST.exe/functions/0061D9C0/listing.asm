@@ -1,4 +1,4 @@
-FUN_0061d9c0:
+STLightC::sub_0061D9C0:
 0061D9C0  55                        PUSH EBP
 0061D9C1  8B EC                     MOV EBP,ESP
 0061D9C3  83 EC 0C                  SUB ESP,0xc

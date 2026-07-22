@@ -1,0 +1,4 @@
+005F9A80  pointer  005f984f
+005F9A84  pointer  005f9858
+005F9A88  pointer  005f9861
+005F9A8C  pointer  005f986a

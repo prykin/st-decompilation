@@ -29,7 +29,8 @@ void __thiscall OptPanelTy::Question(OptPanelTy *this,char param_1)
         iVar2 = 0x3e84;
       }
       else {
-        iVar2 = 0x3e96 - (uint)(PTR_00802a38->field_00E4 - PTR_00802a38->field_0034 < 6000);
+        iVar2 = 0x3e96 - (uint)(g_playSystem_00802A38->field_00E4 -
+                                g_playSystem_00802A38->field_0034 < 6000);
       }
       local_8->field_01A5 = iVar2;
     }

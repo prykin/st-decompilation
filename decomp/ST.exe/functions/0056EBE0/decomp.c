@@ -2,8 +2,12 @@
 
 
 /* WARNING: Removing unreachable block (ram,0x0056ed8b) */
+/* [STMethodOwnerApplier] Structural method owner recovered as STAppC.
+   Evidence: this_call_owners=[STAppC]; agreed_this_calls=1; incoming_this_accesses=16;
+   incoming_edx_uses=0; incoming_stack_parameter_uses=0; direct_non_thunk_callers=0;
+   incoming_ecx_receiver_callers=0; attributed_named_callers=1; owner_evidence_coverage=adequate */
 
-void __fastcall FUN_0056ebe0(int param_1)
+void __thiscall STAppC::sub_0056EBE0(STAppC *this)
 
 {
   char cVar1;
@@ -14,135 +18,124 @@ void __fastcall FUN_0056ebe0(int param_1)
   DArrayTy *pDVar4;
   uint uVar5;
   uint uVar6;
-  int iVar7;
-  char *pcVar8;
-  char *pcVar10;
+  uint uVar8;
+  char *pcVar9;
   char *pcVar11;
+  char *pcVar12;
   int local_8;
 
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  if (*(AnonShape_006B5570_4D68B99C **)(param_1 + 0x4eab) != (AnonShape_006B5570_4D68B99C *)0x0) {
-    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-    FUN_006b5570(*(AnonShape_006B5570_4D68B99C **)(param_1 + 0x4eab));
+  if ((DArrayTy *)this->field_4EAB != (DArrayTy *)0x0) {
+    FUN_006b5570((DArrayTy *)this->field_4EAB);
   }
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  if (*(AnonShape_006B5570_4D68B99C **)(param_1 + 0x4ea7) != (AnonShape_006B5570_4D68B99C *)0x0) {
-    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-    FUN_006b5570(*(AnonShape_006B5570_4D68B99C **)(param_1 + 0x4ea7));
+  if ((DArrayTy *)this->field_4EA7 != (DArrayTy *)0x0) {
+    FUN_006b5570((DArrayTy *)this->field_4EA7);
   }
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  if ((*(int *)(*(int *)(param_1 + 0x4ee6) + 0xc) == 0) ||
-     (iVar7 = *(int *)(*(int *)(param_1 + 0x4ee6) + 0x1c), iVar7 == 0)) {
-    *(undefined4 *)(param_1 + 0x233c) = 1;
-    memset((void *)(param_1 + 0x2340), 0, 0x20); /* compiler bulk-zero initialization */
-    iVar7 = 0;
+  if ((this->field_4EE6[3] == 0) || (uVar8 = this->field_4EE6[7], uVar8 == 0)) {
+    this->field_233C = 1;
+    memset(&this->field_0x2340, 0, 0x20); /* compiler bulk-zero initialization */
   }
   else {
-    *(undefined4 *)(param_1 + 0x233c) = *(undefined4 *)(iVar7 + 0x90);
+    this->field_233C = *(undefined4 *)(uVar8 + 0x90);
     uVar5 = 0xffffffff;
-    pcVar8 = (char *)(iVar7 + 0x4c);
+    pcVar9 = (char *)(uVar8 + 0x4c);
     do {
-      pcVar10 = pcVar8;
+      pcVar11 = pcVar9;
       if (uVar5 == 0) break;
       uVar5 = uVar5 - 1;
-      pcVar10 = pcVar8 + 1;
-      cVar1 = *pcVar8;
-      pcVar8 = pcVar10;
+      pcVar11 = pcVar9 + 1;
+      cVar1 = *pcVar9;
+      pcVar9 = pcVar11;
     } while (cVar1 != '\0');
     uVar5 = ~uVar5;
-    pcVar8 = pcVar10 + -uVar5;
-    pcVar10 = (char *)(param_1 + 0x2340);
+    pcVar9 = pcVar11 + -uVar5;
+    pcVar11 = &this->field_0x2340;
     for (uVar6 = uVar5 >> 2; uVar6 != 0; uVar6 = uVar6 - 1) {
-      *(undefined4 *)pcVar10 = *(undefined4 *)pcVar8;
-      pcVar8 = pcVar8 + 4;
-      pcVar10 = pcVar10 + 4;
-    }
-    for (uVar5 = uVar5 & 3; uVar5 != 0; uVar5 = uVar5 - 1) {
-      *pcVar10 = *pcVar8;
-      pcVar8 = pcVar8 + 1;
-      pcVar10 = pcVar10 + 1;
-    }
-    puVar2 = Library::Ourlib::MFSARR::mfSarLoad(g_cMf32_0080675C,(char *)(iVar7 + 0x70),0);
-    *(uint **)(param_1 + 0x4eab) = puVar2;
-  }
-  puVar2 = Library::Ourlib::MFSARR::mfSarLoad(g_cMf32_0080675C,PTR_s_DESCRIPTION_0079b074,0);
-  *(uint **)(param_1 + 0x4ea7) = puVar2;
-  if (puVar2 == (uint *)0x0) {
-    pDVar3 = Library::DKW::TBL::SArrayCreate((DArrayTy *)0x0,10,10);
-    *(DArrayTy **)(param_1 + 0x4ea7) = pDVar3;
-  }
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  if (*(int *)(param_1 + 0x4eab) == 0) {
-    pDVar3 = Library::DKW::TBL::SArrayCreate((DArrayTy *)0x0,10,10);
-    *(DArrayTy **)(param_1 + 0x4eab) = pDVar3;
-  }
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  pDVar3 = (DArrayTy *)CreateOpponentList(g_cMf32_0080675C,1,*(uint *)(param_1 + 0x233c));
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  array = (DArrayTy *)CreateOpponentList(g_cMf32_0080675C,2,*(uint *)(param_1 + 0x233c));
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  array_00 = (DArrayTy *)CreateOpponentList(g_cMf32_0080675C,3,*(uint *)(param_1 + 0x233c));
-  pcVar8 = (char *)(param_1 + 0x11a7);
-  local_8 = 8;
-  do {
-    uVar5 = 0xffffffff;
-    pcVar10 = &DAT_008016a0;
-    do {
-      pcVar11 = pcVar10;
-      if (uVar5 == 0) break;
-      uVar5 = uVar5 - 1;
-      pcVar11 = pcVar10 + 1;
-      cVar1 = *pcVar10;
-      pcVar10 = pcVar11;
-    } while (cVar1 != '\0');
-    uVar5 = ~uVar5;
-    pcVar10 = pcVar11 + -uVar5;
-    pcVar11 = pcVar8 + 1;
-    for (uVar6 = uVar5 >> 2; uVar6 != 0; uVar6 = uVar6 - 1) {
-      *(undefined4 *)pcVar11 = *(undefined4 *)pcVar10;
-      pcVar10 = pcVar10 + 4;
+      *(undefined4 *)pcVar11 = *(undefined4 *)pcVar9;
+      pcVar9 = pcVar9 + 4;
       pcVar11 = pcVar11 + 4;
     }
     for (uVar5 = uVar5 & 3; uVar5 != 0; uVar5 = uVar5 - 1) {
-      *pcVar11 = *pcVar10;
-      pcVar10 = pcVar10 + 1;
+      *pcVar11 = *pcVar9;
+      pcVar9 = pcVar9 + 1;
       pcVar11 = pcVar11 + 1;
     }
-    if ((pcVar8[0x22] != -1) && (*pcVar8 == '\x01')) {
+    puVar2 = Library::Ourlib::MFSARR::mfSarLoad(g_cMf32_0080675C,(char *)(uVar8 + 0x70),0);
+    this->field_4EAB = puVar2;
+  }
+  puVar2 = Library::Ourlib::MFSARR::mfSarLoad(g_cMf32_0080675C,PTR_s_DESCRIPTION_0079b074,0);
+  this->field_4EA7 = puVar2;
+  if (puVar2 == (uint *)0x0) {
+    pDVar3 = Library::DKW::TBL::SArrayCreate((DArrayTy *)0x0,10,10);
+    this->field_4EA7 = &pDVar3->flags;
+  }
+  if (this->field_4EAB == (uint *)0x0) {
+    pDVar3 = Library::DKW::TBL::SArrayCreate((DArrayTy *)0x0,10,10);
+    this->field_4EAB = &pDVar3->flags;
+  }
+  pDVar3 = (DArrayTy *)CreateOpponentList(g_cMf32_0080675C,1,this->field_233C);
+  array = (DArrayTy *)CreateOpponentList(g_cMf32_0080675C,2,this->field_233C);
+  array_00 = (DArrayTy *)CreateOpponentList(g_cMf32_0080675C,3,this->field_233C);
+  pcVar9 = &this->field_11A7;
+  local_8 = 8;
+  do {
+    uVar8 = 0xffffffff;
+    pcVar11 = &DAT_008016a0;
+    do {
+      pcVar12 = pcVar11;
+      if (uVar8 == 0) break;
+      uVar8 = uVar8 - 1;
+      pcVar12 = pcVar11 + 1;
+      cVar1 = *pcVar11;
+      pcVar11 = pcVar12;
+    } while (cVar1 != '\0');
+    uVar8 = ~uVar8;
+    pcVar11 = pcVar12 + -uVar8;
+    pcVar12 = pcVar9 + 1;
+    for (uVar5 = uVar8 >> 2; uVar5 != 0; uVar5 = uVar5 - 1) {
+      *(undefined4 *)pcVar12 = *(undefined4 *)pcVar11;
+      pcVar11 = pcVar11 + 4;
+      pcVar12 = pcVar12 + 4;
+    }
+    for (uVar8 = uVar8 & 3; uVar8 != 0; uVar8 = uVar8 - 1) {
+      *pcVar12 = *pcVar11;
+      pcVar11 = pcVar11 + 1;
+      pcVar12 = pcVar12 + 1;
+    }
+    if ((pcVar9[0x22] != -1) && (*pcVar9 == '\x01')) {
       pDVar4 = pDVar3;
-      if ((pcVar8[0x21] != '\x01') && (pDVar4 = array, pcVar8[0x21] != '\x02')) {
+      if ((pcVar9[0x21] != '\x01') && (pDVar4 = array, pcVar9[0x21] != '\x02')) {
         pDVar4 = array_00;
       }
       if ((pDVar4 == (DArrayTy *)0x0) || (pDVar4->count == 0)) {
-        pcVar10 = &DAT_008016a0;
+        pcVar11 = &DAT_008016a0;
       }
       else {
-        pcVar10 = (char *)((int)pDVar4->data + 0x4c);
+        pcVar11 = (char *)((int)pDVar4->data + 0x4c);
       }
-      uVar5 = 0xffffffff;
+      uVar8 = 0xffffffff;
       do {
-        pcVar11 = pcVar10;
-        if (uVar5 == 0) break;
-        uVar5 = uVar5 - 1;
-        pcVar11 = pcVar10 + 1;
-        cVar1 = *pcVar10;
-        pcVar10 = pcVar11;
+        pcVar12 = pcVar11;
+        if (uVar8 == 0) break;
+        uVar8 = uVar8 - 1;
+        pcVar12 = pcVar11 + 1;
+        cVar1 = *pcVar11;
+        pcVar11 = pcVar12;
       } while (cVar1 != '\0');
-      uVar5 = ~uVar5;
-      pcVar10 = pcVar11 + -uVar5;
-      pcVar11 = pcVar8 + 1;
-      for (uVar6 = uVar5 >> 2; uVar6 != 0; uVar6 = uVar6 - 1) {
-        *(undefined4 *)pcVar11 = *(undefined4 *)pcVar10;
-        pcVar10 = pcVar10 + 4;
+      uVar8 = ~uVar8;
+      pcVar11 = pcVar12 + -uVar8;
+      pcVar12 = pcVar9 + 1;
+      for (uVar5 = uVar8 >> 2; uVar5 != 0; uVar5 = uVar5 - 1) {
+        *(undefined4 *)pcVar12 = *(undefined4 *)pcVar11;
         pcVar11 = pcVar11 + 4;
+        pcVar12 = pcVar12 + 4;
       }
-      for (uVar5 = uVar5 & 3; uVar5 != 0; uVar5 = uVar5 - 1) {
-        *pcVar11 = *pcVar10;
-        pcVar10 = pcVar10 + 1;
+      for (uVar8 = uVar8 & 3; uVar8 != 0; uVar8 = uVar8 - 1) {
+        *pcVar12 = *pcVar11;
         pcVar11 = pcVar11 + 1;
+        pcVar12 = pcVar12 + 1;
       }
     }
-    pcVar8 = pcVar8 + 0x51;
+    pcVar9 = pcVar9 + 0x51;
     local_8 = local_8 + -1;
     if (local_8 == 0) {
       if (pDVar3 != (DArrayTy *)0x0) {

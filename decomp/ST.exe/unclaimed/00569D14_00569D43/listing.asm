@@ -1,0 +1,12 @@
+00569D14  pointer  00569abb
+00569D18  pointer  00568e93
+00569D1C  pointer  0056921a
+00569D20  pointer  005695e8
+00569D24  pointer  005699ff
+00569D28  pointer  005699a7
+00569D2C  pointer  00569a63
+00569D30  pointer  00569b13
+00569D34  pointer  00569b79
+00569D38  pointer  00569bdf
+00569D3C  pointer  00568e2a
+00569D40  pointer  00569c45

@@ -24,12 +24,13 @@ void __thiscall SettMapMTy::DeleteCtrls(SettMapMTy *this)
   local_8 = this;
   iVar2 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
   if (iVar2 == 0) {
-    if (PTR_00802a30 != (CursorClassTy *)0x0) {
-      if (PTR_00802a30->field_00A9 == 0) {
-        Library::DKW::DDX::FUN_006b8b10((int *)PTR_00802a30->field_00AD);
+    if (g_cursorClass_00802A30 != (CursorClassTy *)0x0) {
+      if (g_cursorClass_00802A30->field_00A9 == 0) {
+        Library::DKW::DDX::FUN_006b8b10((int *)g_cursorClass_00802A30->field_00AD);
       }
-      else if (PTR_00802a30->field_001C != (cLoadingTy *)0xffffffff) {
-        FUN_006b3af0((int *)PTR_00802a30->field_0060,(uint)PTR_00802a30->field_001C);
+      else if (g_cursorClass_00802A30->field_001C != (cLoadingTy *)0xffffffff) {
+        FUN_006b3af0((int *)g_cursorClass_00802A30->field_0060,
+                     (uint)g_cursorClass_00802A30->field_001C);
       }
     }
     this_00 = local_8;
@@ -42,13 +43,13 @@ void __thiscall SettMapMTy::DeleteCtrls(SettMapMTy *this)
       FUN_006b3af0((int *)PTR_008075a8,this_00->field_2200);
     }
     if (this_00->field_21E6 != '\0') {
-      if (PTR_0081176c->field_054C != 0) {
-        StartSystemTy::sub_006E56B0(this_00->field_000C,PTR_0081176c->field_054C);
-        PTR_0081176c->field_054C = 0;
+      if (g_startSystem_0081176C->field_054C != 0) {
+        StartSystemTy::sub_006E56B0(this_00->field_000C,g_startSystem_0081176C->field_054C);
+        g_startSystem_0081176C->field_054C = 0;
       }
-      if (PTR_0081176c->field_0550 != 0) {
-        StartSystemTy::sub_006E56B0(this_00->field_000C,PTR_0081176c->field_0550);
-        PTR_0081176c->field_0550 = 0;
+      if (g_startSystem_0081176C->field_0550 != 0) {
+        StartSystemTy::sub_006E56B0(this_00->field_000C,g_startSystem_0081176C->field_0550);
+        g_startSystem_0081176C->field_0550 = 0;
       }
       if (this_00->field_21F8 != (HoloTy *)0x0) {
         HoloTy::Done(this_00->field_21F8);
@@ -95,15 +96,15 @@ void __thiscall SettMapMTy::DeleteCtrls(SettMapMTy *this)
         }
         FUN_006b5f80((int *)PTR_008075a8,200,0x1f1,400,0x62);
         PutDDXClip(200,0x1f1,200,0x1f1,400,(byte *)0x62,'\x01',
-                   (BITMAPINFO *)PTR_0081176c->field_002C);
+                   (BITMAPINFO *)g_startSystem_0081176C->field_002C);
       }
-      FUN_006b3af0((int *)PTR_008075a8,PTR_0081176c->field_0554);
-      FUN_006b3af0((int *)PTR_008075a8,PTR_0081176c->field_0558);
-      if (PTR_0081176c->field_0560 != 0xffffffff) {
-        FUN_006b3af0((int *)PTR_0081176c->field_05A4,PTR_0081176c->field_0560);
+      FUN_006b3af0((int *)PTR_008075a8,g_startSystem_0081176C->field_0554);
+      FUN_006b3af0((int *)PTR_008075a8,g_startSystem_0081176C->field_0558);
+      if (g_startSystem_0081176C->field_0560 != 0xffffffff) {
+        FUN_006b3af0((int *)g_startSystem_0081176C->field_05A4,g_startSystem_0081176C->field_0560);
       }
-      if (PTR_0081176c->field_05F1 != 0xffffffff) {
-        FUN_006b3af0((int *)PTR_0081176c->field_0635,PTR_0081176c->field_05F1);
+      if (g_startSystem_0081176C->field_05F1 != 0xffffffff) {
+        FUN_006b3af0((int *)g_startSystem_0081176C->field_0635,g_startSystem_0081176C->field_05F1);
       }
     }
     SettMapTy::DeleteCtrls((SettMapTy *)this_00);

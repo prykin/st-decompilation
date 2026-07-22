@@ -2,7 +2,7 @@
 void FUN_0044e260(uint param_1,uint param_2,uint param_3,int *param_4)
 
 {
-  AnonPointee_STGameObjC_0000 *pAVar1;
+  STGameObjCVTable *pSVar1;
   int *piVar2;
   int iVar3;
   int *piVar4;
@@ -44,9 +44,8 @@ void FUN_0044e260(uint param_1,uint param_2,uint param_3,int *param_4)
           DArrayGetElement(pDVar5,uVar12,&local_2c);
           /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
           local_14 = STAllPlayersC::GetObjPtr(in_ECX,(char)param_1,local_2c,CASE_1);
-          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
           if ((local_14 == (STGameObjC *)0x0) ||
-             (iVar6 = (**(code **)&local_14->vtable[1].field_0x28)(), iVar6 == 0)) {
+             (iVar6 = (*local_14->vtable[1].vfunc_24)(), iVar6 == 0)) {
             FUN_006b0c70(pDVar5,uVar12);
             param_2 = param_2 - 1;
             uVar12 = uVar12 - 1;
@@ -68,9 +67,9 @@ void FUN_0044e260(uint param_1,uint param_2,uint param_3,int *param_4)
         pSVar13 = local_14;
         if (0 < (int)param_2) {
           do {
-            pAVar1 = pSVar13->vtable;
-            iVar6 = (int)*(short *)((int)&pAVar1->field_0058 + 3);
-            iVar9 = *(int *)((int)&pAVar1[1].field_0030 + 1);
+            pSVar1 = pSVar13->vtable;
+            iVar6 = (int)*(short *)((int)&pSVar1->vfunc_58 + 3);
+            iVar9 = *(int *)((int)&pSVar1[1].vfunc_2C + 1);
             iVar7 = iVar6 - iVar9;
             if (iVar7 < local_8) {
               local_8 = iVar7;
@@ -79,13 +78,14 @@ void FUN_0044e260(uint param_1,uint param_2,uint param_3,int *param_4)
             if (local_c < iVar6) {
               local_c = iVar6;
             }
-            uVar8 = *(short *)&pAVar1->field_0x5d - iVar9;
+            iVar6 = (int)*(short *)((int)&pSVar1->vfunc_5C + 1);
+            uVar8 = iVar6 - iVar9;
             if ((int)uVar8 < (int)param_1) {
               param_1 = uVar8;
             }
-            iVar9 = *(short *)&pAVar1->field_0x5d + iVar9;
-            if (local_10 < iVar9) {
-              local_10 = iVar9;
+            iVar6 = iVar6 + iVar9;
+            if (local_10 < iVar6) {
+              local_10 = iVar6;
             }
             uVar12 = uVar12 - 1;
             pSVar13 = (STGameObjC *)&pSVar13->field_0x4;

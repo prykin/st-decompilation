@@ -2,9 +2,14 @@
 /* [STPrototypeApplier] Propagated parameter 1.
    Evidence: 00568DD0 -> 0071A990 @ 00568F1C | 00568DD0 -> 0071A990 @ 005692A5 | 00568DD0 ->
    0071A990 @ 00569684 | 00568DD0 -> 0071A990 @ 005699C6 | 00568DD0 -> 0071A990 @ 00569A1E |
-   00568DD0 -> 0071A990 @ 00569A82 | 00568DD0 -> 0071A990 @ 00569ADA */
+   00568DD0 -> 0071A990 @ 00569A82 | 00568DD0 -> 0071A990 @ 00569ADA
 
-undefined4 __cdecl
+   [STPrototypeApplier] Propagated return.
+   Evidence: 0071A990 returns used as parameter 0 of FUN_006c1390 @ 00569204 | 0071A990 returns used
+   as parameter 0 of FUN_006c1390 @ 0056958D | 0071A990 returns used as parameter 0 of FUN_006c1390
+   @ 0056994D */
+
+uint * __cdecl
 FUN_0071a990(AnonShape_0071A990_7656000F *param_1,int soundId,int param_3,undefined1 *param_4)
 
 {
@@ -32,9 +37,9 @@ FUN_0071a990(AnonShape_0071A990_7656000F *param_1,int soundId,int param_3,undefi
       if (param_4 != (undefined1 *)0x0) {
         *param_4 = *(undefined1 *)(param_3 * 5 + 4 + (int)piVar3);
       }
-      return *(undefined4 *)(*(int *)(param_1->field_000C + soundId * 4) + iVar1);
+      return *(uint **)(*(int *)(param_1->field_000C + soundId * 4) + iVar1);
     }
   }
-  return 0;
+  return (uint *)0x0;
 }
 

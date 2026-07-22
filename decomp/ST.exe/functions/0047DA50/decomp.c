@@ -59,8 +59,8 @@ int __thiscall STBoatC::BackAnnih(STBoatC *this,int *param_1)
     /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
     iVar8 = CONCAT22((short)((uint)iVar7 >> 0x10),this->field_0691 * 0xc9) + 100;
     uVar4 = (undefined2)((uint)iVar10 >> 0x10);
-    /* ST_PSEUDO[raw_indirect_call,packed_or_unaligned_piece]: expected typed vtable/callback call with explicit __thiscall receiver; expected named packed member, bit extract/compose, or unaligned load */
-    uVar4 = (*(code *)this->vtable->field_0010)
+    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+    uVar4 = (*this->vtable->vfunc_10)
                       (CONCAT22(uVar4,this->field_0041),
                        CONCAT22((short)((uint)iVar8 >> 0x10),this->field_0043),
                        CONCAT22(uVar4,this->field_0045),iVar8,iVar10,iVar7);
@@ -164,14 +164,12 @@ LAB_0047ddc3:
         goto LAB_0047ddc3;
       }
       if (local_1c == 0) {
-        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-        iVar7 = (*(code *)this->vtable->field_00D8)();
+        iVar7 = (*this->vtable->vfunc_D8)();
         return -(uint)(iVar7 != 0);
       }
     }
   }
-  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-  iVar7 = (*(code *)this->vtable->field_00D8)();
+  iVar7 = (*this->vtable->vfunc_D8)();
   return (-(uint)(iVar7 != 0) & 0xfffffffd) + 2;
 }
 

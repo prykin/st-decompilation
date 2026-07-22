@@ -107,34 +107,34 @@ undefined4 * __thiscall STGroupBoatC::SaveGrpBData(STGroupBoatC *this,int *param
     FreeAndNull(&local_c);
     *param_1 = *param_1 + local_8;
   }
-  if (pSVar2->field_020E != (uint *)0x0) {
-    local_c = (ushort *)FUN_006b0020(pSVar2->field_020E,(int *)&local_8);
+  if (pSVar2->field_020E != (DArrayTy *)0x0) {
+    local_c = (ushort *)FUN_006b0020(&pSVar2->field_020E->flags,(int *)&local_8);
     FreeAndNull(&local_c);
     *param_1 = *param_1 + local_8;
   }
   *param_1 = *param_1 + pSVar2->field_021A * 8;
-  if (pSVar2->field_0226 != (uint *)0x0) {
-    local_c = (ushort *)FUN_006b0020(pSVar2->field_0226,(int *)&local_8);
+  if (pSVar2->field_0226 != (DArrayTy *)0x0) {
+    local_c = (ushort *)FUN_006b0020(&pSVar2->field_0226->flags,(int *)&local_8);
     FreeAndNull(&local_c);
     *param_1 = *param_1 + local_8;
   }
-  if (pSVar2->field_022A != (uint *)0x0) {
-    local_c = (ushort *)FUN_006b0020(pSVar2->field_022A,(int *)&local_8);
+  if (pSVar2->field_022A != (DArrayTy *)0x0) {
+    local_c = (ushort *)FUN_006b0020(&pSVar2->field_022A->flags,(int *)&local_8);
     FreeAndNull(&local_c);
     *param_1 = *param_1 + local_8;
   }
-  if (pSVar2->field_022E != (uint *)0x0) {
-    local_c = (ushort *)FUN_006b0020(pSVar2->field_022E,(int *)&local_8);
+  if (pSVar2->field_022E != (DArrayTy *)0x0) {
+    local_c = (ushort *)FUN_006b0020(&pSVar2->field_022E->flags,(int *)&local_8);
     FreeAndNull(&local_c);
     *param_1 = *param_1 + local_8;
   }
-  if (pSVar2->field_024E != (uint *)0x0) {
-    local_c = (ushort *)FUN_006b0020(pSVar2->field_024E,(int *)&local_8);
+  if (pSVar2->field_024E != (DArrayTy *)0x0) {
+    local_c = (ushort *)FUN_006b0020(&pSVar2->field_024E->flags,(int *)&local_8);
     FreeAndNull(&local_c);
     *param_1 = *param_1 + local_8;
   }
-  if (pSVar2->field_0266 != (uint *)0x0) {
-    local_c = (ushort *)FUN_006b0020(pSVar2->field_0266,(int *)&local_8);
+  if (pSVar2->field_0266 != (DArrayTy *)0x0) {
+    local_c = (ushort *)FUN_006b0020(&pSVar2->field_0266->flags,(int *)&local_8);
     FreeAndNull(&local_c);
     *param_1 = *param_1 + local_8;
   }
@@ -630,13 +630,13 @@ undefined4 * __thiscall STGroupBoatC::SaveGrpBData(STGroupBoatC *this,int *param
     FreeAndNull(&local_c);
   }
   local_10 = local_10 + local_8;
-  if (local_14->field_020E == (uint *)0x0) {
+  if (local_14->field_020E == (DArrayTy *)0x0) {
     local_8 = 0;
     *(undefined4 *)((int)puVar4 + 0x1fd) = 0xffffffff;
     *(undefined4 *)((int)puVar4 + 0x201) = 0;
   }
   else {
-    local_c = (ushort *)FUN_006b0020(local_14->field_020E,(int *)&local_8);
+    local_c = (ushort *)FUN_006b0020(&local_14->field_020E->flags,(int *)&local_8);
     puVar9 = local_c;
     puVar6 = (undefined4 *)(local_10 + (int)puVar4);
     for (uVar7 = local_8 >> 2; uVar7 != 0; uVar7 = uVar7 - 1) {
@@ -678,13 +678,13 @@ undefined4 * __thiscall STGroupBoatC::SaveGrpBData(STGroupBoatC *this,int *param
     *(uint *)((int)puVar4 + 0x215) = local_8;
   }
   local_10 = local_10 + local_8;
-  if (local_14->field_0226 == (uint *)0x0) {
+  if (local_14->field_0226 == (DArrayTy *)0x0) {
     local_8 = 0;
     *(undefined4 *)((int)puVar4 + 0x21d) = 0xffffffff;
     *(undefined4 *)((int)puVar4 + 0x221) = 0;
   }
   else {
-    local_c = (ushort *)FUN_006b0020(local_14->field_0226,(int *)&local_8);
+    local_c = (ushort *)FUN_006b0020(&local_14->field_0226->flags,(int *)&local_8);
     puVar9 = local_c;
     puVar6 = (undefined4 *)(local_10 + (int)puVar4);
     for (uVar7 = local_8 >> 2; uVar7 != 0; uVar7 = uVar7 - 1) {
@@ -702,13 +702,13 @@ undefined4 * __thiscall STGroupBoatC::SaveGrpBData(STGroupBoatC *this,int *param
     FreeAndNull(&local_c);
   }
   local_10 = local_10 + local_8;
-  if (local_14->field_022A == (uint *)0x0) {
+  if (local_14->field_022A == (DArrayTy *)0x0) {
     local_8 = 0;
     *(undefined4 *)((int)puVar4 + 0x225) = 0xffffffff;
     *(undefined4 *)((int)puVar4 + 0x229) = 0;
   }
   else {
-    local_c = (ushort *)FUN_006b0020(local_14->field_022A,(int *)&local_8);
+    local_c = (ushort *)FUN_006b0020(&local_14->field_022A->flags,(int *)&local_8);
     puVar9 = local_c;
     puVar6 = (undefined4 *)(local_10 + (int)puVar4);
     for (uVar7 = local_8 >> 2; uVar7 != 0; uVar7 = uVar7 - 1) {
@@ -726,13 +726,13 @@ undefined4 * __thiscall STGroupBoatC::SaveGrpBData(STGroupBoatC *this,int *param
     FreeAndNull(&local_c);
   }
   local_10 = local_10 + local_8;
-  if (local_14->field_022E == (uint *)0x0) {
+  if (local_14->field_022E == (DArrayTy *)0x0) {
     local_8 = 0;
     *(undefined4 *)((int)puVar4 + 0x22d) = 0xffffffff;
     *(undefined4 *)((int)puVar4 + 0x231) = 0;
   }
   else {
-    local_c = (ushort *)FUN_006b0020(local_14->field_022E,(int *)&local_8);
+    local_c = (ushort *)FUN_006b0020(&local_14->field_022E->flags,(int *)&local_8);
     puVar9 = local_c;
     puVar6 = (undefined4 *)(local_10 + (int)puVar4);
     for (uVar7 = local_8 >> 2; uVar7 != 0; uVar7 = uVar7 - 1) {
@@ -750,13 +750,13 @@ undefined4 * __thiscall STGroupBoatC::SaveGrpBData(STGroupBoatC *this,int *param
     FreeAndNull(&local_c);
   }
   local_10 = local_10 + local_8;
-  if (local_14->field_024E == (uint *)0x0) {
+  if (local_14->field_024E == (DArrayTy *)0x0) {
     local_8 = 0;
     *(undefined4 *)((int)puVar4 + 0x251) = 0xffffffff;
     *(undefined4 *)((int)puVar4 + 0x255) = 0;
   }
   else {
-    local_c = (ushort *)FUN_006b0020(local_14->field_024E,(int *)&local_8);
+    local_c = (ushort *)FUN_006b0020(&local_14->field_024E->flags,(int *)&local_8);
     puVar9 = local_c;
     puVar6 = (undefined4 *)(local_10 + (int)puVar4);
     for (uVar7 = local_8 >> 2; uVar7 != 0; uVar7 = uVar7 - 1) {
@@ -774,13 +774,13 @@ undefined4 * __thiscall STGroupBoatC::SaveGrpBData(STGroupBoatC *this,int *param
     FreeAndNull(&local_c);
   }
   local_10 = local_10 + local_8;
-  if (local_14->field_0266 == (uint *)0x0) {
+  if (local_14->field_0266 == (DArrayTy *)0x0) {
     local_8 = 0;
     *(undefined4 *)((int)puVar4 + 0x26d) = 0xffffffff;
     *(undefined4 *)((int)puVar4 + 0x271) = 0;
   }
   else {
-    local_c = (ushort *)FUN_006b0020(local_14->field_0266,(int *)&local_8);
+    local_c = (ushort *)FUN_006b0020(&local_14->field_0266->flags,(int *)&local_8);
     puVar9 = local_c;
     puVar6 = (undefined4 *)(local_10 + (int)puVar4);
     for (uVar7 = local_8 >> 2; uVar7 != 0; uVar7 = uVar7 - 1) {

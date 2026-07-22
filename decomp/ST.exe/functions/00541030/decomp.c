@@ -24,7 +24,7 @@ void DelAllAccelerators(void)
   if (iVar3 == 0) {
     if (g_dArray_008026F0 != (DArrayTy *)0x0) {
       g_dArray_008026F0->iteratorIndex = 0;
-      iVar3 = FUN_006b1190((AnonShape_006B1190_EDB2B5FD *)g_dArray_008026F0,local_b4);
+      iVar3 = FUN_006b1190(g_dArray_008026F0,local_b4);
       while (-1 < iVar3) {
         ppuVar5 = local_24;
         for (iVar3 = 8; iVar3 != 0; iVar3 = iVar3 + -1) {
@@ -36,7 +36,7 @@ void DelAllAccelerators(void)
         local_24[3] = (undefined4 *)0x3;
         local_24[4] = (undefined4 *)0x11;
         FUN_006e3db0((int)local_24);
-        iVar3 = FUN_006b1190((AnonShape_006B1190_EDB2B5FD *)g_dArray_008026F0,local_b4);
+        iVar3 = FUN_006b1190(g_dArray_008026F0,local_b4);
       }
       DArrayDestroy(g_dArray_008026F0);
       g_dArray_008026F0 = (DArrayTy *)0x0;

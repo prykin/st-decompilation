@@ -24,8 +24,8 @@ FUN_0062e240(void *this,undefined4 param_1,int param_2,int param_3,int param_4,i
          (*(int *)&this_00->field_0x18 == param_5)))))) &&
       ((this_00->value_20 == 1000 &&
        (iVar3 = (*this_00->vtable->GetObjectTypeId)(this_00), iVar3 == 0x6e)))) ||
-     ((param_5 != 0 && (iVar3 = FUN_006e62d0(PTR_00802a38,param_5,(int *)&local_8), iVar3 != -4))))
-  {
+     ((param_5 != 0 &&
+      (iVar3 = FUN_006e62d0(g_playSystem_00802A38,param_5,(int *)&local_8), iVar3 != -4)))) {
     uVar6 = param_6;
     if (param_6 == 0) {
       uVar6 = 1;

@@ -1,4 +1,4 @@
-FUN_005fa8b0:
+STColl3C::sub_005FA8B0:
 005FA8B0  55                        PUSH EBP
 005FA8B1  8B EC                     MOV EBP,ESP
 005FA8B3  83 EC 10                  SUB ESP,0x10

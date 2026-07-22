@@ -1,0 +1,12 @@
+00568B0C  pointer  005689cc
+00568B10  pointer  005689f3
+00568B14  pointer  00568a1a
+00568B18  pointer  00568a41
+00568B1C  pointer  00568a68
+00568B20  pointer  00568a8f
+00568B24  pointer  00568ab6
+00568B28  pointer  005689cc
+00568B2C  pointer  00568ae7
+00568B30  pointer  00568ae7
+00568B34  pointer  00568999
+00568B38  pointer  00568add

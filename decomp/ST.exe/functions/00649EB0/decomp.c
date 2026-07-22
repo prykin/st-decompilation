@@ -16,13 +16,13 @@ undefined4 * CreateDefaultBossData(void)
   InternalExceptionFrame local_5c;
   uint local_18;
   uint local_14;
-  undefined4 *local_10;
-  undefined4 *local_c;
-  undefined4 *local_8;
+  byte *local_10;
+  byte *local_c;
+  uint *local_8;
 
-  local_c = (undefined4 *)0x0;
-  local_8 = (undefined4 *)0x0;
-  local_10 = (undefined4 *)0x0;
+  local_c = (byte *)0x0;
+  local_8 = (uint *)0x0;
+  local_10 = (byte *)0x0;
   local_5c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_5c;
   errorCode = Library::MSVCRT::__setjmp3(local_5c.jumpBuffer,0);
@@ -30,11 +30,11 @@ undefined4 * CreateDefaultBossData(void)
     local_8 = thunk_FUN_00648400("Default Arbiter",1);
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     local_10 = EventDataPack(*(AnonShape_0065CD10_BA40DE58 **)((int)local_8 + 0x4e),&local_14);
-    local_c = BossDataPack(local_8,local_10,local_14,&local_18);
+    local_c = BossDataPack(local_8,(undefined4 *)local_10,local_14,&local_18);
     thunk_FUN_0065d0f0((int *)&local_10);
     thunk_FUN_006484f0((int *)&local_8);
     g_currentExceptionFrame = local_5c.previous;
-    return local_c;
+    return (undefined4 *)local_c;
   }
   g_currentExceptionFrame = local_5c.previous;
   thunk_FUN_0065d0f0((int *)&local_10);

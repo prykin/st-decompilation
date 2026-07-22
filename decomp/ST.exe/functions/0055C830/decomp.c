@@ -52,7 +52,7 @@ FUN_0055c830(void *this,Global_sub_0055C830_param_1Enum param_1,byte *param_2,un
           pbVar9 = pbVar9 + 1;
         } while (bVar1 != 0);
         if (((~uVar6 < 100) && (DAT_00807360 != '\0')) && (param_1 == CASE_2)) {
-          pcVar4 = LoadResourceString(0x259a,HINSTANCE_00807618);
+          pcVar4 = LoadResourceString(0x259a,g_module_00807618);
           wsprintfA(local_688,"%s %s",pbVar8,pcVar4);
 LAB_0055cf74:
           FSGSTy::AddMessage(g_fSGS_0081174C,1,&DAT_008016a0,local_688,5);
@@ -74,7 +74,7 @@ LAB_0055cf74:
           pbVar9 = pbVar9 + 1;
         } while (bVar1 != 0);
         if ((~uVar6 < 100) && (DAT_00807360 != '\0')) {
-          pcVar4 = LoadResourceString(0x259b,HINSTANCE_00807618);
+          pcVar4 = LoadResourceString(0x259b,g_module_00807618);
           wsprintfA(local_688,"%s %s",pbVar8,pcVar4);
           goto LAB_0055cf74;
         }
@@ -82,7 +82,7 @@ LAB_0055cf74:
       break;
     case CASE_4:
     case CASE_A:
-      pcVar3 = LoadResourceString((-(uint)(param_1 != CASE_4) & 2) + 0x2575,HINSTANCE_00807618);
+      pcVar3 = LoadResourceString((-(uint)(param_1 != CASE_4) & 2) + 0x2575,g_module_00807618);
       uVar6 = 0xffffffff;
       pcVar4 = pcVar3;
       do {
@@ -112,7 +112,7 @@ LAB_0055cf74:
           FreeAndNull(&param_2);
           return;
         }
-        if (PTR_0081176c != (StartSystemTy *)0x0) {
+        if (g_startSystem_0081176C != (StartSystemTy *)0x0) {
           pcVar4 = local_488;
           for (iVar5 = 0x114; iVar5 != 0; iVar5 = iVar5 + -1) {
             pcVar4[0] = '\0';
@@ -126,7 +126,7 @@ LAB_0055cf74:
           local_449 = 0;
           Library::MSVCRT::_strncpy(local_448,param_5,0x410);
           local_345 = 0;
-          StartSystemTy::AddToChat(PTR_0081176c,(int)local_488);
+          StartSystemTy::AddToChat(g_startSystem_0081176C,(int)local_488);
         }
         FreeAndNull(&param_2);
         return;
@@ -166,7 +166,7 @@ LAB_0055c9c5:
       }
       break;
     case CASE_6:
-      pcVar4 = LoadResourceString(0x2576,HINSTANCE_00807618);
+      pcVar4 = LoadResourceString(0x2576,g_module_00807618);
       pbVar8 = param_4;
       uVar6 = 0xffffffff;
       do {
@@ -185,7 +185,7 @@ LAB_0055c9c5:
       } while (bVar1 != 0);
       param_2 = (byte *)Library::DKW::LIB::FUN_006aac70(~uVar6 + ~uVar7 + 4);
       if (param_2 != (byte *)0x0) {
-        pcVar4 = LoadResourceString(0x2576,HINSTANCE_00807618);
+        pcVar4 = LoadResourceString(0x2576,g_module_00807618);
         wsprintfA((LPSTR)param_2,"%s %s",pcVar4,pbVar8);
         if (*(char *)((int)this + 9) != '\0') {
           thunk_FUN_0055bdd0((char *)param_2,param_5);
@@ -197,7 +197,7 @@ LAB_0055c9c5:
           FreeAndNull(&param_2);
           return;
         }
-        if (PTR_0081176c != (StartSystemTy *)0x0) {
+        if (g_startSystem_0081176C != (StartSystemTy *)0x0) {
           pcVar4 = local_488;
           for (iVar5 = 0x114; iVar5 != 0; iVar5 = iVar5 + -1) {
             pcVar4[0] = '\0';
@@ -211,7 +211,7 @@ LAB_0055c9c5:
           local_449 = 0;
           Library::MSVCRT::_strncpy(local_448,param_5,0x410);
           local_345 = 0;
-          StartSystemTy::AddToChat(PTR_0081176c,(int)local_488);
+          StartSystemTy::AddToChat(g_startSystem_0081176C,(int)local_488);
         }
         FreeAndNull(&param_2);
         return;
@@ -253,7 +253,7 @@ LAB_0055c9c5:
         FSGSTy::AddMessage(g_fSGS_0081174C,6,param_4,param_5,5);
         return;
       }
-      if (PTR_0081176c != (StartSystemTy *)0x0) {
+      if (g_startSystem_0081176C != (StartSystemTy *)0x0) {
         pcVar4 = local_488;
         for (iVar5 = 0x114; iVar5 != 0; iVar5 = iVar5 + -1) {
           pcVar4[0] = '\0';
@@ -267,7 +267,7 @@ LAB_0055c9c5:
         local_449 = 0;
         Library::MSVCRT::_strncpy(local_448,param_5,0x410);
         local_345 = 0;
-        StartSystemTy::AddToChat(PTR_0081176c,(int)local_488);
+        StartSystemTy::AddToChat(g_startSystem_0081176C,(int)local_488);
         return;
       }
       break;
@@ -280,7 +280,7 @@ LAB_0055c9c5:
         FSGSTy::AddMessage(g_fSGS_0081174C,2,param_4,param_5,5);
         return;
       }
-      if (PTR_0081176c != (StartSystemTy *)0x0) {
+      if (g_startSystem_0081176C != (StartSystemTy *)0x0) {
         pcVar4 = local_488;
         for (iVar5 = 0x114; iVar5 != 0; iVar5 = iVar5 + -1) {
           pcVar4[0] = '\0';
@@ -294,7 +294,7 @@ LAB_0055c9c5:
         local_449 = 0;
         Library::MSVCRT::_strncpy(local_448,param_5,0x410);
         local_345 = 0;
-        StartSystemTy::AddToChat(PTR_0081176c,(int)local_488);
+        StartSystemTy::AddToChat(g_startSystem_0081176C,(int)local_488);
         return;
       }
       break;
@@ -307,7 +307,7 @@ LAB_0055c9c5:
         FSGSTy::AddMessage(g_fSGS_0081174C,3,&DAT_008016a0,param_5,5);
         return;
       }
-      if (PTR_0081176c != (StartSystemTy *)0x0) {
+      if (g_startSystem_0081176C != (StartSystemTy *)0x0) {
         pcVar4 = local_488;
         for (iVar5 = 0x114; iVar5 != 0; iVar5 = iVar5 + -1) {
           pcVar4[0] = '\0';
@@ -342,7 +342,7 @@ LAB_0055c9c5:
         }
         Library::MSVCRT::_strncpy(local_448,param_5,0x410);
         local_345 = 0;
-        StartSystemTy::AddToChat(PTR_0081176c,(int)local_488);
+        StartSystemTy::AddToChat(g_startSystem_0081176C,(int)local_488);
         return;
       }
       break;

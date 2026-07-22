@@ -185,7 +185,7 @@ STSprGameObjC::CheckRay
                        (int)g_worldGrid.sizeX * (int)sVar8 + (int)sVar7].objects[0];
           }
           if (((pSVar10 == (STWorldObject *)0x0) || ((STWorldObjectVTable *)0x7 < pSVar10[1].vtable)
-              ) || ((PTR_00802a38 != (STPlaySystemC *)0x0 &&
+              ) || ((g_playSystem_00802A38 != (STPlaySystemC *)0x0 &&
                     (7 < (byte)(&DAT_008087e9)[(int)pSVar10[1].vtable * 0x51])))) {
 LAB_0041fe0d:
             if (g_pathingGrid.cells
@@ -206,7 +206,7 @@ LAB_0041fe0d:
             }
             if (((pSVar10 != (STWorldObject *)0x0) &&
                 (pSVar10[1].vtable < (STWorldObjectVTable *)0x8)) &&
-               (((PTR_00802a38 == (STPlaySystemC *)0x0 ||
+               (((g_playSystem_00802A38 == (STPlaySystemC *)0x0 ||
                  ((byte)(&DAT_008087e9)[(int)pSVar10[1].vtable * 0x51] < 8)) &&
                 (local_1c->field_0018 != *(int *)&pSVar10->field_0x18)))) {
               if ((pSVar10[0xc].value_20 & 0x1000) != 0) {
@@ -219,7 +219,7 @@ LAB_0041fe0d:
               }
               if (param_9 == 0) {
                 if (((STWorldObjectVTable *)0x7 < pSVar10[1].vtable) ||
-                   ((PTR_00802a38 != (STPlaySystemC *)0x0 &&
+                   ((g_playSystem_00802A38 != (STPlaySystemC *)0x0 &&
                     (7 < (byte)(&DAT_008087e9)[(int)pSVar10[1].vtable * 0x51]))))
                 goto cf_continue_loop_0042004A;
                 bVar4 = *(byte *)&pSVar10[1].vtable;
@@ -278,7 +278,7 @@ LAB_0041fffd:
             }
             if (param_9 == 0) {
               if (((STWorldObjectVTable *)0x7 < pSVar10[1].vtable) ||
-                 ((PTR_00802a38 != (STPlaySystemC *)0x0 &&
+                 ((g_playSystem_00802A38 != (STPlaySystemC *)0x0 &&
                   (7 < (byte)(&DAT_008087e9)[(int)pSVar10[1].vtable * 0x51]))))
               goto cf_continue_loop_0042004A;
               bVar4 = *(byte *)&pSVar10[1].vtable;

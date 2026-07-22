@@ -24,7 +24,7 @@ undefined4 __fastcall FUN_004c6d00(STJellyGunC *param_1)
   short local_8;
   short local_6;
 
-  if (*(int *)&param_1[1].field_0x168 == 0) {
+  if (param_1->field_03FC == 0) {
     /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
     iVar3 = (*param_1->vtable->MoveStep)((STGameObjC *)param_1,unaff_EDI);
     if (iVar3 == -1) {
@@ -38,19 +38,18 @@ undefined4 __fastcall FUN_004c6d00(STJellyGunC *param_1)
     else {
       if (iVar3 == 1) goto LAB_004c6e4d;
       if (iVar3 != 2) goto cf_common_exit_004C6F47;
-      iVar3 = *(int *)&param_1[1].field_0x170 + 1;
-      *(int *)&param_1[1].field_0x170 = iVar3;
-      if ((9 < iVar3) &&
-         (iVar3 = thunk_FUN_004ea620((AnonShape_004EA620_716C262B *)param_1), iVar3 != 0)) {
-        *(undefined4 *)&param_1[1].field_0x168 = 1;
-        *(undefined4 *)&param_1[1].field_0x16c = 0;
+      iVar3 = param_1->field_0404 + 1;
+      param_1->field_0404 = iVar3;
+      if ((9 < iVar3) && (iVar3 = TLOBaseTy::sub_004EA620((TLOBaseTy *)param_1), iVar3 != 0)) {
+        param_1->field_03FC = 1;
+        param_1->field_0400 = 0;
       }
       iVar3 = SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00417FF0::thunk_FUN_00418030
-                        ((AnonReceiver_00417FF0 *)param_1,*(short *)&param_1[1].field_0x14c,
-                         *(short *)&param_1[1].field_0x150,*(short *)&param_1[1].field_0x154);
+                        ((AnonReceiver_00417FF0 *)param_1,param_1->field_03E0,param_1->field_03E4,
+                         param_1->field_03E8);
       if (iVar3 != -1) {
         if (iVar3 == 2) {
-          *(undefined4 *)&param_1[1].field_0x148 = 0;
+          param_1->field_03DC = 0;
         }
         goto cf_common_exit_004C6F47;
       }
@@ -58,7 +57,7 @@ undefined4 __fastcall FUN_004c6d00(STJellyGunC *param_1)
     }
   }
   else {
-    if (*(int *)&param_1[1].field_0x16c == 0) {
+    if (param_1->field_0400 == 0) {
       iVar3 = (*param_1->vtable->vfunc_20)();
       if (iVar3 == -1) {
         iVar3 = ReportDebugMessage("E:\\__titans\\Artem\\TLO_bmove.cpp",0x35,0,-5,
@@ -70,32 +69,29 @@ undefined4 __fastcall FUN_004c6d00(STJellyGunC *param_1)
                   (-5,g_overwriteContext_007ED77C,"E:\\__titans\\Artem\\TLO_bmove.cpp",0x35);
       }
       else if (iVar3 == 1) {
-        *(undefined4 *)&param_1[1].field_0x16c = 1;
+        param_1->field_0400 = 1;
         thunk_FUN_00416270(param_1,local_10,(int *)local_14,(int *)local_18);
-        sVar2 = *(short *)&param_1[2].field_0x88 * 0xc9 + 100;
+        sVar2 = *(short *)&param_1->field_05B0 * 0xc9 + 100;
         if (((local_10[0] == sVar2) &&
-            (local_14[0] == (short)(*(short *)&param_1[2].field_0x8c * 0xc9 + 100))) &&
-           (local_18[0] == (short)(*(short *)&param_1[2].field_0x90 * 200 + 100))) {
-          *(undefined4 *)&param_1[1].field_0x148 = 0;
-          SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00417FF0::sub_004167A0
-                    ((AnonReceiver_00417FF0 *)param_1);
+            (local_14[0] == (short)(*(short *)&param_1->field_05B4 * 0xc9 + 100))) &&
+           (local_18[0] == (short)(*(short *)&param_1->field_05B8 * 200 + 100))) {
+          param_1->field_03DC = 0;
+          sub_004167A0(param_1);
         }
         else {
           sub_00415B30(param_1,local_10[0],local_14[0],local_18[0],sVar2,
-                       *(short *)&param_1[2].field_0x8c * 0xc9 + 100,
-                       *(short *)&param_1[2].field_0x90 * 200 + 100,param_1->field_0x62);
+                       *(short *)&param_1->field_05B4 * 0xc9 + 100,
+                       *(short *)&param_1->field_05B8 * 200 + 100,param_1->field_0062);
         }
       }
     }
-    if ((*(int *)&param_1[1].field_0x16c == 0) || (*(int *)&param_1[1].field_0x148 == 0))
-    goto cf_common_exit_004C6F47;
+    if ((param_1->field_0400 == 0) || (param_1->field_03DC == 0)) goto cf_common_exit_004C6F47;
     iVar3 = STJellyGunC::sub_00415ED0(param_1,&local_20,&local_1c);
     if (iVar3 != -1) {
       if (iVar3 != 0) goto cf_common_exit_004C6F47;
 LAB_004c6e4d:
-      *(undefined4 *)&param_1[1].field_0x148 = 0;
-      SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00417FF0::sub_004167A0
-                ((AnonReceiver_00417FF0 *)param_1);
+      param_1->field_03DC = 0;
+      sub_004167A0(param_1);
       goto cf_common_exit_004C6F47;
     }
     iVar3 = ReportDebugMessage("E:\\__titans\\Artem\\TLO_bmove.cpp",0x47,0,-5,"%s",
@@ -109,15 +105,12 @@ LAB_004c6e4d:
             (-5,g_overwriteContext_007ED77C,"E:\\__titans\\Artem\\TLO_bmove.cpp",iVar3);
 cf_common_exit_004C6F47:
   thunk_FUN_004162f0(param_1,&local_6,&local_8,&local_a);
-  *(int *)&param_1[2].field_0x88 = (int)local_6;
-  iVar3 = *(int *)&param_1[1].field_0x148;
-  *(int *)&param_1[2].field_0x8c = (int)local_8;
-  *(int *)&param_1[2].field_0x90 = (int)local_a;
-  if ((iVar3 == 0) && (*(int *)&param_1[1].field_0x158 != 0)) {
-    *(undefined4 *)&param_1[1].field_0x158 = 0;
-    thunk_FUN_004c6bb0(param_1,*(undefined4 *)&param_1[1].field_0x15c,
-                       *(undefined4 *)&param_1[1].field_0x160,*(undefined4 *)&param_1[1].field_0x164
-                      );
+  param_1->field_05B0 = (int)local_6;
+  param_1->field_05B4 = (int)local_8;
+  param_1->field_05B8 = (int)local_a;
+  if ((param_1->field_03DC == 0) && (param_1->field_03EC != 0)) {
+    param_1->field_03EC = 0;
+    thunk_FUN_004c6bb0(param_1,param_1->field_03F0,param_1->field_03F4,param_1->field_03F8);
   }
   return 0;
 }

@@ -59,7 +59,7 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00678E00::FUN_00679120
         *(short *)((int)*value + 100) = (short)local_c + 2;
         *(short *)((int)*value + 0x66) = (short)param_4;
         *(undefined1 *)((int)*value + 0x68) = pAVar2->field_064F;
-        STPlaySystemC::CreateGameObject(PTR_00802a38,0x38e,local_24,&local_10,*value,0);
+        STPlaySystemC::CreateGameObject(g_playSystem_00802A38,0x38e,local_24,&local_10,*value,0);
         FreeAndNull(value);
         *value = local_10;
         /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */

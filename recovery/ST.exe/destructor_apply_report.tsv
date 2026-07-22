@@ -1,3 +1,3 @@
 address	status	proposed_name	detail
-00542EC0	applied	InterSystemC::~InterSystemC	name=applied(InterSystemC::~InterSystemC); parameters=applied(no explicit parameters); convention=applied(__thiscall); this_type=unchanged; return=applied(void)
-005DCDB0	applied	StartSystemTy::~StartSystemTy	name=applied(StartSystemTy::~StartSystemTy); parameters=applied(no explicit parameters); convention=applied(__thiscall); this_type=unchanged; return=applied(void)
+00542EC0	disabled	InterSystemC::~InterSystemC	all apply flags are 0
+005DCDB0	disabled	StartSystemTy::~StartSystemTy	all apply flags are 0

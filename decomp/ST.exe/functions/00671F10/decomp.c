@@ -130,13 +130,13 @@ cf_continue_loop_006721A4:
       if ((iVar4 < 0) || (iVar4 = thunk_FUN_00668a70((int)*psVar7), iVar4 != 0)) {
         iVar4 = (int)psVar7[1];
         piVar9 = &local_1c;
-        pcVar5 = (char *)thunk_FUN_0064a910((int)local_c,iVar3);
+        pcVar5 = thunk_FUN_0064a910((int)local_c,iVar3);
         local_8 = thunk_FUN_0064a970(pcVar5,iVar4,piVar9);
       }
       else {
         iVar4 = (int)psVar7[1];
         piVar9 = &local_1c;
-        pcVar5 = (char *)thunk_FUN_0064a910((int)local_c,iVar3);
+        pcVar5 = thunk_FUN_0064a910((int)local_c,iVar3);
         local_8 = (float *)SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0064A970::
                            thunk_FUN_0066acc0(local_24,pcVar5,iVar4,piVar9);
       }
@@ -152,7 +152,7 @@ cf_continue_loop_006721A4:
       ;
       goto cf_continue_loop_006721A4;
     }
-    iVar3 = thunk_FUN_0064a940((int)local_c,iVar3);
+    iVar3 = thunk_FUN_0064a940(local_c,iVar3);
     if (iVar3 == 0) {
       RaiseInternalException
                 (-0x6b,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_interp.cpp",0x54c);

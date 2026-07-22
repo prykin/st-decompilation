@@ -1,4 +1,4 @@
-FUN_004acf90:
+STT3DSprC::sub_004ACF90:
 004ACF90  55                        PUSH EBP
 004ACF91  8B EC                     MOV EBP,ESP
 004ACF93  56                        PUSH ESI

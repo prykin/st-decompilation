@@ -12,7 +12,7 @@ undefined4 __fastcall FUN_004dba70(int param_1)
   local_8 = 2;
   do {
     if ((*piVar3 != 0) && (piVar3[6] != 0)) {
-      iVar2 = FUN_006e62d0(PTR_00802a38,*piVar3,(int *)&local_c);
+      iVar2 = FUN_006e62d0(g_playSystem_00802A38,*piVar3,(int *)&local_c);
       pAVar1 = local_c;
       if (iVar2 == 0) {
         local_c->field_04C0 = 0;

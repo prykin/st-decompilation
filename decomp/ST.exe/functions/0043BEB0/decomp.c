@@ -108,8 +108,7 @@ STAllPlayersC::GetPanelInfo
           STFishC::sub_004162B0
                     ((STFishC *)pSVar8,&local_6,&local_8,(undefined2 *)((int)&param_1 + 2));
           *(undefined1 *)((int)pAVar16 + (0x2e - param_1._2_2_)) = 1;
-          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-          (*(code *)pSVar8->vtable->field_0030)(local_6c);
+          (*pSVar8->vtable->vfunc_30)(local_6c);
           local_34 = local_64;
           local_30 = local_69;
           local_2c = local_51;
@@ -187,7 +186,7 @@ STAllPlayersC::GetPanelInfo
           DArrayGetElement(local_1c,dVar15,&local_c);
           if ((short)local_c != -1) {
             pSVar8 = GetObjPtr(this,DAT_0080874d,local_c,CASE_1);
-            iVar4 = thunk_FUN_00493cd0((AnonShape_00493CD0_11D91B87 *)pSVar8);
+            iVar4 = thunk_FUN_00493cd0(pSVar8);
             if (iVar4 == 0) break;
           }
           dVar15 = dVar15 + 1;
@@ -772,8 +771,7 @@ LAB_0043ca31:
       SVar18 = CASE_1;
 cf_common_exit_0043CA35:
       pSVar8 = GetObjPtr(local_10,cVar17,local_c,SVar18);
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-      (*(code *)pSVar8->vtable->field_0034)(param_2);
+      (*pSVar8->vtable->vfunc_34)(param_2);
       return;
     }
     if ((char)param_1 != '\x05') {
@@ -808,8 +806,7 @@ cf_common_exit_0043CA35:
           if ((short)local_c != -1) {
             pSVar8 = GetObjPtr(local_10,(char)g_playerRuntime[uVar12].tempSlots[1][0].playerId,
                                local_c,CASE_1);
-            /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-            (**(code **)&pSVar8->vtable->field_0x38)(param_2);
+            (*pSVar8->vtable->vfunc_38)(param_2);
             return;
           }
           uVar13 = uVar13 + 1;
@@ -848,8 +845,7 @@ cf_common_exit_0043CA35:
           if ((short)local_c != -1) {
             pSVar8 = GetObjPtr(local_10,(char)g_playerRuntime[uVar12].tempSlots[1][0].playerId,
                                local_c,CASE_1);
-            /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-            (**(code **)&pSVar8->vtable->field_0x3c)(param_2);
+            (*pSVar8->vtable->vfunc_3C)(param_2);
             return;
           }
           uVar13 = uVar13 + 1;
@@ -889,8 +885,7 @@ cf_common_exit_0043CA35:
           if ((short)local_c != -1) {
             pSVar8 = GetObjPtr(local_10,(char)g_playerRuntime[uVar12].tempSlots[0][0].playerId,
                                local_c,CASE_1);
-            /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-            (*(code *)pSVar8->vtable->field_0040)(pAVar16);
+            (*pSVar8->vtable->vfunc_40)(pAVar16);
             return;
           }
           uVar13 = uVar13 + 1;
@@ -925,8 +920,7 @@ cf_common_exit_0043CA35:
           if ((short)local_c != -1) {
             pSVar8 = GetObjPtr(local_10,(char)g_playerRuntime[uVar12].tempSlots[1][0].playerId,
                                local_c,CASE_1);
-            /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-            (**(code **)&pSVar8->vtable->field_0x44)(param_2);
+            (*pSVar8->vtable->vfunc_44)(param_2);
             return;
           }
           uVar13 = uVar13 + 1;
@@ -952,8 +946,7 @@ cf_common_exit_0043CA35:
           DArrayGetElement(pDVar2,uVar12,&local_c);
           if ((short)local_c != -1) {
             pSVar8 = GetObjPtr(local_10,(char)local_28->playerId,local_c,CASE_1);
-            /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-            (**(code **)&pSVar8->vtable->field_0x48)(param_2);
+            (*pSVar8->vtable->vfunc_48)(param_2);
             return;
           }
           uVar12 = uVar12 + 1;
@@ -992,8 +985,7 @@ cf_common_exit_0043CA35:
             if ((short)local_c != -1) {
               pSVar8 = GetObjPtr(local_10,(char)g_playerRuntime[uVar12].tempSlots[1][0].playerId,
                                  local_c,CASE_1);
-              /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-              (**(code **)&pSVar8->vtable->field_0x50)(param_2);
+              (*pSVar8->vtable->vfunc_50)(param_2);
               return;
             }
             uVar13 = uVar13 + 1;
@@ -1060,8 +1052,7 @@ LAB_0043d41d:
                                 *(undefined2 *)&pAVar10[-1].field_0012);
 LAB_0043d447:
               pSVar8 = GetObjPtr(local_10,cVar17,uVar12,SVar18);
-              /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-              (*(code *)pSVar8->vtable->field_0058)(pAVar16);
+              (*pSVar8->vtable->vfunc_58)(pAVar16);
             }
             pAVar10 = (AnonShape_0043BEB0_1C00EC12 *)&param_2->field_0x10;
             pAVar16 = (AnonShape_0043BEB0_1C00EC12 *)&pAVar16->field_000B;
@@ -1135,8 +1126,7 @@ LAB_0043d5b1:
               uVar12 = CONCAT22((short)((uint)iVar4 >> 0x10),*psVar14);
 LAB_0043d5b7:
               pSVar8 = GetObjPtr(local_10,cVar17,uVar12,SVar18);
-              /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-              (**(code **)&pSVar8->vtable->field_0x5c)(pAVar16);
+              (*pSVar8->vtable->vfunc_5C)(pAVar16);
             }
 LAB_0043d5c4:
             psVar14 = psVar14 + 8;
@@ -1232,8 +1222,7 @@ LAB_0043d5c4:
             pSVar8 = GetObjPtr(this,-1,CONCAT22((short)(uVar12 * 0xa62 + 0x7f4f83 >> 0x10),
                                                 g_playerRuntime[uVar12].tempSlots[0][0].objectId),
                                CASE_3);
-            /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-            (**(code **)&pSVar8->vtable->field_0x64)(param_2);
+            (*pSVar8->vtable->vfunc_64)(param_2);
             return;
           }
           iVar4 = ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0x1f5d,0,0,
@@ -1271,8 +1260,7 @@ LAB_0043d5c4:
             if ((short)local_c != -1) {
               pSVar8 = GetObjPtr(local_10,(char)g_playerRuntime[uVar12].tempSlots[0][0].playerId,
                                  local_c,CASE_1);
-              /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-              (*(code *)pSVar8->vtable->field_0060)(param_2);
+              (*pSVar8->vtable->vfunc_60)(param_2);
               break;
             }
             uVar13 = uVar13 + 1;
@@ -1312,8 +1300,7 @@ LAB_0043d5c4:
           if ((short)local_c != -1) {
             pSVar8 = GetObjPtr(local_10,(char)g_playerRuntime[uVar12].tempSlots[0][0].playerId,
                                local_c,CASE_1);
-            /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-            (*(code *)pSVar8->vtable->field_004C)(param_2);
+            (*pSVar8->vtable->vfunc_4C)(param_2);
             return;
           }
           uVar13 = uVar13 + 1;
@@ -1367,8 +1354,7 @@ LAB_0043d5c4:
           DArrayGetElement(pDVar2,dVar15,&local_c);
           if ((short)local_c != -1) {
             pSVar8 = GetObjPtr(local_10,DAT_0080874d,local_c,CASE_1);
-            /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-            uVar9 = (**(code **)&pSVar8->vtable->field_0x2c)();
+            uVar9 = (*pSVar8->vtable->vfunc_2C)();
             switch(uVar9) {
             case 7:
             case 8:
@@ -1500,8 +1486,7 @@ LAB_0043cb81:
   SVar18 = CASE_1;
 cf_common_exit_0043CB5C:
   pSVar8 = GetObjPtr(local_10,cVar17,local_c,SVar18);
-  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-  (*(code *)pSVar8->vtable->field_0030)(param_2);
+  (*pSVar8->vtable->vfunc_30)(param_2);
   return;
 cf_common_exit_0043C94C:
   *(undefined1 *)param_2 = 3;

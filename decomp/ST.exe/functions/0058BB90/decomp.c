@@ -74,7 +74,7 @@ LAB_0058bcd7:
               (g_visibleClass_00802A88,local_8,iVar3,puVar5,param_1->field_0024,(undefined *)0x2,
                0x19);
   }
-  STPlaySystemC::CreateGameObject(PTR_00802a38,0x28,0,0,local_60,0);
+  STPlaySystemC::CreateGameObject(g_playSystem_00802A38,0x28,0,0,local_60,0);
   return;
 }
 

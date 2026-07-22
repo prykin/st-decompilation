@@ -174,8 +174,8 @@ void __thiscall HelpPanelTy::CreateList(HelpPanelTy *this)
     local_98 = 0x8166;
     local_60 = 1;
     local_5c = 1;
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-    (*(code *)this_00->field_000C->vtable->field_0008)(7,&this_00->field_019C,0,local_520,0);
+    (*this_00->field_000C->vtable->CreateObject)
+              ((SystemClassTy *)this_00->field_000C,7,&this_00->field_019C,(int *)0x0,local_520,0);
     iVar3 = this_00->field_019C;
     if (iVar3 != 0) {
       this_00->field_0028 = 0x20;

@@ -379,7 +379,7 @@ void __thiscall CPanelTy::InitCPanel(CPanelTy *this)
     local_8 = (int *)0x3b60;
     local_14 = 4;
     do {
-      resourceString = (uint *)LoadResourceString((UINT)local_8,HINSTANCE_00807618);
+      resourceString = (uint *)LoadResourceString((UINT)local_8,g_module_00807618);
       iVar23 = 1;
       puVar5 = (undefined4 *)(DAT_0080679c + 0x28);
       local_1c = resourceString;
@@ -563,19 +563,19 @@ void __thiscall CPanelTy::InitCPanel(CPanelTy *this)
       cMf32::RecGet((cMf32 *)DAT_00806790,1,pCVar7,piVar21,iVar20);
     }
     pDVar12 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,10,9,10);
-    this_00->field_0B95 = &pDVar12->flags;
+    this_00->field_0B95 = pDVar12;
     STAllPlayersC::GetPanelInfo
-              (g_sTAllPlayers_007FA174,1,(AnonShape_0043BEB0_1C00EC12 *)&this_00->field_0B63);
+              (g_allPlayers_007FA174,1,(AnonShape_0043BEB0_1C00EC12 *)&this_00->field_0B63);
     STAllPlayersC::GetPanelInfo
-              (g_sTAllPlayers_007FA174,2,(AnonShape_0043BEB0_1C00EC12 *)&this_00->field_0B99);
+              (g_allPlayers_007FA174,2,(AnonShape_0043BEB0_1C00EC12 *)&this_00->field_0B99);
     STAllPlayersC::GetPanelInfo
-              (g_sTAllPlayers_007FA174,4,(AnonShape_0043BEB0_1C00EC12 *)&this_00->field_0BF5);
+              (g_allPlayers_007FA174,4,(AnonShape_0043BEB0_1C00EC12 *)&this_00->field_0BF5);
     STAllPlayersC::GetPanelInfo
-              (g_sTAllPlayers_007FA174,5,(AnonShape_0043BEB0_1C00EC12 *)&this_00->field_0C51);
+              (g_allPlayers_007FA174,5,(AnonShape_0043BEB0_1C00EC12 *)&this_00->field_0C51);
     STAllPlayersC::GetPanelInfo
-              (g_sTAllPlayers_007FA174,0xe,(AnonShape_0043BEB0_1C00EC12 *)&this_00->field_0xc87);
+              (g_allPlayers_007FA174,0xe,(AnonShape_0043BEB0_1C00EC12 *)&this_00->field_0xc87);
     STAllPlayersC::GetPanelInfo
-              (g_sTAllPlayers_007FA174,0xf,(AnonShape_0043BEB0_1C00EC12 *)&this_00->field_0xcc9);
+              (g_allPlayers_007FA174,0xf,(AnonShape_0043BEB0_1C00EC12 *)&this_00->field_0xcc9);
     puVar5 = (undefined4 *)0x0;
     iVar20 = 0;
     iVar3 = 1;
@@ -642,7 +642,7 @@ void __thiscall CPanelTy::InitCPanel(CPanelTy *this)
       PaintCtrlObj(this_00,1);
     }
     PaintInfoObj(this_00);
-    FUN_006b1a50((int)PTR_008075a8,3,(undefined4 *)0x0,&this_00->field_011C);
+    FUN_006b1a50(PTR_008075a8,3,(undefined4 *)0x0,&this_00->field_011C);
     iVar3 = this_00->field_011C;
     piVar21 = &this_00->field_003C;
     this_00->field_0040 = iVar3;
@@ -693,10 +693,10 @@ void __thiscall CPanelTy::InitCPanel(CPanelTy *this)
       do {
         if (((&this_00->field_0068)[uVar4] != 0) && ((&this_00->field_00C0)[uVar4] != 0)) {
           piVar21 = &this_00->field_0148 + uVar4;
-          FUN_006b2330((uint)PTR_008075a8,(uint *)piVar21,5,0x402946,(&this_00->field_0068)[uVar4],
+          FUN_006b2330(PTR_008075a8,(uint *)piVar21,5,0x402946,(&this_00->field_0068)[uVar4],
                        (&this_00->field_00C0)[uVar4],(&this_00->field_0180)[uVar4]);
           FUN_006b1b10(PTR_008075a8,*piVar21,3);
-          FUN_006b28c0((int)PTR_008075a8,*piVar21,1);
+          FUN_006b28c0(PTR_008075a8,*piVar21,1);
         }
         bVar2 = bVar2 + 1;
         /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
@@ -718,16 +718,16 @@ void __thiscall CPanelTy::InitCPanel(CPanelTy *this)
     }
     this_00->field_00F0 = iVar3;
     piVar21 = &this_00->field_0174;
-    FUN_006b2330((uint)PTR_008075a8,(uint *)piVar21,5,0x40402a,this_00->field_00F4,
-                 this_00->field_00F8,(uint)this_00->field_01AC);
+    FUN_006b2330(PTR_008075a8,(uint *)piVar21,5,0x40402a,this_00->field_00F4,this_00->field_00F8,
+                 (uint)this_00->field_01AC);
     FUN_006b1b10(PTR_008075a8,*piVar21,3);
     Library::DKW::DDX::FUN_006b3640
               ((int *)PTR_008075a8,*piVar21,0xffffffff,this_00->field_00EC,this_00->field_00F0);
     piVar21 = &this_00->field_0178;
     this_00->field_00FC = (this_00->field_0124 - this_00->field_0104) + this_00->field_011C;
     this_00->field_0100 = this_00->field_00A4 - this_00->field_0108;
-    FUN_006b2330((uint)PTR_008075a8,(uint *)piVar21,6,0x40402a,this_00->field_0104,
-                 this_00->field_0108,(uint)this_00->field_01B0);
+    FUN_006b2330(PTR_008075a8,(uint *)piVar21,6,0x40402a,this_00->field_0104,this_00->field_0108,
+                 (uint)this_00->field_01B0);
     FUN_006b1b10(PTR_008075a8,*piVar21,3);
     Library::DKW::DDX::FUN_006b3640
               ((int *)PTR_008075a8,*piVar21,0xffffffff,this_00->field_00FC,this_00->field_0100);
@@ -737,8 +737,8 @@ void __thiscall CPanelTy::InitCPanel(CPanelTy *this)
     piVar21 = &this_00->field_017C;
     this_00->field_010C = (this_00->field_0124 - this_00->field_0114) + this_00->field_011C;
     this_00->field_0110 = this_00->field_00A4;
-    FUN_006b2330((uint)PTR_008075a8,(uint *)piVar21,6,0x401988,this_00->field_0114,
-                 this_00->field_0118,(uint)this_00->field_01B4);
+    FUN_006b2330(PTR_008075a8,(uint *)piVar21,6,0x401988,this_00->field_0114,this_00->field_0118,
+                 (uint)this_00->field_01B4);
     FUN_006b1b10(PTR_008075a8,*piVar21,3);
     Library::DKW::DDX::FUN_006b3640
               ((int *)PTR_008075a8,*piVar21,0xffffffff,this_00->field_010C,this_00->field_0110);
@@ -752,7 +752,7 @@ void __thiscall CPanelTy::InitCPanel(CPanelTy *this)
     this_00->field_025F = 0;
     this_00->field_0260 = 2;
     this_00->field_0261 = this_00->field_0038;
-    thunk_FUN_0054b6d0((int)PTR_00802a30);
+    thunk_FUN_0054b6d0(g_cursorClass_00802A30);
     bVar2 = 0;
     piVar21 = &this_00->field_0148;
     do {
@@ -769,7 +769,7 @@ void __thiscall CPanelTy::InitCPanel(CPanelTy *this)
     else {
       SetControlBoat(this_00);
     }
-    thunk_FUN_00501a10((AnonShape_00501A10_7BD31715 *)this_00);
+    sub_00501A10(this_00);
     uVar26 = 0;
     uVar22 = 0;
     *(uint *)&this_00->field_0x2c = (uint)(DAT_00807327 & 2 | 1);
@@ -911,7 +911,7 @@ void __thiscall CPanelTy::InitCPanel(CPanelTy *this)
     else {
       SetControlObj(this_00,'\x01');
     }
-    thunk_FUN_00506040((AnonShape_00506040_A874E362 *)this_00);
+    sub_00506040(this_00);
     CreateMiniMap(DAT_00806750,(int *)&this_00->field_0x217,0x8b,local_24);
     FUN_006e6400(PTR_00807598,(undefined4 *)&this_00->field_0x217,0,0x8b,0x46);
     PTR_00807598->field_0418 = (uint)DAT_00807327;

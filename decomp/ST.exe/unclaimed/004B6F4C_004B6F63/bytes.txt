@@ -1,0 +1,2 @@
+004B6F4C  47 6E 4B 00 4B 6E 4B 00 52 6E 4B 00 59 6E 4B 00  |GnK.KnK.RnK.YnK.|
+004B6F5C  60 6E 4B 00 67 6E 4B 00                          |`nK.gnK.|

@@ -148,14 +148,15 @@ void __thiscall AiEventClassTy::GetMessage(AiEventClassTy *this,STMessage *messa
 
   local_180 = (DArrayTy *)0x0;
   local_198 = 0;
-  if ((g_sTAllPlayers_007FA174 != (STAllPlayersC *)0x0) &&
+  if ((g_allPlayers_007FA174 != (STAllPlayersC *)0x0) &&
      (local_188 = this, iVar7 = sub_0065BD70(this,message,0), -1 < iVar7)) {
     local_194 = iVar7;
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
     uVar8 = (*(code *)this->field_0000->field_0018)();
     this->field_052B = uVar8;
     if ((iVar7 != 0x456) ||
-       ((PTR_00802a38->field_00E4 % 0x19 == this->field_00D2 || (PTR_00802a38->field_00E4 == 1)))) {
+       ((g_playSystem_00802A38->field_00E4 % 0x19 == this->field_00D2 ||
+        (g_playSystem_00802A38->field_00E4 == 1)))) {
       local_19c = this->field_04E2[2];
       local_284.previous = g_currentExceptionFrame;
       g_currentExceptionFrame = &local_284;
@@ -237,9 +238,11 @@ void __thiscall AiEventClassTy::GetMessage(AiEventClassTy *this,STMessage *messa
                                          ((DArrayTy *)local_16c._8_4_ != (DArrayTy *)0x9)) {
                                         /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                         pDVar12 = (DArrayTy *)
-                                                  thunk_FUN_00668f50(this_00,(char *)local_16c._8_4_
-                                                                     ,(uint)local_160,
-                                                                     &local_34.flags);
+                                                  SubmarineTitans::Recovered::HiddenThis::
+                                                  AnonReceiver_0064A970::sub_00668F50
+                                                            ((AnonReceiver_0064A970 *)this_00,
+                                                             (char *)local_16c._8_4_,(uint)local_160
+                                                             ,&local_34.flags);
                                         if (0 < (int)pDVar12) {
                                           pDVar25 = &local_34;
                                           local_c = pDVar12;
@@ -266,9 +269,11 @@ void __thiscall AiEventClassTy::GetMessage(AiEventClassTy *this,STMessage *messa
                                          ((DArrayTy *)local_16c._8_4_ != (DArrayTy *)0x9)) {
                                         /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                         pDVar12 = (DArrayTy *)
-                                                  thunk_FUN_00668f50(this_00,(char *)local_16c._8_4_
-                                                                     ,(uint)local_160,
-                                                                     &local_34.flags);
+                                                  SubmarineTitans::Recovered::HiddenThis::
+                                                  AnonReceiver_0064A970::sub_00668F50
+                                                            ((AnonReceiver_0064A970 *)this_00,
+                                                             (char *)local_16c._8_4_,(uint)local_160
+                                                             ,&local_34.flags);
                                         if (0 < (int)pDVar12) {
                                           local_10 = (AiFltClassTy *)&local_34;
                                           local_c = pDVar12;
@@ -313,9 +318,11 @@ void __thiscall AiEventClassTy::GetMessage(AiEventClassTy *this,STMessage *messa
                                          ((DArrayTy *)local_16c._8_4_ != (DArrayTy *)0x9)) {
                                         /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                         pDVar12 = (DArrayTy *)
-                                                  thunk_FUN_00668f50(this_00,(char *)local_16c._8_4_
-                                                                     ,(uint)local_160,
-                                                                     &local_34.flags);
+                                                  SubmarineTitans::Recovered::HiddenThis::
+                                                  AnonReceiver_0064A970::sub_00668F50
+                                                            ((AnonReceiver_0064A970 *)this_00,
+                                                             (char *)local_16c._8_4_,(uint)local_160
+                                                             ,&local_34.flags);
                                         if (0 < (int)pDVar12) {
                                           local_10 = (AiFltClassTy *)&local_34;
                                           local_c = pDVar12;
@@ -360,9 +367,11 @@ void __thiscall AiEventClassTy::GetMessage(AiEventClassTy *this,STMessage *messa
                                          ((DArrayTy *)local_16c._8_4_ != (DArrayTy *)0x9)) {
                                         /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                         pDVar12 = (DArrayTy *)
-                                                  thunk_FUN_00668f50(this_00,(char *)local_16c._8_4_
-                                                                     ,(uint)local_160,
-                                                                     &local_34.flags);
+                                                  SubmarineTitans::Recovered::HiddenThis::
+                                                  AnonReceiver_0064A970::sub_00668F50
+                                                            ((AnonReceiver_0064A970 *)this_00,
+                                                             (char *)local_16c._8_4_,(uint)local_160
+                                                             ,&local_34.flags);
                                         if (0 < (int)pDVar12) {
                                           local_10 = (AiFltClassTy *)&local_34;
                                           local_8 = pDVar12;
@@ -386,7 +395,7 @@ void __thiscall AiEventClassTy::GetMessage(AiEventClassTy *this,STMessage *messa
                                                 local_c = (DArrayTy *)
                                                           _GetStaffGrpExch(local_10->vtable);
                                                 if (local_c != (DArrayTy *)0x0) {
-                                                  thunk_FUN_0065d940(local_17c,(uint *)local_c,0);
+                                                  thunk_FUN_0065d940(local_17c,local_c,0);
                                                   DArrayDestroy(local_c);
                                                 }
                                               }
@@ -410,9 +419,11 @@ void __thiscall AiEventClassTy::GetMessage(AiEventClassTy *this,STMessage *messa
                                          ((DArrayTy *)local_16c._8_4_ != (DArrayTy *)0x9)) {
                                         /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                         pDVar12 = (DArrayTy *)
-                                                  thunk_FUN_00668f50(this_00,(char *)local_16c._8_4_
-                                                                     ,(uint)local_160,
-                                                                     &local_34.flags);
+                                                  SubmarineTitans::Recovered::HiddenThis::
+                                                  AnonReceiver_0064A970::sub_00668F50
+                                                            ((AnonReceiver_0064A970 *)this_00,
+                                                             (char *)local_16c._8_4_,(uint)local_160
+                                                             ,&local_34.flags);
                                         if (0 < (int)pDVar12) {
                                           pDVar25 = &local_34;
                                           local_c = pDVar12;
@@ -444,9 +455,11 @@ void __thiscall AiEventClassTy::GetMessage(AiEventClassTy *this,STMessage *messa
                                          ((DArrayTy *)local_16c._8_4_ != (DArrayTy *)0x9)) {
                                         /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                         pDVar12 = (DArrayTy *)
-                                                  thunk_FUN_00668f50(this_00,(char *)local_16c._8_4_
-                                                                     ,(uint)local_160,
-                                                                     &local_34.flags);
+                                                  SubmarineTitans::Recovered::HiddenThis::
+                                                  AnonReceiver_0064A970::sub_00668F50
+                                                            ((AnonReceiver_0064A970 *)this_00,
+                                                             (char *)local_16c._8_4_,(uint)local_160
+                                                             ,&local_34.flags);
                                         if (0 < (int)pDVar12) {
                                           pDVar25 = &local_34;
                                           local_c = pDVar12;
@@ -478,9 +491,11 @@ void __thiscall AiEventClassTy::GetMessage(AiEventClassTy *this,STMessage *messa
                                          ((DArrayTy *)local_16c._8_4_ != (DArrayTy *)0x9)) {
                                         /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                         pDVar12 = (DArrayTy *)
-                                                  thunk_FUN_00668f50(this_00,(char *)local_16c._8_4_
-                                                                     ,(uint)local_160,
-                                                                     &local_34.flags);
+                                                  SubmarineTitans::Recovered::HiddenThis::
+                                                  AnonReceiver_0064A970::sub_00668F50
+                                                            ((AnonReceiver_0064A970 *)this_00,
+                                                             (char *)local_16c._8_4_,(uint)local_160
+                                                             ,&local_34.flags);
                                         if (0 < (int)pDVar12) {
                                           local_10 = (AiFltClassTy *)&local_34;
                                           local_c = pDVar12;
@@ -503,8 +518,7 @@ void __thiscall AiEventClassTy::GetMessage(AiEventClassTy *this,STMessage *messa
                                               else {
                                                 pAVar13 = (AiPlrClassTy *)0x0;
                                                 local_8 = (DArrayTy *)0x0;
-                                                if (g_sTAllPlayers_007FA174 != (STAllPlayersC *)0x0)
-                                                {
+                                                if (g_allPlayers_007FA174 != (STAllPlayersC *)0x0) {
                                                   pAVar13 = thunk_FUN_004357f0(*(char *)&local_10->
                                                                                          vtable);
                                                 }
@@ -514,8 +528,8 @@ void __thiscall AiEventClassTy::GetMessage(AiEventClassTy *this,STMessage *messa
                                                   local_158);
                                                 }
                                                 if (local_8 == (DArrayTy *)0x0) {
-                                                  thunk_FUN_0064d0e0(this_00,-4,local_158,uVar32,
-                                                                     (int)local_10->vtable);
+                                                  thunk_FUN_0064d0e0(this_00,-4,(char *)local_158,
+                                                                     uVar32,(int)local_10->vtable);
                                                 }
                                                 else {
                                                   thunk_FUN_0068e690(local_8,(int)local_17c);
@@ -541,9 +555,11 @@ void __thiscall AiEventClassTy::GetMessage(AiEventClassTy *this,STMessage *messa
                                          ((DArrayTy *)local_16c._8_4_ != (DArrayTy *)0x9)) {
                                         /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                         pDVar12 = (DArrayTy *)
-                                                  thunk_FUN_00668f50(this_00,(char *)local_16c._8_4_
-                                                                     ,(uint)local_160,
-                                                                     &local_34.flags);
+                                                  SubmarineTitans::Recovered::HiddenThis::
+                                                  AnonReceiver_0064A970::sub_00668F50
+                                                            ((AnonReceiver_0064A970 *)this_00,
+                                                             (char *)local_16c._8_4_,(uint)local_160
+                                                             ,&local_34.flags);
                                         if (0 < (int)pDVar12) {
                                           local_10 = (AiFltClassTy *)&local_34;
                                           local_c = pDVar12;
@@ -586,9 +602,11 @@ void __thiscall AiEventClassTy::GetMessage(AiEventClassTy *this,STMessage *messa
                                          ((DArrayTy *)local_16c._8_4_ != (DArrayTy *)0x9)) {
                                         /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                         pDVar12 = (DArrayTy *)
-                                                  thunk_FUN_00668f50(this_00,(char *)local_16c._8_4_
-                                                                     ,(uint)local_160,
-                                                                     &local_34.flags);
+                                                  SubmarineTitans::Recovered::HiddenThis::
+                                                  AnonReceiver_0064A970::sub_00668F50
+                                                            ((AnonReceiver_0064A970 *)this_00,
+                                                             (char *)local_16c._8_4_,(uint)local_160
+                                                             ,&local_34.flags);
                                         if (0 < (int)pDVar12) {
                                           local_10 = (AiFltClassTy *)&local_34;
                                           local_c = pDVar12;
@@ -621,7 +639,7 @@ LAB_006577ae:
                                                 *puVar15 = 0;
                                                 puVar15 = puVar15 + 1;
                                               }
-                                              local_68[1] = PTR_00802a38->field_00E4;
+                                              local_68[1] = g_playSystem_00802A38->field_00E4;
                                               uStack_5f = SUB41(local_154,0);
                                               uStack_5e = (undefined1)((uint)local_154 >> 8);
                                               uStack_5d = (undefined1)((uint)local_154 >> 0x10);
@@ -668,9 +686,11 @@ LAB_006577ae:
                                          ((DArrayTy *)local_16c._8_4_ != (DArrayTy *)0x9)) {
                                         /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                         pDVar12 = (DArrayTy *)
-                                                  thunk_FUN_00668f50(this_00,(char *)local_16c._8_4_
-                                                                     ,(uint)local_160,
-                                                                     &local_34.flags);
+                                                  SubmarineTitans::Recovered::HiddenThis::
+                                                  AnonReceiver_0064A970::sub_00668F50
+                                                            ((AnonReceiver_0064A970 *)this_00,
+                                                             (char *)local_16c._8_4_,(uint)local_160
+                                                             ,&local_34.flags);
                                         if (0 < (int)pDVar12) {
                                           local_10 = (AiFltClassTy *)&local_34;
                                           local_c = pDVar12;
@@ -703,7 +723,7 @@ LAB_00657a41:
                                                 *puVar15 = 0;
                                                 puVar15 = puVar15 + 1;
                                               }
-                                              local_68[1] = PTR_00802a38->field_00E4;
+                                              local_68[1] = g_playSystem_00802A38->field_00E4;
                                               uStack_5f = SUB41(local_154,0);
                                               uStack_5e = (undefined1)((uint)local_154 >> 8);
                                               uStack_5d = (undefined1)((uint)local_154 >> 0x10);
@@ -742,9 +762,11 @@ LAB_00657a41:
                                          ((DArrayTy *)local_16c._8_4_ != (DArrayTy *)0x9)) {
                                         /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                         pDVar12 = (DArrayTy *)
-                                                  thunk_FUN_00668f50(this_00,(char *)local_16c._8_4_
-                                                                     ,(uint)local_160,
-                                                                     &local_34.flags);
+                                                  SubmarineTitans::Recovered::HiddenThis::
+                                                  AnonReceiver_0064A970::sub_00668F50
+                                                            ((AnonReceiver_0064A970 *)this_00,
+                                                             (char *)local_16c._8_4_,(uint)local_160
+                                                             ,&local_34.flags);
                                         if (0 < (int)pDVar12) {
                                           local_10 = (AiFltClassTy *)&local_34;
                                           local_c = pDVar12;
@@ -777,7 +799,7 @@ LAB_006578fe:
                                                 *puVar15 = 0;
                                                 puVar15 = puVar15 + 1;
                                               }
-                                              local_68[1] = PTR_00802a38->field_00E4;
+                                              local_68[1] = g_playSystem_00802A38->field_00E4;
                                               uStack_5f = SUB41(local_154,0);
                                               uStack_5e = (undefined1)((uint)local_154 >> 8);
                                               uStack_5d = (undefined1)((uint)local_154 >> 0x10);
@@ -820,9 +842,11 @@ LAB_006578fe:
                                          ((DArrayTy *)local_16c._8_4_ != (DArrayTy *)0x9)) {
                                         /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                         pDVar12 = (DArrayTy *)
-                                                  thunk_FUN_00668f50(this_00,(char *)local_16c._8_4_
-                                                                     ,(uint)local_160,
-                                                                     &local_34.flags);
+                                                  SubmarineTitans::Recovered::HiddenThis::
+                                                  AnonReceiver_0064A970::sub_00668F50
+                                                            ((AnonReceiver_0064A970 *)this_00,
+                                                             (char *)local_16c._8_4_,(uint)local_160
+                                                             ,&local_34.flags);
                                         if (0 < (int)pDVar12) {
                                           local_8 = &local_34;
                                           local_c = pDVar12;
@@ -855,7 +879,7 @@ LAB_00657bce:
                                                 puVar15 = puVar15 + 1;
                                               }
                                               uVar32 = (uint)local_158 & 0x3fffffff;
-                                              local_68[1] = PTR_00802a38->field_00E4;
+                                              local_68[1] = g_playSystem_00802A38->field_00E4;
                                               local_60 = (undefined1)uVar32;
                                               uStack_5f = (undefined1)(uVar32 >> 8);
                                               uStack_5e = (undefined1)(uVar32 >> 0x10);
@@ -906,9 +930,11 @@ LAB_00657bce:
                                          ((DArrayTy *)local_16c._8_4_ != (DArrayTy *)0x9)) {
                                         /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                         pDVar12 = (DArrayTy *)
-                                                  thunk_FUN_00668f50(this_00,(char *)local_16c._8_4_
-                                                                     ,(uint)local_160,
-                                                                     &local_34.flags);
+                                                  SubmarineTitans::Recovered::HiddenThis::
+                                                  AnonReceiver_0064A970::sub_00668F50
+                                                            ((AnonReceiver_0064A970 *)this_00,
+                                                             (char *)local_16c._8_4_,(uint)local_160
+                                                             ,&local_34.flags);
                                         if (0 < (int)pDVar12) {
                                           local_8 = &local_34;
                                           local_c = pDVar12;
@@ -940,7 +966,7 @@ LAB_00657ccf:
                                                 *puVar15 = 0;
                                                 puVar15 = puVar15 + 1;
                                               }
-                                              local_68[1] = PTR_00802a38->field_00E4;
+                                              local_68[1] = g_playSystem_00802A38->field_00E4;
                                               local_68[0] = 5;
                                               AiFltClassTy::GetAiMess(pAVar14,local_68);
                                               uVar32 = local_14;
@@ -965,9 +991,11 @@ LAB_00657ccf:
                                          ((DArrayTy *)local_16c._8_4_ != (DArrayTy *)0x9)) {
                                         /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                         pDVar12 = (DArrayTy *)
-                                                  thunk_FUN_00668f50(this_00,(char *)local_16c._8_4_
-                                                                     ,(uint)local_160,
-                                                                     &local_34.flags);
+                                                  SubmarineTitans::Recovered::HiddenThis::
+                                                  AnonReceiver_0064A970::sub_00668F50
+                                                            ((AnonReceiver_0064A970 *)this_00,
+                                                             (char *)local_16c._8_4_,(uint)local_160
+                                                             ,&local_34.flags);
                                         if (0 < (int)pDVar12) {
                                           local_8 = &local_34;
                                           local_c = pDVar12;
@@ -999,7 +1027,7 @@ LAB_00657dd9:
                                                 *puVar15 = 0;
                                                 puVar15 = puVar15 + 1;
                                               }
-                                              local_68[1] = PTR_00802a38->field_00E4;
+                                              local_68[1] = g_playSystem_00802A38->field_00E4;
                                               /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                               local_60 = local_158._0_1_;
                                               local_68[0] = 6;
@@ -1025,9 +1053,11 @@ LAB_00657dd9:
                                          ((DArrayTy *)local_16c._8_4_ != (DArrayTy *)0x9)) {
                                         /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                         pDVar12 = (DArrayTy *)
-                                                  thunk_FUN_00668f50(this_00,(char *)local_16c._8_4_
-                                                                     ,(uint)local_160,
-                                                                     &local_34.flags);
+                                                  SubmarineTitans::Recovered::HiddenThis::
+                                                  AnonReceiver_0064A970::sub_00668F50
+                                                            ((AnonReceiver_0064A970 *)this_00,
+                                                             (char *)local_16c._8_4_,(uint)local_160
+                                                             ,&local_34.flags);
                                         if (0 < (int)pDVar12) {
                                           local_8 = &local_34;
                                           local_c = pDVar12;
@@ -1060,7 +1090,7 @@ LAB_00657f1c:
                                                 *puVar15 = 0;
                                                 puVar15 = puVar15 + 1;
                                               }
-                                              local_68[1] = PTR_00802a38->field_00E4;
+                                              local_68[1] = g_playSystem_00802A38->field_00E4;
                                               uStack_5f = SUB41(local_154,0);
                                               uStack_5e = (undefined1)((uint)local_154 >> 8);
                                               uStack_5d = (undefined1)((uint)local_154 >> 0x10);
@@ -1099,9 +1129,11 @@ LAB_00657f1c:
                                          ((DArrayTy *)local_16c._8_4_ != (DArrayTy *)0x9)) {
                                         /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                         pDVar12 = (DArrayTy *)
-                                                  thunk_FUN_00668f50(this_00,(char *)local_16c._8_4_
-                                                                     ,(uint)local_160,
-                                                                     &local_34.flags);
+                                                  SubmarineTitans::Recovered::HiddenThis::
+                                                  AnonReceiver_0064A970::sub_00668F50
+                                                            ((AnonReceiver_0064A970 *)this_00,
+                                                             (char *)local_16c._8_4_,(uint)local_160
+                                                             ,&local_34.flags);
                                         if (0 < (int)pDVar12) {
                                           local_8 = &local_34;
                                           local_c = pDVar12;
@@ -1134,7 +1166,7 @@ LAB_0065806e:
                                                 *puVar15 = 0;
                                                 puVar15 = puVar15 + 1;
                                               }
-                                              local_68[1] = PTR_00802a38->field_00E4;
+                                              local_68[1] = g_playSystem_00802A38->field_00E4;
                                               local_60 = SUB41(local_158,0);
                                               uStack_5f = (undefined1)((uint)local_158 >> 8);
                                               uStack_5c = SUB41(local_150,0);
@@ -1170,9 +1202,11 @@ LAB_0065806e:
                                          ((DArrayTy *)local_16c._8_4_ != (DArrayTy *)0x9)) {
                                         /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                         pDVar12 = (DArrayTy *)
-                                                  thunk_FUN_00668f50(this_00,(char *)local_16c._8_4_
-                                                                     ,(uint)local_160,
-                                                                     &local_34.flags);
+                                                  SubmarineTitans::Recovered::HiddenThis::
+                                                  AnonReceiver_0064A970::sub_00668F50
+                                                            ((AnonReceiver_0064A970 *)this_00,
+                                                             (char *)local_16c._8_4_,(uint)local_160
+                                                             ,&local_34.flags);
                                         if (0 < (int)pDVar12) {
                                           local_8 = &local_34;
                                           local_c = pDVar12;
@@ -1205,7 +1239,7 @@ LAB_00658177:
                                                 *puVar15 = 0;
                                                 puVar15 = puVar15 + 1;
                                               }
-                                              local_68[1] = PTR_00802a38->field_00E4;
+                                              local_68[1] = g_playSystem_00802A38->field_00E4;
                                               local_68[0] = 9;
                                               AiFltClassTy::GetAiMess(pAVar14,local_68);
                                               uVar32 = local_14;
@@ -1229,9 +1263,11 @@ LAB_00658177:
                                          ((DArrayTy *)local_16c._8_4_ != (DArrayTy *)0x9)) {
                                         /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                         pDVar12 = (DArrayTy *)
-                                                  thunk_FUN_00668f50(this_00,(char *)local_16c._8_4_
-                                                                     ,(uint)local_160,
-                                                                     &local_34.flags);
+                                                  SubmarineTitans::Recovered::HiddenThis::
+                                                  AnonReceiver_0064A970::sub_00668F50
+                                                            ((AnonReceiver_0064A970 *)this_00,
+                                                             (char *)local_16c._8_4_,(uint)local_160
+                                                             ,&local_34.flags);
                                         if (0 < (int)pDVar12) {
                                           local_8 = &local_34;
                                           local_c = pDVar12;
@@ -1264,7 +1300,7 @@ LAB_00658b70:
                                                 *puVar15 = 0;
                                                 puVar15 = puVar15 + 1;
                                               }
-                                              local_68[1] = PTR_00802a38->field_00E4;
+                                              local_68[1] = g_playSystem_00802A38->field_00E4;
                                               uStack_5e = SUB41(local_154,0);
                                               uStack_5d = (undefined1)((uint)local_154 >> 8);
                                               uStack_50 = SUB41(local_14c,0);
@@ -1308,9 +1344,11 @@ LAB_00658b70:
                                          ((DArrayTy *)local_16c._8_4_ != (DArrayTy *)0x9)) {
                                         /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                         pDVar12 = (DArrayTy *)
-                                                  thunk_FUN_00668f50(this_00,(char *)local_16c._8_4_
-                                                                     ,(uint)local_160,
-                                                                     &local_34.flags);
+                                                  SubmarineTitans::Recovered::HiddenThis::
+                                                  AnonReceiver_0064A970::sub_00668F50
+                                                            ((AnonReceiver_0064A970 *)this_00,
+                                                             (char *)local_16c._8_4_,(uint)local_160
+                                                             ,&local_34.flags);
                                         if (0 < (int)pDVar12) {
                                           local_8 = &local_34;
                                           local_c = pDVar12;
@@ -1343,7 +1381,7 @@ LAB_00658d01:
                                                 *puVar15 = 0;
                                                 puVar15 = puVar15 + 1;
                                               }
-                                              local_68[1] = PTR_00802a38->field_00E4;
+                                              local_68[1] = g_playSystem_00802A38->field_00E4;
                                               local_58 = SUB41(local_158,0);
                                               uStack_57 = (undefined1)((uint)local_158 >> 8);
                                               uStack_56 = (undefined1)((uint)local_158 >> 0x10);
@@ -1397,9 +1435,11 @@ LAB_00658d01:
                                          ((DArrayTy *)local_16c._8_4_ != (DArrayTy *)0x9)) {
                                         /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                         pDVar12 = (DArrayTy *)
-                                                  thunk_FUN_00668f50(this_00,(char *)local_16c._8_4_
-                                                                     ,(uint)local_160,
-                                                                     &local_34.flags);
+                                                  SubmarineTitans::Recovered::HiddenThis::
+                                                  AnonReceiver_0064A970::sub_00668F50
+                                                            ((AnonReceiver_0064A970 *)this_00,
+                                                             (char *)local_16c._8_4_,(uint)local_160
+                                                             ,&local_34.flags);
                                         if (0 < (int)pDVar12) {
                                           local_8 = &local_34;
                                           local_c = pDVar12;
@@ -1432,7 +1472,7 @@ LAB_00658e8e:
                                                 *puVar15 = 0;
                                                 puVar15 = puVar15 + 1;
                                               }
-                                              local_68[1] = PTR_00802a38->field_00E4;
+                                              local_68[1] = g_playSystem_00802A38->field_00E4;
                                               local_58 = SUB41(local_158,0);
                                               uStack_57 = (undefined1)((uint)local_158 >> 8);
                                               uStack_56 = SUB41(local_154,0);
@@ -1479,9 +1519,11 @@ LAB_00658e8e:
                                          ((DArrayTy *)local_16c._8_4_ != (DArrayTy *)0x9)) {
                                         /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                         pDVar12 = (DArrayTy *)
-                                                  thunk_FUN_00668f50(this_00,(char *)local_16c._8_4_
-                                                                     ,(uint)local_160,
-                                                                     &local_34.flags);
+                                                  SubmarineTitans::Recovered::HiddenThis::
+                                                  AnonReceiver_0064A970::sub_00668F50
+                                                            ((AnonReceiver_0064A970 *)this_00,
+                                                             (char *)local_16c._8_4_,(uint)local_160
+                                                             ,&local_34.flags);
                                         if (0 < (int)pDVar12) {
                                           local_8 = &local_34;
                                           local_c = pDVar12;
@@ -1514,7 +1556,7 @@ LAB_00658fc8:
                                                 *puVar15 = 0;
                                                 puVar15 = puVar15 + 1;
                                               }
-                                              local_68[1] = PTR_00802a38->field_00E4;
+                                              local_68[1] = g_playSystem_00802A38->field_00E4;
                                               uStack_5a = SUB41(local_154,0);
                                               uStack_59 = (undefined1)((uint)local_154 >> 8);
                                               uStack_5c = SUB41(local_158,0);
@@ -1551,9 +1593,11 @@ LAB_00658fc8:
                                          ((DArrayTy *)local_16c._8_4_ != (DArrayTy *)0x9)) {
                                         /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                         pDVar12 = (DArrayTy *)
-                                                  thunk_FUN_00668f50(this_00,(char *)local_16c._8_4_
-                                                                     ,(uint)local_160,
-                                                                     &local_34.flags);
+                                                  SubmarineTitans::Recovered::HiddenThis::
+                                                  AnonReceiver_0064A970::sub_00668F50
+                                                            ((AnonReceiver_0064A970 *)this_00,
+                                                             (char *)local_16c._8_4_,(uint)local_160
+                                                             ,&local_34.flags);
                                         if (0 < (int)pDVar12) {
                                           local_8 = &local_34;
                                           local_c = pDVar12;
@@ -1585,7 +1629,7 @@ LAB_006582b3:
                                                 *puVar15 = 0;
                                                 puVar15 = puVar15 + 1;
                                               }
-                                              local_68[1] = PTR_00802a38->field_00E4;
+                                              local_68[1] = g_playSystem_00802A38->field_00E4;
                                               /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                               local_60 = local_158._0_1_;
                                               uStack_5f = SUB41(local_154,0);
@@ -1627,9 +1671,11 @@ LAB_006582b3:
                                          ((DArrayTy *)local_16c._8_4_ != (DArrayTy *)0x9)) {
                                         /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                         pDVar12 = (DArrayTy *)
-                                                  thunk_FUN_00668f50(this_00,(char *)local_16c._8_4_
-                                                                     ,(uint)local_160,
-                                                                     &local_34.flags);
+                                                  SubmarineTitans::Recovered::HiddenThis::
+                                                  AnonReceiver_0064A970::sub_00668F50
+                                                            ((AnonReceiver_0064A970 *)this_00,
+                                                             (char *)local_16c._8_4_,(uint)local_160
+                                                             ,&local_34.flags);
                                         if (0 < (int)pDVar12) {
                                           local_8 = &local_34;
                                           local_c = pDVar12;
@@ -1660,7 +1706,7 @@ LAB_00658416:
                                                 *puVar15 = 0;
                                                 puVar15 = puVar15 + 1;
                                               }
-                                              local_68[1] = PTR_00802a38->field_00E4;
+                                              local_68[1] = g_playSystem_00802A38->field_00E4;
                                               uStack_5f = SUB41(local_154,0);
                                               uStack_5e = (undefined1)((uint)local_154 >> 8);
                                               uStack_5b = SUB41(local_14c,0);
@@ -1706,9 +1752,11 @@ LAB_00658416:
                                          ((DArrayTy *)local_16c._8_4_ != (DArrayTy *)0x9)) {
                                         /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                         pDVar12 = (DArrayTy *)
-                                                  thunk_FUN_00668f50(this_00,(char *)local_16c._8_4_
-                                                                     ,(uint)local_160,
-                                                                     &local_34.flags);
+                                                  SubmarineTitans::Recovered::HiddenThis::
+                                                  AnonReceiver_0064A970::sub_00668F50
+                                                            ((AnonReceiver_0064A970 *)this_00,
+                                                             (char *)local_16c._8_4_,(uint)local_160
+                                                             ,&local_34.flags);
                                         if (0 < (int)pDVar12) {
                                           local_8 = &local_34;
                                           local_c = pDVar12;
@@ -1741,7 +1789,7 @@ LAB_00658543:
                                                 *puVar15 = 0;
                                                 puVar15 = puVar15 + 1;
                                               }
-                                              local_68[1] = PTR_00802a38->field_00E4;
+                                              local_68[1] = g_playSystem_00802A38->field_00E4;
                                               uStack_5f = SUB41(local_154,0);
                                               uStack_5e = (undefined1)((uint)local_154 >> 8);
                                               uStack_5d = (undefined1)((uint)local_154 >> 0x10);
@@ -1776,9 +1824,11 @@ LAB_00658543:
                                          ((DArrayTy *)local_16c._8_4_ != (DArrayTy *)0x9)) {
                                         /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                         pDVar12 = (DArrayTy *)
-                                                  thunk_FUN_00668f50(this_00,(char *)local_16c._8_4_
-                                                                     ,(uint)local_160,
-                                                                     &local_34.flags);
+                                                  SubmarineTitans::Recovered::HiddenThis::
+                                                  AnonReceiver_0064A970::sub_00668F50
+                                                            ((AnonReceiver_0064A970 *)this_00,
+                                                             (char *)local_16c._8_4_,(uint)local_160
+                                                             ,&local_34.flags);
                                         if (0 < (int)pDVar12) {
                                           local_8 = &local_34;
                                           local_c = pDVar12;
@@ -1811,7 +1861,7 @@ LAB_00658670:
                                                 *puVar15 = 0;
                                                 puVar15 = puVar15 + 1;
                                               }
-                                              local_68[1] = PTR_00802a38->field_00E4;
+                                              local_68[1] = g_playSystem_00802A38->field_00E4;
                                               uStack_5f = SUB41(local_154,0);
                                               uStack_5e = (undefined1)((uint)local_154 >> 8);
                                               uStack_5d = (undefined1)((uint)local_154 >> 0x10);
@@ -1846,9 +1896,11 @@ LAB_00658670:
                                          ((DArrayTy *)local_16c._8_4_ != (DArrayTy *)0x9)) {
                                         /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                         pDVar12 = (DArrayTy *)
-                                                  thunk_FUN_00668f50(this_00,(char *)local_16c._8_4_
-                                                                     ,(uint)local_160,
-                                                                     &local_34.flags);
+                                                  SubmarineTitans::Recovered::HiddenThis::
+                                                  AnonReceiver_0064A970::sub_00668F50
+                                                            ((AnonReceiver_0064A970 *)this_00,
+                                                             (char *)local_16c._8_4_,(uint)local_160
+                                                             ,&local_34.flags);
                                         if (0 < (int)pDVar12) {
                                           local_8 = &local_34;
                                           local_c = pDVar12;
@@ -1881,7 +1933,7 @@ LAB_006587e2:
                                                 *puVar15 = 0;
                                                 puVar15 = puVar15 + 1;
                                               }
-                                              local_68[1] = PTR_00802a38->field_00E4;
+                                              local_68[1] = g_playSystem_00802A38->field_00E4;
                                               uStack_5e = SUB41(local_154,0);
                                               uStack_5d = (undefined1)((uint)local_154 >> 8);
                                               uStack_50 = SUB41(local_14c,0);
@@ -1925,9 +1977,11 @@ LAB_006587e2:
                                          ((DArrayTy *)local_16c._8_4_ != (DArrayTy *)0x9)) {
                                         /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                         pDVar12 = (DArrayTy *)
-                                                  thunk_FUN_00668f50(this_00,(char *)local_16c._8_4_
-                                                                     ,(uint)local_160,
-                                                                     &local_34.flags);
+                                                  SubmarineTitans::Recovered::HiddenThis::
+                                                  AnonReceiver_0064A970::sub_00668F50
+                                                            ((AnonReceiver_0064A970 *)this_00,
+                                                             (char *)local_16c._8_4_,(uint)local_160
+                                                             ,&local_34.flags);
                                         if (0 < (int)pDVar12) {
                                           local_8 = &local_34;
                                           local_c = pDVar12;
@@ -1960,7 +2014,7 @@ LAB_006588eb:
                                                 *puVar15 = 0;
                                                 puVar15 = puVar15 + 1;
                                               }
-                                              local_68[1] = PTR_00802a38->field_00E4;
+                                              local_68[1] = g_playSystem_00802A38->field_00E4;
                                               local_68[0] = 0xf;
                                               AiFltClassTy::GetAiMess(pAVar14,local_68);
                                               uVar32 = local_14;
@@ -1984,9 +2038,11 @@ LAB_006588eb:
                                          ((DArrayTy *)local_16c._8_4_ != (DArrayTy *)0x9)) {
                                         /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                         pDVar12 = (DArrayTy *)
-                                                  thunk_FUN_00668f50(this_00,(char *)local_16c._8_4_
-                                                                     ,(uint)local_160,
-                                                                     &local_34.flags);
+                                                  SubmarineTitans::Recovered::HiddenThis::
+                                                  AnonReceiver_0064A970::sub_00668F50
+                                                            ((AnonReceiver_0064A970 *)this_00,
+                                                             (char *)local_16c._8_4_,(uint)local_160
+                                                             ,&local_34.flags);
                                         if (0 < (int)pDVar12) {
                                           local_8 = &local_34;
                                           local_c = pDVar12;
@@ -2018,7 +2074,7 @@ LAB_006589fe:
                                                 *puVar15 = 0;
                                                 puVar15 = puVar15 + 1;
                                               }
-                                              local_68[1] = PTR_00802a38->field_00E4;
+                                              local_68[1] = g_playSystem_00802A38->field_00E4;
                                               /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                               local_60 = local_158._0_1_;
                                               local_68[0] = 0x10;
@@ -2048,9 +2104,11 @@ LAB_006589fe:
                                          ((DArrayTy *)local_16c._8_4_ != (DArrayTy *)0x9)) {
                                         /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                         pDVar12 = (DArrayTy *)
-                                                  thunk_FUN_00668f50(this_00,(char *)local_16c._8_4_
-                                                                     ,(uint)local_160,
-                                                                     &local_34.flags);
+                                                  SubmarineTitans::Recovered::HiddenThis::
+                                                  AnonReceiver_0064A970::sub_00668F50
+                                                            ((AnonReceiver_0064A970 *)this_00,
+                                                             (char *)local_16c._8_4_,(uint)local_160
+                                                             ,&local_34.flags);
                                         if (0 < (int)pDVar12) {
                                           local_8 = &local_34;
                                           local_c = pDVar12;
@@ -2083,7 +2141,7 @@ LAB_00659143:
                                                 *puVar15 = 0;
                                                 puVar15 = puVar15 + 1;
                                               }
-                                              local_68[1] = PTR_00802a38->field_00E4;
+                                              local_68[1] = g_playSystem_00802A38->field_00E4;
                                               local_58 = SUB41(local_154,0);
                                               uStack_57 = (undefined1)((uint)local_154 >> 8);
                                               uStack_54 = SUB41(local_14c,0);
@@ -2131,9 +2189,11 @@ LAB_00659143:
                                          ((DArrayTy *)local_16c._8_4_ != (DArrayTy *)0x9)) {
                                         /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                         pDVar12 = (DArrayTy *)
-                                                  thunk_FUN_00668f50(this_00,(char *)local_16c._8_4_
-                                                                     ,(uint)local_160,
-                                                                     &local_34.flags);
+                                                  SubmarineTitans::Recovered::HiddenThis::
+                                                  AnonReceiver_0064A970::sub_00668F50
+                                                            ((AnonReceiver_0064A970 *)this_00,
+                                                             (char *)local_16c._8_4_,(uint)local_160
+                                                             ,&local_34.flags);
                                         if (0 < (int)pDVar12) {
                                           local_8 = &local_34;
                                           local_c = pDVar12;
@@ -2166,7 +2226,7 @@ LAB_006594ec:
                                                 *puVar15 = 0;
                                                 puVar15 = puVar15 + 1;
                                               }
-                                              local_68[1] = PTR_00802a38->field_00E4;
+                                              local_68[1] = g_playSystem_00802A38->field_00E4;
                                               uStack_5a = SUB41(local_154,0);
                                               uStack_59 = (undefined1)((uint)local_154 >> 8);
                                               uStack_5c = SUB41(local_158,0);
@@ -2210,9 +2270,11 @@ LAB_006594ec:
                                          ((DArrayTy *)local_16c._8_4_ != (DArrayTy *)0x9)) {
                                         /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                         pDVar12 = (DArrayTy *)
-                                                  thunk_FUN_00668f50(this_00,(char *)local_16c._8_4_
-                                                                     ,(uint)local_160,
-                                                                     &local_34.flags);
+                                                  SubmarineTitans::Recovered::HiddenThis::
+                                                  AnonReceiver_0064A970::sub_00668F50
+                                                            ((AnonReceiver_0064A970 *)this_00,
+                                                             (char *)local_16c._8_4_,(uint)local_160
+                                                             ,&local_34.flags);
                                         if (0 < (int)pDVar12) {
                                           local_8 = &local_34;
                                           local_c = pDVar12;
@@ -2245,7 +2307,7 @@ LAB_00659640:
                                                 *puVar15 = 0;
                                                 puVar15 = puVar15 + 1;
                                               }
-                                              local_68[1] = PTR_00802a38->field_00E4;
+                                              local_68[1] = g_playSystem_00802A38->field_00E4;
                                               uStack_5a = SUB41(local_154,0);
                                               uStack_59 = (undefined1)((uint)local_154 >> 8);
                                               uStack_5c = SUB41(local_158,0);
@@ -2286,9 +2348,11 @@ LAB_00659640:
                                          ((DArrayTy *)local_16c._8_4_ != (DArrayTy *)0x9)) {
                                         /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                         pDVar12 = (DArrayTy *)
-                                                  thunk_FUN_00668f50(this_00,(char *)local_16c._8_4_
-                                                                     ,(uint)local_160,
-                                                                     &local_34.flags);
+                                                  SubmarineTitans::Recovered::HiddenThis::
+                                                  AnonReceiver_0064A970::sub_00668F50
+                                                            ((AnonReceiver_0064A970 *)this_00,
+                                                             (char *)local_16c._8_4_,(uint)local_160
+                                                             ,&local_34.flags);
                                         if (0 < (int)pDVar12) {
                                           local_8 = &local_34;
                                           local_c = pDVar12;
@@ -2321,7 +2385,7 @@ LAB_00659785:
                                                 *puVar15 = 0;
                                                 puVar15 = puVar15 + 1;
                                               }
-                                              local_68[1] = PTR_00802a38->field_00E4;
+                                              local_68[1] = g_playSystem_00802A38->field_00E4;
                                               uStack_5a = SUB41(local_154,0);
                                               uStack_59 = (undefined1)((uint)local_154 >> 8);
                                               local_60 = SUB41(local_14c,0);
@@ -2360,9 +2424,11 @@ LAB_00659785:
                                          ((DArrayTy *)local_16c._8_4_ != (DArrayTy *)0x9)) {
                                         /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                         pDVar12 = (DArrayTy *)
-                                                  thunk_FUN_00668f50(this_00,(char *)local_16c._8_4_
-                                                                     ,(uint)local_160,
-                                                                     &local_34.flags);
+                                                  SubmarineTitans::Recovered::HiddenThis::
+                                                  AnonReceiver_0064A970::sub_00668F50
+                                                            ((AnonReceiver_0064A970 *)this_00,
+                                                             (char *)local_16c._8_4_,(uint)local_160
+                                                             ,&local_34.flags);
                                         if (0 < (int)pDVar12) {
                                           local_8 = &local_34;
                                           local_c = pDVar12;
@@ -2395,7 +2461,7 @@ LAB_006598ca:
                                                 *puVar15 = 0;
                                                 puVar15 = puVar15 + 1;
                                               }
-                                              local_68[1] = PTR_00802a38->field_00E4;
+                                              local_68[1] = g_playSystem_00802A38->field_00E4;
                                               uStack_5a = SUB41(local_154,0);
                                               uStack_59 = (undefined1)((uint)local_154 >> 8);
                                               local_60 = SUB41(local_14c,0);
@@ -2434,9 +2500,11 @@ LAB_006598ca:
                                          ((DArrayTy *)local_16c._8_4_ != (DArrayTy *)0x9)) {
                                         /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                         pDVar12 = (DArrayTy *)
-                                                  thunk_FUN_00668f50(this_00,(char *)local_16c._8_4_
-                                                                     ,(uint)local_160,
-                                                                     &local_34.flags);
+                                                  SubmarineTitans::Recovered::HiddenThis::
+                                                  AnonReceiver_0064A970::sub_00668F50
+                                                            ((AnonReceiver_0064A970 *)this_00,
+                                                             (char *)local_16c._8_4_,(uint)local_160
+                                                             ,&local_34.flags);
                                         if (0 < (int)pDVar12) {
                                           local_8 = &local_34;
                                           local_c = pDVar12;
@@ -2487,7 +2555,7 @@ LAB_0065937a:
                                               local_1f2 = local_14c._0_2_;
                                               if (((int)local_148 < 0) ||
                                                  (pcVar9 = local_148, 7 < (int)local_148)) {
-                                                bVar1 = local_10->field_0x81;
+                                                bVar1 = local_10->field_0081;
                                                 pcVar9 = (char *)(uint)bVar1;
                                                 if (((char)bVar1 < '\0') || ('\a' < (char)bVar1)) {
                                                   pcVar9 = (char *)(uint)*(byte *)&local_10->
@@ -2542,9 +2610,11 @@ LAB_0065937a:
                                          ((DArrayTy *)local_16c._8_4_ != (DArrayTy *)0x9)) {
                                         /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                         pDVar12 = (DArrayTy *)
-                                                  thunk_FUN_00668f50(this_00,(char *)local_16c._8_4_
-                                                                     ,(uint)local_160,
-                                                                     &local_34.flags);
+                                                  SubmarineTitans::Recovered::HiddenThis::
+                                                  AnonReceiver_0064A970::sub_00668F50
+                                                            ((AnonReceiver_0064A970 *)this_00,
+                                                             (char *)local_16c._8_4_,(uint)local_160
+                                                             ,&local_34.flags);
                                         if (0 < (int)pDVar12) {
                                           local_8 = &local_34;
                                           local_c = pDVar12;
@@ -2576,7 +2646,7 @@ LAB_00659a1c:
                                                 *puVar15 = 0;
                                                 puVar15 = puVar15 + 1;
                                               }
-                                              local_68[1] = PTR_00802a38->field_00E4;
+                                              local_68[1] = g_playSystem_00802A38->field_00E4;
                                               local_58 = SUB41(local_154,0);
                                               uStack_57 = (undefined1)((uint)local_154 >> 8);
                                               uStack_54 = SUB41(local_14c,0);
@@ -2653,8 +2723,11 @@ LAB_00659a1c:
                                 else {
                                   /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                   pDVar12 = (DArrayTy *)
-                                            thunk_FUN_00668f50(this_00,(char *)local_16c._8_4_,
-                                                               (uint)local_160,&local_34.flags);
+                                            SubmarineTitans::Recovered::HiddenThis::
+                                            AnonReceiver_0064A970::sub_00668F50
+                                                      ((AnonReceiver_0064A970 *)this_00,
+                                                       (char *)local_16c._8_4_,(uint)local_160,
+                                                       &local_34.flags);
                                   if (0 < (int)pDVar12) {
                                     pDVar25 = &local_34;
                                     local_c = pDVar12;
@@ -2697,8 +2770,8 @@ LAB_00659a1c:
                               if (iVar36 == 0) break;
                               if (local_160 != (DArrayTy *)0x0) {
                                 /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                                _EnumArt(0,(byte *)local_16c._8_4_,0,0,0,-1,-1,-1,&LAB_004012cb,
-                                         local_160);
+                                _EnumArt(0,(byte *)local_16c._8_4_,0,0,0,-1,-1,-1,thunk_FUN_0064dd70
+                                         ,local_160);
                               }
                               goto cf_switch_join_00659A73;
                             case 0x595:
@@ -2733,7 +2806,7 @@ LAB_00659a1c:
                               /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                               _EnumRCField((short)local_16c._8_4_,(short)local_160,(short)local_15c,
                                            (short)local_158,(short)local_154,(short)local_150,
-                                           (short)local_14c,&LAB_004047e1,&local_148);
+                                           (short)local_14c,thunk_FUN_0064e260,&local_148);
                               goto cf_switch_join_00659A73;
                             case 0x597:
                               iVar36 = thunk_FUN_00650090((short *)local_16c);
@@ -2741,7 +2814,7 @@ LAB_00659a1c:
                               /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                               _EnumRCField((short)local_15c,(short)local_158,(short)local_154,
                                            (short)local_150,(short)local_14c,(short)local_148,
-                                           (short)local_144,&LAB_00405b6e,
+                                           (short)local_144,thunk_FUN_0064e290,
                                            (int)local_160 << 0x10 | local_16c._8_4_ & 0xffff);
                               goto cf_switch_join_00659A73;
                             case 0x598:
@@ -2762,15 +2835,16 @@ LAB_00659a1c:
                               /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                               _EnumDest((byte *)local_160,(char)local_16c._8_4_,(short)local_15c,
                                         (short)local_158,(short)local_154,(short)local_150,
-                                        (short)local_14c,(short)local_148,&LAB_0040191a,&local_144);
+                                        (short)local_14c,(short)local_148,thunk_FUN_0064df30,
+                                        &local_144);
                               goto cf_switch_join_00659A73;
                             case 0x59a:
                               iVar36 = thunk_FUN_00650370((int)local_16c);
                               if (iVar36 == 0) break;
                               if (local_160 != (DArrayTy *)0x0) {
                                 /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                                _EnumDest((byte *)local_16c._8_4_,-1,0,0,0,-1,-1,-1,&LAB_00403e18,
-                                          local_160);
+                                _EnumDest((byte *)local_16c._8_4_,-1,0,0,0,-1,-1,-1,
+                                          thunk_FUN_0064df70,local_160);
                               }
                               goto cf_switch_join_00659A73;
                             case 0x59b:
@@ -2783,8 +2857,11 @@ LAB_00659a1c:
                                    ((DArrayTy *)local_16c._8_4_ != (DArrayTy *)0x9)) {
                                   /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                   pDVar12 = (DArrayTy *)
-                                            thunk_FUN_00668f50(this_00,(char *)local_16c._8_4_,
-                                                               (uint)local_160,&local_34.flags);
+                                            SubmarineTitans::Recovered::HiddenThis::
+                                            AnonReceiver_0064A970::sub_00668F50
+                                                      ((AnonReceiver_0064A970 *)this_00,
+                                                       (char *)local_16c._8_4_,(uint)local_160,
+                                                       &local_34.flags);
                                   if (0 < (int)pDVar12) {
                                     local_8 = &local_34;
                                     local_c = pDVar12;
@@ -2819,8 +2896,11 @@ LAB_00659a1c:
                                    ((DArrayTy *)local_16c._8_4_ != (DArrayTy *)0x9)) {
                                   /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                   pDVar12 = (DArrayTy *)
-                                            thunk_FUN_00668f50(this_00,(char *)local_16c._8_4_,
-                                                               (uint)local_160,&local_34.flags);
+                                            SubmarineTitans::Recovered::HiddenThis::
+                                            AnonReceiver_0064A970::sub_00668F50
+                                                      ((AnonReceiver_0064A970 *)this_00,
+                                                       (char *)local_16c._8_4_,(uint)local_160,
+                                                       &local_34.flags);
                                   if (0 < (int)pDVar12) {
                                     pDVar25 = &local_34;
                                     local_c = pDVar12;
@@ -2829,7 +2909,7 @@ LAB_00659a1c:
                                       _EnumMines(pDVar25->flags,(short)local_15c,(char)local_158,
                                                  local_154,(short)local_150,(short)local_14c,
                                                  (short)local_148,(short)local_144,(short)local_140,
-                                                 (short)local_13c,&LAB_004037d8,&local_138);
+                                                 (short)local_13c,thunk_FUN_0064e1f0,&local_138);
                                       pDVar25 = (DArrayTy *)&pDVar25->iteratorIndex;
                                       local_c = (DArrayTy *)((int)&local_c[-1].data + 3);
                                     } while (local_c != (DArrayTy *)0x0);
@@ -2848,8 +2928,11 @@ LAB_00659a1c:
                                    ((DArrayTy *)local_16c._8_4_ != (DArrayTy *)0x9)) {
                                   /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                   pDVar12 = (DArrayTy *)
-                                            thunk_FUN_00668f50(this_00,(char *)local_16c._8_4_,
-                                                               (uint)local_160,&local_34.flags);
+                                            SubmarineTitans::Recovered::HiddenThis::
+                                            AnonReceiver_0064A970::sub_00668F50
+                                                      ((AnonReceiver_0064A970 *)this_00,
+                                                       (char *)local_16c._8_4_,(uint)local_160,
+                                                       &local_34.flags);
                                   if (0 < (int)pDVar12) {
                                     pDVar25 = &local_34;
                                     local_c = pDVar12;
@@ -2858,7 +2941,7 @@ LAB_00659a1c:
                                       _EnumMines(pDVar25->flags,(short)local_158,(char)local_154,
                                                  local_150,(short)local_14c,(short)local_148,
                                                  (short)local_144,(short)local_140,(short)local_13c,
-                                                 (short)local_138,&LAB_004035fd,local_15c);
+                                                 (short)local_138,thunk_FUN_0064e230,local_15c);
                                       pDVar25 = (DArrayTy *)&pDVar25->iteratorIndex;
                                       local_c = (DArrayTy *)((int)&local_c[-1].data + 3);
                                     } while (local_c != (DArrayTy *)0x0);
@@ -2879,8 +2962,11 @@ LAB_00659a1c:
                                    ((DArrayTy *)local_16c._8_4_ != (DArrayTy *)0x9)) {
                                   /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                   pDVar12 = (DArrayTy *)
-                                            thunk_FUN_00668f50(this_00,(char *)local_16c._8_4_,
-                                                               (uint)local_160,&local_34.flags);
+                                            SubmarineTitans::Recovered::HiddenThis::
+                                            AnonReceiver_0064A970::sub_00668F50
+                                                      ((AnonReceiver_0064A970 *)this_00,
+                                                       (char *)local_16c._8_4_,(uint)local_160,
+                                                       &local_34.flags);
                                   if (0 < (int)pDVar12) {
                                     pDVar25 = &local_34;
                                     local_c = pDVar12;
@@ -2905,8 +2991,11 @@ LAB_00659a1c:
                                    ((DArrayTy *)local_16c._8_4_ != (DArrayTy *)0x9)) {
                                   /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                   pDVar12 = (DArrayTy *)
-                                            thunk_FUN_00668f50(this_00,(char *)local_16c._8_4_,
-                                                               (uint)local_160,&local_34.flags);
+                                            SubmarineTitans::Recovered::HiddenThis::
+                                            AnonReceiver_0064A970::sub_00668F50
+                                                      ((AnonReceiver_0064A970 *)this_00,
+                                                       (char *)local_16c._8_4_,(uint)local_160,
+                                                       &local_34.flags);
                                   if (0 < (int)pDVar12) {
                                     pDVar25 = &local_34;
                                     local_c = pDVar12;
@@ -2931,8 +3020,11 @@ LAB_00659a1c:
                                    ((DArrayTy *)local_16c._8_4_ != (DArrayTy *)0x9)) {
                                   /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                   pDVar12 = (DArrayTy *)
-                                            thunk_FUN_00668f50(this_00,(char *)local_16c._8_4_,
-                                                               (uint)local_160,&local_34.flags);
+                                            SubmarineTitans::Recovered::HiddenThis::
+                                            AnonReceiver_0064A970::sub_00668F50
+                                                      ((AnonReceiver_0064A970 *)this_00,
+                                                       (char *)local_16c._8_4_,(uint)local_160,
+                                                       &local_34.flags);
                                   if (0 < (int)pDVar12) {
                                     local_8 = &local_34;
                                     do {
@@ -2968,8 +3060,11 @@ LAB_00659a1c:
                                    ((DArrayTy *)local_16c._8_4_ != (DArrayTy *)0x9)) {
                                   /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                   pDVar12 = (DArrayTy *)
-                                            thunk_FUN_00668f50(this_00,(char *)local_16c._8_4_,
-                                                               (uint)local_160,&local_34.flags);
+                                            SubmarineTitans::Recovered::HiddenThis::
+                                            AnonReceiver_0064A970::sub_00668F50
+                                                      ((AnonReceiver_0064A970 *)this_00,
+                                                       (char *)local_16c._8_4_,(uint)local_160,
+                                                       &local_34.flags);
                                   if (0 < (int)pDVar12) {
                                     pDVar25 = &local_34;
                                     local_c = pDVar12;
@@ -2994,8 +3089,11 @@ LAB_00659a1c:
                                    ((DArrayTy *)local_16c._8_4_ != (DArrayTy *)0x9)) {
                                   /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                   pDVar12 = (DArrayTy *)
-                                            thunk_FUN_00668f50(this_00,(char *)local_16c._8_4_,
-                                                               (uint)local_160,&local_34.flags);
+                                            SubmarineTitans::Recovered::HiddenThis::
+                                            AnonReceiver_0064A970::sub_00668F50
+                                                      ((AnonReceiver_0064A970 *)this_00,
+                                                       (char *)local_16c._8_4_,(uint)local_160,
+                                                       &local_34.flags);
                                   if (0 < (int)pDVar12) {
                                     pDVar25 = &local_34;
                                     local_c = pDVar12;
@@ -3019,8 +3117,11 @@ LAB_00659a1c:
                                    ((DArrayTy *)local_16c._8_4_ != (DArrayTy *)0x9)) {
                                   /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                   pDVar12 = (DArrayTy *)
-                                            thunk_FUN_00668f50(this_00,(char *)local_16c._8_4_,
-                                                               (uint)local_160,&local_34.flags);
+                                            SubmarineTitans::Recovered::HiddenThis::
+                                            AnonReceiver_0064A970::sub_00668F50
+                                                      ((AnonReceiver_0064A970 *)this_00,
+                                                       (char *)local_16c._8_4_,(uint)local_160,
+                                                       &local_34.flags);
                                   if (0 < (int)pDVar12) {
                                     local_8 = &local_34;
                                     do {
@@ -3054,8 +3155,11 @@ LAB_00659a1c:
                                    ((DArrayTy *)local_16c._8_4_ != (DArrayTy *)0x9)) {
                                   /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                   pDVar12 = (DArrayTy *)
-                                            thunk_FUN_00668f50(this_00,(char *)local_16c._8_4_,
-                                                               (uint)local_160,&local_34.flags);
+                                            SubmarineTitans::Recovered::HiddenThis::
+                                            AnonReceiver_0064A970::sub_00668F50
+                                                      ((AnonReceiver_0064A970 *)this_00,
+                                                       (char *)local_16c._8_4_,(uint)local_160,
+                                                       &local_34.flags);
                                   if (0 < (int)pDVar12) {
                                     local_8 = &local_34;
                                     do {
@@ -3089,8 +3193,11 @@ LAB_00659a1c:
                                    ((DArrayTy *)local_16c._8_4_ != (DArrayTy *)0x9)) {
                                   /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                   pDVar12 = (DArrayTy *)
-                                            thunk_FUN_00668f50(this_00,(char *)local_16c._8_4_,
-                                                               (uint)local_160,&local_34.flags);
+                                            SubmarineTitans::Recovered::HiddenThis::
+                                            AnonReceiver_0064A970::sub_00668F50
+                                                      ((AnonReceiver_0064A970 *)this_00,
+                                                       (char *)local_16c._8_4_,(uint)local_160,
+                                                       &local_34.flags);
                                   if (0 < (int)pDVar12) {
                                     pDVar25 = &local_34;
                                     local_c = pDVar12;
@@ -3114,8 +3221,11 @@ LAB_00659a1c:
                                    ((DArrayTy *)local_16c._8_4_ != (DArrayTy *)0x9)) {
                                   /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                   pDVar12 = (DArrayTy *)
-                                            thunk_FUN_00668f50(this_00,(char *)local_16c._8_4_,
-                                                               (uint)local_160,&local_34.flags);
+                                            SubmarineTitans::Recovered::HiddenThis::
+                                            AnonReceiver_0064A970::sub_00668F50
+                                                      ((AnonReceiver_0064A970 *)this_00,
+                                                       (char *)local_16c._8_4_,(uint)local_160,
+                                                       &local_34.flags);
                                   if (0 < (int)pDVar12) {
                                     pDVar25 = &local_34;
                                     local_c = pDVar12;
@@ -3139,8 +3249,11 @@ LAB_00659a1c:
                                    ((DArrayTy *)local_16c._8_4_ != (DArrayTy *)0x9)) {
                                   /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                   pDVar12 = (DArrayTy *)
-                                            thunk_FUN_00668f50(this_00,(char *)local_16c._8_4_,
-                                                               (uint)local_160,&local_34.flags);
+                                            SubmarineTitans::Recovered::HiddenThis::
+                                            AnonReceiver_0064A970::sub_00668F50
+                                                      ((AnonReceiver_0064A970 *)this_00,
+                                                       (char *)local_16c._8_4_,(uint)local_160,
+                                                       &local_34.flags);
                                   if (0 < (int)pDVar12) {
                                     pDVar25 = &local_34;
                                     local_c = pDVar12;
@@ -3165,15 +3278,18 @@ LAB_00659a1c:
                                    ((DArrayTy *)local_16c._8_4_ != (DArrayTy *)0x9)) {
                                   /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                   pDVar12 = (DArrayTy *)
-                                            thunk_FUN_00668f50(this_00,(char *)local_16c._8_4_,
-                                                               (uint)local_160,&local_34.flags);
+                                            SubmarineTitans::Recovered::HiddenThis::
+                                            AnonReceiver_0064A970::sub_00668F50
+                                                      ((AnonReceiver_0064A970 *)this_00,
+                                                       (char *)local_16c._8_4_,(uint)local_160,
+                                                       &local_34.flags);
                                   if (0 < (int)pDVar12) {
                                     pDVar25 = &local_34;
                                     local_8 = pDVar12;
                                     do {
                                       local_c = (DArrayTy *)0xffffffff;
                                       local_8 = pDVar12;
-                                      if (g_sTAllPlayers_007FA174 == (STAllPlayersC *)0x0) {
+                                      if (g_allPlayers_007FA174 == (STAllPlayersC *)0x0) {
                                         pAVar13 = (AiPlrClassTy *)0x0;
                                       }
                                       else {
@@ -3188,7 +3304,7 @@ LAB_00659a1c:
                                                              (int)local_154,(int)local_150);
                                       }
                                       if ((int)local_c < 0) {
-                                        thunk_FUN_0064d0e0(this_00,-4,local_15c,uVar32,
+                                        thunk_FUN_0064d0e0(this_00,-4,(char *)local_15c,uVar32,
                                                            pDVar25->flags);
                                       }
                                       pDVar25 = (DArrayTy *)&pDVar25->iteratorIndex;
@@ -3210,13 +3326,16 @@ LAB_00659a1c:
                                    ((DArrayTy *)local_16c._8_4_ != (DArrayTy *)0x9)) {
                                   /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                   pDVar12 = (DArrayTy *)
-                                            thunk_FUN_00668f50(this_00,(char *)local_16c._8_4_,
-                                                               (uint)local_160,&local_34.flags);
+                                            SubmarineTitans::Recovered::HiddenThis::
+                                            AnonReceiver_0064A970::sub_00668F50
+                                                      ((AnonReceiver_0064A970 *)this_00,
+                                                       (char *)local_16c._8_4_,(uint)local_160,
+                                                       &local_34.flags);
                                   if (0 < (int)pDVar12) {
                                     local_8 = &local_34;
                                     do {
                                       local_c = pDVar12;
-                                      if (g_sTAllPlayers_007FA174 == (STAllPlayersC *)0x0) {
+                                      if (g_allPlayers_007FA174 == (STAllPlayersC *)0x0) {
                                         pAVar20 = (AnonShape_00679600_B8E418A8 *)0x0;
                                       }
                                       else {
@@ -3253,13 +3372,16 @@ LAB_00659a1c:
                                    ((DArrayTy *)local_16c._8_4_ != (DArrayTy *)0x9)) {
                                   /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                   pDVar12 = (DArrayTy *)
-                                            thunk_FUN_00668f50(this_00,(char *)local_16c._8_4_,
-                                                               (uint)local_160,&local_34.flags);
+                                            SubmarineTitans::Recovered::HiddenThis::
+                                            AnonReceiver_0064A970::sub_00668F50
+                                                      ((AnonReceiver_0064A970 *)this_00,
+                                                       (char *)local_16c._8_4_,(uint)local_160,
+                                                       &local_34.flags);
                                   if (0 < (int)pDVar12) {
                                     local_8 = &local_34;
                                     do {
                                       local_c = pDVar12;
-                                      if (g_sTAllPlayers_007FA174 == (STAllPlayersC *)0x0) {
+                                      if (g_allPlayers_007FA174 == (STAllPlayersC *)0x0) {
                                         pAVar13 = (AiPlrClassTy *)0x0;
                                       }
                                       else {
@@ -3295,8 +3417,11 @@ LAB_00659a1c:
                                    ((DArrayTy *)local_16c._8_4_ != (DArrayTy *)0x9)) {
                                   /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                   pDVar12 = (DArrayTy *)
-                                            thunk_FUN_00668f50(this_00,(char *)local_16c._8_4_,
-                                                               (uint)local_160,&local_34.flags);
+                                            SubmarineTitans::Recovered::HiddenThis::
+                                            AnonReceiver_0064A970::sub_00668F50
+                                                      ((AnonReceiver_0064A970 *)this_00,
+                                                       (char *)local_16c._8_4_,(uint)local_160,
+                                                       &local_34.flags);
                                   if (0 < (int)pDVar12) {
                                     local_10 = (AiFltClassTy *)&local_34;
                                     local_8 = pDVar12;
@@ -3316,7 +3441,7 @@ LAB_00659a1c:
                                         ;
                                       }
                                       else {
-                                        thunk_FUN_00675dc0((uint)local_10->vtable,(uint *)local_c);
+                                        thunk_FUN_00675dc0((uint)local_10->vtable,local_c);
                                         DArrayDestroy(local_c);
                                       }
                                       local_10 = (AiFltClassTy *)&local_10->field_0x4;
@@ -3338,8 +3463,11 @@ LAB_00659a1c:
                                    ((DArrayTy *)local_16c._8_4_ != (DArrayTy *)0x9)) {
                                   /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                   pDVar12 = (DArrayTy *)
-                                            thunk_FUN_00668f50(this_00,(char *)local_16c._8_4_,
-                                                               (uint)local_160,&local_34.flags);
+                                            SubmarineTitans::Recovered::HiddenThis::
+                                            AnonReceiver_0064A970::sub_00668F50
+                                                      ((AnonReceiver_0064A970 *)this_00,
+                                                       (char *)local_16c._8_4_,(uint)local_160,
+                                                       &local_34.flags);
                                   if (0 < (int)pDVar12) {
                                     local_10 = (AiFltClassTy *)&local_34;
                                     local_8 = pDVar12;
@@ -3359,7 +3487,7 @@ LAB_00659a1c:
                                         ;
                                       }
                                       else {
-                                        thunk_FUN_00675dc0((uint)local_10->vtable,(uint *)local_c);
+                                        thunk_FUN_00675dc0((uint)local_10->vtable,local_c);
                                         DArrayDestroy(local_c);
                                       }
                                       local_10 = (AiFltClassTy *)&local_10->field_0x4;
@@ -3381,8 +3509,11 @@ LAB_00659a1c:
                                    ((DArrayTy *)local_16c._8_4_ != (DArrayTy *)0x9)) {
                                   /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                   pDVar12 = (DArrayTy *)
-                                            thunk_FUN_00668f50(this_00,(char *)local_16c._8_4_,
-                                                               (uint)local_160,&local_34.flags);
+                                            SubmarineTitans::Recovered::HiddenThis::
+                                            AnonReceiver_0064A970::sub_00668F50
+                                                      ((AnonReceiver_0064A970 *)this_00,
+                                                       (char *)local_16c._8_4_,(uint)local_160,
+                                                       &local_34.flags);
                                   if (0 < (int)pDVar12) {
                                     local_10 = (AiFltClassTy *)&local_34;
                                     local_8 = pDVar12;
@@ -3403,7 +3534,7 @@ LAB_00659a1c:
                                         ;
                                       }
                                       else {
-                                        thunk_FUN_00675dc0((uint)local_10->vtable,(uint *)local_c);
+                                        thunk_FUN_00675dc0((uint)local_10->vtable,local_c);
                                         DArrayDestroy(local_c);
                                       }
                                       local_10 = (AiFltClassTy *)&local_10->field_0x4;
@@ -3430,7 +3561,8 @@ LAB_00659a1c:
                               /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                               _EnumArt((short)local_16c._8_4_,(byte *)local_160,(short)local_15c,
                                        (short)local_158,(short)local_154,(short)local_150,
-                                       (short)local_14c,(short)local_148,&LAB_004022f2,&local_144);
+                                       (short)local_14c,(short)local_148,thunk_FUN_0064dd30,
+                                       &local_144);
                             }
                             goto cf_switch_join_00659A73;
                           }
@@ -3456,8 +3588,11 @@ LAB_00659a1c:
                                 }
                                 else {
                                   /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                                  iVar7 = thunk_FUN_00668f50(this_00,(char *)local_16c._8_4_,
-                                                             (uint)local_160,&local_34.flags);
+                                  iVar7 = SubmarineTitans::Recovered::HiddenThis::
+                                          AnonReceiver_0064A970::sub_00668F50
+                                                    ((AnonReceiver_0064A970 *)this_00,
+                                                     (char *)local_16c._8_4_,(uint)local_160,
+                                                     &local_34.flags);
                                   iVar36 = 0;
                                   if (0 < iVar7) {
                                     pDVar12 = &local_34;
@@ -3523,13 +3658,16 @@ LAB_00659a1c:
                                       }
                                       /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                       pDVar12 = (DArrayTy *)
-                                                thunk_FUN_00668f50(this_00,(char *)local_16c._8_4_,
-                                                                   (uint)local_160,&local_34.flags);
+                                                SubmarineTitans::Recovered::HiddenThis::
+                                                AnonReceiver_0064A970::sub_00668F50
+                                                          ((AnonReceiver_0064A970 *)this_00,
+                                                           (char *)local_16c._8_4_,(uint)local_160,
+                                                           &local_34.flags);
                                       if (0 < (int)pDVar12) {
                                         local_8 = &local_34;
                                         do {
                                           local_c = pDVar12;
-                                          if (g_sTAllPlayers_007FA174 == (STAllPlayersC *)0x0) {
+                                          if (g_allPlayers_007FA174 == (STAllPlayersC *)0x0) {
                                             local_10 = (AiFltClassTy *)0x0;
                                           }
                                           else {
@@ -3626,13 +3764,16 @@ LAB_00659a1c:
                                     }
                                     /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                     pDVar12 = (DArrayTy *)
-                                              thunk_FUN_00668f50(this_00,(char *)local_16c._8_4_,
-                                                                 (uint)local_160,&local_34.flags);
+                                              SubmarineTitans::Recovered::HiddenThis::
+                                              AnonReceiver_0064A970::sub_00668F50
+                                                        ((AnonReceiver_0064A970 *)this_00,
+                                                         (char *)local_16c._8_4_,(uint)local_160,
+                                                         &local_34.flags);
                                     if (0 < (int)pDVar12) {
                                       local_8 = &local_34;
                                       local_c = pDVar12;
                                       do {
-                                        if (g_sTAllPlayers_007FA174 == (STAllPlayersC *)0x0) {
+                                        if (g_allPlayers_007FA174 == (STAllPlayersC *)0x0) {
                                           local_10 = (AiFltClassTy *)0x0;
                                         }
                                         else {
@@ -3682,14 +3823,17 @@ LAB_00659a1c:
                                     }
                                     /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                     pDVar12 = (DArrayTy *)
-                                              thunk_FUN_00668f50(this_00,(char *)local_16c._8_4_,
-                                                                 (uint)local_160,&local_34.flags);
+                                              SubmarineTitans::Recovered::HiddenThis::
+                                              AnonReceiver_0064A970::sub_00668F50
+                                                        ((AnonReceiver_0064A970 *)this_00,
+                                                         (char *)local_16c._8_4_,(uint)local_160,
+                                                         &local_34.flags);
                                     if (0 < (int)pDVar12) {
                                       pDVar25 = &local_34;
                                       local_c = pDVar12;
                                       do {
                                         local_c = pDVar12;
-                                        if (g_sTAllPlayers_007FA174 == (STAllPlayersC *)0x0) {
+                                        if (g_allPlayers_007FA174 == (STAllPlayersC *)0x0) {
                                           pAVar13 = (AiPlrClassTy *)0x0;
                                         }
                                         else {
@@ -3875,8 +4019,8 @@ switchD_00652b42_switchD:
                                   if (iVar7 == 5) {
                                     /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                     Library::DKW::TBL::FUN_006b6020
-                                              (this_00->field_05B3,local_16c._8_4_,(char *)local_160
-                                              );
+                                              (&this_00->field_05B3->flags,local_16c._8_4_,
+                                               (char *)local_160);
                                   }
                                 }
                                 goto cf_switch_join_00659A73;
@@ -3924,7 +4068,8 @@ switchD_00652b42_switchD:
                               if (iVar36 == 0) goto cf_common_join_00652A99;
                               /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                               Library::DKW::TBL::FUN_006b6020
-                                        (this_00->field_05B3,local_16c._8_4_,(char *)local_160);
+                                        (&this_00->field_05B3->flags,local_16c._8_4_,
+                                         (char *)local_160);
                               break;
                             case 0x528:
                               iVar36 = thunk_FUN_0064eb20((int)local_16c);
@@ -3936,8 +4081,11 @@ switchD_00652b42_switchD:
                                    ((DArrayTy *)local_16c._8_4_ != (DArrayTy *)0x9)) {
                                   /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                   pDVar12 = (DArrayTy *)
-                                            thunk_FUN_00668f50(this_00,(char *)local_16c._8_4_,
-                                                               (uint)local_160,&local_34.flags);
+                                            SubmarineTitans::Recovered::HiddenThis::
+                                            AnonReceiver_0064A970::sub_00668F50
+                                                      ((AnonReceiver_0064A970 *)this_00,
+                                                       (char *)local_16c._8_4_,(uint)local_160,
+                                                       &local_34.flags);
                                   if (0 < (int)pDVar12) {
                                     pDVar25 = &local_34;
                                     local_c = pDVar12;
@@ -3966,8 +4114,11 @@ switchD_00652b42_switchD:
                                    ((DArrayTy *)local_16c._8_4_ != (DArrayTy *)0x9)) {
                                   /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                   pDVar12 = (DArrayTy *)
-                                            thunk_FUN_00668f50(this_00,(char *)local_16c._8_4_,
-                                                               (uint)local_160,&local_34.flags);
+                                            SubmarineTitans::Recovered::HiddenThis::
+                                            AnonReceiver_0064A970::sub_00668F50
+                                                      ((AnonReceiver_0064A970 *)this_00,
+                                                       (char *)local_16c._8_4_,(uint)local_160,
+                                                       &local_34.flags);
                                   if (0 < (int)pDVar12) {
                                     pDVar25 = &local_34;
                                     local_c = pDVar12;
@@ -3996,8 +4147,11 @@ switchD_00652b42_switchD:
                                 if ((iVar36 != 8) ||
                                    ((DArrayTy *)local_16c._8_4_ != (DArrayTy *)0x9)) {
                                   /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                                  iVar7 = thunk_FUN_00668f50(this_00,(char *)local_16c._8_4_,
-                                                             (uint)local_160,&local_34.flags);
+                                  iVar7 = SubmarineTitans::Recovered::HiddenThis::
+                                          AnonReceiver_0064A970::sub_00668F50
+                                                    ((AnonReceiver_0064A970 *)this_00,
+                                                     (char *)local_16c._8_4_,(uint)local_160,
+                                                     &local_34.flags);
                                   iVar36 = 0;
                                   if (0 < iVar7) {
                                     pDVar12 = &local_34;
@@ -4030,8 +4184,11 @@ switchD_00652b42_switchD:
                                   }
                                 }
                                 /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                                iVar7 = thunk_FUN_00668f50(this_00,(char *)local_16c._8_4_,
-                                                           (uint)local_160,&local_34.flags);
+                                iVar7 = SubmarineTitans::Recovered::HiddenThis::
+                                        AnonReceiver_0064A970::sub_00668F50
+                                                  ((AnonReceiver_0064A970 *)this_00,
+                                                   (char *)local_16c._8_4_,(uint)local_160,
+                                                   &local_34.flags);
                                 iVar36 = 0;
                                 if (0 < iVar7) {
                                   pDVar12 = &local_34;
@@ -4062,8 +4219,10 @@ switchD_00652b42_switchD:
                                 }
                               }
                               /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                              iVar7 = thunk_FUN_00668f50(this_00,(char *)local_16c._8_4_,
-                                                         (uint)local_160,&local_34.flags);
+                              iVar7 = SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0064A970
+                                      ::sub_00668F50((AnonReceiver_0064A970 *)this_00,
+                                                     (char *)local_16c._8_4_,(uint)local_160,
+                                                     &local_34.flags);
                               iVar36 = 0;
                               if (0 < iVar7) {
                                 pDVar12 = &local_34;
@@ -4098,8 +4257,10 @@ LAB_006536dd:
                                 }
                               }
                               /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                              iVar7 = thunk_FUN_00668f50(this_00,(char *)local_16c._8_4_,
-                                                         (uint)local_160,&local_34.flags);
+                              iVar7 = SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0064A970
+                                      ::sub_00668F50((AnonReceiver_0064A970 *)this_00,
+                                                     (char *)local_16c._8_4_,(uint)local_160,
+                                                     &local_34.flags);
                               iVar36 = 0;
                               if (0 < iVar7) {
                                 pDVar12 = &local_34;
@@ -4127,8 +4288,10 @@ LAB_00653778:
                                 }
                               }
                               /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                              iVar7 = thunk_FUN_00668f50(this_00,(char *)local_16c._8_4_,
-                                                         (uint)local_160,&local_34.flags);
+                              iVar7 = SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0064A970
+                                      ::sub_00668F50((AnonReceiver_0064A970 *)this_00,
+                                                     (char *)local_16c._8_4_,(uint)local_160,
+                                                     &local_34.flags);
                               iVar36 = 0;
                               if (0 < iVar7) {
                                 pDVar12 = &local_34;
@@ -4154,8 +4317,10 @@ LAB_00653778:
                                 }
                               }
                               /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                              iVar7 = thunk_FUN_00668f50(this_00,(char *)local_16c._8_4_,
-                                                         (uint)local_160,&local_34.flags);
+                              iVar7 = SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0064A970
+                                      ::sub_00668F50((AnonReceiver_0064A970 *)this_00,
+                                                     (char *)local_16c._8_4_,(uint)local_160,
+                                                     &local_34.flags);
                               iVar36 = 0;
                               if (0 < iVar7) {
                                 pDVar12 = &local_34;
@@ -4186,8 +4351,10 @@ LAB_00653778:
                                 }
                               }
                               /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                              iVar7 = thunk_FUN_00668f50(this_00,(char *)local_16c._8_4_,
-                                                         (uint)local_160,&local_34.flags);
+                              iVar7 = SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0064A970
+                                      ::sub_00668F50((AnonReceiver_0064A970 *)this_00,
+                                                     (char *)local_16c._8_4_,(uint)local_160,
+                                                     &local_34.flags);
                               iVar36 = 0;
                               if (0 < iVar7) {
                                 pDVar12 = &local_34;
@@ -4212,8 +4379,11 @@ LAB_00653778:
                                 if ((iVar36 != 8) ||
                                    ((DArrayTy *)local_16c._8_4_ != (DArrayTy *)0x9)) {
                                   /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                                  iVar7 = thunk_FUN_00668f50(this_00,(char *)local_16c._8_4_,
-                                                             (uint)local_160,&local_34.flags);
+                                  iVar7 = SubmarineTitans::Recovered::HiddenThis::
+                                          AnonReceiver_0064A970::sub_00668F50
+                                                    ((AnonReceiver_0064A970 *)this_00,
+                                                     (char *)local_16c._8_4_,(uint)local_160,
+                                                     &local_34.flags);
                                   iVar36 = 0;
                                   if (0 < iVar7) {
                                     pDVar12 = &local_34;
@@ -4252,8 +4422,11 @@ LAB_00653778:
                                    ((DArrayTy *)local_16c._8_4_ != (DArrayTy *)0x9)) {
                                   /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                   local_10 = (AiFltClassTy *)
-                                             thunk_FUN_00668f50(this_00,(char *)local_16c._8_4_,
-                                                                (uint)local_160,&local_34.flags);
+                                             SubmarineTitans::Recovered::HiddenThis::
+                                             AnonReceiver_0064A970::sub_00668F50
+                                                       ((AnonReceiver_0064A970 *)this_00,
+                                                        (char *)local_16c._8_4_,(uint)local_160,
+                                                        &local_34.flags);
                                   iVar36 = 0;
                                   if (0 < (int)local_10) {
                                     pDVar12 = &local_34;
@@ -4295,8 +4468,11 @@ LAB_00653778:
                                 if ((iVar36 != 8) ||
                                    ((DArrayTy *)local_16c._8_4_ != (DArrayTy *)0x9)) {
                                   /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                                  iVar7 = thunk_FUN_00668f50(this_00,(char *)local_16c._8_4_,
-                                                             (uint)local_160,&local_34.flags);
+                                  iVar7 = SubmarineTitans::Recovered::HiddenThis::
+                                          AnonReceiver_0064A970::sub_00668F50
+                                                    ((AnonReceiver_0064A970 *)this_00,
+                                                     (char *)local_16c._8_4_,(uint)local_160,
+                                                     &local_34.flags);
                                   iVar36 = 0;
                                   if (0 < iVar7) {
                                     pDVar12 = &local_34;
@@ -4326,8 +4502,11 @@ LAB_00653778:
                                    ((DArrayTy *)local_16c._8_4_ != (DArrayTy *)0x9)) {
                                   /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                   local_10 = (AiFltClassTy *)
-                                             thunk_FUN_00668f50(this_00,(char *)local_16c._8_4_,
-                                                                (uint)local_160,&local_34.flags);
+                                             SubmarineTitans::Recovered::HiddenThis::
+                                             AnonReceiver_0064A970::sub_00668F50
+                                                       ((AnonReceiver_0064A970 *)this_00,
+                                                        (char *)local_16c._8_4_,(uint)local_160,
+                                                        &local_34.flags);
                                   iVar36 = 0;
                                   if (0 < (int)local_10) {
                                     pDVar12 = &local_34;
@@ -4376,8 +4555,11 @@ LAB_00653bb7:
                                    ((DArrayTy *)local_16c._8_4_ != (DArrayTy *)0x9)) {
                                   /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                   local_10 = (AiFltClassTy *)
-                                             thunk_FUN_00668f50(this_00,(char *)local_16c._8_4_,
-                                                                (uint)local_160,&local_34.flags);
+                                             SubmarineTitans::Recovered::HiddenThis::
+                                             AnonReceiver_0064A970::sub_00668F50
+                                                       ((AnonReceiver_0064A970 *)this_00,
+                                                        (char *)local_16c._8_4_,(uint)local_160,
+                                                        &local_34.flags);
                                   iVar36 = 0;
                                   if (0 < (int)local_10) {
                                     pDVar12 = &local_34;
@@ -4415,8 +4597,11 @@ LAB_00653bb7:
                               if ((iVar36 != 8) || ((DArrayTy *)local_16c._8_4_ != (DArrayTy *)0x9))
                               {
                                 /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                                iVar7 = thunk_FUN_00668f50(this_00,(char *)local_16c._8_4_,
-                                                           (uint)local_160,&local_34.flags);
+                                iVar7 = SubmarineTitans::Recovered::HiddenThis::
+                                        AnonReceiver_0064A970::sub_00668F50
+                                                  ((AnonReceiver_0064A970 *)this_00,
+                                                   (char *)local_16c._8_4_,(uint)local_160,
+                                                   &local_34.flags);
                                 iVar36 = 0;
                                 if (0 < iVar7) {
                                   pDVar12 = &local_34;
@@ -4446,8 +4631,11 @@ LAB_00653bb7:
                               {
                                 /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                 pDVar12 = (DArrayTy *)
-                                          thunk_FUN_00668f50(this_00,(char *)local_16c._8_4_,
-                                                             (uint)local_160,&local_34.flags);
+                                          SubmarineTitans::Recovered::HiddenThis::
+                                          AnonReceiver_0064A970::sub_00668F50
+                                                    ((AnonReceiver_0064A970 *)this_00,
+                                                     (char *)local_16c._8_4_,(uint)local_160,
+                                                     &local_34.flags);
                                 if (0 < (int)pDVar12) {
                                   pDVar25 = &local_34;
                                   local_c = pDVar12;
@@ -4475,8 +4663,11 @@ LAB_00653bb7:
                               if ((iVar36 != 8) || ((DArrayTy *)local_16c._8_4_ != (DArrayTy *)0x9))
                               {
                                 /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                                iVar7 = thunk_FUN_00668f50(this_00,(char *)local_16c._8_4_,
-                                                           (uint)local_160,&local_34.flags);
+                                iVar7 = SubmarineTitans::Recovered::HiddenThis::
+                                        AnonReceiver_0064A970::sub_00668F50
+                                                  ((AnonReceiver_0064A970 *)this_00,
+                                                   (char *)local_16c._8_4_,(uint)local_160,
+                                                   &local_34.flags);
                                 iVar36 = 0;
                                 if (0 < iVar7) {
                                   pDVar12 = &local_34;
@@ -4510,8 +4701,11 @@ LAB_00653bb7:
                               if ((iVar36 != 8) || ((DArrayTy *)local_16c._8_4_ != (DArrayTy *)0x9))
                               {
                                 /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                                iVar7 = thunk_FUN_00668f50(this_00,(char *)local_16c._8_4_,
-                                                           (uint)local_160,&local_34.flags);
+                                iVar7 = SubmarineTitans::Recovered::HiddenThis::
+                                        AnonReceiver_0064A970::sub_00668F50
+                                                  ((AnonReceiver_0064A970 *)this_00,
+                                                   (char *)local_16c._8_4_,(uint)local_160,
+                                                   &local_34.flags);
                                 iVar36 = 0;
                                 if (0 < iVar7) {
                                   do {
@@ -4535,8 +4729,11 @@ LAB_00653bb7:
                               if ((iVar36 != 8) || ((DArrayTy *)local_16c._8_4_ != (DArrayTy *)0x9))
                               {
                                 /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                                iVar7 = thunk_FUN_00668f50(this_00,(char *)local_16c._8_4_,
-                                                           (uint)local_160,&local_34.flags);
+                                iVar7 = SubmarineTitans::Recovered::HiddenThis::
+                                        AnonReceiver_0064A970::sub_00668F50
+                                                  ((AnonReceiver_0064A970 *)this_00,
+                                                   (char *)local_16c._8_4_,(uint)local_160,
+                                                   &local_34.flags);
                                 iVar36 = 0;
                                 if (0 < iVar7) {
                                   pDVar12 = &local_34;
@@ -4561,8 +4758,11 @@ LAB_006540b9:
                               if ((iVar36 != 8) || ((DArrayTy *)local_16c._8_4_ != (DArrayTy *)0x9))
                               {
                                 /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                                iVar7 = thunk_FUN_00668f50(this_00,(char *)local_16c._8_4_,
-                                                           (uint)local_160,&local_34.flags);
+                                iVar7 = SubmarineTitans::Recovered::HiddenThis::
+                                        AnonReceiver_0064A970::sub_00668F50
+                                                  ((AnonReceiver_0064A970 *)this_00,
+                                                   (char *)local_16c._8_4_,(uint)local_160,
+                                                   &local_34.flags);
                                 iVar36 = 0;
                                 if (0 < iVar7) {
                                   pDVar12 = &local_34;
@@ -4613,15 +4813,19 @@ LAB_006540b9:
                               if ((iVar36 != 8) || ((DArrayTy *)local_16c._8_4_ != (DArrayTy *)0x9))
                               {
                                 /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                                iVar7 = thunk_FUN_00668f50(this_00,(char *)local_16c._8_4_,
-                                                           (uint)local_160,&local_34.flags);
+                                iVar7 = SubmarineTitans::Recovered::HiddenThis::
+                                        AnonReceiver_0064A970::sub_00668F50
+                                                  ((AnonReceiver_0064A970 *)this_00,
+                                                   (char *)local_16c._8_4_,(uint)local_160,
+                                                   &local_34.flags);
                                 iVar36 = 0;
                                 if (0 < iVar7) {
                                   pDVar12 = &local_34;
                                   do {
                                     if (pDVar12->flags == (uint)DAT_0080874d) {
                                       iVar7 = Library::DKW::TBL::FUN_006b5aa0
-                                                        ((uint *)PTR_0080c4cb,(char *)local_158);
+                                                        (&g_dArray_0080C4CB->flags,(char *)local_158
+                                                        );
                                       if (g_optPanel_008016DC != (OptPanelTy *)0x0) {
                                         OptPanelTy::UpdateObjectives(g_optPanel_008016DC);
                                       }
@@ -4647,14 +4851,17 @@ LAB_006540b9:
                               if ((iVar36 != 8) || ((DArrayTy *)local_16c._8_4_ != (DArrayTy *)0x9))
                               {
                                 /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                                iVar7 = thunk_FUN_00668f50(this_00,(char *)local_16c._8_4_,
-                                                           (uint)local_160,&local_34.flags);
+                                iVar7 = SubmarineTitans::Recovered::HiddenThis::
+                                        AnonReceiver_0064A970::sub_00668F50
+                                                  ((AnonReceiver_0064A970 *)this_00,
+                                                   (char *)local_16c._8_4_,(uint)local_160,
+                                                   &local_34.flags);
                                 iVar36 = 0;
                                 if (0 < iVar7) {
                                   pDVar12 = &local_34;
 LAB_00654362:
                                   if (pDVar12->flags != (uint)DAT_0080874d) goto code_r0x00654366;
-                                  FUN_006c87c0(PTR_0080c4cb,(uint)local_15c);
+                                  FUN_006c87c0(g_dArray_0080C4CB,(uint)local_15c);
 LAB_00654386:
                                   if (g_optPanel_008016DC != (OptPanelTy *)0x0) {
                                     OptPanelTy::UpdateObjectives(g_optPanel_008016DC);
@@ -4673,20 +4880,21 @@ LAB_00654386:
                               if ((iVar36 != 8) || ((DArrayTy *)local_16c._8_4_ != (DArrayTy *)0x9))
                               {
                                 /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                                iVar7 = thunk_FUN_00668f50(this_00,(char *)local_16c._8_4_,
-                                                           (uint)local_160,&local_34.flags);
+                                iVar7 = SubmarineTitans::Recovered::HiddenThis::
+                                        AnonReceiver_0064A970::sub_00668F50
+                                                  ((AnonReceiver_0064A970 *)this_00,
+                                                   (char *)local_16c._8_4_,(uint)local_160,
+                                                   &local_34.flags);
                                 iVar36 = 0;
                                 if (0 < iVar7) {
                                   pDVar12 = &local_34;
                                   do {
                                     if (pDVar12->flags == (uint)DAT_0080874d) {
-                                      if (PTR_0080c4cb != (AnonShape_GLOBAL_0080C4CB_D58160AA *)0x0)
-                                      {
-                                        FUN_006b5570((AnonShape_006B5570_4D68B99C *)PTR_0080c4cb);
+                                      if (g_dArray_0080C4CB != (DArrayTy *)0x0) {
+                                        FUN_006b5570(g_dArray_0080C4CB);
                                       }
-                                      PTR_0080c4cb = (AnonShape_GLOBAL_0080C4CB_D58160AA *)
-                                                     Library::DKW::TBL::SArrayCreate
-                                                               ((DArrayTy *)0x0,10,10);
+                                      g_dArray_0080C4CB =
+                                           Library::DKW::TBL::SArrayCreate((DArrayTy *)0x0,10,10);
                                       goto LAB_00654386;
                                     }
                                     iVar36 = iVar36 + 1;
@@ -4706,21 +4914,23 @@ LAB_00654386:
                               if ((iVar36 != 8) || ((DArrayTy *)local_16c._8_4_ != (DArrayTy *)0x9))
                               {
                                 /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                                iVar7 = thunk_FUN_00668f50(this_00,(char *)local_16c._8_4_,
-                                                           (uint)local_160,&local_34.flags);
+                                iVar7 = SubmarineTitans::Recovered::HiddenThis::
+                                        AnonReceiver_0064A970::sub_00668F50
+                                                  ((AnonReceiver_0064A970 *)this_00,
+                                                   (char *)local_16c._8_4_,(uint)local_160,
+                                                   &local_34.flags);
                                 iVar36 = 0;
                                 if (0 < iVar7) {
                                   pDVar12 = &local_34;
                                   do {
                                     if (pDVar12->flags == (uint)DAT_0080874d) {
-                                      if (PTR_0080c4c7 == (AnonShape_GLOBAL_0080C4C7_5A4CB754 *)0x0)
-                                      {
-                                        PTR_0080c4c7 = (AnonShape_GLOBAL_0080C4C7_5A4CB754 *)
-                                                       Library::DKW::TBL::SArrayCreate
-                                                                 ((DArrayTy *)0x0,10,10);
+                                      if (g_dArray_0080C4C7 == (DArrayTy *)0x0) {
+                                        g_dArray_0080C4C7 =
+                                             Library::DKW::TBL::SArrayCreate((DArrayTy *)0x0,10,10);
                                       }
                                       iVar7 = Library::DKW::TBL::FUN_006b5aa0
-                                                        ((uint *)PTR_0080c4c7,(char *)local_158);
+                                                        (&g_dArray_0080C4C7->flags,(char *)local_158
+                                                        );
                                       if (-1 < iVar7) {
                                         *(int *)(&this_00->field_0xde + (int)local_15c * 4) = iVar7;
                                       }
@@ -4743,17 +4953,18 @@ LAB_00654386:
                               if ((iVar36 != 8) || ((DArrayTy *)local_16c._8_4_ != (DArrayTy *)0x9))
                               {
                                 /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                                iVar7 = thunk_FUN_00668f50(this_00,(char *)local_16c._8_4_,
-                                                           (uint)local_160,&local_34.flags);
+                                iVar7 = SubmarineTitans::Recovered::HiddenThis::
+                                        AnonReceiver_0064A970::sub_00668F50
+                                                  ((AnonReceiver_0064A970 *)this_00,
+                                                   (char *)local_16c._8_4_,(uint)local_160,
+                                                   &local_34.flags);
                                 iVar36 = 0;
                                 if (0 < iVar7) {
                                   pDVar12 = &local_34;
                                   do {
                                     if (pDVar12->flags == (uint)DAT_0080874d) {
-                                      if (PTR_0080c4c7 != (AnonShape_GLOBAL_0080C4C7_5A4CB754 *)0x0)
-                                      {
-                                        FUN_006c87c0((AnonShape_GLOBAL_0080C4CB_D58160AA *)
-                                                     PTR_0080c4c7,(uint)local_15c);
+                                      if (g_dArray_0080C4C7 != (DArrayTy *)0x0) {
+                                        FUN_006c87c0(g_dArray_0080C4C7,(uint)local_15c);
                                       }
                                       break;
                                     }
@@ -4774,20 +4985,21 @@ LAB_00654386:
                               if ((iVar36 != 8) || ((DArrayTy *)local_16c._8_4_ != (DArrayTy *)0x9))
                               {
                                 /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                                iVar7 = thunk_FUN_00668f50(this_00,(char *)local_16c._8_4_,
-                                                           (uint)local_160,&local_34.flags);
+                                iVar7 = SubmarineTitans::Recovered::HiddenThis::
+                                        AnonReceiver_0064A970::sub_00668F50
+                                                  ((AnonReceiver_0064A970 *)this_00,
+                                                   (char *)local_16c._8_4_,(uint)local_160,
+                                                   &local_34.flags);
                                 iVar36 = 0;
                                 if (0 < iVar7) {
                                   pDVar12 = &local_34;
                                   do {
                                     if (pDVar12->flags == (uint)DAT_0080874d) {
-                                      if (PTR_0080c4c7 != (AnonShape_GLOBAL_0080C4C7_5A4CB754 *)0x0)
-                                      {
-                                        FUN_006b5570((AnonShape_006B5570_4D68B99C *)PTR_0080c4c7);
+                                      if (g_dArray_0080C4C7 != (DArrayTy *)0x0) {
+                                        FUN_006b5570(g_dArray_0080C4C7);
                                       }
-                                      PTR_0080c4c7 = (AnonShape_GLOBAL_0080C4C7_5A4CB754 *)
-                                                     Library::DKW::TBL::SArrayCreate
-                                                               ((DArrayTy *)0x0,10,10);
+                                      g_dArray_0080C4C7 =
+                                           Library::DKW::TBL::SArrayCreate((DArrayTy *)0x0,10,10);
                                       break;
                                     }
                                     iVar36 = iVar36 + 1;
@@ -4809,14 +5021,19 @@ LAB_00654386:
                                   ((local_15c != (DArrayTy *)0x9 &&
                                    ((DArrayTy *)local_16c._8_4_ != (DArrayTy *)0x9)))) &&
                                  (local_15c != (DArrayTy *)0xff)) {
-                                iVar36 = thunk_FUN_00668f50(this_00,(char *)local_15c,0,
-                                                            &local_34.flags);
+                                iVar36 = SubmarineTitans::Recovered::HiddenThis::
+                                         AnonReceiver_0064A970::sub_00668F50
+                                                   ((AnonReceiver_0064A970 *)this_00,
+                                                    (char *)local_15c,0,&local_34.flags);
                                 if (iVar36 == 1) {
                                   local_8 = (DArrayTy *)local_34.flags;
                                   /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                   pAVar14 = (AiFltClassTy *)
-                                            thunk_FUN_00668f50(this_00,(char *)local_16c._8_4_,
-                                                               (uint)local_160,&local_34.flags);
+                                            SubmarineTitans::Recovered::HiddenThis::
+                                            AnonReceiver_0064A970::sub_00668F50
+                                                      ((AnonReceiver_0064A970 *)this_00,
+                                                       (char *)local_16c._8_4_,(uint)local_160,
+                                                       &local_34.flags);
                                   local_10 = pAVar14;
                                   if (0 < (int)pAVar14) {
                                     pDVar12 = &local_34;
@@ -4866,8 +5083,11 @@ LAB_00654386:
                               {
                                 /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                 local_10 = (AiFltClassTy *)
-                                           thunk_FUN_00668f50(this_00,(char *)local_16c._8_4_,
-                                                              (uint)local_160,&local_34.flags);
+                                           SubmarineTitans::Recovered::HiddenThis::
+                                           AnonReceiver_0064A970::sub_00668F50
+                                                     ((AnonReceiver_0064A970 *)this_00,
+                                                      (char *)local_16c._8_4_,(uint)local_160,
+                                                      &local_34.flags);
                                 if (0 < (int)local_10) {
                                   pDVar12 = &local_34;
                                   local_c = (DArrayTy *)local_10;
@@ -4907,8 +5127,11 @@ LAB_00654386:
                               if ((iVar36 != 8) || ((DArrayTy *)local_16c._8_4_ != (DArrayTy *)0x9))
                               {
                                 /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                                iVar7 = thunk_FUN_00668f50(this_00,(char *)local_16c._8_4_,
-                                                           (uint)local_160,&local_34.flags);
+                                iVar7 = SubmarineTitans::Recovered::HiddenThis::
+                                        AnonReceiver_0064A970::sub_00668F50
+                                                  ((AnonReceiver_0064A970 *)this_00,
+                                                   (char *)local_16c._8_4_,(uint)local_160,
+                                                   &local_34.flags);
                                 iVar36 = 0;
                                 if (0 < iVar7) {
                                   pDVar12 = &local_34;
@@ -4941,8 +5164,11 @@ LAB_00654386:
                               {
                                 /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                 pDVar12 = (DArrayTy *)
-                                          thunk_FUN_00668f50(this_00,(char *)local_16c._8_4_,
-                                                             (uint)local_160,&local_34.flags);
+                                          SubmarineTitans::Recovered::HiddenThis::
+                                          AnonReceiver_0064A970::sub_00668F50
+                                                    ((AnonReceiver_0064A970 *)this_00,
+                                                     (char *)local_16c._8_4_,(uint)local_160,
+                                                     &local_34.flags);
                                 if (0 < (int)pDVar12) {
                                   pDVar25 = &local_34;
                                   local_c = pDVar12;
@@ -4970,8 +5196,11 @@ LAB_00654386:
                               {
                                 /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                 pDVar12 = (DArrayTy *)
-                                          thunk_FUN_00668f50(this_00,(char *)local_16c._8_4_,
-                                                             (uint)local_160,&local_34.flags);
+                                          SubmarineTitans::Recovered::HiddenThis::
+                                          AnonReceiver_0064A970::sub_00668F50
+                                                    ((AnonReceiver_0064A970 *)this_00,
+                                                     (char *)local_16c._8_4_,(uint)local_160,
+                                                     &local_34.flags);
                                 if (0 < (int)pDVar12) {
                                   pDVar25 = &local_34;
                                   local_c = pDVar12;
@@ -5019,8 +5248,11 @@ LAB_00654386:
                                 }
                                 /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                 pDVar12 = (DArrayTy *)
-                                          thunk_FUN_00668f50(this_00,(char *)local_16c._8_4_,
-                                                             (uint)local_160,&local_34.flags);
+                                          SubmarineTitans::Recovered::HiddenThis::
+                                          AnonReceiver_0064A970::sub_00668F50
+                                                    ((AnonReceiver_0064A970 *)this_00,
+                                                     (char *)local_16c._8_4_,(uint)local_160,
+                                                     &local_34.flags);
                                 if (0 < (int)pDVar12) {
                                   pDVar25 = &local_34;
                                   local_c = pDVar12;
@@ -5342,8 +5574,11 @@ LAB_00655324:
                               {
                                 /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                 pDVar12 = (DArrayTy *)
-                                          thunk_FUN_00668f50(this_00,(char *)local_16c._8_4_,
-                                                             (uint)local_160,&local_34.flags);
+                                          SubmarineTitans::Recovered::HiddenThis::
+                                          AnonReceiver_0064A970::sub_00668F50
+                                                    ((AnonReceiver_0064A970 *)this_00,
+                                                     (char *)local_16c._8_4_,(uint)local_160,
+                                                     &local_34.flags);
                                 if (0 < (int)pDVar12) {
                                   pDVar25 = &local_34;
                                   local_c = pDVar12;
@@ -5518,9 +5753,9 @@ LAB_00655871:
                             }
                             else if (local_154 == (byte *)0x2) {
                               iVar7 = _EnumDest((byte *)0x0,-1,sVar24,sVar22,sVar6,1,1,1,
-                                                &LAB_00404c73,0);
-                              if ((iVar7 == -1) && (g_sTFish_00811984 != (STFishC *)0x0)) {
-                                pSVar30 = g_sTFish_00811984;
+                                                thunk_FUN_00678890,0);
+                              if ((iVar7 == -1) && (g_fish_00811984 != (STFishC *)0x0)) {
+                                pSVar30 = g_fish_00811984;
                               }
                             }
                             /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
@@ -5540,8 +5775,11 @@ LAB_00655871:
                               {
                                 /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                 pDVar12 = (DArrayTy *)
-                                          thunk_FUN_00668f50(this_00,(char *)local_16c._8_4_,
-                                                             (uint)local_160,&local_34.flags);
+                                          SubmarineTitans::Recovered::HiddenThis::
+                                          AnonReceiver_0064A970::sub_00668F50
+                                                    ((AnonReceiver_0064A970 *)this_00,
+                                                     (char *)local_16c._8_4_,(uint)local_160,
+                                                     &local_34.flags);
                                 if (0 < (int)pDVar12) {
                                   local_10 = (AiFltClassTy *)&local_34;
                                   local_8 = pDVar12;
@@ -5614,8 +5852,11 @@ LAB_006559e3:
                               {
                                 /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                 pDVar12 = (DArrayTy *)
-                                          thunk_FUN_00668f50(this_00,(char *)local_16c._8_4_,
-                                                             (uint)local_160,&local_34.flags);
+                                          SubmarineTitans::Recovered::HiddenThis::
+                                          AnonReceiver_0064A970::sub_00668F50
+                                                    ((AnonReceiver_0064A970 *)this_00,
+                                                     (char *)local_16c._8_4_,(uint)local_160,
+                                                     &local_34.flags);
                                 if (0 < (int)pDVar12) {
                                   local_10 = (AiFltClassTy *)&local_34;
                                   local_c = pDVar12;
@@ -5638,7 +5879,7 @@ LAB_006559e3:
                                           }
                                           /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                           STAllPlayersC::DestroyObjectMsg
-                                                    (g_sTAllPlayers_007FA174,
+                                                    (g_allPlayers_007FA174,
                                                      *(char *)&local_10->vtable,
                                                      CONCAT22((short)((uint)pDVar12 >> 0x10),
                                                               (short)*pdVar18),CASE_1,local_15c);
@@ -5668,8 +5909,11 @@ LAB_006559e3:
                               {
                                 /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                 pDVar12 = (DArrayTy *)
-                                          thunk_FUN_00668f50(this_00,(char *)local_16c._8_4_,
-                                                             (uint)local_160,&local_34.flags);
+                                          SubmarineTitans::Recovered::HiddenThis::
+                                          AnonReceiver_0064A970::sub_00668F50
+                                                    ((AnonReceiver_0064A970 *)this_00,
+                                                     (char *)local_16c._8_4_,(uint)local_160,
+                                                     &local_34.flags);
                                 if (0 < (int)pDVar12) {
                                   local_10 = (AiFltClassTy *)&local_34;
                                   local_c = pDVar12;
@@ -5706,7 +5950,7 @@ LAB_006559e3:
                                           }
                                           /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                           STAllPlayersC::DestroyObjectMsg
-                                                    (g_sTAllPlayers_007FA174,
+                                                    (g_allPlayers_007FA174,
                                                      *(char *)&local_10->vtable,
                                                      CONCAT22((short)((uint)uVar8 >> 0x10),*puVar19)
                                                      ,CASE_1,local_134);
@@ -5738,8 +5982,11 @@ LAB_006559e3:
                               {
                                 /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                 pDVar12 = (DArrayTy *)
-                                          thunk_FUN_00668f50(this_00,(char *)local_16c._8_4_,
-                                                             (uint)local_160,&local_34.flags);
+                                          SubmarineTitans::Recovered::HiddenThis::
+                                          AnonReceiver_0064A970::sub_00668F50
+                                                    ((AnonReceiver_0064A970 *)this_00,
+                                                     (char *)local_16c._8_4_,(uint)local_160,
+                                                     &local_34.flags);
                                 if (0 < (int)pDVar12) {
                                   local_8 = &local_34;
                                   local_c = pDVar12;
@@ -5776,8 +6023,11 @@ LAB_006559e3:
                               {
                                 /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                 pDVar12 = (DArrayTy *)
-                                          thunk_FUN_00668f50(this_00,(char *)local_16c._8_4_,
-                                                             (uint)local_160,&local_34.flags);
+                                          SubmarineTitans::Recovered::HiddenThis::
+                                          AnonReceiver_0064A970::sub_00668F50
+                                                    ((AnonReceiver_0064A970 *)this_00,
+                                                     (char *)local_16c._8_4_,(uint)local_160,
+                                                     &local_34.flags);
                                 if (0 < (int)pDVar12) {
                                   pDVar25 = &local_34;
                                   local_c = pDVar12;
@@ -5786,7 +6036,7 @@ LAB_006559e3:
                                     _EnumRCCont((short)pDVar25->flags,(short)local_15c,
                                                 (byte *)local_158,(short)local_154,(short)local_150,
                                                 (short)local_14c,(short)local_148,(short)local_144,
-                                                (short)local_140,&LAB_004050a1,&local_13c);
+                                                (short)local_140,thunk_FUN_0064dac0,&local_13c);
                                     pDVar25 = (DArrayTy *)&pDVar25->iteratorIndex;
                                     local_c = (DArrayTy *)((int)&local_c[-1].data + 3);
                                   } while (local_c != (DArrayTy *)0x0);

@@ -109,8 +109,7 @@ void __thiscall FUN_0062af90(void *this,int param_1,int param_2,int param_3)
       thunk_FUN_006301b0(this_00,&local_38);
       return;
     }
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-    (*(code *)PTR_00802a38->vtable->field_0008)(0x132,0,0,&local_38,0);
+    (*g_playSystem_00802A38->vtable->vfunc_08)(0x132,0,0,&local_38,0);
   }
   return;
 }

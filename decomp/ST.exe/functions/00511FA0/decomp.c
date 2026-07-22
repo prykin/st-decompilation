@@ -38,7 +38,7 @@ undefined4 __thiscall HelpPanelTy::SetPanel(HelpPanelTy *this,char param_1)
       }
       if (g_infocPanel_00801698 != (InfocPanelTy *)0x0) {
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-        (**(code **)(*(int *)g_infocPanel_00801698 + 0x1c))(0);
+        (*(code *)g_infocPanel_00801698->field_0000->field_001C)(0);
       }
       if (g_tradePanel_00802A44 != (TradePanelTy *)0x0) {
         thunk_FUN_00552160(g_tradePanel_00802A44,'\0','\0');
@@ -53,7 +53,7 @@ undefined4 __thiscall HelpPanelTy::SetPanel(HelpPanelTy *this,char param_1)
       }
       if (g_upgPanel_00802A48 != (UpgPanelTy *)0x0) {
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-        (**(code **)(*(int *)g_upgPanel_00802A48 + 0x1c))(0);
+        (*(code *)g_upgPanel_00802A48->field_0000->field_001C)(0);
       }
       if (g_prodPanel_00801680 != (ProdPanelTy *)0x0) {
         ProdPanelTy::SetPanel(g_prodPanel_00801680,'\0');

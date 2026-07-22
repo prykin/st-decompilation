@@ -46,8 +46,8 @@ VisibleClassTy::VisHoleCreate
         local_1c = param_5;
         local_14 = this_00->field_0108;
         local_8 = Library::DKW::TBL::FUN_006ae1c0(&pDVar1->flags,local_28);
-        thunk_FUN_00558dc0(this_00,local_28[0],local_28[1],local_20,local_18,(uint)local_1c,
-                           (int *)0xfffffffa,0xffffffff);
+        sub_00558DC0(this_00,local_28[0],local_28[1],local_20,local_18,(uint)local_1c,
+                     (int *)0xfffffffa,0xffffffff);
       }
       g_currentExceptionFrame = local_6c.previous;
       return local_8;

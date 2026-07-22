@@ -1,17 +1,25 @@
 
-undefined4 __thiscall FUN_006e5150(void *this,AnonShape_006E5150_51076593 *param_1)
+/* [STPrototypeApplier] Propagated parameter 1.
+   Evidence: 0056FA60 -> 006E5150 @ 0056FAAB
+
+   [STMethodOwnerApplier] Structural method owner recovered as STAppC.
+   Evidence: this_call_owners=[STAppC]; agreed_this_calls=1; incoming_this_accesses=2;
+   incoming_edx_uses=0; incoming_stack_parameter_uses=1; direct_non_thunk_callers=1;
+   incoming_ecx_receiver_callers=1; attributed_named_callers=1; owner_evidence_coverage=adequate */
+
+undefined4 __thiscall STAppC::sub_006E5150(STAppC *this,STMessage *param_1)
 
 {
-  if (param_1->field_0010 == 4) {
-    DAT_00856d74 = param_1->field_0014;
-    if ((DAT_00856d74 != 0) && (*(int *)((int)this + 0x24) != 0)) {
+  if (param_1->id == 4) {
+    DAT_00856d74 = (param_1->arg0).u32;
+    if ((DAT_00856d74 != 0) && (this->field_0024 != 0)) {
       FUN_006e4290(0xf,5,0xf,0);
       return 0;
     }
-    FUN_006e4340(this,0xf,5,0xf,0);
+    FUN_006e4340(this,(int *)0xf,5,0xf,0);
   }
-  else if (param_1->field_0010 == 0xf) {
-    *(undefined4 *)((int)this + 0x1c) = 1;
+  else if (param_1->id == 0xf) {
+    this->field_001C = 1;
     return 0;
   }
   return 0;

@@ -73,8 +73,8 @@ void __fastcall FUN_0058a9e0(AnonShape_0058A9E0_DB5690D0 *param_1)
     iVar4 = 6;
     local_c = 6;
   }
-  if (2 < PTR_00802a38->field_00E4 - param_1->field_0245) {
-    param_1->field_0245 = PTR_00802a38->field_00E4;
+  if (2 < g_playSystem_00802A38->field_00E4 - param_1->field_0245) {
+    param_1->field_0245 = g_playSystem_00802A38->field_00E4;
     param_1->field_0235 = 0;
     iVar7 = (param_1->field_0231 + 1) % iVar4;
     param_1->field_0231 = iVar7;
@@ -94,8 +94,10 @@ void __fastcall FUN_0058a9e0(AnonShape_0058A9E0_DB5690D0 *param_1)
           iVar2 = -iVar2;
         }
         if (iVar2 < 0x15) {
-          uVar5 = thunk_FUN_0058b190(param_1,&param_1->field_004E,(short *)&param_1->field_0x50,
-                                     &param_1->field_0052,(short *)&param_1->field_0x6c);
+          uVar5 = STOctopusC::sub_0058B190
+                            ((STOctopusC *)param_1,&param_1->field_004E,
+                             (short *)&param_1->field_0x50,&param_1->field_0052,
+                             (short *)&param_1->field_0x6c);
           param_1->field_0249 = uVar5;
           param_1->field_024D = 0;
         }
@@ -140,8 +142,9 @@ void __fastcall FUN_0058a9e0(AnonShape_0058A9E0_DB5690D0 *param_1)
     }
   }
   else if (0xc < (uint)param_1->field_024D) {
-    uVar5 = thunk_FUN_0058b190(param_1,&param_1->field_004E,(short *)&param_1->field_0x50,
-                               &param_1->field_0052,(short *)&param_1->field_0x6c);
+    uVar5 = STOctopusC::sub_0058B190
+                      ((STOctopusC *)param_1,&param_1->field_004E,(short *)&param_1->field_0x50,
+                       &param_1->field_0052,(short *)&param_1->field_0x6c);
     param_1->field_0249 = uVar5;
     param_1->field_024D = 0;
   }

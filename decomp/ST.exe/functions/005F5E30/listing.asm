@@ -1,4 +1,4 @@
-FUN_005f5e30:
+STBHEShellC::sub_005F5E30:
 005F5E30  55                        PUSH EBP
 005F5E31  8B EC                     MOV EBP,ESP
 005F5E33  56                        PUSH ESI

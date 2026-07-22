@@ -29,7 +29,7 @@ void __thiscall CPanelTy::PaintBioSonar(CPanelTy *this)
     DibPut((AnonShape_006B5B10_E0D06CF1 *)pCVar2->field_0194,0x33,0x7b,'\x01',pbVar4);
     if (pCVar2->field_0C2F != 0) {
       ccFntTy::SetSurf(pCVar2->field_01B8,pCVar2->field_0194,0,0x24,0x4c,0xa4,0x2b);
-      pcVar5 = LoadResourceString(0x38ae,HINSTANCE_00807618);
+      pcVar5 = LoadResourceString(0x38ae,g_module_00807618);
       wsprintfA((LPSTR)&DAT_0080f33a,"%d\n%s",(uint)(ushort)pCVar2->field_0C2F,pcVar5);
       ccFntTy::WrTxt(pCVar2->field_01B8,&DAT_0080f33a,-2,-1,5,-1,-1);
     }

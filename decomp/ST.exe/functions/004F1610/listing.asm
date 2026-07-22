@@ -1,4 +1,4 @@
-FUN_004f1610:
+CPanelTy::sub_004F1610:
 004F1610  55                        PUSH EBP
 004F1611  8B EC                     MOV EBP,ESP
 004F1613  81 EC 98 00 00 00         SUB ESP,0x98

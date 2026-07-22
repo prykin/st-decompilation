@@ -36,15 +36,14 @@ LAB_00465581:
     if ((param_1 == (int *)0x0) || (param_1 == (int *)0x1)) {
       if ((this->field_0041 == this->field_0034) &&
          ((this->field_0043 == this->field_0036 && (this->field_0045 == this->field_0038)))) {
-        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-        iVar3 = (*(code *)this->vtable->field_00D8)();
+        iVar3 = (*this->vtable->vfunc_D8)();
         return -(uint)(iVar3 != 0);
       }
       this->field_0832 = 0;
     }
     if (this->field_0832 == 0) {
-      /* ST_PSEUDO[raw_indirect_call,packed_or_unaligned_piece]: expected typed vtable/callback call with explicit __thiscall receiver; expected named packed member, bit extract/compose, or unaligned load */
-      sVar2 = (*(code *)this->vtable->field_0010)
+      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+      sVar2 = (*this->vtable->vfunc_10)
                         (CONCAT22(uVar8,this->field_0041),this->field_0043,
                          CONCAT22(uVar8,this->field_0045),this->field_0034,
                          CONCAT22(uVar8,this->field_0036),this->field_0038);
@@ -57,8 +56,7 @@ LAB_00465581:
           this->field_007A = 0;
           this->field_0832 = 1;
         }
-        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-        iVar3 = (*(code *)this->vtable->field_00D8)();
+        iVar3 = (*this->vtable->vfunc_D8)();
         return (-(uint)(iVar3 != 0) & 0xfffffffd) + 2;
       }
       iVar3 = ReportDebugMessage("E:\\__titans\\wlad\\To_boat.cpp",0x1b8c,0,0,"%s",
@@ -112,8 +110,8 @@ LAB_00465581:
       /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
       iVar6 = CONCAT22((short)((uint)iVar3 >> 0x10),this->field_0047 * 0xc9) + 100;
       uVar8 = (undefined2)((uint)iVar7 >> 0x10);
-      /* ST_PSEUDO[raw_indirect_call,packed_or_unaligned_piece]: expected typed vtable/callback call with explicit __thiscall receiver; expected named packed member, bit extract/compose, or unaligned load */
-      sVar2 = (*(code *)this->vtable->field_0010)
+      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+      sVar2 = (*this->vtable->vfunc_10)
                         (CONCAT22(uVar8,this->field_0041),
                          CONCAT22((short)((uint)iVar6 >> 0x10),this->field_0043),
                          CONCAT22(uVar8,this->field_0045),iVar6,iVar7,iVar3);
@@ -127,8 +125,7 @@ LAB_00465581:
           this->field_007A = 0;
           this->field_0832 = 1;
         }
-        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-        iVar3 = (*(code *)this->vtable->field_00D8)();
+        iVar3 = (*this->vtable->vfunc_D8)();
         return (-(uint)(iVar3 != 0) & 0xfffffffd) + 2;
       }
       iVar3 = ReportDebugMessage("E:\\__titans\\wlad\\To_boat.cpp",0x1bc5,0,0,"%s",
@@ -157,13 +154,11 @@ cf_error_exit_00465763:
     }
   }
   if (iVar3 != 0) {
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-    iVar3 = (*(code *)this->vtable->field_00D8)();
+    iVar3 = (*this->vtable->vfunc_D8)();
     return (-(uint)(iVar3 != 0) & 0xfffffffd) + 2;
   }
-/* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
 LAB_004655df:
-  iVar3 = (*(code *)this->vtable->field_00D8)();
+  iVar3 = (*this->vtable->vfunc_D8)();
   return -(uint)(iVar3 != 0);
 }
 

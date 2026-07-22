@@ -30,10 +30,11 @@ undefined4 __thiscall STAppC::CommonFunction(STAppC *this,int param_1)
     }
     if ((local_8->field_4EF6 != 0) && (DAT_0080673c = DAT_0080673c + -1, DAT_0080673c < 1)) {
       DAT_0080673c = *(int *)(s_FrmPanelTy__GetMessage_007c2ae0 + (uint)DAT_0080733b * 0x18 + 0x10);
-      if ((PTR_00802a30 != (CursorClassTy *)0x0) && (PTR_00802a30->field_00A9 == 0)) {
-        Library::DKW::DDX::FUN_006b8d50((int *)PTR_00802a30->field_00AD,0,0,0,0);
+      if ((g_cursorClass_00802A30 != (CursorClassTy *)0x0) &&
+         (g_cursorClass_00802A30->field_00A9 == 0)) {
+        Library::DKW::DDX::FUN_006b8d50((int *)g_cursorClass_00802A30->field_00AD,0,0,0,0);
       }
-      Library::Ourlib::ST3DSPR::FUN_006ed100((undefined4 *)PTR_00807598);
+      Library::Ourlib::ST3DSPR::FUN_006ed100(PTR_00807598);
       Library::DKW::DDX::FUN_006bd740((int *)PTR_008075a8);
     }
     g_currentExceptionFrame = local_4c.previous;

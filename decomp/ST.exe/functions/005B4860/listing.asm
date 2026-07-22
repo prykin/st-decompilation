@@ -1,4 +1,4 @@
-FUN_005b4860:
+MainMenuTy::sub_005B4860:
 005B4860  55                        PUSH EBP
 005B4861  8B EC                     MOV EBP,ESP
 005B4863  51                        PUSH ECX

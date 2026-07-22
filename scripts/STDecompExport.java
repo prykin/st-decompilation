@@ -38,6 +38,8 @@ import ghidra.app.decompiler.DecompileResults;
 import ghidra.app.script.GhidraScript;
 import ghidra.program.model.address.Address;
 import ghidra.program.model.address.AddressIterator;
+import ghidra.program.model.address.AddressSet;
+import ghidra.program.model.address.AddressSetView;
 import ghidra.program.model.data.DataType;
 import ghidra.program.model.data.DataTypeManager;
 import ghidra.program.model.listing.Bookmark;
@@ -45,6 +47,7 @@ import ghidra.program.model.listing.BookmarkManager;
 import ghidra.program.model.listing.CodeUnitIterator;
 import ghidra.program.model.listing.CommentType;
 import ghidra.program.model.listing.Data;
+import ghidra.program.model.listing.DataIterator;
 import ghidra.program.model.listing.Function;
 import ghidra.program.model.listing.FunctionIterator;
 import ghidra.program.model.listing.Instruction;
@@ -68,6 +71,8 @@ import ghidra.program.util.DefinedStringIterator;
 public class STDecompExport extends GhidraScript {
     private static final int DECOMPILE_TIMEOUT_SECONDS = 120;
     private static final int MAX_FILENAME_COMPONENT = 96;
+    private static final int COVERAGE_PADDING_RUN = 16;
+    private static final int COVERAGE_MAX_RANGE = 0x10000;
     private static final java.util.regex.Pattern SIMPLE_MEMORY = java.util.regex.Pattern.compile(
         "^\\[([A-Z][A-Z0-9]{1,3})(?:([+-])([+-]?)(0X[0-9A-F]+|[0-9]+))?\\]$");
     private static final Pattern INT3_ASSIGNMENT = Pattern.compile(
@@ -115,6 +120,9 @@ public class STDecompExport extends GhidraScript {
         "(?:\\(int\\)\\s*)?\\1->data\\b");
     private static final Pattern RESIDUAL_STRING_SYMBOL = Pattern.compile(
         "\\bs_[A-Za-z0-9_$]*_[0-9A-Fa-f]{8}\\b");
+    private static final Pattern STRING_BASED_AGGREGATE = Pattern.compile(
+        "(?:\\bs_[A-Za-z0-9_$]*_[0-9A-Fa-f]{8}\\b\\s*[+-]|" +
+        "[+-]\\s*\\bs_[A-Za-z0-9_$]*_[0-9A-Fa-f]{8}\\b)");
     private static final Pattern RESIDUAL_CASTED_FIELD = Pattern.compile(
         "\\*\\s*\\(\\s*(?:undefined(?:[1248])?|u?int|u?long|u?short|char|byte|" +
         "float|double|void)[^()\\r\\n]{0,48}?\\*\\s*\\)\\s*&?[^;\\r\\n]*?" +
@@ -148,6 +156,13 @@ public class STDecompExport extends GhidraScript {
     private int bodyFunctionCount;
     private int pseudocodeNormalizationCount;
     private int fingerprintCfgFallbackCount;
+    private long executableByteCount;
+    private long coveredExecutableByteCount;
+    private long unclaimedExecutableByteCount;
+    private long unclaimedPaddingByteCount;
+    private long unclaimedMeaningfulByteCount;
+    private int unclaimedRangeCount;
+    private int exportedUnclaimedRangeCount;
     private final List<String> fingerprintCfgFallbackFunctions = new ArrayList<>();
     private final List<String> pseudocodeIdiomRows = new ArrayList<>();
     private final Set<String> pseudocodeIdiomFunctions = new HashSet<>();
@@ -201,6 +216,7 @@ public class STDecompExport extends GhidraScript {
             exportDataTypes();
             exportBookmarks();
             exportFunctions();
+            exportCoverage();
             exportManifest();
             println("STDecompExport complete: " + programRoot);
         }
@@ -391,6 +407,7 @@ public class STDecompExport extends GhidraScript {
         List<String> libraryRows = new ArrayList<>();
         List<String> thunkRows = new ArrayList<>();
         List<String> graphRows = new ArrayList<>();
+        List<String> callRelationRows = new ArrayList<>();
         programFunctionCount = currentProgram.getFunctionManager().getFunctionCount();
         exportedFunctionCount = 0;
         FunctionIterator counter = currentProgram.getFunctionManager().getFunctions(true);
@@ -448,6 +465,7 @@ public class STDecompExport extends GhidraScript {
             List<String> globalsUsed = new ArrayList<>();
             collectReferencedData(function, stringsUsed, globalsUsed);
             List<String> comments = collectComments(function);
+            callRelationRows.addAll(functionCallRelations(function));
             String fingerprint = functionFingerprint(function, tags, callers, callees,
                 stringsUsed, globalsUsed, comments, calledFunctions);
             Path fingerprintPath = dir.resolve("fingerprint.sha256");
@@ -548,6 +566,12 @@ public class STDecompExport extends GhidraScript {
         writeJsonArray(programRoot.resolve("library_functions.json"), libraryRows);
         writeJsonArray(programRoot.resolve("thunk_functions.json"), thunkRows);
         writeJsonArray(programRoot.resolve("callgraph.json"), graphRows);
+        atomicWrite(programRoot.resolve("call_relations.jsonl"), writer -> {
+            for (String row : callRelationRows) {
+                writer.write(row);
+                writer.newLine();
+            }
+        });
         writePseudocodeArtifacts();
         pruneStaleFunctionDirectories(liveFunctionIds);
         println("Functions reused without decompilation: " + reused + "/" + total);
@@ -1083,7 +1107,10 @@ public class STDecompExport extends GhidraScript {
             if (line.contains(PSEUDOCODE_COMMENT_MARKER) || stripped.startsWith("/*") ||
                     stripped.startsWith("*") || stripped.startsWith("*/") ||
                     stripped.startsWith("//") || stripped.startsWith("#")) continue;
-            addQualityMatches(evidence, "unexpanded_string_symbol",
+            if (STRING_BASED_AGGREGATE.matcher(line).find())
+                addQualityMatches(evidence, "string_based_aggregate_address",
+                    RESIDUAL_STRING_SYMBOL, line, index + 1);
+            else addQualityMatches(evidence, "unexpanded_string_symbol",
                 RESIDUAL_STRING_SYMBOL, line, index + 1);
             addQualityMatches(evidence, "casted_generic_field",
                 RESIDUAL_CASTED_FIELD, line, index + 1);
@@ -1162,7 +1189,8 @@ public class STDecompExport extends GhidraScript {
                  "unresolved_register_input", "return_width_artifact" -> "high";
             case "raw_pointer_offset", "packed_or_unaligned_piece",
                  "generic_global_aggregate", "undefined_type",
-                 "flattened_global_record_array", "dynamic_array_indexing" -> "medium";
+                 "flattened_global_record_array", "dynamic_array_indexing",
+                 "string_based_aggregate_address" -> "medium";
             default -> "low";
         };
     }
@@ -1171,6 +1199,8 @@ public class STDecompExport extends GhidraScript {
         return switch (kind) {
             case "unexpanded_string_symbol" ->
                 "define the immutable NUL-terminated data and let the exporter inline it; writable buffers stay symbolic";
+            case "string_based_aggregate_address" ->
+                "recover the adjacent record table and its index bias; the decompiler folded the table base onto a neighboring string symbol";
             case "casted_generic_field" ->
                 "repair receiver/pointer-family ownership, then make the field width and signedness match the machine access";
             case "generic_global_aggregate" ->
@@ -2035,6 +2065,33 @@ public class STDecompExport extends GhidraScript {
         int functions;
         int occurrences;
     }
+    private static class BlockCoverage {
+        final String name;
+        final Address start, end;
+        long totalBytes, coveredBytes;
+        int rangeCount;
+        BlockCoverage(MemoryBlock block) {
+            name = block.getName(); start = block.getStart(); end = block.getEnd();
+        }
+    }
+    private static class CoverageRange {
+        final String block, baseKind;
+        final Address start, end;
+        final long length;
+        final byte[] bytes;
+        final List<String> pointerTargets = new ArrayList<>();
+        final List<String> rawInboundPointerSources = new ArrayList<>();
+        final List<String> rawPointerLinkedControlFlowSources = new ArrayList<>();
+        final Set<Long> rawInboundOffsets = new TreeSet<>();
+        String classification;
+        int printableBytes, nonPaddingBytes, executablePointers;
+        int validRelativeCalls, returnOpcodes, importThunkEntries, rawInboundPointers;
+        int rawPointerLinkedControlFlowEntries;
+        CoverageRange(String block, Address start, Address end, String baseKind, byte[] bytes) {
+            this.block = block; this.start = start; this.end = end;
+            this.baseKind = baseKind; this.bytes = bytes; length = bytes.length;
+        }
+    }
     private record NormalizedCode(String code, int replacements) { }
     private record StatementWindow(String text, int endIndex) { }
 
@@ -2066,6 +2123,488 @@ public class STDecompExport extends GhidraScript {
                 writer.newLine();
             }
         });
+    }
+
+    private List<String> functionCallRelations(Function caller) {
+        List<String> result = new ArrayList<>();
+        InstructionIterator instructions = listing.getInstructions(caller.getBody(), true);
+        while (instructions.hasNext()) {
+            Instruction instruction = instructions.next();
+            if (!"CALL".equalsIgnoreCase(instruction.getMnemonicString())) continue;
+            Function direct = null;
+            for (Address flow : instruction.getFlows()) {
+                direct = currentProgram.getFunctionManager().getFunctionAt(flow);
+                if (direct != null) break;
+            }
+            if (direct == null) continue;
+            List<String> chain = new ArrayList<>();
+            Set<Address> seen = new TreeSet<>();
+            Function resolved = direct;
+            while (resolved != null && seen.add(resolved.getEntryPoint())) {
+                chain.add(functionId(resolved));
+                if (!resolved.isThunk()) break;
+                Function target = resolved.getThunkedFunction(false);
+                if (target == null || target.equals(resolved)) break;
+                resolved = target;
+            }
+            result.add(jsonObject(
+                field("caller", functionId(caller)), field("call_site", addr(instruction.getAddress())),
+                field("direct", functionId(direct)), rawField("direct_is_thunk",
+                    Boolean.toString(direct.isThunk())),
+                rawField("thunk_chain", jsonStringArray(chain)),
+                field("resolved_target", resolved == null ? "" : functionId(resolved)),
+                field("resolved_signature", resolved == null ? "" :
+                    resolved.getSignature().getPrototypeString(true))));
+        }
+        return result;
+    }
+
+    private void exportCoverage() throws IOException {
+        Memory memory = currentProgram.getMemory();
+        AddressSet claimed = new AddressSet();
+        FunctionIterator functions = currentProgram.getFunctionManager().getFunctions(true);
+        while (functions.hasNext()) {
+            Function function = functions.next();
+            if (!function.isExternal()) claimed.add(function.getBody());
+        }
+
+        AddressSet orphanInstructions = new AddressSet();
+        InstructionIterator instructions = listing.getInstructions(true);
+        while (instructions.hasNext()) {
+            Instruction instruction = instructions.next();
+            MemoryBlock block = memory.getBlock(instruction.getAddress());
+            if (block != null && block.isExecute() && !claimed.contains(instruction.getAddress()))
+                orphanInstructions.addRange(instruction.getMinAddress(), instruction.getMaxAddress());
+        }
+        AddressSet orphanData = new AddressSet();
+        DataIterator dataItems = listing.getDefinedData(true);
+        while (dataItems.hasNext()) {
+            Data data = dataItems.next();
+            MemoryBlock block = memory.getBlock(data.getAddress());
+            if (block != null && block.isExecute() && !claimed.contains(data.getAddress()))
+                orphanData.addRange(data.getMinAddress(), data.getMaxAddress());
+        }
+
+        List<CoverageRange> ranges = new ArrayList<>();
+        List<BlockCoverage> blocks = new ArrayList<>();
+        for (MemoryBlock block : memory.getBlocks()) {
+            checkCancelled();
+            if (!block.isExecute() || !block.isInitialized() || block.getSize() <= 0) continue;
+            if (block.getSize() > Integer.MAX_VALUE)
+                throw new IOException("Executable block too large for coverage audit: " + block.getName());
+            byte[] content = new byte[(int)block.getSize()];
+            try {
+                int read = memory.getBytes(block.getStart(), content);
+                if (read != content.length)
+                    throw new IOException("Short read in executable block " + block.getName());
+            }
+            catch (ghidra.program.model.mem.MemoryAccessException exception) {
+                throw new IOException("Cannot read executable block " + block.getName(), exception);
+            }
+
+            BlockCoverage blockCoverage = new BlockCoverage(block);
+            long index = 0;
+            while (index < content.length) {
+                checkCancelled();
+                Address address = block.getStart().add(index);
+                if (claimed.contains(address)) {
+                    blockCoverage.coveredBytes++;
+                    index++;
+                    continue;
+                }
+                String baseKind = orphanInstructions.contains(address) ? "orphan_instruction" :
+                    orphanData.contains(address) ? "defined_data" : "raw";
+                long end = index + 1;
+                while (end < content.length && end - index < COVERAGE_MAX_RANGE) {
+                    Address next = block.getStart().add(end);
+                    if (claimed.contains(next)) break;
+                    String nextKind = orphanInstructions.contains(next) ? "orphan_instruction" :
+                        orphanData.contains(next) ? "defined_data" : "raw";
+                    if (!baseKind.equals(nextKind)) break;
+                    end++;
+                }
+                if ("raw".equals(baseKind))
+                    splitRawCoverage(block, content, (int)index, (int)end, ranges, blockCoverage);
+                else addCoverageRange(block, content, (int)index, (int)end,
+                    baseKind, ranges, blockCoverage);
+                index = end;
+            }
+            blockCoverage.totalBytes = content.length;
+            blocks.add(blockCoverage);
+        }
+
+        collectRawNonExecutablePointers(ranges);
+
+        executableByteCount = blocks.stream().mapToLong(row -> row.totalBytes).sum();
+        coveredExecutableByteCount = blocks.stream().mapToLong(row -> row.coveredBytes).sum();
+        unclaimedExecutableByteCount = ranges.stream().mapToLong(row -> row.length).sum();
+        unclaimedPaddingByteCount = ranges.stream()
+            .filter(row -> row.classification.equals("padding"))
+            .mapToLong(row -> row.length).sum();
+        unclaimedMeaningfulByteCount = unclaimedExecutableByteCount - unclaimedPaddingByteCount;
+        unclaimedRangeCount = ranges.size();
+
+        Path root = programRoot.resolve("unclaimed");
+        Files.createDirectories(root);
+        Set<String> liveDirectories = new TreeSet<>();
+        for (CoverageRange range : ranges) {
+            boolean export = !range.classification.equals("padding") &&
+                (range.length >= 4 || range.baseKind.equals("orphan_instruction") ||
+                    range.baseKind.equals("defined_data"));
+            if (!export) continue;
+            String directoryName = addr(range.start) + "_" + addr(range.end);
+            liveDirectories.add(directoryName);
+            exportCoverageRange(range, root.resolve(directoryName));
+        }
+        exportedUnclaimedRangeCount = liveDirectories.size();
+        pruneStaleCoverageDirectories(root, liveDirectories);
+
+        atomicWrite(programRoot.resolve("unclaimed_ranges.jsonl"), writer -> {
+            for (CoverageRange range : ranges) {
+                writer.write(coverageRangeJson(range));
+                writer.newLine();
+            }
+        });
+        Map<String, Long> classificationBytes = new TreeMap<>();
+        Map<String, Integer> classificationRanges = new TreeMap<>();
+        for (CoverageRange range : ranges) {
+            classificationBytes.merge(range.classification, range.length, Long::sum);
+            classificationRanges.merge(range.classification, 1, Integer::sum);
+        }
+        List<String> classificationRows = new ArrayList<>();
+        for (String classification : classificationBytes.keySet())
+            classificationRows.add(jsonObject(field("classification", classification),
+                rawField("ranges", Integer.toString(classificationRanges.get(classification))),
+                rawField("bytes", Long.toString(classificationBytes.get(classification)))));
+        List<String> blockRows = new ArrayList<>();
+        for (BlockCoverage block : blocks) blockRows.add(jsonObject(
+            field("name", block.name), field("start", addr(block.start)),
+            field("end", addr(block.end)), rawField("size", Long.toString(block.totalBytes)),
+            rawField("covered_bytes", Long.toString(block.coveredBytes)),
+            rawField("unclaimed_bytes", Long.toString(block.totalBytes - block.coveredBytes)),
+            rawField("unclaimed_ranges", Integer.toString(block.rangeCount))));
+        writeJson(programRoot.resolve("coverage_summary.json"), jsonObject(
+            rawField("executable_bytes", Long.toString(executableByteCount)),
+            rawField("function_covered_bytes", Long.toString(coveredExecutableByteCount)),
+            rawField("unclaimed_bytes", Long.toString(unclaimedExecutableByteCount)),
+            rawField("unclaimed_padding_bytes", Long.toString(unclaimedPaddingByteCount)),
+            rawField("unclaimed_meaningful_bytes", Long.toString(unclaimedMeaningfulByteCount)),
+            rawField("unclaimed_ranges", Integer.toString(unclaimedRangeCount)),
+            rawField("exported_meaningful_ranges", Integer.toString(exportedUnclaimedRangeCount)),
+            rawField("raw_nonexec_pointer_references", Long.toString(ranges.stream()
+                .mapToLong(row -> row.rawInboundPointers).sum())),
+            rawField("ranges_with_raw_nonexec_pointers", Long.toString(ranges.stream()
+                .filter(row -> row.rawInboundPointers > 0).count())),
+            rawField("raw_pointer_linked_control_flow_entries", Long.toString(ranges.stream()
+                .mapToLong(row -> row.rawPointerLinkedControlFlowEntries).sum())),
+            rawField("ranges_with_raw_pointer_linked_control_flow", Long.toString(ranges.stream()
+                .filter(row -> row.rawPointerLinkedControlFlowEntries > 0).count())),
+            rawField("classifications", "[" + String.join(",", classificationRows) + "]"),
+            rawField("blocks", "[" + String.join(",", blockRows) + "]")));
+    }
+
+    private void splitRawCoverage(MemoryBlock block, byte[] content, int start, int end,
+            List<CoverageRange> ranges, BlockCoverage coverage) {
+        int cursor = start;
+        int index = start;
+        while (index < end) {
+            if (!isPaddingByte(content[index])) { index++; continue; }
+            int runEnd = index + 1;
+            while (runEnd < end && isPaddingByte(content[runEnd])) runEnd++;
+            if (runEnd - index >= COVERAGE_PADDING_RUN) {
+                if (cursor < index)
+                    addCoverageRange(block, content, cursor, index, "raw", ranges, coverage);
+                addCoverageRange(block, content, index, runEnd, "padding", ranges, coverage);
+                cursor = runEnd;
+            }
+            index = runEnd;
+        }
+        if (cursor < end) addCoverageRange(block, content, cursor, end, "raw", ranges, coverage);
+    }
+
+    private void addCoverageRange(MemoryBlock block, byte[] content, int start, int end,
+            String baseKind, List<CoverageRange> ranges, BlockCoverage coverage) {
+        if (start >= end) return;
+        byte[] values = new byte[end - start];
+        System.arraycopy(content, start, values, 0, values.length);
+        Address address = block.getStart().add(start);
+        CoverageRange range = new CoverageRange(block.getName(), address,
+            block.getStart().add(end - 1), baseKind, values);
+        classifyCoverageRange(range);
+        ranges.add(range);
+        coverage.rangeCount++;
+    }
+
+    private void classifyCoverageRange(CoverageRange range) {
+        int printable = 0, nonPadding = 0;
+        for (byte value : range.bytes) {
+            int unsigned = value & 0xff;
+            if (unsigned >= 0x20 && unsigned <= 0x7e) printable++;
+            if (!isPaddingByte(value)) nonPadding++;
+        }
+        range.printableBytes = printable;
+        range.nonPaddingBytes = nonPadding;
+        int firstAligned = (int)((4 - (range.start.getOffset() & 3)) & 3);
+        for (int index = firstAligned; index + 4 <= range.bytes.length; index += 4) {
+            long value = (range.bytes[index] & 0xffL) |
+                ((range.bytes[index + 1] & 0xffL) << 8) |
+                ((range.bytes[index + 2] & 0xffL) << 16) |
+                ((range.bytes[index + 3] & 0xffL) << 24);
+            Address target;
+            try { target = toAddr(value); }
+            catch (Exception exception) { continue; }
+            MemoryBlock targetBlock = currentProgram.getMemory().getBlock(target);
+            if (targetBlock == null || !targetBlock.isExecute()) continue;
+            range.executablePointers++;
+            if (range.pointerTargets.size() < 64)
+                range.pointerTargets.add(addr(range.start.add(index)) + " -> " + addr(target));
+        }
+        for (int index = 0; index < range.bytes.length; index++) {
+            int opcode = range.bytes[index] & 0xff;
+            if (opcode == 0xc3 || opcode == 0xcb ||
+                    (opcode == 0xc2 || opcode == 0xca) && index + 2 < range.bytes.length)
+                range.returnOpcodes++;
+            if (opcode == 0xe8 && index + 4 < range.bytes.length) {
+                int displacement = littleEndianInt(range.bytes, index + 1);
+                Address target;
+                try { target = range.start.add(index + 5L + displacement); }
+                catch (Exception exception) { continue; }
+                MemoryBlock targetBlock = currentProgram.getMemory().getBlock(target);
+                if (targetBlock != null && targetBlock.isExecute()) range.validRelativeCalls++;
+            }
+            if (opcode == 0xff && index + 5 < range.bytes.length &&
+                    (range.bytes[index + 1] & 0xff) == 0x25) {
+                long pointerAddress = Integer.toUnsignedLong(littleEndianInt(range.bytes, index + 2));
+                try {
+                    if (currentProgram.getMemory().getBlock(toAddr(pointerAddress)) != null)
+                        range.importThunkEntries++;
+                }
+                catch (Exception ignored) { }
+            }
+        }
+        boolean commonPrologue = range.bytes.length >= 2 && (
+            range.bytes[0] == 0x55 && (range.bytes[1] & 0xff) == 0x8b ||
+            Set.of(0x53, 0x56, 0x57).contains(range.bytes[0] & 0xff) &&
+                Set.of(0x53, 0x56, 0x57, 0x8b, 0x68).contains(range.bytes[1] & 0xff));
+        boolean denseNonPadding = range.nonPaddingBytes * 4L >= range.length * 3L;
+        boolean probableCode = range.length >= 8 && range.returnOpcodes > 0 &&
+            (commonPrologue || denseNonPadding &&
+                (range.validRelativeCalls > 0 || range.returnOpcodes >= 3));
+        boolean importThunkTable = range.importThunkEntries >= 3 &&
+            range.importThunkEntries * 24L >= range.length * 3L;
+        if (range.baseKind.equals("orphan_instruction")) range.classification = "orphan_code";
+        else if (range.baseKind.equals("defined_data")) range.classification = "defined_data";
+        else if (range.baseKind.equals("padding")) range.classification = "padding";
+        else if (range.executablePointers >= 3 &&
+                range.executablePointers * 8L >= range.length)
+            range.classification = "address_table";
+        else if (importThunkTable) range.classification = "import_thunk_table";
+        else if (probableCode) range.classification = "probable_code";
+        else if (range.length >= 4 && printable * 4L >= range.length * 3L)
+            range.classification = "text_or_string";
+        else range.classification = "unknown_nonpadding";
+    }
+
+    private void collectRawNonExecutablePointers(List<CoverageRange> ranges) throws IOException {
+        TreeMap<Long, CoverageRange> byStart = new TreeMap<>();
+        for (CoverageRange range : ranges) byStart.put(range.start.getOffset(), range);
+        Memory memory = currentProgram.getMemory();
+        for (MemoryBlock block : memory.getBlocks()) {
+            checkCancelled();
+            if (block.isExecute() || !block.isInitialized() || block.getSize() < 4) continue;
+            if (block.getSize() > Integer.MAX_VALUE)
+                throw new IOException("Non-executable block too large for pointer audit: " +
+                    block.getName());
+            byte[] content = new byte[(int)block.getSize()];
+            try {
+                int read = memory.getBytes(block.getStart(), content);
+                if (read != content.length)
+                    throw new IOException("Short read in non-executable block " + block.getName());
+            }
+            catch (ghidra.program.model.mem.MemoryAccessException exception) {
+                throw new IOException("Cannot read non-executable block " + block.getName(), exception);
+            }
+            int firstAligned = (int)((4 - (block.getStart().getOffset() & 3)) & 3);
+            for (int index = firstAligned; index + 4 <= content.length; index += 4) {
+                long value = Integer.toUnsignedLong(littleEndianInt(content, index));
+                Map.Entry<Long, CoverageRange> entry = byStart.floorEntry(value);
+                if (entry == null) continue;
+                CoverageRange target = entry.getValue();
+                if (value > target.end.getOffset()) continue;
+                target.rawInboundPointers++;
+                target.rawInboundOffsets.add(value - target.start.getOffset());
+                if (target.rawInboundPointerSources.size() < 256) {
+                    Address source = block.getStart().add(index);
+                    target.rawInboundPointerSources.add(addr(source) + " -> " +
+                        String.format("%08X", value) + " " + block.getName());
+                }
+            }
+        }
+        linkRawPointerControlFlow(ranges, byStart);
+        for (CoverageRange range : ranges) {
+            if (!"probable_code".equals(range.classification) ||
+                    range.rawInboundPointers == 0 &&
+                        range.rawPointerLinkedControlFlowEntries == 0)
+                continue;
+            if (looksLikeMsvcExceptionFilterCluster(range))
+                range.classification = "seh_funclet_cluster";
+            else if (range.rawPointerLinkedControlFlowEntries > 0)
+                range.classification = "table_callback_target";
+            else range.classification = "data_referenced_code";
+        }
+    }
+
+    private void linkRawPointerControlFlow(List<CoverageRange> ranges,
+            TreeMap<Long, CoverageRange> byStart) {
+        for (CoverageRange source : ranges) {
+            for (long relativeOffset : source.rawInboundOffsets) {
+                if (relativeOffset < 0 || relativeOffset + 5 > source.bytes.length) continue;
+                int index = (int)relativeOffset;
+                if ((source.bytes[index] & 0xff) != 0xe9) continue;
+                int displacement = littleEndianInt(source.bytes, index + 1);
+                long sourceAddress = source.start.getOffset() + relativeOffset;
+                long targetAddress = sourceAddress + 5L + displacement;
+                Map.Entry<Long, CoverageRange> entry = byStart.floorEntry(targetAddress);
+                if (entry == null) continue;
+                CoverageRange target = entry.getValue();
+                if (targetAddress < target.start.getOffset() ||
+                        targetAddress > target.end.getOffset()) continue;
+                target.rawPointerLinkedControlFlowEntries++;
+                if (target.rawPointerLinkedControlFlowSources.size() < 256)
+                    target.rawPointerLinkedControlFlowSources.add(String.format(
+                        "%08X JMP -> %08X; entry address is stored in non-executable data",
+                        sourceAddress, targetAddress));
+            }
+        }
+    }
+
+    private boolean looksLikeMsvcExceptionFilterCluster(CoverageRange range) {
+        return range.bytes.length >= 6 && range.rawInboundPointers >= 2 &&
+            range.rawInboundOffsets.contains(0L) && range.rawInboundOffsets.contains(6L) &&
+            (range.bytes[0] & 0xff) == 0xb8 && (range.bytes[1] & 0xff) == 1 &&
+            range.bytes[2] == 0 && range.bytes[3] == 0 && range.bytes[4] == 0 &&
+            (range.bytes[5] & 0xff) == 0xc3;
+    }
+
+    private static int littleEndianInt(byte[] bytes, int index) {
+        return (bytes[index] & 0xff) | ((bytes[index + 1] & 0xff) << 8) |
+            ((bytes[index + 2] & 0xff) << 16) | (bytes[index + 3] << 24);
+    }
+
+    private void exportCoverageRange(CoverageRange range, Path directory) throws IOException {
+        Files.createDirectories(directory);
+        Set<String> inbound = new TreeSet<>();
+        for (Address address = range.start; address.compareTo(range.end) <= 0;
+                address = address.next()) {
+            ReferenceIterator iterator = references.getReferencesTo(address);
+            while (iterator.hasNext() && inbound.size() < 256) {
+                Reference reference = iterator.next();
+                inbound.add(addr(reference.getFromAddress()) + " -> " + addr(address) +
+                    " " + reference.getReferenceType());
+            }
+            if (address.equals(range.end)) break;
+        }
+        writeJson(directory.resolve("meta.json"), jsonObject(
+            field("start", addr(range.start)), field("end", addr(range.end)),
+            rawField("length", Long.toString(range.length)), field("block", range.block),
+            field("classification", range.classification), field("base_kind", range.baseKind),
+            rawField("printable_bytes", Integer.toString(range.printableBytes)),
+            rawField("non_padding_bytes", Integer.toString(range.nonPaddingBytes)),
+            rawField("executable_pointer_count", Integer.toString(range.executablePointers)),
+            rawField("valid_relative_call_count", Integer.toString(range.validRelativeCalls)),
+            rawField("return_opcode_count", Integer.toString(range.returnOpcodes)),
+            rawField("import_thunk_entry_count", Integer.toString(range.importThunkEntries)),
+            rawField("pointer_targets", jsonStringArray(range.pointerTargets)),
+            rawField("raw_inbound_pointer_count", Integer.toString(range.rawInboundPointers)),
+            rawField("raw_inbound_pointer_sources",
+                jsonStringArray(range.rawInboundPointerSources)),
+            rawField("raw_pointer_linked_control_flow_entries",
+                Integer.toString(range.rawPointerLinkedControlFlowEntries)),
+            rawField("raw_pointer_linked_control_flow_sources",
+                jsonStringArray(range.rawPointerLinkedControlFlowSources)),
+            rawField("inbound_references", jsonStringArray(inbound))));
+        atomicWrite(directory.resolve("bytes.txt"), writer -> {
+            for (int offset = 0; offset < range.bytes.length; offset += 16) {
+                int count = Math.min(16, range.bytes.length - offset);
+                StringBuilder hex = new StringBuilder(), ascii = new StringBuilder();
+                for (int index = 0; index < 16; index++) {
+                    if (index < count) {
+                        int value = range.bytes[offset + index] & 0xff;
+                        hex.append(String.format("%02X ", value));
+                        ascii.append(value >= 0x20 && value <= 0x7e ? (char)value : '.');
+                    }
+                    else hex.append("   ");
+                }
+                writer.write(String.format("%s  %s |%s|", addr(range.start.add(offset)),
+                    hex, ascii));
+                writer.newLine();
+            }
+        });
+        writeCoverageListing(range, directory.resolve("listing.asm"));
+    }
+
+    private void writeCoverageListing(CoverageRange range, Path path) throws IOException {
+        AddressSetView addresses = new AddressSet(range.start, range.end);
+        atomicWrite(path, writer -> {
+            boolean wrote = false;
+            InstructionIterator instructions = listing.getInstructions(addresses, true);
+            while (instructions.hasNext()) {
+                Instruction instruction = instructions.next();
+                writer.write(String.format("%s  %-24s  %s", addr(instruction.getAddress()),
+                    instructionBytes(instruction), instruction));
+                writer.newLine();
+                wrote = true;
+            }
+            DataIterator data = listing.getDefinedData(addresses, true);
+            while (data.hasNext()) {
+                Data item = data.next();
+                writer.write(addr(item.getAddress()) + "  " + item.getDataType().getDisplayName() +
+                    "  " + oneLine(item.getDefaultValueRepresentation()));
+                writer.newLine();
+                wrote = true;
+            }
+            if (!wrote) writer.write("; no instructions or defined data in Ghidra; see bytes.txt\n");
+        });
+    }
+
+    private void pruneStaleCoverageDirectories(Path root, Set<String> live) throws IOException {
+        if (!Files.isDirectory(root)) return;
+        try (Stream<Path> entries = Files.list(root)) {
+            for (Path entry : entries.toList()) {
+                if (!Files.isDirectory(entry) || live.contains(entry.getFileName().toString())) continue;
+                try (Stream<Path> tree = Files.walk(entry)) {
+                    for (Path path : tree.sorted(Comparator.reverseOrder()).toList())
+                        Files.deleteIfExists(path);
+                }
+            }
+        }
+    }
+
+    private String coverageRangeJson(CoverageRange range) {
+        return jsonObject(field("start", addr(range.start)), field("end", addr(range.end)),
+            rawField("length", Long.toString(range.length)), field("block", range.block),
+            field("classification", range.classification), field("base_kind", range.baseKind),
+            rawField("printable_bytes", Integer.toString(range.printableBytes)),
+            rawField("non_padding_bytes", Integer.toString(range.nonPaddingBytes)),
+            rawField("executable_pointer_count", Integer.toString(range.executablePointers)),
+            rawField("valid_relative_call_count", Integer.toString(range.validRelativeCalls)),
+            rawField("return_opcode_count", Integer.toString(range.returnOpcodes)),
+            rawField("import_thunk_entry_count", Integer.toString(range.importThunkEntries)),
+            rawField("raw_inbound_pointer_count", Integer.toString(range.rawInboundPointers)),
+            rawField("raw_inbound_pointer_sources",
+                jsonStringArray(range.rawInboundPointerSources)),
+            rawField("raw_pointer_linked_control_flow_entries",
+                Integer.toString(range.rawPointerLinkedControlFlowEntries)),
+            rawField("raw_pointer_linked_control_flow_sources",
+                jsonStringArray(range.rawPointerLinkedControlFlowSources)),
+            rawField("exported", Boolean.toString(!range.classification.equals("padding") &&
+                (range.length >= 4 || range.baseKind.equals("orphan_instruction") ||
+                    range.baseKind.equals("defined_data")))));
+    }
+
+    private static boolean isPaddingByte(byte value) {
+        int unsigned = value & 0xff;
+        return unsigned == 0 || unsigned == 0x90 || unsigned == 0xcc;
     }
 
     private void collectReferencedData(Function function, List<String> stringsUsed,
@@ -2251,6 +2790,18 @@ public class STDecompExport extends GhidraScript {
                 Integer.toString(qualityIssueFunctions.size())),
             rawField("decomp_quality_record_count",
                 Integer.toString(qualityIssueRows.size())),
+            rawField("executable_byte_count", Long.toString(executableByteCount)),
+            rawField("function_covered_executable_byte_count",
+                Long.toString(coveredExecutableByteCount)),
+            rawField("unclaimed_executable_byte_count",
+                Long.toString(unclaimedExecutableByteCount)),
+            rawField("unclaimed_padding_byte_count",
+                Long.toString(unclaimedPaddingByteCount)),
+            rawField("unclaimed_meaningful_byte_count",
+                Long.toString(unclaimedMeaningfulByteCount)),
+            rawField("unclaimed_range_count", Integer.toString(unclaimedRangeCount)),
+            rawField("exported_unclaimed_range_count",
+                Integer.toString(exportedUnclaimedRangeCount)),
             field("primary_key", "program + function entry address")
         ));
     }

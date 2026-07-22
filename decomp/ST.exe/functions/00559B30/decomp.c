@@ -28,9 +28,10 @@ VisibleClassTy::SetZoneAst
   undefined *local_8;
 
   if ((((this->field_0114 != 0) && (-1 < param_5)) && (param_4 < 8)) &&
-     ((PTR_00802a38 == (STPlaySystemC *)0x0 || ((byte)(&DAT_008087e9)[param_4 * 0x51] < 8)))) {
+     ((g_playSystem_00802A38 == (STPlaySystemC *)0x0 || ((byte)(&DAT_008087e9)[param_4 * 0x51] < 8))
+     )) {
     local_14 = this;
-    if (*(int *)(&this->field_0x74 + param_4 * 4) == 0) {
+    if ((&this->field_0074)[param_4] == 0) {
       local_60.previous = g_currentExceptionFrame;
       g_currentExceptionFrame = &local_60;
       iVar4 = Library::MSVCRT::__setjmp3(local_60.jumpBuffer,0);
@@ -45,13 +46,11 @@ VisibleClassTy::SetZoneAst
         STDebugBreak(); /* noreturn in standalone pseudocode */
       }
       puVar5 = Library::DKW::LIB::FUN_006aac10(local_14->field_0024 * local_14->field_0020);
-      *(undefined4 **)(&this->field_0x74 + param_4 * 4) = puVar5;
+      (&this->field_0074)[param_4] = puVar5;
       g_currentExceptionFrame = local_60.previous;
     }
     if ((param_7 & 0x1000) != 0) {
-      SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00558C00::sub_0055BB00
-                ((AnonReceiver_00558C00 *)this,3,(short)param_1,(short)param_2,param_3,param_4,
-                 (char)param_5,param_6);
+      sub_0055BB00(this,3,(short)param_1,(short)param_2,param_3,param_4,(char)param_5,param_6);
     }
     if ((param_7 & 8) != 0) {
       if (param_5 < 0) {
@@ -77,7 +76,7 @@ VisibleClassTy::SetZoneAst
                 bVar3 = true;
               }
               if (bVar3) {
-                iVar8 = this->field_0020 * iVar4 + *(int *)(&this->field_0x74 + param_4 * 4);
+                iVar8 = this->field_0020 * iVar4 + (&this->field_0074)[param_4];
                 cVar1 = *(char *)(iVar8 + iVar9);
                 if (cVar1 != -1) {
                   *(char *)(iVar8 + iVar9) = cVar1 + '\x01';

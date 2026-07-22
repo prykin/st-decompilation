@@ -136,8 +136,8 @@ ProdPanelTy::CreateSlider
     local_23c = 0xc006;
     local_1f0 = 0x272f;
     local_214 = 0x272f;
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-    (*(code *)this_00->field_000C->vtable->field_0008)(4,&local_8,0,local_42c,0);
+    (*this_00->field_000C->vtable->CreateObject)
+              ((SystemClassTy *)this_00->field_000C,4,&local_8,(int *)0x0,local_42c,0);
     if ((this_00->field_005C == 0) || (uVar6 = 0x55, DAT_0080734c == '\0')) {
       uVar6 = 0x56;
     }

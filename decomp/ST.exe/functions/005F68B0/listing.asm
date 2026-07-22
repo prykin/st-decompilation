@@ -1,4 +1,4 @@
-STAllPlayersC::FUN_005f68b0:
+STColl3C::sub_005F68B0:
 005F68B0  55                        PUSH EBP
 005F68B1  8B EC                     MOV EBP,ESP
 005F68B3  83 EC 24                  SUB ESP,0x24

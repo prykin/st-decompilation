@@ -1,0 +1,10 @@
+0047F510  pointer  0047df49
+0047F514  pointer  0047df96
+0047F518  pointer  0047e0dd
+0047F51C  pointer  0047e2ed
+0047F520  pointer  0047e0c0
+0047F524  pointer  0047e319
+0047F528  pointer  0047e367
+0047F52C  pointer  0047e613
+0047F530  pointer  0047e2ed
+0047F534  pointer  0047e4be

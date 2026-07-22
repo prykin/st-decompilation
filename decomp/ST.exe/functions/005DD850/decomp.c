@@ -11,7 +11,7 @@ void __thiscall StartSystemTy::AddToChat(StartSystemTy *this,int param_1)
   code *pcVar1;
   StartSystemTy *this_00;
   DArrayTy *pDVar2;
-  AnonShape_006B5570_4D68B99C *pAVar3;
+  DArrayTy *pDVar3;
   char *text;
   int iVar4;
   int iVar5;
@@ -51,30 +51,30 @@ void __thiscall StartSystemTy::AddToChat(StartSystemTy *this,int param_1)
       Library::DKW::TBL::FUN_006b5aa0(&pDVar2->flags,(char *)&DAT_0080f33a);
       wsprintfA((LPSTR)&DAT_0080f33a,"&2%s",param_1 + 0x40);
       Library::DKW::TBL::FUN_006b5aa0(&pDVar2->flags,(char *)&DAT_0080f33a);
-      pAVar3 = (AnonShape_006B5570_4D68B99C *)
+      pDVar3 = (DArrayTy *)
                ccFntTy::FormSarr(this_00->field_0034,&pDVar2->flags," ,.;:!?/\\()[]{}",
                                  *(int *)(this_00->field_067E + 2),0,0xffffffff,1);
-      if (pAVar3 != (AnonShape_006B5570_4D68B99C *)0x0) {
-        if (pAVar3->field_0008 != 0) {
-          ccFntTy::SepColorStrInSarr(this_00->field_0034,(uint *)pAVar3,(uint *)pAVar3);
+      if (pDVar3 != (DArrayTy *)0x0) {
+        if (pDVar3->elementSize != 0) {
+          ccFntTy::SepColorStrInSarr(this_00->field_0034,(uint *)pDVar3,(uint *)pDVar3);
         }
         iVar5 = 0;
-        if (0 < (int)pAVar3->field_0008) {
-          if ((int)pAVar3->field_0008 < 1) {
+        if (0 < (int)pDVar3->elementSize) {
+          if ((int)pDVar3->elementSize < 1) {
             text = (char *)0x0;
             goto LAB_005dd982;
           }
           do {
-            text = *(char **)(pAVar3->field_0014 + iVar5 * 4);
+            text = *(char **)(pDVar3->growCapacity + iVar5 * 4);
 LAB_005dd982:
             Library::DKW::TBL::FUN_006b5aa0(DAT_0080c4fa,text);
             iVar5 = iVar5 + 1;
-          } while (iVar5 < (int)pAVar3->field_0008);
+          } while (iVar5 < (int)pDVar3->elementSize);
         }
-        FUN_006b5570(pAVar3);
+        FUN_006b5570(pDVar3);
         pDVar2 = local_10;
       }
-      FUN_006b5570((AnonShape_006B5570_4D68B99C *)pDVar2);
+      FUN_006b5570(pDVar2);
       local_24 = 0x28;
       local_20 = 1;
       uStack_1e = (ushort)DAT_0080c4fa[2];

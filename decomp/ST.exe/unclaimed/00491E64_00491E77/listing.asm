@@ -1,0 +1,5 @@
+00491E64  pointer  00491ad5
+00491E68  pointer  00491af2
+00491E6C  pointer  00491b0f
+00491E70  pointer  00491b2c
+00491E74  pointer  00491b38

@@ -1,0 +1,9 @@
+0059C670  pointer  0059c56f
+0059C674  pointer  0059c5b2
+0059C678  pointer  0059c58a
+0059C67C  pointer  0059c59e
+0059C680  pointer  0059c5c6
+0059C684  pointer  0059c5da
+0059C688  pointer  0059c5ee
+0059C68C  pointer  0059c616
+0059C690  pointer  0059c602

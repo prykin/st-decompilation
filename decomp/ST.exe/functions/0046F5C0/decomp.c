@@ -108,9 +108,8 @@ LAB_00470e23:
     sub_00481520(this,(int)sVar18,(int)sVar20,sVar13 + 1);
 cf_common_exit_00470E2B:
     sub_00460260(this,0);
-/* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
 cf_common_exit_00470E32:
-    iVar6 = (*(code *)this->vtable->field_00D8)();
+    iVar6 = (*this->vtable->vfunc_D8)();
     return (-(uint)(iVar6 != 0) & 0xfffffffd) + 2;
   }
   SVar2 = this->field_0580;
@@ -151,8 +150,7 @@ LAB_0046f98f:
 LAB_0046f888:
         sub_004602B0(this);
         this->field_00B7 = 0;
-        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-        iVar6 = (*(code *)this->vtable->field_00D8)();
+        iVar6 = (*this->vtable->vfunc_D8)();
         return -(uint)(iVar6 != 0);
       }
       /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
@@ -169,11 +167,10 @@ LAB_0046f888:
         if (iVar6 != -1) goto LAB_0046f794;
       }
       /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-      SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0048DFD0::thunk_FUN_0048dfd0
-                ((AnonReceiver_0048DFD0 *)this,this->field_0047,this->field_0049,this->field_004B,
-                 this->field_0554,this->field_0556,(int *)CONCAT22(uVar5,this->field_0558 + 1),1,
-                 (short *)&this->field_0x55e,(short *)&this->field_0x560,(short *)&this->field_0x562
-                );
+      sub_0048DFD0(this,this->field_0047,this->field_0049,this->field_004B,this->field_0554,
+                   this->field_0556,(int *)CONCAT22(uVar5,this->field_0558 + 1),1,
+                   (short *)&this->field_0x55e,(short *)&this->field_0x560,
+                   (short *)&this->field_0x562);
       iVar8 = (int)*(short *)&this->field_0x562;
       iVar24 = (int)*(short *)&this->field_0x560;
       iVar6 = (int)*(short *)&this->field_0x55e;
@@ -273,9 +270,8 @@ LAB_00470bfe:
       }
 LAB_0046fd37:
       sub_004602B0(this);
-/* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
 LAB_0046fd3e:
-      iVar6 = (*(code *)this->vtable->field_00D8)();
+      iVar6 = (*this->vtable->vfunc_D8)();
       return -(uint)(iVar6 != 0);
     }
     if (SVar2 == CASE_3) {
@@ -301,8 +297,7 @@ LAB_0046fd3e:
                ((this->field_0049 == this->field_056E && (this->field_004B == this->field_0570)))) {
               this->field_0580 = CASE_4;
               *(undefined4 *)&this->field_0x584 = 0;
-              /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-              iVar6 = (*(code *)this->vtable->field_00D8)();
+              iVar6 = (*this->vtable->vfunc_D8)();
               return (-(uint)(iVar6 != 0) & 0xfffffffd) + 2;
             }
             thunk_FUN_004e2000(pSVar15,this->field_0568,this->field_0018);
@@ -347,9 +342,8 @@ LAB_0046fd3e:
              pSVar16 == (STFishC *)0x0 ||
              (dVar7 = (*pSVar16->vtable->slot_2C)(pSVar16), dVar7 != 0x33)) ||
             (pSVar16->field_0024 != this->field_0024)))) {
-/* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
 LAB_004700a6:
-          iVar6 = (*(code *)this->vtable->field_00D8)();
+          iVar6 = (*this->vtable->vfunc_D8)();
           return -(uint)(iVar6 != 0);
         }
 LAB_00470071:
@@ -383,8 +377,8 @@ LAB_00470071:
                           *(short *)&this->field_0568 + this->field_0554);
         iVar6 = iVar11 * 0xc9 + 100;
         uVar5 = (undefined2)((uint)(iVar11 * 0x19) >> 0x10);
-        /* ST_PSEUDO[raw_indirect_call,packed_or_unaligned_piece]: expected typed vtable/callback call with explicit __thiscall receiver; expected named packed member, bit extract/compose, or unaligned load */
-        uVar5 = (*(code *)this->vtable->field_0010)
+        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+        uVar5 = (*this->vtable->vfunc_10)
                           (CONCAT22(uVar5,this->field_0041),
                            CONCAT22((short)((uint)iVar6 >> 0x10),this->field_0043),
                            CONCAT22(uVar5,this->field_0045),iVar6,iVar24,iVar8);
@@ -491,7 +485,7 @@ LAB_004707ad:
         }
         if (local_c == 0) {
           this->field_0580 = CASE_5;
-          this->field_0574 = PTR_00802a38->field_00E4;
+          this->field_0574 = g_playSystem_00802A38->field_00E4;
           uVar9 = this->field_001C * 0x41c64e6d + 0x3039;
           this->field_001C = uVar9;
           *(undefined4 *)&this->field_0x584 = 0;
@@ -512,20 +506,20 @@ LAB_004707ad:
                         (int)sVar20 * (int)g_worldGrid.sizeX + (int)sVar13].objects[0],
             pSVar15 != (STWorldObject *)0x0 && (*(int *)&pSVar15->field_0x18 == this->field_055A))))
           )))) {
-        if (PTR_00802a38->field_00E4 == this->field_0574 + this->field_0578) {
-          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-          (*(code *)this->vtable->field_0090)(3,0x363);
-          iVar6 = (this->field_0237 * -7) / 10;
+        if (g_playSystem_00802A38->field_00E4 == this->field_0574 + this->field_0578) {
+          (*this->vtable->vfunc_90)(3,0x363);
+          iVar6 = (*(short *)&this->field_0x237 * -7) / 10;
           uVar9 = this->field_001C * 0x41c64e6d + 0x3039;
           this->field_001C = uVar9;
-          sVar13 = (short)((uVar9 >> 0x10) % (((this->field_0237 * 7) / 10 - iVar6) + 1U)) +
-                   (short)iVar6;
-          iVar6 = (this->field_0237 * -2) / 10;
+          sVar13 = (short)((uVar9 >> 0x10) %
+                          (((*(short *)&this->field_0x237 * 7) / 10 - iVar6) + 1U)) + (short)iVar6;
+          iVar6 = (*(short *)&this->field_0x237 * -2) / 10;
           uVar9 = this->field_001C * 0x41c64e6d + 0x3039;
           this->field_001C = uVar9;
           /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-          local_20 = CONCAT22((short)((uVar9 >> 0x10) % (((this->field_0237 * 2) / 10 - iVar6) + 1U)
-                                     ) + (short)iVar6,sVar13);
+          local_20 = CONCAT22((short)((uVar9 >> 0x10) %
+                                     (((*(short *)&this->field_0x237 * 2) / 10 - iVar6) + 1U)) +
+                              (short)iVar6,sVar13);
           puVar10 = (undefined4 *)thunk_FUN_0041dc40(local_28,sVar13,0,this->field_006C);
           uVar3 = *puVar10;
           local_1c = *(short *)(puVar10 + 1);
@@ -539,7 +533,7 @@ LAB_004707ad:
           local_20 = uVar3;
           thunk_FUN_00637930(this->field_01ED,0,this->field_0041 + iVar6,this->field_0043 + iVar24,
                              this->field_0045 + -0x28,0,0);
-          this->field_0574 = PTR_00802a38->field_00E4;
+          this->field_0574 = g_playSystem_00802A38->field_00E4;
           uVar9 = this->field_001C * 0x41c64e6d + 0x3039;
           this->field_001C = uVar9;
           this->field_0578 = (uVar9 >> 0x10) % 0x33 + 0x28;
@@ -552,8 +546,7 @@ LAB_004707ad:
       }
       sub_0048DBA0(this);
       this->field_0580 = CASE_6;
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-      iVar6 = (*(code *)this->vtable->field_00D8)();
+      iVar6 = (*this->vtable->vfunc_D8)();
       return (-(uint)(iVar6 != 0) & 0xfffffffd) + 2;
     }
     if (SVar2 != CASE_6) {
@@ -610,10 +603,8 @@ LAB_004707ad:
         sVar13 = *(short *)&this->field_0x560;
         sVar18 = *(short *)&this->field_0x55e;
       }
-      SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0048DFD0::thunk_FUN_0048dfd0
-                ((AnonReceiver_0048DFD0 *)this,sVar18,sVar13,uVar19,sVar21,sVar20,piVar12,iVar6,
-                 (short *)&this->field_0x55e,(short *)&this->field_0x560,(short *)&this->field_0x562
-                );
+      sub_0048DFD0(this,sVar18,sVar13,uVar19,sVar21,sVar20,piVar12,iVar6,(short *)&this->field_0x55e
+                   ,(short *)&this->field_0x560,(short *)&this->field_0x562);
       sVar20 = *(short *)&this->field_0x562;
       sVar18 = *(short *)&this->field_0x560;
       sVar13 = *(short *)&this->field_0x55e;
@@ -629,8 +620,8 @@ LAB_004707ad:
       /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
       iVar6 = CONCAT22((short)((uint)iVar24 >> 0x10),this->field_056C * 0xc9) + 100;
       uVar5 = (undefined2)((uint)iVar8 >> 0x10);
-      /* ST_PSEUDO[raw_indirect_call,packed_or_unaligned_piece]: expected typed vtable/callback call with explicit __thiscall receiver; expected named packed member, bit extract/compose, or unaligned load */
-      uVar5 = (*(code *)this->vtable->field_0010)
+      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+      uVar5 = (*this->vtable->vfunc_10)
                         (CONCAT22(uVar5,this->field_0041),
                          CONCAT22((short)((uint)iVar6 >> 0x10),this->field_0043),
                          CONCAT22(uVar5,this->field_0045),iVar6,iVar8,iVar24);
@@ -746,12 +737,10 @@ LAB_004707ad:
 cf_common_exit_00470B14:
       this->field_0580 = CASE_7;
       /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-      SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0048DFD0::thunk_FUN_0048dfd0
-                ((AnonReceiver_0048DFD0 *)this,this->field_0047,this->field_0049,this->field_004B,
-                 this->field_0047,this->field_0049,
-                 (int *)CONCAT22((short)((uint)pSVar15 >> 0x10),this->field_004B),3,
-                 (short *)&this->field_0x55e,(short *)&this->field_0x560,(short *)&this->field_0x562
-                );
+      sub_0048DFD0(this,this->field_0047,this->field_0049,this->field_004B,this->field_0047,
+                   this->field_0049,(int *)CONCAT22((short)((uint)pSVar15 >> 0x10),this->field_004B)
+                   ,3,(short *)&this->field_0x55e,(short *)&this->field_0x560,
+                   (short *)&this->field_0x562);
     }
     else {
       if (*(int *)&pSVar15[0x1d].field_0x18 != 0) {
@@ -781,11 +770,10 @@ cf_common_exit_00470B14:
       goto LAB_0046f98f;
     }
     /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
-    SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0048DFD0::thunk_FUN_0048dfd0
-              ((AnonReceiver_0048DFD0 *)this,this->field_0047,this->field_0049,this->field_004B,
-               this->field_0554,this->field_0556,
-               (int *)CONCAT22(extraout_var_03,this->field_0558 + 1),1,(short *)&this->field_0x55e,
-               (short *)&this->field_0x560,(short *)&this->field_0x562);
+    sub_0048DFD0(this,this->field_0047,this->field_0049,this->field_004B,this->field_0554,
+                 this->field_0556,(int *)CONCAT22(extraout_var_03,this->field_0558 + 1),1,
+                 (short *)&this->field_0x55e,(short *)&this->field_0x560,(short *)&this->field_0x562
+                );
     iVar8 = (int)*(short *)&this->field_0x562;
     iVar24 = (int)*(short *)&this->field_0x560;
     iVar6 = (int)*(short *)&this->field_0x55e;
@@ -830,12 +818,11 @@ cf_common_exit_00470B14:
     iVar6 = sub_00490570(this);
     if (iVar6 == 1) {
       /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-      SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0048DFD0::thunk_FUN_0048dfd0
-                ((AnonReceiver_0048DFD0 *)this,this->field_0047,this->field_0049,this->field_004B,
-                 this->field_0554,this->field_0556,
-                 (int *)CONCAT22((short)((uint)&this->field_0x562 >> 0x10),this->field_0558 + 1),1,
-                 (short *)&this->field_0x55e,(short *)&this->field_0x560,(short *)&this->field_0x562
-                );
+      sub_0048DFD0(this,this->field_0047,this->field_0049,this->field_004B,this->field_0554,
+                   this->field_0556,
+                   (int *)CONCAT22((short)((uint)&this->field_0x562 >> 0x10),this->field_0558 + 1),1
+                   ,(short *)&this->field_0x55e,(short *)&this->field_0x560,
+                   (short *)&this->field_0x562);
     }
     sub_00481520(this,(int)*(short *)&this->field_0x55e,(int)*(short *)&this->field_0x560,
                  (int)*(short *)&this->field_0x562);
@@ -854,9 +841,8 @@ cf_common_exit_00470B14:
 LAB_0046fb98:
   sub_00481520(this,iVar6,iVar24,iVar8);
   sub_00460260(this,0);
-/* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
 cf_common_exit_004707B7:
-  iVar6 = (*(code *)this->vtable->field_00D8)();
+  iVar6 = (*this->vtable->vfunc_D8)();
   return (-(uint)(iVar6 != 0) & 0xfffffffd) + 2;
 }
 

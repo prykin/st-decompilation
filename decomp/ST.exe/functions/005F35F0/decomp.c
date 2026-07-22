@@ -4,11 +4,14 @@
    /SubmarineTitans/Recovered/HiddenThis/AnonReceiver_005F35F0.
    Evidence: incoming_receiver_captures=1; receiver_accesses=21; incoming_edx_uses=0; calls=4;
    ecx_pointer_setup=3; ecx_scalar_setup=0; caller_cleanup_calls=0; callee_ret_pop=[4];
-   expected_stack=4; receiver_family_members=4 */
+   expected_stack=4; receiver_family_members=4
 
-undefined4 __thiscall
-SubmarineTitans::Recovered::HiddenThis::AnonReceiver_005F35F0::FUN_005f35f0
-          (AnonReceiver_005F35F0 *this,int param_1)
+   [STMethodOwnerApplier] Structural method owner recovered as STBHEShellC.
+   Evidence: this_call_owners=[STBHEShellC]; agreed_this_calls=2; incoming_this_accesses=21;
+   incoming_edx_uses=0; incoming_stack_parameter_uses=1; direct_non_thunk_callers=0;
+   incoming_ecx_receiver_callers=0; attributed_named_callers=1; owner_evidence_coverage=adequate */
+
+undefined4 __thiscall STBHEShellC::sub_005F35F0(STBHEShellC *this,int param_1)
 
 {
   uint *puVar1;
@@ -39,14 +42,14 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_005F35F0::FUN_005f35f0
       FUN_006ea270(PTR_00807598,*puVar1,0,pAVar2->field_00AB);
       pAVar2->field_0171 = puVar4;
       if (DAT_00807326 != '\0') {
-        AnonReceiver_004248D0::FUN_006e9520
+        SubmarineTitans::Recovered::HiddenThis::AnonReceiver_004248D0::FUN_006e9520
                   ((AnonReceiver_004248D0 *)PTR_00807598,*puVar1,0,0x403170,(uint)pAVar2);
       }
     }
     else {
       puVar1 = &local_8->field_008F;
       if (-1 < (int)local_8->field_008F) {
-        AnonReceiver_004248D0::FUN_006e9520
+        SubmarineTitans::Recovered::HiddenThis::AnonReceiver_004248D0::FUN_006e9520
                   ((AnonReceiver_004248D0 *)PTR_00807598,local_8->field_008F,0,0,(uint)local_8);
         FUN_006e8ba0(PTR_00807598,*puVar1);
       }

@@ -29,7 +29,7 @@ void __cdecl FUN_0065d030(AnonShape_0065D030_CB0F82F0 *param_1)
     }
     DArrayDestroy((DArrayTy *)param_1->field_0462);
     param_1->field_0462 = 0;
-    FUN_006b5570((AnonShape_006B5570_4D68B99C *)param_1->field_0456);
+    FUN_006b5570((DArrayTy *)param_1->field_0456);
     param_1->field_0456 = 0;
     thunk_FUN_0064a7c0((undefined4 *)&param_1[1].field_0x6);
   }

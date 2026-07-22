@@ -1,0 +1,6 @@
+0062F5FC  pointer  0062f3cf
+0062F600  pointer  0062f409
+0062F604  pointer  0062f42c
+0062F608  pointer  0062f440
+0062F60C  pointer  0062f449
+0062F610  pointer  0062f46c

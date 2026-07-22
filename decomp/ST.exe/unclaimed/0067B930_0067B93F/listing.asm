@@ -1,0 +1,4 @@
+0067B930  pointer  0067b5e9
+0067B934  pointer  0067b797
+0067B938  pointer  0067b811
+0067B93C  pointer  0067b811

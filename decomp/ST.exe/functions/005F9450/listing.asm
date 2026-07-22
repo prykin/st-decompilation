@@ -1,4 +1,4 @@
-FUN_005f9450:
+STColl3C::sub_005F9450:
 005F9450  56                        PUSH ESI
 005F9451  8B F1                     MOV ESI,ECX
 005F9453  8B 0D A4 17 81 00         MOV ECX,dword ptr [0x008117a4]

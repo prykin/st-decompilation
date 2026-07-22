@@ -12,10 +12,9 @@ void __thiscall STBoatC::sub_00492420(STBoatC *this)
   if ((this->field_07C6 == 1) && (this->field_07CA == 0)) {
     this->field_07C6 = 0;
     local_8 = this;
-    iVar1 = FUN_006e62d0(PTR_00802a38,this->field_058E,(int *)&local_8);
+    iVar1 = FUN_006e62d0(g_playSystem_00802A38,this->field_058E,(int *)&local_8);
     if (iVar1 != -4) {
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-      (**(code **)&local_8->vtable->field_0xa0)(this->field_0018);
+      (*local_8->vtable->ReleaseLoad)(local_8,this->field_0018);
     }
   }
   return;

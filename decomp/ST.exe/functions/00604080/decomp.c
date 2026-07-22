@@ -13,16 +13,20 @@ STExplosion * __thiscall STExplosion::STExplosion(STExplosion *this)
 
 {
   int iVar1;
+  STParticleC **ppSVar2;
 
   STGameObjC::STGameObjC((STGameObjC *)this);
   this->vtable = &STExplosionVTable;
   this->field_0215 = 0;
-  memset(&this->field_0x219, 0, 0x50); /* compiler bulk-zero initialization */
-  iVar1 = 0;
+  ppSVar2 = &this->field_0219;
+  for (iVar1 = 0x14; iVar1 != 0; iVar1 = iVar1 + -1) {
+    *ppSVar2 = (STParticleC *)0x0;
+    ppSVar2 = ppSVar2 + 1;
+  }
   this->field_0269 = 0;
   this->field_026D = 0;
-  this->field_026E = PTR_00802a38->field_00E4;
-  memset(&this->field_0x282, 0, 0x2d); /* compiler bulk-zero initialization */
+  this->field_026E = g_playSystem_00802A38->field_00E4;
+  memset(&this->field_0282, 0, 0x2d); /* compiler bulk-zero initialization */
   this->field_02AF = 0;
   this->field_02B3 = 0;
   this->field_02BB = (void *)0x0;

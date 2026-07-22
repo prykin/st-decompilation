@@ -99,17 +99,17 @@ undefined4 __thiscall SettMapMTy::NoneSettMap(SettMapMTy *this,int *param_1)
   iVar4 = SettMapTy::NoneSettMap(local_5c,unaff_EDI);
   if (((iVar4 != 0) && (local_1d == '\x03')) && (this_00->field_0065 == '\x01')) {
     Library::DKW::DDX::FUN_006b3430((int *)PTR_008075a8,*(uint *)&this_00[1].field_0x4);
-    Library::DKW::DDX::FUN_006b3430((int *)PTR_008075a8,PTR_0081176c->field_0554);
-    Library::DKW::DDX::FUN_006b3430((int *)PTR_008075a8,PTR_0081176c->field_0558);
-    if (PTR_0081176c->field_0560 != 0xffffffff) {
+    Library::DKW::DDX::FUN_006b3430((int *)PTR_008075a8,g_startSystem_0081176C->field_0554);
+    Library::DKW::DDX::FUN_006b3430((int *)PTR_008075a8,g_startSystem_0081176C->field_0558);
+    if (g_startSystem_0081176C->field_0560 != 0xffffffff) {
       Library::DKW::DDX::FUN_006b34d0
-                ((uint *)PTR_0081176c->field_05A4,PTR_0081176c->field_0560,0xfffffffe,
-                 PTR_0081176c->field_0578,PTR_0081176c->field_057C);
+                ((uint *)g_startSystem_0081176C->field_05A4,g_startSystem_0081176C->field_0560,
+                 0xfffffffe,g_startSystem_0081176C->field_0578,g_startSystem_0081176C->field_057C);
     }
-    if (PTR_0081176c->field_05F1 != 0xffffffff) {
+    if (g_startSystem_0081176C->field_05F1 != 0xffffffff) {
       Library::DKW::DDX::FUN_006b34d0
-                ((uint *)PTR_0081176c->field_0635,PTR_0081176c->field_05F1,0xfffffffe,
-                 PTR_0081176c->field_0609,PTR_0081176c->field_060D);
+                ((uint *)g_startSystem_0081176C->field_0635,g_startSystem_0081176C->field_05F1,
+                 0xfffffffe,g_startSystem_0081176C->field_0609,g_startSystem_0081176C->field_060D);
     }
   }
   Library::DKW::DDX::FUN_006b7510(g_int_00811764,-1,&local_30,-1,0);
@@ -381,8 +381,8 @@ LAB_005cef5d:
                     if (iVar4 == 0) {
                       this_00->field_1C5F = (uint)local_10;
                       StartSystemTy::SetObjectives
-                                (PTR_0081176c,this_00->field_1F43,(char *)((int)pvVar5 + 0x70),
-                                 this_00->field_1C63);
+                                (g_startSystem_0081176C,this_00->field_1F43,
+                                 (char *)((int)pvVar5 + 0x70),this_00->field_1C63);
                       break;
                     }
                   }
@@ -551,7 +551,7 @@ LAB_005cef5d:
                 }
               }
               if (this_00->field_1E26 != 0x10) {
-                thunk_FUN_005d1380((AnonShape_005D1380_CEECF2C3 *)this_00);
+                sub_005D1380((SettMapMTy *)this_00);
               }
               /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
               (*(code *)this_00->field_0000->field_002C)();

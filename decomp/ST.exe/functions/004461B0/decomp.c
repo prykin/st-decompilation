@@ -70,7 +70,7 @@ STAllPlayersC::_DeleteGuardBoat(STAllPlayersC *this,char param_1,short param_2,i
             if ((short)local_c == param_2) {
               FUN_006b0c70(local_24,uVar7);
               pSVar3 = (STBoatC *)GetObjPtr(local_1c,param_1,local_c,CASE_1);
-              local_14 = PTR_00802a38->field_00E4;
+              local_14 = g_playSystem_00802A38->field_00E4;
               STBoatC::CmdToObj(pSVar3,CASE_21,&local_14);
               break;
             }
@@ -118,7 +118,7 @@ STAllPlayersC::_DeleteGuardBoat(STAllPlayersC *this,char param_1,short param_2,i
               do {
                 DArrayGetElement(local_24,uVar8,&local_c);
                 pSVar3 = (STBoatC *)GetObjPtr(local_1c,param_1,local_c,CASE_1);
-                local_14 = PTR_00802a38->field_00E4;
+                local_14 = g_playSystem_00802A38->field_00E4;
                 STBoatC::CmdToObj(pSVar3,CASE_21,&local_14);
                 uVar8 = uVar8 + 1;
               } while ((int)uVar8 < (int)dVar1);

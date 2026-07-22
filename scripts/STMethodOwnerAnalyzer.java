@@ -9,6 +9,7 @@ import java.io.File;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.util.ArrayDeque;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.HashMap;
@@ -103,6 +104,7 @@ public class STMethodOwnerAnalyzer extends GhidraScript {
 
     private void analyzeCaller(Function caller, String owner) {
         Map<String, ThisValue> registers = new HashMap<>();
+        Map<String, ThisValue> stackSpills = new HashMap<>();
         registers.put("ECX", new ThisValue(0));
         InstructionIterator instructions = currentProgram.getListing()
             .getInstructions(caller.getBody(), true);
@@ -127,7 +129,7 @@ public class STMethodOwnerAnalyzer extends GhidraScript {
                 registers.remove("EDX");
                 continue;
             }
-            updateRegisters(mnemonic, operands, registers);
+            updateRegisters(mnemonic, operands, registers, stackSpills);
         }
     }
 
@@ -152,8 +154,7 @@ public class STMethodOwnerAnalyzer extends GhidraScript {
         boolean manualSignature = protectedSource(function.getSignatureSource());
         int directCallers = 0;
         int receiverAliasCallers = 0;
-        for (Function caller : function.getCallingFunctions(monitor)) {
-            if (caller.isThunk()) continue;
+        for (Function caller : logicalCallingFunctions(function)) {
             directCallers++;
             if (callsTargetWithIncomingEcx(caller, function)) receiverAliasCallers++;
         }
@@ -215,6 +216,7 @@ public class STMethodOwnerAnalyzer extends GhidraScript {
 
     private boolean callsTargetWithIncomingEcx(Function caller, Function target) {
         Map<String, ThisValue> registers = new HashMap<>();
+        Map<String, ThisValue> stackSpills = new HashMap<>();
         registers.put("ECX", new ThisValue(0));
         InstructionIterator instructions = currentProgram.getListing()
             .getInstructions(caller.getBody(), true);
@@ -232,7 +234,7 @@ public class STMethodOwnerAnalyzer extends GhidraScript {
                 registers.remove("EDX");
                 continue;
             }
-            updateRegisters(mnemonic, operands, registers);
+            updateRegisters(mnemonic, operands, registers, stackSpills);
         }
         return false;
     }
@@ -255,6 +257,7 @@ public class STMethodOwnerAnalyzer extends GhidraScript {
 
     private int incomingThisAccesses(Function function) {
         Map<String, ThisValue> registers = new HashMap<>();
+        Map<String, ThisValue> stackSpills = new HashMap<>();
         registers.put("ECX", new ThisValue(0));
         int accesses = 0;
         InstructionIterator instructions = currentProgram.getListing()
@@ -277,7 +280,7 @@ public class STMethodOwnerAnalyzer extends GhidraScript {
                 registers.remove("ECX");
                 registers.remove("EDX");
             }
-            else updateRegisters(mnemonic, operands, registers);
+            else updateRegisters(mnemonic, operands, registers, stackSpills);
         }
         return accesses;
     }
@@ -328,14 +331,27 @@ public class STMethodOwnerAnalyzer extends GhidraScript {
     }
 
     private void updateRegisters(String mnemonic, String[] operands,
-            Map<String, ThisValue> registers) {
+            Map<String, ThisValue> registers, Map<String, ThisValue> stackSpills) {
         if (operands.length == 0) return;
         String destination = cleanRegister(operands[0]);
-        if ("MOV".equals(mnemonic) && destination != null && operands.length >= 2) {
-            if (!isFullRegister(operands[0])) { registers.remove(destination); return; }
+        MemoryExpr destinationMemory = memoryExpr(operands[0]);
+        if ("MOV".equals(mnemonic) && destinationMemory != null && operands.length >= 2 &&
+                isStackMemory(destinationMemory)) {
+            String key = stackKey(destinationMemory);
             String source = cleanRegister(operands[1]);
             ThisValue value = source == null || !isFullRegister(operands[1]) ? null :
                 registers.get(source);
+            if (value == null) stackSpills.remove(key);
+            else stackSpills.put(key, value);
+            return;
+        }
+        if ("MOV".equals(mnemonic) && destination != null && operands.length >= 2) {
+            if (!isFullRegister(operands[0])) { registers.remove(destination); return; }
+            String source = cleanRegister(operands[1]);
+            MemoryExpr sourceMemory = memoryExpr(operands[1]);
+            ThisValue value = source != null && isFullRegister(operands[1]) ?
+                registers.get(source) : sourceMemory != null && isStackMemory(sourceMemory) ?
+                    stackSpills.get(stackKey(sourceMemory)) : null;
             if (value == null) registers.remove(destination);
             else registers.put(destination, value);
             return;
@@ -360,6 +376,32 @@ public class STMethodOwnerAnalyzer extends GhidraScript {
         }
         if (destination != null && !Set.of("CMP", "TEST", "PUSH", "JMP", "RET")
                 .contains(mnemonic)) registers.remove(destination);
+    }
+
+    private Set<Function> logicalCallingFunctions(Function target) {
+        Set<Function> result = new TreeSet<>(Comparator.comparing(Function::getEntryPoint));
+        Set<Address> seen = new TreeSet<>();
+        ArrayDeque<Function> pending = new ArrayDeque<>();
+        pending.add(target);
+        while (!pending.isEmpty()) {
+            Function current = pending.removeFirst();
+            if (!seen.add(current.getEntryPoint())) continue;
+            for (Function caller : current.getCallingFunctions(monitor)) {
+                if (caller.isThunk()) pending.addLast(caller);
+                else result.add(caller);
+            }
+        }
+        return result;
+    }
+
+    private boolean isStackMemory(MemoryExpr memory) {
+        // EBP-negative locals are stable. ESP-relative slots move under PUSH/POP and are
+        // deliberately excluded until the tracker models the complete stack delta.
+        return memory != null && "EBP".equals(memory.register) && memory.displacement < 0;
+    }
+
+    private String stackKey(MemoryExpr memory) {
+        return memory.register + ":" + memory.displacement;
     }
 
     private Function calledFunction(Instruction instruction) {
@@ -444,7 +486,8 @@ public class STMethodOwnerAnalyzer extends GhidraScript {
         int open = operand.indexOf('['), close = operand.lastIndexOf(']');
         if (open < 0 || close <= open) return null;
         String value = operand.substring(open, close + 1)
-            .replace(" ", "").toUpperCase(Locale.ROOT);
+            .replace(" ", "").replace("+-", "-").replace("-+", "-")
+            .toUpperCase(Locale.ROOT);
         Matcher matcher = MEMORY.matcher(value);
         if (!matcher.matches()) return null;
         long displacement = 0;
@@ -567,7 +610,8 @@ public class STMethodOwnerAnalyzer extends GhidraScript {
             "this_type_auto_apply=" + rows.stream().filter(row -> row.thisTypeApply).count(),
             "parameter_auto_apply=" + rows.stream().filter(row -> row.parameterApply).count(),
             "owner_conflicts=" + rows.stream().filter(row -> row.confidence.equals("conflict")).count(),
-            "note=Only direct calls whose ECX still aliases the named caller's incoming this are evidence.",
+            "note=Direct and thunk-resolved calls whose ECX still aliases the named caller's " +
+                "incoming this are evidence; stable EBP spill/reload aliases are retained.",
             "note_coverage=A script-owned owner is repaired only for conflicting named " +
                 "owners or when at least four incoming-ECX receiver callers dominate a " +
                 "fan-out of at least eight; service-object calls do not count.",

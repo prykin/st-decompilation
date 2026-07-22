@@ -1,0 +1,17 @@
+0052F698  pointer  0052f597
+0052F69C  pointer  0052f590
+0052F6A0  pointer  0052f5ba
+0052F6A4  byte  0h
+0052F6A5  byte  1h
+0052F6A6  byte  2h
+0052F6A7  byte  2h
+0052F6A8  byte  2h
+0052F6A9  byte  2h
+0052F6AA  byte  2h
+0052F6AB  byte  2h
+0052F6AC  byte  2h
+0052F6AD  byte  2h
+0052F6AE  byte  2h
+0052F6AF  byte  1h
+0052F6B0  byte  2h
+0052F6B1  byte  1h

@@ -24,8 +24,7 @@ int __thiscall STBoatC::DCBomb(STBoatC *this,int param_1)
                              *(short *)&this->field_0x5ee * 0xc9 + 100,100,
                              (uint)(ushort)this->field_0032,0xf);
           this->field_07BE = this->field_07BE + -0xf;
-          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-          iVar5 = (*(code *)this->vtable->field_00D8)();
+          iVar5 = (*this->vtable->vfunc_D8)();
           return -(uint)(iVar5 != 0);
         }
         thunk_FUN_005fd750(this->field_0024,*(short *)&this->field_0x5ec * 0xc9 + 100,
@@ -33,8 +32,7 @@ int __thiscall STBoatC::DCBomb(STBoatC *this,int param_1)
                            (uint)(ushort)this->field_0032,this->field_07BE);
         this->field_07BE = 0;
       }
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-      iVar5 = (*(code *)this->vtable->field_00D8)();
+      iVar5 = (*this->vtable->vfunc_D8)();
       return -(uint)(iVar5 != 0);
     }
     iVar5 = sub_0045FF50(this,2);

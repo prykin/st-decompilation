@@ -1,5 +1,9 @@
 
-undefined4 * __cdecl FUN_0070c900(int param_1,uint *param_2,char param_3,int param_4)
+/* [STPrototypeApplier] Propagated parameter 0.
+   Evidence: 0070C900 -> 007527A0 @ 0070C965 | 0070C900 -> 00752CF0 @ 0070C94A */
+
+undefined4 * __cdecl
+FUN_0070c900(AnonShape_006B5B10_E0D06CF1 *param_1,uint *param_2,char param_3,int param_4)
 
 {
   int iVar1;
@@ -16,14 +20,13 @@ undefined4 * __cdecl FUN_0070c900(int param_1,uint *param_2,char param_3,int par
     if (param_4 < 0) {
       puVar4 = &local_8;
       iVar3 = -1 - param_4;
-      iVar1 = FUN_006b4fa0(param_1);
-      puVar2 = (undefined4 *)
-               FUN_00752cf0((AnonShape_006B5B10_E0D06CF1 *)param_1,iVar1,iVar3,param_3,puVar4);
+      iVar1 = FUN_006b4fa0((int)param_1);
+      puVar2 = (undefined4 *)FUN_00752cf0(param_1,iVar1,iVar3,param_3,puVar4);
     }
     else {
       puVar4 = &local_8;
-      iVar1 = FUN_006b4fa0(param_1);
-      puVar2 = FUN_007527a0((AnonShape_006B5B10_E0D06CF1 *)param_1,iVar1,param_4,param_3,puVar4);
+      iVar1 = FUN_006b4fa0((int)param_1);
+      puVar2 = FUN_007527a0(param_1,iVar1,param_4,param_3,puVar4);
     }
     if (param_2 != (uint *)0x0) {
       *param_2 = local_8;

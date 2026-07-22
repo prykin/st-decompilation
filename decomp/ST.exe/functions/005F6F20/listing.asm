@@ -1,4 +1,4 @@
-FUN_005f6f20:
+STColl3C::sub_005F6F20:
 005F6F20  55                        PUSH EBP
 005F6F21  8B EC                     MOV EBP,ESP
 005F6F23  8B 55 08                  MOV EDX,dword ptr [EBP + 0x8]

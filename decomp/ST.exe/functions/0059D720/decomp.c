@@ -19,7 +19,7 @@ void __thiscall FSGSTy::InfoCtrls(FSGSTy *this,void *param_1)
   ccFntTy **ppcVar8;
   bool bVar9;
   ccFntTy *local_8dc [8];
-  uint *local_8bc;
+  DArrayTy *local_8bc;
   undefined4 local_8b0;
   undefined4 local_8ac;
   undefined4 local_8a8;
@@ -65,13 +65,13 @@ LAB_0059d780:
     if (iVar6 == 0) {
       pDVar4 = Library::DKW::TBL::SArrayCreate((DArrayTy *)0x0,1,1);
       this_00 = local_c;
-      local_c->field_1AF8 = &pDVar4->flags;
+      local_c->field_1AF8 = pDVar4;
       Library::DKW::TBL::FUN_006b5aa0(&pDVar4->flags,&DAT_008016a0);
       pDVar4 = Library::DKW::TBL::SArrayCreate((DArrayTy *)0x0,1,1);
-      this_00->field_1AFC = &pDVar4->flags;
+      this_00->field_1AFC = pDVar4;
       Library::DKW::TBL::FUN_006b5aa0(&pDVar4->flags,&DAT_008016a0);
       pDVar4 = Library::DKW::TBL::SArrayCreate((DArrayTy *)0x0,1,1);
-      this_00->field_1B00 = &pDVar4->flags;
+      this_00->field_1B00 = pDVar4;
       Library::DKW::TBL::FUN_006b5aa0(&pDVar4->flags,&DAT_008016a0);
       pDVar4 = Library::DKW::TBL::SArrayCreate((DArrayTy *)0x0,1,1);
       this_00->field_1B04 = &pDVar4->flags;
@@ -102,28 +102,32 @@ LAB_0059d780:
       local_64 = 0x6955;
       local_890 = local_8b0;
       local_6c = local_8b0;
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-      (*(code *)this_00->field_000C->vtable->field_0008)(6,&this_00->field_1AD8,0,local_8dc,0);
+      (*this_00->field_000C->vtable->CreateObject)
+                ((SystemClassTy *)this_00->field_000C,6,&this_00->field_1AD8,(int *)0x0,local_8dc,0)
+      ;
       local_8bc = this_00->field_1AFC;
       local_8dc[3] = (ccFntTy *)0x15e;
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-      (*(code *)this_00->field_000C->vtable->field_0008)(6,&this_00->field_1ADC,0,local_8dc,0);
+      (*this_00->field_000C->vtable->CreateObject)
+                ((SystemClassTy *)this_00->field_000C,6,&this_00->field_1ADC,(int *)0x0,local_8dc,0)
+      ;
       local_8bc = this_00->field_1B00;
       local_8dc[3] = (ccFntTy *)0x1ea;
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-      (*(code *)this_00->field_000C->vtable->field_0008)(6,&this_00->field_1AE0,0,local_8dc,0);
+      (*this_00->field_000C->vtable->CreateObject)
+                ((SystemClassTy *)this_00->field_000C,6,&this_00->field_1AE0,(int *)0x0,local_8dc,0)
+      ;
       local_8dc[1] = (ccFntTy *)0xc8;
       if (iVar5 != 0) {
         local_8dc[1] = (ccFntTy *)0xcc;
       }
-      local_8bc = this_00->field_1B04;
+      local_8bc = (DArrayTy *)this_00->field_1B04;
       local_8dc[3] = (ccFntTy *)0xd2;
       local_8dc[4] = (ccFntTy *)0xdd;
       local_8dc[5] = (ccFntTy *)0x17c;
       local_8dc[6] = (ccFntTy *)0x4b;
       local_888 = 0x6981;
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-      (*(code *)this_00->field_000C->vtable->field_0008)(6,&this_00->field_1AE4,0,local_8dc,0);
+      (*this_00->field_000C->vtable->CreateObject)
+                ((SystemClassTy *)this_00->field_000C,6,&this_00->field_1AE4,(int *)0x0,local_8dc,0)
+      ;
       this_00->field_002D = 0x61;
       *(undefined4 *)&this_00->field_0x35 = 0;
       FUN_006e6080(this_00,0xf,0,(undefined4 *)&this_00->field_0x1d);

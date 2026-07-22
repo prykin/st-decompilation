@@ -21,7 +21,7 @@ undefined4 __fastcall FUN_0060dab0(AnonShape_0060DAB0_7A3B9916 *param_1)
   iVar8 = param_1->field_0244;
   uVar6 = 2;
   if ((iVar8 != 0) && (param_1->field_0240 == 1)) {
-    iVar7 = PTR_00802a38->field_00E4 - *(int *)(iVar8 + 0x28);
+    iVar7 = g_playSystem_00802A38->field_00E4 - *(int *)(iVar8 + 0x28);
     *(int *)(iVar8 + 0x1c) = *(int *)(iVar8 + 0x1c) + 6;
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     iVar9 = *(int *)(param_1->field_0244 + 0x18) * iVar7;

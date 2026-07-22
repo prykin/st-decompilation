@@ -13,19 +13,20 @@ int __fastcall FUN_005fa180(AnonShape_005FA180_2D8671A3 *param_1)
   uint uVar9;
 
   iVar3 = param_1->field_02D1;
-  if (PTR_00802a38->field_00E4 % 5 != 0) {
+  if (g_playSystem_00802A38->field_00E4 % 5 != 0) {
     return iVar3;
   }
   if (param_1->field_02BB == '\x02') {
     puVar1 = &param_1->field_0x1d5;
-    thunk_FUN_004ace30(puVar1,*(uint *)(DAT_00806724 + 0x30 + iVar3 * 4),
-                       (int)*(short *)(DAT_00806724 + 0x2c));
+    STT3DSprC::sub_004ACE30
+              ((STT3DSprC *)puVar1,*(uint *)(DAT_00806724 + 0x30 + iVar3 * 4),
+               (int)*(short *)(DAT_00806724 + 0x2c));
     iVar3 = param_1->field_02D1 + -1;
     param_1->field_02D1 = iVar3;
     if (iVar3 == (int)*(short *)(DAT_00806724 + 0x23) / 2) {
       cVar2 = thunk_FUN_004ad610((int)puVar1);
       if (cVar2 != '\0') {
-        thunk_FUN_005fa0b0((int)param_1);
+        thunk_FUN_005fa0b0((STColl3C *)param_1);
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
         (*(code *)**(undefined4 **)puVar1)();
       }
@@ -33,13 +34,14 @@ int __fastcall FUN_005fa180(AnonShape_005FA180_2D8671A3 *param_1)
     iVar3 = param_1->field_02D1;
     if (iVar3 < 0) {
       param_1->field_02D1 = 0;
-      thunk_FUN_004ace30(puVar1,0,(int)*(short *)(DAT_00806724 + 0x2c));
+      STT3DSprC::sub_004ACE30((STT3DSprC *)puVar1,0,(int)*(short *)(DAT_00806724 + 0x2c));
     }
     return iVar3;
   }
   puVar1 = &param_1->field_0x1d5;
-  thunk_FUN_004ace30(puVar1,*(uint *)(DAT_00806724 + 0x30 + iVar3 * 4),
-                     (int)*(short *)(DAT_00806724 + 0x2c));
+  STT3DSprC::sub_004ACE30
+            ((STT3DSprC *)puVar1,*(uint *)(DAT_00806724 + 0x30 + iVar3 * 4),
+             (int)*(short *)(DAT_00806724 + 0x2c));
   iVar3 = param_1->field_02D1;
   iVar6 = iVar3 + 1;
   param_1->field_02D1 = iVar6;
@@ -49,7 +51,7 @@ int __fastcall FUN_005fa180(AnonShape_005FA180_2D8671A3 *param_1)
                        (short)param_1->field_0265,0,(AnonShape_00495FF0_59081BDD *)param_1);
     thunk_FUN_004ad430((int)puVar1);
     param_1->field_02BB = 0;
-    thunk_FUN_0041c5a0((AnonShape_0041C5A0_167218F4 *)param_1);
+    STColl3C::sub_0041C5A0((STColl3C *)param_1);
     return iVar6;
   }
   if (iVar6 == (int)*(short *)(DAT_00806724 + 0x23) / 2) {

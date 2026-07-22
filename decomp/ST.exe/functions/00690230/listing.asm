@@ -1,4 +1,4 @@
-FUN_00690230:
+AiTactClassTy::sub_00690230:
 00690230  55                        PUSH EBP
 00690231  8B EC                     MOV EBP,ESP
 00690233  56                        PUSH ESI

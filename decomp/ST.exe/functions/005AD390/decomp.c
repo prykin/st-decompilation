@@ -68,8 +68,8 @@ void __thiscall ChooseMapTy::NoneChooseMap(ChooseMapTy *this,undefined4 *param_1
     if (this_00->field_1A6C != 0) {
       FUN_006e6080(this_00,2,this_00->field_1A6C,(undefined4 *)&this_00->field_0x1d);
     }
-    if (PTR_0081176c->field_0389 != 0) {
-      FUN_006e6080(this_00,2,PTR_0081176c->field_0389,(undefined4 *)&this_00->field_0x1d);
+    if (g_startSystem_0081176C->field_0389 != 0) {
+      FUN_006e6080(this_00,2,g_startSystem_0081176C->field_0389,(undefined4 *)&this_00->field_0x1d);
     }
   }
   if ((this_00->field_1A64 != 0) && (0xf9 < this_00->field_0061 - this_00->field_1A68)) {
@@ -166,12 +166,13 @@ switchD_005adb01_caseD_c:
   }
   else if (cVar1 == '\x03') {
     if ((this_00->field_0x20b5 != '\0') &&
-       (PTR_0081176c->field_0300 < PTR_0081176c->field_0304 + -1)) {
-      PTR_0081176c->field_0300 = PTR_0081176c->field_0300 + 1;
-      if (PTR_0081176c->field_02FC != 0xffffffff) {
+       (g_startSystem_0081176C->field_0300 < g_startSystem_0081176C->field_0304 + -1)) {
+      g_startSystem_0081176C->field_0300 = g_startSystem_0081176C->field_0300 + 1;
+      if (g_startSystem_0081176C->field_02FC != 0xffffffff) {
         Library::DKW::DDX::FUN_006b3730
-                  ((uint *)PTR_0081176c->field_0340,PTR_0081176c->field_02FC,
-                   PTR_0081176c->field_0300,PTR_0081176c->field_0314,PTR_0081176c->field_0318);
+                  ((uint *)g_startSystem_0081176C->field_0340,g_startSystem_0081176C->field_02FC,
+                   g_startSystem_0081176C->field_0300,g_startSystem_0081176C->field_0314,
+                   g_startSystem_0081176C->field_0318);
       }
       local_8 = 0;
     }
@@ -187,8 +188,8 @@ switchD_005adb01_caseD_c:
        (iVar7 = HoloTy::NextFas(this_00->field_20C0), iVar7 != 0)) {
       local_8 = 0;
     }
-    if ((PTR_0081176c->field_02E6 != (MMsgTy *)0x0) &&
-       (PTR_0081176c->field_02E6->field_0065 != '\x01')) {
+    if ((g_startSystem_0081176C->field_02E6 != (MMsgTy *)0x0) &&
+       (g_startSystem_0081176C->field_02E6->field_0065 != '\x01')) {
       local_8 = 0;
     }
     if (local_8 != 0) {
@@ -209,9 +210,10 @@ switchD_005adb01_caseD_c:
       }
       this_00->field_0065 = 1;
       if (this_00->field_0x20b5 != '\0') {
-        Library::DKW::DDX::FUN_006b3430((int *)PTR_008075a8,PTR_0081176c->field_02EC);
-        if (PTR_0081176c->field_02FC != 0xffffffff) {
-          FUN_006b3af0((int *)PTR_0081176c->field_0340,PTR_0081176c->field_02FC);
+        Library::DKW::DDX::FUN_006b3430((int *)PTR_008075a8,g_startSystem_0081176C->field_02EC);
+        if (g_startSystem_0081176C->field_02FC != 0xffffffff) {
+          FUN_006b3af0((int *)g_startSystem_0081176C->field_0340,g_startSystem_0081176C->field_02FC)
+          ;
         }
       }
       CreateCtrls(this_00,'\x01');
@@ -237,36 +239,41 @@ switchD_005adb01_caseD_c:
         puVar9 = puVar9 + 1;
         iVar7 = iVar7 + -1;
       } while (iVar7 != 0);
-      if (PTR_0081176c->field_0391 != 0xffffffff) {
+      if (g_startSystem_0081176C->field_0391 != 0xffffffff) {
         Library::DKW::DDX::FUN_006b34d0
-                  ((uint *)PTR_0081176c->field_03D5,PTR_0081176c->field_0391,0xfffffffe,
-                   PTR_0081176c->field_03A9,PTR_0081176c->field_03AD);
+                  ((uint *)g_startSystem_0081176C->field_03D5,g_startSystem_0081176C->field_0391,
+                   0xfffffffe,g_startSystem_0081176C->field_03A9,g_startSystem_0081176C->field_03AD)
+        ;
       }
-      if (PTR_0081176c->field_0422 != 0xffffffff) {
+      if (g_startSystem_0081176C->field_0422 != 0xffffffff) {
         Library::DKW::DDX::FUN_006b34d0
-                  ((uint *)PTR_0081176c->field_0466,PTR_0081176c->field_0422,0xfffffffe,
-                   PTR_0081176c->field_043A,PTR_0081176c->field_043E);
+                  ((uint *)g_startSystem_0081176C->field_0466,g_startSystem_0081176C->field_0422,
+                   0xfffffffe,g_startSystem_0081176C->field_043A,g_startSystem_0081176C->field_043E)
+        ;
       }
-      if (PTR_0081176c->field_04B3 != 0xffffffff) {
+      if (g_startSystem_0081176C->field_04B3 != 0xffffffff) {
         Library::DKW::DDX::FUN_006b34d0
-                  ((uint *)PTR_0081176c->field_04F7,PTR_0081176c->field_04B3,0xfffffffe,
-                   PTR_0081176c->field_04CB,PTR_0081176c->field_04CF);
+                  ((uint *)g_startSystem_0081176C->field_04F7,g_startSystem_0081176C->field_04B3,
+                   0xfffffffe,g_startSystem_0081176C->field_04CB,g_startSystem_0081176C->field_04CF)
+        ;
       }
-      Library::DKW::DDX::FUN_006b3430((int *)PTR_008075a8,PTR_0081176c->field_0540);
+      Library::DKW::DDX::FUN_006b3430((int *)PTR_008075a8,g_startSystem_0081176C->field_0540);
       CVar3 = this_00->field_1A5F;
       if ((((CVar3 == CASE_C) || (CVar3 == CASE_4)) || (CVar3 == CASE_5)) || (CVar3 == CASE_13)) {
-        if (PTR_0081176c->field_0560 != 0xffffffff) {
+        if (g_startSystem_0081176C->field_0560 != 0xffffffff) {
           Library::DKW::DDX::FUN_006b34d0
-                    ((uint *)PTR_0081176c->field_05A4,PTR_0081176c->field_0560,0xfffffffe,
-                     PTR_0081176c->field_0578,PTR_0081176c->field_057C);
+                    ((uint *)g_startSystem_0081176C->field_05A4,g_startSystem_0081176C->field_0560,
+                     0xfffffffe,g_startSystem_0081176C->field_0578,
+                     g_startSystem_0081176C->field_057C);
         }
-        if (PTR_0081176c->field_05F1 != 0xffffffff) {
+        if (g_startSystem_0081176C->field_05F1 != 0xffffffff) {
           Library::DKW::DDX::FUN_006b34d0
-                    ((uint *)PTR_0081176c->field_0635,PTR_0081176c->field_05F1,0xfffffffe,
-                     PTR_0081176c->field_0609,PTR_0081176c->field_060D);
+                    ((uint *)g_startSystem_0081176C->field_0635,g_startSystem_0081176C->field_05F1,
+                     0xfffffffe,g_startSystem_0081176C->field_0609,
+                     g_startSystem_0081176C->field_060D);
         }
-        Library::DKW::DDX::FUN_006b3430((int *)PTR_008075a8,PTR_0081176c->field_0558);
-        Library::DKW::DDX::FUN_006b3430((int *)PTR_008075a8,PTR_0081176c->field_0554);
+        Library::DKW::DDX::FUN_006b3430((int *)PTR_008075a8,g_startSystem_0081176C->field_0558);
+        Library::DKW::DDX::FUN_006b3430((int *)PTR_008075a8,g_startSystem_0081176C->field_0554);
       }
       PaintChooseMap(this_00,'\0');
       g_currentExceptionFrame = local_b0.previous;
@@ -274,12 +281,13 @@ switchD_005adb01_caseD_c:
     }
   }
   else if (cVar1 == '\x04') {
-    if ((this_00->field_0x20b5 != '\0') && (0 < PTR_0081176c->field_0300)) {
-      PTR_0081176c->field_0300 = PTR_0081176c->field_0300 + -1;
-      if (PTR_0081176c->field_02FC != 0xffffffff) {
+    if ((this_00->field_0x20b5 != '\0') && (0 < g_startSystem_0081176C->field_0300)) {
+      g_startSystem_0081176C->field_0300 = g_startSystem_0081176C->field_0300 + -1;
+      if (g_startSystem_0081176C->field_02FC != 0xffffffff) {
         Library::DKW::DDX::FUN_006b3730
-                  ((uint *)PTR_0081176c->field_0340,PTR_0081176c->field_02FC,
-                   PTR_0081176c->field_0300,PTR_0081176c->field_0314,PTR_0081176c->field_0318);
+                  ((uint *)g_startSystem_0081176C->field_0340,g_startSystem_0081176C->field_02FC,
+                   g_startSystem_0081176C->field_0300,g_startSystem_0081176C->field_0314,
+                   g_startSystem_0081176C->field_0318);
       }
       local_8 = 0;
     }
@@ -319,8 +327,8 @@ switchD_005adb01_caseD_c:
         local_8 = 0;
       }
     }
-    if ((PTR_0081176c->field_02E6 != (MMsgTy *)0x0) &&
-       (PTR_0081176c->field_02E6->field_0065 != '\x02')) {
+    if ((g_startSystem_0081176C->field_02E6 != (MMsgTy *)0x0) &&
+       (g_startSystem_0081176C->field_02E6->field_0065 != '\x02')) {
       local_8 = 0;
     }
     if (local_8 != 0) {

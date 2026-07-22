@@ -84,7 +84,7 @@ int __thiscall BldObjPanelTy::GetMessage(BldObjPanelTy *this,STMessage *message)
         puVar4 = (undefined4 *)((iVar5 + -0xc09f) * *(int *)(iVar3 + 8) + *(int *)(iVar3 + 0x1c));
       }
       if ((puVar4 != (undefined4 *)0x0) && (*(char *)(puVar4 + 2) != '\0')) {
-        thunk_FUN_0054b630(PTR_00802a30,0xe,*puVar4);
+        thunk_FUN_0054b630(g_cursorClass_00802A30,0xe,*puVar4);
         ProdPanelTy::SetPanel(this_00,'\0');
         thunk_FUN_005252c0(0xae);
         g_currentExceptionFrame = local_4c.previous;
@@ -93,7 +93,7 @@ int __thiscall BldObjPanelTy::GetMessage(BldObjPanelTy *this,STMessage *message)
       break;
     case MESS_BLDLABPANELTY_C0A4:
       *(STMessageArg *)&this_00->field_0x199 = message->arg0;
-      thunk_FUN_004f0c80((AnonShape_004EF140_16642BA0 *)this_00);
+      sub_004F0C80((BldObjPanelTy *)this_00);
       thunk_FUN_005252c0(0xae);
       g_currentExceptionFrame = local_4c.previous;
       return 0;

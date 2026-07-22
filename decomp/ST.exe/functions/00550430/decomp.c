@@ -16,7 +16,7 @@ void __thiscall FUN_00550430(void *this,int param_1,int param_2)
         return;
       }
     }
-    DVar2 = FUN_006e51b0(0x807620);
+    DVar2 = STAppC::sub_006E51B0((STAppC *)&DAT_00807620);
     puVar3[0x12] = DVar2;
     if (((param_2 != 0) && (DAT_00808788 != 0)) && (*(int *)((int)this + 0xf4) == param_1)) {
       *(undefined4 *)((int)this + 0xf4) = 0;

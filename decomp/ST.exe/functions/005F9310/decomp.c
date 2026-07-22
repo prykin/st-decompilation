@@ -37,8 +37,8 @@ undefined1 __thiscall FUN_005f9310(void *this,int param_1)
     iVar2 = (int)(short)(((short)(iVar2 / 200) + sVar1) -
                         (short)((longlong)iVar2 * 0x51eb851f >> 0x3f));
   }
-  if (DAT_008117a4 != (void *)0x0) {
-    iVar3 = thunk_FUN_0062d2d0(DAT_008117a4,*(int *)((int)this + 0x235),iVar3,iVar4,iVar2,
+  if (g_manRub3_008117A4 != (STManRub3C *)0x0) {
+    iVar3 = thunk_FUN_0062d2d0(g_manRub3_008117A4,*(int *)((int)this + 0x235),iVar3,iVar4,iVar2,
                                (int *)((int)this + 0x27d),param_1);
     if (iVar3 != 0) {
       *(undefined1 *)((int)this + 0x29e) = 1;
@@ -46,7 +46,7 @@ undefined1 __thiscall FUN_005f9310(void *this,int param_1)
     }
   }
   if (*(char *)((int)this + 0x29e) != '\0') {
-    thunk_FUN_005f9450(this);
+    STColl3C::sub_005F9450(this);
   }
   return *(undefined1 *)((int)this + 0x29e);
 }

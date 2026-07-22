@@ -48,7 +48,7 @@ void __thiscall IntercomPanelTy::InitIntercomPanel(IntercomPanelTy *this)
     pIVar2->field_019C = puVar7;
     DibPut((AnonShape_006B5B10_E0D06CF1 *)pIVar2->field_0068,0,0,'\x01',(byte *)pIVar2->field_0184);
     pDVar8 = Library::DKW::TBL::SArrayCreate((DArrayTy *)0x0,1,1);
-    pIVar2->field_0198 = &pDVar8->flags;
+    pIVar2->field_0198 = pDVar8;
     Library::DKW::TBL::FUN_006b6020(&pDVar8->flags,0,&DAT_008016a0);
     g_currentExceptionFrame = local_4c.previous;
     return;

@@ -1,0 +1,7 @@
+004F3718  pointer  004f35de
+004F371C  pointer  004f36b0
+004F3720  pointer  004f35f4
+004F3724  pointer  004f36b0
+004F3728  pointer  004f360a
+004F372C  pointer  004f36b0
+004F3730  pointer  004f3620

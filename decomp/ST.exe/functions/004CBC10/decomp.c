@@ -37,7 +37,7 @@ int __thiscall TLOBaseTy::AddSprInit(TLOBaseTy *this)
       g_currentExceptionFrame = local_4c.previous;
       return 0;
     case CASE_45:
-      thunk_FUN_004eaa20((AnonShape_004D9C80_80F657D3 *)local_8);
+      sub_004EAA20((AnonShape_004D9C80_80F657D3 *)local_8);
       g_currentExceptionFrame = local_4c.previous;
       return 0;
     case CASE_4E:

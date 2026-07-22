@@ -6,7 +6,7 @@ void __thiscall FUN_006315d0(void *this,int param_1,int param_2,int param_3,int 
 
 {
   short sVar1;
-  AnonReceiver_006308F0 *this_00;
+  STManRuinC *this_00;
   int iVar2;
   short *psVar3;
   undefined4 *puVar4;
@@ -23,7 +23,7 @@ void __thiscall FUN_006315d0(void *this,int param_1,int param_2,int param_3,int 
   short local_1e;
   undefined4 local_1c;
   undefined4 local_10;
-  AnonReceiver_006308F0 *local_c;
+  STManRuinC *local_c;
   DArrayTy *local_8;
 
   local_8 = *(DArrayTy **)((int)this + 0x38);
@@ -91,19 +91,19 @@ LAB_00631713:
               ;
               *(undefined4 *)&this_00->field_0x44 = 1;
               if ((*(int *)&this_00->field_0x48 == 0) ||
-                 (puVar5 = SubmarineTitans::Recovered::HiddenThis::AnonReceiver_006308F0::
-                           thunk_FUN_00630c50(this_00,*(undefined4 *)&this_00->field_0x40,
-                                              *(int *)&this_00->field_0x4c,1,1,0),
-                 puVar5 != (ushort *)0x0)) {
+                 (puVar5 = STManRuinC::sub_00630C50
+                                     (this_00,*(undefined4 *)&this_00->field_0x40,
+                                      *(int *)&this_00->field_0x4c,1,1,0), puVar5 != (ushort *)0x0))
+              {
                 *(undefined4 *)&this_00->field_0x44 = 2;
               }
               uVar6 = thunk_FUN_00631880(this_00,(undefined4 *)&this_00->field_0x40,
-                                         *(undefined4 *)&this_00->field_0x61);
+                                         this_00->field_0061);
               if (((uVar6 == 0) && (*(int *)&this_00->field_0x48 != 0)) &&
-                 (*(uint *)&this_00->field_0x61 != 0)) {
-                FUN_006e8ba0(PTR_00807598,*(uint *)&this_00->field_0x61);
+                 (this_00->field_0061 != 0)) {
+                FUN_006e8ba0(PTR_00807598,this_00->field_0061);
               }
-              *(undefined4 *)&this_00->field_0x61 = 0xffffffff;
+              this_00->field_0061 = 0xffffffff;
               return;
             }
           }

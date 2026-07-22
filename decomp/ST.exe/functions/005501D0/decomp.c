@@ -12,7 +12,7 @@ void __thiscall FUN_005501d0(void *this,STControlCommand *command)
   }
   else {
     if (command->commandType != 0x32) {
-      STAllPlayersC::CmdToPlsObj(g_sTAllPlayers_007FA174,command);
+      STAllPlayersC::CmdToPlsObj(g_allPlayers_007FA174,command);
       return;
     }
     local_14 = 0x4400;

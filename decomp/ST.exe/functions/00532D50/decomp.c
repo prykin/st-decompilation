@@ -72,18 +72,18 @@ void __thiscall OptPanelTy::PrepFiles(OptPanelTy *this,uint param_1)
     }
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  if ((AnonShape_006B5570_4D68B99C *)local_10->field_01E9 != (AnonShape_006B5570_4D68B99C *)0x0) {
-    FUN_006b5570((AnonShape_006B5570_4D68B99C *)local_10->field_01E9);
-    this_02->field_01E9 = (uint *)0x0;
+  if (local_10->field_01E9 != (DArrayTy *)0x0) {
+    FUN_006b5570(local_10->field_01E9);
+    this_02->field_01E9 = (DArrayTy *)0x0;
   }
-  if ((DArrayTy *)this_02->field_01ED != (DArrayTy *)0x0) {
-    DArrayDestroy((DArrayTy *)this_02->field_01ED);
-    this_02->field_01ED = (uint *)0x0;
+  if (this_02->field_01ED != (DArrayTy *)0x0) {
+    DArrayDestroy(this_02->field_01ED);
+    this_02->field_01ED = (DArrayTy *)0x0;
   }
   pDVar6 = Library::DKW::TBL::SArrayCreate((DArrayTy *)0x0,0x32,10);
-  this_02->field_01E9 = &pDVar6->flags;
+  this_02->field_01E9 = pDVar6;
   pDVar6 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,0x32,8,10);
-  this_02->field_01ED = &pDVar6->flags;
+  this_02->field_01ED = pDVar6;
   this_02->field_0028 = 0x20;
   *(undefined4 *)&this_02->field_0x2c = 0;
   FUN_006e6080(this_02,2,this_02->field_01B5,(undefined4 *)&this_02->field_0x18);
@@ -396,7 +396,7 @@ void __thiscall OptPanelTy::PrepFiles(OptPanelTy *this,uint param_1)
             this_01 = (cMf32 *)0x0;
             if (bVar18) {
               Library::DKW::TBL::FUN_006ae1c0
-                        (this_02->field_01ED,&local_1f4.ftLastWriteTime.dwLowDateTime);
+                        (&this_02->field_01ED->flags,&local_1f4.ftLastWriteTime.dwLowDateTime);
               uVar12 = 0xffffffff;
               pcVar8 = PTR_DAT_0079ad00;
               do {
@@ -406,7 +406,7 @@ void __thiscall OptPanelTy::PrepFiles(OptPanelTy *this,uint param_1)
                 pcVar8 = pcVar8 + 1;
               } while (cVar1 != '\0');
               pcVar8 = FUN_006b8240((char *)local_2f8,~uVar12 - 1);
-              Library::DKW::TBL::FUN_006b5aa0(this_02->field_01E9,pcVar8);
+              Library::DKW::TBL::FUN_006b5aa0(&this_02->field_01E9->flags,pcVar8);
               /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
               this_01 = extraout_ECX_00;
             }
@@ -423,14 +423,14 @@ void __thiscall OptPanelTy::PrepFiles(OptPanelTy *this,uint param_1)
   if (hFindFile != (HANDLE)0xffffffff) {
     FindClose(hFindFile);
   }
-  uVar12 = this_02->field_01E9[2];
+  uVar12 = this_02->field_01E9->elementSize;
   local_8 = uVar12;
   if (uVar12 == 0) {
     if (this_02->field_01A4 != CASE_3) goto LAB_0053325d;
-    Library::DKW::TBL::FUN_006b6020(this_02->field_01F1,0,&DAT_008016a0);
+    Library::DKW::TBL::FUN_006b6020(&this_02->field_01F1->flags,0,&DAT_008016a0);
     uVar19 = this_02->field_01B9;
     this_02->field_0028 = 0x33;
-    *(uint **)&this_02->field_0x2c = this_02->field_01F1;
+    *(DArrayTy **)&this_02->field_0x2c = this_02->field_01F1;
   }
   else {
     if (1 < uVar12) {
@@ -439,9 +439,9 @@ void __thiscall OptPanelTy::PrepFiles(OptPanelTy *this,uint param_1)
         uVar13 = 0;
         if (uVar12 != 1) {
           do {
-            DArrayGetElement((DArrayTy *)this_02->field_01ED,uVar13,&local_2c);
+            DArrayGetElement(this_02->field_01ED,uVar13,&local_2c);
             index = uVar13 + 1;
-            DArrayGetElement((DArrayTy *)this_02->field_01ED,index,&local_24);
+            DArrayGetElement(this_02->field_01ED,index,&local_24);
             LVar10 = CompareFileTime(&local_2c,&local_24);
             if (LVar10 < 0) {
               FUN_006b0cd0((AnonShape_00413AF0_B6B4EE9A *)this_02->field_01ED,uVar13,index);

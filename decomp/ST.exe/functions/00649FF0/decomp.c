@@ -26,7 +26,7 @@ FUN_00649ff0(uint *param_1,undefined4 *param_2,undefined4 *param_3,int *param_4)
   uint local_c;
   DArrayTy *local_8;
 
-  module = HINSTANCE_00807618;
+  module = g_module_00807618;
   local_14 = 0;
   memset(&DAT_008117c0, 0, 0x104); /* compiler bulk-zero initialization */
   iVar6 = 0;
@@ -139,7 +139,7 @@ FUN_00649ff0(uint *param_1,undefined4 *param_2,undefined4 *param_3,int *param_4)
   }
   FUN_006b78c0(&stack0xfffffcd0,&stack0xfffffcd0);
   groupContent = (DArrayTy *)
-                 thunk_FUN_00683c70(param_1,(AnonShape_00683C70_22193481 *)&stack0xfffffcd0,
+                 thunk_FUN_00683c70((LPCSTR)param_1,(AnonShape_00683C70_22193481 *)&stack0xfffffcd0,
                                     &local_14,param_4,(undefined *)0x0);
   if (groupContent != (DArrayTy *)0x0) {
     if (local_14 != CASE_A) {

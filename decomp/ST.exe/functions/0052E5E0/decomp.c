@@ -87,7 +87,7 @@ void __thiscall OptPanelTy::InitOptPanel(OptPanelTy *this)
              FUN_006b50c0(0xde,0xb,(uint)this_00->field_0184[7],uVar11,(undefined4 *)puVar5,iVar2);
     this_00->field_01E5 = puVar5;
     pDVar6 = Library::DKW::TBL::SArrayCreate((DArrayTy *)0x0,1,1);
-    this_00->field_01F1 = &pDVar6->flags;
+    this_00->field_01F1 = pDVar6;
     Library::DKW::TBL::FUN_006b6020(&pDVar6->flags,0,&DAT_008016a0);
     PrepMissObj(this_00);
     SetOptControls(this_00);
@@ -100,8 +100,8 @@ void __thiscall OptPanelTy::InitOptPanel(OptPanelTy *this)
     uVar8 = 0xc002;
     uVar7 = 0xc001;
     pCVar4 = thunk_FUN_00571240("BUT_MEDIUM",0);
-    uVar7 = UPanelTy::CreateBut((UPanelTy *)this_00,0,1,0xc9,0x9f,1,(int)pCVar4,uVar7,uVar8,sVar9,
-                                uVar10,uVar13,pcVar14,uVar17,uVar19);
+    uVar7 = UPanelTy::CreateBut((UPanelTy *)this_00,0,1,0xc9,0x9f,1,pCVar4,uVar7,uVar8,sVar9,uVar10,
+                                uVar13,pcVar14,uVar17,uVar19);
     uVar20 = 0;
     uVar19 = 0;
     pcVar14 = (char *)0x0;
@@ -112,8 +112,8 @@ void __thiscall OptPanelTy::InitOptPanel(OptPanelTy *this)
     uVar8 = 0xc003;
     this_00->field_01AD = uVar7;
     pCVar4 = thunk_FUN_00571240("BUT_MEDIUM",0);
-    uVar7 = UPanelTy::CreateBut((UPanelTy *)this_00,0,0,0x93,0x9f,1,(int)pCVar4,uVar8,uVar13,sVar9,
-                                uVar10,uVar17,pcVar14,uVar19,uVar20);
+    uVar7 = UPanelTy::CreateBut((UPanelTy *)this_00,0,0,0x93,0x9f,1,pCVar4,uVar8,uVar13,sVar9,uVar10
+                                ,uVar17,pcVar14,uVar19,uVar20);
     this_00->field_01B1 = uVar7;
     this_00->field_0301 = this_00->field_0038;
     g_currentExceptionFrame = local_4c.previous;

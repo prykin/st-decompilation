@@ -1,0 +1,15 @@
+0046AF5C  pointer  0046af07
+0046AF60  pointer  0046aa78
+0046AF64  pointer  0046aa78
+0046AF68  pointer  0046aab7
+0046AF6C  pointer  0046aa78
+0046AF70  pointer  0046aac4
+0046AF74  pointer  0046ab03
+0046AF78  pointer  0046aa78
+0046AF7C  pointer  0046aa78
+0046AF80  pointer  0046aab7
+0046AF84  pointer  0046aa78
+0046AF88  pointer  0046ab16
+0046AF8C  pointer  0046ad3e
+0046AF90  pointer  0046ad71
+0046AF94  pointer  0046ab03

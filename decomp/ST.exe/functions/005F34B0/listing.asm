@@ -1,4 +1,4 @@
-FUN_005f34b0:
+STBHEShellC::sub_005F34B0:
 005F34B0  8B 41 61                  MOV EAX,dword ptr [ECX + 0x61]
 005F34B3  8B 51 65                  MOV EDX,dword ptr [ECX + 0x65]
 005F34B6  56                        PUSH ESI

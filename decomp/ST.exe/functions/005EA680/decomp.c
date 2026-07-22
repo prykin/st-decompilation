@@ -15,7 +15,7 @@ int __thiscall WaitTy::GetMessage(WaitTy *this,STMessage *message)
   char cVar1;
   STMessageId SVar2;
   MMsgTy *this_00;
-  uint *puVar3;
+  DArrayTy *pDVar3;
   StartSystemTy *this_01;
   code *pcVar4;
   WaitTy *this_02;
@@ -38,7 +38,7 @@ int __thiscall WaitTy::GetMessage(WaitTy *this,STMessage *message)
   char *local_8;
 
   local_c = this;
-  DVar6 = FUN_006e51b0(this->field_0010);
+  DVar6 = STAppC::sub_006E51B0(this->field_0010);
   this->field_0061 = DVar6;
   local_50.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_50;
@@ -54,17 +54,18 @@ int __thiscall WaitTy::GetMessage(WaitTy *this,STMessage *message)
     RaiseInternalException(iVar7,0,"E:\\__titans\\Start\\wait_obj.cpp",0x3bb);
     return 0xffff;
   }
-  thunk_FUN_005b6450(local_c,(int)message);
-  StartSystemTy::ChatMessage(PTR_0081176c,(AnonShape_005DE050_5BD86458 *)message);
+  thunk_FUN_005b6450(local_c,message);
+  StartSystemTy::ChatMessage(g_startSystem_0081176C,message);
   SVar2 = message->id;
   if (SVar2 < (MESS_SHARED_6334|MESS_ID_CREATE)) {
     if (SVar2 == MESS_WAITTY_6335) {
-      PTR_0081176c->field_04CF =
+      g_startSystem_0081176C->field_04CF =
            *(int *)((message->arg1).u32 + 4) + (uint)(message->arg0).words.high;
-      if (PTR_0081176c->field_04B3 != 0xffffffff) {
+      if (g_startSystem_0081176C->field_04B3 != 0xffffffff) {
         Library::DKW::DDX::FUN_006b3730
-                  ((uint *)PTR_0081176c->field_04F7,PTR_0081176c->field_04B3,
-                   PTR_0081176c->field_04B7,PTR_0081176c->field_04CB,PTR_0081176c->field_04CF);
+                  ((uint *)g_startSystem_0081176C->field_04F7,g_startSystem_0081176C->field_04B3,
+                   g_startSystem_0081176C->field_04B7,g_startSystem_0081176C->field_04CB,
+                   g_startSystem_0081176C->field_04CF);
       }
     }
     else if (SVar2 < 0x610b) {
@@ -73,7 +74,7 @@ int __thiscall WaitTy::GetMessage(WaitTy *this,STMessage *message)
         this_02->field_0049 = 0;
         this_02->field_004D = message->id;
         this_02->field_0051 = 8;
-        thunk_FUN_005b66e0((AnonShape_005B66E0_174166E5 *)this_02);
+        thunk_FUN_005b66e0((MTaskTy *)this_02);
       }
       else if (SVar2 < 4) {
         if (SVar2 == MESS_SHARED_0003) {
@@ -98,14 +99,15 @@ int __thiscall WaitTy::GetMessage(WaitTy *this,STMessage *message)
         this_02->field_004D = message->id;
         this_02->field_0051 = message->arg0;
         this_02->field_0055 = 0;
-        thunk_FUN_005b66e0((AnonShape_005B66E0_174166E5 *)this_02);
+        thunk_FUN_005b66e0((MTaskTy *)this_02);
       }
     }
     else if (SVar2 < MESS_SHARED_6334) {
       if (SVar2 == MESS_WAITTY_6333) {
         MMMObjTy::PaintSlBut
-                  ((MMMObjTy *)this_02,(AnonShape_005B6560_61F462DF *)&PTR_0081176c->field_038D,
-                   (int)message,0);
+                  ((MMMObjTy *)this_02,
+                   (AnonShape_005B6560_61F462DF *)&g_startSystem_0081176C->field_038D,(int)message,0
+                  );
       }
       else if (SVar2 == MESS_SHARED_6121) {
         this_02->field_0045 = 0x200;
@@ -113,16 +115,16 @@ int __thiscall WaitTy::GetMessage(WaitTy *this,STMessage *message)
         this_02->field_004D = message->id;
         this_02->field_0051 = message->arg0;
         this_02->field_0055 = message->arg1;
-        thunk_FUN_005b66e0((AnonShape_005B66E0_174166E5 *)this_02);
+        thunk_FUN_005b66e0((MTaskTy *)this_02);
       }
       else if (SVar2 == MESS_SHARED_6332) {
-        StartSystemTy::PaintBinDesc(PTR_0081176c,(AnonShape_005DE050_5BD86458 *)message);
+        StartSystemTy::PaintBinDesc(g_startSystem_0081176C,(AnonShape_005DE050_5BD86458 *)message);
       }
     }
     else if (SVar2 == MESS_SHARED_6334) {
       MMMObjTy::PaintSlBut
-                ((MMMObjTy *)this_02,(AnonShape_005B6560_61F462DF *)&PTR_0081176c->field_041E,
-                 (int)message,0);
+                ((MMMObjTy *)this_02,
+                 (AnonShape_005B6560_61F462DF *)&g_startSystem_0081176C->field_041E,(int)message,0);
     }
     goto cf_common_exit_005EAB6A;
   }
@@ -132,11 +134,11 @@ int __thiscall WaitTy::GetMessage(WaitTy *this,STMessage *message)
       this_02->field_0049 = 0;
       this_02->field_004D = 0x6102;
       this_02->field_0051 = message->arg0;
-      thunk_FUN_005b66e0((AnonShape_005B66E0_174166E5 *)this_02);
+      thunk_FUN_005b66e0((MTaskTy *)this_02);
     }
     else if (SVar2 < MESS_SHARED_6940) {
       if (SVar2 == MESS_PRIVIDERTY_693F) {
-        thunk_FUN_005e9970((AnonShape_005E9970_7C1AA6F1 *)this_02);
+        sub_005E9970(this_02);
       }
       else if (SVar2 == MESS_SETTMAPMTY_6340) {
         MMMObjTy::PaintSlBut
@@ -150,7 +152,7 @@ int __thiscall WaitTy::GetMessage(WaitTy *this,STMessage *message)
       }
     }
     else if (SVar2 == MESS_SHARED_6940) {
-      thunk_FUN_005e9a40((AnonShape_005E9970_7C1AA6F1 *)this_02);
+      sub_005E9A40(this_02);
     }
     goto cf_common_exit_005EAB6A;
   }
@@ -186,22 +188,23 @@ int __thiscall WaitTy::GetMessage(WaitTy *this,STMessage *message)
   iVar7 = thunk_FUN_005ddb40((int)this_02->field_1A5B);
   if (iVar7 == 0) {
     if (DAT_008067a0 != '\0') {
-      puVar3 = this_02->field_1A5B->field_0686;
-      if ((int)puVar3[2] < 1) {
+      pDVar3 = this_02->field_1A5B->field_0686;
+      if ((int)pDVar3->elementSize < 1) {
         pcVar11 = (char *)0x0;
       }
       else {
-        pcVar11 = *(char **)puVar3[5];
+        pcVar11 = *(char **)pDVar3->growCapacity;
       }
       bVar5 = thunk_FUN_005717e0(pcVar11);
       /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
       if (CONCAT31(extraout_var,bVar5) != 0) {
-        puVar3 = this_02->field_1A5B->field_0686;
-        if ((int)puVar3[2] < 1) {
+        pDVar3 = this_02->field_1A5B->field_0686;
+        if ((int)pDVar3->elementSize < 1) {
           CFsgsConnection::SendChatMessage((CFsgsConnection *)&DAT_00802a90,(char *)0x0);
         }
         else {
-          CFsgsConnection::SendChatMessage((CFsgsConnection *)&DAT_00802a90,*(char **)puVar3[5]);
+          CFsgsConnection::SendChatMessage
+                    ((CFsgsConnection *)&DAT_00802a90,*(char **)pDVar3->growCapacity);
         }
         goto LAB_005eab28;
       }
@@ -242,12 +245,12 @@ int __thiscall WaitTy::GetMessage(WaitTy *this,STMessage *message)
       pcVar11 = pcVar11 + 1;
       pcVar12 = pcVar12 + 1;
     }
-    puVar3 = this_01->field_0686;
-    if ((int)puVar3[2] < 1) {
+    pDVar3 = this_01->field_0686;
+    if ((int)pDVar3->elementSize < 1) {
       pcVar11 = (char *)0x0;
     }
     else {
-      pcVar11 = *(char **)puVar3[5];
+      pcVar11 = *(char **)pDVar3->growCapacity;
     }
     uVar9 = 0xffffffff;
     do {
@@ -276,9 +279,9 @@ int __thiscall WaitTy::GetMessage(WaitTy *this,STMessage *message)
     FUN_00715360(g_int_00811764,0,'\x1b',local_4a4,0x451,1,0xffffffff);
   }
 LAB_005eab28:
-  Library::DKW::TBL::FUN_006b6020(this_02->field_1A5B->field_0686,0,&DAT_008016a0);
+  Library::DKW::TBL::FUN_006b6020(&this_02->field_1A5B->field_0686->flags,0,&DAT_008016a0);
   this_02->field_002D = 0x33;
-  *(uint **)&this_02->field_0x31 = this_02->field_1A5B->field_0686;
+  *(DArrayTy **)&this_02->field_0x31 = this_02->field_1A5B->field_0686;
   FUN_006e6080(this_02,2,this_02->field_1A5B->field_054C,(undefined4 *)&this_02->field_0x1d);
 cf_common_exit_005EAB6A:
   g_currentExceptionFrame = local_50.previous;

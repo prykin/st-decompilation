@@ -171,7 +171,7 @@ undefined4 __thiscall FUN_006264d0(void *this,int *param_1,int param_2)
               return 0;
             }
             if (((uint)param_1[9] < 8) &&
-               ((PTR_00802a38 == (STPlaySystemC *)0x0 ||
+               ((g_playSystem_00802A38 == (STPlaySystemC *)0x0 ||
                 ((byte)(&DAT_008087e9)[param_1[9] * 0x51] < 8)))) {
               bVar4 = *(byte *)&pSVar3[1].vtable;
               bVar1 = *(byte *)(piVar8 + 9);
@@ -245,7 +245,7 @@ LAB_0062687f:
   local_96 = (**(code **)(*piVar8 + 0x10))(local_20,local_54,local_40,local_28,local_24,local_38);
   local_8f = piVar8[6];
   local_8b = 0xffff;
-  STPlaySystemC::CreateGameObject(PTR_00802a38,0x28,0,0,local_bc,0);
+  STPlaySystemC::CreateGameObject(g_playSystem_00802A38,0x28,0,0,local_bc,0);
   return 1;
 }
 

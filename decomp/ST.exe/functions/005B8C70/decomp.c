@@ -51,8 +51,7 @@ void __thiscall MMsgTy::HidePanel(MMsgTy *this,int param_1,int param_2,int param
         local_2c[3] = 2;
         local_2c[4] = 0x6940;
         local_2c[2] = iVar3;
-        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-        (*(code *)this_00->field_000C->vtable->field_0018)(local_2c);
+        (*this_00->field_000C->vtable->vfunc_18)(local_2c);
       }
       if (param_1 == 0) {
         this_00->field_0065 = 2;

@@ -120,7 +120,7 @@ FUN_0069bdc0(void *this,int param_1,int param_2,int param_3,int param_4,int para
       local_8 = 0xffffffff;
       local_58 = (int *)&stack0xffffff6c;
       local_1c = &stack0xffffff6c;
-      Library::MSVCRT::FUN_00730810((undefined1 *)local_78,local_3c,0x40,&LAB_00402adb);
+      Library::MSVCRT::FUN_00730810((undefined1 *)local_78,local_3c,0x40,thunk_FUN_0069b8d0);
       local_28 = (local_50 * param_5) / 100;
       local_60 = 0;
       if (0 < (int)local_3c) {

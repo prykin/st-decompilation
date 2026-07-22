@@ -48,7 +48,7 @@ void __thiscall STAppC::DoneApp(STAppC *this)
     }
     PTR_00806740 = (DArrayTy *)0x0;
     thunk_FUN_005711d0(pSVar3,(int *)&PTR_0081163c);
-    thunk_FUN_005711d0(pSVar3,(int *)&PTR_0081176c);
+    thunk_FUN_005711d0(pSVar3,(int *)&g_startSystem_0081176C);
     CloseGameDBs(pSVar3);
     DestroyBaseSystem();
     if ((DArrayTy *)pSVar3->field_4EE2 != (DArrayTy *)0x0) {
@@ -59,9 +59,9 @@ void __thiscall STAppC::DoneApp(STAppC *this)
       DArrayDestroy((DArrayTy *)pSVar3->field_4EE6);
     }
     pSVar3->field_4EE6 = (uint *)0x0;
-    if (PTR_008075a0 != (AnonShape_006C3FC0_72DDFA27 *)0x0) {
-      FUN_006c3aa0((int *)PTR_008075a0);
-      PTR_008075a0 = (AnonShape_006C3FC0_72DDFA27 *)0x0;
+    if (g_anonShape_006C3FC0_72DDFA27_008075A0 != (AnonShape_006C3FC0_72DDFA27 *)0x0) {
+      FUN_006c3aa0((int *)g_anonShape_006C3FC0_72DDFA27_008075A0);
+      g_anonShape_006C3FC0_72DDFA27_008075A0 = (AnonShape_006C3FC0_72DDFA27 *)0x0;
     }
     if (g_int_008075A4 != (int *)0x0) {
       FUN_006c2ac0(g_int_008075A4);
@@ -120,18 +120,18 @@ void __thiscall STAppC::DoneApp(STAppC *this)
       DArrayDestroy((DArrayTy *)pSVar3->field_4EDE);
     }
     pSVar3->field_4EDE = 0;
-    if ((AnonShape_006B5570_4D68B99C *)pSVar3->field_4EA7 != (AnonShape_006B5570_4D68B99C *)0x0) {
-      FUN_006b5570((AnonShape_006B5570_4D68B99C *)pSVar3->field_4EA7);
+    if ((DArrayTy *)pSVar3->field_4EA7 != (DArrayTy *)0x0) {
+      FUN_006b5570((DArrayTy *)pSVar3->field_4EA7);
     }
     pSVar3->field_4EA7 = (uint *)0x0;
-    if ((AnonShape_006B5570_4D68B99C *)pSVar3->field_4EAB != (AnonShape_006B5570_4D68B99C *)0x0) {
-      FUN_006b5570((AnonShape_006B5570_4D68B99C *)pSVar3->field_4EAB);
+    if ((DArrayTy *)pSVar3->field_4EAB != (DArrayTy *)0x0) {
+      FUN_006b5570((DArrayTy *)pSVar3->field_4EAB);
     }
     pSVar3->field_4EAB = (uint *)0x0;
-    if ((AnonShape_006B5570_4D68B99C *)pSVar3->field_4EDA != (AnonShape_006B5570_4D68B99C *)0x0) {
-      FUN_006b5570((AnonShape_006B5570_4D68B99C *)pSVar3->field_4EDA);
+    if (pSVar3->field_4EDA != (DArrayTy *)0x0) {
+      FUN_006b5570(pSVar3->field_4EDA);
     }
-    pSVar3->field_4EDA = (uint *)0x0;
+    pSVar3->field_4EDA = (DArrayTy *)0x0;
     if (pSVar3->field_7D12 != (ushort *)0x0) {
       FreeAndNull(&pSVar3->field_7D12);
     }

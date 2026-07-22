@@ -1,0 +1,7 @@
+0058ECB4  pointer  0058ebc1
+0058ECB8  pointer  0058e741
+0058ECBC  pointer  0058e741
+0058ECC0  pointer  0058e741
+0058ECC4  pointer  0058e684
+0058ECC8  pointer  0058e6c0
+0058ECCC  pointer  0058ec46

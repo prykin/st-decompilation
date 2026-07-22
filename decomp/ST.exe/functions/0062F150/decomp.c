@@ -3,7 +3,7 @@ void __fastcall FUN_0062f150(AnonShape_0062F150_AF81DB77 *param_1)
 
 {
   int iVar1;
-  void *this;
+  STT3DSprC *this;
   VisibleClassTy *pVVar2;
   int *piVar3;
   int local_10;
@@ -32,13 +32,13 @@ LAB_0062f208:
   do {
     iVar1 = *piVar3;
     if (iVar1 != 0) {
-      this = *(void **)(iVar1 + 0x10);
+      this = *(STT3DSprC **)(iVar1 + 0x10);
       if (*(int *)(iVar1 + 0x18) == 2) {
-        if (PTR_00802a38->field_00E4 % 5 == 0) {
-          if (this != (void *)0x0) {
-            thunk_FUN_004ace30(this,*(uint *)(DAT_00806724 + 0x30 +
-                                             (uint)*(byte *)(iVar1 + 0x34) * 4),
-                               (int)*(short *)(DAT_00806724 + 0x2c));
+        if (g_playSystem_00802A38->field_00E4 % 5 == 0) {
+          if (this != (STT3DSprC *)0x0) {
+            STT3DSprC::sub_004ACE30
+                      (this,*(uint *)(DAT_00806724 + 0x30 + (uint)*(byte *)(iVar1 + 0x34) * 4),
+                       (int)*(short *)(DAT_00806724 + 0x2c));
           }
           *(char *)(*piVar3 + 0x34) = *(char *)(*piVar3 + 0x34) + '\x01';
           if (*(short *)(DAT_00806724 + 0x23) <= (short)(ushort)*(byte *)(*piVar3 + 0x34)) {
@@ -47,20 +47,21 @@ LAB_0062f208:
         }
       }
       /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-      else if (*(uint *)(iVar1 + 0x39) < PTR_00802a38->field_00E4 - *(int *)(iVar1 + 0x35)) {
+      else if (*(uint *)(iVar1 + 0x39) < g_playSystem_00802A38->field_00E4 - *(int *)(iVar1 + 0x35))
+      {
         *(undefined4 *)(iVar1 + 0x18) = 2;
-        *(uint *)(*piVar3 + 0x35) = PTR_00802a38->field_00E4;
+        *(uint *)(*piVar3 + 0x35) = g_playSystem_00802A38->field_00E4;
         *(undefined4 *)(*piVar3 + 0x39) = 10;
         *(undefined1 *)(*piVar3 + 0x34) = 0;
       }
       iVar1 = *piVar3;
       if (local_c == 0) {
-        if (((iVar1 != 0) && (*(char *)(iVar1 + 0x3d) != '\0')) && (this != (void *)0x0)) {
+        if (((iVar1 != 0) && (*(char *)(iVar1 + 0x3d) != '\0')) && (this != (STT3DSprC *)0x0)) {
           thunk_FUN_004ad430((int)this);
           *(undefined1 *)(*piVar3 + 0x3d) = 0;
         }
       }
-      else if (((iVar1 != 0) && (*(char *)(iVar1 + 0x3d) == '\0')) && (this != (void *)0x0)) {
+      else if (((iVar1 != 0) && (*(char *)(iVar1 + 0x3d) == '\0')) && (this != (STT3DSprC *)0x0)) {
         thunk_FUN_004ad460(this,0);
         *(undefined1 *)(*piVar3 + 0x3d) = 1;
       }

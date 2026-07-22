@@ -41,7 +41,8 @@ uint * __thiscall FUN_0068e4f0(void *this,int param_1)
       /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
       if ((*(AnonShape_0065E360_B94C37CB **)(iVar2 + 4) != (AnonShape_0065E360_B94C37CB *)0x0) &&
          (array_00 = (DArrayTy *)
-                     thunk_FUN_0065e360(*(AnonShape_0065E360_B94C37CB **)(iVar2 + 4),iVar4,param_1),
+                     AiFltClassTy::sub_0065E360
+                               (*(AnonShape_0065E360_B94C37CB **)(iVar2 + 4),iVar4,param_1),
          iVar4 = extraout_EDX_00, array_00 != (DArrayTy *)0x0)) {
         dVar1 = array_00->count;
         if ((dVar1 != 0) && (uVar5 = 0, uVar6 = local_8, 0 < (int)dVar1)) {

@@ -1,11 +1,14 @@
 
-uint __cdecl FUN_0067fd20(undefined4 param_1,char *param_2)
+/* [STPrototypeApplier] Propagated parameter 0.
+   Evidence: 00683C70 -> 0067FD20 @ 0068A4D6 */
+
+uint __cdecl FUN_0067fd20(int *param_1,char *param_2)
 
 {
   uint uVar1;
   uint uVar2;
   InternalExceptionFrame local_4c;
-  undefined4 local_8;
+  int *local_8;
 
   local_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_4c;

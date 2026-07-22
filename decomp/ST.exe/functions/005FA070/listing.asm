@@ -1,4 +1,4 @@
-FUN_005fa070:
+STColl3C::sub_005FA070:
 005FA070  56                        PUSH ESI
 005FA071  8B F1                     MOV ESI,ECX
 005FA073  83 BE DD 02 00 00 05      CMP dword ptr [ESI + 0x2dd],0x5

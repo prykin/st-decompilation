@@ -109,7 +109,7 @@ LAB_005c17e9:
     iVar1 = pAVar4->field_0018 - 2;
     iVar10 = iVar7 + 1;
   }
-  FUN_006b5b10((AnonShape_006B5B10_E0D06CF1 *)local_8->field_0073,0,iVar6,iVar10,iVar6,iVar1 + iVar7
+  FUN_006b5b10((AnonShape_006E6FB0_BC494FEA *)local_8->field_0073,0,iVar6,iVar10,iVar6,iVar1 + iVar7
                ,bVar11,0xd);
 LAB_005c1806:
   if (pAVar4->field_0004 < 2) {

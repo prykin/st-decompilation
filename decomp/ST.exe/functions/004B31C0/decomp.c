@@ -18,9 +18,9 @@ undefined4 __cdecl FUN_004b31c0(int *param_1,int param_2)
   if (iVar2 == 0) {
     return 0;
   }
-  if (PTR_007fa170 != (DArrayTy *)0x0) {
-    PTR_007fa170->iteratorIndex = 0;
-    iVar3 = FUN_006b1190((AnonShape_006B1190_EDB2B5FD *)PTR_007fa170,&local_c);
+  if (g_dArray_007FA170 != (DArrayTy *)0x0) {
+    g_dArray_007FA170->iteratorIndex = 0;
+    iVar3 = FUN_006b1190(g_dArray_007FA170,&local_c);
     iVar2 = param_2;
     while (-1 < iVar3) {
       if ((((local_c != (AnonShape_004B31C0_DBC5A6CD *)0x0) && (local_c->field_0024 == piVar1)) &&
@@ -29,7 +29,7 @@ undefined4 __cdecl FUN_004b31c0(int *param_1,int param_2)
           || (local_c->field_02DC != 0)))) {
         local_8 = local_8 + 1;
       }
-      iVar3 = FUN_006b1190((AnonShape_006B1190_EDB2B5FD *)PTR_007fa170,&local_c);
+      iVar3 = FUN_006b1190(g_dArray_007FA170,&local_c);
       iVar4 = local_8;
     }
     if (DAT_00808a97 <= (uint)*(ushort *)&g_playerRuntime[(int)piVar1].field_0xd + iVar4) {

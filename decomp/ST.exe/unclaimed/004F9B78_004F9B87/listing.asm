@@ -1,0 +1,4 @@
+004F9B78  pointer  004f9750
+004F9B7C  pointer  004f976d
+004F9B80  pointer  004f9974
+004F9B84  pointer  004f9ad0

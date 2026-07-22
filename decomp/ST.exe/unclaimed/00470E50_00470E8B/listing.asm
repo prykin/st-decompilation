@@ -1,0 +1,15 @@
+00470E50  pointer  0046f60b
+00470E54  pointer  0046f63a
+00470E58  pointer  0046f7cb
+00470E5C  pointer  004707b7
+00470E60  pointer  0046f7e4
+00470E64  pointer  0046f8d2
+00470E68  pointer  0046f91e
+00470E6C  pointer  0046fa25
+00470E70  pointer  004707b7
+00470E74  pointer  0046f9a8
+00470E78  pointer  0046fd7c
+00470E7C  pointer  0046fdab
+00470E80  pointer  0046ff97
+00470E84  pointer  00470e32
+00470E88  pointer  0046feec

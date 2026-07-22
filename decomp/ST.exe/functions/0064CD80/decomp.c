@@ -48,10 +48,10 @@ int __thiscall AiEventClassTy::InitData(AiEventClassTy *this,int *param_1)
     *(undefined1 *)((int)piVar14 + 2) = *(undefined1 *)((int)piVar10 + 2);
     local_8->field_0091 = 1;
     pDVar4 = Library::DKW::TBL::SArrayCreate((DArrayTy *)0x0,5,5);
-    pAVar2->field_05B3 = &pDVar4->flags;
+    pAVar2->field_05B3 = pDVar4;
     uVar11 = 0;
     do {
-      Library::DKW::TBL::FUN_006b6020(pAVar2->field_05B3,uVar11,&DAT_008016a0);
+      Library::DKW::TBL::FUN_006b6020(&pAVar2->field_05B3->flags,uVar11,&DAT_008016a0);
       uVar11 = uVar11 + 1;
     } while ((int)uVar11 < 4);
     if (pAVar2->field_008C == '\0') {
@@ -126,7 +126,7 @@ int __thiscall AiEventClassTy::InitData(AiEventClassTy *this,int *param_1)
     return 0;
   }
   g_currentExceptionFrame = local_4c.previous;
-  FUN_00402e14((int)local_8);
+  FUN_00402e14(local_8);
   iVar8 = ReportDebugMessage("E:\\__titans\\ai\\ai_event.cpp",0x50,0,iVar3,"%s",
                              "AiEventClassTy::InitData");
   if (iVar8 != 0) {

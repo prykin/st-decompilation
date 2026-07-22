@@ -1,4 +1,4 @@
-FUN_005f5b80:
+STBHEShellC::sub_005F5B80:
 005F5B80  55                        PUSH EBP
 005F5B81  8B EC                     MOV EBP,ESP
 005F5B83  8B 55 08                  MOV EDX,dword ptr [EBP + 0x8]

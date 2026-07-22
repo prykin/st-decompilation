@@ -1,4 +1,4 @@
-FUN_0058efe0:
+STSharkC::sub_0058EFE0:
 0058EFE0  55                        PUSH EBP
 0058EFE1  8B EC                     MOV EBP,ESP
 0058EFE3  83 EC 20                  SUB ESP,0x20

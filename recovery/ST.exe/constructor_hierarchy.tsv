@@ -1,4 +1,5 @@
 apply	base_owner	derived_owner	base_table	derived_table	evidence_functions	confidence	reason
+1	ComboTy	MMObjTy	0079C018	0079C008	005AA2C0 | 005B2790 | 005BD2E0 | 005D4B40 | 005D77A0 | 005EAD30	high	same_object_vptr_store_order
 0	MMObjTy	ChooseMapTy	0079C008	0079C088	005B2790	medium	same_object_vptr_store_order
 0	MMObjTy	FSGSTy	0079C008	0079C02C	005AA2C0	medium	same_object_vptr_store_order
 1	MMObjTy	PrividerTy	0079C008	0079C0C4	005BD2E0	high	same_object_vptr_store_order

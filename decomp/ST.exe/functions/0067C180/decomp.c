@@ -43,7 +43,7 @@ void __thiscall AiPlrClassTy::Offensive(AiPlrClassTy *this,void *param_1)
 
   local_c = (DArrayTy *)0x0;
   if ((((this->field_0676 != '\0') && (this->field_0640 != 0xff)) &&
-      (this->field_0695 != (DArrayTy *)0x0)) && (g_sTAllPlayers_007FA174 != (STAllPlayersC *)0x0)) {
+      (this->field_0695 != (DArrayTy *)0x0)) && (g_allPlayers_007FA174 != (STAllPlayersC *)0x0)) {
     local_80.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_80;
     local_20 = this;
@@ -56,7 +56,7 @@ void __thiscall AiPlrClassTy::Offensive(AiPlrClassTy *this,void *param_1)
           local_20->field_0685 = local_20->field_06FE;
           array = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,5,0x10,5);
           local_c = array;
-          thunk_FUN_0067a240(this_00,&LAB_00403544,&array->flags);
+          sub_0067A240(this_00,thunk_FUN_0067ba50,array);
           uVar11 = array->count;
           uVar14 = 0;
           iVar4 = 0;
@@ -119,7 +119,7 @@ void __thiscall AiPlrClassTy::Offensive(AiPlrClassTy *this,void *param_1)
             if (((this_00->field_0679 <= local_1c) || (local_14 < 1)) ||
                ((int)this_00->field_067B < (local_10 * 100) / local_14)) {
               local_8 = 0;
-              this_00->field_06AD[3] = 0;
+              this_00->field_06AD->count = 0;
               bVar15 = *(int *)(iVar4 + 0xc) != 0;
               if (0 < *(int *)(iVar4 + 0xc)) {
                 do {
@@ -145,7 +145,7 @@ void __thiscall AiPlrClassTy::Offensive(AiPlrClassTy *this,void *param_1)
                     local_28 = thunk_FUN_00674fb0((int)local_3c._2_2_);
                     uVar11 = thunk_FUN_00675430((Global_sub_00675430_param_1Enum)local_28);
                     local_24 = (undefined2)uVar11;
-                    Library::DKW::TBL::FUN_006ae1c0(this_00->field_06AD,&local_3c);
+                    Library::DKW::TBL::FUN_006ae1c0(&this_00->field_06AD->flags,&local_3c);
                     iVar4 = local_18;
                   }
                   local_8 = local_8 + 1;
@@ -153,9 +153,9 @@ void __thiscall AiPlrClassTy::Offensive(AiPlrClassTy *this,void *param_1)
                   array = local_c;
                 } while ((int)local_8 < (int)*(uint *)(iVar4 + 0xc));
               }
-              thunk_FUN_00676c40((DArrayTy *)this_00->field_06AD,&LAB_004026fd);
-              thunk_FUN_00676c40(array,&LAB_004029b4);
-              thunk_FUN_0067bfd0(this_00,array,(AnonShape_00413AF0_B6B4EE9A *)this_00->field_06AD);
+              thunk_FUN_00676c40(this_00->field_06AD,thunk_FUN_0067baf0);
+              thunk_FUN_00676c40(array,thunk_FUN_0067bb20);
+              sub_0067BFD0(this_00,array,this_00->field_06AD);
               this_00->field_0689 = 1;
             }
           }
@@ -173,20 +173,20 @@ LAB_0067c61b:
         if ((iVar4 == 0) || (uVar11 = local_20->field_0685 + iVar4, uVar11 <= local_20->field_06FE))
         {
           local_20->field_0685 = local_20->field_06FE;
-          thunk_FUN_0067be20((int)local_20,uVar11,(DArrayTy *)local_20->field_06AD);
-          iVar4 = thunk_FUN_0067bd50((DArrayTy *)this_00->field_06AD);
+          thunk_FUN_0067be20((int)local_20,uVar11,local_20->field_06AD);
+          iVar4 = thunk_FUN_0067bd50(this_00->field_06AD);
           pDVar12 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,5,0x10,5);
           local_c = pDVar12;
-          thunk_FUN_0067a240(this_00,&LAB_00403544,&pDVar12->flags);
+          sub_0067A240(this_00,thunk_FUN_0067ba50,pDVar12);
           iVar4 = iVar4 + pDVar12->count;
           if (iVar4 == 0) {
-            thunk_FUN_0067c110((AnonReceiver_006799B0 *)this_00);
+            sub_0067C110(this_00);
             array = local_c;
           }
           else {
             array = local_c;
             if (0 < (int)pDVar12->count) {
-              if ((int)this_00->field_06AD[3] < iVar4) {
+              if ((int)this_00->field_06AD->count < iVar4) {
                 iVar4 = thunk_FUN_0042a990(*(char *)&this_00->field_0640);
                 local_18 = iVar4;
                 if (iVar4 != 0) {
@@ -206,8 +206,8 @@ LAB_0067c61b:
                       pSVar1 = (STFishC *)*puVar9;
                       if (((pSVar1 != (STFishC *)0x0) &&
                           (iVar7 = (*pSVar1->vtable->vfunc_F8)(), iVar4 = local_18, iVar7 != 0)) &&
-                         (puVar13 = thunk_FUN_0067bd00((DArrayTy *)this_00->field_06AD,uVar11),
-                         iVar4 = local_18, puVar13 == (ushort *)0x0)) {
+                         (puVar13 = thunk_FUN_0067bd00(this_00->field_06AD,uVar11), iVar4 = local_18
+                         , puVar13 == (ushort *)0x0)) {
                         uVar3 = (undefined2)local_8;
                         memset(&local_3c, 0, 0x1c); /* compiler bulk-zero initialization */
                         /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
@@ -221,7 +221,7 @@ LAB_0067c61b:
                         local_28 = thunk_FUN_00674fb0((int)local_3c._2_2_);
                         uVar11 = thunk_FUN_00675430((Global_sub_00675430_param_1Enum)local_28);
                         local_24 = (undefined2)uVar11;
-                        Library::DKW::TBL::FUN_006ae1c0(this_00->field_06AD,&local_3c);
+                        Library::DKW::TBL::FUN_006ae1c0(&this_00->field_06AD->flags,&local_3c);
                         iVar4 = local_18;
                         uVar11 = local_8;
                       }
@@ -230,15 +230,14 @@ LAB_0067c61b:
                     } while ((int)local_8 < (int)*(uint *)(iVar4 + 0xc));
                   }
                 }
-                thunk_FUN_00676c40((DArrayTy *)this_00->field_06AD,&LAB_004026fd);
+                thunk_FUN_00676c40(this_00->field_06AD,thunk_FUN_0067baf0);
               }
-              if (((AnonShape_00413AF0_B6B4EE9A *)this_00->field_06AD)->field_000C == 0) {
-                thunk_FUN_0067c110((AnonReceiver_006799B0 *)this_00);
+              if (this_00->field_06AD->count == 0) {
+                sub_0067C110(this_00);
                 array = local_c;
               }
               else {
-                thunk_FUN_0067bfd0(this_00,local_c,
-                                   (AnonShape_00413AF0_B6B4EE9A *)this_00->field_06AD);
+                sub_0067BFD0(this_00,local_c,this_00->field_06AD);
                 array = local_c;
               }
             }

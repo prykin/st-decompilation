@@ -25,10 +25,11 @@ void __thiscall SettMapTy::PaintSC(SettMapTy *this)
   local_8 = this;
   errorCode = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
   if (errorCode == 0) {
-    if ((DAT_008087b6 != 0) && (PTR_0081176c->field_02F4 != (ushort *)0x0)) {
-      FUN_006e83f0((AnonShape_006B5B10_E0D06CF1 *)PTR_0081176c->field_02F0,0x14,0x14,0x8b,
+    if ((DAT_008087b6 != 0) && (g_startSystem_0081176C->field_02F4 != (ushort *)0x0)) {
+      FUN_006e83f0((AnonShape_006B5B10_E0D06CF1 *)g_startSystem_0081176C->field_02F0,0x14,0x14,0x8b,
                    (uint)DAT_008087c2);
-      FUN_006b5440((int)PTR_0081176c->field_02F0,0,0x14,0x14,(int)PTR_0081176c->field_02F4,0,0);
+      FUN_006b5440((int)g_startSystem_0081176C->field_02F0,0,0x14,0x14,
+                   (uint)g_startSystem_0081176C->field_02F4,0,0);
       pSVar2 = local_8;
       if ((DAT_0080734b != '\0') &&
          ((pDVar4 = local_8->field_1F84, pDVar4 != (DArrayTy *)0x0 && (0 < (int)pDVar4->count)))) {
@@ -79,8 +80,8 @@ void __thiscall SettMapTy::PaintSC(SettMapTy *this)
           bVar8 = uVar7 < pDVar4->count;
         } while ((int)uVar7 < (int)pDVar4->count);
       }
-      if (-1 < PTR_0081176c->field_02EC) {
-        FUN_006b35d0((int *)PTR_008075a8,PTR_0081176c->field_02EC);
+      if (-1 < g_startSystem_0081176C->field_02EC) {
+        FUN_006b35d0((int *)PTR_008075a8,g_startSystem_0081176C->field_02EC);
       }
     }
     g_currentExceptionFrame = local_4c.previous;

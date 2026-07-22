@@ -30,8 +30,7 @@ STPlaySystemC::CreateGameObject
       RaiseInternalException
                 (-4,g_overwriteContext_007ED77C,"E:\\__titans\\Andrey\\tplaysys.cpp",0xef);
     }
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-    iVar3 = (*(code *)pSVar2->vtable->field_0008)(local_8,param_2,param_3,param_4,param_5);
+    iVar3 = (*pSVar2->vtable->vfunc_08)(local_8,param_2,param_3,param_4,param_5);
     if (iVar3 != 0) {
       RaiseInternalException
                 (iVar3,g_overwriteContext_007ED77C,"E:\\__titans\\Andrey\\tplaysys.cpp",0xf0);

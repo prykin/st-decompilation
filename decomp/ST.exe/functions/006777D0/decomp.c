@@ -15,7 +15,7 @@ FUN_006777d0(Global_sub_006777D0_param_1Enum param_1,int param_2,int param_3,und
   int local_8;
 
   local_8 = 0;
-  if (g_sTAllPlayers_007FA174 == (STAllPlayersC *)0x0) {
+  if (g_allPlayers_007FA174 == (STAllPlayersC *)0x0) {
     return 0;
   }
   iVar3 = param_2;

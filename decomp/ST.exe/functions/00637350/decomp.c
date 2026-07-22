@@ -113,7 +113,7 @@ FUN_00637350(int param_1,int param_2,int param_3,int param_4,uint param_5,undefi
                               (int)sVar11].objects[0], this != (STWorldObject *)0x0 &&
                      (iVar10 = (*this->vtable[5].slots_00_28[0])(), uVar7 = param_9, iVar10 != 0))))
                    )) && (this[1].vtable < (STWorldObjectVTable *)0x8)) &&
-                 ((PTR_00802a38 == (STPlaySystemC *)0x0 ||
+                 ((g_playSystem_00802A38 == (STPlaySystemC *)0x0 ||
                   ((byte)(&DAT_008087e9)[(int)this[1].vtable * 0x51] < 8)))) {
                 bVar1 = *(byte *)&this[1].vtable;
                 /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */

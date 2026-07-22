@@ -114,8 +114,7 @@ LAB_00440bab:
       }
       else {
         pSVar5 = GetObjPtr(local_40,param_1,local_28,CASE_1);
-        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-        iVar4 = (**(code **)&pSVar5->vtable[1].field_0x28)();
+        iVar4 = (*pSVar5->vtable[1].vfunc_24)();
         if (iVar4 == 0) goto LAB_00440bab;
       }
       uVar13 = uVar13 + 1;
@@ -138,8 +137,7 @@ LAB_00440c19:
       }
       else {
         pSVar5 = GetObjPtr(local_40,param_1,local_28,CASE_1);
-        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-        iVar4 = (**(code **)&pSVar5->vtable[1].field_0x28)();
+        iVar4 = (*pSVar5->vtable[1].vfunc_24)();
         if (iVar4 == 0) goto LAB_00440c19;
       }
       uVar13 = uVar13 + 1;
@@ -190,8 +188,8 @@ LAB_00440c19:
                           (-0x5001fffc,g_overwriteContext_007ED77C,
                            "E:\\__titans\\wlad\\to_allpl.cpp",0x223a);
               }
-              if ((pSVar5->field_0020 == 0x14) &&
-                 (iVar4 = thunk_FUN_0045ff10((int)pSVar5), iVar4 == 4)) {
+              if ((pSVar5->field_0020 == 0x14) && (iVar4 = thunk_FUN_0045ff10(pSVar5), iVar4 == 4))
+              {
                 puVar8 = (undefined4 *)thunk_FUN_0048dcc0(pSVar5,local_130);
                 psVar14 = &local_fc;
                 for (iVar4 = 0xd; dVar1 = local_48, iVar4 != 0; iVar4 = iVar4 + -1) {
@@ -296,8 +294,7 @@ LAB_00440c19:
           /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
           pSVar5 = GetObjPtr(local_40,param_1,CONCAT22((undefined2)uStack_3a,local_3c),CASE_1);
           STFishC::sub_004162B0((STFishC *)pSVar5,&local_12,&local_14,&local_16);
-          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-          GVar9 = (**(code **)&pSVar5->vtable->field_0x2c)();
+          GVar9 = (*pSVar5->vtable->vfunc_2C)();
           bVar3 = thunk_FUN_00430750(GVar9);
           uStack_3a = ((g_pathingScratchGrid.cells
                         [(int)local_16 * (int)g_pathingGrid.planeStride +
@@ -320,8 +317,7 @@ LAB_00440c19:
             local_68 = -1;
           }
           else {
-            /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-            GVar9 = (**(code **)&pSVar5->vtable->field_0x2c)();
+            GVar9 = (*pSVar5->vtable->vfunc_2C)();
             bVar3 = thunk_FUN_00430750(GVar9);
             local_68 = ((local_68 * 0xc9 + -0xc9) / 3) / (int)(uint)bVar3;
           }
@@ -346,14 +342,12 @@ LAB_00440c19:
           DArrayGetElement(local_10,0,&local_3c);
           /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
           pSVar5 = GetObjPtr(local_40,param_1,CONCAT22((undefined2)uStack_3a,local_3c),CASE_1);
-          local_60 = thunk_FUN_00486b40((int)pSVar5);
-          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-          iVar4 = (**(code **)&pSVar5->vtable->field_0x78)();
+          local_60 = thunk_FUN_00486b40(pSVar5);
+          iVar4 = (*pSVar5->vtable->vfunc_78)();
           if (iVar4 < 1) {
             iVar4 = 1;
           }
-          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-          iVar10 = (**(code **)&pSVar5->vtable->field_0x2c)();
+          iVar10 = (*pSVar5->vtable->vfunc_2C)();
           local_c = (DArrayTy *)
                     ((int)(*(int *)(&DAT_007e049c + iVar10 * 4) * local_60) / iVar4 + uStack_3a);
           Library::DKW::TBL::FUN_006ae140(&pDVar6->flags,local_1c,&local_10);
@@ -380,14 +374,12 @@ LAB_00440c19:
           DArrayGetElement(array,0,&local_34);
           /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
           pSVar5 = GetObjPtr(local_40,param_1,CONCAT22(local_34._2_2_,(undefined2)local_34),CASE_1);
-          iVar4 = thunk_FUN_00486b40((int)pSVar5);
-          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-          iVar10 = (**(code **)&pSVar5->vtable->field_0x78)();
+          iVar4 = thunk_FUN_00486b40(pSVar5);
+          iVar10 = (*pSVar5->vtable->vfunc_78)();
           if (iVar10 < 1) {
             iVar10 = 1;
           }
-          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-          iVar11 = (**(code **)&pSVar5->vtable->field_0x2c)();
+          iVar11 = (*pSVar5->vtable->vfunc_2C)();
           local_74 = (*(int *)(&DAT_007e049c + iVar11 * 4) * iVar4) / iVar10;
           iVar4 = 0;
           /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
@@ -399,14 +391,12 @@ LAB_00440c19:
               /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
               pSVar5 = GetObjPtr(local_40,param_1,CONCAT22(local_5c._2_2_,(undefined2)local_5c),
                                  CASE_1);
-              local_60 = thunk_FUN_00486b40((int)pSVar5);
-              /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-              iVar10 = (**(code **)&pSVar5->vtable->field_0x78)();
+              local_60 = thunk_FUN_00486b40(pSVar5);
+              iVar10 = (*pSVar5->vtable->vfunc_78)();
               if (iVar10 < 1) {
                 iVar10 = 1;
               }
-              /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-              iVar11 = (**(code **)&pSVar5->vtable->field_0x2c)();
+              iVar11 = (*pSVar5->vtable->vfunc_2C)();
               iVar10 = (int)(*(int *)(&DAT_007e049c + iVar11 * 4) * local_60) / iVar10;
               local_50 = (DArrayTy *)((int)&local_50->flags + iVar10);
               /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
@@ -467,14 +457,12 @@ LAB_00440c19:
               DArrayGetElement(local_10,0,&local_3c);
               /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
               pSVar5 = GetObjPtr(local_40,param_1,CONCAT22((undefined2)uStack_3a,local_3c),CASE_1);
-              iVar4 = thunk_FUN_00486b40((int)pSVar5);
-              /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-              iVar10 = (**(code **)&pSVar5->vtable->field_0x78)();
+              iVar4 = thunk_FUN_00486b40(pSVar5);
+              iVar10 = (*pSVar5->vtable->vfunc_78)();
               if (iVar10 < 1) {
                 iVar10 = 1;
               }
-              /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-              iVar11 = (**(code **)&pSVar5->vtable->field_0x2c)();
+              iVar11 = (*pSVar5->vtable->vfunc_2C)();
               local_8 = (DArrayTy *)
                         ((*(int *)(&DAT_007e049c + iVar11 * 4) * iVar4) / iVar10 + uStack_3a);
             }
@@ -499,14 +487,12 @@ LAB_00440c19:
               /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
               pSVar5 = GetObjPtr(local_40,param_1,CONCAT22(local_34._2_2_,(undefined2)local_34),
                                  CASE_1);
-              iVar4 = thunk_FUN_00486b40((int)pSVar5);
-              /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-              iVar10 = (**(code **)&pSVar5->vtable->field_0x78)();
+              iVar4 = thunk_FUN_00486b40(pSVar5);
+              iVar10 = (*pSVar5->vtable->vfunc_78)();
               if (iVar10 < 1) {
                 iVar10 = 1;
               }
-              /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-              iVar11 = (**(code **)&pSVar5->vtable->field_0x2c)();
+              iVar11 = (*pSVar5->vtable->vfunc_2C)();
               local_74 = (*(int *)(&DAT_007e049c + iVar11 * 4) * iVar4) / iVar10;
               iVar4 = 0;
               /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
@@ -518,14 +504,12 @@ LAB_00440c19:
                   /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                   pSVar5 = GetObjPtr(local_40,param_1,CONCAT22(local_5c._2_2_,(undefined2)local_5c),
                                      CASE_1);
-                  local_60 = thunk_FUN_00486b40((int)pSVar5);
-                  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-                  iVar10 = (**(code **)&pSVar5->vtable->field_0x78)();
+                  local_60 = thunk_FUN_00486b40(pSVar5);
+                  iVar10 = (*pSVar5->vtable->vfunc_78)();
                   if (iVar10 < 1) {
                     iVar10 = 1;
                   }
-                  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-                  iVar11 = (**(code **)&pSVar5->vtable->field_0x2c)();
+                  iVar11 = (*pSVar5->vtable->vfunc_2C)();
                   iVar10 = (int)(*(int *)(&DAT_007e049c + iVar11 * 4) * local_60) / iVar10;
                   local_50 = (DArrayTy *)((int)&local_50->flags + iVar10);
                   /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */

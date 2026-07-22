@@ -18,7 +18,7 @@ FSGSTy::AddMessage(FSGSTy *this,uint param_1,byte *param_2,char *param_3,uint pa
   int iVar6;
   uint *puVar7;
   DArrayTy *pDVar8;
-  AnonShape_006B5570_4D68B99C *pAVar9;
+  DArrayTy *pDVar9;
   char *pcVar10;
   int iVar11;
   uint uVar12;
@@ -137,7 +137,7 @@ LAB_005a1fc3:
       local_5 = '\0';
       Library::DKW::TBL::FUN_006b5aa0(&pDVar8->flags,(char *)local_c);
       this_00 = local_14;
-      pAVar9 = (AnonShape_006B5570_4D68B99C *)
+      pDVar9 = (DArrayTy *)
                ccFntTy::FormSarr(local_14->field_1A77,&pDVar8->flags," ,.;:!?/\\()[]{}",
                                  0x1a6 - local_14->field_1B4C,0,0xffffffff,1);
       if (this_00->field_1A5F == CASE_6) {
@@ -148,32 +148,32 @@ LAB_005a1fc3:
           local_5 = '\x01';
         }
       }
-      if (pAVar9 != (AnonShape_006B5570_4D68B99C *)0x0) {
-        ccFntTy::SepColorStrInSarr(this_00->field_1A77,(uint *)pAVar9,(uint *)pAVar9);
+      if (pDVar9 != (DArrayTy *)0x0) {
+        ccFntTy::SepColorStrInSarr(this_00->field_1A77,(uint *)pDVar9,(uint *)pDVar9);
         pAVar3 = (AnonShape_006B7830_769CA2DF *)this_00->field_1E9E;
-        iVar6 = pAVar3->field_0008 + pAVar9->field_0008;
+        iVar6 = pAVar3->field_0008 + pDVar9->elementSize;
         while (499 < iVar6) {
           FUN_006b7830(pAVar3,0);
           pAVar3 = (AnonShape_006B7830_769CA2DF *)this_00->field_1E9E;
-          iVar6 = pAVar3->field_0008 + pAVar9->field_0008;
+          iVar6 = pAVar3->field_0008 + pDVar9->elementSize;
         }
         iVar6 = 0;
-        if (0 < (int)pAVar9->field_0008) {
-          if ((int)pAVar9->field_0008 < 1) {
+        if (0 < (int)pDVar9->elementSize) {
+          if ((int)pDVar9->elementSize < 1) {
             pcVar10 = (char *)0x0;
             goto LAB_005a2188;
           }
           do {
-            pcVar10 = *(char **)(pAVar9->field_0014 + iVar6 * 4);
+            pcVar10 = *(char **)(pDVar9->growCapacity + iVar6 * 4);
 LAB_005a2188:
             Library::DKW::TBL::FUN_006b5aa0(this_00->field_1E9E,pcVar10);
             iVar6 = iVar6 + 1;
-          } while (iVar6 < (int)pAVar9->field_0008);
+          } while (iVar6 < (int)pDVar9->elementSize);
         }
-        FUN_006b5570(pAVar9);
+        FUN_006b5570(pDVar9);
         pDVar8 = local_18;
       }
-      FUN_006b5570((AnonShape_006B5570_4D68B99C *)pDVar8);
+      FUN_006b5570(pDVar8);
       if (this_00->field_1A5F == CASE_6) {
         this_00->field_002D = 0x28;
         *(undefined2 *)&this_00->field_0x31 = 1;

@@ -1,4 +1,4 @@
-FUN_0057f470:
+STDcResourcC::sub_0057F470:
 0057F470  55                        PUSH EBP
 0057F471  8B EC                     MOV EBP,ESP
 0057F473  8B 45 08                  MOV EAX,dword ptr [EBP + 0x8]

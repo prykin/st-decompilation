@@ -1,5 +1,8 @@
 
-undefined4 __fastcall FUN_0061e110(AnonShape_0061E110_A0361859 *param_1)
+/* [STPrototypeApplier] Propagated parameter 0.
+   Evidence: 0061D190 -> 0061E110 @ 0061D22D */
+
+undefined4 __fastcall FUN_0061e110(STLightC *param_1)
 
 {
   short sVar1;

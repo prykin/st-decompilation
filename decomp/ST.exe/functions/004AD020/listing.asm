@@ -1,4 +1,4 @@
-FUN_004ad020:
+STT3DSprC::sub_004AD020:
 004AD020  55                        PUSH EBP
 004AD021  8B EC                     MOV EBP,ESP
 004AD023  56                        PUSH ESI

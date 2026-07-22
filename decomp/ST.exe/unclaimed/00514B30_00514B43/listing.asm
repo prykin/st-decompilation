@@ -1,0 +1,14 @@
+00514B30  pointer  00514a30
+00514B34  pointer  00514ac6
+00514B38  byte  0h
+00514B39  byte  0h
+00514B3A  byte  0h
+00514B3B  byte  0h
+00514B3C  byte  1h
+00514B3D  byte  1h
+00514B3E  byte  1h
+00514B3F  byte  1h
+00514B40  byte  1h
+00514B41  byte  1h
+00514B42  byte  0h
+00514B43  byte  0h

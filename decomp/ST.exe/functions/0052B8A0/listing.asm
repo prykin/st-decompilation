@@ -1,4 +1,4 @@
-FUN_0052b8a0:
+MoneyTy::sub_0052B8A0:
 0052B8A0  56                        PUSH ESI
 0052B8A1  8B F1                     MOV ESI,ECX
 0052B8A3  8B 46 44                  MOV EAX,dword ptr [ESI + 0x44]

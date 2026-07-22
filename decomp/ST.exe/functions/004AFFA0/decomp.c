@@ -9,8 +9,9 @@ FUN_004affa0(undefined4 param_1,Global_sub_004AFFA0_param_2Enum param_2,int *par
 
 {
   int iVar1;
-  int iVar2;
-  undefined4 uVar3;
+  dword dVar2;
+  int iVar3;
+  undefined4 uVar4;
   undefined4 local_18;
   int local_14;
   STFishC *local_10;
@@ -18,63 +19,63 @@ FUN_004affa0(undefined4 param_1,Global_sub_004AFFA0_param_2Enum param_2,int *par
   short local_8;
   short local_6;
 
-  uVar3 = 0;
+  uVar4 = 0;
   local_14 = -1;
   local_18 = 0;
-  if (PTR_007fa150 != (DArrayTy *)0x0) {
-    PTR_007fa150->iteratorIndex = 0;
-    iVar1 = FUN_006b1190((AnonShape_006B1190_EDB2B5FD *)PTR_007fa150,&local_10);
+  if (g_dArray_007FA150 != (DArrayTy *)0x0) {
+    g_dArray_007FA150->iteratorIndex = 0;
+    iVar1 = FUN_006b1190(g_dArray_007FA150,&local_10);
     if (-1 < iVar1) {
       do {
         if (local_10 == (STFishC *)0x0) goto switchD_004afffd_caseD_3a;
         switch(param_2) {
         case CASE_38:
-          iVar1 = (*local_10->vtable->vfunc_2C)();
-          if (iVar1 != 0xdc) break;
+          dVar2 = (*local_10->vtable->slot_2C)(local_10);
+          if (dVar2 != 0xdc) break;
           goto LAB_004b004a;
         case CASE_39:
         case CASE_5E:
-          iVar1 = (*local_10->vtable->vfunc_2C)();
-          if (iVar1 == 0xdd) goto LAB_004b004a;
+          dVar2 = (*local_10->vtable->slot_2C)(local_10);
+          if (dVar2 == 0xdd) goto LAB_004b004a;
           break;
         case CASE_4F:
-          iVar1 = (*local_10->vtable->vfunc_2C)();
+          dVar2 = (*local_10->vtable->slot_2C)(local_10);
           goto joined_r0x004b0044;
         case CASE_61:
-          iVar1 = (*local_10->vtable->vfunc_2C)();
+          dVar2 = (*local_10->vtable->slot_2C)(local_10);
 joined_r0x004b0044:
-          if (iVar1 == 0xde) {
+          if (dVar2 == 0xde) {
 LAB_004b004a:
             STFishC::sub_004162B0(local_10,&local_6,&local_8,&local_a);
             iVar1 = (int)local_8;
-            iVar2 = (int)local_6;
-            uVar3 = local_18;
+            iVar3 = (int)local_6;
+            uVar4 = local_18;
             if ((((((g_worldGrid.cells
                      [g_worldGrid.sizeX * iVar1 +
-                      iVar2 + (int)g_worldGrid.planeStride * (int)local_a].objects[0] ==
+                      iVar3 + (int)g_worldGrid.planeStride * (int)local_a].objects[0] ==
                      (STWorldObject *)0x0) && (-1 < local_6)) && (local_6 < g_worldGrid.sizeX)) &&
                  ((-1 < local_8 && (local_8 < g_worldGrid.sizeY)))) &&
                 ((-1 < local_a &&
                  ((local_a < g_worldGrid.sizeZ &&
                   (g_pathingGrid.cells
                    [g_pathingGrid.sizeX * iVar1 +
-                    iVar2 + (int)g_pathingGrid.planeStride * (int)local_a] == 0)))))) &&
+                    iVar3 + (int)g_pathingGrid.planeStride * (int)local_a] == 0)))))) &&
                ((local_a < 4 &&
-                ((iVar1 = FUN_006aced8(iVar2,iVar1,param_6,param_7), local_14 < 0 ||
+                ((iVar1 = FUN_006aced8(iVar3,iVar1,param_6,param_7), local_14 < 0 ||
                  (iVar1 < local_14)))))) {
               *param_3 = (int)local_6;
               *param_4 = (int)local_8;
               *param_5 = (int)local_a;
               local_18 = 1;
-              uVar3 = 1;
+              uVar4 = 1;
               local_14 = iVar1;
             }
           }
         }
 switchD_004afffd_caseD_3a:
-        iVar1 = FUN_006b1190((AnonShape_006B1190_EDB2B5FD *)PTR_007fa150,&local_10);
+        iVar1 = FUN_006b1190(g_dArray_007FA150,&local_10);
         if (iVar1 < 0) {
-          return uVar3;
+          return uVar4;
         }
       } while( true );
     }

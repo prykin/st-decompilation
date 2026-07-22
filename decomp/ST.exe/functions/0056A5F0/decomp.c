@@ -29,7 +29,7 @@ STAppC * __thiscall STAppC::STAppC(STAppC *this,undefined4 param_1)
   this->field_0E37 = 0;
   this->field_0E3F = 0xffffffff;
   this->field_0E3B = 0xffffffff;
-  this->vtable = (AnonPointee_STAppC_0000 *)&STAppCVTable;
+  this->vtable = &STAppCVTable;
   g_appClass_00806728 = (AppClassTy *)this;
   this->field_115A = (AnonPointee_STAppC_115A *)0x0;
   DAT_0080673c = 0;
@@ -62,7 +62,7 @@ STAppC * __thiscall STAppC::STAppC(STAppC *this,undefined4 param_1)
   this->field_4EFA = 0;
   this->field_1138 = 0;
   this->field_7D0E = 0;
-  DVar1 = FUN_006e51b0((int)this);
+  DVar1 = sub_006E51B0(this);
   this->field_1134 = DVar1;
   this->field_76F2 = 0;
   this->field_854E = 0;

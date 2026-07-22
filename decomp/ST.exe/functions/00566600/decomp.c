@@ -37,7 +37,7 @@ int FUN_00566600(int param_1)
   iVar2 = Library::MSVCRT::__setjmp3(local_60.jumpBuffer,0);
   if (iVar2 != 0) {
     g_currentExceptionFrame = local_60.previous;
-    thunk_FUN_00566900((AnonShape_00566900_A2478973 *)local_10);
+    SoundManagerTy::sub_00566900((SoundManagerTy *)local_10);
     return iVar2;
   }
   if (local_10->field_0018 != 0) {

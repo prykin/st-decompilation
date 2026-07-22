@@ -42,10 +42,10 @@ CGenerate::CteateField
                       (pCVar2->field_582F * ((-(uint)(param_6 != 0) & 7) + 1) * 2);
     pCVar2->field_584F = iVar3;
     pDVar4 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,10,0x1d,10);
-    pCVar2->field_5853 = &pDVar4->flags;
+    pCVar2->field_5853 = pDVar4;
     g_currentExceptionFrame = local_50.previous;
     if (((pCVar2->field_584B == 0) || (pCVar2->field_584F == 0)) ||
-       (uVar5 = 1, pCVar2->field_5853 == (uint *)0x0)) {
+       (uVar5 = 1, pCVar2->field_5853 == (DArrayTy *)0x0)) {
       return local_c;
     }
   }

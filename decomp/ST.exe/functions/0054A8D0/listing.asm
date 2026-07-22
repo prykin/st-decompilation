@@ -1,4 +1,4 @@
-FUN_0054a8d0:
+CursorClassTy::sub_0054A8D0:
 0054A8D0  53                        PUSH EBX
 0054A8D1  56                        PUSH ESI
 0054A8D2  8B F1                     MOV ESI,ECX
