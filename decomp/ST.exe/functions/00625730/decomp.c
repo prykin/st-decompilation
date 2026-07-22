@@ -2,7 +2,11 @@
 /* [STMethodOwnerApplier] Structural method owner recovered as STMineSetC.
    Evidence: this_call_owners=[STMineSetC]; agreed_this_calls=1; incoming_this_accesses=18;
    incoming_edx_uses=5; incoming_stack_parameter_uses=4; direct_non_thunk_callers=0;
-   incoming_ecx_receiver_callers=0; attributed_named_callers=1; owner_evidence_coverage=adequate */
+   incoming_ecx_receiver_callers=0; attributed_named_callers=1; owner_evidence_coverage=adequate
+
+   [STSwitchEnumApplier] Switch target field_02AD uses
+   /SubmarineTitans/Recovered/Enums/STMineSetC_field_02ADState. Cases:
+   CASE_0=0;CASE_1=1;CASE_2=2;CASE_3=3;CASE_A6=166;CASE_A7=167;CASE_AF=175;CASE_BD=189 */
 
 undefined4 __thiscall STMineSetC::sub_00625730(STMineSetC *this)
 
@@ -41,7 +45,7 @@ undefined4 __thiscall STMineSetC::sub_00625730(STMineSetC *this)
   short local_6;
 
   local_18 = 0;
-  switch((uint)(byte)this->field_02AD) {
+  switch((uint)this->field_02AD) {
   case 0:
   case 2:
   case 3:
@@ -52,7 +56,7 @@ undefined4 __thiscall STMineSetC::sub_00625730(STMineSetC *this)
         ((-1 < local_34 &&
          ((local_20 < g_worldGrid.sizeX && (iVar13 = (int)g_worldGrid.sizeY, iVar10 < iVar13))))))
        && (local_34 < 5)) {
-      iVar12 = *(int *)(&DAT_007d03a8 + (uint)(byte)this->field_02AD * 4);
+      iVar12 = *(int *)(&DAT_007d03a8 + (uint)this->field_02AD * 4);
       local_1c = iVar10 - iVar12;
       if (local_1c < 0) {
         local_1c = 0;
@@ -142,11 +146,11 @@ LAB_006259bf:
               thunk_FUN_00416270(this_00,&local_a,(int *)&local_8,(int *)&local_6);
               iVar5 = FUN_006acf0d(this->field_02C2,this->field_02C6,this->field_02CA,(int)local_a,
                                    (int)local_8,(int)local_6);
-              if (iVar5 < *(int *)(&DAT_007d0294 + (uint)(byte)this->field_02AD * 4)) {
+              if (iVar5 < *(int *)(&DAT_007d0294 + (uint)this->field_02AD * 4)) {
                 if (iVar5 < 0x15e) {
                   uVar9 = thunk_FUN_00627670((int)this);
                 }
-                else if (*(int *)(&DAT_007d0294 + (uint)(byte)this->field_02AD * 4) == 0) {
+                else if (*(int *)(&DAT_007d0294 + (uint)this->field_02AD * 4) == 0) {
                   uVar9 = 0;
                 }
                 else {
@@ -154,8 +158,7 @@ LAB_006259bf:
                 }
                 thunk_FUN_00601d10(this->field_0262,uVar9,(int)this_00,(short)this->field_0018,
                                    0xffff,*(undefined4 *)
-                                           (&DAT_007d04d0 + (uint)(byte)this->field_02AD * 4),0x110)
-                ;
+                                           (&DAT_007d04d0 + (uint)this->field_02AD * 4),0x110);
                 if ((this_00->value_20 == 1000) || (this_00->value_20 == 0x14)) {
                   this->field_0241 = *(undefined4 *)&this_00->field_0x18;
                 }
@@ -167,7 +170,7 @@ LAB_006259bf:
                 }
               }
 LAB_00625ad5:
-              if (this->field_02AD == '\x02') {
+              if (this->field_02AD == CASE_2) {
                 if (this->field_0342 != 0) {
                   GVar7 = (*this_00->vtable->GetObjectTypeId)(this_00);
                   uVar8 = thunk_FUN_006263b0(GVar7);
@@ -180,7 +183,7 @@ LAB_00625aff:
               }
 /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
 LAB_00625b06:
-              if (((((in_stack_00000010 != 0) && (this->field_02AD != '\x01')) && (-1 < sVar17)) &&
+              if (((((in_stack_00000010 != 0) && (this->field_02AD != CASE_1)) && (-1 < sVar17)) &&
                   (((sVar17 < g_worldGrid.sizeX && (-1 < sVar18)) &&
                    ((sVar18 < g_worldGrid.sizeY && ((-1 < sVar11 && (sVar11 < g_worldGrid.sizeZ)))))
                    ))) && (pSVar14 = (STMineSetC *)
@@ -297,11 +300,11 @@ LAB_00625d60:
               thunk_FUN_00416270(pSVar14,&local_a,(int *)&local_8,(int *)&local_6);
               iVar5 = FUN_006acf0d(this->field_02C2,this->field_02C6,this->field_02CA,(int)local_a,
                                    (int)local_8,(int)local_6);
-              if (iVar5 < *(int *)(&DAT_007d0294 + (uint)(byte)this->field_02AD * 4)) {
+              if (iVar5 < *(int *)(&DAT_007d0294 + (uint)this->field_02AD * 4)) {
                 if (iVar5 < 0x15e) {
                   uVar9 = thunk_FUN_00627670((int)this);
                 }
-                else if (*(int *)(&DAT_007d0294 + (uint)(byte)this->field_02AD * 4) == 0) {
+                else if (*(int *)(&DAT_007d0294 + (uint)this->field_02AD * 4) == 0) {
                   uVar9 = 0;
                 }
                 else {
@@ -309,8 +312,7 @@ LAB_00625d60:
                 }
                 thunk_FUN_00601d10(this->field_0262,uVar9,(int)pSVar14,(short)this->field_0018,
                                    0xffff,*(undefined4 *)
-                                           (&DAT_007d04d0 + (uint)(byte)this->field_02AD * 4),0x110)
-                ;
+                                           (&DAT_007d04d0 + (uint)this->field_02AD * 4),0x110);
                 if ((*(int *)&pSVar14->field_0x20 == 1000) || (*(int *)&pSVar14->field_0x20 == 0x14)
                    ) {
                   this->field_0241 = pSVar14->field_0018;

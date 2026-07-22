@@ -19,7 +19,7 @@ void __thiscall FUN_0062e3a0(void *this,int *param_1,uint param_2,int param_3)
       if ((*piVar4 != 0) &&
          (iVar3 = FUN_006e62d0(g_playSystem_00802A38,*piVar4,(int *)&param_1), iVar3 != -4)) {
         if (iVar1 == 0) {
-          thunk_FUN_005fb030(param_1);
+          thunk_FUN_005fb030((AnonShape_005FB030_9C7404C6 *)param_1);
         }
         else if (iVar1 == 1) {
           thunk_FUN_005fb170((STColl3C *)param_1);

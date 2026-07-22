@@ -14,8 +14,8 @@ void FUN_004e6310(int param_1,uint param_2,uint param_3)
   uint uVar10;
   int iVar11;
   int local_10;
-  int *local_c;
-  int *local_8;
+  AnonShape_004DDCC0_33DEB43E *local_c;
+  AnonShape_00494AE0_7F188308 *local_8;
 
   if ((((-1 < param_1) && (param_1 < 8)) && (0 < (int)param_2)) && ((int)param_2 < 0x9b)) {
     /* ST_PSEUDO[flattened_global_record_array]: expected g_playerRuntime[player].field[index...] after base/stride proof */
@@ -64,12 +64,12 @@ LAB_004e645f:
         do {
           DArrayGetElement(pDVar7,uVar10,&local_8);
           /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-          if ((local_8 != (int *)0x0) &&
-             (((iVar11 = (**(code **)(*local_8 + 0x2c))(), iVar11 == 0x36 ||
-               (iVar11 = (**(code **)(*local_8 + 0x2c))(), iVar11 == 0x5d)) ||
-              (iVar11 = (**(code **)(*local_8 + 0x2c))(), iVar11 == 0x3d)))) {
-            thunk_FUN_004e4d60(local_8);
-            thunk_FUN_004e4f30(local_8);
+          if ((local_8 != (AnonShape_00494AE0_7F188308 *)0x0) &&
+             (((iVar11 = (**(code **)(*(int *)local_8 + 0x2c))(), iVar11 == 0x36 ||
+               (iVar11 = (**(code **)(*(int *)local_8 + 0x2c))(), iVar11 == 0x5d)) ||
+              (iVar11 = (**(code **)(*(int *)local_8 + 0x2c))(), iVar11 == 0x3d)))) {
+            thunk_FUN_004e4d60((int *)local_8);
+            thunk_FUN_004e4f30((int *)local_8);
           }
           pDVar7 = g_playerRuntime[param_1].objects;
           uVar10 = uVar10 + 1;
@@ -82,10 +82,10 @@ LAB_004e645f:
         do {
           DArrayGetElement(pDVar7,uVar10,&local_8);
           /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-          if ((local_8 != (int *)0x0) &&
-             (((iVar11 = (**(code **)(*local_8 + 0x2c))(), iVar11 == 5 ||
-               (iVar11 = (**(code **)(*local_8 + 0x2c))(), iVar11 == 0x21)) ||
-              (iVar11 = (**(code **)(*local_8 + 0x2c))(), iVar11 == 0x11)))) {
+          if ((local_8 != (AnonShape_00494AE0_7F188308 *)0x0) &&
+             (((iVar11 = (**(code **)(*(int *)local_8 + 0x2c))(), iVar11 == 5 ||
+               (iVar11 = (**(code **)(*(int *)local_8 + 0x2c))(), iVar11 == 0x21)) ||
+              (iVar11 = (**(code **)(*(int *)local_8 + 0x2c))(), iVar11 == 0x11)))) {
             thunk_FUN_00494ae0(local_8);
           }
           pDVar7 = g_playerRuntime[param_1].objects;

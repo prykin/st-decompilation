@@ -133,7 +133,7 @@ LAB_00552481:
       *(word *)((int)&this_00[1].field_002E + (uint)(byte)this_00[1].field_0x43 * 2 + 1) =
            (message->arg0).words.low;
       PaintIndicators((TradePanelTy *)this_00);
-      thunk_FUN_00551800((AnonShape_00551800_EBA95FA4 *)this_00);
+      sub_00551800((TradePanelTy *)this_00);
       g_currentExceptionFrame = local_68.previous;
       return 0;
     }

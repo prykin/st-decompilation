@@ -18,7 +18,7 @@ undefined4 __fastcall FUN_004d2760(AnonShape_004D2760_CB2BA53E *param_1)
 
   local_8 = (AnonShape_004D2760_CB2BA53E *)0x0;
   if (*(int *)&param_1[1].field_0x38 != 0) {
-    STColl3C::sub_0041C5A0((STColl3C *)param_1);
+    sub_0041C5A0(param_1);
     TLOBaseTy::sub_00417D30((TLOBaseTy *)param_1);
     if (*(int *)&param_1->field_0x2c == 0) {
       local_8 = (AnonShape_004D2760_CB2BA53E *)0x1;

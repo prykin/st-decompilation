@@ -254,7 +254,7 @@ int __thiscall STFishC::GetMessage(STFishC *this,STMessage *message)
     goto cf_common_exit_0057C3E4;
   }
   *(undefined4 *)&this_00->field_0x23b = 6;
-  this_00->field_0231 = 0;
+  this_00->field_0231 = CASE_0;
   *(undefined4 *)((int)&this_00->field_023E + 1) = 0;
   puVar8 = (message->arg0).ptr;
   puVar10 = (undefined4 *)&this_00->field_0x243;

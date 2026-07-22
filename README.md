@@ -151,6 +151,13 @@ Ghidra Script Manager, and run scripts from the **SubmarineTitans** categories.
 The scripts are compiled by Ghidra on demand; they are not a separately built
 extension.
 
+For routine work, run `STRecoveryPipeline` instead of launching every pair
+manually. It infers the repository from its location under `scripts/`, supplies
+all `recovery/ST.exe/*.tsv` and `decomp/` paths automatically, and offers
+bounded `core`, `deep`, `full`, `export`, and `full-export` sequences. It never
+enables review-only rows. The incremental execution log is written to
+`recovery/ST.exe/pipeline_report.tsv`.
+
 Detailed installation instructions, script dependencies, review flags, and the
 canonical run order are documented in
 [`docs/ghidra-workflow.md`](docs/ghidra-workflow.md).

@@ -1,7 +1,7 @@
 program=ST.exe
 final_handlers=106
-automatic=100
-already_typed=6
+automatic=0
+already_typed=106
 conflicts_or_manual=0
 shared_zero_stubs=1
 note=GetMessage plus RET 4 proves one explicit argument; STMessage offsets +0x10/+0x14/+0x18/+0x1c establish the common envelope.

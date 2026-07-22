@@ -58,8 +58,9 @@ void __thiscall FUN_005eeff0(void *this,int param_1)
                           (short)((longlong)iVar4 * 0x28c1979 >> 0x3f));
     }
     if (((((DAT_0080874d == -1) || (g_visibleClass_00802A88->field_00F8 == 0)) ||
-         (thunk_FUN_00558c00(g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,iVar4,iVar5
-                             ,&local_8,&local_c), param_1 < 0)) ||
+         (VisibleClassTy::sub_00558C00
+                    (g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,iVar4,iVar5,
+                     &local_8,&local_c), param_1 < 0)) ||
         (((4 < param_1 || (local_8 < 0)) ||
          ((pVVar3->field_0030 <= local_8 ||
           ((local_c = g_centeredOffsets5[param_1] + local_c, local_c < 0 ||
@@ -124,9 +125,9 @@ joined_r0x005ef316:
                           (short)((longlong)iVar4 * 0x28c1979 >> 0x3f));
     }
     if (((((((DAT_0080874d == -1) || (g_visibleClass_00802A88->field_00F8 == 0)) ||
-           (thunk_FUN_00558c00(g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,iVar4,
-                               iVar5,&local_c,&local_8), param_1 < 0)) ||
-          ((4 < param_1 || (local_c < 0)))) ||
+           (VisibleClassTy::sub_00558C00
+                      (g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,iVar4,iVar5,
+                       &local_c,&local_8), param_1 < 0)) || ((4 < param_1 || (local_c < 0)))) ||
          ((pVVar3->field_0030 <= local_c ||
           ((local_8 = g_centeredOffsets5[param_1] + local_8, local_8 < 0 ||
            (pVVar3->field_0034 <= local_8)))))) || (pVVar3->field_004C == (byte *)0x0)) ||

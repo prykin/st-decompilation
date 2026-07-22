@@ -1,4 +1,4 @@
-FUN_00624920:
+STMineSetC::sub_00624920:
 00624920  55                        PUSH EBP
 00624921  8B EC                     MOV EBP,ESP
 00624923  83 EC 0C                  SUB ESP,0xc

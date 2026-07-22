@@ -50,6 +50,8 @@ public class STSpatialGridApplier extends GhidraScript {
 
     @Override
     protected void run() throws Exception {
+        // Each grid proposal owns an independent top-level transaction.
+        end(true);
         if (currentProgram == null) {
             printerr("Open the analyzed ST program first.");
             return;

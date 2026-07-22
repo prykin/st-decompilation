@@ -116,7 +116,7 @@ int __thiscall STJellyGunC::GetMessage(STJellyGunC *this,STMessage *message)
           *(undefined4 *)&this_00->field_0x235 = 4;
           *(undefined4 *)&this_00->field_0x23d = 0;
           *(undefined4 *)((int)&this_00->field_023E + 3) = 0xff;
-          this_00->field_0231 = 0;
+          this_00->field_0231 = CASE_0;
           puVar11 = (message->arg0).ptr;
           puVar14 = (undefined4 *)&this_00->field_0x256;
           for (iVar5 = 0xf; iVar5 != 0; iVar5 = iVar5 + -1) {
@@ -266,7 +266,7 @@ int __thiscall STJellyGunC::GetMessage(STJellyGunC *this,STMessage *message)
           *(undefined4 *)((int)&this_00->field_023E + 3) = local_38->field_0052;
           *(undefined2 *)&this_00->field_0x245 = local_38->field_0056;
           *(undefined4 *)&this_00->field_0x239 = local_38->field_003E;
-          this_00->field_0231 = *(undefined4 *)&local_38->field_0x58;
+          this_00->field_0231 = *(STSprGameObjC_field_0231State *)&local_38->field_0x58;
           this_00->field_0x24f = local_38->field_0x60;
           this_00->field_0x250 = local_38->field_0061;
           this_00->field_0x251 = local_38->field_0062;

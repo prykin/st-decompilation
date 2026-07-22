@@ -224,8 +224,9 @@ int __thiscall STParticleC::GetMessage(STParticleC *this,STMessage *message)
                            (short)((longlong)iVar11 * 0x28c1979 >> 0x3f));
     }
     if (((DAT_0080874d == -1) || (g_visibleClass_00802A88->field_00F8 == 0)) ||
-       ((thunk_FUN_00558c00(g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,iVar11,iVar9
-                            ,&local_1c,&local_20), (int)local_c < 0 ||
+       ((VisibleClassTy::sub_00558C00
+                   (g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,iVar11,iVar9,
+                    &local_1c,&local_20), (int)local_c < 0 ||
         (local_24 = local_1c, local_28 = local_20, 4 < (int)local_c)))) goto LAB_006282e0;
 LAB_00628286:
     if (((local_24 < 0) || (pVVar14->field_0030 <= local_24)) ||
@@ -347,8 +348,9 @@ LAB_006283bd:
                            (short)((longlong)iVar11 * 0x28c1979 >> 0x3f));
     }
     if ((((DAT_0080874d != -1) && (g_visibleClass_00802A88->field_00F8 != 0)) &&
-        (thunk_FUN_00558c00(g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,iVar11,iVar9
-                            ,&local_24,&local_28), -1 < (int)local_c)) && ((int)local_c < 5))
+        (VisibleClassTy::sub_00558C00
+                   (g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,iVar11,iVar9,
+                    &local_24,&local_28), -1 < (int)local_c)) && ((int)local_c < 5))
     goto LAB_00628286;
 LAB_006282e0:
     bVar15 = true;
@@ -423,9 +425,9 @@ LAB_006282e0:
           iVar11 = (int)(short)(iVar11 / 0xc9);
         }
         if ((((DAT_0080874d == -1) || (g_visibleClass_00802A88->field_00F8 == 0)) ||
-            (thunk_FUN_00558c00(g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,iVar11,
-                                iVar9,&local_2c,&local_30), (int)local_c < 0)) || (4 < (int)local_c)
-           ) {
+            (VisibleClassTy::sub_00558C00
+                       (g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,iVar11,iVar9,
+                        &local_2c,&local_30), (int)local_c < 0)) || (4 < (int)local_c)) {
           bVar15 = true;
         }
         else {
@@ -528,8 +530,9 @@ LAB_006282e0:
                            (short)((longlong)iVar11 * 0x28c1979 >> 0x3f));
     }
     if ((((DAT_0080874d == -1) || (g_visibleClass_00802A88->field_00F8 == 0)) ||
-        (thunk_FUN_00558c00(g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,iVar11,iVar9
-                            ,&local_34,&local_38), (int)local_c < 0)) || (4 < (int)local_c)) {
+        (VisibleClassTy::sub_00558C00
+                   (g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,iVar11,iVar9,
+                    &local_34,&local_38), (int)local_c < 0)) || (4 < (int)local_c)) {
       bVar15 = true;
     }
     else {

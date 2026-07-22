@@ -9,7 +9,7 @@ void __thiscall STAppC::StartGame(STAppC *this)
 
 {
   ushort **value;
-  char cVar1;
+  STAppC_field_1180State SVar1;
   undefined4 uVar2;
   code *pcVar3;
   AnonShape_GLOBAL_00807598_0C6808FB *pAVar4;
@@ -52,7 +52,7 @@ void __thiscall STAppC::StartGame(STAppC *this)
   LPSTR local_14;
   undefined4 *local_10;
   STAppC *local_c;
-  char *local_8;
+  STAppC_field_1180State *local_8;
 
   local_224 = DAT_008016a0;
   puVar14 = &local_223;
@@ -121,15 +121,15 @@ void __thiscall STAppC::StartGame(STAppC *this)
     DAT_00806720 = timeGetTime();
     g_cMf32_00806754 =
          (cMf32 *)Library::Ourlib::MF32INT::FUN_006f0ec0(0x345,&pSVar13->field_0x76f6,0,0,0);
-    local_8 = (char *)&pSVar13->field_4EAF;
+    local_8 = (STAppC_field_1180State *)&pSVar13->field_4EAF;
     cMf32::RecGet(g_cMf32_00806754,0xc,PTR_s_AUTOSAVETIME_GAME_0079b068,(int *)&local_8,0);
-    local_8 = (char *)&pSVar13->field_4EB3;
+    local_8 = (STAppC_field_1180State *)&pSVar13->field_4EB3;
     cMf32::RecGet(g_cMf32_00806754,0xc,PTR_s_STATETIMER_GAME_0079b064,(int *)&local_8,0);
     local_8 = &pSVar13->field_0x4eb7;
     puVar7 = cMf32::RecGet(g_cMf32_00806754,0xc,PTR_s_BRIEFING_GAME_0079b06c,(int *)&local_8,0);
     local_8 = &pSVar13->field_1180;
     pSVar13->field_4ED9 = puVar7 != (ushort *)0x0;
-    if ((*local_8 != '\f') && (*local_8 != '\x10')) {
+    if ((*local_8 != 0xc) && (*local_8 != 0x10)) {
       cMf32::RecGet(g_cMf32_00806754,0xc,PTR_s_TYPE_START_0079b08c,(int *)&local_8,0);
     }
     local_8 = &pSVar13->field_0x2b2f;
@@ -206,7 +206,7 @@ void __thiscall STAppC::StartGame(STAppC *this)
       if (g_cLoading_00802A58 != (cLoadingTy *)0x0) {
         cLoadingTy::DrawLineCR(g_cLoading_00802A58,&pSVar13->field_7D1A);
       }
-      if ((pSVar13->field_1180 == '\x03') || (pSVar13->field_1180 == '\b')) {
+      if ((pSVar13->field_1180 == CASE_3) || (pSVar13->field_1180 == CASE_8)) {
         memset(&pSVar13->field_5012, 0, 0x104); /* compiler bulk-zero initialization */
         iVar11 = 0;
         memset(&pSVar13->field_0x5116, 0, 0x104); /* compiler bulk-zero initialization */
@@ -245,7 +245,7 @@ void __thiscall STAppC::StartGame(STAppC *this)
       if (g_cLoading_00802A58 != (cLoadingTy *)0x0) {
         cLoadingTy::DrawLineCR(g_cLoading_00802A58,&pSVar13->field_7D1A);
       }
-      if ((pSVar13->field_1180 == '\f') || (pSVar13->field_1180 == '\x10')) {
+      if ((pSVar13->field_1180 == 0xc) || (pSVar13->field_1180 == 0x10)) {
         local_8 = &pSVar13->field_1180;
         cMf32::RecGet(g_cMf32_00806754,0xc,PTR_s_TYPE_START_0079b08c,(int *)&local_8,0);
       }
@@ -274,7 +274,7 @@ void __thiscall STAppC::StartGame(STAppC *this)
         pSVar13->field_4EAB = &pDVar9->flags;
       }
       if ((pSVar13->field_117C == 0) &&
-         ((cVar1 = pSVar13->field_1180, cVar1 == '\b' || (cVar1 == '\x03')))) {
+         ((SVar1 = pSVar13->field_1180, SVar1 == CASE_8 || (SVar1 == CASE_3)))) {
         memset(&pSVar13->field_5012, 0, 0x104); /* compiler bulk-zero initialization */
         iVar11 = 0;
         memset(&pSVar13->field_0x5116, 0, 0x104); /* compiler bulk-zero initialization */
@@ -309,7 +309,7 @@ void __thiscall STAppC::StartGame(STAppC *this)
       DVar10 = sub_006E51B0(pSVar13);
       pSVar13->field_1134 = DVar10;
     }
-    local_8 = (char *)&pSVar13->field_1134;
+    local_8 = (STAppC_field_1180State *)&pSVar13->field_1134;
     cMf32::RecGet(g_cMf32_00806754,0xc,PTR_s_RND_INIT_0079b05c,(int *)&local_8,0);
     CreateGameSystem();
     FUN_006e8640(PTR_00807598,

@@ -9,7 +9,7 @@ undefined4 __fastcall FUN_0065fd00(AnonShape_0065FD00_EB74ED0C *param_1,undefine
     this = thunk_FUN_0042b760(param_1->field_0024,
                               CONCAT22((short)((uint)param_2 >> 0x10),param_1->field_007D));
     if (this != (STGroupBoatC *)0x0) {
-      (*this->vtable->vfunc_08)(this,CASE_3,(void *)0x0);
+      (*this->vtable->SetOrderData)(this,GROUP_BOAT_ORDER_03,(void *)0x0);
       return 0;
     }
   }

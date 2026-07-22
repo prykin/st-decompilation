@@ -1,4 +1,4 @@
-FUN_0058af70:
+STOctopusC::sub_0058AF70:
 0058AF70  55                        PUSH EBP
 0058AF71  8B EC                     MOV EBP,ESP
 0058AF73  66 8B 45 08               MOV AX,word ptr [EBP + 0x8]

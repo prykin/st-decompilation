@@ -93,7 +93,7 @@ int __thiscall SettMapTy::GetMessage(SettMapTy *this,STMessage *message)
         this_00->field_002D = 5;
         FUN_006e6080(this_00,2,this_00->field_2149,(undefined4 *)&this_00->field_0x1d);
       }
-      goto cf_switch_join_005CA971;
+      goto cf_common_join_005CA971;
     }
     if (SVar4 < MESS_WAITTY_6333) {
       if (SVar4 == MESS_SHARED_6332) {
@@ -175,7 +175,7 @@ switchD_005c8bd0_caseD_611f:
           }
         }
       }
-      goto cf_switch_join_005CA971;
+      goto cf_common_join_005CA971;
     }
     if (SVar4 < MESS_SHARED_6504) {
       if (SVar4 == MESS_SETTMAPTY_6503) {
@@ -329,7 +329,7 @@ cf_common_join_005C8ECC:
           FUN_006b5ee0(pAVar25,0,0,0,pAVar25->field_0004,pAVar25->field_0008,0xf,0xd);
         }
       }
-      goto cf_switch_join_005CA971;
+      goto cf_common_join_005CA971;
     }
     switch(SVar4) {
     case MESS_FSGSTY_6506:
@@ -655,7 +655,7 @@ LAB_005c95d4:
       iVar11 = pcVar5->field_00A0;
 joined_r0x005c964b:
       if (iVar11 != 0) {
-        FUN_00710790((uint *)pcVar5);
+        FUN_00710790((AnonShape_00710790_4CBB90D4 *)pcVar5);
       }
       this_00->field_21A5 = *(undefined4 *)&pcVar5->field_0x8a;
       (*this_00->field_000C->vtable->CreateObject)
@@ -720,7 +720,7 @@ joined_r0x005c964b:
         this_00->field_21C9 = 400;
         pcVar5 = g_startSystem_0081176C->field_0034;
         if (pcVar5->field_00A0 != 0) {
-          FUN_00710790((uint *)pcVar5);
+          FUN_00710790((AnonShape_00710790_4CBB90D4 *)pcVar5);
         }
         this_00->field_21A5 = *(undefined4 *)&pcVar5->field_0x8a;
         (*this_00->field_000C->vtable->CreateObject)
@@ -761,7 +761,7 @@ joined_r0x005c964b:
         goto joined_r0x005c996c;
       }
     }
-    goto cf_switch_join_005CA971;
+    goto cf_common_join_005CA971;
   }
   if (SVar4 < MESS_SHARED_6900) {
     if (SVar4 == MESS_MMSGTY_68FF) {
@@ -898,7 +898,7 @@ joined_r0x005c964b:
         }
       }
     }
-    goto cf_switch_join_005CA971;
+    goto cf_common_join_005CA971;
   }
   switch(SVar4) {
   case MESS_SHARED_6900:
@@ -941,7 +941,7 @@ LAB_005c9fef:
       iVar11 = pcVar5->field_00A0;
 joined_r0x005c996c:
       if (iVar11 != 0) {
-        FUN_00710790((uint *)pcVar5);
+        FUN_00710790((AnonShape_00710790_4CBB90D4 *)pcVar5);
       }
       this_00->field_21A5 = *(undefined4 *)&pcVar5->field_0x8a;
       (*this_00->field_000C->vtable->CreateObject)
@@ -1011,7 +1011,7 @@ joined_r0x005c996c:
       }
       pcVar5 = g_startSystem_0081176C->field_0034;
       if (pcVar5->field_00A0 != 0) {
-        FUN_00710790((uint *)pcVar5);
+        FUN_00710790((AnonShape_00710790_4CBB90D4 *)pcVar5);
       }
       this_00->field_21A5 = *(undefined4 *)&pcVar5->field_0x8a;
       (*this_00->field_000C->vtable->CreateObject)
@@ -1546,7 +1546,7 @@ LAB_005ca73b:
 LAB_005ca964:
     thunk_FUN_005b6730(this_00,9,'\x01',-1);
   }
-cf_switch_join_005CA971:
+cf_common_join_005CA971:
   SVar4 = message->id;
   if ((SVar4 < MESS_SETTMAPTY_657F) || (0x658c < SVar4)) goto LAB_005cae3e;
   piVar6 = (message->arg1).ptr;

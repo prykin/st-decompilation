@@ -257,7 +257,7 @@ LAB_005305a9:
     pAVar32 = (AnonShape_006B5B10_E0D06CF1 *)this_00->field_0068;
 LAB_005305b4:
     DibPut(pAVar32,0x1d,0x13,'\x01',(byte *)puVar19);
-    goto cf_switch_join_005305BC;
+    goto cf_common_join_005305BC;
   case CASE_5:
   case CASE_B:
     uVar38 = 0;
@@ -577,7 +577,7 @@ LAB_0052ff02:
       uVar18 = -(uint)(DAT_0080874e != '\x01') & 7;
     }
     ccFntTy::WrTxt(this_00->field_0180,(uint *)&this_00->field_0x6c,-2,-1,uVar18,-1,-1);
-    goto cf_switch_join_005305BC;
+    goto cf_common_join_005305BC;
   case CASE_6:
     uVar38 = 0;
     iVar16 = -1;
@@ -663,7 +663,7 @@ LAB_00530554:
     UVar31 = 0x3e8d;
     break;
   default:
-    goto cf_switch_join_005305BC;
+    goto cf_common_join_005305BC;
   case CASE_C:
     uVar38 = 0;
     iVar16 = -1;
@@ -703,7 +703,7 @@ LAB_00530554:
     ccFntTy::SetSurf(this_00->field_017C,this_00->field_0068,0,0xaa,0x81,
                      *(int *)(this_00->field_018C + 2),*(int *)(this_00->field_018C + 4));
     ccFntTy::WrStr(this_00->field_017C,(uint *)resourceString,-2,-1,0);
-    goto cf_switch_join_005305BC;
+    goto cf_common_join_005305BC;
   case CASE_E:
     uVar38 = 0;
     iVar16 = -1;
@@ -717,7 +717,7 @@ LAB_00530554:
   iVar16 = -1;
   puVar9 = (uint *)LoadResourceString(UVar31,g_module_00807618);
   ccFntTy::WrStr(this_00->field_017C,puVar9,iVar6,iVar16,uVar18);
-cf_switch_join_005305BC:
+cf_common_join_005305BC:
   switch(this_00->field_01A4) {
   case CASE_1:
     bVar5 = 0;
@@ -1510,7 +1510,7 @@ switchD_005311ec_caseD_3:
     local_11fc[3] = this_00->field_02F9[2];
     local_11ec = 0xca;
     if (pcVar2->field_00A0 != 0) {
-      FUN_00710790((uint *)pcVar2);
+      FUN_00710790((AnonShape_00710790_4CBB90D4 *)pcVar2);
     }
     local_11e8 = *(int *)&pcVar2->field_0x8a;
     local_11e0 = (undefined4)(0x6e / (longlong)local_11e8);

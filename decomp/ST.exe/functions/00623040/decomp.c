@@ -1,12 +1,12 @@
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-/* [STPrototypeApplier] Propagated parameter 0.
+/* [STPrototypeRepairApplier] Propagated parameter 0.
    Evidence: 00623040 parameter used as this of
-   SubmarineTitans::Recovered::HiddenThis::AnonReceiver_004248D0::FUN_00424e10 @ 006230BC | 00623040
+   SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00424E10::FUN_00424e10 @ 006230BC | 00623040
    parameter used as this of
-   SubmarineTitans::Recovered::HiddenThis::AnonReceiver_004248D0::FUN_00424e10 @ 0062311E */
+   SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00424E10::FUN_00424e10 @ 0062311E */
 
-int FUN_00623040(AnonReceiver_004248D0 *param_1,undefined4 param_2,int *param_3,
+int FUN_00623040(AnonReceiver_00424E10 *param_1,undefined4 param_2,int *param_3,
                 AnonShape_00623040_D312340A *param_4)
 
 {
@@ -17,7 +17,7 @@ int FUN_00623040(AnonReceiver_004248D0 *param_1,undefined4 param_2,int *param_3,
   iVar2 = *(int *)(param_4->field_0060 + 0x29);
   if ((iVar2 != 0) && (iVar1 = *(int *)(iVar2 + param_4->field_0070 * 4), iVar1 != 0)) {
     if (param_4->field_004F != '\0') {
-      iVar2 = SubmarineTitans::Recovered::HiddenThis::AnonReceiver_004248D0::thunk_FUN_00424e10
+      iVar2 = SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00424E10::thunk_FUN_00424e10
                         (param_1,iVar1,
                          (float)param_4->field_0064 * _DAT_007904f8 * _DAT_007904f0 - _DAT_007907a8,
                          (float)param_4->field_0068 * _DAT_007904f8 * _DAT_007904f0 - _DAT_007907a8,
@@ -25,7 +25,7 @@ int FUN_00623040(AnonReceiver_004248D0 *param_1,undefined4 param_2,int *param_3,
                          param_3);
       return iVar2;
     }
-    iVar2 = SubmarineTitans::Recovered::HiddenThis::AnonReceiver_004248D0::thunk_FUN_00424e10
+    iVar2 = SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00424E10::thunk_FUN_00424e10
                       (param_1,*(int *)(iVar2 + (uint)param_4->field_0078 * 4),
                        (float)param_4->field_0064 * _DAT_007904f8 * _DAT_007904f0 - _DAT_007907a8,
                        (float)param_4->field_0068 * _DAT_007904f8 * _DAT_007904f0 - _DAT_007907a8,

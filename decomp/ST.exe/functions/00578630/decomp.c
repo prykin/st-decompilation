@@ -191,7 +191,7 @@ int __thiscall STCrabC::GetMessage(STCrabC *this,STMessage *message)
     *(undefined4 *)&this_00->field_0x239 = 3;
     uVar10 = g_playSystem_00802A38->field_00E4;
     *(undefined4 *)&this_00->field_0x23d = 0;
-    this_00->field_0231 = 0;
+    this_00->field_0231 = CASE_0;
     *(uint *)&this_00->field_0x235 = uVar10 - 3;
     pSVar12 = (message->arg0).ptr;
     pSVar14 = &this_00->field_0259;

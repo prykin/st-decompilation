@@ -47,36 +47,36 @@ LAB_00514be2:
     case 0xf5:
       iVar2 = *(int *)(iVar6 + 9);
       if ((((iVar2 != 0xf2) && (iVar2 != 0xf3)) && (iVar2 != 0xf4)) && (iVar2 != 0xf5))
-      goto cf_switch_join_00514CF6;
+      goto cf_common_join_00514CF6;
       bVar5 = true;
       break;
     case 0xf6:
     case 0xf7:
       if ((*(int *)(iVar6 + 9) != 0xf6) && (*(int *)(iVar6 + 9) != 0xf7))
-      goto cf_switch_join_00514CF6;
+      goto cf_common_join_00514CF6;
       bVar5 = true;
       break;
     case 0xf8:
     case 0xf9:
       if ((*(int *)(iVar6 + 9) != 0xf8) && (*(int *)(iVar6 + 9) != 0xf9))
-      goto cf_switch_join_00514CF6;
+      goto cf_common_join_00514CF6;
       bVar5 = true;
       break;
     case 0xfa:
     case 0xfb:
       if ((*(int *)(iVar6 + 9) != 0xfa) && (*(int *)(iVar6 + 9) != 0xfb))
-      goto cf_switch_join_00514CF6;
+      goto cf_common_join_00514CF6;
       bVar5 = true;
       break;
     default:
-      if (*(int *)(iVar6 + 9) != param_1) goto cf_switch_join_00514CF6;
+      if (*(int *)(iVar6 + 9) != param_1) goto cf_common_join_00514CF6;
       bVar5 = true;
     }
     goto LAB_00514d04;
   default:
     goto switchD_00514c13_default;
   }
-cf_switch_join_00514CF6:
+cf_common_join_00514CF6:
 switchD_00514c13_default:
   if (bVar5) {
 LAB_00514d04:

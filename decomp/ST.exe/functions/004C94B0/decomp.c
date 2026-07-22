@@ -29,38 +29,38 @@ undefined4 __thiscall TLOBaseTy::procResult(TLOBaseTy *this)
   errorCode = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0);
   pTVar2 = local_c;
   if (errorCode == 0) {
-    switch(local_c->field_0361) {
-    case CASE_1:
-      uVar5 = sub_004CEB00(local_c,local_c->field_0369);
+    switch(*(undefined4 *)&local_c->field_0x361) {
+    case 1:
+      uVar5 = sub_004CEB00(local_c,*(undefined4 *)&local_c->field_0x369);
       g_currentExceptionFrame = local_50.previous;
       return uVar5;
-    case CASE_2:
-      uVar5 = thunk_FUN_004e2c30(local_c,local_c->field_0369);
+    case 2:
+      uVar5 = thunk_FUN_004e2c30(local_c,*(uint *)&local_c->field_0x369);
       g_currentExceptionFrame = local_50.previous;
       return uVar5;
-    case CASE_3:
+    case 3:
       uVar5 = thunk_FUN_004ea830(local_c);
       g_currentExceptionFrame = local_50.previous;
       return uVar5;
-    case CASE_4:
+    case 4:
       uVar5 = thunk_FUN_004d9c20(local_c);
       g_currentExceptionFrame = local_50.previous;
       return uVar5;
-    case CASE_5:
+    case 5:
       local_8 = 1;
       uVar3 = GetPlayerRaceId(*(char *)&local_c->field_023D);
       pTVar2->field_0241 = *(int *)(&DAT_007e4178 + ((uVar3 & 0xff) + pTVar2->field_0235 * 3) * 4);
       thunk_FUN_004cc900((AnonShape_004CC900_31EE9CAA *)pTVar2);
       g_currentExceptionFrame = local_50.previous;
       return 1;
-    case CASE_6:
+    case 6:
       uVar5 = thunk_FUN_004de820((int *)local_c);
       g_currentExceptionFrame = local_50.previous;
       return uVar5;
     default:
       g_currentExceptionFrame = local_50.previous;
       return local_8;
-    case CASE_8:
+    case 8:
       uVar5 = thunk_FUN_004ece40(local_c);
       g_currentExceptionFrame = local_50.previous;
       return uVar5;

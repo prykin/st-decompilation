@@ -528,7 +528,7 @@ LAB_005e24c5:
               local_b24 = (*(int *)(puVar19 + 0x16) - *(int *)&this_01->field_0x2f5) + -0x2d;
               if (pcVar9->field_00A0 != 0) {
                 pcVar34 = pcVar9;
-                FUN_00710790((uint *)pcVar9);
+                FUN_00710790((AnonShape_00710790_4CBB90D4 *)pcVar9);
               }
               local_b20 = *(int *)&pcVar9->field_0x8a;
               local_b1c = 1;

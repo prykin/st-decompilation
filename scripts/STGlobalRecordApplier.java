@@ -52,6 +52,8 @@ public class STGlobalRecordApplier extends GhidraScript {
 
     @Override
     protected void run() throws Exception {
+        // Each record owns an independent top-level transaction.
+        end(true);
         if (currentProgram == null) {
             printerr("Open the same program that was analyzed.");
             return;

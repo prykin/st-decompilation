@@ -21,7 +21,7 @@ FUN_00660b50(AnonShape_00660620_6BCED4D7 *param_1,undefined4 param_2,short param
       pSVar1 = thunk_FUN_0042b760(param_1->field_0024,
                                   CONCAT22((short)((uint)param_2 >> 0x10),param_1->field_007D));
       if (pSVar1 != (STGroupBoatC *)0x0) {
-        (*pSVar1->vtable->vfunc_08)(pSVar1,CASE_C,&local_c);
+        (*pSVar1->vtable->SetOrderData)(pSVar1,GROUP_BOAT_ORDER_0C,&local_c);
         return 0;
       }
     }
@@ -42,7 +42,7 @@ FUN_00660b50(AnonShape_00660620_6BCED4D7 *param_1,undefined4 param_2,short param
           pSVar1 = thunk_FUN_0042b760(param_1->field_0024,
                                       CONCAT22((short)((uint)param_5 >> 0x10),param_1->field_007D));
           if (pSVar1 != (STGroupBoatC *)0x0) {
-            (*pSVar1->vtable->vfunc_08)(pSVar1,CASE_12,&local_14);
+            (*pSVar1->vtable->SetOrderData)(pSVar1,GROUP_BOAT_ORDER_12,&local_14);
             return 0;
           }
         }

@@ -2,7 +2,12 @@
 /* [STMethodOwnerApplier] Structural method owner recovered as TLOBaseTy.
    Evidence: this_call_owners=[TLOBaseTy]; agreed_this_calls=1; incoming_this_accesses=8;
    incoming_edx_uses=2; incoming_stack_parameter_uses=3; direct_non_thunk_callers=0;
-   incoming_ecx_receiver_callers=0; attributed_named_callers=1; owner_evidence_coverage=adequate */
+   incoming_ecx_receiver_callers=0; attributed_named_callers=1; owner_evidence_coverage=adequate
+
+   [STSwitchEnumApplier] Switch target field_04D0 uses
+   /SubmarineTitans/Recovered/Enums/TLOBaseTy_field_04D0State. Cases:
+   CASE_0=0;CASE_1=1;CASE_2=2;CASE_3=3;CASE_4=4;CASE_5=5;CASE_6=6;CASE_32=50;CASE_40=64;CASE_49=73;CASE_5C=92
+    */
 
 undefined4 __thiscall TLOBaseTy::sub_004CEB00(TLOBaseTy *this,undefined4 param_1)
 

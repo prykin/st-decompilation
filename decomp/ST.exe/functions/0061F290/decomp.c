@@ -66,11 +66,12 @@ undefined4 __thiscall STLightC::sub_0061F290(STLightC *this,int param_1)
                 iVar3 = (int)(short)lVar6;
               }
               if ((((((DAT_0080874d == -1) || (this_00->field_00F8 == 0)) ||
-                    (thunk_FUN_00558c00(this_00,this_00->field_010C,iVar3,local_8,&local_18,
-                                        &local_1c), iVar4 < 0)) || ((4 < iVar4 || (local_18 < 0))))
-                  || ((this_00->field_0030 <= local_18 ||
-                      ((iVar4 = g_centeredOffsets5[iVar4] + local_1c, iVar4 < 0 ||
-                       (this_00->field_0034 <= iVar4)))))) ||
+                    (VisibleClassTy::sub_00558C00
+                               (this_00,this_00->field_010C,iVar3,local_8,&local_18,&local_1c),
+                    iVar4 < 0)) || ((4 < iVar4 || (local_18 < 0)))) ||
+                  ((this_00->field_0030 <= local_18 ||
+                   ((iVar4 = g_centeredOffsets5[iVar4] + local_1c, iVar4 < 0 ||
+                    (this_00->field_0034 <= iVar4)))))) ||
                  ((this_00->field_004C == (byte *)0x0 ||
                   (this_00->field_004C[local_18 + iVar4 * this_00->field_0030] != 0)))) {
                 if (*(char *)((int)piVar5 + 0x2f) == '\0') {

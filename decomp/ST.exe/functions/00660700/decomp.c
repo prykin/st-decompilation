@@ -89,7 +89,7 @@ FUN_00660700(void *this,short param_1,short param_2,short param_3,int param_4,in
                                    CONCAT22((short)((uint)pSVar4 >> 0x10),
                                             *(short *)((int)this + 0x7d))),
      this_01 != (STGroupBoatC *)0x0)) {
-    (*this_01->vtable->vfunc_08)(this_01,CASE_10,&local_14);
+    (*this_01->vtable->SetOrderData)(this_01,GROUP_BOAT_ORDER_10,&local_14);
     return 0;
   }
   return 0xffffffff;

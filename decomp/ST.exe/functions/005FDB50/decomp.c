@@ -108,9 +108,9 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_005FDB50::FUN_005fdb50
             iVar8 = local_8;
             this = local_c;
             if ((((DAT_0080874d != -1) && (g_visibleClass_00802A88->field_00F8 != 0)) &&
-                ((thunk_FUN_00558c00(g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,
-                                     iVar5,iVar6,&local_24,&local_28), iVar8 = local_8,
-                 this = local_c, -1 < iVar7 &&
+                ((VisibleClassTy::sub_00558C00
+                            (g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,iVar5,iVar6
+                             ,&local_24,&local_28), iVar8 = local_8, this = local_c, -1 < iVar7 &&
                  ((((iVar7 < 5 && (-1 < local_24)) && (local_24 < pVVar3->field_0030)) &&
                   ((iVar5 = g_centeredOffsets5[iVar7] + local_28, -1 < iVar5 &&
                    (iVar5 < pVVar3->field_0034)))))))) && (pVVar3->field_004C != (byte *)0x0)) {
@@ -200,9 +200,10 @@ joined_r0x005fe09b:
               iVar8 = local_8;
               this = local_c;
               if ((((DAT_0080874d != -1) && (g_visibleClass_00802A88->field_00F8 != 0)) &&
-                  ((thunk_FUN_00558c00(g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,
-                                       iVar6,iVar7,&local_1c,&local_20), iVar8 = local_8,
-                   this = local_c, -1 < iVar5 &&
+                  ((VisibleClassTy::sub_00558C00
+                              (g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,iVar6,
+                               iVar7,&local_1c,&local_20), iVar8 = local_8, this = local_c,
+                   -1 < iVar5 &&
                    (((iVar5 < 5 && (-1 < local_1c)) && (local_1c < pVVar3->field_0030)))))) &&
                  (((iVar5 = g_centeredOffsets5[iVar5] + local_20, -1 < iVar5 &&
                    (iVar5 < pVVar3->field_0034)) && (pVVar3->field_004C != (byte *)0x0)))) {

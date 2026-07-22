@@ -2498,7 +2498,8 @@ cf_common_join_006895D5:
           }
           local_c = EventDataPack(*(AnonShape_0065CD10_BA40DE58 **)&DAT_008489b8->field_0x106,
                                   &local_18);
-          local_28 = PlrDataPack((uint *)DAT_008489b8,(undefined4 *)local_c,local_18,&local_10);
+          local_28 = PlrDataPack((AnonShape_0067D3B0_B421D52F *)DAT_008489b8,(undefined4 *)local_c,
+                                 local_18,&local_10);
           thunk_FUN_0065d0f0((int *)&local_c);
           thunk_FUN_0067d160((int *)&DAT_008489b8);
           thunk_FUN_006809b0(local_28,local_10);
@@ -2584,7 +2585,8 @@ cf_common_join_006895D5:
             local_e0 = 0;
             local_dc = 0;
             local_d8 = *(undefined4 *)&DAT_008489c8->field_0x14;
-            Library::DKW::TBL::FUN_006ae1c0(*(uint **)&DAT_008489b8->field_0xc2,&local_e4);
+            Library::DKW::TBL::FUN_006ae1c0
+                      (&(*(DArrayTy **)&DAT_008489b8->field_0xc2)->flags,&local_e4);
             DAT_008489c8 = (AnonShape_0065CD10_BA40DE58 *)0x0;
             DAT_008488b0 = DAT_008488b0 + -1;
           }

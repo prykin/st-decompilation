@@ -40,7 +40,7 @@ FUN_00660540(void *this,undefined4 param_1,undefined2 param_2,undefined2 param_3
     this_00 = thunk_FUN_0042b760(*(char *)((int)this + 0x24),
                                  CONCAT22(uVar2,*(short *)((int)this + 0x7d)));
     if (this_00 != (STGroupBoatC *)0x0) {
-      (*this_00->vtable->vfunc_08)(this_00,CASE_9,&local_24);
+      (*this_00->vtable->SetOrderData)(this_00,GROUP_BOAT_ORDER_09,&local_24);
       return 0;
     }
   }

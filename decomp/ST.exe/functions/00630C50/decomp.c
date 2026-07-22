@@ -12,8 +12,9 @@
    incoming_ecx_receiver_callers=0; attributed_named_callers=1; owner_evidence_coverage=adequate */
 
 ushort * __thiscall
-STManRuinC::sub_00630C50
-          (STManRuinC *this,undefined4 param_1,int param_2,int param_3,int param_4,int param_5)
+SubmarineTitans::Recovered::HiddenThis::AnonReceiver_006308F0::sub_00630C50
+          (AnonReceiver_006308F0 *this,undefined4 param_1,int param_2,int param_3,int param_4,
+          int param_5)
 
 {
   undefined1 *puVar1;

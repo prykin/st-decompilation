@@ -1,11 +1,11 @@
 program=ST.exe
 descriptors=3
-auto_apply=3
-already_recovered=0
+auto_apply=0
+already_recovered=3
 non_unique_affected_function_sum=299
-007FB230 g_pathingScratchGrid functions=10 refs=57 apply=1 confidence=high
-007FB240 g_worldGrid functions=238 refs=2758 apply=1 confidence=high
-007FB278 g_pathingGrid functions=51 refs=471 apply=1 confidence=high
+007FB230 g_pathingScratchGrid functions=10 refs=57 apply=0 confidence=high
+007FB240 g_worldGrid functions=238 refs=2758 apply=0 confidence=high
+007FB278 g_pathingGrid functions=51 refs=471 apply=0 confidence=high
 note=The repeated descriptor layout is {short sizeX,sizeY,sizeZ,planeStride; pointer cells}.
 note_index=All three grids use x + sizeX*y + planeStride*z; planeStride is sizeX*sizeY.
 note_scope=This pass improves shared spatial-grid expressions; it does not rewrite control flow.

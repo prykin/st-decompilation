@@ -107,7 +107,7 @@ int __thiscall STMBombC::GetMessage(STMBombC *this,STMessage *message)
     }
     *(undefined2 *)pAVar13 = *(undefined2 *)puVar10;
     *(undefined4 *)&local_14->field_0xc = 2;
-    *(undefined4 *)&local_14->field_0x2a = this_00->field_0231;
+    *(STSprGameObjC_field_0231State *)&local_14->field_0x2a = this_00->field_0231;
     *(undefined4 *)&local_14->field_0x2e = *(undefined4 *)&this_00->field_0x235;
     *(undefined4 *)&local_14->field_0x32 = *(undefined4 *)&this_00->field_0x239;
     *(undefined4 *)&local_14->field_0x36 = *(undefined4 *)&this_00->field_0x23d;
@@ -182,7 +182,7 @@ int __thiscall STMBombC::GetMessage(STMBombC *this,STMessage *message)
   if (SVar2 == MESS_ID_CREATE) {
     DAT_0081170c = FUN_006acf0d(0,0,0,0x3ed,0x3ed,1000);
     dVar3 = (message->arg0).u32;
-    this_00->field_0231 = 3;
+    this_00->field_0231 = CASE_3;
     uVar8 = *(uint *)(dVar3 + 0xc);
     if (uVar8 < 2) {
       *(undefined4 *)&this_00->field_0x257 = 0;
@@ -255,13 +255,13 @@ int __thiscall STMBombC::GetMessage(STMBombC *this,STMessage *message)
           if ((*(int *)&this_00->field_0x29c == 0) ||
              (iVar6 = FUN_006e62d0(g_playSystem_00802A38,*(int *)&this_00->field_0x29c,
                                    (int *)&local_24), iVar6 != 0)) {
-            this_00->field_0231 = 1;
+            this_00->field_0231 = CASE_1;
             *(undefined4 *)&this_00->field_0x235 = 0;
             *(undefined4 *)&this_00->field_0x239 = 0;
             *(undefined4 *)&this_00->field_0x23d = 0;
           }
           else {
-            this_00->field_0231 = 0;
+            this_00->field_0231 = CASE_0;
             *(undefined2 *)&this_00->field_0x273 = *(undefined2 *)((int)local_24 + 0x32);
             *(undefined4 *)&this_00->field_0x26f = *(undefined4 *)((int)local_24 + 0x24);
             thunk_FUN_00416270(local_24,&local_6,(int *)&local_8,(int *)&local_a);
@@ -318,7 +318,7 @@ int __thiscall STMBombC::GetMessage(STMBombC *this,STMessage *message)
               ((STAllPlayersC *)this_00,(undefined4 *)(local_10 + 0x87 + (int)local_48));
     puVar10 = local_48;
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-    this_00->field_0231 = *(undefined4 *)((int)local_48 + 0x2a);
+    this_00->field_0231 = *(STSprGameObjC_field_0231State *)((int)local_48 + 0x2a);
     *(undefined4 *)&this_00->field_0x235 = *(undefined4 *)((int)local_48 + 0x2e);
     *(undefined4 *)&this_00->field_0x239 = *(undefined4 *)((int)local_48 + 0x32);
     *(undefined4 *)&this_00->field_0x23d = *(undefined4 *)((int)local_48 + 0x36);

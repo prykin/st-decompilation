@@ -1,37 +1,39 @@
 
-/* [STMethodOwnerApplier] Structural method owner recovered as STColl3C.
-   Evidence: this_call_owners=[STColl3C]; agreed_this_calls=1; incoming_this_accesses=21;
-   incoming_edx_uses=0; incoming_stack_parameter_uses=0; direct_non_thunk_callers=0;
-   incoming_ecx_receiver_callers=0; attributed_named_callers=1; owner_evidence_coverage=adequate */
-
-void __thiscall STColl3C::sub_0041C5A0(STColl3C *this)
+void __thiscall sub_0041C5A0(void *this)
 
 {
   undefined4 uVar1;
 
-  if ((g_visibleClass_00802A88 != (VisibleClassTy *)0x0) && ((this->field_01D1 & 1) == 0)) {
+  if ((g_visibleClass_00802A88 != (VisibleClassTy *)0x0) &&
+     ((*(byte *)((int)this + 0x1d1) & 1) == 0)) {
     VisibleClassTy::sub_00559110
-              (g_visibleClass_00802A88,(int)this->field_005B,(undefined *)(int)this->field_005D,
-               (int)this->field_005F,this->field_0024,this->field_0101,this->field_0018,0xffffffff);
-    if (this->field_0020 == 0x14) {
-      SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00558C00::thunk_FUN_00559620
-                ((AnonReceiver_00558C00 *)g_visibleClass_00802A88,(int)this->field_005B,
-                 (int)this->field_005D,(char)this->field_005F,(undefined *)this->field_0024,
-                 this->field_0105,this->field_0018,0xffffffff);
+              (g_visibleClass_00802A88,(int)*(short *)((int)this + 0x5b),
+               (undefined *)(int)*(short *)((int)this + 0x5d),(int)*(short *)((int)this + 0x5f),
+               *(uint *)((int)this + 0x24),*(int *)((int)this + 0x101),*(int *)((int)this + 0x18),
+               0xffffffff);
+    if (*(int *)((int)this + 0x20) == 0x14) {
+      SubmarineTitans::Recovered::HiddenThis::AnonReceiver_005594A0::thunk_FUN_00559620
+                ((AnonReceiver_005594A0 *)g_visibleClass_00802A88,(int)*(short *)((int)this + 0x5b),
+                 (int)*(short *)((int)this + 0x5d),(char)*(undefined2 *)((int)this + 0x5f),
+                 *(undefined **)((int)this + 0x24),*(int *)((int)this + 0x105),
+                 *(undefined4 *)((int)this + 0x18),0xffffffff);
     }
-    uVar1 = (*this->vtable[0xb].vfunc_00)();
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+    uVar1 = (**(code **)(*(int *)this + 0x2c))();
     switch(uVar1) {
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
     case 5:
     case 0x11:
     case 0x21:
-      (*this->vtable[0x26].vfunc_00)();
+      (**(code **)(*(int *)this + 0x98))();
       break;
     case 0xb:
     case 0x23:
-      SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00558C00::thunk_FUN_00559d60
-                ((AnonReceiver_00558C00 *)g_visibleClass_00802A88,(int)this->field_005B,
-                 (int)this->field_005D,(char)this->field_005F,this->field_0024,
-                 (undefined *)this->field_010D,this->field_0018);
+      SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00559D60::thunk_FUN_00559d60
+                ((AnonReceiver_00559D60 *)g_visibleClass_00802A88,(int)*(short *)((int)this + 0x5b),
+                 (int)*(short *)((int)this + 0x5d),(char)*(undefined2 *)((int)this + 0x5f),
+                 *(uint *)((int)this + 0x24),*(undefined **)((int)this + 0x10d),
+                 *(undefined4 *)((int)this + 0x18));
       return;
     }
   }

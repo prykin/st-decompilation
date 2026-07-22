@@ -44,7 +44,7 @@ LAB_004e4ffe:
     iVar4 = 0;
   }
   if (param_1[0x139] != 0) {
-    thunk_FUN_0041d2b0((AnonShape_0041D2B0_CE8C6BD3 *)param_1);
+    STMineSetC::sub_0041D2B0((STMineSetC *)param_1);
     param_1[0x139] = 0;
   }
   /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
@@ -61,7 +61,7 @@ LAB_004e4ffe:
   if ((iVar4 != 0) && (iVar4 = thunk_FUN_004e60d0(param_1[9],iVar4), iVar4 == 0)) {
     return 0;
   }
-  thunk_FUN_0041d1a0(param_1,10);
+  STMineSetC::sub_0041D1A0((STMineSetC *)param_1,10);
   param_1[0x139] = 1;
   return 0;
 }

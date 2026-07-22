@@ -1,4 +1,4 @@
-FUN_005f8650:
+STColl3C::sub_005F8650:
 005F8650  55                        PUSH EBP
 005F8651  8B EC                     MOV EBP,ESP
 005F8653  8B 45 10                  MOV EAX,dword ptr [EBP + 0x10]

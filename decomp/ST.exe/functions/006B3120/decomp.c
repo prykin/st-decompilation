@@ -12,7 +12,7 @@ int FUN_006b3120(uint *param_1,uint *param_2)
   int local_24 [3];
   uint local_18;
   undefined4 local_14;
-  int local_10;
+  AnonShape_006B5B10_E0D06CF1 *local_10;
   uint *local_c;
   int local_8;
 
@@ -20,7 +20,7 @@ int FUN_006b3120(uint *param_1,uint *param_2)
   puVar3 = param_1;
   iVar7 = 0;
   local_c = (uint *)0x0;
-  local_10 = 0;
+  local_10 = (AnonShape_006B5B10_E0D06CF1 *)0x0;
   local_8 = 0;
   if (param_2[0x33] != 0) {
     param_1[0x6d] = 1;
@@ -96,7 +96,7 @@ int FUN_006b3120(uint *param_1,uint *param_2)
         local_c = (uint *)0x0;
         if ((*puVar4 & 0xa0001000) == 0) {
           do {
-            local_8 = FUN_006bbe40(*(int **)(*puVar3 + 0x44),(uint *)&local_c,&local_10,0);
+            local_8 = FUN_006bbe40(*(int **)(*puVar3 + 0x44),(uint *)&local_c,(int *)&local_10,0);
             if (local_8 == 0) goto LAB_006b3351;
             if (local_8 != -0x7789fe3e) goto LAB_006b334d;
             FUN_006cec40((AnonShape_006CEC40_BB23E716 *)*puVar3);

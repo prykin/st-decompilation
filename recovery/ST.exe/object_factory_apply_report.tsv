@@ -1,13 +1,13 @@
 kind	address	status	name	detail
-enum	/SubmarineTitans/Recovered/Enums/STObjectTypeId	applied	STObjectTypeId	updated generated registry values
-factory	0071E000	applied	CreateButton	signature=applied(ButtonClassTy * __cdecl(void)); name=applied(CreateButton)
-factory	00725520	applied	CreateTrackbar	signature=applied(TrackbarClassTy * __cdecl(void)); name=applied(CreateTrackbar)
-factory	00724D00	applied	CreateSlider	signature=applied(SliderClassTy * __cdecl(void)); name=applied(CreateSlider)
+enum	/SubmarineTitans/Recovered/Enums/STObjectTypeId	unchanged	STObjectTypeId	equivalent enum already present
+factory	0071E000	unchanged	CreateButton	signature=unchanged
+factory	00725520	unchanged	CreateTrackbar	signature=unchanged
+factory	00724D00	unchanged	CreateSlider	signature=unchanged
 factory	007242D0	unchanged	CreateObjectType_0005	signature=unchanged
-factory	007233B0	applied	CreateEditor	signature=applied(EditorClassTy * __cdecl(void)); name=applied(CreateEditor)
-factory	00720960	applied	CreateList	signature=applied(ListClassTy * __cdecl(void)); name=applied(CreateList)
-factory	0071F210	applied	CreateViewer	signature=applied(ViewerClassTy * __cdecl(void)); name=applied(CreateViewer)
-factory	0071E6D0	applied	CreateRadio	signature=applied(RadioClassTy * __cdecl(void)); name=applied(CreateRadio)
+factory	007233B0	unchanged	CreateEditor	signature=unchanged
+factory	00720960	unchanged	CreateList	signature=unchanged
+factory	0071F210	unchanged	CreateViewer	signature=unchanged
+factory	0071E6D0	unchanged	CreateRadio	signature=unchanged
 factory	0071B190	unchanged	CreateObjectType_0001	signature=unchanged
 factory	00495720	unchanged	CreateObjectType_8100	signature=unchanged
 factory	004A88F0	unchanged	CreateObjectType_0100	signature=unchanged
@@ -84,12 +84,12 @@ factory	00579320	disabled	CreateSTCrab	all apply flags are 0
 factory	0060EC40	unchanged	CreateObjectType_0147	signature=unchanged
 factory	00668150	unchanged	CreateObjectType_0400	signature=unchanged
 factory	00690E60	unchanged	CreateAiTact	signature=unchanged
-factory	0067CF00	unchanged	CreateObjectType_0402	signature=unchanged
+factory	0067CF00	unchanged	CreateAiPlr	signature=unchanged
 factory	006483D0	unchanged	CreateAiBoss	signature=unchanged
 factory	005947D0	unchanged	CreateObjectType_100EF	signature=unchanged
 factory	0061D5F0	unchanged	CreateObjectType_014C	signature=unchanged
 factory	005EBC70	unchanged	CreateSTArtiafact	signature=unchanged
-factory	005F3410	unchanged	CreateSTBHEShell	signature=unchanged
+factory	005F3410	unchanged	CreateAnonReceiver_005F35F0	signature=unchanged
 factory	00617810	unchanged	CreateObjectType_0152	signature=unchanged
 factory	005FC3A0	unchanged	CreateSTContainer	signature=unchanged
 factory	006225D0	unchanged	CreateSTMineSet	signature=unchanged

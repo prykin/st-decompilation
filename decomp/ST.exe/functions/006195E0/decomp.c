@@ -39,16 +39,16 @@ undefined4 __thiscall STJumpMineC::LoadImagJMine(STJumpMineC *this,int param_1)
       pSVar7->field_009B = puVar3;
       pSVar7->field_00AF = iVar2;
       if (DAT_00807326 != '\0') {
-        SubmarineTitans::Recovered::HiddenThis::AnonReceiver_004248D0::FUN_006e9520
-                  ((AnonReceiver_004248D0 *)PTR_00807598,*piVar6,0,0x401109,
+        SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00424E10::FUN_006e9520
+                  ((AnonReceiver_00424E10 *)PTR_00807598,*piVar6,0,0x401109,
                    (uint)&pSVar7->field_0x4d);
       }
     }
     else {
       piVar6 = &local_8->field_0097;
       if (-1 < local_8->field_0097) {
-        SubmarineTitans::Recovered::HiddenThis::AnonReceiver_004248D0::FUN_006e9520
-                  ((AnonReceiver_004248D0 *)PTR_00807598,local_8->field_0097,0,0,(uint)local_8);
+        SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00424E10::FUN_006e9520
+                  ((AnonReceiver_00424E10 *)PTR_00807598,local_8->field_0097,0,0,(uint)local_8);
         FUN_006e8ba0(PTR_00807598,*piVar6);
       }
       puVar3 = Library::Ourlib::MFRLOAD::mfRLoad

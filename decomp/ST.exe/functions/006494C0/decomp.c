@@ -28,10 +28,10 @@ undefined4 * CreatePlrDataForWS(void)
   uint local_14;
   byte *local_10;
   byte *local_c;
-  uint *local_8;
+  AnonShape_0067D3B0_B421D52F *local_8;
 
   local_c = (byte *)0x0;
-  local_8 = (uint *)0x0;
+  local_8 = (AnonShape_0067D3B0_B421D52F *)0x0;
   local_10 = (byte *)0x0;
   local_78.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_78;
@@ -197,11 +197,11 @@ undefined4 * CreatePlrDataForWS(void)
     pcVar8 = pcVar8 + 1;
     pcVar11 = pcVar11 + 1;
   }
-  local_8 = thunk_FUN_00683c70(local_17c,(AnonShape_00683C70_22193481 *)&stack0xfffffb6c,&local_1c,
+  local_8 = (AnonShape_0067D3B0_B421D52F *)
+            thunk_FUN_00683c70(local_17c,(AnonShape_00683C70_22193481 *)&stack0xfffffb6c,&local_1c,
                                local_34,(undefined *)0x0);
-  if (local_8 != (uint *)0x0) {
-    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-    local_10 = EventDataPack(*(AnonShape_0065CD10_BA40DE58 **)((int)local_8 + 0x106),&local_14);
+  if (local_8 != (AnonShape_0067D3B0_B421D52F *)0x0) {
+    local_10 = EventDataPack(*(AnonShape_0065CD10_BA40DE58 **)&local_8[1].field_0x3e,&local_14);
     local_c = PlrDataPack(local_8,(undefined4 *)local_10,local_14,&local_18);
     thunk_FUN_0065d0f0((int *)&local_10);
     thunk_FUN_0067d160((int *)&local_8);

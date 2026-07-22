@@ -170,7 +170,7 @@ int __thiscall TLOBaseTy::teleNone(TLOBaseTy *this)
                            *(int *)&local_20->field_0x484,*(int *)&local_20->field_0x488);
         *(undefined4 *)&this_00->field_0x494 = 0;
       }
-      STColl3C::sub_0041C5A0((STColl3C *)this_00);
+      sub_0041C5A0(this_00);
       this_00->field_05B0 = *(undefined4 *)&this_00->field_0x480;
       this_00->field_05B8 = *(undefined4 *)&this_00->field_0x488;
       this_00->field_05B4 = *(undefined4 *)&this_00->field_0x484;

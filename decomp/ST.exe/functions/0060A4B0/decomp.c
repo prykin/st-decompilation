@@ -64,13 +64,13 @@ undefined4 __fastcall FUN_0060a4b0(AnonShape_0060A4B0_7BF9A20C *param_1)
                                   (short)((longlong)iVar5 * 0x28c1979 >> 0x3f));
             }
             if ((((DAT_0080874d == -1) || (g_visibleClass_00802A88->field_00F8 == 0)) ||
-                ((thunk_FUN_00558c00(g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,
-                                     iVar5,iVar6,&local_1c,&local_20), local_8 < 0 ||
-                 ((4 < local_8 || (local_1c < 0)))))) ||
-               ((pVVar4->field_0030 <= local_1c ||
-                ((((iVar6 = g_centeredOffsets5[local_8] + local_20, iVar6 < 0 ||
-                   (pVVar4->field_0034 <= iVar6)) || (pVVar4->field_004C == (byte *)0x0)) ||
-                 (pVVar4->field_004C[local_1c + iVar6 * pVVar4->field_0030] != 0)))))) {
+                ((VisibleClassTy::sub_00558C00
+                            (g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,iVar5,iVar6
+                             ,&local_1c,&local_20), local_8 < 0 || ((4 < local_8 || (local_1c < 0)))
+                 ))) || ((pVVar4->field_0030 <= local_1c ||
+                         ((((iVar6 = g_centeredOffsets5[local_8] + local_20, iVar6 < 0 ||
+                            (pVVar4->field_0034 <= iVar6)) || (pVVar4->field_004C == (byte *)0x0))
+                          || (pVVar4->field_004C[local_1c + iVar6 * pVVar4->field_0030] != 0)))))) {
               if (*(int *)(iVar7 + 4) == 0) {
                 FUN_006eaaa0(PTR_00807598,*(uint *)(iVar7 + 0x3c),0);
                 *(undefined4 *)(iVar7 + 4) = 1;

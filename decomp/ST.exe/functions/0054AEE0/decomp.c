@@ -66,7 +66,8 @@ void __thiscall CursorClassTy::GCGameState(CursorClassTy *this,int param_1)
   if ((iVar5 != 0) &&
      ((((this_00->field_00DE == CASE_2 || (this_00->field_00DE == 4)) &&
        (iVar5 = FUN_00405687((int)this_00), iVar5 == 0)) || (this_00->field_0496 == 0)))) {
-    sub_0054B700(this_00,-1);
+    SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0054B700::sub_0054B700
+              ((AnonReceiver_0054B700 *)this_00,-1);
     if ((g_helpPanel_00801690 == (AnonShape_GLOBAL_00801690_2AA401C1 *)0x0) ||
        (g_helpPanel_00801690->field_0172 == 2)) goto LAB_0054b372;
 LAB_0054b019:
@@ -126,7 +127,8 @@ LAB_0054b366:
     if (4 < (short)local_c) {
       local_c = 4;
     }
-    sub_0054B700(this_00,(int)(short)local_c);
+    SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0054B700::sub_0054B700
+              ((AnonReceiver_0054B700 *)this_00,(int)(short)local_c);
     if (this_00->field_049A == (STFishC *)0x0) {
       if ((this_00->field_049E != 0) && (this_00->field_049E = 0, DAT_00801694 != (void *)0x0)) {
         thunk_FUN_0051fac0(DAT_00801694,(char *)0x0,0,'\x01',0xfffffc18);

@@ -2,7 +2,7 @@
 /* [STPrototypeRepairApplier] Propagated parameter 0.
    Evidence: 004E51B0 -> 004DD880 @ 004E569A */
 
-undefined4 __fastcall FUN_004dd880(int *param_1)
+undefined4 __fastcall FUN_004dd880(AnonShape_004DDCC0_33DEB43E *param_1)
 
 {
   AnonShape_004DDCC0_33DEB43E *pAVar1;
@@ -26,28 +26,25 @@ undefined4 __fastcall FUN_004dd880(int *param_1)
   uint *local_c;
   int *local_8;
 
-  local_20 = (AnonShape_004DDCC0_33DEB43E *)param_1;
-  GetPlayerRaceId((char)param_1[9]);
+  local_20 = param_1;
+  GetPlayerRaceId(param_1->field_0024);
   piVar8 = local_104;
   for (iVar6 = 0x37; iVar6 != 0; iVar6 = iVar6 + -1) {
     *piVar8 = -1;
     piVar8 = piVar8 + 1;
   }
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  if (param_1[9] != *(int *)((int)param_1 + 0x23d)) {
-    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-    uVar2 = GetPlayerRaceId((char)*(int *)((int)param_1 + 0x23d));
-    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-    iVar6 = *(int *)((int)param_1 + 0x235);
-    uVar3 = GetPlayerRaceId((char)param_1[9]);
+  if (*(int *)&param_1->field_0024 != *(int *)&param_1->field_0x23d) {
+    uVar2 = GetPlayerRaceId((char)*(int *)&param_1->field_0x23d);
+    iVar6 = *(int *)&param_1->field_0x235;
+    uVar3 = GetPlayerRaceId(param_1->field_0024);
     if ((&DAT_007e1984)[(uVar3 & 0xff) + ((uVar2 & 0xff) + iVar6 * 3) * 3] == '\0')
     goto LAB_004dda3a;
   }
-  if (param_1[0x16b] == 0x34) {
+  if (*(int *)&param_1[1].field_0xd8 == 0x34) {
     local_24 = 1;
   }
   else {
-    local_24 = (-(uint)(param_1[0x16b] != 0x5b) & 0xfffffffe) + 2;
+    local_24 = (-(uint)(*(int *)&param_1[1].field_0xd8 != 0x5b) & 0xfffffffe) + 2;
   }
   local_14 = local_f4;
   local_8 = local_104 + 2;
@@ -103,17 +100,17 @@ LAB_004dda13:
     local_18 = local_18 + 3;
     local_1c = local_1c + 5;
     local_28 = iVar6 + 1;
-    param_1 = (int *)local_20;
+    param_1 = local_20;
   } while (iVar6 + -0x95 < 0x2d);
 LAB_004dda3a:
   piVar8 = local_104;
-  piVar7 = &((AnonShape_004DDCC0_33DEB43E *)param_1)->field_04D0;
+  piVar7 = &param_1->field_04D0;
   for (iVar6 = 0x37; iVar6 != 0; iVar6 = iVar6 + -1) {
     *piVar7 = *piVar8;
     piVar8 = piVar8 + 1;
     piVar7 = piVar7 + 1;
   }
-  thunk_FUN_004ddcc0((AnonShape_004DDCC0_33DEB43E *)param_1);
+  thunk_FUN_004ddcc0(param_1);
   return 0;
 code_r0x004dd9bb:
   iVar4 = piVar7[5];

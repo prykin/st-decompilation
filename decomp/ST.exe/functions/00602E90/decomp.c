@@ -11,7 +11,9 @@
    incoming_edx_uses=0; incoming_stack_parameter_uses=0; direct_non_thunk_callers=0;
    incoming_ecx_receiver_callers=0; attributed_named_callers=1; owner_evidence_coverage=adequate */
 
-undefined4 * __thiscall STDestC::sub_00602E90(STDestC *this)
+undefined4 * __thiscall
+SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00602E90::sub_00602E90
+          (AnonReceiver_00602E90 *this)
 
 {
   AnonShape_00602E90_7075769A *pAVar1;

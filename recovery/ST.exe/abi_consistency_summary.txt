@@ -1,12 +1,12 @@
 ST x86 ABI consistency
 
-Functions scanned: 5632
-Proposals: 140
-Automatic: 140
-known_setjmp3: 1
+Functions scanned: 5743
+Proposals: 0
+Automatic: 0
+known_setjmp3: 0
 known_load_resource_string: 0
-full_eax_return: 97
-stack_parameter_width: 42
+full_eax_return: 0
+stack_parameter_width: 0
 note=USER_DEFINED and IMPORTED target types are never selected for automatic repair.
 note_returns=Full-EAX repairs require full-width caller use and a full EAX definition on every RET path.
 note_parameters=Narrow stack parameters require consistent MOVSX/MOVZX or an immediate AND mask and no unmasked dword reads.

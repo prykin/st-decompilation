@@ -1,6 +1,6 @@
 address	function	owner	vtable_slots	deallocates_this	this_field_writes	zeroed_this_fields	same_this_calls	field_cleanup_calls	total_calls
 004137F0	FUN_004137f0	STGroupBoatC	0x18	0	0	0	0	0	3
-004189D0	STGameObjC::MoveStep	STGameObjC	0x18 | 0x1C	0	0	0	1	0	18
+004189D0	STGameObjC::MoveStep	STGameObjC	0x1C | 0x20	0	0	0	1	0	18
 0041AF40	STGameObjC::GetMessage	STGameObjC	0x0	0	0	0	0	0	107
 0041E530	STSprGameObjC::GetMessage	STSprGameObjC	0x0	0	0	0	0	0	84
 00423C70	FUN_00423c70	STGroupC	0x4	0	0	0	0	0	5
@@ -38,7 +38,7 @@ address	function	owner	vtable_slots	deallocates_this	this_field_writes	zeroed_th
 00494F00	FUN_00494f00	STBoatC	0x98	0	2	2	0	0	2
 00495980	DumpClassC::GetMessage	DumpClassC	0x0	0	0	0	1	0	23
 00497E00	STGroupBoatC::GetMessage	STGroupBoatC	0x0	0	0	0	0	0	111
-00498D20	FUN_00498d20	STGroupBoatC	0x8	0	4	0	0	0	27
+00498D20	STGroupBoatC::SetOrderData	STGroupBoatC	0x8	0	4	0	0	0	27
 004A0EE0	FUN_004a0ee0	STGroupBoatC	0x4	0	0	0	2	0	4
 004A4240	STGroupBoatC::ChangeMDNotify	STGroupBoatC	0x10	0	0	0	0	0	47
 004A4D60	STGroupBoatC::ChangeMDNotify	STGroupBoatC	0x14	0	0	0	0	0	7
@@ -71,19 +71,41 @@ address	function	owner	vtable_slots	deallocates_this	this_field_writes	zeroed_th
 004D7390	FUN_004d7390	TLOBaseTy	0xD0	0	0	0	1	0	1
 004DA340	FUN_004da340	TLOBaseTy	0x44	0	0	0	0	0	1
 004E3200	FUN_004e3200	TLOBaseTy	0x38	0	0	0	2	0	31
+004EDF30	BehPanelTy::ShiftControls	BehPanelTy	0x18	0	2	0	1	0	8
+004EE0A0	BehPanelTy::Update	BehPanelTy	0x20	0	0	0	0	0	11
+004EE4D0	BehPanelTy::GetMessage	BehPanelTy	0x0	0	0	0	0	0	19
+004EF020	BldBoatPanelTy::Update	BldBoatPanelTy	0x1C	0	0	0	0	0	6
+004EF6D0	BldBoatPanelTy::GetMessage	BldBoatPanelTy	0x0	0	0	0	0	0	17
+004EFD10	BldLabPanelTy::Update	BldLabPanelTy	0x1C	0	0	0	0	0	6
+004F0210	BldLabPanelTy::GetMessage	BldLabPanelTy	0x0	0	0	0	0	0	12
+004F0B60	BldObjPanelTy::Update	BldObjPanelTy	0x1C	0	0	0	0	0	6
+004F1080	BldObjPanelTy::GetMessage	BldObjPanelTy	0x0	0	0	0	0	0	16
 004FB060	CPanelTy::GetMessage	CPanelTy	0x0	0	1	0	0	0	158
 00510370	FrmPanelTy::ShiftControls	FrmPanelTy	0x1C	0	2	0	1	0	6
 005104B0	FrmPanelTy::Update	FrmPanelTy	0x24	0	0	0	0	0	5
 005107C0	FrmPanelTy::GetMessage	FrmPanelTy	0x4	0	0	0	0	0	15
 00511FA0	HelpPanelTy::SetPanel	HelpPanelTy	0x18	0	0	0	0	0	18
 0051DDD0	HelpPanelTy::GetMessage	HelpPanelTy	0x0	0	0	0	0	0	94
-00538690	PanelTy::CreateBut	PanelTy	0x0 | 0x4 | 0x8	0	0	0	0	0	9
-005389E0	PanelTy::PaintBut	PanelTy	0x4 | 0x8 | 0xC	0	0	0	0	0	9
-00538BA0	PanelTy::PaintTxtBut	PanelTy	0x10 | 0x8 | 0xC	0	0	0	0	0	11
-00538DB0	PanelTy::PaintIBut	PanelTy	0x10 | 0x14 | 0xC	0	0	0	0	0	12
-00538FC0	PanelTy::PaintLBut	PanelTy	0x10 | 0x14 | 0x18	0	0	0	0	0	12
-0053E920	SpecPanelTy::SetPanel	SpecPanelTy	0x20	0	0	0	0	0	6
-0053F780	ProdPanelTy::ShiftControls	ProdPanelTy	0x14	0	3	0	0	0	7
+0051FBA0	HelpStringTy::GetMessage	HelpStringTy	0x0	0	0	0	0	0	13
+005205E0	InfocPanelTy::ShiftControls	InfocPanelTy	0x1C	0	2	0	1	0	5
+005206F0	InfocPanelTy::Update	InfocPanelTy	0x24	0	0	0	0	0	15
+00521490	InfocPanelTy::GetMessage	InfocPanelTy	0x4	0	0	0	0	0	12
+00522E80	IntercomPanelTy::GetMessage	IntercomPanelTy	0x0	0	0	0	0	0	21
+00533D10	OptPanelTy::GetMessage	OptPanelTy	0x0	0	0	0	0	0	181
+00538690	PanelTy::CreateBut	PanelTy	0x4 | 0x8	0	0	0	0	0	9
+005389E0	PanelTy::PaintBut	PanelTy	0x8 | 0xC	0	0	0	0	0	9
+00538BA0	PanelTy::PaintTxtBut	PanelTy	0x10 | 0xC	0	0	0	0	0	11
+00538DB0	PanelTy::PaintIBut	PanelTy	0x10 | 0x14	0	0	0	0	0	12
+00538FC0	PanelTy::PaintLBut	PanelTy	0x14 | 0x18	0	0	0	0	0	12
+005397F0	PausePanelTy::GetMessage	PausePanelTy	0x0	0	0	0	0	0	12
+0053AFB0	PlayPanelTy::GetMessage	PlayPanelTy	0x0	0	0	0	0	0	43
+0053C500	ResearchPanelTy::Update	ResearchPanelTy	0x1C	0	0	0	0	0	6
+0053CA80	ResearchPanelTy::GetMessage	ResearchPanelTy	0x0	0	0	0	0	0	17
+0053D290	SAMPanelTy::ShiftControls	SAMPanelTy	0x18	0	2	0	1	0	5
+0053D3B0	SAMPanelTy::Update	SAMPanelTy	0x20	0	0	0	0	0	5
+0053D4D0	SAMPanelTy::GetMessage	SAMPanelTy	0x0	0	0	0	0	0	13
+0053E920	SpecPanelTy::SetPanel	SpecPanelTy	0x1C | 0x20	0	0	0	0	0	6
+0053F780	ProdPanelTy::ShiftControls	ProdPanelTy	0x18	0	3	0	0	0	7
 00542EC0	InterSystemC::~InterSystemC	InterSystemC	0x4	0	4	4	2	0	5
 00542F40	InterSystemC::GetMessage	InterSystemC	0x20	0	0	0	0	0	30
 0054CF00	FUN_0054cf00	STPlaySystemC	0x8	0	0	0	2	0	2
@@ -91,6 +113,12 @@ address	function	owner	vtable_slots	deallocates_this	this_field_writes	zeroed_th
 0054D180	STPlaySystemC::DoneSystem	STPlaySystemC	0x4	0	0	0	0	0	9
 0054D640	STPlaySystemC::Life	STPlaySystemC	0x1C	0	0	0	1	0	77
 0054E4F0	STPlaySystemC::GetMessage	STPlaySystemC	0x20	0	0	0	1	0	23
+00551690	TradePanelTy::ShiftControls	TradePanelTy	0x18	0	2	0	1	0	8
+005521B0	TradePanelTy::Update	TradePanelTy	0x20	0	0	0	0	0	6
+005522A0	TradePanelTy::GetMessage	TradePanelTy	0x0	0	0	0	0	0	26
+00552AF0	UpgPanelTy::ShiftControls	UpgPanelTy	0x18	0	2	0	1	0	4
+00552BC0	UpgPanelTy::Update	UpgPanelTy	0x20	0	0	0	0	0	13
+00552E40	UpgPanelTy::GetMessage	UpgPanelTy	0x0	0	0	0	0	0	6
 005564C0	TraksClassTy::GetMessage	TraksClassTy	0x0	0	0	0	0	0	14
 00558840	VisibleClassTy::GetMessage	VisibleClassTy	0x0	0	0	0	0	0	18
 0055BD40	FUN_0055bd40	CFsgsConnection	0x58	0	0	0	1	0	2
@@ -139,13 +167,23 @@ address	function	owner	vtable_slots	deallocates_this	this_field_writes	zeroed_th
 00589C10	STOctopusC::GetMessage	STOctopusC	0x0	0	0	0	0	0	42
 0058C760	STSatC::GetMessage	STSatC	0x0	0	0	0	0	0	25
 0058D7C0	STSharkC::GetMessage	STSharkC	0x0	0	0	0	0	0	52
+005908B0	MAdvTy::GetMessage	MAdvTy	0x4	0	1	0	0	0	10
+00592470	CampaignTy::CloseButtons	CampaignTy	0x8	0	0	0	0	0	6
+00593040	CampaignTy::GetMessage	CampaignTy	0x0	0	1	0	0	0	34
+00594440	ComboTy::GetMessage	ComboTy	0x4	0	0	0	0	0	12
+0059B740	FSGSTy::CloseButtons	FSGSTy	0x8	0	0	0	0	0	6
 005A4350	FSGSTy::GetMessage	FSGSTy	0x0	0	1	0	0	0	373
+005ADF10	ChooseMapTy::CloseButtons	ChooseMapTy	0x8	0	0	0	0	0	8
 005B0BA0	ChooseMapTy::GetMessage	ChooseMapTy	0x0	0	1	0	0	0	99
+005B3C30	MainMenuTy::CloseButtons	MainMenuTy	0x8	0	0	0	0	0	6
+005B4BB0	MainMenuTy::GetMessage	MainMenuTy	0x0	0	1	0	0	0	23
 005B6220	MMObjTy::DoneMMObj	MMObjTy	0x4	0	0	0	0	0	7
 005B6430	MMObjTy::GetMessage	MMObjTy	0x0	0	0	0	1	0	1
 005B6480	MMObjTy::CloseButtons	MMObjTy	0x8	0	0	0	0	0	4
+005B9170	MMsgTy::CloseSprBut	MMsgTy	0x8	0	0	0	0	0	6
+005B9330	MMsgTy::GetMessage	MMsgTy	0x0	0	1	0	0	0	13
 005BC5E0	PrividerTy::GetMessage	PrividerTy	0x0	0	1	0	0	0	69
-005C29B0	SettMapMTy::sub_005C29B0	SubmarineTitans::Recovered::HiddenThis::AnonReceiver_005B6730	0x10	0	0	0	0	0	174
+005C29B0	SubmarineTitans::Recovered::HiddenThis::AnonReceiver_005B6730::sub_005C29B0	SettMapMTy	0x10	0	0	0	0	0	174
 005C4930	SettMapTy::DoneSettMap	SettMapTy	0x14	0	0	0	0	0	39
 005C5130	SettMapTy::NoneSettMap	SettMapTy	0xC	0	1	0	1	0	52
 005C5B60	SettMapTy::CloseButtons	SettMapTy	0x8	0	0	0	0	0	8
@@ -162,28 +200,32 @@ address	function	owner	vtable_slots	deallocates_this	this_field_writes	zeroed_th
 005D4E90	SettMapSTy::SetListCtrls	SettMapSTy	0x2C	0	0	0	0	0	7
 005D5160	SettMapSTy::PrepPlList	SettMapSTy	0x28	0	1	0	0	0	11
 005D5560	SettMapSTy::GetMessage	SettMapSTy	0x0	0	1	0	0	0	79
+005D9470	SIDTy::GetMessage	SIDTy	0x0	0	1	0	0	0	56
 005DCC10	StartSystemTy::InitSystem	StartSystemTy	0x0	0	0	0	0	0	9
 005DCD90	StartSystemTy::CreateSystemObjects	StartSystemTy	0x14	0	0	0	0	0	1
 005DCDB0	StartSystemTy::~StartSystemTy	StartSystemTy	0x4	0	4	4	6	1	11
 005DCE90	StartSystemTy::GetMessage	StartSystemTy	0x20	0	0	0	0	0	36
+005E9830	WaitTy::CloseButtons	WaitTy	0x8	0	0	0	0	0	8
 005EA680	WaitTy::GetMessage	WaitTy	0x0	0	1	0	0	0	36
-005EE3F0	FUN_005ee3f0	STSprGameObjC	0x68 | 0xE0	0	0	0	0	0	10
-005EFA90	FUN_005efa90	STSprGameObjC	0x28 | 0xA0	0	1	0	0	0	1
-005EFAE0	FUN_005efae0	STSprGameObjC	0x30 | 0xA8	0	5	1	0	0	1
-005EFB80	FUN_005efb80	STSprGameObjC	0x34 | 0xAC	0	3	3	0	0	0
-005EFBD0	FUN_005efbd0	STSprGameObjC	0x38 | 0xB0	0	0	0	2	0	2
-005EFC40	FUN_005efc40	STSprGameObjC	0x3C | 0xB4	0	4	2	1	0	2
-005EFCD0	FUN_005efcd0	STSprGameObjC	0x40 | 0xB8	0	16	5	1	0	3
+005EAF10	STArtiafactC::GetMessage	STArtiafactC	0x4	0	0	0	1	0	55
+005EE3F0	FUN_005ee3f0	STSprGameObjC	0xE0	0	0	0	0	0	10
+005EFA90	FUN_005efa90	STSprGameObjC	0xA0	0	1	0	0	0	1
+005EFAE0	FUN_005efae0	STSprGameObjC	0xA8	0	5	1	0	0	1
+005EFB80	FUN_005efb80	STSprGameObjC	0xAC	0	3	3	0	0	0
+005EFBD0	FUN_005efbd0	STSprGameObjC	0xB0	0	0	0	2	0	2
+005EFC40	FUN_005efc40	STSprGameObjC	0xB4	0	4	2	1	0	2
+005EFCD0	FUN_005efcd0	STSprGameObjC	0xB8	0	16	5	1	0	3
 005F00B0	FUN_005f00b0	STSprGameObjC	0x30	0	0	0	0	0	5
 005F0150	FUN_005f0150	STSprGameObjC	0x34	0	0	0	0	0	7
 005F0240	FUN_005f0240	STSprGameObjC	0x5C	0	0	0	0	0	2
 005F0280	FUN_005f0280	STSprGameObjC	0x58	0	0	0	0	0	2
-005F04B0	FUN_005f04b0	STSprGameObjC	0x118 | 0xA0	0	6	0	0	0	3
+005F04B0	FUN_005f04b0	STSprGameObjC	0x118	0	6	0	0	0	3
 005F0E20	FUN_005f0e20	STSprGameObjC	0x28	0	0	0	0	0	2
 005F10D0	STManBasisC::GetMessage	STManBasisC	0x0	0	0	0	0	0	13
 005F27C0	STBHEShellC::GetMessage	STBHEShellC	0x0	0	0	0	0	0	45
 005F5F20	STColl3C::GetMessage	STColl3C	0x0	0	0	0	1	0	32
 005FB1F0	FUN_005fb1f0	STColl3C	0xDC	0	0	0	0	0	7
+005FB640	STContainerC::GetMessage	STContainerC	0x4	0	0	0	1	0	54
 005FD3A0	FUN_005fd3a0	STGameObjC	0x0	0	0	0	1	0	15
 00601F80	STDestC::GetMessage	STDestC	0x0	0	0	0	1	0	26
 00602740	FUN_00602740	STDestC	0x70	0	0	0	0	0	1
@@ -195,6 +237,7 @@ address	function	owner	vtable_slots	deallocates_this	this_field_writes	zeroed_th
 00617640	JumpManagC::GetMessage	JumpManagC	0x0	0	0	0	0	0	12
 00618C00	STJumpMineC::GetMessage	STJumpMineC	0x0	0	0	0	0	0	27
 0061D190	STLightC::GetMessage	STLightC	0x0	0	0	0	0	0	20
+0061F660	SndUnderAttMenegC::GetMessage	SndUnderAttMenegC	0x4	0	0	0	0	0	7
 00621B50	STMineSetC::GetMessage	STMineSetC	0x0	0	0	0	1	0	49
 00626C00	FUN_00626c00	STMineSetC	0x70	0	0	0	0	0	1
 00626C90	FUN_00626c90	STMineSetC	0x30	0	0	0	0	0	3
@@ -207,6 +250,7 @@ address	function	owner	vtable_slots	deallocates_this	this_field_writes	zeroed_th
 00630430	STManRuinC::GetMessage	STManRuinC	0x0	0	0	0	0	0	19
 00638CA0	FUN_00638ca0	STGameObjC	0x0	0	0	0	1	0	35
 00639C90	FUN_00639c90	STGameObjC	0x0	0	0	0	1	0	145
+006406D0	STTorpC::GetMessage	STTorpC	0x0	0	0	0	0	0	115
 006461E0	STVolcanoC::GetMessage	STVolcanoC	0x0	0	0	0	0	0	35
 00647D90	FUN_00647d90	AiBossClassTy	0x30	0	0	0	0	0	1
 00648030	AiBossClassTy::GetMessage	AiBossClassTy	0x0	0	0	0	0	0	19
@@ -214,6 +258,6 @@ address	function	owner	vtable_slots	deallocates_this	this_field_writes	zeroed_th
 00678950	FUN_00678950	AiPlrClassTy	0x30	0	0	0	0	0	1
 0067C7E0	AiPlrClassTy::GetMessage	AiPlrClassTy	0x0	0	0	0	0	0	41
 00690B90	AiTactClassTy::GetMessage	AiTactClassTy	0x0	0	0	0	0	0	16
-006E5150	STAppC::sub_006E5150	AppClassTy	0x18	0	1	0	1	0	2
+006E5150	STAppC::sub_006E5150	STAppC	0x18	0	1	0	1	0	2
 0074A113	CBaseRenderer::EndOfStream	CBaseRenderer	0x68	0	1	0	1	0	2
 0074A143	CBaseRenderer::BeginFlush	CBaseRenderer	0x84	0	0	0	2	0	5

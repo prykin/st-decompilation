@@ -1366,7 +1366,7 @@ LAB_005a8c85:
       pcVar9 = this_00->field_1A73;
       local_14 = (tagBITMAPINFO *)0x0;
       if (pcVar9->field_00A0 != 0) {
-        FUN_00710790((uint *)pcVar9);
+        FUN_00710790((AnonShape_00710790_4CBB90D4 *)pcVar9);
       }
       dVar8 = (message->arg2).u32;
       iVar18 = *(int *)&pcVar9->field_0x8a;
@@ -1433,11 +1433,11 @@ LAB_005a8c85:
             }
             if (local_10 != (uint *)0x0) {
               if (pcVar9->field_00A0 != 0) {
-                FUN_00710790((uint *)pcVar9);
+                FUN_00710790((AnonShape_00710790_4CBB90D4 *)pcVar9);
               }
               local_c = *(AnonShape_005A4350_59BACD18 **)&pcVar9->field_0x8a;
               if (pcVar9->field_00A0 != 0) {
-                FUN_00710790((uint *)pcVar9);
+                FUN_00710790((AnonShape_00710790_4CBB90D4 *)pcVar9);
               }
               ccFntTy::SetSurf(pcVar9,this_00->field_1E8E,0,0,
                                ((int)local_14 - (uint)(message->arg0).words.high) *
@@ -2417,7 +2417,7 @@ LAB_005a5859:
       iVar18 = pcVar9->field_00A0;
 joined_r0x005a5b89:
       if (iVar18 != 0) {
-        FUN_00710790((uint *)pcVar9);
+        FUN_00710790((AnonShape_00710790_4CBB90D4 *)pcVar9);
       }
       this_00->field_1F77 = *(undefined4 *)&pcVar9->field_0x8a;
       (*this_00->field_000C->vtable->CreateObject)

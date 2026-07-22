@@ -26,7 +26,7 @@ void __thiscall FUN_00422e20(void *this,byte param_1)
       (iVar1 = thunk_FUN_0045ff10(objPtr), uVar2 = extraout_ECX_00, iVar1 != 0x14)) ||
      (objPtr->field_05C0 != 3)) {
     if (((param_1 & 1) != 0) && ((*(byte *)((int)this + 0x1d1) & 1) == 0)) {
-      STColl3C::sub_0041C5A0(this);
+      sub_0041C5A0(this);
       *(uint *)((int)this + 0x1d1) = *(uint *)((int)this + 0x1d1) | 1;
       /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
       uVar2 = extraout_ECX_01;

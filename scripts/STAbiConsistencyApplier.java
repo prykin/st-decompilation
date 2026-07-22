@@ -36,6 +36,9 @@ public class STAbiConsistencyApplier extends GhidraScript {
 
     @Override
     protected void run() throws Exception {
+        // Use the explicit transactions below as top-level transactions.  A false nested
+        // commit aborts GhidraScript's implicit transaction and can silently discard other rows.
+        end(true);
         if (currentProgram == null) { printerr("Open the analyzed ST program first."); return; }
         File file = inputFile(); if (file == null) return;
         Tsv tsv = readTsv(file.toPath());

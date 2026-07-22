@@ -14,19 +14,19 @@ int __thiscall STManBasisC::GetMessage(STManBasisC *this,STMessage *message)
 {
   STMessageId SVar1;
   code *pcVar2;
-  AnonShape_005F2330_0E1D2560 *this_00;
+  STManBasisC *this_00;
   int iVar3;
   int iVar4;
   InternalExceptionFrame local_58;
   byte *local_14;
   uint local_10;
-  AnonShape_005F2330_0E1D2560 *local_c;
+  STManBasisC *local_c;
   ushort *local_8;
 
   local_8 = (ushort *)0x0;
   local_58.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_58;
-  local_c = (AnonShape_005F2330_0E1D2560 *)this;
+  local_c = this;
   iVar3 = Library::MSVCRT::__setjmp3(local_58.jumpBuffer,0);
   this_00 = local_c;
   if (iVar3 != 0) {
@@ -42,31 +42,31 @@ int __thiscall STManBasisC::GetMessage(STManBasisC *this,STMessage *message)
   SVar1 = message->id;
   if (SVar1 < 4) {
     if (SVar1 == MESS_SHARED_0003) {
-      sub_005F2330((STManBasisC *)local_c);
+      sub_005F2330(local_c);
       g_currentExceptionFrame = local_58.previous;
       return 0;
     }
     if (SVar1 == MESS_ID_NONE) {
-      sub_005F19A0((STManBasisC *)local_c);
+      sub_005F19A0(local_c);
       g_currentExceptionFrame = local_58.previous;
       return 0;
     }
     if (SVar1 == MESS_ID_CREATE) {
-      *(int *)&local_c->field_0x1c = *(int *)&local_c->field_0x18 * DAT_00808754;
+      local_c->field_001C = local_c->field_0018 * DAT_00808754;
       if (g_cMf32_00806754 != (cMf32 *)0x0) {
         local_8 = Library::Ourlib::MFAOBJ::mfAObjLoad(g_cMf32_00806754,PTR_s_BASIS_MAN_0079c57c,0,0)
         ;
       }
       if (local_8 == (ushort *)0x0) {
-        *(undefined4 *)&this_00->field_0x20 = 0;
-        *(undefined4 *)&this_00->field_0x24 = 0xff;
-        *(undefined4 *)&this_00->field_0x28 = 1;
-        *(undefined4 *)&this_00->field_0x2c = 1;
+        this_00->field_0020 = (ushort *)0x0;
+        this_00->field_0024 = 0xff;
+        this_00->field_0028 = 1;
+        this_00->field_002C = 1;
       }
       else if (*(int *)(local_8 + 6) == 2) {
-        sub_005F2110((STManBasisC *)this_00,(undefined4 *)local_8);
-        *(undefined4 *)&this_00->field_0x1c = *(undefined4 *)&this_00[1].field_0x4;
-        sub_005F21D0((STManBasisC *)this_00);
+        sub_005F2110(this_00,(undefined4 *)local_8);
+        this_00->field_001C = this_00->field_0044;
+        sub_005F21D0(this_00);
       }
       else {
         thunk_FUN_005f1380(this_00);
@@ -79,7 +79,7 @@ int __thiscall STManBasisC::GetMessage(STManBasisC *this,STMessage *message)
     }
   }
   else if (SVar1 == MESS_SHARED_010F) {
-    local_14 = sub_005F1FA0((STManBasisC *)local_c,(int *)&local_10);
+    local_14 = sub_005F1FA0(local_c,(int *)&local_10);
     STPlaySystemC::SaveObjData(g_playSystem_00802A38,PTR_s_BASIS_MAN_0079c57c,local_14,local_10,0xc)
     ;
     FreeAndNull(&local_14);

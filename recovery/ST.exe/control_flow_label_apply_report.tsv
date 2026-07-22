@@ -17,37 +17,37 @@ function_address	label_address	proposed_name	status	detail
 0040E0F0	0040E872	cf_join_0040E872	disabled	apply=0
 0040FC40	00410872	cf_join_00410872	disabled	apply=0
 0040FC40	00410987	cf_join_00410987	disabled	apply=0
-0040FC40	0041098F	cf_common_exit_0041098F	applied	kind=common_exit; gotos=2; previous=LAB_0041098f
+0040FC40	0041098F	cf_common_exit_0041098F	unchanged	label is already primary
 0040FC40	004109FD	cf_break_loop_004109FD	disabled	apply=0
-00410DC0	00411005	cf_break_loop_00411005	applied	kind=break_loop; gotos=2; previous=LAB_00411005
+00410DC0	00411005	cf_break_loop_00411005	unchanged	label is already primary
 00411260	00411975	cf_join_00411975	disabled	apply=0
 00411E50	004125C1	cf_join_004125C1	disabled	apply=0
 00413170	0041321E	cf_join_0041321E	disabled	apply=0
 00413170	0041329B	cf_join_0041329B	disabled	apply=0
 00413170	0041330A	cf_join_0041330A	disabled	apply=0
 00413170	00413319	cf_branch_target_00413319	disabled	apply=0
-00413170	004133AD	cf_continue_loop_004133AD	applied	kind=continue_loop; gotos=2; previous=LAB_004133ad
+00413170	004133AD	cf_continue_loop_004133AD	unchanged	label is already primary
 00413170	00413426	cf_join_00413426	disabled	apply=0
 00413170	00413487	cf_join_00413487	disabled	apply=0
 00413170	00413496	cf_branch_target_00413496	disabled	apply=0
-00413170	004134EC	cf_break_loop_004134EC	applied	kind=break_loop; gotos=2; previous=LAB_004134ec
+00413170	004134EC	cf_break_loop_004134EC	unchanged	label is already primary
 00413170	0041350C	cf_join_0041350C	disabled	apply=0
 00413170	00413585	cf_join_00413585	disabled	apply=0
 00413170	004135D8	cf_join_004135D8	disabled	apply=0
-00413170	00413620	cf_common_exit_00413620	applied	kind=common_exit; gotos=2; previous=LAB_00413620
+00413170	00413620	cf_common_exit_00413620	unchanged	label is already primary
 00413AF0	0041463F	cf_join_0041463F	disabled	apply=0
 00414A70	00414BC1	cf_join_00414BC1	disabled	apply=0
 00414A70	00414C44	cf_join_00414C44	disabled	apply=0
 00414A70	00414CCC	cf_join_00414CCC	disabled	apply=0
-00414A70	00414E8A	cf_break_loop_00414E8A	applied	kind=break_loop; gotos=6; previous=LAB_00414e8a
+00414A70	00414E8A	cf_break_loop_00414E8A	unchanged	label is already primary
 00415160	00415467	cf_join_00415467	disabled	apply=0
 00415160	00415472	cf_join_00415472	disabled	apply=0
 00415590	004157E1	cf_join_004157E1	disabled	apply=0
 00415590	004157F0	cf_join_004157F0	disabled	apply=0
 00415ED0	004160CD	cf_join_004160CD	disabled	apply=0
 00416400	004166C7	cf_join_004166C7	disabled	apply=0
-00417740	004177BE	cf_common_exit_004177BE	applied	kind=common_exit; gotos=2; previous=LAB_004177be
-00417910	00417989	cf_common_exit_00417989	applied	kind=common_exit; gotos=2; previous=LAB_00417989
+00417740	004177BE	cf_common_exit_004177BE	unchanged	label is already primary
+00417910	00417989	cf_common_exit_00417989	unchanged	label is already primary
 00418030	004183B8	cf_join_004183B8	disabled	apply=0
 00418030	0041862B	cf_join_0041862B	disabled	apply=0
 00418D20	00418E38	cf_join_00418E38	disabled	apply=0
@@ -60,14 +60,14 @@ function_address	label_address	proposed_name	status	detail
 00418D20	00419296	cf_join_00419296	disabled	apply=0
 00418D20	004192C9	cf_join_004192C9	disabled	apply=0
 00418D20	00419446	cf_join_00419446	disabled	apply=0
-00419DF0	00419F6C	cf_common_exit_00419F6C	applied	kind=common_exit; gotos=2; previous=LAB_00419f6c
+00419DF0	00419F6C	cf_common_exit_00419F6C	unchanged	label is already primary
 0041AF40	0041B128	cf_join_0041B128	disabled	apply=0
 0041AF40	0041B237	cf_join_0041B237	disabled	apply=0
 0041AF40	0041B26C	cf_join_0041B26C	disabled	apply=0
 0041AF40	0041B2A1	cf_join_0041B2A1	disabled	apply=0
 0041AF40	0041B2D2	cf_join_0041B2D2	disabled	apply=0
 0041AF40	0041B308	cf_join_0041B308	disabled	apply=0
-0041AF40	0041B6C6	cf_common_exit_0041B6C6	applied	kind=common_exit; gotos=2; previous=LAB_0041b6c6
+0041AF40	0041B6C6	cf_common_exit_0041B6C6	unchanged	label is already primary
 0041AF40	0041B8F6	cf_join_0041B8F6	disabled	apply=0
 0041AF40	0041B92C	cf_join_0041B92C	disabled	apply=0
 0041AF40	0041BA2A	cf_join_0041BA2A	disabled	apply=0
@@ -76,7 +76,7 @@ function_address	label_address	proposed_name	status	detail
 0041AF40	0041BAC6	cf_join_0041BAC6	disabled	apply=0
 0041AF40	0041BCAD	cf_join_0041BCAD	disabled	apply=0
 0041AF40	0041BDB3	cf_join_0041BDB3	disabled	apply=0
-0041AF40	0041BE5F	cf_common_exit_0041BE5F	applied	kind=common_exit; gotos=7; previous=LAB_0041be5f
+0041AF40	0041BE5F	cf_common_exit_0041BE5F	unchanged	label is already primary
 0041E530	0041EBC0	cf_join_0041EBC0	disabled	apply=0
 0041E530	0041EC79	cf_join_0041EC79	disabled	apply=0
 0041E530	0041ECCC	cf_join_0041ECCC	disabled	apply=0
@@ -89,7 +89,7 @@ function_address	label_address	proposed_name	status	detail
 0041F9B0	0041FDC6	cf_join_0041FDC6	disabled	apply=0
 0041F9B0	0041FE0D	cf_join_0041FE0D	disabled	apply=0
 0041F9B0	0041FFFD	cf_join_0041FFFD	disabled	apply=0
-0041F9B0	0042004A	cf_continue_loop_0042004A	applied	kind=continue_loop; gotos=2; previous=LAB_0042004a
+0041F9B0	0042004A	cf_continue_loop_0042004A	unchanged	label is already primary
 00420340	00420557	cf_join_00420557	disabled	apply=0
 00420340	004205BA	cf_join_004205BA	disabled	apply=0
 00420340	0042061A	cf_join_0042061A	disabled	apply=0
@@ -146,7 +146,7 @@ function_address	label_address	proposed_name	status	detail
 00427090	00427930	cf_join_00427930	disabled	apply=0
 00427BB0	00427CCA	cf_join_00427CCA	disabled	apply=0
 00427F20	004286BB	cf_branch_target_004286BB	disabled	apply=0
-00427F20	004286D0	cf_common_join_004286D0	applied	kind=common_join; gotos=7; previous=LAB_004286d0
+00427F20	004286D0	cf_common_join_004286D0	unchanged	label is already primary
 00428B20	00428B85	cf_join_00428B85	disabled	apply=0
 00428B20	00428C07	cf_join_00428C07	disabled	apply=0
 00428CE0	00428D4E	cf_join_00428D4E	disabled	apply=0
@@ -155,18 +155,18 @@ function_address	label_address	proposed_name	status	detail
 00428E50	004293C6	cf_join_004293C6	disabled	apply=0
 00428E50	00429475	cf_join_00429475	disabled	apply=0
 00428E50	0042958F	cf_join_0042958F	disabled	apply=0
-00428E50	004296CF	cf_continue_loop_004296CF	applied	kind=continue_loop; gotos=4; previous=LAB_004296cf
+00428E50	004296CF	cf_continue_loop_004296CF	unchanged	label is already primary
 00428E50	00429715	cf_join_00429715	disabled	apply=0
 00428E50	00429D7A	cf_join_00429D7A	disabled	apply=0
 00428E50	00429D7D	cf_join_00429D7D	disabled	apply=0
 0042A780	0042A7E7	cf_join_0042A7E7	disabled	apply=0
 0042ABE0	0042B01C	cf_join_0042B01C	disabled	apply=0
 0042ABE0	0042B01F	cf_join_0042B01F	disabled	apply=0
-0042ABE0	0042B022	cf_common_join_0042B022	applied	kind=common_join; gotos=6; previous=LAB_0042b022
+0042ABE0	0042B022	cf_common_join_0042B022	unchanged	label is already primary
 0042B1F0	0042B469	cf_join_0042B469	disabled	apply=0
 0042BB30	0042BC00	cf_join_0042BC00	disabled	apply=0
 0042BEA0	0042BF8B	cf_join_0042BF8B	disabled	apply=0
-0042BEA0	0042C072	cf_common_exit_0042C072	applied	kind=common_exit; gotos=5; previous=LAB_0042c072
+0042BEA0	0042C072	cf_common_exit_0042C072	unchanged	label is already primary
 0042C300	0042C3A0	cf_join_0042C3A0	disabled	apply=0
 0042CEF0	0042CF42	cf_join_0042CF42	disabled	apply=0
 0042CEF0	0042D011	cf_join_0042D011	disabled	apply=0
@@ -176,9 +176,9 @@ function_address	label_address	proposed_name	status	detail
 0042D190	0042D2C3	cf_join_0042D2C3	disabled	apply=0
 0042D370	0042D3B2	cf_join_0042D3B2	disabled	apply=0
 0042D370	0042D41B	cf_join_0042D41B	disabled	apply=0
-0042D370	0042D44C	cf_common_exit_0042D44C	applied	kind=common_exit; gotos=2; previous=LAB_0042d44c
+0042D370	0042D44C	cf_common_exit_0042D44C	unchanged	label is already primary
 0042D4F0	0042D599	cf_join_0042D599	disabled	apply=0
-0042D4F0	0042D5BC	cf_common_exit_0042D5BC	applied	kind=common_exit; gotos=2; previous=LAB_0042d5bc
+0042D4F0	0042D5BC	cf_common_exit_0042D5BC	unchanged	label is already primary
 0042D4F0	0042D5E8	cf_join_0042D5E8	disabled	apply=0
 0042D4F0	0042D5FF	cf_join_0042D5FF	disabled	apply=0
 0042D980	0042DA27	cf_join_0042DA27	disabled	apply=0
@@ -196,10 +196,10 @@ function_address	label_address	proposed_name	status	detail
 0042F2B0	0042F547	cf_join_0042F547	disabled	apply=0
 0042F2B0	00430018	cf_join_00430018	disabled	apply=0
 004314E0	00431886	cf_join_00431886	disabled	apply=0
-004314E0	004318A9	cf_error_exit_004318A9	applied	kind=error_exit; gotos=4; previous=LAB_004318a9
+004314E0	004318A9	cf_error_exit_004318A9	unchanged	label is already primary
 004314E0	004318B5	cf_join_004318B5	disabled	apply=0
 004314E0	00431A3F	cf_join_00431A3F	disabled	apply=0
-004314E0	00431A49	cf_error_exit_00431A49	applied	kind=error_exit; gotos=3; previous=LAB_00431a49
+004314E0	00431A49	cf_error_exit_00431A49	unchanged	label is already primary
 004314E0	00431C38	cf_join_00431C38	disabled	apply=0
 004314E0	00431D42	cf_join_00431D42	disabled	apply=0
 004314E0	00431D70	cf_join_00431D70	disabled	apply=0
@@ -223,7 +223,7 @@ function_address	label_address	proposed_name	status	detail
 004314E0	0043240A	cf_join_0043240A	disabled	apply=0
 004314E0	0043250F	cf_join_0043250F	disabled	apply=0
 004314E0	00432536	cf_join_00432536	disabled	apply=0
-004314E0	0043256B	cf_error_exit_0043256B	applied	kind=error_exit; gotos=5; previous=LAB_0043256b
+004314E0	0043256B	cf_error_exit_0043256B	unchanged	label is already primary
 004314E0	00432578	cf_join_00432578	disabled	apply=0
 004314E0	00432582	cf_join_00432582	disabled	apply=0
 004314E0	00432706	cf_join_00432706	disabled	apply=0
@@ -245,21 +245,21 @@ function_address	label_address	proposed_name	status	detail
 004314E0	00432BC1	cf_join_00432BC1	disabled	apply=0
 004314E0	00432BCD	cf_join_00432BCD	disabled	apply=0
 004314E0	00432E7F	cf_join_00432E7F	disabled	apply=0
-004314E0	00432EAE	cf_error_exit_00432EAE	applied	kind=error_exit; gotos=4; previous=LAB_00432eae
+004314E0	00432EAE	cf_error_exit_00432EAE	unchanged	label is already primary
 004314E0	00433046	cf_join_00433046	disabled	apply=0
-004314E0	00433050	cf_error_exit_00433050	applied	kind=error_exit; gotos=3; previous=LAB_00433050
+004314E0	00433050	cf_error_exit_00433050	unchanged	label is already primary
 004314E0	0043322B	cf_join_0043322B	disabled	apply=0
 004314E0	00433363	cf_join_00433363	disabled	apply=0
 004314E0	004333F5	cf_join_004333F5	disabled	apply=0
 004314E0	0043347C	cf_join_0043347C	disabled	apply=0
 004314E0	004334A3	cf_join_004334A3	disabled	apply=0
-004314E0	004334DF	cf_error_exit_004334DF	applied	kind=error_exit; gotos=4; previous=LAB_004334df
-004314E0	004334F5	cf_error_exit_004334F5	applied	kind=error_exit; gotos=9; previous=LAB_004334f5
+004314E0	004334DF	cf_error_exit_004334DF	unchanged	label is already primary
+004314E0	004334F5	cf_error_exit_004334F5	unchanged	label is already primary
 00433E90	0043404A	cf_join_0043404A	disabled	apply=0
 00433E90	0043414F	cf_join_0043414F	disabled	apply=0
 00433E90	0043415B	cf_join_0043415B	disabled	apply=0
 00433E90	0043429D	cf_join_0043429D	disabled	apply=0
-00433E90	0043440E	cf_common_exit_0043440E	applied	kind=common_exit; gotos=2; previous=LAB_0043440e
+00433E90	0043440E	cf_common_exit_0043440E	unchanged	label is already primary
 00433E90	004345A2	cf_join_004345A2	disabled	apply=0
 00433E90	004345B4	cf_join_004345B4	disabled	apply=0
 00433E90	004345CF	cf_join_004345CF	disabled	apply=0
@@ -277,22 +277,22 @@ function_address	label_address	proposed_name	status	detail
 00433E90	00434C44	cf_join_00434C44	disabled	apply=0
 00433E90	00434C88	cf_join_00434C88	disabled	apply=0
 00433E90	00434C92	cf_join_00434C92	disabled	apply=0
-00433E90	00434CB8	cf_common_exit_00434CB8	applied	kind=common_exit; gotos=9; previous=LAB_00434cb8
-00433E90	00434CBD	cf_common_exit_00434CBD	applied	kind=common_exit; gotos=2; previous=LAB_00434cbd
+00433E90	00434CB8	cf_common_exit_00434CB8	unchanged	label is already primary
+00433E90	00434CBD	cf_common_exit_00434CBD	unchanged	label is already primary
 00435060	00435287	cf_join_00435287	disabled	apply=0
 00435060	004352F5	cf_join_004352F5	disabled	apply=0
 00435B90	004366B0	cf_join_004366B0	disabled	apply=0
 00435B90	00436987	cf_join_00436987	disabled	apply=0
-00436F20	00437191	cf_common_exit_00437191	applied	kind=common_exit; gotos=2; previous=switchD_0043702c::caseD_8
+00436F20	00437191	cf_common_exit_00437191	unchanged	label is already primary
 00436F20	00437842	cf_join_00437842	disabled	apply=0
 00436F20	00437C45	cf_join_00437C45	disabled	apply=0
 00436F20	00437CB5	cf_join_00437CB5	disabled	apply=0
-00436F20	00437E03	cf_common_exit_00437E03	applied	kind=common_exit; gotos=2; previous=LAB_00437e03
-00436F20	0043824D	cf_common_exit_0043824D	applied	kind=common_exit; gotos=2; previous=switchD_004375b6::caseD_a
+00436F20	00437E03	cf_common_exit_00437E03	unchanged	label is already primary
+00436F20	0043824D	cf_common_exit_0043824D	unchanged	label is already primary
 00436F20	004385CC	cf_common_exit_004385CC	disabled	apply=0
 00438E30	00438F65	cf_join_00438F65	disabled	apply=0
 00438E30	00438FB0	cf_join_00438FB0	disabled	apply=0
-00438E30	00438FE7	cf_common_exit_00438FE7	applied	kind=common_exit; gotos=2; previous=LAB_00438fe7
+00438E30	00438FE7	cf_common_exit_00438FE7	unchanged	label is already primary
 00439100	00439369	cf_join_00439369	disabled	apply=0
 00439100	00439469	cf_join_00439469	disabled	apply=0
 00439100	0043953A	cf_join_0043953A	disabled	apply=0
@@ -316,7 +316,7 @@ function_address	label_address	proposed_name	status	detail
 00439100	00439CFB	cf_join_00439CFB	disabled	apply=0
 00439100	00439DFB	cf_join_00439DFB	disabled	apply=0
 00439100	00439EB7	cf_join_00439EB7	disabled	apply=0
-00439100	0043A107	cf_common_join_0043A107	applied	kind=common_join; gotos=5; previous=LAB_0043a107
+00439100	0043A107	cf_common_join_0043A107	unchanged	label is already primary
 00439100	0043A177	cf_join_0043A177	disabled	apply=0
 00439100	0043A247	cf_join_0043A247	disabled	apply=0
 00439100	0043A27B	cf_join_0043A27B	disabled	apply=0
@@ -331,30 +331,30 @@ function_address	label_address	proposed_name	status	detail
 00439100	0043A459	cf_join_0043A459	disabled	apply=0
 00439100	0043A463	cf_join_0043A463	disabled	apply=0
 00439100	0043A470	cf_join_0043A470	disabled	apply=0
-00439100	0043A47C	cf_common_exit_0043A47C	applied	kind=common_exit; gotos=60; previous=LAB_0043a47c
+00439100	0043A47C	cf_common_exit_0043A47C	unchanged	label is already primary
 0043AAF0	0043ACDB	cf_join_0043ACDB	disabled	apply=0
 0043AE40	0043AEE4	cf_join_0043AEE4	disabled	apply=0
 0043AE40	0043B0AF	cf_join_0043B0AF	disabled	apply=0
 0043AE40	0043B0F1	cf_join_0043B0F1	disabled	apply=0
-0043AE40	0043B294	cf_common_exit_0043B294	applied	kind=common_exit; gotos=2; previous=LAB_0043b294
+0043AE40	0043B294	cf_common_exit_0043B294	unchanged	label is already primary
 0043AE40	0043B2FE	cf_join_0043B2FE	disabled	apply=0
 0043AE40	0043B4A2	cf_join_0043B4A2	disabled	apply=0
 0043AE40	0043B5EC	cf_branch_target_0043B5EC	disabled	apply=0
 0043AE40	0043B630	cf_join_0043B630	disabled	apply=0
-0043AE40	0043B686	cf_common_exit_0043B686	applied	kind=common_exit; gotos=2; previous=LAB_0043b686
-0043AE40	0043BB49	cf_common_exit_0043BB49	applied	kind=common_exit; gotos=2; previous=LAB_0043bb49
+0043AE40	0043B686	cf_common_exit_0043B686	unchanged	label is already primary
+0043AE40	0043BB49	cf_common_exit_0043BB49	unchanged	label is already primary
 0043BEB0	0043C293	cf_join_0043C293	disabled	apply=0
-0043BEB0	0043C508	cf_common_exit_0043C508	applied	kind=common_exit; gotos=9; previous=switchD_0043c594::caseD_e
+0043BEB0	0043C508	cf_common_exit_0043C508	unchanged	label is already primary
 0043BEB0	0043C67B	cf_join_0043C67B	disabled	apply=0
-0043BEB0	0043C72D	cf_common_exit_0043C72D	applied	kind=common_exit; gotos=4; previous=switchD_0043c5d9::caseD_1
-0043BEB0	0043C862	cf_common_exit_0043C862	applied	kind=common_exit; gotos=18; previous=switchD_0043c594::caseD_2
-0043BEB0	0043C86F	cf_common_exit_0043C86F	applied	kind=common_exit; gotos=18; previous=switchD_0043c594::caseD_4
-0043BEB0	0043C94C	cf_common_exit_0043C94C	applied	kind=common_exit; gotos=15; previous=switchD_0043c594::caseD_1
-0043BEB0	0043C95B	cf_common_exit_0043C95B	applied	kind=common_exit; gotos=19; previous=switchD_0043c594::caseD_3
+0043BEB0	0043C72D	cf_common_exit_0043C72D	unchanged	label is already primary
+0043BEB0	0043C862	cf_common_exit_0043C862	unchanged	label is already primary
+0043BEB0	0043C86F	cf_common_exit_0043C86F	unchanged	label is already primary
+0043BEB0	0043C94C	cf_common_exit_0043C94C	unchanged	label is already primary
+0043BEB0	0043C95B	cf_common_exit_0043C95B	unchanged	label is already primary
 0043BEB0	0043CA31	cf_join_0043CA31	disabled	apply=0
-0043BEB0	0043CA35	cf_common_exit_0043CA35	applied	kind=common_exit; gotos=3; previous=LAB_0043ca35
+0043BEB0	0043CA35	cf_common_exit_0043CA35	unchanged	label is already primary
 0043BEB0	0043CA5A	cf_join_0043CA5A	disabled	apply=0
-0043BEB0	0043CB5C	cf_common_exit_0043CB5C	applied	kind=common_exit; gotos=3; previous=LAB_0043cb5c
+0043BEB0	0043CB5C	cf_common_exit_0043CB5C	unchanged	label is already primary
 0043BEB0	0043CB81	cf_join_0043CB81	disabled	apply=0
 0043BEB0	0043D1CE	cf_break_loop_0043D1CE	disabled	apply=0
 0043BEB0	0043D41D	cf_join_0043D41D	disabled	apply=0
@@ -396,7 +396,7 @@ function_address	label_address	proposed_name	status	detail
 00442E50	0044355F	cf_join_0044355F	disabled	apply=0
 00442E50	00443598	cf_join_00443598	disabled	apply=0
 00442E50	004435C8	cf_join_004435C8	disabled	apply=0
-00442E50	004435CD	cf_common_join_004435CD	applied	kind=common_join; gotos=6; previous=LAB_004435cd
+00442E50	004435CD	cf_common_join_004435CD	unchanged	label is already primary
 00442E50	004435F1	cf_join_004435F1	disabled	apply=0
 00442E50	00443676	cf_join_00443676	disabled	apply=0
 00442E50	004436F7	cf_join_004436F7	disabled	apply=0
@@ -419,12 +419,12 @@ function_address	label_address	proposed_name	status	detail
 0044AB90	0044ADA0	cf_join_0044ADA0	disabled	apply=0
 0044AB90	0044AE21	cf_join_0044AE21	disabled	apply=0
 0044AB90	0044AE50	cf_join_0044AE50	disabled	apply=0
-0044B5F0	0044BD3D	cf_common_exit_0044BD3D	applied	kind=common_exit; gotos=2; previous=LAB_0044bd3d
+0044B5F0	0044BD3D	cf_common_exit_0044BD3D	unchanged	label is already primary
 0044B5F0	0044BD49	cf_join_0044BD49	disabled	apply=0
-0044B5F0	0044BD53	cf_common_exit_0044BD53	applied	kind=common_exit; gotos=8; previous=LAB_0044bd53
+0044B5F0	0044BD53	cf_common_exit_0044BD53	unchanged	label is already primary
 0044C130	0044C40D	cf_branch_target_0044C40D	disabled	apply=0
 0044C130	0044C44D	cf_join_0044C44D	disabled	apply=0
-0044C130	0044C477	cf_common_exit_0044C477	applied	kind=common_exit; gotos=2; previous=LAB_0044c477
+0044C130	0044C477	cf_common_exit_0044C477	unchanged	label is already primary
 0044C720	0044C94C	cf_join_0044C94C	disabled	apply=0
 0044C720	0044C950	cf_join_0044C950	disabled	apply=0
 0044C720	0044CA10	cf_join_0044CA10	disabled	apply=0
@@ -442,7 +442,7 @@ function_address	label_address	proposed_name	status	detail
 0044D320	0044DCE3	cf_join_0044DCE3	disabled	apply=0
 0044D320	0044DD19	cf_join_0044DD19	disabled	apply=0
 0044D320	0044DDC7	cf_join_0044DDC7	disabled	apply=0
-0044D320	0044DDCF	cf_continue_loop_0044DDCF	applied	kind=continue_loop; gotos=2; previous=switchD_0044d78f::caseD_3
+0044D320	0044DDCF	cf_continue_loop_0044DDCF	unchanged	label is already primary
 0044D320	0044DE04	cf_break_loop_0044DE04	disabled	apply=0
 0044E260	0044E4D5	cf_join_0044E4D5	disabled	apply=0
 0044E260	0044E4EF	cf_join_0044E4EF	disabled	apply=0
@@ -454,11 +454,13 @@ function_address	label_address	proposed_name	status	detail
 0044EE30	00450050	cf_join_00450050	disabled	apply=0
 0044EE30	00450268	cf_join_00450268	disabled	apply=0
 0044EE30	0045048A	cf_join_0045048A	disabled	apply=0
+0044EE30	0045051F	cf_join_0045051F	disabled	apply=0
+0044EE30	00450551	cf_join_00450551	disabled	apply=0
 0044EE30	00450695	cf_join_00450695	disabled	apply=0
 0044EE30	00450A10	cf_branch_target_00450A10	disabled	apply=0
 0044EE30	00450C1E	cf_join_00450C1E	disabled	apply=0
 0044EE30	00450E28	cf_join_00450E28	disabled	apply=0
-0044EE30	00458C5B	cf_common_exit_00458C5B	applied	kind=common_exit; gotos=505; previous=LAB_00458c5b
+0044EE30	00458C5B	cf_common_exit_00458C5B	unchanged	label is already primary
 0044EE30	0045910D	cf_join_0045910D	disabled	apply=0
 0044EE30	00459D8B	cf_join_00459D8B	disabled	apply=0
 0044EE30	00459E30	cf_join_00459E30	disabled	apply=0
@@ -466,9 +468,9 @@ function_address	label_address	proposed_name	status	detail
 0044EE30	00459EAA	cf_join_00459EAA	disabled	apply=0
 0044EE30	00459F59	cf_join_00459F59	disabled	apply=0
 0044EE30	0045AD7B	cf_join_0045AD7B	disabled	apply=0
-0044EE30	0045AEE3	cf_error_exit_0045AEE3	applied	kind=error_exit; gotos=23; previous=LAB_0045aee3
+0044EE30	0045AEE3	cf_error_exit_0045AEE3	unchanged	label is already primary
 0045EF00	0045F0E0	cf_join_0045F0E0	disabled	apply=0
-0045EF00	0045F1A9	cf_common_exit_0045F1A9	applied	kind=common_exit; gotos=2; previous=LAB_0045f1a9
+0045EF00	0045F1A9	cf_common_exit_0045F1A9	unchanged	label is already primary
 0045F6C0	0045F710	cf_join_0045F710	disabled	apply=0
 0045F980	0045FC39	cf_join_0045FC39	disabled	apply=0
 0045FF50	0045FFF5	cf_join_0045FFF5	disabled	apply=0
@@ -483,17 +485,17 @@ function_address	label_address	proposed_name	status	detail
 00462180	00462320	cf_join_00462320	disabled	apply=0
 00462180	004624C3	cf_join_004624C3	disabled	apply=0
 00462180	004625FD	cf_join_004625FD	disabled	apply=0
-00462180	00462823	cf_common_exit_00462823	applied	kind=common_exit; gotos=2; previous=switchD_004627fb::caseD_0
+00462180	00462823	cf_common_exit_00462823	unchanged	label is already primary
 00462180	00462837	cf_common_exit_00462837	disabled	apply=0
 00462180	00462A36	cf_join_00462A36	disabled	apply=0
 00462180	00462C49	cf_join_00462C49	disabled	apply=0
-00462180	00462E32	cf_common_exit_00462E32	applied	kind=common_exit; gotos=2; previous=LAB_00462e32
+00462180	00462E32	cf_common_exit_00462E32	unchanged	label is already primary
 00462180	00462FDE	cf_join_00462FDE	disabled	apply=0
 00462180	004632DE	cf_branch_target_004632DE	disabled	apply=0
 00462180	00463442	cf_join_00463442	disabled	apply=0
 00462180	00463510	cf_join_00463510	disabled	apply=0
-00462180	0046351A	cf_common_exit_0046351A	applied	kind=common_exit; gotos=5; previous=switchD_00462373::caseD_4
-00462180	0046351C	cf_common_exit_0046351C	applied	kind=common_exit; gotos=2; previous=switchD_004627fb::caseD_ffffffff
+00462180	0046351A	cf_common_exit_0046351A	unchanged	label is already primary
+00462180	0046351C	cf_common_exit_0046351C	unchanged	label is already primary
 00462180	00463844	cf_join_00463844	disabled	apply=0
 00462180	004639E6	cf_join_004639E6	disabled	apply=0
 00462180	00463A7A	cf_branch_target_00463A7A	disabled	apply=0
@@ -501,29 +503,29 @@ function_address	label_address	proposed_name	status	detail
 00462180	00463A91	cf_join_00463A91	disabled	apply=0
 00462180	00463B9D	cf_join_00463B9D	disabled	apply=0
 00462180	00463D56	cf_join_00463D56	disabled	apply=0
-00462180	00463FD6	cf_common_exit_00463FD6	applied	kind=common_exit; gotos=2; previous=LAB_00463fd6
+00462180	00463FD6	cf_common_exit_00463FD6	unchanged	label is already primary
 00462180	00463FEF	cf_join_00463FEF	disabled	apply=0
-00462180	0046401F	cf_common_exit_0046401F	applied	kind=common_exit; gotos=4; previous=switchD_004628af::caseD_ffffffff
+00462180	0046401F	cf_common_exit_0046401F	unchanged	label is already primary
 00462180	00464147	cf_join_00464147	disabled	apply=0
-00462180	00464282	cf_common_exit_00464282	applied	kind=common_exit; gotos=2; previous=LAB_00464282
+00462180	00464282	cf_common_exit_00464282	unchanged	label is already primary
 00462180	004644DC	cf_join_004644DC	disabled	apply=0
-00462180	00464526	cf_common_exit_00464526	applied	kind=common_exit; gotos=2; previous=switchD_004628af::caseD_2
+00462180	00464526	cf_common_exit_00464526	unchanged	label is already primary
 00462180	0046461C	cf_join_0046461C	disabled	apply=0
 00462180	0046470B	cf_join_0046470B	disabled	apply=0
-00462180	00464889	cf_common_exit_00464889	applied	kind=common_exit; gotos=3; previous=LAB_00464889
+00462180	00464889	cf_common_exit_00464889	unchanged	label is already primary
 004653B0	00465581	cf_join_00465581	disabled	apply=0
 004653B0	004655DF	cf_join_004655DF	disabled	apply=0
-004653B0	00465763	cf_error_exit_00465763	applied	kind=error_exit; gotos=3; previous=LAB_00465763
+004653B0	00465763	cf_error_exit_00465763	unchanged	label is already primary
 004658D0	0046597C	cf_join_0046597C	disabled	apply=0
 004658D0	00465A3E	cf_join_00465A3E	disabled	apply=0
 00465C60	00465CDA	cf_join_00465CDA	disabled	apply=0
-00465C60	00465E40	cf_common_exit_00465E40	applied	kind=common_exit; gotos=2; previous=LAB_00465e40
-00465C60	00465E5A	cf_common_exit_00465E5A	applied	kind=common_exit; gotos=2; previous=LAB_00465e5a
+00465C60	00465E40	cf_common_exit_00465E40	unchanged	label is already primary
+00465C60	00465E5A	cf_common_exit_00465E5A	unchanged	label is already primary
 00465C60	00465E72	cf_join_00465E72	disabled	apply=0
-00465C60	00465E7B	cf_common_exit_00465E7B	applied	kind=common_exit; gotos=2; previous=LAB_00465e7b
+00465C60	00465E7B	cf_common_exit_00465E7B	unchanged	label is already primary
 00465C60	00465F11	cf_join_00465F11	disabled	apply=0
 00465C60	00466087	cf_join_00466087	disabled	apply=0
-00465C60	004660E9	cf_error_exit_004660E9	applied	kind=error_exit; gotos=10; previous=LAB_004660e9
+00465C60	004660E9	cf_error_exit_004660E9	unchanged	label is already primary
 00465C60	00466744	cf_join_00466744	disabled	apply=0
 00465C60	00466BFF	cf_join_00466BFF	disabled	apply=0
 00465C60	00466DE9	cf_join_00466DE9	disabled	apply=0
@@ -535,40 +537,40 @@ function_address	label_address	proposed_name	status	detail
 00465C60	00467DA5	cf_join_00467DA5	disabled	apply=0
 00465C60	00467E31	cf_join_00467E31	disabled	apply=0
 00465C60	00467E48	cf_join_00467E48	disabled	apply=0
-00465C60	00467FE4	cf_common_exit_00467FE4	applied	kind=common_exit; gotos=3; previous=LAB_00467fe4
+00465C60	00467FE4	cf_common_exit_00467FE4	unchanged	label is already primary
 00465C60	0046817E	cf_join_0046817E	disabled	apply=0
 00465C60	00468322	cf_join_00468322	disabled	apply=0
 00465C60	00468493	cf_join_00468493	disabled	apply=0
 00465C60	004685D3	cf_join_004685D3	disabled	apply=0
-00465C60	00468742	cf_common_exit_00468742	applied	kind=common_exit; gotos=2; previous=LAB_00468742
-00465C60	0046875C	cf_common_exit_0046875C	applied	kind=common_exit; gotos=2; previous=LAB_0046875c
+00465C60	00468742	cf_common_exit_00468742	unchanged	label is already primary
+00465C60	0046875C	cf_common_exit_0046875C	unchanged	label is already primary
 00465C60	0046893B	cf_branch_target_0046893B	disabled	apply=0
 00465C60	00468B38	cf_join_00468B38	disabled	apply=0
 00465C60	00468B42	cf_join_00468B42	disabled	apply=0
 00465C60	00468C40	cf_join_00468C40	disabled	apply=0
-00465C60	00468C49	cf_common_exit_00468C49	applied	kind=common_exit; gotos=4; previous=LAB_00468c49
-00465C60	00468C50	cf_common_exit_00468C50	applied	kind=common_exit; gotos=16; previous=switchD_004660af::caseD_2
+00465C60	00468C49	cf_common_exit_00468C49	unchanged	label is already primary
+00465C60	00468C50	cf_common_exit_00468C50	unchanged	label is already primary
 00465C60	00469198	cf_join_00469198	disabled	apply=0
 00465C60	004691AE	cf_join_004691AE	disabled	apply=0
 00465C60	004692BE	cf_join_004692BE	disabled	apply=0
-00465C60	004693C9	cf_common_exit_004693C9	applied	kind=common_exit; gotos=2; previous=LAB_004693c9
+00465C60	004693C9	cf_common_exit_004693C9	unchanged	label is already primary
 00465C60	00469972	cf_join_00469972	disabled	apply=0
-00465C60	00469979	cf_common_exit_00469979	applied	kind=common_exit; gotos=12; previous=LAB_00469979
-00465C60	004699DA	cf_common_exit_004699DA	applied	kind=common_exit; gotos=2; previous=LAB_004699da
-00465C60	004699E2	cf_common_exit_004699E2	applied	kind=common_exit; gotos=3; previous=LAB_004699e2
-00465C60	004699E9	cf_common_exit_004699E9	applied	kind=common_exit; gotos=17; previous=switchD_00466448::caseD_2
+00465C60	00469979	cf_common_exit_00469979	unchanged	label is already primary
+00465C60	004699DA	cf_common_exit_004699DA	unchanged	label is already primary
+00465C60	004699E2	cf_common_exit_004699E2	unchanged	label is already primary
+00465C60	004699E9	cf_common_exit_004699E9	unchanged	label is already primary
 0046AA50	0046AAED	cf_join_0046AAED	disabled	apply=0
-0046AA50	0046ABCB	cf_common_exit_0046ABCB	applied	kind=common_exit; gotos=2; previous=LAB_0046abcb
+0046AA50	0046ABCB	cf_common_exit_0046ABCB	unchanged	label is already primary
 0046AA50	0046AC10	cf_join_0046AC10	disabled	apply=0
 0046AA50	0046ACAD	cf_join_0046ACAD	disabled	apply=0
 0046AA50	0046AF07	cf_join_0046AF07	disabled	apply=0
 0046B100	0046B5AC	cf_join_0046B5AC	disabled	apply=0
 0046B100	0046B6E2	cf_join_0046B6E2	disabled	apply=0
-0046B100	0046C04E	cf_common_exit_0046C04E	applied	kind=common_exit; gotos=2; previous=LAB_0046c04e
+0046B100	0046C04E	cf_common_exit_0046C04E	unchanged	label is already primary
 0046B100	0046C3BE	cf_join_0046C3BE	disabled	apply=0
-0046B100	0046C3C5	cf_common_exit_0046C3C5	applied	kind=common_exit; gotos=6; previous=switchD_0046b287::caseD_1
-0046B100	0046C422	cf_error_exit_0046C422	applied	kind=error_exit; gotos=3; previous=LAB_0046c422
-0046C980	0046CBE2	cf_error_exit_0046CBE2	applied	kind=error_exit; gotos=2; previous=LAB_0046cbe2
+0046B100	0046C3C5	cf_common_exit_0046C3C5	unchanged	label is already primary
+0046B100	0046C422	cf_error_exit_0046C422	unchanged	label is already primary
+0046C980	0046CBE2	cf_error_exit_0046CBE2	unchanged	label is already primary
 0046CF20	0046D1E2	cf_join_0046D1E2	disabled	apply=0
 0046CF20	0046D2D1	cf_join_0046D2D1	disabled	apply=0
 0046D450	0046D4E6	cf_branch_target_0046D4E6	disabled	apply=0
@@ -580,12 +582,12 @@ function_address	label_address	proposed_name	status	detail
 0046D450	0046DD46	cf_branch_target_0046DD46	disabled	apply=0
 0046D450	0046E2C8	cf_join_0046E2C8	disabled	apply=0
 0046D450	0046E7EA	cf_join_0046E7EA	disabled	apply=0
-0046D450	0046E801	cf_common_exit_0046E801	applied	kind=common_exit; gotos=3; previous=LAB_0046e801
-0046D450	0046E811	cf_common_exit_0046E811	applied	kind=common_exit; gotos=8; previous=switchD_0046d492::caseD_2
-0046D450	0046E857	cf_error_exit_0046E857	applied	kind=error_exit; gotos=3; previous=LAB_0046e857
-0046D450	0046E9F3	cf_common_exit_0046E9F3	applied	kind=common_exit; gotos=2; previous=switchD_0046db6f::caseD_2
-0046EFD0	0046F0F9	cf_common_exit_0046F0F9	applied	kind=common_exit; gotos=2; previous=LAB_0046f0f9
-0046EFD0	0046F13E	cf_error_exit_0046F13E	applied	kind=error_exit; gotos=2; previous=LAB_0046f13e
+0046D450	0046E801	cf_common_exit_0046E801	unchanged	label is already primary
+0046D450	0046E811	cf_common_exit_0046E811	unchanged	label is already primary
+0046D450	0046E857	cf_error_exit_0046E857	unchanged	label is already primary
+0046D450	0046E9F3	cf_common_exit_0046E9F3	unchanged	label is already primary
+0046EFD0	0046F0F9	cf_common_exit_0046F0F9	unchanged	label is already primary
+0046EFD0	0046F13E	cf_error_exit_0046F13E	unchanged	label is already primary
 0046EFD0	0046F1FD	cf_join_0046F1FD	disabled	apply=0
 0046EFD0	0046F435	cf_join_0046F435	disabled	apply=0
 0046F5C0	0046F794	cf_join_0046F794	disabled	apply=0
@@ -597,14 +599,14 @@ function_address	label_address	proposed_name	status	detail
 0046F5C0	00470071	cf_join_00470071	disabled	apply=0
 0046F5C0	004700A6	cf_join_004700A6	disabled	apply=0
 0046F5C0	004707AD	cf_join_004707AD	disabled	apply=0
-0046F5C0	004707B7	cf_common_exit_004707B7	applied	kind=common_exit; gotos=10; previous=switchD_0046f604::caseD_2
-0046F5C0	00470B14	cf_common_exit_00470B14	applied	kind=common_exit; gotos=2; previous=LAB_00470b14
+0046F5C0	004707B7	cf_common_exit_004707B7	unchanged	label is already primary
+0046F5C0	00470B14	cf_join_00470B14	disabled	apply=0
 0046F5C0	00470BFE	cf_join_00470BFE	disabled	apply=0
-0046F5C0	00470C46	cf_error_exit_00470C46	applied	kind=error_exit; gotos=3; previous=LAB_00470c46
+0046F5C0	00470C46	cf_error_exit_00470C46	unchanged	label is already primary
 0046F5C0	00470E23	cf_join_00470E23	disabled	apply=0
-0046F5C0	00470E2B	cf_common_exit_00470E2B	applied	kind=common_exit; gotos=2; previous=LAB_00470e2b
-0046F5C0	00470E32	cf_common_exit_00470E32	applied	kind=common_exit; gotos=4; previous=switchD_0046fd75::caseD_2
-004714D0	004715EF	cf_common_exit_004715EF	applied	kind=common_exit; gotos=2; previous=LAB_004715ef
+0046F5C0	00470E2B	cf_common_exit_00470E2B	unchanged	label is already primary
+0046F5C0	00470E32	cf_common_exit_00470E32	unchanged	label is already primary
+004714D0	004715EF	cf_common_exit_004715EF	unchanged	label is already primary
 004714D0	004716DF	cf_join_004716DF	disabled	apply=0
 004714D0	0047171F	cf_join_0047171F	disabled	apply=0
 004714D0	00471835	cf_join_00471835	disabled	apply=0
@@ -615,15 +617,15 @@ function_address	label_address	proposed_name	status	detail
 00471AC0	004720A6	cf_join_004720A6	disabled	apply=0
 00471AC0	0047233A	cf_join_0047233A	disabled	apply=0
 00471AC0	00472340	cf_join_00472340	disabled	apply=0
-00471AC0	00472A1F	cf_common_exit_00472A1F	applied	kind=common_exit; gotos=2; previous=switchD_0047251b::caseD_1
+00471AC0	00472A1F	cf_common_exit_00472A1F	unchanged	label is already primary
 00471AC0	00472A2E	cf_join_00472A2E	disabled	apply=0
 00471AC0	00472A3A	cf_join_00472A3A	disabled	apply=0
-00471AC0	00472CB0	cf_common_exit_00472CB0	applied	kind=common_exit; gotos=7; previous=switchD_0047251b::caseD_2
+00471AC0	00472CB0	cf_common_exit_00472CB0	unchanged	label is already primary
 004732F0	004736E2	cf_join_004736E2	disabled	apply=0
 004732F0	00473B6C	cf_join_00473B6C	disabled	apply=0
 004732F0	00473FCE	cf_join_00473FCE	disabled	apply=0
-004732F0	0047405D	cf_common_exit_0047405D	applied	kind=common_exit; gotos=2; previous=LAB_0047405d
-004732F0	004743A5	cf_common_exit_004743A5	applied	kind=common_exit; gotos=3; previous=LAB_004743a5
+004732F0	0047405D	cf_common_exit_0047405D	unchanged	label is already primary
+004732F0	004743A5	cf_common_exit_004743A5	unchanged	label is already primary
 004749C0	00475068	cf_join_00475068	disabled	apply=0
 004749C0	00475282	cf_join_00475282	disabled	apply=0
 00475530	00475545	cf_join_00475545	disabled	apply=0
@@ -631,9 +633,9 @@ function_address	label_address	proposed_name	status	detail
 004761B0	004765DF	cf_join_004765DF	disabled	apply=0
 004761B0	00476633	cf_join_00476633	disabled	apply=0
 00476A10	00476C07	cf_join_00476C07	disabled	apply=0
-00476CE0	00476DBA	cf_common_exit_00476DBA	applied	kind=common_exit; gotos=2; previous=LAB_00476dba
-00476CE0	0047746B	cf_common_exit_0047746B	applied	kind=common_exit; gotos=3; previous=LAB_0047746b
-00476CE0	00477B2E	cf_common_exit_00477B2E	applied	kind=common_exit; gotos=2; previous=LAB_00477b2e
+00476CE0	00476DBA	cf_common_exit_00476DBA	unchanged	label is already primary
+00476CE0	0047746B	cf_common_exit_0047746B	unchanged	label is already primary
+00476CE0	00477B2E	cf_common_exit_00477B2E	unchanged	label is already primary
 00478030	00478373	cf_join_00478373	disabled	apply=0
 00478030	0047848A	cf_join_0047848A	disabled	apply=0
 00478640	0047885B	cf_join_0047885B	disabled	apply=0
@@ -642,29 +644,29 @@ function_address	label_address	proposed_name	status	detail
 00478640	00478B5F	cf_join_00478B5F	disabled	apply=0
 00478640	00478B73	cf_join_00478B73	disabled	apply=0
 00478640	00478B7A	cf_join_00478B7A	disabled	apply=0
-00478640	00478B83	cf_common_exit_00478B83	applied	kind=common_exit; gotos=3; previous=LAB_00478b83
+00478640	00478B83	cf_common_exit_00478B83	unchanged	label is already primary
 00478640	00478D20	cf_join_00478D20	disabled	apply=0
-00478640	00478E51	cf_common_exit_00478E51	applied	kind=common_exit; gotos=3; previous=LAB_00478e51
+00478640	00478E51	cf_common_exit_00478E51	unchanged	label is already primary
 00478640	00478F91	cf_join_00478F91	disabled	apply=0
 00478640	00478FF2	cf_join_00478FF2	disabled	apply=0
 00478640	0047926A	cf_join_0047926A	disabled	apply=0
-00478640	0047928C	cf_common_exit_0047928C	applied	kind=common_exit; gotos=2; previous=switchD_004786b6::caseD_2
+00478640	0047928C	cf_common_exit_0047928C	unchanged	label is already primary
 00479600	00479BA6	cf_join_00479BA6	disabled	apply=0
 00479600	00479E39	cf_join_00479E39	disabled	apply=0
-00479600	0047A369	cf_common_exit_0047A369	applied	kind=common_exit; gotos=3; previous=LAB_0047a369
+00479600	0047A369	cf_common_exit_0047A369	unchanged	label is already primary
 00479600	0047A385	cf_join_0047A385	disabled	apply=0
 00479600	0047ACDC	cf_join_0047ACDC	disabled	apply=0
 00479600	0047ADA9	cf_branch_target_0047ADA9	disabled	apply=0
-00479600	0047ADB5	cf_common_exit_0047ADB5	applied	kind=common_exit; gotos=5; previous=LAB_0047adb5
+00479600	0047ADB5	cf_common_exit_0047ADB5	unchanged	label is already primary
 00479600	0047B1C5	cf_join_0047B1C5	disabled	apply=0
 00479600	0047B202	cf_join_0047B202	disabled	apply=0
 00479600	0047B2DC	cf_join_0047B2DC	disabled	apply=0
 00479600	0047B2FC	cf_join_0047B2FC	disabled	apply=0
 0047C050	0047C0E2	cf_branch_target_0047C0E2	disabled	apply=0
-0047C050	0047C43E	cf_common_exit_0047C43E	applied	kind=common_exit; gotos=3; previous=LAB_0047c43e
-0047C050	0047C68C	cf_common_exit_0047C68C	applied	kind=common_exit; gotos=3; previous=LAB_0047c68c
-0047C050	0047C74D	cf_common_exit_0047C74D	applied	kind=common_exit; gotos=3; previous=LAB_0047c74d
-0047C050	0047C9FE	cf_common_exit_0047C9FE	applied	kind=common_exit; gotos=3; previous=LAB_0047c9fe
+0047C050	0047C43E	cf_common_exit_0047C43E	unchanged	label is already primary
+0047C050	0047C68C	cf_common_exit_0047C68C	unchanged	label is already primary
+0047C050	0047C74D	cf_common_exit_0047C74D	unchanged	label is already primary
+0047C050	0047C9FE	cf_common_exit_0047C9FE	unchanged	label is already primary
 0047D080	0047D241	cf_join_0047D241	disabled	apply=0
 0047D080	0047D7E6	cf_join_0047D7E6	disabled	apply=0
 0047D080	0047D831	cf_join_0047D831	disabled	apply=0
@@ -673,13 +675,13 @@ function_address	label_address	proposed_name	status	detail
 0047DF00	0047E4DF	cf_join_0047E4DF	disabled	apply=0
 0047DF00	0047E4EE	cf_join_0047E4EE	disabled	apply=0
 0047DF00	0047EDD5	cf_join_0047EDD5	disabled	apply=0
-0047DF00	0047F19A	cf_common_exit_0047F19A	applied	kind=common_exit; gotos=7; previous=LAB_0047f19a
+0047DF00	0047F19A	cf_common_exit_0047F19A	unchanged	label is already primary
 0047DF00	0047F1F7	cf_join_0047F1F7	disabled	apply=0
 0047DF00	0047F4CD	cf_join_0047F4CD	disabled	apply=0
-0047FE10	0047FEEB	cf_common_exit_0047FEEB	applied	kind=common_exit; gotos=2; previous=LAB_0047feeb
+0047FE10	0047FEEB	cf_common_exit_0047FEEB	unchanged	label is already primary
 0047FE10	0047FF46	cf_join_0047FF46	disabled	apply=0
 0047FE10	0047FF67	cf_join_0047FF67	disabled	apply=0
-0047FE10	004800EC	cf_common_exit_004800EC	applied	kind=common_exit; gotos=2; previous=LAB_004800ec
+0047FE10	004800EC	cf_common_exit_004800EC	unchanged	label is already primary
 00480600	00480A79	cf_join_00480A79	disabled	apply=0
 00480600	00480B30	cf_join_00480B30	disabled	apply=0
 00480600	00480B80	cf_join_00480B80	disabled	apply=0
@@ -690,17 +692,17 @@ function_address	label_address	proposed_name	status	detail
 00480600	00480E0F	cf_join_00480E0F	disabled	apply=0
 00480600	00480F12	cf_join_00480F12	disabled	apply=0
 00480600	00480F1F	cf_join_00480F1F	disabled	apply=0
-00480600	004811C2	cf_common_exit_004811C2	applied	kind=common_exit; gotos=2; previous=LAB_004811c2
+00480600	004811C2	cf_common_exit_004811C2	unchanged	label is already primary
 00482DB0	00482F52	cf_join_00482F52	disabled	apply=0
 00482DB0	00482FA9	cf_join_00482FA9	disabled	apply=0
 00483300	00483342	cf_join_00483342	disabled	apply=0
-004836C0	004837CF	cf_common_exit_004837CF	applied	kind=common_exit; gotos=2; previous=LAB_004837cf
+004836C0	004837CF	cf_common_exit_004837CF	unchanged	label is already primary
 004845E0	004847D4	cf_join_004847D4	disabled	apply=0
 004845E0	004847DF	cf_join_004847DF	disabled	apply=0
 004845E0	00484943	cf_join_00484943	disabled	apply=0
 004845E0	00484A0B	cf_join_00484A0B	disabled	apply=0
 004845E0	00484A28	cf_join_00484A28	disabled	apply=0
-004845E0	00484B10	cf_common_exit_00484B10	applied	kind=common_exit; gotos=4; previous=LAB_00484b10
+004845E0	00484B10	cf_common_exit_00484B10	unchanged	label is already primary
 004845E0	00484E9F	cf_join_00484E9F	disabled	apply=0
 004845E0	00484ED2	cf_join_00484ED2	disabled	apply=0
 004845E0	00484FF7	cf_join_00484FF7	disabled	apply=0
@@ -726,7 +728,7 @@ function_address	label_address	proposed_name	status	detail
 004845E0	00486163	cf_join_00486163	disabled	apply=0
 004845E0	004861EE	cf_join_004861EE	disabled	apply=0
 00486B60	00486CFC	cf_join_00486CFC	disabled	apply=0
-00486E20	00486ED3	cf_common_exit_00486ED3	applied	kind=common_exit; gotos=2; previous=LAB_00486ed3
+00486E20	00486ED3	cf_common_exit_00486ED3	unchanged	label is already primary
 00486E20	00487782	cf_join_00487782	disabled	apply=0
 00486E20	00487975	cf_join_00487975	disabled	apply=0
 00486E20	0048797B	cf_join_0048797B	disabled	apply=0
@@ -745,13 +747,13 @@ function_address	label_address	proposed_name	status	detail
 00486E20	00487ECD	cf_join_00487ECD	disabled	apply=0
 00486E20	0048802A	cf_join_0048802A	disabled	apply=0
 00486E20	0048802E	cf_join_0048802E	disabled	apply=0
-00486E20	004881B5	cf_common_join_004881B5	applied	kind=common_join; gotos=7; previous=LAB_004881b5
+00486E20	004881B5	cf_common_join_004881B5	unchanged	label is already primary
 00486E20	004881B9	cf_switch_join_004881B9	disabled	apply=0
 00488890	00488B5F	cf_join_00488B5F	disabled	apply=0
 00488890	00488BCE	cf_join_00488BCE	disabled	apply=0
 00488D10	00488E40	cf_join_00488E40	disabled	apply=0
 00488F30	00489086	cf_join_00489086	disabled	apply=0
-00488F30	00489222	cf_common_join_00489222	applied	kind=common_join; gotos=4; previous=LAB_00489222
+00488F30	00489222	cf_common_join_00489222	unchanged	label is already primary
 004899A0	00489DFC	cf_join_00489DFC	disabled	apply=0
 004899A0	00489EB0	cf_join_00489EB0	disabled	apply=0
 004899A0	0048A226	cf_join_0048A226	disabled	apply=0
@@ -767,7 +769,7 @@ function_address	label_address	proposed_name	status	detail
 0048A910	0048C3FC	cf_join_0048C3FC	disabled	apply=0
 0048A910	0048C418	cf_join_0048C418	disabled	apply=0
 0048A910	0048C41D	cf_join_0048C41D	disabled	apply=0
-0048A910	0048C491	cf_common_exit_0048C491	applied	kind=common_exit; gotos=5; previous=LAB_0048c491
+0048A910	0048C491	cf_common_exit_0048C491	unchanged	label is already primary
 0048A910	0048C4B5	cf_join_0048C4B5	disabled	apply=0
 0048CEA0	0048D016	cf_join_0048D016	disabled	apply=0
 0048DFD0	0048F3A9	cf_join_0048F3A9	disabled	apply=0
@@ -775,7 +777,7 @@ function_address	label_address	proposed_name	status	detail
 0048DFD0	0048F4E0	cf_join_0048F4E0	disabled	apply=0
 004919C0	00491B42	cf_join_00491B42	disabled	apply=0
 004919C0	00491C08	cf_join_00491C08	disabled	apply=0
-004919C0	00491C1C	cf_continue_loop_00491C1C	applied	kind=continue_loop; gotos=2; previous=LAB_00491c1c
+004919C0	00491C1C	cf_continue_loop_00491C1C	unchanged	label is already primary
 00494160	004942E7	cf_join_004942E7	disabled	apply=0
 00494160	004943A0	cf_join_004943A0	disabled	apply=0
 00494160	00494498	cf_join_00494498	disabled	apply=0
@@ -784,29 +786,29 @@ function_address	label_address	proposed_name	status	detail
 004945C0	004947B1	cf_join_004947B1	disabled	apply=0
 00494870	0049495D	cf_join_0049495D	disabled	apply=0
 00494870	00494A19	cf_join_00494A19	disabled	apply=0
-00494870	00494A35	cf_common_exit_00494A35	applied	kind=common_exit; gotos=2; previous=LAB_00494a35
+00494870	00494A35	cf_common_exit_00494A35	unchanged	label is already primary
 00495010	00495071	cf_join_00495071	disabled	apply=0
 00495420	00495607	cf_join_00495607	disabled	apply=0
 00495980	00495C27	cf_join_00495C27	disabled	apply=0
 00496250	004963D2	cf_join_004963D2	disabled	apply=0
-00496250	004965EF	cf_common_exit_004965EF	applied	kind=common_exit; gotos=2; previous=switchD_004967be::caseD_3
+00496250	004965EF	cf_common_exit_004965EF	unchanged	label is already primary
 00496250	00496601	cf_join_00496601	disabled	apply=0
 00496250	0049662D	cf_join_0049662D	disabled	apply=0
 00496250	0049663F	cf_join_0049663F	disabled	apply=0
 00496250	004966AA	cf_join_004966AA	disabled	apply=0
 00496250	0049676E	cf_join_0049676E	disabled	apply=0
-00496250	0049679C	cf_common_exit_0049679C	applied	kind=common_exit; gotos=2; previous=switchD_0049655f::caseD_5
-00496250	004967AA	cf_common_exit_004967AA	applied	kind=common_exit; gotos=2; previous=switchD_0049655f::caseD_7
+00496250	0049679C	cf_common_exit_0049679C	unchanged	label is already primary
+00496250	004967AA	cf_common_exit_004967AA	unchanged	label is already primary
 00496250	004967C5	cf_join_004967C5	disabled	apply=0
 00497370	004974CA	cf_join_004974CA	disabled	apply=0
 00497E00	0049818D	cf_join_0049818D	disabled	apply=0
 00497E00	004984D0	cf_join_004984D0	disabled	apply=0
 00497E00	004984E9	cf_join_004984E9	disabled	apply=0
-00497E00	004984F2	cf_common_exit_004984F2	applied	kind=common_exit; gotos=5; previous=LAB_004984f2
+00497E00	004984F2	cf_common_exit_004984F2	unchanged	label is already primary
 00497E00	00498503	cf_join_00498503	disabled	apply=0
 00497E00	00498956	cf_join_00498956	disabled	apply=0
 00498D20	00499129	cf_join_00499129	disabled	apply=0
-0049A620	0049A832	cf_common_exit_0049A832	applied	kind=common_exit; gotos=3; previous=LAB_0049a832
+0049A620	0049A832	cf_common_exit_0049A832	unchanged	label is already primary
 0049AAF0	0049AEC9	cf_join_0049AEC9	disabled	apply=0
 0049AAF0	0049AF27	cf_join_0049AF27	disabled	apply=0
 0049AAF0	0049B073	cf_join_0049B073	disabled	apply=0
@@ -848,7 +850,7 @@ function_address	label_address	proposed_name	status	detail
 004A0FA0	004A26F5	cf_join_004A26F5	disabled	apply=0
 004A0FA0	004A2897	cf_join_004A2897	disabled	apply=0
 004A0FA0	004A2BCF	cf_join_004A2BCF	disabled	apply=0
-004A0FA0	004A2C5D	cf_common_exit_004A2C5D	applied	kind=common_exit; gotos=2; previous=LAB_004a2c5d
+004A0FA0	004A2C5D	cf_common_exit_004A2C5D	unchanged	label is already primary
 004A3430	004A35B6	cf_join_004A35B6	disabled	apply=0
 004A4240	004A4A83	cf_join_004A4A83	disabled	apply=0
 004A4240	004A4AAB	cf_join_004A4AAB	disabled	apply=0
@@ -863,27 +865,27 @@ function_address	label_address	proposed_name	status	detail
 004A8E00	004A8E4A	cf_join_004A8E4A	disabled	apply=0
 004A9C80	004A9CFB	cf_join_004A9CFB	disabled	apply=0
 004AAF60	004AAFA0	cf_join_004AAFA0	disabled	apply=0
-004AAF60	004AAFC2	cf_common_exit_004AAFC2	applied	kind=common_exit; gotos=2; previous=LAB_004aafc2
+004AAF60	004AAFC2	cf_common_exit_004AAFC2	unchanged	label is already primary
 004AB070	004AB0D1	cf_join_004AB0D1	disabled	apply=0
 004AB070	004AB1CA	cf_join_004AB1CA	disabled	apply=0
 004AB300	004AB3CF	cf_common_exit_004AB3CF	disabled	apply=0
-004AC1A0	004AC330	cf_common_exit_004AC330	applied	kind=common_exit; gotos=2; previous=LAB_004ac330
-004AC9E0	004ACA23	cf_continue_loop_004ACA23	applied	kind=continue_loop; gotos=2; previous=LAB_004aca23
+004AC1A0	004AC330	cf_common_exit_004AC330	unchanged	label is already primary
+004AC9E0	004ACA23	cf_continue_loop_004ACA23	unchanged	label is already primary
 004AC9E0	004ACB87	cf_join_004ACB87	disabled	apply=0
 004AC9E0	004ACBDC	cf_join_004ACBDC	disabled	apply=0
-004AE0B0	004AE25B	cf_break_loop_004AE25B	applied	kind=break_loop; gotos=2; previous=LAB_004ae25b
+004AE0B0	004AE25B	cf_break_loop_004AE25B	unchanged	label is already primary
 004AE0B0	004AE37E	cf_join_004AE37E	disabled	apply=0
 004AE0B0	004AE41C	cf_join_004AE41C	disabled	apply=0
-004AE0B0	004AEC96	cf_break_loop_004AEC96	applied	kind=break_loop; gotos=6; previous=LAB_004aec96
+004AE0B0	004AEC96	cf_break_loop_004AEC96	unchanged	label is already primary
 004AE0B0	004AEC9D	cf_join_004AEC9D	disabled	apply=0
 004AE0B0	004AECB2	cf_join_004AECB2	disabled	apply=0
 004AF080	004AF1D5	cf_join_004AF1D5	disabled	apply=0
 004AF080	004AF2F0	cf_join_004AF2F0	disabled	apply=0
 004AF080	004AF325	cf_join_004AF325	disabled	apply=0
-004AF080	004AFA95	cf_common_join_004AFA95	applied	kind=common_join; gotos=6; previous=LAB_004afa95
+004AF080	004AFA95	cf_common_join_004AFA95	unchanged	label is already primary
 004AF080	004AFBAD	cf_join_004AFBAD	disabled	apply=0
 004AF080	004AFC0F	cf_join_004AFC0F	disabled	apply=0
-004AF080	004AFC34	cf_common_join_004AFC34	applied	kind=common_join; gotos=12; previous=LAB_004afc34
+004AF080	004AFC34	cf_common_join_004AFC34	unchanged	label is already primary
 004AFFA0	004B0044	cf_branch_target_004B0044	disabled	apply=0
 004AFFA0	004B004A	cf_join_004B004A	disabled	apply=0
 004AFFA0	004B0150	cf_join_004B0150	disabled	apply=0
@@ -898,11 +900,11 @@ function_address	label_address	proposed_name	status	detail
 004B1120	004B14F8	cf_break_loop_004B14F8	disabled	apply=0
 004B1120	004B1504	cf_break_loop_004B1504	disabled	apply=0
 004B1120	004B150E	cf_join_004B150E	disabled	apply=0
-004B1690	004B1816	cf_break_loop_004B1816	applied	kind=break_loop; gotos=2; previous=LAB_004b1816
+004B1690	004B1816	cf_break_loop_004B1816	unchanged	label is already primary
 004B1690	004B199C	cf_join_004B199C	disabled	apply=0
 004B1690	004B1A39	cf_join_004B1A39	disabled	apply=0
 004B1690	004B1B6E	cf_join_004B1B6E	disabled	apply=0
-004B2520	004B2601	cf_common_exit_004B2601	applied	kind=common_exit; gotos=6; previous=LAB_004b2601
+004B2520	004B2601	cf_common_exit_004B2601	unchanged	label is already primary
 004B2520	004B266B	cf_join_004B266B	disabled	apply=0
 004B2520	004B281D	cf_join_004B281D	disabled	apply=0
 004B2520	004B288E	cf_join_004B288E	disabled	apply=0
@@ -915,7 +917,7 @@ function_address	label_address	proposed_name	status	detail
 004B33D0	004B4634	cf_join_004B4634	disabled	apply=0
 004B33D0	004B463A	cf_join_004B463A	disabled	apply=0
 004B33D0	004B4689	cf_join_004B4689	disabled	apply=0
-004B33D0	004B48CC	cf_continue_loop_004B48CC	applied	kind=continue_loop; gotos=5; previous=LAB_004b48cc
+004B33D0	004B48CC	cf_continue_loop_004B48CC	unchanged	label is already primary
 004B33D0	004B4958	cf_join_004B4958	disabled	apply=0
 004B33D0	004B49B4	cf_join_004B49B4	disabled	apply=0
 004B33D0	004B4BD1	cf_join_004B4BD1	disabled	apply=0
@@ -928,21 +930,21 @@ function_address	label_address	proposed_name	status	detail
 004B33D0	004B51DA	cf_join_004B51DA	disabled	apply=0
 004B33D0	004B52B6	cf_join_004B52B6	disabled	apply=0
 004B33D0	004B5614	cf_join_004B5614	disabled	apply=0
-004B33D0	004B5648	cf_common_join_004B5648	applied	kind=common_join; gotos=10; previous=LAB_004b5648
+004B33D0	004B5648	cf_common_join_004B5648	unchanged	label is already primary
 004B33D0	004B56E4	cf_join_004B56E4	disabled	apply=0
 004B33D0	004B5727	cf_join_004B5727	disabled	apply=0
 004B33D0	004B5F7B	cf_join_004B5F7B	disabled	apply=0
-004B33D0	004B5FB6	cf_continue_loop_004B5FB6	applied	kind=continue_loop; gotos=2; previous=LAB_004b5fb6
+004B33D0	004B5FB6	cf_continue_loop_004B5FB6	unchanged	label is already primary
 004B33D0	004B5FD6	cf_join_004B5FD6	disabled	apply=0
-004B33D0	004B60CD	cf_break_loop_004B60CD	applied	kind=break_loop; gotos=2; previous=LAB_004b60cd
+004B33D0	004B60CD	cf_break_loop_004B60CD	unchanged	label is already primary
 004B7750	004B77C4	cf_join_004B77C4	disabled	apply=0
-004B7750	004B78A7	cf_continue_loop_004B78A7	applied	kind=continue_loop; gotos=2; previous=LAB_004b78a7
+004B7750	004B78A7	cf_continue_loop_004B78A7	unchanged	label is already primary
 004B7750	004B78F0	cf_join_004B78F0	disabled	apply=0
 004B7F90	004B8053	cf_join_004B8053	disabled	apply=0
-004B7F90	004B8058	cf_common_exit_004B8058	applied	kind=common_exit; gotos=2; previous=LAB_004b8058
-004B8C80	004B8F5A	cf_common_exit_004B8F5A	applied	kind=common_exit; gotos=3; previous=LAB_004b8f5a
-004B8C80	004B9130	cf_common_exit_004B9130	applied	kind=common_exit; gotos=6; previous=LAB_004b9130
-004B8C80	004B92EE	cf_common_join_004B92EE	applied	kind=common_join; gotos=4; previous=LAB_004b92ee
+004B7F90	004B8058	cf_common_exit_004B8058	unchanged	label is already primary
+004B8C80	004B8F5A	cf_common_exit_004B8F5A	unchanged	label is already primary
+004B8C80	004B9130	cf_common_exit_004B9130	unchanged	label is already primary
+004B8C80	004B92EE	cf_common_join_004B92EE	unchanged	label is already primary
 004B9D90	004B9E45	cf_join_004B9E45	disabled	apply=0
 004B9FA0	004BB4A1	cf_join_004BB4A1	disabled	apply=0
 004B9FA0	004BB547	cf_join_004BB547	disabled	apply=0
@@ -971,7 +973,7 @@ function_address	label_address	proposed_name	status	detail
 004BEA70	004BECC5	cf_join_004BECC5	disabled	apply=0
 004BEA70	004BEE65	cf_join_004BEE65	disabled	apply=0
 004BEA70	004BEF54	cf_join_004BEF54	disabled	apply=0
-004BEA70	004BEF5A	cf_common_join_004BEF5A	applied	kind=common_join; gotos=8; previous=LAB_004bef5a
+004BEA70	004BEF5A	cf_common_join_004BEF5A	unchanged	label is already primary
 004BEA70	004BEF5F	cf_join_004BEF5F	disabled	apply=0
 004BEA70	004BEFF1	cf_join_004BEFF1	disabled	apply=0
 004BEA70	004BF02B	cf_join_004BF02B	disabled	apply=0
@@ -993,7 +995,7 @@ function_address	label_address	proposed_name	status	detail
 004BEA70	004BF9F7	cf_join_004BF9F7	disabled	apply=0
 004BEA70	004BFBCA	cf_join_004BFBCA	disabled	apply=0
 004BEA70	004BFBDB	cf_join_004BFBDB	disabled	apply=0
-004BEA70	004BFCB7	cf_common_join_004BFCB7	applied	kind=common_join; gotos=5; previous=
+004BEA70	004BFCB7	cf_common_join_004BFCB7	unchanged	label is already primary
 004BEA70	004BFEE5	cf_join_004BFEE5	disabled	apply=0
 004BEA70	004BFF0A	cf_join_004BFF0A	disabled	apply=0
 004BEA70	004BFF65	cf_join_004BFF65	disabled	apply=0
@@ -1005,25 +1007,25 @@ function_address	label_address	proposed_name	status	detail
 004BEA70	004C00CC	cf_join_004C00CC	disabled	apply=0
 004BEA70	004C0170	cf_join_004C0170	disabled	apply=0
 004BEA70	004C0181	cf_join_004C0181	disabled	apply=0
-004BEA70	004C01F3	cf_common_join_004C01F3	applied	kind=common_join; gotos=16; previous=LAB_004c01f3
+004BEA70	004C01F3	cf_common_join_004C01F3	unchanged	label is already primary
 004BEA70	004C0261	cf_join_004C0261	disabled	apply=0
-004BEA70	004C0278	cf_common_join_004C0278	applied	kind=common_join; gotos=29; previous=LAB_004c0278
+004BEA70	004C0278	cf_common_join_004C0278	unchanged	label is already primary
 004BEA70	004C0285	cf_join_004C0285	disabled	apply=0
 004BEA70	004C0ADA	cf_join_004C0ADA	disabled	apply=0
 004BEA70	004C0AE0	cf_join_004C0AE0	disabled	apply=0
 004BEA70	004C0B31	cf_join_004C0B31	disabled	apply=0
 004BEA70	004C0F8E	cf_join_004C0F8E	disabled	apply=0
 004BEA70	004C0FBB	cf_join_004C0FBB	disabled	apply=0
-004BEA70	004C0FC5	cf_common_join_004C0FC5	applied	kind=common_join; gotos=5; previous=LAB_004c0fc5
+004BEA70	004C0FC5	cf_common_join_004C0FC5	unchanged	label is already primary
 004BEA70	004C0FCC	cf_join_004C0FCC	disabled	apply=0
-004BEA70	004C1083	cf_branch_target_004C1083	disabled	apply=0
 004BEA70	004C12D3	cf_join_004C12D3	disabled	apply=0
+004BEA70	004C13D1	cf_common_exit_004C13D1	disabled	apply=0
 004C21A0	004C2260	cf_join_004C2260	disabled	apply=0
 004C21A0	004C2294	cf_join_004C2294	disabled	apply=0
 004C21A0	004C231F	cf_branch_target_004C231F	disabled	apply=0
-004C21A0	004C2352	cf_common_exit_004C2352	applied	kind=common_exit; gotos=2; previous=LAB_004c2352
+004C21A0	004C2352	cf_common_exit_004C2352	unchanged	label is already primary
 004C21A0	004C2616	cf_join_004C2616	disabled	apply=0
-004C21A0	004C261B	cf_common_exit_004C261B	applied	kind=common_exit; gotos=5; previous=switchD_004c22b3::caseD_1
+004C21A0	004C261B	cf_common_exit_004C261B	unchanged	label is already primary
 004C2950	004C2B44	cf_join_004C2B44	disabled	apply=0
 004C3570	004C3985	cf_join_004C3985	disabled	apply=0
 004C3C00	004C4080	cf_join_004C4080	disabled	apply=0
@@ -1033,9 +1035,9 @@ function_address	label_address	proposed_name	status	detail
 004C5350	004C5502	cf_join_004C5502	disabled	apply=0
 004C5350	004C5515	cf_join_004C5515	disabled	apply=0
 004C6440	004C6848	cf_join_004C6848	disabled	apply=0
-004C6440	004C6899	cf_common_exit_004C6899	applied	kind=common_exit; gotos=2; previous=LAB_004c6899
+004C6440	004C6899	cf_common_exit_004C6899	unchanged	label is already primary
 004C6D00	004C6E4D	cf_join_004C6E4D	disabled	apply=0
-004C6D00	004C6F47	cf_common_exit_004C6F47	applied	kind=common_exit; gotos=5; previous=LAB_004c6f47
+004C6D00	004C6F47	cf_common_exit_004C6F47	unchanged	label is already primary
 004C7070	004C716E	cf_join_004C716E	disabled	apply=0
 004C7070	004C7175	cf_join_004C7175	disabled	apply=0
 004C7070	004C719B	cf_join_004C719B	disabled	apply=0
@@ -1043,11 +1045,11 @@ function_address	label_address	proposed_name	status	detail
 004C7860	004C795C	cf_join_004C795C	disabled	apply=0
 004C7860	004C7967	cf_join_004C7967	disabled	apply=0
 004C7860	004C796D	cf_join_004C796D	disabled	apply=0
-004C7860	004C7B08	cf_common_exit_004C7B08	applied	kind=common_exit; gotos=2; previous=switchD_004c79ec::caseD_0
+004C7860	004C7B08	cf_common_exit_004C7B08	unchanged	label is already primary
 004C7CC0	004C7D1C	cf_join_004C7D1C	disabled	apply=0
 004C7CC0	004C7D2B	cf_join_004C7D2B	disabled	apply=0
 004C7CC0	004C7D8C	cf_join_004C7D8C	disabled	apply=0
-004C7CC0	004C8287	cf_common_exit_004C8287	applied	kind=common_exit; gotos=2; previous=LAB_004c8287
+004C7CC0	004C8287	cf_common_exit_004C8287	unchanged	label is already primary
 004C84C0	004C8806	cf_join_004C8806	disabled	apply=0
 004C84C0	004C8BF2	cf_join_004C8BF2	disabled	apply=0
 004C90C0	004C9106	cf_join_004C9106	disabled	apply=0
@@ -1056,31 +1058,31 @@ function_address	label_address	proposed_name	status	detail
 004C9770	004CA02A	cf_join_004CA02A	disabled	apply=0
 004C9770	004CA0A2	cf_join_004CA0A2	disabled	apply=0
 004CA7B0	004CA835	cf_join_004CA835	disabled	apply=0
-004CA7B0	004CA871	cf_common_exit_004CA871	applied	kind=common_exit; gotos=2; previous=LAB_004ca871
-004CA7B0	004CAAA4	cf_common_exit_004CAAA4	applied	kind=common_exit; gotos=3; previous=LAB_004caaa4
+004CA7B0	004CA871	cf_common_exit_004CA871	unchanged	label is already primary
+004CA7B0	004CAAA4	cf_common_exit_004CAAA4	unchanged	label is already primary
 004CABB0	004CADB1	cf_join_004CADB1	disabled	apply=0
 004CAFC0	004CB212	cf_join_004CB212	disabled	apply=0
 004CAFC0	004CB2D4	cf_join_004CB2D4	disabled	apply=0
 004CAFC0	004CB35E	cf_join_004CB35E	disabled	apply=0
 004CAFC0	004CB37D	cf_join_004CB37D	disabled	apply=0
 004CAFC0	004CB3EE	cf_join_004CB3EE	disabled	apply=0
-004CAFC0	004CB489	cf_common_exit_004CB489	applied	kind=common_exit; gotos=3; previous=switchD_004cb5c6::caseD_1
-004CAFC0	004CB504	cf_common_exit_004CB504	applied	kind=common_exit; gotos=2; previous=switchD_004cb5c6::caseD_2
+004CAFC0	004CB489	cf_common_exit_004CB489	unchanged	label is already primary
+004CAFC0	004CB504	cf_common_exit_004CB504	unchanged	label is already primary
 004CAFC0	004CB559	cf_join_004CB559	disabled	apply=0
 004CAFC0	004CB572	cf_join_004CB572	disabled	apply=0
 004CAFC0	004CB5CD	cf_join_004CB5CD	disabled	apply=0
-004CAFC0	004CB6D2	cf_common_exit_004CB6D2	applied	kind=common_exit; gotos=4; previous=switchD_004cb1d7::caseD_a
-004CC370	004CC50A	cf_error_exit_004CC50A	applied	kind=error_exit; gotos=2; previous=LAB_004cc50a
-004CC370	004CC6D2	cf_common_exit_004CC6D2	applied	kind=common_exit; gotos=3; previous=LAB_004cc6d2
+004CAFC0	004CB6D2	cf_common_exit_004CB6D2	unchanged	label is already primary
+004CC370	004CC50A	cf_error_exit_004CC50A	unchanged	label is already primary
+004CC370	004CC6D2	cf_common_exit_004CC6D2	unchanged	label is already primary
 004CCC10	004CCD43	cf_join_004CCD43	disabled	apply=0
 004CCC10	004CCEDC	cf_join_004CCEDC	disabled	apply=0
 004CCC10	004CD038	cf_join_004CD038	disabled	apply=0
 004CCC10	004CD1D7	cf_join_004CD1D7	disabled	apply=0
 004CD480	004CD4C0	cf_join_004CD4C0	disabled	apply=0
 004CD480	004CD4EA	cf_branch_target_004CD4EA	disabled	apply=0
-004CD480	004CD624	cf_common_exit_004CD624	applied	kind=common_exit; gotos=4; previous=LAB_004cd624
+004CD480	004CD624	cf_common_exit_004CD624	unchanged	label is already primary
 004CEB00	004CEB8E	cf_join_004CEB8E	disabled	apply=0
-004CEB00	004CF029	cf_common_exit_004CF029	applied	kind=common_exit; gotos=3; previous=LAB_004cf029
+004CEB00	004CF029	cf_common_exit_004CF029	unchanged	label is already primary
 004CEB00	004CF15E	cf_join_004CF15E	disabled	apply=0
 004CEB00	004CF174	cf_join_004CF174	disabled	apply=0
 004CFA00	004CFB58	cf_join_004CFB58	disabled	apply=0
@@ -1089,7 +1091,7 @@ function_address	label_address	proposed_name	status	detail
 004CFBE0	004CFD4E	cf_join_004CFD4E	disabled	apply=0
 004CFDE0	004CFF4C	cf_join_004CFF4C	disabled	apply=0
 004CFFF0	004D014F	cf_join_004D014F	disabled	apply=0
-004D11D0	004D1763	cf_common_join_004D1763	applied	kind=common_join; gotos=6; previous=LAB_004d1763
+004D11D0	004D1763	cf_common_join_004D1763	unchanged	label is already primary
 004D11D0	004D1BDA	cf_join_004D1BDA	disabled	apply=0
 004D11D0	004D1DF8	cf_join_004D1DF8	disabled	apply=0
 004D11D0	004D1F0B	cf_join_004D1F0B	disabled	apply=0
@@ -1099,14 +1101,14 @@ function_address	label_address	proposed_name	status	detail
 004D32C0	004D3B23	cf_join_004D3B23	disabled	apply=0
 004D32C0	004D3F38	cf_join_004D3F38	disabled	apply=0
 004D32C0	004D3F76	cf_join_004D3F76	disabled	apply=0
-004D32C0	004D428D	cf_error_exit_004D428D	applied	kind=error_exit; gotos=3; previous=LAB_004d428d
+004D32C0	004D428D	cf_error_exit_004D428D	unchanged	label is already primary
 004D32C0	004D4378	cf_join_004D4378	disabled	apply=0
 004D32C0	004D43F5	cf_join_004D43F5	disabled	apply=0
 004D32C0	004D4D4F	cf_join_004D4D4F	disabled	apply=0
 004D55B0	004D5985	cf_join_004D5985	disabled	apply=0
 004D55B0	004D59E7	cf_join_004D59E7	disabled	apply=0
 004D55B0	004D600F	cf_join_004D600F	disabled	apply=0
-004D7570	004D766D	cf_common_exit_004D766D	applied	kind=common_exit; gotos=2; previous=LAB_004d766d
+004D7570	004D766D	cf_common_exit_004D766D	unchanged	label is already primary
 004D8DB0	004D8DEC	cf_join_004D8DEC	disabled	apply=0
 004DA390	004DA4D3	cf_join_004DA4D3	disabled	apply=0
 004DA390	004DA71F	cf_join_004DA71F	disabled	apply=0
@@ -1117,7 +1119,7 @@ function_address	label_address	proposed_name	status	detail
 004DB160	004DB497	cf_join_004DB497	disabled	apply=0
 004DB160	004DB58D	cf_join_004DB58D	disabled	apply=0
 004DB160	004DB638	cf_join_004DB638	disabled	apply=0
-004DB160	004DB690	cf_common_join_004DB690	applied	kind=common_join; gotos=4; previous=LAB_004db690
+004DB160	004DB690	cf_common_join_004DB690	unchanged	label is already primary
 004DD570	004DD5BB	cf_join_004DD5BB	disabled	apply=0
 004DD880	004DD9B3	cf_join_004DD9B3	disabled	apply=0
 004DD880	004DD9BB	cf_branch_target_004DD9BB	disabled	apply=0
@@ -1130,10 +1132,10 @@ function_address	label_address	proposed_name	status	detail
 004E0040	004E00E5	cf_join_004E00E5	disabled	apply=0
 004E0040	004E0119	cf_join_004E0119	disabled	apply=0
 004E0250	004E02DC	cf_branch_target_004E02DC	disabled	apply=0
-004E0250	004E02E4	cf_common_exit_004E02E4	applied	kind=common_exit; gotos=4; previous=switchD_004e02b5::caseD_3a
+004E0250	004E02E4	cf_common_exit_004E02E4	unchanged	label is already primary
 004E04A0	004E0570	cf_join_004E0570	disabled	apply=0
 004E04A0	004E05D3	cf_join_004E05D3	disabled	apply=0
-004E04A0	004E068C	cf_common_exit_004E068C	applied	kind=common_exit; gotos=2; previous=LAB_004e068c
+004E04A0	004E068C	cf_common_exit_004E068C	unchanged	label is already primary
 004E0830	004E0933	cf_join_004E0933	disabled	apply=0
 004E0830	004E0948	cf_join_004E0948	disabled	apply=0
 004E0830	004E0979	cf_join_004E0979	disabled	apply=0
@@ -1146,23 +1148,23 @@ function_address	label_address	proposed_name	status	detail
 004E0830	004E0F14	cf_join_004E0F14	disabled	apply=0
 004E0830	004E0F1E	cf_join_004E0F1E	disabled	apply=0
 004E16D0	004E180E	cf_join_004E180E	disabled	apply=0
-004E2AD0	004E2B69	cf_common_exit_004E2B69	applied	kind=common_exit; gotos=3; previous=LAB_004e2b69
+004E2AD0	004E2B69	cf_common_exit_004E2B69	unchanged	label is already primary
 004E2C30	004E2EFC	cf_join_004E2EFC	disabled	apply=0
 004E2C30	004E2F42	cf_join_004E2F42	disabled	apply=0
 004E2C30	004E2F8D	cf_join_004E2F8D	disabled	apply=0
-004E2C30	004E2FE4	cf_common_exit_004E2FE4	applied	kind=common_exit; gotos=4; previous=LAB_004e2fe4
+004E2C30	004E2FE4	cf_common_exit_004E2FE4	unchanged	label is already primary
 004E3200	004E336E	cf_join_004E336E	disabled	apply=0
 004E3200	004E3526	cf_join_004E3526	disabled	apply=0
 004E4F30	004E4FFE	cf_join_004E4FFE	disabled	apply=0
 004E51B0	004E5403	cf_join_004E5403	disabled	apply=0
 004E51B0	004E54B9	cf_join_004E54B9	disabled	apply=0
 004E51B0	004E54D9	cf_join_004E54D9	disabled	apply=0
-004E51B0	004E5505	cf_continue_loop_004E5505	applied	kind=continue_loop; gotos=2; previous=LAB_004e5505
+004E51B0	004E5505	cf_continue_loop_004E5505	unchanged	label is already primary
 004E51B0	004E5598	cf_join_004E5598	disabled	apply=0
 004E51B0	004E5655	cf_join_004E5655	disabled	apply=0
 004E6310	004E63AB	cf_join_004E63AB	disabled	apply=0
 004E6310	004E63FE	cf_join_004E63FE	disabled	apply=0
-004E6310	004E643C	cf_continue_loop_004E643C	applied	kind=continue_loop; gotos=2; previous=LAB_004e643c
+004E6310	004E643C	cf_continue_loop_004E643C	unchanged	label is already primary
 004E6310	004E645F	cf_join_004E645F	disabled	apply=0
 004E6680	004E6740	cf_join_004E6740	disabled	apply=0
 004E6680	004E680D	cf_join_004E680D	disabled	apply=0
@@ -1177,10 +1179,10 @@ function_address	label_address	proposed_name	status	detail
 004E9050	004E9090	cf_join_004E9090	disabled	apply=0
 004E9050	004E914A	cf_join_004E914A	disabled	apply=0
 004E91E0	004E946F	cf_join_004E946F	disabled	apply=0
-004E96C0	004E987A	cf_common_exit_004E987A	applied	kind=common_exit; gotos=2; previous=LAB_004e987a
-004EB300	004EB53A	cf_common_exit_004EB53A	applied	kind=common_exit; gotos=12; previous=LAB_004eb53a
+004E96C0	004E987A	cf_common_exit_004E987A	unchanged	label is already primary
+004EB300	004EB53A	cf_common_exit_004EB53A	unchanged	label is already primary
 004EB6D0	004EB93E	cf_join_004EB93E	disabled	apply=0
-004EB6D0	004EB94E	cf_common_exit_004EB94E	applied	kind=common_exit; gotos=2; previous=LAB_004eb94e
+004EB6D0	004EB94E	cf_common_exit_004EB94E	unchanged	label is already primary
 004EC700	004EC820	cf_join_004EC820	disabled	apply=0
 004ED630	004ED7FD	cf_join_004ED7FD	disabled	apply=0
 004ED630	004ED804	cf_join_004ED804	disabled	apply=0
@@ -1200,18 +1202,18 @@ function_address	label_address	proposed_name	status	detail
 004F3540	004F3636	cf_join_004F3636	disabled	apply=0
 004F37C0	004F38AD	cf_join_004F38AD	disabled	apply=0
 004F3A30	004F3AAA	cf_join_004F3AAA	disabled	apply=0
-004F3A30	004F3AC3	cf_common_join_004F3AC3	applied	kind=common_join; gotos=4; previous=LAB_004f3ac3
+004F3A30	004F3AC3	cf_common_join_004F3AC3	unchanged	label is already primary
 004F3CF0	004F3D6A	cf_join_004F3D6A	disabled	apply=0
-004F3CF0	004F3D83	cf_common_join_004F3D83	applied	kind=common_join; gotos=4; previous=LAB_004f3d83
+004F3CF0	004F3D83	cf_common_join_004F3D83	unchanged	label is already primary
 004F3FE0	004F4057	cf_join_004F4057	disabled	apply=0
-004F3FE0	004F4070	cf_common_join_004F4070	applied	kind=common_join; gotos=4; previous=LAB_004f4070
+004F3FE0	004F4070	cf_common_join_004F4070	unchanged	label is already primary
 004F42A0	004F4318	cf_join_004F4318	disabled	apply=0
-004F42A0	004F4331	cf_common_join_004F4331	applied	kind=common_join; gotos=4; previous=LAB_004f4331
+004F42A0	004F4331	cf_common_join_004F4331	unchanged	label is already primary
 004F80A0	004F81D1	cf_branch_target_004F81D1	disabled	apply=0
 004F80A0	004F861B	cf_branch_target_004F861B	disabled	apply=0
 004F80A0	004F8860	cf_join_004F8860	disabled	apply=0
 004F80A0	004F88E6	cf_join_004F88E6	disabled	apply=0
-004F80A0	004F88ED	cf_switch_join_004F88ED	applied	kind=switch_join; gotos=5; previous=switchD_004f86b0::caseD_2
+004F80A0	004F88ED	cf_common_join_004F88ED	applied	kind=common_join; gotos=5; previous=CPanelTy::PaintTV::cf_switch_join_004F88ED
 004F96A0	004F9A8A	cf_join_004F9A8A	disabled	apply=0
 004F9ED0	004FA138	cf_join_004FA138	disabled	apply=0
 004FAB10	004FAC39	cf_join_004FAC39	disabled	apply=0
@@ -1221,22 +1223,22 @@ function_address	label_address	proposed_name	status	detail
 004FB060	004FB8EE	cf_join_004FB8EE	disabled	apply=0
 004FB060	004FBA8D	cf_join_004FBA8D	disabled	apply=0
 004FB060	004FBAA0	cf_join_004FBAA0	disabled	apply=0
-004FB060	004FBCF3	cf_common_exit_004FBCF3	applied	kind=common_exit; gotos=2; previous=LAB_004fbcf3
+004FB060	004FBCF3	cf_common_exit_004FBCF3	unchanged	label is already primary
 004FB060	004FBE73	cf_join_004FBE73	disabled	apply=0
 004FB060	004FC53F	cf_join_004FC53F	disabled	apply=0
 004FB060	004FC9C0	cf_join_004FC9C0	disabled	apply=0
-004FB060	004FCF18	cf_common_exit_004FCF18	applied	kind=common_exit; gotos=7; previous=LAB_004fcf18
-004FB060	004FD1D2	cf_common_exit_004FD1D2	applied	kind=common_exit; gotos=2; previous=LAB_004fd1d2
+004FB060	004FCF18	cf_common_exit_004FCF18	unchanged	label is already primary
+004FB060	004FD1D2	cf_common_exit_004FD1D2	unchanged	label is already primary
 004FB060	004FD533	cf_join_004FD533	disabled	apply=0
-004FB060	004FD606	cf_common_exit_004FD606	applied	kind=common_exit; gotos=2; previous=LAB_004fd606
-004FB060	004FD60B	cf_common_exit_004FD60B	applied	kind=common_exit; gotos=12; previous=switchD_004fb10b::caseD_1
+004FB060	004FD606	cf_common_exit_004FD606	unchanged	label is already primary
+004FB060	004FD60B	cf_common_exit_004FD60B	unchanged	label is already primary
 004FE960	004FEA77	cf_join_004FEA77	disabled	apply=0
 004FEE10	004FEF26	cf_join_004FEF26	disabled	apply=0
 004FF380	004FF6E4	cf_join_004FF6E4	disabled	apply=0
 004FF380	004FF723	cf_join_004FF723	disabled	apply=0
 004FF380	004FF875	cf_break_loop_004FF875	disabled	apply=0
 004FF380	004FF87A	cf_join_004FF87A	disabled	apply=0
-004FF380	004FFB91	cf_common_exit_004FFB91	applied	kind=common_exit; gotos=2; previous=LAB_004ffb91
+004FF380	004FFB91	cf_common_exit_004FFB91	unchanged	label is already primary
 004FFE90	00500121	cf_break_loop_00500121	disabled	apply=0
 004FFE90	00500126	cf_join_00500126	disabled	apply=0
 00500520	00500689	cf_join_00500689	disabled	apply=0
@@ -1247,7 +1249,7 @@ function_address	label_address	proposed_name	status	detail
 00501590	00501758	cf_join_00501758	disabled	apply=0
 00501590	0050177C	cf_join_0050177C	disabled	apply=0
 00501590	005017A9	cf_join_005017A9	disabled	apply=0
-00501FF0	00502155	cf_common_exit_00502155	applied	kind=common_exit; gotos=3; previous=LAB_00502155
+00501FF0	00502155	cf_common_exit_00502155	unchanged	label is already primary
 00501FF0	005021DA	cf_common_exit_005021DA	disabled	apply=0
 00502360	005024AD	cf_join_005024AD	disabled	apply=0
 00502360	0050254C	cf_join_0050254C	disabled	apply=0
@@ -1263,7 +1265,7 @@ function_address	label_address	proposed_name	status	detail
 00503450	00503776	cf_join_00503776	disabled	apply=0
 00503450	00503913	cf_join_00503913	disabled	apply=0
 00503BB0	00503ECF	cf_join_00503ECF	disabled	apply=0
-00504E60	00504F81	cf_common_exit_00504F81	applied	kind=common_exit; gotos=2; previous=LAB_00504f81
+00504E60	00504F81	cf_common_exit_00504F81	unchanged	label is already primary
 005050B0	00505143	cf_join_00505143	disabled	apply=0
 005050B0	005051A9	cf_join_005051A9	disabled	apply=0
 00505230	005052DF	cf_join_005052DF	disabled	apply=0
@@ -1273,12 +1275,12 @@ function_address	label_address	proposed_name	status	detail
 00505230	005053B0	cf_join_005053B0	disabled	apply=0
 00505230	00505581	cf_join_00505581	disabled	apply=0
 00505230	00505590	cf_join_00505590	disabled	apply=0
-00505230	00505716	cf_continue_loop_00505716	applied	kind=continue_loop; gotos=2; previous=switchD_005052d8::caseD_2
+00505230	00505716	cf_continue_loop_00505716	unchanged	label is already primary
 005061C0	005062D5	cf_join_005062D5	disabled	apply=0
 005061C0	005062EB	cf_join_005062EB	disabled	apply=0
 005061C0	0050633B	cf_join_0050633B	disabled	apply=0
 005061C0	00506343	cf_join_00506343	disabled	apply=0
-005061C0	00507034	cf_common_exit_00507034	applied	kind=common_exit; gotos=2; previous=LAB_00507034
+005061C0	00507034	cf_common_exit_00507034	unchanged	label is already primary
 005061C0	0050709D	cf_join_0050709D	disabled	apply=0
 005061C0	005070BE	cf_join_005070BE	disabled	apply=0
 005061C0	0050777E	cf_join_0050777E	disabled	apply=0
@@ -1290,9 +1292,9 @@ function_address	label_address	proposed_name	status	detail
 00507F60	00508B35	cf_join_00508B35	disabled	apply=0
 00507F60	00509177	cf_join_00509177	disabled	apply=0
 00507F60	00509179	cf_join_00509179	disabled	apply=0
-00507F60	0050918D	cf_common_exit_0050918D	applied	kind=common_exit; gotos=2; previous=LAB_0050918d
-00507F60	00509192	cf_common_exit_00509192	applied	kind=common_exit; gotos=13; previous=switchD_0050858c::caseD_3b
-00507F60	005091B9	cf_common_exit_005091B9	applied	kind=common_exit; gotos=2; previous=LAB_005091b9
+00507F60	0050918D	cf_common_exit_0050918D	unchanged	label is already primary
+00507F60	00509192	cf_common_exit_00509192	unchanged	label is already primary
+00507F60	005091B9	cf_common_exit_005091B9	unchanged	label is already primary
 005097E0	00509963	cf_join_00509963	disabled	apply=0
 005097E0	00509A02	cf_join_00509A02	disabled	apply=0
 005097E0	00509B60	cf_join_00509B60	disabled	apply=0
@@ -1301,20 +1303,20 @@ function_address	label_address	proposed_name	status	detail
 0050A340	0050A4E4	cf_join_0050A4E4	disabled	apply=0
 0050A340	0050AF64	cf_join_0050AF64	disabled	apply=0
 0050A340	0050B386	cf_join_0050B386	disabled	apply=0
-0050A340	0050B38B	cf_common_exit_0050B38B	applied	kind=common_exit; gotos=3; previous=LAB_0050b38b
-0050A340	0050BD93	cf_common_exit_0050BD93	applied	kind=common_exit; gotos=2; previous=LAB_0050bd93
+0050A340	0050B38B	cf_common_exit_0050B38B	unchanged	label is already primary
+0050A340	0050BD93	cf_common_exit_0050BD93	unchanged	label is already primary
 0050A340	0050BD98	cf_join_0050BD98	disabled	apply=0
 0050A340	0050BD9F	cf_join_0050BD9F	disabled	apply=0
 0050C620	0050C9B5	cf_branch_target_0050C9B5	disabled	apply=0
 0050C620	0050CE3F	cf_join_0050CE3F	disabled	apply=0
 0050C620	0050DFDC	cf_join_0050DFDC	disabled	apply=0
-0050C620	0050E007	cf_common_exit_0050E007	applied	kind=common_exit; gotos=2; previous=LAB_0050e007
+0050C620	0050E007	cf_common_exit_0050E007	unchanged	label is already primary
 0050E7D0	0050EB47	cf_join_0050EB47	disabled	apply=0
 0050E7D0	0050EDC5	cf_join_0050EDC5	disabled	apply=0
 0050F430	0050F99C	cf_join_0050F99C	disabled	apply=0
 005107C0	00510902	cf_join_00510902	disabled	apply=0
 005107C0	0051095E	cf_join_0051095E	disabled	apply=0
-005107C0	005109A5	cf_common_exit_005109A5	applied	kind=common_exit; gotos=2; previous=switchD_005108d5::caseD_b10c
+005107C0	005109A5	cf_common_exit_005109A5	unchanged	label is already primary
 005107C0	00510A70	cf_common_exit_00510A70	disabled	apply=0
 00510E30	00510F80	cf_join_00510F80	disabled	apply=0
 00510E30	00510FA9	cf_join_00510FA9	disabled	apply=0
@@ -1326,7 +1328,7 @@ function_address	label_address	proposed_name	status	detail
 005149B0	00514AB9	cf_join_00514AB9	disabled	apply=0
 005149B0	00514AC6	cf_join_00514AC6	disabled	apply=0
 00514BC0	00514BE2	cf_join_00514BE2	disabled	apply=0
-00514BC0	00514CF6	cf_switch_join_00514CF6	applied	kind=switch_join; gotos=5; previous=switchD_00514c13::caseD_5
+00514BC0	00514CF6	cf_common_join_00514CF6	applied	kind=common_join; gotos=5; previous=FUN_00514bc0::cf_switch_join_00514CF6
 00514BC0	00514CF9	cf_join_00514CF9	disabled	apply=0
 00514BC0	00514D04	cf_join_00514D04	disabled	apply=0
 00514F10	00514F85	cf_join_00514F85	disabled	apply=0
@@ -1348,7 +1350,7 @@ function_address	label_address	proposed_name	status	detail
 0051DDD0	0051EB29	cf_join_0051EB29	disabled	apply=0
 0051DDD0	0051EEC7	cf_join_0051EEC7	disabled	apply=0
 0051DDD0	0051EF61	cf_break_loop_0051EF61	disabled	apply=0
-0051DDD0	0051F19A	cf_common_exit_0051F19A	applied	kind=common_exit; gotos=2; previous=switchD_0051e4d9::caseD_7
+0051DDD0	0051F19A	cf_common_exit_0051F19A	unchanged	label is already primary
 005206F0	00520987	cf_join_00520987	disabled	apply=0
 00521CF0	00522294	cf_join_00522294	disabled	apply=0
 00521CF0	005223B6	cf_join_005223B6	disabled	apply=0
@@ -1362,8 +1364,8 @@ function_address	label_address	proposed_name	status	detail
 00529590	005297C0	cf_join_005297C0	disabled	apply=0
 00529590	005299C5	cf_join_005299C5	disabled	apply=0
 0052B330	0052B416	cf_join_0052B416	disabled	apply=0
-0052B330	0052B581	cf_common_exit_0052B581	applied	kind=common_exit; gotos=3; previous=LAB_0052b581
-0052B760	0052B7B9	cf_common_exit_0052B7B9	applied	kind=common_exit; gotos=2; previous=LAB_0052b7b9
+0052B330	0052B581	cf_common_exit_0052B581	unchanged	label is already primary
+0052B760	0052B7B9	cf_common_exit_0052B7B9	unchanged	label is already primary
 0052BC30	0052BC8F	cf_join_0052BC8F	disabled	apply=0
 0052D370	0052D48D	cf_join_0052D48D	disabled	apply=0
 0052D690	0052D7D4	cf_join_0052D7D4	disabled	apply=0
@@ -1379,14 +1381,14 @@ function_address	label_address	proposed_name	status	detail
 0052FB00	00530592	cf_join_00530592	disabled	apply=0
 0052FB00	005305A9	cf_join_005305A9	disabled	apply=0
 0052FB00	005305B4	cf_join_005305B4	disabled	apply=0
-0052FB00	005305BC	cf_switch_join_005305BC	applied	kind=switch_join; gotos=4; previous=switchD_0052fbb9::caseD_9
+0052FB00	005305BC	cf_common_join_005305BC	applied	kind=common_join; gotos=4; previous=OptPanelTy::SetOptControls::cf_switch_join_005305BC
 0052FB00	00530D9D	cf_join_00530D9D	disabled	apply=0
 0052FB00	00530DA0	cf_join_00530DA0	disabled	apply=0
 0052FB00	0053108D	cf_join_0053108D	disabled	apply=0
 0052FB00	0053108F	cf_join_0053108F	disabled	apply=0
 0052FB00	005311CB	cf_join_005311CB	disabled	apply=0
 0052FB00	005311D8	cf_join_005311D8	disabled	apply=0
-0052FB00	0053138B	cf_common_join_0053138B	applied	kind=common_join; gotos=5; previous=LAB_0053138b
+0052FB00	0053138B	cf_common_join_0053138B	unchanged	label is already primary
 0052FB00	005313DC	cf_join_005313DC	disabled	apply=0
 005325B0	0053271E	cf_join_0053271E	disabled	apply=0
 005325B0	00532758	cf_join_00532758	disabled	apply=0
@@ -1409,15 +1411,15 @@ function_address	label_address	proposed_name	status	detail
 00533D10	00535614	cf_join_00535614	disabled	apply=0
 00533D10	00535EF1	cf_join_00535EF1	disabled	apply=0
 00533D10	00536434	cf_join_00536434	disabled	apply=0
-00533D10	00536441	cf_common_exit_00536441	applied	kind=common_exit; gotos=6; previous=LAB_00536441
+00533D10	00536441	cf_common_exit_00536441	unchanged	label is already primary
 00533D10	00536756	cf_join_00536756	disabled	apply=0
 00533D10	0053686A	cf_branch_target_0053686A	disabled	apply=0
 00533D10	00536D52	cf_join_00536D52	disabled	apply=0
-00533D10	00536DB5	cf_common_exit_00536DB5	applied	kind=common_exit; gotos=6; previous=LAB_00536db5
-00533D10	00536EE8	cf_common_exit_00536EE8	applied	kind=common_exit; gotos=6; previous=LAB_00536ee8
-00533D10	00536F8B	cf_common_exit_00536F8B	applied	kind=common_exit; gotos=5; previous=LAB_00536f8b
-00533D10	00536F92	cf_common_exit_00536F92	applied	kind=common_exit; gotos=6; previous=LAB_00536f92
-00533D10	00536FB7	cf_common_exit_00536FB7	applied	kind=common_exit; gotos=6; previous=switchD_005347d0::caseD_c0a7
+00533D10	00536DB5	cf_common_exit_00536DB5	unchanged	label is already primary
+00533D10	00536EE8	cf_common_exit_00536EE8	unchanged	label is already primary
+00533D10	00536F8B	cf_common_exit_00536F8B	unchanged	label is already primary
+00533D10	00536F92	cf_common_exit_00536F92	unchanged	label is already primary
+00533D10	00536FB7	cf_common_exit_00536FB7	unchanged	label is already primary
 005389E0	00538A14	cf_join_00538A14	disabled	apply=0
 00538BA0	00538BD9	cf_join_00538BD9	disabled	apply=0
 00538DB0	00538DE2	cf_join_00538DE2	disabled	apply=0
@@ -1442,7 +1444,7 @@ function_address	label_address	proposed_name	status	detail
 005449B0	0054532F	cf_join_0054532F	disabled	apply=0
 005449B0	005458DF	cf_join_005458DF	disabled	apply=0
 005449B0	00545C1A	cf_join_00545C1A	disabled	apply=0
-005449B0	00545FF6	cf_common_exit_00545FF6	applied	kind=common_exit; gotos=4; previous=LAB_00545ff6
+005449B0	00545FF6	cf_common_exit_00545FF6	unchanged	label is already primary
 005449B0	00546658	cf_branch_target_00546658	disabled	apply=0
 005449B0	005467A4	cf_join_005467A4	disabled	apply=0
 005449B0	005467AD	cf_join_005467AD	disabled	apply=0
@@ -1461,23 +1463,23 @@ function_address	label_address	proposed_name	status	detail
 00548C40	00549B36	cf_join_00549B36	disabled	apply=0
 00548C40	00549C33	cf_join_00549C33	disabled	apply=0
 00548C40	0054A196	cf_join_0054A196	disabled	apply=0
-00548C40	0054A19A	cf_common_join_0054A19A	applied	kind=common_join; gotos=9; previous=LAB_0054a19a
+00548C40	0054A19A	cf_common_join_0054A19A	unchanged	label is already primary
 00548C40	0054A19F	cf_join_0054A19F	disabled	apply=0
-0054A9B0	0054ACFD	cf_common_exit_0054ACFD	applied	kind=common_exit; gotos=2; previous=LAB_0054acfd
+0054A9B0	0054ACFD	cf_common_exit_0054ACFD	unchanged	label is already primary
 0054AEE0	0054B019	cf_join_0054B019	disabled	apply=0
 0054AEE0	0054B2A9	cf_join_0054B2A9	disabled	apply=0
 0054AEE0	0054B335	cf_join_0054B335	disabled	apply=0
 0054AEE0	0054B366	cf_join_0054B366	disabled	apply=0
-0054AEE0	0054B368	cf_common_exit_0054B368	applied	kind=common_exit; gotos=2; previous=LAB_0054b368
+0054AEE0	0054B368	cf_common_exit_0054B368	unchanged	label is already primary
 0054AEE0	0054B372	cf_join_0054B372	disabled	apply=0
 0054B700	0054B7E0	cf_join_0054B7E0	disabled	apply=0
 0054B700	0054B81B	cf_join_0054B81B	disabled	apply=0
-0054B9A0	0054BA0C	cf_common_exit_0054BA0C	applied	kind=common_exit; gotos=3; previous=LAB_0054ba0c
-0054BF40	0054C01C	cf_common_exit_0054C01C	applied	kind=common_exit; gotos=10; previous=LAB_0054c01c
-0054BF40	0054C06F	cf_common_exit_0054C06F	applied	kind=common_exit; gotos=10; previous=LAB_0054c06f
+0054B9A0	0054BA0C	cf_common_exit_0054BA0C	unchanged	label is already primary
+0054BF40	0054C01C	cf_common_exit_0054C01C	unchanged	label is already primary
+0054BF40	0054C06F	cf_common_exit_0054C06F	unchanged	label is already primary
 0054BF40	0054C0E9	cf_join_0054C0E9	disabled	apply=0
 0054BF40	0054C402	cf_join_0054C402	disabled	apply=0
-0054D640	0054DFAD	cf_common_join_0054DFAD	applied	kind=common_join; gotos=6; previous=LAB_0054dfad
+0054D640	0054DFAD	cf_common_join_0054DFAD	unchanged	label is already primary
 0054D640	0054E02C	cf_join_0054E02C	disabled	apply=0
 0054D640	0054E052	cf_join_0054E052	disabled	apply=0
 0054D640	0054E142	cf_join_0054E142	disabled	apply=0
@@ -1486,9 +1488,9 @@ function_address	label_address	proposed_name	status	detail
 0054F1D0	0054F52C	cf_join_0054F52C	disabled	apply=0
 0054F1D0	0054F531	cf_join_0054F531	disabled	apply=0
 0054F1D0	0054F6C6	cf_join_0054F6C6	disabled	apply=0
-0054F1D0	0054F76E	cf_common_exit_0054F76E	applied	kind=common_exit; gotos=3; previous=LAB_0054f76e
+0054F1D0	0054F76E	cf_common_exit_0054F76E	unchanged	label is already primary
 0054F1D0	0054F98B	cf_join_0054F98B	disabled	apply=0
-0054F1D0	0054FAD8	cf_common_join_0054FAD8	applied	kind=common_join; gotos=4; previous=LAB_0054fad8
+0054F1D0	0054FAD8	cf_common_join_0054FAD8	unchanged	label is already primary
 0054F1D0	0054FBB7	cf_join_0054FBB7	disabled	apply=0
 0054F1D0	0054FC54	cf_join_0054FC54	disabled	apply=0
 0054F1D0	0054FCB2	cf_join_0054FCB2	disabled	apply=0
@@ -1524,7 +1526,7 @@ function_address	label_address	proposed_name	status	detail
 0055D590	0055D5D1	cf_join_0055D5D1	disabled	apply=0
 0055DEE0	0055E02A	cf_join_0055E02A	disabled	apply=0
 0055DEE0	0055E048	cf_join_0055E048	disabled	apply=0
-0055DEE0	0055E2E9	cf_continue_loop_0055E2E9	applied	kind=continue_loop; gotos=2; previous=LAB_0055e2e9
+0055DEE0	0055E2E9	cf_continue_loop_0055E2E9	unchanged	label is already primary
 0055DEE0	0055EB08	cf_join_0055EB08	disabled	apply=0
 0055F410	0055F7EF	cf_join_0055F7EF	disabled	apply=0
 0055F410	0055FC5B	cf_join_0055FC5B	disabled	apply=0
@@ -1536,7 +1538,7 @@ function_address	label_address	proposed_name	status	detail
 00562F50	005637B9	cf_join_005637B9	disabled	apply=0
 00562F50	005637BC	cf_join_005637BC	disabled	apply=0
 00565820	00565C6C	cf_join_00565C6C	disabled	apply=0
-00565820	0056623F	cf_common_exit_0056623F	applied	kind=common_exit; gotos=2; previous=LAB_0056623f
+00565820	0056623F	cf_common_exit_0056623F	unchanged	label is already primary
 00566600	0056681C	cf_join_0056681C	disabled	apply=0
 00566970	00566A47	cf_join_00566A47	disabled	apply=0
 00566AA0	00566B77	cf_join_00566B77	disabled	apply=0
@@ -1551,27 +1553,27 @@ function_address	label_address	proposed_name	status	detail
 0056ABC0	0056ACB1	cf_join_0056ACB1	disabled	apply=0
 0056ADC0	0056B98B	cf_join_0056B98B	disabled	apply=0
 0056ADC0	0056BB8E	cf_join_0056BB8E	disabled	apply=0
-0056ADC0	0056C034	cf_common_exit_0056C034	applied	kind=common_exit; gotos=2; previous=LAB_0056c034
+0056ADC0	0056C034	cf_common_exit_0056C034	unchanged	label is already primary
 0056F250	0056F325	cf_join_0056F325	disabled	apply=0
 0056FA60	005701A7	cf_join_005701A7	disabled	apply=0
 0056FA60	005702BF	cf_join_005702BF	disabled	apply=0
 0056FA60	00570645	cf_join_00570645	disabled	apply=0
-0056FA60	0057073B	cf_common_exit_0057073B	applied	kind=common_exit; gotos=3; previous=LAB_0057073b
+0056FA60	0057073B	cf_common_exit_0057073B	unchanged	label is already primary
 0056FA60	00570AB1	cf_join_00570AB1	disabled	apply=0
 0056FA60	00570AB6	cf_join_00570AB6	disabled	apply=0
 0056FA60	00570C2F	cf_join_00570C2F	disabled	apply=0
 0056FA60	00570C77	cf_join_00570C77	disabled	apply=0
-00571400	00571620	cf_common_exit_00571620	applied	kind=common_exit; gotos=3; previous=LAB_00571620
+00571400	00571620	cf_common_exit_00571620	unchanged	label is already primary
 00571E40	00572086	cf_join_00572086	disabled	apply=0
 00571E40	005720F0	cf_join_005720F0	disabled	apply=0
 00571E40	005722E8	cf_break_loop_005722E8	disabled	apply=0
 00571E40	005722ED	cf_join_005722ED	disabled	apply=0
-00571E40	0057238D	cf_common_exit_0057238D	applied	kind=common_exit; gotos=4; previous=LAB_0057238d
+00571E40	0057238D	cf_common_exit_0057238D	unchanged	label is already primary
 00572510	005727EC	cf_break_loop_005727EC	disabled	apply=0
 00572510	005727F1	cf_join_005727F1	disabled	apply=0
 005734C0	0057366C	cf_join_0057366C	disabled	apply=0
 005734C0	005737E5	cf_join_005737E5	disabled	apply=0
-005745E0	00574651	cf_break_loop_00574651	applied	kind=break_loop; gotos=2; previous=LAB_00574651
+005745E0	00574651	cf_break_loop_00574651	unchanged	label is already primary
 00574920	00574B14	cf_join_00574B14	disabled	apply=0
 00574920	00574B4A	cf_join_00574B4A	disabled	apply=0
 00574920	00574BCC	cf_join_00574BCC	disabled	apply=0
@@ -1585,7 +1587,7 @@ function_address	label_address	proposed_name	status	detail
 00575CB0	005761B9	cf_join_005761B9	disabled	apply=0
 00575CB0	00576308	cf_join_00576308	disabled	apply=0
 005776D0	00577956	cf_join_00577956	disabled	apply=0
-00578630	00578B5D	cf_error_exit_00578B5D	applied	kind=error_exit; gotos=5; previous=LAB_00578b5d
+00578630	00578B5D	cf_error_exit_00578B5D	unchanged	label is already primary
 00578630	00578EA2	cf_join_00578EA2	disabled	apply=0
 00579350	00579591	cf_join_00579591	disabled	apply=0
 00579350	005795A9	cf_join_005795A9	disabled	apply=0
@@ -1598,16 +1600,16 @@ function_address	label_address	proposed_name	status	detail
 005797B0	00579BC9	cf_join_00579BC9	disabled	apply=0
 005797B0	00579BDD	cf_join_00579BDD	disabled	apply=0
 005797B0	00579BE3	cf_join_00579BE3	disabled	apply=0
-005797B0	00579E8F	cf_common_exit_00579E8F	applied	kind=common_exit; gotos=3; previous=LAB_00579e8f
+005797B0	00579E8F	cf_common_exit_00579E8F	unchanged	label is already primary
 0057A140	0057A1FB	cf_join_0057A1FB	disabled	apply=0
 0057A2C0	0057A96B	cf_join_0057A96B	disabled	apply=0
 0057A2C0	0057AC02	cf_break_loop_0057AC02	disabled	apply=0
 0057B670	0057B6DA	cf_join_0057B6DA	disabled	apply=0
 0057B670	0057B6FF	cf_join_0057B6FF	disabled	apply=0
 0057BD70	0057BDB4	cf_join_0057BDB4	disabled	apply=0
-0057BF60	0057C332	cf_error_exit_0057C332	applied	kind=error_exit; gotos=3; previous=LAB_0057c332
+0057BF60	0057C332	cf_error_exit_0057C332	unchanged	label is already primary
 0057BF60	0057C341	cf_common_exit_0057C341	disabled	apply=0
-0057BF60	0057C3E4	cf_common_exit_0057C3E4	applied	kind=common_exit; gotos=2; previous=LAB_0057c3e4
+0057BF60	0057C3E4	cf_common_exit_0057C3E4	unchanged	label is already primary
 0057BF60	0057C670	cf_branch_target_0057C670	disabled	apply=0
 0057CC90	0057CD19	cf_join_0057CD19	disabled	apply=0
 0057CD70	0057CFE0	cf_join_0057CFE0	disabled	apply=0
@@ -1620,27 +1622,27 @@ function_address	label_address	proposed_name	status	detail
 0057D700	0057DB1E	cf_join_0057DB1E	disabled	apply=0
 0057D700	0057DB32	cf_join_0057DB32	disabled	apply=0
 0057D700	0057DB4A	cf_join_0057DB4A	disabled	apply=0
-0057D700	0057DBE9	cf_continue_loop_0057DBE9	applied	kind=continue_loop; gotos=2; previous=LAB_0057dbe9
+0057D700	0057DBE9	cf_continue_loop_0057DBE9	unchanged	label is already primary
 0057D700	0057DD0C	cf_break_loop_0057DD0C	disabled	apply=0
-0057DFD0	0057E045	cf_common_exit_0057E045	applied	kind=common_exit; gotos=2; previous=LAB_0057e045
+0057DFD0	0057E045	cf_common_exit_0057E045	unchanged	label is already primary
 0057E0A0	0057E60C	cf_join_0057E60C	disabled	apply=0
-0057E0A0	0057E624	cf_common_exit_0057E624	applied	kind=common_exit; gotos=2; previous=LAB_0057e624
+0057E0A0	0057E624	cf_common_exit_0057E624	unchanged	label is already primary
 0057E0A0	0057E6F0	cf_join_0057E6F0	disabled	apply=0
-0057E0A0	0057E9C2	cf_common_join_0057E9C2	applied	kind=common_join; gotos=5; previous=LAB_0057e9c2
-0057F6E0	0057FAA5	cf_break_loop_0057FAA5	applied	kind=break_loop; gotos=6; previous=LAB_0057faa5
+0057E0A0	0057E9C2	cf_common_join_0057E9C2	unchanged	label is already primary
+0057F6E0	0057FAA5	cf_break_loop_0057FAA5	unchanged	label is already primary
 0057F6E0	0057FAAC	cf_join_0057FAAC	disabled	apply=0
 0057F6E0	0057FC59	cf_join_0057FC59	disabled	apply=0
 0057F6E0	0057FD6F	cf_join_0057FD6F	disabled	apply=0
 0057F6E0	0057FD72	cf_join_0057FD72	disabled	apply=0
 00580910	00580991	cf_join_00580991	disabled	apply=0
-00581200	005814A2	cf_continue_loop_005814A2	applied	kind=continue_loop; gotos=3; previous=LAB_005814a2
+00581200	005814A2	cf_continue_loop_005814A2	unchanged	label is already primary
 00581200	005814E2	cf_join_005814E2	disabled	apply=0
 00581200	00581518	cf_join_00581518	disabled	apply=0
 00581200	00581545	cf_join_00581545	disabled	apply=0
 00581200	0058171D	cf_join_0058171D	disabled	apply=0
 00581200	00581728	cf_join_00581728	disabled	apply=0
-00581200	00581775	cf_break_loop_00581775	applied	kind=break_loop; gotos=2; previous=LAB_00581775
-00581BF0	00581D62	cf_common_exit_00581D62	applied	kind=common_exit; gotos=2; previous=LAB_00581d62
+00581200	00581775	cf_break_loop_00581775	unchanged	label is already primary
+00581BF0	00581D62	cf_common_exit_00581D62	unchanged	label is already primary
 005825C0	005827B7	cf_join_005827B7	disabled	apply=0
 005825C0	005827BB	cf_join_005827BB	disabled	apply=0
 005825C0	00582958	cf_join_00582958	disabled	apply=0
@@ -1652,7 +1654,7 @@ function_address	label_address	proposed_name	status	detail
 005825C0	00582EDF	cf_join_00582EDF	disabled	apply=0
 005825C0	00582F27	cf_join_00582F27	disabled	apply=0
 005825C0	00582F2D	cf_join_00582F2D	disabled	apply=0
-005825C0	00582F72	cf_common_exit_00582F72	applied	kind=common_exit; gotos=2; previous=LAB_00582f72
+005825C0	00582F72	cf_common_exit_00582F72	unchanged	label is already primary
 00584060	005841DC	cf_join_005841DC	disabled	apply=0
 00584060	00584297	cf_branch_target_00584297	disabled	apply=0
 005845B0	00584666	cf_join_00584666	disabled	apply=0
@@ -1677,7 +1679,7 @@ function_address	label_address	proposed_name	status	detail
 00586AF0	005882AF	cf_join_005882AF	disabled	apply=0
 00586AF0	00588350	cf_join_00588350	disabled	apply=0
 00586AF0	005884DA	cf_join_005884DA	disabled	apply=0
-00589C10	0058A005	cf_error_exit_0058A005	applied	kind=error_exit; gotos=3; previous=LAB_0058a005
+00589C10	0058A005	cf_error_exit_0058A005	unchanged	label is already primary
 00589C10	0058A0D0	cf_join_0058A0D0	disabled	apply=0
 0058B190	0058B3AB	cf_join_0058B3AB	disabled	apply=0
 0058B190	0058B466	cf_join_0058B466	disabled	apply=0
@@ -1688,7 +1690,7 @@ function_address	label_address	proposed_name	status	detail
 0058BD90	0058BEF6	cf_join_0058BEF6	disabled	apply=0
 0058BD90	0058C168	cf_join_0058C168	disabled	apply=0
 0058BD90	0058C38C	cf_join_0058C38C	disabled	apply=0
-0058BD90	0058C391	cf_common_exit_0058C391	applied	kind=common_exit; gotos=3; previous=switchD_0058bec9::caseD_1
+0058BD90	0058C391	cf_common_exit_0058C391	unchanged	label is already primary
 0058D160	0058D1FE	cf_join_0058D1FE	disabled	apply=0
 0058D160	0058D252	cf_join_0058D252	disabled	apply=0
 0058D160	0058D3A9	cf_join_0058D3A9	disabled	apply=0
@@ -1698,7 +1700,7 @@ function_address	label_address	proposed_name	status	detail
 0058D7C0	0058DC72	cf_join_0058DC72	disabled	apply=0
 0058D7C0	0058E0F9	cf_join_0058E0F9	disabled	apply=0
 0058E570	0058E87E	cf_join_0058E87E	disabled	apply=0
-0058E570	0058E925	cf_common_exit_0058E925	applied	kind=common_exit; gotos=2; previous=LAB_0058e925
+0058E570	0058E925	cf_common_exit_0058E925	unchanged	label is already primary
 0058E570	0058E9F2	cf_join_0058E9F2	disabled	apply=0
 0058E570	0058EA68	cf_join_0058EA68	disabled	apply=0
 0058F1E0	0058F34A	cf_join_0058F34A	disabled	apply=0
@@ -1720,7 +1722,7 @@ function_address	label_address	proposed_name	status	detail
 00593040	00593378	cf_join_00593378	disabled	apply=0
 00593040	005933BD	cf_join_005933BD	disabled	apply=0
 00594440	00594565	cf_join_00594565	disabled	apply=0
-00594440	00594615	cf_common_exit_00594615	applied	kind=common_exit; gotos=4; previous=switchD_005944a8::caseD_4
+00594440	00594615	cf_common_exit_00594615	unchanged	label is already primary
 00595E40	00596510	cf_join_00596510	disabled	apply=0
 00596CC0	00596D58	cf_join_00596D58	disabled	apply=0
 00596CC0	00596D69	cf_join_00596D69	disabled	apply=0
@@ -1728,7 +1730,7 @@ function_address	label_address	proposed_name	status	detail
 00596CC0	00596D8B	cf_join_00596D8B	disabled	apply=0
 00596CC0	00596D9C	cf_join_00596D9C	disabled	apply=0
 00596CC0	00596FB2	cf_join_00596FB2	disabled	apply=0
-00597120	00597872	cf_common_exit_00597872	applied	kind=common_exit; gotos=2; previous=
+00597120	00597872	cf_common_exit_00597872	unchanged	label is already primary
 00597E70	00598221	cf_join_00598221	disabled	apply=0
 00597E70	00599258	cf_join_00599258	disabled	apply=0
 00597E70	00599280	cf_join_00599280	disabled	apply=0
@@ -1761,7 +1763,7 @@ function_address	label_address	proposed_name	status	detail
 005A2A60	005A2B17	cf_join_005A2B17	disabled	apply=0
 005A2A60	005A2B1C	cf_join_005A2B1C	disabled	apply=0
 005A2C10	005A2C91	cf_join_005A2C91	disabled	apply=0
-005A32F0	005A33FB	cf_common_exit_005A33FB	applied	kind=common_exit; gotos=4; previous=LAB_005a33fb
+005A32F0	005A33FB	cf_common_exit_005A33FB	unchanged	label is already primary
 005A3540	005A36E9	cf_join_005A36E9	disabled	apply=0
 005A3540	005A36EE	cf_join_005A36EE	disabled	apply=0
 005A3540	005A37DA	cf_join_005A37DA	disabled	apply=0
@@ -1773,10 +1775,10 @@ function_address	label_address	proposed_name	status	detail
 005A4350	005A4ECA	cf_break_loop_005A4ECA	disabled	apply=0
 005A4350	005A4ECF	cf_join_005A4ECF	disabled	apply=0
 005A4350	005A50BE	cf_join_005A50BE	disabled	apply=0
-005A4350	005A52AA	cf_common_exit_005A52AA	applied	kind=common_exit; gotos=2; previous=LAB_005a52aa
+005A4350	005A52AA	cf_common_exit_005A52AA	unchanged	label is already primary
 005A4350	005A55E5	cf_branch_target_005A55E5	disabled	apply=0
 005A4350	005A561C	cf_join_005A561C	disabled	apply=0
-005A4350	005A5634	cf_common_exit_005A5634	applied	kind=common_exit; gotos=2; previous=LAB_005a5634
+005A4350	005A5634	cf_common_exit_005A5634	unchanged	label is already primary
 005A4350	005A5859	cf_join_005A5859	disabled	apply=0
 005A4350	005A5B89	cf_join_005A5B89	disabled	apply=0
 005A4350	005A63E7	cf_break_loop_005A63E7	disabled	apply=0
@@ -1794,12 +1796,12 @@ function_address	label_address	proposed_name	status	detail
 005A4350	005A7656	cf_join_005A7656	disabled	apply=0
 005A4350	005A7C26	cf_join_005A7C26	disabled	apply=0
 005A4350	005A7C92	cf_join_005A7C92	disabled	apply=0
-005A4350	005A7F3B	cf_common_exit_005A7F3B	applied	kind=common_exit; gotos=3; previous=LAB_005a7f3b
+005A4350	005A7F3B	cf_common_exit_005A7F3B	unchanged	label is already primary
 005A4350	005A89F6	cf_join_005A89F6	disabled	apply=0
 005A4350	005A8B12	cf_join_005A8B12	disabled	apply=0
 005A4350	005A8B8F	cf_branch_target_005A8B8F	disabled	apply=0
 005A4350	005A8C85	cf_join_005A8C85	disabled	apply=0
-005A4350	005A8CA7	cf_common_exit_005A8CA7	applied	kind=common_exit; gotos=45; previous=switchD_005a43f5::caseD_1
+005A4350	005A8CA7	cf_common_exit_005A8CA7	unchanged	label is already primary
 005AA6A0	005AA7A7	cf_join_005AA7A7	disabled	apply=0
 005AA880	005AAB34	cf_join_005AAB34	disabled	apply=0
 005AACB0	005AAE20	cf_join_005AAE20	disabled	apply=0
@@ -1833,7 +1835,7 @@ function_address	label_address	proposed_name	status	detail
 005AFD00	005B06E8	cf_join_005B06E8	disabled	apply=0
 005AFD00	005B07AC	cf_join_005B07AC	disabled	apply=0
 005B0BA0	005B0DC0	cf_join_005B0DC0	disabled	apply=0
-005B0BA0	005B0DCE	cf_common_exit_005B0DCE	applied	kind=common_exit; gotos=2; previous=switchD_005b0d25::caseD_3
+005B0BA0	005B0DCE	cf_common_exit_005B0DCE	unchanged	label is already primary
 005B0BA0	005B1108	cf_join_005B1108	disabled	apply=0
 005B0BA0	005B137F	cf_join_005B137F	disabled	apply=0
 005B0BA0	005B138B	cf_join_005B138B	disabled	apply=0
@@ -1843,7 +1845,7 @@ function_address	label_address	proposed_name	status	detail
 005B0BA0	005B1D83	cf_break_loop_005B1D83	disabled	apply=0
 005B0BA0	005B1DA4	cf_join_005B1DA4	disabled	apply=0
 005B0BA0	005B2011	cf_join_005B2011	disabled	apply=0
-005B0BA0	005B2053	cf_common_exit_005B2053	applied	kind=common_exit; gotos=14; previous=switchD_005b0c37::caseD_1
+005B0BA0	005B2053	cf_common_exit_005B2053	unchanged	label is already primary
 005B2970	005B2B1C	cf_join_005B2B1C	disabled	apply=0
 005B3430	005B353C	cf_join_005B353C	disabled	apply=0
 005B3D60	005B4465	cf_join_005B4465	disabled	apply=0
@@ -1853,7 +1855,7 @@ function_address	label_address	proposed_name	status	detail
 005B4BB0	005B4DE5	cf_join_005B4DE5	disabled	apply=0
 005B4BB0	005B4DF8	cf_join_005B4DF8	disabled	apply=0
 005B4BB0	005B4EE5	cf_join_005B4EE5	disabled	apply=0
-005B4BB0	005B4EEC	cf_common_exit_005B4EEC	applied	kind=common_exit; gotos=8; previous=switchD_005b4db9::caseD_6904
+005B4BB0	005B4EEC	cf_common_exit_005B4EEC	unchanged	label is already primary
 005B5690	005B5731	cf_join_005B5731	disabled	apply=0
 005B6560	005B65DB	cf_join_005B65DB	disabled	apply=0
 005B7540	005B7655	cf_join_005B7655	disabled	apply=0
@@ -1866,8 +1868,8 @@ function_address	label_address	proposed_name	status	detail
 005BBA90	005BBB22	cf_join_005BBB22	disabled	apply=0
 005BC5E0	005BCCA3	cf_join_005BCCA3	disabled	apply=0
 005BC5E0	005BCCB9	cf_join_005BCCB9	disabled	apply=0
-005BC5E0	005BCD75	cf_common_exit_005BCD75	applied	kind=common_exit; gotos=2; previous=LAB_005bcd75
-005BC5E0	005BCF7F	cf_common_exit_005BCF7F	applied	kind=common_exit; gotos=10; previous=switchD_005bc9da::caseD_6944
+005BC5E0	005BCD75	cf_common_exit_005BCD75	unchanged	label is already primary
+005BC5E0	005BCF7F	cf_common_exit_005BCF7F	unchanged	label is already primary
 005BE5B0	005BEF47	cf_join_005BEF47	disabled	apply=0
 005BE5B0	005BEF67	cf_join_005BEF67	disabled	apply=0
 005BE5B0	005BEF6C	cf_join_005BEF6C	disabled	apply=0
@@ -1878,13 +1880,13 @@ function_address	label_address	proposed_name	status	detail
 005C1610	005C1806	cf_join_005C1806	disabled	apply=0
 005C1A90	005C1D24	cf_join_005C1D24	disabled	apply=0
 005C1A90	005C21C7	cf_join_005C21C7	disabled	apply=0
-005C1A90	005C22B1	cf_common_exit_005C22B1	applied	kind=common_exit; gotos=10; previous=switchD_005c1b14::caseD_1
+005C1A90	005C22B1	cf_common_exit_005C22B1	unchanged	label is already primary
 005C6030	005C665D	cf_join_005C665D	disabled	apply=0
 005C6030	005C69ED	cf_join_005C69ED	disabled	apply=0
 005C7800	005C7A2C	cf_join_005C7A2C	disabled	apply=0
 005C7800	005C7AE0	cf_join_005C7AE0	disabled	apply=0
 005C8A40	005C8B41	cf_join_005C8B41	disabled	apply=0
-005C8A40	005C8ECC	cf_common_join_005C8ECC	applied	kind=common_join; gotos=5; previous=LAB_005c8ecc
+005C8A40	005C8ECC	cf_common_join_005C8ECC	unchanged	label is already primary
 005C8A40	005C95D4	cf_join_005C95D4	disabled	apply=0
 005C8A40	005C964B	cf_join_005C964B	disabled	apply=0
 005C8A40	005C996C	cf_branch_target_005C996C	disabled	apply=0
@@ -1897,17 +1899,17 @@ function_address	label_address	proposed_name	status	detail
 005C8A40	005CA71B	cf_join_005CA71B	disabled	apply=0
 005C8A40	005CA73B	cf_join_005CA73B	disabled	apply=0
 005C8A40	005CA964	cf_join_005CA964	disabled	apply=0
-005C8A40	005CA971	cf_switch_join_005CA971	applied	kind=switch_join; gotos=5; previous=switchD_005c8bd0::caseD_6120
+005C8A40	005CA971	cf_common_join_005CA971	applied	kind=common_join; gotos=5; previous=SettMapTy::GetMessage::cf_switch_join_005CA971
 005C8A40	005CAB38	cf_join_005CAB38	disabled	apply=0
 005C8A40	005CAD88	cf_join_005CAD88	disabled	apply=0
 005C8A40	005CADD5	cf_join_005CADD5	disabled	apply=0
-005C8A40	005CAE0F	cf_common_exit_005CAE0F	applied	kind=common_exit; gotos=2; previous=LAB_005cae0f
+005C8A40	005CAE0F	cf_common_exit_005CAE0F	unchanged	label is already primary
 005C8A40	005CAE3E	cf_join_005CAE3E	disabled	apply=0
 005CC2D0	005CC360	cf_join_005CC360	disabled	apply=0
 005CCE10	005CD0BB	cf_branch_target_005CD0BB	disabled	apply=0
 005CCE10	005CD10F	cf_join_005CD10F	disabled	apply=0
 005CCE10	005CD119	cf_join_005CD119	disabled	apply=0
-005CCE10	005CD142	cf_common_join_005CD142	applied	kind=common_join; gotos=5; previous=LAB_005cd142
+005CCE10	005CD142	cf_common_join_005CD142	unchanged	label is already primary
 005CD430	005CD670	cf_join_005CD670	disabled	apply=0
 005CD430	005CD675	cf_join_005CD675	disabled	apply=0
 005CD430	005CD7DA	cf_join_005CD7DA	disabled	apply=0
@@ -1924,7 +1926,7 @@ function_address	label_address	proposed_name	status	detail
 005CE0E0	005CEF58	cf_join_005CEF58	disabled	apply=0
 005CE0E0	005CEF5D	cf_join_005CEF5D	disabled	apply=0
 005CE0E0	005CF387	cf_join_005CF387	disabled	apply=0
-005CE0E0	005CF38C	cf_continue_loop_005CF38C	applied	kind=continue_loop; gotos=5; previous=LAB_005cf38c
+005CE0E0	005CF38C	cf_continue_loop_005CF38C	unchanged	label is already primary
 005CE0E0	005CF496	cf_join_005CF496	disabled	apply=0
 005CE0E0	005CF49C	cf_branch_target_005CF49C	disabled	apply=0
 005CE0E0	005CF5BF	cf_join_005CF5BF	disabled	apply=0
@@ -1935,7 +1937,7 @@ function_address	label_address	proposed_name	status	detail
 005D0150	005D02C3	cf_join_005D02C3	disabled	apply=0
 005D0150	005D0391	cf_join_005D0391	disabled	apply=0
 005D0150	005D045A	cf_join_005D045A	disabled	apply=0
-005D0150	005D0486	cf_continue_loop_005D0486	applied	kind=continue_loop; gotos=2; previous=LAB_005d0486
+005D0150	005D0486	cf_continue_loop_005D0486	unchanged	label is already primary
 005D0150	005D048E	cf_join_005D048E	disabled	apply=0
 005D1100	005D11AD	cf_join_005D11AD	disabled	apply=0
 005D1100	005D11EE	cf_join_005D11EE	disabled	apply=0
@@ -1986,12 +1988,12 @@ function_address	label_address	proposed_name	status	detail
 005D9470	005D979C	cf_join_005D979C	disabled	apply=0
 005D9470	005D97C5	cf_join_005D97C5	disabled	apply=0
 005D9470	005D97CA	cf_join_005D97CA	disabled	apply=0
-005D9470	005D9CCB	cf_common_exit_005D9CCB	applied	kind=common_exit; gotos=7; previous=LAB_005d9ccb
+005D9470	005D9CCB	cf_common_exit_005D9CCB	unchanged	label is already primary
 005DAF20	005DAF91	cf_join_005DAF91	disabled	apply=0
 005DAF20	005DAFAB	cf_join_005DAFAB	disabled	apply=0
 005DB030	005DB18E	cf_branch_target_005DB18E	disabled	apply=0
-005DB030	005DB1AB	cf_common_exit_005DB1AB	applied	kind=common_exit; gotos=3; previous=LAB_005db1ab
-005DB030	005DB1E1	cf_common_exit_005DB1E1	applied	kind=common_exit; gotos=2; previous=LAB_005db1e1
+005DB030	005DB1AB	cf_common_exit_005DB1AB	unchanged	label is already primary
+005DB030	005DB1E1	cf_common_exit_005DB1E1	unchanged	label is already primary
 005DC050	005DC22D	cf_join_005DC22D	disabled	apply=0
 005DC050	005DC430	cf_join_005DC430	disabled	apply=0
 005DC730	005DC828	cf_join_005DC828	disabled	apply=0
@@ -2025,33 +2027,33 @@ function_address	label_address	proposed_name	status	detail
 005E4570	005E492F	cf_join_005E492F	disabled	apply=0
 005E4570	005E496B	cf_join_005E496B	disabled	apply=0
 005E4570	005E5255	cf_join_005E5255	disabled	apply=0
-005E4570	005E525B	cf_common_exit_005E525B	applied	kind=common_exit; gotos=4; previous=switchD_005e45f7::caseD_1
+005E4570	005E525B	cf_common_exit_005E525B	unchanged	label is already primary
 005E7C00	005E7D14	cf_join_005E7D14	disabled	apply=0
 005E7FE0	005E829D	cf_join_005E829D	disabled	apply=0
 005E84D0	005E8EE0	cf_join_005E8EE0	disabled	apply=0
 005E84D0	005E91F7	cf_join_005E91F7	disabled	apply=0
 005E84D0	005E9233	cf_join_005E9233	disabled	apply=0
 005EA680	005EAB28	cf_join_005EAB28	disabled	apply=0
-005EA680	005EAB6A	cf_common_exit_005EAB6A	applied	kind=common_exit; gotos=5; previous=LAB_005eab6a
+005EA680	005EAB6A	cf_common_exit_005EAB6A	unchanged	label is already primary
 005EAF10	005EB62E	cf_branch_target_005EB62E	disabled	apply=0
 005EAF10	005EB7F8	cf_branch_target_005EB7F8	disabled	apply=0
 005ED1C0	005ED4B7	cf_branch_target_005ED4B7	disabled	apply=0
 005ED1C0	005ED643	cf_join_005ED643	disabled	apply=0
 005ED1C0	005ED68C	cf_join_005ED68C	disabled	apply=0
-005ED1C0	005ED874	cf_common_exit_005ED874	applied	kind=common_exit; gotos=2; previous=LAB_005ed874
+005ED1C0	005ED874	cf_common_exit_005ED874	unchanged	label is already primary
 005EE080	005EE2FE	cf_join_005EE2FE	disabled	apply=0
 005EE6E0	005EE9DB	cf_join_005EE9DB	disabled	apply=0
 005EE6E0	005EED0B	cf_branch_target_005EED0B	disabled	apply=0
-005EE6E0	005EEDDF	cf_common_exit_005EEDDF	applied	kind=common_exit; gotos=2; previous=LAB_005eeddf
+005EE6E0	005EEDDF	cf_common_exit_005EEDDF	unchanged	label is already primary
 005EEFF0	005EF316	cf_join_005EF316	disabled	apply=0
 005EF6C0	005EF720	cf_join_005EF720	disabled	apply=0
-005EF7A0	005EF8D0	cf_common_exit_005EF8D0	applied	kind=common_exit; gotos=2; previous=LAB_005ef8d0
+005EF7A0	005EF8D0	cf_common_exit_005EF8D0	unchanged	label is already primary
 005F0620	005F0692	cf_join_005F0692	disabled	apply=0
 005F06E0	005F0752	cf_join_005F0752	disabled	apply=0
 005F19A0	005F19BE	cf_branch_target_005F19BE	disabled	apply=0
 005F19A0	005F1C4C	cf_join_005F1C4C	disabled	apply=0
 005F19A0	005F1C99	cf_branch_target_005F1C99	disabled	apply=0
-005F23D0	005F26AF	cf_common_exit_005F26AF	applied	kind=common_exit; gotos=2; previous=LAB_005f26af
+005F23D0	005F26AF	cf_common_exit_005F26AF	unchanged	label is already primary
 005F27C0	005F2B2E	cf_join_005F2B2E	disabled	apply=0
 005F27C0	005F2B30	cf_join_005F2B30	disabled	apply=0
 005F27C0	005F2B3A	cf_join_005F2B3A	disabled	apply=0
@@ -2059,16 +2061,16 @@ function_address	label_address	proposed_name	status	detail
 005F27C0	005F2FC9	cf_common_exit_005F2FC9	disabled	apply=0
 005F27C0	005F3027	cf_join_005F3027	disabled	apply=0
 005F4FA0	005F528B	cf_join_005F528B	disabled	apply=0
-005F5700	005F5985	cf_continue_loop_005F5985	applied	kind=continue_loop; gotos=2; previous=LAB_005f5985
+005F5700	005F5985	cf_continue_loop_005F5985	unchanged	label is already primary
 005F5D10	005F5D4B	cf_join_005F5D4B	disabled	apply=0
 005F5F20	005F61E2	cf_join_005F61E2	disabled	apply=0
 005F5F20	005F6308	cf_branch_target_005F6308	disabled	apply=0
 005F6F60	005F7400	cf_join_005F7400	disabled	apply=0
 005F6F60	005F744E	cf_join_005F744E	disabled	apply=0
-005F6F60	005F76D2	cf_common_exit_005F76D2	applied	kind=common_exit; gotos=2; previous=LAB_005f76d2
+005F6F60	005F76D2	cf_common_exit_005F76D2	unchanged	label is already primary
 005F6F60	005F7927	cf_join_005F7927	disabled	apply=0
 005F6F60	005F79AA	cf_join_005F79AA	disabled	apply=0
-005F6F60	005F7A68	cf_common_exit_005F7A68	applied	kind=common_exit; gotos=3; previous=LAB_005f7a68
+005F6F60	005F7A68	cf_common_exit_005F7A68	unchanged	label is already primary
 005F6F60	005F7EFC	cf_join_005F7EFC	disabled	apply=0
 005F8D10	005F8EA2	cf_join_005F8EA2	disabled	apply=0
 005F9CB0	005F9D2F	cf_join_005F9D2F	disabled	apply=0
@@ -2077,7 +2079,7 @@ function_address	label_address	proposed_name	status	detail
 005FB640	005FBF5A	cf_branch_target_005FBF5A	disabled	apply=0
 005FD3A0	005FD4EB	cf_join_005FD4EB	disabled	apply=0
 005FDB50	005FE09B	cf_branch_target_005FE09B	disabled	apply=0
-005FE5D0	005FE866	cf_common_exit_005FE866	applied	kind=common_exit; gotos=2; previous=LAB_005fe866
+005FE5D0	005FE866	cf_common_exit_005FE866	unchanged	label is already primary
 005FEB60	005FEE45	cf_join_005FEE45	disabled	apply=0
 005FEB60	005FEF0E	cf_join_005FEF0E	disabled	apply=0
 005FF1F0	005FF2FA	cf_join_005FF2FA	disabled	apply=0
@@ -2094,16 +2096,16 @@ function_address	label_address	proposed_name	status	detail
 005FF430	005FF8C9	cf_join_005FF8C9	disabled	apply=0
 005FF430	005FF95E	cf_join_005FF95E	disabled	apply=0
 005FF430	005FFA18	cf_join_005FFA18	disabled	apply=0
-005FF430	005FFA34	cf_common_exit_005FFA34	applied	kind=common_exit; gotos=5; previous=LAB_005ffa34
+005FF430	005FFA34	cf_common_exit_005FFA34	unchanged	label is already primary
 005FF430	005FFA94	cf_join_005FFA94	disabled	apply=0
-005FF430	005FFAB2	cf_common_exit_005FFAB2	applied	kind=common_exit; gotos=2; previous=LAB_005ffab2
+005FF430	005FFAB2	cf_common_exit_005FFAB2	unchanged	label is already primary
 005FF430	005FFAD3	cf_join_005FFAD3	disabled	apply=0
 005FF430	005FFC99	cf_join_005FFC99	disabled	apply=0
 006001E0	0060033C	cf_join_0060033C	disabled	apply=0
 00600750	00600928	cf_join_00600928	disabled	apply=0
 00601500	006018C7	cf_join_006018C7	disabled	apply=0
 00601500	00601AEB	cf_join_00601AEB	disabled	apply=0
-00601500	00601B38	cf_common_exit_00601B38	applied	kind=common_exit; gotos=2; previous=LAB_00601b38
+00601500	00601B38	cf_common_exit_00601B38	unchanged	label is already primary
 00606050	00606189	cf_join_00606189	disabled	apply=0
 00606050	00606282	cf_join_00606282	disabled	apply=0
 00606050	00606321	cf_join_00606321	disabled	apply=0
@@ -2126,11 +2128,11 @@ function_address	label_address	proposed_name	status	detail
 0060AEF0	0060B2CE	cf_join_0060B2CE	disabled	apply=0
 0060AEF0	0060B48B	cf_join_0060B48B	disabled	apply=0
 0060AEF0	0060B643	cf_join_0060B643	disabled	apply=0
-0060AEF0	0060B649	cf_continue_loop_0060B649	applied	kind=continue_loop; gotos=2; previous=LAB_0060b649
+0060AEF0	0060B649	cf_continue_loop_0060B649	unchanged	label is already primary
 0060C320	0060C5F5	cf_join_0060C5F5	disabled	apply=0
 0060EF40	0060F230	cf_join_0060F230	disabled	apply=0
 0060F940	0060FE02	cf_join_0060FE02	disabled	apply=0
-006101B0	00610347	cf_common_join_00610347	applied	kind=common_join; gotos=4; previous=LAB_00610347
+006101B0	00610347	cf_common_join_00610347	unchanged	label is already primary
 006101B0	00610911	cf_join_00610911	disabled	apply=0
 006101B0	00610969	cf_join_00610969	disabled	apply=0
 006101B0	00610D47	cf_join_00610D47	disabled	apply=0
@@ -2144,8 +2146,8 @@ function_address	label_address	proposed_name	status	detail
 006101B0	0061190F	cf_join_0061190F	disabled	apply=0
 006101B0	0061196B	cf_join_0061196B	disabled	apply=0
 006101B0	00611C0D	cf_branch_target_00611C0D	disabled	apply=0
-006101B0	00611C0F	cf_common_exit_00611C0F	applied	kind=common_exit; gotos=6; previous=LAB_00611c0f
-006101B0	006121E1	cf_common_exit_006121E1	applied	kind=common_exit; gotos=3; previous=LAB_006121e1
+006101B0	00611C0F	cf_common_exit_00611C0F	unchanged	label is already primary
+006101B0	006121E1	cf_common_exit_006121E1	unchanged	label is already primary
 006101B0	006122DD	cf_join_006122DD	disabled	apply=0
 006101B0	006123FD	cf_join_006123FD	disabled	apply=0
 006101B0	00612459	cf_join_00612459	disabled	apply=0
@@ -2158,16 +2160,16 @@ function_address	label_address	proposed_name	status	detail
 00615FD0	006161A8	cf_join_006161A8	disabled	apply=0
 00615FD0	006161D7	cf_join_006161D7	disabled	apply=0
 00616F60	006171D9	cf_join_006171D9	disabled	apply=0
-00616F60	00617221	cf_common_exit_00617221	applied	kind=common_exit; gotos=5; previous=LAB_00617221
+00616F60	00617221	cf_common_exit_00617221	unchanged	label is already primary
 00618240	0061856A	cf_join_0061856A	disabled	apply=0
 00618240	0061871C	cf_join_0061871C	disabled	apply=0
 00618C00	00618CE0	cf_join_00618CE0	disabled	apply=0
-006191A0	00619287	cf_common_exit_00619287	applied	kind=common_exit; gotos=3; previous=LAB_00619287
+006191A0	00619287	cf_common_exit_00619287	unchanged	label is already primary
 00619C70	00619E5F	cf_join_00619E5F	disabled	apply=0
 00619C70	0061A4F4	cf_join_0061A4F4	disabled	apply=0
 00619C70	0061A4FD	cf_join_0061A4FD	disabled	apply=0
-00619C70	0061A55D	cf_common_exit_0061A55D	applied	kind=common_exit; gotos=2; previous=LAB_0061a55d
-00619C70	0061AB3A	cf_common_exit_0061AB3A	applied	kind=common_exit; gotos=3; previous=switchD_0061aa5c::caseD_4
+00619C70	0061A55D	cf_common_exit_0061A55D	unchanged	label is already primary
+00619C70	0061AB3A	cf_common_exit_0061AB3A	unchanged	label is already primary
 00619C70	0061ACC2	cf_join_0061ACC2	disabled	apply=0
 00619C70	0061AE46	cf_common_exit_0061AE46	disabled	apply=0
 0061B340	0061B627	cf_join_0061B627	disabled	apply=0
@@ -2191,8 +2193,8 @@ function_address	label_address	proposed_name	status	detail
 0061E7F0	0061F043	cf_join_0061F043	disabled	apply=0
 006202B0	0062030E	cf_join_0062030E	disabled	apply=0
 00621780	0062199A	cf_join_0062199A	disabled	apply=0
-00621B50	00621D24	cf_common_exit_00621D24	applied	kind=common_exit; gotos=2; previous=LAB_00621d24
-006226C0	006227F9	cf_common_exit_006227F9	applied	kind=common_exit; gotos=2; previous=LAB_006227f9
+00621B50	00621D24	cf_common_exit_00621D24	unchanged	label is already primary
+006226C0	006227F9	cf_common_exit_006227F9	unchanged	label is already primary
 00623600	0062371F	cf_join_0062371F	disabled	apply=0
 00623600	00623863	cf_join_00623863	disabled	apply=0
 00623600	006238C2	cf_join_006238C2	disabled	apply=0
@@ -2208,7 +2210,7 @@ function_address	label_address	proposed_name	status	detail
 00625730	00625BAD	cf_join_00625BAD	disabled	apply=0
 00625730	00625D60	cf_join_00625D60	disabled	apply=0
 00625730	00625EFC	cf_join_00625EFC	disabled	apply=0
-00625730	0062607F	cf_continue_loop_0062607F	applied	kind=continue_loop; gotos=2; previous=switchD_00626071::caseD_a8
+00625730	0062607F	cf_continue_loop_0062607F	unchanged	label is already primary
 006264D0	0062687F	cf_join_0062687F	disabled	apply=0
 00627AA0	00627BB8	cf_join_00627BB8	disabled	apply=0
 00627AA0	00627C7A	cf_join_00627C7A	disabled	apply=0
@@ -2224,8 +2226,8 @@ function_address	label_address	proposed_name	status	detail
 00629070	00629242	cf_join_00629242	disabled	apply=0
 00629E60	00629ECF	cf_join_00629ECF	disabled	apply=0
 00629F90	0062A1DD	cf_join_0062A1DD	disabled	apply=0
-00629F90	0062A1E3	cf_common_exit_0062A1E3	applied	kind=common_exit; gotos=3; previous=switchD_0062a167::caseD_3
-0062B4A0	0062B616	cf_common_exit_0062B616	applied	kind=common_exit; gotos=2; previous=LAB_0062b616
+00629F90	0062A1E3	cf_common_exit_0062A1E3	unchanged	label is already primary
+0062B4A0	0062B616	cf_common_exit_0062B616	unchanged	label is already primary
 0062D670	0062D74A	cf_join_0062D74A	disabled	apply=0
 0062D840	0062D8AB	cf_join_0062D8AB	disabled	apply=0
 0062E740	0062EA02	cf_join_0062EA02	disabled	apply=0
@@ -2251,7 +2253,7 @@ function_address	label_address	proposed_name	status	detail
 00639C90	0063B795	cf_join_0063B795	disabled	apply=0
 00639C90	0063B828	cf_join_0063B828	disabled	apply=0
 0063CC50	0063CF09	cf_join_0063CF09	disabled	apply=0
-0063E9C0	0063EACD	cf_common_join_0063EACD	applied	kind=common_join; gotos=5; previous=LAB_0063eacd
+0063E9C0	0063EACD	cf_common_join_0063EACD	unchanged	label is already primary
 0063F790	0063FC75	cf_join_0063FC75	disabled	apply=0
 006406D0	00640B25	cf_join_00640B25	disabled	apply=0
 006406D0	00640D27	cf_join_00640D27	disabled	apply=0
@@ -2262,14 +2264,13 @@ function_address	label_address	proposed_name	status	detail
 006406D0	006424A7	cf_join_006424A7	disabled	apply=0
 006406D0	00642561	cf_join_00642561	disabled	apply=0
 006406D0	00642C6E	cf_join_00642C6E	disabled	apply=0
-006406D0	00642C8B	cf_common_exit_00642C8B	applied	kind=common_exit; gotos=2; previous=LAB_00642c8b
-00643E20	00643F4A	cf_join_00643F4A	disabled	apply=0
-00643E20	0064428F	cf_common_exit_0064428F	applied	kind=common_exit; gotos=2; previous=LAB_0064428f
+006406D0	00642C8B	cf_common_exit_00642C8B	unchanged	label is already primary
+00643E20	0064428F	cf_common_exit_0064428F	unchanged	label is already primary
 00645880	00645914	cf_join_00645914	disabled	apply=0
 00645880	00645950	cf_join_00645950	disabled	apply=0
-00645880	00645953	cf_common_exit_00645953	applied	kind=common_exit; gotos=2; previous=LAB_00645953
+00645880	00645953	cf_common_exit_00645953	unchanged	label is already primary
 00645880	006459DF	cf_join_006459DF	disabled	apply=0
-006473E0	00647445	cf_common_exit_00647445	applied	kind=common_exit; gotos=2; previous=LAB_00647445
+006473E0	00647445	cf_common_exit_00647445	unchanged	label is already primary
 00648030	00648291	cf_join_00648291	disabled	apply=0
 00648FE0	00649255	cf_join_00649255	disabled	apply=0
 00649FF0	0064A336	cf_join_0064A336	disabled	apply=0
@@ -2277,28 +2278,28 @@ function_address	label_address	proposed_name	status	detail
 0064A970	0064AB59	cf_join_0064AB59	disabled	apply=0
 0064A970	0064AE25	cf_join_0064AE25	disabled	apply=0
 0064A970	0064B048	cf_join_0064B048	disabled	apply=0
-0064A970	0064B291	cf_common_exit_0064B291	applied	kind=common_exit; gotos=4; previous=LAB_0064b291
-0064A970	0064B368	cf_error_exit_0064B368	applied	kind=error_exit; gotos=5; previous=LAB_0064b368
-0064A970	0064B36F	cf_common_exit_0064B36F	applied	kind=common_exit; gotos=27; previous=LAB_0064b36f
+0064A970	0064B291	cf_common_exit_0064B291	unchanged	label is already primary
+0064A970	0064B368	cf_error_exit_0064B368	unchanged	label is already primary
+0064A970	0064B36F	cf_common_exit_0064B36F	unchanged	label is already primary
 0064A970	0064B492	cf_join_0064B492	disabled	apply=0
 0064A970	0064B49A	cf_join_0064B49A	disabled	apply=0
 0064A970	0064B659	cf_join_0064B659	disabled	apply=0
 0064A970	0064B663	cf_join_0064B663	disabled	apply=0
 0064A970	0064B6BF	cf_join_0064B6BF	disabled	apply=0
-0064A970	0064B714	cf_error_exit_0064B714	applied	kind=error_exit; gotos=2; previous=LAB_0064b714
+0064A970	0064B714	cf_error_exit_0064B714	unchanged	label is already primary
 0064A970	0064B781	cf_branch_target_0064B781	disabled	apply=0
 0064A970	0064B78B	cf_join_0064B78B	disabled	apply=0
-0064A970	0064B79F	cf_common_exit_0064B79F	applied	kind=common_exit; gotos=3; previous=LAB_0064b79f
+0064A970	0064B79F	cf_common_exit_0064B79F	unchanged	label is already primary
 0064A970	0064B7EA	cf_join_0064B7EA	disabled	apply=0
 0064A970	0064B80A	cf_join_0064B80A	disabled	apply=0
 0064A970	0064B8F1	cf_join_0064B8F1	disabled	apply=0
 0064A970	0064B901	cf_join_0064B901	disabled	apply=0
-0064A970	0064BBB1	cf_common_exit_0064BBB1	applied	kind=common_exit; gotos=3; previous=LAB_0064bbb1
+0064A970	0064BBB1	cf_common_exit_0064BBB1	unchanged	label is already primary
 0064A970	0064BD33	cf_join_0064BD33	disabled	apply=0
-0064A970	0064C271	cf_common_exit_0064C271	applied	kind=common_exit; gotos=3; previous=switchD_0064aa67::caseD_2
-0064A970	0064C2A4	cf_error_exit_0064C2A4	applied	kind=error_exit; gotos=11; previous=LAB_0064c2a4
+0064A970	0064C271	cf_common_exit_0064C271	unchanged	label is already primary
+0064A970	0064C2A4	cf_error_exit_0064C2A4	unchanged	label is already primary
 0064F900	0064F931	cf_join_0064F931	disabled	apply=0
-00652810	00652A99	cf_common_join_00652A99	applied	kind=common_join; gotos=24; previous=LAB_00652a99
+00652810	00652A99	cf_common_join_00652A99	unchanged	label is already primary
 00652810	00652B42	cf_branch_target_00652B42	disabled	apply=0
 00652810	006536DD	cf_join_006536DD	disabled	apply=0
 00652810	00653778	cf_join_00653778	disabled	apply=0
@@ -2346,40 +2347,39 @@ function_address	label_address	proposed_name	status	detail
 00652810	00659785	cf_join_00659785	disabled	apply=0
 00652810	006598CA	cf_join_006598CA	disabled	apply=0
 00652810	00659A1C	cf_join_00659A1C	disabled	apply=0
-00652810	00659A73	cf_switch_join_00659A73	applied	kind=switch_join; gotos=112; previous=switchD_00652a7f::caseD_3
-00652810	00659A80	cf_continue_loop_00659A80	applied	kind=continue_loop; gotos=4; previous=LAB_00659a80
+00652810	00659A73	cf_common_join_00659A73	applied	kind=common_join; gotos=112; previous=AiEventClassTy::GetMessage::cf_switch_join_00659A73
+00652810	00659A80	cf_continue_loop_00659A80	unchanged	label is already primary
 00652810	00659AAE	cf_join_00659AAE	disabled	apply=0
 0065BD70	0065C021	cf_join_0065C021	disabled	apply=0
 0065BD70	0065C03E	cf_join_0065C03E	disabled	apply=0
 0065BD70	0065C042	cf_join_0065C042	disabled	apply=0
 0065BD70	0065C4BB	cf_join_0065C4BB	disabled	apply=0
-0065BD70	0065C570	cf_common_exit_0065C570	applied	kind=common_exit; gotos=4; previous=LAB_0065c570
-0065BD70	0065C65B	cf_common_exit_0065C65B	applied	kind=common_exit; gotos=9; previous=switchD_0065bf29::caseD_5dc7
-0065DC00	0065DCCA	cf_join_0065DCCA	disabled	apply=0
+0065BD70	0065C570	cf_common_exit_0065C570	unchanged	label is already primary
+0065BD70	0065C65B	cf_common_exit_0065C65B	unchanged	label is already primary
 0065DD30	0065DE3C	cf_join_0065DE3C	disabled	apply=0
 0065DD30	0065DEA0	cf_branch_target_0065DEA0	disabled	apply=0
 0065DD30	0065DEA6	cf_join_0065DEA6	disabled	apply=0
 0065DD30	0065DEEA	cf_join_0065DEEA	disabled	apply=0
 0065DD30	0065DEEF	cf_join_0065DEEF	disabled	apply=0
-0065DD30	0065DF91	cf_common_join_0065DF91	applied	kind=common_join; gotos=4; previous=LAB_0065df91
+0065DD30	0065DF91	cf_common_join_0065DF91	unchanged	label is already primary
 0065E070	0065E1B6	cf_join_0065E1B6	disabled	apply=0
 0065E070	0065E216	cf_branch_target_0065E216	disabled	apply=0
 0065E070	0065E218	cf_join_0065E218	disabled	apply=0
 0065E070	0065E25C	cf_join_0065E25C	disabled	apply=0
 0065E070	0065E261	cf_join_0065E261	disabled	apply=0
-0065E070	0065E27E	cf_continue_loop_0065E27E	applied	kind=continue_loop; gotos=4; previous=LAB_0065e27e
+0065E070	0065E27E	cf_continue_loop_0065E27E	unchanged	label is already primary
 0065E450	0065E58D	cf_join_0065E58D	disabled	apply=0
 0065E450	0065E5A7	cf_join_0065E5A7	disabled	apply=0
 0065E9A0	0065EAF3	cf_join_0065EAF3	disabled	apply=0
 0065ED90	0065EEDF	cf_join_0065EEDF	disabled	apply=0
 0065EF70	0065F095	cf_join_0065F095	disabled	apply=0
 0065F1D0	0065F3C9	cf_join_0065F3C9	disabled	apply=0
-0065F1D0	0065F468	cf_common_exit_0065F468	applied	kind=common_exit; gotos=2; previous=LAB_0065f468
+0065F1D0	0065F468	cf_common_exit_0065F468	unchanged	label is already primary
 0065FE10	0065FEC9	cf_join_0065FEC9	disabled	apply=0
 0065FE10	0065FF72	cf_join_0065FF72	disabled	apply=0
 00660010	00660050	cf_join_00660050	disabled	apply=0
 00660F70	0066115D	cf_join_0066115D	disabled	apply=0
-00660F70	0066137E	cf_continue_loop_0066137E	applied	kind=continue_loop; gotos=4; previous=LAB_0066137e
+00660F70	0066137E	cf_continue_loop_0066137E	unchanged	label is already primary
 00661580	006615FF	cf_join_006615FF	disabled	apply=0
 006618E0	00661A96	cf_join_00661A96	disabled	apply=0
 00661CA0	00661E5F	cf_join_00661E5F	disabled	apply=0
@@ -2387,7 +2387,7 @@ function_address	label_address	proposed_name	status	detail
 00662240	0066263E	cf_join_0066263E	disabled	apply=0
 00662240	00662D61	cf_join_00662D61	disabled	apply=0
 00662240	00662DBB	cf_join_00662DBB	disabled	apply=0
-00662240	00662E52	cf_continue_loop_00662E52	applied	kind=continue_loop; gotos=2; previous=LAB_00662e52
+00662240	00662E52	cf_continue_loop_00662E52	unchanged	label is already primary
 00662240	00662EE7	cf_join_00662EE7	disabled	apply=0
 00662240	00662F34	cf_join_00662F34	disabled	apply=0
 00662240	00663076	cf_join_00663076	disabled	apply=0
@@ -2397,8 +2397,8 @@ function_address	label_address	proposed_name	status	detail
 00662240	006636DA	cf_join_006636DA	disabled	apply=0
 00662240	0066380D	cf_join_0066380D	disabled	apply=0
 00662240	00663AF0	cf_join_00663AF0	disabled	apply=0
-00664960	00664FF6	cf_common_join_00664FF6	applied	kind=common_join; gotos=9; previous=LAB_00664ff6
-00664960	00665024	cf_common_join_00665024	applied	kind=common_join; gotos=9; previous=LAB_00665024
+00664960	00664FF6	cf_common_join_00664FF6	unchanged	label is already primary
+00664960	00665024	cf_common_join_00665024	unchanged	label is already primary
 00664960	00665047	cf_join_00665047	disabled	apply=0
 00664960	0066505F	cf_break_loop_0066505F	disabled	apply=0
 00664960	00665067	cf_join_00665067	disabled	apply=0
@@ -2428,32 +2428,32 @@ function_address	label_address	proposed_name	status	detail
 00664960	006668F9	cf_join_006668F9	disabled	apply=0
 00664960	00666901	cf_join_00666901	disabled	apply=0
 00664960	00666934	cf_join_00666934	disabled	apply=0
-00664960	00666CEB	cf_common_join_00666CEB	applied	kind=common_join; gotos=9; previous=
+00664960	00666CEB	cf_common_join_00666CEB	unchanged	label is already primary
 00664960	00666DB5	cf_join_00666DB5	disabled	apply=0
-00664960	00666DC1	cf_common_join_00666DC1	applied	kind=common_join; gotos=4; previous=LAB_00666dc1
+00664960	00666DC1	cf_common_join_00666DC1	unchanged	label is already primary
 00664960	00666DDF	cf_join_00666DDF	disabled	apply=0
-00664960	0066703E	cf_break_loop_0066703E	applied	kind=break_loop; gotos=2; previous=LAB_0066703e
-00664960	00667047	cf_common_join_00667047	applied	kind=common_join; gotos=5; previous=LAB_00667047
-00664960	0066704E	cf_common_join_0066704E	applied	kind=common_join; gotos=7; previous=LAB_0066704e
-00664960	00667054	cf_common_join_00667054	applied	kind=common_join; gotos=8; previous=LAB_00667054
+00664960	0066703E	cf_break_loop_0066703E	unchanged	label is already primary
+00664960	00667047	cf_common_join_00667047	unchanged	label is already primary
+00664960	0066704E	cf_common_join_0066704E	unchanged	label is already primary
+00664960	00667054	cf_common_join_00667054	unchanged	label is already primary
 00664960	0066705A	cf_join_0066705A	disabled	apply=0
-00664960	00667066	cf_common_exit_00667066	applied	kind=common_exit; gotos=48; previous=switchD_00665095::caseD_1
+00664960	00667066	cf_common_exit_00667066	unchanged	label is already primary
 00667D90	00668010	cf_join_00668010	disabled	apply=0
-006686F0	00668754	cf_common_exit_00668754	applied	kind=common_exit; gotos=4; previous=switchD_0066872f::caseD_320
-006686F0	00668773	cf_common_exit_00668773	applied	kind=common_exit; gotos=4; previous=switchD_0066872f::caseD_388
+006686F0	00668754	cf_common_exit_00668754	unchanged	label is already primary
+006686F0	00668773	cf_common_exit_00668773	unchanged	label is already primary
 006686F0	0066878B	cf_join_0066878B	disabled	apply=0
 006686F0	0066878F	cf_join_0066878F	disabled	apply=0
 006686F0	006687AF	cf_join_006687AF	disabled	apply=0
 006686F0	006687C4	cf_join_006687C4	disabled	apply=0
-006686F0	006687E7	cf_common_exit_006687E7	applied	kind=common_exit; gotos=4; previous=switchD_0066872f::caseD_322
+006686F0	006687E7	cf_common_exit_006687E7	unchanged	label is already primary
 00668AA0	00668BAB	cf_common_exit_00668BAB	disabled	apply=0
 00668AA0	00668C1F	cf_join_00668C1F	disabled	apply=0
 00668AA0	00668C3E	cf_join_00668C3E	disabled	apply=0
-00668AA0	00668C44	cf_common_exit_00668C44	applied	kind=common_exit; gotos=7; previous=switchD_00668b66::caseD_4
-00668AA0	00668C64	cf_common_exit_00668C64	applied	kind=common_exit; gotos=6; previous=switchD_00668bfb::caseD_4
+00668AA0	00668C44	cf_common_exit_00668C44	unchanged	label is already primary
+00668AA0	00668C64	cf_common_exit_00668C64	unchanged	label is already primary
 00668AA0	00668C86	cf_join_00668C86	disabled	apply=0
-00668AA0	00668C88	cf_common_exit_00668C88	applied	kind=common_exit; gotos=7; previous=switchD_00668b66::caseD_3
-00668AA0	00668CC0	cf_common_exit_00668CC0	applied	kind=common_exit; gotos=2; previous=switchD_00668cb9::caseD_4
+00668AA0	00668C88	cf_common_exit_00668C88	unchanged	label is already primary
+00668AA0	00668CC0	cf_common_exit_00668CC0	unchanged	label is already primary
 00668AA0	00668CE0	cf_join_00668CE0	disabled	apply=0
 00668AA0	00668CE2	cf_join_00668CE2	disabled	apply=0
 00668F50	00669807	cf_join_00669807	disabled	apply=0
@@ -2479,22 +2479,22 @@ function_address	label_address	proposed_name	status	detail
 0066ACC0	0066BB5E	cf_join_0066BB5E	disabled	apply=0
 0066ACC0	0066BDCC	cf_join_0066BDCC	disabled	apply=0
 0066ACC0	0066BFF3	cf_join_0066BFF3	disabled	apply=0
-0066ACC0	0066CACB	cf_common_join_0066CACB	applied	kind=common_join; gotos=4; previous=LAB_0066cacb
-0066ACC0	0066CACD	cf_continue_loop_0066CACD	applied	kind=continue_loop; gotos=2; previous=switchD_0066c9e5::caseD_3
-0066ACC0	0066CD48	cf_common_join_0066CD48	applied	kind=common_join; gotos=4; previous=LAB_0066cd48
-0066ACC0	0066CD4A	cf_continue_loop_0066CD4A	applied	kind=continue_loop; gotos=2; previous=switchD_0066cc62::caseD_3
-0066ACC0	0066CFC8	cf_common_join_0066CFC8	applied	kind=common_join; gotos=4; previous=LAB_0066cfc8
-0066ACC0	0066CFCA	cf_continue_loop_0066CFCA	applied	kind=continue_loop; gotos=2; previous=switchD_0066cedf::caseD_3
+0066ACC0	0066CACB	cf_common_join_0066CACB	unchanged	label is already primary
+0066ACC0	0066CACD	cf_continue_loop_0066CACD	unchanged	label is already primary
+0066ACC0	0066CD48	cf_common_join_0066CD48	unchanged	label is already primary
+0066ACC0	0066CD4A	cf_continue_loop_0066CD4A	unchanged	label is already primary
+0066ACC0	0066CFC8	cf_common_join_0066CFC8	unchanged	label is already primary
+0066ACC0	0066CFCA	cf_continue_loop_0066CFCA	unchanged	label is already primary
 0066ACC0	0066D630	cf_join_0066D630	disabled	apply=0
-0066ACC0	0066DCED	cf_common_exit_0066DCED	applied	kind=common_exit; gotos=2; previous=LAB_0066dced
-0066ACC0	0066DF5E	cf_common_exit_0066DF5E	applied	kind=common_exit; gotos=5; previous=LAB_0066df5e
+0066ACC0	0066DCED	cf_common_exit_0066DCED	unchanged	label is already primary
+0066ACC0	0066DF5E	cf_common_exit_0066DF5E	unchanged	label is already primary
 0066ACC0	0066FBC1	cf_join_0066FBC1	disabled	apply=0
-0066ACC0	006703E6	cf_common_join_006703E6	applied	kind=common_join; gotos=4; previous=
+0066ACC0	006703E6	cf_common_join_006703E6	unchanged	label is already primary
 0066ACC0	0067041B	cf_join_0067041B	disabled	apply=0
-0066ACC0	00670425	cf_common_exit_00670425	applied	kind=common_exit; gotos=2; previous=LAB_00670425
-0066ACC0	00670431	cf_common_exit_00670431	applied	kind=common_exit; gotos=10; previous=LAB_00670431
-0066ACC0	00670456	cf_common_exit_00670456	applied	kind=common_exit; gotos=5; previous=switchD_0066b69d::caseD_7d8
-00671F10	006721A4	cf_continue_loop_006721A4	applied	kind=continue_loop; gotos=2; previous=LAB_006721a4
+0066ACC0	00670425	cf_common_exit_00670425	unchanged	label is already primary
+0066ACC0	00670431	cf_common_exit_00670431	unchanged	label is already primary
+0066ACC0	00670456	cf_common_exit_00670456	unchanged	label is already primary
+00671F10	006721A4	cf_continue_loop_006721A4	unchanged	label is already primary
 00672440	0067276F	cf_join_0067276F	disabled	apply=0
 00673210	0067339A	cf_join_0067339A	disabled	apply=0
 006736F0	006737E2	cf_join_006737E2	disabled	apply=0
@@ -2506,9 +2506,9 @@ function_address	label_address	proposed_name	status	detail
 006736F0	00673990	cf_join_00673990	disabled	apply=0
 006736F0	006739BE	cf_break_loop_006739BE	disabled	apply=0
 006736F0	006739CD	cf_join_006739CD	disabled	apply=0
-006736F0	00673BA7	cf_common_exit_00673BA7	applied	kind=common_exit; gotos=3; previous=LAB_00673ba7
+006736F0	00673BA7	cf_common_exit_00673BA7	unchanged	label is already primary
 006736F0	00673BAE	cf_break_loop_00673BAE	disabled	apply=0
-006736F0	00673BB3	cf_common_exit_00673BB3	applied	kind=common_exit; gotos=4; previous=LAB_00673bb3
+006736F0	00673BB3	cf_common_exit_00673BB3	unchanged	label is already primary
 00673D20	00673D71	cf_join_00673D71	disabled	apply=0
 00673D20	00673E50	cf_join_00673E50	disabled	apply=0
 00673D20	00673E66	cf_join_00673E66	disabled	apply=0
@@ -2523,18 +2523,18 @@ function_address	label_address	proposed_name	status	detail
 00673D20	00674357	cf_join_00674357	disabled	apply=0
 00673D20	00674360	cf_join_00674360	disabled	apply=0
 00673D20	006743CD	cf_join_006743CD	disabled	apply=0
-00673D20	006743F6	cf_common_join_006743F6	applied	kind=common_join; gotos=4; previous=LAB_006743f6
-00673D20	006743FF	cf_continue_loop_006743FF	applied	kind=continue_loop; gotos=3; previous=LAB_006743ff
+00673D20	006743F6	cf_common_join_006743F6	unchanged	label is already primary
+00673D20	006743FF	cf_continue_loop_006743FF	unchanged	label is already primary
 00673D20	00674464	cf_join_00674464	disabled	apply=0
 00673D20	0067447D	cf_join_0067447D	disabled	apply=0
-00673D20	00674486	cf_common_exit_00674486	applied	kind=common_exit; gotos=2; previous=LAB_00674486
-00673D20	006744A4	cf_break_loop_006744A4	applied	kind=break_loop; gotos=4; previous=LAB_006744a4
+00673D20	00674486	cf_common_exit_00674486	unchanged	label is already primary
+00673D20	006744A4	cf_break_loop_006744A4	unchanged	label is already primary
 00673D20	006744B5	cf_join_006744B5	disabled	apply=0
 00673D20	006744E7	cf_branch_target_006744E7	disabled	apply=0
-00673D20	00674521	cf_common_exit_00674521	applied	kind=common_exit; gotos=2; previous=LAB_00674521
-00673D20	00674540	cf_common_exit_00674540	applied	kind=common_exit; gotos=2; previous=LAB_00674540
-00674AF0	00674BC4	cf_common_exit_00674BC4	applied	kind=common_exit; gotos=2; previous=LAB_00674bc4
-00675430	006754A8	cf_common_exit_006754A8	applied	kind=common_exit; gotos=2; previous=LAB_006754a8
+00673D20	00674521	cf_common_exit_00674521	unchanged	label is already primary
+00673D20	00674540	cf_common_exit_00674540	unchanged	label is already primary
+00674AF0	00674BC4	cf_common_exit_00674BC4	unchanged	label is already primary
+00675430	006754A8	cf_common_exit_006754A8	unchanged	label is already primary
 00675DC0	00675DFE	cf_join_00675DFE	disabled	apply=0
 00675EA0	00675F12	cf_join_00675F12	disabled	apply=0
 00675FE0	00676053	cf_join_00676053	disabled	apply=0
@@ -2566,7 +2566,7 @@ function_address	label_address	proposed_name	status	detail
 00679300	00679378	cf_join_00679378	disabled	apply=0
 00679470	00679519	cf_join_00679519	disabled	apply=0
 00679600	0067971A	cf_join_0067971A	disabled	apply=0
-00679600	0067989B	cf_common_exit_0067989B	applied	kind=common_exit; gotos=2; previous=LAB_0067989b
+00679600	0067989B	cf_common_exit_0067989B	unchanged	label is already primary
 00679C50	00679C7C	cf_branch_target_00679C7C	disabled	apply=0
 00679C50	00679CE3	cf_join_00679CE3	disabled	apply=0
 00679C50	00679CE8	cf_join_00679CE8	disabled	apply=0
@@ -2633,49 +2633,49 @@ function_address	label_address	proposed_name	status	detail
 00683C70	00684989	cf_join_00684989	disabled	apply=0
 00683C70	00684C30	cf_join_00684C30	disabled	apply=0
 00683C70	00684F03	cf_branch_target_00684F03	disabled	apply=0
-00683C70	006876AB	cf_error_exit_006876AB	applied	kind=error_exit; gotos=2; previous=LAB_006876ab
+00683C70	006876AB	cf_error_exit_006876AB	unchanged	label is already primary
 00683C70	006876C1	cf_join_006876C1	disabled	apply=0
-00683C70	006876FE	cf_error_exit_006876FE	applied	kind=error_exit; gotos=2; previous=LAB_006876fe
+00683C70	006876FE	cf_error_exit_006876FE	unchanged	label is already primary
 00683C70	00687714	cf_join_00687714	disabled	apply=0
-00683C70	00687750	cf_error_exit_00687750	applied	kind=error_exit; gotos=19; previous=LAB_00687750
-00683C70	00687766	cf_common_join_00687766	applied	kind=common_join; gotos=12; previous=LAB_00687766
-00683C70	006877A0	cf_error_exit_006877A0	applied	kind=error_exit; gotos=12; previous=LAB_006877a0
-00683C70	006877B6	cf_common_join_006877B6	applied	kind=common_join; gotos=12; previous=LAB_006877b6
-00683C70	006877EF	cf_error_exit_006877EF	applied	kind=error_exit; gotos=9; previous=LAB_006877ef
-00683C70	00687805	cf_common_join_00687805	applied	kind=common_join; gotos=6; previous=LAB_00687805
-00683C70	0068783F	cf_error_exit_0068783F	applied	kind=error_exit; gotos=13; previous=LAB_0068783f
-00683C70	00687855	cf_common_join_00687855	applied	kind=common_join; gotos=5; previous=LAB_00687855
-00683C70	0068788E	cf_error_exit_0068788E	applied	kind=error_exit; gotos=5; previous=LAB_0068788e
-00683C70	006878A4	cf_common_join_006878A4	applied	kind=common_join; gotos=6; previous=LAB_006878a4
-00683C70	006879EA	cf_error_exit_006879EA	applied	kind=error_exit; gotos=4; previous=LAB_006879ea
-00683C70	00687A00	cf_common_join_00687A00	applied	kind=common_join; gotos=4; previous=LAB_00687a00
-00683C70	00687A9D	cf_error_exit_00687A9D	applied	kind=error_exit; gotos=2; previous=LAB_00687a9d
+00683C70	00687750	cf_error_exit_00687750	unchanged	label is already primary
+00683C70	00687766	cf_common_join_00687766	unchanged	label is already primary
+00683C70	006877A0	cf_error_exit_006877A0	unchanged	label is already primary
+00683C70	006877B6	cf_common_join_006877B6	unchanged	label is already primary
+00683C70	006877EF	cf_error_exit_006877EF	unchanged	label is already primary
+00683C70	00687805	cf_common_join_00687805	unchanged	label is already primary
+00683C70	0068783F	cf_error_exit_0068783F	unchanged	label is already primary
+00683C70	00687855	cf_common_join_00687855	unchanged	label is already primary
+00683C70	0068788E	cf_error_exit_0068788E	unchanged	label is already primary
+00683C70	006878A4	cf_common_join_006878A4	unchanged	label is already primary
+00683C70	006879EA	cf_error_exit_006879EA	unchanged	label is already primary
+00683C70	00687A00	cf_common_join_00687A00	unchanged	label is already primary
+00683C70	00687A9D	cf_error_exit_00687A9D	unchanged	label is already primary
 00683C70	00687AB3	cf_join_00687AB3	disabled	apply=0
-00683C70	00687AEC	cf_error_exit_00687AEC	applied	kind=error_exit; gotos=3; previous=LAB_00687aec
+00683C70	00687AEC	cf_error_exit_00687AEC	unchanged	label is already primary
 00683C70	00687B02	cf_join_00687B02	disabled	apply=0
 00683C70	00687F2D	cf_join_00687F2D	disabled	apply=0
 00683C70	00687F43	cf_join_00687F43	disabled	apply=0
-00683C70	0068821F	cf_error_exit_0068821F	applied	kind=error_exit; gotos=2; previous=LAB_0068821f
+00683C70	0068821F	cf_error_exit_0068821F	unchanged	label is already primary
 00683C70	00688235	cf_join_00688235	disabled	apply=0
-00683C70	006882E6	cf_error_exit_006882E6	applied	kind=error_exit; gotos=10; previous=LAB_006882e6
-00683C70	006882FC	cf_common_join_006882FC	applied	kind=common_join; gotos=6; previous=LAB_006882fc
+00683C70	006882E6	cf_error_exit_006882E6	unchanged	label is already primary
+00683C70	006882FC	cf_common_join_006882FC	unchanged	label is already primary
 00683C70	006883AC	cf_join_006883AC	disabled	apply=0
 00683C70	006883C2	cf_join_006883C2	disabled	apply=0
-00683C70	0068883F	cf_error_exit_0068883F	applied	kind=error_exit; gotos=3; previous=LAB_0068883f
+00683C70	0068883F	cf_error_exit_0068883F	unchanged	label is already primary
 00683C70	00688855	cf_join_00688855	disabled	apply=0
-00683C70	00689556	cf_error_exit_00689556	applied	kind=error_exit; gotos=3; previous=LAB_00689556
+00683C70	00689556	cf_error_exit_00689556	unchanged	label is already primary
 00683C70	0068956C	cf_join_0068956C	disabled	apply=0
-00683C70	0068956E	cf_common_join_0068956E	applied	kind=common_join; gotos=6; previous=LAB_0068956e
+00683C70	0068956E	cf_common_join_0068956E	unchanged	label is already primary
 00683C70	006895B5	cf_join_006895B5	disabled	apply=0
 00683C70	006895CB	cf_join_006895CB	disabled	apply=0
-00683C70	006895CD	cf_common_join_006895CD	applied	kind=common_join; gotos=9; previous=LAB_006895cd
-00683C70	006895D5	cf_common_join_006895D5	applied	kind=common_join; gotos=6; previous=LAB_006895d5
-00683C70	00689693	cf_common_join_00689693	applied	kind=common_join; gotos=7; previous=
+00683C70	006895CD	cf_common_join_006895CD	unchanged	label is already primary
+00683C70	006895D5	cf_common_join_006895D5	unchanged	label is already primary
+00683C70	00689693	cf_common_join_00689693	unchanged	label is already primary
 00683C70	006896F6	cf_join_006896F6	disabled	apply=0
 00683C70	006896FE	cf_continue_loop_006896FE	disabled	apply=0
-00683C70	0068A22B	cf_error_exit_0068A22B	applied	kind=error_exit; gotos=7; previous=LAB_0068a22b
-00683C70	0068A687	cf_common_join_0068A687	applied	kind=common_join; gotos=8; previous=LAB_0068a687
-0068CEC0	0068D1EB	cf_continue_loop_0068D1EB	applied	kind=continue_loop; gotos=5; previous=LAB_0068d1eb
+00683C70	0068A22B	cf_error_exit_0068A22B	unchanged	label is already primary
+00683C70	0068A687	cf_common_join_0068A687	unchanged	label is already primary
+0068CEC0	0068D1EB	cf_continue_loop_0068D1EB	unchanged	label is already primary
 0068E300	0068E363	cf_join_0068E363	disabled	apply=0
 0068E300	0068E368	cf_join_0068E368	disabled	apply=0
 0068E3C0	0068E423	cf_join_0068E423	disabled	apply=0
@@ -2731,7 +2731,7 @@ function_address	label_address	proposed_name	status	detail
 006A0470	006A05F8	cf_join_006A05F8	disabled	apply=0
 006A2ED0	006A2F2F	cf_join_006A2F2F	disabled	apply=0
 006A5210	006A541D	cf_join_006A541D	disabled	apply=0
-006A5990	006A5B2E	cf_continue_loop_006A5B2E	applied	kind=continue_loop; gotos=2; previous=LAB_006a5b2e
+006A5990	006A5B2E	cf_continue_loop_006A5B2E	unchanged	label is already primary
 006A6360	006A6377	cf_join_006A6377	disabled	apply=0
 006A6360	006A641E	cf_join_006A641E	disabled	apply=0
 006A64E0	006A6ED7	cf_join_006A6ED7	disabled	apply=0
@@ -2742,8 +2742,8 @@ function_address	label_address	proposed_name	status	detail
 006AB090	006ACB91	cf_join_006ACB91	disabled	apply=0
 006AB090	006ACC40	cf_join_006ACC40	disabled	apply=0
 006AB090	006ACC47	cf_break_loop_006ACC47	disabled	apply=0
-006ACCD0	006ACD0D	cf_continue_loop_006ACD0D	applied	kind=continue_loop; gotos=2; previous=LAB_006acd0d
-006ACCD0	006ACD37	cf_continue_loop_006ACD37	applied	kind=continue_loop; gotos=2; previous=LAB_006acd37
+006ACCD0	006ACD0D	cf_continue_loop_006ACD0D	unchanged	label is already primary
+006ACCD0	006ACD37	cf_continue_loop_006ACD37	unchanged	label is already primary
 006ACCD0	006ACD43	cf_branch_target_006ACD43	disabled	apply=0
 006ACCD0	006ACD4F	cf_join_006ACD4F	disabled	apply=0
 006AD4D0	006AD9D3	cf_join_006AD9D3	disabled	apply=0
@@ -2760,7 +2760,7 @@ function_address	label_address	proposed_name	status	detail
 006B92B0	006B93A5	cf_join_006B93A5	disabled	apply=0
 006B92B0	006B93A7	cf_join_006B93A7	disabled	apply=0
 006B92B0	006B945A	cf_join_006B945A	disabled	apply=0
-006B94E0	006B96BA	cf_common_exit_006B96BA	applied	kind=common_exit; gotos=3; previous=LAB_006b96ba
+006B94E0	006B96BA	cf_common_exit_006B96BA	unchanged	label is already primary
 006BB8B0	006BB943	cf_join_006BB943	disabled	apply=0
 006BBB20	006BBBCE	cf_join_006BBBCE	disabled	apply=0
 006BBB20	006BBC85	cf_join_006BBC85	disabled	apply=0
@@ -2774,7 +2774,7 @@ function_address	label_address	proposed_name	status	detail
 006BEA40	006BEF52	cf_join_006BEF52	disabled	apply=0
 006BEA40	006BF0FB	cf_join_006BF0FB	disabled	apply=0
 006BEA40	006BF163	cf_join_006BF163	disabled	apply=0
-006BEA40	006BF619	cf_common_join_006BF619	applied	kind=common_join; gotos=5; previous=LAB_006bf619
+006BEA40	006BF619	cf_common_join_006BF619	unchanged	label is already primary
 006BFE70	006C0125	cf_join_006C0125	disabled	apply=0
 006BFE70	006C0455	cf_join_006C0455	disabled	apply=0
 006C08E0	006C0AF5	cf_join_006C0AF5	disabled	apply=0
@@ -2783,10 +2783,10 @@ function_address	label_address	proposed_name	status	detail
 006C08E0	006C0C9D	cf_join_006C0C9D	disabled	apply=0
 006C08E0	006C0D87	cf_join_006C0D87	disabled	apply=0
 006C08E0	006C0D93	cf_join_006C0D93	disabled	apply=0
-006C08E0	006C0E00	cf_common_join_006C0E00	applied	kind=common_join; gotos=4; previous=LAB_006c0e00
-006C08E0	006C0E05	cf_common_join_006C0E05	applied	kind=common_join; gotos=4; previous=LAB_006c0e05
-006C08E0	006C0F07	cf_common_join_006C0F07	applied	kind=common_join; gotos=4; previous=LAB_006c0f07
-006C08E0	006C0F40	cf_continue_loop_006C0F40	applied	kind=continue_loop; gotos=3; previous=LAB_006c0f40
+006C08E0	006C0E00	cf_common_join_006C0E00	unchanged	label is already primary
+006C08E0	006C0E05	cf_common_join_006C0E05	unchanged	label is already primary
+006C08E0	006C0F07	cf_common_join_006C0F07	unchanged	label is already primary
+006C08E0	006C0F40	cf_continue_loop_006C0F40	unchanged	label is already primary
 006C3340	006C33BB	cf_join_006C33BB	disabled	apply=0
 006C3480	006C34E5	cf_join_006C34E5	disabled	apply=0
 006C38F0	006C3A62	cf_join_006C3A62	disabled	apply=0
@@ -2805,16 +2805,13 @@ function_address	label_address	proposed_name	status	detail
 006C8990	006C8BC4	cf_join_006C8BC4	disabled	apply=0
 006C8990	006C8C04	cf_join_006C8C04	disabled	apply=0
 006C8EC0	006C8F65	cf_join_006C8F65	disabled	apply=0
-006C8EC0	006C9187	cf_continue_loop_006C9187	applied	kind=continue_loop; gotos=2; previous=LAB_006c9187
+006C8EC0	006C9187	cf_continue_loop_006C9187	unchanged	label is already primary
 006C8EC0	006CE561	cf_join_006CE561	disabled	apply=0
 006C8EC0	006CE57C	cf_join_006CE57C	disabled	apply=0
-006C8EC0	006CE63A	cf_break_loop_006CE63A	applied	kind=break_loop; gotos=3; previous=LAB_006ce63a
-006C8EC0	006CE641	cf_break_loop_006CE641	applied	kind=break_loop; gotos=5; previous=LAB_006ce641
+006C8EC0	006CE63A	cf_break_loop_006CE63A	unchanged	label is already primary
+006C8EC0	006CE641	cf_break_loop_006CE641	unchanged	label is already primary
 006CEF60	006CF209	cf_join_006CF209	disabled	apply=0
 006CEF60	006CF37B	cf_join_006CF37B	disabled	apply=0
-006CEF60	006CF695	cf_join_006CF695	disabled	apply=0
-006CEF60	006CF8EE	cf_join_006CF8EE	disabled	apply=0
-006CEF60	006CF911	cf_common_exit_006CF911	applied	kind=common_exit; gotos=8; previous=LAB_006cf911
 006D0460	006D050E	cf_join_006D050E	disabled	apply=0
 006D05B0	006D05F0	cf_join_006D05F0	disabled	apply=0
 006D0820	006D0950	cf_join_006D0950	disabled	apply=0
@@ -2828,26 +2825,26 @@ function_address	label_address	proposed_name	status	detail
 006D1AD0	006D1CE7	cf_join_006D1CE7	disabled	apply=0
 006D1AD0	006D1D8A	cf_join_006D1D8A	disabled	apply=0
 006D1AD0	006D1DE7	cf_join_006D1DE7	disabled	apply=0
-006D1AD0	006D1E3F	cf_continue_loop_006D1E3F	applied	kind=continue_loop; gotos=2; previous=LAB_006d1e3f
+006D1AD0	006D1E3F	cf_continue_loop_006D1E3F	unchanged	label is already primary
 006D1EC0	006D2038	cf_join_006D2038	disabled	apply=0
-006D1EC0	006D2041	cf_common_join_006D2041	applied	kind=common_join; gotos=6; previous=LAB_006d2041
+006D1EC0	006D2041	cf_common_join_006D2041	unchanged	label is already primary
 006D1EC0	006D20BC	cf_join_006D20BC	disabled	apply=0
 006D1EC0	006D2148	cf_join_006D2148	disabled	apply=0
 006D1EC0	006D2188	cf_join_006D2188	disabled	apply=0
 006D1EC0	006D2232	cf_join_006D2232	disabled	apply=0
-006D1EC0	006D22C3	cf_common_join_006D22C3	applied	kind=common_join; gotos=4; previous=LAB_006d22c3
+006D1EC0	006D22C3	cf_common_join_006D22C3	unchanged	label is already primary
 006D1EC0	006D23E7	cf_join_006D23E7	disabled	apply=0
 006D1EC0	006D244B	cf_join_006D244B	disabled	apply=0
 006D25E0	006D25F2	cf_join_006D25F2	disabled	apply=0
-006D25E0	006D2607	cf_continue_loop_006D2607	applied	kind=continue_loop; gotos=2; previous=LAB_006d2607
+006D25E0	006D2607	cf_continue_loop_006D2607	unchanged	label is already primary
 006D25E0	006D2620	cf_join_006D2620	disabled	apply=0
 006D25E0	006D2641	cf_join_006D2641	disabled	apply=0
 006D25E0	006D2671	cf_branch_target_006D2671	disabled	apply=0
-006D25E0	006D26AD	cf_continue_loop_006D26AD	applied	kind=continue_loop; gotos=4; previous=LAB_006d26ad
+006D25E0	006D26AD	cf_continue_loop_006D26AD	unchanged	label is already primary
 006D26D0	006D2759	cf_join_006D2759	disabled	apply=0
 006D26D0	006D2766	cf_join_006D2766	disabled	apply=0
 006D26D0	006D27A4	cf_join_006D27A4	disabled	apply=0
-006D26D0	006D27EE	cf_continue_loop_006D27EE	applied	kind=continue_loop; gotos=2; previous=LAB_006d27ee
+006D26D0	006D27EE	cf_continue_loop_006D27EE	unchanged	label is already primary
 006D2820	006D2B87	cf_join_006D2B87	disabled	apply=0
 006D2820	006D2E2C	cf_join_006D2E2C	disabled	apply=0
 006D2820	006D306F	cf_join_006D306F	disabled	apply=0
@@ -2862,29 +2859,29 @@ function_address	label_address	proposed_name	status	detail
 006D7D9A	006D7FAF	cf_join_006D7FAF	disabled	apply=0
 006D7D9A	006D7FB4	cf_break_loop_006D7FB4	disabled	apply=0
 006D7D9A	006D7FC6	cf_join_006D7FC6	disabled	apply=0
-006D8120	006D8217	cf_common_exit_006D8217	applied	kind=common_exit; gotos=3; previous=LAB_006d8217
+006D8120	006D8217	cf_common_exit_006D8217	unchanged	label is already primary
 006D86E0	006D8738	cf_join_006D8738	disabled	apply=0
 006D86E0	006D8786	cf_join_006D8786	disabled	apply=0
 006D86E0	006D88C6	cf_join_006D88C6	disabled	apply=0
-006D86E0	006D88D7	cf_common_join_006D88D7	applied	kind=common_join; gotos=4; previous=LAB_006d88d7
+006D86E0	006D88D7	cf_common_join_006D88D7	unchanged	label is already primary
 006D86E0	006D89C6	cf_join_006D89C6	disabled	apply=0
 006D86E0	006D8A3C	cf_join_006D8A3C	disabled	apply=0
 006D8A60	006D8B04	cf_join_006D8B04	disabled	apply=0
 006D8A60	006D8B50	cf_join_006D8B50	disabled	apply=0
 006D8A60	006D8CAB	cf_join_006D8CAB	disabled	apply=0
 006D8A60	006D8D94	cf_join_006D8D94	disabled	apply=0
-006D8A60	006D8DA5	cf_common_join_006D8DA5	applied	kind=common_join; gotos=4; previous=LAB_006d8da5
+006D8A60	006D8DA5	cf_common_join_006D8DA5	unchanged	label is already primary
 006D8A60	006D8E9B	cf_join_006D8E9B	disabled	apply=0
 006D8A60	006D9450	cf_join_006D9450	disabled	apply=0
 006D8A60	006D957D	cf_join_006D957D	disabled	apply=0
-006D8A60	006D958E	cf_common_join_006D958E	applied	kind=common_join; gotos=4; previous=LAB_006d958e
+006D8A60	006D958E	cf_common_join_006D958E	unchanged	label is already primary
 006D8A60	006D9621	cf_join_006D9621	disabled	apply=0
 006D8A60	006D9875	cf_join_006D9875	disabled	apply=0
 006D8A60	006D99E9	cf_join_006D99E9	disabled	apply=0
 006D8A60	006D9A18	cf_join_006D9A18	disabled	apply=0
-006D8A60	006D9A1A	cf_common_join_006D9A1A	applied	kind=common_join; gotos=5; previous=LAB_006d9a1a
+006D8A60	006D9A1A	cf_common_join_006D9A1A	unchanged	label is already primary
 006D8A60	006D9C24	cf_join_006D9C24	disabled	apply=0
-006D8A60	006D9EAC	cf_common_join_006D9EAC	applied	kind=common_join; gotos=20; previous=LAB_006d9eac
+006D8A60	006D9EAC	cf_common_join_006D9EAC	unchanged	label is already primary
 006D8A60	006D9F11	cf_join_006D9F11	disabled	apply=0
 006DA080	006DA0F3	cf_join_006DA0F3	disabled	apply=0
 006DA1A0	006DA325	cf_join_006DA325	disabled	apply=0
@@ -2900,21 +2897,12 @@ function_address	label_address	proposed_name	status	detail
 006DC320	006DC9B3	cf_join_006DC9B3	disabled	apply=0
 006DC320	006DCA21	cf_join_006DCA21	disabled	apply=0
 006DC320	006DCAFD	cf_join_006DCAFD	disabled	apply=0
-006DDD50	006DE503	cf_common_join_006DE503	applied	kind=common_join; gotos=5; previous=LAB_006de503
+006DDD50	006DE503	cf_common_join_006DE503	unchanged	label is already primary
 006DE9C0	006DEFD4	cf_join_006DEFD4	disabled	apply=0
 006E1EE0	006E22A2	cf_join_006E22A2	disabled	apply=0
-006E2D50	006E2E31	cf_continue_loop_006E2E31	applied	kind=continue_loop; gotos=2; previous=LAB_006e2e31
-006E2D50	006E2F66	cf_continue_loop_006E2F66	applied	kind=continue_loop; gotos=2; previous=LAB_006e2f66
-006E3BF0	006E3C65	cf_join_006E3C65	disabled	apply=0
-006E3DD0	006E3EF1	cf_join_006E3EF1	disabled	apply=0
-006E3DD0	006E3F72	cf_join_006E3F72	disabled	apply=0
-006E3DD0	006E4031	cf_common_exit_006E4031	applied	kind=common_exit; gotos=4; previous=switchD_006e3e37::caseD_4
-006E4960	006E4A7A	cf_join_006E4A7A	disabled	apply=0
+006E2D50	006E2E31	cf_continue_loop_006E2E31	unchanged	label is already primary
+006E2D50	006E2F66	cf_continue_loop_006E2F66	unchanged	label is already primary
 006E4EE0	006E4F26	cf_join_006E4F26	disabled	apply=0
-006E53A0	006E540D	cf_join_006E540D	disabled	apply=0
-006E5970	006E5ACE	cf_join_006E5ACE	disabled	apply=0
-006E5970	006E5BC2	cf_common_exit_006E5BC2	applied	kind=common_exit; gotos=3; previous=switchD_006e59d5::caseD_4
-006E5C70	006E5CD8	cf_join_006E5CD8	disabled	apply=0
 006E6710	006E673A	cf_join_006E673A	disabled	apply=0
 006E6710	006E674E	cf_join_006E674E	disabled	apply=0
 006E67C0	006E67EA	cf_join_006E67EA	disabled	apply=0
@@ -2934,20 +2922,6 @@ function_address	label_address	proposed_name	status	detail
 006EB570	006EBDE1	cf_join_006EBDE1	disabled	apply=0
 006EC010	006EC68D	cf_join_006EC68D	disabled	apply=0
 006EC010	006ECC3A	cf_join_006ECC3A	disabled	apply=0
-006ED100	006ED215	cf_join_006ED215	disabled	apply=0
-006ED100	006ED2C1	cf_join_006ED2C1	disabled	apply=0
-006ED100	006EE174	cf_join_006EE174	disabled	apply=0
-006ED100	006EE184	cf_join_006EE184	disabled	apply=0
-006ED100	006EE1A8	cf_join_006EE1A8	disabled	apply=0
-006ED100	006EE1DD	cf_join_006EE1DD	disabled	apply=0
-006ED100	006EE40B	cf_join_006EE40B	disabled	apply=0
-006ED100	006EE40C	cf_join_006EE40C	disabled	apply=0
-006ED100	006EEADA	cf_join_006EEADA	disabled	apply=0
-006ED100	006EF0D0	cf_join_006EF0D0	disabled	apply=0
-006ED100	006EF118	cf_join_006EF118	disabled	apply=0
-006F0360	006F0419	cf_join_006F0419	disabled	apply=0
-006F0360	006F0465	cf_branch_target_006F0465	disabled	apply=0
-006F0360	006F0559	cf_join_006F0559	disabled	apply=0
 006F31D0	006F32F9	cf_join_006F32F9	disabled	apply=0
 006F31D0	006F34A4	cf_join_006F34A4	disabled	apply=0
 006F31D0	006F3562	cf_join_006F3562	disabled	apply=0
@@ -2963,42 +2937,42 @@ function_address	label_address	proposed_name	status	detail
 006F4E70	006F4F0F	cf_join_006F4F0F	disabled	apply=0
 006F4E70	006F4F35	cf_join_006F4F35	disabled	apply=0
 006F4E70	006F4F5E	cf_join_006F4F5E	disabled	apply=0
-006F4E70	006F4F78	cf_continue_loop_006F4F78	applied	kind=continue_loop; gotos=2; previous=LAB_006f4f78
+006F4E70	006F4F78	cf_continue_loop_006F4F78	unchanged	label is already primary
 006F4E70	006F4F9D	cf_join_006F4F9D	disabled	apply=0
 006F4E70	006F4FAB	cf_join_006F4FAB	disabled	apply=0
 006F4E70	006F4FB6	cf_join_006F4FB6	disabled	apply=0
 006F4FE0	006F50A4	cf_join_006F50A4	disabled	apply=0
 006F4FE0	006F50EB	cf_join_006F50EB	disabled	apply=0
 006F4FE0	006F511E	cf_join_006F511E	disabled	apply=0
-006F4FE0	006F5151	cf_continue_loop_006F5151	applied	kind=continue_loop; gotos=2; previous=LAB_006f5151
+006F4FE0	006F5151	cf_continue_loop_006F5151	unchanged	label is already primary
 006F4FE0	006F51AF	cf_join_006F51AF	disabled	apply=0
 006F4FE0	006F51E8	cf_join_006F51E8	disabled	apply=0
 006F4FE0	006F51F6	cf_join_006F51F6	disabled	apply=0
 006F5240	006F5259	cf_join_006F5259	disabled	apply=0
 006F5240	006F52DE	cf_join_006F52DE	disabled	apply=0
 006F5240	006F532E	cf_join_006F532E	disabled	apply=0
-006F5240	006F5339	cf_common_join_006F5339	applied	kind=common_join; gotos=4; previous=LAB_006f5339
+006F5240	006F5339	cf_common_join_006F5339	unchanged	label is already primary
 006F5240	006F5352	cf_join_006F5352	disabled	apply=0
-006F5240	006F53A7	cf_common_join_006F53A7	applied	kind=common_join; gotos=6; previous=LAB_006f53a7
-006F5240	006F53F2	cf_continue_loop_006F53F2	applied	kind=continue_loop; gotos=2; previous=LAB_006f53f2
+006F5240	006F53A7	cf_common_join_006F53A7	unchanged	label is already primary
+006F5240	006F53F2	cf_continue_loop_006F53F2	unchanged	label is already primary
 006F5430	006F545A	cf_join_006F545A	disabled	apply=0
 006F5430	006F54E6	cf_join_006F54E6	disabled	apply=0
 006F5430	006F55BE	cf_join_006F55BE	disabled	apply=0
-006F5430	006F55D3	cf_common_join_006F55D3	applied	kind=common_join; gotos=4; previous=LAB_006f55d3
+006F5430	006F55D3	cf_common_join_006F55D3	unchanged	label is already primary
 006F5430	006F55F7	cf_join_006F55F7	disabled	apply=0
-006F5430	006F56D2	cf_common_join_006F56D2	applied	kind=common_join; gotos=6; previous=LAB_006f56d2
-006F5430	006F571D	cf_continue_loop_006F571D	applied	kind=continue_loop; gotos=2; previous=LAB_006f571d
+006F5430	006F56D2	cf_common_join_006F56D2	unchanged	label is already primary
+006F5430	006F571D	cf_continue_loop_006F571D	unchanged	label is already primary
 006F5760	006F5824	cf_join_006F5824	disabled	apply=0
 006F5760	006F584A	cf_join_006F584A	disabled	apply=0
 006F5760	006F5877	cf_join_006F5877	disabled	apply=0
-006F5760	006F589B	cf_continue_loop_006F589B	applied	kind=continue_loop; gotos=2; previous=LAB_006f589b
+006F5760	006F589B	cf_continue_loop_006F589B	unchanged	label is already primary
 006F5760	006F58D2	cf_join_006F58D2	disabled	apply=0
 006F5760	006F58E1	cf_join_006F58E1	disabled	apply=0
 006F5760	006F58EF	cf_join_006F58EF	disabled	apply=0
 006F5920	006F5A0D	cf_join_006F5A0D	disabled	apply=0
 006F5920	006F5A54	cf_join_006F5A54	disabled	apply=0
 006F5920	006F5A87	cf_join_006F5A87	disabled	apply=0
-006F5920	006F5AC4	cf_continue_loop_006F5AC4	applied	kind=continue_loop; gotos=2; previous=LAB_006f5ac4
+006F5920	006F5AC4	cf_continue_loop_006F5AC4	unchanged	label is already primary
 006F5920	006F5B32	cf_join_006F5B32	disabled	apply=0
 006F5920	006F5B70	cf_join_006F5B70	disabled	apply=0
 006F5920	006F5B7E	cf_join_006F5B7E	disabled	apply=0
@@ -3099,7 +3073,7 @@ function_address	label_address	proposed_name	status	detail
 006FB4A0	006FBB50	cf_join_006FBB50	disabled	apply=0
 006FB4A0	006FBB97	cf_join_006FBB97	disabled	apply=0
 006FB4A0	006FBB9F	cf_join_006FBB9F	disabled	apply=0
-006FB4A0	006FBC59	cf_common_join_006FBC59	applied	kind=common_join; gotos=8; previous=LAB_006fbc59
+006FB4A0	006FBC59	cf_common_join_006FBC59	unchanged	label is already primary
 006FB4A0	006FBCAE	cf_join_006FBCAE	disabled	apply=0
 006FBD40	006FBE4E	cf_join_006FBE4E	disabled	apply=0
 006FBD40	006FC0AB	cf_join_006FC0AB	disabled	apply=0
@@ -3242,7 +3216,7 @@ function_address	label_address	proposed_name	status	detail
 00702A30	00702E8D	cf_join_00702E8D	disabled	apply=0
 00702A30	00702E99	cf_join_00702E99	disabled	apply=0
 00702A30	00702ED2	cf_join_00702ED2	disabled	apply=0
-00702A30	00702F3A	cf_common_join_00702F3A	applied	kind=common_join; gotos=8; previous=LAB_00702f3a
+00702A30	00702F3A	cf_common_join_00702F3A	unchanged	label is already primary
 00702A30	00702F90	cf_join_00702F90	disabled	apply=0
 00702A30	00703023	cf_join_00703023	disabled	apply=0
 00702A30	00703033	cf_join_00703033	disabled	apply=0
@@ -3349,7 +3323,7 @@ function_address	label_address	proposed_name	status	detail
 00706E30	00706F7B	cf_join_00706F7B	disabled	apply=0
 00706E30	0070719B	cf_join_0070719B	disabled	apply=0
 00706E30	0070758B	cf_join_0070758B	disabled	apply=0
-00706E30	00707777	cf_common_join_00707777	applied	kind=common_join; gotos=4; previous=LAB_00707777
+00706E30	00707777	cf_common_join_00707777	unchanged	label is already primary
 00706E30	007077CD	cf_join_007077CD	disabled	apply=0
 00707810	007078A5	cf_join_007078A5	disabled	apply=0
 00707810	0070795E	cf_join_0070795E	disabled	apply=0
@@ -3363,7 +3337,7 @@ function_address	label_address	proposed_name	status	detail
 00707810	00707D61	cf_join_00707D61	disabled	apply=0
 00707810	00707D6D	cf_join_00707D6D	disabled	apply=0
 00707810	00707DB6	cf_join_00707DB6	disabled	apply=0
-00707810	00707E36	cf_common_join_00707E36	applied	kind=common_join; gotos=17; previous=LAB_00707e36
+00707810	00707E36	cf_common_join_00707E36	unchanged	label is already primary
 00707810	00707E8A	cf_join_00707E8A	disabled	apply=0
 00707810	00707F1E	cf_join_00707F1E	disabled	apply=0
 00707810	00707F2E	cf_join_00707F2E	disabled	apply=0
@@ -3385,33 +3359,10 @@ function_address	label_address	proposed_name	status	detail
 00708D10	00708DDA	cf_join_00708DDA	disabled	apply=0
 007098A0	00709921	cf_join_00709921	disabled	apply=0
 007098A0	00709926	cf_join_00709926	disabled	apply=0
-0070A4A0	0070A537	cf_join_0070A537	disabled	apply=0
-0070B900	0070BAEE	cf_join_0070BAEE	disabled	apply=0
-0070D1F0	0070D485	cf_join_0070D485	disabled	apply=0
-0070E030	0070E9E5	cf_join_0070E9E5	disabled	apply=0
-0070E030	0070ECC7	cf_join_0070ECC7	disabled	apply=0
-0070E030	0070F052	cf_join_0070F052	disabled	apply=0
-0070E030	0070F0A0	cf_join_0070F0A0	disabled	apply=0
-0070E030	0070F16A	cf_join_0070F16A	disabled	apply=0
-0070E030	0070F1B0	cf_join_0070F1B0	disabled	apply=0
-0070E030	0070F286	cf_join_0070F286	disabled	apply=0
-0070E030	0070F2D4	cf_join_0070F2D4	disabled	apply=0
-0070E030	0070F38C	cf_join_0070F38C	disabled	apply=0
-0070E030	0070F3D2	cf_join_0070F3D2	disabled	apply=0
-0070E030	0070F404	cf_join_0070F404	disabled	apply=0
-0070E030	0070F411	cf_join_0070F411	disabled	apply=0
-0070E030	0070FD65	cf_join_0070FD65	disabled	apply=0
-0070E030	0071021A	cf_join_0071021A	disabled	apply=0
-00710BA0	00710C1D	cf_join_00710C1D	disabled	apply=0
 00711110	00711153	cf_join_00711153	disabled	apply=0
 007111C0	00711200	cf_join_00711200	disabled	apply=0
 00711260	00711298	cf_join_00711298	disabled	apply=0
-007119C0	00711AFB	cf_join_00711AFB	disabled	apply=0
-007126E0	007128C7	cf_join_007128C7	disabled	apply=0
-007129D0	00712A6E	cf_join_00712A6E	disabled	apply=0
-00713080	007130E8	cf_join_007130E8	disabled	apply=0
-00713080	00713134	cf_join_00713134	disabled	apply=0
-007140E0	00714ACB	cf_common_exit_00714ACB	applied	kind=common_exit; gotos=5; previous=LAB_00714acb
+007140E0	00714ACB	cf_common_exit_00714ACB	unchanged	label is already primary
 00714FB0	00714FDF	cf_join_00714FDF	disabled	apply=0
 00714FB0	00715017	cf_join_00715017	disabled	apply=0
 00717970	00717B22	cf_join_00717B22	disabled	apply=0
@@ -3420,84 +3371,9 @@ function_address	label_address	proposed_name	status	detail
 007182F0	00718362	cf_join_00718362	disabled	apply=0
 007182F0	00718374	cf_join_00718374	disabled	apply=0
 007182F0	007183B0	cf_join_007183B0	disabled	apply=0
-0071A530	0071A592	cf_join_0071A592	disabled	apply=0
-0071A530	0071A597	cf_join_0071A597	disabled	apply=0
-0071A5E0	0071A6D3	cf_join_0071A6D3	disabled	apply=0
-0071A5E0	0071A6D8	cf_join_0071A6D8	disabled	apply=0
-0071B630	0071B73B	cf_join_0071B73B	disabled	apply=0
-0071B9C0	0071BC0D	cf_branch_target_0071BC0D	disabled	apply=0
-0071B9C0	0071BC13	cf_join_0071BC13	disabled	apply=0
-0071B9C0	0071BC28	cf_join_0071BC28	disabled	apply=0
-0071B9C0	0071C146	cf_branch_target_0071C146	disabled	apply=0
-0071B9C0	0071C152	cf_join_0071C152	disabled	apply=0
-0071C1D0	0071C3C1	cf_common_join_0071C3C1	applied	kind=common_join; gotos=4; previous=LAB_0071c3c1
-0071C530	0071C5DE	cf_branch_target_0071C5DE	disabled	apply=0
-0071C530	0071C71B	cf_join_0071C71B	disabled	apply=0
-0071C530	0071C71D	cf_join_0071C71D	disabled	apply=0
-0071C530	0071C735	cf_common_exit_0071C735	applied	kind=common_exit; gotos=2; previous=LAB_0071c735
-0071C530	0071C742	cf_join_0071C742	disabled	apply=0
-0071CFD0	0071D51B	cf_join_0071D51B	disabled	apply=0
-0071CFD0	0071D5E1	cf_join_0071D5E1	disabled	apply=0
-0071CFD0	0071D6EA	cf_join_0071D6EA	disabled	apply=0
-0071CFD0	0071D6F7	cf_join_0071D6F7	disabled	apply=0
-0071CFD0	0071D727	cf_branch_target_0071D727	disabled	apply=0
-0071CFD0	0071D7A5	cf_join_0071D7A5	disabled	apply=0
-0071CFD0	0071D81D	cf_join_0071D81D	disabled	apply=0
-0071CFD0	0071DA76	cf_join_0071DA76	disabled	apply=0
-0071CFD0	0071DC9D	cf_join_0071DC9D	disabled	apply=0
-0071CFD0	0071DD4E	cf_join_0071DD4E	disabled	apply=0
-0071CFD0	0071DD64	cf_join_0071DD64	disabled	apply=0
-0071CFD0	0071DDBA	cf_join_0071DDBA	disabled	apply=0
-0071CFD0	0071DDC0	cf_common_exit_0071DDC0	applied	kind=common_exit; gotos=10; previous=switchD_0071d549::caseD_1
-0071F3A0	0071FE77	cf_join_0071FE77	disabled	apply=0
-0071F3A0	0071FE7E	cf_join_0071FE7E	disabled	apply=0
-0071F3A0	0071FE85	cf_join_0071FE85	disabled	apply=0
-0071F3A0	0071FE89	cf_common_join_0071FE89	applied	kind=common_join; gotos=8; previous=LAB_0071fe89
-0071F3A0	00720116	cf_join_00720116	disabled	apply=0
-0071F3A0	00720240	cf_join_00720240	disabled	apply=0
-0071F3A0	007204E5	cf_join_007204E5	disabled	apply=0
-0071F3A0	007204F0	cf_join_007204F0	disabled	apply=0
-0071F3A0	007204F7	cf_join_007204F7	disabled	apply=0
-0071F3A0	00720766	cf_join_00720766	disabled	apply=0
-0071F3A0	007207A4	cf_join_007207A4	disabled	apply=0
-0071F3A0	007207A8	cf_join_007207A8	disabled	apply=0
-00720E70	00720F4E	cf_break_loop_00720F4E	applied	kind=break_loop; gotos=2; previous=LAB_00720f4e
+00720E70	00720F4E	cf_break_loop_00720F4E	unchanged	label is already primary
 00721080	0072111D	cf_join_0072111D	disabled	apply=0
 00721080	0072122F	cf_join_0072122F	disabled	apply=0
-00722410	00722674	cf_join_00722674	disabled	apply=0
-00722410	00722D9E	cf_join_00722D9E	disabled	apply=0
-00722410	00722DA6	cf_join_00722DA6	disabled	apply=0
-00722410	00722E29	cf_join_00722E29	disabled	apply=0
-00722410	00722E31	cf_join_00722E31	disabled	apply=0
-00722410	00722E38	cf_join_00722E38	disabled	apply=0
-00722410	00722E7F	cf_join_00722E7F	disabled	apply=0
-00722410	00722E81	cf_join_00722E81	disabled	apply=0
-00722410	00722FB6	cf_join_00722FB6	disabled	apply=0
-00722410	0072300E	cf_join_0072300E	disabled	apply=0
-00722410	0072301D	cf_join_0072301D	disabled	apply=0
-00722410	0072306B	cf_join_0072306B	disabled	apply=0
-00722410	007231DD	cf_branch_target_007231DD	disabled	apply=0
-00722410	007231ED	cf_join_007231ED	disabled	apply=0
-00722410	007231F1	cf_join_007231F1	disabled	apply=0
-00722410	007231FD	cf_switch_join_007231FD	applied	kind=switch_join; gotos=11; previous=switchD_00722eb2::caseD_38
-00723420	00723833	cf_join_00723833	disabled	apply=0
-00723420	00723867	cf_join_00723867	disabled	apply=0
-00723420	00723991	cf_join_00723991	disabled	apply=0
-00723420	00723C77	cf_join_00723C77	disabled	apply=0
-00723420	00723D89	cf_common_join_00723D89	applied	kind=common_join; gotos=8; previous=LAB_00723d89
-00723420	00723D90	cf_join_00723D90	disabled	apply=0
-00723420	00723F55	cf_branch_target_00723F55	disabled	apply=0
-00723420	00724056	cf_break_loop_00724056	applied	kind=break_loop; gotos=2; previous=LAB_00724056
-00723420	00724134	cf_join_00724134	disabled	apply=0
-007244B0	00724BAB	cf_common_exit_00724BAB	applied	kind=common_exit; gotos=2; previous=LAB_00724bab
-007244B0	00724BB2	cf_join_00724BB2	disabled	apply=0
-00725020	007251FB	cf_join_007251FB	disabled	apply=0
-00725020	00725209	cf_join_00725209	disabled	apply=0
-00725020	0072520D	cf_join_0072520D	disabled	apply=0
-00725020	0072539E	cf_join_0072539E	disabled	apply=0
-00725020	007253A9	cf_join_007253A9	disabled	apply=0
-00725020	007253E2	cf_join_007253E2	disabled	apply=0
-00725760	007258D0	cf_join_007258D0	disabled	apply=0
 00726D80	0072716F	cf_join_0072716F	disabled	apply=0
 00726D80	00727219	cf_join_00727219	disabled	apply=0
 00727230	007275F0	cf_join_007275F0	disabled	apply=0
@@ -3520,9 +3396,6 @@ function_address	label_address	proposed_name	status	detail
 00728DA0	0072926D	cf_join_0072926D	disabled	apply=0
 00728DA0	007292A6	cf_join_007292A6	disabled	apply=0
 00728DA0	007294F8	cf_join_007294F8	disabled	apply=0
-0072B780	0072BCC4	cf_join_0072BCC4	disabled	apply=0
-0072B780	0072BE83	cf_join_0072BE83	disabled	apply=0
-0072B780	0072BE89	cf_common_exit_0072BE89	applied	kind=common_exit; gotos=2; previous=LAB_0072be89
 00746E65	00746EC5	cf_join_00746EC5	disabled	apply=0
 007479CD	00747A71	cf_break_loop_00747A71	disabled	apply=0
 00748ECA	00748FC9	cf_join_00748FC9	disabled	apply=0
@@ -3532,7 +3405,7 @@ function_address	label_address	proposed_name	status	detail
 00749EC2	00749F79	cf_join_00749F79	disabled	apply=0
 0074A646	0074A6C4	cf_join_0074A6C4	disabled	apply=0
 0074BBC6	0074BBEF	cf_join_0074BBEF	disabled	apply=0
-0074BBC6	0074BC42	cf_common_exit_0074BC42	applied	kind=common_exit; gotos=3; previous=LAB_0074bc42
+0074BBC6	0074BC42	cf_common_exit_0074BC42	unchanged	label is already primary
 0074C28A	0074C313	cf_join_0074C313	disabled	apply=0
 0074C96C	0074C9FE	cf_join_0074C9FE	disabled	apply=0
 0074CA21	0074CA90	cf_join_0074CA90	disabled	apply=0
@@ -3543,12 +3416,12 @@ function_address	label_address	proposed_name	status	detail
 0074E337	0074E3AB	cf_join_0074E3AB	disabled	apply=0
 0074F368	0074F393	cf_join_0074F393	disabled	apply=0
 0074F368	0074F3A5	cf_join_0074F3A5	disabled	apply=0
-0074F3C0	0074F489	cf_common_exit_0074F489	applied	kind=common_exit; gotos=2; previous=LAB_0074f489
+0074F3C0	0074F489	cf_common_exit_0074F489	unchanged	label is already primary
 00750469	0075051F	cf_join_0075051F	disabled	apply=0
 00750469	0075052C	cf_join_0075052C	disabled	apply=0
-007519D0	00751AD0	cf_continue_loop_00751AD0	applied	kind=continue_loop; gotos=2; previous=
+007519D0	00751AD0	cf_continue_loop_00751AD0	unchanged	label is already primary
 007521B0	007522A2	cf_join_007522A2	disabled	apply=0
-007521B0	007525E9	cf_continue_loop_007525E9	applied	kind=continue_loop; gotos=2; previous=LAB_007525e9
+007521B0	007525E9	cf_continue_loop_007525E9	unchanged	label is already primary
 00752A60	00752B1B	cf_join_00752B1B	disabled	apply=0
 00752A60	00752B4C	cf_join_00752B4C	disabled	apply=0
 00752A60	00752B83	cf_join_00752B83	disabled	apply=0
@@ -3561,7 +3434,7 @@ function_address	label_address	proposed_name	status	detail
 00755560	007557FA	cf_join_007557FA	disabled	apply=0
 00755560	0075580A	cf_join_0075580A	disabled	apply=0
 00756480	00756548	cf_join_00756548	disabled	apply=0
-00756480	00756569	cf_common_exit_00756569	applied	kind=common_exit; gotos=3; previous=LAB_00756569
+00756480	00756569	cf_common_exit_00756569	unchanged	label is already primary
 00757CD0	00757CE8	cf_join_00757CE8	disabled	apply=0
 0075A350	0075A413	cf_join_0075A413	disabled	apply=0
 0075B720	0075B7AC	cf_join_0075B7AC	disabled	apply=0
@@ -3579,7 +3452,7 @@ function_address	label_address	proposed_name	status	detail
 0075C790	0075C882	cf_join_0075C882	disabled	apply=0
 0075C790	0075C8AF	cf_join_0075C8AF	disabled	apply=0
 0075C790	0075CA4A	cf_join_0075CA4A	disabled	apply=0
-0075C790	0075CB0B	cf_break_loop_0075CB0B	applied	kind=break_loop; gotos=5; previous=LAB_0075cb0b
+0075C790	0075CB0B	cf_break_loop_0075CB0B	unchanged	label is already primary
 0075E980	0075EA13	cf_join_0075EA13	disabled	apply=0
 0075E980	0075EA6D	cf_join_0075EA6D	disabled	apply=0
 0075E980	0075EAC8	cf_join_0075EAC8	disabled	apply=0

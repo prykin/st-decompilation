@@ -312,7 +312,7 @@ int __thiscall STTorpC::GetMessage(STTorpC *this,STMessage *message)
                                    (int)*(short *)&this_00->field_0x251,
                                    (int)*(short *)&this_00->field_0x253,
                                    (int)*(short *)&this_00->field_0x255,0x9a,
-                                   (int)*(short *)&this_00->field_0231,0x14,400);
+                                   (int)(short)this_00->field_0231,0x14,400);
       *(int **)&this_00->field_0x27e = piVar13;
       g_currentExceptionFrame = local_28c.previous;
       return 0;
@@ -433,7 +433,7 @@ LAB_00642c6e:
     case CASE_9B:
     case CASE_9C:
     case CASE_B4:
-      *(undefined2 *)&this_00->field_0231 = 0x32;
+      *(undefined2 *)&this_00->field_0231 = CASE_32;
       break;
     case CASE_99:
     case CASE_AD:
@@ -455,7 +455,7 @@ LAB_00642c6e:
     case CASE_B8:
     case CASE_B9:
     case CASE_BF:
-      *(undefined2 *)&this_00->field_0231 = 0;
+      *(undefined2 *)&this_00->field_0231 = CASE_0;
       break;
     default:
       goto switchD_00640ad9_caseD_a2;
@@ -465,7 +465,7 @@ LAB_00642c6e:
     case CASE_AC:
       *(undefined2 *)&this_00->field_0231 = 0x28;
     }
-    *(undefined2 *)((int)&this_00->field_0231 + 2) = 0;
+    *(undefined2 *)((int)&this_00->field_0231 + 2) = CASE_0 >> 0x10;
 switchD_00640ad9_caseD_a2:
     puVar15 = (undefined4 *)
               thunk_FUN_0041dc40(local_248,(short)this_00->field_0231,
@@ -481,7 +481,7 @@ switchD_00640ad9_caseD_a2:
                                    (int)*(short *)&this_00->field_0x251,
                                    (int)*(short *)&this_00->field_0x253,
                                    (int)*(short *)&this_00->field_0x255,0x9a,
-                                   (int)*(short *)&this_00->field_0231,0x14,400);
+                                   (int)(short)this_00->field_0231,0x14,400);
       *(int **)&this_00->field_0x27e = piVar13;
       /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
       uVar16 = extraout_EDX;

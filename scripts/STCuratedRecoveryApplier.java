@@ -32,6 +32,8 @@ public class STCuratedRecoveryApplier extends GhidraScript {
 
     @Override
     protected void run() throws Exception {
+        // Each curated row owns an independent top-level transaction.
+        end(true);
         if (currentProgram == null) { printerr("Open the ST program first."); return; }
         File proposal = proposalFile();
         if (proposal == null) return;

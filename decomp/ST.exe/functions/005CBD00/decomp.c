@@ -80,7 +80,8 @@ void __thiscall SettMapMTy::InitSettMap(SettMapMTy *this,char param_1)
                  (uint)pAVar7);
     Library::DKW::DDX::FUN_006b3640((int *)PTR_008075a8,*piVar1,0xffffffff,200,0x1dc);
     FUN_006b3af0((int *)PTR_008075a8,*piVar1);
-    sub_005C29B0(this_00,param_1);
+    SubmarineTitans::Recovered::HiddenThis::AnonReceiver_005B6730::sub_005C29B0
+              ((AnonReceiver_005B6730 *)this_00,param_1);
     if (((((param_1 == '\r') || (param_1 == '\x0e')) || (param_1 == '\x0f')) || (param_1 == '\x10'))
        && (this_00->field_1E27 == 0x11)) {
       FUN_006b2330(PTR_008075a8,&local_8,0x32,0x403b61,400,0x62,

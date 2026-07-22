@@ -1,4 +1,4 @@
-FUN_0067bef0:
+AiPlrClassTy::sub_0067BEF0:
 0067BEF0  8B 81 8D 06 00 00         MOV EAX,dword ptr [ECX + 0x68d]
 0067BEF6  40                        INC EAX
 0067BEF7  3D 00 01 00 00            CMP EAX,0x100

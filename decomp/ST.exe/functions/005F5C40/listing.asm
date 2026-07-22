@@ -1,4 +1,4 @@
-FUN_005f5c40:
+STBHEShellC::sub_005F5C40:
 005F5C40  55                        PUSH EBP
 005F5C41  8B EC                     MOV EBP,ESP
 005F5C43  83 EC 0C                  SUB ESP,0xc

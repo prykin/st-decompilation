@@ -13,8 +13,8 @@ FUN_0061c910(void *this,int param_1,int param_2,undefined4 param_3,undefined4 pa
   iVar2 = param_2;
   local_8 = 0;
   if (param_1 == 1) {
-    iVar3 = thunk_FUN_0061b340(this,(short)param_3,(short)param_4,param_5,param_6,param_7,param_8,
-                               &param_7);
+    iVar3 = STJumpMineC::sub_0061B340
+                      (this,(short)param_3,(short)param_4,param_5,param_6,param_7,param_8,&param_7);
     if (iVar3 != 0) {
       *(undefined4 *)((int)this + 0x9f) = *(undefined4 *)((int)this + 0x40);
       *(undefined4 *)((int)this + 0xa3) = *(undefined4 *)((int)this + 0x44);

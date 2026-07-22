@@ -52,8 +52,8 @@ int __thiscall STJumpMineC::sub_00619C70(STJumpMineC *this)
       iVar13 = (int)(short)(((short)(iVar12 / 200) + sVar8) -
                            (short)((longlong)iVar12 * 0x51eb851f >> 0x3f));
     }
-    uVar2 = thunk_FUN_0061b340(this,this->field_00C9,this->field_00CB,iVar13,this->field_009F,
-                               this->field_00A3,iVar12,&local_c);
+    uVar2 = sub_0061B340(this,this->field_00C9,this->field_00CB,iVar13,this->field_009F,
+                         this->field_00A3,iVar12,&local_c);
     switch(uVar2) {
     case 0:
       this->field_00CD = (short)iVar13;
@@ -173,8 +173,8 @@ LAB_00619e5f:
       local_24 = (int)(short)(((short)(iVar12 / 0xc9) + sVar8) -
                              (short)((longlong)iVar12 * 0x28c1979 >> 0x3f));
     }
-    iVar3 = thunk_FUN_0061b340(this,(short)local_28,(short)local_24,local_20,iVar13,iVar12,local_1c,
-                               &local_c);
+    iVar3 = sub_0061B340(this,(short)local_28,(short)local_24,local_20,iVar13,iVar12,local_1c,
+                         &local_c);
     switch(iVar3) {
     case 0:
       this->field_00DB = this->field_009F;
@@ -438,7 +438,7 @@ LAB_0061a4fd:
       sVar10 = sVar9;
     }
     local_10 = (int)sVar10;
-    local_28 = thunk_FUN_0061b340(this,sVar9,sVar8,local_30,iVar12,local_8,local_1c,&local_c);
+    local_28 = sub_0061B340(this,sVar9,sVar8,local_30,iVar12,local_8,local_1c,&local_c);
     switch(local_28) {
     case 0:
       this->field_00DB = this->field_009F;
@@ -550,13 +550,14 @@ LAB_0061acc2:
     if (g_visibleClass_00802A88 != (VisibleClassTy *)0x0) {
       iVar12 = (int)this->field_00CD;
       if ((((((DAT_0080874d == -1) || (g_visibleClass_00802A88->field_00F8 == 0)) ||
-            (thunk_FUN_00558c00(g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,
-                                (int)this->field_00C9,(int)this->field_00CB,&local_28,&local_24),
-            iVar12 < 0)) || ((4 < iVar12 || (local_28 < 0)))) || (pVVar1->field_0030 <= local_28))
-         || (((local_24 = g_centeredOffsets5[iVar12] + local_24, local_24 < 0 ||
-              (pVVar1->field_0034 <= local_24)) ||
-             ((pVVar1->field_004C == (byte *)0x0 ||
-              (pVVar1->field_004C[local_24 * pVVar1->field_0030 + local_28] != 0)))))) {
+            (VisibleClassTy::sub_00558C00
+                       (g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,
+                        (int)this->field_00C9,(int)this->field_00CB,&local_28,&local_24), iVar12 < 0
+            )) || ((4 < iVar12 || (local_28 < 0)))) || (pVVar1->field_0030 <= local_28)) ||
+         (((local_24 = g_centeredOffsets5[iVar12] + local_24, local_24 < 0 ||
+           (pVVar1->field_0034 <= local_24)) ||
+          ((pVVar1->field_004C == (byte *)0x0 ||
+           (pVVar1->field_004C[local_24 * pVVar1->field_0030 + local_28] != 0)))))) {
         if (this->field_00C4 == '\0') {
           FUN_006eaaa0(PTR_00807598,this->field_0097,0);
           this->field_00C4 = 1;

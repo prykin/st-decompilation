@@ -308,7 +308,7 @@ LAB_0058b6f6:
                       (CONCAT22(uVar7,this->field_0041),this->field_0043,
                        CONCAT22(uVar7,this->field_0045),(int)sVar10,(int)sVar11,local_c);
     *param_4 = sVar2 / 0x2d - (short)((int)sVar2 / -0x4c000000);
-    thunk_FUN_0058af70(this,sVar10,sVar11,(short)local_c);
+    sub_0058AF70(this,sVar10,sVar11,(short)local_c);
     return 1;
   }
   uVar12 = (int)this->field_006C + 1U & 0x80000007;

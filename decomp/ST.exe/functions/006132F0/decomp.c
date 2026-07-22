@@ -171,8 +171,9 @@ LAB_0061364b:
                         (short)((longlong)iVar8 * 0x28c1979 >> 0x3f));
   }
   if ((((DAT_0080874d == -1) || (g_visibleClass_00802A88->field_00F8 == 0)) ||
-      (thunk_FUN_00558c00(g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,iVar8,iVar5,
-                          &local_14,&local_18), local_c < 0)) || (4 < local_c)) {
+      (VisibleClassTy::sub_00558C00
+                 (g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,iVar8,iVar5,&local_14,
+                  &local_18), local_c < 0)) || (4 < local_c)) {
     bVar9 = true;
   }
   else {

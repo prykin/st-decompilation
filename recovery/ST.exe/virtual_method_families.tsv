@@ -158,7 +158,7 @@ family	component	slot_index	slot_offset	tables	owners	unique_targets	named_metho
 00790710:0	00790710	0	0x0	00790710	DumpClassC	1	GetMessage	DumpClassC	/int(/SubmarineTitans/Recovered/STMessage *32) varargs=false noreturn=false
 00790728:0	00790728	0	0x0	00790728	STGroupBoatC	1	GetMessage	STGroupBoatC	/int(/SubmarineTitans/Recovered/STMessage *32) varargs=false noreturn=false
 00790728:1	00790728	1	0x4	00790728	STGroupBoatC	1			
-00790728:2	00790728	2	0x8	00790728	STGroupBoatC	1			
+00790728:2	00790728	2	0x8	00790728	STGroupBoatC	1	SetOrderData	STGroupBoatC	/void(/SubmarineTitans/Recovered/Enums/STGroupBoatOrderType,/void *) varargs=false noreturn=false
 00790728:3	00790728	3	0xC	00790728	STGroupBoatC	1			
 00790728:4	00790728	4	0x10	00790728	STGroupBoatC	1	ChangeMDNotify	STGroupBoatC	/undefined(/int,/uint) varargs=false noreturn=false
 00790728:5	00790728	5	0x14	00790728	STGroupBoatC	1	ChangeMDNotify	STGroupBoatC	/undefined(/int,/short) varargs=false noreturn=false

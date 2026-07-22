@@ -33,7 +33,7 @@ void __thiscall TradePanelTy::PaintIndicators(TradePanelTy *this)
   if (iVar4 == 0) {
     resourceString = &local_10->field_0x18d;
     wsprintfA(resourceString,"%6d",
-              (uint)*(ushort *)(&local_10->field_0x1bc + (uint)(byte)local_10->field_01D0 * 2));
+              (uint)(ushort)(&local_10->field_01BC)[(byte)local_10->field_01D0]);
     ccFntTy::SetSurf(pTVar3->field_01DD,pTVar3->field_0068,0,0x67,0x36,0x23,0xc);
     ccFntTy::WrStr(pTVar3->field_01DD,(uint *)resourceString,-1,-1,
                    -(uint)(pTVar3->field_01D0 != '\0') & 2);
@@ -53,15 +53,15 @@ void __thiscall TradePanelTy::PaintIndicators(TradePanelTy *this)
         DibPut((AnonShape_006B5B10_E0D06CF1 *)pTVar3->field_0068,iVar4 + -3,0x45,'\x01',
                (byte *)puVar5);
         bVar7 = pTVar3->field_01D0;
-        uVar1 = *(ushort *)((int)&pTVar3->field_01AB + (local_8 + (uint)bVar7 * 2) * 4 + 2);
+        uVar1 = *(ushort *)(&pTVar3->field_0x1ad + (local_8 + (uint)bVar7 * 2) * 4);
         if (uVar1 == 0) {
           iVar8 = 0;
         }
         else if ((DAT_0080874e == '\x03') && (bVar7 == 0)) {
-          iVar8 = (uint)*(ushort *)&pTVar3->field_0x1bc * (uint)uVar1;
+          iVar8 = (uint)(ushort)pTVar3->field_01BC * (uint)uVar1;
         }
         else {
-          iVar8 = (int)((ulonglong)*(ushort *)(&pTVar3->field_0x1bc + (uint)bVar7 * 2) /
+          iVar8 = (int)((ulonglong)(ushort)(&pTVar3->field_01BC)[bVar7] /
                        (ulonglong)(longlong)(int)(uint)uVar1);
         }
         wsprintfA(resourceString,"%6d",iVar8);

@@ -12,7 +12,7 @@ undefined4 __thiscall TLOBaseTy::sub_004B9A40(TLOBaseTy *this)
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined4 extraout_ECX;
 
-  STColl3C::sub_0041C5A0((STColl3C *)this);
+  sub_0041C5A0(this);
   TVar1 = this->field_05AC;
   if ((((TVar1 != 0x4d) || (this->field_04D0 == CASE_2)) &&
       ((TVar1 != 0x4c || (this->field_04D0 == CASE_2)))) &&
@@ -28,7 +28,7 @@ undefined4 __thiscall TLOBaseTy::sub_004B9A40(TLOBaseTy *this)
   }
   else {
     if (TVar1 == 0x48) {
-      thunk_FUN_004df9f0((int)this);
+      sub_004DF9F0(this);
       return 0;
     }
     if (TVar1 == 100) {

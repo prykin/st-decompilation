@@ -1,7 +1,12 @@
 
 /* [STSwitchEnumApplier] Switch target field_04D0 uses
    /SubmarineTitans/Recovered/Enums/TLOBaseTy_field_04D0State. Cases:
-   CASE_0=0;CASE_1=1;CASE_2=2;CASE_3=3;CASE_4=4;CASE_5=5;CASE_6=6 */
+   CASE_0=0;CASE_1=1;CASE_2=2;CASE_3=3;CASE_4=4;CASE_5=5;CASE_6=6
+
+   [STSwitchEnumApplier] Switch target field_04D0 uses
+   /SubmarineTitans/Recovered/Enums/TLOBaseTy_field_04D0State. Cases:
+   CASE_0=0;CASE_1=1;CASE_2=2;CASE_3=3;CASE_4=4;CASE_5=5;CASE_6=6;CASE_32=50;CASE_40=64;CASE_49=73;CASE_5C=92
+    */
 
 undefined4 __fastcall FUN_004dec10(TLOBaseTy *param_1)
 

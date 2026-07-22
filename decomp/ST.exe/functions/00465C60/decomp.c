@@ -205,9 +205,11 @@ cf_common_exit_00465E7B:
                   pSVar1 != (STBoatC *)0x0 && (pSVar1->field_0018 == this->field_04A1)))))) &&
                (iVar6 = thunk_FUN_004e1490(pSVar1), iVar6 != 1)) {
               /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
-              sub_0048DFD0(this,this->field_0047,this->field_0049,this->field_004B,this->field_049B,
-                           this->field_049D,(int *)CONCAT22(extraout_var,this->field_049F + 1),1,
-                           &this->field_04AF,&this->field_04B1,&this->field_04B3);
+              SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0048DFD0::sub_0048DFD0
+                        ((AnonReceiver_0048DFD0 *)this,this->field_0047,this->field_0049,
+                         this->field_004B,this->field_049B,this->field_049D,
+                         (int *)CONCAT22(extraout_var,this->field_049F + 1),1,&this->field_04AF,
+                         &this->field_04B1,&this->field_04B3);
               *(undefined4 *)&this->field_0x4d5 = 2;
               this->field_00B7 = 0;
               sub_00481520(this,(int)this->field_04AF,(int)this->field_04B1,(int)this->field_04B3);
@@ -1771,10 +1773,11 @@ LAB_004685d3:
                     pSVar1 != (STBoatC *)0x0 && (pSVar1->field_0018 == this->field_04AB)))))) &&
                  (iVar6 = thunk_FUN_004e1490(pSVar1), iVar6 != 1)) {
                 /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
-                sub_0048DFD0(this,this->field_0047,this->field_0049,this->field_004B,
-                             this->field_04A5,this->field_04A7,
-                             (int *)CONCAT22(extraout_var_01,this->field_04A9 + 1),1,
-                             &this->field_04AF,&this->field_04B1,&this->field_04B3);
+                SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0048DFD0::sub_0048DFD0
+                          ((AnonReceiver_0048DFD0 *)this,this->field_0047,this->field_0049,
+                           this->field_004B,this->field_04A5,this->field_04A7,
+                           (int *)CONCAT22(extraout_var_01,this->field_04A9 + 1),1,&this->field_04AF
+                           ,&this->field_04B1,&this->field_04B3);
                 *(undefined4 *)&this->field_0x4d5 = 8;
                 this->field_00B7 = 0;
                 sub_00481520(this,(int)this->field_04AF,(int)this->field_04B1,(int)this->field_04B3)
@@ -1998,8 +2001,9 @@ LAB_0046779f:
       /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
       piVar16 = (int *)CONCAT22(extraout_var_02,this->field_049F + 1);
 LAB_00467da5:
-      sub_0048DFD0(this,this->field_0047,this->field_0049,this->field_004B,sVar14,0,piVar16,1,
-                   &this->field_04AF,&this->field_04B1,&this->field_04B3);
+      SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0048DFD0::sub_0048DFD0
+                ((AnonReceiver_0048DFD0 *)this,this->field_0047,this->field_0049,this->field_004B,
+                 sVar14,0,piVar16,1,&this->field_04AF,&this->field_04B1,&this->field_04B3);
       sub_00481520(this,(int)this->field_04AF,(int)this->field_04B1,(int)this->field_04B3);
       break;
     case 1:
@@ -2109,8 +2113,9 @@ LAB_00466744:
         /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
         piVar16 = (int *)CONCAT22((short)((uint)&this->field_04B3 >> 0x10),this->field_049F + 1);
 LAB_00467e31:
-        sub_0048DFD0(this,this->field_0047,this->field_0049,this->field_004B,sVar14,0,piVar16,1,
-                     &this->field_04AF,&this->field_04B1,&this->field_04B3);
+        SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0048DFD0::sub_0048DFD0
+                  ((AnonReceiver_0048DFD0 *)this,this->field_0047,this->field_0049,this->field_004B,
+                   sVar14,0,piVar16,1,&this->field_04AF,&this->field_04B1,&this->field_04B3);
       }
 LAB_00467e48:
       sub_00481520(this,(int)this->field_04AF,(int)this->field_04B1,(int)this->field_04B3);

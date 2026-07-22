@@ -9,18 +9,17 @@ void __thiscall FSGSTy::ChatCtrls(FSGSTy *this)
 
 {
   undefined1 *puVar1;
-  uint *puVar2;
+  AnonShape_00710790_4CBB90D4 *pAVar2;
   code *pcVar3;
   short sVar4;
   uint uVar5;
   undefined4 uVar6;
   LPBITMAPINFO ptVar7;
   DArrayTy *pDVar8;
-  int iVar9;
   MMObjTy *this_00;
-  int iVar10;
-  undefined4 *puVar11;
-  undefined4 *puVar13;
+  int iVar9;
+  undefined4 *puVar10;
+  undefined4 *puVar12;
   undefined4 local_1654 [11];
   undefined4 local_1628;
   undefined4 local_1624;
@@ -113,18 +112,21 @@ void __thiscall FSGSTy::ChatCtrls(FSGSTy *this)
   undefined4 local_d4;
   undefined4 local_a0;
   undefined4 local_9c;
-  InternalExceptionFrame *pIVar14;
+  undefined4 local_98;
+  undefined4 uStackY_74;
+  InternalExceptionFrame *pIVar13;
+  int iVar14;
 
   Library::MSVCRT::FUN_0072da40();
   memset(local_1654, 0, 0x88c); /* compiler bulk-zero initialization */
-  iVar10 = 0;
+  iVar9 = 0;
   memset(local_dc8, 0, 0x878); /* compiler bulk-zero initialization */
-  iVar10 = 0;
+  iVar9 = 0;
   memset(local_520, 0, 0x4d4); /* compiler bulk-zero initialization */
-  pIVar14 = g_currentExceptionFrame;
+  pIVar13 = g_currentExceptionFrame;
   g_currentExceptionFrame = (InternalExceptionFrame *)&stack0xffffffb4;
-  iVar10 = Library::MSVCRT::__setjmp3((int *)&stack0xffffffb8,0);
-  if (iVar10 == 0) {
+  iVar9 = Library::MSVCRT::__setjmp3((int *)&stack0xffffffb8,0);
+  if (iVar9 == 0) {
     this_00[0x1d].field_0xa9 = 0;
     if (*(int *)((int)&this_00[0x22].field_0066 + 2) != 0) {
       FreeAndNull((void **)((int)&this_00[0x22].field_0066 + 2));
@@ -135,12 +137,12 @@ void __thiscall FSGSTy::ChatCtrls(FSGSTy *this)
     if (*(int *)&this_00[0x22].field_0x74 != 0) {
       FreeAndNull((void **)&this_00[0x22].field_0x74);
     }
-    iVar10 = 1;
-    puVar11 = (undefined4 *)(*(int *)&this_00->field_0x5d + 0x28);
+    iVar9 = 1;
+    puVar10 = (undefined4 *)(*(int *)&this_00->field_0x5d + 0x28);
     uVar5 = FUN_006b4fe0(*(int *)&this_00->field_0x5d);
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     uVar6 = FUN_006b50c0(0x1bf,0x175,(uint)*(ushort *)(*(int *)&this_00->field_0x5d + 0xe),uVar5,
-                         puVar11,iVar10);
+                         puVar10,iVar9);
     *(undefined4 *)((int)&this_00[0x22].field_0066 + 2) = uVar6;
     ptVar7 = Library::DKW::DDX::FUN_006c4880(DAT_0080759c,0x13,0x5e,0x1bf,0x175,8);
     *(LPBITMAPINFO *)&this_00[0x22].field_0x6c = ptVar7;
@@ -167,12 +169,12 @@ void __thiscall FSGSTy::ChatCtrls(FSGSTy *this)
     local_da4 = 0x5f;
     local_dc8[2] = 1;
     local_dc8[3] = 0;
-    puVar2 = *(uint **)&this_00[0x1d].field_0xc0;
+    pAVar2 = *(AnonShape_00710790_4CBB90D4 **)&this_00[0x1d].field_0xc0;
     local_dc8[4] = 0x1a6 - *(int *)&this_00[0x1e].field_0xb2;
-    if (puVar2[0x28] != 0) {
-      FUN_00710790(puVar2);
+    if (*(int *)(pAVar2 + 1) != 0) {
+      FUN_00710790(pAVar2);
     }
-    local_db4 = *(int *)((int)puVar2 + 0x8a);
+    local_db4 = pAVar2->field_008A;
     local_dac = (undefined4)(0x15e / (longlong)local_db4);
     local_d14 = 0;
     local_d0c[0] = 0;
@@ -192,14 +194,15 @@ void __thiscall FSGSTy::ChatCtrls(FSGSTy *this)
     local_bf8 = 0x32;
     local_ca4 = 0x6334;
     uVar6 = *(undefined4 *)&this_00[0x1e].field_0xae;
+    iVar14 = 0;
     local_d90 = this_00->field_0008;
     local_cac = local_d90;
-    puVar11 = local_d0c;
-    puVar13 = local_b8c;
-    for (iVar10 = 0x5f; iVar10 != 0; iVar10 = iVar10 + -1) {
-      *puVar13 = *puVar11;
-      puVar11 = puVar11 + 1;
-      puVar13 = puVar13 + 1;
+    puVar10 = local_d0c;
+    puVar12 = local_b8c;
+    for (iVar9 = 0x5f; iVar9 != 0; iVar9 = iVar9 + -1) {
+      *puVar12 = *puVar10;
+      puVar10 = puVar10 + 1;
+      puVar12 = puVar12 + 1;
     }
     local_b8c[2] = *(undefined4 *)&this_00[0x1e].field_0xaa;
     local_b78 = *(undefined4 *)&this_00[0x1e].field_0xb6;
@@ -218,8 +221,9 @@ void __thiscall FSGSTy::ChatCtrls(FSGSTy *this)
     local_9b4 = 0x6335;
     local_b8c[3] = uVar6;
     local_9bc = local_d90;
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-    (*(code *)this_00->field_000C->vtable->field_0008)();
+    (*this_00->field_000C->vtable->CreateObject)
+              ((SystemClassTy *)this_00->field_000C,8,(undefined4 *)puVar1,(int *)0x0,local_dc8,
+               iVar14);
     uVar6 = *(undefined4 *)puVar1;
     *(undefined4 *)&this_00->field_0x2d = 5;
     FUN_006e6080(this_00,2,uVar6,(undefined4 *)&this_00->field_0x1d);
@@ -238,27 +242,27 @@ void __thiscall FSGSTy::ChatCtrls(FSGSTy *this)
                 (*(uint **)&this_00[0x20].field_0x32,*(uint *)&this_00[0x1f].field_0xd1,0xfffffffe,
                  *(uint *)&this_00[0x20].field_0x6,*(uint *)((int)&this_00[0x20].field_0008 + 2));
     }
-    iVar10 = *(int *)&this_00[0x22].field_0x78;
+    iVar9 = *(int *)&this_00[0x22].field_0x78;
     uVar6 = *(undefined4 *)puVar1;
     *(undefined4 *)&this_00->field_0x2d = 0x28;
     *(undefined2 *)&this_00->field_0x31 = 1;
-    *(undefined2 *)&this_00->field_0x33 = *(undefined2 *)(iVar10 + 8);
+    *(undefined2 *)&this_00->field_0x33 = *(undefined2 *)(iVar9 + 8);
     FUN_006e6080(this_00,2,uVar6,(undefined4 *)&this_00->field_0x1d);
-    iVar10 = *(int *)&this_00[0x22].field_0x78;
+    iVar9 = *(int *)&this_00[0x22].field_0x78;
     *(undefined4 *)&this_00->field_0x2d = 0x22;
     *(undefined2 *)&this_00->field_0x31 = 0;
-    iVar10 = *(int *)(iVar10 + 8);
-    if (iVar10 < 0x19) {
+    iVar9 = *(int *)(iVar9 + 8);
+    if (iVar9 < 0x19) {
       sVar4 = 0;
     }
     else {
-      sVar4 = (short)iVar10 + -0x19;
+      sVar4 = (short)iVar9 + -0x19;
     }
     uVar6 = *(undefined4 *)puVar1;
     *(short *)&this_00->field_0x33 = sVar4;
     FUN_006e6080(this_00,2,uVar6,(undefined4 *)&this_00->field_0x1d);
     memset(local_1654, 0, 0x88c); /* compiler bulk-zero initialization */
-    iVar10 = 0;
+    iVar9 = 0;
     local_1654[2] = *(undefined4 *)&this_00[0x1d].field_0xc0;
     local_1654[8] = *(undefined4 *)&this_00[0x22].field_0x7c;
     local_1608 = this_00->field_0008;
@@ -275,10 +279,12 @@ void __thiscall FSGSTy::ChatCtrls(FSGSTy *this)
     local_15c4 = 2;
     local_15c0 = 0xc0a2;
     local_15c8 = local_1608;
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-    (*(code *)this_00->field_000C->vtable->field_0008)();
+    (*this_00->field_000C->vtable->CreateObject)
+              ((SystemClassTy *)this_00->field_000C,6,(undefined4 *)&this_00[0x1e].field_0x76,
+               (int *)0x0,local_1654,0);
     SetAccelerator(1,this_00->field_0008,2,0xc0a1,2,0x1c,0,0,0,0,0,0);
-    local_9c = 0x59e0ab;
+    pIVar13 = (InternalExceptionFrame *)0x0;
+    uStackY_74 = 0x59e0ab;
     SetAccelerator(1,this_00->field_0008,2,0xc0a4,2,0x8000031,0,0,0,0,0,0);
     SetAccelerator(1,this_00->field_0008,2,0xc0a5,2,0x4000002f,0,0,0,0,0,0);
     uVar6 = MMObjTy::CreateSprBut(this_00,1,1,0x17c,0x1be,0x55,0x14,0x6901,0x6984);
@@ -321,12 +327,12 @@ void __thiscall FSGSTy::ChatCtrls(FSGSTy *this)
     local_2dc = 0x32;
     local_390 = local_a0;
     local_388 = 0x8164;
-    puVar11 = local_3f0;
-    puVar13 = local_270;
-    for (iVar10 = 0x5f; iVar10 != 0; iVar10 = iVar10 + -1) {
-      *puVar13 = *puVar11;
-      puVar11 = puVar11 + 1;
-      puVar13 = puVar13 + 1;
+    puVar10 = local_3f0;
+    puVar12 = local_270;
+    for (iVar9 = 0x5f; iVar9 != 0; iVar9 = iVar9 + -1) {
+      *puVar12 = *puVar10;
+      puVar10 = puVar10 + 1;
+      puVar12 = puVar12 + 1;
     }
     local_270[3] = *(undefined4 *)&this_00[0x21].field_0x49;
     local_260 = *(undefined4 *)&this_00[0x21].field_0x4d;
@@ -341,9 +347,10 @@ void __thiscall FSGSTy::ChatCtrls(FSGSTy *this)
     local_d8 = 199;
     local_d4 = 0xe;
     local_9c = 2;
-    pIVar14 = (InternalExceptionFrame *)0x7;
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-    (*(code *)this_00->field_000C->vtable->field_0008)();
+    local_98 = 0x8166;
+    (*this_00->field_000C->vtable->CreateObject)
+              ((SystemClassTy *)this_00->field_000C,7,(undefined4 *)&this_00[0x1e].field_0x86,
+               (int *)0x0,local_520,0);
     if (*(uint *)&this_00[0x20].field_0x7f != 0xffffffff) {
       Library::DKW::DDX::FUN_006b34d0
                 (*(uint **)&this_00[0x20].field_0xc3,*(uint *)&this_00[0x20].field_0x7f,0xfffffffe,
@@ -382,27 +389,29 @@ void __thiscall FSGSTy::ChatCtrls(FSGSTy *this)
     local_1608 = local_1628;
     local_15c8 = local_1628;
     local_de4 = local_1628;
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-    (*(code *)this_00->field_000C->vtable->field_0008)();
+    (*this_00->field_000C->vtable->CreateObject)
+              ((SystemClassTy *)this_00->field_000C,6,(undefined4 *)&this_00[0x1e].field_0x2a,
+               (int *)0x0,local_1654,0);
     local_1654[8] = *(undefined4 *)&this_00[0x1e].field_0x52;
     local_1654[4] = 0x1b5;
     local_1654[5] = 0x5f;
     local_1654[7] = 0x20;
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-    (*(code *)this_00->field_000C->vtable->field_0008)();
+    (*this_00->field_000C->vtable->CreateObject)
+              ((SystemClassTy *)this_00->field_000C,6,(undefined4 *)&this_00[0x1e].field_0x2e,
+               (int *)0x0,local_1654,0);
     *(undefined4 *)&this_00->field_0x2d = 0x61;
     *(undefined4 *)&this_00->field_0x35 = 0;
     FUN_006e6080(this_00,0xf,0,(undefined4 *)&this_00->field_0x1d);
-    g_currentExceptionFrame = pIVar14;
+    g_currentExceptionFrame = pIVar13;
     return;
   }
-  g_currentExceptionFrame = pIVar14;
-  iVar9 = ReportDebugMessage("E:\\__titans\\Start\\fsgs_obj.cpp",0x758,0,iVar10,"%s")
+  g_currentExceptionFrame = pIVar13;
+  iVar14 = ReportDebugMessage("E:\\__titans\\Start\\fsgs_obj.cpp",0x758,0,iVar9,"%s")
   ;
-  if (iVar9 != 0) {
+  if (iVar14 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  RaiseInternalException(iVar10,0,"E:\\__titans\\Start\\fsgs_obj.cpp",0x758);
+  RaiseInternalException(iVar9,0,"E:\\__titans\\Start\\fsgs_obj.cpp",0x758);
   return;
 }
 

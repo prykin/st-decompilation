@@ -14,15 +14,17 @@ byte * __cdecl TactDataPack(undefined4 *param_1,uint *param_2)
 {
   code *pcVar1;
   int iVar2;
-  byte *pbVar3;
+  AnonShape_00691190_783A1B6D *pAVar3;
   AnonShape_GLOBAL_008489C4_F7BABFAC *pAVar4;
-  int *piVar5;
-  uint uVar6;
-  undefined4 *puVar7;
-  int iVar8;
-  uint *puVar9;
-  byte *pbVar10;
-  bool bVar11;
+  byte *pbVar5;
+  int *piVar6;
+  uint uVar7;
+  undefined4 *puVar8;
+  int iVar9;
+  AnonShape_00691190_783A1B6D *pAVar10;
+  uint *puVar11;
+  byte *pbVar12;
+  bool bVar13;
   InternalExceptionFrame local_68;
   int *local_24;
   uint local_20;
@@ -31,9 +33,9 @@ byte * __cdecl TactDataPack(undefined4 *param_1,uint *param_2)
   void *local_14;
   uint local_10;
   int local_c;
-  byte *local_8;
+  AnonShape_00691190_783A1B6D *local_8;
 
-  local_8 = (byte *)0x0;
+  local_8 = (AnonShape_00691190_783A1B6D *)0x0;
   local_c = 0;
   local_14 = (void *)0x0;
   local_18 = 0;
@@ -43,114 +45,110 @@ byte * __cdecl TactDataPack(undefined4 *param_1,uint *param_2)
   if (iVar2 == 0) {
     iVar2 = 8;
     local_24 = (int *)((int)param_1 + 0x85);
-    piVar5 = local_24;
+    piVar6 = local_24;
     do {
-      iVar8 = *piVar5;
-      if (iVar8 != 0) {
-        iVar8 = *(int *)(iVar8 + 0xc) * *(int *)(iVar8 + 8) + 0x1c;
-        local_c = local_c + iVar8;
-        piVar5[2] = iVar8;
+      iVar9 = *piVar6;
+      if (iVar9 != 0) {
+        iVar9 = *(int *)(iVar9 + 0xc) * *(int *)(iVar9 + 8) + 0x1c;
+        local_c = local_c + iVar9;
+        piVar6[2] = iVar9;
       }
-      piVar5 = piVar5 + 3;
+      piVar6 = piVar6 + 3;
       iVar2 = iVar2 + -1;
     } while (iVar2 != 0);
     *param_2 = local_c + 0x10cU;
-    pbVar3 = (byte *)Library::DKW::LIB::FUN_006aac10(local_c + 0x10cU);
-    puVar7 = param_1;
-    pbVar10 = pbVar3;
+    pAVar3 = (AnonShape_00691190_783A1B6D *)Library::DKW::LIB::FUN_006aac10(local_c + 0x10cU);
+    puVar8 = param_1;
+    pAVar10 = pAVar3;
     for (iVar2 = 0x43; iVar2 != 0; iVar2 = iVar2 + -1) {
-      *(undefined4 *)pbVar10 = *puVar7;
-      puVar7 = puVar7 + 1;
-      pbVar10 = pbVar10 + 4;
+      *(undefined4 *)pAVar10 = *puVar8;
+      puVar8 = puVar8 + 1;
+      pAVar10 = (AnonShape_00691190_783A1B6D *)&pAVar10->field_0x4;
     }
-    iVar8 = 0;
-    *(uint *)(pbVar3 + 0x14) = *param_2;
-    pbVar3[0x18] = 0;
-    puVar9 = (uint *)(pbVar3 + 0x10b);
+    iVar9 = 0;
+    pAVar3->field_0014 = *param_2;
+    pAVar3->field_0x18 = 0;
+    puVar11 = (uint *)&pAVar3[1].field_0x3;
     iVar2 = local_18;
-    local_8 = pbVar3;
+    local_8 = pAVar3;
     do {
-      if (*(uint **)(pbVar3 + iVar8 + 0x85) != (uint *)0x0) {
-        FUN_006affc0(*(uint **)(pbVar3 + iVar8 + 0x85),puVar9,&local_c);
-        *(int *)(local_8 + iVar8 + 0x89) = (int)puVar9 + (-0x10b - (int)local_8);
-        /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-        puVar9 = (uint *)((int)puVar9 + *(int *)(local_8 + iVar8 + 0x8d));
-        /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-        iVar2 = iVar2 + *(int *)(local_8 + iVar8 + 0x8d);
-        pbVar3 = local_8;
+      if (*(uint **)(&pAVar3->field_0x85 + iVar9) != (uint *)0x0) {
+        FUN_006affc0(*(uint **)(&pAVar3->field_0x85 + iVar9),puVar11,&local_c);
+        *(int *)(&local_8->field_0x89 + iVar9) = (int)puVar11 + (-0x10b - (int)local_8);
+        puVar11 = (uint *)((int)puVar11 + *(int *)(&local_8->field_0x8d + iVar9));
+        iVar2 = iVar2 + *(int *)(&local_8->field_0x8d + iVar9);
+        pAVar3 = local_8;
         local_18 = iVar2;
       }
-      iVar8 = iVar8 + 0xc;
-    } while (iVar8 < 0x60);
+      iVar9 = iVar9 + 0xc;
+    } while (iVar9 < 0x60);
     if (*(char *)(param_1 + 6) == '\x02') {
-      *(int *)(pbVar3 + 0x107) = iVar2;
+      *(int *)&pAVar3->field_0x107 = iVar2;
       local_20 = 0;
-      local_8[0x105] = 0;
-      local_8[0x106] = 0;
-      iVar8 = *local_24;
-      pbVar3 = local_8;
-      if (0 < *(int *)(iVar8 + 0xc)) {
-        bVar11 = *(int *)(iVar8 + 0xc) != 0;
+      local_8->field_0105 = 0;
+      iVar9 = *local_24;
+      pAVar3 = local_8;
+      if (0 < *(int *)(iVar9 + 0xc)) {
+        bVar13 = *(int *)(iVar9 + 0xc) != 0;
         do {
-          if (bVar11) {
+          if (bVar13) {
             /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-            iVar8 = *(int *)(iVar8 + 8) * local_20 + *(int *)(iVar8 + 0x1c);
+            iVar9 = *(int *)(iVar9 + 8) * local_20 + *(int *)(iVar9 + 0x1c);
           }
           else {
-            iVar8 = 0;
+            iVar9 = 0;
           }
-          if (*(int *)(iVar8 + 4) == 0) {
+          if (*(int *)(iVar9 + 4) == 0) {
             pAVar4 = (AnonShape_GLOBAL_008489C4_F7BABFAC *)0x0;
           }
           else {
-            pAVar4 = (AnonShape_GLOBAL_008489C4_F7BABFAC *)(*(int *)(iVar8 + 4) + 0x20);
+            pAVar4 = (AnonShape_GLOBAL_008489C4_F7BABFAC *)(*(int *)(iVar9 + 4) + 0x20);
           }
           if (pAVar4 != (AnonShape_GLOBAL_008489C4_F7BABFAC *)0x0) {
             local_1c = FltDataPack(pAVar4,&local_10);
-            /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-            local_8 = (byte *)Library::DKW::LIB::FUN_006acf50
-                                        ((int)local_8,*(int *)(local_8 + 0x14) + local_10);
-            pbVar3 = local_1c;
-            pbVar10 = local_8 + iVar2 + 0x10b;
-            for (uVar6 = local_10 >> 2; uVar6 != 0; uVar6 = uVar6 - 1) {
-              *(undefined4 *)pbVar10 = *(undefined4 *)pbVar3;
-              pbVar3 = pbVar3 + 4;
-              pbVar10 = pbVar10 + 4;
+            local_8 = (AnonShape_00691190_783A1B6D *)
+                      Library::DKW::LIB::FUN_006acf50((int)local_8,local_8->field_0014 + local_10);
+            pbVar5 = local_1c;
+            pbVar12 = &local_8[1].field_0x3 + iVar2;
+            for (uVar7 = local_10 >> 2; uVar7 != 0; uVar7 = uVar7 - 1) {
+              *(undefined4 *)pbVar12 = *(undefined4 *)pbVar5;
+              pbVar5 = pbVar5 + 4;
+              pbVar12 = pbVar12 + 4;
             }
-            for (uVar6 = local_10 & 3; uVar6 != 0; uVar6 = uVar6 - 1) {
-              *pbVar10 = *pbVar3;
-              pbVar3 = pbVar3 + 1;
-              pbVar10 = pbVar10 + 1;
+            for (uVar7 = local_10 & 3; uVar7 != 0; uVar7 = uVar7 - 1) {
+              *pbVar12 = *pbVar5;
+              pbVar5 = pbVar5 + 1;
+              pbVar12 = pbVar12 + 1;
             }
             iVar2 = iVar2 + local_10;
-            *(uint *)(local_8 + 0x14) = *(int *)(local_8 + 0x14) + local_10;
-            *(short *)(local_8 + 0x105) = *(short *)(local_8 + 0x105) + 1;
+            local_8->field_0014 = local_8->field_0014 + local_10;
+            local_8->field_0105 = local_8->field_0105 + 1;
             local_18 = iVar2;
             if (local_1c != (byte *)0x0) {
               FreeAndNull(&local_1c);
             }
           }
           local_20 = local_20 + 1;
-          iVar8 = *local_24;
-          bVar11 = local_20 < *(uint *)(iVar8 + 0xc);
-          pbVar3 = local_8;
-        } while ((int)local_20 < (int)*(uint *)(iVar8 + 0xc));
+          iVar9 = *local_24;
+          bVar13 = local_20 < *(uint *)(iVar9 + 0xc);
+          pAVar3 = local_8;
+        } while ((int)local_20 < (int)*(uint *)(iVar9 + 0xc));
       }
     }
     g_currentExceptionFrame = local_68.previous;
-    *param_2 = *(uint *)(pbVar3 + 0x14);
-    return pbVar3;
+    *param_2 = pAVar3->field_0014;
+    return (byte *)pAVar3;
   }
   g_currentExceptionFrame = local_68.previous;
-  if (local_8 != (byte *)0x0) {
+  if (local_8 != (AnonShape_00691190_783A1B6D *)0x0) {
     FreeAndNull(&local_8);
   }
   if (local_14 != (void *)0x0) {
     FreeAndNull(&local_14);
   }
-  iVar8 = ReportDebugMessage("E:\\__titans\\ai\\ai_tact_d.cpp",0x8c,0,iVar2,"%s",
+  iVar9 = ReportDebugMessage("E:\\__titans\\ai\\ai_tact_d.cpp",0x8c,0,iVar2,"%s",
                              "TactDataPack");
-  if (iVar8 == 0) {
+  if (iVar9 == 0) {
     RaiseInternalException(iVar2,0,"E:\\__titans\\ai\\ai_tact_d.cpp",0x8d);
     return (byte *)0x0;
   }

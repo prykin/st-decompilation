@@ -4,7 +4,11 @@
 /* [STMethodOwnerApplier] Structural method owner recovered as STAppC.
    Evidence: this_call_owners=[STAppC]; agreed_this_calls=2; incoming_this_accesses=21;
    incoming_edx_uses=0; incoming_stack_parameter_uses=0; direct_non_thunk_callers=0;
-   incoming_ecx_receiver_callers=0; attributed_named_callers=2; owner_evidence_coverage=adequate */
+   incoming_ecx_receiver_callers=0; attributed_named_callers=2; owner_evidence_coverage=adequate
+
+   [STSwitchEnumApplier] Switch target field_1180 uses
+   /SubmarineTitans/Recovered/Enums/STAppC_field_1180State. Cases:
+   CASE_1=1;CASE_2=2;CASE_3=3;CASE_6=6;CASE_8=8 */
 
 void __thiscall STAppC::sub_0056F040(STAppC *this)
 
@@ -29,11 +33,11 @@ void __thiscall STAppC::sub_0056F040(STAppC *this)
     iVar5 = iVar5 + -1;
   } while (iVar5 != 0);
   switch(this->field_1180) {
-  case 1:
-  case 2:
-  case 3:
-  case 6:
-  case 8:
+  case CASE_1:
+  case CASE_2:
+  case CASE_3:
+  case CASE_6:
+  case CASE_8:
     pcVar2 = &this->field_11C9;
     this->field_148F = 0;
     local_c = 8;

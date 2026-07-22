@@ -77,9 +77,9 @@ undefined4 __thiscall FUN_0061c5f0(void *this,undefined4 *param_1)
         *(undefined2 *)((int)this + 0x149) = this_00->field_0032;
         uVar4 = (*this_00->vtable->vfunc_2C)();
         *(undefined4 *)((int)this + 0x123) = uVar4;
-        uVar4 = FUN_006acf0d(*(int *)((int)this + 0x9f),*(int *)((int)this + 0xa3),
+        iVar5 = FUN_006acf0d(*(int *)((int)this + 0x9f),*(int *)((int)this + 0xa3),
                              *(int *)((int)this + 0xa7),(int)local_8,(int)local_6,(int)local_c);
-        *(undefined4 *)((int)this + 0x13d) = uVar4;
+        *(int *)((int)this + 0x13d) = iVar5;
         uVar4 = FUN_006aced8(*(int *)((int)this + 0x9f),*(int *)((int)this + 0xa3),(int)local_8,
                              (int)local_6);
         *(undefined4 *)((int)this + 0x141) = uVar4;

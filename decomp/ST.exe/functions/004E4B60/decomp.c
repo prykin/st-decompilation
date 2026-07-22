@@ -42,7 +42,7 @@ undefined4 __fastcall FUN_004e4b60(AnonShape_004E4B60_EABE8E44 *param_1)
         *(undefined4 *)&param_1[2].field_0x48 = 0;
       }
       if (*(int *)&param_1[2].field_0x4c != 0) {
-        thunk_FUN_0041d2b0((AnonShape_0041D2B0_CE8C6BD3 *)param_1);
+        STMineSetC::sub_0041D2B0((STMineSetC *)param_1);
         *(undefined4 *)&param_1[2].field_0x4c = 0;
       }
     }

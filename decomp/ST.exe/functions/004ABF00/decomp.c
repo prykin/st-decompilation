@@ -39,7 +39,7 @@ undefined4 __thiscall STT3DSprC::SetCurShad(STT3DSprC *this,char param_1,uint pa
               (-1,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\Tspr3d.cpp",0xa5);
   }
   /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  if (*(int *)(*(int *)(pSVar1->field_0020 + param_1 * 0x24) + 0x29) != 0) {
+  if (*(int *)(*(int *)(&pSVar1->field_0020->field_0x0 + param_1 * 0x24) + 0x29) != 0) {
     pSVar1->field_0013 = param_1;
     pSVar1->field_0030 = param_2;
     if (pSVar1->field_0011 == '\0') {
@@ -53,7 +53,7 @@ undefined4 __thiscall STT3DSprC::SetCurShad(STT3DSprC *this,char param_1,uint pa
         uVar4 = pSVar1->field_0018;
         pcVar6 = thunk_FUN_004ad740;
       }
-      SubmarineTitans::Recovered::HiddenThis::AnonReceiver_004248D0::FUN_006e9520
+      SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00424E10::FUN_006e9520
                 (pSVar1->field_003C,uVar4,uVar5,(uint)pcVar6,(uint)pSVar1);
     }
     g_currentExceptionFrame = local_4c.previous;

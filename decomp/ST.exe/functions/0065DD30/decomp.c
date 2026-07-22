@@ -1,7 +1,8 @@
 
 int __fastcall
-FUN_0065dd30(int param_1,undefined4 param_2,uint param_3,uint param_4,char param_5,byte *param_6,
-            short param_7,short param_8,short param_9,short param_10,short param_11,short param_12)
+FUN_0065dd30(AiFltClassTy *param_1,undefined4 param_2,uint param_3,uint param_4,char param_5,
+            byte *param_6,short param_7,short param_8,short param_9,short param_10,short param_11,
+            short param_12)
 
 {
   byte bVar1;
@@ -17,7 +18,7 @@ FUN_0065dd30(int param_1,undefined4 param_2,uint param_3,uint param_4,char param
   bool bVar10;
   byte local_2c [16];
   DArrayTy *local_1c;
-  int local_18;
+  AiFltClassTy *local_18;
   uint local_14;
   int local_10;
   short local_a;
@@ -27,13 +28,11 @@ FUN_0065dd30(int param_1,undefined4 param_2,uint param_3,uint param_4,char param
   iVar9 = 0;
   local_10 = 0;
   local_18 = param_1;
-  local_1c = (DArrayTy *)AiFltClassTy::sub_0065DA10((AiFltClassTy *)param_1,param_2);
+  local_1c = (DArrayTy *)AiFltClassTy::sub_0065DA10(param_1,param_2);
   if (local_1c != (DArrayTy *)0x0) {
-    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-    cVar2 = *(char *)(param_1 + 0x81);
+    cVar2 = param_1->field_0081;
     if ((cVar2 < '\0') || ('\a' < cVar2)) {
-      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-      cVar2 = (char)*(undefined4 *)(param_1 + 0x24);
+      cVar2 = (char)param_1->field_0024;
     }
     if ((param_5 != '\b') && ((param_5 < '\0' || (cVar2 = param_5, '\b' < param_5)))) {
       param_5 = -1;
@@ -53,7 +52,7 @@ FUN_0065dd30(int param_1,undefined4 param_2,uint param_3,uint param_4,char param
         }
         /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
         this = STAllPlayersC::GetObjPtr
-                         (g_allPlayers_007FA174,*(char *)(param_1 + 0x24),
+                         (g_allPlayers_007FA174,*(char *)&param_1->field_0024,
                           CONCAT22((short)((uint)puVar3 >> 0x10),*puVar3),CASE_1);
         if ((this == (STGameObjC *)0x0) || (iVar9 = (*this->vtable[1].vfunc_24)(), iVar9 == 0))
         goto cf_common_join_0065DF91;

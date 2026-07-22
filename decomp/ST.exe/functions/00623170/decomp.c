@@ -40,8 +40,8 @@ undefined4 __thiscall STMineSetC::LoadImagMineSet(STMineSetC *this,int param_1)
   pSVar2->field_02BA = iVar3;
   if (param_1 == 0) {
     iVar3 = STT3DSprC::LoadSequence
-                      ((STT3DSprC *)this_00,0xe,DAT_00806774,
-                       (&PTR_DAT_007d02c4)[(byte)pSVar2->field_02AD],0x1d);
+                      ((STT3DSprC *)this_00,0xe,DAT_00806774,(&PTR_DAT_007d02c4)[pSVar2->field_02AD]
+                       ,0x1d);
     if (iVar3 != 0) {
       return local_8;
     }
@@ -55,8 +55,8 @@ undefined4 __thiscall STMineSetC::LoadImagMineSet(STMineSetC *this,int param_1)
     if (pSVar2->field_0352 != '\0') {
       iVar3 = STT3DSprC::LoadSequence
                         ((STT3DSprC *)this_00,0xc,DAT_00806774,
-                         (&PTR_s_mine0_007d02d4)
-                         [pSVar2->field_0262 + (uint)(byte)pSVar2->field_02AD * 8],0x1d);
+                         (&PTR_s_mine0_007d02d4)[pSVar2->field_0262 + (uint)pSVar2->field_02AD * 8],
+                         0x1d);
       if (iVar3 != 0) {
         return local_8;
       }
@@ -72,7 +72,7 @@ undefined4 __thiscall STMineSetC::LoadImagMineSet(STMineSetC *this,int param_1)
   else {
     iVar3 = STT3DSprC::LoadSequence
                       ((STT3DSprC *)this_00,0xe,DAT_00806774,
-                       (&PTR_s_expdeep_007d0354)[(byte)pSVar2->field_02AD],0x1d);
+                       (&PTR_s_expdeep_007d0354)[pSVar2->field_02AD],0x1d);
     if (iVar3 != 0) {
       return local_8;
     }
@@ -81,8 +81,8 @@ undefined4 __thiscall STMineSetC::LoadImagMineSet(STMineSetC *this,int param_1)
     STT3DSprC::ShowCurFase((STT3DSprC *)this_00,'\x0e');
     STT3DSprC::StartShow((STT3DSprC *)this_00,0xe,g_playSystem_00802A38->field_00E4);
     iVar3 = STT3DSprC::LoadSequence
-                      ((STT3DSprC *)this_00,10,DAT_00806774,
-                       (&PTR_DAT_007d0364)[(byte)pSVar2->field_02AD],0x1d);
+                      ((STT3DSprC *)this_00,10,DAT_00806774,(&PTR_DAT_007d0364)[pSVar2->field_02AD],
+                       0x1d);
     if (iVar3 != 0) {
       return local_8;
     }
@@ -94,8 +94,8 @@ undefined4 __thiscall STMineSetC::LoadImagMineSet(STMineSetC *this,int param_1)
     STT3DSprC::StartShow((STT3DSprC *)this_00,10,g_playSystem_00802A38->field_00E4);
     pSVar2->field_02E0 = 1;
     iVar3 = STT3DSprC::LoadSequence
-                      ((STT3DSprC *)this_00,9,DAT_00806764,
-                       (&PTR_DAT_007d0374)[(byte)pSVar2->field_02AD],0x1d);
+                      ((STT3DSprC *)this_00,9,DAT_00806764,(&PTR_DAT_007d0374)[pSVar2->field_02AD],
+                       0x1d);
     if (iVar3 != 0) {
       return local_8;
     }

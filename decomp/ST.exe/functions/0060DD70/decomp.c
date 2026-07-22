@@ -82,8 +82,9 @@ int __fastcall FUN_0060dd70(AnonShape_0060DD70_701DD710 *param_1)
     if (g_visibleClass_00802A88->field_00F8 == 0) {
       return local_14;
     }
-    thunk_FUN_00558c00(g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,iVar5,iVar6,
-                       &local_20,&local_24);
+    VisibleClassTy::sub_00558C00
+              (g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,iVar5,iVar6,&local_20,
+               &local_24);
     iVar6 = local_8;
     iVar5 = local_18;
     pVVar3 = g_visibleClass_00802A88;
@@ -118,8 +119,9 @@ int __fastcall FUN_0060dd70(AnonShape_0060DD70_701DD710 *param_1)
     if (g_visibleClass_00802A88->field_00F8 == 0) {
       return local_14;
     }
-    thunk_FUN_00558c00(g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,local_c,local_18,
-                       &local_24,&local_20);
+    VisibleClassTy::sub_00558C00
+              (g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,local_c,local_18,
+               &local_24,&local_20);
     pVVar2 = g_visibleClass_00802A88;
     if (local_24 < 0) {
       return local_14;
@@ -146,8 +148,9 @@ int __fastcall FUN_0060dd70(AnonShape_0060DD70_701DD710 *param_1)
     if (g_visibleClass_00802A88->field_00F8 == 0) {
       return local_14;
     }
-    thunk_FUN_00558c00(g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,local_10,iVar5,
-                       &local_24,&local_20);
+    VisibleClassTy::sub_00558C00
+              (g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,local_10,iVar5,&local_24,
+               &local_20);
     iVar6 = local_8;
     iVar5 = local_1c;
     pVVar3 = g_visibleClass_00802A88;
@@ -176,8 +179,9 @@ int __fastcall FUN_0060dd70(AnonShape_0060DD70_701DD710 *param_1)
     if (g_visibleClass_00802A88->field_00F8 == 0) {
       return local_14;
     }
-    thunk_FUN_00558c00(g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,local_c,local_1c,
-                       &local_24,&local_20);
+    VisibleClassTy::sub_00558C00
+              (g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,local_c,local_1c,
+               &local_24,&local_20);
     if (local_24 < 0) {
       return local_14;
     }

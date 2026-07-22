@@ -25,10 +25,10 @@ void __thiscall TLOEmbryoTy::sub_0041C3F0(TLOEmbryoTy *this,undefined *param_1)
       else {
         this->field_0105 = (int)this->field_0101 << 1;
       }
-      VisibleClassTy::sub_005594A0
-                (g_visibleClass_00802A88,(int)this->field_005B,(int)this->field_005D,
-                 (char)this->field_005F,(undefined *)this->field_0024,this->field_0105,
-                 this->field_0018,0xffffffff);
+      SubmarineTitans::Recovered::HiddenThis::AnonReceiver_005594A0::sub_005594A0
+                ((AnonReceiver_005594A0 *)g_visibleClass_00802A88,(int)this->field_005B,
+                 (int)this->field_005D,(char)this->field_005F,(undefined *)this->field_0024,
+                 this->field_0105,this->field_0018,0xffffffff);
     }
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
     uVar2 = (*(code *)this->field_0000->field_002C)();

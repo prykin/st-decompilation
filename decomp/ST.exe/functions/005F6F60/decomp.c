@@ -2,7 +2,12 @@
 /* [STMethodOwnerApplier] Structural method owner recovered as STColl3C.
    Evidence: this_call_owners=[STColl3C]; agreed_this_calls=1; incoming_this_accesses=15;
    incoming_edx_uses=0; incoming_stack_parameter_uses=0; direct_non_thunk_callers=0;
-   incoming_ecx_receiver_callers=0; attributed_named_callers=1; owner_evidence_coverage=adequate */
+   incoming_ecx_receiver_callers=0; attributed_named_callers=1; owner_evidence_coverage=adequate
+
+   [STSwitchEnumApplier] Switch target field_02DD uses
+   /SubmarineTitans/Recovered/Enums/STColl3C_field_02DDState. Cases:
+   CASE_1=1;CASE_2=2;CASE_3=3;CASE_4=4;CASE_5=5;CASE_6=6;CASE_8=8;CASE_9=9;CASE_A=10;CASE_B=11;CASE_C=12
+    */
 
 void __thiscall STColl3C::sub_005F6F60(STColl3C *this)
 
@@ -40,7 +45,7 @@ void __thiscall STColl3C::sub_005F6F60(STColl3C *this)
   case CASE_1:
     if ((this->field_02E1 <= g_playSystem_00802A38->field_00E4) && (this->field_02EA == 0)) {
       if (this->field_02B7 < 0) {
-        iVar6 = thunk_FUN_005f8650(this,this->field_0245,this->field_0249,this->field_024D);
+        iVar6 = sub_005F8650(this,this->field_0245,this->field_0249,this->field_024D);
         if (iVar6 != 0) {
           uVar11 = thunk_FUN_005f6ad0();
           this->field_02B6 = (char)uVar11;
@@ -179,9 +184,9 @@ LAB_005f7400:
         this->field_029F = 0;
       }
     }
-    iVar6 = thunk_FUN_005f8650(this,(int)(short)(*(short *)&this->field_0291 * 0xc9 + 100),
-                               (int)(short)(*(short *)&this->field_0295 * 0xc9 + 100),
-                               (int)(short)(*(short *)&this->field_0299 * 200 + 100));
+    iVar6 = sub_005F8650(this,(int)(short)(*(short *)&this->field_0291 * 0xc9 + 100),
+                         (int)(short)(*(short *)&this->field_0295 * 0xc9 + 100),
+                         (int)(short)(*(short *)&this->field_0299 * 200 + 100));
     if (iVar6 != 0) {
       thunk_FUN_005f6df0((STAllPlayersC *)this);
       thunk_FUN_004ad460(&this->vtable_at_1d5,0);
@@ -305,7 +310,7 @@ LAB_005f79aa:
         *puVar8 = *local_24;
         (&this->field_0x2a4)[this->field_02A0 * 6] = 1;
         *(undefined4 *)(&this->field_0x2a6 + this->field_02A0 * 6) = local_28;
-        (&this->field_0x2a5)[this->field_02A0 * 6] = *(undefined1 *)&this->field_0024;
+        (&this->field_0x2a5)[this->field_02A0 * 6] = this->field_0024;
         if (iVar6 == 2) {
           *(undefined4 *)this->field_02E6 = local_2c;
         }

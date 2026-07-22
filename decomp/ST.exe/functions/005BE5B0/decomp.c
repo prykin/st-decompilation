@@ -255,7 +255,7 @@ LAB_005bf156:
           pcVar7 = pcVar7 + 1;
         } while (cVar14 != '\0');
         if (pcVar1->field_00A0 != 0) {
-          FUN_00710790((uint *)pcVar1);
+          FUN_00710790((AnonShape_00710790_4CBB90D4 *)pcVar1);
         }
         _Count = (int)(0x2a8 / (longlong)
                                (this_00->field_0083->field_0058 + *(int *)&pcVar1->field_0x86)) - 1;

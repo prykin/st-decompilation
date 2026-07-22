@@ -64,8 +64,9 @@ undefined4 __fastcall FUN_00643e20(AnonShape_00643E20_B7FEAA75 *param_1,undefine
     iVar5 = (int)sVar2 / 0xc9;
     /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
     if ((((((DAT_0080874d == -1) || (iVar5 = 0, g_visibleClass_00802A88->field_00F8 == 0)) ||
-          (thunk_FUN_00558c00(g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,iVar6,
-                              iVar9,&local_1c,&local_20), iVar5 = extraout_EDX, iVar11 < 0)) ||
+          (VisibleClassTy::sub_00558C00
+                     (g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,iVar6,iVar9,
+                      &local_1c,&local_20), iVar5 = extraout_EDX, iVar11 < 0)) ||
          (((iVar5 = extraout_EDX, 4 < iVar11 || (iVar5 = local_1c, local_1c < 0)) ||
           ((pVVar3->field_0030 <= local_1c ||
            ((local_20 = g_centeredOffsets5[iVar11] + local_20, local_20 < 0 ||

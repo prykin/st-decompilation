@@ -2,315 +2,323 @@
 /* [STSwitchEnumApplier] Switch target param_1 uses
    /SubmarineTitans/Recovered/Enums/Global_sub_00498D20_param_1Enum. Cases:
    CASE_1=1;CASE_2=2;CASE_3=3;CASE_4=4;CASE_5=5;CASE_6=6;CASE_7=7;CASE_8=8;CASE_9=9;CASE_A=10;CASE_B=11;CASE_C=12;CASE_D=13;CASE_E=14;CASE_F=15;CASE_10=16;CASE_11=17;CASE_12=18;CASE_13=19;CASE_14=20;CASE_15=21;CASE_65=101;CASE_66=102;CASE_67=103;CASE_68=104;CASE_69=105;CASE_6A=106
-    */
 
-void __thiscall FUN_00498d20(void *this,Global_sub_00498D20_param_1Enum orderType,void *data)
+   [ST_RECOVERY:group_boat_set_order_data_v1]
+   Source: E:\__titans\wlad\to_grpb.cpp
+   Copies discriminator-specific group-order payloads into STGroupBoatC state, deep-copying
+   DArray-backed variants and marking the corresponding order data dirty. Name is descriptive;
+   original spelling is not confirmed. */
+
+void __thiscall
+STGroupBoatC::SetOrderData(STGroupBoatC *this,STGroupBoatOrderType orderType,void *data)
 
 {
   DArrayTy *pDVar1;
-  int iVar2;
-  int *piVar3;
-  undefined4 *puVar4;
-  uint uVar5;
+  undefined4 *puVar2;
+  DArrayTy *pDVar3;
+  int iVar4;
+  DArrayTy **ppDVar5;
   uint uVar6;
+  uint uVar7;
   undefined4 local_10;
   undefined2 local_c;
   undefined4 local_8;
 
   switch(orderType) {
-  case CASE_1:
-    *(undefined4 *)((int)this + 0x65) = 1;
-    *(undefined4 *)((int)this + 0x89) = 1;
-    puVar4 = (undefined4 *)((int)this + 0xdd);
+  case GROUP_BOAT_ORDER_01:
+    this->field_0065 = 1;
+    this->field_0089 = 1;
+    puVar2 = (undefined4 *)&this->field_0xdd;
     goto LAB_00499129;
-  case CASE_2:
-    *(undefined4 *)((int)this + 0x65) = 1;
-    *(undefined4 *)((int)this + 0x8d) = 1;
-    piVar3 = (int *)((int)this + 0xe7);
-    for (iVar2 = 6; iVar2 != 0; iVar2 = iVar2 + -1) {
-      *piVar3 = *(int *)data;
-      data = (int *)((int)data + 4);
-      piVar3 = piVar3 + 1;
+  case GROUP_BOAT_ORDER_02:
+    this->field_0065 = 1;
+    this->field_008D = 1;
+    puVar2 = &this->field_00E7;
+    for (iVar4 = 6; iVar4 != 0; iVar4 = iVar4 + -1) {
+      *puVar2 = *(undefined4 *)data;
+      data = (undefined4 *)((int)data + 4);
+      puVar2 = puVar2 + 1;
     }
-    if (*(int *)((int)this + 0xe7) == 0) {
-      data = *(void **)((int)this + 0xef);
-      uVar5 = *(uint *)((int)data + 0xc);
-      pDVar1 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,uVar5,4,1);
-      uVar6 = 0;
-      *(DArrayTy **)((int)this + 0xef) = pDVar1;
-      if (0 < (int)uVar5) {
+    if (this->field_00E7 == 0) {
+      data = this->field_00EF;
+      uVar6 = ((DArrayTy *)data)->count;
+      pDVar3 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,uVar6,4,1);
+      uVar7 = 0;
+      this->field_00EF = pDVar3;
+      if (0 < (int)uVar6) {
         do {
-          DArrayGetElement(data,uVar6,&local_8);
-          Library::DKW::TBL::FUN_006ae140(*(uint **)((int)this + 0xef),uVar6,&local_8);
-          uVar6 = uVar6 + 1;
-        } while ((int)uVar6 < (int)uVar5);
+          DArrayGetElement(data,uVar7,&local_8);
+          Library::DKW::TBL::FUN_006ae140(&this->field_00EF->flags,uVar7,&local_8);
+          uVar7 = uVar7 + 1;
+        } while ((int)uVar7 < (int)uVar6);
         return;
       }
     }
     break;
-  case CASE_3:
-    *(undefined4 *)((int)this + 0x65) = 1;
-    *(undefined4 *)((int)this + 0x91) = 1;
+  case GROUP_BOAT_ORDER_03:
+    this->field_0065 = 1;
+    this->field_0091 = 1;
     return;
-  case CASE_4:
-    *(undefined4 *)((int)this + 0x65) = 1;
-    *(undefined4 *)((int)this + 0x95) = 1;
-    *(int *)((int)this + 0x15c) = *(int *)data;
-    *(undefined4 *)((int)this + 0x160) = *(undefined4 *)((int)data + 4);
-    if (*(int *)((int)this + 0x15c) == 0) {
-      data = *(void **)((int)this + 0x160);
-      uVar5 = *(uint *)((int)data + 0xc);
-      pDVar1 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,uVar5,2,1);
-      uVar6 = 0;
-      *(DArrayTy **)((int)this + 0x160) = pDVar1;
-      if (0 < (int)uVar5) {
+  case GROUP_BOAT_ORDER_04:
+    this->field_0065 = 1;
+    this->field_0095 = 1;
+    this->field_015C = *(undefined4 *)data;
+    this->field_0160 = *(DArrayTy **)((int)data + 4);
+    if (this->field_015C == 0) {
+      data = this->field_0160;
+      uVar6 = ((DArrayTy *)data)->count;
+      pDVar3 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,uVar6,2,1);
+      uVar7 = 0;
+      this->field_0160 = pDVar3;
+      if (0 < (int)uVar6) {
         do {
-          DArrayGetElement(data,uVar6,(byte *)((int)&orderType + 2));
+          DArrayGetElement(data,uVar7,(byte *)((int)&orderType + 2));
           Library::DKW::TBL::FUN_006ae140
-                    (*(uint **)((int)this + 0x160),uVar6,(undefined4 *)((int)&orderType + 2));
-          uVar6 = uVar6 + 1;
-        } while ((int)uVar6 < (int)uVar5);
+                    (&this->field_0160->flags,uVar7,(undefined4 *)((int)&orderType + 2));
+          uVar7 = uVar7 + 1;
+        } while ((int)uVar7 < (int)uVar6);
         return;
       }
     }
     break;
-  case CASE_5:
-    *(undefined4 *)((int)this + 0x65) = 1;
-    *(undefined4 *)((int)this + 0x99) = 1;
-    piVar3 = (int *)((int)this + 0x164);
-    for (iVar2 = 5; iVar2 != 0; iVar2 = iVar2 + -1) {
-      *piVar3 = *(int *)data;
-      data = (int *)((int)data + 4);
-      piVar3 = piVar3 + 1;
+  case GROUP_BOAT_ORDER_05:
+    this->field_0065 = 1;
+    this->field_0099 = 1;
+    puVar2 = &this->field_0164;
+    for (iVar4 = 5; iVar4 != 0; iVar4 = iVar4 + -1) {
+      *puVar2 = *(undefined4 *)data;
+      data = (undefined4 *)((int)data + 4);
+      puVar2 = puVar2 + 1;
     }
-    if (*(int *)((int)this + 0x164) == 0) {
-      data = *(void **)((int)this + 0x168);
-      uVar5 = *(uint *)((int)data + 0xc);
-      pDVar1 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,uVar5,2,1);
-      uVar6 = 0;
-      *(DArrayTy **)((int)this + 0x168) = pDVar1;
-      if (0 < (int)uVar5) {
+    if (this->field_0164 == 0) {
+      data = this->field_0168;
+      uVar6 = ((DArrayTy *)data)->count;
+      pDVar3 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,uVar6,2,1);
+      uVar7 = 0;
+      this->field_0168 = pDVar3;
+      if (0 < (int)uVar6) {
         do {
-          DArrayGetElement(data,uVar6,(byte *)((int)&orderType + 2));
+          DArrayGetElement(data,uVar7,(byte *)((int)&orderType + 2));
           Library::DKW::TBL::FUN_006ae140
-                    (*(uint **)((int)this + 0x168),uVar6,(undefined4 *)((int)&orderType + 2));
-          uVar6 = uVar6 + 1;
-        } while ((int)uVar6 < (int)uVar5);
+                    (&this->field_0168->flags,uVar7,(undefined4 *)((int)&orderType + 2));
+          uVar7 = uVar7 + 1;
+        } while ((int)uVar7 < (int)uVar6);
         return;
       }
     }
     break;
-  case CASE_6:
-    *(undefined4 *)((int)this + 0x65) = 1;
-    *(undefined4 *)((int)this + 0x9d) = 1;
-    piVar3 = (int *)((int)this + 0x103);
-    *piVar3 = *(int *)data;
-    *(undefined4 *)((int)this + 0x107) = *(undefined4 *)((int)data + 4);
-    iVar2 = *piVar3;
-    data = *(void **)(iVar2 + 0xc);
+  case GROUP_BOAT_ORDER_06:
+    this->field_0065 = 1;
+    this->field_009D = 1;
+    ppDVar5 = &this->field_0103;
+    *ppDVar5 = *(DArrayTy **)data;
+    this->field_0107 = *(undefined4 *)((int)data + 4);
+    pDVar3 = *ppDVar5;
+    data = (void *)pDVar3->count;
     pDVar1 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,1,6,1);
-    *piVar3 = (int)pDVar1;
-    uVar5 = 0;
+    *ppDVar5 = pDVar1;
+    uVar6 = 0;
     if (0 < (int)data) {
       do {
-        if (uVar5 < *(uint *)(iVar2 + 0xc)) {
-          puVar4 = (undefined4 *)(*(int *)(iVar2 + 8) * uVar5 + *(int *)(iVar2 + 0x1c));
+        if (uVar6 < pDVar3->count) {
+          /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(pDVar3, uVar6) (runtime stride) */
+          puVar2 = (undefined4 *)(pDVar3->elementSize * uVar6 + (int)pDVar3->data);
         }
         else {
-          puVar4 = (undefined4 *)0x0;
+          puVar2 = (undefined4 *)0x0;
         }
-        local_10 = *puVar4;
-        local_c = *(undefined2 *)(puVar4 + 1);
-        Library::DKW::TBL::FUN_006ae140((uint *)*piVar3,uVar5,&local_10);
-        uVar5 = uVar5 + 1;
-      } while ((int)uVar5 < (int)data);
+        local_10 = *puVar2;
+        local_c = *(undefined2 *)(puVar2 + 1);
+        Library::DKW::TBL::FUN_006ae140(&(*ppDVar5)->flags,uVar6,&local_10);
+        uVar6 = uVar6 + 1;
+      } while ((int)uVar6 < (int)data);
       return;
     }
     break;
-  case CASE_7:
-    *(undefined4 *)((int)this + 0x65) = 1;
-    *(undefined4 *)((int)this + 0xa1) = 1;
-    *(undefined4 *)((int)this + 0xff) = *(undefined4 *)data;
+  case GROUP_BOAT_ORDER_07:
+    this->field_0065 = 1;
+    this->field_00A1 = 1;
+    this->field_00FF = *(undefined4 *)data;
     return;
-  case CASE_8:
-    *(undefined4 *)((int)this + 0x65) = 1;
-    *(undefined4 *)((int)this + 0xa5) = 1;
-    piVar3 = (int *)((int)this + 0x10b);
-    for (iVar2 = 0xb; iVar2 != 0; iVar2 = iVar2 + -1) {
-      *piVar3 = *(int *)data;
-      data = (int *)((int)data + 4);
-      piVar3 = piVar3 + 1;
+  case GROUP_BOAT_ORDER_08:
+    this->field_0065 = 1;
+    this->field_00A5 = 1;
+    puVar2 = &this->field_010B;
+    for (iVar4 = 0xb; iVar4 != 0; iVar4 = iVar4 + -1) {
+      *puVar2 = *(undefined4 *)data;
+      data = (undefined4 *)((int)data + 4);
+      puVar2 = puVar2 + 1;
     }
-    if (*(int *)((int)this + 0x10b) == 0) {
-      data = *(void **)((int)this + 0x10f);
-      uVar5 = *(uint *)((int)data + 0xc);
-      pDVar1 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,uVar5,2,1);
-      uVar6 = 0;
-      *(DArrayTy **)((int)this + 0x10f) = pDVar1;
-      if (0 < (int)uVar5) {
+    if (this->field_010B == 0) {
+      data = this->field_010F;
+      uVar6 = ((DArrayTy *)data)->count;
+      pDVar3 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,uVar6,2,1);
+      uVar7 = 0;
+      this->field_010F = pDVar3;
+      if (0 < (int)uVar6) {
         do {
-          DArrayGetElement(data,uVar6,(byte *)((int)&orderType + 2));
+          DArrayGetElement(data,uVar7,(byte *)((int)&orderType + 2));
           Library::DKW::TBL::FUN_006ae140
-                    (*(uint **)((int)this + 0x10f),uVar6,(undefined4 *)((int)&orderType + 2));
-          uVar6 = uVar6 + 1;
-        } while ((int)uVar6 < (int)uVar5);
+                    (&this->field_010F->flags,uVar7,(undefined4 *)((int)&orderType + 2));
+          uVar7 = uVar7 + 1;
+        } while ((int)uVar7 < (int)uVar6);
       }
     }
-    if (*(int *)((int)this + 0x123) == 0) {
-      data = *(void **)((int)this + 0x127);
-      uVar5 = *(uint *)((int)data + 0xc);
-      pDVar1 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,uVar5,2,1);
-      uVar6 = 0;
-      *(DArrayTy **)((int)this + 0x127) = pDVar1;
-      if (0 < (int)uVar5) {
+    if (this->field_0123 == 0) {
+      data = this->field_0127;
+      uVar6 = ((DArrayTy *)data)->count;
+      pDVar3 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,uVar6,2,1);
+      uVar7 = 0;
+      this->field_0127 = pDVar3;
+      if (0 < (int)uVar6) {
         do {
-          DArrayGetElement(data,uVar6,(byte *)((int)&orderType + 2));
+          DArrayGetElement(data,uVar7,(byte *)((int)&orderType + 2));
           Library::DKW::TBL::FUN_006ae140
-                    (*(uint **)((int)this + 0x127),uVar6,(undefined4 *)((int)&orderType + 2));
-          uVar6 = uVar6 + 1;
-        } while ((int)uVar6 < (int)uVar5);
+                    (&this->field_0127->flags,uVar7,(undefined4 *)((int)&orderType + 2));
+          uVar7 = uVar7 + 1;
+        } while ((int)uVar7 < (int)uVar6);
         return;
       }
     }
     break;
-  case CASE_9:
-    *(undefined4 *)((int)this + 0x65) = 1;
-    *(undefined4 *)((int)this + 0xa9) = 1;
-    puVar4 = (undefined4 *)((int)this + 0x137);
-    for (iVar2 = 7; iVar2 != 0; iVar2 = iVar2 + -1) {
-      *puVar4 = *(undefined4 *)data;
+  case GROUP_BOAT_ORDER_09:
+    this->field_0065 = 1;
+    this->field_00A9 = 1;
+    puVar2 = (undefined4 *)&this->field_0137;
+    for (iVar4 = 7; iVar4 != 0; iVar4 = iVar4 + -1) {
+      *puVar2 = *(undefined4 *)data;
       data = (undefined4 *)((int)data + 4);
-      puVar4 = puVar4 + 1;
+      puVar2 = puVar2 + 1;
     }
-    *(undefined2 *)puVar4 = *(undefined2 *)data;
-    *(undefined1 *)((int)puVar4 + 2) = *(undefined1 *)((int)data + 2);
+    *(undefined2 *)puVar2 = *(undefined2 *)data;
+    *(undefined1 *)((int)puVar2 + 2) = *(undefined1 *)((int)data + 2);
     return;
-  case CASE_A:
-    *(undefined4 *)((int)this + 0x65) = 1;
-    *(undefined4 *)((int)this + 0xad) = 1;
-    *(undefined4 *)((int)this + 0x156) = *(undefined4 *)data;
-    *(undefined2 *)((int)this + 0x15a) = *(undefined2 *)((int)data + 4);
+  case GROUP_BOAT_ORDER_0A:
+    this->field_0065 = 1;
+    this->field_00AD = 1;
+    *(undefined4 *)&this->field_0x156 = *(undefined4 *)data;
+    this->field_015A = *(undefined2 *)((int)data + 4);
     return;
-  case CASE_B:
-    *(undefined4 *)((int)this + 0x65) = 1;
-    *(undefined4 *)((int)this + 0xb1) = 1;
-    *(undefined4 *)((int)this + 0x178) = *(undefined4 *)data;
+  case GROUP_BOAT_ORDER_0B:
+    this->field_0065 = 1;
+    this->field_00B1 = 1;
+    this->field_0178 = *(undefined4 *)data;
     return;
-  case CASE_C:
-    *(undefined4 *)((int)this + 0x65) = 1;
-    *(undefined4 *)((int)this + 0xb5) = 1;
-    *(undefined4 *)((int)this + 0x17c) = *(undefined4 *)data;
-    *(undefined2 *)((int)this + 0x180) = *(undefined2 *)((int)data + 4);
+  case GROUP_BOAT_ORDER_0C:
+    this->field_0065 = 1;
+    this->field_00B5 = 1;
+    *(undefined4 *)&this->field_0x17c = *(undefined4 *)data;
+    this->field_0180 = *(undefined2 *)((int)data + 4);
     return;
-  case CASE_D:
-    *(undefined4 *)((int)this + 0x65) = 1;
-    *(undefined4 *)((int)this + 0xb9) = 1;
-    puVar4 = (undefined4 *)((int)this + 0x182);
+  case GROUP_BOAT_ORDER_0D:
+    this->field_0065 = 1;
+    this->field_00B9 = 1;
+    puVar2 = &this->field_0182;
 LAB_00499129:
-    *puVar4 = *(undefined4 *)data;
-    puVar4[1] = *(undefined4 *)((int)data + 4);
-    *(undefined2 *)(puVar4 + 2) = *(undefined2 *)((int)data + 8);
+    *puVar2 = *(undefined4 *)data;
+    puVar2[1] = *(undefined4 *)((int)data + 4);
+    *(undefined2 *)(puVar2 + 2) = *(undefined2 *)((int)data + 8);
     return;
-  case CASE_E:
-    *(undefined4 *)((int)this + 0x65) = 1;
-    *(undefined4 *)((int)this + 0xbd) = 1;
-    *(undefined4 *)((int)this + 0x18c) = *(undefined4 *)data;
-    *(undefined2 *)((int)this + 400) = *(undefined2 *)((int)data + 4);
+  case GROUP_BOAT_ORDER_0E:
+    this->field_0065 = 1;
+    this->field_00BD = 1;
+    this->field_018C = *(undefined4 *)data;
+    this->field_0190 = *(undefined2 *)((int)data + 4);
     return;
-  case CASE_F:
-    *(undefined4 *)((int)this + 0x65) = 1;
-    *(undefined4 *)((int)this + 0xc1) = 1;
-    *(undefined4 *)((int)this + 0x192) = *(undefined4 *)data;
-    *(undefined2 *)((int)this + 0x196) = *(undefined2 *)((int)data + 4);
-    *(undefined1 *)((int)this + 0x198) = *(undefined1 *)((int)data + 6);
+  case GROUP_BOAT_ORDER_0F:
+    this->field_0065 = 1;
+    this->field_00C1 = 1;
+    *(undefined4 *)&this->field_0x192 = *(undefined4 *)data;
+    this->field_0196 = *(undefined2 *)((int)data + 4);
+    this->field_0198 = *(undefined1 *)((int)data + 6);
     return;
-  case CASE_10:
-    *(undefined4 *)((int)this + 0x65) = 1;
-    *(undefined4 *)((int)this + 0xc5) = 1;
-    *(undefined4 *)((int)this + 0x1a3) = *(undefined4 *)data;
-    *(undefined4 *)((int)this + 0x1a7) = *(undefined4 *)((int)data + 4);
-    *(undefined4 *)((int)this + 0x1ab) = *(undefined4 *)((int)data + 8);
-    *(undefined4 *)((int)this + 0x1af) = *(undefined4 *)((int)data + 0xc);
+  case GROUP_BOAT_ORDER_10:
+    this->field_0065 = 1;
+    this->field_00C5 = 1;
+    this->field_01A3 = *(undefined4 *)data;
+    this->field_01A7 = *(undefined4 *)((int)data + 4);
+    this->field_01AB = *(undefined4 *)((int)data + 8);
+    this->field_01AF = *(undefined4 *)((int)data + 0xc);
     return;
-  case CASE_11:
-    *(undefined4 *)((int)this + 0x65) = 1;
-    *(undefined4 *)((int)this + 0xc9) = 1;
-    *(undefined4 *)((int)this + 0x199) = *(undefined4 *)data;
-    *(undefined4 *)((int)this + 0x19d) = *(undefined4 *)((int)data + 4);
-    *(undefined2 *)((int)this + 0x1a1) = *(undefined2 *)((int)data + 8);
+  case GROUP_BOAT_ORDER_11:
+    this->field_0065 = 1;
+    this->field_00C9 = 1;
+    this->field_0199 = *(undefined4 *)data;
+    this->field_019D = *(undefined4 *)((int)data + 4);
+    this->field_01A1 = *(undefined2 *)((int)data + 8);
     return;
-  case CASE_12:
-    *(undefined4 *)((int)this + 0x65) = 1;
-    *(undefined4 *)((int)this + 0xcd) = 1;
-    *(undefined4 *)((int)this + 0x1b3) = *(undefined4 *)data;
-    *(undefined2 *)((int)this + 0x1b7) = *(undefined2 *)((int)data + 4);
+  case GROUP_BOAT_ORDER_12:
+    this->field_0065 = 1;
+    this->field_00CD = 1;
+    this->field_01B3 = *(undefined4 *)data;
+    this->field_01B7 = *(undefined2 *)((int)data + 4);
     return;
-  case CASE_13:
-    *(undefined4 *)((int)this + 0x65) = 1;
-    *(undefined4 *)((int)this + 0xd1) = 1;
-    *(undefined4 *)((int)this + 0x1b9) = *(undefined4 *)data;
-    *(undefined2 *)((int)this + 0x1bd) = *(undefined2 *)((int)data + 4);
+  case GROUP_BOAT_ORDER_13:
+    this->field_0065 = 1;
+    this->field_00D1 = 1;
+    *(undefined4 *)&this->field_0x1b9 = *(undefined4 *)data;
+    this->field_01BD = *(undefined2 *)((int)data + 4);
     return;
-  case CASE_14:
-    *(undefined4 *)((int)this + 0x65) = 1;
-    *(undefined4 *)((int)this + 0xd5) = 1;
-    *(undefined4 *)((int)this + 0x1bf) = *(undefined4 *)data;
-    *(undefined2 *)((int)this + 0x1c3) = *(undefined2 *)((int)data + 4);
+  case GROUP_BOAT_ORDER_14:
+    this->field_0065 = 1;
+    this->field_00D5 = 1;
+    *(undefined4 *)&this->field_0x1bf = *(undefined4 *)data;
+    this->field_01C3 = *(undefined2 *)((int)data + 4);
     return;
-  case CASE_15:
-    *(undefined4 *)((int)this + 0x65) = 1;
-    *(undefined4 *)((int)this + 0xd9) = 1;
-    *(undefined4 *)((int)this + 0x1c5) = *(undefined4 *)data;
+  case GROUP_BOAT_ORDER_15:
+    this->field_0065 = 1;
+    this->field_00D9 = 1;
+    this->field_01C5 = *(undefined4 *)data;
     return;
-  case CASE_65:
-    *(undefined4 *)((int)this + 0x61) = 1;
-    *(undefined4 *)((int)this + 0x6d) = 1;
-    *(undefined1 *)((int)this + 0x1c9) = *(undefined1 *)data;
+  case GROUP_BOAT_ORDER_65:
+    this->field_0061 = 1;
+    this->field_006D = 1;
+    this->field_01C9 = *(undefined1 *)data;
     return;
-  case CASE_66:
-    *(undefined4 *)((int)this + 0x61) = 1;
-    *(undefined4 *)((int)this + 0x71) = 1;
-    if (*(int *)((int)this + 0x1ca) == 0) {
-      pDVar1 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,1,2,1);
-      *(DArrayTy **)((int)this + 0x1ca) = pDVar1;
+  case GROUP_BOAT_ORDER_66:
+    this->field_0061 = 1;
+    this->field_0071 = 1;
+    if (this->field_01CA == (DArrayTy *)0x0) {
+      pDVar3 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,1,2,1);
+      this->field_01CA = pDVar3;
     }
-    Library::DKW::TBL::FUN_006ae1c0(*(uint **)((int)this + 0x1ca),data);
+    Library::DKW::TBL::FUN_006ae1c0(&this->field_01CA->flags,data);
     return;
-  case CASE_67:
-    *(undefined4 *)((int)this + 0x61) = 1;
-    *(undefined4 *)((int)this + 0x75) = 1;
-    if (*(int *)((int)this + 0x1ce) == 0) {
-      pDVar1 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,1,4,1);
-      *(DArrayTy **)((int)this + 0x1ce) = pDVar1;
+  case GROUP_BOAT_ORDER_67:
+    this->field_0061 = 1;
+    this->field_0075 = 1;
+    if (this->field_01CE == (DArrayTy *)0x0) {
+      pDVar3 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,1,4,1);
+      this->field_01CE = pDVar3;
     }
-    Library::DKW::TBL::FUN_006ae1c0(*(uint **)((int)this + 0x1ce),data);
+    Library::DKW::TBL::FUN_006ae1c0(&this->field_01CE->flags,data);
     return;
-  case CASE_68:
-    *(undefined4 *)((int)this + 0x61) = 1;
-    *(undefined4 *)((int)this + 0x79) = 1;
-    if (*(int *)((int)this + 0x1d2) == 0) {
-      pDVar1 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,1,2,1);
-      *(DArrayTy **)((int)this + 0x1d2) = pDVar1;
+  case GROUP_BOAT_ORDER_68:
+    this->field_0061 = 1;
+    this->field_0079 = 1;
+    if (*(int *)&this->field_0x1d2 == 0) {
+      pDVar3 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,1,2,1);
+      *(DArrayTy **)&this->field_0x1d2 = pDVar3;
     }
-    Library::DKW::TBL::FUN_006ae1c0(*(uint **)((int)this + 0x1d2),data);
+    Library::DKW::TBL::FUN_006ae1c0(*(uint **)&this->field_0x1d2,data);
     return;
-  case CASE_69:
-    *(undefined4 *)((int)this + 0x61) = 1;
-    *(undefined4 *)((int)this + 0x7d) = 1;
-    if (*(int *)((int)this + 0x1d6) == 0) {
-      pDVar1 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,1,2,1);
-      *(DArrayTy **)((int)this + 0x1d6) = pDVar1;
+  case GROUP_BOAT_ORDER_69:
+    this->field_0061 = 1;
+    this->field_007D = 1;
+    if (this->field_01D6 == (DArrayTy *)0x0) {
+      pDVar3 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,1,2,1);
+      this->field_01D6 = pDVar3;
     }
-    Library::DKW::TBL::FUN_006ae1c0(*(uint **)((int)this + 0x1d6),data);
+    Library::DKW::TBL::FUN_006ae1c0(&this->field_01D6->flags,data);
     return;
-  case CASE_6A:
-    *(undefined4 *)((int)this + 0x61) = 1;
-    *(undefined4 *)((int)this + 0x81) = 1;
-    if (*(int *)((int)this + 0x1da) == 0) {
-      pDVar1 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,1,2,1);
-      *(DArrayTy **)((int)this + 0x1da) = pDVar1;
+  case GROUP_BOAT_ORDER_6A:
+    this->field_0061 = 1;
+    this->field_0081 = 1;
+    if (this->field_01DA == (DArrayTy *)0x0) {
+      pDVar3 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,1,2,1);
+      this->field_01DA = pDVar3;
     }
-    Library::DKW::TBL::FUN_006ae1c0(*(uint **)((int)this + 0x1da),data);
+    Library::DKW::TBL::FUN_006ae1c0(&this->field_01DA->flags,data);
   }
   return;
 }

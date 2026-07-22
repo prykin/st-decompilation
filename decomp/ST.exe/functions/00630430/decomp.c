@@ -79,7 +79,8 @@ int __thiscall STManRuinC::GetMessage(STManRuinC *this,STMessage *message)
             iVar5 = thunk_FUN_00630ff0();
             puVar6[2] = iVar5;
             if (iVar5 != 0) {
-              puVar7 = sub_00630C50(this_00,*puVar6,puVar6[3],1,1,0);
+              puVar7 = SubmarineTitans::Recovered::HiddenThis::AnonReceiver_006308F0::sub_00630C50
+                                 ((AnonReceiver_006308F0 *)this_00,*puVar6,puVar6[3],1,1,0);
               if (puVar7 == (ushort *)0x0) {
                 puVar6[2] = 0;
               }

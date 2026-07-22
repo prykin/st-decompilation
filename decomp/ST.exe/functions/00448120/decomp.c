@@ -255,7 +255,8 @@ STAllPlayersC::PutOnPlaceGuardBoats
                 local_c = CONCAT22(psVar13[1],sVar4);
                 iVar8 = thunk_FUN_0045ff10((STGameObjC *)pSVar7);
                 if (iVar8 == 5) {
-                  STBoatC::sub_00490CD0(pSVar7,local_18,local_14,local_10,local_c);
+                  SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00490CD0::sub_00490CD0
+                            ((AnonReceiver_00490CD0 *)pSVar7,local_18,local_14,local_10,local_c);
                 }
                 else {
                   STBoatC::CmdToObj(pSVar7,CASE_5,&local_18);
@@ -305,7 +306,8 @@ STAllPlayersC::PutOnPlaceGuardBoats
                   local_c = CONCAT22(*puVar12,puVar12[-1] + sVar2);
                   iVar5 = thunk_FUN_0045ff10((STGameObjC *)pSVar7);
                   if (iVar5 == 5) {
-                    STBoatC::sub_00490CD0(pSVar7,local_18,local_14,local_10,local_c);
+                    SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00490CD0::sub_00490CD0
+                              ((AnonReceiver_00490CD0 *)pSVar7,local_18,local_14,local_10,local_c);
                   }
                   else {
                     STBoatC::CmdToObj(pSVar7,CASE_5,&local_18);
@@ -364,7 +366,8 @@ STAllPlayersC::PutOnPlaceGuardBoats
                   local_c = CONCAT22(psVar13[1],sVar4);
                   iVar8 = thunk_FUN_0045ff10((STGameObjC *)pSVar7);
                   if (iVar8 == 5) {
-                    STBoatC::sub_00490CD0(pSVar7,local_18,local_14,local_10,local_c);
+                    SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00490CD0::sub_00490CD0
+                              ((AnonReceiver_00490CD0 *)pSVar7,local_18,local_14,local_10,local_c);
                   }
                   else {
                     STBoatC::CmdToObj(pSVar7,CASE_5,&local_18);
@@ -413,7 +416,8 @@ STAllPlayersC::PutOnPlaceGuardBoats
                   local_c = CONCAT22(*puVar12,(sVar2 - (short)local_24) + -3);
                   iVar5 = thunk_FUN_0045ff10((STGameObjC *)pSVar7);
                   if (iVar5 == 5) {
-                    STBoatC::sub_00490CD0(pSVar7,local_18,local_14,local_10,local_c);
+                    SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00490CD0::sub_00490CD0
+                              ((AnonReceiver_00490CD0 *)pSVar7,local_18,local_14,local_10,local_c);
                   }
                   else {
                     STBoatC::CmdToObj(pSVar7,CASE_5,&local_18);
@@ -584,7 +588,8 @@ LAB_00448bc0:
                     STBoatC::CmdToObj(pSVar7,CASE_5,&local_18);
                   }
                   else {
-                    STBoatC::sub_00490CD0(pSVar7,local_18,local_14,local_10,local_c);
+                    SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00490CD0::sub_00490CD0
+                              ((AnonReceiver_00490CD0 *)pSVar7,local_18,local_14,local_10,local_c);
                   }
                   param_6 = param_6 + 1;
                   uVar14 = uVar14 + 1;
@@ -635,7 +640,8 @@ LAB_00448bc0:
                 local_c = CONCAT22(*puVar12,puVar12[-1] + sVar2);
                 iVar5 = thunk_FUN_0045ff10((STGameObjC *)pSVar7);
                 if (iVar5 == 5) {
-                  STBoatC::sub_00490CD0(pSVar7,local_18,local_14,local_10,local_c);
+                  SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00490CD0::sub_00490CD0
+                            ((AnonReceiver_00490CD0 *)pSVar7,local_18,local_14,local_10,local_c);
                 }
                 else {
                   STBoatC::CmdToObj(pSVar7,CASE_5,&local_18);
@@ -697,7 +703,8 @@ LAB_00448bc0:
                 local_10 = CONCAT22(sVar10,(undefined2)local_10);
                 iVar8 = thunk_FUN_0045ff10((STGameObjC *)pSVar7);
                 if (iVar8 == 5) {
-                  STBoatC::sub_00490CD0(pSVar7,local_18,local_14,local_10,local_c);
+                  SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00490CD0::sub_00490CD0
+                            ((AnonReceiver_00490CD0 *)pSVar7,local_18,local_14,local_10,local_c);
                 }
                 else {
                   STBoatC::CmdToObj(pSVar7,CASE_5,&local_18);
@@ -745,7 +752,8 @@ LAB_00448bc0:
                 local_c = CONCAT22(*puVar12,(short)local_24 + 3 + sVar2);
                 iVar5 = thunk_FUN_0045ff10((STGameObjC *)pSVar7);
                 if (iVar5 == 5) {
-                  STBoatC::sub_00490CD0(pSVar7,local_18,local_14,local_10,local_c);
+                  SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00490CD0::sub_00490CD0
+                            ((AnonReceiver_00490CD0 *)pSVar7,local_18,local_14,local_10,local_c);
                 }
                 else {
                   STBoatC::CmdToObj(pSVar7,CASE_5,&local_18);
@@ -804,7 +812,8 @@ LAB_00448bc0:
                 local_c = CONCAT22(psVar13[1],sVar4);
                 iVar8 = thunk_FUN_0045ff10((STGameObjC *)pSVar7);
                 if (iVar8 == 5) {
-                  STBoatC::sub_00490CD0(pSVar7,local_18,local_14,local_10,local_c);
+                  SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00490CD0::sub_00490CD0
+                            ((AnonReceiver_00490CD0 *)pSVar7,local_18,local_14,local_10,local_c);
                 }
                 else {
                   STBoatC::CmdToObj(pSVar7,CASE_5,&local_18);

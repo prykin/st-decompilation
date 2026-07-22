@@ -1,4 +1,3 @@
 function_address	semantic_id	status	detail
-004210A0	leaf_void	applied	/void, noreturn=false
 006A24E0	boolean_return_domain	disabled	apply=0
 00756800	boolean_return_domain	disabled	apply=0

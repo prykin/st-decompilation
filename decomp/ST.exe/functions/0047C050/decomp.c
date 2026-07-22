@@ -321,8 +321,10 @@ undefined4 __thiscall STBoatC::Bring(STBoatC *this,STBoatC *param_1)
       }
     }
     uVar7 = this->field_0673 + 1;
-    sub_0048DFD0(this,this->field_066F,this->field_0671,uVar7,this->field_066F,this->field_0671,
-                 (int *)(uint)uVar7,2,&this->field_067D,&this->field_067F,&this->field_0681);
+    SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0048DFD0::sub_0048DFD0
+              ((AnonReceiver_0048DFD0 *)this,this->field_066F,this->field_0671,uVar7,
+               this->field_066F,this->field_0671,(int *)(uint)uVar7,2,&this->field_067D,
+               &this->field_067F,&this->field_0681);
     iVar12 = (int)this->field_0681;
     iVar8 = (int)this->field_067F;
     iVar11 = (int)this->field_067D;

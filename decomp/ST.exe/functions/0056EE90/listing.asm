@@ -1,4 +1,4 @@
-FUN_0056ee90:
+STAppC::sub_0056EE90:
 0056EE90  55                        PUSH EBP
 0056EE91  8B EC                     MOV EBP,ESP
 0056EE93  51                        PUSH ECX

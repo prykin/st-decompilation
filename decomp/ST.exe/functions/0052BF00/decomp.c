@@ -29,7 +29,7 @@ int __thiscall MoneyTy::GetMessage(MoneyTy *this,STMessage *message)
   ccFntTy *extraout_ECX;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   ccFntTy *extraout_ECX_00;
-  char cVar11;
+  MoneyTy_field_0068State MVar11;
   uint uVar12;
   byte bVar13;
   char *text_00;
@@ -48,7 +48,7 @@ int __thiscall MoneyTy::GetMessage(MoneyTy *this,STMessage *message)
   uint local_18 [2];
   MoneyTy *local_10;
   uint local_c;
-  char local_5;
+  MoneyTy_field_0068State local_5;
 
   local_bc.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_bc;
@@ -443,7 +443,7 @@ int __thiscall MoneyTy::GetMessage(MoneyTy *this,STMessage *message)
     case MESS_SHARED_0060:
       uVar12 = (uint)(message->arg1).words.low;
       local_c = (uint)(message->arg1).words.high;
-      local_5 = '\0';
+      local_5 = 0;
       if (DAT_0080874e != '\x03') {
         if (((((int)uVar12 < local_10->field_0018) ||
              (local_10->field_0040 + local_10->field_0018 <= (int)uVar12)) ||
@@ -455,7 +455,7 @@ int __thiscall MoneyTy::GetMessage(MoneyTy *this,STMessage *message)
           bVar5 = true;
         }
         if (bVar5) {
-          local_5 = '\x01';
+          local_5 = CASE_1;
         }
       }
       if ((((int)uVar12 < local_10->field_0020) ||
@@ -468,7 +468,7 @@ int __thiscall MoneyTy::GetMessage(MoneyTy *this,STMessage *message)
         bVar5 = true;
       }
       if (bVar5) {
-        local_5 = '\x02';
+        local_5 = CASE_2;
       }
       if ((((int)uVar12 < local_10->field_0028) ||
           (local_10->field_0050 + local_10->field_0028 <= (int)uVar12)) ||
@@ -480,7 +480,7 @@ int __thiscall MoneyTy::GetMessage(MoneyTy *this,STMessage *message)
         bVar5 = true;
       }
       if (bVar5) {
-        local_5 = '\x03';
+        local_5 = CASE_3;
       }
       if (((((int)uVar12 < local_10->field_0030) ||
            (local_10->field_0058 + local_10->field_0030 <= (int)uVar12)) ||
@@ -492,7 +492,7 @@ int __thiscall MoneyTy::GetMessage(MoneyTy *this,STMessage *message)
         bVar5 = true;
       }
       if (bVar5) {
-        local_5 = '\x04';
+        local_5 = CASE_4;
       }
       local_58 = local_10->field_0038 + -0x1e;
       local_50 = local_10->field_0060 + 0x23;
@@ -505,20 +505,20 @@ int __thiscall MoneyTy::GetMessage(MoneyTy *this,STMessage *message)
       else {
         bVar5 = true;
       }
-      cVar11 = '\x05';
+      MVar11 = CASE_4|CASE_1;
       if (!bVar5) {
-        cVar11 = local_5;
+        MVar11 = local_5;
       }
-      if (local_10->field_0068 != cVar11) {
-        if (local_10->field_0068 != '\0') {
+      if (local_10->field_0068 != MVar11) {
+        if (local_10->field_0068 != 0) {
           /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
           local_78._16_4_ = 0x4202;
           sub_0052B760(local_10,&local_78);
           /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
           (**(code **)g_cursorClass_00802A30->field_0000)(&local_78);
         }
-        this_00->field_0068 = cVar11;
-        if (cVar11 != '\0') {
+        this_00->field_0068 = MVar11;
+        if (MVar11 != 0) {
           /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
           local_78._16_4_ = 0x4201;
           sub_0052B760(this_00,&local_78);

@@ -150,7 +150,7 @@ void __thiscall MReportTy::InitMReport(MReportTy *this,undefined1 param_1)
   this_03->field_031B = 0x18;
   this_03->field_0317 = 0x4c;
   if (pcVar7->field_00A0 != 0) {
-    FUN_00710790((uint *)pcVar7);
+    FUN_00710790((AnonShape_00710790_4CBB90D4 *)pcVar7);
   }
   this_03->field_030B = *(undefined4 *)&pcVar7->field_0x8a;
   if (this_03->field_0066 == '\x01') {

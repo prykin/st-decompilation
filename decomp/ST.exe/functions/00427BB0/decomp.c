@@ -6,8 +6,8 @@
    expected_stack=12; receiver_family_members=21; adopt_untyped_existing_thiscall */
 
 undefined4 __thiscall
-SubmarineTitans::Recovered::HiddenThis::AnonReceiver_004248D0::FUN_00427bb0
-          (AnonReceiver_004248D0 *this,int param_1,int param_2,int param_3)
+SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00424E10::FUN_00427bb0
+          (AnonReceiver_00424E10 *this,int param_1,int param_2,int param_3)
 
 {
   byte bVar1;
@@ -38,7 +38,8 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_004248D0::FUN_00427bb0
       }
       if (param_1 < local_14) {
         if (local_8 != 0x7fffffff) {
-          sub_00427090(this,local_8,iVar4 + -1,param_3);
+          AnonReceiver_004248D0::sub_00427090
+                    ((AnonReceiver_004248D0 *)this,local_8,iVar4 + -1,param_3);
           local_8 = 0x7fffffff;
         }
       }
@@ -52,7 +53,8 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_004248D0::FUN_00427bb0
           } while (iVar7 <= param_1);
         }
         if ((local_8 != 0x7fffffff) && ((iVar7 <= param_1 || (bVar5 != bVar1)))) {
-          sub_00427090(this,local_8,iVar4 + -1,param_3);
+          AnonReceiver_004248D0::sub_00427090
+                    ((AnonReceiver_004248D0 *)this,local_8,iVar4 + -1,param_3);
           local_8 = 0x7fffffff;
         }
         if (param_1 < iVar7) {
@@ -108,7 +110,7 @@ LAB_00427cca:
       param_1 = iVar4 + 1;
     } while (iVar4 + 1 <= param_2);
     if (local_8 != 0x7fffffff) {
-      sub_00427090(this,local_8,iVar4,param_3);
+      AnonReceiver_004248D0::sub_00427090((AnonReceiver_004248D0 *)this,local_8,iVar4,param_3);
     }
   }
   return 0;

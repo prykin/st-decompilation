@@ -1,4 +1,4 @@
-STColl3C::sub_0041C5A0:
+sub_0041C5A0:
 0041C5A0  56                        PUSH ESI
 0041C5A1  8B F1                     MOV ESI,ECX
 0041C5A3  8B 0D 88 2A 80 00         MOV ECX,dword ptr [0x00802a88]

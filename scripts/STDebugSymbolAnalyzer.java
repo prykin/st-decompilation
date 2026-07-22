@@ -52,6 +52,8 @@ public class STDebugSymbolAnalyzer extends GhidraScript {
 
     @Override
     protected void run() throws Exception {
+        // Read-only script: do not leave GhidraScript's implicit transaction around runScript().
+        end(true);
         if (currentProgram == null) {
             printerr("Open a program first.");
             return;
@@ -332,6 +334,10 @@ public class STDebugSymbolAnalyzer extends GhidraScript {
     }
 
     private static String methodValue(String value) {
+        // Parse the decoded string value, never Ghidra's automatic s_* symbol.  Those
+        // labels replace spaces and punctuation with underscores, so trimming the
+        // address suffix would turn diagnostics such as "Class::Bad direction" into
+        // invented method names such as "Class::Bad_direction".
         if (METHOD.matcher(value).matches()) return value;
         // Diagnostics are not consistent: most begin with Class::Method, but some use
         // "Class::Method, details" and a few prepend a return type (for example

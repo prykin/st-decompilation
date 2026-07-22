@@ -45,6 +45,8 @@ public class STMessageHandlerAnalyzer extends GhidraScript {
 
     @Override
     protected void run() throws Exception {
+        // Read-only script: do not leave GhidraScript's implicit transaction around runScript().
+        end(true);
         if (currentProgram == null) { printerr("Open the ST program first."); return; }
         File root = outputDirectory();
         if (root == null) return;

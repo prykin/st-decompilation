@@ -442,7 +442,7 @@ cf_common_exit_00437191:
       Library::DKW::TBL::FUN_006ae1c0(&pDVar8->flags,(undefined4 *)&targetPosition);
       orderData6.mode = 1;
       orderData6.positions = pDVar8;
-      (*pSVar9->vtable->vfunc_08)(pSVar9,CASE_6,&orderData6);
+      (*pSVar9->vtable->SetOrderData)(pSVar9,GROUP_BOAT_ORDER_06,&orderData6);
       DArrayDestroy(pDVar8);
       return;
     }
@@ -450,12 +450,12 @@ cf_common_exit_00437191:
     /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
     orderData.position.y = *(short *)((int)&(command->payload->packed).value_01.words.high + 1);
     STGroupBoatC::sub_0049A500(pSVar9,(undefined2 *)0x0,(undefined2 *)0x0,&orderData.position.z);
-    (*pSVar9->vtable->vfunc_08)(pSVar9,CASE_1,&orderData);
+    (*pSVar9->vtable->SetOrderData)(pSVar9,GROUP_BOAT_ORDER_01,&orderData);
     return;
   /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
   case 0x15:
     local_24 = 4 - (uint)(command->payload->packed).variant;
-    (*pSVar9->vtable->vfunc_08)(pSVar9,CASE_7,&local_24);
+    (*pSVar9->vtable->SetOrderData)(pSVar9,GROUP_BOAT_ORDER_07,&local_24);
     return;
   case 0x16:
     pSVar4 = command->payload;
@@ -495,7 +495,7 @@ LAB_00437842:
       local_14c = (uint)((command->payload->packed).variant != 0);
       local_150 = 0;
       local_148 = pDVar8;
-      (*pSVar9->vtable->vfunc_08)(pSVar9,CASE_2,&local_150);
+      (*pSVar9->vtable->SetOrderData)(pSVar9,GROUP_BOAT_ORDER_02,&local_150);
       DArrayDestroy(pDVar8);
       return;
     case 1:
@@ -504,7 +504,7 @@ LAB_00437842:
         orderDataF.value_00 = *(byte *)&local_8->field_0024;
         orderDataF.value_01 = local_8->field_0032;
         orderDataF.value_03 = local_8->field_0018;
-        (*pSVar9->vtable->vfunc_08)(pSVar9,CASE_F,&orderDataF);
+        (*pSVar9->vtable->SetOrderData)(pSVar9,GROUP_BOAT_ORDER_0F,&orderDataF);
         return;
       }
       break;
@@ -515,7 +515,7 @@ LAB_00437842:
       orderDataE.value_02 = (short)(pSVar4->packed).value_05.bytes.byte1;
       /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
       orderDataE.value_04 = (short)(pSVar4->packed).value_05.bytes.byte2;
-      (*pSVar9->vtable->vfunc_08)(pSVar9,CASE_E,&orderDataE);
+      (*pSVar9->vtable->SetOrderData)(pSVar9,GROUP_BOAT_ORDER_0E,&orderDataE);
       return;
     }
     break;
@@ -531,7 +531,7 @@ LAB_00437842:
         Library::DKW::TBL::FUN_006ae1c0(&pDVar8->flags,(undefined4 *)&local_8->field_0032);
         local_138 = 0;
         local_134 = pDVar8;
-        (*pSVar9->vtable->vfunc_08)(pSVar9,CASE_5,&local_138);
+        (*pSVar9->vtable->SetOrderData)(pSVar9,GROUP_BOAT_ORDER_05,&local_138);
         DArrayDestroy(pDVar8);
         return;
       }
@@ -546,7 +546,7 @@ LAB_00437842:
       Library::DKW::TBL::FUN_006ae1c0(&pDVar8->flags,(undefined4 *)&targetPosition);
       orderData6.mode = 0;
       orderData6.positions = pDVar8;
-      (*pSVar9->vtable->vfunc_08)(pSVar9,CASE_6,&orderData6);
+      (*pSVar9->vtable->SetOrderData)(pSVar9,GROUP_BOAT_ORDER_06,&orderData6);
       DArrayDestroy(pDVar8);
       return;
     case 3:
@@ -564,7 +564,7 @@ LAB_00437842:
         Library::DKW::TBL::FUN_006ae1c0(&pDVar8->flags,(undefined4 *)&pSVar11[1].field_0xe);
         orderData4.mode = 0;
         orderData4.objectIds = pDVar8;
-        (*pSVar9->vtable->vfunc_08)(pSVar9,CASE_4,&orderData4);
+        (*pSVar9->vtable->SetOrderData)(pSVar9,GROUP_BOAT_ORDER_04,&orderData4);
         DArrayDestroy(pDVar8);
         return;
       }
@@ -572,13 +572,13 @@ LAB_00437842:
     case 10:
       orderData4.mode = 1;
       orderData4.objectIds = (DArrayTy *)0x0;
-      (*pSVar9->vtable->vfunc_08)(pSVar9,CASE_4,&orderData4);
+      (*pSVar9->vtable->SetOrderData)(pSVar9,GROUP_BOAT_ORDER_04,&orderData4);
       return;
     case 0x10:
       orderPosition14.x = (pSVar4->position16).x;
       orderPosition14.y = (pSVar4->position16).y;
       orderPosition14.z = (pSVar4->position16).z;
-      (*pSVar9->vtable->vfunc_08)(pSVar9,CASE_14,&orderPosition14);
+      (*pSVar9->vtable->SetOrderData)(pSVar9,GROUP_BOAT_ORDER_14,&orderPosition14);
       return;
     case 0x13:
       sVar17 = (pSVar4->position16).x;
@@ -594,7 +594,7 @@ LAB_00437842:
         orderData11.position.x = (pSVar4->position16).x;
         orderData11.position.y = (pSVar4->position16).y;
         orderData11.position.z = (pSVar4->position16).z;
-        (*pSVar9->vtable->vfunc_08)(pSVar9,CASE_11,&orderData11);
+        (*pSVar9->vtable->SetOrderData)(pSVar9,GROUP_BOAT_ORDER_11,&orderData11);
         return;
       }
       break;
@@ -603,13 +603,13 @@ LAB_00437842:
       orderData11.position.z = 0;
       orderData11.position.y = 0;
       orderData11.position.x = 0;
-      (*pSVar9->vtable->vfunc_08)(pSVar9,CASE_11,&orderData11);
+      (*pSVar9->vtable->SetOrderData)(pSVar9,GROUP_BOAT_ORDER_11,&orderData11);
       return;
     case 0x18:
       orderPosition13.x = (pSVar4->position16).x;
       orderPosition13.y = (pSVar4->position16).y;
       orderPosition13.z = (pSVar4->position16).z;
-      (*pSVar9->vtable->vfunc_08)(pSVar9,CASE_13,&orderPosition13);
+      (*pSVar9->vtable->SetOrderData)(pSVar9,GROUP_BOAT_ORDER_13,&orderPosition13);
       return;
     }
     break;
@@ -718,11 +718,11 @@ switchD_004384bc_default:
       orderData.position.x = (pSVar4->position16).x;
       orderData.position.y = (pSVar4->position16).y;
       STGroupBoatC::sub_0049A500(pSVar9,(undefined2 *)0x0,(undefined2 *)0x0,&orderData.position.z);
-      (*pSVar9->vtable->vfunc_08)(pSVar9,CASE_1,&orderData);
+      (*pSVar9->vtable->SetOrderData)(pSVar9,GROUP_BOAT_ORDER_01,&orderData);
       return;
     case 8:
 cf_common_exit_0043824D:
-      (*pSVar9->vtable->vfunc_08)(pSVar9,CASE_3,(void *)0x0);
+      (*pSVar9->vtable->SetOrderData)(pSVar9,GROUP_BOAT_ORDER_03,(void *)0x0);
       return;
     case 9:
     case 10:
@@ -730,7 +730,7 @@ cf_common_exit_0043824D:
     case 0xc:
       STGroupBoatC::sub_0049A500
                 (pSVar9,(undefined2 *)&orderData,&orderData.position.y,&orderData.position.z);
-      (*pSVar9->vtable->vfunc_08)(pSVar9,CASE_1,&orderData);
+      (*pSVar9->vtable->SetOrderData)(pSVar9,GROUP_BOAT_ORDER_01,&orderData);
       return;
     }
     break;
@@ -742,7 +742,7 @@ cf_common_exit_0043824D:
     /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
     orderDataD.position.z = *(short *)((int)&(pSVar4->packed).value_05.words.high + 1);
     orderDataD.value_06 = -1;
-    (*pSVar9->vtable->vfunc_08)(pSVar9,CASE_D,&orderDataD);
+    (*pSVar9->vtable->SetOrderData)(pSVar9,GROUP_BOAT_ORDER_0D,&orderDataD);
     return;
   case 0x1a:
     pSVar4 = command->payload;
@@ -755,7 +755,7 @@ cf_common_exit_0043824D:
       orderData10.targetPosition.x = (pSVar4->position16).x;
       orderData10.targetPosition.y = (pSVar4->position16).y;
       orderData10.targetPosition.z = (pSVar4->position16).z;
-      (*pSVar9->vtable->vfunc_08)(pSVar9,CASE_10,&orderData10);
+      (*pSVar9->vtable->SetOrderData)(pSVar9,GROUP_BOAT_ORDER_10,&orderData10);
       return;
     }
     /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
@@ -794,7 +794,7 @@ cf_common_exit_0043824D:
           }
           orderData10.mode = 1;
         }
-        (*pSVar9->vtable->vfunc_08)(pSVar9,CASE_10,&orderData10);
+        (*pSVar9->vtable->SetOrderData)(pSVar9,GROUP_BOAT_ORDER_10,&orderData10);
         return;
       }
     }
@@ -834,7 +834,7 @@ cf_common_exit_0043824D:
       /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
       orderPosition12.y = (pSVar4->packed).value_01.words.high;
       orderPosition12.z = (pSVar4->position16).y;
-      (*pSVar9->vtable->vfunc_08)(pSVar9,CASE_12,&orderPosition12);
+      (*pSVar9->vtable->SetOrderData)(pSVar9,GROUP_BOAT_ORDER_12,&orderPosition12);
       return;
     }
     /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
@@ -858,7 +858,7 @@ cf_common_exit_0043824D:
       local_f0 = 0xffff;
       local_f2 = 0xffff;
       local_f4 = 0xffff;
-      (*pSVar9->vtable->vfunc_08)(pSVar9,CASE_8,local_118 + 1);
+      (*pSVar9->vtable->SetOrderData)(pSVar9,GROUP_BOAT_ORDER_08,local_118 + 1);
       DArrayDestroy(pDVar8);
       return;
     }
@@ -880,7 +880,7 @@ cf_common_exit_00437E03:
       /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
       orderPositionA.y = (pSVar4->packed).value_01.words.high;
       orderPositionA.z = (pSVar4->position16).y;
-      (*pSVar9->vtable->vfunc_08)(pSVar9,CASE_A,&orderPositionA);
+      (*pSVar9->vtable->SetOrderData)(pSVar9,GROUP_BOAT_ORDER_0A,&orderPositionA);
       pAVar19 = local_30;
     }
     else {
@@ -990,7 +990,7 @@ LAB_00437cb5:
       local_f0 = 0xffff;
       local_f2 = 0xffff;
       local_f4 = 0xffff;
-      (*pSVar9->vtable->vfunc_08)(pSVar9,CASE_8,local_118 + 1);
+      (*pSVar9->vtable->SetOrderData)(pSVar9,GROUP_BOAT_ORDER_08,local_118 + 1);
     }
     DArrayDestroy(pDVar8);
     DArrayDestroy(local_6c);
@@ -1005,20 +1005,20 @@ LAB_00437cb5:
     if (bVar21 == 1) {
       /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
       local_64 = (pSVar4->packed).value_01;
-      (*pSVar9->vtable->vfunc_08)(pSVar9,CASE_15,&local_64);
+      (*pSVar9->vtable->SetOrderData)(pSVar9,GROUP_BOAT_ORDER_15,&local_64);
       return;
     }
     if (bVar21 == 3) {
       orderPositionC.z = -1;
       orderPositionC.y = -1;
       orderPositionC.x = -1;
-      (*pSVar9->vtable->vfunc_08)(pSVar9,CASE_C,&orderPositionC);
+      (*pSVar9->vtable->SetOrderData)(pSVar9,GROUP_BOAT_ORDER_0C,&orderPositionC);
       return;
     }
     if (bVar21 == 4) {
       /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
       local_60 = (pSVar4->packed).value_01;
-      (*pSVar9->vtable->vfunc_08)(pSVar9,CASE_B,&local_60);
+      (*pSVar9->vtable->SetOrderData)(pSVar9,GROUP_BOAT_ORDER_0B,&local_60);
       return;
     }
     break;
@@ -1034,7 +1034,7 @@ LAB_00437cb5:
     orderData9.playerId = (dword)command->playerId;
     orderData9.value_0e = 0;
     orderData9.value_1d = -1;
-    (*pSVar9->vtable->vfunc_08)(pSVar9,CASE_9,&orderData9);
+    (*pSVar9->vtable->SetOrderData)(pSVar9,GROUP_BOAT_ORDER_09,&orderData9);
     return;
   /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
   case 0x28:
@@ -1081,7 +1081,7 @@ LAB_00437cb5:
           iVar15 = (int)sVar17;
         } while (iVar15 < (int)(uint)(ushort)(pSVar4->position16).x);
       }
-      (*pSVar9->vtable->vfunc_08)(pSVar9,CASE_2,&local_150);
+      (*pSVar9->vtable->SetOrderData)(pSVar9,GROUP_BOAT_ORDER_02,&local_150);
       DArrayDestroy(local_148);
       return;
     case 3:
@@ -1097,7 +1097,7 @@ LAB_00437cb5:
           iVar15 = (int)sVar17;
         } while (iVar15 < (int)(uint)(ushort)(pSVar4->position16).x);
       }
-      (*pSVar9->vtable->vfunc_08)(pSVar9,CASE_5,&local_138);
+      (*pSVar9->vtable->SetOrderData)(pSVar9,GROUP_BOAT_ORDER_05,&local_138);
       DArrayDestroy(local_134);
       return;
     case 4:

@@ -12,114 +12,116 @@ VisibleClassTy::sub_00559110
 {
   int iVar1;
   int iVar2;
-  byte bVar3;
-  ushort uVar4;
-  uint uVar5;
-  bool bVar6;
-  undefined *puVar7;
-  int iVar8;
+  char *pcVar3;
+  char cVar4;
+  ushort uVar5;
+  uint uVar6;
+  bool bVar7;
+  undefined *puVar8;
   int iVar9;
   int iVar10;
   int iVar11;
   int iVar12;
+  int iVar13;
   undefined *local_c;
 
-  iVar8 = param_5;
-  uVar5 = param_4;
-  bVar6 = false;
+  iVar9 = param_5;
+  uVar6 = param_4;
+  bVar7 = false;
   if ((((this->field_0114 != 0) && (-1 < param_5)) && (param_4 < 8)) &&
      ((g_playSystem_00802A38 == (STPlaySystemC *)0x0 || ((byte)(&DAT_008087e9)[param_4 * 0x51] < 8))
      )) {
     if ((param_7 & 0x1000) != 0) {
-      SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00558C00::sub_0055BBC0
-                ((AnonReceiver_00558C00 *)this,0,(short)param_1,(short)param_2,(char)param_3,param_4
-                 ,(char)param_5,param_6);
+      sub_0055BBC0(this,0,(short)param_1,(short)param_2,(char)param_3,param_4,(char)param_5,param_6)
+      ;
     }
-    if (*(char *)((int)&this->field_00FC + uVar5) != '\0') {
-      iVar9 = iVar8 * 2 + 1;
-      param_4 = param_1 - iVar8;
-      param_6 = (int)param_2 - iVar8;
-      puVar7 = thunk_FUN_005532f0(iVar8);
-      if (puVar7 != (undefined *)0x0) {
-        iVar10 = iVar8;
-        if (((this->field_0038 != (byte *)0x0) && ((param_7 & 1) != 0)) &&
-           (iVar11 = 0, iVar10 = param_5, local_c = puVar7, 0 < iVar9)) {
+    if (*(char *)((int)&this->field_00FC + uVar6) != '\0') {
+      iVar10 = iVar9 * 2 + 1;
+      param_4 = param_1 - iVar9;
+      param_6 = (int)param_2 - iVar9;
+      puVar8 = thunk_FUN_005532f0(iVar9);
+      if (puVar8 != (undefined *)0x0) {
+        iVar11 = iVar9;
+        if (((this->field_0038 != (void *)0x0) && ((param_7 & 1) != 0)) &&
+           (iVar12 = 0, iVar11 = param_5, local_c = puVar8, 0 < iVar10)) {
           do {
-            iVar12 = 0;
+            iVar13 = 0;
             do {
-              if (local_c[iVar12] != '\0') {
-                iVar1 = iVar11 + param_6;
-                iVar2 = iVar12 + param_4;
+              if (local_c[iVar13] != '\0') {
+                iVar1 = iVar12 + param_6;
+                iVar2 = iVar13 + param_4;
                 if ((((-1 < iVar2) && (iVar2 < this->field_0020)) && (-1 < iVar1)) &&
                    (iVar1 < this->field_0024)) {
-                  bVar3 = this->field_0038[(this->field_0020 * iVar1 + iVar2) * 2];
-                  if (bVar3 != 0) {
-                    this->field_0038[(this->field_0020 * iVar1 + iVar2) * 2] = bVar3 - 1;
+                  pcVar3 = (char *)((int)this->field_0038 + (this->field_0020 * iVar1 + iVar2) * 2);
+                  cVar4 = *pcVar3;
+                  if (cVar4 != '\0') {
+                    *pcVar3 = cVar4 + -1;
                   }
                 }
               }
-              iVar12 = iVar12 + 1;
-            } while (iVar12 < iVar9);
-            iVar11 = iVar11 + 1;
-            local_c = local_c + iVar9;
-          } while (iVar11 < iVar9);
+              iVar13 = iVar13 + 1;
+            } while (iVar13 < iVar10);
+            iVar12 = iVar12 + 1;
+            local_c = local_c + iVar10;
+          } while (iVar12 < iVar10);
         }
         if (((this->field_004C != (byte *)0x0) && (this->field_0050 != (ushort *)0x0)) &&
            ((param_7 & 0x4000) != 0)) {
-          thunk_FUN_00558c00(this,this->field_010C,param_1,(int)param_2,(int *)&param_4,&param_6);
+          sub_00558C00(this,this->field_010C,param_1,(int)param_2,(int *)&param_4,&param_6);
           param_5 = 0;
-          param_4 = param_4 - iVar10;
-          param_6 = param_6 + (g_centeredOffsets5[param_3] - iVar10);
-          param_2 = puVar7;
-          if (0 < iVar9) {
+          param_4 = param_4 - iVar11;
+          param_6 = param_6 + (g_centeredOffsets5[param_3] - iVar11);
+          param_2 = puVar8;
+          if (0 < iVar10) {
             do {
               param_7 = 0;
               do {
                 if (param_2[param_7] != '\0') {
-                  iVar10 = param_7 + param_4;
-                  iVar11 = param_5 + param_6;
-                  if (((-1 < iVar10) && (uVar5 = this->field_0030, iVar10 < (int)uVar5)) &&
-                     ((-1 < iVar11 &&
-                      ((iVar11 < this->field_0034 && (iVar12 = uVar5 * iVar11 + iVar10, -1 < iVar12)
+                  iVar11 = param_7 + param_4;
+                  iVar12 = param_5 + param_6;
+                  if (((-1 < iVar11) && (uVar6 = this->field_0030, iVar11 < (int)uVar6)) &&
+                     ((-1 < iVar12 &&
+                      ((iVar12 < this->field_0034 && (iVar13 = uVar6 * iVar12 + iVar11, -1 < iVar13)
                        ))))) {
-                    if (this->field_0050[iVar12] == 1) {
-                      thunk_FUN_00553a70(iVar10,iVar11,(int)this->field_004C,uVar5,this->field_0034)
+                    if (this->field_0050[iVar13] == 1) {
+                      thunk_FUN_00553a70(iVar11,iVar12,(int)this->field_004C,uVar6,this->field_0034)
                       ;
-                      bVar6 = true;
+                      bVar7 = true;
                     }
-                    uVar4 = this->field_0050[iVar12];
-                    if (uVar4 != 0) {
-                      this->field_0050[iVar12] = uVar4 - 1;
+                    uVar5 = this->field_0050[iVar13];
+                    if (uVar5 != 0) {
+                      this->field_0050[iVar13] = uVar5 - 1;
                     }
                   }
                 }
                 param_7 = param_7 + 1;
-              } while ((int)param_7 < iVar9);
+              } while ((int)param_7 < iVar10);
               param_5 = param_5 + 1;
-              param_2 = param_2 + iVar9;
-            } while (param_5 < iVar9);
-            if (bVar6) {
+              param_2 = param_2 + iVar10;
+            } while (param_5 < iVar10);
+            if (bVar7) {
               param_4 = param_4 - 1;
-              iVar8 = iVar8 * 2 + 3;
+              iVar9 = iVar9 * 2 + 3;
               param_6 = param_6 + -1;
               param_5 = 0;
-              if (0 < iVar8) {
+              if (0 < iVar9) {
                 do {
                   param_7 = 0;
                   do {
-                    iVar9 = param_7 + param_4;
-                    iVar10 = param_5 + param_6;
-                    if ((((-1 < iVar9) && (uVar5 = this->field_0030, iVar9 < (int)uVar5)) &&
-                        (-1 < iVar10)) &&
-                       (((iVar10 < this->field_0034 &&
-                         (iVar11 = uVar5 * iVar10 + iVar9, -1 < iVar11)) &&
-                        (this->field_0050[iVar11] != 0)))) {
-                      thunk_FUN_00553990(iVar9,iVar10,(int)this->field_004C,uVar5,this->field_0034);
+                    iVar10 = param_7 + param_4;
+                    iVar11 = param_5 + param_6;
+                    if ((((-1 < iVar10) && (uVar6 = this->field_0030, iVar10 < (int)uVar6)) &&
+                        (-1 < iVar11)) &&
+                       (((iVar11 < this->field_0034 &&
+                         (iVar12 = uVar6 * iVar11 + iVar10, -1 < iVar12)) &&
+                        (this->field_0050[iVar12] != 0)))) {
+                      thunk_FUN_00553990(iVar10,iVar11,(int)this->field_004C,uVar6,this->field_0034)
+                      ;
                     }
                     param_7 = param_7 + 1;
-                  } while ((int)param_7 < iVar8);
+                  } while ((int)param_7 < iVar9);
                   param_5 = param_5 + 1;
-                } while (param_5 < iVar8);
+                } while (param_5 < iVar9);
               }
             }
           }

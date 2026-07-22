@@ -61,8 +61,8 @@ undefined4 __thiscall STParticleC::InitVisibelDeton(STParticleC *this,int param_
                    0x5a,0x45,0);
     }
     else {
-      SubmarineTitans::Recovered::HiddenThis::AnonReceiver_004248D0::FUN_006e9520
-                ((AnonReceiver_004248D0 *)PTR_00807598,pSVar7->field_00C6,0,0,0);
+      SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00424E10::FUN_006e9520
+                ((AnonReceiver_00424E10 *)PTR_00807598,pSVar7->field_00C6,0,0,0);
       FUN_006e9af0(PTR_00807598,*piVar1,2,0,*(uint *)((int)puVar9 + 9),*(uint *)((int)puVar9 + 0xd),
                    0x5a,0x45,1);
     }
@@ -110,9 +110,9 @@ undefined4 __thiscall STParticleC::InitVisibelDeton(STParticleC *this,int param_
                              (short)((longlong)iVar10 * 0x28c1979 >> 0x3f));
       }
       if ((((DAT_0080874d == -1) || (g_visibleClass_00802A88->field_00F8 == 0)) ||
-          (thunk_FUN_00558c00(g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,iVar10,
-                              iVar8,&local_14,&local_10), (int)local_c < 0)) || (4 < (int)local_c))
-      {
+          (VisibleClassTy::sub_00558C00
+                     (g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,iVar10,iVar8,
+                      &local_14,&local_10), (int)local_c < 0)) || (4 < (int)local_c)) {
         bVar12 = true;
       }
       else {

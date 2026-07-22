@@ -22,8 +22,7 @@ void __thiscall AiPlrClassTy::sub_0067C110(AiPlrClassTy *this)
   this->field_0689 = 0;
   local_38 = (AnonShape_0068FD00_A5257008 *)0x67;
   local_30 = 1;
-  SubmarineTitans::Recovered::HiddenThis::AnonReceiver_006799B0::thunk_FUN_0067a020
-            ((AnonReceiver_006799B0 *)this,(AnonShape_0068FD00_A5257008 *)&local_38,-1);
+  sub_0067A020(this,(AnonShape_0068FD00_A5257008 *)&local_38,-1);
   return;
 }
 

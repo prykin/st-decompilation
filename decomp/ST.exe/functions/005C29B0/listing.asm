@@ -1,4 +1,4 @@
-SettMapMTy::sub_005C29B0:
+SubmarineTitans::Recovered::HiddenThis::AnonReceiver_005B6730::sub_005C29B0:
 005C29B0  55                        PUSH EBP
 005C29B1  8B EC                     MOV EBP,ESP
 005C29B3  81 EC 14 0B 00 00         SUB ESP,0xb14

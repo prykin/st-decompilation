@@ -35,7 +35,7 @@ FUN_00660620(AnonShape_00660620_6BCED4D7 *param_1,undefined4 param_2,uint param_
         pSVar1 = thunk_FUN_0042b760(param_1->field_0024,
                                     CONCAT22((short)((uint)pDVar2 >> 0x10),param_1->field_007D));
         if (pSVar1 != (STGroupBoatC *)0x0) {
-          (*pSVar1->vtable->vfunc_08)(pSVar1,CASE_5,&local_18);
+          (*pSVar1->vtable->SetOrderData)(pSVar1,GROUP_BOAT_ORDER_05,&local_18);
           if (array != (DArrayTy *)0x0) {
             DArrayDestroy(array);
           }

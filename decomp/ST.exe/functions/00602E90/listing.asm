@@ -1,4 +1,4 @@
-STDestC::sub_00602E90:
+SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00602E90::sub_00602E90:
 00602E90  55                        PUSH EBP
 00602E91  8B EC                     MOV EBP,ESP
 00602E93  83 EC 4C                  SUB ESP,0x4c

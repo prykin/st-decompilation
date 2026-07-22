@@ -1,6 +1,12 @@
 
+/* [STMethodOwnerApplier] Structural method owner recovered as STManBasisC.
+   Evidence: this_call_owners=[STManBasisC]; agreed_this_calls=1; incoming_this_accesses=3;
+   incoming_edx_uses=0; incoming_stack_parameter_uses=6; direct_non_thunk_callers=0;
+   incoming_ecx_receiver_callers=0; attributed_named_callers=1; owner_evidence_coverage=adequate */
+
 int __thiscall
-FUN_005f14b0(void *this,short param_1,short param_2,short param_3,byte param_4,short param_5)
+STManBasisC::sub_005F14B0
+          (STManBasisC *this,short param_1,short param_2,short param_3,byte param_4,short param_5)
 
 {
   DArrayTy *pDVar1;
@@ -16,9 +22,9 @@ FUN_005f14b0(void *this,short param_1,short param_2,short param_3,byte param_4,s
   undefined4 *local_13;
   int local_f;
 
-  if (*(int *)((int)this + 0x38) == 0) {
+  if (this->field_0038 == (DArrayTy *)0x0) {
     pDVar1 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,10,0x19,10);
-    *(DArrayTy **)((int)this + 0x38) = pDVar1;
+    this->field_0038 = pDVar1;
     if (pDVar1 == (DArrayTy *)0x0) {
       return -1;
     }
@@ -44,7 +50,7 @@ FUN_005f14b0(void *this,short param_1,short param_2,short param_3,byte param_4,s
     iVar3 = -1;
   }
   else {
-    uVar2 = Library::DKW::TBL::FUN_006ae1c0(*(uint **)((int)this + 0x38),(undefined4 *)&local_20);
+    uVar2 = Library::DKW::TBL::FUN_006ae1c0(&this->field_0038->flags,(undefined4 *)&local_20);
     iVar3 = uVar2 + 1;
     if (-1 < iVar3) {
       DAT_00811788 = DAT_00811788 + 1;

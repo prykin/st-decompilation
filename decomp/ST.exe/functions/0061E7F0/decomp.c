@@ -225,7 +225,8 @@ LAB_0061eefe:
                 iVar14 = (int)(short)lVar19;
               }
               if (((((DAT_0080874d != -1) && (this->field_00F8 != 0)) &&
-                   ((thunk_FUN_00558c00(this,this->field_010C,iVar14,local_34,&local_38,&local_48),
+                   ((VisibleClassTy::sub_00558C00
+                               (this,this->field_010C,iVar14,local_34,&local_38,&local_48),
                     -1 < (int)local_20 &&
                     (((((int)local_20 < 5 && (-1 < local_38)) && (local_38 < this->field_0030)) &&
                      ((iVar14 = local_48 + g_centeredOffsets5[(int)local_20], -1 < iVar14 &&

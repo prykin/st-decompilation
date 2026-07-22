@@ -98,7 +98,7 @@ int __thiscall HelpPanelTy::GetMessage(HelpPanelTy *this,STMessage *message)
       if (SVar3 == MESS_SHARED_8160) {
         pcVar4 = this_00->field_01E4;
         if (pcVar4->field_00A0 != 0) {
-          FUN_00710790((uint *)pcVar4);
+          FUN_00710790((AnonShape_00710790_4CBB90D4 *)pcVar4);
         }
         (message->arg1).ptr = (void *)(*(int *)&pcVar4->field_0x8a + 1);
         g_currentExceptionFrame = local_84.previous;
@@ -302,7 +302,7 @@ int __thiscall HelpPanelTy::GetMessage(HelpPanelTy *this,STMessage *message)
         }
         pcVar4 = this_00->field_01E4;
         if (pcVar4->field_00A0 != 0) {
-          FUN_00710790((uint *)pcVar4);
+          FUN_00710790((AnonShape_00710790_4CBB90D4 *)pcVar4);
         }
         local_18 = *(uint *)&pcVar4->field_0x8a;
         if (DAT_0080874e == '\x03') {

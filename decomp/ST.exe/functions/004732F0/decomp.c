@@ -510,7 +510,7 @@ cf_common_exit_0047405D:
         (*local_c->vtable[3].slots_00_28[9])();
         this->field_07CA = this->field_058E;
         this->field_07CE = 0;
-        STColl3C::sub_0041C5A0((STColl3C *)this);
+        sub_0041C5A0(this);
         thunk_FUN_00495ff0(this->field_005B,this->field_005D,this->field_005F,0,
                            (AnonShape_00495FF0_59081BDD *)this);
         DumpClassC::WritePtr

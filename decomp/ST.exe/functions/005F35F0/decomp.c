@@ -11,7 +11,9 @@
    incoming_edx_uses=0; incoming_stack_parameter_uses=1; direct_non_thunk_callers=0;
    incoming_ecx_receiver_callers=0; attributed_named_callers=1; owner_evidence_coverage=adequate */
 
-undefined4 __thiscall STBHEShellC::sub_005F35F0(STBHEShellC *this,int param_1)
+undefined4 __thiscall
+SubmarineTitans::Recovered::HiddenThis::AnonReceiver_005F35F0::sub_005F35F0
+          (AnonReceiver_005F35F0 *this,int param_1)
 
 {
   uint *puVar1;
@@ -42,15 +44,15 @@ undefined4 __thiscall STBHEShellC::sub_005F35F0(STBHEShellC *this,int param_1)
       FUN_006ea270(PTR_00807598,*puVar1,0,pAVar2->field_00AB);
       pAVar2->field_0171 = puVar4;
       if (DAT_00807326 != '\0') {
-        SubmarineTitans::Recovered::HiddenThis::AnonReceiver_004248D0::FUN_006e9520
-                  ((AnonReceiver_004248D0 *)PTR_00807598,*puVar1,0,0x403170,(uint)pAVar2);
+        AnonReceiver_00424E10::FUN_006e9520
+                  ((AnonReceiver_00424E10 *)PTR_00807598,*puVar1,0,0x403170,(uint)pAVar2);
       }
     }
     else {
       puVar1 = &local_8->field_008F;
       if (-1 < (int)local_8->field_008F) {
-        SubmarineTitans::Recovered::HiddenThis::AnonReceiver_004248D0::FUN_006e9520
-                  ((AnonReceiver_004248D0 *)PTR_00807598,local_8->field_008F,0,0,(uint)local_8);
+        AnonReceiver_00424E10::FUN_006e9520
+                  ((AnonReceiver_00424E10 *)PTR_00807598,local_8->field_008F,0,0,(uint)local_8);
         FUN_006e8ba0(PTR_00807598,*puVar1);
       }
       puVar4 = Library::Ourlib::MFRLOAD::mfRLoad

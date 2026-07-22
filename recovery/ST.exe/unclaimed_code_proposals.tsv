@@ -135,9 +135,6 @@ create_apply	kind	entry_address	target_address	current_symbol	proposed_name	entr
 0	seh_filter	006ECB5D			FUN_006ECB5D	B801000000C38B65	raw_bytes	0	0	0	0	0079E1F8		P:0079E1F8>006ECB5D	review	MSVC exception-filter shape; preserve as review-only funclet
 0	seh_filter	00708C53			FUN_00708C53	B801000000C38B65	raw_bytes	0	0	0	0	0079E204		P:0079E204>00708C53	review	MSVC exception-filter shape; preserve as review-only funclet
 0	seh_filter	00709772			FUN_00709772	B801000000C38B65	raw_bytes	0	0	0	0	0079E214		P:0079E214>00709772	review	MSVC exception-filter shape; preserve as review-only funclet
-0	data_referenced_code	0071E000			FUN_0071E000	5668EC010000E8C5	raw_bytes	0	0	0	0	007CA724		P:007CA724>0071E000	review	aligned non-executable pointer selects plausible code without a thunk
-0	data_referenced_code	00720960			FUN_00720960	5657680C020000E8	raw_bytes	0	0	0	0	007CA74C		P:007CA74C>00720960	review	aligned non-executable pointer selects plausible code without a thunk
-0	data_referenced_code	00725520			FUN_00725520	56689C010000E8A5	raw_bytes	0	0	0	0	007CA72C		P:007CA72C>00725520	review	aligned non-executable pointer selects plausible code without a thunk
 0	seh_filter	0072585E			FUN_0072585E	B801000000C38B65	raw_bytes	0	0	0	0	0079E2DC		P:0079E2DC>0072585E	review	MSVC exception-filter shape; preserve as review-only funclet
 0	seh_filter	00727C39			FUN_00727C39	B801000000C38B65	raw_bytes	0	0	0	0	0079E2EC		P:0079E2EC>00727C39	review	MSVC exception-filter shape; preserve as review-only funclet
 0	seh_filter	007292F9			FUN_007292F9	B801000000C3E9BB	raw_bytes	0	0	0	0	0079E308		P:0079E308>007292F9	review	MSVC exception-filter shape; preserve as review-only funclet

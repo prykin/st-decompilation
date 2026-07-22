@@ -6,7 +6,6 @@ FUN_005ecd70(void *this,int param_1,int param_2,undefined4 param_3,int param_4,c
 {
   uint uVar1;
   int iVar2;
-  undefined4 uVar3;
 
   *(undefined4 *)((int)this + 0x25b) = *(undefined4 *)((int)this + 0x277);
   *(undefined4 *)((int)this + 0x25f) = *(undefined4 *)((int)this + 0x27b);
@@ -44,10 +43,10 @@ FUN_005ecd70(void *this,int param_1,int param_2,undefined4 param_3,int param_4,c
          ((*(int *)((int)this + 0x26b) - *(int *)((int)this + 0x25f)) * 10000) / iVar2;
     *(int *)((int)this + 0x29f) =
          ((*(int *)((int)this + 0x26f) - *(int *)((int)this + 0x263)) * 10000) / iVar2;
-    uVar3 = FUN_006acf0d(*(int *)((int)this + 0x267),*(int *)((int)this + 0x26b),
+    iVar2 = FUN_006acf0d(*(int *)((int)this + 0x267),*(int *)((int)this + 0x26b),
                          *(int *)((int)this + 0x26f),*(int *)((int)this + 0x25b),
                          *(int *)((int)this + 0x25f),*(int *)((int)this + 0x263));
-    *(undefined4 *)((int)this + 0x293) = uVar3;
+    *(int *)((int)this + 0x293) = iVar2;
     *(uint *)((int)this + 0x31c) = *(uint *)((int)this + 0x31c) & 0xfffffffe;
     return 1;
   }

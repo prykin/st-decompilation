@@ -25,7 +25,7 @@ FUN_0065fd50(void *this,int param_1,int param_2,short param_3,undefined4 param_4
                                    CONCAT22((short)((uint)iVar1 >> 0x10),
                                             *(short *)((int)this + 0x7d)));
       if (this_00 != (STGroupBoatC *)0x0) {
-        (*this_00->vtable->vfunc_08)(this_00,CASE_1,local_10);
+        (*this_00->vtable->SetOrderData)(this_00,GROUP_BOAT_ORDER_01,local_10);
         return 0;
       }
     }

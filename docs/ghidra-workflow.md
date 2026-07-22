@@ -55,6 +55,67 @@ proposal files are located automatically where required.
 
 When `STDecompExport` asks for a directory, select `<repo>/decomp`.
 
+## Path-free recovery pipeline
+
+Normal refreshes no longer require launching every script or selecting every
+TSV manually. Run `STRecoveryPipeline` from Script Manager or
+**Tools → Submarine Titans → Run Recovery Pipeline**. Because Script Manager is
+connected directly to this repository's `scripts/` directory, the pipeline
+infers `<repo>` from its own source path and passes these arguments to every
+child script:
+
+```text
+analyzer output:  <repo>/recovery
+applier input:    <repo>/recovery/ST.exe/<exact proposal>.tsv
+export output:    <repo>/decomp
+```
+
+Only one mode is selected; no file or directory dialogs follow:
+
+| Mode | Purpose |
+| --- | --- |
+| `core` | Baseline/debug/message recovery followed by bounded unclaimed-code and factory/vtable/constructor/class fixpoint loops. This is the default. |
+| `deep` | Slower ownership, ABI, prototype, global, pointer-shape, enum, provenance, control-flow, and library propagation. Requires current core outputs. |
+| `full` | Run `core` and then `deep`; does not start the expensive corpus export. |
+| `export` | Run only `STDecompExport` into `<repo>/decomp`. |
+| `full-export` | Run the complete recovery pipeline and export afterwards. |
+
+The pipeline invokes ordinary Ghidra scripts through `runScript`; it does not
+bypass any analyzer/applier validation. In particular, it never changes an
+`apply=0` flag, and every child applier still checks manual sources, generated
+hashes, stale baselines, and transaction boundaries. Optional curated/audit
+inputs are skipped when absent. A failing step stops the sequence before any
+downstream applier can consume stale output.
+
+`STRecoveryPipeline` closes its own empty implicit `GhidraScript` transaction
+before invoking children. Every read-only analyzer/exporter also closes its
+unneeded implicit wrapper immediately, and every applier does so before opening
+the explicit transactions shown in its source. This is required by Ghidra's
+transaction semantics: aborting any nested entry aborts the entire shared
+database transaction, even though later scripts can still observe the temporary
+state until the outermost entry ends. The pipeline records the Program
+modification number around every child, rejects an unexpected open transaction,
+and refuses success if observed mutations leave `Program.isChanged()` false.
+
+Structural loops are bounded to three passes and expensive whole-program
+propagation to two. A remaining changing count after that bound is recorded for
+review rather than looped forever. Progress, arguments, duration, and the first
+failure are written incrementally to
+`<repo>/recovery/ST.exe/pipeline_report.tsv`.
+
+Appliers commit Ghidra transactions to the currently open `Program`, but the
+pipeline deliberately does not call `DomainFile.save()` behind the UI's back.
+After a successful mutating mode, use **File → Save** when the action is enabled.
+If it is disabled, Ghidra's `Program.isChanged()` is already false and there is
+nothing for that action to save. Close the CodeBrowser and project normally,
+then reopen one newly recovered symbol as a persistence check before committing
+`proj/`; Git-visible database files may not be finalized while the program is
+still open. The export-only mode does not modify the program database.
+
+Standalone scripts retain their dialogs for targeted experiments and for using
+nonstandard output roots. The path-free pipeline is the canonical routine
+workflow.
+
 ## Why analyzers and appliers are separate
 
 Reverse-engineering evidence is often strong enough to propose a type or name
@@ -163,6 +224,13 @@ appliers.
 The debug analyzer uses embedded `ClassTy::Method`, source path, calling
 convention, and diagnostic-line evidence. The curated applier is reserved for
 address-specific knowledge that cannot yet be derived generically.
+
+Method evidence is parsed from the decoded string contents, never from Ghidra's
+automatic `s_*_ADDRESS` label. Ghidra replaces spaces and punctuation in those
+labels with underscores: for example, the diagnostic
+`"STOctopusC::Bad direction"` becomes
+`s_STOctopusC::Bad_direction_007cba88`, while the method corroborated by the
+parallel crab implementation is still `STOctopusC::Bad`.
 
 `__thiscall` is proposed only when the incoming `ECX` value is still live when
 the body first uses it; temporary uses after `ECX` has been overwritten do not
@@ -963,6 +1031,7 @@ a new conflict is what requires another iteration.
 
 | Pair or script | Primary purpose |
 | --- | --- |
+| `STRecoveryPipeline` | Infer repository paths and run bounded dependency-ordered `core`, `deep`, `full`, or export workflows without proposal-file dialogs. |
 | `STRecoveredTypesApplier` | Install conservative known structures, discriminated payload unions, stack aggregates, enums, and selected signatures. |
 | `STDebugSymbolAnalyzer/Applier` | Recover C++ owners, method names, calling conventions, source evidence, and short diagnostic printf strings. |
 | `STCallsiteConventionAnalyzer` | Audit uncertain conventions through direct and thunk-mediated callers; never auto-apply. |

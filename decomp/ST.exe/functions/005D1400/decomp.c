@@ -488,7 +488,7 @@ LAB_005d1b5a:
                 bVar34 = local_18 < (undefined1 *)pDVar18->count;
               } while ((int)local_18 < (int)pDVar18->count);
             }
-            thunk_FUN_0056ee90((AnonShape_0056EE90_04DD57E6 *)&DAT_00807620);
+            STAppC::sub_0056EE90((STAppC *)&DAT_00807620);
             pCVar11 = g_cursorClass_00802A30;
             if ((this_01->field_1E26 == CASE_7) || (this_01->field_1E26 == 0xe)) {
               if ((this_01->field_1F47 != 0) || ((message->arg0).u32 != 0)) {
@@ -1465,7 +1465,7 @@ LAB_005d3188:
           this_01->field_21C9 = local_2c * 0x19 + 0x41;
           pcVar8 = g_startSystem_0081176C->field_0034;
           if (pcVar8->field_00A0 != 0) {
-            FUN_00710790((uint *)pcVar8);
+            FUN_00710790((AnonShape_00710790_4CBB90D4 *)pcVar8);
           }
           this_01->field_21A5 = *(undefined4 *)&pcVar8->field_0x8a;
           goto LAB_005d3188;
@@ -1748,7 +1748,7 @@ LAB_005d3188:
         this_01->field_21C9 = local_2c * 0x19 + 0x41;
         pcVar8 = g_startSystem_0081176C->field_0034;
         if (pcVar8->field_00A0 != 0) {
-          FUN_00710790((uint *)pcVar8);
+          FUN_00710790((AnonShape_00710790_4CBB90D4 *)pcVar8);
         }
         this_01->field_21A5 = *(undefined4 *)&pcVar8->field_0x8a;
         if (0 < (int)this_01->field_21A9) goto LAB_005d3188;
@@ -1897,7 +1897,7 @@ LAB_005d32d3:
             this_01->field_21C9 = local_2c * 0x19 + 0x41;
             pcVar8 = g_startSystem_0081176C->field_0034;
             if (pcVar8->field_00A0 != 0) {
-              FUN_00710790((uint *)pcVar8);
+              FUN_00710790((AnonShape_00710790_4CBB90D4 *)pcVar8);
             }
             this_01->field_21A5 = *(undefined4 *)&pcVar8->field_0x8a;
             (*this_01->field_000C->vtable->CreateObject)

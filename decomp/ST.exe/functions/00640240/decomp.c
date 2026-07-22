@@ -6,7 +6,7 @@ void __fastcall FUN_00640240(AnonShape_00640240_D1DBDD81 *param_1)
 
   if ((int *)param_1->field_037F != (int *)0x0) {
     FUN_006e8660(param_1->field_0211,(int *)param_1->field_037F,0,0,0,0,0,0,0);
-    SubmarineTitans::Recovered::HiddenThis::AnonReceiver_004248D0::FUN_006e9520
+    SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00424E10::FUN_006e9520
               (param_1->field_0211,*(uint *)param_1->field_037F,0,0x640320,(uint)param_1->field_037F
               );
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */

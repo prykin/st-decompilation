@@ -92,7 +92,7 @@ LAB_00627c8a:
   switch(*(undefined1 *)((int)this + 0x2ad)) {
   case 0:
   case 2:
-    iVar3 = thunk_FUN_0041d6c0(this,param_1);
+    iVar3 = STMineSetC::sub_0041D6C0(this,param_1);
     return SUB41(iVar3,0);
   case 1:
     iVar3 = thunk_FUN_0041d620(this,param_1);

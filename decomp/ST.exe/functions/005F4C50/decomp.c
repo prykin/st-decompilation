@@ -9,7 +9,7 @@
 
 undefined4 __thiscall
 STBHEShellC::sub_005F4C50
-          (STBHEShellC *this,float param_1,undefined4 param_2,int param_3,int param_4,int param_5,
+          (STBHEShellC *this,float param_1,int param_2,int param_3,int param_4,int param_5,
           int param_6)
 
 {
@@ -35,7 +35,7 @@ STBHEShellC::sub_005F4C50
   local_8 = _DAT_0079c5a4 / (float)param_5;
   this->field_0109 = param_5;
   this->field_010D = param_4;
-  this->field_0111 = param_1;
+  this->field_0111 = (int)param_1;
   this->field_0115 = param_2;
   this->field_0119 = param_3;
   this->field_0121 = -0x1e;

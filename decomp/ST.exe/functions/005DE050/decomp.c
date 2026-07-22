@@ -30,7 +30,7 @@ StartSystemTy::PaintBinDesc(StartSystemTy *this,AnonShape_005DE050_5BD86458 *par
     pcVar1 = this->field_0034;
     local_10 = this;
     if (pcVar1->field_00A0 != 0) {
-      FUN_00710790((uint *)pcVar1);
+      FUN_00710790((AnonShape_00710790_4CBB90D4 *)pcVar1);
     }
     local_8 = *(int *)&pcVar1->field_0x8a;
     local_54.previous = g_currentExceptionFrame;

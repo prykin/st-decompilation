@@ -31,10 +31,10 @@ source_apply	name_apply	address	old_name	source_file	diagnostic_lines	source_con
 0	0	004240F0	STGroupC::SaveGrpData	E:\\__titans\\wlad\\tc_grp.cpp	441 | 442	high	source_already_present_in_function_comment		none	no_strict_free_function_string	
 0	0	00424360	STGroupC::RestoreGrpData	E:\\__titans\\wlad\\tc_grp.cpp	469 | 470	high	source_already_present_in_function_comment		none	no_strict_free_function_string	
 0	0	004247B0	STGroupC::SetAVPar	E:\\__titans\\wlad\\tc_grp.cpp	598 | 599	high	source_already_present_in_function_comment		none	no_strict_free_function_string	
-1	0	00424E10	FUN_00424e10	E:\\__titans\\wlad\\Td3dshad.cpp	1376	high	unique_embedded_source_path		none	no_strict_free_function_string	
+1	0	00424E10	SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00424E10::FUN_00424e10	E:\\__titans\\wlad\\Td3dshad.cpp	1376	high	unique_embedded_source_path		none	no_strict_free_function_string	
 1	0	00427F20	FUN_00427f20	E:\\__titans\\wlad\\Td3dshad.cpp	1935	high	unique_embedded_source_path		none	no_strict_free_function_string	
 1	0	00428E50	FUN_00428e50	E:\\__titans\\tload.cpp	589	high	unique_embedded_source_path		none	no_strict_free_function_string	
-1	1	0042A290	FUN_0042a290	E:\\__titans\\tload.cpp	1166 | 1282 | 1283	high	unique_embedded_source_path	LoadLand	high	unique_nearby_name_and_source_metadata	LoadLand
+1	1	0042A290	LoadLand	E:\\__titans\\tload.cpp	1166 | 1282 | 1283	high	unique_embedded_source_path	LoadLand	high	unique_nearby_name_and_source_metadata	LoadLand
 1	0	0042A860	FUN_0042a860	E:\\__titans\\tload.cpp	1334	high	unique_embedded_source_path		none	no_strict_free_function_string	
 0	0	0042AB00	STAllPlayersC::GetGObjFromZone	E:\\__titans\\wlad\\to_allpl.cpp	106 | 107	high	source_already_present_in_function_comment		none	no_strict_free_function_string	
 0	0	0042ABE0	STAllPlayersC::GetGObjFromZone2	E:\\__titans\\wlad\\to_allpl.cpp	183 | 270 | 271	high	source_already_present_in_function_comment		none	no_strict_free_function_string	
@@ -172,7 +172,7 @@ source_apply	name_apply	address	old_name	source_file	diagnostic_lines	source_con
 0	0	00491FB0	STBoatC::ReadyForLoading	E:\\__titans\\wlad\\To_boat.cpp	20667	high	source_already_present_in_function_comment		none	no_strict_free_function_string	
 0	0	00492080	STBoatC::NotReadyForLoading	E:\\__titans\\wlad\\To_boat.cpp	20680 | 20699	high	source_already_present_in_function_comment		none	no_strict_free_function_string	
 0	0	00492280	STBoatC::CancelLoading	E:\\__titans\\wlad\\To_boat.cpp	20720	high	source_already_present_in_function_comment		none	no_strict_free_function_string	
-1	0	00492390	FUN_00492390	E:\\__titans\\wlad\\To_boat.cpp	20736	high	unique_embedded_source_path		none	no_strict_free_function_string	
+1	0	00492390	STBoatC::sub_00492390	E:\\__titans\\wlad\\To_boat.cpp	20736	high	unique_embedded_source_path		none	no_strict_free_function_string	
 0	0	00493340	STBoatC::CheckForReplenisher	E:\\__titans\\wlad\\To_boat.cpp	21025 | 21026	high	source_already_present_in_function_comment		none	no_strict_free_function_string	
 0	0	00495980	DumpClassC::GetMessage	E:\\__titans\\wlad\\To_dump.cpp	43 | 48 | 52 | 61 | 62 | 88	high	source_already_present_in_function_comment		none	no_strict_free_function_string	
 0	0	00495EC0	DumpClassC::WritePtr	E:\\__titans\\wlad\\To_dump.cpp	127 | 132	high	source_already_present_in_function_comment		none	no_strict_free_function_string	
@@ -270,7 +270,7 @@ source_apply	name_apply	address	old_name	source_file	diagnostic_lines	source_con
 1	0	004E04A0	FUN_004e04a0	E:\\__titans\\Artem\\TLO_rc.cpp	195	high	unique_embedded_source_path		none	no_strict_free_function_string	
 1	0	004E3880	FUN_004e3880	E:\\__titans\\Artem\\TLO_shark.cpp	24	high	unique_embedded_source_path		none	no_strict_free_function_string	
 0	0	004E9CE0	TLOBaseTy::teleNone	E:\\__titans\\Artem\\TLO_tele.cpp	410 | 435 | 469 | 470	high	source_already_present_in_function_comment		none	no_strict_free_function_string	
-1	0	004EAA20	FUN_004eaa20	E:\\__titans\\Artem\\TLO_tls.cpp	86 | 99	high	unique_embedded_source_path		none	no_strict_free_function_string	
+1	0	004EAA20	TLOBaseTy::sub_004EAA20	E:\\__titans\\Artem\\TLO_tls.cpp	86 | 99	high	unique_embedded_source_path		none	no_strict_free_function_string	
 1	0	004EC050	FUN_004ec050	E:\\__titans\\Artem\\TLO_trade.cpp	283	high	unique_embedded_source_path		none	no_strict_free_function_string	
 1	0	004EC0F0	FUN_004ec0f0	E:\\__titans\\Artem\\TLO_trade.cpp	294	high	unique_embedded_source_path		none	no_strict_free_function_string	
 1	0	004ECEA0	FUN_004ecea0	E:\\__titans\\Artem\\TLO_vqb.cpp	63 | 88	high	unique_embedded_source_path		none	no_strict_free_function_string	
@@ -376,7 +376,7 @@ source_apply	name_apply	address	old_name	source_file	diagnostic_lines	source_con
 0	0	00511FA0	HelpPanelTy::SetPanel	E:\\__titans\\Andrey\\helppan.cpp	302	high	source_already_present_in_function_comment		none	no_strict_free_function_string	
 0	0	005123A0	HelpPanelTy::CreateList	E:\\__titans\\Andrey\\helppan.cpp	421	high	source_already_present_in_function_comment		none	no_strict_free_function_string	
 0	0	00512830	HelpPanelTy::CreateSlider	E:\\__titans\\Andrey\\helppan.cpp	479	high	source_already_present_in_function_comment		none	no_strict_free_function_string	
-1	0	00512BE0	FUN_00512be0	E:\\__titans\\Andrey\\helppan.cpp	544	high	unique_embedded_source_path		none	no_strict_free_function_string	
+1	0	00512BE0	SubmarineTitans::Recovered::HiddenThis::AnonReceiver_004EEFB0::sub_00512BE0	E:\\__titans\\Andrey\\helppan.cpp	544	high	unique_embedded_source_path		none	no_strict_free_function_string	
 0	0	00513030	HelpPanelTy::ChangeTree	E:\\__titans\\Andrey\\helppan.cpp	621	high	source_already_present_in_function_comment		none	no_strict_free_function_string	
 0	0	005134B0	HelpPanelTy::PutToSHlp	E:\\__titans\\Andrey\\helppan.cpp	636	high	source_already_present_in_function_comment		none	no_strict_free_function_string	
 0	0	005135F0	HelpPanelTy::HomeBut	E:\\__titans\\Andrey\\helppan.cpp	661	high	source_already_present_in_function_comment		none	no_strict_free_function_string	
@@ -418,7 +418,7 @@ source_apply	name_apply	address	old_name	source_file	diagnostic_lines	source_con
 0	0	00521B90	IntercomPanelTy::DoneIntercomPanel	E:\\__titans\\Andrey\\intercom.cpp	74	high	source_already_present_in_function_comment		none	no_strict_free_function_string	
 0	0	00522D40	IntercomPanelTy::SwitchIntercomPanel	E:\\__titans\\Andrey\\intercom.cpp	315	high	source_already_present_in_function_comment		none	no_strict_free_function_string	
 0	0	00522E80	IntercomPanelTy::GetMessage	E:\\__titans\\Andrey\\intercom.cpp	407	high	source_already_present_in_function_comment		none	no_strict_free_function_string	
-1	1	0052AB40	FUN_0052ab40	E:\\__titans\\Andrey\\minimap.cpp	22 | 47 | 58 | 66	high	unique_embedded_source_path	CreateMiniMap	high	unique_nearby_name_and_source_metadata	CreateMiniMap
+1	1	0052AB40	CreateMiniMap	E:\\__titans\\Andrey\\minimap.cpp	22 | 47 | 58 | 66	high	unique_embedded_source_path	CreateMiniMap	high	unique_nearby_name_and_source_metadata	CreateMiniMap
 0	0	0052BF00	MoneyTy::GetMessage	E:\\__titans\\Andrey\\money.cpp	298	high	source_already_present_in_function_comment		none	no_strict_free_function_string	
 0	0	0052D0A0	PopUpTy::OutProc	E:\\__titans\\Andrey\\mpopup.cpp	34	high	source_already_present_in_function_comment		none	no_strict_free_function_string	
 0	0	0052D200	PopUpTy::OutStr	E:\\__titans\\Andrey\\mpopup.cpp	45	high	source_already_present_in_function_comment		none	no_strict_free_function_string	
@@ -497,16 +497,16 @@ source_apply	name_apply	address	old_name	source_file	diagnostic_lines	source_con
 0	0	0053FCD0	ProdPanelTy::PaintTab	E:\\__titans\\Andrey\\specpan.cpp	597	high	source_already_present_in_function_comment		none	no_strict_free_function_string	
 0	0	0053FEE0	ProdPanelTy::PaintTab	E:\\__titans\\Andrey\\specpan.cpp	624	high	source_already_present_in_function_comment		none	no_strict_free_function_string	
 0	0	005400F0	ProdPanelTy::GetMessage	E:\\__titans\\Andrey\\specpan.cpp	675	high	source_already_present_in_function_comment		none	no_strict_free_function_string	
-1	1	005403C0	FUN_005403c0	E:\\__titans\\Andrey\\support.cpp	20	high	unique_embedded_source_path	PutDDX	high	unique_nearby_name_and_source_metadata	PutDDX
-1	1	005404F0	FUN_005404f0	E:\\__titans\\Andrey\\support.cpp	38	high	unique_embedded_source_path	TransPutDDX	high	unique_nearby_name_and_source_metadata	TransPutDDX
-1	1	00540620	FUN_00540620	E:\\__titans\\Andrey\\support.cpp	58	high	unique_embedded_source_path	PutDDXClip	high	unique_nearby_name_and_source_metadata	PutDDXClip
-1	1	00540760	FUN_00540760	E:\\__titans\\Andrey\\support.cpp	79	high	unique_embedded_source_path	DibPut	high	unique_nearby_name_and_source_metadata	DibPut
+1	1	005403C0	PutDDX	E:\\__titans\\Andrey\\support.cpp	20	high	unique_embedded_source_path	PutDDX	high	unique_nearby_name_and_source_metadata	PutDDX
+1	1	005404F0	TransPutDDX	E:\\__titans\\Andrey\\support.cpp	38	high	unique_embedded_source_path	TransPutDDX	high	unique_nearby_name_and_source_metadata	TransPutDDX
+1	1	00540620	PutDDXClip	E:\\__titans\\Andrey\\support.cpp	58	high	unique_embedded_source_path	PutDDXClip	high	unique_nearby_name_and_source_metadata	PutDDXClip
+1	1	00540760	DibPut	E:\\__titans\\Andrey\\support.cpp	79	high	unique_embedded_source_path	DibPut	high	unique_nearby_name_and_source_metadata	DibPut
 0	0	00540890	StartServTy::WrTextDDX	E:\\__titans\\Andrey\\support.cpp	117	high	source_already_present_in_function_comment		none	no_strict_free_function_string	
 0	0	00540A60	StartServTy::WrSarrDDX	E:\\__titans\\Andrey\\support.cpp	149	high	source_already_present_in_function_comment		none	no_strict_free_function_string	
-1	1	00540DC0	FUN_00540dc0	E:\\__titans\\Andrey\\support.cpp	231	high	unique_embedded_source_path	SetAccelerator	high	unique_nearby_name_and_source_metadata	SetAccelerator
-1	1	00541030	FUN_00541030	E:\\__titans\\Andrey\\support.cpp	253	high	unique_embedded_source_path	DelAllAccelerators	high	unique_nearby_name_and_source_metadata	DelAllAccelerators
+1	1	00540DC0	SetAccelerator	E:\\__titans\\Andrey\\support.cpp	231	high	unique_embedded_source_path	SetAccelerator	high	unique_nearby_name_and_source_metadata	SetAccelerator
+1	1	00541030	DelAllAccelerators	E:\\__titans\\Andrey\\support.cpp	253	high	unique_embedded_source_path	DelAllAccelerators	high	unique_nearby_name_and_source_metadata	DelAllAccelerators
 0	0	005424A0	InterSystemC::CreateInterfObjects	E:\\__titans\\Andrey\\tintersys.cpp	179	high	source_already_present_in_function_comment		none	no_strict_free_function_string	
-1	1	00542D80	FUN_00542d80	E:\\__titans\\Andrey\\tintersys.cpp	202	high	unique_embedded_source_path	CreateInterSystem	high	unique_nearby_name_and_source_metadata	CreateInterSystem
+1	1	00542D80	CreateInterSystem	E:\\__titans\\Andrey\\tintersys.cpp	202	high	unique_embedded_source_path	CreateInterSystem	high	unique_nearby_name_and_source_metadata	CreateInterSystem
 0	0	00542F40	InterSystemC::GetMessage	E:\\__titans\\Andrey\\tintersys.cpp	287	high	source_already_present_in_function_comment		none	no_strict_free_function_string	
 0	0	00543600	CursorClassTy::InitCursor	E:\\__titans\\Andrey\\to_cursor.cpp	101 | 102	high	source_already_present_in_function_comment		none	no_strict_free_function_string	
 0	0	00543830	CursorClassTy::DoneCursor	E:\\__titans\\Andrey\\to_cursor.cpp	125 | 126	high	source_already_present_in_function_comment		none	no_strict_free_function_string	
@@ -523,7 +523,7 @@ source_apply	name_apply	address	old_name	source_file	diagnostic_lines	source_con
 0	0	0054AEE0	CursorClassTy::GCGameState	E:\\__titans\\Andrey\\to_cursor.cpp	1788 | 1790	high	source_already_present_in_function_comment		none	no_strict_free_function_string	
 0	0	0054BE70	CPanelTy::OutProc	E:\\__titans\\Andrey\\to_cursor.cpp	1943	high	source_already_present_in_function_comment		none	no_strict_free_function_string	
 0	0	0054BF40	CursorClassTy::SetGCType	E:\\__titans\\Andrey\\to_cursor.cpp	2286 | 2288	high	source_already_present_in_function_comment		none	no_strict_free_function_string	
-1	1	0054C740	FUN_0054c740	E:\\__titans\\Andrey\\tplaysys.cpp	125 | 176 | 177	high	unique_embedded_source_path	CreatePlaySystem	high	unique_nearby_name_and_source_metadata	CreatePlaySystem
+1	1	0054C740	CreatePlaySystem	E:\\__titans\\Andrey\\tplaysys.cpp	125 | 176 | 177	high	unique_embedded_source_path	CreatePlaySystem	high	unique_nearby_name_and_source_metadata	CreatePlaySystem
 0	0	0054CC20	STPlaySystemC::CreateGameObject	E:\\__titans\\Andrey\\tplaysys.cpp	239 | 240 | 243 | 245 | 247	high	source_already_present_in_function_comment		none	no_strict_free_function_string	
 1	0	0054CDD0	FUN_0054cdd0	E:\\__titans\\Andrey\\tplaysys.cpp	296 | 297	high	unique_embedded_source_path		none	no_strict_free_function_string	
 0	0	0054CFC0	STPlaySystemC::InitSystem	E:\\__titans\\Andrey\\tplaysys.cpp	396 | 398	high	source_already_present_in_function_comment		none	no_strict_free_function_string	
@@ -579,14 +579,14 @@ source_apply	name_apply	address	old_name	source_file	diagnostic_lines	source_con
 0	0	0055A620	VisibleClassTy::SetZoneMin2	E:\\__titans\\grig\\visible.cpp	931	high	source_already_present_in_function_comment		none	no_strict_free_function_string	
 0	0	0055A9D0	VisibleClassTy::VisHoleCreate	E:\\__titans\\grig\\visible.cpp	1008 | 1009	high	source_already_present_in_function_comment		none	no_strict_free_function_string	
 0	0	0055AB50	VisibleClassTy::VisHoleExec	E:\\__titans\\grig\\visible.cpp	1034 | 1035	high	source_already_present_in_function_comment		none	no_strict_free_function_string	
-1	1	0055D730	FUN_0055d730	E:\\__titans\\pal_tbl.CPP	81 | 85	high	unique_embedded_source_path	LoadGamePlt	high	unique_nearby_name_and_source_metadata	LoadGamePlt
-1	1	0055DA40	FUN_0055da40	E:\\__titans\\pal_tbl.CPP	123 | 125	high	unique_embedded_source_path	LoadStartPlt	high	unique_nearby_name_and_source_metadata	LoadStartPlt
-1	1	0055DBF0	FUN_0055dbf0	E:\\__titans\\paltool.cpp	29 | 31	high	unique_embedded_source_path	DarkScreen	high	unique_nearby_name_and_source_metadata	DarkScreen
-1	1	0055DCD0	FUN_0055dcd0	E:\\__titans\\paltool.cpp	75 | 77	high	unique_embedded_source_path	SetPalette	high	unique_nearby_name_and_source_metadata	SetPalette
-1	1	0055F410	FUN_0055f410	E:\\__titans\\scoreai.cpp	2390 | 2408	high	unique_embedded_source_path	AiCalcDispositionAreas	high	unique_nearby_name_and_source_metadata	AiCalcDispositionAreas
+1	1	0055D730	LoadGamePlt	E:\\__titans\\pal_tbl.CPP	81 | 85	high	unique_embedded_source_path	LoadGamePlt	high	unique_nearby_name_and_source_metadata	LoadGamePlt
+1	1	0055DA40	LoadStartPlt	E:\\__titans\\pal_tbl.CPP	123 | 125	high	unique_embedded_source_path	LoadStartPlt	high	unique_nearby_name_and_source_metadata	LoadStartPlt
+1	1	0055DBF0	DarkScreen	E:\\__titans\\paltool.cpp	29 | 31	high	unique_embedded_source_path	DarkScreen	high	unique_nearby_name_and_source_metadata	DarkScreen
+1	1	0055DCD0	SetPalette	E:\\__titans\\paltool.cpp	75 | 77	high	unique_embedded_source_path	SetPalette	high	unique_nearby_name_and_source_metadata	SetPalette
+1	1	0055F410	AiCalcDispositionAreas	E:\\__titans\\scoreai.cpp	2390 | 2408	high	unique_embedded_source_path	AiCalcDispositionAreas	high	unique_nearby_name_and_source_metadata	AiCalcDispositionAreas
 1	0	00561670	FUN_00561670	E:\\__titans\\scoreai.cpp	600	high	unique_embedded_source_path		none	no_strict_free_function_string	
-1	1	00562F50	FUN_00562f50	E:\\__titans\\scoreai.cpp	3522 | 3540	high	unique_embedded_source_path	AiAiCalcMinesFields	high	unique_nearby_name_and_source_metadata	AiAiCalcMinesFields
-1	1	00565820	FUN_00565820	E:\\__titans\\scoreai.cpp	3839 | 3855	high	unique_embedded_source_path	AiMinesDistribTgts	high	unique_nearby_name_and_source_metadata	AiMinesDistribTgts
+1	1	00562F50	AiAiCalcMinesFields	E:\\__titans\\scoreai.cpp	3522 | 3540	high	unique_embedded_source_path	AiAiCalcMinesFields	high	unique_nearby_name_and_source_metadata	AiAiCalcMinesFields
+1	1	00565820	AiMinesDistribTgts	E:\\__titans\\scoreai.cpp	3839 | 3855	high	unique_embedded_source_path	AiMinesDistribTgts	high	unique_nearby_name_and_source_metadata	AiMinesDistribTgts
 1	0	00566600	FUN_00566600	E:\\__titans\\snd_mngr.cpp	37 | 50	high	unique_embedded_source_path		none	no_strict_free_function_string	
 0	0	00566C20	SoundManagerTy::GetMessage	E:\\__titans\\snd_mngr.cpp	220	high	source_already_present_in_function_comment		none	no_strict_free_function_string	
 0	0	00568C50	SoundClassTy::CheckFader	E:\\__titans\\sound.cpp	517	high	source_already_present_in_function_comment		none	no_strict_free_function_string	
@@ -600,15 +600,15 @@ source_apply	name_apply	address	old_name	source_file	diagnostic_lines	source_con
 0	0	0056DB80	STAppC::StartGame	E:\\__titans\\tapp.cpp	1357	high	source_already_present_in_function_comment		none	no_strict_free_function_string	
 0	0	0056FA60	STAppC::GetMessage	E:\\__titans\\tapp.cpp	1938 | 1980 | 2192 | 2193	high	source_already_present_in_function_comment		none	no_strict_free_function_string	
 0	0	00571400	STAppC::ReadCmdPlay	E:\\__titans\\tapp.cpp	2324	high	source_already_present_in_function_comment		none	no_strict_free_function_string	
-1	1	005751F0	FUN_005751f0	E:\\__titans\\tinittxt.cpp	352 | 379 | 380	high	unique_embedded_source_path	LandInit	high	unique_nearby_name_and_source_metadata	LandInit
+1	1	005751F0	LandInit	E:\\__titans\\tinittxt.cpp	352 | 379 | 380	high	unique_embedded_source_path	LandInit	high	unique_nearby_name_and_source_metadata	LandInit
 0	0	00575CB0	STAlgaC::GetMessage	E:\\__titans\\Object\\To_alga.cpp	71 | 102 | 154 | 163 | 406 | 407	high	source_already_present_in_function_comment		none	no_strict_free_function_string	
 0	0	00576AD0	BaseSystemC::CreateSystemObjects	E:\\__titans\\tsystem.cpp	44 | 45	high	source_already_present_in_function_comment		none	no_strict_free_function_string	
-1	1	00576BB0	FUN_00576bb0	E:\\__titans\\tsystem.cpp	56 | 64 | 65	high	unique_embedded_source_path	CreateBaseSystem	high	unique_nearby_name_and_source_metadata	CreateBaseSystem
-1	1	00576CE0	FUN_00576ce0	E:\\__titans\\tsystem.cpp	79 | 80	high	unique_embedded_source_path	DestroyBaseSystem	high	unique_nearby_name_and_source_metadata	DestroyBaseSystem
+1	1	00576BB0	CreateBaseSystem	E:\\__titans\\tsystem.cpp	56 | 64 | 65	high	unique_embedded_source_path	CreateBaseSystem	high	unique_nearby_name_and_source_metadata	CreateBaseSystem
+1	1	00576CE0	DestroyBaseSystem	E:\\__titans\\tsystem.cpp	79 | 80	high	unique_embedded_source_path	DestroyBaseSystem	high	unique_nearby_name_and_source_metadata	DestroyBaseSystem
 0	0	00576E10	GameSystemC::CreateSystemObjects	E:\\__titans\\tsystem.cpp	101	high	source_already_present_in_function_comment		none	no_strict_free_function_string	
 0	0	00576EF0	GameSystemC::InitSystem	E:\\__titans\\tsystem.cpp	134	high	source_already_present_in_function_comment		none	no_strict_free_function_string	
 0	0	005770D0	GameSystemC::DoneSystem	E:\\__titans\\tsystem.cpp	167	high	source_already_present_in_function_comment		none	no_strict_free_function_string	
-1	1	00577280	FUN_00577280	E:\\__titans\\tsystem.cpp	177 | 187	high	unique_embedded_source_path	CreateGameSystem	high	unique_nearby_name_and_source_metadata	CreateGameSystem
+1	1	00577280	CreateGameSystem	E:\\__titans\\tsystem.cpp	177 | 187	high	unique_embedded_source_path	CreateGameSystem	high	unique_nearby_name_and_source_metadata	CreateGameSystem
 0	0	005776D0	GameSystemC::GetMessage	E:\\__titans\\tsystem.cpp	454 | 455	high	source_already_present_in_function_comment		none	no_strict_free_function_string	
 0	0	00578200	DebugSystemC::CreateSystemObjects	E:\\__titans\\tsystem.cpp	479 | 480	high	source_already_present_in_function_comment		none	no_strict_free_function_string	
 0	0	00578560	STCrabC::SetSprRange	E:\\__titans\\Igor\\to_crab.cpp	122	high	source_already_present_in_function_comment		none	no_strict_free_function_string	
@@ -774,14 +774,14 @@ source_apply	name_apply	address	old_name	source_file	diagnostic_lines	source_con
 0	0	005C1610	MReportTy::PaintTab	E:\\__titans\\Start\\rpt_obj.cpp	873	high	source_already_present_in_function_comment		none	no_strict_free_function_string	
 0	0	005C1A90	MReportTy::GetMessage	E:\\__titans\\Start\\rpt_obj.cpp	1067	high	source_already_present_in_function_comment		none	no_strict_free_function_string	
 0	0	005C28C0	StartSystemTy::OutBmpProc	E:\\__titans\\Start\\sett_obj.cpp	72	high	source_already_present_in_function_comment		none	no_strict_free_function_string	
-1	0	005C29B0	FUN_005c29b0	E:\\__titans\\Start\\sett_obj.cpp	215	high	unique_embedded_source_path		none	no_strict_free_function_string	
+1	0	005C29B0	SubmarineTitans::Recovered::HiddenThis::AnonReceiver_005B6730::sub_005C29B0	E:\\__titans\\Start\\sett_obj.cpp	215	high	unique_embedded_source_path		none	no_strict_free_function_string	
 0	0	005C4930	SettMapTy::DoneSettMap	E:\\__titans\\Start\\sett_obj.cpp	462	high	source_already_present_in_function_comment		none	no_strict_free_function_string	
 0	0	005C4E20	SettMapTy::PaintSettMap	E:\\__titans\\Start\\sett_obj.cpp	494	high	source_already_present_in_function_comment		none	no_strict_free_function_string	
 0	0	005C5130	SettMapTy::NoneSettMap	E:\\__titans\\Start\\sett_obj.cpp	579	high	source_already_present_in_function_comment		none	no_strict_free_function_string	
 0	0	005C5B60	SettMapTy::CloseButtons	E:\\__titans\\Start\\sett_obj.cpp	592	high	source_already_present_in_function_comment		none	no_strict_free_function_string	
 0	0	005C6030	SettMapTy::CreateCtrls	E:\\__titans\\Start\\sett_obj.cpp	845	high	source_already_present_in_function_comment		none	no_strict_free_function_string	
 0	0	005C6D40	SettMapTy::DeleteCtrls	E:\\__titans\\Start\\sett_obj.cpp	932	high	source_already_present_in_function_comment		none	no_strict_free_function_string	
-1	0	005C8200	FUN_005c8200	E:\\__titans\\Start\\sett_obj.cpp	1114 | 1141 | 1143	high	unique_embedded_source_path		none	no_strict_free_function_string	
+1	0	005C8200	SubmarineTitans::Recovered::HiddenThis::AnonReceiver_004EEFB0::FUN_005c8200	E:\\__titans\\Start\\sett_obj.cpp	1114 | 1141 | 1143	high	unique_embedded_source_path		none	no_strict_free_function_string	
 0	0	005C87C0	SettMapTy::PaintSC	E:\\__titans\\Start\\sett_obj.cpp	1196	high	source_already_present_in_function_comment		none	no_strict_free_function_string	
 0	0	005C8A40	SettMapTy::GetMessage	E:\\__titans\\Start\\sett_obj.cpp	1880	high	source_already_present_in_function_comment		none	no_strict_free_function_string	
 0	0	005CBD00	SettMapMTy::InitSettMap	E:\\__titans\\Start\\settmobj.cpp	79	high	source_already_present_in_function_comment		none	no_strict_free_function_string	
@@ -872,7 +872,7 @@ source_apply	name_apply	address	old_name	source_file	diagnostic_lines	source_con
 0	0	005F6AF0	STColl3C::LoadImagSpr	E:\\__titans\\nick\\to_coll3.cpp	431 | 433	high	source_already_present_in_function_comment		none	no_strict_free_function_string	
 0	0	005F94C0	STColl3C::CreateAddSpr	E:\\__titans\\nick\\to_coll3.cpp	1496 | 1498	high	source_already_present_in_function_comment		none	no_strict_free_function_string	
 0	0	005FB640	STContainerC::GetMessage	E:\\__titans\\nick\\to_cont.cpp	313 | 315	high	source_already_present_in_function_comment		none	no_strict_free_function_string	
-1	0	005FDB50	FUN_005fdb50	E:\\__titans\\nick\\to_DcBom.cpp	317	high	unique_embedded_source_path		none	no_strict_free_function_string	
+1	0	005FDB50	SubmarineTitans::Recovered::HiddenThis::AnonReceiver_005FDB50::FUN_005fdb50	E:\\__titans\\nick\\to_DcBom.cpp	317	high	unique_embedded_source_path		none	no_strict_free_function_string	
 0	0	00601F80	STDestC::GetMessage	E:\\__titans\\nick\\to_dest.cpp	149 | 151	high	source_already_present_in_function_comment		none	no_strict_free_function_string	
 0	0	00603740	STExplosion::GetMessage	E:\\__titans\\nick\\to_Expl.cpp	443 | 445	high	source_already_present_in_function_comment		none	no_strict_free_function_string	
 0	0	006041A0	STExplosionC::CreateGroupPart	E:\\__titans\\nick\\to_Expl.cpp	502 | 504	high	source_already_present_in_function_comment		none	no_strict_free_function_string	
@@ -920,18 +920,18 @@ source_apply	name_apply	address	old_name	source_file	diagnostic_lines	source_con
 0	0	00648030	AiBossClassTy::GetMessage	E:\\__titans\\ai\\ai_boss.cpp	97 | 222 | 223	high	source_already_present_in_function_comment		none	no_strict_free_function_string	
 1	0	00648400	FUN_00648400	E:\\__titans\\ai\\ai_boss_d.cpp	32	high	unique_embedded_source_path		none	no_strict_free_function_string	
 1	0	00648530	FUN_00648530	E:\\__titans\\ai\\ai_boss_d.cpp	69	high	unique_embedded_source_path		none	no_strict_free_function_string	
-1	1	00648620	FUN_00648620	E:\\__titans\\ai\\ai_boss_d.cpp	107 | 108	high	unique_embedded_source_path	BossDataPack	high	unique_nearby_name_and_source_metadata	BossDataPack
-1	1	00648780	FUN_00648780	E:\\__titans\\ai\\ai_boss_d.cpp	127 | 134 | 136	high	unique_embedded_source_path	LoadBossEdit	high	unique_nearby_name_and_source_metadata	LoadBossEdit
-1	1	006488C0	FUN_006488c0	E:\\__titans\\ai\\ai_boss_d.cpp	156 | 163 | 166	high	unique_embedded_source_path	SaveBossEdit	high	unique_nearby_name_and_source_metadata	SaveBossEdit
-1	1	00648AB0	FUN_00648ab0	E:\\__titans\\ai\\ai_creat.cpp	41 | 55 | 58	high	unique_embedded_source_path	LoadStrategData	high	unique_nearby_name_and_source_metadata	LoadStrategData
-1	1	00648C10	FUN_00648c10	E:\\__titans\\ai\\ai_creat.cpp	73 | 95 | 97	high	unique_embedded_source_path	StartStrateg	high	unique_nearby_name_and_source_metadata	StartStrateg
-1	1	00648E70	FUN_00648e70	E:\\__titans\\ai\\ai_creat.cpp	130 | 141 | 143	high	unique_embedded_source_path	CreateArbiter	high	unique_nearby_name_and_source_metadata	CreateArbiter
-1	1	00648FE0	FUN_00648fe0	E:\\__titans\\ai\\ai_creat.cpp	157 | 266 | 268	high	unique_embedded_source_path	CreateAi	high	unique_nearby_name_and_source_metadata	CreateAi
-1	1	006494C0	FUN_006494c0	E:\\__titans\\ai\\ai_creat.cpp	307 | 313 | 314	high	unique_embedded_source_path	CreatePlrDataForWS	high	unique_nearby_name_and_source_metadata	CreatePlrDataForWS
-1	1	00649790	FUN_00649790	E:\\__titans\\ai\\ai_creat.cpp	353 | 359 | 360	high	unique_embedded_source_path	CreatePlrDataForBO	high	unique_nearby_name_and_source_metadata	CreatePlrDataForBO
-1	1	00649A60	FUN_00649a60	E:\\__titans\\ai\\ai_creat.cpp	373 | 376 | 377	high	unique_embedded_source_path	CreatePlrData	high	unique_nearby_name_and_source_metadata	CreatePlrData
-1	1	00649B90	FUN_00649b90	E:\\__titans\\ai\\ai_creat.cpp	417 | 423 | 424	high	unique_embedded_source_path	CreateBossData	high	unique_nearby_name_and_source_metadata	CreateBossData
-1	1	00649EB0	FUN_00649eb0	E:\\__titans\\ai\\ai_creat.cpp	449 | 450	high	unique_embedded_source_path	CreateDefaultBossData	high	unique_nearby_name_and_source_metadata	CreateDefaultBossData
+1	1	00648620	BossDataPack	E:\\__titans\\ai\\ai_boss_d.cpp	107 | 108	high	unique_embedded_source_path	BossDataPack	high	unique_nearby_name_and_source_metadata	BossDataPack
+1	1	00648780	LoadBossEdit	E:\\__titans\\ai\\ai_boss_d.cpp	127 | 134 | 136	high	unique_embedded_source_path	LoadBossEdit	high	unique_nearby_name_and_source_metadata	LoadBossEdit
+1	1	006488C0	SaveBossEdit	E:\\__titans\\ai\\ai_boss_d.cpp	156 | 163 | 166	high	unique_embedded_source_path	SaveBossEdit	high	unique_nearby_name_and_source_metadata	SaveBossEdit
+1	1	00648AB0	LoadStrategData	E:\\__titans\\ai\\ai_creat.cpp	41 | 55 | 58	high	unique_embedded_source_path	LoadStrategData	high	unique_nearby_name_and_source_metadata	LoadStrategData
+1	1	00648C10	StartStrateg	E:\\__titans\\ai\\ai_creat.cpp	73 | 95 | 97	high	unique_embedded_source_path	StartStrateg	high	unique_nearby_name_and_source_metadata	StartStrateg
+1	1	00648E70	CreateArbiter	E:\\__titans\\ai\\ai_creat.cpp	130 | 141 | 143	high	unique_embedded_source_path	CreateArbiter	high	unique_nearby_name_and_source_metadata	CreateArbiter
+1	1	00648FE0	CreateAi	E:\\__titans\\ai\\ai_creat.cpp	157 | 266 | 268	high	unique_embedded_source_path	CreateAi	high	unique_nearby_name_and_source_metadata	CreateAi
+1	1	006494C0	CreatePlrDataForWS	E:\\__titans\\ai\\ai_creat.cpp	307 | 313 | 314	high	unique_embedded_source_path	CreatePlrDataForWS	high	unique_nearby_name_and_source_metadata	CreatePlrDataForWS
+1	1	00649790	CreatePlrDataForBO	E:\\__titans\\ai\\ai_creat.cpp	353 | 359 | 360	high	unique_embedded_source_path	CreatePlrDataForBO	high	unique_nearby_name_and_source_metadata	CreatePlrDataForBO
+1	1	00649A60	CreatePlrData	E:\\__titans\\ai\\ai_creat.cpp	373 | 376 | 377	high	unique_embedded_source_path	CreatePlrData	high	unique_nearby_name_and_source_metadata	CreatePlrData
+1	1	00649B90	CreateBossData	E:\\__titans\\ai\\ai_creat.cpp	417 | 423 | 424	high	unique_embedded_source_path	CreateBossData	high	unique_nearby_name_and_source_metadata	CreateBossData
+1	1	00649EB0	CreateDefaultBossData	E:\\__titans\\ai\\ai_creat.cpp	449 | 450	high	unique_embedded_source_path	CreateDefaultBossData	high	unique_nearby_name_and_source_metadata	CreateDefaultBossData
 1	0	0064A630	FUN_0064a630	E:\\__titans\\ai\\ai_erc.cpp	23	high	unique_embedded_source_path		none	no_strict_free_function_string	
 1	0	0064A6F0	FUN_0064a6f0	E:\\__titans\\ai\\ai_erc.cpp	37 | 42	high	unique_embedded_source_path		none	no_strict_free_function_string	
 1	0	0064A830	FUN_0064a830	E:\\__titans\\ai\\ai_erc.cpp	86	high	unique_embedded_source_path		none	no_strict_free_function_string	
@@ -946,38 +946,38 @@ source_apply	name_apply	address	old_name	source_file	diagnostic_lines	source_con
 1	0	0064E300	FUN_0064e300	E:\\__titans\\ai\\ai_event.cpp	436 | 440	high	unique_embedded_source_path		none	no_strict_free_function_string	
 1	0	0065C9E0	FUN_0065c9e0	E:\\__titans\\ai\\ai_event_d.cpp	33	high	unique_embedded_source_path		none	no_strict_free_function_string	
 1	0	0065CB00	FUN_0065cb00	E:\\__titans\\ai\\ai_event_d.cpp	76	high	unique_embedded_source_path		none	no_strict_free_function_string	
-1	1	0065CD10	FUN_0065cd10	E:\\__titans\\ai\\ai_event_d.cpp	137 | 138	high	unique_embedded_source_path	EventDataPack	high	unique_nearby_name_and_source_metadata	EventDataPack
+1	1	0065CD10	EventDataPack	E:\\__titans\\ai\\ai_event_d.cpp	137 | 138	high	unique_embedded_source_path	EventDataPack	high	unique_nearby_name_and_source_metadata	EventDataPack
 1	0	0065D120	FUN_0065d120	E:\\__titans\\ai\\ai_event_d.cpp	183	high	unique_embedded_source_path		none	no_strict_free_function_string	
 0	0	0065D2A0	AiFltClassTy::InitData	E:\\__titans\\ai\\ai_flt.cpp	49 | 50	high	source_already_present_in_function_comment		none	no_strict_free_function_string	
 0	0	0065D4B0	AiFltClassTy::PrepareToSave	E:\\__titans\\ai\\ai_flt.cpp	79 | 80	high	source_already_present_in_function_comment		none	no_strict_free_function_string	
 0	0	0065D760	AiFltClassTy::_AddObjFlt	E:\\__titans\\ai\\ai_flt.cpp	155 | 165 | 166	high	source_already_present_in_function_comment		none	no_strict_free_function_string	
 0	0	0065F1D0	AiFltClassTy::AppendZone	E:\\__titans\\ai\\ai_flt.cpp	735 | 736	high	source_already_present_in_function_comment		none	no_strict_free_function_string	
 0	0	0065F660	AiFltClassTy::AppendPoint	E:\\__titans\\ai\\ai_flt.cpp	771 | 772	high	source_already_present_in_function_comment		none	no_strict_free_function_string	
-1	0	00660180	FUN_00660180	E:\\__titans\\ai\\ai_flt.cpp	1127	high	unique_embedded_source_path		none	no_strict_free_function_string	
+1	0	00660180	SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00660180::FUN_00660180	E:\\__titans\\ai\\ai_flt.cpp	1127	high	unique_embedded_source_path		none	no_strict_free_function_string	
 0	0	006618E0	AiFltClassTy::GoToRepair	E:\\__titans\\ai\\ai_flt.cpp	1769 | 1770	high	source_already_present_in_function_comment		none	no_strict_free_function_string	
 0	0	00662240	AiFltClassTy::GetAiMess	E:\\__titans\\ai\\ai_flt.cpp	2442 | 2443	high	source_already_present_in_function_comment		none	no_strict_free_function_string	
 0	0	00667D90	AiFltClassTy::GetMessage	E:\\__titans\\ai\\ai_flt.cpp	3696 | 3786 | 3787	high	source_already_present_in_function_comment		none	no_strict_free_function_string	
 1	0	00668180	FUN_00668180	E:\\__titans\\ai\\ai_flt_d.cpp	42	high	unique_embedded_source_path		none	no_strict_free_function_string	
 1	0	00668330	FUN_00668330	E:\\__titans\\ai\\ai_flt_d.cpp	78	high	unique_embedded_source_path		none	no_strict_free_function_string	
-1	1	006684E0	FUN_006684e0	E:\\__titans\\ai\\ai_flt_d.cpp	117 | 118	high	unique_embedded_source_path	FltDataPack	high	unique_nearby_name_and_source_metadata	FltDataPack
-1	0	0066ACC0	FUN_0066acc0	E:\\__titans\\ai\\ai_interp.cpp	338	high	unique_embedded_source_path		none	no_strict_free_function_string	
+1	1	006684E0	FltDataPack	E:\\__titans\\ai\\ai_flt_d.cpp	117 | 118	high	unique_embedded_source_path	FltDataPack	high	unique_nearby_name_and_source_metadata	FltDataPack
+1	0	0066ACC0	SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0064A970::FUN_0066acc0	E:\\__titans\\ai\\ai_interp.cpp	338	high	unique_embedded_source_path		none	no_strict_free_function_string	
 1	0	00671F10	FUN_00671f10	E:\\__titans\\ai\\ai_interp.cpp	1342 | 1356 | 1369 | 1374 | 1388 | 1392 | 1413 | 1419	high	unique_embedded_source_path		none	no_strict_free_function_string	
 1	0	00672B60	FUN_00672b60	E:\\__titans\\ai\\Ai_lex.c	231 | 253	high	unique_embedded_source_path		none	no_strict_free_function_string	
-1	1	00675EA0	FUN_00675ea0	E:\\__titans\\ai\\ai_mdef.cpp	257 | 258	high	unique_embedded_source_path	_AddObjGrpExch	high	unique_nearby_name_and_source_metadata	_AddObjGrpExch
-1	1	00675FE0	FUN_00675fe0	E:\\__titans\\ai\\ai_mdef.cpp	280 | 281	high	unique_embedded_source_path	_AddAllGrpExch	high	unique_nearby_name_and_source_metadata	_AddAllGrpExch
-1	1	00676170	FUN_00676170	E:\\__titans\\ai\\ai_mdef.cpp	293 | 294	high	unique_embedded_source_path	_GetStaffGrpExch	high	unique_nearby_name_and_source_metadata	_GetStaffGrpExch
-1	1	00676260	FUN_00676260	E:\\__titans\\ai\\ai_mdef.cpp	314 | 315	high	unique_embedded_source_path	_GetEmbrTobjGrpExch	high	unique_nearby_name_and_source_metadata	_GetEmbrTobjGrpExch
-1	1	006763F0	FUN_006763f0	E:\\__titans\\ai\\ai_mdef.cpp	336 | 337	high	unique_embedded_source_path	_GetEmbrGrpTobjGrpExch	high	unique_nearby_name_and_source_metadata	_GetEmbrGrpTobjGrpExch
-1	1	00676D80	FUN_00676d80	E:\\__titans\\ai\\ai_mdef.cpp	659 | 661 | 662	high	unique_embedded_source_path	_EnumPlObj	high	unique_nearby_name_and_source_metadata	_EnumPlObj
+1	1	00675EA0	_AddObjGrpExch	E:\\__titans\\ai\\ai_mdef.cpp	257 | 258	high	unique_embedded_source_path	_AddObjGrpExch	high	unique_nearby_name_and_source_metadata	_AddObjGrpExch
+1	1	00675FE0	_AddAllGrpExch	E:\\__titans\\ai\\ai_mdef.cpp	280 | 281	high	unique_embedded_source_path	_AddAllGrpExch	high	unique_nearby_name_and_source_metadata	_AddAllGrpExch
+1	1	00676170	_GetStaffGrpExch	E:\\__titans\\ai\\ai_mdef.cpp	293 | 294	high	unique_embedded_source_path	_GetStaffGrpExch	high	unique_nearby_name_and_source_metadata	_GetStaffGrpExch
+1	1	00676260	_GetEmbrTobjGrpExch	E:\\__titans\\ai\\ai_mdef.cpp	314 | 315	high	unique_embedded_source_path	_GetEmbrTobjGrpExch	high	unique_nearby_name_and_source_metadata	_GetEmbrTobjGrpExch
+1	1	006763F0	_GetEmbrGrpTobjGrpExch	E:\\__titans\\ai\\ai_mdef.cpp	336 | 337	high	unique_embedded_source_path	_GetEmbrGrpTobjGrpExch	high	unique_nearby_name_and_source_metadata	_GetEmbrGrpTobjGrpExch
+1	1	00676D80	_EnumPlObj	E:\\__titans\\ai\\ai_mdef.cpp	659 | 661 | 662	high	unique_embedded_source_path	_EnumPlObj	high	unique_nearby_name_and_source_metadata	_EnumPlObj
 1	0	00677290	FUN_00677290	E:\\__titans\\ai\\ai_mdef.cpp	704	high	unique_embedded_source_path		none	no_strict_free_function_string	
 1	0	006773B0	FUN_006773b0	E:\\__titans\\ai\\ai_mdef.cpp	727	high	unique_embedded_source_path		none	no_strict_free_function_string	
 1	0	006774C0	FUN_006774c0	E:\\__titans\\ai\\ai_mdef.cpp	750	high	unique_embedded_source_path		none	no_strict_free_function_string	
 1	0	006775E0	FUN_006775e0	E:\\__titans\\ai\\ai_mdef.cpp	776	high	unique_embedded_source_path		none	no_strict_free_function_string	
-1	1	00677960	FUN_00677960	E:\\__titans\\ai\\ai_mdef.cpp	875 | 895 | 896	high	unique_embedded_source_path	_EnumRCField	high	unique_nearby_name_and_source_metadata	_EnumRCField
-1	1	00677BE0	FUN_00677be0	E:\\__titans\\ai\\ai_mdef.cpp	924 | 954 | 955	high	unique_embedded_source_path	_EnumRCCont	high	unique_nearby_name_and_source_metadata	_EnumRCCont
-1	1	00677F40	FUN_00677f40	E:\\__titans\\ai\\ai_mdef.cpp	993 | 1020 | 1021	high	unique_embedded_source_path	_EnumArt	high	unique_nearby_name_and_source_metadata	_EnumArt
-1	1	00678240	FUN_00678240	E:\\__titans\\ai\\ai_mdef.cpp	1055 | 1081 | 1082	high	unique_embedded_source_path	_EnumMines	high	unique_nearby_name_and_source_metadata	_EnumMines
-1	1	006785A0	FUN_006785a0	E:\\__titans\\ai\\ai_mdef.cpp	1113 | 1136 | 1137	high	unique_embedded_source_path	_EnumDest	high	unique_nearby_name_and_source_metadata	_EnumDest
+1	1	00677960	_EnumRCField	E:\\__titans\\ai\\ai_mdef.cpp	875 | 895 | 896	high	unique_embedded_source_path	_EnumRCField	high	unique_nearby_name_and_source_metadata	_EnumRCField
+1	1	00677BE0	_EnumRCCont	E:\\__titans\\ai\\ai_mdef.cpp	924 | 954 | 955	high	unique_embedded_source_path	_EnumRCCont	high	unique_nearby_name_and_source_metadata	_EnumRCCont
+1	1	00677F40	_EnumArt	E:\\__titans\\ai\\ai_mdef.cpp	993 | 1020 | 1021	high	unique_embedded_source_path	_EnumArt	high	unique_nearby_name_and_source_metadata	_EnumArt
+1	1	00678240	_EnumMines	E:\\__titans\\ai\\ai_mdef.cpp	1055 | 1081 | 1082	high	unique_embedded_source_path	_EnumMines	high	unique_nearby_name_and_source_metadata	_EnumMines
+1	1	006785A0	_EnumDest	E:\\__titans\\ai\\ai_mdef.cpp	1113 | 1136 | 1137	high	unique_embedded_source_path	_EnumDest	high	unique_nearby_name_and_source_metadata	_EnumDest
 0	0	00678980	AiPlrClassTy::InitData	E:\\__titans\\ai\\ai_plr.cpp	60 | 61	high	source_already_present_in_function_comment		none	no_strict_free_function_string	
 0	0	00678BE0	AiPlrClassTy::PrepareToSave	E:\\__titans\\ai\\ai_plr.cpp	97 | 98	high	source_already_present_in_function_comment		none	no_strict_free_function_string	
 0	0	00679300	AiPlrClassTy::CloseTactByTitle	E:\\__titans\\ai\\ai_plr.cpp	241 | 242	high	source_already_present_in_function_comment		none	no_strict_free_function_string	
@@ -988,20 +988,20 @@ source_apply	name_apply	address	old_name	source_file	diagnostic_lines	source_con
 0	0	0067C7E0	AiPlrClassTy::GetMessage	E:\\__titans\\ai\\ai_plr.cpp	1414 | 1621 | 1622	high	source_already_present_in_function_comment		none	no_strict_free_function_string	
 1	0	0067CF30	FUN_0067cf30	E:\\__titans\\ai\\ai_plr_d.cpp	40	high	unique_embedded_source_path		none	no_strict_free_function_string	
 1	0	0067D1D0	FUN_0067d1d0	E:\\__titans\\ai\\ai_plr_d.cpp	119	high	unique_embedded_source_path		none	no_strict_free_function_string	
-1	1	0067D3B0	FUN_0067d3b0	E:\\__titans\\ai\\ai_plr_d.cpp	218 | 219	high	unique_embedded_source_path	PlrDataPack	high	unique_nearby_name_and_source_metadata	PlrDataPack
-1	1	0067D880	FUN_0067d880	E:\\__titans\\ai\\ai_plr_d.cpp	238 | 245 | 247	high	unique_embedded_source_path	LoadPlrEdit	high	unique_nearby_name_and_source_metadata	LoadPlrEdit
-1	1	0067D9C0	FUN_0067d9c0	E:\\__titans\\ai\\ai_plr_d.cpp	267 | 274 | 277	high	unique_embedded_source_path	SavePlrEdit	high	unique_nearby_name_and_source_metadata	SavePlrEdit
-1	1	0067DB30	FUN_0067db30	E:\\__titans\\ai\\ai_plr_d.cpp	291 | 294 | 295	high	unique_embedded_source_path	DelPlrEdit	high	unique_nearby_name_and_source_metadata	DelPlrEdit
-1	1	0067DC20	FUN_0067dc20	E:\\__titans\\ai\\ai_plr_d.cpp	319 | 342 | 344	high	unique_embedded_source_path	_CreateStgListByRoot	high	unique_nearby_name_and_source_metadata	_CreateStgListByRoot
-1	1	0067DEC0	FUN_0067dec0	E:\\__titans\\ai\\ai_plr_d.cpp	363 | 366 | 368	high	unique_embedded_source_path	CreateAssistantList	high	unique_nearby_name_and_source_metadata	CreateAssistantList
-1	1	0067DFD0	FUN_0067dfd0	E:\\__titans\\ai\\ai_plr_d.cpp	385 | 388 | 390	high	unique_embedded_source_path	CreateOpponentList	high	unique_nearby_name_and_source_metadata	CreateOpponentList
-1	1	0067E0E0	FUN_0067e0e0	E:\\__titans\\ai\\ai_plr_d.cpp	407 | 410 | 412	high	unique_embedded_source_path	CreateStrategList	high	unique_nearby_name_and_source_metadata	CreateStrategList
-1	1	0067E200	FUN_0067e200	E:\\__titans\\ai\\ai_plr_d.cpp	429 | 432 | 434	high	unique_embedded_source_path	CreateSaveStrategList	high	unique_nearby_name_and_source_metadata	CreateSaveStrategList
-1	1	0067E320	FUN_0067e320	E:\\__titans\\ai\\ai_plr_d.cpp	451 | 455 | 456	high	unique_embedded_source_path	GetStrategNameDB	high	unique_nearby_name_and_source_metadata	GetStrategNameDB
-1	1	0067E4A0	FUN_0067e4a0	E:\\__titans\\ai\\ai_plr_d.cpp	473 | 474	high	unique_embedded_source_path	GetStrategName	high	unique_nearby_name_and_source_metadata	GetStrategName
-1	1	0067E580	FUN_0067e580	E:\\__titans\\ai\\ai_plr_d.cpp	488 | 491 | 492	high	unique_embedded_source_path	GetAssistantNameDB	high	unique_nearby_name_and_source_metadata	GetAssistantNameDB
-1	1	0067E6B0	FUN_0067e6b0	E:\\__titans\\ai\\ai_plr_d.cpp	506 | 509 | 510	high	unique_embedded_source_path	GetOpponentNameDB	high	unique_nearby_name_and_source_metadata	GetOpponentNameDB
-1	1	0067E7E0	FUN_0067e7e0	E:\\__titans\\ai\\ai_plr_d.cpp	534 | 581 | 584	high	unique_embedded_source_path	CreateArbList	high	unique_nearby_name_and_source_metadata	CreateArbList
+1	1	0067D3B0	PlrDataPack	E:\\__titans\\ai\\ai_plr_d.cpp	218 | 219	high	unique_embedded_source_path	PlrDataPack	high	unique_nearby_name_and_source_metadata	PlrDataPack
+1	1	0067D880	LoadPlrEdit	E:\\__titans\\ai\\ai_plr_d.cpp	238 | 245 | 247	high	unique_embedded_source_path	LoadPlrEdit	high	unique_nearby_name_and_source_metadata	LoadPlrEdit
+1	1	0067D9C0	SavePlrEdit	E:\\__titans\\ai\\ai_plr_d.cpp	267 | 274 | 277	high	unique_embedded_source_path	SavePlrEdit	high	unique_nearby_name_and_source_metadata	SavePlrEdit
+1	1	0067DB30	DelPlrEdit	E:\\__titans\\ai\\ai_plr_d.cpp	291 | 294 | 295	high	unique_embedded_source_path	DelPlrEdit	high	unique_nearby_name_and_source_metadata	DelPlrEdit
+1	1	0067DC20	_CreateStgListByRoot	E:\\__titans\\ai\\ai_plr_d.cpp	319 | 342 | 344	high	unique_embedded_source_path	_CreateStgListByRoot	high	unique_nearby_name_and_source_metadata	_CreateStgListByRoot
+1	1	0067DEC0	CreateAssistantList	E:\\__titans\\ai\\ai_plr_d.cpp	363 | 366 | 368	high	unique_embedded_source_path	CreateAssistantList	high	unique_nearby_name_and_source_metadata	CreateAssistantList
+1	1	0067DFD0	CreateOpponentList	E:\\__titans\\ai\\ai_plr_d.cpp	385 | 388 | 390	high	unique_embedded_source_path	CreateOpponentList	high	unique_nearby_name_and_source_metadata	CreateOpponentList
+1	1	0067E0E0	CreateStrategList	E:\\__titans\\ai\\ai_plr_d.cpp	407 | 410 | 412	high	unique_embedded_source_path	CreateStrategList	high	unique_nearby_name_and_source_metadata	CreateStrategList
+1	1	0067E200	CreateSaveStrategList	E:\\__titans\\ai\\ai_plr_d.cpp	429 | 432 | 434	high	unique_embedded_source_path	CreateSaveStrategList	high	unique_nearby_name_and_source_metadata	CreateSaveStrategList
+1	1	0067E320	GetStrategNameDB	E:\\__titans\\ai\\ai_plr_d.cpp	451 | 455 | 456	high	unique_embedded_source_path	GetStrategNameDB	high	unique_nearby_name_and_source_metadata	GetStrategNameDB
+1	1	0067E4A0	GetStrategName	E:\\__titans\\ai\\ai_plr_d.cpp	473 | 474	high	unique_embedded_source_path	GetStrategName	high	unique_nearby_name_and_source_metadata	GetStrategName
+1	1	0067E580	GetAssistantNameDB	E:\\__titans\\ai\\ai_plr_d.cpp	488 | 491 | 492	high	unique_embedded_source_path	GetAssistantNameDB	high	unique_nearby_name_and_source_metadata	GetAssistantNameDB
+1	1	0067E6B0	GetOpponentNameDB	E:\\__titans\\ai\\ai_plr_d.cpp	506 | 509 | 510	high	unique_embedded_source_path	GetOpponentNameDB	high	unique_nearby_name_and_source_metadata	GetOpponentNameDB
+1	1	0067E7E0	CreateArbList	E:\\__titans\\ai\\ai_plr_d.cpp	534 | 581 | 584	high	unique_embedded_source_path	CreateArbList	high	unique_nearby_name_and_source_metadata	CreateArbList
 1	0	006802A0	FUN_006802a0	E:\\__titans\\ai\\ai_script.cpp	116	high	unique_embedded_source_path		none	no_strict_free_function_string	
 1	0	00680890	FUN_00680890	E:\\__titans\\ai\\ai_script.cpp	255	high	unique_embedded_source_path		none	no_strict_free_function_string	
 1	0	006809F0	FUN_006809f0	E:\\__titans\\ai\\ai_script.cpp	292	high	unique_embedded_source_path		none	no_strict_free_function_string	
@@ -1032,7 +1032,7 @@ source_apply	name_apply	address	old_name	source_file	diagnostic_lines	source_con
 0	0	00690B90	AiTactClassTy::GetMessage	E:\\__titans\\ai\\ai_tact.cpp	1118 | 1197 | 1198	high	source_already_present_in_function_comment		none	no_strict_free_function_string	
 1	0	00690E90	FUN_00690e90	E:\\__titans\\ai\\ai_tact_d.cpp	33	high	unique_embedded_source_path		none	no_strict_free_function_string	
 1	0	00690FC0	FUN_00690fc0	E:\\__titans\\ai\\ai_tact_d.cpp	81	high	unique_embedded_source_path		none	no_strict_free_function_string	
-1	1	00691190	FUN_00691190	E:\\__titans\\ai\\ai_tact_d.cpp	140 | 141	high	unique_embedded_source_path	TactDataPack	high	unique_nearby_name_and_source_metadata	TactDataPack
+1	1	00691190	TactDataPack	E:\\__titans\\ai\\ai_tact_d.cpp	140 | 141	high	unique_embedded_source_path	TactDataPack	high	unique_nearby_name_and_source_metadata	TactDataPack
 1	0	00691690	FUN_00691690	E:\\__titans\\Maps\\CntLib.cpp	78	high	unique_embedded_source_path		none	no_strict_free_function_string	
 1	0	00692C10	FUN_00692c10	E:\\__titans\\Maps\\DefObj.cpp	442 | 448	high	unique_embedded_source_path		none	no_strict_free_function_string	
 0	0	00695A60	CGenerate::CteateField	E:\\__titans\\Maps\\gen_map.cpp	816 | 818	high	source_already_present_in_function_comment		none	no_strict_free_function_string	
@@ -1041,219 +1041,5 @@ source_apply	name_apply	address	old_name	source_file	diagnostic_lines	source_con
 0	0	006A0960	CGenerate::_saveObj	E:\\__titans\\Maps\\generate.cpp	224	high	source_already_present_in_function_comment		none	no_strict_free_function_string	
 1	0	006A2770	FUN_006a2770	E:\\__titans\\Maps\\map_cnt.cpp	767	high	unique_embedded_source_path		none	no_strict_free_function_string	
 1	0	006A2ED0	FUN_006a2ed0	E:\\__titans\\Maps\\prepare.cpp	207	high	unique_embedded_source_path		none	no_strict_free_function_string	
-1	0	006DD050	FUN_006dd050	E:\\ourlib\\Strend.cpp	812	high	unique_embedded_source_path		none	no_strict_free_function_string	
-1	0	006DD660	FUN_006dd660	E:\\ourlib\\Strend.cpp	986	high	unique_embedded_source_path		none	no_strict_free_function_string	
-1	0	006DD6E0	FUN_006dd6e0	E:\\ourlib\\Strend.cpp	996	high	unique_embedded_source_path		none	no_strict_free_function_string	
-1	0	006E29D0	FUN_006e29d0	E:\\ourlib\\Strend.cpp	3057	high	unique_embedded_source_path		none	no_strict_free_function_string	
-1	0	006E2F90	FUN_006e2f90	E:\\ourlib\\Strend.cpp	3389	high	unique_embedded_source_path		none	no_strict_free_function_string	
-1	0	006E3100	FUN_006e3100	E:\\ourlib\\Strend.cpp	3416	high	unique_embedded_source_path		none	no_strict_free_function_string	
-0	0	006E3510	AppClassTy::InitApp	E:\\Ourlib\\Sapp.cpp	50 | 51 | 68 | 69	high	source_already_present_in_function_comment		none	no_strict_free_function_string	
-0	0	006E36E0	AppClassTy::DoneApp	E:\\Ourlib\\Sapp.cpp	109 | 110	high	source_already_present_in_function_comment		none	no_strict_free_function_string	
-0	0	006E3810	AppClassTy::CreateObject	E:\\Ourlib\\Sapp.cpp	126 | 128 | 129 | 140 | 141	high	source_already_present_in_function_comment		none	no_strict_free_function_string	
-0	0	006E3970	AppClassTy::DeleteObject	E:\\Ourlib\\Sapp.cpp	161 | 162	high	source_already_present_in_function_comment		none	no_strict_free_function_string	
-0	0	006E3AB0	AppClassTy::PostMessage	E:\\Ourlib\\Sapp.cpp	175 | 176	high	source_already_present_in_function_comment		none	no_strict_free_function_string	
-0	0	006E3B50	AppClassTy::PostNextMessage	E:\\Ourlib\\Sapp.cpp	186 | 187	high	source_already_present_in_function_comment		none	no_strict_free_function_string	
-0	0	006E3BF0	AppClassTy::SendMessageToAllSystemsInArr	E:\\Ourlib\\Sapp.cpp	202 | 217 | 223 | 224	high	source_already_present_in_function_comment		none	no_strict_free_function_string	
-0	0	006E3DD0	AppClassTy::SendMessage	E:\\Ourlib\\Sapp.cpp	267 | 290 | 292 | 293	high	source_already_present_in_function_comment		none	no_strict_free_function_string	
-0	0	006E40E0	AppClassTy::SendMessageToAllChild	E:\\Ourlib\\Sapp.cpp	306 | 309 | 310	high	source_already_present_in_function_comment		none	no_strict_free_function_string	
-0	0	006E41D0	AppClassTy::AddDecodeMessage	E:\\Ourlib\\Sapp.cpp	322 | 323	high	source_already_present_in_function_comment		none	no_strict_free_function_string	
-0	0	006E4370	AppClassTy::DecodeMessage	E:\\Ourlib\\Sapp.cpp	376 | 377	high	source_already_present_in_function_comment		none	no_strict_free_function_string	
-0	0	006E4650	AppClassTy::AddSystem	E:\\Ourlib\\Sapp.cpp	463 | 475 | 486 | 489 | 490	high	source_already_present_in_function_comment		none	no_strict_free_function_string	
-0	0	006E47E0	AppClassTy::AddSystem	E:\\Ourlib\\Sapp.cpp	505 | 516 | 527 | 530 | 531	high	source_already_present_in_function_comment		none	no_strict_free_function_string	
-0	0	006E4960	AppClassTy::AddChildSystem	E:\\Ourlib\\Sapp.cpp	546 | 561 | 577 | 580 | 581	high	source_already_present_in_function_comment		none	no_strict_free_function_string	
-0	0	006E4D70	AppClassTy::LifeToAllSystem	E:\\Ourlib\\Sapp.cpp	653 | 659 | 663 | 664	high	source_already_present_in_function_comment		none	no_strict_free_function_string	
-0	0	006E4FC0	AppClassTy::RunApp	E:\\Ourlib\\Sapp.cpp	822 | 824	high	source_already_present_in_function_comment		none	no_strict_free_function_string	
-0	0	006E51F0	SystemClassTy::InitSystem	E:\\Ourlib\\Sapp.cpp	868 | 870 | 871	high	source_already_present_in_function_comment		none	no_strict_free_function_string	
-0	0	006E53A0	SystemClassTy::FindFirstObject	E:\\Ourlib\\Sapp.cpp	930 | 931	high	source_already_present_in_function_comment		none	no_strict_free_function_string	
-0	0	006E54B0	SystemClassTy::_CreateObject	E:\\Ourlib\\Sapp.cpp	947 | 948	high	source_already_present_in_function_comment		none	no_strict_free_function_string	
-0	0	006E5580	SystemClassTy::CreateObject	E:\\Ourlib\\Sapp.cpp	961 | 963 | 964	high	source_already_present_in_function_comment		none	no_strict_free_function_string	
-0	0	006E5810	SystemClassTy::PostMessage	E:\\Ourlib\\Sapp.cpp	1034 | 1035	high	source_already_present_in_function_comment		none	no_strict_free_function_string	
-0	0	006E58B0	SystemClassTy::PostNextMessage	E:\\Ourlib\\Sapp.cpp	1045 | 1046	high	source_already_present_in_function_comment		none	no_strict_free_function_string	
-0	0	006E5970	SystemClassTy::SendMessage	E:\\Ourlib\\Sapp.cpp	1089 | 1099 | 1114 | 1116 | 1117	high	source_already_present_in_function_comment		none	no_strict_free_function_string	
-0	0	006E5C70	SystemClassTy::GetToAllObjects	E:\\Ourlib\\Sapp.cpp	1131 | 1139 | 1140	high	source_already_present_in_function_comment		none	no_strict_free_function_string	
-0	0	006E5D90	SystemClassTy::Life	E:\\Ourlib\\Sapp.cpp	1156 | 1162 | 1173 | 1174	high	source_already_present_in_function_comment		none	no_strict_free_function_string	
-0	0	006E5F00	SystemClassTy::GetMessage	E:\\Ourlib\\Sapp.cpp	1189 | 1190	high	source_already_present_in_function_comment		none	no_strict_free_function_string	
-1	0	006E6170	SystemWithNamedObjClassTy::CreateObject	E:\\Ourlib\\Sapp.cpp	1283	high	unique_embedded_source_path		none	no_strict_free_function_string	
-1	0	006E6200	FUN_006e6200	E:\\Ourlib\\Sapp.cpp	1294 | 1304	high	unique_embedded_source_path		none	no_strict_free_function_string	
-0	0	006E6330	SystemWithNamedObjClassTy::SendMessage	E:\\Ourlib\\Sapp.cpp	1332 | 1333	high	source_already_present_in_function_comment		none	no_strict_free_function_string	
-1	0	006E6630	FUN_006e6630	E:\\ourlib\\St3dsmap.cpp	121	high	unique_embedded_source_path		none	no_strict_free_function_string	
-1	0	006EAD90	FUN_006ead90	E:\\ourlib\\St3dspr.cpp	1775	high	unique_embedded_source_path		none	no_strict_free_function_string	
-1	0	006EAFF0	FUN_006eaff0	E:\\ourlib\\St3dspr.cpp	1853	high	unique_embedded_source_path		none	no_strict_free_function_string	
-1	0	006ED100	FUN_006ed100	E:\\ourlib\\St3dspr.cpp	4201	high	unique_embedded_source_path		none	no_strict_free_function_string	
-1	1	006EF300	FUN_006ef300	E:\\ourlib\\Mfstmap.cpp	31 | 33	high	unique_embedded_source_path	mfTmapGetParam	high	unique_nearby_name_and_source_metadata	mfTmapGetParam
-1	1	006EF440	FUN_006ef440	E:\\ourlib\\Mfstmap.cpp	74 | 83 | 84	high	unique_embedded_source_path	_mfTMapSetTxtParam	high	unique_nearby_name_and_source_metadata	_mfTMapSetTxtParam
-1	1	006EF530	FUN_006ef530	E:\\ourlib\\Mfstmap.cpp	102 | 112 | 114	high	unique_embedded_source_path	_mfTMapSetMeshParam	high	unique_nearby_name_and_source_metadata	_mfTMapSetMeshParam
-1	1	006EF640	FUN_006ef640	E:\\ourlib\\Mfstmap.cpp	139 | 158 | 186 | 191	high	unique_embedded_source_path	mfTMapLoad	high	unique_nearby_name_and_source_metadata	mfTMapLoad
-1	1	006EF9D0	FUN_006ef9d0	E:\\ourlib\\Mfstmap.cpp	212 | 229 | 233	high	unique_embedded_source_path	mfTMapNewTxtr	high	unique_nearby_name_and_source_metadata	mfTMapNewTxtr
-1	1	006EFB70	FUN_006efb70	E:\\ourlib\\Mfstmap.cpp	263 | 265	high	unique_embedded_source_path	mfTMapErase	high	unique_nearby_name_and_source_metadata	mfTMapErase
-1	1	006EFC50	FUN_006efc50	E:\\ourlib\\Mfstmap.cpp	283 | 297 | 301	high	unique_embedded_source_path	mfTMapCreate	high	unique_nearby_name_and_source_metadata	mfTMapCreate
-1	1	006EFDB0	FUN_006efdb0	E:\\ourlib\\Mfstmap.cpp	324 | 326 | 334 | 358 | 362	high	unique_embedded_source_path	mfTMapSave	high	unique_nearby_name_and_source_metadata	mfTMapSave
-1	1	006EFF90	FUN_006eff90	E:\\ourlib\\Mfstmap.cpp	379 | 380 | 400 | 402	high	unique_embedded_source_path	mfTMapAddObj	high	unique_nearby_name_and_source_metadata	mfTMapAddObj
-1	1	006F01A0	FUN_006f01a0	E:\\ourlib\\Mfstmap.cpp	420 | 421 | 431 | 433	high	unique_embedded_source_path	mfTMapDelObj	high	unique_nearby_name_and_source_metadata	mfTMapDelObj
-1	1	006F0360	FUN_006f0360	E:\\ourlib\\Mfstmap.cpp	498 | 500	high	unique_embedded_source_path	mfTMapOptimize	high	unique_nearby_name_and_source_metadata	mfTMapOptimize
-1	0	006F0620	FUN_006f0620	E:\\ourlib\\Mfstmap.cpp	522 | 528 | 531	high	unique_embedded_source_path	AuxTMapCreate	review	free_function_name_is_not_unique_in_program	AuxTMapCreate
-1	0	006F0700	FUN_006f0700	E:\\ourlib\\Mfstmap.cpp	547 | 553 | 557	high	unique_embedded_source_path	AuxTMapCreate	review	free_function_name_is_not_unique_in_program	AuxTMapCreate
-1	0	006F0800	FUN_006f0800	E:\\ourlib\\Mfstmap.cpp	583 | 590 | 604 | 610 | 612	high	unique_embedded_source_path	AuxTMapRefresh	review	free_function_name_is_not_unique_in_program	AuxTMapRefresh
-1	0	006F0A50	FUN_006f0a50	E:\\ourlib\\Mfstmap.cpp	633 | 651 | 653	high	unique_embedded_source_path	AuxTMapRefresh	review	free_function_name_is_not_unique_in_program	AuxTMapRefresh
-1	1	006F0C00	FUN_006f0c00	E:\\ourlib\\Mfstmap.cpp	669 | 673 | 675	high	unique_embedded_source_path	AuxTMapRefreshAll	high	unique_nearby_name_and_source_metadata	AuxTMapRefreshAll
-1	0	006F0CD0	FUN_006f0cd0	E:\\ourlib\\Mfstmap.cpp	700 | 702	high	unique_embedded_source_path		none	no_strict_free_function_string	
-1	1	006F0D70	FUN_006f0d70	E:\\ourlib\\Mfstmap.cpp	724 | 726	high	unique_embedded_source_path	mf3DXGetParam	high	unique_nearby_name_and_source_metadata	mf3DXGetParam
-1	0	006F0EC0	FUN_006f0ec0	E:\\Ourlib\\Mf32int.cpp	119	high	unique_embedded_source_path		none	no_strict_free_function_string	
-0	0	006F1170	cMf32::delete	E:\\Ourlib\\Mf32int.cpp	139 | 141	high	source_already_present_in_function_comment		none	no_strict_free_function_string	
-0	0	006F1220	cMf32::Flush	E:\\Ourlib\\Mf32int.cpp	154 | 156	high	source_already_present_in_function_comment		none	no_strict_free_function_string	
-0	0	006F12B0	cMf32::ToBeg	E:\\Ourlib\\Mf32int.cpp	169 | 171	high	source_already_present_in_function_comment		none	no_strict_free_function_string	
-0	0	006F1350	cMf32::ToEnd	E:\\Ourlib\\Mf32int.cpp	182 | 184	high	source_already_present_in_function_comment		none	no_strict_free_function_string	
-0	0	006F13F0	cMf32::RecPut	E:\\Ourlib\\Mf32int.cpp	210 | 211 | 262 | 264	high	source_already_present_in_function_comment		none	no_strict_free_function_string	
-0	0	006F1700	cMf32::RecPutNoname	E:\\Ourlib\\Mf32int.cpp	283 | 288 | 290	high	source_already_present_in_function_comment		none	no_strict_free_function_string	
-0	0	006F17C0	cMf32::RecDel	E:\\Ourlib\\Mf32int.cpp	324 | 326	high	source_already_present_in_function_comment		none	no_strict_free_function_string	
-0	0	006F1910	cMf32::RecRen	E:\\Ourlib\\Mf32int.cpp	355 | 386 | 388	high	source_already_present_in_function_comment		none	no_strict_free_function_string	
-0	0	006F1B70	cMf32::vmAddrRecGet	E:\\Ourlib\\Mf32int.cpp	420 | 426 | 428	high	source_already_present_in_function_comment		none	no_strict_free_function_string	
-0	0	006F1CE0	cMf32::RecGet	E:\\Ourlib\\Mf32int.cpp	475 | 492 | 522 | 545 | 547	high	source_already_present_in_function_comment		none	no_strict_free_function_string	
-0	0	006F20E0	cMf32::RecMemFree	E:\\Ourlib\\Mf32int.cpp	567 | 569	high	source_already_present_in_function_comment		none	no_strict_free_function_string	
-0	0	006F21C0	cMf32::RecChk	E:\\Ourlib\\Mf32int.cpp	609 | 611	high	source_already_present_in_function_comment		none	no_strict_free_function_string	
-0	0	006F2310	cMf32::RecGetParam	E:\\Ourlib\\Mf32int.cpp	644 | 662 | 664	high	source_already_present_in_function_comment		none	no_strict_free_function_string	
-0	0	006F24A0	cMf32::RecGetLen	E:\\Ourlib\\Mf32int.cpp	694 | 701 | 703	high	source_already_present_in_function_comment		none	no_strict_free_function_string	
-0	0	006F2600	cMf32::RecGetOrigLen	E:\\Ourlib\\Mf32int.cpp	733 | 743 | 745	high	source_already_present_in_function_comment		none	no_strict_free_function_string	
-0	0	006F2790	cMf32::RecNameGetNext	E:\\Ourlib\\Mf32int.cpp	770 | 772	high	source_already_present_in_function_comment		none	no_strict_free_function_string	
-0	0	006F2860	cMf32::RecKeyGetNext	E:\\Ourlib\\Mf32int.cpp	801 | 803	high	source_already_present_in_function_comment		none	no_strict_free_function_string	
-0	0	006F2940	cMf32::RecNameGetPrev	E:\\Ourlib\\Mf32int.cpp	827 | 829	high	source_already_present_in_function_comment		none	no_strict_free_function_string	
-0	0	006F2A10	cMf32::RecKeyGetPrev	E:\\Ourlib\\Mf32int.cpp	858 | 860	high	source_already_present_in_function_comment		none	no_strict_free_function_string	
-0	0	006F2AF0	cMf32::KeyRecGet	E:\\Ourlib\\Mf32int.cpp	894 | 896	high	source_already_present_in_function_comment		none	no_strict_free_function_string	
-1	1	006F2D90	FUN_006f2d90	E:\\Ourlib\\mfaobj.cpp	27 | 29	high	unique_embedded_source_path	mfAObjLoad	high	unique_nearby_name_and_source_metadata	mfAObjLoad
-1	1	006F2E40	FUN_006f2e40	E:\\Ourlib\\mfaobj.cpp	55 | 63 | 69 | 71	high	unique_embedded_source_path	mfAObjEnum	high	unique_nearby_name_and_source_metadata	mfAObjEnum
-1	1	006F2FB0	FUN_006f2fb0	E:\\Ourlib\\mfaobj.cpp	92 | 94	high	unique_embedded_source_path	mfAObjLen	high	unique_nearby_name_and_source_metadata	mfAObjLen
-1	1	006F3050	FUN_006f3050	E:\\Ourlib\\mfaobj.cpp	116 | 118	high	unique_embedded_source_path	mfAObjParam	high	unique_nearby_name_and_source_metadata	mfAObjParam
-1	1	006F3110	FUN_006f3110	E:\\Ourlib\\mfaobj.cpp	142 | 144	high	unique_embedded_source_path	mfAObjSave	high	unique_nearby_name_and_source_metadata	mfAObjSave
-1	1	007097C0	FUN_007097c0	E:\\Ourlib\\mfrload.cpp	25 | 34 | 39	high	unique_embedded_source_path	mfRLoadCreate	high	unique_nearby_name_and_source_metadata	mfRLoadCreate
-1	1	00709AF0	FUN_00709af0	E:\\Ourlib\\mfrload.cpp	159 | 160 | 178 | 196 | 200	high	unique_embedded_source_path	mfRLoad	high	unique_nearby_name_and_source_metadata	mfRLoad
-1	1	00709E10	FUN_00709e10	E:\\Ourlib\\mfrload.cpp	226 | 227 | 235 | 237	high	unique_embedded_source_path	mfRLoadAddReff	high	unique_nearby_name_and_source_metadata	mfRLoadAddReff
-1	1	00709F40	FUN_00709f40	E:\\Ourlib\\mfrload.cpp	257 | 258 | 266 | 268	high	unique_embedded_source_path	_mfRLoadAddReff	high	unique_nearby_name_and_source_metadata	_mfRLoadAddReff
-1	1	0070A050	FUN_0070a050	E:\\Ourlib\\mfrload.cpp	294 | 295 | 307 | 309	high	unique_embedded_source_path	mfRLoadRelease	high	unique_nearby_name_and_source_metadata	mfRLoadRelease
-1	1	0070A1B0	FUN_0070a1b0	E:\\Ourlib\\mfrload.cpp	329 | 330 | 343 | 345	high	unique_embedded_source_path	_mfRLoadRelease	high	unique_nearby_name_and_source_metadata	_mfRLoadRelease
-1	1	0070A370	FUN_0070a370	E:\\Ourlib\\mfrload.cpp	397 | 399	high	unique_embedded_source_path	mfRLoadRefreshAll	high	unique_nearby_name_and_source_metadata	mfRLoadRefreshAll
-1	1	0070A4A0	FUN_0070a4a0	E:\\Ourlib\\mfrload.cpp	449 | 451	high	unique_embedded_source_path	mfRLoadRefresh	high	unique_nearby_name_and_source_metadata	mfRLoadRefresh
-1	1	0070A5A0	FUN_0070a5a0	E:\\Ourlib\\Mfimg.cpp	31 | 33	high	unique_embedded_source_path	mfImgLoad	high	unique_nearby_name_and_source_metadata	mfImgLoad
-1	1	0070A650	FUN_0070a650	E:\\Ourlib\\Mfimg.cpp	55 | 57	high	unique_embedded_source_path	mfImgGetLen	high	unique_nearby_name_and_source_metadata	mfImgGetLen
-1	1	0070A6F0	FUN_0070a6f0	E:\\Ourlib\\Mfimg.cpp	78 | 80	high	unique_embedded_source_path	mfImgGetWidth	high	unique_nearby_name_and_source_metadata	mfImgGetWidth
-1	1	0070A7B0	FUN_0070a7b0	E:\\Ourlib\\Mfimg.cpp	101 | 103	high	unique_embedded_source_path	mfImgGetHeight	high	unique_nearby_name_and_source_metadata	mfImgGetHeight
-1	1	0070A870	FUN_0070a870	E:\\Ourlib\\Mfimg.cpp	124 | 126	high	unique_embedded_source_path	mfImgGetTransp	high	unique_nearby_name_and_source_metadata	mfImgGetTransp
-1	1	0070A930	FUN_0070a930	E:\\Ourlib\\Mfimg.cpp	147 | 149	high	unique_embedded_source_path	mfImgGetNumIms	high	unique_nearby_name_and_source_metadata	mfImgGetNumIms
-1	1	0070AAD0	FUN_0070aad0	E:\\Ourlib\\Mfimg.cpp	283 | 289	high	unique_embedded_source_path	mfGifLoadToDib	high	unique_nearby_name_and_source_metadata	mfGifLoadToDib
-1	1	0070AC10	FUN_0070ac10	E:\\Ourlib\\Mfimg.cpp	331 | 337	high	unique_embedded_source_path	mfPcxLoadToDib	high	unique_nearby_name_and_source_metadata	mfPcxLoadToDib
-1	1	0070AD60	FUN_0070ad60	E:\\Ourlib\\Mfimg.cpp	400 | 405	high	unique_embedded_source_path	mfJpgLoadToDib	high	unique_nearby_name_and_source_metadata	mfJpgLoadToDib
-1	1	0070AE60	FUN_0070ae60	E:\\Ourlib\\Mfimg.cpp	432 | 444 | 446 | 456 | 472 | 474	high	unique_embedded_source_path	mfImtLoad	high	unique_nearby_name_and_source_metadata	mfImtLoad
-1	1	0070B220	FUN_0070b220	E:\\Ourlib\\Mfimg.cpp	510 | 512	high	unique_embedded_source_path	mfImtGetNumIms	high	unique_nearby_name_and_source_metadata	mfImtGetNumIms
-1	1	0070B2E0	FUN_0070b2e0	E:\\Ourlib\\Mfimg.cpp	533 | 535	high	unique_embedded_source_path	mfImtGetModeIms	high	unique_nearby_name_and_source_metadata	mfImtGetModeIms
-1	1	0070B430	FUN_0070b430	E:\\Ourlib\\Mfimg.cpp	642 | 647 | 651	high	unique_embedded_source_path	mfQmtLoad	high	unique_nearby_name_and_source_metadata	mfQmtLoad
-1	1	0070B900	FUN_0070b900	E:\\Ourlib\\Mfimg.cpp	845 | 856 | 863 | 874 | 888 | 903 | 912	high	unique_embedded_source_path	imgGetDibFromFile	high	unique_nearby_name_and_source_metadata	imgGetDibFromFile
-1	1	0070BE80	FUN_0070be80	E:\\Ourlib\\Mfimg.cpp	971 | 975	high	unique_embedded_source_path	imgGetSprFromFile	high	unique_nearby_name_and_source_metadata	imgGetSprFromFile
-1	1	0070BFE0	FUN_0070bfe0	E:\\Ourlib\\Mfimg.cpp	1025 | 1036 | 1054 | 1061	high	unique_embedded_source_path	imgGetPcxGifJpgFromFile	high	unique_nearby_name_and_source_metadata	imgGetPcxGifJpgFromFile
-1	0	0070C400	FUN_0070c400	E:\\Ourlib\\Mfimg.cpp	1153	high	unique_embedded_source_path		none	no_strict_free_function_string	
-1	0	0070C4D0	FUN_0070c4d0	E:\\Ourlib\\Mfimg.cpp	1191	high	unique_embedded_source_path		none	no_strict_free_function_string	
-1	0	0070C690	FUN_0070c690	E:\\Ourlib\\Mfimg.cpp	1240	high	unique_embedded_source_path		none	no_strict_free_function_string	
-0	0	0070CEB0	ccFntTy::operator	E:\\Ourlib\\mfcfnt.cpp	191 | 220 | 228	high	source_already_present_in_function_comment		none	no_strict_free_function_string	
-0	0	0070D1F0	ccFntTy::operator	E:\\Ourlib\\mfcfnt.cpp	247 | 320 | 323 | 324 | 329 | 347 | 349 | 356 | 360 | 387 | 389 | 390 | 393 | 396 | 408 | 423 | 441 | 460	high	source_already_present_in_function_comment		none	no_strict_free_function_string	
-0	0	0070DF00	ccFntTy::operator	E:\\Ourlib\\mfcfnt.cpp	478 | 495 | 499	high	source_already_present_in_function_comment		none	no_strict_free_function_string	
-1	0	0070E030	FUN_0070e030	E:\\Ourlib\\mfcfnt.cpp	558	high	unique_embedded_source_path		none	no_strict_free_function_string	
-0	0	00710560	ccFntTy::operator	E:\\Ourlib\\mfcfnt.cpp	1024 | 1026	high	source_already_present_in_function_comment		none	no_strict_free_function_string	
-0	0	007108B0	ccFntTy::Save	E:\\Ourlib\\mfcfnt.cpp	1078 | 1080	high	source_already_present_in_function_comment		none	no_strict_free_function_string	
-0	0	00710A90	ccFntTy::SetSurf	E:\\Ourlib\\mfcfnt.cpp	1120 | 1142 | 1144	high	source_already_present_in_function_comment		none	no_strict_free_function_string	
-0	0	00710BA0	ccFntTy::CreateSurf	E:\\Ourlib\\mfcfnt.cpp	1181 | 1195 | 1197	high	source_already_present_in_function_comment		none	no_strict_free_function_string	
-0	0	00710D80	ccFntTy::GetSurfAsSpr	E:\\Ourlib\\mfcfnt.cpp	1212 | 1219 | 1230 | 1235	high	source_already_present_in_function_comment		none	no_strict_free_function_string	
-0	0	00710F00	ccFntTy::EraseSufr	E:\\Ourlib\\mfcfnt.cpp	1251 | 1253	high	source_already_present_in_function_comment		none	no_strict_free_function_string	
-0	0	007116F0	ccFntTy::WrCh	E:\\Ourlib\\mfcfnt.cpp	1627 | 1638 | 1640	high	source_already_present_in_function_comment		none	no_strict_free_function_string	
-0	0	00711880	ccFntTy::WrChXY	E:\\Ourlib\\mfcfnt.cpp	1663 | 1665	high	source_already_present_in_function_comment		none	no_strict_free_function_string	
-0	0	007119C0	ccFntTy::WrStr	E:\\Ourlib\\mfcfnt.cpp	1715 | 1717	high	source_already_present_in_function_comment		none	no_strict_free_function_string	
-0	0	00711B70	ccFntTy::WrTxt	E:\\Ourlib\\mfcfnt.cpp	1772 | 1776	high	source_already_present_in_function_comment		none	no_strict_free_function_string	
-0	0	00711DA0	ccFntTy::WrArr	E:\\Ourlib\\mfcfnt.cpp	1820 | 1824	high	source_already_present_in_function_comment		none	no_strict_free_function_string	
-0	0	00711F70	ccFntTy::WrSarr	E:\\Ourlib\\mfcfnt.cpp	1874 | 1878	high	source_already_present_in_function_comment		none	no_strict_free_function_string	
-0	0	007121F0	ccFntTy::FormSarr	E:\\Ourlib\\mfcfnt.cpp	1914 | 1915 | 1941 | 1948 | 1949 | 1951 | 1987 | 1994	high	source_already_present_in_function_comment		none	no_strict_free_function_string	
-0	0	007126E0	ccFntTy::FormIndentSarr	E:\\Ourlib\\mfcfnt.cpp	2079 | 2085	high	source_already_present_in_function_comment		none	no_strict_free_function_string	
-0	0	007129D0	ccFntTy::SepColorStrInSarr	E:\\Ourlib\\mfcfnt.cpp	2107 | 2135 | 2140	high	source_already_present_in_function_comment		none	no_strict_free_function_string	
-0	0	00712C10	ccFntTy::FormText	E:\\Ourlib\\mfcfnt.cpp	2162 | 2168	high	source_already_present_in_function_comment		none	no_strict_free_function_string	
-0	0	00712D30	ccFntTy::FormIndentText	E:\\Ourlib\\mfcfnt.cpp	2191 | 2197	high	source_already_present_in_function_comment		none	no_strict_free_function_string	
-0	0	00712E60	ccFntTy::VisLineSarr	E:\\Ourlib\\mfcfnt.cpp	2227 | 2229	high	source_already_present_in_function_comment		none	no_strict_free_function_string	
-0	0	00712F80	ccFntTy::_TxtToSarr	E:\\Ourlib\\mfcfnt.cpp	2256 | 2260	high	source_already_present_in_function_comment		none	no_strict_free_function_string	
-0	0	00713080	ccFntTy::_SarrToTxt	E:\\Ourlib\\mfcfnt.cpp	2303 | 2307	high	source_already_present_in_function_comment		none	no_strict_free_function_string	
-0	0	00713200	ccFntTy::GetFittingStr	E:\\Ourlib\\mfcfnt.cpp	2322 | 2333 | 2367 | 2372	high	source_already_present_in_function_comment		none	no_strict_free_function_string	
-0	0	00713480	ccFntTy::CreateTypeSSpr	E:\\Ourlib\\mfcfnt.cpp	2399 | 2512 | 2517	high	source_already_present_in_function_comment		none	no_strict_free_function_string	
-0	0	00713B00	cTypingTy::TypingInit	E:\\Ourlib\\mfcfnt.cpp	2541 | 2595 | 2602	high	source_already_present_in_function_comment		none	no_strict_free_function_string	
-0	0	00713F30	cTypingTy::TypingInitSarr	E:\\Ourlib\\mfcfnt.cpp	2617 | 2622 | 2625	high	source_already_present_in_function_comment		none	no_strict_free_function_string	
-1	1	00715050	FUN_00715050	E:\\ourlib\\mfdarr.cpp	22 | 31 | 36	high	unique_embedded_source_path	mfDarLoad	high	unique_nearby_name_and_source_metadata	mfDarLoad
-1	1	00715170	FUN_00715170	E:\\ourlib\\mfdarr.cpp	58 | 69 | 73	high	unique_embedded_source_path	mfDarSave	high	unique_nearby_name_and_source_metadata	mfDarSave
-1	1	00715280	FUN_00715280	E:\\ourlib\\mfdarr.cpp	91 | 96 | 99 | 103	high	unique_embedded_source_path	mfDarGetNum	high	unique_nearby_name_and_source_metadata	mfDarGetNum
-1	1	007154E0	FUN_007154e0	E:\\ourlib\\connect.cpp	106 | 126 | 130	high	unique_embedded_source_path	cnUnPackMess	high	unique_nearby_name_and_source_metadata	cnUnPackMess
-1	0	00715630	FUN_00715630	E:\\ourlib\\connect.cpp	151 | 187	high	unique_embedded_source_path		none	no_strict_free_function_string	
-0	0	007158A0	SpriteClassTy::InitSprite	E:\\Ourlib\\Sprite.cpp	80 | 82	high	source_already_present_in_function_comment		none	no_strict_free_function_string	
-0	0	00715AB0	SpriteClassTy::CloseSprite	E:\\Ourlib\\Sprite.cpp	118 | 120	high	source_already_present_in_function_comment		none	no_strict_free_function_string	
-0	0	00715C60	SpriteClassTy::SetImagesReg	E:\\Ourlib\\Sprite.cpp	195 | 197	high	source_already_present_in_function_comment		none	no_strict_free_function_string	
-0	0	00716040	SpriteClassTy::SetImages	E:\\Ourlib\\Sprite.cpp	228 | 238 | 248 | 277 | 279	high	source_already_present_in_function_comment		none	no_strict_free_function_string	
-0	0	00716480	SpriteClassTy::SetImagesPtr	E:\\Ourlib\\Sprite.cpp	353 | 355	high	source_already_present_in_function_comment		none	no_strict_free_function_string	
-1	1	00716850	FUN_00716850	E:\\Ourlib\\mftspr.cpp	49 | 52 | 54 | 82 | 109 | 130 | 134 | 154 | 156	high	unique_embedded_source_path	mfTSprLoad	high	unique_nearby_name_and_source_metadata	mfTSprLoad
-1	1	00716E60	FUN_00716e60	E:\\Ourlib\\mftspr.cpp	210 | 211 | 216 | 222 | 224	high	unique_embedded_source_path	mfTSprGetNumFas	high	unique_nearby_name_and_source_metadata	mfTSprGetNumFas
-1	1	00716FD0	FUN_00716fd0	E:\\Ourlib\\mftspr.cpp	247 | 249 | 260 | 276 | 278	high	unique_embedded_source_path	mfTSprLoadAsSSpr	high	unique_nearby_name_and_source_metadata	mfTSprLoadAsSSpr
-1	1	007171C0	FUN_007171c0	E:\\Ourlib\\mftspr.cpp	303 | 305 | 307 | 329 | 331	high	unique_embedded_source_path	mfRSprLoadAsQSpr	high	unique_nearby_name_and_source_metadata	mfRSprLoadAsQSpr
-1	0	007176F0	FUN_007176f0	E:\\ourlib\\Stdark.cpp	233	high	unique_embedded_source_path		none	no_strict_free_function_string	
-1	1	00717FC0	FUN_00717fc0	E:\\ourlib\\mfplt.cpp	23 | 28 | 30	high	unique_embedded_source_path	mfPltPtrTy	high	unique_nearby_name_and_source_metadata	mfPltPtrTy
-1	1	00718080	FUN_00718080	E:\\ourlib\\mfplt.cpp	52 | 54	high	unique_embedded_source_path	mfPltNum	high	unique_nearby_name_and_source_metadata	mfPltNum
-1	0	00718500	FUN_00718500	E:\\Ourlib\\Palette.cpp	147 | 148	high	unique_embedded_source_path		none	no_strict_free_function_string	
-1	0	00718780	FUN_00718780	E:\\Ourlib\\Palette.cpp	220 | 221	high	unique_embedded_source_path		none	no_strict_free_function_string	
-1	0	00718A40	FUN_00718a40	E:\\Ourlib\\Palette.cpp	266 | 269 | 274 | 275	high	unique_embedded_source_path		none	no_strict_free_function_string	
-1	0	00718D50	FUN_00718d50	E:\\Ourlib\\Palette.cpp	310 | 311	high	unique_embedded_source_path		none	no_strict_free_function_string	
-1	0	00718F40	FUN_00718f40	E:\\Ourlib\\Palette.cpp	337 | 338	high	unique_embedded_source_path		none	no_strict_free_function_string	
-1	0	00719080	FUN_00719080	E:\\Ourlib\\Palette.cpp	353 | 354	high	unique_embedded_source_path		none	no_strict_free_function_string	
-1	0	00719190	FUN_00719190	E:\\Ourlib\\Palette.cpp	380 | 381	high	unique_embedded_source_path		none	no_strict_free_function_string	
-1	0	007192D0	FUN_007192d0	E:\\Ourlib\\Palette.cpp	399 | 400	high	unique_embedded_source_path		none	no_strict_free_function_string	
-1	1	00719D00	FUN_00719d00	E:\\Ourlib\\mfwav.cpp	32 | 34	high	unique_embedded_source_path	mfWavLoad	high	unique_nearby_name_and_source_metadata	mfWavLoad
-1	1	00719DF0	FUN_00719df0	E:\\Ourlib\\mfwav.cpp	57 | 59	high	unique_embedded_source_path	mfWavGetType	high	unique_nearby_name_and_source_metadata	mfWavGetType
-1	1	00719EA0	FUN_00719ea0	E:\\Ourlib\\mfwav.cpp	97 | 102	high	unique_embedded_source_path	GetPcmFromWavFile	high	unique_nearby_name_and_source_metadata	GetPcmFromWavFile
-1	1	0071A030	FUN_0071a030	E:\\Ourlib\\mfwav.cpp	123 | 128 | 130	high	unique_embedded_source_path	mfWavSave	high	unique_nearby_name_and_source_metadata	mfWavSave
-1	1	0071A110	FUN_0071a110	E:\\Ourlib\\mfwav.cpp	151 | 162 | 166	high	unique_embedded_source_path	mfWavSaveFile	high	unique_nearby_name_and_source_metadata	mfWavSaveFile
-1	1	0071A270	FUN_0071a270	E:\\Ourlib\\mfwav.cpp	214 | 245 | 261	high	unique_embedded_source_path	mfSndLibLoad	high	unique_nearby_name_and_source_metadata	mfSndLibLoad
-1	0	0071A530	FUN_0071a530	E:\\Ourlib\\mfwav.cpp	305	high	unique_embedded_source_path		none	no_strict_free_function_string	
-1	1	0071A5E0	FUN_0071a5e0	E:\\Ourlib\\mfwav.cpp	328 | 367 | 391	high	unique_embedded_source_path	mfSndTblLoad	high	unique_nearby_name_and_source_metadata	mfSndTblLoad
-1	1	0071AA10	FUN_0071aa10	E:\\Ourlib\\mfsarr.cpp	21 | 30 | 35	high	unique_embedded_source_path	mfSarLoad	high	unique_nearby_name_and_source_metadata	mfSarLoad
-1	1	0071AB30	FUN_0071ab30	E:\\Ourlib\\mfsarr.cpp	57 | 68 | 72	high	unique_embedded_source_path	mfSarSave	high	unique_nearby_name_and_source_metadata	mfSarSave
-1	1	0071AC40	FUN_0071ac40	E:\\Ourlib\\mfsarr.cpp	89 | 91	high	unique_embedded_source_path	tSArrCat	high	unique_nearby_name_and_source_metadata	tSArrCat
-1	1	0071AD00	FUN_0071ad00	E:\\Ourlib\\mfany.cpp	25 | 27	high	unique_embedded_source_path	mfAnyLoad	high	unique_nearby_name_and_source_metadata	mfAnyLoad
-1	1	0071ADB0	FUN_0071adb0	E:\\Ourlib\\mfany.cpp	45 | 49 | 51	high	unique_embedded_source_path	mfAnySave	high	unique_nearby_name_and_source_metadata	mfAnySave
-1	1	0071AE80	FUN_0071ae80	E:\\Ourlib\\mfany.cpp	72 | 73 | 74 | 78 | 79 | 85 | 90	high	unique_embedded_source_path	ReadAllFile	high	unique_nearby_name_and_source_metadata	ReadAllFile
-1	1	0071B010	FUN_0071b010	E:\\Ourlib\\mfany.cpp	111 | 116 | 120	high	unique_embedded_source_path	mfAnySaveFile	high	unique_nearby_name_and_source_metadata	mfAnySaveFile
-0	0	0071B220	InputClassTy::Create	E:\\Ourlib\\Sinput.cpp	48 | 50 | 54 | 60 | 62 | 66 | 72 | 73 | 74 | 77 | 78 | 87 | 88	high	source_already_present_in_function_comment		none	no_strict_free_function_string	
-0	0	0071B520	InputClassTy::Done	E:\\Ourlib\\Sinput.cpp	105 | 106	high	source_already_present_in_function_comment		none	no_strict_free_function_string	
-1	0	0071B630	FUN_0071b630	E:\\Ourlib\\Sinput.cpp	119	high	unique_embedded_source_path		none	no_strict_free_function_string	
-0	0	0071B9C0	InputClassTy::None	E:\\Ourlib\\Sinput.cpp	219 | 425 | 426	high	source_already_present_in_function_comment		none	no_strict_free_function_string	
-0	0	0071C1D0	InputClassTy::AddAcc	E:\\Ourlib\\Sinput.cpp	461 | 468 | 509 | 510	high	source_already_present_in_function_comment		none	no_strict_free_function_string	
-0	0	0071C530	InputClassTy::DelAcc	E:\\Ourlib\\Sinput.cpp	539 | 546 | 562 | 563	high	source_already_present_in_function_comment		none	no_strict_free_function_string	
-0	0	0071C8C0	InputClassTy::AddToMouse	E:\\Ourlib\\Sinput.cpp	636 | 640 | 641	high	source_already_present_in_function_comment		none	no_strict_free_function_string	
-0	0	0071CA50	InputClassTy::GetMessage	E:\\Ourlib\\Sinput.cpp	714 | 753 | 754	high	source_already_present_in_function_comment		none	no_strict_free_function_string	
-0	0	0071CFD0	ButtonClassTy::GetMessage	E:\\Ourlib\\_sbutton.cpp	422 | 424 | 426 | 427	high	source_already_present_in_function_comment		none	no_strict_free_function_string	
-0	0	0071E0E0	RadioClassTy::GetMessage	E:\\Ourlib\\_sbutton.cpp	606 | 607	high	source_already_present_in_function_comment		none	no_strict_free_function_string	
-0	0	0071E730	ViewerClassTy::_Draw	E:\\Ourlib\\_sviewer.cpp	22 | 23	high	source_already_present_in_function_comment		none	no_strict_free_function_string	
-0	0	0071E8B0	ViewerClassTy::GetMessage	E:\\Ourlib\\_sviewer.cpp	42 | 264 | 265	high	source_already_present_in_function_comment		none	no_strict_free_function_string	
-0	0	0071F3A0	ListClassTy::GetMessage	E:\\Ourlib\\_slist.cpp	565 | 567 | 569 | 570	high	source_already_present_in_function_comment		none	no_strict_free_function_string	
-0	0	00720A50	EditorClassTy::_Draw	E:\\Ourlib\\_sedit.cpp	81 | 82	high	source_already_present_in_function_comment		none	no_strict_free_function_string	
-0	0	00721BF0	EditorClassTy::SendToSliders	E:\\Ourlib\\_sedit.cpp	403 | 404	high	source_already_present_in_function_comment		none	no_strict_free_function_string	
-1	0	00721CD0	FUN_00721cd0	E:\\Ourlib\\_sedit.cpp	416 | 423 | 424 | 425 | 426 | 427 | 428 | 429 | 430 | 431 | 432 | 433 | 435 | 436 | 440	high	unique_embedded_source_path		none	no_strict_free_function_string	
-1	0	00722070	FUN_00722070	E:\\Ourlib\\_sedit.cpp	452 | 459 | 465 | 466 | 467 | 468 | 469 | 470 | 471 | 472 | 473 | 474 | 475 | 477 | 478	high	unique_embedded_source_path		none	no_strict_free_function_string	
-0	0	00722410	EditorClassTy::GetMessage	E:\\Ourlib\\_sedit.cpp	846 | 848 | 854 | 855	high	source_already_present_in_function_comment		none	no_strict_free_function_string	
-0	0	00723420	TabClassTy::GetMessage	E:\\Ourlib\\_stab.cpp	351 | 353 | 355 | 356	high	source_already_present_in_function_comment		none	no_strict_free_function_string	
-0	0	007244B0	SliderClassTy::GetMessage	E:\\Ourlib\\_sslider.cpp	287 | 288	high	source_already_present_in_function_comment		none	no_strict_free_function_string	
-0	0	00725020	TrackbarClassTy::GetMessage	E:\\Ourlib\\_strack.cpp	197 | 199 | 201 | 202	high	source_already_present_in_function_comment		none	no_strict_free_function_string	
-1	1	00725550	FUN_00725550	E:\\ourlib\\mfpla.cpp	24 | 39 | 43	high	unique_embedded_source_path	mfPlaPtrTy	high	unique_nearby_name_and_source_metadata	mfPlaPtrTy
-1	1	007256A0	FUN_007256a0	E:\\ourlib\\mfpla.cpp	70 | 72	high	unique_embedded_source_path	mfPlaGetClust	high	unique_nearby_name_and_source_metadata	mfPlaGetClust
-1	0	00725760	FUN_00725760	E:\\ourlib\\St3dpaus.cpp	56	high	unique_embedded_source_path		none	no_strict_free_function_string	
-1	1	00725C60	FUN_00725c60	E:\\Ourlib\\mfspr.cpp	28 | 39 | 62 | 64	high	unique_embedded_source_path	mfSSprLoad	high	unique_nearby_name_and_source_metadata	mfSSprLoad
-1	1	00725E80	FUN_00725e80	E:\\Ourlib\\mfspr.cpp	101 | 105 | 107	high	unique_embedded_source_path	mfSSprGetNumFas	high	unique_nearby_name_and_source_metadata	mfSSprGetNumFas
-1	1	00725F50	FUN_00725f50	E:\\Ourlib\\mfspr.cpp	136 | 142 | 159 | 182 | 184	high	unique_embedded_source_path	mfMSprLoad	high	unique_nearby_name_and_source_metadata	mfMSprLoad
-1	1	007262B0	FUN_007262b0	E:\\Ourlib\\mfspr.cpp	215 | 219 | 221	high	unique_embedded_source_path	mfMSprGetNumFas	high	unique_nearby_name_and_source_metadata	mfMSprGetNumFas
-1	1	00726390	FUN_00726390	E:\\Ourlib\\mfspr.cpp	240 | 244 | 246	high	unique_embedded_source_path	mfMSprGetNumPl	high	unique_nearby_name_and_source_metadata	mfMSprGetNumPl
-1	1	00726470	FUN_00726470	E:\\Ourlib\\mfspr.cpp	265 | 269 | 271	high	unique_embedded_source_path	mfMSprGetWidth	high	unique_nearby_name_and_source_metadata	mfMSprGetWidth
-1	1	00726550	FUN_00726550	E:\\Ourlib\\mfspr.cpp	290 | 294 | 296	high	unique_embedded_source_path	mfMSprGetHeigh	high	unique_nearby_name_and_source_metadata	mfMSprGetHeigh
-1	1	00726630	FUN_00726630	E:\\Ourlib\\mfspr.cpp	322 | 324 | 337 | 355 | 357	high	unique_embedded_source_path	mfUSprLoad	high	unique_nearby_name_and_source_metadata	mfUSprLoad
-1	1	007268C0	FUN_007268c0	E:\\Ourlib\\mfspr.cpp	392 | 396 | 398	high	unique_embedded_source_path	mfUSprGetNumFas	high	unique_nearby_name_and_source_metadata	mfUSprGetNumFas
-1	1	007269A0	FUN_007269a0	E:\\Ourlib\\mfspr.cpp	417 | 421 | 423	high	unique_embedded_source_path	mfUSprGetSect	high	unique_nearby_name_and_source_metadata	mfUSprGetSect
-1	1	00726A80	FUN_00726a80	E:\\Ourlib\\mfspr.cpp	450 | 472 | 474	high	unique_embedded_source_path	mfQSprLoad	high	unique_nearby_name_and_source_metadata	mfQSprLoad
-1	1	00726C00	FUN_00726c00	E:\\Ourlib\\mfspr.cpp	502 | 506 | 508	high	unique_embedded_source_path	mfQSprGetNumFas	high	unique_nearby_name_and_source_metadata	mfQSprGetNumFas
-1	0	0072ACA0	FUN_0072aca0	E:\\ourlib\\Ddsprcur.cpp	78 | 93 | 99	high	unique_embedded_source_path		none	no_strict_free_function_string	
-0	0	0072B780	ControlClassTy::GetMessage	E:\\Ourlib\\Scontrol.cpp	178 | 191 | 198 | 204 | 214 | 218 | 266 | 267	high	source_already_present_in_function_comment		none	no_strict_free_function_string	
+1	0	006B4563	FUN_006b4563	E:\\DKW\\DDX\\C\\dddibpus.c	132	high	unique_embedded_source_path		none	no_strict_free_function_string	
+1	0	006C5951	FUN_006c5951	E:\\DKW\\DDX\\C\\ddline.c	767	high	unique_embedded_source_path		none	no_strict_free_function_string	

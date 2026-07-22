@@ -1,4 +1,4 @@
-FUN_0041d1a0:
+STMineSetC::sub_0041D1A0:
 0041D1A0  55                        PUSH EBP
 0041D1A1  8B EC                     MOV EBP,ESP
 0041D1A3  8B 45 08                  MOV EAX,dword ptr [EBP + 0x8]

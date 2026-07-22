@@ -90,7 +90,8 @@ int __thiscall STDestC::GetMessage(STDestC *this,STMessage *message)
           iVar3 = sub_00602660((STDestC *)local_8,puVar4);
           if (-1 < iVar3) {
             if (this_00->field_036E == 4) {
-              puVar4 = sub_00602E90((STDestC *)this_00);
+              puVar4 = SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00602E90::sub_00602E90
+                                 ((AnonReceiver_00602E90 *)this_00);
               this_00->field_03AB = puVar4;
               if (puVar4 == (undefined4 *)0x0) {
                 sub_00602440((STDestC *)this_00);

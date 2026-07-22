@@ -83,27 +83,24 @@ LAB_00631713:
               }
               FUN_006e91d0(PTR_00807598,(int *)puVar4[4]);
               this_00 = local_c;
-              iVar7 = thunk_FUN_00630ac0(local_c,uVar9);
+              iVar7 = STManRuinC::sub_00630AC0(local_c,uVar9);
               if (iVar7 == 0) {
                 return;
               }
-              thunk_FUN_00630bb0(this_00,local_24,local_22,local_20,local_1c,(int)local_1e,local_10)
-              ;
-              *(undefined4 *)&this_00->field_0x44 = 1;
-              if ((*(int *)&this_00->field_0x48 == 0) ||
-                 (puVar5 = STManRuinC::sub_00630C50
-                                     (this_00,*(undefined4 *)&this_00->field_0x40,
-                                      *(int *)&this_00->field_0x4c,1,1,0), puVar5 != (ushort *)0x0))
-              {
-                *(undefined4 *)&this_00->field_0x44 = 2;
+              STManRuinC::sub_00630BB0
+                        (this_00,local_24,local_22,local_20,local_1c,(int)local_1e,local_10);
+              this_00->field_0044 = 1;
+              if ((this_00->field_0048 == 0) ||
+                 (puVar5 = SubmarineTitans::Recovered::HiddenThis::AnonReceiver_006308F0::
+                           sub_00630C50((AnonReceiver_006308F0 *)this_00,this_00->field_0040,
+                                        this_00->field_004C,1,1,0), puVar5 != (ushort *)0x0)) {
+                this_00->field_0044 = 2;
               }
-              uVar6 = thunk_FUN_00631880(this_00,(undefined4 *)&this_00->field_0x40,
-                                         this_00->field_0061);
-              if (((uVar6 == 0) && (*(int *)&this_00->field_0x48 != 0)) &&
-                 (this_00->field_0061 != 0)) {
+              uVar6 = STManRuinC::sub_00631880(this_00,&this_00->field_0040,this_00->field_0061);
+              if (((uVar6 == 0) && (this_00->field_0048 != 0)) && (this_00->field_0061 != 0)) {
                 FUN_006e8ba0(PTR_00807598,this_00->field_0061);
               }
-              this_00->field_0061 = 0xffffffff;
+              this_00->field_0061 = -1;
               return;
             }
           }

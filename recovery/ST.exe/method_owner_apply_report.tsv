@@ -3,37 +3,40 @@ address	status	proposed_name	detail
 00405687	disabled	CursorClassTy::sub_00405687	all apply flags are 0
 00415B30	disabled		all apply flags are 0
 00415ED0	disabled	STJellyGunC::sub_00415ED0	all apply flags are 0
-00416240	repaired	sub_00416240	removed weak class owner; reset 0 downstream script-owned receiver types
+00416240	disabled		all apply flags are 0
 004162B0	disabled	STFishC::sub_004162B0	all apply flags are 0
-004167A0	repaired	sub_004167A0	removed weak class owner; reset 0 downstream script-owned receiver types
+004167A0	disabled		all apply flags are 0
 004176C0	disabled	STBoatC::sub_004176C0	all apply flags are 0
 00417830	disabled		all apply flags are 0
 00417910	disabled	STBoatC::sub_00417910	all apply flags are 0
 00417A00	disabled		all apply flags are 0
 00417A20	disabled		all apply flags are 0
-00417D30	applied	TLOBaseTy::sub_00417D30	owner=applied(TLOBaseTy::sub_00417D30); parameters=applied(no explicit parameters); convention=applied(__thiscall); this_type=unchanged
+00417D30	disabled	TLOBaseTy::sub_00417D30	all apply flags are 0
 00417E70	disabled		all apply flags are 0
 00417EE0	disabled		all apply flags are 0
 00417FF0	disabled		all apply flags are 0
 00418010	disabled		all apply flags are 0
 00418030	disabled		all apply flags are 0
-00419C70	partial	TLOEmbryoTy::sub_00419C70	owner=applied(TLOEmbryoTy::sub_00419C70); this_type=conflict(no auto this parameter)
-00419CF0	partial	TLOEmbryoTy::sub_00419CF0	owner=applied(TLOEmbryoTy::sub_00419CF0); this_type=conflict(no auto this parameter)
-00419D30	applied	TLOBaseTy::sub_00419D30	owner=applied(TLOBaseTy::sub_00419D30); this_type=unchanged
-0041C3F0	applied	TLOEmbryoTy::sub_0041C3F0	owner=applied(TLOEmbryoTy::sub_0041C3F0); this_type=unchanged
-0041C5A0	applied	STColl3C::sub_0041C5A0	owner=applied(STColl3C::sub_0041C5A0); parameters=applied(no explicit parameters); convention=applied(__thiscall); this_type=unchanged
+00419C70	conflict	TLOEmbryoTy::sub_00419C70	this_type=conflict(no auto this parameter)
+00419CF0	conflict	TLOEmbryoTy::sub_00419CF0	this_type=conflict(no auto this parameter)
+00419D30	disabled	TLOBaseTy::sub_00419D30	all apply flags are 0
+0041C3F0	disabled	TLOEmbryoTy::sub_0041C3F0	all apply flags are 0
+0041C5A0	repaired	sub_0041C5A0	removed weak class owner; reset 0 downstream script-owned receiver types
 0041C710	disabled		all apply flags are 0
 0041CAF0	disabled		all apply flags are 0
-0041D590	applied	TLOBaseTy::sub_0041D590	owner=applied(TLOBaseTy::sub_0041D590); parameters=applied(no explicit parameters); convention=applied(__thiscall); this_type=unchanged
+0041D1A0	applied	STMineSetC::sub_0041D1A0	owner=applied(STMineSetC::sub_0041D1A0); this_type=unchanged
+0041D2B0	applied	STMineSetC::sub_0041D2B0	owner=applied(STMineSetC::sub_0041D2B0); parameters=applied(no explicit parameters); convention=applied(__thiscall); this_type=unchanged
+0041D590	disabled	TLOBaseTy::sub_0041D590	all apply flags are 0
+0041D6C0	applied	STMineSetC::sub_0041D6C0	owner=applied(STMineSetC::sub_0041D6C0); this_type=unchanged
 0041D900	disabled	TLOEmbryoTy::sub_0041D900	all apply flags are 0
 0041DC40	disabled		all apply flags are 0
 0041DD00	disabled		all apply flags are 0
 0041F630	disabled	TLOEmbryoTy::sub_0041F630	all apply flags are 0
-0041F970	applied	STSprGameObjC::sub_0041F970	owner=applied(STSprGameObjC::sub_0041F970); parameters=applied(no explicit parameters); convention=applied(__thiscall); this_type=unchanged
+0041F970	disabled	STSprGameObjC::sub_0041F970	all apply flags are 0
 004232A0	disabled	STGroupBoatC::sub_004232A0	all apply flags are 0
 00423E00	disabled	STGroupC::sub_00423E00	all apply flags are 0
-004248D0	applied	SubmarineTitans::Recovered::HiddenThis::AnonReceiver_004248D0::sub_004248D0	owner=applied(SubmarineTitans::Recovered::HiddenThis::AnonReceiver_004248D0::sub_004248D0); this_type=unchanged
-00427090	applied	SubmarineTitans::Recovered::HiddenThis::AnonReceiver_004248D0::sub_00427090	owner=applied(SubmarineTitans::Recovered::HiddenThis::AnonReceiver_004248D0::sub_00427090); this_type=unchanged
+004248D0	repaired	sub_004248D0	removed weak class owner; reset 0 downstream script-owned receiver types
+00427090	disabled		all apply flags are 0
 0042B5B0	disabled	STAllPlayersC::sub_0042B5B0	all apply flags are 0
 0042B760	disabled	STAllPlayersC::sub_0042B760	all apply flags are 0
 0042C300	disabled	STAllPlayersC::sub_0042C300	all apply flags are 0
@@ -53,9 +56,9 @@ address	status	proposed_name	detail
 00481520	disabled	STBoatC::sub_00481520	all apply flags are 0
 0048D930	disabled	STBoatC::sub_0048D930	all apply flags are 0
 0048DBA0	disabled	STBoatC::sub_0048DBA0	all apply flags are 0
-0048DFD0	applied	STBoatC::sub_0048DFD0	owner=applied(STBoatC::sub_0048DFD0); this_type=unchanged
+0048DFD0	disabled		all apply flags are 0
 00490570	disabled	STBoatC::sub_00490570	all apply flags are 0
-00490CD0	applied	STBoatC::sub_00490CD0	owner=applied(STBoatC::sub_00490CD0); this_type=unchanged
+00490CD0	disabled		all apply flags are 0
 00492390	disabled	STBoatC::sub_00492390	all apply flags are 0
 00492420	disabled	STBoatC::sub_00492420	all apply flags are 0
 004926C0	disabled	STBoatC::sub_004926C0	all apply flags are 0
@@ -63,140 +66,150 @@ address	status	proposed_name	detail
 00493CD0	disabled		all apply flags are 0
 004952E0	disabled	STBoatC::sub_004952E0	all apply flags are 0
 00497000	disabled	DumpClassC::sub_00497000	all apply flags are 0
-0049A500	applied	STGroupBoatC::sub_0049A500	owner=applied(STGroupBoatC::sub_0049A500); this_type=unchanged
+0049A500	disabled	STGroupBoatC::sub_0049A500	all apply flags are 0
 004A7E30	disabled	STGroupBoatC::sub_004A7E30	all apply flags are 0
 004A8F20	disabled	OpticClassC::sub_004A8F20	all apply flags are 0
 004A9B60	disabled	OpticClassC::sub_004A9B60	all apply flags are 0
 004A9C80	disabled	OpticClassC::sub_004A9C80	all apply flags are 0
 004AB470	disabled	OpticClassC::sub_004AB470	all apply flags are 0
 004AB650	disabled	OpticClassC::sub_004AB650	all apply flags are 0
-004ACD30	applied	STT3DSprC::sub_004ACD30	owner=applied(STT3DSprC::sub_004ACD30); this_type=unchanged
-004ACE30	applied	STT3DSprC::sub_004ACE30	owner=applied(STT3DSprC::sub_004ACE30); this_type=unchanged
-004ACE60	applied	STT3DSprC::sub_004ACE60	owner=applied(STT3DSprC::sub_004ACE60); this_type=unchanged
-004ACEF0	applied	STT3DSprC::sub_004ACEF0	owner=applied(STT3DSprC::sub_004ACEF0); this_type=unchanged
-004ACF20	applied	STT3DSprC::sub_004ACF20	owner=applied(STT3DSprC::sub_004ACF20); this_type=unchanged
-004ACF50	applied	STT3DSprC::sub_004ACF50	owner=applied(STT3DSprC::sub_004ACF50); this_type=unchanged
-004ACF90	applied	STT3DSprC::sub_004ACF90	owner=applied(STT3DSprC::sub_004ACF90); this_type=unchanged
-004ACFE0	applied	STT3DSprC::sub_004ACFE0	owner=applied(STT3DSprC::sub_004ACFE0); this_type=unchanged
-004AD020	applied	STT3DSprC::sub_004AD020	owner=applied(STT3DSprC::sub_004AD020); this_type=unchanged
-004AD070	applied	STT3DSprC::sub_004AD070	owner=applied(STT3DSprC::sub_004AD070); this_type=unchanged
-004AD3C0	applied	STT3DSprC::sub_004AD3C0	owner=applied(STT3DSprC::sub_004AD3C0); this_type=unchanged
+004ACD30	disabled	STT3DSprC::sub_004ACD30	all apply flags are 0
+004ACE30	disabled	STT3DSprC::sub_004ACE30	all apply flags are 0
+004ACE60	disabled	STT3DSprC::sub_004ACE60	all apply flags are 0
+004ACEF0	disabled	STT3DSprC::sub_004ACEF0	all apply flags are 0
+004ACF20	disabled	STT3DSprC::sub_004ACF20	all apply flags are 0
+004ACF50	disabled	STT3DSprC::sub_004ACF50	all apply flags are 0
+004ACF90	disabled	STT3DSprC::sub_004ACF90	all apply flags are 0
+004ACFE0	disabled	STT3DSprC::sub_004ACFE0	all apply flags are 0
+004AD020	disabled	STT3DSprC::sub_004AD020	all apply flags are 0
+004AD070	disabled	STT3DSprC::sub_004AD070	all apply flags are 0
+004AD3C0	disabled	STT3DSprC::sub_004AD3C0	all apply flags are 0
 004B6FC0	disabled	STAllPlayersC::sub_004B6FC0	all apply flags are 0
 004B7030	disabled	STAllPlayersC::sub_004B7030	all apply flags are 0
-004B7F90	applied	TLOBaseTy::sub_004B7F90	owner=applied(TLOBaseTy::sub_004B7F90); this_type=unchanged
-004B9A40	applied	TLOBaseTy::sub_004B9A40	owner=applied(TLOBaseTy::sub_004B9A40); parameters=applied(no explicit parameters); convention=applied(__thiscall); this_type=unchanged
-004C2F70	applied	TLOBaseTy::sub_004C2F70	owner=applied(TLOBaseTy::sub_004C2F70); parameters=applied(no explicit parameters); convention=applied(__thiscall); this_type=unchanged
+004B7F90	disabled	TLOBaseTy::sub_004B7F90	all apply flags are 0
+004B98E0	applied	TLOBaseTy::sub_004B98E0	owner=applied(TLOBaseTy::sub_004B98E0); this_type=unchanged
+004B9A40	disabled	TLOBaseTy::sub_004B9A40	all apply flags are 0
+004C2F70	disabled	TLOBaseTy::sub_004C2F70	all apply flags are 0
 004C3480	disabled	TLOBaseTy::sub_004C3480	all apply flags are 0
-004C34A0	applied	TLOBaseTy::sub_004C34A0	owner=applied(TLOBaseTy::sub_004C34A0); this_type=unchanged
-004C4550	applied	TLOBaseTy::sub_004C4550	owner=applied(TLOBaseTy::sub_004C4550); this_type=unchanged
-004C56B0	applied	TLOBaseTy::sub_004C56B0	owner=applied(TLOBaseTy::sub_004C56B0); this_type=unchanged
-004C61A0	applied	TLOBldMark::sub_004C61A0	owner=applied(TLOBldMark::sub_004C61A0); parameters=applied(no explicit parameters); convention=applied(__thiscall); this_type=unchanged
-004C61E0	applied	TLOBldMark::sub_004C61E0	owner=applied(TLOBldMark::sub_004C61E0); parameters=applied(no explicit parameters); convention=applied(__thiscall); this_type=unchanged
-004C6C70	applied	TLOBaseTy::sub_004C6C70	owner=applied(TLOBaseTy::sub_004C6C70); this_type=unchanged
+004C34A0	disabled	TLOBaseTy::sub_004C34A0	all apply flags are 0
+004C4550	disabled	TLOBaseTy::sub_004C4550	all apply flags are 0
+004C56B0	disabled	TLOBaseTy::sub_004C56B0	all apply flags are 0
+004C61A0	disabled	TLOBldMark::sub_004C61A0	all apply flags are 0
+004C61E0	disabled	TLOBldMark::sub_004C61E0	all apply flags are 0
+004C6C70	disabled	TLOBaseTy::sub_004C6C70	all apply flags are 0
 004C7230	disabled	TLOBaseTy::sub_004C7230	all apply flags are 0
-004C96E0	applied	TLOBaseTy::sub_004C96E0	owner=applied(TLOBaseTy::sub_004C96E0); parameters=applied(no explicit parameters); convention=applied(__thiscall); this_type=unchanged
-004CA7B0	applied	TLOBaseTy::sub_004CA7B0	owner=applied(TLOBaseTy::sub_004CA7B0); this_type=unchanged
+004C96E0	disabled	TLOBaseTy::sub_004C96E0	all apply flags are 0
+004CA7B0	disabled	TLOBaseTy::sub_004CA7B0	all apply flags are 0
+004CAFC0	applied	TLOBaseTy::sub_004CAFC0	owner=applied(TLOBaseTy::sub_004CAFC0); this_type=unchanged
 004CBA10	disabled	TLOBaseTy::sub_004CBA10	all apply flags are 0
-004CBA30	applied	TLOBaseTy::sub_004CBA30	owner=applied(TLOBaseTy::sub_004CBA30); parameters=applied(no explicit parameters); convention=applied(__thiscall); this_type=unchanged
-004CBF30	applied	TLOBaseTy::sub_004CBF30	owner=applied(TLOBaseTy::sub_004CBF30); parameters=applied(no explicit parameters); convention=applied(__thiscall); this_type=unchanged
+004CBA30	disabled	TLOBaseTy::sub_004CBA30	all apply flags are 0
+004CBF30	disabled	TLOBaseTy::sub_004CBF30	all apply flags are 0
 004CBFB0	disabled	TLOBaseTy::sub_004CBFB0	all apply flags are 0
-004CC330	applied	TLOBaseTy::sub_004CC330	owner=applied(TLOBaseTy::sub_004CC330); parameters=applied(no explicit parameters); convention=applied(__thiscall); this_type=unchanged
+004CC330	disabled	TLOBaseTy::sub_004CC330	all apply flags are 0
 004CD3B0	disabled	TLOBaseTy::sub_004CD3B0	all apply flags are 0
-004CEB00	applied	TLOBaseTy::sub_004CEB00	owner=applied(TLOBaseTy::sub_004CEB00)
-004D10A0	applied	TLOEmbryoTy::sub_004D10A0	owner=applied(TLOEmbryoTy::sub_004D10A0); this_type=unchanged
+004CEB00	disabled	TLOBaseTy::sub_004CEB00	all apply flags are 0
+004D10A0	disabled	TLOEmbryoTy::sub_004D10A0	all apply flags are 0
 004D73B0	disabled	STAllPlayersC::sub_004D73B0	all apply flags are 0
 004D7430	disabled	STAllPlayersC::sub_004D7430	all apply flags are 0
 004D78E0	disabled	STAllPlayersC::sub_004D78E0	all apply flags are 0
 004D8110	disabled	STAllPlayersC::sub_004D8110	all apply flags are 0
 004D86A0	disabled	STAllPlayersC::sub_004D86A0	all apply flags are 0
 004D8760	disabled	STAllPlayersC::sub_004D8760	all apply flags are 0
-004DC150	applied	TLOBaseTy::sub_004DC150	owner=applied(TLOBaseTy::sub_004DC150); parameters=applied(no explicit parameters); convention=applied(__thiscall); this_type=unchanged
+004DC150	disabled	TLOBaseTy::sub_004DC150	all apply flags are 0
+004DF9F0	applied	TLOBaseTy::sub_004DF9F0	owner=applied(TLOBaseTy::sub_004DF9F0); parameters=applied(no explicit parameters); convention=applied(__thiscall); this_type=unchanged
 004E51B0	disabled	STAllPlayersC::sub_004E51B0	all apply flags are 0
-004EA620	applied	TLOBaseTy::sub_004EA620	owner=applied(TLOBaseTy::sub_004EA620); parameters=applied(no explicit parameters); convention=applied(__thiscall); this_type=unchanged
-004EAA20	partial	TLOBaseTy::sub_004EAA20	owner=applied(TLOBaseTy::sub_004EAA20); this_type=conflict(no auto this parameter)
-004EB010	applied	STAllPlayersC::sub_004EB010	owner=applied(STAllPlayersC::sub_004EB010); this_type=unchanged
-004EF140	applied	BldBoatPanelTy::sub_004EF140	owner=applied(BldBoatPanelTy::sub_004EF140); parameters=applied(no explicit parameters); convention=applied(__thiscall); this_type=unchanged
-004EFE20	applied	BldLabPanelTy::sub_004EFE20	owner=applied(BldLabPanelTy::sub_004EFE20); parameters=applied(no explicit parameters); convention=applied(__thiscall); this_type=unchanged
-004F0C80	applied	BldObjPanelTy::sub_004F0C80	owner=applied(BldObjPanelTy::sub_004F0C80); parameters=applied(no explicit parameters); convention=applied(__thiscall); this_type=unchanged
-004F1610	applied	CPanelTy::sub_004F1610	owner=applied(CPanelTy::sub_004F1610); this_type=unchanged
-004F17D0	applied	CPanelTy::sub_004F17D0	owner=applied(CPanelTy::sub_004F17D0); this_type=unchanged
+004EA620	disabled	TLOBaseTy::sub_004EA620	all apply flags are 0
+004EAA20	conflict	TLOBaseTy::sub_004EAA20	this_type=conflict(no auto this parameter)
+004EB010	disabled	STAllPlayersC::sub_004EB010	all apply flags are 0
+004EF140	disabled	BldBoatPanelTy::sub_004EF140	all apply flags are 0
+004EFE20	disabled	BldLabPanelTy::sub_004EFE20	all apply flags are 0
+004F0C80	disabled	BldObjPanelTy::sub_004F0C80	all apply flags are 0
+004F1610	disabled	CPanelTy::sub_004F1610	all apply flags are 0
+004F17D0	disabled	CPanelTy::sub_004F17D0	all apply flags are 0
 004F1890	disabled	CPanelTy::sub_004F1890	all apply flags are 0
-004F1950	applied	CPanelTy::sub_004F1950	owner=applied(CPanelTy::sub_004F1950); parameters=applied(no explicit parameters); convention=applied(__thiscall); this_type=unchanged
+004F1950	disabled	CPanelTy::sub_004F1950	all apply flags are 0
 004F19D0	disabled	CPanelTy::sub_004F19D0	all apply flags are 0
 004F1C80	disabled	CPanelTy::sub_004F1C80	all apply flags are 0
 004F1D20	disabled	CPanelTy::sub_004F1D20	all apply flags are 0
-004F4570	applied	CPanelTy::sub_004F4570	owner=applied(CPanelTy::sub_004F4570); this_type=unchanged
-004F8020	applied	CPanelTy::sub_004F8020	owner=applied(CPanelTy::sub_004F8020); this_type=unchanged
-00501A10	applied	CPanelTy::sub_00501A10	owner=applied(CPanelTy::sub_00501A10); parameters=applied(no explicit parameters); convention=applied(__thiscall); this_type=unchanged
+004F4570	disabled	CPanelTy::sub_004F4570	all apply flags are 0
+004F8020	disabled	CPanelTy::sub_004F8020	all apply flags are 0
+00501A10	disabled	CPanelTy::sub_00501A10	all apply flags are 0
 00501D00	disabled	CPanelTy::sub_00501D00	all apply flags are 0
 00502330	disabled	CPanelTy::sub_00502330	all apply flags are 0
 00505070	disabled	CPanelTy::sub_00505070	all apply flags are 0
-005050B0	applied	CPanelTy::sub_005050B0	owner=applied(CPanelTy::sub_005050B0); this_type=unchanged
-00506040	applied	CPanelTy::sub_00506040	owner=applied(CPanelTy::sub_00506040); parameters=applied(no explicit parameters); convention=applied(__thiscall); this_type=unchanged
+005050B0	disabled	CPanelTy::sub_005050B0	all apply flags are 0
+00506040	disabled	CPanelTy::sub_00506040	all apply flags are 0
 005097B0	disabled	CPanelTy::sub_005097B0	all apply flags are 0
-00512BE0	applied	HelpPanelTy::sub_00512BE0	owner=applied(HelpPanelTy::sub_00512BE0); this_type=unchanged
+00512BE0	disabled		all apply flags are 0
 005148A0	disabled		all apply flags are 0
 00526BA0	disabled	BldLabPanelTy::sub_00526BA0	all apply flags are 0
-0052B330	applied	CPanelTy::sub_0052B330	owner=applied(CPanelTy::sub_0052B330); parameters=applied(no explicit parameters); convention=applied(__thiscall); this_type=unchanged
-0052B760	applied	MoneyTy::sub_0052B760	owner=applied(MoneyTy::sub_0052B760); this_type=unchanged
-0052B8A0	applied	MoneyTy::sub_0052B8A0	owner=applied(MoneyTy::sub_0052B8A0); parameters=applied(no explicit parameters); convention=applied(__thiscall); this_type=unchanged
-0052B8F0	applied	MoneyTy::sub_0052B8F0	owner=applied(MoneyTy::sub_0052B8F0); parameters=applied(no explicit parameters); convention=applied(__thiscall); this_type=unchanged
-0052B940	applied	MoneyTy::sub_0052B940	owner=applied(MoneyTy::sub_0052B940); parameters=applied(no explicit parameters); convention=applied(__thiscall); this_type=unchanged
-0052B990	applied	MoneyTy::sub_0052B990	owner=applied(MoneyTy::sub_0052B990); parameters=applied(no explicit parameters); convention=applied(__thiscall); this_type=unchanged
-0052BBE0	applied	MoneyTy::sub_0052BBE0	owner=applied(MoneyTy::sub_0052BBE0); parameters=applied(no explicit parameters); convention=applied(__thiscall); this_type=unchanged
-0052BDA0	applied	MoneyTy::sub_0052BDA0	owner=applied(MoneyTy::sub_0052BDA0); this_type=unchanged
-0053C620	applied	ResearchPanelTy::sub_0053C620	owner=applied(ResearchPanelTy::sub_0053C620); parameters=applied(no explicit parameters); convention=applied(__thiscall); this_type=unchanged
+0052B330	disabled	CPanelTy::sub_0052B330	all apply flags are 0
+0052B760	disabled	MoneyTy::sub_0052B760	all apply flags are 0
+0052B8A0	disabled	MoneyTy::sub_0052B8A0	all apply flags are 0
+0052B8F0	disabled	MoneyTy::sub_0052B8F0	all apply flags are 0
+0052B940	disabled	MoneyTy::sub_0052B940	all apply flags are 0
+0052B990	disabled	MoneyTy::sub_0052B990	all apply flags are 0
+0052BBE0	disabled	MoneyTy::sub_0052BBE0	all apply flags are 0
+0052BDA0	disabled	MoneyTy::sub_0052BDA0	all apply flags are 0
+0053C620	disabled	ResearchPanelTy::sub_0053C620	all apply flags are 0
 0053F510	disabled		all apply flags are 0
 005440C0	disabled	CursorClassTy::sub_005440C0	all apply flags are 0
 00544100	disabled	CursorClassTy::sub_00544100	all apply flags are 0
 00544150	disabled	CursorClassTy::sub_00544150	all apply flags are 0
 00544990	disabled	CursorClassTy::sub_00544990	all apply flags are 0
-0054A8D0	applied	CursorClassTy::sub_0054A8D0	owner=applied(CursorClassTy::sub_0054A8D0); parameters=applied(no explicit parameters); convention=applied(__thiscall)
-0054B700	applied	CursorClassTy::sub_0054B700	owner=applied(CursorClassTy::sub_0054B700); this_type=unchanged
+0054A8D0	disabled	CursorClassTy::sub_0054A8D0	all apply flags are 0
+0054B700	disabled		all apply flags are 0
 0054CBB0	disabled	STPlaySystemC::sub_0054CBB0	all apply flags are 0
-0054EBB0	applied	STPlaySystemC::sub_0054EBB0	owner=applied(STPlaySystemC::sub_0054EBB0); this_type=unchanged
-00550190	applied	STPlaySystemC::sub_00550190	owner=applied(STPlaySystemC::sub_00550190); parameters=applied(no explicit parameters); convention=applied(__thiscall); this_type=unchanged
+0054EAB0	disabled	STPlaySystemC::sub_0054EAB0	all apply flags are 0
+0054EBB0	disabled	STPlaySystemC::sub_0054EBB0	all apply flags are 0
+00550190	disabled	STPlaySystemC::sub_00550190	all apply flags are 0
 005501D0	disabled	STPlaySystemC::sub_005501D0	all apply flags are 0
 00550380	disabled		all apply flags are 0
 005503C0	disabled	STPlaySystemC::sub_005503C0	all apply flags are 0
 00550430	disabled	STPlaySystemC::sub_00550430	all apply flags are 0
 005504F0	disabled	STPlaySystemC::sub_005504F0	all apply flags are 0
-005505D0	applied	STPlaySystemC::sub_005505D0	owner=applied(STPlaySystemC::sub_005505D0); this_type=unchanged
+005505D0	disabled	STPlaySystemC::sub_005505D0	all apply flags are 0
 00550830	disabled	STPlaySystemC::sub_00550830	all apply flags are 0
 005508F0	disabled	STPlaySystemC::sub_005508F0	all apply flags are 0
-00551B10	applied	TradePanelTy::sub_00551B10	owner=applied(TradePanelTy::sub_00551B10); parameters=applied(no explicit parameters); convention=applied(__thiscall); this_type=unchanged
+00551800	applied	TradePanelTy::sub_00551800	owner=applied(TradePanelTy::sub_00551800); parameters=applied(no explicit parameters); convention=applied(__thiscall); this_type=unchanged
+00551B10	disabled	TradePanelTy::sub_00551B10	all apply flags are 0
 00555570	disabled	cLoadingTy::sub_00555570	all apply flags are 0
-00555680	applied	cLoadingTy::sub_00555680	owner=applied(cLoadingTy::sub_00555680); this_type=unchanged
+00555680	disabled	cLoadingTy::sub_00555680	all apply flags are 0
 00555880	disabled	TraksClassTy::sub_00555880	all apply flags are 0
-00555D90	applied	TraksClassTy::sub_00555D90	owner=applied(TraksClassTy::sub_00555D90); this_type=unchanged
-00558140	applied	VisibleClassTy::sub_00558140	owner=applied(VisibleClassTy::sub_00558140); parameters=applied(no explicit parameters); convention=applied(__thiscall); this_type=unchanged
-00558DC0	applied	VisibleClassTy::sub_00558DC0	owner=applied(VisibleClassTy::sub_00558DC0); this_type=unchanged
-00559110	applied	VisibleClassTy::sub_00559110	owner=applied(VisibleClassTy::sub_00559110); this_type=unchanged
-005594A0	applied	VisibleClassTy::sub_005594A0	owner=applied(VisibleClassTy::sub_005594A0); this_type=unchanged
+00555D90	disabled	TraksClassTy::sub_00555D90	all apply flags are 0
+00558140	disabled	VisibleClassTy::sub_00558140	all apply flags are 0
+00558C00	applied	VisibleClassTy::sub_00558C00	owner=applied(VisibleClassTy::sub_00558C00); this_type=unchanged
+00558DC0	disabled	VisibleClassTy::sub_00558DC0	all apply flags are 0
+00559110	disabled	VisibleClassTy::sub_00559110	all apply flags are 0
+005594A0	disabled		all apply flags are 0
 0055B9F0	disabled	SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00558C00::sub_0055B9F0	all apply flags are 0
-0055BB00	repaired	sub_0055BB00	removed weak class owner; reset 0 downstream script-owned receiver types
-0055BBC0	disabled	SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00558C00::sub_0055BBC0	all apply flags are 0
+0055BB00	disabled		all apply flags are 0
+0055BBC0	repaired	sub_0055BBC0	removed weak class owner; reset 0 downstream script-owned receiver types
 0055DB70	disabled	StartSystemTy::sub_0055DB70	all apply flags are 0
-00566900	applied	SoundManagerTy::sub_00566900	owner=applied(SoundManagerTy::sub_00566900); parameters=applied(no explicit parameters); convention=applied(__thiscall); this_type=unchanged
-00566AA0	applied	SoundManagerTy::sub_00566AA0	owner=applied(SoundManagerTy::sub_00566AA0); parameters=applied(no explicit parameters); convention=applied(__thiscall); this_type=unchanged
+00566900	disabled	SoundManagerTy::sub_00566900	all apply flags are 0
+00566970	applied	SoundManagerTy::sub_00566970	owner=applied(SoundManagerTy::sub_00566970); this_type=unchanged
+00566AA0	disabled	SoundManagerTy::sub_00566AA0	all apply flags are 0
 00568780	disabled	SoundClassTy::sub_00568780	all apply flags are 0
-0056E9E0	applied	STAppC::sub_0056E9E0	owner=applied(STAppC::sub_0056E9E0); this_type=unchanged
-0056EBE0	applied	STAppC::sub_0056EBE0	owner=applied(STAppC::sub_0056EBE0); parameters=applied(no explicit parameters); convention=applied(__thiscall); this_type=unchanged
-0056EF50	applied	STAppC::sub_0056EF50	owner=applied(STAppC::sub_0056EF50); parameters=applied(no explicit parameters); convention=applied(__thiscall); this_type=unchanged
-0056F040	applied	STAppC::sub_0056F040	owner=applied(STAppC::sub_0056F040); parameters=applied(no explicit parameters); convention=applied(__thiscall); this_type=unchanged
+0056E9E0	disabled	STAppC::sub_0056E9E0	all apply flags are 0
+0056EBE0	disabled	STAppC::sub_0056EBE0	all apply flags are 0
+0056EE90	applied	STAppC::sub_0056EE90	owner=applied(STAppC::sub_0056EE90); parameters=applied(no explicit parameters); convention=applied(__thiscall); this_type=unchanged
+0056EF50	disabled	STAppC::sub_0056EF50	all apply flags are 0
+0056F040	disabled	STAppC::sub_0056F040	all apply flags are 0
 005711D0	disabled	STAppC::sub_005711D0	all apply flags are 0
 005713B0	disabled	STAppC::sub_005713B0	all apply flags are 0
-0057BF20	applied	STFishC::sub_0057BF20	owner=applied(STFishC::sub_0057BF20); parameters=applied(no explicit parameters); convention=applied(__thiscall); this_type=unchanged
+0057BF20	disabled	STFishC::sub_0057BF20	all apply flags are 0
 0057CB30	disabled	STFishC::sub_0057CB30	all apply flags are 0
 0057D420	disabled	STFishC::sub_0057D420	all apply flags are 0
 0057D5F0	disabled	STFishC::sub_0057D5F0	all apply flags are 0
 0057D700	disabled	STFishC::sub_0057D700	all apply flags are 0
-0057F2E0	applied	STDcResourcC::sub_0057F2E0	owner=applied(STDcResourcC::sub_0057F2E0); this_type=unchanged
-0057F3A0	applied	STDcResourcC::sub_0057F3A0	owner=applied(STDcResourcC::sub_0057F3A0); this_type=unchanged
-0057F470	applied	STDcResourcC::sub_0057F470	owner=applied(STDcResourcC::sub_0057F470); this_type=unchanged
+0057F240	disabled	STDcResourcC::sub_0057F240	all apply flags are 0
+0057F2E0	disabled	STDcResourcC::sub_0057F2E0	all apply flags are 0
+0057F3A0	disabled	STDcResourcC::sub_0057F3A0	all apply flags are 0
+0057F470	disabled	STDcResourcC::sub_0057F470	all apply flags are 0
+0057F530	disabled	STDcResourcC::sub_0057F530	all apply flags are 0
 005802A0	disabled	STResourceC::sub_005802A0	all apply flags are 0
 00580380	disabled	STResourceC::sub_00580380	all apply flags are 0
-005805C0	applied	STDcResourcC::sub_005805C0	owner=applied(STDcResourcC::sub_005805C0); parameters=applied(no explicit parameters); convention=applied(__thiscall); this_type=unchanged
+005805C0	disabled	STDcResourcC::sub_005805C0	all apply flags are 0
 00580D30	disabled	STResourceC::sub_00580D30	all apply flags are 0
 00580FA0	disabled	STResourceC::sub_00580FA0	all apply flags are 0
 00582530	disabled	STJellyGunC::sub_00582530	all apply flags are 0
@@ -206,44 +219,45 @@ address	status	proposed_name	detail
 00584380	disabled	STJellyGunC::sub_00584380	all apply flags are 0
 005844E0	disabled	STJellyGunC::sub_005844E0	all apply flags are 0
 005899E0	disabled	STOctopusC::sub_005899E0	all apply flags are 0
-0058B190	applied	STOctopusC::sub_0058B190	owner=applied(STOctopusC::sub_0058B190); this_type=unchanged
+0058AF70	applied	STOctopusC::sub_0058AF70	owner=applied(STOctopusC::sub_0058AF70); this_type=unchanged
+0058B190	disabled	STOctopusC::sub_0058B190	all apply flags are 0
 0058EEB0	disabled	STSharkC::sub_0058EEB0	all apply flags are 0
-0058EFE0	applied	STSharkC::sub_0058EFE0	owner=applied(STSharkC::sub_0058EFE0); parameters=applied(no explicit parameters); convention=applied(__thiscall); this_type=unchanged
+0058EFE0	disabled	STSharkC::sub_0058EFE0	all apply flags are 0
 0058F430	disabled	STSharkC::sub_0058F430	all apply flags are 0
-0058FF70	applied	STSharkC::sub_0058FF70	owner=applied(STSharkC::sub_0058FF70); parameters=applied(no explicit parameters); convention=applied(__thiscall); this_type=unchanged
-00590860	applied	MAdvTy::sub_00590860	owner=applied(MAdvTy::sub_00590860); parameters=applied(no explicit parameters); convention=applied(__thiscall); this_type=unchanged
-005925A0	applied	CampaignTy::sub_005925A0	owner=applied(CampaignTy::sub_005925A0); parameters=applied(no explicit parameters); convention=applied(__thiscall); this_type=unchanged
-00592620	applied	CampaignTy::sub_00592620	owner=applied(CampaignTy::sub_00592620); parameters=applied(no explicit parameters); convention=applied(__thiscall); this_type=unchanged
+0058FF70	disabled	STSharkC::sub_0058FF70	all apply flags are 0
+00590860	disabled	MAdvTy::sub_00590860	all apply flags are 0
+005925A0	disabled	CampaignTy::sub_005925A0	all apply flags are 0
+00592620	disabled	CampaignTy::sub_00592620	all apply flags are 0
 005926A0	disabled	CampaignTy::sub_005926A0	all apply flags are 0
-005943F0	applied	ComboTy::sub_005943F0	owner=applied(ComboTy::sub_005943F0); parameters=applied(no explicit parameters); convention=applied(__thiscall); this_type=unchanged
-0059B820	applied	FSGSTy::sub_0059B820	owner=applied(FSGSTy::sub_0059B820); parameters=applied(no explicit parameters); convention=applied(__thiscall); this_type=unchanged
-0059BE50	applied	FSGSTy::sub_0059BE50	owner=applied(FSGSTy::sub_0059BE50); parameters=applied(no explicit parameters); convention=applied(__thiscall); this_type=unchanged
-005A0590	applied	FSGSTy::sub_005A0590	owner=applied(FSGSTy::sub_005A0590); parameters=applied(no explicit parameters); convention=applied(__thiscall); this_type=unchanged
-005A07F0	applied	FSGSTy::sub_005A07F0	owner=applied(FSGSTy::sub_005A07F0); parameters=applied(no explicit parameters); convention=applied(__thiscall); this_type=unchanged
-005A0A50	applied	FSGSTy::sub_005A0A50	owner=applied(FSGSTy::sub_005A0A50); parameters=applied(no explicit parameters); convention=applied(__thiscall); this_type=unchanged
-005A0AF0	applied	FSGSTy::sub_005A0AF0	owner=applied(FSGSTy::sub_005A0AF0); parameters=applied(no explicit parameters); convention=applied(__thiscall); this_type=unchanged
-005A0C80	applied	FSGSTy::sub_005A0C80	owner=applied(FSGSTy::sub_005A0C80); parameters=applied(no explicit parameters); convention=applied(__thiscall); this_type=unchanged
-005A39A0	applied	FSGSTy::sub_005A39A0	owner=applied(FSGSTy::sub_005A39A0); this_type=unchanged
-005AE840	applied	ChooseMapTy::sub_005AE840	owner=applied(ChooseMapTy::sub_005AE840); parameters=applied(no explicit parameters); convention=applied(__thiscall); this_type=unchanged
-005AE950	applied	ChooseMapTy::sub_005AE950	owner=applied(ChooseMapTy::sub_005AE950); parameters=applied(no explicit parameters); convention=applied(__thiscall); this_type=unchanged
-005B47E0	applied	MainMenuTy::sub_005B47E0	owner=applied(MainMenuTy::sub_005B47E0); parameters=applied(no explicit parameters); convention=applied(__thiscall); this_type=unchanged
-005B4860	applied	MainMenuTy::sub_005B4860	owner=applied(MainMenuTy::sub_005B4860); parameters=applied(no explicit parameters); convention=applied(__thiscall); this_type=unchanged
-005B5BE0	applied	ChooseMapTy::sub_005B5BE0	owner=applied(ChooseMapTy::sub_005B5BE0); this_type=unchanged
-005B5F00	applied	SettMapMTy::sub_005B5F00	owner=applied(SettMapMTy::sub_005B5F00); this_type=unchanged
+005943F0	disabled	ComboTy::sub_005943F0	all apply flags are 0
+0059B820	disabled	FSGSTy::sub_0059B820	all apply flags are 0
+0059BE50	disabled	FSGSTy::sub_0059BE50	all apply flags are 0
+005A0590	disabled	FSGSTy::sub_005A0590	all apply flags are 0
+005A07F0	disabled	FSGSTy::sub_005A07F0	all apply flags are 0
+005A0A50	disabled	FSGSTy::sub_005A0A50	all apply flags are 0
+005A0AF0	disabled	FSGSTy::sub_005A0AF0	all apply flags are 0
+005A0C80	disabled	FSGSTy::sub_005A0C80	all apply flags are 0
+005A39A0	disabled	FSGSTy::sub_005A39A0	all apply flags are 0
+005AE840	disabled	ChooseMapTy::sub_005AE840	all apply flags are 0
+005AE950	disabled	ChooseMapTy::sub_005AE950	all apply flags are 0
+005B47E0	disabled	MainMenuTy::sub_005B47E0	all apply flags are 0
+005B4860	disabled	MainMenuTy::sub_005B4860	all apply flags are 0
+005B5BE0	disabled		all apply flags are 0
+005B5F00	disabled	SettMapMTy::sub_005B5F00	all apply flags are 0
 005B6350	disabled		all apply flags are 0
 005B6450	disabled		all apply flags are 0
 005B66E0	disabled		all apply flags are 0
 005B6730	disabled		all apply flags are 0
-005BB9F0	applied	PrividerTy::sub_005BB9F0	owner=applied(PrividerTy::sub_005BB9F0); parameters=applied(no explicit parameters); convention=applied(__thiscall); this_type=unchanged
+005BB9F0	disabled	PrividerTy::sub_005BB9F0	all apply flags are 0
 005BBA40	disabled	PrividerTy::sub_005BBA40	all apply flags are 0
-005C00D0	applied	MReportTy::sub_005C00D0	owner=applied(MReportTy::sub_005C00D0); parameters=applied(no explicit parameters); convention=applied(__thiscall); this_type=unchanged
-005C0190	applied	MReportTy::sub_005C0190	owner=applied(MReportTy::sub_005C0190); parameters=applied(no explicit parameters); convention=applied(__thiscall); this_type=unchanged
-005C05F0	applied	MReportTy::sub_005C05F0	owner=applied(MReportTy::sub_005C05F0); parameters=applied(no explicit parameters); convention=applied(__thiscall); this_type=unchanged
-005C29B0	applied	SettMapMTy::sub_005C29B0	owner=applied(SettMapMTy::sub_005C29B0); this_type=unchanged
+005C00D0	disabled	MReportTy::sub_005C00D0	all apply flags are 0
+005C0190	disabled	MReportTy::sub_005C0190	all apply flags are 0
+005C05F0	disabled	MReportTy::sub_005C05F0	all apply flags are 0
+005C29B0	disabled		all apply flags are 0
 005C7800	disabled		all apply flags are 0
 005CBBE0	disabled		all apply flags are 0
-005D00B0	applied	SettMapMTy::sub_005D00B0	owner=applied(SettMapMTy::sub_005D00B0); this_type=unchanged
-005D1380	applied	SettMapMTy::sub_005D1380	owner=applied(SettMapMTy::sub_005D1380); parameters=applied(no explicit parameters); convention=applied(__thiscall); this_type=unchanged
+005D00B0	disabled	SettMapMTy::sub_005D00B0	all apply flags are 0
+005D1380	disabled	SettMapMTy::sub_005D1380	all apply flags are 0
 005DA7A0	disabled	StartSystemTy::sub_005DA7A0	all apply flags are 0
 005DA910	disabled	StartSystemTy::sub_005DA910	all apply flags are 0
 005DAA60	disabled	StartSystemTy::sub_005DAA60	all apply flags are 0
@@ -252,204 +266,232 @@ address	status	proposed_name	detail
 005DAF20	disabled	StartSystemTy::sub_005DAF20	all apply flags are 0
 005DB010	disabled	StartSystemTy::sub_005DB010	all apply flags are 0
 005DB2A0	disabled	StartSystemTy::sub_005DB2A0	all apply flags are 0
-005E5F60	applied	MTestTy::sub_005E5F60	owner=applied(MTestTy::sub_005E5F60); parameters=applied(no explicit parameters); convention=applied(__thiscall); this_type=unchanged
-005E9970	applied	WaitTy::sub_005E9970	owner=applied(WaitTy::sub_005E9970); parameters=applied(no explicit parameters); convention=applied(__thiscall); this_type=unchanged
-005E9A40	applied	WaitTy::sub_005E9A40	owner=applied(WaitTy::sub_005E9A40); parameters=applied(no explicit parameters); convention=applied(__thiscall); this_type=unchanged
-005EBCB0	applied	STArtiafactC::sub_005EBCB0	owner=applied(STArtiafactC::sub_005EBCB0); parameters=applied(no explicit parameters); convention=applied(__thiscall); this_type=unchanged
+005E5F60	disabled	MTestTy::sub_005E5F60	all apply flags are 0
+005E9970	disabled	WaitTy::sub_005E9970	all apply flags are 0
+005E9A40	disabled	WaitTy::sub_005E9A40	all apply flags are 0
+005EBCB0	disabled	STArtiafactC::sub_005EBCB0	all apply flags are 0
 005EBD80	disabled	STArtiafactC::sub_005EBD80	all apply flags are 0
 005EC370	disabled	STArtiafactC::sub_005EC370	all apply flags are 0
 005EC4A0	disabled	STArtiafactC::sub_005EC4A0	all apply flags are 0
 005EC9F0	disabled		all apply flags are 0
 005EEFF0	disabled		all apply flags are 0
 005EF5F0	disabled		all apply flags are 0
-005F0D00	applied	STArtiafactC::sub_005F0D00	owner=applied(STArtiafactC::sub_005F0D00); parameters=applied(no explicit parameters); convention=applied(__thiscall); this_type=unchanged
-005F0D90	applied	STContainerC::sub_005F0D90	owner=applied(STContainerC::sub_005F0D90); parameters=applied(no explicit parameters); convention=applied(__thiscall); this_type=unchanged
+005F0D00	disabled	STArtiafactC::sub_005F0D00	all apply flags are 0
+005F0D90	disabled	STContainerC::sub_005F0D90	all apply flags are 0
 005F1380	disabled	STManBasisC::sub_005F1380	all apply flags are 0
-005F19A0	applied	STManBasisC::sub_005F19A0	owner=applied(STManBasisC::sub_005F19A0); parameters=applied(no explicit parameters); convention=applied(__thiscall); this_type=unchanged
-005F1FA0	applied	STManBasisC::sub_005F1FA0	owner=applied(STManBasisC::sub_005F1FA0); this_type=unchanged
-005F2110	applied	STManBasisC::sub_005F2110	owner=applied(STManBasisC::sub_005F2110); this_type=unchanged
-005F21D0	applied	STManBasisC::sub_005F21D0	owner=applied(STManBasisC::sub_005F21D0); parameters=applied(no explicit parameters); convention=applied(__thiscall); this_type=unchanged
-005F2330	applied	STManBasisC::sub_005F2330	owner=applied(STManBasisC::sub_005F2330); parameters=applied(no explicit parameters); convention=applied(__thiscall); this_type=unchanged
-005F3470	applied	STBHEShellC::sub_005F3470	owner=applied(STBHEShellC::sub_005F3470); parameters=applied(no explicit parameters); convention=applied(__thiscall); this_type=unchanged
-005F34B0	applied	STBHEShellC::sub_005F34B0	owner=applied(STBHEShellC::sub_005F34B0); parameters=applied(no explicit parameters); convention=applied(__thiscall); this_type=unchanged
-005F35F0	applied	STBHEShellC::sub_005F35F0	owner=applied(STBHEShellC::sub_005F35F0); this_type=unchanged
+005F14B0	applied	STManBasisC::sub_005F14B0	owner=applied(STManBasisC::sub_005F14B0); this_type=unchanged
+005F1700	disabled	STManBasisC::sub_005F1700	all apply flags are 0
+005F19A0	disabled	STManBasisC::sub_005F19A0	all apply flags are 0
+005F1E40	disabled	STManBasisC::sub_005F1E40	all apply flags are 0
+005F1FA0	disabled	STManBasisC::sub_005F1FA0	all apply flags are 0
+005F2110	disabled	STManBasisC::sub_005F2110	all apply flags are 0
+005F21D0	disabled	STManBasisC::sub_005F21D0	all apply flags are 0
+005F2330	disabled	STManBasisC::sub_005F2330	all apply flags are 0
+005F3470	disabled	STBHEShellC::sub_005F3470	all apply flags are 0
+005F34B0	disabled	STBHEShellC::sub_005F34B0	all apply flags are 0
+005F35F0	disabled		all apply flags are 0
 005F3940	disabled	STBHEShellC::sub_005F3940	all apply flags are 0
 005F3B00	disabled	STBHEShellC::sub_005F3B00	all apply flags are 0
-005F3BF0	applied	STBHEShellC::sub_005F3BF0	owner=applied(STBHEShellC::sub_005F3BF0); this_type=unchanged
-005F4370	applied	STBHEShellC::sub_005F4370	owner=applied(STBHEShellC::sub_005F4370); this_type=unchanged
-005F4680	applied	STBHEShellC::sub_005F4680	owner=applied(STBHEShellC::sub_005F4680); parameters=applied(no explicit parameters); convention=applied(__thiscall); this_type=unchanged
-005F4C50	applied	STBHEShellC::sub_005F4C50	owner=applied(STBHEShellC::sub_005F4C50); this_type=unchanged
-005F4FA0	applied	STBHEShellC::sub_005F4FA0	owner=applied(STBHEShellC::sub_005F4FA0); parameters=applied(no explicit parameters); convention=applied(__thiscall); this_type=unchanged
-005F53A0	applied	STBHEShellC::sub_005F53A0	owner=applied(STBHEShellC::sub_005F53A0); parameters=applied(no explicit parameters); convention=applied(__thiscall); this_type=unchanged
+005F3BF0	disabled	STBHEShellC::sub_005F3BF0	all apply flags are 0
+005F4370	disabled	STBHEShellC::sub_005F4370	all apply flags are 0
+005F4680	disabled	STBHEShellC::sub_005F4680	all apply flags are 0
+005F4A30	disabled	STBHEShellC::sub_005F4A30	all apply flags are 0
+005F4C50	disabled	STBHEShellC::sub_005F4C50	all apply flags are 0
+005F4FA0	disabled	STBHEShellC::sub_005F4FA0	all apply flags are 0
+005F53A0	disabled	STBHEShellC::sub_005F53A0	all apply flags are 0
 005F5440	disabled	STBHEShellC::sub_005F5440	all apply flags are 0
-005F5A90	applied	STBHEShellC::sub_005F5A90	owner=applied(STBHEShellC::sub_005F5A90); this_type=unchanged
-005F5B80	applied	STBHEShellC::sub_005F5B80	owner=applied(STBHEShellC::sub_005F5B80); this_type=unchanged
-005F5C40	disabled	STBHEShellC::sub_005F5C40	all apply flags are 0
-005F5D10	applied	STBHEShellC::sub_005F5D10	owner=applied(STBHEShellC::sub_005F5D10); this_type=unchanged
-005F5E30	applied	STBHEShellC::sub_005F5E30	owner=applied(STBHEShellC::sub_005F5E30); this_type=unchanged
-005F66B0	applied	STColl3C::sub_005F66B0	owner=applied(STColl3C::sub_005F66B0); parameters=applied(no explicit parameters); convention=applied(__thiscall); this_type=unchanged
-005F66F0	applied	STColl3C::sub_005F66F0	owner=applied(STColl3C::sub_005F66F0); this_type=unchanged
-005F68B0	applied	STColl3C::sub_005F68B0	owner=applied(STColl3C::sub_005F68B0); this_type=unchanged
-005F6F20	applied	STColl3C::sub_005F6F20	owner=applied(STColl3C::sub_005F6F20); this_type=unchanged
-005F6F60	applied	STColl3C::sub_005F6F60	owner=applied(STColl3C::sub_005F6F60); parameters=applied(no explicit parameters); convention=applied(__thiscall); this_type=unchanged
-005F9450	applied	STColl3C::sub_005F9450	owner=applied(STColl3C::sub_005F9450); parameters=applied(no explicit parameters); convention=applied(__thiscall); this_type=unchanged
-005FA070	applied	STColl3C::sub_005FA070	owner=applied(STColl3C::sub_005FA070); parameters=applied(no explicit parameters); convention=applied(__thiscall); this_type=unchanged
+005F5700	applied	STBHEShellC::sub_005F5700	owner=applied(STBHEShellC::sub_005F5700); this_type=unchanged
+005F5A90	disabled	STBHEShellC::sub_005F5A90	all apply flags are 0
+005F5B80	disabled	STBHEShellC::sub_005F5B80	all apply flags are 0
+005F5C40	applied	STBHEShellC::sub_005F5C40	owner=applied(STBHEShellC::sub_005F5C40); this_type=unchanged
+005F5D10	disabled	STBHEShellC::sub_005F5D10	all apply flags are 0
+005F5E30	disabled	STBHEShellC::sub_005F5E30	all apply flags are 0
+005F66B0	disabled	STColl3C::sub_005F66B0	all apply flags are 0
+005F66F0	disabled	STColl3C::sub_005F66F0	all apply flags are 0
+005F68B0	disabled	STColl3C::sub_005F68B0	all apply flags are 0
+005F6AD0	disabled	STColl3C::sub_005F6AD0	all apply flags are 0
+005F6F20	disabled	STColl3C::sub_005F6F20	all apply flags are 0
+005F6F60	disabled	STColl3C::sub_005F6F60	all apply flags are 0
+005F8650	applied	STColl3C::sub_005F8650	owner=applied(STColl3C::sub_005F8650); this_type=unchanged
+005F9450	disabled	STColl3C::sub_005F9450	all apply flags are 0
+005FA030	disabled	STColl3C::sub_005FA030	all apply flags are 0
+005FA070	disabled	STColl3C::sub_005FA070	all apply flags are 0
 005FA0B0	disabled	STColl3C::sub_005FA0B0	all apply flags are 0
-005FA8B0	applied	STColl3C::sub_005FA8B0	owner=applied(STColl3C::sub_005FA8B0); this_type=unchanged
-005FC3E0	applied	STContainerC::sub_005FC3E0	owner=applied(STContainerC::sub_005FC3E0); parameters=applied(no explicit parameters); convention=applied(__thiscall); this_type=unchanged
+005FA8B0	disabled	STColl3C::sub_005FA8B0	all apply flags are 0
+005FC3E0	disabled	STContainerC::sub_005FC3E0	all apply flags are 0
 005FC4A0	disabled	STContainerC::sub_005FC4A0	all apply flags are 0
 005FCAD0	disabled	STContainerC::sub_005FCAD0	all apply flags are 0
 005FCC00	disabled	STContainerC::sub_005FCC00	all apply flags are 0
 00601D10	disabled	SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00601500::sub_00601D10	all apply flags are 0
-00602440	applied	STDestC::sub_00602440	owner=applied(STDestC::sub_00602440); parameters=applied(no explicit parameters); convention=applied(__thiscall); this_type=unchanged
-006024B0	applied	STDestC::sub_006024B0	owner=applied(STDestC::sub_006024B0); parameters=applied(no explicit parameters); convention=applied(__thiscall); this_type=unchanged
-006025D0	applied	STDestC::sub_006025D0	owner=applied(STDestC::sub_006025D0); this_type=unchanged
-00602660	applied	STDestC::sub_00602660	owner=applied(STDestC::sub_00602660); this_type=unchanged
+00602440	disabled	STDestC::sub_00602440	all apply flags are 0
+006024B0	disabled	STDestC::sub_006024B0	all apply flags are 0
+006025D0	disabled	STDestC::sub_006025D0	all apply flags are 0
+00602660	disabled	STDestC::sub_00602660	all apply flags are 0
 006029C0	disabled	STDestC::sub_006029C0	all apply flags are 0
-00602BE0	applied	STDestC::sub_00602BE0	owner=applied(STDestC::sub_00602BE0); parameters=applied(no explicit parameters); convention=applied(__thiscall); this_type=unchanged
-00602E90	applied	STDestC::sub_00602E90	owner=applied(STDestC::sub_00602E90); this_type=unchanged
-00603120	applied	STDestC::sub_00603120	owner=applied(STDestC::sub_00603120); parameters=applied(no explicit parameters); convention=applied(__thiscall); this_type=unchanged
-00604120	applied	STExplosion::sub_00604120	owner=applied(STExplosion::sub_00604120); parameters=applied(no explicit parameters); convention=applied(__thiscall); this_type=unchanged
-00604350	applied	STExplosion::sub_00604350	owner=applied(STExplosion::sub_00604350); parameters=applied(no explicit parameters); convention=applied(__thiscall); this_type=unchanged
-00604970	applied	STExplosion::sub_00604970	owner=applied(STExplosion::sub_00604970); parameters=applied(no explicit parameters); convention=applied(__thiscall); this_type=unchanged
-00605130	applied	STExplosion::sub_00605130	owner=applied(STExplosion::sub_00605130); parameters=applied(no explicit parameters); convention=applied(__thiscall); this_type=unchanged
-00605780	applied	STExplosion::sub_00605780	owner=applied(STExplosion::sub_00605780); parameters=applied(no explicit parameters); convention=applied(__thiscall); this_type=unchanged
-00606050	applied	STExplosion::sub_00606050	owner=applied(STExplosion::sub_00606050); this_type=unchanged
+00602BE0	disabled	STDestC::sub_00602BE0	all apply flags are 0
+00602E90	disabled		all apply flags are 0
+00603120	disabled	STDestC::sub_00603120	all apply flags are 0
+00604120	disabled	STExplosion::sub_00604120	all apply flags are 0
+00604350	disabled	STExplosion::sub_00604350	all apply flags are 0
+00604970	disabled	STExplosion::sub_00604970	all apply flags are 0
+00604A00	disabled	STExplosion::sub_00604A00	all apply flags are 0
+00605130	disabled	STExplosion::sub_00605130	all apply flags are 0
+00605780	disabled	STExplosion::sub_00605780	all apply flags are 0
+00606050	disabled	STExplosion::sub_00606050	all apply flags are 0
+00606A50	disabled	STExplosion::sub_00606A50	all apply flags are 0
+00607EE0	disabled	STExplosion::sub_00607EE0	all apply flags are 0
 00609CD0	disabled	STFieldC::sub_00609CD0	all apply flags are 0
 0060D660	disabled	STFieldC::sub_0060D660	all apply flags are 0
 00615BB0	disabled	SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0060EF40::sub_00615BB0	all apply flags are 0
-006179D0	applied	JumpManagC::sub_006179D0	owner=applied(JumpManagC::sub_006179D0); parameters=applied(no explicit parameters); convention=applied(__thiscall); this_type=unchanged
-00617FB0	applied	JumpManagC::sub_00617FB0	owner=applied(JumpManagC::sub_00617FB0); this_type=unchanged
-00618170	applied	JumpManagC::sub_00618170	owner=applied(JumpManagC::sub_00618170); this_type=unchanged
-00618AD0	applied	JumpManagC::sub_00618AD0	owner=applied(JumpManagC::sub_00618AD0); parameters=applied(no explicit parameters); convention=applied(__thiscall); this_type=unchanged
-006191A0	applied	STJumpMineC::sub_006191A0	owner=applied(STJumpMineC::sub_006191A0); this_type=unchanged
-006192E0	applied	STJumpMineC::sub_006192E0	owner=applied(STJumpMineC::sub_006192E0); parameters=applied(no explicit parameters); convention=applied(__thiscall); this_type=unchanged
+006179D0	disabled	JumpManagC::sub_006179D0	all apply flags are 0
+00617FB0	disabled	JumpManagC::sub_00617FB0	all apply flags are 0
+00618170	disabled	JumpManagC::sub_00618170	all apply flags are 0
+00618AD0	disabled	JumpManagC::sub_00618AD0	all apply flags are 0
+006191A0	disabled	STJumpMineC::sub_006191A0	all apply flags are 0
+006192E0	disabled	STJumpMineC::sub_006192E0	all apply flags are 0
 00619320	disabled	STJumpMineC::sub_00619320	all apply flags are 0
-00619350	applied	STJumpMineC::sub_00619350	owner=applied(STJumpMineC::sub_00619350); this_type=unchanged
+00619350	disabled	STJumpMineC::sub_00619350	all apply flags are 0
 006193A0	disabled	STJumpMineC::sub_006193A0	all apply flags are 0
-006193E0	applied	STJumpMineC::sub_006193E0	owner=applied(STJumpMineC::sub_006193E0); parameters=applied(no explicit parameters); convention=applied(__thiscall); this_type=unchanged
-00619A20	applied	STJumpMineC::sub_00619A20	owner=applied(STJumpMineC::sub_00619A20); parameters=applied(no explicit parameters); convention=applied(__thiscall)
-00619C70	applied	STJumpMineC::sub_00619C70	owner=applied(STJumpMineC::sub_00619C70); parameters=applied(no explicit parameters); convention=applied(__thiscall)
-0061D650	applied	STLightC::sub_0061D650	owner=applied(STLightC::sub_0061D650); parameters=applied(no explicit parameters); convention=applied(__thiscall); this_type=unchanged
-0061D6D0	applied	STLightC::sub_0061D6D0	owner=applied(STLightC::sub_0061D6D0); parameters=applied(no explicit parameters); convention=applied(__thiscall); this_type=unchanged
-0061D710	applied	STLightC::sub_0061D710	owner=applied(STLightC::sub_0061D710); this_type=unchanged
-0061D8F0	applied	STLightC::sub_0061D8F0	owner=applied(STLightC::sub_0061D8F0); this_type=unchanged
-0061D9C0	applied	STLightC::sub_0061D9C0	owner=applied(STLightC::sub_0061D9C0); this_type=unchanged
+006193E0	disabled	STJumpMineC::sub_006193E0	all apply flags are 0
+00619A20	disabled	STJumpMineC::sub_00619A20	all apply flags are 0
+00619C70	disabled	STJumpMineC::sub_00619C70	all apply flags are 0
+0061B340	applied	STJumpMineC::sub_0061B340	owner=applied(STJumpMineC::sub_0061B340); this_type=unchanged
+0061D650	disabled	STLightC::sub_0061D650	all apply flags are 0
+0061D6D0	disabled	STLightC::sub_0061D6D0	all apply flags are 0
+0061D710	disabled	STLightC::sub_0061D710	all apply flags are 0
+0061D8F0	disabled	STLightC::sub_0061D8F0	all apply flags are 0
+0061D9C0	disabled	STLightC::sub_0061D9C0	all apply flags are 0
 0061DD40	disabled	STLightC::sub_0061DD40	all apply flags are 0
 0061DFE0	disabled	STLightC::sub_0061DFE0	all apply flags are 0
 0061E110	disabled	STLightC::sub_0061E110	all apply flags are 0
-0061E4F0	applied	STLightC::sub_0061E4F0	owner=applied(STLightC::sub_0061E4F0); parameters=applied(no explicit parameters); convention=applied(__thiscall); this_type=unchanged
+0061E4F0	disabled	STLightC::sub_0061E4F0	all apply flags are 0
 0061E7F0	disabled	STLightC::sub_0061E7F0	all apply flags are 0
-0061F290	applied	STLightC::sub_0061F290	owner=applied(STLightC::sub_0061F290); this_type=unchanged
-0061F530	applied	STLightC::sub_0061F530	owner=applied(STLightC::sub_0061F530); parameters=applied(no explicit parameters); convention=applied(__thiscall); this_type=unchanged
-0061FCC0	applied	SndUnderAttMenegC::sub_0061FCC0	owner=applied(SndUnderAttMenegC::sub_0061FCC0); parameters=applied(no explicit parameters); convention=applied(__thiscall); this_type=unchanged
-00622670	applied	STMineSetC::sub_00622670	owner=applied(STMineSetC::sub_00622670); parameters=applied(no explicit parameters); convention=applied(__thiscall); this_type=unchanged
-006226C0	applied	STMineSetC::sub_006226C0	owner=applied(STMineSetC::sub_006226C0); this_type=unchanged
-00622880	applied	STMineSetC::sub_00622880	owner=applied(STMineSetC::sub_00622880); parameters=applied(no explicit parameters); convention=applied(__thiscall); this_type=unchanged
+0061F290	disabled	STLightC::sub_0061F290	all apply flags are 0
+0061F530	disabled	STLightC::sub_0061F530	all apply flags are 0
+0061FCC0	disabled	SndUnderAttMenegC::sub_0061FCC0	all apply flags are 0
+00622670	disabled	STMineSetC::sub_00622670	all apply flags are 0
+006226C0	disabled	STMineSetC::sub_006226C0	all apply flags are 0
+00622880	disabled	STMineSetC::sub_00622880	all apply flags are 0
 00622990	disabled	STMineSetC::sub_00622990	all apply flags are 0
-00622BA0	applied	STMineSetC::sub_00622BA0	owner=applied(STMineSetC::sub_00622BA0); parameters=applied(no explicit parameters); convention=applied(__thiscall); this_type=unchanged
+00622BA0	disabled	STMineSetC::sub_00622BA0	all apply flags are 0
 00623600	disabled	STMineSetC::sub_00623600	all apply flags are 0
-006239A0	applied	STMineSetC::sub_006239A0	owner=applied(STMineSetC::sub_006239A0); parameters=applied(no explicit parameters); convention=applied(__thiscall)
-00625730	applied	STMineSetC::sub_00625730	owner=applied(STMineSetC::sub_00625730); this_type=unchanged
-00626B50	applied	STMineSetC::sub_00626B50	owner=applied(STMineSetC::sub_00626B50); this_type=unchanged
+006239A0	disabled	STMineSetC::sub_006239A0	all apply flags are 0
+00624920	applied	STMineSetC::sub_00624920	owner=applied(STMineSetC::sub_00624920); this_type=unchanged
+00625730	disabled	STMineSetC::sub_00625730	all apply flags are 0
+006263B0	disabled	STMineSetC::sub_006263B0	all apply flags are 0
+00626B50	disabled	STMineSetC::sub_00626B50	all apply flags are 0
+00626F10	disabled	STMineSetC::sub_00626F10	all apply flags are 0
 00627170	disabled	STMineSetC::sub_00627170	all apply flags are 0
 00627390	disabled	STMineSetC::sub_00627390	all apply flags are 0
-00627400	applied	STMineSetC::sub_00627400	owner=applied(STMineSetC::sub_00627400); this_type=unchanged
-00629830	applied	STParticleC::sub_00629830	owner=applied(STParticleC::sub_00629830); parameters=applied(no explicit parameters); convention=applied(__thiscall); this_type=unchanged
-00629E60	applied	STParticleC::sub_00629E60	owner=applied(STParticleC::sub_00629E60); this_type=unchanged
-00629F90	applied	STParticleC::sub_00629F90	owner=applied(STParticleC::sub_00629F90); this_type=unchanged
-0062A370	applied	STParticleC::sub_0062A370	owner=applied(STParticleC::sub_0062A370); this_type=unchanged
-0062A860	applied	STParticleC::sub_0062A860	owner=applied(STParticleC::sub_0062A860); parameters=applied(no explicit parameters); convention=applied(__thiscall); this_type=unchanged
-0062AEF0	applied	STParticleC::sub_0062AEF0	owner=applied(STParticleC::sub_0062AEF0); this_type=unchanged
+00627400	disabled	STMineSetC::sub_00627400	all apply flags are 0
+00627670	disabled	STMineSetC::sub_00627670	all apply flags are 0
+00629830	disabled	STParticleC::sub_00629830	all apply flags are 0
+00629E60	disabled	STParticleC::sub_00629E60	all apply flags are 0
+00629F20	applied	STParticleC::sub_00629F20	owner=applied(STParticleC::sub_00629F20); parameters=applied(no explicit parameters); convention=applied(__thiscall); this_type=unchanged
+00629F90	disabled	STParticleC::sub_00629F90	all apply flags are 0
+0062A370	disabled	STParticleC::sub_0062A370	all apply flags are 0
+0062A860	disabled	STParticleC::sub_0062A860	all apply flags are 0
+0062AEF0	disabled	STParticleC::sub_0062AEF0	all apply flags are 0
 0062AF40	disabled	STParticleC::sub_0062AF40	all apply flags are 0
-0062B4A0	applied	STParticleC::sub_0062B4A0	owner=applied(STParticleC::sub_0062B4A0); parameters=applied(no explicit parameters); convention=applied(__thiscall); this_type=unchanged
-0062CF50	applied	STManRub3C::sub_0062CF50	owner=applied(STManRub3C::sub_0062CF50); parameters=applied(no explicit parameters); convention=applied(__thiscall); this_type=unchanged
-0062D670	applied	STManRub3C::sub_0062D670	owner=applied(STManRub3C::sub_0062D670); this_type=unchanged
-0062D840	applied	STManRub3C::sub_0062D840	owner=applied(STManRub3C::sub_0062D840); this_type=unchanged
-0062DD40	applied	STManRub3C::sub_0062DD40	owner=applied(STManRub3C::sub_0062DD40); parameters=applied(no explicit parameters); convention=applied(__thiscall); this_type=unchanged
-0062E130	applied	STManRub3C::sub_0062E130	owner=applied(STManRub3C::sub_0062E130); parameters=applied(no explicit parameters); convention=applied(__thiscall); this_type=unchanged
+0062B4A0	disabled	STParticleC::sub_0062B4A0	all apply flags are 0
+0062CF50	disabled	STManRub3C::sub_0062CF50	all apply flags are 0
+0062D550	disabled	STManRub3C::sub_0062D550	all apply flags are 0
+0062D670	disabled	STManRub3C::sub_0062D670	all apply flags are 0
+0062D7D0	disabled	STManRub3C::sub_0062D7D0	all apply flags are 0
+0062D840	disabled	STManRub3C::sub_0062D840	all apply flags are 0
+0062DD40	disabled	STManRub3C::sub_0062DD40	all apply flags are 0
+0062E130	disabled	STManRub3C::sub_0062E130	all apply flags are 0
 0062EF00	disabled	STRubbishC::sub_0062EF00	all apply flags are 0
 0062F080	disabled	STRubbishC::sub_0062F080	all apply flags are 0
-0062F900	applied	STRubbishC::sub_0062F900	owner=applied(STRubbishC::sub_0062F900); parameters=applied(no explicit parameters); convention=applied(__thiscall); this_type=unchanged
-0062FCA0	applied	STRubbishC::sub_0062FCA0	owner=applied(STRubbishC::sub_0062FCA0)
-0062FEA0	applied	STRubbishC::sub_0062FEA0	owner=applied(STRubbishC::sub_0062FEA0); this_type=unchanged
+0062F900	disabled	STRubbishC::sub_0062F900	all apply flags are 0
+0062FCA0	disabled	STRubbishC::sub_0062FCA0	all apply flags are 0
+0062FEA0	disabled	STRubbishC::sub_0062FEA0	all apply flags are 0
 0062FFD0	disabled	STRubbishC::sub_0062FFD0	all apply flags are 0
-00630260	applied	STRubbishC::sub_00630260	owner=applied(STRubbishC::sub_00630260); this_type=unchanged
+00630260	disabled	STRubbishC::sub_00630260	all apply flags are 0
 006308B0	disabled	STManRuinC::sub_006308B0	all apply flags are 0
-00630C50	applied	STManRuinC::sub_00630C50	owner=applied(STManRuinC::sub_00630C50); this_type=unchanged
+00630AC0	applied	STManRuinC::sub_00630AC0	owner=applied(STManRuinC::sub_00630AC0); this_type=unchanged
+00630BB0	applied	STManRuinC::sub_00630BB0	owner=applied(STManRuinC::sub_00630BB0); this_type=unchanged
+00630C50	disabled		all apply flags are 0
 00630FF0	disabled	STManRuinC::sub_00630FF0	all apply flags are 0
-00631010	applied	STManRuinC::sub_00631010	owner=applied(STManRuinC::sub_00631010); parameters=applied(no explicit parameters); convention=applied(__thiscall); this_type=unchanged
-00631220	applied	STManRuinC::sub_00631220	owner=applied(STManRuinC::sub_00631220); this_type=unchanged
-00631390	applied	STManRuinC::sub_00631390	owner=applied(STManRuinC::sub_00631390); this_type=unchanged
-00631450	applied	STManRuinC::sub_00631450	owner=applied(STManRuinC::sub_00631450); parameters=applied(no explicit parameters); convention=applied(__thiscall); this_type=unchanged
-00631560	applied	STManRuinC::sub_00631560	owner=applied(STManRuinC::sub_00631560); parameters=applied(no explicit parameters); convention=applied(__thiscall); this_type=unchanged
+00631010	disabled	STManRuinC::sub_00631010	all apply flags are 0
+00631220	disabled	STManRuinC::sub_00631220	all apply flags are 0
+00631390	disabled	STManRuinC::sub_00631390	all apply flags are 0
+00631450	disabled	STManRuinC::sub_00631450	all apply flags are 0
+00631560	disabled	STManRuinC::sub_00631560	all apply flags are 0
+00631880	applied	STManRuinC::sub_00631880	owner=applied(STManRuinC::sub_00631880); this_type=unchanged
 006364B0	disabled	SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00636260::sub_006364B0	all apply flags are 0
 00636FC0	disabled	SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00636260::sub_00636FC0	all apply flags are 0
-00645F10	applied	SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00644410::sub_00645F10	owner=applied(SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00644410::sub_00645F10); this_type=unchanged
+00645F10	disabled	SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00644410::sub_00645F10	all apply flags are 0
 00646D00	disabled	STVolcanoC::sub_00646D00	all apply flags are 0
-00646D40	applied	STVolcanoC::sub_00646D40	owner=applied(STVolcanoC::sub_00646D40); this_type=unchanged
-00646DB0	applied	STVolcanoC::sub_00646DB0	owner=applied(STVolcanoC::sub_00646DB0); this_type=unchanged
-006472B0	applied	STVolcanoC::sub_006472B0	owner=applied(STVolcanoC::sub_006472B0); parameters=applied(no explicit parameters); convention=applied(__thiscall); this_type=unchanged
-006479E0	applied	STVolcanoC::sub_006479E0	owner=applied(STVolcanoC::sub_006479E0); parameters=applied(no explicit parameters); convention=applied(__thiscall); this_type=unchanged
+00646D40	disabled	STVolcanoC::sub_00646D40	all apply flags are 0
+00646DB0	disabled	STVolcanoC::sub_00646DB0	all apply flags are 0
+006472B0	disabled	STVolcanoC::sub_006472B0	all apply flags are 0
+006479E0	disabled	STVolcanoC::sub_006479E0	all apply flags are 0
 00647ED0	disabled	AiBossClassTy::sub_00647ED0	all apply flags are 0
 0065BD70	disabled	AiEventClassTy::sub_0065BD70	all apply flags are 0
 0065D480	disabled	AiFltClassTy::sub_0065D480	all apply flags are 0
-0065D6A0	applied	AiFltClassTy::sub_0065D6A0	owner=applied(AiFltClassTy::sub_0065D6A0); parameters=applied(no explicit parameters); convention=applied(__thiscall); this_type=unchanged
-0065D6E0	partial	AiFltClassTy::sub_0065D6E0	owner=applied(AiFltClassTy::sub_0065D6E0); this_type=conflict(no auto this parameter)
-0065D720	partial	AiFltClassTy::sub_0065D720	owner=applied(AiFltClassTy::sub_0065D720); this_type=conflict(no auto this parameter)
+0065D6A0	disabled	AiFltClassTy::sub_0065D6A0	all apply flags are 0
+0065D6E0	conflict	AiFltClassTy::sub_0065D6E0	this_type=conflict(no auto this parameter)
+0065D720	conflict	AiFltClassTy::sub_0065D720	this_type=conflict(no auto this parameter)
 0065D940	disabled	AiFltClassTy::sub_0065D940	all apply flags are 0
 0065D9C0	disabled	AiFltClassTy::sub_0065D9C0	all apply flags are 0
-0065DA10	partial	AiFltClassTy::sub_0065DA10	owner=applied(AiFltClassTy::sub_0065DA10); this_type=conflict(no auto this parameter)
-0065E360	partial	AiFltClassTy::sub_0065E360	owner=applied(AiFltClassTy::sub_0065E360); this_type=conflict(no auto this parameter)
+0065DA10	disabled	AiFltClassTy::sub_0065DA10	all apply flags are 0
+0065E360	conflict	AiFltClassTy::sub_0065E360	this_type=conflict(no auto this parameter)
 0065E3B0	disabled	AiFltClassTy::sub_0065E3B0	all apply flags are 0
 0065E6C0	disabled	AiFltClassTy::sub_0065E6C0	all apply flags are 0
 0065E700	disabled	SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0065ED90::sub_0065E700	all apply flags are 0
-0065F5C0	applied	AiFltClassTy::sub_0065F5C0	owner=applied(AiFltClassTy::sub_0065F5C0); this_type=unchanged
-0065F980	applied	AiFltClassTy::sub_0065F980	owner=applied(AiFltClassTy::sub_0065F980); parameters=applied(no explicit parameters); convention=applied(__thiscall); this_type=unchanged
-0065FA60	applied	AiFltClassTy::sub_0065FA60	owner=applied(AiFltClassTy::sub_0065FA60); this_type=unchanged
-00660F70	applied	AiFltClassTy::sub_00660F70	owner=applied(AiFltClassTy::sub_00660F70); this_type=unchanged
-00661580	applied	AiFltClassTy::sub_00661580	owner=applied(AiFltClassTy::sub_00661580); parameters=applied(no explicit parameters); convention=applied(__thiscall); this_type=unchanged
-00661800	partial	AiFltClassTy::sub_00661800	owner=applied(AiFltClassTy::sub_00661800); this_type=conflict(no auto this parameter)
-00661CA0	partial	AiFltClassTy::sub_00661CA0	owner=applied(AiFltClassTy::sub_00661CA0); this_type=conflict(no auto this parameter)
-00664760	applied	AiFltClassTy::sub_00664760	owner=applied(AiFltClassTy::sub_00664760); parameters=applied(no explicit parameters); convention=applied(__thiscall)
-00664960	applied	AiFltClassTy::sub_00664960	owner=applied(AiFltClassTy::sub_00664960)
-00668F50	applied	SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0064A970::sub_00668F50	owner=applied(SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0064A970::sub_00668F50); this_type=unchanged
+0065F5C0	disabled	AiFltClassTy::sub_0065F5C0	all apply flags are 0
+0065F980	disabled	AiFltClassTy::sub_0065F980	all apply flags are 0
+0065FA60	disabled		all apply flags are 0
+00660F70	disabled	AiFltClassTy::sub_00660F70	all apply flags are 0
+00661580	disabled	AiFltClassTy::sub_00661580	all apply flags are 0
+00661800	conflict	AiFltClassTy::sub_00661800	this_type=conflict(no auto this parameter)
+00661CA0	conflict	AiFltClassTy::sub_00661CA0	this_type=conflict(no auto this parameter)
+00664760	disabled	AiFltClassTy::sub_00664760	all apply flags are 0
+00664960	disabled	AiFltClassTy::sub_00664960	all apply flags are 0
+00668F50	disabled	SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0064A970::sub_00668F50	all apply flags are 0
 00671F10	disabled	SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0064A970::sub_00671F10	all apply flags are 0
 00674FB0	disabled	AiFltClassTy::sub_00674FB0	all apply flags are 0
 00678BA0	disabled	AiPlrClassTy::sub_00678BA0	all apply flags are 0
 00678E00	disabled		all apply flags are 0
-00678FC0	applied	AiPlrClassTy::sub_00678FC0	owner=applied(AiPlrClassTy::sub_00678FC0); parameters=applied(no explicit parameters); convention=applied(__thiscall); this_type=unchanged
-0067A240	applied	AiPlrClassTy::sub_0067A240	owner=applied(AiPlrClassTy::sub_0067A240); this_type=unchanged
+00678FC0	disabled	AiPlrClassTy::sub_00678FC0	all apply flags are 0
+0067A020	applied	AiPlrClassTy::sub_0067A020	owner=applied(AiPlrClassTy::sub_0067A020); this_type=unchanged
+0067A240	disabled	AiPlrClassTy::sub_0067A240	all apply flags are 0
 0067B1A0	disabled	AiPlrClassTy::sub_0067B1A0	all apply flags are 0
 0067B2E0	disabled	AiPlrClassTy::sub_0067B2E0	all apply flags are 0
 0067BE20	disabled	AiPlrClassTy::sub_0067BE20	all apply flags are 0
-0067BFD0	applied	AiPlrClassTy::sub_0067BFD0	owner=applied(AiPlrClassTy::sub_0067BFD0); this_type=unchanged
-0067C110	applied	AiPlrClassTy::sub_0067C110	owner=applied(AiPlrClassTy::sub_0067C110); parameters=applied(no explicit parameters); convention=applied(__thiscall); this_type=unchanged
-0068E010	applied	AiTactClassTy::sub_0068E010	owner=applied(AiTactClassTy::sub_0068E010); parameters=applied(no explicit parameters); convention=applied(__thiscall); this_type=unchanged
+0067BEF0	applied	AiPlrClassTy::sub_0067BEF0	owner=applied(AiPlrClassTy::sub_0067BEF0); parameters=applied(no explicit parameters); convention=applied(__thiscall)
+0067BF30	applied	AiPlrClassTy::sub_0067BF30	owner=applied(AiPlrClassTy::sub_0067BF30); parameters=applied(no explicit parameters); convention=applied(__thiscall)
+0067BFD0	disabled	AiPlrClassTy::sub_0067BFD0	all apply flags are 0
+0067C110	disabled	AiPlrClassTy::sub_0067C110	all apply flags are 0
+0068E010	disabled	AiTactClassTy::sub_0068E010	all apply flags are 0
 0068E220	disabled	AiTactClassTy::sub_0068E220	all apply flags are 0
-0068E290	applied	AiTactClassTy::sub_0068E290	owner=applied(AiTactClassTy::sub_0068E290); this_type=unchanged
-0068E480	applied	AiTactClassTy::sub_0068E480	owner=applied(AiTactClassTy::sub_0068E480); this_type=unchanged
-0068E610	applied	AiTactClassTy::sub_0068E610	owner=applied(AiTactClassTy::sub_0068E610); this_type=unchanged
+0068E290	disabled	AiTactClassTy::sub_0068E290	all apply flags are 0
+0068E480	disabled	AiTactClassTy::sub_0068E480	all apply flags are 0
+0068E610	disabled	AiTactClassTy::sub_0068E610	all apply flags are 0
 0068E850	disabled	AiTactClassTy::sub_0068E850	all apply flags are 0
 0068E8C0	disabled	AiTactClassTy::sub_0068E8C0	all apply flags are 0
-00690230	applied	AiTactClassTy::sub_00690230	owner=applied(AiTactClassTy::sub_00690230); this_type=unchanged
-006902B0	applied	AiTactClassTy::sub_006902B0	owner=applied(AiTactClassTy::sub_006902B0); this_type=unchanged
+00690230	disabled	AiTactClassTy::sub_00690230	all apply flags are 0
+006902B0	disabled	AiTactClassTy::sub_006902B0	all apply flags are 0
 00690550	disabled	AiTactClassTy::sub_00690550	all apply flags are 0
-00690A40	applied	AiTactClassTy::sub_00690A40	owner=applied(AiTactClassTy::sub_00690A40); parameters=applied(no explicit parameters); convention=applied(__thiscall); this_type=unchanged
-00690AB0	applied	AiTactClassTy::sub_00690AB0	owner=applied(AiTactClassTy::sub_00690AB0); parameters=applied(no explicit parameters); convention=applied(__thiscall); this_type=unchanged
-0069FF90	applied	CGenerate::sub_0069FF90	owner=applied(CGenerate::sub_0069FF90); parameters=applied(no explicit parameters); convention=applied(__thiscall); this_type=unchanged
+00690A40	disabled	AiTactClassTy::sub_00690A40	all apply flags are 0
+00690AB0	disabled	AiTactClassTy::sub_00690AB0	all apply flags are 0
+00691480	disabled	AiTactClassTy::sub_00691480	all apply flags are 0
+0069FF90	disabled	CGenerate::sub_0069FF90	all apply flags are 0
 006B0020	disabled		all apply flags are 0
 006B0C70	disabled		all apply flags are 0
 006B4170	disabled	MReportTy::sub_006B4170	all apply flags are 0
+006B5570	disabled	STAppC::sub_006B5570	all apply flags are 0
 006B5B10	disabled	SubmarineTitans::Recovered::HiddenThis::AnonReceiver_005B5BE0::sub_006B5B10	all apply flags are 0
 006B5EE0	disabled	MReportTy::sub_006B5EE0	all apply flags are 0
 006B6110	disabled	StartSystemTy::sub_006B6110	all apply flags are 0
 006B6500	disabled	StartSystemTy::sub_006B6500	all apply flags are 0
-006E25D0	disabled	SubmarineTitans::Recovered::HiddenThis::AnonReceiver_004248D0::sub_006E25D0	all apply flags are 0
+006E25D0	disabled	SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00424E10::sub_006E25D0	all apply flags are 0
 006E3DB0	disabled	STAppC::sub_006E3DB0	all apply flags are 0
+006E4290	disabled	STAppC::sub_006E4290	all apply flags are 0
 006E4B80	disabled	STAppC::sub_006E4B80	all apply flags are 0
-006E5150	applied	STAppC::sub_006E5150	owner=applied(STAppC::sub_006E5150); this_type=unchanged
-006E51B0	applied	STAppC::sub_006E51B0	owner=applied(STAppC::sub_006E51B0); parameters=applied(no explicit parameters); convention=applied(__thiscall)
+006E5150	disabled	STAppC::sub_006E5150	all apply flags are 0
+006E51B0	disabled	STAppC::sub_006E51B0	all apply flags are 0
 006E52D0	disabled		all apply flags are 0
 006E5360	disabled	StartSystemTy::sub_006E5360	all apply flags are 0
 006E56B0	disabled	StartSystemTy::sub_006E56B0	all apply flags are 0
@@ -459,9 +501,9 @@ address	status	proposed_name	detail
 006E6000	disabled		all apply flags are 0
 006E6020	disabled		all apply flags are 0
 006E6080	disabled		all apply flags are 0
-006E60A0	disabled	STJellyGunC::sub_006E60A0	all apply flags are 0
+006E60A0	disabled		all apply flags are 0
 006E60E0	disabled		all apply flags are 0
-006EA460	applied	SubmarineTitans::Recovered::HiddenThis::AnonReceiver_006EA050::sub_006EA460	owner=applied(SubmarineTitans::Recovered::HiddenThis::AnonReceiver_006EA050::sub_006EA460); this_type=unchanged
+006EA460	disabled	SubmarineTitans::Recovered::HiddenThis::AnonReceiver_006EA050::sub_006EA460	all apply flags are 0
 006F31D0	disabled	SubmarineTitans::Recovered::HiddenThis::AnonReceiver_006F31D0::sub_006F31D0	all apply flags are 0
 00702510	disabled	SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00702510::sub_00702510	all apply flags are 0
 00702A30	disabled	SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00702510::sub_00702A30	all apply flags are 0

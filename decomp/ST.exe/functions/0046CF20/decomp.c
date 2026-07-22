@@ -100,11 +100,11 @@ LAB_0046d1e2:
         if ((((this->field_051C < 0) || (this->field_051E < 0)) ||
             (sVar2 = this->field_051C, sVar3 = this->field_051E, sVar4 = this->field_0520,
             this->field_0520 < 0)) &&
-           (iVar6 = sub_0048DFD0(this,this->field_0510,this->field_0512,this->field_0514,
-                                 this->field_0510,this->field_0512,
-                                 (int *)(uint)(ushort)this->field_0514,2,&local_18,&local_16,
-                                 local_14), sVar2 = local_18, sVar3 = local_16, sVar4 = local_14[0],
-           iVar6 == 0)) {
+           (iVar6 = SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0048DFD0::sub_0048DFD0
+                              ((AnonReceiver_0048DFD0 *)this,this->field_0510,this->field_0512,
+                               this->field_0514,this->field_0510,this->field_0512,
+                               (int *)(uint)(ushort)this->field_0514,2,&local_18,&local_16,local_14)
+           , sVar2 = local_18, sVar3 = local_16, sVar4 = local_14[0], iVar6 == 0)) {
           sVar2 = this->field_0510;
           sVar3 = this->field_0512;
           sVar4 = this->field_0514;

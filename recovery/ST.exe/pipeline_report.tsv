@@ -1,0 +1,6 @@
+sequence	script	status	duration_ms	argument	detail
+1	STRecoveredTypesApplier.java	completed	67		
+2	STDebugSymbolAnalyzer.java	completed	900	/Users/nekto/st/recovery	
+3	STDebugSymbolApplier.java	completed	150	/Users/nekto/st/recovery/ST.exe/proposals.tsv	program_modification=25643->28266
+4	STCuratedRecoveryApplier.java	completed	325	/Users/nekto/st/recovery/ST.exe/curated_recovery.tsv	program_modification=28266->28298
+5	STCallsiteConventionAnalyzer.java	failed	543	/Users/nekto/st/recovery/ST.exe/debug_calling_convention_review.tsv	Unexpected open Program transaction after STCallsiteConventionAnalyzer.java: STCallsiteConventionAnalyzer

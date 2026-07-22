@@ -40,7 +40,6 @@ target	target_kind	status	detail
 /SubmarineTitans/Recovered/VTables/CFsgsConnectionVTable+16	vtable_slot	disabled	apply=0
 /SubmarineTitans/Recovered/VTables/CFsgsConnectionVTable+20	vtable_slot	disabled	apply=0
 /SubmarineTitans/Recovered/VTables/CFsgsConnectionVTable+24	vtable_slot	disabled	apply=0
-/SubmarineTitans/Recovered/VTables/CFsgsConnectionVTable+28	vtable_slot	applied	void __thiscall OnStartGameReply(ulong param_1)
 /SubmarineTitans/Recovered/VTables/CFsgsConnectionVTable+32	vtable_slot	disabled	apply=0
 /SubmarineTitans/Recovered/VTables/CFsgsConnectionVTable+36	vtable_slot	disabled	apply=0
 /SubmarineTitans/Recovered/VTables/CFsgsConnectionVTable+40	vtable_slot	disabled	apply=0
@@ -49,7 +48,6 @@ target	target_kind	status	detail
 /SubmarineTitans/Recovered/VTables/CFsgsConnectionVTable+52	vtable_slot	disabled	apply=0
 /SubmarineTitans/Recovered/VTables/CFsgsConnectionVTable+56	vtable_slot	disabled	apply=0
 /SubmarineTitans/Recovered/VTables/CFsgsConnectionVTable+60	vtable_slot	disabled	apply=0
-/SubmarineTitans/Recovered/VTables/CFsgsConnectionVTable+64	vtable_slot	applied	void __thiscall OnGameUpdateReceived(ulong param_1, char * param_2)
 /SubmarineTitans/Recovered/VTables/CFsgsConnectionVTable+68	vtable_slot	disabled	apply=0
 /SubmarineTitans/Recovered/VTables/CFsgsConnectionVTable+72	vtable_slot	disabled	apply=0
 /SubmarineTitans/Recovered/VTables/CFsgsConnectionVTable+76	vtable_slot	disabled	apply=0
@@ -582,12 +580,6 @@ target	target_kind	status	detail
 /SubmarineTitans/Recovered/VTables/STGameObjCVTable+208	vtable_slot	disabled	apply=0
 /SubmarineTitans/Recovered/VTables/STGroupBoatCVTable+4	vtable_slot	disabled	apply=0
 /SubmarineTitans/Recovered/VTables/STGroupBoatCVTable+24	vtable_slot	disabled	apply=0
-/SubmarineTitans/Recovered/VTables/STGroupCVTable+4	vtable_slot	disabled	apply=0
-/SubmarineTitans/Recovered/VTables/STGroupCVTable+12	vtable_slot	disabled	apply=0
-/SubmarineTitans/Recovered/VTables/STGroupCVTable+24	vtable_slot	disabled	apply=0
-/SubmarineTitans/Recovered/VTables/STGroupCVTable+28	vtable_slot	disabled	apply=0
-/SubmarineTitans/Recovered/VTables/STGroupCVTable+32	vtable_slot	disabled	apply=0
-/SubmarineTitans/Recovered/VTables/STGroupCVTable+36	vtable_slot	disabled	apply=0
 /SubmarineTitans/Recovered/VTables/STJellyGunCVTable+4	vtable_slot	disabled	apply=0
 /SubmarineTitans/Recovered/VTables/STJellyGunCVTable+8	vtable_slot	disabled	apply=0
 /SubmarineTitans/Recovered/VTables/STJellyGunCVTable+12	vtable_slot	disabled	apply=0
@@ -1406,6 +1398,12 @@ target	target_kind	status	detail
 /SubmarineTitans/Recovered/VTables/TLOFakeTyVTable+280	vtable_slot	disabled	apply=0
 /SubmarineTitans/Recovered/VTables/TLOFakeTyVTable+284	vtable_slot	disabled	apply=0
 /SubmarineTitans/Recovered/VTables/TLOFakeTyVTable+288	vtable_slot	disabled	apply=0
+/SubmarineTitans/Recovered/VTables/VTable_00790508+4	vtable_slot	disabled	apply=0
+/SubmarineTitans/Recovered/VTables/VTable_00790508+12	vtable_slot	disabled	apply=0
+/SubmarineTitans/Recovered/VTables/VTable_00790508+24	vtable_slot	disabled	apply=0
+/SubmarineTitans/Recovered/VTables/VTable_00790508+28	vtable_slot	disabled	apply=0
+/SubmarineTitans/Recovered/VTables/VTable_00790508+32	vtable_slot	disabled	apply=0
+/SubmarineTitans/Recovered/VTables/VTable_00790508+36	vtable_slot	disabled	apply=0
 /SubmarineTitans/Recovered/VTables/VTable_00790700+0	vtable_slot	disabled	apply=0
 /SubmarineTitans/Recovered/VTables/VTable_00790708+0	vtable_slot	disabled	apply=0
 /SubmarineTitans/Recovered/VTables/VTable_00790790+0	vtable_slot	disabled	apply=0
@@ -1875,14 +1873,12 @@ target	target_kind	status	detail
 /SubmarineTitans/Recovered/VTables/VTable_0079DB78+92	vtable_slot	disabled	apply=0
 /SubmarineTitans/Recovered/VTables/VTable_0079DB78+96	vtable_slot	disabled	apply=0
 /SubmarineTitans/Recovered/VTables/VTable_0079DB78+100	vtable_slot	disabled	apply=0
-/SubmarineTitans/Recovered/VTables/VTable_0079DB78+104	vtable_slot	applied	long __thiscall EndOfStream(void)
 /SubmarineTitans/Recovered/VTables/VTable_0079DB78+108	vtable_slot	disabled	apply=0
 /SubmarineTitans/Recovered/VTables/VTable_0079DB78+112	vtable_slot	disabled	apply=0
 /SubmarineTitans/Recovered/VTables/VTable_0079DB78+116	vtable_slot	disabled	apply=0
 /SubmarineTitans/Recovered/VTables/VTable_0079DB78+120	vtable_slot	disabled	apply=0
 /SubmarineTitans/Recovered/VTables/VTable_0079DB78+124	vtable_slot	disabled	apply=0
 /SubmarineTitans/Recovered/VTables/VTable_0079DB78+128	vtable_slot	disabled	apply=0
-/SubmarineTitans/Recovered/VTables/VTable_0079DB78+132	vtable_slot	applied	long __thiscall BeginFlush(void)
 /SubmarineTitans/Recovered/VTables/VTable_0079DB78+136	vtable_slot	disabled	apply=0
 /SubmarineTitans/Recovered/VTables/VTable_0079DB78+140	vtable_slot	disabled	apply=0
 /SubmarineTitans/Recovered/VTables/VTable_0079DB78+144	vtable_slot	disabled	apply=0
@@ -2188,14 +2184,12 @@ target	target_kind	status	detail
 /SubmarineTitans/Recovered/VTables/VTable_007A13D0+92	vtable_slot	disabled	apply=0
 /SubmarineTitans/Recovered/VTables/VTable_007A13D0+96	vtable_slot	disabled	apply=0
 /SubmarineTitans/Recovered/VTables/VTable_007A13D0+100	vtable_slot	disabled	apply=0
-/SubmarineTitans/Recovered/VTables/VTable_007A13D0+104	vtable_slot	applied	long __thiscall EndOfStream(void)
 /SubmarineTitans/Recovered/VTables/VTable_007A13D0+108	vtable_slot	disabled	apply=0
 /SubmarineTitans/Recovered/VTables/VTable_007A13D0+112	vtable_slot	disabled	apply=0
 /SubmarineTitans/Recovered/VTables/VTable_007A13D0+116	vtable_slot	disabled	apply=0
 /SubmarineTitans/Recovered/VTables/VTable_007A13D0+120	vtable_slot	disabled	apply=0
 /SubmarineTitans/Recovered/VTables/VTable_007A13D0+124	vtable_slot	disabled	apply=0
 /SubmarineTitans/Recovered/VTables/VTable_007A13D0+128	vtable_slot	disabled	apply=0
-/SubmarineTitans/Recovered/VTables/VTable_007A13D0+132	vtable_slot	applied	long __thiscall BeginFlush(void)
 /SubmarineTitans/Recovered/VTables/VTable_007A13D0+136	vtable_slot	disabled	apply=0
 /SubmarineTitans/Recovered/VTables/VTable_007A13D0+140	vtable_slot	disabled	apply=0
 /SubmarineTitans/Recovered/VTables/VTable_007A13D0+144	vtable_slot	disabled	apply=0
@@ -2314,14 +2308,12 @@ target	target_kind	status	detail
 /SubmarineTitans/Recovered/VTables/VTable_007A15E8+92	vtable_slot	disabled	apply=0
 /SubmarineTitans/Recovered/VTables/VTable_007A15E8+96	vtable_slot	disabled	apply=0
 /SubmarineTitans/Recovered/VTables/VTable_007A15E8+100	vtable_slot	disabled	apply=0
-/SubmarineTitans/Recovered/VTables/VTable_007A15E8+104	vtable_slot	applied	long __thiscall EndOfStream(void)
 /SubmarineTitans/Recovered/VTables/VTable_007A15E8+108	vtable_slot	disabled	apply=0
 /SubmarineTitans/Recovered/VTables/VTable_007A15E8+112	vtable_slot	disabled	apply=0
 /SubmarineTitans/Recovered/VTables/VTable_007A15E8+116	vtable_slot	disabled	apply=0
 /SubmarineTitans/Recovered/VTables/VTable_007A15E8+120	vtable_slot	disabled	apply=0
 /SubmarineTitans/Recovered/VTables/VTable_007A15E8+124	vtable_slot	disabled	apply=0
 /SubmarineTitans/Recovered/VTables/VTable_007A15E8+128	vtable_slot	disabled	apply=0
-/SubmarineTitans/Recovered/VTables/VTable_007A15E8+132	vtable_slot	applied	long __thiscall BeginFlush(void)
 /SubmarineTitans/Recovered/VTables/VTable_007A15E8+136	vtable_slot	disabled	apply=0
 /SubmarineTitans/Recovered/VTables/VTable_007A15E8+140	vtable_slot	disabled	apply=0
 /SubmarineTitans/Recovered/VTables/VTable_007A15E8+144	vtable_slot	disabled	apply=0

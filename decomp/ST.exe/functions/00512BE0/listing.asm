@@ -1,4 +1,4 @@
-HelpPanelTy::sub_00512BE0:
+SubmarineTitans::Recovered::HiddenThis::AnonReceiver_004EEFB0::sub_00512BE0:
 00512BE0  55                        PUSH EBP
 00512BE1  8B EC                     MOV EBP,ESP
 00512BE3  81 EC C0 08 00 00         SUB ESP,0x8c0

@@ -30,6 +30,8 @@ public class STReturnSemanticsApplier extends GhidraScript {
 
     @Override
     protected void run() throws Exception {
+        // Explicit per-script transactions must not be nested in GhidraScript's wrapper.
+        end(true);
         if (currentProgram == null) { printerr("Open the analyzed ST program first."); return; }
         File file = inputFile(); if (file == null) return;
         Tsv input = read(file.toPath());

@@ -8,14 +8,14 @@ int __thiscall STT3DSprC::sub_004ACE60(STT3DSprC *this,char param_1)
 
 {
   ushort *puVar1;
-  int iVar2;
+  AnonPointee_STT3DSprC_0020 *pAVar2;
   int iVar3;
 
   iVar3 = (int)param_1;
   FUN_006e9490(this->field_003C,(uint *)this->field_0018,iVar3,1);
-  iVar2 = this->field_0020;
-  puVar1 = (ushort *)(iVar2 + 0xe + iVar3 * 0x24);
+  pAVar2 = this->field_0020;
+  puVar1 = (ushort *)(&pAVar2->field_0xe + iVar3 * 0x24);
   *puVar1 = *puVar1 & 0xffdf;
-  return iVar2 + 0xe + iVar3 * 0x24;
+  return (int)(&pAVar2->field_0xe + iVar3 * 0x24);
 }
 

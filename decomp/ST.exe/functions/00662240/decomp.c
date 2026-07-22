@@ -1425,7 +1425,10 @@ LAB_0066380d:
         if (sVar4 != 3) goto LAB_0066380d;
         iVar10 = 0x62;
       }
-      pDVar15 = (DArrayTy *)sub_0065FA60(local_c,iVar10,(sVar4 != 3) - 1 & 2,(short *)0x0);
+      pDVar15 = (DArrayTy *)
+                SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0065FA60::sub_0065FA60
+                          ((AnonReceiver_0065FA60 *)local_c,iVar10,(sVar4 != 3) - 1 & 2,(short *)0x0
+                          );
       if (pDVar15 != (DArrayTy *)0x0) {
         *(undefined1 *)(param_1 + 2) = 1;
         DArrayDestroy(pDVar15);

@@ -218,7 +218,7 @@ void __thiscall AiEventClassTy::GetMessage(AiEventClassTy *this,STMessage *messa
                                                      (short *)local_16c);
                           if (iVar7 < 0) {
                             thunk_FUN_0064d0e0(this_00,iVar7,&this_00->field_0x4,uVar32,-1);
-                            goto cf_switch_join_00659A73;
+                            goto cf_common_join_00659A73;
                           }
                           if (iVar7 != 0x19) {
                             local_174 = 0;
@@ -255,7 +255,7 @@ void __thiscall AiEventClassTy::GetMessage(AiEventClassTy *this,STMessage *messa
                                             local_c = (DArrayTy *)((int)&local_c[-1].data + 3);
                                           } while (local_c != (DArrayTy *)0x0);
                                         }
-                                        goto cf_switch_join_00659A73;
+                                        goto cf_common_join_00659A73;
                                       }
                                     }
                                     break;
@@ -304,7 +304,7 @@ void __thiscall AiEventClassTy::GetMessage(AiEventClassTy *this,STMessage *messa
                                           } while (local_c != (DArrayTy *)0x0);
                                           local_c = (DArrayTy *)0x0;
                                         }
-                                        goto cf_switch_join_00659A73;
+                                        goto cf_common_join_00659A73;
                                       }
                                     }
                                     break;
@@ -353,7 +353,7 @@ void __thiscall AiEventClassTy::GetMessage(AiEventClassTy *this,STMessage *messa
                                           } while (local_c != (DArrayTy *)0x0);
                                           local_c = (DArrayTy *)0x0;
                                         }
-                                        goto cf_switch_join_00659A73;
+                                        goto cf_common_join_00659A73;
                                       }
                                     }
                                     break;
@@ -405,7 +405,7 @@ void __thiscall AiEventClassTy::GetMessage(AiEventClassTy *this,STMessage *messa
                                           } while (local_8 != (DArrayTy *)0x0);
                                           local_8 = (DArrayTy *)0x0;
                                         }
-                                        goto cf_switch_join_00659A73;
+                                        goto cf_common_join_00659A73;
                                       }
                                     }
                                     break;
@@ -441,7 +441,7 @@ void __thiscall AiEventClassTy::GetMessage(AiEventClassTy *this,STMessage *messa
                                             local_c = (DArrayTy *)((int)&local_c[-1].data + 3);
                                           } while (local_c != (DArrayTy *)0x0);
                                         }
-                                        goto cf_switch_join_00659A73;
+                                        goto cf_common_join_00659A73;
                                       }
                                     }
                                     break;
@@ -477,7 +477,7 @@ void __thiscall AiEventClassTy::GetMessage(AiEventClassTy *this,STMessage *messa
                                             local_c = (DArrayTy *)((int)&local_c[-1].data + 3);
                                           } while (local_c != (DArrayTy *)0x0);
                                         }
-                                        goto cf_switch_join_00659A73;
+                                        goto cf_common_join_00659A73;
                                       }
                                     }
                                     break;
@@ -541,7 +541,7 @@ void __thiscall AiEventClassTy::GetMessage(AiEventClassTy *this,STMessage *messa
                                           } while (local_c != (DArrayTy *)0x0);
                                           local_c = (DArrayTy *)0x0;
                                         }
-                                        goto cf_switch_join_00659A73;
+                                        goto cf_common_join_00659A73;
                                       }
                                     }
                                     break;
@@ -588,7 +588,7 @@ void __thiscall AiEventClassTy::GetMessage(AiEventClassTy *this,STMessage *messa
                                           } while (local_c != (DArrayTy *)0x0);
                                           local_c = (DArrayTy *)0x0;
                                         }
-                                        goto cf_switch_join_00659A73;
+                                        goto cf_common_join_00659A73;
                                       }
                                     }
                                     break;
@@ -672,7 +672,7 @@ LAB_006577ae:
                                           } while (local_c != (DArrayTy *)0x0);
                                           local_c = (DArrayTy *)0x0;
                                         }
-                                        goto cf_switch_join_00659A73;
+                                        goto cf_common_join_00659A73;
                                       }
                                     }
                                     break;
@@ -748,7 +748,7 @@ LAB_00657a41:
                                           } while (local_c != (DArrayTy *)0x0);
                                           local_c = (DArrayTy *)0x0;
                                         }
-                                        goto cf_switch_join_00659A73;
+                                        goto cf_common_join_00659A73;
                                       }
                                     }
                                     break;
@@ -828,7 +828,7 @@ LAB_006578fe:
                                           } while (local_c != (DArrayTy *)0x0);
                                           local_c = (DArrayTy *)0x0;
                                         }
-                                        goto cf_switch_join_00659A73;
+                                        goto cf_common_join_00659A73;
                                       }
                                     }
                                     break;
@@ -916,7 +916,7 @@ LAB_00657bce:
                                           } while (local_c != (DArrayTy *)0x0);
                                           local_c = (DArrayTy *)0x0;
                                         }
-                                        goto cf_switch_join_00659A73;
+                                        goto cf_common_join_00659A73;
                                       }
                                     }
                                     break;
@@ -976,7 +976,7 @@ LAB_00657ccf:
                                           } while (local_c != (DArrayTy *)0x0);
                                           local_c = (DArrayTy *)0x0;
                                         }
-                                        goto cf_switch_join_00659A73;
+                                        goto cf_common_join_00659A73;
                                       }
                                     }
                                     break;
@@ -1039,7 +1039,7 @@ LAB_00657dd9:
                                           } while (local_c != (DArrayTy *)0x0);
                                           local_c = (DArrayTy *)0x0;
                                         }
-                                        goto cf_switch_join_00659A73;
+                                        goto cf_common_join_00659A73;
                                       }
                                     }
                                     break;
@@ -1115,7 +1115,7 @@ LAB_00657f1c:
                                           } while (local_c != (DArrayTy *)0x0);
                                           local_c = (DArrayTy *)0x0;
                                         }
-                                        goto cf_switch_join_00659A73;
+                                        goto cf_common_join_00659A73;
                                       }
                                     }
                                     break;
@@ -1188,7 +1188,7 @@ LAB_0065806e:
                                           } while (local_c != (DArrayTy *)0x0);
                                           local_c = (DArrayTy *)0x0;
                                         }
-                                        goto cf_switch_join_00659A73;
+                                        goto cf_common_join_00659A73;
                                       }
                                     }
                                     break;
@@ -1249,7 +1249,7 @@ LAB_00658177:
                                           } while (local_c != (DArrayTy *)0x0);
                                           local_c = (DArrayTy *)0x0;
                                         }
-                                        goto cf_switch_join_00659A73;
+                                        goto cf_common_join_00659A73;
                                       }
                                     }
                                     break;
@@ -1330,7 +1330,7 @@ LAB_00658b70:
                                           } while (local_c != (DArrayTy *)0x0);
                                           local_c = (DArrayTy *)0x0;
                                         }
-                                        goto cf_switch_join_00659A73;
+                                        goto cf_common_join_00659A73;
                                       }
                                     }
                                     break;
@@ -1421,7 +1421,7 @@ LAB_00658d01:
                                           } while (local_c != (DArrayTy *)0x0);
                                           local_c = (DArrayTy *)0x0;
                                         }
-                                        goto cf_switch_join_00659A73;
+                                        goto cf_common_join_00659A73;
                                       }
                                     }
                                     break;
@@ -1505,7 +1505,7 @@ LAB_00658e8e:
                                           } while (local_c != (DArrayTy *)0x0);
                                           local_c = (DArrayTy *)0x0;
                                         }
-                                        goto cf_switch_join_00659A73;
+                                        goto cf_common_join_00659A73;
                                       }
                                     }
                                     break;
@@ -1579,7 +1579,7 @@ LAB_00658fc8:
                                           } while (local_c != (DArrayTy *)0x0);
                                           local_c = (DArrayTy *)0x0;
                                         }
-                                        goto cf_switch_join_00659A73;
+                                        goto cf_common_join_00659A73;
                                       }
                                     }
                                     break;
@@ -1657,7 +1657,7 @@ LAB_006582b3:
                                           } while (local_c != (DArrayTy *)0x0);
                                           local_c = (DArrayTy *)0x0;
                                         }
-                                        goto cf_switch_join_00659A73;
+                                        goto cf_common_join_00659A73;
                                       }
                                     }
                                     break;
@@ -1738,7 +1738,7 @@ LAB_00658416:
                                           } while (local_c != (DArrayTy *)0x0);
                                           local_c = (DArrayTy *)0x0;
                                         }
-                                        goto cf_switch_join_00659A73;
+                                        goto cf_common_join_00659A73;
                                       }
                                     }
                                     break;
@@ -1810,7 +1810,7 @@ LAB_00658543:
                                           } while (local_c != (DArrayTy *)0x0);
                                           local_c = (DArrayTy *)0x0;
                                         }
-                                        goto cf_switch_join_00659A73;
+                                        goto cf_common_join_00659A73;
                                       }
                                     }
                                     break;
@@ -1882,7 +1882,7 @@ LAB_00658670:
                                           } while (local_c != (DArrayTy *)0x0);
                                           local_c = (DArrayTy *)0x0;
                                         }
-                                        goto cf_switch_join_00659A73;
+                                        goto cf_common_join_00659A73;
                                       }
                                     }
                                     break;
@@ -1963,7 +1963,7 @@ LAB_006587e2:
                                           } while (local_c != (DArrayTy *)0x0);
                                           local_c = (DArrayTy *)0x0;
                                         }
-                                        goto cf_switch_join_00659A73;
+                                        goto cf_common_join_00659A73;
                                       }
                                     }
                                     break;
@@ -2024,7 +2024,7 @@ LAB_006588eb:
                                           } while (local_c != (DArrayTy *)0x0);
                                           local_c = (DArrayTy *)0x0;
                                         }
-                                        goto cf_switch_join_00659A73;
+                                        goto cf_common_join_00659A73;
                                       }
                                     }
                                     break;
@@ -2090,7 +2090,7 @@ LAB_006589fe:
                                           } while (local_c != (DArrayTy *)0x0);
                                           local_c = (DArrayTy *)0x0;
                                         }
-                                        goto cf_switch_join_00659A73;
+                                        goto cf_common_join_00659A73;
                                       }
                                     }
                                     break;
@@ -2175,7 +2175,7 @@ LAB_00659143:
                                           } while (local_c != (DArrayTy *)0x0);
                                           local_c = (DArrayTy *)0x0;
                                         }
-                                        goto cf_switch_join_00659A73;
+                                        goto cf_common_join_00659A73;
                                       }
                                     }
                                     break;
@@ -2256,7 +2256,7 @@ LAB_006594ec:
                                           } while (local_c != (DArrayTy *)0x0);
                                           local_c = (DArrayTy *)0x0;
                                         }
-                                        goto cf_switch_join_00659A73;
+                                        goto cf_common_join_00659A73;
                                       }
                                     }
                                     break;
@@ -2334,7 +2334,7 @@ LAB_00659640:
                                           } while (local_c != (DArrayTy *)0x0);
                                           local_c = (DArrayTy *)0x0;
                                         }
-                                        goto cf_switch_join_00659A73;
+                                        goto cf_common_join_00659A73;
                                       }
                                     }
                                     break;
@@ -2410,7 +2410,7 @@ LAB_00659785:
                                           } while (local_c != (DArrayTy *)0x0);
                                           local_c = (DArrayTy *)0x0;
                                         }
-                                        goto cf_switch_join_00659A73;
+                                        goto cf_common_join_00659A73;
                                       }
                                     }
                                     break;
@@ -2486,7 +2486,7 @@ LAB_006598ca:
                                           } while (local_c != (DArrayTy *)0x0);
                                           local_c = (DArrayTy *)0x0;
                                         }
-                                        goto cf_switch_join_00659A73;
+                                        goto cf_common_join_00659A73;
                                       }
                                     }
                                     break;
@@ -2596,7 +2596,7 @@ LAB_0065937a:
                                           } while (local_c != (DArrayTy *)0x0);
                                           local_c = (DArrayTy *)0x0;
                                         }
-                                        goto cf_switch_join_00659A73;
+                                        goto cf_common_join_00659A73;
                                       }
                                     }
                                     break;
@@ -2678,12 +2678,12 @@ LAB_00659a1c:
                                           } while (local_c != (DArrayTy *)0x0);
                                           local_c = (DArrayTy *)0x0;
                                         }
-                                        goto cf_switch_join_00659A73;
+                                        goto cf_common_join_00659A73;
                                       }
                                     }
                                     break;
                                   default:
-                                    goto cf_switch_join_00659A73;
+                                    goto cf_common_join_00659A73;
                                   }
                                   goto cf_common_join_00652A99;
                                 }
@@ -2699,7 +2699,7 @@ LAB_00659a1c:
                                   DAT_0080c51e = (DArrayTy *)local_16c._8_4_;
                                 }
                               }
-                              goto cf_switch_join_00659A73;
+                              goto cf_common_join_00659A73;
                             }
                             if (iVar7 == 0x5c8) {
                               iVar7 = thunk_FUN_00650ad0((int)local_16c);
@@ -2762,7 +2762,7 @@ LAB_00659a1c:
                                   }
                                 }
                               }
-                              goto cf_switch_join_00659A73;
+                              goto cf_common_join_00659A73;
                             }
                             switch(iVar7) {
                             case 0x594:
@@ -2773,7 +2773,7 @@ LAB_00659a1c:
                                 _EnumArt(0,(byte *)local_16c._8_4_,0,0,0,-1,-1,-1,thunk_FUN_0064dd70
                                          ,local_160);
                               }
-                              goto cf_switch_join_00659A73;
+                              goto cf_common_join_00659A73;
                             case 0x595:
                               iVar36 = thunk_FUN_0064fef0((short *)local_16c);
                               if (iVar36 == 0) break;
@@ -2798,7 +2798,7 @@ LAB_00659a1c:
                                 thunk_FUN_00580450(local_18c,local_190,local_184,local_16c._8_4_,
                                                    local_154);
                               }
-                              goto cf_switch_join_00659A73;
+                              goto cf_common_join_00659A73;
                             case 0x596:
                               iVar36 = thunk_FUN_0064ff70((short *)local_16c);
                               if (iVar36 == 0) break;
@@ -2807,7 +2807,7 @@ LAB_00659a1c:
                               _EnumRCField((short)local_16c._8_4_,(short)local_160,(short)local_15c,
                                            (short)local_158,(short)local_154,(short)local_150,
                                            (short)local_14c,thunk_FUN_0064e260,&local_148);
-                              goto cf_switch_join_00659A73;
+                              goto cf_common_join_00659A73;
                             case 0x597:
                               iVar36 = thunk_FUN_00650090((short *)local_16c);
                               if (iVar36 == 0) break;
@@ -2816,7 +2816,7 @@ LAB_00659a1c:
                                            (short)local_150,(short)local_14c,(short)local_148,
                                            (short)local_144,thunk_FUN_0064e290,
                                            (int)local_160 << 0x10 | local_16c._8_4_ & 0xffff);
-                              goto cf_switch_join_00659A73;
+                              goto cf_common_join_00659A73;
                             case 0x598:
                               iVar36 = thunk_FUN_006501a0((short *)local_16c);
                               if (iVar36 != 0) {
@@ -2837,7 +2837,7 @@ LAB_00659a1c:
                                         (short)local_158,(short)local_154,(short)local_150,
                                         (short)local_14c,(short)local_148,thunk_FUN_0064df30,
                                         &local_144);
-                              goto cf_switch_join_00659A73;
+                              goto cf_common_join_00659A73;
                             case 0x59a:
                               iVar36 = thunk_FUN_00650370((int)local_16c);
                               if (iVar36 == 0) break;
@@ -2846,7 +2846,7 @@ LAB_00659a1c:
                                 _EnumDest((byte *)local_16c._8_4_,-1,0,0,0,-1,-1,-1,
                                           thunk_FUN_0064df70,local_160);
                               }
-                              goto cf_switch_join_00659A73;
+                              goto cf_common_join_00659A73;
                             case 0x59b:
                               iVar36 = thunk_FUN_006503b0((short *)local_16c);
                               if (iVar36 != 0) {
@@ -2882,7 +2882,7 @@ LAB_00659a1c:
                                     } while (local_c != (DArrayTy *)0x0);
                                     local_c = (DArrayTy *)0x0;
                                   }
-                                  goto cf_switch_join_00659A73;
+                                  goto cf_common_join_00659A73;
                                 }
                               }
                               break;
@@ -2914,7 +2914,7 @@ LAB_00659a1c:
                                       local_c = (DArrayTy *)((int)&local_c[-1].data + 3);
                                     } while (local_c != (DArrayTy *)0x0);
                                   }
-                                  goto cf_switch_join_00659A73;
+                                  goto cf_common_join_00659A73;
                                 }
                               }
                               break;
@@ -2946,12 +2946,12 @@ LAB_00659a1c:
                                       local_c = (DArrayTy *)((int)&local_c[-1].data + 3);
                                     } while (local_c != (DArrayTy *)0x0);
                                   }
-                                  goto cf_switch_join_00659A73;
+                                  goto cf_common_join_00659A73;
                                 }
                               }
                               break;
                             default:
-                              goto cf_switch_join_00659A73;
+                              goto cf_common_join_00659A73;
                             case 0x5aa:
                               iVar36 = thunk_FUN_00650760((short *)local_16c);
                               if (iVar36 != 0) {
@@ -2977,7 +2977,7 @@ LAB_00659a1c:
                                       local_c = (DArrayTy *)((int)&local_c[-1].data + 3);
                                     } while (local_c != (DArrayTy *)0x0);
                                   }
-                                  goto cf_switch_join_00659A73;
+                                  goto cf_common_join_00659A73;
                                 }
                               }
                               break;
@@ -3006,7 +3006,7 @@ LAB_00659a1c:
                                       local_c = (DArrayTy *)((int)&local_c[-1].data + 3);
                                     } while (local_c != (DArrayTy *)0x0);
                                   }
-                                  goto cf_switch_join_00659A73;
+                                  goto cf_common_join_00659A73;
                                 }
                               }
                               break;
@@ -3046,7 +3046,7 @@ LAB_00659a1c:
                                     } while (pDVar12 != (DArrayTy *)0x0);
                                     local_c = (DArrayTy *)0x0;
                                   }
-                                  goto cf_switch_join_00659A73;
+                                  goto cf_common_join_00659A73;
                                 }
                               }
                               break;
@@ -3075,7 +3075,7 @@ LAB_00659a1c:
                                       local_c = (DArrayTy *)((int)&local_c[-1].data + 3);
                                     } while (local_c != (DArrayTy *)0x0);
                                   }
-                                  goto cf_switch_join_00659A73;
+                                  goto cf_common_join_00659A73;
                                 }
                               }
                               break;
@@ -3103,7 +3103,7 @@ LAB_00659a1c:
                                       local_c = (DArrayTy *)((int)&local_c[-1].data + 3);
                                     } while (local_c != (DArrayTy *)0x0);
                                   }
-                                  goto cf_switch_join_00659A73;
+                                  goto cf_common_join_00659A73;
                                 }
                               }
                               break;
@@ -3141,7 +3141,7 @@ LAB_00659a1c:
                                     } while (pDVar12 != (DArrayTy *)0x0);
                                     local_c = (DArrayTy *)0x0;
                                   }
-                                  goto cf_switch_join_00659A73;
+                                  goto cf_common_join_00659A73;
                                 }
                               }
                               break;
@@ -3179,7 +3179,7 @@ LAB_00659a1c:
                                     } while (pDVar12 != (DArrayTy *)0x0);
                                     local_c = (DArrayTy *)0x0;
                                   }
-                                  goto cf_switch_join_00659A73;
+                                  goto cf_common_join_00659A73;
                                 }
                               }
                               break;
@@ -3207,7 +3207,7 @@ LAB_00659a1c:
                                       local_c = (DArrayTy *)((int)&local_c[-1].data + 3);
                                     } while (local_c != (DArrayTy *)0x0);
                                   }
-                                  goto cf_switch_join_00659A73;
+                                  goto cf_common_join_00659A73;
                                 }
                               }
                               break;
@@ -3235,7 +3235,7 @@ LAB_00659a1c:
                                       local_c = (DArrayTy *)((int)&local_c[-1].data + 3);
                                     } while (local_c != (DArrayTy *)0x0);
                                   }
-                                  goto cf_switch_join_00659A73;
+                                  goto cf_common_join_00659A73;
                                 }
                               }
                               break;
@@ -3264,7 +3264,7 @@ LAB_00659a1c:
                                       local_c = (DArrayTy *)((int)&local_c[-1].data + 3);
                                     } while (local_c != (DArrayTy *)0x0);
                                   }
-                                  goto cf_switch_join_00659A73;
+                                  goto cf_common_join_00659A73;
                                 }
                               }
                               break;
@@ -3312,7 +3312,7 @@ LAB_00659a1c:
                                       local_8 = pDVar12;
                                     } while (pDVar12 != (DArrayTy *)0x0);
                                   }
-                                  goto cf_switch_join_00659A73;
+                                  goto cf_common_join_00659A73;
                                 }
                               }
                               break;
@@ -3358,7 +3358,7 @@ LAB_00659a1c:
                                     } while (pDVar12 != (DArrayTy *)0x0);
                                     local_c = (DArrayTy *)0x0;
                                   }
-                                  goto cf_switch_join_00659A73;
+                                  goto cf_common_join_00659A73;
                                 }
                               }
                               break;
@@ -3403,7 +3403,7 @@ LAB_00659a1c:
                                     } while (pDVar12 != (DArrayTy *)0x0);
                                     local_c = (DArrayTy *)0x0;
                                   }
-                                  goto cf_switch_join_00659A73;
+                                  goto cf_common_join_00659A73;
                                 }
                               }
                               break;
@@ -3449,7 +3449,7 @@ LAB_00659a1c:
                                     } while (local_8 != (DArrayTy *)0x0);
                                     local_8 = (DArrayTy *)0x0;
                                   }
-                                  goto cf_switch_join_00659A73;
+                                  goto cf_common_join_00659A73;
                                 }
                               }
                               break;
@@ -3495,7 +3495,7 @@ LAB_00659a1c:
                                     } while (local_8 != (DArrayTy *)0x0);
                                     local_8 = (DArrayTy *)0x0;
                                   }
-                                  goto cf_switch_join_00659A73;
+                                  goto cf_common_join_00659A73;
                                 }
                               }
                               break;
@@ -3542,7 +3542,7 @@ LAB_00659a1c:
                                     } while (local_8 != (DArrayTy *)0x0);
                                     local_8 = (DArrayTy *)0x0;
                                   }
-                                  goto cf_switch_join_00659A73;
+                                  goto cf_common_join_00659A73;
                                 }
                               }
                             }
@@ -3564,7 +3564,7 @@ LAB_00659a1c:
                                        (short)local_14c,(short)local_148,thunk_FUN_0064dd30,
                                        &local_144);
                             }
-                            goto cf_switch_join_00659A73;
+                            goto cf_common_join_00659A73;
                           }
                           if (iVar7 < 0x54e) {
                             if (iVar7 == 0x54d) {
@@ -3609,7 +3609,7 @@ LAB_00659a1c:
                                   }
                                 }
                               }
-                              goto cf_switch_join_00659A73;
+                              goto cf_common_join_00659A73;
                             }
                             if (iVar7 < 0x51b) {
                               if (iVar7 == 0x51a) {
@@ -3624,7 +3624,7 @@ LAB_00659a1c:
                                   /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                   (&this_00->field_052F)[local_16c._8_4_] = local_160;
                                 }
-                                goto cf_switch_join_00659A73;
+                                goto cf_common_join_00659A73;
                               }
                               if (0x3e < iVar7) {
                                 if (iVar7 < 0x517) {
@@ -3653,7 +3653,7 @@ LAB_00659a1c:
                                               pDVar12 = (DArrayTy *)((int)&pDVar12->flags + 1);
                                             } while ((int)pDVar12 <= (int)local_158);
                                           }
-                                          goto cf_switch_join_00659A73;
+                                          goto cf_common_join_00659A73;
                                         }
                                       }
                                       /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
@@ -3759,7 +3759,7 @@ LAB_00659a1c:
                                             pDVar12 = (DArrayTy *)((int)&pDVar12->flags + 1);
                                           } while ((int)pDVar12 <= (int)local_158);
                                         }
-                                        goto cf_switch_join_00659A73;
+                                        goto cf_common_join_00659A73;
                                       }
                                     }
                                     /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
@@ -3818,7 +3818,7 @@ LAB_00659a1c:
                                       if (iVar7 == 8) {
                                         *(uint **)(&this_00->field_0xde + (int)local_15c * 4) =
                                              local_158;
-                                        goto cf_switch_join_00659A73;
+                                        goto cf_common_join_00659A73;
                                       }
                                     }
                                     /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
@@ -3869,7 +3869,7 @@ LAB_00659a1c:
                                     (&DAT_0080e43b)[local_16c._8_4_] = local_160;
                                   }
                                 }
-                                goto cf_switch_join_00659A73;
+                                goto cf_common_join_00659A73;
                               }
                               if (iVar7 == 0x3e) {
 switchD_00652b42_switchD:
@@ -4023,7 +4023,7 @@ switchD_00652b42_switchD:
                                                (char *)local_160);
                                   }
                                 }
-                                goto cf_switch_join_00659A73;
+                                goto cf_common_join_00659A73;
                               }
                               switch(iVar7) {
                               case 2:
@@ -4060,7 +4060,7 @@ switchD_00652b42_switchD:
                                   goto cf_continue_loop_00659A80;
                                 }
                               }
-                              goto cf_switch_join_00659A73;
+                              goto cf_common_join_00659A73;
                             }
                             switch(iVar7) {
                             case 0x51b:
@@ -4533,7 +4533,7 @@ LAB_00653bb7:
                                         pcVar9 = thunk_FUN_00674af0(iVar7);
                                         thunk_FUN_0064d0e0(this_00,-0x7d,pcVar9,uVar32,iVar36);
                                         uVar32 = local_14;
-                                        goto cf_switch_join_00659A73;
+                                        goto cf_common_join_00659A73;
                                       }
                                       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
                                       (*(code *)this_00->field_0000->field_0030)(3,0x100,local_1c0);
@@ -4585,7 +4585,7 @@ LAB_00653bb7:
                               }
                               goto cf_common_join_00652A99;
                             }
-                            goto cf_switch_join_00659A73;
+                            goto cf_common_join_00659A73;
                           }
                           switch(iVar7) {
                           case 0x54e:
@@ -4615,12 +4615,12 @@ LAB_00653bb7:
                                     pDVar12 = (DArrayTy *)&pDVar12->iteratorIndex;
                                   } while (iVar36 < iVar7);
                                 }
-                                goto cf_switch_join_00659A73;
+                                goto cf_common_join_00659A73;
                               }
                             }
                             break;
                           default:
-                            goto cf_switch_join_00659A73;
+                            goto cf_common_join_00659A73;
                           case 0x55a:
                             iVar36 = thunk_FUN_0064f080((int)local_16c);
                             if (iVar36 != 0) {
@@ -4650,7 +4650,7 @@ LAB_00653bb7:
                                     local_c = (DArrayTy *)((int)&local_c[-1].data + 3);
                                   } while (local_c != (DArrayTy *)0x0);
                                 }
-                                goto cf_switch_join_00659A73;
+                                goto cf_common_join_00659A73;
                               }
                             }
                             break;
@@ -4688,7 +4688,7 @@ LAB_00653bb7:
                                     pDVar12 = (DArrayTy *)&pDVar12->iteratorIndex;
                                   } while (iVar36 < iVar7);
                                 }
-                                goto cf_switch_join_00659A73;
+                                goto cf_common_join_00659A73;
                               }
                             }
                             break;
@@ -4716,7 +4716,7 @@ LAB_00653bb7:
                                     iVar36 = iVar36 + 1;
                                   } while (iVar36 < iVar7);
                                 }
-                                goto cf_switch_join_00659A73;
+                                goto cf_common_join_00659A73;
                               }
                             }
                             break;
@@ -4745,7 +4745,7 @@ LAB_006540b9:
                                             ((char *)&DAT_0080e303,(char *)local_158,0x1f);
                                   uVar32 = local_14;
                                 }
-                                goto cf_switch_join_00659A73;
+                                goto cf_common_join_00659A73;
                               }
                             }
                             break;
@@ -4800,7 +4800,7 @@ LAB_006540b9:
                                     pDVar12 = (DArrayTy *)&pDVar12->iteratorIndex;
                                   } while (iVar36 < iVar7);
                                 }
-                                goto cf_switch_join_00659A73;
+                                goto cf_common_join_00659A73;
                               }
                             }
                             break;
@@ -4838,7 +4838,7 @@ LAB_006540b9:
                                     pDVar12 = (DArrayTy *)&pDVar12->iteratorIndex;
                                   } while (iVar36 < iVar7);
                                 }
-                                goto cf_switch_join_00659A73;
+                                goto cf_common_join_00659A73;
                               }
                             }
                             break;
@@ -4867,7 +4867,7 @@ LAB_00654386:
                                     OptPanelTy::UpdateObjectives(g_optPanel_008016DC);
                                   }
                                 }
-                                goto cf_switch_join_00659A73;
+                                goto cf_common_join_00659A73;
                               }
                             }
                             break;
@@ -4901,7 +4901,7 @@ LAB_00654386:
                                     pDVar12 = (DArrayTy *)&pDVar12->iteratorIndex;
                                   } while (iVar36 < iVar7);
                                 }
-                                goto cf_switch_join_00659A73;
+                                goto cf_common_join_00659A73;
                               }
                             }
                             break;
@@ -4940,7 +4940,7 @@ LAB_00654386:
                                     pDVar12 = (DArrayTy *)&pDVar12->iteratorIndex;
                                   } while (iVar36 < iVar7);
                                 }
-                                goto cf_switch_join_00659A73;
+                                goto cf_common_join_00659A73;
                               }
                             }
                             break;
@@ -4972,7 +4972,7 @@ LAB_00654386:
                                     pDVar12 = (DArrayTy *)&pDVar12->iteratorIndex;
                                   } while (iVar36 < iVar7);
                                 }
-                                goto cf_switch_join_00659A73;
+                                goto cf_common_join_00659A73;
                               }
                             }
                             break;
@@ -5006,7 +5006,7 @@ LAB_00654386:
                                     pDVar12 = (DArrayTy *)&pDVar12->iteratorIndex;
                                   } while (iVar36 < iVar7);
                                 }
-                                goto cf_switch_join_00659A73;
+                                goto cf_common_join_00659A73;
                               }
                             }
                             break;
@@ -5068,7 +5068,7 @@ LAB_00654386:
                                     } while (local_c != (DArrayTy *)0x0);
                                     local_c = (DArrayTy *)0x0;
                                   }
-                                  goto cf_switch_join_00659A73;
+                                  goto cf_common_join_00659A73;
                                 }
                               }
                             }
@@ -5114,7 +5114,7 @@ LAB_00654386:
                                   } while (local_c != (DArrayTy *)0x0);
                                   local_c = (DArrayTy *)0x0;
                                 }
-                                goto cf_switch_join_00659A73;
+                                goto cf_common_join_00659A73;
                               }
                             }
                             break;
@@ -5144,7 +5144,7 @@ LAB_00654386:
                                     pDVar12 = (DArrayTy *)&pDVar12->iteratorIndex;
                                   } while (iVar36 < iVar7);
                                 }
-                                goto cf_switch_join_00659A73;
+                                goto cf_common_join_00659A73;
                               }
                             }
                             break;
@@ -5153,7 +5153,7 @@ LAB_00654386:
                             if (iVar36 == 0) break;
                             /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                             thunk_FUN_0056abc0(&DAT_00807620,(char *)local_16c._8_4_);
-                            goto cf_switch_join_00659A73;
+                            goto cf_common_join_00659A73;
                           case 0x578:
                             iVar36 = thunk_FUN_0064f430((int)local_16c);
                             if (iVar36 != 0) {
@@ -5182,7 +5182,7 @@ LAB_00654386:
                                     local_c = (DArrayTy *)((int)&local_c[-1].data + 3);
                                   } while (local_c != (DArrayTy *)0x0);
                                 }
-                                goto cf_switch_join_00659A73;
+                                goto cf_common_join_00659A73;
                               }
                             }
                             break;
@@ -5219,7 +5219,7 @@ LAB_00654386:
                                     local_c = (DArrayTy *)((int)&local_c[-1].data + 3);
                                   } while (local_c != (DArrayTy *)0x0);
                                 }
-                                goto cf_switch_join_00659A73;
+                                goto cf_common_join_00659A73;
                               }
                             }
                             break;
@@ -5233,7 +5233,7 @@ LAB_00654386:
                               pDVar12 = (DArrayTy *)(DAT_00808a90 & 0xff);
                             }
                             thunk_FUN_004d8760((int)pDVar12);
-                            goto cf_switch_join_00659A73;
+                            goto cf_common_join_00659A73;
                           case 0x57b:
                             iVar36 = thunk_FUN_0064f500((short *)local_16c);
                             if (iVar36 != 0) {
@@ -5560,7 +5560,7 @@ LAB_00655324:
                                     uVar32 = local_14;
                                   } while (local_c != (DArrayTy *)0x0);
                                 }
-                                goto cf_switch_join_00659A73;
+                                goto cf_common_join_00659A73;
                               }
                             }
                             break;
@@ -5675,7 +5675,7 @@ LAB_00655324:
                                     uVar26 = extraout_EDX_00;
                                   } while (local_c != (DArrayTy *)0x0);
                                 }
-                                goto cf_switch_join_00659A73;
+                                goto cf_common_join_00659A73;
                               }
                             }
                             break;
@@ -5685,7 +5685,7 @@ LAB_00655324:
                             /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                             if ((DArrayTy *)local_16c._8_4_ == (DArrayTy *)0x0) {
                               thunk_FUN_004d8320(local_160);
-                              goto cf_switch_join_00659A73;
+                              goto cf_common_join_00659A73;
                             }
                             /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                             if ((int)local_16c._8_4_ < 1) {
@@ -5705,20 +5705,20 @@ LAB_0065565b:
                               thunk_FUN_004d8320(iVar7);
                             }
                             thunk_FUN_004d82b0(0);
-                            goto cf_switch_join_00659A73;
+                            goto cf_common_join_00659A73;
                           case 0x584:
                             iVar36 = thunk_FUN_0064f620((short *)local_16c);
                             if (iVar36 == 0) break;
                             /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                             thunk_FUN_0064e5c0((char)local_16c._8_4_,(short)local_160,
                                                (short)local_15c,local_158,local_154);
-                            goto cf_switch_join_00659A73;
+                            goto cf_common_join_00659A73;
                           case 0x585:
                             iVar36 = thunk_FUN_0064f6e0();
                             if (iVar36 == 0) break;
                             DAT_00808794 = thunk_FUN_0056f930((AnonShape_0056F930_C6277D80 *)
                                                               &DAT_00807620);
-                            goto cf_switch_join_00659A73;
+                            goto cf_common_join_00659A73;
                           case 0x58c:
                             iVar36 = thunk_FUN_0064f700((short *)local_16c);
                             if (iVar36 == 0) break;
@@ -5764,7 +5764,7 @@ LAB_00655871:
                               /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                               (*pSVar30->vtable->vfunc_70)(local_16c._8_4_);
                             }
-                            goto cf_switch_join_00659A73;
+                            goto cf_common_join_00659A73;
                           case 0x58d:
                             iVar36 = thunk_FUN_0064f780((short *)local_16c);
                             if (iVar36 != 0) {
@@ -5838,7 +5838,7 @@ LAB_006559e3:
                                   } while (local_8 != (DArrayTy *)0x0);
                                   local_8 = (DArrayTy *)0x0;
                                 }
-                                goto cf_switch_join_00659A73;
+                                goto cf_common_join_00659A73;
                               }
                             }
                             break;
@@ -5895,7 +5895,7 @@ LAB_006559e3:
                                   } while (local_c != (DArrayTy *)0x0);
                                   local_c = (DArrayTy *)0x0;
                                 }
-                                goto cf_switch_join_00659A73;
+                                goto cf_common_join_00659A73;
                               }
                             }
                             break;
@@ -5968,7 +5968,7 @@ LAB_006559e3:
                                   local_c = (DArrayTy *)0x0;
                                   uVar32 = local_14;
                                 }
-                                goto cf_switch_join_00659A73;
+                                goto cf_common_join_00659A73;
                               }
                             }
                             break;
@@ -6009,7 +6009,7 @@ LAB_006559e3:
                                   } while (local_c != (DArrayTy *)0x0);
                                   local_c = (DArrayTy *)0x0;
                                 }
-                                goto cf_switch_join_00659A73;
+                                goto cf_common_join_00659A73;
                               }
                             }
                             break;
@@ -6041,7 +6041,7 @@ LAB_006559e3:
                                     local_c = (DArrayTy *)((int)&local_c[-1].data + 3);
                                   } while (local_c != (DArrayTy *)0x0);
                                 }
-                                goto cf_switch_join_00659A73;
+                                goto cf_common_join_00659A73;
                               }
                             }
                             break;
@@ -6060,14 +6060,14 @@ LAB_00655f4c:
                               pcVar9 = thunk_FUN_00674af0(iVar7);
                               thunk_FUN_0064d0e0(this_00,-0xab,pcVar9,uVar17,iVar36);
                             }
-                            goto cf_switch_join_00659A73;
+                            goto cf_common_join_00659A73;
                           }
 cf_common_join_00652A99:
                           iVar36 = -1;
                           uVar17 = uVar32;
                           pcVar9 = thunk_FUN_00674af0(iVar7);
                           thunk_FUN_0064d0e0(this_00,-0x7d,pcVar9,uVar17,iVar36);
-cf_switch_join_00659A73:
+cf_common_join_00659A73:
                           pDVar12 = (DArrayTy *)((int)&local_170->flags + 1);
 cf_continue_loop_00659A80:
                           local_170 = pDVar12;
@@ -6125,17 +6125,17 @@ LAB_00659aae:
 code_r0x00653bbb:
   iVar36 = iVar36 + 1;
   pDVar12 = (DArrayTy *)&pDVar12->iteratorIndex;
-  if ((int)local_10 <= iVar36) goto cf_switch_join_00659A73;
+  if ((int)local_10 <= iVar36) goto cf_common_join_00659A73;
   goto LAB_00653bb7;
 code_r0x00654366:
   iVar36 = iVar36 + 1;
   pDVar12 = (DArrayTy *)&pDVar12->iteratorIndex;
-  if (iVar7 <= iVar36) goto cf_switch_join_00659A73;
+  if (iVar7 <= iVar36) goto cf_common_join_00659A73;
   goto LAB_00654362;
 code_r0x006540bd:
   iVar36 = iVar36 + 1;
   pDVar12 = (DArrayTy *)&pDVar12->iteratorIndex;
-  if (iVar7 <= iVar36) goto cf_switch_join_00659A73;
+  if (iVar7 <= iVar36) goto cf_common_join_00659A73;
   goto LAB_006540b9;
 }
 

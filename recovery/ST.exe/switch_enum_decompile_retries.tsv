@@ -1,2 +1,3 @@
 function_address	function	initial_reason	status
 0044EE30	STBoatC::GetMessage	Exception while decompiling 0044ee30: process: timeout\n	recovered
+00652810	AiEventClassTy::GetMessage	Exception while decompiling 00652810: process: timeout\n	recovered

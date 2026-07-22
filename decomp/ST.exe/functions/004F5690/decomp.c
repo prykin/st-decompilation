@@ -51,7 +51,7 @@ void __thiscall CPanelTy::InitCPanel(CPanelTy *this)
   uint *local_1c;
   CPanelTy *local_18;
   int local_14;
-  ccFntTy *local_10;
+  AnonShape_00710790_4CBB90D4 *local_10;
   AnonNested_0052BDA0_007E_1B3446E2 *local_c;
   int *local_8;
 
@@ -77,7 +77,7 @@ void __thiscall CPanelTy::InitCPanel(CPanelTy *this)
     piVar21 = &local_18->field_0068;
     local_18->field_0090 = iVar3;
     local_18->field_008C = iVar3;
-    local_10 = (ccFntTy *)0xb;
+    local_10 = (AnonShape_00710790_4CBB90D4 *)&DAT_0000000b;
     do {
       iVar3 = 1;
       puVar5 = (undefined4 *)(DAT_0080679c + 0x28);
@@ -101,8 +101,8 @@ void __thiscall CPanelTy::InitCPanel(CPanelTy *this)
         puVar5 = (undefined4 *)((int)puVar5 + 1);
       }
       piVar21 = local_8 + 1;
-      local_10 = (ccFntTy *)((int)local_10 + -1);
-    } while (local_10 != (ccFntTy *)0x0);
+      local_10 = (AnonShape_00710790_4CBB90D4 *)&local_10[-1].field_0x9f;
+    } while (local_10 != (AnonShape_00710790_4CBB90D4 *)0x0);
     local_8 = piVar21;
     pcVar6 = (ccFntTy *)thunk_FUN_004f4640(DAT_0080679c,(undefined *)0x0,DAT_00807dd9);
     this_00->field_01B8 = pcVar6;
@@ -137,11 +137,11 @@ void __thiscall CPanelTy::InitCPanel(CPanelTy *this)
     this_00->field_01D0 = pcVar6;
     pcVar6->field_0058 = 0;
     pcVar6->field_005C = 0xffffffff;
-    local_10 = this_00->field_01D0;
-    if (local_10->field_00A0 != 0) {
-      FUN_00710790((uint *)local_10);
+    local_10 = (AnonShape_00710790_4CBB90D4 *)this_00->field_01D0;
+    if (((ccFntTy *)local_10)->field_00A0 != 0) {
+      FUN_00710790(local_10);
     }
-    this_00->field_0108 = *(int *)&local_10->field_0x8a * 5 + -3;
+    this_00->field_0108 = local_10->field_008A * 5 + -3;
     pcVar6 = (ccFntTy *)thunk_FUN_004f4950(DAT_0080679c,(undefined *)0x0,DAT_00807dd9);
     this_00->field_01D4 = pcVar6;
     pcVar6->field_0058 = 1;
@@ -159,9 +159,9 @@ void __thiscall CPanelTy::InitCPanel(CPanelTy *this)
              FUN_006b50c0(this_00->field_0104,this_00->field_0108,
                           (uint)*(ushort *)(DAT_0080679c + 0xe),uVar4,puVar5,iVar3);
     this_00->field_01B0 = puVar9;
-    local_10 = *(ccFntTy **)(puVar9 + 10);
-    if (local_10 == (ccFntTy *)0x0) {
-      local_10 = (ccFntTy *)
+    local_10 = *(AnonShape_00710790_4CBB90D4 **)(puVar9 + 10);
+    if (local_10 == (AnonShape_00710790_4CBB90D4 *)0x0) {
+      local_10 = (AnonShape_00710790_4CBB90D4 *)
                  (((uint)puVar9[7] * *(int *)(puVar9 + 2) + 0x1f >> 3 & 0x1ffffffc) *
                  *(int *)(puVar9 + 4));
     }
@@ -375,7 +375,7 @@ void __thiscall CPanelTy::InitCPanel(CPanelTy *this)
     pCVar7 = thunk_FUN_00571240("INF_BKMAP",0);
     puVar9 = cMf32::RecGet((cMf32 *)DAT_00806790,1,pCVar7,piVar21,iVar3);
     this_00->field_0994 = puVar9;
-    local_10 = (ccFntTy *)&this_00->field_0227;
+    local_10 = (AnonShape_00710790_4CBB90D4 *)&this_00->field_0227;
     local_8 = (int *)0x3b60;
     local_14 = 4;
     do {
@@ -410,7 +410,7 @@ void __thiscall CPanelTy::InitCPanel(CPanelTy *this)
         FreeAndNull(&local_c);
       }
       local_8 = (int *)((int)local_8 + 1);
-      local_10 = (ccFntTy *)((int)local_10 + 4);
+      local_10 = (AnonShape_00710790_4CBB90D4 *)&local_10->field_0x4;
       local_14 = local_14 + -1;
     } while (local_14 != 0);
     iVar3 = 0;
@@ -603,7 +603,7 @@ void __thiscall CPanelTy::InitCPanel(CPanelTy *this)
     local_8 = (int *)&this_00->field_0xc87;
     puVar5 = &this_00->field_0D53;
     puVar14 = &this_00->field_0D47;
-    local_10 = (ccFntTy *)0x2;
+    local_10 = (AnonShape_00710790_4CBB90D4 *)0x2;
     do {
       local_14 = 6;
       do {
@@ -625,8 +625,8 @@ void __thiscall CPanelTy::InitCPanel(CPanelTy *this)
         puVar14 = puVar14 + 1;
         local_14 = local_14 + -1;
       } while (local_14 != 0);
-      local_10 = (ccFntTy *)((int)local_10 + -1);
-    } while (local_10 != (ccFntTy *)0x0);
+      local_10 = (AnonShape_00710790_4CBB90D4 *)&local_10[-1].field_0x9f;
+    } while (local_10 != (AnonShape_00710790_4CBB90D4 *)0x0);
     PaintInfoBoat(this_00);
     if (DAT_0080874e == '\x03') {
       PaintCtrlBoatSI(this_00);

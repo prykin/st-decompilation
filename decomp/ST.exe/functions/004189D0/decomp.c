@@ -44,7 +44,7 @@ undefined4 __thiscall STGameObjC::MoveStep(STGameObjC *this,int *param_1)
       sub_004167A0(this);
       return 2;
     }
-    uVar6 = STColl3C::sub_0041C5A0((STColl3C *)this);
+    uVar6 = sub_0041C5A0(this);
     this->field_00FA = 0;
     /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
     iVar5 = thunk_FUN_00495ff0(this->field_005B,this->field_005D,this->field_005F,
@@ -79,8 +79,8 @@ undefined4 __thiscall STGameObjC::MoveStep(STGameObjC *this,int *param_1)
         this->field_00E4 = 0;
         this->field_00E3 = 0;
         sub_004167A0(this);
-        iVar5 = SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00417FF0::thunk_FUN_00418030
-                          ((AnonReceiver_00417FF0 *)this,(short)local_10,(short)local_c,
+        iVar5 = SubmarineTitans::Recovered::HiddenThis::AnonReceiver_004167A0::thunk_FUN_00418030
+                          ((AnonReceiver_004167A0 *)this,(short)local_10,(short)local_c,
                            (short)local_8);
         if (iVar5 == -1) {
           return 0xffffffff;

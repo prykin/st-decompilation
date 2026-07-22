@@ -60,10 +60,10 @@ uint * __thiscall STGroupBoatC::GrpUnLoadObj(STGroupBoatC *this,int param_1)
   }
   if ((param_1 != 1) && (param_1 != 0)) goto LAB_0049e7c1;
   memset(&local_28->field_0089, 0, 0x54); /* compiler bulk-zero initialization */
-  local_30 = local_28->field_017C;
+  local_30 = *(undefined2 *)&local_28->field_0x17c;
   local_28->field_0065 = 0;
   *(undefined2 *)&local_28->field_0x2ad = local_30;
-  local_2e = local_28->field_017E;
+  local_2e = *(undefined2 *)&local_28->field_0x17e;
   *(undefined2 *)&local_28->field_0x2af = local_2e;
   local_2c = local_28->field_0180;
   local_28->field_02B1 = local_2c;

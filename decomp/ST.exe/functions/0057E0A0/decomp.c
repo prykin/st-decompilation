@@ -40,21 +40,22 @@ int __thiscall STDcResourcC::GetMessage(STDcResourcC *this,STMessage *message)
   undefined2 extraout_var_03;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined2 extraout_var_04;
-  STWorldObject *pSVar15;
-  int iVar16;
-  byte *pbVar17;
-  undefined4 *puVar18;
-  int iVar19;
-  byte *pbVar20;
-  int *piVar21;
+  STSprGameObjC_field_0231State *pSVar15;
+  STWorldObject *pSVar16;
+  int iVar17;
+  byte *pbVar18;
+  STSprGameObjC_field_0231State *pSVar19;
+  int iVar20;
+  byte *pbVar21;
+  int *piVar22;
   InternalExceptionFrame local_68;
   STSprGameObjC *local_24;
   int local_20;
   int local_1c;
-  undefined4 *local_18;
+  STSprGameObjC_field_0231State *local_18;
   int local_14;
   byte *local_10;
-  byte *local_c;
+  STSprGameObjC_field_0231State *local_c;
   uint local_8;
 
   if (((*(byte *)&this->field_0261 & 4) != 0) && (message->id != MESS_SHARED_0003)) {
@@ -92,38 +93,38 @@ int __thiscall STDcResourcC::GetMessage(STDcResourcC *this,STMessage *message)
         return 0;
       }
       local_10 = (byte *)STAllPlayersC::SaveGObjData((STAllPlayersC *)this_00,(int *)&local_8);
-      local_c = (byte *)Library::DKW::LIB::FUN_006aac70(local_8 + 0x46);
+      local_c = (STSprGameObjC_field_0231State *)Library::DKW::LIB::FUN_006aac70(local_8 + 0x46);
       if (local_10 == (byte *)0x0) {
         g_currentExceptionFrame = local_68.previous;
         return 0;
       }
-      if (local_c == (byte *)0x0) {
+      if (local_c == (STSprGameObjC_field_0231State *)0x0) {
         g_currentExceptionFrame = local_68.previous;
         return 0;
       }
       *(undefined4 *)&this_00->field_0x23d = 2;
-      puVar11 = &this_00->field_0231;
-      pbVar17 = local_c;
+      pSVar15 = &this_00->field_0231;
+      pSVar19 = local_c;
       for (iVar9 = 0x11; iVar9 != 0; iVar9 = iVar9 + -1) {
-        *(undefined4 *)pbVar17 = *puVar11;
-        puVar11 = puVar11 + 1;
-        pbVar17 = pbVar17 + 4;
+        *pSVar19 = *pSVar15;
+        pSVar15 = pSVar15 + 1;
+        pSVar19 = pSVar19 + 1;
       }
-      *(undefined2 *)pbVar17 = *(undefined2 *)puVar11;
-      pbVar17 = local_10;
-      pbVar20 = local_c + 0x46;
+      *(short *)pSVar19 = (short)*pSVar15;
+      pbVar18 = local_10;
+      pbVar21 = (byte *)((int)local_c + 0x46);
       for (uVar10 = local_8 >> 2; uVar10 != 0; uVar10 = uVar10 - 1) {
-        *(undefined4 *)pbVar20 = *(undefined4 *)pbVar17;
-        pbVar17 = pbVar17 + 4;
-        pbVar20 = pbVar20 + 4;
+        *(undefined4 *)pbVar21 = *(undefined4 *)pbVar18;
+        pbVar18 = pbVar18 + 4;
+        pbVar21 = pbVar21 + 4;
       }
       for (uVar10 = local_8 & 3; uVar10 != 0; uVar10 = uVar10 - 1) {
-        *pbVar20 = *pbVar17;
-        pbVar17 = pbVar17 + 1;
-        pbVar20 = pbVar20 + 1;
+        *pbVar21 = *pbVar18;
+        pbVar18 = pbVar18 + 1;
+        pbVar21 = pbVar21 + 1;
       }
       STPlaySystemC::SaveObjData
-                (g_playSystem_00802A38,this_00->field_0018,local_c,
+                (g_playSystem_00802A38,this_00->field_0018,(byte *)local_c,
                  (AnonShape_0060EA30_DCEB68AD *)(local_8 + 0x46));
       FreeAndNull(&local_10);
       FreeAndNull(&local_c);
@@ -139,18 +140,18 @@ int __thiscall STDcResourcC::GetMessage(STDcResourcC *this,STMessage *message)
     sVar2 = *(short *)&this_00->field_0x249;
     if ((((sVar8 < 0) || (g_worldGrid.sizeX <= sVar8)) || (sVar2 < 0)) ||
        (((g_worldGrid.sizeY <= sVar2 || (sVar1 < 0)) || (g_worldGrid.sizeZ <= sVar1)))) {
-      pSVar15 = (STWorldObject *)0x0;
+      pSVar16 = (STWorldObject *)0x0;
     }
     else {
-      pSVar15 = g_worldGrid.cells
+      pSVar16 = g_worldGrid.cells
                 [(int)sVar1 * (int)g_worldGrid.planeStride + (int)sVar2 * (int)g_worldGrid.sizeX +
                  (int)sVar8].objects[0];
     }
-    if (pSVar15 == (STWorldObject *)0x0) {
+    if (pSVar16 == (STWorldObject *)0x0) {
       g_currentExceptionFrame = local_68.previous;
       return 0;
     }
-    iVar9 = (*pSVar15->vtable->GetObjectTypeId)(pSVar15);
+    iVar9 = (*pSVar16->vtable->GetObjectTypeId)(pSVar16);
     if ((*(int *)&this_00->field_0x255 != 0xdd) || ((iVar9 != 0x39 && (iVar9 != 0x5e)))) {
       if (*(int *)&this_00->field_0x255 != 0xde) {
         g_currentExceptionFrame = local_68.previous;
@@ -167,7 +168,7 @@ int __thiscall STDcResourcC::GetMessage(STDcResourcC *this,STMessage *message)
   }
   if (SVar3 == MESS_SHARED_0108) {
     iVar9 = thunk_FUN_004ab050();
-    local_18 = (undefined4 *)0x0;
+    local_18 = (STSprGameObjC_field_0231State *)0x0;
     if (*(int *)&this_00->field_0x265 < 1) {
       g_currentExceptionFrame = local_68.previous;
       return 0;
@@ -188,18 +189,18 @@ int __thiscall STDcResourcC::GetMessage(STDcResourcC *this,STMessage *message)
                  _DAT_007904f8 + _DAT_007904f4,
                  (float)*(int *)&this_00->field_0x24d * _DAT_00790504 + _DAT_00790500 +
                  _DAT_007904fc);
-      iVar19 = iVar9 + 4;
-      iVar16 = iVar13 + 1;
+      iVar20 = iVar9 + 4;
+      iVar17 = iVar13 + 1;
       iVar12 = local_14 + 4;
       if (*(int *)&this_00->field_0x255 == 0xde) {
-        iVar19 = iVar9 + 8;
-        iVar16 = iVar13 + 2;
+        iVar20 = iVar9 + 8;
+        iVar17 = iVar13 + 2;
         iVar12 = local_14 + 8;
       }
       local_14 = iVar12;
-      local_18 = (undefined4 *)((int)local_18 + 1);
-      iVar13 = iVar16;
-      iVar9 = iVar19;
+      local_18 = (STSprGameObjC_field_0231State *)((int)local_18 + 1);
+      iVar13 = iVar17;
+      iVar9 = iVar20;
     } while ((int)local_18 < *(int *)&this_00->field_0x265);
     g_currentExceptionFrame = local_68.previous;
     return 0;
@@ -245,16 +246,16 @@ int __thiscall STDcResourcC::GetMessage(STDcResourcC *this,STMessage *message)
       return 0;
     }
     local_18 = (message->arg0).ptr;
-    if ((uint)local_18[3] < 2) {
+    if (local_18[3] < CASE_2) {
       *(undefined4 *)&this_00->field_0x261 = 4;
       *(undefined4 *)&this_00->field_0x265 = 0;
       *(undefined4 *)&this_00->field_0x26d = 0;
-      puVar11 = (message->arg0).ptr;
-      puVar18 = &this_00->field_0231;
+      pSVar15 = (message->arg0).ptr;
+      pSVar19 = &this_00->field_0231;
       for (iVar9 = 10; iVar9 != 0; iVar9 = iVar9 + -1) {
-        *puVar18 = *puVar11;
-        puVar11 = puVar11 + 1;
-        puVar18 = puVar18 + 1;
+        *pSVar19 = *pSVar15;
+        pSVar15 = pSVar15 + 1;
+        pSVar19 = pSVar19 + 1;
       }
       if (*(int *)&this_00->field_0x251 < 1) {
         thunk_FUN_00580380(this_00);
@@ -279,10 +280,10 @@ int __thiscall STDcResourcC::GetMessage(STDcResourcC *this,STMessage *message)
       if (((sVar8 < 0) || (g_worldGrid.sizeX <= sVar8)) ||
          (((sVar1 < 0 || ((g_worldGrid.sizeY <= sVar1 || (sVar2 < 0)))) ||
           (g_worldGrid.sizeZ <= sVar2)))) {
-        pSVar15 = (STWorldObject *)0x0;
+        pSVar16 = (STWorldObject *)0x0;
       }
       else {
-        pSVar15 = g_worldGrid.cells
+        pSVar16 = g_worldGrid.cells
                   [(int)g_worldGrid.planeStride * (int)sVar2 + (int)g_worldGrid.sizeX * (int)sVar1 +
                    (int)sVar8].objects[0];
       }
@@ -296,11 +297,11 @@ int __thiscall STDcResourcC::GetMessage(STDcResourcC *this,STMessage *message)
                  + (int)sVar8];
       }
       if ((sVar8 != 0) &&
-         ((pSVar15 == (STWorldObject *)0x0 ||
-          (((iVar9 = (*pSVar15->vtable->GetObjectTypeId)(pSVar15), iVar9 != 0x39 &&
-            (iVar9 = (*pSVar15->vtable->GetObjectTypeId)(pSVar15), iVar9 != 0x4f)) &&
-           ((iVar9 = (*pSVar15->vtable->GetObjectTypeId)(pSVar15), iVar9 != 0x5e &&
-            (iVar9 = (*pSVar15->vtable->GetObjectTypeId)(pSVar15), iVar9 != 0x61)))))))) {
+         ((pSVar16 == (STWorldObject *)0x0 ||
+          (((iVar9 = (*pSVar16->vtable->GetObjectTypeId)(pSVar16), iVar9 != 0x39 &&
+            (iVar9 = (*pSVar16->vtable->GetObjectTypeId)(pSVar16), iVar9 != 0x4f)) &&
+           ((iVar9 = (*pSVar16->vtable->GetObjectTypeId)(pSVar16), iVar9 != 0x5e &&
+            (iVar9 = (*pSVar16->vtable->GetObjectTypeId)(pSVar16), iVar9 != 0x61)))))))) {
         thunk_FUN_00580380(this_00);
       }
       iVar9 = STAllPlayersC::RegisterDeposit(g_allPlayers_007FA174,0xffff,this_00);
@@ -318,15 +319,15 @@ int __thiscall STDcResourcC::GetMessage(STDcResourcC *this,STMessage *message)
       }
     }
     else {
-      if (local_18[3] != 2) goto cf_common_exit_0057E624;
-      puVar11 = local_18;
-      puVar18 = &this_00->field_0231;
+      if (local_18[3] != CASE_2) goto cf_common_exit_0057E624;
+      pSVar15 = local_18;
+      pSVar19 = &this_00->field_0231;
       for (iVar9 = 0x11; iVar9 != 0; iVar9 = iVar9 + -1) {
-        *puVar18 = *puVar11;
-        puVar11 = puVar11 + 1;
-        puVar18 = puVar18 + 1;
+        *pSVar19 = *pSVar15;
+        pSVar15 = pSVar15 + 1;
+        pSVar19 = pSVar19 + 1;
       }
-      *(undefined2 *)puVar18 = *(undefined2 *)puVar11;
+      *(short *)pSVar19 = (short)*pSVar15;
       *(undefined4 *)&this_00->field_0x273 = 0;
       *(undefined4 *)&this_00->field_0x265 = 0;
       *(undefined4 *)&this_00->field_0x26d = 0;
@@ -339,10 +340,10 @@ int __thiscall STDcResourcC::GetMessage(STDcResourcC *this,STMessage *message)
       sVar2 = *(short *)&this_00->field_0x24d;
       if (((((sVar8 < 0) || (g_worldGrid.sizeX <= sVar8)) || (sVar1 < 0)) ||
           ((g_worldGrid.sizeY <= sVar1 || (sVar2 < 0)))) || (g_worldGrid.sizeZ <= sVar2)) {
-        pSVar15 = (STWorldObject *)0x0;
+        pSVar16 = (STWorldObject *)0x0;
       }
       else {
-        pSVar15 = g_worldGrid.cells
+        pSVar16 = g_worldGrid.cells
                   [(int)sVar1 * (int)g_worldGrid.sizeX + (int)g_worldGrid.planeStride * (int)sVar2 +
                    (int)sVar8].objects[0];
       }
@@ -357,11 +358,11 @@ int __thiscall STDcResourcC::GetMessage(STDcResourcC *this,STMessage *message)
                  + (int)sVar8];
       }
       if ((sVar8 != 0) &&
-         ((pSVar15 == (STWorldObject *)0x0 ||
-          (((iVar9 = (*pSVar15->vtable->GetObjectTypeId)(pSVar15), iVar9 != 0x39 &&
-            (iVar9 = (*pSVar15->vtable->GetObjectTypeId)(pSVar15), iVar9 != 0x4f)) &&
-           ((iVar9 = (*pSVar15->vtable->GetObjectTypeId)(pSVar15), iVar9 != 0x5e &&
-            (iVar9 = (*pSVar15->vtable->GetObjectTypeId)(pSVar15), iVar9 != 0x61)))))))) {
+         ((pSVar16 == (STWorldObject *)0x0 ||
+          (((iVar9 = (*pSVar16->vtable->GetObjectTypeId)(pSVar16), iVar9 != 0x39 &&
+            (iVar9 = (*pSVar16->vtable->GetObjectTypeId)(pSVar16), iVar9 != 0x4f)) &&
+           ((iVar9 = (*pSVar16->vtable->GetObjectTypeId)(pSVar16), iVar9 != 0x5e &&
+            (iVar9 = (*pSVar16->vtable->GetObjectTypeId)(pSVar16), iVar9 != 0x61)))))))) {
         thunk_FUN_00580380(this_00);
       }
       iVar9 = STAllPlayersC::RegisterDeposit
@@ -369,7 +370,7 @@ int __thiscall STDcResourcC::GetMessage(STDcResourcC *this,STMessage *message)
       if (iVar9 != 0) {
         thunk_FUN_00580380(this_00);
       }
-      if (local_18[3] == 1) {
+      if (local_18[3] == CASE_1) {
         thunk_FUN_00580f50();
       }
       *(uint *)&this_00->field_0x261 = *(uint *)&this_00->field_0x261 | 1;
@@ -426,9 +427,10 @@ LAB_0057e6f0:
       uVar10 = 0;
     }
     else {
-      thunk_FUN_00558c00(g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,
-                         *(int *)&this_00->field_0x245,*(int *)&this_00->field_0x249,
-                         (int *)&local_18,&local_14);
+      VisibleClassTy::sub_00558C00
+                (g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,
+                 *(int *)&this_00->field_0x245,*(int *)&this_00->field_0x249,(int *)&local_18,
+                 &local_14);
       if ((iVar9 < 0) || (4 < iVar9)) {
         uVar10 = 0xffffffff;
       }
@@ -484,8 +486,8 @@ LAB_0057e6f0:
       *(undefined4 **)&this_00->field_0x273 = puVar11;
       goto cf_common_join_0057E9C2;
     }
-    piVar21 = *(int **)&this_00->field_0x273;
-    if (piVar21 == (int *)0x0) goto cf_common_join_0057E9C2;
+    piVar22 = *(int **)&this_00->field_0x273;
+    if (piVar22 == (int *)0x0) goto cf_common_join_0057E9C2;
   }
   else {
     if (g_visibleClass_00802A88 == (VisibleClassTy *)0x0) goto cf_common_join_0057E9C2;
@@ -494,9 +496,9 @@ LAB_0057e6f0:
       uVar10 = 0;
     }
     else {
-      thunk_FUN_00558c00(g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,
-                         *(int *)&this_00->field_0x245,*(int *)&this_00->field_0x249,&local_1c,
-                         &local_20);
+      VisibleClassTy::sub_00558C00
+                (g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,
+                 *(int *)&this_00->field_0x245,*(int *)&this_00->field_0x249,&local_1c,&local_20);
       if ((iVar9 < 0) || (4 < iVar9)) {
         uVar10 = 0xffffffff;
       }
@@ -546,9 +548,9 @@ LAB_0057e6f0:
       }
     }
     if (uVar10 != 2) goto cf_common_join_0057E9C2;
-    piVar21 = *(int **)&this_00->field_0x273;
+    piVar22 = *(int **)&this_00->field_0x273;
   }
-  FUN_006e6580((void *)this_00->field_0211,piVar21);
+  FUN_006e6580((void *)this_00->field_0211,piVar22);
   *(undefined4 *)&this_00->field_0x273 = 0;
 cf_common_join_0057E9C2:
   (*this_00->vtable->vfunc_D8)();

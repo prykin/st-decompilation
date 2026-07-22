@@ -154,8 +154,8 @@ void __fastcall FUN_006ddd50(AnonShape_006DDD50_309FA381 *param_1)
       for (pAVar4 = (AnonShape_006E1EE0_698AE49A *)param_1->field_0140;
           pAVar4 != (AnonShape_006E1EE0_698AE49A *)0x0;
           pAVar4 = *(AnonShape_006E1EE0_698AE49A **)pAVar4) {
-        SubmarineTitans::Recovered::HiddenThis::AnonReceiver_004248D0::FUN_006e1ee0
-                  ((AnonReceiver_004248D0 *)param_1,pAVar4,local_3c,(int)local_cc,local_a0);
+        SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00424E10::FUN_006e1ee0
+                  ((AnonReceiver_00424E10 *)param_1,pAVar4,local_3c,(int)local_cc,local_a0);
         FUN_00726ce0(param_1,(int)pAVar4);
         iVar23 = 0;
         if (0 < local_a0[0]) {
@@ -174,8 +174,8 @@ void __fastcall FUN_006ddd50(AnonShape_006DDD50_309FA381 *param_1)
       for (pAVar5 = (AnonShape_007282B0_AFD740A9 *)param_1->field_0140;
           pAVar5 != (AnonShape_007282B0_AFD740A9 *)0x0;
           pAVar5 = *(AnonShape_007282B0_AFD740A9 **)pAVar5) {
-        SubmarineTitans::Recovered::HiddenThis::AnonReceiver_004248D0::FUN_006e1ee0
-                  ((AnonReceiver_004248D0 *)param_1,(AnonShape_006E1EE0_698AE49A *)pAVar5,local_3c,
+        SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00424E10::FUN_006e1ee0
+                  ((AnonReceiver_00424E10 *)param_1,(AnonShape_006E1EE0_698AE49A *)pAVar5,local_3c,
                    (int)local_cc,local_a0);
         FUN_00726ce0(param_1,(int)pAVar5);
         iVar23 = 0;
@@ -238,8 +238,8 @@ void __fastcall FUN_006ddd50(AnonShape_006DDD50_309FA381 *param_1)
                        local_a0);
         }
         else {
-          SubmarineTitans::Recovered::HiddenThis::AnonReceiver_004248D0::FUN_006e1ee0
-                    ((AnonReceiver_004248D0 *)param_1,pAVar4,local_3c,(int)local_cc,local_a0);
+          SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00424E10::FUN_006e1ee0
+                    ((AnonReceiver_00424E10 *)param_1,pAVar4,local_3c,(int)local_cc,local_a0);
         }
         FUN_00726ce0(param_1,(int)pAVar4);
         iVar23 = 0;

@@ -135,9 +135,6 @@ entry_address	kind	status	detail
 006ECB5D	seh_filter	disabled	create_apply=0
 00708C53	seh_filter	disabled	create_apply=0
 00709772	seh_filter	disabled	create_apply=0
-0071E000	data_referenced_code	disabled	create_apply=0
-00720960	data_referenced_code	disabled	create_apply=0
-00725520	data_referenced_code	disabled	create_apply=0
 0072585E	seh_filter	disabled	create_apply=0
 00727C39	seh_filter	disabled	create_apply=0
 007292F9	seh_filter	disabled	create_apply=0
