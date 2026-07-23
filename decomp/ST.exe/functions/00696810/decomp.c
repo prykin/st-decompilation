@@ -1,63 +1,62 @@
 
-void __fastcall FUN_00696810(void *param_1)
+/* [STMethodOwnerApplier] Structural method owner recovered as CGenerate.
+   Evidence: this_call_owners=[CGenerate]; agreed_this_calls=1; incoming_this_accesses=7;
+   incoming_edx_uses=0; incoming_stack_parameter_uses=0; direct_non_thunk_callers=0;
+   incoming_ecx_receiver_callers=0; attributed_named_callers=1; owner_evidence_coverage=adequate */
+
+void __thiscall CGenerate::sub_00696810(CGenerate *this)
 
 {
-  int *piVar1;
-  int iVar2;
-  uint uVar3;
-  int iVar4;
-  undefined4 uVar5;
+  byte *pbVar1;
+  int *piVar2;
+  int iVar3;
+  uint uVar4;
+  int iVar5;
   undefined4 uVar6;
+  undefined4 uVar7;
   int local_38 [9];
   int local_14;
   uint local_10;
   int local_c;
   int local_8;
 
-  uVar3 = 0xffffffff;
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  thunk_FUN_006948e0(param_1,*(int *)((int)param_1 + 0x5833));
+  uVar4 = 0xffffffff;
+  sub_006948E0(this,this->field_5833);
   local_c = 0;
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  if (0 < *(int *)((int)param_1 + 0x582f)) {
+  if (0 < (int)this->field_582F) {
     do {
-      iVar2 = local_c;
-      local_14 = thunk_FUN_00696400(param_1,local_c,(int)local_38);
-      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-      local_10 = (uint)*(byte *)(*(int *)((int)param_1 + 0x584b) + iVar2);
+      iVar3 = local_c;
+      local_14 = sub_00696400(this,local_c,(int)local_38);
+      pbVar1 = this->field_584B + iVar3;
+      local_10 = (uint)*pbVar1;
       local_8 = 0;
       if (0 < local_14) {
-        piVar1 = local_38;
+        piVar2 = local_38;
         do {
-          /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-          uVar3 = (uint)*(short *)(*(int *)((int)param_1 + 0x584f) + *piVar1 * 2);
-          if (-1 < (int)uVar3) {
-            iVar2 = local_c;
-            /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-            if (*(byte *)(*piVar1 + *(int *)((int)param_1 + 0x584b)) == local_10) break;
-            uVar3 = 0xffffffff;
+          uVar4 = (uint)(short)this->field_584F[*piVar2];
+          if (-1 < (int)uVar4) {
+            iVar3 = local_c;
+            if ((uint)this->field_584B[*piVar2] == (uint)*pbVar1) break;
+            uVar4 = 0xffffffff;
           }
-          piVar1 = piVar1 + 1;
+          piVar2 = piVar2 + 1;
           local_8 = local_8 + 1;
         } while (local_8 < local_14);
       }
-      if ((int)uVar3 < 0) {
+      if ((int)uVar4 < 0) {
+        uVar7 = 0;
         uVar6 = 0;
-        uVar5 = 0;
-        iVar4 = 0;
-        uVar3 = Library::MSVCRT::FUN_0072e6c0();
-        /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-        uVar3 = thunk_FUN_00695c10(param_1,local_10,(int)uVar3 % *(int *)((int)param_1 + 0x5847) + 1
-                                   ,iVar4,uVar5,uVar6);
-        if (-1 < (int)uVar3) goto LAB_006968cf;
+        iVar5 = 0;
+        uVar4 = Library::MSVCRT::FUN_0072e6c0();
+        uVar4 = sub_00695C10(this,local_10,(int)uVar4 % this->field_5847 + 1,iVar5,uVar6,uVar7);
+        if (-1 < (int)uVar4) goto LAB_006968cf;
       }
       else {
 LAB_006968cf:
-        thunk_FUN_00695f70(param_1,uVar3,iVar2,0);
+        sub_00695F70(this,uVar4,iVar3,0);
       }
-      local_c = iVar2 + 1;
-    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-    } while (local_c < *(int *)((int)param_1 + 0x582f));
+      local_c = iVar3 + 1;
+    } while (local_c < (int)this->field_582F);
   }
   return;
 }

@@ -4,7 +4,7 @@ address	name	current_type	raw_target	classification	target_name	target_data_type
 00438688	PTR_caseD_29_00438688	/pointer	004371A8	code_pointer	STAllPlayersC::CmdToPlsObj			0	0	0		0
 004493D8	PTR_caseD_1_004493d8	/pointer	004493BF	code_pointer	STAllPlayersC::PutOnPlaceGuardBoats			0	0	0		0
 004BD358	PTR_caseD_2a_004bd358	/pointer	004BCF6D	code_pointer	TLOBaseTy::GetMessage			0	0	0		0
-004CFB64	PTR_caseD_d_004cfb64	/pointer	004CFA63	code_pointer	FUN_004cfa00			0	0	0		0
+004CFB64	PTR_caseD_d_004cfb64	/pointer	004CFA63	code_pointer	TLOBaseTy::sub_004CFA00			0	0	0		0
 004CFD5C	PTR_caseD_d_004cfd5c	/pointer	004CFC24	code_pointer	FUN_004cfbe0			0	0	0		0
 004E0710	PTR_caseD_1_004e0710	/pointer	004E04F8	code_pointer	FUN_004e04a0			0	0	0		0
 005018F8	PTR_caseD_16_005018f8	/pointer	0050177C	code_pointer	CPanelTy::PaintCtrlBoat			0	0	0		0

@@ -1,4 +1,4 @@
-FUN_00697390:
+CGenerate::sub_00697390:
 00697390  55                        PUSH EBP
 00697391  8B EC                     MOV EBP,ESP
 00697393  83 EC 5C                  SUB ESP,0x5c

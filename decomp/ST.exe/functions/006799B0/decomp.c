@@ -78,7 +78,7 @@ void __thiscall FUN_006799b0(void *this,uint param_1)
     local_3c[0]._4_4_ = *(undefined4 *)((int)this + 0x6fe);
     /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
     local_3c[0]._0_4_ = 0x6a;
-    AiPlrClassTy::sub_0067A020(this,local_3c,-1);
+    SubmarineTitans::Recovered::HiddenThis::AnonReceiver_006799B0::sub_0067A020(this,local_3c,-1);
   }
   return;
 }

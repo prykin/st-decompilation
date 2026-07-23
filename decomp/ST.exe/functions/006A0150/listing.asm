@@ -1,4 +1,4 @@
-FUN_006a0150:
+CGenerate::sub_006A0150:
 006A0150  56                        PUSH ESI
 006A0151  8B F1                     MOV ESI,ECX
 006A0153  57                        PUSH EDI

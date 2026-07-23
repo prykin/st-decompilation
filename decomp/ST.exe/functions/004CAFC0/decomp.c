@@ -33,7 +33,7 @@ TLOBaseTy::sub_004CAFC0
   iVar2 = (uVar1 & 0xff) - 1;
   TVar4 = this->field_05AC;
   if (TVar4 == CASE_32) {
-    thunk_FUN_004cfa00(this,param_1,param_2,(int *)param_3,(int *)param_4);
+    sub_004CFA00(this,param_1,param_2,(int *)param_3,(int *)param_4);
     return;
   }
   if (TVar4 == CASE_5C) {

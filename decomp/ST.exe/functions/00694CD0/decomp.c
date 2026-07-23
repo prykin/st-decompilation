@@ -1,5 +1,10 @@
 
-void __thiscall FUN_00694cd0(void *this,AnonShape_00694CD0_AC50FDB9 *param_1)
+/* [STMethodOwnerApplier] Structural method owner recovered as CGenerate.
+   Evidence: this_call_owners=[CGenerate]; agreed_this_calls=1; incoming_this_accesses=6;
+   incoming_edx_uses=2; incoming_stack_parameter_uses=4; direct_non_thunk_callers=0;
+   incoming_ecx_receiver_callers=0; attributed_named_callers=1; owner_evidence_coverage=adequate */
+
+void __thiscall CGenerate::sub_00694CD0(CGenerate *this,AnonShape_00694CD0_AC50FDB9 *param_1)
 
 {
   char cVar1;
@@ -36,8 +41,8 @@ void __thiscall FUN_00694cd0(void *this,AnonShape_00694CD0_AC50FDB9 *param_1)
   local_8 = 0;
   /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   iVar2 = *(int *)(param_1->field_001C + 0xc);
-  iVar3 = (*(int **)((int)this + 8))[1];
-  iVar4 = **(int **)((int)this + 8);
+  iVar3 = this->field_0008[1];
+  iVar4 = *this->field_0008;
   if (0 < iVar2) {
     do {
       iVar5 = param_1->field_001C;
@@ -49,40 +54,44 @@ void __thiscall FUN_00694cd0(void *this,AnonShape_00694CD0_AC50FDB9 *param_1)
         psVar8 = (short *)0x0;
       }
       if (*(short *)(DAT_00853dd4 +
-                    ((int)psVar8[2] * iVar3 * iVar4 * 4 +
-                     (int)psVar8[1] * **(int **)((int)this + 8) * 2 + (int)*psVar8) * 2) == 0) {
+                    ((int)psVar8[2] * iVar3 * iVar4 * 4 + (int)psVar8[1] * *this->field_0008 * 2 +
+                    (int)*psVar8) * 2) == 0) {
         local_10 = 0;
         puVar7 = thunk_FUN_00692c10(CASE_5A,*(int *)(psVar8 + 5),&local_10,(int)psVar8[2],0);
         puVar7[5] = (int)*psVar8;
         puVar7[6] = (int)psVar8[1];
         cVar1 = (char)psVar8[7];
         if (cVar1 == '\0') {
+          /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
           puVar7[8] = *(uint *)(&DAT_007d59e0 +
-                               ((uint)*(byte *)((int)this + 0x249) +
-                               (*(int *)(psVar8 + 5) + -0xdd) * 3) * 4);
+                               ((uint)(byte)this->field_0249 + (*(int *)(psVar8 + 5) + -0xdd) * 3) *
+                               4);
         }
         else if (cVar1 == '\x01') {
           uVar6 = Library::MSVCRT::FUN_0072e6c0();
+          /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
           puVar7[8] = (((int)uVar6 % 0x1a + 0x32) *
                       *(int *)(&DAT_007d59e0 +
-                              ((uint)*(byte *)((int)this + 0x249) +
-                              (*(int *)(psVar8 + 5) + -0xdd) * 3) * 4)) / 100;
+                              ((uint)(byte)this->field_0249 + (*(int *)(psVar8 + 5) + -0xdd) * 3) *
+                              4)) / 100;
         }
         else if (cVar1 == '\x02') {
           uVar6 = Library::MSVCRT::FUN_0072e6c0();
+          /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
           puVar7[8] = (((int)uVar6 % 0x15 + 0x1e) *
                       *(int *)(&DAT_007d59e0 +
-                              ((uint)*(byte *)((int)this + 0x249) +
-                              (*(int *)(psVar8 + 5) + -0xdd) * 3) * 4)) / 100;
+                              ((uint)(byte)this->field_0249 + (*(int *)(psVar8 + 5) + -0xdd) * 3) *
+                              4)) / 100;
         }
         else {
           uVar6 = Library::MSVCRT::FUN_0072e6c0();
+          /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
           puVar7[8] = (((int)uVar6 % 0x18 + 0xf) *
                       *(int *)(&DAT_007d59e0 +
-                              ((uint)*(byte *)((int)this + 0x249) +
-                              (*(int *)(psVar8 + 5) + -0xdd) * 3) * 4)) / 0x5a;
+                              ((uint)(byte)this->field_0249 + (*(int *)(psVar8 + 5) + -0xdd) * 3) *
+                              4)) / 0x5a;
         }
-        thunk_FUN_006a09f0(this,(byte *)puVar7,local_10);
+        sub_006A09F0(this,(byte *)puVar7,local_10);
       }
       local_8 = local_8 + 1;
     } while ((int)local_8 < iVar2);

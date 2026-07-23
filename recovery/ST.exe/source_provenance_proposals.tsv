@@ -1041,5 +1041,3 @@ source_apply	name_apply	address	old_name	source_file	diagnostic_lines	source_con
 0	0	006A0960	CGenerate::_saveObj	E:\\__titans\\Maps\\generate.cpp	224	high	source_already_present_in_function_comment		none	no_strict_free_function_string	
 1	0	006A2770	FUN_006a2770	E:\\__titans\\Maps\\map_cnt.cpp	767	high	unique_embedded_source_path		none	no_strict_free_function_string	
 1	0	006A2ED0	FUN_006a2ed0	E:\\__titans\\Maps\\prepare.cpp	207	high	unique_embedded_source_path		none	no_strict_free_function_string	
-1	0	006B4563	FUN_006b4563	E:\\DKW\\DDX\\C\\dddibpus.c	132	high	unique_embedded_source_path		none	no_strict_free_function_string	
-1	0	006C5951	FUN_006c5951	E:\\DKW\\DDX\\C\\ddline.c	767	high	unique_embedded_source_path		none	no_strict_free_function_string	

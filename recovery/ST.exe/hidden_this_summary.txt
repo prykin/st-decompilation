@@ -1,7 +1,7 @@
 program=ST.exe
-candidates=716
+candidates=682
 convention_apply=0
-receiver_type_apply=18
+receiver_type_apply=4
 note=No class owner or semantic method name is invented.
 note_safety=High confidence requires incoming ECX capture/use, either two explicit pointer receiver call sites or one such call corroborated by a multi-function same-receiver family, no scalar ECX setup or caller cleanup, no live incoming EDX use, and exact RET n/stack-parameter agreement.
 note_size=Anonymous receiver layouts larger than 0x4000 bytes remain review-only.

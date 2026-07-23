@@ -1,6 +1,6 @@
 program=ST.exe
-functions_scanned=5743
-direct_calls_seen=37355
+functions_scanned=5741
+direct_calls_seen=37349
 globals_with_evidence=254
 proposals=114
 type_auto_apply=2

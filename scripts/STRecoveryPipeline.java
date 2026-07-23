@@ -21,6 +21,8 @@ import java.util.Map;
 import java.util.Set;
 
 import ghidra.app.script.GhidraScript;
+import ghidra.app.plugin.core.analysis.AutoAnalysisManager;
+import ghidra.framework.model.TransactionInfo;
 
 public class STRecoveryPipeline extends GhidraScript {
     private static final int MAX_STRUCTURAL_PASSES = 3;
@@ -48,6 +50,7 @@ public class STRecoveryPipeline extends GhidraScript {
         // ABORTED, while later scripts and the exporter still see its temporary state. End
         // the empty wrapper now so every child owns a real independent transaction.
         end(true);
+        settleBackgroundAnalysis("pipeline startup");
         requireNoOpenTransaction("at pipeline startup");
         PipelineOptions options = options();
         repository = options.repository;
@@ -305,10 +308,15 @@ public class STRecoveryPipeline extends GhidraScript {
         println(String.format(Locale.ROOT, "[%02d] %s%s", ordinal, script,
             argument.isBlank() ? "" : " <- " + argument));
         Instant started = Instant.now();
+        // A committed child can enqueue auto-analysis just after the preceding post-step
+        // drain observed an empty queue.  Drain again at the consumer boundary instead of
+        // mistaking Ghidra's own transaction for a leaked script transaction.
+        settleBackgroundAnalysis("before " + script);
         requireNoOpenTransaction("before " + script);
         long modificationBefore = currentProgram.getModificationNumber();
         try {
             runScript(script, args);
+            settleBackgroundAnalysis("after " + script);
             requireNoOpenTransaction("after " + script);
             long modificationAfter = currentProgram.getModificationNumber();
             if (modificationAfter != modificationBefore) programMutationObserved = true;
@@ -332,10 +340,56 @@ public class STRecoveryPipeline extends GhidraScript {
         println("\n== " + name + " ==");
     }
 
-    private void requireNoOpenTransaction(String context) {
-        if (currentProgram.getCurrentTransactionInfo() != null)
+    private void requireNoOpenTransaction(String context) throws Exception {
+        TransactionInfo transaction = currentProgram.getCurrentTransactionInfo();
+        // Close the remaining race between waitForAnalysis() returning and the analysis
+        // worker publishing/closing its Program transaction.  Only Ghidra's exact outer
+        // transaction is waitable here; a child-owned transaction still fails immediately.
+        if (transaction != null && autoAnalysisBoundaryOpen(transaction)) {
+            settleBackgroundAnalysis(context);
+            transaction = currentProgram.getCurrentTransactionInfo();
+        }
+        if (transaction != null)
             throw new IllegalStateException("Unexpected open Program transaction " + context +
-                ": " + currentProgram.getCurrentTransactionInfo().getDescription());
+                ": description=" + transaction.getDescription() +
+                ", status=" + transaction.getStatus() +
+                ", open_subtransactions=" + transaction.getOpenSubTransactions());
+    }
+
+    private void settleBackgroundAnalysis(String context) throws Exception {
+        AutoAnalysisManager analysis =
+            AutoAnalysisManager.getAnalysisManager(currentProgram);
+        boolean announced = analysis.isAnalyzing();
+        if (announced)
+            println("Waiting for Ghidra auto-analysis " + context + "...");
+        // Do not guard this call with isAnalyzing(): Ghidra clears that flag slightly before
+        // AnalysisWorkerCommand closes its outer Program transaction.
+        analysis.waitForAnalysis(null, monitor);
+        for (int attempt = 0; attempt < 500; attempt++) {
+            monitor.checkCancelled();
+            TransactionInfo transaction = currentProgram.getCurrentTransactionInfo();
+            if (transaction == null || !autoAnalysisBoundaryOpen(transaction)) return;
+            if (!announced) {
+                println("Waiting for Ghidra auto-analysis transaction " + context + "...");
+                announced = true;
+            }
+            if (analysis.isAnalyzing()) analysis.waitForAnalysis(null, monitor);
+            else Thread.sleep(10);
+        }
+    }
+
+    /**
+     * Ghidra can retain the just-ended script transaction as the outer entry while an
+     * Auto Analysis subtransaction drains.  In that state the description is the script's
+     * transaction name (for example "Apply recovered switch enums"), not "Auto Analysis".
+     * Waiting is still safe: once the auto-analysis child closes, a genuinely leaked script
+     * transaction remains visible without an Auto Analysis child and the boundary check fails.
+     */
+    private boolean autoAnalysisBoundaryOpen(TransactionInfo transaction) {
+        List<String> open = transaction.getOpenSubTransactions();
+        if (!open.isEmpty() && open.stream().allMatch("Auto Analysis"::equals))
+            return true;
+        return open.isEmpty() && "Auto Analysis".equals(transaction.getDescription());
     }
 
     private void skipped(String script, String argument, String detail) throws Exception {

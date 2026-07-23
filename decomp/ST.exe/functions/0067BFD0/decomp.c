@@ -58,7 +58,9 @@ void __thiscall AiPlrClassTy::sub_0067BFD0(AiPlrClassTy *this,DArrayTy *param_1,
         local_2d = *(undefined4 *)(puVar1 + 2);
         local_29 = *(undefined4 *)(puVar1 + 4);
         local_25 = *(undefined4 *)(puVar1 + 6);
-        sub_0067A020(this_00,(AnonShape_0068FD00_A5257008 *)&local_40,(uint)*puVar3);
+        SubmarineTitans::Recovered::HiddenThis::AnonReceiver_006799B0::sub_0067A020
+                  ((AnonReceiver_006799B0 *)this_00,(AnonShape_0068FD00_A5257008 *)&local_40,
+                   (uint)*puVar3);
         uVar5 = local_8;
       }
       local_8 = uVar5 + 1;

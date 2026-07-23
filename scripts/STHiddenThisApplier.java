@@ -18,7 +18,9 @@ import java.util.Map;
 import java.util.Set;
 
 import ghidra.app.script.GhidraScript;
+import ghidra.app.plugin.core.analysis.AutoAnalysisManager;
 import ghidra.app.util.parser.FunctionSignatureParser;
+import ghidra.framework.model.TransactionInfo;
 import ghidra.program.model.address.Address;
 import ghidra.program.model.data.CategoryPath;
 import ghidra.program.model.data.DataType;
@@ -128,6 +130,7 @@ public class STHiddenThisApplier extends GhidraScript {
             finally {
                 currentProgram.endTransaction(transaction, commit);
             }
+            settleBackgroundAnalysis(row.get("address"));
             if (!commit && report.size() > reportIndex) {
                 ReportRow result = report.get(reportIndex);
                 report.set(reportIndex, new ReportRow(result.address, "conflict",
@@ -143,6 +146,36 @@ public class STHiddenThisApplier extends GhidraScript {
             ", preserved=" + count("preserved") + ", conflicts=" + count("conflict") +
             ", disabled=" + count("disabled"));
         println("Apply report: " + output);
+    }
+
+    /**
+     * Namespace/signature changes can wake Ghidra auto-analysis before the row transaction has
+     * fully drained.  Waiting here preserves the intended one-row transaction boundary instead
+     * of allowing the analyzer entry to bridge several proposal rows.
+     */
+    private void settleBackgroundAnalysis(String address) throws Exception {
+        AutoAnalysisManager analysis =
+            AutoAnalysisManager.getAnalysisManager(currentProgram);
+        // isAnalyzing() may become false just before the worker transaction closes, so the
+        // wait is intentionally unconditional and followed by a bounded transaction drain.
+        analysis.waitForAnalysis(null, monitor);
+        for (int attempt = 0; attempt < 500; attempt++) {
+            monitor.checkCancelled();
+            TransactionInfo transaction = currentProgram.getCurrentTransactionInfo();
+            if (transaction == null || !onlyAutoAnalysisOpen(transaction)) break;
+            if (analysis.isAnalyzing()) analysis.waitForAnalysis(null, monitor);
+            else Thread.sleep(10);
+        }
+        TransactionInfo transaction = currentProgram.getCurrentTransactionInfo();
+        if (transaction != null)
+            throw new IllegalStateException("Program transaction did not drain after hidden-this " +
+                address + ": status=" + transaction.getStatus() +
+                ", open_subtransactions=" + transaction.getOpenSubTransactions());
+    }
+
+    private boolean onlyAutoAnalysisOpen(TransactionInfo transaction) {
+        List<String> open = transaction.getOpenSubTransactions();
+        return !open.isEmpty() && open.stream().allMatch("Auto Analysis"::equals);
     }
 
     private void repairLegacyPartialApply(Tsv tsv) throws Exception {

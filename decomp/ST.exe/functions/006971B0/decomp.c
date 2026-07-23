@@ -1,14 +1,21 @@
 
-int __fastcall FUN_006971b0(int param_1)
+/* [STMethodOwnerApplier] Structural method owner recovered as CGenerate.
+   Evidence: this_call_owners=[CGenerate]; agreed_this_calls=1; incoming_this_accesses=9;
+   incoming_edx_uses=0; incoming_stack_parameter_uses=0; direct_non_thunk_callers=0;
+   incoming_ecx_receiver_callers=0; attributed_named_callers=1; owner_evidence_coverage=adequate */
+
+int __thiscall CGenerate::sub_006971B0(CGenerate *this)
 
 {
-  int *piVar1;
-  uint uVar2;
-  int iVar3;
-  int iVar4;
-  uint uVar5;
+  dword dVar1;
+  DArrayTy *pDVar2;
+  int *piVar3;
+  uint uVar4;
+  int iVar5;
   int iVar6;
-  undefined4 *puVar7;
+  uint uVar7;
+  int iVar8;
+  undefined4 *puVar9;
   int local_38;
   int local_20;
   void *local_14;
@@ -21,75 +28,67 @@ int __fastcall FUN_006971b0(int param_1)
   local_14 = ExceptionList;
   local_20 = 0;
   local_8 = 0;
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  uVar2 = *(uint *)(param_1 + 0x583b);
+  uVar4 = this->field_583B;
   ExceptionList = &local_14;
   Library::MSVCRT::FUN_0072da40();
   local_8 = 0xffffffff;
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  if ((*(int *)(param_1 + 0x5853) != 0) && (&stack0x00000000 != (undefined1 *)0x50)) {
-    puVar7 = (undefined4 *)&stack0xffffffb0;
-    for (uVar2 = uVar2 & 0x3fffffff; uVar2 != 0; uVar2 = uVar2 - 1) {
-      *puVar7 = 0;
-      puVar7 = puVar7 + 1;
+  if ((this->field_5853 != (DArrayTy *)0x0) && (&stack0x00000000 != (undefined1 *)0x50)) {
+    puVar9 = (undefined4 *)&stack0xffffffb0;
+    for (uVar4 = uVar4 & 0x3fffffff; uVar4 != 0; uVar4 = uVar4 - 1) {
+      *puVar9 = 0;
+      puVar9 = puVar9 + 1;
     }
-    for (iVar3 = 0; iVar3 != 0; iVar3 = iVar3 + -1) {
-      *(undefined1 *)puVar7 = 0;
-      puVar7 = (undefined4 *)((int)puVar7 + 1);
+    for (iVar5 = 0; iVar5 != 0; iVar5 = iVar5 + -1) {
+      *(undefined1 *)puVar9 = 0;
+      puVar9 = (undefined4 *)((int)puVar9 + 1);
     }
-    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-    iVar3 = *(int *)(*(int *)(param_1 + 0x5853) + 0xc);
-    uVar2 = 0;
-    if (0 < iVar3) {
+    dVar1 = this->field_5853->count;
+    uVar4 = 0;
+    if (0 < (int)dVar1) {
       do {
-        /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-        iVar4 = *(int *)(param_1 + 0x5853);
-        if (uVar2 < *(uint *)(iVar4 + 0xc)) {
-          piVar1 = (int *)(*(int *)(iVar4 + 8) * uVar2 + *(int *)(iVar4 + 0x1c));
+        pDVar2 = this->field_5853;
+        if (uVar4 < pDVar2->count) {
+          /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(pDVar2, uVar4) (runtime stride) */
+          piVar3 = (int *)(pDVar2->elementSize * uVar4 + (int)pDVar2->data);
         }
         else {
-          piVar1 = (int *)0x0;
+          piVar3 = (int *)0x0;
         }
-        if (piVar1 != (int *)0x0) {
-          *(int *)(&stack0xffffffb0 + *piVar1 * 4) =
-               *(int *)(&stack0xffffffb0 + *piVar1 * 4) + *(int *)((int)piVar1 + 0x11);
+        if (piVar3 != (int *)0x0) {
+          *(int *)(&stack0xffffffb0 + *piVar3 * 4) =
+               *(int *)(&stack0xffffffb0 + *piVar3 * 4) + *(int *)((int)piVar3 + 0x11);
         }
-        uVar2 = uVar2 + 1;
-      } while ((int)uVar2 < iVar3);
+        uVar4 = uVar4 + 1;
+      } while ((int)uVar4 < (int)dVar1);
     }
     local_38 = -1;
-    iVar4 = 0;
     iVar6 = 0;
-    iVar3 = -1;
-    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-    if (0 < *(int *)(param_1 + 0x583b)) {
+    iVar8 = 0;
+    iVar5 = -1;
+    if (0 < this->field_583B) {
       do {
-        /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-        iVar3 = (*(int *)(&stack0xffffffb0 + iVar6 * 4) * 100) / *(int *)(param_1 + 0x582f);
-        if (iVar6 == 0) {
-          /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-          uVar2 = iVar3 - *(int *)(param_1 + 0x5843);
-          uVar5 = (int)uVar2 >> 0x1f;
-          iVar4 = (uVar2 ^ uVar5) - uVar5;
-          local_38 = iVar6;
+        iVar5 = (*(int *)(&stack0xffffffb0 + iVar8 * 4) * 100) / (int)this->field_582F;
+        if (iVar8 == 0) {
+          uVar4 = iVar5 - this->field_5843;
+          uVar7 = (int)uVar4 >> 0x1f;
+          iVar6 = (uVar4 ^ uVar7) - uVar7;
+          local_38 = iVar8;
         }
         else {
-          /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-          uVar2 = iVar3 - *(int *)(param_1 + 0x5843);
-          uVar5 = (int)uVar2 >> 0x1f;
-          iVar3 = (uVar2 ^ uVar5) - uVar5;
-          if (iVar3 < iVar4) {
-            iVar4 = iVar3;
-            local_38 = iVar6;
+          uVar4 = iVar5 - this->field_5843;
+          uVar7 = (int)uVar4 >> 0x1f;
+          iVar5 = (uVar4 ^ uVar7) - uVar7;
+          if (iVar5 < iVar6) {
+            iVar6 = iVar5;
+            local_38 = iVar8;
           }
         }
-        iVar6 = iVar6 + 1;
-        iVar3 = local_38;
-      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-      } while (iVar6 < *(int *)(param_1 + 0x583b));
+        iVar8 = iVar8 + 1;
+        iVar5 = local_38;
+      } while (iVar8 < this->field_583B);
     }
-    if (-1 < iVar3) {
-      local_20 = iVar3;
+    if (-1 < iVar5) {
+      local_20 = iVar5;
     }
   }
   ExceptionList = local_14;

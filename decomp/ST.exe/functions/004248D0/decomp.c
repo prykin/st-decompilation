@@ -5,7 +5,15 @@
 
    [STSwitchEnumApplier] Switch target param_6 uses
    /SubmarineTitans/Recovered/Enums/Global_sub_004248D0_param_6Enum. Cases:
-   CASE_0=0;CASE_1=1;CASE_2=2;CASE_3=3 */
+   CASE_0=0;CASE_1=1;CASE_2=2;CASE_3=3
+
+   [STSwitchEnumApplier] Switch target param_5 uses
+   /SubmarineTitans/Recovered/Enums/SubmarineTitans_Recovered_HiddenThis_AnonReceiver_004248D0_sub_004248D0_param_5Enum.
+   Cases: CASE_0=0;CASE_1=1;CASE_2=2;CASE_3=3
+
+   [STSwitchEnumApplier] Switch target param_6 uses
+   /SubmarineTitans/Recovered/Enums/SubmarineTitans_Recovered_HiddenThis_AnonReceiver_004248D0_sub_004248D0_param_6Enum.
+   Cases: CASE_0=0;CASE_1=1;CASE_2=2;CASE_3=3 */
 
 int __thiscall
 sub_004248D0(void *this,int param_1,int param_2,int param_3,int param_4,

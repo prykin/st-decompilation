@@ -108,7 +108,6 @@ function_address	target	status	detail
 00691480	parameter:0	disabled	apply flags are 0
 00692C10	parameter:2	disabled	apply flags are 0
 00695C10	parameter:4	disabled	apply flags are 0
-006ACF0D	return:	applied	type=applied(/int)
 006B8F10	parameter:0	disabled	apply flags are 0
 006BBE40	parameter:1	disabled	repair row; use STPrototypeRepairAnalyzer/Applier first
 006BC3E0	parameter:1	disabled	apply flags are 0

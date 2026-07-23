@@ -1,4 +1,4 @@
-FUN_00695eb0:
+CGenerate::sub_00695EB0:
 00695EB0  56                        PUSH ESI
 00695EB1  57                        PUSH EDI
 00695EB2  8B F9                     MOV EDI,ECX

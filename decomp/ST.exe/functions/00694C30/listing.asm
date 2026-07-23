@@ -1,4 +1,4 @@
-FUN_00694c30:
+CGenerate::sub_00694C30:
 00694C30  56                        PUSH ESI
 00694C31  8B F1                     MOV ESI,ECX
 00694C33  8B 46 10                  MOV EAX,dword ptr [ESI + 0x10]

@@ -11,25 +11,25 @@
    incoming_ecx_receiver_callers=0; attributed_named_callers=2; owner_evidence_coverage=adequate */
 
 void __thiscall
-AiPlrClassTy::sub_0067A020(AiPlrClassTy *this,AnonShape_0068FD00_A5257008 *param_1,int param_2)
+SubmarineTitans::Recovered::HiddenThis::AnonReceiver_006799B0::sub_0067A020
+          (AnonReceiver_006799B0 *this,AnonShape_0068FD00_A5257008 *param_1,int param_2)
 
 {
   AiTactClassTy *this_00;
   uint uVar1;
   undefined4 *puVar2;
-  DArrayTy *pDVar3;
+  int iVar3;
   uint uVar4;
 
-  pDVar3 = this->field_0695;
-  if (pDVar3 != (DArrayTy *)0x0) {
-    uVar1 = pDVar3->count;
+  iVar3 = *(int *)&this->field_0x695;
+  if (iVar3 != 0) {
+    uVar1 = *(uint *)(iVar3 + 0xc);
     uVar4 = 0;
     if (0 < (int)uVar1) {
       do {
-        if (((pDVar3 != (DArrayTy *)0x0) && (-1 < (int)uVar4)) && ((int)uVar4 < (int)uVar1)) {
+        if (((iVar3 != 0) && (-1 < (int)uVar4)) && ((int)uVar4 < (int)uVar1)) {
           if (uVar4 < uVar1) {
-            /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(pDVar3, uVar4) (runtime stride) */
-            puVar2 = (undefined4 *)(pDVar3->elementSize * uVar4 + (int)pDVar3->data);
+            puVar2 = (undefined4 *)(*(int *)(iVar3 + 8) * uVar4 + *(int *)(iVar3 + 0x1c));
           }
           else {
             puVar2 = (undefined4 *)0x0;
@@ -46,8 +46,8 @@ AiPlrClassTy::sub_0067A020(AiPlrClassTy *this,AnonShape_0068FD00_A5257008 *param
           }
         }
         uVar4 = uVar4 + 1;
-        pDVar3 = this->field_0695;
-        uVar1 = pDVar3->count;
+        iVar3 = *(int *)&this->field_0x695;
+        uVar1 = *(uint *)(iVar3 + 0xc);
       } while ((int)uVar4 < (int)uVar1);
     }
   }

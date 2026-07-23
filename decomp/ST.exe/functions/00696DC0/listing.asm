@@ -1,4 +1,4 @@
-FUN_00696dc0:
+CGenerate::sub_00696DC0:
 00696DC0  55                        PUSH EBP
 00696DC1  8B EC                     MOV EBP,ESP
 00696DC3  51                        PUSH ECX

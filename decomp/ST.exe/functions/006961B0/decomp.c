@@ -35,7 +35,7 @@ int __thiscall FUN_006961b0(void *this,uint param_1,uint param_2,int param_3,int
         do {
           if ((bVar6) && (iVar2 = *(int *)(iVar2 + 8) * uVar4 + *(int *)(iVar2 + 0x1c), iVar2 != 0))
           {
-            uVar1 = thunk_FUN_00695f70(this,param_1,*(int *)(iVar2 + 2),param_3);
+            uVar1 = CGenerate::sub_00695F70(this,param_1,*(int *)(iVar2 + 2),param_3);
             if (-1 < (int)uVar1) {
               local_8 = local_8 + 1;
             }

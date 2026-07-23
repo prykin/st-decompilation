@@ -1,18 +1,22 @@
 
-int __thiscall FUN_0069b190(void *this,int param_1,int param_2,int param_3)
+/* [STMethodOwnerApplier] Structural method owner recovered as CGenerate.
+   Evidence: this_call_owners=[CGenerate]; agreed_this_calls=1; incoming_this_accesses=13;
+   incoming_edx_uses=0; incoming_stack_parameter_uses=12; direct_non_thunk_callers=0;
+   incoming_ecx_receiver_callers=0; attributed_named_callers=1; owner_evidence_coverage=adequate */
+
+int __thiscall CGenerate::sub_0069B190(CGenerate *this,int param_1,int param_2,int param_3)
 
 {
-  short sVar1;
-  int iVar2;
-  undefined4 *puVar3;
-  short *psVar4;
-  uint uVar5;
+  int iVar1;
+  ushort *puVar2;
+  short *psVar3;
+  uint uVar4;
+  int iVar5;
   int iVar6;
   int iVar7;
   int iVar8;
-  int iVar9;
-  uint uVar10;
-  int iVar11;
+  uint uVar9;
+  int iVar10;
   int local_18;
   int local_14;
   int local_c;
@@ -20,78 +24,80 @@ int __thiscall FUN_0069b190(void *this,int param_1,int param_2,int param_3)
 
   local_c = 0;
   local_18 = 0;
-  *(int *)((int)this + 0x582f) = param_1 * param_2;
-  uVar10 = (param_3 + 1) * param_1 * param_2;
-  *(int *)((int)this + 0x5833) = param_1;
-  *(int *)((int)this + 0x5837) = param_2;
-  FreeAndNull((void **)((int)this + 0x584f));
-  uVar5 = uVar10 * 2;
-  puVar3 = (undefined4 *)Library::DKW::LIB::FUN_006aac70(uVar5);
-  *(void **)((int)this + 0x584f) = puVar3;
-  for (uVar10 = (uVar10 & 0x7fffffff) >> 1; uVar10 != 0; uVar10 = uVar10 - 1) {
-    *puVar3 = 0;
-    puVar3 = puVar3 + 1;
+  this->field_582F = param_1 * param_2;
+  uVar9 = (param_3 + 1) * param_1 * param_2;
+  this->field_5833 = param_1;
+  this->field_5837 = param_2;
+  FreeAndNull(&this->field_584F);
+  uVar4 = uVar9 * 2;
+  puVar2 = (ushort *)Library::DKW::LIB::FUN_006aac70(uVar4);
+  this->field_584F = puVar2;
+  for (uVar9 = (uVar9 & 0x7fffffff) >> 1; uVar9 != 0; uVar9 = uVar9 - 1) {
+    puVar2[0] = 0;
+    puVar2[1] = 0;
+    puVar2 = puVar2 + 2;
   }
-  for (uVar5 = uVar5 & 3; uVar5 != 0; uVar5 = uVar5 - 1) {
-    *(undefined1 *)puVar3 = 0;
-    puVar3 = (undefined4 *)((int)puVar3 + 1);
+  for (uVar4 = uVar4 & 3; uVar4 != 0; uVar4 = uVar4 - 1) {
+    *(undefined1 *)puVar2 = 0;
+    puVar2 = (ushort *)((int)puVar2 + 1);
   }
-  thunk_FUN_0069ada0(this,*(int *)((int)this + 0x584f),param_3 + 1);
+  sub_0069ADA0(this,(int)this->field_584F,param_3 + 1);
   if (0 < param_3) {
     do {
-      iVar2 = *(int *)((int)this + 0x582f);
+      iVar1 = this->field_582F;
       local_14 = 0;
-      if (-1 < *(int *)((int)this + 0x5837)) {
+      if (-1 < this->field_5837) {
         do {
-          iVar7 = *(int *)((int)this + 0x5833);
-          iVar6 = 0;
-          if (-1 < iVar7) {
-            iVar8 = iVar7 * local_14 + local_18 * iVar2;
-            param_2 = iVar8 * 2;
+          iVar6 = this->field_5833;
+          iVar5 = 0;
+          if (-1 < iVar6) {
+            iVar7 = iVar6 * local_14 + local_18 * iVar1;
+            param_2 = iVar7 * 2;
             do {
-              iVar9 = iVar8 + 1;
-              iVar6 = iVar6 + 1;
-              iVar11 = iVar9;
-              if (iVar7 <= iVar6) {
-                iVar11 = -1;
+              iVar8 = iVar7 + 1;
+              iVar5 = iVar5 + 1;
+              iVar10 = iVar8;
+              if (iVar6 <= iVar5) {
+                iVar10 = -1;
               }
-              if (*(int *)((int)this + 0x5837) < local_14 + 1) {
-                iVar7 = -1;
+              if (this->field_5837 < local_14 + 1) {
+                iVar6 = -1;
                 local_8 = -1;
               }
               else {
-                iVar7 = param_1 + -1 + iVar9;
-                if (iVar11 < 0) {
+                iVar6 = param_1 + -1 + iVar8;
+                if (iVar10 < 0) {
                   local_8 = -1;
                 }
                 else {
-                  local_8 = iVar9 + param_1;
+                  local_8 = iVar8 + param_1;
                 }
               }
-              if (-1 < iVar8) {
-                psVar4 = (short *)(*(int *)((int)this + 0x584f) + param_2);
-                if (*psVar4 == -1) {
-                  *psVar4 = 1;
+              if (-1 < iVar7) {
+                psVar3 = (short *)((int)this->field_584F + param_2);
+                if (*psVar3 == -1) {
+                  *psVar3 = 1;
                   local_c = local_c + 1;
                 }
-                if ((((iVar9 != 1 && -1 < iVar8) && (0 < iVar11)) && (0 < iVar7)) && (0 < local_8))
+                if ((((iVar8 != 1 && -1 < iVar7) && (0 < iVar10)) && (0 < iVar6)) && (0 < local_8))
                 {
-                  iVar8 = *(int *)((int)this + 0x584f);
-                  if (((((*(short *)(param_2 + iVar8) == -1) || (0 < *(short *)(param_2 + iVar8)))
-                       && ((sVar1 = *(short *)(iVar8 + iVar11 * 2), sVar1 == -1 || (0 < sVar1)))) &&
-                      ((sVar1 = *(short *)(iVar8 + iVar7 * 2), sVar1 == -1 || (0 < sVar1)))) &&
-                     ((sVar1 = *(short *)(iVar8 + local_8 * 2), sVar1 == -1 || (0 < sVar1)))) {
-                    *(undefined2 *)(param_2 + iVar8) = 4;
+                  puVar2 = this->field_584F;
+                  if (((((*(short *)(param_2 + (int)puVar2) == -1) ||
+                        (0 < *(short *)(param_2 + (int)puVar2))) &&
+                       ((puVar2[iVar10] == 0xffff || (0 < (short)puVar2[iVar10])))) &&
+                      ((puVar2[iVar6] == 0xffff || (0 < (short)puVar2[iVar6])))) &&
+                     ((puVar2[local_8] == 0xffff || (0 < (short)puVar2[local_8])))) {
+                    *(undefined2 *)(param_2 + (int)puVar2) = 4;
                   }
                 }
               }
               param_2 = param_2 + 2;
-              iVar7 = *(int *)((int)this + 0x5833);
-              iVar8 = iVar9;
-            } while (iVar6 <= iVar7);
+              iVar6 = this->field_5833;
+              iVar7 = iVar8;
+            } while (iVar5 <= iVar6);
           }
           local_14 = local_14 + 1;
-        } while (local_14 <= *(int *)((int)this + 0x5837));
+        } while (local_14 <= this->field_5837);
       }
       local_18 = local_18 + 1;
     } while (local_18 < param_3);

@@ -56,7 +56,7 @@ apply	address	old_name	library	namespace	confidence	evidence	references
 1	006B3840	Library::DKW::DDX::FUN_006b3840	DKW_DDX	Library::DKW::DDX	high	E:\\DKW\\DDX\\C\\ddsinit.c	006B390A
 1	006B3CC0	Library::DKW::DDX::FUN_006b3cc0	DKW_DDX	Library::DKW::DDX	high	E:\\DKW\\DDX\\C\\ddsprmsg.c	006B3D4E
 1	006B3DD0	Library::DKW::DDX::FUN_006b3dd0	DKW_DDX	Library::DKW::DDX	high	E:\\DKW\\DDX\\C\\ddsinit.c	006B3F1B
-1	006B4563	FUN_006b4563	DKW_DDX	Library::DKW::DDX	high	E:\\DKW\\DDX\\C\\dddibpus.c	006B45F7
+1	006B4563	Library::DKW::DDX::FUN_006b4563	DKW_DDX	Library::DKW::DDX	high	E:\\DKW\\DDX\\C\\dddibpus.c	006B45F7
 1	006B4680	Library::DKW::DDX::FUN_006b4680	DKW_DDX	Library::DKW::DDX	high	E:\\DKW\\DDX\\C\\dddibtpc.c	006B487D
 1	006B48E0	Library::DKW::DDX::FUN_006b48e0	DKW_DDX	Library::DKW::DDX	high	E:\\DKW\\DDX\\C\\dddibtps.c	006B4ADF
 1	006B5110	Library::DKW::WGR::FUN_006b5110	DKW_WGR	Library::DKW::WGR	high	E:\\DKW\\WGR\\C\\dibtrans.c	006B5426
@@ -128,7 +128,7 @@ apply	address	old_name	library	namespace	confidence	evidence	references
 1	006C4A20	Library::DKW::FLC::FUN_006c4a20	DKW_FLC	Library::DKW::FLC	high	E:\\DKW\\FLC\\C\\flcmopen.cpp	006C4A4E
 1	006C4AC0	Library::DKW::FLC::FUN_006c4ac0	DKW_FLC	Library::DKW::FLC	high	E:\\DKW\\FLC\\C\\flcdrawf.cpp	006C4B2F
 1	006C5000	Library::DKW::DDX::FUN_006c5000	DKW_DDX	Library::DKW::DDX	high	E:\\DKW\\DDX\\C\\dddibpsh.c	006C51CD
-1	006C5951	FUN_006c5951	DKW_DDX	Library::DKW::DDX	high	E:\\DKW\\DDX\\C\\ddline.c	006C599F
+1	006C5951	Library::DKW::DDX::FUN_006c5951	DKW_DDX	Library::DKW::DDX	high	E:\\DKW\\DDX\\C\\ddline.c	006C599F
 1	006C6470	Library::DKW::DDX::FUN_006c6470	DKW_DDX	Library::DKW::DDX	high	E:\\DKW\\DDX\\C\\ddrrect.c	006C65ED
 1	006C6660	Library::DKW::DDX::FUN_006c6660	DKW_DDX	Library::DKW::DDX	high	E:\\DKW\\DDX\\C\\ddrrect.c	006C67DD
 1	006C68F0	Library::DKW::DDX::FUN_006c68f0	DKW_DDX	Library::DKW::DDX	high	E:\\DKW\\DDX\\C\\ddshadr.c	006C6A1A

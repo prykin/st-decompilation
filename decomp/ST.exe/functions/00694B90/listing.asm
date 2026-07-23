@@ -1,4 +1,4 @@
-FUN_00694b90:
+CGenerate::sub_00694B90:
 00694B90  56                        PUSH ESI
 00694B91  8B F1                     MOV ESI,ECX
 00694B93  57                        PUSH EDI

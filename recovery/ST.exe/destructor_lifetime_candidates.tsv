@@ -183,7 +183,7 @@ address	function	owner	vtable_slots	deallocates_this	this_field_writes	zeroed_th
 005B9170	MMsgTy::CloseSprBut	MMsgTy	0x8	0	0	0	0	0	6
 005B9330	MMsgTy::GetMessage	MMsgTy	0x0	0	1	0	0	0	13
 005BC5E0	PrividerTy::GetMessage	PrividerTy	0x0	0	1	0	0	0	69
-005C29B0	SubmarineTitans::Recovered::HiddenThis::AnonReceiver_005B6730::sub_005C29B0	SettMapMTy	0x10	0	0	0	0	0	174
+005C29B0	SubmarineTitans::Recovered::HiddenThis::AnonReceiver_005B6730::sub_005C29B0	SubmarineTitans::Recovered::HiddenThis::AnonReceiver_005B6730	0x10	0	0	0	0	0	174
 005C4930	SettMapTy::DoneSettMap	SettMapTy	0x14	0	0	0	0	0	39
 005C5130	SettMapTy::NoneSettMap	SettMapTy	0xC	0	1	0	1	0	52
 005C5B60	SettMapTy::CloseButtons	SettMapTy	0x8	0	0	0	0	0	8

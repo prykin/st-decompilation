@@ -131,17 +131,10 @@ apply	shape_id	offset	size	proposed_name	proposed_type	evidence_count	reason
 1	AnonNested_0068E4F0_00A5_6001B6B3	8	4	field_0008	/int	1	dereference through parent pointer field; observed_types={/int=1}
 1	AnonNested_0068E4F0_00A5_6001B6B3	12	4	field_000C	/undefined4	1	dereference through parent pointer field; observed_types={/int=2, /uint=2}
 1	AnonNested_0068E4F0_00A5_6001B6B3	28	4	field_001C	/int	1	dereference through parent pointer field; observed_types={/int=1}
-1	AnonNested_00694CD0_0008_CC35D736	0	4	field_0000	/int	1	dereference through parent pointer field; observed_types={/int=2}
-1	AnonNested_00694CD0_0008_CC35D736	4	4	field_0004	/int	1	dereference through parent pointer field; observed_types={/int=1}
-1	AnonNested_0069ADA0_000C_771063C4	0	2	field_0000	/short	2	dereference through parent pointer field; observed_types={/short=17}
-1	AnonNested_0069ADA0_000C_771063C4	2	2	field_0002	/short	1	dereference through parent pointer field; observed_types={/short=6}
-1	AnonNested_0069ADA0_000C_771063C4	1109	4	field_0455	/int	1	dereference through parent pointer field; observed_types={/int=2}
 1	AnonNested_0069BC10_0008_975EAAD1	0	4	field_0000	/int	1	dereference through parent pointer field; observed_types={/int=1}
 1	AnonNested_0069BC10_0008_975EAAD1	4	4	field_0004	/int	1	dereference through parent pointer field; observed_types={/int=1}
 1	AnonNested_0069F160_0008_DA6B40D5	0	4	field_0000	/int	1	dereference through parent pointer field; observed_types={/int=2}
 1	AnonNested_0069F160_0008_DA6B40D5	4	4	field_0004	/int	1	dereference through parent pointer field; observed_types={/int=1}
-1	AnonNested_006A0E30_0008_6257299B	0	4	field_0000	/int	1	dereference through parent pointer field; observed_types={/int=2}
-1	AnonNested_006A0E30_0008_6257299B	4	4	field_0004	/int	1	dereference through parent pointer field; observed_types={/int=1}
 1	AnonNested_006D58C0_00E0_63977295	648	4	field_0288	/int	1	dereference through parent pointer field; observed_types={/int=1}
 1	AnonNested_006D58C0_00E0_63977295	780	4	field_030C	/int	1	dereference through parent pointer field; observed_types={/int=1}
 1	AnonNested_006D6A10_0288_213244E3	4	4	field_0004	/uint	1	dereference through parent pointer field; observed_types={/uint=2}
@@ -963,7 +956,6 @@ apply	shape_id	offset	size	proposed_name	proposed_type	evidence_count	reason
 1	AnonShape_006942A0_DC3AC59A	16	1	field_0010	/undefined1	1	fixed-offset dereference; observed_types={/undefined1=1}
 1	AnonShape_00694510_C4C313B6	6557	4	field_199D	/undefined4	1	fixed-offset dereference; observed_types={/int=5, /undefined4=1}
 1	AnonShape_00694890_E22E6A2C	16	4	field_0010	/undefined4	1	fixed-offset dereference; observed_types={/undefined4=1, pointer:/undefined4=2}
-1	AnonShape_00694CD0_674F21BA	8	4	field_0008	pointer:/SubmarineTitans/Recovered/PointerShapes/AnonNested_00694CD0_0008_CC35D736	2	fixed-offset dereference; observed_types={}
 1	AnonShape_00695010_96BA53C4	4	4	field_0004	/int	1	fixed-offset dereference; observed_types={/int=1}
 1	AnonShape_00695180_6DC76A4C	16	4	field_0010	/int	1	fixed-offset dereference; observed_types={/int=1}
 1	AnonShape_006952B0_7A982E30	524	4	field_020C	/int	1	fixed-offset dereference; observed_types={/int=2}
@@ -972,18 +964,14 @@ apply	shape_id	offset	size	proposed_name	proposed_type	evidence_count	reason
 1	AnonShape_006952B0_7A982E30	545	4	field_0221	/int	1	fixed-offset dereference; observed_types={/int=1}
 1	AnonShape_006952B0_7A982E30	549	4	field_0225	/undefined4	1	fixed-offset dereference; observed_types={/undefined4=1}
 1	AnonShape_006952B0_7A982E30	553	4	field_0229	/undefined4	1	fixed-offset dereference; observed_types={/undefined4=1}
-1	AnonShape_00697390_4D94B279	8	4	field_0008	pointer:/int	1	fixed-offset dereference; observed_types={pointer:/int=1}
-1	AnonShape_006988C0_FDA53D62	8	4	field_0008	pointer:/int	1	fixed-offset dereference; observed_types={pointer:/int=1}
 1	AnonShape_00698DB0_1CB5EC78	6	4	field_0006	/uint	1	fixed-offset dereference; observed_types={/uint=2}
 1	AnonShape_00698DB0_DA155C11	6	4	field_0006	/uint	1	fixed-offset dereference; observed_types={/uint=2}
-1	AnonShape_0069ADA0_05040A81	12	4	field_000C	pointer:/SubmarineTitans/Recovered/PointerShapes/AnonNested_0069ADA0_000C_771063C4	5	fixed-offset dereference; observed_types={}
 1	AnonShape_0069B8D0_BA32C79B	44	4	field_002C	/int	1	fixed-offset dereference; observed_types={/int=2}
 1	AnonShape_0069B8D0_D2DE3938	44	4	field_002C	/int	1	fixed-offset dereference; observed_types={/int=2}
 1	AnonShape_0069BC10_7DC9B58A	8	4	field_0008	pointer:/SubmarineTitans/Recovered/PointerShapes/AnonNested_0069BC10_0008_975EAAD1	2	fixed-offset dereference; observed_types={}
 1	AnonShape_0069C710_92A26D6D	12	4	field_000C	pointer:/uint	1	fixed-offset dereference; observed_types={pointer:/uint=1}
 1	AnonShape_0069F160_A44CB769	8	4	field_0008	pointer:/SubmarineTitans/Recovered/PointerShapes/AnonNested_0069F160_0008_DA6B40D5	2	fixed-offset dereference; observed_types={}
 1	AnonShape_006A0C90_D7092A83	8	4	field_0008	pointer:/int	1	fixed-offset dereference; observed_types={pointer:/int=1}
-1	AnonShape_006A0E30_CDAE6916	8	4	field_0008	pointer:/SubmarineTitans/Recovered/PointerShapes/AnonNested_006A0E30_0008_6257299B	3	fixed-offset dereference; observed_types={}
 1	AnonShape_006A1370_5C09DA42	1	2	field_0001	/undefined2	1	fixed-offset dereference; observed_types={/undefined2=1, /ushort=1}
 1	AnonShape_006A21F0_E7E9FC50	5	1	field_0005	/byte	1	fixed-offset dereference; observed_types={/byte=1}
 1	AnonShape_006A2690_9C9F8B06	1	2	field_0001	/undefined2	1	fixed-offset dereference; observed_types={/undefined2=1}

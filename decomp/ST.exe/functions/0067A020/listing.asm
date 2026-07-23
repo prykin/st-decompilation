@@ -1,4 +1,4 @@
-AiPlrClassTy::sub_0067A020:
+SubmarineTitans::Recovered::HiddenThis::AnonReceiver_006799B0::sub_0067A020:
 0067A020  55                        PUSH EBP
 0067A021  8B EC                     MOV EBP,ESP
 0067A023  51                        PUSH ECX

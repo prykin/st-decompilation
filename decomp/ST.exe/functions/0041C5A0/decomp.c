@@ -29,8 +29,8 @@ void __thiscall sub_0041C5A0(void *this)
       break;
     case 0xb:
     case 0x23:
-      SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00559D60::thunk_FUN_00559d60
-                ((AnonReceiver_00559D60 *)g_visibleClass_00802A88,(int)*(short *)((int)this + 0x5b),
+      SubmarineTitans::Recovered::HiddenThis::AnonReceiver_005594A0::thunk_FUN_00559d60
+                ((AnonReceiver_005594A0 *)g_visibleClass_00802A88,(int)*(short *)((int)this + 0x5b),
                  (int)*(short *)((int)this + 0x5d),(char)*(undefined2 *)((int)this + 0x5f),
                  *(uint *)((int)this + 0x24),*(undefined **)((int)this + 0x10d),
                  *(undefined4 *)((int)this + 0x18));

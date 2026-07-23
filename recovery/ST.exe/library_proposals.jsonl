@@ -55,7 +55,7 @@
 {"apply":true,"address":"006B3840","old_name":"Library::DKW::DDX::FUN_006b3840","library":"DKW_DDX","namespace":"Library::DKW::DDX","confidence":"high","evidence":"E:\\DKW\\DDX\\C\\ddsinit.c","references":"006B390A"}
 {"apply":true,"address":"006B3CC0","old_name":"Library::DKW::DDX::FUN_006b3cc0","library":"DKW_DDX","namespace":"Library::DKW::DDX","confidence":"high","evidence":"E:\\DKW\\DDX\\C\\ddsprmsg.c","references":"006B3D4E"}
 {"apply":true,"address":"006B3DD0","old_name":"Library::DKW::DDX::FUN_006b3dd0","library":"DKW_DDX","namespace":"Library::DKW::DDX","confidence":"high","evidence":"E:\\DKW\\DDX\\C\\ddsinit.c","references":"006B3F1B"}
-{"apply":true,"address":"006B4563","old_name":"FUN_006b4563","library":"DKW_DDX","namespace":"Library::DKW::DDX","confidence":"high","evidence":"E:\\DKW\\DDX\\C\\dddibpus.c","references":"006B45F7"}
+{"apply":true,"address":"006B4563","old_name":"Library::DKW::DDX::FUN_006b4563","library":"DKW_DDX","namespace":"Library::DKW::DDX","confidence":"high","evidence":"E:\\DKW\\DDX\\C\\dddibpus.c","references":"006B45F7"}
 {"apply":true,"address":"006B4680","old_name":"Library::DKW::DDX::FUN_006b4680","library":"DKW_DDX","namespace":"Library::DKW::DDX","confidence":"high","evidence":"E:\\DKW\\DDX\\C\\dddibtpc.c","references":"006B487D"}
 {"apply":true,"address":"006B48E0","old_name":"Library::DKW::DDX::FUN_006b48e0","library":"DKW_DDX","namespace":"Library::DKW::DDX","confidence":"high","evidence":"E:\\DKW\\DDX\\C\\dddibtps.c","references":"006B4ADF"}
 {"apply":true,"address":"006B5110","old_name":"Library::DKW::WGR::FUN_006b5110","library":"DKW_WGR","namespace":"Library::DKW::WGR","confidence":"high","evidence":"E:\\DKW\\WGR\\C\\dibtrans.c","references":"006B5426"}
@@ -127,7 +127,7 @@
 {"apply":true,"address":"006C4A20","old_name":"Library::DKW::FLC::FUN_006c4a20","library":"DKW_FLC","namespace":"Library::DKW::FLC","confidence":"high","evidence":"E:\\DKW\\FLC\\C\\flcmopen.cpp","references":"006C4A4E"}
 {"apply":true,"address":"006C4AC0","old_name":"Library::DKW::FLC::FUN_006c4ac0","library":"DKW_FLC","namespace":"Library::DKW::FLC","confidence":"high","evidence":"E:\\DKW\\FLC\\C\\flcdrawf.cpp","references":"006C4B2F"}
 {"apply":true,"address":"006C5000","old_name":"Library::DKW::DDX::FUN_006c5000","library":"DKW_DDX","namespace":"Library::DKW::DDX","confidence":"high","evidence":"E:\\DKW\\DDX\\C\\dddibpsh.c","references":"006C51CD"}
-{"apply":true,"address":"006C5951","old_name":"FUN_006c5951","library":"DKW_DDX","namespace":"Library::DKW::DDX","confidence":"high","evidence":"E:\\DKW\\DDX\\C\\ddline.c","references":"006C599F"}
+{"apply":true,"address":"006C5951","old_name":"Library::DKW::DDX::FUN_006c5951","library":"DKW_DDX","namespace":"Library::DKW::DDX","confidence":"high","evidence":"E:\\DKW\\DDX\\C\\ddline.c","references":"006C599F"}
 {"apply":true,"address":"006C6470","old_name":"Library::DKW::DDX::FUN_006c6470","library":"DKW_DDX","namespace":"Library::DKW::DDX","confidence":"high","evidence":"E:\\DKW\\DDX\\C\\ddrrect.c","references":"006C65ED"}
 {"apply":true,"address":"006C6660","old_name":"Library::DKW::DDX::FUN_006c6660","library":"DKW_DDX","namespace":"Library::DKW::DDX","confidence":"high","evidence":"E:\\DKW\\DDX\\C\\ddrrect.c","references":"006C67DD"}
 {"apply":true,"address":"006C68F0","old_name":"Library::DKW::DDX::FUN_006c68f0","library":"DKW_DDX","namespace":"Library::DKW::DDX","confidence":"high","evidence":"E:\\DKW\\DDX\\C\\ddshadr.c","references":"006C6A1A"}
