@@ -1213,7 +1213,7 @@ function_address	label_address	proposed_name	status	detail
 004F80A0	004F861B	cf_branch_target_004F861B	disabled	apply=0
 004F80A0	004F8860	cf_join_004F8860	disabled	apply=0
 004F80A0	004F88E6	cf_join_004F88E6	disabled	apply=0
-004F80A0	004F88ED	cf_common_join_004F88ED	applied	kind=common_join; gotos=5; previous=CPanelTy::PaintTV::cf_switch_join_004F88ED
+004F80A0	004F88ED	cf_common_join_004F88ED	unchanged	label is already primary
 004F96A0	004F9A8A	cf_join_004F9A8A	disabled	apply=0
 004F9ED0	004FA138	cf_join_004FA138	disabled	apply=0
 004FAB10	004FAC39	cf_join_004FAC39	disabled	apply=0
@@ -1328,7 +1328,7 @@ function_address	label_address	proposed_name	status	detail
 005149B0	00514AB9	cf_join_00514AB9	disabled	apply=0
 005149B0	00514AC6	cf_join_00514AC6	disabled	apply=0
 00514BC0	00514BE2	cf_join_00514BE2	disabled	apply=0
-00514BC0	00514CF6	cf_common_join_00514CF6	applied	kind=common_join; gotos=5; previous=FUN_00514bc0::cf_switch_join_00514CF6
+00514BC0	00514CF6	cf_common_join_00514CF6	unchanged	label is already primary
 00514BC0	00514CF9	cf_join_00514CF9	disabled	apply=0
 00514BC0	00514D04	cf_join_00514D04	disabled	apply=0
 00514F10	00514F85	cf_join_00514F85	disabled	apply=0
@@ -1381,7 +1381,7 @@ function_address	label_address	proposed_name	status	detail
 0052FB00	00530592	cf_join_00530592	disabled	apply=0
 0052FB00	005305A9	cf_join_005305A9	disabled	apply=0
 0052FB00	005305B4	cf_join_005305B4	disabled	apply=0
-0052FB00	005305BC	cf_common_join_005305BC	applied	kind=common_join; gotos=4; previous=OptPanelTy::SetOptControls::cf_switch_join_005305BC
+0052FB00	005305BC	cf_common_join_005305BC	unchanged	label is already primary
 0052FB00	00530D9D	cf_join_00530D9D	disabled	apply=0
 0052FB00	00530DA0	cf_join_00530DA0	disabled	apply=0
 0052FB00	0053108D	cf_join_0053108D	disabled	apply=0
@@ -1899,7 +1899,7 @@ function_address	label_address	proposed_name	status	detail
 005C8A40	005CA71B	cf_join_005CA71B	disabled	apply=0
 005C8A40	005CA73B	cf_join_005CA73B	disabled	apply=0
 005C8A40	005CA964	cf_join_005CA964	disabled	apply=0
-005C8A40	005CA971	cf_common_join_005CA971	applied	kind=common_join; gotos=5; previous=SettMapTy::GetMessage::cf_switch_join_005CA971
+005C8A40	005CA971	cf_common_join_005CA971	unchanged	label is already primary
 005C8A40	005CAB38	cf_join_005CAB38	disabled	apply=0
 005C8A40	005CAD88	cf_join_005CAD88	disabled	apply=0
 005C8A40	005CADD5	cf_join_005CADD5	disabled	apply=0
@@ -2347,7 +2347,7 @@ function_address	label_address	proposed_name	status	detail
 00652810	00659785	cf_join_00659785	disabled	apply=0
 00652810	006598CA	cf_join_006598CA	disabled	apply=0
 00652810	00659A1C	cf_join_00659A1C	disabled	apply=0
-00652810	00659A73	cf_common_join_00659A73	applied	kind=common_join; gotos=112; previous=AiEventClassTy::GetMessage::cf_switch_join_00659A73
+00652810	00659A73	cf_common_join_00659A73	unchanged	label is already primary
 00652810	00659A80	cf_continue_loop_00659A80	unchanged	label is already primary
 00652810	00659AAE	cf_join_00659AAE	disabled	apply=0
 0065BD70	0065C021	cf_join_0065C021	disabled	apply=0

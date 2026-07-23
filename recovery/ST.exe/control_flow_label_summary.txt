@@ -1,6 +1,6 @@
 program=ST.exe
-functions_scanned=5743
-cfg_candidates=4272
+functions_scanned=5741
+cfg_candidates=4270
 functions_with_gotos=878
 decompile_failures=0
 goto_statements=6316

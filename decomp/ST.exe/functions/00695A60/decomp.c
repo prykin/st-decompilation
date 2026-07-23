@@ -7,16 +7,17 @@
 
 undefined4 __thiscall
 CGenerate::CteateField
-          (CGenerate *this,int param_1,int param_2,undefined4 param_3,undefined4 param_4,
-          undefined4 param_5,int param_6)
+          (CGenerate *this,int param_1,int param_2,int param_3,int param_4,int param_5,int param_6)
 
 {
   code *pcVar1;
   CGenerate *pCVar2;
   int iVar3;
-  DArrayTy *pDVar4;
-  undefined4 uVar5;
-  int iVar6;
+  byte *pbVar4;
+  ushort *puVar5;
+  DArrayTy *pDVar6;
+  undefined4 uVar7;
+  int iVar8;
   InternalExceptionFrame local_50;
   undefined4 local_c;
   CGenerate *local_8;
@@ -36,29 +37,30 @@ CGenerate::CteateField
     local_8->field_5837 = iVar3 / param_1;
     local_8->field_583B = param_5;
     local_8->field_5847 = param_3;
-    iVar3 = Library::DKW::LIB::FUN_006aac70(iVar3);
-    pCVar2->field_584B = iVar3;
-    iVar3 = Library::DKW::LIB::FUN_006aac70
-                      (pCVar2->field_582F * ((-(uint)(param_6 != 0) & 7) + 1) * 2);
-    pCVar2->field_584F = iVar3;
-    pDVar4 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,10,0x1d,10);
-    pCVar2->field_5853 = pDVar4;
+    pbVar4 = (byte *)Library::DKW::LIB::FUN_006aac70(iVar3);
+    pCVar2->field_584B = pbVar4;
+    puVar5 = (ushort *)
+             Library::DKW::LIB::FUN_006aac70
+                       (pCVar2->field_582F * ((-(uint)(param_6 != 0) & 7) + 1) * 2);
+    pCVar2->field_584F = puVar5;
+    pDVar6 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,10,0x1d,10);
+    pCVar2->field_5853 = pDVar6;
     g_currentExceptionFrame = local_50.previous;
-    if (((pCVar2->field_584B == 0) || (pCVar2->field_584F == 0)) ||
-       (uVar5 = 1, pCVar2->field_5853 == (DArrayTy *)0x0)) {
+    if (((pCVar2->field_584B == (byte *)0x0) || (pCVar2->field_584F == (ushort *)0x0)) ||
+       (uVar7 = 1, pCVar2->field_5853 == (DArrayTy *)0x0)) {
       return local_c;
     }
   }
   else {
     g_currentExceptionFrame = local_50.previous;
-    iVar6 = ReportDebugMessage("E:\\__titans\\Maps\\gen_map.cpp",0x330,0,iVar3,"%s",
+    iVar8 = ReportDebugMessage("E:\\__titans\\Maps\\gen_map.cpp",0x330,0,iVar3,"%s",
                                "CGenerate::CteateField");
-    if (iVar6 != 0) {
+    if (iVar8 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
     RaiseInternalException(iVar3,0,"E:\\__titans\\Maps\\gen_map.cpp",0x332);
-    uVar5 = 0xffff;
+    uVar7 = 0xffff;
   }
-  return uVar5;
+  return uVar7;
 }
 

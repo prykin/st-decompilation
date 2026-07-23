@@ -21,13 +21,13 @@ address	status	proposed_name	detail
 00419CF0	conflict	TLOEmbryoTy::sub_00419CF0	this_type=conflict(no auto this parameter)
 00419D30	disabled	TLOBaseTy::sub_00419D30	all apply flags are 0
 0041C3F0	disabled	TLOEmbryoTy::sub_0041C3F0	all apply flags are 0
-0041C5A0	repaired	sub_0041C5A0	removed weak class owner; reset 0 downstream script-owned receiver types
+0041C5A0	disabled		all apply flags are 0
 0041C710	disabled		all apply flags are 0
 0041CAF0	disabled		all apply flags are 0
-0041D1A0	applied	STMineSetC::sub_0041D1A0	owner=applied(STMineSetC::sub_0041D1A0); this_type=unchanged
-0041D2B0	applied	STMineSetC::sub_0041D2B0	owner=applied(STMineSetC::sub_0041D2B0); parameters=applied(no explicit parameters); convention=applied(__thiscall); this_type=unchanged
+0041D1A0	disabled	STMineSetC::sub_0041D1A0	all apply flags are 0
+0041D2B0	disabled	STMineSetC::sub_0041D2B0	all apply flags are 0
 0041D590	disabled	TLOBaseTy::sub_0041D590	all apply flags are 0
-0041D6C0	applied	STMineSetC::sub_0041D6C0	owner=applied(STMineSetC::sub_0041D6C0); this_type=unchanged
+0041D6C0	disabled	STMineSetC::sub_0041D6C0	all apply flags are 0
 0041D900	disabled	TLOEmbryoTy::sub_0041D900	all apply flags are 0
 0041DC40	disabled		all apply flags are 0
 0041DD00	disabled		all apply flags are 0
@@ -87,7 +87,7 @@ address	status	proposed_name	detail
 004B6FC0	disabled	STAllPlayersC::sub_004B6FC0	all apply flags are 0
 004B7030	disabled	STAllPlayersC::sub_004B7030	all apply flags are 0
 004B7F90	disabled	TLOBaseTy::sub_004B7F90	all apply flags are 0
-004B98E0	applied	TLOBaseTy::sub_004B98E0	owner=applied(TLOBaseTy::sub_004B98E0); this_type=unchanged
+004B98E0	disabled	TLOBaseTy::sub_004B98E0	all apply flags are 0
 004B9A40	disabled	TLOBaseTy::sub_004B9A40	all apply flags are 0
 004C2F70	disabled	TLOBaseTy::sub_004C2F70	all apply flags are 0
 004C3480	disabled	TLOBaseTy::sub_004C3480	all apply flags are 0
@@ -100,7 +100,7 @@ address	status	proposed_name	detail
 004C7230	disabled	TLOBaseTy::sub_004C7230	all apply flags are 0
 004C96E0	disabled	TLOBaseTy::sub_004C96E0	all apply flags are 0
 004CA7B0	disabled	TLOBaseTy::sub_004CA7B0	all apply flags are 0
-004CAFC0	applied	TLOBaseTy::sub_004CAFC0	owner=applied(TLOBaseTy::sub_004CAFC0); this_type=unchanged
+004CAFC0	disabled	TLOBaseTy::sub_004CAFC0	all apply flags are 0
 004CBA10	disabled	TLOBaseTy::sub_004CBA10	all apply flags are 0
 004CBA30	disabled	TLOBaseTy::sub_004CBA30	all apply flags are 0
 004CBF30	disabled	TLOBaseTy::sub_004CBF30	all apply flags are 0
@@ -108,6 +108,7 @@ address	status	proposed_name	detail
 004CC330	disabled	TLOBaseTy::sub_004CC330	all apply flags are 0
 004CD3B0	disabled	TLOBaseTy::sub_004CD3B0	all apply flags are 0
 004CEB00	disabled	TLOBaseTy::sub_004CEB00	all apply flags are 0
+004CFA00	disabled	TLOBaseTy::sub_004CFA00	all apply flags are 0
 004D10A0	disabled	TLOEmbryoTy::sub_004D10A0	all apply flags are 0
 004D73B0	disabled	STAllPlayersC::sub_004D73B0	all apply flags are 0
 004D7430	disabled	STAllPlayersC::sub_004D7430	all apply flags are 0
@@ -116,7 +117,7 @@ address	status	proposed_name	detail
 004D86A0	disabled	STAllPlayersC::sub_004D86A0	all apply flags are 0
 004D8760	disabled	STAllPlayersC::sub_004D8760	all apply flags are 0
 004DC150	disabled	TLOBaseTy::sub_004DC150	all apply flags are 0
-004DF9F0	applied	TLOBaseTy::sub_004DF9F0	owner=applied(TLOBaseTy::sub_004DF9F0); parameters=applied(no explicit parameters); convention=applied(__thiscall); this_type=unchanged
+004DF9F0	disabled	TLOBaseTy::sub_004DF9F0	all apply flags are 0
 004E51B0	disabled	STAllPlayersC::sub_004E51B0	all apply flags are 0
 004EA620	disabled	TLOBaseTy::sub_004EA620	all apply flags are 0
 004EAA20	conflict	TLOBaseTy::sub_004EAA20	this_type=conflict(no auto this parameter)
@@ -171,28 +172,27 @@ address	status	proposed_name	detail
 005505D0	disabled	STPlaySystemC::sub_005505D0	all apply flags are 0
 00550830	disabled	STPlaySystemC::sub_00550830	all apply flags are 0
 005508F0	disabled	STPlaySystemC::sub_005508F0	all apply flags are 0
-00551800	applied	TradePanelTy::sub_00551800	owner=applied(TradePanelTy::sub_00551800); parameters=applied(no explicit parameters); convention=applied(__thiscall); this_type=unchanged
+00551800	disabled	TradePanelTy::sub_00551800	all apply flags are 0
 00551B10	disabled	TradePanelTy::sub_00551B10	all apply flags are 0
 00555570	disabled	cLoadingTy::sub_00555570	all apply flags are 0
 00555680	disabled	cLoadingTy::sub_00555680	all apply flags are 0
 00555880	disabled	TraksClassTy::sub_00555880	all apply flags are 0
 00555D90	disabled	TraksClassTy::sub_00555D90	all apply flags are 0
 00558140	disabled	VisibleClassTy::sub_00558140	all apply flags are 0
-00558C00	applied	VisibleClassTy::sub_00558C00	owner=applied(VisibleClassTy::sub_00558C00); this_type=unchanged
+00558C00	disabled	VisibleClassTy::sub_00558C00	all apply flags are 0
 00558DC0	disabled	VisibleClassTy::sub_00558DC0	all apply flags are 0
 00559110	disabled	VisibleClassTy::sub_00559110	all apply flags are 0
 005594A0	disabled		all apply flags are 0
-0055B9F0	disabled	SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00558C00::sub_0055B9F0	all apply flags are 0
 0055BB00	disabled		all apply flags are 0
-0055BBC0	repaired	sub_0055BBC0	removed weak class owner; reset 0 downstream script-owned receiver types
+0055BBC0	disabled		all apply flags are 0
 0055DB70	disabled	StartSystemTy::sub_0055DB70	all apply flags are 0
 00566900	disabled	SoundManagerTy::sub_00566900	all apply flags are 0
-00566970	applied	SoundManagerTy::sub_00566970	owner=applied(SoundManagerTy::sub_00566970); this_type=unchanged
+00566970	disabled	SoundManagerTy::sub_00566970	all apply flags are 0
 00566AA0	disabled	SoundManagerTy::sub_00566AA0	all apply flags are 0
 00568780	disabled	SoundClassTy::sub_00568780	all apply flags are 0
 0056E9E0	disabled	STAppC::sub_0056E9E0	all apply flags are 0
 0056EBE0	disabled	STAppC::sub_0056EBE0	all apply flags are 0
-0056EE90	applied	STAppC::sub_0056EE90	owner=applied(STAppC::sub_0056EE90); parameters=applied(no explicit parameters); convention=applied(__thiscall); this_type=unchanged
+0056EE90	disabled	STAppC::sub_0056EE90	all apply flags are 0
 0056EF50	disabled	STAppC::sub_0056EF50	all apply flags are 0
 0056F040	disabled	STAppC::sub_0056F040	all apply flags are 0
 005711D0	disabled	STAppC::sub_005711D0	all apply flags are 0
@@ -219,7 +219,7 @@ address	status	proposed_name	detail
 00584380	disabled	STJellyGunC::sub_00584380	all apply flags are 0
 005844E0	disabled	STJellyGunC::sub_005844E0	all apply flags are 0
 005899E0	disabled	STOctopusC::sub_005899E0	all apply flags are 0
-0058AF70	applied	STOctopusC::sub_0058AF70	owner=applied(STOctopusC::sub_0058AF70); this_type=unchanged
+0058AF70	disabled	STOctopusC::sub_0058AF70	all apply flags are 0
 0058B190	disabled	STOctopusC::sub_0058B190	all apply flags are 0
 0058EEB0	disabled	STSharkC::sub_0058EEB0	all apply flags are 0
 0058EFE0	disabled	STSharkC::sub_0058EFE0	all apply flags are 0
@@ -279,7 +279,7 @@ address	status	proposed_name	detail
 005F0D00	disabled	STArtiafactC::sub_005F0D00	all apply flags are 0
 005F0D90	disabled	STContainerC::sub_005F0D90	all apply flags are 0
 005F1380	disabled	STManBasisC::sub_005F1380	all apply flags are 0
-005F14B0	applied	STManBasisC::sub_005F14B0	owner=applied(STManBasisC::sub_005F14B0); this_type=unchanged
+005F14B0	disabled	STManBasisC::sub_005F14B0	all apply flags are 0
 005F1700	disabled	STManBasisC::sub_005F1700	all apply flags are 0
 005F19A0	disabled	STManBasisC::sub_005F19A0	all apply flags are 0
 005F1E40	disabled	STManBasisC::sub_005F1E40	all apply flags are 0
@@ -300,10 +300,10 @@ address	status	proposed_name	detail
 005F4FA0	disabled	STBHEShellC::sub_005F4FA0	all apply flags are 0
 005F53A0	disabled	STBHEShellC::sub_005F53A0	all apply flags are 0
 005F5440	disabled	STBHEShellC::sub_005F5440	all apply flags are 0
-005F5700	applied	STBHEShellC::sub_005F5700	owner=applied(STBHEShellC::sub_005F5700); this_type=unchanged
+005F5700	disabled	STBHEShellC::sub_005F5700	all apply flags are 0
 005F5A90	disabled	STBHEShellC::sub_005F5A90	all apply flags are 0
 005F5B80	disabled	STBHEShellC::sub_005F5B80	all apply flags are 0
-005F5C40	applied	STBHEShellC::sub_005F5C40	owner=applied(STBHEShellC::sub_005F5C40); this_type=unchanged
+005F5C40	disabled	STBHEShellC::sub_005F5C40	all apply flags are 0
 005F5D10	disabled	STBHEShellC::sub_005F5D10	all apply flags are 0
 005F5E30	disabled	STBHEShellC::sub_005F5E30	all apply flags are 0
 005F66B0	disabled	STColl3C::sub_005F66B0	all apply flags are 0
@@ -312,12 +312,13 @@ address	status	proposed_name	detail
 005F6AD0	disabled	STColl3C::sub_005F6AD0	all apply flags are 0
 005F6F20	disabled	STColl3C::sub_005F6F20	all apply flags are 0
 005F6F60	disabled	STColl3C::sub_005F6F60	all apply flags are 0
-005F8650	applied	STColl3C::sub_005F8650	owner=applied(STColl3C::sub_005F8650); this_type=unchanged
+005F8650	disabled	STColl3C::sub_005F8650	all apply flags are 0
 005F9450	disabled	STColl3C::sub_005F9450	all apply flags are 0
 005FA030	disabled	STColl3C::sub_005FA030	all apply flags are 0
 005FA070	disabled	STColl3C::sub_005FA070	all apply flags are 0
 005FA0B0	disabled	STColl3C::sub_005FA0B0	all apply flags are 0
 005FA8B0	disabled	STColl3C::sub_005FA8B0	all apply flags are 0
+005FAF70	disabled	STColl3C::sub_005FAF70	all apply flags are 0
 005FC3E0	disabled	STContainerC::sub_005FC3E0	all apply flags are 0
 005FC4A0	disabled	STContainerC::sub_005FC4A0	all apply flags are 0
 005FCAD0	disabled	STContainerC::sub_005FCAD0	all apply flags are 0
@@ -355,7 +356,7 @@ address	status	proposed_name	detail
 006193E0	disabled	STJumpMineC::sub_006193E0	all apply flags are 0
 00619A20	disabled	STJumpMineC::sub_00619A20	all apply flags are 0
 00619C70	disabled	STJumpMineC::sub_00619C70	all apply flags are 0
-0061B340	applied	STJumpMineC::sub_0061B340	owner=applied(STJumpMineC::sub_0061B340); this_type=unchanged
+0061B340	disabled	STJumpMineC::sub_0061B340	all apply flags are 0
 0061D650	disabled	STLightC::sub_0061D650	all apply flags are 0
 0061D6D0	disabled	STLightC::sub_0061D6D0	all apply flags are 0
 0061D710	disabled	STLightC::sub_0061D710	all apply flags are 0
@@ -376,7 +377,7 @@ address	status	proposed_name	detail
 00622BA0	disabled	STMineSetC::sub_00622BA0	all apply flags are 0
 00623600	disabled	STMineSetC::sub_00623600	all apply flags are 0
 006239A0	disabled	STMineSetC::sub_006239A0	all apply flags are 0
-00624920	applied	STMineSetC::sub_00624920	owner=applied(STMineSetC::sub_00624920); this_type=unchanged
+00624920	disabled	STMineSetC::sub_00624920	all apply flags are 0
 00625730	disabled	STMineSetC::sub_00625730	all apply flags are 0
 006263B0	disabled	STMineSetC::sub_006263B0	all apply flags are 0
 00626B50	disabled	STMineSetC::sub_00626B50	all apply flags are 0
@@ -387,7 +388,7 @@ address	status	proposed_name	detail
 00627670	disabled	STMineSetC::sub_00627670	all apply flags are 0
 00629830	disabled	STParticleC::sub_00629830	all apply flags are 0
 00629E60	disabled	STParticleC::sub_00629E60	all apply flags are 0
-00629F20	applied	STParticleC::sub_00629F20	owner=applied(STParticleC::sub_00629F20); parameters=applied(no explicit parameters); convention=applied(__thiscall); this_type=unchanged
+00629F20	disabled	STParticleC::sub_00629F20	all apply flags are 0
 00629F90	disabled	STParticleC::sub_00629F90	all apply flags are 0
 0062A370	disabled	STParticleC::sub_0062A370	all apply flags are 0
 0062A860	disabled	STParticleC::sub_0062A860	all apply flags are 0
@@ -409,8 +410,8 @@ address	status	proposed_name	detail
 0062FFD0	disabled	STRubbishC::sub_0062FFD0	all apply flags are 0
 00630260	disabled	STRubbishC::sub_00630260	all apply flags are 0
 006308B0	disabled	STManRuinC::sub_006308B0	all apply flags are 0
-00630AC0	applied	STManRuinC::sub_00630AC0	owner=applied(STManRuinC::sub_00630AC0); this_type=unchanged
-00630BB0	applied	STManRuinC::sub_00630BB0	owner=applied(STManRuinC::sub_00630BB0); this_type=unchanged
+00630AC0	disabled	STManRuinC::sub_00630AC0	all apply flags are 0
+00630BB0	disabled	STManRuinC::sub_00630BB0	all apply flags are 0
 00630C50	disabled		all apply flags are 0
 00630FF0	disabled	STManRuinC::sub_00630FF0	all apply flags are 0
 00631010	disabled	STManRuinC::sub_00631010	all apply flags are 0
@@ -418,7 +419,7 @@ address	status	proposed_name	detail
 00631390	disabled	STManRuinC::sub_00631390	all apply flags are 0
 00631450	disabled	STManRuinC::sub_00631450	all apply flags are 0
 00631560	disabled	STManRuinC::sub_00631560	all apply flags are 0
-00631880	applied	STManRuinC::sub_00631880	owner=applied(STManRuinC::sub_00631880); this_type=unchanged
+00631880	disabled	STManRuinC::sub_00631880	all apply flags are 0
 006364B0	disabled	SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00636260::sub_006364B0	all apply flags are 0
 00636FC0	disabled	SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00636260::sub_00636FC0	all apply flags are 0
 00645F10	disabled	SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00644410::sub_00645F10	all apply flags are 0
@@ -455,13 +456,13 @@ address	status	proposed_name	detail
 00678BA0	disabled	AiPlrClassTy::sub_00678BA0	all apply flags are 0
 00678E00	disabled		all apply flags are 0
 00678FC0	disabled	AiPlrClassTy::sub_00678FC0	all apply flags are 0
-0067A020	applied	AiPlrClassTy::sub_0067A020	owner=applied(AiPlrClassTy::sub_0067A020); this_type=unchanged
+0067A020	disabled		all apply flags are 0
 0067A240	disabled	AiPlrClassTy::sub_0067A240	all apply flags are 0
 0067B1A0	disabled	AiPlrClassTy::sub_0067B1A0	all apply flags are 0
 0067B2E0	disabled	AiPlrClassTy::sub_0067B2E0	all apply flags are 0
 0067BE20	disabled	AiPlrClassTy::sub_0067BE20	all apply flags are 0
-0067BEF0	applied	AiPlrClassTy::sub_0067BEF0	owner=applied(AiPlrClassTy::sub_0067BEF0); parameters=applied(no explicit parameters); convention=applied(__thiscall)
-0067BF30	applied	AiPlrClassTy::sub_0067BF30	owner=applied(AiPlrClassTy::sub_0067BF30); parameters=applied(no explicit parameters); convention=applied(__thiscall)
+0067BEF0	disabled	AiPlrClassTy::sub_0067BEF0	all apply flags are 0
+0067BF30	disabled	AiPlrClassTy::sub_0067BF30	all apply flags are 0
 0067BFD0	disabled	AiPlrClassTy::sub_0067BFD0	all apply flags are 0
 0067C110	disabled	AiPlrClassTy::sub_0067C110	all apply flags are 0
 0068E010	disabled	AiTactClassTy::sub_0068E010	all apply flags are 0
@@ -477,7 +478,55 @@ address	status	proposed_name	detail
 00690A40	disabled	AiTactClassTy::sub_00690A40	all apply flags are 0
 00690AB0	disabled	AiTactClassTy::sub_00690AB0	all apply flags are 0
 00691480	disabled	AiTactClassTy::sub_00691480	all apply flags are 0
+006948E0	disabled	CGenerate::sub_006948E0	all apply flags are 0
+00694B90	disabled	CGenerate::sub_00694B90	all apply flags are 0
+00694BE0	disabled	CGenerate::sub_00694BE0	all apply flags are 0
+00694C30	disabled	CGenerate::sub_00694C30	all apply flags are 0
+00694C80	disabled	CGenerate::sub_00694C80	all apply flags are 0
+00694CD0	disabled	CGenerate::sub_00694CD0	all apply flags are 0
+00695140	disabled	CGenerate::sub_00695140	all apply flags are 0
+00695180	disabled	CGenerate::sub_00695180	all apply flags are 0
+00695C10	disabled	CGenerate::sub_00695C10	all apply flags are 0
+00695EB0	disabled	CGenerate::sub_00695EB0	all apply flags are 0
+00695F20	disabled	CGenerate::sub_00695F20	all apply flags are 0
+00695F70	disabled	CGenerate::sub_00695F70	all apply flags are 0
+00696050	disabled	CGenerate::sub_00696050	all apply flags are 0
+006960D0	disabled	CGenerate::sub_006960D0	all apply flags are 0
+006961B0	disabled	CGenerate::sub_006961B0	all apply flags are 0
+00696400	disabled	CGenerate::sub_00696400	all apply flags are 0
+006964F0	disabled	CGenerate::sub_006964F0	all apply flags are 0
+00696740	disabled	CGenerate::sub_00696740	all apply flags are 0
+00696790	disabled	CGenerate::sub_00696790	all apply flags are 0
+00696810	disabled	CGenerate::sub_00696810	all apply flags are 0
+00696940	disabled	CGenerate::sub_00696940	all apply flags are 0
+00696D00	disabled	CGenerate::sub_00696D00	all apply flags are 0
+00696DC0	disabled	CGenerate::sub_00696DC0	all apply flags are 0
+00696EB0	disabled	CGenerate::sub_00696EB0	all apply flags are 0
+006971B0	disabled	CGenerate::sub_006971B0	all apply flags are 0
+00697390	disabled	CGenerate::sub_00697390	all apply flags are 0
+006975F0	disabled	CGenerate::sub_006975F0	all apply flags are 0
+006978C0	disabled	CGenerate::sub_006978C0	all apply flags are 0
+00697AF0	disabled	CGenerate::sub_00697AF0	all apply flags are 0
+00697C50	disabled	CGenerate::sub_00697C50	all apply flags are 0
+00697CF0	disabled	CGenerate::sub_00697CF0	all apply flags are 0
+006988C0	disabled	CGenerate::sub_006988C0	all apply flags are 0
+00698CA0	disabled	CGenerate::sub_00698CA0	all apply flags are 0
+00698F90	disabled	CGenerate::sub_00698F90	all apply flags are 0
+006991C0	disabled	CGenerate::sub_006991C0	all apply flags are 0
+0069ADA0	disabled	CGenerate::sub_0069ADA0	all apply flags are 0
+0069B190	disabled	CGenerate::sub_0069B190	all apply flags are 0
+0069B400	disabled	CGenerate::sub_0069B400	all apply flags are 0
+0069B910	disabled	CGenerate::sub_0069B910	all apply flags are 0
+0069BC10	disabled	CGenerate::sub_0069BC10	all apply flags are 0
+0069BDC0	disabled	CGenerate::sub_0069BDC0	all apply flags are 0
+0069CB50	conflict	CGenerate::sub_0069CB50	this_type=conflict(no auto this parameter)
+0069F160	disabled	CGenerate::sub_0069F160	all apply flags are 0
 0069FF90	disabled	CGenerate::sub_0069FF90	all apply flags are 0
+006A0150	disabled	CGenerate::sub_006A0150	all apply flags are 0
+006A0470	disabled	CGenerate::sub_006A0470	all apply flags are 0
+006A09F0	disabled	CGenerate::sub_006A09F0	all apply flags are 0
+006A0C90	disabled	CGenerate::sub_006A0C90	all apply flags are 0
+006A0E30	disabled	CGenerate::sub_006A0E30	all apply flags are 0
 006B0020	disabled		all apply flags are 0
 006B0C70	disabled		all apply flags are 0
 006B4170	disabled	MReportTy::sub_006B4170	all apply flags are 0
@@ -504,6 +553,7 @@ address	status	proposed_name	detail
 006E60A0	disabled		all apply flags are 0
 006E60E0	disabled		all apply flags are 0
 006EA460	disabled	SubmarineTitans::Recovered::HiddenThis::AnonReceiver_006EA050::sub_006EA460	all apply flags are 0
+006F07E0	disabled	CGenerate::sub_006F07E0	all apply flags are 0
 006F31D0	disabled	SubmarineTitans::Recovered::HiddenThis::AnonReceiver_006F31D0::sub_006F31D0	all apply flags are 0
 00702510	disabled	SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00702510::sub_00702510	all apply flags are 0
 00702A30	disabled	SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00702510::sub_00702A30	all apply flags are 0

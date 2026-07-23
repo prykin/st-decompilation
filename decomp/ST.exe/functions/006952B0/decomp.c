@@ -86,97 +86,97 @@ CGenerate::FUN_006952b0(CGenerate *this,AnonShape_006952B0_7A982E30 *param_1,byt
       local_50->count = 0;
       memset((void *)local_6c, 0, 0x18); /* compiler bulk-zero initialization */
       if ((this->field_0008 == (int *)0x0) && (this->field_000C == (byte *)0x0)) {
-        thunk_FUN_006a0150((AnonShape_006A0150_D0561BCC *)this);
+        sub_006A0150(this);
       }
       CteateField(this,*this->field_0008 + -2,this->field_0008[1] + -2,local_34,local_30,local_38,0)
       ;
       sub_0069FF90(this);
-      thunk_FUN_00696790((int)this);
+      sub_00696790(this);
       sub_0069FF90(this);
-      thunk_FUN_00696810(this);
+      sub_00696810(this);
       sub_0069FF90(this);
-      thunk_FUN_00696740(this,0);
+      sub_00696740(this,0);
       sub_0069FF90(this);
-      iVar2 = thunk_FUN_006971b0((int)this);
+      iVar2 = sub_006971B0(this);
       this->field_583F = iVar2;
       sub_0069FF90(this);
-      thunk_FUN_00696dc0(this,this->field_583F,local_2c);
+      sub_00696DC0(this,this->field_583F,local_2c);
       sub_0069FF90(this);
-      thunk_FUN_00696940(this,this->field_583F);
+      sub_00696940(this,this->field_583F);
       sub_0069FF90(this);
-      thunk_FUN_00695eb0(this);
+      sub_00695EB0(this);
       sub_0069FF90(this);
       CteateField(this,*this->field_0008,this->field_0008[1],local_34,local_30,local_38,1);
       sub_0069FF90(this);
-      thunk_FUN_00697390(this);
+      sub_00697390(this);
       sub_0069FF90(this);
-      thunk_FUN_006975f0(this);
+      sub_006975F0(this);
       sub_0069FF90(this);
-      thunk_FUN_00695f20(this);
+      sub_00695F20(this);
       sub_0069FF90(this);
-      thunk_FUN_00697390(this);
+      sub_00697390(this);
       sub_0069FF90(this);
-      thunk_FUN_00696740(this,1);
+      sub_00696740(this,1);
       sub_0069FF90(this);
-      thunk_FUN_006978c0((int)this);
+      sub_006978C0(this);
       sub_0069FF90(this);
-      thunk_FUN_00695f20(this);
+      sub_00695F20(this);
       sub_0069FF90(this);
-      thunk_FUN_00697390(this);
+      sub_00697390(this);
       sub_0069FF90(this);
-      thunk_FUN_00696740(this,1);
+      sub_00696740(this,1);
       sub_0069FF90(this);
-      thunk_FUN_006988c0(this);
+      sub_006988C0(this);
       sub_0069FF90(this);
       thunk_FUN_00697cf0(this,local_24,local_20);
       sub_0069FF90(this);
       Library::Ourlib::MFSTMAP::AuxTMapRefreshAll((short *)this->field_000C,this->field_0008);
       sub_0069FF90(this);
-      thunk_FUN_0069b190(this,*this->field_0008 << 1,this->field_0008[1] << 1,local_34 + -1);
+      sub_0069B190(this,*this->field_0008 << 1,this->field_0008[1] << 1,local_34 + -1);
       sub_0069FF90(this);
       _DAT_00853dd0 = Library::MSVCRT::FUN_0072e6c0();
       /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
       local_6c._12_4_ =
-           thunk_FUN_0069bdc0(this,local_28,10,10,4,0x23,(int)local_8,
-                              (AnonShape_0069BDC0_B656F442 *)local_6c);
+           sub_0069BDC0(this,local_28,10,10,4,0x23,(int)local_8,
+                        (AnonShape_0069BDC0_B656F442 *)local_6c);
       sub_0069FF90(this);
       _DAT_00853dd0 = Library::MSVCRT::FUN_0072e6c0();
       /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
       local_6c._8_4_ =
-           thunk_FUN_006991c0(this,*this->field_0008 << 1,this->field_0008[1] << 1,local_1c,local_18
-                              ,local_28,(int)local_8,local_34 + -1,
-                              (AnonShape_006991C0_D95B9E4A *)local_6c);
+           sub_006991C0(this,*this->field_0008 << 1,this->field_0008[1] << 1,local_1c,local_18,
+                        local_28,(int)local_8,local_34 + -1,(AnonShape_006991C0_D95B9E4A *)local_6c)
+      ;
       sub_0069FF90(this);
       _DAT_00853dd0 = Library::MSVCRT::FUN_0072e6c0();
-      thunk_FUN_00695eb0(this);
+      sub_00695EB0(this);
       sub_0069FF90(this);
       iVar2 = thunk_FUN_00695180((AnonShape_0052EFB0_8161B92D *)local_6c,
                                  (AnonShape_00695180_3C0E4B54 *)&stack0xffffff70,(int)&local_38,
                                  local_c);
       if (iVar2 == 0) {
-        thunk_FUN_00694b90((AnonShape_00694B90_ACA70D4F *)this);
+        sub_00694B90(this);
       }
       else {
         local_c = 1;
         thunk_FUN_00695140((undefined4 *)local_6c,(undefined4 *)&stack0xffffff70);
-        thunk_FUN_00694c30((AnonNested_0075DA80_01B6_323D7698 *)this);
+        sub_00694C30(this);
       }
       local_3c = timeGetTime();
       local_10 = local_10 + -1;
     }
     if (local_c == 1) {
-      thunk_FUN_00694c80((AnonNested_0075DA80_01B6_323D7698 *)this);
+      sub_00694C80(this);
       DAT_00853dd4 = (undefined4 *)
                      Library::DKW::LIB::FUN_006aac70(this->field_0008[1] * *this->field_0008 * 0x28)
       ;
       thunk_FUN_00575640((short *)this->field_000C,DAT_00853dd4,(short *)0x1);
       _DAT_00853dd0 = Library::MSVCRT::FUN_0072e6c0();
-      thunk_FUN_00694cd0(this,(AnonShape_00694CD0_AC50FDB9 *)&stack0xffffff70);
+      sub_00694CD0(this,(AnonShape_00694CD0_AC50FDB9 *)&stack0xffffff70);
       _DAT_00853dd0 = Library::MSVCRT::FUN_0072e6c0();
-      thunk_FUN_006a0470((AnonShape_006A0470_E995C390 *)this);
+      sub_006A0470(this);
       sub_0069FF90(this);
       _DAT_00853dd0 = Library::MSVCRT::FUN_0072e6c0();
-      thunk_FUN_0069cb50((int *)this);
+      sub_0069CB50((int *)this);
       _DAT_00853dd0 = Library::MSVCRT::FUN_0072e6c0();
       iVar2 = *this->field_0008;
       iVar1 = this->field_0008[1];

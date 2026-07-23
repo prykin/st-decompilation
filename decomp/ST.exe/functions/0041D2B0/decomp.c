@@ -10,8 +10,8 @@ void __thiscall STMineSetC::sub_0041D2B0(STMineSetC *this)
   int iVar1;
 
   if (g_visibleClass_00802A88 != (VisibleClassTy *)0x0) {
-    SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00559D60::thunk_FUN_00559d60
-              ((AnonReceiver_00559D60 *)g_visibleClass_00802A88,(int)this->field_005B,
+    SubmarineTitans::Recovered::HiddenThis::AnonReceiver_005594A0::thunk_FUN_00559d60
+              ((AnonReceiver_005594A0 *)g_visibleClass_00802A88,(int)this->field_005B,
                (int)this->field_005D,(char)this->field_005F,this->field_0024,
                (undefined *)this->field_010D,this->field_0018);
   }

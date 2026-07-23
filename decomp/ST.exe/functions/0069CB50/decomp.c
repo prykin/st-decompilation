@@ -1,5 +1,10 @@
 
-uint __fastcall FUN_0069cb50(int *param_1)
+/* [STMethodOwnerApplier] Structural method owner recovered as CGenerate.
+   Evidence: this_call_owners=[CGenerate]; agreed_this_calls=1; incoming_this_accesses=6;
+   incoming_edx_uses=0; incoming_stack_parameter_uses=234; direct_non_thunk_callers=0;
+   incoming_ecx_receiver_callers=0; attributed_named_callers=1; owner_evidence_coverage=adequate */
+
+uint __fastcall CGenerate::sub_0069CB50(int *param_1)
 
 {
   int iVar1;
@@ -87,7 +92,7 @@ uint __fastcall FUN_0069cb50(int *param_1)
   iVar8 = *(int *)param_1[2] << 1;
   *(int *)((int)param_1 + 0x5833) = iVar8;
   *(int *)((int)param_1 + 0x5837) = ((int *)param_1[2])[1] << 1;
-  thunk_FUN_006948e0(param_1,iVar8);
+  sub_006948E0((CGenerate *)param_1,iVar8);
   iVar8 = ((int *)param_1[2])[1] * *(int *)param_1[2];
   uVar14 = iVar8 * 4;
   local_d8 = uVar14;

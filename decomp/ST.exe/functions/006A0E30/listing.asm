@@ -1,4 +1,4 @@
-FUN_006a0e30:
+CGenerate::sub_006A0E30:
 006A0E30  55                        PUSH EBP
 006A0E31  8B EC                     MOV EBP,ESP
 006A0E33  83 EC 08                  SUB ESP,0x8

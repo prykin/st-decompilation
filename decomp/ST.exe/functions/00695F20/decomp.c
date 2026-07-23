@@ -1,24 +1,26 @@
 
-void __fastcall FUN_00695f20(void *param_1)
+/* [STMethodOwnerApplier] Structural method owner recovered as CGenerate.
+   Evidence: this_call_owners=[CGenerate]; agreed_this_calls=2; incoming_this_accesses=3;
+   incoming_edx_uses=0; incoming_stack_parameter_uses=0; direct_non_thunk_callers=0;
+   incoming_ecx_receiver_callers=0; attributed_named_callers=1; owner_evidence_coverage=adequate */
+
+void __thiscall CGenerate::sub_00695F20(CGenerate *this)
 
 {
-  int iVar1;
+  dword dVar1;
   uint uVar2;
 
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  if (*(int *)((int)param_1 + 0x5853) != 0) {
-    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-    iVar1 = *(int *)(*(int *)((int)param_1 + 0x5853) + 0xc);
+  if (this->field_5853 != (DArrayTy *)0x0) {
+    dVar1 = this->field_5853->count;
     uVar2 = 0;
-    if (0 < iVar1) {
+    if (0 < (int)dVar1) {
       do {
-        thunk_FUN_00696050(param_1,uVar2);
+        thunk_FUN_00696050(this,uVar2);
         uVar2 = uVar2 + 1;
-      } while ((int)uVar2 < iVar1);
+      } while ((int)uVar2 < (int)dVar1);
     }
-    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-    DArrayDestroy(*(DArrayTy **)((int)param_1 + 0x5853));
-    *(undefined4 *)((int)param_1 + 0x5853) = 0;
+    DArrayDestroy(this->field_5853);
+    this->field_5853 = (DArrayTy *)0x0;
   }
   return;
 }

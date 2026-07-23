@@ -1,4 +1,4 @@
-FUN_004cfa00:
+TLOBaseTy::sub_004CFA00:
 004CFA00  55                        PUSH EBP
 004CFA01  8B EC                     MOV EBP,ESP
 004CFA03  53                        PUSH EBX

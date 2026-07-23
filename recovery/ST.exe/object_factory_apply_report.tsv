@@ -84,7 +84,7 @@ factory	00579320	disabled	CreateSTCrab	all apply flags are 0
 factory	0060EC40	unchanged	CreateObjectType_0147	signature=unchanged
 factory	00668150	unchanged	CreateObjectType_0400	signature=unchanged
 factory	00690E60	unchanged	CreateAiTact	signature=unchanged
-factory	0067CF00	unchanged	CreateAiPlr	signature=unchanged
+factory	0067CF00	unchanged	CreateObjectType_0402	signature=unchanged
 factory	006483D0	unchanged	CreateAiBoss	signature=unchanged
 factory	005947D0	unchanged	CreateObjectType_100EF	signature=unchanged
 factory	0061D5F0	unchanged	CreateObjectType_014C	signature=unchanged

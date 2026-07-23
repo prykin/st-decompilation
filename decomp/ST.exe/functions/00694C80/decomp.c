@@ -1,13 +1,18 @@
 
-void __fastcall FUN_00694c80(AnonNested_0075DA80_01B6_323D7698 *param_1)
+/* [STMethodOwnerApplier] Structural method owner recovered as CGenerate.
+   Evidence: this_call_owners=[CGenerate]; agreed_this_calls=1; incoming_this_accesses=8;
+   incoming_edx_uses=0; incoming_stack_parameter_uses=0; direct_non_thunk_callers=0;
+   incoming_ecx_receiver_callers=0; attributed_named_callers=1; owner_evidence_coverage=adequate */
+
+void __thiscall CGenerate::sub_00694C80(CGenerate *this)
 
 {
-  if ((param_1->field_0010 != 0) && (param_1->field_0014 != 0)) {
-    thunk_FUN_00694b90((AnonShape_00694B90_ACA70D4F *)param_1);
-    param_1->field_0008 = param_1->field_0010;
-    param_1->field_000C = param_1->field_0014;
-    param_1->field_0010 = 0;
-    param_1->field_0014 = 0;
+  if ((this->field_0010 != 0) && (this->field_0014 != 0)) {
+    sub_00694B90(this);
+    this->field_0008 = (int *)this->field_0010;
+    this->field_000C = (byte *)this->field_0014;
+    this->field_0010 = 0;
+    this->field_0014 = 0;
   }
   return;
 }

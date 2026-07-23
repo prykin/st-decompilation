@@ -5,6 +5,7 @@ AiFltClassTy::pointee	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_AiFlt
 AiFltClassTy::pointee	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_AiFltClassTy_0284	disabled	0	0	apply=0
 CBaseRenderer::pointee	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_CBaseRenderer_0000	disabled	0	0	apply=0
 CGenerate::pointee	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_CGenerate_0008	disabled	0	0	apply=0
+CGenerate::pointee	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_CGenerate_000C	disabled	0	0	apply=0
 CPanelTy::pointee	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_CPanelTy_01B0	disabled	0	0	apply=0
 CPanelTy::pointee	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_CPanelTy_09ED	disabled	0	0	apply=0
 ChooseMapTy::pointee	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_ChooseMapTy_0000	disabled	0	0	apply=0
@@ -154,7 +155,7 @@ BldBoatPanelTy	/BldBoatPanelTy	unchanged	0	0	26 fields; length=658
 BldLabPanelTy	/BldLabPanelTy	unchanged	0	0	18 fields; length=638
 BldObjPanelTy	/BldObjPanelTy	unchanged	0	0	24 fields; length=642
 CBaseRenderer	/Demangler/CBaseRenderer	disabled	0	0	apply=0
-CGenerate	/CGenerate	unchanged	0	0	21 fields; length=22615
+CGenerate	/CGenerate	unchanged	0	0	99 fields; length=22615
 CPanelTy	/CPanelTy	unchanged	0	0	353 fields; length=6111
 CampaignTy	/CampaignTy	unchanged	0	0	54 fields; length=8192
 ChooseMapTy	/ChooseMapTy	unchanged	0	0	64 fields; length=8388
@@ -259,7 +260,6 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_005148A0	/SubmarineTitans/R
 SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0054A9B0	/SubmarineTitans/Recovered/HiddenThis/AnonReceiver_0054A9B0	disabled	0	0	apply=0
 SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0054B700	/SubmarineTitans/Recovered/HiddenThis/AnonReceiver_0054B700	disabled	0	0	apply=0
 SubmarineTitans::Recovered::HiddenThis::AnonReceiver_005594A0	/SubmarineTitans/Recovered/HiddenThis/AnonReceiver_005594A0	disabled	0	0	apply=0
-SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00559D60	/SubmarineTitans/Recovered/HiddenThis/AnonReceiver_00559D60	disabled	0	0	apply=0
 SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00573260	/SubmarineTitans/Recovered/HiddenThis/AnonReceiver_00573260	disabled	0	0	apply=0
 SubmarineTitans::Recovered::HiddenThis::AnonReceiver_005B5BE0	/SubmarineTitans/Recovered/HiddenThis/AnonReceiver_005B5BE0	disabled	0	0	apply=0
 SubmarineTitans::Recovered::HiddenThis::AnonReceiver_005B6730	/SubmarineTitans/Recovered/HiddenThis/AnonReceiver_005B6730	disabled	0	0	apply=0
@@ -278,6 +278,7 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0065FA60	/SubmarineTitans/R
 SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00660180	/SubmarineTitans/Recovered/HiddenThis/AnonReceiver_00660180	disabled	0	0	apply=0
 SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00664540	/SubmarineTitans/Recovered/HiddenThis/AnonReceiver_00664540	disabled	0	0	apply=0
 SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00678E00	/SubmarineTitans/Recovered/HiddenThis/AnonReceiver_00678E00	disabled	0	0	apply=0
+SubmarineTitans::Recovered::HiddenThis::AnonReceiver_006799B0	/SubmarineTitans/Recovered/HiddenThis/AnonReceiver_006799B0	disabled	0	0	apply=0
 SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00693D00	/SubmarineTitans/Recovered/HiddenThis/AnonReceiver_00693D00	disabled	0	0	apply=0
 SubmarineTitans::Recovered::HiddenThis::AnonReceiver_006CEC40	/SubmarineTitans/Recovered/HiddenThis/AnonReceiver_006CEC40	disabled	0	0	apply=0
 SubmarineTitans::Recovered::HiddenThis::AnonReceiver_006E6AF0	/SubmarineTitans/Recovered/HiddenThis/AnonReceiver_006E6AF0	disabled	0	0	apply=0

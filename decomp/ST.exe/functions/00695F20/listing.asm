@@ -1,4 +1,4 @@
-FUN_00695f20:
+CGenerate::sub_00695F20:
 00695F20  53                        PUSH EBX
 00695F21  8B D9                     MOV EBX,ECX
 00695F23  8B 83 53 58 00 00         MOV EAX,dword ptr [EBX + 0x5853]

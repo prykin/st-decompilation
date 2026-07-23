@@ -4,7 +4,8 @@ apply	owner	parent_offset	type_path	length	field_count	access_count	confidence	r
 0	AiFltClassTy	559	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_AiFltClassTy_022F	32	2	14	review	multiple non-overlapping fixed offsets through one class pointer field
 0	AiFltClassTy	644	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_AiFltClassTy_0284	324	7	15	review	multiple non-overlapping fixed offsets through one class pointer field
 0	CBaseRenderer	0	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_CBaseRenderer_0000	116	4	8	review	multiple non-overlapping fixed offsets through one class pointer field
-0	CGenerate	8	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_CGenerate_0008	8	2	12	review	multiple non-overlapping fixed offsets through one class pointer field
+0	CGenerate	8	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_CGenerate_0008	8	2	25	review	multiple non-overlapping fixed offsets through one class pointer field
+0	CGenerate	12	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_CGenerate_000C	1116	4	17	review	multiple non-overlapping fixed offsets through one class pointer field
 0	CPanelTy	432	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_CPanelTy_01B0	24	4	4	review	multiple non-overlapping fixed offsets through one class pointer field
 0	CPanelTy	2541	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_CPanelTy_09ED	12	2	16	review	multiple non-overlapping fixed offsets through one class pointer field
 0	ChooseMapTy	0	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_ChooseMapTy_0000	12	2	11	review	multiple non-overlapping fixed offsets through one class pointer field

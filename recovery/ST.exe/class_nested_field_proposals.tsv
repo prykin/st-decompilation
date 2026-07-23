@@ -17,8 +17,12 @@ apply	type_path	offset	size	proposed_name	proposed_type	evidence_count	reason
 0	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_CBaseRenderer_0000	96	4	field_0060	/undefined4	2	nested reads=2, writes=0
 0	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_CBaseRenderer_0000	108	4	field_006C	/undefined4	2	nested reads=2, writes=0
 0	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_CBaseRenderer_0000	112	4	field_0070	/undefined4	2	nested reads=2, writes=0
-0	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_CGenerate_0008	0	4	field_0000	/undefined4	1	nested reads=6, writes=0
-0	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_CGenerate_0008	4	4	field_0004	/undefined4	1	nested reads=6, writes=0
+0	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_CGenerate_0008	0	4	field_0000	/undefined4	4	nested reads=13, writes=0
+0	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_CGenerate_0008	4	4	field_0004	/undefined4	4	nested reads=12, writes=0
+0	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_CGenerate_000C	0	2	field_0000	/undefined2	1	nested reads=11, writes=0
+0	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_CGenerate_000C	2	2	field_0002	/undefined2	1	nested reads=3, writes=0
+0	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_CGenerate_000C	4	1	field_0004	/undefined1	1	nested reads=0, writes=1
+0	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_CGenerate_000C	1109	4	field_0455	/undefined4	1	nested reads=2, writes=0
 0	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_CPanelTy_01B0	4	4	field_0004	/undefined4	1	nested reads=1, writes=0
 0	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_CPanelTy_01B0	8	4	field_0008	/undefined4	1	nested reads=1, writes=0
 0	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_CPanelTy_01B0	14	2	field_000E	/undefined2	1	nested reads=1, writes=0

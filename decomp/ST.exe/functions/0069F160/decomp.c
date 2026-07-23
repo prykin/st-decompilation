@@ -61,7 +61,7 @@ int __thiscall FUN_0069f160(void *this,int param_1,int param_2,int param_3,int p
     *(undefined1 *)puVar10 = 0;
     puVar10 = (undefined4 *)((int)puVar10 + 1);
   }
-  thunk_FUN_0069ada0(this,(int)&stack0xffffff40,param_3 + 1);
+  CGenerate::sub_0069ADA0(this,(int)&stack0xffffff40,param_3 + 1);
   puVar10 = (undefined4 *)&stack0xffffff40;
   for (uVar4 = (uVar6 & 0x7fffffff) >> 1; uVar4 != 0; uVar4 = uVar4 - 1) {
     *puVar10 = 0;
@@ -71,7 +71,7 @@ int __thiscall FUN_0069f160(void *this,int param_1,int param_2,int param_3,int p
     *(undefined1 *)puVar10 = 0;
     puVar10 = (undefined4 *)((int)puVar10 + 1);
   }
-  thunk_FUN_006948e0(this,param_1);
+  CGenerate::sub_006948E0(this,param_1);
   _DAT_00853dd0 = Library::MSVCRT::FUN_0072e6c0();
   if (1 < param_3) {
     iVar9 = iVar1 * 2;
@@ -89,7 +89,7 @@ int __thiscall FUN_0069f160(void *this,int param_1,int param_2,int param_3,int p
             iVar11 = iVar12;
             do {
               if ((*(short *)(&stack0xffffff40 + iVar7) == 0) &&
-                 (iVar2 = thunk_FUN_00696400(this,iVar11,(int)local_54), 0 < iVar2)) {
+                 (iVar2 = CGenerate::sub_00696400(this,iVar11,(int)local_54), 0 < iVar2)) {
                 piVar5 = local_54;
                 do {
                   if (*(short *)(&stack0xffffff40 + *piVar5 * 2) != 0) {

@@ -388,8 +388,8 @@ target_address	target_function	callable_entry	callable_function	via_thunk	call_a
 0043E780	STAllPlayersC::GetTOBJList	00401415	STAllPlayersC::GetTOBJList	1	00442747	00442300	STAllPlayersC::_AddMDPairs	CALL 0x00401415	pointer_setup	00442743: MOV ECX,EBX	4	0	0	control_flow_boundary
 0043E780	STAllPlayersC::GetTOBJList	00401415	STAllPlayersC::GetTOBJList	1	0049C758	0049C210	STGroupBoatC::GrpLoadRC	CALL 0x00401415	pointer_setup	0049C752: MOV ECX,dword ptr [0x007fa174]	2	0	0	control_flow_boundary
 0043E780	STAllPlayersC::GetTOBJList	00401415	STAllPlayersC::GetTOBJList	1	0049D8D9	0049D750	STGroupBoatC::GrpRepare	CALL 0x00401415	pointer_setup	0049D8CD: MOV ECX,dword ptr [0x007fa174]	4	0	0	control_flow_boundary
-0043E780	STAllPlayersC::GetTOBJList	00401415	STAllPlayersC::GetTOBJList	1	0065FACD	0065FA60	AiFltClassTy::sub_0065FA60	CALL 0x00401415	no_ecx_evidence		4	0	0	control_flow_boundary
-0043E780	STAllPlayersC::GetTOBJList	00401415	STAllPlayersC::GetTOBJList	1	0065FB1A	0065FA60	AiFltClassTy::sub_0065FA60	CALL 0x00401415	no_ecx_evidence		4	0	0	control_flow_boundary
+0043E780	STAllPlayersC::GetTOBJList	00401415	STAllPlayersC::GetTOBJList	1	0065FACD	0065FA60	SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0065FA60::sub_0065FA60	CALL 0x00401415	no_ecx_evidence		4	0	0	control_flow_boundary
+0043E780	STAllPlayersC::GetTOBJList	00401415	STAllPlayersC::GetTOBJList	1	0065FB1A	0065FA60	SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0065FA60::sub_0065FA60	CALL 0x00401415	no_ecx_evidence		4	0	0	control_flow_boundary
 00446910	STAllPlayersC::DeletePGPairs	00402095	STAllPlayersC::DeletePGPairs	1	00446402	004461B0	STAllPlayersC::_DeleteGuardBoat	CALL 0x00402095	pointer_setup	004463FF: MOV ECX,dword ptr [EBP + -0x18]	1	0	0	control_flow_boundary
 00446910	STAllPlayersC::DeletePGPairs	00402095	STAllPlayersC::DeletePGPairs	1	00446670	00446520	STAllPlayersC::DeleteGuardBoat	CALL 0x00402095	pointer_setup	0044666D: MOV ECX,dword ptr [EBP + -0x10]	1	0	0	control_flow_boundary
 00446910	STAllPlayersC::DeletePGPairs	00402095	STAllPlayersC::DeletePGPairs	1	004467A3	00446520	STAllPlayersC::DeleteGuardBoat	CALL 0x00402095	pointer_setup	004467A0: MOV ECX,dword ptr [EBP + -0x10]	1	0	0	control_flow_boundary
@@ -672,7 +672,7 @@ target_address	target_function	callable_entry	callable_function	via_thunk	call_a
 006F1170	cMf32::delete	006F1170	cMf32::delete	0	005B0529	005AFD00	ChooseMapTy::PrepFiles	CALL 0x006f1170	no_ecx_evidence		1	0	4	previous_call
 006F1170	cMf32::delete	006F1170	cMf32::delete	0	005BDC79	005BD7A0	MReportTy::InitMReport	CALL 0x006f1170	no_ecx_evidence		1	0	4	control_flow_boundary
 006F1170	cMf32::delete	006F1170	cMf32::delete	0	005C106B	005C0E00	MReportTy::SetCtrl	CALL 0x006f1170	scalar_setup	005C1051: MOV ECX,0x666	1	0	4	control_flow_boundary
-006F1170	cMf32::delete	006F1170	cMf32::delete	0	005C31E6	005C29B0	SettMapMTy::sub_005C29B0	CALL 0x006f1170	no_ecx_evidence		1	0	4	previous_call
+006F1170	cMf32::delete	006F1170	cMf32::delete	0	005C31E6	005C29B0	SubmarineTitans::Recovered::HiddenThis::AnonReceiver_005B6730::sub_005C29B0	CALL 0x006f1170	no_ecx_evidence		1	0	4	previous_call
 006F1170	cMf32::delete	006F1170	cMf32::delete	0	005C497B	005C4930	SettMapTy::DoneSettMap	CALL 0x006f1170	no_ecx_evidence		1	0	4	control_flow_boundary
 006F1170	cMf32::delete	006F1170	cMf32::delete	0	005C4994	005C4930	SettMapTy::DoneSettMap	CALL 0x006f1170	no_ecx_evidence		1	0	4	control_flow_boundary
 006F1170	cMf32::delete	006F1170	cMf32::delete	0	005C64E6	005C6030	SettMapTy::CreateCtrls	CALL 0x006f1170	no_ecx_evidence		1	0	4	control_flow_boundary

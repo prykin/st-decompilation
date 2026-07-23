@@ -1,4 +1,4 @@
-FUN_0069ada0:
+CGenerate::sub_0069ADA0:
 0069ADA0  55                        PUSH EBP
 0069ADA1  8B EC                     MOV EBP,ESP
 0069ADA3  83 EC 18                  SUB ESP,0x18

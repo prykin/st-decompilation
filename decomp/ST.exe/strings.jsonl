@@ -3452,7 +3452,7 @@
 {"address":"007D8670","type":"string","length":21,"value":"\"CGenerate::CreateMap\"","referenced_from":["006A01D0 CGenerate::CreateMap"]}
 {"address":"007D868C","type":"string","length":19,"value":"\"CGenerate::SaveMap\"","referenced_from":["006A0740 CGenerate::SaveMap"]}
 {"address":"007D86A4","type":"string","length":20,"value":"\"CGenerate::_saveObj\"","referenced_from":["006A0960 CGenerate::_saveObj"]}
-{"address":"007D86BC","type":"string","length":7,"value":"\"%s%08u\"","referenced_from":["006A09F0 FUN_006a09f0","006A0C00 FUN_006a0c00"]}
+{"address":"007D86BC","type":"string","length":7,"value":"\"%s%08u\"","referenced_from":["006A09F0 CGenerate::sub_006A09F0","006A0C00 FUN_006a0c00"]}
 {"address":"007D86C8","type":"string","length":8,"value":"\"stone_c\"","referenced_from":["00693710 FUN_00693710"]}
 {"address":"007D9140","type":"string","length":8,"value":"\"cover\"","referenced_from":[]}
 {"address":"007D9674","type":"string","length":8,"value":"\"stars\"","referenced_from":[]}

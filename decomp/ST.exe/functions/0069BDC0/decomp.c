@@ -1,7 +1,13 @@
 
+/* [STMethodOwnerApplier] Structural method owner recovered as CGenerate.
+   Evidence: this_call_owners=[CGenerate]; agreed_this_calls=1; incoming_this_accesses=6;
+   incoming_edx_uses=3; incoming_stack_parameter_uses=19; direct_non_thunk_callers=0;
+   incoming_ecx_receiver_callers=0; attributed_named_callers=1; owner_evidence_coverage=adequate */
+
 int __thiscall
-FUN_0069bdc0(void *this,int param_1,int param_2,int param_3,int param_4,int param_5,int param_6,
-            AnonShape_0069BDC0_B656F442 *param_7)
+CGenerate::sub_0069BDC0
+          (CGenerate *this,int param_1,int param_2,int param_3,int param_4,int param_5,int param_6,
+          AnonShape_0069BDC0_B656F442 *param_7)
 
 {
   undefined1 *puVar1;
@@ -52,9 +58,8 @@ FUN_0069bdc0(void *this,int param_1,int param_2,int param_3,int param_4,int para
   else {
     local_48 = param_2 / 2 + param_3 / 2;
     local_48 = local_48 + local_48 / 2;
-    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-    uVar5 = ((*(int *)((int)this + 0x5833) - param_2) / param_4 + 2) *
-            ((*(int *)((int)this + 0x5837) - param_3) / param_4 + 2);
+    uVar5 = ((this->field_5833 - param_2) / param_4 + 2) *
+            ((this->field_5837 - param_3) / param_4 + 2);
     ExceptionList = &local_14;
     local_78 = (undefined4 *)Library::DKW::LIB::FUN_006aac70(uVar5 * 0x40);
     piVar7 = (int *)&stack0xffffff6c;
@@ -72,8 +77,8 @@ FUN_0069bdc0(void *this,int param_1,int param_2,int param_3,int param_4,int para
     local_3c = 0;
     local_50 = 0;
     while (iVar4 = 0, (int)local_3c < (int)uVar5) {
-      if (*(int *)((int)this + 0x5837) < local_64 + param_3) {
-        local_64 = *(int *)((int)this + 0x5837) - param_3;
+      if (this->field_5837 < local_64 + param_3) {
+        local_64 = this->field_5837 - param_3;
         local_2c = 0;
       }
       local_24 = 1;
@@ -85,11 +90,11 @@ FUN_0069bdc0(void *this,int param_1,int param_2,int param_3,int param_4,int para
         *(int *)(iVar6 + 0x38 + (int)local_78) = param_2 + -1 + iVar4;
         *(int *)(iVar6 + 0x3c + (int)local_78) = iVar3 + param_3;
         puVar1 = (undefined1 *)(iVar6 + (int)local_78);
-        if (*(int *)((int)this + 0x5833) + -1 <= *(int *)(puVar1 + 0x38)) {
+        if (this->field_5833 + -1 <= *(int *)(puVar1 + 0x38)) {
           local_24 = 0;
         }
-        iVar2 = thunk_FUN_0069b400(this,iVar4,local_64,*(int *)(puVar1 + 0x38),
-                                   *(int *)(puVar1 + 0x3c),(int)puVar1);
+        iVar2 = sub_0069B400(this,iVar4,local_64,*(int *)(puVar1 + 0x38),*(int *)(puVar1 + 0x3c),
+                             (int)puVar1);
         *(int *)(iVar6 + 0x2c + (int)local_78) = iVar2;
         iVar2 = *(int *)(iVar6 + 0x2c + (int)local_78);
         if (local_50 < iVar2) {
@@ -98,16 +103,14 @@ FUN_0069bdc0(void *this,int param_1,int param_2,int param_3,int param_4,int para
         local_3c = local_3c + 1;
         iVar6 = iVar6 + 0x40;
         iVar4 = iVar4 + param_4;
-        iVar2 = *(int *)((int)this + 0x5833);
+        iVar2 = this->field_5833;
         if (iVar2 <= iVar4 + param_2) {
           iVar4 = iVar2 - param_2;
         }
       } while ((iVar4 < iVar2) && (local_24 != 0));
       local_64 = local_64 + param_4;
-      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-      if ((*(int *)((int)this + 0x5837) <= local_64) ||
-         (((-1 < (int)local_3c &&
-           (*(int *)((int)this + 0x5837) + -1 <= (int)local_78[local_3c * 0x10 + -1])) ||
+      if ((this->field_5837 <= local_64) ||
+         (((-1 < (int)local_3c && (this->field_5837 + -1 <= (int)local_78[local_3c * 0x10 + -1])) ||
           (local_2c == 0)))) break;
     }
     iVar4 = local_40;

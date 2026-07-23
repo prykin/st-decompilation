@@ -1,10 +1,10 @@
 program=ST.exe
-functions_scanned=5743
-direct_calls_seen=37355
-proposals=134
+functions_scanned=5741
+direct_calls_seen=37349
+proposals=133
 parameter_proposals=125
-return_proposals=9
-type_auto_apply=1
+return_proposals=8
+type_auto_apply=0
 name_auto_apply=0
 reverse_return_evidence=323
 repair_proposals=7

@@ -1,37 +1,37 @@
 
-void __fastcall FUN_00696790(int param_1)
+/* [STMethodOwnerApplier] Structural method owner recovered as CGenerate.
+   Evidence: this_call_owners=[CGenerate]; agreed_this_calls=1; incoming_this_accesses=6;
+   incoming_edx_uses=0; incoming_stack_parameter_uses=0; direct_non_thunk_callers=0;
+   incoming_ecx_receiver_callers=0; attributed_named_callers=1; owner_evidence_coverage=adequate */
+
+void __thiscall CGenerate::sub_00696790(CGenerate *this)
 
 {
   uint uVar1;
   uint uVar2;
   int iVar3;
   int iVar4;
-  undefined4 *puVar5;
+  ushort *puVar5;
 
   iVar3 = 0;
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  if (0 < *(int *)(param_1 + 0x582f)) {
+  if (0 < (int)this->field_582F) {
     do {
       uVar1 = Library::MSVCRT::FUN_0072e6c0();
       iVar4 = iVar3 + 1;
-      *(char *)(iVar3 + *(int *)(param_1 + 0x584b)) =
-           /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-           (char)((int)uVar1 % *(int *)(param_1 + 0x583b));
+      this->field_584B[iVar3] = (byte)((int)uVar1 % this->field_583B);
       iVar3 = iVar4;
-    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-    } while (iVar4 < *(int *)(param_1 + 0x582f));
+    } while (iVar4 < (int)this->field_582F);
   }
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  uVar1 = *(uint *)(param_1 + 0x582f);
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  puVar5 = *(undefined4 **)(param_1 + 0x584f);
+  uVar1 = this->field_582F;
+  puVar5 = this->field_584F;
   for (uVar2 = (uVar1 & 0x7fffffff) >> 1; uVar2 != 0; uVar2 = uVar2 - 1) {
-    *puVar5 = 0xffffffff;
-    puVar5 = puVar5 + 1;
+    puVar5[0] = 0xffff;
+    puVar5[1] = 0xffff;
+    puVar5 = puVar5 + 2;
   }
   for (iVar3 = (uVar1 & 1) << 1; iVar3 != 0; iVar3 = iVar3 + -1) {
     *(undefined1 *)puVar5 = 0xff;
-    puVar5 = (undefined4 *)((int)puVar5 + 1);
+    puVar5 = (ushort *)((int)puVar5 + 1);
   }
   return;
 }

@@ -97,6 +97,26 @@ state until the outermost entry ends. The pipeline records the Program
 modification number around every child, rejects an unexpected open transaction,
 and refuses success if observed mutations leave `Program.isChanged()` false.
 
+The orchestrator lets normal Ghidra auto-analysis run, but waits for it to drain
+both after a child and immediately before starting the next child. The second
+barrier matters because a committed mutation can enqueue analysis just after
+the preceding post-step drain observed an empty queue. The
+hidden-this applier also drains it after each mutating row because namespace and
+signature changes can wake a background analyzer while that short transaction
+is ending. This prevents the analysis entry from bridging several independent
+row transactions. Transaction failures include the status and exact open
+subtransactions so a real script-owned leak remains attributable.
+The drain does not rely solely on `AutoAnalysisManager.isAnalyzing()`: Ghidra
+12.1.2 can clear that flag just before its `AnalysisWorkerCommand` closes the
+outer `Auto Analysis` Program transaction. A short bounded wait covers that
+closure window. The boundary check itself retries that exact outer transaction
+once more if it appears between the drain and the check. Ghidra may also retain
+the just-ended applier as the named outer entry while its only open
+subtransaction is `Auto Analysis`; the pipeline waits for that child to close,
+then verifies that the applier entry disappeared as well. A real leaked applier
+transaction therefore still fails as soon as it remains open without that
+analysis child, and any other subtransaction fails immediately.
+
 Structural loops are bounded to three passes and expensive whole-program
 propagation to two. A remaining changing count after that bound is recorded for
 review rather than looped forever. Progress, arguments, duration, and the first

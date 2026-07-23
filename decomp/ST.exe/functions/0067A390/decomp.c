@@ -53,8 +53,8 @@ void __fastcall FUN_0067a390(AnonShape_00679600_B8E418A8 *param_1)
       local_74 = (AnonShape_0068FD00_A5257008 *)0x6f;
       local_68 = (undefined4 *)0x50;
       local_70 = uVar2;
-      AiPlrClassTy::sub_0067A020
-                ((AiPlrClassTy *)param_1,(AnonShape_0068FD00_A5257008 *)&local_74,-1);
+      SubmarineTitans::Recovered::HiddenThis::AnonReceiver_006799B0::sub_0067A020
+                ((AnonReceiver_006799B0 *)param_1,(AnonShape_0068FD00_A5257008 *)&local_74,-1);
       iVar4 = _GetEmbrTobjGrpExch(param_1->field_05D7,0x50);
       if (iVar4 + local_6c < iVar5 / 0x28 + 1) {
         memset(local_40, 0, 0x2c); /* compiler bulk-zero initialization */
@@ -113,8 +113,8 @@ void __fastcall FUN_0067a390(AnonShape_00679600_B8E418A8 *param_1)
       local_70 = param_1->field_06FE;
       local_74 = (AnonShape_0068FD00_A5257008 *)0x6f;
       local_68 = (undefined4 *)0x34;
-      AiPlrClassTy::sub_0067A020
-                ((AiPlrClassTy *)param_1,(AnonShape_0068FD00_A5257008 *)&local_74,-1);
+      SubmarineTitans::Recovered::HiddenThis::AnonReceiver_006799B0::sub_0067A020
+                ((AnonReceiver_006799B0 *)param_1,(AnonShape_0068FD00_A5257008 *)&local_74,-1);
       iVar4 = _GetEmbrTobjGrpExch(param_1->field_05D7,0x34);
       if (iVar4 + local_6c < (int)((uint)uVar3 + local_10)) {
         local_70 = param_1->field_06FE;
@@ -174,8 +174,8 @@ void __fastcall FUN_0067a390(AnonShape_00679600_B8E418A8 *param_1)
       local_70 = param_1->field_06FE;
       local_74 = (AnonShape_0068FD00_A5257008 *)0x6f;
       local_68 = (undefined4 *)0x48;
-      AiPlrClassTy::sub_0067A020
-                ((AiPlrClassTy *)param_1,(AnonShape_0068FD00_A5257008 *)&local_74,-1);
+      SubmarineTitans::Recovered::HiddenThis::AnonReceiver_006799B0::sub_0067A020
+                ((AnonReceiver_006799B0 *)param_1,(AnonShape_0068FD00_A5257008 *)&local_74,-1);
       iVar4 = _GetEmbrTobjGrpExch(param_1->field_05D7,0x48);
       if (iVar4 + local_6c < (int)((uint)uVar3 + local_10)) {
         local_70 = param_1->field_06FE;

@@ -1,6 +1,6 @@
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-/* [STPrototypeApplier] Propagated parameter 0.
+/* [STPrototypeRepairApplier] Propagated parameter 0.
    Evidence: 004AD6C0 parameter used as this of
    SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00424E10::FUN_00424e10 @ 004AD70E */
 

@@ -1,4 +1,4 @@
-FUN_006a09f0:
+CGenerate::sub_006A09F0:
 006A09F0  55                        PUSH EBP
 006A09F1  8B EC                     MOV EBP,ESP
 006A09F3  81 EC 04 01 00 00         SUB ESP,0x104

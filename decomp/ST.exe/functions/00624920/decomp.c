@@ -201,8 +201,8 @@ STMineSetC::sub_00624920
                         (g_visibleClass_00802A88,(int)this->field_0047,
                          (undefined *)(int)this->field_0049,(int)this->field_004B,this->field_0024,
                          DAT_007d02c0,this->field_0018,0xffffffff);
-              SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00559D60::thunk_FUN_00559d60
-                        ((AnonReceiver_00559D60 *)g_visibleClass_00802A88,(int)this->field_0047,
+              SubmarineTitans::Recovered::HiddenThis::AnonReceiver_005594A0::thunk_FUN_00559d60
+                        ((AnonReceiver_005594A0 *)g_visibleClass_00802A88,(int)this->field_0047,
                          (int)this->field_0049,(char)this->field_004B,this->field_0024,
                          *(undefined **)(&DAT_007d02b4 + (uint)this->field_02AD * 4),
                          this->field_0018);

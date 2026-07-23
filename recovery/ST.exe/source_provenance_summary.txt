@@ -1,6 +1,6 @@
 program=ST.exe
-functions_with_source_evidence=1044
-source_auto_apply=166
+functions_with_source_evidence=1042
+source_auto_apply=164
 functions_with_free_name_candidates=63
 free_name_auto_apply=61
 source_already_documented=878
