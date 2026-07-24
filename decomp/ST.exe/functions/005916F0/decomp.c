@@ -10,20 +10,20 @@ void __thiscall CampaignTy::DoneCampaign(CampaignTy *this)
 {
   MMsgTy *this_00;
   code *pcVar1;
-  MMObjTy *pMVar2;
+  CampaignTy *pCVar2;
   int iVar3;
   undefined4 *puVar4;
   int iVar5;
   InternalExceptionFrame local_4c;
-  MMObjTy *local_8;
+  CampaignTy *local_8;
 
   local_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_4c;
-  local_8 = (MMObjTy *)this;
+  local_8 = this;
   iVar3 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
-  pMVar2 = local_8;
+  pCVar2 = local_8;
   if (iVar3 == 0) {
-    MMObjTy::DoneMMObj(local_8);
+    MMObjTy::DoneMMObj((MMObjTy *)local_8);
     if (g_cursorClass_00802A30 != (CursorClassTy *)0x0) {
       if (g_cursorClass_00802A30->field_00A9 == 0) {
         Library::DKW::DDX::FUN_006b8b10((int *)g_cursorClass_00802A30->field_00AD);
@@ -38,12 +38,13 @@ void __thiscall CampaignTy::DoneCampaign(CampaignTy *this)
     if (g_startSystem_0081176C->field_002C != (ushort *)0x0) {
       cMf32::RecMemFree(g_cMf32_00806780,(uint *)&g_startSystem_0081176C->field_002C);
     }
-    this_00 = *(MMsgTy **)(*(int *)&pMVar2[0x1d].field_0xa4 + 0x2e6);
+    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
+    this_00 = *(MMsgTy **)(pCVar2->field_1A5B + 0x2e6);
     if (this_00 != (MMsgTy *)0x0) {
       MMsgTy::HideSprites(this_00);
-      *(undefined4 *)(*(int *)(*(int *)&pMVar2[0x1d].field_0xa4 + 0x2e6) + 0x1cab) = 0;
+      *(undefined4 *)(*(int *)(pCVar2->field_1A5B + 0x2e6) + 0x1cab) = 0;
     }
-    puVar4 = (undefined4 *)&pMVar2[0x1e].field_0x79;
+    puVar4 = &pCVar2->field_1B13;
     iVar3 = 3;
     do {
       iVar5 = 0xf;
@@ -55,14 +56,14 @@ void __thiscall CampaignTy::DoneCampaign(CampaignTy *this)
         if (puVar4[-0x2d] != 0) {
           cMf32::RecMemFree(g_cMf32_00806780,puVar4 + -0x2d);
         }
-        pMVar2 = local_8;
+        pCVar2 = local_8;
         puVar4 = puVar4 + 1;
         iVar5 = iVar5 + -1;
       } while (iVar5 != 0);
       iVar3 = iVar3 + -1;
     } while (iVar3 != 0);
     iVar3 = 4;
-    puVar4 = (undefined4 *)&local_8[0x1f].field_0x5a;
+    puVar4 = &local_8->field_1BD7;
     do {
       if ((undefined4 *)*puVar4 != (undefined4 *)0x0) {
         FUN_006c4a70((undefined4 *)*puVar4);
@@ -74,8 +75,8 @@ void __thiscall CampaignTy::DoneCampaign(CampaignTy *this)
       puVar4 = puVar4 + 1;
       iVar3 = iVar3 + -1;
     } while (iVar3 != 0);
-    if (*(int *)&pMVar2->field_0x4d != 0) {
-      AppClassTy::PostNextMessage((AppClassTy *)&DAT_00807620,(undefined4 *)&pMVar2->field_0x3d);
+    if (pCVar2->field_004D != 0) {
+      AppClassTy::PostNextMessage((AppClassTy *)&DAT_00807620,(undefined4 *)&pCVar2->field_0x3d);
     }
     g_currentExceptionFrame = local_4c.previous;
     return;

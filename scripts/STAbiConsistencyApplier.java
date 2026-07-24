@@ -61,7 +61,9 @@ public class STAbiConsistencyApplier extends GhidraScript {
                 }
                 apply(row);
             }
-            commit = report.stream().anyMatch(row -> row.status.equals("applied"));
+            // Ending an otherwise empty transaction with commit=false still advances
+            // Ghidra's modification number. Successful validation is not a rollback case.
+            commit = true;
         }
         finally { currentProgram.endTransaction(tx, commit); }
         Path output = file.toPath().toAbsolutePath().normalize().getParent()
@@ -161,7 +163,7 @@ public class STAbiConsistencyApplier extends GhidraScript {
     }
 
     private void finish(Function function, Map<String, String> row, String detail) throws Exception {
-        function.addTag(TAG);
+        if (!hasTag(function, TAG)) function.addTag(TAG);
         String old = function.getComment();
         String line = COMMENT_MARKER + " " + row.get("repair_kind") + ": " + detail +
             " Evidence: " + unt(row.get("evidence"));

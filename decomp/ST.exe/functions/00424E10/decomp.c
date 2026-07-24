@@ -12,8 +12,8 @@
    expected_stack=28; receiver_family_members=21; adopt_untyped_existing_thiscall */
 
 int __thiscall
-SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00424E10::FUN_00424e10
-          (AnonReceiver_00424E10 *this,int param_1,float param_2,float param_3,float param_4,
+SubmarineTitans::Recovered::HiddenThis::AnonReceiver_004248D0::FUN_00424e10
+          (AnonReceiver_004248D0 *this,int param_1,float param_2,float param_3,float param_4,
           int param_5,int param_6,int *param_7)
 
 {
@@ -44,10 +44,10 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00424E10::FUN_00424e10
   byte *pbVar25;
   uint uVar26;
   longlong lVar27;
-  Global_sub_004248D0_param_5Enum GVar28;
+  SubmarineTitans_Recovered_HiddenThis_AnonReceiver_004248D0_sub_004248D0_param_5Enum SVar28;
   ulonglong uVar29;
   undefined8 uVar30;
-  Global_sub_004248D0_param_6Enum GVar31;
+  SubmarineTitans_Recovered_HiddenThis_AnonReceiver_004248D0_sub_004248D0_param_6Enum SVar31;
   int local_140;
   byte *local_138;
   int local_12c;
@@ -256,8 +256,9 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00424E10::FUN_00424e10
                   /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                   uVar29 = CONCAT44(0xffffffff,(uint)*(byte *)(psVar19 + 2)) & 0xffffffff00000003;
                   sub_004248D0(this,(int)local_a0,iVar22,(int)psVar19[-1],(int)*psVar19,
-                               (Global_sub_004248D0_param_5Enum)uVar29,
-                               (Global_sub_004248D0_param_6Enum)(uVar29 >> 0x20));
+                               (SubmarineTitans_Recovered_HiddenThis_AnonReceiver_004248D0_sub_004248D0_param_5Enum
+                                )uVar29,(SubmarineTitans_Recovered_HiddenThis_AnonReceiver_004248D0_sub_004248D0_param_6Enum
+                                         )(uVar29 >> 0x20));
                   iVar22 = iVar22 + 1;
                   psVar19 = psVar19 + 4;
                 } while (iVar22 < iVar4);
@@ -524,7 +525,7 @@ LAB_0042678e:
                 if ((local_50 & 4) != 0) {
 LAB_00426157:
                   if ((int)local_24 <= local_60) {
-                    GVar28 = CASE_3;
+                    SVar28 = CASE_3;
                     goto LAB_00426163;
                   }
                   goto LAB_00426186;
@@ -540,8 +541,8 @@ LAB_004261a9:
                 if ((local_50 & 0x10) != 0) {
 LAB_00426205:
                   if (local_60 < (int)local_24) goto LAB_004263c4;
-                  GVar28 = CASE_3;
-                  GVar31 = CASE_2;
+                  SVar28 = CASE_3;
+                  SVar31 = CASE_2;
                   goto LAB_00426215;
                 }
               }
@@ -558,11 +559,11 @@ LAB_00426205:
             else {
 LAB_00425fac:
               if ((int)local_24 <= local_60) {
-                GVar31 = ~CASE_0;
-                GVar28 = CASE_1;
+                SVar31 = ~CASE_0;
+                SVar28 = CASE_1;
 LAB_004265cd:
                 uVar15 = sub_004248D0(this,(int)local_a0,uVar15,iVar10 + local_48,iVar18 + local_54,
-                                      GVar28,GVar31);
+                                      SVar28,SVar31);
               }
 LAB_00426606:
               local_dc = local_dc + iVar22 + 1;
@@ -577,8 +578,9 @@ LAB_00426606:
                 uVar30 = 0xffffffff00000003;
 LAB_0042605b:
                 uVar15 = sub_004248D0(this,(int)local_a0,uVar15,iVar10 + local_48,iVar18 + local_54,
-                                      (Global_sub_004248D0_param_5Enum)uVar30,
-                                      (Global_sub_004248D0_param_6Enum)((ulonglong)uVar30 >> 0x20));
+                                      (SubmarineTitans_Recovered_HiddenThis_AnonReceiver_004248D0_sub_004248D0_param_5Enum
+                                       )uVar30,(SubmarineTitans_Recovered_HiddenThis_AnonReceiver_004248D0_sub_004248D0_param_6Enum
+                                                )((ulonglong)uVar30 >> 0x20));
               }
               goto LAB_00426606;
             }
@@ -589,7 +591,7 @@ LAB_0042605b:
                 if ((local_50 & 0x10) != 0) goto LAB_00426205;
                 if ((local_50 & 0x20) != 0) {
                   if ((int)local_24 <= local_60) {
-                    GVar28 = CASE_3;
+                    SVar28 = CASE_3;
                     goto LAB_00426527;
                   }
                   goto LAB_0042654a;
@@ -611,8 +613,9 @@ LAB_0042605b:
                 uVar30 = 0xffffffff00000003;
 LAB_004260a9:
                 uVar15 = sub_004248D0(this,(int)local_a0,uVar15,iVar10 + local_48,iVar18 + local_54,
-                                      (Global_sub_004248D0_param_5Enum)uVar30,
-                                      (Global_sub_004248D0_param_6Enum)((ulonglong)uVar30 >> 0x20));
+                                      (SubmarineTitans_Recovered_HiddenThis_AnonReceiver_004248D0_sub_004248D0_param_5Enum
+                                       )uVar30,(SubmarineTitans_Recovered_HiddenThis_AnonReceiver_004248D0_sub_004248D0_param_6Enum
+                                                )((ulonglong)uVar30 >> 0x20));
               }
 LAB_004260cc:
               local_dc = local_dc + 1;
@@ -659,11 +662,11 @@ LAB_004260cc:
             else {
 LAB_00426273:
               if ((int)local_24 <= local_60) {
-                GVar28 = CASE_3;
-                GVar31 = ~CASE_0;
+                SVar28 = CASE_3;
+                SVar31 = ~CASE_0;
 LAB_0042627f:
                 uVar15 = sub_004248D0(this,(int)local_a0,uVar15,iVar10 + local_48,iVar18 + local_54,
-                                      GVar28,GVar31);
+                                      SVar28,SVar31);
               }
 LAB_004262a2:
               local_dc = local_dc + (1 - iVar22);
@@ -675,8 +678,8 @@ LAB_004262a2:
           case 8:
             if ((local_50 & 2) != 0) {
               if ((int)local_24 <= local_60) {
-                GVar28 = CASE_2;
-                GVar31 = ~CASE_0;
+                SVar28 = CASE_2;
+                SVar31 = ~CASE_0;
                 goto LAB_0042627f;
               }
               goto LAB_004262a2;
@@ -685,8 +688,8 @@ LAB_004262a2:
               if ((local_50 & 8) == 0) {
                 if ((local_50 & 0x10) != 0) {
                   if (local_60 < (int)local_24) goto LAB_004263c4;
-                  GVar28 = CASE_2;
-                  GVar31 = ~CASE_0;
+                  SVar28 = CASE_2;
+                  SVar31 = ~CASE_0;
                   goto LAB_00426215;
                 }
                 if ((local_50 & 0x20) == 0) {
@@ -700,17 +703,17 @@ LAB_004262a2:
                   }
                   if ((local_50 & 0x80) != 0) {
                     if (local_60 < (int)local_24) goto LAB_00426606;
-                    GVar28 = CASE_2;
-                    GVar31 = CASE_1;
+                    SVar28 = CASE_2;
+                    SVar31 = CASE_1;
                     goto LAB_004265cd;
                   }
                 }
                 else {
                   if ((int)local_24 <= local_60) {
-                    GVar28 = CASE_2;
+                    SVar28 = CASE_2;
 LAB_00426527:
                     uVar15 = sub_004248D0(this,(int)local_a0,uVar15,iVar10 + local_48,
-                                          iVar18 + local_54,GVar28,CASE_0);
+                                          iVar18 + local_54,SVar28,CASE_0);
                   }
 LAB_0042654a:
                   local_dc = local_dc + iVar22 + -1;
@@ -732,10 +735,10 @@ LAB_0042654a:
             }
             else {
               if ((int)local_24 <= local_60) {
-                GVar28 = CASE_2;
+                SVar28 = CASE_2;
 LAB_00426163:
                 uVar15 = sub_004248D0(this,(int)local_a0,uVar15,iVar10 + local_48,iVar18 + local_54,
-                                      GVar28,~CASE_0);
+                                      SVar28,~CASE_0);
               }
 LAB_00426186:
               iVar11 = iVar22 << 2;
@@ -750,7 +753,7 @@ LAB_0042618f:
               if ((local_50 & 0x10) == 0) {
                 if ((local_50 & 0x20) != 0) {
                   if ((int)local_24 <= local_60) {
-                    GVar28 = CASE_0;
+                    SVar28 = CASE_0;
                     goto LAB_00425b8a;
                   }
                   goto LAB_00425bad;
@@ -811,8 +814,8 @@ LAB_00426339:
                   if ((local_50 & 1) != 0) goto LAB_00425bf9;
                   if ((local_50 & 2) != 0) {
                     if ((int)local_24 <= local_60) {
-                      GVar28 = CASE_0;
-                      GVar31 = CASE_3;
+                      SVar28 = CASE_0;
+                      SVar31 = CASE_3;
                       goto LAB_0042627f;
                     }
                     goto LAB_004262a2;
@@ -836,11 +839,11 @@ LAB_004263c4:
                 local_8c = 0x10;
               }
               else {
-                GVar28 = CASE_0;
-                GVar31 = ~CASE_0;
+                SVar28 = CASE_0;
+                SVar31 = ~CASE_0;
 LAB_00426215:
                 uVar15 = sub_004248D0(this,(int)local_a0,uVar15,iVar10 + local_48,iVar18 + local_54,
-                                      GVar28,GVar31);
+                                      SVar28,SVar31);
                 local_dc = local_dc + -1;
                 iVar10 = iVar10 + -1;
                 local_8c = 0x10;
@@ -851,8 +854,9 @@ LAB_00426215:
                 uVar30 = 0xffffffff00000000;
 LAB_004261b5:
                 uVar15 = sub_004248D0(this,(int)local_a0,uVar15,iVar10 + local_48,iVar18 + local_54,
-                                      (Global_sub_004248D0_param_5Enum)uVar30,
-                                      (Global_sub_004248D0_param_6Enum)((ulonglong)uVar30 >> 0x20));
+                                      (SubmarineTitans_Recovered_HiddenThis_AnonReceiver_004248D0_sub_004248D0_param_5Enum
+                                       )uVar30,(SubmarineTitans_Recovered_HiddenThis_AnonReceiver_004248D0_sub_004248D0_param_6Enum
+                                                )((ulonglong)uVar30 >> 0x20));
               }
 LAB_004261d8:
               local_dc = local_dc + (-1 - iVar22);
@@ -914,8 +918,9 @@ LAB_00425eeb:
                 uVar30 = 0xffffffff00000000;
 LAB_004263eb:
                 uVar15 = sub_004248D0(this,(int)local_a0,uVar15,iVar10 + local_48,iVar18 + local_54,
-                                      (Global_sub_004248D0_param_5Enum)uVar30,
-                                      (Global_sub_004248D0_param_6Enum)((ulonglong)uVar30 >> 0x20));
+                                      (SubmarineTitans_Recovered_HiddenThis_AnonReceiver_004248D0_sub_004248D0_param_5Enum
+                                       )uVar30,(SubmarineTitans_Recovered_HiddenThis_AnonReceiver_004248D0_sub_004248D0_param_6Enum
+                                                )((ulonglong)uVar30 >> 0x20));
               }
 LAB_0042640e:
               iVar11 = iVar22 << 2;
@@ -929,10 +934,10 @@ LAB_00426417:
           case 0x80:
             if ((local_50 & 0x20) != 0) {
               if ((int)local_24 <= local_60) {
-                GVar28 = CASE_1;
+                SVar28 = CASE_1;
 LAB_00425b8a:
                 uVar15 = sub_004248D0(this,(int)local_a0,uVar15,iVar10 + local_48,iVar18 + local_54,
-                                      GVar28,~CASE_0);
+                                      SVar28,~CASE_0);
               }
 LAB_00425bad:
               iVar11 = iVar22 * 4;
@@ -970,8 +975,9 @@ LAB_00425bad:
                 uVar30 = 0xffffffff00000001;
 LAB_00425e40:
                 uVar15 = sub_004248D0(this,(int)local_a0,uVar15,iVar10 + local_48,iVar18 + local_54,
-                                      (Global_sub_004248D0_param_5Enum)uVar30,
-                                      (Global_sub_004248D0_param_6Enum)((ulonglong)uVar30 >> 0x20));
+                                      (SubmarineTitans_Recovered_HiddenThis_AnonReceiver_004248D0_sub_004248D0_param_5Enum
+                                       )uVar30,(SubmarineTitans_Recovered_HiddenThis_AnonReceiver_004248D0_sub_004248D0_param_6Enum
+                                                )((ulonglong)uVar30 >> 0x20));
               }
 LAB_00425e63:
               iVar11 = iVar22 << 2;

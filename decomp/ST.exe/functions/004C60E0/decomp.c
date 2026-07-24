@@ -20,7 +20,7 @@ int __thiscall TLOBldMark::Create(TLOBldMark *this)
   iVar3 = Library::MSVCRT::__setjmp3(local_48,0);
   if (iVar3 == 0) {
     g_currentExceptionFrame = pIVar2;
-    g_tLOBldMark_007FB2AC = (AnonShape_GLOBAL_007FB2AC_70073F41 *)local_8;
+    g_tLOBldMark_007FB2AC = local_8;
     return 0;
   }
   g_currentExceptionFrame = pIVar2;

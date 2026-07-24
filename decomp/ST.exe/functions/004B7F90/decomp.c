@@ -7,7 +7,7 @@
 undefined4 __thiscall TLOBaseTy::sub_004B7F90(TLOBaseTy *this,int param_1)
 
 {
-  uint uVar1;
+  TLOBaseTy_field_046CState TVar1;
   int iVar2;
   undefined4 uVar3;
 
@@ -20,7 +20,7 @@ undefined4 __thiscall TLOBaseTy::sub_004B7F90(TLOBaseTy *this,int param_1)
     break;
   case CASE_4:
     if ((this->field_03DC != 0) ||
-       (((uVar1 = this->field_046C, uVar1 != 0 && (uVar1 != 1)) && (uVar1 != 2)))) {
+       (((TVar1 = this->field_046C, TVar1 != 0 && (TVar1 != CASE_1)) && (TVar1 != CASE_2)))) {
       uVar3 = 0;
       goto cf_common_exit_004B8058;
     }

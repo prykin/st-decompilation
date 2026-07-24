@@ -6,7 +6,12 @@
 
    [STSwitchEnumApplier] Switch target field_00C2 uses
    /SubmarineTitans/Recovered/Enums/STParticleC_field_00C2State. Cases:
-   CASE_1=1;CASE_2=2;CASE_3=3;CASE_4=4 */
+   CASE_1=1;CASE_2=2;CASE_3=3;CASE_4=4
+
+   [STSwitchEnumApplier] Switch target field_00C2 uses
+   /SubmarineTitans/Recovered/Enums/STParticleC_field_00C2State. Cases:
+   CASE_0=0;CASE_1=1;CASE_2=2;CASE_3=3;CASE_4=4;CASE_8=8;CASE_10=16;CASE_20=32;CASE_40=64;CASE_80=128
+    */
 
 int __thiscall STParticleC::sub_00629E60(STParticleC *this,int param_1)
 

@@ -237,8 +237,8 @@ undefined4 __thiscall InterSystemC::CreateInterfObjects(InterSystemC *this)
     thunk_FUN_0056a500();
     (*this_00->vtable->vfunc_10)(0x201,0);
     thunk_FUN_0056a500();
-    if (g_helpPanel_00801690 != (AnonShape_GLOBAL_00801690_2AA401C1 *)0x0) {
-      thunk_FUN_0051da70((HelpPanelTy *)g_helpPanel_00801690);
+    if (g_helpPanel_00801690 != (HelpPanelTy *)0x0) {
+      thunk_FUN_0051da70(g_helpPanel_00801690);
     }
     thunk_FUN_0056a500();
     if ((DAT_0080877e == '\0') && (g_popUp_008016D8 != (PopUpTy *)0x0)) {

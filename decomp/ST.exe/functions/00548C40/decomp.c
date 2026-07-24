@@ -191,7 +191,7 @@ void __thiscall CursorClassTy::TakeCmdToRun(CursorClassTy *this,int param_1)
   }
   if (this_00->field_04DE != '\0') {
     if (((this_00->field_0494 == 0x48) && (pSVar2 = this_00->field_049A, pSVar2 != (STFishC *)0x0))
-       && (g_helpPanel_00801690 != (AnonShape_GLOBAL_00801690_2AA401C1 *)0x0)) {
+       && (g_helpPanel_00801690 != (HelpPanelTy *)0x0)) {
       dVar6 = (*pSVar2->vtable->slot_2C)(pSVar2);
       if (dVar6 == 0x78) {
         dVar6 = *(dword *)&this_00->field_049A->field_0x259;
@@ -287,7 +287,7 @@ void __thiscall CursorClassTy::TakeCmdToRun(CursorClassTy *this,int param_1)
       puVar13 = (undefined4 *)0x17;
       goto cf_common_join_0054A19A;
     case 0xe:
-      if (g_tLOBldMark_007FB2AC != (AnonShape_GLOBAL_007FB2AC_70073F41 *)0x0) {
+      if (g_tLOBldMark_007FB2AC != (TLOBldMark *)0x0) {
         local_b8 = this_00->field_04AA;
         local_b4 = 0;
         local_b0 = 0;
@@ -655,7 +655,7 @@ void __thiscall CursorClassTy::TakeCmdToRun(CursorClassTy *this,int param_1)
     puVar13 = (undefined4 *)0x1f;
     goto cf_common_join_0054A19A;
   case 0x14:
-    if (g_tLOBldMark_007FB2AC != (AnonShape_GLOBAL_007FB2AC_70073F41 *)0x0) {
+    if (g_tLOBldMark_007FB2AC != (TLOBldMark *)0x0) {
       local_c8 = this_00->field_04AA;
       local_c4 = 0;
       local_c0 = 0;

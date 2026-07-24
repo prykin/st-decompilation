@@ -95,11 +95,15 @@ public class STDebugSymbolApplier extends GhidraScript {
                         conventionsPreserved++;
                     }
                     Namespace namespace = getOrCreateOwner(owner);
-                    function.setParentNamespace(namespace);
-                    function.setName(method, SourceType.USER_DEFINED);
-                    function.addTag(TAG);
+                    if (!function.getParentNamespace().equals(namespace))
+                        function.setParentNamespace(namespace);
+                    if (!function.getName().equals(method))
+                        function.setName(method, SourceType.USER_DEFINED);
+                    if (!hasTag(function)) function.addTag(TAG);
                     addRecoveryComment(function, qualified, source);
-                    if (!callingConvention.isBlank() && !preserveConvention) {
+                    if (!callingConvention.isBlank() &&
+                            !callingConvention.equals(function.getCallingConventionName()) &&
+                            !preserveConvention) {
                         try {
                             if ("__thiscall".equals(callingConvention) &&
                                     explicitEcxParameter(function) != null)
@@ -306,13 +310,18 @@ public class STDebugSymbolApplier extends GhidraScript {
             int blockEnd = locationEnd < 0 ? -1 : old.indexOf('\n', locationEnd + 1);
             if (markerEnd >= 0 && locationEnd >= 0) {
                 if (blockEnd < 0) blockEnd = old.length();
-                function.setComment(old.substring(0, start) + block + old.substring(blockEnd));
+                String updated = old.substring(0, start) + block + old.substring(blockEnd);
+                if (!old.equals(updated)) function.setComment(updated);
             }
             else {
                 printerr("Malformed recovered-comment block at " + function.getEntryPoint() +
                     "; preserving it without changes");
             }
         }
+    }
+
+    private boolean hasTag(Function function) {
+        return function.getTags().stream().anyMatch(tag -> TAG.equals(tag.getName()));
     }
 
     private static String unt(String value) {

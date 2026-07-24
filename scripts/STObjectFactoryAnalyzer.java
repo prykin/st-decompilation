@@ -336,11 +336,14 @@ public class STObjectFactoryAnalyzer extends GhidraScript {
         while (iterator.hasNext()) {
             Instruction instruction = iterator.next();
             String mnemonic = instruction.getMnemonicString().toUpperCase(Locale.ROOT);
-            if (!"CALL".equals(mnemonic)) continue;
+            boolean terminalTailJump = "JMP".equals(mnemonic) &&
+                instruction.getFallThrough() == null;
+            if (!"CALL".equals(mnemonic) && !terminalTailJump) continue;
             Address target = directFlow(instruction);
             Instruction previous = currentProgram.getListing()
                 .getInstructionBefore(instruction.getAddress());
-            Scalar scalar = previous != null && function.getBody().contains(previous.getAddress()) &&
+            Scalar scalar = "CALL".equals(mnemonic) && previous != null &&
+                function.getBody().contains(previous.getAddress()) &&
                 "PUSH".equalsIgnoreCase(previous.getMnemonicString()) ? previous.getScalar(0) : null;
             long immediate = scalar == null ? -1 : scalar.getUnsignedValue();
             if (target == null) continue;

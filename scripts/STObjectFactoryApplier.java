@@ -164,7 +164,8 @@ public class STObjectFactoryApplier extends GhidraScript {
                 return null;
             }
             if (existing.isEquivalent(desired)) {
-                if (text(existing.getDescription()).contains(MARKER))
+                if (text(existing.getDescription()).contains(MARKER) &&
+                        !text(existing.getDescription()).equals(desired.getDescription()))
                     existing.setDescription(desired.getDescription());
                 report.add(new ReportRow("enum", existing.getPathName(), "unchanged",
                     existing.getName(), "equivalent enum already present"));
@@ -216,7 +217,8 @@ public class STObjectFactoryApplier extends GhidraScript {
                 return null;
             }
             if (existing.isEquivalentSignature(desired)) {
-                if (text(existing.getComment()).contains(MARKER))
+                if (text(existing.getComment()).contains(MARKER) &&
+                        !text(existing.getComment()).equals(desired.getComment()))
                     existing.setComment(desired.getComment());
                 return existing;
             }
@@ -267,7 +269,8 @@ public class STObjectFactoryApplier extends GhidraScript {
                 return null;
             }
             if (existing.isEquivalent(desired)) {
-                if (text(existing.getDescription()).contains(MARKER))
+                if (text(existing.getDescription()).contains(MARKER) &&
+                        !text(existing.getDescription()).equals(desired.getDescription()))
                     existing.setDescription(desired.getDescription());
                 return existing;
             }

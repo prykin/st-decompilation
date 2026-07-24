@@ -25,7 +25,7 @@ void __thiscall STManBasisC::sub_005F19A0(STManBasisC *this)
   int local_20;
   int local_1c;
   int local_18;
-  AnonShape_005F19A0_983A7F63 *local_14;
+  STManBasisC *local_14;
   int local_10;
   uint local_c;
   short *local_8;
@@ -34,7 +34,7 @@ void __thiscall STManBasisC::sub_005F19A0(STManBasisC *this)
     return;
   }
   local_c = this->field_003C->count;
-  local_14 = (AnonShape_005F19A0_983A7F63 *)this;
+  local_14 = this;
   pVVar4 = g_visibleClass_00802A88;
 joined_r0x005f19be:
   do {
@@ -43,7 +43,7 @@ joined_r0x005f19be:
     if ((int)local_c < 0) {
       return;
     }
-    pDVar1 = ((STManBasisC *)local_14)->field_003C;
+    pDVar1 = local_14->field_003C;
     if (local_c < pDVar1->count) {
       /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(pDVar1, local_c) (runtime stride) */
       psVar6 = (short *)(pDVar1->elementSize * local_c + (int)pDVar1->data);
@@ -105,7 +105,7 @@ joined_r0x005f19be:
     }
   }
 LAB_005f1c4c:
-  iVar7 = sub_005F14B0((STManBasisC *)local_14,*psVar6,psVar6[1],psVar6[2],*(byte *)(psVar6 + 3),
+  iVar7 = sub_005F14B0(local_14,*psVar6,psVar6[1],psVar6[2],*(byte *)(psVar6 + 3),
                        *(short *)((int)psVar6 + 7));
   pVVar4 = g_visibleClass_00802A88;
   if (-1 < iVar7) {

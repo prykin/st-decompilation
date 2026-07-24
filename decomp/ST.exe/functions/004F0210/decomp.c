@@ -13,38 +13,39 @@ int __thiscall BldLabPanelTy::GetMessage(BldLabPanelTy *this,STMessage *message)
 
 {
   STMessageId SVar1;
-  code *pcVar2;
-  ProdPanelTy *this_00;
-  int iVar3;
+  DArrayTy *pDVar2;
+  code *pcVar3;
+  BldLabPanelTy *this_00;
   int iVar4;
   undefined4 *puVar5;
+  int iVar6;
   InternalExceptionFrame local_4c;
-  ProdPanelTy *local_8;
+  BldLabPanelTy *local_8;
 
   local_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_4c;
-  local_8 = (ProdPanelTy *)this;
-  iVar3 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
+  local_8 = this;
+  iVar4 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
   this_00 = local_8;
-  if (iVar3 != 0) {
+  if (iVar4 != 0) {
     g_currentExceptionFrame = local_4c.previous;
-    iVar4 = ReportDebugMessage("E:\\__titans\\Andrey\\bldlab.cpp",0x9a,0,iVar3,"%s",
+    iVar6 = ReportDebugMessage("E:\\__titans\\Andrey\\bldlab.cpp",0x9a,0,iVar4,"%s",
                                "BldLabPanelTy::GetMessage");
-    if (iVar4 == 0) {
-      RaiseInternalException(iVar3,0,"E:\\__titans\\Andrey\\bldlab.cpp",0x9a);
+    if (iVar6 == 0) {
+      RaiseInternalException(iVar4,0,"E:\\__titans\\Andrey\\bldlab.cpp",0x9a);
       return 0xffff;
     }
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   if (message->id == MESS_ID_CREATE) {
-    ProdPanelTy::PreInitProdPanel(local_8);
+    ProdPanelTy::PreInitProdPanel((ProdPanelTy *)local_8);
   }
-  ProdPanelTy::GetMessage(this_00,message);
+  ProdPanelTy::GetMessage((ProdPanelTy *)this_00,message);
   SVar1 = message->id;
   if (SVar1 < MESS_BLDLABPANELTY_C0A4) {
     if (SVar1 < MESS_SHARED_C09F) {
       if (SVar1 == MESS_ID_CREATE) {
-        InitBldLabPanel((BldLabPanelTy *)this_00);
+        InitBldLabPanel(this_00);
         g_currentExceptionFrame = local_4c.previous;
         return 0;
       }
@@ -52,21 +53,22 @@ int __thiscall BldLabPanelTy::GetMessage(BldLabPanelTy *this,STMessage *message)
         g_currentExceptionFrame = local_4c.previous;
         return 0;
       }
-      if (*(DArrayTy **)&this_00[1].field_0xd5 != (DArrayTy *)0x0) {
-        DArrayDestroy(*(DArrayTy **)&this_00[1].field_0xd5);
+      if (this_00->field_027A != (DArrayTy *)0x0) {
+        DArrayDestroy(this_00->field_027A);
       }
-      *(undefined4 *)&this_00[1].field_0xd5 = 0;
+      this_00->field_027A = (DArrayTy *)0x0;
       g_prodPanel_00801680 = (ProdPanelTy *)0x0;
       g_currentExceptionFrame = local_4c.previous;
       return 0;
     }
-    iVar3 = *(int *)&this_00[1].field_0xd5;
-    if ((iVar3 == 0) ||
-       (iVar4 = SVar1 + *(int *)&this_00->field_0x199, *(uint *)(iVar3 + 0xc) <= iVar4 - 0xc09fU)) {
+    pDVar2 = this_00->field_027A;
+    if ((pDVar2 == (DArrayTy *)0x0) ||
+       (iVar4 = SVar1 + this_00->field_0199, pDVar2->count <= iVar4 - 0xc09fU)) {
       puVar5 = (undefined4 *)0x0;
     }
     else {
-      puVar5 = (undefined4 *)((iVar4 + -0xc09f) * *(int *)(iVar3 + 8) + *(int *)(iVar3 + 0x1c));
+      /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(array, index) (runtime elementSize cannot be a static C array) */
+      puVar5 = (undefined4 *)((iVar4 + -0xc09f) * pDVar2->elementSize + (int)pDVar2->data);
     }
     if (puVar5 == (undefined4 *)0x0) {
       g_currentExceptionFrame = local_4c.previous;
@@ -77,7 +79,7 @@ int __thiscall BldLabPanelTy::GetMessage(BldLabPanelTy *this,STMessage *message)
       return 0;
     }
     thunk_FUN_0054b630(g_cursorClass_00802A30,0xe,*puVar5);
-    ProdPanelTy::SetPanel(this_00,'\0');
+    ProdPanelTy::SetPanel((ProdPanelTy *)this_00,'\0');
   }
   else {
     if (SVar1 != MESS_BLDLABPANELTY_C0A4) {
@@ -89,12 +91,12 @@ int __thiscall BldLabPanelTy::GetMessage(BldLabPanelTy *this,STMessage *message)
         g_currentExceptionFrame = local_4c.previous;
         return 0;
       }
-      PaintUpdBut((BldLabPanelTy *)this_00,(AnonShape_004EF320_444F9AB1 *)message);
+      PaintUpdBut(this_00,(AnonShape_004EF320_444F9AB1 *)message);
       g_currentExceptionFrame = local_4c.previous;
       return 0;
     }
-    *(STMessageArg *)&this_00->field_0x199 = message->arg0;
-    sub_004EFE20((BldLabPanelTy *)this_00);
+    this_00->field_0199 = message->arg0;
+    sub_004EFE20(this_00);
   }
   thunk_FUN_005252c0(0xae);
   g_currentExceptionFrame = local_4c.previous;

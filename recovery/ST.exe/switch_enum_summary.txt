@@ -3,9 +3,9 @@ candidate_functions=556
 switches_seen=890
 decompile_retries=2
 decompile_failures=0
-proposals=534
-auto_apply=166
-target_kinds={class_field=79, global=4, local=333, parameter=118}
+proposals=528
+auto_apply=168
+target_kinds={class_field=81, global=4, local=325, parameter=118}
 note=At least three numeric case values are required.
 note_grouping=Switches over the same generated class field are merged across functions.
 note_aliases=Typed pointer aliases from decompiled declarations are resolved before field grouping.

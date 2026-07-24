@@ -6,7 +6,7 @@
    Evidence: registry[84] at 007CA9C0 stores type 0x0402 and executable pointer 00405916; allocation
    size 1794 has no unique current class-layout match */
 
-void * __cdecl FUN_0067cf00(void)
+AiPlrClassTy * __cdecl CreateAiPlr(void)
 
 {
   AiPlrClassTy *pAVar1;
@@ -16,6 +16,6 @@ void * __cdecl FUN_0067cf00(void)
     pAVar1 = AiPlrClassTy::AiPlrClassTy(pAVar1);
     return pAVar1;
   }
-  return (void *)0x0;
+  return (AiPlrClassTy *)0x0;
 }
 

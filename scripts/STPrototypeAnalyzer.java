@@ -342,8 +342,10 @@ public class STPrototypeAnalyzer extends GhidraScript {
             int nameCount = proposedName.isBlank() ? 0 : ev.names.get(proposedName);
             boolean compatible = !proposedType.isBlank() && typeLength(proposedType) ==
                 effectiveLength(target.getDataType());
+            boolean safeScriptRepair = !scriptOwned ||
+                scriptRepairImproves(currentType, proposedType);
             boolean typeChange = compatible && !sameType(currentType, proposedType) &&
-                (safeToRefine(target, proposedType) || scriptOwned);
+                (safeToRefine(target, proposedType) || scriptOwned) && safeScriptRepair;
             boolean enoughTypeEvidence = "return".equals(key.kind) ? ev.strongCount > 0 :
                 ev.strongCount > 0 || typeCount >= 2;
             boolean typeApply = !manual && !typeConflict && typeChange &&
@@ -369,6 +371,8 @@ public class STPrototypeAnalyzer extends GhidraScript {
             if (!compatible && !proposedType.isBlank()) reasons.add("storage_width_mismatch");
             if (manual) reasons.add("manual_target_preserved");
             if (scriptOwned) reasons.add("script_target_repair");
+            if (scriptOwned && !safeScriptRepair)
+                reasons.add("script_repair_would_lose_semantic_type");
             if (invalidThisName) reasons.add("explicit_parameter_named_this");
             if (duplicateName) reasons.add("duplicate_parameter_name");
             if (typeConflict) reasons.add("type_conflict");
@@ -703,6 +707,38 @@ public class STPrototypeAnalyzer extends GhidraScript {
                  path.contains("/Recovered/HiddenThis/"));
         }
         return current instanceof AbstractIntegerDataType && semanticSpecification(proposed);
+    }
+
+    /**
+     * A repair may supersede an earlier generated guess, but it must not turn a recovered
+     * aggregate back into a primitive pointer merely because one caller still exposes the
+     * old generic prototype.  That formed an endless PrototypeRepair <-> PointerShape cycle.
+     */
+    private boolean scriptRepairImproves(String current, String proposed) {
+        if (current.equals(proposed)) return false;
+        int currentRank = semanticRank(current);
+        int proposedRank = semanticRank(proposed);
+        if (proposedRank != currentRank) return proposedRank > currentRank;
+        // Two unrelated generated shapes or two distinct named semantic types are evidence
+        // for review, not permission for an automatic lateral replacement.
+        return false;
+    }
+
+    private int semanticRank(String specification) {
+        if (specification == null || specification.isBlank()) return 0;
+        String path = specification.startsWith("pointer:") ?
+            specification.substring("pointer:".length()) : specification;
+        if (path.equals("/void") || path.matches(
+                "/(?:u?int(?:1|2|4|8)?|byte|char|short|long|float|double|bool|undefined.*)"))
+            return 1;
+        if (path.contains("/Recovered/PointerShapes/") ||
+                path.contains("/Recovered/ClassPointees/") ||
+                path.contains("/Recovered/HiddenThis/"))
+            return 2;
+        DataType type = dataTypes.getDataType(path);
+        if (type instanceof Structure || type instanceof Enum || type instanceof TypeDef)
+            return 3;
+        return specification.startsWith("pointer:") ? 1 : 0;
     }
 
     private void auditCallSite(Function caller, Instruction instruction, Function direct,

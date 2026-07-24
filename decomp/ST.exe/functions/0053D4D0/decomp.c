@@ -13,10 +13,10 @@ int __thiscall SAMPanelTy::GetMessage(SAMPanelTy *this,STMessage *message)
 
 {
   STMessageId SVar1;
-  AnonPointee_SpecPanelTy_0000 *pAVar2;
+  AnonPointee_SAMPanelTy_0000 *pAVar2;
   int iVar3;
   code *pcVar4;
-  SpecPanelTy *this_00;
+  SAMPanelTy *this_00;
   byte bVar5;
   int iVar6;
   LPSTR pCVar7;
@@ -29,13 +29,13 @@ int __thiscall SAMPanelTy::GetMessage(SAMPanelTy *this,STMessage *message)
   InternalExceptionFrame local_54;
   byte local_10;
   undefined3 uStack_f;
-  SpecPanelTy *local_c;
+  SAMPanelTy *local_c;
   undefined1 local_6;
   char local_5;
 
   local_54.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_54;
-  local_c = (SpecPanelTy *)this;
+  local_c = this;
   iVar6 = Library::MSVCRT::__setjmp3(local_54.jumpBuffer,0);
   this_00 = local_c;
   if (iVar6 != 0) {
@@ -48,7 +48,7 @@ int __thiscall SAMPanelTy::GetMessage(SAMPanelTy *this,STMessage *message)
     RaiseInternalException(iVar6,0,"E:\\__titans\\Andrey\\setamine.cpp",0x94);
     return 0xffff;
   }
-  SpecPanelTy::GetMessage(local_c,message);
+  SpecPanelTy::GetMessage((SpecPanelTy *)local_c,message);
   SVar1 = message->id;
   if (SVar1 < 0xb509) {
     if (SVar1 == MESS_SAMPANELTY_B508) {
@@ -59,12 +59,12 @@ int __thiscall SAMPanelTy::GetMessage(SAMPanelTy *this,STMessage *message)
     }
     if (SVar1 < 4) {
       if (SVar1 == MESS_SHARED_0003) {
-        DoneSAMPanel((SAMPanelTy *)this_00);
+        DoneSAMPanel(this_00);
         g_currentExceptionFrame = local_54.previous;
         return 0;
       }
       if (SVar1 == MESS_ID_CREATE) {
-        InitSAMPanel((SAMPanelTy *)this_00);
+        InitSAMPanel(this_00);
         g_currentExceptionFrame = local_54.previous;
         return 0;
       }
@@ -88,8 +88,9 @@ int __thiscall SAMPanelTy::GetMessage(SAMPanelTy *this,STMessage *message)
       if (this_00->field_005C != 0) {
         iVar8 = this_00->field_0044;
       }
-      pbVar9 = (byte *)FUN_0070b3a0(*(AnonShape_GLOBAL_0081175C_57F682DD **)&this_00[1].field_0x24,
-                                    (uint)((&this_00[1].field_0x1e)[bVar5] == '\0'));
+      pbVar9 = (byte *)FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_01B1,
+                                    (uint)(*(char *)((int)&this_00->field_01AB + (uint)bVar5) ==
+                                          '\0'));
       DibPut((AnonShape_006B5B10_E0D06CF1 *)this_00->field_0068,iVar10 - iVar6,iVar3 - iVar8,'\x01',
              pbVar9);
       Library::DKW::DDX::FUN_006b3640

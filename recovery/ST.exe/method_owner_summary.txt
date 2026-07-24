@@ -1,12 +1,12 @@
 program=ST.exe
-named_caller_methods=1349
+named_caller_methods=1348
 proposals=563
-owner_auto_repair=1
-owner_auto_apply=0
+owner_auto_repair=0
+owner_auto_apply=1
 convention_auto_apply=0
-this_type_auto_apply=9
+this_type_auto_apply=10
 parameter_auto_apply=0
-owner_conflicts=56
+owner_conflicts=55
 note=Direct and thunk-resolved calls whose ECX still aliases the named caller's incoming this are evidence; stable EBP spill/reload aliases are retained.
 note_coverage=A script-owned owner is repaired only for conflicting named owners or when at least four incoming-ECX receiver callers dominate a fan-out of at least eight; service-object calls do not count.
 note_names=Recovered methods receive structural Class::sub_ADDRESS names only.

@@ -1408,7 +1408,8 @@ public class STPointerShapeAnalyzer extends GhidraScript {
         int separator = qualified.lastIndexOf("::");
         if (separator <= 0 || qualified.startsWith("Library::")) return "";
         String owner = qualified.substring(0, separator);
-        String leaf = owner.substring(owner.lastIndexOf("::") + 2);
+        int ownerSeparator = owner.lastIndexOf("::");
+        String leaf = ownerSeparator < 0 ? owner : owner.substring(ownerSeparator + 2);
         DataType direct = dataTypes.getDataType("/" + leaf);
         if (direct instanceof Structure) return direct.getPathName();
         List<DataType> matches = new ArrayList<>();

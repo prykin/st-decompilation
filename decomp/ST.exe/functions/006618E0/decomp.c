@@ -109,7 +109,8 @@ LAB_00661a96:
                             thunk_FUN_004d7270((AnonShape_004D7270_8F0A3C37 *)this_00);
                           }
                           else {
-                            thunk_FUN_004c7cc0(this_00,5,0,1,1,0xffffffff,0,0xff,(char *)0x0);
+                            TLOBaseTy::thunk_FUN_004c7cc0
+                                      ((TLOBaseTy *)this_00,5,0,1,1,0xffffffff,0,0xff,(char *)0x0);
                           }
                         }
                         local_c = local_c + 1;

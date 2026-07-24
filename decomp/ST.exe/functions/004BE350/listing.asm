@@ -1,4 +1,4 @@
-FUN_004be350:
+CreateTLOBase:
 004BE350  68 23 06 00 00            PUSH 0x623
 004BE355  E8 76 21 1F 00            CALL 0x006b04d0
 004BE35A  85 C0                     TEST EAX,EAX

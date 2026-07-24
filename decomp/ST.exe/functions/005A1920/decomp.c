@@ -39,7 +39,7 @@ FSGSTy::SetBanner(FSGSTy *this,char *param_1,undefined4 param_2,int param_3,uint
   int *local_8;
 
   if (((param_5 != (undefined4 *)0x0) && (this->field_1A97 != (AnonPointee_FSGSTy_1A97 *)0x0)) &&
-     (this->field_0065 == 1)) {
+     (this->field_0065 == CASE_1)) {
     local_58.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_58;
     local_c = this;

@@ -1,4 +1,4 @@
-FUN_00668150:
+CreateAiFlt:
 00668150  68 88 02 00 00            PUSH 0x288
 00668155  E8 76 83 04 00            CALL 0x006b04d0
 0066815A  85 C0                     TEST EAX,EAX

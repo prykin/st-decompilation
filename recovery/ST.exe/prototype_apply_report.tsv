@@ -103,19 +103,16 @@ function_address	target	status	detail
 0067D0A0	parameter:0	disabled	apply flags are 0
 006823E0	parameter:0	disabled	apply flags are 0
 0068E050	return:	disabled	apply flags are 0
-0068FC70	parameter:1	disabled	repair row; use STPrototypeRepairAnalyzer/Applier first
 0068FD00	parameter:1	disabled	apply flags are 0
 00691480	parameter:0	disabled	apply flags are 0
 00692C10	parameter:2	disabled	apply flags are 0
 00695C10	parameter:4	disabled	apply flags are 0
 006B8F10	parameter:0	disabled	apply flags are 0
-006BBE40	parameter:1	disabled	repair row; use STPrototypeRepairAnalyzer/Applier first
 006BC3E0	parameter:1	disabled	apply flags are 0
 006C1CE0	parameter:1	disabled	apply flags are 0
 006C5210	parameter:0	disabled	apply flags are 0
 006C52E0	parameter:0	disabled	apply flags are 0
 006CE6C0	parameter:2	disabled	apply flags are 0
-006CEF60	parameter:2	disabled	repair row; use STPrototypeRepairAnalyzer/Applier first
 006CEF60	parameter:6	disabled	apply flags are 0
 006D7830	parameter:5	disabled	apply flags are 0
 006D86E0	parameter:2	disabled	apply flags are 0
@@ -128,7 +125,6 @@ function_address	target	status	detail
 006E65C0	parameter:4	disabled	apply flags are 0
 006E6710	parameter:1	disabled	apply flags are 0
 006E6710	parameter:2	disabled	apply flags are 0
-007474F4	parameter:0	disabled	repair row; use STPrototypeRepairAnalyzer/Applier first
 007479CD	parameter:0	disabled	apply flags are 0
 00747AA5	parameter:0	disabled	apply flags are 0
 0074E337	parameter:1	disabled	apply flags are 0

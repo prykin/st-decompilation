@@ -40,6 +40,7 @@ import ghidra.program.model.listing.DataIterator;
 import ghidra.program.model.listing.Function;
 import ghidra.program.model.listing.FunctionIterator;
 import ghidra.program.model.listing.FunctionTag;
+import ghidra.program.model.listing.GhidraClass;
 import ghidra.program.model.listing.Instruction;
 import ghidra.program.model.listing.InstructionIterator;
 import ghidra.program.model.listing.Parameter;
@@ -96,7 +97,7 @@ public class STGlobalDataAnalyzer extends GhidraScript {
         String owner = ownerTypePath(function);
         if ("__thiscall".equals(function.getCallingConventionName()) && !owner.isBlank())
             typedRegisters.put("ECX", new TypedValue("pointer:" + owner,
-                function.getName(true) + " this"));
+                function.getName(true) + " this", false));
         List<GlobalValue> pushes = new ArrayList<>();
         int calls = 0;
         InstructionIterator instructions = currentProgram.getListing()
@@ -121,10 +122,13 @@ public class STGlobalDataAnalyzer extends GhidraScript {
                 registers.remove("EAX"); registers.remove("ECX"); registers.remove("EDX");
                 typedRegisters.remove("EAX"); typedRegisters.remove("ECX");
                 typedRegisters.remove("EDX");
-                String returnType = called == null ? "" : namedStructurePointer(
-                    called.getReturnType());
+                String returnType = called == null ? "" : constructorPointer(called);
+                boolean constructorResult = !returnType.isBlank();
+                if (returnType.isBlank() && called != null)
+                    returnType = namedStructurePointer(called.getReturnType());
                 if (!returnType.isBlank()) typedRegisters.put("EAX",
-                    new TypedValue(returnType, called.getName(true) + " return"));
+                    new TypedValue(returnType, called.getName(true) + " return",
+                        constructorResult));
                 pushes.clear(); continue;
             }
             if (instruction.getFlowType().isJump() || instruction.getFlowType().isTerminal()) {
@@ -170,6 +174,9 @@ public class STGlobalDataAnalyzer extends GhidraScript {
                 value.producer + " @ " + addr(instruction.getAddress());
             add(global.address, value.type, "", true, false, site);
             evidence.get(global.address).typedStores++;
+            if (value.constructorResult)
+                evidence.get(global.address).constructorStores.merge(
+                    value.type, 1, Integer::sum);
             return;
         }
         if (destination != null && !Set.of("CMP", "TEST", "PUSH", "JMP", "RET")
@@ -195,6 +202,13 @@ public class STGlobalDataAnalyzer extends GhidraScript {
                 structure.getPathName().contains("/Recovered/ClassPointees/") ||
                 structure.getPathName().contains("/Recovered/HiddenThis/")) return "";
         return "pointer:" + structure.getPathName();
+    }
+
+    private String constructorPointer(Function function) {
+        if (!(function.getParentNamespace() instanceof GhidraClass owner) ||
+                !function.getName().equals(owner.getName())) return "";
+        String path = ownerTypePath(function);
+        return path.isBlank() ? "" : "pointer:" + path;
     }
 
     private void propagateCall(Function containing, Function called, GlobalValue receiver,
@@ -274,9 +288,13 @@ public class STGlobalDataAnalyzer extends GhidraScript {
             boolean scriptOwned = isOwned(address);
             boolean synthetic = SYNTHETIC.matcher(currentName).matches() || scriptOwned;
             if (!synthetic) continue;
-            String proposedType = unique(ev.types);
+            String constructorType = unique(ev.constructorStores);
+            String proposedType = constructorType.isBlank() ? unique(ev.types) : constructorType;
             String currentType = typeSpecification(data.getDataType());
-            boolean typeConflict = ev.types.size() > 1;
+            boolean constructorConflict = ev.constructorStores.size() > 1;
+            boolean constructorDominates = !constructorType.isBlank() && !constructorConflict;
+            boolean typeConflict = constructorConflict ||
+                !constructorDominates && ev.types.size() > 1;
             int count = proposedType.isBlank() ? 0 : ev.types.get(proposedType);
             int currentTypeCount = ev.types.getOrDefault(currentType, 0);
             boolean currentTypeDominates = currentTypeCount >= 3;
@@ -303,7 +321,8 @@ public class STGlobalDataAnalyzer extends GhidraScript {
             boolean typeChange = !proposedType.isBlank() && !sameType(currentType, proposedType);
             boolean typeApply = !typeConflict && typeChange && smallSafeType &&
                 currentReplaceable && extentCompatible && ev.addressEvidence == 0 &&
-                (ev.typedStores >= 1 || ev.strongCount >= 2 || count >= 3);
+                (constructorDominates || ev.typedStores >= 1 ||
+                    ev.strongCount >= 2 || count >= 3);
             String proposedName = unique(ev.names);
             int proposedNameCount = proposedName.isBlank() ? 0 :
                 ev.names.getOrDefault(proposedName, 0);
@@ -329,6 +348,9 @@ public class STGlobalDataAnalyzer extends GhidraScript {
             reasons.add("name_evidence=" + ev.names);
             reasons.add("strong_evidence=" + ev.strongCount);
             reasons.add("closed_named_pointer_stores=" + ev.typedStores);
+            reasons.add("constructor_store_types=" + ev.constructorStores);
+            if (constructorDominates && ev.types.size() > 1)
+                reasons.add("constructor_store_dominates_weaker_use_types");
             if (typeConflict) reasons.add("type_conflict");
             if (currentTypeDominates) reasons.add("existing_type_dominates_conflicting_evidence=" +
                 currentTypeCount);
@@ -687,6 +709,8 @@ public class STGlobalDataAnalyzer extends GhidraScript {
             "name_auto_apply=" + rows.stream().filter(r -> r.nameApply).count(),
             "conflicts=" + rows.stream().filter(r -> r.confidence.equals("conflict")).count(),
             "note=Automatic types require repeated non-address-of evidence and replace only undefined/script-owned data.",
+            "note_constructor_stores=A unique named constructor result stored into a global " +
+                "dominates weaker generic use-site types.",
             "note_names=Automatic names are structural and retain the address suffix.",
             "note_manual=USER_DEFINED symbols and concrete manual data are preserved."),
             StandardCharsets.UTF_8);
@@ -713,11 +737,12 @@ public class STGlobalDataAnalyzer extends GhidraScript {
         }
     }
     private static class Evidence {
-        final Map<String, Integer> types = new TreeMap<>(), names = new TreeMap<>();
+        final Map<String, Integer> types = new TreeMap<>(), names = new TreeMap<>(),
+            constructorStores = new TreeMap<>();
         final Set<String> sites = new TreeSet<>();
         int strongCount, addressEvidence, typedStores;
     }
-    private record TypedValue(String type, String producer) {}
+    private record TypedValue(String type, String producer, boolean constructorResult) {}
     private static class Proposal {
         final Address address; final String expectedName, expectedNameSource, expectedType,
             proposedName, proposedType, confidence, reason; final int expectedLength;

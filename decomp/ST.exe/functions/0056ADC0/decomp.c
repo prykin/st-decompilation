@@ -33,12 +33,14 @@ STAppC::InitApp(STAppC *this,HINSTANCE param_1,undefined4 param_2,undefined4 par
   uint uVar19;
   cMf32 *this_00;
   cMf32 *this_01;
-  AppClassTy *pAVar20;
+  STAppC *pSVar20;
   WNDCLASSA *pWVar21;
   char *pcVar22;
   undefined4 *puVar23;
-  UINT UVar24;
-  undefined1 local_560 [792];
+  AnonShape_00683C70_22193481 **ppAVar24;
+  UINT UVar25;
+  AnonShape_00683C70_22193481 *local_560;
+  undefined4 *puStack_55c;
   InternalExceptionFrame local_248;
   InternalExceptionFrame local_204;
   InternalExceptionFrame local_1c0;
@@ -57,12 +59,12 @@ STAppC::InitApp(STAppC *this,HINSTANCE param_1,undefined4 param_2,undefined4 par
   int local_1c;
   undefined4 local_18;
   undefined4 local_14;
-  AppClassTy *local_c;
+  STAppC *local_c;
   byte *local_8;
 
   local_b0.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_b0;
-  local_c = (AppClassTy *)this;
+  local_c = this;
   iVar8 = Library::MSVCRT::__setjmp3(local_b0.jumpBuffer,0);
   local_30 = iVar8;
   if (iVar8 != 0) {
@@ -73,10 +75,10 @@ STAppC::InitApp(STAppC *this,HINSTANCE param_1,undefined4 param_2,undefined4 par
     case -0x5001fff4:
       break;
     case -0x5001fff6:
-      UVar24 = 0;
+      UVar25 = 0;
       pcVar13 = LoadResourceString(0x2648,g_module_00807618);
       pcVar15 = LoadResourceString(0x264b,g_module_00807618);
-      MessageBoxA((HWND)0x0,pcVar15,pcVar13,UVar24);
+      MessageBoxA((HWND)0x0,pcVar15,pcVar13,UVar25);
       break;
     default:
       iVar16 = ReportDebugMessage("E:\\__titans\\tapp.cpp",0x2c9,0,iVar8,"%s",
@@ -86,10 +88,10 @@ STAppC::InitApp(STAppC *this,HINSTANCE param_1,undefined4 param_2,undefined4 par
       }
       break;
     case -0x5001fff3:
-      UVar24 = 0;
+      UVar25 = 0;
       pcVar13 = LoadResourceString(0x2648,g_module_00807618);
       pcVar15 = LoadResourceString(0x264c,g_module_00807618);
-      MessageBoxA((HWND)0x0,pcVar15,pcVar13,UVar24);
+      MessageBoxA((HWND)0x0,pcVar15,pcVar13,UVar25);
     }
     RaiseInternalException(iVar8,0,"E:\\__titans\\tapp.cpp",0x2cc);
     return 0;
@@ -105,7 +107,7 @@ STAppC::InitApp(STAppC *this,HINSTANCE param_1,undefined4 param_2,undefined4 par
     RaiseInternalException
               (-0x5001fff7,g_overwriteContext_007ED77C,"E:\\__titans\\tapp.cpp",0x13e);
   }
-  AppClassTy::InitApp(local_c,param_1);
+  AppClassTy::InitApp((AppClassTy *)local_c,param_1);
   pWVar21 = &local_6c;
   for (iVar8 = 10; iVar8 != 0; iVar8 = iVar8 + -1) {
     pWVar21->style = 0;
@@ -133,7 +135,7 @@ STAppC::InitApp(STAppC *this,HINSTANCE param_1,undefined4 param_2,undefined4 par
   HWND_00856d78 = g_hWnd_00806748;
   ShowWindow(g_hWnd_00806748,param_4);
   UpdateWindow(g_hWnd_00806748);
-  local_34 = (undefined4 *)&local_c->field_0x38;
+  local_34 = &local_c->field_0038;
   local_40 = g_hWnd_00806748;
   local_138.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_138;
@@ -151,7 +153,7 @@ STAppC::InitApp(STAppC *this,HINSTANCE param_1,undefined4 param_2,undefined4 par
     g_currentExceptionFrame = local_138.previous;
     *local_34 = 0;
   }
-  iVar8 = thunk_FUN_00571e40(&local_c->field_0x38,(LPDWORD)0x1);
+  iVar8 = thunk_FUN_00571e40(&local_c->field_0038,(LPDWORD)0x1);
   if (iVar8 == 0) {
     RaiseInternalException
               (-0x5001fff6,g_overwriteContext_007ED77C,"E:\\__titans\\tapp.cpp",0x159);
@@ -159,23 +161,22 @@ STAppC::InitApp(STAppC *this,HINSTANCE param_1,undefined4 param_2,undefined4 par
   local_248.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_248;
   iVar8 = Library::MSVCRT::__setjmp3(local_248.jumpBuffer,0);
-  pAVar20 = local_c;
+  pSVar20 = local_c;
   if (iVar8 == 0) {
     puVar1 = &local_c->field_0x60;
-    puVar2 = &local_c[1].field_0x2e1c;
+    puVar2 = &local_c->field_7D1A;
     wsprintfA(puVar2,"%s%s%s",puVar1,PTR_s_SYSTEM__0079b030,"INTER");
     g_cMf32_00806780 = (cMf32 *)Library::Ourlib::MF32INT::FUN_006f0ec0(0x345,puVar2,0,0,0);
     DAT_00806784 = Library::Ourlib::MFRLOAD::mfRLoadCreate((int)g_cMf32_00806780);
-    wsprintfA(puVar2,"%s%s",&pAVar20->field_0x470,PTR_s_TASKS_0079b048);
+    wsprintfA(puVar2,"%s%s",&pSVar20->field_0x470,PTR_s_TASKS_0079b048);
     g_cMf32_00806798 = (cMf32 *)Library::Ourlib::MF32INT::FUN_006f0ec0(0x345,puVar2,0,0,0);
     wsprintfA(puVar2,"%s%s%s",puVar1,PTR_s_SYSTEM__0079b030,PTR_s_STRATEGS_0079b04c);
     g_cMf32_0080675C = (cMf32 *)Library::Ourlib::MF32INT::FUN_006f0ec0(0x345,puVar2,0,0,0);
     puVar9 = CreateArbList(g_cMf32_0080675C,0);
-    *(uint **)&pAVar20->field_0x4ee2 = puVar9;
+    pSVar20->field_4EE2 = puVar9;
     puVar9 = CreateArbList(g_cMf32_0080675C,1);
-    *(uint **)&pAVar20->field_0x4ee6 = puVar9;
-    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-    if ((*(int *)(*(int *)&pAVar20->field_0x4ee2 + 0xc) == 0) || (puVar9[3] == 0)) {
+    pSVar20->field_4EE6 = puVar9;
+    if ((pSVar20->field_4EE2[3] == 0) || (puVar9[3] == 0)) {
       RaiseInternalException
                 (-0x5001fff3,g_overwriteContext_007ED77C,"E:\\__titans\\tapp.cpp",0x167);
     }
@@ -197,7 +198,7 @@ STAppC::InitApp(STAppC *this,HINSTANCE param_1,undefined4 param_2,undefined4 par
   _DAT_0080758c = 0x1e;
   _DAT_00807590 = 0x4d8;
   _DAT_00807594 = 0x3c2;
-  FUN_006b9b20(&DAT_0080759c,g_hWnd_00806748,(int *)&pAVar20->field_0x115a);
+  FUN_006b9b20(&DAT_0080759c,g_hWnd_00806748,(int *)&pSVar20->field_115A);
   Library::DKW::DDX::FUN_006b9b40
             ((undefined4 *)DAT_0080759c,0x10000001,g_nWidth_00806730,DAT_00806734,DAT_00806738,
              g_nWidth_00806730,DAT_00806734,0,0,0x100);
@@ -220,16 +221,16 @@ STAppC::InitApp(STAppC *this,HINSTANCE param_1,undefined4 param_2,undefined4 par
   FUN_006ad270(DAT_0080759c);
   DVar10 = timeGetTime();
   Library::MSVCRT::FUN_0072e6b0(DVar10);
-  thunk_FUN_005672a0(&local_c->field_0x38,HWND_00856d78);
+  thunk_FUN_005672a0(&local_c->field_0038,HWND_00856d78);
   local_f4.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_f4;
   iVar8 = Library::MSVCRT::__setjmp3(local_f4.jumpBuffer,0);
-  pAVar20 = local_c;
+  pSVar20 = local_c;
   if ((iVar8 == 0) &&
      (iVar8 = Library::DKW::DDX::FUN_006b6d50((int *)&g_int_00811764,0x20), iVar8 == 0)) {
     DAT_00811768 = '\x01';
-    pcVar13 = &pAVar20->field_0x7bd;
-    *(int *)&pAVar20->field_0x115f = g_int_00811764[0xe];
+    pcVar13 = &pSVar20->field_0x7bd;
+    pSVar20->field_115F = g_int_00811764[0xe];
     memset((void *)pcVar13, 0, 0x40); /* compiler bulk-zero initialization */
     iVar8 = 0;
     pcVar15 = (char *)g_int_00811764[0xd];
@@ -269,15 +270,15 @@ STAppC::InitApp(STAppC *this,HINSTANCE param_1,undefined4 param_2,undefined4 par
     }
   }
   g_currentExceptionFrame = local_f4.previous;
-  thunk_FUN_00572510((AnonShape_00572510_F06DC155 *)&pAVar20->field_0x38);
-  if (((DAT_00811768 != '\0') && (pAVar20->field_0xe26 == '\0')) &&
-     (iVar8 = thunk_FUN_005738d0(&pAVar20->field_0x38), iVar8 == 0)) {
+  thunk_FUN_00572510((AnonShape_00572510_F06DC155 *)&pSVar20->field_0038);
+  if (((DAT_00811768 != '\0') && (pSVar20->field_0E26 == '\0')) &&
+     (iVar8 = thunk_FUN_005738d0(&pSVar20->field_0038), iVar8 == 0)) {
     DAT_00811768 = '\0';
   }
   FUN_006c18b0((uint)DAT_00807363);
   CreateBaseSystem();
   pDVar11 = Library::DKW::TBL::SArrayCreate((DArrayTy *)0x0,1,1);
-  *(DArrayTy **)&pAVar20->field_0x4eda = pDVar11;
+  pSVar20->field_4EDA = pDVar11;
   memset(local_2c, 0, 0x20); /* compiler bulk-zero initialization */
   iVar8 = 0;
   if (DAT_00811768 != '\0') {
@@ -289,12 +290,16 @@ STAppC::InitApp(STAppC *this,HINSTANCE param_1,undefined4 param_2,undefined4 par
   pcVar13 = (char *)PTR_00857168->field_0004;
   if (pcVar13 == (char *)0x0) {
     if ((DAT_00807330 & 1) != 0) {
-      memset((void *)local_560, 0, 0x318); /* compiler bulk-zero initialization */
-      wsprintfA(&pAVar20[1].field_0x2e1c,"%s%s",&pAVar20->field_0x164,
-                PTR_s_STARTUP_VPS_0079b040);
+      ppAVar24 = &local_560;
+      for (iVar8 = 0xc6; iVar8 != 0; iVar8 = iVar8 + -1) {
+        *ppAVar24 = (AnonShape_00683C70_22193481 *)0x0;
+        ppAVar24 = ppAVar24 + 1;
+      }
+      wsprintfA(&pSVar20->field_7D1A,"%s%s",&pSVar20->field_0x164,PTR_s_STARTUP_VPS_0079b040)
+      ;
       pDVar11 = (DArrayTy *)
-                thunk_FUN_00683c70(&pAVar20[1].field_0x2e1c,(AnonShape_00683C70_22193481 *)local_560
-                                   ,&local_38,(int *)0x0,(undefined *)0x0);
+                thunk_FUN_00683c70(&pSVar20->field_7D1A,(AnonShape_00683C70_22193481 *)&local_560,
+                                   &local_38,(int *)0x0,(undefined *)0x0);
       if ((local_38 == 0x40) && (pDVar11 != (DArrayTy *)0x0)) {
         local_1c = 0x7101;
         local_18 = 1;
@@ -333,7 +338,7 @@ STAppC::InitApp(STAppC *this,HINSTANCE param_1,undefined4 param_2,undefined4 par
         pcVar13 = pcVar15;
       } while (cVar3 != '\0');
       uVar18 = ~uVar18;
-      puVar1 = &pAVar20[1].field_0x2c08;
+      puVar1 = &pSVar20->field_0x7b06;
       pcVar13 = pcVar15 + -uVar18;
       pcVar15 = puVar1;
       for (uVar19 = uVar18 >> 2; uVar19 != 0; uVar19 = uVar19 - 1) {
@@ -347,7 +352,7 @@ STAppC::InitApp(STAppC *this,HINSTANCE param_1,undefined4 param_2,undefined4 par
         pcVar15 = pcVar15 + 1;
       }
       FUN_006b60b0(puVar1,puVar1);
-      pcVar13 = &pAVar20[1].field_0x2c08;
+      pcVar13 = &pSVar20->field_0x7b06;
       FUN_006c2980(pcVar13,pcVar13);
       iVar8 = -1;
       do {
@@ -358,7 +363,7 @@ STAppC::InitApp(STAppC *this,HINSTANCE param_1,undefined4 param_2,undefined4 par
       } while (cVar3 != '\0');
       if (iVar8 != -2) {
         uVar18 = 0xffffffff;
-        pcVar13 = &pAVar20->field_0x60;
+        pcVar13 = &pSVar20->field_0x60;
         do {
           pcVar15 = pcVar13;
           if (uVar18 == 0) break;
@@ -369,7 +374,7 @@ STAppC::InitApp(STAppC *this,HINSTANCE param_1,undefined4 param_2,undefined4 par
         } while (cVar3 != '\0');
         uVar18 = ~uVar18;
         pcVar13 = pcVar15 + -uVar18;
-        pcVar15 = &pAVar20[1].field_0x27f8;
+        pcVar15 = &pSVar20->field_0x76f6;
         for (uVar19 = uVar18 >> 2; uVar19 != 0; uVar19 = uVar19 - 1) {
           *(undefined4 *)pcVar15 = *(undefined4 *)pcVar13;
           pcVar13 = pcVar13 + 4;
@@ -392,7 +397,7 @@ STAppC::InitApp(STAppC *this,HINSTANCE param_1,undefined4 param_2,undefined4 par
         } while (cVar3 != '\0');
         uVar18 = ~uVar18;
         iVar8 = -1;
-        pcVar13 = &pAVar20[1].field_0x27f8;
+        pcVar13 = &pSVar20->field_0x76f6;
         do {
           pcVar22 = pcVar13;
           if (iVar8 == 0) break;
@@ -414,7 +419,7 @@ STAppC::InitApp(STAppC *this,HINSTANCE param_1,undefined4 param_2,undefined4 par
           pcVar15 = pcVar15 + 1;
         }
         uVar18 = 0xffffffff;
-        pcVar13 = &pAVar20->field_0x7bd;
+        pcVar13 = &pSVar20->field_0x7bd;
         do {
           pcVar15 = pcVar13;
           if (uVar18 == 0) break;
@@ -425,7 +430,7 @@ STAppC::InitApp(STAppC *this,HINSTANCE param_1,undefined4 param_2,undefined4 par
         } while (cVar3 != '\0');
         uVar18 = ~uVar18;
         iVar8 = -1;
-        pcVar13 = &pAVar20[1].field_0x27f8;
+        pcVar13 = &pSVar20->field_0x76f6;
         do {
           pcVar22 = pcVar13;
           if (iVar8 == 0) break;
@@ -446,7 +451,7 @@ STAppC::InitApp(STAppC *this,HINSTANCE param_1,undefined4 param_2,undefined4 par
           pcVar13 = pcVar13 + 1;
           pcVar15 = pcVar15 + 1;
         }
-        FUN_006b8280(&pAVar20[1].field_0x27f8,&pAVar20[1].field_0x27f8);
+        FUN_006b8280(&pSVar20->field_0x76f6,&pSVar20->field_0x76f6);
         uVar18 = 0xffffffff;
         pcVar13 = PTR_DAT_0079b050;
         do {
@@ -459,7 +464,7 @@ STAppC::InitApp(STAppC *this,HINSTANCE param_1,undefined4 param_2,undefined4 par
         } while (cVar3 != '\0');
         uVar18 = ~uVar18;
         iVar8 = -1;
-        pcVar13 = &pAVar20[1].field_0x27f8;
+        pcVar13 = &pSVar20->field_0x76f6;
         do {
           pcVar22 = pcVar13;
           if (iVar8 == 0) break;
@@ -481,7 +486,7 @@ STAppC::InitApp(STAppC *this,HINSTANCE param_1,undefined4 param_2,undefined4 par
           pcVar15 = pcVar15 + 1;
         }
         uVar18 = 0xffffffff;
-        pcVar13 = &pAVar20[1].field_0x2c08;
+        pcVar13 = &pSVar20->field_0x7b06;
         do {
           pcVar15 = pcVar13;
           if (uVar18 == 0) break;
@@ -492,7 +497,7 @@ STAppC::InitApp(STAppC *this,HINSTANCE param_1,undefined4 param_2,undefined4 par
         } while (cVar3 != '\0');
         uVar18 = ~uVar18;
         iVar8 = -1;
-        pcVar13 = &pAVar20[1].field_0x27f8;
+        pcVar13 = &pSVar20->field_0x76f6;
         do {
           pcVar22 = pcVar13;
           if (iVar8 == 0) break;
@@ -514,7 +519,7 @@ STAppC::InitApp(STAppC *this,HINSTANCE param_1,undefined4 param_2,undefined4 par
           pcVar15 = pcVar15 + 1;
         }
         uVar18 = 0xffffffff;
-        pcVar13 = &pAVar20[1].field_0x27f8;
+        pcVar13 = &pSVar20->field_0x76f6;
         do {
           pcVar15 = pcVar13;
           if (uVar18 == 0) break;
@@ -525,7 +530,7 @@ STAppC::InitApp(STAppC *this,HINSTANCE param_1,undefined4 param_2,undefined4 par
         } while (cVar3 != '\0');
         uVar18 = ~uVar18;
         pcVar13 = pcVar15 + -uVar18;
-        pcVar15 = &pAVar20[1].field_0x2c08;
+        pcVar15 = &pSVar20->field_0x7b06;
         for (uVar19 = uVar18 >> 2; uVar19 != 0; uVar19 = uVar19 - 1) {
           *(undefined4 *)pcVar15 = *(undefined4 *)pcVar13;
           pcVar13 = pcVar13 + 4;
@@ -548,7 +553,7 @@ STAppC::InitApp(STAppC *this,HINSTANCE param_1,undefined4 param_2,undefined4 par
         } while (cVar3 != '\0');
         uVar18 = ~uVar18;
         iVar8 = -1;
-        pcVar13 = &pAVar20[1].field_0x2c08;
+        pcVar13 = &pSVar20->field_0x7b06;
         do {
           pcVar22 = pcVar13;
           if (iVar8 == 0) break;
@@ -569,9 +574,9 @@ STAppC::InitApp(STAppC *this,HINSTANCE param_1,undefined4 param_2,undefined4 par
           pcVar13 = pcVar13 + 1;
           pcVar15 = pcVar15 + 1;
         }
-        *(undefined4 *)&pAVar20->field_0x1185 = 1;
-        ReadCmdPlay((STAppC *)pAVar20,1);
-        if (*(int *)&pAVar20->field_0x1185 != 0) {
+        pSVar20->field_1185 = 1;
+        ReadCmdPlay(pSVar20,1);
+        if (pSVar20->field_1185 != 0) {
           if (*(char *)(PTR_00857168->field_0004 + 1) != 'd') {
             bVar5 = true;
             goto switchD_0056b4ce_caseD_57;
@@ -588,7 +593,7 @@ STAppC::InitApp(STAppC *this,HINSTANCE param_1,undefined4 param_2,undefined4 par
           } while (cVar3 != '\0');
           uVar18 = ~uVar18;
           pcVar13 = pcVar15 + -uVar18;
-          pcVar15 = &pAVar20[1].field_0x2a00;
+          pcVar15 = &pSVar20->field_0x78fe;
           for (uVar19 = uVar18 >> 2; uVar19 != 0; uVar19 = uVar19 - 1) {
             *(undefined4 *)pcVar15 = *(undefined4 *)pcVar13;
             pcVar13 = pcVar13 + 4;
@@ -600,7 +605,7 @@ STAppC::InitApp(STAppC *this,HINSTANCE param_1,undefined4 param_2,undefined4 par
             pcVar15 = pcVar15 + 1;
           }
           uVar18 = 0xffffffff;
-          pcVar13 = &pAVar20->field_0x7bd;
+          pcVar13 = &pSVar20->field_0x7bd;
           do {
             pcVar15 = pcVar13;
             if (uVar18 == 0) break;
@@ -611,7 +616,7 @@ STAppC::InitApp(STAppC *this,HINSTANCE param_1,undefined4 param_2,undefined4 par
           } while (cVar3 != '\0');
           uVar18 = ~uVar18;
           iVar8 = -1;
-          pcVar13 = &pAVar20[1].field_0x2a00;
+          pcVar13 = &pSVar20->field_0x78fe;
           do {
             pcVar22 = pcVar13;
             if (iVar8 == 0) break;
@@ -632,7 +637,7 @@ STAppC::InitApp(STAppC *this,HINSTANCE param_1,undefined4 param_2,undefined4 par
             pcVar13 = pcVar13 + 1;
             pcVar15 = pcVar15 + 1;
           }
-          FUN_006b8280(&pAVar20[1].field_0x2a00,&pAVar20[1].field_0x2a00);
+          FUN_006b8280(&pSVar20->field_0x78fe,&pSVar20->field_0x78fe);
           uVar18 = 0xffffffff;
           pcVar13 = PTR_DAT_0079b050;
           do {
@@ -645,7 +650,7 @@ STAppC::InitApp(STAppC *this,HINSTANCE param_1,undefined4 param_2,undefined4 par
           } while (cVar3 != '\0');
           uVar18 = ~uVar18;
           iVar8 = -1;
-          pcVar13 = &pAVar20[1].field_0x2a00;
+          pcVar13 = &pSVar20->field_0x78fe;
           do {
             pcVar22 = pcVar13;
             if (iVar8 == 0) break;
@@ -667,7 +672,7 @@ STAppC::InitApp(STAppC *this,HINSTANCE param_1,undefined4 param_2,undefined4 par
             pcVar15 = pcVar15 + 1;
           }
           uVar18 = 0xffffffff;
-          pcVar13 = &pAVar20[1].field_0x2c08;
+          pcVar13 = &pSVar20->field_0x7b06;
           do {
             pcVar15 = pcVar13;
             if (uVar18 == 0) break;
@@ -678,7 +683,7 @@ STAppC::InitApp(STAppC *this,HINSTANCE param_1,undefined4 param_2,undefined4 par
           } while (cVar3 != '\0');
           uVar18 = ~uVar18;
           iVar8 = -1;
-          pcVar13 = &pAVar20[1].field_0x2a00;
+          pcVar13 = &pSVar20->field_0x78fe;
           do {
             pcVar22 = pcVar13;
             if (iVar8 == 0) break;
@@ -701,23 +706,23 @@ STAppC::InitApp(STAppC *this,HINSTANCE param_1,undefined4 param_2,undefined4 par
           }
           pSVar14 = (StartSystemTy *)Library::MSVCRT::FUN_0072e530(0x6b6);
           if (pSVar14 != (StartSystemTy *)0x0) {
-            StartSystemTy::StartSystemTy(pSVar14,pAVar20);
+            StartSystemTy::StartSystemTy(pSVar14,pSVar20);
           }
           (*g_startSystem_0081176C->vtable->InitSystem)(g_startSystem_0081176C);
-          AppClassTy::AddSystem(pAVar20,(int *)g_startSystem_0081176C,0);
+          AppClassTy::AddSystem((AppClassTy *)pSVar20,(int *)g_startSystem_0081176C,0);
           local_1c = 0x60ff;
-          *(undefined4 *)&pAVar20[1].field_0x2e10 = 1;
-          *(undefined4 *)&pAVar20->field_0x117c = 1;
-          pAVar20->field_0x1163 = 1;
+          pSVar20->field_7D0E = 1;
+          pSVar20->field_117C = 1;
+          pSVar20->field_1163 = 1;
           if ((undefined1 *)PTR_00857168->field_000C != (undefined1 *)0x0) {
             switch(*(undefined1 *)PTR_00857168->field_000C) {
             case 0x4d:
             case 0x6d:
-              pAVar20->field_0x1163 = 3;
+              pSVar20->field_1163 = 3;
               break;
             case 0x53:
             case 0x73:
-              pAVar20->field_0x1163 = 2;
+              pSVar20->field_1163 = 2;
             }
           }
         }
@@ -735,19 +740,19 @@ STAppC::InitApp(STAppC *this,HINSTANCE param_1,undefined4 param_2,undefined4 par
     } while (cVar3 != '\0');
     if (((4 < ~uVar18 - 1) && (PTR_00857168->field_0008 != 0)) && (PTR_00857168->field_000C != 0)) {
       local_1c = 0x6104;
-      *(undefined4 *)&pAVar20[1].field_0x3650 = 1;
+      pSVar20->field_854E = 1;
       local_18 = 1;
       pcVar13 = FUN_006b8240((char *)PTR_00857168->field_0004,2);
       bVar6 = *pcVar13 - 0x30;
-      pAVar20->field_0x112e = bVar6;
+      pSVar20->field_112E = bVar6;
       if ((bVar6 == 0) || (3 < bVar6)) {
-        pAVar20->field_0x112e = 1;
+        pSVar20->field_112E = 1;
       }
       pcVar13 = FUN_006b8240((char *)PTR_00857168->field_0004,3);
-      *(int *)&pAVar20[1].field_0x3654 = *pcVar13 + -0x30;
+      pSVar20->field_8552 = *pcVar13 + -0x30;
       pcVar13 = FUN_006b8240((char *)PTR_00857168->field_0004,4);
-      wsprintfA((LPSTR)&pAVar20[1].field_0010,"%s",pcVar13);
-      wsprintfA(&pAVar20[1].field_0x27f8,"%s%s",&pAVar20->field_0x60,&pAVar20[1].field_0010);
+      wsprintfA(&pSVar20->field_0x4f0e,"%s",pcVar13);
+      wsprintfA(&pSVar20->field_0x76f6,"%s%s",&pSVar20->field_0x60,&pSVar20->field_0x4f0e);
       uVar18 = 0xffffffff;
       pcVar13 = (char *)PTR_00857168->field_0008;
       do {
@@ -760,7 +765,7 @@ STAppC::InitApp(STAppC *this,HINSTANCE param_1,undefined4 param_2,undefined4 par
       } while (cVar3 != '\0');
       uVar18 = ~uVar18;
       pcVar13 = pcVar15 + -uVar18;
-      pcVar15 = &pAVar20[1].field_0x1de5;
+      pcVar15 = &pSVar20->field_0x6ce3;
       for (uVar19 = uVar18 >> 2; uVar19 != 0; uVar19 = uVar19 - 1) {
         *(undefined4 *)pcVar15 = *(undefined4 *)pcVar13;
         pcVar13 = pcVar13 + 4;
@@ -790,20 +795,20 @@ switchD_0056b4ce_caseD_47:
     } while (cVar3 != '\0');
     if (6 < ~uVar18 - 1) {
       pcVar13 = FUN_006b8240((char *)PTR_00857168->field_0004,6);
-      wsprintfA(&pAVar20[1].field_0x2a00,"%s",pcVar13);
-      wsprintfA(&pAVar20[1].field_0x27f8,"%s%s",&pAVar20->field_0x60,&pAVar20[1].field_0x2a00
-               );
-      pAVar20->field_0x1195 = 1;
+      wsprintfA(&pSVar20->field_0x78fe,"%s",pcVar13);
+      wsprintfA(&pSVar20->field_0x76f6,"%s%s",&pSVar20->field_0x60,&pSVar20->field_0x78fe);
+      pSVar20->field_1195 = 1;
       /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
       DAT_00807340 = *(char *)(PTR_00857168->field_0004 + 3) - 0x30;
       if (3 < DAT_00807340) {
         DAT_00807340 = 3;
       }
-      *(int *)&pAVar20[1].field_0x3654 = *(char *)(PTR_00857168->field_0004 + 5) + -0x30;
+      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
+      pSVar20->field_8552 = *(char *)(PTR_00857168->field_0004 + 5) + -0x30;
       cVar3 = *(char *)(PTR_00857168->field_0004 + 4);
-      pAVar20->field_0x1180 = 8;
-      pAVar20->field_0x112d = cVar3 + -0x30;
-      iVar8 = sub_0056E9E0((STAppC *)pAVar20,1);
+      pSVar20->field_1180 = CASE_8;
+      pSVar20->field_112D = cVar3 + -0x30;
+      iVar8 = sub_0056E9E0(pSVar20,1);
       if (iVar8 == 0) {
         RaiseInternalException
                   (local_30,g_overwriteContext_007ED77C,"E:\\__titans\\tapp.cpp",600);
@@ -812,21 +817,21 @@ switchD_0056b4ce_caseD_47:
         switch(*(undefined1 *)(PTR_00857168->field_0004 + 2)) {
         case 0x41:
         case 0x61:
-          pAVar20->field_0x1180 = 3;
-          pAVar20->field_0x1163 = 2;
+          pSVar20->field_1180 = CASE_3;
+          pSVar20->field_1163 = 2;
           break;
         case 0x42:
         case 0x62:
-          pAVar20->field_0x1180 = 1;
-          pAVar20->field_0x1163 = 2;
+          pSVar20->field_1180 = CASE_1;
+          pSVar20->field_1163 = 2;
           local_204.previous = g_currentExceptionFrame;
           g_currentExceptionFrame = &local_204;
           iVar8 = Library::MSVCRT::__setjmp3(local_204.jumpBuffer,0);
-          pAVar20 = local_c;
+          pSVar20 = local_c;
           if (iVar8 == 0) {
             pcVar12 = (cMf32 *)Library::Ourlib::MF32INT::FUN_006f0ec0
-                                         (0x345,&local_c[1].field_0x27f8,0,0,0);
-            local_3c = &pAVar20->field_0x1196;
+                                         (0x345,&local_c->field_0x76f6,0,0,0);
+            local_3c = &pSVar20->field_0x1196;
             cMf32::RecGet(pcVar12,0,PTR_s_DESCRIPTOR_0079b080,(int *)&local_3c,0);
             cMf32::delete(this_01,pcVar12);
             g_currentExceptionFrame = local_204.previous;
@@ -835,10 +840,10 @@ switchD_0056b4ce_caseD_47:
             g_currentExceptionFrame = local_204.previous;
             RaiseInternalException(iVar8,0,"E:\\__titans\\tapp.cpp",0x23e);
           }
-          sub_0056EF50((STAppC *)pAVar20);
-          sub_0056F040((STAppC *)pAVar20);
-          sub_0056EBE0((STAppC *)pAVar20);
-          *(undefined4 *)&pAVar20[1].field_0x2e10 = 0;
+          sub_0056EF50(pSVar20);
+          sub_0056F040(pSVar20);
+          sub_0056EBE0(pSVar20);
+          pSVar20->field_7D0E = 0;
           break;
         default:
           RaiseInternalException
@@ -846,23 +851,23 @@ switchD_0056b4ce_caseD_47:
           break;
         case 0x4d:
         case 0x6d:
-          pAVar20->field_0x1180 = 8;
-          pAVar20->field_0x1163 = 1;
+          pSVar20->field_1180 = CASE_8;
+          pSVar20->field_1163 = 1;
           break;
         case 0x53:
         case 0x73:
-          pAVar20->field_0x1180 = 2;
-          pAVar20->field_0x1163 = 2;
+          pSVar20->field_1180 = CASE_2;
+          pSVar20->field_1163 = 2;
         }
-        memset(&pAVar20[1].field_0004, 0, 0x27f0); /* compiler bulk-zero initialization */
+        memset(&pSVar20->field_4F02, 0, 0x27f0); /* compiler bulk-zero initialization */
         cVar3 = *(char *)(PTR_00857168->field_0004 + 1);
         if (((cVar3 == 'G') || (cVar3 == 'D')) || (cVar3 == 'W')) {
           pSVar14 = (StartSystemTy *)Library::MSVCRT::FUN_0072e530(0x6b6);
           if (pSVar14 != (StartSystemTy *)0x0) {
-            StartSystemTy::StartSystemTy(pSVar14,pAVar20);
+            StartSystemTy::StartSystemTy(pSVar14,pSVar20);
           }
           (*g_startSystem_0081176C->vtable->InitSystem)(g_startSystem_0081176C);
-          AppClassTy::AddSystem(pAVar20,(int *)g_startSystem_0081176C,0);
+          AppClassTy::AddSystem((AppClassTy *)pSVar20,(int *)g_startSystem_0081176C,0);
           local_1c = 0x60ff;
         }
         else {
@@ -893,19 +898,19 @@ switchD_0056b4ce_caseD_47:
       pcVar13 = pcVar13 + 1;
     } while (cVar3 != '\0');
     if (4 < ~uVar18 - 1) {
-      *(undefined4 *)&pAVar20[1].field_0x3650 = 1;
+      pSVar20->field_854E = 1;
       local_1c = 0x6104;
       local_18 = 0;
       pcVar13 = FUN_006b8240((char *)PTR_00857168->field_0004,2);
       bVar6 = *pcVar13 - 0x30;
-      pAVar20->field_0x112e = bVar6;
+      pSVar20->field_112E = bVar6;
       if ((bVar6 == 0) || (3 < bVar6)) {
-        pAVar20->field_0x112e = 1;
+        pSVar20->field_112E = 1;
       }
       pcVar13 = FUN_006b8240((char *)PTR_00857168->field_0004,3);
-      *(int *)&pAVar20[1].field_0x3654 = *pcVar13 + -0x30;
+      pSVar20->field_8552 = *pcVar13 + -0x30;
       pcVar13 = FUN_006b8240((char *)PTR_00857168->field_0004,4);
-      wsprintfA(&pAVar20[1].field_0x27f8,"%s%s",&pAVar20->field_0x60,pcVar13);
+      wsprintfA(&pSVar20->field_0x76f6,"%s%s",&pSVar20->field_0x60,pcVar13);
     }
     break;
   case 'R':
@@ -938,7 +943,7 @@ switchD_0056b4ce_caseD_57:
         pcVar13 = pcVar15;
       } while (cVar3 != '\0');
       uVar18 = ~uVar18;
-      puVar1 = &pAVar20[1].field_0x2c08;
+      puVar1 = &pSVar20->field_0x7b06;
       pcVar13 = pcVar15 + -uVar18;
       pcVar15 = puVar1;
       for (uVar19 = uVar18 >> 2; uVar19 != 0; uVar19 = uVar19 - 1) {
@@ -952,7 +957,7 @@ switchD_0056b4ce_caseD_57:
         pcVar15 = pcVar15 + 1;
       }
       FUN_006b60b0(puVar1,puVar1);
-      pcVar13 = &pAVar20[1].field_0x2c08;
+      pcVar13 = &pSVar20->field_0x7b06;
       FUN_006c2980(pcVar13,pcVar13);
       iVar8 = -1;
       do {
@@ -963,7 +968,7 @@ switchD_0056b4ce_caseD_57:
       } while (cVar3 != '\0');
       if (iVar8 != -2) {
         uVar18 = 0xffffffff;
-        pcVar13 = &pAVar20->field_0x60;
+        pcVar13 = &pSVar20->field_0x60;
         do {
           pcVar15 = pcVar13;
           if (uVar18 == 0) break;
@@ -974,7 +979,7 @@ switchD_0056b4ce_caseD_57:
         } while (cVar3 != '\0');
         uVar18 = ~uVar18;
         pcVar13 = pcVar15 + -uVar18;
-        pcVar15 = &pAVar20[1].field_0x27f8;
+        pcVar15 = &pSVar20->field_0x76f6;
         for (uVar19 = uVar18 >> 2; uVar19 != 0; uVar19 = uVar19 - 1) {
           *(undefined4 *)pcVar15 = *(undefined4 *)pcVar13;
           pcVar13 = pcVar13 + 4;
@@ -997,7 +1002,7 @@ switchD_0056b4ce_caseD_57:
         } while (cVar3 != '\0');
         uVar18 = ~uVar18;
         iVar8 = -1;
-        pcVar13 = &pAVar20[1].field_0x27f8;
+        pcVar13 = &pSVar20->field_0x76f6;
         do {
           pcVar22 = pcVar13;
           if (iVar8 == 0) break;
@@ -1019,7 +1024,7 @@ switchD_0056b4ce_caseD_57:
           pcVar15 = pcVar15 + 1;
         }
         uVar18 = 0xffffffff;
-        pcVar13 = &pAVar20->field_0x7bd;
+        pcVar13 = &pSVar20->field_0x7bd;
         do {
           pcVar15 = pcVar13;
           if (uVar18 == 0) break;
@@ -1030,7 +1035,7 @@ switchD_0056b4ce_caseD_57:
         } while (cVar3 != '\0');
         uVar18 = ~uVar18;
         iVar8 = -1;
-        pcVar13 = &pAVar20[1].field_0x27f8;
+        pcVar13 = &pSVar20->field_0x76f6;
         do {
           pcVar22 = pcVar13;
           if (iVar8 == 0) break;
@@ -1051,7 +1056,7 @@ switchD_0056b4ce_caseD_57:
           pcVar13 = pcVar13 + 1;
           pcVar15 = pcVar15 + 1;
         }
-        FUN_006b8280(&pAVar20[1].field_0x27f8,&pAVar20[1].field_0x27f8);
+        FUN_006b8280(&pSVar20->field_0x76f6,&pSVar20->field_0x76f6);
         uVar18 = 0xffffffff;
         pcVar13 = PTR_DAT_0079b050;
         do {
@@ -1064,7 +1069,7 @@ switchD_0056b4ce_caseD_57:
         } while (cVar3 != '\0');
         uVar18 = ~uVar18;
         iVar8 = -1;
-        pcVar13 = &pAVar20[1].field_0x27f8;
+        pcVar13 = &pSVar20->field_0x76f6;
         do {
           pcVar22 = pcVar13;
           if (iVar8 == 0) break;
@@ -1086,7 +1091,7 @@ switchD_0056b4ce_caseD_57:
           pcVar15 = pcVar15 + 1;
         }
         uVar18 = 0xffffffff;
-        pcVar13 = &pAVar20[1].field_0x2c08;
+        pcVar13 = &pSVar20->field_0x7b06;
         do {
           pcVar15 = pcVar13;
           if (uVar18 == 0) break;
@@ -1097,7 +1102,7 @@ switchD_0056b4ce_caseD_57:
         } while (cVar3 != '\0');
         uVar18 = ~uVar18;
         iVar8 = -1;
-        pcVar13 = &pAVar20[1].field_0x27f8;
+        pcVar13 = &pSVar20->field_0x76f6;
         do {
           pcVar22 = pcVar13;
           if (iVar8 == 0) break;
@@ -1119,7 +1124,7 @@ switchD_0056b4ce_caseD_57:
           pcVar15 = pcVar15 + 1;
         }
         uVar18 = 0xffffffff;
-        pcVar13 = &pAVar20[1].field_0x27f8;
+        pcVar13 = &pSVar20->field_0x76f6;
         do {
           pcVar15 = pcVar13;
           if (uVar18 == 0) break;
@@ -1130,7 +1135,7 @@ switchD_0056b4ce_caseD_57:
         } while (cVar3 != '\0');
         uVar18 = ~uVar18;
         pcVar13 = pcVar15 + -uVar18;
-        pcVar15 = &pAVar20[1].field_0x2c08;
+        pcVar15 = &pSVar20->field_0x7b06;
         for (uVar19 = uVar18 >> 2; uVar19 != 0; uVar19 = uVar19 - 1) {
           *(undefined4 *)pcVar15 = *(undefined4 *)pcVar13;
           pcVar13 = pcVar13 + 4;
@@ -1153,7 +1158,7 @@ switchD_0056b4ce_caseD_57:
         } while (cVar3 != '\0');
         uVar18 = ~uVar18;
         iVar8 = -1;
-        pcVar13 = &pAVar20[1].field_0x2c08;
+        pcVar13 = &pSVar20->field_0x7b06;
         do {
           pcVar22 = pcVar13;
           if (iVar8 == 0) break;
@@ -1174,13 +1179,13 @@ switchD_0056b4ce_caseD_57:
           pcVar13 = pcVar13 + 1;
           pcVar15 = pcVar15 + 1;
         }
-        hFile = CreateFileA(&pAVar20[1].field_0x2c08,0x40000000,1,(LPSECURITY_ATTRIBUTES)0x0,2,0x80,
+        hFile = CreateFileA(&pSVar20->field_0x7b06,0x40000000,1,(LPSECURITY_ATTRIBUTES)0x0,2,0x80,
                             (HANDLE)0x0);
         if ((hFile != (HANDLE)0xffffffff) &&
            (DVar10 = SetFilePointer(hFile,0,(PLONG)0x0,2), DVar10 != 0xffffffff)) {
-          WriteFile(hFile,&pAVar20->field_0x1134,4,&local_44,(LPOVERLAPPED)0x0);
+          WriteFile(hFile,&pSVar20->field_1134,4,&local_44,(LPOVERLAPPED)0x0);
           CloseHandle(hFile);
-          *(undefined4 *)&pAVar20->field_0x1181 = 1;
+          pSVar20->field_1181 = 1;
           goto switchD_0056b4ce_caseD_47;
         }
       }
@@ -1188,19 +1193,18 @@ switchD_0056b4ce_caseD_57:
     break;
   case '~':
     if (PTR_00857168->field_0008 != 0) {
-      wsprintfA(&pAVar20[1].field_0x27f8,"%s%s",&pAVar20->field_0x60,PTR_00857168->field_0008
-               );
+      wsprintfA(&pSVar20->field_0x76f6,"%s%s",&pSVar20->field_0x60,PTR_00857168->field_0008);
       local_17c.previous = g_currentExceptionFrame;
       g_currentExceptionFrame = &local_17c;
       iVar8 = Library::MSVCRT::__setjmp3(local_17c.jumpBuffer,0);
-      pAVar20 = local_c;
+      pSVar20 = local_c;
       if (iVar8 == 0) {
         pcVar12 = (cMf32 *)Library::Ourlib::MF32INT::FUN_006f0ec0
-                                     (0x345,&local_c[1].field_0x27f8,2,0,0);
-        local_8 = &pAVar20->field_0x1196;
+                                     (0x345,&local_c->field_0x76f6,2,0,0);
+        local_8 = &pSVar20->field_0x1196;
         cMf32::RecGet(pcVar12,0,PTR_s_DESCRIPTOR_0079b080,(int *)&local_8,0);
-        *(undefined4 *)&pAVar20->field_0x119a = 0x8f000805;
-        cMf32::RecPut(pcVar12,0,PTR_s_DESCRIPTOR_0079b080,&pAVar20->field_0x1196,0x1999,
+        pSVar20->field_119A = 0x8f000805;
+        cMf32::RecPut(pcVar12,0,PTR_s_DESCRIPTOR_0079b080,&pSVar20->field_0x1196,0x1999,
                       (undefined4 *)0x0,'\0',(uint *)0x0);
         cMf32::delete(this_00,pcVar12);
       }
@@ -1209,15 +1213,13 @@ switchD_0056b4ce_caseD_57:
                 (-0x5001fff4,g_overwriteContext_007ED77C,"E:\\__titans\\tapp.cpp",0x1e5);
     }
   }
-  if ((pAVar20->field_0xe26 == '\0') && (local_1c != 0x6104)) {
+  if ((pSVar20->field_0E26 == '\0') && (local_1c != 0x6104)) {
     local_1c = 0x6123;
   }
-/* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
 cf_common_exit_0056C034:
-  local_560._4_4_ = local_2c;
-  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-  local_560._0_4_ = 0x56c03f;
-  (*pAVar20->vtable->vfunc_18)();
+  puStack_55c = local_2c;
+  local_560 = (AnonShape_00683C70_22193481 *)0x56c03f;
+  (*((AppClassTyVTable *)pSVar20->vtable)->vfunc_18)();
   g_currentExceptionFrame = local_b0.previous;
   return 1;
 }

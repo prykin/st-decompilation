@@ -66,7 +66,9 @@ public class STCuratedRecoveryApplier extends GhidraScript {
             String id = unt(row[1]);
             String addressText = row[2];
             int transaction = currentProgram.startTransaction("Apply curated recovery " + id);
-            boolean commitRow = false;
+            // A validated no-op is still a successful transaction. Rolling it back advances
+            // Ghidra's modification number and made two unchanged curated rows look mutating.
+            boolean commitRow = true;
             try {
                     Address address = currentProgram.getAddressFactory().getAddress(addressText);
                     Function function = currentProgram.getFunctionManager().getFunctionAt(address);
@@ -135,6 +137,7 @@ public class STCuratedRecoveryApplier extends GhidraScript {
                     commitRow = true;
             }
             catch (Exception exception) {
+                commitRow = false;
                 report.add(result(id, addressText, "conflict", exception.getMessage()));
                 conflicts++;
             }

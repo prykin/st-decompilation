@@ -1,5 +1,5 @@
 program=ST.exe
-candidates=682
+candidates=683
 convention_apply=0
 receiver_type_apply=4
 note=No class owner or semantic method name is invented.

@@ -126,8 +126,7 @@ LAB_004c2616:
     break;
   case CASE_E:
     sVar4 = 0x15;
-    if ((g_tLOBldMark_007FB2AC != (AnonShape_GLOBAL_007FB2AC_70073F41 *)0x0) &&
-       (g_tLOBldMark_007FB2AC->field_0024 != 0)) {
+    if ((g_tLOBldMark_007FB2AC != (TLOBldMark *)0x0) && (g_tLOBldMark_007FB2AC->field_0024 != 0)) {
       sVar4 = 0x14;
     }
     break;

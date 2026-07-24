@@ -13,6 +13,10 @@
    [STSwitchEnumApplier] Switch target field_05AC uses
    /SubmarineTitans/Recovered/Enums/TLOBaseTy_field_05ACState. Cases:
    CASE_32=50;CASE_36=54;CASE_39=57;CASE_3B=59;CASE_3D=61;CASE_40=64;CASE_45=69;CASE_49=73;CASE_4E=78;CASE_4F=79;CASE_52=82;CASE_5C=92;CASE_5D=93;CASE_5E=94;CASE_5F=95;CASE_60=96;CASE_68=104;CASE_69=105;CASE_6A=106;CASE_70=112;CASE_72=114
+
+   [STSwitchEnumApplier] Switch target field_05AC uses
+   /SubmarineTitans/Recovered/Enums/TLOBaseTy_field_05ACState. Cases:
+   CASE_32=50;CASE_33=51;CASE_34=52;CASE_35=53;CASE_36=54;CASE_37=55;CASE_38=56;CASE_39=57;CASE_3A=58;CASE_3B=59;CASE_3D=61;CASE_40=64;CASE_41=65;CASE_43=67;CASE_45=69;CASE_48=72;CASE_49=73;CASE_4C=76;CASE_4D=77;CASE_4E=78;CASE_4F=79;CASE_52=82;CASE_54=84;CASE_55=85;CASE_56=86;CASE_57=87;CASE_58=88;CASE_59=89;CASE_5A=90;CASE_5B=91;CASE_5C=92;CASE_5D=93;CASE_5E=94;CASE_5F=95;CASE_60=96;CASE_61=97;CASE_63=99;CASE_64=100;CASE_68=104;CASE_69=105;CASE_6A=106;CASE_6C=108;CASE_6E=110;CASE_6F=111;CASE_70=112;CASE_72=114;CASE_73=115
     */
 
 undefined4 __fastcall FUN_004c84c0(TLOBaseTy *param_1)
@@ -53,9 +57,9 @@ undefined4 __fastcall FUN_004c84c0(TLOBaseTy *param_1)
       return 0;
     }
     pAVar12 = param_1->field_0607;
-    thunk_FUN_004c7cc0(param_1,pAVar12->field_0000,pAVar12->field_0004,pAVar12->field_0008,0,
-                       pAVar12->field_000C,pAVar12->field_0010,pAVar12->field_0014,
-                       (char *)(pAVar12 + 1));
+    TLOBaseTy::thunk_FUN_004c7cc0
+              (param_1,pAVar12->field_0000,pAVar12->field_0004,pAVar12->field_0008,0,
+               pAVar12->field_000C,pAVar12->field_0010,pAVar12->field_0014,(char *)(pAVar12 + 1));
     if (1 < param_1->field_03D4) {
       uVar9 = param_1->field_03D4 * 0x27 - 0x27;
       puVar11 = (undefined4 *)((int)&param_1->field_0607[1].field_000C + 3);

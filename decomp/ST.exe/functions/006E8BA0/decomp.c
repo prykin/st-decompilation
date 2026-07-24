@@ -9,7 +9,7 @@ void __thiscall FUN_006e8ba0(void *this,uint param_1)
      (puVar1 = (uint *)(*(int *)((int)this + 0x31c) + param_1 * 0x114),
      (*(uint *)(*(int *)((int)this + 0x31c) + param_1 * 0x114) & 0x8000) != 0)) {
     FUN_006eab60(this,param_1);
-    SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00424E10::FUN_006e9520(this,param_1,0,0,0);
+    SubmarineTitans::Recovered::HiddenThis::AnonReceiver_004248D0::FUN_006e9520(this,param_1,0,0,0);
     FreeAndNull((void **)(puVar1 + 0x29));
     if ((*puVar1 & 0x100) != 0) {
       FreeAndNull((void **)(puVar1 + 0x2a));

@@ -6,7 +6,7 @@
    Evidence: registry[23] at 007CA7D8 stores type 0x01FF and executable pointer 00403B84; allocation
    size 1571 has no unique current class-layout match */
 
-void * __cdecl FUN_004be350(void)
+TLOBaseTy * __cdecl CreateTLOBase(void)
 
 {
   TLOBaseTy *pTVar1;
@@ -16,6 +16,6 @@ void * __cdecl FUN_004be350(void)
     pTVar1 = TLOBaseTy::TLOBaseTy(pTVar1);
     return pTVar1;
   }
-  return (void *)0x0;
+  return (TLOBaseTy *)0x0;
 }
 

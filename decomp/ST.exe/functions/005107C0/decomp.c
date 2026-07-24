@@ -13,11 +13,11 @@ int __thiscall FrmPanelTy::GetMessage(FrmPanelTy *this,STMessage *message)
 
 {
   STMessageId SVar1;
-  SpecPanelTy *this_00;
+  FrmPanelTy *this_00;
   int iVar2;
   LPSTR pCVar3;
   int iVar4;
-  AnonPointee_SpecPanelTy_0000 *pAVar5;
+  AnonPointee_FrmPanelTy_0000 *pAVar5;
   char *pcVar6;
   code *pcVar7;
   undefined4 uVar8;
@@ -28,11 +28,11 @@ int __thiscall FrmPanelTy::GetMessage(FrmPanelTy *this,STMessage *message)
   undefined4 local_14;
   undefined4 local_10;
   undefined2 local_c;
-  SpecPanelTy *local_8;
+  FrmPanelTy *local_8;
 
   local_60.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_60;
-  local_8 = (SpecPanelTy *)this;
+  local_8 = this;
   iVar2 = Library::MSVCRT::__setjmp3(local_60.jumpBuffer,0);
   this_00 = local_8;
   if (iVar2 != 0) {
@@ -45,7 +45,7 @@ int __thiscall FrmPanelTy::GetMessage(FrmPanelTy *this,STMessage *message)
     }
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  SpecPanelTy::GetMessage(local_8,message);
+  SpecPanelTy::GetMessage((SpecPanelTy *)local_8,message);
   SVar1 = message->id;
   if (SVar1 < (MESS_BLDLABPANELTY_C0A4|MESS_ID_CREATE)) {
     if (SVar1 < MESS_SHARED_C09F) {
@@ -54,7 +54,7 @@ int __thiscall FrmPanelTy::GetMessage(FrmPanelTy *this,STMessage *message)
           if (SVar1 < MESS_FRMPANELTY_B109) {
             if (SVar1 != MESS_FRMPANELTY_B108) {
               if (SVar1 == MESS_ID_CREATE) {
-                InitFrmPanel((FrmPanelTy *)this_00);
+                InitFrmPanel(this_00);
                 g_currentExceptionFrame = local_60.previous;
                 return 0;
               }
@@ -62,7 +62,7 @@ int __thiscall FrmPanelTy::GetMessage(FrmPanelTy *this,STMessage *message)
                 g_currentExceptionFrame = local_60.previous;
                 return 0;
               }
-              DoneFrmPanel((FrmPanelTy *)this_00);
+              DoneFrmPanel(this_00);
               g_currentExceptionFrame = local_60.previous;
               return 0;
             }
@@ -130,7 +130,7 @@ LAB_00510902:
       pcVar7 = thunk_FUN_0052a080;
       pCVar3 = thunk_FUN_00571240(pcVar6,0);
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-      (**(code **)&pAVar5->field_0x8)(message,6,pCVar3,pcVar7,uVar9,uVar8);
+      (*(code *)pAVar5->field_0008)(message,6,pCVar3,pcVar7,uVar9,uVar8);
       g_currentExceptionFrame = local_60.previous;
       return 0;
     }
@@ -197,7 +197,7 @@ switchD_00510930_default:
     pcVar6 = "BUT_FBREAK";
   }
   pCVar3 = thunk_FUN_00571240(pcVar6,0);
-  PaintBut((FrmPanelTy *)this_00,(AnonShape_005105E0_BBFE3E3B *)message,pCVar3);
+  PaintBut(this_00,(AnonShape_005105E0_BBFE3E3B *)message,pCVar3);
 switchD_005108d5_default:
   g_currentExceptionFrame = local_60.previous;
   return 0;

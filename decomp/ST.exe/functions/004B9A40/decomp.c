@@ -14,24 +14,24 @@ undefined4 __thiscall TLOBaseTy::sub_004B9A40(TLOBaseTy *this)
 
   sub_0041C5A0(this);
   TVar1 = this->field_05AC;
-  if ((((TVar1 != 0x4d) || (this->field_04D0 == CASE_2)) &&
-      ((TVar1 != 0x4c || (this->field_04D0 == CASE_2)))) &&
-     ((TVar1 != 0x43 || (this->field_04D0 == CASE_2)))) {
+  if ((((TVar1 != CASE_4D) || (this->field_04D0 == CASE_2)) &&
+      ((TVar1 != CASE_4C || (this->field_04D0 == CASE_2)))) &&
+     ((TVar1 != CASE_43 || (this->field_04D0 == CASE_2)))) {
     dVar2 = (*this->vtable->slot_2C)(this);
     /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
     thunk_FUN_004b7710(CONCAT31((int3)((uint)extraout_ECX >> 8),*(undefined1 *)&this->field_0024),
                        dVar2);
   }
   TVar1 = this->field_05AC;
-  if ((TVar1 == 0x34) || (TVar1 == 0x5b)) {
+  if ((TVar1 == CASE_34) || (TVar1 == CASE_5B)) {
     thunk_FUN_004de0d0((int)this);
   }
   else {
-    if (TVar1 == 0x48) {
+    if (TVar1 == CASE_48) {
       sub_004DF9F0(this);
       return 0;
     }
-    if (TVar1 == 100) {
+    if (TVar1 == CASE_64) {
       thunk_FUN_004e4520((int)this);
       return 0;
     }
@@ -39,23 +39,23 @@ undefined4 __thiscall TLOBaseTy::sub_004B9A40(TLOBaseTy *this)
       thunk_FUN_004e2970((int)this);
       return 0;
     }
-    if (TVar1 == 0x6e) {
+    if (TVar1 == CASE_6E) {
       thunk_FUN_004dd350((int)this);
       return 0;
     }
-    if (TVar1 == 0x4d) {
+    if (TVar1 == CASE_4D) {
       thunk_FUN_004deff0((int)this);
       return 0;
     }
-    if (TVar1 == 0x43) {
+    if (TVar1 == CASE_43) {
       thunk_FUN_004df1a0((int)this);
       return 0;
     }
-    if (TVar1 == 0x73) {
+    if (TVar1 == CASE_73) {
       thunk_FUN_004ecb60((int)this);
       return 0;
     }
-    if (TVar1 == 0x3a) {
+    if (TVar1 == CASE_3A) {
       thunk_FUN_004d9700((int)this);
       return 0;
     }
