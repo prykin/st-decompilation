@@ -8,12 +8,11 @@
 void __thiscall FSGSTy::DoneFSGS(FSGSTy *this)
 
 {
-  DArrayTy *pDVar1;
   MMsgTy *this_00;
-  code *pcVar2;
-  MMObjTy *this_01;
-  int iVar3;
-  int iVar4;
+  code *pcVar1;
+  FSGSTy *this_01;
+  int errorCode;
+  int iVar2;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   ccFntTy *extraout_ECX;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
@@ -22,16 +21,16 @@ void __thiscall FSGSTy::DoneFSGS(FSGSTy *this)
   ccFntTy *extraout_ECX_01;
   ccFntTy *this_02;
   InternalExceptionFrame local_4c;
-  MMObjTy *local_8;
+  FSGSTy *local_8;
 
   local_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_4c;
-  local_8 = (MMObjTy *)this;
-  iVar3 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
-  if (iVar3 == 0) {
+  local_8 = this;
+  errorCode = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
+  if (errorCode == 0) {
     CFsgsConnection::StopBanners((CFsgsConnection *)&DAT_00802a90);
     this_01 = local_8;
-    MMObjTy::DoneMMObj(local_8);
+    MMObjTy::DoneMMObj((MMObjTy *)local_8);
     if (g_cursorClass_00802A30 != (CursorClassTy *)0x0) {
       if (g_cursorClass_00802A30->field_00A9 == 0) {
         Library::DKW::DDX::FUN_006b8b10((int *)g_cursorClass_00802A30->field_00AD);
@@ -45,134 +44,128 @@ void __thiscall FSGSTy::DoneFSGS(FSGSTy *this)
     if (g_startSystem_0081176C->field_002C != (ushort *)0x0) {
       cMf32::RecMemFree(g_cMf32_00806780,(uint *)&g_startSystem_0081176C->field_002C);
     }
-    sub_005A0590((FSGSTy *)this_01);
-    sub_005A07F0((FSGSTy *)this_01);
-    sub_005A0A50((FSGSTy *)this_01);
-    sub_005A0AF0((FSGSTy *)this_01);
-    sub_005A0C80((FSGSTy *)this_01);
-    if (*(DArrayTy **)&this_01[0x1e].field_0x6e != (DArrayTy *)0x0) {
-      FUN_006b5570(*(DArrayTy **)&this_01[0x1e].field_0x6e);
+    sub_005A0590(this_01);
+    sub_005A07F0(this_01);
+    sub_005A0A50(this_01);
+    sub_005A0AF0(this_01);
+    sub_005A0C80(this_01);
+    if (this_01->field_1B08 != (DArrayTy *)0x0) {
+      FUN_006b5570(this_01->field_1B08);
     }
-    pDVar1 = *(DArrayTy **)&this_01[0x22].field_0x78;
-    *(undefined4 *)&this_01[0x1e].field_0x6e = 0;
-    if (pDVar1 != (DArrayTy *)0x0) {
-      FUN_006b5570(pDVar1);
+    this_01->field_1B08 = (DArrayTy *)0x0;
+    if ((DArrayTy *)this_01->field_1E9E != (DArrayTy *)0x0) {
+      FUN_006b5570((DArrayTy *)this_01->field_1E9E);
     }
-    iVar3 = *(int *)&this_01[0x1e].field_0x72;
-    *(undefined4 *)&this_01[0x22].field_0x78 = 0;
-    if (iVar3 != 0) {
-      FreeAndNull((void **)&this_01[0x1e].field_0x72);
+    this_01->field_1E9E = (uint *)0x0;
+    if (this_01->field_1B0C != (byte *)0x0) {
+      FreeAndNull(&this_01->field_1B0C);
     }
-    if (*(HoloTy **)&this_01[0x23].field_0x1a != (HoloTy *)0x0) {
-      HoloTy::Done(*(HoloTy **)&this_01[0x23].field_0x1a);
-      Library::MSVCRT::FUN_0072e2b0(*(HoloTy **)&this_01[0x23].field_0x1a);
-      *(undefined4 *)&this_01[0x23].field_0x1a = 0;
+    if (this_01->field_1F23 != (HoloTy *)0x0) {
+      HoloTy::Done(this_01->field_1F23);
+      Library::MSVCRT::FUN_0072e2b0(this_01->field_1F23);
+      this_01->field_1F23 = (HoloTy *)0x0;
     }
-    if (*(HoloTy **)&this_01[0x23].field_0x1e != (HoloTy *)0x0) {
-      HoloTy::Done(*(HoloTy **)&this_01[0x23].field_0x1e);
-      Library::MSVCRT::FUN_0072e2b0(*(HoloTy **)&this_01[0x23].field_0x1e);
-      *(undefined4 *)&this_01[0x23].field_0x1e = 0;
+    if (this_01->field_1F27 != (HoloTy *)0x0) {
+      HoloTy::Done(this_01->field_1F27);
+      Library::MSVCRT::FUN_0072e2b0(this_01->field_1F27);
+      this_01->field_1F27 = (HoloTy *)0x0;
     }
-    if (*(HoloTy **)&this_01[0x23].field_0x22 != (HoloTy *)0x0) {
-      HoloTy::Done(*(HoloTy **)&this_01[0x23].field_0x22);
-      Library::MSVCRT::FUN_0072e2b0(*(HoloTy **)&this_01[0x23].field_0x22);
-      *(undefined4 *)&this_01[0x23].field_0x22 = 0;
+    if (this_01->field_1F2B != (HoloTy *)0x0) {
+      HoloTy::Done(this_01->field_1F2B);
+      Library::MSVCRT::FUN_0072e2b0(this_01->field_1F2B);
+      this_01->field_1F2B = (HoloTy *)0x0;
     }
-    if (*(HoloTy **)&this_01[0x23].field_0x26 != (HoloTy *)0x0) {
-      HoloTy::Done(*(HoloTy **)&this_01[0x23].field_0x26);
-      Library::MSVCRT::FUN_0072e2b0(*(HoloTy **)&this_01[0x23].field_0x26);
-      *(undefined4 *)&this_01[0x23].field_0x26 = 0;
+    if (this_01->field_1F2F != (HoloTy *)0x0) {
+      HoloTy::Done(this_01->field_1F2F);
+      Library::MSVCRT::FUN_0072e2b0(this_01->field_1F2F);
+      this_01->field_1F2F = (HoloTy *)0x0;
     }
-    if (*(int *)((int)&this_01[0x22].field_0066 + 2) != 0) {
-      FreeAndNull((void **)((int)&this_01[0x22].field_0066 + 2));
+    if (this_01->field_1E8E != 0) {
+      FreeAndNull((void **)&this_01->field_1E8E);
     }
-    if (*(int *)&this_01[0x22].field_0x6c != 0) {
-      FreeAndNull((void **)&this_01[0x22].field_0x6c);
+    if (this_01->field_1E92 != (tagBITMAPINFO *)0x0) {
+      FreeAndNull(&this_01->field_1E92);
     }
-    if (*(int *)&this_01[0x22].field_0x70 != 0) {
-      FreeAndNull((void **)&this_01[0x22].field_0x70);
+    if (this_01->field_1E96 != 0) {
+      FreeAndNull((void **)&this_01->field_1E96);
     }
-    if (*(int *)&this_01[0x22].field_0x74 != 0) {
-      FreeAndNull((void **)&this_01[0x22].field_0x74);
+    if (this_01->field_1E9A != (tagBITMAPINFO *)0x0) {
+      FreeAndNull(&this_01->field_1E9A);
     }
-    if (-1 < (int)*(uint *)&this_01[0x1e].field_0x22) {
-      FUN_006b3bb0((int *)PTR_008075a8,*(uint *)&this_01[0x1e].field_0x22);
+    if (-1 < this_01->field_1ABC) {
+      FUN_006b3bb0((int *)PTR_008075a8,this_01->field_1ABC);
     }
-    *(undefined4 *)&this_01[0x1e].field_0x22 = 0xffffffff;
-    if (*(int *)&this_01[0x1e].field_0x26 != 0) {
-      FreeAndNull((void **)&this_01[0x1e].field_0x26);
+    this_01->field_1ABC = -1;
+    if (this_01->field_1AC0 != (ushort *)0x0) {
+      FreeAndNull(&this_01->field_1AC0);
     }
-    if (*(uint *)&this_01[0x1e].field_0x19 != 0) {
-      StartSystemTy::sub_006E56B0(this_01->field_000C,*(uint *)&this_01[0x1e].field_0x19);
+    if (this_01->field_1AB3 != 0) {
+      StartSystemTy::sub_006E56B0(this_01->field_000C,this_01->field_1AB3);
     }
-    *(undefined4 *)&this_01[0x1e].field_0x19 = 0;
-    if (*(int *)&this_01[0x1e].field_0x11 != 0) {
-      FreeAndNull((void **)&this_01[0x1e].field_0x11);
+    this_01->field_1AB3 = 0;
+    if (this_01->field_1AAB != (LPCSTR)0x0) {
+      FreeAndNull(&this_01->field_1AAB);
     }
-    if (*(AnonShape_006C6FC0_B2C34C14 **)&this_01[0x1e].field_0x5 !=
-        (AnonShape_006C6FC0_B2C34C14 *)0x0) {
-      FUN_006c6fc0(*(AnonShape_006C6FC0_B2C34C14 **)&this_01[0x1e].field_0x5);
+    if (this_01->field_1A9F != (AnonShape_006C6FC0_B2C34C14 *)0x0) {
+      FUN_006c6fc0(this_01->field_1A9F);
     }
-    iVar3 = *(int *)((int)&this_01[0x1e].vtable + 1);
-    *(undefined4 *)&this_01[0x1e].field_0x5 = 0;
-    if (iVar3 != 0) {
-      FreeAndNull((void **)((int)&this_01[0x1e].vtable + 1));
+    this_01->field_1A9F = (void *)0x0;
+    if (this_01->field_1A9B != 0) {
+      FreeAndNull((void **)&this_01->field_1A9B);
     }
-    if (-1 < (int)*(uint *)&this_01[0x1d].field_0xd8) {
-      FUN_006b3bb0((int *)PTR_008075a8,*(uint *)&this_01[0x1d].field_0xd8);
+    if (-1 < this_01->field_1A8F) {
+      FUN_006b3bb0((int *)PTR_008075a8,this_01->field_1A8F);
     }
-    *(undefined4 *)&this_01[0x1d].field_0xd8 = 0xffffffff;
+    this_01->field_1A8F = -1;
     this_02 = (ccFntTy *)0x0;
-    if (*(int *)&this_01[0x1d].field_0xe0 != 0) {
-      FreeAndNull((void **)&this_01[0x1d].field_0xe0);
+    if (this_01->field_1A97 != (AnonPointee_FSGSTy_1A97 *)0x0) {
+      FreeAndNull(&this_01->field_1A97);
       /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
       this_02 = extraout_ECX;
     }
-    if (*(uint **)&this_01[0x1d].field_0xc0 != (uint *)0x0) {
-      ccFntTy::operator(this_02,*(uint **)&this_01[0x1d].field_0xc0);
-      *(undefined4 *)&this_01[0x1d].field_0xc0 = 0;
+    if (this_01->field_1A77 != (ccFntTy *)0x0) {
+      ccFntTy::operator(this_02,(uint *)this_01->field_1A77);
+      this_01->field_1A77 = (ccFntTy *)0x0;
       /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
       this_02 = extraout_ECX_00;
     }
-    if (*(uint **)&this_01[0x1d].field_0xc4 != (uint *)0x0) {
-      ccFntTy::operator(this_02,*(uint **)&this_01[0x1d].field_0xc4);
-      *(undefined4 *)&this_01[0x1d].field_0xc4 = 0;
+    if (this_01->field_1A7B != (uint *)0x0) {
+      ccFntTy::operator(this_02,this_01->field_1A7B);
+      this_01->field_1A7B = (void *)0x0;
       /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
       this_02 = extraout_ECX_01;
     }
-    if (*(uint **)&this_01[0x1d].field_0xc8 != (uint *)0x0) {
-      ccFntTy::operator(this_02,*(uint **)&this_01[0x1d].field_0xc8);
-      *(undefined4 *)&this_01[0x1d].field_0xc8 = 0;
+    if (this_01->field_1A7F != (StartServTy *)0x0) {
+      ccFntTy::operator(this_02,(uint *)this_01->field_1A7F);
+      this_01->field_1A7F = (StartServTy *)0x0;
     }
-    if (*(HGDIOBJ *)&this_01[0x1d].field_0xb0 != (HGDIOBJ)0x0) {
-      DeleteObject(*(HGDIOBJ *)&this_01[0x1d].field_0xb0);
+    if (this_01->field_1A67 != (HGDIOBJ)0x0) {
+      DeleteObject(this_01->field_1A67);
     }
-    pDVar1 = *(DArrayTy **)&this_01[0x23].field_0xaa;
-    *(undefined4 *)&this_01[0x1d].field_0xb0 = 0;
-    if (pDVar1 != (DArrayTy *)0x0) {
-      DArrayDestroy(pDVar1);
+    this_01->field_1A67 = (HGDIOBJ)0x0;
+    if (this_01->field_1FB3 != (DArrayTy *)0x0) {
+      DArrayDestroy(this_01->field_1FB3);
     }
-    iVar3 = *(int *)&this_01->field_0x4d;
-    *(undefined4 *)&this_01[0x23].field_0xaa = 0;
-    if (iVar3 != 0) {
+    this_01->field_1FB3 = (DArrayTy *)0x0;
+    if (this_01->field_004D != 0) {
       AppClassTy::PostNextMessage((AppClassTy *)&DAT_00807620,(undefined4 *)&this_01->field_0x3d);
     }
-    this_00 = *(MMsgTy **)(*(int *)&this_01[0x1d].field_0xa4 + 0x2e6);
+    this_00 = this_01->field_1A5B->field_02E6;
     if (this_00 != (MMsgTy *)0x0) {
       MMsgTy::HideSprites(this_00);
-      *(undefined4 *)(*(int *)(*(int *)&this_01[0x1d].field_0xa4 + 0x2e6) + 0x1cab) = 0;
+      this_01->field_1A5B->field_02E6->field_1CAB = 0;
     }
     g_fSGS_0081174C = (FSGSTy *)0x0;
     g_currentExceptionFrame = local_4c.previous;
     return;
   }
   g_currentExceptionFrame = local_4c.previous;
-  iVar4 = ReportDebugMessage("E:\\__titans\\Start\\fsgs_obj.cpp",0x197,0,iVar3,"%s",
-                             "FSGSTy::DoneFSGS");
-  if (iVar4 != 0) {
+  iVar2 = ReportDebugMessage("E:\\__titans\\Start\\fsgs_obj.cpp",0x197,0,errorCode,
+                             "%s","FSGSTy::DoneFSGS");
+  if (iVar2 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  RaiseInternalException(iVar3,0,"E:\\__titans\\Start\\fsgs_obj.cpp",0x197);
+  RaiseInternalException(errorCode,0,"E:\\__titans\\Start\\fsgs_obj.cpp",0x197);
   return;
 }
 

@@ -9,20 +9,20 @@ void __thiscall WaitTy::CloseButtons(WaitTy *this)
 
 {
   code *pcVar1;
-  MMObjTy *this_00;
+  WaitTy *this_00;
   int errorCode;
   int iVar2;
   InternalExceptionFrame local_4c;
-  MMObjTy *local_8;
+  WaitTy *local_8;
 
   local_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_4c;
-  local_8 = (MMObjTy *)this;
+  local_8 = this;
   errorCode = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
   this_00 = local_8;
   if (errorCode == 0) {
-    MMObjTy::CloseButtons(local_8);
-    if (*(int *)&this_00[0x1d].field_0xad == 0) {
+    MMObjTy::CloseButtons((MMObjTy *)local_8);
+    if (this_00->field_1A64 == 0) {
       if (g_startSystem_0081176C->field_02FC != 0xffffffff) {
         Library::DKW::DDX::FUN_006b34d0
                   ((uint *)g_startSystem_0081176C->field_0340,g_startSystem_0081176C->field_02FC,
@@ -31,9 +31,9 @@ void __thiscall WaitTy::CloseButtons(WaitTy *this)
       }
       FUN_006b3af0((int *)PTR_008075a8,g_startSystem_0081176C->field_02EC);
     }
-    this_00->field_0x65 = 4;
+    this_00->field_0065 = 4;
     thunk_FUN_005b6730(this_00,0xc,'\x01',-1);
-    DeleteCtrls((WaitTy *)this_00);
+    DeleteCtrls(this_00);
     g_currentExceptionFrame = local_4c.previous;
     return;
   }

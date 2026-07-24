@@ -11,7 +11,7 @@ MMsgTy::SetPanel(MMsgTy *this,UINT param_1,int param_2,int param_3,UINT param_4)
 {
   StartSystemTy *pSVar1;
   code *pcVar2;
-  MMObjTy *this_00;
+  MMsgTy *this_00;
   byte bVar3;
   int iVar4;
   char *pcVar5;
@@ -34,7 +34,7 @@ MMsgTy::SetPanel(MMsgTy *this,UINT param_1,int param_2,int param_3,UINT param_4)
   uint local_478 [256];
   InternalExceptionFrame local_78;
   int local_34 [8];
-  MMObjTy *local_14;
+  MMsgTy *local_14;
   UINT *local_10;
   uint local_c;
   uint local_8;
@@ -43,20 +43,20 @@ MMsgTy::SetPanel(MMsgTy *this,UINT param_1,int param_2,int param_3,UINT param_4)
   if ((this->field_0065 == '\x02') && (this->field_1CA9 == '\0')) {
     local_78.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_78;
-    local_14 = (MMObjTy *)this;
+    local_14 = this;
     iVar4 = Library::MSVCRT::__setjmp3(local_78.jumpBuffer,0);
     this_00 = local_14;
     if (iVar4 == 0) {
-      MMObjTy::CloseButtons(local_14);
-      HidePanel((MMsgTy *)this_00,0,0,1);
+      MMObjTy::CloseButtons((MMObjTy *)local_14);
+      HidePanel(this_00,0,0,1);
       if (param_1 == 0) {
-        *(undefined4 *)&this_00[0x20].field_0x70 = 0;
+        this_00->field_1CD0 = 0;
       }
       else {
-        *(UINT *)&this_00[0x20].field_0x70 = param_1;
+        this_00->field_1CD0 = param_1;
         if (param_3 == 0) {
           uVar22 = 0xffffffff;
-          local_8 = *(uint *)&this_00[0x21].field_0x45;
+          local_8 = this_00->field_1D88;
           uVar21 = 7;
           iVar18 = -1;
           iVar15 = -1;
@@ -71,13 +71,13 @@ MMsgTy::SetPanel(MMsgTy *this,UINT param_1,int param_2,int param_3,UINT param_4)
                               iVar14,iVar15,iVar18);
           /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
           (**(code **)(local_8 + 8))(puVar7,uVar21,uVar22);
-          *(undefined4 *)&this_00[0x21].field_0x4d = 0;
+          this_00->field_1D90 = 0;
         }
         else {
           pcVar5 = LoadResourceString(param_4,g_module_00807618);
           pcVar6 = LoadResourceString(param_1,g_module_00807618);
           wsprintfA((LPSTR)local_478,"%s\n(%s=%li)",pcVar6,pcVar5,param_3);
-          iVar4 = *(int *)&this_00[0x21].field_0x45;
+          iVar4 = this_00->field_1D88;
           uVar22 = 0xffffffff;
           uVar21 = 7;
           puVar7 = ccFntTy::CreateTypeSSpr
@@ -85,16 +85,16 @@ MMsgTy::SetPanel(MMsgTy *this,UINT param_1,int param_2,int param_3,UINT param_4)
                               0xffffffff,1,-1,-1);
           /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
           (**(code **)(iVar4 + 8))(puVar7,uVar21,uVar22);
-          *(undefined4 *)&this_00[0x21].field_0x4d = 0;
+          this_00->field_1D90 = 0;
         }
       }
       local_8 = local_8 & 0xffffff00;
-      if (this_00->field_0x9a != '\0') {
+      if (this_00->field_009A != 0) {
         do {
           uVar10 = local_8 & 0xff;
           local_10 = (UINT *)(uVar10 * 0x27 + param_2);
           if (*local_10 == 0) {
-            puVar7 = (undefined4 *)(uVar10 * 0x1fb + 0xbc + (int)this_00);
+            puVar7 = (undefined4 *)(&this_00->field_0xbc + uVar10 * 0x1fb);
             memset(puVar7, 0, 0x26); /* compiler bulk-zero initialization */
             puVar7 = (undefined4 *)((byte *)puVar7 + 0x24);
             *(undefined1 *)((int)puVar7 + 2) = 0;
@@ -109,7 +109,7 @@ MMsgTy::SetPanel(MMsgTy *this,UINT param_1,int param_2,int param_3,UINT param_4)
             cVar16 = CASE_FFFFFFFE;
             iVar15 = 0x1e;
             iVar14 = 0x7d;
-            iVar4 = *(int *)((int)this_00 + uVar10 * 0x1fb + 0x174);
+            iVar4 = *(int *)(&this_00->field_0x174 + uVar10 * 0x1fb);
             iVar9 = uVar10 * 0x1fb;
             puVar8 = (uint *)LoadResourceString(*local_10,g_module_00807618);
             puVar7 = ccFntTy::CreateTypeSSpr
@@ -117,11 +117,12 @@ MMsgTy::SetPanel(MMsgTy *this,UINT param_1,int param_2,int param_3,UINT param_4)
                                 uVar17,iVar18,iVar19,iVar20);
             /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
             (**(code **)(iVar4 + 8))(puVar7,uVar21,uVar22);
-            pUVar12 = (UINT *)((int)this_00 + iVar9 + 0xbc);
-            if ((*local_10 == *(UINT *)((int)this_00 + iVar9 + 0xbc)) && ((char)local_10[1] == '\0')
-               ) {
-              *(int *)((int)this_00 + iVar9 + 0x17c) = *(int *)((int)this_00 + iVar9 + 0x180) + -3;
+            if ((*local_10 == *(UINT *)(&this_00->field_0xbc + iVar9)) &&
+               ((char)local_10[1] == '\0')) {
+              *(int *)((int)&this_00->field_017C + iVar9) =
+                   *(int *)(&this_00->field_0x180 + iVar9) + -3;
               pUVar11 = local_10;
+              pUVar12 = (UINT *)(&this_00->field_0xbc + iVar9);
               for (iVar4 = 9; iVar4 != 0; iVar4 = iVar4 + -1) {
                 *pUVar12 = *pUVar11;
                 pUVar11 = pUVar11 + 1;
@@ -131,8 +132,9 @@ MMsgTy::SetPanel(MMsgTy *this,UINT param_1,int param_2,int param_3,UINT param_4)
               *(undefined1 *)((int)pUVar12 + 2) = *(undefined1 *)((int)pUVar11 + 2);
             }
             else {
-              *(undefined4 *)((int)this_00 + iVar9 + 0x17c) = 0;
+              *(undefined4 *)((int)&this_00->field_017C + iVar9) = 0;
               pUVar11 = local_10;
+              pUVar12 = (UINT *)(&this_00->field_0xbc + iVar9);
               for (iVar4 = 9; iVar4 != 0; iVar4 = iVar4 + -1) {
                 *pUVar12 = *pUVar11;
                 pUVar11 = pUVar11 + 1;
@@ -145,33 +147,32 @@ MMsgTy::SetPanel(MMsgTy *this,UINT param_1,int param_2,int param_3,UINT param_4)
           bVar3 = (char)local_8 + 1;
           /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
           local_8 = CONCAT31(local_8._1_3_,bVar3);
-        } while (bVar3 < (byte)this_00->field_0x9a);
+        } while (bVar3 < this_00->field_009A);
       }
       bVar3 = 0;
       local_8 = local_8 & 0xffffff00;
-      if (this_00->field_0x9a != '\0') {
+      if (this_00->field_009A != 0) {
         do {
           uVar10 = local_8 & 0xff;
-          *(undefined4 *)((int)this_00 + uVar10 * 0x1fb + 0x127) =
-               *(undefined4 *)&this_00->field_0x61;
-          *(uint *)((int)this_00 + uVar10 * 0x1fb + 0x123) = ((local_c & 0xff) + 1) * 100;
-          if (*(int *)((int)this_00 + uVar10 * 0x1fb + 0xbc) != 0) {
+          *(undefined4 *)((int)&this_00->field_0127 + uVar10 * 0x1fb) = this_00->field_0061;
+          *(uint *)((int)&this_00->field_0123 + uVar10 * 0x1fb) = ((local_c & 0xff) + 1) * 100;
+          if (*(int *)(&this_00->field_0xbc + uVar10 * 0x1fb) != 0) {
             /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
             local_c = CONCAT31(local_c._1_3_,(char)local_c + '\x01');
           }
           bVar3 = bVar3 + 1;
           /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
           local_8 = CONCAT31(local_8._1_3_,bVar3);
-        } while (bVar3 < (byte)this_00->field_0x9a);
+        } while (bVar3 < this_00->field_009A);
       }
-      memset(&this_00[0x20].field_0x22, 0, 0x1a); /* compiler bulk-zero initialization */
-      *(undefined4 *)&this_00[0x20].field_0x3c = 0x1010101;
-      *(undefined4 *)&this_00[0x20].field_0x40 = 0x1010101;
-      *(undefined4 *)&this_00[0x20].field_0x44 = 0x1010101;
-      this_00[0x20].field_0x48 = 1;
-      this_00->field_0x65 = 3;
+      memset(&this_00->field_0x1c82, 0, 0x1a); /* compiler bulk-zero initialization */
+      this_00->field_1C9C = 0x1010101;
+      this_00->field_1CA0 = 0x1010101;
+      this_00->field_1CA4 = 0x1010101;
+      this_00->field_1CA8 = 1;
+      this_00->field_0065 = 3;
       thunk_FUN_005b6730(this_00,5,'\0',-1);
-      iVar4 = *(int *)&this_00[0x20].field_0x4b;
+      iVar4 = this_00->field_1CAB;
       if (iVar4 != 0) {
         pSVar1 = this_00->field_000C;
         memset(local_34, 0, 0x20); /* compiler bulk-zero initialization */

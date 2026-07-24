@@ -81,8 +81,7 @@ void __thiscall FUN_004fa870(void *this,Global_sub_004FA870_param_1Enum param_1)
         return;
       }
     }
-    else if ((param_1 == 0x13) &&
-            (g_helpPanel_00801690 != (AnonShape_GLOBAL_00801690_2AA401C1 *)0x0)) {
+    else if ((param_1 == 0x13) && (g_helpPanel_00801690 != (HelpPanelTy *)0x0)) {
       thunk_FUN_00515180(g_helpPanel_00801690,'\x06');
       thunk_FUN_00515180(g_helpPanel_00801690,'\x05');
       return;

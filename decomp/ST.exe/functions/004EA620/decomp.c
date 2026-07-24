@@ -7,11 +7,11 @@
 undefined4 __thiscall TLOBaseTy::sub_004EA620(TLOBaseTy *this)
 
 {
-  uint uVar1;
+  TLOBaseTy_field_046CState TVar1;
 
   if (this->field_0245 == CASE_4) {
-    uVar1 = this->field_046C;
-    if (((uVar1 != 0) && (uVar1 != 1)) && (uVar1 != 2)) {
+    TVar1 = this->field_046C;
+    if (((TVar1 != 0) && (TVar1 != CASE_1)) && (TVar1 != CASE_2)) {
       return 0;
     }
     this->field_046C = 0;

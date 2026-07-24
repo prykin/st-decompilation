@@ -2,12 +2,3 @@ function_address	target	status	detail
 0040C080	parameter:2	disabled	apply flags are 0
 00423D80	parameter:1	disabled	apply flags are 0
 0044CD20	parameter:1	disabled	apply flags are 0
-00494AE0	parameter:0	applied	type=applied(/int *32)
-004DD880	parameter:0	applied	type=applied(/int *32)
-005FB030	parameter:0	applied	type=applied(/int *32)
-0068FC70	parameter:1	disabled	apply flags are 0
-006952B0	parameter:1	applied	type=applied(/byte *32)
-006BBE40	parameter:1	disabled	apply flags are 0
-006CEF60	parameter:2	disabled	apply flags are 0
-007474F4	parameter:0	disabled	apply flags are 0
-0074BBC6	parameter:1	applied	type=applied(/char *32)

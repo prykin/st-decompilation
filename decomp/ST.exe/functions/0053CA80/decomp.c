@@ -14,7 +14,7 @@ int __thiscall ResearchPanelTy::GetMessage(ResearchPanelTy *this,STMessage *mess
 {
   STMessageId SVar1;
   code *pcVar2;
-  ProdPanelTy *this_00;
+  ResearchPanelTy *this_00;
   int iVar3;
   int iVar4;
   undefined1 *puVar5;
@@ -26,11 +26,11 @@ int __thiscall ResearchPanelTy::GetMessage(ResearchPanelTy *this,STMessage *mess
   undefined1 uStack_d;
   undefined2 local_c;
   undefined1 local_a;
-  ProdPanelTy *local_8;
+  ResearchPanelTy *local_8;
 
   local_58.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_58;
-  local_8 = (ProdPanelTy *)this;
+  local_8 = this;
   iVar3 = Library::MSVCRT::__setjmp3(local_58.jumpBuffer,0);
   this_00 = local_8;
   if (iVar3 != 0) {
@@ -45,19 +45,19 @@ int __thiscall ResearchPanelTy::GetMessage(ResearchPanelTy *this,STMessage *mess
   }
   iVar3 = 2;
   if (message->id == MESS_ID_CREATE) {
-    ProdPanelTy::PreInitProdPanel(local_8);
+    ProdPanelTy::PreInitProdPanel((ProdPanelTy *)local_8);
   }
-  ProdPanelTy::GetMessage(this_00,message);
+  ProdPanelTy::GetMessage((ProdPanelTy *)this_00,message);
   SVar1 = message->id;
   if (SVar1 < MESS_BLDLABPANELTY_C0A4) {
     if (SVar1 < MESS_SHARED_C09F) {
       if (SVar1 == MESS_ID_CREATE) {
-        InitResearchPanel((ResearchPanelTy *)this_00);
+        InitResearchPanel(this_00);
         g_currentExceptionFrame = local_58.previous;
         return 0;
       }
       if (SVar1 == MESS_SHARED_0003) {
-        puVar6 = (undefined4 *)&this_00[1].field_0xd5;
+        puVar6 = &this_00->field_027A;
         do {
           if ((DArrayTy *)*puVar6 != (DArrayTy *)0x0) {
             DArrayDestroy((DArrayTy *)*puVar6);
@@ -66,29 +66,28 @@ int __thiscall ResearchPanelTy::GetMessage(ResearchPanelTy *this,STMessage *mess
           puVar6 = puVar6 + 1;
           iVar3 = iVar3 + -1;
         } while (iVar3 != 0);
-        if (*(uint *)&this_00[1].field_0xdd != 0) {
-          StartSystemTy::sub_006E56B0(this_00->field_000C,*(uint *)&this_00[1].field_0xdd);
+        if (this_00->field_0282 != 0) {
+          StartSystemTy::sub_006E56B0(this_00->field_000C,this_00->field_0282);
         }
-        *(undefined4 *)&this_00[1].field_0xdd = 0;
+        this_00->field_0282 = 0;
         g_prodPanel_008016E8 = (ProdPanelTy *)0x0;
         g_currentExceptionFrame = local_58.previous;
         return 0;
       }
       if (SVar1 == MESS_RESEARCHPANELTY_B207) {
-        this_00[1].field_0xd4 = this_00[1].field_0xd3;
-        this_00[1].field_0xd3 = *(char *)(message->arg0).ptr + -1;
+        this_00->field_0279 = this_00->field_0278;
+        this_00->field_0278 = *(char *)(message->arg0).ptr + -1;
         thunk_FUN_005252c0(0xae);
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-        (*(code *)this_00->field_0000->field_001C)();
+        (**(code **)(this_00->field_0000 + 0x1c))();
         g_currentExceptionFrame = local_58.previous;
         return 0;
       }
     }
     else {
-      iVar3 = *(int *)(&this_00[1].field_0xd5 + (uint)(byte)this_00[1].field_0xd3 * 4);
+      iVar3 = (&this_00->field_027A)[(byte)this_00->field_0278];
       if ((iVar3 == 0) ||
-         (iVar4 = SVar1 + *(int *)&this_00->field_0x199, *(uint *)(iVar3 + 0xc) <= iVar4 - 0xc09fU))
-      {
+         (iVar4 = SVar1 + this_00->field_0199, *(uint *)(iVar3 + 0xc) <= iVar4 - 0xc09fU)) {
         puVar5 = (undefined1 *)0x0;
       }
       else {
@@ -103,7 +102,7 @@ int __thiscall ResearchPanelTy::GetMessage(ResearchPanelTy *this,STMessage *mess
         local_10 = 0;
         uStack_f = 1;
         thunk_FUN_0054edf0((undefined4 *)0x1e,&local_14,0,0xffffffff);
-        ProdPanelTy::SetPanel(this_00,'\0');
+        ProdPanelTy::SetPanel((ProdPanelTy *)this_00,'\0');
         thunk_FUN_005252c0(0xae);
         g_currentExceptionFrame = local_58.previous;
         return 0;
@@ -113,8 +112,8 @@ int __thiscall ResearchPanelTy::GetMessage(ResearchPanelTy *this,STMessage *mess
   else {
     switch(SVar1) {
     case MESS_BLDLABPANELTY_C0A4:
-      *(STMessageArg *)&this_00->field_0x199 = message->arg0;
-      sub_0053C620((ResearchPanelTy *)this_00);
+      this_00->field_0199 = message->arg0;
+      sub_0053C620(this_00);
       thunk_FUN_005252c0(0xae);
       g_currentExceptionFrame = local_58.previous;
       return 0;
@@ -123,11 +122,12 @@ int __thiscall ResearchPanelTy::GetMessage(ResearchPanelTy *this,STMessage *mess
     case MESS_BEHPANELTY_C0B1:
     case 0xc0b2:
     case MESS_BLDLABPANELTY_C0B3:
-      PaintUpdBut((ResearchPanelTy *)this_00,(AnonShape_004EF320_444F9AB1 *)message);
+      PaintUpdBut(this_00,(AnonShape_004EF320_444F9AB1 *)message);
       g_currentExceptionFrame = local_58.previous;
       return 0;
     case MESS_RESEARCHPANELTY_C0B4:
-      ProdPanelTy::PaintTab(this_00,(AnonShape_0053FEE0_A49592EB *)message,thunk_FUN_0052a7b0);
+      ProdPanelTy::PaintTab
+                ((ProdPanelTy *)this_00,(AnonShape_0053FEE0_A49592EB *)message,thunk_FUN_0052a7b0);
     }
   }
   g_currentExceptionFrame = local_58.previous;

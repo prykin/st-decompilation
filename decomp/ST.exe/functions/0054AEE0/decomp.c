@@ -68,19 +68,18 @@ void __thiscall CursorClassTy::GCGameState(CursorClassTy *this,int param_1)
        (iVar5 = FUN_00405687((int)this_00), iVar5 == 0)) || (this_00->field_0496 == 0)))) {
     SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0054B700::sub_0054B700
               ((AnonReceiver_0054B700 *)this_00,-1);
-    if ((g_helpPanel_00801690 == (AnonShape_GLOBAL_00801690_2AA401C1 *)0x0) ||
-       (g_helpPanel_00801690->field_0172 == 2)) goto LAB_0054b372;
+    if ((g_helpPanel_00801690 == (HelpPanelTy *)0x0) || (g_helpPanel_00801690->field_0172 == 2))
+    goto LAB_0054b372;
 LAB_0054b019:
     uVar18 = this_00->field_0038;
     uVar17 = this_00->field_0034;
-    CVar4 = (CursorClassTy_SetGCType_param_1Enum)g_helpPanel_00801690->field_01DB;
+    CVar4 = (CursorClassTy_SetGCType_param_1Enum)(byte)g_helpPanel_00801690->field_01DB;
     goto cf_common_exit_0054B368;
   }
   memset(local_f8, 0, 0x20); /* compiler bulk-zero initialization */
   if ((g_allPlayers_007FA174 == (STAllPlayersC *)0x0) || (DAT_00808784 != 0)) {
 LAB_0054b335:
-    if ((g_helpPanel_00801690 == (AnonShape_GLOBAL_00801690_2AA401C1 *)0x0) ||
-       (g_helpPanel_00801690->field_0172 == 2)) {
+    if ((g_helpPanel_00801690 == (HelpPanelTy *)0x0) || (g_helpPanel_00801690->field_0172 == 2)) {
       uVar18 = this_00->field_0038;
       uVar17 = this_00->field_0034;
 LAB_0054b366:
@@ -89,7 +88,7 @@ LAB_0054b366:
     else {
       uVar18 = this_00->field_0038;
       uVar17 = this_00->field_0034;
-      CVar4 = (CursorClassTy_SetGCType_param_1Enum)g_helpPanel_00801690->field_01DB;
+      CVar4 = (CursorClassTy_SetGCType_param_1Enum)(byte)g_helpPanel_00801690->field_01DB;
     }
   }
   else {
@@ -101,12 +100,11 @@ LAB_0054b366:
     }
     if (bVar3) goto LAB_0054b335;
     if ((((g_playPanel_008016E4 != (PlayPanelTy *)0x0) && (g_playPanel_008016E4->field_0172 != 2))
-        || ((g_helpPanel_00801690 != (AnonShape_GLOBAL_00801690_2AA401C1 *)0x0 &&
-            (g_helpPanel_00801690->field_0172 != 2)))) ||
-       ((g_optPanel_008016DC != (OptPanelTy *)0x0 && (g_optPanel_008016DC->field_0172 != CASE_2))))
-    {
-      if ((g_helpPanel_00801690 != (AnonShape_GLOBAL_00801690_2AA401C1 *)0x0) &&
-         (g_helpPanel_00801690->field_0172 != 2)) goto LAB_0054b019;
+        || ((g_helpPanel_00801690 != (HelpPanelTy *)0x0 && (g_helpPanel_00801690->field_0172 != 2)))
+        ) || ((g_optPanel_008016DC != (OptPanelTy *)0x0 &&
+              (g_optPanel_008016DC->field_0172 != CASE_2)))) {
+      if ((g_helpPanel_00801690 != (HelpPanelTy *)0x0) && (g_helpPanel_00801690->field_0172 != 2))
+      goto LAB_0054b019;
       uVar18 = this_00->field_0038;
       uVar17 = this_00->field_0034;
       goto LAB_0054b366;
@@ -208,7 +206,7 @@ LAB_0054b2a9:
         if (dVar9 == 0x78) {
           dVar9 = *(dword *)&this_00->field_049A->field_0x259;
         }
-        if (g_helpPanel_00801690 != (AnonShape_GLOBAL_00801690_2AA401C1 *)0x0) {
+        if (g_helpPanel_00801690 != (HelpPanelTy *)0x0) {
           iVar5 = (*pSVar6->vtable->vfunc_0C)();
           iVar5 = thunk_FUN_005121f0(g_helpPanel_00801690,dVar9,iVar5);
           if (iVar5 != 0) {

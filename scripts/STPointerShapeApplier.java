@@ -196,7 +196,8 @@ public class STPointerShapeApplier extends GhidraScript {
             }
             String currentHash = layoutHash(existing);
             if (currentHash.equals(desiredHash)) {
-                existing.setDescription(desired.getDescription());
+                if (!text(existing.getDescription()).equals(desired.getDescription()))
+                    existing.setDescription(desired.getDescription());
                 report.add(new ReportRow("type", id, path, "unchanged",
                     "length=" + length + "; fields=" + selected.size()));
                 return;
@@ -403,26 +404,31 @@ public class STPointerShapeApplier extends GhidraScript {
         String block = MARKER + " " + unt(row.get("proposed_type")) + "; " +
             unt(row.get("reason"));
         String old = variable.getComment();
-        if (old == null || old.isBlank()) variable.setComment(block);
-        else if (!old.contains(MARKER)) variable.setComment(old + "\n" + block);
-        else variable.setComment(old.substring(0, old.indexOf(MARKER)).stripTrailing() +
-            (old.substring(0, old.indexOf(MARKER)).isBlank() ? "" : "\n") + block);
+        String updated;
+        if (old == null || old.isBlank()) updated = block;
+        else if (!old.contains(MARKER)) updated = old + "\n" + block;
+        else updated = old.substring(0, old.indexOf(MARKER)).stripTrailing() +
+            (old.substring(0, old.indexOf(MARKER)).isBlank() ? "" : "\n") + block;
+        if (!text(old).equals(updated)) variable.setComment(updated);
     }
 
     private void addGlobalComment(Address address, Map<String, String> row) {
         String block = MARKER + " Recovered global pointer type.\nType: " +
             unt(row.get("proposed_type")) + "\nEvidence: " + unt(row.get("reason"));
         String old = listing.getComment(CommentType.PLATE, address);
-        if (old == null || old.isBlank()) listing.setComment(address, CommentType.PLATE, block);
-        else if (!old.contains(MARKER)) listing.setComment(address, CommentType.PLATE,
-            old + "\n\n" + block);
+        String updated;
+        if (old == null || old.isBlank()) updated = block;
+        else if (!old.contains(MARKER)) updated = old + "\n\n" + block;
         else {
             int start = old.indexOf(MARKER);
             String prefix = old.substring(0, start).stripTrailing();
-            listing.setComment(address, CommentType.PLATE,
-                prefix.isBlank() ? block : prefix + "\n\n" + block);
+            updated = prefix.isBlank() ? block : prefix + "\n\n" + block;
         }
+        if (!text(old).equals(updated))
+            listing.setComment(address, CommentType.PLATE, updated);
     }
+
+    private static String text(String value) { return value == null ? "" : value; }
 
     private Structure existingStructure(String path) {
         DataType type = dataTypes.getDataType(path);

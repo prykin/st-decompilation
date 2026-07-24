@@ -100,7 +100,7 @@ public class STGlobalDataApplier extends GhidraScript {
                     details.add("type=conflict(missing proposed type)"); conflict = true;
                 }
                 else if (proposed.isEquivalent(data.getDataType())) details.add("type=unchanged");
-                else if (!baseline || concreteData) {
+                else if (!baseline || concreteData && !scriptOwned) {
                     details.add("type=preserved(stale/concrete data)"); preserved = true;
                 }
                 else if (!safeRange(address, proposed.getLength())) {
@@ -108,7 +108,8 @@ public class STGlobalDataApplier extends GhidraScript {
                 }
                 else {
                     DataUtilities.createData(currentProgram, address, proposed, proposed.getLength(),
-                        DataUtilities.ClearDataMode.CLEAR_ALL_UNDEFINED_CONFLICT_DATA);
+                        scriptOwned ? DataUtilities.ClearDataMode.CLEAR_ALL_CONFLICT_DATA :
+                            DataUtilities.ClearDataMode.CLEAR_ALL_UNDEFINED_CONFLICT_DATA);
                     data = listing.getDefinedDataAt(address);
                     details.add("type=applied(" + proposed.getPathName() + ")"); changed = true;
                 }
@@ -182,10 +183,13 @@ public class STGlobalDataApplier extends GhidraScript {
         String block = MARKER + " Recovered global data.\nType: " +
             unt(row.get("proposed_type")) + "\nEvidence: " + unt(row.get("evidence_sites"));
         String old = listing.getComment(CommentType.PLATE, address);
-        if (old == null || old.isBlank()) listing.setComment(address, CommentType.PLATE, block);
-        else if (!old.contains(MARKER))
-            listing.setComment(address, CommentType.PLATE, old + "\n\n" + block);
+        String updated = old;
+        if (old == null || old.isBlank()) updated = block;
+        else if (!old.contains(MARKER)) updated = old + "\n\n" + block;
+        if (!text(old).equals(text(updated)))
+            listing.setComment(address, CommentType.PLATE, updated);
     }
+    private static String text(String value) { return value == null ? "" : value; }
     private long count(String status) {
         return report.stream().filter(row -> row.status.equals(status)).count();
     }

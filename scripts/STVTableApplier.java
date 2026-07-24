@@ -269,7 +269,8 @@ public class STVTableApplier extends GhidraScript {
                 continue;
             }
             boolean renamed = applyReviewedRename(selection);
-            selection.function.addTag(FUNCTION_TAG);
+            if (!hasTag(selection.function, FUNCTION_TAG))
+                selection.function.addTag(FUNCTION_TAG);
             addFunctionComments(selection.function, selection.rows);
             if (selection.created) createdCount++;
             String detail = (selection.created ? "created function" : "existing function") +
@@ -594,8 +595,8 @@ public class STVTableApplier extends GhidraScript {
         if (description == null) description = "";
         int index = description.indexOf(LAYOUT_HASH_MARKER);
         if (index >= 0) description = description.substring(0, index);
-        structure.setDescription(description + LAYOUT_HASH_MARKER +
-            structureLayoutHash(structure));
+        String updated = description + LAYOUT_HASH_MARKER + structureLayoutHash(structure);
+        if (!updated.equals(structure.getDescription())) structure.setDescription(updated);
     }
 
     private StructureResolution resolveStructure(String name, List<Map<String, String>> slots,
@@ -625,7 +626,8 @@ public class STVTableApplier extends GhidraScript {
             if (!currentHash.equals(desiredHash))
                 return new StructureResolution(existing,
                     "preserved legacy generated type (layout differs; no safety hash)", null);
-            existing.setDescription(desired.getDescription());
+            if (!desired.getDescription().equals(existing.getDescription()))
+                existing.setDescription(desired.getDescription());
             return new StructureResolution(existing, "adopted legacy generated type", null);
         }
         if (!storedHash.equals(currentHash))
@@ -760,12 +762,14 @@ public class STVTableApplier extends GhidraScript {
             // Older versions created these definitions without a safety marker. Adopt only an
             // equivalent definition; a differing legacy type may have been edited by hand.
             if (existing.isEquivalentSignature(desired))
-                existing.setComment(desired.getComment());
+                if (!text(existing.getComment()).equals(desired.getComment()))
+                    existing.setComment(desired.getComment());
             return;
         }
         if (!storedHash.equals(currentHash)) return; // Preserves a manual signature edit.
         if (!currentHash.equals(desiredHash)) existing.replaceWith(desired);
-        existing.setComment(desired.getComment());
+        if (!text(existing.getComment()).equals(desired.getComment()))
+            existing.setComment(desired.getComment());
     }
 
     private String generatedSignatureComment(Address rawAddress, Function target,
@@ -850,13 +854,13 @@ public class STVTableApplier extends GhidraScript {
         Symbol oldPrimary = symbols.getPrimarySymbol(address);
         for (Symbol symbol : symbols.getSymbols(address)) {
             if (symbol.getName(true).equals(name) || symbol.getName().equals(name)) {
-                symbol.setPrimary();
+                if (!symbol.equals(oldPrimary)) symbol.setPrimary();
                 deleteReplacedOwnedLabel(oldPrimary, symbol, address);
                 return;
             }
         }
         Symbol symbol = symbols.createLabel(address, name, SourceType.USER_DEFINED);
-        symbol.setPrimary();
+        if (!symbol.equals(oldPrimary)) symbol.setPrimary();
         deleteReplacedOwnedLabel(oldPrimary, symbol, address);
     }
 
@@ -932,9 +936,10 @@ public class STVTableApplier extends GhidraScript {
             "\nConfidence: " + proposal.get("confidence") + " (" +
             unt(proposal.get("reason")) + ")";
         String old = listing.getComment(CommentType.PLATE, address);
-        if (old == null || old.isBlank()) listing.setComment(address, CommentType.PLATE, block);
+        String updated = old;
+        if (old == null || old.isBlank()) updated = block;
         else if (!old.contains(COMMENT_MARKER))
-            listing.setComment(address, CommentType.PLATE, old + "\n\n" + block);
+            updated = old + "\n\n" + block;
         else if (old.startsWith(COMMENT_MARKER)) {
             int end = old.length();
             int newline = -1;
@@ -943,8 +948,10 @@ public class STVTableApplier extends GhidraScript {
                 if (newline < 0) break;
             }
             if (newline >= 0) end = newline;
-            listing.setComment(address, CommentType.PLATE, block + old.substring(end));
+            updated = block + old.substring(end);
         }
+        if (!text(old).equals(text(updated)))
+            listing.setComment(address, CommentType.PLATE, updated);
     }
 
     private void addFunctionComments(Function function, List<Map<String, String>> slots) {
@@ -959,7 +966,8 @@ public class STVTableApplier extends GhidraScript {
             if (updated.length() > 0) updated.append("\n\n");
             updated.append(marker);
         }
-        function.setComment(updated.toString());
+        if (!text(old).equals(updated.toString()))
+            function.setComment(updated.toString());
     }
 
     private Address readPointer(Address address) {
@@ -1064,6 +1072,8 @@ public class STVTableApplier extends GhidraScript {
         return value.replace("\\", "\\\\").replace("\t", "\\t")
             .replace("\r", "\\r").replace("\n", "\\n");
     }
+
+    private static String text(String value) { return value == null ? "" : value; }
 
     private static String unt(String value) {
         if (value == null) return "";

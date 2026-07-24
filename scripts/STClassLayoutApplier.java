@@ -175,7 +175,8 @@ public class STClassLayoutApplier extends GhidraScript {
                 return;
             }
             if (layoutHash(existing).equals(desiredHash)) {
-                existing.setDescription(desired.getDescription());
+                if (!text(existing.getDescription()).equals(desired.getDescription()))
+                    existing.setDescription(desired.getDescription());
                 report.add(new ReportRow(owner + "::pointee", path, "unchanged",
                     selected.size() + " fields; length=" + length));
                 return;
@@ -265,7 +266,8 @@ public class STClassLayoutApplier extends GhidraScript {
 
             String currentHash = layoutHash(existing);
             if (!safety.placeholder && currentHash.equals(desiredHash)) {
-                existing.setDescription(desired.getDescription());
+                if (!text(existing.getDescription()).equals(desired.getDescription()))
+                    existing.setDescription(desired.getDescription());
                 report.add(new ReportRow(owner, path, "unchanged", installed +
                     " fields; length=" + length, typed, named));
                 return;
@@ -414,6 +416,7 @@ public class STClassLayoutApplier extends GhidraScript {
         return value.replace("\\", "\\\\").replace("\t", "\\t")
             .replace("\r", "\\r").replace("\n", "\\n");
     }
+    private static String text(String value) { return value == null ? "" : value; }
     private static String unt(String value) {
         if (value == null) return "";
         StringBuilder result = new StringBuilder();

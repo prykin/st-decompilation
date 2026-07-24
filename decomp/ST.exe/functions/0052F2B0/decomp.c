@@ -141,9 +141,9 @@ void __thiscall OptPanelTy::SwitchOptPanel(OptPanelTy *this,char param_1)
       local_8 = ProdPanelTy::SetPanel(g_prodPanel_00801680,'\0');
     }
     bVar12 = local_8 != 0;
-    if (g_helpPanel_00801690 != (AnonShape_GLOBAL_00801690_2AA401C1 *)0x0) {
+    if (g_helpPanel_00801690 != (HelpPanelTy *)0x0) {
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-      local_8 = (**(code **)(*(int *)g_helpPanel_00801690 + 0x18))(0);
+      local_8 = (**(code **)(g_helpPanel_00801690->vtable + 0x18))(0);
     }
     bVar13 = local_8 != 0;
     if (g_playPanel_008016E4 != (PlayPanelTy *)0x0) {

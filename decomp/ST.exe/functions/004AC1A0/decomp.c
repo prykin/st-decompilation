@@ -80,7 +80,7 @@ undefined4 __thiscall STT3DSprC::StartShow(STT3DSprC *this,byte param_1,undefine
       pSVar1->field_0030 = piVar3[6];
       pcVar6 = thunk_FUN_004ad740;
     }
-    SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00424E10::FUN_006e9520
+    SubmarineTitans::Recovered::HiddenThis::AnonReceiver_004248D0::FUN_006e9520
               (pSVar1->field_003C,pSVar1->field_0018,pSVar1->field_0034,(uint)pcVar6,(uint)pSVar1);
   }
 cf_common_exit_004AC330:

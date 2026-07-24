@@ -205,7 +205,7 @@ switchD_004ceb68_caseD_32:
     if (this->field_0379 != 0xff) {
       local_58 = this->field_0379;
     }
-    pcVar11 = &this->field_0x37d;
+    pcVar11 = (char *)&this->field_037D;
     do {
       pcVar13 = pcVar11;
       if (uVar7 == 0) break;

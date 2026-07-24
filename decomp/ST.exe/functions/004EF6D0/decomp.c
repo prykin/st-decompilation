@@ -14,7 +14,7 @@ int __thiscall BldBoatPanelTy::GetMessage(BldBoatPanelTy *this,STMessage *messag
 {
   STMessageId SVar1;
   code *pcVar2;
-  ProdPanelTy *this_00;
+  BldBoatPanelTy *this_00;
   ushort uVar3;
   int iVar4;
   undefined4 *puVar5;
@@ -27,11 +27,11 @@ int __thiscall BldBoatPanelTy::GetMessage(BldBoatPanelTy *this,STMessage *messag
   undefined1 uStack_d;
   undefined2 local_c;
   undefined1 local_a;
-  ProdPanelTy *local_8;
+  BldBoatPanelTy *local_8;
 
   local_58.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_58;
-  local_8 = (ProdPanelTy *)this;
+  local_8 = this;
   iVar4 = Library::MSVCRT::__setjmp3(local_58.jumpBuffer,0);
   this_00 = local_8;
   if (iVar4 != 0) {
@@ -45,18 +45,19 @@ int __thiscall BldBoatPanelTy::GetMessage(BldBoatPanelTy *this,STMessage *messag
     return 0xffff;
   }
   if (message->id == MESS_ID_CREATE) {
-    ProdPanelTy::PreInitProdPanel(local_8);
+    ProdPanelTy::PreInitProdPanel((ProdPanelTy *)local_8);
   }
-  ProdPanelTy::GetMessage(this_00,message);
+  ProdPanelTy::GetMessage((ProdPanelTy *)this_00,message);
   SVar1 = message->id;
   if (SVar1 < 0xb203) {
     if (SVar1 == MESS_SHARED_B202) {
-      ProdPanelTy::PaintTab(this_00,(AnonShape_0053FCD0_D10A885A *)message,thunk_FUN_004ef5f0);
+      ProdPanelTy::PaintTab
+                ((ProdPanelTy *)this_00,(AnonShape_0053FCD0_D10A885A *)message,thunk_FUN_004ef5f0);
       g_currentExceptionFrame = local_58.previous;
       return 0;
     }
     if (SVar1 == MESS_ID_CREATE) {
-      InitBldBoatPanel((BldBoatPanelTy *)this_00);
+      InitBldBoatPanel(this_00);
       g_currentExceptionFrame = local_58.previous;
       return 0;
     }
@@ -66,11 +67,11 @@ int __thiscall BldBoatPanelTy::GetMessage(BldBoatPanelTy *this,STMessage *messag
       return 0;
     }
     if (SVar1 == MESS_SHARED_B201) {
-      this_00[1].field_0xd4 = this_00[1].field_0xd3;
-      this_00[1].field_0xd3 = *(char *)(message->arg0).ptr + -1;
+      this_00->field_0279 = this_00->field_0278;
+      this_00->field_0278 = *(char *)(message->arg0).ptr + -1;
       thunk_FUN_005252c0(0xae);
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-      (*(code *)this_00->field_0000->field_001C)();
+      (**(code **)(this_00->field_0000 + 0x1c))();
       g_currentExceptionFrame = local_58.previous;
       return 0;
     }
@@ -82,10 +83,9 @@ int __thiscall BldBoatPanelTy::GetMessage(BldBoatPanelTy *this,STMessage *messag
     case MESS_FSGSTY_C0A1:
     case MESS_SHARED_C0A2:
     case MESS_SHARED_C0A3:
-      iVar4 = *(int *)(&this_00[1].field_0xd5 + (uint)(byte)this_00[1].field_0xd3 * 4);
+      iVar4 = (&this_00->field_027A)[(byte)this_00->field_0278];
       if ((iVar4 == 0) ||
-         (iVar6 = SVar1 + *(int *)&this_00->field_0x199, *(uint *)(iVar4 + 0xc) <= iVar6 - 0xc09fU))
-      {
+         (iVar6 = SVar1 + this_00->field_0199, *(uint *)(iVar4 + 0xc) <= iVar6 - 0xc09fU)) {
         puVar5 = (undefined4 *)0x0;
       }
       else {
@@ -117,8 +117,8 @@ int __thiscall BldBoatPanelTy::GetMessage(BldBoatPanelTy *this,STMessage *messag
       }
       break;
     case MESS_BLDLABPANELTY_C0A4:
-      *(STMessageArg *)&this_00->field_0x199 = message->arg0;
-      sub_004EF140((BldBoatPanelTy *)this_00);
+      this_00->field_0199 = message->arg0;
+      sub_004EF140(this_00);
       thunk_FUN_005252c0(0xae);
       g_currentExceptionFrame = local_58.previous;
       return 0;
@@ -127,7 +127,7 @@ int __thiscall BldBoatPanelTy::GetMessage(BldBoatPanelTy *this,STMessage *messag
     case MESS_BEHPANELTY_C0B1:
     case 0xc0b2:
     case MESS_BLDLABPANELTY_C0B3:
-      PaintBldBut((BldBoatPanelTy *)this_00,(AnonShape_004EF320_444F9AB1 *)message);
+      PaintBldBut(this_00,(AnonShape_004EF320_444F9AB1 *)message);
     }
   }
   g_currentExceptionFrame = local_58.previous;

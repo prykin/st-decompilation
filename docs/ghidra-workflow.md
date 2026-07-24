@@ -653,6 +653,10 @@ final LLM corpus.
      of `PTR_*` data symbols split into control-flow/string/code table entries and
      actual pointer-valued globals. Anonymous pointees and any named-type evidence
      are shown explicitly.
+   - It also follows named constructor results into global stores. A unique
+     constructor result dominates weaker generic use-site casts, allowing a
+     script-owned anonymous singleton pointer to graduate to the named class
+     without authorizing changes to unrelated concrete/manual globals.
 19. Run `STGlobalDataApplier`.
    - File: `<repo>/recovery/ST.exe/global_data_proposals.tsv`
 20. Run `STIndirectCallAnalyzer`.
@@ -816,6 +820,11 @@ are not a reason to repeat the automatic pass. Do not apply the pre-repair
 `prototype_proposals.tsv`;
 rerun the analyzer first. `STPrototypeApplier` refuses rows marked `repair=1`,
 so corrections cannot be mixed accidentally into an ordinary propagation pass.
+A repair is monotonic in semantic specificity: it may replace a generated
+anonymous pointer with a named structure pointer, but it may not degrade that
+structure back to `int *`, `byte *`, `char *`, or another generic call-site
+spelling. This prevents prototype repair and pointer-shape recovery from
+oscillating forever over the same target.
 
 The global-record pair handles a layer that scalar global propagation cannot:
 one packed structure repeated at a fixed byte stride. For the player runtime
@@ -1077,7 +1086,7 @@ a new conflict is what requires another iteration.
 | `STGlobalRecordAnalyzer/Applier` | Recover packed arrays of repeated global records and their proven fields, including nested temporary-object slot arrays, from stride/range evidence. |
 | `STSpatialGridAnalyzer/Applier` | Collapse the shared world/pathing x-y-z-stride globals into typed runtime grid descriptors. |
 | `STGlobalAggregateAnalyzer/Applier` | Audit indexed global ranges and install only bounded arrays/matrices with a proven extent and indexing formula. |
-| `STGlobalDataAnalyzer/Applier` | Type generic globals from receiver/argument use, assign address-stable structural names, and audit every `PTR_*` symbol by pointer role. |
+| `STGlobalDataAnalyzer/Applier` | Type generic globals from receiver/argument use and named-constructor stores, promote script-owned anonymous singleton pointers to named classes, assign address-stable structural names, and audit every `PTR_*` symbol by pointer role. |
 | `STIndirectCallAnalyzer/Applier` | Audit raw indirect calls and refine trusted vtable/callback slots with compatible function definitions. |
 | `STPointerRoleRepairAnalyzer/Applier` | Remove prior script-owned pointer constraints from stack slots with proven scalar lifetimes in unsettled functions. |
 | `STPointerShapeAnalyzer/Applier` | Recover known or anonymous pointer-backed structures from fixed, nested, alias-mediated dereferences and typed calls; apply auto-`this` types through the owning class namespace. |

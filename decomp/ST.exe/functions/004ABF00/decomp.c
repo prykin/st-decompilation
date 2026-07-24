@@ -53,7 +53,7 @@ undefined4 __thiscall STT3DSprC::SetCurShad(STT3DSprC *this,char param_1,uint pa
         uVar4 = pSVar1->field_0018;
         pcVar6 = thunk_FUN_004ad740;
       }
-      SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00424E10::FUN_006e9520
+      SubmarineTitans::Recovered::HiddenThis::AnonReceiver_004248D0::FUN_006e9520
                 (pSVar1->field_003C,uVar4,uVar5,(uint)pcVar6,(uint)pSVar1);
     }
     g_currentExceptionFrame = local_4c.previous;

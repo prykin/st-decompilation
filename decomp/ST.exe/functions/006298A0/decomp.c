@@ -61,8 +61,8 @@ undefined4 __thiscall STParticleC::InitVisibelDeton(STParticleC *this,int param_
                    0x5a,0x45,0);
     }
     else {
-      SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00424E10::FUN_006e9520
-                ((AnonReceiver_00424E10 *)PTR_00807598,pSVar7->field_00C6,0,0,0);
+      SubmarineTitans::Recovered::HiddenThis::AnonReceiver_004248D0::FUN_006e9520
+                ((AnonReceiver_004248D0 *)PTR_00807598,pSVar7->field_00C6,0,0,0);
       FUN_006e9af0(PTR_00807598,*piVar1,2,0,*(uint *)((int)puVar9 + 9),*(uint *)((int)puVar9 + 0xd),
                    0x5a,0x45,1);
     }

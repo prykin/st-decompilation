@@ -7,7 +7,7 @@ allocator: 006B04D0
 ABI dispatch: 006E3810@006E386C
 factory signature_apply: 94
 factory name_apply: 0
-concrete result owners: 62
+concrete result owners: 65
 missing function create_apply: 0
 object-type consumers: 0
 consumer apply: 0

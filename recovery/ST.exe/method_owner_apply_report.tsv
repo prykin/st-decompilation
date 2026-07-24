@@ -35,8 +35,8 @@ address	status	proposed_name	detail
 0041F970	disabled	STSprGameObjC::sub_0041F970	all apply flags are 0
 004232A0	disabled	STGroupBoatC::sub_004232A0	all apply flags are 0
 00423E00	disabled	STGroupC::sub_00423E00	all apply flags are 0
-004248D0	repaired	sub_004248D0	removed weak class owner; reset 0 downstream script-owned receiver types
-00427090	disabled		all apply flags are 0
+004248D0	applied	SubmarineTitans::Recovered::HiddenThis::AnonReceiver_004248D0::sub_004248D0	owner=applied(SubmarineTitans::Recovered::HiddenThis::AnonReceiver_004248D0::sub_004248D0); this_type=unchanged
+00427090	disabled	SubmarineTitans::Recovered::HiddenThis::AnonReceiver_004248D0::sub_00427090	all apply flags are 0
 0042B5B0	disabled	STAllPlayersC::sub_0042B5B0	all apply flags are 0
 0042B760	disabled	STAllPlayersC::sub_0042B760	all apply flags are 0
 0042C300	disabled	STAllPlayersC::sub_0042C300	all apply flags are 0
@@ -535,7 +535,7 @@ address	status	proposed_name	detail
 006B5EE0	disabled	MReportTy::sub_006B5EE0	all apply flags are 0
 006B6110	disabled	StartSystemTy::sub_006B6110	all apply flags are 0
 006B6500	disabled	StartSystemTy::sub_006B6500	all apply flags are 0
-006E25D0	disabled	SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00424E10::sub_006E25D0	all apply flags are 0
+006E25D0	disabled	SubmarineTitans::Recovered::HiddenThis::AnonReceiver_004248D0::sub_006E25D0	all apply flags are 0
 006E3DB0	disabled	STAppC::sub_006E3DB0	all apply flags are 0
 006E4290	disabled	STAppC::sub_006E4290	all apply flags are 0
 006E4B80	disabled	STAppC::sub_006E4B80	all apply flags are 0

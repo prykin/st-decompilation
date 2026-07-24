@@ -253,7 +253,7 @@ LAB_004e5655:
                 iVar9 = (**(code **)(*param_1 + 0x2c))();
                 /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
                 if ((iVar9 == 0x5d) || (iVar9 = (**(code **)(*param_1 + 0x2c))(), iVar9 == 0x3d)) {
-                  thunk_FUN_004e4f30(param_1);
+                  thunk_FUN_004e4f30((STMineSetC *)param_1);
                 }
                 /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
                 if ((param_1 != (int *)0x0) &&

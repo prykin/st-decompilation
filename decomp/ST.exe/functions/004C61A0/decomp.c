@@ -11,7 +11,7 @@ undefined4 __thiscall TLOBldMark::sub_004C61A0(TLOBldMark *this)
     thunk_FUN_004ad310((STT3DSprC *)this->field_002C);
     Library::MSVCRT::FUN_0072e2b0((HoloTy *)this->field_002C);
   }
-  g_tLOBldMark_007FB2AC = (AnonShape_GLOBAL_007FB2AC_70073F41 *)0x0;
+  g_tLOBldMark_007FB2AC = (TLOBldMark *)0x0;
   return 0;
 }
 

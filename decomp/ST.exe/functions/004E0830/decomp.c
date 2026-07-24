@@ -14,6 +14,10 @@
    [STSwitchEnumApplier] Switch target field_04D0 uses
    /SubmarineTitans/Recovered/Enums/TLOBaseTy_field_04D0State. Cases:
    CASE_0=0;CASE_1=1;CASE_2=2;CASE_3=3;CASE_4=4;CASE_5=5;CASE_6=6;CASE_32=50;CASE_40=64;CASE_49=73;CASE_5C=92
+
+   [STSwitchEnumApplier] Switch target field_05AC uses
+   /SubmarineTitans/Recovered/Enums/TLOBaseTy_field_05ACState. Cases:
+   CASE_32=50;CASE_33=51;CASE_34=52;CASE_35=53;CASE_36=54;CASE_37=55;CASE_38=56;CASE_39=57;CASE_3A=58;CASE_3B=59;CASE_3D=61;CASE_40=64;CASE_41=65;CASE_43=67;CASE_45=69;CASE_48=72;CASE_49=73;CASE_4C=76;CASE_4D=77;CASE_4E=78;CASE_4F=79;CASE_52=82;CASE_54=84;CASE_55=85;CASE_56=86;CASE_57=87;CASE_58=88;CASE_59=89;CASE_5A=90;CASE_5B=91;CASE_5C=92;CASE_5D=93;CASE_5E=94;CASE_5F=95;CASE_60=96;CASE_61=97;CASE_63=99;CASE_64=100;CASE_68=104;CASE_69=105;CASE_6A=106;CASE_6C=108;CASE_6E=110;CASE_6F=111;CASE_70=112;CASE_72=114;CASE_73=115
     */
 
 undefined4 __fastcall FUN_004e0830(TLOBaseTy *param_1)
@@ -278,7 +282,7 @@ LAB_004e0e15:
     (*pTVar9->vfunc_90)(3,(-(uint)((char)iVar4 != '\x02') & 0xffffff3b) + 0x35f);
   }
 switchD_004e0aad_default:
-  if ((param_1->field_05AC == 0x61) && (param_1->field_04E0 != 0)) {
+  if ((param_1->field_05AC == CASE_61) && (param_1->field_04E0 != 0)) {
     iVar4 = thunk_FUN_004e4180(param_1->field_0024);
     iVar5 = thunk_FUN_004e41c0(param_1->field_0024);
     if ((iVar5 < iVar4) &&

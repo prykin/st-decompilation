@@ -13,8 +13,8 @@ int __thiscall BehPanelTy::GetMessage(BehPanelTy *this,STMessage *message)
 
 {
   STMessageId SVar1;
-  AnonPointee_SpecPanelTy_0000 *pAVar2;
-  SpecPanelTy *this_00;
+  AnonPointee_BehPanelTy_0000 *pAVar2;
+  BehPanelTy *this_00;
   char cVar3;
   int iVar4;
   char *pcVar5;
@@ -29,11 +29,11 @@ int __thiscall BehPanelTy::GetMessage(BehPanelTy *this,STMessage *message)
   InternalExceptionFrame local_70;
   char local_2c [29];
   uint local_f;
-  SpecPanelTy *local_8;
+  BehPanelTy *local_8;
 
   local_70.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_70;
-  local_8 = (SpecPanelTy *)this;
+  local_8 = this;
   iVar4 = Library::MSVCRT::__setjmp3(local_70.jumpBuffer,0);
   this_00 = local_8;
   if (iVar4 != 0) {
@@ -46,7 +46,7 @@ int __thiscall BehPanelTy::GetMessage(BehPanelTy *this,STMessage *message)
     RaiseInternalException(iVar4,0,"E:\\__titans\\Andrey\\behpanel.cpp",0xf3);
     return 0xffff;
   }
-  SpecPanelTy::GetMessage(local_8,message);
+  SpecPanelTy::GetMessage((SpecPanelTy *)local_8,message);
   SVar1 = message->id;
   if (SVar1 < 0xb20f) {
     if (SVar1 == MESS_BEHPANELTY_B20E) {
@@ -55,11 +55,11 @@ int __thiscall BehPanelTy::GetMessage(BehPanelTy *this,STMessage *message)
       uVar10 = 0;
       pcVar9 = thunk_FUN_0052a320;
       iVar4 = 0;
-      pcVar5 = thunk_FUN_00529590((&this_00[1].field_0x22)[(message->arg0).words.high],
-                                  *(int *)&this_00[1].field_0x1e);
+      pcVar5 = thunk_FUN_00529590((&this_00->field_0x1af)[(message->arg0).words.high],
+                                  this_00->field_01AB);
       pCVar6 = thunk_FUN_00571240(pcVar5,iVar4);
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-      (**(code **)&pAVar2->field_0x8)(message,6,pCVar6,pcVar9,uVar10,uVar11);
+      (*(code *)pAVar2->field_0008)(message,6,pCVar6,pcVar9,uVar10,uVar11);
       g_currentExceptionFrame = local_70.previous;
       return 0;
     }
@@ -73,11 +73,11 @@ int __thiscall BehPanelTy::GetMessage(BehPanelTy *this,STMessage *message)
       uVar10 = 0;
       pcVar9 = thunk_FUN_0052a320;
       iVar4 = 0;
-      pcVar5 = thunk_FUN_00529590((&this_00[1].field_0x22)[(message->arg0).words.high],
-                                  *(int *)&this_00[1].field_0x1e);
+      pcVar5 = thunk_FUN_00529590((&this_00->field_0x1af)[(message->arg0).words.high],
+                                  this_00->field_01AB);
       pCVar6 = thunk_FUN_00571240(pcVar5,iVar4);
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-      (**(code **)&pAVar2->field_0x8)(message,1,pCVar6,pcVar9,uVar10,uVar11);
+      (*(code *)pAVar2->field_0008)(message,1,pCVar6,pcVar9,uVar10,uVar11);
       g_currentExceptionFrame = local_70.previous;
       return 0;
     }
@@ -88,10 +88,10 @@ int __thiscall BehPanelTy::GetMessage(BehPanelTy *this,STMessage *message)
       }
       thunk_FUN_005252c0(0xae);
       thunk_FUN_0054b630(g_cursorClass_00802A30,
-                         (uint)(byte)(&this_00[1].field_0x22)[(message->arg0).u32],0);
+                         (uint)(byte)(&this_00->field_0x1af)[(message->arg0).u32],0);
       this_00->field_0028 = 0xbfff;
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-      (**(code **)this_00->field_0000)(&this_00->field_0x18);
+      (*(code *)this_00->field_0000->field_0000)(&this_00->field_0x18);
       g_currentExceptionFrame = local_70.previous;
       return 0;
     }
@@ -100,11 +100,11 @@ int __thiscall BehPanelTy::GetMessage(BehPanelTy *this,STMessage *message)
         g_currentExceptionFrame = local_70.previous;
         return 0;
       }
-      DoneBehPanel((BehPanelTy *)this_00);
+      DoneBehPanel(this_00);
       g_currentExceptionFrame = local_70.previous;
       return 0;
     }
-    InitBehPanel((BehPanelTy *)this_00);
+    InitBehPanel(this_00);
     g_currentExceptionFrame = local_70.previous;
     return 0;
   }
@@ -129,15 +129,15 @@ int __thiscall BehPanelTy::GetMessage(BehPanelTy *this,STMessage *message)
     *pcVar5 = '\0';
     if (SVar1 == MESS_SHARED_C09F) {
       local_2c[0] = '\x15';
-      cVar3 = *(char *)&this_00[1].field_002E;
+      cVar3 = this_00->field_0x1bb;
     }
     else {
       local_2c[0] = (SVar1 != MESS_BEHPANELTY_C0A0) + '\x16';
       if (SVar1 == MESS_BEHPANELTY_C0A0) {
-        cVar3 = *(char *)((int)&this_00[1].field_002E + 1);
+        cVar3 = this_00->field_0x1bc;
       }
       else {
-        cVar3 = *(char *)&this_00[1].field_0030;
+        cVar3 = this_00->field_01BD;
       }
     }
     local_f = (uint)(cVar3 == '\x03');
@@ -148,21 +148,20 @@ int __thiscall BehPanelTy::GetMessage(BehPanelTy *this,STMessage *message)
     goto switchD_004ee68c_caseD_c0a2;
   /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
   case MESS_INTERCOMPANELTY_C0AF:
-    uVar7 = CONCAT31((int3)(SVar1 - MESS_SHARED_C09F >> 8),*(char *)&this_00[1].field_002E == '\x03'
-                    );
+    uVar7 = CONCAT31((int3)(SVar1 - MESS_SHARED_C09F >> 8),this_00->field_0x1bb == '\x03');
     pcVar5 = "BUT_BLOCK";
     break;
   case 0xc0b0:
-    uVar7 = (uint)(*(char *)((int)&this_00[1].field_002E + 1) == '\x03');
+    uVar7 = (uint)(this_00->field_0x1bc == '\x03');
     pcVar5 = "BUT_BHOLD";
     break;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   case MESS_BEHPANELTY_C0B1:
-    uVar7 = CONCAT31((int3)((uint)extraout_EDX >> 8),*(char *)&this_00[1].field_0030 == '\x03');
+    uVar7 = CONCAT31((int3)((uint)extraout_EDX >> 8),this_00->field_01BD == '\x03');
     pcVar5 = "BUT_BAGR";
   }
   pCVar6 = thunk_FUN_00571240(pcVar5,0);
-  PaintBBut((BehPanelTy *)this_00,(AnonShape_004EE350_18D491EA *)message,pCVar6,uVar7);
+  PaintBBut(this_00,(AnonShape_004EE350_18D491EA *)message,pCVar6,uVar7);
 switchD_004ee68c_caseD_c0a2:
   g_currentExceptionFrame = local_70.previous;
   return 0;

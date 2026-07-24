@@ -135,7 +135,9 @@ public class STSwitchEnumApplier extends GhidraScript {
             return new EnumResolution(null, "", "existing type is not an enum: " +
                 existingType.getPathName());
         if (existing.isEquivalent(desired)) {
-            if (existing.getDescription() == null || existing.getDescription().contains(MARKER))
+            if ((existing.getDescription() == null ||
+                    existing.getDescription().contains(MARKER)) &&
+                    !text(existing.getDescription()).equals(desired.getDescription()))
                 existing.setDescription(desired.getDescription());
             return new EnumResolution(existing, "used equivalent " + existing.getPathName(), null);
         }
@@ -236,7 +238,7 @@ public class STSwitchEnumApplier extends GhidraScript {
             Function function = address == null ? null :
                 currentProgram.getFunctionManager().getFunctionAt(address);
             if (function == null) continue;
-            function.addTag(TAG);
+            if (!hasTag(function)) function.addTag(TAG);
             addFunctionComment(function, row, type);
         }
     }
@@ -285,8 +287,10 @@ public class STSwitchEnumApplier extends GhidraScript {
         int valueEnd = Math.min(description.length(), valueStart + 64);
         String updated = description.substring(0, valueStart) + layoutHash(structure) +
             description.substring(valueEnd);
-        structure.setDescription(updated);
+        if (!updated.equals(description)) structure.setDescription(updated);
     }
+
+    private static String text(String value) { return value == null ? "" : value; }
 
     private String storedHash(String description, String marker) {
         if (description == null) return null;

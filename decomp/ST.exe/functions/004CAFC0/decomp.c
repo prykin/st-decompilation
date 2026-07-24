@@ -48,15 +48,15 @@ TLOBaseTy::sub_004CAFC0
     thunk_FUN_004cfde0(this,param_1,param_2,param_3,param_4);
     return;
   }
-  if (TVar4 == 0x4d) {
+  if (TVar4 == CASE_4D) {
     thunk_FUN_004deeb0(this,param_1,param_2,param_3,param_4);
     return;
   }
-  if (TVar4 == 0x4c) {
+  if (TVar4 == CASE_4C) {
     thunk_FUN_004dcaa0(this,param_1,param_2,param_3,param_4);
     return;
   }
-  if (TVar4 == 0x43) {
+  if (TVar4 == CASE_43) {
     thunk_FUN_004df6f0(this,param_1,param_2,param_3,param_4);
     return;
   }
@@ -76,11 +76,11 @@ TLOBaseTy::sub_004CAFC0
     thunk_FUN_004dc4b0(this,param_1,param_2,param_3,param_4);
     return;
   }
-  if (TVar4 == 0x37) {
+  if (TVar4 == CASE_37) {
     thunk_FUN_004e8e50(this,param_1,param_2,param_3,param_4);
     return;
   }
-  if (TVar4 == 99) {
+  if (TVar4 == CASE_63) {
     thunk_FUN_004b7b20(this,param_1,param_2,param_3,param_4);
     return;
   }
@@ -148,7 +148,7 @@ TLOBaseTy::sub_004CAFC0
     goto cf_common_exit_004CB6D2;
   case CASE_C:
     switch(TVar4) {
-    case 0x33:
+    case CASE_33:
       if (this->field_0520 == 0) {
 cf_common_exit_004CB489:
         uVar1 = *(uint *)((&PTR_DAT_007b8310)[TVar5] +
@@ -158,15 +158,15 @@ cf_common_exit_004CB489:
         return;
       }
       break;
-    case 0x35:
+    case CASE_35:
     case CASE_45:
-    case 0x54:
-    case 0x55:
-    case 0x56:
-    case 0x57:
-    case 0x58:
-    case 0x59:
-    case 0x5a:
+    case CASE_54:
+    case CASE_55:
+    case CASE_56:
+    case CASE_57:
+    case CASE_58:
+    case CASE_59:
+    case CASE_5A:
       if (this->field_04D0 != CASE_0) {
         *param_3 = *(uint *)((&PTR_DAT_007b8310)[TVar5] +
                             (param_2 + (iVar2 + this->field_0235 * 3) * 4) * 8);
@@ -180,7 +180,7 @@ cf_common_exit_004CB504:
       *param_4 = uVar1;
       *param_3 = uVar1;
       return;
-    case 0x38:
+    case CASE_38:
     case CASE_39:
     case CASE_4F:
     case CASE_5E:
@@ -266,7 +266,7 @@ switchD_004cb1d7_caseD_e:
   }
   else {
     TVar4 = this->field_05AC;
-    if (TVar4 == 0x6e) {
+    if (TVar4 == CASE_6E) {
       switch(this->field_04D0) {
       case CASE_0:
         goto switchD_004cb2cd_caseD_0;

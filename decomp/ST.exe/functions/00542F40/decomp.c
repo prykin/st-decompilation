@@ -29,11 +29,11 @@ int __thiscall InterSystemC::GetMessage(InterSystemC *this,STMessage *message)
   undefined4 *puVar13;
   InternalExceptionFrame local_50;
   tagBITMAPINFO *local_c;
-  SystemClassTy *local_8;
+  InterSystemC *local_8;
 
   local_50.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_50;
-  local_8 = (SystemClassTy *)this;
+  local_8 = this;
   iVar3 = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0);
   if (iVar3 != 0) {
     g_currentExceptionFrame = local_50.previous;
@@ -45,19 +45,19 @@ int __thiscall InterSystemC::GetMessage(InterSystemC *this,STMessage *message)
     RaiseInternalException(iVar3,0,"E:\\__titans\\Andrey\\tintersys.cpp",0x11f);
     return 0xffff;
   }
-  SystemClassTy::GetMessage(local_8,message);
+  SystemClassTy::GetMessage((SystemClassTy *)local_8,message);
   SVar1 = message->id;
   if (SVar1 < MESS_INTERSYSTEMC_B904) {
     if (SVar1 == MESS_INTERSYSTEMC_B903) {
       if (g_cursorClass_00802A30 != (CursorClassTy *)0x0) {
         thunk_FUN_0054b540(g_cursorClass_00802A30);
       }
-      if (g_helpPanel_00801690 == (AnonShape_GLOBAL_00801690_2AA401C1 *)0x0) {
+      if (g_helpPanel_00801690 == (HelpPanelTy *)0x0) {
         g_currentExceptionFrame = local_50.previous;
         return 0;
       }
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-      (**(code **)(*(int *)g_helpPanel_00801690 + 0x18))(1);
+      (**(code **)(g_helpPanel_00801690->vtable + 0x18))(1);
       g_currentExceptionFrame = local_50.previous;
       return 0;
     }

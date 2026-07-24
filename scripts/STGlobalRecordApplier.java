@@ -196,7 +196,8 @@ public class STGlobalRecordApplier extends GhidraScript {
             String currentHash = layoutHash(existing);
             structureChanged = !currentHash.equals(desiredHash);
             if (structureChanged) existing.replaceWith(desired);
-            existing.setDescription(desired.getDescription());
+            if (!text(existing.getDescription()).equals(desired.getDescription()))
+                existing.setDescription(desired.getDescription());
             installed = existing;
         }
 
@@ -336,15 +337,16 @@ public class STGlobalRecordApplier extends GhidraScript {
             Integer.toHexString(stride).toUpperCase(Locale.ROOT) + "\nCount: " + count +
             "\nEvidence: " + unt(row.get("reason"));
         String old = listing.getComment(CommentType.PLATE, base);
-        if (old == null || old.isBlank()) listing.setComment(base, CommentType.PLATE, block);
-        else if (!old.contains(MARKER))
-            listing.setComment(base, CommentType.PLATE, old + "\n\n" + block);
+        String updated;
+        if (old == null || old.isBlank()) updated = block;
+        else if (!old.contains(MARKER)) updated = old + "\n\n" + block;
         else {
             int start = old.indexOf(MARKER);
             String prefix = old.substring(0, start).stripTrailing();
-            listing.setComment(base, CommentType.PLATE,
-                prefix.isBlank() ? block : prefix + "\n\n" + block);
+            updated = prefix.isBlank() ? block : prefix + "\n\n" + block;
         }
+        if (!text(old).equals(updated))
+            listing.setComment(base, CommentType.PLATE, updated);
     }
 
     private boolean owned(Address address) {
@@ -488,6 +490,7 @@ public class STGlobalRecordApplier extends GhidraScript {
         return value.replace("\\", "\\\\").replace("\t", "\\t")
             .replace("\r", "\\r").replace("\n", "\\n");
     }
+    private static String text(String value) { return value == null ? "" : value; }
     private static String unt(String value) {
         if (value == null) return "";
         StringBuilder result = new StringBuilder(); boolean escaped = false;

@@ -34,8 +34,9 @@ address	status	detail
 00423E70	disabled	all apply flags are 0
 00424530	disabled	all apply flags are 0
 00424620	disabled	all apply flags are 0
-00424E10	applied	owner=applied(AnonReceiver_00424E10); receiver_type=unchanged
-00427BB0	applied	owner=applied(AnonReceiver_00424E10); receiver_type=unchanged
+004248D0	disabled	all apply flags are 0
+00424E10	applied	owner=applied(AnonReceiver_004248D0); receiver_type=unchanged
+00427BB0	applied	owner=applied(AnonReceiver_004248D0); receiver_type=unchanged
 0042C300	disabled	all apply flags are 0
 0042D770	disabled	all apply flags are 0
 00444E70	disabled	all apply flags are 0
@@ -525,7 +526,7 @@ address	status	detail
 006E1320	disabled	all apply flags are 0
 006E1460	disabled	all apply flags are 0
 006E1C20	disabled	all apply flags are 0
-006E1EE0	applied	owner=applied(AnonReceiver_00424E10); receiver_type=unchanged
+006E1EE0	applied	owner=applied(AnonReceiver_004248D0); receiver_type=unchanged
 006E25D0	disabled	all apply flags are 0
 006E2970	disabled	all apply flags are 0
 006E2C30	disabled	all apply flags are 0
@@ -571,7 +572,7 @@ address	status	detail
 006E9350	disabled	all apply flags are 0
 006E93C0	disabled	all apply flags are 0
 006E9490	disabled	all apply flags are 0
-006E9520	applied	owner=applied(AnonReceiver_00424E10); receiver_type=unchanged
+006E9520	applied	owner=applied(AnonReceiver_004248D0); receiver_type=unchanged
 006E96D0	disabled	all apply flags are 0
 006E9720	disabled	all apply flags are 0
 006E97C0	disabled	all apply flags are 0

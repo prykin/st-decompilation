@@ -29,8 +29,6 @@ address	status	proposed_name	detail
 007FB240	disabled		apply flags are 0
 007FB24C	disabled	g_value_007FB24C	apply flags are 0
 007FB278	disabled		apply flags are 0
-007FB2AC	preserved	g_tLOBldMark_007FB2AC	type=preserved(stale/concrete data)
-00801690	preserved	g_helpPanel_00801690	type=preserved(stale/concrete data)
 00802AD0	disabled		apply flags are 0
 008030D4	disabled		apply flags are 0
 00803144	disabled		apply flags are 0

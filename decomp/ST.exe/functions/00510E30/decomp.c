@@ -68,7 +68,7 @@ void __thiscall HelpPanelTy::InitHelpPanel(HelpPanelTy *this)
     RaiseInternalException(iVar4,0,"E:\\__titans\\Andrey\\helppan.cpp",0xac);
     return;
   }
-  g_helpPanel_00801690 = (AnonShape_GLOBAL_00801690_2AA401C1 *)local_10;
+  g_helpPanel_00801690 = local_10;
   pDVar5 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,300,0x14,0x32);
   this_00->field_01B3 = (AnonPointee_HelpPanelTy_01B3 *)pDVar5;
   pDVar5 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,200,0x14,0x32);

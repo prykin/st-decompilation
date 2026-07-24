@@ -13,15 +13,15 @@ int __thiscall UpgPanelTy::GetMessage(UpgPanelTy *this,STMessage *message)
 
 {
   code *pcVar1;
-  SpecPanelTy *this_00;
+  UpgPanelTy *this_00;
   int iVar2;
   int iVar3;
   InternalExceptionFrame local_4c;
-  SpecPanelTy *local_8;
+  UpgPanelTy *local_8;
 
   local_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_4c;
-  local_8 = (SpecPanelTy *)this;
+  local_8 = this;
   iVar2 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
   this_00 = local_8;
   if (iVar2 != 0) {
@@ -34,12 +34,12 @@ int __thiscall UpgPanelTy::GetMessage(UpgPanelTy *this,STMessage *message)
     RaiseInternalException(iVar2,0,"E:\\__titans\\Andrey\\upginfo.cpp",0x68);
     return 0xffff;
   }
-  SpecPanelTy::GetMessage(local_8,message);
+  SpecPanelTy::GetMessage((SpecPanelTy *)local_8,message);
   if (message->id == MESS_ID_CREATE) {
-    InitUpgPanel((UpgPanelTy *)this_00);
+    InitUpgPanel(this_00);
   }
   else if (message->id == MESS_SHARED_0003) {
-    DoneUpgPanel((UpgPanelTy *)this_00);
+    DoneUpgPanel(this_00);
     g_currentExceptionFrame = local_4c.previous;
     return 0;
   }

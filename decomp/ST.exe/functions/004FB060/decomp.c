@@ -1209,8 +1209,7 @@ LAB_004fbaa0:
               /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
               uVar25 = extraout_EDX_10;
             }
-            if ((bVar15 == 0x12) &&
-               (g_helpPanel_00801690 != (AnonShape_GLOBAL_00801690_2AA401C1 *)0x0)) {
+            if ((bVar15 == 0x12) && (g_helpPanel_00801690 != (HelpPanelTy *)0x0)) {
               thunk_FUN_00515180(g_helpPanel_00801690,'\x06');
               thunk_FUN_00515180(g_helpPanel_00801690,'\x05');
               /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */

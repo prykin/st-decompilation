@@ -1,4 +1,4 @@
-FUN_004c7cc0:
+TLOBaseTy::FUN_004c7cc0:
 004C7CC0  55                        PUSH EBP
 004C7CC1  8B EC                     MOV EBP,ESP
 004C7CC3  8B 45 10                  MOV EAX,dword ptr [EBP + 0x10]
@@ -452,7 +452,7 @@ LAB_004c8273:
 004C827B  40                        INC EAX
 004C827C  89 83 D4 03 00 00         MOV dword ptr [EBX + 0x3d4],EAX
 004C8282  E8 A7 D7 F3 FF            CALL 0x00405a2e
-FUN_004c7cc0::cf_common_exit_004C8287:
+TLOBaseTy::FUN_004c7cc0::cf_common_exit_004C8287:
 004C8287  8B 4B 10                  MOV ECX,dword ptr [EBX + 0x10]
 004C828A  8B 43 24                  MOV EAX,dword ptr [EBX + 0x24]
 004C828D  33 D2                     XOR EDX,EDX
