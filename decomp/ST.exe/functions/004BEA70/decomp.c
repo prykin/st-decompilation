@@ -8,22 +8,41 @@
    returns return of FUN_0044e1b0 @ 004C110A | 004BEA70 returns return of FUN_0044e1b0 @ 004C111A |
    004BEA70 returns return of FUN_0044e1b0 @ 004C112A | 004BEA70 returns return of FUN_0044e1b0 @
    004C113A | 004BEA70 returns return of FUN_0044e1b0 @ 004C114A | 004BEA70 returns return of
-   FUN_0044e1b0 @ 004C1162 */
+   FUN_0044e1b0 @ 004C1162
 
-bool __thiscall FUN_004bea70(void *this,int *param_1)
+   [STSwitchEnumApplier] Switch target field_0245 uses
+   /SubmarineTitans/Recovered/Enums/TLOBaseTy_field_0245State. Cases:
+   CASE_0=0;CASE_1=1;CASE_2=2;CASE_3=3;CASE_4=4;CASE_6=6;CASE_32=50;CASE_34=52;CASE_35=53;CASE_37=55;CASE_38=56;CASE_39=57;CASE_3B=59;CASE_40=64;CASE_41=65;CASE_48=72;CASE_49=73;CASE_4C=76;CASE_4F=79;CASE_50=80;CASE_52=82;CASE_53=83;CASE_54=84;CASE_55=85;CASE_56=86;CASE_57=87;CASE_58=88;CASE_59=89;CASE_5A=90;CASE_5B=91;CASE_5C=92;CASE_5E=94;CASE_5F=95;CASE_60=96;CASE_61=97;CASE_63=99;CASE_64=100;CASE_68=104;CASE_69=105;CASE_6A=106;CASE_6C=108;CASE_6D=109;CASE_6E=110;CASE_6F=111;CASE_70=112;CASE_73=115
+
+   [STSwitchEnumApplier] Switch target field_05AC uses
+   /SubmarineTitans/Recovered/Enums/TLOBaseTy_field_05ACState. Cases:
+   CASE_0=0;CASE_1=1;CASE_2=2;CASE_3=3;CASE_32=50;CASE_33=51;CASE_34=52;CASE_35=53;CASE_36=54;CASE_37=55;CASE_38=56;CASE_39=57;CASE_3A=58;CASE_3B=59;CASE_3C=60;CASE_3D=61;CASE_3E=62;CASE_3F=63;CASE_40=64;CASE_41=65;CASE_42=66;CASE_43=67;CASE_44=68;CASE_45=69;CASE_46=70;CASE_47=71;CASE_48=72;CASE_49=73;CASE_4A=74;CASE_4B=75;CASE_4C=76;CASE_4D=77;CASE_4E=78;CASE_4F=79;CASE_50=80;CASE_51=81;CASE_52=82;CASE_53=83;CASE_54=84;CASE_55=85;CASE_56=86;CASE_57=87;CASE_58=88;CASE_59=89;CASE_5A=90;CASE_5B=91;CASE_5C=92;CASE_5D=93;CASE_5E=94;CASE_5F=95;CASE_60=96;CASE_61=97;CASE_62=98;CASE_63=99;CASE_64=100;CASE_66=102;CASE_67=103;CASE_68=104;CASE_69=105;CASE_6A=106;CASE_6B=107;CASE_6C=108;CASE_6D=109;CASE_6E=110;CASE_6F=111;CASE_70=112;CASE_71=113;CASE_72=114;CASE_73=115;CASE_96=150;CASE_97=151;CASE_98=152;CASE_99=153;CASE_9A=154;CASE_A6=166;CASE_A7=167;CASE_A9=169;CASE_AB=171;CASE_AC=172;CASE_AD=173;CASE_AE=174;CASE_B3=179;CASE_B5=181;CASE_B8=184;CASE_BC=188;CASE_BD=189;CASE_BE=190
+
+   [STSwitchEnumApplier] Switch target field_0245 uses
+   /SubmarineTitans/Recovered/Enums/TLOBaseTy_field_0245State. Cases:
+   CASE_0=0;CASE_1=1;CASE_2=2;CASE_3=3;CASE_4=4;CASE_5=5;CASE_6=6;CASE_32=50;CASE_34=52;CASE_35=53;CASE_37=55;CASE_38=56;CASE_39=57;CASE_3B=59;CASE_40=64;CASE_41=65;CASE_48=72;CASE_49=73;CASE_4C=76;CASE_4F=79;CASE_50=80;CASE_52=82;CASE_53=83;CASE_54=84;CASE_55=85;CASE_56=86;CASE_57=87;CASE_58=88;CASE_59=89;CASE_5A=90;CASE_5B=91;CASE_5C=92;CASE_5E=94;CASE_5F=95;CASE_60=96;CASE_61=97;CASE_63=99;CASE_64=100;CASE_68=104;CASE_69=105;CASE_6A=106;CASE_6C=108;CASE_6D=109;CASE_6E=110;CASE_6F=111;CASE_70=112;CASE_73=115
+
+   [STSwitchEnumApplier] Switch target field_05AC uses
+   /SubmarineTitans/Recovered/Enums/TLOBaseTy_field_05ACState. Cases:
+   CASE_0=0;CASE_1=1;CASE_2=2;CASE_3=3;CASE_32=50;CASE_33=51;CASE_34=52;CASE_35=53;CASE_36=54;CASE_37=55;CASE_38=56;CASE_39=57;CASE_3A=58;CASE_3B=59;CASE_3C=60;CASE_3D=61;CASE_3E=62;CASE_3F=63;CASE_40=64;CASE_41=65;CASE_42=66;CASE_43=67;CASE_44=68;CASE_45=69;CASE_46=70;CASE_47=71;CASE_48=72;CASE_49=73;CASE_4A=74;CASE_4B=75;CASE_4C=76;CASE_4D=77;CASE_4E=78;CASE_4F=79;CASE_50=80;CASE_51=81;CASE_52=82;CASE_53=83;CASE_54=84;CASE_55=85;CASE_56=86;CASE_57=87;CASE_58=88;CASE_59=89;CASE_5A=90;CASE_5B=91;CASE_5C=92;CASE_5D=93;CASE_5E=94;CASE_5F=95;CASE_60=96;CASE_61=97;CASE_62=98;CASE_63=99;CASE_64=100;CASE_65=101;CASE_66=102;CASE_67=103;CASE_68=104;CASE_69=105;CASE_6A=106;CASE_6B=107;CASE_6C=108;CASE_6D=109;CASE_6E=110;CASE_6F=111;CASE_70=112;CASE_71=113;CASE_72=114;CASE_73=115;CASE_96=150;CASE_97=151;CASE_98=152;CASE_99=153;CASE_9A=154;CASE_A6=166;CASE_A7=167;CASE_A9=169;CASE_AB=171;CASE_AC=172;CASE_AD=173;CASE_AE=174;CASE_B3=179;CASE_B5=181;CASE_B8=184;CASE_BC=188;CASE_BD=189;CASE_BE=190
+    */
+
+bool __thiscall TLOBaseTy::FUN_004bea70(TLOBaseTy *this,int *param_1)
 
 {
-  int *piVar1;
-  int *piVar2;
-  char cVar3;
-  undefined1 uVar4;
-  short sVar5;
-  int iVar6;
+  TLOBaseTy_field_046CState TVar1;
+  TLOBaseTy_field_05ACState TVar2;
+  int *piVar3;
+  char cVar4;
+  undefined1 uVar5;
+  short sVar6;
   int iVar7;
-  AiPlrClassTy *pAVar8;
-  STGroupBoatC *pSVar9;
-  uint uVar10;
-  uint uVar11;
+  int iVar8;
+  AiPlrClassTy *pAVar9;
+  STGroupBoatC *pSVar10;
+  TLOBaseTy_field_04D0State TVar11;
+  uint uVar12;
+  uint uVar13;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined3 extraout_var;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
@@ -32,44 +51,44 @@ bool __thiscall FUN_004bea70(void *this,int *param_1)
   undefined3 extraout_var_01;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined3 extraout_var_02;
-  undefined1 *puVar12;
-  undefined4 uVar13;
-  short *psVar14;
-  short sVar15;
+  uint *puVar14;
+  undefined4 uVar15;
+  int *piVar16;
+  AnonPointee_TLOBaseTy_061B *pAVar17;
+  short sVar18;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined2 extraout_var_03;
-  undefined2 *puVar16;
-  int *piVar17;
-  undefined2 uVar18;
-  bool bVar19;
+  undefined2 *puVar19;
+  TLOBaseTy_field_04D0State *pTVar20;
+  undefined2 uVar21;
+  bool bVar22;
   int *local_c;
   int *local_8;
 
-  piVar2 = param_1;
-  *param_1 = *(int *)((int)this + 0x5ac);
+  piVar3 = param_1;
+  *param_1 = this->field_05AC;
   *(byte *)((int)param_1 + 5) =
-       ((*(uint *)((int)this + 0x24) != (uint)*(byte *)(*(int *)((int)this + 0x10) + 0x112d)) - 1U &
-       0xfe) + 3;
-  iVar6 = GetPlayerRaceId(*(char *)((int)this + 0x23d));
-  *(char *)(param_1 + 1) = (char)iVar6;
-  if (((*(byte *)((int)this + 0x1d1) & 4) == 0) && (*(int *)((int)this + 0x420) == 0)) {
-    uVar4 = 1;
+       ((this->field_0024 != (byte *)(uint)(byte)this->field_0010->field_112D) - 1U & 0xfe) + 3;
+  iVar7 = GetPlayerRaceId(*(char *)&this->field_023D);
+  *(char *)(param_1 + 1) = (char)iVar7;
+  if (((this->field_01D1 & 4) == 0) && (this->field_0420 == 0)) {
+    uVar5 = 1;
   }
   else {
-    uVar4 = 0;
+    uVar5 = 0;
   }
-  *(undefined1 *)((int)param_1 + 7) = uVar4;
-  *(undefined1 *)(param_1 + 2) = *(undefined1 *)((int)this + 0x21d);
-  switch(*(undefined4 *)((int)this + 0x245)) {
-  case 0:
-  case 1:
-  case 2:
-  case 5:
-  case 6:
+  *(undefined1 *)((int)param_1 + 7) = uVar5;
+  *(undefined1 *)(param_1 + 2) = *(undefined1 *)&this->field_021D;
+  switch(this->field_0245) {
+  case CASE_0:
+  case CASE_1:
+  case CASE_2:
+  case CASE_5:
+  case CASE_6:
     *(undefined1 *)((int)param_1 + 6) = 0;
     break;
-  case 3:
-  case 4:
+  case CASE_3:
+  case CASE_4:
     *(undefined1 *)((int)param_1 + 6) = 1;
   }
   *(undefined4 *)((int)param_1 + 9) = 0;
@@ -77,193 +96,191 @@ bool __thiscall FUN_004bea70(void *this,int *param_1)
   *(undefined4 *)((int)param_1 + 0xf) = 0;
   *(undefined2 *)((int)param_1 + 0x13) = 0;
   memset(param_1 + 7, 0, 0x3c); /* compiler bulk-zero initialization */
-  iVar6 = thunk_FUN_004e8030(*(int *)((int)this + 0x5ac));
-  if (iVar6 == 3) {
-    iVar7 = GetPlayerRaceId(*(char *)((int)this + 0x24));
-    if ((char)iVar7 != '\x03') {
+  iVar7 = thunk_FUN_004e8030(this->field_05AC);
+  if (iVar7 == 3) {
+    iVar8 = GetPlayerRaceId(*(char *)&this->field_0024);
+    if ((char)iVar8 != '\x03') {
 LAB_004beb5f:
       *(undefined1 *)((int)param_1 + 5) = 3;
       goto LAB_004beb63;
     }
 LAB_004beb6d:
     *(undefined1 *)((int)param_1 + 9) = 0x33;
-    if (((*(int *)((int)this + 0x245) == 0) && (iVar6 = thunk_FUN_004d6df0(this), iVar6 != 0)) &&
-       (iVar6 = thunk_FUN_004e4140(*(int *)((int)this + 0x24)), iVar6 != 0)) {
-      uVar4 = 1;
+    if (((this->field_0245 == CASE_0) && (iVar7 = sub_004D6DF0(this), iVar7 != 0)) &&
+       (iVar7 = thunk_FUN_004e4140((int)this->field_0024), iVar7 != 0)) {
+      uVar5 = 1;
     }
     else {
 LAB_004bebed:
-      uVar4 = 0;
+      uVar5 = 0;
     }
 /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
 LAB_004bebef:
-    *(undefined1 *)((int)param_1 + 0xf) = uVar4;
+    *(undefined1 *)((int)param_1 + 0xf) = uVar5;
   }
   else {
-    iVar7 = GetPlayerRaceId(*(char *)((int)this + 0x24));
-    if ((char)iVar7 == '\x03') goto LAB_004beb5f;
+    iVar8 = GetPlayerRaceId(*(char *)&this->field_0024);
+    if ((char)iVar8 == '\x03') goto LAB_004beb5f;
 LAB_004beb63:
-    if ((iVar6 != 1) && (iVar6 != 2)) goto LAB_004beb6d;
-    if (*(int *)((int)this + 0x361) != 5) {
+    if ((iVar7 != 1) && (iVar7 != 2)) goto LAB_004beb6d;
+    if (*(int *)&this->field_0x361 != 5) {
       *(undefined1 *)((int)param_1 + 9) = 0x20;
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-      iVar6 = (**(code **)(*(int *)this + 0x7c))();
-      if ((iVar6 == 100) ||
-         (((*(int *)((int)this + 0x245) != 0 && (*(int *)((int)this + 0x245) != 5)) ||
-          (*(int *)((int)this + 0x361) != 0)))) goto LAB_004bebed;
-      uVar4 = 1;
+      iVar7 = (*this->vtable->vfunc_7C)();
+      if ((iVar7 == 100) ||
+         (((this->field_0245 != CASE_0 && (this->field_0245 != CASE_5)) ||
+          (*(int *)&this->field_0x361 != 0)))) goto LAB_004bebed;
+      uVar5 = 1;
       goto LAB_004bebef;
     }
     *(undefined1 *)((int)param_1 + 9) = 0x32;
-    *(bool *)((int)param_1 + 0xf) = *(int *)((int)this + 0x245) == 0;
+    *(bool *)((int)param_1 + 0xf) = this->field_0245 == CASE_0;
   }
-  pAVar8 = thunk_FUN_004357f0(*(char *)((int)this + 0x24));
-  if (pAVar8 == (AiPlrClassTy *)0x0) {
+  pAVar9 = thunk_FUN_004357f0(*(char *)&this->field_0024);
+  if (pAVar9 == (AiPlrClassTy *)0x0) {
     *(undefined1 *)((int)param_1 + 0x15) = 0;
   }
   else {
     /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
-    pSVar9 = thunk_FUN_0042b760(*(char *)((int)this + 0x24),
-                                CONCAT22(extraout_var_03,*(undefined2 *)((int)this + 0x30)));
-    if ((pSVar9 == (STGroupBoatC *)0x0) || (pSVar9->field_001C == 0)) {
+    pSVar10 = thunk_FUN_0042b760(*(char *)&this->field_0024,
+                                 CONCAT22(extraout_var_03,this->field_0030));
+    if ((pSVar10 == (STGroupBoatC *)0x0) || (pSVar10->field_001C == 0)) {
       *(undefined1 *)((int)param_1 + 0x15) = 1;
     }
     else {
       *(undefined1 *)((int)param_1 + 0x15) = 3;
     }
   }
-  switch(*(undefined4 *)((int)this + 0x5ac)) {
-  case 0x32:
+  switch(this->field_05AC) {
+  case CASE_32:
     *(undefined1 *)((int)param_1 + 10) = 0x1d;
-    if (*(int *)((int)this + 0x24) == *(int *)((int)this + 0x23d)) {
+    if (this->field_0024 == (byte *)this->field_023D) {
 LAB_004bf427:
-      if (*(int *)((int)this + 0x245) != 0) goto LAB_004bf438;
-      uVar4 = 1;
+      if (this->field_0245 != CASE_0) goto LAB_004bf438;
+      uVar5 = 1;
     }
     else {
-      uVar10 = GetPlayerRaceId((char)*(int *)((int)this + 0x23d));
-      iVar6 = *(int *)((int)this + 0x235);
-      uVar11 = GetPlayerRaceId(*(char *)((int)this + 0x24));
-      if ((&DAT_007e1984)[(uVar11 & 0xff) + ((uVar10 & 0xff) + iVar6 * 3) * 3] != '\0')
+      uVar12 = GetPlayerRaceId((char)(byte *)this->field_023D);
+      iVar7 = this->field_0235;
+      uVar13 = GetPlayerRaceId(*(char *)&this->field_0024);
+      if ((&DAT_007e1984)[(uVar13 & 0xff) + ((uVar12 & 0xff) + iVar7 * 3) * 3] != '\0')
       goto LAB_004bf427;
 LAB_004bf438:
-      uVar4 = 0;
+      uVar5 = 0;
     }
-    *(undefined1 *)(param_1 + 4) = uVar4;
+    *(undefined1 *)(param_1 + 4) = uVar5;
     *(undefined1 *)((int)param_1 + 0xb) = 0x26;
-    if (*(int *)((int)this + 0x24) != *(int *)((int)this + 0x23d)) {
-      uVar10 = GetPlayerRaceId((char)*(int *)((int)this + 0x23d));
-      iVar6 = *(int *)((int)this + 0x235);
-      uVar11 = GetPlayerRaceId(*(char *)((int)this + 0x24));
-      if ((&DAT_007e1984)[(uVar11 & 0xff) + ((uVar10 & 0xff) + iVar6 * 3) * 3] == '\0')
+    if (this->field_0024 != (byte *)this->field_023D) {
+      uVar12 = GetPlayerRaceId((char)(byte *)this->field_023D);
+      iVar7 = this->field_0235;
+      uVar13 = GetPlayerRaceId(*(char *)&this->field_0024);
+      if ((&DAT_007e1984)[(uVar13 & 0xff) + ((uVar12 & 0xff) + iVar7 * 3) * 3] == '\0')
       goto cf_common_join_004C01F3;
     }
-    if (*(int *)((int)this + 0x245) != 0) goto cf_common_join_004C01F3;
+    if (this->field_0245 != CASE_0) goto cf_common_join_004C01F3;
     *(undefined1 *)((int)param_1 + 0x11) = 1;
     break;
-  case 0x33:
+  case CASE_33:
     *(undefined1 *)((int)param_1 + 10) = 0x26;
-    if (*(int *)((int)this + 0x24) != *(int *)((int)this + 0x23d)) {
-      uVar10 = GetPlayerRaceId((char)*(int *)((int)this + 0x23d));
-      iVar6 = *(int *)((int)this + 0x235);
-      uVar11 = GetPlayerRaceId(*(char *)((int)this + 0x24));
-      if ((&DAT_007e1984)[(uVar11 & 0xff) + ((uVar10 & 0xff) + iVar6 * 3) * 3] == '\0')
+    if (this->field_0024 != (byte *)this->field_023D) {
+      uVar12 = GetPlayerRaceId((char)(byte *)this->field_023D);
+      iVar7 = this->field_0235;
+      uVar13 = GetPlayerRaceId(*(char *)&this->field_0024);
+      if ((&DAT_007e1984)[(uVar13 & 0xff) + ((uVar12 & 0xff) + iVar7 * 3) * 3] == '\0')
       goto cf_common_join_004C0278;
     }
-    iVar6 = *(int *)((int)this + 0x245);
+    pAVar17 = (AnonPointee_TLOBaseTy_061B *)this->field_0245;
     goto joined_r0x004bfcb7;
-  case 0x35:
+  case CASE_35:
     *(undefined1 *)((int)param_1 + 10) = 0x21;
-    if (*(int *)((int)this + 0x24) != *(int *)((int)this + 0x23d)) {
-      uVar10 = GetPlayerRaceId((char)*(int *)((int)this + 0x23d));
-      iVar6 = *(int *)((int)this + 0x235);
-      uVar11 = GetPlayerRaceId(*(char *)((int)this + 0x24));
-      if ((&DAT_007e1984)[(uVar11 & 0xff) + ((uVar10 & 0xff) + iVar6 * 3) * 3] == '\0')
+    if (this->field_0024 != (byte *)this->field_023D) {
+      uVar12 = GetPlayerRaceId((char)(byte *)this->field_023D);
+      iVar7 = this->field_0235;
+      uVar13 = GetPlayerRaceId(*(char *)&this->field_0024);
+      if ((&DAT_007e1984)[(uVar13 & 0xff) + ((uVar12 & 0xff) + iVar7 * 3) * 3] == '\0')
       goto cf_common_join_004C0278;
     }
-    if (*(int *)((int)this + 0x245) == 0) {
-      bVar19 = *(int *)((int)this + 0x361) == 0;
+    if (this->field_0245 == CASE_0) {
+      bVar22 = *(int *)&this->field_0x361 == 0;
 LAB_004bef54:
-      if (bVar19) goto cf_common_join_004BEF5A;
+      if (bVar22) goto cf_common_join_004BEF5A;
     }
     goto cf_common_join_004C0278;
-  case 0x36:
+  case CASE_36:
     goto switchD_004bec4d_caseD_36;
-  case 0x37:
+  case CASE_37:
     *(undefined1 *)((int)param_1 + 10) = 0x26;
-    if (*(int *)((int)this + 0x24) != *(int *)((int)this + 0x23d)) {
-      uVar10 = GetPlayerRaceId((char)*(int *)((int)this + 0x23d));
-      iVar6 = *(int *)((int)this + 0x235);
-      uVar11 = GetPlayerRaceId(*(char *)((int)this + 0x24));
-      if ((&DAT_007e1984)[(uVar11 & 0xff) + ((uVar10 & 0xff) + iVar6 * 3) * 3] == '\0')
+    if (this->field_0024 != (byte *)this->field_023D) {
+      uVar12 = GetPlayerRaceId((char)(byte *)this->field_023D);
+      iVar7 = this->field_0235;
+      uVar13 = GetPlayerRaceId(*(char *)&this->field_0024);
+      if ((&DAT_007e1984)[(uVar13 & 0xff) + ((uVar12 & 0xff) + iVar7 * 3) * 3] == '\0')
       goto cf_common_join_004C0278;
     }
-    if (*(int *)((int)this + 0x4d8) != 0xffff) goto cf_common_join_004C0278;
+    if (this->field_04D8 != 0xffff) goto cf_common_join_004C0278;
     goto cf_common_join_004BEF5A;
-  case 0x3a:
+  case CASE_3A:
     *(undefined1 *)((int)param_1 + 10) = 0x22;
-    if (*(int *)((int)this + 0x24) != *(int *)((int)this + 0x23d)) {
-      uVar10 = GetPlayerRaceId((char)*(int *)((int)this + 0x23d));
-      iVar6 = *(int *)((int)this + 0x235);
-      uVar11 = GetPlayerRaceId(*(char *)((int)this + 0x24));
-      if ((&DAT_007e1984)[(uVar11 & 0xff) + ((uVar10 & 0xff) + iVar6 * 3) * 3] == '\0')
+    if (this->field_0024 != (byte *)this->field_023D) {
+      uVar12 = GetPlayerRaceId((char)(byte *)this->field_023D);
+      iVar7 = this->field_0235;
+      uVar13 = GetPlayerRaceId(*(char *)&this->field_0024);
+      if ((&DAT_007e1984)[(uVar13 & 0xff) + ((uVar12 & 0xff) + iVar7 * 3) * 3] == '\0')
       goto cf_common_join_004C0278;
     }
-    iVar6 = *(int *)((int)this + 0x245);
+    pAVar17 = (AnonPointee_TLOBaseTy_061B *)this->field_0245;
     goto joined_r0x004bfcb7;
-  case 0x3c:
+  case CASE_3C:
     *(undefined1 *)((int)param_1 + 10) = 0x28;
-    if (*(int *)((int)this + 0x245) == 0) {
-      if (*(int *)((int)this + 0x24) != *(int *)((int)this + 0x23d)) {
-        uVar10 = GetPlayerRaceId((char)*(int *)((int)this + 0x23d));
-        iVar6 = *(int *)((int)this + 0x235);
-        uVar11 = GetPlayerRaceId(*(char *)((int)this + 0x24));
-        if ((&DAT_007e1984)[(uVar11 & 0xff) + ((uVar10 & 0xff) + iVar6 * 3) * 3] == '\0')
+    if (this->field_0245 == CASE_0) {
+      if (this->field_0024 != (byte *)this->field_023D) {
+        uVar12 = GetPlayerRaceId((char)(byte *)this->field_023D);
+        iVar7 = this->field_0235;
+        uVar13 = GetPlayerRaceId(*(char *)&this->field_0024);
+        if ((&DAT_007e1984)[(uVar13 & 0xff) + ((uVar12 & 0xff) + iVar7 * 3) * 3] == '\0')
         goto LAB_004bf7a5;
       }
-      if (g_playerRuntime[*(int *)((int)this + 0x24)].field2180_0xa0e != 0) goto LAB_004bf7a5;
-      uVar4 = 1;
+      if (g_playerRuntime[(int)this->field_0024].field2180_0xa0e != 0) goto LAB_004bf7a5;
+      uVar5 = 1;
     }
     else {
 LAB_004bf7a5:
-      uVar4 = 0;
+      uVar5 = 0;
     }
-    *(undefined1 *)(param_1 + 4) = uVar4;
+    *(undefined1 *)(param_1 + 4) = uVar5;
     *(undefined1 *)((int)param_1 + 0xb) = 0x29;
-    if (*(int *)((int)this + 0x245) != 0) goto cf_common_join_004C01F3;
-    if (*(int *)((int)this + 0x24) != *(int *)((int)this + 0x23d)) {
-      uVar10 = GetPlayerRaceId((char)*(int *)((int)this + 0x23d));
-      iVar6 = *(int *)((int)this + 0x235);
-      uVar11 = GetPlayerRaceId(*(char *)((int)this + 0x24));
-      if ((&DAT_007e1984)[(uVar11 & 0xff) + ((uVar10 & 0xff) + iVar6 * 3) * 3] == '\0')
+    if (this->field_0245 != CASE_0) goto cf_common_join_004C01F3;
+    if (this->field_0024 != (byte *)this->field_023D) {
+      uVar12 = GetPlayerRaceId((char)(byte *)this->field_023D);
+      iVar7 = this->field_0235;
+      uVar13 = GetPlayerRaceId(*(char *)&this->field_0024);
+      if ((&DAT_007e1984)[(uVar13 & 0xff) + ((uVar12 & 0xff) + iVar7 * 3) * 3] == '\0')
       goto cf_common_join_004C01F3;
     }
     *(undefined1 *)((int)param_1 + 0x11) = 1;
     break;
-  case 0x3e:
-  case 0x3f:
-  case 0x42:
-  case 0x46:
-  case 0x47:
-  case 0x4a:
-  case 0x4b:
-  case 0x51:
-    if ((((byte)*(undefined4 *)((int)this + 0x265) & 2) == 2) && (*(int *)((int)this + 0x26d) != 0))
-    {
+  case CASE_3E:
+  case CASE_3F:
+  case CASE_42:
+  case CASE_46:
+  case CASE_47:
+  case CASE_4A:
+  case CASE_4B:
+  case CASE_51:
+    if ((((byte)this->field_0265 & 2) == 2) && (this->field_026D != 0)) {
       *(undefined1 *)((int)param_1 + 10) = 0x52;
-      if ((*(int *)((int)this + 0x245) == 0) || (*(int *)((int)this + 0x245) == 5)) {
+      if ((this->field_0245 == CASE_0) || (this->field_0245 == CASE_5)) {
 LAB_004becbd:
-        uVar4 = 1;
+        uVar5 = 1;
       }
       else {
-        uVar4 = 0;
+        uVar5 = 0;
       }
     }
     else {
       *(undefined1 *)((int)param_1 + 10) = 3;
-      if (*(int *)((int)this + 0x245) == 0) {
-        if (*(int *)((int)this + 0x261) != 0) {
-          if ((*(byte *)((int)this + 0x265) & 2) != 0) {
+      if (this->field_0245 == CASE_0) {
+        if (this->field_0261 != 0) {
+          if ((*(byte *)&this->field_0265 & 2) != 0) {
             *(undefined1 *)(param_1 + 4) = 3;
             goto switchD_004bec4d_caseD_36;
           }
@@ -272,103 +289,101 @@ LAB_004becbd:
       }
       else {
 LAB_004becaa:
-        if (*(int *)((int)this + 0x261) != 0) goto LAB_004becbd;
+        if (this->field_0261 != 0) goto LAB_004becbd;
       }
-      if (*(int *)((int)this + 0x245) == 5) goto LAB_004becbd;
-      uVar4 = 0;
+      if (this->field_0245 == CASE_5) goto LAB_004becbd;
+      uVar5 = 0;
     }
-    *(undefined1 *)(param_1 + 4) = uVar4;
+    *(undefined1 *)(param_1 + 4) = uVar5;
 switchD_004bec4d_caseD_36:
-    uVar10 = GetPlayerRaceId(*(char *)((int)this + 0x24));
-    uVar10 = uVar10 & 0xff;
-    if (uVar10 == 1) {
-      iVar6 = 0x1d;
+    uVar12 = GetPlayerRaceId(*(char *)&this->field_0024);
+    uVar12 = uVar12 & 0xff;
+    if (uVar12 == 1) {
+      iVar7 = 0x1d;
     }
-    else if (uVar10 == 2) {
-      iVar6 = 0x89;
+    else if (uVar12 == 2) {
+      iVar7 = 0x89;
     }
-    else if (uVar10 == 3) {
-      iVar6 = 0x46;
+    else if (uVar12 == 3) {
+      iVar7 = 0x46;
     }
     else {
-      iVar6 = 0;
+      iVar7 = 0;
     }
-    if (*(int *)((int)this + 0x5ac) == 0x36) {
+    if (this->field_05AC == CASE_36) {
       *(undefined1 *)((int)param_1 + 10) = 0x2a;
-      if (((*(int *)((int)this + 0x4d4) < 0x28) || (*(int *)((int)this + 0x245) != 0)) ||
-         (iVar6 = thunk_FUN_004e60d0(*(int *)((int)this + 0x24),iVar6), iVar6 == 0)) {
-        uVar4 = 0;
+      if (((this->field_04D4 < 0x28) || (this->field_0245 != CASE_0)) ||
+         (iVar7 = thunk_FUN_004e60d0((int)this->field_0024,iVar7), iVar7 == 0)) {
+        uVar5 = 0;
       }
       else {
-        uVar4 = 1;
+        uVar5 = 1;
       }
-      *(undefined1 *)(param_1 + 4) = uVar4;
+      *(undefined1 *)(param_1 + 4) = uVar5;
     }
-    uVar10 = GetPlayerRaceId(*(char *)((int)this + 0x24));
-    if ((uVar10 & 0xff) == 1) {
-      iVar6 = 0x10;
+    uVar12 = GetPlayerRaceId(*(char *)&this->field_0024);
+    if ((uVar12 & 0xff) == 1) {
+      iVar7 = 0x10;
     }
-    else if ((uVar10 & 0xff) == 2) {
-      iVar6 = 0x85;
+    else if ((uVar12 & 0xff) == 2) {
+      iVar7 = 0x85;
     }
     else {
-      iVar6 = 0;
+      iVar7 = 0;
     }
-    uVar10 = GetPlayerRaceId(*(char *)((int)this + 0x23d));
-    if (*(int *)(&DAT_00791b14 + ((uVar10 & 0xff) + *(int *)((int)this + 0x235) * 3) * 4) != 0) {
-      if (((iVar6 == 0) ||
-          (iVar7 = thunk_FUN_004e60d0(*(int *)((int)this + 0x24),iVar6), iVar7 == 0)) ||
-         (*(int *)((int)this + 0x245) != 4)) {
-        bVar19 = false;
+    uVar12 = GetPlayerRaceId(*(char *)&this->field_023D);
+    if (*(int *)(&DAT_00791b14 + ((uVar12 & 0xff) + this->field_0235 * 3) * 4) != 0) {
+      if (((iVar7 == 0) || (iVar8 = thunk_FUN_004e60d0((int)this->field_0024,iVar7), iVar8 == 0)) ||
+         (this->field_0245 != CASE_4)) {
+        bVar22 = false;
       }
       else {
-        bVar19 = true;
+        bVar22 = true;
       }
       *(undefined1 *)((int)param_1 + 0xb) = 0x17;
-      if (*(int *)((int)this + 0x245) == 4) {
-        cVar3 = (-(*(int *)((int)this + 0x46c) != 0) & 2U) + 1;
+      if (this->field_0245 == CASE_4) {
+        cVar4 = (-(this->field_046C != 0) & 2U) + 1;
       }
       else {
-        cVar3 = '\0';
+        cVar4 = '\0';
       }
-      *(char *)((int)param_1 + 0x11) = cVar3;
-      if ((*(int *)((int)this + 0x245) == 4) || (*(int *)((int)this + 0x245) == 3)) {
+      *(char *)((int)param_1 + 0x11) = cVar4;
+      if ((this->field_0245 == CASE_4) || (this->field_0245 == CASE_3)) {
         *(undefined1 *)(param_1 + 3) = 0x16;
-        if ((*(int *)((int)this + 0x245) != 4) || (iVar6 = thunk_FUN_004c7070(this,0), iVar6 == 0))
+        if ((this->field_0245 != CASE_4) || (iVar7 = sub_004C7070(this,0), iVar7 == 0))
         goto LAB_004bee65;
-        uVar4 = 1;
+        uVar5 = 1;
       }
       else {
         *(undefined1 *)(param_1 + 3) = 0x15;
-        if (((iVar6 == 0) ||
-            (iVar6 = thunk_FUN_004e60d0(*(int *)((int)this + 0x24),iVar6), iVar6 == 0)) ||
-           (((*(int *)((int)this + 0x245) != 0 && (*(int *)((int)this + 0x245) != 5)) ||
-            (*(int *)((int)this + 0x361) != 0)))) {
+        if (((iVar7 == 0) || (iVar7 = thunk_FUN_004e60d0((int)this->field_0024,iVar7), iVar7 == 0))
+           || (((this->field_0245 != CASE_0 && (this->field_0245 != CASE_5)) ||
+               (*(int *)&this->field_0x361 != 0)))) {
 LAB_004bee65:
-          uVar4 = 0;
+          uVar5 = 0;
         }
         else {
-          uVar4 = 1;
+          uVar5 = 1;
         }
       }
-      *(undefined1 *)((int)param_1 + 0x12) = uVar4;
+      *(undefined1 *)((int)param_1 + 0x12) = uVar5;
       *(undefined1 *)((int)param_1 + 0xe) = 2;
-      if (bVar19) {
-        if ((*(int *)((int)this + 0x3dc) == 0) || (*(int *)((int)this + 0x46c) != 0)) {
-          uVar4 = 1;
+      if (bVar22) {
+        if ((this->field_03DC == 0) || (this->field_046C != 0)) {
+          uVar5 = 1;
         }
         else {
-          uVar4 = 3;
+          uVar5 = 3;
         }
       }
       else {
-        uVar4 = 0;
+        uVar5 = 0;
       }
-      *(undefined1 *)(param_1 + 5) = uVar4;
+      *(undefined1 *)(param_1 + 5) = uVar5;
       *(undefined1 *)((int)param_1 + 0xd) = 1;
-      if ((bVar19) &&
-         (((iVar6 = *(int *)((int)this + 0x46c), iVar6 == 0 || (iVar6 == 1)) || (iVar6 == 2)))) {
-        if ((*(int *)((int)this + 0x3dc) == 0) && (iVar6 == 0)) {
+      if ((bVar22) &&
+         (((TVar1 = this->field_046C, TVar1 == 0 || (TVar1 == CASE_1)) || (TVar1 == CASE_2)))) {
+        if ((this->field_03DC == 0) && (TVar1 == 0)) {
           *(undefined1 *)((int)param_1 + 0x13) = 3;
         }
         else {
@@ -380,364 +395,362 @@ LAB_004bee65:
       }
     }
     break;
-  case 0x40:
+  case CASE_40:
     *(undefined1 *)((int)param_1 + 10) = 0x1e;
-    if (*(int *)((int)this + 0x24) == *(int *)((int)this + 0x23d)) {
+    if (this->field_0024 == (byte *)this->field_023D) {
 LAB_004bf5fe:
-      if ((*(int *)((int)this + 0x245) != 0) ||
-         (iVar6 = thunk_FUN_004c7860(this,1,9,1,0,1), iVar6 == 0)) goto LAB_004bf624;
-      uVar4 = 1;
+      if ((this->field_0245 != CASE_0) || (iVar7 = sub_004C7860(this,1,9,1,0,1), iVar7 == 0))
+      goto LAB_004bf624;
+      uVar5 = 1;
     }
     else {
-      uVar10 = GetPlayerRaceId((char)*(int *)((int)this + 0x23d));
-      iVar6 = *(int *)((int)this + 0x235);
-      uVar11 = GetPlayerRaceId(*(char *)((int)this + 0x24));
-      if ((&DAT_007e1984)[(uVar11 & 0xff) + ((uVar10 & 0xff) + iVar6 * 3) * 3] != '\0')
+      uVar12 = GetPlayerRaceId((char)(byte *)this->field_023D);
+      iVar7 = this->field_0235;
+      uVar13 = GetPlayerRaceId(*(char *)&this->field_0024);
+      if ((&DAT_007e1984)[(uVar13 & 0xff) + ((uVar12 & 0xff) + iVar7 * 3) * 3] != '\0')
       goto LAB_004bf5fe;
 LAB_004bf624:
-      uVar4 = 0;
+      uVar5 = 0;
     }
-    *(undefined1 *)(param_1 + 4) = uVar4;
+    *(undefined1 *)(param_1 + 4) = uVar5;
     *(undefined1 *)((int)param_1 + 0xb) = 0x26;
-    if (*(int *)((int)this + 0x24) != *(int *)((int)this + 0x23d)) {
-      uVar10 = GetPlayerRaceId((char)*(int *)((int)this + 0x23d));
-      iVar6 = *(int *)((int)this + 0x235);
-      uVar11 = GetPlayerRaceId(*(char *)((int)this + 0x24));
-      if ((&DAT_007e1984)[(uVar11 & 0xff) + ((uVar10 & 0xff) + iVar6 * 3) * 3] == '\0')
+    if (this->field_0024 != (byte *)this->field_023D) {
+      uVar12 = GetPlayerRaceId((char)(byte *)this->field_023D);
+      iVar7 = this->field_0235;
+      uVar13 = GetPlayerRaceId(*(char *)&this->field_0024);
+      if ((&DAT_007e1984)[(uVar13 & 0xff) + ((uVar12 & 0xff) + iVar7 * 3) * 3] == '\0')
       goto cf_common_join_004C01F3;
     }
-    if (*(int *)((int)this + 0x245) != 0) goto cf_common_join_004C01F3;
+    if (this->field_0245 != CASE_0) goto cf_common_join_004C01F3;
     *(undefined1 *)((int)param_1 + 0x11) = 1;
     break;
-  case 0x43:
+  case CASE_43:
     *(undefined1 *)((int)param_1 + 10) = 0x23;
-    if (*(int *)((int)this + 0x24) != *(int *)((int)this + 0x23d)) {
-      uVar10 = GetPlayerRaceId((char)*(int *)((int)this + 0x23d));
-      iVar6 = *(int *)((int)this + 0x235);
-      uVar11 = GetPlayerRaceId(*(char *)((int)this + 0x24));
-      if ((&DAT_007e1984)[(uVar11 & 0xff) + ((uVar10 & 0xff) + iVar6 * 3) * 3] == '\0')
+    if (this->field_0024 != (byte *)this->field_023D) {
+      uVar12 = GetPlayerRaceId((char)(byte *)this->field_023D);
+      iVar7 = this->field_0235;
+      uVar13 = GetPlayerRaceId(*(char *)&this->field_0024);
+      if ((&DAT_007e1984)[(uVar13 & 0xff) + ((uVar12 & 0xff) + iVar7 * 3) * 3] == '\0')
       goto cf_common_join_004C0278;
     }
-    if (*(int *)((int)this + 0x245) == 0) {
-      iVar6 = *(int *)((int)this + 0x4d8);
+    if (this->field_0245 == CASE_0) {
+      iVar7 = this->field_04D8;
 joined_r0x004bf200:
-      if (4999 < iVar6) goto cf_common_join_004BEF5A;
+      if (4999 < iVar7) goto cf_common_join_004BEF5A;
     }
     goto cf_common_join_004C0278;
-  case 0x44:
+  case CASE_44:
     *(undefined1 *)((int)param_1 + 10) = 0x1b;
-    if (*(int *)((int)this + 0x24) != *(int *)((int)this + 0x23d)) {
-      uVar10 = GetPlayerRaceId((char)*(int *)((int)this + 0x23d));
-      iVar6 = *(int *)((int)this + 0x235);
-      uVar11 = GetPlayerRaceId(*(char *)((int)this + 0x24));
-      if ((&DAT_007e1984)[(uVar11 & 0xff) + ((uVar10 & 0xff) + iVar6 * 3) * 3] == '\0')
+    if (this->field_0024 != (byte *)this->field_023D) {
+      uVar12 = GetPlayerRaceId((char)(byte *)this->field_023D);
+      iVar7 = this->field_0235;
+      uVar13 = GetPlayerRaceId(*(char *)&this->field_0024);
+      if ((&DAT_007e1984)[(uVar13 & 0xff) + ((uVar12 & 0xff) + iVar7 * 3) * 3] == '\0')
       goto cf_common_join_004C0278;
     }
-    if (*(int *)((int)this + 0x245) == 0) {
-      iVar6 = 0x19;
+    if (this->field_0245 == CASE_0) {
+      iVar7 = 0x19;
 LAB_004bf708:
-      iVar6 = thunk_FUN_004e60d0(*(int *)((int)this + 0x24),iVar6);
-      if (iVar6 != 0) goto cf_common_join_004BEF5A;
+      iVar7 = thunk_FUN_004e60d0((int)this->field_0024,iVar7);
+      if (iVar7 != 0) goto cf_common_join_004BEF5A;
     }
     goto cf_common_join_004C0278;
-  case 0x45:
+  case CASE_45:
     *(undefined1 *)((int)param_1 + 10) = 0x1a;
-    if (*(int *)((int)this + 0x24) != *(int *)((int)this + 0x23d)) {
-      uVar10 = GetPlayerRaceId((char)*(int *)((int)this + 0x23d));
-      iVar6 = *(int *)((int)this + 0x235);
-      uVar11 = GetPlayerRaceId(*(char *)((int)this + 0x24));
-      if ((&DAT_007e1984)[(uVar11 & 0xff) + ((uVar10 & 0xff) + iVar6 * 3) * 3] == '\0')
+    if (this->field_0024 != (byte *)this->field_023D) {
+      uVar12 = GetPlayerRaceId((char)(byte *)this->field_023D);
+      iVar7 = this->field_0235;
+      uVar13 = GetPlayerRaceId(*(char *)&this->field_0024);
+      if ((&DAT_007e1984)[(uVar13 & 0xff) + ((uVar12 & 0xff) + iVar7 * 3) * 3] == '\0')
       goto cf_common_join_004C0278;
     }
-    if (*(int *)((int)this + 0x245) == 0) {
-      bVar19 = *(int *)((int)this + 0x4d0) == 1;
+    if (this->field_0245 == CASE_0) {
+      bVar22 = this->field_04D0 == CASE_1;
       goto LAB_004bef54;
     }
     goto cf_common_join_004C0278;
-  case 0x49:
+  case CASE_49:
     *(undefined1 *)((int)param_1 + 10) = 0x1f;
-    if (*(int *)((int)this + 0x24) == *(int *)((int)this + 0x23d)) {
+    if (this->field_0024 == (byte *)this->field_023D) {
 LAB_004bf508:
-      if ((*(int *)((int)this + 0x245) != 0) ||
-         (iVar6 = thunk_FUN_004c7860(this,1,0x15,1,0,1), iVar6 == 0)) goto LAB_004bf52e;
-      uVar4 = 1;
+      if ((this->field_0245 != CASE_0) || (iVar7 = sub_004C7860(this,1,0x15,1,0,1), iVar7 == 0))
+      goto LAB_004bf52e;
+      uVar5 = 1;
     }
     else {
-      uVar10 = GetPlayerRaceId((char)*(int *)((int)this + 0x23d));
-      iVar6 = *(int *)((int)this + 0x235);
-      uVar11 = GetPlayerRaceId(*(char *)((int)this + 0x24));
-      if ((&DAT_007e1984)[(uVar11 & 0xff) + ((uVar10 & 0xff) + iVar6 * 3) * 3] != '\0')
+      uVar12 = GetPlayerRaceId((char)(byte *)this->field_023D);
+      iVar7 = this->field_0235;
+      uVar13 = GetPlayerRaceId(*(char *)&this->field_0024);
+      if ((&DAT_007e1984)[(uVar13 & 0xff) + ((uVar12 & 0xff) + iVar7 * 3) * 3] != '\0')
       goto LAB_004bf508;
 LAB_004bf52e:
-      uVar4 = 0;
+      uVar5 = 0;
     }
-    *(undefined1 *)(param_1 + 4) = uVar4;
+    *(undefined1 *)(param_1 + 4) = uVar5;
     *(undefined1 *)((int)param_1 + 0xb) = 0x26;
-    if (*(int *)((int)this + 0x24) != *(int *)((int)this + 0x23d)) {
-      uVar10 = GetPlayerRaceId((char)*(int *)((int)this + 0x23d));
-      iVar6 = *(int *)((int)this + 0x235);
-      uVar11 = GetPlayerRaceId(*(char *)((int)this + 0x24));
-      if ((&DAT_007e1984)[(uVar11 & 0xff) + ((uVar10 & 0xff) + iVar6 * 3) * 3] == '\0')
+    if (this->field_0024 != (byte *)this->field_023D) {
+      uVar12 = GetPlayerRaceId((char)(byte *)this->field_023D);
+      iVar7 = this->field_0235;
+      uVar13 = GetPlayerRaceId(*(char *)&this->field_0024);
+      if ((&DAT_007e1984)[(uVar13 & 0xff) + ((uVar12 & 0xff) + iVar7 * 3) * 3] == '\0')
       goto cf_common_join_004C01F3;
     }
-    if (*(int *)((int)this + 0x245) != 0) goto cf_common_join_004C01F3;
+    if (this->field_0245 != CASE_0) goto cf_common_join_004C01F3;
     *(undefined1 *)((int)param_1 + 0x11) = 1;
     break;
-  case 0x4c:
-    if (*(int *)((int)this + 0x4d0) != 1) {
+  case CASE_4C:
+    if (this->field_04D0 != CASE_1) {
       *(undefined1 *)((int)param_1 + 10) = 0x24;
-      if (*(int *)((int)this + 0x24) != *(int *)((int)this + 0x23d)) {
-        uVar10 = GetPlayerRaceId((char)*(int *)((int)this + 0x23d));
-        iVar6 = *(int *)((int)this + 0x235);
-        uVar11 = GetPlayerRaceId(*(char *)((int)this + 0x24));
-        if ((&DAT_007e1984)[(uVar11 & 0xff) + ((uVar10 & 0xff) + iVar6 * 3) * 3] == '\0')
+      if (this->field_0024 != (byte *)this->field_023D) {
+        uVar12 = GetPlayerRaceId((char)(byte *)this->field_023D);
+        iVar7 = this->field_0235;
+        uVar13 = GetPlayerRaceId(*(char *)&this->field_0024);
+        if ((&DAT_007e1984)[(uVar13 & 0xff) + ((uVar12 & 0xff) + iVar7 * 3) * 3] == '\0')
         goto cf_common_join_004C0278;
       }
-      if (*(int *)((int)this + 0x245) != 0) goto cf_common_join_004C0278;
-      iVar6 = *(int *)((int)this + 0x4d8);
+      if (this->field_0245 != CASE_0) goto cf_common_join_004C0278;
+      iVar7 = this->field_04D8;
       goto joined_r0x004bf200;
     }
     *(undefined1 *)((int)param_1 + 10) = 0x25;
-    if (*(int *)((int)this + 0x24) != *(int *)((int)this + 0x23d)) {
-      uVar10 = GetPlayerRaceId((char)*(int *)((int)this + 0x23d));
-      iVar6 = *(int *)((int)this + 0x235);
-      uVar11 = GetPlayerRaceId(*(char *)((int)this + 0x24));
-      if ((&DAT_007e1984)[(uVar11 & 0xff) + ((uVar10 & 0xff) + iVar6 * 3) * 3] == '\0')
+    if (this->field_0024 != (byte *)this->field_023D) {
+      uVar12 = GetPlayerRaceId((char)(byte *)this->field_023D);
+      iVar7 = this->field_0235;
+      uVar13 = GetPlayerRaceId(*(char *)&this->field_0024);
+      if ((&DAT_007e1984)[(uVar13 & 0xff) + ((uVar12 & 0xff) + iVar7 * 3) * 3] == '\0')
       goto cf_common_join_004C0278;
     }
 LAB_004bf17b:
-    iVar6 = *(int *)((int)this + 0x245);
+    pAVar17 = (AnonPointee_TLOBaseTy_061B *)this->field_0245;
     goto joined_r0x004bfcb7;
-  case 0x4e:
+  case CASE_4E:
     *(undefined1 *)((int)param_1 + 10) = 0x1c;
-    if (*(int *)((int)this + 0x24) == *(int *)((int)this + 0x23d)) {
+    if (this->field_0024 == (byte *)this->field_023D) {
 LAB_004beff1:
-      if (((*(int *)((int)this + 0x245) != 0) ||
-          (iVar6 = thunk_FUN_004e60d0(*(int *)((int)this + 0x24),0x31), iVar6 == 0)) ||
-         ((*(int *)((int)this + 0x4d0) != 0 || (*(int *)((int)this + 0x361) != 0))))
-      goto LAB_004bf02b;
-      uVar4 = 1;
+      if (((this->field_0245 != CASE_0) ||
+          (iVar7 = thunk_FUN_004e60d0((int)this->field_0024,0x31), iVar7 == 0)) ||
+         ((this->field_04D0 != CASE_0 || (*(int *)&this->field_0x361 != 0)))) goto LAB_004bf02b;
+      uVar5 = 1;
     }
     else {
-      uVar10 = GetPlayerRaceId((char)*(int *)((int)this + 0x23d));
-      iVar6 = *(int *)((int)this + 0x235);
-      uVar11 = GetPlayerRaceId(*(char *)((int)this + 0x24));
-      if ((&DAT_007e1984)[(uVar11 & 0xff) + ((uVar10 & 0xff) + iVar6 * 3) * 3] != '\0')
+      uVar12 = GetPlayerRaceId((char)(byte *)this->field_023D);
+      iVar7 = this->field_0235;
+      uVar13 = GetPlayerRaceId(*(char *)&this->field_0024);
+      if ((&DAT_007e1984)[(uVar13 & 0xff) + ((uVar12 & 0xff) + iVar7 * 3) * 3] != '\0')
       goto LAB_004beff1;
 LAB_004bf02b:
-      uVar4 = 0;
+      uVar5 = 0;
     }
-    *(undefined1 *)(param_1 + 4) = uVar4;
+    *(undefined1 *)(param_1 + 4) = uVar5;
     *(undefined1 *)((int)param_1 + 0xb) = 0x19;
-    if (*(int *)((int)this + 0x24) != *(int *)((int)this + 0x23d)) {
-      uVar10 = GetPlayerRaceId((char)*(int *)((int)this + 0x23d));
-      iVar6 = *(int *)((int)this + 0x235);
-      uVar11 = GetPlayerRaceId(*(char *)((int)this + 0x24));
-      if ((&DAT_007e1984)[(uVar11 & 0xff) + ((uVar10 & 0xff) + iVar6 * 3) * 3] == '\0')
+    if (this->field_0024 != (byte *)this->field_023D) {
+      uVar12 = GetPlayerRaceId((char)(byte *)this->field_023D);
+      iVar7 = this->field_0235;
+      uVar13 = GetPlayerRaceId(*(char *)&this->field_0024);
+      if ((&DAT_007e1984)[(uVar13 & 0xff) + ((uVar12 & 0xff) + iVar7 * 3) * 3] == '\0')
       goto cf_common_join_004C01F3;
     }
-    if (*(int *)((int)this + 0x261) == 0) goto cf_common_join_004C01F3;
+    if (this->field_0261 == 0) goto cf_common_join_004C01F3;
     *(undefined1 *)((int)param_1 + 0x11) = 1;
     break;
-  case 0x52:
+  case CASE_52:
     *(undefined1 *)((int)param_1 + 10) = 0x30;
-    if (*(int *)((int)this + 0x24) == *(int *)((int)this + 0x23d)) {
+    if (this->field_0024 == (byte *)this->field_023D) {
 LAB_004bf873:
-      if (*(int *)((int)this + 0x245) != 0) goto LAB_004bf884;
-      uVar4 = 1;
+      if (this->field_0245 != CASE_0) goto LAB_004bf884;
+      uVar5 = 1;
     }
     else {
-      uVar10 = GetPlayerRaceId((char)*(int *)((int)this + 0x23d));
-      iVar6 = *(int *)((int)this + 0x235);
-      uVar11 = GetPlayerRaceId(*(char *)((int)this + 0x24));
-      if ((&DAT_007e1984)[(uVar11 & 0xff) + ((uVar10 & 0xff) + iVar6 * 3) * 3] != '\0')
+      uVar12 = GetPlayerRaceId((char)(byte *)this->field_023D);
+      iVar7 = this->field_0235;
+      uVar13 = GetPlayerRaceId(*(char *)&this->field_0024);
+      if ((&DAT_007e1984)[(uVar13 & 0xff) + ((uVar12 & 0xff) + iVar7 * 3) * 3] != '\0')
       goto LAB_004bf873;
 LAB_004bf884:
-      uVar4 = 0;
+      uVar5 = 0;
     }
-    *(undefined1 *)(param_1 + 4) = uVar4;
+    *(undefined1 *)(param_1 + 4) = uVar5;
     *(undefined1 *)((int)param_1 + 0xb) = 0x31;
-    if (*(int *)((int)this + 0x24) != *(int *)((int)this + 0x23d)) {
-      uVar10 = GetPlayerRaceId((char)*(int *)((int)this + 0x23d));
-      iVar6 = *(int *)((int)this + 0x235);
-      uVar11 = GetPlayerRaceId(*(char *)((int)this + 0x24));
-      if ((&DAT_007e1984)[(uVar11 & 0xff) + ((uVar10 & 0xff) + iVar6 * 3) * 3] == '\0')
+    if (this->field_0024 != (byte *)this->field_023D) {
+      uVar12 = GetPlayerRaceId((char)(byte *)this->field_023D);
+      iVar7 = this->field_0235;
+      uVar13 = GetPlayerRaceId(*(char *)&this->field_0024);
+      if ((&DAT_007e1984)[(uVar13 & 0xff) + ((uVar12 & 0xff) + iVar7 * 3) * 3] == '\0')
       goto cf_common_join_004C01F3;
     }
-    if (*(int *)((int)this + 0x245) != 0) goto cf_common_join_004C01F3;
+    if (this->field_0245 != CASE_0) goto cf_common_join_004C01F3;
     *(undefined1 *)((int)param_1 + 0x11) = 1;
     break;
-  case 0x53:
+  case CASE_53:
     *(undefined1 *)((int)param_1 + 10) = 0x44;
-    if (*(int *)((int)this + 0x24) == *(int *)((int)this + 0x23d)) {
+    if (this->field_0024 == (byte *)this->field_023D) {
 LAB_004bf954:
-      if (*(int *)((int)this + 0x245) != 0) goto LAB_004bf965;
-      uVar4 = 1;
+      if (this->field_0245 != CASE_0) goto LAB_004bf965;
+      uVar5 = 1;
     }
     else {
-      uVar10 = GetPlayerRaceId((char)*(int *)((int)this + 0x23d));
-      iVar6 = *(int *)((int)this + 0x235);
-      uVar11 = GetPlayerRaceId(*(char *)((int)this + 0x24));
-      if ((&DAT_007e1984)[(uVar11 & 0xff) + ((uVar10 & 0xff) + iVar6 * 3) * 3] != '\0')
+      uVar12 = GetPlayerRaceId((char)(byte *)this->field_023D);
+      iVar7 = this->field_0235;
+      uVar13 = GetPlayerRaceId(*(char *)&this->field_0024);
+      if ((&DAT_007e1984)[(uVar13 & 0xff) + ((uVar12 & 0xff) + iVar7 * 3) * 3] != '\0')
       goto LAB_004bf954;
 LAB_004bf965:
-      uVar4 = 0;
+      uVar5 = 0;
     }
-    *(undefined1 *)(param_1 + 4) = uVar4;
+    *(undefined1 *)(param_1 + 4) = uVar5;
     *(undefined1 *)((int)param_1 + 0xb) = 0x39;
-    if (*(int *)((int)this + 0x24) == *(int *)((int)this + 0x23d)) {
+    if (this->field_0024 == (byte *)this->field_023D) {
 LAB_004bf9c0:
-      if (((*(int *)((int)this + 0x245) != 0) || (*(int *)((int)this + 0x361) != 0)) ||
-         (g_playerRuntime[*(int *)((int)this + 0x24)].field2180_0xa0e != 0)) goto LAB_004bf9f7;
-      uVar4 = 1;
+      if (((this->field_0245 != CASE_0) || (*(int *)&this->field_0x361 != 0)) ||
+         (g_playerRuntime[(int)this->field_0024].field2180_0xa0e != 0)) goto LAB_004bf9f7;
+      uVar5 = 1;
     }
     else {
-      uVar10 = GetPlayerRaceId((char)*(int *)((int)this + 0x23d));
-      iVar6 = *(int *)((int)this + 0x235);
-      uVar11 = GetPlayerRaceId(*(char *)((int)this + 0x24));
-      if ((&DAT_007e1984)[(uVar11 & 0xff) + ((uVar10 & 0xff) + iVar6 * 3) * 3] != '\0')
+      uVar12 = GetPlayerRaceId((char)(byte *)this->field_023D);
+      iVar7 = this->field_0235;
+      uVar13 = GetPlayerRaceId(*(char *)&this->field_0024);
+      if ((&DAT_007e1984)[(uVar13 & 0xff) + ((uVar12 & 0xff) + iVar7 * 3) * 3] != '\0')
       goto LAB_004bf9c0;
 LAB_004bf9f7:
-      uVar4 = 0;
+      uVar5 = 0;
     }
-    *(undefined1 *)((int)param_1 + 0x11) = uVar4;
+    *(undefined1 *)((int)param_1 + 0x11) = uVar5;
     *(undefined1 *)(param_1 + 3) = 0x46;
-    if (*(int *)((int)this + 0x24) != *(int *)((int)this + 0x23d)) {
-      uVar10 = GetPlayerRaceId((char)*(int *)((int)this + 0x23d));
-      iVar6 = *(int *)((int)this + 0x235);
-      uVar11 = GetPlayerRaceId(*(char *)((int)this + 0x24));
-      if ((&DAT_007e1984)[(uVar11 & 0xff) + ((uVar10 & 0xff) + iVar6 * 3) * 3] == '\0')
+    if (this->field_0024 != (byte *)this->field_023D) {
+      uVar12 = GetPlayerRaceId((char)(byte *)this->field_023D);
+      iVar7 = this->field_0235;
+      uVar13 = GetPlayerRaceId(*(char *)&this->field_0024);
+      if ((&DAT_007e1984)[(uVar13 & 0xff) + ((uVar12 & 0xff) + iVar7 * 3) * 3] == '\0')
       goto LAB_004bfffc;
     }
-    if ((*(int *)((int)this + 0x245) != 0) || (*(int *)((int)this + 0x361) != 0)) goto LAB_004bfffc;
+    if ((this->field_0245 != CASE_0) || (*(int *)&this->field_0x361 != 0)) goto LAB_004bfffc;
     *(undefined1 *)((int)param_1 + 0x12) = 1;
     break;
-  case 0x54:
-  case 0x55:
-  case 0x56:
-  case 0x57:
-  case 0x58:
-  case 0x59:
-  case 0x5a:
+  case CASE_54:
+  case CASE_55:
+  case CASE_56:
+  case CASE_57:
+  case CASE_58:
+  case CASE_59:
+  case CASE_5A:
     *(undefined1 *)((int)param_1 + 10) = 0x41;
-    if (*(int *)((int)this + 0x24) != *(int *)((int)this + 0x23d)) {
-      uVar10 = GetPlayerRaceId((char)*(int *)((int)this + 0x23d));
-      iVar6 = *(int *)((int)this + 0x235);
-      uVar11 = GetPlayerRaceId(*(char *)((int)this + 0x24));
-      if ((&DAT_007e1984)[(uVar11 & 0xff) + ((uVar10 & 0xff) + iVar6 * 3) * 3] == '\0')
+    if (this->field_0024 != (byte *)this->field_023D) {
+      uVar12 = GetPlayerRaceId((char)(byte *)this->field_023D);
+      iVar7 = this->field_0235;
+      uVar13 = GetPlayerRaceId(*(char *)&this->field_0024);
+      if ((&DAT_007e1984)[(uVar13 & 0xff) + ((uVar12 & 0xff) + iVar7 * 3) * 3] == '\0')
       goto cf_common_join_004C0278;
     }
-    if (*(int *)((int)this + 0x245) == 0) {
-      iVar6 = *(int *)((int)this + 0x361);
+    if (this->field_0245 == CASE_0) {
+      pAVar17 = *(AnonPointee_TLOBaseTy_061B **)&this->field_0x361;
       goto joined_r0x004bfcb7;
     }
     goto cf_common_join_004C0278;
-  case 0x5c:
+  case CASE_5C:
     *(undefined1 *)((int)param_1 + 10) = 0x3d;
-    if (*(int *)((int)this + 0x24) == *(int *)((int)this + 0x23d)) {
+    if (this->field_0024 == (byte *)this->field_023D) {
 LAB_004bfbca:
-      if (*(int *)((int)this + 0x245) != 0) goto LAB_004bfbdb;
-      uVar4 = 1;
+      if (this->field_0245 != CASE_0) goto LAB_004bfbdb;
+      uVar5 = 1;
     }
     else {
-      uVar10 = GetPlayerRaceId((char)*(int *)((int)this + 0x23d));
-      iVar6 = *(int *)((int)this + 0x235);
-      uVar11 = GetPlayerRaceId(*(char *)((int)this + 0x24));
-      if ((&DAT_007e1984)[(uVar11 & 0xff) + ((uVar10 & 0xff) + iVar6 * 3) * 3] != '\0')
+      uVar12 = GetPlayerRaceId((char)(byte *)this->field_023D);
+      iVar7 = this->field_0235;
+      uVar13 = GetPlayerRaceId(*(char *)&this->field_0024);
+      if ((&DAT_007e1984)[(uVar13 & 0xff) + ((uVar12 & 0xff) + iVar7 * 3) * 3] != '\0')
       goto LAB_004bfbca;
 LAB_004bfbdb:
-      uVar4 = 0;
+      uVar5 = 0;
     }
-    *(undefined1 *)(param_1 + 4) = uVar4;
+    *(undefined1 *)(param_1 + 4) = uVar5;
     *(undefined1 *)((int)param_1 + 0xb) = 0x37;
-    if (*(int *)((int)this + 0x24) != *(int *)((int)this + 0x23d)) {
-      uVar10 = GetPlayerRaceId((char)*(int *)((int)this + 0x23d));
-      iVar6 = *(int *)((int)this + 0x235);
-      uVar11 = GetPlayerRaceId(*(char *)((int)this + 0x24));
-      if ((&DAT_007e1984)[(uVar11 & 0xff) + ((uVar10 & 0xff) + iVar6 * 3) * 3] == '\0')
+    if (this->field_0024 != (byte *)this->field_023D) {
+      uVar12 = GetPlayerRaceId((char)(byte *)this->field_023D);
+      iVar7 = this->field_0235;
+      uVar13 = GetPlayerRaceId(*(char *)&this->field_0024);
+      if ((&DAT_007e1984)[(uVar13 & 0xff) + ((uVar12 & 0xff) + iVar7 * 3) * 3] == '\0')
       goto cf_common_join_004C01F3;
     }
-    if (*(int *)((int)this + 0x245) != 0) goto cf_common_join_004C01F3;
+    if (this->field_0245 != CASE_0) goto cf_common_join_004C01F3;
     *(undefined1 *)((int)param_1 + 0x11) = 1;
     break;
-  case 0x5d:
+  case CASE_5D:
     *(undefined1 *)((int)param_1 + 10) = 0x43;
-    if (*(int *)((int)this + 0x24) != *(int *)((int)this + 0x23d)) {
-      uVar10 = GetPlayerRaceId((char)*(int *)((int)this + 0x23d));
-      iVar6 = *(int *)((int)this + 0x235);
-      uVar11 = GetPlayerRaceId(*(char *)((int)this + 0x24));
-      if ((&DAT_007e1984)[(uVar11 & 0xff) + ((uVar10 & 0xff) + iVar6 * 3) * 3] == '\0')
+    if (this->field_0024 != (byte *)this->field_023D) {
+      uVar12 = GetPlayerRaceId((char)(byte *)this->field_023D);
+      iVar7 = this->field_0235;
+      uVar13 = GetPlayerRaceId(*(char *)&this->field_0024);
+      if ((&DAT_007e1984)[(uVar13 & 0xff) + ((uVar12 & 0xff) + iVar7 * 3) * 3] == '\0')
       goto cf_common_join_004C0278;
     }
-    if ((0x27 < *(int *)((int)this + 0x4d4)) && (*(int *)((int)this + 0x245) == 0)) {
-      iVar6 = 0x46;
+    if ((0x27 < this->field_04D4) && (this->field_0245 == CASE_0)) {
+      iVar7 = 0x46;
       goto LAB_004bf708;
     }
     goto cf_common_join_004C0278;
-  case 0x5f:
+  case CASE_5F:
     *(undefined1 *)((int)param_1 + 10) = 0x3f;
-    if (*(int *)((int)this + 0x24) == *(int *)((int)this + 0x23d)) {
+    if (this->field_0024 == (byte *)this->field_023D) {
 LAB_004c0170:
-      if (*(int *)((int)this + 0x245) != 0) goto LAB_004c0181;
-      uVar4 = 1;
+      if (this->field_0245 != CASE_0) goto LAB_004c0181;
+      uVar5 = 1;
     }
     else {
-      uVar10 = GetPlayerRaceId((char)*(int *)((int)this + 0x23d));
-      iVar6 = *(int *)((int)this + 0x235);
-      uVar11 = GetPlayerRaceId(*(char *)((int)this + 0x24));
-      if ((&DAT_007e1984)[(uVar11 & 0xff) + ((uVar10 & 0xff) + iVar6 * 3) * 3] != '\0')
+      uVar12 = GetPlayerRaceId((char)(byte *)this->field_023D);
+      iVar7 = this->field_0235;
+      uVar13 = GetPlayerRaceId(*(char *)&this->field_0024);
+      if ((&DAT_007e1984)[(uVar13 & 0xff) + ((uVar12 & 0xff) + iVar7 * 3) * 3] != '\0')
       goto LAB_004c0170;
 LAB_004c0181:
-      uVar4 = 0;
+      uVar5 = 0;
     }
-    *(undefined1 *)(param_1 + 4) = uVar4;
+    *(undefined1 *)(param_1 + 4) = uVar5;
     *(undefined1 *)((int)param_1 + 0xb) = 0x31;
-    if (*(int *)((int)this + 0x24) != *(int *)((int)this + 0x23d)) {
-      uVar10 = GetPlayerRaceId((char)*(int *)((int)this + 0x23d));
-      iVar6 = *(int *)((int)this + 0x235);
-      uVar11 = GetPlayerRaceId(*(char *)((int)this + 0x24));
-      if ((&DAT_007e1984)[(uVar11 & 0xff) + ((uVar10 & 0xff) + iVar6 * 3) * 3] == '\0')
+    if (this->field_0024 != (byte *)this->field_023D) {
+      uVar12 = GetPlayerRaceId((char)(byte *)this->field_023D);
+      iVar7 = this->field_0235;
+      uVar13 = GetPlayerRaceId(*(char *)&this->field_0024);
+      if ((&DAT_007e1984)[(uVar13 & 0xff) + ((uVar12 & 0xff) + iVar7 * 3) * 3] == '\0')
       goto cf_common_join_004C01F3;
     }
-    if (*(int *)((int)this + 0x245) != 0) goto cf_common_join_004C01F3;
+    if (this->field_0245 != CASE_0) goto cf_common_join_004C01F3;
     *(undefined1 *)((int)param_1 + 0x11) = 1;
     break;
-  case 0x61:
+  case CASE_61:
     *(undefined1 *)((int)param_1 + 10) = 0x3b;
-    if (*(int *)((int)this + 0x24) != *(int *)((int)this + 0x23d)) {
-      uVar10 = GetPlayerRaceId((char)*(int *)((int)this + 0x23d));
-      iVar6 = *(int *)((int)this + 0x235);
-      uVar11 = GetPlayerRaceId(*(char *)((int)this + 0x24));
-      if ((&DAT_007e1984)[(uVar11 & 0xff) + ((uVar10 & 0xff) + iVar6 * 3) * 3] == '\0')
+    if (this->field_0024 != (byte *)this->field_023D) {
+      uVar12 = GetPlayerRaceId((char)(byte *)this->field_023D);
+      iVar7 = this->field_0235;
+      uVar13 = GetPlayerRaceId(*(char *)&this->field_0024);
+      if ((&DAT_007e1984)[(uVar13 & 0xff) + ((uVar12 & 0xff) + iVar7 * 3) * 3] == '\0')
       goto cf_common_join_004C0278;
     }
-    if (0 < *(int *)((int)this + 0x518)) goto LAB_004bf17b;
+    if (0 < this->field_0518) goto LAB_004bf17b;
     goto cf_common_join_004C0278;
-  case 100:
+  case CASE_64:
     *(undefined1 *)((int)param_1 + 10) = 0x40;
-    if (*(int *)((int)this + 0x24) != *(int *)((int)this + 0x23d)) {
-      uVar10 = GetPlayerRaceId((char)*(int *)((int)this + 0x23d));
-      iVar6 = *(int *)((int)this + 0x235);
-      uVar11 = GetPlayerRaceId(*(char *)((int)this + 0x24));
-      if ((&DAT_007e1984)[(uVar11 & 0xff) + ((uVar10 & 0xff) + iVar6 * 3) * 3] == '\0')
+    if (this->field_0024 != (byte *)this->field_023D) {
+      uVar12 = GetPlayerRaceId((char)(byte *)this->field_023D);
+      iVar7 = this->field_0235;
+      uVar13 = GetPlayerRaceId(*(char *)&this->field_0024);
+      if ((&DAT_007e1984)[(uVar13 & 0xff) + ((uVar12 & 0xff) + iVar7 * 3) * 3] == '\0')
       goto cf_common_join_004C0278;
     }
-    iVar6 = *(int *)((int)this + 0x245);
+    pAVar17 = (AnonPointee_TLOBaseTy_061B *)this->field_0245;
 joined_r0x004bfcb7:
-    if (iVar6 != 0) goto cf_common_join_004C0278;
+    if (pAVar17 != (AnonPointee_TLOBaseTy_061B *)0x0) goto cf_common_join_004C0278;
 cf_common_join_004BEF5A:
-    uVar4 = 1;
+    uVar5 = 1;
     goto LAB_004bef5f;
-  case 0x66:
-  case 0x67:
-  case 0x6b:
-  case 0x71:
-    if ((((byte)*(undefined4 *)((int)this + 0x265) & 2) != 2) || (*(int *)((int)this + 0x26d) == 0))
-    {
+  case CASE_66:
+  case CASE_67:
+  case CASE_6B:
+  case CASE_71:
+    if ((((byte)this->field_0265 & 2) != 2) || (this->field_026D == 0)) {
       *(undefined1 *)((int)param_1 + 10) = 0x34;
-      if (*(int *)((int)this + 0x245) == 0) {
-        if (*(int *)((int)this + 0x261) != 0) {
-          if ((*(byte *)((int)this + 0x265) & 2) != 0) {
+      if (this->field_0245 == CASE_0) {
+        if (this->field_0261 != 0) {
+          if ((*(byte *)&this->field_0265 & 2) != 0) {
             *(undefined1 *)(param_1 + 4) = 3;
             break;
           }
@@ -746,187 +759,184 @@ cf_common_join_004BEF5A:
       }
       else {
 LAB_004c0261:
-        if (*(int *)((int)this + 0x261) != 0) goto cf_common_join_004BEF5A;
+        if (this->field_0261 != 0) goto cf_common_join_004BEF5A;
       }
-      if (*(int *)((int)this + 0x245) == 5) goto cf_common_join_004BEF5A;
+      if (this->field_0245 == CASE_5) goto cf_common_join_004BEF5A;
       goto cf_common_join_004C0278;
     }
     *(undefined1 *)((int)param_1 + 10) = 0x52;
-    if ((*(int *)((int)this + 0x245) == 0) || (*(int *)((int)this + 0x245) == 5))
-    goto cf_common_join_004BEF5A;
-    uVar4 = 0;
+    if ((this->field_0245 == CASE_0) || (this->field_0245 == CASE_5)) goto cf_common_join_004BEF5A;
+    uVar5 = 0;
     goto LAB_004bef5f;
-  case 0x6c:
+  case CASE_6C:
     *(undefined1 *)((int)param_1 + 10) = 0x3e;
-    if (*(int *)((int)this + 0x24) != *(int *)((int)this + 0x23d)) {
-      uVar10 = GetPlayerRaceId((char)*(int *)((int)this + 0x23d));
-      iVar6 = *(int *)((int)this + 0x235);
-      uVar11 = GetPlayerRaceId(*(char *)((int)this + 0x24));
-      if ((&DAT_007e1984)[(uVar11 & 0xff) + ((uVar10 & 0xff) + iVar6 * 3) * 3] == '\0')
+    if (this->field_0024 != (byte *)this->field_023D) {
+      uVar12 = GetPlayerRaceId((char)(byte *)this->field_023D);
+      iVar7 = this->field_0235;
+      uVar13 = GetPlayerRaceId(*(char *)&this->field_0024);
+      if ((&DAT_007e1984)[(uVar13 & 0xff) + ((uVar12 & 0xff) + iVar7 * 3) * 3] == '\0')
       goto cf_common_join_004C0278;
     }
-    if (*(int *)((int)this + 0x245) == 0) {
-      iVar6 = *(int *)((int)this + 0x61b);
+    if (this->field_0245 == CASE_0) {
+      pAVar17 = this->field_061B;
       goto joined_r0x004bfcb7;
     }
     goto cf_common_join_004C0278;
-  case 0x6d:
+  case CASE_6D:
     *(undefined1 *)((int)param_1 + 10) = 0x42;
-    if (*(int *)((int)this + 0x24) == *(int *)((int)this + 0x23d)) {
+    if (this->field_0024 == (byte *)this->field_023D) {
 LAB_004bfee5:
-      if ((*(int *)((int)this + 0x245) != 0) ||
-         ((*(int *)((int)this + 0x4d0) != 0 && (*(int *)((int)this + 0x4d4) != 0))))
+      if ((this->field_0245 != CASE_0) || ((this->field_04D0 != CASE_0 && (this->field_04D4 != 0))))
       goto LAB_004bff0a;
-      uVar4 = 1;
+      uVar5 = 1;
     }
     else {
-      uVar10 = GetPlayerRaceId((char)*(int *)((int)this + 0x23d));
-      iVar6 = *(int *)((int)this + 0x235);
-      uVar11 = GetPlayerRaceId(*(char *)((int)this + 0x24));
-      if ((&DAT_007e1984)[(uVar11 & 0xff) + ((uVar10 & 0xff) + iVar6 * 3) * 3] != '\0')
+      uVar12 = GetPlayerRaceId((char)(byte *)this->field_023D);
+      iVar7 = this->field_0235;
+      uVar13 = GetPlayerRaceId(*(char *)&this->field_0024);
+      if ((&DAT_007e1984)[(uVar13 & 0xff) + ((uVar12 & 0xff) + iVar7 * 3) * 3] != '\0')
       goto LAB_004bfee5;
 LAB_004bff0a:
-      uVar4 = 0;
+      uVar5 = 0;
     }
-    *(undefined1 *)(param_1 + 4) = uVar4;
+    *(undefined1 *)(param_1 + 4) = uVar5;
     *(undefined1 *)((int)param_1 + 0xb) = 0x38;
-    if (*(int *)((int)this + 0x24) == *(int *)((int)this + 0x23d)) {
+    if (this->field_0024 == (byte *)this->field_023D) {
 LAB_004bff65:
-      if ((*(int *)((int)this + 0x245) != 0) || (*(int *)((int)this + 0x4d0) == 0))
-      goto LAB_004bff80;
-      uVar4 = 1;
+      if ((this->field_0245 != CASE_0) || (this->field_04D0 == CASE_0)) goto LAB_004bff80;
+      uVar5 = 1;
     }
     else {
-      uVar10 = GetPlayerRaceId((char)*(int *)((int)this + 0x23d));
-      iVar6 = *(int *)((int)this + 0x235);
-      uVar11 = GetPlayerRaceId(*(char *)((int)this + 0x24));
-      if ((&DAT_007e1984)[(uVar11 & 0xff) + ((uVar10 & 0xff) + iVar6 * 3) * 3] != '\0')
+      uVar12 = GetPlayerRaceId((char)(byte *)this->field_023D);
+      iVar7 = this->field_0235;
+      uVar13 = GetPlayerRaceId(*(char *)&this->field_0024);
+      if ((&DAT_007e1984)[(uVar13 & 0xff) + ((uVar12 & 0xff) + iVar7 * 3) * 3] != '\0')
       goto LAB_004bff65;
 LAB_004bff80:
-      uVar4 = 0;
+      uVar5 = 0;
     }
-    *(undefined1 *)((int)param_1 + 0x11) = uVar4;
+    *(undefined1 *)((int)param_1 + 0x11) = uVar5;
     *(undefined1 *)(param_1 + 3) = 0x45;
-    if (*(int *)((int)this + 0x24) == *(int *)((int)this + 0x23d)) {
+    if (this->field_0024 == (byte *)this->field_023D) {
 LAB_004bffdb:
-      if ((*(int *)((int)this + 0x245) == 0) && (*(int *)((int)this + 0x4d4) != 0)) {
+      if ((this->field_0245 == CASE_0) && (this->field_04D4 != 0)) {
         *(undefined1 *)((int)param_1 + 0x12) = 1;
         break;
       }
     }
     else {
-      uVar10 = GetPlayerRaceId((char)*(int *)((int)this + 0x23d));
-      iVar6 = *(int *)((int)this + 0x235);
-      uVar11 = GetPlayerRaceId(*(char *)((int)this + 0x24));
-      if ((&DAT_007e1984)[(uVar11 & 0xff) + ((uVar10 & 0xff) + iVar6 * 3) * 3] != '\0')
+      uVar12 = GetPlayerRaceId((char)(byte *)this->field_023D);
+      iVar7 = this->field_0235;
+      uVar13 = GetPlayerRaceId(*(char *)&this->field_0024);
+      if ((&DAT_007e1984)[(uVar13 & 0xff) + ((uVar12 & 0xff) + iVar7 * 3) * 3] != '\0')
       goto LAB_004bffdb;
     }
 /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
 LAB_004bfffc:
     *(undefined1 *)((int)param_1 + 0x12) = 0;
     break;
-  case 0x70:
-    if (*(int *)((int)this + 0x4f0) == 0) {
+  case CASE_70:
+    if (this->field_04F0 == 0) {
       *(undefined1 *)((int)param_1 + 10) = 0x36;
-      if (*(int *)((int)this + 0x24) != *(int *)((int)this + 0x23d)) {
-        uVar10 = GetPlayerRaceId((char)*(int *)((int)this + 0x23d));
-        iVar6 = *(int *)((int)this + 0x235);
-        uVar11 = GetPlayerRaceId(*(char *)((int)this + 0x24));
-        if ((&DAT_007e1984)[(uVar11 & 0xff) + ((uVar10 & 0xff) + iVar6 * 3) * 3] == '\0')
+      if (this->field_0024 != (byte *)this->field_023D) {
+        uVar12 = GetPlayerRaceId((char)(byte *)this->field_023D);
+        iVar7 = this->field_0235;
+        uVar13 = GetPlayerRaceId(*(char *)&this->field_0024);
+        if ((&DAT_007e1984)[(uVar13 & 0xff) + ((uVar12 & 0xff) + iVar7 * 3) * 3] == '\0')
         goto cf_common_join_004C0278;
       }
-      if (*(int *)((int)this + 0x245) != 0) goto cf_common_join_004C0278;
-      iVar6 = *(int *)((int)this + 0x4d0);
+      if (this->field_0245 != CASE_0) goto cf_common_join_004C0278;
+      TVar11 = this->field_04D0;
     }
     else {
       *(undefined1 *)((int)param_1 + 10) = 0x34;
-      if (*(int *)((int)this + 0x24) != *(int *)((int)this + 0x23d)) {
-        uVar10 = GetPlayerRaceId((char)*(int *)((int)this + 0x23d));
-        iVar6 = *(int *)((int)this + 0x235);
-        uVar11 = GetPlayerRaceId(*(char *)((int)this + 0x24));
-        if ((&DAT_007e1984)[(uVar11 & 0xff) + ((uVar10 & 0xff) + iVar6 * 3) * 3] == '\0')
+      if (this->field_0024 != (byte *)this->field_023D) {
+        uVar12 = GetPlayerRaceId((char)(byte *)this->field_023D);
+        iVar7 = this->field_0235;
+        uVar13 = GetPlayerRaceId(*(char *)&this->field_0024);
+        if ((&DAT_007e1984)[(uVar13 & 0xff) + ((uVar12 & 0xff) + iVar7 * 3) * 3] == '\0')
         goto cf_common_join_004C0278;
       }
-      iVar6 = *(int *)((int)this + 0x245);
+      TVar11 = this->field_0245;
     }
-    if ((iVar6 == 0) && (99 < *(int *)((int)this + 0x4ec))) goto cf_common_join_004BEF5A;
+    if ((TVar11 == CASE_0) && (99 < (int)this->field_04EC)) goto cf_common_join_004BEF5A;
 cf_common_join_004C0278:
-    uVar4 = 0;
+    uVar5 = 0;
 LAB_004bef5f:
-    *(undefined1 *)(param_1 + 4) = uVar4;
+    *(undefined1 *)(param_1 + 4) = uVar5;
     break;
-  case 0x72:
+  case CASE_72:
     *(undefined1 *)((int)param_1 + 10) = 0x34;
-    if (*(int *)((int)this + 0x24) == *(int *)((int)this + 0x23d)) {
+    if (this->field_0024 == (byte *)this->field_023D) {
 LAB_004c005c:
-      if (*(int *)((int)this + 0x261) == 0) goto LAB_004c006d;
-      uVar4 = 1;
+      if (this->field_0261 == 0) goto LAB_004c006d;
+      uVar5 = 1;
     }
     else {
-      uVar10 = GetPlayerRaceId((char)*(int *)((int)this + 0x23d));
-      iVar6 = *(int *)((int)this + 0x235);
-      uVar11 = GetPlayerRaceId(*(char *)((int)this + 0x24));
-      if ((&DAT_007e1984)[(uVar11 & 0xff) + ((uVar10 & 0xff) + iVar6 * 3) * 3] != '\0')
+      uVar12 = GetPlayerRaceId((char)(byte *)this->field_023D);
+      iVar7 = this->field_0235;
+      uVar13 = GetPlayerRaceId(*(char *)&this->field_0024);
+      if ((&DAT_007e1984)[(uVar13 & 0xff) + ((uVar12 & 0xff) + iVar7 * 3) * 3] != '\0')
       goto LAB_004c005c;
 LAB_004c006d:
-      uVar4 = 0;
+      uVar5 = 0;
     }
-    *(undefined1 *)(param_1 + 4) = uVar4;
+    *(undefined1 *)(param_1 + 4) = uVar5;
     *(undefined1 *)((int)param_1 + 0xb) = 0x4f;
-    if (*(int *)((int)this + 0x24) == *(int *)((int)this + 0x23d)) {
+    if (this->field_0024 == (byte *)this->field_023D) {
 LAB_004c00cc:
-      if ((((*(int *)((int)this + 0x245) == 0) &&
-           (iVar6 = thunk_FUN_004e60d0(*(int *)((int)this + 0x24),0x75), iVar6 != 0)) &&
-          (*(int *)((int)this + 0x4d0) == 0)) && (*(int *)((int)this + 0x361) == 0)) {
+      if ((((this->field_0245 == CASE_0) &&
+           (iVar7 = thunk_FUN_004e60d0((int)this->field_0024,0x75), iVar7 != 0)) &&
+          (this->field_04D0 == CASE_0)) && (*(int *)&this->field_0x361 == 0)) {
         *(undefined1 *)((int)param_1 + 0x11) = 1;
         break;
       }
     }
     else {
-      uVar10 = GetPlayerRaceId((char)*(int *)((int)this + 0x23d));
-      iVar6 = *(int *)((int)this + 0x235);
-      uVar11 = GetPlayerRaceId(*(char *)((int)this + 0x24));
-      if ((&DAT_007e1984)[(uVar11 & 0xff) + ((uVar10 & 0xff) + iVar6 * 3) * 3] != '\0')
+      uVar12 = GetPlayerRaceId((char)(byte *)this->field_023D);
+      iVar7 = this->field_0235;
+      uVar13 = GetPlayerRaceId(*(char *)&this->field_0024);
+      if ((&DAT_007e1984)[(uVar13 & 0xff) + ((uVar12 & 0xff) + iVar7 * 3) * 3] != '\0')
       goto LAB_004c00cc;
     }
 /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
 cf_common_join_004C01F3:
     *(undefined1 *)((int)param_1 + 0x11) = 0;
   }
-  switch(*(undefined4 *)((int)this + 0x5ac)) {
-  case 0x32:
-  case 0x40:
-  case 0x49:
-  case 0x5c:
-    if (*(int *)((int)this + 0x361) == 1) {
-      *(undefined4 *)((int)param_1 + 0x1d) = *(undefined4 *)((int)this + 0x369);
-      iVar6 = GetPlayerRaceId(*(char *)((int)this + 0x24));
-      if ((char)iVar6 == '\x03') {
-        sVar5 = (short)*(undefined4 *)((int)this + 0x3a4);
-        sVar15 = (short)*(undefined4 *)((int)this + 0x3b4);
+  switch(this->field_05AC) {
+  case CASE_32:
+  case CASE_40:
+  case CASE_49:
+  case CASE_5C:
+    if (*(int *)&this->field_0x361 == 1) {
+      *(undefined4 *)((int)param_1 + 0x1d) = *(undefined4 *)&this->field_0x369;
+      iVar7 = GetPlayerRaceId(*(char *)&this->field_0024);
+      if ((char)iVar7 == '\x03') {
+        sVar6 = (short)this->field_03A4;
+        sVar18 = (short)this->field_03B4;
       }
       else {
-        sVar5 = (short)*(undefined4 *)((int)this + 0x3a0);
-        sVar15 = (short)*(undefined4 *)((int)this + 0x3b0);
+        sVar6 = (short)this->field_03A0;
+        sVar18 = (short)this->field_03B0;
       }
-      *(short *)((int)param_1 + 0x27) = sVar5 - sVar15;
-      *(short *)((int)param_1 + 0x2b) =
-           (short)((*(int *)((int)this + 0x39c) * (100 - *(int *)((int)this + 0x394))) / 100);
-      *(undefined1 *)((int)param_1 + 0x2f) = *(undefined1 *)((int)this + 0x394);
-      iVar6 = GetPlayerRaceId(*(char *)((int)this + 0x24));
-      *(char *)((int)param_1 + 0x25) = (char)iVar6;
-      if (*(int *)((int)this + 0x5ac) == 0x40) {
-        iVar6 = thunk_FUN_004c9370(this,1,9,-1);
-        *(char *)((int)param_1 + 0x31) = (char)iVar6;
-        if ((*(int *)((int)this + 0x361) == 1) && (*(int *)((int)this + 0x369) == 9)) {
-          *(char *)((int)param_1 + 0x31) = *(char *)((int)this + 0x36d) + (char)iVar6;
+      *(short *)((int)param_1 + 0x27) = sVar6 - sVar18;
+      *(short *)((int)param_1 + 0x2b) = (short)((this->field_039C * (100 - this->field_0394)) / 100)
+      ;
+      *(char *)((int)param_1 + 0x2f) = (char)this->field_0394;
+      iVar7 = GetPlayerRaceId(*(char *)&this->field_0024);
+      *(char *)((int)param_1 + 0x25) = (char)iVar7;
+      if (this->field_05AC == CASE_40) {
+        iVar7 = sub_004C9370(this,1,9,-1);
+        *(char *)((int)param_1 + 0x31) = (char)iVar7;
+        if ((*(int *)&this->field_0x361 == 1) && (*(int *)&this->field_0x369 == 9)) {
+          *(char *)((int)param_1 + 0x31) = this->field_0x36d + (char)iVar7;
         }
       }
-      else if (*(int *)((int)this + 0x5ac) == 0x49) {
-        iVar6 = thunk_FUN_004c9370(this,1,0x15,-1);
-        *(char *)((int)param_1 + 0x31) = (char)iVar6;
-        if ((*(int *)((int)this + 0x361) == 1) && (*(int *)((int)this + 0x369) == 0x15)) {
-          *(char *)((int)param_1 + 0x31) = *(char *)((int)this + 0x36d) + (char)iVar6;
+      else if (this->field_05AC == CASE_49) {
+        iVar7 = sub_004C9370(this,1,0x15,-1);
+        *(char *)((int)param_1 + 0x31) = (char)iVar7;
+        if ((*(int *)&this->field_0x361 == 1) && (*(int *)&this->field_0x369 == 0x15)) {
+          *(char *)((int)param_1 + 0x31) = this->field_0x36d + (char)iVar7;
         }
       }
       else {
@@ -941,140 +951,138 @@ cf_common_join_004C01F3:
       *(undefined1 *)((int)param_1 + 0x31) = 0;
     }
     break;
-  case 0x33:
-    puVar16 = (undefined2 *)((int)param_1 + 0x2b);
+  case CASE_33:
+    puVar19 = (undefined2 *)((int)param_1 + 0x2b);
     local_8 = (int *)((int)param_1 + 0x1d);
     param_1 = (int *)0x0;
-    piVar17 = (int *)((int)this + 0x4d8);
+    piVar16 = &this->field_04D8;
     do {
-      if ((piVar17[-2] == 0) || (piVar17[-1] == 0)) {
+      if ((piVar16[-2] == 0) || (piVar16[-1] == 0)) {
         *local_8 = 0;
-        puVar16[-2] = 0xffff;
-        *puVar16 = 0xffff;
-        *(undefined1 *)((int)param_1 + 0x2f + (int)piVar2) = 0xff;
+        puVar19[-2] = 0xffff;
+        *puVar19 = 0xffff;
+        *(undefined1 *)((int)param_1 + 0x2f + (int)piVar3) = 0xff;
       }
       else {
-        *local_8 = *piVar17;
-        puVar16[-2] = (short)((*(int *)(&DAT_007e085c + *piVar17 * 4) * (piVar17[3] - piVar17[2])) /
-                             piVar17[3]);
-        *puVar16 = 0xffff;
-        *(char *)((int)param_1 + 0x2f + (int)piVar2) = (char)((piVar17[2] * 100) / piVar17[3]);
-        iVar6 = GetPlayerRaceId(*(char *)((int)this + 0x24));
-        *(char *)((int)param_1 + 0x25 + (int)piVar2) = (char)iVar6;
+        *local_8 = *piVar16;
+        puVar19[-2] = (short)((*(int *)(&DAT_007e085c + *piVar16 * 4) * (piVar16[3] - piVar16[2])) /
+                             piVar16[3]);
+        *puVar19 = 0xffff;
+        *(char *)((int)param_1 + 0x2f + (int)piVar3) = (char)((piVar16[2] * 100) / piVar16[3]);
+        iVar7 = GetPlayerRaceId(*(char *)&this->field_0024);
+        *(char *)((int)param_1 + 0x25 + (int)piVar3) = (char)iVar7;
       }
       param_1 = (int *)((int)param_1 + 1);
-      piVar17 = piVar17 + 10;
+      piVar16 = piVar16 + 10;
       local_8 = local_8 + 1;
-      puVar16 = puVar16 + 1;
+      puVar19 = puVar19 + 1;
     } while ((int)param_1 < 2);
     break;
-  case 0x34:
-    piVar17 = (int *)((int)this + 0x4d0);
-    if (0 < *(int *)((int)this + 0x4d0)) {
-      puVar12 = (undefined1 *)((int)this + 0x4dc);
+  case CASE_34:
+    pTVar20 = &this->field_04D0;
+    if (0 < (int)this->field_04D0) {
+      puVar14 = &this->field_04DC;
       do {
-        if ((&DAT_007bf678)[(*piVar17 + -0x96) * 3] == 1) {
-          if (*(int *)(&DAT_007e6028 + (*(int *)(puVar12 + -0xc) + -0x96) * 0x14) != 0) {
-            uVar18 = (undefined2)*(int *)(&DAT_007e6028 + (*(int *)(puVar12 + -0xc) + -0x96) * 0x14)
-            ;
-            switch(*(int *)(puVar12 + -0xc)) {
+        if ((&DAT_007bf678)[(*pTVar20 - 0x96) * 3] == 1) {
+          if (*(int *)(&DAT_007e6028 + (puVar14[-3] - 0x96) * 0x14) != 0) {
+            uVar21 = (undefined2)*(int *)(&DAT_007e6028 + (puVar14[-3] - 0x96) * 0x14);
+            switch(puVar14[-3]) {
             case 0x96:
               *(undefined1 *)(param_1 + 7) = 1;
-              *(undefined2 *)(param_1 + 8) = uVar18;
-              *(undefined2 *)((int)param_1 + 0x1e) = *(undefined2 *)(puVar12 + -8);
-              *(undefined1 *)((int)param_1 + 0x1d) = *puVar12;
+              *(undefined2 *)(param_1 + 8) = uVar21;
+              *(short *)((int)param_1 + 0x1e) = (short)puVar14[-2];
+              *(char *)((int)param_1 + 0x1d) = (char)*puVar14;
               break;
             /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
             case 0x97:
               *(undefined1 *)((int)param_1 + 0x22) = 1;
-              *(undefined2 *)((int)param_1 + 0x26) = uVar18;
-              *(undefined2 *)(param_1 + 9) = *(undefined2 *)(puVar12 + -8);
-              *(undefined1 *)((int)param_1 + 0x23) = *puVar12;
+              *(undefined2 *)((int)param_1 + 0x26) = uVar21;
+              *(short *)(param_1 + 9) = (short)puVar14[-2];
+              *(char *)((int)param_1 + 0x23) = (char)*puVar14;
               break;
             case 0x98:
               *(undefined1 *)(param_1 + 10) = 1;
-              *(undefined2 *)(param_1 + 0xb) = uVar18;
-              *(undefined2 *)((int)param_1 + 0x2a) = *(undefined2 *)(puVar12 + -8);
-              *(undefined1 *)((int)param_1 + 0x29) = *puVar12;
+              *(undefined2 *)(param_1 + 0xb) = uVar21;
+              *(short *)((int)param_1 + 0x2a) = (short)puVar14[-2];
+              *(char *)((int)param_1 + 0x29) = (char)*puVar14;
               break;
             /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
             case 0x99:
               *(undefined1 *)((int)param_1 + 0x2e) = 1;
-              *(undefined2 *)((int)param_1 + 0x32) = uVar18;
-              *(undefined2 *)(param_1 + 0xc) = *(undefined2 *)(puVar12 + -8);
-              *(undefined1 *)((int)param_1 + 0x2f) = *puVar12;
+              *(undefined2 *)((int)param_1 + 0x32) = uVar21;
+              *(short *)(param_1 + 0xc) = (short)puVar14[-2];
+              *(char *)((int)param_1 + 0x2f) = (char)*puVar14;
               break;
             /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
             case 0x9a:
               *(undefined1 *)(param_1 + 0xd) = 1;
-              *(undefined2 *)(param_1 + 0xe) = uVar18;
-              *(undefined2 *)((int)param_1 + 0x36) = *(undefined2 *)(puVar12 + -8);
-              *(undefined1 *)((int)param_1 + 0x35) = *puVar12;
+              *(undefined2 *)(param_1 + 0xe) = uVar21;
+              *(short *)((int)param_1 + 0x36) = (short)puVar14[-2];
+              *(char *)((int)param_1 + 0x35) = (char)*puVar14;
               break;
             /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
             case 0xa6:
               *(undefined1 *)((int)param_1 + 0x3a) = 1;
-              *(undefined2 *)((int)param_1 + 0x3e) = uVar18;
-              *(undefined2 *)(param_1 + 0xf) = *(undefined2 *)(puVar12 + -8);
-              *(undefined1 *)((int)param_1 + 0x3b) = *puVar12;
+              *(undefined2 *)((int)param_1 + 0x3e) = uVar21;
+              *(short *)(param_1 + 0xf) = (short)puVar14[-2];
+              *(char *)((int)param_1 + 0x3b) = (char)*puVar14;
               break;
             /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
             case 0xa7:
               *(undefined1 *)((int)param_1 + 0x46) = 1;
-              *(undefined2 *)((int)param_1 + 0x4a) = uVar18;
-              *(undefined2 *)(param_1 + 0x12) = *(undefined2 *)(puVar12 + -8);
-              *(undefined1 *)((int)param_1 + 0x47) = *puVar12;
+              *(undefined2 *)((int)param_1 + 0x4a) = uVar21;
+              *(short *)(param_1 + 0x12) = (short)puVar14[-2];
+              *(char *)((int)param_1 + 0x47) = (char)*puVar14;
               break;
             /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
             case 0xa9:
               *(undefined1 *)(param_1 + 0x10) = 1;
-              *(undefined2 *)(param_1 + 0x11) = uVar18;
-              *(undefined2 *)((int)param_1 + 0x42) = *(undefined2 *)(puVar12 + -8);
-              *(undefined1 *)((int)param_1 + 0x41) = *puVar12;
+              *(undefined2 *)(param_1 + 0x11) = uVar21;
+              *(short *)((int)param_1 + 0x42) = (short)puVar14[-2];
+              *(char *)((int)param_1 + 0x41) = (char)*puVar14;
               break;
             /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
             case 0xab:
               *(undefined1 *)(param_1 + 0x13) = 1;
-              *(undefined2 *)(param_1 + 0x14) = uVar18;
-              *(undefined2 *)((int)param_1 + 0x4e) = *(undefined2 *)(puVar12 + -8);
-              *(undefined1 *)((int)param_1 + 0x4d) = *puVar12;
+              *(undefined2 *)(param_1 + 0x14) = uVar21;
+              *(short *)((int)param_1 + 0x4e) = (short)puVar14[-2];
+              *(char *)((int)param_1 + 0x4d) = (char)*puVar14;
               break;
             /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
             case 0xac:
               *(undefined1 *)((int)param_1 + 0x52) = 1;
-              *(undefined2 *)((int)param_1 + 0x56) = uVar18;
-              *(undefined2 *)(param_1 + 0x15) = *(undefined2 *)(puVar12 + -8);
-              *(undefined1 *)((int)param_1 + 0x53) = *puVar12;
+              *(undefined2 *)((int)param_1 + 0x56) = uVar21;
+              *(short *)(param_1 + 0x15) = (short)puVar14[-2];
+              *(char *)((int)param_1 + 0x53) = (char)*puVar14;
             }
           }
         }
-        piVar1 = (int *)(puVar12 + 8);
-        piVar17 = (int *)(puVar12 + 8);
-        puVar12 = puVar12 + 0x14;
-      } while (0 < *piVar1);
+        piVar16 = (int *)(puVar14 + 2);
+        pTVar20 = puVar14 + 2;
+        puVar14 = puVar14 + 5;
+      } while (0 < *piVar16);
     }
     break;
-  case 0x35:
-  case 0x54:
-  case 0x55:
-  case 0x56:
-  case 0x57:
-  case 0x58:
-  case 0x59:
-  case 0x5a:
-    if (*(int *)((int)this + 0x361) == 2) {
-      *(undefined1 *)(param_1 + 0xf) = *(undefined1 *)((int)this + 0x369);
-      if (*(byte *)((int)&DAT_00798fd8 + *(int *)((int)this + 0x369)) < 2) {
-        cVar3 = '\0';
+  case CASE_35:
+  case CASE_54:
+  case CASE_55:
+  case CASE_56:
+  case CASE_57:
+  case CASE_58:
+  case CASE_59:
+  case CASE_5A:
+    if (*(int *)&this->field_0x361 == 2) {
+      *(undefined1 *)(param_1 + 0xf) = this->field_0x369;
+      if (*(byte *)((int)&DAT_00798fd8 + *(int *)&this->field_0x369) < 2) {
+        cVar4 = '\0';
       }
       else {
-        uVar13 = thunk_FUN_004e60d0(*(int *)((int)this + 0x24),*(int *)((int)this + 0x369));
-        cVar3 = (char)uVar13 + '\x01';
+        uVar15 = thunk_FUN_004e60d0((int)this->field_0024,*(int *)&this->field_0x369);
+        cVar4 = (char)uVar15 + '\x01';
       }
-      *(char *)((int)param_1 + 0x3d) = cVar3;
-      *(undefined1 *)((int)param_1 + 0x3e) = *(undefined1 *)((int)this + 0x394);
-      *(short *)((int)param_1 + 0x27) =
-           *(short *)((int)this + 0x398) - *(short *)((int)this + 0x3a8);
+      *(char *)((int)param_1 + 0x3d) = cVar4;
+      *(char *)((int)param_1 + 0x3e) = (char)this->field_0394;
+      *(short *)((int)param_1 + 0x27) = (short)this->field_0398 - *(short *)&this->field_03A8;
       *(undefined2 *)((int)param_1 + 0x2b) = 0xffff;
     }
     else {
@@ -1084,53 +1092,53 @@ cf_common_join_004C01F3:
       *(undefined2 *)((int)param_1 + 0x27) = 0xffff;
       *(undefined2 *)((int)param_1 + 0x2b) = 0xffff;
       *(undefined2 *)((int)param_1 + 0x3a) = 0;
-      iVar6 = *(int *)((int)this + 0x5ac);
+      TVar2 = this->field_05AC;
       param_1 = (int *)0x0;
-      if (iVar6 == 0x35) {
+      if (TVar2 == CASE_35) {
         do {
-          if ((&PTR_DAT_007bfc04)[*(int *)((int)this + 0x239)][(int)param_1] == '\0') {
-            iVar6 = thunk_FUN_004e60d0(*(int *)((int)this + 0x24),(int)param_1);
-            iVar6 = thunk_FUN_004e7f20(*(int *)((int)this + 0x24),(int)param_1,iVar6 + 1);
+          if ((&PTR_DAT_007bfc04)[this->field_0239][(int)param_1] == '\0') {
+            iVar7 = thunk_FUN_004e60d0((int)this->field_0024,(int)param_1);
+            iVar7 = thunk_FUN_004e7f20((int)this->field_0024,(int)param_1,iVar7 + 1);
           }
           else {
-            iVar6 = thunk_FUN_004e5910(*(int *)((int)this + 0x24),(uint)param_1);
+            iVar7 = thunk_FUN_004e5910((int)this->field_0024,(uint)param_1);
           }
-          if (iVar6 != 0) {
-            uVar4 = thunk_FUN_004e6140(*(int *)((int)this + 0x24),(int)param_1);
-            iVar6 = thunk_FUN_004e60d0(*(int *)((int)this + 0x24),(int)param_1);
-            /* ST_PSEUDO[return_width_artifact,raw_pointer_offset]: candidate call-output artifact: verify return width, clobbers, or x87 state; candidate structure field after proof; otherwise retain buffer arithmetic */
-            if (((iVar6 < CONCAT31(extraout_var_01,uVar4)) &&
-                (iVar6 = thunk_FUN_004e5f90(*(int *)((int)this + 0x24),(uint)param_1), iVar6 == 0))
-               && (((&PTR_DAT_007bfc04)[*(int *)((int)this + 0x239)][(int)param_1] == '\0' ||
-                   (bVar19 = thunk_FUN_004e5c40(*(int *)((int)this + 0x24),(uint)param_1),
-                   CONCAT31(extraout_var_02,bVar19) != 0)))) {
-              *(short *)((int)piVar2 + 0x3a) = *(short *)((int)piVar2 + 0x3a) + 1;
+          if (iVar7 != 0) {
+            uVar5 = thunk_FUN_004e6140((int)this->field_0024,(int)param_1);
+            iVar7 = thunk_FUN_004e60d0((int)this->field_0024,(int)param_1);
+            /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+            if (((iVar7 < CONCAT31(extraout_var_01,uVar5)) &&
+                (iVar7 = thunk_FUN_004e5f90((int)this->field_0024,(uint)param_1), iVar7 == 0)) &&
+               (((&PTR_DAT_007bfc04)[this->field_0239][(int)param_1] == '\0' ||
+                (bVar22 = thunk_FUN_004e5c40((int)this->field_0024,(uint)param_1),
+                CONCAT31(extraout_var_02,bVar22) != 0)))) {
+              *(short *)((int)piVar3 + 0x3a) = *(short *)((int)piVar3 + 0x3a) + 1;
             }
           }
           param_1 = (int *)((int)param_1 + 1);
         } while ((int)param_1 < 0x9b);
       }
-      else if ((&DAT_0079a3fc)[(iVar6 * 3 + -0xfc) * 5] != 0) {
-        local_c = &DAT_0079a3fc + (iVar6 * 3 + -0xfc) * 5;
+      else if ((&DAT_0079a3fc)[(TVar2 * 3 + -0xfc) * 5] != 0) {
+        local_c = &DAT_0079a3fc + (TVar2 * 3 + -0xfc) * 5;
         do {
           if (0xe < (int)param_1) break;
-          if ((&PTR_DAT_007bfc04)[*(int *)((int)this + 0x239)][(int)param_1] == '\0') {
-            iVar6 = thunk_FUN_004e60d0(*(int *)((int)this + 0x24),(int)param_1);
-            iVar6 = thunk_FUN_004e7f20(*(int *)((int)this + 0x24),(int)param_1,iVar6 + 1);
+          if ((&PTR_DAT_007bfc04)[this->field_0239][(int)param_1] == '\0') {
+            iVar7 = thunk_FUN_004e60d0((int)this->field_0024,(int)param_1);
+            iVar7 = thunk_FUN_004e7f20((int)this->field_0024,(int)param_1,iVar7 + 1);
           }
           else {
-            iVar6 = thunk_FUN_004e5910(*(int *)((int)this + 0x24),(uint)param_1);
+            iVar7 = thunk_FUN_004e5910((int)this->field_0024,(uint)param_1);
           }
-          if (iVar6 != 0) {
-            uVar4 = thunk_FUN_004e6140(*(int *)((int)this + 0x24),(int)param_1);
-            iVar6 = thunk_FUN_004e60d0(*(int *)((int)this + 0x24),(int)param_1);
-            /* ST_PSEUDO[return_width_artifact,raw_pointer_offset]: candidate call-output artifact: verify return width, clobbers, or x87 state; candidate structure field after proof; otherwise retain buffer arithmetic */
-            if (((iVar6 < CONCAT31(extraout_var,uVar4)) &&
-                (iVar6 = thunk_FUN_004e5f90(*(int *)((int)this + 0x24),(uint)param_1), iVar6 == 0))
-               && (((&PTR_DAT_007bfc04)[*(int *)((int)this + 0x239)][(int)param_1] == '\0' ||
-                   (bVar19 = thunk_FUN_004e5c40(*(int *)((int)this + 0x24),(uint)param_1),
-                   CONCAT31(extraout_var_00,bVar19) != 0)))) {
-              *(short *)((int)piVar2 + 0x3a) = *(short *)((int)piVar2 + 0x3a) + 1;
+          if (iVar7 != 0) {
+            uVar5 = thunk_FUN_004e6140((int)this->field_0024,(int)param_1);
+            iVar7 = thunk_FUN_004e60d0((int)this->field_0024,(int)param_1);
+            /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+            if (((iVar7 < CONCAT31(extraout_var,uVar5)) &&
+                (iVar7 = thunk_FUN_004e5f90((int)this->field_0024,(uint)param_1), iVar7 == 0)) &&
+               (((&PTR_DAT_007bfc04)[this->field_0239][(int)param_1] == '\0' ||
+                (bVar22 = thunk_FUN_004e5c40((int)this->field_0024,(uint)param_1),
+                CONCAT31(extraout_var_00,bVar22) != 0)))) {
+              *(short *)((int)piVar3 + 0x3a) = *(short *)((int)piVar3 + 0x3a) + 1;
             }
           }
           param_1 = (int *)((int)param_1 + 1);
@@ -1139,70 +1147,70 @@ cf_common_join_004C01F3:
       }
     }
     break;
-  case 0x36:
-    iVar6 = *(int *)((int)this + 0x4d4) * 0x28;
-    iVar6 = iVar6 / 0x28 + (iVar6 >> 0x1f);
+  case CASE_36:
+    iVar7 = this->field_04D4 * 0x28;
+    iVar7 = iVar7 / 0x28 + (iVar7 >> 0x1f);
     goto cf_common_join_004C0FC5;
-  case 0x37:
+  case CASE_37:
     goto switchD_004bef7c_caseD_37;
-  case 0x38:
-  case 0x39:
-  case 0x4f:
-  case 0x5e:
-    if (*(int *)((int)this + 0x4d4) == 0) {
+  case CASE_38:
+  case CASE_39:
+  case CASE_4F:
+  case CASE_5E:
+    if (this->field_04D4 == 0) {
       *(undefined2 *)((int)param_1 + 0x3f) = 0;
     }
     else {
-      *(short *)((int)param_1 + 0x3f) = (short)*(undefined4 *)((int)this + 0x4e0);
+      *(short *)((int)param_1 + 0x3f) = (short)this->field_04E0;
     }
     break;
-  case 0x3a:
-    iVar6 = *(int *)((int)this + 0x4d0) * 400;
+  case CASE_3A:
+    iVar7 = this->field_04D0 * 400;
     *(short *)((int)param_1 + 0x3f) =
-         ((short)(iVar6 / 100) + (short)(iVar6 >> 0x1f)) -
-         (short)((longlong)iVar6 * 0x51eb851f >> 0x3f);
-    iVar6 = thunk_FUN_004d8250();
-    *(char *)((int)param_1 + 0x45) = (char)iVar6;
-    if (*(int *)((int)this + 0x4e4) == 0) {
-      iVar6 = thunk_FUN_004d8280();
-      *(char *)((int)param_1 + 0x46) = (char)iVar6;
+         ((short)(iVar7 / 100) + (short)(iVar7 >> 0x1f)) -
+         (short)((longlong)iVar7 * 0x51eb851f >> 0x3f);
+    iVar7 = thunk_FUN_004d8250();
+    *(char *)((int)param_1 + 0x45) = (char)iVar7;
+    if (this->field_04E4 == 0) {
+      iVar7 = thunk_FUN_004d8280();
+      *(char *)((int)param_1 + 0x46) = (char)iVar7;
     }
     else {
-      iVar6 = thunk_FUN_004d8280();
-      iVar7 = thunk_FUN_004d8230();
-      *(char *)((int)param_1 + 0x46) = (char)((uint)(iVar7 * iVar6) / *(uint *)((int)this + 0x4e4));
+      iVar7 = thunk_FUN_004d8280();
+      iVar8 = thunk_FUN_004d8230();
+      *(char *)((int)param_1 + 0x46) = (char)((uint)(iVar8 * iVar7) / (uint)this->field_04E4);
     }
     break;
-  case 0x3c:
-  case 0x53:
-    switch(g_playerRuntime[*(int *)((int)this + 0x24)].field2180_0xa0e) {
+  case CASE_3C:
+  case CASE_53:
+    switch(g_playerRuntime[(int)this->field_0024].field2180_0xa0e) {
     case 0:
-      if (g_playerRuntime[*(int *)((int)this + 0x24)].field2182_0xa16 == 0)
+      if (g_playerRuntime[(int)this->field_0024].field2182_0xa16 == 0)
       goto switchD_004bef7c_caseD_52;
       *(undefined1 *)((int)param_1 + 0x47) = 3;
       break;
     case 1:
-      uVar10 = GetPlayerRaceId(*(char *)((int)this + 0x24));
-      uVar10 = uVar10 & 0xff;
-      if (uVar10 == 1) {
-        iVar6 = 0x3d;
+      uVar12 = GetPlayerRaceId(*(char *)&this->field_0024);
+      uVar12 = uVar12 & 0xff;
+      if (uVar12 == 1) {
+        iVar7 = 0x3d;
       }
-      else if (uVar10 == 2) {
-        iVar6 = 0x8d;
+      else if (uVar12 == 2) {
+        iVar7 = 0x8d;
       }
-      else if (uVar10 == 3) {
-        iVar6 = 0x49;
+      else if (uVar12 == 3) {
+        iVar7 = 0x49;
       }
       else {
-        iVar6 = 0;
+        iVar7 = 0;
       }
       *(undefined1 *)((int)param_1 + 0x47) = 1;
-      iVar6 = thunk_FUN_004e60d0(*(int *)((int)this + 0x24),iVar6);
-      uVar10 = (g_playSystem_00802A38->field_00E4 * 100 +
-               g_playerRuntime[*(int *)((int)this + 0x24)].field2183_0xa1a * -100) /
-               *(uint *)(&DAT_00798f6c + iVar6 * 4);
-      param_1[0x12] = uVar10;
-      if (100 < uVar10) {
+      iVar7 = thunk_FUN_004e60d0((int)this->field_0024,iVar7);
+      uVar12 = (g_playSystem_00802A38->field_00E4 * 100 +
+               g_playerRuntime[(int)this->field_0024].field2183_0xa1a * -100) /
+               *(uint *)(&DAT_00798f6c + iVar7 * 4);
+      param_1[0x12] = uVar12;
+      if (100 < uVar12) {
         param_1[0x12] = 100;
       }
       break;
@@ -1210,44 +1218,41 @@ cf_common_join_004C01F3:
     case 2:
     case 3:
       *(undefined1 *)((int)param_1 + 0x47) = 2;
-      param_1[0x12] = (uint)g_playerRuntime[*(int *)((int)this + 0x24)].field2184_0xa1e / 0x19;
+      param_1[0x12] = (uint)g_playerRuntime[(int)this->field_0024].field2184_0xa1e / 0x19;
     }
     break;
-  case 0x41:
+  case CASE_41:
     *(undefined1 *)(param_1 + 7) = 0xff;
     goto switchD_004bef7c_caseD_37;
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  case 0x43:
-  case 0x4c:
-    *(undefined1 *)(param_1 + 7) = *(undefined1 *)((int)this + 0x4e0);
-    iVar6 = *(int *)((int)this + 0x4d8) * 0x28;
-    iVar6 = iVar6 / 10000 + (iVar6 >> 0x1f);
+  case CASE_43:
+  case CASE_4C:
+    *(char *)(param_1 + 7) = (char)this->field_04E0;
+    iVar7 = this->field_04D8 * 0x28;
+    iVar7 = iVar7 / 10000 + (iVar7 >> 0x1f);
     goto cf_common_join_004C0FC5;
-  case 0x44:
-    if (*(int *)((int)this + 0x361) == 6) {
+  case CASE_44:
+    if (*(int *)&this->field_0x361 == 6) {
       *(undefined4 *)((int)param_1 + 0x1d) = 1;
-      *(undefined1 *)((int)param_1 + 0x2f) = *(undefined1 *)((int)this + 0x394);
-      *(short *)((int)param_1 + 0x27) =
-           *(short *)((int)this + 0x3a0) - *(short *)((int)this + 0x3b0);
-      *(short *)((int)param_1 + 0x2b) =
-           *(short *)((int)this + 0x39c) - *(short *)((int)this + 0x3ac);
-      iVar6 = GetPlayerRaceId(*(char *)((int)this + 0x24));
-      *(char *)((int)param_1 + 0x25) = (char)iVar6;
-      *(undefined2 *)((int)param_1 + 0x3f) = *(undefined2 *)((int)this + 0x4d0);
+      *(char *)((int)param_1 + 0x2f) = (char)this->field_0394;
+      *(short *)((int)param_1 + 0x27) = (short)this->field_03A0 - *(short *)&this->field_03B0;
+      *(short *)((int)param_1 + 0x2b) = (short)this->field_039C - *(short *)&this->field_03AC;
+      iVar7 = GetPlayerRaceId(*(char *)&this->field_0024);
+      *(char *)((int)param_1 + 0x25) = (char)iVar7;
+      *(short *)((int)param_1 + 0x3f) = (short)this->field_04D0;
     }
     else {
       *(undefined4 *)((int)param_1 + 0x1d) = 0;
       *(undefined1 *)((int)param_1 + 0x2f) = 0xff;
       *(undefined2 *)((int)param_1 + 0x27) = 0xffff;
       *(undefined2 *)((int)param_1 + 0x2b) = 0xffff;
-      *(undefined2 *)((int)param_1 + 0x3f) = *(undefined2 *)((int)this + 0x4d0);
+      *(short *)((int)param_1 + 0x3f) = (short)this->field_04D0;
     }
     break;
-  case 0x45:
-    if (*(int *)((int)this + 0x361) != 3) {
-      iVar6 = *(int *)((int)this + 0x4d0);
+  case CASE_45:
+    if (*(int *)&this->field_0x361 != 3) {
+      TVar11 = this->field_04D0;
 LAB_004c0285:
-      if (iVar6 == 1) {
+      if (TVar11 == CASE_1) {
         *(undefined1 *)(param_1 + 0xd) = 0x28;
       }
       else {
@@ -1255,408 +1260,405 @@ LAB_004c0285:
       }
       break;
     }
-    iVar6 = *(int *)((int)this + 0x394);
+    TVar11 = this->field_0394;
     goto LAB_004c0ae0;
-  case 0x48:
-    iVar6 = *(int *)((int)this + 0x4d0) * 0x28;
-    iVar6 = iVar6 / 500 + (iVar6 >> 0x1f);
+  case CASE_48:
+    iVar7 = this->field_04D0 * 0x28;
+    iVar7 = iVar7 / 500 + (iVar7 >> 0x1f);
     goto cf_common_join_004C0FC5;
-  case 0x4d:
-    iVar6 = *(int *)((int)this + 0x4d4) * 0x28;
-    cVar3 = ((char)(iVar6 / 5000) + (char)(iVar6 >> 0x1f)) -
-            (char)((longlong)iVar6 * 0x68db8bad >> 0x3f);
+  case CASE_4D:
+    iVar7 = this->field_04D4 * 0x28;
+    cVar4 = ((char)(iVar7 / 5000) + (char)(iVar7 >> 0x1f)) -
+            (char)((longlong)iVar7 * 0x68db8bad >> 0x3f);
     goto LAB_004c0fcc;
-  case 0x4e:
-    iVar6 = *(int *)((int)this + 0x4d0);
-    if ((iVar6 != 0) || (*(int *)((int)this + 0x361) != 4)) goto LAB_004c0285;
-    iVar6 = *(int *)((int)this + 0x394) * 0x28;
+  case CASE_4E:
+    TVar11 = this->field_04D0;
+    if ((TVar11 != CASE_0) || (*(int *)&this->field_0x361 != 4)) goto LAB_004c0285;
+    iVar7 = this->field_0394 * 0x28;
 LAB_004c0f8e:
-    cVar3 = ((char)(iVar6 / 100) + (char)(iVar6 >> 0x1f)) -
-            (char)((longlong)iVar6 * 0x51eb851f >> 0x3f);
+    cVar4 = ((char)(iVar7 / 100) + (char)(iVar7 >> 0x1f)) -
+            (char)((longlong)iVar7 * 0x51eb851f >> 0x3f);
     goto LAB_004c0fcc;
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  case 0x50:
+  case CASE_50:
     *(undefined1 *)(param_1 + 7) =
-         *(undefined1 *)&g_playerRuntime[*(int *)((int)this + 0x24)].field2110_0x97a;
+         *(undefined1 *)&g_playerRuntime[(int)this->field_0024].field2110_0x97a;
     *(undefined1 *)((int)param_1 + 0x1d) =
-         *(undefined1 *)&g_playerRuntime[*(int *)((int)this + 0x24)].field2111_0x97e;
-    *(undefined1 *)((int)param_1 + 0x1e) = g_playerRuntime[*(int *)((int)this + 0x24)].field_0x982;
-    *(undefined1 *)((int)param_1 + 0x1f) = g_playerRuntime[*(int *)((int)this + 0x24)].field_0x986;
-    *(undefined1 *)(param_1 + 8) = g_playerRuntime[*(int *)((int)this + 0x24)].field_0x98a;
-    *(undefined1 *)((int)param_1 + 0x21) = g_playerRuntime[*(int *)((int)this + 0x24)].field_0x98e;
+         *(undefined1 *)&g_playerRuntime[(int)this->field_0024].field2111_0x97e;
+    *(undefined1 *)((int)param_1 + 0x1e) = g_playerRuntime[(int)this->field_0024].field_0x982;
+    *(undefined1 *)((int)param_1 + 0x1f) = g_playerRuntime[(int)this->field_0024].field_0x986;
+    *(undefined1 *)(param_1 + 8) = g_playerRuntime[(int)this->field_0024].field_0x98a;
+    *(undefined1 *)((int)param_1 + 0x21) = g_playerRuntime[(int)this->field_0024].field_0x98e;
     break;
   /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  case 0x52:
+  case CASE_52:
 switchD_004bef7c_caseD_52:
     *(undefined1 *)((int)param_1 + 0x47) = 0;
     break;
-  case 0x5b:
-    piVar17 = (int *)((int)this + 0x4d0);
-    if (0 < *(int *)((int)this + 0x4d0)) {
-      puVar12 = (undefined1 *)((int)this + 0x4dc);
+  case CASE_5B:
+    pTVar20 = &this->field_04D0;
+    if (0 < (int)this->field_04D0) {
+      puVar14 = &this->field_04DC;
       do {
-        if ((&DAT_007bf678)[(*piVar17 + -0x96) * 3] == 2) {
-          if (*(int *)(&DAT_007e6028 + (*(int *)(puVar12 + -0xc) * 5 + -0x2ee) * 4) != 0) {
-            uVar18 = (undefined2)
-                     *(int *)(&DAT_007e6028 + (*(int *)(puVar12 + -0xc) * 5 + -0x2ee) * 4);
-            switch(*(int *)(puVar12 + -0xc)) {
+        if ((&DAT_007bf678)[(*pTVar20 - 0x96) * 3] == 2) {
+          if (*(int *)(&DAT_007e6028 + (puVar14[-3] * 5 + -0x2ee) * 4) != 0) {
+            uVar21 = (undefined2)*(int *)(&DAT_007e6028 + (puVar14[-3] * 5 + -0x2ee) * 4);
+            switch(puVar14[-3]) {
             /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
             case 0xad:
               *(undefined1 *)(param_1 + 0xd) = 1;
-              *(undefined2 *)(param_1 + 0xe) = uVar18;
-              *(undefined2 *)((int)param_1 + 0x36) = *(undefined2 *)(puVar12 + -8);
-              *(undefined1 *)((int)param_1 + 0x35) = *puVar12;
+              *(undefined2 *)(param_1 + 0xe) = uVar21;
+              *(short *)((int)param_1 + 0x36) = (short)puVar14[-2];
+              *(char *)((int)param_1 + 0x35) = (char)*puVar14;
               break;
             /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
             case 0xae:
               *(undefined1 *)(param_1 + 0x10) = 1;
-              *(undefined2 *)(param_1 + 0x11) = uVar18;
-              *(undefined2 *)((int)param_1 + 0x42) = *(undefined2 *)(puVar12 + -8);
-              *(undefined1 *)((int)param_1 + 0x41) = *puVar12;
+              *(undefined2 *)(param_1 + 0x11) = uVar21;
+              *(short *)((int)param_1 + 0x42) = (short)puVar14[-2];
+              *(char *)((int)param_1 + 0x41) = (char)*puVar14;
               break;
             /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
             case 0xb3:
               *(undefined1 *)((int)param_1 + 0x22) = 1;
-              *(undefined2 *)((int)param_1 + 0x26) = uVar18;
-              *(undefined2 *)(param_1 + 9) = *(undefined2 *)(puVar12 + -8);
-              *(undefined1 *)((int)param_1 + 0x23) = *puVar12;
+              *(undefined2 *)((int)param_1 + 0x26) = uVar21;
+              *(short *)(param_1 + 9) = (short)puVar14[-2];
+              *(char *)((int)param_1 + 0x23) = (char)*puVar14;
               break;
             case 0xb5:
               *(undefined1 *)(param_1 + 10) = 1;
-              *(undefined2 *)(param_1 + 0xb) = uVar18;
-              *(undefined2 *)((int)param_1 + 0x2a) = *(undefined2 *)(puVar12 + -8);
-              *(undefined1 *)((int)param_1 + 0x29) = *puVar12;
+              *(undefined2 *)(param_1 + 0xb) = uVar21;
+              *(short *)((int)param_1 + 0x2a) = (short)puVar14[-2];
+              *(char *)((int)param_1 + 0x29) = (char)*puVar14;
               break;
             /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
             case 0xb8:
               *(undefined1 *)((int)param_1 + 0x3a) = 1;
-              *(undefined2 *)((int)param_1 + 0x3e) = uVar18;
-              *(undefined2 *)(param_1 + 0xf) = *(undefined2 *)(puVar12 + -8);
-              *(undefined1 *)((int)param_1 + 0x3b) = *puVar12;
+              *(undefined2 *)((int)param_1 + 0x3e) = uVar21;
+              *(short *)(param_1 + 0xf) = (short)puVar14[-2];
+              *(char *)((int)param_1 + 0x3b) = (char)*puVar14;
               break;
             case 0xbc:
               *(undefined1 *)(param_1 + 7) = 1;
-              *(undefined2 *)(param_1 + 8) = uVar18;
-              *(undefined2 *)((int)param_1 + 0x1e) = *(undefined2 *)(puVar12 + -8);
-              *(undefined1 *)((int)param_1 + 0x1d) = *puVar12;
+              *(undefined2 *)(param_1 + 8) = uVar21;
+              *(short *)((int)param_1 + 0x1e) = (short)puVar14[-2];
+              *(char *)((int)param_1 + 0x1d) = (char)*puVar14;
               break;
             /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
             case 0xbd:
               *(undefined1 *)((int)param_1 + 0x2e) = 1;
-              *(undefined2 *)((int)param_1 + 0x32) = uVar18;
-              *(undefined2 *)(param_1 + 0xc) = *(undefined2 *)(puVar12 + -8);
-              *(undefined1 *)((int)param_1 + 0x2f) = *puVar12;
+              *(undefined2 *)((int)param_1 + 0x32) = uVar21;
+              *(short *)(param_1 + 0xc) = (short)puVar14[-2];
+              *(char *)((int)param_1 + 0x2f) = (char)*puVar14;
               break;
             /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
             case 0xbe:
               *(undefined1 *)((int)param_1 + 0x46) = 1;
-              *(undefined2 *)((int)param_1 + 0x4a) = uVar18;
-              *(undefined2 *)(param_1 + 0x12) = *(undefined2 *)(puVar12 + -8);
-              *(undefined1 *)((int)param_1 + 0x47) = *puVar12;
+              *(undefined2 *)((int)param_1 + 0x4a) = uVar21;
+              *(short *)(param_1 + 0x12) = (short)puVar14[-2];
+              *(char *)((int)param_1 + 0x47) = (char)*puVar14;
             }
           }
         }
-        piVar1 = (int *)(puVar12 + 8);
-        piVar17 = (int *)(puVar12 + 8);
-        puVar12 = puVar12 + 0x14;
-      } while (0 < *piVar1);
+        piVar16 = (int *)(puVar14 + 2);
+        pTVar20 = puVar14 + 2;
+        puVar14 = puVar14 + 5;
+      } while (0 < *piVar16);
     }
     break;
-  case 0x5d:
-    iVar6 = *(int *)((int)this + 0x4d4) * 0x21;
-    iVar6 = iVar6 / 0x28 + (iVar6 >> 0x1f);
+  case CASE_5D:
+    iVar7 = this->field_04D4 * 0x21;
+    iVar7 = iVar7 / 0x28 + (iVar7 >> 0x1f);
     goto cf_common_join_004C0FC5;
   /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  case 0x61:
-    *(char *)(param_1 + 0xd) = (char)((*(int *)((int)this + 0x518) * 0x21) / DAT_007be8c4);
-    if (*(int *)((int)this + 0x520) == 0) {
+  case CASE_61:
+    *(char *)(param_1 + 0xd) = (char)((this->field_0518 * 0x21) / DAT_007be8c4);
+    if (this->field_0520 == 0) {
       *(undefined1 *)((int)param_1 + 0x35) = 0;
     }
     else {
-      *(char *)((int)param_1 + 0x35) =
-           (char)((*(int *)((int)this + 0x4e0) * 100) / *(int *)((int)this + 0x520));
+      *(char *)((int)param_1 + 0x35) = (char)((this->field_04E0 * 100) / this->field_0520);
     }
     break;
-  case 0x62:
-    uVar13 = thunk_FUN_004e41c0(*(int *)((int)this + 0x24));
-    *(undefined4 *)((int)param_1 + 0x1d) = uVar13;
-    iVar6 = thunk_FUN_004e4180(*(int *)((int)this + 0x24));
-    *(int *)((int)param_1 + 0x21) = iVar6;
+  case CASE_62:
+    uVar15 = thunk_FUN_004e41c0((int)this->field_0024);
+    *(undefined4 *)((int)param_1 + 0x1d) = uVar15;
+    iVar7 = thunk_FUN_004e4180((int)this->field_0024);
+    *(int *)((int)param_1 + 0x21) = iVar7;
     break;
-  case 100:
-    uVar13 = *(undefined4 *)((int)this + 0x4d0);
+  case CASE_64:
+    TVar11 = this->field_04D0;
     *(undefined4 *)((int)param_1 + 0x21) = 100;
-    *(undefined4 *)((int)param_1 + 0x1d) = uVar13;
+    *(TLOBaseTy_field_04D0State *)((int)param_1 + 0x1d) = TVar11;
     break;
-  case 0x68:
+  case CASE_68:
     *(undefined1 *)(param_1 + 7) = 0x21;
-    *(int *)((int)param_1 + 0x1d) = (*(int *)((int)this + 0x4d4) * 0x21) / 200;
+    *(int *)((int)param_1 + 0x1d) = (this->field_04D4 * 0x21) / 200;
     break;
-  case 0x6d:
+  case CASE_6D:
     local_c = (int *)((int)param_1 + 0x1d);
-    iVar6 = 0;
-    param_1 = (int *)((int)this + 0x4d8);
+    iVar7 = 0;
+    param_1 = &this->field_04D8;
     do {
       if (param_1[-2] != 0) {
         *local_c = *param_1;
-        iVar7 = GetPlayerRaceId(*(char *)((int)this + 0x24));
-        *(char *)(iVar6 + 0x25 + (int)piVar2) = (char)iVar7;
-        *(char *)(iVar6 + 0x2f + (int)piVar2) = (char)param_1[2];
+        iVar8 = GetPlayerRaceId(*(char *)&this->field_0024);
+        *(char *)(iVar7 + 0x25 + (int)piVar3) = (char)iVar8;
+        *(char *)(iVar7 + 0x2f + (int)piVar3) = (char)param_1[2];
       }
-      iVar6 = iVar6 + 1;
+      iVar7 = iVar7 + 1;
       param_1 = param_1 + 1;
       local_c = local_c + 1;
-    } while (iVar6 < 2);
-    if ((((*(int *)((int)this + 0x4d0) == 0) || (*(int *)((int)this + 0x4e8) == 0)) ||
-        (*(int *)((int)this + 0x4d4) == 0)) || (*(int *)((int)this + 0x4ec) == 0)) {
-      *(undefined1 *)((int)piVar2 + 0x17) = 0;
-      *(undefined1 *)((int)piVar2 + 0x16) = 0;
-      *(undefined1 *)((int)piVar2 + 0x19) = 0;
-      *(undefined1 *)(piVar2 + 6) = 0;
+    } while (iVar7 < 2);
+    if ((((this->field_04D0 == CASE_0) || (this->field_04E8 == 0)) || (this->field_04D4 == 0)) ||
+       (this->field_04EC == 0)) {
+      *(undefined1 *)((int)piVar3 + 0x17) = 0;
+      *(undefined1 *)((int)piVar3 + 0x16) = 0;
+      *(undefined1 *)((int)piVar3 + 0x19) = 0;
+      *(undefined1 *)(piVar3 + 6) = 0;
     }
     else {
-      *(bool *)((int)piVar2 + 0x17) = *(int *)((int)this + 0x4e0) < 100;
-      *(bool *)((int)piVar2 + 0x16) = 0 < *(int *)((int)this + 0x4e0);
-      *(bool *)((int)piVar2 + 0x19) = *(int *)((int)this + 0x4e4) < 100;
-      *(bool *)(piVar2 + 6) = 0 < *(int *)((int)this + 0x4e4);
+      *(bool *)((int)piVar3 + 0x17) = this->field_04E0 < 100;
+      *(bool *)((int)piVar3 + 0x16) = 0 < this->field_04E0;
+      *(bool *)((int)piVar3 + 0x19) = (int)this->field_04E4 < 100;
+      *(bool *)(piVar3 + 6) = 0 < (int)this->field_04E4;
     }
-    if ((*(int *)((int)this + 0x4d0) == 0) || (uVar4 = 3, *(int *)((int)this + 0x4e8) == 0)) {
-      uVar4 = 1;
+    if ((this->field_04D0 == CASE_0) || (uVar5 = 3, this->field_04E8 == 0)) {
+      uVar5 = 1;
     }
-    *(undefined1 *)((int)piVar2 + 0x1a) = uVar4;
-    if ((*(int *)((int)this + 0x4d4) == 0) || (uVar4 = 3, *(int *)((int)this + 0x4ec) == 0)) {
-      uVar4 = 1;
+    *(undefined1 *)((int)piVar3 + 0x1a) = uVar5;
+    if ((this->field_04D4 == 0) || (uVar5 = 3, this->field_04EC == 0)) {
+      uVar5 = 1;
     }
-    *(undefined1 *)((int)piVar2 + 0x1b) = uVar4;
+    *(undefined1 *)((int)piVar3 + 0x1b) = uVar5;
     break;
   /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  case 0x6e:
+  case CASE_6E:
     *(undefined2 *)((int)param_1 + 0x3a) = 0;
-    psVar14 = (short *)((int)this + 0x4e0);
-    iVar6 = 0x28;
+    piVar16 = &this->field_04E0;
+    iVar7 = 0x28;
     do {
-      sVar5 = *psVar14;
-      psVar14 = psVar14 + 2;
-      *(short *)((int)param_1 + 0x3a) = *(short *)((int)param_1 + 0x3a) + sVar5;
-      iVar6 = iVar6 + -1;
-    } while (iVar6 != 0);
+      iVar8 = *piVar16;
+      piVar16 = piVar16 + 1;
+      *(short *)((int)param_1 + 0x3a) = *(short *)((int)param_1 + 0x3a) + (short)iVar8;
+      iVar7 = iVar7 + -1;
+    } while (iVar7 != 0);
     break;
-  case 0x6f:
-    iVar6 = *(int *)((int)this + 0x4d0) * 0x28;
+  case CASE_6F:
+    iVar7 = this->field_04D0 * 0x28;
     goto LAB_004c0fbb;
-  case 0x70:
-    iVar6 = *(int *)((int)this + 0x4ec) * 0x21;
-    cVar3 = ((char)(iVar6 / 100) + (char)(iVar6 >> 0x1f)) -
-            (char)((longlong)iVar6 * 0x51eb851f >> 0x3f);
+  case CASE_70:
+    iVar7 = this->field_04EC * 0x21;
+    cVar4 = ((char)(iVar7 / 100) + (char)(iVar7 >> 0x1f)) -
+            (char)((longlong)iVar7 * 0x51eb851f >> 0x3f);
     goto LAB_004c0fcc;
-  case 0x72:
-    if ((*(int *)((int)this + 0x4d0) == 0) && (*(int *)((int)this + 0x361) == 8)) {
-      iVar6 = *(int *)((int)this + 0x394) * 0x21;
+  case CASE_72:
+    if ((this->field_04D0 == CASE_0) && (*(int *)&this->field_0x361 == 8)) {
+      iVar7 = this->field_0394 * 0x21;
       goto LAB_004c0f8e;
     }
-    if (*(int *)((int)this + 0x4d0) == 1) {
+    if (this->field_04D0 == CASE_1) {
       *(undefined1 *)(param_1 + 0xd) = 0x21;
     }
     else {
       *(undefined1 *)(param_1 + 0xd) = 0;
     }
     break;
-  case 0x73:
-    iVar6 = *(int *)((int)this + 0x4d0) * 0x21;
+  case CASE_73:
+    iVar7 = this->field_04D0 * 0x21;
 LAB_004c0fbb:
-    iVar6 = iVar6 / 5000 + (iVar6 >> 0x1f);
+    iVar7 = iVar7 / 5000 + (iVar7 >> 0x1f);
 cf_common_join_004C0FC5:
-    cVar3 = (char)iVar6 - (char)(iVar6 >> 0x1f);
+    cVar4 = (char)iVar7 - (char)(iVar7 >> 0x1f);
 /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
 LAB_004c0fcc:
-    *(char *)(param_1 + 0xd) = cVar3;
+    *(char *)(param_1 + 0xd) = cVar4;
   }
-  piVar2[0x16] = 0;
-  iVar6 = *(int *)((int)this + 0x361);
-  bVar19 = SUB41(iVar6,0);
-  if (iVar6 != 0) {
-    if (*(int *)((int)this + 0x3b8) != 0) {
-      piVar2[0x16] = 0xbb9;
-      return bVar19;
+  piVar3[0x16] = 0;
+  iVar7 = *(int *)&this->field_0x361;
+  bVar22 = SUB41(iVar7,0);
+  if (iVar7 != 0) {
+    if (this->field_03B8 != 0) {
+      piVar3[0x16] = 0xbb9;
+      return bVar22;
     }
-    if (*(int *)((int)this + 0x3bc) != 0) {
-      piVar2[0x16] = 0xbba;
-      return bVar19;
+    if (this->field_03BC != 0) {
+      piVar3[0x16] = 0xbba;
+      return bVar22;
     }
-    if (*(int *)((int)this + 0x3c4) != 0) {
-      piVar2[0x16] = 0xbbb;
-      return bVar19;
+    if (this->field_03C4 != 0) {
+      piVar3[0x16] = 0xbbb;
+      return bVar22;
     }
-    if (*(int *)((int)this + 0x3c8) != 0) {
-      iVar6 = GetPlayerRaceId(*(char *)((int)this + 0x24));
-      iVar6 = (-(uint)((char)iVar6 != '\x03') & 0xffffffe1) + 0xbdb;
-      piVar2[0x16] = iVar6;
-      return SUB41(iVar6,0);
+    if (this->field_03C8 != 0) {
+      iVar7 = GetPlayerRaceId(*(char *)&this->field_0024);
+      iVar7 = (-(uint)((char)iVar7 != '\x03') & 0xffffffe1) + 0xbdb;
+      piVar3[0x16] = iVar7;
+      return SUB41(iVar7,0);
     }
-    if (*(int *)((int)this + 0x3c0) != 0) {
-      piVar2[0x16] = 0xbd3;
-      return bVar19;
+    if (this->field_03C0 != 0) {
+      piVar3[0x16] = 0xbd3;
+      return bVar22;
     }
-    iVar6 = iVar6 + -1;
-    bVar19 = SUB41(iVar6,0);
-    switch(iVar6) {
-    case 0:
-      iVar6 = thunk_FUN_0044e1b0(*(int *)((int)this + 0x24));
-      if (iVar6 == 0) {
-        piVar2[0x16] = 0xbdf;
+    pAVar17 = (AnonPointee_TLOBaseTy_061B *)(iVar7 - CASE_1);
+    bVar22 = SUB41(pAVar17,0);
+    switch(pAVar17) {
+    case (AnonPointee_TLOBaseTy_061B *)0x0:
+      iVar7 = thunk_FUN_0044e1b0((int)this->field_0024);
+      if (iVar7 == 0) {
+        piVar3[0x16] = 0xbdf;
         return false;
       }
-      if (*(int *)((int)this + 0x369) == 9) {
-        piVar2[0x16] = 0xbc4;
-        return SUB41(iVar6,0);
+      if (*(int *)&this->field_0x369 == 9) {
+        piVar3[0x16] = 0xbc4;
+        return SUB41(iVar7,0);
       }
-      piVar2[0x16] = (-(uint)(*(int *)((int)this + 0x369) != 0x15) & 0xfffffffa) + 0xbc3;
-      return SUB41(iVar6,0);
-    case 1:
-      piVar2[0x16] = 0xbbe;
-      return bVar19;
-    case 2:
-      piVar2[0x16] = 0xbbf;
-      return bVar19;
-    case 3:
-      piVar2[0x16] = 0xbc0;
-      return bVar19;
-    case 4:
-      piVar2[0x16] = 0xbc1;
-      return bVar19;
-    case 5:
-      piVar2[0x16] = 0xbc2;
-      return bVar19;
-    case 6:
-      piVar2[0x16] = 0xbd2;
-      return bVar19;
-    case 7:
-      piVar2[0x16] = 0xbdc;
-      return bVar19;
+      piVar3[0x16] = (-(uint)(*(int *)&this->field_0x369 != 0x15) & 0xfffffffa) + 0xbc3;
+      return SUB41(iVar7,0);
+    case (AnonPointee_TLOBaseTy_061B *)0x1:
+      piVar3[0x16] = 0xbbe;
+      return bVar22;
+    case (AnonPointee_TLOBaseTy_061B *)0x2:
+      piVar3[0x16] = 0xbbf;
+      return bVar22;
+    case (AnonPointee_TLOBaseTy_061B *)0x3:
+      piVar3[0x16] = 0xbc0;
+      return bVar22;
+    case (AnonPointee_TLOBaseTy_061B *)0x4:
+      piVar3[0x16] = 0xbc1;
+      return bVar22;
+    case (AnonPointee_TLOBaseTy_061B *)0x5:
+      piVar3[0x16] = 0xbc2;
+      return bVar22;
+    case (AnonPointee_TLOBaseTy_061B *)0x6:
+      piVar3[0x16] = 0xbd2;
+      return bVar22;
+    case (AnonPointee_TLOBaseTy_061B *)0x7:
+      piVar3[0x16] = 0xbdc;
+      return bVar22;
     }
     goto switchD_004c107c_default;
   }
-  if (*(int *)((int)this + 0x4a0) != 0) {
-    piVar2[0x16] = 0xbd4;
+  if (this->field_04A0 != 0) {
+    piVar3[0x16] = 0xbd4;
     return false;
   }
-  iVar6 = *(int *)((int)this + 0x245);
-  if (iVar6 != 0) {
-    if (iVar6 == 4) {
-      piVar2[0x16] = 0xbcc;
+  pAVar17 = (AnonPointee_TLOBaseTy_061B *)this->field_0245;
+  if (pAVar17 != (AnonPointee_TLOBaseTy_061B *)0x0) {
+    if (pAVar17 == (AnonPointee_TLOBaseTy_061B *)0x4) {
+      piVar3[0x16] = 0xbcc;
     }
     goto switchD_004c107c_default;
   }
-  iVar6 = *(int *)((int)this + 0x5ac) + -0x33;
-  bVar19 = SUB41(iVar6,0);
-  switch(*(int *)((int)this + 0x5ac)) {
-  case 0x33:
+  pAVar17 = (AnonPointee_TLOBaseTy_061B *)(this->field_05AC + ~CASE_32);
+  bVar22 = SUB41(pAVar17,0);
+  switch(this->field_05AC) {
+  case CASE_33:
     iVar7 = thunk_FUN_004e22f0(this,0);
     if (iVar7 == 0) {
       iVar7 = thunk_FUN_004e22f0(this,1);
-      iVar6 = 0;
+      pAVar17 = (AnonPointee_TLOBaseTy_061B *)0x0;
       if (iVar7 == 0) break;
     }
-    piVar2[0x16] = 0xbc5;
+    piVar3[0x16] = 0xbc5;
     return SUB41(iVar7,0);
-  case 0x34:
-    piVar2[0x16] = 0xbc6;
-    return bVar19;
-  case 0x36:
-    if (*(int *)((int)this + 0x4d4) < 0x28) {
-      piVar2[0x16] = 0xbc7;
-      return bVar19;
+  case CASE_34:
+    piVar3[0x16] = 0xbc6;
+    return bVar22;
+  case CASE_36:
+    if (this->field_04D4 < 0x28) {
+      piVar3[0x16] = 0xbc7;
+      return bVar22;
     }
     break;
-  case 0x37:
-    if (*(int *)((int)this + 0x4d8) == 0xffff) {
-      if (*(int *)((int)this + 0x4d0) < 100) {
-        piVar2[0x16] = 0xbd5;
-        return bVar19;
+  case CASE_37:
+    if (this->field_04D8 == 0xffff) {
+      if ((int)this->field_04D0 < 100) {
+        piVar3[0x16] = 0xbd5;
+        return bVar22;
       }
-      piVar2[0x16] = (-(uint)(*(int *)((int)this + 0x42c) != 0) & 0xfffffffe) + 0xbd8;
-      return bVar19;
+      piVar3[0x16] = (-(uint)(this->field_042C != 0) & 0xfffffffe) + 0xbd8;
+      return bVar22;
     }
     goto LAB_004c12d3;
-  case 0x3a:
-    piVar2[0x16] = 0xbc9;
-    return bVar19;
-  case 0x3c:
-    piVar2[0x16] = 0;
-    return bVar19;
-  case 0x43:
-    if (*(int *)((int)this + 0x4d0) == 1) {
-      piVar2[0x16] = 0xbca;
-      return bVar19;
+  case CASE_3A:
+    piVar3[0x16] = 0xbc9;
+    return bVar22;
+  case CASE_3C:
+    piVar3[0x16] = 0;
+    return bVar22;
+  case CASE_43:
+    if (this->field_04D0 == CASE_1) {
+      piVar3[0x16] = 0xbca;
+      return bVar22;
     }
-    if (*(int *)((int)this + 0x4d0) == 2) {
-      piVar2[0x16] = 0xbcb;
-      return bVar19;
-    }
-    break;
-  case 0x45:
-  case 0x4e:
-    if (*(int *)((int)this + 0x4d0) == 1) {
-      piVar2[0x16] = 0xbc8;
-      return bVar19;
+    if (this->field_04D0 == CASE_2) {
+      piVar3[0x16] = 0xbcb;
+      return bVar22;
     }
     break;
-  case 0x4c:
-    if (*(int *)((int)this + 0x4d0) == 1) {
-      piVar2[0x16] = 0xbcd;
-      return bVar19;
-    }
-    if (*(int *)((int)this + 0x4d0) == 2) {
-      piVar2[0x16] = 0xbce;
-      return bVar19;
+  case CASE_45:
+  case CASE_4E:
+    if (this->field_04D0 == CASE_1) {
+      piVar3[0x16] = 0xbc8;
+      return bVar22;
     }
     break;
-  case 0x4d:
-    if (*(int *)((int)this + 0x4d0) == 1) {
-      piVar2[0x16] = 0xbcf;
-      return bVar19;
+  case CASE_4C:
+    if (this->field_04D0 == CASE_1) {
+      piVar3[0x16] = 0xbcd;
+      return bVar22;
     }
-    if (*(int *)((int)this + 0x4d0) == 2) {
-      piVar2[0x16] = 0xbd0;
-      return bVar19;
-    }
-    break;
-  case 0x50:
-    piVar2[0x16] = 0xbd1;
-    return bVar19;
-  case 100:
-    if (*(int *)((int)this + 0x4dc) != 0) {
-      piVar2[0x16] = 0xbdd;
-      return bVar19;
+    if (this->field_04D0 == CASE_2) {
+      piVar3[0x16] = 0xbce;
+      return bVar22;
     }
     break;
-  case 0x6c:
-    iVar6 = *(int *)((int)this + 0x4d8);
-    if ((iVar6 == 0xffff) &&
-       (((iVar6 = *(int *)((int)this + 0x61b), iVar6 == 0 || (*(int *)(iVar6 + 0x20) != 1000)) ||
-        (*(int *)(iVar6 + 0x4d8) == 0xffff)))) {
+  case CASE_4D:
+    if (this->field_04D0 == CASE_1) {
+      piVar3[0x16] = 0xbcf;
+      return bVar22;
+    }
+    if (this->field_04D0 == CASE_2) {
+      piVar3[0x16] = 0xbd0;
+      return bVar22;
+    }
+    break;
+  case CASE_50:
+    piVar3[0x16] = 0xbd1;
+    return bVar22;
+  case CASE_64:
+    if (this->field_04DC != 0) {
+      piVar3[0x16] = 0xbdd;
+      return bVar22;
+    }
+    break;
+  case CASE_6C:
+    pAVar17 = (AnonPointee_TLOBaseTy_061B *)this->field_04D8;
+    if ((pAVar17 == (AnonPointee_TLOBaseTy_061B *)0xffff) &&
+       (((pAVar17 = this->field_061B, pAVar17 == (AnonPointee_TLOBaseTy_061B *)0x0 ||
+         (pAVar17->field_0020 != 1000)) || (pAVar17->field_04D8 == 0xffff)))) {
       iVar7 = thunk_FUN_004e9930((int)this);
-      iVar6 = 0;
-      if ((((iVar7 != 0) && (iVar6 = *(int *)((int)this + 0x61b), iVar6 != 0)) &&
-          (*(int *)(iVar6 + 0x20) == 1000)) &&
-         ((*(int *)(iVar6 + 0x4d8) == 0xffff && (*(int *)(iVar6 + 0x5b8) < g_worldGrid.sizeZ + -1)))
-         ) {
-        piVar2[0x16] = 0xbe0;
-        return SUB41(iVar6,0);
+      pAVar17 = (AnonPointee_TLOBaseTy_061B *)0x0;
+      if ((((iVar7 != 0) &&
+           (pAVar17 = this->field_061B, pAVar17 != (AnonPointee_TLOBaseTy_061B *)0x0)) &&
+          (pAVar17->field_0020 == 1000)) &&
+         ((pAVar17->field_04D8 == 0xffff && ((int)pAVar17->field_05B8 < g_worldGrid.sizeZ + -1)))) {
+        piVar3[0x16] = 0xbe0;
+        return SUB41(pAVar17,0);
       }
-      piVar2[0x16] = (*(int *)((int)this + 0x61b) != 0) + 0xbd9;
-      return SUB41(iVar6,0);
+      piVar3[0x16] = (this->field_061B != (AnonPointee_TLOBaseTy_061B *)0x0) + 0xbd9;
+      return SUB41(pAVar17,0);
     }
 LAB_004c12d3:
-    piVar2[0x16] = 0xbd7;
-    return SUB41(iVar6,0);
+    piVar3[0x16] = 0xbd7;
+    return SUB41(pAVar17,0);
   }
 switchD_004c107c_default:
-  return SUB41(iVar6,0);
+  return SUB41(pAVar17,0);
 switchD_004bef7c_caseD_37:
-  iVar6 = *(int *)((int)this + 0x4d0);
+  TVar11 = this->field_04D0;
 LAB_004c0ae0:
-  iVar6 = (iVar6 * 0x28) / 100 + (iVar6 * 0x28 >> 0x1f);
+  iVar7 = (int)(TVar11 * 0x28) / 100 + ((int)(TVar11 * 0x28) >> 0x1f);
   goto cf_common_join_004C0FC5;
 }
 

@@ -12,13 +12,6 @@ void __thiscall MReportTy::DoneMReport(MReportTy *this)
   MReportTy *pMVar2;
   int iVar3;
   int iVar4;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
-  ccFntTy *extraout_ECX;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
-  ccFntTy *extraout_ECX_00;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
-  ccFntTy *extraout_ECX_01;
-  ccFntTy *this_00;
   DArrayTy **ppDVar6;
   InternalExceptionFrame local_4c;
   MReportTy *local_8;
@@ -65,27 +58,20 @@ void __thiscall MReportTy::DoneMReport(MReportTy *this)
     if (pMVar2->field_007B != 0) {
       FreeAndNull((void **)&pMVar2->field_007B);
     }
-    this_00 = (ccFntTy *)0x0;
     if (pMVar2->field_0073 != (AnonPointee_MReportTy_0073 *)0x0) {
       FreeAndNull(&pMVar2->field_0073);
-      /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
-      this_00 = extraout_ECX;
     }
     if (pMVar2->field_0083 != (ccFntTy *)0x0) {
-      ccFntTy::operator(this_00,(uint *)pMVar2->field_0083);
+      ccFntTy::operator((uint *)pMVar2->field_0083);
       pMVar2->field_0083 = (ccFntTy *)0x0;
-      /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
-      this_00 = extraout_ECX_00;
     }
     if (pMVar2->field_0087 != (ccFntTy *)0x0) {
-      ccFntTy::operator(this_00,(uint *)pMVar2->field_0087);
+      ccFntTy::operator((uint *)pMVar2->field_0087);
       pMVar2->field_0087 = (ccFntTy *)0x0;
       g_startSystem_0081176C->field_0038 = (ccFntTy *)0x0;
-      /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
-      this_00 = extraout_ECX_01;
     }
     if (pMVar2->field_008B != (ccFntTy *)0x0) {
-      ccFntTy::operator(this_00,(uint *)pMVar2->field_008B);
+      ccFntTy::operator((uint *)pMVar2->field_008B);
       pMVar2->field_008B = (ccFntTy *)0x0;
     }
     pMVar2->field_007F = (ushort *)0x0;

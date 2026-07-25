@@ -7,7 +7,11 @@
    [STMethodOwnerApplier] Structural method owner recovered as STMineSetC.
    Evidence: this_call_owners=[STMineSetC]; agreed_this_calls=1; incoming_this_accesses=11;
    incoming_edx_uses=0; incoming_stack_parameter_uses=0; direct_non_thunk_callers=0;
-   incoming_ecx_receiver_callers=0; attributed_named_callers=1; owner_evidence_coverage=adequate */
+   incoming_ecx_receiver_callers=0; attributed_named_callers=1; owner_evidence_coverage=adequate
+
+   [STSwitchEnumApplier] Switch target field_02AE uses
+   /SubmarineTitans/Recovered/Enums/STMineSetC_field_02AEState. Cases:
+   CASE_0=0;CASE_1=1;CASE_2=2;CASE_3=3;CASE_4=4;CASE_5=5 */
 
 undefined4 __thiscall STMineSetC::sub_006239A0(STMineSetC *this)
 

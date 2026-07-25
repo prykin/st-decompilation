@@ -11,14 +11,14 @@ void __thiscall FUN_004fa870(void *this,Global_sub_004FA870_param_1Enum param_1)
     return;
   }
   if ((((param_1 == 0) || (CASE_5 < param_1)) && (param_1 != CASE_E)) && (param_1 != CASE_F)) {
-    if (param_1 == (CASE_4|CASE_2)) {
+    if (param_1 == CASE_6) {
       if (g_prodPanel_008016E8 != (ProdPanelTy *)0x0) {
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
         (*(code *)g_prodPanel_008016E8->field_0000->field_001C)();
         return;
       }
     }
-    else if (param_1 == (CASE_4|CASE_2|CASE_1)) {
+    else if (param_1 == CASE_7) {
       if (g_prodPanel_0080167C != (ProdPanelTy *)0x0) {
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
         (*(code *)g_prodPanel_0080167C->field_0000->field_001C)();

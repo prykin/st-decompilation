@@ -164,7 +164,7 @@ table_address	owner	slot_index	slot_offset	pointer_address	raw_target_address	ra
 00790AA0	TLOBaseTy	10	0x28	00790AC8	00404C9B	thunk_FUN_004c21a0	00404C9B	thunk_FUN_004c21a0	false	false	00404C9B	thunk_FUN_004c21a0	true	004C21A0	FUN_004c21a0		TLOBaseTy::vfunc_28	0	0
 00790AA0	TLOBaseTy	11	0x2C	00790ACC	00403FB2	TLOBaseTy::thunk_FUN_004be0f0	00403FB2	TLOBaseTy::thunk_FUN_004be0f0	false	false	00403FB2	TLOBaseTy::thunk_FUN_004be0f0	true	004BE0F0	TLOBaseTy::FUN_004be0f0	TLOBaseTy	TLOBaseTy::FUN_004be0f0	0	0
 00790AA0	TLOBaseTy	12	0x30	00790AD0	00402734	thunk_FUN_004be6c0	00402734	thunk_FUN_004be6c0	false	false	00402734	thunk_FUN_004be6c0	true	004BE6C0	FUN_004be6c0		TLOBaseTy::vfunc_30	0	0
-00790AA0	TLOBaseTy	13	0x34	00790AD4	00404EE9	thunk_FUN_004bea70	00404EE9	thunk_FUN_004bea70	false	false	00404EE9	thunk_FUN_004bea70	true	004BEA70	FUN_004bea70		TLOBaseTy::vfunc_34	0	0
+00790AA0	TLOBaseTy	13	0x34	00790AD4	00404EE9	TLOBaseTy::thunk_FUN_004bea70	00404EE9	TLOBaseTy::thunk_FUN_004bea70	false	false	00404EE9	TLOBaseTy::thunk_FUN_004bea70	true	004BEA70	TLOBaseTy::FUN_004bea70	TLOBaseTy	TLOBaseTy::FUN_004bea70	0	0
 00790AA0	TLOBaseTy	14	0x38	00790AD8	004020DB	thunk_FUN_004e3200	004020DB	thunk_FUN_004e3200	false	false	004020DB	thunk_FUN_004e3200	true	004E3200	FUN_004e3200		TLOBaseTy::vfunc_38	0	0
 00790AA0	TLOBaseTy	15	0x3C	00790ADC	00404C96	thunk_FUN_004cf640	00404C96	thunk_FUN_004cf640	false	false	00404C96	thunk_FUN_004cf640	true	004CF640	FUN_004cf640		TLOBaseTy::vfunc_3C	0	0
 00790AA0	TLOBaseTy	16	0x40	00790AE0	0040295A	thunk_FUN_0041ac40	0040295A	thunk_FUN_0041ac40	false	false	0040295A	thunk_FUN_0041ac40	true	0041AC40	FUN_0041ac40		TLOBaseTy::vfunc_40	0	0
@@ -476,7 +476,7 @@ table_address	owner	slot_index	slot_offset	pointer_address	raw_target_address	ra
 0079AD8C		7	0x1C	0079ADA8	00401E4C	SpecPanelTy::SetPanel	00401E4C	SpecPanelTy::SetPanel	false	false	00401E4C	SpecPanelTy::SetPanel	true	0053E920	SpecPanelTy::SetPanel	SpecPanelTy	SpecPanelTy::SetPanel	0	0
 0079AD8C		8	0x20	0079ADAC	00404A8E	SAMPanelTy::Update	00404A8E	SAMPanelTy::Update	false	false	00404A8E	SAMPanelTy::Update	true	0053D3B0	SAMPanelTy::Update	SAMPanelTy	SAMPanelTy::Update	0	0
 0079ADB8	InterSystemC	0	0x0	0079ADB8	006E51F0	SystemClassTy::InitSystem	006E51F0	SystemClassTy::InitSystem	false	false	006E51F0	SystemClassTy::InitSystem	false	006E51F0	SystemClassTy::InitSystem		SystemClassTy::InitSystem	0	0
-0079ADB8	InterSystemC	1	0x4	0079ADBC	0040105F	InterSystemC::~InterSystemC	0040105F	InterSystemC::~InterSystemC	false	false	0040105F	InterSystemC::~InterSystemC	true	00542EC0	InterSystemC::~InterSystemC	InterSystemC	InterSystemC::~InterSystemC	0	0
+0079ADB8	InterSystemC	1	0x4	0079ADBC	0040105F	InterSystemC::DoneSystem	0040105F	InterSystemC::DoneSystem	false	false	0040105F	InterSystemC::DoneSystem	true	00542EC0	InterSystemC::DoneSystem	InterSystemC	InterSystemC::DoneSystem	0	0
 0079ADB8	InterSystemC	2	0x8	0079ADC0	006E5580	SystemClassTy::CreateObject	006E5580	SystemClassTy::CreateObject	false	false	006E5580	SystemClassTy::CreateObject	false	006E5580	SystemClassTy::CreateObject		SystemClassTy::CreateObject	0	0
 0079ADB8	InterSystemC	3	0xC	0079ADC4	006E5670	FUN_006e5670	006E5670	FUN_006e5670	false	false	006E5670	FUN_006e5670	false	006E5670	FUN_006e5670		InterSystemC::vfunc_0C	0	0
 0079ADB8	InterSystemC	4	0x10	0079ADC8	006E5690	FUN_006e5690	006E5690	FUN_006e5690	false	false	006E5690	FUN_006e5690	false	006E5690	FUN_006e5690		InterSystemC::vfunc_10	0	0
@@ -1344,7 +1344,7 @@ table_address	owner	slot_index	slot_offset	pointer_address	raw_target_address	ra
 0079C1AC		1	0x4	0079C1B0	0040458E	MMObjTy::DoneMMObj	0040458E	MMObjTy::DoneMMObj	false	false	0040458E	MMObjTy::DoneMMObj	true	005B6220	MMObjTy::DoneMMObj	MMObjTy	MMObjTy::DoneMMObj	0	0
 0079C1AC		2	0x8	0079C1B4	00403459	MMObjTy::CloseButtons	00403459	MMObjTy::CloseButtons	false	false	00403459	MMObjTy::CloseButtons	true	005B6480	MMObjTy::CloseButtons	MMObjTy	MMObjTy::CloseButtons	0	0
 0079C1E8	StartSystemTy	0	0x0	0079C1E8	0040237E	StartSystemTy::InitSystem	0040237E	StartSystemTy::InitSystem	false	false	0040237E	StartSystemTy::InitSystem	true	005DCC10	StartSystemTy::InitSystem	StartSystemTy	StartSystemTy::InitSystem	0	0
-0079C1E8	StartSystemTy	1	0x4	0079C1EC	004042E6	StartSystemTy::~StartSystemTy	004042E6	StartSystemTy::~StartSystemTy	false	false	004042E6	StartSystemTy::~StartSystemTy	true	005DCDB0	StartSystemTy::~StartSystemTy	StartSystemTy	StartSystemTy::~StartSystemTy	0	0
+0079C1E8	StartSystemTy	1	0x4	0079C1EC	004042E6	StartSystemTy::DoneSystem	004042E6	StartSystemTy::DoneSystem	false	false	004042E6	StartSystemTy::DoneSystem	true	005DCDB0	StartSystemTy::DoneSystem	StartSystemTy	StartSystemTy::DoneSystem	0	0
 0079C1E8	StartSystemTy	2	0x8	0079C1F0	006E5580	SystemClassTy::CreateObject	006E5580	SystemClassTy::CreateObject	false	false	006E5580	SystemClassTy::CreateObject	false	006E5580	SystemClassTy::CreateObject		SystemClassTy::CreateObject	0	0
 0079C1E8	StartSystemTy	3	0xC	0079C1F4	006E5670	FUN_006e5670	006E5670	FUN_006e5670	false	false	006E5670	FUN_006e5670	false	006E5670	FUN_006e5670		StartSystemTy::vfunc_0C	0	0
 0079C1E8	StartSystemTy	4	0x10	0079C1F8	006E5690	FUN_006e5690	006E5690	FUN_006e5690	false	false	006E5690	FUN_006e5690	false	006E5690	FUN_006e5690		StartSystemTy::vfunc_10	0	0

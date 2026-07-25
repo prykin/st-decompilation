@@ -37,7 +37,7 @@ void __thiscall FSGSTy::Finished(FSGSTy *this,int param_1)
       if (g_cursorClass_00802A30 != (CursorClassTy *)0x0) {
         iVar5 = g_cursorClass_00802A30->field_00C9;
         iVar9 = g_cursorClass_00802A30->field_00C5;
-        g_cursorClass_00802A30->field_0493 = 1;
+        g_cursorClass_00802A30->field_0493 = CASE_1;
         this_01->field_0494 = 0xffff;
         CursorClassTy::SetGCType(this_01,CASE_0,iVar9,iVar5);
         CursorClassTy::DrawSprite(this_01,this_01->field_00C5,this_01->field_00C9);

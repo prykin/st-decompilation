@@ -1,0 +1,466 @@
+// Validate a freshly exported corpus against the immediately preceding corpus snapshot.
+// The pipeline supplies current corpus, optional baseline snapshot, and recovery output paths.
+// @author OpenAI
+// @category SubmarineTitans.Recovery
+// @menupath Tools.Submarine Titans.Validate Export Regression
+
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.IOException;
+import java.io.InputStream;
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.StandardCopyOption;
+import java.security.MessageDigest;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Locale;
+import java.util.Map;
+import java.util.Set;
+import java.util.TreeSet;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+import ghidra.app.script.GhidraScript;
+
+public class STExportRegressionGate extends GhidraScript {
+    private static final Pattern ADDRESS = Pattern.compile("\\\"address\\\":\\\"([^\\\"]+)\\\"");
+    private static final Pattern NAME = Pattern.compile("\\\"name\\\":\\\"((?:\\\\.|[^\\\"])*)\\\"");
+    private static final Pattern STATUS = Pattern.compile(
+        "\\\"decompile_status\\\":\\\"([^\\\"]+)\\\"");
+    private static final Pattern THUNK_TARGET = Pattern.compile(
+        "\\\"thunk_target\\\":\\\"([0-9A-Fa-f]{8})(?: [^\\\"]*)?\\\"");
+    private static final String JSON_QUOTE = Character.toString(34);
+    private static final Pattern TYPE_PATH = Pattern.compile(
+        Pattern.quote(JSON_QUOTE + "path" + JSON_QUOTE + ":" + JSON_QUOTE) +
+        "([^" + JSON_QUOTE + "]+)" + Pattern.quote(JSON_QUOTE));
+    private static final Pattern VTABLE_COMPONENT = Pattern.compile(
+        Pattern.quote("{" + JSON_QUOTE + "ordinal" + JSON_QUOTE + ":") +
+        "[0-9]+," + Pattern.quote(JSON_QUOTE + "offset" + JSON_QUOTE + ":") +
+        "([0-9]+),.*?" +
+        Pattern.quote(JSON_QUOTE + "field_name" + JSON_QUOTE + ":" + JSON_QUOTE) +
+        "([^" + JSON_QUOTE + "]*)" +
+        Pattern.quote(JSON_QUOTE + "," + JSON_QUOTE + "type" + JSON_QUOTE +
+            ":" + JSON_QUOTE) +
+        "([^" + JSON_QUOTE + "]+)" + Pattern.quote(JSON_QUOTE));
+    private static final Pattern VTABLE_TARGET_COMPONENT = Pattern.compile(
+        Pattern.quote("{" + JSON_QUOTE + "ordinal" + JSON_QUOTE + ":") +
+        "[0-9]+," + Pattern.quote(JSON_QUOTE + "offset" + JSON_QUOTE + ":") +
+        "([0-9]+),.*?" +
+        Pattern.quote(JSON_QUOTE + "field_name" + JSON_QUOTE + ":" + JSON_QUOTE) +
+        "([^" + JSON_QUOTE + "]*)" +
+        Pattern.quote(JSON_QUOTE + "," + JSON_QUOTE + "type" + JSON_QUOTE +
+            ":" + JSON_QUOTE) +
+        "([^" + JSON_QUOTE + "]+)" +
+        Pattern.quote(JSON_QUOTE + "," + JSON_QUOTE + "comment" + JSON_QUOTE +
+            ":" + JSON_QUOTE) +
+        "[^" + JSON_QUOTE + "]*?->\\s*([0-9A-Fa-f]{8})[^" + JSON_QUOTE + "]*" +
+        Pattern.quote(JSON_QUOTE));
+    private static final Pattern CATEGORY = Pattern.compile(
+        "\\{\\\"kind\\\":\\\"([^\\\"]+)\\\".*?\\\"occurrences\\\":([0-9]+)");
+    private static final Pattern HEX64 = Pattern.compile("[0-9a-f]{64}");
+
+    private final List<Check> checks = new ArrayList<>();
+
+    @Override
+    protected void run() throws Exception {
+        end(true);
+        String[] args = getScriptArgs();
+        if (args.length < 3)
+            throw new IllegalArgumentException(
+                "Usage: <decomp-program-dir> <baseline-dir-or-dash> <recovery-program-dir>");
+        Path current = Path.of(args[0]).toAbsolutePath().normalize();
+        Path baseline = "-".equals(args[1]) ? null : Path.of(args[1]).toAbsolutePath().normalize();
+        Path recovery = Path.of(args[2]).toAbsolutePath().normalize();
+        if (!Files.isRegularFile(current.resolve("manifest.json")) ||
+                !Files.isRegularFile(current.resolve("functions.json")) ||
+                !Files.isRegularFile(current.resolve("types.jsonl")))
+            throw new IllegalStateException("Incomplete current export: " + current);
+        Files.createDirectories(recovery);
+
+        CorpusMetrics now = metrics(current);
+        boolean hasBaseline = baseline != null &&
+            Files.isRegularFile(baseline.resolve("manifest.json")) &&
+            Files.isRegularFile(baseline.resolve("functions.json")) &&
+            Files.isRegularFile(baseline.resolve("types.jsonl"));
+        CorpusMetrics before = hasBaseline ? metrics(baseline) : null;
+
+        internalChecks(now);
+        if (hasBaseline) regressionChecks(before, now);
+        else add("info", "baseline", 0, 0, "baseline_created",
+            "No previous corpus snapshot was available");
+
+        long errors = checks.stream().filter(check -> "error".equals(check.severity)).count();
+        long warnings = checks.stream().filter(check -> "warning".equals(check.severity)).count();
+        String status = errors > 0 ? "failed" : hasBaseline ? "passed" : "baseline_created";
+        Path report = recovery.resolve("export_regression_report.tsv");
+        Path receipt = recovery.resolve("export_receipt.json");
+        writeReport(report);
+        writeReceipt(receipt, status, errors, warnings, current, baseline, now, before);
+        println("Export regression gate: status=" + status + ", errors=" + errors +
+            ", warnings=" + warnings + ", report=" + report);
+        if (errors > 0)
+            throw new IllegalStateException("Export regression gate rejected the corpus: " +
+                errors + " hard regression(s); inspect " + report);
+    }
+
+    private void internalChecks(CorpusMetrics now) {
+        add(now.failedBodies == 0 ? "info" : "error", "decompile_failures", 0,
+            now.failedBodies, now.failedBodies == 0 ? "ok" : "regressed",
+            "Every body_exported function must have decompile_status=ok");
+        long enumCompositions = now.quality.getOrDefault(
+            "generated_enum_bitwise_composition", 0L);
+        add(enumCompositions == 0 ? "info" : "error",
+            "generated_enum_bitwise_composition", 0, enumCompositions,
+            enumCompositions == 0 ? "ok" : "quality_debt",
+            "Strict internal invariant, not a baseline delta: generated enum " +
+                "CASE_*|CASE_* compositions must be repaired before export");
+        add(now.untypedTaggedMessageSlots.isEmpty() ? "info" : "error",
+            "tagged_message_vtable_slot_untyped", 0,
+            now.untypedTaggedMessageSlots.size(),
+            now.untypedTaggedMessageSlots.isEmpty() ? "ok" : "regressed",
+            sample(now.untypedTaggedMessageSlots));
+    }
+
+    private void regressionChecks(CorpusMetrics before, CorpusMetrics now) {
+        compareNondecreasing("function_count", before.number("function_count"),
+            now.number("function_count"));
+        compareNondecreasing("body_function_count", before.number("body_function_count"),
+            now.number("body_function_count"));
+        compareNondecreasing("covered_executable_bytes",
+            before.number("function_covered_executable_byte_count"),
+            now.number("function_covered_executable_byte_count"));
+        compareNonincreasing("unclaimed_meaningful_bytes",
+            before.number("unclaimed_meaningful_byte_count"),
+            now.number("unclaimed_meaningful_byte_count"));
+        boolean typedSlotCountDropped = now.typedVtableSlots < before.typedVtableSlots;
+        add(typedSlotCountDropped ? "warning" : "info", "typed_vtable_slots",
+            before.typedVtableSlots, now.typedVtableSlots,
+            typedSlotCountDropped ? "investigate" :
+                now.typedVtableSlots > before.typedVtableSlots ? "improved" : "ok",
+            "Exact per-slot type erasure is the hard regression criterion");
+        Set<String> erasedVtableTypes = new TreeSet<>();
+        for (Map.Entry<String, String> entry : before.vtableSlots.entrySet()) {
+            if (!entry.getValue().contains("/SubmarineTitans/Recovered/VTableFunctions/"))
+                continue;
+            String currentType = now.vtableSlots.get(entry.getKey());
+            if (currentType == null ||
+                    !currentType.contains("/SubmarineTitans/Recovered/VTableFunctions/"))
+                erasedVtableTypes.add(entry.getKey() + " " + entry.getValue() + " -> " +
+                    (currentType == null ? "<missing>" : currentType));
+        }
+        add(erasedVtableTypes.isEmpty() ? "info" : "error", "typed_vtable_slot_erasure", 0,
+            erasedVtableTypes.size(), erasedVtableTypes.isEmpty() ? "ok" : "regressed",
+            sample(erasedVtableTypes));
+
+        Set<String> removed = new TreeSet<>(before.names.keySet());
+        removed.removeAll(now.names.keySet());
+        add(removed.isEmpty() ? "info" : "error", "function_addresses_removed", 0,
+            removed.size(), removed.isEmpty() ? "ok" : "regressed",
+            sample(removed));
+
+        Set<String> downgraded = new TreeSet<>();
+        for (Map.Entry<String, String> entry : before.names.entrySet()) {
+            String currentName = now.names.get(entry.getKey());
+            if (currentName != null && !defaultName(entry.getValue()) && defaultName(currentName))
+                downgraded.add(entry.getKey() + " " + entry.getValue() + " -> " + currentName);
+        }
+        add(downgraded.isEmpty() ? "info" : "error", "semantic_name_downgrades", 0,
+            downgraded.size(), downgraded.isEmpty() ? "ok" : "regressed",
+            sample(downgraded));
+
+        Set<String> kinds = new TreeSet<>(before.quality.keySet());
+        kinds.addAll(now.quality.keySet());
+        for (String kind : kinds) {
+            long oldValue = before.quality.getOrDefault(kind, 0L);
+            long newValue = now.quality.getOrDefault(kind, 0L);
+            String policy = qualityPolicy(kind);
+            if ("strict_zero".equals(policy)) continue;
+            if ("nonincreasing".equals(policy)) {
+                boolean regressed = newValue > oldValue;
+                String severity = regressed ?
+                    (blockingQuality(kind) ? "error" : "warning") : "info";
+                add(severity, "quality:" + kind, oldValue, newValue,
+                    regressed ? "regressed" : newValue < oldValue ? "improved" : "ok",
+                    "policy=nonincreasing; blocking=" + blockingQuality(kind));
+            }
+            else if ("stage_transition".equals(policy) && newValue != oldValue) {
+                add("warning", "quality:" + kind, oldValue, newValue, "stage_transition",
+                    "A later recovery stage may expose more named layout debt without losing structure");
+            }
+        }
+    }
+
+    private void compareNondecreasing(String name, long before, long after) {
+        boolean regressed = after < before;
+        add(regressed ? "error" : "info", name, before, after,
+            regressed ? "regressed" : after > before ? "improved" : "ok",
+            "policy=nondecreasing");
+    }
+
+    private void compareNonincreasing(String name, long before, long after) {
+        boolean regressed = after > before;
+        add(regressed ? "error" : "info", name, before, after,
+            regressed ? "regressed" : after < before ? "improved" : "ok",
+            "policy=nonincreasing");
+    }
+
+    private void add(String severity, String name, long before, long after,
+            String status, String detail) {
+        checks.add(new Check(severity, name, before, after, after - before, status, detail));
+    }
+
+    private CorpusMetrics metrics(Path root) throws Exception {
+        CorpusMetrics result = new CorpusMetrics();
+        String manifest = Files.readString(root.resolve("manifest.json"), StandardCharsets.UTF_8);
+        for (String key : List.of("function_count", "body_function_count",
+                "function_covered_executable_byte_count", "unclaimed_meaningful_byte_count"))
+            result.numbers.put(key, jsonLong(manifest, key));
+        readFunctions(root.resolve("functions.json"), result);
+        readVtables(root.resolve("types.jsonl"), result);
+        Path quality = root.resolve("decomp_quality_summary.json");
+        if (Files.isRegularFile(quality)) {
+            String text = Files.readString(quality, StandardCharsets.UTF_8);
+            Matcher matcher = CATEGORY.matcher(text);
+            while (matcher.find())
+                result.quality.put(matcher.group(1), Long.parseLong(matcher.group(2)));
+        }
+        return result;
+    }
+
+    private void readFunctions(Path path, CorpusMetrics result) throws Exception {
+        try (BufferedReader reader = Files.newBufferedReader(path, StandardCharsets.UTF_8)) {
+            String line;
+            while ((line = reader.readLine()) != null) {
+                Matcher address = ADDRESS.matcher(line);
+                if (!address.find()) continue;
+                String functionAddress = address.group(1).toUpperCase(Locale.ROOT);
+                Matcher name = NAME.matcher(line);
+                if (name.find()) result.names.put(functionAddress, unescape(name.group(1)));
+                Matcher thunk = THUNK_TARGET.matcher(line);
+                if (thunk.find())
+                    result.thunkTargets.put(functionAddress,
+                        thunk.group(1).toUpperCase(Locale.ROOT));
+                if (line.contains("\"tags\":[") &&
+                        line.contains("\"RECOVERED_MESSAGE_HANDLER\"") &&
+                        line.contains("\"calling_convention\":\"__thiscall\"") &&
+                        line.contains("\"parameter_count\":2,") &&
+                        line.contains("STMessage * message)"))
+                    result.taggedMessageHandlers.add(functionAddress);
+                if (line.contains("\"body_exported\":true")) {
+                    Matcher status = STATUS.matcher(line);
+                    if (!status.find() || !"ok".equals(status.group(1))) result.failedBodies++;
+                }
+            }
+        }
+    }
+
+    private void readVtables(Path path, CorpusMetrics result) throws Exception {
+        try (BufferedReader reader = Files.newBufferedReader(path, StandardCharsets.UTF_8)) {
+            String line;
+            while ((line = reader.readLine()) != null) {
+                if (!line.contains("\"path\":\"/SubmarineTitans/Recovered/VTables/")) continue;
+                Matcher pathMatcher = TYPE_PATH.matcher(line);
+                if (!pathMatcher.find()) continue;
+                String typePath = unescape(pathMatcher.group(1));
+                Matcher component = VTABLE_COMPONENT.matcher(line);
+                while (component.find()) {
+                    String type = unescape(component.group(3));
+                    String key = typePath + "@" + component.group(1) + ":" +
+                        unescape(component.group(2));
+                    result.vtableSlots.put(key, type);
+                    if (type.contains("/SubmarineTitans/Recovered/VTableFunctions/"))
+                        result.typedVtableSlots++;
+                    else if ("/void *32".equals(type)) result.voidVtableSlots++;
+                }
+                Matcher message = VTABLE_TARGET_COMPONENT.matcher(line);
+                while (message.find()) {
+                    String field = unescape(message.group(2));
+                    String type = unescape(message.group(3));
+                    String target = terminalTarget(message.group(4), result);
+                    if (field.startsWith("GetMessage") &&
+                            result.taggedMessageHandlers.contains(target) &&
+                            "/void *32".equals(type))
+                        result.untypedTaggedMessageSlots.add(typePath + "@" +
+                            message.group(1) + " -> " + target);
+                }
+            }
+        }
+    }
+
+    private String terminalTarget(String address, CorpusMetrics metrics) {
+        String current = address.toUpperCase(Locale.ROOT);
+        Set<String> seen = new TreeSet<>();
+        while (seen.add(current)) {
+            String next = metrics.thunkTargets.get(current);
+            if (next == null || next.isBlank()) return current;
+            current = next;
+        }
+        return current;
+    }
+
+    private long jsonLong(String text, String key) {
+        Matcher matcher = Pattern.compile("\\\"" + Pattern.quote(key) +
+            "\\\"\\s*:\\s*([0-9]+)").matcher(text);
+        if (!matcher.find()) throw new IllegalStateException("Missing numeric manifest key " + key);
+        return Long.parseLong(matcher.group(1));
+    }
+
+    private String qualityPolicy(String kind) {
+        return switch (kind) {
+            case "generated_enum_bitwise_composition" -> "strict_zero";
+            case "generic_field_name", "casted_generic_field", "anonymous_shape_type",
+                 "generic_data_symbol" -> "stage_transition";
+            case "control_flow_label" -> "informational";
+            default -> "nonincreasing";
+        };
+    }
+
+    private boolean blockingQuality(String kind) {
+        return switch (kind) {
+            case "raw_indirect_call", "return_width_artifact",
+                 "unresolved_register_input", "unexpanded_string_symbol" -> true;
+            default -> false;
+        };
+    }
+
+    private boolean defaultName(String name) {
+        String value = name.toLowerCase(Locale.ROOT);
+        return value.startsWith("fun_") || value.startsWith("sub_") ||
+            value.startsWith("thunk_fun_") || value.startsWith("thunk_sub_") ||
+            value.startsWith("lab_");
+    }
+
+    private String sample(Set<String> values) {
+        if (values.isEmpty()) return "";
+        List<String> result = new ArrayList<>();
+        for (String value : values) {
+            result.add(value);
+            if (result.size() == 12) break;
+        }
+        return String.join(" | ", result);
+    }
+
+    private void writeReport(Path path) throws Exception {
+        atomicWrite(path, out -> {
+            out.write("severity\tcheck\tbefore\tafter\tdelta\tstatus\tdetail\n");
+            for (Check check : checks)
+                out.write(check.severity + "\t" + tsv(check.name) + "\t" + check.before +
+                    "\t" + check.after + "\t" + check.delta + "\t" + check.status +
+                    "\t" + tsv(check.detail) + "\n");
+        });
+    }
+
+    private void writeReceipt(Path path, String status, long errors, long warnings,
+            Path current, Path baseline, CorpusMetrics now, CorpusMetrics before) throws Exception {
+        String semantic = semanticHash(path.getParent().resolve("automation_state.tsv"));
+        String previousManifest = baseline != null && Files.isRegularFile(baseline.resolve("manifest.json")) ?
+            sha256(baseline.resolve("manifest.json")) : "";
+        String json = "{" +
+            "\"schema\":\"st-export-receipt\"," +
+            "\"schema_version\":1," +
+            "\"status\":" + q(status) + "," +
+            "\"program_semantic_sha256\":" + q(semantic) + "," +
+            "\"current_manifest_sha256\":" + q(sha256(current.resolve("manifest.json"))) + "," +
+            "\"previous_manifest_sha256\":" + q(previousManifest) + "," +
+            "\"function_count\":" + now.number("function_count") + "," +
+            "\"body_function_count\":" + now.number("body_function_count") + "," +
+            "\"failed_body_count\":" + now.failedBodies + "," +
+            "\"typed_vtable_slot_count\":" + now.typedVtableSlots + "," +
+            "\"void_vtable_slot_count\":" + now.voidVtableSlots + "," +
+            "\"untyped_tagged_message_slot_count\":" +
+                now.untypedTaggedMessageSlots.size() + "," +
+            "\"hard_regression_count\":" + errors + "," +
+            "\"warning_count\":" + warnings +
+            "}";
+        atomicWrite(path, out -> out.write(json + "\n"));
+    }
+
+    private String semanticHash(Path state) throws Exception {
+        if (!Files.isRegularFile(state)) return "";
+        for (String line : Files.readAllLines(state, StandardCharsets.UTF_8)) {
+            String[] fields = line.split("\\t", -1);
+            if (fields.length == 4 && "program".equals(fields[0]) &&
+                    "semantic_sha256".equals(fields[1]) && HEX64.matcher(fields[2]).matches())
+                return fields[2];
+        }
+        return "";
+    }
+
+    private String sha256(Path path) throws Exception {
+        MessageDigest digest = MessageDigest.getInstance("SHA-256");
+        try (InputStream input = Files.newInputStream(path)) {
+            byte[] buffer = new byte[65536];
+            int count;
+            while ((count = input.read(buffer)) >= 0)
+                if (count > 0) digest.update(buffer, 0, count);
+        }
+        StringBuilder result = new StringBuilder();
+        for (byte value : digest.digest()) result.append(String.format("%02x", value & 0xff));
+        return result.toString();
+    }
+
+    private void atomicWrite(Path path, WriterAction action) throws Exception {
+        Files.createDirectories(path.getParent());
+        Path temporary = path.resolveSibling(path.getFileName() + ".tmp");
+        try (BufferedWriter out = Files.newBufferedWriter(temporary, StandardCharsets.UTF_8)) {
+            action.write(out);
+        }
+        try {
+            Files.move(temporary, path, StandardCopyOption.ATOMIC_MOVE,
+                StandardCopyOption.REPLACE_EXISTING);
+        }
+        catch (IOException unsupported) {
+            Files.move(temporary, path, StandardCopyOption.REPLACE_EXISTING);
+        }
+    }
+
+    private static String unescape(String value) {
+        StringBuilder result = new StringBuilder();
+        boolean escaped = false;
+        for (int index = 0; index < value.length(); index++) {
+            char ch = value.charAt(index);
+            if (!escaped && ch == '\\') { escaped = true; continue; }
+            if (escaped) {
+                result.append(switch (ch) {
+                    case 'n' -> '\n'; case 'r' -> '\r'; case 't' -> '\t';
+                    default -> ch;
+                });
+                escaped = false;
+            }
+            else result.append(ch);
+        }
+        if (escaped) result.append('\\');
+        return result.toString();
+    }
+
+    private static String tsv(String value) {
+        return value == null ? "" : value.replace("\\", "\\\\").replace("\t", "\\t")
+            .replace("\r", "\\r").replace("\n", "\\n");
+    }
+
+    private static String q(String value) {
+        return "\"" + (value == null ? "" : value.replace("\\", "\\\\")
+            .replace("\"", "\\\"").replace("\r", "\\r").replace("\n", "\\n")) + "\"";
+    }
+
+    private static class CorpusMetrics {
+        final Map<String, Long> numbers = new HashMap<>();
+        final Map<String, String> names = new HashMap<>();
+        final Map<String, Long> quality = new HashMap<>();
+        final Map<String, String> vtableSlots = new HashMap<>();
+        final Map<String, String> thunkTargets = new HashMap<>();
+        final Set<String> taggedMessageHandlers = new TreeSet<>();
+        final Set<String> untypedTaggedMessageSlots = new TreeSet<>();
+        long failedBodies;
+        long typedVtableSlots;
+        long voidVtableSlots;
+        long number(String name) { return numbers.getOrDefault(name, 0L); }
+    }
+
+    private record Check(String severity, String name, long before, long after,
+        long delta, String status, String detail) { }
+    private interface WriterAction { void write(BufferedWriter writer) throws Exception; }
+}

@@ -52,16 +52,16 @@ SettMapMTy * __cdecl CreateSettMapM(void)
       local_8 = local_8 + -1;
       puVar2 = (undefined4 *)((int)puVar2 + 0x1fb);
     } while (local_8 != 0);
-    SpriteClassTy::SpriteClassTy((SpriteClassTy *)&this->field_1C6B);
-    SpriteClassTy::SpriteClassTy((SpriteClassTy *)&this->field_1CFC);
-    SpriteClassTy::SpriteClassTy((SpriteClassTy *)&this->field_1D8D);
+    SpriteClassTy::SpriteClassTy((SpriteClassTy *)&this->field_0x1c6b);
+    SpriteClassTy::SpriteClassTy((SpriteClassTy *)&this->field_0x1cfc);
+    SpriteClassTy::SpriteClassTy((SpriteClassTy *)&this->field_0x1d8d);
     this->field_1C5F = 0;
     this->field_1C63 = 0;
     this->field_1E27 = 0;
-    this->field_1E2B = (ushort *)0x0;
+    *(undefined4 *)&this->field_0x1e2b = 0;
     this->field_21E1 = 0;
     this->field_21E2 = 0;
-    this->field_21E3 = 0;
+    this->field_0x21e3 = 0;
     this->field_21E4 = 0;
     this->field_21E5 = 0;
     this->field_21E6 = 0;
@@ -78,30 +78,30 @@ SettMapMTy * __cdecl CreateSettMapM(void)
     iVar1 = 0;
     this->field_211D = 0;
     this->field_1F88 = 0;
-    puVar2 = &this->field_20CC;
+    puVar2 = (undefined4 *)&this->field_0x20cc;
     for (iVar1 = 10; iVar1 != 0; iVar1 = iVar1 + -1) {
       *puVar2 = 0xffffffff;
       puVar2 = puVar2 + 1;
     }
-    memset(&this->field_20F4, 0, 0x28); /* compiler bulk-zero initialization */
+    memset(&this->field_0x20f4, 0, 0x28); /* compiler bulk-zero initialization */
     iVar1 = 0;
-    this->field_1E1E = (AnonPointee_SettMapMTy_1E1E *)0x0;
-    this->field_1E22 = 0xffffffff;
+    *(undefined4 *)&this->field_0x1e1e = 0;
+    *(undefined4 *)&this->field_0x1e22 = 0xffffffff;
     memset(&this->field_2125, 0, 0x38); /* compiler bulk-zero initialization */
     iVar1 = 0;
     *(undefined4 *)&this->field_0x215d = 0;
     this->field_21F8 = (HoloTy *)0x0;
-    this->field_21F4 = (HoloTy *)0x0;
-    this->field_21F0 = (HoloTy *)0x0;
-    this->field_21EC = (HoloTy *)0x0;
-    this->field_21E8 = (HoloTy *)0x0;
+    *(undefined4 *)&this->field_0x21f4 = 0;
+    *(undefined4 *)&this->field_0x21f0 = 0;
+    *(undefined4 *)&this->field_0x21ec = 0;
+    *(undefined4 *)&this->field_0x21e8 = 0;
     this->field_1F80 = 0xffffffff;
-    this->field_1C67 = (AnonPointee_SettMapMTy_1C67 *)0x0;
+    *(undefined4 *)&this->field_0x1c67 = 0;
     this->field_1F47 = 0;
-    this->field_1F7C = (DArrayTy *)0x0;
+    *(undefined4 *)&this->field_0x1f7c = 0;
     memset(&this->field_1F60, 0, 0x1c); /* compiler bulk-zero initialization */
-    *(undefined4 *)&this->field_0x1f58 = 0;
-    this->field_0x1f57 = 1;
+    *(undefined4 *)((int)&this->field_1F57 + 1) = 0;
+    *(undefined1 *)&this->field_1F57 = 1;
     *(undefined1 *)((int)&this->field_1F5B + 1) = 4;
     *(undefined1 *)((int)&this->field_1F5B + 2) = 1;
     *(undefined1 *)((int)&this->field_1F5B + 3) = 1;

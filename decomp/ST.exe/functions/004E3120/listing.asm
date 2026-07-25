@@ -1,4 +1,4 @@
-FUN_004e3120:
+TLOBaseTy::sub_004E3120:
 004E3120  55                        PUSH EBP
 004E3121  8B EC                     MOV EBP,ESP
 004E3123  83 EC 20                  SUB ESP,0x20

@@ -13,13 +13,6 @@ void __thiscall FSGSTy::DoneFSGS(FSGSTy *this)
   FSGSTy *this_01;
   int errorCode;
   int iVar2;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
-  ccFntTy *extraout_ECX;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
-  ccFntTy *extraout_ECX_00;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
-  ccFntTy *extraout_ECX_01;
-  ccFntTy *this_02;
   InternalExceptionFrame local_4c;
   FSGSTy *local_8;
 
@@ -117,26 +110,19 @@ void __thiscall FSGSTy::DoneFSGS(FSGSTy *this)
       FUN_006b3bb0((int *)PTR_008075a8,this_01->field_1A8F);
     }
     this_01->field_1A8F = -1;
-    this_02 = (ccFntTy *)0x0;
     if (this_01->field_1A97 != (AnonPointee_FSGSTy_1A97 *)0x0) {
       FreeAndNull(&this_01->field_1A97);
-      /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
-      this_02 = extraout_ECX;
     }
     if (this_01->field_1A77 != (ccFntTy *)0x0) {
-      ccFntTy::operator(this_02,(uint *)this_01->field_1A77);
+      ccFntTy::operator((uint *)this_01->field_1A77);
       this_01->field_1A77 = (ccFntTy *)0x0;
-      /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
-      this_02 = extraout_ECX_00;
     }
     if (this_01->field_1A7B != (uint *)0x0) {
-      ccFntTy::operator(this_02,this_01->field_1A7B);
+      ccFntTy::operator(this_01->field_1A7B);
       this_01->field_1A7B = (void *)0x0;
-      /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
-      this_02 = extraout_ECX_01;
     }
     if (this_01->field_1A7F != (StartServTy *)0x0) {
-      ccFntTy::operator(this_02,(uint *)this_01->field_1A7F);
+      ccFntTy::operator((uint *)this_01->field_1A7F);
       this_01->field_1A7F = (StartServTy *)0x0;
     }
     if (this_01->field_1A67 != (HGDIOBJ)0x0) {

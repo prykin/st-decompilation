@@ -7,7 +7,11 @@
 
    [STMessageHandlerApplier] Recovered common GetMessage envelope/signature.
    Evidence: family_entries=0052BF00; family_names=MoneyTy::GetMessage; ret4=2;
-   direct_offsets={10:1,14:7,18:3,1c:2} */
+   direct_offsets={10:1,14:7,18:3,1c:2}
+
+   [STSwitchEnumApplier] Switch target field_0068 uses
+   /SubmarineTitans/Recovered/Enums/MoneyTy_field_0068State. Cases:
+   CASE_1=1;CASE_2=2;CASE_3=3;CASE_4=4;CASE_5=5 */
 
 int __thiscall MoneyTy::GetMessage(MoneyTy *this,STMessage *message)
 
@@ -25,10 +29,6 @@ int __thiscall MoneyTy::GetMessage(MoneyTy *this,STMessage *message)
   ushort *puVar9;
   int iVar10;
   ccFntTy *this_01;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
-  ccFntTy *extraout_ECX;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
-  ccFntTy *extraout_ECX_00;
   MoneyTy_field_0068State MVar11;
   uint uVar12;
   byte bVar13;
@@ -413,23 +413,18 @@ int __thiscall MoneyTy::GetMessage(MoneyTy *this,STMessage *message)
       if (this_00->field_007A != (ushort *)0x0) {
         FreeAndNull(&this_00->field_007A);
       }
-      pcVar8 = (ccFntTy *)0x0;
       if (this_00->field_007E != (ushort *)0x0) {
         FreeAndNull(&this_00->field_007E);
-        /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
-        pcVar8 = extraout_ECX;
       }
       if (this_00->field_0082 != (ushort *)0x0) {
         this_00->field_0082 = (ushort *)0x0;
       }
       if (this_00->field_006A != (ccFntTy *)0x0) {
-        ccFntTy::operator(pcVar8,(uint *)this_00->field_006A);
+        ccFntTy::operator((uint *)this_00->field_006A);
         this_00->field_006A = (ccFntTy *)0x0;
-        /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
-        pcVar8 = extraout_ECX_00;
       }
       if (this_00->field_006E != (ccFntTy *)0x0) {
-        ccFntTy::operator(pcVar8,(uint *)this_00->field_006E);
+        ccFntTy::operator((uint *)this_00->field_006E);
         this_00->field_006E = (ccFntTy *)0x0;
       }
       break;
@@ -505,7 +500,7 @@ int __thiscall MoneyTy::GetMessage(MoneyTy *this,STMessage *message)
       else {
         bVar5 = true;
       }
-      MVar11 = CASE_4|CASE_1;
+      MVar11 = CASE_5;
       if (!bVar5) {
         MVar11 = local_5;
       }

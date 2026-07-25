@@ -4,7 +4,11 @@
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\to_cursor.cpp
-   CursorClassTy::TakeCmdToRun */
+   CursorClassTy::TakeCmdToRun
+
+   [STSwitchEnumApplier] Switch target field_04A2 uses
+   /SubmarineTitans/Recovered/Enums/CursorClassTy_field_04A2State. Cases:
+   CASE_3=3;CASE_5=5;CASE_A=10;CASE_E=14;CASE_2B=43;CASE_2C=44;CASE_4E=78 */
 
 void __thiscall CursorClassTy::TakeCmdToRun(CursorClassTy *this,int param_1)
 
@@ -15,7 +19,7 @@ void __thiscall CursorClassTy::TakeCmdToRun(CursorClassTy *this,int param_1)
   code *pcVar4;
   CursorClassTy *this_00;
   int iVar5;
-  dword dVar6;
+  Global_sub_00514BC0_param_1Enum GVar6;
   int iVar7;
   uint uVar8;
   ushort *puVar9;
@@ -192,12 +196,12 @@ void __thiscall CursorClassTy::TakeCmdToRun(CursorClassTy *this,int param_1)
   if (this_00->field_04DE != '\0') {
     if (((this_00->field_0494 == 0x48) && (pSVar2 = this_00->field_049A, pSVar2 != (STFishC *)0x0))
        && (g_helpPanel_00801690 != (HelpPanelTy *)0x0)) {
-      dVar6 = (*pSVar2->vtable->slot_2C)(pSVar2);
-      if (dVar6 == 0x78) {
-        dVar6 = *(dword *)&this_00->field_049A->field_0x259;
+      GVar6 = (*pSVar2->vtable->slot_2C)(pSVar2);
+      if (GVar6 == 0x78) {
+        GVar6 = *(Global_sub_00514BC0_param_1Enum *)&this_00->field_049A->field_0x259;
       }
       iVar5 = (*pSVar2->vtable->vfunc_0C)();
-      thunk_FUN_00514bc0(g_helpPanel_00801690,dVar6,iVar5);
+      thunk_FUN_00514bc0(g_helpPanel_00801690,GVar6,iVar5);
       this_00->field_04DE = 0;
     }
     goto switchD_00548db5_caseD_3;
@@ -206,14 +210,14 @@ void __thiscall CursorClassTy::TakeCmdToRun(CursorClassTy *this,int param_1)
   switch(sVar1) {
   case 1:
     switch(this_00->field_04A2) {
-    case 3:
-    case 10:
-    case 0x2b:
+    case CASE_3:
+    case CASE_A:
+    case CASE_2B:
       if (param_1 != 0) {
         local_4c = (ushort *)0x0;
         if (g_allPlayers_007FA174 != (STAllPlayersC *)0x0) {
           local_4c = STAllPlayersC::GetScrObjList
-                               (g_allPlayers_007FA174,(this_00->field_04A2 == 10) + 1,
+                               (g_allPlayers_007FA174,(this_00->field_04A2 == CASE_A) + 1,
                                 this_00->field_00DF,this_00->field_00E3,this_00->field_00E7,
                                 this_00->field_00EB,(int *)&local_9c);
         }
@@ -221,7 +225,7 @@ void __thiscall CursorClassTy::TakeCmdToRun(CursorClassTy *this,int param_1)
           local_18 = (undefined4 *)(local_9c + 1);
           local_94 = (char *)Library::DKW::LIB::FUN_006aac10((uint)local_18);
           if (local_94 != (char *)0x0) {
-            *local_94 = (this_00->field_04A2 == 10) + '\x01';
+            *local_94 = (this_00->field_04A2 == CASE_A) + '\x01';
             puVar9 = local_4c;
             pcVar10 = local_94 + 1;
             for (uVar8 = local_9c >> 2; uVar8 != 0; uVar8 = uVar8 - 1) {
@@ -241,7 +245,7 @@ void __thiscall CursorClassTy::TakeCmdToRun(CursorClassTy *this,int param_1)
         }
       }
       break;
-    case 5:
+    case CASE_5:
       if (param_1 != 0) {
         local_1c = (ushort *)0x0;
         if (g_allPlayers_007FA174 != (STAllPlayersC *)0x0) {
@@ -286,7 +290,7 @@ void __thiscall CursorClassTy::TakeCmdToRun(CursorClassTy *this,int param_1)
       puVar14 = (uint *)local_1e4;
       puVar13 = (undefined4 *)0x17;
       goto cf_common_join_0054A19A;
-    case 0xe:
+    case CASE_E:
       if (g_tLOBldMark_007FB2AC != (TLOBldMark *)0x0) {
         local_b8 = this_00->field_04AA;
         local_b4 = 0;
@@ -323,7 +327,7 @@ void __thiscall CursorClassTy::TakeCmdToRun(CursorClassTy *this,int param_1)
         }
       }
       break;
-    case 0x2c:
+    case CASE_2C:
       if (param_1 != 0) {
         local_54 = (undefined4 *)0x0;
         if (g_allPlayers_007FA174 != (STAllPlayersC *)0x0) {
@@ -353,7 +357,7 @@ void __thiscall CursorClassTy::TakeCmdToRun(CursorClassTy *this,int param_1)
         }
       }
       break;
-    case 0x4e:
+    case CASE_4E:
       local_f4 = (uint)*(byte *)&this_00->field_04AA;
       local_f0 = 0;
       local_ec = 0;

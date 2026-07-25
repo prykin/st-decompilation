@@ -21,7 +21,10 @@
    [STSwitchEnumApplier] Switch target field_06F7 uses
    /SubmarineTitans/Recovered/Enums/STBoatC_field_06F7State. Cases:
    CASE_1=1;CASE_2=2;CASE_3=3;CASE_4=4;CASE_5=5;CASE_6=6;CASE_7=7;CASE_8=8;CASE_9=9;CASE_A=10;CASE_B=11;CASE_C=12;CASE_D=13;CASE_E=14;CASE_F=15;CASE_10=16;CASE_11=17;CASE_12=18;CASE_13=19;CASE_14=20;CASE_15=21;CASE_16=22;CASE_17=23;CASE_18=24;CASE_19=25;CASE_1A=26;CASE_1B=27;CASE_1C=28;CASE_1D=29;CASE_1E=30;CASE_1F=31;CASE_20=32;CASE_21=33;CASE_22=34;CASE_23=35;CASE_24=36;CASE_25=37;CASE_26=38;CASE_27=39;CASE_28=40
-    */
+
+   [STMessageHandlerApplier] Recovered common GetMessage envelope/signature.
+   Evidence: family_entries=004024EB|0044EE30; family_names=STBoatC::GetMessage; ret4=21;
+   direct_offsets={10:6,14:14,18:35,1c:30} */
 
 int __thiscall STBoatC::GetMessage(STBoatC *this,STMessage *message)
 
@@ -140,7 +143,7 @@ int __thiscall STBoatC::GetMessage(STBoatC *this,STMessage *message)
   byte *pbVar35;
   undefined4 *puVar36;
   undefined8 uVar37;
-  STGroupBoatOrderType orderType;
+  Global_sub_00498D20_param_1Enum orderType;
   short sVar38;
   CHAR local_284;
   undefined4 local_283 [63];
@@ -417,7 +420,7 @@ int __thiscall STBoatC::GetMessage(STBoatC *this,STMessage *message)
                                      CONCAT22(extraout_var_14,*(undefined2 *)&this_01->field_0x30));
         pSVar19 = local_1c;
         if (this_02 != (STGroupBoatC *)0x0) {
-          (*this_02->vtable->SetOrderData)(this_02,GROUP_BOAT_ORDER_6A,&this_01->field_0x32);
+          (*this_02->vtable->SetOrderData)(this_02,CASE_6A,&this_01->field_0x32);
           pSVar19 = local_1c;
         }
       }
@@ -1135,7 +1138,7 @@ LAB_00450551:
           puVar20 = local_b4;
           local_b4[0] = 1;
           pSVar25 = pSVar19->vtable;
-          orderType = GROUP_BOAT_ORDER_11;
+          orderType = CASE_11;
           goto LAB_00450695;
         }
       }
@@ -1154,7 +1157,7 @@ LAB_00450551:
         local_a8 = 1;
         local_a4 = 0;
         pSVar25 = pSVar19->vtable;
-        orderType = GROUP_BOAT_ORDER_04;
+        orderType = CASE_4;
 LAB_00450695:
         (*pSVar25->SetOrderData)(pSVar19,orderType,puVar20);
         /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
@@ -1538,7 +1541,7 @@ LAB_00450e28:
       }
       if ((local_c == *(uint *)(&DAT_007a8f21 + *(int *)&this_01[2].field_0x20c * 0x45)) &&
          (local_1c != (STGroupBoatC *)0x0)) {
-        (*local_1c->vtable->SetOrderData)(local_1c,GROUP_BOAT_ORDER_6A,&this_01->field_0x32);
+        (*local_1c->vtable->SetOrderData)(local_1c,CASE_6A,&this_01->field_0x32);
       }
       if ((*(int *)&this_01[2].field_0xd9 == 9) || (*(int *)&this_01[2].field_0xd9 == 0x15)) {
         if (local_c != 0x27) {
@@ -6645,12 +6648,12 @@ LAB_0045910d:
           return 0;
         }
         if (iVar13 == 4) {
-          (*local_1c->vtable->SetOrderData)(local_1c,GROUP_BOAT_ORDER_66,&this_01->field_0x32);
+          (*local_1c->vtable->SetOrderData)(local_1c,CASE_66,&this_01->field_0x32);
           g_currentExceptionFrame = local_184.previous;
           return 0;
         }
         if (iVar13 == 6) {
-          (*local_1c->vtable->SetOrderData)(local_1c,GROUP_BOAT_ORDER_68,&this_01->field_0x32);
+          (*local_1c->vtable->SetOrderData)(local_1c,CASE_68,&this_01->field_0x32);
           g_currentExceptionFrame = local_184.previous;
           return 0;
         }
@@ -6658,14 +6661,14 @@ LAB_0045910d:
           g_currentExceptionFrame = local_184.previous;
           return 0;
         }
-        (*local_1c->vtable->SetOrderData)(local_1c,GROUP_BOAT_ORDER_69,&this_01->field_0x32);
+        (*local_1c->vtable->SetOrderData)(local_1c,CASE_69,&this_01->field_0x32);
         g_currentExceptionFrame = local_184.previous;
         return 0;
       }
       local_46 = *(undefined2 *)&this_01[2].field_0x1d4;
       local_48 = *(undefined2 *)&this_01->field_0x32;
       *(undefined2 *)&this_01[2].field_0x1f8 = 5;
-      (*local_1c->vtable->SetOrderData)(local_1c,GROUP_BOAT_ORDER_67,&local_48);
+      (*local_1c->vtable->SetOrderData)(local_1c,CASE_67,&local_48);
       *(undefined2 *)&this_01[2].field_0x1d4 = 0xffff;
       *(undefined4 *)((int)&this_01[1].field_014D + 1) = 3;
       iVar13 = Defence((STBoatC *)this_01,0);

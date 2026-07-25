@@ -9,7 +9,14 @@
    [STSwitchEnumApplier] Switch target field_01A4 uses
    /SubmarineTitans/Recovered/Enums/OptPanelTy_field_01A4State. Cases:
    CASE_1=1;CASE_2=2;CASE_3=3;CASE_4=4;CASE_5=5;CASE_6=6;CASE_7=7;CASE_8=8;CASE_9=9;CASE_A=10;CASE_B=11;CASE_C=12;CASE_D=13;CASE_E=14
-    */
+
+   [STSwitchEnumApplier] Switch target field_01AB uses
+   /SubmarineTitans/Recovered/Enums/OptPanelTy_field_01ABState. Cases:
+   CASE_1=1;CASE_2=2;CASE_3=3;CASE_4=4;CASE_5=5;CASE_6=6;CASE_7=7;CASE_A=10
+
+   [STSwitchEnumApplier] Switch target field_01AB uses
+   /SubmarineTitans/Recovered/Enums/OptPanelTy_field_01ABState. Cases:
+   CASE_1=1;CASE_2=2;CASE_3=3;CASE_4=4;CASE_5=5;CASE_6=6;CASE_7=7;CASE_A=10;CASE_B=11 */
 
 void __thiscall OptPanelTy::SetOptControls(OptPanelTy *this)
 
@@ -267,9 +274,9 @@ LAB_005305b4:
     ccFntTy::WrStr(this_00->field_017C,puVar9,iVar6,iVar16,uVar38);
     ccFntTy::SetSurf(this_00->field_0180,this_00->field_0068,0,0x1d,0x13,0xee,0x6a);
     switch(this_00->field_01AB) {
-    case 1:
-    case 2:
-    case 6:
+    case CASE_1:
+    case CASE_2:
+    case CASE_6:
       pcVar8 = local_984;
       for (iVar6 = 0x41; iVar6 != 0; iVar6 = iVar6 + -1) {
         pcVar8[0] = '\0';
@@ -423,7 +430,7 @@ LAB_0052fd4a:
         pcVar7 = pcVar7 + 1;
       }
       break;
-    case 7:
+    case CASE_7:
       pcVar8 = local_880;
       for (iVar6 = 0x41; iVar6 != 0; iVar6 = iVar6 + -1) {
         pcVar8[0] = '\0';
@@ -566,7 +573,7 @@ LAB_0052ff02:
       pcVar8 = LoadResourceString(UVar31,g_module_00807618);
       wsprintfA(&this_00->field_0x6c,pcVar8);
       break;
-    case 10:
+    case CASE_A:
       pcVar8 = LoadResourceString(this_00->field_01A5,g_module_00807618);
       wsprintfA(&this_00->field_0x6c,pcVar8);
     }

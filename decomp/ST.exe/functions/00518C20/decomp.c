@@ -61,7 +61,7 @@ void __thiscall HelpPanelTy::SubProc(HelpPanelTy *this,int param_1,char param_2)
     if (iVar6 == 0) {
       if (param_2 == '\0') {
         HVar1 = local_40->field_01A1;
-        if (((HVar1 == 0) || (HVar1 == CASE_6)) || (HVar1 == (CASE_8|CASE_2))) {
+        if (((HVar1 == 0) || (HVar1 == CASE_6)) || (HVar1 == CASE_A)) {
           local_40->field_01A2 = HVar1;
           local_40->field_01AB = local_40->field_01A3;
         }
@@ -235,7 +235,7 @@ void __thiscall HelpPanelTy::SubProc(HelpPanelTy *this,int param_1,char param_2)
       local_44 = param_1 * 3;
       do {
         local_18 = &DAT_007c0dd1 + local_44 + ((uint)local_14 & 0xffff);
-        if (*local_18 == ~(CASE_80|CASE_7F)) break;
+        if (*local_18 == CASE_0) break;
         if (local_c != 0) {
           ccFntTy::SetSurf(this_00->field_01E0,(int)this_00->field_0218,0,0,local_8,0x91,0xf);
           uVar16 = 3;

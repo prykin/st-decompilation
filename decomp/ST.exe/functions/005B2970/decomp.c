@@ -158,7 +158,7 @@ switchD_005b2a8d_default:
       if (g_cursorClass_00802A30 != (CursorClassTy *)0x0) {
         iVar2 = g_cursorClass_00802A30->field_00C9;
         iVar7 = g_cursorClass_00802A30->field_00C5;
-        g_cursorClass_00802A30->field_0493 = 1;
+        g_cursorClass_00802A30->field_0493 = CASE_1;
         this_00->field_0494 = 0xffff;
         CursorClassTy::SetGCType(this_00,CASE_0,iVar7,iVar2);
         CursorClassTy::DrawSprite(this_00,this_00->field_00C5,this_00->field_00C9);

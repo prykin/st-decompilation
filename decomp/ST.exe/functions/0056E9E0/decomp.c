@@ -93,7 +93,7 @@ undefined4 __thiscall STAppC::sub_0056E9E0(STAppC *this,int param_1)
       pbVar13 = pbVar13 + 1;
     }
   }
-  cMf32::delete(local_8,local_8);
+  cMf32::delete(local_8);
   g_currentExceptionFrame = local_5c.previous;
   return local_10;
 }

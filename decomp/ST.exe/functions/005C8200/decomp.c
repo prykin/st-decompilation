@@ -23,7 +23,6 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_004EEFB0::FUN_005c8200
   undefined4 *puVar3;
   ushort *puVar4;
   DWORD DVar5;
-  cMf32 *this_01;
   uint uVar6;
   uint uVar7;
   byte *pbVar8;
@@ -59,7 +58,7 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_004EEFB0::FUN_005c8200
     return;
   }
   if (local_c->field_1F3F != (cMf32 *)0x0) {
-    cMf32::delete(this_01,local_c->field_1F3F);
+    cMf32::delete(local_c->field_1F3F);
   }
   wsprintfA(&DAT_00853de4,"%s%s%s",&DAT_00807680,PTR_s_MISSIONS__0079c0e8,
             PTR_s_RANDOM_0079c0f4);

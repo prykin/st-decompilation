@@ -75,7 +75,7 @@ void __thiscall HelpPanelTy::TechProc(HelpPanelTy *this,uint param_1,byte param_
   }
   if (param_3 == '\0') {
     HVar2 = local_44->field_01A1;
-    if (((HVar2 == 0) || (HVar2 == CASE_6)) || (HVar2 == (CASE_8|CASE_2))) {
+    if (((HVar2 == 0) || (HVar2 == CASE_6)) || (HVar2 == CASE_A)) {
       local_44->field_01A2 = HVar2;
       local_44->field_01AB = local_44->field_01A3;
     }

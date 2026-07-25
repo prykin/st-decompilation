@@ -1,5 +1,4 @@
 target	target_kind	status	detail
-/STGameObjC+0	create_base_vtable	unchanged	base vtable and owner pointer already present
 /SubmarineTitans/Recovered/VTables/AiBossClassTyVTable_at_1C+0	vtable_slot	disabled	apply=0
 /SubmarineTitans/Recovered/VTables/AiBossClassTyVTable_at_1C+4	vtable_slot	disabled	apply=0
 /SubmarineTitans/Recovered/VTables/AiBossClassTyVTable_at_1C+8	vtable_slot	disabled	apply=0
@@ -178,7 +177,6 @@ target	target_kind	status	detail
 /SubmarineTitans/Recovered/VTables/STColl3CVTable+208	vtable_slot	disabled	apply=0
 /SubmarineTitans/Recovered/VTables/STColl3CVTable+212	vtable_slot	disabled	apply=0
 /SubmarineTitans/Recovered/VTables/STColl3CVTable+216	vtable_slot	disabled	apply=0
-/SubmarineTitans/Recovered/VTables/STColl3CVTable+220	vtable_slot	disabled	apply=0
 /SubmarineTitans/Recovered/VTables/STColl3CVTable+224	vtable_slot	disabled	apply=0
 /SubmarineTitans/Recovered/VTables/STColl3CVTable+228	vtable_slot	disabled	apply=0
 /SubmarineTitans/Recovered/VTables/STColl3CVTable+232	vtable_slot	disabled	apply=0
@@ -1489,7 +1487,6 @@ target	target_kind	status	detail
 /SubmarineTitans/Recovered/VTables/VTable_0079BD18+0	vtable_slot	disabled	apply=0
 /SubmarineTitans/Recovered/VTables/VTable_0079BE7C+0	vtable_slot	disabled	apply=0
 /SubmarineTitans/Recovered/VTables/VTable_0079BFE0+0	vtable_slot	disabled	apply=0
-/SubmarineTitans/Recovered/VTables/VTable_0079C018+0	vtable_slot	disabled	apply=0
 /SubmarineTitans/Recovered/VTables/VTable_0079C124+32	vtable_slot	disabled	apply=0
 /SubmarineTitans/Recovered/VTables/VTable_0079C124+36	vtable_slot	disabled	apply=0
 /SubmarineTitans/Recovered/VTables/VTable_0079C160+16	vtable_slot	disabled	apply=0
@@ -2072,8 +2069,6 @@ target	target_kind	status	detail
 /SubmarineTitans/Recovered/VTables/VTable_0079DED8+48	vtable_slot	disabled	apply=0
 /SubmarineTitans/Recovered/VTables/VTable_0079DED8+52	vtable_slot	disabled	apply=0
 /SubmarineTitans/Recovered/VTables/VTable_0079DED8+56	vtable_slot	disabled	apply=0
-/SubmarineTitans/Recovered/VTables/VTable_0079E1AC+0	vtable_slot	disabled	apply=0
-/SubmarineTitans/Recovered/VTables/VTable_0079E1B0+0	vtable_slot	disabled	apply=0
 /SubmarineTitans/Recovered/VTables/VTable_0079E284+8	vtable_slot	disabled	apply=0
 /SubmarineTitans/Recovered/VTables/VTable_0079E284+12	vtable_slot	disabled	apply=0
 /SubmarineTitans/Recovered/VTables/VTable_0079E298+8	vtable_slot	disabled	apply=0
@@ -2179,7 +2174,6 @@ target	target_kind	status	detail
 /SubmarineTitans/Recovered/VTables/VTable_007A13D0+72	vtable_slot	disabled	apply=0
 /SubmarineTitans/Recovered/VTables/VTable_007A13D0+76	vtable_slot	disabled	apply=0
 /SubmarineTitans/Recovered/VTables/VTable_007A13D0+80	vtable_slot	disabled	apply=0
-/SubmarineTitans/Recovered/VTables/VTable_007A13D0+84	vtable_slot	disabled	apply=0
 /SubmarineTitans/Recovered/VTables/VTable_007A13D0+88	vtable_slot	disabled	apply=0
 /SubmarineTitans/Recovered/VTables/VTable_007A13D0+92	vtable_slot	disabled	apply=0
 /SubmarineTitans/Recovered/VTables/VTable_007A13D0+96	vtable_slot	disabled	apply=0

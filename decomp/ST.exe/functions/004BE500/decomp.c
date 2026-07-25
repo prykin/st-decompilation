@@ -32,7 +32,7 @@ void __thiscall TLOBaseTy::SetActivity(TLOBaseTy *this,int param_1)
     if ((((this_00->field_021D != 0) && (iVar4 == 0)) &&
         (uVar5 = GetPlayerRaceId(*(char *)&this_00->field_023D),
         *(int *)(&DAT_00795c00 + ((uVar5 & 0xff) + this_00->field_0235 * 3) * 4) != 0)) &&
-       (this_00->field_0024 == (uint)(byte)this_00->field_0010->field_112D)) {
+       (this_00->field_0024 == (byte *)(uint)(byte)this_00->field_0010->field_112D)) {
       pTVar1 = this_00->vtable;
       uVar5 = GetPlayerRaceId(*(char *)&this_00->field_023D);
       (*pTVar1->vfunc_90)(4,*(undefined4 *)

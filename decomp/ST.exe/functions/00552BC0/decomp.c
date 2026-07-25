@@ -45,7 +45,7 @@ void __thiscall UpgPanelTy::Update(UpgPanelTy *this)
     local_8 = 3;
     do {
       uVar4 = thunk_FUN_005276e0((Global_sub_005276E0_param_1Enum)*puVar8,(byte)(*puVar8 >> 0x10));
-      if (*(Global_sub_005276E0_param_1Enum *)(puVar8 + 2) == ~(CASE_80|CASE_7F)) {
+      if (*(Global_sub_005276E0_param_1Enum *)(puVar8 + 2) == CASE_0) {
         pAVar10 = (AnonShape_GLOBAL_0081175C_57F682DD *)pUVar2->field_03EF;
       }
       else {
@@ -66,7 +66,7 @@ void __thiscall UpgPanelTy::Update(UpgPanelTy *this)
       do {
         uVar4 = thunk_FUN_005276e0((Global_sub_005276E0_param_1Enum)*puVar8,(byte)(*puVar8 >> 0x10))
         ;
-        if (*(Global_sub_005276E0_param_1Enum *)(puVar8 + 2) == ~(CASE_80|CASE_7F)) {
+        if (*(Global_sub_005276E0_param_1Enum *)(puVar8 + 2) == CASE_0) {
           pAVar10 = (AnonShape_GLOBAL_0081175C_57F682DD *)pUVar2->field_03EF;
         }
         else {
@@ -87,7 +87,7 @@ void __thiscall UpgPanelTy::Update(UpgPanelTy *this)
     local_10 = 0;
     do {
       uVar4 = thunk_FUN_005276e0((Global_sub_005276E0_param_1Enum)*puVar8,(byte)(*puVar8 >> 0x10));
-      if (*(Global_sub_005276E0_param_1Enum *)(puVar8 + 2) == ~(CASE_80|CASE_7F)) {
+      if (*(Global_sub_005276E0_param_1Enum *)(puVar8 + 2) == CASE_0) {
         pAVar10 = (AnonShape_GLOBAL_0081175C_57F682DD *)pUVar2->field_03EF;
       }
       else {

@@ -92,7 +92,7 @@ undefined4 __fastcall FUN_004b8c80(TLOBaseTy *param_1)
     }
     return 0;
   }
-  if (TVar6 == (CASE_4|CASE_1)) {
+  if (TVar6 == (CASE_5)) {
     if (((param_1->field_0299 != 0) &&
         (iVar3 = thunk_FUN_004ac910(&param_1->field_01D5,'\x0e'),
         param_1->field_01F5->field_0208 + *(int *)&param_1->field_0x2a1 <= iVar3)) &&
@@ -157,7 +157,7 @@ cf_common_exit_004B9130:
       if (*(int *)(&DAT_00791a10 + param_1->field_0235 * 4) != 0) {
         thunk_FUN_004cbf70((int)param_1);
       }
-      thunk_FUN_004cc900((AnonShape_004CC900_31EE9CAA *)param_1);
+      TLOBaseTy::sub_004CC900(param_1);
       STT3DSprC::StopShow((STT3DSprC *)puVar1,5);
       iVar3 = (*param_1->vtable->vfunc_08)();
       if (iVar3 != 0) {
@@ -191,17 +191,17 @@ cf_common_exit_004B9130:
                          10000);
     }
     if (*(int *)(&DAT_007e3160 + (param_1->field_0235 * 3 + param_1->field_0239) * 4) != 0) {
-      thunk_FUN_004e4380(param_1->field_0024,
+      thunk_FUN_004e4380((int)param_1->field_0024,
                          (param_1->field_05D7 *
                           *(int *)(&DAT_007e3160 +
                                   (param_1->field_0235 * 3 + param_1->field_0239) * 4) * 0x3c) /
                          10000);
     }
     thunk_FUN_004d78e0(*(char *)&param_1->field_0024);
-    if (param_1->field_0024 == (uint)(byte)param_1->field_0010->field_112D) {
+    if (param_1->field_0024 == (byte *)(uint)(byte)param_1->field_0010->field_112D) {
       thunk_FUN_004d8b70((char)param_1->field_0024);
     }
-    if (param_1->field_0024 != (uint)(byte)param_1->field_0010->field_112D)
+    if (param_1->field_0024 != (byte *)(uint)(byte)param_1->field_0010->field_112D)
     goto cf_common_exit_004B8F5A;
     thunk_FUN_0052af50(0,(float)param_1->field_01F9,(float)param_1->field_01FD);
     uVar4 = GetPlayerRaceId(*(char *)&param_1->field_0024);
@@ -237,11 +237,12 @@ cf_common_exit_004B8F5A:
   {
     if (param_1->field_0245 != CASE_4) {
       iVar3 = thunk_FUN_004ac910(&param_1->field_01D5,'\x0e');
-      if (((iVar3 == param_1->field_01F5->field_020C) && (local_8 = 1, param_1->field_05AC == 0x65))
-         && ((param_1->field_0408 != 0 &&
-             ((param_1->field_040C != 0 &&
-              (iVar3 = FUN_006e62d0(g_playSystem_00802A38,param_1->field_040C,(int *)&local_c),
-              iVar3 == 0)))))) {
+      if (((iVar3 == param_1->field_01F5->field_020C) &&
+          (local_8 = 1, param_1->field_05AC == (CASE_65))) &&
+         ((param_1->field_0408 != 0 &&
+          ((param_1->field_040C != 0 &&
+           (iVar3 = FUN_006e62d0(g_playSystem_00802A38,param_1->field_040C,(int *)&local_c),
+           iVar3 == 0)))))) {
         thunk_FUN_0060d340(local_c);
         (*param_1->vtable->vfunc_90)(3,0x3d9);
       }

@@ -179,8 +179,8 @@ LAB_0050254c:
   FUN_006e6080(this_00,2,iVar7,(undefined4 *)&this_00->field_0x18);
 LAB_00502622:
   if (((((this_00->field_0B9E == CASE_1) || (this_00->field_0B9E == CASE_3)) &&
-       ((CVar2 = this_00->field_0B99, CVar2 != 9 && ((CVar2 != 0x15 && (CVar2 != 0xbd)))))) &&
-      (CVar2 != 0xa7)) && ((CVar2 != 0xa6 && (CVar2 != 0xaf)))) {
+       ((CVar2 = this_00->field_0B99, CVar2 != CASE_9 && ((CVar2 != CASE_15 && (CVar2 != CASE_BD))))
+       )) && (CVar2 != CASE_A7)) && ((CVar2 != CASE_A6 && (CVar2 != CASE_AF)))) {
     uVar22 = 0;
     uVar20 = 0;
     iVar9 = 0;
@@ -210,10 +210,10 @@ LAB_00502622:
                        uVar14,sVar15,uVar16,iVar7,pcVar4,iVar9,uVar20,uVar22);
     this_00->field_0970 = uVar13;
   }
-  if ((((this_00->field_0B9E == CASE_1) && (this_00->field_0B99 != 9)) &&
-      (this_00->field_0B99 != 0x15)) ||
-     (((this_00->field_0B9E == CASE_2 && (this_00->field_0B99 != 9)) &&
-      (this_00->field_0B99 != 0x15)))) {
+  if ((((this_00->field_0B9E == CASE_1) && (this_00->field_0B99 != CASE_9)) &&
+      (this_00->field_0B99 != CASE_15)) ||
+     (((this_00->field_0B9E == CASE_2 && (this_00->field_0B99 != CASE_9)) &&
+      (this_00->field_0B99 != CASE_15)))) {
     local_c = &this_00->field_0960;
     bVar8 = 0;
     iVar7 = 0xb230;

@@ -13,6 +13,7 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Locale;
 import java.util.Map;
+import java.util.Objects;
 
 import ghidra.app.script.GhidraScript;
 import ghidra.program.model.address.Address;
@@ -51,7 +52,7 @@ public class STMessageHandlerApplier extends GhidraScript {
         DataType message = currentProgram.getDataTypeManager().getDataType(MESSAGE_PATH);
         if (message == null || message.getLength() < 0x20)
             throw new IllegalStateException(
-                "STMessage 0x20 layout is missing; run STRecoveredTypesApplier first");
+                "STMessage 0x20 layout is missing; run STTypeBootstrapAnalyzer/Applier first");
 
         int applied = 0, unchanged = 0, disabled = 0, preserved = 0, conflicts = 0;
         for (Map<String, String> row : tsv.rows) {
@@ -115,14 +116,26 @@ public class STMessageHandlerApplier extends GhidraScript {
         DataType messagePointer = new PointerDataType(message,
             currentProgram.getDefaultPointerSize(), currentProgram.getDataTypeManager());
         List<Parameter> explicit = explicitParameters(function);
+        boolean desired = "__thiscall".equals(function.getCallingConventionName()) &&
+            returnType.getPathName().equals(function.getReturnType().getPathName()) &&
+            explicit.size() == 1 && isMessagePointer(explicit.get(0).getDataType()) &&
+            "message".equals(explicit.get(0).getName());
+        if (desired) {
+            boolean changed = false;
+            if (!hasTag(function, TAG)) {
+                function.addTag(TAG);
+                changed = true;
+            }
+            String commentBefore = function.getComment();
+            addComment(function, row);
+            changed |= !Objects.equals(commentBefore, function.getComment());
+            return changed ?
+                ApplyResult.applied("recorded provenance for existing message signature") :
+                ApplyResult.unchanged("desired signature and provenance already present");
+        }
+
         if (manualConflict(function, explicit, returnType, messagePointer))
             return ApplyResult.preserved("USER_DEFINED/IMPORTED semantic signature preserved");
-
-        boolean desired = "__thiscall".equals(function.getCallingConventionName()) &&
-            returnType.isEquivalent(function.getReturnType()) && explicit.size() == 1 &&
-            messagePointer.isEquivalent(explicit.get(0).getDataType()) &&
-            "message".equals(explicit.get(0).getName());
-        if (desired) return ApplyResult.unchanged("desired signature already present");
 
         List<Variable> parameters = List.of(new ParameterImpl("message", messagePointer,
             currentProgram, SourceType.ANALYSIS));
@@ -166,6 +179,11 @@ public class STMessageHandlerApplier extends GhidraScript {
         for (Parameter parameter : function.getParameters())
             if (!parameter.isAutoParameter()) result.add(parameter);
         return result;
+    }
+
+    private boolean isMessagePointer(DataType type) {
+        return type instanceof Pointer pointer && pointer.getDataType() != null &&
+            MESSAGE_PATH.equals(pointer.getDataType().getPathName());
     }
 
     private void addComment(Function function, Map<String, String> row) {

@@ -31,8 +31,6 @@ STAppC::InitApp(STAppC *this,HINSTANCE param_1,undefined4 param_2,undefined4 par
   undefined4 uVar17;
   uint uVar18;
   uint uVar19;
-  cMf32 *this_00;
-  cMf32 *this_01;
   STAppC *pSVar20;
   WNDCLASSA *pWVar21;
   char *pcVar22;
@@ -833,7 +831,7 @@ switchD_0056b4ce_caseD_47:
                                          (0x345,&local_c->field_0x76f6,0,0,0);
             local_3c = &pSVar20->field_0x1196;
             cMf32::RecGet(pcVar12,0,PTR_s_DESCRIPTOR_0079b080,(int *)&local_3c,0);
-            cMf32::delete(this_01,pcVar12);
+            cMf32::delete(pcVar12);
             g_currentExceptionFrame = local_204.previous;
           }
           else {
@@ -1206,7 +1204,7 @@ switchD_0056b4ce_caseD_57:
         pSVar20->field_119A = 0x8f000805;
         cMf32::RecPut(pcVar12,0,PTR_s_DESCRIPTOR_0079b080,&pSVar20->field_0x1196,0x1999,
                       (undefined4 *)0x0,'\0',(uint *)0x0);
-        cMf32::delete(this_00,pcVar12);
+        cMf32::delete(pcVar12);
       }
       g_currentExceptionFrame = local_17c.previous;
       RaiseInternalException

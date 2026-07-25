@@ -189,11 +189,11 @@ int __thiscall TLOBaseTy::teleNone(TLOBaseTy *this)
         FUN_006eabf0((void *)this_00->field_0211,uVar4,iVar3);
       }
       if ((*(int *)(&DAT_00792778 + this_00->field_0235 * 4) == 0) ||
-         (iVar3 = thunk_FUN_004e81b0(this_00->field_0024,this_00->field_0235,0), iVar3 == 0)) {
+         (iVar3 = thunk_FUN_004e81b0((int)this_00->field_0024,this_00->field_0235,0), iVar3 == 0)) {
         puVar5 = (undefined *)0x5;
       }
       else {
-        puVar5 = (undefined *)thunk_FUN_004e81b0(this_00->field_0024,this_00->field_0235,0);
+        puVar5 = (undefined *)thunk_FUN_004e81b0((int)this_00->field_0024,this_00->field_0235,0);
       }
       TLOEmbryoTy::sub_0041C3F0((TLOEmbryoTy *)this_00,puVar5);
       this_00->field_046C = CASE_5;

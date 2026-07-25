@@ -33,7 +33,7 @@ undefined4 __fastcall FUN_004cc370(AnonShape_004CC370_02CE3D17 *param_1)
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
   iVar3 = (**(code **)(*(int *)param_1 + 0x7c))();
   if ((3 < iVar3 / 0x14) && (*(int *)&param_1->field_0x43c == 1)) {
-    thunk_FUN_004cc900((AnonShape_004CC900_31EE9CAA *)param_1);
+    TLOBaseTy::sub_004CC900((TLOBaseTy *)param_1);
     goto cf_common_exit_004CC6D2;
   }
   STT3DSprC::UnLoadSequence((STT3DSprC *)&param_1->field_0x1d5,6);

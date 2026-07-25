@@ -60,7 +60,7 @@ FSGSTy * __cdecl CreateFSGS(void)
     SpriteClassTy::SpriteClassTy((SpriteClassTy *)&this->field_1DFD);
     this->field_0000 = (AnonPointee_FSGSTy_0000 *)&VTable_0079C02C;
     this->field_1A6B = 1;
-    this->field_0065 = 1;
+    this->field_0065 = CASE_1;
     this->field_1A61 = 0;
     this->field_1A5F = 0;
     this->field_1A60 = 0;

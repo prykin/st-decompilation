@@ -125,10 +125,22 @@ writes `pseudocode_idioms.jsonl` for forms that Ghidra cannot
 reliably spell as structured C (packed/unaligned fields, runtime-stride arrays,
 flat global-record arithmetic, raw indirect calls, and residual ABI artifacts).
 Every referenced immutable NUL-terminated string is emitted as an escaped C
-literal while its original symbol and address remain in metadata. The exporter
-also writes `decomp_quality_summary.json` and `decomp_quality_issues.jsonl`, a
-recursive inventory of residual type, field, global, CFG, and ABI debt across all
-exported `functions/**/decomp.c` bodies.
+literal while its original symbol and address remain in metadata.
+The exporter also writes `decomp_quality_summary.json` and
+`decomp_quality_issues.jsonl`, a recursive inventory of residual type, field,
+global, CFG, enum-domain, and ABI debt across all exported
+`functions/**/decomp.c` bodies. Every category carries a recovery stage and
+regression policy, so expected layout-to-naming transitions are reported
+separately from hard ABI or type erasure regressions. Generated
+`CASE_*|CASE_*` enum compositions are a strict-zero export invariant (reported
+as unresolved quality debt, not as a baseline regression). The switch-enum
+recovery assigns case labels to the innermost nested switch, lets an existing
+script-owned enum grow from a single new arm, and folds unambiguous typed
+`CASE_A|CASE_B`/`~(CASE_A|CASE_B)` uses back into its monotonic domain. It never
+uses that heuristic to create or alter a manual/semantic enum. If Ghidra still
+prints an OR after the generated enum already contains the exact combined
+member, the exporter normalizes only that type-proven spelling to the existing
+`CASE_<value>` name; missing or ambiguous values remain a strict error.
 The same hints appear as idempotent `ST_PSEUDO[...]` comments immediately above
 the corresponding expressions in each `decomp.c`.
 The normalization contract and examples are documented in
@@ -156,8 +168,21 @@ For routine work, run `STRecoveryPipeline` instead of launching every pair
 manually. It infers the repository from its location under `scripts/`, supplies
 all `recovery/ST.exe/*.tsv` and `decomp/` paths automatically, and offers
 bounded `core`, `deep`, `full`, `export`, and `full-export` sequences. It never
-enables review-only rows. The incremental execution log is written to
-`recovery/ST.exe/pipeline_report.tsv`.
+enables review-only rows and fails rather than exporting when a mutating loop
+has not reached a fixed point. Each loop continues from the current
+proposal/apply state only while an enabled row both reports a mutation and
+changes the Ghidra Program; review, conflict, error, preserved, and unchanged
+rows are terminal for that automatic pass. The 24-pass structural and 12-pass
+deep bounds are emergency cycle guards. `automation_state.tsv` and
+`automation_evidence.jsonl` bind an export to a deterministic semantic Program
+fingerprint, monotonic enum-domain state, and proposal/apply hashes. Ghidra's
+volatile modification number is retained only as a diagnostic. Each run is staged
+in `recovery/ST.exe/runs/.current` and finalized as
+`runs/<overall-sha256>/`; directory names contain no timestamp. Only the three most
+recent hashes are retained. `pipeline.log`, `events.jsonl`, per-pass TSV snapshots,
+`exception.txt`, and the export receipt make failures inspectable, while
+`pipeline_report.tsv` remains the latest-run compatibility view. Export mode first
+snapshots the prior corpus and then runs a stage-aware regression gate.
 
 Detailed installation instructions, script dependencies, review flags, and the
 canonical run order are documented in
@@ -179,6 +204,8 @@ The current work focuses on recovering what the binary can prove:
 - anonymous hidden-`this` receivers proven from ECX flow and stack discipline;
 - message IDs and anonymous state/switch domains;
 - the common `STMessage` envelope and compatible `GetMessage` handler family;
+- heuristic bootstrap of descriptor/envelope types without embedded addresses
+  or enum values, plus discriminator-specific payload and stack-lifetime types;
 - physical and owner-resolved vtables (including one-slot and secondary-subobject
   tables), virtual slots, direct-JMP thunks, constructors, and class relationships;
 - exact table/CALL-referenced function boundaries recovered from previously
@@ -194,7 +221,8 @@ The current work focuses on recovering what the binary can prove:
 - typed global data recovered from class-receiver and trusted-argument use;
 - pointer-backed structures recovered from fixed-offset dereferences and typed helper calls;
 - exact anonymous type-family consolidation and named return-to-local propagation;
-- trusted indirect-call and shared base-vtable prototypes, with a full review-only callsite audit;
+- trusted indirect-call/vtable prototypes and automatic unanimous-callsite
+  `__cdecl` correction, with ambiguous callsites retained for review;
 - statically linked CRT, DKW, and internal `Ourlib` modules;
 - structured control-flow labels where the decompiler emits unavoidable gotos.
 

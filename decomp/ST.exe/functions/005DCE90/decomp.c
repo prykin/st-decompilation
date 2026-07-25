@@ -16,7 +16,6 @@ int __thiscall StartSystemTy::GetMessage(StartSystemTy *this,STMessage *message)
   code *pcVar2;
   StartSystemTy *this_00;
   int iVar3;
-  cMf32 *this_01;
   int iVar4;
   STMessage *pSVar5;
   undefined4 *puVar6;
@@ -85,7 +84,7 @@ int __thiscall StartSystemTy::GetMessage(StartSystemTy *this,STMessage *message)
           DAT_00807654 = 0x21;
           DAT_0080879c = 0;
           if (g_cMf32_00806758 != (cMf32 *)0x0) {
-            cMf32::delete(this_01,g_cMf32_00806758);
+            cMf32::delete(g_cMf32_00806758);
           }
           g_cMf32_00806758 = (cMf32 *)0x0;
           if (g_cursorClass_00802A30 != (CursorClassTy *)0x0) {

@@ -13,29 +13,6 @@ void __thiscall CPanelTy::DoneCPanel(CPanelTy *this)
   CPanelTy *this_00;
   int iVar3;
   int iVar4;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
-  ccFntTy *extraout_ECX;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
-  ccFntTy *extraout_ECX_00;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
-  ccFntTy *extraout_ECX_01;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
-  ccFntTy *extraout_ECX_02;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
-  ccFntTy *extraout_ECX_03;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
-  ccFntTy *extraout_ECX_04;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
-  ccFntTy *extraout_ECX_05;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
-  ccFntTy *extraout_ECX_06;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
-  ccFntTy *extraout_ECX_07;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
-  ccFntTy *extraout_ECX_08;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
-  ccFntTy *extraout_ECX_09;
-  ccFntTy *this_01;
   uint *puVar5;
   int *piVar6;
   undefined4 *puVar7;
@@ -249,70 +226,48 @@ void __thiscall CPanelTy::DoneCPanel(CPanelTy *this)
     this_00->field_0296 = (ushort *)0x0;
     this_00->field_0292 = (ushort *)0x0;
     this_00->field_028E = (ushort *)0x0;
-    /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
-    this_01 = extraout_ECX;
     if (this_00->field_024B != (DArrayTy *)0x0) {
       DArrayDestroy(this_00->field_024B);
-      /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
-      this_01 = extraout_ECX_00;
     }
     this_00->field_024B = (DArrayTy *)0x0;
     if (this_00->field_0B4B != (DArrayTy *)0x0) {
       DArrayDestroy(this_00->field_0B4B);
-      /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
-      this_01 = extraout_ECX_01;
     }
     this_00->field_0B4B = (DArrayTy *)0x0;
     if (this_00->field_0B95 != (DArrayTy *)0x0) {
       DArrayDestroy(this_00->field_0B95);
-      /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
-      this_01 = extraout_ECX_02;
     }
     this_00->field_0B95 = (DArrayTy *)0x0;
     if (this_00->field_01CC != (ccFntTy *)0x0) {
-      ccFntTy::operator(this_01,(uint *)this_00->field_01CC);
+      ccFntTy::operator((uint *)this_00->field_01CC);
       this_00->field_01CC = (ccFntTy *)0x0;
-      /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
-      this_01 = extraout_ECX_03;
     }
     if (this_00->field_01D0 != (ccFntTy *)0x0) {
-      ccFntTy::operator(this_01,(uint *)this_00->field_01D0);
+      ccFntTy::operator((uint *)this_00->field_01D0);
       this_00->field_01D0 = (ccFntTy *)0x0;
-      /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
-      this_01 = extraout_ECX_04;
     }
     if (this_00->field_01D4 != (ccFntTy *)0x0) {
-      ccFntTy::operator(this_01,(uint *)this_00->field_01D4);
+      ccFntTy::operator((uint *)this_00->field_01D4);
       this_00->field_01D4 = (ccFntTy *)0x0;
-      /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
-      this_01 = extraout_ECX_05;
     }
     if (this_00->field_01C8 != (ccFntTy *)0x0) {
-      ccFntTy::operator(this_01,(uint *)this_00->field_01C8);
+      ccFntTy::operator((uint *)this_00->field_01C8);
       this_00->field_01C8 = (ccFntTy *)0x0;
-      /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
-      this_01 = extraout_ECX_06;
     }
     if (this_00->field_01C4 != (ccFntTy *)0x0) {
-      ccFntTy::operator(this_01,(uint *)this_00->field_01C4);
+      ccFntTy::operator((uint *)this_00->field_01C4);
       this_00->field_01C4 = (ccFntTy *)0x0;
-      /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
-      this_01 = extraout_ECX_07;
     }
     if (this_00->field_01C0 != (uint *)0x0) {
-      ccFntTy::operator(this_01,this_00->field_01C0);
+      ccFntTy::operator(this_00->field_01C0);
       this_00->field_01C0 = (void *)0x0;
-      /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
-      this_01 = extraout_ECX_08;
     }
     if (this_00->field_01BC != (ccFntTy *)0x0) {
-      ccFntTy::operator(this_01,(uint *)this_00->field_01BC);
+      ccFntTy::operator((uint *)this_00->field_01BC);
       this_00->field_01BC = (ccFntTy *)0x0;
-      /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
-      this_01 = extraout_ECX_09;
     }
     if (this_00->field_01B8 != (ccFntTy *)0x0) {
-      ccFntTy::operator(this_01,(uint *)this_00->field_01B8);
+      ccFntTy::operator((uint *)this_00->field_01B8);
       this_00->field_01B8 = (ccFntTy *)0x0;
     }
     if (this_00->field_01AC != (AnonPointee_CPanelTy_01AC *)0x0) {

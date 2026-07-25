@@ -53,13 +53,13 @@ LAB_0053c75b:
            (pGVar6 = (Global_sub_00528060_param_1Enum *)
                      (*(int *)(iVar5 + 8) * uVar4 + *(int *)(iVar5 + 0x1c)),
            pGVar6 != (Global_sub_00528060_param_1Enum *)0x0)) {
-          *(char *)((int)local_8 + -1) = (pGVar6[8] == ~(CASE_80|CASE_7F)) + '\x03';
+          *(char *)((int)local_8 + -1) = (pGVar6[8] == CASE_0) + '\x03';
           /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
           uVar2 = thunk_FUN_005293c0(CONCAT31((int3)(uVar1 >> 8),*pGVar6));
           *local_8 = uVar2;
           UVar3 = thunk_FUN_00528060(*pGVar6,(char)((uint)*(undefined4 *)pGVar6 >> 0x10));
           local_8[1] = UVar3;
-          if (pGVar6[8] == ~(CASE_80|CASE_7F)) {
+          if (pGVar6[8] == CASE_0) {
             pGVar6 = pGVar6 + 0x12;
             puVar8 = local_8 + 2;
             for (iVar5 = 7; iVar5 != 0; iVar5 = iVar5 + -1) {

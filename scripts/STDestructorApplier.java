@@ -34,6 +34,7 @@ import ghidra.program.model.symbol.SymbolTable;
 
 public class STDestructorApplier extends GhidraScript {
     private static final String TAG = "RECOVERED_DESTRUCTOR";
+    private static final String LIFECYCLE_TAG = "RECOVERED_LIFECYCLE_METHOD";
     private static final String MARKER = "[STDestructorApplier]";
     private final List<ReportRow> report = new ArrayList<>();
     private DataTypeManager dataTypes;
@@ -175,7 +176,14 @@ public class STDestructorApplier extends GhidraScript {
                     details.add("return=applied(void)"); changed = true;
                 }
             }
-            if (changed) { function.addTag(TAG); addComment(function, row); }
+            if (changed) {
+                if ("lifecycle_method".equals(row.get("kind"))) {
+                    function.removeTag(TAG);
+                    function.addTag(LIFECYCLE_TAG);
+                }
+                else function.addTag(TAG);
+                addComment(function, row);
+            }
             String status = conflict && !changed ? "conflict" :
                 changed && (conflict || preserved) ? "partial" : changed ? "applied" :
                 preserved ? "preserved" : "unchanged";

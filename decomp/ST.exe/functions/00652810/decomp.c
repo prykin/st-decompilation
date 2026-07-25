@@ -6,7 +6,11 @@
    Source: E:\__titans\ai\ai_event.cpp
    Handles an STMessage for AiEventClassTy. Maps the external message ID to an internal AI event
    trigger, finds matching event records, evaluates their conditions, and interprets their action
-   lists. */
+   lists.
+
+   [STMessageHandlerApplier] Recovered common GetMessage envelope/signature.
+   Evidence: family_entries=00401BE0|00652810; family_names=AiEventClassTy::GetMessage; ret4=2;
+   direct_offsets={10:0,14:0,18:100,1c:5} */
 
 void __thiscall AiEventClassTy::GetMessage(AiEventClassTy *this,STMessage *message)
 

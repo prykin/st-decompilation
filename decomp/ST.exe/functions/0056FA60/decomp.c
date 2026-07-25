@@ -8,7 +8,11 @@
 
    [STMessageHandlerApplier] Recovered common GetMessage envelope/signature.
    Evidence: family_entries=004058EE|0056FA60; family_names=STAppC::GetMessage; ret4=17;
-   direct_offsets={10:4,14:6,18:7,1c:8} */
+   direct_offsets={10:4,14:6,18:7,1c:8}
+
+   [STSwitchEnumApplier] Switch target field_1180 uses
+   /SubmarineTitans/Recovered/Enums/STAppC_field_1180State. Cases:
+   CASE_1=1;CASE_2=2;CASE_3=3;CASE_6=6;CASE_8=8;CASE_9=9;CASE_B=11 */
 
 int __thiscall STAppC::GetMessage(STAppC *this,STMessage *message)
 
@@ -167,7 +171,7 @@ switchD_0056fad2_caseD_6105:
       OpenGameDBs(pSVar11);
       StartGame(pSVar11);
       SVar2 = pSVar11->field_1180;
-      if ((SVar2 < (CASE_8|CASE_1)) || ((0xc < SVar2 && (SVar2 != 0x10)))) {
+      if ((SVar2 < CASE_9) || ((0xc < SVar2 && (SVar2 != 0x10)))) {
         puVar16 = (undefined4 *)&pSVar11->field_0x1196;
         puVar24 = (undefined4 *)&pSVar11->field_0x2b2f;
         for (iVar12 = 0x666; iVar12 != 0; iVar12 = iVar12 + -1) {
@@ -452,7 +456,7 @@ switchD_0056fad2_caseD_6102:
               pcVar15 = pcVar15 + 1;
               pcVar23 = pcVar23 + 1;
             }
-            if ((pSVar11->field_1180 == CASE_3) || (pSVar11->field_1180 == (CASE_8|CASE_3))) {
+            if ((pSVar11->field_1180 == CASE_3) || (pSVar11->field_1180 == CASE_B)) {
               pSVar11->field_1180 = CASE_3;
             }
             else {

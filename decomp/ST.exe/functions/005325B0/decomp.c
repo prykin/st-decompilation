@@ -18,11 +18,6 @@ void __thiscall OptPanelTy::PrepAsses(OptPanelTy *this,void *param_1)
   DArrayTy *pDVar7;
   char *pcVar8;
   int iVar9;
-  cMf32 *this_00;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
-  cMf32 *extraout_ECX;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
-  cMf32 *extraout_ECX_00;
   uint uVar10;
   uint uVar11;
   OptPanelTy *pOVar12;
@@ -89,34 +84,29 @@ void __thiscall OptPanelTy::PrepAsses(OptPanelTy *this,void *param_1)
   }
   pcVar6 = (cMf32 *)Library::Ourlib::MF32INT::FUN_006f0ec0(0x345,(byte *)&DAT_0080f33a,0,0,0);
   pOVar12 = local_8;
-  this_00 = (cMf32 *)(_DAT_008087a0 & 0xff);
-  switch(this_00) {
-  case (cMf32 *)0x1:
-  case (cMf32 *)0x4:
-  case (cMf32 *)0x6:
-  case (cMf32 *)0x7:
-  case (cMf32 *)0xd:
-  case (cMf32 *)0xe:
-  case (cMf32 *)0x13:
+  switch(_DAT_008087a0 & 0xff) {
+  case 1:
+  case 4:
+  case 6:
+  case 7:
+  case 0xd:
+  case 0xe:
+  case 0x13:
     pDVar7 = (DArrayTy *)CreateAssistantList((int)pcVar6,(uint)DAT_0080874e,DAT_0080995c);
-    /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
-    this_00 = extraout_ECX;
     break;
-  case (cMf32 *)0x2:
-  case (cMf32 *)0x3:
-  case (cMf32 *)0x5:
-  case (cMf32 *)0x8:
-  case (cMf32 *)0xf:
+  case 2:
+  case 3:
+  case 5:
+  case 8:
+  case 0xf:
     pDVar7 = (DArrayTy *)CreateStrategList((int)pcVar6,(uint)DAT_0080874d,0xffffffff);
-    /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
-    this_00 = extraout_ECX_00;
     break;
   default:
     goto switchD_005326e6_caseD_9;
   }
   pOVar12->field_02FD = pDVar7;
 switchD_005326e6_caseD_9:
-  cMf32::delete(this_00,pcVar6);
+  cMf32::delete(pcVar6);
   g_currentExceptionFrame = local_94.previous;
 LAB_00532758:
   if ((&stack0x00000000 != (undefined1 *)0x12c) &&

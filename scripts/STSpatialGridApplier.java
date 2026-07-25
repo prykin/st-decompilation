@@ -39,7 +39,7 @@ public class STSpatialGridApplier extends GhidraScript {
     private static final String MARKER = "[STSpatialGridApplier]";
     private static final CategoryPath CATEGORY =
         new CategoryPath("/SubmarineTitans/Recovered/GlobalRecords");
-    private static final String PATHING_TYPE = CATEGORY.getPath() + "/STPathingGrid16";
+    private static final String PATHING_TYPE = CATEGORY.getPath() + "/STSpatialGrid16";
     private static final String WORLD_TYPE = CATEGORY.getPath() + "/STWorldGrid";
     private static final String WORLD_CELL_TYPE = CATEGORY.getPath() + "/STWorldCell";
     private static final int[] FIELD_OFFSETS = { 0, 2, 4, 6, 8 };
@@ -168,10 +168,10 @@ public class STSpatialGridApplier extends GhidraScript {
         if (!PATHING_TYPE.equals(path)) return existing;
         if (existing != null) {
             if (!(existing instanceof Structure structure) || !validPathingType(structure))
-                throw new IllegalArgumentException("Existing STPathingGrid16 was manually changed");
+                throw new IllegalArgumentException("Existing STSpatialGrid16 was manually changed");
             return existing;
         }
-        Structure structure = new StructureDataType(CATEGORY, "STPathingGrid16", 0, dataTypes);
+        Structure structure = new StructureDataType(CATEGORY, "STSpatialGrid16", 0, dataTypes);
         structure.setDescription("Runtime-sized 3D grid of signed 16-bit pathing flags/costs. " +
             "Linear index is x + sizeX*y + planeStride*z.");
         structure.add(ShortDataType.dataType, 2, "sizeX", "Exclusive X-coordinate bound.");
@@ -188,7 +188,7 @@ public class STSpatialGridApplier extends GhidraScript {
         DataType worldCell = dataTypes.getDataType(WORLD_CELL_TYPE);
         if (worldCell == null)
             throw new IllegalArgumentException("Missing prerequisite type " + WORLD_CELL_TYPE +
-                "; run STRecoveredTypesApplier first");
+                "; run STTypeBootstrapAnalyzer/Applier first");
         if (existing != null) {
             if (!(existing instanceof Structure structure) ||
                     !validWorldType(structure, worldCell))

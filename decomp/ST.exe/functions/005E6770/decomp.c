@@ -353,7 +353,7 @@ void __thiscall WaitTy::InitWait(WaitTy *this,undefined4 param_1,undefined4 para
     if (g_cursorClass_00802A30 != (CursorClassTy *)0x0) {
       iVar4 = g_cursorClass_00802A30->field_00C9;
       iVar12 = g_cursorClass_00802A30->field_00C5;
-      g_cursorClass_00802A30->field_0493 = 1;
+      g_cursorClass_00802A30->field_0493 = CASE_1;
       this_00->field_0494 = 0xffff;
       CursorClassTy::SetGCType(this_00,CASE_0,iVar12,iVar4);
       CursorClassTy::DrawSprite(this_00,this_00->field_00C5,this_00->field_00C9);

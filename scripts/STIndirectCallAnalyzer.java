@@ -46,7 +46,6 @@ public class STIndirectCallAnalyzer extends GhidraScript {
         File selected = outputDirectory(); if (selected == null) return;
         Path directory = programDirectory(selected); Files.createDirectories(directory);
         List<Row> rows = new ArrayList<>();
-        addBaseGameObjectVtable(rows);
         addExistingVtableSlots(rows);
         collectSites();
         rows.sort(Comparator.comparing((Row row) -> row.structurePath)
@@ -57,25 +56,6 @@ public class STIndirectCallAnalyzer extends GhidraScript {
         println("Indirect-call analysis complete: " + directory.toAbsolutePath().normalize());
         println("Sites=" + sites.size() + ", proposals=" + rows.size() + ", apply=" +
             rows.stream().filter(row -> row.apply).count());
-    }
-
-    private void addBaseGameObjectVtable(List<Row> rows) {
-        DataType value = currentProgram.getDataTypeManager().getDataType("/STGameObjC");
-        if (!(value instanceof Structure structure)) return;
-        DataTypeComponent component = structure.getComponentAt(0);
-        Function slot0 = function(0x0041af40L);
-        boolean verified = component != null && slot0 != null &&
-            slot0.getName().equals("GetMessage") && structure.getDescription() != null &&
-            structure.getDescription().contains("[STClassLayoutApplier]");
-        rows.add(new Row(verified, "create_base_vtable", structure.getPathName(), 0,
-            component == null ? "" : name(component),
-            component == null ? "" : typeSpec(component.getDataType()),
-            component == null ? "" : text(component.getComment()),
-            "/SubmarineTitans/Recovered/VTables/STGameObjCVTable", "vtable", 0x007900a0L,
-            53, slot0 == null ? "" : addr(slot0.getEntryPoint()),
-            slot0 == null ? "" : slot0.getName(true), "high",
-            "base table 007900A0 has STGameObjC::GetMessage in slot 0; constructor/vptr and " +
-                "related derived-table evidence identify the common STGameObjC family"));
     }
 
     private void addExistingVtableSlots(List<Row> rows) throws Exception {
@@ -139,11 +119,20 @@ public class STIndirectCallAnalyzer extends GhidraScript {
     }
     private boolean trusted(Function function) {
         if (function == null) return false;
-        if (function.getSignatureSource() == SourceType.USER_DEFINED ||
-                function.getSignatureSource() == SourceType.IMPORTED) return true;
-        for (FunctionTag tag : function.getTags())
-            if (tag.getName().equals("RECOVERED_VIRTUAL_METHOD") ||
-                    tag.getName().equals("RECOVERED_DEBUG_NAME")) return true;
+        if (function.getSignatureSource() == SourceType.IMPORTED) return true;
+        for (FunctionTag tag : function.getTags()) {
+            String name = tag.getName();
+            if (name.equals("RECOVERED_VIRTUAL_METHOD") ||
+                    name.equals("RECOVERED_DEBUG_NAME") ||
+                    name.equals("RECOVERED_ABI_CONSISTENCY") ||
+                    name.equals("RECOVERED_CALLSITE_CONVENTION") ||
+                    name.equals("RECOVERED_MESSAGE_HANDLER") ||
+                    name.equals("RECOVERED_HEURISTIC_SIGNATURE") ||
+                    name.equals("RECOVERED_CONSTRUCTOR") ||
+                    name.equals("RECOVERED_DESTRUCTOR")) return true;
+        }
+        // USER_DEFINED is not evidence by itself: older bootstrap scripts used that source
+        // for speculative signatures.  It becomes trusted only with independent provenance.
         return false;
     }
     private Function resolveThunk(Function function) {
@@ -154,10 +143,6 @@ public class STIndirectCallAnalyzer extends GhidraScript {
             current = next;
         }
         return current;
-    }
-    private Function function(long offset) {
-        Address address = currentProgram.getAddressFactory().getDefaultAddressSpace().getAddress(offset);
-        return currentProgram.getFunctionManager().getFunctionAt(address);
     }
     private void writeRows(Path path, List<Row> rows) throws Exception {
         try (BufferedWriter out = Files.newBufferedWriter(path, StandardCharsets.UTF_8)) {

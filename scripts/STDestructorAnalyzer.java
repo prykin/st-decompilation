@@ -52,6 +52,7 @@ public class STDestructorAnalyzer extends GhidraScript {
     private final Map<Address, ProposalSeed> seeds = new TreeMap<>();
     private final List<LifetimeRow> lifetimeRows = new ArrayList<>();
     private DataTypeManager dataTypes;
+    private int namedDoneSystemMethods;
 
     @Override
     protected void run() throws Exception {
@@ -64,6 +65,7 @@ public class STDestructorAnalyzer extends GhidraScript {
         Files.createDirectories(directory);
         dataTypes = currentProgram.getDataTypeManager();
         loadVtableSlots(directory.resolve("vtable_slots.tsv"));
+        namedDoneSystemMethods = countNamedDoneSystemMethods();
         discoverDeallocators();
 
         int deleteThisFunctions = 0;
@@ -74,11 +76,13 @@ public class STDestructorAnalyzer extends GhidraScript {
             if (function.isThunk() || function.isExternal() || isLibrary(function)) continue;
             Lifecycle lifecycle = analyze(function);
             recordLifetime(function, lifecycle);
-            if (lifecycle.deallocatesThis) {
+            if (mistypedDoneSystem(function, lifecycle)) {
+                considerDoneSystemRepair(function, lifecycle);
+            }
+            else if (lifecycle.deallocatesThis) {
                 deleteThisFunctions++;
                 considerDeletingWrapper(function, lifecycle);
             }
-            else considerCleanupDestructor(function, lifecycle);
         }
 
         // Keep previously applied rows stable on refresh.
@@ -357,25 +361,36 @@ public class STDestructorAnalyzer extends GhidraScript {
         }
     }
 
-    private void considerCleanupDestructor(Function function, Lifecycle lifecycle) {
-        Set<String> tableOwnerSet = vtableOwners.getOrDefault(function.getEntryPoint(), Set.of());
-        if (tableOwnerSet.size() != 1 || function.getBody().getNumAddresses() > 512) return;
+    private int countNamedDoneSystemMethods() {
+        int result = 0;
+        FunctionIterator functions = currentProgram.getFunctionManager().getFunctions(true);
+        while (functions.hasNext()) {
+            Function function = functions.next();
+            if ("DoneSystem".equals(function.getName()) &&
+                    ownerOf(function).toLowerCase(Locale.ROOT).contains("system")) result++;
+        }
+        return result;
+    }
+
+    private boolean mistypedDoneSystem(Function function, Lifecycle lifecycle) {
+        if (!hasTag(function, TAG) || lifecycle.deallocatesThis ||
+                namedDoneSystemMethods < 2) return false;
+        String owner = ownerOf(function);
         Set<String> slots = vtableSlots.getOrDefault(function.getEntryPoint(), Set.of());
-        boolean destructorSlot = slots.contains("0x0") || slots.contains("0x4");
-        boolean cleanupShape = lifecycle.zeroedThisOffsets.size() >= 2 &&
-            lifecycle.totalCalls >= 2 &&
-            (lifecycle.sameThisCalls.size() >= 2 || lifecycle.fieldCleanupCalls > 0);
-        if (!destructorSlot || !cleanupShape) return;
-        String owner = tableOwnerSet.iterator().next();
-        ProposalSeed seed = new ProposalSeed(function, owner, "destructor");
+        return owner.toLowerCase(Locale.ROOT).contains("system") &&
+            slots.contains("0x4") && function.getName().startsWith("~");
+    }
+
+    private void considerDoneSystemRepair(Function function, Lifecycle lifecycle) {
+        String owner = ownerOf(function);
+        ProposalSeed seed = new ProposalSeed(function, owner, "lifecycle_method");
         seed.strong = true;
         seed.inVtable = true;
-        seed.slotOffsets.addAll(slots);
-        seed.evidence.add("cleanup_only_vtable_method");
-        seed.evidence.add("zeroed_this_fields=" + lifecycle.zeroedThisOffsets.size());
-        seed.evidence.add("same_this_calls=" + lifecycle.sameThisCalls.size());
-        seed.evidence.add("field_cleanup_calls=" + lifecycle.fieldCleanupCalls);
-        seed.evidence.addAll(lifecycle.sameThisCallSites);
+        seed.slotOffsets.addAll(vtableSlots.getOrDefault(function.getEntryPoint(), Set.of()));
+        seed.evidence.add("repair_previous_cleanup_only_destructor");
+        seed.evidence.add("same_slot_named_DoneSystem_methods=" + namedDoneSystemMethods);
+        seed.evidence.add("no_delete_this_evidence");
+        seed.evidence.add("slot_0x4_system_family_consensus");
         seeds.put(function.getEntryPoint(), seed);
     }
 
@@ -398,10 +413,12 @@ public class STDestructorAnalyzer extends GhidraScript {
         String method = switch (seed.kind) {
             case "destructor" -> "~" + leaf(seed.owner);
             case "scalar_deleting_destructor" -> "scalar_deleting_destructor";
+            case "lifecycle_method" -> "DoneSystem";
             default -> "delete_this_helper_" + addr(function.getEntryPoint());
         };
         String proposed = seed.owner + "::" + method;
-        if (scriptOwned && function.getName(true).startsWith(seed.owner + "::"))
+        if (scriptOwned && !"lifecycle_method".equals(seed.kind) &&
+                function.getName(true).startsWith(seed.owner + "::"))
             proposed = function.getName(true);
         boolean semanticKind = !"delete_this_helper".equals(seed.kind);
         boolean nameApply = strong && semanticKind && !manualName &&
@@ -708,10 +725,11 @@ public class STDestructorAnalyzer extends GhidraScript {
             "proposals=" + rows.size(),
             "destructor_proposals=" + rows.stream().filter(r -> r.kind.equals("destructor")).count(),
             "deleting_destructor_proposals=" + rows.stream().filter(r -> r.kind.equals("scalar_deleting_destructor")).count(),
-            "cleanup_only_destructor_proposals=" + rows.stream().filter(r -> r.kind.equals("destructor") && r.reason.contains("cleanup_only_vtable_method")).count(),
+            "lifecycle_repairs=" + rows.stream().filter(r -> r.kind.equals("lifecycle_method")).count(),
             "name_auto_apply=" + rows.stream().filter(r -> r.nameApply).count(),
             "parameter_auto_apply=" + rows.stream().filter(r -> r.parameterApply).count(),
-            "note=Delete-this helpers outside reviewed vtables remain review-only.",
+            "note=Cleanup shape alone never creates a destructor; delete-this wrapper evidence " +
+                "is required. System-family slot 0x4 is repaired from named DoneSystem peers.",
             "note_manual=USER_DEFINED names and signatures are never auto-applied."),
             StandardCharsets.UTF_8);
     }

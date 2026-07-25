@@ -495,6 +495,12 @@ apply	type_path	offset	size	proposed_name	proposed_type	evidence_count	reason
 0	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_TLOBaseTy_05B4	725	4	field_02D5	/undefined4	1	nested reads=0, writes=1
 0	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_TLOBaseTy_05B4	729	4	field_02D9	/undefined4	1	nested reads=0, writes=1
 0	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_TLOBaseTy_05B4	733	4	field_02DD	/undefined4	1	nested reads=0, writes=1
+0	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_TLOBaseTy_0607	0	4	field_0000	/undefined4	2	nested reads=1, writes=2
+0	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_TLOBaseTy_0607	4	4	field_0004	/undefined4	2	nested reads=1, writes=2
+0	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_TLOBaseTy_0607	8	4	field_0008	/undefined4	2	nested reads=1, writes=2
+0	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_TLOBaseTy_0607	14	1	field_000E	/undefined1	1	nested reads=0, writes=1
+0	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_TLOBaseTy_0607	16	4	field_0010	/undefined4	1	nested reads=0, writes=1
+0	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_TLOBaseTy_0607	20	4	field_0014	/undefined4	1	nested reads=0, writes=1
 0	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_TLOEmbryoTy_0000	44	4	field_002C	/undefined4	2	nested reads=2, writes=0
 0	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_TLOEmbryoTy_0000	144	4	field_0090	/undefined4	1	nested reads=2, writes=0
 0	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_WaitTy_000C	0	4	field_0000	/undefined4	3	nested reads=5, writes=0

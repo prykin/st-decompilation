@@ -1,4 +1,4 @@
-FUN_004cf4e0:
+TLOBaseTy::FUN_004cf4e0:
 004CF4E0  55                        PUSH EBP
 004CF4E1  8B EC                     MOV EBP,ESP
 004CF4E3  56                        PUSH ESI

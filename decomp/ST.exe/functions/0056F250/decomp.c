@@ -6,13 +6,6 @@ void __thiscall FUN_0056f250(void *this,char param_1,byte param_2,char *param_3)
   void *pvVar2;
   int iVar3;
   uint uVar4;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
-  cMf32 *extraout_ECX;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
-  cMf32 *extraout_ECX_00;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
-  cMf32 *extraout_ECX_01;
-  cMf32 *this_00;
   uint uVar5;
   byte *pbVar6;
   cMf32 *pcVar7;
@@ -91,11 +84,8 @@ LAB_0056f325:
     g_currentExceptionFrame = &local_a4;
     iVar3 = Library::MSVCRT::__setjmp3(local_a4.jumpBuffer,0);
     if (iVar3 == 0) {
-      /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
-      if ((param_1 == '\0') || (this_00 = extraout_ECX, param_1 == '\x03')) {
+      if ((param_1 == '\0') || (param_1 == '\x03')) {
         local_14 = (cMf32 *)Library::Ourlib::MF32INT::FUN_006f0ec0(0x345,local_1a8,1,0,0);
-        /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
-        this_00 = extraout_ECX_00;
       }
       pcVar7 = local_14;
       if ((param_1 == '\0') || (param_1 == '\x03')) {
@@ -173,10 +163,8 @@ LAB_0056f325:
         }
         cMf32::RecPut(pcVar7,0x80,PTR_s_SAVE_DESC_0079b054,(byte *)&local_8,4,(undefined4 *)0x0,'\0'
                       ,(uint *)0x0);
-        /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
-        this_00 = extraout_ECX_01;
       }
-      cMf32::delete(this_00,pcVar7);
+      cMf32::delete(pcVar7);
       g_currentExceptionFrame = local_a4.previous;
       return;
     }

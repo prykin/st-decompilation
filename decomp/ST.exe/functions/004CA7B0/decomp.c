@@ -55,7 +55,7 @@ cf_common_exit_004CA871:
     }
     else if (local_8 == CASE_6) goto cf_common_exit_004CA871;
 LAB_004ca835:
-    if ((this->field_0255 == 0) || (local_8 != (CASE_4|CASE_1))) {
+    if ((this->field_0255 == 0) || (local_8 != CASE_5)) {
       iVar2 = STT3DSprC::sub_004ACD30((STT3DSprC *)this_00,bVar6);
       if (iVar2 < (int)((local_10 - param_1) + 1)) {
         iVar2 = STT3DSprC::sub_004ACD30((STT3DSprC *)this_00,bVar6);

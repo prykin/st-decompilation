@@ -7,7 +7,11 @@
 
    [STSwitchEnumApplier] Switch target field_0260 uses
    /SubmarineTitans/Recovered/Enums/CPanelTy_field_0260State. Cases:
-   CASE_1=1;CASE_3=3;CASE_4=4;CASE_5=5 */
+   CASE_1=1;CASE_3=3;CASE_4=4;CASE_5=5
+
+   [STSwitchEnumApplier] Switch target field_023F uses
+   /SubmarineTitans/Recovered/Enums/CPanelTy_field_023FState. Cases:
+   CASE_1=1;CASE_2=2;CASE_3=3;CASE_4=4;CASE_5=5;CASE_6=6 */
 
 void __thiscall CPanelTy::PaintTV(CPanelTy *this)
 
@@ -112,7 +116,7 @@ joined_r0x004f81d1:
           (&this_00->field_02E2)[uVar14] = puVar9;
           *local_10 = 1;
           *pcVar8 = '\0';
-          if (this_00->field_023F == (CASE_4|CASE_1)) {
+          if (this_00->field_023F == CASE_5) {
             if ((char)local_c == '\0') {
               cVar12 = this_00->field_02ED;
             }
@@ -157,7 +161,7 @@ joined_r0x004f81d1:
         if ((short)*(&this_00->field_02E2)[uVar14] <= (short)(ushort)*pbVar2) {
           *pbVar2 = *pbVar2 - 1;
           *local_10 = 2;
-          if (this_00->field_023F == (CASE_4|CASE_2)) {
+          if (this_00->field_023F == CASE_6) {
             if ((char)local_c == '\0') {
               cVar12 = this_00->field_02ED;
             }

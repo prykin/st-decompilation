@@ -1089,7 +1089,7 @@ LAB_0041bcad:
     g_currentExceptionFrame = local_58.previous;
     return 0;
   }
-  iVar13 = thunk_FUN_004fab10(g_cPanel_00801688,CASE_C|CASE_1);
+  iVar13 = thunk_FUN_004fab10(g_cPanel_00801688,CASE_D);
   if (iVar13 != 0) {
     (*pSVar12->vtable->vfunc_54)(pSVar12->field_01A9);
     pAVar8 = pSVar12->field_01A5;

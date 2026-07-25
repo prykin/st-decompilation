@@ -62,7 +62,7 @@ int __thiscall BldBoatPanelTy::GetMessage(BldBoatPanelTy *this,STMessage *messag
       return 0;
     }
     if (SVar1 == MESS_SHARED_0003) {
-      thunk_FUN_004eef20((int)this_00);
+      thunk_FUN_004eef20((AnonShape_004EEF20_59DE1DA2 *)this_00);
       g_currentExceptionFrame = local_58.previous;
       return 0;
     }

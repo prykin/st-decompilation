@@ -4,7 +4,6 @@ int FUN_006767d0(void)
 {
   int iVar1;
   cMf32 *this;
-  cMf32 *this_00;
   byte local_150 [260];
   InternalExceptionFrame local_4c;
   cMf32 *local_8;
@@ -22,12 +21,12 @@ int FUN_006767d0(void)
     ;
     cMf32::RecPut(this,0xc,(char *)local_150,(byte *)&DAT_0080c522,0x27f0,(undefined4 *)0x0,'\0',
                   (uint *)0x0);
-    cMf32::delete(this_00,this);
+    cMf32::delete(this);
     g_currentExceptionFrame = local_4c.previous;
     return 0;
   }
   g_currentExceptionFrame = local_4c.previous;
-  cMf32::delete((cMf32 *)local_4c.previous,local_8);
+  cMf32::delete(local_8);
   if (iVar1 < 0) {
     return iVar1;
   }

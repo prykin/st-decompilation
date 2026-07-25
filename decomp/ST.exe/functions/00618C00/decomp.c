@@ -150,16 +150,16 @@ LAB_00618ce0:
   }
   else if (SVar1 == MESS_STOCTOPUSC_0112) {
     if ((-1 < local_8->field_0097) && (local_8->field_0093 != CASE_5)) {
-      SubmarineTitans::Recovered::HiddenThis::AnonReceiver_004248D0::FUN_006e9520
-                ((AnonReceiver_004248D0 *)PTR_00807598,local_8->field_0097,0,0,(uint)local_8);
+      SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00424E10::FUN_006e9520
+                ((AnonReceiver_00424E10 *)PTR_00807598,local_8->field_0097,0,0,(uint)local_8);
       g_currentExceptionFrame = local_58.previous;
       return 0;
     }
   }
   else if (((SVar1 == MESS_STSPRGAMEOBJC_0113) && (-1 < local_8->field_0097)) &&
           (local_8->field_0093 != CASE_5)) {
-    SubmarineTitans::Recovered::HiddenThis::AnonReceiver_004248D0::FUN_006e9520
-              ((AnonReceiver_004248D0 *)PTR_00807598,local_8->field_0097,0,0x401109,
+    SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00424E10::FUN_006e9520
+              ((AnonReceiver_00424E10 *)PTR_00807598,local_8->field_0097,0,0x401109,
                (uint)&local_8->field_0x4d);
     g_currentExceptionFrame = local_58.previous;
     return 0;

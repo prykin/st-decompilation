@@ -89,7 +89,7 @@ public class STCallsiteConventionAnalyzer extends GhidraScript {
         println("Callsite convention analysis complete: " + directory);
         println("Candidates: " + proposals.size() + ", callsites: " + callsites.size() +
             ", classifications: " + classifications(proposals));
-        println("This analyzer is read-only; every apply flag is intentionally 0.");
+        println("Only high-confidence static cdecl candidates are enabled automatically.");
     }
 
     private Proposal analyze(Function target, Map<String, String> baseline,
@@ -134,12 +134,17 @@ public class STCallsiteConventionAnalyzer extends GhidraScript {
         int expectedStack = expectedStackBytes(target);
         Decision decision = decide(calls.size(), pointerSetup, scalarSetup, liveEcx, noEcx,
             cleanupCalls, cleanupValues, retPops, expectedStack, sameOwnerCalls);
+        boolean apply = "static_cdecl_candidate".equals(decision.classification) &&
+            "__cdecl".equals(decision.suggestedConvention) &&
+            "high".equals(decision.confidence) &&
+            "__thiscall".equals(target.getCallingConventionName()) &&
+            target.getSignatureSource() != ghidra.program.model.symbol.SourceType.IMPORTED;
         return new Proposal(target.getEntryPoint(), target.getName(true),
             target.getSignature().getPrototypeString(true), target.getCallingConventionName(),
             target.getSignatureSource().toString(), calls.size(), directCalls, thunkCalls,
             pointerSetup, scalarSetup, liveEcx, noEcx, cleanupCalls, cleanupValues, retPops,
             expectedStack, decision.classification, decision.suggestedConvention,
-            decision.confidence, decision.reason, false, "");
+            decision.confidence, decision.reason, apply, "");
     }
 
     private Callsite callsite(Function target, Function callable, Function caller,
@@ -247,10 +252,12 @@ public class STCallsiteConventionAnalyzer extends GhidraScript {
         // Optimized x86 callers commonly use ECX as a scratch register immediately before a
         // cdecl call.  When every observed caller reclaims the stack and no caller explicitly
         // prepares a pointer receiver, the stack discipline is the stronger signal.
-        if (calls >= 2 && cleanupCalls == calls && pointer == 0 && !calleePops)
+        if (calls >= 2 && cleanupCalls == calls && pointer == 0 && !calleePops &&
+                expectedStack > 0 && cleanupValues.equals(Set.of((long)expectedStack)))
             return new Decision("static_cdecl_candidate", "__cdecl", "high",
                 "all " + cleanupCalls + " callers reclaim stack arguments " + cleanupValues +
-                "; no explicit ECX pointer receiver setup observed" +
+                " matching the explicit parameter width; no explicit ECX pointer receiver " +
+                "setup observed" +
                 ((live + scalar) > 0 ? "; incidental ECX observations ignored (live=" + live +
                     ", scalar=" + scalar + ")" : ""));
         if (cleanupCalls >= 1 && pointer == 0 && live == 0 && !calleePops)
@@ -356,7 +363,7 @@ public class STCallsiteConventionAnalyzer extends GhidraScript {
                 "ecx_scalar_setup\tecx_live_prior\tecx_unknown\tcaller_cleanup_calls\t" +
                 "caller_cleanup_bytes\tcallee_ret_pop_bytes\texpected_stack_bytes\t" +
                 "classification\tsuggested_calling_convention\tconfidence\treason\terror\n");
-            for (Proposal row : rows) out.write("0\t" + addr(row.address) + "\t" +
+            for (Proposal row : rows) out.write(bit(row.apply) + "\t" + addr(row.address) + "\t" +
                 tsv(row.function) + "\t" + tsv(row.signature) + "\t" +
                 row.currentConvention + "\t" + row.signatureSource + "\t" + row.calls +
                 "\t" + row.directCalls + "\t" + row.thunkCalls + "\t" +
@@ -370,7 +377,7 @@ public class STCallsiteConventionAnalyzer extends GhidraScript {
 
     private void writeJson(Path path, List<Proposal> rows) throws Exception {
         List<String> output = new ArrayList<>();
-        for (Proposal row : rows) output.add("{\"apply\":false,\"address\":" +
+        for (Proposal row : rows) output.add("{\"apply\":" + row.apply + ",\"address\":" +
             q(addr(row.address)) + ",\"function\":" + q(row.function) +
             ",\"calls\":" + row.calls + ",\"classification\":" +
             q(row.classification) + ",\"suggested_calling_convention\":" +
@@ -403,14 +410,17 @@ public class STCallsiteConventionAnalyzer extends GhidraScript {
             .filter(row -> "__thiscall".equals(row.suggestedConvention)).count();
         long suggestedCdecl = proposals.stream()
             .filter(row -> "__cdecl".equals(row.suggestedConvention)).count();
+        long automatic = proposals.stream().filter(row -> row.apply).count();
         Files.write(path, List.of("program=" + currentProgram.getName(),
             "candidates=" + proposals.size(), "candidates_with_direct_calls=" + called,
             "callsites=" + calls.size(), "suggested_thiscall=" + suggestedThis,
-            "suggested_cdecl_review_only=" + suggestedCdecl,
+            "suggested_cdecl=" + suggestedCdecl,
+            "automatic_cdecl=" + automatic,
             "classifications=" + classifications(proposals),
             "note=Direct references to the function and every thunk resolving to it are audited.",
             "note_limit=Indirect virtual calls cannot be attributed to one concrete target here.",
-            "note_safety=The analyzer is read-only and never changes a calling convention."),
+            "note_safety=Only repeatable all-caller cleanup with no pointer ECX and no RET pop " +
+                "is enabled; the transactional applier rechecks the exact signature baseline."),
             StandardCharsets.UTF_8);
     }
 

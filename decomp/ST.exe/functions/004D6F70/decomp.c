@@ -11,7 +11,7 @@ int __fastcall FUN_004d6f70(int *param_1)
   int iVar1;
   int iVar2;
 
-  iVar1 = thunk_FUN_004d6df0(param_1);
+  iVar1 = TLOBaseTy::sub_004D6DF0((TLOBaseTy *)param_1);
   iVar2 = thunk_FUN_004e41c0(param_1[9]);
   if (iVar2 < iVar1) {
     iVar1 = thunk_FUN_004e41c0(param_1[9]);

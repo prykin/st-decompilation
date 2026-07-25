@@ -60,7 +60,7 @@ void __thiscall HelpPanelTy::ObjProc(HelpPanelTy *this,int param_1,uint param_2,
     if (iVar6 == 0) {
       if (param_3 == '\0') {
         HVar2 = local_40->field_01A1;
-        if (((HVar2 == 0) || (HVar2 == CASE_6)) || (HVar2 == (CASE_8|CASE_2))) {
+        if (((HVar2 == 0) || (HVar2 == CASE_6)) || (HVar2 == CASE_A)) {
           local_40->field_01A2 = HVar2;
           local_40->field_01AB = local_40->field_01A3;
         }
@@ -234,7 +234,7 @@ void __thiscall HelpPanelTy::ObjProc(HelpPanelTy *this,int param_1,uint param_2,
       do {
         pGVar1 = &DAT_007c0e4c + local_18 + (local_10 & 0xffff);
         local_3c = pGVar1;
-        if (*pGVar1 == ~(CASE_80|CASE_7F)) break;
+        if (*pGVar1 == CASE_0) break;
         if (local_1c != (int *)0x0) {
           ccFntTy::SetSurf(this_00->field_01E0,(int)this_00->field_0218,0,0,local_8,0x91,0xf);
           uVar15 = 3;

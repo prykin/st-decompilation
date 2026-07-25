@@ -6,7 +6,11 @@
 
    [STSwitchEnumApplier] Switch target field_0068 uses
    /SubmarineTitans/Recovered/Enums/MoneyTy_field_0068State. Cases:
-   CASE_1=1;CASE_2=2;CASE_3=3;CASE_4=4 */
+   CASE_1=1;CASE_2=2;CASE_3=3;CASE_4=4
+
+   [STSwitchEnumApplier] Switch target field_0068 uses
+   /SubmarineTitans/Recovered/Enums/MoneyTy_field_0068State. Cases:
+   CASE_1=1;CASE_2=2;CASE_3=3;CASE_4=4;CASE_5=5 */
 
 void __thiscall MoneyTy::sub_0052B760(MoneyTy *this,AnonShape_0052B760_30F4E0D5 *param_1)
 

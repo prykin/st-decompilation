@@ -1,29 +1,25 @@
-#include "../../pseudocode_runtime.h"
-
 
 void __cdecl FUN_004f4c70(int param_1,undefined *param_2,BYTE param_3)
 
 {
   char cVar1;
+  int iVar2;
   uint uVar3;
   uint uVar4;
   char *pcVar5;
+  LOGFONTA *pLVar6;
   char *pcVar7;
-  undefined4 local_a0 [5];
-  undefined1 local_8c;
-  undefined1 local_8b;
-  undefined1 local_8a;
-  BYTE local_89;
-  undefined1 local_88;
-  undefined1 local_87;
-  undefined1 local_86;
-  undefined1 local_85;
-  char local_84 [32];
+  CHAR *pCVar8;
+  LOGFONTA local_a0;
   byte local_64 [88];
   byte local_c [8];
 
-  memset(local_a0, 0, 0x3c); /* compiler bulk-zero initialization */
-  local_89 = param_3;
+  pLVar6 = &local_a0;
+  for (iVar2 = 0xf; iVar2 != 0; iVar2 = iVar2 + -1) {
+    pLVar6->lfHeight = 0;
+    pLVar6 = (LOGFONTA *)&pLVar6->lfWidth;
+  }
+  local_a0.lfCharSet = param_3;
   uVar3 = 0xffffffff;
   pcVar5 = "System";
   do {
@@ -35,31 +31,31 @@ void __cdecl FUN_004f4c70(int param_1,undefined *param_2,BYTE param_3)
     pcVar5 = pcVar7;
   } while (cVar1 != '\0');
   uVar3 = ~uVar3;
-  local_a0[0] = 0xfffffff3;
-  local_a0[1] = 0;
-  local_a0[2] = 0;
-  local_a0[3] = 0;
-  local_a0[4] = 700;
-  local_8c = 0;
-  local_8b = 0;
-  local_8a = 0;
-  local_88 = 1;
-  local_87 = 2;
-  local_86 = 1;
-  local_85 = 0x22;
+  local_a0.lfHeight = -0xd;
+  local_a0.lfWidth = 0;
+  local_a0.lfEscapement = 0;
+  local_a0.lfOrientation = 0;
+  local_a0.lfWeight = 700;
+  local_a0.lfItalic = '\0';
+  local_a0.lfUnderline = '\0';
+  local_a0.lfStrikeOut = '\0';
+  local_a0.lfOutPrecision = '\x01';
+  local_a0.lfClipPrecision = '\x02';
+  local_a0.lfQuality = '\x01';
+  local_a0.lfPitchAndFamily = '\"';
   local_c[0] = 0xff;
   pcVar5 = pcVar7 + -uVar3;
-  pcVar7 = local_84;
+  pCVar8 = local_a0.lfFaceName;
   for (uVar4 = uVar3 >> 2; uVar4 != 0; uVar4 = uVar4 - 1) {
-    *(undefined4 *)pcVar7 = *(undefined4 *)pcVar5;
+    *(undefined4 *)pCVar8 = *(undefined4 *)pcVar5;
     pcVar5 = pcVar5 + 4;
-    pcVar7 = pcVar7 + 4;
+    pCVar8 = pCVar8 + 4;
   }
   local_c[1] = 0;
   for (uVar3 = uVar3 & 3; uVar3 != 0; uVar3 = uVar3 - 1) {
-    *pcVar7 = *pcVar5;
+    *pCVar8 = *pcVar5;
     pcVar5 = pcVar5 + 1;
-    pcVar7 = pcVar7 + 1;
+    pCVar8 = pCVar8 + 1;
   }
   local_c[2] = 0xac;
   local_c[3] = 0xad;
@@ -151,8 +147,7 @@ void __cdecl FUN_004f4c70(int param_1,undefined *param_2,BYTE param_3)
   local_64[0x54] = 0x7a;
   local_64[0x55] = 0x7c;
   local_64[0x56] = 0x7e;
-  ccFntTy::operator((ccFntTy *)local_a0,0x19d,(LOGFONTA *)local_a0,(uint *)0x0,local_64,param_1,
-                    local_c,1,4,1,1,0x20081c,param_2);
+  ccFntTy::operator(0x19d,&local_a0,(uint *)0x0,local_64,param_1,local_c,1,4,1,1,0x20081c,param_2);
   return;
 }
 

@@ -1,4 +1,4 @@
-FUN_004c90c0:
+TLOBaseTy::sub_004C90C0:
 004C90C0  53                        PUSH EBX
 004C90C1  56                        PUSH ESI
 004C90C2  8B F1                     MOV ESI,ECX

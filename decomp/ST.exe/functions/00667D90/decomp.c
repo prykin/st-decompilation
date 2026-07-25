@@ -3,7 +3,11 @@
 
 /* Recovered from embedded debug metadata:
    E:\__titans\ai\ai_flt.cpp
-   AiFltClassTy::GetMessage */
+   AiFltClassTy::GetMessage
+
+   [STMessageHandlerApplier] Recovered common GetMessage envelope/signature.
+   Evidence: family_entries=004031B6|00667D90; family_names=AiFltClassTy::GetMessage; ret4=2;
+   direct_offsets={10:2,14:2,18:2,1c:8} */
 
 int __thiscall AiFltClassTy::GetMessage(AiFltClassTy *this,STMessage *message)
 

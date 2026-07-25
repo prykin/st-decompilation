@@ -13,21 +13,7 @@ void __thiscall STAppC::DoneApp(STAppC *this)
   STAppC *pSVar3;
   int iVar4;
   int iVar5;
-  cMf32 *this_00;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
-  cMf32 *extraout_ECX;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
-  cMf32 *extraout_ECX_00;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
-  cMf32 *extraout_ECX_01;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
-  cMf32 *extraout_ECX_02;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
-  cMf32 *extraout_ECX_03;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
-  cMf32 *extraout_ECX_04;
-  cMf32 *pcVar6;
-  undefined4 *this_01;
+  undefined4 *this_00;
   InternalExceptionFrame local_94;
   InternalExceptionFrame local_50;
   int *local_c;
@@ -77,43 +63,30 @@ void __thiscall STAppC::DoneApp(STAppC *this)
     }
     thunk_FUN_0055d910();
     if (g_cMf32_00806758 != (cMf32 *)0x0) {
-      cMf32::delete(this_00,g_cMf32_00806758);
+      cMf32::delete(g_cMf32_00806758);
     }
     g_cMf32_00806758 = (cMf32 *)0x0;
-    pcVar6 = (cMf32 *)0x0;
     if (g_cMf32_00806760 != (cMf32 *)0x0) {
       cMf32::RecMemFree(g_cMf32_00806760,&DAT_0080679c);
-      /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
-      pcVar6 = extraout_ECX;
       if (DAT_00806764 != 0) {
         FUN_0070a300(&DAT_00806764);
-        /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
-        pcVar6 = extraout_ECX_00;
       }
-      cMf32::delete(pcVar6,g_cMf32_00806760);
+      cMf32::delete(g_cMf32_00806760);
       g_cMf32_00806760 = (cMf32 *)0x0;
-      /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
-      pcVar6 = extraout_ECX_01;
     }
     if (DAT_00806784 != 0) {
       FUN_0070a300(&DAT_00806784);
-      /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
-      pcVar6 = extraout_ECX_02;
     }
     if (g_cMf32_00806780 != (cMf32 *)0x0) {
-      cMf32::delete(pcVar6,g_cMf32_00806780);
-      /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
-      pcVar6 = extraout_ECX_03;
+      cMf32::delete(g_cMf32_00806780);
     }
     g_cMf32_00806780 = (cMf32 *)0x0;
     if (g_cMf32_00806798 != (cMf32 *)0x0) {
-      cMf32::delete(pcVar6,g_cMf32_00806798);
-      /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
-      pcVar6 = extraout_ECX_04;
+      cMf32::delete(g_cMf32_00806798);
     }
     g_cMf32_00806798 = (cMf32 *)0x0;
     if (g_cMf32_0080675C != (cMf32 *)0x0) {
-      cMf32::delete(pcVar6,g_cMf32_0080675C);
+      cMf32::delete(g_cMf32_0080675C);
     }
     g_cMf32_0080675C = (cMf32 *)0x0;
     if ((DArrayTy *)pSVar3->field_4EDE != (DArrayTy *)0x0) {
@@ -139,12 +112,12 @@ void __thiscall STAppC::DoneApp(STAppC *this)
       FreeAndNull((void **)&pSVar3->field_76F2);
     }
     thunk_FUN_005713b0((int)pSVar3);
-    this_01 = &pSVar3->field_0038;
-    thunk_FUN_00572920(this_01,1);
-    thunk_FUN_005672e0((AnonShape_005672E0_9A0A2ED1 *)this_01);
+    this_00 = &pSVar3->field_0038;
+    thunk_FUN_00572920(this_00,1);
+    thunk_FUN_005672e0((AnonShape_005672E0_9A0A2ED1 *)this_00);
     local_94.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_94;
-    local_c = this_01;
+    local_c = this_00;
     iVar4 = Library::MSVCRT::__setjmp3(local_94.jumpBuffer,0);
     piVar2 = local_c;
     if ((iVar4 == 0) && (*local_c != 0)) {

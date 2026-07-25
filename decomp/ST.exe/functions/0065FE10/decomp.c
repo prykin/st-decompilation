@@ -87,7 +87,7 @@ LAB_0065fec9:
          (this = thunk_FUN_0042b760(*(char *)&param_1->field_0024,
                                     CONCAT22((short)((uint)local_c >> 0x10),param_1->field_007D)),
          this != (STGroupBoatC *)0x0)) {
-        (*this->vtable->SetOrderData)(this,GROUP_BOAT_ORDER_08,local_38);
+        (*this->vtable->SetOrderData)(this,CASE_8,local_38);
         goto LAB_0065ff72;
       }
     }

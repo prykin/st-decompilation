@@ -427,9 +427,6 @@ target_address	target_function	callable_entry	callable_function	via_thunk	call_a
 0044C720	STAllPlayersC::GetScrObjList	004010FF	STAllPlayersC::GetScrObjList	1	005491EC	00548C40	CursorClassTy::TakeCmdToRun	CALL 0x004010ff	no_ecx_evidence		6	0	0	control_flow_boundary
 0044C720	STAllPlayersC::GetScrObjList	004010FF	STAllPlayersC::GetScrObjList	1	00549E84	00548C40	CursorClassTy::TakeCmdToRun	CALL 0x004010ff	no_ecx_evidence		6	0	0	control_flow_boundary
 0044C720	STAllPlayersC::GetScrObjList	004010FF	STAllPlayersC::GetScrObjList	1	00549FF7	00548C40	CursorClassTy::TakeCmdToRun	CALL 0x004010ff	no_ecx_evidence		6	0	0	control_flow_boundary
-0044E980	STBoatC::GetVisualInfo	004024A5	STBoatC::GetVisualInfo	1	0044C194	0044C130	STAllPlayersC::GetTOBJImage	CALL 0x004024a5	live_prior_ecx	0044C17E: PUSH ECX	7	0	28	control_flow_boundary
-0044E980	STBoatC::GetVisualInfo	004024A5	STBoatC::GetVisualInfo	1	0044C1F7	0044C130	STAllPlayersC::GetTOBJImage	CALL 0x004024a5	live_prior_ecx	0044C1DD: PUSH ECX	7	0	28	previous_call
-0044E980	STBoatC::GetVisualInfo	004024A5	STBoatC::GetVisualInfo	1	0044C25A	0044C130	STAllPlayersC::GetTOBJImage	CALL 0x004024a5	live_prior_ecx	0044C245: PUSH ECX	7	0	28	previous_call
 004F1390	CPanelTy::OutProc	004F1390	CPanelTy::OutProc	0	00402946	00402946	CPanelTy::OutProc	JMP 0x004f1390	no_ecx_evidence		0	0	0	caller_start
 004F1460	CPanelTy::OutProc	004F1460	CPanelTy::OutProc	0	0040402A	0040402A	CPanelTy::OutProc	JMP 0x004f1460	no_ecx_evidence		0	0	0	caller_start
 004F1530	CPanelTy::OutProc	004F1530	CPanelTy::OutProc	0	00401988	00401988	CPanelTy::OutProc	JMP 0x004f1530	no_ecx_evidence		0	0	0	caller_start
@@ -512,8 +509,6 @@ target_address	target_function	callable_entry	callable_function	via_thunk	call_a
 00540890	StartServTy::WrTextDDX	00404C2D	StartServTy::WrTextDDX	1	005E7B20	005E79B0	WaitTy::PaintWait	CALL 0x00404c2d	no_ecx_evidence		6	0	40	previous_call
 0054BE70	CPanelTy::OutProc	0054BE70	CPanelTy::OutProc	0	004047FF	004047FF	CPanelTy::OutProc	JMP 0x0054be70	no_ecx_evidence		0	0	0	caller_start
 005540E0	cLoadingTy::new	00404B2E	cLoadingTy::new	1	0056DCEC	0056DB80	STAppC::StartGame	CALL 0x00404b2e	no_ecx_evidence		3	0	12	previous_call
-005544E0	cLoadingTy::delete	00405B28	cLoadingTy::delete	1	0056E4FB	0056DB80	STAppC::StartGame	CALL 0x00405b28	no_ecx_evidence		1	0	4	previous_call
-005544E0	cLoadingTy::delete	00405B28	cLoadingTy::delete	1	0056E6C1	0056DB80	STAppC::StartGame	CALL 0x00405b28	no_ecx_evidence		1	0	4	control_flow_boundary
 00555720	TraksClassTy::CreateDate	00403701	TraksClassTy::CreateDate	1	00556590	005564C0	TraksClassTy::GetMessage	CALL 0x00403701	pointer_setup	0055658E: MOV ECX,ESI	0	0	0	previous_call
 0056CBD0	STAppC::MainWindowProc	0056CBD0	STAppC::MainWindowProc	0	0040251D	0040251D	STAppC::MainWindowProc	JMP 0x0056cbd0	no_ecx_evidence		0	0	0	caller_start
 0056D580	STAppC::CloseGameDBs	00403562	STAppC::CloseGameDBs	1	0056C7D6	0056C750	STAppC::DoneApp	CALL 0x00403562	pointer_setup	0056C7D4: MOV ECX,ESI	0	0	0	previous_call
@@ -636,58 +631,6 @@ target_address	target_function	callable_entry	callable_function	via_thunk	call_a
 0064DDA0	AiEventClassTy::_CreateDest	0040341D	AiEventClassTy::_CreateDest	1	00655F3F	00652810	AiEventClassTy::GetMessage	CALL 0x0040341d	pointer_setup	00655F3D: MOV ECX,ESI	8	0	0	control_flow_boundary
 0064DFA0	AiEventClassTy::_CreateMine	0040434A	AiEventClassTy::_CreateMine	1	00656260	00652810	AiEventClassTy::GetMessage	CALL 0x0040434a	pointer_setup	0065625D: MOV ECX,ESI	9	0	0	control_flow_boundary
 006A0960	CGenerate::_saveObj	00405277	CGenerate::_saveObj	1	006A0858	006A0740	CGenerate::SaveMap	CALL 0x00405277	pointer_setup	006A0855: MOV ECX,EBX	1	0	0	control_flow_boundary
-006F1170	cMf32::delete	006F1170	cMf32::delete	0	0053271F	005325B0	OptPanelTy::PrepAsses	CALL 0x006f1170	no_ecx_evidence		1	0	4	previous_call
-006F1170	cMf32::delete	006F1170	cMf32::delete	0	005330E4	00532D50	OptPanelTy::PrepFiles	CALL 0x006f1170	no_ecx_evidence		1	0	4	control_flow_boundary
-006F1170	cMf32::delete	006F1170	cMf32::delete	0	005358E0	00533D10	OptPanelTy::GetMessage	CALL 0x006f1170	no_ecx_evidence		1	0	4	control_flow_boundary
-006F1170	cMf32::delete	006F1170	cMf32::delete	0	00546490	005449B0	CursorClassTy::GetMessage	CALL 0x006f1170	no_ecx_evidence		1	0	4	control_flow_boundary
-006F1170	cMf32::delete	006F1170	cMf32::delete	0	00566917	00566900	SoundManagerTy::sub_00566900	CALL 0x006f1170	no_ecx_evidence		1	0	4	control_flow_boundary
-006F1170	cMf32::delete	006F1170	cMf32::delete	0	005674D7	00567490	FUN_00567490	CALL 0x006f1170	no_ecx_evidence		1	0	4	control_flow_boundary
-006F1170	cMf32::delete	006F1170	cMf32::delete	0	0056B62B	0056ADC0	STAppC::InitApp	CALL 0x006f1170	no_ecx_evidence		1	0	4	previous_call
-006F1170	cMf32::delete	006F1170	cMf32::delete	0	0056BCDC	0056ADC0	STAppC::InitApp	CALL 0x006f1170	no_ecx_evidence		1	0	4	previous_call
-006F1170	cMf32::delete	006F1170	cMf32::delete	0	0056C878	0056C750	STAppC::DoneApp	CALL 0x006f1170	no_ecx_evidence		1	0	4	control_flow_boundary
-006F1170	cMf32::delete	006F1170	cMf32::delete	0	0056C8B5	0056C750	STAppC::DoneApp	CALL 0x006f1170	no_ecx_evidence		1	0	4	previous_call
-006F1170	cMf32::delete	006F1170	cMf32::delete	0	0056C8E2	0056C750	STAppC::DoneApp	CALL 0x006f1170	no_ecx_evidence		1	0	4	control_flow_boundary
-006F1170	cMf32::delete	006F1170	cMf32::delete	0	0056C8FA	0056C750	STAppC::DoneApp	CALL 0x006f1170	no_ecx_evidence		1	0	4	control_flow_boundary
-006F1170	cMf32::delete	006F1170	cMf32::delete	0	0056C912	0056C750	STAppC::DoneApp	CALL 0x006f1170	no_ecx_evidence		1	0	4	control_flow_boundary
-006F1170	cMf32::delete	006F1170	cMf32::delete	0	0056D5CD	0056D580	STAppC::CloseGameDBs	CALL 0x006f1170	no_ecx_evidence		1	0	4	previous_call
-006F1170	cMf32::delete	006F1170	cMf32::delete	0	0056D5F8	0056D580	STAppC::CloseGameDBs	CALL 0x006f1170	live_prior_ecx	0056D5F7: PUSH ECX	1	0	4	previous_call
-006F1170	cMf32::delete	006F1170	cMf32::delete	0	0056D623	0056D580	STAppC::CloseGameDBs	CALL 0x006f1170	no_ecx_evidence		1	0	4	previous_call
-006F1170	cMf32::delete	006F1170	cMf32::delete	0	0056D64D	0056D580	STAppC::CloseGameDBs	CALL 0x006f1170	no_ecx_evidence		1	0	4	previous_call
-006F1170	cMf32::delete	006F1170	cMf32::delete	0	0056D678	0056D580	STAppC::CloseGameDBs	CALL 0x006f1170	live_prior_ecx	0056D677: PUSH ECX	1	0	4	previous_call
-006F1170	cMf32::delete	006F1170	cMf32::delete	0	0056DE24	0056DB80	STAppC::StartGame	CALL 0x006f1170	no_ecx_evidence		1	0	4	control_flow_boundary
-006F1170	cMf32::delete	006F1170	cMf32::delete	0	0056E01F	0056DB80	STAppC::StartGame	CALL 0x006f1170	no_ecx_evidence		1	0	4	previous_call
-006F1170	cMf32::delete	006F1170	cMf32::delete	0	0056E495	0056DB80	STAppC::StartGame	CALL 0x006f1170	no_ecx_evidence		1	0	4	previous_call
-006F1170	cMf32::delete	006F1170	cMf32::delete	0	0056E6A9	0056DB80	STAppC::StartGame	CALL 0x006f1170	no_ecx_evidence		1	0	4	control_flow_boundary
-006F1170	cMf32::delete	006F1170	cMf32::delete	0	0056EB3F	0056E9E0	STAppC::sub_0056E9E0	CALL 0x006f1170	live_prior_ecx	0056EB3E: PUSH ECX	1	0	4	previous_call
-006F1170	cMf32::delete	006F1170	cMf32::delete	0	0056F6D1	0056F250	FUN_0056f250	CALL 0x006f1170	no_ecx_evidence		1	0	4	previous_call
-006F1170	cMf32::delete	006F1170	cMf32::delete	0	0057280D	00572510	FUN_00572510	CALL 0x006f1170	no_ecx_evidence		1	0	4	previous_call
-006F1170	cMf32::delete	006F1170	cMf32::delete	0	00572AAE	00572920	FUN_00572920	CALL 0x006f1170	no_ecx_evidence		1	0	4	previous_call
-006F1170	cMf32::delete	006F1170	cMf32::delete	0	00572CAB	00572BA0	FUN_00572ba0	CALL 0x006f1170	no_ecx_evidence		1	0	4	previous_call
-006F1170	cMf32::delete	006F1170	cMf32::delete	0	00577902	005776D0	GameSystemC::GetMessage	CALL 0x006f1170	no_ecx_evidence		1	0	4	control_flow_boundary
-006F1170	cMf32::delete	006F1170	cMf32::delete	0	0057791E	005776D0	GameSystemC::GetMessage	CALL 0x006f1170	no_ecx_evidence		1	0	4	control_flow_boundary
-006F1170	cMf32::delete	006F1170	cMf32::delete	0	00577EAE	005776D0	GameSystemC::GetMessage	CALL 0x006f1170	no_ecx_evidence		1	0	4	previous_call
-006F1170	cMf32::delete	006F1170	cMf32::delete	0	005AE277	005AE050	ChooseMapTy::ShowDescription	CALL 0x006f1170	no_ecx_evidence		1	0	4	previous_call
-006F1170	cMf32::delete	006F1170	cMf32::delete	0	005AE42D	005AE050	ChooseMapTy::ShowDescription	CALL 0x006f1170	no_ecx_evidence		1	0	4	previous_call
-006F1170	cMf32::delete	006F1170	cMf32::delete	0	005B01B0	005AFD00	ChooseMapTy::PrepFiles	CALL 0x006f1170	no_ecx_evidence		1	0	4	control_flow_boundary
-006F1170	cMf32::delete	006F1170	cMf32::delete	0	005B0529	005AFD00	ChooseMapTy::PrepFiles	CALL 0x006f1170	no_ecx_evidence		1	0	4	previous_call
-006F1170	cMf32::delete	006F1170	cMf32::delete	0	005BDC79	005BD7A0	MReportTy::InitMReport	CALL 0x006f1170	no_ecx_evidence		1	0	4	control_flow_boundary
-006F1170	cMf32::delete	006F1170	cMf32::delete	0	005C106B	005C0E00	MReportTy::SetCtrl	CALL 0x006f1170	scalar_setup	005C1051: MOV ECX,0x666	1	0	4	control_flow_boundary
-006F1170	cMf32::delete	006F1170	cMf32::delete	0	005C31E6	005C29B0	SubmarineTitans::Recovered::HiddenThis::AnonReceiver_005B6730::sub_005C29B0	CALL 0x006f1170	no_ecx_evidence		1	0	4	previous_call
-006F1170	cMf32::delete	006F1170	cMf32::delete	0	005C497B	005C4930	SettMapTy::DoneSettMap	CALL 0x006f1170	no_ecx_evidence		1	0	4	control_flow_boundary
-006F1170	cMf32::delete	006F1170	cMf32::delete	0	005C4994	005C4930	SettMapTy::DoneSettMap	CALL 0x006f1170	no_ecx_evidence		1	0	4	control_flow_boundary
-006F1170	cMf32::delete	006F1170	cMf32::delete	0	005C64E6	005C6030	SettMapTy::CreateCtrls	CALL 0x006f1170	no_ecx_evidence		1	0	4	control_flow_boundary
-006F1170	cMf32::delete	006F1170	cMf32::delete	0	005C7931	005C7800	FUN_005c7800	CALL 0x006f1170	no_ecx_evidence		1	0	4	control_flow_boundary
-006F1170	cMf32::delete	006F1170	cMf32::delete	0	005C7C34	005C7800	FUN_005c7800	CALL 0x006f1170	no_ecx_evidence		1	0	4	previous_call
-006F1170	cMf32::delete	006F1170	cMf32::delete	0	005C8244	005C8200	SubmarineTitans::Recovered::HiddenThis::AnonReceiver_004EEFB0::FUN_005c8200	CALL 0x006f1170	no_ecx_evidence		1	0	4	control_flow_boundary
-006F1170	cMf32::delete	006F1170	cMf32::delete	0	005D8E7F	005D8BF0	SIDTy::PrepFiles	CALL 0x006f1170	no_ecx_evidence		1	0	4	previous_call
-006F1170	cMf32::delete	006F1170	cMf32::delete	0	005DB1E2	005DB030	FUN_005db030	CALL 0x006f1170	scalar_setup	005DB1DC: AND ECX,0x3	1	0	4	control_flow_boundary
-006F1170	cMf32::delete	006F1170	cMf32::delete	0	005DD030	005DCE90	StartSystemTy::GetMessage	CALL 0x006f1170	no_ecx_evidence		1	0	4	control_flow_boundary
-006F1170	cMf32::delete	006F1170	cMf32::delete	0	005E0835	005E0470	MTaskTy::DoneMTask	CALL 0x006f1170	no_ecx_evidence		1	0	4	control_flow_boundary
-006F1170	cMf32::delete	006F1170	cMf32::delete	0	005E8238	005E7FE0	WaitTy::ShowDescription	CALL 0x006f1170	no_ecx_evidence		1	0	4	previous_call
-006F1170	cMf32::delete	006F1170	cMf32::delete	0	00676898	006767D0	FUN_006767d0	CALL 0x006f1170	no_ecx_evidence		1	0	4	previous_call
-006F1170	cMf32::delete	006F1170	cMf32::delete	0	006768BD	006767D0	FUN_006767d0	CALL 0x006f1170	live_prior_ecx	006768B7: MOV dword ptr [0x00858df8],ECX	1	0	4	control_flow_boundary
-006F1170	cMf32::delete	006F1170	cMf32::delete	0	00680842	006807D0	FUN_006807d0	CALL 0x006f1170	no_ecx_evidence		1	0	4	control_flow_boundary
-006F1170	cMf32::delete	006F1170	cMf32::delete	0	006A0100	006A00B0	FUN_006a00b0	CALL 0x006f1170	no_ecx_evidence		1	0	4	control_flow_boundary
 0070CEB0	ccFntTy::operator	0070CEB0	ccFntTy::operator	0	004EEAEE	004EEA40	BldBoatPanelTy::InitBldBoatPanel	CALL 0x0070ceb0	live_prior_ecx	004EEAE8: PUSH ECX	4	0	16	control_flow_boundary
 0070CEB0	ccFntTy::operator	0070CEB0	ccFntTy::operator	0	004F57E4	004F5690	CPanelTy::InitCPanel	CALL 0x0070ceb0	no_ecx_evidence		4	0	0	previous_call
 0070CEB0	ccFntTy::operator	0070CEB0	ccFntTy::operator	0	004F5807	004F5690	CPanelTy::InitCPanel	CALL 0x0070ceb0	live_prior_ecx	004F5801: PUSH ECX	4	0	0	previous_call
@@ -702,22 +645,6 @@ target_address	target_function	callable_entry	callable_function	via_thunk	call_a
 0070CEB0	ccFntTy::operator	0070CEB0	ccFntTy::operator	0	005960A8	00595E40	FSGSTy::InitFSGS	CALL 0x0070ceb0	no_ecx_evidence		4	0	0	previous_call
 0070CEB0	ccFntTy::operator	0070CEB0	ccFntTy::operator	0	005960CA	00595E40	FSGSTy::InitFSGS	CALL 0x0070ceb0	no_ecx_evidence		4	0	0	previous_call
 0070CEB0	ccFntTy::operator	0070CEB0	ccFntTy::operator	0	005BD968	005BD7A0	MReportTy::InitMReport	CALL 0x0070ceb0	no_ecx_evidence		4	0	40	previous_call
-0070D1F0	ccFntTy::operator	0070D1F0	ccFntTy::operator	0	004F4896	004F4640	FUN_004f4640	CALL 0x0070d1f0	live_prior_ecx	004F4890: PUSH ECX	3	0	48	window_limit
-0070D1F0	ccFntTy::operator	0070D1F0	ccFntTy::operator	0	004F4BB4	004F4950	FUN_004f4950	CALL 0x0070d1f0	no_ecx_evidence		1	0	48	window_limit
-0070D1F0	ccFntTy::operator	0070D1F0	ccFntTy::operator	0	004F4EAB	004F4C70	FUN_004f4c70	CALL 0x0070d1f0	no_ecx_evidence		0	0	48	window_limit
-0070D1F0	ccFntTy::operator	0070D1F0	ccFntTy::operator	0	0052CF57	0052CCE0	FUN_0052cce0	CALL 0x0070d1f0	no_ecx_evidence		3	0	48	window_limit
-0070D1F0	ccFntTy::operator	0070D1F0	ccFntTy::operator	0	005415B7	005412B0	FUN_005412b0	CALL 0x0070d1f0	live_prior_ecx	00541561: PUSH ECX	3	0	48	window_limit
-0070D1F0	ccFntTy::operator	0070D1F0	ccFntTy::operator	0	0054191B	005416A0	FUN_005416a0	CALL 0x0070d1f0	live_prior_ecx	00541915: PUSH ECX	4	0	48	window_limit
-0070D1F0	ccFntTy::operator	0070D1F0	ccFntTy::operator	0	00541C32	005419E0	FUN_005419e0	CALL 0x0070d1f0	no_ecx_evidence		0	0	48	window_limit
-0070D1F0	ccFntTy::operator	0070D1F0	ccFntTy::operator	0	00541EC9	00541CF0	FUN_00541cf0	CALL 0x0070d1f0	no_ecx_evidence		0	0	48	window_limit
-0070D1F0	ccFntTy::operator	0070D1F0	ccFntTy::operator	0	00542138	00541F60	FUN_00541f60	CALL 0x0070d1f0	no_ecx_evidence		0	0	48	window_limit
-0070D1F0	ccFntTy::operator	0070D1F0	ccFntTy::operator	0	005423AA	005421D0	FUN_005421d0	CALL 0x0070d1f0	no_ecx_evidence		0	0	48	window_limit
-0070D1F0	ccFntTy::operator	0070D1F0	ccFntTy::operator	0	0055403F	00553E20	FUN_00553e20	CALL 0x0070d1f0	no_ecx_evidence		0	0	48	window_limit
-0070D1F0	ccFntTy::operator	0070D1F0	ccFntTy::operator	0	00594ACE	00594850	FUN_00594850	CALL 0x0070d1f0	no_ecx_evidence		2	0	48	window_limit
-0070D1F0	ccFntTy::operator	0070D1F0	ccFntTy::operator	0	005DA2A0	005DA130	FUN_005da130	CALL 0x0070d1f0	live_prior_ecx	005DA262: PUSH ECX	8	0	48	window_limit
-0070D1F0	ccFntTy::operator	0070D1F0	ccFntTy::operator	0	005DA55C	005DA310	FUN_005da310	CALL 0x0070d1f0	no_ecx_evidence		0	0	48	window_limit
-0070D1F0	ccFntTy::operator	0070D1F0	ccFntTy::operator	0	005DF1E3	005DEFE0	FUN_005defe0	CALL 0x0070d1f0	no_ecx_evidence		0	0	48	window_limit
-0070D1F0	ccFntTy::operator	0070D1F0	ccFntTy::operator	0	005DF492	005DF290	FUN_005df290	CALL 0x0070d1f0	no_ecx_evidence		0	0	48	window_limit
 0070DF00	ccFntTy::operator	0070DF00	ccFntTy::operator	0	0051112C	00510E30	HelpPanelTy::InitHelpPanel	CALL 0x0070df00	live_prior_ecx	00511126: PUSH ECX	2	0	0	previous_call
 0070DF00	ccFntTy::operator	0070DF00	ccFntTy::operator	0	0051114C	00510E30	HelpPanelTy::InitHelpPanel	CALL 0x0070df00	no_ecx_evidence		2	0	0	previous_call
 0070DF00	ccFntTy::operator	0070DF00	ccFntTy::operator	0	0051FBFE	0051FBA0	HelpStringTy::GetMessage	CALL 0x0070df00	live_prior_ecx	0051FBF5: MOV EDX,dword ptr [ECX + 0x30]	2	0	0	control_flow_boundary
@@ -728,51 +655,6 @@ target_address	target_function	callable_entry	callable_function	via_thunk	call_a
 0070DF00	ccFntTy::operator	0070DF00	ccFntTy::operator	0	00539BF8	00539B90	PlayPanelTy::InitPlayPanel	CALL 0x0070df00	live_prior_ecx	00539BF2: PUSH ECX	2	0	0	control_flow_boundary
 0070DF00	ccFntTy::operator	0070DF00	ccFntTy::operator	0	0053E469	0053E3F0	SpecPanelTy::InitPanel	CALL 0x0070df00	no_ecx_evidence		2	0	0	previous_call
 0070DF00	ccFntTy::operator	0070DF00	ccFntTy::operator	0	0053EF64	0053EF20	ProdPanelTy::InitProdPanel	CALL 0x0070df00	live_prior_ecx	0053EF5E: PUSH ECX	2	0	8	control_flow_boundary
-00710560	ccFntTy::operator	00710560	ccFntTy::operator	0	004EEF2F	004EEF20	FUN_004eef20	CALL 0x00710560	no_ecx_evidence		1	0	4	control_flow_boundary
-00710560	ccFntTy::operator	00710560	ccFntTy::operator	0	004F7CC5	004F7800	CPanelTy::DoneCPanel	CALL 0x00710560	no_ecx_evidence		1	0	4	control_flow_boundary
-00710560	ccFntTy::operator	00710560	ccFntTy::operator	0	004F7CDE	004F7800	CPanelTy::DoneCPanel	CALL 0x00710560	no_ecx_evidence		1	0	4	control_flow_boundary
-00710560	ccFntTy::operator	00710560	ccFntTy::operator	0	004F7CF7	004F7800	CPanelTy::DoneCPanel	CALL 0x00710560	no_ecx_evidence		1	0	4	control_flow_boundary
-00710560	ccFntTy::operator	00710560	ccFntTy::operator	0	004F7D10	004F7800	CPanelTy::DoneCPanel	CALL 0x00710560	no_ecx_evidence		1	0	4	control_flow_boundary
-00710560	ccFntTy::operator	00710560	ccFntTy::operator	0	004F7D29	004F7800	CPanelTy::DoneCPanel	CALL 0x00710560	no_ecx_evidence		1	0	4	control_flow_boundary
-00710560	ccFntTy::operator	00710560	ccFntTy::operator	0	004F7D42	004F7800	CPanelTy::DoneCPanel	CALL 0x00710560	no_ecx_evidence		1	0	4	control_flow_boundary
-00710560	ccFntTy::operator	00710560	ccFntTy::operator	0	004F7D5B	004F7800	CPanelTy::DoneCPanel	CALL 0x00710560	no_ecx_evidence		1	0	4	control_flow_boundary
-00710560	ccFntTy::operator	00710560	ccFntTy::operator	0	004F7D74	004F7800	CPanelTy::DoneCPanel	CALL 0x00710560	no_ecx_evidence		1	0	4	control_flow_boundary
-00710560	ccFntTy::operator	00710560	ccFntTy::operator	0	005118D9	00511760	HelpPanelTy::DoneHelpPanel	CALL 0x00710560	no_ecx_evidence		1	0	4	control_flow_boundary
-00710560	ccFntTy::operator	00710560	ccFntTy::operator	0	005118F2	00511760	HelpPanelTy::DoneHelpPanel	CALL 0x00710560	no_ecx_evidence		1	0	4	control_flow_boundary
-00710560	ccFntTy::operator	00710560	ccFntTy::operator	0	0051190B	00511760	HelpPanelTy::DoneHelpPanel	CALL 0x00710560	no_ecx_evidence		1	0	4	control_flow_boundary
-00710560	ccFntTy::operator	00710560	ccFntTy::operator	0	0051FCBA	0051FBA0	HelpStringTy::GetMessage	CALL 0x00710560	no_ecx_evidence		1	0	4	control_flow_boundary
-00710560	ccFntTy::operator	00710560	ccFntTy::operator	0	00520528	005204D0	InfocPanelTy::DoneInfocPanel	CALL 0x00710560	no_ecx_evidence		1	0	4	control_flow_boundary
-00710560	ccFntTy::operator	00710560	ccFntTy::operator	0	00521C08	00521B90	IntercomPanelTy::DoneIntercomPanel	CALL 0x00710560	no_ecx_evidence		1	0	4	control_flow_boundary
-00710560	ccFntTy::operator	00710560	ccFntTy::operator	0	0052C3F2	0052BF00	MoneyTy::GetMessage	CALL 0x00710560	no_ecx_evidence		1	0	4	control_flow_boundary
-00710560	ccFntTy::operator	00710560	ccFntTy::operator	0	0052C409	0052BF00	MoneyTy::GetMessage	CALL 0x00710560	no_ecx_evidence		1	0	4	control_flow_boundary
-00710560	ccFntTy::operator	00710560	ccFntTy::operator	0	0052DF11	0052DD20	PopUpTy::GetMessage	CALL 0x00710560	no_ecx_evidence		1	0	4	control_flow_boundary
-00710560	ccFntTy::operator	00710560	ccFntTy::operator	0	0052EA25	0052E8F0	OptPanelTy::DoneOptPanel	CALL 0x00710560	no_ecx_evidence		1	0	4	control_flow_boundary
-00710560	ccFntTy::operator	00710560	ccFntTy::operator	0	0052EA42	0052E8F0	OptPanelTy::DoneOptPanel	CALL 0x00710560	no_ecx_evidence		1	0	4	control_flow_boundary
-00710560	ccFntTy::operator	00710560	ccFntTy::operator	0	005394F4	00539490	PausePanelTy::DonePausePanel	CALL 0x00710560	no_ecx_evidence		1	0	4	control_flow_boundary
-00710560	ccFntTy::operator	00710560	ccFntTy::operator	0	0053A447	0053A380	PlayPanelTy::DonePlayPanel	CALL 0x00710560	no_ecx_evidence		1	0	4	control_flow_boundary
-00710560	ccFntTy::operator	00710560	ccFntTy::operator	0	0053E69A	0053E640	SpecPanelTy::DonePanel	CALL 0x00710560	no_ecx_evidence		1	0	4	control_flow_boundary
-00710560	ccFntTy::operator	00710560	ccFntTy::operator	0	0053F2BC	0053F220	ProdPanelTy::DoneProdPanel	CALL 0x00710560	no_ecx_evidence		1	0	4	control_flow_boundary
-00710560	ccFntTy::operator	00710560	ccFntTy::operator	0	00542ECE	00542EC0	InterSystemC::~InterSystemC	CALL 0x00710560	no_ecx_evidence		1	0	4	control_flow_boundary
-00710560	ccFntTy::operator	00710560	ccFntTy::operator	0	00542EE1	00542EC0	InterSystemC::~InterSystemC	CALL 0x00710560	no_ecx_evidence		1	0	4	control_flow_boundary
-00710560	ccFntTy::operator	00710560	ccFntTy::operator	0	00542EF4	00542EC0	InterSystemC::~InterSystemC	CALL 0x00710560	no_ecx_evidence		1	0	4	control_flow_boundary
-00710560	ccFntTy::operator	00710560	ccFntTy::operator	0	00542F07	00542EC0	InterSystemC::~InterSystemC	CALL 0x00710560	no_ecx_evidence		1	0	4	control_flow_boundary
-00710560	ccFntTy::operator	00710560	ccFntTy::operator	0	00551397	005512F0	TradePanelTy::DoneTradePanel	CALL 0x00710560	no_ecx_evidence		1	0	4	control_flow_boundary
-00710560	ccFntTy::operator	00710560	ccFntTy::operator	0	005543D4	005540E0	cLoadingTy::new	CALL 0x00710560	no_ecx_evidence		1	0	4	control_flow_boundary
-00710560	ccFntTy::operator	00710560	ccFntTy::operator	0	00554527	005544E0	cLoadingTy::delete	CALL 0x00710560	no_ecx_evidence		1	0	4	control_flow_boundary
-00710560	ccFntTy::operator	00710560	ccFntTy::operator	0	00596AB6	005967F0	FSGSTy::DoneFSGS	CALL 0x00710560	no_ecx_evidence		1	0	4	control_flow_boundary
-00710560	ccFntTy::operator	00710560	ccFntTy::operator	0	00596ACF	005967F0	FSGSTy::DoneFSGS	CALL 0x00710560	no_ecx_evidence		1	0	4	control_flow_boundary
-00710560	ccFntTy::operator	00710560	ccFntTy::operator	0	00596AE8	005967F0	FSGSTy::DoneFSGS	CALL 0x00710560	no_ecx_evidence		1	0	4	control_flow_boundary
-00710560	ccFntTy::operator	00710560	ccFntTy::operator	0	005BE45D	005BE310	MReportTy::DoneMReport	CALL 0x00710560	no_ecx_evidence		1	0	4	control_flow_boundary
-00710560	ccFntTy::operator	00710560	ccFntTy::operator	0	005BE476	005BE310	MReportTy::DoneMReport	CALL 0x00710560	no_ecx_evidence		1	0	4	control_flow_boundary
-00710560	ccFntTy::operator	00710560	ccFntTy::operator	0	005BE497	005BE310	MReportTy::DoneMReport	CALL 0x00710560	no_ecx_evidence		1	0	4	control_flow_boundary
-00710560	ccFntTy::operator	00710560	ccFntTy::operator	0	005C148C	005C1340	MReportTy::SetCtrl	CALL 0x00710560	no_ecx_evidence		1	0	4	control_flow_boundary
-00710560	ccFntTy::operator	00710560	ccFntTy::operator	0	005C14C6	005C1340	MReportTy::SetCtrl	CALL 0x00710560	no_ecx_evidence		1	0	4	control_flow_boundary
-00710560	ccFntTy::operator	00710560	ccFntTy::operator	0	005DB2D2	005DB2A0	StartSystemTy::sub_005DB2A0	CALL 0x00710560	no_ecx_evidence		1	0	4	control_flow_boundary
-00710560	ccFntTy::operator	00710560	ccFntTy::operator	0	005DB2E5	005DB2A0	StartSystemTy::sub_005DB2A0	CALL 0x00710560	no_ecx_evidence		1	0	4	control_flow_boundary
-00710560	ccFntTy::operator	00710560	ccFntTy::operator	0	005E077E	005E0470	MTaskTy::DoneMTask	CALL 0x00710560	no_ecx_evidence		1	0	4	control_flow_boundary
-00710560	ccFntTy::operator	00710560	ccFntTy::operator	0	005E079B	005E0470	MTaskTy::DoneMTask	CALL 0x00710560	no_ecx_evidence		1	0	4	control_flow_boundary
-00710560	ccFntTy::operator	00710560	ccFntTy::operator	0	005E1BD3	005E1330	MTaskTy::PlayScript	CALL 0x00710560	no_ecx_evidence		1	0	4	control_flow_boundary
-00710560	ccFntTy::operator	00710560	ccFntTy::operator	0	005E1C0F	005E1330	MTaskTy::PlayScript	CALL 0x00710560	no_ecx_evidence		1	0	4	control_flow_boundary
 00712F80	ccFntTy::_TxtToSarr	00712F80	ccFntTy::_TxtToSarr	0	0052D404	0052D370	PopUpTy::AddStr	CALL 0x00712f80	pointer_setup	0052D3FA: MOV ECX,dword ptr [ESI + 0x94]	1	0	0	previous_call
 00712F80	ccFntTy::_TxtToSarr	00712F80	ccFntTy::_TxtToSarr	0	005A3CA7	005A3AB0	FSGSTy::SetInfo	CALL 0x00712f80	pointer_setup	005A3CA0: MOV ECX,dword ptr [ESI + 0x1a73]	1	0	0	previous_call
 00712F80	ccFntTy::_TxtToSarr	00712F80	ccFntTy::_TxtToSarr	0	005E7CB0	005E7C00	WaitTy::AddStr	CALL 0x00712f80	pointer_setup	005E7CAD: MOV ECX,dword ptr [EAX + 0x30]	1	0	0	previous_call

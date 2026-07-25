@@ -64,7 +64,7 @@ void __thiscall HelpPanelTy::ArmProc(HelpPanelTy *this,int param_1,int param_2,c
     if (iVar4 == 0) {
       if (param_3 == '\0') {
         HVar2 = local_44->field_01A1;
-        if (((HVar2 == 0) || (HVar2 == CASE_6)) || (HVar2 == (CASE_8|CASE_2))) {
+        if (((HVar2 == 0) || (HVar2 == CASE_6)) || (HVar2 == CASE_A)) {
           local_44->field_01A2 = HVar2;
           local_44->field_01AB = local_44->field_01A3;
         }
@@ -537,7 +537,7 @@ void __thiscall HelpPanelTy::ArmProc(HelpPanelTy *this,int param_1,int param_2,c
               local_18 = local_18 + -1;
             } while (local_18 != 0);
             local_c = GVar12 + CASE_1;
-            if (0x41 < (int)(GVar12 - (CASE_20|CASE_11))) {
+            if (0x41 < (int)(GVar12 - CASE_31)) {
               if (local_d == '\0') {
                 local_8 = local_8 + 0xf;
               }

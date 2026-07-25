@@ -51,14 +51,14 @@ LAB_00660050:
         local_14 = 1;
         local_10 = (DArrayTy *)0x0;
         local_c = 0;
-        (*this->vtable->SetOrderData)(this,GROUP_BOAT_ORDER_11,&local_14);
+        (*this->vtable->SetOrderData)(this,CASE_11,&local_14);
         uVar2 = local_8;
         DArrayDestroy(array);
         return uVar2;
       }
       local_14 = 0;
       local_10 = array;
-      (*this->vtable->SetOrderData)(this,GROUP_BOAT_ORDER_04,&local_14);
+      (*this->vtable->SetOrderData)(this,CASE_4,&local_14);
       uVar2 = local_8;
       DArrayDestroy(array);
       return uVar2;

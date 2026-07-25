@@ -1,11 +1,11 @@
 program=ST.exe
 deallocator_functions=10
 delete_this_functions=1
-proposals=2
-destructor_proposals=2
+proposals=0
+destructor_proposals=0
 deleting_destructor_proposals=0
-cleanup_only_destructor_proposals=2
+lifecycle_repairs=0
 name_auto_apply=0
 parameter_auto_apply=0
-note=Delete-this helpers outside reviewed vtables remain review-only.
+note=Cleanup shape alone never creates a destructor; delete-this wrapper evidence is required. System-family slot 0x4 is repaired from named DoneSystem peers.
 note_manual=USER_DEFINED names and signatures are never auto-applied.

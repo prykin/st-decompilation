@@ -18,8 +18,7 @@ void __thiscall WaitTy::ShowDescription(WaitTy *this)
   char *pcVar8;
   char *pcVar9;
   int iVar10;
-  cMf32 *this_00;
-  WaitTy *this_01;
+  WaitTy *this_00;
   uint *puVar11;
   byte *pbVar12;
   byte local_1a8 [260];
@@ -55,7 +54,7 @@ void __thiscall WaitTy::ShowDescription(WaitTy *this)
     FUN_006b5570((DArrayTy *)g_startSystem_0081176C->field_0548);
   }
   pDVar7 = Library::DKW::TBL::SArrayCreate((DArrayTy *)0x0,10,10);
-  this_01 = local_8;
+  this_00 = local_8;
   g_startSystem_0081176C->field_0548 = &pDVar7->flags;
   if (local_8->field_1A8F == -1) {
     pcVar8 = LoadResourceString(0x252c,g_module_00807618);
@@ -67,8 +66,8 @@ void __thiscall WaitTy::ShowDescription(WaitTy *this)
   else {
     if (((byte)local_8->field_1A93 < 2) || (3 < (byte)local_8->field_1A93)) goto LAB_005e829d;
     wsprintfA((LPSTR)&DAT_0080f33a,"%s%s",&DAT_00807680,PTR_s_CUSTOM__0079c244);
-    local_1c = this_01->field_1A93;
-    local_1b = this_01->field_1A8F;
+    local_1c = this_00->field_1A93;
+    local_1b = this_00->field_1A8F;
     iVar5 = FUN_00725910(&DAT_0080f33a,"*.DKD",0,thunk_FUN_005db030,&local_1c,0);
     if (iVar5 == -0x70) {
       local_a4.previous = g_currentExceptionFrame;
@@ -77,7 +76,7 @@ void __thiscall WaitTy::ShowDescription(WaitTy *this)
       if (iVar5 == 0) {
         local_10 = (cMf32 *)Library::Ourlib::MF32INT::FUN_006f0ec0(0x345,&DAT_0080ed16,0,0,0);
       }
-      this_01 = local_8;
+      this_00 = local_8;
       pcVar4 = local_10;
       g_currentExceptionFrame = local_a4.previous;
       if (local_10 != (cMf32 *)0x0) {
@@ -88,34 +87,34 @@ void __thiscall WaitTy::ShowDescription(WaitTy *this)
         pbVar12 = local_1a8;
         pcVar8 = LoadResourceString(0x252a,g_module_00807618);
         wsprintfA((LPSTR)&DAT_0080f33a,"%s (%s)",pcVar8,pbVar12);
-        AddStr(this_01,&DAT_0080f33a,0);
-        cMf32::delete(this_00,pcVar4);
+        AddStr(this_00,&DAT_0080f33a,0);
+        cMf32::delete(pcVar4);
       }
       goto LAB_005e829d;
     }
     pcVar8 = LoadResourceString(0x252b,g_module_00807618);
     pcVar9 = LoadResourceString(0x252a,g_module_00807618);
     wsprintfA((LPSTR)&DAT_0080f33a,"%s (%s)",pcVar9,pcVar8);
-    AddStr(this_01,&DAT_0080f33a,0);
+    AddStr(this_00,&DAT_0080f33a,0);
     iVar5 = 0;
     puVar11 = (uint *)LoadResourceString(0x252d,g_module_00807618);
   }
-  AddStr(this_01,puVar11,iVar5);
+  AddStr(this_00,puVar11,iVar5);
 LAB_005e829d:
-  DAT_008087be = this_01->field_1A8F;
+  DAT_008087be = this_00->field_1A8F;
   if (local_c == 0) {
-    this_01->field_002D = 0x28;
-    *(undefined2 *)&this_01->field_0x31 = 1;
-    puVar1 = &this_01->field_0x1d;
-    *(short *)&this_01->field_0x33 = (short)g_startSystem_0081176C->field_0548[2];
-    FUN_006e6080(this_01,2,g_startSystem_0081176C->field_0389,(undefined4 *)puVar1);
-    this_01->field_002D = 0x22;
-    *(undefined2 *)&this_01->field_0x33 = 0;
-    *(undefined2 *)&this_01->field_0x31 = 0;
-    FUN_006e6080(this_01,2,g_startSystem_0081176C->field_0389,(undefined4 *)puVar1);
-    this_01->field_002D = 0x20;
-    *(undefined4 *)&this_01->field_0x31 = 0;
-    FUN_006e6080(this_01,2,g_startSystem_0081176C->field_0389,(undefined4 *)puVar1);
+    this_00->field_002D = 0x28;
+    *(undefined2 *)&this_00->field_0x31 = 1;
+    puVar1 = &this_00->field_0x1d;
+    *(short *)&this_00->field_0x33 = (short)g_startSystem_0081176C->field_0548[2];
+    FUN_006e6080(this_00,2,g_startSystem_0081176C->field_0389,(undefined4 *)puVar1);
+    this_00->field_002D = 0x22;
+    *(undefined2 *)&this_00->field_0x33 = 0;
+    *(undefined2 *)&this_00->field_0x31 = 0;
+    FUN_006e6080(this_00,2,g_startSystem_0081176C->field_0389,(undefined4 *)puVar1);
+    this_00->field_002D = 0x20;
+    *(undefined4 *)&this_00->field_0x31 = 0;
+    FUN_006e6080(this_00,2,g_startSystem_0081176C->field_0389,(undefined4 *)puVar1);
   }
   if (-1 < g_startSystem_0081176C->field_02EC) {
     FUN_006b35d0((int *)PTR_008075a8,g_startSystem_0081176C->field_02EC);

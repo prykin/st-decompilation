@@ -1,4 +1,4 @@
-FUN_004c7460:
+TLOBaseTy::sub_004C7460:
 004C7460  55                        PUSH EBP
 004C7461  8B EC                     MOV EBP,ESP
 004C7463  83 EC 24                  SUB ESP,0x24

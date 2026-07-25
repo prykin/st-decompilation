@@ -2,6 +2,14 @@
 /* [STSwitchEnumApplier] Switch target field_05AC uses
    /SubmarineTitans/Recovered/Enums/TLOBaseTy_field_05ACState. Cases:
    CASE_32=50;CASE_33=51;CASE_34=52;CASE_35=53;CASE_36=54;CASE_37=55;CASE_38=56;CASE_39=57;CASE_3A=58;CASE_3B=59;CASE_3D=61;CASE_40=64;CASE_41=65;CASE_43=67;CASE_45=69;CASE_48=72;CASE_49=73;CASE_4C=76;CASE_4D=77;CASE_4E=78;CASE_4F=79;CASE_52=82;CASE_54=84;CASE_55=85;CASE_56=86;CASE_57=87;CASE_58=88;CASE_59=89;CASE_5A=90;CASE_5B=91;CASE_5C=92;CASE_5D=93;CASE_5E=94;CASE_5F=95;CASE_60=96;CASE_61=97;CASE_63=99;CASE_64=100;CASE_68=104;CASE_69=105;CASE_6A=106;CASE_6C=108;CASE_6E=110;CASE_6F=111;CASE_70=112;CASE_72=114;CASE_73=115
+
+   [STSwitchEnumApplier] Switch target field_05AC uses
+   /SubmarineTitans/Recovered/Enums/TLOBaseTy_field_05ACState. Cases:
+   CASE_0=0;CASE_1=1;CASE_2=2;CASE_3=3;CASE_32=50;CASE_33=51;CASE_34=52;CASE_35=53;CASE_36=54;CASE_37=55;CASE_38=56;CASE_39=57;CASE_3A=58;CASE_3B=59;CASE_3C=60;CASE_3D=61;CASE_3E=62;CASE_3F=63;CASE_40=64;CASE_41=65;CASE_42=66;CASE_43=67;CASE_44=68;CASE_45=69;CASE_46=70;CASE_47=71;CASE_48=72;CASE_49=73;CASE_4A=74;CASE_4B=75;CASE_4C=76;CASE_4D=77;CASE_4E=78;CASE_4F=79;CASE_50=80;CASE_51=81;CASE_52=82;CASE_53=83;CASE_54=84;CASE_55=85;CASE_56=86;CASE_57=87;CASE_58=88;CASE_59=89;CASE_5A=90;CASE_5B=91;CASE_5C=92;CASE_5D=93;CASE_5E=94;CASE_5F=95;CASE_60=96;CASE_61=97;CASE_62=98;CASE_63=99;CASE_64=100;CASE_66=102;CASE_67=103;CASE_68=104;CASE_69=105;CASE_6A=106;CASE_6B=107;CASE_6C=108;CASE_6D=109;CASE_6E=110;CASE_6F=111;CASE_70=112;CASE_71=113;CASE_72=114;CASE_73=115;CASE_96=150;CASE_97=151;CASE_98=152;CASE_99=153;CASE_9A=154;CASE_A6=166;CASE_A7=167;CASE_A9=169;CASE_AB=171;CASE_AC=172;CASE_AD=173;CASE_AE=174;CASE_B3=179;CASE_B5=181;CASE_B8=184;CASE_BC=188;CASE_BD=189;CASE_BE=190
+
+   [STSwitchEnumApplier] Switch target field_05AC uses
+   /SubmarineTitans/Recovered/Enums/TLOBaseTy_field_05ACState. Cases:
+   CASE_0=0;CASE_1=1;CASE_2=2;CASE_3=3;CASE_32=50;CASE_33=51;CASE_34=52;CASE_35=53;CASE_36=54;CASE_37=55;CASE_38=56;CASE_39=57;CASE_3A=58;CASE_3B=59;CASE_3C=60;CASE_3D=61;CASE_3E=62;CASE_3F=63;CASE_40=64;CASE_41=65;CASE_42=66;CASE_43=67;CASE_44=68;CASE_45=69;CASE_46=70;CASE_47=71;CASE_48=72;CASE_49=73;CASE_4A=74;CASE_4B=75;CASE_4C=76;CASE_4D=77;CASE_4E=78;CASE_4F=79;CASE_50=80;CASE_51=81;CASE_52=82;CASE_53=83;CASE_54=84;CASE_55=85;CASE_56=86;CASE_57=87;CASE_58=88;CASE_59=89;CASE_5A=90;CASE_5B=91;CASE_5C=92;CASE_5D=93;CASE_5E=94;CASE_5F=95;CASE_60=96;CASE_61=97;CASE_62=98;CASE_63=99;CASE_64=100;CASE_65=101;CASE_66=102;CASE_67=103;CASE_68=104;CASE_69=105;CASE_6A=106;CASE_6B=107;CASE_6C=108;CASE_6D=109;CASE_6E=110;CASE_6F=111;CASE_70=112;CASE_71=113;CASE_72=114;CASE_73=115;CASE_96=150;CASE_97=151;CASE_98=152;CASE_99=153;CASE_9A=154;CASE_A6=166;CASE_A7=167;CASE_A9=169;CASE_AB=171;CASE_AC=172;CASE_AD=173;CASE_AE=174;CASE_B3=179;CASE_B5=181;CASE_B8=184;CASE_BC=188;CASE_BD=189;CASE_BE=190
     */
 
 undefined4 __thiscall
@@ -73,7 +81,7 @@ LAB_004c7d8c:
       *(int *)&this->field_0x36d = iVar5;
       if (iVar5 == 0) {
         *(int *)&this->field_0x365 = *(int *)&this->field_0x361;
-        iVar5 = thunk_FUN_004c90c0(this);
+        iVar5 = sub_004C90C0(this);
         if (iVar5 == 0) {
           *(undefined4 *)&this->field_0x36d = 1;
         }
@@ -89,7 +97,7 @@ LAB_004c7d8c:
             thunk_FUN_004d8a30(*(char *)&this->field_0024,this->field_03B0);
           }
           if (this->field_03B4 != 0) {
-            thunk_FUN_004e4380(this->field_0024,this->field_03B4);
+            thunk_FUN_004e4380((int)this->field_0024,this->field_03B4);
           }
           thunk_FUN_004d78e0(*(char *)&this->field_0024);
         }
@@ -97,12 +105,12 @@ LAB_004c7d8c:
     }
   }
   else {
-    iVar5 = thunk_FUN_004c7860(this,param_1,param_2,param_3,0,0);
+    iVar5 = sub_004C7860(this,param_1,param_2,param_3,0,0);
     if (iVar5 != 0) {
-      iVar5 = thunk_FUN_004c7860(this,param_1,param_2,param_3,1,0);
+      iVar5 = sub_004C7860(this,param_1,param_2,param_3,1,0);
       if ((iVar5 == 0) || (iVar5 = thunk_FUN_004c7c20((int)this), iVar5 == 0)) {
         if (param_4 != 0) {
-          iVar5 = thunk_FUN_004c9370(this,param_1,param_2,-1);
+          iVar5 = sub_004C9370(this,param_1,param_2,-1);
           if ((*(int *)&this->field_0x361 == param_1) && (*(uint *)&this->field_0x369 == param_2)) {
             iVar5 = iVar5 + *(int *)&this->field_0x36d;
           }
@@ -132,7 +140,7 @@ LAB_004c7d8c:
                          0xf);
             }
             this->field_03D4 = this->field_03D4 + 1;
-            thunk_FUN_004c7460((AnonShape_004C7460_AC9F4C4C *)this);
+            sub_004C7460(this);
           }
         }
       }
@@ -169,7 +177,7 @@ LAB_004c7d8c:
           case CASE_40:
           case CASE_49:
           case CASE_5C:
-            thunk_FUN_004ce860((AnonShape_004CE860_DECB0AA9 *)this);
+            sub_004CE860(this);
           }
         }
         *(uint *)&this->field_0x36d = *(int *)&this->field_0x36d + param_3;
@@ -188,16 +196,16 @@ LAB_004c7d8c:
         case CASE_58:
         case CASE_59:
         case CASE_5A:
-          thunk_FUN_004e2ad0(this,param_1,param_2);
+          sub_004E2AD0(this,param_1,param_2);
         }
-        thunk_FUN_004c7460((AnonShape_004C7460_AC9F4C4C *)this);
+        sub_004C7460(this);
         RotateSpr(this,1);
         if (*(int *)(&DAT_00792778 + this->field_0235 * 4) != 0) {
           this->field_0261 = 0;
           *(undefined4 *)&this->field_0x2e1 = 0;
         }
         if (*(int *)&this->field_0x361 == 5) {
-          thunk_FUN_004cc880(this,3);
+          sub_004CC880(this,3);
           uVar9 = GetPlayerRaceId(*(char *)&this->field_023D);
           if (*(int *)(&DAT_00796230 + ((uVar9 & 0xff) + this->field_0235 * 3) * 4) != 0) {
             pTVar3 = this->vtable;
@@ -213,7 +221,7 @@ LAB_004c7d8c:
     }
   }
 cf_common_exit_004C8287:
-  if (this->field_0024 == (uint)(byte)this->field_0010->field_112D) {
+  if (this->field_0024 == (byte *)(uint)(byte)this->field_0010->field_112D) {
     thunk_FUN_004d8b70((char)this->field_0024);
   }
   return 0;

@@ -22,10 +22,13 @@ STAllPlayersC::GetTOBJImage
   int iVar5;
   Global_sub_004C2950_param_3Enum GVar7;
   char local_154 [256];
-  int local_54 [17];
+  int local_54 [12];
+  undefined4 local_24;
+  undefined4 local_20;
+  undefined4 local_1c;
   int *local_10;
-  STBoatCVTable *local_c;
-  STBoatCVTable *local_8;
+  int *local_c;
+  undefined4 local_8;
 
   SVar2 = param_2;
   memset(local_54, 0, 0x44); /* compiler bulk-zero initialization */
@@ -70,47 +73,41 @@ STAllPlayersC::GetTOBJImage
   case CASE_26:
   case CASE_27:
   case CASE_28:
-    local_c = (STBoatCVTable *)0x0;
+    local_c = (int *)0x0;
     local_154[0] = '\0';
     /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-    local_8 = (STBoatCVTable *)CONCAT31(local_8._1_3_,0x1d);
+    local_8 = CONCAT31(local_8._1_3_,0x1d);
     param_2 = 0;
-    STBoatC::GetVisualInfo
-              ((STBoatC *)local_154,param_1,SVar2,0xe,&local_c,local_154,(undefined1 *)&local_8,
-               &param_2);
+    STBoatC::GetVisualInfo(param_1,SVar2,0xe,&local_c,local_154,(undefined1 *)&local_8,&param_2);
     if (local_154[0] != '\0') {
       puVar3 = Library::Ourlib::MFRLOAD::mfRLoad
-                         ((int *)local_c,(Global_mfRLoad_param_2Enum)local_8,local_154,0xffffffff,0,
-                          1,0,(undefined4 *)0x0);
-      local_54[0xe] = *(undefined4 *)(*(int *)((int)puVar3 + 0x21) + param_2 * 4);
+                         (local_c,(Global_mfRLoad_param_2Enum)local_8,local_154,0xffffffff,0,1,0,
+                          (undefined4 *)0x0);
+      local_1c = *(undefined4 *)(*(int *)((int)puVar3 + 0x21) + param_2 * 4);
     }
-    local_c = (STBoatCVTable *)0x0;
+    local_c = (int *)0x0;
     local_154[0] = '\0';
     /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-    local_8 = (STBoatCVTable *)CONCAT31(local_8._1_3_,0x1d);
+    local_8 = CONCAT31(local_8._1_3_,0x1d);
     param_2 = 0;
-    STBoatC::GetVisualInfo
-              ((STBoatC *)&local_8,param_1,SVar2,0xd,&local_c,local_154,(undefined1 *)&local_8,
-               &param_2);
+    STBoatC::GetVisualInfo(param_1,SVar2,0xd,&local_c,local_154,(undefined1 *)&local_8,&param_2);
     if (local_154[0] != '\0') {
       puVar3 = Library::Ourlib::MFRLOAD::mfRLoad
-                         ((int *)local_c,(Global_mfRLoad_param_2Enum)local_8,local_154,0xffffffff,0,
-                          1,0,(undefined4 *)0x0);
-      local_54[0xd] = *(undefined4 *)(*(int *)((int)puVar3 + 0x21) + param_2 * 4);
+                         (local_c,(Global_mfRLoad_param_2Enum)local_8,local_154,0xffffffff,0,1,0,
+                          (undefined4 *)0x0);
+      local_20 = *(undefined4 *)(*(int *)((int)puVar3 + 0x21) + param_2 * 4);
     }
-    local_c = (STBoatCVTable *)0x0;
+    local_c = (int *)0x0;
     local_154[0] = '\0';
     /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-    local_8 = (STBoatCVTable *)CONCAT31(local_8._1_3_,0x1d);
+    local_8 = CONCAT31(local_8._1_3_,0x1d);
     param_2 = 0;
-    STBoatC::GetVisualInfo
-              ((STBoatC *)&local_c,param_1,SVar2,0xc,(undefined4 *)&local_c,local_154,
-               (undefined1 *)&local_8,&param_2);
+    STBoatC::GetVisualInfo(param_1,SVar2,0xc,&local_c,local_154,(undefined1 *)&local_8,&param_2);
     if (local_154[0] != '\0') {
       puVar3 = Library::Ourlib::MFRLOAD::mfRLoad
-                         ((int *)local_c,(Global_mfRLoad_param_2Enum)local_8,local_154,0xffffffff,0,
-                          1,0,(undefined4 *)0x0);
-      local_54[0xc] = *(undefined4 *)(*(int *)((int)puVar3 + 0x21) + param_2 * 4);
+                         (local_c,(Global_mfRLoad_param_2Enum)local_8,local_154,0xffffffff,0,1,0,
+                          (undefined4 *)0x0);
+      local_24 = *(undefined4 *)(*(int *)((int)puVar3 + 0x21) + param_2 * 4);
     }
     uVar4 = FUN_00709470(PTR_00807598,local_54,0x11,1,10,0xff);
     return uVar4;
@@ -191,16 +188,16 @@ STAllPlayersC::GetTOBJImage
     local_10 = local_54;
     GVar7 = 0;
     do {
-      local_c = (STBoatCVTable *)0x0;
+      local_c = (int *)0x0;
       local_154[0] = '\0';
       /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-      local_8 = (STBoatCVTable *)CONCAT31(local_8._1_3_,0x1d);
+      local_8 = CONCAT31(local_8._1_3_,0x1d);
       param_2 = 0;
       thunk_FUN_004c2950(param_1,SVar2,GVar7,&local_c,local_154,(undefined1 *)&local_8,&param_2);
       if (local_154[0] != '\0') {
         puVar3 = Library::Ourlib::MFRLOAD::mfRLoad
-                           ((int *)local_c,(Global_mfRLoad_param_2Enum)local_8,local_154,0xffffffff,
-                            0,1,0,(undefined4 *)0x0);
+                           (local_c,(Global_mfRLoad_param_2Enum)local_8,local_154,0xffffffff,0,1,0,
+                            (undefined4 *)0x0);
         if ((int)(*(int *)puVar3 - CASE_1) < (int)param_2) {
           param_2 = *(int *)puVar3 - CASE_1;
         }
@@ -216,10 +213,10 @@ STAllPlayersC::GetTOBJImage
   case CASE_DF:
   case CASE_E0:
   case CASE_E2:
-    local_c = (STBoatCVTable *)0x0;
+    local_c = (int *)0x0;
     local_154[0] = '\0';
     /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-    local_8 = (STBoatCVTable *)CONCAT31(local_8._1_3_,0x1d);
+    local_8 = CONCAT31(local_8._1_3_,0x1d);
     param_2 = 0;
     thunk_FUN_00580910(param_1,SVar2,0xe,&local_c,local_154,(undefined1 *)&local_8,&param_2);
     break;
@@ -239,26 +236,26 @@ STAllPlayersC::GetTOBJImage
   case CASE_F9:
   case CASE_FA:
   case CASE_FB:
-    local_c = (STBoatCVTable *)0x0;
+    local_c = (int *)0x0;
     local_154[0] = '\0';
     /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-    local_8 = (STBoatCVTable *)CONCAT31(local_8._1_3_,0x1d);
+    local_8 = CONCAT31(local_8._1_3_,0x1d);
     param_2 = 0;
     thunk_FUN_0057a140(param_1,SVar2,0xe,&local_c,local_154,(undefined1 *)&local_8,&param_2);
     goto joined_r0x0044c40d;
   case CASE_FD:
-    local_c = (STBoatCVTable *)0x0;
+    local_c = (int *)0x0;
     local_154[0] = '\0';
     /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-    local_8 = (STBoatCVTable *)CONCAT31(local_8._1_3_,0x1d);
+    local_8 = CONCAT31(local_8._1_3_,0x1d);
     param_2 = 0;
     thunk_FUN_005ec740(param_1,SVar2,0xe,&local_c,local_154,(undefined1 *)&local_8,&param_2);
     break;
   case CASE_FE:
-    local_c = (STBoatCVTable *)0x0;
+    local_c = (int *)0x0;
     local_154[0] = '\0';
     /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-    local_8 = (STBoatCVTable *)CONCAT31(local_8._1_3_,0x1d);
+    local_8 = CONCAT31(local_8._1_3_,0x1d);
     param_2 = 0;
     thunk_FUN_005fcf50(param_1,SVar2,0xe,&local_c,local_154,(undefined1 *)&local_8,&param_2);
 joined_r0x0044c40d:
@@ -268,9 +265,9 @@ joined_r0x0044c40d:
   if (local_154[0] != '\0') {
 LAB_0044c44d:
     puVar3 = Library::Ourlib::MFRLOAD::mfRLoad
-                       ((int *)local_c,(Global_mfRLoad_param_2Enum)local_8,local_154,0xffffffff,0,1,
-                        0,(undefined4 *)0x0);
-    local_54[0xe] = *(undefined4 *)(*(int *)((int)puVar3 + 0x21) + param_2 * 4);
+                       (local_c,(Global_mfRLoad_param_2Enum)local_8,local_154,0xffffffff,0,1,0,
+                        (undefined4 *)0x0);
+    local_1c = *(undefined4 *)(*(int *)((int)puVar3 + 0x21) + param_2 * 4);
   }
 cf_common_exit_0044C477:
   uVar4 = FUN_00709470(PTR_00807598,local_54,0x11,1,10,0xff);

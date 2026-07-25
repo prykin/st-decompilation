@@ -102,9 +102,17 @@ public class STSwitchEnumApplier extends GhidraScript {
             ApplyResult target = switch (row.get("target_kind")) {
                 case "parameter" -> applyParameter(row, resolution.type);
                 case "class_field" -> applyClassField(row, resolution.type);
+                case "generated_enum" -> resolution.changed ?
+                    ApplyResult.applied("generated enum domain updated from exact typed uses") :
+                    ApplyResult.unchanged("generated enum domain already current");
                 default -> ApplyResult.preserved("unsupported automatic target kind " +
                     row.get("target_kind"));
             };
+            // Updating the enum itself is a real mutation even when its parameter
+            // or field already points at the same DataType.  Report it so the
+            // pipeline performs another decompiler/analyzer pass.
+            if (resolution.changed && "unchanged".equals(target.status))
+                target = ApplyResult.applied("enum domain updated; " + target.detail);
             if ("class_field".equals(row.get("target_kind")) &&
                     ("applied".equals(target.status) || "unchanged".equals(target.status)))
                 annotateEvidenceFunctions(row, resolution.type);
@@ -123,36 +131,42 @@ public class STSwitchEnumApplier extends GhidraScript {
         for (EnumValue value : parseValues(unt(row.get("values"))))
             desired.add(value.name, value.value);
         String desiredHash = enumHash(desired);
-        desired.setDescription(MARKER + " Generated from numeric switch cases" +
+        desired.setDescription(MARKER +
+            " Generated from numeric switch cases and exact typed uses" +
             ENUM_HASH_MARKER + desiredHash);
 
         DataType existingType = dataTypes.getDataType(ENUMS, name);
         if (existingType == null) {
             Enum created = (Enum)dataTypes.resolve(desired, DataTypeConflictHandler.KEEP_HANDLER);
-            return new EnumResolution(created, "created " + created.getPathName(), null);
+            return new EnumResolution(created, "created " + created.getPathName(), null, true);
         }
         if (!(existingType instanceof Enum existing))
             return new EnumResolution(null, "", "existing type is not an enum: " +
-                existingType.getPathName());
+                existingType.getPathName(), false);
         if (existing.isEquivalent(desired)) {
+            boolean descriptionChanged = false;
             if ((existing.getDescription() == null ||
                     existing.getDescription().contains(MARKER)) &&
-                    !text(existing.getDescription()).equals(desired.getDescription()))
+                    !text(existing.getDescription()).equals(desired.getDescription())) {
                 existing.setDescription(desired.getDescription());
-            return new EnumResolution(existing, "used equivalent " + existing.getPathName(), null);
+                descriptionChanged = true;
+            }
+            return new EnumResolution(existing, "used equivalent " + existing.getPathName(), null,
+                descriptionChanged);
         }
         String description = existing.getDescription();
         if (description == null || !description.contains(MARKER))
             return new EnumResolution(null, "", "manual enum differs; preserving " +
-                existing.getPathName());
+                existing.getPathName(), false);
         String stored = storedHash(description, ENUM_HASH_MARKER);
         String current = enumHash(existing);
         if (stored == null || !stored.equals(current))
             return new EnumResolution(null, "", "manual changes detected in " +
-                existing.getPathName());
+                existing.getPathName(), false);
         existing.replaceWith(desired);
         existing.setDescription(desired.getDescription());
-        return new EnumResolution(existing, "updated generated " + existing.getPathName(), null);
+        return new EnumResolution(existing, "updated generated " + existing.getPathName(), null,
+            true);
     }
 
     private ApplyResult applyParameter(Map<String, String> row, Enum enumType) throws Exception {
@@ -407,8 +421,10 @@ public class STSwitchEnumApplier extends GhidraScript {
     private static class EnumResolution {
         final Enum type;
         final String detail, error;
-        EnumResolution(Enum type, String detail, String error) {
+        final boolean changed;
+        EnumResolution(Enum type, String detail, String error, boolean changed) {
             this.type = type; this.detail = detail; this.error = error;
+            this.changed = changed;
         }
     }
     private static class ApplyResult {

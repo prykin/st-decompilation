@@ -10,7 +10,7 @@
    original spelling is not confirmed. */
 
 void __thiscall
-STGroupBoatC::SetOrderData(STGroupBoatC *this,STGroupBoatOrderType orderType,void *data)
+STGroupBoatC::SetOrderData(STGroupBoatC *this,Global_sub_00498D20_param_1Enum orderType,void *data)
 
 {
   DArrayTy *pDVar1;
@@ -25,12 +25,12 @@ STGroupBoatC::SetOrderData(STGroupBoatC *this,STGroupBoatOrderType orderType,voi
   undefined4 local_8;
 
   switch(orderType) {
-  case GROUP_BOAT_ORDER_01:
+  case CASE_1:
     this->field_0065 = 1;
     this->field_0089 = 1;
     puVar2 = (undefined4 *)&this->field_0xdd;
     goto LAB_00499129;
-  case GROUP_BOAT_ORDER_02:
+  case CASE_2:
     this->field_0065 = 1;
     this->field_008D = 1;
     puVar2 = &this->field_00E7;
@@ -55,11 +55,11 @@ STGroupBoatC::SetOrderData(STGroupBoatC *this,STGroupBoatOrderType orderType,voi
       }
     }
     break;
-  case GROUP_BOAT_ORDER_03:
+  case CASE_3:
     this->field_0065 = 1;
     this->field_0091 = 1;
     return;
-  case GROUP_BOAT_ORDER_04:
+  case CASE_4:
     this->field_0065 = 1;
     this->field_0095 = 1;
     this->field_015C = *(undefined4 *)data;
@@ -81,7 +81,7 @@ STGroupBoatC::SetOrderData(STGroupBoatC *this,STGroupBoatOrderType orderType,voi
       }
     }
     break;
-  case GROUP_BOAT_ORDER_05:
+  case CASE_5:
     this->field_0065 = 1;
     this->field_0099 = 1;
     puVar2 = &this->field_0164;
@@ -107,7 +107,7 @@ STGroupBoatC::SetOrderData(STGroupBoatC *this,STGroupBoatOrderType orderType,voi
       }
     }
     break;
-  case GROUP_BOAT_ORDER_06:
+  case CASE_6:
     this->field_0065 = 1;
     this->field_009D = 1;
     ppDVar5 = &this->field_0103;
@@ -135,12 +135,12 @@ STGroupBoatC::SetOrderData(STGroupBoatC *this,STGroupBoatOrderType orderType,voi
       return;
     }
     break;
-  case GROUP_BOAT_ORDER_07:
+  case CASE_7:
     this->field_0065 = 1;
     this->field_00A1 = 1;
     this->field_00FF = *(undefined4 *)data;
     return;
-  case GROUP_BOAT_ORDER_08:
+  case CASE_8:
     this->field_0065 = 1;
     this->field_00A5 = 1;
     puVar2 = &this->field_010B;
@@ -181,7 +181,7 @@ STGroupBoatC::SetOrderData(STGroupBoatC *this,STGroupBoatOrderType orderType,voi
       }
     }
     break;
-  case GROUP_BOAT_ORDER_09:
+  case CASE_9:
     this->field_0065 = 1;
     this->field_00A9 = 1;
     puVar2 = (undefined4 *)&this->field_0137;
@@ -193,24 +193,24 @@ STGroupBoatC::SetOrderData(STGroupBoatC *this,STGroupBoatOrderType orderType,voi
     *(undefined2 *)puVar2 = *(undefined2 *)data;
     *(undefined1 *)((int)puVar2 + 2) = *(undefined1 *)((int)data + 2);
     return;
-  case GROUP_BOAT_ORDER_0A:
+  case CASE_A:
     this->field_0065 = 1;
     this->field_00AD = 1;
     *(undefined4 *)&this->field_0x156 = *(undefined4 *)data;
     this->field_015A = *(undefined2 *)((int)data + 4);
     return;
-  case GROUP_BOAT_ORDER_0B:
+  case CASE_B:
     this->field_0065 = 1;
     this->field_00B1 = 1;
     this->field_0178 = *(undefined4 *)data;
     return;
-  case GROUP_BOAT_ORDER_0C:
+  case CASE_C:
     this->field_0065 = 1;
     this->field_00B5 = 1;
     *(undefined4 *)&this->field_0x17c = *(undefined4 *)data;
     this->field_0180 = *(undefined2 *)((int)data + 4);
     return;
-  case GROUP_BOAT_ORDER_0D:
+  case CASE_D:
     this->field_0065 = 1;
     this->field_00B9 = 1;
     puVar2 = &this->field_0182;
@@ -219,20 +219,20 @@ LAB_00499129:
     puVar2[1] = *(undefined4 *)((int)data + 4);
     *(undefined2 *)(puVar2 + 2) = *(undefined2 *)((int)data + 8);
     return;
-  case GROUP_BOAT_ORDER_0E:
+  case CASE_E:
     this->field_0065 = 1;
     this->field_00BD = 1;
     this->field_018C = *(undefined4 *)data;
     this->field_0190 = *(undefined2 *)((int)data + 4);
     return;
-  case GROUP_BOAT_ORDER_0F:
+  case CASE_F:
     this->field_0065 = 1;
     this->field_00C1 = 1;
     *(undefined4 *)&this->field_0x192 = *(undefined4 *)data;
     this->field_0196 = *(undefined2 *)((int)data + 4);
     this->field_0198 = *(undefined1 *)((int)data + 6);
     return;
-  case GROUP_BOAT_ORDER_10:
+  case CASE_10:
     this->field_0065 = 1;
     this->field_00C5 = 1;
     this->field_01A3 = *(undefined4 *)data;
@@ -240,42 +240,42 @@ LAB_00499129:
     this->field_01AB = *(undefined4 *)((int)data + 8);
     this->field_01AF = *(undefined4 *)((int)data + 0xc);
     return;
-  case GROUP_BOAT_ORDER_11:
+  case CASE_11:
     this->field_0065 = 1;
     this->field_00C9 = 1;
     this->field_0199 = *(undefined4 *)data;
     this->field_019D = *(undefined4 *)((int)data + 4);
     this->field_01A1 = *(undefined2 *)((int)data + 8);
     return;
-  case GROUP_BOAT_ORDER_12:
+  case CASE_12:
     this->field_0065 = 1;
     this->field_00CD = 1;
     this->field_01B3 = *(undefined4 *)data;
     this->field_01B7 = *(undefined2 *)((int)data + 4);
     return;
-  case GROUP_BOAT_ORDER_13:
+  case CASE_13:
     this->field_0065 = 1;
     this->field_00D1 = 1;
     *(undefined4 *)&this->field_0x1b9 = *(undefined4 *)data;
     this->field_01BD = *(undefined2 *)((int)data + 4);
     return;
-  case GROUP_BOAT_ORDER_14:
+  case CASE_14:
     this->field_0065 = 1;
     this->field_00D5 = 1;
     *(undefined4 *)&this->field_0x1bf = *(undefined4 *)data;
     this->field_01C3 = *(undefined2 *)((int)data + 4);
     return;
-  case GROUP_BOAT_ORDER_15:
+  case CASE_15:
     this->field_0065 = 1;
     this->field_00D9 = 1;
     this->field_01C5 = *(undefined4 *)data;
     return;
-  case GROUP_BOAT_ORDER_65:
+  case CASE_65:
     this->field_0061 = 1;
     this->field_006D = 1;
     this->field_01C9 = *(undefined1 *)data;
     return;
-  case GROUP_BOAT_ORDER_66:
+  case CASE_66:
     this->field_0061 = 1;
     this->field_0071 = 1;
     if (this->field_01CA == (DArrayTy *)0x0) {
@@ -284,7 +284,7 @@ LAB_00499129:
     }
     Library::DKW::TBL::FUN_006ae1c0(&this->field_01CA->flags,data);
     return;
-  case GROUP_BOAT_ORDER_67:
+  case CASE_67:
     this->field_0061 = 1;
     this->field_0075 = 1;
     if (this->field_01CE == (DArrayTy *)0x0) {
@@ -293,7 +293,7 @@ LAB_00499129:
     }
     Library::DKW::TBL::FUN_006ae1c0(&this->field_01CE->flags,data);
     return;
-  case GROUP_BOAT_ORDER_68:
+  case CASE_68:
     this->field_0061 = 1;
     this->field_0079 = 1;
     if (*(int *)&this->field_0x1d2 == 0) {
@@ -302,7 +302,7 @@ LAB_00499129:
     }
     Library::DKW::TBL::FUN_006ae1c0(*(uint **)&this->field_0x1d2,data);
     return;
-  case GROUP_BOAT_ORDER_69:
+  case CASE_69:
     this->field_0061 = 1;
     this->field_007D = 1;
     if (this->field_01D6 == (DArrayTy *)0x0) {
@@ -311,7 +311,7 @@ LAB_00499129:
     }
     Library::DKW::TBL::FUN_006ae1c0(&this->field_01D6->flags,data);
     return;
-  case GROUP_BOAT_ORDER_6A:
+  case CASE_6A:
     this->field_0061 = 1;
     this->field_0081 = 1;
     if (this->field_01DA == (DArrayTy *)0x0) {

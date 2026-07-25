@@ -51,7 +51,7 @@ void __thiscall HelpPanelTy::TipProc(HelpPanelTy *this,void *param_1,int param_2
   }
   if (param_3 != '\0') goto LAB_0051d689;
   HVar2 = local_10->field_01A1;
-  if (((HVar2 == 0) || (HVar2 == CASE_6)) || (HVar2 == (CASE_8|CASE_2))) {
+  if (((HVar2 == 0) || (HVar2 == CASE_6)) || (HVar2 == CASE_A)) {
     local_10->field_01A2 = HVar2;
     local_10->field_01AB = local_10->field_01A3;
   }

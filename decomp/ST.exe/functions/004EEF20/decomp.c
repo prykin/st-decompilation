@@ -1,23 +1,19 @@
 
-void __fastcall FUN_004eef20(int param_1)
+void __fastcall FUN_004eef20(AnonShape_004EEF20_59DE1DA2 *param_1)
 
 {
   undefined4 *puVar1;
   int iVar2;
 
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  if (*(uint **)(param_1 + 0x28a) != (uint *)0x0) {
-    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-    ccFntTy::operator((ccFntTy *)param_1,*(uint **)(param_1 + 0x28a));
-    *(undefined4 *)(param_1 + 0x28a) = 0;
+  if ((uint *)param_1->field_028A != (uint *)0x0) {
+    ccFntTy::operator((uint *)param_1->field_028A);
+    param_1->field_028A = 0;
   }
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  if (*(uint *)(param_1 + 0x292) != 0) {
-    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-    StartSystemTy::sub_006E56B0(*(StartSystemTy **)(param_1 + 0xc),*(uint *)(param_1 + 0x292));
+  if (param_1->field_0292 != 0) {
+    StartSystemTy::sub_006E56B0(param_1->field_000C,param_1->field_0292);
   }
-  *(undefined4 *)(param_1 + 0x292) = 0;
-  puVar1 = (undefined4 *)(param_1 + 0x27a);
+  param_1->field_0292 = 0;
+  puVar1 = (undefined4 *)&param_1->field_0x27a;
   iVar2 = 4;
   do {
     if ((DArrayTy *)*puVar1 != (DArrayTy *)0x0) {

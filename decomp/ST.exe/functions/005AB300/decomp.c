@@ -9,10 +9,19 @@
    [STSwitchEnumApplier] Switch target field_1A5F uses
    /SubmarineTitans/Recovered/Enums/ChooseMapTy_field_1A5FState. Cases:
    CASE_0=0;CASE_1=1;CASE_2=2;CASE_3=3;CASE_4=4;CASE_5=5;CASE_6=6;CASE_7=7;CASE_9=9;CASE_A=10;CASE_B=11;CASE_C=12;CASE_10=16;CASE_13=19;CASE_14=20;CASE_15=21
-    */
+
+   [STSwitchEnumApplier] Switch target field_1A5F uses
+   /SubmarineTitans/Recovered/Enums/ChooseMapTy_field_1A5FState. Cases:
+   CASE_0=0;CASE_1=1;CASE_2=2;CASE_3=3;CASE_4=4;CASE_5=5;CASE_6=6;CASE_7=7;CASE_9=9;CASE_A=10;CASE_B=11;CASE_C=12;CASE_D=13;CASE_10=16;CASE_13=19;CASE_14=20;CASE_15=21
+
+   [STSwitchEnumApplier] Switch target param_2 uses
+   /SubmarineTitans/Recovered/Enums/ChooseMapTy_InitChooseMap_param_2Enum. Cases:
+   CASE_1=1;CASE_2=2;CASE_4=4;CASE_5=5;CASE_6=6;CASE_7=7;CASE_C=12;CASE_14=20 */
 
 void __thiscall
-ChooseMapTy::InitChooseMap(ChooseMapTy *this,ChooseMapTy_field_1A5FState param_1,byte param_2)
+ChooseMapTy::InitChooseMap
+          (ChooseMapTy *this,ChooseMapTy_field_1A5FState param_1,
+          ChooseMapTy_InitChooseMap_param_2Enum param_2)
 
 {
   undefined1 *puVar1;
@@ -347,23 +356,23 @@ switchD_005ab64d_caseD_1:
     goto switchD_005ab66b_caseD_6;
   default:
     switch(param_2) {
-    case 4:
-    case 5:
-    case 7:
-    case 0xc:
-    case 0x14:
+    case CASE_4:
+    case CASE_5:
+    case CASE_7:
+    case CASE_C:
+    case CASE_14:
       goto switchD_005ab64d_caseD_1;
     default:
 switchD_005ab66b_caseD_6:
       switch(param_2) {
-      case 1:
-      case 2:
-      case 4:
-      case 5:
-      case 0x14:
+      case CASE_1:
+      case CASE_2:
+      case CASE_4:
+      case CASE_5:
+      case CASE_14:
         this_02->field_0x20b4 = 0;
-      case 6:
-      case 7:
+      case CASE_6:
+      case CASE_7:
         this_02->field_0x20b5 = 0;
       default:
         pAVar3 = (AnonShape_006B5B10_E0D06CF1 *)g_startSystem_0081176C->field_0544;
@@ -773,7 +782,7 @@ switchD_005ab66b_caseD_6:
         if (g_cursorClass_00802A30 != (CursorClassTy *)0x0) {
           iVar6 = g_cursorClass_00802A30->field_00C9;
           iVar20 = g_cursorClass_00802A30->field_00C5;
-          g_cursorClass_00802A30->field_0493 = 1;
+          g_cursorClass_00802A30->field_0493 = CASE_1;
           this_01->field_0494 = 0xffff;
           CursorClassTy::SetGCType(this_01,CASE_0,iVar20,iVar6);
           CursorClassTy::DrawSprite(this_01,this_01->field_00C5,this_01->field_00C9);

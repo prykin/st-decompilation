@@ -1,0 +1,6 @@
+program=ST.exe
+candidates=18
+automatic_replacements=0
+automatic_removals=0
+retained_review=18
+note=Deletion requires an original script-owner marker, ST_VIEW_ONLY, and zero parents/signature/Listing uses. Equivalent types migrate only to one anchor.

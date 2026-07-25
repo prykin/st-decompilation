@@ -28,5 +28,9 @@
 *.swp
 *.swo
 
+# Retained pipeline run logs are local diagnostics; canonical proposal/apply outputs stay tracked.
+recovery/*/runs/
+recovery/*/latest_run.txt
+
 # Local Java/Ghidra script compilation output.
 *.class

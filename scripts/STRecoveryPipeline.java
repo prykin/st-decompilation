@@ -7,28 +7,46 @@
 
 import java.io.BufferedWriter;
 import java.io.File;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.PrintWriter;
+import java.io.StringWriter;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.nio.file.StandardCopyOption;
+import java.nio.file.StandardOpenOption;
+import java.nio.file.attribute.FileTime;
 import java.time.Duration;
 import java.time.Instant;
+import java.security.MessageDigest;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Comparator;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Locale;
 import java.util.Map;
 import java.util.Set;
+import java.util.TreeMap;
 
 import ghidra.app.script.GhidraScript;
 import ghidra.app.plugin.core.analysis.AutoAnalysisManager;
 import ghidra.framework.model.TransactionInfo;
 
 public class STRecoveryPipeline extends GhidraScript {
-    private static final int MAX_STRUCTURAL_PASSES = 3;
-    private static final int MAX_DEEP_PASSES = 2;
+    private static final int MAX_BOOTSTRAP_PASSES = 24;
+    private static final int MAX_STRUCTURAL_PASSES = 24;
+    private static final int MAX_DEEP_PASSES = 12;
+    private static final int MAX_RUN_HISTORY = 3;
     private static final Set<String> MUTATING_STATUSES = Set.of(
-        "applied", "created", "converted", "updated", "partial", "renamed");
+        "applied", "created", "converted", "updated", "partial", "renamed", "repaired");
+    private static final Set<String> UNCHANGED_STATUSES = Set.of(
+        "unchanged", "already_present");
+    private static final Set<String> REVIEW_STATUSES = Set.of(
+        "disabled", "preserved", "skipped", "review");
+    private static final Set<String> CONFLICT_STATUSES = Set.of("conflict");
+    private static final Set<String> ERROR_STATUSES = Set.of("error", "failed");
 
     private Path repository;
     private Path recoveryRoot;
@@ -38,6 +56,15 @@ public class STRecoveryPipeline extends GhidraScript {
     private final List<PipelineRow> report = new ArrayList<>();
     private int sequence;
     private boolean programMutationObserved;
+    private boolean lastStepMutatedProgram;
+    private Path runsRoot;
+    private Path activeRun;
+    private Path eventsPath;
+    private Path logPath;
+    private Instant runStarted;
+    private String runMode = "";
+    private String currentSection = "startup";
+    private long runModificationBefore;
 
     @Override
     protected void run() throws Exception {
@@ -66,28 +93,41 @@ public class STRecoveryPipeline extends GhidraScript {
             ", repository=" + repository);
         println("No proposal flags are changed by the pipeline. Review-only rows remain disabled.");
         Instant started = Instant.now();
+        startRun(options.mode, started);
         try {
             switch (options.mode) {
-                case "core" -> runCore();
-                case "deep" -> runDeep();
-                case "full" -> { runCore(); runDeep(); }
+                case "core" -> { runCore(); recordEvidence(); }
+                case "deep" -> { runDeep(); recordEvidence(); }
+                case "full" -> { runCore(); runDeep(); recordEvidence(); }
                 case "export" -> runExport();
-                case "full-export" -> { runCore(); runDeep(); runExport(); }
+                case "full-export" -> {
+                    runCore(); runDeep(); recordEvidence(); runExport();
+                }
                 default -> throw new IllegalArgumentException("Unknown pipeline mode: " +
                     options.mode);
             }
+            flushReport();
+            if (programMutationObserved && !currentProgram.isChanged())
+                throw new IllegalStateException("Pipeline observed committed Program mutations, " +
+                    "but Program.isChanged() is false at completion; refusing a false success");
+            long seconds = Duration.between(started, Instant.now()).toSeconds();
+            logLine("pipeline_complete duration_s=" + seconds +
+                " program_changed=" + currentProgram.isChanged());
+            finishRun("completed", null);
+            println("ST recovery pipeline complete in " + seconds + " s.");
         }
         catch (Exception exception) {
-            flushReport();
+            try {
+                flushReport();
+                logLine("pipeline_failed " + message(exception));
+                finishRun("failed", exception);
+            }
+            catch (Exception loggingFailure) {
+                exception.addSuppressed(loggingFailure);
+            }
             printerr("Pipeline stopped after the first failed step: " + message(exception));
             throw exception;
         }
-        flushReport();
-        long seconds = Duration.between(started, Instant.now()).toSeconds();
-        if (programMutationObserved && !currentProgram.isChanged())
-            throw new IllegalStateException("Pipeline observed committed Program mutations, " +
-                "but Program.isChanged() is false at completion; refusing a false success");
-        println("ST recovery pipeline complete in " + seconds + " s.");
         println("Pipeline report: " + reportPath.toAbsolutePath().normalize());
         println("Program changed after pipeline: " + currentProgram.isChanged());
         if (!options.mode.equals("export"))
@@ -101,13 +141,12 @@ public class STRecoveryPipeline extends GhidraScript {
     /** Fast structural loop: types/debug names, message ABI, exact entries, factories and classes. */
     private void runCore() throws Exception {
         section("core baseline");
-        step("STRecoveredTypesApplier.java");
+        runBootstrapFixpoint();
 
         analyzer("STDebugSymbolAnalyzer.java");
         applier("STDebugSymbolApplier.java", "proposals.tsv");
         optionalApplier("STCuratedRecoveryApplier.java", "curated_recovery.tsv");
-        optionalAudit("STCallsiteConventionAnalyzer.java",
-            "debug_calling_convention_review.tsv");
+        runOptionalCallsiteFixpoint();
 
         pair("STMessageIdAnalyzer.java", "STMessageIdApplier.java",
             "message_id_proposals.tsv", null);
@@ -136,6 +175,7 @@ public class STRecoveryPipeline extends GhidraScript {
         pair("STUtilityFunctionAnalyzer.java", "STUtilityFunctionApplier.java",
             "utility_function_proposals.tsv", "utility_function_apply_report.tsv");
 
+        boolean converged = false;
         for (int pass = 1; pass <= MAX_DEEP_PASSES; pass++) {
             section("deep propagation pass " + pass + "/" + MAX_DEEP_PASSES);
             int changed = 0;
@@ -146,6 +186,10 @@ public class STRecoveryPipeline extends GhidraScript {
             changed += runPrototypeCycle();
             changed += pair("STGlobalRecordAnalyzer.java", "STGlobalRecordApplier.java",
                 "global_record_proposals.tsv", "global_record_apply_report.tsv");
+            changed += pair("STDiscriminatedPayloadAnalyzer.java",
+                "STDiscriminatedPayloadApplier.java",
+                "discriminated_payload_proposals.tsv",
+                "discriminated_payload_apply_report.tsv");
             changed += pair("STSpatialGridAnalyzer.java", "STSpatialGridApplier.java",
                 "spatial_grid_proposals.tsv", "spatial_grid_apply_report.tsv");
             changed += pair("STGlobalAggregateAnalyzer.java", "STGlobalAggregateApplier.java",
@@ -168,8 +212,11 @@ public class STRecoveryPipeline extends GhidraScript {
             changed += pair("STObjectFactoryAnalyzer.java", "STObjectFactoryApplier.java",
                 "object_factory_proposals.tsv", "object_factory_apply_report.tsv");
             println("Deep propagation pass " + pass + ": mutating report rows=" + changed);
-            if (changed == 0) break;
+            if (changed == 0) { converged = true; break; }
         }
+        if (!converged)
+            throw new IllegalStateException("Deep propagation did not reach a fixed point in " +
+                MAX_DEEP_PASSES + " passes; export is unsafe");
 
         // Consume newly recovered fields/owners before library classification hides OURLIB bodies
         // from implementation-based analyzers.
@@ -183,11 +230,65 @@ public class STRecoveryPipeline extends GhidraScript {
             "control_flow_label_proposals.tsv", "control_flow_label_apply_report.tsv");
         pair("STLibraryAnalyzer.java", "STLibraryApplier.java",
             "library_proposals.tsv", null);
+        runTypeLifecycleFixpoint();
     }
 
     private void runExport() throws Exception {
         section("LLM corpus export");
+        step("STEvidenceLedger.java", "verify", recoveryRoot.toString());
+        Path baseline = snapshotPreviousExport();
         step("STDecompExport.java", decompRoot.toString());
+        Path current = decompRoot.resolve(currentProgram.getName());
+        step("STExportRegressionGate.java", current.toString(),
+            baseline == null ? "-" : baseline.toString(), recoveryProgram.toString());
+        snapshotRunArtifact(recoveryProgram.resolve("export_regression_report.tsv"),
+            "export_regression_report.tsv");
+        snapshotRunArtifact(recoveryProgram.resolve("export_receipt.json"),
+            "export_receipt.json");
+    }
+
+    private void recordEvidence() throws Exception {
+        section("evidence checkpoint");
+        step("STEvidenceLedger.java", "record", recoveryRoot.toString());
+    }
+
+    private void runBootstrapFixpoint() throws Exception {
+        for (int pass = 1; pass <= MAX_BOOTSTRAP_PASSES; pass++) {
+            int changed = pair("STTypeBootstrapAnalyzer.java",
+                "STTypeBootstrapApplier.java", "type_bootstrap_proposals.tsv",
+                "type_bootstrap_apply_report.tsv");
+            println("Type-bootstrap pass " + pass + ": mutating rows=" + changed);
+            if (changed == 0) return;
+        }
+        throw new IllegalStateException("Type bootstrap did not reach a fixed point in " +
+            MAX_BOOTSTRAP_PASSES + " passes; inspect " +
+            recoveryProgram.resolve("type_bootstrap_apply_report.tsv"));
+    }
+
+    private void runOptionalCallsiteFixpoint() throws Exception {
+        Path input = recoveryProgram.resolve("debug_calling_convention_review.tsv");
+        if (!hasDataRows(input)) {
+            skipped("STCallsiteConventionAnalyzer.java", input.toString(),
+                "audit input is absent or empty");
+            skipped("STCallsiteConventionApplier.java",
+                recoveryProgram.resolve("callsite_convention_proposals.tsv").toString(),
+                "analyzer input is absent or empty");
+            return;
+        }
+        for (int pass = 1; pass <= MAX_STRUCTURAL_PASSES; pass++) {
+            step("STCallsiteConventionAnalyzer.java", input.toString());
+            Path proposals = requireFile("callsite_convention_proposals.tsv", null);
+            step("STCallsiteConventionApplier.java",
+                proposals.toString());
+            int changed = convergenceMutationCount(
+                "STCallsiteConventionApplier.java",
+                proposals,
+                recoveryProgram.resolve("callsite_convention_apply_report.tsv"),
+                MUTATING_STATUSES);
+            println("Callsite-convention pass " + pass + ": mutating rows=" + changed);
+            if (changed == 0) return;
+        }
+        throw new IllegalStateException("Callsite convention repair did not reach a fixed point");
     }
 
     private void fixUnclaimedCode() throws Exception {
@@ -199,13 +300,16 @@ public class STRecoveryPipeline extends GhidraScript {
             println("Unclaimed-code pass " + pass + ": created/converted=" + changed);
             if (changed == 0) return;
         }
-        println("Unclaimed-code loop reached its safety bound; inspect the latest apply report.");
+        throw new IllegalStateException("Unclaimed-code recovery did not reach a fixed point in " +
+            MAX_STRUCTURAL_PASSES + " passes");
     }
 
     private void runStructuralFixpoint() throws Exception {
         section("factory/vtable/constructor/class fixpoint");
         for (int pass = 1; pass <= MAX_STRUCTURAL_PASSES; pass++) {
             int changed = 0;
+            changed += pair("STMessageHandlerAnalyzer.java", "STMessageHandlerApplier.java",
+                "message_handler_proposals.tsv", "message_handler_apply_report.tsv");
             changed += pair("STObjectFactoryAnalyzer.java", "STObjectFactoryApplier.java",
                 "object_factory_proposals.tsv", "object_factory_apply_report.tsv");
             changed += pair("STVTableAnalyzer.java", "STVTableApplier.java",
@@ -221,8 +325,21 @@ public class STRecoveryPipeline extends GhidraScript {
             println("Structural pass " + pass + ": mutating report rows=" + changed);
             if (changed == 0) return;
         }
-        println("Structural loop reached its safety bound; remaining changes require review or " +
-            "another explicit pipeline run.");
+        throw new IllegalStateException("Structural recovery did not reach a fixed point in " +
+            MAX_STRUCTURAL_PASSES + " passes");
+    }
+
+    private void runTypeLifecycleFixpoint() throws Exception {
+        section("generated type lifecycle");
+        for (int pass = 1; pass <= MAX_STRUCTURAL_PASSES; pass++) {
+            int changed = pair("STTypeLifecycleAnalyzer.java", "STTypeLifecycleApplier.java",
+                "type_lifecycle_proposals.tsv", "type_lifecycle_apply_report.tsv",
+                Set.of("replaced", "removed"), null);
+            println("Type-lifecycle pass " + pass + ": replaced/removed=" + changed);
+            if (changed == 0) return;
+        }
+        throw new IllegalStateException("Type lifecycle did not reach a fixed point in " +
+            MAX_STRUCTURAL_PASSES + " passes");
     }
 
     private int runPrototypeCycle() throws Exception {
@@ -231,13 +348,17 @@ public class STRecoveryPipeline extends GhidraScript {
         step("STPrototypeRepairAnalyzer.java", proposals.toString());
         Path repairs = requireFile("prototype_repair_proposals.tsv", null);
         step("STPrototypeRepairApplier.java", repairs.toString());
-        int changed = mutationCount(recoveryProgram.resolve("prototype_repair_apply_report.tsv"),
-            MUTATING_STATUSES, null);
+        int changed = convergenceMutationCount(
+            "STPrototypeRepairApplier.java", repairs,
+            recoveryProgram.resolve("prototype_repair_apply_report.tsv"),
+            MUTATING_STATUSES);
         analyzer("STPrototypeAnalyzer.java");
         proposals = requireFile("prototype_proposals.tsv", null);
         step("STPrototypeApplier.java", proposals.toString());
-        return changed + mutationCount(recoveryProgram.resolve("prototype_apply_report.tsv"),
-            MUTATING_STATUSES, null);
+        return changed + convergenceMutationCount(
+            "STPrototypeApplier.java", proposals,
+            recoveryProgram.resolve("prototype_apply_report.tsv"),
+            MUTATING_STATUSES);
     }
 
     private int pair(String analyzer, String applier, String proposal, String applyReport)
@@ -255,8 +376,12 @@ public class STRecoveryPipeline extends GhidraScript {
         }
         Path proposalPath = requireFile(proposal, null);
         step(applier, proposalPath.toString());
-        return applyReport == null ? 0 : mutationCount(recoveryProgram.resolve(applyReport),
-            statuses, null);
+        if (applyReport == null) {
+            snapshotPassArtifacts(applier, proposalPath, null);
+            return 0;
+        }
+        return convergenceMutationCount(applier, proposalPath,
+            recoveryProgram.resolve(applyReport), statuses);
     }
 
     private void analyzer(String script) throws Exception {
@@ -271,15 +396,6 @@ public class STRecoveryPipeline extends GhidraScript {
         Path path = recoveryProgram.resolve(proposal);
         if (!Files.isRegularFile(path)) {
             skipped(script, path.toString(), "optional proposal is absent");
-            return;
-        }
-        step(script, path.toString());
-    }
-
-    private void optionalAudit(String script, String input) throws Exception {
-        Path path = recoveryProgram.resolve(input);
-        if (!hasDataRows(path)) {
-            skipped(script, path.toString(), "audit input is absent or empty");
             return;
         }
         step(script, path.toString());
@@ -303,11 +419,16 @@ public class STRecoveryPipeline extends GhidraScript {
         Path source = repository.resolve("scripts").resolve(script);
         if (!Files.isRegularFile(source))
             throw new IllegalStateException("Pipeline script is missing: " + source);
-        String argument = String.join(" | ", args);
+        String argument = Arrays.stream(args).map(this::portableArgument)
+            .collect(java.util.stream.Collectors.joining(" | "));
         int ordinal = ++sequence;
         println(String.format(Locale.ROOT, "[%02d] %s%s", ordinal, script,
             argument.isBlank() ? "" : " <- " + argument));
+        logLine("step_start sequence=" + ordinal + " script=" + script +
+            (argument.isBlank() ? "" : " argument=" + argument));
+        event("step_start", ordinal, script, "running", 0, -1, -1, argument);
         Instant started = Instant.now();
+        lastStepMutatedProgram = false;
         // A committed child can enqueue auto-analysis just after the preceding post-step
         // drain observed an empty queue.  Drain again at the consumer boundary instead of
         // mistaking Ghidra's own transaction for a leaked script transaction.
@@ -319,25 +440,37 @@ public class STRecoveryPipeline extends GhidraScript {
             settleBackgroundAnalysis("after " + script);
             requireNoOpenTransaction("after " + script);
             long modificationAfter = currentProgram.getModificationNumber();
-            if (modificationAfter != modificationBefore) programMutationObserved = true;
+            lastStepMutatedProgram = modificationAfter != modificationBefore;
+            if (lastStepMutatedProgram) programMutationObserved = true;
             long milliseconds = Duration.between(started, Instant.now()).toMillis();
             String detail = modificationAfter == modificationBefore ? "" :
                 "program_modification=" + modificationBefore + "->" + modificationAfter;
             report.add(new PipelineRow(ordinal, script, "completed", milliseconds, argument,
                 detail));
+            logLine("step_complete sequence=" + ordinal + " script=" + script +
+                " duration_ms=" + milliseconds + (detail.isBlank() ? "" : " " + detail));
+            event("step_complete", ordinal, script, "completed", milliseconds,
+                modificationBefore, modificationAfter, detail);
             flushReport();
         }
         catch (Exception exception) {
             long milliseconds = Duration.between(started, Instant.now()).toMillis();
             report.add(new PipelineRow(ordinal, script, "failed", milliseconds, argument,
                 message(exception)));
+            logLine("step_failed sequence=" + ordinal + " script=" + script +
+                " duration_ms=" + milliseconds + " error=" + message(exception));
+            event("step_failed", ordinal, script, "failed", milliseconds,
+                modificationBefore, currentProgram.getModificationNumber(), message(exception));
             flushReport();
             throw exception;
         }
     }
 
-    private void section(String name) {
+    private void section(String name) throws Exception {
+        currentSection = name;
         println("\n== " + name + " ==");
+        logLine("section " + name);
+        event("section", sequence, "", "", 0, -1, -1, name);
     }
 
     private void requireNoOpenTransaction(String context) throws Exception {
@@ -396,27 +529,143 @@ public class STRecoveryPipeline extends GhidraScript {
         int ordinal = ++sequence;
         println(String.format(Locale.ROOT, "[%02d] %s skipped: %s", ordinal, script, detail));
         report.add(new PipelineRow(ordinal, script, "skipped", 0, argument, detail));
+        logLine("step_skipped sequence=" + ordinal + " script=" + script +
+            " detail=" + detail);
+        event("step_skipped", ordinal, script, "skipped", 0, -1, -1, detail);
         flushReport();
     }
 
-    private int mutationCount(Path path, Set<String> statuses, String kind) throws Exception {
-        if (!Files.isRegularFile(path)) return 0;
-        List<String> lines = Files.readAllLines(path, StandardCharsets.UTF_8);
-        if (lines.isEmpty()) return 0;
-        String[] header = lines.get(0).split("\\t", -1);
-        int statusColumn = indexOf(header, "status");
-        int kindColumn = indexOf(header, "kind");
-        if (statusColumn < 0) return 0;
-        int result = 0;
-        for (int line = 1; line < lines.size(); line++) {
-            if (lines.get(line).isBlank()) continue;
-            String[] values = lines.get(line).split("\\t", -1);
-            if (statusColumn >= values.length || !statuses.contains(values[statusColumn])) continue;
-            if (kind != null && (kindColumn < 0 || kindColumn >= values.length ||
-                    !kind.equals(values[kindColumn]))) continue;
-            result++;
+    private String portableArgument(String value) {
+        try {
+            Path path = Path.of(value);
+            if (path.isAbsolute() && path.normalize().startsWith(repository))
+                return "<repo>/" + repository.relativize(path.normalize())
+                    .toString().replace(File.separatorChar, '/');
         }
+        catch (Exception ignored) { }
+        return value;
+    }
+
+    /**
+     * The analyzer/applier artifacts are the recovery state. Enabled proposals say what was
+     * eligible for this pass; result statuses split it into progress, settled rows, review,
+     * conflicts, and errors. Only progress is iterated. Program's modification number is an
+     * independent proof that the reported progress really changed the database.
+     */
+    private int convergenceMutationCount(String applier, Path proposals, Path applyReport,
+            Set<String> mutatingStatuses) throws Exception {
+        RecoveryState state = recoveryState(proposals, applyReport, mutatingStatuses);
+        String summary = "proposals_enabled=" + state.enabledProposals +
+            ", proposals_review=" + state.reviewProposals +
+            ", changed=" + state.changed + ", unchanged=" + state.unchanged +
+            ", review=" + state.review + ", conflict=" + state.conflict +
+            ", error=" + state.error +
+            (state.other.isEmpty() ? "" : ", other=" + state.other);
+        annotateLastStep(applier, "recovery_state: " + summary);
+        println(applier + " state: " + summary);
+        logLine("recovery_state script=" + applier + " " + summary);
+        snapshotPassArtifacts(applier, proposals, applyReport);
+        if (state.changed > 0 && !lastStepMutatedProgram) {
+            println(applier + ": ignored " + state.changed +
+                " mutating report row(s) because Program did not change");
+            return 0;
+        }
+        if (state.changed == 0 && lastStepMutatedProgram) {
+            println(applier + ": Program modification counter advanced without a mutating " +
+                "report row; treating report state as settled (rolled-back row transactions " +
+                "can advance Ghidra's diagnostic counter)");
+            logLine("diagnostic_modification_without_reported_mutation script=" + applier);
+            return 0;
+        }
+        return state.changed;
+    }
+
+    private void annotateLastStep(String script, String detail) throws Exception {
+        if (report.isEmpty()) return;
+        int index = report.size() - 1;
+        PipelineRow row = report.get(index);
+        if (!row.script.equals(script)) return;
+        String combined = row.detail.isBlank() ? detail : row.detail + "; " + detail;
+        report.set(index, new PipelineRow(row.sequence, row.script, row.status,
+            row.durationMilliseconds, row.argument, combined));
+        flushReport();
+    }
+
+    private RecoveryState recoveryState(Path proposals, Path applyReport,
+            Set<String> mutatingStatuses) throws Exception {
+        if (!Files.isRegularFile(applyReport))
+            throw new IllegalStateException("Missing apply report: " + applyReport);
+        int enabledProposals = 0;
+        int reviewProposals = 0;
+        List<String> proposalLines = Files.readAllLines(proposals, StandardCharsets.UTF_8);
+        if (!proposalLines.isEmpty()) {
+            String[] header = proposalLines.get(0).split("\\t", -1);
+            List<Integer> applyColumns = new ArrayList<>();
+            for (int column = 0; column < header.length; column++)
+                if ("apply".equals(header[column]) || header[column].endsWith("_apply"))
+                    applyColumns.add(column);
+            for (int line = 1; line < proposalLines.size(); line++) {
+                if (proposalLines.get(line).isBlank()) continue;
+                String[] values = proposalLines.get(line).split("\\t", -1);
+                boolean rowEnabled = applyColumns.isEmpty();
+                for (int column : applyColumns)
+                    if (column < values.length && enabled(values[column])) {
+                        rowEnabled = true;
+                        break;
+                    }
+                if (rowEnabled) enabledProposals++;
+                else reviewProposals++;
+            }
+        }
+
+        Map<String, Integer> statuses = new TreeMap<>();
+        List<String> reportLines =
+            Files.readAllLines(applyReport, StandardCharsets.UTF_8);
+        if (!reportLines.isEmpty()) {
+            String[] header = reportLines.get(0).split("\\t", -1);
+            List<Integer> statusColumns = new ArrayList<>();
+            for (int column = 0; column < header.length; column++)
+                if ("status".equals(header[column]) || header[column].endsWith("_status"))
+                    statusColumns.add(column);
+            if (statusColumns.isEmpty())
+                throw new IllegalStateException("Apply report has no status or *_status " +
+                    "column: " + applyReport);
+            for (int line = 1; line < reportLines.size(); line++) {
+                if (reportLines.get(line).isBlank()) continue;
+                String[] values = reportLines.get(line).split("\\t", -1);
+                for (int column : statusColumns) {
+                    String status = column < values.length ? values[column] : "";
+                    statuses.merge(status.isBlank() ? "<blank>" : status,
+                        1, Integer::sum);
+                }
+            }
+        }
+
+        int changed = statusCount(statuses, mutatingStatuses);
+        int unchanged = statusCount(statuses, UNCHANGED_STATUSES);
+        int review = statusCount(statuses, REVIEW_STATUSES);
+        int conflict = statusCount(statuses, CONFLICT_STATUSES);
+        int error = statusCount(statuses, ERROR_STATUSES);
+        Map<String, Integer> other = new TreeMap<>(statuses);
+        for (String status : mutatingStatuses) other.remove(status);
+        for (String status : UNCHANGED_STATUSES) other.remove(status);
+        for (String status : REVIEW_STATUSES) other.remove(status);
+        for (String status : CONFLICT_STATUSES) other.remove(status);
+        for (String status : ERROR_STATUSES) other.remove(status);
+        for (int count : other.values()) error += count;
+        return new RecoveryState(enabledProposals, reviewProposals, changed,
+            unchanged, review, conflict, error, other);
+    }
+
+    private int statusCount(Map<String, Integer> statuses, Set<String> selected) {
+        int result = 0;
+        for (String status : selected) result += statuses.getOrDefault(status, 0);
         return result;
+    }
+
+    private boolean enabled(String value) {
+        return "1".equals(value) || "true".equalsIgnoreCase(value) ||
+            "yes".equalsIgnoreCase(value);
     }
 
     private int indexOf(String[] values, String wanted) {
@@ -445,9 +694,255 @@ public class STRecoveryPipeline extends GhidraScript {
         return false;
     }
 
+    private void startRun(String mode, Instant started) throws Exception {
+        runsRoot = recoveryProgram.resolve("runs");
+        Files.createDirectories(runsRoot);
+        activeRun = runsRoot.resolve(".current");
+        archiveInterruptedRun();
+        Files.createDirectories(activeRun.resolve("passes"));
+        Files.createDirectories(activeRun.resolve("artifacts"));
+        eventsPath = activeRun.resolve("events.jsonl");
+        logPath = activeRun.resolve("pipeline.log");
+        Files.writeString(eventsPath, "", StandardCharsets.UTF_8,
+            StandardOpenOption.CREATE, StandardOpenOption.TRUNCATE_EXISTING);
+        Files.writeString(logPath, "", StandardCharsets.UTF_8,
+            StandardOpenOption.CREATE, StandardOpenOption.TRUNCATE_EXISTING);
+        runStarted = started;
+        runMode = mode;
+        runModificationBefore = currentProgram.getModificationNumber();
+        logLine("pipeline_start mode=" + mode + " program=" + currentProgram.getName() +
+            " modification=" + runModificationBefore);
+        event("run_start", 0, "", "running", 0, runModificationBefore,
+            runModificationBefore, "mode=" + mode);
+    }
+
+    private void archiveInterruptedRun() throws Exception {
+        if (activeRun == null || !Files.isDirectory(activeRun)) return;
+        Files.writeString(activeRun.resolve("run.json"),
+            "{\"schema\":\"st-pipeline-run\",\"schema_version\":1," +
+            "\"status\":\"interrupted\"}\n", StandardCharsets.UTF_8);
+        String id = hashTree(activeRun);
+        moveRun(activeRun, runsRoot.resolve(id));
+        pruneRunHistory();
+    }
+
+    private void finishRun(String status, Throwable failure) throws Exception {
+        if (activeRun == null || !Files.isDirectory(activeRun)) return;
+        event("run_finish", sequence, "", status, elapsedMilliseconds(),
+            runModificationBefore, currentProgram.getModificationNumber(),
+            failure == null ? "" : message(failure));
+        snapshotRunArtifact(reportPath, "pipeline_report.tsv");
+        for (String name : List.of("automation_state.tsv", "automation_evidence.jsonl",
+                "switch_enum_domains.tsv", "export_regression_report.tsv",
+                "export_receipt.json"))
+            snapshotRunArtifact(recoveryProgram.resolve(name), name);
+        if (failure != null)
+            Files.writeString(activeRun.resolve("exception.txt"), stackTrace(failure),
+                StandardCharsets.UTF_8);
+        String semantic = semanticHash();
+        String id = overallRunHash(status, semantic, failure);
+        long duration = elapsedMilliseconds();
+        String metadata = "{" +
+            "\"schema\":\"st-pipeline-run\"," +
+            "\"schema_version\":1," +
+            "\"run_hash\":" + q(id) + "," +
+            "\"program_semantic_sha256\":" + q(semantic) + "," +
+            "\"mode\":" + q(runMode) + "," +
+            "\"status\":" + q(status) + "," +
+            "\"duration_ms\":" + duration + "," +
+            "\"program_modification_before\":" + runModificationBefore + "," +
+            "\"program_modification_after\":" + currentProgram.getModificationNumber() + "," +
+            "\"pipeline_row_count\":" + report.size() +
+            "}";
+        Files.writeString(activeRun.resolve("run.json"), metadata + "\n",
+            StandardCharsets.UTF_8);
+        logLine("run_archive hash=" + id + " status=" + status);
+        Path target = runsRoot.resolve(id);
+        moveRun(activeRun, target);
+        Files.setLastModifiedTime(target, FileTime.from(Instant.now()));
+        Files.writeString(recoveryProgram.resolve("latest_run.txt"), id + "\n",
+            StandardCharsets.UTF_8);
+        activeRun = null;
+        pruneRunHistory();
+    }
+
+    private void moveRun(Path source, Path target) throws Exception {
+        if (Files.exists(target)) deleteTree(target);
+        try {
+            Files.move(source, target, StandardCopyOption.ATOMIC_MOVE);
+        }
+        catch (IOException unsupported) {
+            Files.move(source, target);
+        }
+    }
+
+    private void pruneRunHistory() throws Exception {
+        if (runsRoot == null || !Files.isDirectory(runsRoot)) return;
+        List<Path> runs;
+        try (java.util.stream.Stream<Path> stream = Files.list(runsRoot)) {
+            runs = stream.filter(Files::isDirectory)
+                .filter(path -> path.getFileName().toString().matches("[0-9a-f]{64}"))
+                .sorted(Comparator.comparingLong(this::modifiedTime).reversed())
+                .toList();
+        }
+        for (int index = MAX_RUN_HISTORY; index < runs.size(); index++) deleteTree(runs.get(index));
+    }
+
+    private long modifiedTime(Path path) {
+        try { return Files.getLastModifiedTime(path).toMillis(); }
+        catch (IOException ignored) { return Long.MIN_VALUE; }
+    }
+
+    private void deleteTree(Path path) throws Exception {
+        Path normalized = path.toAbsolutePath().normalize();
+        Path root = runsRoot.toAbsolutePath().normalize();
+        if (normalized.equals(root) || !normalized.startsWith(root))
+            throw new IllegalArgumentException("Refusing to remove path outside run history: " + path);
+        if (!Files.exists(normalized)) return;
+        try (java.util.stream.Stream<Path> stream = Files.walk(normalized)) {
+            for (Path item : stream.sorted(Comparator.reverseOrder()).toList())
+                Files.deleteIfExists(item);
+        }
+    }
+
+    private Path snapshotPreviousExport() throws Exception {
+        if (activeRun == null) return null;
+        Path current = decompRoot.resolve(currentProgram.getName());
+        if (!Files.isRegularFile(current.resolve("manifest.json"))) return null;
+        Path baseline = activeRun.resolve("pre_export");
+        if (Files.exists(baseline)) deleteTree(baseline);
+        Files.createDirectories(baseline);
+        for (String name : List.of("manifest.json", "functions.json", "types.jsonl",
+                "decomp_quality_summary.json")) {
+            Path source = current.resolve(name);
+            if (Files.isRegularFile(source))
+                Files.copy(source, baseline.resolve(name), StandardCopyOption.REPLACE_EXISTING);
+        }
+        logLine("export_baseline_snapshot path=" + portableArgument(baseline.toString()));
+        return baseline;
+    }
+
+    private void snapshotPassArtifacts(String script, Path proposals, Path applyReport)
+            throws Exception {
+        if (activeRun == null) return;
+        Path directory = activeRun.resolve("passes").resolve(
+            String.format(Locale.ROOT, "%03d-%s", sequence,
+                script.replaceAll("[^A-Za-z0-9._-]+", "_")));
+        Files.createDirectories(directory);
+        if (Files.isRegularFile(proposals))
+            Files.copy(proposals, directory.resolve(proposals.getFileName()),
+                StandardCopyOption.REPLACE_EXISTING);
+        if (applyReport != null && Files.isRegularFile(applyReport))
+            Files.copy(applyReport, directory.resolve(applyReport.getFileName()),
+                StandardCopyOption.REPLACE_EXISTING);
+    }
+
+    private void snapshotRunArtifact(Path source, String name) throws Exception {
+        if (activeRun == null || !Files.isRegularFile(source)) return;
+        Path target = activeRun.resolve("artifacts").resolve(name);
+        Files.createDirectories(target.getParent());
+        Files.copy(source, target, StandardCopyOption.REPLACE_EXISTING);
+    }
+
+    private void logLine(String value) throws Exception {
+        if (logPath == null) return;
+        String line = String.format(Locale.ROOT, "%08dms %s%n", elapsedMilliseconds(), value);
+        Files.writeString(logPath, line, StandardCharsets.UTF_8,
+            StandardOpenOption.CREATE, StandardOpenOption.APPEND);
+    }
+
+    private void event(String kind, int ordinal, String script, String status,
+            long duration, long modificationBefore, long modificationAfter, String detail)
+            throws Exception {
+        if (eventsPath == null) return;
+        String row = "{" +
+            "\"elapsed_ms\":" + elapsedMilliseconds() + "," +
+            "\"kind\":" + q(kind) + "," +
+            "\"section\":" + q(currentSection) + "," +
+            "\"sequence\":" + ordinal + "," +
+            "\"script\":" + q(script) + "," +
+            "\"status\":" + q(status) + "," +
+            "\"duration_ms\":" + duration + "," +
+            "\"program_modification_before\":" + modificationBefore + "," +
+            "\"program_modification_after\":" + modificationAfter + "," +
+            "\"detail\":" + q(detail) +
+            "}\n";
+        Files.writeString(eventsPath, row, StandardCharsets.UTF_8,
+            StandardOpenOption.CREATE, StandardOpenOption.APPEND);
+    }
+
+    private long elapsedMilliseconds() {
+        return runStarted == null ? 0 : Duration.between(runStarted, Instant.now()).toMillis();
+    }
+
+    private String semanticHash() throws Exception {
+        Path state = recoveryProgram.resolve("automation_state.tsv");
+        if (!Files.isRegularFile(state)) return "";
+        for (String line : Files.readAllLines(state, StandardCharsets.UTF_8)) {
+            String[] values = line.split("\t", -1);
+            if (values.length == 4 && "program".equals(values[0]) &&
+                    "semantic_sha256".equals(values[1]) &&
+                    values[2].matches("[0-9a-f]{64}")) return values[2];
+        }
+        return "";
+    }
+
+    private String overallRunHash(String status, String semantic, Throwable failure)
+            throws Exception {
+        StringBuilder value = new StringBuilder();
+        value.append("program=").append(currentProgram.getName()).append('\n');
+        value.append("semantic=").append(semantic).append('\n');
+        value.append("mode=").append(runMode).append('\n');
+        value.append("status=").append(status).append('\n');
+        for (PipelineRow row : report)
+            value.append(row.sequence).append('|').append(row.script).append('|')
+                .append(row.status).append('|').append(row.argument).append('|')
+                .append(row.detail).append('\n');
+        if (failure != null) value.append(stackTrace(failure));
+        return sha256(value.toString());
+    }
+
+    private String hashTree(Path root) throws Exception {
+        MessageDigest digest = MessageDigest.getInstance("SHA-256");
+        try (java.util.stream.Stream<Path> stream = Files.walk(root)) {
+            for (Path path : stream.filter(Files::isRegularFile).sorted().toList()) {
+                digest.update(root.relativize(path).toString().getBytes(StandardCharsets.UTF_8));
+                try (InputStream input = Files.newInputStream(path)) {
+                    byte[] buffer = new byte[65536];
+                    int count;
+                    while ((count = input.read(buffer)) >= 0)
+                        if (count > 0) digest.update(buffer, 0, count);
+                }
+            }
+        }
+        return hex(digest.digest());
+    }
+
+    private String sha256(String value) throws Exception {
+        MessageDigest digest = MessageDigest.getInstance("SHA-256");
+        return hex(digest.digest(value.getBytes(StandardCharsets.UTF_8)));
+    }
+
+    private String hex(byte[] bytes) {
+        StringBuilder result = new StringBuilder();
+        for (byte value : bytes) result.append(String.format("%02x", value & 0xff));
+        return result.toString();
+    }
+
+    private String stackTrace(Throwable throwable) {
+        StringWriter text = new StringWriter();
+        throwable.printStackTrace(new PrintWriter(text));
+        return text.toString();
+    }
+
+    private static String q(String value) {
+        return "\"" + tsv(value == null ? "" : value).replace("\"", "\\\"") + "\"";
+    }
+
     private void validateRepository() {
         if (!Files.isDirectory(repository.resolve("scripts")) ||
                 !Files.isRegularFile(repository.resolve("scripts/STRecoveryPipeline.java")) ||
+                !Files.isRegularFile(repository.resolve("scripts/STExportRegressionGate.java")) ||
                 !Files.isDirectory(repository.resolve("recovery")))
             throw new IllegalStateException("Could not validate repository root " + repository +
                 "; expected scripts/ and recovery/ beside each other");
@@ -514,6 +1009,9 @@ public class STRecoveryPipeline extends GhidraScript {
                 "\t" + row.status + "\t" + row.durationMilliseconds + "\t" +
                 tsv(row.argument) + "\t" + tsv(row.detail) + "\n");
         }
+        if (activeRun != null && Files.isDirectory(activeRun))
+            Files.copy(reportPath, activeRun.resolve("pipeline_report.tsv"),
+                StandardCopyOption.REPLACE_EXISTING);
     }
 
     private static String tsv(String value) {
@@ -527,6 +1025,8 @@ public class STRecoveryPipeline extends GhidraScript {
     }
 
     private record PipelineOptions(String mode, Path repository) { }
+    private record RecoveryState(int enabledProposals, int reviewProposals, int changed,
+        int unchanged, int review, int conflict, int error, Map<String, Integer> other) { }
     private record PipelineRow(int sequence, String script, String status,
         long durationMilliseconds, String argument, String detail) { }
 }

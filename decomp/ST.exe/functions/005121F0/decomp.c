@@ -1,76 +1,82 @@
 
-undefined4 __thiscall FUN_005121f0(void *this,int param_1,int param_2)
+/* [STSwitchEnumApplier] Switch target param_1 uses
+   /SubmarineTitans/Recovered/Enums/Global_sub_005121F0_param_1Enum. Cases:
+   CASE_F2=242;CASE_F3=243;CASE_F4=244;CASE_F5=245;CASE_F6=246;CASE_F7=247;CASE_F8=248;CASE_F9=249;CASE_FA=250;CASE_FB=251
+    */
+
+undefined4 __thiscall FUN_005121f0(void *this,Global_sub_005121F0_param_1Enum param_1,int param_2)
 
 {
-  int iVar1;
-  int *piVar2;
+  Global_sub_005121F0_param_1Enum GVar1;
+  Global_sub_005121F0_param_1Enum *pGVar2;
   uint uVar3;
 
   uVar3 = 0;
   if (*(uint *)sizeHelp_exref != 0) {
-    piVar2 = (int *)(*(int *)((int)this + 0x1c7) + 9);
+    pGVar2 = (Global_sub_005121F0_param_1Enum *)(*(int *)((int)this + 0x1c7) + 9);
     do {
-      switch(*(char *)((int)piVar2 + -1)) {
-      case '\x01':
-      case '\x02':
-      case '\x03':
-      case '\x04':
-      case '\v':
-        if (*piVar2 == param_1) {
-          if (*(char *)((int)piVar2 + -1) == '\x03') {
+      switch(*(byte *)((int)pGVar2 + -1)) {
+      case 1:
+      case 2:
+      case 3:
+      case 4:
+      case 0xb:
+        if (*pGVar2 == param_1) {
+          if (*(byte *)((int)pGVar2 + -1) == 3) {
             return 1;
           }
-          if (piVar2[1] == param_2) {
+          if (pGVar2[1] == param_2) {
             return 1;
           }
         }
         break;
-      case '\f':
+      case 0xc:
         switch(param_1) {
-        case 0xf2:
-        case 0xf3:
-        case 0xf4:
-        case 0xf5:
-          iVar1 = *piVar2;
-          if ((((iVar1 == 0xf2) || (iVar1 == 0xf3)) || (iVar1 == 0xf4)) || (iVar1 == 0xf5)) {
+        case CASE_F2:
+        case CASE_F3:
+        case CASE_F4:
+        case CASE_F5:
+          GVar1 = *pGVar2;
+          if ((((GVar1 == CASE_F2) || (GVar1 == CASE_F3)) || (GVar1 == CASE_F4)) ||
+             (GVar1 == CASE_F5)) {
             return 1;
           }
           break;
-        case 0xf6:
-        case 0xf7:
-          if (*piVar2 == 0xf6) {
+        case CASE_F6:
+        case CASE_F7:
+          if (*pGVar2 == CASE_F6) {
             return 1;
           }
-          if (*piVar2 == 0xf7) {
-            return 1;
-          }
-          break;
-        case 0xf8:
-        case 0xf9:
-          if (*piVar2 == 0xf8) {
-            return 1;
-          }
-          if (*piVar2 == 0xf9) {
+          if (*pGVar2 == CASE_F7) {
             return 1;
           }
           break;
-        case 0xfa:
-        case 0xfb:
-          if (*piVar2 == 0xfa) {
+        case CASE_F8:
+        case CASE_F9:
+          if (*pGVar2 == CASE_F8) {
             return 1;
           }
-          if (*piVar2 == 0xfb) {
+          if (*pGVar2 == CASE_F9) {
+            return 1;
+          }
+          break;
+        case CASE_FA:
+        case CASE_FB:
+          if (*pGVar2 == CASE_FA) {
+            return 1;
+          }
+          if (*pGVar2 == CASE_FB) {
             return 1;
           }
           break;
         default:
-          if (*piVar2 == param_1) {
+          if (*pGVar2 == param_1) {
             return 1;
           }
         }
       }
       uVar3 = uVar3 + 1;
-      piVar2 = (int *)((int)piVar2 + 0x11);
+      pGVar2 = (Global_sub_005121F0_param_1Enum *)((int)pGVar2 + 0x11);
     } while (uVar3 < *(uint *)sizeHelp_exref);
   }
   return 0;

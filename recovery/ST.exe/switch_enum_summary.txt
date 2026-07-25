@@ -1,13 +1,15 @@
 program=ST.exe
-candidate_functions=556
-switches_seen=890
+candidate_functions=1294
+switches_seen=1080
 decompile_retries=2
 decompile_failures=0
-proposals=528
-auto_apply=168
-target_kinds={class_field=81, global=4, local=325, parameter=118}
-note=At least three numeric case values are required.
+proposals=599
+auto_apply=182
+target_kinds={class_field=90, global=6, local=378, parameter=125}
+note=At least three numeric case values are required to create a new enum; an existing script-owned enum can grow from one exact typed value.
+note_nested_switches=Case labels are assigned to their innermost switch; nested switches are analyzed independently.
+note_compositions=Exact CASE_A|CASE_B and ~(CASE_A|CASE_B) values grow only an already script-owned enum when the typed operand is unambiguous.
 note_grouping=Switches over the same generated class field are merged across functions.
 note_aliases=Typed pointer aliases from decompiled declarations are resolved before field grouping.
 note_local_grouping=Repeated simple local expressions are merged only within one function and remain review-only.
-note_apply=Only non-manual integral parameters and fields owned by STClassLayoutApplier are enabled automatically.
+note_apply=Only non-manual integral parameters, fields owned by STClassLayoutApplier, and provenance-owned generated-enum growth are enabled automatically.

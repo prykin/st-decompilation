@@ -34,7 +34,7 @@ void __thiscall FSGSTy::SetChannelList(FSGSTy *this,int param_1,undefined4 *para
       if (g_cursorClass_00802A30 != (CursorClassTy *)0x0) {
         iVar3 = g_cursorClass_00802A30->field_00C9;
         iVar6 = g_cursorClass_00802A30->field_00C5;
-        g_cursorClass_00802A30->field_0493 = 1;
+        g_cursorClass_00802A30->field_0493 = CASE_1;
         this_00->field_0494 = 0xffff;
         CursorClassTy::SetGCType(this_00,CASE_0,iVar6,iVar3);
         CursorClassTy::DrawSprite(this_00,this_00->field_00C5,this_00->field_00C9);

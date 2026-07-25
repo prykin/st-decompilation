@@ -3,7 +3,11 @@
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\settmobj.cpp
-   SettMapMTy::NoneSettMap */
+   SettMapMTy::NoneSettMap
+
+   [STSwitchEnumApplier] Switch target field_1E26 uses
+   /SubmarineTitans/Recovered/Enums/SettMapMTy_field_1E26State. Cases:
+   CASE_4=4;CASE_5=5;CASE_7=7;CASE_C=12;CASE_F=15;CASE_10=16;CASE_13=19 */
 
 undefined4 __thiscall SettMapMTy::NoneSettMap(SettMapMTy *this,int *param_1)
 

@@ -72,7 +72,7 @@ void __thiscall HelpPanelTy::RCProc(HelpPanelTy *this,int param_1,uint param_2,c
     if (iVar4 == 0) {
       if (param_3 == '\0') {
         HVar2 = local_20->field_01A1;
-        if (((HVar2 == 0) || (HVar2 == CASE_6)) || (HVar2 == (CASE_8|CASE_2))) {
+        if (((HVar2 == 0) || (HVar2 == CASE_6)) || (HVar2 == CASE_A)) {
           local_20->field_01A2 = HVar2;
           local_20->field_01AB = local_20->field_01A3;
         }

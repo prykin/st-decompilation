@@ -13,10 +13,6 @@ void __thiscall SettMapTy::DoneSettMap(SettMapTy *this)
   int iVar3;
   void *pvVar4;
   int iVar5;
-  cMf32 *this_00;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
-  cMf32 *extraout_ECX;
-  cMf32 *this_01;
   DArrayTy *pDVar6;
   uint uVar7;
   void **value;
@@ -31,15 +27,12 @@ void __thiscall SettMapTy::DoneSettMap(SettMapTy *this)
   pSVar2 = local_8;
   if (iVar3 == 0) {
     MMObjTy::DoneMMObj((MMObjTy *)local_8);
-    this_01 = this_00;
     if (pSVar2->field_1F3F != (cMf32 *)0x0) {
-      cMf32::delete(this_00,pSVar2->field_1F3F);
-      /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
-      this_01 = extraout_ECX;
+      cMf32::delete(pSVar2->field_1F3F);
     }
     pSVar2->field_1F3F = (void *)0x0;
     if ((cMf32 *)pSVar2->field_1F43 != (cMf32 *)0x0) {
-      cMf32::delete(this_01,(cMf32 *)pSVar2->field_1F43);
+      cMf32::delete((cMf32 *)pSVar2->field_1F43);
     }
     pSVar2->field_1F43 = 0;
     if (g_cursorClass_00802A30 != (CursorClassTy *)0x0) {

@@ -12,13 +12,6 @@ void __thiscall IntercomPanelTy::DoneIntercomPanel(IntercomPanelTy *this)
   IntercomPanelTy *pIVar2;
   int errorCode;
   int iVar3;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
-  ccFntTy *extraout_ECX;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
-  ccFntTy *extraout_ECX_00;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
-  ccFntTy *extraout_ECX_01;
-  ccFntTy *this_00;
   InternalExceptionFrame local_4c;
   IntercomPanelTy *local_8;
 
@@ -28,23 +21,17 @@ void __thiscall IntercomPanelTy::DoneIntercomPanel(IntercomPanelTy *this)
   errorCode = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
   pIVar2 = local_8;
   if (errorCode == 0) {
-    /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
-    this_00 = extraout_ECX;
     if (local_8->field_0198 != (DArrayTy *)0x0) {
       FUN_006b5570(local_8->field_0198);
       pIVar2->field_0198 = (DArrayTy *)0x0;
-      /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
-      this_00 = extraout_ECX_00;
     }
     if (pIVar2->field_01A0 != 0) {
       StartSystemTy::sub_006E56B0(pIVar2->field_000C,pIVar2->field_01A0);
-      /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
-      this_00 = extraout_ECX_01;
     }
     pIVar2->field_01A0 = 0;
     g_intercomPanel_0080169C = (IntercomPanelTy *)0x0;
     if (pIVar2->field_0180 != (uint *)0x0) {
-      ccFntTy::operator(this_00,pIVar2->field_0180);
+      ccFntTy::operator(pIVar2->field_0180);
       pIVar2->field_0180 = (void *)0x0;
     }
     if (pIVar2->field_0184 != (ushort *)0x0) {

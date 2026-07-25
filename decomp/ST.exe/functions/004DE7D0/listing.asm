@@ -1,4 +1,4 @@
-FUN_004de7d0:
+TLOBaseTy::sub_004DE7D0:
 004DE7D0  55                        PUSH EBP
 004DE7D1  8B EC                     MOV EBP,ESP
 004DE7D3  8B 81 D0 04 00 00         MOV EAX,dword ptr [ECX + 0x4d0]

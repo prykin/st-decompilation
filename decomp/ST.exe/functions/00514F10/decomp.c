@@ -68,7 +68,7 @@ LAB_00514f85:
   if (puVar6[2] != 0) {
     ccFntTy::SepColorStrInSarr(this_00->field_01E4,puVar6,puVar6);
   }
-  if ((this_00->field_01A1 == (CASE_6|CASE_1)) && (this_00->field_019C != 0)) {
+  if ((this_00->field_01A1 == CASE_7) && (this_00->field_019C != 0)) {
     puVar1 = &this_00->field_0x18;
     this_00->field_0028 = 0x28;
     *(undefined2 *)&this_00->field_0x2c = 1;

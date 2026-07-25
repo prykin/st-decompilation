@@ -11,7 +11,11 @@
 
    [STMessageHandlerApplier] Recovered common GetMessage envelope/signature.
    Evidence: family_entries=00404165|005A4350; family_names=FSGSTy::GetMessage; ret4=2;
-   direct_offsets={10:8,14:74,18:16,1c:34} */
+   direct_offsets={10:8,14:74,18:16,1c:34}
+
+   [STSwitchEnumApplier] Switch target field_1A5F uses
+   /SubmarineTitans/Recovered/Enums/FSGSTy_field_1A5FState. Cases:
+   CASE_1=1;CASE_2=2;CASE_3=3;CASE_4=4;CASE_5=5;CASE_6=6;CASE_7=7;CASE_8=8;CASE_9=9;CASE_A=10 */
 
 int __thiscall FSGSTy::GetMessage(FSGSTy *this,STMessage *message)
 
@@ -292,7 +296,7 @@ int __thiscall FSGSTy::GetMessage(FSGSTy *this,STMessage *message)
             if (g_cursorClass_00802A30 != (CursorClassTy *)0x0) {
               iVar18 = g_cursorClass_00802A30->field_00C9;
               iVar42 = g_cursorClass_00802A30->field_00C5;
-              g_cursorClass_00802A30->field_0493 = 5;
+              g_cursorClass_00802A30->field_0493 = CASE_5;
               pCVar33->field_0494 = 0xffff;
               CursorClassTy::SetGCType(pCVar33,CASE_0,iVar42,iVar18);
               CursorClassTy::DrawSprite(pCVar33,pCVar33->field_00C5,pCVar33->field_00C9);
@@ -519,7 +523,7 @@ LAB_005a6658:
               if (g_cursorClass_00802A30 != (CursorClassTy *)0x0) {
                 iVar18 = g_cursorClass_00802A30->field_00C9;
                 iVar42 = g_cursorClass_00802A30->field_00C5;
-                g_cursorClass_00802A30->field_0493 = 5;
+                g_cursorClass_00802A30->field_0493 = CASE_5;
                 pCVar33->field_0494 = 0xffff;
                 CursorClassTy::SetGCType(pCVar33,CASE_0,iVar42,iVar18);
                 CursorClassTy::DrawSprite(pCVar33,pCVar33->field_00C5,pCVar33->field_00C9);
@@ -567,7 +571,7 @@ LAB_005a6658:
         if (g_cursorClass_00802A30 != (CursorClassTy *)0x0) {
           iVar18 = g_cursorClass_00802A30->field_00C9;
           iVar42 = g_cursorClass_00802A30->field_00C5;
-          g_cursorClass_00802A30->field_0493 = 5;
+          g_cursorClass_00802A30->field_0493 = CASE_5;
           pCVar33->field_0494 = 0xffff;
           CursorClassTy::SetGCType(pCVar33,CASE_0,iVar42,iVar18);
           CursorClassTy::DrawSprite(pCVar33,pCVar33->field_00C5,pCVar33->field_00C9);
@@ -792,7 +796,7 @@ LAB_005a6d57:
 LAB_005a6e50:
         pCVar33 = g_cursorClass_00802A30;
         if (g_cursorClass_00802A30 != (CursorClassTy *)0x0) {
-          g_cursorClass_00802A30->field_0493 = 5;
+          g_cursorClass_00802A30->field_0493 = CASE_5;
           pCVar33->field_0494 = 0xffff;
           CursorClassTy::SetGCType(pCVar33,CASE_0,pCVar33->field_00C5,pCVar33->field_00C9);
           CursorClassTy::DrawSprite(pCVar33,pCVar33->field_00C5,pCVar33->field_00C9);
@@ -960,7 +964,7 @@ LAB_005a6e50:
           goto LAB_005a89f6;
         case MESS_OPTPANELTY_8162:
           if ((g_cursorClass_00802A30 != (CursorClassTy *)0x0) &&
-             (g_cursorClass_00802A30->field_0493 == '\x05')) break;
+             (g_cursorClass_00802A30->field_0493 == CASE_5)) break;
           if (this_00->field_1A60 != '\0') {
             pDVar22 = this_00->field_1EAA;
             if (pDVar22 != (DArrayTy *)0x0) {
@@ -975,7 +979,7 @@ LAB_005a6e50:
                 if (g_cursorClass_00802A30 != (CursorClassTy *)0x0) {
                   iVar18 = g_cursorClass_00802A30->field_00C9;
                   iVar42 = g_cursorClass_00802A30->field_00C5;
-                  g_cursorClass_00802A30->field_0493 = 5;
+                  g_cursorClass_00802A30->field_0493 = CASE_5;
                   pCVar33->field_0494 = 0xffff;
                   CursorClassTy::SetGCType(pCVar33,CASE_0,iVar42,iVar18);
                   CursorClassTy::DrawSprite(pCVar33,pCVar33->field_00C5,pCVar33->field_00C9);
@@ -1009,7 +1013,7 @@ LAB_005a6e50:
             if (g_cursorClass_00802A30 != (CursorClassTy *)0x0) {
               iVar18 = g_cursorClass_00802A30->field_00C9;
               iVar42 = g_cursorClass_00802A30->field_00C5;
-              g_cursorClass_00802A30->field_0493 = 5;
+              g_cursorClass_00802A30->field_0493 = CASE_5;
               pCVar33->field_0494 = 0xffff;
               CursorClassTy::SetGCType(pCVar33,CASE_0,iVar42,iVar18);
               CursorClassTy::DrawSprite(pCVar33,pCVar33->field_00C5,pCVar33->field_00C9);
@@ -1884,7 +1888,7 @@ cf_common_exit_005A7F3B:
   if (MESS_ID_MSGOK < SVar6) {
     if (SVar6 < 0x6907) {
       if (SVar6 == MESS_FSGSTY_6906) {
-        if (g_cursorClass_00802A30->field_0493 == '\x05') goto cf_common_exit_005A8CA7;
+        if (g_cursorClass_00802A30->field_0493 == CASE_5) goto cf_common_exit_005A8CA7;
         local_c = (AnonShape_005A4350_59BACD18 *)(message->arg2).u32;
         this_00->field_1F43 = 0x6506;
         iVar18 = local_c->field_0008;
@@ -2036,7 +2040,7 @@ cf_common_exit_005A7F3B:
 joined_r0x005a55e5:
               g_cursorClass_00802A30 = pCVar33;
               if (pCVar33 == (CursorClassTy *)0x0) goto cf_common_exit_005A5634;
-              pCVar33->field_0493 = 5;
+              pCVar33->field_0493 = CASE_5;
               pCVar33->field_0494 = 0xffff;
               CursorClassTy::SetGCType(pCVar33,CASE_0,pCVar33->field_00C5,pCVar33->field_00C9);
               iVar18 = pCVar33->field_00C9;
@@ -2051,7 +2055,7 @@ joined_r0x005a55e5:
               if (g_cursorClass_00802A30 == (CursorClassTy *)0x0) goto cf_common_exit_005A5634;
               iVar18 = g_cursorClass_00802A30->field_00C9;
               iVar42 = g_cursorClass_00802A30->field_00C5;
-              g_cursorClass_00802A30->field_0493 = 5;
+              g_cursorClass_00802A30->field_0493 = CASE_5;
               pCVar33->field_0494 = 0xffff;
               CursorClassTy::SetGCType(pCVar33,CASE_0,iVar42,iVar18);
               iVar18 = pCVar33->field_00C9;
@@ -2096,7 +2100,7 @@ LAB_005a561c:
               if (g_cursorClass_00802A30 != (CursorClassTy *)0x0) {
                 iVar18 = g_cursorClass_00802A30->field_00C9;
                 iVar42 = g_cursorClass_00802A30->field_00C5;
-                g_cursorClass_00802A30->field_0493 = 5;
+                g_cursorClass_00802A30->field_0493 = CASE_5;
                 pCVar33->field_0494 = 0xffff;
                 CursorClassTy::SetGCType(pCVar33,CASE_0,iVar42,iVar18);
                 iVar18 = pCVar33->field_00C9;
@@ -2114,7 +2118,7 @@ cf_common_exit_005A5634:
           if (g_cursorClass_00802A30 != (CursorClassTy *)0x0) {
             iVar18 = g_cursorClass_00802A30->field_00C9;
             iVar42 = g_cursorClass_00802A30->field_00C5;
-            g_cursorClass_00802A30->field_0493 = 5;
+            g_cursorClass_00802A30->field_0493 = CASE_5;
             pCVar33->field_0494 = 0xffff;
             CursorClassTy::SetGCType(pCVar33,CASE_0,iVar42,iVar18);
             CursorClassTy::DrawSprite(pCVar33,pCVar33->field_00C5,pCVar33->field_00C9);
@@ -2427,7 +2431,7 @@ joined_r0x005a5b89:
     }
     switch(SVar6) {
     case 0x6907:
-      if (g_cursorClass_00802A30->field_0493 == '\x05') break;
+      if (g_cursorClass_00802A30->field_0493 == CASE_5) break;
       local_c = (AnonShape_005A4350_59BACD18 *)(message->arg2).u32;
       this_00->field_1F43 = 0x6506;
       iVar18 = local_c->field_0008;
@@ -2534,7 +2538,7 @@ joined_r0x005a5b89:
       iVar18 = pcVar9->field_00A0;
       goto joined_r0x005a5b89;
     case MESS_SHARED_6900|MESS_SHARED_0008:
-      if (g_cursorClass_00802A30->field_0493 == '\x05') break;
+      if (g_cursorClass_00802A30->field_0493 == CASE_5) break;
       bVar40 = false;
       if (DAT_00803148 != 0) {
         if (DAT_00803148 < 0x10) {
@@ -2551,14 +2555,14 @@ joined_r0x005a5b89:
          pCVar33 = g_cursorClass_00802A30, g_cursorClass_00802A30 == (CursorClassTy *)0x0)) break;
       iVar18 = g_cursorClass_00802A30->field_00C9;
       iVar42 = g_cursorClass_00802A30->field_00C5;
-      g_cursorClass_00802A30->field_0493 = 5;
+      g_cursorClass_00802A30->field_0493 = CASE_5;
       pCVar33->field_0494 = 0xffff;
       CursorClassTy::SetGCType(pCVar33,CASE_0,iVar42,iVar18);
       iVar18 = pCVar33->field_00C9;
       iVar42 = pCVar33->field_00C5;
       goto cf_common_exit_005A52AA;
     case MESS_SHARED_6900|MESS_CURSORCLASSTY_0009:
-      if ((g_cursorClass_00802A30->field_0493 == '\x05') || (0xf422f < DAT_00803148)) break;
+      if ((g_cursorClass_00802A30->field_0493 == CASE_5) || (0xf422f < DAT_00803148)) break;
       DAT_00803148 = DAT_00803148 + 0xf;
       CFsgsConnection::RequestLadderList
                 ((CFsgsConnection *)&DAT_00802a90,DAT_00803140,0,DAT_00803148,0xf);
@@ -2566,7 +2570,7 @@ joined_r0x005a5b89:
       if (g_cursorClass_00802A30 == (CursorClassTy *)0x0) break;
       iVar18 = g_cursorClass_00802A30->field_00C9;
       iVar42 = g_cursorClass_00802A30->field_00C5;
-      g_cursorClass_00802A30->field_0493 = 5;
+      g_cursorClass_00802A30->field_0493 = CASE_5;
       pCVar33->field_0494 = 0xffff;
       CursorClassTy::SetGCType(pCVar33,CASE_0,iVar42,iVar18);
       iVar18 = pCVar33->field_00C9;
@@ -2577,7 +2581,7 @@ cf_common_exit_005A52AA:
       pCVar33->field_04DF = -1;
       break;
     case MESS_SHARED_6900|MESS_SYSTEMCLASSTY_000A:
-      if ((g_cursorClass_00802A30->field_0493 == '\x05') ||
+      if ((g_cursorClass_00802A30->field_0493 == CASE_5) ||
          (pDVar22 = this_00->field_1AE8, pDVar22 == (DArrayTy *)0x0)) break;
       if (0 < (int)pDVar22->elementSize) {
         pcVar36 = *(char **)pDVar22->growCapacity;
@@ -2718,7 +2722,7 @@ cf_common_exit_005A52AA:
     }
     if (FVar3 == CASE_7) {
       if ((g_cursorClass_00802A30 != (CursorClassTy *)0x0) &&
-         (g_cursorClass_00802A30->field_0493 == '\x05')) goto cf_common_exit_005A8CA7;
+         (g_cursorClass_00802A30->field_0493 == CASE_5)) goto cf_common_exit_005A8CA7;
       thunk_FUN_005daa60();
       local_290.previous = g_currentExceptionFrame;
       g_currentExceptionFrame = &local_290;
@@ -2772,7 +2776,7 @@ cf_common_exit_005A52AA:
       if (g_cursorClass_00802A30 == (CursorClassTy *)0x0) goto cf_common_exit_005A8CA7;
       iVar18 = g_cursorClass_00802A30->field_00C9;
       iVar42 = g_cursorClass_00802A30->field_00C5;
-      g_cursorClass_00802A30->field_0493 = 5;
+      g_cursorClass_00802A30->field_0493 = CASE_5;
       pCVar33->field_0494 = 0xffff;
       CursorClassTy::SetGCType(pCVar33,CASE_0,iVar42,iVar18);
       iVar18 = pCVar33->field_00C9;
@@ -2781,10 +2785,10 @@ cf_common_exit_005A52AA:
     }
     if ((FVar3 != CASE_8) ||
        (((g_cursorClass_00802A30 != (CursorClassTy *)0x0 &&
-         (g_cursorClass_00802A30->field_0493 == '\x05')) || (this_00->field_1EBE == (DArrayTy *)0x0)
+         (g_cursorClass_00802A30->field_0493 == CASE_5)) || (this_00->field_1EBE == (DArrayTy *)0x0)
         ))) goto cf_common_exit_005A8CA7;
     if (g_cursorClass_00802A30 != (CursorClassTy *)0x0) {
-      g_cursorClass_00802A30->field_0493 = 5;
+      g_cursorClass_00802A30->field_0493 = CASE_5;
       pCVar33->field_0494 = 0xffff;
       CursorClassTy::SetGCType(pCVar33,CASE_0,pCVar33->field_00C5,pCVar33->field_00C9);
       CursorClassTy::DrawSprite(pCVar33,pCVar33->field_00C5,pCVar33->field_00C9);
@@ -2835,7 +2839,7 @@ LAB_005a4eca:
 LAB_005a4ecf:
       if (iVar18 != 0) {
         local_15 = '\0';
-        g_cursorClass_00802A30->field_0493 = 1;
+        g_cursorClass_00802A30->field_0493 = CASE_1;
         pCVar33->field_0494 = 0xffff;
         CursorClassTy::SetGCType(pCVar33,CASE_0,pCVar33->field_00C5,pCVar33->field_00C9);
         CursorClassTy::DrawSprite(pCVar33,pCVar33->field_00C5,pCVar33->field_00C9);
@@ -2867,7 +2871,7 @@ LAB_005a4ecf:
     if (g_cursorClass_00802A30 != (CursorClassTy *)0x0) {
       iVar18 = g_cursorClass_00802A30->field_00C9;
       iVar42 = g_cursorClass_00802A30->field_00C5;
-      g_cursorClass_00802A30->field_0493 = 1;
+      g_cursorClass_00802A30->field_0493 = CASE_1;
       pCVar33->field_0494 = 0xffff;
       CursorClassTy::SetGCType(pCVar33,CASE_0,iVar42,iVar18);
       CursorClassTy::DrawSprite(pCVar33,pCVar33->field_00C5,pCVar33->field_00C9);
@@ -2962,7 +2966,7 @@ LAB_005a50be:
           break;
         case 0x614f:
           if (g_cursorClass_00802A30 != (CursorClassTy *)0x0) {
-            g_cursorClass_00802A30->field_0493 = 1;
+            g_cursorClass_00802A30->field_0493 = CASE_1;
             pCVar33->field_0494 = 0xffff;
             CursorClassTy::SetGCType(pCVar33,CASE_0,pCVar33->field_00C5,pCVar33->field_00C9);
             CursorClassTy::DrawSprite(pCVar33,pCVar33->field_00C5,pCVar33->field_00C9);
@@ -2987,7 +2991,7 @@ LAB_005a50be:
         case MESS_FSGSTY_6150:
           if (this_00->field_1A5F == CASE_1) {
             if (g_cursorClass_00802A30 != (CursorClassTy *)0x0) {
-              g_cursorClass_00802A30->field_0493 = 1;
+              g_cursorClass_00802A30->field_0493 = CASE_1;
               pCVar33->field_0494 = 0xffff;
               CursorClassTy::SetGCType(pCVar33,CASE_0,pCVar33->field_00C5,pCVar33->field_00C9);
               CursorClassTy::DrawSprite(pCVar33,pCVar33->field_00C5,pCVar33->field_00C9);
@@ -3091,7 +3095,7 @@ LAB_005a50be:
   case MESS_FSGSTY_6150|MESS_ID_CREATE:
     if (this_00->field_1A5F != CASE_2) goto cf_common_exit_005A8CA7;
     if (g_cursorClass_00802A30 != (CursorClassTy *)0x0) {
-      g_cursorClass_00802A30->field_0493 = 1;
+      g_cursorClass_00802A30->field_0493 = CASE_1;
       pCVar33->field_0494 = 0xffff;
       CursorClassTy::SetGCType(pCVar33,CASE_0,pCVar33->field_00C5,pCVar33->field_00C9);
       CursorClassTy::DrawSprite(pCVar33,pCVar33->field_00C5,pCVar33->field_00C9);
@@ -3136,7 +3140,7 @@ LAB_005a50be:
   case MESS_FSGSTY_6150|MESS_SHARED_0003:
     if ((this_00->field_1A5F == CASE_2) || (this_00->field_1A5F == CASE_4)) {
       if (g_cursorClass_00802A30 != (CursorClassTy *)0x0) {
-        g_cursorClass_00802A30->field_0493 = 1;
+        g_cursorClass_00802A30->field_0493 = CASE_1;
         pCVar33->field_0494 = 0xffff;
         CursorClassTy::SetGCType(pCVar33,CASE_0,pCVar33->field_00C5,pCVar33->field_00C9);
         CursorClassTy::DrawSprite(pCVar33,pCVar33->field_00C5,pCVar33->field_00C9);
@@ -3182,7 +3186,7 @@ LAB_005a50be:
   case 0x6154:
     if (this_00->field_1A5F == CASE_5) {
       if (g_cursorClass_00802A30 != (CursorClassTy *)0x0) {
-        g_cursorClass_00802A30->field_0493 = 1;
+        g_cursorClass_00802A30->field_0493 = CASE_1;
         pCVar33->field_0494 = 0xffff;
         CursorClassTy::SetGCType(pCVar33,CASE_0,pCVar33->field_00C5,pCVar33->field_00C9);
         CursorClassTy::DrawSprite(pCVar33,pCVar33->field_00C5,pCVar33->field_00C9);
@@ -3218,7 +3222,7 @@ LAB_005a50be:
   case MESS_FSGSTY_6150|MESS_SHARED_0005:
     if (this_00->field_1A5F != CASE_4) goto cf_common_exit_005A8CA7;
     if (g_cursorClass_00802A30 != (CursorClassTy *)0x0) {
-      g_cursorClass_00802A30->field_0493 = 1;
+      g_cursorClass_00802A30->field_0493 = CASE_1;
       pCVar33->field_0494 = 0xffff;
       CursorClassTy::SetGCType(pCVar33,CASE_0,pCVar33->field_00C5,pCVar33->field_00C9);
       CursorClassTy::DrawSprite(pCVar33,pCVar33->field_00C5,pCVar33->field_00C9);
@@ -3262,7 +3266,7 @@ LAB_005a50be:
   case MESS_FSGSTY_6156:
     if (this_00->field_1A5F != CASE_6) goto cf_common_exit_005A8CA7;
     if (g_cursorClass_00802A30 != (CursorClassTy *)0x0) {
-      g_cursorClass_00802A30->field_0493 = 1;
+      g_cursorClass_00802A30->field_0493 = CASE_1;
       pCVar33->field_0494 = 0xffff;
       CursorClassTy::SetGCType(pCVar33,CASE_0,pCVar33->field_00C5,pCVar33->field_00C9);
       CursorClassTy::DrawSprite(pCVar33,pCVar33->field_00C5,pCVar33->field_00C9);

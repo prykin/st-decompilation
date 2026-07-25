@@ -214,7 +214,7 @@ switchD_005f6301_caseD_110:
   this_00->field_0275 = (uint)*(byte *)(piVar2 + 2);
   this_00->field_0279 = (uint)*(ushort *)((int)piVar2 + 0xe);
   sub_005FA070(this_00);
-  this_00->field_02DD = CASE_C|CASE_1;
+  this_00->field_02DD = CASE_D;
   g_currentExceptionFrame = local_60.previous;
   return 0;
 }

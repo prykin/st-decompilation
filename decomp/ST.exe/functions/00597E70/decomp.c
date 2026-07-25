@@ -11,7 +11,11 @@
 
    [STSwitchEnumApplier] Switch target field_0065 uses
    /SubmarineTitans/Recovered/Enums/FSGSTy_field_0065State. Cases:
-   CASE_2=2;CASE_3=3;CASE_4=4;CASE_5=5;CASE_6=6;CASE_7=7;CASE_8=8;CASE_9=9;CASE_A=10 */
+   CASE_2=2;CASE_3=3;CASE_4=4;CASE_5=5;CASE_6=6;CASE_7=7;CASE_8=8;CASE_9=9;CASE_A=10
+
+   [STSwitchEnumApplier] Switch target field_1A5F uses
+   /SubmarineTitans/Recovered/Enums/FSGSTy_field_1A5FState. Cases:
+   CASE_1=1;CASE_2=2;CASE_3=3;CASE_4=4;CASE_5=5;CASE_6=6;CASE_7=7;CASE_8=8;CASE_9=9;CASE_A=10 */
 
 void __thiscall FSGSTy::SetState(FSGSTy *this,FSGSTy_field_0065State param_1)
 

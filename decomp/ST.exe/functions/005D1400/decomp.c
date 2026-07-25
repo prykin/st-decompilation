@@ -280,7 +280,7 @@ LAB_005d1b5a:
             if (g_cursorClass_00802A30 != (CursorClassTy *)0x0) {
               iVar15 = g_cursorClass_00802A30->field_00C9;
               iVar37 = g_cursorClass_00802A30->field_00C5;
-              g_cursorClass_00802A30->field_0493 = 5;
+              g_cursorClass_00802A30->field_0493 = CASE_5;
               pCVar12->field_0494 = 0xffff;
               CursorClassTy::SetGCType(pCVar12,CASE_0,iVar37,iVar15);
               CursorClassTy::DrawSprite(pCVar12,pCVar12->field_00C5,pCVar12->field_00C9);
@@ -519,7 +519,7 @@ LAB_005d1b5a:
                 if (g_cursorClass_00802A30 != (CursorClassTy *)0x0) {
                   iVar15 = g_cursorClass_00802A30->field_00C9;
                   iVar37 = g_cursorClass_00802A30->field_00C5;
-                  g_cursorClass_00802A30->field_0493 = 1;
+                  g_cursorClass_00802A30->field_0493 = CASE_1;
                   pCVar12->field_0494 = 0xffff;
                   CursorClassTy::SetGCType(pCVar12,CASE_0,iVar37,iVar15);
                   CursorClassTy::DrawSprite(pCVar12,pCVar12->field_00C5,pCVar12->field_00C9);

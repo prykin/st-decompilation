@@ -98,7 +98,7 @@ void __thiscall FUN_004cf640(void *this,int *param_1)
              (iVar5 = thunk_FUN_004e6010(*(int *)((int)this + 0x24),iVar6 + 0x41), iVar5 != 0)) {
             memset(local_5c, 0, 0x30); /* compiler bulk-zero initialization */
             local_5c[0] = iVar6;
-            local_5c[1] = thunk_FUN_004c9370(this,1,iVar6,-1);
+            local_5c[1] = TLOBaseTy::sub_004C9370(this,1,iVar6,-1);
             if ((*(int *)((int)this + 0x361) == 1) && (*(int *)((int)this + 0x369) == iVar6)) {
               local_5c[1] = local_5c[1] + *(int *)((int)this + 0x36d);
             }

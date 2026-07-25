@@ -27,7 +27,7 @@ void __thiscall HelpPanelTy::NatProc(HelpPanelTy *this,int param_1,char param_2)
   if (errorCode == 0) {
     if (param_2 == '\0') {
       HVar1 = local_c->field_01A1;
-      if (((HVar1 == 0) || (HVar1 == CASE_6)) || (HVar1 == (CASE_8|CASE_2))) {
+      if (((HVar1 == 0) || (HVar1 == CASE_6)) || (HVar1 == CASE_A)) {
         local_c->field_01A2 = HVar1;
         local_c->field_01AB = local_c->field_01A3;
       }

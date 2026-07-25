@@ -5,7 +5,7 @@
    005DCE03 FUN_006e56b0; 005DCE2B FUN_005db2a0; 005DCE3C FUN_005daf20; 005DCE43 FUN_005db010;
    005DCE4A FUN_005da910; 005DCE51 FUN_006e52d0 */
 
-void __thiscall StartSystemTy::~StartSystemTy(StartSystemTy *this)
+void __thiscall StartSystemTy::DoneSystem(StartSystemTy *this)
 
 {
   if (this->field_0020 != 0) {

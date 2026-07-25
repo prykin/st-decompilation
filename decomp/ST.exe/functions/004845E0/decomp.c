@@ -87,7 +87,7 @@ STGameObjC::FUN_004845e0(STGameObjC *this,STGameObjC_sub_004845E0_param_1Enum pa
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
     iVar4 = (**(code **)(*this_00 + 0x2c))();
     if ((((iVar4 == 0x62) && (this->field_0024 == this_00[9])) &&
-        (iVar4 = thunk_FUN_004d6df0((int *)this), 0 < iVar4)) &&
+        (iVar4 = TLOBaseTy::sub_004D6DF0((TLOBaseTy *)this), 0 < iVar4)) &&
        (iVar4 = thunk_FUN_004e8030(this->field_06F7), iVar4 == 3)) {
       return 0x1b;
     }
@@ -1210,7 +1210,7 @@ LAB_00484ed2:
         if (this->field_0024 != this_00[9]) {
           return 1;
         }
-        iVar4 = thunk_FUN_004d6df0((int *)this);
+        iVar4 = TLOBaseTy::sub_004D6DF0((TLOBaseTy *)this);
         if (iVar4 < 1) {
           return 1;
         }

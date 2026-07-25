@@ -24,7 +24,7 @@ int __thiscall STBoatC::Recharge(STBoatC *this,int param_1)
   if ((param_1 == 0) || (param_1 == 1)) {
     memset(&this->field_02CC, 0, 0x5c); /* compiler bulk-zero initialization */
     this->field_02C4 = 0;
-    iVar9 = thunk_FUN_004d6df0((int *)this);
+    iVar9 = TLOBaseTy::sub_004D6DF0((TLOBaseTy *)this);
     /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
     if ((iVar9 == 0) ||
        ((iVar9 = CheckForReplenisher(this,unaff_EDI), iVar9 == 1 &&
@@ -110,7 +110,7 @@ LAB_0047926a:
     iVar9 = sub_00460260(this,2);
     switch(iVar9) {
     case 0:
-      iVar9 = thunk_FUN_004d6df0((int *)this);
+      iVar9 = TLOBaseTy::sub_004D6DF0((TLOBaseTy *)this);
       /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
       if ((iVar9 != 0) &&
          ((iVar9 = CheckForReplenisher(this,unaff_EDI), iVar9 != 1 ||
@@ -163,7 +163,7 @@ LAB_0047885b:
       }
       break;
     case 1:
-      iVar9 = thunk_FUN_004d6df0((int *)this);
+      iVar9 = TLOBaseTy::sub_004D6DF0((TLOBaseTy *)this);
       /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
       if ((iVar9 != 0) &&
          ((iVar9 = CheckForReplenisher(this,unaff_EDI), iVar9 != 1 ||
@@ -230,7 +230,7 @@ cf_common_exit_00478E51:
     if (*(int *)&this->field_0x62d % 10 != 0) {
       return 2;
     }
-    iVar9 = thunk_FUN_004d6df0((int *)this);
+    iVar9 = TLOBaseTy::sub_004D6DF0((TLOBaseTy *)this);
     /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
     if ((iVar9 == 0) ||
        ((iVar9 = CheckForReplenisher(this,unaff_EDI), iVar9 == 1 &&
@@ -381,7 +381,7 @@ LAB_00478ff2:
                                  &this->field_0623);
       goto joined_r0x00478b59;
     case 1:
-      iVar9 = thunk_FUN_004d6df0((int *)this);
+      iVar9 = TLOBaseTy::sub_004D6DF0((TLOBaseTy *)this);
       /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
       if ((iVar9 == 0) ||
          ((iVar9 = CheckForReplenisher(this,unaff_EDI), iVar9 == 1 &&

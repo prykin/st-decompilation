@@ -7,7 +7,16 @@
 
    [STMessageHandlerApplier] Recovered common GetMessage envelope/signature.
    Evidence: family_entries=004046BA|004FB060; family_names=CPanelTy::GetMessage; ret4=2;
-   direct_offsets={10:10,14:12,18:11,1c:6} */
+   direct_offsets={10:10,14:12,18:11,1c:6}
+
+   [STSwitchEnumApplier] Switch target field_023F uses
+   /SubmarineTitans/Recovered/Enums/CPanelTy_field_023FState. Cases:
+   CASE_1=1;CASE_2=2;CASE_3=3;CASE_4=4;CASE_5=5;CASE_6=6
+
+   [STSwitchEnumApplier] Switch target field_0BF5 uses
+   /SubmarineTitans/Recovered/Enums/CPanelTy_field_0BF5State. Cases:
+   CASE_0=0;CASE_1=1;CASE_2=2;CASE_3=3;CASE_4=4;CASE_32=50;CASE_33=51;CASE_34=52;CASE_35=53;CASE_36=54;CASE_37=55;CASE_38=56;CASE_39=57;CASE_3A=58;CASE_3B=59;CASE_3C=60;CASE_3D=61;CASE_3E=62;CASE_3F=63;CASE_40=64;CASE_41=65;CASE_42=66;CASE_43=67;CASE_44=68;CASE_45=69;CASE_46=70;CASE_47=71;CASE_48=72;CASE_49=73;CASE_4A=74;CASE_4B=75;CASE_4C=76;CASE_4D=77;CASE_4E=78;CASE_4F=79;CASE_50=80;CASE_51=81;CASE_52=82;CASE_53=83;CASE_54=84;CASE_55=85;CASE_56=86;CASE_57=87;CASE_58=88;CASE_59=89;CASE_5A=90;CASE_5B=91;CASE_5C=92;CASE_5D=93;CASE_5E=94;CASE_5F=95;CASE_61=97;CASE_62=98;CASE_63=99;CASE_64=100;CASE_65=101;CASE_67=103;CASE_68=104;CASE_6D=109;CASE_6E=110;CASE_6F=111;CASE_70=112;CASE_72=114;CASE_73=115;CASE_DD=221;CASE_DE=222;CASE_E0=224;CASE_FD=253;CASE_FE=254
+    */
 
 int __thiscall CPanelTy::GetMessage(CPanelTy *this,STMessage *message)
 
@@ -384,7 +393,7 @@ int __thiscall CPanelTy::GetMessage(CPanelTy *this,STMessage *message)
     case 0xb212:
     case 0xb216:
       switch(local_44->field_0BF5) {
-      case CASE_5E|CASE_1:
+      case CASE_5F:
         pcVar24 = "BUT_TBDN";
 LAB_004fd533:
         pcVar30 = thunk_FUN_00529fe0;
@@ -392,7 +401,7 @@ LAB_004fd533:
         PaintBut(this_00,5,message,1,pCVar8,pcVar30);
         break;
       case CASE_64:
-      case CASE_64|CASE_1:
+      case CASE_65:
       case CASE_6D:
         PaintBut(local_44,5,message,1,"BUT_MINUSSI",thunk_FUN_00529fe0);
       }
@@ -400,11 +409,11 @@ LAB_004fd533:
     case 0xb214:
     case 0xb218:
       switch(local_44->field_0BF5) {
-      case CASE_5E|CASE_1:
+      case CASE_5F:
         pcVar24 = "BUT_TBUP";
         goto LAB_004fd533;
       case CASE_64:
-      case CASE_64|CASE_1:
+      case CASE_65:
       case CASE_6D:
         PaintBut(local_44,5,message,1,"BUT_PLUSSI",thunk_FUN_00529fe0);
       }
@@ -1251,7 +1260,7 @@ LAB_004fbaa0:
         if (bVar2) {
           thunk_FUN_004a9b60(this_00->field_011C,this_00->field_0120,this_00->field_0124,
                              this_00->field_0128 + -0x9b);
-          this_00->field_023F = CASE_4|CASE_1;
+          this_00->field_023F = CASE_5;
           if (DAT_0080731a == 0) {
             this_00->field_023F = CASE_1;
             ShiftControls(this_00,1);
@@ -1598,13 +1607,13 @@ LAB_004fc53f:
     if ((message->arg0).u32 == 3) {
       pbVar10 = local_68;
       local_68[0] = 6;
-      this_00->field_0C11 = 1;
+      this_00->field_0C11 = CASE_1;
       puVar23 = (undefined4 *)0x17;
     }
     else {
       pbVar10 = local_68;
       local_68[0] = 7;
-      this_00->field_0C11 = 0;
+      this_00->field_0C11 = CASE_0;
       puVar23 = (undefined4 *)0x17;
     }
     goto cf_common_exit_004FCF18;

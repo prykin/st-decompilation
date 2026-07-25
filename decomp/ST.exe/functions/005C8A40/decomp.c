@@ -7,7 +7,15 @@
 
    [STMessageHandlerApplier] Recovered common GetMessage envelope/signature.
    Evidence: family_entries=0040327E|005C8A40; family_names=SettMapTy::GetMessage; ret4=2;
-   direct_offsets={10:14,14:29,18:15,1c:13} */
+   direct_offsets={10:14,14:29,18:15,1c:13}
+
+   [STSwitchEnumApplier] Switch target field_1E26 uses
+   /SubmarineTitans/Recovered/Enums/SettMapTy_field_1E26State. Cases:
+   CASE_1=1;CASE_2=2;CASE_3=3;CASE_4=4;CASE_5=5;CASE_6=6;CASE_7=7;CASE_8=8;CASE_9=9;CASE_A=10;CASE_B=11;CASE_C=12;CASE_D=13;CASE_E=14;CASE_F=15;CASE_10=16;CASE_11=17;CASE_12=18;CASE_13=19;CASE_14=20;CASE_15=21
+
+   [STSwitchEnumApplier] Switch target field_2179 uses
+   /SubmarineTitans/Recovered/Enums/SettMapTy_field_2179State. Cases:
+   CASE_3=3;CASE_4=4;CASE_5=5;CASE_6=6 */
 
 int __thiscall SettMapTy::GetMessage(SettMapTy *this,STMessage *message)
 
@@ -339,14 +347,17 @@ cf_common_join_005C8ECC:
         switch((message->arg1).u32) {
         case 0:
           SVar2 = this_00->field_1E26;
-          if (((SVar2 == 6) || (SVar2 == 1)) || (pDVar21 = PTR_0080c502, SVar2 == 2)) {
+          if (((SVar2 == CASE_6) || (SVar2 == CASE_1)) || (pDVar21 = PTR_0080c502, SVar2 == CASE_2))
+          {
             pDVar21 = DAT_0080c506;
           }
           if (uVar19 < pDVar21->count) {
-            if (((SVar2 == 6) || (SVar2 == 1)) || (pDVar21 = PTR_0080c502, SVar2 == 2)) {
+            if (((SVar2 == CASE_6) || (SVar2 == CASE_1)) ||
+               (pDVar21 = PTR_0080c502, SVar2 == CASE_2)) {
               pDVar21 = DAT_0080c506;
             }
-            if (((SVar2 == 6) || (SVar2 == 1)) || (pDVar13 = PTR_0080c502, SVar2 == 2)) {
+            if (((SVar2 == CASE_6) || (SVar2 == CASE_1)) ||
+               (pDVar13 = PTR_0080c502, SVar2 == CASE_2)) {
               pDVar13 = DAT_0080c506;
             }
             /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(array, index) (runtime elementSize cannot be a static C array) */
@@ -474,7 +485,7 @@ cf_common_join_005C8ECC:
     case 0x653f:
       if (this_00->field_0065 == '\x01') {
         SVar2 = this_00->field_1E26;
-        if (((SVar2 == 6) || (SVar2 == 1)) || (pDVar21 = PTR_0080c502, SVar2 == 2)) {
+        if (((SVar2 == CASE_6) || (SVar2 == CASE_1)) || (pDVar21 = PTR_0080c502, SVar2 == CASE_2)) {
           pDVar21 = DAT_0080c506;
         }
         this_00->field_2171 = 0x6506;
@@ -617,38 +628,38 @@ cf_common_join_005C8ECC:
       this_00->field_21A9 = this_00->field_1E2F->count;
       switch(this_00->field_2179) {
       /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-      case 3:
+      case CASE_3:
         bVar8 = DAT_00808a90._1_1_;
         goto LAB_005c95d4;
-      case 4:
+      case CASE_4:
         this_00->field_21A1 = DAT_00808a90 & 0xff;
         break;
-      case 5:
+      case CASE_5:
         this_00->field_21A1 = DAT_00808a90 >> 0x10 & 0xff;
         break;
       /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-      case 6:
+      case CASE_6:
         bVar8 = DAT_00808a90._3_1_;
 LAB_005c95d4:
         this_00->field_21A1 = (uint)bVar8;
       }
       switch(this_00->field_2179) {
-      case 3:
-      case 5:
+      case CASE_3:
+      case CASE_5:
         this_00->field_21C5 = 0x1c5;
         break;
-      case 4:
-      case 6:
+      case CASE_4:
+      case CASE_6:
         this_00->field_21C5 = 0x2bf;
       }
       this_00->field_21CD = 0x5a;
       switch(this_00->field_2179) {
-      case 3:
-      case 4:
+      case CASE_3:
+      case CASE_4:
         this_00->field_21C9 = 0x164;
         break;
-      case 5:
-      case 6:
+      case CASE_5:
+      case CASE_6:
         this_00->field_21C9 = 0x17a;
       }
       pcVar5 = g_startSystem_0081176C->field_0034;
@@ -767,7 +778,7 @@ joined_r0x005c964b:
     if (SVar4 == MESS_MMSGTY_68FF) {
       if (this_00->field_0065 == '\x01') {
         this_00->field_2171 = 0x64ff;
-        this_00->field_2179 = message->id - MESS_MMSGTY_68FF;
+        this_00->field_2179 = message->id - 0x68ff;
         this_00->field_2191 = 0x6500;
         this_00->field_1E2F->count = 0;
         pcVar14 = LoadResourceString(0x234b,g_module_00807618);
@@ -904,7 +915,7 @@ joined_r0x005c964b:
   case MESS_SHARED_6900:
     if (this_00->field_0065 == '\x01') {
       this_00->field_2171 = 0x64ff;
-      this_00->field_2179 = message->id - MESS_MMSGTY_68FF;
+      this_00->field_2179 = message->id - 0x68ff;
       this_00->field_2191 = 0x6500;
       local_8 = (DArrayTy *)0x3;
       if ((DAT_00807dd1 & 0xffff0000) != 0xd0dd0000) {
@@ -958,7 +969,7 @@ joined_r0x005c996c:
         local_c = (DArrayTy *)this_00->field_1F7C->count;
       }
       this_00->field_2171 = 0x64ff;
-      this_00->field_2179 = message->id - MESS_MMSGTY_68FF;
+      this_00->field_2179 = message->id - 0x68ff;
       this_00->field_2191 = 0x6500;
       local_8 = (DArrayTy *)0x0;
       this_00->field_1E2F->count = 0;
@@ -1022,7 +1033,7 @@ joined_r0x005c996c:
   case MESS_MAINMENUTY_6902:
     if (this_00->field_0065 != '\x01') break;
     this_00->field_2171 = 0x64ff;
-    this_00->field_2179 = message->id - MESS_MMSGTY_68FF;
+    this_00->field_2179 = message->id - 0x68ff;
     this_00->field_2191 = 0x6500;
     this_00->field_1E2F->count = 0;
     pcVar14 = LoadResourceString(0x2355,g_module_00807618);
@@ -1115,7 +1126,7 @@ LAB_005c9c8a:
   case MESS_FSGSTY_6903:
     if (this_00->field_0065 == '\x01') {
       this_00->field_2171 = 0x64ff;
-      this_00->field_2179 = message->id - MESS_MMSGTY_68FF;
+      this_00->field_2179 = message->id - 0x68ff;
       this_00->field_2191 = 0x6500;
       this_00->field_1E2F->count = 0;
       pcVar14 = LoadResourceString(0x234e,g_module_00807618);
@@ -1207,7 +1218,7 @@ LAB_005c9c8a:
   case MESS_FSGSTY_6904:
     if (this_00->field_0065 == '\x01') {
       this_00->field_2171 = 0x64ff;
-      this_00->field_2179 = message->id - MESS_MMSGTY_68FF;
+      this_00->field_2179 = message->id - 0x68ff;
       this_00->field_2191 = 0x6500;
       this_00->field_1E2F->count = 0;
       pcVar14 = LoadResourceString(0x234e,g_module_00807618);
@@ -1348,29 +1359,29 @@ LAB_005c9c8a:
   case MESS_SHARED_6940|MESS_SHARED_0008:
     DAT_008087a0 = this_00->field_1E26;
     switch(this_00->field_1E26) {
-    case 1:
-    case 2:
-    case 3:
-    case 6:
-    case 8:
-    case 9:
-    case 10:
-    case 0xb:
+    case CASE_1:
+    case CASE_2:
+    case CASE_3:
+    case CASE_6:
+    case CASE_8:
+    case CASE_9:
+    case CASE_A:
+    case CASE_B:
       DAT_00808783 = 2;
       break;
     case CASE_4:
     case CASE_5:
     case CASE_7:
     case CASE_C:
-    case 0xd:
-    case 0xe:
-    case 0xf:
-    case 0x10:
-    case 0x11:
-    case 0x12:
+    case CASE_D:
+    case CASE_E:
+    case CASE_F:
+    case CASE_10:
+    case CASE_11:
+    case CASE_12:
     case CASE_13:
-    case 0x14:
-    case 0x15:
+    case CASE_14:
+    case CASE_15:
       DAT_00808783 = 3;
     }
     this_00->field_0049 = 1;
@@ -1385,7 +1396,7 @@ LAB_005c9c8a:
     this_00->field_21E7 = 0;
     goto LAB_005c9e62;
   case 0x694f:
-    thunk_FUN_005b6350(this_00,0x6109,1,(uint)(this_00->field_1E26 == 0xe));
+    thunk_FUN_005b6350(this_00,0x6109,1,(uint)(this_00->field_1E26 == CASE_E));
     this_00->field_0x21e6 = 0;
     this_00->field_0x21e4 = 0;
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
@@ -1560,14 +1571,14 @@ cf_common_join_005CA971:
   switch(SVar4) {
   case MESS_SETTMAPTY_657F:
     SVar2 = this_00->field_1E26;
-    if (((SVar2 == 6) || (SVar2 == 1)) || (pDVar21 = PTR_0080c502, SVar2 == 2)) {
+    if (((SVar2 == CASE_6) || (SVar2 == CASE_1)) || (pDVar21 = PTR_0080c502, SVar2 == CASE_2)) {
       pDVar21 = DAT_0080c506;
     }
     if (this_00->field_1C5F < pDVar21->count) {
-      if (((SVar2 == 6) || (SVar2 == 1)) || (pDVar21 = PTR_0080c502, SVar2 == 2)) {
+      if (((SVar2 == CASE_6) || (SVar2 == CASE_1)) || (pDVar21 = PTR_0080c502, SVar2 == CASE_2)) {
         pDVar21 = DAT_0080c506;
       }
-      if (((SVar2 == 6) || (SVar2 == 1)) || (pDVar13 = PTR_0080c502, SVar2 == 2)) {
+      if (((SVar2 == CASE_6) || (SVar2 == CASE_1)) || (pDVar13 = PTR_0080c502, SVar2 == CASE_2)) {
         pDVar13 = DAT_0080c506;
       }
       /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(array, index) (runtime elementSize cannot be a static C array) */

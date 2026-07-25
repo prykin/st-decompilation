@@ -182,8 +182,8 @@ int __thiscall TLOBaseTy::LoadImages(TLOBaseTy *this,void *param_1)
       (**(code **)*this_01)();
     }
   }
-  if ((((TVar6 == CASE_0) || (TVar6 == (CASE_4|CASE_1))) ||
-      ((TVar6 == CASE_1 && (this_00->field_024D == 0)))) || (TVar6 == CASE_6)) {
+  if ((((TVar6 == CASE_0) || (TVar6 == CASE_5)) || ((TVar6 == CASE_1 && (this_00->field_024D == 0)))
+      ) || (TVar6 == CASE_6)) {
     STT3DSprC::sub_004ACEF0((STT3DSprC *)this_01,DAT_008073cc);
     iVar3 = STT3DSprC::LoadSequence
                       ((STT3DSprC *)this_01,0x10,DAT_0080678c,(&PTR_s_tlo_sha_ws_007bb1b4)[local_8],

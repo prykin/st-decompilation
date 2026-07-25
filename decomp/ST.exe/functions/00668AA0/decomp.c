@@ -23,7 +23,7 @@ FUN_00668aa0(Global_sub_00668AA0_param_1Enum param_1,Global_sub_00668AA0_param_2
       case CASE_7F6:
       case CASE_7F7:
         switch(param_2) {
-        case 2:
+        case CASE_2:
         case CASE_4:
         case CASE_5:
         case CASE_6:
@@ -39,12 +39,12 @@ FUN_00668aa0(Global_sub_00668AA0_param_1Enum param_1,Global_sub_00668AA0_param_2
         }
       case CASE_7F8:
         switch(param_2) {
-        case 0:
-        case 2:
+        case CASE_0:
+        case CASE_2:
         case CASE_3:
         case CASE_4:
           goto cf_common_exit_00668C44;
-        case 1:
+        case CASE_1:
           goto cf_common_exit_00668C64;
         case CASE_5:
         case CASE_6:
@@ -55,14 +55,14 @@ FUN_00668aa0(Global_sub_00668AA0_param_1Enum param_1,Global_sub_00668AA0_param_2
         }
       case CASE_7F9:
         switch(param_2) {
-        case 0:
+        case CASE_0:
         case CASE_5:
         case CASE_6:
         case CASE_7:
           goto cf_common_exit_00668C88;
-        case 1:
+        case CASE_1:
           goto cf_common_exit_00668C64;
-        case 2:
+        case CASE_2:
         case CASE_3:
         case CASE_4:
           goto cf_common_exit_00668C44;
@@ -71,13 +71,13 @@ FUN_00668aa0(Global_sub_00668AA0_param_1Enum param_1,Global_sub_00668AA0_param_2
         }
       case CASE_7FA:
         switch(param_2) {
-        case 1:
+        case CASE_1:
         case CASE_3:
         case CASE_8:
         case CASE_9:
-        case 10:
+        case CASE_A:
           goto cf_common_exit_00668C88;
-        case 2:
+        case CASE_2:
         case CASE_5:
         case CASE_6:
         case CASE_7:
@@ -97,7 +97,7 @@ FUN_00668aa0(Global_sub_00668AA0_param_1Enum param_1,Global_sub_00668AA0_param_2
       if ((int)param_1 < 0x38f) {
         if (param_1 != 0x38e) {
           if (param_1 == 0x388) {
-            if (param_2 != 1) {
+            if (param_2 != CASE_1) {
               return 0;
             }
             *param_3 = 1;
@@ -107,7 +107,7 @@ FUN_00668aa0(Global_sub_00668AA0_param_1Enum param_1,Global_sub_00668AA0_param_2
           if (param_1 != 0x389) {
             return 0;
           }
-          if (param_2 != 1) {
+          if (param_2 != CASE_1) {
             return 0;
           }
           *param_3 = 1;
@@ -183,10 +183,10 @@ cf_common_exit_00668C44:
   case CASE_819:
   case CASE_81B:
   case CASE_81C:
-    iVar1 = param_2 - 2;
+    iVar1 = param_2 - CASE_2;
     goto LAB_00668ce0;
   case CASE_81D:
-    iVar1 = param_2 - 1;
+    iVar1 = param_2 - CASE_1;
 LAB_00668ce0:
     if (iVar1 == 0) {
 LAB_00668ce2:
@@ -196,7 +196,7 @@ LAB_00668ce2:
     }
     break;
   case CASE_82A:
-    if (param_2 == 2) {
+    if (param_2 == CASE_2) {
 cf_common_exit_00668C64:
       *param_3 = 3;
       *(undefined2 *)(param_3 + 1) = 0;
@@ -206,7 +206,7 @@ cf_common_exit_00668C64:
   case CASE_82B:
     goto LAB_00668c86;
   case CASE_82C:
-    if (param_2 == 2) {
+    if (param_2 == CASE_2) {
 cf_common_exit_00668CC0:
       *param_3 = 1;
       *(undefined4 *)(param_3 + 1) = 0x3fffffff;
@@ -222,7 +222,7 @@ cf_common_exit_00668C88:
     break;
   case CASE_82E:
     switch(param_2) {
-    case 2:
+    case CASE_2:
       goto cf_common_exit_00668CC0;
     case CASE_3:
     case CASE_6:
@@ -231,8 +231,8 @@ cf_common_exit_00668C88:
       goto cf_common_exit_00668C44;
     case CASE_4:
     case CASE_9:
-    case 10:
-    case CASE_8|CASE_3:
+    case CASE_A:
+    case CASE_B:
       goto cf_common_exit_00668C88;
     case CASE_5:
       goto cf_common_exit_00668C64;

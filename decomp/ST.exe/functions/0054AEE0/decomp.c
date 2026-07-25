@@ -19,7 +19,7 @@ void __thiscall CursorClassTy::GCGameState(CursorClassTy *this,int param_1)
   UINT resourceId;
   char *pcVar7;
   uint *puVar8;
-  dword dVar9;
+  Global_sub_005121F0_param_1Enum GVar9;
   int iVar10;
   uint uVar11;
   uint uVar12;
@@ -64,7 +64,7 @@ void __thiscall CursorClassTy::GCGameState(CursorClassTy *this,int param_1)
   }
   iVar5 = thunk_FUN_00544990(local_18);
   if ((iVar5 != 0) &&
-     ((((this_00->field_00DE == CASE_2 || (this_00->field_00DE == 4)) &&
+     ((((this_00->field_00DE == CASE_2 || (this_00->field_00DE == CASE_4)) &&
        (iVar5 = FUN_00405687((int)this_00), iVar5 == 0)) || (this_00->field_0496 == 0)))) {
     SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0054B700::sub_0054B700
               ((AnonReceiver_0054B700 *)this_00,-1);
@@ -188,7 +188,7 @@ LAB_0054b2a9:
                           (g_allPlayers_007FA174,this_00->field_04A2,this_00->field_049A,
                            this_00->field_00C5 - this_00->field_04B2,
                            (int *)(this_00->field_00C9 - this_00->field_04B6),unaff_EDI,unaff_ESI);
-        while (CVar4 == (CASE_40|CASE_18)) {
+        while (CVar4 == CASE_58) {
           sub_0054A8D0(this_00);
           /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
           CVar4 = STAllPlayersC::GetCursorType
@@ -202,13 +202,13 @@ LAB_0054b2a9:
       }
       else {
         pSVar6 = this_00->field_049A;
-        dVar9 = (*pSVar6->vtable->slot_2C)(pSVar6);
-        if (dVar9 == 0x78) {
-          dVar9 = *(dword *)&this_00->field_049A->field_0x259;
+        GVar9 = (*pSVar6->vtable->slot_2C)(pSVar6);
+        if (GVar9 == 0x78) {
+          GVar9 = *(Global_sub_005121F0_param_1Enum *)&this_00->field_049A->field_0x259;
         }
         if (g_helpPanel_00801690 != (HelpPanelTy *)0x0) {
           iVar5 = (*pSVar6->vtable->vfunc_0C)();
-          iVar5 = thunk_FUN_005121f0(g_helpPanel_00801690,dVar9,iVar5);
+          iVar5 = thunk_FUN_005121f0(g_helpPanel_00801690,GVar9,iVar5);
           if (iVar5 != 0) {
             uVar18 = this_00->field_0038;
             uVar17 = this_00->field_0034;

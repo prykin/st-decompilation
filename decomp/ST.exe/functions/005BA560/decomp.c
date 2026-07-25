@@ -29,7 +29,7 @@ void __thiscall PrividerTy::DonePrivider(PrividerTy *this)
     if (g_cursorClass_00802A30 != (CursorClassTy *)0x0) {
       iVar3 = g_cursorClass_00802A30->field_00C9;
       iVar4 = g_cursorClass_00802A30->field_00C5;
-      g_cursorClass_00802A30->field_0493 = 1;
+      g_cursorClass_00802A30->field_0493 = CASE_1;
       this_01->field_0494 = 0xffff;
       CursorClassTy::SetGCType(this_01,CASE_0,iVar4,iVar3);
       CursorClassTy::DrawSprite(this_01,this_01->field_00C5,this_01->field_00C9);

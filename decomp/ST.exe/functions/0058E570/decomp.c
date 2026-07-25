@@ -8,7 +8,11 @@
 
    [STSwitchEnumApplier] Switch target field_0257 uses
    /SubmarineTitans/Recovered/Enums/STSharkC_field_0257State. Cases:
-   CASE_0=0;CASE_1=1;CASE_2=2;CASE_3=3;CASE_4=4;CASE_5=5;CASE_6=6 */
+   CASE_0=0;CASE_1=1;CASE_2=2;CASE_3=3;CASE_4=4;CASE_5=5;CASE_6=6
+
+   [STSwitchEnumApplier] Switch target field_0257 uses
+   /SubmarineTitans/Recovered/Enums/STSharkC_field_0257State. Cases:
+   CASE_0=0;CASE_1=1;CASE_2=2;CASE_3=3;CASE_4=4;CASE_5=5;CASE_6=6;CASE_7=7 */
 
 void __thiscall STSharkC::LifeShark(STSharkC *this,int *param_1)
 
@@ -221,7 +225,7 @@ LAB_0058e87e:
     iVar5 = STT3DSprC::sub_004ACD30((STT3DSprC *)this_00,'\b');
     iVar12 = thunk_FUN_004ac910(this_00,'\b');
     if (iVar12 == iVar5 + -1) {
-      this->field_0257 = CASE_6|CASE_1;
+      this->field_0257 = CASE_7;
       STT3DSprC::StopShow((STT3DSprC *)this_00,8);
       sub_0058EFE0(this);
     }
@@ -261,7 +265,7 @@ LAB_0058e87e:
     goto switchD_0058e67d_default;
   }
 cf_common_exit_0058E925:
-  if ((this->field_0257 != CASE_4) && (this->field_0257 != (CASE_6|CASE_1))) {
+  if ((this->field_0257 != CASE_4) && (this->field_0257 != CASE_7)) {
     iVar5 = (0x18 - (int)this->field_006C / 0xf) % 0x18;
     uVar6 = g_playSystem_00802A38->field_00E4 % 0x1e;
     local_10 = uVar6 + (iVar5 / 3) * 0x1e;

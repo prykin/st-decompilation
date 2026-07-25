@@ -1,0 +1,8 @@
+program=ST.exe
+families=3
+case_layouts=26
+automatic_case_layouts=25
+stack_targets=0
+automatic_stack_targets=0
+note=each case type is scoped to one discriminator family; equal geometry never merges semantic identities
+note=stack offsets are observed at call sites and are never embedded in script code

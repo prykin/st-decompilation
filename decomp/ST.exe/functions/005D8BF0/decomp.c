@@ -21,14 +21,9 @@ void __thiscall SIDTy::PrepFiles(SIDTy *this)
   int iVar9;
   uint uVar10;
   uint uVar11;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
-  cMf32 *extraout_ECX;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
-  cMf32 *extraout_ECX_00;
-  cMf32 *this_01;
   int iVar12;
   char *pcVar13;
-  SIDTy *this_02;
+  SIDTy *this_01;
   CHAR *pCVar14;
   char *pcVar15;
   byte *pbVar16;
@@ -49,7 +44,7 @@ void __thiscall SIDTy::PrepFiles(SIDTy *this)
   g_currentExceptionFrame = &local_58;
   local_c = this;
   iVar4 = Library::MSVCRT::__setjmp3(local_58.jumpBuffer,0);
-  this_02 = local_c;
+  this_01 = local_c;
   if (iVar4 != 0) {
     g_currentExceptionFrame = local_58.previous;
     iVar12 = ReportDebugMessage("E:\\__titans\\Start\\sid_obj.cpp",0x167,0,iVar4,"%s"
@@ -62,19 +57,19 @@ void __thiscall SIDTy::PrepFiles(SIDTy *this)
   }
   if (local_c->field_1CCC != (DArrayTy *)0x0) {
     FUN_006b5570(local_c->field_1CCC);
-    this_02->field_1CCC = (DArrayTy *)0x0;
+    this_01->field_1CCC = (DArrayTy *)0x0;
   }
   pDVar5 = Library::DKW::TBL::SArrayCreate((DArrayTy *)0x0,10,10);
-  this_02->field_1CCC = pDVar5;
-  this_02->field_002D = 0x20;
-  this_02->field_0031 = 0;
-  FUN_006e6080(this_02,2,this_02->field_1AF1,(undefined4 *)&this_02->field_0x1d);
-  this_02->field_002D = 0x29;
-  this_02->field_0031 = 0x19;
-  FUN_006e6080(this_02,2,this_02->field_1AF5,(undefined4 *)&this_02->field_0x1d);
-  FUN_006b4170((AnonShape_006B5B10_E0D06CF1 *)this_02->field_1CB8,0,3,0x15,0x142,0x62,0xff);
-  FUN_006b35d0((int *)PTR_008075a8,this_02->field_1CB4);
-  wsprintfA(&this_02->field_1CD4,"%s%s",&DAT_00807680,PTR_s_SAVEGAME__0079c19c);
+  this_01->field_1CCC = pDVar5;
+  this_01->field_002D = 0x20;
+  this_01->field_0031 = 0;
+  FUN_006e6080(this_01,2,this_01->field_1AF1,(undefined4 *)&this_01->field_0x1d);
+  this_01->field_002D = 0x29;
+  this_01->field_0031 = 0x19;
+  FUN_006e6080(this_01,2,this_01->field_1AF5,(undefined4 *)&this_01->field_0x1d);
+  FUN_006b4170((AnonShape_006B5B10_E0D06CF1 *)this_01->field_1CB8,0,3,0x15,0x142,0x62,0xff);
+  FUN_006b35d0((int *)PTR_008075a8,this_01->field_1CB4);
+  wsprintfA(&this_01->field_1CD4,"%s%s",&DAT_00807680,PTR_s_SAVEGAME__0079c19c);
   uVar10 = 0xffffffff;
   pcVar13 = &DAT_007cc8bc;
   do {
@@ -87,7 +82,7 @@ void __thiscall SIDTy::PrepFiles(SIDTy *this)
   } while (cVar1 != '\0');
   uVar10 = ~uVar10;
   iVar4 = -1;
-  pcVar13 = &this_02->field_1CD4;
+  pcVar13 = &this_01->field_1CD4;
   do {
     pcVar15 = pcVar13;
     if (iVar4 == 0) break;
@@ -108,7 +103,7 @@ void __thiscall SIDTy::PrepFiles(SIDTy *this)
     pcVar13 = pcVar13 + 1;
     pcVar8 = pcVar8 + 1;
   }
-  hFindFile = FindFirstFileA(&this_02->field_1CD4,&local_21c);
+  hFindFile = FindFirstFileA(&this_01->field_1CD4,&local_21c);
   local_14 = hFindFile;
   if (hFindFile != (HANDLE)0xffffffff) {
     do {
@@ -162,26 +157,22 @@ LAB_005d8dbf:
               pCVar14 = pCVar14 + 1;
             } while (cVar1 != '\0');
             if (~uVar10 - 1 < 0x40) {
-              wsprintfA(&this_02->field_1CD4,"%s%s%s\\%s",&DAT_00807680,
+              wsprintfA(&this_01->field_1CD4,"%s%s%s\\%s",&DAT_00807680,
                         PTR_s_SAVEGAME__0079c19c,local_21c.cFileName,PTR_s_PL_LOG_0079c1a0);
               local_9c.previous = g_currentExceptionFrame;
               g_currentExceptionFrame = &local_9c;
               iVar4 = Library::MSVCRT::__setjmp3(local_9c.jumpBuffer,0);
-              this_02 = local_c;
+              this_01 = local_c;
               if (iVar4 == 0) {
                 this_00 = (cMf32 *)Library::Ourlib::MF32INT::FUN_006f0ec0
                                              (0x345,&local_c->field_1CD4,0,0,0);
                 if (this_00 != (cMf32 *)0x0) {
                   iVar4 = cMf32::RecChk(this_00,0xc,PTR_s_OPTIONS_PLAYER_0079c1a4);
-                  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
-                  this_01 = extraout_ECX;
                   if (iVar4 == 0) {
-                    Library::DKW::TBL::FUN_006b5aa0(&this_02->field_1CCC->flags,local_21c.cFileName)
+                    Library::DKW::TBL::FUN_006b5aa0(&this_01->field_1CCC->flags,local_21c.cFileName)
                     ;
-                    /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
-                    this_01 = extraout_ECX_00;
                   }
-                  cMf32::delete(this_01,this_00);
+                  cMf32::delete(this_00);
                 }
                 g_currentExceptionFrame = local_9c.previous;
               }
@@ -217,23 +208,23 @@ LAB_005d8dbf:
     pbVar16 = pbVar16 + 4;
     pbVar17 = pbVar17 + 4;
   }
-  uVar19 = this_02->field_1AF1;
+  uVar19 = this_01->field_1AF1;
   for (uVar10 = uVar10 & 3; uVar10 != 0; uVar10 = uVar10 - 1) {
     *pbVar17 = *pbVar16;
     pbVar16 = pbVar16 + 1;
     pbVar17 = pbVar17 + 1;
   }
-  this_02->field_002D = 0x28;
-  this_02->field_0031 = this_02->field_1CCC->elementSize;
-  FUN_006e6080(this_02,2,uVar19,(undefined4 *)&this_02->field_0x1d);
-  pDVar5 = this_02->field_1CCC;
+  this_01->field_002D = 0x28;
+  this_01->field_0031 = this_01->field_1CCC->elementSize;
+  FUN_006e6080(this_01,2,uVar19,(undefined4 *)&this_01->field_0x1d);
+  pDVar5 = this_01->field_1CCC;
   dVar7 = pDVar5->elementSize;
   if ((int)dVar7 < 1) {
-    this_02->field_002D = 0x22;
-    this_02->field_0031 = 0;
-    FUN_006e6080(this_02,2,this_02->field_1AF1,(undefined4 *)&this_02->field_0x1d);
-    uVar19 = this_02->field_1AF1;
-    this_02->field_002D = 5;
+    this_01->field_002D = 0x22;
+    this_01->field_0031 = 0;
+    FUN_006e6080(this_01,2,this_01->field_1AF1,(undefined4 *)&this_01->field_0x1d);
+    uVar19 = this_01->field_1AF1;
+    this_01->field_002D = 5;
   }
   else {
     if (1 < (int)dVar7) {
@@ -257,21 +248,21 @@ LAB_005d8dbf:
             }
             iVar4 = Library::MSVCRT::__strcmpi(pcVar8,pcVar13);
             if (0 < iVar4) {
-              FUN_006b8200((AnonShape_006B8200_800652FF *)this_02->field_1CCC,uVar10,uVar11);
+              FUN_006b8200((AnonShape_006B8200_800652FF *)this_01->field_1CCC,uVar10,uVar11);
               local_8 = 1;
             }
-            pDVar5 = this_02->field_1CCC;
+            pDVar5 = this_01->field_1CCC;
             dVar7 = pDVar5->elementSize;
             uVar10 = uVar11;
           } while ((int)uVar11 < (int)(dVar7 - 1));
         }
       } while (local_8 != 0);
     }
-    this_02->field_002D = 0x20;
-    this_02->field_0031 = 1;
-    FUN_006e6080(this_02,2,this_02->field_1AF1,(undefined4 *)&this_02->field_0x1d);
+    this_01->field_002D = 0x20;
+    this_01->field_0031 = 1;
+    FUN_006e6080(this_01,2,this_01->field_1AF1,(undefined4 *)&this_01->field_0x1d);
     iVar12 = 0;
-    local_8 = this_02->field_1CCC->elementSize;
+    local_8 = this_01->field_1CCC->elementSize;
     iVar4 = local_10;
     if (0 < (int)local_8) {
       if ((int)local_8 < 1) {
@@ -279,7 +270,7 @@ LAB_005d8dbf:
         goto LAB_005d8fe2;
       }
       do {
-        pbVar16 = *(byte **)(this_02->field_1CCC->growCapacity + iVar12 * 4);
+        pbVar16 = *(byte **)(this_01->field_1CCC->growCapacity + iVar12 * 4);
 LAB_005d8fe2:
         pbVar17 = local_dc;
         do {
@@ -303,15 +294,15 @@ LAB_005d9011:
       } while ((iVar9 != 0) && (iVar12 = iVar12 + 1, iVar4 = local_10, iVar12 < (int)local_8));
     }
     local_10 = iVar4;
-    uVar19 = this_02->field_1AF1;
-    this_02->field_002D = 0x22;
-    this_02->field_0031 = local_10;
+    uVar19 = this_01->field_1AF1;
+    this_01->field_002D = 0x22;
+    this_01->field_0031 = local_10;
   }
-  FUN_006e6080(this_02,2,uVar19,(undefined4 *)&this_02->field_0x1d);
-  this_02->field_002D = 0x29;
-  this_02->field_0031 = 9;
-  FUN_006e6080(this_02,2,this_02->field_1AF5,(undefined4 *)&this_02->field_0x1d);
-  FUN_006b35d0((int *)PTR_008075a8,this_02->field_1CB4);
+  FUN_006e6080(this_01,2,uVar19,(undefined4 *)&this_01->field_0x1d);
+  this_01->field_002D = 0x29;
+  this_01->field_0031 = 9;
+  FUN_006e6080(this_01,2,this_01->field_1AF5,(undefined4 *)&this_01->field_0x1d);
+  FUN_006b35d0((int *)PTR_008075a8,this_01->field_1CB4);
   g_currentExceptionFrame = local_58.previous;
   return;
 }

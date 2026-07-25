@@ -45,7 +45,7 @@ void __thiscall HelpPanelTy::BackBut(HelpPanelTy *this,void *param_1)
           g_currentExceptionFrame = local_50.previous;
           return;
         }
-        if (HVar1 != (CASE_8|CASE_2)) {
+        if (HVar1 != CASE_A) {
           g_currentExceptionFrame = local_50.previous;
           return;
         }

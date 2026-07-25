@@ -12,7 +12,15 @@
 
    [STMessageHandlerApplier] Recovered common GetMessage envelope/signature.
    Evidence: family_entries=005449B0; family_names=CursorClassTy::GetMessage; ret4=74;
-   direct_offsets={10:10,14:8,18:6,1c:3} */
+   direct_offsets={10:10,14:8,18:6,1c:3}
+
+   [STSwitchEnumApplier] Switch target field_00CD uses
+   /SubmarineTitans/Recovered/Enums/CursorClassTy_field_00CDState. Cases:
+   CASE_0=0;CASE_1=1;CASE_2=2;CASE_3=3;CASE_4=4
+
+   [STSwitchEnumApplier] Switch target field_00DE uses
+   /SubmarineTitans/Recovered/Enums/CursorClassTy_field_00DEState. Cases:
+   CASE_0=0;CASE_1=1;CASE_2=2;CASE_3=3;CASE_4=4;CASE_5=5 */
 
 int __thiscall CursorClassTy::GetMessage(CursorClassTy *this,STMessage *message)
 
@@ -41,9 +49,6 @@ int __thiscall CursorClassTy::GetMessage(CursorClassTy *this,STMessage *message)
   uint uVar20;
   uint uVar21;
   uint uVar22;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
-  InternalExceptionFrame *extraout_ECX;
-  InternalExceptionFrame *this_02;
   int iVar23;
   undefined3 uVar24;
   int *piVar25;
@@ -122,7 +127,7 @@ int __thiscall CursorClassTy::GetMessage(CursorClassTy *this,STMessage *message)
   case MESS_CURSORCLASSTY_A115:
     this_00->field_0xd5 = 0;
   }
-  if (((this_00->field_0493 != '\x02') && (MESS_CURSORCLASSTY_A0FF < message->id)) &&
+  if (((this_00->field_0493 != 2) && (MESS_CURSORCLASSTY_A0FF < message->id)) &&
      (message->id < 0xb100)) {
     g_currentExceptionFrame = local_e0.previous;
     return 0;
@@ -159,7 +164,7 @@ LAB_0054532f:
         g_currentExceptionFrame = local_e0.previous;
         return 0;
       }
-      if ((this_00->field_0496 != 0) && (this_00->field_04A2 == 0xe)) {
+      if ((this_00->field_0496 != 0) && (this_00->field_04A2 == CASE_E)) {
         if (g_tLOBldMark_007FB2AC->field_0018 != 0) {
           thunk_FUN_004c6210(g_tLOBldMark_007FB2AC,this_00->field_04AA,0);
         }
@@ -188,22 +193,22 @@ LAB_0054532f:
           this_00->field_010B = -1;
         }
         switch(this_00->field_00CD) {
-        case 0:
+        case CASE_0:
           thunk_FUN_0054b9a0(this_00,0,0,g_nWidth_00806730,DAT_00806734,this_00->field_00C5,
                              this_00->field_00C9,1);
           break;
-        case 1:
+        case CASE_1:
           iVar9 = 100;
           iVar18 = 0;
           goto LAB_005450ca;
-        case 2:
+        case CASE_2:
           thunk_FUN_0054b9a0(this_00,0,0,g_nWidth_00806730,DAT_00806734,g_nWidth_00806730 + -1,100,0
                             );
           break;
-        case 3:
+        case CASE_3:
           thunk_FUN_0054b9a0(this_00,0,0,g_nWidth_00806730,DAT_00806734,100,0,0);
           break;
-        case 4:
+        case CASE_4:
           iVar9 = DAT_00806734 + -1;
           iVar18 = 100;
 LAB_005450ca:
@@ -253,13 +258,13 @@ LAB_005450ca:
         local_8 = (AnonShape_005449B0_F65ED625 *)0xfffffffe;
         local_c = 1.4013e-45;
         switch(this_00->field_00CD) {
-        case 1:
+        case CASE_1:
           iVar10 = this_00->field_04B6;
           iVar23 = this_00->field_04B2;
           iVar9 = iVar10 + 100;
           iVar18 = iVar23;
           goto LAB_00544d9b;
-        case 2:
+        case CASE_2:
           iVar10 = this_00->field_04B6;
           iVar30 = this_00->field_04BA;
           iVar23 = this_00->field_04B2;
@@ -267,7 +272,7 @@ LAB_005450ca:
           iVar18 = iVar30 + -1 + iVar23;
           iVar31 = this_00->field_04BE;
           break;
-        case 3:
+        case CASE_3:
           iVar23 = this_00->field_04B2;
           iVar10 = this_00->field_04B6;
           iVar18 = iVar23 + 100;
@@ -276,7 +281,7 @@ LAB_00544d9b:
           iVar31 = this_00->field_04BE;
           iVar30 = this_00->field_04BA;
           break;
-        case 4:
+        case CASE_4:
           iVar31 = this_00->field_04BE;
           iVar10 = this_00->field_04B6;
           iVar23 = this_00->field_04B2;
@@ -295,7 +300,7 @@ switchD_00544d44_default:
         FUN_006e25d0(PTR_00807598,&local_8c);
         this_00->field_00E3 = local_88 >> 0x10;
         this_00->field_00DF = local_8c >> 0x10;
-        if (this_00->field_00CD == 0) {
+        if (this_00->field_00CD == CASE_0) {
           piVar25 = &this_00->field_00C9;
           piVar1 = &this_00->field_00C5;
           iVar9 = thunk_FUN_0054bdf0(this_00->field_04B2,this_00->field_04B6,this_00->field_04BA,
@@ -349,11 +354,11 @@ LAB_00544e8f:
                      this_00->field_00E3);
         }
         break;
-      case CASE_2|CASE_1:
+      case CASE_3:
         uVar21 = this_00->field_010B;
         if (-1 < (int)uVar21) goto LAB_0054505c;
         goto LAB_0054506b;
-      case 4:
+      case CASE_4:
         uVar21 = this_00->field_010B;
 LAB_0054505c:
         FUN_006b3bb0((int *)PTR_008075a8,uVar21);
@@ -480,23 +485,23 @@ LAB_0054506b:
           g_currentExceptionFrame = local_e0.previous;
           return 0;
         case 0xa12f:
-          this_00->field_00CD = 3;
+          this_00->field_00CD = CASE_3;
           g_currentExceptionFrame = local_e0.previous;
           return 0;
         case 0xa130:
-          this_00->field_00CD = 4;
+          this_00->field_00CD = CASE_4;
           g_currentExceptionFrame = local_e0.previous;
           return 0;
         case 0xa131:
-          this_00->field_00CD = 2;
+          this_00->field_00CD = CASE_2;
           g_currentExceptionFrame = local_e0.previous;
           return 0;
         case 0xa132:
-          this_00->field_00CD = 1;
+          this_00->field_00CD = CASE_1;
           g_currentExceptionFrame = local_e0.previous;
           return 0;
         case MESS_CURSORCLASSTY_A133:
-          this_00->field_00CD = 0;
+          this_00->field_00CD = CASE_0;
           g_currentExceptionFrame = local_e0.previous;
           return 0;
         }
@@ -811,15 +816,12 @@ switchD_0054679d_default:
       }
       g_currentExceptionFrame = &local_124;
       iVar9 = Library::MSVCRT::__setjmp3(local_124.jumpBuffer,0);
-      /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
-      this_02 = extraout_ECX;
       this_01 = local_14;
       if (iVar9 == 0) {
         this_01 = (cMf32 *)Library::Ourlib::MF32INT::FUN_006f0ec0(0x345,(byte *)&DAT_0080ee1a,0,0,0)
         ;
         local_14 = this_01;
         puVar17 = cMf32::RecGet(this_01,0x80,PTR_s_SAVE_DESC_0079adec,(int *)&local_58,0);
-        this_02 = local_124.previous;
         if (puVar17 != (ushort *)0x0) {
           iVar9 = -0x77ffffea;
           if (DAT_00808783 == '\x01') {
@@ -841,7 +843,6 @@ switchD_0054679d_default:
             local_40[3] = 1;
             local_40[4] = 0x6100;
             AppClassTy::PostNextMessage(local_44->field_0010,local_40);
-            this_02 = local_124.previous;
           }
         }
       }
@@ -850,7 +851,7 @@ switchD_0054679d_default:
         return 0;
       }
       g_currentExceptionFrame = local_124.previous;
-      cMf32::delete((cMf32 *)this_02,this_01);
+      cMf32::delete(this_01);
       g_currentExceptionFrame = local_e0.previous;
       return 0;
     }
@@ -1267,14 +1268,14 @@ LAB_005458df:
           wsprintfA((LPSTR)local_524,"%s\n%s",local_524,pcVar12);
           iVar9 = 5;
           do {
-            if (*piVar25 != ~(CASE_80|CASE_7F)) {
+            if (*piVar25 != CASE_0) {
               module = g_module_00807618;
               UVar15 = thunk_FUN_00528060((Global_sub_00528060_param_1Enum)*piVar25,
                                           (char)((uint)*piVar25 >> 0x10));
               pcVar12 = LoadResourceString(UVar15,module);
               wsprintfA((LPSTR)local_524,"%s\n&%d%s",local_524,
-                        (*(Global_sub_00528060_param_1Enum *)((int)piVar25 + 5) !=
-                        ~(CASE_80|CASE_7F)) + 1,pcVar12);
+                        (*(Global_sub_00528060_param_1Enum *)((int)piVar25 + 5) != CASE_0) + 1,
+                        pcVar12);
             }
             piVar25 = (int *)((int)piVar25 + 6);
             iVar9 = iVar9 + -1;
@@ -1477,7 +1478,7 @@ LAB_00547c2d:
         g_currentExceptionFrame = local_e0.previous;
         return 0;
       }
-      if ((this_00->field_00DE != CASE_0) && (this_00->field_00DE != (CASE_2|CASE_1))) {
+      if ((this_00->field_00DE != CASE_0) && (this_00->field_00DE != CASE_3)) {
         g_currentExceptionFrame = local_e0.previous;
         return 0;
       }
@@ -1531,7 +1532,7 @@ LAB_00547c2d:
         g_currentExceptionFrame = local_e0.previous;
         return 0;
       }
-      if ((this_00->field_00DE != CASE_0) && (this_00->field_00DE != (CASE_2|CASE_1))) {
+      if ((this_00->field_00DE != CASE_0) && (this_00->field_00DE != CASE_3)) {
         g_currentExceptionFrame = local_e0.previous;
         return 0;
       }
@@ -1589,7 +1590,7 @@ LAB_00547c2d:
         g_currentExceptionFrame = local_e0.previous;
         return 0;
       }
-      if ((this_00->field_00DE != CASE_0) && (this_00->field_00DE != (CASE_2|CASE_1))) {
+      if ((this_00->field_00DE != CASE_0) && (this_00->field_00DE != CASE_3)) {
         g_currentExceptionFrame = local_e0.previous;
         return 0;
       }
@@ -1647,7 +1648,7 @@ LAB_00547c2d:
         g_currentExceptionFrame = local_e0.previous;
         return 0;
       }
-      if ((this_00->field_00DE != CASE_0) && (this_00->field_00DE != (CASE_2|CASE_1))) {
+      if ((this_00->field_00DE != CASE_0) && (this_00->field_00DE != CASE_3)) {
         g_currentExceptionFrame = local_e0.previous;
         return 0;
       }
@@ -1713,7 +1714,7 @@ LAB_00547c2d:
         g_currentExceptionFrame = local_e0.previous;
         return 0;
       }
-      if ((this_00->field_00DE != CASE_0) && (this_00->field_00DE != (CASE_2|CASE_1))) {
+      if ((this_00->field_00DE != CASE_0) && (this_00->field_00DE != CASE_3)) {
         g_currentExceptionFrame = local_e0.previous;
         return 0;
       }
@@ -1779,7 +1780,7 @@ LAB_00547c2d:
         g_currentExceptionFrame = local_e0.previous;
         return 0;
       }
-      if ((this_00->field_00DE != CASE_0) && (this_00->field_00DE != (CASE_2|CASE_1))) {
+      if ((this_00->field_00DE != CASE_0) && (this_00->field_00DE != CASE_3)) {
         g_currentExceptionFrame = local_e0.previous;
         return 0;
       }
@@ -1842,7 +1843,7 @@ LAB_00547c2d:
         g_currentExceptionFrame = local_e0.previous;
         return 0;
       }
-      if ((this_00->field_00DE != CASE_0) && (this_00->field_00DE != (CASE_2|CASE_1))) {
+      if ((this_00->field_00DE != CASE_0) && (this_00->field_00DE != CASE_3)) {
         g_currentExceptionFrame = local_e0.previous;
         return 0;
       }
@@ -1901,7 +1902,7 @@ LAB_00547c2d:
         g_currentExceptionFrame = local_e0.previous;
         return 0;
       }
-      if ((this_00->field_00DE != CASE_0) && (this_00->field_00DE != (CASE_2|CASE_1))) {
+      if ((this_00->field_00DE != CASE_0) && (this_00->field_00DE != CASE_3)) {
         g_currentExceptionFrame = local_e0.previous;
         return 0;
       }
@@ -1959,7 +1960,7 @@ LAB_00547c2d:
         g_currentExceptionFrame = local_e0.previous;
         return 0;
       }
-      if ((this_00->field_00DE != CASE_0) && (this_00->field_00DE != (CASE_2|CASE_1))) {
+      if ((this_00->field_00DE != CASE_0) && (this_00->field_00DE != CASE_3)) {
         g_currentExceptionFrame = local_e0.previous;
         return 0;
       }
@@ -2147,7 +2148,7 @@ switchD_00546ac9_caseD_a506:
       g_currentExceptionFrame = local_e0.previous;
       return 0;
     }
-    if (this_00->field_04A2 != 0x4e) {
+    if (this_00->field_04A2 != CASE_4E) {
       g_currentExceptionFrame = local_e0.previous;
       return 0;
     }
@@ -2257,7 +2258,7 @@ switchD_00546ac9_caseD_a505:
        (this_00->field_00C9 < this_00->field_04BE + this_00->field_04B6)) {
       switch(this_00->field_00DE) {
       case CASE_1:
-        this_00->field_00DE = CASE_2|CASE_1;
+        this_00->field_00DE = CASE_3;
       case CASE_0:
         if (message->id != MESS_CURSORCLASSTY_A502) {
           g_currentExceptionFrame = local_e0.previous;
@@ -2318,7 +2319,7 @@ switchD_00546ac9_caseD_a505:
                        this_00->field_00DF,this_00->field_00E3,this_00->field_00E7,
                        this_00->field_00EB,(uint)(SVar6 == MESS_CURSORCLASSTY_A507));
           }
-          this_00->field_00DE = 4;
+          this_00->field_00DE = CASE_4;
           g_currentExceptionFrame = local_e0.previous;
           return 0;
         }
@@ -2338,13 +2339,13 @@ switchD_00546ac9_caseD_a505:
   }
   CVar3 = this_00->field_00DE;
   if (CVar3 == CASE_1) {
-    this_00->field_00DE = CASE_2|CASE_1;
+    this_00->field_00DE = CASE_3;
     g_currentExceptionFrame = local_e0.previous;
     return 0;
   }
   if (CVar3 == CASE_2) {
 LAB_00546f1c:
-    this_00->field_00DE = 4;
+    this_00->field_00DE = CASE_4;
     g_currentExceptionFrame = local_e0.previous;
     return 0;
   }
@@ -2373,7 +2374,7 @@ LAB_0054708b:
 LAB_00547090:
   this_00->field_00DE = CASE_0;
   this_00->field_010B = -1;
-  if (this_00->field_04A2 != 0x4e) {
+  if (this_00->field_04A2 != CASE_4E) {
     g_currentExceptionFrame = local_e0.previous;
     return 0;
   }

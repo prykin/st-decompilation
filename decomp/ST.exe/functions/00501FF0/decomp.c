@@ -8,6 +8,10 @@
    [STSwitchEnumApplier] Switch target field_0B9E uses
    /SubmarineTitans/Recovered/Enums/CPanelTy_field_0B9EState. Cases:
    CASE_0=0;CASE_1=1;CASE_2=2;CASE_3=3;CASE_4=4;CASE_8=8;CASE_9=9;CASE_14=20;CASE_15=21;CASE_16=22;CASE_17=23;CASE_1A=26;CASE_1B=27;CASE_1D=29;CASE_23=35;CASE_24=36;CASE_25=37;CASE_A6=166;CASE_A7=167;CASE_AF=175;CASE_BD=189
+
+   [STSwitchEnumApplier] Switch target field_0B99 uses
+   /SubmarineTitans/Recovered/Enums/CPanelTy_field_0B99State. Cases:
+   CASE_8=8;CASE_9=9;CASE_14=20;CASE_15=21;CASE_16=22;CASE_17=23;CASE_1A=26;CASE_1B=27;CASE_1D=29;CASE_23=35;CASE_24=36;CASE_25=37;CASE_A6=166;CASE_A7=167;CASE_AF=175;CASE_BD=189
     */
 
 void __thiscall CPanelTy::Update2PanelWB(CPanelTy *this)
@@ -103,7 +107,7 @@ cf_common_exit_00502155:
   /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
   case CASE_4:
     if (local_64._0_4_ != this_00->field_0B99) goto cf_common_exit_00502155;
-    if (this_00->field_0B99 != 0xaf) {
+    if (this_00->field_0B99 != CASE_AF) {
       g_currentExceptionFrame = local_a8.previous;
       return;
     }

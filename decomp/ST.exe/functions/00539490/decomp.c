@@ -12,11 +12,6 @@ void __thiscall PausePanelTy::DonePausePanel(PausePanelTy *this)
   PausePanelTy *pPVar2;
   int errorCode;
   int iVar3;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
-  ccFntTy *extraout_ECX;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
-  ccFntTy *extraout_ECX_00;
-  ccFntTy *this_00;
   InternalExceptionFrame local_4c;
   PausePanelTy *local_8;
 
@@ -26,17 +21,13 @@ void __thiscall PausePanelTy::DonePausePanel(PausePanelTy *this)
   errorCode = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
   pPVar2 = local_8;
   if (errorCode == 0) {
-    /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
-    this_00 = extraout_ECX;
     if (local_8->field_0184 != 0) {
       StartSystemTy::sub_006E56B0(local_8->field_000C,local_8->field_0184);
-      /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
-      this_00 = extraout_ECX_00;
     }
     pPVar2->field_0184 = 0;
     g_pausePanel_008016E0 = (PausePanelTy *)0x0;
     if (pPVar2->field_017C != (ccFntTy *)0x0) {
-      ccFntTy::operator(this_00,(uint *)pPVar2->field_017C);
+      ccFntTy::operator((uint *)pPVar2->field_017C);
       pPVar2->field_017C = (ccFntTy *)0x0;
     }
     if (pPVar2->field_0180 != (ushort *)0x0) {

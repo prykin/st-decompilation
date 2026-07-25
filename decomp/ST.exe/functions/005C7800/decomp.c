@@ -15,9 +15,7 @@ void FUN_005c7800(void)
   undefined4 *puVar7;
   ushort *puVar8;
   SettMapTy *this;
-  cMf32 *this_00;
   uint uVar9;
-  cMf32 *this_01;
   int iVar10;
   byte *pbVar11;
   DWORD *pDVar12;
@@ -66,7 +64,7 @@ void FUN_005c7800(void)
   FUN_006b4640(DAT_0080759c,0,0,PTR_00811758,(uint *)0x0);
   Library::DKW::DDX::FUN_006bb370(DAT_0080759c,0,0);
   if (this->field_1F3F != (cMf32 *)0x0) {
-    cMf32::delete(this_00,this->field_1F3F);
+    cMf32::delete(this->field_1F3F);
   }
   if (DAT_0080877e == '\0') goto LAB_005c7ae0;
   if ((DAT_008067a0 != '\0') && (g_int_00811764 != (int *)0x0)) {
@@ -186,7 +184,7 @@ LAB_005c7ae0:
               ((CGenerate *)&local_5a80,(AnonShape_006952B0_7A982E30 *)&DAT_00853de0,
                (byte *)&this->field_1F53);
     thunk_FUN_006a00b0((AnonShape_006A00B0_8C09D559 *)&local_5a80);
-    cMf32::delete(this_01,PTR_00853ff8);
+    cMf32::delete(PTR_00853ff8);
     thunk_FUN_006a0070((int)&local_5a80);
   }
   puVar7 = Library::Ourlib::MF32INT::FUN_006f0ec0(0x345,&DAT_00853de4,0,0,0);

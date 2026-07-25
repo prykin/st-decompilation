@@ -192,8 +192,8 @@ void __thiscall SettMapTy::DeleteCtrls(SettMapTy *this)
                (BITMAPINFO *)g_startSystem_0081176C->field_002C);
   }
   FUN_006b3af0((int *)PTR_008075a8,this_00->field_1E22);
-  if ((((this_00->field_0x21e2 == '\0') || (SVar1 = this_00->field_1E26, SVar1 == 6)) ||
-      (SVar1 == CASE_7)) || (SVar1 == 0xe)) {
+  if ((((this_00->field_0x21e2 == '\0') || (SVar1 = this_00->field_1E26, SVar1 == CASE_6)) ||
+      (SVar1 == CASE_7)) || (SVar1 == CASE_E)) {
     this_00->field_002D = 0x20;
     this_00->field_0031 = 0;
     FUN_006e6080(this_00,2,g_startSystem_0081176C->field_0389,(undefined4 *)&this_00->field_0x1d);
@@ -269,7 +269,7 @@ void __thiscall SettMapTy::DeleteCtrls(SettMapTy *this)
     FUN_006b3af0((int *)PTR_008075a8,g_startSystem_0081176C->field_0540);
   }
   if ((this_00->field_0x21e3 != '\0') &&
-     (((SVar1 = this_00->field_1E26, SVar1 == 6 || (SVar1 == CASE_7)) || (SVar1 == 0xe)))) {
+     (((SVar1 = this_00->field_1E26, SVar1 == CASE_6 || (SVar1 == CASE_7)) || (SVar1 == CASE_E)))) {
     puVar7 = &this_00->field_1F60;
     local_c = 7;
     do {

@@ -41,7 +41,12 @@ import ghidra.program.model.address.AddressIterator;
 import ghidra.program.model.address.AddressSet;
 import ghidra.program.model.address.AddressSetView;
 import ghidra.program.model.data.DataType;
+import ghidra.program.model.data.DataTypeComponent;
 import ghidra.program.model.data.DataTypeManager;
+import ghidra.program.model.data.Enum;
+import ghidra.program.model.data.Pointer;
+import ghidra.program.model.data.Structure;
+import ghidra.program.model.data.TypeDef;
 import ghidra.program.model.listing.Bookmark;
 import ghidra.program.model.listing.BookmarkManager;
 import ghidra.program.model.listing.CodeUnitIterator;
@@ -139,6 +144,21 @@ public class STDecompExport extends GhidraScript {
         "\\bundefined(?:[1248])?\\b");
     private static final Pattern RESIDUAL_CONTROL_FLOW = Pattern.compile(
         "\\b(?:goto|LAB_[0-9A-Fa-f]+)\\b");
+    private static final Pattern GENERATED_ENUM_COMPOSITION = Pattern.compile(
+        "\\bCASE_(?:NEG_)?[0-9A-Fa-f]+\\s*\\|\\s*CASE_(?:NEG_)?[0-9A-Fa-f]+\\b");
+    private static final String GENERATED_ENUM_MARKER = "[STSwitchEnumApplier]";
+    private static final String CASE_NAME = "CASE_(?:NEG_)?[0-9A-Fa-f]+";
+    private static final Pattern FULL_ENUM_COMPOSITION = Pattern.compile(
+        "\\b(" + CASE_NAME + "(?:\\s*\\|\\s*" + CASE_NAME + ")+)\\b");
+    private static final Pattern ENUM_LOCAL_DECLARATION = Pattern.compile(
+        "(?m)^\\s*(?:const\\s+)?(?:enum\\s+)?" +
+        "([A-Za-z_][A-Za-z0-9_:]*)\\s*(?:\\*+\\s*)?" +
+        "([A-Za-z_][A-Za-z0-9_]*)\\s*(?:\\[[^;\\r\\n]+\\])?\\s*;");
+    private static final Pattern ENUM_POINTER_DECLARATION = Pattern.compile(
+        "(?m)^\\s*(?:const\\s+)?(?:struct\\s+|class\\s+)?" +
+        "([A-Za-z_][A-Za-z0-9_:]*)\\s*\\*+\\s*([A-Za-z_][A-Za-z0-9_]*)\\s*;");
+    private static final Pattern ENUM_FIELD_USE = Pattern.compile(
+        "\\b([A-Za-z_][A-Za-z0-9_]*)->([A-Za-z_][A-Za-z0-9_]*)\\b");
     private static final String PSEUDOCODE_COMMENT_MARKER = "/* ST_PSEUDO[";
     private static final String PSEUDOCODE_RUNTIME_INCLUDE =
         "#include \"../../pseudocode_runtime.h\"";
@@ -511,7 +531,9 @@ public class STDecompExport extends GhidraScript {
                 }
                 cCode = literalizeReferencedStrings(function, cCode);
                 NormalizedCode normalized = normalizePseudocode(cCode);
-                cCode = annotatePseudocode(normalized.code);
+                NormalizedCode enumNormalized =
+                    normalizeKnownEnumCompositions(function, normalized.code);
+                cCode = annotatePseudocode(enumNormalized.code);
                 writeText(dir.resolve("decomp.c"), cCode);
                 catalogPseudocodeIdioms(function, cCode);
                 catalogQualityIssues(function, cCode);
@@ -586,7 +608,9 @@ public class STDecompExport extends GhidraScript {
         String original = Files.readString(path, StandardCharsets.UTF_8);
         String literalized = literalizeReferencedStrings(function, original);
         NormalizedCode normalized = normalizePseudocode(literalized);
-        String annotated = annotatePseudocode(normalized.code);
+        NormalizedCode enumNormalized =
+            normalizeKnownEnumCompositions(function, normalized.code);
+        String annotated = annotatePseudocode(enumNormalized.code);
         if (!annotated.equals(original)) writeText(path, annotated);
         catalogPseudocodeIdioms(function, annotated);
         catalogQualityIssues(function, annotated);
@@ -637,6 +661,184 @@ public class STDecompExport extends GhidraScript {
         }
         String normalized = String.join(System.lineSeparator(), output);
         return new NormalizedCode(normalized, replacements);
+    }
+
+    /**
+     * Ghidra may prefer a flags-style spelling such as CASE_4|CASE_1 even
+     * after the same generated enum contains the exact CASE_5 member.  Fold
+     * only that proven presentation artifact.  Missing values, ambiguous
+     * operand types, semantic/manual enums, and mixed-enum expressions remain
+     * untouched so the strict quality gate can still reject them.
+     */
+    private NormalizedCode normalizeKnownEnumCompositions(Function function, String code) {
+        if (code == null || code.isEmpty()) return new NormalizedCode("", 0);
+        Map<String, Enum> variables = new LinkedHashMap<>();
+        for (Parameter parameter : function.getParameters()) {
+            Enum type = generatedExportEnum(parameter.getDataType());
+            if (type != null) variables.put(parameter.getName(), type);
+        }
+        Matcher declaration = ENUM_LOCAL_DECLARATION.matcher(code);
+        while (declaration.find()) {
+            Enum type = generatedExportEnumNamed(declaration.group(1));
+            if (type != null) variables.put(declaration.group(2), type);
+        }
+        Map<String, String> pointerOwners = exportPointerOwners(function, code);
+
+        int replacements = 0;
+        String[] lines = code.split("\\R", -1);
+        List<String> output = new ArrayList<>();
+        for (String line : lines) {
+            Matcher composition = FULL_ENUM_COMPOSITION.matcher(line);
+            StringBuilder rewritten = new StringBuilder();
+            int cursor = 0;
+            while (composition.find()) {
+                rewritten.append(line, cursor, composition.start());
+                String exact = exactEnumCompositionName(line, composition.group(1),
+                    variables, pointerOwners);
+                if (exact == null) rewritten.append(composition.group());
+                else {
+                    rewritten.append(exact);
+                    replacements++;
+                }
+                cursor = composition.end();
+            }
+            rewritten.append(line, cursor, line.length());
+            output.add(rewritten.toString());
+        }
+        return new NormalizedCode(String.join(System.lineSeparator(), output), replacements);
+    }
+
+    private String exactEnumCompositionName(String line, String expression,
+            Map<String, Enum> variables, Map<String, String> pointerOwners) {
+        Map<String, Enum> candidates = new LinkedHashMap<>();
+        for (Map.Entry<String, Enum> entry : variables.entrySet())
+            if (containsExportIdentifier(line, entry.getKey()))
+                candidates.put(entry.getValue().getPathName(), entry.getValue());
+
+        Matcher field = ENUM_FIELD_USE.matcher(line);
+        while (field.find()) {
+            Structure structure = exportOwnerStructure(pointerOwners.get(field.group(1)));
+            if (structure == null) continue;
+            for (DataTypeComponent component : structure.getDefinedComponents()) {
+                if (!field.group(2).equals(component.getFieldName())) continue;
+                Enum type = generatedExportEnum(component.getDataType());
+                if (type != null) candidates.put(type.getPathName(), type);
+                break;
+            }
+        }
+
+        Set<String> exactNames = new TreeSet<>();
+        for (Enum candidate : candidates.values()) {
+            String exact = exactEnumValueName(candidate, expression);
+            if (exact != null) exactNames.add(exact);
+        }
+        return exactNames.size() == 1 ? exactNames.iterator().next() : null;
+    }
+
+    private String exactEnumValueName(Enum type, String expression) {
+        Set<String> names = Set.of(type.getNames());
+        long value = 0;
+        boolean found = false;
+        for (String item : expression.split("\\s*\\|\\s*")) {
+            int separator = item.lastIndexOf("::");
+            String name = separator < 0 ? item : item.substring(separator + 2);
+            if (!names.contains(name)) return null;
+            value |= type.getValue(name);
+            found = true;
+        }
+        if (!found) return null;
+        String preferred = value < 0 ?
+            "CASE_NEG_" + Long.toHexString(-value).toUpperCase(Locale.ROOT) :
+            "CASE_" + Long.toHexString(value).toUpperCase(Locale.ROOT);
+        return names.contains(preferred) && type.getValue(preferred) == value ?
+            preferred : null;
+    }
+
+    private Map<String, String> exportPointerOwners(Function function, String code) {
+        Map<String, String> result = new LinkedHashMap<>();
+        String owner = exportFunctionOwner(function);
+        if (!owner.isBlank()) result.put("this", owner);
+        for (Parameter parameter : function.getParameters()) {
+            String pointed = pointedExportOwner(parameter.getDataType());
+            if (pointed != null) result.put(parameter.getName(), pointed);
+        }
+        Matcher declaration = ENUM_POINTER_DECLARATION.matcher(code);
+        while (declaration.find()) {
+            String declared = declaration.group(1);
+            if (exportOwnerStructure(declared) != null)
+                result.put(declaration.group(2), declared);
+        }
+        return result;
+    }
+
+    private String pointedExportOwner(DataType type) {
+        while (type instanceof TypeDef value) type = value.getBaseDataType();
+        if (!(type instanceof Pointer pointer)) return null;
+        DataType pointed = pointer.getDataType();
+        while (pointed instanceof TypeDef value) pointed = value.getBaseDataType();
+        return pointed instanceof Structure ? pointed.getName() : null;
+    }
+
+    private Enum generatedExportEnum(DataType type) {
+        while (type instanceof TypeDef value) type = value.getBaseDataType();
+        if (type instanceof Pointer pointer) {
+            type = pointer.getDataType();
+            while (type instanceof TypeDef value) type = value.getBaseDataType();
+        }
+        if (!(type instanceof Enum value)) return null;
+        String description = value.getDescription();
+        return description != null && description.contains(GENERATED_ENUM_MARKER) ?
+            value : null;
+    }
+
+    private Enum generatedExportEnumNamed(String name) {
+        String simple = exportLeaf(name);
+        List<DataType> matches = new ArrayList<>();
+        currentProgram.getDataTypeManager().findDataTypes(simple, matches);
+        for (DataType match : matches) {
+            Enum type = generatedExportEnum(match);
+            if (type != null && type.getName().equals(simple)) return type;
+        }
+        return null;
+    }
+
+    private Structure exportOwnerStructure(String owner) {
+        if (owner == null || owner.isBlank()) return null;
+        String name = exportLeaf(owner);
+        DataType direct = currentProgram.getDataTypeManager().getDataType("/" + name);
+        if (direct instanceof Structure) return (Structure)direct;
+        List<DataType> matches = new ArrayList<>();
+        currentProgram.getDataTypeManager().findDataTypes(name, matches);
+        for (DataType match : matches)
+            if (match instanceof Structure && !match.getPathName().contains("/VTables/"))
+                return (Structure)match;
+        return null;
+    }
+
+    private String exportFunctionOwner(Function function) {
+        String qualified = function.getName(true);
+        int separator = qualified.lastIndexOf("::");
+        if (separator <= 0) return "";
+        String owner = qualified.substring(0, separator);
+        return owner.equals("Global") || owner.startsWith("Library::") ? "" : owner;
+    }
+
+    private String exportLeaf(String owner) {
+        int separator = owner.lastIndexOf("::");
+        return separator < 0 ? owner : owner.substring(separator + 2);
+    }
+
+    private boolean containsExportIdentifier(String text, String name) {
+        int index = -1;
+        while ((index = text.indexOf(name, index + 1)) >= 0) {
+            boolean before = index == 0 ||
+                !Character.isJavaIdentifierPart(text.charAt(index - 1));
+            int afterIndex = index + name.length();
+            boolean after = afterIndex >= text.length() ||
+                !Character.isJavaIdentifierPart(text.charAt(afterIndex));
+            if (before && after) return true;
+        }
+        return false;
     }
 
     /**
@@ -1128,6 +1330,8 @@ public class STDecompExport extends GhidraScript {
                 RESIDUAL_UNDEFINED_TYPE, line, index + 1);
             addQualityMatches(evidence, "control_flow_label",
                 RESIDUAL_CONTROL_FLOW, line, index + 1);
+            addQualityMatches(evidence, "generated_enum_bitwise_composition",
+                GENERATED_ENUM_COMPOSITION, line, index + 1);
             addQualityMatches(evidence, "raw_indirect_call",
                 RAW_INDIRECT_CALL, line, index + 1);
             addQualityMatches(evidence, "packed_or_unaligned_piece",
@@ -1156,6 +1360,8 @@ public class STDecompExport extends GhidraScript {
                 field("source_file", "functions/" + functionAddress + "/decomp.c"),
                 field("kind", kind),
                 field("severity", qualitySeverity(kind)),
+                field("quality_stage", qualityStage(kind)),
+                field("regression_policy", qualityRegressionPolicy(kind)),
                 rawField("occurrences", Integer.toString(value.occurrences)),
                 rawField("lines", integerArray(value.lines)),
                 rawField("excerpts", jsonStringArray(value.excerpts)),
@@ -1188,13 +1394,48 @@ public class STDecompExport extends GhidraScript {
     private String qualitySeverity(String kind) {
         return switch (kind) {
             case "unexpanded_string_symbol", "casted_generic_field", "raw_indirect_call",
-                 "unresolved_register_input", "return_width_artifact" -> "high";
+                 "unresolved_register_input", "return_width_artifact",
+                 "generated_enum_bitwise_composition" -> "high";
             case "raw_pointer_offset", "packed_or_unaligned_piece",
                  "generic_global_aggregate", "undefined_type",
                  "flattened_global_record_array", "dynamic_array_indexing",
                  "string_based_aggregate_address" -> "medium";
             default -> "low";
         };
+    }
+
+    private String qualityStage(String kind) {
+        return switch (kind) {
+            case "return_width_artifact", "unresolved_register_input" -> "abi_recovery";
+            case "raw_indirect_call" -> "call_signature_recovery";
+            case "raw_pointer_offset", "anonymous_shape_type" -> "layout_recovery";
+            case "casted_generic_field", "packed_or_unaligned_piece",
+                 "dynamic_array_indexing" -> "field_type_refinement";
+            case "generic_field_name" -> "semantic_naming_after_layout";
+            case "generated_enum_bitwise_composition" -> "enum_domain_recovery";
+            case "control_flow_label" -> "control_flow_presentation";
+            case "generic_global_aggregate", "flattened_global_record_array",
+                 "string_based_aggregate_address" -> "aggregate_recovery";
+            default -> "general_type_recovery";
+        };
+    }
+
+    private String qualityRegressionPolicy(String kind) {
+        return switch (kind) {
+            case "generated_enum_bitwise_composition" -> "strict_zero";
+            case "generic_field_name", "casted_generic_field", "anonymous_shape_type",
+                 "generic_data_symbol" -> "stage_transition";
+            case "control_flow_label" -> "informational";
+            default -> "nonincreasing";
+        };
+    }
+
+    private long qualityOccurrencesForPolicy(String policy) {
+        long result = 0;
+        for (Map.Entry<String, QualityAggregate> item : qualityAggregates.entrySet())
+            if (policy.equals(qualityRegressionPolicy(item.getKey())))
+                result += item.getValue().occurrences;
+        return result;
     }
 
     private String qualityResolution(String kind) {
@@ -1205,6 +1446,8 @@ public class STDecompExport extends GhidraScript {
                 "recover the adjacent record table and its index bias; the decompiler folded the table base onto a neighboring string symbol";
             case "casted_generic_field" ->
                 "repair receiver/pointer-family ownership, then make the field width and signedness match the machine access";
+            case "generated_enum_bitwise_composition" ->
+                "grow the generated enum domain from the exact OR-composed value before applying it again";
             case "generic_global_aggregate" ->
                 "recover the singleton or aggregate structure behind the global pointer and name stable semantic fields";
             case "generic_field_name" ->
@@ -1420,6 +1663,8 @@ public class STDecompExport extends GhidraScript {
             categories.add(jsonObject(
                 field("kind", item.getKey()),
                 field("severity", qualitySeverity(item.getKey())),
+                field("quality_stage", qualityStage(item.getKey())),
+                field("regression_policy", qualityRegressionPolicy(item.getKey())),
                 rawField("functions", Integer.toString(item.getValue().functions)),
                 rawField("occurrences", Integer.toString(item.getValue().occurrences)),
                 field("recommended_resolution", qualityResolution(item.getKey()))
@@ -1432,6 +1677,14 @@ public class STDecompExport extends GhidraScript {
             rawField("body_function_count", Integer.toString(bodyFunctionCount)),
             rawField("functions_with_issues", Integer.toString(qualityIssueFunctions.size())),
             rawField("issue_record_count", Integer.toString(qualityIssueRows.size())),
+            rawField("strict_zero_occurrence_count",
+                Long.toString(qualityOccurrencesForPolicy("strict_zero"))),
+            rawField("nonincreasing_occurrence_count",
+                Long.toString(qualityOccurrencesForPolicy("nonincreasing"))),
+            rawField("stage_transition_occurrence_count",
+                Long.toString(qualityOccurrencesForPolicy("stage_transition"))),
+            rawField("informational_occurrence_count",
+                Long.toString(qualityOccurrencesForPolicy("informational"))),
             rawField("categories", "[" + String.join(",", categories) + "]")
         ));
         writeText(programRoot.resolve("pseudocode_runtime.h"),
@@ -2792,6 +3045,12 @@ public class STDecompExport extends GhidraScript {
                 Integer.toString(qualityIssueFunctions.size())),
             rawField("decomp_quality_record_count",
                 Integer.toString(qualityIssueRows.size())),
+            rawField("decomp_quality_strict_zero_occurrence_count",
+                Long.toString(qualityOccurrencesForPolicy("strict_zero"))),
+            rawField("decomp_quality_nonincreasing_occurrence_count",
+                Long.toString(qualityOccurrencesForPolicy("nonincreasing"))),
+            rawField("decomp_quality_stage_transition_occurrence_count",
+                Long.toString(qualityOccurrencesForPolicy("stage_transition"))),
             rawField("executable_byte_count", Long.toString(executableByteCount)),
             rawField("function_covered_executable_byte_count",
                 Long.toString(coveredExecutableByteCount)),

@@ -13,16 +13,16 @@ void __thiscall CPanelTy::PaintMunition(CPanelTy *this,int param_1)
   uint uVar3;
   int iVar4;
   byte *pbVar5;
-  byte *pbVar6;
-  int iVar7;
-  byte bVar8;
-  uint uVar9;
+  int iVar6;
+  byte bVar7;
+  uint uVar8;
+  CPanelTy_field_0C11State *pCVar9;
   bool bVar10;
   AnonShape_GLOBAL_0081175C_57F682DD *pAVar11;
   InternalExceptionFrame local_70;
   CPanelTy *local_2c;
   int local_28;
-  byte *local_24;
+  CPanelTy_field_0C11State *local_24;
   int local_20;
   uint local_1c;
   uint local_18;
@@ -46,9 +46,9 @@ void __thiscall CPanelTy::PaintMunition(CPanelTy *this,int param_1)
   pCVar2 = local_2c;
   if (iVar4 != 0) {
     g_currentExceptionFrame = local_70.previous;
-    iVar7 = ReportDebugMessage("E:\\__titans\\Andrey\\cpanel4.cpp",0x153,0,iVar4,"%s"
+    iVar6 = ReportDebugMessage("E:\\__titans\\Andrey\\cpanel4.cpp",0x153,0,iVar4,"%s"
                                ,"CPanelTy::PaintMunition");
-    if (iVar7 == 0) {
+    if (iVar6 == 0) {
       RaiseInternalException(iVar4,0,"E:\\__titans\\Andrey\\cpanel4.cpp",0x153);
       return;
     }
@@ -56,7 +56,7 @@ void __thiscall CPanelTy::PaintMunition(CPanelTy *this,int param_1)
   }
   DibPut((AnonShape_006B5B10_E0D06CF1 *)local_2c->field_0194,param_1,0x36,'\x01',
          (byte *)local_2c->field_09F9);
-  pbVar6 = &pCVar2->field_0C11;
+  pCVar9 = &pCVar2->field_0C11;
   local_6 = 0;
   local_28 = -1;
   do {
@@ -112,13 +112,13 @@ switchD_005052d8_default:
       local_14 = CONCAT31(local_14._1_3_,local_6);
     }
 LAB_0050530c:
-    local_24 = pbVar6;
+    local_24 = pCVar9;
     if (g_allPlayers_007FA174 != (STAllPlayersC *)0x0) {
       switch(local_28) {
       case 0:
         local_10 = 0xf;
         local_c = 0xe;
-        if (*pbVar6 == 0) {
+        if (*pCVar9 == CASE_0) {
 LAB_005053b0:
           pAVar11 = (AnonShape_GLOBAL_0081175C_57F682DD *)pCVar2->field_0292;
           iVar4 = 1;
@@ -139,7 +139,7 @@ LAB_005053b0:
       case 1:
         local_10 = 0xf;
         local_c = 0x1a;
-        if (*pbVar6 == 0) {
+        if (*pCVar9 == CASE_0) {
           pAVar11 = (AnonShape_GLOBAL_0081175C_57F682DD *)pCVar2->field_0292;
           iVar4 = 2;
         }
@@ -161,7 +161,7 @@ LAB_005053b0:
       case 2:
         local_10 = 0x16;
         local_c = 0xf;
-        if (*pbVar6 == 0) {
+        if (*pCVar9 == CASE_0) {
           iVar4 = 9;
 LAB_00505581:
           pAVar11 = (AnonShape_GLOBAL_0081175C_57F682DD *)pCVar2->field_0292;
@@ -174,7 +174,7 @@ LAB_00505581:
       case 3:
         local_10 = 0x1d;
         local_c = 0x31;
-        if (*pbVar6 == 0) {
+        if (*pCVar9 == CASE_0) {
           pAVar11 = (AnonShape_GLOBAL_0081175C_57F682DD *)pCVar2->field_0292;
           iVar4 = 4;
         }
@@ -186,7 +186,7 @@ LAB_00505581:
       case 4:
         local_10 = 0x1b;
         local_c = 0x25;
-        if (*pbVar6 == 0) {
+        if (*pCVar9 == CASE_0) {
           pAVar11 = (AnonShape_GLOBAL_0081175C_57F682DD *)pCVar2->field_0292;
           iVar4 = 6;
         }
@@ -198,7 +198,7 @@ LAB_00505581:
       case 5:
         local_10 = 0x28;
         local_c = 0x32;
-        if (*pbVar6 == 0) {
+        if (*pCVar9 == CASE_0) {
           iVar4 = 5;
           goto LAB_00505581;
         }
@@ -208,7 +208,7 @@ LAB_00505581:
       case 6:
         local_10 = 0x1f;
         local_c = 0x22;
-        if (*pbVar6 == 0) {
+        if (*pCVar9 == CASE_0) {
           pAVar11 = (AnonShape_GLOBAL_0081175C_57F682DD *)pCVar2->field_0292;
           iVar4 = 7;
         }
@@ -220,7 +220,7 @@ LAB_00505581:
       case 7:
         local_10 = 0x1e;
         local_c = 0x3b;
-        if (*pbVar6 == 0) {
+        if (*pCVar9 == CASE_0) {
           pAVar11 = (AnonShape_GLOBAL_0081175C_57F682DD *)pCVar2->field_0292;
           iVar4 = 8;
         }
@@ -232,7 +232,7 @@ LAB_00505581:
       case 8:
         local_10 = 0x28;
         local_c = 0x19;
-        if (*pbVar6 == 0) {
+        if (*pCVar9 == CASE_0) {
           iVar4 = 3;
           goto LAB_00505581;
         }
@@ -266,33 +266,33 @@ switchD_00505324_default:
              local_c + 0x36,'\x06',pbVar5);
     }
     uVar3 = local_14;
-    if (*pbVar6 == 0) {
+    if (*pCVar9 == CASE_0) {
       local_1c = 0;
     }
     else {
-      local_1c = ((uint)*(ushort *)(pbVar6 + 2) * 0xf) / (uint)*(ushort *)(pbVar6 + 4);
+      local_1c = ((uint)*(ushort *)(pCVar9 + 2) * 0xf) / (uint)*(ushort *)(pCVar9 + 4);
     }
     local_18 = local_18 & 0xffffff00;
     if (local_1c != 0) {
-      uVar9 = 0;
+      uVar8 = 0;
       local_20 = (local_14 & 0xff) * 0xb + 0x3b;
       do {
-        pbVar6 = (byte *)FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)pCVar2->field_02B6,3);
-        DibPut((AnonShape_006B5B10_E0D06CF1 *)pCVar2->field_0194,param_1 + 0x4d + uVar9 * 4,local_20
-               ,'\x01',pbVar6);
-        bVar8 = (byte)local_18 + 1;
+        pbVar5 = (byte *)FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)pCVar2->field_02B6,3);
+        DibPut((AnonShape_006B5B10_E0D06CF1 *)pCVar2->field_0194,param_1 + 0x4d + uVar8 * 4,local_20
+               ,'\x01',pbVar5);
+        bVar7 = (byte)local_18 + 1;
         /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-        local_18 = CONCAT31(local_18._1_3_,bVar8);
-        uVar9 = (uint)bVar8;
-      } while (uVar9 < local_1c);
+        local_18 = CONCAT31(local_18._1_3_,bVar7);
+        uVar8 = (uint)bVar7;
+      } while (uVar8 < local_1c);
     }
     if ((byte)local_18 < 0xf) {
       local_20 = (uVar3 & 0xff) * 0xb + 0x3b;
       iVar4 = 0xf - (local_18 & 0xff);
       local_1c = param_1 + 0x4d + (local_18 & 0xff) * 4;
       do {
-        pbVar6 = (byte *)FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)pCVar2->field_02B6,0);
-        DibPut((AnonShape_006B5B10_E0D06CF1 *)pCVar2->field_0194,local_1c,local_20,'\x01',pbVar6);
+        pbVar5 = (byte *)FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)pCVar2->field_02B6,0);
+        DibPut((AnonShape_006B5B10_E0D06CF1 *)pCVar2->field_0194,local_1c,local_20,'\x01',pbVar5);
         local_1c = local_1c + 4;
         iVar4 = iVar4 + -1;
       } while (iVar4 != 0);
@@ -301,11 +301,11 @@ switchD_00505324_default:
     ccFntTy::SetSurf(pCVar2->field_01B8,pCVar2->field_0194,0,param_1 + 0x8f,
                      (uVar3 & 0xff) * 0xb + 0x39,0x23,0xc);
     ccFntTy::WrTxt(pCVar2->field_01B8,(uint *)&pCVar2->field_0x1e1,-3,-1,0,-1,-1);
-    pbVar6 = local_24;
+    pCVar9 = local_24;
 cf_continue_loop_00505716:
     local_6 = local_6 + 1;
     local_28 = local_28 + 1;
-    pbVar6 = pbVar6 + 6;
+    pCVar9 = pCVar9 + 6;
     if (9 < local_6) {
       g_currentExceptionFrame = local_70.previous;
       return;

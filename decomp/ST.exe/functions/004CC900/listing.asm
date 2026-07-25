@@ -1,4 +1,4 @@
-FUN_004cc900:
+TLOBaseTy::sub_004CC900:
 004CC900  56                        PUSH ESI
 004CC901  8B F1                     MOV ESI,ECX
 004CC903  8B 8E 03 06 00 00         MOV ECX,dword ptr [ESI + 0x603]

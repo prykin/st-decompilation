@@ -3,7 +3,12 @@
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\load_obj.cpp
-   ChooseMapTy::ShowDescription */
+   ChooseMapTy::ShowDescription
+
+   [STSwitchEnumApplier] Switch target field_1A5F uses
+   /SubmarineTitans/Recovered/Enums/ChooseMapTy_field_1A5FState. Cases:
+   CASE_0=0;CASE_1=1;CASE_2=2;CASE_3=3;CASE_4=4;CASE_5=5;CASE_6=6;CASE_7=7;CASE_9=9;CASE_A=10;CASE_B=11;CASE_C=12;CASE_D=13;CASE_10=16;CASE_13=19;CASE_14=20;CASE_15=21
+    */
 
 void __thiscall ChooseMapTy::ShowDescription(ChooseMapTy *this,uint param_1)
 
@@ -23,8 +28,6 @@ void __thiscall ChooseMapTy::ShowDescription(ChooseMapTy *this,uint param_1)
   uint *puVar13;
   uint uVar14;
   uint uVar15;
-  cMf32 *this_00;
-  cMf32 *this_01;
   int iVar16;
   ChooseMapTy *pCVar17;
   char *pcVar18;
@@ -93,8 +96,7 @@ void __thiscall ChooseMapTy::ShowDescription(ChooseMapTy *this,uint param_1)
       pcVar18 = pcVar18 + 1;
     }
     CVar2 = local_10->field_1A5F;
-    if ((8 < CVar2) && ((CVar2 < (CASE_C|CASE_1) || ((CVar2 == CASE_13 && (DAT_00803400 == '\f')))))
-       ) {
+    if ((8 < CVar2) && ((CVar2 < CASE_D || ((CVar2 == CASE_13 && (DAT_00803400 == '\f')))))) {
       uVar14 = 0xffffffff;
       pcVar10 = PTR_DAT_0079c06c;
       do {
@@ -180,7 +182,7 @@ void __thiscall ChooseMapTy::ShowDescription(ChooseMapTy *this,uint param_1)
     g_currentExceptionFrame = local_bc.previous;
     if (local_14 != (cMf32 *)0x0) {
       StartSystemTy::LoadMapData(g_startSystem_0081176C,local_14,pCVar17->field_1A5F);
-      cMf32::delete(this_00,pcVar11);
+      cMf32::delete(pcVar11);
     }
     goto LAB_005ae602;
   }
@@ -308,7 +310,7 @@ void __thiscall ChooseMapTy::ShowDescription(ChooseMapTy *this,uint param_1)
       iVar7 = local_c;
       local_8 = &DAT_0080874e;
       cMf32::RecGet(local_14,0xc,PTR_DAT_0079c068,(int *)&local_8,0);
-      cMf32::delete(this_01,pcVar11);
+      cMf32::delete(pcVar11);
       if ((DArrayTy *)g_startSystem_0081176C->field_0548 != (DArrayTy *)0x0) {
         FUN_006b5570((DArrayTy *)g_startSystem_0081176C->field_0548);
       }

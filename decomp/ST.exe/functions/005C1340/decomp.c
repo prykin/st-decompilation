@@ -15,8 +15,6 @@ void __thiscall MReportTy::SetCtrl(MReportTy *this,int param_1)
   ushort *puVar5;
   ccFntTy *pcVar6;
   int iVar7;
-  ccFntTy *this_00;
-  ccFntTy *this_01;
   undefined4 *puVar8;
   undefined4 local_470 [256];
   InternalExceptionFrame local_70;
@@ -60,14 +58,14 @@ void __thiscall MReportTy::SetCtrl(MReportTy *this,int param_1)
               ((int)local_470,0,0x100,0x2e,0x10,(undefined4 *)&pMVar2->field_0x1a3);
     PutDDX(0,0,'\x01',(BITMAPINFO *)*puVar8);
     if (pMVar2->field_0083 != (ccFntTy *)0x0) {
-      ccFntTy::operator(this_00,(uint *)pMVar2->field_0083);
+      ccFntTy::operator((uint *)pMVar2->field_0083);
     }
     pcVar6 = (ccFntTy *)thunk_FUN_005defe0(*puVar8,(undefined *)0x0,DAT_00807dd9);
     pMVar2->field_0083 = pcVar6;
     pcVar6->field_0058 = 1;
     pcVar6->field_005C = 0;
     if (pMVar2->field_0087 != (ccFntTy *)0x0) {
-      ccFntTy::operator(this_01,(uint *)pMVar2->field_0087);
+      ccFntTy::operator((uint *)pMVar2->field_0087);
     }
     pcVar6 = (ccFntTy *)thunk_FUN_005df290(*puVar8,(undefined *)0x0,DAT_00807dd9);
     pMVar2->field_0087 = pcVar6;

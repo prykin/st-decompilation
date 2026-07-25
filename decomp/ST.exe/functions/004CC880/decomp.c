@@ -1,16 +1,20 @@
 
-undefined4 __thiscall FUN_004cc880(void *this,undefined4 param_1)
+/* [STMethodOwnerApplier] Structural method owner recovered as TLOBaseTy.
+   Evidence: this_call_owners=[TLOBaseTy]; agreed_this_calls=1; incoming_this_accesses=6;
+   incoming_edx_uses=0; incoming_stack_parameter_uses=1; direct_non_thunk_callers=0;
+   incoming_ecx_receiver_callers=0; attributed_named_callers=1; owner_evidence_coverage=adequate */
+
+undefined4 __thiscall TLOBaseTy::sub_004CC880(TLOBaseTy *this,undefined4 param_1)
 
 {
   int iVar1;
 
-  iVar1 = *(int *)((int)this + 0x440);
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
+  iVar1 = this->field_0440;
   if ((((iVar1 != 2) && (iVar1 != 3)) && (iVar1 != 4)) &&
-     (*(undefined4 *)((int)this + 0x440) = param_1, *(int *)((int)this + 0x444) != 0)) {
-    iVar1 = GetPlayerRaceId(*(char *)((int)this + 0x24));
-    if (((char)iVar1 != '\x03') || (*(int *)((int)this + 0x43c) == 2)) {
-      *(undefined4 *)((int)this + 0x448) = 1;
+     (this->field_0440 = param_1, this->field_0444 != 0)) {
+    iVar1 = GetPlayerRaceId(*(char *)&this->field_0024);
+    if (((char)iVar1 != '\x03') || (this->field_043C == 2)) {
+      this->field_0448 = 1;
     }
   }
   return 0;

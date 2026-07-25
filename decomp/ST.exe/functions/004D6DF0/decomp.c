@@ -1,38 +1,36 @@
 
-int __fastcall FUN_004d6df0(int *param_1)
+/* [STMethodOwnerApplier] Structural method owner recovered as TLOBaseTy.
+   Evidence: this_call_owners=[TLOBaseTy]; agreed_this_calls=1; incoming_this_accesses=6;
+   incoming_edx_uses=0; incoming_stack_parameter_uses=0; direct_non_thunk_callers=0;
+   incoming_ecx_receiver_callers=0; attributed_named_callers=1; owner_evidence_coverage=adequate */
+
+int __thiscall TLOBaseTy::sub_004D6DF0(TLOBaseTy *this)
 
 {
-  int iVar1;
+  dword dVar1;
   int iVar2;
 
-  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-  iVar1 = (**(code **)(*param_1 + 0x2c))();
-  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-  if ((iVar1 < 0x32) || (iVar1 = (**(code **)(*param_1 + 0x2c))(), 0x73 < iVar1)) {
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-    iVar1 = (**(code **)(*param_1 + 0x2c))();
-    if (iVar1 < 1) {
+  dVar1 = (*this->vtable->slot_2C)(this);
+  if (((int)dVar1 < 0x32) || (dVar1 = (*this->vtable->slot_2C)(this), 0x73 < (int)dVar1)) {
+    dVar1 = (*this->vtable->slot_2C)(this);
+    if ((int)dVar1 < 1) {
       return 0;
     }
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-    iVar1 = (**(code **)(*param_1 + 0x2c))();
-    if (0x28 < iVar1) {
+    dVar1 = (*this->vtable->slot_2C)(this);
+    if (0x28 < (int)dVar1) {
       return 0;
     }
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-    iVar1 = (**(code **)(*param_1 + 0x2c))();
-    iVar1 = *(int *)(&DAT_007e061c + iVar1 * 4);
+    dVar1 = (*this->vtable->slot_2C)(this);
+    iVar2 = *(int *)(&DAT_007e061c + dVar1 * 4);
   }
   else {
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-    iVar1 = (**(code **)(*param_1 + 0x2c))();
-    iVar1 = *(int *)(&DAT_007e22f8 + iVar1 * 4);
+    dVar1 = (*this->vtable->slot_2C)(this);
+    iVar2 = *(int *)(&DAT_007e22f8 + dVar1 * 4);
   }
-  if (iVar1 == 0) {
+  if (iVar2 == 0) {
     return 0;
   }
-  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-  iVar2 = (**(code **)(*param_1 + 0xc4))();
-  return ((100 - iVar2) * iVar1) / 100;
+  dVar1 = (*this->vtable->slot_C4)(this);
+  return (int)((100 - dVar1) * iVar2) / 100;
 }
 

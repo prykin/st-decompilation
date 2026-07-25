@@ -12,14 +12,25 @@
    [STSwitchEnumApplier] Switch target field_0BFA uses
    /SubmarineTitans/Recovered/Enums/CPanelTy_field_0BFAState. Cases:
    CASE_0=0;CASE_1=1;CASE_3=3;CASE_4=4;CASE_53=83;CASE_54=84;CASE_55=85;CASE_56=86;CASE_57=87;CASE_58=88;CASE_59=89;CASE_5A=90;CASE_5B=91;CASE_5C=92;CASE_5D=93;CASE_5E=94;CASE_61=97;CASE_62=98;CASE_63=99;CASE_64=100;CASE_67=103;CASE_68=104;CASE_6D=109;CASE_6E=110;CASE_70=112;CASE_72=114;CASE_73=115
-    */
+
+   [STSwitchEnumApplier] Switch target field_0BF5 uses
+   /SubmarineTitans/Recovered/Enums/CPanelTy_field_0BF5State. Cases:
+   CASE_0=0;CASE_1=1;CASE_2=2;CASE_3=3;CASE_4=4;CASE_32=50;CASE_33=51;CASE_34=52;CASE_35=53;CASE_36=54;CASE_37=55;CASE_38=56;CASE_39=57;CASE_3A=58;CASE_3B=59;CASE_3C=60;CASE_3D=61;CASE_3E=62;CASE_3F=63;CASE_40=64;CASE_41=65;CASE_42=66;CASE_43=67;CASE_44=68;CASE_45=69;CASE_46=70;CASE_47=71;CASE_48=72;CASE_49=73;CASE_4A=74;CASE_4B=75;CASE_4C=76;CASE_4D=77;CASE_4E=78;CASE_4F=79;CASE_50=80;CASE_51=81;CASE_52=82;CASE_53=83;CASE_54=84;CASE_55=85;CASE_56=86;CASE_57=87;CASE_58=88;CASE_59=89;CASE_5A=90;CASE_5B=91;CASE_5C=92;CASE_5D=93;CASE_5E=94;CASE_5F=95;CASE_61=97;CASE_62=98;CASE_63=99;CASE_64=100;CASE_65=101;CASE_67=103;CASE_68=104;CASE_6D=109;CASE_6E=110;CASE_6F=111;CASE_70=112;CASE_72=114;CASE_73=115;CASE_DD=221;CASE_DE=222;CASE_E0=224;CASE_FD=253;CASE_FE=254
+
+   [STSwitchEnumApplier] Switch target field_0C11 uses
+   /SubmarineTitans/Recovered/Enums/CPanelTy_field_0C11State. Cases:
+   CASE_0=0;CASE_1=1;CASE_2=2;CASE_3=3;CASE_4=4
+
+   [STSwitchEnumApplier] Switch target field_0C3C uses
+   /SubmarineTitans/Recovered/Enums/CPanelTy_field_0C3CState. Cases:
+   CASE_0=0;CASE_1=1;CASE_2=2;CASE_3=3;CASE_4=4 */
 
 void __thiscall CPanelTy::PaintCtrlObjSI(CPanelTy *this)
 
 {
   undefined1 *resourceString;
   char cVar1;
-  byte bVar2;
+  CPanelTy_field_0C11State CVar2;
   CPanelTy_field_0BF5State CVar3;
   code *pcVar4;
   CPanelTy *this_00;
@@ -171,17 +182,17 @@ LAB_0050a4e4:
           uVar15 = 0;
           wsprintfA((LPSTR)&DAT_0080f33a,"%06d",*(undefined4 *)&this_00->field_0xc12);
           switch(this_00->field_0C11) {
-          case 0:
+          case CASE_0:
             uVar15 = 4;
             break;
-          case 1:
-          case 3:
+          case CASE_1:
+          case CASE_3:
             uVar15 = 7;
             break;
-          case 2:
+          case CASE_2:
             uVar15 = 6;
             break;
-          case 4:
+          case CASE_4:
             uVar15 = 5;
           }
           ccFntTy::WrStr(this_00->field_01C4,&DAT_0080f33a,-1,-1,uVar15);
@@ -190,10 +201,10 @@ LAB_0050a4e4:
         }
         break;
       case CASE_FD:
-        bVar2 = this_00->field_0C11;
-        if ((bVar2 != 0) && (bVar2 < 0x16)) {
+        CVar2 = this_00->field_0C11;
+        if ((CVar2 != CASE_0) && (CVar2 < 0x16)) {
           pbVar7 = (byte *)FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_02CE,
-                                        bVar2 - 1);
+                                        CVar2 - 1);
           DibPut((AnonShape_006B5B10_E0D06CF1 *)this_00->field_0194,0x29,0x51,'\x01',pbVar7);
         }
         pbVar7 = (byte *)FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_02CA,10);
@@ -300,10 +311,10 @@ LAB_0050af64:
   case CASE_53:
     ccFntTy::SetSurf(this_00->field_01B8,this_00->field_0194,0,0x24,0x4c,0xa4,0x2b);
     switch(this_00->field_0C3C) {
-    case 0:
+    case CASE_0:
       UVar9 = 0x36bb;
       goto cf_common_exit_0050B38B;
-    case 1:
+    case CASE_1:
       DibPut((AnonShape_006B5B10_E0D06CF1 *)this_00->field_0194,0x27,0x51,'\x01',
              (byte *)this_00->field_0A0D);
       ccFntTy::SetSurf(this_00->field_01B8,this_00->field_0194,0,0x15,0x6c,0xc3,0xb);
@@ -343,7 +354,7 @@ LAB_0050af64:
         } while (iVar5 < 0xb9);
       }
       break;
-    case 2:
+    case CASE_2:
       iVar20 = -1;
       iVar19 = -1;
       uVar6 = 5;
@@ -357,7 +368,7 @@ LAB_0050af64:
       this_01 = this_00->field_01BC;
       uVar15 = 1;
       goto cf_common_exit_0050BD93;
-    case 3:
+    case CASE_3:
       UVar9 = 0x36be;
 cf_common_exit_0050B38B:
       iVar20 = -1;
@@ -368,7 +379,7 @@ cf_common_exit_0050B38B:
       puVar11 = (uint *)LoadResourceString(UVar9,g_module_00807618);
       ccFntTy::WrTxt(this_00->field_01B8,puVar11,iVar5,iVar13,uVar6,iVar19,iVar20);
       break;
-    case 4:
+    case CASE_4:
       if (this_00->field_0C31 != '\0') {
         PaintNameResSI(this_00);
         PaintPerResSI(this_00);
@@ -750,7 +761,7 @@ LAB_0050b386:
     pbVar7 = (byte *)FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_02B2,1);
     DibPut((AnonShape_006B5B10_E0D06CF1 *)this_00->field_0194,0x33,0x50,'\x01',pbVar7);
     uVar6 = 0;
-    if (this_00->field_0C11 != 0) {
+    if (this_00->field_0C11 != CASE_0) {
       iVar5 = 0x35;
       do {
         pbVar7 = (byte *)FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_02B6,1);

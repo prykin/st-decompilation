@@ -60,7 +60,7 @@ TLOBaseTy::sub_004CAFC0
     thunk_FUN_004df6f0(this,param_1,param_2,param_3,param_4);
     return;
   }
-  if (TVar4 == 0x44) {
+  if (TVar4 == CASE_44) {
     thunk_FUN_004dea90(this,param_1,param_2,(int *)param_3,(int *)param_4);
     return;
   }

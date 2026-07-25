@@ -7,7 +7,11 @@
 
    [STSwitchEnumApplier] Switch target field_023F uses
    /SubmarineTitans/Recovered/Enums/CPanelTy_field_023FState. Cases:
-   CASE_1=1;CASE_2=2;CASE_3=3;CASE_4=4 */
+   CASE_1=1;CASE_2=2;CASE_3=3;CASE_4=4
+
+   [STSwitchEnumApplier] Switch target field_023F uses
+   /SubmarineTitans/Recovered/Enums/CPanelTy_field_023FState. Cases:
+   CASE_1=1;CASE_2=2;CASE_3=3;CASE_4=4;CASE_5=5;CASE_6=6 */
 
 void __thiscall CPanelTy::SwitchCPanel(CPanelTy *this)
 
@@ -47,7 +51,7 @@ void __thiscall CPanelTy::SwitchCPanel(CPanelTy *this)
         case CASE_1:
           thunk_FUN_004a9b60(local_10->field_011C,local_10->field_0120,local_10->field_0124,
                              local_10->field_0128);
-          this_00->field_023F = CASE_4|CASE_2;
+          this_00->field_023F = CASE_6;
           if (g_prodPanel_008016E8 != (ProdPanelTy *)0x0) {
             ProdPanelTy::SetPanel(g_prodPanel_008016E8,'\0');
           }

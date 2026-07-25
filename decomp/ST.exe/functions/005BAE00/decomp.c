@@ -158,7 +158,7 @@ void __thiscall PrividerTy::NonePrivider(PrividerTy *this,undefined4 *param_1)
                 if (g_cursorClass_00802A30 != (CursorClassTy *)0x0) {
                   iVar8 = g_cursorClass_00802A30->field_00C9;
                   iVar9 = g_cursorClass_00802A30->field_00C5;
-                  g_cursorClass_00802A30->field_0493 = 1;
+                  g_cursorClass_00802A30->field_0493 = CASE_1;
                   pCVar5->field_0494 = 0xffff;
                   CursorClassTy::SetGCType(pCVar5,CASE_0,iVar9,iVar8);
                   CursorClassTy::DrawSprite(pCVar5,pCVar5->field_00C5,pCVar5->field_00C9);
@@ -189,7 +189,7 @@ joined_r0x005bb4e0:
             if (g_cursorClass_00802A30 != (CursorClassTy *)0x0) {
               iVar8 = g_cursorClass_00802A30->field_00C9;
               iVar9 = g_cursorClass_00802A30->field_00C5;
-              g_cursorClass_00802A30->field_0493 = 1;
+              g_cursorClass_00802A30->field_0493 = CASE_1;
               pCVar5->field_0494 = 0xffff;
               CursorClassTy::SetGCType(pCVar5,CASE_0,iVar9,iVar8);
               CursorClassTy::DrawSprite(pCVar5,pCVar5->field_00C5,pCVar5->field_00C9);
@@ -229,7 +229,7 @@ LAB_005bb532:
       if (g_cursorClass_00802A30 != (CursorClassTy *)0x0) {
         iVar8 = g_cursorClass_00802A30->field_00C9;
         iVar9 = g_cursorClass_00802A30->field_00C5;
-        g_cursorClass_00802A30->field_0493 = 1;
+        g_cursorClass_00802A30->field_0493 = CASE_1;
         pCVar5->field_0494 = 0xffff;
         CursorClassTy::SetGCType(pCVar5,CASE_0,iVar9,iVar8);
         CursorClassTy::DrawSprite(pCVar5,pCVar5->field_00C5,pCVar5->field_00C9);

@@ -48,6 +48,7 @@ import ghidra.program.model.listing.CommentType;
 import ghidra.program.model.listing.Data;
 import ghidra.program.model.listing.Function;
 import ghidra.program.model.listing.FunctionTag;
+import ghidra.program.model.listing.Parameter;
 import ghidra.program.model.listing.GhidraClass;
 import ghidra.program.model.listing.Listing;
 import ghidra.program.model.mem.MemoryAccessException;
@@ -65,6 +66,8 @@ public class STVTableApplier extends GhidraScript {
         new CategoryPath("/SubmarineTitans/Recovered/VTableFunctions");
     private static final String FUNCTION_TAG = "RECOVERED_VTABLE_SLOT";
     private static final String VIRTUAL_METHOD_TAG = "RECOVERED_VIRTUAL_METHOD";
+    private static final String MESSAGE_HANDLER_TAG = "RECOVERED_MESSAGE_HANDLER";
+    private static final String MESSAGE_PATH = "/SubmarineTitans/Recovered/STMessage";
     private static final String COMMENT_MARKER = "[STVTableApplier]";
     private static final String LAYOUT_HASH_MARKER = "; generated_layout_sha256=";
     private static final String SIGNATURE_HASH_MARKER = "; generated_signature_sha256=";
@@ -736,14 +739,33 @@ public class STVTableApplier extends GhidraScript {
     private Function trustedSignatureFunction(Function entry) {
         if (entry == null) return null;
         Function target = entry.isThunk() ? entry.getThunkedFunction(true) : entry;
+        if (target != null && hasTag(target, MESSAGE_HANDLER_TAG) &&
+                isMessageHandlerSignature(target)) {
+            // A folded handler body may have a neutral receiver.  The exact thunk envelope is
+            // still proven by the tagged target and retains the vtable owner's receiver type.
+            if (!entry.equals(target) && isMessageHandlerSignature(entry)) return entry;
+            return target;
+        }
         if (isTrustedSignature(target)) return target;
         return isTrustedSignature(entry) ? entry : null;
     }
 
     private boolean isTrustedSignature(Function function) {
-        return function != null &&
-            (function.getSignatureSource() == SourceType.USER_DEFINED ||
-                hasTag(function, VIRTUAL_METHOD_TAG));
+        if (function == null) return false;
+        if (function.getSignatureSource() == SourceType.USER_DEFINED ||
+                hasTag(function, VIRTUAL_METHOD_TAG)) return true;
+        return hasTag(function, MESSAGE_HANDLER_TAG) && isMessageHandlerSignature(function);
+    }
+
+    private boolean isMessageHandlerSignature(Function function) {
+        if (!"__thiscall".equals(function.getCallingConventionName())) return false;
+        List<Parameter> explicit = new ArrayList<>();
+        for (Parameter parameter : function.getParameters())
+            if (!parameter.isAutoParameter()) explicit.add(parameter);
+        if (explicit.size() != 1) return false;
+        DataType type = explicit.get(0).getDataType();
+        return type instanceof Pointer pointer && pointer.getDataType() != null &&
+            MESSAGE_PATH.equals(pointer.getDataType().getPathName());
     }
 
     private boolean hasTag(Function function, String name) {

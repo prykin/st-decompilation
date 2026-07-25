@@ -78,8 +78,8 @@ Only one mode is selected; no file or directory dialogs follow:
 | `core` | Baseline/debug/message recovery followed by bounded unclaimed-code and factory/vtable/constructor/class fixpoint loops. This is the default. |
 | `deep` | Slower ownership, ABI, prototype, global, pointer-shape, enum, provenance, control-flow, and library propagation. Requires current core outputs. |
 | `full` | Run `core` and then `deep`; does not start the expensive corpus export. |
-| `export` | Run only `STDecompExport` into `<repo>/decomp`. |
-| `full-export` | Run the complete recovery pipeline and export afterwards. |
+| `export` | Verify the recorded recovery evidence, snapshot the prior corpus, export into `<repo>/decomp`, and run the regression gate. |
+| `full-export` | Run the complete recovery pipeline, record evidence, export, and run the regression gate. |
 
 The pipeline invokes ordinary Ghidra scripts through `runScript`; it does not
 bypass any analyzer/applier validation. In particular, it never changes an
@@ -118,11 +118,55 @@ then verifies that the applier entry disappeared as well. A real leaked applier
 transaction therefore still fails as soon as it remains open without that
 analysis child, and any other subtransaction fails immediately.
 
-Structural loops are bounded to three passes and expensive whole-program
-propagation to two. A remaining changing count after that bound is recorded for
-review rather than looped forever. Progress, arguments, duration, and the first
-failure are written incrementally to
-`<repo>/recovery/ST.exe/pipeline_report.tsv`.
+Bootstrap and other fast structural loops are bounded to 24 passes; expensive
+whole-program propagation is bounded to 12. Those bounds are emergency cycle
+guards, not the normal stopping rule. After each analyzer/applier pair the
+pipeline reconstructs recovery state from the current proposal and apply-report
+TSVs and prints `proposals_enabled`, `proposals_review`, `changed`, `unchanged`,
+`review`, `conflict`, and `error`. Only `changed` keeps the loop alive;
+disabled/preserved/conflicting/error rows are terminal review state for that
+automatic pass. A mutating status must also have changed the Program
+modification number, so a false `applied` row cannot loop forever. The apply
+report remains authoritative in the other direction: Ghidra may advance its
+volatile modification counter when a row transaction is rolled back, so a counter
+advance without a mutating status is logged as a diagnostic and does not keep the
+loop alive. A remaining changing count after the bound is a hard failure, so an
+unconverged database cannot be exported accidentally.
+Successful mutating modes record a deterministic semantic Program
+fingerprint, the diagnostic Ghidra modification number, the monotonic enum-domain
+state, and hashes of every proposal/apply TSV in `automation_state.tsv` and
+`automation_evidence.jsonl`; export verifies all of them before invoking
+`STDecompExport`. The fingerprint covers loaded memory, disassembly, references,
+comments, functions, symbols, data types, imports/exports, defined data, and
+bookmarks. The volatile modification number is not used as cross-run identity. A
+legacy ledger with the expected one-step counter drift is upgraded once after all
+TSV hashes verify.
+
+Every invocation is staged under `<repo>/recovery/ST.exe/runs/.current` and
+finalized under `runs/<overall-sha256>/`. The directory name has no timestamp; the
+hash covers the semantic state, mode, outcome, and deterministic step results.
+Only the three most recently finalized hash directories are retained, and
+`latest_run.txt` points at the newest hash. An interrupted `.current` directory is
+archived by its content hash on the next invocation. Each retained run contains
+`pipeline.log`, structured `events.jsonl`, `run.json`, per-pass proposal/apply
+snapshots, final evidence/export artifacts, and `exception.txt` after a failure.
+The root `pipeline_report.tsv` remains a latest-run compatibility view.
+
+Before export the pipeline snapshots the previous central corpus indexes, writes
+the new corpus, and runs `STExportRegressionGate`. The gate hard-fails incomplete
+decompilation, a tagged `GetMessage` slot left as `void *`, erased per-slot
+vtable function types, lost functions, semantic name downgrades, coverage
+regressions, critical ABI/decompiler-quality regressions, and any generated
+`CASE_*|CASE_*` enum expression. This invariant also catches the known
+message-slot regression when the immediately prior corpus already contains it.
+Expected changes between layout and semantic-naming stages are warnings. It writes
+`export_regression_report.tsv` and an atomic `export_receipt.json`.
+
+`Type bootstrap did not reach a fixed point` is a database-recovery failure, not
+an export-directory failure. Do not delete `decomp/`: inspect
+`type_bootstrap_apply_report.tsv`, update the scripts, and rerun the same
+pipeline mode. Stale exported C files do not influence type inference, and the
+next successful `STDecompExport` refreshes the generated corpus.
 
 Appliers commit Ghidra transactions to the currently open `Program`, but the
 pipeline deliberately does not call `DomainFile.save()` behind the UI's back.
@@ -215,14 +259,12 @@ appliers.
 
 ### 1. Baseline types and embedded debug symbols
 
-1. Run `STRecoveredTypesApplier`.
-   - Input: none; the conservative baseline definitions are embedded in the
-     script.
-   - Besides the core records, this installs byte/word/dword views for packed
-     command payloads, confirmed `CmdToPlsObj` stack aggregates, and the
-     `STWorldGrid` block rooted at `007FB240` with its two-object cells. The
-     proven `STGroupBoatC::SetOrderData` discriminator is represented by the
-     neutrally named `STGroupBoatOrderType` enum.
+1. Run `STTypeBootstrapAnalyzer`, then `STTypeBootstrapApplier`.
+   - The analyzer discovers DArray, message, control-command, temporary-object,
+     spatial-descriptor, and system-class families from method sets, field
+     accesses, reference geometry, and existing class/vtable evidence.
+   - The scripts contain no program address or enum-value seed. Legacy packed
+     projections are marked `ST_VIEW_ONLY`, never semantic anchors.
 2. Run `STDebugSymbolAnalyzer`.
    - Directory: `<repo>/recovery`
    - Output: `proposals.tsv`, `proposals.jsonl`, `conflicts.jsonl`,
@@ -240,6 +282,8 @@ appliers.
    - File: `<repo>/recovery/ST.exe/debug_calling_convention_review.tsv`
    - Outputs: `callsite_convention_proposals.tsv/jsonl`,
      `callsite_convention_calls.tsv`, and `callsite_convention_summary.txt`
+6. Run `STCallsiteConventionApplier`.
+   - File: `<repo>/recovery/ST.exe/callsite_convention_proposals.tsv`
 
 The debug analyzer uses embedded `ClassTy::Method`, source path, calling
 convention, and diagnostic-line evidence. The curated applier is reserved for
@@ -267,11 +311,14 @@ When every observed caller reclaims the stack, the callee uses a plain `RET`,
 and no caller explicitly loads an `ECX` pointer receiver, that unanimous stack
 discipline takes precedence over incidental scratch-register uses of `ECX`.
 Partial or mixed cleanup evidence remains review-only.
-This can confirm an unused-`this` method or identify a likely static `__cdecl`,
-but it is deliberately read-only: all `apply` flags are zero and there is no
-matching applier. Indirect virtual dispatch cannot be attributed to one
-concrete implementation and is reported as a coverage limit rather than
-treated as negative evidence.
+This can confirm an unused-`this` method or identify a likely static `__cdecl`.
+`STCallsiteConventionApplier` changes only the strict unanimous case: at least
+two calls, caller cleanup at every call, no positive `RET n`, and no explicit
+pointer setup in ECX; the unanimous cleanup byte count must also equal the
+explicit stack-parameter width. It rechecks the exact signature baseline and preserves
+IMPORTED signatures. All partial or contradictory cases remain disabled.
+Indirect virtual dispatch cannot be attributed to one concrete implementation
+and is reported as a coverage limit rather than treated as negative evidence.
 
 ### 2. Messages and handler signatures
 
@@ -285,7 +332,7 @@ treated as negative evidence.
    - File: `<repo>/recovery/ST.exe/message_handler_proposals.tsv`
 
 This creates and maintains the recovered `STMessageId` enum from `MESS_*`
-strings and message dispatch comparisons. `STRecoveredTypesApplier` supplies the
+strings and message dispatch comparisons. `STTypeBootstrapApplier` supplies the
 common 0x20-byte `STMessage` envelope: the ID at `+0x10` and three four-byte
 arguments at `+0x14`, `+0x18`, and `+0x1c`. Each argument is a union because its
 pointer/integer/word interpretation depends on the message ID.
@@ -295,8 +342,11 @@ The handler pair then replaces script-generated `AnonShape_*`, `int`, and
 normalizes generic non-void returns to `int`. It also recognizes the shared
 `xor eax,eax; ret 4` default handler from its many named callers. Manually
 refined semantic signatures and the proven `void` AI event handler are
-preserved. Run this before vtable recovery so slot definitions inherit the
-common signature.
+preserved. Every exact recovered handler also receives the idempotent
+`RECOVERED_MESSAGE_HANDLER` provenance tag. Already-correct signatures missing
+only that tag are repair proposals, so legacy database state is upgraded without
+rewriting the prototype. Run this before vtable recovery so slot definitions
+inherit the common signature.
 
 ### 3. Vtables and virtual methods
 
@@ -392,6 +442,13 @@ This is what turns a raw slot-zero call into, for example,
 The vtable applier does not automatically rename slot functions. Virtual-method
 name, calling-convention, and signature flags remain independent. Manual
 signatures and multi-owner targets are preserved.
+
+An exact tagged `GetMessage` implementation is a trusted slot-signature source
+only when it still has `__thiscall` and one explicit `STMessage *` parameter. For
+a direct thunk whose folded target is shared by several owners, the applier keeps
+the owner-specific thunk receiver instead of replacing it with the folded
+target's receiver. This prevents a later vtable pass from degrading a recovered
+function definition to `void *`.
 
 For a typed vtable call, Ghidra's C-like output still prints the receiver as the
 first call argument, for example
@@ -585,9 +642,12 @@ as a bogus stack parameter.
 2. Run `STSwitchEnumApplier`.
    - File: `<repo>/recovery/ST.exe/switch_enum_proposals.tsv`
 
-The analyzer groups repeated numeric switch domains. Safe parameter and
-script-owned class-field targets may be enabled automatically. Locals, globals,
-and ambiguously owned fields stay review-only.
+The analyzer groups repeated numeric switch domains. It decodes exact numeric or
+enum bitwise-OR case expressions, so a decompiler rendering such as
+`CASE_4|CASE_1` contributes the observed value `5` rather than freezing an
+incomplete domain. Safe parameter and script-owned class-field targets may be
+enabled automatically. Locals, globals, and ambiguously owned fields stay
+review-only.
 
 Typed decompiler aliases such as `STBoatC *this_00` are resolved back to their
 actual structure before classifying `this_00->field_*`. This keeps large
@@ -604,6 +664,13 @@ Tagged MSVCRT/DKW implementations stay excluded, but internal `OURLIB_*`
 functions remain eligible: their state domains are part of the recovered game
 API even though their assembly and decompilation bodies are omitted from the
 final LLM corpus.
+
+`switch_enum_domains.tsv` is monotonic analyzer state: each enum keeps the union
+of all previously and currently observed values, and a temporarily unobserved
+domain is retained rather than shrunk. The file is generated by evidence, not a
+hand-maintained seed list, and `STEvidenceLedger` binds it to the exported
+semantic state. Removing a value therefore requires an explicit reviewed state
+migration instead of happening as a side effect of one decompiler run.
 
 ### 7. Utility, return, prototype, global, indirect-call, and type-family propagation
 
@@ -633,7 +700,7 @@ final LLM corpus.
    - Repair rows are deliberately ignored by this applier.
 12. Run `STGlobalRecordAnalyzer`.
    - Directory: `<repo>/recovery`
-   - Rerun `STRecoveredTypesApplier` first after script updates: the global-record
+   - Rerun `STTypeBootstrapAnalyzer/Applier` first after script updates: the global-record
      model depends on the recovered packed `STPlayerTempSlot` type.
 13. Run `STGlobalRecordApplier`.
    - File: `<repo>/recovery/ST.exe/global_record_proposals.tsv`
@@ -740,24 +807,27 @@ centered neighbourhood sequences such as `{2,1,0,-1,-2}`. Other indexed bases
 remain `apply=0` until their bounds and record shape are proven.
 
 Indirect-call analysis audits every raw call site in `indirect_call_sites.tsv` and
-then refines only slots backed by a trusted vtable layout and compatible target
-signature. In particular, it installs the shared `STGameObjCVTable` view used by
-`GetObjPtr` results. Ghidra may still render an indirect `__thiscall` as
+then refines only slots backed by a discovered vtable layout and independently
+tagged/imported target signature. USER_DEFINED by itself is not trusted, and no
+vtable/function address is seeded in this pass. Ghidra may still render an indirect `__thiscall` as
 `(*object->vtable->method)(object, ...)`; the explicit receiver is normal decompiler
 syntax, not a missing argument in the recovered prototype.
 
 The type-family pass runs last. It consolidates byte-for-byte identical anonymous
 layouts and propagates named aggregate pointer returns into stack locals only when
 the local is an anonymous type previously owned by `STPointerShapeApplier`.
-Manual/imported locals and scalar pointer returns are excluded. The curated
-`GetObjPtr` base-family correction is the sole manual-type override and is guarded by
-its exact addresses and proposal baseline.
+Manual/imported locals and scalar pointer returns are excluded. The
+`GetObjPtr` base-family correction is derived from the high-fanout named
+thunk family and an evidence-qualified `STGameObjC` anchor; no address-specific
+override remains.
 
-The spatial-grid pair recognizes the three adjacent runtime descriptors at
-`007FB230`, `007FB240`, and `007FB278`. Each descriptor is laid out as four
+The spatial-grid pair discovers runtime descriptors when one initializer
+references all five fields and the same base is used by multiple functions.
+Each descriptor is laid out as four
 signed 16-bit values (`sizeX`, `sizeY`, `sizeZ`, `planeStride`) followed by a
-cell pointer. It installs `STWorldGrid`/`STPathingGrid16` and the stable names
-`g_worldGrid`, `g_pathingGrid`, and `g_pathingScratchGrid`. This turns hundreds
+cell pointer. The pointee type, rather than an address/name table, distinguishes
+`STWorldGrid` from `STSpatialGrid16`; an existing meaningful symbol is retained,
+otherwise an address-stable structural name is generated. This turns hundreds
 of raw `DAT_... + (...)*2` and separate `SHORT_...` expressions into field and
 array accesses. It does not invent a fixed C array dimension: all dimensions
 are runtime values, and the recovered linear index remains
@@ -952,10 +1022,15 @@ purpose of the rerun is specifically to analyze only game-owned code.
 
 ### 11. Export the text corpus
 
-Run `STDecompExport`.
+Normally run `STRecoveryPipeline` in `export` or `full-export` mode so evidence
+verification, the prior-corpus snapshot, `STDecompExport`, and
+`STExportRegressionGate` form one failure-attributed sequence. A standalone
+`STDecompExport` remains available for diagnostics.
 
 - Directory: `<repo>/decomp`
 - Output: `<repo>/decomp/ST.exe`
+- Gate report: `<repo>/recovery/ST.exe/export_regression_report.tsv`
+- Atomic receipt: `<repo>/recovery/ST.exe/export_receipt.json`
 
 The exporter writes program metadata, types, globals, strings, symbols,
 callgraph indexes, address-resolved `call_relations.jsonl`, and per-function directories. It reuses an existing function
@@ -996,7 +1071,12 @@ machine/address hints, and the intended structured form. See
 [`pseudocode-normalization.md`](pseudocode-normalization.md).
 The broader `decomp_quality_summary.json` and `decomp_quality_issues.jsonl`
 inventory recursively scans every exported function body and also tracks generic
-fields/globals, anonymous shapes, undefined types, string labels, and CFG labels.
+fields/globals, anonymous shapes, undefined types, enum bitwise compositions,
+string labels, and CFG labels. Every issue and summary category records its
+`quality_stage` and `regression_policy`: `strict_zero`, blocking or warning-only
+`nonincreasing`, stage-transition, or informational. The export gate therefore
+blocks exact structural loss and critical ABI debt while reporting expected debt
+movement between recovery stages as a warning.
 Each unresolved expression also receives an idempotent `ST_PSEUDO[...]` comment
 immediately above it in `decomp.c`; reused bodies have old exporter comments
 removed and regenerated before the JSONL line numbers are recorded.
@@ -1060,23 +1140,23 @@ a new conflict is what requires another iteration.
 
 | Pair or script | Primary purpose |
 | --- | --- |
-| `STRecoveryPipeline` | Infer repository paths and run bounded dependency-ordered `core`, `deep`, `full`, or export workflows without proposal-file dialogs. |
-| `STRecoveredTypesApplier` | Install conservative known structures, discriminated payload unions, stack aggregates, enums, and selected signatures. |
+| `STRecoveryPipeline` | Infer repository paths, run dependency-ordered fixed-point workflows, retain the three newest hash-addressed run logs, and refuse stale/unconverged/regressed exports. |
+| `STTypeBootstrapAnalyzer/Applier` | Infer the minimum semantic type anchors from method/access/reference families; migrate legacy duplicate/view types without embedded addresses or enum values. |
 | `STDebugSymbolAnalyzer/Applier` | Recover C++ owners, method names, calling conventions, source evidence, and short diagnostic printf strings. |
-| `STCallsiteConventionAnalyzer` | Audit uncertain conventions through direct and thunk-mediated callers; never auto-apply. |
+| `STCallsiteConventionAnalyzer/Applier` | Audit direct and thunk-mediated callers and apply only unanimous high-confidence static `__cdecl` corrections. |
 | `STCuratedRecoveryApplier` | Apply reviewed address-specific facts that are not yet generic. |
 | `STMessageIdAnalyzer/Applier` | Recover the `MESS_*`/`STMessageId` domain. |
-| `STMessageHandlerAnalyzer/Applier` | Apply the common `STMessage *` envelope and status return across the named `GetMessage` family, including the shared zero-return handler. |
+| `STMessageHandlerAnalyzer/Applier` | Apply the common `STMessage *` envelope and status return across the named `GetMessage` family, including the shared zero-return handler, and idempotently tag exact recovered handlers as vtable provenance. |
 | `STUnclaimedCodeAnalyzer/Applier` | Create only callback/entry targets and complete direct-JMP thunk chains with live pointer/CALL/data anchors; retain EH funclets, direct raw targets, and probable code as review-only coverage. |
 | `STObjectFactoryAnalyzer/Applier` | Recover the terminated object-type/factory registry, exact no-argument cdecl factory ABI, concrete class results/names, missing table-selected entries, `STObjectTypeId`, and typed registry consumers. |
-| `STVTableAnalyzer/Applier` | Find long and strongly referenced short vtables, resolve direct-JMP thunks, apply physical layouts separately from semantic owners, type safe owner vptrs, and record owner conflicts. |
+| `STVTableAnalyzer/Applier` | Find long and strongly referenced short vtables, resolve direct-JMP thunks, preserve tagged owner-specific message signatures, apply physical layouts separately from semantic owners, type safe owner vptrs, and record owner conflicts. |
 | `STVirtualMethodAnalyzer/Applier` | Propagate reviewed virtual slot names, conventions, and compatible signatures. |
 | `STConstructorAnalyzer/Applier` | Recover constructors, allocation sizes, direct hierarchy evidence, receiver-only signatures, and ABI `Owner *` returns when EAX is proven to return `this`. |
 | `STClassLayoutAnalyzer/Applier` | Build and revalidate conservative class layouts, including fields reached after stable prologue `this` spills, dynamic byte/word buffers, nested class-field pointee layouts, and semantic field-type/name proposals. |
 | `STMethodOwnerAnalyzer/Applier` | Assign structural class ownership to non-virtual methods and repair weak script-owned assignments to high-fanout shared helpers. |
 | `STHiddenThisAnalyzer/Applier` | Recover anonymous `__thiscall` receivers from ECX/RET/call-site evidence with neutral structural owners required by Ghidra. |
 | `STDestructorAnalyzer/Applier` | Recover conservative destructor and scalar-deleting-destructor candidates. |
-| `STSwitchEnumAnalyzer/Applier` | Turn repeated switch/state domains into enums. |
+| `STSwitchEnumAnalyzer/Applier` | Turn repeated switch/state domains into enums, decode exact OR-composed cases, and retain an evidence-generated monotonic domain state. |
 | `STUtilityFunctionAnalyzer/Applier` | Verify and name high-fanout runtime helpers and install their exact prototypes. |
 | `STAbiConsistencyAnalyzer/Applier` | Repair machine-proven x86 calling/return widths, `_setjmp3` varargs, and other ABI details that otherwise create `unaff_*`/`extraout_*` artifacts. |
 | `STReturnSemanticsAnalyzer/Applier` | Recover conservative `void`, boolean, and terminal `noreturn` behavior. |
@@ -1085,16 +1165,20 @@ a new conflict is what requires another iteration.
 | `STManualTypeAuditAnalyzer` | Consolidate strong evidence that a protected/manual prototype or field type is stale; read-only by design. |
 | `STGlobalRecordAnalyzer/Applier` | Recover packed arrays of repeated global records and their proven fields, including nested temporary-object slot arrays, from stride/range evidence. |
 | `STSpatialGridAnalyzer/Applier` | Collapse the shared world/pathing x-y-z-stride globals into typed runtime grid descriptors. |
+| `STDiscriminatedPayloadAnalyzer/Applier` | Infer per-case payload layouts and caller stack aggregates from switch discriminators and observed callsite lifetimes. |
 | `STGlobalAggregateAnalyzer/Applier` | Audit indexed global ranges and install only bounded arrays/matrices with a proven extent and indexing formula. |
 | `STGlobalDataAnalyzer/Applier` | Type generic globals from receiver/argument use and named-constructor stores, promote script-owned anonymous singleton pointers to named classes, assign address-stable structural names, and audit every `PTR_*` symbol by pointer role. |
 | `STIndirectCallAnalyzer/Applier` | Audit raw indirect calls and refine trusted vtable/callback slots with compatible function definitions. |
 | `STPointerRoleRepairAnalyzer/Applier` | Remove prior script-owned pointer constraints from stack slots with proven scalar lifetimes in unsettled functions. |
 | `STPointerShapeAnalyzer/Applier` | Recover known or anonymous pointer-backed structures from fixed, nested, alias-mediated dereferences and typed calls; apply auto-`this` types through the owning class namespace. |
-| `STTypeFamilyAnalyzer/Applier` | Promote anonymous layouts only to a unique exact named type and propagate named aggregate return types into script-owned anonymous locals; geometry-only anonymous families remain review-only. |
+| `STTypeFamilyAnalyzer/Applier` | Promote anonymous layouts only to one explicit semantic anchor and propagate named aggregate return types into script-owned anonymous locals; geometry-only matches remain review-only. |
+| `STTypeLifecycleAnalyzer/Applier` | Replace legacy views with one equivalent semantic anchor and remove only unreferenced script-owned view types. |
+| `STEvidenceLedger` | Record/verify a deterministic semantic Program fingerprint and hashes of every proposal/apply artifact plus monotonic enum state before export; retain the volatile modification counter for diagnostics only. |
 | `STSourceProvenanceAnalyzer/Applier` | Attach original source files and strict free-function names. |
 | `STControlFlowLabelAnalyzer/Applier` | Give structural names to real decompiler goto targets. |
 | `STLibraryAnalyzer/Applier` | Classify linked CRT, DKW, and internal Ourlib implementations. |
-| `STDecompExport` | Export the address-stable, dependency-fingerprinted LLM corpus, resolved thunk/call relations, and executable coverage gaps; inline proven immutable strings, normalize terminal traps and compiler bulk-zero loops, and catalogue pseudocode idioms plus corpus-wide residual quality debt. |
+| `STExportRegressionGate` | Compare a fresh corpus with the prior central-index snapshot, reject exact structural/critical quality regressions, and write a reproducible export receipt. |
+| `STDecompExport` | Export the address-stable, dependency-fingerprinted LLM corpus, resolved thunk/call relations, and executable coverage gaps; inline proven immutable strings, normalize terminal traps and compiler bulk-zero loops, and catalogue stage-aware pseudocode and quality debt. |
 
 ## Git and Ghidra database hygiene
 

@@ -1,4 +1,4 @@
-StartSystemTy::~StartSystemTy:
+StartSystemTy::DoneSystem:
 005DCDB0  56                        PUSH ESI
 005DCDB1  8B F1                     MOV ESI,ECX
 005DCDB3  57                        PUSH EDI

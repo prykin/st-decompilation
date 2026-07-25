@@ -12,6 +12,10 @@
    [STSwitchEnumApplier] Switch target field_0B9E uses
    /SubmarineTitans/Recovered/Enums/CPanelTy_field_0B9EState. Cases:
    CASE_0=0;CASE_1=1;CASE_2=2;CASE_3=3;CASE_4=4;CASE_8=8;CASE_9=9;CASE_14=20;CASE_15=21;CASE_16=22;CASE_17=23;CASE_1A=26;CASE_1B=27;CASE_1D=29;CASE_23=35;CASE_24=36;CASE_25=37;CASE_A6=166;CASE_A7=167;CASE_AF=175;CASE_BD=189
+
+   [STSwitchEnumApplier] Switch target field_0B99 uses
+   /SubmarineTitans/Recovered/Enums/CPanelTy_field_0B99State. Cases:
+   CASE_8=8;CASE_9=9;CASE_14=20;CASE_15=21;CASE_16=22;CASE_17=23;CASE_1A=26;CASE_1B=27;CASE_1D=29;CASE_23=35;CASE_24=36;CASE_25=37;CASE_A6=166;CASE_A7=167;CASE_AF=175;CASE_BD=189
     */
 
 void __thiscall CPanelTy::PaintCtrlBoatSI(CPanelTy *this)
@@ -54,7 +58,7 @@ void __thiscall CPanelTy::PaintCtrlBoatSI(CPanelTy *this)
   case CASE_1:
     DibPut((AnonShape_006B5B10_E0D06CF1 *)local_c->field_018C,0,0x46,'\x01',
            (byte *)local_c->field_0988);
-    if (pCVar2->field_0B99 == 0xbd) {
+    if (pCVar2->field_0B99 == CASE_BD) {
       puVar6 = pCVar2->field_097C;
 LAB_00502b2d:
       pAVar8 = (AnonShape_006B5B10_E0D06CF1 *)pCVar2->field_018C;
@@ -74,12 +78,12 @@ LAB_00502b2d:
     DibPut((AnonShape_006B5B10_E0D06CF1 *)local_c->field_018C,0,0x46,'\x01',
            (byte *)local_c->field_0974);
     switch(pCVar2->field_0B99) {
-    case 9:
-    case 0x15:
-    case 0xa6:
-    case 0xa7:
-    case 0xaf:
-    case 0xbd:
+    case CASE_9:
+    case CASE_15:
+    case CASE_A6:
+    case CASE_A7:
+    case CASE_AF:
+    case CASE_BD:
       puVar6 = pCVar2->field_097C;
       pAVar8 = (AnonShape_006B5B10_E0D06CF1 *)pCVar2->field_018C;
       break;

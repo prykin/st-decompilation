@@ -3,7 +3,11 @@
 
 /* Recovered from embedded debug metadata:
    E:\__titans\ai\ai_tact.cpp
-   AiTactClassTy::GetMessage */
+   AiTactClassTy::GetMessage
+
+   [STMessageHandlerApplier] Recovered common GetMessage envelope/signature.
+   Evidence: family_entries=00402DF1|00690B90; family_names=AiTactClassTy::GetMessage; ret4=2;
+   direct_offsets={10:2,14:1,18:2,1c:3} */
 
 int __thiscall AiTactClassTy::GetMessage(AiTactClassTy *this,STMessage *message)
 

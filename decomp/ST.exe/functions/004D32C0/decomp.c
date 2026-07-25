@@ -447,7 +447,7 @@ LAB_004d3f76:
           if (((99 < *(int *)&param_1->field_0x2a8) && (param_1->field_02E8 == 0)) &&
              ((iVar12 = thunk_FUN_004d3290((int)param_1), iVar12 == 0 &&
               (DAT_00811798 != (void *)0x0)))) {
-            thunk_FUN_00621580(DAT_00811798,param_1->field_0024,8);
+            thunk_FUN_00621580(DAT_00811798,(uint)param_1->field_0024,8);
           }
         }
         break;
@@ -601,7 +601,7 @@ LAB_004d43f5:
         uVar2 = local_14 / 100;
         if ((*(int *)&param_1->field_0x2b8 == 0) &&
            (uVar2 = uVar2 << 2, DAT_00811798 != (void *)0x0)) {
-          thunk_FUN_00621580(DAT_00811798,param_1->field_0024,5);
+          thunk_FUN_00621580(DAT_00811798,(uint)param_1->field_0024,5);
         }
         if (*(int *)&param_1->field_0x2b0 + uVar2 <= g_playSystem_00802A38->field_00E4) {
           *(uint *)&param_1->field_0x2b0 = g_playSystem_00802A38->field_00E4;
@@ -687,16 +687,16 @@ LAB_004d43f5:
           if (*(int *)&param_1->field_0x2b4 == 0) {
             if (DAT_00811798 != (void *)0x0) {
               if (*(int *)&param_1->field_0x2bc == 0) {
-                thunk_FUN_00621580(DAT_00811798,param_1->field_0024,4);
+                thunk_FUN_00621580(DAT_00811798,(uint)param_1->field_0024,4);
               }
               if (*(int *)&param_1->field_0x2c0 == 0) {
-                thunk_FUN_00621580(DAT_00811798,param_1->field_0024,2);
+                thunk_FUN_00621580(DAT_00811798,(uint)param_1->field_0024,2);
               }
               if (*(int *)&param_1->field_0x2c4 == 0) {
-                thunk_FUN_00621580(DAT_00811798,param_1->field_0024,3);
+                thunk_FUN_00621580(DAT_00811798,(uint)param_1->field_0024,3);
               }
               if (*(int *)&param_1->field_0x2c8 == 0) {
-                thunk_FUN_00621580(DAT_00811798,param_1->field_0024,7);
+                thunk_FUN_00621580(DAT_00811798,(uint)param_1->field_0024,7);
               }
             }
           }
@@ -718,13 +718,13 @@ LAB_004d43f5:
             param_1->field_02D8 = param_1->field_02D8 + local_10;
             param_1->field_02D0 = param_1->field_02D0 + local_8;
             param_1->field_02D4 = param_1->field_02D4 + local_c;
-            if (param_1->field_0024 == (uint)(byte)param_1->field_0010->field_112D) {
+            if (param_1->field_0024 == (byte *)(uint)(byte)param_1->field_0010->field_112D) {
               thunk_FUN_004d8b70((char)param_1->field_0024);
             }
             if (99 < *(int *)&param_1->field_0x2a8) {
               *(undefined4 *)&param_1->field_0x2a8 = 100;
               thunk_FUN_004d7570(*(char *)&param_1->field_0024,0,param_1->field_0018);
-              if (param_1->field_0024 == (uint)(byte)param_1->field_0010->field_112D) {
+              if (param_1->field_0024 == (byte *)(uint)(byte)param_1->field_0010->field_112D) {
                 thunk_FUN_0052af50(0,(float)param_1->field_01F9,(float)param_1->field_01FD);
                 uVar2 = GetPlayerRaceId(*(char *)&param_1->field_0024);
                 uVar2 = uVar2 & 0xff;

@@ -40,7 +40,7 @@ void __thiscall SettMapTy::PaintSettMap(SettMapTy *this,char param_1)
     SVar1 = pSVar3->field_1E26;
     /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
     pCVar5 = extraout_ECX;
-    if (((SVar1 == 6) || (SVar1 == CASE_7)) || (SVar1 == 0xe)) {
+    if (((SVar1 == CASE_6) || (SVar1 == CASE_7)) || (SVar1 == CASE_E)) {
       if ((pSVar3->field_21F0 == (HoloTy *)0x0) && (param_1 == '\0')) {
         MMMObjTy::OutRGlProc
                   (DAT_0080759c,(int)DAT_0080759c,0,0,10,0xb4,0xf9,0x123,
@@ -58,7 +58,7 @@ void __thiscall SettMapTy::PaintSettMap(SettMapTy *this,char param_1)
       pCVar5 = extraout_ECX_00;
     }
     SVar1 = pSVar3->field_1E26;
-    if ((((SVar1 != 6) && (SVar1 != 1)) && (SVar1 != 2)) &&
+    if ((((SVar1 != CASE_6) && (SVar1 != CASE_1)) && (SVar1 != CASE_2)) &&
        (((pSVar3->field_21F8 == (HoloTy *)0x0 && (param_1 == '\0')) ||
         ((param_1 != '\0' && (pSVar3->field_0x21e6 == '\0')))))) {
       ChatGlassTy::OutChGlProc

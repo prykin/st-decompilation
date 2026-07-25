@@ -49,7 +49,7 @@ void __thiscall HelpPanelTy::TTreeProc(HelpPanelTy *this,uint param_1,char param
   }
   if (param_2 == '\0') {
     HVar1 = local_14->field_01A1;
-    if (((HVar1 == 0) || (HVar1 == CASE_6)) || (HVar1 == (CASE_8|CASE_2))) {
+    if (((HVar1 == 0) || (HVar1 == CASE_6)) || (HVar1 == CASE_A)) {
       local_14->field_01A2 = HVar1;
       local_14->field_01AB = local_14->field_01A3;
     }

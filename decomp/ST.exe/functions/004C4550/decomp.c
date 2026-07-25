@@ -1,5 +1,3 @@
-#include "../../pseudocode_runtime.h"
-
 
 /* [STMethodOwnerApplier] Structural method owner recovered as TLOBaseTy.
    Evidence: this_call_owners=[TLOBaseTy]; agreed_this_calls=1; incoming_this_accesses=6;
@@ -20,17 +18,18 @@ undefined4 __thiscall TLOBaseTy::sub_004C4550(TLOBaseTy *this,int *param_1)
   short sVar8;
   int *piVar9;
   int iVar10;
-  int iVar11;
+  byte **ppbVar11;
+  int iVar12;
   undefined4 local_c0 [2];
   undefined4 local_b8 [2];
-  undefined4 local_b0 [5];
+  byte *local_b0 [5];
   undefined2 local_9c;
   undefined2 local_9a;
   undefined2 local_98;
   undefined2 local_96;
   undefined2 local_94;
   undefined2 local_92;
-  undefined4 local_84 [5];
+  byte *local_84 [5];
   short local_70;
   short local_6e;
   short local_6c;
@@ -69,15 +68,17 @@ undefined4 __thiscall TLOBaseTy::sub_004C4550(TLOBaseTy *this,int *param_1)
     iVar10 = (int)param_1 * 0x80;
     if ((&this->field_0291)[(int)param_1 * 0x20] != (AnonPointee_TLOBaseTy_0291 *)0x0) {
       if ((&DAT_00792ca0)[iVar3 * 3] == 0xb1) {
-        puVar5 = local_b0;
-        memset(puVar5, 0, 0x28); /* compiler bulk-zero initialization */
-        puVar5 = (undefined4 *)((byte *)puVar5 + 0x28);
+        ppbVar11 = local_b0;
+        for (iVar3 = 10; iVar3 != 0; iVar3 = iVar3 + -1) {
+          *ppbVar11 = (byte *)0x0;
+          ppbVar11 = ppbVar11 + 1;
+        }
         *(undefined4 *)(&this->field_0x29d + iVar10) = 1;
-        *(undefined2 *)puVar5 = 0;
+        *(undefined2 *)ppbVar11 = 0;
         local_b0[1] = this->field_0024;
-        local_b0[3] = 1;
-        local_b0[0] = 0x168;
-        local_b0[2] = 1;
+        local_b0[3] = (byte *)0x1;
+        local_b0[0] = (byte *)0x168;
+        local_b0[2] = (byte *)0x1;
         if (&stack0x00000000 != &DAT_0000000c) {
           /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
           local_c = CONCAT22(local_c._2_2_,this->field_0041);
@@ -100,7 +101,11 @@ undefined4 __thiscall TLOBaseTy::sub_004C4550(TLOBaseTy *this,int *param_1)
         return 0;
       }
       *(undefined4 *)(&this->field_0x29d + iVar10) = 1;
-      memset(local_84, 0, 0x58); /* compiler bulk-zero initialization */
+      ppbVar11 = local_84;
+      for (iVar3 = 0x16; iVar3 != 0; iVar3 = iVar3 + -1) {
+        *ppbVar11 = (byte *)0x0;
+        ppbVar11 = ppbVar11 + 1;
+      }
       local_18 = *(int *)(&DAT_007932d0 + ((int)param_1 + this->field_0235 * 2) * 0x16);
       if (local_18 == 0) {
         local_18 = 1;
@@ -137,21 +142,21 @@ undefined4 __thiscall TLOBaseTy::sub_004C4550(TLOBaseTy *this,int *param_1)
       local_53 = this->field_0032;
       local_41 = (&this->field_028D)[(int)param_1 * 0x20];
       local_84[1] = this->field_0024;
-      local_84[3] = 1;
-      local_84[0] = 0x28;
+      local_84[3] = (byte *)0x1;
+      local_84[0] = (byte *)0x28;
       local_14 = 0;
       iVar3 = local_18;
       piVar9 = param_1;
       if (0 < local_18) {
-        iVar11 = 0;
+        iVar12 = 0;
         do {
           if (((int)piVar9 < 1) || (local_14 == *(int *)(&this->field_0x2c1 + iVar10))) {
             iVar3 = ((int)piVar9 + this->field_0235 * 2) * 0x16;
             if (*(int *)(&DAT_007932d0 + iVar3) != 0) {
               puVar5 = (undefined4 *)
                        thunk_FUN_0041dc40(local_b8,(short)*(undefined4 *)
-                                                           (&DAT_007932d4 + iVar3 + iVar11),
-                                          *(undefined2 *)((int)(&DAT_007932d4 + iVar3 + iVar11) + 4)
+                                                           (&DAT_007932d4 + iVar3 + iVar12),
+                                          *(undefined2 *)((int)(&DAT_007932d4 + iVar3 + iVar12) + 4)
                                           ,-(short)this->field_0259);
               local_2c = (short)*puVar5;
               sStack_2a = (short)((uint)*puVar5 >> 0x10);
@@ -160,9 +165,9 @@ undefined4 __thiscall TLOBaseTy::sub_004C4550(TLOBaseTy *this,int *param_1)
               local_68 = sStack_2a + (short)local_8;
               local_66 = local_28 + (short)local_10;
               iVar3 = (int)param_1 + this->field_0235 * 2;
-              local_20 = *(undefined2 *)(&DAT_007932d8 + iVar11 + iVar3 * 0x16);
+              local_20 = *(undefined2 *)(&DAT_007932d8 + iVar12 + iVar3 * 0x16);
               local_24 = (STJellyManC *)
-                         (*(uint *)(&DAT_007932d4 + iVar3 * 0x16 + iVar11) & 0xffff0000);
+                         (*(uint *)(&DAT_007932d4 + iVar3 * 0x16 + iVar12) & 0xffff0000);
               puVar5 = (undefined4 *)thunk_FUN_0041dc40(local_c0,0,0,-(short)this->field_0259);
               local_2c = (short)*puVar5;
               sStack_2a = (short)((uint)*puVar5 >> 0x10);
@@ -178,7 +183,7 @@ undefined4 __thiscall TLOBaseTy::sub_004C4550(TLOBaseTy *this,int *param_1)
                 thunk_FUN_00586240((int)local_6a,(int)local_68,(int)local_66,
                                    (&this->field_028D)[(int)piVar2 * 0x20],this->field_0024,
                                    this->field_0018,this->field_0032);
-                if (this->field_05AC == 0x47) {
+                if (this->field_05AC == CASE_47) {
                   (*this->vtable->vfunc_90)(4,0x315);
                 }
               }
@@ -188,12 +193,12 @@ undefined4 __thiscall TLOBaseTy::sub_004C4550(TLOBaseTy *this,int *param_1)
                 local_6c = local_66;
                 local_5c = iVar3;
                 if (iVar3 == 0xb0) {
-                  local_84[0] = 0x15e;
+                  local_84[0] = (byte *)0x15e;
                   if (this->field_05AC == CASE_68) {
                     local_5c = 1;
                     this->field_04D4 = this->field_04D4 + -10;
                   }
-                  else if (this->field_05AC == 0x71) {
+                  else if (this->field_05AC == CASE_71) {
                     local_5c = 0;
                   }
                   iVar3 = 0x15e;
@@ -210,12 +215,12 @@ undefined4 __thiscall TLOBaseTy::sub_004C4550(TLOBaseTy *this,int *param_1)
             }
           }
           local_14 = local_14 + 1;
-          iVar11 = iVar11 + 6;
+          iVar12 = iVar12 + 6;
         } while (local_14 < iVar3);
       }
       if ((0 < (int)piVar9) &&
-         (iVar11 = *(int *)(&this->field_0x2c1 + iVar10) + 1,
-         *(int *)(&this->field_0x2c1 + iVar10) = iVar11, iVar3 <= iVar11)) {
+         (iVar12 = *(int *)(&this->field_0x2c1 + iVar10) + 1,
+         *(int *)(&this->field_0x2c1 + iVar10) = iVar12, iVar3 <= iVar12)) {
         *(undefined4 *)(&this->field_0x2c1 + iVar10) = 0;
       }
     }
@@ -225,12 +230,12 @@ undefined4 __thiscall TLOBaseTy::sub_004C4550(TLOBaseTy *this,int *param_1)
     switch((&DAT_00792ca0)[((int)param_1 + this->field_0235 * 2) * 3]) {
     case 0xa3:
       iVar3 = (int)param_1 * 0x20;
-      iVar11 = (int)param_1 * 0x80;
+      iVar12 = (int)param_1 * 0x80;
       iVar10 = (int)param_1 * 0x80;
-      param_1 = (int *)(&this->field_0x2a5 + iVar11);
+      param_1 = (int *)(&this->field_0x2a5 + iVar12);
       SubmarineTitans::Recovered::HiddenThis::AnonReceiver_004DB160::thunk_FUN_004db160
-                ((AnonReceiver_004DB160 *)g_allPlayers_007FA174,this->field_0024,0xa8,
-                 (int *)(&this->field_0x2a5 + iVar11),&this->field_02A9 + iVar3,
+                ((AnonReceiver_004DB160 *)g_allPlayers_007FA174,(int)this->field_0024,0xa8,
+                 (int *)(&this->field_0x2a5 + iVar12),&this->field_02A9 + iVar3,
                  (int *)(&this->field_0x2ad + iVar10),&local_1c);
       thunk_FUN_00584a30(this->field_04E0,this->field_04E4,this->field_04E8,*param_1 * 0xc9 + 100,
                          (&this->field_02A9)[iVar3] * 0xc9 + 100,this->field_0024,local_1c,
@@ -253,12 +258,12 @@ undefined4 __thiscall TLOBaseTy::sub_004C4550(TLOBaseTy *this,int *param_1)
     case 0xa8:
       iVar3 = (int)param_1 * 0x20;
       iVar10 = (int)param_1 * 0x80;
-      iVar11 = (int)param_1 * 0x80;
+      iVar12 = (int)param_1 * 0x80;
       param_1 = (int *)(&this->field_0x2a5 + iVar10);
       SubmarineTitans::Recovered::HiddenThis::AnonReceiver_004DB160::thunk_FUN_004db160
-                ((AnonReceiver_004DB160 *)g_allPlayers_007FA174,this->field_0024,0xa8,
+                ((AnonReceiver_004DB160 *)g_allPlayers_007FA174,(int)this->field_0024,0xa8,
                  (int *)(&this->field_0x2a5 + iVar10),&this->field_02A9 + iVar3,
-                 (int *)(&this->field_0x2ad + iVar11),&local_1c);
+                 (int *)(&this->field_0x2ad + iVar12),&local_1c);
       thunk_FUN_006405f0(0xa8,this->field_0024,this->field_0018,this->field_0032,
                          (short)this->field_04E0,(short)this->field_04E4,(short)this->field_04E8,
                          (short)*param_1 * 0xc9 + 100,(short)(&this->field_02A9)[iVar3] * 0xc9 + 100
@@ -293,12 +298,12 @@ undefined4 __thiscall TLOBaseTy::sub_004C4550(TLOBaseTy *this,int *param_1)
       break;
     case 0xbe:
       iVar3 = (int)param_1 * 0x20;
-      iVar11 = (int)param_1 * 0x80;
+      iVar12 = (int)param_1 * 0x80;
       iVar10 = (int)param_1 * 0x80;
-      param_1 = (int *)(&this->field_0x2a5 + iVar11);
+      param_1 = (int *)(&this->field_0x2a5 + iVar12);
       SubmarineTitans::Recovered::HiddenThis::AnonReceiver_004DB160::thunk_FUN_004db160
-                ((AnonReceiver_004DB160 *)g_allPlayers_007FA174,this->field_0024,0xa8,
-                 (int *)(&this->field_0x2a5 + iVar11),&this->field_02A9 + iVar3,
+                ((AnonReceiver_004DB160 *)g_allPlayers_007FA174,(int)this->field_0024,0xa8,
+                 (int *)(&this->field_0x2a5 + iVar12),&this->field_02A9 + iVar3,
                  (int *)(&this->field_0x2ad + iVar10),&local_1c);
       thunk_FUN_006405f0(0xbe,this->field_0024,this->field_0018,this->field_0032,
                          (short)this->field_04E0,(short)this->field_04E4,(short)this->field_04E8,

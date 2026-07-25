@@ -44,6 +44,8 @@ import ghidra.program.model.symbol.StackReference;
 public class STTypeFamilyAnalyzer extends GhidraScript {
     private static final String POINTER_SHAPES = "/SubmarineTitans/Recovered/PointerShapes/";
     private static final String CLASS_POINTEES = "/SubmarineTitans/Recovered/ClassPointees/";
+    private static final String VIEW_MARKER = "[ST_VIEW_ONLY]";
+    private static final String ANCHOR_MARKER = "[ST_SEMANTIC_ANCHOR]";
 
     @Override
     protected void run() throws Exception {
@@ -64,22 +66,29 @@ public class STTypeFamilyAnalyzer extends GhidraScript {
                 .filter(this::namedCandidate)
                 .sorted(Comparator.comparing(DataType::getPathName)).toList();
             if (anonymous.isEmpty() || anonymous.size() + named.size() < 2) continue;
+            List<Structure> anchors = named.stream().filter(this::semanticAnchor).toList();
             boolean uniqueNamed = named.size() == 1;
-            Structure canonical = uniqueNamed ? named.get(0) : anonymous.get(0);
+            boolean uniqueAnchor = anchors.size() == 1;
+            Structure canonical = uniqueAnchor ? anchors.get(0) : anonymous.get(0);
             int fields = meaningfulFields(canonical);
             int concrete = concreteFields(canonical);
             // Equal offsets and widths alone do not prove type identity.  Earlier versions
             // counted generated field_XXXX labels as semantic names and consequently merged
             // unrelated packet, UI and object records.  Automatic consolidation now requires
             // one unambiguous named structure whose complete concrete layout is identical.
-            boolean apply = uniqueNamed && concrete >= 2 && fields >= 2;
+            boolean apply = uniqueAnchor && concrete >= 2 && fields >= 2;
             String id = "EXACT_" + entry.getKey().substring(0, 12).toUpperCase(Locale.ROOT);
-            String evidence = uniqueNamed ?
-                "exact full layout matches unique named structure; concrete_fields=" + concrete :
+            String evidence = uniqueAnchor ?
+                "exact full layout matches one evidence-qualified semantic anchor; " +
+                    "concrete_fields=" + concrete :
+                uniqueNamed && anchors.isEmpty() ?
+                    "the unique named geometry is not a semantic anchor; layout equality alone " +
+                        "cannot identify a type" :
                 named.isEmpty() ?
                     "anonymous geometry match only; no named semantic anchor" :
-                    "exact layout is ambiguous among named structures=" + named.stream()
-                        .map(DataType::getPathName).toList();
+                    "exact layout has semantic_anchor_count=" + anchors.size() +
+                        " among named structures=" + named.stream()
+                            .map(DataType::getPathName).toList();
             for (Structure member : anonymous) {
                 groupRows.add(new GroupRow(apply, id, canonical.getPathName(),
                     member.getPathName(), canonical.getLength(), fields,
@@ -90,7 +99,8 @@ public class STTypeFamilyAnalyzer extends GhidraScript {
                     namedMatches.add(new NamedMatchRow(apply && candidate.equals(canonical),
                         member.getPathName(), candidate.getPathName(), "exact", member.getLength(),
                         member.getNumDefinedComponents(), concreteFields(member),
-                        meaningfulFields(candidate), apply ? "high" : "review", evidence));
+                        meaningfulFields(candidate),
+                        apply && semanticAnchor(candidate) ? "high" : "review", evidence));
             }
         }
         addCompatibleNamedMatches(namedMatches);
@@ -165,6 +175,30 @@ public class STTypeFamilyAnalyzer extends GhidraScript {
             !path.contains("/VTableFunctions/") && structure.getLength() > 0;
     }
 
+    /**
+     * A name and an exact byte layout are not semantic evidence.  Bootstrap-generated
+     * anchors carry an explicit evidence marker.  Existing root class structures may also
+     * qualify when their namespace owns multiple methods and offset zero is a vptr-shaped
+     * pointer.  Storage views, packet facets, and imported platform records never qualify.
+     */
+    private boolean semanticAnchor(Structure structure) {
+        String path = structure.getPathName();
+        String description = structure.getDescription();
+        if (description != null && description.contains(VIEW_MARKER)) return false;
+        if (description != null && description.contains(ANCHOR_MARKER)) return true;
+        if (!path.matches("/[A-Za-z_][A-Za-z0-9_]*")) return false;
+        DataTypeComponent first = structure.getComponentAt(0);
+        if (first == null || first.getOffset() != 0 ||
+                !(first.getDataType() instanceof Pointer)) return false;
+        int methods = 0;
+        String prefix = structure.getName() + "::";
+        FunctionIterator functions = currentProgram.getFunctionManager().getFunctions(true);
+        while (functions.hasNext()) {
+            if (functions.next().getName(true).startsWith(prefix) && ++methods >= 2) return true;
+        }
+        return false;
+    }
+
     private void addCompatibleNamedMatches(List<NamedMatchRow> rows) {
         Set<String> exact = new HashSet<>();
         for (NamedMatchRow row : rows) exact.add(row.anonymousType + "|" + row.namedType);
@@ -207,7 +241,7 @@ public class STTypeFamilyAnalyzer extends GhidraScript {
                         candidate.getPathName(), "compatible_same_length", source.getLength(),
                         observed.length, concrete, semantic, "review",
                         "all observed offsets fit the named layout, but partial geometry does " +
-                        "not prove type identity"));
+                        "not prove type identity; semantic_anchor=" + semanticAnchor(candidate)));
             }
         }
         rows.sort(Comparator.comparing((NamedMatchRow row) -> row.anonymousType)
@@ -334,23 +368,55 @@ public class STTypeFamilyAnalyzer extends GhidraScript {
     }
 
     private void addGetObjPtrFamily(List<Row> rows) {
-        for (long offset : new long[] { 0x0042b620L, 0x004028baL }) {
-            Address address = currentProgram.getAddressFactory().getDefaultAddressSpace().getAddress(offset);
-            Function function = currentProgram.getFunctionManager().getFunctionAt(address);
-            if (function == null) continue;
+        DataType base = currentProgram.getDataTypeManager().getDataType("/STGameObjC");
+        if (!(base instanceof Structure structure) || !semanticAnchor(structure)) return;
+        FunctionIterator functions = currentProgram.getFunctionManager().getFunctions(true);
+        while (functions.hasNext()) {
+            Function function = functions.next();
+            if (!"GetObjPtr".equals(function.getName()) ||
+                    !function.getName(true).startsWith("STAllPlayersC::")) continue;
+            int calls = familyCallers(function);
+            if (calls < 16) continue;
             Parameter returned = function.getReturn();
             String current = typeSpec(returned.getDataType());
             boolean generic = current.equals("/uint") || current.equals("/int") ||
                 current.equals("/undefined4") || current.equals("/undefined");
-            boolean apply = generic &&
-                currentProgram.getDataTypeManager().getDataType("/STGameObjC") != null;
-            rows.add(new Row(apply, addr(address), function.getName(true), "return", -1,
+            boolean apply = generic;
+            rows.add(new Row(apply, addr(function.getEntryPoint()), function.getName(true),
+                "return", -1,
                 returned.getName(), returned.getVariableStorage().toString(), current,
                 returned.getSource().toString(), "pointer:/STGameObjC", true,
                 "STGAMEOBJ_BASE_FAMILY",
-                "high", "GetObjPtr dispatches among STGameObjC-derived object tables; its " +
-                    "result is null-checked and then used through the shared polymorphic vtable"));
+                "high", "high-fanout STAllPlayersC::GetObjPtr family has " +
+                    calls + " direct/thunk-mediated callers and returns the " +
+                    "semantic STGameObjC polymorphic base"));
         }
+    }
+
+    private int familyCallers(Function function) {
+        Function target = function;
+        for (int depth = 0; depth < 32 && target.isThunk(); depth++) {
+            Function next = target.getThunkedFunction(false);
+            if (next == null || next.equals(target)) break;
+            target = next;
+        }
+        int result = 0;
+        FunctionIterator functions = currentProgram.getFunctionManager().getFunctions(true);
+        while (functions.hasNext()) {
+            Function entry = functions.next();
+            Function resolved = entry;
+            for (int depth = 0; depth < 32 && resolved.isThunk(); depth++) {
+                Function next = resolved.getThunkedFunction(false);
+                if (next == null || next.equals(resolved)) break;
+                resolved = next;
+            }
+            if (!resolved.equals(target)) continue;
+            ghidra.program.model.symbol.ReferenceIterator references =
+                currentProgram.getReferenceManager().getReferencesTo(entry.getEntryPoint());
+            while (references.hasNext())
+                if (references.next().getReferenceType().isCall()) result++;
+        }
+        return result;
     }
 
     /**
@@ -361,8 +427,6 @@ public class STTypeFamilyAnalyzer extends GhidraScript {
      */
     private void addReturnedPointerConsumers(List<Row> rows) throws Exception {
         Map<Address, String> producers = new HashMap<>();
-        addKnownProducer(producers, 0x0042b620L, "pointer:/STGameObjC");
-        addKnownProducer(producers, 0x004028baL, "pointer:/STGameObjC");
 
         FunctionIterator typed = currentProgram.getFunctionManager().getFunctions(true);
         while (typed.hasNext()) {
@@ -390,11 +454,6 @@ public class STTypeFamilyAnalyzer extends GhidraScript {
             }
         }
         rows.addAll(unique.values());
-    }
-
-    private void addKnownProducer(Map<Address, String> producers, long offset, String type) {
-        Address address = currentProgram.getAddressFactory().getDefaultAddressSpace().getAddress(offset);
-        if (address != null) producers.put(address, type);
     }
 
     private String calledType(Instruction instruction, Map<Address, String> producers) {
@@ -553,7 +612,9 @@ public class STTypeFamilyAnalyzer extends GhidraScript {
                 namedMatches.stream().filter(row -> row.apply).count() +
                 "\nAutomatic targets: " + rows.stream().filter(row -> row.apply).count() + "\n" +
                 "Note: anonymous-to-anonymous geometry matches are review-only; generated " +
-                "field_XXXX names are not semantic evidence.\n");
+                "field_XXXX names are not semantic evidence. Exact named layouts are automatic " +
+                "only for evidence-qualified semantic anchors; [ST_VIEW_ONLY] types are never " +
+                "anchors.\n");
         }
     }
     private String typeSpec(DataType type) {

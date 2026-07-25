@@ -12,21 +12,6 @@ void __thiscall OptPanelTy::DoneOptPanel(OptPanelTy *this)
   OptPanelTy *pOVar2;
   int iVar3;
   int iVar4;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
-  ccFntTy *extraout_ECX;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
-  ccFntTy *extraout_ECX_00;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
-  ccFntTy *extraout_ECX_01;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
-  ccFntTy *extraout_ECX_02;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
-  ccFntTy *extraout_ECX_03;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
-  ccFntTy *extraout_ECX_04;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
-  ccFntTy *extraout_ECX_05;
-  ccFntTy *this_00;
   ushort **ppuVar5;
   uint *puVar6;
   InternalExceptionFrame local_4c;
@@ -50,37 +35,26 @@ void __thiscall OptPanelTy::DoneOptPanel(OptPanelTy *this)
       FUN_006b5570(pOVar2->field_01F1);
       pOVar2->field_01F1 = (DArrayTy *)0x0;
     }
-    this_00 = (ccFntTy *)0x0;
     if (pOVar2->field_01E5 != (ushort *)0x0) {
       FreeAndNull(&pOVar2->field_01E5);
-      /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
-      this_00 = extraout_ECX;
     }
     if ((DArrayTy *)pOVar2->field_02F9 != (DArrayTy *)0x0) {
       FUN_006b5570((DArrayTy *)pOVar2->field_02F9);
-      /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
-      this_00 = extraout_ECX_00;
     }
     pOVar2->field_02F9 = (uint *)0x0;
     if (pOVar2->field_02FD != (DArrayTy *)0x0) {
       DArrayDestroy(pOVar2->field_02FD);
-      /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
-      this_00 = extraout_ECX_01;
     }
     pOVar2->field_02FD = (DArrayTy *)0x0;
     if (pOVar2->field_01DD != (HANDLE)0x0) {
       FindCloseChangeNotification(pOVar2->field_01DD);
       pOVar2->field_01DD = (HANDLE)0x0;
-      /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
-      this_00 = extraout_ECX_02;
     }
     puVar6 = &pOVar2->field_01B5;
     iVar3 = 10;
     do {
       if (*puVar6 != 0) {
         StartSystemTy::sub_006E56B0(pOVar2->field_000C,*puVar6);
-        /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
-        this_00 = extraout_ECX_03;
       }
       *puVar6 = 0;
       puVar6 = puVar6 + 1;
@@ -91,8 +65,6 @@ void __thiscall OptPanelTy::DoneOptPanel(OptPanelTy *this)
     do {
       if (*puVar6 != 0) {
         StartSystemTy::sub_006E56B0(pOVar2->field_000C,*puVar6);
-        /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
-        this_00 = extraout_ECX_04;
       }
       *puVar6 = 0;
       puVar6 = puVar6 + 1;
@@ -100,13 +72,11 @@ void __thiscall OptPanelTy::DoneOptPanel(OptPanelTy *this)
     } while (iVar3 != 0);
     g_optPanel_008016DC = (OptPanelTy *)0x0;
     if (pOVar2->field_017C != (ccFntTy *)0x0) {
-      ccFntTy::operator(this_00,(uint *)pOVar2->field_017C);
+      ccFntTy::operator((uint *)pOVar2->field_017C);
       pOVar2->field_017C = (ccFntTy *)0x0;
-      /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
-      this_00 = extraout_ECX_05;
     }
     if (pOVar2->field_0180 != (ccFntTy *)0x0) {
-      ccFntTy::operator(this_00,(uint *)pOVar2->field_0180);
+      ccFntTy::operator((uint *)pOVar2->field_0180);
       pOVar2->field_0180 = (ccFntTy *)0x0;
     }
     pOVar2->field_0198 = (ushort *)0x0;

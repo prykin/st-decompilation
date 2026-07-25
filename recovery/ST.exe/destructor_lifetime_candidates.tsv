@@ -54,7 +54,7 @@ address	function	owner	vtable_slots	deallocates_this	this_field_writes	zeroed_th
 004BE470	FUN_004be470	TLOBaseTy	0x80	0	3	0	0	0	1
 004BE500	TLOBaseTy::SetActivity	TLOBaseTy	0xE8	0	0	0	0	0	9
 004BE6C0	FUN_004be6c0	TLOBaseTy	0x30	0	0	0	0	0	8
-004BEA70	FUN_004bea70	TLOBaseTy	0x34	0	0	0	4	0	136
+004BEA70	TLOBaseTy::FUN_004bea70	TLOBaseTy	0x34	0	0	0	4	0	136
 004C21A0	FUN_004c21a0	TLOBaseTy	0x28	0	0	0	0	0	18
 004C2840	FUN_004c2840	TLOBaseTy	0x68	0	0	0	0	0	2
 004C28B0	FUN_004c28b0	TLOBaseTy	0x5C	0	0	0	0	0	1
@@ -106,7 +106,7 @@ address	function	owner	vtable_slots	deallocates_this	this_field_writes	zeroed_th
 0053D4D0	SAMPanelTy::GetMessage	SAMPanelTy	0x0	0	0	0	0	0	13
 0053E920	SpecPanelTy::SetPanel	SpecPanelTy	0x1C | 0x20	0	0	0	0	0	6
 0053F780	ProdPanelTy::ShiftControls	ProdPanelTy	0x18	0	3	0	0	0	7
-00542EC0	InterSystemC::~InterSystemC	InterSystemC	0x4	0	4	4	2	0	5
+00542EC0	InterSystemC::DoneSystem	InterSystemC	0x4	0	4	4	2	0	5
 00542F40	InterSystemC::GetMessage	InterSystemC	0x20	0	0	0	0	0	30
 0054CF00	FUN_0054cf00	STPlaySystemC	0x8	0	0	0	2	0	2
 0054CFC0	STPlaySystemC::InitSystem	STPlaySystemC	0x0	0	1	1	0	0	7
@@ -203,7 +203,7 @@ address	function	owner	vtable_slots	deallocates_this	this_field_writes	zeroed_th
 005D9470	SIDTy::GetMessage	SIDTy	0x0	0	1	0	0	0	56
 005DCC10	StartSystemTy::InitSystem	StartSystemTy	0x0	0	0	0	0	0	9
 005DCD90	StartSystemTy::CreateSystemObjects	StartSystemTy	0x14	0	0	0	0	0	1
-005DCDB0	StartSystemTy::~StartSystemTy	StartSystemTy	0x4	0	4	4	6	1	11
+005DCDB0	StartSystemTy::DoneSystem	StartSystemTy	0x4	0	4	4	6	1	11
 005DCE90	StartSystemTy::GetMessage	StartSystemTy	0x20	0	0	0	0	0	36
 005E9830	WaitTy::CloseButtons	WaitTy	0x8	0	0	0	0	0	8
 005EA680	WaitTy::GetMessage	WaitTy	0x0	0	1	0	0	0	36

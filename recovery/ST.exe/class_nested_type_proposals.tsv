@@ -133,6 +133,7 @@ apply	owner	parent_offset	type_path	length	field_count	access_count	confidence	r
 0	TLOBaseTy	501	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_TLOBaseTy_01F5	532	11	18	review	multiple non-overlapping fixed offsets through one class pointer field
 0	TLOBaseTy	657	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_TLOBaseTy_0291	72	3	6	review	multiple non-overlapping fixed offsets through one class pointer field
 0	TLOBaseTy	1460	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_TLOBaseTy_05B4	740	3	3	review	multiple non-overlapping fixed offsets through one class pointer field
+0	TLOBaseTy	1543	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_TLOBaseTy_0607	24	6	15	review	multiple non-overlapping fixed offsets through one class pointer field
 0	TLOEmbryoTy	0	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_TLOEmbryoTy_0000	148	2	4	review	multiple non-overlapping fixed offsets through one class pointer field
 0	WaitTy	12	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_WaitTy_000C	24	2	7	review	multiple non-overlapping fixed offsets through one class pointer field
 0	WaitTy	6747	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_WaitTy_1A5B	1676	4	15	review	multiple non-overlapping fixed offsets through one class pointer field

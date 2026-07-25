@@ -28,6 +28,7 @@ import ghidra.program.model.data.Pointer;
 import ghidra.program.model.data.Structure;
 import ghidra.program.model.data.Undefined;
 import ghidra.program.model.listing.Function;
+import ghidra.program.model.listing.FunctionTag;
 import ghidra.program.model.listing.FunctionIterator;
 import ghidra.program.model.listing.Instruction;
 import ghidra.program.model.listing.InstructionIterator;
@@ -40,6 +41,7 @@ import ghidra.program.model.symbol.SourceType;
 public class STMessageHandlerAnalyzer extends GhidraScript {
     private static final String MESSAGE_PATH = "/SubmarineTitans/Recovered/STMessage";
     private static final String INT_PATH = "/int";
+    private static final String TAG = "RECOVERED_MESSAGE_HANDLER";
     private static final Pattern MESSAGE_OFFSET = Pattern.compile(
         "(?i)\\+\\s*0x(10|14|18|1c)\\]");
 
@@ -99,12 +101,15 @@ public class STMessageHandlerAnalyzer extends GhidraScript {
         writeJsonl(dir.resolve("message_handler_proposals.jsonl"), proposals);
         long automatic = proposals.stream().filter(p -> p.apply).count();
         long alreadyTyped = proposals.stream().filter(p -> "already_typed".equals(p.reason)).count();
+        long tagRepairs = proposals.stream()
+            .filter(p -> "typed_GetMessage_missing_provenance_tag".equals(p.reason)).count();
         long conflicts = proposals.stream().filter(p -> "conflict".equals(p.confidence)).count();
         Files.write(dir.resolve("message_handler_summary.txt"), List.of(
             "program=" + currentProgram.getName(),
             "final_handlers=" + proposals.size(),
             "automatic=" + automatic,
             "already_typed=" + alreadyTyped,
+            "provenance_tag_repairs=" + tagRepairs,
             "conflicts_or_manual=" + conflicts,
             "shared_zero_stubs=" + proposals.stream().filter(p -> p.sharedZeroStub).count(),
             "note=GetMessage plus RET 4 proves one explicit argument; STMessage offsets " +
@@ -142,6 +147,7 @@ public class STMessageHandlerAnalyzer extends GhidraScript {
         boolean desired = "__thiscall".equals(function.getCallingConventionName()) &&
             explicit.size() == 1 && isMessagePointer(explicit.get(0).getDataType()) &&
             proposedReturn.equals(returnType.getPathName()) && "message".equals(explicit.get(0).getName());
+        boolean tagged = hasTag(function, TAG);
 
         int[] offsets = messageOffsetCounts(function);
         String evidence = "family_entries=" + String.join("|", candidate.familyEntries) +
@@ -153,8 +159,7 @@ public class STMessageHandlerAnalyzer extends GhidraScript {
         String reason;
         String confidence;
         boolean apply;
-        if (desired) { reason = "already_typed"; confidence = "high"; apply = false; }
-        else if (!namedFamily) { reason = "no_named_GetMessage_family"; confidence = "conflict"; apply = false; }
+        if (!namedFamily) { reason = "no_named_GetMessage_family"; confidence = "conflict"; apply = false; }
         else if (!abi) { reason = "RET_cleanup_does_not_prove_one_stack_argument"; confidence = "conflict"; apply = false; }
         else if (!parameterShape) { reason = "explicit_parameter_count_conflict"; confidence = "conflict"; apply = false; }
         else if (parameterManualConflict || returnManualConflict) {
@@ -162,6 +167,14 @@ public class STMessageHandlerAnalyzer extends GhidraScript {
         }
         else if (!parameterCompatible || !returnCompatible) {
             reason = "non_generic_signature_conflict"; confidence = "conflict"; apply = false;
+        }
+        else if (desired && tagged) {
+            reason = "already_typed"; confidence = "high"; apply = false;
+        }
+        else if (desired) {
+            reason = "typed_GetMessage_missing_provenance_tag";
+            confidence = "high";
+            apply = safe;
         }
         else { reason = candidate.sharedZeroStub ? "shared_zero_GetMessage_stub" :
             "named_GetMessage_family_with_RET4"; confidence = "high"; apply = safe; }
@@ -174,7 +187,7 @@ public class STMessageHandlerAnalyzer extends GhidraScript {
         DataType type = currentProgram.getDataTypeManager().getDataType(MESSAGE_PATH);
         if (!(type instanceof Structure) || type.getLength() < 0x20)
             throw new IllegalStateException(
-                "STMessage 0x20 layout is missing; run the current STRecoveredTypesApplier first");
+                "STMessage 0x20 layout is missing; run STTypeBootstrapAnalyzer/Applier first");
     }
 
     private Function resolveThunk(Function function) {
@@ -224,6 +237,12 @@ public class STMessageHandlerAnalyzer extends GhidraScript {
 
     private boolean protectedSource(SourceType source) {
         return source == SourceType.USER_DEFINED || source == SourceType.IMPORTED;
+    }
+
+    private boolean hasTag(Function function, String tagName) {
+        for (FunctionTag tag : function.getTags())
+            if (tagName.equals(tag.getName())) return true;
+        return false;
     }
 
     private RetEvidence retEvidence(Function function) {

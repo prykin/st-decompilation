@@ -8,6 +8,10 @@
    [STSwitchEnumApplier] Switch target field_0BF5 uses
    /SubmarineTitans/Recovered/Enums/CPanelTy_field_0BF5State. Cases:
    CASE_0=0;CASE_1=1;CASE_2=2;CASE_3=3;CASE_4=4;CASE_32=50;CASE_33=51;CASE_34=52;CASE_35=53;CASE_36=54;CASE_37=55;CASE_38=56;CASE_39=57;CASE_3A=58;CASE_3B=59;CASE_3C=60;CASE_3D=61;CASE_3E=62;CASE_3F=63;CASE_40=64;CASE_41=65;CASE_42=66;CASE_43=67;CASE_44=68;CASE_45=69;CASE_46=70;CASE_47=71;CASE_48=72;CASE_49=73;CASE_4A=74;CASE_4B=75;CASE_4C=76;CASE_4D=77;CASE_4E=78;CASE_4F=79;CASE_50=80;CASE_51=81;CASE_52=82;CASE_53=83;CASE_54=84;CASE_55=85;CASE_56=86;CASE_57=87;CASE_58=88;CASE_59=89;CASE_5A=90;CASE_5B=91;CASE_5C=92;CASE_5D=93;CASE_5E=94;CASE_61=97;CASE_62=98;CASE_63=99;CASE_64=100;CASE_67=103;CASE_68=104;CASE_6D=109;CASE_6E=110;CASE_6F=111;CASE_70=112;CASE_72=114;CASE_73=115;CASE_DD=221;CASE_DE=222;CASE_E0=224;CASE_FD=253;CASE_FE=254
+
+   [STSwitchEnumApplier] Switch target field_0BF5 uses
+   /SubmarineTitans/Recovered/Enums/CPanelTy_field_0BF5State. Cases:
+   CASE_0=0;CASE_1=1;CASE_2=2;CASE_3=3;CASE_4=4;CASE_32=50;CASE_33=51;CASE_34=52;CASE_35=53;CASE_36=54;CASE_37=55;CASE_38=56;CASE_39=57;CASE_3A=58;CASE_3B=59;CASE_3C=60;CASE_3D=61;CASE_3E=62;CASE_3F=63;CASE_40=64;CASE_41=65;CASE_42=66;CASE_43=67;CASE_44=68;CASE_45=69;CASE_46=70;CASE_47=71;CASE_48=72;CASE_49=73;CASE_4A=74;CASE_4B=75;CASE_4C=76;CASE_4D=77;CASE_4E=78;CASE_4F=79;CASE_50=80;CASE_51=81;CASE_52=82;CASE_53=83;CASE_54=84;CASE_55=85;CASE_56=86;CASE_57=87;CASE_58=88;CASE_59=89;CASE_5A=90;CASE_5B=91;CASE_5C=92;CASE_5D=93;CASE_5E=94;CASE_5F=95;CASE_61=97;CASE_62=98;CASE_63=99;CASE_64=100;CASE_65=101;CASE_67=103;CASE_68=104;CASE_6D=109;CASE_6E=110;CASE_6F=111;CASE_70=112;CASE_72=114;CASE_73=115;CASE_DD=221;CASE_DE=222;CASE_E0=224;CASE_FD=253;CASE_FE=254
     */
 
 void __thiscall CPanelTy::SetControlObj(CPanelTy *this,char param_1)
@@ -337,7 +341,7 @@ LAB_00509ddd:
             else {
               GVar4 = CASE_2 - (this_00->field_09D4 != '\x01');
             }
-            uVar15 = thunk_FUN_00525ef0(GVar4,(char)local_c);
+            uVar15 = thunk_FUN_00525ef0(GVar4,(Global_sub_00525EF0_param_2Enum)local_c);
             *(undefined4 *)(puVar14 + 1) = uVar15;
             uVar15 = CreateBut(this_00,5,0,(uint)(this_00->field_0BFC != '\0'),local_14,local_10,0,
                                (char *)0x0,iVar5,iVar5 + 0x10,1,0,(int)puVar14,(char *)0x0,0x11,10,0
@@ -377,7 +381,7 @@ LAB_00509c11:
       }
       break;
     case CASE_3C:
-      if (this_00->field_0C3C == '\x01') {
+      if (this_00->field_0C3C == CASE_1) {
         uVar23 = 0;
         uVar21 = 0;
         iVar11 = 0;
@@ -398,7 +402,7 @@ LAB_00509c11:
         iVar5 = 0;
       }
       else {
-        iVar5 = (-(uint)(this_00->field_0C11 != 0) & 2) + 1;
+        iVar5 = (-(uint)(this_00->field_0C11 != CASE_0) & 2) + 1;
       }
       uVar23 = 0;
       uVar21 = 0;

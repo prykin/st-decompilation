@@ -1,5 +1,10 @@
 
-void __thiscall FUN_00514bc0(void *this,int param_1,int param_2)
+/* [STSwitchEnumApplier] Switch target param_1 uses
+   /SubmarineTitans/Recovered/Enums/Global_sub_00514BC0_param_1Enum. Cases:
+   CASE_F2=242;CASE_F3=243;CASE_F4=244;CASE_F5=245;CASE_F6=246;CASE_F7=247;CASE_F8=248;CASE_F9=249;CASE_FA=250;CASE_FB=251
+    */
+
+void __thiscall FUN_00514bc0(void *this,Global_sub_00514BC0_param_1Enum param_1,int param_2)
 
 {
   char cVar1;
@@ -27,7 +32,7 @@ LAB_00514be2:
   case '\x03':
   case '\x04':
   case '\v':
-    if ((*(int *)(iVar6 + 9) == param_1) &&
+    if ((*(Global_sub_00514BC0_param_1Enum *)(iVar6 + 9) == param_1) &&
        ((cVar1 == '\x03' || (*(int *)(iVar6 + 0xd) == param_2)))) {
       bVar5 = true;
       goto LAB_00514d04;
@@ -41,35 +46,35 @@ LAB_00514be2:
     break;
   case '\f':
     switch(param_1) {
-    case 0xf2:
-    case 0xf3:
-    case 0xf4:
-    case 0xf5:
+    case CASE_F2:
+    case CASE_F3:
+    case CASE_F4:
+    case CASE_F5:
       iVar2 = *(int *)(iVar6 + 9);
       if ((((iVar2 != 0xf2) && (iVar2 != 0xf3)) && (iVar2 != 0xf4)) && (iVar2 != 0xf5))
       goto cf_common_join_00514CF6;
       bVar5 = true;
       break;
-    case 0xf6:
-    case 0xf7:
+    case CASE_F6:
+    case CASE_F7:
       if ((*(int *)(iVar6 + 9) != 0xf6) && (*(int *)(iVar6 + 9) != 0xf7))
       goto cf_common_join_00514CF6;
       bVar5 = true;
       break;
-    case 0xf8:
-    case 0xf9:
+    case CASE_F8:
+    case CASE_F9:
       if ((*(int *)(iVar6 + 9) != 0xf8) && (*(int *)(iVar6 + 9) != 0xf9))
       goto cf_common_join_00514CF6;
       bVar5 = true;
       break;
-    case 0xfa:
-    case 0xfb:
+    case CASE_FA:
+    case CASE_FB:
       if ((*(int *)(iVar6 + 9) != 0xfa) && (*(int *)(iVar6 + 9) != 0xfb))
       goto cf_common_join_00514CF6;
       bVar5 = true;
       break;
     default:
-      if (*(int *)(iVar6 + 9) != param_1) goto cf_common_join_00514CF6;
+      if (*(Global_sub_00514BC0_param_1Enum *)(iVar6 + 9) != param_1) goto cf_common_join_00514CF6;
       bVar5 = true;
     }
     goto LAB_00514d04;

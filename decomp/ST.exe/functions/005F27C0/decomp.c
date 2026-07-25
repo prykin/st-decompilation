@@ -86,8 +86,8 @@ int __thiscall STBHEShellC::GetMessage(STBHEShellC *this,STMessage *message)
       }
       pcVar12 = thunk_FUN_005f3530;
     }
-    SubmarineTitans::Recovered::HiddenThis::AnonReceiver_004248D0::FUN_006e9520
-              ((AnonReceiver_004248D0 *)PTR_00807598,uVar9,0,(uint)pcVar12,(uint)local_14);
+    SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00424E10::FUN_006e9520
+              ((AnonReceiver_00424E10 *)PTR_00807598,uVar9,0,(uint)pcVar12,(uint)local_14);
     g_currentExceptionFrame = local_6c.previous;
     return 0;
   }

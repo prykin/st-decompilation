@@ -1,4 +1,4 @@
-FUN_004c9370:
+TLOBaseTy::sub_004C9370:
 004C9370  55                        PUSH EBP
 004C9371  8B EC                     MOV EBP,ESP
 004C9373  8B 91 D4 03 00 00         MOV EDX,dword ptr [ECX + 0x3d4]

@@ -1,9 +1,9 @@
 ST cross-function type families
 
-Anonymous types audited: 1428
+Anonymous types audited: 1430
 Exact family members: 475
 Targets: 2
 Named anonymous matches: 115
-Automatic named matches: 2
+Automatic named matches: 0
 Automatic targets: 0
-Note: anonymous-to-anonymous geometry matches are review-only; generated field_XXXX names are not semantic evidence.
+Note: anonymous-to-anonymous geometry matches are review-only; generated field_XXXX names are not semantic evidence. Exact named layouts are automatic only for evidence-qualified semantic anchors; [ST_VIEW_ONLY] types are never anchors.

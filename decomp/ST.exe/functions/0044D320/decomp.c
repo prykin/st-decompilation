@@ -361,7 +361,7 @@ LAB_0044d9c4:
             iVar4 = (*objPtr->vtable->vfunc_2C)();
             if (iVar4 == 0x1d) {
               local_8 = 1;
-              iVar4 = thunk_FUN_004d6df0((int *)objPtr);
+              iVar4 = TLOBaseTy::sub_004D6DF0((TLOBaseTy *)objPtr);
               if (((0 < iVar4) && (iVar4 = thunk_FUN_004e41c0((uint)DAT_0080874d), 0 < iVar4)) &&
                  (g_playerRuntime[*(char *)&objPtr->field_0024].field320_0x15f != 0)) {
                 puVar3[3] = 0x4801;
@@ -395,7 +395,7 @@ LAB_0044dce3:
             case 0x23:
 switchD_0044dcfe_caseD_19:
               local_8 = 1;
-              iVar4 = thunk_FUN_004d6df0((int *)objPtr);
+              iVar4 = TLOBaseTy::sub_004D6DF0((TLOBaseTy *)objPtr);
               if (((0 < iVar4) && (iVar4 = thunk_FUN_004e41c0((uint)DAT_0080874d), 0 < iVar4)) &&
                  (g_playerRuntime[*(char *)&objPtr->field_0024].field320_0x15f != 0)) {
                 puVar3[3] = 0x4801;
@@ -410,7 +410,7 @@ switchD_0044dcfe_caseD_19:
             iVar4 = (*objPtr->vtable->vfunc_2C)();
             if (iVar4 == 0x1b) {
               local_8 = 1;
-              iVar4 = thunk_FUN_004d6df0((int *)objPtr);
+              iVar4 = TLOBaseTy::sub_004D6DF0((TLOBaseTy *)objPtr);
               if (((0 < iVar4) && (iVar4 = thunk_FUN_004e41c0((uint)DAT_0080874d), 0 < iVar4)) &&
                  (g_playerRuntime[*(char *)&objPtr->field_0024].field320_0x15f != 0)) {
                 puVar3[3] = 0x4801;
@@ -424,7 +424,7 @@ switchD_0044dcfe_caseD_19:
           }
           else if ((GVar2 == 0x400000) && (iVar4 = (*objPtr->vtable->vfunc_2C)(), iVar4 == 0x21)) {
             local_8 = 1;
-            iVar4 = thunk_FUN_004d6df0((int *)objPtr);
+            iVar4 = TLOBaseTy::sub_004D6DF0((TLOBaseTy *)objPtr);
             if ((0 < iVar4) &&
                ((iVar4 = thunk_FUN_004e41c0((uint)DAT_0080874d), 0 < iVar4 &&
                 (g_playerRuntime[*(char *)&objPtr->field_0024].field320_0x15f != 0)))) {
@@ -437,7 +437,7 @@ switchD_0044dcfe_caseD_19:
           iVar4 = (*objPtr->vtable->vfunc_2C)();
           if (iVar4 == 0x24) {
             local_8 = 1;
-            iVar4 = thunk_FUN_004d6df0((int *)objPtr);
+            iVar4 = TLOBaseTy::sub_004D6DF0((TLOBaseTy *)objPtr);
             if (((0 < iVar4) && (iVar4 = thunk_FUN_004e41c0((uint)DAT_0080874d), 0 < iVar4)) &&
                (g_playerRuntime[*(char *)&objPtr->field_0024].field320_0x15f != 0)) {
               puVar3[3] = 0x4801;

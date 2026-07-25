@@ -11,11 +11,15 @@
 
    [STPrototypeApplier] Propagated parameter 7.
    Evidence: 0044C130 -> 0044E980 @ 0044C194 | 0044C130 -> 0044E980 @ 0044C1F7 | 0044C130 ->
-   0044E980 @ 0044C25A */
+   0044E980 @ 0044C25A
 
-void __thiscall
+   [STCallsiteConventionApplier] __cdecl inferred from all-caller stack cleanup. Evidence: all 3
+   callers reclaim stack arguments [28] matching the explicit parameter width; no explicit ECX
+   pointer receiver setup observed; incidental ECX observations ignored (live=3, scalar=0) */
+
+void __cdecl
 STBoatC::GetVisualInfo
-          (STBoatC *this,undefined4 param_1,STBoatC_GetVisualInfo_param_2Enum param_2,int param_3,
+          (undefined4 param_1,STBoatC_GetVisualInfo_param_2Enum param_2,int param_3,
           undefined4 *param_4,char *param_5,undefined1 *param_6,
           STAllPlayersC_GetTOBJImage_param_2Enum *param_7)
 

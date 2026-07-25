@@ -7,7 +7,7 @@ void __fastcall FUN_004ccad0(AnonShape_004CCAD0_262475FB *param_1)
   thunk_FUN_00423160();
   uVar1 = 0;
   if (param_1->field_0361 != 0) {
-    uVar1 = thunk_FUN_004c91a0(param_1);
+    uVar1 = thunk_FUN_004c91a0((TLOBaseTy *)param_1);
   }
   param_1->field_0265 = param_1->field_0265 & 0xfffffffd;
   param_1->field_026D = 0;

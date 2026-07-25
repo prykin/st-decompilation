@@ -8,6 +8,10 @@
 
    [STSwitchEnumApplier] Switch target field_0065 uses
    /SubmarineTitans/Recovered/Enums/FSGSTy_field_0065State. Cases:
+   CASE_1=1;CASE_2=2;CASE_3=3;CASE_4=4;CASE_5=5;CASE_6=6;CASE_7=7;CASE_8=8;CASE_9=9;CASE_A=10
+
+   [STSwitchEnumApplier] Switch target field_1A5F uses
+   /SubmarineTitans/Recovered/Enums/FSGSTy_field_1A5FState. Cases:
    CASE_1=1;CASE_2=2;CASE_3=3;CASE_4=4;CASE_5=5;CASE_6=6;CASE_7=7;CASE_8=8;CASE_9=9;CASE_A=10 */
 
 void __thiscall FSGSTy::NoneFSGS(FSGSTy *this,int param_1)
@@ -111,7 +115,7 @@ void __thiscall FSGSTy::NoneFSGS(FSGSTy *this,int param_1)
       if (g_cursorClass_00802A30 != (CursorClassTy *)0x0) {
         iVar6 = g_cursorClass_00802A30->field_00C9;
         iVar12 = g_cursorClass_00802A30->field_00C5;
-        g_cursorClass_00802A30->field_0493 = 5;
+        g_cursorClass_00802A30->field_0493 = CASE_5;
         pCVar4->field_0494 = 0xffff;
         CursorClassTy::SetGCType(pCVar4,CASE_0,iVar12,iVar6);
         CursorClassTy::DrawSprite(pCVar4,pCVar4->field_00C5,pCVar4->field_00C9);
@@ -276,7 +280,7 @@ void __thiscall FSGSTy::NoneFSGS(FSGSTy *this,int param_1)
 joined_r0x00597872:
       g_cursorClass_00802A30 = pCVar4;
       if (pCVar4 != (CursorClassTy *)0x0) {
-        pCVar4->field_0493 = 5;
+        pCVar4->field_0493 = CASE_5;
         pCVar4->field_0494 = 0xffff;
         CursorClassTy::SetGCType(pCVar4,CASE_0,pCVar4->field_00C5,pCVar4->field_00C9);
         CursorClassTy::DrawSprite(pCVar4,pCVar4->field_00C5,pCVar4->field_00C9);
@@ -402,7 +406,7 @@ joined_r0x00597872:
       if (g_cursorClass_00802A30 != (CursorClassTy *)0x0) {
         iVar6 = g_cursorClass_00802A30->field_00C9;
         iVar12 = g_cursorClass_00802A30->field_00C5;
-        g_cursorClass_00802A30->field_0493 = 1;
+        g_cursorClass_00802A30->field_0493 = CASE_1;
         pCVar4->field_0494 = 0xffff;
         CursorClassTy::SetGCType(pCVar4,CASE_0,iVar12,iVar6);
         CursorClassTy::DrawSprite(pCVar4,pCVar4->field_00C5,pCVar4->field_00C9);

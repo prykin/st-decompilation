@@ -119,7 +119,7 @@ int __thiscall TLOBaseTy::fireProc(TLOBaseTy *this)
           }
         }
         uVar5 = g_playSystem_00802A38->field_00E4;
-        iVar4 = thunk_FUN_004e8230(this_00->field_0024,this_00->field_0235,(int)local_8);
+        iVar4 = thunk_FUN_004e8230((int)this_00->field_0024,this_00->field_0235,(int)local_8);
         piVar7 = local_8;
         if (iVar4 + puVar8[-5] <= uVar5) {
           puVar8[-5] = uVar5;
@@ -154,7 +154,7 @@ int __thiscall TLOBaseTy::fireProc(TLOBaseTy *this)
           if (*(int *)(&DAT_00793e28 + iVar4 * 4) == 1) {
             piVar7 = local_8;
             if ((int)puVar8[0x10] < *(int *)(&DAT_00794038 + iVar4 * 4)) {
-              iVar4 = thunk_FUN_004de410((void *)this_00->field_0024,(&DAT_00792ca0)[iVar4 * 3],
+              iVar4 = thunk_FUN_004de410(this_00->field_0024,(&DAT_00792ca0)[iVar4 * 3],
                                          *(int *)(&DAT_00794038 + iVar4 * 4) - puVar8[0x10]);
               puVar8[0x10] = puVar8[0x10] + iVar4;
               piVar7 = local_8;
@@ -163,7 +163,7 @@ int __thiscall TLOBaseTy::fireProc(TLOBaseTy *this)
           }
           if (*(int *)(&DAT_00793e28 + iVar4 * 4) == 2) {
             if ((int)puVar8[0x10] < *(int *)(&DAT_00794038 + iVar4 * 4)) {
-              iVar4 = thunk_FUN_004dfb90(this_00->field_0024,
+              iVar4 = thunk_FUN_004dfb90((uint)this_00->field_0024,
                                          *(int *)(&DAT_00794038 + iVar4 * 4) - puVar8[0x10],
                                          *(int *)(&DAT_00793ff0 +
                                                  (&DAT_00792ca0)[this_00->field_0235 * 6] * 4));
@@ -175,7 +175,7 @@ LAB_004c3985:
         iVar4 = ((int)piVar7 + this_00->field_0235 * 2) * 4;
         if (((*(int *)(&DAT_00793e28 + iVar4) == 2) &&
             ((int)puVar8[0x10] < *(int *)(&DAT_00794038 + iVar4))) &&
-           (iVar4 = thunk_FUN_004e8230(this_00->field_0024,this_00->field_0235,(int)piVar7),
+           (iVar4 = thunk_FUN_004e8230((int)this_00->field_0024,this_00->field_0235,(int)piVar7),
            puVar8[0x11] + iVar4 * 10 <= g_playSystem_00802A38->field_00E4)) {
           puVar8[0x10] = puVar8[0x10] + 1;
           puVar8[0x11] = g_playSystem_00802A38->field_00E4;

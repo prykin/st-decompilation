@@ -4,7 +4,6 @@ undefined4 __fastcall FUN_00572ba0(int param_1)
 {
   int iVar1;
   cMf32 *this;
-  cMf32 *this_00;
   byte local_154 [260];
   InternalExceptionFrame local_50;
   int local_c;
@@ -29,7 +28,7 @@ undefined4 __fastcall FUN_00572ba0(int param_1)
                     (undefined4 *)0x0,'\0',(uint *)0x0);
       cMf32::RecPut(this,0xc,PTR_s_MOUKEYS_PLAYER_0079b0e4,(byte *)(iVar1 + 0xc1e),0x78,
                     (undefined4 *)0x0,'\0',(uint *)0x0);
-      cMf32::delete(this_00,this);
+      cMf32::delete(this);
     }
     g_currentExceptionFrame = local_50.previous;
     return local_8;

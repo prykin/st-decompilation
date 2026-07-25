@@ -93,7 +93,7 @@ int __thiscall TLOBaseTy::fireFindCheckTarget(TLOBaseTy *this,int param_1,int pa
   }
   local_10 = ppTVar15;
   if (*(int *)(&DAT_00792a90 + (param_1 + local_60->field_0235 * 2) * 4) == 1) {
-    local_58 = thunk_FUN_004e81b0(local_60->field_0024,local_60->field_0235,param_1);
+    local_58 = thunk_FUN_004e81b0((int)local_60->field_0024,local_60->field_0235,param_1);
     iVar7 = this_00->field_05B4 + -8;
     local_18 = iVar7;
     if (iVar7 <= this_00->field_05B4 + 8) {

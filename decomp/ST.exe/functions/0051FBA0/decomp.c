@@ -21,7 +21,6 @@ int __thiscall HelpStringTy::GetMessage(HelpStringTy *this,STMessage *message)
   undefined4 *puVar6;
   DWORD DVar7;
   int iVar8;
-  ccFntTy *this_01;
   uint uVar9;
   InternalExceptionFrame local_4c;
   HelpStringTy *local_8;
@@ -75,7 +74,7 @@ int __thiscall HelpStringTy::GetMessage(HelpStringTy *this,STMessage *message)
     case MESS_SHARED_0003:
       DAT_00801694 = (HelpStringTy *)0x0;
       if (local_8->field_011E != (ccFntTy *)0x0) {
-        ccFntTy::operator(this_01,(uint *)local_8->field_011E);
+        ccFntTy::operator((uint *)local_8->field_011E);
         this_00->field_011E = (ccFntTy *)0x0;
       }
       if (this_00->field_012A != (ushort *)0x0) {

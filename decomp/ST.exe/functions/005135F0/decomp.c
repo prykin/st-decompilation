@@ -33,7 +33,7 @@ void __thiscall HelpPanelTy::HomeBut(HelpPanelTy *this)
   this_00 = local_c;
   if (iVar3 == 0) {
     HVar1 = local_c->field_01A1;
-    if (((HVar1 == 0) || (HVar1 == CASE_6)) || (HVar1 == (CASE_8|CASE_2))) {
+    if (((HVar1 == 0) || (HVar1 == CASE_6)) || (HVar1 == CASE_A)) {
       local_c->field_01A2 = HVar1;
       local_c->field_01AB = local_c->field_01A3;
     }

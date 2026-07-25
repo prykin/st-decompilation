@@ -23,7 +23,7 @@ void __thiscall HelpPanelTy::IndexBut(HelpPanelTy *this)
   this_00 = local_8;
   if (errorCode == 0) {
     HVar1 = local_8->field_01A1;
-    if (((HVar1 == 0) || (HVar1 == CASE_6)) || (HVar1 == (CASE_8|CASE_2))) {
+    if (((HVar1 == 0) || (HVar1 == CASE_6)) || (HVar1 == CASE_A)) {
       local_8->field_01A2 = HVar1;
       local_8->field_01AB = local_8->field_01A3;
     }
@@ -31,7 +31,7 @@ void __thiscall HelpPanelTy::IndexBut(HelpPanelTy *this)
       local_8->field_01A2 = 0;
       local_8->field_01AB = 0;
     }
-    local_8->field_01A1 = CASE_8|CASE_2;
+    local_8->field_01A1 = CASE_A;
     local_8->field_01A3 = 0;
     Library::DKW::WGR::FUN_006b55f0
               ((AnonShape_006B5B10_E0D06CF1 *)local_8->field_0068,0,0x21,0x16,

@@ -32,7 +32,7 @@ void FUN_00682850(void)
   thunk_FUN_00682810(0x29);
   while (DAT_007d2d18 != 0x39) {
     thunk_FUN_00683600();
-    pfVar5 = (float *)((int)pfVar5 + 1);
+    pfVar5 = (float *)((int)pfVar5 + CASE_1);
     if (DAT_007d2d18 == 0x10) {
       thunk_FUN_006827a0();
     }
@@ -45,7 +45,7 @@ void FUN_00682850(void)
   if (((int)pfVar3 < (int)pfVar5) && (iVar4 = thunk_FUN_00668a30(GVar2), iVar4 == 0)) {
     thunk_FUN_006802a0(-0x79,local_8c);
   }
-  for (; (int)pfVar5 < (int)pfVar3; pfVar5 = (float *)((int)pfVar5 + 1)) {
+  for (; (int)pfVar5 < (int)pfVar3; pfVar5 = (float *)((int)pfVar5 + CASE_1)) {
     iVar4 = thunk_FUN_00668aa0(GVar2,(Global_sub_00668AA0_param_2Enum)pfVar5,(undefined1 *)local_c);
     if (iVar4 == 0) {
       thunk_FUN_006802a0(-0x7a,local_8c);

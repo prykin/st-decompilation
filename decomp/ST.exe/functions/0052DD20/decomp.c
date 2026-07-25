@@ -27,9 +27,7 @@ int __thiscall PopUpTy::GetMessage(PopUpTy *this,STMessage *message)
   int iVar10;
   uint uVar11;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
-  ccFntTy *extraout_ECX;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
-  undefined4 extraout_ECX_00;
+  undefined4 extraout_ECX;
   uint uVar12;
   uint *puVar13;
   InternalExceptionFrame local_5c;
@@ -77,7 +75,7 @@ int __thiscall PopUpTy::GetMessage(PopUpTy *this,STMessage *message)
         }
         if ((int)(uint)DAT_00807346 <= (int)puVar13[2]) {
           /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
-          OutStr(this_00,CONCAT31((int3)((uint)extraout_ECX_00 >> 8),DAT_00807346 - 1));
+          OutStr(this_00,CONCAT31((int3)((uint)extraout_ECX >> 8),DAT_00807346 - 1));
         }
         local_5 = 0;
         local_c = -0x18 - (int)this_00;
@@ -181,14 +179,11 @@ LAB_0052e184:
       puVar13 = puVar13 + 1;
       iVar4 = iVar4 + -1;
     } while (iVar4 != 0);
-    pcVar5 = (ccFntTy *)0x0;
     if (this_00->field_0090 != (ushort *)0x0) {
       FreeAndNull(&this_00->field_0090);
-      /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
-      pcVar5 = extraout_ECX;
     }
     if (this_00->field_0094 != (ccFntTy *)0x0) {
-      ccFntTy::operator(pcVar5,(uint *)this_00->field_0094);
+      ccFntTy::operator((uint *)this_00->field_0094);
       this_00->field_0094 = (ccFntTy *)0x0;
     }
     if ((DArrayTy *)this_00->field_0098 != (DArrayTy *)0x0) {

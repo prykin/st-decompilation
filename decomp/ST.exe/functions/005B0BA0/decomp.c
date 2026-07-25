@@ -12,7 +12,12 @@
 
    [STMessageHandlerApplier] Recovered common GetMessage envelope/signature.
    Evidence: family_entries=00402E4B|005B0BA0; family_names=ChooseMapTy::GetMessage; ret4=2;
-   direct_offsets={10:4,14:24,18:5,1c:0} */
+   direct_offsets={10:4,14:24,18:5,1c:0}
+
+   [STSwitchEnumApplier] Switch target field_1A5F uses
+   /SubmarineTitans/Recovered/Enums/ChooseMapTy_field_1A5FState. Cases:
+   CASE_0=0;CASE_1=1;CASE_2=2;CASE_3=3;CASE_4=4;CASE_5=5;CASE_6=6;CASE_7=7;CASE_9=9;CASE_A=10;CASE_B=11;CASE_C=12;CASE_D=13;CASE_10=16;CASE_13=19;CASE_14=20;CASE_15=21
+    */
 
 int __thiscall ChooseMapTy::GetMessage(ChooseMapTy *this,STMessage *message)
 
@@ -211,7 +216,7 @@ int __thiscall ChooseMapTy::GetMessage(ChooseMapTy *this,STMessage *message)
         /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
         case MESS_ID_CREATE:
           InitChooseMap(this_01,*(undefined1 *)((message->arg0).u32 + 0x14),
-                        *(byte *)((message->arg0).u32 + 0x18));
+                        *(ChooseMapTy_InitChooseMap_param_2Enum *)((message->arg0).u32 + 0x18));
           break;
         case MESS_SHARED_0003:
           DoneChooseMap(this_01);

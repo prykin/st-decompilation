@@ -1026,19 +1026,19 @@ LAB_00662dbb:
       if ((STGameObjC *)local_10 == (STGameObjC *)0x0) goto cf_continue_loop_00662E52;
       switch(**(undefined4 **)((int)param_1 + 10)) {
       case 0xa3:
-        iVar10 = thunk_FUN_004c7860(local_10,4,0,1,1,1);
+        iVar10 = TLOBaseTy::sub_004C7860((TLOBaseTy *)local_10,4,0,1,1,1);
         break;
       default:
         iVar10 = 0;
         break;
       case 0xa8:
-        iVar10 = thunk_FUN_004c7860(local_10,6,0,1,1,1);
+        iVar10 = TLOBaseTy::sub_004C7860((TLOBaseTy *)local_10,6,0,1,1,1);
         break;
       case 0xb2:
         iVar10 = 1;
         break;
       case 0xbe:
-        iVar10 = thunk_FUN_004c7860(local_10,8,0,1,1,1);
+        iVar10 = TLOBaseTy::sub_004C7860((TLOBaseTy *)local_10,8,0,1,1,1);
       }
       if (iVar10 == 0) goto cf_continue_loop_00662E52;
       *(undefined1 *)(param_1 + 2) = 1;

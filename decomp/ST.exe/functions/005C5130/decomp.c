@@ -56,20 +56,20 @@ int __thiscall SettMapTy::NoneSettMap(SettMapTy *this,int *param_1)
       local_8 = 0;
     }
     SVar2 = this_00->field_1E26;
-    if (((SVar2 != 6) && (SVar2 != CASE_7)) &&
-       ((SVar2 != 0xe &&
+    if (((SVar2 != CASE_6) && (SVar2 != CASE_7)) &&
+       ((SVar2 != CASE_E &&
         (((this_00->field_0x21e2 != '\0' && (this_00->field_21EC != (HoloTy *)0x0)) &&
          (iVar7 = HoloTy::NextFas(this_00->field_21EC), iVar7 != 0)))))) {
       local_8 = 0;
     }
     SVar2 = this_00->field_1E26;
-    if ((((SVar2 == 6) || (SVar2 == CASE_7)) || (SVar2 == 0xe)) &&
+    if ((((SVar2 == CASE_6) || (SVar2 == CASE_7)) || (SVar2 == CASE_E)) &&
        (((this_00->field_0x21e3 != '\0' && (this_00->field_21F0 != (HoloTy *)0x0)) &&
         (iVar7 = HoloTy::NextFas(this_00->field_21F0), iVar7 != 0)))) {
       local_8 = 0;
     }
     SVar2 = this_00->field_1E26;
-    if (((((SVar2 != 6) && (SVar2 != 1)) && (SVar2 != 2)) &&
+    if (((((SVar2 != CASE_6) && (SVar2 != CASE_1)) && (SVar2 != CASE_2)) &&
         ((this_00->field_0x21e6 != '\0' && (this_00->field_21F8 != (HoloTy *)0x0)))) &&
        (iVar7 = HoloTy::NextFas(this_00->field_21F8), iVar7 != 0)) {
       local_8 = 0;
@@ -96,8 +96,8 @@ int __thiscall SettMapTy::NoneSettMap(SettMapTy *this,int *param_1)
         this_00->field_21F0 = (HoloTy *)0x0;
       }
       SVar2 = this_00->field_1E26;
-      if ((((SVar2 == 6) || (SVar2 == CASE_7)) || (SVar2 == 0xe)) && (this_00->field_0x21e3 != '\0')
-         ) {
+      if ((((SVar2 == CASE_6) || (SVar2 == CASE_7)) || (SVar2 == CASE_E)) &&
+         (this_00->field_0x21e3 != '\0')) {
         Library::DKW::DDX::FUN_006b3430((int *)PTR_008075a8,this_00->field_1F80);
       }
       if (this_00->field_21E8 != (HoloTy *)0x0) {
@@ -143,7 +143,7 @@ int __thiscall SettMapTy::NoneSettMap(SettMapTy *this,int *param_1)
         this_00->field_21EC = (HoloTy *)0x0;
       }
       SVar2 = this_00->field_1E26;
-      if (((SVar2 != 6) && (SVar2 != CASE_7)) && (SVar2 != 0xe)) {
+      if (((SVar2 != CASE_6) && (SVar2 != CASE_7)) && (SVar2 != CASE_E)) {
         if (g_startSystem_0081176C->field_0391 != 0xffffffff) {
           Library::DKW::DDX::FUN_006b34d0
                     ((uint *)g_startSystem_0081176C->field_03D5,g_startSystem_0081176C->field_0391,
@@ -196,7 +196,7 @@ int __thiscall SettMapTy::NoneSettMap(SettMapTy *this,int *param_1)
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
       (**(code **)&this_00->field_0000->field_0x18)(0);
       SVar2 = this_00->field_1E26;
-      if (((SVar2 == 6) || (SVar2 == CASE_7)) || (SVar2 == 0xe)) {
+      if (((SVar2 == CASE_6) || (SVar2 == CASE_7)) || (SVar2 == CASE_E)) {
         SubmarineTitans::Recovered::HiddenThis::AnonReceiver_004EEFB0::thunk_FUN_005c8200
                   ((AnonReceiver_004EEFB0 *)this_00);
       }
@@ -245,7 +245,7 @@ int __thiscall SettMapTy::NoneSettMap(SettMapTy *this,int *param_1)
       }
     }
     SVar2 = this_00->field_1E26;
-    if ((((SVar2 != 6) && (SVar2 != CASE_7)) && (SVar2 != 0xe)) &&
+    if ((((SVar2 != CASE_6) && (SVar2 != CASE_7)) && (SVar2 != CASE_E)) &&
        ((this_00->field_0x21e2 != '\0' && (this_00->field_21EC != (HoloTy *)0x0)))) {
       iVar7 = HoloTy::NextFas(this_00->field_21EC);
       if (iVar7 == 0) {
@@ -259,7 +259,7 @@ int __thiscall SettMapTy::NoneSettMap(SettMapTy *this,int *param_1)
       }
     }
     SVar2 = this_00->field_1E26;
-    if ((((SVar2 == 6) || (SVar2 == CASE_7)) || (SVar2 == 0xe)) &&
+    if ((((SVar2 == CASE_6) || (SVar2 == CASE_7)) || (SVar2 == CASE_E)) &&
        ((this_00->field_0x21e3 != '\0' && (this_00->field_21F0 != (HoloTy *)0x0)))) {
       iVar7 = HoloTy::NextFas(this_00->field_21F0);
       if (iVar7 == 0) {
@@ -273,7 +273,7 @@ int __thiscall SettMapTy::NoneSettMap(SettMapTy *this,int *param_1)
       }
     }
     SVar2 = this_00->field_1E26;
-    if ((((SVar2 != 6) && (SVar2 != 1)) && (SVar2 != 2)) &&
+    if ((((SVar2 != CASE_6) && (SVar2 != CASE_1)) && (SVar2 != CASE_2)) &&
        ((this_00->field_0x21e6 != '\0' && (this_00->field_21F8 != (HoloTy *)0x0)))) {
       iVar7 = HoloTy::NextFas(this_00->field_21F8);
       if (iVar7 == 0) {

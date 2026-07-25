@@ -21,7 +21,6 @@ uint * __thiscall cLoadingTy::new(cLoadingTy *this,uint param_1,char *text,uint 
   int iVar6;
   uint *puVar7;
   uint uVar8;
-  ccFntTy *this_01;
   char *pcVar9;
   char *pcVar10;
   byte bVar11;
@@ -47,7 +46,7 @@ uint * __thiscall cLoadingTy::new(cLoadingTy *this,uint param_1,char *text,uint 
       if (local_8 != (uint *)0x0) {
         cMf32::RecMemFree(g_cMf32_00806780,local_8);
         if ((uint *)local_8[2] != (uint *)0x0) {
-          ccFntTy::operator(this_01,(uint *)local_8[2]);
+          ccFntTy::operator((uint *)local_8[2]);
           local_8[2] = 0;
         }
         FreeAndNull(&local_8);

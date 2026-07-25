@@ -520,7 +520,7 @@ int __thiscall HelpPanelTy::GetMessage(HelpPanelTy *this,STMessage *message)
         pDVar17 = (DArrayTy *)this_00->field_01B3;
       }
       else {
-        if (HVar2 != (CASE_8|CASE_2)) {
+        if (HVar2 != CASE_A) {
           g_currentExceptionFrame = local_84.previous;
           return 0;
         }
@@ -694,7 +694,7 @@ LAB_0051ef61:
         pDVar17 = (DArrayTy *)this_00->field_01B3;
       }
       else {
-        if (HVar2 != (CASE_8|CASE_2)) {
+        if (HVar2 != CASE_A) {
           g_currentExceptionFrame = local_84.previous;
           return 0;
         }
@@ -771,7 +771,7 @@ switchD_0051ea9b_caseD_0:
       g_currentExceptionFrame = local_84.previous;
       return 0;
     case MESS_SIDTY_8163:
-      if (this_00->field_01A1 != (CASE_8|CASE_2)) {
+      if (this_00->field_01A1 != CASE_A) {
         this_00->field_01B7 = message->arg0;
         g_currentExceptionFrame = local_84.previous;
         return 0;

@@ -7,7 +7,11 @@
 
    [STMessageHandlerApplier] Recovered common GetMessage envelope/signature.
    Evidence: family_entries=00401672|00621B50; family_names=STMineSetC::GetMessage; ret4=13;
-   direct_offsets={10:1,14:3,18:2,1c:0} */
+   direct_offsets={10:1,14:3,18:2,1c:0}
+
+   [STSwitchEnumApplier] Switch target field_02AE uses
+   /SubmarineTitans/Recovered/Enums/STMineSetC_field_02AEState. Cases:
+   CASE_0=0;CASE_1=1;CASE_2=2;CASE_3=3;CASE_4=4;CASE_5=5 */
 
 int __thiscall STMineSetC::GetMessage(STMineSetC *this,STMessage *message)
 
@@ -150,13 +154,13 @@ int __thiscall STMineSetC::GetMessage(STMineSetC *this,STMessage *message)
     }
     else {
       if ((((this_00->field_0314 == '\0') && (SVar10 = this_00->field_02AE, SVar10 != CASE_2)) &&
-          (SVar10 != CASE_3)) && ((SVar10 != CASE_4 && (SVar10 != (CASE_4|CASE_1))))) {
+          (SVar10 != CASE_3)) && ((SVar10 != CASE_4 && (SVar10 != CASE_5)))) {
         SVar10 = sub_00627400(this_00,SVar10);
         this_00->field_02AE = SVar10;
       }
       SVar10 = this_00->field_02AE;
-      if (((SVar10 != CASE_2) && (SVar10 != CASE_3)) &&
-         ((SVar10 != CASE_4 && (SVar10 != (CASE_4|CASE_1))))) {
+      if (((SVar10 != CASE_2) && (SVar10 != CASE_3)) && ((SVar10 != CASE_4 && (SVar10 != CASE_5))))
+      {
         if (this_00->field_0353 == '\0') {
           uVar11 = sub_006226C0(this_00,(int)this_00->field_0047,(int)this_00->field_0049);
           this_00->field_0353 = (char)uVar11;

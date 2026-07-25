@@ -7,6 +7,10 @@
    [STSwitchEnumApplier] Switch target field_02DD uses
    /SubmarineTitans/Recovered/Enums/STColl3C_field_02DDState. Cases:
    CASE_1=1;CASE_2=2;CASE_3=3;CASE_4=4;CASE_5=5;CASE_6=6;CASE_8=8;CASE_9=9;CASE_A=10;CASE_B=11;CASE_C=12
+
+   [STSwitchEnumApplier] Switch target field_02DD uses
+   /SubmarineTitans/Recovered/Enums/STColl3C_field_02DDState. Cases:
+   CASE_1=1;CASE_2=2;CASE_3=3;CASE_4=4;CASE_5=5;CASE_6=6;CASE_7=7;CASE_8=8;CASE_9=9;CASE_A=10;CASE_B=11;CASE_C=12;CASE_D=13
     */
 
 void __thiscall STColl3C::sub_005F6F60(STColl3C *this)
@@ -274,7 +278,7 @@ LAB_005f79aa:
       return;
     }
     break;
-  case CASE_6|CASE_1:
+  case CASE_7:
     if (this->field_02E1 <= g_playSystem_00802A38->field_00E4) {
       this->field_02EE = 0;
       this->field_02DD = CASE_1;
@@ -590,7 +594,7 @@ cf_common_exit_005F76D2:
       }
     }
     break;
-  case CASE_C|CASE_1:
+  case CASE_D:
     this_00 = &this->vtable_at_1d5;
     iVar6 = thunk_FUN_004ac910(this_00,'\b');
     if (iVar6 == 1) {

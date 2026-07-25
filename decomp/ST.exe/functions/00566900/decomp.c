@@ -7,11 +7,9 @@
 void __thiscall SoundManagerTy::sub_00566900(SoundManagerTy *this)
 
 {
-  cMf32 *this_00;
-
   thunk_FUN_00568940(&g_sound,CASE_B);
   if ((cMf32 *)this->field_0018 != (cMf32 *)0x0) {
-    cMf32::delete(this_00,(cMf32 *)this->field_0018);
+    cMf32::delete((cMf32 *)this->field_0018);
   }
   this->field_0018 = 0;
   this->field_0028 = 0;

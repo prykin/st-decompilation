@@ -133,6 +133,7 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_006CEC40::pointee	/Submarin
 TLOBaseTy::pointee	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_TLOBaseTy_01F5	disabled	0	0	apply=0
 TLOBaseTy::pointee	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_TLOBaseTy_0291	disabled	0	0	apply=0
 TLOBaseTy::pointee	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_TLOBaseTy_05B4	disabled	0	0	apply=0
+TLOBaseTy::pointee	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_TLOBaseTy_0607	disabled	0	0	apply=0
 TLOEmbryoTy::pointee	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_TLOEmbryoTy_0000	disabled	0	0	apply=0
 WaitTy::pointee	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_WaitTy_000C	disabled	0	0	apply=0
 WaitTy::pointee	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_WaitTy_1A5B	disabled	0	0	apply=0
@@ -249,6 +250,7 @@ StartSystemTy	/StartSystemTy	unchanged	0	0	116 fields; length=1718
 SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00416270	/SubmarineTitans/Recovered/HiddenThis/AnonReceiver_00416270	disabled	0	0	apply=0
 SubmarineTitans::Recovered::HiddenThis::AnonReceiver_004167A0	/SubmarineTitans/Recovered/HiddenThis/AnonReceiver_004167A0	disabled	0	0	apply=0
 SubmarineTitans::Recovered::HiddenThis::AnonReceiver_004248D0	/SubmarineTitans/Recovered/HiddenThis/AnonReceiver_004248D0	disabled	0	0	apply=0
+SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00424E10	/SubmarineTitans/Recovered/HiddenThis/AnonReceiver_00424E10	disabled	0	0	apply=0
 SubmarineTitans::Recovered::HiddenThis::AnonReceiver_004603B0	/SubmarineTitans/Recovered/HiddenThis/AnonReceiver_004603B0	disabled	0	0	apply=0
 SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0048DFD0	/SubmarineTitans/Recovered/HiddenThis/AnonReceiver_0048DFD0	disabled	0	0	apply=0
 SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00490CD0	/SubmarineTitans/Recovered/HiddenThis/AnonReceiver_00490CD0	disabled	0	0	apply=0
@@ -289,7 +291,7 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00727C80	/SubmarineTitans/R
 SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00728640	/SubmarineTitans/Recovered/HiddenThis/AnonReceiver_00728640	disabled	0	0	apply=0
 SystemClassTy	/SystemClassTy	disabled	0	0	apply=0
 SystemWithNamedObjClassTy	/SystemWithNamedObjClassTy	unchanged	0	0	2 fields; length=36
-TLOBaseTy	/TLOBaseTy	unchanged	0	0	195 fields; length=1571
+TLOBaseTy	/TLOBaseTy	unchanged	0	0	197 fields; length=1571
 TLOBldMark	/TLOBldMark	unchanged	0	0	8 fields; length=60
 TLOEmbryoTy	/TLOEmbryoTy	unchanged	0	0	62 fields; length=884
 TLOFakeTy	/TLOFakeTy	unchanged	0	0	9 fields; length=593

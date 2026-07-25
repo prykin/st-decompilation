@@ -18,7 +18,6 @@ void __fastcall FUN_00572510(AnonShape_00572510_F06DC155 *param_1)
   byte *pbVar6;
   uint uVar7;
   uint uVar8;
-  cMf32 *this_01;
   char *pcVar9;
   char *pcVar11;
   int iVar12;
@@ -145,7 +144,7 @@ LAB_005727f1:
             DAT_00807300._0_1_ = '\x01';
           }
           thunk_FUN_00573240();
-          cMf32::delete(this_01,this_00);
+          cMf32::delete(this_00);
         }
         g_currentExceptionFrame = local_58.previous;
         local_10 = this;

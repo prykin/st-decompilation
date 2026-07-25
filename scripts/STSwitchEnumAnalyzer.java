@@ -1,6 +1,7 @@
-// Recover anonymous enum/state domains from decompiled switch statements.
-// Read-only: emits switch_enum_proposals.tsv/jsonl. Parameter and generated class-field
-// targets can be auto-applied; locals/globals remain review-only in this version.
+// Recover anonymous enum/state domains from decompiled switch statements and exact
+// typed uses of script-generated enums. Read-only: emits switch_enum_proposals.tsv/jsonl.
+// New parameter/generated-field targets and existing generated domains can be
+// auto-applied; locals/globals remain review-only.
 // @author OpenAI
 // @category SubmarineTitans.Recovery
 // @menupath Tools.Submarine Titans.Analyze Switch Enums
@@ -44,14 +45,30 @@ import ghidra.program.model.listing.Parameter;
 import ghidra.program.model.symbol.SourceType;
 
 public class STSwitchEnumAnalyzer extends GhidraScript {
+    private static final String CASE_NAME = "CASE_(?:NEG_)?[0-9A-Fa-f]+";
+    private static final String CASE_ATOM =
+        "-?(?:0[xX][0-9a-fA-F]+|[0-9]+)|[A-Za-z_][A-Za-z0-9_:]*";
     private static final Pattern CASE = Pattern.compile(
-        "\\bcase\\s+(-?(?:0[xX][0-9a-fA-F]+|[0-9]+)|" +
-        "[A-Za-z_][A-Za-z0-9_:]*)\\s*:");
+        "\\bcase\\s+((?:" + CASE_ATOM + ")(?:\\s*\\|\\s*(?:" + CASE_ATOM + "))*)\\s*:");
     private static final Pattern POINTER_FIELD = Pattern.compile(
         "^([A-Za-z_][A-Za-z0-9_]*)->([A-Za-z_][A-Za-z0-9_]*)$");
     private static final Pattern POINTER_DECLARATION = Pattern.compile(
         "(?m)^\\s*(?:const\\s+)?(?:struct\\s+|class\\s+)?" +
         "([A-Za-z_][A-Za-z0-9_:]*)\\s*\\*+\\s*([A-Za-z_][A-Za-z0-9_]*)\\s*;");
+    private static final Pattern LOCAL_DECLARATION = Pattern.compile(
+        "(?m)^\\s*(?:const\\s+)?(?:enum\\s+)?" +
+        "([A-Za-z_][A-Za-z0-9_:]*)\\s*(\\*+\\s*)?" +
+        "([A-Za-z_][A-Za-z0-9_]*)\\s*(?:\\[[^;\\r\\n]+\\])?\\s*;");
+    private static final Pattern FIELD_USE = Pattern.compile(
+        "\\b([A-Za-z_][A-Za-z0-9_]*)->([A-Za-z_][A-Za-z0-9_]*)\\b");
+    private static final Pattern CAST_TYPE = Pattern.compile(
+        "\\(\\s*(?:const\\s+)?([A-Za-z_][A-Za-z0-9_:]*)\\s*\\*?\\s*\\)");
+    private static final Pattern CASE_COMPOSITION = Pattern.compile(
+        "\\b(" + CASE_NAME + "(?:\\s*\\|\\s*" + CASE_NAME + ")+)\\b");
+    private static final Pattern COMPLEMENTED_CASE_COMPOSITION = Pattern.compile(
+        "~\\s*\\(\\s*(" + CASE_NAME + "(?:\\s*\\|\\s*" + CASE_NAME + ")+)\\s*\\)");
+    private static final Pattern ADDRESS_NAMED_CALL = Pattern.compile(
+        "(?i)(?:thunk_)?(?:FUN|sub)_([0-9a-f]{8})$");
     private static final Pattern SIMPLE_LOCAL = Pattern.compile("^[A-Za-z_][A-Za-z0-9_]*$");
     private static final Pattern THIS_OFFSET = Pattern.compile(
         "\\bthis\\s*\\+\\s*(0[xX][0-9a-fA-F]+|[0-9]+)");
@@ -73,6 +90,8 @@ public class STSwitchEnumAnalyzer extends GhidraScript {
         if (selected == null) return;
         Path directory = programDirectory(selected);
         Files.createDirectories(directory);
+        Path domainStatePath = directory.resolve("switch_enum_domains.tsv");
+        Map<String, DomainState> storedDomains = readDomains(domainStatePath);
 
         decompiler = new DecompInterface();
         decompiler.toggleCCode(true);
@@ -83,6 +102,7 @@ public class STSwitchEnumAnalyzer extends GhidraScript {
                 decompiler.getLastMessage());
 
         Map<String, Proposal> grouped = new LinkedHashMap<>();
+        Map<String, ObservedEnumDomain> observedEnums = new TreeMap<>();
         int candidateFunctions = 0, decompileRetries = 0, decompileFailures = 0,
             rawSwitches = 0;
         List<DecompileRetry> retries = new ArrayList<>();
@@ -109,13 +129,18 @@ public class STSwitchEnumAnalyzer extends GhidraScript {
                 }
                 String decompiled = results.getDecompiledFunction().getC();
                 Map<String, String> pointerOwners = pointerOwners(function, decompiled);
+                observeGeneratedEnumCompositions(function, decompiled, pointerOwners,
+                    observedEnums);
                 List<SwitchBlock> switches = switches(decompiled);
                 rawSwitches += switches.size();
                 for (int index = 0; index < switches.size(); index++) {
                     SwitchBlock block = switches.get(index);
                     Target target = target(function, block.expression, index, pointerOwners);
                     Set<Long> values = block.values(target.type);
-                    if (values.size() < 3) continue;
+                    // Three arms are still required to create a new enum. Once the
+                    // target is script-owned, even one new exact arm is enough to
+                    // grow its monotonic domain.
+                    if (values.size() < 3 && !isGeneratedEnum(target.type)) continue;
                     // A reviewed/semantic enum that already covers every observed arm is a
                     // fixed point, not evidence for another address-derived enum. Generated
                     // switch enums are deliberately excluded so they can still grow when a
@@ -125,6 +150,7 @@ public class STSwitchEnumAnalyzer extends GhidraScript {
                     Proposal proposal = grouped.get(key);
                     if (proposal == null) {
                         proposal = proposal(function, target);
+                        proposal.values.addAll(generatedEnumValues(target.type));
                         grouped.put(key, proposal);
                     }
                     proposal.values.addAll(values);
@@ -139,14 +165,21 @@ public class STSwitchEnumAnalyzer extends GhidraScript {
         }
 
         List<Proposal> proposals = new ArrayList<>();
-        for (Proposal proposal : grouped.values()) {
-            if (proposal.values.size() < 3) continue;
-            proposal.finish();
-            proposals.add(proposal);
-        }
+        for (Proposal proposal : grouped.values())
+            if (proposal.values.size() >= 3) proposals.add(proposal);
         proposals.sort(Comparator.comparing((Proposal p) -> p.functionAddress)
             .thenComparing(p -> p.targetKind).thenComparing(p -> p.targetName));
         makeEnumNamesUnique(proposals);
+        mergeObservedEnums(proposals, observedEnums);
+        proposals.sort(Comparator.comparing((Proposal p) -> p.functionAddress)
+            .thenComparing(p -> p.targetKind).thenComparing(p -> p.targetName));
+        for (Proposal proposal : proposals) {
+            DomainState stored = storedDomains.get(proposal.enumName);
+            if (stored != null && stored.length == proposal.enumLength)
+                proposal.values.addAll(stored.values);
+            proposal.finish();
+        }
+        writeDomains(domainStatePath, storedDomains, proposals);
 
         writeTsv(directory.resolve("switch_enum_proposals.tsv"), proposals);
         writeJson(directory.resolve("switch_enum_proposals.jsonl"), proposals);
@@ -164,12 +197,28 @@ public class STSwitchEnumAnalyzer extends GhidraScript {
 
     private boolean isCandidate(Function function) {
         if (function.isThunk() || function.isExternal() || isExcludedLibrary(function)) return false;
+        for (Parameter parameter : function.getParameters())
+            if (generatedEnum(parameter.getDataType()) != null) return true;
+        Structure owner = ownerStructure(functionOwner(function));
+        if (owner != null) {
+            for (DataTypeComponent component : owner.getDefinedComponents())
+                if (generatedEnum(component.getDataType()) != null) return true;
+        }
         InstructionIterator instructions = currentProgram.getListing()
             .getInstructions(function.getBody(), true);
         while (instructions.hasNext()) {
             Instruction instruction = instructions.next();
             if (instruction.getFlowType().isComputed() && instruction.getFlowType().isJump())
                 return true;
+            if (!instruction.getFlowType().isCall()) continue;
+            for (Address flow : instruction.getFlows()) {
+                Function callee = currentProgram.getFunctionManager().getFunctionAt(flow);
+                if (callee == null) continue;
+                if (callee.isThunk() && callee.getThunkedFunction(true) != null)
+                    callee = callee.getThunkedFunction(true);
+                for (Parameter parameter : callee.getParameters())
+                    if (generatedEnum(parameter.getDataType()) != null) return true;
+            }
         }
         return false;
     }
@@ -189,11 +238,24 @@ public class STSwitchEnumAnalyzer extends GhidraScript {
             int end = matching(c, brace, '{', '}');
             if (end < 0) break;
             String expression = c.substring(open + 1, close).trim();
-            Matcher matcher = CASE.matcher(c.substring(brace + 1, end));
-            Set<String> cases = new TreeSet<>();
-            while (matcher.find()) cases.add(matcher.group(1));
-            result.add(new SwitchBlock(expression, cases));
-            cursor = end + 1;
+            result.add(new SwitchBlock(expression, new TreeSet<>(), brace, end));
+            // Do not jump to the closing brace: nested switches are independent
+            // evidence sources and must be discovered as well.
+            cursor = word + 6;
+        }
+        Matcher matcher = CASE.matcher(c);
+        while (matcher.find()) {
+            SwitchBlock owner = null;
+            for (SwitchBlock candidate : result) {
+                if (matcher.start() <= candidate.bodyStart ||
+                        matcher.start() >= candidate.bodyEnd) continue;
+                if (owner == null ||
+                        candidate.bodyEnd - candidate.bodyStart <
+                            owner.bodyEnd - owner.bodyStart)
+                    owner = candidate;
+            }
+            // A case belongs to the innermost switch body that contains it.
+            if (owner != null) owner.cases.add(matcher.group(1));
         }
         return result;
     }
@@ -276,6 +338,252 @@ public class STSwitchEnumAnalyzer extends GhidraScript {
         return result;
     }
 
+    /**
+     * Mine exact values that Ghidra renders as CASE_A|CASE_B from variables,
+     * fields, casts, and direct call arguments whose data type is already an
+     * enum owned by this script.  This never creates a semantic/manual enum and
+     * never changes a non-generated target: it only grows an existing generated
+     * domain from a value that the decompiler itself typed as that enum.
+     */
+    private void observeGeneratedEnumCompositions(Function function, String decompiled,
+            Map<String, String> pointerOwners,
+            Map<String, ObservedEnumDomain> observed) {
+        Map<String, Enum> variables = new LinkedHashMap<>();
+        for (Parameter parameter : function.getParameters()) {
+            Enum type = generatedEnum(parameter.getDataType());
+            if (type != null) variables.put(parameter.getName(), type);
+        }
+        Matcher declaration = LOCAL_DECLARATION.matcher(decompiled);
+        while (declaration.find()) {
+            Enum type = generatedEnumNamed(declaration.group(1));
+            if (type != null) variables.put(declaration.group(3), type);
+        }
+
+        String[] lines = decompiled.split("\\R", -1);
+        for (String line : lines) {
+            List<Composition> compositions = compositions(line);
+            if (compositions.isEmpty()) continue;
+            for (Composition composition : compositions) {
+                Map<String, Enum> candidates = new LinkedHashMap<>();
+                for (Map.Entry<String, Enum> entry : variables.entrySet())
+                    if (containsIdentifier(line, entry.getKey()))
+                        candidates.put(entry.getValue().getPathName(), entry.getValue());
+
+                Matcher field = FIELD_USE.matcher(line);
+                while (field.find()) {
+                    Structure structure = ownerStructure(pointerOwners.get(field.group(1)));
+                    if (structure == null) continue;
+                    for (DataTypeComponent component : structure.getDefinedComponents()) {
+                        if (!field.group(2).equals(component.getFieldName())) continue;
+                        Enum type = generatedEnum(component.getDataType());
+                        if (type != null) candidates.put(type.getPathName(), type);
+                        break;
+                    }
+                }
+
+                Matcher cast = CAST_TYPE.matcher(line);
+                while (cast.find()) {
+                    Enum type = generatedEnumNamed(cast.group(1));
+                    if (type != null) candidates.put(type.getPathName(), type);
+                }
+                Enum called = calledParameterEnum(line, composition.start);
+                if (called != null) candidates.put(called.getPathName(), called);
+
+                List<EnumValueCandidate> exact = new ArrayList<>();
+                for (Enum candidate : candidates.values()) {
+                    Long value = typedCompositionValue(composition.expression, candidate);
+                    if (value == null) continue;
+                    if (composition.complemented)
+                        value = complementedValue(candidate, value);
+                    if (fits(candidate, value))
+                        exact.add(new EnumValueCandidate(candidate, value));
+                }
+                if (exact.size() != 1) continue;
+                EnumValueCandidate value = exact.get(0);
+                ObservedEnumDomain domain = observed.computeIfAbsent(
+                    value.type.getPathName(), ignored -> new ObservedEnumDomain(value.type));
+                domain.values.add(value.value);
+                domain.expressions.add((composition.complemented ? "~(" : "") +
+                    composition.expression + (composition.complemented ? ")" : ""));
+                domain.evidenceFunctions.add(addr(function.getEntryPoint()));
+                if (domain.functionAddress == null) {
+                    domain.functionAddress = function.getEntryPoint();
+                    domain.expectedFunction = function.getName(true);
+                    domain.expectedSignature =
+                        function.getSignature().getPrototypeString(true);
+                }
+            }
+        }
+    }
+
+    private List<Composition> compositions(String line) {
+        List<Composition> result = new ArrayList<>();
+        List<int[]> complementedRanges = new ArrayList<>();
+        Matcher complemented = COMPLEMENTED_CASE_COMPOSITION.matcher(line);
+        while (complemented.find()) {
+            result.add(new Composition(complemented.start(), complemented.end(),
+                complemented.group(1), true));
+            complementedRanges.add(new int[] { complemented.start(), complemented.end() });
+        }
+        Matcher direct = CASE_COMPOSITION.matcher(line);
+        while (direct.find()) {
+            boolean insideComplement = false;
+            for (int[] range : complementedRanges)
+                if (direct.start() >= range[0] && direct.end() <= range[1]) {
+                    insideComplement = true;
+                    break;
+                }
+            if (!insideComplement)
+                result.add(new Composition(direct.start(), direct.end(),
+                    direct.group(1), false));
+        }
+        return result;
+    }
+
+    private Long typedCompositionValue(String expression, Enum type) {
+        Set<String> names = Set.of(type.getNames());
+        long result = 0;
+        boolean found = false;
+        for (String item : expression.split("\\s*\\|\\s*")) {
+            int separator = item.lastIndexOf("::");
+            String name = separator < 0 ? item : item.substring(separator + 2);
+            if (!names.contains(name)) return null;
+            result |= type.getValue(name);
+            found = true;
+        }
+        return found ? result : null;
+    }
+
+    private long complementedValue(Enum type, long value) {
+        int bits = type.getLength() * 8;
+        if (bits >= 64) return ~value;
+        long mask = (1L << bits) - 1;
+        return (~value) & mask;
+    }
+
+    private Enum calledParameterEnum(String line, int expressionStart) {
+        for (int open = expressionStart - 1; open >= 0; open--) {
+            if (line.charAt(open) != '(') continue;
+            int close = matching(line, open, '(', ')');
+            if (close < expressionStart) continue;
+            String prefix = line.substring(0, open).stripTrailing();
+            int start = prefix.length();
+            while (start > 0) {
+                char ch = prefix.charAt(start - 1);
+                if (!Character.isJavaIdentifierPart(ch) && ch != ':') break;
+                start--;
+            }
+            if (start == prefix.length()) continue;
+            String callName = prefix.substring(start);
+            Matcher addressName = ADDRESS_NAMED_CALL.matcher(callName);
+            if (!addressName.find()) continue;
+            Address address = currentProgram.getAddressFactory().getAddress(addressName.group(1));
+            Function callee = address == null ? null :
+                currentProgram.getFunctionManager().getFunctionAt(address);
+            if (callee == null) continue;
+            if (callee.isThunk() && callee.getThunkedFunction(true) != null)
+                callee = callee.getThunkedFunction(true);
+            int argument = argumentIndex(line, open + 1, expressionStart);
+            Parameter[] parameters = callee.getParameters();
+            if (argument < 0 || argument >= parameters.length) continue;
+            Enum type = generatedEnum(parameters[argument].getDataType());
+            if (type != null) return type;
+        }
+        return null;
+    }
+
+    private int argumentIndex(String line, int start, int end) {
+        int index = 0, parentheses = 0, brackets = 0, braces = 0;
+        for (int cursor = start; cursor < end; cursor++) {
+            char ch = line.charAt(cursor);
+            if (ch == '(') parentheses++;
+            else if (ch == ')') parentheses--;
+            else if (ch == '[') brackets++;
+            else if (ch == ']') brackets--;
+            else if (ch == '{') braces++;
+            else if (ch == '}') braces--;
+            else if (ch == ',' && parentheses == 0 && brackets == 0 && braces == 0) index++;
+        }
+        return index;
+    }
+
+    private boolean containsIdentifier(String text, String name) {
+        int index = -1;
+        while ((index = text.indexOf(name, index + 1)) >= 0) {
+            boolean before = index == 0 ||
+                !Character.isJavaIdentifierPart(text.charAt(index - 1));
+            int afterIndex = index + name.length();
+            boolean after = afterIndex >= text.length() ||
+                !Character.isJavaIdentifierPart(text.charAt(afterIndex));
+            if (before && after) return true;
+        }
+        return false;
+    }
+
+    private Enum generatedEnumNamed(String name) {
+        String simple = leaf(name);
+        List<DataType> matches = new ArrayList<>();
+        currentProgram.getDataTypeManager().findDataTypes(simple, matches);
+        for (DataType match : matches) {
+            Enum type = generatedEnum(match);
+            if (type != null && type.getName().equals(simple)) return type;
+        }
+        return null;
+    }
+
+    private Enum generatedEnum(DataType type) {
+        while (type instanceof TypeDef value) type = value.getBaseDataType();
+        if (type instanceof Pointer pointer) {
+            type = pointer.getDataType();
+            while (type instanceof TypeDef value) type = value.getBaseDataType();
+        }
+        if (!(type instanceof Enum value)) return null;
+        String description = value.getDescription();
+        return description != null && description.contains(ENUM_MARKER) ? value : null;
+    }
+
+    private boolean isGeneratedEnum(DataType type) {
+        return generatedEnum(type) != null;
+    }
+
+    private boolean fits(Enum type, long value) {
+        int bits = type.getLength() * 8;
+        if (bits >= 64) return true;
+        long signedMinimum = -(1L << (bits - 1));
+        long unsignedMaximum = (1L << bits) - 1;
+        return value >= signedMinimum && value <= unsignedMaximum;
+    }
+
+    private void mergeObservedEnums(List<Proposal> proposals,
+            Map<String, ObservedEnumDomain> observed) {
+        for (ObservedEnumDomain domain : observed.values()) {
+            Proposal proposal = null;
+            for (Proposal candidate : proposals) {
+                if (candidate.expectedTargetType.equals(domain.type.getPathName()) ||
+                        candidate.enumName.equals(domain.type.getName())) {
+                    proposal = candidate;
+                    break;
+                }
+            }
+            if (proposal == null) {
+                proposal = new Proposal(domain.functionAddress, domain.expectedFunction,
+                    domain.expectedSignature, "generated_enum", domain.type.getName(),
+                    -1, -1, domain.type.getPathName(), "", domain.type.getPathName(),
+                    SourceType.ANALYSIS.toString(), domain.type.getName(),
+                    domain.type.getLength(), true, "high",
+                    "exact_typed_generated_enum_composition; script_owned_domain_growth");
+                for (String name : domain.type.getNames())
+                    proposal.values.add(domain.type.getValue(name));
+                proposals.add(proposal);
+            }
+            proposal.values.addAll(domain.values);
+            proposal.expressions.addAll(domain.expressions);
+            proposal.evidenceFunctions.addAll(domain.evidenceFunctions);
+            for (String address : domain.evidenceFunctions)
+                proposal.switchSites.add(address + ":typed_enum_use");
+        }
+    }
+
     private String pointedOwner(DataType type) {
         while (type instanceof TypeDef value) type = value.getBaseDataType();
         if (!(type instanceof Pointer pointer)) return null;
@@ -339,6 +647,15 @@ public class STSwitchEnumAnalyzer extends GhidraScript {
         Set<Long> defined = new TreeSet<>();
         for (String name : current.getNames()) defined.add(current.getValue(name));
         return defined.containsAll(values);
+    }
+
+    private Set<Long> generatedEnumValues(DataType type) {
+        if (!(type instanceof Enum current)) return Set.of();
+        String description = current.getDescription();
+        if (description == null || !description.contains(ENUM_MARKER)) return Set.of();
+        Set<Long> result = new TreeSet<>();
+        for (String name : current.getNames()) result.add(current.getValue(name));
+        return result;
     }
 
     private Structure ownerStructure(String owner) {
@@ -427,6 +744,53 @@ public class STSwitchEnumAnalyzer extends GhidraScript {
         }
     }
 
+    private Map<String, DomainState> readDomains(Path path) throws Exception {
+        Map<String, DomainState> result = new TreeMap<>();
+        if (!Files.isRegularFile(path)) return result;
+        List<String> lines = Files.readAllLines(path, StandardCharsets.UTF_8);
+        if (lines.isEmpty() || !"enum_name\tenum_length\tvalues".equals(lines.get(0)))
+            throw new IllegalStateException("Invalid switch enum domain state: " + path);
+        for (int line = 1; line < lines.size(); line++) {
+            if (lines.get(line).isBlank()) continue;
+            String[] fields = lines.get(line).split("\t", -1);
+            if (fields.length != 3)
+                throw new IllegalStateException("Invalid switch enum domain row " + (line + 1));
+            int length = Integer.parseInt(fields[1]);
+            Set<Long> values = new TreeSet<>();
+            for (String item : fields[2].split(";", -1)) {
+                if (item.isBlank()) continue;
+                int separator = item.lastIndexOf("=");
+                if (separator <= 0)
+                    throw new IllegalStateException("Invalid switch enum domain value " + item);
+                values.add(Long.parseLong(item.substring(separator + 1)));
+            }
+            result.put(fields[0], new DomainState(length, values));
+        }
+        return result;
+    }
+
+    private void writeDomains(Path path, Map<String, DomainState> stored,
+            List<Proposal> proposals) throws Exception {
+        Map<String, DomainState> merged = new TreeMap<>();
+        for (Map.Entry<String, DomainState> entry : stored.entrySet())
+            merged.put(entry.getKey(), new DomainState(entry.getValue().length,
+                new TreeSet<>(entry.getValue().values)));
+        for (Proposal proposal : proposals) {
+            DomainState state = merged.get(proposal.enumName);
+            if (state == null || state.length != proposal.enumLength) {
+                state = new DomainState(proposal.enumLength, new TreeSet<>());
+                merged.put(proposal.enumName, state);
+            }
+            state.values.addAll(proposal.values);
+        }
+        try (BufferedWriter out = Files.newBufferedWriter(path, StandardCharsets.UTF_8)) {
+            out.write("enum_name\tenum_length\tvalues\n");
+            for (Map.Entry<String, DomainState> entry : merged.entrySet())
+                out.write(entry.getKey() + "\t" + entry.getValue().length + "\t" +
+                    entry.getValue().valueText() + "\n");
+        }
+    }
+
     private void writeTsv(Path path, List<Proposal> rows) throws Exception {
         try (BufferedWriter out = Files.newBufferedWriter(path, StandardCharsets.UTF_8)) {
             out.write("apply\tfunction_address\texpected_function\texpected_signature\t" +
@@ -488,12 +852,15 @@ public class STSwitchEnumAnalyzer extends GhidraScript {
             "proposals=" + rows.size(),
             "auto_apply=" + rows.stream().filter(row -> row.apply).count(),
             "target_kinds=" + kinds,
-            "note=At least three numeric case values are required.",
+            "note=At least three numeric case values are required to create a new enum; an existing script-owned enum can grow from one exact typed value.",
+            "note_nested_switches=Case labels are assigned to their innermost switch; nested switches are analyzed independently.",
+            "note_compositions=Exact CASE_A|CASE_B and ~(CASE_A|CASE_B) values grow only an already script-owned enum when the typed operand is unambiguous.",
             "note_grouping=Switches over the same generated class field are merged across functions.",
             "note_aliases=Typed pointer aliases from decompiled declarations are resolved before field grouping.",
             "note_local_grouping=Repeated simple local expressions are merged only within one function and remain review-only.",
-            "note_apply=Only non-manual integral parameters and fields owned by " +
-                "STClassLayoutApplier are enabled automatically."), StandardCharsets.UTF_8);
+            "note_apply=Only non-manual integral parameters, fields owned by " +
+                "STClassLayoutApplier, and provenance-owned generated-enum growth are " +
+                "enabled automatically."), StandardCharsets.UTF_8);
     }
 
     private boolean isExcludedLibrary(Function function) {
@@ -575,8 +942,10 @@ public class STSwitchEnumAnalyzer extends GhidraScript {
     private static class SwitchBlock {
         final String expression;
         final Set<String> cases;
-        SwitchBlock(String expression, Set<String> cases) {
+        final int bodyStart, bodyEnd;
+        SwitchBlock(String expression, Set<String> cases, int bodyStart, int bodyEnd) {
             this.expression = expression; this.cases = cases;
+            this.bodyStart = bodyStart; this.bodyEnd = bodyEnd;
         }
         Set<Long> values(DataType targetType) {
             Set<Long> result = new TreeSet<>();
@@ -584,17 +953,27 @@ public class STSwitchEnumAnalyzer extends GhidraScript {
             Set<String> enumNames = targetEnum == null ? Set.of() :
                 Set.of(targetEnum.getNames());
             for (String item : cases) {
-                Long numeric = numberStatic(item);
-                if (numeric != null) {
-                    result.add(numeric);
-                    continue;
-                }
-                if (targetEnum == null) continue;
-                int separator = item.lastIndexOf("::");
-                String name = separator < 0 ? item : item.substring(separator + 2);
-                if (enumNames.contains(name)) result.add(targetEnum.getValue(name));
+                Long value = valueExpression(item, targetEnum, enumNames);
+                if (value != null) result.add(value);
             }
             return result;
+        }
+        private static Long valueExpression(String expression, Enum targetEnum,
+                Set<String> enumNames) {
+            long result = 0;
+            boolean found = false;
+            for (String item : expression.split("\\s*\\|\\s*")) {
+                Long value = numberStatic(item);
+                if (value == null && targetEnum != null) {
+                    int separator = item.lastIndexOf("::");
+                    String name = separator < 0 ? item : item.substring(separator + 2);
+                    if (enumNames.contains(name)) value = targetEnum.getValue(name);
+                }
+                if (value == null) return null;
+                result |= value;
+                found = true;
+            }
+            return found ? result : null;
         }
         private static Long numberStatic(String value) {
             try {
@@ -611,6 +990,31 @@ public class STSwitchEnumAnalyzer extends GhidraScript {
             }
             catch (Exception exception) { return null; }
         }
+    }
+    private static class Composition {
+        final int start, end;
+        final String expression;
+        final boolean complemented;
+        Composition(int start, int end, String expression, boolean complemented) {
+            this.start = start; this.end = end; this.expression = expression;
+            this.complemented = complemented;
+        }
+    }
+    private static class EnumValueCandidate {
+        final Enum type;
+        final long value;
+        EnumValueCandidate(Enum type, long value) {
+            this.type = type; this.value = value;
+        }
+    }
+    private static class ObservedEnumDomain {
+        final Enum type;
+        Address functionAddress;
+        String expectedFunction = "", expectedSignature = "";
+        final Set<Long> values = new TreeSet<>();
+        final Set<String> expressions = new TreeSet<>();
+        final Set<String> evidenceFunctions = new TreeSet<>();
+        ObservedEnumDomain(Enum type) { this.type = type; }
     }
     private static class Target {
         final String kind, targetName, containerPath, owner, reason;
@@ -638,6 +1042,25 @@ public class STSwitchEnumAnalyzer extends GhidraScript {
             return scope + "\u0000" + kind + "\u0000" + identity;
         }
     }
+    private static class DomainState {
+        final int length;
+        final Set<Long> values;
+        DomainState(int length, Set<Long> values) {
+            this.length = length;
+            this.values = values;
+        }
+        String valueText() {
+            List<String> result = new ArrayList<>();
+            for (Long value : values) result.add(valueName(value) + "=" + value);
+            return String.join(";", result);
+        }
+        private String valueName(long value) {
+            if (value < 0)
+                return "CASE_NEG_" + Long.toHexString(-value).toUpperCase(Locale.ROOT);
+            return "CASE_" + Long.toHexString(value).toUpperCase(Locale.ROOT);
+        }
+    }
+
     private static class Proposal {
         final Address functionAddress;
         final String expectedFunction, expectedSignature, targetKind, targetName,

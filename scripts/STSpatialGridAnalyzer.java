@@ -1,4 +1,4 @@
-// Recover the three repeated x/y/z/plane-stride grid descriptors used by the world/pathing code.
+// Recover repeated x/y/z/plane-stride descriptors from global-reference geometry.
 // Read-only: writes spatial_grid_proposals.{tsv,jsonl} and spatial_grid_summary.txt.
 // @author OpenAI
 // @category SubmarineTitans.Recovery
@@ -12,8 +12,10 @@ import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.HashSet;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
+import java.util.Map;
 import java.util.Set;
 import java.util.TreeSet;
 
@@ -26,6 +28,9 @@ import ghidra.program.model.data.Structure;
 import ghidra.program.model.data.Undefined;
 import ghidra.program.model.listing.Data;
 import ghidra.program.model.listing.Function;
+import ghidra.program.model.listing.FunctionIterator;
+import ghidra.program.model.listing.Instruction;
+import ghidra.program.model.listing.InstructionIterator;
 import ghidra.program.model.symbol.Reference;
 import ghidra.program.model.symbol.ReferenceIterator;
 import ghidra.program.model.symbol.SourceType;
@@ -33,20 +38,12 @@ import ghidra.program.model.symbol.Symbol;
 
 public class STSpatialGridAnalyzer extends GhidraScript {
     private static final String PATHING_TYPE =
-        "/SubmarineTitans/Recovered/GlobalRecords/STPathingGrid16";
+        "/SubmarineTitans/Recovered/GlobalRecords/STSpatialGrid16";
     private static final String WORLD_TYPE =
         "/SubmarineTitans/Recovered/GlobalRecords/STWorldGrid";
     private static final String WORLD_CELL_TYPE =
         "/SubmarineTitans/Recovered/GlobalRecords/STWorldCell";
     private static final int[] FIELD_OFFSETS = { 0, 2, 4, 6, 8 };
-    private static final List<GridSpec> GRIDS = List.of(
-        new GridSpec("007FB230", "g_pathingScratchGrid", PATHING_TYPE,
-            "pathing scratch", "x + sizeX * y + planeStride * z"),
-        new GridSpec("007FB240", "g_worldGrid", WORLD_TYPE,
-            "world object", "x + sizeX * y + planeStride * z"),
-        new GridSpec("007FB278", "g_pathingGrid", PATHING_TYPE,
-            "pathing flags/cost", "x + sizeX * y + planeStride * z"));
-
     @Override
     protected void run() throws Exception {
         // Read-only script: do not leave GhidraScript's implicit transaction around runScript().
@@ -61,7 +58,7 @@ public class STSpatialGridAnalyzer extends GhidraScript {
         Files.createDirectories(directory);
 
         List<Proposal> proposals = new ArrayList<>();
-        for (GridSpec spec : GRIDS) {
+        for (GridSpec spec : discoverGrids()) {
             monitor.checkCancelled();
             proposals.add(analyze(spec));
         }
@@ -78,12 +75,12 @@ public class STSpatialGridAnalyzer extends GhidraScript {
     }
 
     private Proposal analyze(GridSpec spec) {
-        Address base = address(spec.address);
+        Address base = spec.address;
         String expectedLayout = layoutFingerprint(base);
         DataType desired = currentProgram.getDataTypeManager().getDataType(spec.typePath);
         boolean already = desired != null && dataEquivalent(base, desired);
         boolean replaceable = already || replaceableRange(base, spec);
-        boolean initEvidence = initializationReferences(base) >= 4;
+        boolean initEvidence = initializationReferences(base) == FIELD_OFFSETS.length;
         Set<Address> functions = referringFunctions(base);
         Symbol primary = currentProgram.getSymbolTable().getPrimarySymbol(base);
         String expectedName = primary == null ? "" : primary.getName();
@@ -93,18 +90,78 @@ public class STSpatialGridAnalyzer extends GhidraScript {
         String confidence = initEvidence && replaceable ? "high" :
             initEvidence ? "conflict" : "review";
         List<String> reasons = new ArrayList<>();
-        reasons.add("DumpClassC::GetMessage initializes " + initializationReferences(base) +
+        reasons.add("one discovered initializer references " + initializationReferences(base) +
             "/5 descriptor fields");
         reasons.add("referenced by " + functions.size() + " functions");
         reasons.add("layout=" + (already ? "already recovered" :
             replaceable ? "replaceable scalar fields" : "manual/conflicting data"));
         reasons.add("index=" + spec.formula);
         if (spec.typePath.equals(PATHING_TYPE))
-            reasons.add("16-bit cells are passed to Library::DKW::WAY and tested as flags/costs");
-        else reasons.add("8-byte cells contain two STWorldObject pointers");
+            reasons.add("the +8 field is typed as a pointer to signed 16-bit cells");
+        else reasons.add("the +8 field is typed as a pointer to the recovered world cell");
         return new Proposal(base, apply, already, expectedName, expectedSource, expectedLayout,
             spec.name, spec.typePath, spec.role, spec.formula, confidence,
             String.join("; ", reasons), functions.size(), totalReferences(base));
+    }
+
+    private List<GridSpec> discoverGrids() {
+        Map<Address, Map<Address, Set<Integer>>> evidence = new HashMap<>();
+        FunctionIterator functions = currentProgram.getFunctionManager().getFunctions(true);
+        while (functions.hasNext()) {
+            Function function = functions.next();
+            if (function.isExternal() || function.isThunk()) continue;
+            InstructionIterator instructions = currentProgram.getListing()
+                .getInstructions(function.getBody(), true);
+            while (instructions.hasNext()) {
+                Instruction instruction = instructions.next();
+                for (Reference reference : instruction.getReferencesFrom()) {
+                    Address target = reference.getToAddress();
+                    if (target == null || !currentProgram.getMemory().contains(target) ||
+                            currentProgram.getMemory().getBlock(target).isExecute()) continue;
+                    for (int offset : FIELD_OFFSETS) {
+                        Address base;
+                        try { base = target.subtract(offset); }
+                        catch (Exception ignored) { continue; }
+                        evidence.computeIfAbsent(base, unused -> new HashMap<>())
+                            .computeIfAbsent(function.getEntryPoint(),
+                                unused -> new TreeSet<>()).add(offset);
+                    }
+                }
+            }
+        }
+        List<GridSpec> result = new ArrayList<>();
+        for (Map.Entry<Address, Map<Address, Set<Integer>>> item : evidence.entrySet()) {
+            boolean complete = item.getValue().values().stream()
+                .anyMatch(offsets -> offsets.containsAll(Set.of(0, 2, 4, 6, 8)));
+            if (!complete || item.getValue().size() < 2) continue;
+            String type = classify(item.getKey());
+            if (type.isBlank()) continue;
+            Symbol symbol = currentProgram.getSymbolTable().getPrimarySymbol(item.getKey());
+            String name = symbol != null && !symbol.getName().matches(
+                "(?i)_?(?:DAT|PTR|UNK|SHORT)_[0-9a-f]+") ?
+                symbol.getName() : "g_spatialGrid_" + addr(item.getKey());
+            String role = type.equals(WORLD_TYPE) ? "world-object grid" :
+                "16-bit spatial grid";
+            result.add(new GridSpec(item.getKey(), name, type, role,
+                "x + sizeX * y + planeStride * z"));
+        }
+        return result;
+    }
+
+    private String classify(Address base) {
+        Data aggregate = currentProgram.getListing().getDefinedDataAt(base);
+        if (aggregate != null && aggregate.getDataType() instanceof Structure structure) {
+            if (structure.getPathName().equals(WORLD_TYPE)) return WORLD_TYPE;
+            if (structure.getPathName().equals(PATHING_TYPE) ||
+                    structure.getName().equals("STPathingGrid16")) return PATHING_TYPE;
+        }
+        Data cells = currentProgram.getListing().getDefinedDataAt(base.add(8));
+        if (cells == null || !(cells.getDataType() instanceof Pointer pointer) ||
+                pointer.getDataType() == null) return "";
+        if (pointer.getDataType().isEquivalent(ShortDataType.dataType)) return PATHING_TYPE;
+        DataType worldCell = currentProgram.getDataTypeManager().getDataType(WORLD_CELL_TYPE);
+        return worldCell != null && pointer.getDataType().isEquivalent(worldCell) ?
+            WORLD_TYPE : "";
     }
 
     private boolean replaceableRange(Address base, GridSpec spec) {
@@ -149,24 +206,18 @@ public class STSpatialGridAnalyzer extends GhidraScript {
     }
 
     private int initializationReferences(Address base) {
-        Address init = address("00495980");
-        Function function = currentProgram.getFunctionManager().getFunctionAt(init);
-        if (function == null) return 0;
-        int fields = 0;
+        Map<Address, Set<Integer>> byFunction = new HashMap<>();
         for (int offset : FIELD_OFFSETS) {
             ReferenceIterator iterator = currentProgram.getReferenceManager()
                 .getReferencesTo(base.add(offset));
-            boolean found = false;
             while (iterator.hasNext()) {
-                Reference reference = iterator.next();
-                if (function.getBody().contains(reference.getFromAddress())) {
-                    found = true;
-                    break;
-                }
+                Function function = currentProgram.getFunctionManager()
+                    .getFunctionContaining(iterator.next().getFromAddress());
+                if (function != null) byFunction.computeIfAbsent(function.getEntryPoint(),
+                    unused -> new TreeSet<>()).add(offset);
             }
-            if (found) fields++;
         }
-        return fields;
+        return byFunction.values().stream().mapToInt(Set::size).max().orElse(0);
     }
 
     private Set<Address> referringFunctions(Address base) {
@@ -221,12 +272,6 @@ public class STSpatialGridAnalyzer extends GhidraScript {
 
     private String symbolSpec(Symbol symbol) {
         return symbol == null ? "none" : symbol.getName() + ":" + symbol.getSource();
-    }
-
-    private Address address(String value) {
-        Address result = currentProgram.getAddressFactory().getAddress(value);
-        if (result == null) throw new IllegalArgumentException("Invalid address: " + value);
-        return result;
     }
 
     private File outputDirectory() throws Exception {
@@ -306,8 +351,9 @@ public class STSpatialGridAnalyzer extends GhidraScript {
     }
 
     private static class GridSpec {
-        final String address, name, typePath, role, formula;
-        GridSpec(String address, String name, String typePath, String role, String formula) {
+        final Address address;
+        final String name, typePath, role, formula;
+        GridSpec(Address address, String name, String typePath, String role, String formula) {
             this.address = address; this.name = name; this.typePath = typePath;
             this.role = role; this.formula = formula;
         }

@@ -12,23 +12,23 @@ undefined4 __fastcall FUN_004ea870(TLOBaseTy *param_1)
      (param_1->field_04EC + 0x19 <= g_playSystem_00802A38->field_00E4)) {
     param_1->field_04EC = g_playSystem_00802A38->field_00E4;
     local_8 = param_1;
-    iVar1 = thunk_FUN_004c7860(param_1,3,0,1,1,1);
+    iVar1 = TLOBaseTy::sub_004C7860(param_1,3,0,1,1,1);
     if ((iVar1 != 0) &&
        ((iVar1 = thunk_FUN_004c7c20((int)param_1), iVar1 != 0 &&
-        (g_playerRuntime[param_1->field_0024].field1705_0x7d6 != 0)))) {
-      array = g_playerRuntime[param_1->field_0024].objects;
+        (g_playerRuntime[(int)param_1->field_0024].field1705_0x7d6 != 0)))) {
+      array = g_playerRuntime[(int)param_1->field_0024].objects;
       index = 0;
       if (array->count != 0) {
         while (((DArrayGetElement(array,index,&local_8), local_8 == (TLOBaseTy *)0x0 ||
                 (dVar2 = (*local_8->vtable->slot_2C)(local_8), dVar2 != 0x44)) ||
                (local_8->field_04D0 == CASE_0))) {
           index = index + 1;
-          array = g_playerRuntime[param_1->field_0024].objects;
+          array = g_playerRuntime[(int)param_1->field_0024].objects;
           if (array->count <= index) {
             return 0;
           }
         }
-        iVar1 = thunk_FUN_004c7860(param_1,3,0,1,1,1);
+        iVar1 = TLOBaseTy::sub_004C7860(param_1,3,0,1,1,1);
         if ((iVar1 != 0) && (iVar1 = thunk_FUN_004c7c20((int)param_1), iVar1 != 0)) {
           TLOBaseTy::thunk_FUN_004c7cc0(param_1,3,0,1,0,0xffffffff,0,0xff,(char *)0x0);
           param_1->field_04D0 = CASE_2;

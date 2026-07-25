@@ -54,7 +54,7 @@ LAB_0043fd36:
         (g_playerRuntime[DAT_0080874d].field467_0x2b7 != g_playSystem_00802A38->field_00E4)) &&
        (g_playerRuntime[DAT_0080874d].field467_0x2b7 = g_playSystem_00802A38->field_00E4,
        g_cPanel_00801688 != (CPanelTy *)0x0)) {
-      thunk_FUN_004fa870(g_cPanel_00801688,CASE_4|CASE_2);
+      thunk_FUN_004fa870(g_cPanel_00801688,CASE_6);
       return;
     }
     break;
@@ -63,7 +63,7 @@ LAB_0043fd36:
         (g_playerRuntime[DAT_0080874d].field468_0x2bb != g_playSystem_00802A38->field_00E4)) &&
        (g_playerRuntime[DAT_0080874d].field468_0x2bb = g_playSystem_00802A38->field_00E4,
        g_cPanel_00801688 != (CPanelTy *)0x0)) {
-      thunk_FUN_004fa870(g_cPanel_00801688,CASE_4|CASE_2|CASE_1);
+      thunk_FUN_004fa870(g_cPanel_00801688,CASE_7);
       return;
     }
     break;

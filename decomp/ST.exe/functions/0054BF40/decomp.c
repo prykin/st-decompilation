@@ -8,7 +8,10 @@
    [STSwitchEnumApplier] Switch target param_1 uses
    /SubmarineTitans/Recovered/Enums/CursorClassTy_SetGCType_param_1Enum. Cases:
    CASE_0=0;CASE_1=1;CASE_2=2;CASE_3=3;CASE_4=4;CASE_5=5;CASE_6=6;CASE_7=7;CASE_8=8;CASE_9=9;CASE_A=10;CASE_B=11;CASE_C=12;CASE_D=13;CASE_E=14;CASE_F=15;CASE_10=16;CASE_11=17;CASE_12=18;CASE_13=19;CASE_14=20;CASE_15=21;CASE_16=22;CASE_17=23;CASE_18=24;CASE_19=25;CASE_1A=26;CASE_1B=27;CASE_1C=28;CASE_1D=29;CASE_1E=30;CASE_1F=31;CASE_32=50;CASE_33=51;CASE_34=52;CASE_35=53;CASE_36=54;CASE_37=55;CASE_38=56;CASE_39=57;CASE_3C=60;CASE_3D=61;CASE_3E=62;CASE_3F=63;CASE_40=64;CASE_41=65;CASE_42=66;CASE_43=67;CASE_46=70;CASE_47=71;CASE_48=72
-    */
+
+   [STSwitchEnumApplier] Switch target field_0493 uses
+   /SubmarineTitans/Recovered/Enums/CursorClassTy_field_0493State. Cases:
+   CASE_1=1;CASE_3=3;CASE_4=4;CASE_5=5 */
 
 undefined4 __thiscall
 CursorClassTy::SetGCType
@@ -56,24 +59,24 @@ switchD_0054bfbc_caseD_20:
   switch((uint)param_1) {
   case 0:
     switch(local_14->field_0493) {
-    case 1:
+    case CASE_1:
       pcVar5 = "CUR_MENU";
       break;
     default:
       pcVar5 = "CUR_ARROW";
       break;
-    case 3:
+    case CASE_3:
       pcVar5 = "CUR_TASK";
       break;
-    case 4:
+    case CASE_4:
       pcVar5 = "CUR_REPORT";
       break;
-    case 5:
+    case CASE_5:
       pcVar5 = "CUR_CLOCK";
     }
     iVar3 = -1;
     iVar2 = -1;
-    if (local_14->field_0493 == '\x05') {
+    if (local_14->field_0493 == CASE_5) {
       uVar7 = 0x12;
       pBVar6 = (BITMAPINFO *)0xd;
       uVar4 = 1000;
