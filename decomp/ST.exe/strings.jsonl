@@ -293,7 +293,7 @@
 {"address":"007A5168","type":"string","length":22,"value":"\"STGroupC::SaveGrpData\"","referenced_from":["004240F0 STGroupC::SaveGrpData"]}
 {"address":"007A5184","type":"string","length":25,"value":"\"STGroupC::RestoreGrpData\"","referenced_from":["00424360 STGroupC::RestoreGrpData"]}
 {"address":"007A51A4","type":"string","length":19,"value":"\"STGroupC::SetAVPar\"","referenced_from":["004247B0 STGroupC::SetAVPar"]}
-{"address":"007A5208","type":"string","length":30,"value":"\"E:\\\\__titans\\\\wlad\\\\Td3dshad.cpp\"","referenced_from":["00424E10 SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00424E10::FUN_00424e10","00427F20 FUN_00427f20"]}
+{"address":"007A5208","type":"string","length":30,"value":"\"E:\\\\__titans\\\\wlad\\\\Td3dshad.cpp\"","referenced_from":["00424E10 SubmarineTitans::Recovered::HiddenThis::AnonReceiver_004248D0::FUN_00424e10","00427F20 FUN_00427f20"]}
 {"address":"007A522C","type":"string","length":12,"value":"\"MAPMESH000\"","referenced_from":[]}
 {"address":"007A5FDC","type":"string","length":22,"value":"\"E:\\\\__titans\\\\tload.cpp\"","referenced_from":["00428E50 FUN_00428e50","0042A290 LoadLand","0042A860 FUN_0042a860"]}
 {"address":"007A5FF8","type":"string","length":9,"value":"\"LoadLand\"","referenced_from":["0042A290 LoadLand"]}
@@ -3681,7 +3681,7 @@
 {"address":"007EED14","type":"string","length":11,"value":"\"SprSetMask\"","referenced_from":["006E9350 FUN_006e9350"]}
 {"address":"007EED20","type":"string","length":21,"value":"\"SprPlaneSetClipPlane\"","referenced_from":["006E93C0 FUN_006e93c0"]}
 {"address":"007EED38","type":"string","length":16,"value":"\"SprSetPlaneMask\"","referenced_from":["006E9490 FUN_006e9490"]}
-{"address":"007EED48","type":"string","length":13,"value":"\"SprSetShadow\"","referenced_from":["006E9520 SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00424E10::FUN_006e9520"]}
+{"address":"007EED48","type":"string","length":13,"value":"\"SprSetShadow\"","referenced_from":["006E9520 SubmarineTitans::Recovered::HiddenThis::AnonReceiver_004248D0::FUN_006e9520"]}
 {"address":"007EED58","type":"string","length":13,"value":"\"SprChgShadow\"","referenced_from":["006E96D0 FUN_006e96d0","006E9720 FUN_006e9720"]}
 {"address":"007EED68","type":"string","length":16,"value":"\"SprSetColorsTbl\"","referenced_from":["006E9770 FUN_006e9770"]}
 {"address":"007EED78","type":"string","length":22,"value":"\"SprSetShadedColorsTbl\"","referenced_from":["006E97C0 FUN_006e97c0"]}

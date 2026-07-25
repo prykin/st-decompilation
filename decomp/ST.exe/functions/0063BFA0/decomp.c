@@ -1,5 +1,10 @@
 
-undefined4 * __fastcall FUN_0063bfa0(AnonShape_0063BFA0_2C9DA96E *param_1)
+/* [STReturnSemanticsApplier] typed_pointer_return.
+   Evidence: all 1 value-return path(s) forward Listing variable param_1 with evidence-backed
+   structure /SubmarineTitans/Recovered/PointerShapes/AnonShape_0063BFA0_2C9DA96E (current recovered
+   extent=888) */
+
+AnonShape_0063BFA0_2C9DA96E * __fastcall FUN_0063bfa0(AnonShape_0063BFA0_2C9DA96E *param_1)
 
 {
   STGameObjC::STGameObjC((STGameObjC *)param_1);
@@ -15,6 +20,6 @@ undefined4 * __fastcall FUN_0063bfa0(AnonShape_0063BFA0_2C9DA96E *param_1)
   param_1->field_0363 = 0xffffffff;
   param_1->field_0373 = 0xffffffff;
   param_1->field_0265 = 4;
-  return (undefined4 *)param_1;
+  return param_1;
 }
 

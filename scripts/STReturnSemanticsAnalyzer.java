@@ -21,12 +21,15 @@ import ghidra.app.script.GhidraScript;
 import ghidra.program.model.address.Address;
 import ghidra.program.model.data.DataType;
 import ghidra.program.model.data.Pointer;
+import ghidra.program.model.data.Structure;
+import ghidra.program.model.data.TypeDef;
 import ghidra.program.model.lang.Register;
 import ghidra.program.model.listing.Function;
 import ghidra.program.model.listing.FunctionIterator;
 import ghidra.program.model.listing.Instruction;
 import ghidra.program.model.listing.InstructionIterator;
 import ghidra.program.model.listing.Parameter;
+import ghidra.program.model.listing.Variable;
 import ghidra.program.model.symbol.Reference;
 import ghidra.program.model.symbol.SourceType;
 
@@ -87,7 +90,10 @@ public class STReturnSemanticsAnalyzer extends GhidraScript {
                 "leaf_void", "high",
                 "leaf function has RET and never writes EAX/AX/AL/AH");
 
-        if (!mutable || !genericInteger(currentType) || !body.booleanLike ||
+        boolean pointerCandidate = genericPointerReturn(currentType) &&
+            hasEvidenceBackedPointerVariable(function);
+        boolean booleanCandidate = genericInteger(currentType) && body.booleanLike;
+        if (!mutable || (!pointerCandidate && !booleanCandidate) ||
                 function.getBody().getNumAddresses() > 0x800) return null;
 
         DecompileResults result = decompiler.decompileFunction(function, 30, monitor);
@@ -99,6 +105,9 @@ public class STReturnSemanticsAnalyzer extends GhidraScript {
         List<String> returns = new ArrayList<>(); Matcher matcher = VALUE_RETURN.matcher(c);
         while (matcher.find()) returns.add(matcher.group(1).trim());
         int bare = 0; matcher = BARE_RETURN.matcher(c); while (matcher.find()) bare++;
+        Row pointer = pointerCandidate && bare == 0 ?
+            typedPointerReturn(function, currentType, returns) : null;
+        if (pointer != null) return pointer;
         if (returns.size() >= 2 && bare == 0 && allBooleanConstants(returns) &&
                 genericInteger(currentType))
             return row(function, currentType, "/bool", function.hasNoReturn(), function.hasNoReturn(),
@@ -108,6 +117,105 @@ public class STReturnSemanticsAnalyzer extends GhidraScript {
                 returns);
 
         return null;
+    }
+
+    /**
+     * Propagate a persistent structured pointer through the return register only when every
+     * value-return path forwards the same Listing variable.  This deliberately does not infer
+     * a fresh structure from C casts: PointerShape/ClassLayout own layout recovery, while this
+     * pass merely connects their already evidence-backed type to the function ABI.
+     */
+    private Row typedPointerReturn(Function function, String currentType,
+            List<String> returns) {
+        if (returns.isEmpty()) return null;
+        String returnedName = "";
+        for (String expression : returns) {
+            String name = simpleIdentifier(expression);
+            if (name.isBlank()) return null;
+            if (returnedName.isBlank()) returnedName = name;
+            else if (!returnedName.equals(name)) return null;
+        }
+        Variable returnedVariable = null;
+        for (Variable variable : function.getAllVariables()) {
+            if (!returnedName.equals(variable.getName())) continue;
+            if (returnedVariable != null) return null;
+            returnedVariable = variable;
+        }
+        if (returnedVariable == null) return null;
+        DataType type = unwrap(returnedVariable.getDataType());
+        if (!(type instanceof Pointer pointer)) return null;
+        DataType pointed = unwrap(pointer.getDataType());
+        if (!(pointed instanceof Structure structure) || structure.getLength() < 1 ||
+                !evidenceBacked(returnedVariable, structure)) return null;
+        String proposed = "pointer:" + structure.getPathName();
+        if (proposed.equals(currentType)) return null;
+        return row(function, currentType, proposed, function.hasNoReturn(),
+            function.hasNoReturn(), true, "typed_pointer_return", "high",
+            "all " + returns.size() + " value-return path(s) forward Listing variable " +
+            returnedName + " with evidence-backed structure " + structure.getPathName() +
+            " (current recovered extent=" + structure.getLength() + ")");
+    }
+
+    private String simpleIdentifier(String expression) {
+        String value = expression == null ? "" : expression.trim();
+        for (int pass = 0; pass < 12 && !value.isBlank(); pass++) {
+            if (value.matches("[A-Za-z_$][A-Za-z0-9_$]*")) return value;
+            if (value.charAt(0) != '(') return "";
+            int close = matchingParen(value, 0);
+            if (close < 0) return "";
+            if (close == value.length() - 1) {
+                value = value.substring(1, close).trim();
+                continue;
+            }
+            String cast = value.substring(1, close).trim();
+            if (!cast.matches("(?i)(?:const\\s+|volatile\\s+)*(?:struct\\s+|class\\s+)?" +
+                    "[A-Za-z_$][A-Za-z0-9_$: ]*(?:\\s*\\*+)?")) return "";
+            value = value.substring(close + 1).trim();
+        }
+        return "";
+    }
+
+    private int matchingParen(String value, int open) {
+        int depth = 0;
+        for (int index = open; index < value.length(); index++) {
+            char ch = value.charAt(index);
+            if (ch == '(') depth++;
+            else if (ch == ')' && --depth == 0) return index;
+        }
+        return -1;
+    }
+
+    private boolean evidenceBacked(Variable variable, Structure structure) {
+        SourceType source = variable.getSource();
+        if (source == SourceType.USER_DEFINED || source == SourceType.IMPORTED) return true;
+        String variableComment = variable.getComment();
+        if (variableComment != null && (variableComment.contains("[STPointerShapeApplier]") ||
+                variableComment.contains("[STPrototypeApplier]") ||
+                variableComment.contains("[STPrototypeRepairApplier]"))) return true;
+        String description = structure.getDescription();
+        if (description != null && (description.contains("[STPointerShapeApplier]") ||
+                description.contains("[STClassLayoutApplier]") ||
+                description.contains("[STHiddenThisApplier]"))) return true;
+        // A named class receiver is maintained by Ghidra from the class namespace and is not
+        // speculative decompiler-local typing.
+        return variable instanceof Parameter parameter && parameter.isAutoParameter() &&
+            !structure.getName().startsWith("Anon");
+    }
+
+    private boolean hasEvidenceBackedPointerVariable(Function function) {
+        for (Variable variable : function.getAllVariables()) {
+            DataType type = unwrap(variable.getDataType());
+            if (!(type instanceof Pointer pointer)) continue;
+            DataType pointed = unwrap(pointer.getDataType());
+            if (pointed instanceof Structure structure && structure.getLength() > 0 &&
+                    evidenceBacked(variable, structure)) return true;
+        }
+        return false;
+    }
+
+    private DataType unwrap(DataType type) {
+        while (type instanceof TypeDef typedef) type = typedef.getBaseDataType();
+        return type;
     }
 
     private Body body(Function function) {
@@ -156,6 +264,12 @@ public class STReturnSemanticsAnalyzer extends GhidraScript {
     private boolean genericUnknown(String type) {
         return type.equals("/undefined") || type.equals("/undefined4");
     }
+    private boolean genericPointerReturn(String type) {
+        if (genericUnknown(type)) return true;
+        if (!type.startsWith("pointer:")) return false;
+        String pointed = type.substring("pointer:".length()).toLowerCase(Locale.ROOT);
+        return pointed.matches("/(?:void|undefined(?:1|2|4|8)?)");
+    }
     private boolean genericInteger(String type) {
         return genericUnknown(type) || type.equals("/int") || type.equals("/uint") ||
             type.equals("/char") || type.equals("/byte");
@@ -190,7 +304,8 @@ public class STReturnSemanticsAnalyzer extends GhidraScript {
         try (BufferedWriter out = Files.newBufferedWriter(path, StandardCharsets.UTF_8)) {
             out.write("ST return semantics\n\nFunctions: " + functions + "\nProposals: " + rows.size() +
                 "\nAutomatic: " + rows.stream().filter(row -> row.apply).count() + "\n");
-            for (String id : List.of("leaf_void", "boolean_return_domain", "noreturn_terminal_call"))
+            for (String id : List.of("leaf_void", "typed_pointer_return",
+                    "boolean_return_domain", "noreturn_terminal_call"))
                 out.write(id + ": " + rows.stream().filter(row -> row.semantic.equals(id)).count() + "\n");
         }
     }

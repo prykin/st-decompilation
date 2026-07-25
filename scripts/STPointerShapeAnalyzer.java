@@ -928,7 +928,7 @@ public class STPointerShapeAnalyzer extends GhidraScript {
                 String shapeId = decision.typePath.substring(decision.typePath.lastIndexOf('/') + 1);
                 TypeProposal type = types.computeIfAbsent(shapeId, ignored ->
                     new TypeProposal(decision.apply, shapeId, decision.typePath,
-                        shapeLength(target), 0, target.fields.size(), decision.confidence,
+                        proposalLength(target, decision), 0, target.fields.size(), decision.confidence,
                         decision.reason));
                 type.apply |= decision.apply;
                 type.targetCount++;
@@ -1062,9 +1062,20 @@ public class STPointerShapeAnalyzer extends GhidraScript {
                     "; unsettled decompiler type propagation requires review" : ""));
         }
 
-        if (generatedAnonymous) return new TargetDecision(false, false,
-            currentStructure, "existing",
-            "script-owned anonymous structure retained; no stronger named semantic evidence");
+        if (generatedAnonymous) {
+            Structure current = structureFromPointer("pointer:" + currentStructure);
+            boolean covered = current != null && coversGeneratedFields(current, target);
+            boolean refine = covered && needsGeneratedRefinement(current, target);
+            boolean apply = refine && automaticTarget(target) && !autoThis(target);
+            return new TargetDecision(apply, apply, currentStructure,
+                apply ? "refine" : "existing",
+                refine ? "new fixed-offset evidence refines the unchanged script-owned " +
+                    "anonymous structure; observed_min_extent=" + shapeLength(target) +
+                    "; previous_length=" + current.getLength() :
+                    !covered ? "script-owned anonymous structure retained because the current " +
+                        "evidence does not cover every generated field" :
+                    "script-owned anonymous structure already covers the observed extent and fields");
+        }
 
         Structure matched = matchExisting(target);
         if (matched != null) {
@@ -1331,7 +1342,7 @@ public class STPointerShapeAnalyzer extends GhidraScript {
         long end = 0;
         for (FieldEvidence field : fields)
             end = Math.max(end, field.offset + uniqueWidth(field));
-        return (int)((end + 3) & ~3L);
+        return (int)end;
     }
 
     private String nestedPath(TargetEvidence target, long parentOffset,
@@ -1395,7 +1406,48 @@ public class STPointerShapeAnalyzer extends GhidraScript {
         long end = 0;
         for (FieldEvidence field : target.fields.values())
             end = Math.max(end, field.offset + Math.max(1, uniqueWidth(field)));
-        return (int)((end + 3) & ~3L);
+        return (int)end;
+    }
+
+    private int proposalLength(TargetEvidence target, TargetDecision decision) {
+        int observed = shapeLength(target);
+        DataType existing = dataTypes.getDataType(decision.typePath);
+        return existing instanceof Structure structure ?
+            Math.max(observed, structure.getLength()) : observed;
+    }
+
+    /**
+     * Updating a generated shape must never discard an older field merely because a later
+     * decompile lost an SSA alias.  Require the new observation to cover every currently
+     * defined generated component with the same width and without contradicting a concrete
+     * type.  Gaps are not components and may safely gain newly observed fields.
+     */
+    private boolean coversGeneratedFields(Structure structure, TargetEvidence target) {
+        for (DataTypeComponent component : structure.getDefinedComponents()) {
+            FieldEvidence field = target.fields.get((long)component.getOffset());
+            int width = field == null ? -1 : uniqueWidth(field);
+            if (field == null || width != component.getLength()) return false;
+            String observed = unique(field.types);
+            if (!Undefined.isUndefined(component.getDataType()) &&
+                    !observed.equals(typeSpecification(component.getDataType()))) return false;
+        }
+        return true;
+    }
+
+    private boolean needsGeneratedRefinement(Structure structure, TargetEvidence target) {
+        if (shapeLength(target) > structure.getLength()) return true;
+        for (FieldEvidence field : target.fields.values()) {
+            int width = uniqueWidth(field);
+            if (width < 1) continue;
+            DataTypeComponent component = structure.getComponentAt((int)field.offset);
+            if (component == null || component.getOffset() != field.offset ||
+                    component.getLength() != width) return true;
+            String observed = unique(field.types);
+            if (Undefined.isUndefined(component.getDataType()) && !observed.isBlank() &&
+                    !observed.matches("/undefined(?:1|2|4|8)?") &&
+                    typeLength(observed) == width) return true;
+        }
+        return false;
     }
 
     private int uniqueWidth(FieldEvidence field) {

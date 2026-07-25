@@ -10,12 +10,11 @@ void * __cdecl FUN_004f4f60(void)
 
 {
   AnonShape_004F4F90_2D6E0DDA *pAVar1;
-  undefined4 *puVar2;
 
   pAVar1 = (AnonShape_004F4F90_2D6E0DDA *)FUN_006b04d0(0xdee);
   if (pAVar1 != (AnonShape_004F4F90_2D6E0DDA *)0x0) {
-    puVar2 = thunk_FUN_004f4f90(pAVar1);
-    return puVar2;
+    pAVar1 = thunk_FUN_004f4f90(pAVar1);
+    return pAVar1;
   }
   return (void *)0x0;
 }

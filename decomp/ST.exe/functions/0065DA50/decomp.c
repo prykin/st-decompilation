@@ -18,9 +18,9 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0065DA50::FUN_0065da50
   DArrayTy *array;
   dword dVar3;
   undefined2 *puVar4;
-  STGameObjC *pSVar5;
-  int iVar6;
-  void *pvVar7;
+  STGameObjC *this_01;
+  int iVar5;
+  void *pvVar6;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   void *extraout_ECX;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
@@ -29,11 +29,11 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0065DA50::FUN_0065da50
   void *extraout_ECX_01;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   void *extraout_ECX_02;
-  void *pvVar8;
+  void *pvVar7;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined4 extraout_EDX;
-  undefined4 uVar9;
-  char cVar10;
+  undefined4 uVar8;
+  char cVar9;
   uint local_8;
 
   local_8 = 0;
@@ -43,14 +43,14 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0065DA50::FUN_0065da50
                                     CONCAT22((short)((uint)in_EAX >> 0x10),
                                              *(short *)&this->field_0x7d)),
       this_00 != (STGroupBoatC *)0x0)) && (g_allPlayers_007FA174 != (STAllPlayersC *)0x0)) {
-    cVar10 = this->field_0x81;
-    if ((cVar10 < '\0') || ('\a' < cVar10)) {
-      cVar10 = (char)*(undefined4 *)&this->field_0x24;
+    cVar9 = this->field_0x81;
+    if ((cVar9 < '\0') || ('\a' < cVar9)) {
+      cVar9 = (char)*(undefined4 *)&this->field_0x24;
     }
     /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
-    if (((param_2 != '\b') && ((param_2 < '\0' || (cVar10 = param_2, '\b' < param_2)))) ||
-       (param_2 = cVar10, uVar9 = CONCAT31((int3)((uint)extraout_EDX >> 8),param_2), param_2 < '\0')
-       ) {
+    if (((param_2 != '\b') && ((param_2 < '\0' || (cVar9 = param_2, '\b' < param_2)))) ||
+       (param_2 = cVar9, uVar8 = CONCAT31((int3)((uint)extraout_EDX >> 8),param_2), param_2 < '\0'))
+    {
       if (param_1 != 0) {
         uVar2 = STGroupC::GetTOBJQty((STGroupC *)this_00,param_1);
         return uVar2 & 0xffff;
@@ -59,15 +59,15 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0065DA50::FUN_0065da50
       return (uint)uVar1;
     }
     if (param_1 == 0) {
-      array = (DArrayTy *)AiFltClassTy::sub_0065DA10((AiFltClassTy *)this,uVar9);
+      array = (DArrayTy *)AiFltClassTy::sub_0065DA10((AiFltClassTy *)this,uVar8);
       /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
-      pvVar8 = extraout_ECX;
+      pvVar7 = extraout_ECX;
     }
     else {
       array = (DArrayTy *)
-              AiFltClassTy::sub_0065E360((AnonShape_0065E360_B94C37CB *)this,uVar9,param_1);
+              AiFltClassTy::sub_0065E360((AnonShape_0065E360_B94C37CB *)this,uVar8,param_1);
       /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
-      pvVar8 = extraout_ECX_00;
+      pvVar7 = extraout_ECX_00;
     }
     if (array != (DArrayTy *)0x0) {
       dVar3 = array->count;
@@ -75,24 +75,25 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0065DA50::FUN_0065da50
       if (0 < (int)dVar3) {
         do {
           if (uVar2 < dVar3) {
-            pvVar8 = array->data;
-            puVar4 = (undefined2 *)(array->elementSize * uVar2 + (int)pvVar8);
+            pvVar7 = array->data;
+            puVar4 = (undefined2 *)(array->elementSize * uVar2 + (int)pvVar7);
           }
           else {
             puVar4 = (undefined2 *)0x0;
           }
           /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-          pSVar5 = STAllPlayersC::GetObjPtr
-                             (g_allPlayers_007FA174,this->field_0x24,
-                              CONCAT22((short)((uint)pvVar8 >> 0x10),*puVar4),CASE_1);
+          this_01 = STAllPlayersC::GetObjPtr
+                              (g_allPlayers_007FA174,this->field_0x24,
+                               CONCAT22((short)((uint)pvVar7 >> 0x10),*puVar4),CASE_1);
           /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
-          pvVar8 = extraout_ECX_01;
+          pvVar7 = extraout_ECX_01;
           /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
-          if ((pSVar5 != (STGameObjC *)0x0) &&
-             (iVar6 = (*pSVar5->vtable[1].vfunc_24)(), pvVar8 = extraout_ECX_02, iVar6 != 0)) {
-            pvVar7 = (void *)(*pSVar5->vtable->vfunc_6C)();
-            pvVar8 = (void *)(int)param_2;
-            if (pvVar8 == pvVar7) {
+          if ((this_01 != (STGameObjC *)0x0) &&
+             (iVar5 = (*this_01->vtable[1].vfunc_24)(this_01), pvVar7 = extraout_ECX_02, iVar5 != 0)
+             ) {
+            pvVar6 = (void *)(*this_01->vtable->vfunc_6C)(this_01);
+            pvVar7 = (void *)(int)param_2;
+            if (pvVar7 == pvVar6) {
               local_8 = local_8 + 1;
             }
           }

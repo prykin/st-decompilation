@@ -180,7 +180,7 @@ table	0079DE58	already_present	VTable_0079DE58	used unchanged generated type /Su
 table	0079DE7C	already_present	VTable_0079DE7C	used unchanged generated type /SubmarineTitans/Recovered/VTables/VTable_0079DE7C; 5 slots
 table	0079DE90	already_present	VTable_0079DE90	used unchanged generated type /SubmarineTitans/Recovered/VTables/VTable_0079DE90; 18 slots
 table	0079DED8	already_present	VTable_0079DED8	used unchanged generated type /SubmarineTitans/Recovered/VTables/VTable_0079DED8; 15 slots
-table	0079E16C	already_present	AppClassTyVTable	preserved legacy generated type (layout differs; no safety hash) /SubmarineTitans/Recovered/VTables/AppClassTyVTable; 7 slots
+table	0079E16C	already_present	AppClassTyVTable	used unchanged generated type /SubmarineTitans/Recovered/VTables/AppClassTyVTable; 7 slots
 owner_vptr	AppClassTy+0x0	already_present	AppClassTy	owner already points to /SubmarineTitans/Recovered/VTables/AppClassTyVTable
 table	0079E188	already_present	SystemClassTyVTable	used existing manual type /SubmarineTitans/Recovered/SystemClassTyVTable; 9 slots
 owner_vptr	SystemClassTy+0x0	skipped	SystemClassTy	manual or modified owner layout preserved

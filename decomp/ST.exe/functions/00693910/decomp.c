@@ -1,5 +1,10 @@
 
-undefined4 * __fastcall FUN_00693910(AnonShape_00693910_1CC6632C *param_1)
+/* [STReturnSemanticsApplier] typed_pointer_return.
+   Evidence: all 1 value-return path(s) forward Listing variable param_1 with evidence-backed
+   structure /SubmarineTitans/Recovered/PointerShapes/AnonShape_00693910_1CC6632C (current recovered
+   extent=6560) */
+
+AnonShape_00693910_1CC6632C * __fastcall FUN_00693910(AnonShape_00693910_1CC6632C *param_1)
 
 {
   int iVar1;
@@ -41,6 +46,6 @@ undefined4 * __fastcall FUN_00693910(AnonShape_00693910_1CC6632C *param_1)
     local_8 = local_8 + -1;
   } while (local_8 != 0);
   param_1->field_1999 = 0;
-  return (undefined4 *)param_1;
+  return param_1;
 }
 

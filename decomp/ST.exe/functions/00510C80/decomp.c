@@ -1,7 +1,12 @@
 #include "../../pseudocode_runtime.h"
 
 
-undefined4 * __fastcall FUN_00510c80(AnonShape_00510C80_2C2DC38C *param_1)
+/* [STReturnSemanticsApplier] typed_pointer_return.
+   Evidence: all 1 value-return path(s) forward Listing variable param_1 with evidence-backed
+   structure /SubmarineTitans/Recovered/PointerShapes/AnonShape_00510C80_2C2DC38C (current recovered
+   extent=592) */
+
+AnonShape_00510C80_2C2DC38C * __fastcall FUN_00510c80(AnonShape_00510C80_2C2DC38C *param_1)
 
 {
   undefined4 uVar1;
@@ -59,6 +64,6 @@ undefined4 * __fastcall FUN_00510c80(AnonShape_00510C80_2C2DC38C *param_1)
   param_1->field_0240 = 0;
   param_1->field_023C = 0;
   param_1->field_01D3 = 0;
-  return (undefined4 *)param_1;
+  return param_1;
 }
 

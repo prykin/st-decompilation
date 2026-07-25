@@ -31,7 +31,7 @@ undefined4 __thiscall STGameObjC::MoveStep(STGameObjC *this,int *param_1)
   }
   if (iVar5 == 2) {
     thunk_FUN_00416840(this,(undefined2 *)&local_10,(undefined2 *)&local_c,(undefined2 *)&local_8);
-    iVar5 = (*this->vtable->vfunc_18)(local_10,local_c,local_8);
+    iVar5 = (*this->vtable->vfunc_18)(this,local_10,local_c,local_8);
     if (iVar5 != 1) {
       this->field_00FA = this->field_00FA + 1;
       if (this->field_00FA <= this->field_00F8) {

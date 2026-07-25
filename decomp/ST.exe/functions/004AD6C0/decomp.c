@@ -14,8 +14,9 @@ int FUN_004ad6c0(AnonReceiver_00424E10 *param_1,undefined4 param_2,int *param_3,
   /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   if ((iVar1 != 0) && (iVar1 = *(int *)(iVar1 + *(int *)(param_4 + 0x30) * 4), iVar1 != 0)) {
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-    iVar1 = SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00424E10::thunk_FUN_00424e10
-                      (param_1,iVar1,*(float *)(param_4 + 0x24) - _DAT_007907a8,
+    iVar1 = SubmarineTitans::Recovered::HiddenThis::AnonReceiver_004248D0::thunk_FUN_00424e10
+                      ((AnonReceiver_004248D0 *)param_1,iVar1,
+                       *(float *)(param_4 + 0x24) - _DAT_007907a8,
                        *(float *)(param_4 + 0x28) - _DAT_007907a8,*(float *)(param_4 + 0x2c),0x20,
                        0x20,param_3);
     return iVar1;

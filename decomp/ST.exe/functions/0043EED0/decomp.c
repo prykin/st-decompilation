@@ -20,10 +20,10 @@ STAllPlayersC::GetTOBJListFromDArr
   bool bVar3;
   STAllPlayersC *this_00;
   int iVar4;
-  STGameObjC *pSVar5;
-  STAllPlayersC_GetTOBJListFromDArr_param_3Enum SVar6;
-  int iVar7;
-  uint *puVar8;
+  STGameObjC *this_01;
+  STAllPlayersC_GetTOBJListFromDArr_param_3Enum SVar5;
+  int iVar6;
+  uint *puVar7;
   InternalExceptionFrame local_5c;
   undefined1 local_18 [4];
   STAllPlayersC *local_14;
@@ -38,9 +38,9 @@ STAllPlayersC::GetTOBJListFromDArr
   iVar4 = Library::MSVCRT::__setjmp3(local_5c.jumpBuffer,0);
   if (iVar4 != 0) {
     g_currentExceptionFrame = local_5c.previous;
-    iVar7 = ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0x2049,0,iVar4,"%s"
+    iVar6 = ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0x2049,0,iVar4,"%s"
                                ,"STAllPlayersC::GetTOBJListFromDArr");
-    if (iVar7 == 0) {
+    if (iVar6 == 0) {
       RaiseInternalException(iVar4,0,"E:\\__titans\\wlad\\to_allpl.cpp",0x204a);
       return (uint *)0x0;
     }
@@ -55,8 +55,8 @@ STAllPlayersC::GetTOBJListFromDArr
       /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
       local_8 = CONCAT22((short)((uint)param_2->field_001C >> 0x10),sVar1);
       if (sVar1 != -1) {
-        pSVar5 = GetObjPtr(this_00,(char)param_1,local_8,CASE_1);
-        if (pSVar5 == (STGameObjC *)0x0) {
+        this_01 = GetObjPtr(this_00,(char)param_1,local_8,CASE_1);
+        if (this_01 == (STGameObjC *)0x0) {
           RaiseInternalException
                     (-0x5001fffc,g_overwriteContext_007ED77C,
                      "E:\\__titans\\wlad\\to_allpl.cpp",0x2040);
@@ -64,8 +64,8 @@ switchD_0043efb1_caseD_3a:
           bVar3 = false;
         }
         else {
-          SVar6 = (*pSVar5->vtable->vfunc_2C)();
-          if ((SVar6 != param_3) || (iVar7 = (*pSVar5->vtable[1].vfunc_24)(), iVar7 == 0))
+          SVar5 = (*this_01->vtable->vfunc_2C)();
+          if ((SVar5 != param_3) || (iVar6 = (*this_01->vtable[1].vfunc_24)(this_01), iVar6 == 0))
           goto switchD_0043efb1_caseD_3a;
           if (param_4 != 0) {
             switch(param_3) {
@@ -73,7 +73,7 @@ switchD_0043efb1_caseD_3a:
             case CASE_39:
             case CASE_4F:
             case CASE_5E:
-              if ((param_4 == 1) && (iVar7 = (*pSVar5->vtable->vfunc_88)(local_18), 0 < iVar7)) {
+              if ((param_4 == 1) && (iVar6 = (*this_01->vtable->vfunc_88)(local_18), 0 < iVar6)) {
                 bVar3 = true;
                 goto LAB_0043efd8;
               }
@@ -84,7 +84,7 @@ switchD_0043efb1_caseD_3a:
         }
 LAB_0043efd8:
         if ((bVar3) &&
-           ((param_5 == -1 || (iVar7 = (*pSVar5->vtable->vfunc_6C)(), iVar7 == param_5)))) {
+           ((param_5 == -1 || (iVar6 = (*this_01->vtable->vfunc_6C)(this_01), iVar6 == param_5)))) {
           Library::DKW::TBL::FUN_006ae1c0(&local_c->flags,&local_8);
         }
       }

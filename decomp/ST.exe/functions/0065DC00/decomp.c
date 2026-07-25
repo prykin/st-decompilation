@@ -6,10 +6,10 @@ int __fastcall FUN_0065dc00(AiFltClassTy *param_1,undefined4 param_2,uint param_
   DArrayTy *array;
   dword dVar2;
   undefined2 *puVar3;
-  STGameObjC *pSVar4;
-  int iVar5;
-  IMAGE_DOS_HEADER *pIVar6;
-  uint uVar7;
+  STGameObjC *this;
+  int iVar4;
+  IMAGE_DOS_HEADER *pIVar5;
+  uint uVar6;
   int local_8;
 
   local_8 = 0;
@@ -25,31 +25,31 @@ int __fastcall FUN_0065dc00(AiFltClassTy *param_1,undefined4 param_2,uint param_
     }
     param_4 = cVar1;
     dVar2 = array->count;
-    uVar7 = 0;
+    uVar6 = 0;
     if (0 < (int)dVar2) {
       do {
-        if (uVar7 < dVar2) {
-          /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(array, uVar7) (runtime stride) */
-          puVar3 = (undefined2 *)(array->elementSize * uVar7 + (int)array->data);
+        if (uVar6 < dVar2) {
+          /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(array, uVar6) (runtime stride) */
+          puVar3 = (undefined2 *)(array->elementSize * uVar6 + (int)array->data);
         }
         else {
           puVar3 = (undefined2 *)0x0;
         }
         /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-        pSVar4 = STAllPlayersC::GetObjPtr
-                           (g_allPlayers_007FA174,*(char *)&param_1->field_0024,
-                            CONCAT22((short)((uint)puVar3 >> 0x10),*puVar3),CASE_1);
-        if (((pSVar4 != (STGameObjC *)0x0) && (iVar5 = (*pSVar4->vtable[1].vfunc_24)(), iVar5 != 0))
-           && ((param_4 < '\0' || (iVar5 = (*pSVar4->vtable->vfunc_6C)(), param_4 == iVar5)))) {
-          iVar5 = (*pSVar4->vtable->vfunc_2C)();
-          pIVar6 = thunk_FUN_00674fb0(iVar5);
-          if ((param_3 & (uint)pIVar6) != 0) {
+        this = STAllPlayersC::GetObjPtr
+                         (g_allPlayers_007FA174,*(char *)&param_1->field_0024,
+                          CONCAT22((short)((uint)puVar3 >> 0x10),*puVar3),CASE_1);
+        if (((this != (STGameObjC *)0x0) && (iVar4 = (*this->vtable[1].vfunc_24)(this), iVar4 != 0))
+           && ((param_4 < '\0' || (iVar4 = (*this->vtable->vfunc_6C)(this), param_4 == iVar4)))) {
+          iVar4 = (*this->vtable->vfunc_2C)();
+          pIVar5 = thunk_FUN_00674fb0(iVar4);
+          if ((param_3 & (uint)pIVar5) != 0) {
             local_8 = local_8 + 1;
           }
         }
         dVar2 = array->count;
-        uVar7 = uVar7 + 1;
-      } while ((int)uVar7 < (int)dVar2);
+        uVar6 = uVar6 + 1;
+      } while ((int)uVar6 < (int)dVar2);
     }
     DArrayDestroy(array);
     return local_8;

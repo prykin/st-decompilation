@@ -798,7 +798,11 @@ only when its target already has that property. A complete zero/one source domai
 is reported as a boolean candidate but remains review-only: it does not by itself
 prove whether the x86 ABI value is returned in `AL` or full `EAX`. The ABI pass
 handles that width question from callers and return definitions. Existing
-manual/imported return types are preserved.
+manual/imported return types are preserved. A generic pointer-sized return may
+also inherit an existing structure pointer when every value-return path forwards
+the same persistent Listing variable and that variable/type is manual, imported,
+or owned by a hashed recovery pass. This connects return ABI to a recovered
+layout; it never creates a structure from a return cast.
 
 `STGlobalAggregateAnalyzer` writes a broad SIB-index audit, but automatic application
 requires a proven complete range and element formula. High-confidence proposals
@@ -806,9 +810,13 @@ include the 64-byte `g_playerRelationMatrix[8][8]` and exact compiler-emitted
 centered neighbourhood sequences such as `{2,1,0,-1,-2}`. Other indexed bases
 remain `apply=0` until their bounds and record shape are proven.
 
-Indirect-call analysis audits every raw call site in `indirect_call_sites.tsv` and
-then refines only slots backed by a discovered vtable layout and independently
-tagged/imported target signature. USER_DEFINED by itself is not trusted, and no
+Indirect-call analysis audits every raw call site in `indirect_call_sites.tsv`.
+It prefers an independently tagged/imported target signature. If semantic typing
+is absent, an owned vtable slot may receive a neutral ABI-only `__thiscall`
+definition when the target consumes incoming `ECX` and every `RET` agrees on the
+callee-popped stack bytes. Such definitions use only the recovered receiver (or
+`void *`), `undefined4` stack words, and a neutral EAX result; they do not invent
+method names or argument meanings. USER_DEFINED by itself is not trusted, and no
 vtable/function address is seeded in this pass. Ghidra may still render an indirect `__thiscall` as
 `(*object->vtable->method)(object, ...)`; the explicit receiver is normal decompiler
 syntax, not a missing argument in the recovered prototype.
@@ -850,7 +858,11 @@ copies. Child layouts are emitted as dependent anonymous types and applied
 before their parents. Inlined `DArrayTy` element addressing is recognized as
 the known recovered type. Overlapping child observations are kept as evidence;
 only a strongest non-overlapping ordinary-structure view is eligible for
-automatic application.
+automatic application. A later fixed-point pass may grow or enrich an unchanged
+hashed anonymous shape when the new observation still covers every previously
+generated field. Reported lengths are exact observed minimum extents and are not
+rounded for alignment; existing generated lengths are never shrunk merely because
+one pass observes less.
 
 Prototype propagation resolves each direct entry address through its thunk chain
 before selecting a target. Overloads are therefore selected by address, never by
@@ -1159,7 +1171,7 @@ a new conflict is what requires another iteration.
 | `STSwitchEnumAnalyzer/Applier` | Turn repeated switch/state domains into enums, decode exact OR-composed cases, and retain an evidence-generated monotonic domain state. |
 | `STUtilityFunctionAnalyzer/Applier` | Verify and name high-fanout runtime helpers and install their exact prototypes. |
 | `STAbiConsistencyAnalyzer/Applier` | Repair machine-proven x86 calling/return widths, `_setjmp3` varargs, and other ABI details that otherwise create `unaff_*`/`extraout_*` artifacts. |
-| `STReturnSemanticsAnalyzer/Applier` | Recover conservative `void`, boolean, and terminal `noreturn` behavior. |
+| `STReturnSemanticsAnalyzer/Applier` | Recover conservative `void`, boolean, terminal `noreturn`, and unanimous evidence-backed structure-pointer returns. |
 | `STPrototypeAnalyzer/Applier` | Propagate compatible parameter/return types and reviewed parameter names across direct calls. |
 | `STPrototypeRepairAnalyzer/Applier` | Isolate and safely correct stale types/names previously written by prototype propagation. |
 | `STManualTypeAuditAnalyzer` | Consolidate strong evidence that a protected/manual prototype or field type is stale; read-only by design. |
@@ -1168,9 +1180,9 @@ a new conflict is what requires another iteration.
 | `STDiscriminatedPayloadAnalyzer/Applier` | Infer per-case payload layouts and caller stack aggregates from switch discriminators and observed callsite lifetimes. |
 | `STGlobalAggregateAnalyzer/Applier` | Audit indexed global ranges and install only bounded arrays/matrices with a proven extent and indexing formula. |
 | `STGlobalDataAnalyzer/Applier` | Type generic globals from receiver/argument use and named-constructor stores, promote script-owned anonymous singleton pointers to named classes, assign address-stable structural names, and audit every `PTR_*` symbol by pointer role. |
-| `STIndirectCallAnalyzer/Applier` | Audit raw indirect calls and refine trusted vtable/callback slots with compatible function definitions. |
+| `STIndirectCallAnalyzer/Applier` | Audit raw indirect calls; refine trusted slots semantically and otherwise install only machine-proven neutral thiscall ABI definitions. |
 | `STPointerRoleRepairAnalyzer/Applier` | Remove prior script-owned pointer constraints from stack slots with proven scalar lifetimes in unsettled functions. |
-| `STPointerShapeAnalyzer/Applier` | Recover known or anonymous pointer-backed structures from fixed, nested, alias-mediated dereferences and typed calls; apply auto-`this` types through the owning class namespace. |
+| `STPointerShapeAnalyzer/Applier` | Recover and fixed-point-refine known or anonymous pointer-backed structures from fixed, nested, alias-mediated dereferences and typed calls; apply auto-`this` types through the owning class namespace. |
 | `STTypeFamilyAnalyzer/Applier` | Promote anonymous layouts only to one explicit semantic anchor and propagate named aggregate return types into script-owned anonymous locals; geometry-only matches remain review-only. |
 | `STTypeLifecycleAnalyzer/Applier` | Replace legacy views with one equivalent semantic anchor and remove only unreferenced script-owned view types. |
 | `STEvidenceLedger` | Record/verify a deterministic semantic Program fingerprint and hashes of every proposal/apply artifact plus monotonic enum state before export; retain the volatile modification counter for diagnostics only. |

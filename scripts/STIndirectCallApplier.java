@@ -24,6 +24,8 @@ import ghidra.program.model.data.DataTypeConflictHandler;
 import ghidra.program.model.data.DataTypeManager;
 import ghidra.program.model.data.FunctionDefinition;
 import ghidra.program.model.data.FunctionDefinitionDataType;
+import ghidra.program.model.data.ParameterDefinition;
+import ghidra.program.model.data.ParameterDefinitionImpl;
 import ghidra.program.model.data.Pointer;
 import ghidra.program.model.data.PointerDataType;
 import ghidra.program.model.data.Structure;
@@ -52,7 +54,8 @@ public class STIndirectCallApplier extends GhidraScript {
         require(input, "apply", "target_kind", "structure_path", "component_offset",
             "expected_field_name", "expected_component_type", "expected_comment",
             "proposed_vtable_type", "proposed_field_name", "table_address", "slot_count",
-            "signature_function_address", "signature_function", "evidence");
+            "signature_function_address", "signature_function", "signature_mode",
+            "receiver_type", "stack_parameter_count", "proposed_return_type", "evidence");
         dataTypes = currentProgram.getDataTypeManager(); pointerSize = currentProgram.getDefaultPointerSize();
         int tx = currentProgram.startTransaction("Apply indirect-call prototypes"); boolean commit = false;
         try {
@@ -86,7 +89,13 @@ public class STIndirectCallApplier extends GhidraScript {
             }
             Function signature = function(row.get("signature_function_address"));
             if (signature == null) { conflict(target, row, "signature function missing"); return; }
-            DataType desired = functionPointer(signature);
+            String mode = row.get("signature_mode");
+            DataType desired = "synthetic_thiscall".equals(mode) ?
+                syntheticFunctionPointer(row) : functionPointer(signature);
+            if (!(desired instanceof Pointer pointer) ||
+                    pointer.getDataType() instanceof VoidDataType) {
+                conflict(target, row, "could not construct function pointer"); return;
+            }
             if (component != null && component.getDataType().isEquivalent(desired)) {
                 report.add(new Report(target, row.get("target_kind"), "unchanged",
                     "desired function pointer already present")); return;
@@ -98,7 +107,11 @@ public class STIndirectCallApplier extends GhidraScript {
                 row.get("proposed_field_name"), component.getComment() + " " + MARKER);
             refreshHash(structure);
             report.add(new Report(target, row.get("target_kind"), "applied",
-                signature.getPrototypeString(true, true)));
+                "synthetic_thiscall".equals(mode) ?
+                    "neutral thiscall ABI: receiver=" + row.get("receiver_type") +
+                    ", stack_parameters=" + row.get("stack_parameter_count") +
+                    ", return=" + row.get("proposed_return_type") :
+                    signature.getPrototypeString(true, true)));
         }
         catch (Exception exception) { conflict(target, row, message(exception)); }
     }
@@ -169,6 +182,57 @@ public class STIndirectCallApplier extends GhidraScript {
         }
         else return new PointerDataType(VoidDataType.dataType, pointerSize, dataTypes);
         return new PointerDataType(definition, pointerSize, dataTypes);
+    }
+
+    private DataType syntheticFunctionPointer(Map<String, String> row) throws Exception {
+        int count = Integer.parseInt(row.get("stack_parameter_count"));
+        if (count < 0 || count > 64)
+            throw new IllegalArgumentException("invalid stack parameter count " + count);
+        DataType receiver = resolveSpecification(row.get("receiver_type"));
+        DataType returned = resolveSpecification(row.get("proposed_return_type"));
+        if (!(receiver instanceof Pointer) || returned == null)
+            throw new IllegalArgumentException("synthetic ABI types are missing");
+        String receiverName = row.get("receiver_type");
+        int receiverSeparator = receiverName.lastIndexOf('/');
+        if (receiverSeparator >= 0) receiverName = receiverName.substring(receiverSeparator + 1);
+        String name = "icall_" + row.get("signature_function_address").toUpperCase(Locale.ROOT) +
+            "_" + sanitize(row.get("signature_function")) + "_for_" +
+            sanitize(receiverName);
+        FunctionDefinitionDataType desired = new FunctionDefinitionDataType(FUNCTIONS, name,
+            dataTypes);
+        desired.setCallingConvention("__thiscall");
+        desired.setReturnType(returned);
+        ParameterDefinition[] arguments = new ParameterDefinition[count + 1];
+        arguments[0] = new ParameterDefinitionImpl("this", receiver,
+            "receiver proven by vtable membership and incoming ECX use");
+        DataType word = resolveSpecification("/undefined4");
+        if (word == null) throw new IllegalArgumentException("/undefined4 is missing");
+        for (int index = 0; index < count; index++)
+            arguments[index + 1] = new ParameterDefinitionImpl("arg_" + (index + 1), word,
+                "neutral ABI word; semantics unresolved");
+        desired.setArguments(arguments);
+        desired.setComment(MARKER + " Neutral x86 thiscall ABI recovered from " +
+            row.get("signature_function_address") + "; " + row.get("evidence"));
+        DataType existing = dataTypes.getDataType(FUNCTIONS, name);
+        DataType definition;
+        if (existing == null)
+            definition = dataTypes.resolve(desired, DataTypeConflictHandler.KEEP_HANDLER);
+        else if (existing instanceof FunctionDefinition current) {
+            if (current.getComment() != null && current.getComment().contains(MARKER) &&
+                    !current.isEquivalentSignature(desired)) current.replaceWith(desired);
+            definition = current;
+        }
+        else throw new IllegalArgumentException("generated function type name is occupied");
+        return new PointerDataType(definition, pointerSize, dataTypes);
+    }
+
+    private DataType resolveSpecification(String specification) {
+        if (specification == null || specification.isBlank()) return null;
+        if (specification.startsWith("pointer:")) {
+            DataType pointed = resolveSpecification(specification.substring("pointer:".length()));
+            return pointed == null ? null : new PointerDataType(pointed, pointerSize, dataTypes);
+        }
+        return dataTypes.getDataType(specification);
     }
 
     private boolean baseline(DataTypeComponent component, Map<String, String> row) {

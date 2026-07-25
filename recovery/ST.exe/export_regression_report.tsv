@@ -10,17 +10,17 @@ info	typed_vtable_slots	231	231	0	ok	Exact per-slot type erasure is the hard reg
 info	typed_vtable_slot_erasure	0	0	0	ok	
 info	function_addresses_removed	0	0	0	ok	
 info	semantic_name_downgrades	0	0	0	ok	
-warning	quality:anonymous_shape_type	5952	5947	-5	stage_transition	A later recovery stage may expose more named layout debt without losing structure
-warning	quality:casted_generic_field	5177	5159	-18	stage_transition	A later recovery stage may expose more named layout debt without losing structure
+warning	quality:anonymous_shape_type	5947	5964	17	stage_transition	A later recovery stage may expose more named layout debt without losing structure
+warning	quality:casted_generic_field	5159	5177	18	stage_transition	A later recovery stage may expose more named layout debt without losing structure
 info	quality:dynamic_array_indexing	392	392	0	ok	policy=nonincreasing; blocking=false
 info	quality:flattened_global_record_array	94	94	0	ok	policy=nonincreasing; blocking=false
-warning	quality:generic_data_symbol	18668	18669	1	stage_transition	A later recovery stage may expose more named layout debt without losing structure
-warning	quality:generic_field_name	56287	56269	-18	stage_transition	A later recovery stage may expose more named layout debt without losing structure
+warning	quality:generic_data_symbol	18669	18668	-1	stage_transition	A later recovery stage may expose more named layout debt without losing structure
+warning	quality:generic_field_name	56269	56287	18	stage_transition	A later recovery stage may expose more named layout debt without losing structure
 info	quality:generic_global_aggregate	301	301	0	ok	policy=nonincreasing; blocking=false
 info	quality:packed_or_unaligned_piece	1672	1672	0	ok	policy=nonincreasing; blocking=false
 info	quality:raw_indirect_call	2110	2110	0	ok	policy=nonincreasing; blocking=true
-warning	quality:raw_pointer_offset	3140	3141	1	regressed	policy=nonincreasing; blocking=false
+info	quality:raw_pointer_offset	3141	3140	-1	improved	policy=nonincreasing; blocking=false
 info	quality:return_width_artifact	1275	1275	0	ok	policy=nonincreasing; blocking=true
 info	quality:string_based_aggregate_address	9	9	0	ok	policy=nonincreasing; blocking=false
-info	quality:undefined_type	20656	20656	0	ok	policy=nonincreasing; blocking=false
+info	quality:undefined_type	20656	20641	-15	improved	policy=nonincreasing; blocking=false
 info	quality:unresolved_register_input	797	797	0	ok	policy=nonincreasing; blocking=true

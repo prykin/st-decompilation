@@ -6,9 +6,9 @@ apply	type_path	offset	size	proposed_name	proposed_type	evidence_count	reason
 0	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_AiFltClassTy_0223	28	4	field_001C	/undefined4	2	nested reads=2, writes=0
 0	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_AiFltClassTy_022F	8	4	field_0008	/undefined4	2	nested reads=3, writes=0
 0	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_AiFltClassTy_022F	28	4	field_001C	/undefined4	2	nested reads=3, writes=0
-0	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_AiFltClassTy_0284	130	2	field_0082	/undefined2	3	nested reads=3, writes=0
-0	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_AiFltClassTy_0284	132	2	field_0084	/undefined2	3	nested reads=3, writes=0
-0	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_AiFltClassTy_0284	134	2	field_0086	/undefined2	2	nested reads=2, writes=0
+0	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_AiFltClassTy_0284	130	2	field_0082	/short	3	nested reads=3, writes=0; type_evidence=/short <= 00661249 MOVSX establishes /short
+0	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_AiFltClassTy_0284	132	2	field_0084	/short	3	nested reads=3, writes=0; type_evidence=/short <= 0066123E MOVSX establishes /short
+0	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_AiFltClassTy_0284	134	2	field_0086	/short	2	nested reads=2, writes=0; type_evidence=/short <= 00661231 MOVSX establishes /short
 0	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_AiFltClassTy_0284	308	4	field_0134	/undefined4	2	nested reads=2, writes=0
 0	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_AiFltClassTy_0284	312	4	field_0138	/undefined4	2	nested reads=3, writes=0
 0	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_AiFltClassTy_0284	316	4	field_013C	/undefined4	1	nested reads=1, writes=0
@@ -19,8 +19,8 @@ apply	type_path	offset	size	proposed_name	proposed_type	evidence_count	reason
 0	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_CBaseRenderer_0000	112	4	field_0070	/undefined4	2	nested reads=2, writes=0
 0	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_CGenerate_0008	0	4	field_0000	/undefined4	4	nested reads=13, writes=0
 0	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_CGenerate_0008	4	4	field_0004	/undefined4	4	nested reads=12, writes=0
-0	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_CGenerate_000C	0	2	field_0000	/undefined2	1	nested reads=11, writes=0
-0	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_CGenerate_000C	2	2	field_0002	/undefined2	1	nested reads=3, writes=0
+0	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_CGenerate_000C	0	2	field_0000	/short	1	nested reads=11, writes=0; type_evidence=/short <= 0069ADB5 MOVSX establishes /short; 0069ADEB MOVSX establishes /short; 0069AE1D MOVSX establishes /short; 0069AE27 MOVSX establishes /short; 0069AEF7 MOVSX establishes /short; 0069AF27 MOVSX establishes /short; 0069AFC9 MOVSX establishes /short; 0069AFDD MOVSX establishes /short; 0069AFEE MOVSX establishes /short; 0069B049 MOVSX establishes /short; 0069B08F MOVSX establishes /short
+0	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_CGenerate_000C	2	2	field_0002	/short	1	nested reads=3, writes=0; type_evidence=/short <= 0069ADB1 MOVSX establishes /short; 0069B0A0 MOVSX establishes /short
 0	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_CGenerate_000C	4	1	field_0004	/undefined1	1	nested reads=0, writes=1
 0	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_CGenerate_000C	1109	4	field_0455	/undefined4	1	nested reads=2, writes=0
 0	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_CPanelTy_01B0	4	4	field_0004	/undefined4	1	nested reads=1, writes=0
@@ -289,9 +289,9 @@ apply	type_path	offset	size	proposed_name	proposed_type	evidence_count	reason
 0	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_STArtiafactC_0000	172	4	field_00AC	/undefined4	1	nested reads=1, writes=0
 0	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_STArtiafactC_0000	216	4	field_00D8	/undefined4	1	nested reads=1, writes=0
 0	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_STArtiafactC_0000	292	4	field_0124	/undefined4	1	nested reads=2, writes=0
-0	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_STBHEShellC_00F3	209	2	field_00D1	/undefined2	1	nested reads=1, writes=0
-0	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_STBHEShellC_00F3	211	2	field_00D3	/undefined2	1	nested reads=1, writes=0
-0	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_STBHEShellC_00F3	213	2	field_00D5	/undefined2	1	nested reads=1, writes=0
+0	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_STBHEShellC_00F3	209	2	field_00D1	/short	1	nested reads=1, writes=0; type_evidence=/short <= 005F4582 MOVSX establishes /short
+0	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_STBHEShellC_00F3	211	2	field_00D3	/short	1	nested reads=1, writes=0; type_evidence=/short <= 005F4594 MOVSX establishes /short
+0	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_STBHEShellC_00F3	213	2	field_00D5	/short	1	nested reads=1, writes=0; type_evidence=/short <= 005F45B8 MOVSX establishes /short
 0	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_STBHEShellC_00F3	223	4	field_00DF	/undefined4	1	nested reads=1, writes=0
 0	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_STBHEShellC_00F3	231	4	field_00E7	/undefined4	1	nested reads=1, writes=0
 0	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_STBHEShellC_00F3	239	4	field_00EF	/undefined4	1	nested reads=1, writes=0
@@ -403,9 +403,9 @@ apply	type_path	offset	size	proposed_name	proposed_type	evidence_count	reason
 0	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_StartSystemTy_0682	14	2	field_000E	/undefined2	1	nested reads=1, writes=0
 0	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_StartSystemTy_0682	20	4	field_0014	/undefined4	1	nested reads=1, writes=0
 0	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_SubmarineTitans__Recovered__HiddenThis__AnonReceiver_00416270_02E6	4	4	field_0004	/undefined4	2	nested reads=0, writes=2
-0	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_SubmarineTitans__Recovered__HiddenThis__AnonReceiver_00416270_02E6	20	4	field_0014	/undefined4	2	nested reads=0, writes=2
-0	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_SubmarineTitans__Recovered__HiddenThis__AnonReceiver_00416270_02E6	24	4	field_0018	/undefined4	2	nested reads=0, writes=2
-0	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_SubmarineTitans__Recovered__HiddenThis__AnonReceiver_00416270_02E6	28	4	field_001C	/undefined4	2	nested reads=0, writes=2
+0	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_SubmarineTitans__Recovered__HiddenThis__AnonReceiver_00416270_02E6	20	4	field_0014	/int	2	nested reads=0, writes=2; type_evidence=/int <= 005FAB33 FILD establishes /int
+0	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_SubmarineTitans__Recovered__HiddenThis__AnonReceiver_00416270_02E6	24	4	field_0018	/int	2	nested reads=0, writes=2; type_evidence=/int <= 005FAB20 FILD establishes /int
+0	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_SubmarineTitans__Recovered__HiddenThis__AnonReceiver_00416270_02E6	28	4	field_001C	/int	2	nested reads=0, writes=2; type_evidence=/int <= 005FAB08 FILD establishes /int
 0	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_SubmarineTitans__Recovered__HiddenThis__AnonReceiver_004167A0_0097	8	2	field_0008	/undefined2	1	nested reads=1, writes=0
 0	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_SubmarineTitans__Recovered__HiddenThis__AnonReceiver_004167A0_0097	10	2	field_000A	/undefined2	2	nested reads=1, writes=2
 0	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_SubmarineTitans__Recovered__HiddenThis__AnonReceiver_004167A0_0097	12	2	field_000C	/undefined2	2	nested reads=1, writes=2
@@ -452,13 +452,13 @@ apply	type_path	offset	size	proposed_name	proposed_type	evidence_count	reason
 0	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_SubmarineTitans__Recovered__HiddenThis__AnonReceiver_0060EF40_02DD	0	2	field_0000	/undefined2	2	nested reads=0, writes=4
 0	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_SubmarineTitans__Recovered__HiddenThis__AnonReceiver_0060EF40_02DD	2	2	field_0002	/undefined2	2	nested reads=0, writes=4
 0	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_SubmarineTitans__Recovered__HiddenThis__AnonReceiver_0060EF40_02DD	4	2	field_0004	/undefined2	2	nested reads=0, writes=4
-0	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_SubmarineTitans__Recovered__HiddenThis__AnonReceiver_0060EF40_02DD	6	2	field_0006	/undefined2	2	nested reads=4, writes=2
+0	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_SubmarineTitans__Recovered__HiddenThis__AnonReceiver_0060EF40_02DD	6	2	field_0006	/short	2	nested reads=4, writes=2; type_evidence=/short <= 0060F5B5 MOVSX establishes /short; 0060F5FD MOVSX establishes /short
 0	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_SubmarineTitans__Recovered__HiddenThis__AnonReceiver_0060EF40_02DD	8	4	field_0008	/undefined4	3	nested reads=1, writes=4
 0	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_SubmarineTitans__Recovered__HiddenThis__AnonReceiver_0060EF40_02DD	24	4	field_0018	/undefined4	2	nested reads=0, writes=2
-0	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_SubmarineTitans__Recovered__HiddenThis__AnonReceiver_0060EF40_02DD	28	2	field_001C	/undefined2	2	nested reads=2, writes=0
-0	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_SubmarineTitans__Recovered__HiddenThis__AnonReceiver_0060EF40_02DD	30	2	field_001E	/undefined2	2	nested reads=2, writes=0
-0	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_SubmarineTitans__Recovered__HiddenThis__AnonReceiver_0060EF40_02DD	32	2	field_0020	/undefined2	2	nested reads=2, writes=0
-0	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_SubmarineTitans__Recovered__HiddenThis__AnonReceiver_0060EF40_02DD	34	2	field_0022	/undefined2	2	nested reads=2, writes=0
+0	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_SubmarineTitans__Recovered__HiddenThis__AnonReceiver_0060EF40_02DD	28	2	field_001C	/short	2	nested reads=2, writes=0; type_evidence=/short <= 0060F68D MOVSX establishes /short
+0	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_SubmarineTitans__Recovered__HiddenThis__AnonReceiver_0060EF40_02DD	30	2	field_001E	/short	2	nested reads=2, writes=0; type_evidence=/short <= 0060F66E MOVSX establishes /short
+0	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_SubmarineTitans__Recovered__HiddenThis__AnonReceiver_0060EF40_02DD	32	2	field_0020	/short	2	nested reads=2, writes=0; type_evidence=/short <= 0060F651 MOVSX establishes /short
+0	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_SubmarineTitans__Recovered__HiddenThis__AnonReceiver_0060EF40_02DD	34	2	field_0022	/short	2	nested reads=2, writes=0; type_evidence=/short <= 0060F5F8 MOVSX establishes /short
 0	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_SubmarineTitans__Recovered__HiddenThis__AnonReceiver_0064A970_0000	0	4	field_0000	/undefined4	2	nested reads=12, writes=0
 0	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_SubmarineTitans__Recovered__HiddenThis__AnonReceiver_0064A970_0000	4	4	field_0004	/undefined4	1	nested reads=1, writes=0
 0	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_SubmarineTitans__Recovered__HiddenThis__AnonReceiver_0064A970_0000	8	4	field_0008	/undefined4	1	nested reads=1, writes=0
@@ -489,9 +489,9 @@ apply	type_path	offset	size	proposed_name	proposed_type	evidence_count	reason
 0	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_TLOBaseTy_01F5	520	4	field_0208	/undefined4	1	nested reads=1, writes=0
 0	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_TLOBaseTy_01F5	524	4	field_020C	/undefined4	2	nested reads=2, writes=0
 0	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_TLOBaseTy_01F5	528	4	field_0210	/undefined4	1	nested reads=2, writes=0
-0	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_TLOBaseTy_0291	65	2	field_0041	/undefined2	1	nested reads=2, writes=0
-0	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_TLOBaseTy_0291	67	2	field_0043	/undefined2	1	nested reads=2, writes=0
-0	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_TLOBaseTy_0291	69	2	field_0045	/undefined2	1	nested reads=2, writes=0
+0	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_TLOBaseTy_0291	65	2	field_0041	/short	1	nested reads=2, writes=0; type_evidence=/short <= 004C38EE MOVSX establishes /short
+0	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_TLOBaseTy_0291	67	2	field_0043	/short	1	nested reads=2, writes=0; type_evidence=/short <= 004C38F8 MOVSX establishes /short
+0	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_TLOBaseTy_0291	69	2	field_0045	/short	1	nested reads=2, writes=0; type_evidence=/short <= 004C3902 MOVSX establishes /short
 0	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_TLOBaseTy_05B4	725	4	field_02D5	/undefined4	1	nested reads=0, writes=1
 0	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_TLOBaseTy_05B4	729	4	field_02D9	/undefined4	1	nested reads=0, writes=1
 0	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_TLOBaseTy_05B4	733	4	field_02DD	/undefined4	1	nested reads=0, writes=1

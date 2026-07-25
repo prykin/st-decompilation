@@ -214,15 +214,17 @@ The current work focuses on recovering what the binary can prove:
 - reverse return-type recovery from typed arguments, class receivers, and field/global stores;
 - one-shot audited repair of stale automatically propagated prototypes;
 - read-only contradiction auditing for stale manual/protected types;
-- verified semantics for high-fanout utility functions and conservative `void`/boolean/noreturn returns;
+- verified semantics for high-fanout utility functions and conservative `void`/boolean/noreturn
+  returns, plus unanimous propagation of already recovered structure pointers through EAX;
 - conservative class layouts and field types;
 - packed global record arrays recovered from x86 stride, range, and field-access evidence;
 - bounded indexed global aggregates such as the player relation matrix;
 - typed global data recovered from class-receiver and trusted-argument use;
-- pointer-backed structures recovered from fixed-offset dereferences and typed helper calls;
+- pointer-backed structures recovered and monotonically refined from fixed-offset dereferences
+  and typed helper calls, using observed packed extents rather than assumed alignment;
 - exact anonymous type-family consolidation and named return-to-local propagation;
-- trusted indirect-call/vtable prototypes and automatic unanimous-callsite
-  `__cdecl` correction, with ambiguous callsites retained for review;
+- trusted indirect-call/vtable prototypes, neutral machine-proven thiscall slot ABIs, and
+  automatic unanimous-callsite `__cdecl` correction, with ambiguous callsites retained for review;
 - statically linked CRT, DKW, and internal `Ourlib` modules;
 - structured control-flow labels where the decompiler emits unavoidable gotos.
 

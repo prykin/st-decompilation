@@ -1,5 +1,6 @@
 ST indirect-call prototypes
 
 Indirect call sites: 4221
-Proposals: 2607
+Proposals: 1767
 Automatic: 0
+Synthetic ABI prototypes: 0

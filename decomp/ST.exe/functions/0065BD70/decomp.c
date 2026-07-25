@@ -183,7 +183,7 @@ int __thiscall AiEventClassTy::sub_0065BD70(AiEventClassTy *this,STMessage *mess
         if (pSVar4 != (STGameObjC *)0x0) {
           uVar5 = (*pSVar4->vtable->vfunc_2C)();
           this->field_053B = uVar5;
-          uVar5 = (*pSVar4->vtable->vfunc_6C)();
+          uVar5 = (*pSVar4->vtable->vfunc_6C)(pSVar4);
           this->field_053F = uVar5;
           STFishC::sub_004162B0
                     ((STFishC *)pSVar4,(undefined2 *)((int)&message + 2),
@@ -325,7 +325,7 @@ LAB_0065c021:
         if (pSVar4 != (STGameObjC *)0x0) {
           uVar5 = (*pSVar4->vtable->vfunc_2C)();
           this->field_053B = uVar5;
-          uVar5 = (*pSVar4->vtable->vfunc_6C)();
+          uVar5 = (*pSVar4->vtable->vfunc_6C)(pSVar4);
           this->field_053F = uVar5;
           STFishC::sub_004162B0
                     ((STFishC *)pSVar4,(undefined2 *)((int)&message + 2),
@@ -403,7 +403,7 @@ LAB_0065c4bb:
     }
     uVar5 = (*pSVar4->vtable->vfunc_2C)();
     this->field_0563 = uVar5;
-    uVar5 = (*pSVar4->vtable->vfunc_6C)();
+    uVar5 = (*pSVar4->vtable->vfunc_6C)(pSVar4);
     this->field_0567 = uVar5;
     STFishC::sub_004162B0
               ((STFishC *)pSVar4,(undefined2 *)((int)&message + 2),(undefined2 *)((int)&param_2 + 2)

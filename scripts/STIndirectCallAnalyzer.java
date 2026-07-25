@@ -14,6 +14,8 @@ import java.util.Comparator;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Locale;
+import java.util.Set;
+import java.util.TreeSet;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -24,11 +26,13 @@ import ghidra.program.model.data.DataTypeComponent;
 import ghidra.program.model.data.Pointer;
 import ghidra.program.model.data.Structure;
 import ghidra.program.model.data.VoidDataType;
+import ghidra.program.model.lang.Register;
 import ghidra.program.model.listing.Function;
 import ghidra.program.model.listing.FunctionIterator;
 import ghidra.program.model.listing.FunctionTag;
 import ghidra.program.model.listing.Instruction;
 import ghidra.program.model.listing.InstructionIterator;
+import ghidra.program.model.scalar.Scalar;
 import ghidra.program.model.symbol.SourceType;
 
 public class STIndirectCallAnalyzer extends GhidraScript {
@@ -46,8 +50,8 @@ public class STIndirectCallAnalyzer extends GhidraScript {
         File selected = outputDirectory(); if (selected == null) return;
         Path directory = programDirectory(selected); Files.createDirectories(directory);
         List<Row> rows = new ArrayList<>();
-        addExistingVtableSlots(rows);
         collectSites();
+        addExistingVtableSlots(rows);
         rows.sort(Comparator.comparing((Row row) -> row.structurePath)
             .thenComparingInt(row -> row.offset));
         writeRows(directory.resolve("indirect_call_proposals.tsv"), rows);
@@ -72,15 +76,101 @@ public class STIndirectCallAnalyzer extends GhidraScript {
                 Function entry = raw == null ? null : currentProgram.getFunctionManager().getFunctionAt(raw);
                 Function target = resolveThunk(entry);
                 boolean trusted = trusted(target);
-                rows.add(new Row(trusted, "vtable_slot", structure.getPathName(),
+                Synthetic synthetic = trusted ? null : syntheticSignature(target, structure);
+                boolean apply = trusted || synthetic != null;
+                rows.add(new Row(apply, "vtable_slot", structure.getPathName(),
                     component.getOffset(), name(component), typeSpec(component.getDataType()),
                     text(component.getComment()), structure.getPathName(), name(component), 0, 0,
                     target == null ? "" : addr(target.getEntryPoint()),
-                    target == null ? "" : target.getName(true), trusted ? "high" : "review",
+                    target == null ? "" : target.getName(true),
+                    trusted ? "target" : synthetic == null ? "" : "synthetic_thiscall",
+                    synthetic == null ? "" : synthetic.receiverType,
+                    synthetic == null ? -1 : synthetic.stackParameters,
+                    synthetic == null ? "" : synthetic.returnType,
+                    trusted ? "high" : synthetic == null ? "review" : "layout",
                     trusted ? "slot target has a reviewed function signature" :
-                        "slot target prototype is not yet trusted"));
+                        synthetic == null ? "slot target lacks consistent thiscall ABI evidence" :
+                        synthetic.evidence));
             }
         }
+    }
+
+    private Synthetic syntheticSignature(Function target, Structure vtable) {
+        if (target == null || !usesIncomingEcx(target)) return null;
+        Set<Long> pops = returnPops(target);
+        if (pops.size() != 1) return null;
+        long bytes = pops.iterator().next();
+        if (bytes < 0 || bytes > 0x100 || bytes % currentProgram.getDefaultPointerSize() != 0)
+            return null;
+        int parameters = (int)(bytes / currentProgram.getDefaultPointerSize());
+        String returned = definitelyVoid(target) ? "/void" : "/undefined4";
+        return new Synthetic(receiverType(vtable), parameters, returned,
+            "vtable membership, incoming ECX use, and every RET agrees on callee cleanup " +
+            bytes + " byte(s); neutral stack parameters=" + parameters +
+            "; return=" + returned);
+    }
+
+    private Set<Long> returnPops(Function function) {
+        Set<Long> result = new TreeSet<>();
+        InstructionIterator instructions = currentProgram.getListing()
+            .getInstructions(function.getBody(), true);
+        while (instructions.hasNext()) {
+            Instruction instruction = instructions.next();
+            String mnemonic = instruction.getMnemonicString().toUpperCase(Locale.ROOT);
+            if (!mnemonic.equals("RET") && !mnemonic.equals("RETF")) continue;
+            Scalar scalar = instruction.getScalar(0);
+            result.add(scalar == null ? 0L : scalar.getUnsignedValue());
+        }
+        return result;
+    }
+
+    private boolean usesIncomingEcx(Function function) {
+        boolean live = true;
+        int count = 0;
+        InstructionIterator instructions = currentProgram.getListing()
+            .getInstructions(function.getBody(), true);
+        while (instructions.hasNext() && count++ < 256 && live) {
+            Instruction instruction = instructions.next();
+            for (Object input : instruction.getInputObjects())
+                if (input instanceof Register register &&
+                        "ECX".equals(register.getName().toUpperCase(Locale.ROOT))) return true;
+            for (Object output : instruction.getResultObjects())
+                if (output instanceof Register register &&
+                        "ECX".equals(register.getName().toUpperCase(Locale.ROOT))) live = false;
+        }
+        return false;
+    }
+
+    private boolean definitelyVoid(Function function) {
+        InstructionIterator instructions = currentProgram.getListing()
+            .getInstructions(function.getBody(), true);
+        while (instructions.hasNext()) {
+            Instruction instruction = instructions.next();
+            if (instruction.getFlowType().isCall()) return false;
+            for (Object output : instruction.getResultObjects()) {
+                if (!(output instanceof Register register)) continue;
+                String name = register.getName().toUpperCase(Locale.ROOT);
+                if (Set.of("EAX", "AX", "AL", "AH").contains(name)) return false;
+            }
+        }
+        return true;
+    }
+
+    private String receiverType(Structure vtable) {
+        String owner = vtable.getName().replaceFirst("(?i)VTable(?:_at_[0-9A-F]+)?$", "");
+        DataType direct = currentProgram.getDataTypeManager().getDataType("/" + owner);
+        if (direct instanceof Structure) return "pointer:" + direct.getPathName();
+        List<DataType> matches = new ArrayList<>();
+        currentProgram.getDataTypeManager().findDataTypes(owner, matches);
+        Structure found = null;
+        for (DataType match : matches) {
+            if (!(match instanceof Structure structure) ||
+                    structure.getPathName().contains("/VTables/")) continue;
+            if (found != null && !found.getPathName().equals(structure.getPathName()))
+                return "pointer:/void";
+            found = structure;
+        }
+        return found == null ? "pointer:/void" : "pointer:" + found.getPathName();
     }
 
     private void collectSites() throws Exception {
@@ -149,6 +239,7 @@ public class STIndirectCallAnalyzer extends GhidraScript {
             out.write("apply\ttarget_kind\tstructure_path\tcomponent_offset\texpected_field_name\t" +
                 "expected_component_type\texpected_comment\tproposed_vtable_type\tproposed_field_name\t" +
                 "table_address\tslot_count\tsignature_function_address\tsignature_function\t" +
+                "signature_mode\treceiver_type\tstack_parameter_count\tproposed_return_type\t" +
                 "confidence\tevidence\n");
             for (Row row : rows) out.write((row.apply ? "1" : "0") + "\t" + row.kind +
                 "\t" + row.structurePath + "\t" + row.offset + "\t" + clean(row.expectedName) +
@@ -156,6 +247,8 @@ public class STIndirectCallAnalyzer extends GhidraScript {
                 row.proposedVtable + "\t" + clean(row.proposedName) + "\t" +
                 (row.tableAddress == 0 ? "" : String.format("%08X", row.tableAddress)) + "\t" +
                 row.slotCount + "\t" + row.functionAddress + "\t" + clean(row.function) +
+                "\t" + row.signatureMode + "\t" + row.receiverType + "\t" +
+                (row.stackParameters < 0 ? "" : row.stackParameters) + "\t" + row.returnType +
                 "\t" + row.confidence + "\t" + clean(row.evidence) + "\n");
         }
     }
@@ -172,7 +265,9 @@ public class STIndirectCallAnalyzer extends GhidraScript {
         try (BufferedWriter out = Files.newBufferedWriter(path, StandardCharsets.UTF_8)) {
             out.write("ST indirect-call prototypes\n\nIndirect call sites: " + sites.size() +
                 "\nProposals: " + rows.size() + "\nAutomatic: " +
-                rows.stream().filter(row -> row.apply).count() + "\n");
+                rows.stream().filter(row -> row.apply).count() +
+                "\nSynthetic ABI prototypes: " + rows.stream().filter(row ->
+                    "synthetic_thiscall".equals(row.signatureMode)).count() + "\n");
         }
     }
     private String typeSpec(DataType type) {
@@ -200,7 +295,10 @@ public class STIndirectCallAnalyzer extends GhidraScript {
     private record Row(boolean apply, String kind, String structurePath, int offset,
         String expectedName, String expectedType, String expectedComment, String proposedVtable,
         String proposedName, long tableAddress, int slotCount, String functionAddress,
-        String function, String confidence, String evidence) {}
+        String function, String signatureMode, String receiverType, int stackParameters,
+        String returnType, String confidence, String evidence) {}
+    private record Synthetic(String receiverType, int stackParameters, String returnType,
+        String evidence) {}
     private record Site(String functionAddress, String function, String callAddress,
         String register, int slot, int pushes, String ecx, String instruction) {}
 }
