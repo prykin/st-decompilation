@@ -17,7 +17,7 @@ void FUN_0043fc50(Global_sub_0043FC50_param_1Enum param_1,int param_2)
     if (g_cPanel_00801688 == (CPanelTy *)0x0) {
       return;
     }
-    thunk_FUN_004fa870(g_cPanel_00801688,CASE_1);
+    CPanelTy::sub_004FA870(g_cPanel_00801688,CASE_1);
     goto LAB_0043fd36;
   case CASE_2:
     if ((param_2 != 0) &&
@@ -27,7 +27,7 @@ void FUN_0043fc50(Global_sub_0043FC50_param_1Enum param_1,int param_2)
     g_playerRuntime[DAT_0080874d].field464_0x2ab = g_playSystem_00802A38->field_00E4;
 LAB_0043fd36:
     if (g_cPanel_00801688 != (CPanelTy *)0x0) {
-      thunk_FUN_004fa870(g_cPanel_00801688,CASE_2);
+      CPanelTy::sub_004FA870(g_cPanel_00801688,CASE_2);
       return;
     }
     break;
@@ -36,7 +36,7 @@ LAB_0043fd36:
         (g_playerRuntime[DAT_0080874d].field465_0x2af != g_playSystem_00802A38->field_00E4)) &&
        (g_playerRuntime[DAT_0080874d].field465_0x2af = g_playSystem_00802A38->field_00E4,
        g_cPanel_00801688 != (CPanelTy *)0x0)) {
-      thunk_FUN_004fa870(g_cPanel_00801688,CASE_4);
+      CPanelTy::sub_004FA870(g_cPanel_00801688,CASE_4);
       return;
     }
     break;
@@ -45,7 +45,7 @@ LAB_0043fd36:
         (g_playerRuntime[DAT_0080874d].field466_0x2b3 != g_playSystem_00802A38->field_00E4)) &&
        (g_playerRuntime[DAT_0080874d].field466_0x2b3 = g_playSystem_00802A38->field_00E4,
        g_cPanel_00801688 != (CPanelTy *)0x0)) {
-      thunk_FUN_004fa870(g_cPanel_00801688,CASE_5);
+      CPanelTy::sub_004FA870(g_cPanel_00801688,CASE_5);
       return;
     }
     break;
@@ -54,7 +54,7 @@ LAB_0043fd36:
         (g_playerRuntime[DAT_0080874d].field467_0x2b7 != g_playSystem_00802A38->field_00E4)) &&
        (g_playerRuntime[DAT_0080874d].field467_0x2b7 = g_playSystem_00802A38->field_00E4,
        g_cPanel_00801688 != (CPanelTy *)0x0)) {
-      thunk_FUN_004fa870(g_cPanel_00801688,CASE_6);
+      CPanelTy::sub_004FA870(g_cPanel_00801688,CASE_6);
       return;
     }
     break;
@@ -63,7 +63,7 @@ LAB_0043fd36:
         (g_playerRuntime[DAT_0080874d].field468_0x2bb != g_playSystem_00802A38->field_00E4)) &&
        (g_playerRuntime[DAT_0080874d].field468_0x2bb = g_playSystem_00802A38->field_00E4,
        g_cPanel_00801688 != (CPanelTy *)0x0)) {
-      thunk_FUN_004fa870(g_cPanel_00801688,CASE_7);
+      CPanelTy::sub_004FA870(g_cPanel_00801688,CASE_7);
       return;
     }
     break;
@@ -72,7 +72,7 @@ LAB_0043fd36:
         (g_playerRuntime[DAT_0080874d].field469_0x2bf != g_playSystem_00802A38->field_00E4)) &&
        (g_playerRuntime[DAT_0080874d].field469_0x2bf = g_playSystem_00802A38->field_00E4,
        g_cPanel_00801688 != (CPanelTy *)0x0)) {
-      thunk_FUN_004fa870(g_cPanel_00801688,8);
+      CPanelTy::sub_004FA870(g_cPanel_00801688,8);
       return;
     }
     break;
@@ -81,7 +81,7 @@ LAB_0043fd36:
         (g_playerRuntime[DAT_0080874d].field470_0x2c3 != g_playSystem_00802A38->field_00E4)) &&
        (g_playerRuntime[DAT_0080874d].field470_0x2c3 = g_playSystem_00802A38->field_00E4,
        g_cPanel_00801688 != (CPanelTy *)0x0)) {
-      thunk_FUN_004fa870(g_cPanel_00801688,9);
+      CPanelTy::sub_004FA870(g_cPanel_00801688,9);
       return;
     }
     break;
@@ -90,7 +90,7 @@ LAB_0043fd36:
         (g_playerRuntime[DAT_0080874d].field471_0x2c7 != g_playSystem_00802A38->field_00E4)) &&
        (g_playerRuntime[DAT_0080874d].field471_0x2c7 = g_playSystem_00802A38->field_00E4,
        g_cPanel_00801688 != (CPanelTy *)0x0)) {
-      thunk_FUN_004fa870(g_cPanel_00801688,10);
+      CPanelTy::sub_004FA870(g_cPanel_00801688,10);
       return;
     }
     break;
@@ -99,7 +99,7 @@ LAB_0043fd36:
         (g_playerRuntime[DAT_0080874d].field472_0x2cb != g_playSystem_00802A38->field_00E4)) &&
        (g_playerRuntime[DAT_0080874d].field472_0x2cb = g_playSystem_00802A38->field_00E4,
        g_cPanel_00801688 != (CPanelTy *)0x0)) {
-      thunk_FUN_004fa870(g_cPanel_00801688,0xb);
+      CPanelTy::sub_004FA870(g_cPanel_00801688,0xb);
       return;
     }
     break;
@@ -108,7 +108,7 @@ LAB_0043fd36:
         (g_playerRuntime[DAT_0080874d].field473_0x2cf != g_playSystem_00802A38->field_00E4)) &&
        (g_playerRuntime[DAT_0080874d].field473_0x2cf = g_playSystem_00802A38->field_00E4,
        g_cPanel_00801688 != (CPanelTy *)0x0)) {
-      thunk_FUN_004fa870(g_cPanel_00801688,0xc);
+      CPanelTy::sub_004FA870(g_cPanel_00801688,0xc);
       return;
     }
     break;
@@ -117,7 +117,7 @@ LAB_0043fd36:
         (g_playerRuntime[DAT_0080874d].field474_0x2d3 != g_playSystem_00802A38->field_00E4)) &&
        (g_playerRuntime[DAT_0080874d].field474_0x2d3 = g_playSystem_00802A38->field_00E4,
        g_cPanel_00801688 != (CPanelTy *)0x0)) {
-      thunk_FUN_004fa870(g_cPanel_00801688,0xd);
+      CPanelTy::sub_004FA870(g_cPanel_00801688,0xd);
       return;
     }
     break;
@@ -126,7 +126,7 @@ LAB_0043fd36:
         (g_playerRuntime[DAT_0080874d].field475_0x2d7 != g_playSystem_00802A38->field_00E4)) &&
        (g_playerRuntime[DAT_0080874d].field475_0x2d7 = g_playSystem_00802A38->field_00E4,
        g_cPanel_00801688 != (CPanelTy *)0x0)) {
-      thunk_FUN_004fa870(g_cPanel_00801688,CASE_E);
+      CPanelTy::sub_004FA870(g_cPanel_00801688,CASE_E);
       return;
     }
     break;
@@ -135,7 +135,7 @@ LAB_0043fd36:
         (g_playerRuntime[DAT_0080874d].field476_0x2db != g_playSystem_00802A38->field_00E4)) &&
        (g_playerRuntime[DAT_0080874d].field476_0x2db = g_playSystem_00802A38->field_00E4,
        g_cPanel_00801688 != (CPanelTy *)0x0)) {
-      thunk_FUN_004fa870(g_cPanel_00801688,CASE_F);
+      CPanelTy::sub_004FA870(g_cPanel_00801688,CASE_F);
       return;
     }
     break;
@@ -144,13 +144,13 @@ LAB_0043fd36:
         (g_playerRuntime[DAT_0080874d].field477_0x2df != g_playSystem_00802A38->field_00E4)) &&
        (g_playerRuntime[DAT_0080874d].field477_0x2df = g_playSystem_00802A38->field_00E4,
        g_cPanel_00801688 != (CPanelTy *)0x0)) {
-      thunk_FUN_004fa870(g_cPanel_00801688,0x10);
+      CPanelTy::sub_004FA870(g_cPanel_00801688,0x10);
       return;
     }
     break;
   case CASE_11:
     if (g_cPanel_00801688 != (CPanelTy *)0x0) {
-      thunk_FUN_004fa870(g_cPanel_00801688,0x11);
+      CPanelTy::sub_004FA870(g_cPanel_00801688,0x11);
       return;
     }
     break;
@@ -159,13 +159,13 @@ LAB_0043fd36:
         (g_playerRuntime[DAT_0080874d].field478_0x2e3 != g_playSystem_00802A38->field_00E4)) &&
        (g_playerRuntime[DAT_0080874d].field478_0x2e3 = g_playSystem_00802A38->field_00E4,
        g_cPanel_00801688 != (CPanelTy *)0x0)) {
-      thunk_FUN_004fa870(g_cPanel_00801688,0x12);
+      CPanelTy::sub_004FA870(g_cPanel_00801688,0x12);
       return;
     }
     break;
   case CASE_13:
     if (g_cPanel_00801688 != (CPanelTy *)0x0) {
-      thunk_FUN_004fa870(g_cPanel_00801688,0x13);
+      CPanelTy::sub_004FA870(g_cPanel_00801688,0x13);
     }
   }
   return;

@@ -1,4 +1,4 @@
-FUN_00554a50:
+cLoadingTy::sub_00554A50:
 00554A50  A1 34 67 80 00            MOV EAX,[0x00806734]
 00554A55  8B 15 A8 75 80 00         MOV EDX,dword ptr [0x008075a8]
 00554A5B  56                        PUSH ESI

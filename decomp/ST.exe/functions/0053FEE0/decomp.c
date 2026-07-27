@@ -44,20 +44,20 @@ ProdPanelTy::PaintTab(ProdPanelTy *this,AnonShape_0053FEE0_A49592EB *param_1,und
       iVar7 = 2;
       pCVar6 = thunk_FUN_00571240("BUT_MFTABS",0);
       pCVar6 = FUN_006f2c00(pCVar6,iVar7,uVar5);
-      local_8 = cMf32::RecGet(DAT_00806790,1,pCVar6,piVar4,iVar8);
+      local_8 = cMf32::RecGet(g_cMf32_00806790,1,pCVar6,piVar4,iVar8);
       iVar7 = local_c;
       pPVar3 = local_14;
       DibPut((AnonShape_006B5B10_E0D06CF1 *)local_14->field_0068,local_10,local_c,'\x01',
              (byte *)local_8);
-      cMf32::RecMemFree(DAT_00806790,(uint *)&local_8);
+      cMf32::RecMemFree(g_cMf32_00806790,(uint *)&local_8);
       if (param_1->field_0014->field_0004 == 3) {
         iVar8 = 1;
         piVar4 = (int *)0x0;
         pCVar6 = thunk_FUN_00571240("BUT_MFFRAMES",0);
-        local_8 = cMf32::RecGet(DAT_00806790,6,pCVar6,piVar4,iVar8);
+        local_8 = cMf32::RecGet(g_cMf32_00806790,6,pCVar6,piVar4,iVar8);
         DibPut((AnonShape_006B5B10_E0D06CF1 *)pPVar3->field_0068,local_10,iVar7,'\x06',
                (byte *)local_8);
-        cMf32::RecMemFree(DAT_00806790,(uint *)&local_8);
+        cMf32::RecMemFree(g_cMf32_00806790,(uint *)&local_8);
       }
       Library::DKW::DDX::FUN_006b3640
                 ((int *)PTR_008075a8,pPVar3->field_0060,0xffffffff,pPVar3->field_003C,

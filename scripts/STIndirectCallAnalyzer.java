@@ -11,10 +11,13 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.Comparator;
+import java.util.LinkedHashMap;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Locale;
+import java.util.Map;
 import java.util.Set;
+import java.util.TreeMap;
 import java.util.TreeSet;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -23,6 +26,7 @@ import ghidra.app.script.GhidraScript;
 import ghidra.program.model.address.Address;
 import ghidra.program.model.data.DataType;
 import ghidra.program.model.data.DataTypeComponent;
+import ghidra.program.model.data.FunctionDefinition;
 import ghidra.program.model.data.Pointer;
 import ghidra.program.model.data.Structure;
 import ghidra.program.model.data.VoidDataType;
@@ -37,9 +41,13 @@ import ghidra.program.model.symbol.SourceType;
 
 public class STIndirectCallAnalyzer extends GhidraScript {
     private static final String VTABLE_ROOT = "/SubmarineTitans/Recovered/VTables/";
+    private static final String APPLIER_MARKER = "[STIndirectCallApplier]";
     private static final Pattern TARGET = Pattern.compile("(?i)->\\s*([0-9a-f]{8,16})\\b");
     private static final Pattern SLOT = Pattern.compile(
         "(?i)CALL\\s+(?:dword ptr )?\\[([A-Z]{2,3})(?:\\s*\\+\\s*(0x[0-9a-f]+|[0-9a-f]+h?))?\\]");
+    private static final Pattern STACK_ARGUMENT = Pattern.compile(
+        "^\\[EBP\\+(0X[0-9A-F]+|[0-9]+)\\]$");
+    private static final int RETURN_DEFINITION_SCAN_LIMIT = 20;
     private final List<Site> sites = new ArrayList<>();
 
     @Override
@@ -51,8 +59,11 @@ public class STIndirectCallAnalyzer extends GhidraScript {
         Path directory = programDirectory(selected); Files.createDirectories(directory);
         List<Row> rows = new ArrayList<>();
         collectSites();
+        addDispatchVtables(rows, directory);
         addExistingVtableSlots(rows);
-        rows.sort(Comparator.comparing((Row row) -> row.structurePath)
+        rows.sort(Comparator.comparingInt((Row row) ->
+                "create_dispatch_vtable".equals(row.kind) ? 0 : 1)
+            .thenComparing(row -> row.structurePath)
             .thenComparingInt(row -> row.offset));
         writeRows(directory.resolve("indirect_call_proposals.tsv"), rows);
         writeSites(directory.resolve("indirect_call_sites.tsv"));
@@ -62,52 +73,398 @@ public class STIndirectCallAnalyzer extends GhidraScript {
             rows.stream().filter(row -> row.apply).count());
     }
 
+    /**
+     * Keep exact physical table layouts separate from the polymorphic dispatch interface.
+     * A short base table can contain only the non-pure prefix while derived tables implement
+     * more slots. Reusing that physical type makes Ghidra wrap high offsets through vtable[1]
+     * and borrow the ABI of an unrelated low slot.
+     */
+    private void addDispatchVtables(List<Row> rows, Path directory) throws Exception {
+        Path path = directory.resolve("vtable_proposals.tsv");
+        if (!Files.isRegularFile(path)) return;
+        List<Map<String, String>> proposals = readTsv(path);
+        for (Map<String, String> baseRow : proposals) {
+            if (!flagEnabled(baseRow.get("apply"))) continue;
+            String ownerName = safeText(baseRow.get("owner")).trim();
+            String physicalName = safeText(baseRow.get("proposed_name")).trim();
+            if (ownerName.isBlank() || physicalName.isBlank() ||
+                    !primaryOffset(baseRow.get("this_vptr_offsets"))) continue;
+            DataType ownerValue = findOwnerType(ownerName);
+            DataType physicalValue = currentProgram.getDataTypeManager().getDataType(
+                VTABLE_ROOT + physicalName);
+            if (!(ownerValue instanceof Structure owner) ||
+                    !(physicalValue instanceof Structure physical)) continue;
+            int baseSlots = integer(baseRow.get("slot_count"), -1);
+            if (baseSlots < 1 || physical.getLength() != baseSlots *
+                    currentProgram.getDefaultPointerSize()) continue;
+
+            List<DispatchTable> related = new ArrayList<>();
+            int maximumSlots = baseSlots;
+            for (Map<String, String> row : proposals) {
+                if (!flagEnabled(row.get("layout_apply")) ||
+                        !ownerToken(row.get("slot_owners"), ownerName)) continue;
+                int count = integer(row.get("slot_count"), -1);
+                if (count <= baseSlots) continue;
+                String selectedName = flagEnabled(row.get("apply")) ?
+                    safeText(row.get("proposed_name")).trim() :
+                    safeText(row.get("layout_name")).trim();
+                if (selectedName.isBlank())
+                    selectedName = safeText(row.get("proposed_name")).trim();
+                DataType value = currentProgram.getDataTypeManager().getDataType(
+                    VTABLE_ROOT + selectedName);
+                if (!(value instanceof Structure table) ||
+                        table.getLength() != count * currentProgram.getDefaultPointerSize())
+                    continue;
+                related.add(new DispatchTable(table, count,
+                    safeText(row.get("table_address")).trim()));
+                maximumSlots = Math.max(maximumSlots, count);
+            }
+            if (related.size() < 2 || maximumSlots <= baseSlots) continue;
+
+            String dispatchPath = VTABLE_ROOT + sanitize(leaf(ownerName)) +
+                "DispatchVTable";
+            DataType dispatchValue =
+                currentProgram.getDataTypeManager().getDataType(dispatchPath);
+            Structure dispatch = dispatchValue instanceof Structure structure ?
+                structure : null;
+            DataTypeComponent ownerComponent = owner.getComponentAt(0);
+            if (ownerComponent == null || ownerComponent.getOffset() != 0 ||
+                    ownerComponent.getLength() != currentProgram.getDefaultPointerSize())
+                continue;
+            rows.add(new Row(true, "create_dispatch_vtable", owner.getPathName(), 0,
+                name(ownerComponent), typeSpec(ownerComponent.getDataType()),
+                safeText(ownerComponent.getComment()), dispatchPath, name(ownerComponent),
+                hex(baseRow.get("table_address")), maximumSlots, "", "",
+                "dispatch_shape", "pointer:" + physical.getPathName(), -1, "", "",
+                "layout", "physical prefix has " + baseSlots + " slot(s); " +
+                    related.size() + " independently recovered derived tables extend the " +
+                    ownerName + " dispatch interface to " + maximumSlots + " slot(s)"));
+
+            for (int slot = baseSlots; slot < maximumSlots; slot++)
+                addDispatchSlot(rows, ownerName, physical, dispatch, dispatchPath,
+                    related, slot);
+        }
+    }
+
+    private void addDispatchSlot(List<Row> rows, String ownerName, Structure physical,
+            Structure dispatch, String dispatchPath, List<DispatchTable> related, int slot) {
+        int offset = slot * currentProgram.getDefaultPointerSize();
+        Synthetic agreed = null;
+        Function representative = null;
+        int candidates = 0;
+        int implementations = 0;
+        boolean conflict = false;
+        Map<String, Integer> returnTypes = new TreeMap<>();
+        Set<String> tables = new TreeSet<>();
+        for (DispatchTable candidate : related) {
+            if (candidate.slots <= slot) continue;
+            candidates++;
+            DataTypeComponent component = candidate.structure.getComponentAt(offset);
+            Matcher matcher = component == null ? null :
+                TARGET.matcher(safeText(component.getComment()));
+            if (component == null || component.getOffset() != offset ||
+                    matcher == null || !matcher.find()) {
+                continue;
+            }
+            Address raw = currentProgram.getAddressFactory().getAddress(matcher.group(1));
+            Function entry = raw == null ? null :
+                currentProgram.getFunctionManager().getFunctionAt(raw);
+            Function target = resolveThunk(entry);
+            Synthetic synthetic = dispatchSignature(target, physical);
+            if (synthetic == null) continue;
+            if (agreed != null && (!agreed.mode.equals(synthetic.mode) ||
+                    agreed.stackParameters != synthetic.stackParameters ||
+                    !agreed.parameterTypes.equals(synthetic.parameterTypes))) {
+                conflict = true;
+                break;
+            }
+            if (agreed == null) {
+                agreed = synthetic;
+                representative = target;
+            }
+            returnTypes.merge(synthetic.returnType, 1, Integer::sum);
+            implementations++;
+            tables.add(candidate.address);
+        }
+        String returned = dispatchReturnConsensus(returnTypes, implementations);
+        if (returned == null) conflict = true;
+
+        DataTypeComponent current = dispatch == null ? null :
+            dispatch.getComponentAt(offset);
+        boolean exactCurrent = current != null && current.getOffset() == offset &&
+            current.getLength() == currentProgram.getDefaultPointerSize();
+        String expectedName = exactCurrent ? name(current) :
+            String.format("vfunc_%02X", offset);
+        String expectedType = exactCurrent ? typeSpec(current.getDataType()) :
+            "pointer:/void";
+        String expectedComment = exactCurrent ? safeText(current.getComment()) :
+            dispatchSlotComment(ownerName, offset);
+
+        if (conflict || agreed == null || implementations < 2 ||
+                implementations * 2 < candidates) {
+            if (exactCurrent && current.getDataType() instanceof Pointer pointer &&
+                    generatedIndirectPointer(current, pointer))
+                rows.add(new Row(true, "revert_generated_slot", dispatchPath, offset,
+                    expectedName, expectedType, expectedComment, dispatchPath, expectedName,
+                    0, 0, "", "", "", "", -1, "", "", "cleanup",
+                    "derived-table ABI consensus for this dispatch slot no longer holds"));
+            return;
+        }
+        if (exactCurrent && !(current.getDataType() instanceof Pointer pointer &&
+                (pointer.getDataType() instanceof VoidDataType ||
+                    generatedIndirectPointer(current, pointer)))) return;
+
+        String mode = agreed.mode.replace("synthetic_", "synthetic_dispatch_");
+        rows.add(new Row(true, "vtable_slot", dispatchPath, offset,
+            expectedName, expectedType, expectedComment, dispatchPath,
+            String.format("vfunc_%02X", offset), 0, 0,
+            addr(representative.getEntryPoint()), representative.getName(true), mode,
+            agreed.receiverType, agreed.stackParameters, agreed.parameterTypes, returned, "layout",
+            implementations + "/" + candidates +
+                " physical implementations across tables " +
+                String.join("|", tables) + " agree on " + mode +
+                ", stack cleanup words=" + agreed.stackParameters +
+                ", stack parameter types=" + agreed.parameterTypes +
+                "; return consensus=" + returnTypes + " => " + returned));
+    }
+
+    /**
+     * A polymorphic interface is stronger evidence than an individual empty override.
+     * MSVC commonly shares a bare RET implementation for a void virtual slot; that target
+     * neither consumes ECX nor writes EAX.  A non-empty override may leave an incidental
+     * call result in EAX even though the interface remains void.  Accept only an exact
+     * return agreement, or a strong void supermajority whose dissent is the neutral
+     * dword result.  Never majority-vote a narrow scalar ABI.
+     */
+    private String dispatchReturnConsensus(Map<String, Integer> returns, int implementations) {
+        if (implementations < 1 || returns.isEmpty()) return null;
+        if (returns.size() == 1) return returns.keySet().iterator().next();
+        if (!returns.keySet().stream().allMatch(
+                type -> "/void".equals(type) || "/undefined4".equals(type)))
+            return null;
+        int voids = returns.getOrDefault("/void", 0);
+        return voids >= 2 && voids * 4 >= implementations * 3 ? "/void" : null;
+    }
+
+    private Synthetic dispatchSignature(Function target, Structure physical) {
+        Synthetic direct = syntheticSignature(target, physical);
+        if (direct != null || target == null) return direct;
+        Set<Long> pops = returnPops(target);
+        if (!pops.equals(Set.of(0L))) return null;
+        String returned = machineReturnType(target);
+        return new Synthetic("synthetic_thiscall", receiverType(physical), 0, "", returned,
+            "polymorphic slot consensus supplies an otherwise-unused ECX receiver; every RET " +
+                "agrees on zero stack cleanup; return=" + returned);
+    }
+
     private void addExistingVtableSlots(List<Row> rows) throws Exception {
         Iterator<Structure> structures = currentProgram.getDataTypeManager().getAllStructures();
         while (structures.hasNext()) {
             monitor.checkCancelled(); Structure structure = structures.next();
-            if (!structure.getPathName().startsWith(VTABLE_ROOT)) continue;
+            if (!structure.getPathName().startsWith(VTABLE_ROOT) ||
+                    structure.getName().endsWith("DispatchVTable")) continue;
             for (DataTypeComponent component : structure.getDefinedComponents()) {
-                if (!(component.getDataType() instanceof Pointer pointer) ||
-                        !(pointer.getDataType() instanceof VoidDataType)) continue;
-                Matcher matcher = TARGET.matcher(text(component.getComment()));
+                if (!(component.getDataType() instanceof Pointer pointer)) continue;
+                boolean generic = pointer.getDataType() instanceof VoidDataType;
+                boolean generated = generatedIndirectPointer(component, pointer);
+                if (!generic && !generated) continue;
+                Matcher matcher = TARGET.matcher(safeText(component.getComment()));
                 if (!matcher.find()) continue;
                 Address raw = currentProgram.getAddressFactory().getAddress(matcher.group(1));
                 Function entry = raw == null ? null : currentProgram.getFunctionManager().getFunctionAt(raw);
                 Function target = resolveThunk(entry);
                 boolean trusted = trusted(target);
                 Synthetic synthetic = trusted ? null : syntheticSignature(target, structure);
+                if (generated && !trusted && synthetic == null) {
+                    rows.add(new Row(true, "revert_generated_slot", structure.getPathName(),
+                        component.getOffset(), name(component),
+                        typeSpec(component.getDataType()), safeText(component.getComment()),
+                        structure.getPathName(), name(component), 0, 0,
+                        target == null ? "" : addr(target.getEntryPoint()),
+                        target == null ? "" : target.getName(true), "", "", -1, "", "",
+                        "cleanup",
+                        "generated indirect ABI no longer has sufficient machine evidence"));
+                    continue;
+                }
                 boolean apply = trusted || synthetic != null;
                 rows.add(new Row(apply, "vtable_slot", structure.getPathName(),
                     component.getOffset(), name(component), typeSpec(component.getDataType()),
-                    text(component.getComment()), structure.getPathName(), name(component), 0, 0,
+                    safeText(component.getComment()), structure.getPathName(), name(component), 0, 0,
                     target == null ? "" : addr(target.getEntryPoint()),
                     target == null ? "" : target.getName(true),
-                    trusted ? "target" : synthetic == null ? "" : "synthetic_thiscall",
+                    trusted ? "target" : synthetic == null ? "" : synthetic.mode,
                     synthetic == null ? "" : synthetic.receiverType,
                     synthetic == null ? -1 : synthetic.stackParameters,
+                    synthetic == null ? "" : synthetic.parameterTypes,
                     synthetic == null ? "" : synthetic.returnType,
                     trusted ? "high" : synthetic == null ? "review" : "layout",
                     trusted ? "slot target has a reviewed function signature" :
-                        synthetic == null ? "slot target lacks consistent thiscall ABI evidence" :
+                        synthetic == null ? "slot target lacks consistent indirect ABI evidence" :
                         synthetic.evidence));
             }
         }
     }
 
     private Synthetic syntheticSignature(Function target, Structure vtable) {
-        if (target == null || !usesIncomingEcx(target)) return null;
+        if (target == null) return null;
         Set<Long> pops = returnPops(target);
         if (pops.size() != 1) return null;
         long bytes = pops.iterator().next();
         if (bytes < 0 || bytes > 0x100 || bytes % currentProgram.getDefaultPointerSize() != 0)
             return null;
         int parameters = (int)(bytes / currentProgram.getDefaultPointerSize());
-        String returned = definitelyVoid(target) ? "/void" : "/undefined4";
-        return new Synthetic(receiverType(vtable), parameters, returned,
-            "vtable membership, incoming ECX use, and every RET agrees on callee cleanup " +
-            bytes + " byte(s); neutral stack parameters=" + parameters +
-            "; return=" + returned);
+        String parameterTypes = stackParameterTypes(target, parameters);
+        String returned = machineReturnType(target);
+        if (usesIncomingEcx(target))
+            return new Synthetic("synthetic_thiscall", receiverType(vtable), parameters,
+                parameterTypes, returned,
+                "vtable membership, semantic incoming ECX use, and every RET agrees on " +
+                "callee cleanup " + bytes + " byte(s); stack parameter types=" +
+                parameterTypes + "; return=" + returned);
+        if (bytes == 0) return null;
+        return new Synthetic("synthetic_stdcall", "", parameters, parameterTypes, returned,
+            "vtable membership, no semantic incoming ECX use, and every RET agrees on " +
+                "callee cleanup " + bytes + " byte(s); stack parameter types=" +
+                parameterTypes + "; return=" + returned);
+    }
+
+    private String stackParameterTypes(Function function, int count) {
+        String[] types = new String[count];
+        for (int index = 0; index < count; index++) types[index] = "";
+        InstructionIterator instructions = currentProgram.getListing()
+            .getInstructions(function.getBody(), true);
+        while (instructions.hasNext()) {
+            Instruction instruction = instructions.next();
+            String mnemonic = instruction.getMnemonicString().toUpperCase(Locale.ROOT);
+            if ("LEA".equals(mnemonic)) continue;
+            for (int operandIndex = 0; operandIndex < instruction.getNumOperands();
+                    operandIndex++) {
+                if (operandIndex == 0 && !firstOperandIsRead(mnemonic))
+                    continue;
+                String operand = instruction.getDefaultOperandRepresentation(operandIndex);
+                Long offset = stackArgumentOffset(operand);
+                if (offset == null || offset < 8 || (offset - 8) % 4 != 0) continue;
+                int slot = (int)((offset - 8) / 4);
+                if (slot < 0 || slot >= count) continue;
+                String candidate = stackAccessType(mnemonic, operand);
+                if (!candidate.isBlank())
+                    types[slot] = mergeStackType(types[slot], candidate);
+            }
+        }
+        for (int index = 0; index < count; index++)
+            if (types[index].isBlank()) types[index] = "/undefined4";
+        return String.join(";", types);
+    }
+
+    private boolean firstOperandIsRead(String mnemonic) {
+        return Set.of("CMP", "TEST", "PUSH", "ADD", "ADC", "SUB", "SBB", "AND",
+            "OR", "XOR", "INC", "DEC", "NEG", "NOT", "SHL", "SAL", "SHR",
+            "SAR", "ROL", "ROR", "RCL", "RCR", "IMUL", "MUL", "DIV", "IDIV",
+            "BT", "BTC", "BTR", "BTS").contains(mnemonic);
+    }
+
+    private Long stackArgumentOffset(String operand) {
+        String value = operand.toUpperCase(Locale.ROOT)
+            .replace("BYTE PTR", "").replace("WORD PTR", "")
+            .replace("DWORD PTR", "").replace("QWORD PTR", "")
+            .replace(" ", "");
+        Matcher matcher = STACK_ARGUMENT.matcher(value);
+        if (!matcher.matches()) return null;
+        try {
+            String number = matcher.group(1);
+            return number.startsWith("0X") ?
+                Long.parseUnsignedLong(number.substring(2), 16) :
+                Long.parseLong(number);
+        }
+        catch (NumberFormatException ignored) { return null; }
+    }
+
+    private String stackAccessType(String mnemonic, String operand) {
+        String upper = operand.toUpperCase(Locale.ROOT);
+        if (upper.contains("BYTE PTR")) {
+            if ("MOVSX".equals(mnemonic)) return "/char";
+            if ("MOVZX".equals(mnemonic)) return "/byte";
+            return "/undefined1";
+        }
+        if (upper.contains("WORD PTR")) {
+            if ("MOVSX".equals(mnemonic)) return "/short";
+            if ("MOVZX".equals(mnemonic)) return "/ushort";
+            return "/undefined2";
+        }
+        if (upper.contains("DWORD PTR")) return "/undefined4";
+        return "";
+    }
+
+    private String mergeStackType(String existing, String candidate) {
+        if (existing.isBlank()) return candidate;
+        if (existing.equals(candidate)) return existing;
+        if (existing.equals("/undefined4") || candidate.equals("/undefined4"))
+            return "/undefined4";
+        int existingWidth = scalarWidth(existing);
+        int candidateWidth = scalarWidth(candidate);
+        if (existingWidth != candidateWidth) return "/undefined4";
+        if (existing.equals("/undefined" + existingWidth)) return candidate;
+        if (candidate.equals("/undefined" + candidateWidth)) return existing;
+        return "/undefined" + existingWidth;
+    }
+
+    private int scalarWidth(String type) {
+        return switch (type) {
+            case "/char", "/byte", "/undefined1" -> 1;
+            case "/short", "/ushort", "/undefined2" -> 2;
+            default -> 4;
+        };
+    }
+
+    private String machineReturnType(Function function) {
+        if (definitelyVoid(function)) return "/void";
+        Set<Integer> widths = new TreeSet<>();
+        InstructionIterator instructions = currentProgram.getListing()
+            .getInstructions(function.getBody(), true);
+        while (instructions.hasNext()) {
+            Instruction instruction = instructions.next();
+            String mnemonic = instruction.getMnemonicString().toUpperCase(Locale.ROOT);
+            if (!mnemonic.equals("RET") && !mnemonic.equals("RETF")) continue;
+            Instruction prior = currentProgram.getListing()
+                .getInstructionBefore(instruction.getAddress());
+            int width = 0;
+            for (int scanned = 0; scanned < RETURN_DEFINITION_SCAN_LIMIT &&
+                    prior != null && function.getBody().contains(prior.getAddress()); scanned++) {
+                width = accumulatorWriteWidth(prior);
+                if (width > 0) break;
+                String priorMnemonic = prior.getMnemonicString().toUpperCase(Locale.ROOT);
+                if ("CALL".equals(priorMnemonic) || priorMnemonic.startsWith("J")) break;
+                prior = currentProgram.getListing().getInstructionBefore(prior.getAddress());
+            }
+            if (width == 0) return "/undefined4";
+            widths.add(width);
+        }
+        // A late AX/AL write alone does not prove that the untouched high EAX bits
+        // are semantically irrelevant.  Narrow only when Ghidra's independent
+        // function-return analysis already agrees with the unanimous machine width.
+        int analyzedWidth = function.getReturnType() == null ? -1 :
+            function.getReturnType().getLength();
+        if (widths.equals(Set.of(1)) && analyzedWidth == 1) return "/undefined1";
+        if (widths.equals(Set.of(2)) && analyzedWidth == 2) return "/undefined2";
+        return "/undefined4";
+    }
+
+    private int accumulatorWriteWidth(Instruction instruction) {
+        int result = 0;
+        for (Object output : instruction.getResultObjects()) {
+            if (!(output instanceof Register register)) continue;
+            String name = register.getName().toUpperCase(Locale.ROOT);
+            if (name.equals("EAX") || name.equals("RAX")) result = Math.max(result, 4);
+            else if (name.equals("AX")) result = Math.max(result, 2);
+            else if (name.equals("AL") || name.equals("AH")) result = Math.max(result, 1);
+        }
+        return result;
+    }
+
+    private boolean generatedIndirectPointer(DataTypeComponent component, Pointer pointer) {
+        if (!(pointer.getDataType() instanceof FunctionDefinition definition)) return false;
+        return safeText(component.getComment()).contains(APPLIER_MARKER) &&
+            safeText(definition.getComment()).contains(APPLIER_MARKER);
     }
 
     private Set<Long> returnPops(Function function) {
@@ -127,16 +484,24 @@ public class STIndirectCallAnalyzer extends GhidraScript {
     private boolean usesIncomingEcx(Function function) {
         boolean live = true;
         int count = 0;
+        String previous = "";
+        String beforePrevious = "";
         InstructionIterator instructions = currentProgram.getListing()
             .getInstructions(function.getBody(), true);
         while (instructions.hasNext() && count++ < 256 && live) {
             Instruction instruction = instructions.next();
+            String text = instruction.toString().toUpperCase(Locale.ROOT);
+            boolean scratchAllocation = "PUSH ECX".equals(text) &&
+                "MOV EBP,ESP".equals(previous) && "PUSH EBP".equals(beforePrevious);
             for (Object input : instruction.getInputObjects())
                 if (input instanceof Register register &&
-                        "ECX".equals(register.getName().toUpperCase(Locale.ROOT))) return true;
+                        "ECX".equals(register.getName().toUpperCase(Locale.ROOT)) &&
+                        !scratchAllocation) return true;
             for (Object output : instruction.getResultObjects())
                 if (output instanceof Register register &&
                         "ECX".equals(register.getName().toUpperCase(Locale.ROOT))) live = false;
+            beforePrevious = previous;
+            previous = text;
         }
         return false;
     }
@@ -171,6 +536,81 @@ public class STIndirectCallAnalyzer extends GhidraScript {
             found = structure;
         }
         return found == null ? "pointer:/void" : "pointer:" + found.getPathName();
+    }
+
+    private DataType findOwnerType(String owner) {
+        String name = leaf(owner);
+        DataType direct = currentProgram.getDataTypeManager().getDataType("/" + name);
+        if (direct instanceof Structure) return direct;
+        List<DataType> matches = new ArrayList<>();
+        currentProgram.getDataTypeManager().findDataTypes(name, matches);
+        for (DataType match : matches)
+            if (match instanceof Structure &&
+                    !match.getPathName().startsWith(VTABLE_ROOT)) return match;
+        return null;
+    }
+
+    private List<Map<String, String>> readTsv(Path path) throws Exception {
+        List<String> lines = Files.readAllLines(path, StandardCharsets.UTF_8);
+        if (lines.isEmpty()) return List.of();
+        String[] header = lines.get(0).split("\\t", -1);
+        List<Map<String, String>> result = new ArrayList<>();
+        for (int line = 1; line < lines.size(); line++) {
+            if (lines.get(line).isBlank()) continue;
+            String[] values = lines.get(line).split("\\t", -1);
+            if (values.length != header.length) continue;
+            Map<String, String> row = new LinkedHashMap<>();
+            for (int column = 0; column < header.length; column++)
+                row.put(header[column], values[column]);
+            result.add(row);
+        }
+        return result;
+    }
+
+    private boolean ownerToken(String value, String owner) {
+        for (String token : safeText(value).split("\\s*\\|\\s*"))
+            if (token.trim().equals(owner)) return true;
+        return false;
+    }
+
+    private boolean primaryOffset(String value) {
+        String normalized = safeText(value).trim();
+        return normalized.equals("0") || normalized.equalsIgnoreCase("0x0");
+    }
+
+    private static boolean flagEnabled(String value) {
+        return "1".equals(value) || "true".equalsIgnoreCase(value);
+    }
+
+    private int integer(String value, int fallback) {
+        try { return Integer.parseInt(safeText(value).trim()); }
+        catch (NumberFormatException ignored) { return fallback; }
+    }
+
+    private long hex(String value) {
+        try {
+            String normalized = safeText(value).trim();
+            if (normalized.startsWith("0x") || normalized.startsWith("0X"))
+                normalized = normalized.substring(2);
+            return Long.parseUnsignedLong(normalized, 16);
+        }
+        catch (NumberFormatException ignored) { return 0; }
+    }
+
+    private String dispatchSlotComment(String owner, int offset) {
+        return APPLIER_MARKER + " polymorphic dispatch slot 0x" +
+            Integer.toHexString(offset).toUpperCase(Locale.ROOT) + " for " + owner;
+    }
+
+    private String leaf(String value) {
+        int namespace = value.lastIndexOf("::");
+        if (namespace >= 0) value = value.substring(namespace + 2);
+        int path = value.lastIndexOf('/');
+        return path < 0 ? value : value.substring(path + 1);
+    }
+
+    private String sanitize(String value) {
+        return value.replaceAll("[^A-Za-z0-9_]", "_");
     }
 
     private void collectSites() throws Exception {
@@ -239,8 +679,8 @@ public class STIndirectCallAnalyzer extends GhidraScript {
             out.write("apply\ttarget_kind\tstructure_path\tcomponent_offset\texpected_field_name\t" +
                 "expected_component_type\texpected_comment\tproposed_vtable_type\tproposed_field_name\t" +
                 "table_address\tslot_count\tsignature_function_address\tsignature_function\t" +
-                "signature_mode\treceiver_type\tstack_parameter_count\tproposed_return_type\t" +
-                "confidence\tevidence\n");
+                "signature_mode\treceiver_type\tstack_parameter_count\tproposed_parameter_types\t" +
+                "proposed_return_type\tconfidence\tevidence\n");
             for (Row row : rows) out.write((row.apply ? "1" : "0") + "\t" + row.kind +
                 "\t" + row.structurePath + "\t" + row.offset + "\t" + clean(row.expectedName) +
                 "\t" + row.expectedType + "\t" + clean(row.expectedComment) + "\t" +
@@ -248,7 +688,8 @@ public class STIndirectCallAnalyzer extends GhidraScript {
                 (row.tableAddress == 0 ? "" : String.format("%08X", row.tableAddress)) + "\t" +
                 row.slotCount + "\t" + row.functionAddress + "\t" + clean(row.function) +
                 "\t" + row.signatureMode + "\t" + row.receiverType + "\t" +
-                (row.stackParameters < 0 ? "" : row.stackParameters) + "\t" + row.returnType +
+                (row.stackParameters < 0 ? "" : row.stackParameters) + "\t" +
+                row.parameterTypes + "\t" + row.returnType +
                 "\t" + row.confidence + "\t" + clean(row.evidence) + "\n");
         }
     }
@@ -266,8 +707,12 @@ public class STIndirectCallAnalyzer extends GhidraScript {
             out.write("ST indirect-call prototypes\n\nIndirect call sites: " + sites.size() +
                 "\nProposals: " + rows.size() + "\nAutomatic: " +
                 rows.stream().filter(row -> row.apply).count() +
+                "\nDispatch interfaces: " + rows.stream().filter(row ->
+                    row.kind.equals("create_dispatch_vtable")).count() +
+                "\nDispatch tail ABI prototypes: " + rows.stream().filter(row ->
+                    row.signatureMode.startsWith("synthetic_dispatch_")).count() +
                 "\nSynthetic ABI prototypes: " + rows.stream().filter(row ->
-                    "synthetic_thiscall".equals(row.signatureMode)).count() + "\n");
+                    row.signatureMode.startsWith("synthetic_")).count() + "\n");
         }
     }
     private String typeSpec(DataType type) {
@@ -278,7 +723,7 @@ public class STIndirectCallAnalyzer extends GhidraScript {
     private static String name(DataTypeComponent component) {
         return component.getFieldName() == null ? "" : component.getFieldName();
     }
-    private static String text(String value) { return value == null ? "" : value; }
+    private static String safeText(String value) { return value == null ? "" : value; }
     private String addr(Address address) { return address.toString().toUpperCase(Locale.ROOT); }
     private File outputDirectory() throws Exception {
         String[] args = getScriptArgs();
@@ -296,9 +741,10 @@ public class STIndirectCallAnalyzer extends GhidraScript {
         String expectedName, String expectedType, String expectedComment, String proposedVtable,
         String proposedName, long tableAddress, int slotCount, String functionAddress,
         String function, String signatureMode, String receiverType, int stackParameters,
-        String returnType, String confidence, String evidence) {}
-    private record Synthetic(String receiverType, int stackParameters, String returnType,
-        String evidence) {}
+        String parameterTypes, String returnType, String confidence, String evidence) {}
+    private record Synthetic(String mode, String receiverType, int stackParameters,
+        String parameterTypes, String returnType, String evidence) {}
     private record Site(String functionAddress, String function, String callAddress,
         String register, int slot, int pushes, String ecx, String instruction) {}
+    private record DispatchTable(Structure structure, int slots, String address) {}
 }

@@ -38,7 +38,7 @@ void __thiscall TradePanelTy::DoneTradePanel(TradePanelTy *this)
     }
     pTVar2->field_01CC = 0;
     if (pTVar2->field_01DD != (ccFntTy *)0x0) {
-      ccFntTy::operator((uint *)pTVar2->field_01DD);
+      ccFntTy::operator_delete((uint *)pTVar2->field_01DD);
       pTVar2->field_01DD = (ccFntTy *)0x0;
     }
     pTVar2->field_01D9 = (ushort *)0x0;

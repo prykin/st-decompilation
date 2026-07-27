@@ -23,7 +23,7 @@ FUN_0057df20(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4
   local_2c[2] = 0;
   local_2c[3] = 1;
   local_14 = param_2;
-  (*g_playSystem_00802A38->vtable->vfunc_08)(0x107,0,&param_6,local_2c,0);
+  (*g_playSystem_00802A38->vtable->vfunc_08)(g_playSystem_00802A38,0x107,0,&param_6,local_2c,0);
   return param_6;
 }
 

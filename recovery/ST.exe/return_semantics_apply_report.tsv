@@ -1,6 +1,7 @@
 function_address	semantic_id	status	detail
 00415ED0	boolean_return_domain	disabled	apply=0
 0041C710	boolean_return_domain	disabled	apply=0
+0041CDA0	boolean_return_domain	disabled	apply=0
 004838E0	boolean_return_domain	disabled	apply=0
 00483E30	boolean_return_domain	disabled	apply=0
 00490570	boolean_return_domain	disabled	apply=0
@@ -17,6 +18,8 @@ function_address	semantic_id	status	detail
 004E91E0	boolean_return_domain	disabled	apply=0
 004EA620	boolean_return_domain	disabled	apply=0
 00555880	boolean_return_domain	disabled	apply=0
+0055AD00	boolean_return_domain	disabled	apply=0
+0055B1C0	boolean_return_domain	disabled	apply=0
 0056F930	boolean_return_domain	disabled	apply=0
 0057D420	boolean_return_domain	disabled	apply=0
 00584060	boolean_return_domain	disabled	apply=0
@@ -26,6 +29,7 @@ function_address	semantic_id	status	detail
 005EFAE0	boolean_return_domain	disabled	apply=0
 005F07A0	boolean_return_domain	disabled	apply=0
 005F0BA0	boolean_return_domain	disabled	apply=0
+005F1D80	boolean_return_domain	disabled	apply=0
 005F4C50	boolean_return_domain	disabled	apply=0
 00600750	boolean_return_domain	disabled	apply=0
 0060CEF0	boolean_return_domain	disabled	apply=0
@@ -34,6 +38,7 @@ function_address	semantic_id	status	detail
 006193E0	boolean_return_domain	disabled	apply=0
 0062CAC0	boolean_return_domain	disabled	apply=0
 00630AC0	boolean_return_domain	disabled	apply=0
+00631190	boolean_return_domain	disabled	apply=0
 00651770	boolean_return_domain	disabled	apply=0
 0065EF70	boolean_return_domain	disabled	apply=0
 0065F5C0	boolean_return_domain	disabled	apply=0

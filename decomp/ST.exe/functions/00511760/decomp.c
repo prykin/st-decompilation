@@ -65,7 +65,7 @@ void __thiscall HelpPanelTy::DoneHelpPanel(HelpPanelTy *this)
     local_8 = 10;
     do {
       if (*puVar4 != 0) {
-        cMf32::RecMemFree(DAT_00806790,puVar4);
+        cMf32::RecMemFree(g_cMf32_00806790,puVar4);
       }
       puVar4 = puVar4 + 1;
       local_8 = local_8 + -1;
@@ -82,15 +82,15 @@ void __thiscall HelpPanelTy::DoneHelpPanel(HelpPanelTy *this)
     pHVar2->field_0240 = 0;
     pHVar2->field_023C = 0;
     if (pHVar2->field_01E0 != (ccFntTy *)0x0) {
-      ccFntTy::operator((uint *)pHVar2->field_01E0);
+      ccFntTy::operator_delete((uint *)pHVar2->field_01E0);
       pHVar2->field_01E0 = (ccFntTy *)0x0;
     }
     if (pHVar2->field_01E4 != (ccFntTy *)0x0) {
-      ccFntTy::operator((uint *)pHVar2->field_01E4);
+      ccFntTy::operator_delete((uint *)pHVar2->field_01E4);
       pHVar2->field_01E4 = (ccFntTy *)0x0;
     }
     if (pHVar2->field_01E8 != (ccFntTy *)0x0) {
-      ccFntTy::operator((uint *)pHVar2->field_01E8);
+      ccFntTy::operator_delete((uint *)pHVar2->field_01E8);
       pHVar2->field_01E8 = (ccFntTy *)0x0;
     }
     if (pHVar2->field_0218 != (AnonPointee_HelpPanelTy_0218 *)0x0) {
@@ -100,13 +100,13 @@ void __thiscall HelpPanelTy::DoneHelpPanel(HelpPanelTy *this)
       FreeAndNull((void **)&pHVar2->field_01EC);
     }
     if (pHVar2->field_024C != (ushort *)0x0) {
-      cMf32::RecMemFree(DAT_00806790,(uint *)&pHVar2->field_024C);
+      cMf32::RecMemFree(g_cMf32_00806790,(uint *)&pHVar2->field_024C);
     }
     if (pHVar2->field_01DC != (ushort *)0x0) {
-      cMf32::RecMemFree(DAT_00806790,(uint *)&pHVar2->field_01DC);
+      cMf32::RecMemFree(g_cMf32_00806790,(uint *)&pHVar2->field_01DC);
     }
     if (pHVar2->field_021C != (ushort *)0x0) {
-      cMf32::RecMemFree(DAT_00806790,(uint *)&pHVar2->field_021C);
+      cMf32::RecMemFree(g_cMf32_00806790,(uint *)&pHVar2->field_021C);
     }
     g_helpPanel_00801690 = (HelpPanelTy *)0x0;
     g_currentExceptionFrame = local_50.previous;

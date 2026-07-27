@@ -26,7 +26,7 @@ void __thiscall InfocPanelTy::DoneInfocPanel(InfocPanelTy *this)
     }
     pIVar2->field_03D0 = 0;
     if (pIVar2->field_03D5 != (ccFntTy *)0x0) {
-      ccFntTy::operator((uint *)pIVar2->field_03D5);
+      ccFntTy::operator_delete((uint *)pIVar2->field_03D5);
       pIVar2->field_03D5 = (ccFntTy *)0x0;
     }
     pIVar2->field_03CC = (ushort *)0x0;

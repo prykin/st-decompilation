@@ -41,9 +41,7 @@ ProdPanelTy::InitProdPanel
   local_14 = this;
   iVar2 = Library::MSVCRT::__setjmp3(local_58.jumpBuffer,0);
   if (iVar2 == 0) {
-    pcVar3 = (ccFntTy *)
-             ccFntTy::operator(*(ccFntTy **)&PTR_00802a28->field_0x28,0x19d,
-                               (int)*(ccFntTy **)&PTR_00802a28->field_0x28);
+    pcVar3 = (ccFntTy *)ccFntTy::operator_new(0x19d,*(int *)&PTR_00802a28->field_0x28);
     this_00 = local_14;
     puVar11 = (undefined4 *)0x0;
     iVar10 = 0;

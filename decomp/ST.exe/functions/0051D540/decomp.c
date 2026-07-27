@@ -130,7 +130,7 @@ LAB_0051d689:
   iVar9 = 1;
   pCVar5 = thunk_FUN_00571240("BUT_HLPTDAY",0);
   pCVar5 = FUN_006f2c00(pCVar5,iVar9,uVar11);
-  local_8 = cMf32::RecGet(DAT_00806790,1,pCVar5,piVar13,iVar14);
+  local_8 = cMf32::RecGet(g_cMf32_00806790,1,pCVar5,piVar13,iVar14);
   uVar11 = uVar10 + 10;
   DibPut((AnonShape_006B5B10_E0D06CF1 *)this_00->field_0218,0x50,uVar11,'\x01',(byte *)local_8);
   local_18 = *(int *)(local_8 + 2);
@@ -146,7 +146,7 @@ LAB_0051d689:
   local_34[3] = *(uint *)(local_8 + 4);
   local_34[1] = uVar11;
   Library::DKW::TBL::FUN_006ae1c0((uint *)this_00->field_01D7,local_34);
-  cMf32::RecMemFree(DAT_00806790,(uint *)&local_8);
+  cMf32::RecMemFree(g_cMf32_00806790,(uint *)&local_8);
   CheckBkView(this_00,uVar10 + 0x1e,10);
   local_c = (uVar10 / 10 + 1) * 10;
   iVar9 = ((ushort)this_00->field_01AF - 0x118) + local_c;

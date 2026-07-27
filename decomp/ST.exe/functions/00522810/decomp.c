@@ -140,14 +140,14 @@ LAB_00522b59:
       pAVar2 = PTR_00807598;
       if (uVar4 != 0) {
         PTR_00807598->field_0466 = 1;
-        *(undefined4 *)&pAVar2->field_0x2d8 = 1;
+        pAVar2->field_02D8 = 1;
         g_currentExceptionFrame = local_4c.previous;
         return;
       }
     }
     pAVar2 = PTR_00807598;
     PTR_00807598->field_0466 = 0;
-    *(undefined4 *)&pAVar2->field_0x2d8 = 1;
+    pAVar2->field_02D8 = 1;
   }
   g_currentExceptionFrame = local_4c.previous;
   return;

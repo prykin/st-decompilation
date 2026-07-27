@@ -144,20 +144,22 @@ LAB_004b04c9:
                 if (bVar17) {
                   *(undefined1 *)((int)psVar11 + iVar15 + (int)local_10) = 4;
                   dVar5 = (*local_c->vtable->slot_2C)(local_c);
-                  if (((&STGroupBoatCVTable.vfunc_04)[dVar5] == (void *)0x2) ||
+                  if (((&STGroupBoatCVTable.vfunc_04)[dVar5] ==
+                       (icall_004A0EE0_FUN_004a0ee0_for_STGroupBoatC *)0x2) ||
                      ((dVar5 = (*local_c->vtable->slot_2C)(local_c), dVar5 == 0x78 &&
-                      ((&STGroupBoatCVTable.vfunc_04)[*(int *)&local_c->field_0x259] == (void *)0x2)
-                      ))) {
+                      ((&STGroupBoatCVTable.vfunc_04)[*(int *)&local_c->field_0x259] ==
+                       (icall_004A0EE0_FUN_004a0ee0_for_STGroupBoatC *)0x2)))) {
                     Library::DKW::TBL::FUN_006ae1c0(&local_2c->flags,&local_c);
                   }
                   goto LAB_004b057d;
                 }
               }
               dVar5 = (*local_c->vtable->slot_2C)(local_c);
-              if (((&STGroupBoatCVTable.vfunc_04)[dVar5] == (void *)0x2) ||
+              if (((&STGroupBoatCVTable.vfunc_04)[dVar5] ==
+                   (icall_004A0EE0_FUN_004a0ee0_for_STGroupBoatC *)0x2) ||
                  ((dVar5 = (*local_c->vtable->slot_2C)(local_c), dVar5 == 0x78 &&
-                  ((&STGroupBoatCVTable.vfunc_04)[*(int *)&local_c->field_0x259] == (void *)0x2))))
-              {
+                  ((&STGroupBoatCVTable.vfunc_04)[*(int *)&local_c->field_0x259] ==
+                   (icall_004A0EE0_FUN_004a0ee0_for_STGroupBoatC *)0x2)))) {
                 *(undefined1 *)((int)psVar11 + iVar15 + (int)local_10) = 6;
                 Library::DKW::TBL::FUN_006ae1c0(&local_2c->flags,&local_c);
               }

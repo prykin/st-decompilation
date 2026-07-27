@@ -70,10 +70,10 @@ void __cdecl CreateMiniMap(short *param_1,int *param_2,uint param_3,byte *param_
     dVar2 = (double)((float)-(int)param_1[1] * local_8 * _DAT_007904f4);
     dVar3 = (double)((float)local_18 * local_8 * _DAT_007904f4);
     dVar4 = (double)((float)(int)local_1c * local_8 * _DAT_007904f4);
-    FUN_006dc050(this,DAT_0080759c,0,0,uVar12,uVar12,SUB84(dVar4,0),(int)((ulonglong)dVar4 >> 0x20),
-                 SUB84(dVar3,0),(int)((ulonglong)dVar3 >> 0x20),SUB84(dVar2,0),
-                 (int)((ulonglong)dVar2 >> 0x20),SUB84(dVar1,0),(int)((ulonglong)dVar1 >> 0x20),
-                 0x4024000000000000,0x4023ee97865e3540,0);
+    FUN_006dc050(this,g_anonShape_GLOBAL_0080759C_9638EF10_0080759C,0,0,uVar12,uVar12,SUB84(dVar4,0)
+                 ,(int)((ulonglong)dVar4 >> 0x20),SUB84(dVar3,0),(int)((ulonglong)dVar3 >> 0x20),
+                 SUB84(dVar2,0),(int)((ulonglong)dVar2 >> 0x20),SUB84(dVar1,0),
+                 (int)((ulonglong)dVar1 >> 0x20),0x4024000000000000,0x4023ee97865e3540,0);
     *(uint *)&this->field_0x128 = (uint)*param_4;
     *(undefined4 *)&this->field_0x124 = 2;
     bVar6 = param_4[1];
@@ -117,7 +117,7 @@ void __cdecl CreateMiniMap(short *param_1,int *param_2,uint param_3,byte *param_
                    SUB84((double)((float)(int)param_1[1] * _DAT_007904f4),0),
                    (int)((ulonglong)(double)((float)(int)param_1[1] * _DAT_007904f4) >> 0x20));
       FUN_006ddbe0(this);
-      FUN_006ddd50((AnonShape_006DDD50_309FA381 *)this);
+      FUN_006ddd50((AnonShape_GLOBAL_0080760C_46D7AF7A *)this);
       puVar11 = Library::DKW::LIB::FUN_006aac10(local_24);
       *local_c = (int)puVar11;
       if (puVar11 == (undefined4 *)0x0) {
@@ -128,7 +128,7 @@ void __cdecl CreateMiniMap(short *param_1,int *param_2,uint param_3,byte *param_
       if (0 < (int)param_3) {
         local_18 = 0;
         do {
-          puVar11 = (undefined4 *)(*(int *)&this->field_0x28 * iVar9 + *(int *)&this->field_0xc);
+          puVar11 = (undefined4 *)(this->field_0028 * iVar9 + *(int *)&this->field_0xc);
           puVar15 = (undefined4 *)(*local_c + local_18);
           for (uVar12 = param_3 >> 2; uVar12 != 0; uVar12 = uVar12 - 1) {
             *puVar15 = *puVar11;

@@ -9,10 +9,10 @@ undefined4 __thiscall GameSystemC::CreateSystemObjects(GameSystemC *this)
 
 {
   code *pcVar1;
-  GameSystemC *pGVar2;
+  GameSystemC *this_00;
   int errorCode;
-  int iVar3;
-  undefined4 uVar4;
+  int iVar2;
+  undefined4 uVar3;
   InternalExceptionFrame local_4c;
   GameSystemC *local_8;
 
@@ -20,17 +20,17 @@ undefined4 __thiscall GameSystemC::CreateSystemObjects(GameSystemC *this)
   g_currentExceptionFrame = &local_4c;
   local_8 = this;
   errorCode = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
-  pGVar2 = local_8;
+  this_00 = local_8;
   if (errorCode == 0) {
-    (*local_8->vtable->vfunc_0C)(0x100,&DAT_007fb2a4,0,0);
-    (*pGVar2->vtable->vfunc_0C)(0x102,&DAT_007fb288,0,0);
+    (*local_8->vtable->vfunc_0C)(local_8,0x100,&DAT_007fb2a4,0,0);
+    (*this_00->vtable->vfunc_0C)(this_00,0x102,&DAT_007fb288,0,0);
     g_currentExceptionFrame = local_4c.previous;
     return 0;
   }
   g_currentExceptionFrame = local_4c.previous;
-  iVar3 = ReportDebugMessage("E:\\__titans\\tsystem.cpp",0x65,0,errorCode,"%s",
+  iVar2 = ReportDebugMessage("E:\\__titans\\tsystem.cpp",0x65,0,errorCode,"%s",
                              "GameSystemC::CreateSystemObjects");
-  if (iVar3 != 0) {
+  if (iVar2 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   RaiseInternalException(errorCode,0,"E:\\__titans\\tsystem.cpp",0x65);

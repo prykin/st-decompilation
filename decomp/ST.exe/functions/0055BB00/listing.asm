@@ -1,4 +1,4 @@
-sub_0055BB00:
+VisibleClassTy::sub_0055BB00:
 0055BB00  55                        PUSH EBP
 0055BB01  8B EC                     MOV EBP,ESP
 0055BB03  83 EC 0C                  SUB ESP,0xc

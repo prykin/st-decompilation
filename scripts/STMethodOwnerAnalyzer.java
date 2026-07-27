@@ -29,12 +29,15 @@ import ghidra.program.model.data.DataType;
 import ghidra.program.model.data.DataTypeManager;
 import ghidra.program.model.data.Pointer;
 import ghidra.program.model.data.Structure;
+import ghidra.program.model.data.TypeDef;
+import ghidra.program.model.listing.Data;
 import ghidra.program.model.listing.Function;
 import ghidra.program.model.listing.FunctionIterator;
 import ghidra.program.model.listing.FunctionTag;
 import ghidra.program.model.listing.Instruction;
 import ghidra.program.model.listing.InstructionIterator;
 import ghidra.program.model.listing.Parameter;
+import ghidra.program.model.symbol.Reference;
 import ghidra.program.model.symbol.SourceType;
 
 public class STMethodOwnerAnalyzer extends GhidraScript {
@@ -74,6 +77,15 @@ public class STMethodOwnerAnalyzer extends GhidraScript {
             analyzeCaller(caller, owner);
         }
 
+        int typedSingletonCalls = 0;
+        functions = currentProgram.getFunctionManager().getFunctions(true);
+        while (functions.hasNext()) {
+            monitor.checkCancelled();
+            Function caller = functions.next();
+            if (caller.isThunk() || caller.isExternal() || isLibrary(caller)) continue;
+            typedSingletonCalls += analyzeTypedSingletonReceivers(caller);
+        }
+
         // Preserve reviewed rows on later analyzer runs even when no currently named caller
         // reaches the method directly (for example, all calls go through anonymous helpers).
         functions = currentProgram.getFunctionManager().getFunctions(true);
@@ -92,7 +104,8 @@ public class STMethodOwnerAnalyzer extends GhidraScript {
         proposals.sort(Comparator.comparing(row -> row.address));
         writeTsv(directory.resolve("method_owner_proposals.tsv"), proposals);
         writeJson(directory.resolve("method_owner_proposals.jsonl"), proposals);
-        writeSummary(directory.resolve("method_owner_summary.txt"), proposals, callerMethods);
+        writeSummary(directory.resolve("method_owner_summary.txt"), proposals, callerMethods,
+            typedSingletonCalls);
 
         println("Method-owner analysis complete: " + directory.toAbsolutePath().normalize());
         println("Named caller methods: " + callerMethods + ", candidates: " +
@@ -101,7 +114,8 @@ public class STMethodOwnerAnalyzer extends GhidraScript {
             ", owner_repair: " +
             proposals.stream().filter(row -> row.repairApply).count() +
             ", convention_apply: " +
-            proposals.stream().filter(row -> row.conventionApply).count());
+            proposals.stream().filter(row -> row.conventionApply).count() +
+            ", typed_singleton_calls: " + typedSingletonCalls);
     }
 
     private void analyzeCaller(Function caller, String owner) {
@@ -133,6 +147,120 @@ public class STMethodOwnerAnalyzer extends GhidraScript {
             }
             updateRegisters(mnemonic, operands, registers, stackSpills);
         }
+    }
+
+    /**
+     * A typed global singleton loaded into ECX is stronger owner evidence than
+     * the temporary anonymous receiver which an earlier hidden-this pass had to
+     * invent.  Track the singleton through register copies and stable EBP spills;
+     * never derive an owner from an anonymous/generated structure.
+     */
+    private int analyzeTypedSingletonReceivers(Function caller) {
+        Map<String, String> registers = new HashMap<>();
+        Map<String, String> stackSpills = new HashMap<>();
+        int result = 0;
+        InstructionIterator instructions = currentProgram.getListing()
+            .getInstructions(caller.getBody(), true);
+        while (instructions.hasNext()) {
+            Instruction instruction = instructions.next();
+            String mnemonic = instruction.getMnemonicString().toUpperCase(Locale.ROOT);
+            String[] operands = splitOperands(instruction.toString().toUpperCase(Locale.ROOT));
+            if ("CALL".equals(mnemonic)) {
+                Function target = calledFunction(instruction);
+                String owner = registers.get("ECX");
+                if (target != null && owner != null && isCandidate(target)) {
+                    Candidate candidate = candidates.computeIfAbsent(target.getEntryPoint(),
+                        ignored -> new Candidate(target));
+                    candidate.ownerCalls.merge(owner, 1, Integer::sum);
+                    candidate.attributedCallers.add(caller.getEntryPoint());
+                    candidate.callSites.add(addr(instruction.getAddress()) + " " +
+                        caller.getName(true) + " [typed global singleton]");
+                    result++;
+                }
+                registers.remove("EAX");
+                registers.remove("ECX");
+                registers.remove("EDX");
+                continue;
+            }
+            updateOwnerRegisters(instruction, mnemonic, operands, registers, stackSpills);
+        }
+        return result;
+    }
+
+    private void updateOwnerRegisters(Instruction instruction, String mnemonic,
+            String[] operands, Map<String, String> registers,
+            Map<String, String> stackSpills) {
+        if (operands.length == 0) return;
+        String destination = cleanRegister(operands[0]);
+        MemoryExpr destinationMemory = memoryExpr(operands[0]);
+        if ("MOV".equals(mnemonic) && destinationMemory != null && operands.length >= 2 &&
+                isStackMemory(destinationMemory)) {
+            String source = cleanRegister(operands[1]);
+            String owner = source != null && isFullRegister(operands[1]) ?
+                registers.get(source) : null;
+            String key = stackKey(destinationMemory);
+            if (owner == null) stackSpills.remove(key);
+            else stackSpills.put(key, owner);
+            return;
+        }
+        if ("MOV".equals(mnemonic) && destination != null && operands.length >= 2) {
+            if (!isFullRegister(operands[0])) {
+                registers.remove(destination);
+                return;
+            }
+            String source = cleanRegister(operands[1]);
+            MemoryExpr sourceMemory = memoryExpr(operands[1]);
+            String owner = source != null && isFullRegister(operands[1]) ?
+                registers.get(source) : sourceMemory != null && isStackMemory(sourceMemory) ?
+                    stackSpills.get(stackKey(sourceMemory)) :
+                    typedGlobalOwner(instruction, true);
+            if (owner == null) registers.remove(destination);
+            else registers.put(destination, owner);
+            return;
+        }
+        if ("LEA".equals(mnemonic) && destination != null && operands.length >= 2) {
+            String owner = isFullRegister(operands[0]) ?
+                typedGlobalOwner(instruction, false) : null;
+            if (owner == null) registers.remove(destination);
+            else registers.put(destination, owner);
+            return;
+        }
+        if (destination != null && !Set.of("CMP", "TEST", "PUSH", "JMP", "RET")
+                .contains(mnemonic)) registers.remove(destination);
+    }
+
+    private String typedGlobalOwner(Instruction instruction, boolean requirePointer) {
+        String result = null;
+        for (Reference reference : instruction.getReferencesFrom()) {
+            if (!reference.getReferenceType().isData()) continue;
+            Data data = currentProgram.getListing().getDefinedDataAt(reference.getToAddress());
+            if (data == null) continue;
+            DataType type = unwrap(data.getDataType());
+            if (requirePointer) {
+                if (!(type instanceof Pointer pointer)) continue;
+                type = unwrap(pointer.getDataType());
+            }
+            if (!(type instanceof Structure structure) || !namedReceiverType(structure)) continue;
+            String owner = structure.getName();
+            if (result != null && !result.equals(owner)) return null;
+            result = owner;
+        }
+        return result;
+    }
+
+    private DataType unwrap(DataType type) {
+        Set<String> seen = new TreeSet<>();
+        while (type instanceof TypeDef typedef && seen.add(type.getPathName()))
+            type = typedef.getBaseDataType();
+        return type;
+    }
+
+    private boolean namedReceiverType(Structure structure) {
+        String path = structure.getPathName();
+        return !path.contains("/Recovered/HiddenThis/") &&
+            !path.contains("/Recovered/PointerShapes/") &&
+            !path.contains("/Recovered/ClassPointees/") &&
+            !path.contains("/VTables/") && !structure.getName().startsWith("Anon");
     }
 
     private Proposal makeProposal(Candidate candidate) {
@@ -433,8 +561,14 @@ public class STMethodOwnerAnalyzer extends GhidraScript {
         if (separator <= 0) return "";
         String owner = qualified.substring(0, separator);
         String upper = owner.toUpperCase(Locale.ROOT);
-        return owner.equals("Global") || owner.startsWith("Library::") || upper.contains(".DLL") ?
-            "" : owner;
+        return owner.equals("Global") || owner.startsWith("Library::") ||
+            upper.contains(".DLL") || recoveredAnonymousOwner(owner) ? "" : owner;
+    }
+
+    private boolean recoveredAnonymousOwner(String owner) {
+        return owner.contains("SubmarineTitans::Recovered::HiddenThis::AnonReceiver_") ||
+            owner.contains("SubmarineTitans::Recovered::PointerShapes::Anon") ||
+            owner.contains("SubmarineTitans::Recovered::ClassPointees::Anon");
     }
 
     private String ownerTypePath(String owner) {
@@ -602,9 +736,11 @@ public class STMethodOwnerAnalyzer extends GhidraScript {
         Files.write(path, lines, StandardCharsets.UTF_8);
     }
 
-    private void writeSummary(Path path, List<Proposal> rows, int callerMethods) throws Exception {
+    private void writeSummary(Path path, List<Proposal> rows, int callerMethods,
+            int typedSingletonCalls) throws Exception {
         Files.write(path, List.of("program=" + currentProgram.getName(),
             "named_caller_methods=" + callerMethods,
+            "typed_global_singleton_calls=" + typedSingletonCalls,
             "proposals=" + rows.size(),
             "owner_auto_repair=" + rows.stream().filter(row -> row.repairApply).count(),
             "owner_auto_apply=" + rows.stream().filter(row -> row.ownerApply).count(),
@@ -613,10 +749,13 @@ public class STMethodOwnerAnalyzer extends GhidraScript {
             "parameter_auto_apply=" + rows.stream().filter(row -> row.parameterApply).count(),
             "owner_conflicts=" + rows.stream().filter(row -> row.confidence.equals("conflict")).count(),
             "note=Direct and thunk-resolved calls whose ECX still aliases the named caller's " +
-                "incoming this are evidence; stable EBP spill/reload aliases are retained.",
+                "incoming this are evidence; stable EBP spill/reload aliases are retained. " +
+                "A named structure pointer loaded from a typed global singleton is independent " +
+                "owner evidence.",
             "note_coverage=A script-owned owner is repaired only for conflicting named " +
                 "owners or when at least four incoming-ECX receiver callers dominate a " +
-                "fan-out of at least eight; service-object calls do not count.",
+                "fan-out of at least eight. Service-object calls count only when ECX is " +
+                "traced from a named, typed global singleton.",
             "note_names=Recovered methods receive structural Class::sub_ADDRESS names only.",
             "note_manual=USER_DEFINED names and signatures are never auto-applied."),
             StandardCharsets.UTF_8);

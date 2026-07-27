@@ -46,7 +46,7 @@ void __thiscall CPanelTy::PlayBriefing(CPanelTy *this,char *param_1)
         bVar8 = 0;
         bVar7 = 6;
         pcVar5 = (char *)thunk_FUN_005260b0(0,0,0);
-        psVar9 = Library::Ourlib::MFIMG::mfQmtLoad(DAT_00806790,pcVar5,bVar7,bVar8,psVar9);
+        psVar9 = Library::Ourlib::MFIMG::mfQmtLoad(g_cMf32_00806790,pcVar5,bVar7,bVar8,psVar9);
         *ppsVar1 = psVar9;
         pCVar3->field_0260 = CASE_1;
         pCVar3->field_025F = 0;

@@ -73,14 +73,14 @@ CPanelTy::SetButStruct
     *(undefined4 *)&param_1[1].field_0x54 = 1;
     *(undefined4 *)&param_1[1].field_0x58 = 1;
     wsprintfA(text,"%s0",param_7);
-    local_8 = cMf32::RecGet(DAT_00806790,param_6,text,(int *)0x0,1);
+    local_8 = cMf32::RecGet(g_cMf32_00806790,param_6,text,(int *)0x0,1);
     uVar3 = local_8[3];
     *(ushort *)&param_1->field_0x10 = local_8[2];
     *(ushort *)&param_1->field_0x12 = uVar3;
     uVar3 = local_8[5];
     *(ushort *)&param_1->field_0x14 = local_8[4];
     *(ushort *)&param_1->field_0x16 = uVar3;
-    cMf32::RecMemFree(DAT_00806790,(uint *)&local_8);
+    cMf32::RecMemFree(g_cMf32_00806790,(uint *)&local_8);
     *(undefined4 *)&param_1->field_0x84 = 3;
     *(undefined4 *)&param_1->field_0xa8 = 3;
     *(undefined4 *)&param_1->field_0x80 = 0x101;
@@ -96,9 +96,9 @@ CPanelTy::SetButStruct
     param_1->field_00B2 = param_8;
     *(undefined4 *)(param_1 + 1) = param_10;
     if (param_11 != (char *)0x0) {
-      uVar5 = FUN_0070aa70(DAT_00806790,param_11,0,1);
+      uVar5 = FUN_0070aa70(g_cMf32_00806790,param_11,0,1);
       *(undefined4 *)&param_1[1].field_0x70 = uVar5;
-      iVar4 = Library::Ourlib::MFIMG::mfImgGetWidth(DAT_00806790,0x12,param_11,1);
+      iVar4 = Library::Ourlib::MFIMG::mfImgGetWidth(g_cMf32_00806790,0x12,param_11,1);
       *(int *)&param_1[1].field_0x74 = iVar4;
     }
     g_currentExceptionFrame = local_50.previous;

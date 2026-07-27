@@ -63,13 +63,13 @@ OptPanelTy::PaintDblBut
     local_1c = this;
     iVar3 = Library::MSVCRT::__setjmp3(local_60.jumpBuffer,0);
     if (iVar3 == 0) {
-      local_8 = cMf32::RecGet(DAT_00806790,1,param_2,(int *)0x0,1);
+      local_8 = cMf32::RecGet(g_cMf32_00806790,1,param_2,(int *)0x0,1);
       uVar6 = local_14;
       iVar3 = local_18;
       pOVar2 = local_1c;
       DibPut((AnonShape_006B5B10_E0D06CF1 *)local_1c->field_0068,local_18,local_14,'\x01',
              (byte *)local_8);
-      cMf32::RecMemFree(DAT_00806790,(uint *)&local_8);
+      cMf32::RecMemFree(g_cMf32_00806790,(uint *)&local_8);
       iVar9 = 1;
       piVar8 = (int *)0x0;
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
@@ -77,7 +77,7 @@ OptPanelTy::PaintDblBut
       iVar7 = 1;
       pCVar5 = thunk_FUN_00571240("BUT_SWITCH",0);
       pCVar5 = FUN_006f2c00(pCVar5,iVar7,uVar4);
-      local_8 = cMf32::RecGet(DAT_00806790,1,pCVar5,piVar8,iVar9);
+      local_8 = cMf32::RecGet(g_cMf32_00806790,1,pCVar5,piVar8,iVar9);
       if (param_6 == 0) {
         iVar7 = local_10->field_000C;
       }
@@ -87,7 +87,7 @@ OptPanelTy::PaintDblBut
       DibPut((AnonShape_006B5B10_E0D06CF1 *)pOVar2->field_0068,iVar3 + 5,
              (iVar7 - *(int *)(local_8 + 4)) / 2 + 1 + uVar6,'\x01',(byte *)local_8);
       iVar3 = *(int *)(local_8 + 2);
-      cMf32::RecMemFree(DAT_00806790,(uint *)&local_8);
+      cMf32::RecMemFree(g_cMf32_00806790,(uint *)&local_8);
       if (param_6 == 0) {
         iVar7 = local_10->field_000C;
         iVar9 = local_10->field_0008;

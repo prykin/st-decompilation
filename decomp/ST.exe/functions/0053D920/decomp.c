@@ -44,13 +44,13 @@ UPanelTy::PaintTxtBut
     local_10 = this;
     iVar4 = Library::MSVCRT::__setjmp3(local_5c.jumpBuffer,0);
     if (iVar4 == 0) {
-      local_8 = cMf32::RecGet(DAT_00806790,param_2,param_3,(int *)0x0,1);
+      local_8 = cMf32::RecGet(g_cMf32_00806790,param_2,param_3,(int *)0x0,1);
       uVar3 = local_c;
       pUVar2 = local_10;
       iVar4 = local_14;
       DibPut((AnonShape_006B5B10_E0D06CF1 *)local_10->field_0068,local_14,local_c,param_2,
              (byte *)local_8);
-      cMf32::RecMemFree(DAT_00806790,(uint *)&local_8);
+      cMf32::RecMemFree(g_cMf32_00806790,(uint *)&local_8);
       ccFntTy::SetSurf(param_4,pUVar2->field_0068,0,iVar4,uVar3,local_18->field_0008,
                        local_18->field_000C);
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */

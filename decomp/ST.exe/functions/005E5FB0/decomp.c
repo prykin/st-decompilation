@@ -132,8 +132,9 @@ int __thiscall MTestTy::GetMessage(MTestTy *this,STMessage *message)
         if (g_holo_00811778 != (HoloTy *)0x0) {
           FUN_006b5f80((int *)PTR_008075a8,10,0xb4,0xf9,0x121);
           MMMObjTy::OutRGlProc
-                    ((MMMObjTy *)&g_startSystem_0081176C->field_0140,DAT_0080759c,0,0,10,0xb4,0xf9,
-                     0x123,&g_startSystem_0081176C->field_0140);
+                    ((MMMObjTy *)&g_startSystem_0081176C->field_0140,
+                     (int)g_anonShape_GLOBAL_0080759C_9638EF10_0080759C,0,0,10,0xb4,0xf9,0x123,
+                     &g_startSystem_0081176C->field_0140);
           uVar9 = 0;
           cVar8 = '\x01';
           uVar7 = 0x10;

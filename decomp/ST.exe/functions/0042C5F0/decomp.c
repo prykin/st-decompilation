@@ -37,7 +37,7 @@ STAllPlayersC::DelObjFromTmps
         if (((*(int *)(iVar8 * 0x10 + iVar6) == 0x1a4) && (puVar1[1] == (int)param_3)) &&
            (*(short *)(puVar1 + 2) == (short)param_4)) {
           pSVar5 = GetObjPtr(this,param_3,param_4,CASE_5);
-          (*pSVar5->vtable[1].vfunc_14)(0);
+          (*pSVar5->vtable->vfunc_E8)(pSVar5,0);
           *puVar1 = 0;
           puVar1[1] = 0xff;
           *(undefined2 *)(puVar1 + 2) = 0;
@@ -70,7 +70,7 @@ STAllPlayersC::DelObjFromTmps
               DArrayGetElement(pDVar2,uVar9,&local_8);
               if ((short)local_8 == (short)param_4) {
                 pSVar5 = GetObjPtr(this,param_3,param_4,CASE_1);
-                (*pSVar5->vtable[1].vfunc_14)(0);
+                (*pSVar5->vtable->vfunc_E8)(pSVar5,0);
                 local_8 = 0xffff;
                 Library::DKW::TBL::FUN_006ae140(&pDVar2->flags,uVar9,&local_8);
                 *(short *)((int)puVar1 + 0xe) = *(short *)((int)puVar1 + 0xe) + -1;
@@ -109,7 +109,7 @@ STAllPlayersC::DelObjFromTmps
         if (((*(int *)(iVar8 * 0x10 + iVar6) == 0x5a) && (puVar1[1] == (int)param_3)) &&
            (*(short *)(puVar1 + 2) == (short)param_4)) {
           pSVar5 = GetObjPtr(this,param_3,param_4,CASE_4);
-          (*pSVar5->vtable[1].vfunc_14)(0);
+          (*pSVar5->vtable->vfunc_E8)(pSVar5,0);
           *puVar1 = 0;
           puVar1[1] = 0xff;
           *(undefined2 *)(puVar1 + 2) = 0;
@@ -136,7 +136,7 @@ STAllPlayersC::DelObjFromTmps
         if (((*(int *)(iVar8 * 0x10 + iVar6) == 0x172) && (puVar1[1] == (int)param_3)) &&
            (*(short *)(puVar1 + 2) == (short)param_4)) {
           pSVar5 = GetObjPtr(this,param_3,param_4,CASE_2);
-          (*pSVar5->vtable[1].vfunc_14)(0);
+          (*pSVar5->vtable->vfunc_E8)(pSVar5,0);
           *puVar1 = 0;
           puVar1[1] = 0xff;
           *(undefined2 *)(puVar1 + 2) = 0;
@@ -165,7 +165,7 @@ STAllPlayersC::DelObjFromTmps
         if (((*(int *)(iVar8 * 0x10 + iVar6) == 0x1b8) && (puVar1[1] == (int)param_3)) &&
            (*(short *)(puVar1 + 2) == (short)param_4)) {
           pSVar5 = GetObjPtr(this,param_3,param_4,CASE_6);
-          (*pSVar5->vtable[1].vfunc_14)(0);
+          (*pSVar5->vtable->vfunc_E8)(pSVar5,0);
           *puVar1 = 0;
           puVar1[1] = 0xff;
           *(undefined2 *)(puVar1 + 2) = 0;
@@ -192,7 +192,7 @@ STAllPlayersC::DelObjFromTmps
         if (((*(int *)(iVar8 * 0x10 + iVar6) == 0x1ae) && (puVar1[1] == (int)param_3)) &&
            (*(short *)(puVar1 + 2) == (short)param_4)) {
           pSVar5 = GetObjPtr(this,param_3,param_4,CASE_3);
-          (*pSVar5->vtable[1].vfunc_14)(0);
+          (*pSVar5->vtable->vfunc_E8)(pSVar5,0);
           *puVar1 = 0;
           puVar1[1] = 0xff;
           *(undefined2 *)(puVar1 + 2) = 0;
@@ -226,7 +226,7 @@ STAllPlayersC::DelObjFromTmps
             DArrayGetElement(pDVar2,uVar9,&local_8);
             if ((short)local_8 == (short)param_4) {
               pSVar5 = GetObjPtr(this,param_3,param_4,CASE_1);
-              (*pSVar5->vtable[1].vfunc_14)(0);
+              (*pSVar5->vtable->vfunc_E8)(pSVar5,0);
               local_8 = 0xffff;
               Library::DKW::TBL::FUN_006ae140(&pDVar2->flags,uVar9,&local_8);
               *(short *)((int)puVar1 + 0xe) = *(short *)((int)puVar1 + 0xe) + -1;

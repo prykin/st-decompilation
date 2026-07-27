@@ -46,7 +46,7 @@ uint * __thiscall cLoadingTy::new(cLoadingTy *this,uint param_1,char *text,uint 
       if (local_8 != (uint *)0x0) {
         cMf32::RecMemFree(g_cMf32_00806780,local_8);
         if ((uint *)local_8[2] != (uint *)0x0) {
-          ccFntTy::operator((uint *)local_8[2]);
+          ccFntTy::operator_delete((uint *)local_8[2]);
           local_8[2] = 0;
         }
         FreeAndNull(&local_8);

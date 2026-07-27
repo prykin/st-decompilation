@@ -553,7 +553,7 @@ LAB_0057e6f0:
   FUN_006e6580((void *)this_00->field_0211,piVar22);
   *(undefined4 *)&this_00->field_0x273 = 0;
 cf_common_join_0057E9C2:
-  (*this_00->vtable->vfunc_D8)();
+  (*this_00->vtable->vfunc_D8)(this_00);
   if ((*(int *)&this_00->field_0x255 != 0xe0) && (iVar9 = 0, 0 < *(int *)&this_00->field_0x265)) {
     do {
       thunk_FUN_004ac9e0(*(void **)(*(int *)&this_00->field_0x26d + iVar9 * 4),

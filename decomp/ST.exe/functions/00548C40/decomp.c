@@ -19,7 +19,7 @@ void __thiscall CursorClassTy::TakeCmdToRun(CursorClassTy *this,int param_1)
   code *pcVar4;
   CursorClassTy *this_00;
   int iVar5;
-  Global_sub_00514BC0_param_1Enum GVar6;
+  HelpPanelTy_sub_00514BC0_param_1Enum HVar6;
   int iVar7;
   uint uVar8;
   ushort *puVar9;
@@ -196,12 +196,12 @@ void __thiscall CursorClassTy::TakeCmdToRun(CursorClassTy *this,int param_1)
   if (this_00->field_04DE != '\0') {
     if (((this_00->field_0494 == 0x48) && (pSVar2 = this_00->field_049A, pSVar2 != (STFishC *)0x0))
        && (g_helpPanel_00801690 != (HelpPanelTy *)0x0)) {
-      GVar6 = (*pSVar2->vtable->slot_2C)(pSVar2);
-      if (GVar6 == 0x78) {
-        GVar6 = *(Global_sub_00514BC0_param_1Enum *)&this_00->field_049A->field_0x259;
+      HVar6 = (*pSVar2->vtable->slot_2C)(pSVar2);
+      if (HVar6 == 0x78) {
+        HVar6 = *(HelpPanelTy_sub_00514BC0_param_1Enum *)&this_00->field_049A->field_0x259;
       }
       iVar5 = (*pSVar2->vtable->vfunc_0C)();
-      thunk_FUN_00514bc0(g_helpPanel_00801690,GVar6,iVar5);
+      HelpPanelTy::sub_00514BC0(g_helpPanel_00801690,HVar6,iVar5);
       this_00->field_04DE = 0;
     }
     goto switchD_00548db5_caseD_3;
@@ -923,7 +923,7 @@ LAB_00549c33:
 switchD_00548db5_caseD_3:
   if (((this_00->field_04A2 != 0) && (this_00->field_0xd3 == '\0')) &&
      (this_00->field_04A6 = 1, g_cPanel_00801688 != (CPanelTy *)0x0)) {
-    thunk_FUN_004fad20(g_cPanel_00801688);
+    CPanelTy::sub_004FAD20(g_cPanel_00801688);
   }
   g_currentExceptionFrame = local_2c8.previous;
   return;

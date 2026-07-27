@@ -27,7 +27,7 @@ int __fastcall FUN_00482db0(int *param_1,undefined4 param_2)
   int local_20;
   int local_1c;
   undefined4 local_18;
-  AnonShape_00482DB0_070D50BF *local_14;
+  STFishC *local_14;
   ushort *local_10;
   short local_c [2];
   AnonShape_00482DB0_070D50BF *local_8;
@@ -62,7 +62,7 @@ int __fastcall FUN_00482db0(int *param_1,undefined4 param_2)
   /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   sVar3 = *(short *)((int)param_1 + 0x802);
   /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-  local_14 = (AnonShape_00482DB0_070D50BF *)CONCAT22(uVar10,sVar3);
+  local_14 = (STFishC *)CONCAT22(uVar10,sVar3);
   if (param_1[0x1ff] == 3) {
     sVar7 = (short)param_1[0x200];
     if ((((-1 < sVar7) && (sVar7 < g_worldGrid.sizeX)) &&
@@ -89,13 +89,14 @@ LAB_00482f52:
       goto LAB_00482f52;
     }
   }
-  iVar12 = FUN_006e62d0(g_playSystem_00802A38,param_1[0x1fd],(int *)&local_14);
+  iVar12 = STPlaySystemC::sub_006E62D0(g_playSystem_00802A38,param_1[0x1fd],(int *)&local_14);
   if (iVar12 == -4) {
     return 4;
   }
-  thunk_FUN_004162f0(local_14,(undefined2 *)(param_1 + 0x200),(undefined2 *)((int)param_1 + 0x802),
-                     (undefined2 *)(param_1 + 0x201));
-  local_8 = local_14;
+  STFishC::sub_004162F0
+            (local_14,(undefined2 *)(param_1 + 0x200),(undefined2 *)((int)param_1 + 0x802),
+             (undefined2 *)(param_1 + 0x201));
+  local_8 = (AnonShape_00482DB0_070D50BF *)local_14;
 LAB_00482fa9:
   this = local_8;
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
@@ -170,7 +171,7 @@ LAB_00482fa9:
                               *(STSprGameObjC_CheckRay_param_7Enum *)((int)param_1 + 0x79a),
                               (int *)&local_14,0);
           if (iVar12 == 0) {
-            return -(uint)(local_8 != local_14) & 8;
+            return -(uint)((STFishC *)local_8 != local_14) & 8;
           }
           local_20 = local_20 + 1;
           local_10 = local_10 + 3;

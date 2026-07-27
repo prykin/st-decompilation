@@ -33,7 +33,7 @@ void __thiscall FSGSTy::DoneFSGS(FSGSTy *this)
                      (uint)g_cursorClass_00802A30->field_001C);
       }
     }
-    DarkScreen(DAT_0080759c,10,2);
+    DarkScreen(g_anonShape_GLOBAL_0080759C_9638EF10_0080759C,10,2);
     if (g_startSystem_0081176C->field_002C != (ushort *)0x0) {
       cMf32::RecMemFree(g_cMf32_00806780,(uint *)&g_startSystem_0081176C->field_002C);
     }
@@ -114,15 +114,15 @@ void __thiscall FSGSTy::DoneFSGS(FSGSTy *this)
       FreeAndNull(&this_01->field_1A97);
     }
     if (this_01->field_1A77 != (ccFntTy *)0x0) {
-      ccFntTy::operator((uint *)this_01->field_1A77);
+      ccFntTy::operator_delete((uint *)this_01->field_1A77);
       this_01->field_1A77 = (ccFntTy *)0x0;
     }
     if (this_01->field_1A7B != (uint *)0x0) {
-      ccFntTy::operator(this_01->field_1A7B);
+      ccFntTy::operator_delete(this_01->field_1A7B);
       this_01->field_1A7B = (void *)0x0;
     }
     if (this_01->field_1A7F != (StartServTy *)0x0) {
-      ccFntTy::operator((uint *)this_01->field_1A7F);
+      ccFntTy::operator_delete((uint *)this_01->field_1A7F);
       this_01->field_1A7F = (StartServTy *)0x0;
     }
     if (this_01->field_1A67 != (HGDIOBJ)0x0) {

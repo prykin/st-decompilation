@@ -1,6 +1,8 @@
 ST indirect-call prototypes
 
 Indirect call sites: 4221
-Proposals: 1767
-Automatic: 0
-Synthetic ABI prototypes: 0
+Proposals: 2635
+Automatic: 2146
+Dispatch interfaces: 1
+Dispatch tail ABI prototypes: 12
+Synthetic ABI prototypes: 2130

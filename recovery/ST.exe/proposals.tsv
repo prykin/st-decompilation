@@ -923,10 +923,10 @@ apply	address	old_name	qualified_name	owner	method	suggested_calling_convention	
 1	006F2940	cMf32::RecNameGetPrev	cMf32::RecNameGetPrev	cMf32	RecNameGetPrev	__thiscall	006F294C: MOV dword ptr [EBP + -0x4],ECX	E:\\Ourlib\\Mf32int.cpp	829	high	previously_applied_debug_symbol
 1	006F2A10	cMf32::RecKeyGetPrev	cMf32::RecKeyGetPrev	cMf32	RecKeyGetPrev	__thiscall	006F2A1C: MOV dword ptr [EBP + -0x4],ECX	E:\\Ourlib\\Mf32int.cpp	860	high	previously_applied_debug_symbol
 1	006F2AF0	cMf32::KeyRecGet	cMf32::KeyRecGet	cMf32	KeyRecGet	__thiscall	006F2AFD: MOV dword ptr [EBP + -0x4],ECX	E:\\Ourlib\\Mf32int.cpp	896	high	previously_applied_debug_symbol
-1	0070CEB0	ccFntTy::operator	ccFntTy::operator	ccFntTy	operator		no live incoming ECX use found before clobber/call	E:\\Ourlib\\mfcfnt.cpp	228	high	previously_applied_debug_symbol
-1	0070D1F0	ccFntTy::operator	ccFntTy::operator	ccFntTy	operator		no live incoming ECX use found before clobber/call	E:\\Ourlib\\mfcfnt.cpp	460	high	previously_applied_debug_symbol
-1	0070DF00	ccFntTy::operator	ccFntTy::operator	ccFntTy	operator		no live incoming ECX use found before clobber/call	E:\\Ourlib\\mfcfnt.cpp	499	high	previously_applied_debug_symbol
-1	00710560	ccFntTy::operator	ccFntTy::operator	ccFntTy	operator		no live incoming ECX use found before clobber/call	E:\\Ourlib\\mfcfnt.cpp	1026	high	previously_applied_debug_symbol
+1	0070CEB0	ccFntTy::operator_new	ccFntTy::operator_new	ccFntTy	operator_new	__cdecl	allocation operator; no live incoming ECX use found before clobber/call; all RET instructions pop 0 stack bytes	E:\\Ourlib\\mfcfnt.cpp	228	high	previously_applied_debug_symbol
+1	0070D1F0	ccFntTy::operator_new	ccFntTy::operator_new	ccFntTy	operator_new	__cdecl	allocation operator; no live incoming ECX use found before clobber/call; all RET instructions pop 0 stack bytes	E:\\Ourlib\\mfcfnt.cpp	460	high	previously_applied_debug_symbol
+1	0070DF00	ccFntTy::operator_new	ccFntTy::operator_new	ccFntTy	operator_new	__cdecl	allocation operator; no live incoming ECX use found before clobber/call; all RET instructions pop 0 stack bytes	E:\\Ourlib\\mfcfnt.cpp	499	high	previously_applied_debug_symbol
+1	00710560	ccFntTy::operator_delete	ccFntTy::operator_delete	ccFntTy	operator_delete	__cdecl	allocation operator; no live incoming ECX use found before clobber/call; all RET instructions pop 0 stack bytes	E:\\Ourlib\\mfcfnt.cpp	1026	high	previously_applied_debug_symbol
 1	007108B0	ccFntTy::Save	ccFntTy::Save	ccFntTy	Save	__thiscall	007108BC: MOV dword ptr [EBP + -0x4],ECX	E:\\Ourlib\\mfcfnt.cpp	1080	high	previously_applied_debug_symbol
 1	00710A90	ccFntTy::SetSurf	ccFntTy::SetSurf	ccFntTy	SetSurf	__thiscall	00710A9C: MOV dword ptr [EBP + -0x4],ECX	E:\\Ourlib\\mfcfnt.cpp	1144	high	previously_applied_debug_symbol
 1	00710BA0	ccFntTy::CreateSurf	ccFntTy::CreateSurf	ccFntTy	CreateSurf	__thiscall	00710BAD: MOV dword ptr [EBP + -0x10],ECX	E:\\Ourlib\\mfcfnt.cpp	1197	high	previously_applied_debug_symbol

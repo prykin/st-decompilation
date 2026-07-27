@@ -83,7 +83,8 @@ void __thiscall FSGSTy::LicCtrls(FSGSTy *this)
     uVar4 = FUN_006b50c0(0x2c8 - this_00->field_1B4C,0x149,(uint)this_00->field_005D[7],uVar3,
                          (undefined4 *)puVar11,iVar7);
     *puVar8 = uVar4;
-    ptVar5 = Library::DKW::DDX::FUN_006c4880(DAT_0080759c,0x22,0x72,0x2e1,0x14c,8);
+    ptVar5 = Library::DKW::DDX::FUN_006c4880
+                       (g_anonShape_GLOBAL_0080759C_9638EF10_0080759C,0x22,0x72,0x2e1,0x14c,8);
     iVar7 = *puVar8;
     this_00->field_1E92 = ptVar5;
     if ((iVar7 != 0) && (ptVar5 != (LPBITMAPINFO)0x0)) {

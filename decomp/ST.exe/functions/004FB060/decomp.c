@@ -1219,8 +1219,8 @@ LAB_004fbaa0:
               uVar25 = extraout_EDX_10;
             }
             if ((bVar15 == 0x12) && (g_helpPanel_00801690 != (HelpPanelTy *)0x0)) {
-              thunk_FUN_00515180(g_helpPanel_00801690,'\x06');
-              thunk_FUN_00515180(g_helpPanel_00801690,'\x05');
+              HelpPanelTy::sub_00515180(g_helpPanel_00801690,'\x06');
+              HelpPanelTy::sub_00515180(g_helpPanel_00801690,'\x05');
               /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
               uVar25 = extraout_EDX_11;
             }
@@ -1314,7 +1314,7 @@ LAB_004fbaa0:
             local_8 = 0;
           }
         }
-        thunk_FUN_0054b6d0(g_cursorClass_00802A30);
+        CursorClassTy::sub_0054B6D0(g_cursorClass_00802A30);
         bVar15 = 0;
         piVar20 = &this_00->field_0148;
         do {
@@ -1351,7 +1351,7 @@ LAB_004fbaa0:
           bVar15 = bVar15 + 1;
           piVar20 = piVar20 + 1;
         } while (bVar15 < 0xb);
-        thunk_FUN_0054b6d0(g_cursorClass_00802A30);
+        CursorClassTy::sub_0054B6D0(g_cursorClass_00802A30);
         bVar15 = 0;
         piVar20 = &this_00->field_0148;
         do {

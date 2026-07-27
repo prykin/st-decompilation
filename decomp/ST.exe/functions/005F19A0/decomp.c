@@ -114,7 +114,7 @@ LAB_005f1c4c:
   }
   goto joined_r0x005f19be;
 LAB_005f1c99:
-  iVar7 = thunk_FUN_005f1d80(pVVar2,local_1c,local_18,iVar7);
+  iVar7 = VisibleClassTy::sub_005F1D80(pVVar2,local_1c,local_18,iVar7);
   pVVar4 = g_visibleClass_00802A88;
   if (iVar7 == 0) goto joined_r0x005f19be;
   goto LAB_005f1c4c;

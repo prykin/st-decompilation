@@ -45,9 +45,11 @@ int __thiscall TLOBaseTy::fireFindCheckTarget(TLOBaseTy *this,int param_1,int pa
   short local_40 [2];
   int local_3c;
   short local_38 [2];
-  undefined4 local_34;
+  short local_34;
+  undefined2 uStack_32;
   undefined4 local_30;
-  undefined4 local_2c;
+  short local_2c;
+  undefined2 uStack_2a;
   int local_28;
   int local_24;
   STFishC *local_20;
@@ -81,11 +83,11 @@ int __thiscall TLOBaseTy::fireFindCheckTarget(TLOBaseTy *this,int param_1,int pa
   *(AnonPointee_TLOBaseTy_0291 **)((int)ppTVar15 + 0x291) = (AnonPointee_TLOBaseTy_0291 *)0x0;
   if (&stack0x00000000 != (undefined1 *)0x2c) {
     /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-    local_2c = CONCAT22(local_2c._2_2_,local_60->field_0041);
+    _local_2c = CONCAT22(uStack_2a,local_60->field_0041);
   }
   if (&stack0x00000000 != (undefined1 *)0x34) {
     /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-    local_34 = CONCAT22(local_34._2_2_,local_60->field_0043);
+    _local_34 = CONCAT22(uStack_32,local_60->field_0043);
   }
   if (&stack0x00000000 != (undefined1 *)0x30) {
     /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
@@ -144,7 +146,7 @@ int __thiscall TLOBaseTy::fireFindCheckTarget(TLOBaseTy *this,int param_1,int pa
                         thunk_FUN_00416270(local_8,local_40,(int *)local_38,(int *)local_1c);
                         iVar7 = (int)(short)local_30;
                         iVar8 = FUN_006acf0d((int)local_40[0],(int)local_38[0],(int)local_1c[0],
-                                             (int)(short)local_2c,(int)(short)local_34,iVar7);
+                                             (int)local_2c,(int)local_34,iVar7);
                         uVar10 = local_1c[0] - iVar7;
                         uVar13 = (int)uVar10 >> 0x1f;
                         iVar7 = local_18;
@@ -154,11 +156,13 @@ int __thiscall TLOBaseTy::fireFindCheckTarget(TLOBaseTy *this,int param_1,int pa
                             *(int *)((int)local_10 + 0x281)) {
                           *(uint *)((int)local_10 + 0x295) = g_playSystem_00802A38->field_00E4;
                           if ((param_2 == 0) || (this_00->field_0255 == 0)) goto LAB_004c4080;
+                          /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                           sVar6 = (*this_00->vtable->vfunc_10)
-                                            (*(undefined2 *)&local_8->field_0x41,
-                                             *(undefined2 *)&local_8->field_0x43,
-                                             *(undefined2 *)&local_8->field_0x45,local_2c,local_34,
-                                             local_30);
+                                            (*(short *)&local_8->field_0x41,
+                                             *(short *)&local_8->field_0x43,
+                                             CONCAT22((short)((uint)_local_34 >> 0x10),
+                                                      *(undefined2 *)&local_8->field_0x45),
+                                             (short)_local_2c,(short)_local_34,local_30);
                           iVar8 = ((sVar6 + 0xb4) % 0x168) / 0xf;
                           uVar10 = (int)*(uint *)(&DAT_007be8c8 +
                                                  (this_00->field_0259 / 0xf + iVar8 * 0x18) * 4) >>
@@ -234,7 +238,7 @@ LAB_004c4192:
                                   }
                                   else {
 LAB_004c41a5:
-                                    iVar8 = (*local_8->vtable->vfunc_F0)();
+                                    iVar8 = (*local_8->vtable->vfunc_F0)(local_8);
                                     iVar7 = local_18;
                                     iVar16 = local_28;
                                     if (iVar8 != 0) {
@@ -286,8 +290,8 @@ LAB_004c41a5:
                                   local_64 = *(short *)(puVar11 + 1);
                                   iVar16 = STSprGameObjC::CheckRay
                                                      ((STSprGameObjC *)this_00,
-                                                      local_68 + (short)local_2c,
-                                                      sStack_66 + (short)local_34,
+                                                      local_68 + (short)_local_2c,
+                                                      sStack_66 + (short)_local_34,
                                                       local_64 + (short)local_30,local_40[0],
                                                       local_38[0],local_1c[0],
                                                       (&DAT_00792ca0)
@@ -336,7 +340,8 @@ LAB_004c42b5:
     *(STFishC **)((int)ppTVar15 + 0x291) = local_20;
     if ((((*(byte *)((int)ppTVar15 + 0x265) & 2) != 0) &&
         (*(int *)((int)ppTVar15 + 0x28d) != *(int *)((int)ppTVar15 + 0x26d))) &&
-       (iVar7 = FUN_006e62d0(g_playSystem_00802A38,*(int *)((int)ppTVar15 + 0x26d),(int *)&local_8),
+       (iVar7 = STPlaySystemC::sub_006E62D0
+                          (g_playSystem_00802A38,*(int *)((int)ppTVar15 + 0x26d),(int *)&local_8),
        iVar7 != 0)) {
       *(uint *)((int)ppTVar15 + 0x265) = *(uint *)((int)ppTVar15 + 0x265) & 0xfffffffd;
       *(undefined4 *)((int)ppTVar15 + 0x26d) = 0;

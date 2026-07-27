@@ -74,13 +74,13 @@ cf_common_join_004F3AC3:
     local_10 = this;
     iVar4 = Library::MSVCRT::__setjmp3(local_5c.jumpBuffer,0);
     if (iVar4 == 0) {
-      local_8 = cMf32::RecGet(DAT_00806790,param_3,param_4,(int *)0x0,1);
+      local_8 = cMf32::RecGet(g_cMf32_00806790,param_3,param_4,(int *)0x0,1);
       pCVar3 = local_10;
       uVar5 = local_14;
       uVar2 = (uint)param_1;
       DibPut((AnonShape_006B5B10_E0D06CF1 *)(&local_10->field_0180)[uVar2],local_c,local_14,param_3,
              (byte *)local_8);
-      cMf32::RecMemFree(DAT_00806790,(uint *)&local_8);
+      cMf32::RecMemFree(g_cMf32_00806790,(uint *)&local_8);
       ccFntTy::SetSurf(pCVar3->field_01B8,(&pCVar3->field_0180)[uVar2],0,local_c,uVar5,local_18[2],
                        local_18[3]);
       iVar8 = -1;

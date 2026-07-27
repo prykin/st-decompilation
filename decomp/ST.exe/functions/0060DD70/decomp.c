@@ -201,7 +201,7 @@ int __fastcall FUN_0060dd70(AnonShape_0060DD70_701DD710 *param_1)
     if (pVVar3->field_004C[local_24 + local_20 * pVVar3->field_0030] != 0) {
       return local_14;
     }
-    iVar5 = thunk_FUN_005f1d80(g_visibleClass_00802A88,local_10,iVar5,local_8);
+    iVar5 = VisibleClassTy::sub_005F1D80(g_visibleClass_00802A88,local_10,iVar5,local_8);
     if (iVar5 == 1) {
       return local_14;
     }

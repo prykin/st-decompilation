@@ -3,15 +3,20 @@
    /SubmarineTitans/Recovered/HiddenThis/AnonReceiver_004DB160.
    Evidence: incoming_receiver_captures=1; receiver_accesses=8; incoming_edx_uses=0; calls=3;
    ecx_pointer_setup=3; ecx_scalar_setup=0; caller_cleanup_calls=0; callee_ret_pop=[24];
-   expected_stack=24; receiver_family_members=1; adopt_untyped_existing_thiscall */
+   expected_stack=24; receiver_family_members=1; adopt_untyped_existing_thiscall
+
+   [STMethodOwnerApplier] Structural method owner recovered as STAllPlayersC.
+   Evidence: this_call_owners=[STAllPlayersC]; agreed_this_calls=3; incoming_this_accesses=8;
+   incoming_edx_uses=0; incoming_stack_parameter_uses=39; direct_non_thunk_callers=0;
+   incoming_ecx_receiver_callers=0; attributed_named_callers=1; owner_evidence_coverage=adequate */
 
 void __thiscall
-SubmarineTitans::Recovered::HiddenThis::AnonReceiver_004DB160::FUN_004db160
-          (AnonReceiver_004DB160 *this,int param_1,undefined4 param_2,int *param_3,int *param_4,
-          int *param_5,int *param_6)
+STAllPlayersC::sub_004DB160
+          (STAllPlayersC *this,int param_1,undefined4 param_2,int *param_3,int *param_4,int *param_5
+          ,int *param_6)
 
 {
-  AnonReceiver_004DB160 *pAVar1;
+  STAllPlayersC *pSVar1;
   short sVar2;
   int iVar3;
   uint uVar4;
@@ -25,7 +30,7 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_004DB160::FUN_004db160
   int iVar11;
   STWorldObjectVTable *pSVar12;
   int local_60 [21];
-  AnonReceiver_004DB160 *local_c;
+  STAllPlayersC *local_c;
   int local_8;
 
   *param_6 = -1;
@@ -77,18 +82,18 @@ cf_common_join_004DB690:
       piVar7 = local_60;
       do {
         *piVar7 = iVar3;
-        pAVar1 = local_c;
+        pSVar1 = local_c;
         iVar3 = iVar3 + 1;
         piVar7 = piVar7 + 1;
       } while (iVar3 < 0x15);
       iVar3 = 0x15;
       do {
-        uVar4 = *(int *)&pAVar1->field_0x1c * 0x41c64e6d + 0x3039;
-        *(uint *)&pAVar1->field_0x1c = uVar4;
+        uVar4 = pSVar1->field_001C * 0x41c64e6d + 0x3039;
+        pSVar1->field_001C = uVar4;
         uVar4 = (uVar4 >> 0x10) % 0x15;
         do {
-          uVar9 = *(int *)&pAVar1->field_0x1c * 0x41c64e6d + 0x3039;
-          *(uint *)&pAVar1->field_0x1c = uVar9;
+          uVar9 = pSVar1->field_001C * 0x41c64e6d + 0x3039;
+          pSVar1->field_001C = uVar9;
           uVar9 = (uVar9 >> 0x10) % 0x15;
         } while (uVar9 == uVar4);
         iVar10 = local_60[uVar4];
@@ -97,8 +102,8 @@ cf_common_join_004DB690:
         local_60[uVar9] = iVar10;
       } while (iVar3 != 0);
       iVar3 = 1;
-      uVar4 = *(int *)&local_c->field_0x1c * 0x41c64e6d + 0x3039;
-      *(uint *)&local_c->field_0x1c = uVar4;
+      uVar4 = local_c->field_001C * 0x41c64e6d + 0x3039;
+      local_c->field_001C = uVar4;
       uVar4 = (uVar4 >> 0x10) % 0xd2;
       iVar10 = 0;
       piVar7 = local_60;
@@ -111,8 +116,8 @@ cf_common_join_004DB690:
         iVar10 = iVar10 + 1;
         piVar7 = piVar7 + 1;
       } while (iVar10 < 0x15);
-      uVar4 = *(int *)&local_c->field_0x1c * 0x41c64e6d + 0x3039;
-      *(uint *)&local_c->field_0x1c = uVar4;
+      uVar4 = local_c->field_001C * 0x41c64e6d + 0x3039;
+      local_c->field_001C = uVar4;
       uVar4 = (uVar4 >> 0x10) % 0x168;
       iVar10 = FUN_006aff50(uVar4);
       iVar10 = FUN_006b1280(iVar10 * iVar3);

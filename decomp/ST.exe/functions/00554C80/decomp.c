@@ -34,13 +34,15 @@ void __thiscall cLoadingTy::DrawLineCR(cLoadingTy *this,char *resourceString)
     iVar3 = pcVar2->field_0018 + pcVar2->field_0010;
     iVar4 = pcVar2->field_0014 + pcVar2->field_000C;
     Library::DKW::DDX::FUN_006b42d0
-              ((uint)DAT_0080759c,iVar4,iVar3,(BITMAPINFO *)pcVar2->field_0000,(uint *)0x0,iVar4,
-               iVar3,pcVar2->field_001C,pcVar2->field_0034);
+              ((uint)g_anonShape_GLOBAL_0080759C_9638EF10_0080759C,iVar4,iVar3,
+               (BITMAPINFO *)pcVar2->field_0000,(uint *)0x0,iVar4,iVar3,pcVar2->field_001C,
+               pcVar2->field_0034);
     iVar3 = pcVar2->field_0010 + pcVar2->field_0018;
     iVar4 = pcVar2->field_0014 + pcVar2->field_000C;
     Library::DKW::DDX::FUN_006b4680
-              (DAT_0080759c,iVar4,iVar3,(BITMAPINFO *)pcVar2->field_0004,(uint *)0x0,iVar4,iVar3,
-               pcVar2->field_001C,pcVar2->field_0034,0);
+              ((int *)g_anonShape_GLOBAL_0080759C_9638EF10_0080759C,iVar4,iVar3,
+               (BITMAPINFO *)pcVar2->field_0004,(uint *)0x0,iVar4,iVar3,pcVar2->field_001C,
+               pcVar2->field_0034,0);
     iVar3 = pcVar2->field_0038 + 1;
     pcVar2->field_0038 = iVar3;
     if (iVar3 < pcVar2->field_0030) {
@@ -56,15 +58,15 @@ void __thiscall cLoadingTy::DrawLineCR(cLoadingTy *this,char *resourceString)
                    pcVar2->field_0014 + pcVar2->field_000C,pcVar2->field_0010 + pcVar2->field_0018,
                    pcVar2->field_001C,pcVar2->field_0034,0);
       Library::DKW::DDX::FUN_006b42d0
-                ((uint)DAT_0080759c,pcVar2->field_0014,pcVar2->field_0018,
-                 (BITMAPINFO *)pcVar2->field_0000,(uint *)0x0,pcVar2->field_0014,pcVar2->field_0018,
-                 pcVar2->field_001C,pcVar2->field_0020);
+                ((uint)g_anonShape_GLOBAL_0080759C_9638EF10_0080759C,pcVar2->field_0014,
+                 pcVar2->field_0018,(BITMAPINFO *)pcVar2->field_0000,(uint *)0x0,pcVar2->field_0014,
+                 pcVar2->field_0018,pcVar2->field_001C,pcVar2->field_0020);
       Library::DKW::DDX::FUN_006b4680
-                (DAT_0080759c,pcVar2->field_0014,pcVar2->field_0018,(BITMAPINFO *)pcVar2->field_0004
-                 ,(uint *)0x0,pcVar2->field_0014,pcVar2->field_0018,pcVar2->field_001C,
-                 pcVar2->field_0020,0);
+                ((int *)g_anonShape_GLOBAL_0080759C_9638EF10_0080759C,pcVar2->field_0014,
+                 pcVar2->field_0018,(BITMAPINFO *)pcVar2->field_0004,(uint *)0x0,pcVar2->field_0014,
+                 pcVar2->field_0018,pcVar2->field_001C,pcVar2->field_0020,0);
     }
-    Library::DKW::DDX::FUN_006bb370((int)DAT_0080759c,0,0);
+    Library::DKW::DDX::FUN_006bb370(g_anonShape_GLOBAL_0080759C_9638EF10_0080759C,0,0);
     if ((code *)pcVar2->field_0058 != (code *)0x0) {
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
       (*(code *)pcVar2->field_0058)(pcVar2->field_0054);

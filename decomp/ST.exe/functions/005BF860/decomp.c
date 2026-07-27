@@ -102,8 +102,9 @@ LAB_005bfb27:
                    (BITMAPINFO *)this_00->field_005D);
         iVar4 = *(int *)((int)&this_00->field_0070 + 3);
         Library::DKW::DDX::FUN_006b48e0
-                  (DAT_0080759c,0x1a,0x46,iVar4,0,0,0,*(uint *)(iVar4 + 4),*(int *)(iVar4 + 8),
-                   (int)&this_00->field_0xa3,0x4c,0x10000ff);
+                  ((int)g_anonShape_GLOBAL_0080759C_9638EF10_0080759C,0x1a,0x46,iVar4,0,0,0,
+                   *(uint *)(iVar4 + 4),*(int *)(iVar4 + 8),(int)&this_00->field_0xa3,0x4c,0x10000ff
+                  );
         g_currentExceptionFrame = local_50.previous;
         return;
       }

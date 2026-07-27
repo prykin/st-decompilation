@@ -1,4 +1,4 @@
-FUN_004fae90:
+CPanelTy::sub_004FAE90:
 004FAE90  55                        PUSH EBP
 004FAE91  8B EC                     MOV EBP,ESP
 004FAE93  83 EC 10                  SUB ESP,0x10

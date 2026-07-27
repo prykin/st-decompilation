@@ -19,6 +19,7 @@ import ghidra.app.script.GhidraScript;
 import ghidra.program.model.data.DataType;
 import ghidra.program.model.data.DataTypeManager;
 import ghidra.program.model.data.Pointer;
+import ghidra.program.model.data.Structure;
 import ghidra.program.model.listing.Data;
 import ghidra.program.model.listing.DataIterator;
 import ghidra.program.model.listing.Function;
@@ -64,14 +65,17 @@ public class STTypeLifecycleAnalyzer extends GhidraScript {
                     replacement.getPathName(), type.getLength(), parents, functionUses,
                     listingUses, description, "unique equivalent semantic anchor"));
             }
-            else if (anchors.isEmpty() && description.contains(VIEW) &&
+            else if (anchors.isEmpty() &&
+                    (description.contains(VIEW) || disposableAnonymous(type, description)) &&
                     removalProvenance(description) && parents == 0 &&
                     functionUses == 0 && listingUses == 0) {
                 rows.add(new Row(true, "remove", type.getPathName(), "", type.getLength(),
                     parents, functionUses, listingUses, description,
-                    "unreferenced script-owned view type"));
+                    disposableAnonymous(type, description) ?
+                        "unreferenced hash/script-owned anonymous type" :
+                        "unreferenced script-owned view type"));
             }
-            else if (description.contains(VIEW)) {
+            else if (description.contains(VIEW) || disposableAnonymous(type, description)) {
                 rows.add(new Row(false, "retain", type.getPathName(), "", type.getLength(),
                     parents, functionUses, listingUses, description,
                     anchors.size() > 1 ? "ambiguous equivalent anchors=" + anchors.size() :
@@ -88,8 +92,10 @@ public class STTypeLifecycleAnalyzer extends GhidraScript {
             "automatic_removals=" + rows.stream()
                 .filter(row -> row.apply && row.action.equals("remove")).count(),
             "retained_review=" + rows.stream().filter(row -> !row.apply).count(),
-            "note=Deletion requires an original script-owner marker, ST_VIEW_ONLY, and zero " +
-                "parents/signature/Listing uses. Equivalent types migrate only to one anchor."),
+            "note=Deletion requires an original script-owner marker and zero " +
+                "parents/signature/Listing uses. Non-view deletion is limited to generated " +
+                "anonymous PointerShapes/ClassPointees/HiddenThis types. Equivalent types " +
+                "migrate only to one anchor."),
             StandardCharsets.UTF_8);
         println("Type lifecycle: candidates=" + rows.size() + ", automatic=" +
             rows.stream().filter(row -> row.apply).count() + ", output=" + directory);
@@ -129,12 +135,28 @@ public class STTypeLifecycleAnalyzer extends GhidraScript {
 
     private boolean scriptOwned(String description) {
         return description.contains("[ST") && description.contains("Applier]") ||
+            description.contains("[STHiddenThisApplier generated]") ||
             description.contains(VIEW);
     }
     private boolean removalProvenance(String description) {
         return description.contains("[STRecoveredTypesApplier]") ||
             description.contains("[STTypeBootstrapApplier]") ||
-            description.contains("[STDiscriminatedPayloadApplier]");
+            description.contains("[STDiscriminatedPayloadApplier]") ||
+            description.contains("[STPointerShapeApplier]") ||
+            description.contains("[STClassLayoutApplier]") ||
+            description.contains("[STHiddenThisApplier generated]");
+    }
+    private boolean disposableAnonymous(DataType type, String description) {
+        if (!(type instanceof Structure)) return false;
+        String path = type.getPathName();
+        return path.startsWith("/SubmarineTitans/Recovered/PointerShapes/") &&
+                description.contains("[STPointerShapeApplier]") &&
+                description.contains("generated_layout_sha256=") ||
+            path.startsWith("/SubmarineTitans/Recovered/ClassPointees/") &&
+                description.contains("[STClassLayoutApplier]") &&
+                description.contains("generated_layout_sha256=") ||
+            path.startsWith("/SubmarineTitans/Recovered/HiddenThis/") &&
+                description.contains("[STHiddenThisApplier generated]");
     }
     private void write(Path path, List<Row> rows) throws Exception {
         try (BufferedWriter out = Files.newBufferedWriter(path, StandardCharsets.UTF_8)) {

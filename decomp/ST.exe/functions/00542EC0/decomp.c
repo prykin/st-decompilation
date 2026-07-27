@@ -7,19 +7,19 @@ void __thiscall InterSystemC::DoneSystem(InterSystemC *this)
 
 {
   if ((uint *)this->field_0024 != (uint *)0x0) {
-    ccFntTy::operator((uint *)this->field_0024);
+    ccFntTy::operator_delete((uint *)this->field_0024);
     this->field_0024 = 0;
   }
   if ((uint *)this->field_0028 != (uint *)0x0) {
-    ccFntTy::operator((uint *)this->field_0028);
+    ccFntTy::operator_delete((uint *)this->field_0028);
     this->field_0028 = 0;
   }
   if ((uint *)this->field_002C != (uint *)0x0) {
-    ccFntTy::operator((uint *)this->field_002C);
+    ccFntTy::operator_delete((uint *)this->field_002C);
     this->field_002C = 0;
   }
   if ((uint *)this->field_0030 != (uint *)0x0) {
-    ccFntTy::operator((uint *)this->field_0030);
+    ccFntTy::operator_delete((uint *)this->field_0030);
     this->field_0030 = 0;
   }
   FUN_006e52d0((AnonShape_006E52D0_AF06BCD2 *)this);

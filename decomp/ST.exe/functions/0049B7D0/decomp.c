@@ -130,8 +130,9 @@ uint __thiscall STGroupBoatC::GrpPatrol(STGroupBoatC *this,int param_1)
                     (-0x5001fffc,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_grpb.cpp"
                      ,0x77d);
         }
-        thunk_FUN_004162f0(pSVar5,(undefined2 *)((int)&param_1 + 2),(undefined2 *)&local_10,
-                           (undefined2 *)&local_14);
+        STFishC::sub_004162F0
+                  ((STFishC *)pSVar5,(undefined2 *)((int)&param_1 + 2),(undefined2 *)&local_10,
+                   (undefined2 *)&local_14);
         /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
         iVar8 = (int)param_1._2_2_;
         if (iVar8 < local_c) {
@@ -243,8 +244,9 @@ uint __thiscall STGroupBoatC::GrpPatrol(STGroupBoatC *this,int param_1)
                     (-0x5001fffc,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_grpb.cpp"
                      ,0x7a7);
         }
-        thunk_FUN_004162f0(pSVar5,(undefined2 *)((int)&param_1 + 2),(undefined2 *)&local_10,
-                           (undefined2 *)&local_14);
+        STFishC::sub_004162F0
+                  ((STFishC *)pSVar5,(undefined2 *)((int)&param_1 + 2),(undefined2 *)&local_10,
+                   (undefined2 *)&local_14);
         GVar13 = local_20;
         /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
         if (g_pathingScratchGrid.cells
@@ -287,8 +289,9 @@ joined_r0x0049bc58:
                         (-0x5001fffc,g_overwriteContext_007ED77C,
                          "E:\\__titans\\wlad\\to_grpb.cpp",0x7bd);
             }
-            thunk_FUN_004162f0(pSVar5,(undefined2 *)((int)&param_1 + 2),(undefined2 *)&local_10,
-                               (undefined2 *)&local_14);
+            STFishC::sub_004162F0
+                      ((STFishC *)pSVar5,(undefined2 *)((int)&param_1 + 2),(undefined2 *)&local_10,
+                       (undefined2 *)&local_14);
             /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
             if (g_pathingScratchGrid.cells
                 [(int)g_pathingGrid.planeStride * (int)(short)local_14 +

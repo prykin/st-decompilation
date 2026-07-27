@@ -125,7 +125,7 @@ LAB_004beb63:
     if ((iVar7 != 1) && (iVar7 != 2)) goto LAB_004beb6d;
     if (*(int *)&this->field_0x361 != 5) {
       *(undefined1 *)((int)param_1 + 9) = 0x20;
-      iVar7 = (*this->vtable->vfunc_7C)();
+      iVar7 = (*this->vtable->vfunc_7C)(this);
       if ((iVar7 == 100) ||
          (((this->field_0245 != CASE_0 && (this->field_0245 != CASE_5)) ||
           (*(int *)&this->field_0x361 != 0)))) goto LAB_004bebed;

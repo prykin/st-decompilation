@@ -166,11 +166,11 @@ LAB_0054532f:
       }
       if ((this_00->field_0496 != 0) && (this_00->field_04A2 == CASE_E)) {
         if (g_tLOBldMark_007FB2AC->field_0018 != 0) {
-          thunk_FUN_004c6210(g_tLOBldMark_007FB2AC,this_00->field_04AA,0);
+          TLOBldMark::sub_004C6210(g_tLOBldMark_007FB2AC,this_00->field_04AA,0);
         }
-        thunk_FUN_004c6440(g_tLOBldMark_007FB2AC,(float)(this_00->field_00C5 - this_00->field_04B2),
-                           this_00->field_00C9 - this_00->field_04B6,(int *)0x0,(int *)0x0,
-                           (int *)0x0);
+        TLOBldMark::sub_004C6440
+                  (g_tLOBldMark_007FB2AC,(float)(this_00->field_00C5 - this_00->field_04B2),
+                   this_00->field_00C9 - this_00->field_04B6,(int *)0x0,(int *)0x0,(int *)0x0);
         g_currentExceptionFrame = local_e0.previous;
         return 0;
       }
@@ -178,7 +178,7 @@ LAB_0054532f:
         g_currentExceptionFrame = local_e0.previous;
         return 0;
       }
-      thunk_FUN_004c63f0((AnonShape_004C63F0_0B060A14 *)g_tLOBldMark_007FB2AC);
+      TLOBldMark::sub_004C63F0(g_tLOBldMark_007FB2AC);
       g_currentExceptionFrame = local_e0.previous;
       return 0;
     }
@@ -452,7 +452,7 @@ LAB_0054506b:
             g_currentExceptionFrame = local_e0.previous;
             return 0;
           }
-          thunk_FUN_0054b540(this_00);
+          sub_0054B540(this_00);
           if (g_intercomPanel_0080169C == (IntercomPanelTy *)0x0) {
             g_currentExceptionFrame = local_e0.previous;
             return 0;
@@ -465,7 +465,7 @@ LAB_0054506b:
             g_currentExceptionFrame = local_e0.previous;
             return 0;
           }
-          thunk_FUN_0054b540(this_00);
+          sub_0054B540(this_00);
           if (g_intercomPanel_0080169C == (IntercomPanelTy *)0x0) {
             g_currentExceptionFrame = local_e0.previous;
             return 0;
@@ -478,7 +478,7 @@ LAB_0054506b:
             g_currentExceptionFrame = local_e0.previous;
             return 0;
           }
-          thunk_FUN_004faff0((AnonShape_004FAFF0_0F922E35 *)g_cPanel_00801688);
+          CPanelTy::sub_004FAFF0(g_cPanel_00801688);
           g_currentExceptionFrame = local_e0.previous;
           return 0;
         default:
@@ -610,7 +610,7 @@ switchD_0054679d_default:
       }
     }
     if (SVar6 == MESS_CURSORCLASSTY_A124) {
-      thunk_FUN_0054b540(this_00);
+      sub_0054B540(this_00);
       if (g_intercomPanel_0080169C == (IntercomPanelTy *)0x0) {
         g_currentExceptionFrame = local_e0.previous;
         return 0;
@@ -672,7 +672,7 @@ switchD_0054679d_default:
         pcVar12 = &DAT_00807680;
         break;
       case 0xa122:
-        thunk_FUN_0054b540(this_00);
+        sub_0054B540(this_00);
         if (g_cPanel_00801688 == (CPanelTy *)0x0) {
           g_currentExceptionFrame = local_e0.previous;
           return 0;
@@ -685,7 +685,7 @@ switchD_0054679d_default:
           g_currentExceptionFrame = local_e0.previous;
           return 0;
         }
-        thunk_FUN_004fa3b0((AnonShape_004FA3B0_224BAE98 *)g_cPanel_00801688);
+        CPanelTy::sub_004FA3B0(g_cPanel_00801688);
         g_currentExceptionFrame = local_e0.previous;
         return 0;
       }
@@ -856,7 +856,7 @@ switchD_0054679d_default:
       return 0;
     }
     if (SVar6 == MESS_CURSORCLASSTY_A102) {
-      thunk_FUN_0054b540(this_00);
+      sub_0054B540(this_00);
       if (g_optPanel_008016DC == (OptPanelTy *)0x0) {
         g_currentExceptionFrame = local_e0.previous;
         return 0;
@@ -877,7 +877,7 @@ switchD_0054679d_default:
           g_currentExceptionFrame = local_e0.previous;
           return 0;
         }
-        thunk_FUN_0054b540(this_00);
+        sub_0054B540(this_00);
         if (g_optPanel_008016DC == (OptPanelTy *)0x0) {
           g_currentExceptionFrame = local_e0.previous;
           return 0;
@@ -905,7 +905,7 @@ switchD_0054679d_default:
       goto LAB_00547c2d;
     }
     if (SVar6 == MESS_CURSORCLASSTY_4203) {
-      thunk_FUN_00544940((AnonShape_00544940_E504B2A8 *)this_00);
+      sub_00544940(this_00);
       g_currentExceptionFrame = local_e0.previous;
       return 0;
     }
@@ -1004,11 +1004,11 @@ switchD_0054679d_default:
           return 0;
         }
         if (this_00->field_00D2 == '\0') {
-          thunk_FUN_004ab070(g_opticClass_007FB2A0,CASE_3,0.0,0,1);
+          OpticClassC::sub_004AB070(g_opticClass_007FB2A0,CASE_3,0.0,0,1);
           g_currentExceptionFrame = local_e0.previous;
           return 0;
         }
-        thunk_FUN_004ab070(g_opticClass_007FB2A0,CASE_1,0.0,0,1);
+        OpticClassC::sub_004AB070(g_opticClass_007FB2A0,CASE_1,0.0,0,1);
         g_currentExceptionFrame = local_e0.previous;
         return 0;
       }
@@ -1086,11 +1086,11 @@ switchD_0054679d_default:
         return 0;
       }
       if (this_00->field_00D2 == '\0') {
-        thunk_FUN_004ab070(g_opticClass_007FB2A0,CASE_4,0.0,0,1);
+        OpticClassC::sub_004AB070(g_opticClass_007FB2A0,CASE_4,0.0,0,1);
         g_currentExceptionFrame = local_e0.previous;
         return 0;
       }
-      thunk_FUN_004ab070(g_opticClass_007FB2A0,CASE_2,0.0,0,1);
+      OpticClassC::sub_004AB070(g_opticClass_007FB2A0,CASE_2,0.0,0,1);
       g_currentExceptionFrame = local_e0.previous;
       return 0;
     }
@@ -1991,8 +1991,9 @@ LAB_00547c2d:
         return 0;
       }
       /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-      thunk_FUN_004fad60(g_cPanel_00801688,CONCAT22(uVar19,(short)this_00->field_00C5),
-                         (uint)(ushort)this_00->field_00C9);
+      CPanelTy::sub_004FAD60
+                (g_cPanel_00801688,CONCAT22(uVar19,(short)this_00->field_00C5),
+                 (uint)(ushort)this_00->field_00C9);
       g_currentExceptionFrame = local_e0.previous;
       return 0;
     case 0xb:
@@ -2009,8 +2010,9 @@ LAB_00547c2d:
         return 0;
       }
       /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-      thunk_FUN_004fae90(g_cPanel_00801688,CONCAT22(uVar19,(short)this_00->field_00C5),
-                         (uint)(ushort)this_00->field_00C9);
+      CPanelTy::sub_004FAE90
+                (g_cPanel_00801688,CONCAT22(uVar19,(short)this_00->field_00C5),
+                 (uint)(ushort)this_00->field_00C9);
       g_currentExceptionFrame = local_e0.previous;
       return 0;
     case MESS_SHARED_0008|MESS_SHARED_0005:
@@ -2247,7 +2249,7 @@ switchD_00546ac9_caseD_a506:
       g_currentExceptionFrame = local_e0.previous;
       return 0;
     }
-    thunk_FUN_004fad20(g_cPanel_00801688);
+    CPanelTy::sub_004FAD20(g_cPanel_00801688);
     g_currentExceptionFrame = local_e0.previous;
     return 0;
   }
@@ -2415,7 +2417,7 @@ switchD_00546590_caseD_a125:
     g_currentExceptionFrame = local_e0.previous;
     return 0;
   }
-  thunk_FUN_0054b540(this_00);
+  sub_0054B540(this_00);
   if (g_intercomPanel_0080169C == (IntercomPanelTy *)0x0) {
     g_currentExceptionFrame = local_e0.previous;
     return 0;

@@ -1,6 +1,6 @@
 program=ST.exe
-candidates=18
+candidates=1290
 automatic_replacements=0
 automatic_removals=0
-retained_review=18
-note=Deletion requires an original script-owner marker, ST_VIEW_ONLY, and zero parents/signature/Listing uses. Equivalent types migrate only to one anchor.
+retained_review=1290
+note=Deletion requires an original script-owner marker and zero parents/signature/Listing uses. Non-view deletion is limited to generated anonymous PointerShapes/ClassPointees/HiddenThis types. Equivalent types migrate only to one anchor.

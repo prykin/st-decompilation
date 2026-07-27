@@ -9,11 +9,11 @@ void __thiscall FUN_0056a8d0(void *this,uint param_1,byte param_2,char param_3)
   if ((g_visibleClass_00802A88 != (VisibleClassTy *)0x0) &&
      (param_2 == *(byte *)((int)this + 0x112d))) {
     if (param_3 == '\0') {
-      thunk_FUN_0055b7f0(g_visibleClass_00802A88,0,puVar1);
+      VisibleClassTy::sub_0055B7F0(g_visibleClass_00802A88,0,puVar1);
       return;
     }
     if (*(char *)((int)this + 0x1474) != '\0') {
-      thunk_FUN_0055b7f0(g_visibleClass_00802A88,1,puVar1);
+      VisibleClassTy::sub_0055B7F0(g_visibleClass_00802A88,1,puVar1);
     }
   }
   return;

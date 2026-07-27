@@ -1,4 +1,4 @@
-FUN_0052bc30:
+MoneyTy::sub_0052BC30:
 0052BC30  55                        PUSH EBP
 0052BC31  8B EC                     MOV EBP,ESP
 0052BC33  A0 4E 87 80 00            MOV AL,[0x0080874e]

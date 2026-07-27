@@ -55,11 +55,11 @@ LAB_00538a14:
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
       uVar4 = (*(code *)param_4)(param_1);
       text = FUN_006f2c00(param_3,1,uVar4);
-      local_8 = cMf32::RecGet(DAT_00806790,param_2,text,errorCode,iVar5);
+      local_8 = cMf32::RecGet(g_cMf32_00806790,param_2,text,errorCode,iVar5);
       pPVar3 = local_14;
       DibPut((AnonShape_006B5B10_E0D06CF1 *)local_14->field_0068,local_10,local_c,param_2,
              (byte *)local_8);
-      cMf32::RecMemFree(DAT_00806790,(uint *)&local_8);
+      cMf32::RecMemFree(g_cMf32_00806790,(uint *)&local_8);
       Library::DKW::DDX::FUN_006b3640
                 ((int *)PTR_008075a8,pPVar3->field_0060,0xffffffff,pPVar3->field_003C,
                  pPVar3->field_0044);

@@ -1,4 +1,4 @@
-FUN_004ab070:
+OpticClassC::sub_004AB070:
 004AB070  55                        PUSH EBP
 004AB071  8B EC                     MOV EBP,ESP
 004AB073  56                        PUSH ESI

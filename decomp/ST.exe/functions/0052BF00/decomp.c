@@ -28,7 +28,6 @@ int __thiscall MoneyTy::GetMessage(MoneyTy *this,STMessage *message)
   LPSTR text;
   ushort *puVar9;
   int iVar10;
-  ccFntTy *this_01;
   MoneyTy_field_0068State MVar11;
   uint uVar12;
   byte bVar13;
@@ -270,13 +269,11 @@ int __thiscall MoneyTy::GetMessage(MoneyTy *this,STMessage *message)
       local_10->field_0038 = g_nWidth_00806730 + -99;
       local_10->field_003C = DAT_00806734 + -0x16;
       local_10->field_0069 = ((DAT_0080874e == '\x03') - 1U & 0xc3) + 0x3d;
-      pcVar8 = (ccFntTy *)
-               ccFntTy::operator(DAT_00806790,0x19d,(cMf32 *)DAT_00806790,"MONEY_FONT",0);
+      pcVar8 = (ccFntTy *)ccFntTy::operator_new(0x19d,g_cMf32_00806790,"MONEY_FONT",0);
       this_00->field_006A = pcVar8;
       pcVar8->field_0058 = 1;
       pcVar8->field_005C = 0;
-      pcVar8 = (ccFntTy *)
-               ccFntTy::operator(this_01,0x19d,(cMf32 *)DAT_00806790,"TIME_FONT",0);
+      pcVar8 = (ccFntTy *)ccFntTy::operator_new(0x19d,g_cMf32_00806790,"TIME_FONT",0);
       this_00->field_006E = pcVar8;
       pcVar8->field_0058 = 1;
       pcVar8->field_005C = 0;
@@ -420,11 +417,11 @@ int __thiscall MoneyTy::GetMessage(MoneyTy *this,STMessage *message)
         this_00->field_0082 = (ushort *)0x0;
       }
       if (this_00->field_006A != (ccFntTy *)0x0) {
-        ccFntTy::operator((uint *)this_00->field_006A);
+        ccFntTy::operator_delete((uint *)this_00->field_006A);
         this_00->field_006A = (ccFntTy *)0x0;
       }
       if (this_00->field_006E != (ccFntTy *)0x0) {
-        ccFntTy::operator((uint *)this_00->field_006E);
+        ccFntTy::operator_delete((uint *)this_00->field_006E);
         this_00->field_006E = (ccFntTy *)0x0;
       }
       break;

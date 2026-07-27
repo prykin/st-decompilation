@@ -35,7 +35,7 @@ undefined4 __thiscall STBoatC::Bring(STBoatC *this,STBoatC *param_1)
        ) {
       return 0;
     }
-    iVar8 = FUN_006e62d0(g_playSystem_00802A38,this->field_07CA,(int *)&param_1);
+    iVar8 = STPlaySystemC::sub_006E62D0(g_playSystem_00802A38,this->field_07CA,(int *)&param_1);
     if (iVar8 == -4) {
       iVar8 = ReportDebugMessage("E:\\__titans\\wlad\\To_boat.cpp",0x3781,0,0,"%s",
                                  "STBoatC::Bring can not find object");
@@ -100,7 +100,7 @@ undefined4 __thiscall STBoatC::Bring(STBoatC *this,STBoatC *param_1)
                    (int)sVar1].objects[0];
       }
       if (((param_1 != (STBoatC *)0x0) && (param_1->field_0018 == this->field_0679)) &&
-         (iVar8 = (*param_1->vtable->vfunc_F8)(), iVar8 != 0)) {
+         (iVar8 = (*param_1->vtable->vfunc_F8)(param_1), iVar8 != 0)) {
         return 2;
       }
       sub_004602B0(this);
@@ -144,7 +144,7 @@ undefined4 __thiscall STBoatC::Bring(STBoatC *this,STBoatC *param_1)
                      + (int)sVar1].objects[0];
         }
         if (((param_1 != (STBoatC *)0x0) && (param_1->field_0018 == this->field_0679)) &&
-           ((iVar8 = (*param_1->vtable->vfunc_F8)(), iVar8 != 0 &&
+           ((iVar8 = (*param_1->vtable->vfunc_F8)(param_1), iVar8 != 0 &&
             ((param_1->field_0020 != 1000 ||
              ((*(int *)((int)&param_1->field_04B3 + 1) == 0 && (*(int *)&param_1->field_0x245 != 6))
              )))))) {
@@ -169,7 +169,7 @@ undefined4 __thiscall STBoatC::Bring(STBoatC *this,STBoatC *param_1)
                      + (int)sVar1].objects[0];
         }
         if (((param_1 != (STBoatC *)0x0) && (param_1->field_0018 == this->field_0679)) &&
-           (iVar8 = (*param_1->vtable->vfunc_F8)(), iVar8 != 0)) {
+           (iVar8 = (*param_1->vtable->vfunc_F8)(param_1), iVar8 != 0)) {
           return 2;
         }
         break;
@@ -198,7 +198,7 @@ undefined4 __thiscall STBoatC::Bring(STBoatC *this,STBoatC *param_1)
                      + (int)sVar1].objects[0];
         }
         if (((param_1 != (STBoatC *)0x0) && (param_1->field_0018 == this->field_0679)) &&
-           (iVar8 = (*param_1->vtable->vfunc_F8)(), iVar8 != 0)) {
+           (iVar8 = (*param_1->vtable->vfunc_F8)(param_1), iVar8 != 0)) {
           if (this->field_0675 == 99) {
             thunk_FUN_004b7d50(param_1,this);
           }
@@ -240,7 +240,7 @@ undefined4 __thiscall STBoatC::Bring(STBoatC *this,STBoatC *param_1)
                      + (int)sVar1].objects[0];
         }
         if (((param_1 != (STBoatC *)0x0) && (param_1->field_0018 == this->field_0679)) &&
-           (iVar8 = (*param_1->vtable->vfunc_F8)(), iVar8 != 0)) {
+           (iVar8 = (*param_1->vtable->vfunc_F8)(param_1), iVar8 != 0)) {
           if (this->field_0675 == 99) {
             thunk_FUN_004b7d50(param_1,this);
           }
@@ -321,10 +321,8 @@ undefined4 __thiscall STBoatC::Bring(STBoatC *this,STBoatC *param_1)
       }
     }
     uVar7 = this->field_0673 + 1;
-    SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0048DFD0::sub_0048DFD0
-              ((AnonReceiver_0048DFD0 *)this,this->field_066F,this->field_0671,uVar7,
-               this->field_066F,this->field_0671,(int *)(uint)uVar7,2,&this->field_067D,
-               &this->field_067F,&this->field_0681);
+    sub_0048DFD0(this,this->field_066F,this->field_0671,uVar7,this->field_066F,this->field_0671,
+                 (int *)(uint)uVar7,2,&this->field_067D,&this->field_067F,&this->field_0681);
     iVar12 = (int)this->field_0681;
     iVar8 = (int)this->field_067F;
     iVar11 = (int)this->field_067D;
@@ -359,7 +357,7 @@ undefined4 __thiscall STBoatC::Bring(STBoatC *this,STBoatC *param_1)
                (int)sVar1].objects[0];
   }
   if (((param_1 == (STBoatC *)0x0) || (param_1->field_0018 != this->field_0679)) ||
-     (iVar8 = (*param_1->vtable->vfunc_F8)(), iVar8 == 0)) {
+     (iVar8 = (*param_1->vtable->vfunc_F8)(param_1), iVar8 == 0)) {
 cf_common_exit_0047C74D:
     sub_004602B0(this);
     return 0;
@@ -401,7 +399,7 @@ switchD_0047c090_caseD_0:
                (int)sVar1].objects[0];
   }
   if (((param_1 == (STBoatC *)0x0) || (param_1->field_0018 != this->field_0679)) ||
-     (iVar8 = (*param_1->vtable->vfunc_F8)(), iVar8 == 0)) goto cf_common_exit_0047C74D;
+     (iVar8 = (*param_1->vtable->vfunc_F8)(param_1), iVar8 == 0)) goto cf_common_exit_0047C74D;
   iVar8 = thunk_FUN_004950b0(this,&this->field_067D,&this->field_067F,&this->field_0681);
   if (iVar8 != 1) goto cf_common_exit_0047C68C;
   if (this->field_0675 == 99) {

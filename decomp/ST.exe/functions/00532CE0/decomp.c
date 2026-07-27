@@ -1,14 +1,19 @@
 
-void __fastcall FUN_00532ce0(AnonShape_00532CE0_361E49BD *param_1)
+/* [STMethodOwnerApplier] Structural method owner recovered as OptPanelTy.
+   Evidence: this_call_owners=[OptPanelTy]; agreed_this_calls=1; incoming_this_accesses=4;
+   incoming_edx_uses=0; incoming_stack_parameter_uses=0; direct_non_thunk_callers=0;
+   incoming_ecx_receiver_callers=0; attributed_named_callers=1; owner_evidence_coverage=adequate */
+
+void __thiscall OptPanelTy::sub_00532CE0(OptPanelTy *this)
 
 {
   int iVar1;
 
-  if (param_1->field_01A4 == '\x0e') {
-    param_1->field_0028 = 0x20;
+  if (this->field_01A4 == CASE_E) {
+    this->field_0028 = 0x20;
     iVar1 = thunk_FUN_00648a30((uint)DAT_0080874d,(char *)0x0);
-    param_1->field_002C = (uint)(iVar1 != 0);
-    FUN_006e6080(param_1,2,param_1->field_01C1,(undefined4 *)&param_1->field_0x18);
+    *(uint *)&this->field_0x2c = (uint)(iVar1 != 0);
+    FUN_006e6080(this,2,this->field_01C1,(undefined4 *)&this->field_0x18);
   }
   return;
 }

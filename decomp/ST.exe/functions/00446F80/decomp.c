@@ -233,7 +233,8 @@ LAB_0044738a:
                   do {
                     DArrayGetElement(pDVar3,uVar7,&local_28);
                     iVar5 = (*local_28->vtable->vfunc_F8)();
-                    if (((iVar5 == 0) || (iVar5 = (*local_28->vtable->vfunc_F0)(), iVar5 == 0)) ||
+                    if (((iVar5 == 0) ||
+                        (iVar5 = (*local_28->vtable->vfunc_F0)(local_28), iVar5 == 0)) ||
                        (iVar5 = (*local_28->vtable->vfunc_F4)(local_a0), iVar5 == 0)) {
                       FUN_006b0c70(pDVar3,uVar7);
                       uVar7 = uVar7 - 1;

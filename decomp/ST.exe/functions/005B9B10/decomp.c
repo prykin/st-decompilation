@@ -63,7 +63,7 @@ void __thiscall PrividerTy::InitPrivider(PrividerTy *this,char param_1,char para
     Library::Ourlib::PALETTE::FUN_00718780
               ((int)local_454,0,0x100,0x8b,0x15,(undefined4 *)&this_02->field_1A5B->field_0x144);
     if (param_2 != '\0') {
-      DarkScreen(DAT_0080759c,1,0);
+      DarkScreen(g_anonShape_GLOBAL_0080759C_9638EF10_0080759C,1,0);
     }
     this_02->field_1A71 = 0;
     thunk_FUN_005dac60();
@@ -288,7 +288,8 @@ void __thiscall PrividerTy::InitPrivider(PrividerTy *this,char param_1,char para
       this_01->field_04DF = -1;
     }
     if (param_2 != '\0') {
-      thunk_FUN_0055ddf0(DAT_0080759c,(int *)PTR_008075a8,(int)this_02->field_005D,10,2);
+      thunk_FUN_0055ddf0((undefined4 *)g_anonShape_GLOBAL_0080759C_9638EF10_0080759C,
+                         (int *)PTR_008075a8,(int)this_02->field_005D,10,2);
     }
     pHVar9 = this_02->field_1C96;
     if (((pHVar9 != (HoloTy *)0x0) && (pHVar9->field_0000 != '\0')) && (-1 < pHVar9->field_0003)) {

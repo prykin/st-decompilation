@@ -33,7 +33,8 @@ undefined4 __fastcall FUN_004c6d00(STJellyGunC *param_1)
       if (iVar3 != 0) {
         STDebugBreak(); /* noreturn in standalone pseudocode */
       }
-      iVar3 = 0x4f;
+      /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
+      unaff_EDI = (int *)0x4f;
     }
     else {
       if (iVar3 == 1) goto LAB_004c6e4d;
@@ -53,12 +54,13 @@ undefined4 __fastcall FUN_004c6d00(STJellyGunC *param_1)
         }
         goto cf_common_exit_004C6F47;
       }
-      iVar3 = 0x59;
+      /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
+      unaff_EDI = (int *)0x59;
     }
   }
   else {
     if (param_1->field_0400 == 0) {
-      iVar3 = (*param_1->vtable->vfunc_20)();
+      iVar3 = (*param_1->vtable->vfunc_20)(param_1);
       if (iVar3 == -1) {
         iVar3 = ReportDebugMessage("E:\\__titans\\Artem\\TLO_bmove.cpp",0x35,0,-5,
                                    "%s","stop move error");
@@ -99,12 +101,13 @@ LAB_004c6e4d:
     if (iVar3 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    iVar3 = 0x47;
   }
+  /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
   RaiseInternalException
-            (-5,g_overwriteContext_007ED77C,"E:\\__titans\\Artem\\TLO_bmove.cpp",iVar3);
+            (-5,g_overwriteContext_007ED77C,"E:\\__titans\\Artem\\TLO_bmove.cpp",
+             (int)unaff_EDI);
 cf_common_exit_004C6F47:
-  thunk_FUN_004162f0(param_1,&local_6,&local_8,&local_a);
+  STFishC::sub_004162F0((STFishC *)param_1,&local_6,&local_8,&local_a);
   param_1->field_05B0 = (int)local_6;
   param_1->field_05B4 = (int)local_8;
   param_1->field_05B8 = (int)local_a;

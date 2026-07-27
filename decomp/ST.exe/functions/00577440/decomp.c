@@ -20,10 +20,12 @@ void __fastcall FUN_00577440(int param_1)
       /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
       DVar3 = STAppC::sub_006E51B0(*(STAppC **)(param_1 + 0x18));
       iVar2 = Library::Ourlib::PALETTE::FUN_00718f40
-                        (DAT_0080759c,(undefined4 *)(param_1 + 0x28),0,0x100,10,
-                         (int *)(param_1 + 0x24),2,DVar3,puVar8);
+                        (g_anonShape_GLOBAL_0080759C_9638EF10_0080759C,
+                         (undefined4 *)(param_1 + 0x28),0,0x100,10,(int *)(param_1 + 0x24),2,DVar3,
+                         puVar8);
       if (iVar2 == -4) {
-        FUN_006b0a20(DAT_0080759c,param_1 + 0x28,0,0x100,0);
+        FUN_006b0a20((undefined4 *)g_anonShape_GLOBAL_0080759C_9638EF10_0080759C,param_1 + 0x28,0,
+                     0x100,0);
         *(undefined1 *)(param_1 + 0x430) = 2;
       }
     }
@@ -81,7 +83,8 @@ void __fastcall FUN_00577440(int param_1)
           piVar5 = (int *)*piVar5;
         } while (piVar5 != (int *)0x0);
         if (bVar1) {
-          FUN_006b0a20(DAT_0080759c,param_1 + 0x28 + local_8 * 4,local_8,(uVar4 - local_8) + 1,0);
+          FUN_006b0a20((undefined4 *)g_anonShape_GLOBAL_0080759C_9638EF10_0080759C,
+                       param_1 + 0x28 + local_8 * 4,local_8,(uVar4 - local_8) + 1,0);
           SystemClassTy::Life((SystemClassTy *)param_1);
           return;
         }

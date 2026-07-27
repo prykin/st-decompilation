@@ -157,20 +157,20 @@ void __thiscall CPanelTy::DoneCPanel(CPanelTy *this)
       FUN_006b3bb0((int *)PTR_008075a8,this_00->field_017C);
     }
     this_00->field_017C = -1;
-    cMf32::RecMemFree(DAT_00806790,(uint *)&this_00->field_0B43);
-    cMf32::RecMemFree(DAT_00806790,(uint *)&this_00->field_0B47);
+    cMf32::RecMemFree(g_cMf32_00806790,(uint *)&this_00->field_0B43);
+    cMf32::RecMemFree(g_cMf32_00806790,(uint *)&this_00->field_0B47);
     ppuVar8 = &this_00->field_09D9;
     iVar3 = 0xf;
     do {
-      cMf32::RecMemFree(DAT_00806790,(uint *)ppuVar8);
+      cMf32::RecMemFree(g_cMf32_00806790,(uint *)ppuVar8);
       ppuVar8 = ppuVar8 + 1;
       iVar3 = iVar3 + -1;
     } while (iVar3 != 0);
     if ((PTR_00807598 != (AnonShape_GLOBAL_00807598_0C6808FB *)0x0) &&
-       ((int *)this_00->field_0DB3 != (int *)0x0)) {
-      FUN_006e6580(PTR_00807598,(int *)this_00->field_0DB3);
+       (this_00->field_0DB3 != (int *)0x0)) {
+      FUN_006e6580(PTR_00807598,this_00->field_0DB3);
     }
-    this_00->field_0DB3 = 0;
+    this_00->field_0DB3 = (void *)0x0;
     if (PTR_00807598 != (AnonShape_GLOBAL_00807598_0C6808FB *)0x0) {
       FUN_006e6500(PTR_00807598,(undefined4 *)0x0);
     }
@@ -183,7 +183,7 @@ void __thiscall CPanelTy::DoneCPanel(CPanelTy *this)
       ppvVar9 = ppvVar9 + 1;
       iVar3 = iVar3 + -1;
     } while (iVar3 != 0);
-    cMf32::RecMemFree(DAT_00806790,(uint *)&this_00->field_0994);
+    cMf32::RecMemFree(g_cMf32_00806790,(uint *)&this_00->field_0994);
     puVar7 = &this_00->field_0DBF;
     iVar3 = 2;
     do {
@@ -196,14 +196,14 @@ void __thiscall CPanelTy::DoneCPanel(CPanelTy *this)
     ppuVar8 = &this_00->field_0974;
     iVar3 = 8;
     do {
-      cMf32::RecMemFree(DAT_00806790,(uint *)ppuVar8);
+      cMf32::RecMemFree(g_cMf32_00806790,(uint *)ppuVar8);
       ppuVar8 = ppuVar8 + 1;
       iVar3 = iVar3 + -1;
     } while (iVar3 != 0);
-    cMf32::RecMemFree(DAT_00806790,(uint *)&this_00->field_0954);
-    cMf32::RecMemFree(DAT_00806790,(uint *)&this_00->field_0958);
-    cMf32::RecMemFree(DAT_00806790,(uint *)&this_00->field_0286);
-    cMf32::RecMemFree(DAT_00806790,(uint *)&this_00->field_028A);
+    cMf32::RecMemFree(g_cMf32_00806790,(uint *)&this_00->field_0954);
+    cMf32::RecMemFree(g_cMf32_00806790,(uint *)&this_00->field_0958);
+    cMf32::RecMemFree(g_cMf32_00806790,(uint *)&this_00->field_0286);
+    cMf32::RecMemFree(g_cMf32_00806790,(uint *)&this_00->field_028A);
     this_00->field_077C = (ushort *)0x0;
     this_00->field_02DE = (ushort *)0x0;
     this_00->field_02DA = (ushort *)0x0;
@@ -239,35 +239,35 @@ void __thiscall CPanelTy::DoneCPanel(CPanelTy *this)
     }
     this_00->field_0B95 = (DArrayTy *)0x0;
     if (this_00->field_01CC != (ccFntTy *)0x0) {
-      ccFntTy::operator((uint *)this_00->field_01CC);
+      ccFntTy::operator_delete((uint *)this_00->field_01CC);
       this_00->field_01CC = (ccFntTy *)0x0;
     }
     if (this_00->field_01D0 != (ccFntTy *)0x0) {
-      ccFntTy::operator((uint *)this_00->field_01D0);
+      ccFntTy::operator_delete((uint *)this_00->field_01D0);
       this_00->field_01D0 = (ccFntTy *)0x0;
     }
     if (this_00->field_01D4 != (ccFntTy *)0x0) {
-      ccFntTy::operator((uint *)this_00->field_01D4);
+      ccFntTy::operator_delete((uint *)this_00->field_01D4);
       this_00->field_01D4 = (ccFntTy *)0x0;
     }
     if (this_00->field_01C8 != (ccFntTy *)0x0) {
-      ccFntTy::operator((uint *)this_00->field_01C8);
+      ccFntTy::operator_delete((uint *)this_00->field_01C8);
       this_00->field_01C8 = (ccFntTy *)0x0;
     }
     if (this_00->field_01C4 != (ccFntTy *)0x0) {
-      ccFntTy::operator((uint *)this_00->field_01C4);
+      ccFntTy::operator_delete((uint *)this_00->field_01C4);
       this_00->field_01C4 = (ccFntTy *)0x0;
     }
     if (this_00->field_01C0 != (uint *)0x0) {
-      ccFntTy::operator(this_00->field_01C0);
+      ccFntTy::operator_delete(this_00->field_01C0);
       this_00->field_01C0 = (void *)0x0;
     }
     if (this_00->field_01BC != (ccFntTy *)0x0) {
-      ccFntTy::operator((uint *)this_00->field_01BC);
+      ccFntTy::operator_delete((uint *)this_00->field_01BC);
       this_00->field_01BC = (ccFntTy *)0x0;
     }
     if (this_00->field_01B8 != (ccFntTy *)0x0) {
-      ccFntTy::operator((uint *)this_00->field_01B8);
+      ccFntTy::operator_delete((uint *)this_00->field_01B8);
       this_00->field_01B8 = (ccFntTy *)0x0;
     }
     if (this_00->field_01AC != (AnonPointee_CPanelTy_01AC *)0x0) {

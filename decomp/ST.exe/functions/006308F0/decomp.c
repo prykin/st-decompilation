@@ -1,16 +1,21 @@
 
+/* [STMethodOwnerApplier] Structural method owner recovered as STManRuinC.
+   Evidence: this_call_owners=[STManRuinC]; agreed_this_calls=1; incoming_this_accesses=11;
+   incoming_edx_uses=0; incoming_stack_parameter_uses=16; direct_non_thunk_callers=0;
+   incoming_ecx_receiver_callers=0; attributed_named_callers=1; owner_evidence_coverage=adequate */
+
 uint __thiscall
-FUN_006308f0(void *this,int param_1,int param_2,int param_3,int param_4,undefined4 param_5,
-            int param_6)
+STManRuinC::sub_006308F0
+          (STManRuinC *this,int param_1,int param_2,int param_3,int param_4,undefined4 param_5,
+          int param_6)
 
 {
   char cVar1;
-  uint *puVar2;
-  DArrayTy *pDVar3;
+  DArrayTy *pDVar2;
+  int iVar3;
   int iVar4;
-  int iVar5;
-  uint uVar6;
-  short *psVar7;
+  uint uVar5;
+  short *psVar6;
   short local_20;
   short local_1e;
   short local_1c;
@@ -20,38 +25,38 @@ FUN_006308f0(void *this,int param_1,int param_2,int param_3,int param_4,undefine
   int local_c;
   int local_8;
 
-  uVar6 = 0xffffffff;
-  iVar5 = (g_worldGrid.sizeX * param_3 + param_2) * (int)g_worldGrid.sizeY + param_1;
+  uVar5 = 0xffffffff;
+  iVar4 = (g_worldGrid.sizeX * param_3 + param_2) * (int)g_worldGrid.sizeY + param_1;
   local_8 = 0;
   if (param_4 == 1) {
-    cVar1 = *(char *)(*(int *)((int)this + 0x34) + iVar5);
+    cVar1 = *(char *)(this->field_0034 + iVar4);
   }
   else {
-    iVar4 = *(int *)((int)this + 0x34);
-    local_8 = g_worldGrid.sizeY + iVar5;
-    if (*(char *)(iVar4 + iVar5) != '\0') {
+    iVar3 = this->field_0034;
+    local_8 = g_worldGrid.sizeY + iVar4;
+    if (*(char *)(iVar3 + iVar4) != '\0') {
       return 0xffffffff;
     }
-    if (*(char *)(iVar4 + 1 + iVar5) != '\0') {
+    if (*(char *)(iVar3 + 1 + iVar4) != '\0') {
       return 0xffffffff;
     }
-    if (*(char *)(iVar4 + local_8) != '\0') {
+    if (*(char *)(iVar3 + local_8) != '\0') {
       return 0xffffffff;
     }
-    cVar1 = *(char *)(iVar4 + 1 + local_8);
+    cVar1 = *(char *)(iVar3 + 1 + local_8);
   }
   if (cVar1 == '\0') {
-    if (*(int *)((int)this + 0x38) == 0) {
-      pDVar3 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,10,0x75,10);
-      *(DArrayTy **)((int)this + 0x38) = pDVar3;
+    if (this->field_0038 == (DArrayTy *)0x0) {
+      pDVar2 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,10,0x75,10);
+      this->field_0038 = pDVar2;
     }
-    puVar2 = *(uint **)((int)this + 0x38);
-    if ((puVar2 != (uint *)0x0) && (puVar2[3] < 0xfe)) {
-      psVar7 = &local_20;
-      for (iVar4 = 6; iVar4 != 0; iVar4 = iVar4 + -1) {
-        psVar7[0] = 0;
-        psVar7[1] = 0;
-        psVar7 = psVar7 + 2;
+    pDVar2 = this->field_0038;
+    if ((pDVar2 != (DArrayTy *)0x0) && (pDVar2->count < 0xfe)) {
+      psVar6 = &local_20;
+      for (iVar3 = 6; iVar3 != 0; iVar3 = iVar3 + -1) {
+        psVar6[0] = 0;
+        psVar6[1] = 0;
+        psVar6 = psVar6 + 2;
       }
       local_1a = (undefined2)param_4;
       local_18 = param_5;
@@ -60,26 +65,26 @@ FUN_006308f0(void *this,int param_1,int param_2,int param_3,int param_4,undefine
       local_1c = (short)param_3;
       local_1e = (short)param_2;
       local_c = param_6;
-      uVar6 = Library::DKW::TBL::FUN_006ae1c0(puVar2,(undefined4 *)&local_20);
-      if (-1 < (int)uVar6) {
+      uVar5 = Library::DKW::TBL::FUN_006ae1c0(&pDVar2->flags,(undefined4 *)&local_20);
+      if (-1 < (int)uVar5) {
         if (param_4 == 1) {
-          *(undefined1 *)(*(int *)((int)this + 0x34) + iVar5) = 1;
+          *(undefined1 *)(this->field_0034 + iVar4) = 1;
         }
         else {
-          *(undefined1 *)(*(int *)((int)this + 0x34) + iVar5) = 1;
-          *(undefined1 *)(*(int *)((int)this + 0x34) + 1 + iVar5) = 1;
-          *(undefined1 *)(*(int *)((int)this + 0x34) + local_8) = 1;
-          *(undefined1 *)(*(int *)((int)this + 0x34) + 1 + local_8) = 1;
+          *(undefined1 *)(this->field_0034 + iVar4) = 1;
+          *(undefined1 *)(this->field_0034 + 1 + iVar4) = 1;
+          *(undefined1 *)(this->field_0034 + local_8) = 1;
+          *(undefined1 *)(this->field_0034 + 1 + local_8) = 1;
         }
-        iVar5 = thunk_FUN_00631190(this,uVar6,(short)param_1,(short)param_2,(short)param_3,param_4,
+        iVar4 = thunk_FUN_00631190(this,uVar5,(short)param_1,(short)param_2,(short)param_3,param_4,
                                    param_5,param_6);
-        if (iVar5 == 0) {
-          FUN_006b0c70(*(DArrayTy **)((int)this + 0x38),uVar6);
-          uVar6 = 0xffffffff;
+        if (iVar4 == 0) {
+          FUN_006b0c70(this->field_0038,uVar5);
+          uVar5 = 0xffffffff;
         }
       }
     }
   }
-  return uVar6;
+  return uVar5;
 }
 

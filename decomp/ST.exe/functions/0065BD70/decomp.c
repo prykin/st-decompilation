@@ -217,22 +217,23 @@ LAB_0065c021:
                        (g_allPlayers_007FA174,'\0',CONCAT22(uVar6,(message->arg0).words.high),CASE_5
                        );
     if (pSVar4 != (STGameObjC *)0x0) {
-      uVar5 = (*pSVar4->vtable[1].vfunc_58)();
+      uVar5 = (*pSVar4->vtable->vfunc_12C)();
       this->field_052F = uVar5;
       uVar5 = (*pSVar4->vtable->vfunc_0C)();
       this->field_0533 = uVar5;
       this->field_0537 = (uint)(byte)(&DAT_008087ea)[this->field_052F * 0x51];
-      uVar5 = (*pSVar4->vtable[1].vfunc_5C)();
+      uVar5 = (*pSVar4->vtable->vfunc_130)();
       this->field_053B = uVar5;
       this->field_053F = 0;
-      thunk_FUN_004162f0(pSVar4,(undefined2 *)((int)&message + 2),(undefined2 *)((int)&param_2 + 2),
-                         &local_6);
+      STFishC::sub_004162F0
+                ((STFishC *)pSVar4,(undefined2 *)((int)&message + 2),
+                 (undefined2 *)((int)&param_2 + 2),&local_6);
       /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
       this->field_0543 = (int)message._2_2_;
       /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
       this->field_0547 = (int)param_2._2_2_;
       this->field_054B = (int)local_6;
-      uVar5 = (*pSVar4->vtable[1].vfunc_64)();
+      uVar5 = (*pSVar4->vtable->vfunc_138)();
       this->field_054F = uVar5;
       (*pSVar4->vtable->vfunc_74)(local_1c);
       Library::DKW::TBL::FUN_006b6020(&this->field_05B3->flags,0,local_1c);
@@ -264,8 +265,9 @@ LAB_0065c021:
       uVar5 = pSVar4->field_0342;
       this->field_053F = 0;
       this->field_053B = uVar5;
-      thunk_FUN_004162f0(pSVar4,(undefined2 *)((int)&message + 2),(undefined2 *)((int)&param_2 + 2),
-                         &local_6);
+      STFishC::sub_004162F0
+                ((STFishC *)pSVar4,(undefined2 *)((int)&message + 2),
+                 (undefined2 *)((int)&param_2 + 2),&local_6);
       /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
       this->field_0547 = (int)param_2._2_2_;
       /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */

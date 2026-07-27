@@ -23,7 +23,7 @@ FUN_00580450(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4
   local_2c[2] = 2;
   local_2c[3] = 1;
   local_10 = param_3;
-  (*g_playSystem_00802A38->vtable->vfunc_08)(0x10b,0,&param_1,local_2c,0);
+  (*g_playSystem_00802A38->vtable->vfunc_08)(g_playSystem_00802A38,0x10b,0,&param_1,local_2c,0);
   return param_1;
 }
 

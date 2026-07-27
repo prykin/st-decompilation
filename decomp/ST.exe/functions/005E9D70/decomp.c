@@ -51,7 +51,9 @@ void __thiscall WaitTy::DeleteCtrls(WaitTy *this)
   SetAccelerator(0,local_c->field_0008,2,0xc0a1,2,0x1c,0,0,0,0,0,0);
   FUN_006b5f80((int *)PTR_008075a8,0x112,0x38,0x204,0x19d);
   this_01 = &this_00->field_1A5B->field_0140;
-  MMMObjTy::OutRGlProc((MMMObjTy *)this_01,DAT_0080759c,0,0,0x112,0x38,0x204,0x19d,this_01);
+  MMMObjTy::OutRGlProc
+            ((MMMObjTy *)this_01,(int)g_anonShape_GLOBAL_0080759C_9638EF10_0080759C,0,0,0x112,0x38,
+             0x204,0x19d,this_01);
   if (this_00->field_1AF8 != (HoloTy *)0x0) {
     HoloTy::Done(this_00->field_1AF8);
     Library::MSVCRT::FUN_0072e2b0(this_00->field_1AF8);

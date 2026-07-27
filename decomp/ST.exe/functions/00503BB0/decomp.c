@@ -11,9 +11,9 @@ void __thiscall CPanelTy::SetCmdBoat(CPanelTy *this,uint param_1)
   byte bVar1;
   code *pcVar2;
   bool bVar3;
-  CPanelTy *pCVar4;
+  CPanelTy *this_00;
+  int iVar4;
   int iVar5;
-  int iVar6;
   undefined4 local_9c [9];
   undefined4 local_78 [9];
   InternalExceptionFrame local_54;
@@ -38,24 +38,24 @@ void __thiscall CPanelTy::SetCmdBoat(CPanelTy *this,uint param_1)
   local_54.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_54;
   local_10 = this;
-  iVar5 = Library::MSVCRT::__setjmp3(local_54.jumpBuffer,0);
-  if (iVar5 != 0) {
+  iVar4 = Library::MSVCRT::__setjmp3(local_54.jumpBuffer,0);
+  if (iVar4 != 0) {
     g_currentExceptionFrame = local_54.previous;
-    iVar6 = ReportDebugMessage("E:\\__titans\\Andrey\\cpanel2.cpp",0x2ff,0,iVar5,"%s"
+    iVar5 = ReportDebugMessage("E:\\__titans\\Andrey\\cpanel2.cpp",0x2ff,0,iVar4,"%s"
                                ,"CPanelTy::SetCmdBoat");
-    if (iVar6 == 0) {
-      RaiseInternalException(iVar5,0,"E:\\__titans\\Andrey\\cpanel2.cpp",0x2ff);
+    if (iVar5 == 0) {
+      RaiseInternalException(iVar4,0,"E:\\__titans\\Andrey\\cpanel2.cpp",0x2ff);
       return;
     }
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   thunk_FUN_005252c0(0xae);
-  pCVar4 = local_10;
+  this_00 = local_10;
   local_10->field_012C = 0;
   if (local_10->field_0B64 == '\0') {
     sub_004F8020(local_10,'\x01',0);
   }
-  pCVar4->field_012C = 1;
+  this_00->field_012C = 1;
   if (g_prodPanel_008016E8 != (ProdPanelTy *)0x0) {
     ProdPanelTy::SetPanel(g_prodPanel_008016E8,'\0');
   }
@@ -70,7 +70,7 @@ void __thiscall CPanelTy::SetCmdBoat(CPanelTy *this,uint param_1)
     (*(code *)g_infocPanel_00801698->field_0000->field_001C)(0);
   }
   if (g_tradePanel_00802A44 != (TradePanelTy *)0x0) {
-    thunk_FUN_00552160(g_tradePanel_00802A44,'\0','\0');
+    TradePanelTy::sub_00552160(g_tradePanel_00802A44,'\0','\0');
   }
   if (g_prodPanel_00801684 != (ProdPanelTy *)0x0) {
     ProdPanelTy::SetPanel(g_prodPanel_00801684,'\0');
@@ -92,7 +92,7 @@ void __thiscall CPanelTy::SetCmdBoat(CPanelTy *this,uint param_1)
     (*(code *)g_frmPanel_0080168C->field_0000->field_001C)(0);
   }
   CursorClassTy::sub_0054A8D0(g_cursorClass_00802A30);
-  bVar1 = (&pCVar4->field_0BA2)[param_1 & 0xff];
+  bVar1 = (&this_00->field_0BA2)[param_1 & 0xff];
   switch((uint)bVar1) {
   case 1:
     local_5 = 0;
@@ -114,7 +114,7 @@ void __thiscall CPanelTy::SetCmdBoat(CPanelTy *this,uint param_1)
   case 0x12:
   case 0x13:
   case 0x18:
-    thunk_FUN_0054b630(g_cursorClass_00802A30,(uint)bVar1,0);
+    CursorClassTy::sub_0054B630(g_cursorClass_00802A30,(uint)bVar1,0);
     g_currentExceptionFrame = local_54.previous;
     return;
   case 4:
@@ -162,7 +162,7 @@ void __thiscall CPanelTy::SetCmdBoat(CPanelTy *this,uint param_1)
       (**(code **)&g_sAMPanel_008016EC->field_0000[1].field_0x8)(1);
     }
   }
-  thunk_FUN_004fad20(pCVar4);
+  sub_004FAD20(this_00);
 switchD_00503d36_caseD_15:
   g_currentExceptionFrame = local_54.previous;
   return;

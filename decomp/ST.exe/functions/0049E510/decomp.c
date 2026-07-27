@@ -81,7 +81,7 @@ uint * __thiscall STGroupBoatC::GrpUnLoadObj(STGroupBoatC *this,int param_1)
                     (-0x5001fffc,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_grpb.cpp"
                      ,0xabe);
         }
-        iVar3 = (*pSVar4->vtable->vfunc_F8)();
+        iVar3 = (*pSVar4->vtable->vfunc_F8)(pSVar4);
         if (iVar3 != 0) {
           dVar5 = (*pSVar4->vtable->slot_2C)(pSVar4);
           if ((((dVar5 == 7) || (dVar5 == 0x13)) || (dVar5 == 0x1b)) &&
@@ -178,7 +178,7 @@ LAB_0049e7c1:
                       (-0x5001fffc,g_overwriteContext_007ED77C,
                        "E:\\__titans\\wlad\\to_grpb.cpp",0xaf1);
           }
-          iVar3 = (*pSVar4->vtable->vfunc_F8)();
+          iVar3 = (*pSVar4->vtable->vfunc_F8)(pSVar4);
           if ((iVar3 != 0) &&
              ((((dVar5 = (*pSVar4->vtable->slot_2C)(pSVar4), dVar5 == 7 || (dVar5 == 0x13)) ||
                (dVar5 == 0x1b)) &&

@@ -446,7 +446,8 @@ LAB_005cef5d:
             if (!bVar21) {
               iVar3 = 6;
               this_00->field_1F53 = *(undefined4 *)local_c;
-              this_00->field_1F57 = *(undefined4 *)((int)&local_c->field_0003 + 1);
+              *(undefined4 *)&this_00->field_0x1f57 = *(undefined4 *)((int)&local_c->field_0003 + 1)
+              ;
               this_00->field_1F5B = *(undefined4 *)&local_c->field_0x8;
               this_00->field_1F5F = local_c->field_0xc;
               piVar18 = &this_00->field_1F60;

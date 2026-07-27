@@ -84,7 +84,7 @@ FUN_005fcff0(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4
       local_118 = 0;
     }
   }
-  (*g_playSystem_00802A38->vtable->vfunc_08)(0x157,0,0,local_15c,0);
+  (*g_playSystem_00802A38->vtable->vfunc_08)(g_playSystem_00802A38,0x157,0,0,local_15c,0);
   return;
 }
 

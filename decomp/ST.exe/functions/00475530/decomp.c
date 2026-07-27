@@ -40,7 +40,7 @@ int __thiscall STBoatC::BackWaitLoad(STBoatC *this,int *param_1)
   iVar4 = this->field_05C0;
   if (iVar4 == 0) {
 LAB_00475545:
-    iVar4 = (*this->vtable->vfunc_D8)();
+    iVar4 = (*this->vtable->vfunc_D8)(this);
     return -(uint)(iVar4 != 0);
   }
   if ((iVar4 == 1) || (iVar4 == 2)) {
@@ -52,7 +52,7 @@ LAB_00475545:
     if (((((iVar17 == 1) || (iVar17 == 2)) || (iVar17 == 3)) || ((iVar17 == 5 || (iVar17 == 6)))) ||
        (iVar17 == 7)) {
       this->field_0076 = 1;
-      iVar4 = (*this->vtable->vfunc_D8)();
+      iVar4 = (*this->vtable->vfunc_D8)(this);
       return -(uint)(iVar4 != 0);
     }
     if (iVar17 == 4) {
@@ -125,7 +125,7 @@ LAB_00475545:
         return -1;
       }
       if (local_1c != 0) {
-        iVar4 = (*this->vtable->vfunc_D8)();
+        iVar4 = (*this->vtable->vfunc_D8)(this);
         return (-(uint)(iVar4 != 0) & 0xfffffffd) + 2;
       }
       goto LAB_00475545;

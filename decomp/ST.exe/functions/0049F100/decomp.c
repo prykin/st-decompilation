@@ -155,7 +155,7 @@ LAB_0049f2b2:
                        (g_allPlayers_007FA174,pSVar2->field_0x2c3,
                         CONCAT22(uVar9,*(undefined2 *)&pSVar2->field_0x2c4),CASE_1);
     if (((pSVar6 == (STGameObjC *)0x0) || (pSVar6->field_0018 != *(int *)&pSVar2->field_0x2c6)) ||
-       (iVar3 = (*pSVar6->vtable[1].vfunc_34)((int)pSVar2->field_0024), iVar3 == 0)) {
+       (iVar3 = (*pSVar6->vtable->vfunc_108)((int)pSVar2->field_0024), iVar3 == 0)) {
       *(undefined4 *)&pSVar2->field_0x2ca = 1;
       local_10 = 0;
       local_14 = g_playSystem_00802A38->field_00E4;

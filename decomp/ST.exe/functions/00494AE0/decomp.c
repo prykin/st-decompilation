@@ -18,9 +18,10 @@ void __fastcall FUN_00494ae0(AnonShape_00494AE0_7F188308 *param_1)
         (((param_1->field_0792 = 0, param_1->field_045D != 0x14 ||
           (*(int *)&param_1->field_0x5c0 != 3)) && ((param_1->field_01D1 & 1) == 0)))) &&
        (param_1->field_078A = 0, g_visibleClass_00802A88 != (VisibleClassTy *)0x0)) {
-      thunk_FUN_0055a4c0(g_visibleClass_00802A88,(int)param_1->field_005B,(int)param_1->field_005D,
-                         (char)param_1->field_005F,*(uint *)&param_1->field_0x24,
-                         (undefined *)param_1->field_0101,*(undefined4 *)&param_1->field_0x18);
+      VisibleClassTy::sub_0055A4C0
+                (g_visibleClass_00802A88,(int)param_1->field_005B,(int)param_1->field_005D,
+                 (char)param_1->field_005F,*(uint *)&param_1->field_0x24,
+                 (undefined *)param_1->field_0101,*(undefined4 *)&param_1->field_0x18);
     }
   }
   else if ((((param_1->field_0792 == 0) &&
@@ -60,9 +61,10 @@ void __fastcall FUN_00494ae0(AnonShape_00494AE0_7F188308 *param_1)
   if (g_visibleClass_00802A88 == (VisibleClassTy *)0x0) {
     return;
   }
-  thunk_FUN_0055a870(g_visibleClass_00802A88,(int)param_1->field_005B,(int)param_1->field_005D,
-                     (char)param_1->field_005F,*(uint *)&param_1->field_0x24,
-                     (undefined *)param_1->field_0101,*(undefined4 *)&param_1->field_0x18);
+  VisibleClassTy::sub_0055A870
+            (g_visibleClass_00802A88,(int)param_1->field_005B,(int)param_1->field_005D,
+             (char)param_1->field_005F,*(uint *)&param_1->field_0x24,
+             (undefined *)param_1->field_0101,*(undefined4 *)&param_1->field_0x18);
   return;
 }
 

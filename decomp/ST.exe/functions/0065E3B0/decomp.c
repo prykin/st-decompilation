@@ -6,8 +6,6 @@ int __fastcall FUN_0065e3b0(AnonShape_0065DA10_8B0AA883 *param_1,undefined4 para
   undefined2 *puVar1;
   STGameObjC *this;
   int iVar2;
-  /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-  AnonShape_0041AF40_F59F8577 *unaff_EDI;
   uint uVar3;
   bool bVar4;
   int local_8;
@@ -31,8 +29,7 @@ int __fastcall FUN_0065e3b0(AnonShape_0065DA10_8B0AA883 *param_1,undefined4 para
                          (g_allPlayers_007FA174,param_1->field_0024,
                           CONCAT22((short)((uint)puVar1 >> 0x10),*puVar1),CASE_1);
         if (this != (STGameObjC *)0x0) {
-          /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-          iVar2 = (*this->vtable[1].GetMessage)(this,unaff_EDI);
+          iVar2 = (*this->vtable->vfunc_D4)(this);
           local_8 = local_8 + iVar2;
         }
         uVar3 = uVar3 + 1;

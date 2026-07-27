@@ -141,13 +141,19 @@ public class STExportRegressionGate extends GhidraScript {
             typedSlotCountDropped ? "investigate" :
                 now.typedVtableSlots > before.typedVtableSlots ? "improved" : "ok",
             "Exact per-slot type erasure is the hard regression criterion");
+        boolean dispatchCountDropped = now.dispatchVtables < before.dispatchVtables;
+        add(dispatchCountDropped ? "error" : "info", "dispatch_vtable_count",
+            before.dispatchVtables,
+            now.dispatchVtables,
+            dispatchCountDropped ? "regression" :
+                now.dispatchVtables > before.dispatchVtables ? "improved" : "ok",
+            "Physical vtable layouts and polymorphic dispatch interfaces are counted separately");
         Set<String> erasedVtableTypes = new TreeSet<>();
         for (Map.Entry<String, String> entry : before.vtableSlots.entrySet()) {
-            if (!entry.getValue().contains("/SubmarineTitans/Recovered/VTableFunctions/"))
+            if (!isRecoveredFunctionPointer(entry.getValue()))
                 continue;
             String currentType = now.vtableSlots.get(entry.getKey());
-            if (currentType == null ||
-                    !currentType.contains("/SubmarineTitans/Recovered/VTableFunctions/"))
+            if (currentType == null || !isRecoveredFunctionPointer(currentType))
                 erasedVtableTypes.add(entry.getKey() + " " + entry.getValue() + " -> " +
                     (currentType == null ? "<missing>" : currentType));
         }
@@ -173,6 +179,8 @@ public class STExportRegressionGate extends GhidraScript {
 
         Set<String> kinds = new TreeSet<>(before.quality.keySet());
         kinds.addAll(now.quality.keySet());
+        boolean firstDispatchMigration =
+            before.dispatchVtables == 0 && now.dispatchVtables > 0;
         for (String kind : kinds) {
             long oldValue = before.quality.getOrDefault(kind, 0L);
             long newValue = now.quality.getOrDefault(kind, 0L);
@@ -180,11 +188,18 @@ public class STExportRegressionGate extends GhidraScript {
             if ("strict_zero".equals(policy)) continue;
             if ("nonincreasing".equals(policy)) {
                 boolean regressed = newValue > oldValue;
-                String severity = regressed ?
-                    (blockingQuality(kind) ? "error" : "warning") : "info";
+                boolean dispatchTransition = regressed && firstDispatchMigration &&
+                    "raw_indirect_call".equals(kind);
+                String severity = !regressed ? "info" : dispatchTransition ? "warning" :
+                    blockingQuality(kind) ? "error" : "warning";
                 add(severity, "quality:" + kind, oldValue, newValue,
-                    regressed ? "regressed" : newValue < oldValue ? "improved" : "ok",
-                    "policy=nonincreasing; blocking=" + blockingQuality(kind));
+                    dispatchTransition ? "stage_transition" :
+                        regressed ? "regressed" : newValue < oldValue ? "improved" : "ok",
+                    dispatchTransition ?
+                        "First dispatch-shape migration may expose honest unresolved tail " +
+                            "calls while removing wrapped vtable[1] aliases; the next export " +
+                            "uses the normal blocking nonincreasing policy" :
+                        "policy=nonincreasing; blocking=" + blockingQuality(kind));
             }
             else if ("stage_transition".equals(policy) && newValue != oldValue) {
                 add("warning", "quality:" + kind, oldValue, newValue, "stage_transition",
@@ -265,13 +280,14 @@ public class STExportRegressionGate extends GhidraScript {
                 Matcher pathMatcher = TYPE_PATH.matcher(line);
                 if (!pathMatcher.find()) continue;
                 String typePath = unescape(pathMatcher.group(1));
+                if (typePath.endsWith("DispatchVTable")) result.dispatchVtables++;
                 Matcher component = VTABLE_COMPONENT.matcher(line);
                 while (component.find()) {
                     String type = unescape(component.group(3));
                     String key = typePath + "@" + component.group(1) + ":" +
                         unescape(component.group(2));
                     result.vtableSlots.put(key, type);
-                    if (type.contains("/SubmarineTitans/Recovered/VTableFunctions/"))
+                    if (isRecoveredFunctionPointer(type))
                         result.typedVtableSlots++;
                     else if ("/void *32".equals(type)) result.voidVtableSlots++;
                 }
@@ -288,6 +304,11 @@ public class STExportRegressionGate extends GhidraScript {
                 }
             }
         }
+    }
+
+    private boolean isRecoveredFunctionPointer(String type) {
+        return type.contains("/SubmarineTitans/Recovered/VTableFunctions/") ||
+            type.contains("/SubmarineTitans/Recovered/IndirectCallFunctions/");
     }
 
     private String terminalTarget(String address, CorpusMetrics metrics) {
@@ -370,6 +391,7 @@ public class STExportRegressionGate extends GhidraScript {
             "\"failed_body_count\":" + now.failedBodies + "," +
             "\"typed_vtable_slot_count\":" + now.typedVtableSlots + "," +
             "\"void_vtable_slot_count\":" + now.voidVtableSlots + "," +
+            "\"dispatch_vtable_count\":" + now.dispatchVtables + "," +
             "\"untyped_tagged_message_slot_count\":" +
                 now.untypedTaggedMessageSlots.size() + "," +
             "\"hard_regression_count\":" + errors + "," +
@@ -457,6 +479,7 @@ public class STExportRegressionGate extends GhidraScript {
         long failedBodies;
         long typedVtableSlots;
         long voidVtableSlots;
+        long dispatchVtables;
         long number(String name) { return numbers.getOrDefault(name, 0L); }
     }
 

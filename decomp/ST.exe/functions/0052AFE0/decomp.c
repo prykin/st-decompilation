@@ -1,7 +1,11 @@
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+/* [STMethodOwnerApplier] Structural method owner recovered as CPanelTy.
+   Evidence: this_call_owners=[CPanelTy]; agreed_this_calls=1; incoming_this_accesses=17;
+   incoming_edx_uses=0; incoming_stack_parameter_uses=18; direct_non_thunk_callers=0;
+   incoming_ecx_receiver_callers=0; attributed_named_callers=1; owner_evidence_coverage=adequate */
 
-void __thiscall FUN_0052afe0(void *this,byte param_1,float param_2,float param_3)
+void __thiscall CPanelTy::sub_0052AFE0(CPanelTy *this,byte param_1,float param_2,float param_3)
 
 {
   bool bVar1;
@@ -36,7 +40,7 @@ void __thiscall FUN_0052afe0(void *this,byte param_1,float param_2,float param_3
     iVar5 = (int)(short)lVar9;
   }
   bVar1 = param_3 < _DAT_0079034c;
-  *(int *)((int)this + 0x237) = iVar5;
+  this->field_0237 = iVar5;
   if (bVar1) {
     lVar9 = Library::MSVCRT::__ftol();
     iVar5 = (short)lVar9 + -1;
@@ -45,8 +49,8 @@ void __thiscall FUN_0052afe0(void *this,byte param_1,float param_2,float param_3
     lVar9 = Library::MSVCRT::__ftol();
     iVar5 = (int)(short)lVar9;
   }
-  *(int *)((int)this + 0x23b) = iVar5;
-  if (*(int *)((int)this + 0xdb3) == 0) {
+  this->field_023B = iVar5;
+  if (this->field_0DB3 == (void *)0x0) {
     iVar5 = 0;
     piVar7 = local_30;
     local_c = (float)(int)*DAT_00806750 * _DAT_007904f8;
@@ -65,37 +69,36 @@ void __thiscall FUN_0052afe0(void *this,byte param_1,float param_2,float param_3
       piVar7 = piVar7 + 2;
     } while (iVar5 < 4);
     if (fVar2 != _DAT_0079034c) {
-      puVar6 = FUN_006e6460(PTR_00807598,(int)this + (uint)param_1 * 4 + 0xdb7,1,0x97,0x96,0,1);
+      puVar6 = FUN_006e6460(PTR_00807598,&this->field_0DB7 + param_1,1,0x97,0x96,0,1);
       iVar5 = local_30[iVar8 * 2];
-      *(undefined4 **)((int)this + 0xdb3) = puVar6;
-      *(byte *)((int)this + 0xdcc) = param_1;
-      *(undefined1 *)((int)this + 0xdc7) = 1;
-      *(undefined4 *)((int)this + 0xdc8) = 0;
-      *(undefined1 *)((int)this + 0xdcd) = 0;
+      this->field_0DB3 = puVar6;
+      this->field_0DCC = param_1;
+      this->field_0DC7 = 1;
+      this->field_0DC8 = 0;
+      this->field_0DCD = 0;
       local_8 = (float)iVar5 * local_c * (float)_DAT_007901c0;
       iVar8 = local_30[iVar8 * 2 + 1];
-      *(float *)((int)this + 0xdd6) = local_8;
-      *(float *)((int)this + 0xdce) = param_2;
+      this->field_0DD6 = local_8;
+      this->field_0DCE = param_2;
       fVar2 = (float)iVar8 * local_10 * (float)_DAT_007901c0;
-      *(float *)((int)this + 0xdda) = fVar2;
+      this->field_0DDA = fVar2;
       fVar3 = (float)_DAT_0079acd8;
-      *(float *)((int)this + 0xdd2) = param_3;
+      this->field_0DD2 = param_3;
       fVar3 = (param_2 - local_8) * fVar3 * (float)_DAT_0079acc8;
-      *(float *)((int)this + 0xdde) = fVar3;
-      *(float *)((int)this + 0xde6) = fVar3 * _DAT_0079acc0;
+      this->field_0DDE = fVar3;
+      this->field_0DE6 = fVar3 * _DAT_0079acc0;
       fVar3 = (param_3 - fVar2) * _DAT_0079acbc;
-      *(float *)((int)this + 0xde2) = fVar3;
-      *(float *)((int)this + 0xdea) = fVar3 * _DAT_0079acb8;
+      this->field_0DE2 = fVar3;
+      this->field_0DEA = fVar3 * _DAT_0079acb8;
       FUN_006e6540((int)puVar6,local_8,fVar2,-1);
-      thunk_FUN_005252c0((*(char *)((int)this + 0xdcc) != '\0') + CASE_B8);
+      thunk_FUN_005252c0((this->field_0DCC != '\0') + CASE_B8);
       return;
     }
   }
   else {
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-    FUN_006e65c0(PTR_00807598,*(undefined4 *)((int)this + (uint)param_1 * 4 + 0xdbf),
-                 (char)*(undefined2 *)(*(int *)((int)this + (uint)param_1 * 4 + 0x9c8) + 0x23),
-                 param_2,param_3,5,5,1);
+    FUN_006e65c0(PTR_00807598,(&this->field_0DBF)[param_1],
+                 (char)*(undefined2 *)((&this->field_09C8)[param_1] + 0x23),param_2,param_3,5,5,1);
     thunk_FUN_005252c0((param_1 != 0) + CASE_B6);
   }
   return;

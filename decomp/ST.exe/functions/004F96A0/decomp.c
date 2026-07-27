@@ -140,7 +140,7 @@ void __thiscall CPanelTy::PlayBrief(CPanelTy *this,int param_1)
                 bVar12 = 0;
                 bVar13 = 6;
                 pcVar6 = (char *)thunk_FUN_005260b0(*(int *)(puVar11 + 5),puVar11[9],0);
-                pcVar7 = DAT_00806790;
+                pcVar7 = g_cMf32_00806790;
 LAB_004f9a8a:
                 psVar14 = Library::Ourlib::MFIMG::mfQmtLoad(pcVar7,pcVar6,bVar13,bVar12,psVar14);
                 *ppsVar1 = psVar14;
@@ -164,7 +164,7 @@ LAB_004f9a8a:
                 bVar12 = 6;
                 pcVar6 = (char *)thunk_FUN_005260b0(0,0,0);
                 psVar14 = Library::Ourlib::MFIMG::mfQmtLoad
-                                    (DAT_00806790,pcVar6,bVar12,bVar13,psVar14);
+                                    (g_cMf32_00806790,pcVar6,bVar12,bVar13,psVar14);
                 *ppsVar1 = psVar14;
               }
               this_00->field_025F = 0;
@@ -175,8 +175,8 @@ LAB_004f9a8a:
               bVar13 = 0;
               bVar12 = 6;
               pcVar6 = (char *)thunk_FUN_005260b0(0,0,1);
-              psVar14 = Library::Ourlib::MFIMG::mfQmtLoad(DAT_00806790,pcVar6,bVar12,bVar13,psVar14)
-              ;
+              psVar14 = Library::Ourlib::MFIMG::mfQmtLoad
+                                  (g_cMf32_00806790,pcVar6,bVar12,bVar13,psVar14);
               *ppsVar1 = psVar14;
               this_00->field_0260 = CASE_5;
               this_00->field_025F = 0;

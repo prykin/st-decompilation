@@ -557,7 +557,8 @@ LAB_0066bdcc:
                   pAVar13 = thunk_FUN_004357f0((char)local_50[0]);
                 }
                 if (pAVar13 != (AiPlrClassTy *)0x0) {
-                  iVar11 = (*pAVar13->vtable_at_1c->vfunc_2C)(local_10);
+                  iVar11 = (*pAVar13->vtable_at_1c->vfunc_2C)
+                                     ((AiPlrClassTy *)&pAVar13->vtable_at_1c,local_10);
                   local_c = (char *)(uint)(iVar11 == 0);
                   local_14 = Library::DKW::LIB::FUN_006aac10(4);
                   *local_14 = (uint)local_c;
@@ -666,7 +667,8 @@ cf_common_exit_00670456:
           pAVar13 = thunk_FUN_004357f0((char)local_50[0]);
         }
         if (pAVar13 != (AiPlrClassTy *)0x0) {
-          local_c = (char *)(*pAVar13->vtable_at_1c->vfunc_1C)(local_10);
+          local_c = (char *)(*pAVar13->vtable_at_1c->vfunc_1C)
+                                      ((AiPlrClassTy *)&pAVar13->vtable_at_1c,local_10);
           local_14 = Library::DKW::LIB::FUN_006aac10(4);
           *local_14 = (uint)local_c;
           goto cf_common_exit_00670431;
@@ -739,7 +741,8 @@ LAB_0066b1fb:
               pAVar13 = thunk_FUN_004357f0((char)local_50[0]);
             }
             if (pAVar13 != (AiPlrClassTy *)0x0) {
-              local_c = (char *)(*pAVar13->vtable_at_1c->vfunc_14)();
+              local_c = (char *)(*pAVar13->vtable_at_1c->vfunc_14)
+                                          ((AiPlrClassTy *)&pAVar13->vtable_at_1c);
               local_14 = Library::DKW::LIB::FUN_006aac10(4);
               *local_14 = (uint)local_c;
               break;
@@ -2292,7 +2295,7 @@ cf_common_exit_0066DCED:
         local_c = (char *)(*this_00->vtable->slot_00)(param_1 + 0x14);
         iVar15 = (*this_00->vtable->slot_00)(param_1 + 0x19);
         if ((-1 < iVar11) || ((-1 < (int)local_8 || (-1 < (int)local_c)))) {
-          thunk_FUN_004162f0(g_fish_00811984,&local_5c,&local_56,&local_54);
+          STFishC::sub_004162F0(g_fish_00811984,&local_5c,&local_56,&local_54);
           (*this_00->vtable->slot_20)(iVar11,(int)local_5c);
           (*this_00->vtable->slot_20)(local_8,(int)local_56);
           (*this_00->vtable->slot_20)(local_c,(int)local_54);
@@ -2362,7 +2365,8 @@ cf_common_exit_0066DCED:
       local_c = (char *)(*this_00->vtable->slot_00)(param_1 + 0xf);
       iVar15 = (*this_00->vtable->slot_00)(param_1 + 0x14);
       if ((-1 < iVar11) || ((-1 < (int)local_8 || (-1 < (int)local_c)))) {
-        thunk_FUN_004162f0(g_fish_00811984,&local_60,&local_5e,(undefined2 *)((int)&local_28 + 2));
+        STFishC::sub_004162F0
+                  (g_fish_00811984,&local_60,&local_5e,(undefined2 *)((int)&local_28 + 2));
         (*this_00->vtable->slot_20)(iVar11,(int)local_60);
         (*this_00->vtable->slot_20)(local_8,(int)local_5e);
         /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */

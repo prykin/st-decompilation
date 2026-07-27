@@ -169,8 +169,8 @@ undefined4 __thiscall STGroupBoatC::DistributeTargets(STGroupBoatC *this,uint *p
           pSVar4 = (STBoatC *)
                    STAllPlayersC::GetObjPtr
                              (g_allPlayers_007FA174,this_00->field_0024,local_c,CASE_1);
-          dVar5 = (*pSVar4->vtable->slot_2C)(pSVar4);
-          if (dVar5 == 9) {
+          iVar3 = (*((STGameObjCDispatchVTable *)pSVar4->vtable)->vfunc_2C)();
+          if (iVar3 == 9) {
             GetDepotForAttack(this_00,local_c,&local_5,&local_16,&local_2a,&local_28,&local_26);
             if (local_16 == -1) {
               puVar16 = &local_20;

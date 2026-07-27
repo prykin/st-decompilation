@@ -172,7 +172,7 @@ int __fastcall FUN_0060aef0(void *param_1)
                          (int)g_worldGrid.sizeX * (int)sVar16 + (int)sVar17].objects[0];
             }
             if ((pSVar19 != (STFishC *)0x0) &&
-               (iVar12 = (*pSVar19->vtable->vfunc_F0)(), iVar12 != 0)) {
+               (iVar12 = (*pSVar19->vtable->vfunc_F0)(pSVar19), iVar12 != 0)) {
               if ((*(int *)&pSVar19->field_0x20 == 1000) &&
                  (dVar13 = (*pSVar19->vtable->slot_2C)(pSVar19),
                  *(int *)(&DAT_00791d68 + dVar13 * 4) == 1)) {

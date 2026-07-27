@@ -11,25 +11,23 @@
    incoming_edx_uses=0; incoming_stack_parameter_uses=0; direct_non_thunk_callers=0;
    incoming_ecx_receiver_callers=0; attributed_named_callers=1; owner_evidence_coverage=adequate */
 
-undefined4 * __thiscall
-SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00602E90::sub_00602E90
-          (AnonReceiver_00602E90 *this)
+undefined4 * __thiscall STDestC::sub_00602E90(STDestC *this)
 
 {
-  AnonShape_00602E90_7075769A *pAVar1;
+  STDestC *pSVar1;
   int iVar2;
   char *text;
   ushort *puVar3;
   InternalExceptionFrame local_50;
-  AnonShape_00602E90_7075769A *local_c;
+  STDestC *local_c;
   undefined4 *local_8;
 
   local_8 = (undefined4 *)0x0;
   local_50.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_50;
-  local_c = (AnonShape_00602E90_7075769A *)this;
+  local_c = this;
   iVar2 = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0);
-  pAVar1 = local_c;
+  pSVar1 = local_c;
   if (iVar2 == 0) {
     if (local_c->field_0241 == 1) {
       text = (&PTR_s_Dest4_0_007cec00)[local_c->field_0372];
@@ -40,18 +38,18 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00602E90::sub_00602E90
     puVar3 = Library::Ourlib::MFRLOAD::mfRLoad
                        (DAT_00806774,CASE_1D,text,0xffffffff,0,1,0,(undefined4 *)0x0);
     if (puVar3 != (ushort *)0x0) {
-      if (pAVar1->field_0241 == 0) {
-        local_8 = FUN_006e9000(pAVar1->field_0211,**(undefined4 **)((int)puVar3 + 0x21),0x5a,0x45,
-                               (float)pAVar1->field_037B * _DAT_007904f8 * _DAT_007904f0,
-                               (float)pAVar1->field_037F * _DAT_007904f8 * _DAT_007904f0,
-                               (float)pAVar1->field_0383 * _DAT_007904f8 * _DAT_007904f0 +
+      if (pSVar1->field_0241 == 0) {
+        local_8 = FUN_006e9000((void *)pSVar1->field_0211,**(undefined4 **)((int)puVar3 + 0x21),0x5a
+                               ,0x45,(float)pSVar1->field_037B * _DAT_007904f8 * _DAT_007904f0,
+                               (float)pSVar1->field_037F * _DAT_007904f8 * _DAT_007904f0,
+                               (float)pSVar1->field_0383 * _DAT_007904f8 * _DAT_007904f0 +
                                _DAT_007904fc,0);
       }
-      if (pAVar1->field_0241 == 1) {
-        local_8 = FUN_006e9000(pAVar1->field_0211,**(undefined4 **)((int)puVar3 + 0x21),0x78,0x56,
-                               (float)pAVar1->field_037B * _DAT_007904f8 * _DAT_007904f0,
-                               (float)pAVar1->field_037F * _DAT_007904f8 * _DAT_007904f0,
-                               (float)pAVar1->field_0383 * _DAT_007904f8 * _DAT_007904f0 +
+      if (pSVar1->field_0241 == 1) {
+        local_8 = FUN_006e9000((void *)pSVar1->field_0211,**(undefined4 **)((int)puVar3 + 0x21),0x78
+                               ,0x56,(float)pSVar1->field_037B * _DAT_007904f8 * _DAT_007904f0,
+                               (float)pSVar1->field_037F * _DAT_007904f8 * _DAT_007904f0,
+                               (float)pSVar1->field_0383 * _DAT_007904f8 * _DAT_007904f0 +
                                _DAT_007904fc,0);
       }
     }

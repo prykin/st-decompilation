@@ -27,7 +27,7 @@ undefined4 * __thiscall FUN_0040c080(void *this,uint param_1,uint *param_2)
   int local_a4;
   int local_9c;
   int local_94;
-  void *local_90;
+  STFishC *local_90;
   int local_8c;
   int local_88;
   int local_84;
@@ -102,7 +102,7 @@ undefined4 * __thiscall FUN_0040c080(void *this,uint param_1,uint *param_2)
         if (0 < (int)local_80) {
           do {
             DArrayGetElement((DArrayTy *)param_2,uVar9,&local_90);
-            thunk_FUN_004162f0(local_90,local_24,local_4c,local_78);
+            STFishC::sub_004162F0(local_90,local_24,local_4c,local_78);
             iVar7 = (int)local_24[0];
             if (iVar7 < local_74) {
               local_74 = iVar7;

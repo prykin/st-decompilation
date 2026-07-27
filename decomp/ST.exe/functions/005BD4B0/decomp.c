@@ -3,12 +3,15 @@
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\rpt_obj.cpp
-   MReportTy::OutTGlProc */
+   MReportTy::OutTGlProc
+
+   [STPrototypeApplier] Propagated parameter 1.
+   Evidence: 005BE5B0 -> 005BD4B0 @ 005BE645 */
 
 void __thiscall
 MReportTy::OutTGlProc
-          (MReportTy *this,int param_1,undefined4 param_2,undefined4 param_3,int param_4,int param_5
-          ,int param_6,int param_7,int param_8)
+          (MReportTy *this,AnonShape_GLOBAL_0080759C_9638EF10 *param_1,undefined4 param_2,
+          undefined4 param_3,int param_4,int param_5,int param_6,int param_7,int param_8)
 
 {
   code *pcVar1;
@@ -79,8 +82,8 @@ MReportTy::OutTGlProc
       wsprintfA((LPSTR)&DAT_0080f33a,"&0%s &2%s",pcVar6,pcVar5);
       ccFntTy::WrStr(*(ccFntTy **)(iVar7 + 0x83),&DAT_0080f33a,10,-1,0);
       Library::DKW::DDX::FUN_006c5000
-                (param_1,param_4,param_5,(int)local_8,0,0,0,local_8->field_0004,local_8->field_0008,
-                 iVar7 + 0xa3,0x4c);
+                ((int)param_1,param_4,param_5,(int)local_8,0,0,0,local_8->field_0004,
+                 local_8->field_0008,iVar7 + 0xa3,0x4c);
       FreeAndNull(&local_8);
       g_currentExceptionFrame = local_50.previous;
       return;

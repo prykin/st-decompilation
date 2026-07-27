@@ -36,14 +36,14 @@ undefined4 __thiscall TLOBaseTy::sub_004E2AD0(TLOBaseTy *this,int param_1,uint p
   }
   else {
     if (uVar2 == 2) {
-      (*this->vtable->vfunc_90)(4,0x2d4);
+      (*this->vtable->vfunc_90)(this,4,0x2d4);
       goto cf_common_exit_004E2B69;
     }
     if (uVar2 != 3) goto cf_common_exit_004E2B69;
     pTVar4 = this->vtable;
     uVar6 = 0x38f;
   }
-  (*pTVar4->vfunc_90)(4,uVar6);
+  (*pTVar4->vfunc_90)(this,4,uVar6);
 cf_common_exit_004E2B69:
   if (DAT_008117bc == (undefined4 *)0x0) {
     return 0;

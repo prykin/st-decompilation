@@ -922,8 +922,8 @@ cf_common_join_005305BC:
     local_734 = local_754;
     local_714 = local_754;
     local_6f4 = local_754;
-    local_528 = FUN_0070aa70(DAT_00806790,"BUT_MSLUP",0,1);
-    local_524 = Library::Ourlib::MFIMG::mfImgGetWidth(DAT_00806790,0x12,"BUT_MSLUP",1);
+    local_528 = FUN_0070aa70(g_cMf32_00806790,"BUT_MSLUP",0,1);
+    local_524 = Library::Ourlib::MFIMG::mfImgGetWidth(g_cMf32_00806790,0x12,"BUT_MSLUP",1);
     local_5ec = this_00->field_0008;
     local_3c4 = 1;
     local_3c0 = 1;
@@ -944,8 +944,8 @@ cf_common_join_005305BC:
     local_4c0 = local_4c0 + 0x51;
     local_4bc = 0x11;
     local_4b8 = 0x24;
-    local_3a8 = FUN_0070aa70(DAT_00806790,"BUT_MSLDN",0,1);
-    local_3a4 = Library::Ourlib::MFIMG::mfImgGetWidth(DAT_00806790,0x12,"BUT_MSLDN",1);
+    local_3a8 = FUN_0070aa70(g_cMf32_00806790,"BUT_MSLDN",0,1);
+    local_3a4 = Library::Ourlib::MFIMG::mfImgGetWidth(g_cMf32_00806790,0x12,"BUT_MSLDN",1);
     local_46c = this_00->field_0008;
     local_3bc = 500;
     local_3b8 = 0x32;
@@ -1548,8 +1548,9 @@ switchD_005311ec_caseD_3:
     local_10dc = 2;
     local_10d8 = 0x8165;
     local_10e0 = local_11c4;
-    local_101c = FUN_0070aa70(DAT_00806790,"BUT_MSLDN",0,1);
-    local_1018 = Library::Ourlib::MFIMG::mfImgGetWidth(DAT_00806790,0x12,"BUT_MSLDN",1);
+    local_101c = FUN_0070aa70(g_cMf32_00806790,"BUT_MSLDN",0,1);
+    local_1018 = Library::Ourlib::MFIMG::mfImgGetWidth(g_cMf32_00806790,0x12,"BUT_MSLDN",1)
+    ;
     iVar6 = this_00->field_005C;
     local_1038 = 1;
     local_1034 = 1;
@@ -1572,8 +1573,8 @@ switchD_005311ec_caseD_3:
     local_fb0 = 0x11;
     local_fac = 0x24;
     local_f58 = 0x8164;
-    local_e9c = FUN_0070aa70(DAT_00806790,"BUT_MSLUP",0,1);
-    local_e98 = Library::Ourlib::MFIMG::mfImgGetWidth(DAT_00806790,0x12,"BUT_MSLUP",1);
+    local_e9c = FUN_0070aa70(g_cMf32_00806790,"BUT_MSLUP",0,1);
+    local_e98 = Library::Ourlib::MFIMG::mfImgGetWidth(g_cMf32_00806790,0x12,"BUT_MSLUP",1);
     local_990 = 1;
     local_994 = 1;
     (*this_00->field_000C->vtable->CreateObject)

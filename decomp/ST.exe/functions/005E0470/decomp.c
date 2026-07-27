@@ -37,7 +37,7 @@ void __thiscall MTaskTy::DoneMTask(MTaskTy *this)
     }
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  DarkScreen(DAT_0080759c,10,2);
+  DarkScreen(g_anonShape_GLOBAL_0080759C_9638EF10_0080759C,10,2);
   this_00 = local_8;
   SetAccelerator(0,local_8->field_0008,2,100,2,1,0,0,0,0,0,0);
   SetAccelerator(0,this_00->field_0008,2,0x62,2,0x1c,0,0,0,0,0,0);
@@ -174,11 +174,11 @@ LAB_005e072b:
     iVar2 = iVar2 + -1;
   } while (iVar2 != 0);
   if (this_00->field_0089 != (ccFntTy *)0x0) {
-    ccFntTy::operator((uint *)this_00->field_0089);
+    ccFntTy::operator_delete((uint *)this_00->field_0089);
     this_00->field_0089 = (ccFntTy *)0x0;
   }
   if (this_00->field_008D != (ccFntTy *)0x0) {
-    ccFntTy::operator((uint *)this_00->field_008D);
+    ccFntTy::operator_delete((uint *)this_00->field_008D);
     this_00->field_008D = (ccFntTy *)0x0;
   }
   this_00->field_0081 = (ushort *)0x0;

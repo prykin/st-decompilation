@@ -28,6 +28,7 @@ import ghidra.app.script.GhidraScript;
 import ghidra.program.model.address.Address;
 import ghidra.program.model.data.DataType;
 import ghidra.program.model.data.Pointer;
+import ghidra.program.model.data.Structure;
 import ghidra.program.model.data.VoidDataType;
 import ghidra.program.model.listing.AutoParameterType;
 import ghidra.program.model.listing.Function;
@@ -453,11 +454,31 @@ public class STHiddenThisAnalyzer extends GhidraScript {
         if (function == null || function.isExternal() || function.isThunk() ||
                 isLibrary(function)) return false;
         boolean scriptOwned = hasTag(function, TAG);
+        // Method-owner recovery may supersede an earlier anonymous receiver with
+        // a concrete class.  Keep the historical tag for provenance, but never
+        // let hidden-this replace the now stronger receiver on the next run.
+        if (scriptOwned && namedThisReceiver(function)) return false;
         if (!scriptOwned && !synthetic(function.getName(true))) return false;
         String convention = function.getCallingConventionName();
         if (Set.of("__stdcall", "__cdecl", "unknown").contains(convention)) return true;
         return "__thiscall".equals(convention) &&
             (scriptOwned || untypedThisReceiver(function));
+    }
+
+    private boolean namedThisReceiver(Function function) {
+        for (Parameter parameter : function.getParameters()) {
+            if (!parameter.isAutoParameter() ||
+                    parameter.getAutoParameterType() != AutoParameterType.THIS ||
+                    !(parameter.getDataType() instanceof Pointer pointer)) continue;
+            DataType pointed = pointer.getDataType();
+            if (!(pointed instanceof Structure structure)) return false;
+            String path = structure.getPathName();
+            return !path.contains("/Recovered/HiddenThis/") &&
+                !path.contains("/Recovered/PointerShapes/") &&
+                !path.contains("/Recovered/ClassPointees/") &&
+                !structure.getName().startsWith("Anon");
+        }
+        return false;
     }
 
     private boolean untypedThisReceiver(Function function) {

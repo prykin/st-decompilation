@@ -1,4 +1,4 @@
-FUN_00552160:
+TradePanelTy::sub_00552160:
 00552160  55                        PUSH EBP
 00552161  8B EC                     MOV EBP,ESP
 00552163  53                        PUSH EBX

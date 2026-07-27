@@ -8,23 +8,23 @@
    Evidence: registry[86] at 007CA9D0 stores type 0x100EF and executable pointer 00402621;
    allocation size 280 has no unique current class-layout match */
 
-void * __cdecl FUN_005947d0(void)
+Visible * __cdecl CreateVisible(void)
 
 {
-  undefined4 *this;
+  Visible *this;
 
-  this = FUN_006b04d0(0x118);
-  if (this != (undefined4 *)0x0) {
+  this = (Visible *)FUN_006b04d0(0x118);
+  if (this != (Visible *)0x0) {
     sub_006E5FB0(this);
-    *this = 0x79c01c;
-    memset(this + 0x22, 0, 0x80); /* compiler bulk-zero initialization */
-    this[0x43] = 0;
-    this[0x45] = 0;
-    this[0x44] = 0;
-    this[0x42] = 0xffffffff;
-    this[0x21] = 1;
+    *(undefined4 *)this = 0x79c01c;
+    memset(&this->field_0x88, 0, 0x80); /* compiler bulk-zero initialization */
+    *(undefined4 *)&this->field_0x10c = 0;
+    this->field_0114 = 0;
+    this->field_0110 = 0;
+    *(undefined4 *)&this->field_0x108 = 0xffffffff;
+    *(undefined4 *)&this->field_0x84 = 1;
     return this;
   }
-  return (void *)0x0;
+  return (Visible *)0x0;
 }
 

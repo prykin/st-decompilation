@@ -12,13 +12,12 @@
    incoming_ecx_receiver_callers=0; attributed_named_callers=1; owner_evidence_coverage=adequate */
 
 ushort * __thiscall
-SubmarineTitans::Recovered::HiddenThis::AnonReceiver_006308F0::sub_00630C50
-          (AnonReceiver_006308F0 *this,undefined4 param_1,int param_2,int param_3,int param_4,
-          int param_5)
+STManRuinC::sub_00630C50
+          (STManRuinC *this,undefined4 param_1,int param_2,int param_3,int param_4,int param_5)
 
 {
-  undefined1 *puVar1;
-  AnonShape_00630C50_5716D423 *pAVar2;
+  int *piVar1;
+  STManRuinC *pSVar2;
   int iVar3;
   ushort *puVar4;
   int iVar5;
@@ -28,7 +27,7 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_006308F0::sub_00630C50
   uint uVar9;
   InternalExceptionFrame local_58;
   int local_14;
-  AnonShape_00630C50_5716D423 *local_10;
+  STManRuinC *local_10;
   ushort *local_c;
   undefined **local_8;
 
@@ -49,9 +48,9 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_006308F0::sub_00630C50
   }
   local_58.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_58;
-  local_10 = (AnonShape_00630C50_5716D423 *)this;
+  local_10 = this;
   iVar3 = Library::MSVCRT::__setjmp3(local_58.jumpBuffer,0);
-  pAVar2 = local_10;
+  pSVar2 = local_10;
   if (iVar3 != 0) {
     g_currentExceptionFrame = local_58.previous;
     return local_c;
@@ -63,24 +62,24 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_006308F0::sub_00630C50
     if (param_2 == 1) {
       local_c = (ushort *)
                 FUN_006e9000(PTR_00807598,**(undefined4 **)((int)puVar4 + 0x21),0x5a,0x45,
-                             (float)pAVar2->field_0054 * _DAT_007904f8 * _DAT_007904f0,
-                             (float)pAVar2->field_0058 * _DAT_007904f8 * _DAT_007904f0,
-                             (float)pAVar2->field_005C * _DAT_007904f8 * _DAT_007904f0 +
+                             (float)pSVar2->field_0054 * _DAT_007904f8 * _DAT_007904f0,
+                             (float)pSVar2->field_0058 * _DAT_007904f8 * _DAT_007904f0,
+                             (float)pSVar2->field_005C * _DAT_007904f8 * _DAT_007904f0 +
                              _DAT_007904fc,0);
     }
     if (param_2 == 4) {
-      local_14 = pAVar2->field_0054 + 100;
+      local_14 = pSVar2->field_0054 + 100;
       local_c = (ushort *)
                 FUN_006e9000(PTR_00807598,**(undefined4 **)((int)puVar4 + 0x21),0x78,0x56,
                              (float)local_14 * _DAT_007904f8 * _DAT_007904f0,
-                             (float)(pAVar2->field_0058 + 100) * _DAT_007904f8 * _DAT_007904f0,
-                             (float)pAVar2->field_005C * _DAT_007904f8 * _DAT_007904f0 +
+                             (float)(pSVar2->field_0058 + 100) * _DAT_007904f8 * _DAT_007904f0,
+                             (float)pSVar2->field_005C * _DAT_007904f8 * _DAT_007904f0 +
                              _DAT_0079d1a0,0);
     }
     g_currentExceptionFrame = local_58.previous;
     return local_c;
   }
-  puVar1 = &pAVar2[1].field_0x1;
+  piVar1 = &pSVar2->field_0061;
   if (param_2 == 1) {
     uVar7 = *(uint *)((int)puVar4 + 0xd);
     uVar6 = *(uint *)((int)puVar4 + 9);
@@ -93,25 +92,25 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_006308F0::sub_00630C50
     uVar9 = 100;
     uVar8 = 0x78;
   }
-  FUN_006e8660(PTR_00807598,(int *)puVar1,1,0,uVar6,uVar7,uVar8,uVar9,0);
-  FUN_006e98e0(PTR_00807598,*(uint *)puVar1,0,*(undefined4 *)puVar4,*(int *)((int)puVar4 + 0x21),1);
-  FUN_006ea270(PTR_00807598,*(uint *)puVar1,0,0);
-  FUN_006ea3e0(PTR_00807598,*(uint *)puVar1,-1);
-  FUN_006e9210(PTR_00807598,*(uint *)puVar1);
+  FUN_006e8660(PTR_00807598,piVar1,1,0,uVar6,uVar7,uVar8,uVar9,0);
+  FUN_006e98e0(PTR_00807598,*piVar1,0,*(undefined4 *)puVar4,*(int *)((int)puVar4 + 0x21),1);
+  FUN_006ea270(PTR_00807598,*piVar1,0,0);
+  FUN_006ea3e0(PTR_00807598,*piVar1,-1);
+  FUN_006e9210(PTR_00807598,*piVar1);
   if (param_2 == 1) {
-    iVar3 = pAVar2->field_0058;
-    iVar5 = pAVar2->field_0054;
+    iVar3 = pSVar2->field_0058;
+    iVar5 = pSVar2->field_0054;
   }
   else {
-    iVar3 = pAVar2->field_0058 + 100;
-    iVar5 = pAVar2->field_0054 + 100;
+    iVar3 = pSVar2->field_0058 + 100;
+    iVar5 = pSVar2->field_0054 + 100;
     local_14 = iVar5;
   }
-  FUN_006ea960(PTR_00807598,*(uint *)puVar1,(float)iVar5 * _DAT_007904f8 * _DAT_007904f0,
+  FUN_006ea960(PTR_00807598,*piVar1,(float)iVar5 * _DAT_007904f8 * _DAT_007904f0,
                (float)iVar3 * _DAT_007904f8 * _DAT_007904f0,
-               (float)pAVar2->field_005C * _DAT_007904f8 * _DAT_007904f0 + _DAT_007904fc);
+               (float)pSVar2->field_005C * _DAT_007904f8 * _DAT_007904f0 + _DAT_007904fc);
   if (param_4 != 0) {
-    FUN_006eaaa0(PTR_00807598,*(uint *)puVar1,0);
+    FUN_006eaaa0(PTR_00807598,*piVar1,0);
   }
   g_currentExceptionFrame = local_58.previous;
   return puVar4;

@@ -1,5 +1,10 @@
 
-void __thiscall FUN_004fad60(void *this,uint param_1,uint param_2)
+/* [STMethodOwnerApplier] Structural method owner recovered as CPanelTy.
+   Evidence: this_call_owners=[CPanelTy]; agreed_this_calls=1; incoming_this_accesses=6;
+   incoming_edx_uses=0; incoming_stack_parameter_uses=6; direct_non_thunk_callers=0;
+   incoming_ecx_receiver_callers=0; attributed_named_callers=1; owner_evidence_coverage=adequate */
+
+void __thiscall CPanelTy::sub_004FAD60(CPanelTy *this,uint param_1,uint param_2)
 
 {
   int iVar1;
@@ -7,19 +12,18 @@ void __thiscall FUN_004fad60(void *this,uint param_1,uint param_2)
   int iVar3;
   uint uVar4;
 
-  iVar3 = *(int *)((int)this + 0x4c);
-  iVar1 = *(int *)((int)this + 0xa4);
-  if (*(short *)((int)this + 0x23f) != 2) {
+  iVar3 = this->field_004C;
+  iVar1 = this->field_00A4;
+  if (this->field_023F != CASE_2) {
     uVar2 = param_1 & 0xffff;
     uVar4 = param_2 & 0xffff;
-    if (((((iVar3 <= (int)uVar2) && ((int)uVar2 < *(int *)((int)this + 0x78) + iVar3)) &&
-         (iVar1 <= (int)uVar4)) &&
-        (((int)uVar4 < *(int *)((int)this + 0xd0) + iVar1 && (DAT_00808784 == 0)))) &&
-       ((DAT_00808788 == 0 && ((DAT_0080878c == 0 && (DAT_00808790 == 0)))))) {
+    if (((((iVar3 <= (int)uVar2) && ((int)uVar2 < this->field_0078 + iVar3)) &&
+         (iVar1 <= (int)uVar4)) && (((int)uVar4 < this->field_00D0 + iVar1 && (DAT_00808784 == 0))))
+       && ((DAT_00808788 == 0 && ((DAT_0080878c == 0 && (DAT_00808790 == 0)))))) {
       iVar3 = FUN_006e68c0(PTR_00807598,(uVar2 - iVar3) + -5,(uVar4 - iVar1) + -7,(int *)&param_1,
                            (int *)&param_2);
       if (iVar3 != 0) {
-        *(undefined4 *)((int)this + 0x13c) = 1;
+        this->field_013C = 1;
         thunk_FUN_004ab530((uint)DAT_00807349,param_1,param_2);
       }
     }

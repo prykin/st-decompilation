@@ -62,10 +62,10 @@ FrmPanelTy::PaintBut(FrmPanelTy *this,AnonShape_005105E0_BBFE3E3B *param_1,char 
   iVar3 = 1;
   piVar5 = (int *)0x0;
   text = FUN_006f2c00(param_2,1,local_8);
-  local_c = cMf32::RecGet(DAT_00806790,1,text,piVar5,iVar3);
+  local_c = cMf32::RecGet(g_cMf32_00806790,1,text,piVar5,iVar3);
   DibPut((AnonShape_006B5B10_E0D06CF1 *)pFVar2->field_0068,local_18,local_10,'\x01',(byte *)local_c)
   ;
-  cMf32::RecMemFree(DAT_00806790,(uint *)&local_c);
+  cMf32::RecMemFree(g_cMf32_00806790,(uint *)&local_c);
   Library::DKW::DDX::FUN_006b3640
             ((int *)PTR_008075a8,pFVar2->field_0060,0xffffffff,pFVar2->field_003C,pFVar2->field_0044
             );

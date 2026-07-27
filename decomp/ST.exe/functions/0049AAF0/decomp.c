@@ -98,8 +98,8 @@ undefined4 __thiscall STGroupBoatC::GrpAttack(STGroupBoatC *this,int param_1)
                (pSVar8 = STAllPlayersC::GetObjPtr
                                    (g_allPlayers_007FA174,local_2c,CONCAT22(uStack_28,uStack_2a),
                                     (int)cStack_2b), pSVar13 = local_8, pSVar8 != (STGameObjC *)0x0)
-               ) && ((iVar6 = (*pSVar8->vtable[1].vfunc_24)(), pSVar13 = local_8, iVar6 == 1 &&
-                     (iVar6 = (*pSVar8->vtable[1].vfunc_20)((int)local_8->field_0024),
+               ) && ((iVar6 = (*pSVar8->vtable->vfunc_F8)(pSVar8), pSVar13 = local_8, iVar6 == 1 &&
+                     (iVar6 = (*pSVar8->vtable->vfunc_F4)((int)local_8->field_0024),
                      pSVar13 = local_8, iVar6 == 1)))))) {
             Library::DKW::TBL::FUN_006ae140
                       (&local_8->field_020E->flags,uVar15,(undefined4 *)&local_2c);

@@ -261,8 +261,9 @@ int __thiscall STContainerC::GetMessage(STContainerC *this,STMessage *message)
         }
         thunk_FUN_005ec9f0(0);
         if ((((this_00->field_0358 != 0) && ((short)this_00->field_0342 == 1)) &&
-            (iVar8 = FUN_006e62d0(g_playSystem_00802A38,this_00->field_0358,&local_18), iVar8 != -4)
-            ) && (this_00->field_0211 != (AnonReceiver_006EA050 *)0x0)) {
+            (iVar8 = STPlaySystemC::sub_006E62D0
+                               (g_playSystem_00802A38,this_00->field_0358,&local_18), iVar8 != -4))
+           && (this_00->field_0211 != (AnonReceiver_006EA050 *)0x0)) {
           /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
           SubmarineTitans::Recovered::HiddenThis::AnonReceiver_006EA050::sub_006EA460
                     (this_00->field_0211,this_00->field_01ED,*(int *)(local_18 + 0x1ed));

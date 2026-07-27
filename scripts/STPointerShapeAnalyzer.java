@@ -33,6 +33,7 @@ import ghidra.program.model.data.DataType;
 import ghidra.program.model.data.DataTypeComponent;
 import ghidra.program.model.data.DataTypeManager;
 import ghidra.program.model.data.Pointer;
+import ghidra.program.model.data.PointerDataType;
 import ghidra.program.model.data.Structure;
 import ghidra.program.model.data.TypeDef;
 import ghidra.program.model.data.Undefined;
@@ -988,6 +989,26 @@ public class STPointerShapeAnalyzer extends GhidraScript {
                 "target already has a named/manual structure pointer type");
 
         if (!target.typeEvidence.isEmpty()) {
+            if (generatedAnonymous && consolidateGlobalAnonymousViews(target,
+                    currentStructure)) {
+                Structure current = structureFromPointer("pointer:" + currentStructure);
+                boolean covered = current != null && coversGeneratedFields(current, target);
+                boolean refine = covered && needsGeneratedRefinement(current, target);
+                boolean apply = refine && automaticTarget(target);
+                return new TargetDecision(apply, apply, currentStructure,
+                    apply ? "refine" : "existing",
+                    "typed-call dataflow proves that generated anonymous views describe " +
+                    "the same global singleton; their non-conflicting fields were unioned" +
+                    (refine ? "" : "; current canonical shape already contains the union"));
+            }
+            if (currentStructure.isBlank() &&
+                    materializeGlobalAnonymousSuperset(target)) {
+                String path = anonymousPath(target);
+                return new TargetDecision(true, true, path, "layout",
+                    "typed-call dataflow and direct fixed-offset accesses are partial views " +
+                    "of the same untyped global singleton; a target-local non-conflicting " +
+                    "superset was materialized");
+            }
             SemanticChoice choice = semanticChoice(target);
             if (choice == null) return new TargetDecision(false, false, "", "conflict",
                 "conflicting semantic type evidence=" + target.typeEvidence);
@@ -1101,6 +1122,173 @@ public class STPointerShapeAnalyzer extends GhidraScript {
         else if (unsettledLocal(target))
             reason += "; unsettled decompiler type propagation: persistent local requires role repair";
         return new TargetDecision(apply, true, path, apply ? "layout" : "review", reason);
+    }
+
+    /**
+     * Calls frequently expose several partial anonymous views of one global
+     * singleton.  Geometry alone is not identity, but here identity is supplied
+     * by the same global value flowing to all callees.  Refine only the existing
+     * script-owned global shape, require it to be the longest view, and reject
+     * every overlapping concrete disagreement.
+     */
+    private boolean consolidateGlobalAnonymousViews(TargetEvidence target,
+            String currentPath) {
+        if (!target.kind.equals("global") || !target.scriptOwned ||
+                target.typeEvidence.size() < 2) return false;
+        Structure current = structureFromPointer("pointer:" + currentPath);
+        if (current == null || !pointerShapeOwned(current)) return false;
+
+        List<Structure> views = new ArrayList<>();
+        views.add(current);
+        for (String specification : target.typeEvidence.keySet()) {
+            Structure view = structureFromPointer(specification);
+            if (view == null || !anonymousTypePath(view.getPathName()) ||
+                    !generatedAnonymousOwned(view) ||
+                    view.getLength() > current.getLength()) return false;
+            if (!views.contains(view)) views.add(view);
+        }
+
+        Map<Long, MergedComponent> merged = new TreeMap<>();
+        for (FieldEvidence field : target.fields.values()) {
+            int width = uniqueWidth(field);
+            if (width < 1 || !mergeComponent(merged, field.offset, width,
+                    unique(field.types), "direct global access")) return false;
+        }
+        for (Structure view : views) {
+            for (DataTypeComponent component : view.getDefinedComponents()) {
+                String specification = typeSpecification(component.getDataType());
+                if (!mergeComponent(merged, component.getOffset(), component.getLength(),
+                        specification, view.getPathName())) return false;
+            }
+        }
+
+        for (MergedComponent component : merged.values()) {
+            FieldEvidence field = target.fields.computeIfAbsent(component.offset,
+                FieldEvidence::new);
+            field.widths.clear();
+            field.widths.put(component.width, 1);
+            field.types.clear();
+            if (!component.type.isBlank()) field.types.put(component.type, 1);
+            field.sites.add("global singleton view union: " +
+                String.join(" | ", component.sources));
+        }
+        target.accessCount = Math.max(target.accessCount, merged.size());
+        return !merged.isEmpty();
+    }
+
+    /**
+     * An untyped global may be passed to one or more helpers which already have
+     * script-owned anonymous receiver types while other functions access fields
+     * beyond those partial views. The global value supplies identity, so form a
+     * new global-local superset instead of choosing one view by vote or extending
+     * a helper-local type. Exact overlap is accepted only when widths and concrete
+     * types agree; partial overlap and concrete disagreement remain conflicts.
+     */
+    private boolean materializeGlobalAnonymousSuperset(TargetEvidence target) {
+        if (!target.kind.equals("global") || target.scriptOwned ||
+                !target.databaseBacked || !replaceable(target.expectedType) ||
+                target.typeEvidence.isEmpty())
+            return false;
+
+        List<Structure> views = new ArrayList<>();
+        for (String specification : target.typeEvidence.keySet()) {
+            Structure view = structureFromPointer(specification);
+            if (view == null || !anonymousTypePath(view.getPathName()) ||
+                    !generatedAnonymousOwned(view) ||
+                    view.getLength() > MAX_SHAPE_SIZE)
+                return false;
+            if (!views.contains(view)) views.add(view);
+        }
+        if (views.size() < 2 && target.fields.isEmpty()) return false;
+
+        Map<Long, MergedComponent> merged = new TreeMap<>();
+        for (FieldEvidence field : target.fields.values()) {
+            int width = uniqueWidth(field);
+            if (width < 1 || !mergeComponent(merged, field.offset, width,
+                    unique(field.types), "direct global access"))
+                return false;
+        }
+        for (Structure view : views) {
+            for (DataTypeComponent component : view.getDefinedComponents()) {
+                if (!mergeComponent(merged, component.getOffset(), component.getLength(),
+                        typeSpecification(component.getDataType()), view.getPathName()))
+                    return false;
+            }
+        }
+        if (merged.size() < 2) return false;
+
+        target.fields.clear();
+        for (MergedComponent component : merged.values()) {
+            FieldEvidence field = new FieldEvidence(component.offset);
+            field.widths.put(component.width, 1);
+            if (!component.type.isBlank()) field.types.put(component.type, 1);
+            field.sites.add("global singleton superset: " +
+                String.join(" | ", component.sources));
+            target.fields.put(component.offset, field);
+        }
+        target.accessCount = Math.max(target.accessCount, merged.size());
+        return true;
+    }
+
+    private boolean mergeComponent(Map<Long, MergedComponent> merged, long offset,
+            int width, String type, String source) {
+        if (offset < 0 || width < 1 || offset + width > MAX_SHAPE_SIZE) return false;
+        for (MergedComponent existing : merged.values()) {
+            long end = offset + width;
+            long existingEnd = existing.offset + existing.width;
+            if (offset >= existingEnd || existing.offset >= end) continue;
+            if (offset != existing.offset || width != existing.width) return false;
+            String selected = compatibleComponentType(existing.type, type);
+            if (selected == null) return false;
+            existing.type = selected;
+            existing.sources.add(source);
+            return true;
+        }
+        MergedComponent component = new MergedComponent(offset, width, type);
+        component.sources.add(source);
+        merged.put(offset, component);
+        return true;
+    }
+
+    private String compatibleComponentType(String left, String right) {
+        if (left == null || left.isBlank()) return right == null ? "" : right;
+        if (right == null || right.isBlank() || left.equals(right)) return left;
+        DataType leftType = resolveSpecification(left);
+        DataType rightType = resolveSpecification(right);
+        if (leftType == null || rightType == null) return null;
+        if (Undefined.isUndefined(leftType)) return right;
+        if (Undefined.isUndefined(rightType)) return left;
+        return leftType.isEquivalent(rightType) ? left : null;
+    }
+
+    private DataType resolveSpecification(String specification) {
+        if (specification == null || specification.isBlank()) return null;
+        if (specification.startsWith("pointer:")) {
+            DataType pointed =
+                dataTypes.getDataType(specification.substring("pointer:".length()));
+            return pointed == null ? null : new PointerDataType(pointed,
+                currentProgram.getDefaultPointerSize(), dataTypes);
+        }
+        return dataTypes.getDataType(specification);
+    }
+
+    private boolean pointerShapeOwned(Structure structure) {
+        String description = structure.getDescription();
+        return structure.getPathName().startsWith(ANON_ROOT) && description != null &&
+            description.contains(APPLIER_MARKER) &&
+            description.contains("generated_layout_sha256=");
+    }
+
+    private boolean generatedAnonymousOwned(Structure structure) {
+        String description = structure.getDescription();
+        if (description == null) return false;
+        String path = structure.getPathName();
+        return pointerShapeOwned(structure) ||
+            path.contains("/Recovered/ClassPointees/") &&
+                description.contains("[STClassLayoutApplier]") &&
+                description.contains("generated_layout_sha256=") ||
+            path.contains("/Recovered/HiddenThis/") &&
+                description.contains("[STHiddenThisApplier generated]");
     }
 
     private boolean automaticTarget(TargetEvidence target) {
@@ -1757,6 +1945,17 @@ public class STPointerShapeAnalyzer extends GhidraScript {
         final Map<String, Integer> types = new TreeMap<>();
         final Set<String> sites = new TreeSet<>();
         FieldEvidence(long offset) { this.offset = offset; }
+    }
+    private static class MergedComponent {
+        final long offset;
+        final int width;
+        String type;
+        final Set<String> sources = new TreeSet<>();
+        MergedComponent(long offset, int width, String type) {
+            this.offset = offset;
+            this.width = width;
+            this.type = type == null ? "" : type;
+        }
     }
     private static class TargetDecision {
         final boolean apply, anonymous;

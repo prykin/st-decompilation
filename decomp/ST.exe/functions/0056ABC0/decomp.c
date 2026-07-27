@@ -18,7 +18,7 @@ void __thiscall FUN_0056abc0(void *this,char *param_1)
         pcVar6 = (char *)((int)this + 0x11c9);
         do {
           if ((*pcVar6 != -1) && (bVar4 != *(byte *)((int)this + 0x112d))) {
-            thunk_FUN_0055b7f0(g_visibleClass_00802A88,0,puVar5);
+            VisibleClassTy::sub_0055B7F0(g_visibleClass_00802A88,0,puVar5);
           }
           bVar4 = bVar4 + 1;
           puVar5 = puVar5 + 1;
@@ -67,7 +67,7 @@ LAB_0056acb1:
           bVar4 = DAT_0080874d;
         }
         if (!bVar7) {
-          thunk_FUN_0055b7f0(g_visibleClass_00802A88,1,puVar5);
+          VisibleClassTy::sub_0055B7F0(g_visibleClass_00802A88,1,puVar5);
           bVar4 = DAT_0080874d;
         }
       }

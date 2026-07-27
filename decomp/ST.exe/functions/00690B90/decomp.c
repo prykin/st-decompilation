@@ -94,8 +94,8 @@ int __thiscall AiTactClassTy::GetMessage(AiTactClassTy *this,STMessage *message)
           }
           local_8 = 0;
           if (((*piVar8 == 0) ||
-              (iVar4 = FUN_006e62d0(g_playSystem_00802A38,*piVar8,&local_8), iVar4 != 0)) ||
-             (local_8 == 0)) {
+              (iVar4 = STPlaySystemC::sub_006E62D0(g_playSystem_00802A38,*piVar8,&local_8),
+              iVar4 != 0)) || (local_8 == 0)) {
             piVar8[1] = 0;
             *piVar8 = 0;
           }

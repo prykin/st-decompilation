@@ -87,7 +87,7 @@ void __thiscall STJellyGunC::LifeGun(STJellyGunC *this,int *param_1)
     local_1c = (uint)this->field_004B;
     local_28 = (int)this->field_0049;
     sVar4 = this->field_0047;
-    local_2c = (*this->vtable->vfunc_24)();
+    local_2c = (*this->vtable->vfunc_24)(this);
     iVar10 = (int)this->field_0047;
     /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
     if ((((((sVar4 == iVar10) && (local_28 == this->field_0049)) &&
@@ -122,8 +122,8 @@ LAB_005829e6:
                                  (g_allPlayers_007FA174,*(char *)&this->field_0241,
                                   CONCAT22((short)((uint)iVar10 >> 0x10),
                                            *(undefined2 *)&this->field_0x245),CASE_1),
-            pSVar13 == (STGameObjC *)0x0 || (iVar10 = (*pSVar13->vtable[1].vfunc_24)(), iVar10 == 0)
-            ))) {
+            pSVar13 == (STGameObjC *)0x0 ||
+            (iVar10 = (*pSVar13->vtable->vfunc_F8)(pSVar13), iVar10 == 0)))) {
           this->field_023D = 0;
         }
 LAB_005829f4:
@@ -290,11 +290,11 @@ LAB_00582958:
                                (g_allPlayers_007FA174,*(char *)&this->field_0241,
                                 CONCAT22(extraout_var_03,*(undefined2 *)&this->field_0x245),CASE_1),
           pSVar13 != (STGameObjC *)0x0)))) {
-        (*pSVar13->vtable[1].vfunc_0C)
+        (*pSVar13->vtable->vfunc_E0)
                   (*(undefined4 *)&this->field_0x252,&local_14,&local_10,&local_c,&local_18);
         sub_00416240(this,(short)local_14,(short)local_10,(short)local_c);
       }
-      (*this->vtable->vfunc_D8)();
+      (*this->vtable->vfunc_D8)(this);
       return;
     }
   case CASE_4:
@@ -309,8 +309,8 @@ LAB_00582958:
          ((pSVar13 = STAllPlayersC::GetObjPtr
                                (g_allPlayers_007FA174,(char)this->field_0241,
                                 CONCAT22(extraout_var_02,*(undefined2 *)&this->field_0x245),CASE_1),
-          pSVar13 == (STGameObjC *)0x0 || (iVar12 = (*pSVar13->vtable[1].vfunc_24)(), iVar12 == 0)))
-         ) {
+          pSVar13 == (STGameObjC *)0x0 ||
+          (iVar12 = (*pSVar13->vtable->vfunc_F8)(pSVar13), iVar12 == 0)))) {
         this->field_023D = 0;
         goto switchD_00582651_default;
       }
@@ -319,7 +319,7 @@ LAB_005827b7:
         if (iVar10 == 0) goto switchD_00582651_default;
         break;
       }
-      iVar12 = (*pSVar13->vtable[1].vfunc_08)
+      iVar12 = (*pSVar13->vtable->vfunc_DC)
                          (this->field_0041,this->field_0043,this->field_0045,local_14,local_10,
                           local_c);
       *(int *)&this->field_0x252 = iVar12;
@@ -335,7 +335,7 @@ LAB_005827b7:
       thunk_FUN_004ad5e0((int)puVar1);
       iVar10 = sub_00584380(this);
       if (iVar10 != 0) goto LAB_00582958;
-      (*pSVar13->vtable[1].vfunc_0C)
+      (*pSVar13->vtable->vfunc_E0)
                 (*(undefined4 *)&this->field_0x252,&local_14,&local_10,&local_c,&local_18);
       if (local_18 == 0) {
         iVar10 = pSVar13->field_01ED;
@@ -403,7 +403,7 @@ cf_common_exit_00582F72:
   STT3DSprC::SetCurShad((STT3DSprC *)puVar1,'\x0e',*(uint *)&this->field_0x247);
   STT3DSprC::ShowCurFase((STT3DSprC *)puVar1,'\x0e');
   STT3DSprC::ShowCurFase((STT3DSprC *)puVar1,'\f');
-  (*this->vtable->vfunc_D8)();
+  (*this->vtable->vfunc_D8)(this);
   return;
 }
 

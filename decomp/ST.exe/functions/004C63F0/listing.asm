@@ -1,4 +1,4 @@
-FUN_004c63f0:
+TLOBldMark::sub_004C63F0:
 004C63F0  56                        PUSH ESI
 004C63F1  8B F1                     MOV ESI,ECX
 004C63F3  6A 00                     PUSH 0x0

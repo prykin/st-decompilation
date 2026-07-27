@@ -81,7 +81,7 @@ LAB_006a2f2f:
                SUB84((double)((float)(int)param_1[1] * _DAT_007904f4),0),
                (int)((ulonglong)(double)((float)(int)param_1[1] * _DAT_007904f4) >> 0x20));
   FUN_006ddbe0((AnonShape_GLOBAL_00807598_0C6808FB *)local_14);
-  FUN_006ddd50((AnonShape_006DDD50_309FA381 *)local_14);
+  FUN_006ddd50((AnonShape_GLOBAL_0080760C_46D7AF7A *)local_14);
   local_8 = (short *)Library::DKW::LIB::FUN_006aac10(0x4b79);
   iVar14 = 0;
   iVar10 = 0;

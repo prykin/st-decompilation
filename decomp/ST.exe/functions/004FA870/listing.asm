@@ -1,4 +1,4 @@
-FUN_004fa870:
+CPanelTy::sub_004FA870:
 004FA870  55                        PUSH EBP
 004FA871  8B EC                     MOV EBP,ESP
 004FA873  56                        PUSH ESI

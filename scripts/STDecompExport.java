@@ -120,6 +120,11 @@ public class STDecompExport extends GhidraScript {
     private static final Pattern PACKED_PIECE = Pattern.compile(
         "(?:\\._[0-9]+_[0-9]+_|\\.\\*[0-9]+_[0-9]+\\*|" +
         "(?:->|\\.)packed\\b|&\\([^)]*packed)");
+    private static final Pattern TAGGED_24_COMPOSE = Pattern.compile(
+        "CONCAT22\\s*\\(\\s*CONCAT11\\s*\\(\\s*([^,]+?)\\s*,\\s*" +
+        "\\(char\\)\\s*\\(\\s*([A-Za-z_$][A-Za-z0-9_$]*" +
+        "(?:(?:->|\\.)[A-Za-z_$][A-Za-z0-9_$]*)+)\\s*>>\\s*" +
+        "(?:0x10|16)\\s*\\)\\s*\\)\\s*,\\s*\\(short\\)\\s*\\2\\s*\\)");
     private static final Pattern DARRAY_ELEMENT_ADDRESS = Pattern.compile(
         "\\b([A-Za-z_][A-Za-z0-9_]*)->elementSize\\s*\\*\\s*([^+;]+?)\\s*\\+\\s*" +
         "(?:\\(int\\)\\s*)?\\1->data\\b");
@@ -1534,12 +1539,23 @@ public class STDecompExport extends GhidraScript {
                     "expected g_playerRuntime[player].field[index...] after base/stride proof";
             case "raw_indirect_call" ->
                 "expected typed vtable/callback call with explicit __thiscall receiver";
-            case "packed_or_unaligned_piece" ->
-                "expected named packed member, bit extract/compose, or unaligned load";
+            case "packed_or_unaligned_piece" -> packedInlineTransform(line);
             case "raw_pointer_offset" ->
                 "candidate structure field after proof; otherwise retain buffer arithmetic";
             default -> intendedTransform(kind);
         };
+    }
+
+    private String packedInlineTransform(String line) {
+        Matcher tagged = TAGGED_24_COMPOSE.matcher(line);
+        if (tagged.find()) {
+            String tag = oneLine(tagged.group(1));
+            String value = tagged.group(2);
+            return "expected STPackTagged24(" + tag + ", " + value +
+                ") == (((uint32_t)(" + value + ") & 0x00ffffffu) | " +
+                "((uint32_t)(" + tag + ") << 24))";
+        }
+        return "expected named packed member, bit extract/compose, or unaligned load";
     }
 
     private String darrayInlineTransform(String line) {
@@ -1691,8 +1707,12 @@ public class STDecompExport extends GhidraScript {
             "#ifndef ST_PSEUDOCODE_RUNTIME_H\n" +
             "#define ST_PSEUDOCODE_RUNTIME_H\n\n" +
             "/* Standalone corpus code has no debugger continuation path. */\n" +
+            "#include <stdint.h>\n" +
             "#include <stdlib.h>\n" +
             "#include <string.h>\n" +
+            "static inline uint32_t STPackTagged24(uint32_t tag, uint32_t value) {\n" +
+            "    return (value & 0x00ffffffu) | ((tag & 0xffu) << 24);\n" +
+            "}\n" +
             "#if defined(_MSC_VER)\n" +
             "__declspec(noreturn) static __inline void STDebugBreak(void) { abort(); }\n" +
             "#else\n" +

@@ -13,7 +13,7 @@ int __thiscall STBoatC::sub_00460360(STBoatC *this)
 
   /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
   iVar1 = (*this->vtable->StopMove)(this,unaff_EDI);
-  iVar2 = (*this->vtable->vfunc_D8)();
+  iVar2 = (*this->vtable->vfunc_D8)(this);
   if ((iVar2 == 0) && (iVar1 != -1)) {
     if (iVar1 != 0) {
       return -(uint)(iVar1 != 1);

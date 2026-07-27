@@ -159,7 +159,7 @@ LAB_00510902:
     default:
       goto switchD_00510930_default;
     }
-    thunk_FUN_0054b630(g_cursorClass_00802A30,0x4e,uVar9);
+    CursorClassTy::sub_0054B630(g_cursorClass_00802A30,0x4e,uVar9);
 /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
 switchD_00510930_default:
     (*(code *)this_00->field_0000->field_001C)(0);

@@ -119,8 +119,9 @@ int __thiscall STExplosion::sub_00604350(STExplosion *this)
                    ((((local_18 = g_centeredOffsets5[iVar1] + local_18, local_18 < 0 ||
                       (pVVar4->field_0034 <= local_18)) || (pVVar4->field_004C == (byte *)0x0)) ||
                     ((pVVar4->field_004C[local_1c + local_18 * pVVar4->field_0030] != 0 ||
-                     (iVar5 = thunk_FUN_005f1d80(g_visibleClass_00802A88,local_10,iVar5,local_8),
-                     iVar5 == 1)))))))))))))) {
+                     (iVar5 = VisibleClassTy::sub_005F1D80
+                                        (g_visibleClass_00802A88,local_10,iVar5,local_8), iVar5 == 1
+                     )))))))))))))) {
         return 1;
       }
     }

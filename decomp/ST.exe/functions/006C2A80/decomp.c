@@ -1,8 +1,11 @@
 
 /* [STPrototypeApplier] Propagated parameter 0.
+   Evidence: 0056ADC0 -> 006C2A80 @ 0056B28E
+
+   [STPrototypeApplier] Propagated parameter 1.
    Evidence: 0056ADC0 -> 006C2A80 @ 0056B28E */
 
-undefined4 FUN_006c2a80(int *param_1,undefined4 param_2)
+undefined4 FUN_006c2a80(int *param_1,AnonShape_GLOBAL_0080759C_9638EF10 *param_2)
 
 {
   undefined4 *puVar1;

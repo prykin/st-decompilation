@@ -271,7 +271,7 @@ LAB_00587844:
         (local_44->field_0049 == local_38)) && (local_44->field_004B == local_3c)) {
       uVar13 = (undefined2)((uint)local_3c >> 0x10);
       /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-      iVar12 = (*local_44->vtable[1].vfunc_08)
+      iVar12 = (*local_44->vtable->vfunc_DC)
                          (local_48,local_4c,local_40,
                           CONCAT22(uVar13,*(undefined2 *)((int)param_1 + 0x24d)),
                           CONCAT22(uVar13,*(undefined2 *)((int)param_1 + 0x24f)),
@@ -580,7 +580,7 @@ LAB_005882a0:
       iVar7 = thunk_FUN_00589740((AnonShape_00589740_397F9B27 *)param_1);
       pSVar10 = local_44;
       if (iVar7 != 0) goto LAB_00587761;
-      (*local_44->vtable[1].vfunc_0C)
+      (*local_44->vtable->vfunc_E0)
                 (param_1[0x9e],(int)param_1 + 0x41,(int)param_1 + 0x43,(int)param_1 + 0x45,&local_24
                 );
       if (local_24 == 0) {
@@ -1059,7 +1059,7 @@ LAB_00587761:
                             (g_allPlayers_007FA174,(char)*(int *)((int)param_1 + 0x26f),
                              CONCAT22(extraout_var_00,*(undefined2 *)((int)param_1 + 0x273)),CASE_1)
        , pSVar10 != (STGameObjC *)0x0)) {
-      (*pSVar10->vtable[1].vfunc_0C)(param_1[0x9e],local_28,local_2c,local_30,&local_24);
+      (*pSVar10->vtable->vfunc_E0)(param_1[0x9e],local_28,local_2c,local_30,&local_24);
       sub_00416240(param_1,local_28[0],local_2c[0],local_30[0]);
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
       (**(code **)(*param_1 + 0xd8))();

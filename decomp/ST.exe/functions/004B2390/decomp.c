@@ -31,8 +31,9 @@ FUN_004b2390(uint param_1,int param_2,int param_3,undefined4 param_4,int *param_
              [(int)g_pathingGrid.sizeX * (int)sVar1 + (int)g_pathingGrid.planeStride * (int)sVar4 +
               (int)sVar3] == 0 &&
             ((local_8 = 1, param_6 != 0 && (g_visibleClass_00802A88 != (VisibleClassTy *)0x0)))) &&
-           (iVar2 = thunk_FUN_0055b1c0(g_visibleClass_00802A88,param_2,param_3,param_4,param_1),
-           iVar2 != 0)))))) {
+           (iVar2 = VisibleClassTy::sub_0055B1C0
+                              (g_visibleClass_00802A88,param_2,param_3,param_4,param_1), iVar2 != 0)
+           ))))) {
         local_8 = 0;
         *param_5 = 1;
       }

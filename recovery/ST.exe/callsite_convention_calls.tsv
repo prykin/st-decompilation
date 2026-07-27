@@ -374,7 +374,7 @@ target_address	target_function	callable_entry	callable_function	via_thunk	call_a
 0042B620	STAllPlayersC::GetObjPtr	004028BA	STAllPlayersC::GetObjPtr	1	0068F415	0068F360	AiTactClassTy::GiveObjByFltType	CALL 0x004028ba	no_ecx_evidence		3	0	0	control_flow_boundary
 0042B620	STAllPlayersC::GetObjPtr	004028BA	STAllPlayersC::GetObjPtr	1	0068F6E1	0068F660	AiTactClassTy::GiveObjByGrpNum	CALL 0x004028ba	no_ecx_evidence		3	0	0	control_flow_boundary
 0042B620	STAllPlayersC::GetObjPtr	004028BA	STAllPlayersC::GetObjPtr	1	006907BF	00690650	AiTactClassTy::HelpOrganize	CALL 0x004028ba	no_ecx_evidence		3	0	0	control_flow_boundary
-0042D980	STAllPlayersC::GetActiveCenter	0040512D	STAllPlayersC::GetActiveCenter	1	004FAF5B	004FAE90	FUN_004fae90	CALL 0x0040512d	pointer_setup	004FAF4D: MOV ECX,dword ptr [0x007fa174]	3	0	0	control_flow_boundary
+0042D980	STAllPlayersC::GetActiveCenter	0040512D	STAllPlayersC::GetActiveCenter	1	004FAF5B	004FAE90	CPanelTy::sub_004FAE90	CALL 0x0040512d	pointer_setup	004FAF4D: MOV ECX,dword ptr [0x007fa174]	3	0	0	control_flow_boundary
 0042EFD0	STAllPlayersC::RegisterGroup	004059D9	STAllPlayersC::RegisterGroup	1	00423F8F	00423EC0	STGroupC::GetMessage	CALL 0x004059d9	pointer_setup	00423F89: MOV ECX,dword ptr [0x007fa174]	3	0	0	previous_call
 0042EFD0	STAllPlayersC::RegisterGroup	004059D9	STAllPlayersC::RegisterGroup	1	0042400B	00423EC0	STGroupC::GetMessage	CALL 0x004059d9	pointer_setup	00424004: MOV ECX,dword ptr [0x007fa174]	3	0	0	control_flow_boundary
 0042F140	STAllPlayersC::UnRegisterGroup	004019AB	STAllPlayersC::UnRegisterGroup	1	00423F36	00423EC0	STGroupC::GetMessage	CALL 0x004019ab	pointer_setup	00423F2F: MOV ECX,dword ptr [0x007fa174]	3	0	0	previous_call
@@ -388,8 +388,8 @@ target_address	target_function	callable_entry	callable_function	via_thunk	call_a
 0043E780	STAllPlayersC::GetTOBJList	00401415	STAllPlayersC::GetTOBJList	1	00442747	00442300	STAllPlayersC::_AddMDPairs	CALL 0x00401415	pointer_setup	00442743: MOV ECX,EBX	4	0	0	control_flow_boundary
 0043E780	STAllPlayersC::GetTOBJList	00401415	STAllPlayersC::GetTOBJList	1	0049C758	0049C210	STGroupBoatC::GrpLoadRC	CALL 0x00401415	pointer_setup	0049C752: MOV ECX,dword ptr [0x007fa174]	2	0	0	control_flow_boundary
 0043E780	STAllPlayersC::GetTOBJList	00401415	STAllPlayersC::GetTOBJList	1	0049D8D9	0049D750	STGroupBoatC::GrpRepare	CALL 0x00401415	pointer_setup	0049D8CD: MOV ECX,dword ptr [0x007fa174]	4	0	0	control_flow_boundary
-0043E780	STAllPlayersC::GetTOBJList	00401415	STAllPlayersC::GetTOBJList	1	0065FACD	0065FA60	SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0065FA60::sub_0065FA60	CALL 0x00401415	no_ecx_evidence		4	0	0	control_flow_boundary
-0043E780	STAllPlayersC::GetTOBJList	00401415	STAllPlayersC::GetTOBJList	1	0065FB1A	0065FA60	SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0065FA60::sub_0065FA60	CALL 0x00401415	no_ecx_evidence		4	0	0	control_flow_boundary
+0043E780	STAllPlayersC::GetTOBJList	00401415	STAllPlayersC::GetTOBJList	1	0065FACD	0065FA60	AiFltClassTy::sub_0065FA60	CALL 0x00401415	no_ecx_evidence		4	0	0	control_flow_boundary
+0043E780	STAllPlayersC::GetTOBJList	00401415	STAllPlayersC::GetTOBJList	1	0065FB1A	0065FA60	AiFltClassTy::sub_0065FA60	CALL 0x00401415	no_ecx_evidence		4	0	0	control_flow_boundary
 00446910	STAllPlayersC::DeletePGPairs	00402095	STAllPlayersC::DeletePGPairs	1	00446402	004461B0	STAllPlayersC::_DeleteGuardBoat	CALL 0x00402095	pointer_setup	004463FF: MOV ECX,dword ptr [EBP + -0x18]	1	0	0	control_flow_boundary
 00446910	STAllPlayersC::DeletePGPairs	00402095	STAllPlayersC::DeletePGPairs	1	00446670	00446520	STAllPlayersC::DeleteGuardBoat	CALL 0x00402095	pointer_setup	0044666D: MOV ECX,dword ptr [EBP + -0x10]	1	0	0	control_flow_boundary
 00446910	STAllPlayersC::DeletePGPairs	00402095	STAllPlayersC::DeletePGPairs	1	004467A3	00446520	STAllPlayersC::DeleteGuardBoat	CALL 0x00402095	pointer_setup	004467A0: MOV ECX,dword ptr [EBP + -0x10]	1	0	0	control_flow_boundary
@@ -631,30 +631,6 @@ target_address	target_function	callable_entry	callable_function	via_thunk	call_a
 0064DDA0	AiEventClassTy::_CreateDest	0040341D	AiEventClassTy::_CreateDest	1	00655F3F	00652810	AiEventClassTy::GetMessage	CALL 0x0040341d	pointer_setup	00655F3D: MOV ECX,ESI	8	0	0	control_flow_boundary
 0064DFA0	AiEventClassTy::_CreateMine	0040434A	AiEventClassTy::_CreateMine	1	00656260	00652810	AiEventClassTy::GetMessage	CALL 0x0040434a	pointer_setup	0065625D: MOV ECX,ESI	9	0	0	control_flow_boundary
 006A0960	CGenerate::_saveObj	00405277	CGenerate::_saveObj	1	006A0858	006A0740	CGenerate::SaveMap	CALL 0x00405277	pointer_setup	006A0855: MOV ECX,EBX	1	0	0	control_flow_boundary
-0070CEB0	ccFntTy::operator	0070CEB0	ccFntTy::operator	0	004EEAEE	004EEA40	BldBoatPanelTy::InitBldBoatPanel	CALL 0x0070ceb0	live_prior_ecx	004EEAE8: PUSH ECX	4	0	16	control_flow_boundary
-0070CEB0	ccFntTy::operator	0070CEB0	ccFntTy::operator	0	004F57E4	004F5690	CPanelTy::InitCPanel	CALL 0x0070ceb0	no_ecx_evidence		4	0	0	previous_call
-0070CEB0	ccFntTy::operator	0070CEB0	ccFntTy::operator	0	004F5807	004F5690	CPanelTy::InitCPanel	CALL 0x0070ceb0	live_prior_ecx	004F5801: PUSH ECX	4	0	0	previous_call
-0070CEB0	ccFntTy::operator	0070CEB0	ccFntTy::operator	0	004F582A	004F5690	CPanelTy::InitCPanel	CALL 0x0070ceb0	no_ecx_evidence		4	0	0	previous_call
-0070CEB0	ccFntTy::operator	0070CEB0	ccFntTy::operator	0	004F584C	004F5690	CPanelTy::InitCPanel	CALL 0x0070ceb0	no_ecx_evidence		4	0	76	previous_call
-0070CEB0	ccFntTy::operator	0070CEB0	ccFntTy::operator	0	004F5872	004F5690	CPanelTy::InitCPanel	CALL 0x0070ceb0	live_prior_ecx	004F586C: PUSH ECX	4	0	0	previous_call
-0070CEB0	ccFntTy::operator	0070CEB0	ccFntTy::operator	0	0051116F	00510E30	HelpPanelTy::InitHelpPanel	CALL 0x0070ceb0	live_prior_ecx	00511169: PUSH ECX	4	0	32	previous_call
-0070CEB0	ccFntTy::operator	0070CEB0	ccFntTy::operator	0	0052006D	0051FF50	InfocPanelTy::InitInfocPanel	CALL 0x0070ceb0	no_ecx_evidence		4	0	0	previous_call
-0070CEB0	ccFntTy::operator	0070CEB0	ccFntTy::operator	0	0052C06D	0052BF00	MoneyTy::GetMessage	CALL 0x0070ceb0	live_prior_ecx	0052C067: PUSH ECX	4	0	0	control_flow_boundary
-0070CEB0	ccFntTy::operator	0070CEB0	ccFntTy::operator	0	0052C092	0052BF00	MoneyTy::GetMessage	CALL 0x0070ceb0	no_ecx_evidence		4	0	32	previous_call
-0070CEB0	ccFntTy::operator	0070CEB0	ccFntTy::operator	0	00550E6D	00550DB0	TradePanelTy::InitTradePanel	CALL 0x0070ceb0	live_prior_ecx	00550E67: PUSH ECX	4	0	0	previous_call
-0070CEB0	ccFntTy::operator	0070CEB0	ccFntTy::operator	0	005960A8	00595E40	FSGSTy::InitFSGS	CALL 0x0070ceb0	no_ecx_evidence		4	0	0	previous_call
-0070CEB0	ccFntTy::operator	0070CEB0	ccFntTy::operator	0	005960CA	00595E40	FSGSTy::InitFSGS	CALL 0x0070ceb0	no_ecx_evidence		4	0	0	previous_call
-0070CEB0	ccFntTy::operator	0070CEB0	ccFntTy::operator	0	005BD968	005BD7A0	MReportTy::InitMReport	CALL 0x0070ceb0	no_ecx_evidence		4	0	40	previous_call
-0070DF00	ccFntTy::operator	0070DF00	ccFntTy::operator	0	0051112C	00510E30	HelpPanelTy::InitHelpPanel	CALL 0x0070df00	live_prior_ecx	00511126: PUSH ECX	2	0	0	previous_call
-0070DF00	ccFntTy::operator	0070DF00	ccFntTy::operator	0	0051114C	00510E30	HelpPanelTy::InitHelpPanel	CALL 0x0070df00	no_ecx_evidence		2	0	0	previous_call
-0070DF00	ccFntTy::operator	0070DF00	ccFntTy::operator	0	0051FBFE	0051FBA0	HelpStringTy::GetMessage	CALL 0x0070df00	live_prior_ecx	0051FBF5: MOV EDX,dword ptr [ECX + 0x30]	2	0	0	control_flow_boundary
-0070DF00	ccFntTy::operator	0070DF00	ccFntTy::operator	0	00521A2A	005219E0	IntercomPanelTy::InitIntercomPanel	CALL 0x0070df00	live_prior_ecx	00521A24: PUSH ECX	2	0	8	control_flow_boundary
-0070DF00	ccFntTy::operator	0070DF00	ccFntTy::operator	0	0052E62C	0052E5E0	OptPanelTy::InitOptPanel	CALL 0x0070df00	live_prior_ecx	0052E626: PUSH ECX	2	0	0	control_flow_boundary
-0070DF00	ccFntTy::operator	0070DF00	ccFntTy::operator	0	0052E64C	0052E5E0	OptPanelTy::InitOptPanel	CALL 0x0070df00	no_ecx_evidence		2	0	16	previous_call
-0070DF00	ccFntTy::operator	0070DF00	ccFntTy::operator	0	005392E9	00539280	PausePanelTy::InitPausePanel	CALL 0x0070df00	live_prior_ecx	005392D4: MOV dword ptr [ESI + 0x174],ECX	2	0	8	control_flow_boundary
-0070DF00	ccFntTy::operator	0070DF00	ccFntTy::operator	0	00539BF8	00539B90	PlayPanelTy::InitPlayPanel	CALL 0x0070df00	live_prior_ecx	00539BF2: PUSH ECX	2	0	0	control_flow_boundary
-0070DF00	ccFntTy::operator	0070DF00	ccFntTy::operator	0	0053E469	0053E3F0	SpecPanelTy::InitPanel	CALL 0x0070df00	no_ecx_evidence		2	0	0	previous_call
-0070DF00	ccFntTy::operator	0070DF00	ccFntTy::operator	0	0053EF64	0053EF20	ProdPanelTy::InitProdPanel	CALL 0x0070df00	live_prior_ecx	0053EF5E: PUSH ECX	2	0	8	control_flow_boundary
 00712F80	ccFntTy::_TxtToSarr	00712F80	ccFntTy::_TxtToSarr	0	0052D404	0052D370	PopUpTy::AddStr	CALL 0x00712f80	pointer_setup	0052D3FA: MOV ECX,dword ptr [ESI + 0x94]	1	0	0	previous_call
 00712F80	ccFntTy::_TxtToSarr	00712F80	ccFntTy::_TxtToSarr	0	005A3CA7	005A3AB0	FSGSTy::SetInfo	CALL 0x00712f80	pointer_setup	005A3CA0: MOV ECX,dword ptr [ESI + 0x1a73]	1	0	0	previous_call
 00712F80	ccFntTy::_TxtToSarr	00712F80	ccFntTy::_TxtToSarr	0	005E7CB0	005E7C00	WaitTy::AddStr	CALL 0x00712f80	pointer_setup	005E7CAD: MOV ECX,dword ptr [EAX + 0x30]	1	0	0	previous_call

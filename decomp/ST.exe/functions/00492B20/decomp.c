@@ -26,7 +26,7 @@ undefined4 __fastcall FUN_00492b20(AnonShape_00492B20_AFE20A9A *param_1)
                    (g_allPlayers_007FA174,param_1->field_05FC,
                     CONCAT22((short)((uint)in_EAX >> 0x10),param_1->field_05FD),CASE_1);
   if ((((((this != (STGameObjC *)0x0) && (this->field_0018 == param_1->field_05FF)) &&
-        (iVar1 = (*this->vtable[1].vfunc_34)(param_1->field_0024), iVar1 != 0)) &&
+        (iVar1 = (*this->vtable->vfunc_108)(param_1->field_0024), iVar1 != 0)) &&
        ((STFishC::sub_004162B0((STFishC *)this,&local_8,&local_6,local_c), -1 < local_8 &&
         (local_8 < g_pathingGrid.sizeX)))) && (-1 < local_6)) &&
      (((local_6 < g_pathingGrid.sizeY && (-1 < local_c[0])) &&

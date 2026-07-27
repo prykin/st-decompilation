@@ -156,8 +156,9 @@ joined_r0x004c231f:
          ((-1 < param_4 &&
           ((param_4 < g_worldGrid.sizeY && (g_visibleClass_00802A88 != (VisibleClassTy *)0x0))))))
         && (0x27 < *(int *)&local_8[2].field_0x3c)) &&
-       (iVar5 = thunk_FUN_0055ad00(g_visibleClass_00802A88,iVar5,param_4,2,
-                                   *(uint *)&local_8->field_0x24,7), iVar5 == 0)) {
+       (iVar5 = VisibleClassTy::sub_0055AD00
+                          (g_visibleClass_00802A88,iVar5,param_4,2,*(uint *)&local_8->field_0x24,7),
+       iVar5 == 0)) {
       sVar4 = 0x19;
     }
     break;

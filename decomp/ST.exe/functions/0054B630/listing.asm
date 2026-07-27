@@ -1,4 +1,4 @@
-FUN_0054b630:
+CursorClassTy::sub_0054B630:
 0054B630  55                        PUSH EBP
 0054B631  8B EC                     MOV EBP,ESP
 0054B633  56                        PUSH ESI

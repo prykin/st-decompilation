@@ -13,7 +13,7 @@ undefined4 __fastcall FUN_004cd6f0(int param_1)
   if (0 < *(int *)(param_1 + 0x524)) {
     piVar2 = (int *)(param_1 + 0x4d0);
     do {
-      iVar1 = FUN_006e62d0(g_playSystem_00802A38,*piVar2,(int *)&local_8);
+      iVar1 = STPlaySystemC::sub_006E62D0(g_playSystem_00802A38,*piVar2,(int *)&local_8);
       if (iVar1 == 0) {
         local_8->field_04D4 = 0;
         local_8->field_05D3 = 0;

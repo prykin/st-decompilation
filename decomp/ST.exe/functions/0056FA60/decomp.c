@@ -101,7 +101,7 @@ int __thiscall STAppC::GetMessage(STAppC *this,STMessage *message)
 switchD_0056fad2_caseD_6105:
       DAT_0080674c = 0;
       g_cursorClass_00802A30->field_0493 = 0;
-      thunk_FUN_0054b540(pCVar10);
+      CursorClassTy::sub_0054B540(pCVar10);
       ChangeResolution(pSVar11,0);
       if (g_startSystem_0081176C == (StartSystemTy *)0x0) {
         pSVar13 = (StartSystemTy *)Library::MSVCRT::FUN_0072e530(0x6b6);
@@ -141,7 +141,7 @@ switchD_0056fad2_caseD_6105:
       }
       pCVar10 = g_cursorClass_00802A30;
       g_cursorClass_00802A30->field_0493 = 0;
-      thunk_FUN_0054b540(pCVar10);
+      CursorClassTy::sub_0054B540(pCVar10);
       if (g_startSystem_0081176C != (StartSystemTy *)0x0) {
         FUN_006e4b80(pSVar11,(int)g_startSystem_0081176C);
       }
@@ -240,7 +240,7 @@ switchD_0056fad2_caseD_6105:
       pSVar11->field_1134 = DVar14;
       pCVar10 = g_cursorClass_00802A30;
       g_cursorClass_00802A30->field_0493 = 0;
-      thunk_FUN_0054b540(pCVar10);
+      CursorClassTy::sub_0054B540(pCVar10);
       thunk_FUN_005711d0(pSVar11,(int *)&PTR_0081163c);
       CloseGameDBs(pSVar11);
       if (g_startSystem_0081176C != (StartSystemTy *)0x0) {
@@ -253,7 +253,7 @@ switchD_0056fad2_caseD_6105:
         FUN_006b3af0((int *)g_cursorClass_00802A30->field_0060,
                      (uint)g_cursorClass_00802A30->field_001C);
       }
-      DarkScreen(DAT_0080759c,10,2);
+      DarkScreen(g_anonShape_GLOBAL_0080759C_9638EF10_0080759C,10,2);
       ChangeResolution(pSVar11,0);
       uVar25 = 0xffffffff;
       pcVar15 = &pSVar11->field_0x77fa;
@@ -297,7 +297,7 @@ switchD_0056fad2_caseD_6102:
       thunk_FUN_005713b0((int)pSVar11);
       pCVar10 = g_cursorClass_00802A30;
       g_cursorClass_00802A30->field_0493 = 0;
-      thunk_FUN_0054b540(pCVar10);
+      CursorClassTy::sub_0054B540(pCVar10);
       thunk_FUN_005711d0(pSVar11,(int *)&PTR_0081163c);
       CloseGameDBs(pSVar11);
       if (g_startSystem_0081176C == (StartSystemTy *)0x0) {
@@ -342,8 +342,8 @@ switchD_0056fad2_caseD_6102:
       pSVar11->field_112E = *(undefined1 *)&message->arg0;
       (&pSVar11->field_11A7)[(uint)(byte)pSVar11->field_112D * 0x51] = 0;
       if (g_playSystem_00802A38 != (STPlaySystemC *)0x0) {
-        FUN_006e57b0(g_playSystem_00802A38,0x121);
-        (*g_playSystem_00802A38->vtable->vfunc_08)(0x121,0,0,0,0);
+        STPlaySystemC::sub_006E57B0(g_playSystem_00802A38,0x121);
+        (*g_playSystem_00802A38->vtable->vfunc_08)(g_playSystem_00802A38,0x121,0,0,0,0);
         local_b8 = 0xf;
         local_b4 = 0x4405;
         (*g_playSystem_00802A38->vtable->SendMessage)
@@ -360,7 +360,7 @@ switchD_0056fad2_caseD_6102:
       }
       break;
     case MESS_STARTSYSTEMTY_6104|MESS_SHARED_0003:
-      DarkScreen(DAT_0080759c,10,2);
+      DarkScreen(g_anonShape_GLOBAL_0080759C_9638EF10_0080759C,10,2);
       if (PTR_00802a28 != (ccFntTy *)0x0) {
         thunk_FUN_005711d0(pSVar11,(int *)&PTR_00802a28);
       }
@@ -391,7 +391,7 @@ switchD_0056fad2_caseD_6102:
     case 0x6108:
       bVar28 = true;
       g_cursorClass_00802A30->field_0493 = 0;
-      thunk_FUN_0054b540(pCVar10);
+      CursorClassTy::sub_0054B540(pCVar10);
       pSVar18 = local_44;
       for (iVar12 = 8; iVar12 != 0; iVar12 = iVar12 + -1) {
         *pSVar18 = MESS_ID_NONE;
@@ -519,7 +519,7 @@ switchD_0056fad2_caseD_6102:
       thunk_FUN_005713b0((int)pSVar11);
       pCVar10 = g_cursorClass_00802A30;
       g_cursorClass_00802A30->field_0493 = 0;
-      thunk_FUN_0054b540(pCVar10);
+      CursorClassTy::sub_0054B540(pCVar10);
       if (g_startSystem_0081176C != (StartSystemTy *)0x0) {
         FUN_006e4b80(pSVar11,(int)g_startSystem_0081176C);
       }
@@ -532,8 +532,8 @@ switchD_0056fad2_caseD_6102:
                      (uint)g_cursorClass_00802A30->field_001C);
       }
       FUN_006b5f80((int *)PTR_008075a8,0,0,g_nWidth_00806730,DAT_00806734);
-      Library::DKW::DDX::FUN_006bab60((int)DAT_0080759c,0);
-      Library::DKW::DDX::FUN_006bb370((int)DAT_0080759c,0,0);
+      Library::DKW::DDX::FUN_006bab60(g_anonShape_GLOBAL_0080759C_9638EF10_0080759C,0);
+      Library::DKW::DDX::FUN_006bb370(g_anonShape_GLOBAL_0080759C_9638EF10_0080759C,0,0);
       local_14c.previous = g_currentExceptionFrame;
       g_currentExceptionFrame = &local_14c;
       local_4c = Library::MSVCRT::__setjmp3(local_14c.jumpBuffer,0);
@@ -545,8 +545,8 @@ switchD_0056fad2_caseD_6102:
         if (DAT_00806738 != 8) {
           DAT_00806738 = 8;
           Library::DKW::DDX::FUN_006b9b40
-                    (DAT_0080759c,0x10000001,g_nWidth_00806730,DAT_00806734,8,g_nWidth_00806730,
-                     DAT_00806734,0,0,0x100);
+                    (g_anonShape_GLOBAL_0080759C_9638EF10_0080759C,0x10000001,g_nWidth_00806730,
+                     DAT_00806734,8,g_nWidth_00806730,DAT_00806734,0,0,0x100);
           Library::DKW::DDX::FUN_006b1470((int *)PTR_008075a8);
         }
         pSVar11 = local_18;
@@ -600,8 +600,8 @@ switchD_0056fad2_caseD_6102:
           iVar12 = local_1c;
           if (iVar20 == 0) {
             DVar14 = Library::DKW::DDX::FUN_006b9b40
-                               (DAT_0080759c,0x10000001,local_24,local_20,local_1c,local_24,local_20
-                                ,0,0,0);
+                               (g_anonShape_GLOBAL_0080759C_9638EF10_0080759C,0x10000001,local_24,
+                                local_20,local_1c,local_24,local_20,0,0,0);
             local_48 = (uint)(DVar14 == 0);
           }
           uVar25 = local_48;
@@ -645,10 +645,12 @@ LAB_00570645:
       if (DAT_0080350c._2_1_ == '\x01') {
         iVar20 = 0;
         iVar29 = 0;
-        iVar30 = DAT_0080759c[6];
-        iVar31 = DAT_0080759c[7];
+        iVar30 = g_anonShape_GLOBAL_0080759C_9638EF10_0080759C->field_0018;
+        iVar31 = g_anonShape_GLOBAL_0080759C_9638EF10_0080759C->field_001C;
         if (iVar12 != 0) {
-          Library::DKW::DV::FUN_006c2d30(g_int_008075A4,0,0,DAT_0080759c[6],DAT_0080759c[7]);
+          Library::DKW::DV::FUN_006c2d30
+                    (g_int_008075A4,0,0,g_anonShape_GLOBAL_0080759C_9638EF10_0080759C->field_0018,
+                     g_anonShape_GLOBAL_0080759C_9638EF10_0080759C->field_001C);
           goto cf_common_exit_0057073B;
         }
       }
@@ -683,7 +685,7 @@ cf_common_exit_0057073B:
     }
     if (SVar5 != MESS_STAPPC_7101) {
       if (SVar5 == MESS_STAPPC_7102) {
-        DarkScreen(DAT_0080759c,10,2);
+        DarkScreen(g_anonShape_GLOBAL_0080759C_9638EF10_0080759C,10,2);
         pSVar11->field_001C = 1;
         g_currentExceptionFrame = local_a4.previous;
         return 0;

@@ -144,9 +144,11 @@ void __thiscall FSGSTy::ChatCtrls(FSGSTy *this)
     uVar6 = FUN_006b50c0(0x1bf,0x175,(uint)*(ushort *)(*(int *)&this_00->field_0x5d + 0xe),uVar5,
                          puVar10,iVar9);
     *(undefined4 *)((int)&this_00[0x22].field_0066 + 2) = uVar6;
-    ptVar7 = Library::DKW::DDX::FUN_006c4880(DAT_0080759c,0x13,0x5e,0x1bf,0x175,8);
+    ptVar7 = Library::DKW::DDX::FUN_006c4880
+                       (g_anonShape_GLOBAL_0080759C_9638EF10_0080759C,0x13,0x5e,0x1bf,0x175,8);
     *(LPBITMAPINFO *)&this_00[0x22].field_0x6c = ptVar7;
-    ptVar7 = Library::DKW::DDX::FUN_006c4880(DAT_0080759c,0x1e9,0x5e,0x124,0x175,8);
+    ptVar7 = Library::DKW::DDX::FUN_006c4880
+                       (g_anonShape_GLOBAL_0080759C_9638EF10_0080759C,0x1e9,0x5e,0x124,0x175,8);
     *(LPBITMAPINFO *)&this_00[0x22].field_0x74 = ptVar7;
     pDVar8 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,0x14,0x2e,10);
     *(DArrayTy **)&this_00[0x22].field_0x80 = pDVar8;

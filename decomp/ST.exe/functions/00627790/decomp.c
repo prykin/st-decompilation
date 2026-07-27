@@ -19,8 +19,8 @@ void __fastcall FUN_00627790(AnonShape_00627790_BD208A1C *param_1)
     local_14 = param_1->field_0024;
     local_12 = param_1->field_0032;
     if (((param_1->field_0241 == 0) ||
-        (iVar1 = FUN_006e62d0(g_playSystem_00802A38,param_1->field_0241,&local_8), iVar1 == -4)) ||
-       (local_8 == 0)) {
+        (iVar1 = STPlaySystemC::sub_006E62D0(g_playSystem_00802A38,param_1->field_0241,&local_8),
+        iVar1 == -4)) || (local_8 == 0)) {
       local_10 = 0xff;
       local_e = 0xffff;
     }

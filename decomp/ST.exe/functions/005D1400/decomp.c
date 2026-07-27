@@ -1935,17 +1935,15 @@ LAB_005d34ee:
     pAVar33 = (AnonShape_005CBBE0_2D1CAA09 *)(pDVar19->elementSize * uVar28 + (int)pDVar19->data);
   }
   local_10 = pcVar27;
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  FUN_006b4170(*(AnonShape_006B5B10_E0D06CF1 **)(&this_00->field_0x20f4 + (int)pcVar27 * 4),0,
+  FUN_006b4170((AnonShape_006B5B10_E0D06CF1 *)(&this_00->field_20F4)[(int)pcVar27],0,
                *piVar10 + -0x113,0,piVar10[2],piVar10[3],0xff);
   if (pAVar33 == (AnonShape_005CBBE0_2D1CAA09 *)0x0) goto switchD_005d35aa_default;
   switch(local_30) {
   case (undefined1 *)0x0:
     if (((*(char *)pAVar33 == '\0') || (pAVar33->field_0x4 != '\x02')) ||
        (*(int *)&pAVar33->field_0x6 != DAT_0080877f)) break;
-    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     MMObjTy::PaintButDib
-              ((MMObjTy *)this_00,*(int *)(&this_00->field_0x20f4 + (int)pcVar27 * 4),&local_28,2,
+              ((MMObjTy *)this_00,(&this_00->field_20F4)[(int)pcVar27],&local_28,2,
                (-((message->arg0).words.low != 0) & 0xfcU) + 0x23,0x67);
     iVar15 = 2 - (uint)(pAVar33->field_0x1 != '\0');
     goto LAB_005d3bf4;
@@ -1955,9 +1953,8 @@ LAB_005d34ee:
       local_24 = local_24 + 1;
       local_20 = local_20 + -2;
       local_1c = local_1c + -2;
-      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
       MMObjTy::PaintButDib
-                ((MMObjTy *)this_00,*(int *)(&this_00->field_0x20f4 + (int)pcVar27 * 4),&local_28,0,
+                ((MMObjTy *)this_00,(&this_00->field_20F4)[(int)pcVar27],&local_28,0,
                  (-((message->arg0).words.low != 0) & 0xfcU) + 0x23,0xffffffff);
       if (pAVar33->field_0x2 != -1) {
         switch(pAVar33->field_0x2) {
@@ -1988,20 +1985,18 @@ LAB_005d34ee:
         default:
           uVar13 = 0xff;
         }
-        FUN_006b4170(*(AnonShape_006B5B10_E0D06CF1 **)(&this_00->field_0x20f4 + (int)pcVar27 * 4),0,
+        FUN_006b4170((AnonShape_006B5B10_E0D06CF1 *)(&this_00->field_20F4)[(int)pcVar27],0,
                      local_28 + 2,local_24 + 2,local_20 + -4,local_1c + -4,uVar13);
       }
     }
     break;
   case (undefined1 *)0x2:
     if (*(char *)pAVar33 == '\0') break;
-    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     MMObjTy::PaintButDib
-              ((MMObjTy *)this_00,*(int *)(&this_00->field_0x20f4 + (int)pcVar27 * 4),&local_28,2,
+              ((MMObjTy *)this_00,(&this_00->field_20F4)[(int)pcVar27],&local_28,2,
                (-((message->arg0).words.low != 0) & 0xfcU) + 0x23,0x67);
-    ccFntTy::SetSurf(g_startSystem_0081176C->field_0034,
-                     *(int *)(&this_00->field_0x20f4 + (int)pcVar27 * 4),0,local_28,local_24,
-                     local_20,local_1c);
+    ccFntTy::SetSurf(g_startSystem_0081176C->field_0034,(&this_00->field_20F4)[(int)pcVar27],0,
+                     local_28,local_24,local_20,local_1c);
     if (pAVar33->field_0x3 == '\x01') {
       pcVar27 = &DAT_007ca250;
 LAB_005d3780:
@@ -2055,14 +2050,12 @@ LAB_005d3780:
     ccFntTy::WrStr(g_startSystem_0081176C->field_0034,&DAT_0080f33a,-1,-1,2);
     pcVar27 = local_10;
     break;
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   case (undefined1 *)0x3:
     MMObjTy::PaintButDib
-              ((MMObjTy *)this_00,*(int *)(&this_00->field_0x20f4 + (int)pcVar27 * 4),&local_28,2,
+              ((MMObjTy *)this_00,(&this_00->field_20F4)[(int)pcVar27],&local_28,2,
                (-((message->arg0).words.low != 0) & 0xfcU) + 0x23,0x67);
-    ccFntTy::SetSurf(g_startSystem_0081176C->field_0034,
-                     *(int *)(&this_00->field_0x20f4 + (int)pcVar27 * 4),0,local_28,local_24,
-                     local_20,local_1c);
+    ccFntTy::SetSurf(g_startSystem_0081176C->field_0034,(&this_00->field_20F4)[(int)pcVar27],0,
+                     local_28,local_24,local_20,local_1c);
     uVar39 = 2;
     iVar38 = -1;
     iVar37 = -1;
@@ -2072,14 +2065,12 @@ LAB_005d3780:
     goto LAB_005d38bd;
   case (undefined1 *)0x4:
     MMObjTy::PaintButDib
-              ((MMObjTy *)this_00,*(int *)(&this_00->field_0x20f4 + (int)pcVar27 * 4),&local_28,2,
-               0x67,0x67);
+              ((MMObjTy *)this_00,(&this_00->field_20F4)[(int)pcVar27],&local_28,2,0x67,0x67);
     bVar22 = pAVar33->field_0x4;
     if (bVar22 < 2) break;
     if (bVar22 < 4) {
-      ccFntTy::SetSurf(g_startSystem_0081176C->field_0034,
-                       *(int *)(&this_00->field_0x20f4 + (int)pcVar27 * 4),0,local_28,local_24,
-                       local_20,local_1c);
+      ccFntTy::SetSurf(g_startSystem_0081176C->field_0034,(&this_00->field_20F4)[(int)pcVar27],0,
+                       local_28,local_24,local_20,local_1c);
       uVar39 = 2;
       iVar37 = -1;
       iVar15 = -1;
@@ -2099,9 +2090,8 @@ LAB_005d3780:
       puVar16 = (uint *)0x0;
     }
     if (puVar16 == (uint *)0x0) break;
-    ccFntTy::SetSurf(g_startSystem_0081176C->field_0034,
-                     *(int *)(&this_00->field_0x20f4 + (int)pcVar27 * 4),0,local_28,local_24,
-                     local_20,local_1c);
+    ccFntTy::SetSurf(g_startSystem_0081176C->field_0034,(&this_00->field_20F4)[(int)pcVar27],0,
+                     local_28,local_24,local_20,local_1c);
     uVar39 = 2;
     iVar38 = -1;
     iVar37 = -1;
@@ -2111,20 +2101,18 @@ LAB_005d38bd:
     puVar16 = thunk_FUN_00540c40(g_startSystem_0081176C->field_0034,puVar16,puVar36,iVar15);
     ccFntTy::WrStr(g_startSystem_0081176C->field_0034,puVar16,iVar37,iVar38,uVar39);
     break;
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   case (undefined1 *)0x5:
     if ((*(char *)pAVar33 == '\0') ||
        (MMObjTy::PaintButDib
-                  ((MMObjTy *)this_00,*(int *)(&this_00->field_0x20f4 + (int)pcVar27 * 4),&local_28,
-                   2,(-((message->arg0).words.low != 0) & 0xfcU) + 0x23,0x67),
+                  ((MMObjTy *)this_00,(&this_00->field_20F4)[(int)pcVar27],&local_28,2,
+                   (-((message->arg0).words.low != 0) & 0xfcU) + 0x23,0x67),
        pAVar33->field_0x4 == '\0')) break;
     if (DAT_00808a8f != '\0') {
       iVar15 = (byte)pAVar33->field_0x4a + 0x41;
       pcVar24 = LoadResourceString(0x1f4a,g_module_00807618);
       wsprintfA((LPSTR)&DAT_0080f33a,"%s%c",pcVar24,iVar15);
-      ccFntTy::SetSurf(g_startSystem_0081176C->field_0034,
-                       *(int *)(&this_00->field_0x20f4 + (int)pcVar27 * 4),0,local_28,local_24,
-                       local_20,local_1c);
+      ccFntTy::SetSurf(g_startSystem_0081176C->field_0034,(&this_00->field_20F4)[(int)pcVar27],0,
+                       local_28,local_24,local_20,local_1c);
       ccFntTy::WrStr(g_startSystem_0081176C->field_0034,&DAT_0080f33a,-1,-1,2);
       break;
     }
@@ -2172,14 +2160,12 @@ LAB_005d38bd:
     goto LAB_005d3bfa;
   case (undefined1 *)0x6:
     MMObjTy::PaintButDib
-              ((MMObjTy *)this_00,*(int *)(&this_00->field_0x20f4 + (int)pcVar27 * 4),&local_28,2,
-               0x67,0x67);
+              ((MMObjTy *)this_00,(&this_00->field_20F4)[(int)pcVar27],&local_28,2,0x67,0x67);
     if (((pAVar33->field_0x4 == '\x02') || (pAVar33->field_0x4 == '\x03')) &&
        (((DAT_0080877e != '\0' && (*(int *)&pAVar33->field_0x6 != DAT_0080877f)) ||
         ((DAT_0080877e == '\0' && (*(int *)&pAVar33->field_0x6 == DAT_0080877f)))))) {
-      ccFntTy::SetSurf(g_startSystem_0081176C->field_0034,
-                       *(int *)(&this_00->field_0x20f4 + (int)pcVar27 * 4),0,local_28,local_24,
-                       local_20,local_1c);
+      ccFntTy::SetSurf(g_startSystem_0081176C->field_0034,(&this_00->field_20F4)[(int)pcVar27],0,
+                       local_28,local_24,local_20,local_1c);
       wsprintfA((LPSTR)&DAT_0080f33a,"%4d",*(undefined4 *)&pAVar33->field_0x4b);
       uVar28 = 0xffffffff;
       pcVar24 = (char *)&DAT_0080f33a;
@@ -2217,10 +2203,9 @@ LAB_005d38bd:
       ccFntTy::WrStr(g_startSystem_0081176C->field_0034,&DAT_0080f33a,-1,-1,2);
     }
     break;
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   case (undefined1 *)0x7:
     MMObjTy::PaintButDib
-              ((MMObjTy *)this_00,*(int *)(&this_00->field_0x20f4 + (int)pcVar27 * 4),&local_28,2,
+              ((MMObjTy *)this_00,(&this_00->field_20F4)[(int)pcVar27],&local_28,2,
                (-((message->arg0).words.low != 0) & 0xfcU) + 0x23,0x67);
     if (((pAVar33->field_0x4 != '\x02') || (pAVar33->field_0x4f == '\0')) &&
        (pAVar33->field_0x4 != '\x04')) break;
@@ -2229,12 +2214,12 @@ LAB_005d3bf4:
     pAVar23 = (AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_1F4F;
 LAB_005d3bfa:
     pbVar21 = (byte *)FUN_0070b3a0(pAVar23,iVar15);
-    DibPut(*(AnonShape_006B5B10_E0D06CF1 **)(&this_00->field_0x20f4 + (int)pcVar27 * 4),
+    DibPut((AnonShape_006B5B10_E0D06CF1 *)(&this_00->field_20F4)[(int)pcVar27],
            (local_20 - *(int *)(pbVar21 + 4)) / 2 + local_28,
            (local_1c - *(int *)(pbVar21 + 8)) / 2 + 1 + local_24,'\x06',pbVar21);
   }
 switchD_005d35aa_default:
-  FUN_006b35d0((int *)PTR_008075a8,*(uint *)(&this_00->field_0x20cc + (int)pcVar27 * 4));
+  FUN_006b35d0((int *)PTR_008075a8,(&this_00->field_20CC)[(int)pcVar27]);
   if ((message->arg0).words.low == 3) {
     thunk_FUN_005b6730(this_00,9,'\x01',-1);
   }

@@ -2,22 +2,32 @@
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* [STSwitchEnumApplier] Switch target param_1 uses
    /SubmarineTitans/Recovered/Enums/Global_sub_004AB070_param_1Enum. Cases:
+   CASE_1=1;CASE_2=2;CASE_3=3;CASE_4=4;CASE_5=5;CASE_6=6;CASE_7=7;CASE_8=8
+
+   [STMethodOwnerApplier] Structural method owner recovered as OpticClassC.
+   Evidence: this_call_owners=[OpticClassC]; agreed_this_calls=10; incoming_this_accesses=3;
+   incoming_edx_uses=0; incoming_stack_parameter_uses=17; direct_non_thunk_callers=0;
+   incoming_ecx_receiver_callers=0; attributed_named_callers=2; owner_evidence_coverage=adequate
+
+   [STSwitchEnumApplier] Switch target param_1 uses
+   /SubmarineTitans/Recovered/Enums/OpticClassC_sub_004AB070_param_1Enum. Cases:
    CASE_1=1;CASE_2=2;CASE_3=3;CASE_4=4;CASE_5=5;CASE_6=6;CASE_7=7;CASE_8=8 */
 
 undefined4 __thiscall
-FUN_004ab070(void *this,Global_sub_004AB070_param_1Enum param_1,float param_2,int param_3,
-            int param_4)
+OpticClassC::sub_004AB070
+          (OpticClassC *this,OpticClassC_sub_004AB070_param_1Enum param_1,float param_2,int param_3,
+          int param_4)
 
 {
   DWORD DVar1;
   int iVar2;
 
   DVar1 = timeGetTime();
-  if (DVar1 - *(int *)((int)this + 0x18) < 0x32) {
-    if (*(int *)((int)this + 0x1c) == -2) {
+  if (DVar1 - this->field_0018 < 0x32) {
+    if (this->field_001C == -2) {
       return 0xfffffffe;
     }
-    *(undefined4 *)((int)this + 0x1c) = 0xffffffff;
+    this->field_001C = 0xffffffff;
     return 0;
   }
   DAT_008073e0 = 0;
@@ -39,7 +49,7 @@ LAB_004ab0d1:
   if (param_4 == 1) {
     param_2 = param_2 * _DAT_00790788;
   }
-  *(DWORD *)((int)this + 0x18) = DVar1;
+  this->field_0018 = DVar1;
   switch(param_1) {
   case CASE_1:
     iVar2 = thunk_FUN_004a9d60(param_2);
@@ -70,11 +80,11 @@ LAB_004ab0d1:
   }
   if (iVar2 == 1) {
     thunk_FUN_00567510(&g_sound,DAT_008073d8,DAT_008073dc,DAT_008073fc,DAT_0080743c & 0xff);
-    *(undefined4 *)((int)this + 0x1c) = 0;
+    this->field_001C = 0;
     return 0;
   }
 switchD_004ab11d_default:
-  *(undefined4 *)((int)this + 0x1c) = 0xfffffffe;
+  this->field_001C = 0xfffffffe;
   return 0xfffffffe;
 }
 

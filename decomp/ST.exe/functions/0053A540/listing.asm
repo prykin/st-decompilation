@@ -1,4 +1,4 @@
-FUN_0053a540:
+PlayPanelTy::sub_0053A540:
 0053A540  55                        PUSH EBP
 0053A541  8B EC                     MOV EBP,ESP
 0053A543  51                        PUSH ECX

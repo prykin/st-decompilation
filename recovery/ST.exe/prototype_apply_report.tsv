@@ -14,7 +14,6 @@ function_address	target	status	detail
 0045EF00	parameter:2	disabled	apply flags are 0
 004803D0	parameter:1	disabled	apply flags are 0
 00490B30	parameter:1	disabled	apply flags are 0
-00491FB0	parameter:1	disabled	apply flags are 0
 00497370	parameter:3	disabled	apply flags are 0
 00497370	parameter:4	disabled	apply flags are 0
 00497920	parameter:3	disabled	apply flags are 0
@@ -35,7 +34,6 @@ function_address	target	status	detail
 0051A100	parameter:1	disabled	apply flags are 0
 0051C980	parameter:1	disabled	apply flags are 0
 0052EB50	parameter:7	disabled	apply flags are 0
-00540620	parameter:4	disabled	apply flags are 0
 0054B630	parameter:1	disabled	apply flags are 0
 00555FE0	return:	disabled	apply flags are 0
 005582A0	return:	disabled	apply flags are 0

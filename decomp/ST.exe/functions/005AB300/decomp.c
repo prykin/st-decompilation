@@ -409,7 +409,7 @@ switchD_005ab66b_caseD_6:
         case 0x13:
           break;
         default:
-          DarkScreen(DAT_0080759c,1,0);
+          DarkScreen(g_anonShape_GLOBAL_0080759C_9638EF10_0080759C,1,0);
         }
         this_00 = this_02->field_1A5B->field_02E6;
         if (this_00 != (MMsgTy *)0x0) {
@@ -761,7 +761,8 @@ switchD_005ab66b_caseD_6:
         case 0x13:
           break;
         default:
-          thunk_FUN_0055ddf0(DAT_0080759c,(int *)PTR_008075a8,(int)this_02->field_005D,10,2);
+          thunk_FUN_0055ddf0((undefined4 *)g_anonShape_GLOBAL_0080759C_9638EF10_0080759C,
+                             (int *)PTR_008075a8,(int)this_02->field_005D,10,2);
         }
         pHVar12 = this_02->field_20B8;
         if (((pHVar12 != (HoloTy *)0x0) && (pHVar12->field_0000 != '\0')) &&

@@ -1,5 +1,5 @@
 program=ST.exe
-deallocator_functions=10
+deallocator_functions=11
 delete_this_functions=1
 proposals=0
 destructor_proposals=0

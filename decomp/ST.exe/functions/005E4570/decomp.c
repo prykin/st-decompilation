@@ -247,7 +247,7 @@ LAB_005e470e:
         thunk_FUN_005b6730(local_18,4,'\x01',-1);
         this_00->field_007C = 0;
         this_00->field_0061 = this_00->field_0069;
-        DarkScreen(DAT_0080759c,1,0);
+        DarkScreen(g_anonShape_GLOBAL_0080759C_9638EF10_0080759C,1,0);
         pDVar10 = this_00->field_064F;
         if (pDVar10 != (DArrayTy *)0x0) {
           uVar18 = 0;
@@ -347,7 +347,8 @@ LAB_005e496b:
         this_00->field_006D = 3;
         Library::DKW::TBL::FUN_006afe40((int *)&this_00->field_0074,(uint *)this_00->field_0078);
         PlayScript(this_00);
-        thunk_FUN_0055ddf0(DAT_0080759c,(int *)PTR_008075a8,(int)this_00->field_005D,10,2);
+        thunk_FUN_0055ddf0((undefined4 *)g_anonShape_GLOBAL_0080759C_9638EF10_0080759C,
+                           (int *)PTR_008075a8,(int)this_00->field_005D,10,2);
         break;
       case 0x6204:
         if (local_18->field_006D != '\x01') {

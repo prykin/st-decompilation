@@ -68,8 +68,8 @@ FUN_0065e070(int param_1,undefined4 param_2,uint param_3,uint param_4,uint param
           this = STAllPlayersC::GetObjPtr
                            (g_allPlayers_007FA174,(char)local_c,
                             CONCAT22((short)((uint)puVar4 >> 0x10),*puVar4),CASE_1);
-          if ((this == (STGameObjC *)0x0) || (iVar9 = (*this->vtable[1].vfunc_24)(this), iVar9 == 0)
-             ) goto cf_continue_loop_0065E27E;
+          if ((this == (STGameObjC *)0x0) || (iVar9 = (*this->vtable->vfunc_F8)(this), iVar9 == 0))
+          goto cf_continue_loop_0065E27E;
           uVar5 = (*this->vtable->vfunc_2C)();
           STFishC::sub_004162B0((STFishC *)this,&local_8,&local_6,(undefined2 *)((int)&param_3 + 2))
           ;

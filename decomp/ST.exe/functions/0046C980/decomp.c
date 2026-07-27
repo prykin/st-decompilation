@@ -17,10 +17,8 @@ int __thiscall STBoatC::BackBuild(STBoatC *this,int *param_1,undefined4 param_2,
   uint uVar3;
   undefined4 uVar4;
   int iVar5;
-  int iVar6;
   /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
   undefined4 in_EDX;
-  int iVar7;
   STBoatC *local_8;
 
   uVar2 = (undefined2)((uint)this >> 0x10);
@@ -39,17 +37,14 @@ int __thiscall STBoatC::BackBuild(STBoatC *this,int *param_1,undefined4 param_2,
       return 0;
     }
     if (iVar5 == 3) {
-      iVar5 = (ushort)(this->field_0500 * 200) + 100;
       /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-      iVar7 = CONCAT22(uVar2,this->field_04FE * 0xc9) + 100;
-      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-      iVar6 = CONCAT22((short)((uint)iVar5 >> 0x10),this->field_04FC * 0xc9) + 100;
-      uVar2 = (undefined2)((uint)iVar7 >> 0x10);
+      iVar5 = CONCAT22(uVar2,this->field_04FE * 0xc9) + 100;
       /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
       uVar2 = (*this->vtable->vfunc_10)
-                        (CONCAT22(uVar2,this->field_0041),
-                         CONCAT22((short)((uint)iVar6 >> 0x10),this->field_0043),
-                         CONCAT22(uVar2,this->field_0045),iVar6,iVar7,iVar5);
+                        (this->field_0041,this->field_0043,
+                         CONCAT22((short)((uint)iVar5 >> 0x10),this->field_0045),
+                         this->field_04FC * 0xc9 + 100,(short)iVar5,
+                         (ushort)(this->field_0500 * 200) + 100);
       this->field_0506 = uVar2;
       this->field_050C = 4;
     }
@@ -69,7 +64,7 @@ int __thiscall STBoatC::BackBuild(STBoatC *this,int *param_1,undefined4 param_2,
       }
       if ((short)uVar3 == 0) {
         this->field_050C = 5;
-        iVar5 = (*this->vtable->vfunc_D8)();
+        iVar5 = (*this->vtable->vfunc_D8)(this);
         return (-(uint)(iVar5 != 0) & 0xfffffffd) + 2;
       }
     }
@@ -95,32 +90,28 @@ cf_error_exit_0046CBE2:
         return 0xffff;
       }
       if ((short)uVar4 == 0) {
-        iVar5 = (*this->vtable->vfunc_D8)();
+        iVar5 = (*this->vtable->vfunc_D8)(this);
         return -(uint)(iVar5 != 0);
       }
     }
     break;
   case CASE_5:
     if (this->field_0502 == 0) {
-      iVar5 = (*this->vtable->vfunc_D8)();
+      iVar5 = (*this->vtable->vfunc_D8)(this);
       return -(uint)(iVar5 != 0);
     }
     this->field_0508 = CASE_6;
     break;
   case CASE_6:
     if (this->field_050C == 0) {
-      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-      iVar5 = CONCAT22(uVar2,this->field_0500 * 200) + 100;
       /* ST_PSEUDO[unresolved_register_input,packed_or_unaligned_piece]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention; expected named packed member, bit extract/compose, or unaligned load */
-      iVar7 = CONCAT22((short)((uint)in_EDX >> 0x10),this->field_04FE * 0xc9) + 100;
-      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-      iVar6 = CONCAT22((short)((uint)iVar5 >> 0x10),this->field_04FC * 0xc9) + 100;
-      uVar2 = (undefined2)((uint)iVar7 >> 0x10);
+      iVar5 = CONCAT22((short)((uint)in_EDX >> 0x10),this->field_04FE * 0xc9) + 100;
       /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
       uVar2 = (*this->vtable->vfunc_10)
-                        (CONCAT22(uVar2,this->field_0041),
-                         CONCAT22((short)((uint)iVar6 >> 0x10),this->field_0043),
-                         CONCAT22(uVar2,this->field_0045),iVar6,iVar7,iVar5);
+                        (this->field_0041,this->field_0043,
+                         CONCAT22((short)((uint)iVar5 >> 0x10),this->field_0045),
+                         this->field_04FC * 0xc9 + 100,(short)iVar5,
+                         CONCAT22(uVar2,this->field_0500 * 200) + 100);
       this->field_0506 = uVar2;
       this->field_050C = 1;
     }
@@ -159,7 +150,7 @@ cf_error_exit_0046CBE2:
         goto cf_error_exit_0046CBE2;
       }
       if ((short)uVar4 == 0) {
-        iVar5 = (*this->vtable->vfunc_D8)();
+        iVar5 = (*this->vtable->vfunc_D8)(this);
         return -(uint)(iVar5 != 0);
       }
     }
@@ -172,7 +163,7 @@ cf_error_exit_0046CBE2:
     }
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  iVar5 = (*this->vtable->vfunc_D8)();
+  iVar5 = (*this->vtable->vfunc_D8)(this);
   return (-(uint)(iVar5 != 0) & 0xfffffffd) + 2;
 }
 

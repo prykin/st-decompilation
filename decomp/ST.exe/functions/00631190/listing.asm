@@ -1,4 +1,4 @@
-FUN_00631190:
+STManRuinC::FUN_00631190:
 00631190  55                        PUSH EBP
 00631191  8B EC                     MOV EBP,ESP
 00631193  53                        PUSH EBX

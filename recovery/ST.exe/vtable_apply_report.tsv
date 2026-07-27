@@ -1,6 +1,6 @@
 kind	address	status	name	detail
 table	007900A0	already_present	STGameObjCVTable	used existing manual type /SubmarineTitans/Recovered/VTables/STGameObjCVTable; 53 slots
-owner_vptr	STGameObjC+0x0	already_present	STGameObjC	owner already points to /SubmarineTitans/Recovered/VTables/STGameObjCVTable
+owner_vptr	STGameObjC+0x0	skipped	STGameObjC	offset is not a generated generic vptr field
 table	00790508	already_present	VTable_00790508	used unchanged generated type /SubmarineTitans/Recovered/VTables/VTable_00790508; 10 slots
 table	0079059C	already_present	STAllPlayersCVTable	used unchanged generated type /SubmarineTitans/Recovered/VTables/STAllPlayersCVTable; 1 slots
 owner_vptr	STAllPlayersC+0x0	already_present	STAllPlayersC	owner already points to /SubmarineTitans/Recovered/VTables/STAllPlayersCVTable

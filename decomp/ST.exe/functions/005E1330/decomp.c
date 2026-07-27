@@ -1771,14 +1771,15 @@ LAB_005e195d:
         Library::Ourlib::PALETTE::FUN_00718780
                   ((int)local_1268,0,0x100,0x2e,0x10,(undefined4 *)&this_00->field_0x191);
         if (this_00->field_007C != 0) {
-          DarkScreen(DAT_0080759c,1,0);
+          DarkScreen(g_anonShape_GLOBAL_0080759C_9638EF10_0080759C,1,0);
           PaintMTask(this_00);
           /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
           in_stack_ffffffdc = PTR_008075a8;
-          thunk_FUN_0055ddf0(DAT_0080759c,(int *)PTR_008075a8,(int)this_00->field_005D,10,2);
+          thunk_FUN_0055ddf0((undefined4 *)g_anonShape_GLOBAL_0080759C_9638EF10_0080759C,
+                             (int *)PTR_008075a8,(int)this_00->field_005D,10,2);
         }
         if (this_00->field_0089 != (ccFntTy *)0x0) {
-          ccFntTy::operator((uint *)this_00->field_0089);
+          ccFntTy::operator_delete((uint *)this_00->field_0089);
         }
         pcVar9 = (ccFntTy *)
                  thunk_FUN_005defe0((int)this_00->field_005D,(undefined *)0x0,DAT_00807dd9);
@@ -1786,7 +1787,7 @@ LAB_005e195d:
         pcVar9->field_0058 = 1;
         pcVar9->field_005C = 0;
         if (this_00->field_008D != (ccFntTy *)0x0) {
-          ccFntTy::operator((uint *)this_00->field_008D);
+          ccFntTy::operator_delete((uint *)this_00->field_008D);
         }
         pcVar9 = (ccFntTy *)
                  thunk_FUN_005df290((int)this_00->field_005D,(undefined *)0x0,DAT_00807dd9);

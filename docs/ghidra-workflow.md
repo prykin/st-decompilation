@@ -59,9 +59,12 @@ When `STDecompExport` asks for a directory, select `<repo>/decomp`.
 ## Path-free recovery pipeline
 
 Normal refreshes no longer require launching every script or selecting every
-TSV manually. Run `STRecoveryPipeline` from Script Manager or
-**Tools → Submarine Titans → Run Recovery Pipeline**. Because Script Manager is
-connected directly to this repository's `scripts/` directory, the pipeline
+TSV manually. Run `STRecoveryLauncher` from Script Manager or
+**Tools → Submarine Titans → Run Recovery Pipeline**. The launcher
+writes `recovery/ST.exe/pipeline_bootstrap.log` before asking Ghidra to load and
+run `STRecoveryPipeline`; this preserves provider/runtime diagnostics after the
+source bundle has compiled. Because Script Manager is connected directly to
+this repository's `scripts/` directory, the pipeline
 infers `<repo>` from its own source path and passes these arguments to every
 child script:
 
@@ -78,8 +81,8 @@ Only one mode is selected; no file or directory dialogs follow:
 | `core` | Baseline/debug/message recovery followed by bounded unclaimed-code and factory/vtable/constructor/class fixpoint loops. This is the default. |
 | `deep` | Slower ownership, ABI, prototype, global, pointer-shape, enum, provenance, control-flow, and library propagation. Requires current core outputs. |
 | `full` | Run `core` and then `deep`; does not start the expensive corpus export. |
-| `export` | Verify the recorded recovery evidence, snapshot the prior corpus, export into `<repo>/decomp`, and run the regression gate. |
-| `full-export` | Run the complete recovery pipeline, record evidence, export, and run the regression gate. |
+| `export` | Synchronize the final indirect/vtable ABI layer, record and verify the current Program plus recovery artifacts, snapshot the prior corpus, export into `<repo>/decomp`, and run the regression gate. |
+| `full-export` | Run the complete recovery pipeline, perform the same final ABI synchronization/evidence checkpoint, export, and run the regression gate. |
 
 The pipeline invokes ordinary Ghidra scripts through `runScript`; it does not
 bypass any analyzer/applier validation. In particular, it never changes an
@@ -87,6 +90,13 @@ bypass any analyzer/applier validation. In particular, it never changes an
 hashes, stale baselines, and transaction boundaries. Optional curated/audit
 inputs are skipped when absent. A failing step stops the sequence before any
 downstream applier can consume stale output.
+
+Before the first pipeline mutation, Ghidra's configured Java script provider is
+asked to load every repository `ST*.java` source. Results and source hashes are
+appended immediately to `build_manifest.tsv`, with full provider diagnostics
+under `build/`. Any failure blocks the run. Each later `runScript` invocation
+tees its complete script stdout and stderr to `steps/<sequence>-<script>/`,
+alongside `step.json` and a full `exception.txt` on failure.
 
 `STRecoveryPipeline` closes its own empty implicit `GhidraScript` transaction
 before invoking children. Every read-only analyzer/exporter also closes its
@@ -148,8 +158,9 @@ hash covers the semantic state, mode, outcome, and deterministic step results.
 Only the three most recently finalized hash directories are retained, and
 `latest_run.txt` points at the newest hash. An interrupted `.current` directory is
 archived by its content hash on the next invocation. Each retained run contains
-`pipeline.log`, structured `events.jsonl`, `run.json`, per-pass proposal/apply
-snapshots, final evidence/export artifacts, and `exception.txt` after a failure.
+`pipeline.log`, structured `events.jsonl`, `run.json`, `build_manifest.tsv`,
+per-script provider logs, per-step stdout/stderr/metadata, per-pass proposal/apply
+snapshots, final evidence/export artifacts, and full exception traces after a failure.
 The root `pipeline_report.tsv` remains a latest-run compatibility view.
 
 Before export the pipeline snapshots the previous central corpus indexes, writes
@@ -161,6 +172,12 @@ regressions, critical ABI/decompiler-quality regressions, and any generated
 message-slot regression when the immediately prior corpus already contains it.
 Expected changes between layout and semantic-naming stages are warnings. It writes
 `export_regression_report.tsv` and an atomic `export_receipt.json`.
+
+The first export after introducing an inferred dispatch interface may report a
+`stage_transition` warning for raw indirect calls: removing a wrapped
+`vtable[1]` alias can temporarily expose honest unresolved tail calls. This
+exception applies only while the previous export has zero dispatch interfaces;
+subsequent exports restore the normal non-increasing hard gate.
 
 `Type bootstrap did not reach a fixed point` is a database-recovery failure, not
 an export-directory failure. Do not delete `decomp/`: inspect
@@ -303,6 +320,14 @@ argument is not silently converted into a stack parameter. Older script runs
 may already have assigned `__thiscall` more aggressively. Such functions are
 listed in `debug_calling_convention_review.tsv`; they are never reverted
 automatically because an instance method is allowed to leave `this` unused.
+Allocation diagnostics are a narrower exception: `operator new`, `operator
+delete`, and their diagnostic suffixes are retained as the Ghidra-safe
+`operator_new`/`operator_delete` overload names. If an older analyzer run
+provably produced the lossy leaf `operator`, the debug tag/comment still match,
+incoming `ECX` is not live, every `RET` pops zero bytes, and no explicit
+parameter is user-defined, the applier removes the synthetic receiver and
+restores `__cdecl`. This migration does not authorize changing any unrelated
+`USER_DEFINED` signature.
 
 The callsite analyzer resolves every thunk leading to each review candidate and
 audits all direct callers. It records explicit `ECX` preparation, a live
@@ -438,6 +463,17 @@ offset-qualified name such as `<Owner>VTable_at_1C` and is installed only at
 changed classes are preserved and reported rather than rewritten.
 This is what turns a raw slot-zero call into, for example,
 `(*aiPlayer->vtable->GetMessage)(aiPlayer, message)`.
+
+A physical base table may end at its last emitted code pointer even though
+objects reached through the base class dispatch to additional slots implemented
+by derived tables. The indirect-call analyzer keeps these facts separate: after
+at least two longer related tables agree, it proposes a script-owned
+`<Owner>DispatchVTable`, copies the exact physical prefix, and represents only
+the proven tail extent there. The physical table type and data length never
+change. Later passes refresh this generated prefix from the physical table while
+preserving the independently recovered tail. A tail slot receives a function definition only from non-contradictory
+ABI evidence in at least two implementations and at least half of the candidate
+tables; otherwise it remains `void *`.
 
 The vtable applier does not automatically rename slot functions. Virtual-method
 name, calling-convention, and signature flags remain independent. Manual
@@ -814,10 +850,28 @@ Indirect-call analysis audits every raw call site in `indirect_call_sites.tsv`.
 It prefers an independently tagged/imported target signature. If semantic typing
 is absent, an owned vtable slot may receive a neutral ABI-only `__thiscall`
 definition when the target consumes incoming `ECX` and every `RET` agrees on the
-callee-popped stack bytes. Such definitions use only the recovered receiver (or
-`void *`), `undefined4` stack words, and a neutral EAX result; they do not invent
-method names or argument meanings. USER_DEFINED by itself is not trusted, and no
-vtable/function address is seeded in this pass. Ghidra may still render an indirect `__thiscall` as
+callee-popped stack bytes. A target which does not consume incoming `ECX` but
+unanimously uses nonzero `RET n` instead receives a neutral `__stdcall`
+definition; this covers compiler-generated vtable adapters which receive the
+object as their first stack word. Prologue `PUSH ECX` used solely as stack
+allocation is not receiver evidence. Such definitions use only the recovered
+receiver where applicable. Each callee-popped four-byte ABI slot remains
+`undefined4` unless the callee's exact machine reads consistently prove a narrower
+byte/word view; signed or unsigned extension selects the scalar signedness.
+Likewise, unanimous writes to `AL` or `AX` before every `RET` recover a narrow
+machine return width only when the function's independent analyzed return agrees;
+a narrow write by itself cannot discard live high EAX bits. This still recovers
+only width, not a semantic type. Unused slots stay `undefined4`.
+These definitions do not invent method names or argument meanings. USER_DEFINED
+by itself is not trusted, and no
+vtable/function address is seeded in this pass. Later vtable rebuilds preserve
+these marker-owned slot refinements when the raw target is unchanged, and the
+pipeline repeats indirect typing after its final structural pass so definitions
+cannot remain orphaned from their slots. The export regression gate counts both
+reviewed `VTableFunctions` and neutral `IndirectCallFunctions` as typed slots,
+and rejects later erasure of either category. Existing marker-owned neutral
+definitions are revalidated on every pass and are replaced or reverted to
+`void *` if their machine evidence changes. Ghidra may still render an indirect `__thiscall` as
 `(*object->vtable->method)(object, ...)`; the explicit receiver is normal decompiler
 syntax, not a missing argument in the recovered prototype.
 
@@ -1152,6 +1206,7 @@ a new conflict is what requires another iteration.
 
 | Pair or script | Primary purpose |
 | --- | --- |
+| `STRecoveryLauncher` | Capture provider/loading/runtime diagnostics for the pipeline itself in `pipeline_bootstrap.log`, then invoke the normal pipeline. |
 | `STRecoveryPipeline` | Infer repository paths, run dependency-ordered fixed-point workflows, retain the three newest hash-addressed run logs, and refuse stale/unconverged/regressed exports. |
 | `STTypeBootstrapAnalyzer/Applier` | Infer the minimum semantic type anchors from method/access/reference families; migrate legacy duplicate/view types without embedded addresses or enum values. |
 | `STDebugSymbolAnalyzer/Applier` | Recover C++ owners, method names, calling conventions, source evidence, and short diagnostic printf strings. |
@@ -1165,7 +1220,7 @@ a new conflict is what requires another iteration.
 | `STVirtualMethodAnalyzer/Applier` | Propagate reviewed virtual slot names, conventions, and compatible signatures. |
 | `STConstructorAnalyzer/Applier` | Recover constructors, allocation sizes, direct hierarchy evidence, receiver-only signatures, and ABI `Owner *` returns when EAX is proven to return `this`. |
 | `STClassLayoutAnalyzer/Applier` | Build and revalidate conservative class layouts, including fields reached after stable prologue `this` spills, dynamic byte/word buffers, nested class-field pointee layouts, and semantic field-type/name proposals. |
-| `STMethodOwnerAnalyzer/Applier` | Assign structural class ownership to non-virtual methods and repair weak script-owned assignments to high-fanout shared helpers. |
+| `STMethodOwnerAnalyzer/Applier` | Assign structural class ownership to non-virtual methods, use typed global-singleton values passed in ECX as owner evidence, and repair weak script-owned assignments to high-fanout shared helpers; it participates in the deep fixed point after global typing. |
 | `STHiddenThisAnalyzer/Applier` | Recover anonymous `__thiscall` receivers from ECX/RET/call-site evidence with neutral structural owners required by Ghidra. |
 | `STDestructorAnalyzer/Applier` | Recover conservative destructor and scalar-deleting-destructor candidates. |
 | `STSwitchEnumAnalyzer/Applier` | Turn repeated switch/state domains into enums, decode exact OR-composed cases, and retain an evidence-generated monotonic domain state. |
@@ -1180,11 +1235,11 @@ a new conflict is what requires another iteration.
 | `STDiscriminatedPayloadAnalyzer/Applier` | Infer per-case payload layouts and caller stack aggregates from switch discriminators and observed callsite lifetimes. |
 | `STGlobalAggregateAnalyzer/Applier` | Audit indexed global ranges and install only bounded arrays/matrices with a proven extent and indexing formula. |
 | `STGlobalDataAnalyzer/Applier` | Type generic globals from receiver/argument use and named-constructor stores, promote script-owned anonymous singleton pointers to named classes, assign address-stable structural names, and audit every `PTR_*` symbol by pointer role. |
-| `STIndirectCallAnalyzer/Applier` | Audit raw indirect calls; refine trusted slots semantically and otherwise install only machine-proven neutral thiscall ABI definitions. |
+| `STIndirectCallAnalyzer/Applier` | Audit raw indirect calls; refine trusted slots semantically and otherwise install machine-proven neutral thiscall/stdcall definitions with per-slot stack-access and accumulator-return widths. |
 | `STPointerRoleRepairAnalyzer/Applier` | Remove prior script-owned pointer constraints from stack slots with proven scalar lifetimes in unsettled functions. |
-| `STPointerShapeAnalyzer/Applier` | Recover and fixed-point-refine known or anonymous pointer-backed structures from fixed, nested, alias-mediated dereferences and typed calls; apply auto-`this` types through the owning class namespace. |
+| `STPointerShapeAnalyzer/Applier` | Recover and fixed-point-refine known or anonymous pointer-backed structures from fixed, nested, alias-mediated dereferences and typed calls; merge non-conflicting generated partial views only when their identity is proven by one global singleton value; for an untyped singleton, materialize a target-local superset instead of widening helper-local views; apply auto-`this` types through the owning class namespace. |
 | `STTypeFamilyAnalyzer/Applier` | Promote anonymous layouts only to one explicit semantic anchor and propagate named aggregate return types into script-owned anonymous locals; geometry-only matches remain review-only. |
-| `STTypeLifecycleAnalyzer/Applier` | Replace legacy views with one equivalent semantic anchor and remove only unreferenced script-owned view types. |
+| `STTypeLifecycleAnalyzer/Applier` | Replace legacy views with one equivalent semantic anchor and remove unreferenced, hash-owned anonymous PointerShape/ClassPointee/HiddenThis types after zero-parent/signature/Listing-use revalidation. |
 | `STEvidenceLedger` | Record/verify a deterministic semantic Program fingerprint and hashes of every proposal/apply artifact plus monotonic enum state before export; retain the volatile modification counter for diagnostics only. |
 | `STSourceProvenanceAnalyzer/Applier` | Attach original source files and strict free-function names. |
 | `STControlFlowLabelAnalyzer/Applier` | Give structural names to real decompiler goto targets. |
@@ -1216,7 +1271,12 @@ parent or copy individual files into Ghidra's installation.
 
 Verify Ghidra 12.1.2 and JDK 21 first. Remove any stale local `.class` output and
 let Ghidra compile the source again. Compilation failures against other Ghidra
-versions can be genuine API differences.
+versions can be genuine API differences. Script Manager refresh compiles the
+entire source bundle before any repository script can execute, so refresh-time
+compiler diagnostics remain in Ghidra's Console/application log. After a
+successful refresh, `STRecoveryLauncher` retains provider/runtime output in
+`recovery/ST.exe/pipeline_bootstrap.log`; child load diagnostics are retained in
+the newest run's `build/` directory and indexed by `build_manifest.tsv`.
 
 ### An applier asks for a file instead of a directory
 

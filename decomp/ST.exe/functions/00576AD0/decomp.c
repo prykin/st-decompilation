@@ -9,10 +9,10 @@ undefined4 __thiscall BaseSystemC::CreateSystemObjects(BaseSystemC *this)
 
 {
   code *pcVar1;
-  BaseSystemC *pBVar2;
+  BaseSystemC *this_00;
   int errorCode;
-  int iVar3;
-  undefined4 uVar4;
+  int iVar2;
+  undefined4 uVar3;
   InternalExceptionFrame local_50;
   BaseSystemC *local_c;
   undefined4 local_8;
@@ -22,17 +22,17 @@ undefined4 __thiscall BaseSystemC::CreateSystemObjects(BaseSystemC *this)
   g_currentExceptionFrame = &local_50;
   local_c = this;
   errorCode = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0);
-  pBVar2 = local_c;
+  this_00 = local_c;
   if (errorCode == 0) {
-    (*local_c->vtable->vfunc_0C)(1,&local_8,0,0);
-    (*pBVar2->vtable->vfunc_0C)(0x101,&DAT_00802a2c,0,0);
+    (*local_c->vtable->vfunc_0C)(local_c,1,&local_8,0,0);
+    (*this_00->vtable->vfunc_0C)(this_00,0x101,&DAT_00802a2c,0,0);
     g_currentExceptionFrame = local_50.previous;
     return 0;
   }
   g_currentExceptionFrame = local_50.previous;
-  iVar3 = ReportDebugMessage("E:\\__titans\\tsystem.cpp",0x2c,0,errorCode,"%s",
+  iVar2 = ReportDebugMessage("E:\\__titans\\tsystem.cpp",0x2c,0,errorCode,"%s",
                              "BaseSystemC::CreateSystemObjects");
-  if (iVar3 != 0) {
+  if (iVar2 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   RaiseInternalException(errorCode,0,"E:\\__titans\\tsystem.cpp",0x2d);

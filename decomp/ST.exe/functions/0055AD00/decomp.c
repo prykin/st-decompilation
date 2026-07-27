@@ -1,6 +1,12 @@
 
+/* [STMethodOwnerApplier] Structural method owner recovered as VisibleClassTy.
+   Evidence: this_call_owners=[VisibleClassTy]; agreed_this_calls=2; incoming_this_accesses=5;
+   incoming_edx_uses=0; incoming_stack_parameter_uses=8; direct_non_thunk_callers=0;
+   incoming_ecx_receiver_callers=0; attributed_named_callers=2; owner_evidence_coverage=adequate */
+
 undefined4 __thiscall
-FUN_0055ad00(void *this,int param_1,int param_2,undefined4 param_3,uint param_4,int param_5)
+VisibleClassTy::sub_0055AD00
+          (VisibleClassTy *this,int param_1,int param_2,undefined4 param_3,uint param_4,int param_5)
 
 {
   int iVar1;
@@ -18,10 +24,10 @@ FUN_0055ad00(void *this,int param_1,int param_2,undefined4 param_3,uint param_4,
   undefined *local_c;
   int *local_8;
 
-  if (((*(int *)((int)this + 0x114) != 0) && (param_4 < 8)) &&
+  if (((this->field_0114 != 0) && (param_4 < 8)) &&
      ((g_playSystem_00802A38 == (STPlaySystemC *)0x0 || ((byte)(&DAT_008087e9)[param_4 * 0x51] < 8))
      )) {
-    local_8 = (int *)((int)this + 0x54);
+    local_8 = &this->field_0054;
     local_1c = 0;
     local_10 = &DAT_008087e9;
     do {
@@ -68,14 +74,11 @@ LAB_0055ae0a:
             do {
               iVar7 = 0;
               do {
-                /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
                 if ((((((puVar5 == (undefined *)0x0) || (local_c[iVar7] != '\0')) &&
                       (iVar1 = iVar7 + iVar4, -1 < iVar1)) &&
-                     ((iVar1 < *(int *)((int)this + 0x20) && (-1 < iVar8)))) &&
-                    ((iVar8 < *(int *)((int)this + 0x24) &&
-                     (((int)local_10 < 0x808a71 && (*local_8 != 0)))))) &&
-                   (*(char *)(iVar8 * *(int *)((int)this + 0x20) + *local_8 + iVar7 + iVar4) != '\0'
-                   )) {
+                     ((iVar1 < this->field_0020 && (-1 < iVar8)))) &&
+                    ((iVar8 < this->field_0024 && (((int)local_10 < 0x808a71 && (*local_8 != 0))))))
+                   && (*(char *)(iVar8 * this->field_0020 + *local_8 + iVar7 + iVar4) != '\0')) {
                   return 1;
                 }
                 iVar7 = iVar7 + 1;

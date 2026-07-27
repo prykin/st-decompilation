@@ -55,8 +55,9 @@ void __thiscall ChooseMapTy::DeleteCtrls(ChooseMapTy *this)
   FUN_006b3af0((int *)PTR_008075a8,this_00->field_1C87);
   FUN_006b5f80((int *)PTR_008075a8,0x112,0x38,0x204,0x19d);
   MMMObjTy::OutBSlProc
-            (DAT_0080759c,(int)DAT_0080759c,(MMMObjTy *)0x0,0,0x112,0x38,0x204,0x19d,
-             &this_00->field_1A5B->field_0140);
+            ((MMMObjTy *)g_anonShape_GLOBAL_0080759C_9638EF10_0080759C,
+             (int)g_anonShape_GLOBAL_0080759C_9638EF10_0080759C,(MMMObjTy *)0x0,0,0x112,0x38,0x204,
+             0x19d,&this_00->field_1A5B->field_0140);
   if (this_00->field_1A6C != 0) {
     StartSystemTy::sub_006E56B0(this_00->field_000C,this_00->field_1A6C);
   }

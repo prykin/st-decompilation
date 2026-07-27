@@ -1,4 +1,4 @@
-FUN_004fad20:
+CPanelTy::sub_004FAD20:
 004FAD20  56                        PUSH ESI
 004FAD21  8B F1                     MOV ESI,ECX
 004FAD23  B9 06 00 00 00            MOV ECX,0x6

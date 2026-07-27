@@ -16,24 +16,23 @@ int __thiscall STBoatC::UnLoadObj(STBoatC *this,int param_1)
   code *pcVar3;
   short sVar4;
   int iVar5;
-  int iVar6;
-  uint uVar7;
-  undefined4 *puVar8;
-  uint uVar9;
+  uint uVar6;
+  undefined4 *puVar7;
+  uint uVar8;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined2 extraout_var;
-  int iVar10;
-  undefined2 uVar12;
-  uint uVar11;
-  undefined4 *puVar13;
-  longlong lVar14;
+  int iVar9;
+  uint uVar10;
+  undefined4 *puVar11;
+  longlong lVar12;
+  short sVar13;
+  short sVar14;
   short sVar15;
   short sVar16;
   short sVar17;
-  short sVar18;
+  int iVar18;
   short sVar19;
-  short sVar20;
-  byte bVar21;
+  byte bVar20;
   undefined4 local_30 [2];
   undefined4 local_28;
   short local_24;
@@ -50,21 +49,19 @@ int __thiscall STBoatC::UnLoadObj(STBoatC *this,int param_1)
     this->field_02C4 = 0;
     if (this->field_07CA != 0) {
       sVar4 = this->field_03CE;
-      sVar15 = this->field_03D0;
+      sVar13 = this->field_03D0;
       *(short *)&this->field_0x5ca = sVar4;
-      *(short *)&this->field_0x5cc = sVar15;
+      *(short *)&this->field_0x5cc = sVar13;
       *(undefined2 *)&this->field_0x5ce = this->field_03D2;
-      if (((sVar4 == -1) && (sVar15 == -1)) && (this->field_03D2 == -1)) {
+      if (((sVar4 == -1) && (sVar13 == -1)) && (this->field_03D2 == -1)) {
         this->field_05D6 = 0;
         return 2;
       }
       /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-      iVar5 = SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0048DFD0::sub_0048DFD0
-                        ((AnonReceiver_0048DFD0 *)this,sVar4,sVar15,this->field_03D2,
-                         this->field_005B,this->field_005D,
-                         (int *)CONCAT22((short)((uint)&this->field_0x5d0 >> 0x10),this->field_005F)
-                         ,0,(short *)&this->field_0x5d0,(short *)&this->field_0x5d2,
-                         (short *)&this->field_0x5d4);
+      iVar5 = sub_0048DFD0(this,sVar4,sVar13,this->field_03D2,this->field_005B,this->field_005D,
+                           (int *)CONCAT22((short)((uint)&this->field_0x5d0 >> 0x10),
+                                           this->field_005F),0,(short *)&this->field_0x5d0,
+                           (short *)&this->field_0x5d2,(short *)&this->field_0x5d4);
       if (iVar5 != 0) {
         this->field_05D6 = 5;
         sub_00481520(this,(int)*(short *)&this->field_0x5d0,(int)*(short *)&this->field_0x5d2,
@@ -91,13 +88,11 @@ int __thiscall STBoatC::UnLoadObj(STBoatC *this,int param_1)
     }
     else if (iVar5 == 3) {
       /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-      iVar5 = SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0048DFD0::sub_0048DFD0
-                        ((AnonReceiver_0048DFD0 *)this,*(short *)&this->field_0x5ca,
-                         *(short *)&this->field_0x5cc,*(short *)&this->field_0x5ce,this->field_005B,
-                         this->field_005D,
-                         (int *)CONCAT22((short)((uint)&this->field_0x5d0 >> 0x10),this->field_005F)
-                         ,0,(short *)&this->field_0x5d0,(short *)&this->field_0x5d2,
-                         (short *)&this->field_0x5d4);
+      iVar5 = sub_0048DFD0(this,*(short *)&this->field_0x5ca,*(short *)&this->field_0x5cc,
+                           *(short *)&this->field_0x5ce,this->field_005B,this->field_005D,
+                           (int *)CONCAT22((short)((uint)&this->field_0x5d0 >> 0x10),
+                                           this->field_005F),0,(short *)&this->field_0x5d0,
+                           (short *)&this->field_0x5d2,(short *)&this->field_0x5d4);
       if (iVar5 == 0) {
         return 0;
       }
@@ -113,40 +108,37 @@ int __thiscall STBoatC::UnLoadObj(STBoatC *this,int param_1)
                                (undefined2 *)&this->field_0x5d0,(undefined2 *)&this->field_0x5d2,
                                (short *)&this->field_0x5d4);
     if (iVar5 == 0) {
-      iVar5 = (*this->vtable->vfunc_D8)();
+      iVar5 = (*this->vtable->vfunc_D8)(this);
       return -(uint)(iVar5 != 0);
     }
-    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-    iVar5 = CONCAT22((short)((uint)iVar5 >> 0x10),*(short *)&this->field_0x5d4 * 200) + 100;
     /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
-    iVar10 = CONCAT22(extraout_var,*(short *)&this->field_0x5d2 * 0xc9) + 100;
-    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-    iVar6 = CONCAT22((short)((uint)iVar5 >> 0x10),*(short *)&this->field_0x5d0 * 0xc9) + 100;
-    uVar12 = (undefined2)((uint)iVar10 >> 0x10);
+    iVar9 = CONCAT22(extraout_var,*(short *)&this->field_0x5d2 * 0xc9) + 100;
     /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
     sVar4 = (*this->vtable->vfunc_10)
-                      (CONCAT22(uVar12,this->field_0041),
-                       CONCAT22((short)((uint)iVar6 >> 0x10),this->field_0043),
-                       CONCAT22(uVar12,this->field_0045),iVar6,iVar10,iVar5);
+                      (this->field_0041,this->field_0043,
+                       CONCAT22((short)((uint)iVar9 >> 0x10),this->field_0045),
+                       *(short *)&this->field_0x5d0 * 0xc9 + 100,(short)iVar9,
+                       CONCAT22((short)((uint)iVar5 >> 0x10),*(short *)&this->field_0x5d4 * 200) +
+                       100);
     this->field_05DA = sVar4;
-    uVar7 = sub_004176C0(this,sVar4);
-    uVar7 = sub_00417910(this,(short)uVar7);
-    if (uVar7 != 0xffffffff) {
-      if (uVar7 == 0) {
+    uVar6 = sub_004176C0(this,sVar4);
+    uVar6 = sub_00417910(this,(short)uVar6);
+    if (uVar6 != 0xffffffff) {
+      if (uVar6 == 0) {
         this->field_05D6 = 1;
-        FUN_006e62d0(g_playSystem_00802A38,this->field_07CA,(int *)&local_c);
+        STPlaySystemC::sub_006E62D0(g_playSystem_00802A38,this->field_07CA,(int *)&local_c);
         uVar1 = local_c->field_0062;
         uVar2 = local_c->field_0061;
         local_5 = local_c->field_0063;
-        puVar8 = (undefined4 *)&this->field_0034;
-        puVar13 = (undefined4 *)&local_c->field_0x34;
+        puVar7 = (undefined4 *)&this->field_0034;
+        puVar11 = (undefined4 *)&local_c->field_0x34;
         for (iVar5 = 0x17; iVar5 != 0; iVar5 = iVar5 + -1) {
-          *puVar13 = *puVar8;
-          puVar8 = puVar8 + 1;
-          puVar13 = puVar13 + 1;
+          *puVar11 = *puVar7;
+          puVar7 = puVar7 + 1;
+          puVar11 = puVar11 + 1;
         }
-        *(undefined2 *)puVar13 = *(undefined2 *)puVar8;
-        *(undefined1 *)((int)puVar13 + 2) = *(undefined1 *)((int)puVar8 + 2);
+        *(undefined2 *)puVar11 = *(undefined2 *)puVar7;
+        *(undefined1 *)((int)puVar11 + 2) = *(undefined1 *)((int)puVar7 + 2);
         local_c->field_0061 = uVar2;
         local_c->field_0062 = uVar1;
         local_c->field_0063 = local_5;
@@ -162,7 +154,7 @@ int __thiscall STBoatC::UnLoadObj(STBoatC *this,int param_1)
         this->field_07CA = 0;
         this->field_07C6 = 0;
       }
-      iVar5 = (*this->vtable->vfunc_D8)();
+      iVar5 = (*this->vtable->vfunc_D8)(this);
       return (-(uint)(iVar5 != 0) & 0xfffffffd) + 2;
     }
     iVar5 = ReportDebugMessage("E:\\__titans\\wlad\\To_boat.cpp",0x309b,0,0,"%s",
@@ -184,60 +176,60 @@ int __thiscall STBoatC::UnLoadObj(STBoatC *this,int param_1)
     if (this->field_02BF != '\0') {
       param_1 = (int)&this->field_0x2b3;
       do {
-        puVar8 = (undefined4 *)
+        puVar7 = (undefined4 *)
                  thunk_FUN_0041dc40(local_30,(short)*(undefined4 *)param_1,
                                     *(undefined2 *)(param_1 + 4),this->field_006C);
-        local_28 = *puVar8;
-        local_24 = *(short *)(puVar8 + 1);
+        local_28 = *puVar7;
+        local_24 = *(short *)(puVar7 + 1);
         if (DAT_0080732c == 1) {
-          bVar21 = 0;
-          sVar20 = 0;
-          iVar10 = -1;
-          uVar7 = this->field_001C * 0x41c64e6d + 0x3039;
+          bVar20 = 0;
           sVar19 = 0;
-          this->field_001C = uVar7;
-          sVar18 = 0;
+          iVar18 = -1;
+          uVar6 = this->field_001C * 0x41c64e6d + 0x3039;
           sVar17 = 0;
-          uVar9 = uVar7 * 0x41c64e6d + 0x3039;
+          this->field_001C = uVar6;
           sVar16 = 0;
-          this->field_001C = uVar9;
-          local_1c = uVar9 * 0x41c64e6d + 0x3039;
           sVar15 = 0;
+          uVar8 = uVar6 * 0x41c64e6d + 0x3039;
+          sVar14 = 0;
+          this->field_001C = uVar8;
+          local_1c = uVar8 * 0x41c64e6d + 0x3039;
+          sVar13 = 0;
           this->field_001C = local_1c;
           sVar4 = 0;
-          lVar14 = Library::MSVCRT::__ftol();
-          iVar5 = (int)(short)lVar14 + (uVar7 >> 0x10) % 7 + (int)this->field_0045 + -3 +
+          lVar12 = Library::MSVCRT::__ftol();
+          iVar5 = (int)(short)lVar12 + (uVar6 >> 0x10) % 7 + (int)this->field_0045 + -3 +
                   (int)local_24;
           /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-          iVar6 = ((uVar9 >> 0x10) % 7 + (int)this->field_0043) - (int)local_28._2_2_;
-          uVar7 = local_1c;
+          iVar9 = ((uVar8 >> 0x10) % 7 + (int)this->field_0043) - (int)local_28._2_2_;
+          uVar6 = local_1c;
         }
         else {
-          uVar9 = this->field_001C * 0x41c64e6d + 0x3039;
-          bVar21 = 0;
-          this->field_001C = uVar9;
-          uVar11 = uVar9 * 0x41c64e6d + 0x3039;
-          sVar20 = 0;
-          this->field_001C = uVar11;
-          uVar7 = uVar11 * 0x41c64e6d + 0x3039;
-          this->field_001C = uVar7;
-          iVar10 = -1;
+          uVar8 = this->field_001C * 0x41c64e6d + 0x3039;
+          bVar20 = 0;
+          this->field_001C = uVar8;
+          uVar10 = uVar8 * 0x41c64e6d + 0x3039;
           sVar19 = 0;
-          sVar18 = 0;
+          this->field_001C = uVar10;
+          uVar6 = uVar10 * 0x41c64e6d + 0x3039;
+          this->field_001C = uVar6;
+          iVar18 = -1;
           sVar17 = 0;
           sVar16 = 0;
           sVar15 = 0;
+          sVar14 = 0;
+          sVar13 = 0;
           sVar4 = 0;
-          iVar5 = (uVar9 >> 0x10) % 7 + (int)this->field_0045 + -3 + (int)local_24;
+          iVar5 = (uVar8 >> 0x10) % 7 + (int)this->field_0045 + -3 + (int)local_24;
           /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
           local_28._2_2_ = (short)((uint)local_28 >> 0x10);
           /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-          iVar6 = ((uVar11 >> 0x10) % 7 + (int)this->field_0043) - (int)local_28._2_2_;
+          iVar9 = ((uVar10 >> 0x10) % 7 + (int)this->field_0043) - (int)local_28._2_2_;
         }
         TraksClassTy::TraksCreate
                   (g_traksClass_00802A7C,1,2,7,
-                   (uVar7 >> 0x10) % 7 + (int)this->field_0041 + -3 + (int)(short)local_28,
-                   iVar6 + -3,iVar5,sVar4,sVar15,sVar16,sVar17,sVar18,sVar19,iVar10,sVar20,bVar21);
+                   (uVar6 >> 0x10) % 7 + (int)this->field_0041 + -3 + (int)(short)local_28,
+                   iVar9 + -3,iVar5,sVar4,sVar13,sVar14,sVar15,sVar16,sVar17,iVar18,sVar19,bVar20);
         local_10 = local_10 + 1;
         param_1 = param_1 + 6;
       } while (local_10 < (int)(uint)(byte)this->field_02BF);
@@ -252,11 +244,11 @@ int __thiscall STBoatC::UnLoadObj(STBoatC *this,int param_1)
     }
     if (local_20 == 0) {
       FUN_006ea2f0(this->field_0211,this->field_01ED);
-      iVar5 = (*this->vtable->vfunc_D8)();
+      iVar5 = (*this->vtable->vfunc_D8)(this);
       return -(uint)(iVar5 != 0);
     }
   }
-  iVar5 = (*this->vtable->vfunc_D8)();
+  iVar5 = (*this->vtable->vfunc_D8)(this);
   return (-(uint)(iVar5 != 0) & 0xfffffffd) + 2;
 }
 

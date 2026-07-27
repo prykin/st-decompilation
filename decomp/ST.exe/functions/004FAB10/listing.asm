@@ -1,4 +1,4 @@
-FUN_004fab10:
+CPanelTy::sub_004FAB10:
 004FAB10  55                        PUSH EBP
 004FAB11  8B EC                     MOV EBP,ESP
 004FAB13  8B 45 08                  MOV EAX,dword ptr [EBP + 0x8]

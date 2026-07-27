@@ -184,7 +184,7 @@ undefined4 __thiscall TLOBaseTy::sub_004C4550(TLOBaseTy *this,int *param_1)
                                    (&this->field_028D)[(int)piVar2 * 0x20],this->field_0024,
                                    this->field_0018,this->field_0032);
                 if (this->field_05AC == CASE_47) {
-                  (*this->vtable->vfunc_90)(4,0x315);
+                  (*this->vtable->vfunc_90)(this,4,0x315);
                 }
               }
               else {
@@ -233,8 +233,8 @@ undefined4 __thiscall TLOBaseTy::sub_004C4550(TLOBaseTy *this,int *param_1)
       iVar12 = (int)param_1 * 0x80;
       iVar10 = (int)param_1 * 0x80;
       param_1 = (int *)(&this->field_0x2a5 + iVar12);
-      SubmarineTitans::Recovered::HiddenThis::AnonReceiver_004DB160::thunk_FUN_004db160
-                ((AnonReceiver_004DB160 *)g_allPlayers_007FA174,(int)this->field_0024,0xa8,
+      STAllPlayersC::sub_004DB160
+                (g_allPlayers_007FA174,(int)this->field_0024,0xa8,
                  (int *)(&this->field_0x2a5 + iVar12),&this->field_02A9 + iVar3,
                  (int *)(&this->field_0x2ad + iVar10),&local_1c);
       thunk_FUN_00584a30(this->field_04E0,this->field_04E4,this->field_04E8,*param_1 * 0xc9 + 100,
@@ -243,15 +243,15 @@ undefined4 __thiscall TLOBaseTy::sub_004C4550(TLOBaseTy *this,int *param_1)
       uVar4 = GetPlayerRaceId(DAT_0080874d);
       uVar4 = uVar4 & 0xff;
       if (uVar4 == 1) {
-        (*this->vtable->vfunc_90)(6,0x9e);
+        (*this->vtable->vfunc_90)(this,6,0x9e);
         return 0;
       }
       if (uVar4 == 2) {
-        (*this->vtable->vfunc_90)(6,0x9f);
+        (*this->vtable->vfunc_90)(this,6,0x9f);
         return 0;
       }
       if (uVar4 == 3) {
-        (*this->vtable->vfunc_90)(6,0xa0);
+        (*this->vtable->vfunc_90)(this,6,0xa0);
         return 0;
       }
       break;
@@ -260,8 +260,8 @@ undefined4 __thiscall TLOBaseTy::sub_004C4550(TLOBaseTy *this,int *param_1)
       iVar10 = (int)param_1 * 0x80;
       iVar12 = (int)param_1 * 0x80;
       param_1 = (int *)(&this->field_0x2a5 + iVar10);
-      SubmarineTitans::Recovered::HiddenThis::AnonReceiver_004DB160::thunk_FUN_004db160
-                ((AnonReceiver_004DB160 *)g_allPlayers_007FA174,(int)this->field_0024,0xa8,
+      STAllPlayersC::sub_004DB160
+                (g_allPlayers_007FA174,(int)this->field_0024,0xa8,
                  (int *)(&this->field_0x2a5 + iVar10),&this->field_02A9 + iVar3,
                  (int *)(&this->field_0x2ad + iVar12),&local_1c);
       thunk_FUN_006405f0(0xa8,this->field_0024,this->field_0018,this->field_0032,
@@ -271,15 +271,15 @@ undefined4 __thiscall TLOBaseTy::sub_004C4550(TLOBaseTy *this,int *param_1)
       uVar4 = GetPlayerRaceId(DAT_0080874d);
       uVar4 = uVar4 & 0xff;
       if (uVar4 == 1) {
-        (*this->vtable->vfunc_90)(6,0x98);
+        (*this->vtable->vfunc_90)(this,6,0x98);
         return 0;
       }
       if (uVar4 == 2) {
-        (*this->vtable->vfunc_90)(6,0x99);
+        (*this->vtable->vfunc_90)(this,6,0x99);
         return 0;
       }
       if (uVar4 == 3) {
-        (*this->vtable->vfunc_90)(6,0x9a);
+        (*this->vtable->vfunc_90)(this,6,0x9a);
         return 0;
       }
       break;
@@ -301,8 +301,8 @@ undefined4 __thiscall TLOBaseTy::sub_004C4550(TLOBaseTy *this,int *param_1)
       iVar12 = (int)param_1 * 0x80;
       iVar10 = (int)param_1 * 0x80;
       param_1 = (int *)(&this->field_0x2a5 + iVar12);
-      SubmarineTitans::Recovered::HiddenThis::AnonReceiver_004DB160::thunk_FUN_004db160
-                ((AnonReceiver_004DB160 *)g_allPlayers_007FA174,(int)this->field_0024,0xa8,
+      STAllPlayersC::sub_004DB160
+                (g_allPlayers_007FA174,(int)this->field_0024,0xa8,
                  (int *)(&this->field_0x2a5 + iVar12),&this->field_02A9 + iVar3,
                  (int *)(&this->field_0x2ad + iVar10),&local_1c);
       thunk_FUN_006405f0(0xbe,this->field_0024,this->field_0018,this->field_0032,
@@ -312,15 +312,15 @@ undefined4 __thiscall TLOBaseTy::sub_004C4550(TLOBaseTy *this,int *param_1)
       uVar4 = GetPlayerRaceId(DAT_0080874d);
       uVar4 = uVar4 & 0xff;
       if (uVar4 == 1) {
-        (*this->vtable->vfunc_90)(6,0x9b);
+        (*this->vtable->vfunc_90)(this,6,0x9b);
         return 0;
       }
       if (uVar4 == 2) {
-        (*this->vtable->vfunc_90)(6,0x9c);
+        (*this->vtable->vfunc_90)(this,6,0x9c);
         return 0;
       }
       if (uVar4 == 3) {
-        (*this->vtable->vfunc_90)(6,0x9d);
+        (*this->vtable->vfunc_90)(this,6,0x9d);
         return 0;
       }
     }
@@ -337,7 +337,8 @@ undefined4 __thiscall TLOBaseTy::sub_004C4550(TLOBaseTy *this,int *param_1)
         sVar6 = this->field_0045;
       }
       if (this->field_04D0 != CASE_0) {
-        iVar3 = FUN_006e62d0(g_playSystem_00802A38,this->field_04D0,(int *)&local_24);
+        iVar3 = STPlaySystemC::sub_006E62D0(g_playSystem_00802A38,this->field_04D0,(int *)&local_24)
+        ;
         if (iVar3 != 0) {
           this->field_04D0 = CASE_0;
           *(undefined4 *)(&this->field_0x29d + (int)piVar2 * 0x80) = 1;
@@ -391,8 +392,8 @@ undefined4 __thiscall TLOBaseTy::sub_004C4550(TLOBaseTy *this,int *param_1)
     else if ((&DAT_00792ca0)[iVar3 * 3] == 0xb3) {
       param_1 = (int *)0x0;
       if ((this->field_04EC != 0) &&
-         (iVar3 = FUN_006e62d0(g_playSystem_00802A38,this->field_04EC,(int *)&param_1), iVar3 == 0))
-      {
+         (iVar3 = STPlaySystemC::sub_006E62D0
+                            (g_playSystem_00802A38,this->field_04EC,(int *)&param_1), iVar3 == 0)) {
         thunk_FUN_00617b10(param_1,*(undefined4 *)(&this->field_0x2a5 + (int)piVar2 * 0x80),
                            (&this->field_02A9)[(int)piVar2 * 0x20],
                            *(undefined4 *)(&this->field_0x2ad + (int)piVar2 * 0x80),this->field_04F4

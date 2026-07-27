@@ -72,11 +72,11 @@ void __thiscall OptPanelTy::DoneOptPanel(OptPanelTy *this)
     } while (iVar3 != 0);
     g_optPanel_008016DC = (OptPanelTy *)0x0;
     if (pOVar2->field_017C != (ccFntTy *)0x0) {
-      ccFntTy::operator((uint *)pOVar2->field_017C);
+      ccFntTy::operator_delete((uint *)pOVar2->field_017C);
       pOVar2->field_017C = (ccFntTy *)0x0;
     }
     if (pOVar2->field_0180 != (ccFntTy *)0x0) {
-      ccFntTy::operator((uint *)pOVar2->field_0180);
+      ccFntTy::operator_delete((uint *)pOVar2->field_0180);
       pOVar2->field_0180 = (ccFntTy *)0x0;
     }
     pOVar2->field_0198 = (ushort *)0x0;
@@ -84,7 +84,7 @@ void __thiscall OptPanelTy::DoneOptPanel(OptPanelTy *this)
     iVar3 = 5;
     do {
       if (*ppuVar5 != (ushort *)0x0) {
-        cMf32::RecMemFree(DAT_00806790,(uint *)ppuVar5);
+        cMf32::RecMemFree(g_cMf32_00806790,(uint *)ppuVar5);
       }
       ppuVar5 = ppuVar5 + 1;
       iVar3 = iVar3 + -1;

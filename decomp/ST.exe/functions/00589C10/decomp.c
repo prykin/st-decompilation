@@ -38,7 +38,7 @@ int __thiscall STOctopusC::GetMessage(STOctopusC *this,STMessage *message)
   undefined4 local_30;
   undefined4 local_2c;
   STSprGameObjC *local_28;
-  undefined4 local_24;
+  short local_24 [2];
   undefined4 local_20;
   undefined4 *local_1c;
   byte *local_18;
@@ -104,16 +104,16 @@ int __thiscall STOctopusC::GetMessage(STOctopusC *this,STMessage *message)
                                  (int)(short)((message->arg1).words.low * 0xc9 + 100),
                                  (int)(short)((message->arg0).words.high * 0xc9 + 100),
                                  (int)(short)((message->arg1).words.high * 0xc9 + 100),
-                                 (undefined2 *)&local_1c,(undefined2 *)&local_24,(short *)&local_20)
-      ;
+                                 (undefined2 *)&local_1c,local_24,(short *)&local_20);
       if (iVar6 == 0) {
         g_currentExceptionFrame = local_88.previous;
         return 0;
       }
-      sub_0058AF70((STOctopusC *)this_00,(short)local_1c,(short)local_24,(short)local_20);
+      sub_0058AF70((STOctopusC *)this_00,(short)local_1c,local_24[0],(short)local_20);
       sVar5 = (*this_00->vtable->vfunc_10)
-                        (*(undefined2 *)&this_00->field_0x41,*(undefined2 *)&this_00->field_0x43,
-                         *(undefined2 *)&this_00->field_0x45,local_1c,local_24,local_20);
+                        (*(short *)&this_00->field_0x41,*(short *)&this_00->field_0x43,
+                         (int)*(undefined2 *)&this_00->field_0x45,(short)local_1c,local_24[0],
+                         local_20);
       *(short *)&this_00->field_0x6c = sVar5 / 0x2d - (short)((int)sVar5 / -0x4c000000);
       iVar6 = *(int *)&this_00->field_0x251 * 0x1850;
       *(int *)&this_00->field_0x251 = (int)(iVar6 + (iVar6 >> 0x1f & 0xfffU)) >> 0xc;

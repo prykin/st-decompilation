@@ -143,8 +143,9 @@ LAB_00618ce0:
   }
   else if (SVar1 == MESS_ID_ALLCREATE) {
     if (((local_8->field_007D != 0) &&
-        (iVar3 = FUN_006e62d0(g_playSystem_00802A38,local_8->field_0079,(int *)&local_14),
-        iVar3 != -4)) && (this_00->field_007D = local_14, local_14 != (void *)0x0)) {
+        (iVar3 = STPlaySystemC::sub_006E62D0
+                           (g_playSystem_00802A38,local_8->field_0079,(int *)&local_14), iVar3 != -4
+        )) && (this_00->field_007D = local_14, local_14 != (void *)0x0)) {
       thunk_FUN_00617a20(local_14,this_00->field_008B,this_00->field_0018,this_00);
     }
   }

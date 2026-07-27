@@ -21,7 +21,8 @@ void __thiscall FUN_005ef6c0(void *this,int param_1)
     goto LAB_005ef720;
   }
   if (*(int *)((int)this + 0x2a7) != 0) {
-    iVar1 = FUN_006e62d0(g_playSystem_00802A38,*(int *)((int)this + 0x2a7),(int *)&local_8);
+    iVar1 = STPlaySystemC::sub_006E62D0
+                      (g_playSystem_00802A38,*(int *)((int)this + 0x2a7),(int *)&local_8);
     if (iVar1 != -4) {
       this_00 = local_8;
     }

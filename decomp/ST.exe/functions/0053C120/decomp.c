@@ -71,7 +71,7 @@ void __thiscall ResearchPanelTy::InitResearchPanel(ResearchPanelTy *this)
   piVar10 = (int *)0x0;
   this_00->field_003C = this_00->field_003C + (g_nWidth_00806730 + -800) / 2;
   text = thunk_FUN_00571240("BKG_RESEARCHW",0);
-  puVar4 = cMf32::RecGet(DAT_00806790,1,text,piVar10,iVar6);
+  puVar4 = cMf32::RecGet(g_cMf32_00806790,1,text,piVar10,iVar6);
   this_00->field_0184 = puVar4;
   puVar4 = Library::Ourlib::MFRLOAD::mfRLoad
                      (DAT_00806794,CASE_B,&DAT_007c20a0,0xffffffff,0,1,0,(undefined4 *)0x0);

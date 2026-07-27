@@ -1,5 +1,8 @@
 
-void FUN_006ad270(undefined4 param_1)
+/* [STPrototypeApplier] Propagated parameter 0.
+   Evidence: 0056ADC0 -> 006AD270 @ 0056B339 */
+
+void FUN_006ad270(AnonShape_GLOBAL_0080759C_9638EF10 *param_1)
 
 {
   DAT_00854eb8 = param_1;

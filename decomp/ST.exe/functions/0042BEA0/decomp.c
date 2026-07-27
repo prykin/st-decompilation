@@ -14,10 +14,10 @@ STAllPlayersC::AddObjToTmp2
   code *pcVar1;
   int iVar2;
   undefined4 uVar3;
-  STGameObjC *pSVar4;
+  STGameObjC *this_00;
   char objPtr;
-  STPlayerTempSlot *pSVar5;
-  Global_sub_0043FC50_param_1Enum GVar6;
+  STPlayerTempSlot *pSVar4;
+  Global_sub_0043FC50_param_1Enum GVar5;
   InternalExceptionFrame local_58;
   STPlayerTempSlot *local_14;
   undefined4 local_10;
@@ -55,16 +55,16 @@ STAllPlayersC::AddObjToTmp2
     local_14 = g_playerRuntime[param_1].tempSlots[0];
     if (param_3 == 0) {
       thunk_FUN_0043fc50(CASE_1,0);
-      GVar6 = CASE_2;
+      GVar5 = CASE_2;
 LAB_0042bf8b:
-      thunk_FUN_0043fc50(GVar6,param_3);
+      thunk_FUN_0043fc50(GVar5,param_3);
     }
   }
   else if (param_2 == 1) {
     local_14 = g_playerRuntime[param_1].tempSlots[1];
     if (param_3 == 0) {
       thunk_FUN_0043fc50(CASE_4,0);
-      GVar6 = CASE_5;
+      GVar5 = CASE_5;
       goto LAB_0042bf8b;
     }
   }
@@ -78,17 +78,17 @@ LAB_0042bf8b:
               (-0x5001fff7,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_allpl.cpp",
                0x23c);
   }
-  pSVar5 = local_14 + param_3;
+  pSVar4 = local_14 + param_3;
   objPtr = (char)param_5;
-  if (((pSVar5->objectType == param_4) && (pSVar5->playerId == (int)objPtr)) &&
-     (pSVar5->objectId == (short)param_6)) {
+  if (((pSVar4->objectType == param_4) && (pSVar4->playerId == (int)objPtr)) &&
+     (pSVar4->objectId == (short)param_6)) {
     RaiseInternalException
               (-0x5001ffff,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_allpl.cpp",
                0x23f);
   }
-  pSVar5->objectType = param_4;
-  pSVar5->playerId = (int)objPtr;
-  pSVar5->objectId = (short)param_6;
+  pSVar4->objectType = param_4;
+  pSVar4->playerId = (int)objPtr;
+  pSVar4->objectId = (short)param_6;
   if (param_4 < 0x1a5) {
     if (param_4 == 0x1a4) {
       local_8 = CASE_5;
@@ -122,8 +122,8 @@ LAB_0042bf8b:
             (-0x5001ffff,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_allpl.cpp",0x24a)
   ;
 cf_common_exit_0042C072:
-  pSVar4 = GetObjPtr(local_c,objPtr,param_6,local_8);
-  (*pSVar4->vtable[1].vfunc_14)(1);
+  this_00 = GetObjPtr(local_c,objPtr,param_6,local_8);
+  (*this_00->vtable->vfunc_E8)(this_00,1);
   g_currentExceptionFrame = local_58.previous;
   return local_10;
 }

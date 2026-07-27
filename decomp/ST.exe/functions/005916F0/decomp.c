@@ -33,7 +33,7 @@ void __thiscall CampaignTy::DoneCampaign(CampaignTy *this)
                      (uint)g_cursorClass_00802A30->field_001C);
       }
     }
-    DarkScreen(DAT_0080759c,10,2);
+    DarkScreen(g_anonShape_GLOBAL_0080759C_9638EF10_0080759C,10,2);
     thunk_FUN_00568bc0(&g_sound,1);
     if (g_startSystem_0081176C->field_002C != (ushort *)0x0) {
       cMf32::RecMemFree(g_cMf32_00806780,(uint *)&g_startSystem_0081176C->field_002C);

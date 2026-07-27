@@ -349,7 +349,7 @@ joined_r0x004f861b:
         bVar4 = 0;
         bVar11 = 6;
         pcVar8 = (char *)thunk_FUN_005260b0(0,0,0);
-        psVar10 = Library::Ourlib::MFIMG::mfQmtLoad(DAT_00806790,pcVar8,bVar11,bVar4,psVar10);
+        psVar10 = Library::Ourlib::MFIMG::mfQmtLoad(g_cMf32_00806790,pcVar8,bVar11,bVar4,psVar10);
         this_00->field_025B = psVar10;
         this_00->field_0260 = CASE_1;
         this_00->field_025F = 0;
@@ -386,7 +386,7 @@ joined_r0x004f861b:
     if (*ppsVar1 != (short *)0x0) {
       FUN_0070b600((int *)ppsVar1);
     }
-    pcVar17 = DAT_00806790;
+    pcVar17 = g_cMf32_00806790;
     if (this_00->field_0285 == '\0') {
       psVar10 = Library::Ourlib::MFIMG::mfQmtLoad
                           (g_cMf32_00806758,&this_00->field_0x265,6,0,(short *)0x0);
@@ -404,7 +404,7 @@ LAB_004f8860:
       bVar4 = 0;
       bVar11 = 6;
       pcVar8 = (char *)thunk_FUN_005260b0(0,0,0);
-      psVar10 = Library::Ourlib::MFIMG::mfQmtLoad(DAT_00806790,pcVar8,bVar11,bVar4,psVar10);
+      psVar10 = Library::Ourlib::MFIMG::mfQmtLoad(g_cMf32_00806790,pcVar8,bVar11,bVar4,psVar10);
       *ppsVar1 = psVar10;
     }
     this_00->field_0260 = CASE_1;

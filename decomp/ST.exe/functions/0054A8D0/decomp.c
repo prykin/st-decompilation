@@ -8,7 +8,7 @@ void __thiscall CursorClassTy::sub_0054A8D0(CursorClassTy *this)
 
 {
   if ((g_tLOBldMark_007FB2AC != (TLOBldMark *)0x0) && (g_tLOBldMark_007FB2AC->field_0018 == 0)) {
-    thunk_FUN_004c63f0((AnonShape_004C63F0_0B060A14 *)g_tLOBldMark_007FB2AC);
+    TLOBldMark::sub_004C63F0(g_tLOBldMark_007FB2AC);
   }
   if ((this->field_00DE == CASE_5) && (-1 < this->field_010B)) {
     if (PTR_00807598 != (AnonShape_GLOBAL_00807598_0C6808FB *)0x0) {

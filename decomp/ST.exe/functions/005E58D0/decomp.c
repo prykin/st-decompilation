@@ -47,9 +47,10 @@ void __thiscall MTestTy::InitMTest(MTestTy *this)
       MMsgTy::HidePanel(g_startSystem_0081176C->field_02E6,0,0,1);
       MMsgTy::HideSprites(g_startSystem_0081176C->field_02E6);
     }
-    DarkScreen(DAT_0080759c,1,0);
+    DarkScreen(g_anonShape_GLOBAL_0080759C_9638EF10_0080759C,1,0);
     PaintMTest(this_01);
-    thunk_FUN_0055ddf0(DAT_0080759c,(int *)PTR_008075a8,this_01->field_005D,10,2);
+    thunk_FUN_0055ddf0((undefined4 *)g_anonShape_GLOBAL_0080759C_9638EF10_0080759C,
+                       (int *)PTR_008075a8,this_01->field_005D,10,2);
     this_00 = g_cursorClass_00802A30;
     if (g_cursorClass_00802A30 != (CursorClassTy *)0x0) {
       iVar2 = g_cursorClass_00802A30->field_00C9;

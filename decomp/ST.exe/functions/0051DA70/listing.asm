@@ -1,4 +1,4 @@
-FUN_0051da70:
+HelpPanelTy::sub_0051DA70:
 0051DA70  55                        PUSH EBP
 0051DA71  8B EC                     MOV EBP,ESP
 0051DA73  83 EC 1C                  SUB ESP,0x1c

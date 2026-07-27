@@ -150,8 +150,7 @@ int __thiscall STBHEShellC::GetMessage(STBHEShellC *this,STMessage *message)
       iVar5 = thunk_FUN_005f3940(this_00->field_0061,this_00->field_0065,this_00->field_0069);
       this_00->field_0103 = (char)iVar5;
       if ((char)iVar5 != '\0') {
-        SubmarineTitans::Recovered::HiddenThis::AnonReceiver_005F35F0::sub_005F35F0
-                  ((AnonReceiver_005F35F0 *)this_00,this_00->field_0087);
+        sub_005F35F0(this_00,this_00->field_0087);
       }
       this_00->field_007D = DAT_007e66d4;
       g_currentExceptionFrame = local_6c.previous;
@@ -164,8 +163,7 @@ int __thiscall STBHEShellC::GetMessage(STBHEShellC *this,STMessage *message)
       g_currentExceptionFrame = local_6c.previous;
       return 0;
     }
-    SubmarineTitans::Recovered::HiddenThis::AnonReceiver_005F35F0::sub_005F35F0
-              ((AnonReceiver_005F35F0 *)this_00,this_00->field_0087);
+    sub_005F35F0(this_00,this_00->field_0087);
     g_currentExceptionFrame = local_6c.previous;
     return 0;
   }

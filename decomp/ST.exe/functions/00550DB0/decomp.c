@@ -95,8 +95,7 @@ void __thiscall TradePanelTy::InitTradePanel(TradePanelTy *this)
     pCVar4 = thunk_FUN_00571240("BKG_TRADECENTERW",0);
     SpecPanelTy::InitPanel
               ((SpecPanelTy *)this_00,pCVar4,uVar13,uVar14,iVar15,iVar17,UVar18,iVar8,uVar21);
-    pcVar5 = (ccFntTy *)
-             ccFntTy::operator(DAT_00806790,0x19d,(cMf32 *)DAT_00806790,"MONEY_FONT",0);
+    pcVar5 = (ccFntTy *)ccFntTy::operator_new(0x19d,g_cMf32_00806790,"MONEY_FONT",0);
     uVar10 = 1;
     this_00->field_01DD = pcVar5;
     pcVar5->field_0058 = 1;
@@ -170,10 +169,10 @@ void __thiscall TradePanelTy::InitTradePanel(TradePanelTy *this)
     local_490[3] = 2;
     pCVar4 = thunk_FUN_00571240("BUT_TBUP",0);
     pCVar4 = FUN_006f2c00(pCVar4,iVar8,uVar13);
-    local_18 = cMf32::RecGet((cMf32 *)DAT_00806790,1,pCVar4,piVar20,iVar15);
+    local_18 = cMf32::RecGet(g_cMf32_00806790,1,pCVar4,piVar20,iVar15);
     local_478 = *(undefined4 *)(local_18 + 2);
     local_474 = *(undefined4 *)(local_18 + 4);
-    cMf32::RecMemFree((cMf32 *)DAT_00806790,(uint *)&local_18);
+    cMf32::RecMemFree(g_cMf32_00806790,(uint *)&local_18);
     iVar8 = this_00->field_005C;
     local_490[4] = this_00->field_003C + 0x69;
     iVar15 = DAT_00806734;

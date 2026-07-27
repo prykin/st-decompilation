@@ -264,7 +264,7 @@ int __thiscall HelpPanelTy::GetMessage(HelpPanelTy *this,STMessage *message)
               return 0;
             }
             DAT_0080734d = DAT_0080734d == '\0';
-            thunk_FUN_00515180(this_00,'\b');
+            sub_00515180(this_00,'\b');
             g_currentExceptionFrame = local_84.previous;
             return 0;
           }

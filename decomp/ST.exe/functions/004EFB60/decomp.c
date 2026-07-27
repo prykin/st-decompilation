@@ -27,7 +27,7 @@ void __thiscall BldLabPanelTy::InitBldLabPanel(BldLabPanelTy *this)
     pDVar2 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,0x28,0x30,10);
     this_00->field_027A = pDVar2;
     this_00->field_003C = this_00->field_003C + (g_nWidth_00806730 + -800) / 2;
-    puVar3 = cMf32::RecGet(DAT_00806790,1,"BKG_BUILDLABW",(int *)0x0,1);
+    puVar3 = cMf32::RecGet(g_cMf32_00806790,1,"BKG_BUILDLABW",(int *)0x0,1);
     this_00->field_0184 = puVar3;
     puVar3 = Library::Ourlib::MFRLOAD::mfRLoad
                        (DAT_00806794,CASE_B,&DAT_007c1910,0xffffffff,0,1,0,(undefined4 *)0x0);

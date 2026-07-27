@@ -26,9 +26,9 @@ void __thiscall MReportTy::DoneMReport(MReportTy *this)
     local_8->field_002D = 0x14;
     *(undefined4 *)&local_8->field_0x31 = local_8->field_0008;
     FUN_006e6000(local_8,3,1,(undefined4 *)&local_8->field_0x1d);
-    DarkScreen(DAT_0080759c,10,2);
+    DarkScreen(g_anonShape_GLOBAL_0080759C_9638EF10_0080759C,10,2);
     if (g_cursorClass_00802A30 != (CursorClassTy *)0x0) {
-      thunk_FUN_00544940((AnonShape_00544940_E504B2A8 *)g_cursorClass_00802A30);
+      CursorClassTy::sub_00544940(g_cursorClass_00802A30);
     }
     ppDVar6 = &pMVar2->field_0347;
     iVar3 = 3;
@@ -62,16 +62,16 @@ void __thiscall MReportTy::DoneMReport(MReportTy *this)
       FreeAndNull(&pMVar2->field_0073);
     }
     if (pMVar2->field_0083 != (ccFntTy *)0x0) {
-      ccFntTy::operator((uint *)pMVar2->field_0083);
+      ccFntTy::operator_delete((uint *)pMVar2->field_0083);
       pMVar2->field_0083 = (ccFntTy *)0x0;
     }
     if (pMVar2->field_0087 != (ccFntTy *)0x0) {
-      ccFntTy::operator((uint *)pMVar2->field_0087);
+      ccFntTy::operator_delete((uint *)pMVar2->field_0087);
       pMVar2->field_0087 = (ccFntTy *)0x0;
       g_startSystem_0081176C->field_0038 = (ccFntTy *)0x0;
     }
     if (pMVar2->field_008B != (ccFntTy *)0x0) {
-      ccFntTy::operator((uint *)pMVar2->field_008B);
+      ccFntTy::operator_delete((uint *)pMVar2->field_008B);
       pMVar2->field_008B = (ccFntTy *)0x0;
     }
     pMVar2->field_007F = (ushort *)0x0;

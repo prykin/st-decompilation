@@ -68,7 +68,7 @@ int __thiscall TLOBaseTy::teleNone(TLOBaseTy *this)
     }
     break;
   case CASE_2:
-    iVar3 = FUN_006e62d0(g_playSystem_00802A38,local_20->field_0470,(int *)&local_8);
+    iVar3 = STPlaySystemC::sub_006E62D0(g_playSystem_00802A38,local_20->field_0470,(int *)&local_8);
     if (iVar3 != 0) {
       sub_004EA620(this_00);
       g_currentExceptionFrame = local_64.previous;
@@ -206,8 +206,9 @@ int __thiscall TLOBaseTy::teleNone(TLOBaseTy *this)
     break;
   case CASE_5:
     if ((local_20->field_048C != 0) &&
-       (iVar3 = FUN_006e62d0(g_playSystem_00802A38,local_20->field_0470,(int *)&local_8), iVar3 == 0
-       )) {
+       (iVar3 = STPlaySystemC::sub_006E62D0
+                          (g_playSystem_00802A38,local_20->field_0470,(int *)&local_8), iVar3 == 0))
+    {
       thunk_FUN_004e95c0(local_8,(int)this_00);
     }
     this_00->field_046C = 0;

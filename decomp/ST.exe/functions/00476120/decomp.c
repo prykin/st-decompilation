@@ -15,7 +15,7 @@ int __thiscall STBoatC::BackUnLoadObj(STBoatC *this,int *param_1)
 
   iVar2 = this->field_05D6;
   if ((iVar2 == 0) || (iVar2 == 1)) {
-    iVar2 = (*this->vtable->vfunc_D8)();
+    iVar2 = (*this->vtable->vfunc_D8)(this);
     return -(uint)(iVar2 != 0);
   }
   if (iVar2 == 2) {

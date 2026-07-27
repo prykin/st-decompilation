@@ -83,9 +83,7 @@ void __thiscall PlayPanelTy::InitPlayPanel(PlayPanelTy *this)
   this_00 = local_14;
   if (iVar8 == 0) {
     g_playPanel_008016E4 = local_14;
-    pcVar3 = (ccFntTy *)
-             ccFntTy::operator(*(ccFntTy **)&PTR_00802a28->field_0x28,0x19d,
-                               (int)*(ccFntTy **)&PTR_00802a28->field_0x28);
+    pcVar3 = (ccFntTy *)ccFntTy::operator_new(0x19d,*(int *)&PTR_00802a28->field_0x28);
     this_00->field_01DD = pcVar3;
     pcVar3->field_0058 = 0;
     pcVar3->field_005C = 0;
@@ -129,24 +127,24 @@ void __thiscall PlayPanelTy::InitPlayPanel(PlayPanelTy *this)
       puVar24 = (undefined4 *)((int)puVar24 + 1);
     }
     pCVar5 = thunk_FUN_00571240("BKG_DIPLOMACYW",0);
-    puVar4 = cMf32::RecGet(DAT_00806790,1,pCVar5,piVar22,iVar8);
+    puVar4 = cMf32::RecGet(g_cMf32_00806790,1,pCVar5,piVar22,iVar8);
     ppuVar1 = &this_00->field_01CD;
     *ppuVar1 = puVar4;
     DibPut((AnonShape_006B5B10_E0D06CF1 *)this_00->field_0068,0,0,'\x01',(byte *)puVar4);
-    cMf32::RecMemFree(DAT_00806790,(uint *)ppuVar1);
+    cMf32::RecMemFree(g_cMf32_00806790,(uint *)ppuVar1);
     if (DAT_00808783 != '\x03') {
       iVar8 = 1;
       piVar22 = (int *)0x0;
       pCVar5 = thunk_FUN_00571240("BKG_DIPLOMACYC",0);
-      puVar4 = cMf32::RecGet(DAT_00806790,1,pCVar5,piVar22,iVar8);
+      puVar4 = cMf32::RecGet(g_cMf32_00806790,1,pCVar5,piVar22,iVar8);
       *ppuVar1 = puVar4;
       DibPut((AnonShape_006B5B10_E0D06CF1 *)this_00->field_0068,0x20,0xa4,'\x01',(byte *)puVar4);
-      cMf32::RecMemFree(DAT_00806790,(uint *)ppuVar1);
+      cMf32::RecMemFree(g_cMf32_00806790,(uint *)ppuVar1);
     }
     iVar8 = 1;
     piVar22 = (int *)0x0;
     pCVar5 = thunk_FUN_00571240("BKG_DIPLOMACYB",0);
-    puVar4 = cMf32::RecGet(DAT_00806790,1,pCVar5,piVar22,iVar8);
+    puVar4 = cMf32::RecGet(g_cMf32_00806790,1,pCVar5,piVar22,iVar8);
     *ppuVar1 = puVar4;
     ccFntTy::SetSurf(this_00->field_01DD,(int)this_00->field_0068,0,0x6c,2,0xf3,0xc);
     uVar17 = (DAT_0080874e != '\x03') - 1 & 5;

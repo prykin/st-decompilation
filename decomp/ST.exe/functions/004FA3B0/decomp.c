@@ -1,13 +1,18 @@
 
-void __fastcall FUN_004fa3b0(AnonShape_004FA3B0_224BAE98 *param_1)
+/* [STMethodOwnerApplier] Structural method owner recovered as CPanelTy.
+   Evidence: this_call_owners=[CPanelTy]; agreed_this_calls=1; incoming_this_accesses=2;
+   incoming_edx_uses=0; incoming_stack_parameter_uses=0; direct_non_thunk_callers=0;
+   incoming_ecx_receiver_callers=0; attributed_named_callers=1; owner_evidence_coverage=adequate */
+
+void __thiscall CPanelTy::sub_004FA3B0(CPanelTy *this)
 
 {
-  if ((param_1->field_0B63 != '\0') && (param_1->field_0B64 != '\0')) {
-    CPanelTy::sub_004F8020((CPanelTy *)param_1,'\0',1);
+  if ((this->field_0B63 != '\0') && (this->field_0B64 != '\0')) {
+    sub_004F8020(this,'\0',1);
     return;
   }
-  if ((param_1->field_0C51 != '\0') && (param_1->field_0C52 != '\0')) {
-    CPanelTy::sub_004F8020((CPanelTy *)param_1,'\x01',1);
+  if ((this->field_0C51 != '\0') && (this->field_0C52 != '\0')) {
+    sub_004F8020(this,'\x01',1);
   }
   return;
 }

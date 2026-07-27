@@ -253,8 +253,9 @@ int __thiscall STMBombC::GetMessage(STMBombC *this,STMessage *message)
           STT3DSprC::StartShow
                     ((STT3DSprC *)&this_00->field_01D5,0xe,g_playSystem_00802A38->field_00E4);
           if ((*(int *)&this_00->field_0x29c == 0) ||
-             (iVar6 = FUN_006e62d0(g_playSystem_00802A38,*(int *)&this_00->field_0x29c,
-                                   (int *)&local_24), iVar6 != 0)) {
+             (iVar6 = STPlaySystemC::sub_006E62D0
+                                (g_playSystem_00802A38,*(int *)&this_00->field_0x29c,
+                                 (int *)&local_24), iVar6 != 0)) {
             this_00->field_0231 = CASE_1;
             *(undefined4 *)&this_00->field_0x235 = 0;
             *(undefined4 *)&this_00->field_0x239 = 0;

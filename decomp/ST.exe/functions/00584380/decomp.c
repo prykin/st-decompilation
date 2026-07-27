@@ -18,7 +18,7 @@ undefined4 __thiscall STJellyGunC::sub_00584380(STJellyGunC *this)
     STT3DSprC::sub_004ACFE0((STT3DSprC *)this_00,'\n');
     STT3DSprC::sub_004ACF20((STT3DSprC *)this_00,DAT_008032b8,0x10);
     STT3DSprC::StartShow((STT3DSprC *)this_00,10,g_playSystem_00802A38->field_00E4);
-    (*this->vtable->vfunc_D8)();
+    (*this->vtable->vfunc_D8)(this);
     iVar1 = STT3DSprC::LoadSequence((STT3DSprC *)this_00,9,DAT_00806764,"bulb_n5",0x1d);
     if (iVar1 == 0) {
       STT3DSprC::sub_004AD070((STT3DSprC *)this_00,9);

@@ -81,12 +81,12 @@ cf_common_join_004F3D83:
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
       uVar4 = (*(code *)param_6)(param_2);
       text = FUN_006f2c00(param_4,1,uVar4);
-      local_8 = cMf32::RecGet(DAT_00806790,param_3,text,errorCode,iVar8);
+      local_8 = cMf32::RecGet(g_cMf32_00806790,param_3,text,errorCode,iVar8);
       pCVar3 = local_14;
       uVar2 = (uint)param_1;
       DibPut((AnonShape_006B5B10_E0D06CF1 *)(&local_14->field_0180)[uVar2],local_10,local_c,param_3,
              (byte *)local_8);
-      cMf32::RecMemFree(DAT_00806790,(uint *)&local_8);
+      cMf32::RecMemFree(g_cMf32_00806790,(uint *)&local_8);
       ccFntTy::SetSurf(*(ccFntTy **)&PTR_00802a28->field_0x24,(&pCVar3->field_0180)[uVar2],0,
                        local_10,local_c,local_18[2],local_18[3]);
       iVar9 = -1;

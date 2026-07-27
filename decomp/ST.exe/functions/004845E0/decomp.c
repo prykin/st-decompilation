@@ -260,7 +260,7 @@ LAB_00485f6a:
           /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
           iVar4 = (**(code **)(*this_00 + 0x2c))();
           if ((iVar4 == 0x52) || (iVar4 == 0x5f)) {
-            FUN_006e62d0(g_playSystem_00802A38,this->field_07CA,&local_c);
+            STPlaySystemC::sub_006E62D0(g_playSystem_00802A38,this->field_07CA,&local_c);
             /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
             if ((local_c != 0) && (*(int *)(local_c + 0x20) == 0x1a4)) {
               return 0x1e;
@@ -1064,8 +1064,9 @@ LAB_00485002:
     if (iVar4 == 0) {
       return 1;
     }
-    thunk_FUN_004162f0(this_00,(undefined2 *)((int)&local_8 + 2),(undefined2 *)((int)&param_1 + 2),
-                       (undefined2 *)((int)&param_2 + 2));
+    STFishC::sub_004162F0
+              ((STFishC *)this_00,(undefined2 *)((int)&local_8 + 2),
+               (undefined2 *)((int)&param_1 + 2),(undefined2 *)((int)&param_2 + 2));
     /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
     return (((int)param_2._2_2_ <= g_worldGrid.sizeZ + -2) - 1 & 0xffeb) + 0x16;
   case CASE_11:

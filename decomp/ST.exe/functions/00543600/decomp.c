@@ -28,8 +28,8 @@ void __thiscall CursorClassTy::InitCursor(CursorClassTy *this,undefined4 param_1
               ((SpriteClassTy *)&local_c->field_0018,(int *)PTR_008075a8,0,'\a',(undefined4 *)0x0,0,
                0);
     Library::DKW::DDX::FUN_006b88d0
-              (&this_00->field_00AD,DAT_0080759c,0,(BITMAPINFO *)0x0,0x8000000,0,(BITMAPINFO *)0x0,0
-              );
+              (&this_00->field_00AD,g_anonShape_GLOBAL_0080759C_9638EF10_0080759C,0,
+               (BITMAPINFO *)0x0,0x8000000,0,(BITMAPINFO *)0x0,0);
     SetImages(this_00,param_1,"CUR_MENU",0x32,(BITMAPINFO *)0x0,0,-1,-1);
     puVar4 = Library::Ourlib::MFRLOAD::mfRLoad
                        (DAT_00806784,CASE_B,"INF_DEEPS",0xffffffff,0,1,0,(undefined4 *)0x0)

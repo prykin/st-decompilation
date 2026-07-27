@@ -1,4 +1,4 @@
-FUN_004faff0:
+CPanelTy::sub_004FAFF0:
 004FAFF0  A1 84 87 80 00            MOV EAX,[0x00808784]
 004FAFF5  85 C0                     TEST EAX,EAX
 004FAFF7  75 44                     JNZ 0x004fb03d

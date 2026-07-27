@@ -56,13 +56,17 @@ void FUN_005c7800(void)
   SettMapTy::PaintSettMap(this,'\0');
   Library::DKW::DDX::FUN_006bd740((int *)PTR_008075a8);
   Library::DKW::DDX::FUN_006c4630
-            (DAT_0080759c,*(int **)(DAT_0080759c + 0x44),(undefined4 *)&stack0xffffffb8);
+            (g_anonShape_GLOBAL_0080759C_9638EF10_0080759C,
+             g_anonShape_GLOBAL_0080759C_9638EF10_0080759C->field_0044,
+             (undefined4 *)&stack0xffffffb8);
   PTR_00811758 = Library::DKW::DDX::FUN_006c4880
-                           (DAT_0080759c,0,0,g_nWidth_00806730,DAT_00806734,DAT_00806738);
-  Library::DKW::DDX::FUN_006c44e0(DAT_0080759c,(undefined4 *)&stack0xffffffb8);
+                           (g_anonShape_GLOBAL_0080759C_9638EF10_0080759C,0,0,g_nWidth_00806730,
+                            DAT_00806734,DAT_00806738);
+  Library::DKW::DDX::FUN_006c44e0
+            (g_anonShape_GLOBAL_0080759C_9638EF10_0080759C,(undefined4 *)&stack0xffffffb8);
   FUN_006b5f80((int *)PTR_008075a8,0,0,g_nWidth_00806730,DAT_00806734);
-  FUN_006b4640(DAT_0080759c,0,0,PTR_00811758,(uint *)0x0);
-  Library::DKW::DDX::FUN_006bb370(DAT_0080759c,0,0);
+  FUN_006b4640((uint)g_anonShape_GLOBAL_0080759C_9638EF10_0080759C,0,0,PTR_00811758,(uint *)0x0);
+  Library::DKW::DDX::FUN_006bb370(g_anonShape_GLOBAL_0080759C_9638EF10_0080759C,0,0);
   if (this->field_1F3F != (cMf32 *)0x0) {
     cMf32::delete(this->field_1F3F);
   }
@@ -175,7 +179,7 @@ LAB_005c7ae0:
     thunk_FUN_0069ffb0(&local_5a80);
     DAT_00811754 = timeGetTime();
     SVar3 = this->field_1E26;
-    if ((((SVar3 != 6) && (SVar3 != 1)) && (SVar3 != 2)) && (DAT_0080877e != '\0')) {
+    if ((((SVar3 != CASE_6) && (SVar3 != CASE_1)) && (SVar3 != CASE_2)) && (DAT_0080877e != '\0')) {
       FUN_00715360(g_int_00811764,0,'\x1e',(char *)&DAT_00853de0,0x232,1,0xffffffff);
       local_8c.jumpBuffer[0xf] = 0x5c7c09;
       FUN_00715360(g_int_00811764,0,' ',(char *)&this->field_1F53,0xd,1,0xffffffff);
@@ -198,7 +202,7 @@ LAB_005c7ae0:
     g_startSystem_0081176C->field_02F4 = puVar8;
     if (g_startSystem_0081176C->field_02F4 != (ushort *)0x0) {
       FUN_006c7f90(g_startSystem_0081176C->field_02F4,(byte *)0x0,
-                   *(HPALETTE *)(DAT_0080759c + 0x4b4),0);
+                   g_anonShape_GLOBAL_0080759C_9638EF10_0080759C->field_04B4,0);
     }
     local_94 = DAT_0080995c;
     puVar7 = &DAT_00809960;

@@ -16,8 +16,6 @@ void __thiscall STBoatC::_CheckDefenceShots(STBoatC *this,int param_1)
   int iVar5;
   int iVar6;
   uint index;
-  /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-  int *unaff_EDI;
   InternalExceptionFrame local_68;
   undefined4 local_24;
   uint local_20;
@@ -58,14 +56,11 @@ void __thiscall STBoatC::_CheckDefenceShots(STBoatC *this,int param_1)
         else {
           this_00 = STAllPlayersC::GetObjPtr(g_allPlayers_007FA174,(char)local_24,local_20,CASE_1);
           if (this_00 != (STGameObjC *)0x0) {
-            iVar3 = (*this_00->vtable[1].vfunc_24)();
+            iVar3 = (*this_00->vtable->vfunc_F8)(this_00);
             if (iVar3 == 1) {
-              /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-              iVar3 = (*this_00->vtable[1].MoveStep)(this_00,unaff_EDI);
+              iVar3 = (*this_00->vtable->vfunc_F0)(this_00);
               if (iVar3 == 1) {
-                /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-                unaff_EDI = (int *)pSVar2->field_0024;
-                iVar3 = (*this_00->vtable[1].vfunc_20)();
+                iVar3 = (*this_00->vtable->vfunc_F4)(pSVar2->field_0024);
                 if (iVar3 == 1) {
                   thunk_FUN_00416270(this_00,&local_a,(int *)&local_8,(int *)&local_6);
                   iVar3 = (int)pSVar2->field_0041 - (int)local_a;

@@ -33,8 +33,8 @@ void __thiscall STAppC::OpenGameDBs(STAppC *this)
     DAT_00806778 = Library::Ourlib::MF32INT::FUN_006f0ec0(0x345,puVar4,0,0,0);
     DAT_0080677c = Library::Ourlib::MFRLOAD::mfRLoadCreate((int)DAT_00806778);
     wsprintfA(puVar4,"%s%s",puVar1,"CONTROLG");
-    DAT_00806790 = Library::Ourlib::MF32INT::FUN_006f0ec0(0x345,puVar4,0,0,0);
-    DAT_00806794 = Library::Ourlib::MFRLOAD::mfRLoadCreate((int)DAT_00806790);
+    g_cMf32_00806790 = (cMf32 *)Library::Ourlib::MF32INT::FUN_006f0ec0(0x345,puVar4,0,0,0);
+    DAT_00806794 = Library::Ourlib::MFRLOAD::mfRLoadCreate((int)g_cMf32_00806790);
     wsprintfA(puVar4,"%s%s",puVar1,"OBJECT");
     DAT_00806788 = Library::Ourlib::MF32INT::FUN_006f0ec0(0x345,puVar4,0,0,0);
     DAT_0080678c = Library::Ourlib::MFRLOAD::mfRLoadCreate((int)DAT_00806788);

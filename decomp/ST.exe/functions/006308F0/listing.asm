@@ -1,4 +1,4 @@
-FUN_006308f0:
+STManRuinC::sub_006308F0:
 006308F0  55                        PUSH EBP
 006308F1  8B EC                     MOV EBP,ESP
 006308F3  83 EC 1C                  SUB ESP,0x1c

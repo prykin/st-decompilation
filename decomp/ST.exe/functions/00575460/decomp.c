@@ -5,7 +5,7 @@ void __cdecl FUN_00575460(AnonShape_00575460_06C413C6 *param_1)
   void **value;
   int iVar1;
   uint uVar2;
-  HoloTy *pHVar3;
+  AnonShape_GLOBAL_0080760C_46D7AF7A *pAVar3;
   AnonShape_00575460_06C413C6 *pAVar4;
   DArrayTy *array;
   int iVar5;
@@ -13,11 +13,11 @@ void __cdecl FUN_00575460(AnonShape_00575460_06C413C6 *param_1)
   int local_8;
 
   pAVar4 = param_1;
-  pHVar3 = DAT_0080760c;
-  if (DAT_0080760c != (HoloTy *)0x0) {
-    FUN_006dbcf0((int *)DAT_0080760c);
-    Library::MSVCRT::FUN_0072e2b0(pHVar3);
-    DAT_0080760c = (HoloTy *)0x0;
+  pAVar3 = PTR_0080760c;
+  if (PTR_0080760c != (AnonShape_GLOBAL_0080760C_46D7AF7A *)0x0) {
+    FUN_006dbcf0((int *)PTR_0080760c);
+    Library::MSVCRT::FUN_0072e2b0((HoloTy *)pAVar3);
+    PTR_0080760c = (AnonShape_GLOBAL_0080760C_46D7AF7A *)0x0;
   }
   if (param_1 != (AnonShape_00575460_06C413C6 *)0x0) {
     array = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,0x14,4,0x14);

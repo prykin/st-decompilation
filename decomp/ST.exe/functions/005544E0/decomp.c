@@ -24,7 +24,7 @@ void __cdecl cLoadingTy::delete(uint *param_1)
     if (param_1 != (uint *)0x0) {
       cMf32::RecMemFree(g_cMf32_00806780,param_1);
       if ((uint *)param_1[2] != (uint *)0x0) {
-        ccFntTy::operator((uint *)param_1[2]);
+        ccFntTy::operator_delete((uint *)param_1[2]);
       }
       thunk_FUN_00555650((int)param_1);
       FUN_006a5e90((short *)param_1);

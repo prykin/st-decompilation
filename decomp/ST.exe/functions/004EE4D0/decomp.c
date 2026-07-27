@@ -87,8 +87,8 @@ int __thiscall BehPanelTy::GetMessage(BehPanelTy *this,STMessage *message)
         return 0;
       }
       thunk_FUN_005252c0(0xae);
-      thunk_FUN_0054b630(g_cursorClass_00802A30,
-                         (uint)(byte)(&this_00->field_0x1af)[(message->arg0).u32],0);
+      CursorClassTy::sub_0054B630
+                (g_cursorClass_00802A30,(uint)(byte)(&this_00->field_0x1af)[(message->arg0).u32],0);
       this_00->field_0028 = 0xbfff;
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
       (*(code *)this_00->field_0000->field_0000)(&this_00->field_0x18);

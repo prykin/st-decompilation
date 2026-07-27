@@ -12,8 +12,8 @@ void __thiscall sub_0041C5A0(void *this)
                *(uint *)((int)this + 0x24),*(int *)((int)this + 0x101),*(int *)((int)this + 0x18),
                0xffffffff);
     if (*(int *)((int)this + 0x20) == 0x14) {
-      SubmarineTitans::Recovered::HiddenThis::AnonReceiver_005594A0::thunk_FUN_00559620
-                ((AnonReceiver_005594A0 *)g_visibleClass_00802A88,(int)*(short *)((int)this + 0x5b),
+      VisibleClassTy::sub_00559620
+                (g_visibleClass_00802A88,(int)*(short *)((int)this + 0x5b),
                  (int)*(short *)((int)this + 0x5d),(char)*(undefined2 *)((int)this + 0x5f),
                  *(undefined **)((int)this + 0x24),*(int *)((int)this + 0x105),
                  *(undefined4 *)((int)this + 0x18),0xffffffff);
@@ -29,8 +29,8 @@ void __thiscall sub_0041C5A0(void *this)
       break;
     case 0xb:
     case 0x23:
-      SubmarineTitans::Recovered::HiddenThis::AnonReceiver_005594A0::thunk_FUN_00559d60
-                ((AnonReceiver_005594A0 *)g_visibleClass_00802A88,(int)*(short *)((int)this + 0x5b),
+      VisibleClassTy::sub_00559D60
+                (g_visibleClass_00802A88,(int)*(short *)((int)this + 0x5b),
                  (int)*(short *)((int)this + 0x5d),(char)*(undefined2 *)((int)this + 0x5f),
                  *(uint *)((int)this + 0x24),*(undefined **)((int)this + 0x10d),
                  *(undefined4 *)((int)this + 0x18));

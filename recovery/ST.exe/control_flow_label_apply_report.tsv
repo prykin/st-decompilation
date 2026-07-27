@@ -454,8 +454,6 @@ function_address	label_address	proposed_name	status	detail
 0044EE30	00450050	cf_join_00450050	disabled	apply=0
 0044EE30	00450268	cf_join_00450268	disabled	apply=0
 0044EE30	0045048A	cf_join_0045048A	disabled	apply=0
-0044EE30	0045051F	cf_join_0045051F	disabled	apply=0
-0044EE30	00450551	cf_join_00450551	disabled	apply=0
 0044EE30	00450695	cf_join_00450695	disabled	apply=0
 0044EE30	00450A10	cf_branch_target_00450A10	disabled	apply=0
 0044EE30	00450C1E	cf_join_00450C1E	disabled	apply=0
@@ -491,12 +489,9 @@ function_address	label_address	proposed_name	status	detail
 00462180	00462C49	cf_join_00462C49	disabled	apply=0
 00462180	00462E32	cf_common_exit_00462E32	unchanged	label is already primary
 00462180	00462FDE	cf_join_00462FDE	disabled	apply=0
-00462180	004632DE	cf_branch_target_004632DE	disabled	apply=0
 00462180	00463442	cf_join_00463442	disabled	apply=0
-00462180	00463510	cf_join_00463510	disabled	apply=0
 00462180	0046351A	cf_common_exit_0046351A	unchanged	label is already primary
 00462180	0046351C	cf_common_exit_0046351C	unchanged	label is already primary
-00462180	00463844	cf_join_00463844	disabled	apply=0
 00462180	004639E6	cf_join_004639E6	disabled	apply=0
 00462180	00463A7A	cf_branch_target_00463A7A	disabled	apply=0
 00462180	00463A83	cf_join_00463A83	disabled	apply=0
@@ -572,7 +567,6 @@ function_address	label_address	proposed_name	status	detail
 0046B100	0046C422	cf_error_exit_0046C422	unchanged	label is already primary
 0046C980	0046CBE2	cf_error_exit_0046CBE2	unchanged	label is already primary
 0046CF20	0046D1E2	cf_join_0046D1E2	disabled	apply=0
-0046CF20	0046D2D1	cf_join_0046D2D1	disabled	apply=0
 0046D450	0046D4E6	cf_branch_target_0046D4E6	disabled	apply=0
 0046D450	0046D60C	cf_join_0046D60C	disabled	apply=0
 0046D450	0046D652	cf_join_0046D652	disabled	apply=0

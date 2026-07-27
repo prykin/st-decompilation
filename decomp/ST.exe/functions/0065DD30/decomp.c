@@ -54,7 +54,7 @@ FUN_0065dd30(AiFltClassTy *param_1,undefined4 param_2,uint param_3,uint param_4,
         this = STAllPlayersC::GetObjPtr
                          (g_allPlayers_007FA174,*(char *)&param_1->field_0024,
                           CONCAT22((short)((uint)puVar3 >> 0x10),*puVar3),CASE_1);
-        if ((this == (STGameObjC *)0x0) || (iVar9 = (*this->vtable[1].vfunc_24)(this), iVar9 == 0))
+        if ((this == (STGameObjC *)0x0) || (iVar9 = (*this->vtable->vfunc_F8)(this), iVar9 == 0))
         goto cf_common_join_0065DF91;
         uVar4 = (*this->vtable->vfunc_2C)();
         if (param_4 != 0) {

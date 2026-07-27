@@ -17,7 +17,7 @@ void FUN_005c2760(void)
     FUN_006b5f80((int *)PTR_008075a8,0,0,g_nWidth_00806730,DAT_00806734);
     pBVar3 = (BITMAPINFO *)FUN_0070b3a0(PTR_0081175c,(int)(short)PTR_0081175c->field_0029);
     PutDDX(0x15,0x14,'\x06',pBVar3);
-    Library::DKW::DDX::FUN_006bb370(DAT_0080759c,0,0);
+    Library::DKW::DDX::FUN_006bb370(g_anonShape_GLOBAL_0080759C_9638EF10_0080759C,0,0);
     PTR_0081175c->field_0029 = PTR_0081175c->field_0029 + 1;
     if (PTR_0081175c->field_0023 <= (short)PTR_0081175c->field_0029) {
       PTR_0081175c->field_0029 = 0;

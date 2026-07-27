@@ -1,13 +1,22 @@
 
 /* [STSwitchEnumApplier] Switch target param_1 uses
    /SubmarineTitans/Recovered/Enums/Global_sub_004FA870_param_1Enum. Cases:
-   CASE_1=1;CASE_2=2;CASE_4=4;CASE_5=5;CASE_E=14;CASE_F=15 */
+   CASE_1=1;CASE_2=2;CASE_4=4;CASE_5=5;CASE_E=14;CASE_F=15
 
-void __thiscall FUN_004fa870(void *this,Global_sub_004FA870_param_1Enum param_1)
+   [STMethodOwnerApplier] Structural method owner recovered as CPanelTy.
+   Evidence: this_call_owners=[CPanelTy]; agreed_this_calls=18; incoming_this_accesses=1;
+   incoming_edx_uses=0; incoming_stack_parameter_uses=4; direct_non_thunk_callers=0;
+   incoming_ecx_receiver_callers=0; attributed_named_callers=1; owner_evidence_coverage=adequate
+
+   [STSwitchEnumApplier] Switch target param_1 uses
+   /SubmarineTitans/Recovered/Enums/CPanelTy_sub_004FA870_param_1Enum. Cases:
+   CASE_1=1;CASE_2=2;CASE_4=4;CASE_5=5;CASE_6=6;CASE_7=7;CASE_E=14;CASE_F=15 */
+
+void __thiscall CPanelTy::sub_004FA870(CPanelTy *this,CPanelTy_sub_004FA870_param_1Enum param_1)
 
 {
-  if (*(int *)((int)this + 300) != 0) {
-    *(undefined1 *)(param_1 + 0xb4e + (int)this) = 1;
+  if (this->field_012C != 0) {
+    *(undefined1 *)((int)&this->field_0B4B + param_1 + 3) = 1;
     return;
   }
   if ((((param_1 == 0) || (CASE_5 < param_1)) && (param_1 != CASE_E)) && (param_1 != CASE_F)) {
@@ -82,15 +91,15 @@ void __thiscall FUN_004fa870(void *this,Global_sub_004FA870_param_1Enum param_1)
       }
     }
     else if ((param_1 == 0x13) && (g_helpPanel_00801690 != (HelpPanelTy *)0x0)) {
-      thunk_FUN_00515180(g_helpPanel_00801690,'\x06');
-      thunk_FUN_00515180(g_helpPanel_00801690,'\x05');
+      HelpPanelTy::sub_00515180(g_helpPanel_00801690,'\x06');
+      HelpPanelTy::sub_00515180(g_helpPanel_00801690,'\x05');
       return;
     }
   }
   else {
     switch(param_1) {
     case CASE_1:
-      CPanelTy::Update1Panel(this);
+      Update1Panel(this);
       return;
     case CASE_2:
       thunk_FUN_00502330();
@@ -99,11 +108,11 @@ void __thiscall FUN_004fa870(void *this,Global_sub_004FA870_param_1Enum param_1)
       thunk_FUN_005097b0();
       return;
     case CASE_5:
-      CPanelTy::Update5Panel(this);
+      Update5Panel(this);
       return;
     case CASE_E:
     case CASE_F:
-      CPanelTy::UpdateStackPanel(this,(uint)(byte)(param_1 - CASE_E));
+      UpdateStackPanel(this,(uint)(byte)(param_1 - CASE_E));
     }
   }
   return;

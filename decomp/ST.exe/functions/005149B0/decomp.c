@@ -57,8 +57,7 @@ void __thiscall HelpPanelTy::LinkAct(HelpPanelTy *this,int param_1,int param_2)
         if ((*(int *)(iVar5 + 9) != param_1) ||
            (((cVar1 != '\x03' && (cVar1 != '\f')) && (*(int *)(iVar5 + 0xd) != param_2))))
         goto switchD_00514a29_caseD_5;
-        SubmarineTitans::Recovered::HiddenThis::AnonReceiver_005148A0::thunk_FUN_005148a0
-                  ((AnonReceiver_005148A0 *)local_8,uVar7);
+        sub_005148A0(local_8,uVar7);
         pAVar2 = pHVar4->field_01B3;
         uVar9 = 0;
         uVar7 = *(uint *)&pAVar2->field_0xc;

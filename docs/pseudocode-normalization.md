@@ -92,6 +92,13 @@ short excerpts, occurrence count, detector, address/symbol hints, and the
 intended transformation. Line numbers are convenient but not stable across
 decompilation; the program and function entry address are the durable key.
 
+For the compiler spelling
+`CONCAT22(CONCAT11(tag, (char)(value >> 16)), (short)value)`, the in-place
+comment records the exact equivalent `STPackTagged24(tag, value)`. The helper
+keeps the low 24 value bits and places the low eight tag bits in bits 24–31.
+This is a presentation normalization, not evidence for a semantic name of the
+packed key or the function consuming it.
+
 The exporter also recreates `decomp_quality_summary.json` and
 `decomp_quality_issues.jsonl`. Unlike the focused idiom catalogue, this second
 layer inventories all `functions/**/decomp.c` bodies and includes valid-but-poor

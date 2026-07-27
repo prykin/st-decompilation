@@ -29,15 +29,14 @@ void __thiscall IntercomPanelTy::InitIntercomPanel(IntercomPanelTy *this)
   pIVar2 = local_8;
   if (iVar3 == 0) {
     g_intercomPanel_0080169C = local_8;
-    puVar4 = ccFntTy::operator(*(ccFntTy **)&PTR_00802a28->field_0x30,0x19d,
-                               (int)*(ccFntTy **)&PTR_00802a28->field_0x30);
+    puVar4 = ccFntTy::operator_new(0x19d,*(int *)&PTR_00802a28->field_0x30);
     pIVar2->field_0180 = puVar4;
     puVar4[0x16] = 0;
     puVar4[0x17] = 0;
     iVar3 = 1;
     piVar10 = (int *)0x0;
     text = thunk_FUN_00571240("BKG_EDITCHAT",0);
-    puVar5 = cMf32::RecGet(DAT_00806790,1,text,piVar10,iVar3);
+    puVar5 = cMf32::RecGet(g_cMf32_00806790,1,text,piVar10,iVar3);
     puVar7 = puVar5 + 0x14;
     iVar3 = 1;
     pIVar2->field_0184 = puVar5;

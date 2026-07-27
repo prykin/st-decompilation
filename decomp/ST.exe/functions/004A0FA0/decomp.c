@@ -775,7 +775,7 @@ LAB_004a1a74:
                       (-0x5001fffc,g_overwriteContext_007ED77C,
                        "E:\\__titans\\wlad\\to_grpb.cpp",0xf5d);
           }
-          iVar4 = (*pSVar6->vtable->vfunc_F8)();
+          iVar4 = (*pSVar6->vtable->vfunc_F8)(pSVar6);
           /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
           SVar11 = extraout_ECX_23;
           if (iVar4 != 0) {
@@ -870,7 +870,7 @@ LAB_004a1ede:
                       (-0x5001fffc,g_overwriteContext_007ED77C,
                        "E:\\__titans\\wlad\\to_grpb.cpp",0xf8e);
           }
-          iVar4 = (*pSVar6->vtable->vfunc_F8)();
+          iVar4 = (*pSVar6->vtable->vfunc_F8)(pSVar6);
           if (iVar4 != 0) {
             dVar7 = (*pSVar6->vtable->slot_2C)(pSVar6);
             if ((((dVar7 == 7) || (dVar7 == 0x13)) || (dVar7 == 0x1b)) &&
@@ -1336,7 +1336,7 @@ LAB_004a2897:
                     (-0x5001fffc,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_grpb.cpp"
                      ,0x10b0);
         }
-        iVar4 = (*pSVar6->vtable->vfunc_F8)();
+        iVar4 = (*pSVar6->vtable->vfunc_F8)(pSVar6);
         if (iVar4 != 0) {
           iVar4 = thunk_FUN_00490d90((STGameObjC *)pSVar6);
           if (iVar4 == 0) {

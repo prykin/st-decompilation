@@ -1,37 +1,43 @@
 
-void __thiscall FUN_006e57b0(void *this,int param_1)
+/* [STMethodOwnerApplier] Structural method owner recovered as STPlaySystemC.
+   Evidence: this_call_owners=[STPlaySystemC]; agreed_this_calls=1; incoming_this_accesses=3;
+   incoming_edx_uses=0; incoming_stack_parameter_uses=1; direct_non_thunk_callers=1;
+   incoming_ecx_receiver_callers=0; attributed_named_callers=1; owner_evidence_coverage=adequate */
+
+void __thiscall STPlaySystemC::sub_006E57B0(STPlaySystemC *this,int param_1)
 
 {
-  int iVar1;
-  uint uVar2;
+  DArrayTy *pDVar1;
+  void *pvVar2;
   uint uVar3;
+  uint uVar4;
   undefined1 local_24 [16];
   undefined4 local_14;
 
-  iVar1 = *(int *)((int)this + 0x10);
-  if (iVar1 != 0) {
+  pDVar1 = this->field_0010;
+  if (pDVar1 != (DArrayTy *)0x0) {
     local_14 = 3;
-    uVar2 = *(uint *)(iVar1 + 0xc);
-    uVar3 = 0;
-    if (uVar2 != 0) {
+    uVar3 = pDVar1->count;
+    uVar4 = 0;
+    if (uVar3 != 0) {
       do {
-        if (uVar2 == 0) {
-          iVar1 = 0;
+        if (uVar3 == 0) {
+          pvVar2 = (void *)0x0;
         }
         else {
-          iVar1 = *(int *)(iVar1 + 0x1c);
+          pvVar2 = pDVar1->data;
         }
-        if ((*(undefined4 **)(iVar1 + 4))[1] == param_1) {
+        if ((*(undefined4 **)((int)pvVar2 + 4))[1] == param_1) {
           /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-          (**(code **)**(undefined4 **)(iVar1 + 4))(local_24);
-          FUN_006b0c70(*(DArrayTy **)((int)this + 0x10),uVar3);
+          (**(code **)**(undefined4 **)((int)pvVar2 + 4))(local_24);
+          FUN_006b0c70(this->field_0010,uVar4);
         }
         else {
-          uVar3 = uVar3 + 1;
+          uVar4 = uVar4 + 1;
         }
-        iVar1 = *(int *)((int)this + 0x10);
-        uVar2 = *(uint *)(iVar1 + 0xc);
-      } while (uVar3 < uVar2);
+        pDVar1 = this->field_0010;
+        uVar3 = pDVar1->count;
+      } while (uVar4 < uVar3);
     }
   }
   return;

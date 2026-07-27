@@ -1,4 +1,4 @@
-FUN_004fad60:
+CPanelTy::sub_004FAD60:
 004FAD60  55                        PUSH EBP
 004FAD61  8B EC                     MOV EBP,ESP
 004FAD63  53                        PUSH EBX

@@ -52,6 +52,7 @@ public class STDebugSymbolApplier extends GhidraScript {
         int transaction = currentProgram.startTransaction("Apply recovered debug symbols");
         boolean commit = false;
         int applied = 0, skipped = 0, failed = 0, thiscalls = 0;
+        int lossyOperatorsRepaired = 0, staticOperatorConventionsRepaired = 0;
         int conventionsPreserved = 0;
         int stringsApplied = 0, stringsUnchanged = 0, stringsFailed = 0;
         try {
@@ -77,6 +78,7 @@ public class STDebugSymbolApplier extends GhidraScript {
                     String owner = unt(columns[4]);
                     String method = unt(columns[5]);
                     String callingConvention = unt(columns[6]);
+                    String conventionEvidence = unt(columns[7]);
                     String source = unt(columns[8]);
 
                     if (!safeToReplace(function, expectedOldName)) {
@@ -85,9 +87,15 @@ public class STDebugSymbolApplier extends GhidraScript {
                         failed++;
                         continue;
                     }
+                    boolean lossyOperatorRepair = isScriptOwnedLossyOperator(function,
+                        expectedOldName, owner, method);
+                    boolean staticOperatorConventionRepair = lossyOperatorRepair &&
+                        canRepairStaticOperatorConvention(function, callingConvention,
+                            conventionEvidence);
                     boolean preserveConvention = !callingConvention.isBlank() &&
                             !callingConvention.equals(function.getCallingConventionName()) &&
-                            function.getSignatureSource() == SourceType.USER_DEFINED;
+                            function.getSignatureSource() == SourceType.USER_DEFINED &&
+                            !staticOperatorConventionRepair;
                     if (preserveConvention) {
                         printerr("Preserving manually refined calling convention at " + columns[1] +
                             ": " + function.getCallingConventionName() + " (proposal: " +
@@ -98,7 +106,9 @@ public class STDebugSymbolApplier extends GhidraScript {
                     if (!function.getParentNamespace().equals(namespace))
                         function.setParentNamespace(namespace);
                     if (!function.getName().equals(method))
-                        function.setName(method, SourceType.USER_DEFINED);
+                        function.setName(method, lossyOperatorRepair ?
+                            SourceType.ANALYSIS : SourceType.USER_DEFINED);
+                    if (lossyOperatorRepair) lossyOperatorsRepaired++;
                     if (!hasTag(function)) function.addTag(TAG);
                     addRecoveryComment(function, qualified, source);
                     if (!callingConvention.isBlank() &&
@@ -108,6 +118,10 @@ public class STDebugSymbolApplier extends GhidraScript {
                             if ("__thiscall".equals(callingConvention) &&
                                     explicitEcxParameter(function) != null)
                                 convertFastcallReceiver(function);
+                            else if (staticOperatorConventionRepair) {
+                                convertStaticOperatorToCdecl(function);
+                                staticOperatorConventionsRepaired++;
+                            }
                             else {
                                 function.setCallingConvention(callingConvention);
                                 function.setSignatureSource(SourceType.USER_DEFINED);
@@ -150,6 +164,9 @@ public class STDebugSymbolApplier extends GhidraScript {
             currentProgram.endTransaction(transaction, commit);
         }
         println("Debug symbols applied: " + applied + ", __thiscall: " + thiscalls +
+            ", lossy operators repaired: " + lossyOperatorsRepaired +
+            ", static operator conventions repaired: " +
+            staticOperatorConventionsRepaired +
             ", conventions preserved: " + conventionsPreserved +
             ", skipped: " + skipped + ", failed: " + failed +
             ", short strings applied: " + stringsApplied + ", unchanged: " +
@@ -250,6 +267,53 @@ public class STDebugSymbolApplier extends GhidraScript {
         function.setVarArgs(varargs);
         function.setNoReturn(noreturn);
         function.setSignatureSource(SourceType.USER_DEFINED);
+    }
+
+    private void convertStaticOperatorToCdecl(Function function) throws Exception {
+        List<Variable> arguments = new ArrayList<>();
+        for (Parameter parameter : function.getParameters()) {
+            if (parameter.isAutoParameter()) continue;
+            arguments.add(new ParameterImpl(parameter.getName(), parameter.getFormalDataType(),
+                currentProgram, SourceType.ANALYSIS));
+        }
+        boolean varargs = function.hasVarArgs();
+        boolean noreturn = function.hasNoReturn();
+        function.updateFunction("__cdecl",
+            new ReturnParameterImpl(function.getReturnType(), currentProgram), arguments,
+            FunctionUpdateType.DYNAMIC_STORAGE_FORMAL_PARAMS, true, SourceType.ANALYSIS);
+        function.setVarArgs(varargs);
+        function.setNoReturn(noreturn);
+        function.setSignatureSource(SourceType.ANALYSIS);
+    }
+
+    private boolean isScriptOwnedLossyOperator(Function function, String expectedOldName,
+            String owner, String method) {
+        if (!("operator_new".equals(method) || "operator_delete".equals(method)) ||
+                !"operator".equals(function.getName()) ||
+                !function.getName(true).equals(expectedOldName) ||
+                !function.getParentNamespace().getName(true).equals(owner) ||
+                !hasTag(function))
+            return false;
+        String comment = function.getComment();
+        return comment != null &&
+            comment.contains("Recovered from embedded debug metadata:");
+    }
+
+    private boolean canRepairStaticOperatorConvention(Function function, String convention,
+            String evidence) {
+        if (!"__cdecl".equals(convention) ||
+                !"__thiscall".equals(function.getCallingConventionName()) ||
+                !evidence.contains("no live incoming ECX use") ||
+                !evidence.contains("all RET instructions pop 0 stack bytes"))
+            return false;
+        for (Parameter parameter : function.getParameters()) {
+            if (parameter.isAutoParameter()) {
+                if (parameter.getSource() == SourceType.USER_DEFINED) return false;
+                continue;
+            }
+            if (parameter.getSource() == SourceType.USER_DEFINED) return false;
+        }
+        return true;
     }
 
     private File proposalFile() throws Exception {

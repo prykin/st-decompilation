@@ -1,7 +1,11 @@
 #include "../../pseudocode_runtime.h"
 
 
-int FUN_006bbb20(AnonShape_006BBB20_56723FCF *param_1,int param_2)
+/* [STPrototypeApplier] Propagated parameter 0.
+   Evidence: 0056ADC0 -> 006BBB20 @ 0056B228 | 0056DB80 -> 006BBB20 @ 0056E646 | 005DCE90 ->
+   006BBB20 @ 005DD056 */
+
+int FUN_006bbb20(AnonShape_GLOBAL_0080759C_9638EF10 *param_1,int param_2)
 
 {
   int *piVar1;
@@ -39,18 +43,18 @@ int FUN_006bbb20(AnonShape_006BBB20_56723FCF *param_1,int param_2)
   }
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
   (**(code **)(*piVar1 + 0x38))(piVar1,local_28);
-  piVar1 = (int *)param_1->field_0044;
+  piVar1 = param_1->field_0044;
   local_38[0] = 0;
   if (piVar1 != (int *)0x0) {
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
     (**(code **)(*piVar1 + 0x38))(piVar1,local_38);
   }
   if (param_2 == 0) {
-    if (((param_1->field_0044 == 0) || ((param_1->field_000B & 0x10) == 0)) &&
+    if (((param_1->field_0044 == (int *)0x0) || ((param_1->field_000B & 0x10) == 0)) &&
        ((local_28[0] & 0x4000) == 0)) {
       local_8 = 1;
     }
-    if ((param_1->field_0044 != 0) && ((local_38[0] & 0x4000) == 0)) goto LAB_006bbbce;
+    if ((param_1->field_0044 != (int *)0x0) && ((local_38[0] & 0x4000) == 0)) goto LAB_006bbbce;
 LAB_006bbc85:
     if (local_8 != 0) {
       memset(local_b4, 0, 0x7c); /* compiler bulk-zero initialization */
@@ -76,11 +80,11 @@ LAB_006bbc85:
       (**(code **)(*(int *)param_1->field_0040 + 0x38))((int *)param_1->field_0040,local_28);
     }
     if (local_10 != 0) {
-      piVar1 = (int *)param_1->field_0044;
+      piVar1 = param_1->field_0044;
       if (piVar1 != (int *)0x0) {
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
         (**(code **)(*piVar1 + 8))(piVar1);
-        param_1->field_0044 = 0;
+        param_1->field_0044 = (int *)0x0;
       }
       param_1->field_0044 = local_c;
       if (param_1->field_0020 == 8) {
@@ -122,7 +126,7 @@ LAB_006bbc85:
     if ((local_28[0] & 0x4000) != 0) {
       local_8 = 1;
     }
-    if ((param_1->field_0044 == 0) || ((local_38[0] & 0x4000) == 0)) goto LAB_006bbc85;
+    if ((param_1->field_0044 == (int *)0x0) || ((local_38[0] & 0x4000) == 0)) goto LAB_006bbc85;
 LAB_006bbbce:
     local_10 = 1;
     memset(local_130, 0, 0x7c); /* compiler bulk-zero initialization */
@@ -144,7 +148,7 @@ LAB_006bbbce:
     local_18 = (**(code **)(*param_1->field_0030 + 0x18))(param_1->field_0030,local_130,&local_c,0);
     if (local_18 == 0) {
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-      (**(code **)(*(int *)param_1->field_0044 + 0x38))((int *)param_1->field_0044,local_38);
+      (**(code **)(*param_1->field_0044 + 0x38))(param_1->field_0044,local_38);
       goto LAB_006bbc85;
     }
 LAB_006bbdfd:

@@ -1181,8 +1181,8 @@ LAB_005a6e50:
                 ccFntTy::WrStr(this_00->field_1A73,&DAT_0080f33a,0,-1,0);
               }
               Library::DKW::DDX::FUN_006b4680
-                        (DAT_0080759c,0x1a4,0x7d,(BITMAPINFO *)this_00->field_1E8E,(uint *)0x0,0,0,
-                         0x15e,0x8c,0x10000ff);
+                        ((int *)g_anonShape_GLOBAL_0080759C_9638EF10_0080759C,0x1a4,0x7d,
+                         (BITMAPINFO *)this_00->field_1E8E,(uint *)0x0,0,0,0x15e,0x8c,0x10000ff);
             }
             if (bVar40) {
               Library::DKW::TBL::FUN_006b6020(&this_00->field_1AE8->flags,0,&DAT_008016a0);
@@ -1218,8 +1218,8 @@ LAB_005a6e50:
               puVar21 = (uint *)LoadResourceString(0x2345,g_module_00807618);
               ccFntTy::WrStr(this_00->field_1A73,puVar21,iVar18,iVar42,uVar23);
               Library::DKW::DDX::FUN_006b4680
-                        (DAT_0080759c,0x1a4,0x7d,(BITMAPINFO *)this_00->field_1E8E,(uint *)0x0,0,0,
-                         0x15e,0x8c,0x10000ff);
+                        ((int *)g_anonShape_GLOBAL_0080759C_9638EF10_0080759C,0x1a4,0x7d,
+                         (BITMAPINFO *)this_00->field_1E8E,(uint *)0x0,0,0,0x15e,0x8c,0x10000ff);
             }
           }
           break;
@@ -1453,8 +1453,9 @@ LAB_005a8c85:
           } while ((int)local_14 < (int)((uint)(message->arg0).words.high + local_8[0x78]));
         }
         Library::DKW::DDX::FUN_006b4680
-                  (DAT_0080759c,local_8[9],local_8[10],(BITMAPINFO *)this_00->field_1E8E,(uint *)0x0
-                   ,0,0,local_8[0xb],local_8[0xc],0x10000ff);
+                  ((int *)g_anonShape_GLOBAL_0080759C_9638EF10_0080759C,local_8[9],local_8[10],
+                   (BITMAPINFO *)this_00->field_1E8E,(uint *)0x0,0,0,local_8[0xb],local_8[0xc],
+                   0x10000ff);
       }
       break;
     case MESS_MAINMENUTY_6983:
@@ -1478,9 +1479,9 @@ LAB_005a8c85:
         }
         /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
         Library::DKW::DDX::FUN_006b4680
-                  (DAT_0080759c,*(int *)(dVar8 + 0x24),*(int *)(dVar8 + 0x28),
-                   (BITMAPINFO *)this_00->field_1E8E,(uint *)0x0,0,0,*(DWORD *)(dVar8 + 0x2c),
-                   *(DWORD *)(dVar8 + 0x30),0x10000ff);
+                  ((int *)g_anonShape_GLOBAL_0080759C_9638EF10_0080759C,*(int *)(dVar8 + 0x24),
+                   *(int *)(dVar8 + 0x28),(BITMAPINFO *)this_00->field_1E8E,(uint *)0x0,0,0,
+                   *(DWORD *)(dVar8 + 0x2c),*(DWORD *)(dVar8 + 0x30),0x10000ff);
       }
       break;
     case 0x6984:
@@ -1718,8 +1719,8 @@ LAB_005a754e:
       iVar18 = *(int *)&pAVar39->field_0x28;
 LAB_005a89f6:
       Library::DKW::DDX::FUN_006b4680
-                (DAT_0080759c,*(int *)&pAVar39->field_0x24,iVar18,pBVar41,(uint *)0x0,0,0,DVar43,
-                 DVar17,0x10000ff);
+                ((int *)g_anonShape_GLOBAL_0080759C_9638EF10_0080759C,*(int *)&pAVar39->field_0x24,
+                 iVar18,pBVar41,(uint *)0x0,0,0,DVar43,DVar17,0x10000ff);
       break;
     case 0x6987:
       if ((this_00->field_1E8E != 0) && (this_00->field_1E9A != (tagBITMAPINFO *)0x0)) {
@@ -1744,9 +1745,9 @@ LAB_005a89f6:
         }
         /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
         Library::DKW::DDX::FUN_006b4680
-                  (DAT_0080759c,*(int *)(dVar8 + 0x24),*(int *)(dVar8 + 0x28),
-                   (BITMAPINFO *)this_00->field_1E8E,(uint *)0x0,0,0,*(DWORD *)(dVar8 + 0x2c),
-                   *(DWORD *)(dVar8 + 0x30),0x10000ff);
+                  ((int *)g_anonShape_GLOBAL_0080759C_9638EF10_0080759C,*(int *)(dVar8 + 0x24),
+                   *(int *)(dVar8 + 0x28),(BITMAPINFO *)this_00->field_1E8E,(uint *)0x0,0,0,
+                   *(DWORD *)(dVar8 + 0x2c),*(DWORD *)(dVar8 + 0x30),0x10000ff);
       }
       break;
     case MESS_SHARED_6980|MESS_SHARED_0008:
@@ -1775,9 +1776,9 @@ LAB_005a89f6:
         }
         /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
         Library::DKW::DDX::FUN_006b4680
-                  (DAT_0080759c,*(int *)(dVar8 + 0x24),*(int *)(dVar8 + 0x28),
-                   (BITMAPINFO *)this_00->field_1E8E,(uint *)0x0,0,0,*(DWORD *)(dVar8 + 0x2c),
-                   *(DWORD *)(dVar8 + 0x30),0x10000ff);
+                  ((int *)g_anonShape_GLOBAL_0080759C_9638EF10_0080759C,*(int *)(dVar8 + 0x24),
+                   *(int *)(dVar8 + 0x28),(BITMAPINFO *)this_00->field_1E8E,(uint *)0x0,0,0,
+                   *(DWORD *)(dVar8 + 0x2c),*(DWORD *)(dVar8 + 0x30),0x10000ff);
       }
       break;
     case 0x698b:

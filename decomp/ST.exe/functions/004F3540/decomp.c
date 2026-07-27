@@ -52,7 +52,7 @@ CPanelTy::PaintBut(CPanelTy *this,byte param_1,STMessage *param_2,byte param_3,c
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
   uVar4 = (*(code *)param_5)(param_2);
   text_00 = FUN_006f2c00(text,1,uVar4);
-  local_c = cMf32::RecGet(DAT_00806790,param_3,text_00,errorCode,iVar6);
+  local_c = cMf32::RecGet(g_cMf32_00806790,param_3,text_00,errorCode,iVar6);
   pCVar3 = local_8;
   uVar2 = (uint)param_1;
   iVar6 = local_10[1];
@@ -89,7 +89,7 @@ LAB_004f3636:
   }
   DibPut((AnonShape_006B5B10_E0D06CF1 *)(&local_8->field_0180)[uVar2],
          *local_10 - (&local_8->field_003C)[uVar2],iVar6 - iVar5,param_3,(byte *)local_c);
-  cMf32::RecMemFree(DAT_00806790,(uint *)&local_c);
+  cMf32::RecMemFree(g_cMf32_00806790,(uint *)&local_c);
   if ((param_1 < 0xb) && (-1 < (&pCVar3->field_0148)[uVar2])) {
     Library::DKW::DDX::FUN_006b3640
               ((int *)PTR_008075a8,(&pCVar3->field_0148)[uVar2],0xffffffff,

@@ -1,4 +1,4 @@
-FUN_0054b6d0:
+CursorClassTy::sub_0054B6D0:
 0054B6D0  A1 88 16 80 00            MOV EAX,[0x00801688]
 0054B6D5  85 C0                     TEST EAX,EAX
 0054B6D7  74 15                     JZ 0x0054b6ee

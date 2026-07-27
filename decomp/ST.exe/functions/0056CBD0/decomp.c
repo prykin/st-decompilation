@@ -75,7 +75,7 @@ STAppC::MainWindowProc
         DAT_0080745d = 0;
       }
       if (g_cLoading_00802A58 != (cLoadingTy *)0x0) {
-        thunk_FUN_00554a50(&g_cLoading_00802A58->field_0000);
+        cLoadingTy::sub_00554A50(g_cLoading_00802A58);
       }
       EndPaint(hWnd,&local_ac);
       g_currentExceptionFrame = local_4c.previous;
@@ -85,8 +85,9 @@ STAppC::MainWindowProc
       return 0;
     case CASE_1C:
       if (param_3 == 0) {
-        if (DAT_0080759c != (undefined4 *)0x0) {
-          FUN_006ba760((int)DAT_0080759c);
+        if (g_anonShape_GLOBAL_0080759C_9638EF10_0080759C !=
+            (AnonShape_GLOBAL_0080759C_9638EF10 *)0x0) {
+          FUN_006ba760((int)g_anonShape_GLOBAL_0080759C_9638EF10_0080759C);
         }
         if (PTR_00807598 != (AnonShape_GLOBAL_00807598_0C6808FB *)0x0) {
           FUN_006dc310();
@@ -96,15 +97,16 @@ STAppC::MainWindowProc
           thunk_FUN_005713b0(0x807620);
         }
         if (g_cursorClass_00802A30 != (CursorClassTy *)0x0) {
-          thunk_FUN_0054b540(g_cursorClass_00802A30);
+          CursorClassTy::sub_0054B540(g_cursorClass_00802A30);
         }
         pHVar5 = LoadCursorA(g_hInstance_00856D70,(LPCSTR)0x7f00);
         SetCursor(pHVar5);
         g_currentExceptionFrame = local_4c.previous;
         return local_8;
       }
-      if (DAT_0080759c != (undefined4 *)0x0) {
-        FUN_006ba740((int)DAT_0080759c);
+      if (g_anonShape_GLOBAL_0080759C_9638EF10_0080759C != (AnonShape_GLOBAL_0080759C_9638EF10 *)0x0
+         ) {
+        FUN_006ba740((int)g_anonShape_GLOBAL_0080759C_9638EF10_0080759C);
       }
       if (PTR_00807598 != (AnonShape_GLOBAL_00807598_0C6808FB *)0x0) {
         FUN_006dc300((int)PTR_00807598);
@@ -164,13 +166,13 @@ STAppC::MainWindowProc
     if (DAT_00806738 != 8) {
       DAT_00806738 = 8;
       Library::DKW::DDX::FUN_006b9b40
-                (DAT_0080759c,0x10000001,g_nWidth_00806730,DAT_00806734,8,g_nWidth_00806730,
-                 DAT_00806734,0,0,0);
+                (g_anonShape_GLOBAL_0080759C_9638EF10_0080759C,0x10000001,g_nWidth_00806730,
+                 DAT_00806734,8,g_nWidth_00806730,DAT_00806734,0,0,0);
       Library::DKW::DDX::FUN_006b1470((int *)PTR_008075a8);
     }
     FUN_006b5f80((int *)PTR_008075a8,0,0,g_nWidth_00806730,DAT_00806734);
-    Library::DKW::DDX::FUN_006bab60((int)DAT_0080759c,0x1000000);
-    Library::DKW::DDX::FUN_006bb370((int)DAT_0080759c,0,0);
+    Library::DKW::DDX::FUN_006bab60(g_anonShape_GLOBAL_0080759C_9638EF10_0080759C,0x1000000);
+    Library::DKW::DDX::FUN_006bb370(g_anonShape_GLOBAL_0080759C_9638EF10_0080759C,0,0);
     g_appClass_00806728->field_4EFA = 0;
     thunk_FUN_00567180(&g_appClass_00806728->field_0x38,hWnd);
     FUN_006e3db0((int)&g_appClass_00806728->field_0x113a);

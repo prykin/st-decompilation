@@ -112,8 +112,8 @@ int FUN_00646e00(int param_1,int param_2,int param_3)
               ((((local_10 = g_centeredOffsets5[param_1] + local_10, -1 < local_10 &&
                  (local_10 < pVVar3->field_0034)) && (pVVar3->field_004C != (byte *)0x0)) &&
                ((pVVar3->field_004C[param_2 + local_10 * pVVar3->field_0030] == 0 &&
-                (iVar5 = thunk_FUN_005f1d80(g_visibleClass_00802A88,param_3,iVar5,param_1),
-                iVar5 != 1)))))))))))))) {
+                (iVar5 = VisibleClassTy::sub_005F1D80(g_visibleClass_00802A88,param_3,iVar5,param_1)
+                , iVar5 != 1)))))))))))))) {
       return 0;
     }
   }

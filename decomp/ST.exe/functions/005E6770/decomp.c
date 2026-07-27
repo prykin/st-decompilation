@@ -51,7 +51,7 @@ void __thiscall WaitTy::InitWait(WaitTy *this,undefined4 param_1,undefined4 para
     pDVar5 = Library::DKW::TBL::SArrayCreate((DArrayTy *)0x0,10,10);
     this_01->field_1AF0 = pDVar5;
     if ((DAT_00811768 == '\x01') || (DAT_008067a0 != '\0')) {
-      DarkScreen(DAT_0080759c,1,0);
+      DarkScreen(g_anonShape_GLOBAL_0080759C_9638EF10_0080759C,1,0);
     }
     if (g_cursorClass_00802A30 != (CursorClassTy *)0x0) {
       if (g_cursorClass_00802A30->field_00A9 == 0) {
@@ -334,7 +334,8 @@ void __thiscall WaitTy::InitWait(WaitTy *this,undefined4 param_1,undefined4 para
       Library::DKW::DDX::FUN_006b3430((int *)PTR_008075a8,g_startSystem_0081176C->field_0554);
     }
     if ((DAT_00811768 != '\0') || (DAT_008067a0 != '\0')) {
-      thunk_FUN_0055ddf0(DAT_0080759c,(int *)PTR_008075a8,(int)this_01->field_005D,10,2);
+      thunk_FUN_0055ddf0((undefined4 *)g_anonShape_GLOBAL_0080759C_9638EF10_0080759C,
+                         (int *)PTR_008075a8,(int)this_01->field_005D,10,2);
     }
     pHVar9 = this_01->field_1AF8;
     if (((pHVar9 != (HoloTy *)0x0) && (pHVar9->field_0000 != '\0')) && (-1 < pHVar9->field_0003)) {

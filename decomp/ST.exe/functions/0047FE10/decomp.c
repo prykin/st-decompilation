@@ -56,7 +56,7 @@ int __thiscall STBoatC::Scout(STBoatC *this,int param_1)
           return -1;
         }
       }
-      iVar5 = (*this->vtable->vfunc_D8)();
+      iVar5 = (*this->vtable->vfunc_D8)(this);
       return (-(uint)(iVar5 != 0) & 0xfffffffd) + 2;
     }
     if (iVar5 != 2) {

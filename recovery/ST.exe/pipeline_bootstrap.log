@@ -1,0 +1,41 @@
+ST recovery launcher
+Ghidra version: 12.1.2
+Repository: <local-home>/st
+Pipeline source: <local-home>/st/scripts/STRecoveryPipeline.java
+Pipeline source SHA-256: cee3734e6fcaa35f2cd20bd0750e332f7465a2e102e73c5476c4237033f7384c
+Bootstrap log: <local-home>/st/recovery/ST.exe/pipeline_bootstrap.log
+ST recovery pipeline: mode=export, repository=<local-home>/st
+No proposal flags are changed by the pipeline. Review-only rows remain disabled.
+
+== script load preflight ==
+
+== targeted indirect-call repair ==
+[01] STIndirectCallAnalyzer.java <- <repo>/recovery
+Indirect-call analysis complete: <local-home>/st/recovery/ST.exe
+Sites=4221, proposals=2635, apply=2146
+[02] STIndirectCallApplier.java <- <repo>/recovery/ST.exe/indirect_call_proposals.tsv
+Indirect calls: applied=0, unchanged=2146, preserved=0, conflicts=0, disabled=489
+Apply report: <local-home>/st/recovery/ST.exe/indirect_call_apply_report.tsv
+STIndirectCallApplier.java state: proposals_enabled=2146, proposals_review=489, changed=0, unchanged=2146, review=489, conflict=0, error=0
+Indirect-call repair pass 1: mutating rows=0
+
+== evidence checkpoint ==
+[03] STEvidenceLedger.java <- record | <repo>/recovery
+Computing semantic Program fingerprint...
+Evidence ledger recorded: program modification=4304, semantic_sha256=d1d5eb0e3d008d861158ae766cda1aa63e036a74b2f08020aad56241061e196f, artifacts=74
+
+== LLM corpus export ==
+[04] STEvidenceLedger.java <- verify | <repo>/recovery
+Computing semantic Program fingerprint...
+Evidence ledger verified: program modification=4304, semantic_sha256=d1d5eb0e3d008d861158ae766cda1aa63e036a74b2f08020aad56241061e196f, artifacts=74
+[05] STDecompExport.java <- <repo>/decomp
+Exporting ST.exe to <local-home>/st/decomp/ST.exe
+Functions reused without decompilation: 10392/10392
+STDecompExport complete: <local-home>/st/decomp/ST.exe
+[06] STExportRegressionGate.java <- <repo>/decomp/ST.exe | <repo>/recovery/ST.exe/runs/.current/pre_export | <repo>/recovery/ST.exe
+Export regression gate: status=passed, errors=0, warnings=0, report=<local-home>/st/recovery/ST.exe/export_regression_report.tsv
+ST recovery pipeline complete in 68 s.
+Pipeline report: <local-home>/st/recovery/ST.exe/pipeline_report.tsv
+Program changed after pipeline: false
+Latest archived run: 4ec301364b1b17b72af707b4d3bca6e7ca6cafcd058d9fe31a209bc89920f9ef
+ST recovery launcher completed.

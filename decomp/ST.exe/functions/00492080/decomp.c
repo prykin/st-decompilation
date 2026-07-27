@@ -10,7 +10,7 @@ void __thiscall STBoatC::NotReadyForLoading(STBoatC *this,int param_1)
 {
   code *pcVar1;
   int iVar2;
-  int *local_14;
+  STFishC *local_14;
   short local_e;
   short local_c;
   short local_a;
@@ -26,11 +26,10 @@ void __thiscall STBoatC::NotReadyForLoading(STBoatC *this,int param_1)
     }
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  iVar2 = FUN_006e62d0(g_playSystem_00802A38,this->field_058E,(int *)&local_14);
+  iVar2 = STPlaySystemC::sub_006E62D0(g_playSystem_00802A38,this->field_058E,(int *)&local_14);
   if (iVar2 != -4) {
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-    (**(code **)(*local_14 + 0xac))(this->field_0018);
-    thunk_FUN_004162f0(local_14,&this->field_0588,&this->field_058A,&this->field_058C);
+    (*local_14->vtable->vfunc_AC)(this->field_0018);
+    STFishC::sub_004162F0(local_14,&this->field_0588,&this->field_058A,&this->field_058C);
     iVar2 = GetCellForLoading(this,this->field_005B,this->field_005D,this->field_005F,
                               this->field_0588,this->field_058A,this->field_058C,&local_6,
                               (undefined2 *)((int)&param_1 + 2),&local_8,&local_e,&local_c,&local_a)

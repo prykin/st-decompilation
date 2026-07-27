@@ -73,7 +73,7 @@ CPanelTy::CreateBut(CPanelTy *this,byte param_1,undefined4 param_2,int param_3,i
     local_18c[0] = param_3;
     if (text != (char *)0x0) {
       wsprintfA(&pCVar3->field_0x1e1,"%s0",text);
-      local_8 = cMf32::RecGet(DAT_00806790,param_6,&pCVar3->field_0x1e1,(int *)0x0,1);
+      local_8 = cMf32::RecGet(g_cMf32_00806790,param_6,&pCVar3->field_0x1e1,(int *)0x0,1);
     }
     if (param_6 == 1) {
       local_17c = *(int *)(local_8 + 2);
@@ -120,7 +120,7 @@ CPanelTy::CreateBut(CPanelTy *this,byte param_1,undefined4 param_2,int param_3,i
     }
     local_18c[3] = local_18c[3] + param_5;
     if (local_8 != (ushort *)0x0) {
-      cMf32::RecMemFree(DAT_00806790,(uint *)&local_8);
+      cMf32::RecMemFree(g_cMf32_00806790,(uint *)&local_8);
     }
     local_16c = pCVar3->field_0008;
     local_124 = param_9;
@@ -154,8 +154,8 @@ CPanelTy::CreateBut(CPanelTy *this,byte param_1,undefined4 param_2,int param_3,i
     local_14c = local_16c;
     local_12c = local_16c;
     if (param_13 != (char *)0x0) {
-      local_68 = FUN_0070aa70(DAT_00806790,param_13,0,1);
-      local_64 = Library::Ourlib::MFIMG::mfImgGetWidth(DAT_00806790,0x12,param_13,1);
+      local_68 = FUN_0070aa70(g_cMf32_00806790,param_13,0,1);
+      local_64 = Library::Ourlib::MFIMG::mfImgGetWidth(g_cMf32_00806790,0x12,param_13,1);
     }
     (*pCVar3->field_000C->vtable->CreateObject)
               ((SystemClassTy *)pCVar3->field_000C,2,&local_c,(int *)0x0,local_18c,0);

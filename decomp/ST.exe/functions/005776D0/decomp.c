@@ -238,7 +238,7 @@ int __thiscall GameSystemC::GetMessage(GameSystemC *this,STMessage *message)
               }
               DAT_00808aaf = DAT_00808aaf + 1;
               if (g_playPanel_008016E4 != (PlayPanelTy *)0x0) {
-                thunk_FUN_0053a540(g_playPanel_008016E4);
+                PlayPanelTy::sub_0053A540(g_playPanel_008016E4);
               }
             }
             pcVar8 = (cMf32 *)0x577e83;
@@ -348,7 +348,7 @@ LAB_00577956:
       StartStrateg((ushort *)(pcVar13 + 2),uVar10);
     }
     if (g_optPanel_008016DC != (OptPanelTy *)0x0) {
-      thunk_FUN_00532ce0((AnonShape_00532CE0_361E49BD *)g_optPanel_008016DC);
+      OptPanelTy::sub_00532CE0(g_optPanel_008016DC);
       g_currentExceptionFrame = local_8c.previous;
       return 0;
     }

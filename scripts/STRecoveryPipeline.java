@@ -3,7 +3,7 @@
 // enforce their own proposal flags, stale baselines, transactions, and manual-type protection.
 // @author OpenAI
 // @category SubmarineTitans.Recovery
-// @menupath Tools.Submarine Titans.Run Recovery Pipeline
+// @menupath Tools.Submarine Titans.Advanced.Run Recovery Pipeline Directly
 
 import java.io.BufferedWriter;
 import java.io.File;
@@ -11,6 +11,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.PrintWriter;
 import java.io.StringWriter;
+import java.io.Writer;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -30,7 +31,10 @@ import java.util.Map;
 import java.util.Set;
 import java.util.TreeMap;
 
+import generic.jar.ResourceFile;
 import ghidra.app.script.GhidraScript;
+import ghidra.app.script.GhidraScriptProvider;
+import ghidra.app.script.GhidraScriptUtil;
 import ghidra.app.plugin.core.analysis.AutoAnalysisManager;
 import ghidra.framework.model.TransactionInfo;
 
@@ -65,6 +69,8 @@ public class STRecoveryPipeline extends GhidraScript {
     private String runMode = "";
     private String currentSection = "startup";
     private long runModificationBefore;
+    private final List<BuildRow> builds = new ArrayList<>();
+    private int buildFailures;
 
     @Override
     protected void run() throws Exception {
@@ -95,13 +101,14 @@ public class STRecoveryPipeline extends GhidraScript {
         Instant started = Instant.now();
         startRun(options.mode, started);
         try {
+            preflightScripts();
             switch (options.mode) {
                 case "core" -> { runCore(); recordEvidence(); }
                 case "deep" -> { runDeep(); recordEvidence(); }
                 case "full" -> { runCore(); runDeep(); recordEvidence(); }
-                case "export" -> runExport();
+                case "export" -> finalizeAndExport();
                 case "full-export" -> {
-                    runCore(); runDeep(); recordEvidence(); runExport();
+                    runCore(); runDeep(); finalizeAndExport();
                 }
                 default -> throw new IllegalArgumentException("Unknown pipeline mode: " +
                     options.mode);
@@ -116,17 +123,17 @@ public class STRecoveryPipeline extends GhidraScript {
             finishRun("completed", null);
             println("ST recovery pipeline complete in " + seconds + " s.");
         }
-        catch (Exception exception) {
+        catch (Throwable failure) {
             try {
                 flushReport();
-                logLine("pipeline_failed " + message(exception));
-                finishRun("failed", exception);
+                logLine("pipeline_failed " + message(failure));
+                finishRun("failed", failure);
             }
-            catch (Exception loggingFailure) {
-                exception.addSuppressed(loggingFailure);
+            catch (Throwable loggingFailure) {
+                failure.addSuppressed(loggingFailure);
             }
-            printerr("Pipeline stopped after the first failed step: " + message(exception));
-            throw exception;
+            printerr("Pipeline stopped after the first failed step: " + message(failure));
+            rethrow(failure);
         }
         println("Pipeline report: " + reportPath.toAbsolutePath().normalize());
         println("Program changed after pipeline: " + currentProgram.isChanged());
@@ -196,6 +203,12 @@ public class STRecoveryPipeline extends GhidraScript {
                 "global_aggregate_proposals.tsv", "global_aggregate_apply_report.tsv");
             changed += pair("STGlobalDataAnalyzer.java", "STGlobalDataApplier.java",
                 "global_data_proposals.tsv", "global_data_apply_report.tsv");
+            // A global which has just become Owner * is direct method-owner evidence
+            // when that value flows into ECX.  Keep this inside the deep fixed point:
+            // requiring another full pipeline run would leave anonymous hidden-this
+            // namespaces alive after their concrete singleton class is already known.
+            changed += pair("STMethodOwnerAnalyzer.java", "STMethodOwnerApplier.java",
+                "method_owner_proposals.tsv", "method_owner_apply_report.tsv");
             changed += pair("STIndirectCallAnalyzer.java", "STIndirectCallApplier.java",
                 "indirect_call_proposals.tsv", "indirect_call_apply_report.tsv");
             changed += pair("STPointerRoleRepairAnalyzer.java",
@@ -222,6 +235,13 @@ public class STRecoveryPipeline extends GhidraScript {
         // from implementation-based analyzers.
         runStructuralFixpoint();
 
+        // Structural vtable discovery may expose fresh generic slots after the deep loop.
+        // Re-run indirect typing after the last table rebuild so the exported database always
+        // contains the final slot prototypes rather than orphaned function definitions.
+        section("post-structural indirect propagation");
+        pair("STIndirectCallAnalyzer.java", "STIndirectCallApplier.java",
+            "indirect_call_proposals.tsv", "indirect_call_apply_report.tsv");
+
         section("deep finalization");
         analyzer("STManualTypeAuditAnalyzer.java");
         pair("STSourceProvenanceAnalyzer.java", "STSourceProvenanceApplier.java",
@@ -245,6 +265,36 @@ public class STRecoveryPipeline extends GhidraScript {
             "export_regression_report.tsv");
         snapshotRunArtifact(recoveryProgram.resolve("export_receipt.json"),
             "export_receipt.json");
+    }
+
+    /**
+     * Every export synchronizes the last ABI layer after all structural/type work, records
+     * the resulting Program plus exact proposal/apply artifacts, and immediately verifies
+     * that checkpoint before decompilation.  This keeps the ordinary export path valid after
+     * either a full pipeline or a reviewed incremental Ghidra edit without adding
+     * subsystem-specific export modes.
+     */
+    private void finalizeAndExport() throws Exception {
+        runIndirectRepair();
+        recordEvidence();
+        runExport();
+    }
+
+    /**
+     * Short fixed-point repair for the indirect/vtable ABI layer which is an invariant of
+     * every exported corpus.  finalizeAndExport() checkpoints its stabilized artifacts.
+     */
+    private void runIndirectRepair() throws Exception {
+        section("targeted indirect-call repair");
+        for (int pass = 1; pass <= 4; pass++) {
+            int changed = pair("STIndirectCallAnalyzer.java", "STIndirectCallApplier.java",
+                "indirect_call_proposals.tsv", "indirect_call_apply_report.tsv");
+            println("Indirect-call repair pass " + pass + ": mutating rows=" + changed);
+            if (changed == 0) return;
+        }
+        throw new IllegalStateException("Indirect-call repair did not reach a fixed point in " +
+            "4 passes; inspect " +
+            recoveryProgram.resolve("indirect_call_apply_report.tsv"));
     }
 
     private void recordEvidence() throws Exception {
@@ -414,6 +464,112 @@ public class STRecoveryPipeline extends GhidraScript {
         }
     }
 
+    /**
+     * Force Ghidra's Java provider to load every repository recovery script before the first
+     * pipeline mutation. The provider can emit on-demand compiler diagnostics here, but a
+     * Script Manager refresh compiles the source bundle before this class can execute and
+     * therefore remains a host-level Ghidra logging boundary.
+     */
+    private void preflightScripts() throws Exception {
+        section("script load preflight");
+        Path directory = activeRun.resolve("build");
+        Path manifest = activeRun.resolve("build_manifest.tsv");
+        Files.writeString(manifest,
+            "sequence\tscript\tstatus\tduration_ms\tsource_sha256\tsource_path\tlog\n",
+            StandardCharsets.UTF_8, StandardOpenOption.CREATE,
+            StandardOpenOption.TRUNCATE_EXISTING);
+        List<Path> sources;
+        try (java.util.stream.Stream<Path> stream =
+                Files.list(repository.resolve("scripts"))) {
+            sources = stream.filter(Files::isRegularFile)
+                .filter(path -> path.getFileName().toString().matches("ST[A-Za-z0-9_]+\\.java"))
+                .sorted(Comparator.comparing(path -> path.getFileName().toString()))
+                .toList();
+        }
+        List<String> failed = new ArrayList<>();
+        int ordinal = 0;
+        for (Path source : sources) {
+            monitor.checkCancelled();
+            ordinal++;
+            String script = source.getFileName().toString();
+            String hash = sha256(source);
+            Path output = directory.resolve(String.format(Locale.ROOT, "%03d-%s.log",
+                ordinal, script.replaceAll("[^A-Za-z0-9._-]+", "_")));
+            logLine("build_start sequence=" + ordinal + " script=" + script +
+                " source_sha256=" + hash);
+            event("build_start", 0, script, "building", 0, -1, -1,
+                "build_sequence=" + ordinal + "; source_sha256=" + hash);
+            Instant started = Instant.now();
+            StringWriter diagnostics = new StringWriter();
+            Throwable failure = null;
+            String status = "loaded";
+            try (PrintWriter compiler = new PrintWriter(diagnostics, true)) {
+                if (script.equals(getScriptName())) status = "already_loaded";
+                else {
+                    ResourceFile located = GhidraScriptUtil.findScriptByName(script);
+                    if (located == null)
+                        throw new IllegalStateException(
+                            "Script is not visible to Ghidra Script Manager: " + script);
+                    Path locatedPath = Path.of(located.getAbsolutePath())
+                        .toAbsolutePath().normalize();
+                    if (!Files.isSameFile(source, locatedPath))
+                        throw new IllegalStateException("Ghidra resolves " + script + " to " +
+                            locatedPath + " instead of repository source " + source);
+                    GhidraScriptProvider provider = GhidraScriptUtil.getProvider(located);
+                    if (provider == null)
+                        throw new IllegalStateException("No Ghidra script provider for " + script);
+                    GhidraScript instance = provider.getScriptInstance(located, compiler);
+                    compiler.flush();
+                    if (instance == null)
+                        throw new IllegalStateException(
+                            "Ghidra compiler returned no script instance for " + script);
+                }
+            }
+            catch (Throwable problem) {
+                failure = problem;
+                status = "failed";
+                buildFailures++;
+                failed.add(script);
+            }
+            long milliseconds = Duration.between(started, Instant.now()).toMillis();
+            String diagnosticText = diagnostics.toString();
+            String text = "script=" + script + "\nsource=" +
+                source.toAbsolutePath().normalize() + "\nsource_sha256=" + hash +
+                "\nstatus=" + status + "\nduration_ms=" + milliseconds +
+                "\n\ndiagnostics:\n" + diagnosticText +
+                (failure == null ? "" : "\nexception:\n" + stackTrace(failure));
+            Files.writeString(output, text, StandardCharsets.UTF_8,
+                StandardOpenOption.CREATE, StandardOpenOption.TRUNCATE_EXISTING);
+            BuildRow row = new BuildRow(script, hash, status, milliseconds,
+                activeRun.relativize(output).toString());
+            builds.add(row);
+            Files.writeString(manifest, ordinal + "\t" + tsv(script) + "\t" + status +
+                "\t" + milliseconds + "\t" + hash + "\t" +
+                tsv(source.toAbsolutePath().normalize().toString()) + "\t" +
+                tsv(row.log) + "\n", StandardCharsets.UTF_8,
+                StandardOpenOption.CREATE, StandardOpenOption.APPEND);
+            logLine("build_" + status + " sequence=" + ordinal + " script=" + script +
+                " duration_ms=" + milliseconds + " log=" + row.log);
+            event(failure == null ? "build_complete" : "build_failed", 0, script,
+                status, milliseconds, -1, -1,
+                "build_sequence=" + ordinal + "; log=" + row.log +
+                    (failure == null ? "" : "; error=" + message(failure)));
+            if (!diagnosticText.isBlank()) {
+                PrintWriter destination = failure == null ? writer : errorWriter;
+                if (destination != null) {
+                    destination.print(diagnosticText);
+                    destination.flush();
+                }
+            }
+        }
+        logLine("build_preflight_complete scripts=" + builds.size() +
+            " failures=" + buildFailures);
+        if (!failed.isEmpty())
+            throw new IllegalStateException("Ghidra script build preflight failed for " +
+                String.join(", ", failed) + "; see " +
+                activeRun.resolve("build_manifest.tsv"));
+    }
+
     private void step(String script, String... args) throws Exception {
         monitor.checkCancelled();
         Path source = repository.resolve("scripts").resolve(script);
@@ -429,41 +585,164 @@ public class STRecoveryPipeline extends GhidraScript {
         event("step_start", ordinal, script, "running", 0, -1, -1, argument);
         Instant started = Instant.now();
         lastStepMutatedProgram = false;
-        // A committed child can enqueue auto-analysis just after the preceding post-step
-        // drain observed an empty queue.  Drain again at the consumer boundary instead of
-        // mistaking Ghidra's own transaction for a leaked script transaction.
-        settleBackgroundAnalysis("before " + script);
-        requireNoOpenTransaction("before " + script);
         long modificationBefore = currentProgram.getModificationNumber();
+        long modificationAfter = modificationBefore;
+        String sourceHash = sha256(source);
+        StepCapture capture = startStepCapture(ordinal, script, argument, sourceHash,
+            modificationBefore);
+        Throwable failure = null;
         try {
+            // A committed child can enqueue auto-analysis just after the preceding post-step
+            // drain observed an empty queue. Drain again at the consumer boundary instead of
+            // mistaking Ghidra's own transaction for a leaked script transaction.
+            settleBackgroundAnalysis("before " + script);
+            requireNoOpenTransaction("before " + script);
+            modificationBefore = currentProgram.getModificationNumber();
             runScript(script, args);
             settleBackgroundAnalysis("after " + script);
             requireNoOpenTransaction("after " + script);
-            long modificationAfter = currentProgram.getModificationNumber();
-            lastStepMutatedProgram = modificationAfter != modificationBefore;
-            if (lastStepMutatedProgram) programMutationObserved = true;
-            long milliseconds = Duration.between(started, Instant.now()).toMillis();
-            String detail = modificationAfter == modificationBefore ? "" :
-                "program_modification=" + modificationBefore + "->" + modificationAfter;
-            report.add(new PipelineRow(ordinal, script, "completed", milliseconds, argument,
-                detail));
-            logLine("step_complete sequence=" + ordinal + " script=" + script +
-                " duration_ms=" + milliseconds + (detail.isBlank() ? "" : " " + detail));
-            event("step_complete", ordinal, script, "completed", milliseconds,
-                modificationBefore, modificationAfter, detail);
-            flushReport();
+            modificationAfter = currentProgram.getModificationNumber();
         }
-        catch (Exception exception) {
-            long milliseconds = Duration.between(started, Instant.now()).toMillis();
+        catch (Throwable problem) {
+            failure = problem;
+            modificationAfter = currentProgram.getModificationNumber();
+        }
+        long milliseconds = Duration.between(started, Instant.now()).toMillis();
+        try {
+            finishStepCapture(capture, failure == null ? "completed" : "failed",
+                milliseconds, modificationBefore, modificationAfter, failure);
+        }
+        catch (Throwable loggingFailure) {
+            if (failure == null) failure = loggingFailure;
+            else failure.addSuppressed(loggingFailure);
+        }
+        if (failure != null) {
             report.add(new PipelineRow(ordinal, script, "failed", milliseconds, argument,
-                message(exception)));
+                message(failure)));
             logLine("step_failed sequence=" + ordinal + " script=" + script +
-                " duration_ms=" + milliseconds + " error=" + message(exception));
+                " duration_ms=" + milliseconds + " error=" + message(failure) +
+                " log=" + activeRun.relativize(capture.directory));
             event("step_failed", ordinal, script, "failed", milliseconds,
-                modificationBefore, currentProgram.getModificationNumber(), message(exception));
+                modificationBefore, modificationAfter, message(failure) +
+                    "; log=" + activeRun.relativize(capture.directory));
             flushReport();
-            throw exception;
+            rethrow(failure);
         }
+        lastStepMutatedProgram = modificationAfter != modificationBefore;
+        if (lastStepMutatedProgram) programMutationObserved = true;
+        String detail = modificationAfter == modificationBefore ? "" :
+            "program_modification=" + modificationBefore + "->" + modificationAfter;
+        report.add(new PipelineRow(ordinal, script, "completed", milliseconds, argument,
+            detail));
+        logLine("step_complete sequence=" + ordinal + " script=" + script +
+            " duration_ms=" + milliseconds + (detail.isBlank() ? "" : " " + detail) +
+            " log=" + activeRun.relativize(capture.directory));
+        event("step_complete", ordinal, script, "completed", milliseconds,
+            modificationBefore, modificationAfter,
+            detail + (detail.isBlank() ? "" : "; ") +
+                "log=" + activeRun.relativize(capture.directory));
+        flushReport();
+    }
+
+    private StepCapture startStepCapture(int ordinal, String script, String argument,
+            String sourceHash, long modification) throws Exception {
+        Path directory = activeRun.resolve("steps").resolve(
+            String.format(Locale.ROOT, "%03d-%s", ordinal,
+                script.replaceAll("[^A-Za-z0-9._-]+", "_")));
+        Files.createDirectories(directory);
+        BufferedWriter stdoutFile = Files.newBufferedWriter(directory.resolve("stdout.log"),
+            StandardCharsets.UTF_8, StandardOpenOption.CREATE,
+            StandardOpenOption.TRUNCATE_EXISTING);
+        BufferedWriter stderrFile;
+        try {
+            stderrFile = Files.newBufferedWriter(directory.resolve("stderr.log"),
+                StandardCharsets.UTF_8, StandardOpenOption.CREATE,
+                StandardOpenOption.TRUNCATE_EXISTING);
+        }
+        catch (Exception failure) {
+            stdoutFile.close();
+            throw failure;
+        }
+        PrintWriter previousWriter = writer;
+        PrintWriter previousErrorWriter = errorWriter;
+        PrintWriter stepWriter = new PrintWriter(
+            new TeeWriter(previousWriter, stdoutFile), true);
+        PrintWriter stepErrorWriter = new PrintWriter(
+            new TeeWriter(previousErrorWriter, stderrFile), true);
+        StepCapture capture = new StepCapture(directory, script, argument, sourceHash,
+            previousWriter, previousErrorWriter, stepWriter, stepErrorWriter,
+            stdoutFile, stderrFile);
+        try {
+            Files.writeString(directory.resolve("step.json"),
+                stepMetadata(capture, "running", 0, modification, modification, null),
+                StandardCharsets.UTF_8, StandardOpenOption.CREATE,
+                StandardOpenOption.TRUNCATE_EXISTING);
+        }
+        catch (Exception failure) {
+            stdoutFile.close();
+            stderrFile.close();
+            throw failure;
+        }
+        writer = stepWriter;
+        errorWriter = stepErrorWriter;
+        return capture;
+    }
+
+    private void finishStepCapture(StepCapture capture, String status, long duration,
+            long modificationBefore, long modificationAfter, Throwable failure)
+            throws Exception {
+        if (capture.closed) return;
+        Throwable outputFailure = null;
+        try {
+            capture.stepWriter.flush();
+            capture.stepErrorWriter.flush();
+            if (capture.stepWriter.checkError() || capture.stepErrorWriter.checkError())
+                outputFailure = new IOException("Could not write complete step stdout/stderr");
+        }
+        catch (Throwable problem) {
+            outputFailure = problem;
+        }
+        finally {
+            writer = capture.previousWriter;
+            errorWriter = capture.previousErrorWriter;
+            try { capture.stdoutFile.close(); }
+            catch (Throwable problem) {
+                if (outputFailure == null) outputFailure = problem;
+                else outputFailure.addSuppressed(problem);
+            }
+            try { capture.stderrFile.close(); }
+            catch (Throwable problem) {
+                if (outputFailure == null) outputFailure = problem;
+                else outputFailure.addSuppressed(problem);
+            }
+            capture.closed = true;
+        }
+        if (failure != null)
+            Files.writeString(capture.directory.resolve("exception.txt"),
+                stackTrace(failure), StandardCharsets.UTF_8,
+                StandardOpenOption.CREATE, StandardOpenOption.TRUNCATE_EXISTING);
+        Files.writeString(capture.directory.resolve("step.json"),
+            stepMetadata(capture, status, duration, modificationBefore,
+                modificationAfter, failure),
+            StandardCharsets.UTF_8, StandardOpenOption.CREATE,
+            StandardOpenOption.TRUNCATE_EXISTING);
+        if (outputFailure != null) rethrow(outputFailure);
+    }
+
+    private String stepMetadata(StepCapture capture, String status, long duration,
+            long modificationBefore, long modificationAfter, Throwable failure) {
+        return "{" +
+            "\"schema\":\"st-pipeline-step\"," +
+            "\"schema_version\":1," +
+            "\"script\":" + q(capture.script) + "," +
+            "\"source_sha256\":" + q(capture.sourceHash) + "," +
+            "\"argument\":" + q(capture.argument) + "," +
+            "\"status\":" + q(status) + "," +
+            "\"duration_ms\":" + duration + "," +
+            "\"program_modification_before\":" + modificationBefore + "," +
+            "\"program_modification_after\":" + modificationAfter + "," +
+            "\"error\":" + q(failure == null ? "" : message(failure)) +
+            "}\n";
     }
 
     private void section(String name) throws Exception {
@@ -475,6 +754,7 @@ public class STRecoveryPipeline extends GhidraScript {
 
     private void requireNoOpenTransaction(String context) throws Exception {
         TransactionInfo transaction = currentProgram.getCurrentTransactionInfo();
+        if (completedTransactionSnapshot(transaction)) return;
         // Close the remaining race between waitForAnalysis() returning and the analysis
         // worker publishing/closing its Program transaction.  Only Ghidra's exact outer
         // transaction is waitable here; a child-owned transaction still fails immediately.
@@ -482,6 +762,7 @@ public class STRecoveryPipeline extends GhidraScript {
             settleBackgroundAnalysis(context);
             transaction = currentProgram.getCurrentTransactionInfo();
         }
+        if (completedTransactionSnapshot(transaction)) return;
         if (transaction != null)
             throw new IllegalStateException("Unexpected open Program transaction " + context +
                 ": description=" + transaction.getDescription() +
@@ -501,7 +782,8 @@ public class STRecoveryPipeline extends GhidraScript {
         for (int attempt = 0; attempt < 500; attempt++) {
             monitor.checkCancelled();
             TransactionInfo transaction = currentProgram.getCurrentTransactionInfo();
-            if (transaction == null || !autoAnalysisBoundaryOpen(transaction)) return;
+            if (transaction == null || completedTransactionSnapshot(transaction) ||
+                    !autoAnalysisBoundaryOpen(transaction)) return;
             if (!announced) {
                 println("Waiting for Ghidra auto-analysis transaction " + context + "...");
                 announced = true;
@@ -509,6 +791,18 @@ public class STRecoveryPipeline extends GhidraScript {
             if (analysis.isAnalyzing()) analysis.waitForAnalysis(null, monitor);
             else Thread.sleep(10);
         }
+    }
+
+    /**
+     * Ghidra may briefly retain the just-finished TransactionInfo snapshot after
+     * endTransaction() has committed its DB transaction and emptied every nested entry.
+     * Such a snapshot is terminal, not an open transaction.  Do not generalize this to
+     * ABORTED: a child that silently rolled back must still stop the pipeline.
+     */
+    private boolean completedTransactionSnapshot(TransactionInfo transaction) {
+        return transaction != null &&
+            transaction.getStatus() == TransactionInfo.Status.COMMITTED &&
+            transaction.getOpenSubTransactions().isEmpty();
     }
 
     /**
@@ -701,6 +995,8 @@ public class STRecoveryPipeline extends GhidraScript {
         archiveInterruptedRun();
         Files.createDirectories(activeRun.resolve("passes"));
         Files.createDirectories(activeRun.resolve("artifacts"));
+        Files.createDirectories(activeRun.resolve("build"));
+        Files.createDirectories(activeRun.resolve("steps"));
         eventsPath = activeRun.resolve("events.jsonl");
         logPath = activeRun.resolve("pipeline.log");
         Files.writeString(eventsPath, "", StandardCharsets.UTF_8,
@@ -752,6 +1048,8 @@ public class STRecoveryPipeline extends GhidraScript {
             "\"duration_ms\":" + duration + "," +
             "\"program_modification_before\":" + runModificationBefore + "," +
             "\"program_modification_after\":" + currentProgram.getModificationNumber() + "," +
+            "\"build_script_count\":" + builds.size() + "," +
+            "\"build_failure_count\":" + buildFailures + "," +
             "\"pipeline_row_count\":" + report.size() +
             "}";
         Files.writeString(activeRun.resolve("run.json"), metadata + "\n",
@@ -894,6 +1192,9 @@ public class STRecoveryPipeline extends GhidraScript {
         value.append("semantic=").append(semantic).append('\n');
         value.append("mode=").append(runMode).append('\n');
         value.append("status=").append(status).append('\n');
+        for (BuildRow row : builds)
+            value.append("build|").append(row.script).append('|').append(row.sourceHash)
+                .append('|').append(row.status).append('\n');
         for (PipelineRow row : report)
             value.append(row.sequence).append('|').append(row.script).append('|')
                 .append(row.status).append('|').append(row.argument).append('|')
@@ -921,6 +1222,17 @@ public class STRecoveryPipeline extends GhidraScript {
     private String sha256(String value) throws Exception {
         MessageDigest digest = MessageDigest.getInstance("SHA-256");
         return hex(digest.digest(value.getBytes(StandardCharsets.UTF_8)));
+    }
+
+    private String sha256(Path path) throws Exception {
+        MessageDigest digest = MessageDigest.getInstance("SHA-256");
+        try (InputStream input = Files.newInputStream(path)) {
+            byte[] buffer = new byte[65536];
+            int count;
+            while ((count = input.read(buffer)) >= 0)
+                if (count > 0) digest.update(buffer, 0, count);
+        }
+        return hex(digest.digest());
     }
 
     private String hex(byte[] bytes) {
@@ -1024,9 +1336,74 @@ public class STRecoveryPipeline extends GhidraScript {
         return value == null || value.isBlank() ? throwable.getClass().getSimpleName() : value;
     }
 
+    private static void rethrow(Throwable failure) throws Exception {
+        if (failure instanceof Exception exception) throw exception;
+        if (failure instanceof Error error) throw error;
+        throw new RuntimeException(failure);
+    }
+
+    private static final class TeeWriter extends Writer {
+        private final Writer console;
+        private final Writer log;
+
+        TeeWriter(Writer console, Writer log) {
+            this.console = console;
+            this.log = log;
+        }
+
+        @Override
+        public void write(char[] buffer, int offset, int length) throws IOException {
+            if (console != null) console.write(buffer, offset, length);
+            log.write(buffer, offset, length);
+        }
+
+        @Override
+        public void flush() throws IOException {
+            if (console != null) console.flush();
+            log.flush();
+        }
+
+        @Override
+        public void close() throws IOException {
+            flush();
+        }
+    }
+
+    private static final class StepCapture {
+        final Path directory;
+        final String script;
+        final String argument;
+        final String sourceHash;
+        final PrintWriter previousWriter;
+        final PrintWriter previousErrorWriter;
+        final PrintWriter stepWriter;
+        final PrintWriter stepErrorWriter;
+        final BufferedWriter stdoutFile;
+        final BufferedWriter stderrFile;
+        boolean closed;
+
+        StepCapture(Path directory, String script, String argument, String sourceHash,
+                PrintWriter previousWriter, PrintWriter previousErrorWriter,
+                PrintWriter stepWriter, PrintWriter stepErrorWriter,
+                BufferedWriter stdoutFile, BufferedWriter stderrFile) {
+            this.directory = directory;
+            this.script = script;
+            this.argument = argument;
+            this.sourceHash = sourceHash;
+            this.previousWriter = previousWriter;
+            this.previousErrorWriter = previousErrorWriter;
+            this.stepWriter = stepWriter;
+            this.stepErrorWriter = stepErrorWriter;
+            this.stdoutFile = stdoutFile;
+            this.stderrFile = stderrFile;
+        }
+    }
+
     private record PipelineOptions(String mode, Path repository) { }
     private record RecoveryState(int enabledProposals, int reviewProposals, int changed,
         int unchanged, int review, int conflict, int error, Map<String, Integer> other) { }
     private record PipelineRow(int sequence, String script, String status,
         long durationMilliseconds, String argument, String detail) { }
+    private record BuildRow(String script, String sourceHash, String status,
+        long durationMilliseconds, String log) { }
 }

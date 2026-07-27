@@ -45,7 +45,7 @@ void __thiscall ChooseMapTy::DoneChooseMap(ChooseMapTy *this)
     }
     iVar4 = pCVar3->field_004D;
     if (((iVar4 != 0x6120) && (iVar4 != 0x6121)) && (iVar4 != 0x6105)) {
-      DarkScreen(DAT_0080759c,10,2);
+      DarkScreen(g_anonShape_GLOBAL_0080759C_9638EF10_0080759C,10,2);
     }
     if (g_startSystem_0081176C->field_002C != (ushort *)0x0) {
       cMf32::RecMemFree(g_cMf32_00806780,(uint *)&g_startSystem_0081176C->field_002C);

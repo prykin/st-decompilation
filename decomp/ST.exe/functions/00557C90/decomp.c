@@ -111,10 +111,9 @@ void __thiscall VisibleClassTy::Init(VisibleClassTy *this)
                        (uint)(byte)puVar8[7],*(int **)(puVar8 + 8),0x4001);
           break;
         case 1:
-          SubmarineTitans::Recovered::HiddenThis::AnonReceiver_005594A0::sub_005594A0
-                    ((AnonReceiver_005594A0 *)this_00,(int)*(short *)(puVar8 + 2),
-                     (int)*(short *)(puVar8 + 4),puVar8[6],(undefined *)(uint)(byte)puVar8[1],
-                     (uint)(byte)puVar8[7],*(undefined4 *)(puVar8 + 8),2);
+          sub_005594A0(this_00,(int)*(short *)(puVar8 + 2),(int)*(short *)(puVar8 + 4),puVar8[6],
+                       (undefined *)(uint)(byte)puVar8[1],(uint)(byte)puVar8[7],
+                       *(undefined4 *)(puVar8 + 8),2);
           break;
         case 2:
           SetZoneDes(this_00,(int)*(short *)(puVar8 + 2),(int)*(short *)(puVar8 + 4),puVar8[6],
@@ -145,7 +144,7 @@ void __thiscall VisibleClassTy::Init(VisibleClassTy *this)
     if (this_00->field_0114 != 0) {
       if (this_00->field_00F8 != 0) {
         PTR_00807598->field_0466 = 1;
-        *(undefined4 *)&pAVar3->field_0x2d8 = 1;
+        pAVar3->field_02D8 = 1;
         g_currentExceptionFrame = local_54.previous;
         return;
       }
@@ -156,7 +155,7 @@ void __thiscall VisibleClassTy::Init(VisibleClassTy *this)
 LAB_00557fbb:
   pAVar3 = PTR_00807598;
   PTR_00807598->field_0466 = 0;
-  *(undefined4 *)&pAVar3->field_0x2d8 = 1;
+  pAVar3->field_02D8 = 1;
   g_currentExceptionFrame = local_54.previous;
   return;
 }

@@ -16,7 +16,8 @@ undefined4 __thiscall FUN_004d8e70(void *this,int param_1,int param_2,undefined4
       *(undefined4 *)((int)this + 0x2ad) = param_3;
       return 0;
     }
-    iVar1 = FUN_006e62d0(g_playSystem_00802A38,*(int *)((int)this + 0x4f0),(int *)&local_8);
+    iVar1 = STPlaySystemC::sub_006E62D0
+                      (g_playSystem_00802A38,*(int *)((int)this + 0x4f0),(int *)&local_8);
     if (iVar1 == 0) {
       thunk_FUN_0058c560(local_8,param_1,param_2);
       *(undefined4 *)((int)this + 0x4ec) = 0;

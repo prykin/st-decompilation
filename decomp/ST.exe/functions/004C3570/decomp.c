@@ -20,8 +20,10 @@ int __thiscall TLOBaseTy::fireProc(TLOBaseTy *this)
   bool bVar9;
   InternalExceptionFrame local_5c;
   TLOBaseTy *local_18;
-  undefined4 local_14;
-  undefined4 local_10;
+  short local_14;
+  undefined2 uStack_12;
+  short local_10;
+  undefined2 uStack_e;
   undefined4 local_c;
   int *local_8;
 
@@ -62,17 +64,17 @@ int __thiscall TLOBaseTy::fireProc(TLOBaseTy *this)
               if ((bVar9) ||
                  ((AnonPointee_TLOBaseTy_0291 *)puVar8[3] == (AnonPointee_TLOBaseTy_0291 *)0x0)) {
                 puVar8[3] = 0;
-                FUN_006e62d0(g_playSystem_00802A38,puVar8[2],(int *)(puVar8 + 3));
+                STPlaySystemC::sub_006E62D0(g_playSystem_00802A38,puVar8[2],(int *)(puVar8 + 3));
               }
               pAVar1 = (AnonPointee_TLOBaseTy_0291 *)puVar8[3];
               if (pAVar1 != (AnonPointee_TLOBaseTy_0291 *)0x0) {
                 if (&stack0x00000000 != (undefined1 *)0x14) {
                   /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                  local_14 = CONCAT22(local_14._2_2_,this_00->field_0041);
+                  _local_14 = CONCAT22(uStack_12,this_00->field_0041);
                 }
                 if (&stack0x00000000 != (undefined1 *)0x10) {
                   /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                  local_10 = CONCAT22(local_10._2_2_,this_00->field_0043);
+                  _local_10 = CONCAT22(uStack_e,this_00->field_0043);
                 }
                 if (&stack0x00000000 != &DAT_0000000c) {
                   /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
@@ -80,8 +82,9 @@ int __thiscall TLOBaseTy::fireProc(TLOBaseTy *this)
                 }
                 /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                 sVar3 = (*this_00->vtable->vfunc_10)
-                                  (CONCAT22((short)((uint)pAVar1 >> 0x10),pAVar1->field_0041),
-                                   pAVar1->field_0043,pAVar1->field_0045,local_14,local_10,local_c);
+                                  (pAVar1->field_0041,pAVar1->field_0043,
+                                   CONCAT22((short)((uint)_local_14 >> 0x10),pAVar1->field_0045),
+                                   (short)_local_14,(short)_local_10,local_c);
                 iVar4 = (sVar3 + 0xb4) % 0x168;
                 if (puVar8[-2] == 8) {
                   iVar4 = (iVar4 / 0x2d) * 0x2d;
@@ -102,7 +105,8 @@ int __thiscall TLOBaseTy::fireProc(TLOBaseTy *this)
                   puVar8[0xe] = uVar5;
                 } while (uVar5 == this_00->field_0259);
                 if (*(int *)(&DAT_00795afc + this_00->field_0235 * 4) != 0) {
-                  (*this_00->vtable->vfunc_90)(3,*(int *)(&DAT_00795afc + this_00->field_0235 * 4));
+                  (*this_00->vtable->vfunc_90)
+                            (this_00,3,*(int *)(&DAT_00795afc + this_00->field_0235 * 4));
                 }
               }
             }
@@ -135,11 +139,11 @@ int __thiscall TLOBaseTy::fireProc(TLOBaseTy *this)
               puVar8[0xd] = 100;
               if (puVar8[2] != 0) {
                 if ((AnonPointee_TLOBaseTy_0291 *)puVar8[3] == (AnonPointee_TLOBaseTy_0291 *)0x0) {
-                  FUN_006e62d0(g_playSystem_00802A38,puVar8[2],(int *)(puVar8 + 3));
+                  STPlaySystemC::sub_006E62D0(g_playSystem_00802A38,puVar8[2],(int *)(puVar8 + 3));
                 }
-                puVar8[8] = (int)(short)((AnonPointee_TLOBaseTy_0291 *)puVar8[3])->field_0041;
-                puVar8[9] = (int)(short)((AnonPointee_TLOBaseTy_0291 *)puVar8[3])->field_0043;
-                puVar8[10] = (int)(short)((AnonPointee_TLOBaseTy_0291 *)puVar8[3])->field_0045;
+                puVar8[8] = (int)((AnonPointee_TLOBaseTy_0291 *)puVar8[3])->field_0041;
+                puVar8[9] = (int)((AnonPointee_TLOBaseTy_0291 *)puVar8[3])->field_0043;
+                puVar8[10] = (int)((AnonPointee_TLOBaseTy_0291 *)puVar8[3])->field_0045;
               }
               puVar8[6] = 0;
               if (*(int *)(&DAT_007915f0 + ((int)piVar7 + this_00->field_0235 * 2) * 4) == 0) {

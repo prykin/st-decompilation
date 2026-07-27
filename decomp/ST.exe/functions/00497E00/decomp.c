@@ -244,7 +244,7 @@ int __thiscall STGroupBoatC::GetMessage(STGroupBoatC *this,STMessage *message)
       if (0 < (int)array->count) {
         do {
           DArrayGetElement(array,uVar7,&local_14);
-          (*this_00->vtable->vfunc_04)(local_14);
+          (*this_00->vtable->vfunc_04)(this_00,local_14);
           array = this_00->field_01DA;
           uVar7 = uVar7 + 1;
         } while ((int)uVar7 < (int)array->count);

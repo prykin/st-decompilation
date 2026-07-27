@@ -1706,6 +1706,19 @@ public class STClassLayoutAnalyzer extends GhidraScript {
                 "/SubmarineTitans/Recovered/VTables/" + name);
             if (type != null) result.putIfAbsent(owner, type.getPathName());
         }
+        // Keep a polymorphic dispatch shape distinct from the exact physical table applied
+        // at a constructor address. This prevents high virtual offsets from wrapping through
+        // vtable[1] after the indirect-call pass has created the wider interface.
+        for (String owner : new ArrayList<>(result.keySet())) {
+            String dispatchName = leaf(owner).replaceAll("[^A-Za-z0-9_]", "_") +
+                "DispatchVTable";
+            DataType dispatch = dataTypes.getDataType(
+                "/SubmarineTitans/Recovered/VTables/" + dispatchName);
+            if (dispatch instanceof Structure &&
+                    dispatch.getDescription() != null &&
+                    dispatch.getDescription().contains("[STIndirectCallApplier]"))
+                result.put(owner, dispatch.getPathName());
+        }
         return result;
     }
 

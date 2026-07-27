@@ -1,4 +1,4 @@
-FUN_0055b7f0:
+VisibleClassTy::sub_0055B7F0:
 0055B7F0  55                        PUSH EBP
 0055B7F1  8B EC                     MOV EBP,ESP
 0055B7F3  53                        PUSH EBX

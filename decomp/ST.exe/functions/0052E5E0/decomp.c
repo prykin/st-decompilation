@@ -15,7 +15,6 @@ void __thiscall OptPanelTy::InitOptPanel(OptPanelTy *this)
   LPSTR pCVar4;
   ushort *puVar5;
   DArrayTy *pDVar6;
-  ccFntTy *this_01;
   undefined4 uVar7;
   undefined4 uVar8;
   short sVar9;
@@ -40,36 +39,34 @@ void __thiscall OptPanelTy::InitOptPanel(OptPanelTy *this)
   this_00 = local_8;
   if (iVar2 == 0) {
     g_optPanel_008016DC = local_8;
-    pcVar3 = (ccFntTy *)
-             ccFntTy::operator(*(ccFntTy **)&PTR_00802a28->field_0x28,0x19d,
-                               (int)*(ccFntTy **)&PTR_00802a28->field_0x28);
+    pcVar3 = (ccFntTy *)ccFntTy::operator_new(0x19d,*(int *)&PTR_00802a28->field_0x28);
     this_00->field_017C = pcVar3;
     pcVar3->field_0058 = 0;
     pcVar3->field_005C = 0;
-    pcVar3 = (ccFntTy *)ccFntTy::operator(this_01,0x19d,*(int *)&PTR_00802a28->field_0x2c);
+    pcVar3 = (ccFntTy *)ccFntTy::operator_new(0x19d,*(int *)&PTR_00802a28->field_0x2c);
     this_00->field_0180 = pcVar3;
     pcVar3->field_0058 = 1;
     pcVar3->field_005C = 0;
     iVar2 = 1;
     piVar15 = (int *)0x0;
     pCVar4 = thunk_FUN_00571240("BKG_OPTIONS",0);
-    puVar5 = cMf32::RecGet(DAT_00806790,1,pCVar4,piVar15,iVar2);
+    puVar5 = cMf32::RecGet(g_cMf32_00806790,1,pCVar4,piVar15,iVar2);
     iVar2 = 1;
     piVar15 = (int *)0x0;
     this_00->field_0184 = puVar5;
     this_00->field_0188 = 0;
     pCVar4 = thunk_FUN_00571240("BKG_OPT_NUM",0);
-    puVar5 = cMf32::RecGet(DAT_00806790,1,pCVar4,piVar15,iVar2);
+    puVar5 = cMf32::RecGet(g_cMf32_00806790,1,pCVar4,piVar15,iVar2);
     iVar2 = 1;
     piVar15 = (int *)0x0;
     this_00->field_018C = puVar5;
     pCVar4 = thunk_FUN_00571240("BKG_OPT_SAVE",0);
-    puVar5 = cMf32::RecGet(DAT_00806790,1,pCVar4,piVar15,iVar2);
+    puVar5 = cMf32::RecGet(g_cMf32_00806790,1,pCVar4,piVar15,iVar2);
     iVar2 = 1;
     piVar15 = (int *)0x0;
     this_00->field_0190 = puVar5;
     pCVar4 = thunk_FUN_00571240("BKG_OPT_MOBJ",0);
-    puVar5 = cMf32::RecGet(DAT_00806790,1,pCVar4,piVar15,iVar2);
+    puVar5 = cMf32::RecGet(g_cMf32_00806790,1,pCVar4,piVar15,iVar2);
     puVar18 = (undefined4 *)0x0;
     iVar16 = 0;
     iVar2 = 1;

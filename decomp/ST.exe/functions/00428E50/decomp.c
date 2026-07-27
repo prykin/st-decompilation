@@ -235,7 +235,7 @@ LAB_004292e2:
           *(undefined4 **)&pAVar6->field_0x140 = puVar7;
           *(int *)&pAVar6->field_0x13c = *(int *)&pAVar6->field_0x13c + 1;
           FUN_006ddbe0(pAVar6);
-          FUN_006ddd50((AnonShape_006DDD50_309FA381 *)pAVar6);
+          FUN_006ddd50((AnonShape_GLOBAL_0080760C_46D7AF7A *)pAVar6);
           *(undefined4 *)&pAVar6->field_0x140 = 0;
           *(undefined4 *)&pAVar6->field_0x13c = 0;
           *(undefined2 *)((int)puVar7 + 6) = (undefined2)local_14;

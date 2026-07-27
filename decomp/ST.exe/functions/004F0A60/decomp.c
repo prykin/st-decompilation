@@ -10,7 +10,7 @@ void __fastcall FUN_004f0a60(AnonShape_004F0A60_A5DE070F *param_1)
   }
   param_1->field_0292 = 0;
   if (param_1->field_027A != 0) {
-    cMf32::RecMemFree(DAT_00806790,(uint *)&param_1->field_027A);
+    cMf32::RecMemFree(g_cMf32_00806790,(uint *)&param_1->field_027A);
   }
   puVar1 = (undefined4 *)&param_1->field_0x27e;
   iVar2 = 5;

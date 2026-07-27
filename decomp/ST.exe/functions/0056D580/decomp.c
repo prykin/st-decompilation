@@ -25,8 +25,8 @@ void __thiscall STAppC::CloseGameDBs(STAppC *this)
     if (DAT_00806794 != 0) {
       FUN_0070a300(&DAT_00806794);
     }
-    cMf32::delete(DAT_00806790);
-    DAT_00806790 = (cMf32 *)0x0;
+    cMf32::delete(g_cMf32_00806790);
+    g_cMf32_00806790 = (cMf32 *)0x0;
     if (DAT_0080677c != 0) {
       FUN_0070a300(&DAT_0080677c);
     }

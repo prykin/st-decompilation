@@ -409,7 +409,8 @@ LAB_0042eb3e:
     local_30 = 0;
     local_44 = 1;
     local_3c = uVar13;
-    (*g_playSystem_00802A38->vtable->vfunc_08)(0x10ff,local_10,&local_c,local_50,0);
+    (*g_playSystem_00802A38->vtable->vfunc_08)
+              (g_playSystem_00802A38,0x10ff,local_10,&local_c,local_50,0);
     Library::DKW::TBL::FUN_006ae140(&local_1c->flags,uVar13,&local_c);
     iVar9 = param_5;
   }

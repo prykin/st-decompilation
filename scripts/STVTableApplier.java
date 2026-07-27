@@ -69,6 +69,7 @@ public class STVTableApplier extends GhidraScript {
     private static final String MESSAGE_HANDLER_TAG = "RECOVERED_MESSAGE_HANDLER";
     private static final String MESSAGE_PATH = "/SubmarineTitans/Recovered/STMessage";
     private static final String COMMENT_MARKER = "[STVTableApplier]";
+    private static final String INDIRECT_CALL_MARKER = "[STIndirectCallApplier]";
     private static final String LAYOUT_HASH_MARKER = "; generated_layout_sha256=";
     private static final String SIGNATURE_HASH_MARKER = "; generated_signature_sha256=";
 
@@ -604,11 +605,11 @@ public class STVTableApplier extends GhidraScript {
 
     private StructureResolution resolveStructure(String name, List<Map<String, String>> slots,
             Map<String, String> proposal) {
-        Structure desired = buildStructure(name, slots, proposal);
+        Structure existing = findStructure(name);
+        Structure desired = buildStructure(name, slots, proposal, existing);
         String desiredHash = structureLayoutHash(desired);
         desired.setDescription(desired.getDescription() + LAYOUT_HASH_MARKER + desiredHash);
 
-        Structure existing = findStructure(name);
         if (existing == null) {
             DataType sameName = findAnyDataType(name);
             if (sameName != null)
@@ -648,7 +649,7 @@ public class STVTableApplier extends GhidraScript {
     }
 
     private Structure buildStructure(String name, List<Map<String, String>> slots,
-            Map<String, String> proposal) {
+            Map<String, String> proposal, Structure existing) {
         StructureDataType structure = new StructureDataType(VTABLES, name, 0, dataTypes);
         structure.setDescription(COMMENT_MARKER + " Generated from " +
             proposal.get("table_address") + "; owner=" + unt(proposal.get("owner")) +
@@ -658,15 +659,51 @@ public class STVTableApplier extends GhidraScript {
             Address rawAddress = address(slot.get("raw_target_address"));
             Function function = currentProgram.getFunctionManager().getFunctionAt(rawAddress);
             DataType fieldType = pointerFor(function, rawAddress);
-            String baseName = fieldName(unt(slot.get("proposed_function")),
-                Integer.parseInt(slot.get("slot_index")));
+            int slotIndex = Integer.parseInt(slot.get("slot_index"));
+            int slotOffset = slotIndex * pointerSize;
+            String baseName = fieldName(unt(slot.get("proposed_function")), slotIndex);
             int occurrence = fieldCounts.merge(baseName, 1, Integer::sum);
             String fieldName = occurrence == 1 ? baseName : baseName + "_" + occurrence;
             String comment = "slot " + slot.get("slot_offset") + " -> " +
                 slot.get("raw_target_address") + " " + unt(slot.get("raw_target_symbol"));
+            DataType retained = retainedIndirectCallType(existing, slotOffset,
+                slot.get("raw_target_address"));
+            if (isVoidPointer(fieldType) && retained != null) {
+                fieldType = retained;
+                comment += " " + INDIRECT_CALL_MARKER;
+            }
             structure.add(fieldType, pointerSize, fieldName, comment);
         }
         return structure;
+    }
+
+    /**
+     * STIndirectCallApplier refines a generic slot after this script has established the
+     * physical table.  A later structural pass must not erase that independently owned
+     * refinement merely because the target function itself is still untrusted.  Retain only
+     * exact generated function pointers whose slot and definition both carry its marker and
+     * whose raw target still matches this analyzer snapshot.
+     */
+    private DataType retainedIndirectCallType(Structure existing, int offset,
+            String rawTarget) {
+        if (existing == null) return null;
+        DataTypeComponent component = existing.getComponentAt(offset);
+        if (component == null || component.getOffset() != offset ||
+                component.getLength() != pointerSize) return null;
+        String componentComment = text(component.getComment());
+        if (!componentComment.contains(INDIRECT_CALL_MARKER) ||
+                !componentComment.toUpperCase(Locale.ROOT).contains(
+                    "-> " + unt(rawTarget).toUpperCase(Locale.ROOT))) return null;
+        if (!(component.getDataType() instanceof Pointer pointer) ||
+                !(pointer.getDataType() instanceof FunctionDefinition definition)) return null;
+        String definitionComment = text(definition.getComment());
+        return definitionComment.contains(INDIRECT_CALL_MARKER) ?
+            component.getDataType() : null;
+    }
+
+    private boolean isVoidPointer(DataType type) {
+        return type instanceof Pointer pointer &&
+            pointer.getDataType() instanceof VoidDataType;
     }
 
     private String structureLayoutHash(Structure structure) {

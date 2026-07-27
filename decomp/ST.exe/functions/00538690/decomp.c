@@ -69,7 +69,7 @@ PanelTy::CreateBut(PanelTy *this,undefined4 param_1,int param_2,int param_3,int 
     local_18c[1] = param_1;
     local_18c[0] = param_2;
     wsprintfA((LPSTR)(pPVar2 + 1),"%s0",param_8);
-    local_c = cMf32::RecGet(DAT_00806790,param_7,(char *)(pPVar2 + 1),(int *)0x0,1);
+    local_c = cMf32::RecGet(g_cMf32_00806790,param_7,(char *)(pPVar2 + 1),(int *)0x0,1);
     local_17c = *(undefined4 *)(local_c + 2);
     local_178 = *(undefined4 *)(local_c + 4);
     if ((param_5 == 0) || (local_18c[2] = g_nWidth_00806730, pPVar2->field_005C != 0)) {
@@ -80,7 +80,7 @@ PanelTy::CreateBut(PanelTy *this,undefined4 param_1,int param_2,int param_3,int 
       local_18c[3] = pPVar2->field_0044;
     }
     local_18c[3] = local_18c[3] + param_4;
-    cMf32::RecMemFree(DAT_00806790,(uint *)&local_c);
+    cMf32::RecMemFree(g_cMf32_00806790,(uint *)&local_c);
     local_16c = pPVar2->field_0008;
     local_144 = param_9;
     local_164 = param_9;
@@ -111,8 +111,8 @@ PanelTy::CreateBut(PanelTy *this,undefined4 param_1,int param_2,int param_3,int 
     local_14c = local_16c;
     local_12c = local_16c;
     if (param_14 != (char *)0x0) {
-      local_68 = FUN_0070aa70(DAT_00806790,param_14,0,1);
-      local_64 = Library::Ourlib::MFIMG::mfImgGetWidth(DAT_00806790,0x12,param_14,1);
+      local_68 = FUN_0070aa70(g_cMf32_00806790,param_14,0,1);
+      local_64 = Library::Ourlib::MFIMG::mfImgGetWidth(g_cMf32_00806790,0x12,param_14,1);
     }
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
     (**(code **)(*(int *)pPVar2->field_000C + 8))(2,&local_8,0,local_18c,0);

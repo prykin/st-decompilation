@@ -18,7 +18,7 @@ void __thiscall TLOBaseTy::sub_004DC150(TLOBaseTy *this)
       Library::MSVCRT::FUN_0072e2b0(this->field_061F);
       this->field_061F = (void *)0x0;
     }
-    iVar1 = FUN_006e62d0(g_playSystem_00802A38,this->field_04C4,(int *)&local_8);
+    iVar1 = STPlaySystemC::sub_006E62D0(g_playSystem_00802A38,this->field_04C4,(int *)&local_8);
     if (iVar1 == 0) {
       thunk_FUN_004dbe00(local_8,(int *)this->field_0018);
     }

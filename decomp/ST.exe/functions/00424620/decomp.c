@@ -4,9 +4,9 @@ void __thiscall FUN_00424620(void *this,uint param_1)
 {
   uint uVar1;
   uint uVar2;
-  STGameObjC *pSVar3;
+  STGameObjC *this_00;
   uint index;
-  uint uVar4;
+  uint uVar3;
 
   uVar2 = param_1;
   uVar1 = *(uint *)(*(int *)((int)this + 0x29) + 0xc);
@@ -25,18 +25,18 @@ void __thiscall FUN_00424620(void *this,uint param_1)
   if (((param_1 & 0x10) != 0) && ((*(uint *)((int)this + 0x35) & 0x10) != 0)) {
     *(uint *)((int)this + 0x35) = *(uint *)((int)this + 0x35) & 0xffffffef;
   }
-  uVar4 = 0;
+  uVar3 = 0;
   if (uVar1 != 0) {
     index = 0;
     do {
       DArrayGetElement(*(DArrayTy **)((int)this + 0x29),index,&param_1);
       if ((short)param_1 != -1) {
-        pSVar3 = STAllPlayersC::GetObjPtr
-                           (g_allPlayers_007FA174,*(char *)((int)this + 0x24),param_1,CASE_1);
-        (*pSVar3->vtable[1].vfunc_30)(uVar2);
+        this_00 = STAllPlayersC::GetObjPtr
+                            (g_allPlayers_007FA174,*(char *)((int)this + 0x24),param_1,CASE_1);
+        (*this_00->vtable->vfunc_104)(this_00,(char)uVar2);
       }
-      uVar4 = uVar4 + 1;
-      index = uVar4 & 0xffff;
+      uVar3 = uVar3 + 1;
+      index = uVar3 & 0xffff;
     } while (index < uVar1);
   }
   return;

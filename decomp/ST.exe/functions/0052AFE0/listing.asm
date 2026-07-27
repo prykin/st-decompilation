@@ -1,4 +1,4 @@
-FUN_0052afe0:
+CPanelTy::sub_0052AFE0:
 0052AFE0  55                        PUSH EBP
 0052AFE1  8B EC                     MOV EBP,ESP
 0052AFE3  83 EC 2C                  SUB ESP,0x2c

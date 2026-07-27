@@ -274,11 +274,11 @@ apply	address	old_name	library	namespace	confidence	evidence	references
 1	0070C400	Library::Ourlib::MFIMG::FUN_0070c400	OURLIB_MFIMG	Library::Ourlib::MFIMG	high	E:\\Ourlib\\Mfimg.cpp	0070C475
 1	0070C4D0	Library::Ourlib::MFIMG::FUN_0070c4d0	OURLIB_MFIMG	Library::Ourlib::MFIMG	high	E:\\Ourlib\\Mfimg.cpp	0070C5AB
 1	0070C690	Library::Ourlib::MFIMG::FUN_0070c690	OURLIB_MFIMG	Library::Ourlib::MFIMG	high	E:\\Ourlib\\Mfimg.cpp	0070C74C
-1	0070CEB0	ccFntTy::operator	OURLIB_MFCFNT	Library::Ourlib::MFCFNT	high	E:\\Ourlib\\mfcfnt.cpp	0070CFB3 | 0070D16A | 0070D1CE
-1	0070D1F0	ccFntTy::operator	OURLIB_MFCFNT	Library::Ourlib::MFCFNT	high	E:\\Ourlib\\mfcfnt.cpp	0070D25C | 0070D49C | 0070D4D1 | 0070D4FC | 0070D562 | 0070D665 | 0070D6A3 | 0070D727 | 0070D784 | 0070D925 | 0070D965 | 0070D9A5 | 0070D9E2 | 0070DA27 | 0070DA91 | 0070DB0E | 0070DD52 | 0070DEE9
-1	0070DF00	ccFntTy::operator	OURLIB_MFCFNT	Library::Ourlib::MFCFNT	high	E:\\Ourlib\\mfcfnt.cpp	0070DF4F | 0070DFF0 | 0070E01A
+1	0070CEB0	ccFntTy::operator_new	OURLIB_MFCFNT	Library::Ourlib::MFCFNT	high	E:\\Ourlib\\mfcfnt.cpp	0070CFB3 | 0070D16A | 0070D1CE
+1	0070D1F0	ccFntTy::operator_new	OURLIB_MFCFNT	Library::Ourlib::MFCFNT	high	E:\\Ourlib\\mfcfnt.cpp	0070D25C | 0070D49C | 0070D4D1 | 0070D4FC | 0070D562 | 0070D665 | 0070D6A3 | 0070D727 | 0070D784 | 0070D925 | 0070D965 | 0070D9A5 | 0070D9E2 | 0070DA27 | 0070DA91 | 0070DB0E | 0070DD52 | 0070DEE9
+1	0070DF00	ccFntTy::operator_new	OURLIB_MFCFNT	Library::Ourlib::MFCFNT	high	E:\\Ourlib\\mfcfnt.cpp	0070DF4F | 0070DFF0 | 0070E01A
 1	0070E030	Library::Ourlib::MFCFNT::FUN_0070e030	OURLIB_MFCFNT	Library::Ourlib::MFCFNT	high	E:\\Ourlib\\mfcfnt.cpp	0070E2A1
-1	00710560	ccFntTy::operator	OURLIB_MFCFNT	Library::Ourlib::MFCFNT	high	E:\\Ourlib\\mfcfnt.cpp	00710753 | 00710770
+1	00710560	ccFntTy::operator_delete	OURLIB_MFCFNT	Library::Ourlib::MFCFNT	high	E:\\Ourlib\\mfcfnt.cpp	00710753 | 00710770
 1	007108B0	ccFntTy::Save	OURLIB_MFCFNT	Library::Ourlib::MFCFNT	high	E:\\Ourlib\\mfcfnt.cpp	007109B2 | 007109CF
 1	00710A90	ccFntTy::SetSurf	OURLIB_MFCFNT	Library::Ourlib::MFCFNT	high	E:\\Ourlib\\mfcfnt.cpp	00710AD5 | 00710B61 | 00710B7E
 1	00710BA0	ccFntTy::CreateSurf	OURLIB_MFCFNT	Library::Ourlib::MFCFNT	high	E:\\Ourlib\\mfcfnt.cpp	00710C7A | 00710D49 | 00710D65

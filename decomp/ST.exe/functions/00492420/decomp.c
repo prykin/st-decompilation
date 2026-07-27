@@ -12,7 +12,7 @@ void __thiscall STBoatC::sub_00492420(STBoatC *this)
   if ((this->field_07C6 == 1) && (this->field_07CA == 0)) {
     this->field_07C6 = 0;
     local_8 = this;
-    iVar1 = FUN_006e62d0(g_playSystem_00802A38,this->field_058E,(int *)&local_8);
+    iVar1 = STPlaySystemC::sub_006E62D0(g_playSystem_00802A38,this->field_058E,(int *)&local_8);
     if (iVar1 != -4) {
       (*local_8->vtable->ReleaseLoad)(local_8,this->field_0018);
     }

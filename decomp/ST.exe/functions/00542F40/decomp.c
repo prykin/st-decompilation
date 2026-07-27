@@ -50,7 +50,7 @@ int __thiscall InterSystemC::GetMessage(InterSystemC *this,STMessage *message)
   if (SVar1 < MESS_INTERSYSTEMC_B904) {
     if (SVar1 == MESS_INTERSYSTEMC_B903) {
       if (g_cursorClass_00802A30 != (CursorClassTy *)0x0) {
-        thunk_FUN_0054b540(g_cursorClass_00802A30);
+        CursorClassTy::sub_0054B540(g_cursorClass_00802A30);
       }
       if (g_helpPanel_00801690 == (HelpPanelTy *)0x0) {
         g_currentExceptionFrame = local_50.previous;
@@ -74,9 +74,9 @@ int __thiscall InterSystemC::GetMessage(InterSystemC *this,STMessage *message)
           iVar3 = 1;
           pCVar5 = thunk_FUN_00571240("PANEL_BKGND",0);
           pCVar5 = FUN_006f2c00(pCVar5,iVar3,uVar4);
-          local_c = (tagBITMAPINFO *)cMf32::RecGet(DAT_00806790,1,pCVar5,piVar10,iVar12);
+          local_c = (tagBITMAPINFO *)cMf32::RecGet(g_cMf32_00806790,1,pCVar5,piVar10,iVar12);
           PutDDX(0,0,'\x01',local_c);
-          cMf32::RecMemFree(DAT_00806790,(uint *)&local_c);
+          cMf32::RecMemFree(g_cMf32_00806790,(uint *)&local_c);
           g_currentExceptionFrame = local_50.previous;
           return 0;
         }
@@ -85,7 +85,7 @@ int __thiscall InterSystemC::GetMessage(InterSystemC *this,STMessage *message)
           return 0;
         }
         if (g_cursorClass_00802A30 != (CursorClassTy *)0x0) {
-          thunk_FUN_0054b540(g_cursorClass_00802A30);
+          CursorClassTy::sub_0054B540(g_cursorClass_00802A30);
         }
         if (g_optPanel_008016DC == (OptPanelTy *)0x0) {
           g_currentExceptionFrame = local_50.previous;
@@ -99,7 +99,7 @@ int __thiscall InterSystemC::GetMessage(InterSystemC *this,STMessage *message)
     else {
       if (SVar1 == MESS_INTERSYSTEMC_B901) {
         if (g_cursorClass_00802A30 != (CursorClassTy *)0x0) {
-          thunk_FUN_0054b540(g_cursorClass_00802A30);
+          CursorClassTy::sub_0054B540(g_cursorClass_00802A30);
         }
         if (g_playPanel_008016E4 == (PlayPanelTy *)0x0) {
           g_currentExceptionFrame = local_50.previous;
@@ -159,7 +159,7 @@ LAB_00543291:
       goto switchD_00543107_caseD_b904;
     case 0xb905:
       if (g_cursorClass_00802A30 != (CursorClassTy *)0x0) {
-        thunk_FUN_0054b540(g_cursorClass_00802A30);
+        CursorClassTy::sub_0054B540(g_cursorClass_00802A30);
       }
       if (g_optPanel_008016DC != (OptPanelTy *)0x0) {
         OptPanelTy::SwitchOptPanel(g_optPanel_008016DC,'\x0e');
@@ -169,7 +169,7 @@ LAB_00543291:
       break;
     case MESS_INTERSYSTEMC_B904|MESS_SHARED_0003:
       if (g_cursorClass_00802A30 != (CursorClassTy *)0x0) {
-        thunk_FUN_0054b540(g_cursorClass_00802A30);
+        CursorClassTy::sub_0054B540(g_cursorClass_00802A30);
         g_cursorClass_00802A30->field_04DE = 1;
         thunk_FUN_005252c0(0xae);
         g_currentExceptionFrame = local_50.previous;

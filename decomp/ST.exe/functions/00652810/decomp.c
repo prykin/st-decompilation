@@ -4096,8 +4096,8 @@ switchD_00652b42_switchD:
                                     pCVar23 = g_cPanel_00801688;
                                     do {
                                       if (pCVar23 != (CPanelTy *)0x0) {
-                                        thunk_FUN_004f9120(pCVar23,(byte)pDVar25->flags,'\x01',
-                                                           local_15c);
+                                        CPanelTy::sub_004F9120
+                                                  (pCVar23,(byte)pDVar25->flags,'\x01',local_15c);
                                         pCVar23 = g_cPanel_00801688;
                                       }
                                       pDVar25 = (DArrayTy *)&pDVar25->iteratorIndex;
@@ -4130,7 +4130,7 @@ switchD_00652b42_switchD:
                                     do {
                                       local_c = pDVar12;
                                       if (pCVar23 != (CPanelTy *)0x0) {
-                                        thunk_FUN_004f9120(pCVar23,(byte)pDVar25->flags,'\0',0);
+                                        CPanelTy::sub_004F9120(pCVar23,(byte)pDVar25->flags,'\0',0);
                                         pCVar23 = g_cPanel_00801688;
                                       }
                                       pDVar25 = (DArrayTy *)&pDVar25->iteratorIndex;
@@ -4446,13 +4446,13 @@ LAB_00653778:
                                           pAVar4 = PTR_00807598;
                                           if ((iVar7 == 0x547) != 0) {
                                             PTR_00807598->field_0466 = 1;
-                                            *(undefined4 *)&pAVar4->field_0x2d8 = 1;
+                                            pAVar4->field_02D8 = 1;
                                             break;
                                           }
                                         }
                                         pAVar4 = PTR_00807598;
                                         PTR_00807598->field_0466 = 0;
-                                        *(undefined4 *)&pAVar4->field_0x2d8 = 1;
+                                        pAVar4->field_02D8 = 1;
                                         break;
                                       }
                                       iVar36 = iVar36 + 1;

@@ -141,7 +141,8 @@ undefined4 __fastcall FUN_00643e20(AnonShape_00643E20_B7FEAA75 *param_1,undefine
     else {
       bVar8 = param_1->field_027C;
       if (bVar8 < 0xf) {
-        iVar11 = FUN_006e62d0(g_playSystem_00802A38,param_1->field_0274,(int *)&local_8);
+        iVar11 = STPlaySystemC::sub_006E62D0
+                           (g_playSystem_00802A38,param_1->field_0274,(int *)&local_8);
         if (iVar11 == -4) {
           param_1->field_027C = 0xfa;
           return 0;
@@ -167,7 +168,8 @@ undefined4 __fastcall FUN_00643e20(AnonShape_00643E20_B7FEAA75 *param_1,undefine
         bVar8 = param_1->field_027C;
       }
       if (bVar8 == 0xf) {
-        iVar11 = FUN_006e62d0(g_playSystem_00802A38,param_1->field_0274,(int *)&local_8);
+        iVar11 = STPlaySystemC::sub_006E62D0
+                           (g_playSystem_00802A38,param_1->field_0274,(int *)&local_8);
         if (iVar11 == -4) {
           param_1->field_027C = 0xfa;
           return 0;

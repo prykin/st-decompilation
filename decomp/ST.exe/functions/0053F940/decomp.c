@@ -89,10 +89,10 @@ ProdPanelTy::CreateSlider
     local_31c = 1;
     pCVar3 = thunk_FUN_00571240("BUT_SLLT",0);
     pCVar3 = FUN_006f2c00(pCVar3,iVar2,uVar6);
-    local_c = cMf32::RecGet(DAT_00806790,1,pCVar3,piVar7,iVar8);
+    local_c = cMf32::RecGet(g_cMf32_00806790,1,pCVar3,piVar7,iVar8);
     local_414 = *(undefined4 *)(local_c + 2);
     local_410 = *(undefined4 *)(local_c + 4);
-    cMf32::RecMemFree(DAT_00806790,(uint *)&local_c);
+    cMf32::RecMemFree(g_cMf32_00806790,(uint *)&local_c);
     iVar2 = this_00->field_003C;
     iVar8 = this_00->field_005C;
     local_42c[4] = iVar2 + param_3;

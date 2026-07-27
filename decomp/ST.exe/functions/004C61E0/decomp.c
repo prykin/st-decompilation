@@ -11,7 +11,7 @@ undefined4 __thiscall TLOBldMark::sub_004C61E0(TLOBldMark *this)
 
   if (this->field_0018 == 0) {
     DVar1 = STAppC::sub_006E51B0(this->field_0010);
-    thunk_FUN_004ac9e0((void *)this->field_002C,DVar1);
+    thunk_FUN_004ac9e0(this->field_002C,DVar1);
   }
   return 0;
 }

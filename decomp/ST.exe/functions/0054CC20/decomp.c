@@ -12,9 +12,9 @@ STPlaySystemC::CreateGameObject
 
 {
   code *pcVar1;
-  STPlaySystemC *pSVar2;
+  STPlaySystemC *this_00;
+  int iVar2;
   int iVar3;
-  int iVar4;
   InternalExceptionFrame local_50;
   STPlaySystemC *local_c;
   undefined4 local_8;
@@ -22,38 +22,38 @@ STPlaySystemC::CreateGameObject
   local_50.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_50;
   local_c = this;
-  iVar3 = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0);
-  pSVar2 = local_c;
-  if (iVar3 == 0) {
-    iVar3 = thunk_FUN_0054cbb0(param_1,&local_8);
-    if (iVar3 != 0) {
+  iVar2 = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0);
+  this_00 = local_c;
+  if (iVar2 == 0) {
+    iVar2 = thunk_FUN_0054cbb0(param_1,&local_8);
+    if (iVar2 != 0) {
       RaiseInternalException
                 (-4,g_overwriteContext_007ED77C,"E:\\__titans\\Andrey\\tplaysys.cpp",0xef);
     }
-    iVar3 = (*pSVar2->vtable->vfunc_08)(local_8,param_2,param_3,param_4,param_5);
-    if (iVar3 != 0) {
+    iVar2 = (*this_00->vtable->vfunc_08)(this_00,local_8,param_2,param_3,param_4,param_5);
+    if (iVar2 != 0) {
       RaiseInternalException
-                (iVar3,g_overwriteContext_007ED77C,"E:\\__titans\\Andrey\\tplaysys.cpp",0xf0);
+                (iVar2,g_overwriteContext_007ED77C,"E:\\__titans\\Andrey\\tplaysys.cpp",0xf0);
     }
     g_currentExceptionFrame = local_50.previous;
-    return iVar3;
+    return iVar2;
   }
   g_currentExceptionFrame = local_50.previous;
-  if (iVar3 == -4) {
-    iVar4 = ReportDebugMessage("E:\\__titans\\Andrey\\tplaysys.cpp",0xf3,0,0,
+  if (iVar2 == -4) {
+    iVar3 = ReportDebugMessage("E:\\__titans\\Andrey\\tplaysys.cpp",0xf3,0,0,
                                "Not found system type for game type %d",param_1);
-    if (iVar4 != 0) {
+    if (iVar3 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
   }
   else {
-    iVar4 = ReportDebugMessage("E:\\__titans\\Andrey\\tplaysys.cpp",0xf5,0,0,"%s",
+    iVar3 = ReportDebugMessage("E:\\__titans\\Andrey\\tplaysys.cpp",0xf5,0,0,"%s",
                                "STPlaySystemC::CreateGameObject error !");
-    if (iVar4 != 0) {
+    if (iVar3 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
   }
-  RaiseInternalException(iVar3,0,"E:\\__titans\\Andrey\\tplaysys.cpp",0xf7);
-  return iVar3;
+  RaiseInternalException(iVar2,0,"E:\\__titans\\Andrey\\tplaysys.cpp",0xf7);
+  return iVar2;
 }
 

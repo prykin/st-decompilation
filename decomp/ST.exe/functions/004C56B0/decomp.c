@@ -39,8 +39,8 @@ undefined4 __thiscall TLOBaseTy::sub_004C56B0(TLOBaseTy *this,void *param_1)
     if ((&DAT_00792ca0)[(int)pvVar1 * 3] == 0xb3) {
       param_1 = (void *)0x0;
       if ((this->field_04EC != 0) &&
-         (iVar3 = FUN_006e62d0(g_playSystem_00802A38,this->field_04EC,(int *)&param_1), iVar3 == 0))
-      {
+         (iVar3 = STPlaySystemC::sub_006E62D0
+                            (g_playSystem_00802A38,this->field_04EC,(int *)&param_1), iVar3 == 0)) {
         uVar4 = this->field_001C * 0x41c64e6d + 0x3039;
         this->field_001C = uVar4;
         iVar3 = thunk_FUN_00617ca0(param_1,(int *)&local_8,&local_10,&local_18,&local_c,&local_14,

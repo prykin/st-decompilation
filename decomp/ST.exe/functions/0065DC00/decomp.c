@@ -39,7 +39,7 @@ int __fastcall FUN_0065dc00(AiFltClassTy *param_1,undefined4 param_2,uint param_
         this = STAllPlayersC::GetObjPtr
                          (g_allPlayers_007FA174,*(char *)&param_1->field_0024,
                           CONCAT22((short)((uint)puVar3 >> 0x10),*puVar3),CASE_1);
-        if (((this != (STGameObjC *)0x0) && (iVar4 = (*this->vtable[1].vfunc_24)(this), iVar4 != 0))
+        if (((this != (STGameObjC *)0x0) && (iVar4 = (*this->vtable->vfunc_F8)(this), iVar4 != 0))
            && ((param_4 < '\0' || (iVar4 = (*this->vtable->vfunc_6C)(this), param_4 == iVar4)))) {
           iVar4 = (*this->vtable->vfunc_2C)();
           pIVar5 = thunk_FUN_00674fb0(iVar4);

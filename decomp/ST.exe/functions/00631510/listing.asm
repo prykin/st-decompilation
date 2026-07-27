@@ -1,4 +1,4 @@
-FUN_00631510:
+STManRuinC::sub_00631510:
 00631510  55                        PUSH EBP
 00631511  8B EC                     MOV EBP,ESP
 00631513  8B 41 71                  MOV EAX,dword ptr [ECX + 0x71]

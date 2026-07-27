@@ -36,11 +36,15 @@ import ghidra.program.model.symbol.Symbol;
 import ghidra.program.util.DefinedStringIterator;
 
 public class STDebugSymbolAnalyzer extends GhidraScript {
+    private static final String IDENTIFIER = "[A-Za-z_~][A-Za-z0-9_~<>]*";
+    private static final String ALLOCATION_OPERATOR =
+        "operator\\s+(?:new|delete)(?:\\s*\\[\\s*\\])?";
     private static final Pattern METHOD = Pattern.compile(
-        "^[A-Za-z_~][A-Za-z0-9_~<>]*(?:::[A-Za-z_~][A-Za-z0-9_~<>]*)+$");
+        "^" + IDENTIFIER + "(?:::" + IDENTIFIER + ")*::(?:" +
+        ALLOCATION_OPERATOR + "|" + IDENTIFIER + ")$");
     private static final Pattern METHOD_ANYWHERE = Pattern.compile(
-        "(?<![A-Za-z0-9_~])([A-Za-z_~][A-Za-z0-9_~<>]*" +
-        "(?:::[A-Za-z_~][A-Za-z0-9_~<>]*)+)(?=$|[^A-Za-z0-9_~:])");
+        "(?<![A-Za-z0-9_~])(" + IDENTIFIER + "(?:::" + IDENTIFIER + ")*::(?:" +
+        ALLOCATION_OPERATOR + "|" + IDENTIFIER + "))(?=$|[^A-Za-z0-9_~:])");
     private static final Pattern SOURCE = Pattern.compile(
         "(?i)^[A-Za-z]:\\\\.*\\.(?:c|cc|cpp|cxx|h|hh|hpp|hxx)$");
     private static final Pattern PRINTF_FORMAT = Pattern.compile(
@@ -113,16 +117,19 @@ public class STDebugSymbolAnalyzer extends GhidraScript {
             long line = source.isEmpty() ? -1 : recoverLine(item.sourceRefs.get(source));
             boolean defaultName = item.function.getSymbol().getSource().toString().equals("DEFAULT");
             boolean exactCurrentName = item.function.getName(true).equals(qualified);
+            boolean lossyOperatorName = isScriptOwnedLossyOperator(item.function, owner, method);
             boolean previouslyApplied = exactCurrentName &&
                 item.function.getTags().stream()
                     .anyMatch(tag -> "RECOVERED_DEBUG_NAME".equals(tag.getName()));
-            String confidence = item.sources.size() == 1 && (defaultName || exactCurrentName) ? "high" :
+            String confidence = item.sources.size() == 1 &&
+                    (defaultName || exactCurrentName || lossyOperatorName) ? "high" :
                 item.sources.size() <= 1 ? "medium" : "conflict";
             String reason = item.sources.size() > 1 ? "multiple_source_paths" :
                 source.isEmpty() ? "no_source_path" : previouslyApplied ?
                     "previously_applied_debug_symbol" : exactCurrentName ?
-                    "already_matches_debug_symbol" : "unique_method_and_source";
-            ThiscallEvidence thiscall = findThiscallEvidence(item.function);
+                    "already_matches_debug_symbol" : lossyOperatorName ?
+                    "repair_lossy_allocation_operator_name" : "unique_method_and_source";
+            ThiscallEvidence thiscall = findCallingConventionEvidence(item.function, method);
             proposals.add(new Proposal(item.function, qualified, owner, method, source, line,
                 confidence, reason, thiscall.convention, thiscall.evidence));
         }
@@ -243,7 +250,7 @@ public class STDebugSymbolAnalyzer extends GhidraScript {
         return -1;
     }
 
-    private ThiscallEvidence findThiscallEvidence(Function function) {
+    private ThiscallEvidence findCallingConventionEvidence(Function function, String method) {
         ghidra.program.model.listing.InstructionIterator instructions =
             listing.getInstructions(function.getBody(), true);
         int inspected = 0;
@@ -264,9 +271,29 @@ public class STDebugSymbolAnalyzer extends GhidraScript {
             if (pureRegisterOverwrite(mnemonic, operands, "EDX")) edxLive = false;
             if ("CALL".equals(mnemonic)) break;
         }
-        return ecxEvidence.isBlank() ?
-            new ThiscallEvidence("", "no live incoming ECX use found before clobber/call") :
-            new ThiscallEvidence("__thiscall", ecxEvidence);
+        if (!ecxEvidence.isBlank())
+            return new ThiscallEvidence("__thiscall", ecxEvidence);
+        if (isAllocationOperator(method) && returnsWithoutStackCleanup(function))
+            return new ThiscallEvidence("__cdecl",
+                "allocation operator; no live incoming ECX use found before clobber/call; " +
+                "all RET instructions pop 0 stack bytes");
+        return new ThiscallEvidence("",
+            "no live incoming ECX use found before clobber/call");
+    }
+
+    private boolean returnsWithoutStackCleanup(Function function) {
+        ghidra.program.model.listing.InstructionIterator instructions =
+            listing.getInstructions(function.getBody(), true);
+        boolean found = false;
+        while (instructions.hasNext()) {
+            Instruction instruction = instructions.next();
+            if (!instruction.getMnemonicString().toUpperCase(Locale.ROOT).startsWith("RET"))
+                continue;
+            found = true;
+            Scalar scalar = instruction.getScalar(0);
+            if (scalar != null && scalar.getUnsignedValue() != 0) return false;
+        }
+        return found;
     }
 
     private String[] splitOperands(String instruction) {
@@ -338,13 +365,35 @@ public class STDebugSymbolAnalyzer extends GhidraScript {
         // labels replace spaces and punctuation with underscores, so trimming the
         // address suffix would turn diagnostics such as "Class::Bad direction" into
         // invented method names such as "Class::Bad_direction".
-        if (METHOD.matcher(value).matches()) return value;
+        if (METHOD.matcher(value).matches()) return normalizeMethod(value);
         // Diagnostics are not consistent: most begin with Class::Method, but some use
         // "Class::Method, details" and a few prepend a return type (for example
         // "Int TLOEmbryoTy::Create(...)").  Search the whole diagnostic while keeping
         // identifier boundaries strict; selectMethod() still rejects conflicting evidence.
         Matcher matcher = METHOD_ANYWHERE.matcher(value);
-        return matcher.find() ? matcher.group(1) : null;
+        return matcher.find() ? normalizeMethod(matcher.group(1)) : null;
+    }
+
+    private static String normalizeMethod(String qualified) {
+        return qualified
+            .replaceFirst("::operator\\s+new(?:\\s*\\[\\s*\\])?$", "::operator_new")
+            .replaceFirst("::operator\\s+delete(?:\\s*\\[\\s*\\])?$", "::operator_delete");
+    }
+
+    private static boolean isAllocationOperator(String method) {
+        return "operator_new".equals(method) || "operator_delete".equals(method);
+    }
+
+    private static boolean isScriptOwnedLossyOperator(Function function, String owner,
+            String method) {
+        if (!isAllocationOperator(method) || !"operator".equals(function.getName()) ||
+                !function.getParentNamespace().getName(true).equals(owner))
+            return false;
+        boolean tagged = function.getTags().stream()
+            .anyMatch(tag -> "RECOVERED_DEBUG_NAME".equals(tag.getName()));
+        String comment = function.getComment();
+        return tagged && comment != null &&
+            comment.contains("Recovered from embedded debug metadata:");
     }
 
     private String conflictJson(FunctionEvidence item, String reason) {

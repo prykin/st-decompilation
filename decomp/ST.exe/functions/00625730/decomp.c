@@ -163,7 +163,7 @@ LAB_006259bf:
                   this->field_0241 = *(undefined4 *)&this_00->field_0x18;
                 }
                 if (DAT_00811798 != (void *)0x0) {
-                  iVar5 = (*this->vtable->vfunc_2C)();
+                  iVar5 = (*this->vtable->vfunc_2C)(this);
                   iVar6 = (*this_00->vtable->GetObjectTypeId)(this_00);
                   thunk_FUN_0061fe80(DAT_00811798,iVar12,iVar13,(uint)this_00[1].vtable,iVar6,iVar5)
                   ;
@@ -191,7 +191,7 @@ LAB_00625b06:
                                      [(int)sVar11 * (int)g_worldGrid.planeStride +
                                       (int)sVar18 * (int)g_worldGrid.sizeX + (int)sVar17].objects[1]
                           , pSVar14 != (STMineSetC *)0x0)) {
-                uVar9 = (*pSVar14->vtable->vfunc_2C)();
+                uVar9 = (*pSVar14->vtable->vfunc_2C)(pSVar14);
                 switch(uVar9) {
                 case 0xa6:
                 case 0xa7:
@@ -276,7 +276,7 @@ LAB_00625d60:
               }
             }
             if (pSVar14 != (STMineSetC *)0x0) {
-              uVar9 = (*pSVar14->vtable->vfunc_2C)();
+              uVar9 = (*pSVar14->vtable->vfunc_2C)(pSVar14);
               switch(uVar9) {
               case 0xa6:
               case 0xa7:
@@ -293,7 +293,7 @@ LAB_00625d60:
                     [(int)sVar17 * (int)g_worldGrid.planeStride +
                      (int)sVar18 * (int)g_worldGrid.sizeX + (int)sVar11].objects[0];
           if (pSVar14 == (STMineSetC *)0x0) goto LAB_00625d60;
-          iVar5 = (*pSVar14->vtable->vfunc_F0)();
+          iVar5 = (*pSVar14->vtable->vfunc_F0)(pSVar14);
           if (iVar5 != 0) {
             /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
             if (in_stack_00000010 != 0) {
@@ -318,9 +318,9 @@ LAB_00625d60:
                   this->field_0241 = pSVar14->field_0018;
                 }
                 if (DAT_00811798 != (void *)0x0) {
-                  iVar5 = (*this->vtable->vfunc_2C)();
-                  iVar6 = (*pSVar14->vtable->vfunc_2C)((STWorldObject *)pSVar14);
-                  thunk_FUN_0061fe80(DAT_00811798,iVar12,iVar13,pSVar14->field_0024,iVar6,iVar5);
+                  iVar5 = (*this->vtable->vfunc_2C)(this);
+                  uVar9 = (*pSVar14->vtable->vfunc_2C)(pSVar14);
+                  thunk_FUN_0061fe80(DAT_00811798,iVar12,iVar13,pSVar14->field_0024,uVar9,iVar5);
                 }
               }
               goto LAB_00625d60;
@@ -357,12 +357,12 @@ LAB_00625efc:
               else {
                 bVar16 = (&DAT_008087ea)[(uint)bVar2 * 0x51] != (&DAT_008087ea)[(uint)bVar1 * 0x51];
               }
-              if (((bVar16) && (iVar10 = (*pSVar14->vtable->vfunc_F8)(), iVar10 != 0)) &&
+              if (((bVar16) && (iVar10 = (*pSVar14->vtable->vfunc_F8)(pSVar14), iVar10 != 0)) &&
                  (iVar10 = thunk_FUN_006264d0(this,(int *)pSVar14,local_20), iVar10 != 0)) {
                 if (DAT_00811798 != (void *)0x0) {
-                  iVar10 = (*this->vtable->vfunc_2C)();
-                  iVar5 = (*pSVar14->vtable->vfunc_2C)((STWorldObject *)pSVar14);
-                  thunk_FUN_0061fe80(DAT_00811798,iVar12,iVar13,pSVar14->field_0024,iVar5,iVar10);
+                  iVar10 = (*this->vtable->vfunc_2C)(this);
+                  uVar9 = (*pSVar14->vtable->vfunc_2C)(pSVar14);
+                  thunk_FUN_0061fe80(DAT_00811798,iVar12,iVar13,pSVar14->field_0024,uVar9,iVar10);
                 }
                 bVar15 = true;
               }

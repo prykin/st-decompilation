@@ -24,10 +24,6 @@ void __thiscall FSGSTy::InitFSGS(FSGSTy *this,byte param_1)
   AnonPointee_FSGSTy_1A97 *pAVar12;
   LPSTR text;
   int iVar13;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
-  undefined4 extraout_ECX;
-  ccFntTy *this_02;
-  ccFntTy *this_03;
   undefined1 uVar14;
   byte bVar15;
   undefined4 local_450 [256];
@@ -105,14 +101,12 @@ void __thiscall FSGSTy::InitFSGS(FSGSTy *this,byte param_1)
   this_01->field_1A77 = pcVar8;
   pcVar8->field_007E = 1;
   *(undefined2 *)&pcVar8->field_0x9e = 0;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
-  this_02 = (ccFntTy *)CONCAT31((int3)((uint)extraout_ECX >> 8),DAT_007c6ff0);
   pcVar8->field_0x9e = DAT_007c6ff0;
-  puVar9 = ccFntTy::operator(this_02,0x19d,g_cMf32_00806780,"FSGS_NB",0);
+  puVar9 = ccFntTy::operator_new(0x19d,g_cMf32_00806780,"FSGS_NB",0);
   this_01->field_1A7B = puVar9;
   puVar9[0x16] = 1;
   puVar9[0x17] = 0;
-  pSVar10 = (StartServTy *)ccFntTy::operator(this_03,0x19d,g_cMf32_00806780,"FSGS_NS",0);
+  pSVar10 = (StartServTy *)ccFntTy::operator_new(0x19d,g_cMf32_00806780,"FSGS_NS",0);
   this_01->field_1A7F = pSVar10;
   *(undefined4 *)(pSVar10 + 0x58) = 1;
   *(undefined4 *)(pSVar10 + 0x5c) = 0;
@@ -229,7 +223,8 @@ void __thiscall FSGSTy::InitFSGS(FSGSTy *this,byte param_1)
   Library::DKW::TBL::FUN_006b5aa0(&pDVar7->flags,"License agreement");
   Library::DKW::TBL::FUN_006b5aa0(&this_01->field_1B08->flags,"Nothing to do");
   PaintFSGS(this_01,'\x01');
-  thunk_FUN_0055ddf0(DAT_0080759c,(int *)PTR_008075a8,(int)this_01->field_005D,10,2);
+  thunk_FUN_0055ddf0((undefined4 *)g_anonShape_GLOBAL_0080759C_9638EF10_0080759C,(int *)PTR_008075a8
+                     ,(int)this_01->field_005D,10,2);
   if ((5 < param_1) && (param_1 < 9)) {
     pDVar7 = Library::DKW::TBL::SArrayCreate((DArrayTy *)0x0,100,100);
     this_01->field_1E9E = &pDVar7->flags;

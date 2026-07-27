@@ -818,7 +818,7 @@ LAB_006defd4:
       }
     }
   }
-  FUN_006ddd50((AnonShape_006DDD50_309FA381 *)param_1);
+  FUN_006ddd50((AnonShape_GLOBAL_0080760C_46D7AF7A *)param_1);
   param_1->field_0140 = local_50;
   param_1->field_013C = uVar3;
   local_38 = param_1->field_0030;

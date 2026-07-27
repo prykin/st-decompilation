@@ -1,4 +1,4 @@
-FUN_00532ce0:
+OptPanelTy::sub_00532CE0:
 00532CE0  56                        PUSH ESI
 00532CE1  8B F1                     MOV ESI,ECX
 00532CE3  80 BE A4 01 00 00 0E      CMP byte ptr [ESI + 0x1a4],0xe

@@ -1,7 +1,9 @@
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+/* [STPrototypeApplier] Propagated parameter 0.
+   Evidence: 005745E0 -> 006DDD50 @ 005746B4 | 005745E0 -> 006DDD50 @ 005746CF */
 
-void __fastcall FUN_006ddd50(AnonShape_006DDD50_309FA381 *param_1)
+void __fastcall FUN_006ddd50(AnonShape_GLOBAL_0080760C_46D7AF7A *param_1)
 
 {
   undefined4 ******ppppppuVar1;

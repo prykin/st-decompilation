@@ -29,7 +29,7 @@ undefined4 __thiscall TLOBaseTy::sub_004CEB00(TLOBaseTy *this,undefined4 param_1
   char *pcVar11;
   byte **ppbVar12;
   char *pcVar13;
-  undefined4 uVar14;
+  undefined4 arg_2;
   byte *local_6c [5];
   byte *local_58;
   undefined4 local_54;
@@ -123,26 +123,26 @@ switchD_004ceb68_caseD_32:
             RotateSpr(this,0);
             TVar2 = this->field_05AC;
             if (TVar2 == CASE_5C) {
-              (*this->vtable->vfunc_90)(3,0x39b);
+              (*this->vtable->vfunc_90)(this,3,0x39b);
               return local_10;
             }
             if (TVar2 == CASE_32) {
               iVar5 = GetPlayerRaceId(*(char *)&this->field_023D);
               if ((char)iVar5 != '\x02') {
-                (*this->vtable->vfunc_90)(3,0x1f9);
+                (*this->vtable->vfunc_90)(this,3,0x1f9);
                 return local_10;
               }
-              (*this->vtable->vfunc_90)(3,0x2c1);
+              (*this->vtable->vfunc_90)(this,3,0x2c1);
               return local_10;
             }
             if (TVar2 != CASE_40) {
               if (TVar2 != CASE_49) {
                 return local_10;
               }
-              (*this->vtable->vfunc_90)(3,800);
+              (*this->vtable->vfunc_90)(this,3,800);
               return local_10;
             }
-            (*this->vtable->vfunc_90)(3,0x254);
+            (*this->vtable->vfunc_90)(this,3,0x254);
             return local_10;
           }
           local_8 = local_8 + 1;
@@ -243,18 +243,18 @@ switchD_004ceb68_caseD_32:
     uVar7 = uVar7 & 0xff;
     if (uVar7 == 1) {
       pTVar10 = this->vtable;
-      uVar14 = 0x65;
+      arg_2 = 0x65;
     }
     else {
       if (uVar7 == 2) {
-        (*this->vtable->vfunc_90)(6,0x66);
+        (*this->vtable->vfunc_90)(this,6,0x66);
         goto cf_common_exit_004CF029;
       }
       if (uVar7 != 3) goto cf_common_exit_004CF029;
       pTVar10 = this->vtable;
-      uVar14 = 0x67;
+      arg_2 = 0x67;
     }
-    (*pTVar10->vfunc_90)(6,uVar14);
+    (*pTVar10->vfunc_90)(this,6,arg_2);
 cf_common_exit_004CF029:
     this->field_04D0 = CASE_4;
     this->field_03D0 = 5;
@@ -272,22 +272,22 @@ cf_common_exit_004CF029:
       this->field_04D0 = CASE_5;
       this->field_03D0 = 1;
       if (TVar2 == CASE_5C) {
-        (*this->vtable->vfunc_90)(3,0x39c);
+        (*this->vtable->vfunc_90)(this,3,0x39c);
       }
       else if (TVar2 == CASE_32) {
         iVar5 = GetPlayerRaceId(*(char *)&this->field_023D);
         if ((char)iVar5 == '\x02') {
-          (*this->vtable->vfunc_90)(3,0x2c2);
+          (*this->vtable->vfunc_90)(this,3,0x2c2);
         }
         else {
-          (*this->vtable->vfunc_90)(3,0x1fa);
+          (*this->vtable->vfunc_90)(this,3,0x1fa);
         }
       }
       else if (TVar2 == CASE_40) {
-        (*this->vtable->vfunc_90)(3,0x255);
+        (*this->vtable->vfunc_90)(this,3,0x255);
       }
       else if (TVar2 == CASE_49) {
-        (*this->vtable->vfunc_90)(3,0x321);
+        (*this->vtable->vfunc_90)(this,3,0x321);
       }
       break;
     case CASE_40:

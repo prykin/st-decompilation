@@ -116,10 +116,10 @@ undefined4 __thiscall TLOBaseTy::FUN_004e2c30(TLOBaseTy *this,uint param_1)
       pTVar6 = this->vtable;
       uVar4 = 0x5f;
 LAB_004e2efc:
-      (*pTVar6->vfunc_90)(6,uVar4);
+      (*pTVar6->vfunc_90)(this,6,uVar4);
     }
     else if (uVar5 == 2) {
-      (*this->vtable->vfunc_90)(6,0x60);
+      (*this->vtable->vfunc_90)(this,6,0x60);
     }
     else if (uVar5 == 3) {
       pTVar6 = this->vtable;
@@ -134,10 +134,10 @@ LAB_004e2efc:
       pTVar6 = this->vtable;
       uVar4 = 0x5c;
 LAB_004e2f42:
-      (*pTVar6->vfunc_90)(6,uVar4);
+      (*pTVar6->vfunc_90)(this,6,uVar4);
     }
     else if (uVar5 == 2) {
-      (*this->vtable->vfunc_90)(6,0x5d);
+      (*this->vtable->vfunc_90)(this,6,0x5d);
     }
     else if (uVar5 == 3) {
       pTVar6 = this->vtable;
@@ -152,10 +152,10 @@ LAB_004e2f42:
       pTVar6 = this->vtable;
       uVar4 = 0x59;
 LAB_004e2f8d:
-      (*pTVar6->vfunc_90)(6,uVar4);
+      (*pTVar6->vfunc_90)(this,6,uVar4);
     }
     else if (uVar5 == 2) {
-      (*this->vtable->vfunc_90)(6,0x5a);
+      (*this->vtable->vfunc_90)(this,6,0x5a);
     }
     else if (uVar5 == 3) {
       pTVar6 = this->vtable;
@@ -171,14 +171,14 @@ LAB_004e2f8d:
   }
   else {
     if (uVar5 == 2) {
-      (*this->vtable->vfunc_90)(4,0x2d5);
+      (*this->vtable->vfunc_90)(this,4,0x2d5);
       goto cf_common_exit_004E2FE4;
     }
     if (uVar5 != 3) goto cf_common_exit_004E2FE4;
     pTVar6 = this->vtable;
     uVar4 = 0x390;
   }
-  (*pTVar6->vfunc_90)(4,uVar4);
+  (*pTVar6->vfunc_90)(this,4,uVar4);
 cf_common_exit_004E2FE4:
   this->field_04D0 = CASE_0;
   RotateSpr(this,1);

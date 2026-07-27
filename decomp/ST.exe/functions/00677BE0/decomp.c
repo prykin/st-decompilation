@@ -12,7 +12,7 @@ _EnumRCCont(short param_1,short param_2,byte *param_3,short param_4,short param_
 
 {
   byte bVar1;
-  int *this;
+  STFishC *this;
   code *pcVar2;
   int iVar3;
   undefined4 *puVar4;
@@ -64,18 +64,16 @@ _EnumRCCont(short param_1,short param_2,byte *param_3,short param_4,short param_
     else {
       puVar4 = (undefined4 *)0x0;
     }
-    this = (int *)*puVar4;
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-    if (((this != (int *)0x0) &&
-        (local_10 = uVar8, local_1c = (**(code **)(*this + 300))(), pDVar7 = PTR_007fa160,
+    this = (STFishC *)*puVar4;
+    if (((this != (STFishC *)0x0) &&
+        (local_10 = uVar8, local_1c = (*this->vtable[1].vfunc_08)(this), pDVar7 = PTR_007fa160,
         (short)local_1c == param_1)) &&
        ((param_2 == 0 ||
-        (iVar3 = (**(code **)(*this + 0x130))(), pDVar7 = PTR_007fa160, iVar3 == param_2)))) {
+        (iVar3 = (*this->vtable[1].vfunc_0C)(), pDVar7 = PTR_007fa160, iVar3 == param_2)))) {
       iVar3 = 1;
       local_14 = 1;
       if ((param_3 != (byte *)0x0) && (*param_3 != 0)) {
-        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-        (**(code **)(*this + 0x74))(local_2c);
+        (*this->vtable->vfunc_74)(local_2c);
         pbVar9 = local_2c;
         pbVar5 = param_3;
         do {
@@ -104,7 +102,7 @@ LAB_00677cee:
       uVar8 = local_10;
       if (iVar3 != 0) {
         if ((((0 < param_7) && (0 < param_8)) && (0 < param_9)) &&
-           ((((thunk_FUN_004162f0(this,&local_6,&local_8,&local_a), local_6 < param_4 ||
+           ((((STFishC::sub_004162F0(this,&local_6,&local_8,&local_a), local_6 < param_4 ||
               (local_8 < param_5)) ||
              ((local_a < param_6 ||
               (((int)param_4 + (int)param_7 <= (int)local_6 ||

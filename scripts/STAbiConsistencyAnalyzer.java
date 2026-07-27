@@ -42,6 +42,7 @@ public class STAbiConsistencyAnalyzer extends GhidraScript {
     private static final String LOAD_RESOURCE_STRING = "006B0140";
     private static final int CALL_USE_SCAN_LIMIT = 8;
     private static final int RETURN_DEFINITION_SCAN_LIMIT = 12;
+    private static final int PARAMETER_MASK_SCAN_LIMIT = 8;
     private static final Pattern STACK_MEMORY = Pattern.compile(
         "^\\[EBP(?:([+-])(0X[0-9A-F]+|[0-9]+))?\\]$");
 
@@ -248,7 +249,7 @@ public class STAbiConsistencyAnalyzer extends GhidraScript {
                     candidates.add(proposed);
                     if (sites.size() < 12) sites.add(addr(instruction.getAddress()) + " " +
                         instruction.toString() +
-                        ("MOV".equals(mnemonic) ? "; immediate mask" : ""));
+                        ("MOV".equals(mnemonic) ? "; first-use mask" : ""));
                 }
             }
         }
@@ -264,15 +265,49 @@ public class STAbiConsistencyAnalyzer extends GhidraScript {
         String destination = load.getDefaultOperandRepresentation(0).trim().toUpperCase(Locale.ROOT);
         if (!destination.matches("E?(?:AX|BX|CX|DX|SI|DI)")) return "";
         Instruction next = listing.getInstructionAfter(load.getAddress());
-        if (next == null || !"AND".equalsIgnoreCase(next.getMnemonicString()) ||
-                next.getNumOperands() < 2 ||
-                !destination.equals(next.getDefaultOperandRepresentation(0).trim().toUpperCase(Locale.ROOT)))
-            return "";
-        Long mask = immediate(next.getDefaultOperandRepresentation(1));
-        if (mask == null) return "";
-        if (mask == 0xffL) return "/byte";
-        if (mask == 0xffffL) return "/ushort";
+        for (int count = 0; count < PARAMETER_MASK_SCAN_LIMIT && next != null; count++) {
+            String mnemonic = next.getMnemonicString().toUpperCase(Locale.ROOT);
+            if ("AND".equals(mnemonic) && next.getNumOperands() >= 2 &&
+                    destination.equals(next.getDefaultOperandRepresentation(0).trim()
+                        .toUpperCase(Locale.ROOT))) {
+                Long mask = immediate(next.getDefaultOperandRepresentation(1));
+                if (mask != null && mask == 0xffL) return "/byte";
+                if (mask != null && mask == 0xffffL) return "/ushort";
+                return "";
+            }
+            // MSVC commonly schedules an unrelated load between a stack-parameter
+            // load and its zero-extension mask.  Skip only instructions which do
+            // not consume or redefine the loaded register; the first real use is
+            // still the ABI-width proof.
+            if (mentionsRegister(next.getInputObjects(), destination) ||
+                    mentionsRegister(next.getResultObjects(), destination) ||
+                    next.getFlowType().isJump() || next.getFlowType().isTerminal() ||
+                    "CALL".equals(mnemonic))
+                return "";
+            next = listing.getInstructionAfter(next.getAddress());
+        }
         return "";
+    }
+
+    private boolean mentionsRegister(Object[] objects, String wanted) {
+        String canonical = canonicalRegister(wanted);
+        for (Object object : objects) {
+            if (object instanceof Register register &&
+                    canonical.equals(canonicalRegister(register.getName()))) return true;
+        }
+        return false;
+    }
+
+    private String canonicalRegister(String value) {
+        return switch (value.toUpperCase(Locale.ROOT)) {
+            case "AL", "AH", "AX", "EAX", "RAX" -> "EAX";
+            case "BL", "BH", "BX", "EBX", "RBX" -> "EBX";
+            case "CL", "CH", "CX", "ECX", "RCX" -> "ECX";
+            case "DL", "DH", "DX", "EDX", "RDX" -> "EDX";
+            case "SI", "ESI", "RSI" -> "ESI";
+            case "DI", "EDI", "RDI" -> "EDI";
+            default -> value.toUpperCase(Locale.ROOT);
+        };
     }
 
     private Long stackOffset(String operand) {

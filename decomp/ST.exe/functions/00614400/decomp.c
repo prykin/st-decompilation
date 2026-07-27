@@ -137,7 +137,7 @@ LAB_0061478b:
       goto LAB_006147e6;
     }
   }
-  iVar7 = FUN_006e62d0(g_playSystem_00802A38,*(int *)((int)this + 0x2d1),&local_10);
+  iVar7 = STPlaySystemC::sub_006E62D0(g_playSystem_00802A38,*(int *)((int)this + 0x2d1),&local_10);
   if (iVar7 == -4) {
     *(undefined4 *)((int)this + 0x2d1) = 0;
   }

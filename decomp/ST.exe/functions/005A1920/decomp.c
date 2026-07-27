@@ -80,7 +80,8 @@ FSGSTy::SetBanner(FSGSTy *this,char *param_1,undefined4 param_2,int param_3,uint
                    *(undefined1 *)((int)&local_8e0 + iVar10);
               local_10 = local_10 + -1;
             } while (local_10 != 0);
-            FUN_006b0a20(DAT_0080759c,(int)local_860,0x20,0x40,0);
+            FUN_006b0a20((undefined4 *)g_anonShape_GLOBAL_0080759C_9638EF10_0080759C,(int)local_860,
+                         0x20,0x40,0);
             piVar8 = local_8;
             FUN_006c7b90(local_8,0x4e,9);
             Library::DKW::GPC::FUN_006c79a0(piVar8,(undefined4 *)pFVar13->field_1A97,0);
@@ -137,7 +138,8 @@ FSGSTy::SetBanner(FSGSTy *this,char *param_1,undefined4 param_2,int param_3,uint
                      *(undefined1 *)((int)&local_4e0 + iVar10);
                 local_8 = (int *)((int)local_8 + -1);
               } while (local_8 != (int *)0x0);
-              FUN_006b0a20(DAT_0080759c,(int)local_460,0x20,0x40,0);
+              FUN_006b0a20((undefined4 *)g_anonShape_GLOBAL_0080759C_9638EF10_0080759C,
+                           (int)local_460,0x20,0x40,0);
               FUN_006c7d00(pFVar13->field_1A9F,0x4e,9);
               Library::DKW::GPC::FUN_006c7070
                         (pFVar13->field_1A9F,(undefined4 *)pFVar13->field_1A97,0);

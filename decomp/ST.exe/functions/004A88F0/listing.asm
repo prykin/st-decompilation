@@ -1,4 +1,4 @@
-FUN_004a88f0:
+CreateOpticClass:
 004A88F0  6A 20                     PUSH 0x20
 004A88F2  E8 D9 7B 20 00            CALL 0x006b04d0
 004A88F7  85 C0                     TEST EAX,EAX

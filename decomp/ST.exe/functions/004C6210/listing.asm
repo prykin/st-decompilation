@@ -1,4 +1,4 @@
-FUN_004c6210:
+TLOBldMark::sub_004C6210:
 004C6210  55                        PUSH EBP
 004C6211  8B EC                     MOV EBP,ESP
 004C6213  8B 45 08                  MOV EAX,dword ptr [EBP + 0x8]

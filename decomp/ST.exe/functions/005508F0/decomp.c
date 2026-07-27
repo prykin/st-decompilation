@@ -110,7 +110,7 @@ void __thiscall FUN_005508f0(void *this,int param_1)
       memset((void *)(&DAT_00808a14 + (uint)DAT_00808aaf * 0x9c), 0, 0x9c); /* compiler bulk-zero initialization */
       DAT_00808aaf = DAT_00808aaf - 1;
       if (g_playPanel_008016E4 != (PlayPanelTy *)0x0) {
-        thunk_FUN_0053a540(g_playPanel_008016E4);
+        PlayPanelTy::sub_0053A540(g_playPanel_008016E4);
       }
     }
   }

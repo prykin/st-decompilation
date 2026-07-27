@@ -18,6 +18,7 @@ STAllPlayersC::GetCursorType
   uint uVar4;
   int iVar5;
   STGameObjC *pSVar6;
+  undefined4 uVar7;
   /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
   undefined4 in_EDX;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
@@ -72,8 +73,8 @@ STAllPlayersC::GetCursorType
         if ((short)local_8 != -1) {
           pSVar6 = GetObjPtr(this,(char)g_playerRuntime[uVar4].tempSlots[1][0].playerId,local_8,
                              CASE_1);
-          sVar3 = (*pSVar6->vtable->vfunc_28)(param_1,param_2,param_3,param_4);
-          return sVar3;
+          uVar7 = (*pSVar6->vtable->vfunc_28)(param_1,param_2,param_3,param_4);
+          return (short)uVar7;
         }
         index = index + 1;
       } while ((int)index < (int)dVar1);

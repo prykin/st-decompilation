@@ -52,9 +52,7 @@ void __thiscall STManRuinC::sub_00631010(STManRuinC *this)
             this->field_0044 = 1;
           }
           else {
-            puVar4 = SubmarineTitans::Recovered::HiddenThis::AnonReceiver_006308F0::sub_00630C50
-                               ((AnonReceiver_006308F0 *)this,this->field_0040,this->field_004C,1,1,
-                                this->field_0050);
+            puVar4 = sub_00630C50(this,this->field_0040,this->field_004C,1,1,this->field_0050);
             if (puVar4 != (ushort *)0x0) {
               this->field_0044 = 2;
             }

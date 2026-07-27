@@ -41,23 +41,26 @@ void __thiscall WaitTy::PaintWait(WaitTy *this,char param_1)
     this_01 = extraout_ECX;
     if ((pWVar2->field_1AF8 == (HoloTy *)0x0) && (param_1 == '\0')) {
       this_00 = &pWVar2->field_1A5B->field_0140;
-      MMMObjTy::OutRGlProc((MMMObjTy *)this_00,(int)DAT_0080759c,0,0,0x112,0x38,0x204,0x19d,this_00)
-      ;
+      MMMObjTy::OutRGlProc
+                ((MMMObjTy *)this_00,(int)g_anonShape_GLOBAL_0080759C_9638EF10_0080759C,0,0,0x112,
+                 0x38,0x204,0x19d,this_00);
       /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
       this_01 = extraout_ECX_00;
     }
     if (((pWVar2->field_1B00 == (HoloTy *)0x0) && (param_1 == '\0')) ||
        ((param_1 != '\0' && ((pWVar2->field_1A64 != 0 && (pWVar2->field_1A68 == 0)))))) {
       MMMObjTy::OutBSlProc
-                (DAT_0080759c,(int)DAT_0080759c,(MMMObjTy *)0x0,0,10,0xb4,0xf9,0x121,
-                 &pWVar2->field_1A5B->field_0140);
+                ((MMMObjTy *)g_anonShape_GLOBAL_0080759C_9638EF10_0080759C,
+                 (int)g_anonShape_GLOBAL_0080759C_9638EF10_0080759C,(MMMObjTy *)0x0,0,10,0xb4,0xf9,
+                 0x121,&pWVar2->field_1A5B->field_0140);
       /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
       this_01 = extraout_ECX_01;
     }
     if (((pWVar2->field_1AFC == (HoloTy *)0x0) && (param_1 == '\0')) ||
        ((param_1 != '\0' && (pWVar2->field_1A64 != 0)))) {
       ChatGlassTy::OutChGlProc
-                (this_01,(int)DAT_0080759c,0,0,200,0x1f1,400,0x62,&pWVar2->field_1A5B->field_0140);
+                (this_01,g_anonShape_GLOBAL_0080759C_9638EF10_0080759C,0,0,200,0x1f1,400,0x62,
+                 &pWVar2->field_1A5B->field_0140);
     }
     uVar7 = 0;
     pcVar6 = g_startSystem_0081176C->field_0030;

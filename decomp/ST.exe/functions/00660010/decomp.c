@@ -30,9 +30,7 @@ undefined4 __fastcall FUN_00660010(AiFltClassTy *param_1)
   }
   iVar4 = 0;
 LAB_00660050:
-  array = (DArrayTy *)
-          SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0065FA60::sub_0065FA60
-                    ((AnonReceiver_0065FA60 *)param_1,iVar4,(sVar1 != 3) - 1 & 2,(short *)0x0);
+  array = (DArrayTy *)AiFltClassTy::sub_0065FA60(param_1,iVar4,(sVar1 != 3) - 1 & 2,(short *)0x0);
   if (array == (DArrayTy *)0x0) {
     return 0xfffffffe;
   }

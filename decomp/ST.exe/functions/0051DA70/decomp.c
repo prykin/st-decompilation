@@ -1,5 +1,10 @@
 
-void __fastcall FUN_0051da70(HelpPanelTy *param_1)
+/* [STMethodOwnerApplier] Structural method owner recovered as HelpPanelTy.
+   Evidence: this_call_owners=[HelpPanelTy]; agreed_this_calls=1; incoming_this_accesses=8;
+   incoming_edx_uses=0; incoming_stack_parameter_uses=0; direct_non_thunk_callers=0;
+   incoming_ecx_receiver_callers=0; attributed_named_callers=1; owner_evidence_coverage=adequate */
+
+void __thiscall HelpPanelTy::sub_0051DA70(HelpPanelTy *this)
 
 {
   byte bVar1;
@@ -20,7 +25,7 @@ void __fastcall FUN_0051da70(HelpPanelTy *param_1)
   if ((((DAT_0080734d != '\0') &&
        (*(char *)((int)&DAT_008087c4 + (uint)DAT_0080874d * 0x51 + 3) == '\0')) &&
       (DAT_0080874f == '\0')) && (DAT_00808783 != '\x03')) {
-    bVar3 = param_1->field_0250;
+    bVar3 = this->field_0250;
     bVar8 = 0;
     bVar2 = 0;
     bVar1 = 0;
@@ -39,7 +44,7 @@ void __fastcall FUN_0051da70(HelpPanelTy *param_1)
       } while (uVar10 != 0);
     }
     bVar9 = 0;
-    bVar8 = param_1->field_0251;
+    bVar8 = this->field_0251;
     if (bVar8 != 0) {
       bVar6 = 0;
       uVar10 = (uint)bVar8;
@@ -52,7 +57,7 @@ void __fastcall FUN_0051da70(HelpPanelTy *param_1)
       } while (uVar10 != 0);
       local_8 = (uint)bVar9;
     }
-    bVar9 = param_1->field_0252;
+    bVar9 = this->field_0252;
     if (bVar9 != 0) {
       bVar6 = 0;
       uVar10 = (uint)bVar9;
@@ -64,7 +69,7 @@ void __fastcall FUN_0051da70(HelpPanelTy *param_1)
         uVar10 = uVar10 - 1;
       } while (uVar10 != 0);
     }
-    bVar6 = param_1->field_0253;
+    bVar6 = this->field_0253;
     if (bVar6 != 0) {
       bVar7 = 0;
       uVar10 = (uint)bVar6;
@@ -88,27 +93,27 @@ void __fastcall FUN_0051da70(HelpPanelTy *param_1)
     if (-1 < iVar12) {
       uVar10 = Library::MSVCRT::FUN_0072e6c0();
       uVar10 = uVar10 % (iVar12 + 1U);
-      uVar5 = (uint)(byte)param_1->field_0250;
+      uVar5 = (uint)(byte)this->field_0250;
       local_8 = uVar10 & 0xff;
       if ((int)(uVar10 & 0xff) < (int)(uVar5 - bVar4)) {
         puVar11 = &DAT_0080734e;
         local_c = 0;
       }
       else {
-        local_8 = (uint)(byte)((char)uVar10 + (bVar4 - param_1->field_0250));
+        local_8 = (uint)(byte)((char)uVar10 + (bVar4 - this->field_0250));
         if (DAT_0080874e == '\x01') {
           puVar11 = &DAT_00807352;
-          uVar5 = (uint)(byte)param_1->field_0251;
+          uVar5 = (uint)(byte)this->field_0251;
           local_c = 1;
         }
         else if (DAT_0080874e == '\x02') {
           puVar11 = &DAT_00807356;
-          uVar5 = (uint)(byte)param_1->field_0252;
+          uVar5 = (uint)(byte)this->field_0252;
           local_c = 2;
         }
         else {
           puVar11 = &DAT_0080735a;
-          uVar5 = (uint)(byte)param_1->field_0253;
+          uVar5 = (uint)(byte)this->field_0253;
           local_c = 3;
         }
       }
@@ -118,8 +123,9 @@ void __fastcall FUN_0051da70(HelpPanelTy *param_1)
         do {
           if ((*puVar11 & 1 << ((byte)uVar10 & 0x1f)) == 0) {
             if ((char)local_8 == '\0') {
-              HelpPanelTy::TipProc(param_1,(void *)(uint)bVar1,local_c,'\0');
-              (*param_1->vtable->SetPanel)(param_1,'\x01');
+              TipProc(this,(void *)(uint)bVar1,local_c,'\0');
+              /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+              (**(code **)(this->vtable + 0x18))(1);
               return;
             }
             local_8 = (uint)(byte)((char)local_8 - 1);

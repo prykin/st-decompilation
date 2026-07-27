@@ -14,9 +14,19 @@
    0041AF40 @ 0041BB7C -> TEST TEST EAX,EAX | 0041AF40 @ 0041BBDA -> TEST TEST EAX,EAX | 0041AF40 @
    0041BC45 -> TEST TEST EAX,EAX | 0041AF40 @ 0041BCF3 -> TEST TEST EAX,EAX | 0041AF40 @ 0041BD58 ->
    TEST TEST EAX,EAX | 0041AF40 @ 0041BDC3 -> TEST TEST EAX,EAX | 0041AF40 @ 0041BE1F -> TEST TEST
-   EAX,EAX */
+   EAX,EAX
 
-int __thiscall FUN_004fab10(void *this,Global_sub_004FAB10_param_1Enum param_1)
+   [STMethodOwnerApplier] Structural method owner recovered as CPanelTy.
+   Evidence: this_call_owners=[CPanelTy]; agreed_this_calls=23; incoming_this_accesses=1;
+   incoming_edx_uses=2; incoming_stack_parameter_uses=1; direct_non_thunk_callers=0;
+   incoming_ecx_receiver_callers=0; attributed_named_callers=1; owner_evidence_coverage=adequate
+
+   [STSwitchEnumApplier] Switch target param_1 uses
+   /SubmarineTitans/Recovered/Enums/CPanelTy_sub_004FAB10_param_1Enum. Cases:
+   CASE_1=1;CASE_2=2;CASE_3=3;CASE_4=4;CASE_5=5;CASE_6=6;CASE_7=7;CASE_8=8;CASE_9=9;CASE_A=10;CASE_B=11;CASE_C=12;CASE_D=13;CASE_E=14;CASE_F=15;CASE_10=16;CASE_11=17;CASE_12=18
+    */
+
+int __thiscall CPanelTy::sub_004FAB10(CPanelTy *this,CPanelTy_sub_004FAB10_param_1Enum param_1)
 
 {
   switch(param_1) {
@@ -27,7 +37,7 @@ int __thiscall FUN_004fab10(void *this,Global_sub_004FAB10_param_1Enum param_1)
   case CASE_5:
   case CASE_E:
   case CASE_F:
-    return (uint)(*(short *)((int)this + 0x23f) == 1);
+    return (uint)(this->field_023F == CASE_1);
   case CASE_6:
     if (g_prodPanel_008016E8 != (ProdPanelTy *)0x0) {
       return (uint)(g_prodPanel_008016E8->field_0172 != 2);

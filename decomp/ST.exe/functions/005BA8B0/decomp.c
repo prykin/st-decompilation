@@ -42,7 +42,8 @@ void __thiscall PrividerTy::PaintPrivider(PrividerTy *this,char param_1)
   pPVar2 = local_8;
   if ((local_8->field_1C96 == (HoloTy *)0x0) && (param_1 == '\0')) {
     MMMObjTy::OutLstProc
-              (this_00,(int)DAT_0080759c,(MMMObjTy *)0x0,0,0x79,0x51,0x22e,0x145,(int)local_8);
+              (this_00,(int)g_anonShape_GLOBAL_0080759C_9638EF10_0080759C,(MMMObjTy *)0x0,0,0x79,
+               0x51,0x22e,0x145,(int)local_8);
   }
   uVar8 = 0;
   pcVar7 = g_startSystem_0081176C->field_0030;
@@ -57,7 +58,8 @@ void __thiscall PrividerTy::PaintPrivider(PrividerTy *this,char param_1)
   puVar3 = (uint *)LoadResourceString(0x26b3,g_module_00807618);
   StartServTy::WrTextDDX(this_02,0,0xe9,0x14,0x14c,0x18,puVar3,uVar5,uVar6,pcVar7,uVar8);
   if ((pPVar2->field_1C9A == (HoloTy *)0x0) && (param_1 == '\0')) {
-    MMMObjTy::OutEdProc(DAT_0080759c,(int)DAT_0080759c,0,0,0x79,0x197,0x22e,0x2e,
+    MMMObjTy::OutEdProc((MMMObjTy *)g_anonShape_GLOBAL_0080759C_9638EF10_0080759C,
+                        g_anonShape_GLOBAL_0080759C_9638EF10_0080759C,0,0,0x79,0x197,0x22e,0x2e,
                         &pPVar2->field_1A5B->field_0140);
   }
   g_currentExceptionFrame = local_4c.previous;

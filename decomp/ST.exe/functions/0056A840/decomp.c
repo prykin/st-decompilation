@@ -16,7 +16,7 @@ void __thiscall FUN_0056a840(void *this,byte param_1)
     *puVar3 = 0;
     if ((g_visibleClass_00802A88 != (VisibleClassTy *)0x0) &&
        (param_1 == *(byte *)((int)this + 0x112d))) {
-      thunk_FUN_0055b7f0(g_visibleClass_00802A88,0,puVar1);
+      VisibleClassTy::sub_0055B7F0(g_visibleClass_00802A88,0,puVar1);
     }
     puVar1 = puVar1 + 1;
     puVar2 = puVar2 + 1;

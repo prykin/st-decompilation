@@ -50,11 +50,11 @@ void __thiscall PlayPanelTy::DonePlayPanel(PlayPanelTy *this)
       local_8 = local_8 + -1;
     } while (local_8 != 0);
     if (pPVar2->field_01DD != (ccFntTy *)0x0) {
-      ccFntTy::operator((uint *)pPVar2->field_01DD);
+      ccFntTy::operator_delete((uint *)pPVar2->field_01DD);
       pPVar2->field_01DD = (ccFntTy *)0x0;
     }
     if (pPVar2->field_01CD != (ushort *)0x0) {
-      cMf32::RecMemFree(DAT_00806790,(uint *)&pPVar2->field_01CD);
+      cMf32::RecMemFree(g_cMf32_00806790,(uint *)&pPVar2->field_01CD);
     }
     pPVar2->field_01D9 = (ushort *)0x0;
     pPVar2->field_01D5 = (ushort *)0x0;

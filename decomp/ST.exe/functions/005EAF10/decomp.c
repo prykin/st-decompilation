@@ -409,7 +409,7 @@ switchD_005eb5ad_caseD_129:
     return 0;
   }
   if ((local_8->field_02AB == -1) &&
-     (iVar8 = FUN_006e62d0(g_playSystem_00802A38,iVar8,&local_14), iVar8 != -4)) {
+     (iVar8 = STPlaySystemC::sub_006E62D0(g_playSystem_00802A38,iVar8,&local_14), iVar8 != -4)) {
     /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
     iVar8 = CONCAT22((short)((uint)iVar8 >> 0x10),*(undefined2 *)(local_14 + 0x32));
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */

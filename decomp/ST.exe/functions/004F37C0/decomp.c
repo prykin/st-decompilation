@@ -43,7 +43,7 @@ CPanelTy::PaintBBut(CPanelTy *this,byte param_1,STMessage *param_2,byte param_3,
   }
   iVar5 = 1;
   text = FUN_006f2c00(param_4,1,param_5 & 0xff);
-  local_c = cMf32::RecGet(DAT_00806790,param_3,text,errorCode,iVar5);
+  local_c = cMf32::RecGet(g_cMf32_00806790,param_3,text,errorCode,iVar5);
   pCVar3 = local_8;
   uVar2 = (uint)param_1;
   iVar5 = local_10[1];
@@ -80,7 +80,7 @@ LAB_004f38ad:
   }
   DibPut((AnonShape_006B5B10_E0D06CF1 *)(&local_8->field_0180)[uVar2],
          *local_10 - (&local_8->field_003C)[uVar2],iVar5 - iVar4,param_3,(byte *)local_c);
-  cMf32::RecMemFree(DAT_00806790,(uint *)&local_c);
+  cMf32::RecMemFree(g_cMf32_00806790,(uint *)&local_c);
   if ((param_1 < 0xb) && (-1 < (&pCVar3->field_0148)[uVar2])) {
     Library::DKW::DDX::FUN_006b3640
               ((int *)PTR_008075a8,(&pCVar3->field_0148)[uVar2],0xffffffff,

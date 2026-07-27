@@ -175,7 +175,8 @@ LAB_004ccedc:
         goto LAB_004cd038;
       }
     }
-    iVar2 = FUN_006e62d0(g_playSystem_00802A38,*(int *)((int)this + 0x40c),(int *)&param_2);
+    iVar2 = STPlaySystemC::sub_006E62D0
+                      (g_playSystem_00802A38,*(int *)((int)this + 0x40c),(int *)&param_2);
     if ((iVar2 == 0) && (param_2 != (int *)0x0)) {
       thunk_FUN_0060bc80(param_2,*(undefined4 *)((int)this + 0x24),
                          (uint)*(ushort *)((int)this + 0x32));
@@ -185,7 +186,8 @@ LAB_004ccedc:
 LAB_004cd038:
   if (((*(int *)((int)this + 0x5ac) == 0x6a) &&
       (*(uint *)((int)this + 0x4d4) <= g_playSystem_00802A38->field_00E4)) &&
-     (iVar2 = FUN_006e62d0(g_playSystem_00802A38,*(int *)((int)this + 0x4d0),(int *)&param_2),
+     (iVar2 = STPlaySystemC::sub_006E62D0
+                        (g_playSystem_00802A38,*(int *)((int)this + 0x4d0),(int *)&param_2),
      iVar2 == 0)) {
     thunk_FUN_005822b0(param_2,*(undefined4 *)((int)this + 0x24),*(undefined2 *)((int)this + 0x32));
   }
@@ -193,7 +195,8 @@ LAB_004cd038:
     piVar8 = (int *)((int)this + 0x4d0);
     do {
       if ((*piVar8 != 0) &&
-         (iVar2 = FUN_006e62d0(g_playSystem_00802A38,*piVar8,(int *)&param_2), iVar2 == 0)) {
+         (iVar2 = STPlaySystemC::sub_006E62D0(g_playSystem_00802A38,*piVar8,(int *)&param_2),
+         iVar2 == 0)) {
         thunk_FUN_00590130(param_2,*(undefined4 *)((int)this + 0x24));
       }
       iVar5 = iVar5 + 1;
@@ -201,12 +204,14 @@ LAB_004cd038:
     } while (iVar5 < *(int *)((int)this + 0x4e4));
   }
   if ((*(int *)((int)this + 0x5ac) == 0x69) &&
-     (iVar5 = FUN_006e62d0(g_playSystem_00802A38,*(int *)((int)this + 0x4ec),(int *)&param_2),
+     (iVar5 = STPlaySystemC::sub_006E62D0
+                        (g_playSystem_00802A38,*(int *)((int)this + 0x4ec),(int *)&param_2),
      iVar5 == 0)) {
     thunk_FUN_00618b40(param_2,*(undefined4 *)((int)this + 0x24),*(undefined2 *)((int)this + 0x32));
   }
   if (((*(int *)((int)this + 0x5ac) == 0x70) && (*(int *)((int)this + 0x4f0) != 0)) &&
-     (iVar5 = FUN_006e62d0(g_playSystem_00802A38,*(int *)((int)this + 0x4f0),(int *)&param_2),
+     (iVar5 = STPlaySystemC::sub_006E62D0
+                        (g_playSystem_00802A38,*(int *)((int)this + 0x4f0),(int *)&param_2),
      iVar5 == 0)) {
     thunk_FUN_0058cf90(param_2,*(undefined4 *)((int)this + 0x24),*(undefined2 *)((int)this + 0x32));
   }

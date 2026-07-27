@@ -114,7 +114,7 @@ void __thiscall OptPanelTy::SwitchOptPanel(OptPanelTy *this,char param_1)
     }
     bVar6 = local_8 != 0;
     if (g_tradePanel_00802A44 != (TradePanelTy *)0x0) {
-      local_8 = thunk_FUN_00552160(g_tradePanel_00802A44,'\0','\0');
+      local_8 = TradePanelTy::sub_00552160(g_tradePanel_00802A44,'\0','\0');
     }
     bVar7 = local_8 != 0;
     if (g_behPanel_00801678 != (BehPanelTy *)0x0) {

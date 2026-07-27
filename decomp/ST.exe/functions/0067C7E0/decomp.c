@@ -203,7 +203,7 @@ int __thiscall AiPlrClassTy::GetMessage(AiPlrClassTy *this,STMessage *message)
           }
           if (piVar14[1] != 0) {
             local_c = 0;
-            iVar5 = FUN_006e62d0(g_playSystem_00802A38,piVar14[1],&local_c);
+            iVar5 = STPlaySystemC::sub_006E62D0(g_playSystem_00802A38,piVar14[1],&local_c);
             if ((iVar5 == 0) && (local_c != 0)) {
               *piVar14 = local_c;
             }
@@ -264,11 +264,9 @@ int __thiscall AiPlrClassTy::GetMessage(AiPlrClassTy *this,STMessage *message)
           local_6c = (AnonShape_0068FD00_A5257008 *)0x72;
           local_64 = 0;
           local_60 = pDVar8;
-          SubmarineTitans::Recovered::HiddenThis::AnonReceiver_006799B0::sub_0067A020
-                    ((AnonReceiver_006799B0 *)this_00,(AnonShape_0068FD00_A5257008 *)&local_6c,-1);
+          sub_0067A020(this_00,(AnonShape_0068FD00_A5257008 *)&local_6c,-1);
           local_64 = 1;
-          SubmarineTitans::Recovered::HiddenThis::AnonReceiver_006799B0::sub_0067A020
-                    ((AnonReceiver_006799B0 *)this_00,(AnonShape_0068FD00_A5257008 *)&local_6c,-1);
+          sub_0067A020(this_00,(AnonShape_0068FD00_A5257008 *)&local_6c,-1);
           DArrayDestroy(local_8);
         }
       }

@@ -15,7 +15,6 @@ void __thiscall InfocPanelTy::InitInfocPanel(InfocPanelTy *this)
   ushort *puVar4;
   ccFntTy *pcVar5;
   int iVar6;
-  ccFntTy *this_01;
   int *piVar7;
   int iVar8;
   undefined4 uVar9;
@@ -85,7 +84,7 @@ void __thiscall InfocPanelTy::InitInfocPanel(InfocPanelTy *this)
     puVar4 = Library::Ourlib::MFRLOAD::mfRLoad
                        (DAT_00806794,CASE_B,pCVar3,uVar11,bVar12,iVar6,iVar13,puVar17);
     this_00->field_03CC = puVar4;
-    pcVar5 = (ccFntTy *)ccFntTy::operator(this_01,0x19d,DAT_00806790,"MONEY_FONT",0);
+    pcVar5 = (ccFntTy *)ccFntTy::operator_new(0x19d,g_cMf32_00806790,"MONEY_FONT",0);
     this_00->field_03D5 = pcVar5;
     pcVar5->field_0058 = 1;
     pcVar5->field_005C = 0;

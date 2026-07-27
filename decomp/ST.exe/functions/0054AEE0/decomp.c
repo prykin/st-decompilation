@@ -66,8 +66,7 @@ void __thiscall CursorClassTy::GCGameState(CursorClassTy *this,int param_1)
   if ((iVar5 != 0) &&
      ((((this_00->field_00DE == CASE_2 || (this_00->field_00DE == CASE_4)) &&
        (iVar5 = FUN_00405687((int)this_00), iVar5 == 0)) || (this_00->field_0496 == 0)))) {
-    SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0054B700::sub_0054B700
-              ((AnonReceiver_0054B700 *)this_00,-1);
+    sub_0054B700(this_00,-1);
     if ((g_helpPanel_00801690 == (HelpPanelTy *)0x0) || (g_helpPanel_00801690->field_0172 == 2))
     goto LAB_0054b372;
 LAB_0054b019:
@@ -125,9 +124,9 @@ LAB_0054b366:
     if (4 < (short)local_c) {
       local_c = 4;
     }
-    SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0054B700::sub_0054B700
-              ((AnonReceiver_0054B700 *)this_00,(int)(short)local_c);
-    if (this_00->field_049A == (STFishC *)0x0) {
+    sub_0054B700(this_00,(int)(short)local_c);
+    pSVar6 = this_00->field_049A;
+    if (pSVar6 == (STFishC *)0x0) {
       if ((this_00->field_049E != 0) && (this_00->field_049E = 0, DAT_00801694 != (void *)0x0)) {
         thunk_FUN_0051fac0(DAT_00801694,(char *)0x0,0,'\x01',0xfffffc18);
       }
@@ -137,7 +136,7 @@ LAB_0054b366:
       CVar4 = CASE_47;
     }
     else {
-      (*this_00->field_049A->vtable->vfunc_68)(&local_30);
+      (*pSVar6->vtable->vfunc_68)(pSVar6,&local_30);
       if (this_00->field_049E != local_30) {
         this_00->field_049E = local_30;
         module = g_module_00807618;

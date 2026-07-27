@@ -10,7 +10,7 @@
 undefined4 __thiscall StartSystemTy::CreateSystemObjects(StartSystemTy *this)
 
 {
-  (*this->vtable->vfunc_10)(0x303,0);
+  (*this->vtable->vfunc_10)(this,0x303,0);
   return 0;
 }
 

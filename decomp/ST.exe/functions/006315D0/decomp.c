@@ -91,9 +91,9 @@ LAB_00631713:
                         (this_00,local_24,local_22,local_20,local_1c,(int)local_1e,local_10);
               this_00->field_0044 = 1;
               if ((this_00->field_0048 == 0) ||
-                 (puVar5 = SubmarineTitans::Recovered::HiddenThis::AnonReceiver_006308F0::
-                           sub_00630C50((AnonReceiver_006308F0 *)this_00,this_00->field_0040,
-                                        this_00->field_004C,1,1,0), puVar5 != (ushort *)0x0)) {
+                 (puVar5 = STManRuinC::sub_00630C50
+                                     (this_00,this_00->field_0040,this_00->field_004C,1,1,0),
+                 puVar5 != (ushort *)0x0)) {
                 this_00->field_0044 = 2;
               }
               uVar6 = STManRuinC::sub_00631880(this_00,&this_00->field_0040,this_00->field_0061);

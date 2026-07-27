@@ -75,7 +75,7 @@ void __thiscall STSharkC::LifeShark(STSharkC *this,int *param_1)
   if (g_playSystem_00802A38->field_00E4 <= this->field_024F) goto cf_common_exit_0058E925;
   switch(this->field_0257) {
   case CASE_0:
-    iVar5 = (*this->vtable->vfunc_20)();
+    iVar5 = (*this->vtable->vfunc_20)(this);
     if (iVar5 == -1) {
       iVar5 = ReportDebugMessage("E:\\__titans\\Igor\\To_shark.cpp",0x2dc,0,-5,"%s",
                                  "stop move error");
@@ -105,7 +105,7 @@ LAB_0058ea68:
           }
         }
         else {
-          iVar5 = (*this->vtable->vfunc_20)();
+          iVar5 = (*this->vtable->vfunc_20)(this);
           if (iVar5 == 1) {
             this->field_0253 = 0;
             SVar9 = thunk_FUN_0058f1e0(this,1);
@@ -231,7 +231,7 @@ LAB_0058e87e:
     }
     break;
   case CASE_5:
-    iVar5 = (*this->vtable->vfunc_20)();
+    iVar5 = (*this->vtable->vfunc_20)(this);
     if (iVar5 == -1) {
       iVar5 = ReportDebugMessage("E:\\__titans\\Igor\\To_shark.cpp",0x265,0,0,"%s",
                                  "stop move error");
@@ -275,7 +275,7 @@ cf_common_exit_0058E925:
     STT3DSprC::SetCurShad((STT3DSprC *)this_00,'\x0e',local_10);
     STT3DSprC::ShowCurFase((STT3DSprC *)this_00,'\x0e');
   }
-  (*this->vtable->vfunc_D8)();
+  (*this->vtable->vfunc_D8)(this);
 switchD_0058e67d_default:
   return;
 }

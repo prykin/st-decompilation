@@ -34,7 +34,8 @@ FUN_004b1120(int param_1,Global_sub_004B1120_param_2Enum param_2,int *param_3,in
   local_10 = thunk_FUN_004ae0b0((short)*param_3,*param_4,*param_5,param_2,param_1,(undefined4 *)0x0,
                                 (int *)0x0,(int *)0x0,0,piVar5);
   if (local_10 == 0) {
-    if ((&STGroupBoatCVTable.vfunc_04)[param_2] == (void *)0x1) {
+    if ((&STGroupBoatCVTable.vfunc_04)[param_2] ==
+        (icall_004A0EE0_FUN_004a0ee0_for_STGroupBoatC *)0x1) {
       param_7 = 0;
       param_1 = 0;
       param_6 = 0;

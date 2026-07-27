@@ -70,10 +70,10 @@ OptPanelTy::CreateSlider
     local_42c[2] = local_42c[0];
     pCVar4 = thunk_FUN_00571240("BUT_MINUS",0);
     pCVar4 = FUN_006f2c00(pCVar4,iVar3,uVar8);
-    local_c = cMf32::RecGet(DAT_00806790,1,pCVar4,piVar9,iVar10);
+    local_c = cMf32::RecGet(g_cMf32_00806790,1,pCVar4,piVar9,iVar10);
     local_414 = *(undefined4 *)(local_c + 2);
     local_410 = *(undefined4 *)(local_c + 4);
-    cMf32::RecMemFree(DAT_00806790,(uint *)&local_c);
+    cMf32::RecMemFree(g_cMf32_00806790,(uint *)&local_c);
     iVar3 = pOVar2->field_003C;
     local_42c[4] = iVar3 + param_3;
     iVar10 = pOVar2->field_005C;

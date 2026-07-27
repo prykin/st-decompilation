@@ -121,7 +121,7 @@ FUN_005f0ec0(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4
       local_14 = 0;
     }
   }
-  (*g_playSystem_00802A38->vtable->vfunc_08)(0x14f,0,0,local_158,0);
+  (*g_playSystem_00802A38->vtable->vfunc_08)(g_playSystem_00802A38,0x14f,0,0,local_158,0);
   return;
 }
 

@@ -1,6 +1,12 @@
 
+/* [STMethodOwnerApplier] Structural method owner recovered as VisibleClassTy.
+   Evidence: this_call_owners=[VisibleClassTy]; agreed_this_calls=1; incoming_this_accesses=4;
+   incoming_edx_uses=0; incoming_stack_parameter_uses=6; direct_non_thunk_callers=0;
+   incoming_ecx_receiver_callers=0; attributed_named_callers=1; owner_evidence_coverage=adequate */
+
 undefined4 __thiscall
-FUN_0055b1c0(void *this,int param_1,int param_2,undefined4 param_3,uint param_4)
+VisibleClassTy::sub_0055B1C0
+          (VisibleClassTy *this,int param_1,int param_2,undefined4 param_3,uint param_4)
 
 {
   byte bVar1;
@@ -12,11 +18,11 @@ FUN_0055b1c0(void *this,int param_1,int param_2,undefined4 param_3,uint param_4)
   char *local_c;
   int *local_8;
 
-  if (((*(int *)((int)this + 0x114) != 0) && (param_4 < 8)) &&
+  if (((this->field_0114 != 0) && (param_4 < 8)) &&
      ((g_playSystem_00802A38 == (STPlaySystemC *)0x0 || ((byte)(&DAT_008087e9)[param_4 * 0x51] < 8))
      )) {
     uVar2 = 0;
-    local_8 = (int *)((int)this + 0x94);
+    local_8 = &this->field_0094;
     local_c = &DAT_008087e9;
     do {
       if ((uVar2 != param_4) && (*local_c != -1)) {
@@ -50,11 +56,10 @@ LAB_0055b2ce:
           ;
         }
         if (bVar6) {
-          /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-          if ((((*local_8 != 0) && (-1 < param_1)) && (param_1 < *(int *)((int)this + 0x20))) &&
-             (((-1 < param_2 && (param_2 < *(int *)((int)this + 0x24))) &&
+          if ((((*local_8 != 0) && (-1 < param_1)) && (param_1 < this->field_0020)) &&
+             (((-1 < param_2 && (param_2 < this->field_0024)) &&
               (((int)local_c < 0x808a71 &&
-               (*(char *)(*(int *)((int)this + 0x20) * param_2 + *local_8 + param_1) != '\0')))))) {
+               (*(char *)(this->field_0020 * param_2 + *local_8 + param_1) != '\0')))))) {
             return 1;
           }
         }

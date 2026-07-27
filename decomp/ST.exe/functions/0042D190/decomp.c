@@ -33,7 +33,7 @@ LAB_0042d1f8:
         DArrayGetElement(param_3,index,&param_4);
         if ((((short)param_4 != -1) &&
             (pSVar3 = GetObjPtr(this,objPtr,param_4,CASE_1), pSVar3 != (STGameObjC *)0x0)) &&
-           ((*pSVar3->vtable[1].vfunc_14)(0), param_5 != 0)) {
+           ((*pSVar3->vtable->vfunc_E8)(pSVar3,0), param_5 != 0)) {
           /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
           STGameObjC::ResetSelfCheckFlag(pSVar3,unaff_EDI);
         }
@@ -49,8 +49,7 @@ LAB_0042d1c3:
         if (pSVar3 == (STGameObjC *)0x0) {
           return;
         }
-        iVar4 = 0;
-        (*pSVar3->vtable[1].vfunc_14)();
+        (*pSVar3->vtable->vfunc_E8)(pSVar3,0);
         goto LAB_0042d2c3;
       }
       if (param_2 == 0) {
@@ -75,12 +74,12 @@ LAB_0042d270:
       if (pSVar3 == (STGameObjC *)0x0) {
         return;
       }
-      iVar4 = 0;
-      (*pSVar3->vtable[1].vfunc_14)();
+      (*pSVar3->vtable->vfunc_E8)(pSVar3,0);
       if (param_5 == 0) {
         return;
       }
-      STGameObjC::ResetSelfCheckFlag(pSVar3,iVar4);
+      /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
+      STGameObjC::ResetSelfCheckFlag(pSVar3,unaff_EDI);
       return;
     }
     if (param_2 == 0x1ae) {
@@ -94,11 +93,11 @@ LAB_0042d270:
     if (pSVar3 == (STGameObjC *)0x0) {
       return;
     }
-    iVar4 = 0;
-    (*pSVar3->vtable[1].vfunc_14)();
+    (*pSVar3->vtable->vfunc_E8)(pSVar3,0);
 LAB_0042d2c3:
     if (param_5 != 0) {
-      STGameObjC::ResetSelfCheckFlag(pSVar3,iVar4);
+      /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
+      STGameObjC::ResetSelfCheckFlag(pSVar3,unaff_EDI);
       return;
     }
   }

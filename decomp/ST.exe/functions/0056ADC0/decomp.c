@@ -38,7 +38,6 @@ STAppC::InitApp(STAppC *this,HINSTANCE param_1,undefined4 param_2,undefined4 par
   AnonShape_00683C70_22193481 **ppAVar24;
   UINT UVar25;
   AnonShape_00683C70_22193481 *local_560;
-  undefined4 *puStack_55c;
   InternalExceptionFrame local_248;
   InternalExceptionFrame local_204;
   InternalExceptionFrame local_1c0;
@@ -196,27 +195,30 @@ STAppC::InitApp(STAppC *this,HINSTANCE param_1,undefined4 param_2,undefined4 par
   _DAT_0080758c = 0x1e;
   _DAT_00807590 = 0x4d8;
   _DAT_00807594 = 0x3c2;
-  FUN_006b9b20(&DAT_0080759c,g_hWnd_00806748,(int *)&pSVar20->field_115A);
+  FUN_006b9b20(&g_anonShape_GLOBAL_0080759C_9638EF10_0080759C,g_hWnd_00806748,
+               (int *)&pSVar20->field_115A);
   Library::DKW::DDX::FUN_006b9b40
-            ((undefined4 *)DAT_0080759c,0x10000001,g_nWidth_00806730,DAT_00806734,DAT_00806738,
-             g_nWidth_00806730,DAT_00806734,0,0,0x100);
-  Library::DKW::DDX::FUN_006b1300((int *)&PTR_008075a8,(int)DAT_0080759c);
-  FUN_006bbb20(DAT_0080759c,1);
-  FUN_006ba780((int)DAT_0080759c,1);
+            (g_anonShape_GLOBAL_0080759C_9638EF10_0080759C,0x10000001,g_nWidth_00806730,DAT_00806734
+             ,DAT_00806738,g_nWidth_00806730,DAT_00806734,0,0,0x100);
+  Library::DKW::DDX::FUN_006b1300
+            ((int *)&PTR_008075a8,g_anonShape_GLOBAL_0080759C_9638EF10_0080759C);
+  FUN_006bbb20(g_anonShape_GLOBAL_0080759C_9638EF10_0080759C,1);
+  FUN_006ba780(g_anonShape_GLOBAL_0080759C_9638EF10_0080759C,1);
   Library::DKW::DV::FUN_006c3800
-            (&g_anonShape_006C3FC0_72DDFA27_008075A0,DAT_0080759c,HWND_00856d78,0x2660);
+            (&g_anonShape_006C3FC0_72DDFA27_008075A0,g_anonShape_GLOBAL_0080759C_9638EF10_0080759C,
+             HWND_00856d78,0x2660);
   local_1c0.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_1c0;
   iVar8 = Library::MSVCRT::__setjmp3(local_1c0.jumpBuffer,0);
   if (iVar8 == 0) {
-    FUN_006c2a80((int *)&g_int_008075A4,DAT_0080759c);
+    FUN_006c2a80((int *)&g_int_008075A4,g_anonShape_GLOBAL_0080759C_9638EF10_0080759C);
   }
   g_currentExceptionFrame = local_1c0.previous;
   FUN_006b1980((int *)PTR_008075a8,2,-1,DAT_00807568,DAT_0080756c,DAT_00807570,DAT_00807574);
   FUN_006b1cc0(PTR_008075a8,2,DAT_00807568,DAT_0080756c,(undefined4 *)0x0);
   FUN_006b1980((int *)PTR_008075a8,3,-1,DAT_00807568,DAT_0080756c,DAT_00807570,DAT_00807574);
   FUN_006b1cc0(PTR_008075a8,3,0,0,(undefined4 *)0x0);
-  FUN_006ad270(DAT_0080759c);
+  FUN_006ad270(g_anonShape_GLOBAL_0080759C_9638EF10_0080759C);
   DVar10 = timeGetTime();
   Library::MSVCRT::FUN_0072e6b0(DVar10);
   thunk_FUN_005672a0(&local_c->field_0038,HWND_00856d78);
@@ -1215,9 +1217,8 @@ switchD_0056b4ce_caseD_57:
     local_1c = 0x6123;
   }
 cf_common_exit_0056C034:
-  puStack_55c = local_2c;
   local_560 = (AnonShape_00683C70_22193481 *)0x56c03f;
-  (*((AppClassTyVTable *)pSVar20->vtable)->vfunc_18)();
+  (*pSVar20->vtable->GetMessage)(pSVar20,(int)local_2c);
   g_currentExceptionFrame = local_b0.previous;
   return 1;
 }

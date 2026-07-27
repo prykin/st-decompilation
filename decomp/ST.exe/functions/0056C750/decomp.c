@@ -57,9 +57,10 @@ void __thiscall STAppC::DoneApp(STAppC *this)
       Library::DKW::DDX::FUN_006b3cc0((int *)PTR_008075a8);
       PTR_008075a8 = (AnonShape_006B1B10_121F236C *)0x0;
     }
-    if (DAT_0080759c != (undefined4 *)0x0) {
-      FUN_006ba600(DAT_0080759c);
-      DAT_0080759c = (undefined4 *)0x0;
+    if (g_anonShape_GLOBAL_0080759C_9638EF10_0080759C != (AnonShape_GLOBAL_0080759C_9638EF10 *)0x0)
+    {
+      FUN_006ba600((undefined4 *)g_anonShape_GLOBAL_0080759C_9638EF10_0080759C);
+      g_anonShape_GLOBAL_0080759C_9638EF10_0080759C = (AnonShape_GLOBAL_0080759C_9638EF10 *)0x0;
     }
     thunk_FUN_0055d910();
     if (g_cMf32_00806758 != (cMf32 *)0x0) {

@@ -1,9 +1,9 @@
 ST return semantics
 
 Functions: 5741
-Proposals: 61
+Proposals: 66
 Automatic: 0
 leaf_void: 0
 typed_pointer_return: 0
-boolean_return_domain: 61
+boolean_return_domain: 66
 noreturn_terminal_call: 0

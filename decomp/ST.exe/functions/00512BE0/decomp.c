@@ -17,14 +17,12 @@
    incoming_edx_uses=0; incoming_stack_parameter_uses=54; direct_non_thunk_callers=0;
    incoming_ecx_receiver_callers=0; attributed_named_callers=1; owner_evidence_coverage=adequate */
 
-void __thiscall
-SubmarineTitans::Recovered::HiddenThis::AnonReceiver_004EEFB0::sub_00512BE0
-          (AnonReceiver_004EEFB0 *this,int param_1)
+void __thiscall HelpPanelTy::sub_00512BE0(HelpPanelTy *this,int param_1)
 
 {
-  AnonShape_00710790_4CBB90D4 *pAVar1;
+  ccFntTy *pcVar1;
   code *pcVar2;
-  AnonShape_00512BE0_C9F23DAB *this_00;
+  HelpPanelTy *this_00;
   int iVar3;
   int iVar4;
   int *piVar5;
@@ -75,10 +73,10 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_004EEFB0::sub_00512BE0
   undefined4 local_5c;
   undefined4 local_58;
   InternalExceptionFrame local_4c;
-  AnonShape_00512BE0_C9F23DAB *local_8;
+  HelpPanelTy *local_8;
 
   piVar5 = local_8c4;
-  local_8 = (AnonShape_00512BE0_C9F23DAB *)this;
+  local_8 = this;
   for (iVar3 = 0x21e; iVar3 != 0; iVar3 = iVar3 + -1) {
     *piVar5 = 0;
     piVar5 = piVar5 + 1;
@@ -96,15 +94,15 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_004EEFB0::sub_00512BE0
     else {
       local_8a0 = local_8->field_0044;
     }
-    pAVar1 = (AnonShape_00710790_4CBB90D4 *)local_8->field_01E4;
+    pcVar1 = local_8->field_01E4;
     local_8a0 = local_8a0 + 0x16;
     local_8c4[2] = 1;
     local_8c4[3] = *(undefined4 *)(param_1 + 8);
     local_8b4 = 0x19c;
-    if (*(int *)(pAVar1 + 1) != 0) {
-      FUN_00710790(pAVar1);
+    if (pcVar1->field_00A0 != 0) {
+      FUN_00710790((AnonShape_00710790_4CBB90D4 *)pcVar1);
     }
-    local_8b0 = pAVar1->field_008A;
+    local_8b0 = *(int *)&pcVar1->field_0x8a;
     local_8a8 = (undefined4)(0x118 / (longlong)local_8b0);
     local_808[2] = this_00->field_003C + 0x1c3;
     local_8ac = 1;
@@ -130,8 +128,8 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_004EEFB0::sub_00512BE0
     local_7a4 = 2;
     local_7a0 = 0x8165;
     local_7a8 = local_88c;
-    local_6e4 = FUN_0070aa70(DAT_00806790,"BUT_MSLDN",0,1);
-    local_6e0 = Library::Ourlib::MFIMG::mfImgGetWidth(DAT_00806790,0x12,"BUT_MSLDN",1);
+    local_6e4 = FUN_0070aa70(g_cMf32_00806790,"BUT_MSLDN",0,1);
+    local_6e0 = Library::Ourlib::MFIMG::mfImgGetWidth(g_cMf32_00806790,0x12,"BUT_MSLDN",1);
     iVar3 = this_00->field_005C;
     local_700 = 1;
     local_6fc = 1;
@@ -151,8 +149,8 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_004EEFB0::sub_00512BE0
     }
     local_688[3] = local_688[3] + 0x16;
     local_620 = 0x8164;
-    local_564 = FUN_0070aa70(DAT_00806790,"BUT_MSLUP",0,1);
-    local_560 = Library::Ourlib::MFIMG::mfImgGetWidth(DAT_00806790,0x12,"BUT_MSLUP",1);
+    local_564 = FUN_0070aa70(g_cMf32_00806790,"BUT_MSLUP",0,1);
+    local_560 = Library::Ourlib::MFIMG::mfImgGetWidth(g_cMf32_00806790,0x12,"BUT_MSLUP",1);
     local_4fc = this_00->field_003C + 0x1c3;
     local_50c = 3;
     local_508 = 1;
@@ -174,12 +172,12 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_004EEFB0::sub_00512BE0
     local_474 = 1;
     local_58 = 1;
     local_5c = 1;
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-    (**(code **)(*this_00->field_000C + 8))(8,&this_00->field_019C,0,local_8c4,0);
+    (*this_00->field_000C->vtable->CreateObject)
+              ((SystemClassTy *)this_00->field_000C,8,&this_00->field_019C,(int *)0x0,local_8c4,0);
     iVar3 = this_00->field_019C;
     if (iVar3 != 0) {
       this_00->field_0028 = 0x20;
-      this_00->field_002C = 1;
+      *(undefined4 *)&this_00->field_0x2c = 1;
       FUN_006e6080(this_00,2,iVar3,(undefined4 *)&this_00->field_0x18);
     }
     g_currentExceptionFrame = local_4c.previous;

@@ -1,4 +1,4 @@
-FUN_00544940:
+CursorClassTy::sub_00544940:
 00544940  56                        PUSH ESI
 00544941  8B F1                     MOV ESI,ECX
 00544943  6A 00                     PUSH 0x0

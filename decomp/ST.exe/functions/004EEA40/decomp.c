@@ -79,20 +79,19 @@ void __thiscall BldBoatPanelTy::InitBldBoatPanel(BldBoatPanelTy *this)
     iVar8 = iVar8 + -1;
   } while (iVar8 != 0);
   this_00->field_003C = this_00->field_003C + (g_nWidth_00806730 + -800) / 2;
-  pcVar4 = (ccFntTy *)
-           ccFntTy::operator(DAT_00806790,0x19d,(cMf32 *)DAT_00806790,"HOLD_FONT",0);
+  pcVar4 = (ccFntTy *)ccFntTy::operator_new(0x19d,g_cMf32_00806790,"HOLD_FONT",0);
   this_00->field_028A = pcVar4;
   pcVar4->field_0058 = 1;
   pcVar4->field_005C = 0;
   iVar8 = 1;
   piVar13 = (int *)0x0;
   pCVar5 = thunk_FUN_00571240("BKG_BLDBOATW",0);
-  puVar6 = cMf32::RecGet((cMf32 *)DAT_00806790,1,pCVar5,piVar13,iVar8);
+  puVar6 = cMf32::RecGet(g_cMf32_00806790,1,pCVar5,piVar13,iVar8);
   this_00->field_0184 = puVar6;
   text = &this_00->field_0x6c;
   pCVar5 = thunk_FUN_00571240("BKG_BLDBOATBUT",0);
   wsprintfA(text,"%s0",pCVar5);
-  puVar6 = cMf32::RecGet((cMf32 *)DAT_00806790,1,text,(int *)0x0,1);
+  puVar6 = cMf32::RecGet(g_cMf32_00806790,1,text,(int *)0x0,1);
   this_00->field_028E = puVar6;
   if (DAT_0080874d == 0xff) {
     iVar8 = 1;

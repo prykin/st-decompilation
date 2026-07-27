@@ -6,7 +6,7 @@
    Evidence: registry[10] at 007CA770 stores type 0x0100 and executable pointer 00401C5D; allocation
    size 32 has no unique current class-layout match */
 
-void * __cdecl FUN_004a88f0(void)
+OpticClassC * __cdecl CreateOpticClass(void)
 
 {
   OpticClassC *this;
@@ -17,6 +17,6 @@ void * __cdecl FUN_004a88f0(void)
     return g_opticClass_007FB2A0;
   }
   g_opticClass_007FB2A0 = (OpticClassC *)0x0;
-  return (void *)0x0;
+  return (OpticClassC *)0x0;
 }
 

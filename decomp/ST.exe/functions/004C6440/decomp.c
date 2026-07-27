@@ -5,10 +5,16 @@
 /* [STSourceProvenanceApplier begin]
    Recovered source file: E:\__titans\Artem\TLO_BldMark.cpp
    Diagnostic line evidence: 119 | 130 | 152 (metadata/report site, not the function definition)
-   [STSourceProvenanceApplier end] */
+   [STSourceProvenanceApplier end]
+
+   [STMethodOwnerApplier] Structural method owner recovered as TLOBldMark.
+   Evidence: this_call_owners=[TLOBldMark]; agreed_this_calls=1; incoming_this_accesses=38;
+   incoming_edx_uses=0; incoming_stack_parameter_uses=9; direct_non_thunk_callers=0;
+   incoming_ecx_receiver_callers=0; attributed_named_callers=1; owner_evidence_coverage=adequate */
 
 undefined4 __thiscall
-FUN_004c6440(void *this,float param_1,int param_2,int *param_3,int *param_4,int *param_5)
+TLOBldMark::sub_004C6440
+          (TLOBldMark *this,float param_1,int param_2,int *param_3,int *param_4,int *param_5)
 
 {
   char cVar1;
@@ -66,7 +72,6 @@ FUN_004c6440(void *this,float param_1,int param_2,int *param_3,int *param_4,int 
            ((g_visibleClass_00802A88->field_00F8 == 0 ||
             ((VisibleClassTy::sub_00558C00
                         (g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,local_10,
-                         /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
                          local_8,&local_30,&local_34), (int)piVar8 < 0x79aed0 ||
              (0x79aee3 < (int)piVar8)))))) ||
           ((local_30 < 0 ||
@@ -76,27 +81,25 @@ FUN_004c6440(void *this,float param_1,int param_2,int *param_3,int *param_4,int 
          ((pVVar4->field_004C == (byte *)0x0 ||
           (pVVar4->field_004C[local_30 + iVar9 * pVVar4->field_0030] != 0)))) &&
         (iVar9 = local_10,
-        thunk_FUN_004ae0b0((short)local_10,local_8,local_c,
-                           *(Global_sub_004AE0B0_param_4Enum *)((int)this + 0x1c),(uint)DAT_0080874d
-                           ,&local_2c,&local_24,&local_1c,0,*(int **)((int)this + 0x20)),
-        local_24 != 0)))) break;
+        thunk_FUN_004ae0b0((short)local_10,local_8,local_c,this->field_001C,(uint)DAT_0080874d,
+                           &local_2c,&local_24,&local_1c,0,(int *)this->field_0020), local_24 != 0))
+       )) break;
     local_20 = piVar8 + -1;
     local_c = local_c + -1;
     if ((int)local_20 < 0x79aed0) {
 cf_common_exit_004C6899:
-      if (((*(int *)((int)this + 0x24) != 0) || (*(int *)((int)this + 0x28) != 0)) &&
-         (local_28 == 0)) {
-        thunk_FUN_004ad430(*(int *)((int)this + 0x2c));
-        *(undefined4 *)((int)this + 0x24) = 0;
-        *(undefined4 *)((int)this + 0x28) = 0;
+      if (((this->field_0024 != 0) || (this->field_0028 != 0)) && (local_28 == 0)) {
+        thunk_FUN_004ad430((int)this->field_002C);
+        this->field_0024 = 0;
+        this->field_0028 = 0;
       }
-      return *(undefined4 *)((int)this + 0x24);
+      return this->field_0024;
     }
   }
   local_28 = 1;
   if (local_1c == 0) {
-    if (*(int *)((int)this + 0x28) == 0) {
-      iVar9 = *(int *)((int)this + 0x1c);
+    if (this->field_0028 == 0) {
+      iVar9 = this->field_001C;
       if ((((iVar9 != 0x39) && (iVar9 != 0x4f)) && ((iVar9 != 0x4d && (iVar9 != 0x5e)))) &&
          (((((iVar9 < 0x54 || (0x5a < iVar9)) && (iVar9 != 0x61)) &&
            ((iVar9 != 0x65 && (iVar9 != 0x43)))) && (iVar9 != 0x73)))) {
@@ -104,18 +107,17 @@ cf_common_exit_004C6899:
         goto cf_common_exit_004C6899;
       }
       iVar9 = STT3DSprC::LoadSequence
-                        (*(STT3DSprC **)((int)this + 0x2c),0,DAT_0080678c,
-                         (&PTR_s_tlo_bldmark_si_007ad25c)
-                         [*(byte *)(*(int *)((int)this + 0x10) + 0x112e)],0x1d);
+                        (this->field_002C,0,DAT_0080678c,
+                         (&PTR_s_tlo_bldmark_si_007ad25c)[(byte)this->field_0010->field_112E],0x1d);
       if (iVar9 != 0) {
         RaiseInternalException
                   (iVar9,g_overwriteContext_007ED77C,"E:\\__titans\\Artem\\TLO_BldMark.cpp",
                    0x82);
       }
       uVar10 = 0;
-      cVar1 = *(char *)(*(int *)((int)this + 0x10) + 0x112e);
+      cVar1 = this->field_0010->field_112E;
       if ((cVar1 == '\x01') || (cVar1 == '\x02')) {
-        iVar9 = *(int *)((int)this + 0x1c);
+        iVar9 = this->field_001C;
         if (iVar9 == 0x4f) {
           uVar10 = 1;
         }
@@ -127,45 +129,42 @@ cf_common_exit_004C6899:
         }
       }
       else {
-        uVar10 = *(uint *)(&DAT_00790f84 + *(int *)((int)this + 0x1c) * 4);
+        uVar10 = *(uint *)(&DAT_00790f84 + this->field_001C * 4);
       }
-      thunk_FUN_004abce0(*(void **)((int)this + 0x2c),0,uVar10,uVar10,'\0');
-      STT3DSprC::SetCurFase(*(STT3DSprC **)((int)this + 0x2c),'\0',uVar10);
-      DVar6 = STAppC::sub_006E51B0(*(STAppC **)((int)this + 0x10));
-      STT3DSprC::StartShow(*(STT3DSprC **)((int)this + 0x2c),0,DVar6);
+      thunk_FUN_004abce0(this->field_002C,0,uVar10,uVar10,'\0');
+      STT3DSprC::SetCurFase(this->field_002C,'\0',uVar10);
+      DVar6 = STAppC::sub_006E51B0(this->field_0010);
+      STT3DSprC::StartShow(this->field_002C,0,DVar6);
       iVar9 = local_10;
     }
   }
-  else if (*(int *)((int)this + 0x24) == 0) {
+  else if (this->field_0024 == 0) {
     iVar5 = STT3DSprC::LoadSequence
-                      (*(STT3DSprC **)((int)this + 0x2c),0,DAT_0080678c,
-                       *(char **)(&DAT_007ad250 +
-                                 (uint)*(byte *)(*(int *)((int)this + 0x10) + 0x112e) * 4),0x1d);
+                      (this->field_002C,0,DAT_0080678c,
+                       *(char **)(&DAT_007ad250 + (uint)(byte)this->field_0010->field_112E * 4),0x1d
+                      );
     if (iVar5 != 0) {
       RaiseInternalException
                 (iVar5,g_overwriteContext_007ED77C,"E:\\__titans\\Artem\\TLO_BldMark.cpp",0x77)
       ;
     }
-    thunk_FUN_004abce0(*(void **)((int)this + 0x2c),0,
-                       *(int *)(&DAT_00790f84 + *(int *)((int)this + 0x1c) * 4),
-                       *(int *)(&DAT_00790f84 + *(int *)((int)this + 0x1c) * 4),'\0');
-    STT3DSprC::SetCurFase
-              (*(STT3DSprC **)((int)this + 0x2c),'\0',
-               *(uint *)(&DAT_00790f84 + *(int *)((int)this + 0x1c) * 4));
-    DVar6 = STAppC::sub_006E51B0(*(STAppC **)((int)this + 0x10));
-    STT3DSprC::StartShow(*(STT3DSprC **)((int)this + 0x2c),0,DVar6);
+    thunk_FUN_004abce0(this->field_002C,0,*(int *)(&DAT_00790f84 + this->field_001C * 4),
+                       *(int *)(&DAT_00790f84 + this->field_001C * 4),'\0');
+    STT3DSprC::SetCurFase(this->field_002C,'\0',*(uint *)(&DAT_00790f84 + this->field_001C * 4));
+    DVar6 = STAppC::sub_006E51B0(this->field_0010);
+    STT3DSprC::StartShow(this->field_002C,0,DVar6);
   }
-  thunk_FUN_004ad460(*(void **)((int)this + 0x2c),0);
-  if (*(int *)(&DAT_00791d68 + *(int *)((int)this + 0x1c) * 4) == 0) {
+  thunk_FUN_004ad460(this->field_002C,0);
+  if (*(int *)(&DAT_00791d68 + this->field_001C * 4) == 0) {
     fVar12 = (float)local_8 * _DAT_007904f8 + _DAT_007904f4;
     fVar3 = (float)local_10 * _DAT_007904f8 + _DAT_007904f4;
 LAB_004c6848:
     STT3DSprC::sub_004AD3C0
-              (*(STT3DSprC **)((int)this + 0x2c),fVar3,fVar12,
+              (this->field_002C,fVar3,fVar12,
                (float)local_c * _DAT_00790504 + _DAT_00790500 + _DAT_007904fc);
   }
   else {
-    if (*(int *)(&DAT_00791d68 + *(int *)((int)this + 0x1c) * 4) == 1) {
+    if (*(int *)(&DAT_00791d68 + this->field_001C * 4) == 1) {
       fVar12 = (float)(local_8 + 1) * _DAT_007904f8;
       fVar3 = (float)(iVar9 + 1) * _DAT_007904f8;
       goto LAB_004c6848;
@@ -176,25 +175,25 @@ LAB_004c6848:
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
   }
-  *(int *)((int)this + 0x30) = iVar9;
+  this->field_0030 = iVar9;
   if (param_3 != (int *)0x0) {
     *param_3 = iVar9;
   }
-  *(int *)((int)this + 0x34) = local_8;
+  this->field_0034 = local_8;
   if (param_3 != (int *)0x0) {
     *param_4 = local_8;
   }
-  *(int *)((int)this + 0x38) = local_c;
+  this->field_0038 = local_c;
   if (param_3 != (int *)0x0) {
     *param_5 = local_c;
   }
   if (local_1c == 0) {
-    *(undefined4 *)((int)this + 0x24) = 0;
-    *(undefined4 *)((int)this + 0x28) = 1;
+    this->field_0024 = 0;
+    this->field_0028 = 1;
   }
   else {
-    *(undefined4 *)((int)this + 0x24) = 1;
-    *(undefined4 *)((int)this + 0x28) = 0;
+    this->field_0024 = 1;
+    this->field_0028 = 0;
   }
   goto cf_common_exit_004C6899;
 }

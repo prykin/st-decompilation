@@ -131,7 +131,7 @@ short * __cdecl LoadLand(cMf32 *param_1,char *text)
             *(undefined4 **)&this->field_0x140 = puVar1;
             *(int *)&this->field_0x13c = *(int *)&this->field_0x13c + 1;
             FUN_006ddbe0(this);
-            FUN_006ddd50((AnonShape_006DDD50_309FA381 *)this);
+            FUN_006ddd50((AnonShape_GLOBAL_0080760C_46D7AF7A *)this);
             uVar13 = iVar3 * iVar3;
             *(undefined4 *)&this->field_0x140 = 0;
             *(undefined4 *)&this->field_0x13c = 0;

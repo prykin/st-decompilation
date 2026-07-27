@@ -21,7 +21,7 @@ void __thiscall OptPanelTy::UpdateObjectives(OptPanelTy *this)
   if (errorCode == 0) {
     PrepMissObj(local_8);
     if (g_helpPanel_00801690 != (HelpPanelTy *)0x0) {
-      thunk_FUN_00515180(g_helpPanel_00801690,'\a');
+      HelpPanelTy::sub_00515180(g_helpPanel_00801690,'\a');
     }
     g_currentExceptionFrame = local_4c.previous;
     return;

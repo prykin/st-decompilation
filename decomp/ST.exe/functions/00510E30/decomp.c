@@ -25,7 +25,6 @@ void __thiscall HelpPanelTy::InitHelpPanel(HelpPanelTy *this)
   int *piVar13;
   undefined4 *puVar14;
   UINT *pUVar15;
-  ccFntTy *this_01;
   uint uVar16;
   uint uVar17;
   UINT *pUVar18;
@@ -190,27 +189,24 @@ LAB_00510fa9:
   iVar4 = 1;
   piVar13 = (int *)0x0;
   pCVar8 = thunk_FUN_00571240("BKG_HELPW",0);
-  puVar9 = cMf32::RecGet((cMf32 *)DAT_00806790,1,pCVar8,piVar13,iVar4);
+  puVar9 = cMf32::RecGet(g_cMf32_00806790,1,pCVar8,piVar13,iVar4);
   this_00->field_01DC = puVar9;
-  puVar9 = cMf32::RecGet((cMf32 *)DAT_00806790,1,"HLP_OBJ_BKG",(int *)0x0,1);
+  puVar9 = cMf32::RecGet(g_cMf32_00806790,1,"HLP_OBJ_BKG",(int *)0x0,1);
   iVar4 = 1;
   piVar13 = (int *)0x0;
   this_00->field_021C = puVar9;
   pCVar8 = thunk_FUN_00571240("BUT_HLPLINK",0);
-  puVar9 = cMf32::RecGet((cMf32 *)DAT_00806790,1,pCVar8,piVar13,iVar4);
+  puVar9 = cMf32::RecGet(g_cMf32_00806790,1,pCVar8,piVar13,iVar4);
   this_00->field_024C = puVar9;
-  pcVar10 = (ccFntTy *)
-            ccFntTy::operator(*(ccFntTy **)&PTR_00802a28->field_0x28,0x19d,
-                              (int)*(ccFntTy **)&PTR_00802a28->field_0x28);
+  pcVar10 = (ccFntTy *)ccFntTy::operator_new(0x19d,*(int *)&PTR_00802a28->field_0x28);
   this_00->field_01E0 = pcVar10;
   pcVar10->field_0058 = 0;
   pcVar10->field_005C = 0;
-  pcVar10 = (ccFntTy *)ccFntTy::operator(this_01,0x19d,*(int *)&PTR_00802a28->field_0x2c);
+  pcVar10 = (ccFntTy *)ccFntTy::operator_new(0x19d,*(int *)&PTR_00802a28->field_0x2c);
   this_00->field_01E4 = pcVar10;
   pcVar10->field_0058 = 1;
   pcVar10->field_005C = 0;
-  pcVar10 = (ccFntTy *)
-            ccFntTy::operator(DAT_00806790,0x19d,(cMf32 *)DAT_00806790,"MONEY_FONT",0);
+  pcVar10 = (ccFntTy *)ccFntTy::operator_new(0x19d,g_cMf32_00806790,"MONEY_FONT",0);
   this_00->field_01E8 = pcVar10;
   pcVar10->field_0058 = 1;
   pcVar10->field_005C = 0;

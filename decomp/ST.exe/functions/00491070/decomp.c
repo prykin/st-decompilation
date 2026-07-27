@@ -39,7 +39,7 @@ void __thiscall STBoatC::ReleaseLoad(STBoatC *this,uint param_1)
       this->field_0076 = 1;
       return;
     }
-    iVar2 = (*this->vtable->vfunc_AC)(param_1);
+    iVar2 = (*this->vtable->vfunc_AC)(this,param_1);
     if (iVar2 == 1) {
       this->field_05C0 = 2;
     }

@@ -27,7 +27,7 @@ FUN_00581120(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4
   local_34[2] = 0;
   local_34[3] = 1;
   local_14 = param_4;
-  (*g_playSystem_00802A38->vtable->vfunc_08)(0x138,0,&param_6,local_34,0);
+  (*g_playSystem_00802A38->vtable->vfunc_08)(g_playSystem_00802A38,0x138,0,&param_6,local_34,0);
   return param_6;
 }
 

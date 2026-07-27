@@ -1,4 +1,4 @@
-FUN_00515180:
+HelpPanelTy::sub_00515180:
 00515180  55                        PUSH EBP
 00515181  8B EC                     MOV EBP,ESP
 00515183  8B 45 08                  MOV EAX,dword ptr [EBP + 0x8]

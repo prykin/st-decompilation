@@ -39,8 +39,7 @@ void __thiscall STDestC::sub_00602BE0(STDestC *this)
     }
   }
   else if (this->field_036E != 4) {
-    puVar3 = SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00602E90::sub_00602E90
-                       ((AnonReceiver_00602E90 *)this);
+    puVar3 = sub_00602E90(this);
     this->field_03AB = puVar3;
     if (puVar3 != (undefined4 *)0x0) {
       thunk_FUN_004ad310((STT3DSprC *)&this->field_01D5);
@@ -67,7 +66,7 @@ void __thiscall STDestC::sub_00602BE0(STDestC *this)
       this->field_037A = 0;
       return;
     }
-    (*this->vtable->vfunc_D8)();
+    (*this->vtable->vfunc_D8)(this);
     if (this->field_037A == '\0') {
       thunk_FUN_004ad460(&this->field_01D5,0);
       this->field_037A = 1;

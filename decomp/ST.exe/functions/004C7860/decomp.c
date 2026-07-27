@@ -115,7 +115,7 @@ LAB_004c796d:
     }
     break;
   case 4:
-    iVar3 = (*this->vtable->vfunc_7C)();
+    iVar3 = (*this->vtable->vfunc_7C)(this);
     if (iVar3 == 100) {
       return 0;
     }

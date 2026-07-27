@@ -89,8 +89,8 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0065DA50::FUN_0065da50
           pvVar7 = extraout_ECX_01;
           /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
           if ((this_01 != (STGameObjC *)0x0) &&
-             (iVar5 = (*this_01->vtable[1].vfunc_24)(this_01), pvVar7 = extraout_ECX_02, iVar5 != 0)
-             ) {
+             (iVar5 = (*this_01->vtable->vfunc_F8)(this_01), pvVar7 = extraout_ECX_02, iVar5 != 0))
+          {
             pvVar6 = (void *)(*this_01->vtable->vfunc_6C)(this_01);
             pvVar7 = (void *)(int)param_2;
             if (pvVar7 == pvVar6) {

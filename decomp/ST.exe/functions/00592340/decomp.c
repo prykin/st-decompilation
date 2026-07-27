@@ -25,10 +25,11 @@ void __thiscall CampaignTy::LightPalette(CampaignTy *this)
     if (local_8->field_1BEC != 0) {
       puVar1 = &local_8->field_0x1bf8;
       iVar4 = Library::Ourlib::PALETTE::FUN_00718f40
-                        (DAT_0080759c,(undefined4 *)puVar1,0,0x100,10,&local_8->field_1BF4,2,
-                         local_8->field_0061,&local_8->field_1BF0);
+                        (g_anonShape_GLOBAL_0080759C_9638EF10_0080759C,(undefined4 *)puVar1,0,0x100,
+                         10,&local_8->field_1BF4,2,local_8->field_0061,&local_8->field_1BF0);
       if (iVar4 == -4) {
-        FUN_006b0a20(DAT_0080759c,(int)puVar1,0,0x100,0);
+        FUN_006b0a20((undefined4 *)g_anonShape_GLOBAL_0080759C_9638EF10_0080759C,(int)puVar1,0,0x100
+                     ,0);
         pCVar3->field_1BEC = 0;
       }
     }

@@ -3,11 +3,16 @@
    /SubmarineTitans/Recovered/HiddenThis/AnonReceiver_00558C00.
    Evidence: incoming_receiver_captures=1; receiver_accesses=3; incoming_edx_uses=0; calls=3;
    ecx_pointer_setup=2; ecx_scalar_setup=0; caller_cleanup_calls=0; callee_ret_pop=[24];
-   expected_stack=24; receiver_family_members=15; adopt_untyped_existing_thiscall */
+   expected_stack=24; receiver_family_members=15; adopt_untyped_existing_thiscall
+
+   [STMethodOwnerApplier] Structural method owner recovered as VisibleClassTy.
+   Evidence: this_call_owners=[VisibleClassTy]; agreed_this_calls=3; incoming_this_accesses=3;
+   incoming_edx_uses=0; incoming_stack_parameter_uses=21; direct_non_thunk_callers=0;
+   incoming_ecx_receiver_callers=0; attributed_named_callers=3; owner_evidence_coverage=adequate */
 
 void __thiscall
-SubmarineTitans::Recovered::HiddenThis::AnonReceiver_005594A0::FUN_00559d60
-          (AnonReceiver_005594A0 *this,int param_1,int param_2,undefined1 param_3,uint param_4,
+VisibleClassTy::sub_00559D60
+          (VisibleClassTy *this,int param_1,int param_2,undefined1 param_3,uint param_4,
           undefined *param_5,undefined4 param_6)
 
 {
@@ -20,9 +25,9 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_005594A0::FUN_00559d60
   int iVar7;
   int iVar8;
 
-  if ((((*(int *)&this->field_0x114 != 0) && (-1 < (int)param_5)) && (param_4 < 8)) &&
+  if ((((this->field_0114 != 0) && (-1 < (int)param_5)) && (param_4 < 8)) &&
      (((g_playSystem_00802A38 == (STPlaySystemC *)0x0 || ((byte)(&DAT_008087e9)[param_4 * 0x51] < 8)
-       ) && (*(int *)(&this->field_0x74 + param_4 * 4) != 0)))) {
+       ) && ((&this->field_0074)[param_4] != 0)))) {
     sub_0055BBC0(this,3,(short)param_1,(short)param_2,param_3,param_4,(char)param_5,param_6);
     iVar1 = (int)param_5 * 2 + 1;
     iVar5 = param_1 - (int)param_5;
@@ -37,9 +42,8 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_005594A0::FUN_00559d60
         do {
           if (((puVar3 == (undefined *)0x0) || (param_5[iVar4] != '\0')) &&
              ((-1 < iVar7 &&
-              (((iVar7 < *(int *)&this->field_0x20 && (-1 < iVar8)) &&
-               (iVar8 < *(int *)&this->field_0x24)))))) {
-            iVar6 = iVar8 * *(int *)&this->field_0x20 + *(int *)(&this->field_0x74 + param_4 * 4);
+              (((iVar7 < this->field_0020 && (-1 < iVar8)) && (iVar8 < this->field_0024)))))) {
+            iVar6 = iVar8 * this->field_0020 + (&this->field_0074)[param_4];
             cVar2 = *(char *)(iVar6 + iVar7);
             if (cVar2 != '\0') {
               *(char *)(iVar6 + iVar7) = cVar2 + -1;

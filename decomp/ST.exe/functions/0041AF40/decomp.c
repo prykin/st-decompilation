@@ -109,7 +109,7 @@ int __thiscall STGameObjC::GetMessage(STGameObjC *this,STMessage *message)
         g_currentExceptionFrame = local_58.previous;
         return 0;
       }
-      iVar12 = thunk_FUN_004fab10(g_cPanel_00801688,CASE_1);
+      iVar12 = CPanelTy::sub_004FAB10(g_cPanel_00801688,CASE_1);
       if (iVar12 != 0) {
         (*this_00->vtable->vfunc_30)(this_00->field_0121);
         iVar12 = 0x1b;
@@ -139,7 +139,7 @@ int __thiscall STGameObjC::GetMessage(STGameObjC *this,STMessage *message)
         g_currentExceptionFrame = local_58.previous;
         return 0;
       }
-      iVar12 = thunk_FUN_004fab10(g_cPanel_00801688,CASE_2);
+      iVar12 = CPanelTy::sub_004FAB10(g_cPanel_00801688,CASE_2);
       if (iVar12 != 0) {
         (*this_00->vtable->vfunc_34)(this_00->field_0129);
         iVar12 = 0x17;
@@ -168,7 +168,7 @@ int __thiscall STGameObjC::GetMessage(STGameObjC *this,STMessage *message)
         g_currentExceptionFrame = local_58.previous;
         return 0;
       }
-      iVar12 = thunk_FUN_004fab10(g_cPanel_00801688,CASE_E);
+      iVar12 = CPanelTy::sub_004FAB10(g_cPanel_00801688,CASE_E);
       if (iVar12 != 0) {
         (*this_00->vtable->vfunc_58)(this_00->field_01B1);
         pAVar4 = this_00->field_01AD;
@@ -196,7 +196,7 @@ int __thiscall STGameObjC::GetMessage(STGameObjC *this,STMessage *message)
         g_currentExceptionFrame = local_58.previous;
         return 0;
       }
-      iVar12 = thunk_FUN_004fab10(g_cPanel_00801688,CASE_12);
+      iVar12 = CPanelTy::sub_004FAB10(g_cPanel_00801688,CASE_12);
       if (iVar12 == 0) {
         g_currentExceptionFrame = local_58.previous;
         return 0;
@@ -228,7 +228,7 @@ int __thiscall STGameObjC::GetMessage(STGameObjC *this,STMessage *message)
       if (uVar13 != 0x172) {
         if (uVar13 == 0x14) {
           if ((g_cPanel_00801688 != (CPanelTy *)0x0) &&
-             (iVar12 = thunk_FUN_004fab10(g_cPanel_00801688,CASE_1), iVar12 != 0)) {
+             (iVar12 = CPanelTy::sub_004FAB10(g_cPanel_00801688,CASE_1), iVar12 != 0)) {
             (*this_00->vtable->vfunc_30)(this_00->field_0121);
             iVar12 = 0x1b;
             bVar35 = true;
@@ -276,7 +276,7 @@ int __thiscall STGameObjC::GetMessage(STGameObjC *this,STMessage *message)
           }
 LAB_0041b128:
           if ((g_cPanel_00801688 != (CPanelTy *)0x0) &&
-             (iVar12 = thunk_FUN_004fab10(g_cPanel_00801688,CASE_2), iVar12 != 0)) {
+             (iVar12 = CPanelTy::sub_004FAB10(g_cPanel_00801688,CASE_2), iVar12 != 0)) {
             (*this_00->vtable->vfunc_34)(this_00->field_0129);
             iVar12 = 0x17;
             bVar35 = true;
@@ -301,7 +301,7 @@ LAB_0041b128:
             }
           }
           if ((g_cPanel_00801688 != (CPanelTy *)0x0) &&
-             (iVar12 = thunk_FUN_004fab10(g_cPanel_00801688,CASE_8), iVar12 != 0)) {
+             (iVar12 = CPanelTy::sub_004FAB10(g_cPanel_00801688,CASE_8), iVar12 != 0)) {
             puVar15 = &this_00->field_0171;
             if ((DArrayTy *)this_00->field_0171 != (DArrayTy *)0x0) {
               DArrayDestroy((DArrayTy *)this_00->field_0171);
@@ -473,7 +473,7 @@ LAB_0041b308:
             }
           }
           if ((g_cPanel_00801688 != (CPanelTy *)0x0) &&
-             (iVar12 = thunk_FUN_004fab10(g_cPanel_00801688,CASE_B), iVar12 != 0)) {
+             (iVar12 = CPanelTy::sub_004FAB10(g_cPanel_00801688,CASE_B), iVar12 != 0)) {
             (*this_00->vtable->vfunc_4C)(this_00->field_0199);
             pAVar3 = this_00->field_0195;
             local_c = (DArrayTy *)this_00->field_0199;
@@ -499,7 +499,7 @@ LAB_0041b308:
             }
           }
           if ((g_cPanel_00801688 != (CPanelTy *)0x0) &&
-             (iVar12 = thunk_FUN_004fab10(g_cPanel_00801688,CASE_E), iVar12 != 0)) {
+             (iVar12 = CPanelTy::sub_004FAB10(g_cPanel_00801688,CASE_E), iVar12 != 0)) {
             (*this_00->vtable->vfunc_58)(this_00->field_01B1);
             pAVar4 = this_00->field_01AD;
             local_8 = (AnonShape_0041AF40_EF4C5356 *)this_00->field_01B1;
@@ -526,7 +526,7 @@ LAB_0041b308:
             g_currentExceptionFrame = local_58.previous;
             return 0;
           }
-          iVar12 = thunk_FUN_004fab10(g_cPanel_00801688,CASE_10);
+          iVar12 = CPanelTy::sub_004FAB10(g_cPanel_00801688,CASE_10);
           if (iVar12 == 0) {
             g_currentExceptionFrame = local_58.previous;
             return 0;
@@ -575,7 +575,7 @@ LAB_0041bdb3:
       g_currentExceptionFrame = local_58.previous;
       return 0;
     }
-    iVar12 = thunk_FUN_004fab10(g_cPanel_00801688,CASE_5);
+    iVar12 = CPanelTy::sub_004FAB10(g_cPanel_00801688,CASE_5);
     if (iVar12 != 0) {
       (*this_00->vtable->vfunc_30)(this_00->field_0121);
       iVar12 = 0x1b;
@@ -605,7 +605,7 @@ LAB_0041bdb3:
       g_currentExceptionFrame = local_58.previous;
       return 0;
     }
-    iVar12 = thunk_FUN_004fab10(g_cPanel_00801688,CASE_4);
+    iVar12 = CPanelTy::sub_004FAB10(g_cPanel_00801688,CASE_4);
     if (iVar12 == 0) {
       g_currentExceptionFrame = local_58.previous;
       return 0;
@@ -643,7 +643,7 @@ LAB_0041bdb3:
       g_currentExceptionFrame = local_58.previous;
       return 0;
     }
-    iVar12 = thunk_FUN_004fab10(g_cPanel_00801688,CASE_4);
+    iVar12 = CPanelTy::sub_004FAB10(g_cPanel_00801688,CASE_4);
     if (iVar12 != 0) {
       (*this_00->vtable->vfunc_34)(this_00->field_0129);
       iVar12 = 0x17;
@@ -672,7 +672,7 @@ LAB_0041bdb3:
       g_currentExceptionFrame = local_58.previous;
       return 0;
     }
-    iVar12 = thunk_FUN_004fab10(g_cPanel_00801688,CASE_5);
+    iVar12 = CPanelTy::sub_004FAB10(g_cPanel_00801688,CASE_5);
     if (iVar12 == 0) {
       g_currentExceptionFrame = local_58.previous;
       return 0;
@@ -708,7 +708,7 @@ LAB_0041bdb3:
     g_currentExceptionFrame = local_58.previous;
     return 0;
   }
-  iVar12 = thunk_FUN_004fab10(g_cPanel_00801688,CASE_4);
+  iVar12 = CPanelTy::sub_004FAB10(g_cPanel_00801688,CASE_4);
   if (iVar12 != 0) {
     (*this_00->vtable->vfunc_34)(this_00->field_0129);
     iVar12 = 0x17;
@@ -737,7 +737,7 @@ LAB_0041bdb3:
     g_currentExceptionFrame = local_58.previous;
     return 0;
   }
-  iVar12 = thunk_FUN_004fab10(g_cPanel_00801688,CASE_5);
+  iVar12 = CPanelTy::sub_004FAB10(g_cPanel_00801688,CASE_5);
   if (iVar12 != 0) {
     (*this_00->vtable->vfunc_30)(this_00->field_0121);
     iVar12 = 0x1b;
@@ -767,7 +767,7 @@ LAB_0041bdb3:
     g_currentExceptionFrame = local_58.previous;
     return 0;
   }
-  iVar12 = thunk_FUN_004fab10(g_cPanel_00801688,CASE_6);
+  iVar12 = CPanelTy::sub_004FAB10(g_cPanel_00801688,CASE_6);
   if (iVar12 != 0) {
     puVar15 = &this_00->field_0135;
     if ((DArrayTy *)this_00->field_0135 != (DArrayTy *)0x0) {
@@ -843,7 +843,7 @@ LAB_0041b92c:
     g_currentExceptionFrame = local_58.previous;
     return 0;
   }
-  iVar12 = thunk_FUN_004fab10(g_cPanel_00801688,CASE_7);
+  iVar12 = CPanelTy::sub_004FAB10(g_cPanel_00801688,CASE_7);
   if (iVar12 != 0) {
     puVar15 = &this_00->field_014D;
     if ((DArrayTy *)this_00->field_014D != (DArrayTy *)0x0) {
@@ -986,7 +986,7 @@ LAB_0041bac6:
     g_currentExceptionFrame = local_58.previous;
     return 0;
   }
-  iVar12 = thunk_FUN_004fab10(g_cPanel_00801688,CASE_9);
+  iVar12 = CPanelTy::sub_004FAB10(g_cPanel_00801688,CASE_9);
   if (iVar12 != 0) {
     (*this_00->vtable->vfunc_44)(this_00->field_0189);
     iVar12 = 0x129;
@@ -1016,7 +1016,7 @@ LAB_0041bac6:
     g_currentExceptionFrame = local_58.previous;
     return 0;
   }
-  iVar12 = thunk_FUN_004fab10(g_cPanel_00801688,CASE_A);
+  iVar12 = CPanelTy::sub_004FAB10(g_cPanel_00801688,CASE_A);
   if (iVar12 != 0) {
     (*this_00->vtable->vfunc_48)(this_00->field_0191);
     pAVar7 = this_00->field_018D;
@@ -1044,7 +1044,7 @@ LAB_0041bac6:
     g_currentExceptionFrame = local_58.previous;
     return 0;
   }
-  iVar12 = thunk_FUN_004fab10(g_cPanel_00801688,CASE_C);
+  iVar12 = CPanelTy::sub_004FAB10(g_cPanel_00801688,CASE_C);
   if (iVar12 != 0) {
     puVar15 = &this_00->field_01A1;
     local_14 = (AnonPointee_STGameObjC_01A9 *)puVar15;
@@ -1089,7 +1089,7 @@ LAB_0041bcad:
     g_currentExceptionFrame = local_58.previous;
     return 0;
   }
-  iVar12 = thunk_FUN_004fab10(g_cPanel_00801688,CASE_D);
+  iVar12 = CPanelTy::sub_004FAB10(g_cPanel_00801688,CASE_D);
   if (iVar12 != 0) {
     (*this_00->vtable->vfunc_54)(this_00->field_01A9);
     pAVar8 = this_00->field_01A5;
@@ -1117,7 +1117,7 @@ LAB_0041bcad:
     g_currentExceptionFrame = local_58.previous;
     return 0;
   }
-  iVar12 = thunk_FUN_004fab10(g_cPanel_00801688,CASE_F);
+  iVar12 = CPanelTy::sub_004FAB10(g_cPanel_00801688,CASE_F);
   if (iVar12 == 0) {
     g_currentExceptionFrame = local_58.previous;
     return 0;

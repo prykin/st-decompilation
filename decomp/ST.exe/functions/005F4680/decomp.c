@@ -18,8 +18,7 @@ void __thiscall STBHEShellC::sub_005F4680(STBHEShellC *this)
   int local_8;
 
   if (this->field_008F < 0) {
-    SubmarineTitans::Recovered::HiddenThis::AnonReceiver_005F35F0::sub_005F35F0
-              ((AnonReceiver_005F35F0 *)this,this->field_0087);
+    sub_005F35F0(this,this->field_0087);
   }
   pVVar2 = g_visibleClass_00802A88;
   if (g_visibleClass_00802A88 != (VisibleClassTy *)0x0) {

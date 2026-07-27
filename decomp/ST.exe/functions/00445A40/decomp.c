@@ -84,7 +84,8 @@ STAllPlayersC::RegisterPGPair(STAllPlayersC *this,uint param_1,uint *param_2,uin
       DArrayGetElement(local_18,uVar7,&local_8);
       this_01 = local_34;
       pSVar3 = GetObjPtr(local_34,objPtr,local_8,CASE_1);
-      if ((pSVar3 == (STGameObjC *)0x0) || (iVar2 = (*pSVar3->vtable[1].vfunc_24)(), iVar2 == 0)) {
+      if ((pSVar3 == (STGameObjC *)0x0) || (iVar2 = (*pSVar3->vtable->vfunc_F8)(pSVar3), iVar2 == 0)
+         ) {
         FUN_006b0c70(local_18,uVar7);
         uVar6 = uVar6 - 1;
         uVar7 = uVar7 - 1;
@@ -104,7 +105,8 @@ STAllPlayersC::RegisterPGPair(STAllPlayersC *this,uint param_1,uint *param_2,uin
       DArrayGetElement(local_14,uVar6,&local_8);
       pSVar3 = GetObjPtr(this_01,objPtr,local_8,CASE_1);
       if (((pSVar3 == (STGameObjC *)0x0) || (iVar2 = thunk_FUN_00490d90(pSVar3), iVar2 == 0)) ||
-         ((iVar2 = (*pSVar3->vtable[1].vfunc_24)(), iVar2 == 0 || (pSVar3->field_0030 == -1)))) {
+         ((iVar2 = (*pSVar3->vtable->vfunc_F8)(pSVar3), iVar2 == 0 || (pSVar3->field_0030 == -1))))
+      {
         FUN_006b0c70(local_14,uVar6);
         local_c = local_c - 1;
         uVar6 = uVar6 - 1;

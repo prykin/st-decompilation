@@ -85,10 +85,10 @@ int __thiscall PlayPanelTy::GetMessage(PlayPanelTy *this,STMessage *message)
       iVar16 = 1;
       pCVar10 = thunk_FUN_00571240("BUT_SWITCH",0);
       pCVar10 = FUN_006f2c00(pCVar10,iVar16,uVar11);
-      local_c = cMf32::RecGet(DAT_00806790,1,pCVar10,piVar17,iVar19);
+      local_c = cMf32::RecGet(g_cMf32_00806790,1,pCVar10,piVar17,iVar19);
       DibPut((AnonShape_006B5B10_E0D06CF1 *)this_00->field_0068,local_10,iVar8 + iVar13,'\x01',
              (byte *)local_c);
-      cMf32::RecMemFree(DAT_00806790,(uint *)&local_c);
+      cMf32::RecMemFree(g_cMf32_00806790,(uint *)&local_c);
       g_currentExceptionFrame = local_64.previous;
       return 0;
     }

@@ -32,8 +32,8 @@ undefined4 __thiscall STColl3C::sub_005FA8B0(STColl3C *this,int *param_1,int *pa
                  [(int)g_worldGrid.planeStride * (int)sVar2 + (int)g_worldGrid.sizeX * (int)sVar3 +
                   (int)sVar1].objects[0], this_00 == (STFishC *)0x0)))) {
     if ((this->field_0255 == 0) ||
-       (iVar5 = FUN_006e62d0(g_playSystem_00802A38,this->field_0255,(int *)&local_14), iVar5 == -4))
-    {
+       (iVar5 = STPlaySystemC::sub_006E62D0(g_playSystem_00802A38,this->field_0255,(int *)&local_14)
+       , iVar5 == -4)) {
       return 0;
     }
     this_00 = local_14;

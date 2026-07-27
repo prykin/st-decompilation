@@ -1,4 +1,4 @@
-FUN_004fa3b0:
+CPanelTy::sub_004FA3B0:
 004FA3B0  8A 81 63 0B 00 00         MOV AL,byte ptr [ECX + 0xb63]
 004FA3B6  84 C0                     TEST AL,AL
 004FA3B8  74 14                     JZ 0x004fa3ce

@@ -114,7 +114,7 @@ LAB_00440bab:
       }
       else {
         pSVar5 = GetObjPtr(local_40,param_1,local_28,CASE_1);
-        iVar4 = (*pSVar5->vtable[1].vfunc_24)();
+        iVar4 = (*pSVar5->vtable->vfunc_F8)(pSVar5);
         if (iVar4 == 0) goto LAB_00440bab;
       }
       uVar13 = uVar13 + 1;
@@ -137,7 +137,7 @@ LAB_00440c19:
       }
       else {
         pSVar5 = GetObjPtr(local_40,param_1,local_28,CASE_1);
-        iVar4 = (*pSVar5->vtable[1].vfunc_24)();
+        iVar4 = (*pSVar5->vtable->vfunc_F8)(pSVar5);
         if (iVar4 == 0) goto LAB_00440c19;
       }
       uVar13 = uVar13 + 1;

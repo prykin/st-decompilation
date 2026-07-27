@@ -32,7 +32,8 @@ void __thiscall JumpManagC::CheckSystrm(JumpManagC *this,int param_1)
             iVar4 = -2;
           }
           else {
-            iVar3 = FUN_006e62d0(g_playSystem_00802A38,*(int *)((int)pvVar5 + 0x1c),&local_8);
+            iVar3 = STPlaySystemC::sub_006E62D0
+                              (g_playSystem_00802A38,*(int *)((int)pvVar5 + 0x1c),&local_8);
             if (iVar3 == -4) {
               iVar4 = -3;
             }

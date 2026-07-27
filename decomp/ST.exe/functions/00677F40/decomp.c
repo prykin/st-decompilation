@@ -12,7 +12,7 @@ _EnumArt(short param_1,byte *param_2,short param_3,short param_4,short param_5,s
 
 {
   byte bVar1;
-  int *this;
+  STFishC *this;
   code *pcVar2;
   int iVar3;
   undefined4 *puVar4;
@@ -60,13 +60,13 @@ _EnumArt(short param_1,byte *param_2,short param_3,short param_4,short param_5,s
     else {
       puVar4 = (undefined4 *)0x0;
     }
-    this = (int *)*puVar4;
-    if ((this != (int *)0x0) && ((param_1 == 0 || (*(int *)((int)this + 0x342) == (int)param_1)))) {
+    this = (STFishC *)*puVar4;
+    if ((this != (STFishC *)0x0) &&
+       ((param_1 == 0 || (*(int *)&this[1].field_0xd7 == (int)param_1)))) {
       iVar3 = 1;
       local_14 = 1;
       if ((param_2 != (byte *)0x0) && (*param_2 != 0)) {
-        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-        (**(code **)(*this + 0x74))(local_28);
+        (*this->vtable->vfunc_74)(local_28);
         pbVar7 = local_28;
         pbVar5 = param_2;
         do {
@@ -93,7 +93,7 @@ LAB_00678036:
       }
       if (iVar3 != 0) {
         if ((((0 < param_6) && (0 < param_7)) && (0 < param_8)) &&
-           ((((thunk_FUN_004162f0(this,&local_6,&local_8,&local_a), local_6 < param_3 ||
+           ((((STFishC::sub_004162F0(this,&local_6,&local_8,&local_a), local_6 < param_3 ||
               (local_8 < param_4)) ||
              ((local_a < param_5 ||
               (((int)param_3 + (int)param_6 <= (int)local_6 ||

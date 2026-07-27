@@ -77,8 +77,9 @@ void __thiscall STAppC::ChangeResolution(STAppC *this,int param_1)
           uVar7 = local_c;
           if (iVar3 == 0) {
             DVar4 = Library::DKW::DDX::FUN_006b9b40
-                              (DAT_0080759c,0x10000001,g_nWidth_00806730,DAT_00806734,DAT_00806738,
-                               g_nWidth_00806730,DAT_00806734,(int)local_4bc,0,0x100);
+                              (g_anonShape_GLOBAL_0080759C_9638EF10_0080759C,0x10000001,
+                               g_nWidth_00806730,DAT_00806734,DAT_00806738,g_nWidth_00806730,
+                               DAT_00806734,(int)local_4bc,0,0x100);
             local_c = (uint)(DVar4 == 0);
             MoveWindow(HWND_00856d78,0,0,g_nWidth_00806730,DAT_00806734,1);
             local_68 = 0x66;
@@ -96,7 +97,8 @@ void __thiscall STAppC::ChangeResolution(STAppC *this,int param_1)
         ;
       }
       Library::DKW::DDX::FUN_006b1470((int *)PTR_008075a8);
-      Library::DKW::DDX::FUN_006b1680((int *)PTR_008075a8,(int)DAT_0080759c);
+      Library::DKW::DDX::FUN_006b1680
+                ((int *)PTR_008075a8,g_anonShape_GLOBAL_0080759C_9638EF10_0080759C);
       FUN_006b1980((int *)PTR_008075a8,2,-1,(&DAT_00807568)[iVar3 * 4],(&DAT_0080756c)[iVar3 * 4],
                    (&DAT_00807570)[iVar3 * 4],(&DAT_00807574)[iVar3 * 4]);
       FUN_006b1cc0(PTR_008075a8,2,(&DAT_00807568)[iVar3 * 4],(&DAT_0080756c)[iVar3 * 4],

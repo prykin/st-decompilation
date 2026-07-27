@@ -41,11 +41,11 @@ void __thiscall ProdPanelTy::DoneProdPanel(ProdPanelTy *this)
       iVar3 = iVar3 + -1;
     } while (iVar3 != 0);
     if (pPVar2->field_017C != (ccFntTy *)0x0) {
-      ccFntTy::operator((uint *)pPVar2->field_017C);
+      ccFntTy::operator_delete((uint *)pPVar2->field_017C);
       pPVar2->field_017C = (ccFntTy *)0x0;
     }
     if (pPVar2->field_0184 != 0) {
-      cMf32::RecMemFree(DAT_00806790,&pPVar2->field_0184);
+      cMf32::RecMemFree(g_cMf32_00806790,&pPVar2->field_0184);
     }
     pPVar2->field_0190 = (ushort *)0x0;
     pPVar2->field_0188 = 0;

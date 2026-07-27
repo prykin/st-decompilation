@@ -36,12 +36,12 @@ void __thiscall WaitTy::DoneWait(WaitTy *this)
     if (pWVar2->field_004D == 0x6105) {
       if (DAT_00811768 == '\x02') {
         pWVar2->field_004D = 0x6102;
-        DarkScreen(DAT_0080759c,10,2);
+        DarkScreen(g_anonShape_GLOBAL_0080759C_9638EF10_0080759C,10,2);
       }
       thunk_FUN_005dac60();
     }
     if (pWVar2->field_004D == 0x610a) {
-      DarkScreen(DAT_0080759c,10,2);
+      DarkScreen(g_anonShape_GLOBAL_0080759C_9638EF10_0080759C,10,2);
       thunk_FUN_005dac60();
     }
     if (g_startSystem_0081176C->field_002C != (ushort *)0x0) {

@@ -166,8 +166,9 @@ undefined4 __thiscall InterSystemC::CreateInterfObjects(InterSystemC *this)
     local_174 = 0x28;
     local_170 = 0x12;
     if (DAT_0080874e == '\x03') {
-      local_60 = FUN_0070aa70(DAT_00806790,"BUT_OHELPMSK",0,1);
-      local_5c = Library::Ourlib::MFIMG::mfImgGetWidth(DAT_00806790,0x12,"BUT_OHELPMSK",1);
+      local_60 = FUN_0070aa70(g_cMf32_00806790,"BUT_OHELPMSK",0,1);
+      local_5c = Library::Ourlib::MFIMG::mfImgGetWidth
+                           (g_cMf32_00806790,0x12,"BUT_OHELPMSK",1);
     }
     local_d0 = 0x2739;
     local_f4 = 0x2739;
@@ -235,10 +236,10 @@ undefined4 __thiscall InterSystemC::CreateInterfObjects(InterSystemC *this)
     (*this_00->vtable->CreateObject)
               ((SystemClassTy *)this_00,0x14b,(undefined4 *)0x0,(int *)0x0,0,1);
     thunk_FUN_0056a500();
-    (*this_00->vtable->vfunc_10)(0x201,0);
+    (*this_00->vtable->vfunc_10)(this_00,0x201,0);
     thunk_FUN_0056a500();
     if (g_helpPanel_00801690 != (HelpPanelTy *)0x0) {
-      thunk_FUN_0051da70(g_helpPanel_00801690);
+      HelpPanelTy::sub_0051DA70(g_helpPanel_00801690);
     }
     thunk_FUN_0056a500();
     if ((DAT_0080877e == '\0') && (g_popUp_008016D8 != (PopUpTy *)0x0)) {

@@ -129,8 +129,8 @@ void __thiscall HelpPanelTy::CreateList(HelpPanelTy *this)
     local_4d8 = local_4f8;
     local_4b8 = local_4f8;
     local_498 = local_4f8;
-    local_2cc = FUN_0070aa70(DAT_00806790,"BUT_MSLUP",0,1);
-    local_2c8 = Library::Ourlib::MFIMG::mfImgGetWidth(DAT_00806790,0x12,"BUT_MSLUP",1);
+    local_2cc = FUN_0070aa70(g_cMf32_00806790,"BUT_MSLUP",0,1);
+    local_2c8 = Library::Ourlib::MFIMG::mfImgGetWidth(g_cMf32_00806790,0x12,"BUT_MSLUP",1);
     local_390 = this_00->field_0008;
     iVar3 = this_00->field_005C;
     local_38c = 2;
@@ -152,8 +152,8 @@ void __thiscall HelpPanelTy::CreateList(HelpPanelTy *this)
       local_270[3] = this_00->field_0044;
     }
     local_270[3] = local_270[3] + 0x109;
-    local_14c = FUN_0070aa70(DAT_00806790,"BUT_MSLDN",0,1);
-    local_148 = Library::Ourlib::MFIMG::mfImgGetWidth(DAT_00806790,0x12,"BUT_MSLDN",1);
+    local_14c = FUN_0070aa70(g_cMf32_00806790,"BUT_MSLDN",0,1);
+    local_148 = Library::Ourlib::MFIMG::mfImgGetWidth(g_cMf32_00806790,0x12,"BUT_MSLDN",1);
     local_e4 = this_00->field_003C + 0x1c3;
     local_208 = 0x8165;
     local_f4 = 3;

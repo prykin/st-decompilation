@@ -65,12 +65,13 @@ undefined4 __thiscall STGroupBoatC::GrpLoadObj(STGroupBoatC *this,int param_1)
   if ((param_1 != 1) && (param_1 != 0)) goto LAB_0049e26d;
   memset(&local_30->field_0089, 0, 0x54); /* compiler bulk-zero initialization */
   local_30->field_0065 = 0;
-  iVar3 = FUN_006e62d0(g_playSystem_00802A38,local_30->field_0178,(int *)&local_8);
+  iVar3 = STPlaySystemC::sub_006E62D0(g_playSystem_00802A38,local_30->field_0178,(int *)&local_8);
   if (iVar3 == -4) {
     return 0;
   }
-  thunk_FUN_004162f0(local_8,(undefined2 *)&pSVar2->field_0x2a3,(undefined2 *)&pSVar2->field_0x2a5,
-                     (undefined2 *)&pSVar2->field_0x2a7);
+  STFishC::sub_004162F0
+            ((STFishC *)local_8,(undefined2 *)&pSVar2->field_0x2a3,
+             (undefined2 *)&pSVar2->field_0x2a5,(undefined2 *)&pSVar2->field_0x2a7);
   local_20 = 0;
   *(uint *)&pSVar2->field_0x2a9 = local_8->field_0018;
   local_40 = g_playSystem_00802A38->field_00E4;
@@ -88,7 +89,7 @@ undefined4 __thiscall STGroupBoatC::GrpLoadObj(STGroupBoatC *this,int param_1)
                     (-0x5001fffc,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_grpb.cpp"
                      ,0xa5b);
         }
-        iVar3 = (*local_8->vtable->vfunc_F8)();
+        iVar3 = (*local_8->vtable->vfunc_F8)(local_8);
         if (iVar3 != 0) {
           iVar3 = thunk_FUN_00490d90((STGameObjC *)local_8);
           if (iVar3 == 0) {
@@ -183,7 +184,7 @@ LAB_0049e26d:
                       (-0x5001fffc,g_overwriteContext_007ED77C,
                        "E:\\__titans\\wlad\\to_grpb.cpp",0xa8e);
           }
-          iVar3 = (*local_8->vtable->vfunc_F8)();
+          iVar3 = (*local_8->vtable->vfunc_F8)(local_8);
           if ((iVar3 != 0) &&
              (((dVar4 = (*local_8->vtable->slot_2C)(local_8), dVar4 == 7 || (dVar4 == 0x13)) ||
               (dVar4 == 0x1b)))) {

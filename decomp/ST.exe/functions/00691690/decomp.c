@@ -186,7 +186,7 @@ LAB_00691a65:
                   *(undefined4 **)&this_00->field_0x140 = local_8c;
                   FUN_006ddbe0(this_00);
                   *(undefined4 *)&this_00->field_0x124 = 5;
-                  FUN_006ddd50((AnonShape_006DDD50_309FA381 *)this_00);
+                  FUN_006ddd50((AnonShape_GLOBAL_0080760C_46D7AF7A *)this_00);
                   *(undefined4 *)&this_00->field_0x140 = 0;
                   *(undefined4 *)&this_00->field_0x13c = 0;
                   if (param_3 != 0) {
@@ -276,7 +276,7 @@ LAB_00691a65:
                 *(undefined4 **)&this_00->field_0x140 = local_8c;
                 FUN_006ddbe0(this_00);
                 *(undefined4 *)&this_00->field_0x124 = 5;
-                FUN_006ddd50((AnonShape_006DDD50_309FA381 *)this_00);
+                FUN_006ddd50((AnonShape_GLOBAL_0080760C_46D7AF7A *)this_00);
                 pvVar3 = local_14;
                 *(undefined4 *)&this_00->field_0x140 = 0;
                 *(undefined4 *)&this_00->field_0x13c = 0;
@@ -361,7 +361,7 @@ LAB_00691a65:
                 *(undefined4 **)&this_00->field_0x140 = local_8c;
                 FUN_006ddbe0(this_00);
                 *(undefined4 *)&this_00->field_0x124 = 5;
-                FUN_006ddd50((AnonShape_006DDD50_309FA381 *)this_00);
+                FUN_006ddd50((AnonShape_GLOBAL_0080760C_46D7AF7A *)this_00);
                 pvVar3 = local_14;
                 *(undefined4 *)&this_00->field_0x140 = 0;
                 *(undefined4 *)&this_00->field_0x13c = 0;

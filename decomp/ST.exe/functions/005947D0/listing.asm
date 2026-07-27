@@ -1,4 +1,4 @@
-FUN_005947d0:
+CreateVisible:
 005947D0  56                        PUSH ESI
 005947D1  68 18 01 00 00            PUSH 0x118
 005947D6  E8 F5 BC 11 00            CALL 0x006b04d0

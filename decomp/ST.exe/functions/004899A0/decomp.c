@@ -15,22 +15,25 @@ STBoatC::GetDefenceTarget(STBoatC *this,STBoatC_GetDefenceTarget_param_1Enum par
 {
   int iVar1;
   code *pcVar2;
+  undefined2 uVar3;
   STGroupBoatC *this_00;
-  DArrayTy *pDVar3;
-  uint uVar4;
-  undefined4 *puVar5;
-  int iVar6;
+  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+  undefined2 extraout_var;
+  DArrayTy *pDVar4;
+  uint uVar5;
+  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+  undefined2 extraout_var_00;
+  undefined4 *puVar6;
   int iVar7;
-  undefined4 uVar8;
-  DArrayTy *pDVar9;
-  int iVar10;
-  uint uVar11;
-  short sVar12;
+  int iVar8;
+  undefined4 uVar9;
+  DArrayTy *pDVar10;
+  int iVar11;
+  uint uVar12;
   short sVar13;
-  /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-  int *unaff_EDI;
   short sVar14;
   short sVar15;
+  short sVar16;
   int local_70;
   short local_6c;
   int local_6a;
@@ -66,25 +69,21 @@ LAB_0048a37f:
     local_1c = 1;
   }
   else {
-    iVar10 = this->field_047F + 1;
-    this->field_047F = iVar10;
+    iVar11 = this->field_047F + 1;
+    this->field_047F = iVar11;
     if (this->field_048B == 0xffff) {
-      if (iVar10 % 0x14 != 0) goto LAB_0048a37f;
+      if (iVar11 % 0x14 != 0) goto LAB_0048a37f;
     }
     else {
       local_8 = STAllPlayersC::GetObjPtr
                           (g_allPlayers_007FA174,*(char *)&this->field_0487,this->field_048B,
                            this->field_0483);
-      /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-      if (((local_8 != (STGameObjC *)0x0) &&
-          (iVar10 = (*local_8->vtable[1].vfunc_24)(), iVar10 == 1)) &&
-         (iVar10 = (*local_8->vtable[1].MoveStep)(local_8,unaff_EDI), iVar10 == 1)) {
-        /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-        unaff_EDI = (int *)this->field_0024;
-        iVar10 = (*local_8->vtable[1].vfunc_20)();
-        if ((iVar10 == 1) && (this->field_047F % 0x28 != 0)) {
-          return 0;
-        }
+      if ((((local_8 != (STGameObjC *)0x0) &&
+           (iVar11 = (*local_8->vtable->vfunc_F8)(local_8), iVar11 == 1)) &&
+          (iVar11 = (*local_8->vtable->vfunc_F0)(local_8), iVar11 == 1)) &&
+         ((iVar11 = (*local_8->vtable->vfunc_F4)(this->field_0024), iVar11 == 1 &&
+          (this->field_047F % 0x28 != 0)))) {
+        return 0;
       }
     }
     this->field_0483 = 0;
@@ -95,138 +94,135 @@ LAB_0048a37f:
     switch(param_1) {
     case CASE_0:
       _CheckDefenceShots(this,0);
-      pDVar3 = (DArrayTy *)
+      pDVar4 = (DArrayTy *)
                thunk_FUN_0043f7b0(*(byte *)&this->field_0024,(int *)this,
                                   (uint *)(int)this->field_0475,(int)this->field_0477,2,(int *)0x6,6
                                   ,2,(uint)(this->field_0736 != 0));
-      if (pDVar3 != (DArrayTy *)0x0) {
+      if (pDVar4 != (DArrayTy *)0x0) {
         /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
         this_00 = thunk_FUN_0042b760(*(char *)&this->field_0024,
-                                     CONCAT22((short)((uint)pDVar3 >> 0x10),this->field_0030));
-        local_20 = thunk_FUN_0040c080(this_00,(uint)(ushort)this->field_0032,(uint *)pDVar3);
+                                     CONCAT22((short)((uint)pDVar4 >> 0x10),this->field_0030));
+        local_20 = thunk_FUN_0040c080(this_00,(uint)(ushort)this->field_0032,(uint *)pDVar4);
         local_18 = 0;
-        if (0 < (int)pDVar3->count) {
+        if (0 < (int)pDVar4->count) {
           do {
-            iVar10 = local_20[local_18];
-            if ((iVar10 != -4) && (iVar10 < 9)) {
-              iVar6 = (8 - iVar10) * 0x32;
-              DArrayGetElement(pDVar3,local_18,&local_8);
-              iVar10 = (*local_8->vtable[1].vfunc_24)();
-              /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-              if ((iVar10 != 0) &&
-                 (iVar10 = (*local_8->vtable[1].MoveStep)(local_8,unaff_EDI), iVar10 != 0)) {
-                /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-                unaff_EDI = (int *)this->field_0024;
-                iVar10 = (*local_8->vtable[1].vfunc_20)();
-                if (iVar10 != 0) {
-                  iVar10 = (*local_8->vtable[1].vfunc_28)();
-                  if (0 < iVar10) {
-                    iVar6 = iVar6 + 300;
-                  }
-                  iVar10 = local_8->field_0219;
-                  iVar1 = local_8->field_0215;
-                  iVar7 = (*local_8->vtable->vfunc_7C)();
-                  local_38 = iVar6 + ((int)(iVar10 + (iVar10 >> 0x1f & 3U)) >> 2) + iVar1 +
-                             iVar7 * 2;
-                  if ((((uint)(ushort)local_8->field_0032 == this->field_048B) &&
-                      (local_8->field_0024 == this->field_0487)) &&
-                     (((this->field_0483 == 1 &&
-                       (((uVar4 = local_8->field_0020, uVar4 == 0x14 || (uVar4 == 1000)) ||
-                        (uVar4 == 0x3e9)))) ||
-                      ((this->field_0483 == 3 && (local_8->field_0020 == 0x1ae)))))) {
-                    local_38 = local_38 + 200;
-                  }
-                  iVar10 = local_38;
-                  thunk_FUN_00416270(local_8,(undefined2 *)&local_14,&local_10,&local_c);
-                  iVar6 = FUN_006acf0d((int)this->field_0041,(int)this->field_0043,
-                                       (int)this->field_0045,(int)(short)local_14,
-                                       (int)(short)local_10,(int)(short)local_c);
-                  if ((iVar6 == 0) ||
-                     (uVar4 = (int)(short)local_c - (int)this->field_0045,
-                     uVar11 = (int)uVar4 >> 0x1f,
-                     (int)(((uVar4 ^ uVar11) - uVar11) * 10) / iVar6 < 4)) {
-                    local_24 = (*this->vtable->vfunc_10)
-                                         (this->field_0041,this->field_0043,this->field_0045,
-                                          local_14,local_10,local_c);
-                    local_2c = 0;
-                    if (this->field_02B2 != '\0') {
-                      local_30 = (undefined2 *)&this->field_0x2a8;
-                      do {
-                        puVar5 = (undefined4 *)
-                                 thunk_FUN_0041dc40(local_48,(short)*(undefined4 *)(local_30 + -1),
-                                                    local_30[1],(short)local_24);
-                        local_40 = (short)*puVar5;
-                        sStack_3e = (short)((uint)*puVar5 >> 0x10);
-                        sVar12 = this->field_0043 - sStack_3e;
-                        sVar13 = this->field_0041 + local_40;
-                        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                        local_28 = CONCAT22((short)((uint)puVar5 >> 0x10),
-                                            this->field_0045 + *(short *)(puVar5 + 1));
-                        sStack_3e = *local_30;
-                        local_40 = 0;
-                        puVar5 = (undefined4 *)thunk_FUN_0041dc40(local_50,0,0,(short)local_24);
-                        local_40 = (short)*puVar5;
-                        sStack_3e = (short)((uint)*puVar5 >> 0x10);
-                        local_3c = *(undefined2 *)(puVar5 + 1);
-                        sVar14 = (short)local_14 + local_40;
-                        sVar15 = (short)local_10 - sStack_3e;
-                        if (this->field_0736 == 0) {
-                          iVar6 = STSprGameObjC::CheckRay
-                                            ((STSprGameObjC *)this,sVar13,sVar12,(short)local_28,
-                                             sVar14,sVar15,(short)local_c,this->field_079A,
-                                             (int *)0x0,0);
-                          iVar10 = local_38;
-                        }
-                        else {
-                          iVar6 = STSprGameObjC::CheckRay
-                                            ((STSprGameObjC *)this,sVar13,sVar12,(short)local_28,
-                                             sVar14,sVar15,(short)local_c,this->field_079A,
-                                             (int *)0x0,1);
-                          iVar10 = local_38;
-                        }
-                        local_38 = iVar10;
-                        if (iVar6 == 0) {
-                          if (this->field_07E6 != 0) goto LAB_00489eb0;
-                          goto LAB_00489dfc;
-                        }
-                        local_2c = local_2c + 1;
-                        local_30 = local_30 + 3;
-                      } while (local_2c < (int)(uint)(byte)this->field_02B2);
-                    }
-                    iVar10 = iVar10 + 200;
-                  }
-LAB_00489dfc:
-                  if (((local_8->field_0020 != 0x1ae) &&
-                      (pDVar9 = this->field_047B, pDVar9 != (DArrayTy *)0x0)) &&
-                     (uVar4 = 0, 0 < (int)pDVar9->count)) {
+            iVar11 = local_20[local_18];
+            if ((iVar11 != -4) && (iVar11 < 9)) {
+              iVar7 = (8 - iVar11) * 0x32;
+              DArrayGetElement(pDVar4,local_18,&local_8);
+              iVar11 = (*local_8->vtable->vfunc_F8)(local_8);
+              if ((iVar11 != 0) &&
+                 ((iVar11 = (*local_8->vtable->vfunc_F0)(local_8), iVar11 != 0 &&
+                  (iVar11 = (*local_8->vtable->vfunc_F4)(this->field_0024), iVar11 != 0)))) {
+                iVar11 = (*local_8->vtable->vfunc_FC)(local_8);
+                if (0 < iVar11) {
+                  iVar7 = iVar7 + 300;
+                }
+                iVar11 = local_8->field_0219;
+                iVar1 = local_8->field_0215;
+                iVar8 = (*local_8->vtable->vfunc_7C)();
+                local_38 = iVar7 + ((int)(iVar11 + (iVar11 >> 0x1f & 3U)) >> 2) + iVar1 + iVar8 * 2;
+                if ((((uint)(ushort)local_8->field_0032 == this->field_048B) &&
+                    (local_8->field_0024 == this->field_0487)) &&
+                   (((this->field_0483 == 1 &&
+                     (((uVar5 = local_8->field_0020, uVar5 == 0x14 || (uVar5 == 1000)) ||
+                      (uVar5 == 0x3e9)))) ||
+                    ((this->field_0483 == 3 && (local_8->field_0020 == 0x1ae)))))) {
+                  local_38 = local_38 + 200;
+                }
+                iVar11 = local_38;
+                thunk_FUN_00416270(local_8,(undefined2 *)&local_14,&local_10,&local_c);
+                iVar7 = FUN_006acf0d((int)this->field_0041,(int)this->field_0043,
+                                     (int)this->field_0045,(int)(short)local_14,(int)(short)local_10
+                                     ,(int)(short)local_c);
+                if ((iVar7 == 0) ||
+                   (uVar5 = (int)(short)local_c - (int)this->field_0045, uVar12 = (int)uVar5 >> 0x1f
+                   , (int)(((uVar5 ^ uVar12) - uVar12) * 10) / iVar7 < 4)) {
+                  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+                  uVar3 = (*this->vtable->vfunc_10)
+                                    (this->field_0041,this->field_0043,
+                                     CONCAT22((short)((uint)local_10 >> 0x10),this->field_0045),
+                                     (short)local_14,(short)local_10,local_c);
+                  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+                  local_24 = CONCAT22(extraout_var,uVar3);
+                  local_2c = 0;
+                  if (this->field_02B2 != '\0') {
+                    local_30 = (undefined2 *)&this->field_0x2a8;
                     do {
-                      DArrayGetElement(pDVar9,uVar4,&local_70);
-                      if ((local_6c == local_8->field_0032) && (local_70 == local_8->field_0024)) {
-                        iVar10 = iVar10 + local_6a;
-                        break;
+                      puVar6 = (undefined4 *)
+                               thunk_FUN_0041dc40(local_48,(short)*(undefined4 *)(local_30 + -1),
+                                                  local_30[1],(short)local_24);
+                      local_40 = (short)*puVar6;
+                      sStack_3e = (short)((uint)*puVar6 >> 0x10);
+                      sVar13 = this->field_0043 - sStack_3e;
+                      sVar14 = this->field_0041 + local_40;
+                      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+                      local_28 = CONCAT22((short)((uint)puVar6 >> 0x10),
+                                          this->field_0045 + *(short *)(puVar6 + 1));
+                      sStack_3e = *local_30;
+                      local_40 = 0;
+                      puVar6 = (undefined4 *)thunk_FUN_0041dc40(local_50,0,0,(short)local_24);
+                      local_40 = (short)*puVar6;
+                      sStack_3e = (short)((uint)*puVar6 >> 0x10);
+                      local_3c = *(undefined2 *)(puVar6 + 1);
+                      sVar15 = (short)local_14 + local_40;
+                      sVar16 = (short)local_10 - sStack_3e;
+                      if (this->field_0736 == 0) {
+                        iVar7 = STSprGameObjC::CheckRay
+                                          ((STSprGameObjC *)this,sVar14,sVar13,(short)local_28,
+                                           sVar15,sVar16,(short)local_c,this->field_079A,(int *)0x0,
+                                           0);
+                        iVar11 = local_38;
                       }
-                      pDVar9 = this->field_047B;
-                      uVar4 = uVar4 + 1;
-                    } while ((int)uVar4 < (int)pDVar9->count);
+                      else {
+                        iVar7 = STSprGameObjC::CheckRay
+                                          ((STSprGameObjC *)this,sVar14,sVar13,(short)local_28,
+                                           sVar15,sVar16,(short)local_c,this->field_079A,(int *)0x0,
+                                           1);
+                        iVar11 = local_38;
+                      }
+                      local_38 = iVar11;
+                      if (iVar7 == 0) {
+                        if (this->field_07E6 != 0) goto LAB_00489eb0;
+                        goto LAB_00489dfc;
+                      }
+                      local_2c = local_2c + 1;
+                      local_30 = local_30 + 3;
+                    } while (local_2c < (int)(uint)(byte)this->field_02B2);
                   }
-                  if ((this->field_06F7 == CASE_1C) &&
-                     (iVar6 = (*local_8->vtable[1].vfunc_4C)(), iVar6 == 1)) {
-                    iVar10 = iVar10 / 0x14;
-                  }
-                  if (local_34 < iVar10) {
-                    this->field_0487 = local_8->field_0024;
-                    this->field_048B = (uint)(ushort)local_8->field_0032;
-                    this->field_0483 = (-(uint)(local_8->field_0020 != 0x1ae) & 0xfffffffe) + 3;
-                    local_34 = iVar10;
-                  }
+                  iVar11 = iVar11 + 200;
+                }
+LAB_00489dfc:
+                if (((local_8->field_0020 != 0x1ae) &&
+                    (pDVar10 = this->field_047B, pDVar10 != (DArrayTy *)0x0)) &&
+                   (uVar5 = 0, 0 < (int)pDVar10->count)) {
+                  do {
+                    DArrayGetElement(pDVar10,uVar5,&local_70);
+                    if ((local_6c == local_8->field_0032) && (local_70 == local_8->field_0024)) {
+                      iVar11 = iVar11 + local_6a;
+                      break;
+                    }
+                    pDVar10 = this->field_047B;
+                    uVar5 = uVar5 + 1;
+                  } while ((int)uVar5 < (int)pDVar10->count);
+                }
+                if ((this->field_06F7 == CASE_1C) &&
+                   (iVar7 = (*local_8->vtable->vfunc_120)(local_8), iVar7 == 1)) {
+                  iVar11 = iVar11 / 0x14;
+                }
+                if (local_34 < iVar11) {
+                  this->field_0487 = local_8->field_0024;
+                  this->field_048B = (uint)(ushort)local_8->field_0032;
+                  this->field_0483 = (-(uint)(local_8->field_0020 != 0x1ae) & 0xfffffffe) + 3;
+                  local_34 = iVar11;
                 }
               }
             }
 LAB_00489eb0:
             local_18 = local_18 + 1;
-          } while ((int)local_18 < (int)pDVar3->count);
+          } while ((int)local_18 < (int)pDVar4->count);
         }
-        DArrayDestroy(pDVar3);
+        DArrayDestroy(pDVar4);
         if (this->field_048B != 0xffff) {
           local_1c = 0;
         }
@@ -241,140 +237,135 @@ LAB_00489eb0:
     case CASE_3:
       _CheckDefenceShots(this,0);
       if (this->field_0736 == 0) {
-        pDVar3 = (DArrayTy *)
+        pDVar4 = (DArrayTy *)
                  thunk_FUN_0043f7b0(*(byte *)&this->field_0024,(int *)this,
                                     (uint *)(int)this->field_0475,(int)this->field_0477,2,(int *)0x6
                                     ,6,2,0);
       }
       else {
-        pDVar3 = (DArrayTy *)
+        pDVar4 = (DArrayTy *)
                  thunk_FUN_0043f7b0(*(byte *)&this->field_0024,(int *)this,
                                     (uint *)(int)this->field_0475,(int)this->field_0477,2,(int *)0x6
                                     ,6,2,1);
       }
-      if (pDVar3 != (DArrayTy *)0x0) {
+      if (pDVar4 != (DArrayTy *)0x0) {
         local_18 = 0;
-        if (0 < (int)pDVar3->count) {
+        if (0 < (int)pDVar4->count) {
           do {
-            DArrayGetElement(pDVar3,local_18,&local_8);
-            iVar10 = (*local_8->vtable[1].vfunc_24)();
-            /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-            if ((iVar10 != 0) &&
-               (iVar10 = (*local_8->vtable[1].MoveStep)(local_8,unaff_EDI), iVar10 != 0)) {
-              /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-              unaff_EDI = (int *)this->field_0024;
-              iVar10 = (*local_8->vtable[1].vfunc_20)();
-              if (iVar10 != 0) {
-                thunk_FUN_00416270(local_8,(undefined2 *)&local_14,&local_10,&local_c);
-                iVar10 = FUN_006acf0d((int)this->field_0041,(int)this->field_0043,
-                                      (int)this->field_0045,(int)(short)local_14,
-                                      (int)(short)local_10,(int)(short)local_c);
-                local_38 = iVar10;
-                if ((iVar10 == 0) ||
-                   (uVar4 = (int)(short)local_c - (int)this->field_0045, uVar11 = (int)uVar4 >> 0x1f
-                   , (int)(((uVar4 ^ uVar11) - uVar11) * 10) / iVar10 < 4)) {
-                  local_24 = (*this->vtable->vfunc_10)
-                                       (this->field_0041,this->field_0043,this->field_0045,local_14,
-                                        local_10,local_c);
-                  local_2c = 0;
-                  if (this->field_02B2 != '\0') {
-                    local_30 = (undefined2 *)&this->field_0x2a8;
-                    do {
-                      puVar5 = (undefined4 *)
-                               thunk_FUN_0041dc40(local_58,(short)*(undefined4 *)(local_30 + -1),
-                                                  local_30[1],(short)local_24);
-                      local_40 = (short)*puVar5;
-                      sStack_3e = (short)((uint)*puVar5 >> 0x10);
-                      sVar12 = this->field_0043 - sStack_3e;
-                      sVar13 = this->field_0041 + local_40;
-                      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                      local_28 = CONCAT22((short)((uint)puVar5 >> 0x10),
-                                          this->field_0045 + *(short *)(puVar5 + 1));
-                      sStack_3e = *local_30;
-                      local_40 = 0;
-                      puVar5 = (undefined4 *)thunk_FUN_0041dc40(local_60,0,0,(short)local_24);
-                      local_40 = (short)*puVar5;
-                      sStack_3e = (short)((uint)*puVar5 >> 0x10);
-                      local_3c = *(undefined2 *)(puVar5 + 1);
-                      sVar14 = (short)local_14 + local_40;
-                      sVar15 = (short)local_10 - sStack_3e;
-                      if (this->field_0736 == 0) {
-                        iVar6 = STSprGameObjC::CheckRay
-                                          ((STSprGameObjC *)this,sVar13,sVar12,(short)local_28,
-                                           sVar14,sVar15,(short)local_c,this->field_079A,(int *)0x0,
-                                           0);
-                        iVar10 = local_38;
-                      }
-                      else {
-                        iVar6 = STSprGameObjC::CheckRay
-                                          ((STSprGameObjC *)this,sVar13,sVar12,(short)local_28,
-                                           sVar14,sVar15,(short)local_c,this->field_079A,(int *)0x0,
-                                           1);
-                        iVar10 = local_38;
-                      }
-                      local_38 = iVar10;
-                      if (iVar6 == 0) goto LAB_0048a2dd;
-                      local_2c = local_2c + 1;
-                      local_30 = local_30 + 3;
-                    } while (local_2c < (int)(uint)(byte)this->field_02B2);
-                  }
-                  iVar6 = ((int)this->field_0816 - iVar10 / 0xc9) * 0x32;
-                  iVar10 = (*local_8->vtable[1].vfunc_28)();
-                  if (0 < iVar10) {
-                    iVar6 = iVar6 + 300;
-                  }
-                  iVar10 = local_8->field_0219;
-                  iVar1 = local_8->field_0215;
-                  iVar7 = (*local_8->vtable->vfunc_7C)();
-                  iVar10 = iVar6 + ((int)(iVar10 + (iVar10 >> 0x1f & 3U)) >> 2) + iVar1 + iVar7 * 2;
-                  if (((uint)(ushort)local_8->field_0032 == this->field_048B) &&
-                     (local_8->field_0024 == this->field_0487)) {
-                    if ((this->field_0483 == 1) &&
-                       (((uVar4 = local_8->field_0020, uVar4 == 0x14 || (uVar4 == 1000)) ||
-                        (uVar4 == 0x3e9)))) {
+            DArrayGetElement(pDVar4,local_18,&local_8);
+            iVar11 = (*local_8->vtable->vfunc_F8)(local_8);
+            if (((iVar11 != 0) && (iVar11 = (*local_8->vtable->vfunc_F0)(local_8), iVar11 != 0)) &&
+               (iVar11 = (*local_8->vtable->vfunc_F4)(this->field_0024), iVar11 != 0)) {
+              thunk_FUN_00416270(local_8,(undefined2 *)&local_14,&local_10,&local_c);
+              iVar11 = FUN_006acf0d((int)this->field_0041,(int)this->field_0043,
+                                    (int)this->field_0045,(int)(short)local_14,(int)(short)local_10,
+                                    (int)(short)local_c);
+              local_38 = iVar11;
+              if ((iVar11 == 0) ||
+                 (uVar5 = (int)(short)local_c - (int)this->field_0045, uVar12 = (int)uVar5 >> 0x1f,
+                 (int)(((uVar5 ^ uVar12) - uVar12) * 10) / iVar11 < 4)) {
+                /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+                uVar3 = (*this->vtable->vfunc_10)
+                                  (this->field_0041,this->field_0043,
+                                   CONCAT22((short)((uint)local_10 >> 0x10),this->field_0045),
+                                   (short)local_14,(short)local_10,local_c);
+                /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+                local_24 = CONCAT22(extraout_var_00,uVar3);
+                local_2c = 0;
+                if (this->field_02B2 != '\0') {
+                  local_30 = (undefined2 *)&this->field_0x2a8;
+                  do {
+                    puVar6 = (undefined4 *)
+                             thunk_FUN_0041dc40(local_58,(short)*(undefined4 *)(local_30 + -1),
+                                                local_30[1],(short)local_24);
+                    local_40 = (short)*puVar6;
+                    sStack_3e = (short)((uint)*puVar6 >> 0x10);
+                    sVar13 = this->field_0043 - sStack_3e;
+                    sVar14 = this->field_0041 + local_40;
+                    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+                    local_28 = CONCAT22((short)((uint)puVar6 >> 0x10),
+                                        this->field_0045 + *(short *)(puVar6 + 1));
+                    sStack_3e = *local_30;
+                    local_40 = 0;
+                    puVar6 = (undefined4 *)thunk_FUN_0041dc40(local_60,0,0,(short)local_24);
+                    local_40 = (short)*puVar6;
+                    sStack_3e = (short)((uint)*puVar6 >> 0x10);
+                    local_3c = *(undefined2 *)(puVar6 + 1);
+                    sVar15 = (short)local_14 + local_40;
+                    sVar16 = (short)local_10 - sStack_3e;
+                    if (this->field_0736 == 0) {
+                      iVar7 = STSprGameObjC::CheckRay
+                                        ((STSprGameObjC *)this,sVar14,sVar13,(short)local_28,sVar15,
+                                         sVar16,(short)local_c,this->field_079A,(int *)0x0,0);
+                      iVar11 = local_38;
+                    }
+                    else {
+                      iVar7 = STSprGameObjC::CheckRay
+                                        ((STSprGameObjC *)this,sVar14,sVar13,(short)local_28,sVar15,
+                                         sVar16,(short)local_c,this->field_079A,(int *)0x0,1);
+                      iVar11 = local_38;
+                    }
+                    local_38 = iVar11;
+                    if (iVar7 == 0) goto LAB_0048a2dd;
+                    local_2c = local_2c + 1;
+                    local_30 = local_30 + 3;
+                  } while (local_2c < (int)(uint)(byte)this->field_02B2);
+                }
+                iVar7 = ((int)this->field_0816 - iVar11 / 0xc9) * 0x32;
+                iVar11 = (*local_8->vtable->vfunc_FC)(local_8);
+                if (0 < iVar11) {
+                  iVar7 = iVar7 + 300;
+                }
+                iVar11 = local_8->field_0219;
+                iVar1 = local_8->field_0215;
+                iVar8 = (*local_8->vtable->vfunc_7C)();
+                iVar11 = iVar7 + ((int)(iVar11 + (iVar11 >> 0x1f & 3U)) >> 2) + iVar1 + iVar8 * 2;
+                if (((uint)(ushort)local_8->field_0032 == this->field_048B) &&
+                   (local_8->field_0024 == this->field_0487)) {
+                  if ((this->field_0483 == 1) &&
+                     (((uVar5 = local_8->field_0020, uVar5 == 0x14 || (uVar5 == 1000)) ||
+                      (uVar5 == 0x3e9)))) {
 LAB_0048a226:
-                      iVar10 = iVar10 + 200;
-                      goto LAB_0048a22c;
-                    }
-                    if (this->field_0483 != 3) goto LAB_0048a22c;
-                    if (local_8->field_0020 == 0x1ae) goto LAB_0048a226;
+                    iVar11 = iVar11 + 200;
+                    goto LAB_0048a22c;
+                  }
+                  if (this->field_0483 != 3) goto LAB_0048a22c;
+                  if (local_8->field_0020 == 0x1ae) goto LAB_0048a226;
 LAB_0048a235:
-                    pDVar9 = this->field_047B;
-                    if ((pDVar9 != (DArrayTy *)0x0) && (uVar4 = 0, 0 < (int)pDVar9->count)) {
-                      do {
-                        DArrayGetElement(pDVar9,uVar4,&local_70);
-                        if ((local_6c == local_8->field_0032) && (local_70 == local_8->field_0024))
-                        {
-                          iVar10 = iVar10 + local_6a;
-                          break;
-                        }
-                        pDVar9 = this->field_047B;
-                        uVar4 = uVar4 + 1;
-                      } while ((int)uVar4 < (int)pDVar9->count);
-                    }
+                  pDVar10 = this->field_047B;
+                  if ((pDVar10 != (DArrayTy *)0x0) && (uVar5 = 0, 0 < (int)pDVar10->count)) {
+                    do {
+                      DArrayGetElement(pDVar10,uVar5,&local_70);
+                      if ((local_6c == local_8->field_0032) && (local_70 == local_8->field_0024)) {
+                        iVar11 = iVar11 + local_6a;
+                        break;
+                      }
+                      pDVar10 = this->field_047B;
+                      uVar5 = uVar5 + 1;
+                    } while ((int)uVar5 < (int)pDVar10->count);
                   }
-                  else {
+                }
+                else {
 LAB_0048a22c:
-                    if (local_8->field_0020 != 0x1ae) goto LAB_0048a235;
-                  }
-                  if ((this->field_06F7 == CASE_1C) &&
-                     (iVar6 = (*local_8->vtable[1].vfunc_4C)(), iVar6 == 1)) {
-                    iVar10 = iVar10 / 0x14;
-                  }
-                  if (local_34 < iVar10) {
-                    this->field_0487 = local_8->field_0024;
-                    this->field_048B = (uint)(ushort)local_8->field_0032;
-                    this->field_0483 = (-(uint)(local_8->field_0020 != 0x1ae) & 0xfffffffe) + 3;
-                    local_34 = iVar10;
-                  }
+                  if (local_8->field_0020 != 0x1ae) goto LAB_0048a235;
+                }
+                if ((this->field_06F7 == CASE_1C) &&
+                   (iVar7 = (*local_8->vtable->vfunc_120)(local_8), iVar7 == 1)) {
+                  iVar11 = iVar11 / 0x14;
+                }
+                if (local_34 < iVar11) {
+                  this->field_0487 = local_8->field_0024;
+                  this->field_048B = (uint)(ushort)local_8->field_0032;
+                  this->field_0483 = (-(uint)(local_8->field_0020 != 0x1ae) & 0xfffffffe) + 3;
+                  local_34 = iVar11;
                 }
               }
             }
 LAB_0048a2dd:
             local_18 = local_18 + 1;
-          } while ((int)local_18 < (int)pDVar3->count);
+          } while ((int)local_18 < (int)pDVar4->count);
         }
-        DArrayDestroy(pDVar3);
+        DArrayDestroy(pDVar4);
         if (this->field_048B != 0xffff) {
           return 0;
         }
@@ -383,9 +374,9 @@ LAB_0048a2dd:
     case CASE_FFFFFFFF:
       return 1;
     default:
-      iVar10 = ReportDebugMessage("E:\\__titans\\wlad\\To_boat.cpp",0x4677,0,0,"%s",
+      iVar11 = ReportDebugMessage("E:\\__titans\\wlad\\To_boat.cpp",0x4677,0,0,"%s",
                                   "STBoatC::GetDefenceTarget - incorrect entry");
-      if (iVar10 != 0) {
+      if (iVar11 != 0) {
         STDebugBreak(); /* noreturn in standalone pseudocode */
       }
       RaiseInternalException

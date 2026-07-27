@@ -183,7 +183,7 @@ LAB_0052e184:
       FreeAndNull(&this_00->field_0090);
     }
     if (this_00->field_0094 != (ccFntTy *)0x0) {
-      ccFntTy::operator((uint *)this_00->field_0094);
+      ccFntTy::operator_delete((uint *)this_00->field_0094);
       this_00->field_0094 = (ccFntTy *)0x0;
     }
     if ((DArrayTy *)this_00->field_0098 != (DArrayTy *)0x0) {

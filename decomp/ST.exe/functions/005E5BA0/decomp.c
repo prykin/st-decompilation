@@ -28,7 +28,7 @@ void __thiscall MTestTy::DoneMTest(MTestTy *this)
     this_00->field_0075 = this_00->field_0008;
     FUN_006e6000(this_00,3,1,(undefined4 *)&this_00->field_0x61);
     cMf32::RecMemFree(g_cMf32_00806780,&this_00->field_005D);
-    DarkScreen(DAT_0080759c,10,2);
+    DarkScreen(g_anonShape_GLOBAL_0080759C_9638EF10_0080759C,10,2);
     if (g_holo_00811778 != (HoloTy *)0x0) {
       HoloTy::Done(g_holo_00811778);
       Library::MSVCRT::FUN_0072e2b0(g_holo_00811778);

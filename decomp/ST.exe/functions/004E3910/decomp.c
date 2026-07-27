@@ -198,7 +198,8 @@ undefined4 __fastcall FUN_004e3910(int *param_1)
           }
         }
         else {
-          iVar3 = FUN_006e62d0(g_playSystem_00802A38,param_1[local_c + 0x134],(int *)0x0);
+          iVar3 = STPlaySystemC::sub_006E62D0
+                            (g_playSystem_00802A38,param_1[local_c + 0x134],(int *)0x0);
           local_c = iVar9;
           if (iVar3 != 0) {
             param_1[iVar9 + 0x134] = 0;

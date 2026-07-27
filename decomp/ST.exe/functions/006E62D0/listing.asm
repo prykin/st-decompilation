@@ -1,4 +1,4 @@
-FUN_006e62d0:
+STPlaySystemC::sub_006E62D0:
 006E62D0  55                        PUSH EBP
 006E62D1  8B EC                     MOV EBP,ESP
 006E62D3  8B 51 10                  MOV EDX,dword ptr [ECX + 0x10]

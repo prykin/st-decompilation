@@ -41,7 +41,7 @@ undefined4 __thiscall HelpPanelTy::SetPanel(HelpPanelTy *this,char param_1)
         (*(code *)g_infocPanel_00801698->field_0000->field_001C)(0);
       }
       if (g_tradePanel_00802A44 != (TradePanelTy *)0x0) {
-        thunk_FUN_00552160(g_tradePanel_00802A44,'\0','\0');
+        TradePanelTy::sub_00552160(g_tradePanel_00802A44,'\0','\0');
       }
       if (g_behPanel_00801678 != (BehPanelTy *)0x0) {
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */

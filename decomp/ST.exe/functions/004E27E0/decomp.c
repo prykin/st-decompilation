@@ -13,8 +13,8 @@ undefined4 __fastcall FUN_004e27e0(TLOBaseTy *param_1)
     iVar2 = 2;
     do {
       if ((*pTVar3 != CASE_0) &&
-         ((iVar1 = FUN_006e62d0(g_playSystem_00802A38,*pTVar3,(int *)&local_8), iVar1 != 0 ||
-          (iVar1 = thunk_FUN_0045ff10(local_8), iVar1 != 4)))) {
+         ((iVar1 = STPlaySystemC::sub_006E62D0(g_playSystem_00802A38,*pTVar3,(int *)&local_8),
+          iVar1 != 0 || (iVar1 = thunk_FUN_0045ff10(local_8), iVar1 != 4)))) {
         *pTVar3 = CASE_0;
       }
       pTVar3 = pTVar3 + 10;

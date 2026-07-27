@@ -35,8 +35,9 @@ void __thiscall TLOBaseTy::SetActivity(TLOBaseTy *this,int param_1)
        (this_00->field_0024 == (byte *)(uint)(byte)this_00->field_0010->field_112D)) {
       pTVar1 = this_00->vtable;
       uVar5 = GetPlayerRaceId(*(char *)&this_00->field_023D);
-      (*pTVar1->vfunc_90)(4,*(undefined4 *)
-                             (&DAT_00795c00 + ((uVar5 & 0xff) + this_00->field_0235 * 3) * 4));
+      (*pTVar1->vfunc_90)(this_00,4,
+                          *(undefined4 *)
+                           (&DAT_00795c00 + ((uVar5 & 0xff) + this_00->field_0235 * 3) * 4));
     }
     if (*(int *)(&DAT_00794d94 + this_00->field_0235 * 4) != 0) {
       sub_004C2F70(this_00);

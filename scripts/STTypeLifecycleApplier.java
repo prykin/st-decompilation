@@ -17,6 +17,7 @@ import ghidra.app.script.GhidraScript;
 import ghidra.program.model.data.DataType;
 import ghidra.program.model.data.DataTypeManager;
 import ghidra.program.model.data.Pointer;
+import ghidra.program.model.data.Structure;
 import ghidra.program.model.listing.Data;
 import ghidra.program.model.listing.DataIterator;
 import ghidra.program.model.listing.Function;
@@ -98,7 +99,10 @@ public class STTypeLifecycleApplier extends GhidraScript {
                     replacement.getPathName()));
             }
             else if ("remove".equals(row.get("action"))) {
-                if (!text(type.getDescription()).contains(VIEW) || parents != 0 ||
+                String description = text(type.getDescription());
+                boolean anonymous = disposableAnonymous(type, description);
+                if (!(description.contains(VIEW) || anonymous) ||
+                        parents != 0 ||
                         !removalProvenance(text(type.getDescription())) ||
                         functionUses != 0 || listingUses != 0) {
                     report.add(new Report("remove", path, "preserved",
@@ -107,7 +111,9 @@ public class STTypeLifecycleApplier extends GhidraScript {
                 }
                 manager.remove(type);
                 report.add(new Report("remove", path, "removed",
-                    "unreferenced script-owned view"));
+                    anonymous ?
+                        "unreferenced hash/script-owned anonymous type" :
+                        "unreferenced script-owned view"));
             }
             else report.add(new Report(row.get("action"), path, "preserved",
                 "unsupported action"));
@@ -149,7 +155,22 @@ public class STTypeLifecycleApplier extends GhidraScript {
     private boolean removalProvenance(String description) {
         return description.contains("[STRecoveredTypesApplier]") ||
             description.contains("[STTypeBootstrapApplier]") ||
-            description.contains("[STDiscriminatedPayloadApplier]");
+            description.contains("[STDiscriminatedPayloadApplier]") ||
+            description.contains("[STPointerShapeApplier]") ||
+            description.contains("[STClassLayoutApplier]") ||
+            description.contains("[STHiddenThisApplier generated]");
+    }
+    private boolean disposableAnonymous(DataType type, String description) {
+        if (!(type instanceof Structure)) return false;
+        String path = type.getPathName();
+        return path.startsWith("/SubmarineTitans/Recovered/PointerShapes/") &&
+                description.contains("[STPointerShapeApplier]") &&
+                description.contains("generated_layout_sha256=") ||
+            path.startsWith("/SubmarineTitans/Recovered/ClassPointees/") &&
+                description.contains("[STClassLayoutApplier]") &&
+                description.contains("generated_layout_sha256=") ||
+            path.startsWith("/SubmarineTitans/Recovered/HiddenThis/") &&
+                description.contains("[STHiddenThisApplier generated]");
     }
     private File inputFile() throws Exception {
         String[] args = getScriptArgs();

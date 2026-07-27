@@ -120,7 +120,8 @@ void __thiscall MainMenuTy::InitMainMenu(MainMenuTy *this,char param_1)
         default:
           goto switchD_005b2a8d_default;
         }
-        FUN_006c4a00((undefined4 *)pAVar5,DAT_0080759c,uVar9,uVar10);
+        FUN_006c4a00((undefined4 *)pAVar5,g_anonShape_GLOBAL_0080759C_9638EF10_0080759C,uVar9,uVar10
+                    );
       }
     }
 switchD_005b2a8d_default:
@@ -143,7 +144,7 @@ switchD_005b2a8d_default:
                           "MM_MABUT04",8,9,9,6,0x32,0,(ccFntTy *)0x0,0,0,0,-1,-1);
       puVar4 = (ushort *)FUN_0070a9f0(g_cMf32_00806780,"MM_BKG",0,1);
       g_startSystem_0081176C->field_002C = puVar4;
-      DarkScreen(DAT_0080759c,1,0);
+      DarkScreen(g_anonShape_GLOBAL_0080759C_9638EF10_0080759C,1,0);
       /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
       if (*(MMsgTy **)(this_01->field_1A5B + 0x2e6) != (MMsgTy *)0x0) {
         /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */

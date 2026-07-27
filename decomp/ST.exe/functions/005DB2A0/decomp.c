@@ -14,11 +14,11 @@ void __thiscall StartSystemTy::sub_005DB2A0(StartSystemTy *this)
     cMf32::RecMemFree(g_cMf32_00806780,(uint *)&this->field_002C);
   }
   if (this->field_0030 != (ccFntTy *)0x0) {
-    ccFntTy::operator((uint *)this->field_0030);
+    ccFntTy::operator_delete((uint *)this->field_0030);
     this->field_0030 = (ccFntTy *)0x0;
   }
   if (this->field_0034 != (ccFntTy *)0x0) {
-    ccFntTy::operator((uint *)this->field_0034);
+    ccFntTy::operator_delete((uint *)this->field_0034);
     this->field_0034 = (ccFntTy *)0x0;
   }
   piVar2 = (int *)&this->field_0x244;

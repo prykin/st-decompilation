@@ -65,7 +65,7 @@ switchD_0043efb1_caseD_3a:
         }
         else {
           SVar5 = (*this_01->vtable->vfunc_2C)();
-          if ((SVar5 != param_3) || (iVar6 = (*this_01->vtable[1].vfunc_24)(this_01), iVar6 == 0))
+          if ((SVar5 != param_3) || (iVar6 = (*this_01->vtable->vfunc_F8)(this_01), iVar6 == 0))
           goto switchD_0043efb1_caseD_3a;
           if (param_4 != 0) {
             switch(param_3) {

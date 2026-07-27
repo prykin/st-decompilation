@@ -58,7 +58,7 @@ void __thiscall StartSystemTy::LoadMapData(StartSystemTy *this,cMf32 *param_1,ch
     puVar4 = Library::Ourlib::MFIMG::mfImgLoad(param_1,0xc,PTR_s_SMALL_MAP_0079c1dc,2,0);
     *value = puVar4;
     if (puVar4 != (ushort *)0x0) {
-      FUN_006c7f90(puVar4,(byte *)0x0,*(HPALETTE *)(DAT_0080759c + 0x4b4),0);
+      FUN_006c7f90(puVar4,(byte *)0x0,g_anonShape_GLOBAL_0080759C_9638EF10_0080759C->field_04B4,0);
       FUN_006b5440((int)this_01->field_02F0,0,0x14,0x14,(uint)*value,0,0);
     }
     if (g_dArray_0080C4C7 != (DArrayTy *)0x0) {

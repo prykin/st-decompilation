@@ -112,7 +112,7 @@ int __thiscall PrividerTy::GetMessage(PrividerTy *this,STMessage *message)
           }
           goto cf_common_exit_005BCF7F;
         }
-        uVar8 = thunk_FUN_005da940(g_startSystem_0081176C,this_00->field_1A61);
+        uVar8 = StartSystemTy::sub_005DA940(g_startSystem_0081176C,this_00->field_1A61);
         /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
         if (CONCAT31(extraout_var,uVar8) == 0) {
           this_00->field_1A71 = uVar8;
@@ -262,7 +262,7 @@ LAB_005bccb9:
     goto cf_common_exit_005BCD75;
   case MESS_FSGSTY_6949:
 switchD_005bc9da_caseD_6949:
-    uVar8 = thunk_FUN_005da940(g_startSystem_0081176C,this_00->field_1A61);
+    uVar8 = StartSystemTy::sub_005DA940(g_startSystem_0081176C,this_00->field_1A61);
     /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
     if (CONCAT31(extraout_var_00,uVar8) != 0) goto LAB_005bccb9;
     iVar10 = thunk_FUN_005da980(this_00->field_1A61);

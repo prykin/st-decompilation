@@ -88,8 +88,9 @@ cLoadingTy::InitParam
     pcVar6->field_0058 = param_8;
     pcVar6->field_0054 = param_9;
     FUN_006b5f80((int *)PTR_008075a8,0,0,g_nWidth_00806730,DAT_00806734);
-    FUN_006b4640(DAT_0080759c,0,0,(BITMAPINFO *)pcVar6->field_0000,(uint *)0x0);
-    Library::DKW::DDX::FUN_006bb370(DAT_0080759c,0,0);
+    FUN_006b4640((uint)g_anonShape_GLOBAL_0080759C_9638EF10_0080759C,0,0,
+                 (BITMAPINFO *)pcVar6->field_0000,(uint *)0x0);
+    Library::DKW::DDX::FUN_006bb370(g_anonShape_GLOBAL_0080759C_9638EF10_0080759C,0,0);
     g_currentExceptionFrame = local_4c.previous;
     return;
   }

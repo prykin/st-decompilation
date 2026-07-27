@@ -15,8 +15,8 @@ void __fastcall FUN_00491720(STBoatC *param_1,undefined4 param_2)
   uint uVar6;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined4 extraout_EDX;
+  byte arg_1;
   uint uVar7;
-  uint uVar8;
   undefined1 local_2c [16];
   undefined4 local_1c;
   undefined2 local_18;
@@ -26,7 +26,7 @@ void __fastcall FUN_00491720(STBoatC *param_1,undefined4 param_2)
   uint local_c;
   uint local_8;
 
-  uVar7 = 0;
+  arg_1 = 0;
   local_8 = 0;
   if (DAT_008117bc != (undefined4 *)0x0) {
     local_18 = *(undefined2 *)&param_1->field_0024;
@@ -34,8 +34,9 @@ void __fastcall FUN_00491720(STBoatC *param_1,undefined4 param_2)
     ppuVar1 = &param_1->field_05A6;
     local_1c = 0x5dd3;
     if ((*ppuVar1 == (ushort *)0x0) &&
-       (iVar3 = FUN_006e62d0(g_playSystem_00802A38,param_1->field_05A2,(int *)ppuVar1), iVar3 == -4)
-       ) {
+       (iVar3 = STPlaySystemC::sub_006E62D0
+                          (g_playSystem_00802A38,param_1->field_05A2,(int *)ppuVar1), iVar3 == -4))
+    {
       RaiseInternalException
                 (-4,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\To_boat.cpp",0x501f);
     }
@@ -59,52 +60,52 @@ void __fastcall FUN_00491720(STBoatC *param_1,undefined4 param_2)
                               CONCAT22((short)((uint)uVar4 >> 0x10),param_1->field_0030));
   uVar6 = thunk_FUN_00424790((int)pSVar5);
   uVar2 = param_1->field_01D1;
-  uVar8 = local_8;
+  uVar7 = local_8;
   if ((uVar2 & 1) == 0) {
     if ((uVar6 & 1) != 0) {
-      uVar7 = 1;
+      arg_1 = 1;
     }
   }
   else if ((uVar6 & 1) == 0) {
-    uVar8 = 1;
+    uVar7 = 1;
   }
   if ((uVar2 & 2) == 0) {
     if ((uVar6 & 2) != 0) {
-      uVar7 = uVar7 | 2;
+      arg_1 = arg_1 | 2;
     }
   }
   else if ((uVar6 & 2) == 0) {
-    uVar8 = uVar8 | 2;
+    uVar7 = uVar7 | 2;
   }
   if ((uVar2 & 4) == 0) {
     if ((uVar6 & 4) != 0) {
-      uVar7 = uVar7 | 4;
+      arg_1 = arg_1 | 4;
     }
   }
   else if ((uVar6 & 4) == 0) {
-    uVar8 = uVar8 | 4;
+    uVar7 = uVar7 | 4;
   }
   if ((uVar2 & 8) == 0) {
     if ((uVar6 & 8) != 0) {
-      uVar7 = uVar7 | 8;
+      arg_1 = arg_1 | 8;
     }
   }
   else if ((uVar6 & 8) == 0) {
-    uVar8 = uVar8 | 8;
+    uVar7 = uVar7 | 8;
   }
   if ((uVar2 & 0x10) == 0) {
     if ((uVar6 & 0x10) != 0) {
-      uVar7 = uVar7 | 0x10;
+      arg_1 = arg_1 | 0x10;
     }
   }
   else if ((uVar6 & 0x10) == 0) {
-    uVar8 = uVar8 | 0x10;
+    uVar7 = uVar7 | 0x10;
+  }
+  if (arg_1 != 0) {
+    (*param_1->vtable->vfunc_100)(param_1,arg_1);
   }
   if (uVar7 != 0) {
-    (*param_1->vtable->vfunc_100)(uVar7);
-  }
-  if (uVar8 != 0) {
-    (*param_1->vtable->vfunc_104)(uVar8);
+    (*param_1->vtable->vfunc_104)(param_1,(char)uVar7);
   }
   local_c = g_playSystem_00802A38->field_00E4;
   STBoatC::CmdToObj(param_1,CASE_3,&local_c);

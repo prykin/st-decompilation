@@ -78,7 +78,7 @@ int __thiscall BldLabPanelTy::GetMessage(BldLabPanelTy *this,STMessage *message)
       g_currentExceptionFrame = local_4c.previous;
       return 0;
     }
-    thunk_FUN_0054b630(g_cursorClass_00802A30,0xe,*puVar5);
+    CursorClassTy::sub_0054B630(g_cursorClass_00802A30,0xe,*puVar5);
     ProdPanelTy::SetPanel((ProdPanelTy *)this_00,'\0');
   }
   else {

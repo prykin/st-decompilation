@@ -31,14 +31,14 @@ void __thiscall IntercomPanelTy::DoneIntercomPanel(IntercomPanelTy *this)
     pIVar2->field_01A0 = 0;
     g_intercomPanel_0080169C = (IntercomPanelTy *)0x0;
     if (pIVar2->field_0180 != (uint *)0x0) {
-      ccFntTy::operator(pIVar2->field_0180);
+      ccFntTy::operator_delete(pIVar2->field_0180);
       pIVar2->field_0180 = (void *)0x0;
     }
     if (pIVar2->field_0184 != (ushort *)0x0) {
-      cMf32::RecMemFree(DAT_00806790,(uint *)&pIVar2->field_0184);
+      cMf32::RecMemFree(g_cMf32_00806790,(uint *)&pIVar2->field_0184);
     }
     if (pIVar2->field_019C != (ushort *)0x0) {
-      cMf32::RecMemFree(DAT_00806790,(uint *)&pIVar2->field_019C);
+      cMf32::RecMemFree(g_cMf32_00806790,(uint *)&pIVar2->field_019C);
     }
     g_currentExceptionFrame = local_4c.previous;
     return;

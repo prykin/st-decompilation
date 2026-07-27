@@ -82,7 +82,7 @@ cf_common_exit_005F26AF:
       }
     }
     else {
-      iVar4 = thunk_FUN_005f1d80(g_visibleClass_00802A88,iVar5,iVar4,0);
+      iVar4 = VisibleClassTy::sub_005F1D80(g_visibleClass_00802A88,iVar5,iVar4,0);
       if (iVar4 == 0) goto cf_common_exit_005F26AF;
     }
     iVar5 = STManBasisC::sub_005F14B0(local_c,(short)iVar5,(short)param_2,0,(byte)param_4,0);

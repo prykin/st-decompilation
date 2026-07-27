@@ -17,7 +17,7 @@ void __thiscall STBoatC::ChangeActivity(STBoatC *this,int param_1)
   STBoatC *this_00;
   int iVar2;
   int iVar3;
-  undefined4 uVar4;
+  undefined4 arg_2;
   InternalExceptionFrame local_4c;
   STBoatC *local_8;
 
@@ -31,131 +31,131 @@ void __thiscall STBoatC::ChangeActivity(STBoatC *this,int param_1)
       if ((param_1 == 1) && (local_8->field_0024 == (uint)DAT_0080874d)) {
         switch(local_8->field_06F7) {
         case CASE_1:
-          uVar4 = 0xc9;
+          arg_2 = 0xc9;
           break;
         case CASE_2:
-          uVar4 = 0xcf;
+          arg_2 = 0xcf;
           break;
         case CASE_3:
-          uVar4 = 0xd5;
+          arg_2 = 0xd5;
           break;
         case CASE_4:
-          uVar4 = 0xdb;
+          arg_2 = 0xdb;
           break;
         case CASE_5:
-          uVar4 = 0xe1;
+          arg_2 = 0xe1;
           break;
         case CASE_6:
-          uVar4 = 0xe8;
+          arg_2 = 0xe8;
           break;
         case CASE_7:
-          uVar4 = 0xef;
+          arg_2 = 0xef;
           break;
         case CASE_8:
-          uVar4 = 0xf6;
+          arg_2 = 0xf6;
           break;
         case CASE_9:
-          uVar4 = 0xfe;
+          arg_2 = 0xfe;
           break;
         case CASE_A:
-          uVar4 = 0x103;
+          arg_2 = 0x103;
           break;
         case CASE_B:
-          uVar4 = 0x109;
+          arg_2 = 0x109;
           break;
         case CASE_C:
-          uVar4 = 0x10f;
+          arg_2 = 0x10f;
           break;
         case CASE_D:
-          uVar4 = 0x12d;
+          arg_2 = 0x12d;
           break;
         case CASE_E:
-          uVar4 = 0x133;
+          arg_2 = 0x133;
           break;
         case CASE_F:
-          uVar4 = 0x139;
+          arg_2 = 0x139;
           break;
         case CASE_10:
-          uVar4 = 0x13f;
+          arg_2 = 0x13f;
           break;
         case CASE_11:
-          uVar4 = 0x145;
+          arg_2 = 0x145;
           break;
         case CASE_12:
-          uVar4 = 0x14c;
+          arg_2 = 0x14c;
           break;
         case CASE_13:
-          uVar4 = 0x153;
+          arg_2 = 0x153;
           break;
         case CASE_14:
-          uVar4 = 0x15a;
+          arg_2 = 0x15a;
           break;
         case CASE_15:
-          uVar4 = 0x162;
+          arg_2 = 0x162;
           break;
         case CASE_16:
-          uVar4 = 0x167;
+          arg_2 = 0x167;
           break;
         case CASE_17:
-          uVar4 = 0x16f;
+          arg_2 = 0x16f;
           break;
         case CASE_18:
-          uVar4 = 0x175;
+          arg_2 = 0x175;
           break;
         case CASE_19:
-          uVar4 = 0x191;
+          arg_2 = 0x191;
           break;
         case CASE_1A:
-          uVar4 = 0x199;
+          arg_2 = 0x199;
           break;
         case CASE_1B:
-          uVar4 = 0x1a1;
+          arg_2 = 0x1a1;
           break;
         case CASE_1C:
-          uVar4 = 0x1a7;
+          arg_2 = 0x1a7;
           break;
         case CASE_1D:
-          uVar4 = 0x1ad;
+          arg_2 = 0x1ad;
           break;
         case CASE_1E:
-          uVar4 = 0x1b4;
+          arg_2 = 0x1b4;
           break;
         case CASE_1F:
-          uVar4 = 0x1ba;
+          arg_2 = 0x1ba;
           break;
         case CASE_20:
-          uVar4 = 0x1c0;
+          arg_2 = 0x1c0;
           break;
         case CASE_21:
-          uVar4 = 0x1c6;
+          arg_2 = 0x1c6;
           break;
         case CASE_22:
-          uVar4 = 0x1cd;
+          arg_2 = 0x1cd;
           break;
         case CASE_23:
-          uVar4 = 0x1d4;
+          arg_2 = 0x1d4;
           break;
         case CASE_24:
-          uVar4 = 0x1da;
+          arg_2 = 0x1da;
           break;
         case CASE_25:
-          uVar4 = 0x17b;
+          arg_2 = 0x17b;
           break;
         case CASE_26:
-          uVar4 = 0x115;
+          arg_2 = 0x115;
           break;
         case CASE_27:
-          uVar4 = 0x181;
+          arg_2 = 0x181;
           break;
         case CASE_28:
-          uVar4 = 0x1e0;
+          arg_2 = 0x1e0;
           break;
         default:
-          uVar4 = 0;
+          arg_2 = 0;
         }
         iVar2 = thunk_FUN_00493cd0((STGameObjC *)local_8);
         if (iVar2 == 0) {
-          (*this_00->vtable->vfunc_90)(4,uVar4);
+          (*this_00->vtable->vfunc_90)(this_00,4,arg_2);
         }
       }
       thunk_FUN_0041dd00(this_00,param_1);

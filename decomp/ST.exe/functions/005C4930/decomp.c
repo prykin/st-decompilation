@@ -46,7 +46,7 @@ void __thiscall SettMapTy::DoneSettMap(SettMapTy *this)
     }
     iVar3 = pSVar2->field_004D;
     if (((iVar3 != 0x611f) && (iVar3 != 0x6109)) && (iVar3 != 0x6105)) {
-      DarkScreen(DAT_0080759c,10,2);
+      DarkScreen(g_anonShape_GLOBAL_0080759C_9638EF10_0080759C,10,2);
     }
     if (pSVar2->field_21EC != (HoloTy *)0x0) {
       HoloTy::Done(pSVar2->field_21EC);
